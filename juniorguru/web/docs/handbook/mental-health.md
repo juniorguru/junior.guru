@@ -268,4 +268,9 @@ Impostor syndrom. Je to vlákno, po rozkliknutí byste měli vidět navazující
 ---
 
 
+--- https://discord.com/channels/769966886598737931/864434067968360459/1192603944929742870
+Dobrý úvod do terapie https://www.irozhlas.cz/zpravy-domov/dostupnost-psychoterapie-terapie-cena-sezeni-data-regiony-pojistovny-vzp_2212200600_jab
+---
+
+
 #} -->

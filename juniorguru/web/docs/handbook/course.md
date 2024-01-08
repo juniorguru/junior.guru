@@ -925,4 +925,11 @@ Přijímací proces na bootcamp (Web Development) je následovný - zaregistruje
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1096491425908146216/1189962689154404543
+Slíbil jsem, že sepíši nějaké podrobnější zkušenosti s **rekvalifikačním kurzem společnosti IT Network**, konkrétně se jedná o kurz **Programátor webových aplikací**. A jak jsem slíbil, tak (byť se zpožděním) činím. Neumím psát, natož stručně, tak se na to připravte 😉
+ O rekvalifikačním kurzu jsem poprvé začal uvažovat cca před dvěma lety, tehdy to ale úřad práce proplácel zpětně a ještě bez garance. Pak jsem měl nějakou prodlevu a letos v létě na mě vyskočila reklama IT Network. Přečetl jsem si tedy na IT Network návod na účast v kurzu a jeho proplacení a napsal na úřad práce. Dneska se jen stanete zájemcem/kyní nebo uchazečem/kou o zaměstnání, napíšete jaký kurz chcete dělat a to je vše. Rozdíl mezi zájemcem/kyní a uchazečem/kou je v tom, že jeden/na je klasicky na pracáku bez práce a druhý/á normálně pracuje a jen je registrován/a - něco na způsob “otevřený/á novým možnostem”. Který/á je který/á jsem úspěšně zapomněl. Jeden den jsem se rozhodl, druhý den napsal datovkou na pracák a tři týdny na to jsem začal studovat. 
+Na začátku je nutné říci naprosto zásadní věc - každému vyhovuje něco jiného, každý se učí jinak a každý má své osvědčené postupy. To že já něco nejsem schopný pochopit neznamená, že Vy nebo kdokoli jiný to nepochopí. Nemluvím o obtížnosti výuky, ale o stylu učení se a o stylu vysvětlování. To si prosím zapamatujte. Jedná se o čistě subjektivní dojmy.
+---
+
+
 #} -->

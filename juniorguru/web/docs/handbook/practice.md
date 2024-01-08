@@ -1086,4 +1086,17 @@ Tady nějaký seznam, který jsem náhodně vygooglil https://github.com/kdeldyc
 ---
 
 
+--- https://discord.com/channels/769966886598737931/916339896963190785/1192738348998082611
+Pokud používáte nějakého AI asistenta při psaní kódu, tak je jistá šance, že bude méně bezpečný a zároveň budete věřit, že je bezpečnější než kdybyste AI nepoužívali https://arxiv.org/abs/2211.03622
+---
+
+
+--- https://discord.com/channels/769966886598737931/1191365076188397591/1192218179880095764
+U te diskuze ohledne AI bych vicemene souhlasil se vsemi zucastnenymi.
+Ano, jeji podstatou je efektivita. Ta ale v kazde fazi znamena neco jineho.
+Kdyz se ucim stavarinu, ochotne mi poradi, jak vypada cihla, proc malta lepi a jak tuhne beton. Odstranim zaseky, kdy nevim jak dal a zvysim efektivitu UCENI. Netroufl bych si ji ale jeste pozadat navrhnout cely dum. 
+Kdyz uz ale vim, jak se chova cihla, malta a beton, pomuze mi poskladat modulove patrove domy. Odstrani hodiny skladani a pocitani cihel a betonovych konstrukci. Zase to bude efektivita, ale uz efektivita PRACE
+---
+
+
 #} -->

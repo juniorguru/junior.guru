@@ -572,4 +572,28 @@ Tyhle věci mají pro člověka, který je nedělá už 10 let a nemá je zažit
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1075541542669922424/1190333479553077329
+Kdybych někam nastupovala teď, tak bych viděla jako ideální:
+
+**Nezkoušet rovnou samostatnost** -> odmítnout dělat úkol nového typu samostatně
+U každého typu úkolu udělat první přišedší úkol z té kategorie společně se seniorem / podívat se na splnění úkolu z té množiny někým zkušenějším [typy úkolů pro představu: kód (+ release cycle) | napojení klienta kupujícího hlavní řešení | menší udělátko pro klienta | důležité PoC]. Zkrátka: nejdřív se jen/hlavně dívej, příště ty sama.
+
+Já jsem zůstala pod bodem, kdy se dokážu efektivně učit a pohybovat a strávila jsem spoustu času základním nahazováním sebe sama, protože jsem vlastně nevěděla, kde jsem. Stala se mi bezbřehá ztracenost, lepší by bylo tápaní ve vymezeném prostoru. 
+
+Když Ti řeknou, že si jdete začutat na hřiště za školu, asi to najdeš, dorazíš ve sportovním oblečení a cestou si zvládneš najít základní pravidla fotbalu. Možná nebudeš excelovat, ale budeš platný hráč, nebudeš se cítit úplně mimo a asi Ti hra i dost dá.
+Když víš, že budeš něco dělat někde, tak je to podstatně horší (bude to návštěva divadlo, plavání, výkopová práce nebo něco jiného? s sebou oblek, plavky nebo montérky? a jak mluvit s kolemjdoucími?). Zkusíš něco vydedukovat, čímž ztratíš dost sil i času, a nakonec to stejně není ono...
+
+V aktuální situaci, kdy už je člověk "po" nebo "v", zbývá už hlavně zpětná rehabilitace: Co jsem mohla udělat lépe? Udělala jsem blbě, když...? Bohužel s pocity, které jsem si mezitím napáchala (ztraumatizování sebe sama), to už moc nehýbá.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1188227550816763925
+Zajímavý článek o tom, jak se vyrovat s propouštěním, pokud se vám přihodí.
+
+> We don’t know when a layoff will come. Most of us will experience one or more of them during our careers. We don’t have to feel like a victim if we accept that our situation can change without warning. If we think ahead, have a plan, and have people in our professional network outside of where we work to help us, we can turn a negative situation into a launching pad for doing more great work.
+
+https://www.shepherdingheart.com/blog/a-layoff-is-not-to-be-feared-it-should-be-embraced-to-do-more-great-work
+---
+
+
 #} -->

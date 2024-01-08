@@ -712,4 +712,12 @@ Do nedávna byla při programování klíčová schopnost efektivně googlit. M�
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1191365076188397591/1192218179880095764
+U te diskuze ohledne AI bych vicemene souhlasil se vsemi zucastnenymi.
+Ano, jeji podstatou je efektivita. Ta ale v kazde fazi znamena neco jineho.
+Kdyz se ucim stavarinu, ochotne mi poradi, jak vypada cihla, proc malta lepi a jak tuhne beton. Odstranim zaseky, kdy nevim jak dal a zvysim efektivitu UCENI. Netroufl bych si ji ale jeste pozadat navrhnout cely dum. 
+Kdyz uz ale vim, jak se chova cihla, malta a beton, pomuze mi poskladat modulove patrove domy. Odstrani hodiny skladani a pocitani cihel a betonovych konstrukci. Zase to bude efektivita, ale uz efektivita PRACE
+---
+
+
 #} -->
