@@ -139,7 +139,7 @@ class ClubClient(discord.Client):
         return self.get_guild(CLUB_GUILD)
 
 
-def emoji_name(reaction_emoji: discord.Emoji | discord.PartialEmoji) -> str:
+def emoji_name(reaction_emoji: discord.Emoji | discord.PartialEmoji | str) -> str:
     try:
         return reaction_emoji.name.lower()
     except AttributeError:
