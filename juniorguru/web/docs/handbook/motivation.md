@@ -181,7 +181,7 @@ Podle ČSÚ je v Česku zatím žen v IT stále méně než v Turecku, ale na zl
 
 Když se řekne „ajťák“, lidé si představí brýlatého mladíka s ponožkami v sandálech nebo nějakého hackera v kapuci, který sedí ve sklepě, kde pozoruje změť písmenek. Seriály jako britský [IT Crowd](https://www.csfd.cz/film/224203-ajtaci/) nebo americká [Teorie velkého třesku](https://www.csfd.cz/film/234260-teorie-velkeho-tresku/) stále posilují různé stereotypy, ale i kdybychom jim chtěli v něčem dát za pravdu, je dobré si uvědomit, že jejich první díly vznikly před {{ now.year - 2006 }} lety. Ačkoliv si toho někteří lidé stále ještě nevšimli, IT už dávno nevypadá jako na známé [fotce „brutální pařby informatiků“](https://www.forum24.cz/jak-dopadli-chlapci-z-brutalni-parby-informatiku-2/).
 
-A nejde jen o to, že si ti kluci z fotky dnes přijdou na hezké peníze a pracují v prestižních firmách, ani o to, že už je v oboru mnohem více žen. Technologie možná dříve patřily k obskurním zálibám, dnes už však prostupují život každého z nás. Spolu s tím je IT přístupnější a otevřenější pestré škále osobností. Pro účely rozboření zažitých představ asi postačí [módní stylistka April Speight](https://www.vogueandcode.com/) nebo [hardwarová kutilka Naomi Wu](https://www.youtube.com/c/SexyCyborg).
+A nejde jen o to, že si ti kluci z fotky dnes přijdou na hezké peníze a pracují v prestižních firmách, ani o to, že už je v oboru mnohem více žen. Technologie možná dříve patřily k obskurním zálibám, dnes už však prostupují život každého z nás. Spolu s tím je IT přístupnější a otevřenější pestré škále osobností. Pro účely rozboření zažitých představ asi postačí [módní stylistka April Speight](https://learn.microsoft.com/en-us/shows/one-dev-minute/what-is-vogue-and-code--one-dev-question) nebo [hardwarová kutilka Naomi Wu](https://www.youtube.com/c/SexyCyborg).
 
 Kromě samotného programování poskytuje IT a na něj napojený internetový průmysl i celou řadu dalších pozic, které ani nemusí být nutně technické: internetový marketing, psaní reklamních textů, design aplikací, psaní technické dokumentace, manažerské pozice, správa počítačové sítě a mnohé další.
 
@@ -715,7 +715,7 @@ Do nedávna byla při programování klíčová schopnost efektivně googlit. M�
 --- https://discord.com/channels/769966886598737931/1191365076188397591/1192218179880095764
 U te diskuze ohledne AI bych vicemene souhlasil se vsemi zucastnenymi.
 Ano, jeji podstatou je efektivita. Ta ale v kazde fazi znamena neco jineho.
-Kdyz se ucim stavarinu, ochotne mi poradi, jak vypada cihla, proc malta lepi a jak tuhne beton. Odstranim zaseky, kdy nevim jak dal a zvysim efektivitu UCENI. Netroufl bych si ji ale jeste pozadat navrhnout cely dum. 
+Kdyz se ucim stavarinu, ochotne mi poradi, jak vypada cihla, proc malta lepi a jak tuhne beton. Odstranim zaseky, kdy nevim jak dal a zvysim efektivitu UCENI. Netroufl bych si ji ale jeste pozadat navrhnout cely dum.
 Kdyz uz ale vim, jak se chova cihla, malta a beton, pomuze mi poskladat modulove patrove domy. Odstrani hodiny skladani a pocitani cihel a betonovych konstrukci. Zase to bude efektivita, ale uz efektivita PRACE
 ---
 
