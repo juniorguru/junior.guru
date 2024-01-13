@@ -13803,3 +13803,16 @@
 {"account_id": 5158229, "f": false, "happened_at": "2023-12-11T19:02:54", "subscription_interval": "month", "type": "order"}
 {"account_id": 5204106, "f": true, "happened_at": "2023-12-11T21:07:11", "subscription_interval": "month", "type": "order"}
 {"account_id": 5204106, "f": true, "happened_at": "2023-12-11T21:07:11", "subscription_interval": "month", "type": "trial_start"}
+{"account_id": 4533433, "f": false, "happened_at": "2023-12-12T11:52:14", "subscription_interval": "month", "type": "order"}
+{"account_id": 4637319, "f": true, "happened_at": "2023-12-12T13:03:10", "subscription_interval": "month", "type": "order"}
+{"account_id": 5160653, "f": true, "happened_at": "2023-12-12T13:15:23", "subscription_interval": "month", "type": "deactivation"}
+{"account_id": 5160653, "f": true, "happened_at": "2023-12-12T13:15:23", "subscription_interval": "month", "type": "trial_end"}
+{"account_id": 5205276, "f": true, "happened_at": "2023-12-12T13:18:43", "subscription_interval": "month", "type": "order"}
+{"account_id": 5205276, "f": true, "happened_at": "2023-12-12T13:18:43", "subscription_interval": "month", "type": "trial_start"}
+{"account_id": 5160866, "f": false, "happened_at": "2023-12-12T14:40:56", "subscription_interval": "month", "type": "deactivation"}
+{"account_id": 5160866, "f": false, "happened_at": "2023-12-12T14:40:56", "subscription_interval": "month", "type": "trial_end"}
+{"account_id": 4283361, "f": false, "happened_at": "2023-12-12T15:43:21", "subscription_interval": "month", "type": "deactivation"}
+{"account_id": 5205623, "f": true, "happened_at": "2023-12-12T16:38:08", "subscription_interval": "month", "type": "order"}
+{"account_id": 5205623, "f": true, "happened_at": "2023-12-12T16:38:08", "subscription_interval": "month", "type": "trial_start"}
+{"account_id": 5161679, "f": false, "happened_at": "2023-12-12T17:09:21", "subscription_interval": "month", "type": "trial_end"}
+{"account_id": 4066770, "f": false, "happened_at": "2023-12-12T20:32:06", "subscription_interval": "month", "type": "order"}
