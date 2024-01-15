@@ -59,7 +59,7 @@ async def discord_task(client: ClubClient, force_since: date):
             f"Message #{n}: {message.upvotes_count} votes for {message.author.display_name} in #{message.channel_name}, {message.url}"
         )
     messages_desc = (
-        "Pokud je něco zajímavé, nebo ti to pomohlo, reaguj palecem 👍, srdíčkem ❤️, apod. "
+        "Pokud je něco zajímavé, nebo ti to pomohlo, reaguj palcem 👍, srdíčkem ❤️, apod. "
         "Oceníš autory a pomůžeš tomu, aby se příspěvek objevil i tady.\n\n"
     )
     messages_desc += "\n\n".join(format_message(message) for message in messages)
