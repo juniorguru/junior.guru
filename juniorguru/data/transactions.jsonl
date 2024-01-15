@@ -710,3 +710,5 @@
 {"_id": "26350713126", "amount": -3852, "category": "tax", "happened_on": "2024-01-15"}
 {"_id": "26350713127", "amount": -2968, "category": "tax", "happened_on": "2024-01-15"}
 {"_id": "26350896111", "amount": 5854, "category": "memberships", "happened_on": "2024-01-15"}
+{"_id": "26351933461", "amount": -47, "category": "tax", "happened_on": "2024-01-15"}
+{"_id": "26351935686", "amount": -3600, "category": "accounting", "happened_on": "2024-01-15"}
