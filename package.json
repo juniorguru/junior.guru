@@ -17,7 +17,7 @@
     "broken-link-checker-local": "0.2.1",
     "esbuild": "0.19.5",
     "esbuild-sass-plugin": "2.16.1",
-    "hyphen": "1.9.1",
+    "hyphen": "1.10.4",
     "stylelint": "16.1.0",
     "stylelint-config-twbs-bootstrap": "13.0.0"
   }
