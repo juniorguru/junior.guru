@@ -67,7 +67,7 @@ def main(history_path: Path, ecomail_api_key: str, ecomail_list_id: int):
     scrapers = {
         "youtube": scrape_youtube,
         "linkedin": scrape_linkedin,
-        "linkedin_personal": scrape_linkedin_personal,
+        # "linkedin_personal": scrape_linkedin_personal,   # they removed the follower count
         "mastodon": scrape_mastodon,
     }
     for name, scrape in scrapers.items():
