@@ -714,3 +714,5 @@
 {"_id": "26351935686", "amount": -3600, "category": "accounting", "happened_on": "2024-01-15"}
 {"_id": "26355057928", "amount": 6, "category": "donations", "happened_on": "2024-01-17"}
 {"_id": "26355485177", "amount": -157, "category": "miscellaneous", "happened_on": "2024-01-17"}
+{"_id": "26359877191", "amount": 10501, "category": "memberships", "happened_on": "2024-01-22"}
+{"_id": "26359877235", "amount": 2046, "category": "donations", "happened_on": "2024-01-22"}
