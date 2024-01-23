@@ -113,7 +113,7 @@ jobs:
       - run:
           name: Sync data
           command: |
-            poetry run jg sync --allow-mutations ci
+            poetry run jg sync $(if [[ "$CIRCLE_BRANCH" == "main" ]]; then echo "--allow-mutations"; else echo ""; fi) ci
       - run:
           name: Prepare changed files for persisting
           command: poetry run jg data persist $CIRCLE_NODE_INDEX --move
@@ -154,7 +154,7 @@ jobs:
       - run:
           name: Sync data
           command: |
-            poetry run jg sync --allow-mutations ci
+            poetry run jg sync $(if [[ "$CIRCLE_BRANCH" == "main" ]]; then echo "--allow-mutations"; else echo ""; fi) ci
       - run:
           name: Prepare changed files for persisting
           command: poetry run jg data persist $CIRCLE_NODE_INDEX --move
