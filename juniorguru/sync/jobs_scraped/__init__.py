@@ -21,6 +21,7 @@ ACTORS = [
 PIPELINES = [
     "juniorguru.sync.jobs_scraped.pipelines.blocklist",
     "juniorguru.sync.jobs_scraped.pipelines.boards_ids",
+    "juniorguru.sync.jobs_scraped.pipelines.llm_opinion",
     "juniorguru.sync.jobs_scraped.pipelines.description_parser",
     "juniorguru.sync.jobs_scraped.pipelines.features_parser",
     "juniorguru.sync.jobs_scraped.pipelines.gender_remover",

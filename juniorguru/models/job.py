@@ -132,8 +132,8 @@ class ScrapedJob(BaseModel):
 
     description_html = TextField()
     features = JSONField(default=list)
+    llm_opinion = JSONField(null=True)
     juniority_re_score = IntegerField(null=True)
-    juniority_ml_opinion = BooleanField(null=True)
     juniority_votes_score = IntegerField(default=0)
     juniority_votes_count = IntegerField(default=0)
 
