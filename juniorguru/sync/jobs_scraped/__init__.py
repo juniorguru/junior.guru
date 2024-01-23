@@ -5,7 +5,7 @@ from pprint import pformat
 
 from peewee import IntegrityError
 
-from juniorguru.cli.sync import main as cli
+from juniorguru.cli.sync import Cache, main as cli
 from juniorguru.lib import apify, loggers
 from juniorguru.models.base import db
 from juniorguru.models.job import ScrapedJob
@@ -39,12 +39,15 @@ class DropItem(Exception):
 
 
 @cli.sync_command()
+@cli.pass_cache
 @db.connection_context()
-def main():
-    logger.debug(f"Actors: {pformat(ACTORS)}")
-    items = itertools.chain.from_iterable(apify.iter_data(actor) for actor in ACTORS)
+def main(cache: Cache):
+    logger.info(f"Actors:\n{pformat(ACTORS)}")
+    items = itertools.chain.from_iterable(
+        apify.iter_data(actor, cache=cache) for actor in ACTORS
+    )
 
-    logger.debug(f"Pipelines: {pformat(PIPELINES)}")
+    logger.info(f"Pipelines:\n{pformat(PIPELINES)}")
     pipelines = [
         (
             pipeline_name.split(".")[-1],
@@ -53,6 +56,11 @@ def main():
         for pipeline_name in PIPELINES
     ]
 
+    logger.info("Setting up db table")
+    ScrapedJob.drop_table()
+    ScrapedJob.create_table()
+
+    logger.info("Processing items")
     stats = Counter()
     for item in logger.progress(items):
         logger.debug(f"Item {item['url']}")
@@ -71,17 +79,14 @@ def main():
         else:
             stats["items"] += 1
 
+        logger.debug(f"Saving {item['url']}")
         job = ScrapedJob.from_item(item)
         try:
-            logger.debug(f"Saving {item['url']} as {job!r}")
             job.save()
+            logger.debug(f"Created {item['url']} as {job!r}")
         except IntegrityError:
-            logger.debug(f"Merging {item['url']} to {job!r}")
             job = ScrapedJob.get_by_item(item)
             job.merge_item(item)
             job.save()
-    logger.info(
-        f"Stats: {stats['items']} items, "
-        f"{stats['drops']} drops, "
-        f"{stats['items'] + stats['drops']} total"
-    )
+            logger.debug(f"Merged {item['url']} to {job!r}")
+    logger.info(f"Stats: {stats['items']} items, {stats['drops']} drops")
