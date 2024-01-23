@@ -7,10 +7,9 @@ from openai import OpenAI
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
 SYSTEM_PROMPT = """
-You are an assistant for classifying whether given job postings are relevant for
-entry level candidates who are looking for a job in the field of software engineering or software testing.
+You are an assistant for classifying job postings in order to simplify job search
+for entry level candidates who are looking for software engineering or software testing jobs.
 Consider people who have just finished a coding bootcamp or a university degree in computer science.
-
 User can provide a job posting and you reply with a valid JSON object, which contains the following keys:
 
 - `is_entry_level` - boolean, whether the job posting is relevant to entry level candidates
