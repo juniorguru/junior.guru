@@ -19,6 +19,8 @@ def iter_data(actor_name: str, token=None) -> Generator[dict, None, None]:
     actor = client.actor(actor_name)
     last_run = actor.last_run(status=ActorJobStatus.SUCCEEDED)
     run_info = last_run.get()
+    if run_info is None:
+        raise RuntimeError(f"No successful runs of {actor_name!r} found")
     run_url = (
         f"https://console.apify.com/actors/{run_info['actId']}/runs/{run_info['id']}"
     )

@@ -163,6 +163,11 @@ class ScrapedJob(BaseModel):
             for field_name in cls._meta.fields.keys()
             if field_name in item
         }
+
+        # FIXME https://github.com/juniorguru/plucker/issues/12
+        data["first_seen_on"] = date.fromisoformat(data["first_seen_on"])
+        data["last_seen_on"] = data["first_seen_on"]
+
         return cls(**data)
 
     def to_item(self):
@@ -176,7 +181,9 @@ class ScrapedJob(BaseModel):
                 setattr(self, field_name, merge_method(item))
             except AttributeError:
                 # overwrite with newer data
-                if item["last_seen_on"] >= self.last_seen_on:
+
+                # FIXME https://github.com/juniorguru/plucker/issues/12
+                if date.fromisoformat(item["first_seen_on"]) >= self.last_seen_on:
                     old_value = getattr(self, field_name)
                     new_value = item.get(field_name, old_value)
                     setattr(self, field_name, new_value)
@@ -191,10 +198,12 @@ class ScrapedJob(BaseModel):
         return list(set(self.source_urls + item.get("source_urls", [])))
 
     def _merge_first_seen_on(self, item):
-        return min(self.first_seen_on, item["first_seen_on"])
+        # FIXME https://github.com/juniorguru/plucker/issues/12
+        return min(self.first_seen_on, date.fromisoformat(item["first_seen_on"]))
 
     def _merge_last_seen_on(self, item):
-        return max(self.last_seen_on, item["last_seen_on"])
+        # FIXME https://github.com/juniorguru/plucker/issues/12
+        return max(self.last_seen_on, date.fromisoformat(item["first_seen_on"]))
 
     def _merge_items_merged_count(self, item):
         return self.items_merged_count + 1
