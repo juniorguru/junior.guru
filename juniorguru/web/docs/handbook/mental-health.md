@@ -273,4 +273,9 @@ Dobrý úvod do terapie https://www.irozhlas.cz/zpravy-domov/dostupnost-psychote
 ---
 
 
+--- https://discord.com/channels/769966886598737931/864434067968360459/1197540785156018276
+trocha "motivace" https://mastodon.social/@mhoye/111420190239350648
+---
+
+
 #} -->

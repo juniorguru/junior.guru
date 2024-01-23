@@ -1099,4 +1099,10 @@ Kdyz uz ale vim, jak se chova cihla, malta a beton, pomuze mi poskladat modulove
 ---
 
 
+--- https://discord.com/channels/769966886598737931/789087476072710174/1194549501982163057
+Jen tak na okraj kdo je STUDENT? Nebo dokonce i učitel, tak má COPILOT z GITHUBU ZADARMO!!! Šiřte to dál.
+https://github.blog/2022-09-08-github-copilot-now-available-for-teachers/
+---
+
+
 #} -->

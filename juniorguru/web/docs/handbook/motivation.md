@@ -720,4 +720,17 @@ Kdyz uz ale vim, jak se chova cihla, malta a beton, pomuze mi poskladat modulove
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1194368531433783407/1194566730417197106
+Taky je rozdíl v tom nárůstu, pokladní sice dostane třeba 35, za rok za dva třeba i 40, ale výš už se nedostane, ikdyž tam bude dalších 5 let. Kdežto u programování, pokud budeš šikovný, tak se za 5 let nebo dřív můžeš dostat i na dvojnásobek. 
+
+Manžel zrovna půl roku zpátky hledal práci jako junior v Brně a většinou nabízeli něco mezi 30-40k, s tím, že třeba po zkušebce mu přidají +5k. Nemá VŠ, maturitu tedy ano, ale jako truhlář, ale zase předtím pracoval jako IT administrátor a tam se trochu setkával s Pythonem a C#.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1194368531433783407/1194563464262340689
+Pokladní v Lidlu je produktivní (vydělává peníze) už druhý den a nejsou k tomu potřeba stovky hodin mentoringu a dohledu od kolegů s násobně vyšší mzdou.
+Dá se nastoupit jako junior klidně i za kilo. S vystudovanou VŠ. Je to jen o tom, jak velká vypadá pravděpodobnost, že a jak brzy se z člověka stane medior a senior.
+---
+
+
 #} -->

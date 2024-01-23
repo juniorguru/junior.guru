@@ -932,4 +932,38 @@ Na začátku je nutné říci naprosto zásadní věc - každému vyhovuje něco
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1173510753106542652/1191702477041586257
+Ahoj, kurz jede až do konce února, každopádně rozladění pokračuje.... Učí nás sice lidi z praxe, ale... nezaručuje to, že jsou dobří lektoři. Vlastně zatím až na jednu výjimku nejsou. Celý ten kurz nemá žádnou vizi nebo směr (to vnímám jako největší problém), každý učí podle sebe a ze své praxe a dost se i liší v tom co nám o té praxi říkají (což je jasný, každý má jinou, ale pak je to dost matoucí - víc jsem se dozvěděla tady a z různých podcastů). Obtížnost závěrečného projektu - zatím nevím jaký bude zadání, ale to co po nás opravdu pro průchod dál vyžadují by zvládla i cvičená opice (zatím máme za sebou dva testy).   Nikdo nic (krom těch testů) nekontroluje a nikdo po nás nic nechce, stačí bejt připojenej a mít mute 😦  Bohužel být v hodinách aktivní vede často jen k lepšímu pocitu lektora...  Měli jsme lektora, kterej toho věděl snad míň něž já, jen měl štěstí, že se ve správný čas někde upíchl. (Obecně tak často působí a jedou oblíbený rady, že tester je vstup do IT, že práci je easy najít a kdykoliv změnit aj...) A dalšího lektora teď před vánocema na základy programování, kde se pro změnu v podstatě nikdo ze studentů nechytal - jen ti, kdo už nějakou chvíli programují.  Partner jedné ze studentek  nám dával doučování - a vysvětlil nám to asi tak tisíckrát líp a fakt od základů. Jsem vážně hodně zklamaná, byla jsem připravená tomu kurzu věnovat hodně času a energie, těšila jsem se na to, jak ten kurz bude náročný, ale jak nás tím provedou a bude se o co a koho opřít.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1173510753106542652/1191714881506902107
+Já chci zítra veřejně vyslovit ještě jednu myšlenku, co se týká lektorů. Zatím vymýšlím formu, jak to říct, aby to neznělo moc demagogicky nebo namyšleně. Pointa: když se člověk zamyslí, že by tedy chtěl mít kvalitního lektora a IT experta v jednom, pak moc nelze očekávat, že daný člověk chce pracovat po nocích (večerní kurzy) či o víkendech. Zároveň jsou tyhle kurzy většinou dlouhodobé a tak mi z toho vyplývá, že téměř nikdo si nechce na několik týdnů či měsíců zacpat všechny víkendy, tudíž se dá očekávat, že to bude školit více různých lidí a budou se střídat. 
+
+Výjimky se samozřejmě najdou, já k nim nepatřím. Nejraději bych školila v normální pracovní době. PS: Mám 4 hodinové bloky kurzu.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1184241879223640198/1184241879223640198
+https://www.boot.dev/
+
+Teprve budu zkoušet, ale na první pohled mě to velmi zaujalo. Tak si rovnou zakládám vlákno <:rollsafe:961194446794420284>  Hledal jsem nějakou learning platformu se zaměřením na backend, která by člověka nutila psát hodně kódu a vypracovávat projekty. Nějakou formu gamifikace beru jako bonus 🎲
+---
+
+
+--- https://discord.com/channels/769966886598737931/1190965475698548757/1191077637829963786
+<@966042744239849552> uvědom si, že od ÚP máš nárok na těch 50000 Kč jednou za 3 roky. Můžeš to využít i pro více kurzů, ale součet proplacených peněz nesmí překročit těch 50.
+Takže bys pořád měl zvažovat co za to dostaneš.
+
+A taky si uvědom, že kurz musíš „úspěšně“ dokončit, pokud ho začneš jinak si těch 50000 budeš muset zaplatit ze svého.
+
+(Podmínky: 80% docházka na ty online lekce, případně další podmínky, které má Skillmea aby ti uznala, žes to absolvoval. Ale osobně tipuju, že žádné další nebudou.)
+---
+
+
+--- https://discord.com/channels/769966886598737931/1172478526134431808/1193184996295458836
+Vypadá to, že s tím už maj nějaký zkušenosti: https://coderslab.cz/cz/blog/dotace-z-uradu-prace-krok-za-krokem
+---
+
+
 #} -->

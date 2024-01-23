@@ -348,4 +348,9 @@ Zajímavý článek o tom, jak použít GitHub API a najít zajímavé nové pro
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1196419372537876502
+Často tu někdo řeší/řešil **výběr/vypracování prvního projektu**. Můžu doporučit tento článek: https://blog.boot.dev/education/building-your-first-coding-project/ Jsou tam samozřejmě zmíněně věci týkající se přímo dané vzdělávací platformy a zaměření (backend), ale i tak si myslím, že jde o dobré čtení 🙂
+---
+
+
 #} -->

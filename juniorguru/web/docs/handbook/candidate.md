@@ -1334,4 +1334,32 @@ Tak jsem ráda, že jsem napsala o relevantnější zpětnou vazbu a dostal se m
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1194368531433783407/1194921225189859368
+Ahoj, tak za mne rikam NE NE NE NE a jeste milionkrat NE!!!!
+
+Pripad Tatanka ma tu spojitost, ze mel take kamarada a (spolu)majitele firmy a ze to samo o sobe NEZNAMENA, ze to vzdy musi dobre dopadnout.
+Nechci rozebirat davno uzavrene a zhojene historie, takze jenom vecne a konstruktivne:
+
+I kdyz je kamarad, do tve hlavy nevidi, a tvoje ucebni/pracovni schopnosti znat nemusi.
+To, co ti nabizi je "postav mi zadarmo stodolu, a kdyz se to dobre naucis (o cemz rozhodnu ja a ty mas malou sanci to ovlivnit), zaplatim ti, abys mi postavil i barak".
+Kazdy kope za sebe, coz je uplne prirozena lidska vlastnost.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1189829769320202260/1189841216154636399
+Zkusím přirovnání.
+
+Chceš být truhlářem a sám ses ve své skromně vybavené domácí dílničce naučil základy: jaké jsou druhy dřeva, pracovat s pár základními ručními nástroji a umíš udělat skříňku a stůl a možná židli a to jen jedním způsobem a celkem si udělal jeden kus od každého.
+
+- přesvědčíš mistra, že tě to baví, že se to chceš učit a že budeš na sobě makat, takže tě vezme do učení
+- máš pořád co dělat, protože mistr má dost zakázek
+- mistr ohlídá, abys to nedělal špatně a klienti nedostávali šunty
+- když něco uřízneš moc krátký, tak tě sice mistr nepochválí, ale v těch tunách dřeva, které zpracuje každý měsíc, se to ztratí
+- okoukáš od mistra jak vůbec dělat komplexní výrobky a používat při tom nářadí, které by sis ani nemohl sám dovolit
+- zjistíš, co všechno vlastně ve velké truhlárně dělají, co všechno se na takové úrovni v praxi řeší
+- hlavně okoukáš od mistra i jak shání zakázky, jak komunikuje s klienty, jak řeší, když jsou nespokojení, jak stanovuje ceny
+- po nějaké době, kdy se už nemáš co naučit, se uděláš pro sebe a klidně to můžeš začít zkoušet dělat jinak, ale budeš mít ten základ
+---
+
+
 #} -->

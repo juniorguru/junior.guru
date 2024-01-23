@@ -918,4 +918,16 @@ https://www.careerdesigner.cz/penize
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1194368531433783407/1194921225189859368
+Ahoj, tak za mne rikam NE NE NE NE a jeste milionkrat NE!!!!
+
+Pripad Tatanka ma tu spojitost, ze mel take kamarada a (spolu)majitele firmy a ze to samo o sobe NEZNAMENA, ze to vzdy musi dobre dopadnout.
+Nechci rozebirat davno uzavrene a zhojene historie, takze jenom vecne a konstruktivne:
+
+I kdyz je kamarad, do tve hlavy nevidi, a tvoje ucebni/pracovni schopnosti znat nemusi.
+To, co ti nabizi je "postav mi zadarmo stodolu, a kdyz se to dobre naucis (o cemz rozhodnu ja a ty mas malou sanci to ovlivnit), zaplatim ti, abys mi postavil i barak".
+Kazdy kope za sebe, coz je uplne prirozena lidska vlastnost.
+---
+
+
 #} -->
