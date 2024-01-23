@@ -1,12 +1,12 @@
-from collections import Counter
 import importlib
 import itertools
+from collections import Counter
 from pprint import pformat
 
 from peewee import IntegrityError
 
-from juniorguru.lib import apify, loggers
 from juniorguru.cli.sync import main as cli
+from juniorguru.lib import apify, loggers
 from juniorguru.models.base import db
 from juniorguru.models.job import ScrapedJob
 
