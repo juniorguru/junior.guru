@@ -13,7 +13,6 @@ from juniorguru.sync.jobs_scraped.processing import (
     postprocess_jobs,
     process_paths,
 )
-from juniorguru.sync.scrape_jobs.settings import FEEDS_DIR
 
 
 PREPROCESS_PIPELINES = [
@@ -39,25 +38,26 @@ logger = loggers.from_path(__file__)
 @click.option("--reuse-db/--no-reuse-db", default=False)
 @click.option("--latest-seen-on", default=None, type=date.fromisoformat)
 def main(reuse_db, latest_seen_on):
-    paths = list(Path(FEEDS_DIR).glob("**/*.jsonl.gz"))
-    logger.info(f"Found {len(paths)} .json.gz paths")
+    raise NotImplementedError()
+    # paths = list(Path(FEEDS_DIR).glob("**/*.jsonl.gz"))
+    # logger.info(f"Found {len(paths)} .json.gz paths")
 
-    with db.connection_context():
-        if reuse_db:
-            logger.warning("Reusing of existing jobs database is enabled!")
-            try:
-                latest_seen_on = ScrapedJob.latest_seen_on()
-                logger.info(f"Last jobs seen on: {latest_seen_on}")
-            except OperationalError:
-                logger.warning("Jobs database not operational!")
+    # with db.connection_context():
+    #     if reuse_db:
+    #         logger.warning("Reusing of existing jobs database is enabled!")
+    #         try:
+    #             latest_seen_on = ScrapedJob.latest_seen_on()
+    #             logger.info(f"Last jobs seen on: {latest_seen_on}")
+    #         except OperationalError:
+    #             logger.warning("Jobs database not operational!")
 
-        if latest_seen_on:
-            paths = filter_relevant_paths(paths, latest_seen_on)
-            logger.info(f"Keeping {len(paths)} relevant .json.gz paths")
-        else:
-            logger.info("Not reusing jobs database")
-            ScrapedJob.drop_table()
-            ScrapedJob.create_table()
+    #     if latest_seen_on:
+    #         paths = filter_relevant_paths(paths, latest_seen_on)
+    #         logger.info(f"Keeping {len(paths)} relevant .json.gz paths")
+    #     else:
+    #         logger.info("Not reusing jobs database")
+    #         ScrapedJob.drop_table()
+    #         ScrapedJob.create_table()
 
-    process_paths(paths, PREPROCESS_PIPELINES)
-    postprocess_jobs(POSTPROCESS_PIPELINES)
+    # process_paths(paths, PREPROCESS_PIPELINES)
+    # postprocess_jobs(POSTPROCESS_PIPELINES)

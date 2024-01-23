@@ -71,8 +71,6 @@ jobs:
       - restore_cache:
           key: sync-v1-{{ .Branch }}-{{ checksum ".today" }}
       - restore_cache:
-          key: jobs-v2-{{ .Branch }}
-      - restore_cache:
           key: images-v1-{{ .Branch }}
       - run:
           name: Snapshot files
@@ -177,11 +175,6 @@ jobs:
           key: sync-v1-{{ .Branch }}-{{ checksum ".today" }}
           paths:
             - .sync_cache
-            - .scrapy
-      - save_cache:
-          key: jobs-v2-{{ .Branch }}-{{ checksum ".today" }}
-          paths:
-            - juniorguru/data/jobs
       - save_cache:
           key: images-v1-{{ .Branch }}-{{ .Revision }}
           paths:
