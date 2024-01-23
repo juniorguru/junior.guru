@@ -1,6 +1,6 @@
+import copy
 import os
 from typing import Generator
-import copy
 
 from apify_client import ApifyClient
 from apify_shared.consts import ActorJobStatus
