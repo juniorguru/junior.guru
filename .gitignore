@@ -82,7 +82,6 @@ google_service_account.json
 # Synced data
 /juniorguru/data/*.db
 /juniorguru/data/*.db-*
-/juniorguru/data/jobs/
 /juniorguru/images/avatars-club/*.png
 /juniorguru/images/logos-jobs/*.png
 /juniorguru/images/posters-events/*.png

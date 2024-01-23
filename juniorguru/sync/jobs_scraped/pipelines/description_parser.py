@@ -32,7 +32,7 @@ def process(item):
         # TODO item['description_words'] = split_words(description_text, job['lang'])
         return item
     except Exception:
-        logger.exception(f"Unable to extract text from item:\n{pformat(item)}")
+        logger.error(f"Unable to extract text from item:\n{pformat(item)}")
         raise
 
 

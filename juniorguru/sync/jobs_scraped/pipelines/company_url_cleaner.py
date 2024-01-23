@@ -10,7 +10,7 @@ COMPANY_URL_RES = [
 
 
 def process(item):
-    if item["company_url"]:
+    if item.get("company_url"):
         for url_re in COMPANY_URL_RES:
             if url_re.search(item["company_url"]):
                 item["company_url"] = None

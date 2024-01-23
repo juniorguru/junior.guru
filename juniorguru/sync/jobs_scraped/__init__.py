@@ -1,27 +1,26 @@
-from datetime import date
-from pathlib import Path
+import importlib
+import itertools
+from collections import Counter
+from pprint import pformat
 
-import click
-from peewee import OperationalError
+from peewee import IntegrityError
 
-from juniorguru.cli.sync import main as cli
-from juniorguru.lib import loggers
+from juniorguru.cli.sync import Cache, main as cli
+from juniorguru.lib import apify, loggers
 from juniorguru.models.base import db
 from juniorguru.models.job import ScrapedJob
-from juniorguru.sync.jobs_scraped.processing import (
-    filter_relevant_paths,
-    postprocess_jobs,
-    process_paths,
-)
-from juniorguru.sync.scrape_jobs.settings import FEEDS_DIR
 
 
-PREPROCESS_PIPELINES = [
-    "juniorguru.sync.jobs_scraped.pipelines.blocklist",
-    "juniorguru.sync.jobs_scraped.pipelines.boards_ids",
+ACTORS = [
+    "honzajavorek/jobs-jobscz",
+    "honzajavorek/jobs-linkedin",
+    "honzajavorek/jobs-startupjobs",
+    "honzajavorek/jobs-weworkremotely",
 ]
 
-POSTPROCESS_PIPELINES = [
+PIPELINES = [
+    "juniorguru.sync.jobs_scraped.pipelines.blocklist",
+    "juniorguru.sync.jobs_scraped.pipelines.boards_ids",
     "juniorguru.sync.jobs_scraped.pipelines.description_parser",
     "juniorguru.sync.jobs_scraped.pipelines.features_parser",
     "juniorguru.sync.jobs_scraped.pipelines.gender_remover",
@@ -35,29 +34,59 @@ POSTPROCESS_PIPELINES = [
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=["scrape-jobs"])
-@click.option("--reuse-db/--no-reuse-db", default=False)
-@click.option("--latest-seen-on", default=None, type=date.fromisoformat)
-def main(reuse_db, latest_seen_on):
-    paths = list(Path(FEEDS_DIR).glob("**/*.jsonl.gz"))
-    logger.info(f"Found {len(paths)} .json.gz paths")
+class DropItem(Exception):
+    pass
 
-    with db.connection_context():
-        if reuse_db:
-            logger.warning("Reusing of existing jobs database is enabled!")
-            try:
-                latest_seen_on = ScrapedJob.latest_seen_on()
-                logger.info(f"Last jobs seen on: {latest_seen_on}")
-            except OperationalError:
-                logger.warning("Jobs database not operational!")
 
-        if latest_seen_on:
-            paths = filter_relevant_paths(paths, latest_seen_on)
-            logger.info(f"Keeping {len(paths)} relevant .json.gz paths")
+@cli.sync_command()
+@cli.pass_cache
+@db.connection_context()
+def main(cache: Cache):
+    logger.info(f"Actors:\n{pformat(ACTORS)}")
+    items = itertools.chain.from_iterable(
+        apify.iter_data(actor, cache=cache) for actor in ACTORS
+    )
+
+    logger.info(f"Pipelines:\n{pformat(PIPELINES)}")
+    pipelines = [
+        (
+            pipeline_name.split(".")[-1],
+            importlib.import_module(pipeline_name).process,
+        )
+        for pipeline_name in PIPELINES
+    ]
+
+    logger.info("Setting up db table")
+    ScrapedJob.drop_table()
+    ScrapedJob.create_table()
+
+    logger.info("Processing items")
+    stats = Counter()
+    for item in logger.progress(items):
+        logger.debug(f"Item {item['url']}")
+        try:
+            for pipeline_name, pipeline in pipelines:
+                try:
+                    item = pipeline(item)
+                except DropItem as e:
+                    logger[pipeline_name].debug(f"Dropping: {e}\n{pformat(item)}")
+                    raise
+                except Exception:
+                    logger.error(f"Pipeline {pipeline_name!r} failed:\n{pformat(item)}")
+                    raise
+        except DropItem:
+            stats["drops"] += 1
         else:
-            logger.info("Not reusing jobs database")
-            ScrapedJob.drop_table()
-            ScrapedJob.create_table()
+            stats["items"] += 1
 
-    process_paths(paths, PREPROCESS_PIPELINES)
-    postprocess_jobs(POSTPROCESS_PIPELINES)
+        logger.debug(f"Saving {item['url']}")
+        job = ScrapedJob.from_item(item)
+        try:
+            job.save()
+            logger.debug(f"Created {item['url']} as {job!r}")
+        except IntegrityError:
+            job = ScrapedJob.get_by_item(item)
+            job.merge_item(item)
+            job.save()
+            logger.debug(f"Merged {item['url']} to {job!r}")
+    logger.info(f"Stats: {stats['items']} items, {stats['drops']} drops")

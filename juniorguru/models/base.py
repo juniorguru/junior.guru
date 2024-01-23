@@ -5,7 +5,6 @@ from collections.abc import Set
 from functools import wraps
 from pathlib import Path
 
-import scrapy
 from czech_sort import bytes_key as czech_sort_key
 from peewee import (
     Check,
@@ -69,8 +68,6 @@ class JSONField(BaseJSONField):
 
 def json_dumps(value):
     def default(o):
-        if isinstance(o, scrapy.Item):
-            return dict(o)
         if isinstance(o, Set):
             return list(o)
         try:

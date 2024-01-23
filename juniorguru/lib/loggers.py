@@ -30,6 +30,10 @@ MUTED_LOGGERS = [
 
 
 class Logger(logging.Logger):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.configured = False
+
     def __getitem__(self, name) -> logging.Logger:
         return self.getChild(str(name))
 
@@ -65,6 +69,8 @@ def _configure():
     # inherit logger configuration and this function will run again.
     global_state.set("log_level", level)
     global_state.set("log_timestamp", "true" if timestamp else "false")
+
+    logging.root.configured = True
 
 
 def reconfigure_level(level: str):
@@ -127,5 +133,5 @@ def from_path(path, cwd=None) -> Logger:
     return get(name)
 
 
-if not logging.root.hasHandlers():
+if not getattr(logging.root, "configured", False):
     _configure()
