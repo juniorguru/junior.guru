@@ -74,10 +74,6 @@ norecursedirs = "node_modules jobs_legacy"
 addopts = "--ff"
 filterwarnings = [
     "ignore:'audioop' is deprecated:DeprecationWarning",
-    "ignore:the imp module is deprecated:DeprecationWarning",
-    "ignore:_unicode_safe_getattr is deprecated:DeprecationWarning",
-    "ignore:invalid escape sequence:DeprecationWarning",
-    "ignore:\"is not\" with a literal:SyntaxWarning",
 ]
 
 [tool.black]
