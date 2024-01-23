@@ -16,7 +16,7 @@ class JobsScrapingException(Exception):
     pass
 
 
-@cli.sync_command(dependencies=["proxies"])
+@cli.sync_command()
 def main():
     feeds_dir = get_feeds_dir()
     spider_names = [

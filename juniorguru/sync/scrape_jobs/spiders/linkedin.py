@@ -23,7 +23,6 @@ from juniorguru.sync.scrape_jobs.items import (
 
 class Spider(BaseSpider):
     name = "linkedin"
-    proxies = True
     download_timeout = 15
     custom_settings = {"ROBOTSTXT_OBEY": False}
 
@@ -117,7 +116,6 @@ class Spider(BaseSpider):
                 item["apply_url"],
                 callback=self.verify_job,
                 cb_kwargs=dict(item=item),
-                meta=dict(proxies=False),
             )
         else:
             yield item
