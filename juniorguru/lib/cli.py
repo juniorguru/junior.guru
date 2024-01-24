@@ -22,6 +22,8 @@ def import_commands(package: ModuleType) -> Generator[tuple[str, Callable], None
 
 
 def async_command(fn: Callable[..., Awaitable]) -> Callable:
+    # Use https://docs.python.org/3/library/asyncio-runner.html#asyncio.Runner
+    # in the future?
     nest_asyncio.apply()
 
     @wraps(fn)
