@@ -97,7 +97,7 @@ async def main(cache: Cache):
     #     )
     # ):
     #     count = await processing
-    logger.info(f"Stats: {len(count)} items, {len(tasks) - count} drops")
+    logger.info(f"Stats: {count} items, {len(tasks) - count} drops")
 
 
 async def process_item(
