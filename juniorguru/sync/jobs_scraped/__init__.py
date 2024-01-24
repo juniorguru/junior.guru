@@ -1,7 +1,6 @@
 import asyncio
 import importlib
 import itertools
-from collections import Counter
 from pprint import pformat
 from typing import Awaitable, Callable
 
