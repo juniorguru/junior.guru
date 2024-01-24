@@ -24,7 +24,7 @@ SENTENCE_END_RE = re.compile(
 logger = loggers.from_path(__file__)
 
 
-def process(item):
+async def process(item):
     try:
         description_text = extract_text(item["description_html"])
         item["description_text"] = description_text

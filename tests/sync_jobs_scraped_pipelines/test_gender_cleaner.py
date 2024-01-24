@@ -54,7 +54,8 @@ from juniorguru.sync.jobs_scraped.pipelines.gender_remover import process
         ("👩‍💻/👨‍💻 Junior Product Designer", "Junior Product Designer"),
     ],
 )
-def test_gender_remover(title, expected):
-    item = process(dict(title=title))
+@pytest.mark.asyncio
+async def test_gender_remover(title, expected):
+    item = await process(dict(title=title))
 
     assert item["title"] == expected

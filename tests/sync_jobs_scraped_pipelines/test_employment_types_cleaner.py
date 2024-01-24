@@ -56,8 +56,9 @@ def test_employment_types_cleaner_clean_employment_type(employment_type, expecte
         (dict(), dict()),
     ],
 )
-def test_employment_types_cleaner(item, expected):
-    item = process(item)
+@pytest.mark.asyncio
+async def test_employment_types_cleaner(item, expected):
+    item = await process(item)
 
     assert item == expected
 

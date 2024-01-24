@@ -7,6 +7,7 @@ from peewee import IntegrityError
 
 from juniorguru.cli.sync import Cache, main as cli
 from juniorguru.lib import apify, loggers
+from juniorguru.lib.cli import async_command
 from juniorguru.models.base import db
 from juniorguru.models.job import ScrapedJob
 
@@ -41,7 +42,8 @@ class DropItem(Exception):
 @cli.sync_command()
 @cli.pass_cache
 @db.connection_context()
-def main(cache: Cache):
+@async_command
+async def main(cache: Cache):
     logger.info(f"Actors:\n{pformat(ACTORS)}")
     items = itertools.chain.from_iterable(
         apify.iter_data(actor, cache=cache) for actor in ACTORS
@@ -67,7 +69,7 @@ def main(cache: Cache):
         try:
             for pipeline_name, pipeline in pipelines:
                 try:
-                    item = pipeline(item)
+                    item = await pipeline(item)
                 except DropItem as e:
                     logger[pipeline_name].debug(f"Dropping: {e}\n{pformat(item)}")
                     raise

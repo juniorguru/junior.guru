@@ -25,7 +25,7 @@ EMPLOYMENT_TYPES_MAPPING = {
 }
 
 
-def process(item):
+async def process(item):
     if item.get("employment_types"):
         item["employment_types"] = clean_employment_types(item["employment_types"])
     return item

@@ -30,7 +30,7 @@ ACCUMULATIVE_FEATURES = {
 FEW_FEATURES_THRESHOLD = 2
 
 
-def process(item):
+async def process(item):
     item["juniority_re_score"] = calc_score(
         [feature["name"] for feature in item["features"]]
     )

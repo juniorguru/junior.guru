@@ -38,7 +38,7 @@ GENDER_RES = [
 ]
 
 
-def process(item):
+async def process(item):
     for gender_re in GENDER_RES:
         item["title"] = gender_re.sub(" ", item["title"]).strip()
     return item

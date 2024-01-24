@@ -23,7 +23,7 @@ RE_IDENTIFY_MAPPING = [
 ]
 
 
-def process(item):
+async def process(item):
     try:
         url = item["url"]
     except KeyError as e:

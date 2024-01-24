@@ -18,7 +18,7 @@ BLOCKLIST = [
 ]
 
 
-def process(item):
+async def process(item):
     for field, value_re in BLOCKLIST:
         value = item.get(field) or ""
         if value_re.search(value):

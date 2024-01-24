@@ -5,6 +5,8 @@ from importlib import import_module
 from types import ModuleType
 from typing import Awaitable, Callable, Generator
 
+import nest_asyncio
+
 
 def command_name(module_name: str) -> str:
     return module_name.split(".")[-1].replace("_", "-")
@@ -20,6 +22,8 @@ def import_commands(package: ModuleType) -> Generator[tuple[str, Callable], None
 
 
 def async_command(fn: Callable[..., Awaitable]) -> Callable:
+    nest_asyncio.apply()
+
     @wraps(fn)
     def wrapper(*args, **kwargs):
         return asyncio.run(fn(*args, **kwargs))

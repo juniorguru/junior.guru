@@ -62,7 +62,8 @@ from juniorguru.sync.jobs_scraped.pipelines.boards_ids import process
         ),
     ],
 )
-def test_boards_ids(item, expected):
-    item = process(item)
+@pytest.mark.asyncio
+async def test_boards_ids(item, expected):
+    item = await process(item)
 
     assert item["boards_ids"] == sorted(expected)

@@ -1,7 +1,7 @@
 from juniorguru.lib.remove_emoji import remove_emoji
 
 
-def process(item):
+async def process(item):
     title = item["title"]
     try:
         item["title"] = remove_emoji(title)

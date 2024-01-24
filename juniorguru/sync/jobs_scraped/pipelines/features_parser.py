@@ -499,7 +499,7 @@ RULES = {"en": RULES_EN, "cs": RULES_CS}
 SUPPRESSING_RULES = {"en": SUPPRESSING_RULES_EN, "cs": SUPPRESSING_RULES_CS}
 
 
-def process(item):
+async def process(item):
     parse_results = deduplicate(
         itertools.chain(
             parse_from_sentence(item["title"], item["lang"]),
