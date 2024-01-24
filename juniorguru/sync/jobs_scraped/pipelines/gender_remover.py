@@ -1,5 +1,7 @@
 import re
 
+from diskcache import Cache
+
 
 GENDER_RES = [
     # in parentheses, e.g. (f/m/*)
@@ -38,7 +40,7 @@ GENDER_RES = [
 ]
 
 
-async def process(item):
+async def process(item: dict, cache: Cache | None = None) -> dict:
     for gender_re in GENDER_RES:
         item["title"] = gender_re.sub(" ", item["title"]).strip()
     return item

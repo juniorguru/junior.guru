@@ -1,5 +1,7 @@
 import itertools
 
+from diskcache import Cache
+
 
 WEIGHTS = {
     "EXPLICITLY_SENIOR": -8,
@@ -30,7 +32,7 @@ ACCUMULATIVE_FEATURES = {
 FEW_FEATURES_THRESHOLD = 2
 
 
-async def process(item):
+async def process(item: dict, cache: Cache | None = None) -> dict:
     item["juniority_re_score"] = calc_score(
         [feature["name"] for feature in item["features"]]
     )

@@ -2,10 +2,9 @@ import asyncio
 import pkgutil
 from functools import wraps
 from importlib import import_module
+import threading
 from types import ModuleType
 from typing import Awaitable, Callable, Generator
-
-import nest_asyncio
 
 
 def command_name(module_name: str) -> str:
@@ -22,12 +21,13 @@ def import_commands(package: ModuleType) -> Generator[tuple[str, Callable], None
 
 
 def async_command(fn: Callable[..., Awaitable]) -> Callable:
-    # Use https://docs.python.org/3/library/asyncio-runner.html#asyncio.Runner
-    # in the future?
-    nest_asyncio.apply()
-
     @wraps(fn)
     def wrapper(*args, **kwargs):
-        return asyncio.run(fn(*args, **kwargs))
+        def run():
+            asyncio.run(fn(*args, **kwargs))
+
+        thread = threading.Thread(target=run)
+        thread.start()
+        thread.join()
 
     return wrapper

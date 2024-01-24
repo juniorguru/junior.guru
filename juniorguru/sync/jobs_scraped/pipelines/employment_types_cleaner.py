@@ -1,5 +1,7 @@
 import re
 
+from diskcache import Cache
+
 from juniorguru.models.job import EMPLOYMENT_TYPES
 
 
@@ -25,7 +27,7 @@ EMPLOYMENT_TYPES_MAPPING = {
 }
 
 
-async def process(item):
+async def process(item: dict, cache: Cache | None = None) -> dict:
     if item.get("employment_types"):
         item["employment_types"] = clean_employment_types(item["employment_types"])
     return item

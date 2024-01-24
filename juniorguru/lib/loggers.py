@@ -13,19 +13,20 @@ MUTED_LOGGERS = [
     "google",
     "googleapiclient",
     "gql.transport.requests",
+    "httpcore",
+    "httpx",
     "juniorguru.lib.mutations.allowing",
     "juniorguru.sync.club_content.store",
     "juniorguru.web.templates",
     "MARKDOWN",
     "oauth2client",
+    "openai._base_client",
     "peewee",
     "PIL",
     "protego",
     "stripe",
     "tornado.access",
     "urllib3",
-    "httpx",
-    "httpcore",
 ]
 
 
