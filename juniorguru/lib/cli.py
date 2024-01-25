@@ -1,8 +1,8 @@
 import asyncio
 import pkgutil
+import threading
 from functools import wraps
 from importlib import import_module
-import threading
 from types import ModuleType
 from typing import Awaitable, Callable, Generator
 

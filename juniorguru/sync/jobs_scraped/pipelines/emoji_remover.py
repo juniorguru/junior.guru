@@ -1,4 +1,5 @@
 from diskcache import Cache
+
 from juniorguru.lib.remove_emoji import remove_emoji
 
 
