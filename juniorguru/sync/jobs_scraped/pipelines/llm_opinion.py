@@ -1,12 +1,22 @@
 import asyncio
+from functools import lru_cache
 import hashlib
 import json
+import logging
 import os
 from pprint import pprint
-
 from diskcache import Cache
-from openai import AsyncOpenAI
-from openlimit import ChatRateLimiter
+
+from openai import AsyncOpenAI, RateLimitError
+from tenacity import (
+    before_log,
+    before_sleep_log,
+    retry,
+    retry_if_exception,
+    retry_if_exception_type,
+    stop_after_attempt,
+    wait_random_exponential,
+)
 
 from juniorguru.lib import loggers
 
@@ -14,28 +24,31 @@ from juniorguru.lib import loggers
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
 SYSTEM_PROMPT = """
-You are an assistant for classifying job postings in order to simplify job search
-for entry level candidates who are looking for software engineering or software testing jobs.
-Consider people who have just finished a coding bootcamp or a university degree in computer science.
-User can provide a job posting and you reply with a valid JSON object, which contains the following keys:
+You are assistant for classifying job postings to simplify job search
+for people who have just finished a coding bootcamp and who are looking
+for SW engineering or SW testing jobs. User provides a job posting and you reply
+with a valid JSON object containing the following keys:
 
-- `is_entry_level` - boolean, whether the job posting is relevant to entry level candidates
-- `reason` - string, short explanation why the job posting is entry level or not
-- `is_sw_engineering` - boolean, whether the job posting is relevant to software engineering
-- `is_sw_testing` - boolean, whether the job posting is relevant to software testing
-- `tag_python` - boolean, whether the job posting wants Python
-- `tag_javascript` - boolean, whether the job posting wants JavaScript
-- `tag_java` - boolean, whether the job posting wants Java
-- `tag_degree` - boolean, whether the job posting requires university degree
+- is_entry_level (bool) - Is it relevant to entry level candidates?
+- reason (string) - Short explanation why it is entry level or not
+- is_sw_engineering (bool) - Is it relevant to SW engineering?
+- is_sw_testing (bool) - Is it relevant to SW testing?
+- tag_python (bool) - Do they want Python?
+- tag_javascript (bool) - Do they want JavaScript?
+- tag_java (bool) - Do they want Java?
+- tag_degree (bool) - Do they require university degree?
 """
 
 
 logger = loggers.from_path(__file__)
 
-rate_limiter = ChatRateLimiter(request_limit=500, token_limit=60000)
+limit = asyncio.Semaphore(4)
 
 
-async def process(item: dict, cache: Cache | None = None) -> dict:
+async def process(
+    item: dict,
+    cache: Cache | None = None,
+) -> dict:
     user_prompt = f"{item['title']}\n\n{item['description_text']}"
     cache_key = f"llm_opinion_{hashlib.sha256(user_prompt.encode()).hexdigest()}"
     llm_opinion = cache.get(cache_key) if cache else None
@@ -44,7 +57,7 @@ async def process(item: dict, cache: Cache | None = None) -> dict:
         logger.debug(f"Using cached LLM opinion on {item['url']}")
     else:
         logger.debug(f"Asking for LLM opinion on {item['url']}")
-        llm_opinion = await ask_llm(SYSTEM_PROMPT, user_prompt)
+        llm_opinion = await fetch_llm_opinion(SYSTEM_PROMPT, user_prompt)
         if cache:
             cache.set(cache_key, llm_opinion)
 
@@ -52,25 +65,50 @@ async def process(item: dict, cache: Cache | None = None) -> dict:
     return item
 
 
-async def ask_llm(system_prompt: str, user_prompt: str) -> dict:
-    client = AsyncOpenAI(api_key=OPENAI_API_KEY)
-    chat = dict(
-        model="gpt-3.5-turbo-1106",
-        messages=[
-            {
-                "role": "system",
-                "content": system_prompt,
-            },
-            {
-                "role": "user",
-                "content": user_prompt,
-            },
-        ],
-        response_format=dict(type="json_object"),
-    )
-    async with rate_limiter.limit(**chat):
-        completion = await client.chat.completions.create(**chat)
+@lru_cache()
+def get_client() -> AsyncOpenAI:
+    logger.debug("Creating OpenAI client")
+    return AsyncOpenAI(api_key=OPENAI_API_KEY)
 
+
+retry_defaults = dict(
+    reraise=True,
+    before=before_log(logger, logging.DEBUG),
+    before_sleep=before_sleep_log(logger, logging.WARNING),
+    stop=stop_after_attempt(5),
+)
+
+
+@retry(
+    retry=(
+        retry_if_exception_type(RateLimitError)
+        & retry_if_exception(
+            lambda exception: exception.type == "requests"
+            and "requests per day" not in exception.message
+        )
+    ),
+    wait=wait_random_exponential(min=1, max=60),
+    **retry_defaults,
+)
+@retry(
+    retry=(
+        retry_if_exception_type(RateLimitError)
+        & retry_if_exception(lambda exception: exception.type == "tokens")
+    ),
+    wait=wait_random_exponential(min=60, max=5 * 60),
+    **retry_defaults,
+)
+async def fetch_llm_opinion(system_prompt: str, user_prompt: str) -> dict:
+    client = get_client()
+    async with limit:
+        completion = await client.chat.completions.create(
+            model="gpt-3.5-turbo-1106",
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt},
+            ],
+            response_format=dict(type="json_object"),
+        )
     choice = completion.choices[0]
     llm_opinion = json.loads(choice.message.content)
     llm_opinion["finish_reason"] = choice.finish_reason
