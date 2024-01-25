@@ -8,7 +8,7 @@ import click
 from discord import AllowedMentions, ForumChannel, Thread, ui
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import discord_sync, loggers, mutations
+from juniorguru.lib import discord_task, loggers, mutations
 from juniorguru.lib.discord_club import (
     ClubChannelID,
     ClubClient,
@@ -54,9 +54,9 @@ def main(tips_path: Path, force_dose: bool):
         }
     tips = list(load_tips(tips_path, roles=roles))
     logger.info(f"Loaded {len(tips)} tips")
-    discord_sync.run(sync_tips, tips)
-    discord_sync.run(dose_tips, tips, force_dose)
-    discord_sync.run(ensure_intro_reminder)
+    discord_task.run(sync_tips, tips)
+    discord_task.run(dose_tips, tips, force_dose)
+    discord_task.run(ensure_intro_reminder)
 
 
 def load_tips(tips_path: Path, roles: dict[str, int] | None = None):

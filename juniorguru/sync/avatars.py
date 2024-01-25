@@ -6,7 +6,7 @@ from urllib.parse import urlparse
 from PIL import Image
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import discord_sync, loggers
+from juniorguru.lib import discord_task, loggers
 from juniorguru.lib.chunks import chunks
 from juniorguru.lib.discord_club import ClubClient
 from juniorguru.models.base import db
@@ -29,7 +29,7 @@ AVATAR_SIZE_PX = 60
 
 @cli.sync_command(dependencies=["club-content"])
 def main():
-    discord_sync.run(discord_task)
+    discord_task.run(discord_task)
 
 
 @db.connection_context()

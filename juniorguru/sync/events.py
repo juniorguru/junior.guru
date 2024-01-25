@@ -7,7 +7,7 @@ from discord import ScheduledEvent
 from strictyaml import CommaSeparated, Int, Map, Optional, Seq, Str, Url, load
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import discord_sync, loggers
+from juniorguru.lib import discord_task, loggers
 from juniorguru.lib.discord_club import ClubChannelID, ClubClient, ClubMemberID
 from juniorguru.lib.images import (
     PostersCache,
@@ -148,8 +148,8 @@ def main(clear_posters):
     posters.cleanup()
 
     logger.info("Syncing with Discord")
-    discord_sync.run(sync_scheduled_events)
-    discord_sync.run(post_next_event_messages)
+    discord_task.run(sync_scheduled_events)
+    discord_task.run(post_next_event_messages)
 
 
 @db.connection_context()

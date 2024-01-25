@@ -1,5 +1,5 @@
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import discord_sync, loggers
+from juniorguru.lib import discord_task, loggers
 from juniorguru.lib.discord_club import ClubChannelID, ClubClient
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
@@ -13,7 +13,7 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command()
 def main():
-    discord_sync.run(discord_task)
+    discord_task.run(discord_task)
 
 
 @db.connection_context()

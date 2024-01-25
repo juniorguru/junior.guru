@@ -1,6 +1,6 @@
 from functools import wraps
 
-from juniorguru.lib import discord_sync
+from juniorguru.lib import discord_task
 from juniorguru.models.base import SqliteDatabase
 
 
@@ -8,7 +8,7 @@ def test_get_import_path():
     def sample_fn():
         pass
 
-    assert discord_sync.get_import_path(sample_fn) == (
+    assert discord_task.get_import_path(sample_fn) == (
         "test_lib_discord_sync" ".test_get_import_path" ".<locals>" ".sample_fn"
     )
 
@@ -17,7 +17,7 @@ def test_get_import_path_async():
     async def sample_fn():
         pass
 
-    assert discord_sync.get_import_path(sample_fn) == (
+    assert discord_task.get_import_path(sample_fn) == (
         "test_lib_discord_sync" ".test_get_import_path_async" ".<locals>" ".sample_fn"
     )
 
@@ -35,7 +35,7 @@ def test_get_import_path_with_decorator():
         pass
 
     assert hasattr(sample_fn, "__wrapped__")
-    assert discord_sync.get_import_path(sample_fn) == (
+    assert discord_task.get_import_path(sample_fn) == (
         "test_lib_discord_sync"
         ".test_get_import_path_with_decorator"
         ".<locals>"
@@ -51,7 +51,7 @@ def test_get_import_path_with_db_connection_decorator():
         pass
 
     assert hasattr(sample_fn, "__wrapped__")
-    assert discord_sync.get_import_path(sample_fn) == (
+    assert discord_task.get_import_path(sample_fn) == (
         "test_lib_discord_sync"
         ".test_get_import_path_with_db_connection_decorator"
         ".<locals>"
@@ -67,7 +67,7 @@ def test_get_import_path_with_db_connection_decorator_async():
         pass
 
     assert hasattr(sample_fn, "__wrapped__")
-    assert discord_sync.get_import_path(sample_fn) == (
+    assert discord_task.get_import_path(sample_fn) == (
         "test_lib_discord_sync"
         ".test_get_import_path_with_db_connection_decorator_async"
         ".<locals>"

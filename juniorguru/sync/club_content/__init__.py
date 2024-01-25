@@ -4,7 +4,7 @@ import click
 from peewee import OperationalError
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import discord_sync, loggers
+from juniorguru.lib import discord_task, loggers
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubPin, ClubUser
 from juniorguru.sync.club_content.crawler import crawl
@@ -47,7 +47,7 @@ def fetch_club_content():
     with db.connection_context():
         db.drop_tables([ClubMessage, ClubUser, ClubPin])
         db.create_tables([ClubMessage, ClubUser, ClubPin])
-    discord_sync.run(crawl)
+    discord_task.run(crawl)
 
 
 @db.connection_context()

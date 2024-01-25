@@ -8,7 +8,7 @@ from slugify import slugify
 from strictyaml import Int, Map, Seq, Str, load
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import discord_sync, loggers
+from juniorguru.lib import discord_task, loggers
 from juniorguru.lib.discord_club import ClubClient, get_user_roles, resolve_references
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
@@ -51,7 +51,7 @@ logger = loggers.from_path(__file__)
     ]
 )
 def main():
-    discord_sync.run(discord_task)
+    discord_task.run(discord_task)
 
 
 @db.connection_context()

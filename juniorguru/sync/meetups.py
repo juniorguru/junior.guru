@@ -14,7 +14,7 @@ import requests
 import teemup
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import discord_sync, loggers, mutations
+from juniorguru.lib import discord_task, loggers, mutations
 from juniorguru.lib.discord_club import (
     ClubClient,
     ClubMemberID,
@@ -227,7 +227,7 @@ def main(cache, clear_cache, channel_id):
     logger.info(
         f"Syncing {len(events)} events with Discord, using channel #{channel_id}"
     )
-    discord_sync.run(sync_events, events, channel_id)
+    discord_task.run(sync_events, events, channel_id)
 
 
 @mutations.mutates_discord()

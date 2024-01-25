@@ -5,7 +5,7 @@ import click
 from discord import ui
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import discord_sync, loggers, mutations
+from juniorguru.lib import discord_task, loggers, mutations
 from juniorguru.lib.discord_club import (
     ClubClient,
     ClubMemberID,
@@ -88,12 +88,12 @@ def main(report_channel_id: int):
 
         logger.info("Sending offers")
         member_ids = [member.id for member in members]
-        discord_sync.run(
+        discord_task.run(
             offer_core_discounts, discount_info, member_ids, report_channel_id
         )
 
         logger.info("Reporting")
-        discord_sync.run(report_discount_offering, member_ids, report_channel_id)
+        discord_task.run(report_discount_offering, member_ids, report_channel_id)
 
 
 def is_recent_reminder(

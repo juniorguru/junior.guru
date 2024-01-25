@@ -5,7 +5,7 @@ from pathlib import Path
 import click
 from pycircleci.api import Api
 
-from juniorguru.lib import discord_sync, loggers, mutations
+from juniorguru.lib import discord_task, loggers, mutations
 from juniorguru.lib.discord_club import ClubClient
 
 
@@ -153,7 +153,7 @@ def decrypt(encrypted_file, backup_file, passphrase, op_item):
 @click.option("--template", default="jg-backup")
 def discord(template):
     mutations.allow("discord")
-    discord_sync.run(backup_discord, template)
+    discord_task.run(backup_discord, template)
 
 
 async def backup_discord(client: ClubClient, template_name):

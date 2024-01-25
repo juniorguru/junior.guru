@@ -6,7 +6,7 @@ from discord import ButtonStyle, Color, Embed, File, ui
 from jinja2 import Template
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import discord_sync, loggers
+from juniorguru.lib import discord_task, loggers
 from juniorguru.lib.discord_club import (
     ClubChannelID,
     ClubClient,
@@ -48,7 +48,7 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command(dependencies=["club-content", "partners", "roles"])
 def main():
-    discord_sync.run(discord_task)
+    discord_task.run(discord_task)
 
 
 @db.connection_context()

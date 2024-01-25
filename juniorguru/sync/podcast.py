@@ -10,7 +10,7 @@ from requests.exceptions import HTTPError
 from strictyaml import Int, Map, Optional, Seq, Str, load
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import discord_sync, loggers
+from juniorguru.lib import discord_task, loggers
 from juniorguru.lib.discord_club import ClubChannelID, ClubClient, ClubMemberID
 from juniorguru.lib.images import (
     PostersCache,
@@ -98,7 +98,7 @@ def main(clear_posters):
     posters.cleanup()
 
     logger.info("Announcing in Discord")
-    discord_sync.run(discord_task)
+    discord_task.run(discord_task)
 
 
 def process_episode(yaml_record):

@@ -12,7 +12,7 @@ from juniorguru_chick.lib.threads import (
 )
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import discord_sync, loggers, mutations
+from juniorguru.lib import discord_task, loggers, mutations
 from juniorguru.lib.discord_club import (
     ClubChannelID,
     ClubClient,
@@ -41,7 +41,7 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command(dependencies=["club-content"])
 def main():
-    discord_sync.run(discord_task)
+    discord_task.run(discord_task)
 
 
 @db.connection_context()

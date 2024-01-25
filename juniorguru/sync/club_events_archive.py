@@ -5,7 +5,7 @@ import click
 from discord import Embed, File, ui
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import discord_sync, loggers
+from juniorguru.lib import discord_task, loggers
 from juniorguru.lib.discord_club import (
     ClubClient,
     is_message_over_period_ago,
@@ -33,7 +33,7 @@ logger = loggers.from_path(__file__)
     help="In days.",
 )
 def main(channel_id: int, recreate_interval_days: int):
-    discord_sync.run(recreate_archive, channel_id, recreate_interval_days)
+    discord_task.run(recreate_archive, channel_id, recreate_interval_days)
 
 
 @db.connection_context()

@@ -5,7 +5,7 @@ import click
 from discord import Embed, ui
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import discord_sync, loggers
+from juniorguru.lib import discord_task, loggers
 from juniorguru.lib.discord_club import ClubClient, parse_channel
 from juniorguru.lib.memberful import memberful_url
 from juniorguru.lib.mutations import mutating_discord
@@ -28,7 +28,7 @@ ID_RE = re.compile(r"`#(\d+)`")
 @cli.sync_command(dependencies=["club-content", "subscriptions-csv"])
 @click.option("--channel", "channel_id", default="business", type=parse_channel)
 def main(channel_id):
-    discord_sync.run(report, channel_id)
+    discord_task.run(report, channel_id)
 
 
 @db.connection_context()

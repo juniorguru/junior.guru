@@ -6,7 +6,7 @@ from pathlib import Path
 from discord import Embed, File, ui
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import discord_sync, loggers
+from juniorguru.lib import discord_task, loggers
 from juniorguru.lib.chunks import chunks
 from juniorguru.lib.discord_club import (
     ClubChannelID,
@@ -31,7 +31,7 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command(dependencies=["club-content", "jobs-locations", "jobs-logos"])
 def main():
-    discord_sync.run(discord_task)
+    discord_task.run(discord_task)
 
 
 @db.connection_context()

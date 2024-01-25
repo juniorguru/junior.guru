@@ -7,7 +7,7 @@ import click
 import discord
 
 from juniorguru.cli.sync import Cache
-from juniorguru.lib import discord_sync, loggers, mutations
+from juniorguru.lib import discord_task, loggers, mutations
 from juniorguru.lib.discord_club import (
     ClubClient,
     ClubMemberID,
@@ -42,7 +42,7 @@ def main(context, cache_dir):
     context.obj = dict(sync=sync, cache=Cache(cache_dir), skip_dependencies=False)
     context.invoke(sync_pages)
     mutations.allow("discord")
-    discord_sync.run(process_pins)
+    discord_task.run(process_pins)
 
 
 @db.connection_context()

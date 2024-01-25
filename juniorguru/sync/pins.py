@@ -5,7 +5,7 @@ import click
 from discord import Embed, Forbidden
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import discord_sync, loggers
+from juniorguru.lib import discord_task, loggers
 from juniorguru.lib.discord_club import ClubClient, ClubEmoji, get_or_create_dm_channel
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
@@ -36,7 +36,7 @@ def main(since: date):
                 message_url = pinning_message.pinned_message_url
                 member_name = pinning_message.dm_member.display_name
                 logger.debug(f"Could not find {message_url} pinned by {member_name!r}")
-    discord_sync.run(send_outstanding_pins, since)
+    discord_task.run(send_outstanding_pins, since)
 
 
 @db.connection_context()

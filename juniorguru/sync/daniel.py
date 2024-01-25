@@ -1,7 +1,7 @@
 from datetime import date, timedelta
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import discord_sync, loggers
+from juniorguru.lib import discord_task, loggers
 from juniorguru.lib.discord_club import (
     ClubClient,
     ClubMemberID,
@@ -21,7 +21,7 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command(dependencies=["club-content"])
 def main():
-    discord_sync.run(send_daily_report)
+    discord_task.run(send_daily_report)
 
 
 @db.connection_context()

@@ -8,7 +8,7 @@ from discord import NotFound
 from playhouse.shortcuts import model_to_dict
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import discord_sync, loggers
+from juniorguru.lib import discord_task, loggers
 from juniorguru.lib.coupons import parse_coupon
 from juniorguru.lib.discord_club import ClubChannelID, ClubClient, ClubMemberID
 from juniorguru.lib.memberful import MemberfulAPI, memberful_url
@@ -96,7 +96,7 @@ def main():
             logger.debug(f"User #{user.id}:\n{pformat(model_to_dict(user))}")
             extra_users_ids.append(user.id)
     if extra_users_ids:
-        discord_sync.run(report_extra_users, extra_users_ids)
+        discord_task.run(report_extra_users, extra_users_ids)
 
 
 @db.connection_context()

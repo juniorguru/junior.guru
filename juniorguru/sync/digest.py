@@ -5,7 +5,7 @@ import click
 from discord import Color, Embed
 
 from juniorguru.cli.sync import main as cli
-from juniorguru.lib import discord_sync, loggers
+from juniorguru.lib import discord_task, loggers
 from juniorguru.lib.discord_club import (
     CLUB_GUILD,
     ClubChannelID,
@@ -32,7 +32,7 @@ TOP_CHANNELS_LIMIT = 5
 @cli.sync_command(dependencies=["club-content"])
 @click.option("--force-since", default=None, type=click.DateTime(["%Y-%m-%d"]))
 def main(force_since):
-    discord_sync.run(discord_task, force_since.date() if force_since else None)
+    discord_task.run(discord_task, force_since.date() if force_since else None)
 
 
 @db.connection_context()
