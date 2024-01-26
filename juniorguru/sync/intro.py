@@ -41,11 +41,11 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command(dependencies=["club-content"])
 def main():
-    discord_task.run(discord_task)
+    discord_task.run(sync_intro)
 
 
 @db.connection_context()
-async def discord_task(client: ClubClient):
+async def sync_intro(client: ClubClient):
     discord_channel = await client.club_guild.fetch_channel(ClubChannelID.INTRO)
 
     logger.info("Processing messages")

@@ -38,11 +38,11 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command(dependencies=["club-content"])
 def main():
-    discord_task.run(discord_task)
+    discord_task.run(sync_mentoring)
 
 
 @db.connection_context()
-async def discord_task(client: ClubClient):
+async def sync_mentoring(client: ClubClient):
     logger.info("Setting up db table")
     Mentor.drop_table()
     Mentor.create_table()

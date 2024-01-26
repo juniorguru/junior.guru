@@ -48,11 +48,11 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command(dependencies=["club-content", "partners", "roles"])
 def main():
-    discord_task.run(discord_task)
+    discord_task.run(sync_partners_intro)
 
 
 @db.connection_context()
-async def discord_task(client: ClubClient):
+async def sync_partners_intro(client: ClubClient):
     last_message = ClubMessage.last_bot_message(
         ClubChannelID.INTRO, ClubEmoji.PARTNER_INTRO
     )

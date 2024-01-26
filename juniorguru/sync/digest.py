@@ -32,11 +32,11 @@ TOP_CHANNELS_LIMIT = 5
 @cli.sync_command(dependencies=["club-content"])
 @click.option("--force-since", default=None, type=click.DateTime(["%Y-%m-%d"]))
 def main(force_since):
-    discord_task.run(discord_task, force_since.date() if force_since else None)
+    discord_task.run(sync_digest, force_since.date() if force_since else None)
 
 
 @db.connection_context()
-async def discord_task(client: ClubClient, force_since: date):
+async def sync_digest(client: ClubClient, force_since: date):
     since = force_since or date.today() - timedelta(weeks=1)
     message = ClubMessage.last_bot_message(ClubChannelID.ANNOUNCEMENTS, DIGEST_EMOJI)
 

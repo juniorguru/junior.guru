@@ -30,11 +30,11 @@ logger = loggers.from_path(__file__)
     ]
 )
 def main():
-    discord_task.run(discord_task)
+    discord_task.run(sync_dashboard)
 
 
 @db.connection_context()
-async def discord_task(client: ClubClient):
+async def sync_dashboard(client: ClubClient):
     discord_channel = await client.fetch_channel(ClubChannelID.DASHBOARD)
 
     sections = [

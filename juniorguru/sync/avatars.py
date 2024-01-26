@@ -29,11 +29,11 @@ AVATAR_SIZE_PX = 60
 
 @cli.sync_command(dependencies=["club-content"])
 def main():
-    discord_task.run(discord_task)
+    discord_task.run(fetch_avatars)
 
 
 @db.connection_context()
-async def discord_task(client: ClubClient):
+async def fetch_avatars(client: ClubClient):
     AVATARS_PATH.mkdir(exist_ok=True, parents=True)
     for path in AVATARS_PATH.glob("*.png"):
         path.unlink()
@@ -69,7 +69,7 @@ async def process_member(client: ClubClient, member):
             logger_m.info(f"Has avatar, downloaded as '{member.avatar_path}'")
         else:
             logger_m.info("Has no avatar")
-    except:
+    except Exception:
         logger_m.exception("Unable to get avatar")
     member.save()
 

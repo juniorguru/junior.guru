@@ -31,11 +31,11 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command(dependencies=["club-content", "jobs-locations", "jobs-logos"])
 def main():
-    discord_task.run(discord_task)
+    discord_task.run(sync_jobs)
 
 
 @db.connection_context()
-async def discord_task(client: ClubClient):
+async def sync_jobs(client: ClubClient):
     since_at = datetime.now(timezone.utc) - timedelta(days=JOBS_REPEATING_PERIOD_DAYS)
     logger.info(f"Figuring out which jobs are not yet in the channel since {since_at}")
     channel = await client.club_guild.fetch_channel(ClubChannelID.JOBS)

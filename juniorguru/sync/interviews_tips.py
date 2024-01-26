@@ -23,11 +23,11 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command(dependencies=["club-content", "mentoring"])
 def main():
-    discord_task.run(discord_task)
+    discord_task.run(sync_interviews_tips)
 
 
 @db.connection_context()
-async def discord_task(client: ClubClient):
+async def sync_interviews_tips(client: ClubClient):
     last_message = ClubMessage.last_bot_message(
         ClubChannelID.INTERVIEWS, INTERVIEWS_EMOJI
     )

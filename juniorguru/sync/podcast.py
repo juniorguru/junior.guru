@@ -98,7 +98,7 @@ def main(clear_posters):
     posters.cleanup()
 
     logger.info("Announcing in Discord")
-    discord_task.run(discord_task)
+    discord_task.run(announce_new_episode)
 
 
 def process_episode(yaml_record):
@@ -208,7 +208,7 @@ def process_episode(yaml_record):
 
 
 @db.connection_context()
-async def discord_task(client: ClubClient):
+async def announce_new_episode(client: ClubClient):
     last_episode = PodcastEpisode.last()
     last_message = ClubMessage.last_bot_message(
         ClubChannelID.ANNOUNCEMENTS,

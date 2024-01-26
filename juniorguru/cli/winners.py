@@ -17,10 +17,10 @@ logger = loggers.from_path(__file__)
 @click.argument("message_url")
 @click.argument("winners_count", type=int)
 def main(message_url, winners_count):
-    discord_task.run(discord_task, message_url, winners_count)
+    discord_task.run(draw_winners, message_url, winners_count)
 
 
-async def discord_task(client: ClubClient, message_url, winners_count):
+async def draw_winners(client: ClubClient, message_url, winners_count):
     roles = await client.club_guild.fetch_roles()
     role = [role for role in roles if role.id == ROLE][0]
     logger.info(f"Limiting winners to only those with role '{role.name}'")

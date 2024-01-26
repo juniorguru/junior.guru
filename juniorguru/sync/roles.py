@@ -51,11 +51,11 @@ logger = loggers.from_path(__file__)
     ]
 )
 def main():
-    discord_task.run(discord_task)
+    discord_task.run(sync_roles)
 
 
 @db.connection_context()
-async def discord_task(client: ClubClient):
+async def sync_roles(client: ClubClient):
     logger.info("Setting up db table for documented roles")
     ClubDocumentedRole.drop_table()
     ClubDocumentedRole.create_table()
