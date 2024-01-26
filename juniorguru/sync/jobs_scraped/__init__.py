@@ -40,23 +40,23 @@ class DropItem(Exception):
     pass
 
 
-# # Python 3.12 should start supporting generators for asyncio.as_completed,
-# # so remove this class then
-# class DisguisedGenerator:
-#     def __init__(self, generator):
-#         self._generator = generator
+# Python 3.12 should start supporting generators for asyncio.as_completed,
+# so remove this class then
+class DisguisedGenerator:
+    def __init__(self, generator):
+        self._generator = generator
 
-#     def __iter__(self):
-#         return self
+    def __iter__(self):
+        return self
 
-#     def __next__(self):
-#         return next(self._generator)
+    def __next__(self):
+        return next(self._generator)
 
-#     def __len__(self):
-#         raise NotImplementedError("DisguisedGenerator doesn't support len()")
+    def __len__(self):
+        raise NotImplementedError("DisguisedGenerator doesn't support len()")
 
-#     def __getitem__(self, index):
-#         raise NotImplementedError("DisguisedGenerator doesn't support indexing")
+    def __getitem__(self, index):
+        raise NotImplementedError("DisguisedGenerator doesn't support indexing")
 
 
 @cli.sync_command()
@@ -83,21 +83,24 @@ async def main(cache: Cache):
         ScrapedJob.create_table()
 
     logger.info("Processing items")
-    tasks = [
-        asyncio.create_task(process_item(pipelines, item, cache=cache))
-        for item in items
-    ]
-    count = sum(await asyncio.gather(*tasks))
+    # tasks = [
+    #     asyncio.create_task(process_item(pipelines, item, cache=cache))
+    #     for item in items
+    # ]
+    # count = sum(await asyncio.gather(*tasks))
 
-    # for processing in logger.progress(
-    #     asyncio.as_completed(
-    #         DisguisedGenerator(
-    #             process_item(pipelines, item, cache=cache) for item in items
-    #         )
-    #     )
-    # ):
-    #     count = await processing
-    logger.info(f"Stats: {count} items, {len(tasks) - count} drops")
+    count = 0
+    drops = 0
+    for processing in logger.progress(
+        asyncio.as_completed(
+            DisguisedGenerator(
+                process_item(pipelines, item, cache=cache) for item in items
+            )
+        )
+    ):
+        count += 1
+        drops += 1 - (await processing)
+    logger.info(f"Stats: {count} items, {drops} drops")
 
 
 async def process_item(

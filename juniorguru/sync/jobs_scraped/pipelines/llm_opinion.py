@@ -7,9 +7,8 @@ from functools import lru_cache
 from pprint import pprint
 
 from diskcache import Cache
-from openai import AsyncOpenAI, RateLimitError
+from openai import AsyncOpenAI, InternalServerError, RateLimitError
 from tenacity import (
-    before_log,
     before_sleep_log,
     retry,
     retry_if_exception,
@@ -73,8 +72,7 @@ def get_client() -> AsyncOpenAI:
 
 retry_defaults = dict(
     reraise=True,
-    before=before_log(logger, logging.DEBUG),
-    before_sleep=before_sleep_log(logger, logging.WARNING),
+    before_sleep=before_sleep_log(logger, logging.DEBUG),
     stop=stop_after_attempt(5),
 )
 
@@ -95,6 +93,11 @@ retry_defaults = dict(
         retry_if_exception_type(RateLimitError)
         & retry_if_exception(lambda exception: exception.type == "tokens")
     ),
+    wait=wait_random_exponential(min=60, max=5 * 60),
+    **retry_defaults,
+)
+@retry(
+    retry=retry_if_exception_type(InternalServerError),
     wait=wait_random_exponential(min=60, max=5 * 60),
     **retry_defaults,
 )
