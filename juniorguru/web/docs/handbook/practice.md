@@ -1028,9 +1028,9 @@ Menší sbírka videí o konceptech kolem programování, poměrně nezávislá 
 
 
 --- https://discord.com/channels/769966886598737931/1184491871637078077/1184812245281165363
-Ahoj, datová věda je pomerne široká oblasť. Z toho čo píšeš mi to znie že sa aktuálne formuješ ako datový analytik. Možno by som do tvojho rozhodovacieho stromu pridal ešte zamyslenie nad tým, do akej oblasti by si chcela ísť pracovať. 
+Ahoj, datová věda je pomerne široká oblasť. Z toho čo píšeš mi to znie že sa aktuálne formuješ ako datový analytik. Možno by som do tvojho rozhodovacieho stromu pridal ešte zamyslenie nad tým, do akej oblasti by si chcela ísť pracovať.
 
-V tradičných korporátoch napríklad typu banka, kde pracujem aj ja, je dnes datová analýza postavená hlavne na SQL a PowerBI. Pokiaľ by si sa ale rada venovala aj nqpr. datařine v pythone tak si postráž na pohovore aby v tejto firme vôbec existovala podpora pre tento jazyk. Zároveň sa ti môže stať, že ťahúňom v rozvoji python riešení budeš práve ty - to nemusí vyhovovať ľuďom, ktorý vyžadujú silné seniorné vedenie. 
+V tradičných korporátoch napríklad typu banka, kde pracujem aj ja, je dnes datová analýza postavená hlavne na SQL a PowerBI. Pokiaľ by si sa ale rada venovala aj nqpr. datařine v pythone tak si postráž na pohovore aby v tejto firme vôbec existovala podpora pre tento jazyk. Zároveň sa ti môže stať, že ťahúňom v rozvoji python riešení budeš práve ty - to nemusí vyhovovať ľuďom, ktorý vyžadujú silné seniorné vedenie.
 
 V technickejšie zameraných firmách už dnes často datový analytik znamená aj SQL a python - tu ale často býva väčši presah do ďalších oblastí - modelovanie, machine learning atď. a často menší dôraz na tvorbu reportov a vizualizácií.
 
@@ -1041,7 +1041,7 @@ Ak by ti PowerBI nevyhovovalo, pretože máš radšej programátorskejší ako k
 
 
 --- https://discord.com/channels/769966886598737931/788832177135026197/1184824550324719616
-Já se tady zjevím vždycky jen jednou za čas (hlavně v prosinci, náhoda?), tak aspoň (nejspíš opět) přidám tip na jeden z nejlepších malinko pokročilejších kurzů, který vám pomůže pochopit, jak vlastně počítač funguje a co se v něm děje. A je to zábava 🙂 
+Já se tady zjevím vždycky jen jednou za čas (hlavně v prosinci, náhoda?), tak aspoň (nejspíš opět) přidám tip na jeden z nejlepších malinko pokročilejších kurzů, který vám pomůže pochopit, jak vlastně počítač funguje a co se v něm děje. A je to zábava 🙂
 
 https://www.nand2tetris.org/, resp. https://www.coursera.org/learn/build-a-computer
 ---
@@ -1059,7 +1059,7 @@ Když tak vidím letošní Advent of Code, které mě tentokrát dokázalo demot
 
 
 --- https://discord.com/channels/769966886598737931/806621830383271937/1179302149537140836
-<:python:842331892091322389> Mnozí se už přesvědčili, že AI může být extrémně nápomocné, ale zároveň je to občas boj, aby dělalo to, co chceme. Tady je nejen skvěle popsáno, jak toto konkrétní GPTs tvořili, ale hlavně je to zaměřené na pomoc a vysvětlování Pythonu. <:python:842331892091322389> 
+<:python:842331892091322389> Mnozí se už přesvědčili, že AI může být extrémně nápomocné, ale zároveň je to občas boj, aby dělalo to, co chceme. Tady je nejen skvěle popsáno, jak toto konkrétní GPTs tvořili, ale hlavně je to zaměřené na pomoc a vysvětlování Pythonu. <:python:842331892091322389>
 
 https://www.linkedin.com/posts/nancyebain_meet-pypilot-a-customgpt-case-study-activity-7134904613622706176-eZ_W
 ---
@@ -1094,7 +1094,7 @@ Pokud používáte nějakého AI asistenta při psaní kódu, tak je jistá šan
 --- https://discord.com/channels/769966886598737931/1191365076188397591/1192218179880095764
 U te diskuze ohledne AI bych vicemene souhlasil se vsemi zucastnenymi.
 Ano, jeji podstatou je efektivita. Ta ale v kazde fazi znamena neco jineho.
-Kdyz se ucim stavarinu, ochotne mi poradi, jak vypada cihla, proc malta lepi a jak tuhne beton. Odstranim zaseky, kdy nevim jak dal a zvysim efektivitu UCENI. Netroufl bych si ji ale jeste pozadat navrhnout cely dum. 
+Kdyz se ucim stavarinu, ochotne mi poradi, jak vypada cihla, proc malta lepi a jak tuhne beton. Odstranim zaseky, kdy nevim jak dal a zvysim efektivitu UCENI. Netroufl bych si ji ale jeste pozadat navrhnout cely dum.
 Kdyz uz ale vim, jak se chova cihla, malta a beton, pomuze mi poskladat modulove patrove domy. Odstrani hodiny skladani a pocitani cihel a betonovych konstrukci. Zase to bude efektivita, ale uz efektivita PRACE
 ---
 
@@ -1104,5 +1104,11 @@ Jen tak na okraj kdo je STUDENT? Nebo dokonce i učitel, tak má COPILOT z GITHU
 https://github.blog/2022-09-08-github-copilot-now-available-for-teachers/
 ---
 
+
+https://cpu.land/
+https://osveta.nukib.cz/local/dashboard/
+https://www.fakturoid.cz/almanach/osobni-rozvoj/jak-pouzivat-chatgpt
+https://www.marketawillis.com/blog/prakticke-programatorske-aktivity
+https://www.youtube.com/watch?v=44sJQChy8g0
 
 #} -->

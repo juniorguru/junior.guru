@@ -1362,4 +1362,13 @@ Chceš být truhlářem a sám ses ve své skromně vybavené domácí dílničc
 ---
 
 
+https://vesecky-adam.medium.com/100-interviews-in-1-year-what-have-i-found-part-i-the-data-090aebe68ff5
+https://www.youtube.com/watch?v=1efZbhcYY4g
+https://www.youtube.com/watch?v=qGCRy-Rl2p0
+https://www.youtube.com/watch?v=icwvzPez_mc
+https://www.youtube.com/watch?v=9dKKn5XNrn0
+https://www.youtube.com/watch?v=FJbVpaYIeUg
+https://www.youtube.com/watch?v=uNL3yEzNsbQ
+
+
 #} -->

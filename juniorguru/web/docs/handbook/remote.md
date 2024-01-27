@@ -91,7 +91,7 @@ Něco o práci na dálku 🙂 https://seths.blog/2021/09/intentional-connection-
 
 --- https://discord.com/channels/769966886598737931/1150481852516290641/1169891697753325629
 díky, já si matně vybavoval, žes nějakou dobu dojížděla.
-No, můj point je takový, že u nás ti HR na pohovoru řekne, že jedeme hybrid 50 %. Ale skutečnost pak záleží na tvém managerovi. Můj třeba preferuje práci v officu, takže musíme chodit 3x týdně. Ale na jiném oddělení se jede 100 % remote. 
+No, můj point je takový, že u nás ti HR na pohovoru řekne, že jedeme hybrid 50 %. Ale skutečnost pak záleží na tvém managerovi. Můj třeba preferuje práci v officu, takže musíme chodit 3x týdně. Ale na jiném oddělení se jede 100 % remote.
 Takže třeba u nás bys na pohovor nešla, protože podle HR není full remote možný. Ale kdybys šla, tak by ses třeba se svým nadřízeným domluvila a full remote by šel. Takových případů nebude mnoho, ale jsou.
 ---
 
@@ -106,10 +106,12 @@ Cítím, že o hodně přicházím tím, že nevidím, jak kolegové pracují (c
 
 Je těžší si sehnat mentora, pomoc, průvodce. Je těžší se zorientovat i v základních strukturách.
 
-Tím, že je člověk sám, také jinak zpracovává emoce a situace (!), takže se mi stává, že jde do ztracena něco, co bych jinak normálně ihned řešila. 
+Tím, že je člověk sám, také jinak zpracovává emoce a situace (!), takže se mi stává, že jde do ztracena něco, co bych jinak normálně ihned řešila.
 
 HO obecně znamená v krátkodobém horizontu to, že řešení nalézám trochu jiným způsobem, v dlouhodobém ale i to, že přicházím o růst soft skills (!).
 ---
+
+https://blog.naucme.it/moji-kancelari-je-cely-svet
 
 
 #} -->

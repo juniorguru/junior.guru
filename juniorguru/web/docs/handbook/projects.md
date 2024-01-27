@@ -353,4 +353,7 @@ Zajímavý článek o tom, jak použít GitHub API a najít zajímavé nové pro
 ---
 
 
+https://nedbatchelder.com/text/kindling.html
+
+
 #} -->
