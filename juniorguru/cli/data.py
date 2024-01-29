@@ -195,7 +195,12 @@ def merge_databases(path_from: Path, path_to: Path):
         )
 
         for row_from in table_from.rows:
-            pks = [row_from[pk] for pk in table_from.pks]
+            try:
+                pks = [row_from[pk] for pk in table_from.pks]
+            except KeyError:
+                raise KeyError(
+                    f"Primary key {table_from.pks!r} not found in row {row_from!r}"
+                )
             try:
                 row_to = table_to.get(pks)
             except NotFoundError:
