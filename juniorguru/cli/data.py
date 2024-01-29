@@ -36,6 +36,7 @@ LOAD_EXCLUDE = PERSIST_EXCLUDE
 SCHEMA_TRANSFORMATIONS = {
     re.compile(r"^CREATE TABLE"): "CREATE TABLE IF NOT EXISTS",
     re.compile(r"^(CREATE( UNIQUE)? INDEX)"): r"\1 IF NOT EXISTS",
+    re.compile(r"^CREATE TRIGGER"): "CREATE TRIGGER IF NOT EXISTS",
 }
 
 DIR_NOT_EMPTY_ERRNO = 39
@@ -215,7 +216,7 @@ def merge_databases(path_from: Path, path_to: Path):
     db_to.vacuum()
 
 
-def get_row_updates(row_from, row_to):
+def get_row_updates(row_from, row_to) -> dict:
     if frozenset(row_from.keys()) != frozenset(row_to.keys()):
         raise ValueError(
             f"Rows don't match! {list(row_from.keys())!r} ≠ {list(row_to.keys())!r}"
@@ -233,13 +234,13 @@ def get_row_updates(row_from, row_to):
     return updates
 
 
-def make_schema_idempotent(schema):
+def make_schema_idempotent(schema) -> str:
     return "\n".join(
         map(make_schema_line_idempotent, filter(None, schema.splitlines()))
     )
 
 
-def make_schema_line_idempotent(schema_line):
+def make_schema_line_idempotent(schema_line) -> str:
     for transformation_re, replacement in SCHEMA_TRANSFORMATIONS.items():
         if transformation_re.search(schema_line):
             return transformation_re.sub(replacement, schema_line)
