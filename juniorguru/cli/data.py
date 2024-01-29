@@ -5,6 +5,7 @@ import shutil
 from fnmatch import fnmatch
 from pathlib import Path
 from pprint import pformat
+from sqlite3 import IntegrityError
 
 import click
 from sqlite_utils import Database
@@ -176,49 +177,34 @@ def prepare_database_for_moving(path: Path):
 
 
 def merge_databases(path_from: Path, path_to: Path):
-    logger_db = logger["db"]
-    logger_db.info(f"Merging {path_from} to {path_to}")
+    # Would be awesome to use this:
+    # - https://til.simonwillison.net/sqlite/cr-sqlite-macos
+    # - https://github.com/vlcn-io/cr-sqlite
+    logger["db"].info(f"Merging {path_from} to {path_to}")
     db_from, db_to = Database(path_from), Database(path_to)
 
-    logger_db.info("Applying schema")
+    logger["db"].info("Applying schema")
     db_to.executescript(make_schema_idempotent(db_from.schema))
 
     for table_from in db_from.tables:
         name = table_from.name
-        logger_t = logger_db[name]
         table_to = db_to[name]
-
         if not table_to.exists():
             raise RuntimeError(f"Table {name} should already exist!")
+        logger["db"][name].info(
+            f"Tables have {table_from.count} and {table_to.count} rows before merge"
+        )
 
-        if is_diskcache_settings(table_from) and is_diskcache_settings(table_to):
-            logger_t.info("Detected DiskCache Settings table")
+        if is_diskcache(table_from):
+            logger["db"][name].info("Detected DiskCache")
+            merge_diskcaches(table_from, table_to)
+        elif is_diskcache_settings(table_from):
+            logger["db"][name].info("Detected DiskCache settings")
             merge_diskcache_settings(table_from, table_to)
         else:
-            for row_from in table_from.rows:
-                try:
-                    pks = [row_from[pk] for pk in table_from.pks]
-                except KeyError:
-                    raise KeyError(
-                        f"Primary key {table_from.pks!r} not found in row {row_from!r}"
-                    )
-                try:
-                    row_to = table_to.get(pks)
-                except NotFoundError:
-                    logger_t.debug(f"Inserting {pks!r}")
-                    table_to.insert(row_from, pk=table_from.pks)
-                else:
-                    try:
-                        updates = get_row_updates(row_from, row_to)
-                    except RuntimeError:
-                        logger_t.error(
-                            "Conflicts found! This typically happens if two parallel scripts write values to the same column. Instead add a new column or a new 1:1 table"
-                        )
-                        raise
-                    if updates:
-                        logger_t.debug(f"Updating {pks!r} with {pformat(updates)}")
-                        table_to.update(pks, updates)
-        logger_t.info(f"Table has {table_to.count} rows after merge")
+            logger["db"][name].info("Merging standard table")
+            merge_tables(table_from, table_to)
+        logger["db"][name].info(f"Table has {table_to.count} rows after merge")
     db_to.vacuum()
 
 
@@ -240,6 +226,112 @@ def get_row_updates(row_from, row_to) -> dict:
     return updates
 
 
+def merge_tables(table_from: Table, table_to: Table):
+    logger_t = logger["db"][table_from.name]
+
+    for row_from in table_from.rows:
+        try:
+            pks = [row_from[pk] for pk in table_from.pks]
+        except KeyError:
+            raise KeyError(
+                f"Primary key {table_from.pks!r} not found in row:\n{pformat(row_from)}"
+            )
+        try:
+            row_to = table_to.get(pks)
+        except NotFoundError:
+            logger_t.debug(f"Inserting {pks!r}")
+            table_to.insert(row_from, pk=table_from.pks)
+        else:
+            try:
+                updates = get_row_updates(row_from, row_to)
+            except RuntimeError:
+                logger_t.error(
+                    "Conflicts found! This typically happens if two parallel scripts write values to the same column. Instead add a new column or a new 1:1 table"
+                )
+                raise
+            if updates:
+                logger_t.debug(f"Updating {pks!r} with {pformat(updates)}")
+                table_to.update(pks, updates)
+
+
+def is_diskcache(table: Table) -> bool:
+    columns = frozenset(table.columns_dict.keys())
+    return table.name == "Cache" and {"key", "raw", "filename", "value"} < columns
+
+
+def merge_diskcaches(table_from: Table, table_to: Table):
+    if not is_diskcache(table_from):
+        raise ValueError(f"Table {table_from.name!r} (from) should be DiskCache!")
+    if not is_diskcache(table_to):
+        raise ValueError(f"Table {table_to.name!r} (to) should be DiskCache!")
+
+    logger_t = logger["db"][table_from.name]
+
+    for row in table_from.rows:
+        row.pop("rowid")  # drop rowid and rely on unique key
+        try:
+            logger_t.debug(f"Inserting {row['key']!r}")
+            table_to.insert(row)
+        except IntegrityError:
+            logger_t.debug(f"Row {row['key']!r} exists, updating")
+            existing_row = next(table_to.rows_where("key = ?", [row["key"]], limit=1))
+            pks = [existing_row[pk] for pk in table_to.pks]
+            updates = dict(
+                store_time=max(row["store_time"], existing_row["store_time"]),
+                expire_time=max(row["expire_time"], existing_row["expire_time"]),
+                access_time=max(row["access_time"], existing_row["access_time"]),
+                access_count=existing_row["access_count"] + row["access_count"],
+            )
+            if row["store_time"] > existing_row["store_time"]:
+                updates |= dict(
+                    tag=row["tag"],
+                    size=row["size"],
+                    mode=row["mode"],
+                    filename=row["filename"],
+                    value=row["value"],
+                )
+            logger_t.debug(f"Updating {pks!r} with {pformat(updates)}")
+            table_to.update(pks, updates)
+
+
+def is_diskcache_settings(table: Table) -> bool:
+    return (
+        table.name == "Settings"
+        and table.use_rowid
+        and list(table.columns_dict.keys()) == ["key", "value"]
+    )
+
+
+def merge_diskcache_settings(table_from: Table, table_to: Table) -> None:
+    if not is_diskcache_settings(table_from):
+        raise ValueError(
+            f"Table {table_from.name!r} (from) should be DiskCache settings!"
+        )
+    if not is_diskcache_settings(table_to):
+        raise ValueError(f"Table {table_to.name!r} (to) should be DiskCache settings!")
+
+    logger_t = logger["db"][table_from.name]
+
+    from_settings = {row["key"]: row["value"] for row in table_from.rows}
+    to_settings = {row["key"]: row["value"] for row in table_to.rows}
+
+    if from_settings == to_settings:
+        logger_t.debug("Tables are equal, nothing to do")
+        return
+
+    if not from_settings:
+        raise ValueError("DiskCache Settings table is empty!")
+
+    for key, from_value in from_settings.items():
+        to_value = to_settings.get(key)
+        if to_value is None:
+            logger_t.debug(f"Adding {key!r}")
+            table_to.insert({"key": key, "value": from_value})
+        elif to_value != from_value:
+            logger_t.debug(f"Deleting {key!r}, {from_value!r} ≠ {to_value!r}")
+            table_to.delete_where("key = ?", [key])
+
+
 def make_schema_idempotent(schema) -> str:
     return "\n".join(
         map(make_schema_line_idempotent, filter(None, schema.splitlines()))
@@ -251,34 +343,3 @@ def make_schema_line_idempotent(schema_line) -> str:
         if transformation_re.search(schema_line):
             return transformation_re.sub(replacement, schema_line)
     raise ValueError(f"Unexpected schema line: {schema_line!r}")
-
-
-def merge_diskcache_settings(table_from: Table, table_to: Table) -> None:
-    from_settings = {row["key"]: row["value"] for row in table_from.rows}
-    to_settings = {row["key"]: row["value"] for row in table_to.rows}
-
-    if from_settings == to_settings:
-        return
-
-    if not to_settings:
-        for key, value in from_settings.items():
-            table_to.insert({"key": key, "value": value})
-
-    if not from_settings:
-        raise ValueError("DiskCache Settings table is empty!")
-
-    for key, to_value in to_settings.items():
-        from_value = from_settings.get(key)
-        if to_value != from_value:
-            table_to.delete_where("key = ?", [key])
-    for key, from_value in from_settings.items():
-        if key not in to_settings:
-            table_to.insert({"key": key, "value": from_value})
-
-
-def is_diskcache_settings(table: Table) -> bool:
-    return (
-        table.name == "Settings"
-        and table.use_rowid
-        and list(table.columns_dict.keys()) == ["key", "value"]
-    )
