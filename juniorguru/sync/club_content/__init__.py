@@ -1,12 +1,11 @@
 from pprint import pformat
 
 import click
-from diskcache import Cache
 from peewee import OperationalError
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_task, loggers
-from juniorguru.lib.cache import pass_cache
+from juniorguru.lib.cache import get_cache
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage, ClubPin, ClubUser
 from juniorguru.sync.club_content.crawler import crawl
@@ -17,8 +16,8 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command()
 @click.option("--clear-stats-cache/--keep-stats-cache", default=False)
-@pass_cache
-def main(clear_stats_cache: bool, cache: Cache):
+def main(clear_stats_cache: bool):
+    cache = get_cache()
     if clear_stats_cache:
         cache.delete("club_content_stats")
     try:

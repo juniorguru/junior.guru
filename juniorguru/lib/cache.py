@@ -36,15 +36,6 @@ def close_cache() -> None:
             cache.close()
 
 
-def pass_cache(fn: Callable) -> Callable:
-    @wraps(fn)
-    def wrapper(*args, **kwargs) -> Any:
-        kwargs.setdefault("cache", get_cache())
-        return fn(*args, **kwargs)
-
-    return wrapper
-
-
 def cache(
     expire: float | int | timedelta | None = None,
     tag: str | None = None,
