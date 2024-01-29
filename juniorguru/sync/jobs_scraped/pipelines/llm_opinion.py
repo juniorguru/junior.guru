@@ -3,7 +3,7 @@ import hashlib
 import json
 import logging
 import os
-from functools import lru_cache
+import functools
 from pprint import pprint
 
 from diskcache import Cache
@@ -64,7 +64,7 @@ async def process(
     return item
 
 
-@lru_cache()
+@functools.cache()
 def get_client() -> AsyncOpenAI:
     logger.debug("Creating OpenAI client")
     return AsyncOpenAI(api_key=OPENAI_API_KEY)

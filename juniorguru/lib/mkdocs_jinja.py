@@ -9,10 +9,8 @@ from mkdocs.structure.toc import get_toc
 from mkdocs.utils.filters import url_filter
 
 from juniorguru.lib import loggers, template_filters
-from juniorguru.lib.jinja_cache import BytecodeCache
+from juniorguru.lib.cache import get_jinja_cache
 
-
-CACHE_DIR = Path(".web_cache/jinja")
 
 TEMPLATE_FILTERS = [
     "docs_url",
@@ -79,9 +77,11 @@ def get_filters() -> dict[str, Callable]:
 
 
 def get_env(page: Page, config: Config, files: Files) -> Environment:
-    loader = FileSystemLoader(get_macros_dir(config))
-    cache = BytecodeCache(CACHE_DIR)
-    env = Environment(loader=loader, auto_reload=False, bytecode_cache=cache)
+    env = Environment(
+        loader=FileSystemLoader(get_macros_dir(config)),
+        auto_reload=False,
+        bytecode_cache=get_jinja_cache(),
+    )
     env.filters.update(get_filters())
     env.filters["url"] = url_filter
     env.filters["md"] = create_md_filter(page, config, files)

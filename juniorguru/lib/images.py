@@ -14,7 +14,7 @@ from PIL import Image
 from playwright.sync_api import sync_playwright
 
 from juniorguru.lib import loggers
-from juniorguru.lib.jinja_cache import BytecodeCache
+from juniorguru.lib.cache import get_jinja_cache
 
 
 CACHE_DIR = Path(".image_templates_cache")
@@ -94,11 +94,10 @@ def render_template(
         )
     t = time.perf_counter()
 
-    cache = BytecodeCache(CACHE_DIR / "jinja")
     environment = Environment(
         loader=FileSystemLoader(str(TEMPLATES_DIR)),
         auto_reload=False,
-        bytecode_cache=cache,
+        bytecode_cache=get_jinja_cache(),
     )
     environment.filters.update(filters or {})
     template = environment.get_template(template_name)
