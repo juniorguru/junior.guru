@@ -202,9 +202,10 @@ def merge_databases(path_from: Path, path_to: Path):
             logger["db"][name].info("Detected DiskCache settings")
             merge_diskcache_settings(table_from, table_to)
         else:
-            logger["db"][name].info("Merging standard table")
             merge_tables(table_from, table_to)
         logger["db"][name].info(f"Table has {table_to.count} rows after merge")
+
+    db_to.disable_wal()
     db_to.vacuum()
 
 
