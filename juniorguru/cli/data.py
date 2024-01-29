@@ -235,7 +235,7 @@ def get_row_updates(row_from, row_to) -> dict:
                 updates[column_name] = value_from
             elif value_from != value_to:
                 raise RuntimeError(
-                    f"Conflict in column {column_name}! Values would be overwritten"
+                    f"Conflict in column {column_name!r}! Values would be overwritten\n{pformat(row_from)}\n{pformat(row_to)}"
                 )
     return updates
 
