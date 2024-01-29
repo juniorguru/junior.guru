@@ -205,8 +205,11 @@ def merge_databases(path_from: Path, path_to: Path):
             merge_tables(table_from, table_to)
         logger["db"][name].info(f"Table has {table_to.count} rows after merge")
 
-    db_to.disable_wal()
-    db_to.vacuum()
+    # flush changes to disk, close all transactions
+    db_to.close()
+
+    # vacuum to shrink the file
+    Database(path_to).vacuum()
 
 
 def get_row_updates(row_from, row_to) -> dict:
