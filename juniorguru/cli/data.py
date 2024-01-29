@@ -193,8 +193,7 @@ def merge_databases(path_from: Path, path_to: Path):
 
         if is_diskcache_settings(table_from) and is_diskcache_settings(table_to):
             logger_t.info("Detected DiskCache Settings table")
-            table_from.drop()
-            table_to.drop()
+            merge_diskcache_settings(table_from, table_to)
         else:
             for row_from in table_from.rows:
                 try:
@@ -252,6 +251,26 @@ def make_schema_line_idempotent(schema_line) -> str:
         if transformation_re.search(schema_line):
             return transformation_re.sub(replacement, schema_line)
     raise ValueError(f"Unexpected schema line: {schema_line!r}")
+
+
+def merge_diskcache_settings(table_from: Table, table_to: Table) -> None:
+    from_settings = {row["key"]: row["value"] for row in table_from.rows}
+    to_settings = {row["key"]: row["value"] for row in table_to.rows}
+
+    if from_settings == to_settings:
+        return
+
+    if not to_settings:
+        for key, value in from_settings.items():
+            table_to.insert({"key": key, "value": value})
+
+    if not from_settings:
+        raise ValueError("DiskCache Settings table is empty!")
+
+    if from_settings != to_settings:
+        raise RuntimeError(
+            f"DiskCache Settings tables don't match!\n{pformat(from_settings)}\n{pformat(to_settings)}"
+        )
 
 
 def is_diskcache_settings(table: Table) -> bool:
