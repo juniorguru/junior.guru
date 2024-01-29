@@ -8,7 +8,7 @@ from pprint import pformat
 
 import click
 from sqlite_utils import Database
-from sqlite_utils.db import NotFoundError
+from sqlite_utils.db import NotFoundError, Table
 
 from juniorguru.lib import loggers
 
@@ -190,18 +190,11 @@ def merge_databases(path_from: Path, path_to: Path):
 
         if not table_to.exists():
             raise RuntimeError(f"Table {name} should already exist!")
-        logger_t.info(
-            f"Table has {table_to.count} rows, merging {table_from.count} rows"
-        )
 
-        if table_from.pks != table_to.pks:
-            raise RuntimeError(
-                f"Tables {name} have primary keys mismatch: {table_from.pks!r} (from) ≠ {table_to.pks!r} (to)"
-            )
-        if table_from.use_rowid:
-            for row_from in table_from.rows:
-                logger_t.debug(f"Inserting {row_from!r} (rowid)")
-                table_to.insert(row_from)
+        if is_diskcache_settings(table_from) and is_diskcache_settings(table_to):
+            logger_t.info("Detected DiskCache Settings table")
+            if get_diskcache_settings(table_from) != get_diskcache_settings(table_to):
+                raise RuntimeError("DiskCache Settings tables don't match!")
         else:
             for row_from in table_from.rows:
                 try:
@@ -259,3 +252,19 @@ def make_schema_line_idempotent(schema_line) -> str:
         if transformation_re.search(schema_line):
             return transformation_re.sub(replacement, schema_line)
     raise ValueError(f"Unexpected schema line: {schema_line!r}")
+
+
+def is_diskcache_settings(table: Table) -> bool:
+    return (
+        table.name == "Settings"
+        and table.use_rowid
+        and list(table.columns_dict.keys()) == ["key", "value"]
+    )
+
+
+def get_diskcache_settings(table: Table) -> dict:
+    return {row["key"]: row["value"] for row in table.rows}
+
+
+if __name__ == "__main__":
+    merge_databases(".cache/cache.db", ".pytest_cache/test.db")
