@@ -264,7 +264,3 @@ def is_diskcache_settings(table: Table) -> bool:
 
 def get_diskcache_settings(table: Table) -> dict:
     return {row["key"]: row["value"] for row in table.rows}
-
-
-if __name__ == "__main__":
-    merge_databases(".cache/cache.db", ".pytest_cache/test.db")
