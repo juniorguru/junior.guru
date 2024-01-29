@@ -1,12 +1,13 @@
 from datetime import timedelta
+
 import requests
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.cache import cache
 from juniorguru.lib.remove_emoji import remove_emoji
-from juniorguru.models.course_provider import CourseUP
 from juniorguru.models.base import db
+from juniorguru.models.course_provider import CourseUP
 
 
 logger = loggers.from_path(__file__)

@@ -7,8 +7,8 @@ import stripe
 from juniorguru.cli.sync import default_from_env, main as cli
 from juniorguru.lib import loggers
 from juniorguru.lib.cache import cache
-from juniorguru.models.subscription import SubscriptionCountry
 from juniorguru.models.base import db
+from juniorguru.models.subscription import SubscriptionCountry
 
 
 WORKERS = 10
