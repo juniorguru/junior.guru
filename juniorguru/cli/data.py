@@ -194,34 +194,38 @@ def merge_databases(path_from: Path, path_to: Path):
             f"Table has {table_to.count} rows, merging {table_from.count} rows"
         )
 
-        rows = (
-            table_from.rows_where(select="rowid, *")
-            if table_from.use_rowid
-            else table_from.rows
-        )
-        for row_from in rows:
-            try:
-                pks = [row_from[pk] for pk in table_from.pks]
-            except KeyError:
-                raise KeyError(
-                    f"Primary key {table_from.pks!r} not found in row {row_from!r}"
-                )
-            try:
-                row_to = table_to.get(pks)
-            except NotFoundError:
-                logger_t.debug(f"Inserting {pks!r}")
-                table_to.insert(row_from, pk=table_from.pks)
-            else:
+        if table_from.pks != table_to.pks:
+            raise RuntimeError(
+                f"Tables {name} have primary keys mismatch: {table_from.pks!r} (from) ≠ {table_to.pks!r} (to)"
+            )
+        if table_from.use_rowid:
+            for row_from in table_from.rows:
+                logger_t.debug(f"Inserting {row_from!r} (rowid)")
+                table_to.insert(row_from)
+        else:
+            for row_from in table_from.rows:
                 try:
-                    updates = get_row_updates(row_from, row_to)
-                except RuntimeError:
-                    logger_t.error(
-                        "Conflicts found! This typically happens if two parallel scripts write values to the same column. Instead add a new column or a new 1:1 table"
+                    pks = [row_from[pk] for pk in table_from.pks]
+                except KeyError:
+                    raise KeyError(
+                        f"Primary key {table_from.pks!r} not found in row {row_from!r}"
                     )
-                    raise
-                if updates:
-                    logger_t.debug(f"Updating {pks!r} with {pformat(updates)}")
-                    table_to.update(pks, updates)
+                try:
+                    row_to = table_to.get(pks)
+                except NotFoundError:
+                    logger_t.debug(f"Inserting {pks!r}")
+                    table_to.insert(row_from, pk=table_from.pks)
+                else:
+                    try:
+                        updates = get_row_updates(row_from, row_to)
+                    except RuntimeError:
+                        logger_t.error(
+                            "Conflicts found! This typically happens if two parallel scripts write values to the same column. Instead add a new column or a new 1:1 table"
+                        )
+                        raise
+                    if updates:
+                        logger_t.debug(f"Updating {pks!r} with {pformat(updates)}")
+                        table_to.update(pks, updates)
         logger_t.info(f"Table has {table_to.count} rows after merge")
     db_to.vacuum()
 
