@@ -178,7 +178,7 @@ async def fetch_messages(
         channel_history = channel.history
     except AttributeError:
         return  # channel type doesn't support history (e.g. forum)
-    async for message in channel_history(limit=None, after=after):
+    async for message in channel_history(limit=None, after=after, oldest_first=False):
         yield message
 
 
