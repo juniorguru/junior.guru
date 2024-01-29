@@ -267,6 +267,10 @@ def merge_diskcache_settings(table_from: Table, table_to: Table) -> None:
     if not from_settings:
         raise ValueError("DiskCache Settings table is empty!")
 
+    count = from_settings.pop("count", 0) + to_settings.pop("count", 0)
+    table_to.delete_where("key = 'count'")
+    table_to.insert({"key": "count", "value": count})
+
     if from_settings != to_settings:
         raise RuntimeError(
             f"DiskCache Settings tables don't match!\n{pformat(from_settings)}\n{pformat(to_settings)}"
