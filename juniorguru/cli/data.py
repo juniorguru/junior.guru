@@ -193,8 +193,8 @@ def merge_databases(path_from: Path, path_to: Path):
 
         if is_diskcache_settings(table_from) and is_diskcache_settings(table_to):
             logger_t.info("Detected DiskCache Settings table")
-            if get_diskcache_settings(table_from) != get_diskcache_settings(table_to):
-                raise RuntimeError("DiskCache Settings tables don't match!")
+            table_from.drop()
+            table_to.drop()
         else:
             for row_from in table_from.rows:
                 try:
@@ -260,7 +260,3 @@ def is_diskcache_settings(table: Table) -> bool:
         and table.use_rowid
         and list(table.columns_dict.keys()) == ["key", "value"]
     )
-
-
-def get_diskcache_settings(table: Table) -> dict:
-    return {row["key"]: row["value"] for row in table.rows}
