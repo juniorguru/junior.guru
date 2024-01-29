@@ -194,7 +194,12 @@ def merge_databases(path_from: Path, path_to: Path):
             f"Table has {table_to.count} rows, merging {table_from.count} rows"
         )
 
-        for row_from in table_from.rows:
+        rows = (
+            table_from.rows_where(select="rowid, *")
+            if table_from.use_rowid
+            else table_from.rows
+        )
+        for row_from in rows:
             try:
                 pks = [row_from[pk] for pk in table_from.pks]
             except KeyError:
