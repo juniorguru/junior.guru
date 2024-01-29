@@ -1,8 +1,6 @@
 import itertools
 import re
 
-from diskcache import Cache
-
 
 LANG_MAPPING = {
     "en": "ENGLISH_REQUIRED",
@@ -501,7 +499,7 @@ RULES = {"en": RULES_EN, "cs": RULES_CS}
 SUPPRESSING_RULES = {"en": SUPPRESSING_RULES_EN, "cs": SUPPRESSING_RULES_CS}
 
 
-async def process(item: dict, cache: Cache | None = None) -> dict:
+async def process(item: dict) -> dict:
     parse_results = deduplicate(
         itertools.chain(
             parse_from_sentence(item["title"], item["lang"]),

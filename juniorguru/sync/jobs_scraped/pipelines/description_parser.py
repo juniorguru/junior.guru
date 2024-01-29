@@ -1,8 +1,6 @@
 import re
 from pprint import pformat
 
-from diskcache import Cache
-
 from juniorguru.lib import loggers
 from juniorguru.lib.text import extract_text, split_blocks
 
@@ -26,7 +24,7 @@ SENTENCE_END_RE = re.compile(
 logger = loggers.from_path(__file__)
 
 
-async def process(item: dict, cache: Cache | None = None) -> dict:
+async def process(item: dict) -> dict:
     try:
         description_text = extract_text(item["description_html"])
         item["description_text"] = description_text

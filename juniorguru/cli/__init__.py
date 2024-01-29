@@ -15,6 +15,7 @@ from juniorguru.cli import (
     winners,
 )
 from juniorguru.cli.dev import main as dev
+from juniorguru.lib.cache import close_cache
 from juniorguru.lib.cli import load_command
 
 
@@ -41,4 +42,7 @@ subcommands = click.Group(
 )
 
 
-main = click.CommandCollection(sources=[dev, subcommands])
+@click.command(cls=click.CommandCollection, sources=[dev, subcommands])
+@click.pass_context
+def main(context: click.Context):
+    context.call_on_close(close_cache)

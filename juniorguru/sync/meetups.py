@@ -15,6 +15,7 @@ import teemup
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_task, loggers, mutations
+from juniorguru.lib.cache import cache
 from juniorguru.lib.discord_club import (
     ClubClient,
     ClubMemberID,
@@ -147,35 +148,11 @@ logger = loggers.from_path(__file__)
 
 
 @cli.sync_command(dependencies=["club-content"])
-@cli.pass_cache
 @click.option("--channel", "channel_id", default="promo", type=parse_channel)
-@click.option("--clear-cache/--keep-cache", default=False)
-def main(cache, clear_cache, channel_id):
-    if clear_cache:
-        cache.delete("meetups")
-    try:
-        data = cache["meetups"]
-        logger.info("Events loaded from cache")
-    except KeyError:
-        logger.info("Fetching events")
-        data = []
-        for feed in FEEDS:
-            logger.info(
-                f'Downloading {feed["format"]!r} feed from {feed["source_url"]}'
-            )
-            response = requests.get(
-                feed["source_url"], headers={"User-Agent": USER_AGENT}
-            )
-            response.raise_for_status()
-            feed["source_url"] = response.url  # overwrite with the final URL
-            feed["data"] = response.text
-            data.append(feed)
-        cache["meetups"] = data
-
-    logger.info("Parsing events")
+def main(channel_id):
     today = date.today()
     events = []
-    for feed in data:
+    for feed in fetch_feeds():
         if feed["format"] == "icalendar":
             events.extend(
                 [
@@ -228,6 +205,20 @@ def main(cache, clear_cache, channel_id):
         f"Syncing {len(events)} events with Discord, using channel #{channel_id}"
     )
     discord_task.run(sync_events, events, channel_id)
+
+
+@cache(expire=timedelta(days=1), tag="meetups")
+def fetch_feeds() -> list[dict]:
+    logger.info("Fetching feeds")
+    data = []
+    for feed in FEEDS:
+        logger.info(f'Downloading {feed["format"]!r} feed from {feed["source_url"]}')
+        response = requests.get(feed["source_url"], headers={"User-Agent": USER_AGENT})
+        response.raise_for_status()
+        feed["source_url"] = response.url  # overwrite with the final URL
+        feed["data"] = response.text
+        data.append(feed)
+    return data
 
 
 @mutations.mutates_discord()

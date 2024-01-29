@@ -6,7 +6,7 @@ from typing import Awaitable, Callable
 
 from peewee import IntegrityError
 
-from juniorguru.cli.sync import Cache, main as cli
+from juniorguru.cli.sync import main as cli
 from juniorguru.lib import apify, loggers
 from juniorguru.lib.cli import async_command
 from juniorguru.models.base import db
@@ -60,13 +60,10 @@ class DisguisedGenerator:
 
 
 @cli.sync_command()
-@cli.pass_cache
 @async_command
-async def main(cache: Cache):
+async def main():
     logger.info(f"Actors:\n{pformat(ACTORS)}")
-    items = itertools.chain.from_iterable(
-        apify.iter_data(actor, cache=cache) for actor in ACTORS
-    )
+    items = itertools.chain.from_iterable(apify.fetch_data(actor) for actor in ACTORS)
 
     logger.info(f"Pipelines:\n{pformat(PIPELINES)}")
     pipelines = [
@@ -84,7 +81,7 @@ async def main(cache: Cache):
 
     logger.info("Processing items")
     # tasks = [
-    #     asyncio.create_task(process_item(pipelines, item, cache=cache))
+    #     asyncio.create_task(process_item(pipelines, item))
     #     for item in items
     # ]
     # count = sum(await asyncio.gather(*tasks))
@@ -93,9 +90,7 @@ async def main(cache: Cache):
     drops = 0
     for processing in logger.progress(
         asyncio.as_completed(
-            DisguisedGenerator(
-                process_item(pipelines, item, cache=cache) for item in items
-            )
+            DisguisedGenerator(process_item(pipelines, item) for item in items)
         )
     ):
         count += 1
@@ -106,13 +101,12 @@ async def main(cache: Cache):
 async def process_item(
     pipelines: list[tuple[str, Callable[..., Awaitable[dict]]]],
     item: dict,
-    cache: Cache | None = None,
 ) -> int:
     logger.debug(f"Item {item['url']}")
     try:
         for pipeline_name, pipeline in pipelines:
             try:
-                item = await pipeline(item, cache=cache)
+                item = await pipeline(item)
             except DropItem as e:
                 logger[pipeline_name].debug(f"Dropping: {e}\n{pformat(item)}")
                 raise

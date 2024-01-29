@@ -1,7 +1,5 @@
 import re
 
-from diskcache import Cache
-
 from juniorguru.sync.jobs_scraped import DropItem
 
 
@@ -25,7 +23,7 @@ RE_IDENTIFY_MAPPING = [
 ]
 
 
-async def process(item: dict, cache: Cache | None = None) -> dict:
+async def process(item: dict) -> dict:
     try:
         url = item["url"]
     except KeyError as e:

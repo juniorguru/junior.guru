@@ -75,9 +75,7 @@ google_service_account.json
 
 # Cache
 .scrapy
-.image_templates_cache
-.sync_cache
-.web_cache
+.*cache
 
 # Synced data
 /juniorguru/data/*.db

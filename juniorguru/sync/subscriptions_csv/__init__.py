@@ -5,7 +5,6 @@ from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
 
-import click
 from slugify import slugify
 
 from juniorguru.cli.sync import main as cli
@@ -28,12 +27,10 @@ logger = loggers.from_path(__file__)
 
 
 @cli.sync_command()
-@cli.pass_cache
-@click.option("--clear-cache/--keep-cache", default=False)
 @db.connection_context()
-def main(cache, clear_cache):
+def main():
     logger.info("Preparing")
-    memberful = MemberfulAPI(cache=cache, clear_cache=clear_cache)
+    memberful = MemberfulAPI()
 
     tables = [
         SubscriptionReferrer,
@@ -54,7 +51,7 @@ def main(cache, clear_cache):
     }
 
     logger.info("Fetching members data from Memberful CSV")
-    memberful = MemberfulCSV(cache=cache, clear_cache=clear_cache)
+    memberful = MemberfulCSV()
     seen_account_ids = set()
     for csv_row in memberful.download_csv(dict(type="MembersCsvExport", filter="all")):
         account_id = int(csv_row["Memberful ID"])

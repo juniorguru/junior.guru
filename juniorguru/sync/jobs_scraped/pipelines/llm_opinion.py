@@ -1,12 +1,11 @@
 import asyncio
-import hashlib
+from datetime import timedelta
 import json
 import logging
 import os
-import functools
+from functools import lru_cache
 from pprint import pprint
 
-from diskcache import Cache
 from openai import AsyncOpenAI, InternalServerError, RateLimitError
 from tenacity import (
     before_sleep_log,
@@ -18,6 +17,7 @@ from tenacity import (
 )
 
 from juniorguru.lib import loggers
+from juniorguru.lib.cache import cache
 
 
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
@@ -46,25 +46,15 @@ limit = asyncio.Semaphore(4)
 
 async def process(
     item: dict,
-    cache: Cache | None = None,
 ) -> dict:
-    user_prompt = f"{item['title']}\n\n{item['description_text']}"
-    cache_key = f"llm_opinion_{hashlib.sha256(user_prompt.encode()).hexdigest()}"
-    llm_opinion = cache.get(cache_key) if cache else None
-
-    if llm_opinion:
-        logger.debug(f"Using cached LLM opinion on {item['url']}")
-    else:
-        logger.debug(f"Asking for LLM opinion on {item['url']}")
-        llm_opinion = await fetch_llm_opinion(SYSTEM_PROMPT, user_prompt)
-        if cache:
-            cache.set(cache_key, llm_opinion)
-
-    item["llm_opinion"] = llm_opinion
+    item["llm_opinion"] = await fetch_llm_opinion(
+        SYSTEM_PROMPT,
+        f"{item['title']}\n\n{item['description_text']}",
+    )
     return item
 
 
-@functools.cache()
+@lru_cache
 def get_client() -> AsyncOpenAI:
     logger.debug("Creating OpenAI client")
     return AsyncOpenAI(api_key=OPENAI_API_KEY)
@@ -77,6 +67,7 @@ retry_defaults = dict(
 )
 
 
+@cache(expire=timedelta(days=60), tag="llm-opinion")
 @retry(
     retry=(
         retry_if_exception_type(RateLimitError)

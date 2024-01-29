@@ -1,9 +1,7 @@
-from diskcache import Cache
-
 from juniorguru.lib.remove_emoji import remove_emoji
 
 
-async def process(item: dict, cache: Cache | None = None) -> dict:
+async def process(item: dict) -> dict:
     title = item["title"]
     try:
         item["title"] = remove_emoji(title)

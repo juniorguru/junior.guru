@@ -23,7 +23,6 @@ SNAPSHOT_EXCLUDE = [
     "node_modules",
     "public",
     ".image_templates_cache",
-    ".sync_cache",
     ".pytest_cache",
     ".vscode",
     SNAPSHOT_FILE,

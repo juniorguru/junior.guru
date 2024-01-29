@@ -69,3 +69,7 @@ class CourseUP(BaseModel):
     name = CharField()
     description = TextField()
     cz_business_id = IntegerField()
+
+    @classmethod
+    def count(cls) -> int:
+        return cls.select().count()

@@ -1,7 +1,5 @@
 import re
 
-from diskcache import Cache
-
 from juniorguru.sync.jobs_scraped import DropItem
 
 
@@ -20,7 +18,7 @@ BLOCKLIST = [
 ]
 
 
-async def process(item: dict, cache: Cache | None = None) -> dict:
+async def process(item: dict) -> dict:
     for field, value_re in BLOCKLIST:
         value = item.get(field) or ""
         if value_re.search(value):

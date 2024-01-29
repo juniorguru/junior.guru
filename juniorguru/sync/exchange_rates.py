@@ -1,6 +1,6 @@
 from strictyaml import Map, Seq, Str
 
-from juniorguru.cli.sync import Cache, main as cli
+from juniorguru.cli.sync import main as cli
 from juniorguru.lib import apify, loggers
 from juniorguru.lib.yaml import Decimal as Dec
 from juniorguru.models.base import db
@@ -23,15 +23,14 @@ YAML_SCHEMA = Seq(
 
 
 @cli.sync_command()
-@cli.pass_cache
 @db.connection_context()
-def main(cache: Cache):
+def main():
     ExchangeRate.drop_table()
     ExchangeRate.create_table()
 
     for exchange_rate in (
         item
-        for item in apify.iter_data("honzajavorek/exchange-rates", cache=cache)
+        for item in apify.fetch_data("honzajavorek/exchange-rates")
         if item["code"] in CURRENCIES
     ):
         logger.info(

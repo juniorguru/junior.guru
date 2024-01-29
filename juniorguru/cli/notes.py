@@ -6,7 +6,6 @@ from time import perf_counter_ns
 import click
 import discord
 
-from juniorguru.cli.sync import Cache
 from juniorguru.lib import discord_task, loggers, mutations
 from juniorguru.lib.discord_club import (
     ClubClient,
@@ -34,12 +33,11 @@ logger = loggers.from_path(__file__)
 
 
 @click.command()
-@click.option("--cache-dir", default=".sync_cache", type=click.Path(path_type=Path))
 @click.pass_context
-def main(context, cache_dir):
+def main(context):
     with db.connection_context():
         sync = Sync.start(perf_counter_ns())
-    context.obj = dict(sync=sync, cache=Cache(cache_dir), skip_dependencies=False)
+    context.obj = dict(sync=sync, skip_dependencies=False)
     context.invoke(sync_pages)
     mutations.allow("discord")
     discord_task.run(process_pins)

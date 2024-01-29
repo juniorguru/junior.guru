@@ -41,10 +41,6 @@ jobs:
       - restore_cache:
           key: deps-{{ checksum "poetry.lock" }}-{{ checksum "package-lock.json" }}
       - run:
-          name: Create the .today file for caching purposes
-          command: |
-            date +'%Y-%m-%d' > .today
-      - run:
           name: Update Poetry
           command: |
             poetry --version
@@ -69,9 +65,7 @@ jobs:
             - ~/.cache/ms-playwright
             - ./node_modules
       - restore_cache:
-          key: sync-v1-{{ .Branch }}-{{ checksum ".today" }}
-      - restore_cache:
-          key: images-v1-{{ .Branch }}
+          key: cache-v1-{{ .Branch }}
       - run:
           name: Snapshot files
           command: poetry run jg data snapshot
@@ -172,12 +166,9 @@ jobs:
           name: Load data
           command: poetry run jg data load --move
       - save_cache:
-          key: sync-v1-{{ .Branch }}-{{ checksum ".today" }}
+          key: cache-v1-{{ .Branch }}-{{ .Revision }}
           paths:
-            - .sync_cache
-      - save_cache:
-          key: images-v1-{{ .Branch }}-{{ .Revision }}
-          paths:
+            - .cache
             - juniorguru/images/posters-events
             - juniorguru/images/posters-partners
             - juniorguru/images/posters-podcast
