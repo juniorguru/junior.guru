@@ -204,9 +204,10 @@ async def fetch_messages(
         cache.get, cache_key, {}
     )
     payloads = filter_payloads(payloads_mapping.values(), after, cache_cutoff_at)
+    cached_ids = frozenset(int(payload["id"]) for payload in payloads)
 
     # Detect if we can read the whole channel from cache
-    if is_channel_before(channel, cache_cutoff_at):
+    if getattr(channel, "last_message_id", None) in cached_ids:
         logger_m.debug("Reading whole channel from cache")
         for payload in payloads:
             yield await _call_async(create_message, iterator.state, channel, payload)
@@ -228,7 +229,7 @@ async def fetch_messages(
     count_downloaded = 0
     count_cached = 0
     async for message in iterator:
-        if is_message_before(message, cache_cutoff_at):
+        if message.id in cached_ids:
             for payload in payloads:
                 yield await _call_async(
                     create_message, iterator.state, channel, payload
