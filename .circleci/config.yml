@@ -279,9 +279,6 @@ workflows:
       - lint-and-test:
           requires:
             - install
-      - check-bot:
-          requires:
-            - install
       - sync-1:
           requires:
             - install
