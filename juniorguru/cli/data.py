@@ -281,9 +281,15 @@ def merge_diskcaches(table_from: Table, table_to: Table):
             existing_row = next(table_to.rows_where("key = ?", [row["key"]], limit=1))
             pks = [existing_row[pk] for pk in table_to.pks]
             updates = dict(
-                store_time=max(row["store_time"], existing_row["store_time"]),
-                expire_time=max(row["expire_time"], existing_row["expire_time"]),
-                access_time=max(row["access_time"], existing_row["access_time"]),
+                store_time=max(
+                    filter(None, [row["store_time"], existing_row["store_time"]])
+                ),
+                expire_time=max(
+                    filter(None, [row["expire_time"], existing_row["expire_time"]])
+                ),
+                access_time=max(
+                    filter(None, [row["access_time"], existing_row["access_time"]])
+                ),
                 access_count=existing_row["access_count"] + row["access_count"],
             )
             if row["store_time"] > existing_row["store_time"]:
