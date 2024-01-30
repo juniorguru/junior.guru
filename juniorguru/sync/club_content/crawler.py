@@ -1,8 +1,8 @@
 import asyncio
 from copy import deepcopy
-from datetime import date, datetime, timedelta, timezone
+from datetime import datetime, timedelta, timezone
 from functools import partial
-from operator import attrgetter, itemgetter
+from operator import itemgetter
 import random
 from typing import Generator
 
@@ -10,7 +10,7 @@ from discord import DMChannel, Member, Message, Reaction, User
 from discord.state import ConnectionState
 from discord.types.message import Message as MessagePayload
 from discord.abc import GuildChannel
-from discord.utils import snowflake_time
+from discord.utils import time_snowflake
 
 from juniorguru.lib import loggers
 from juniorguru.lib.cache import get_cache, _call_async
@@ -128,7 +128,7 @@ async def channel_worker(worker_no, queue) -> None:
         logger_c = get_channel_logger(logger_cw, channel)
         logger_c.info(f"Crawling {get_channel_name(channel)!r}")
 
-        cache_cutoff_at = datetime.now(timezone.utc) - timedelta(days=30)
+        cache_cutoff_at = datetime.now(timezone.utc) - timedelta(days=20)
         history_since = CHANNELS_HISTORY_SINCE.get(
             get_parent_channel(channel).id, DEFAULT_CHANNELS_HISTORY_SINCE
         )
@@ -203,17 +203,10 @@ async def fetch_messages(
     payloads_mapping: dict[int, MessagePayload] = await _call_async(
         cache.get, cache_key, {}
     )
-    payloads: list[MessagePayload] = [
-        payload
-        for payload in sorted(
-            payloads_mapping.values(), key=itemgetter("id"), reverse=True
-        )
-        if snowflake_time(int(payload["id"])) < cache_cutoff_at
-    ]
-    cached_ids = frozenset(int(payload["id"]) for payload in payloads)
+    payloads = filter_payloads(payloads_mapping.values(), after, cache_cutoff_at)
 
     # Detect if we can read the whole channel from cache
-    if hasattr(channel, "last_message_id") and channel.last_message_id in cached_ids:
+    if is_channel_before(channel, cache_cutoff_at):
         logger_m.debug("Reading whole channel from cache")
         for payload in payloads:
             yield await _call_async(create_message, iterator.state, channel, payload)
@@ -235,7 +228,7 @@ async def fetch_messages(
     count_downloaded = 0
     count_cached = 0
     async for message in iterator:
-        if message.id in cached_ids:
+        if is_message_before(message, cache_cutoff_at):
             for payload in payloads:
                 yield await _call_async(
                     create_message, iterator.state, channel, payload
@@ -266,6 +259,36 @@ async def fetch_messages(
             timedelta(days=days).total_seconds(),
             tag="messages",
         )
+
+
+def filter_payloads(
+    payloads: list[MessagePayload],
+    after: datetime | None,
+    before: datetime | None,
+) -> list[MessagePayload]:
+    if after:
+        payloads = filter(partial(is_payload_after, after=after), payloads)
+    if before:
+        payloads = filter(partial(is_payload_before, before=before), payloads)
+    return sorted(payloads, key=itemgetter("id"), reverse=True)
+
+
+def is_payload_after(payload: MessagePayload, after: datetime) -> bool:
+    return int(payload["id"]) > time_snowflake(after, high=True)
+
+
+def is_payload_before(payload: MessagePayload, before: datetime) -> bool:
+    return int(payload["id"]) < time_snowflake(before, high=False)
+
+
+def is_message_before(message: Message, before: datetime) -> bool:
+    return message.id < time_snowflake(before, high=False)
+
+
+def is_channel_before(channel: GuildChannel | DMChannel, before: datetime) -> bool:
+    if getattr(channel, "last_message_id", None) is None:
+        return False
+    return channel.last_message_id < time_snowflake(before, high=False)
 
 
 def create_message(
