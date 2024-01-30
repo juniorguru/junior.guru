@@ -1,11 +1,19 @@
 import asyncio
-from datetime import datetime, timedelta, timezone
+from copy import deepcopy
+from datetime import date, datetime, timedelta, timezone
+from functools import partial
+from operator import attrgetter, itemgetter
+import random
 from typing import Generator
 
 from discord import DMChannel, Member, Message, Reaction, User
+from discord.state import ConnectionState
+from discord.types.message import Message as MessagePayload
 from discord.abc import GuildChannel
+from discord.utils import snowflake_time
 
 from juniorguru.lib import loggers
+from juniorguru.lib.cache import get_cache, _call_async
 from juniorguru.lib.discord_club import (
     DEFAULT_CHANNELS_HISTORY_SINCE,
     ClubChannelID,
@@ -79,10 +87,9 @@ async def crawl(client: ClubClient) -> None:
     ]
 
     logger.info("Adding DM channels")
-    tasks = []
-    for member in members:
-        tasks.append(asyncio.create_task(crawl_dm_channel(queue, member)))
-    await asyncio.gather(*tasks)
+    dm_tasks = [
+        asyncio.create_task(crawl_dm_channel(queue, member)) for member in members
+    ]
 
     # trick to prevent hangs if workers raise, see https://stackoverflow.com/a/60710981/325365
     queue_completed = asyncio.create_task(queue.join())
@@ -101,7 +108,7 @@ async def crawl(client: ClubClient) -> None:
         worker.cancel()
 
     # return_exceptions=True silently collects CancelledError() exceptions
-    await asyncio.gather(*workers, return_exceptions=True)
+    await asyncio.gather(*dm_tasks, *workers, return_exceptions=True)
 
 
 async def crawl_dm_channel(queue: asyncio.Queue, member: Member) -> None:
@@ -121,6 +128,7 @@ async def channel_worker(worker_no, queue) -> None:
         logger_c = get_channel_logger(logger_cw, channel)
         logger_c.info(f"Crawling {get_channel_name(channel)!r}")
 
+        cache_cutoff_at = datetime.now(timezone.utc) - timedelta(days=30)
         history_since = CHANNELS_HISTORY_SINCE.get(
             get_parent_channel(channel).id, DEFAULT_CHANNELS_HISTORY_SINCE
         )
@@ -147,7 +155,7 @@ async def channel_worker(worker_no, queue) -> None:
             queue.put_nowait(thread)
 
         tasks = []
-        async for message in fetch_messages(channel, after=history_after):
+        async for message in fetch_messages(channel, history_after, cache_cutoff_at):
             db_message = await store_message(message)
             async for reacting_member in fetch_members_reacting_by_pin(
                 message.reactions
@@ -172,14 +180,98 @@ def get_channel_logger(
 
 
 async def fetch_messages(
-    channel: GuildChannel | DMChannel, after=None
+    channel: GuildChannel | DMChannel,
+    after: datetime | None,
+    cache_cutoff_at: datetime,
+    payloads_expire_days=5,
+    payloads_expire_randomness=10,
 ) -> Generator[Message, None, None]:
+    logger_m = logger["messages"][channel.id]
+
+    # Get channel history iterator
     try:
         channel_history = channel.history
     except AttributeError:
-        return  # channel type doesn't support history (e.g. forum)
-    async for message in channel_history(limit=None, after=after, oldest_first=False):
-        yield message
+        logger_m.debug(f"Channel doesn't support history: {channel.type}")
+        return
+    iterator = channel_history(limit=None, after=after, oldest_first=False)
+
+    # Load cached messages
+    cache = get_cache()
+    cache_key = f"message-payloads:{channel.id}"
+
+    payloads_mapping: dict[int, MessagePayload] = await _call_async(
+        cache.get, cache_key, {}
+    )
+    payloads: list[MessagePayload] = [
+        payload
+        for payload in sorted(
+            payloads_mapping.values(), key=itemgetter("id"), reverse=True
+        )
+        if snowflake_time(int(payload["id"])) < cache_cutoff_at
+    ]
+    cached_ids = frozenset(int(payload["id"]) for payload in payloads)
+
+    # Detect if we can read the whole channel from cache
+    if hasattr(channel, "last_message_id") and channel.last_message_id in cached_ids:
+        logger_m.debug("Reading whole channel from cache")
+        for payload in payloads:
+            yield await _call_async(create_message, iterator.state, channel, payload)
+        return
+
+    # Patch the iterator to collect payloads
+    _retrieve_messages = iterator._retrieve_messages
+
+    async def _retrieve_messages_patched(*args, **kwargs) -> list[MessagePayload]:
+        payloads_batch = list(await _retrieve_messages(*args, **kwargs))
+        payloads_mapping.update(
+            {int(payload["id"]): deepcopy(payload) for payload in payloads_batch}
+        )
+        return payloads_batch
+
+    iterator._retrieve_messages = _retrieve_messages_patched
+
+    # Iterate over messages
+    count_downloaded = 0
+    count_cached = 0
+    async for message in iterator:
+        if message.id in cached_ids:
+            for payload in payloads:
+                yield await _call_async(
+                    create_message, iterator.state, channel, payload
+                )
+                count_cached += 1
+            break
+        else:
+            yield message
+            count_downloaded += 1
+    logger_m.debug(
+        f"Downloaded {count_downloaded} messages, "
+        f"loaded {count_cached} messages from cache, "
+        f"total {count_downloaded + count_cached} messages"
+    )
+
+    if payloads_mapping:
+        # Store payloads, but only for a limited time - this is again, to allow
+        # for updates like edits and deletes to propagate to the cache.
+        # The randomness is to prevent all messages from expiring at the same time,
+        # instead to gradually expire channels and renew their cache over the course
+        # of a few days.
+        days = payloads_expire_days + random.randint(0, payloads_expire_randomness)
+        logger_m.debug(f"Caching {len(payloads_mapping)} messages for {days} days")
+        await _call_async(
+            cache.set,
+            cache_key,
+            payloads_mapping,
+            timedelta(days=days).total_seconds(),
+            tag="messages",
+        )
+
+
+def create_message(
+    state: ConnectionState, channel: GuildChannel | DMChannel, data: MessagePayload
+) -> Message:
+    return state.create_message(channel=channel, data=deepcopy(data))
 
 
 async def fetch_members_reacting_by_pin(
@@ -193,7 +285,9 @@ async def fetch_members_reacting_by_pin(
             break
 
 
-def get_history_after(history_since, now=None):
+def get_history_after(
+    history_since: timedelta | None, now: datetime = None
+) -> datetime:
     if now:
         if now.tzinfo is None:
             raise ValueError("now must be timezone-aware")
