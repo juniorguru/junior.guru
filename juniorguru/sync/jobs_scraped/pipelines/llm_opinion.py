@@ -67,7 +67,6 @@ retry_defaults = dict(
 )
 
 
-@cache(expire=timedelta(days=60), tag="llm-opinion")
 @retry(
     retry=(
         retry_if_exception_type(RateLimitError)
@@ -92,6 +91,7 @@ retry_defaults = dict(
     wait=wait_random_exponential(min=60, max=5 * 60),
     **retry_defaults,
 )
+@cache(expire=timedelta(days=60), tag="llm-opinion")
 async def fetch_llm_opinion(system_prompt: str, user_prompt: str) -> dict:
     client = get_client()
     async with limit:
