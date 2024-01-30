@@ -78,8 +78,11 @@ class BytecodeCache(BaseBytecodeCache):
         self.cache = cache
 
     def load_bytecode(self, bucket: Bucket):
-        with self.cache.read(f"jinja:{bucket.key}") as f:
-            bucket.load_bytecode(f)
+        try:
+            with self.cache.read(f"jinja:{bucket.key}") as f:
+                bucket.load_bytecode(f)
+        except KeyError:
+            pass
 
     def dump_bytecode(self, bucket: Bucket):
         self.cache.set(f"jinja:{bucket.key}", bucket.bytecode_to_string(), tag="jinja")
