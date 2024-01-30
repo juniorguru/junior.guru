@@ -271,34 +271,37 @@ def merge_diskcaches(table_from: Table, table_to: Table):
 
     logger_t = logger["db"][table_from.name]
 
-    for row in table_from.rows:
-        row.pop("rowid")  # drop rowid and rely on unique key
+    for row_from in table_from.rows:
+        row_from.pop("rowid")  # drop rowid and rely on unique key
         try:
-            logger_t.debug(f"Inserting {row['key']!r}")
-            table_to.insert(row)
+            logger_t.debug(f"Inserting {row_from['key']!r}")
+            table_to.insert(row_from)
         except IntegrityError:
-            logger_t.debug(f"Row {row['key']!r} exists, updating")
-            existing_row = next(table_to.rows_where("key = ?", [row["key"]], limit=1))
-            pks = [existing_row[pk] for pk in table_to.pks]
+            logger_t.debug(f"Row {row_from['key']!r} exists, updating")
+            row_to = next(table_to.rows_where("key = ?", [row_from["key"]], limit=1))
+            pks = [row_to[pk] for pk in table_to.pks]
             updates = dict(
-                store_time=max(
-                    filter(None, [row["store_time"], existing_row["store_time"]])
+                store_time=skip_none_max(
+                    row_from["store_time"],
+                    row_to["store_time"],
                 ),
-                expire_time=max(
-                    filter(None, [row["expire_time"], existing_row["expire_time"]])
+                expire_time=skip_none_max(
+                    row_from["expire_time"],
+                    row_to["expire_time"],
                 ),
-                access_time=max(
-                    filter(None, [row["access_time"], existing_row["access_time"]])
+                access_time=skip_none_max(
+                    row_from["access_time"],
+                    row_to["access_time"],
                 ),
-                access_count=existing_row["access_count"] + row["access_count"],
+                access_count=row_from["access_count"] + row_to["access_count"],
             )
-            if row["store_time"] > existing_row["store_time"]:
+            if row_from["store_time"] > row_to["store_time"]:
                 updates |= dict(
-                    tag=row["tag"],
-                    size=row["size"],
-                    mode=row["mode"],
-                    filename=row["filename"],
-                    value=row["value"],
+                    tag=row_from["tag"],
+                    size=row_from["size"],
+                    mode=row_from["mode"],
+                    filename=row_from["filename"],
+                    value=row_from["value"],
                 )
             logger_t.debug(f"Updating {pks!r} with {pformat(updates)}")
             table_to.update(pks, updates)
@@ -353,3 +356,12 @@ def make_schema_line_idempotent(schema_line) -> str:
         if transformation_re.search(schema_line):
             return transformation_re.sub(replacement, schema_line)
     raise ValueError(f"Unexpected schema line: {schema_line!r}")
+
+
+def skip_none_max(*values):
+    values = list(filter(None, values))
+    if len(values) == 1:
+        return values[0]
+    if values:
+        return max(values)
+    return None
