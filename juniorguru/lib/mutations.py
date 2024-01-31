@@ -12,7 +12,13 @@ __all__ = ["allow", "allow_all", "is_allowed", "mutates", "mutating", "allowing"
 logger = loggers.from_path(__file__)
 
 
-KNOWN_SERVICES = ["discord", "google_sheets", "fakturoid", "memberful"]
+KNOWN_SERVICES = [
+    "discord",
+    "fakturoid",
+    "google_sheets",
+    "memberful",
+    "openai",
+]
 
 
 class MutationsNotAllowedError(Exception):
