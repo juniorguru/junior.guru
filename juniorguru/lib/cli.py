@@ -23,11 +23,20 @@ def import_commands(package: ModuleType) -> Generator[tuple[str, Callable], None
 def async_command(fn: Callable[..., Awaitable]) -> Callable:
     @wraps(fn)
     def wrapper(*args, **kwargs):
+        exc = None
+
         def run():
-            asyncio.run(fn(*args, **kwargs))
+            try:
+                asyncio.run(fn(*args, **kwargs))
+            except Exception as e:
+                nonlocal exc
+                exc = e
 
         thread = threading.Thread(target=run)
         thread.start()
         thread.join()
+
+        if exc:
+            raise exc
 
     return wrapper
