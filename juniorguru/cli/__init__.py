@@ -2,6 +2,7 @@ import click
 
 from juniorguru.cli import (
     backup,
+    cache,
     cancel_previous_builds,
     check_bot,
     check_docs,
@@ -26,17 +27,18 @@ subcommands = click.Group(
             load_command,
             [
                 backup,
+                cache,
                 cancel_previous_builds,
+                check_bot,
                 check_docs,
                 check_links,
-                check_bot,
-                web,
                 data,
-                tidy,
-                screenshots,
                 notes,
-                winners,
+                screenshots,
                 sync,
+                tidy,
+                web,
+                winners,
             ],
         )
     )

@@ -24,7 +24,7 @@ def get_cache(cache_dir=CACHE_DIR) -> Cache:
         cache = _cache_instances[cache_dir]
     except KeyError:
         logger.debug(f"Initializing cache: {cache_dir}")
-        cache = _cache_instances[cache_dir] = Cache(cache_dir)
+        cache = _cache_instances[cache_dir] = Cache(cache_dir, tag_index=True)
     return cache
 
 

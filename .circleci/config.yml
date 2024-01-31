@@ -124,6 +124,11 @@ jobs:
       - run:
           name: Load data
           command: poetry run jg data load --move
+      - run:
+          name: Fix cache
+          command: |
+            poetry run jg cache fix
+            poetry run jg cache tags
       - persist_to_workspace:
           root: "~"
           paths:
@@ -165,6 +170,11 @@ jobs:
       - run:
           name: Load data
           command: poetry run jg data load --move
+      - run:
+          name: Fix cache
+          command: |
+            poetry run jg cache fix
+            poetry run jg cache tags
       - save_cache:
           key: cache-v2-{{ .Branch }}-{{ .Revision }}
           paths:
