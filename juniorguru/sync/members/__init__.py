@@ -110,7 +110,7 @@ async def report_extra_users(client: ClubClient, extra_users_ids: list[int]):
             logger.info(f"User #{extra_user_id} is not on Discord anymore, skipping")
     if extra_users:
         logger.info(f"Verified {len(extra_users)} users, reporting them")
-        channel = await client.fetch_channel(ClubChannelID.MODERATION)
+        channel = await client.fetch_channel(ClubChannelID.BUSINESS)
         with mutating_discord(channel) as proxy:
             await proxy.send(
                 "⚠️ Vypadá to, že tito členové nemají účet na Memberful: "
