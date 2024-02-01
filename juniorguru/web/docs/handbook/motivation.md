@@ -737,4 +737,9 @@ https://mastodonczech.cz/@nedbat@hachyderm.io/111789013379418126
 https://www.youtube.com/watch?v=I2s2BtrHw3I
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1202352655717114007
+Dneska jsem narazila na zajimave video od Kayla https://m.youtube.com/watch?v=a6IIhwZv4ls
+---
+
+
 #} -->

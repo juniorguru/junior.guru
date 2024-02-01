@@ -1111,4 +1111,10 @@ https://www.fakturoid.cz/almanach/osobni-rozvoj/jak-pouzivat-chatgpt
 https://www.marketawillis.com/blog/prakticke-programatorske-aktivity
 https://www.youtube.com/watch?v=44sJQChy8g0
 
+--- https://discord.com/channels/769966886598737931/797040163325870092/1198884862405386240
+Dobré ráno 🙂 pondělní dávka motivace pro všechna kuřata 🐤 
+https://youtu.be/QG3C1uwuloM?si=wDfZpfewKdenSb7i
+---
+
+
 #} -->

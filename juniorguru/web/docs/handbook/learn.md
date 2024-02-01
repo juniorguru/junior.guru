@@ -800,4 +800,10 @@ Díky, co dočetli tu hrůzu až sem.
 ---
 
 
+--- https://discord.com/channels/769966886598737931/806621830383271937/1202405712442040431
+AI language learning app - Praktika AI https://praktika.ai/
+To tak na me vyskoci reklama na instaci a dopadne to tak, ze si 2 hodiny povidam s AI v anglictine o svych koniccich a programovani a jeste me u toho opravuje chyby. 😁 Asi mam noveho kamarada.
+---
+
+
 #} -->

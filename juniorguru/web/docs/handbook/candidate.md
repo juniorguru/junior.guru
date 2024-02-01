@@ -1371,4 +1371,24 @@ https://www.youtube.com/watch?v=FJbVpaYIeUg
 https://www.youtube.com/watch?v=uNL3yEzNsbQ
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1202540543767216188
+Dobré video, zaznelo tam niekoľko podľa mňa veľmi dobrých tipov, pár vecí by som ale k tomu dodal.
+
+To aby si juniori skúsili hľadať prácu aj mimo tech je dobrý point. Ako človek ktorý pracuje pre banku a viem, že keď hirujeme ku nám do teamu, máme zúfalo málo kompetetných uchádzačov k tomu ale mám niekoľko poznámok.
+
+- pozície v týchto firmách často nenájdete pod názvom, pod ktorým by ste ich čakali - napríklad moja pozícia sa volá credit policy manager ale posledný pol rok vyvýjam interný balíček v pythone a 5 rokov robím datového analytika
+- to sa ale spája aj s tým, že súčasťou vašej práce bude oveľa väčšie prepojenie s "bussinessom" a "netechnickými" zadaniami - v banke napríklad s rôznymi bankovými procesmi atď
+- veľmi rýchlo sa vám môže stať, že budete technicky najskúsenejší človek v teame - pokiaľ teda neradi experimentujete, robíte chyby, potrebujete veľa spätnej väzby od technicky seniornejšich ľudí, bude vám to chýbať. Pokiaľ sa radi realizujete môže to byť naopak veľmi vhodné prostredie.
+- občas tu ale zaznieva správna otázka: Prečo ste sa rozhodli byť SW dev? Pokiaľ je vaša odpoveď napríklad v zmysle, že ste chceli lepšiu prácu, work life balance a technicky sa rozvýjať aby ste mali lepší plat a vašim cieľom nebolo byť 100% sw dev ktorý iba programujete, môžete nájsť firmy kde im na týchto hodnotách záleží a nie je to tech
+- veľa toho bude záležať na ľuďoch a nadriadených - z banky môžete mať občas pocit, že je to 10 firiem v jednej, v jednom teame je to sluníčkové, v inom čistá pakáreň
+
+Neprepadal by som ale depresii, myslím si, že už len samotná snaha a záujem ktorý tu väčšina ľudí do toho vkladá vám dáva výhodu, ktorú si s trochou šťastia určite niekto všimne <:meowsheart:1002448596572061746>
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1202352655717114007
+Dneska jsem narazila na zajimave video od Kayla https://m.youtube.com/watch?v=a6IIhwZv4ls
+---
+
+
 #} -->

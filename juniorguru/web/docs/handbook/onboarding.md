@@ -609,4 +609,9 @@ Dá se nastoupit jako junior klidně i za kilo. S vystudovanou VŠ. Je to jen o 
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1197855179354161212
+Na pondělních callech často zmiňovaná/diskutovaná skutečnost. Nejde samozřejmě o konkrétní čísla/procenta a může se to lišit. Přijde mi ale dobrý pro nastavení mysli a očekávání vědět, že to tak často je. Dneska ráno jsem si totiž povzdechl, že nepíšu moc kódu, protože koordinuju, dělám code reviews, hodně čtu dokumentaci, jsem na callech a mohl bych pokračovat. Tenhle příspěvek povzbudil 🙂
+---
+
+
 #} -->
