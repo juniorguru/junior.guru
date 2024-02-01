@@ -8,6 +8,14 @@
 # image_path, media_size, nebo media_duration_s, to nechává na dořešení Honzovi.
 
 
+- number: 20
+  guest_name: Karolina Surma a Petr Viktorin
+  guest_affiliation: Red Hat
+  title: "o tom, jaké jsou začátky ve firmě z pohledu juniora a seniora"
+  publish_on: "2024-02-01"
+  description: |
+    Kája a Petr spolu pracovali v Red Hatu, Kája jako juniorní software engineer, Petr jako seniorní software engineer. Znají se díky komunitě PyLadies a v novém díle podcastu si povídají s Pájou o tom, jak každý z nich vnímal Kájin začátek v práci, jak se staví k imposter syndromu nebo jak zvládají skloubit pracovní a osobní život i s velmi aktivním zapojením do Python komunity.
+
 - number: 19
   guest_name: Vilibald Wanča
   guest_affiliation: Oracle, YBYR podcast
