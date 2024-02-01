@@ -80,12 +80,6 @@ async def main():
         ScrapedJob.create_table()
 
     logger.info("Processing items")
-    # tasks = [
-    #     asyncio.create_task(process_item(pipelines, item))
-    #     for item in items
-    # ]
-    # count = sum(await asyncio.gather(*tasks))
-
     count = 0
     drops = 0
     for processing in logger.progress(
