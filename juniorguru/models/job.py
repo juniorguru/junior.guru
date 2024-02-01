@@ -7,7 +7,6 @@ from peewee import (
     DateField,
     Expression,
     ForeignKeyField,
-    IntegerField,
     TextField,
     fn,
 )
