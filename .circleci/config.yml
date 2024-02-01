@@ -109,6 +109,9 @@ jobs:
       - attach_workspace:
           at: "~"
       - run:
+          name: Cache stats
+          command: poetry run jg cache tags
+      - run:
           name: Sync data
           command: |
             poetry run jg sync $(if [[ "$CIRCLE_BRANCH" == "main" ]]; then echo "--allow-mutations"; else echo ""; fi) ci
@@ -136,7 +139,7 @@ jobs:
       - persist_to_workspace:
           root: "~"
           paths:
-              - project/juniorguru/.cache
+              - project/.cache
               - project/juniorguru/data
               - project/juniorguru/images
 
@@ -155,6 +158,9 @@ jobs:
       - run:
           name: Snapshot files
           command: poetry run jg data snapshot
+      - run:
+          name: Cache stats
+          command: poetry run jg cache tags
       - run:
           name: Sync data
           command: |
