@@ -1,12 +1,11 @@
 import asyncio
-from functools import lru_cache
 import json
 import logging
 import os
 from datetime import timedelta
+from functools import lru_cache
+
 from openai import AsyncOpenAI, InternalServerError, RateLimitError
-from juniorguru.lib import loggers
-from juniorguru.lib.cache import cache
 from tenacity import (
     before_sleep_log,
     retry,
@@ -16,6 +15,8 @@ from tenacity import (
     wait_random_exponential,
 )
 
+from juniorguru.lib import loggers
+from juniorguru.lib.cache import cache
 from juniorguru.lib.mutations import mutates
 
 

@@ -1,10 +1,10 @@
 from collections import Counter
 from pathlib import Path
 from typing import Iterable
-import click
 
-from sqlite_utils import Database
+import click
 from diskcache.core import DBNAME
+from sqlite_utils import Database
 
 from juniorguru.lib import loggers
 from juniorguru.lib.cache import CACHE_DIR, get_cache
