@@ -25,6 +25,7 @@ PIPELINES = [
     "juniorguru.sync.jobs_scraped.pipelines.description_parser",
     "juniorguru.sync.jobs_scraped.pipelines.llm_opinion",
     "juniorguru.sync.jobs_scraped.pipelines.relevance_filter",
+    "juniorguru.sync.jobs_scraped.pipelines.juniority_filter",
     "juniorguru.sync.jobs_scraped.pipelines.boards_ids",
     "juniorguru.sync.jobs_scraped.pipelines.gender_remover",
     "juniorguru.sync.jobs_scraped.pipelines.emoji_remover",
