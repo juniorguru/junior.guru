@@ -266,11 +266,6 @@ async def announce_new_episode(client: ClubClient):
                 url="https://open.spotify.com/show/12w93IKRzfCsgo7XrGEVw4",
             ),
             ui.Button(
-                emoji="<:google:976200950886826084>",
-                label="Google",
-                url="https://podcasts.google.com/feed/aHR0cHM6Ly9qdW5pb3IuZ3VydS9hcGkvcG9kY2FzdC54bWw",
-            ),
-            ui.Button(
                 emoji="<:appleinc:842465215718227987>",
                 label="Apple",
                 url="https://podcasts.apple.com/cz/podcast/junior-guru-podcast/id1603653549",
