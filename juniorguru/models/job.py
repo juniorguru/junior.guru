@@ -131,21 +131,14 @@ class ScrapedJob(BaseModel):
     employment_types = JSONField(null=True)
 
     description_html = TextField()
-    features = JSONField(default=list)
     llm_opinion = JSONField(null=True)
-    juniority_re_score = IntegerField(null=True)
-    juniority_votes_score = IntegerField(default=0)
-    juniority_votes_count = IntegerField(default=0)
 
     source = CharField()
     source_urls = JSONField(default=list)
 
     @classmethod
-    def date_listing(cls, date_, min_juniority_re_score=0):
-        return cls.select().where(
-            (cls.last_seen_on == date_)
-            & (cls.juniority_re_score >= min_juniority_re_score)
-        )
+    def date_listing(cls, date_):
+        return cls.select().where(cls.last_seen_on == date_)
 
     @classmethod
     def latest_seen_on(cls):

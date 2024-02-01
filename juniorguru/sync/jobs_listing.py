@@ -6,9 +6,6 @@ from juniorguru.models.base import db
 from juniorguru.models.job import ListedJob, ScrapedJob, SubmittedJob
 
 
-MIN_JUNIORITY_RE_SCORE = 1
-
-
 logger = loggers.from_path(__file__)
 
 
@@ -28,12 +25,8 @@ def main():
         logger.debug(f"Saved {submitted_job!r} as {job!r}")
 
     listing_date = ScrapedJob.latest_seen_on()
-    logger.info(
-        f"Processing scraped jobs: {listing_date}, juniority_re_score ≥ {MIN_JUNIORITY_RE_SCORE}"
-    )
-    query = ScrapedJob.date_listing(
-        listing_date, min_juniority_re_score=MIN_JUNIORITY_RE_SCORE
-    )
+    logger.info(f"Processing scraped jobs: {listing_date}")
+    query = ScrapedJob.date_listing(listing_date)
     for scraped_job in query.iterator():
         logger.debug(f"Listing {scraped_job!r}")
         job = scraped_job.to_listed()
