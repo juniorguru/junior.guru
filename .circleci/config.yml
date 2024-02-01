@@ -97,6 +97,10 @@ jobs:
   # $MEMBERFUL_PASSWORD
   # $VIDEO_OUTSOURCING_TOKEN
   # $FAKTUROID_API_KEY
+  # $OPENAI_API_KEY
+  # $APIFY_API_KEY
+  # $STRIPE_API_KEY
+  # $ECOMAIL_API_KEY
   sync-1:
     executor: python-js
     resource_class: large
@@ -132,6 +136,7 @@ jobs:
       - persist_to_workspace:
           root: "~"
           paths:
+              - project/juniorguru/.cache
               - project/juniorguru/data
               - project/juniorguru/images
 
