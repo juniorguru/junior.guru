@@ -62,56 +62,6 @@ class DisguisedGenerator:
 @cli.sync_command()
 @async_command
 async def main():
-    # from collections import Counter
-    # from pprint import pprint
-
-    # jobs = ScrapedJob.select().where(
-    #     ScrapedJob.llm_opinion.is_null(False),
-    #     ScrapedJob.llm_opinion["is_sw_engineering"] == False,
-    #     ScrapedJob.llm_opinion["is_sw_testing"] == False,
-    # )
-    # for job in jobs:
-    #     print(job.title)
-
-    # jobs = ScrapedJob.select().where(
-    #     ScrapedJob.llm_opinion.is_null(False),
-    #     ScrapedJob.llm_opinion["is_entry_level"] == False,
-    # )
-    # senior = Counter()
-    # for job in jobs:
-    #     senior.update(map(str.lower, job.title.split()))
-    # print("senior")
-    # pprint(senior.most_common(50))
-
-    # jobs = ScrapedJob.select().where(
-    #     ScrapedJob.llm_opinion.is_null(False),
-    #     ScrapedJob.llm_opinion["is_entry_level"] == True,
-    # )
-    # junior = Counter()
-    # for job in jobs:
-    #     junior.update(map(str.lower, job.title.split()))
-    # print("junior")
-    # pprint(junior.most_common(50))
-
-    # for junior_key in junior.keys():
-    #     del senior[junior_key]
-    # print("only senior")
-    # pprint(senior.most_common(50))
-
-    # print("junior seniors")
-    # for job in ScrapedJob.select().where(
-    #     ScrapedJob.title.contains("Senior"),
-    #     ScrapedJob.llm_opinion.is_null(False),
-    #     ScrapedJob.llm_opinion["is_entry_level"] == True,
-    # ):
-    #     print(
-    #         dict(
-    #             title=job.title,
-    #             is_entry_level=job.llm_opinion["is_entry_level"],
-    #             reason=job.llm_opinion["reason"],
-    #         )
-    #     )
-
     logger.info(f"Actors:\n{pformat(ACTORS)}")
     items = itertools.chain.from_iterable(apify.fetch_data(actor) for actor in ACTORS)
 
