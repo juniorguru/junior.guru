@@ -18,7 +18,7 @@
     "esbuild": "0.20.0",
     "esbuild-sass-plugin": "3.0.0",
     "hyphen": "1.10.4",
-    "stylelint": "16.2.0",
+    "stylelint": "16.2.1",
     "stylelint-config-twbs-bootstrap": "13.0.0"
   }
 }
