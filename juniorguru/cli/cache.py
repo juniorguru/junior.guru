@@ -1,5 +1,6 @@
 from collections import Counter
 from pathlib import Path
+from sqlite3 import OperationalError
 from typing import Iterable
 
 import click
@@ -20,9 +21,12 @@ def main():
 
 @main.command()
 def tags():
-    counter = Counter(get_tags(get_db()))
-    for tag, count in sorted(counter.items()):
-        click.echo(f"{count:10} {tag}")
+    try:
+        counter = Counter(get_tags(get_db()))
+        for tag, count in sorted(counter.items()):
+            click.echo(f"{count:10} {tag}")
+    except OperationalError:
+        pass  # no cache, no output
 
 
 @main.command()
