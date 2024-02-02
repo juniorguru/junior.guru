@@ -1,6 +1,6 @@
 import pytest
-from juniorguru.sync.jobs_scraped import DropItem
 
+from juniorguru.sync.jobs_scraped import DropItem
 from juniorguru.sync.jobs_scraped.pipelines.juniority_filter import process
 
 
