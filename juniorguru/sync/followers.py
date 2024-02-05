@@ -1,7 +1,7 @@
 import re
 from datetime import date
 from pathlib import Path
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urlparse
 
 import click
 import requests
@@ -26,7 +26,9 @@ YOUTUBE_LANGUAGE_FORM_URL = "https://consent.youtube.com/ml"
 
 LINKEDIN_URL = "https://www.linkedin.com/company/juniorguru"
 
-LINKEDIN_PERSONAL_URL = "https://www.linkedin.com/posts/honzajavorek_courting-haskell-honza-javorek-activity-6625070791035756544-J3Hr"
+LINKEDIN_PERSONAL_SEARCH_URL = "https://duckduckgo.com/?hps=1&q=honza+javorek&ia=web"
+
+LINKEDIN_PERSONAL_URL = "https://cz.linkedin.com/in/honzajavorek"
 
 
 @cli.sync_command()
@@ -67,7 +69,7 @@ def main(history_path: Path, ecomail_api_key: str, ecomail_list_id: int):
     scrapers = {
         "youtube": scrape_youtube,
         "linkedin": scrape_linkedin,
-        # "linkedin_personal": scrape_linkedin_personal,   # they removed the follower count
+        "linkedin_personal": scrape_linkedin_personal,
         "mastodon": scrape_mastodon,
     }
     for name, scrape in scrapers.items():
@@ -155,24 +157,23 @@ def scrape_linkedin_personal():
     with sync_playwright() as playwright:
         browser = playwright.firefox.launch()
         page = browser.new_page()
-        page.goto(LINKEDIN_PERSONAL_URL, wait_until="networkidle")
+        page.goto(LINKEDIN_PERSONAL_SEARCH_URL, wait_until="networkidle")
+        url_parts = urlparse(LINKEDIN_PERSONAL_URL)
+        _, domain = url_parts.netloc.split(".", 1)
+        page.click(f"a[href*='{domain}{url_parts.path}']")
         if "/authwall" in page.url:
             logger.error(f"Loaded {page.url}")
             return None
         response_text = str(page.content())
         browser.close()
-    html_tree = html.fromstring(response_text)
-    followers_element = html_tree.cssselect(
-        '[class*="public-post-author-card__followers"]'
-    )[0]
-    match = re.search(
-        r"([\d,]+)\s*(followers|sledujících)", followers_element.text_content()
-    )
-    try:
-        return int(match.group(1).replace(",", ""))
-    except (AttributeError, ValueError):
-        logger.error(f"Scraping failed!\n\n{response_text}")
-        return None
+
+    if match := re.search(
+        r'"name":\s*"Follows"\s*,\s*"userInteractionCount":\s*(\d+)', response_text
+    ):
+        return int(match.group(1))
+
+    logger.error(f"Scraping failed!\n\n{response_text}")
+    return None
 
 
 def scrape_mastodon():
