@@ -114,12 +114,6 @@ Návštěva u psychiatra neznamená, že automaticky odejdeš s diagnózou a hro
 
 <div class="link-cards">
   {{ link_card(
-    'Duševní zdraví a nemoci',
-    'https://narovinu.net/dusevni-zdravi-a-nemoc/',
-    'Co je duševní zdraví a jaké nemoci rozlišujeme.',
-  ) }}
-
-  {{ link_card(
     'Otestuj svůj psychický stav',
     'https://www.opatruj.se/otestujte-se',
     'Orientační diagnostika psychického zdraví.',
