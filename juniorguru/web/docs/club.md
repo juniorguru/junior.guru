@@ -208,18 +208,6 @@ Rady kolemjdoucích ve veřejných skupinách jsou náchylné k fanouškovství,
 <h2>Prvních 14 dní zdarma</h2>
 {% call lead() %}
 Nemusíš hned zadávat kartu. Vyber si roční nebo měsíční předplatné a nakoukni, jak to u nás vypadá. **Za vyzkoušení nic nedáš.** Pokud ti klub nesedne, prostě akorát nedoplníš platební údaje a systém tě po dvou týdnech vyhodí.
-
-{% if partners_having_students -%}
-  {%- if partners_having_students|length > 1 -%}
-    Pokud se vzděláváš u {% for partner in partners_having_students -%}
-      {%- if not loop.first %}, {% endif %}{% if loop.last %}nebo {% endif -%}
-      {{ partner.name }}
-    {%- endfor %},
-  {%- else -%}
-    Pokud se vzděláváš u {% for partner in partners_having_students -%}{{ partner.name }}{%- endfor %},
-  {%- endif %}
-  tvůj **studijní program může zahrnovat bezplatné členství v klubu**. Zeptej se jich, jestli je to tvůj případ!
-{% endif %}
 {% endcall %}
 
 <div class="pricing standout">

@@ -5,7 +5,6 @@ COUPON_RE = re.compile(
     r"""
         ^
             (?P<slug>
-                (?P<student_prefix>STUDENT)?
                 [A-Z0-9]+
                 [A-Z]+
             )
@@ -26,6 +25,5 @@ def parse_coupon(coupon):
             ]
         )
         parts["slug"] = parts["slug"].lower()
-        parts["is_student"] = bool(parts.pop("student_prefix"))
         return {key: value for key, value in parts.items() if value is not None}
-    return {"slug": coupon.lower(), "coupon": coupon, "is_student": False}
+    return {"slug": coupon.lower(), "coupon": coupon}

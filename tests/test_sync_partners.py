@@ -11,5 +11,6 @@ def test_get_coupons_mapping():
         ]
     ) == {
         "foo": {"coupon": "FOO123123123"},
-        "boo": {"coupon": "BOO456456456", "student_coupon": "STUDENTBOO456456456"},
+        "boo": {"coupon": "BOO456456456"},
+        "studentboo": {"coupon": "STUDENTBOO456456456"},
     }

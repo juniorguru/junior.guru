@@ -6,24 +6,14 @@ from juniorguru.lib import coupons
 @pytest.mark.parametrize(
     "coupon, expected",
     [
-        ("GARGAMEL", dict(slug="gargamel", coupon="GARGAMEL", is_student=False)),
+        ("GARGAMEL", dict(slug="gargamel", coupon="GARGAMEL")),
         (
             "FAKTUROID123456",
-            dict(
-                slug="fakturoid",
-                suffix="123456",
-                coupon="FAKTUROID123456",
-                is_student=False,
-            ),
+            dict(slug="fakturoid", suffix="123456", coupon="FAKTUROID123456"),
         ),
         (
             "CDN77COM123456",
-            dict(
-                slug="cdn77com",
-                suffix="123456",
-                coupon="CDN77COM123456",
-                is_student=False,
-            ),
+            dict(slug="cdn77com", suffix="123456", coupon="CDN77COM123456"),
         ),
         (
             "STUDENTGARGAMEL69320144",
@@ -31,7 +21,6 @@ from juniorguru.lib import coupons
                 slug="studentgargamel",
                 suffix="69320144",
                 coupon="STUDENTGARGAMEL69320144",
-                is_student=True,
             ),
         ),
     ],

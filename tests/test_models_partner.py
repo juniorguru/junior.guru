@@ -210,19 +210,6 @@ def test_partner_course_provider_is_none(test_db):
     assert partner.course_provider is None
 
 
-@pytest.mark.parametrize(
-    "student_coupon, expected",
-    [
-        ("STUDENT!", True),
-        (None, False),
-    ],
-)
-def test_partner_has_students(test_db, student_coupon, expected):
-    partner = create_partner(1, student_coupon=student_coupon)
-
-    assert partner.has_students is expected
-
-
 def test_partner_list_members(test_db):
     member1 = ClubUser.create(display_name="Bob", mention="<@111>", coupon="XEROX")
     member2 = ClubUser.create(display_name="Alice", mention="<@222>", coupon="XEROX")
@@ -230,19 +217,6 @@ def test_partner_list_members(test_db):
     partner = create_partner(1, coupon="XEROX")
 
     assert list(partner.list_members) == [member2, member1]
-
-
-def test_partner_list_student_members(test_db):
-    member1 = ClubUser.create(
-        display_name="Bob", mention="<@111>", coupon="XEROXSTUDENT"
-    )
-    member2 = ClubUser.create(
-        display_name="Alice", mention="<@222>", coupon="XEROXSTUDENT"
-    )
-    ClubUser.create(display_name="Celine", mention="<@333>", coupon="ZALANDOSTUDENT")
-    partner = create_partner(1, student_coupon="XEROXSTUDENT")
-
-    assert list(partner.list_student_members) == [member2, member1]
 
 
 def test_partner_list_jobs(test_db):

@@ -34,8 +34,6 @@ YAML_SCHEMA = Seq(
 
 PARTNER_ROLE_PREFIX = "Firma: "
 
-STUDENT_ROLE_PREFIX = "Student: "
-
 
 logger = loggers.from_path(__file__)
 
@@ -265,20 +263,6 @@ async def sync_roles(client: ClubClient):
                 )
             )
 
-        student_members_ids = [member.id for member in partner.list_student_members]
-        logger.debug(
-            f"student_members_ids({partner!r}): {repr_ids(members, student_members_ids)}"
-        )
-        for member in members:
-            changes.extend(
-                evaluate_changes(
-                    member.id,
-                    member.initial_roles,
-                    student_members_ids,
-                    partner.student_role_id,
-                )
-            )
-
     logger.info(f"Applying {len(changes)} changes to roles:\n{pformat(changes)}")
     await apply_changes(client, changes)
 
@@ -288,24 +272,13 @@ async def manage_partner_roles(client: ClubClient, discord_roles, partners):
     partner_roles_mapping = {
         PARTNER_ROLE_PREFIX + partner.name: partner for partner in partners
     }
-    student_roles_mapping = {
-        STUDENT_ROLE_PREFIX + partner.name: partner
-        for partner in partners
-        if partner.student_coupon
-    }
-    roles_names = list(partner_roles_mapping.keys()) + list(
-        student_roles_mapping.keys()
-    )
-    logger.info(
-        f"There should be {len(roles_names)} roles with partner or student prefixes"
-    )
+    roles_names = list(partner_roles_mapping.keys())
+    logger.info(f"There should be {len(roles_names)} roles with partner prefixes")
 
     existing_roles = [
-        role
-        for role in discord_roles
-        if role.name.startswith((PARTNER_ROLE_PREFIX, STUDENT_ROLE_PREFIX))
+        role for role in discord_roles if role.name.startswith(PARTNER_ROLE_PREFIX)
     ]
-    logger.info(f"Found {len(existing_roles)} roles with partner or student prefixes")
+    logger.info(f"Found {len(existing_roles)} roles with partner prefixes")
 
     roles_to_remove = [role for role in existing_roles if role.name not in roles_names]
     logger.info(
@@ -329,9 +302,7 @@ async def manage_partner_roles(client: ClubClient, discord_roles, partners):
             await proxy.create_role(name=role_name, color=color, mentionable=True)
 
     existing_roles = [
-        role
-        for role in discord_roles
-        if role.name.startswith((PARTNER_ROLE_PREFIX, STUDENT_ROLE_PREFIX))
+        role for role in discord_roles if role.name.startswith(PARTNER_ROLE_PREFIX)
     ]
     for role in existing_roles:
         partner = partner_roles_mapping.get(role.name)
@@ -339,18 +310,12 @@ async def manage_partner_roles(client: ClubClient, discord_roles, partners):
             logger.info(f"Setting '{role.name}' to be employee role of {partner!r}'")
             partner.role_id = role.id
             partner.save()
-        else:
-            partner = student_roles_mapping.get(role.name)
-            if partner:
-                logger.info(f"Setting '{role.name}' to be student role of {partner!r}'")
-                partner.student_role_id = role.id
-                partner.save()
 
 
 async def apply_changes(client: ClubClient, changes):
     # Can't take discord_roles as an argument and use instead of fetching, because before
     # this function runs, manage_partner_roles makes changes to the list of roles. This
-    # function applies all changes to members, including the partner/student ones.
+    # function applies all changes to members, including the partner ones.
     all_discord_roles = {
         discord_role.id: discord_role
         for discord_role in await client.club_guild.fetch_roles()

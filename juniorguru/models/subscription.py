@@ -47,7 +47,6 @@ class SubscriptionType(StrEnum):
     INDIVIDUAL = "individual"
     TRIAL = "trial"
     PARTNER = "partner"
-    STUDENT = "student"
 
 
 @unique

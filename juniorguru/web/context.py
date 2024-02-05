@@ -75,9 +75,6 @@ def on_shared_page_context(context, page, config, files):
 def on_docs_context(context):
     # club.md
     context["messages_count"] = ClubMessage.count()
-    context["partners_having_students"] = [
-        partner for partner in Partner.active_listing() if partner.has_students
-    ]
     context["events"] = Event.listing()
     context["events_promo"] = Event.promo_listing()
 

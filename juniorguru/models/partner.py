@@ -18,19 +18,13 @@ class Partner(BaseModel):
     slug = CharField(unique=True)
     url = CharField()
     coupon = CharField(null=True, index=True)
-    student_coupon = CharField(null=True, index=True)
     logo_path = CharField(null=True)
     poster_path = CharField(null=True)
     role_id = IntegerField(null=True)
-    student_role_id = IntegerField(null=True)
 
     @property
     def course_provider(self) -> "CourseProvider | None":
         return self._course_provider.first()
-
-    @property
-    def has_students(self) -> bool:
-        return bool(self.student_coupon)
 
     @property
     def name_markdown_bold(self) -> str:
@@ -44,19 +38,6 @@ class Partner(BaseModel):
             ClubUser.select()
             .join(self.__class__, on=(ClubUser.coupon == self.__class__.coupon))
             .where((ClubUser.is_member == True) & (ClubUser.coupon == self.coupon))
-            .order_by(ClubUser.display_name)
-        )
-
-    @property
-    def list_student_members(self) -> Iterable[ClubUser]:
-        if not self.student_coupon:
-            return []
-        return (
-            ClubUser.select()
-            .join(self.__class__, on=(ClubUser.coupon == self.__class__.student_coupon))
-            .where(
-                (ClubUser.is_member == True) & (ClubUser.coupon == self.student_coupon)
-            )
             .order_by(ClubUser.display_name)
         )
 
@@ -129,13 +110,6 @@ class Partner(BaseModel):
     def coupons(cls) -> set[str]:
         return {
             partner.coupon for partner in cls.select().where(cls.coupon.is_null(False))
-        }
-
-    @classmethod
-    def student_coupons(cls) -> set[str]:
-        return {
-            partner.student_coupon
-            for partner in cls.select().where(cls.student_coupon.is_null(False))
         }
 
     def __str__(self) -> str:

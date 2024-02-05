@@ -72,10 +72,6 @@ def main(from_date, multiple_products_date, history_path, clear_history):
             parse_coupon(coupon)["slug"]: SubscriptionType.PARTNER
             for coupon in Partner.coupons()
         },
-        **{
-            parse_coupon(coupon)["slug"]: SubscriptionType.STUDENT
-            for coupon in Partner.student_coupons()
-        },
         **SUBSCRIPTION_TYPES_MAPPING,
     }
 

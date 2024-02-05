@@ -32,8 +32,6 @@ DESCRIPTION_TEMPLATE = dedent(
     {% for benefit in partnership.evaluate_benefits() -%}
     {{ benefit.text }}
     {% endfor %}
-    {%- if partnership.student_role_id %}Posílají sem své studenty: <@&{{ partner.student_role_id }}>
-    {% endif %}
     {%- if partnership.agreements_registry|length %}A ještě nějaká [další ujednání](https://junior.guru/open/{{ partner.slug }}#dalsi-ujednani)
     {% endif %}
     {% if partner.course_provider -%}
