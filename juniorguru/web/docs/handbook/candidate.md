@@ -1391,4 +1391,9 @@ Dneska jsem narazila na zajimave video od Kayla https://m.youtube.com/watch?v=a6
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788832177135026197/1202770155470454784
+V <#769966887055392768> se konverzace nedávno opět stočila k situaci na pracovním trhu a jaké jsou těžké časy pro juniory. Ještě jsem to neviděl, ale rovnou sem hodím. Lane je super a myslím si, že tam bude dost dobrých tipů/informací : https://www.youtube.com/watch?v=6nz8GXjxiHg
+---
+
+
 #} -->

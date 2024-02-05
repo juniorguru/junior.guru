@@ -1122,4 +1122,9 @@ https://www.careerexplorer.com/careers/database-architect/
 https://lucietvrdikova.cz/it-tester-pozice/
 
 
+--- https://discord.com/channels/769966886598737931/806621830383271937/1202873695417401404
+Dobré ráno. Na mastodonu někdo sdílel tenhle anglický materiál o networkingu (počítačů, ne lidí) pro lidi, co o tom nic moc nevědí, ale umí v Pythonu. https://beej.us/guide/bgnet0/
+---
+
+
 #} -->

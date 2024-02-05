@@ -356,4 +356,21 @@ Zajímavý článek o tom, jak použít GitHub API a najít zajímavé nové pro
 https://nedbatchelder.com/text/kindling.html
 
 
+--- https://discord.com/channels/769966886598737931/1202963994420449380/1203002747532877874
+Souhlasim s tim co bylo receno, ostatne se ti bude i lepe povidat o projektu, ktery je ti blizsi a ktery pouzivas. Dulezite take je, v jakem je ten projekt stavu - velky dojem, alespon na me, udela treba README kde je popsane jak projekt spustit, prilozene testy, nejaka standardizace atd proste ty veci ktere jsou casto vnimane jako "navic" a pritom jsou tolik dulezite pro realnou praci v pythonu. Zaroven jsou to ty veci, ktere cloveka bavi kdyz dela na projektu co je mu blizky a bavi ho si to vysperkovavat.
+
+Par bodu na ktere se doporucuju podivat (a bez kterych si nedokazu predstavit realny projekt v jakekoliv firme):
+
+* `README.md` s popisem co a jak to dela, jak to nainstalovat a rozjet
+* `pyproject.toml` (nebo `setup.py`, `setup.cfg`, konkretni implementace je vcelku jedno) se zavislostmi (vcetne verzi)
+* `pre-commit` s beznymi hooky jako `black` nebo `isort` ci `flake8`
+* testy + instrukce jak je pustit v README
+* Continuous Integration (CI) bohate staci github actions
+* `Dockerfile` ci rovnou `docker-compose.yaml` ktery pusti cloveku demo
+* screenshot (pokud je to relevantni) v README
+
+Neni potreba ani jedna z tech veci a asi nikdo neceka, ze takovy projekt bude mit vsechny, ale kazda pomuze. Vzdy radsi uvidim jeden projekt ktery ma alespon par techto veci nez 4x rozpracovany tutorial.
+---
+
+
 #} -->
