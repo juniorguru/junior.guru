@@ -875,7 +875,7 @@ Ke garanci práce bych se nebála je více navést k tomu, že často jsou ty po
 
 
 --- https://discord.com/channels/769966886598737931/1172478526134431808/1178444434396942497
-Já jsem pro účastníky mého webináře "Je IT pro mě?" připravila dokument Jak si vybrat rekvalifikační kurz. Řekla bych, že jsem určitě byla ovlivně materiálem od Lucky T. (to myslím v dobrém). Tak klidně můžete napsat co si o tom myslíte. 
+Já jsem pro účastníky mého webináře "Je IT pro mě?" připravila dokument Jak si vybrat rekvalifikační kurz. Řekla bych, že jsem určitě byla ovlivně materiálem od Lucky T. (to myslím v dobrém). Tak klidně můžete napsat co si o tom myslíte.
 A ještě mě napadá jedna věc ohledně kvality. Zkušební lhuta. Když jsem připravovala svůj kurz, tak jsem procházela spoustu kurzů. A téměř nikdo ji nenabízí. Přece pokud jste si jistí, že je váš produkt dobrý, můžete nabídnout studentovi, že jej může vrátit, pokud nebude spokojen ...  co myslíte?
 Ve svých obchodních podmínkách to mám. Mám dva týdny (přemýšlím, že to prodloužím na tři). Teda ještě nevím, jak to udělám pokud to bude chtít někdo z "Jsem v kurzu". Ale předpokládám, že to nebude problém (přece jen nebudou muset dávat peníze za studenta). Já jsem totiž když jsem sepisovala ty OP nepočítala s tím, že kurz bude v Jsem v kurzu....
 ---
@@ -886,8 +886,8 @@ Rozhodně jsou garance práce problematické a nebál bych se to v tom dokumentu
 
 My ji nedáváme: považuju to spíš za marketingový trik. Práci si nakonec každý musí najít sám a je v tom i tolik jiných faktorů, než jen to, co se ten člověk měl přiležitost naučit, že to nemá smysl. Radši věnujeme energii a čas tomu, abychom jim s tím hledáním pomohli.
 
-Ostatně když si je u těch bootcampů přečteš, tak přesně se snaží pokrýt tyhle faktory. [Viz CBP: mít třeba 5 commitů na GitHubu týdně](https://www.codingbootcamp.cz/terms-and-conditions#:~:text=6.%20THE%20JOB,for%20the%20programme) <a:awkward:985064290044223488> atd. 
-Jsem si snažil představit situaci, že to někdo opravdu splní a nenajde práci. Na trhu jaký byl před víc než rokem mi to nepřišlo moc reálné. 
+Ostatně když si je u těch bootcampů přečteš, tak přesně se snaží pokrýt tyhle faktory. [Viz CBP: mít třeba 5 commitů na GitHubu týdně](https://www.codingbootcamp.cz/terms-and-conditions#:~:text=6.%20THE%20JOB,for%20the%20programme) <a:awkward:985064290044223488> atd.
+Jsem si snažil představit situaci, že to někdo opravdu splní a nenajde práci. Na trhu jaký byl před víc než rokem mi to nepřišlo moc reálné.
 
 Teď už je trh jinde a když se koukám na aktuální podmínky garance u GFA, Coding Bootcamp Praha a SDA, tak došlo tedy k dost změnám. SDA ji už nemá vůbec, přestože jsem přesvědčen, že ji u té nejdražší verze měli. CBP to mají asi stejné a GFA ji sice má, ale dost to změnili.
 
@@ -915,7 +915,7 @@ Pro mě je ve zdejším kontextu cíl vždy switch. Tedy z 0 na 6, [„klubové�
 9️⃣ Mám 1 až 2 roky ko­merč­ní pra­xe.
 🔟 Už nej­sem ju­ni­or.
 
-Mnoho kurzů ale ten switch vlastně nenabízí. 
+Mnoho kurzů ale ten switch vlastně nenabízí.
 Je to kurz, který probírá některé znalosti, které jsou k tomu potřeba.
 ---
 
@@ -927,7 +927,7 @@ Přijímací proces na bootcamp (Web Development) je následovný - zaregistruje
 
 --- https://discord.com/channels/769966886598737931/1096491425908146216/1189962689154404543
 Slíbil jsem, že sepíši nějaké podrobnější zkušenosti s **rekvalifikačním kurzem společnosti IT Network**, konkrétně se jedná o kurz **Programátor webových aplikací**. A jak jsem slíbil, tak (byť se zpožděním) činím. Neumím psát, natož stručně, tak se na to připravte 😉
- O rekvalifikačním kurzu jsem poprvé začal uvažovat cca před dvěma lety, tehdy to ale úřad práce proplácel zpětně a ještě bez garance. Pak jsem měl nějakou prodlevu a letos v létě na mě vyskočila reklama IT Network. Přečetl jsem si tedy na IT Network návod na účast v kurzu a jeho proplacení a napsal na úřad práce. Dneska se jen stanete zájemcem/kyní nebo uchazečem/kou o zaměstnání, napíšete jaký kurz chcete dělat a to je vše. Rozdíl mezi zájemcem/kyní a uchazečem/kou je v tom, že jeden/na je klasicky na pracáku bez práce a druhý/á normálně pracuje a jen je registrován/a - něco na způsob “otevřený/á novým možnostem”. Který/á je který/á jsem úspěšně zapomněl. Jeden den jsem se rozhodl, druhý den napsal datovkou na pracák a tři týdny na to jsem začal studovat. 
+ O rekvalifikačním kurzu jsem poprvé začal uvažovat cca před dvěma lety, tehdy to ale úřad práce proplácel zpětně a ještě bez garance. Pak jsem měl nějakou prodlevu a letos v létě na mě vyskočila reklama IT Network. Přečetl jsem si tedy na IT Network návod na účast v kurzu a jeho proplacení a napsal na úřad práce. Dneska se jen stanete zájemcem/kyní nebo uchazečem/kou o zaměstnání, napíšete jaký kurz chcete dělat a to je vše. Rozdíl mezi zájemcem/kyní a uchazečem/kou je v tom, že jeden/na je klasicky na pracáku bez práce a druhý/á normálně pracuje a jen je registrován/a - něco na způsob “otevřený/á novým možnostem”. Který/á je který/á jsem úspěšně zapomněl. Jeden den jsem se rozhodl, druhý den napsal datovkou na pracák a tři týdny na to jsem začal studovat.
 Na začátku je nutné říci naprosto zásadní věc - každému vyhovuje něco jiného, každý se učí jinak a každý má své osvědčené postupy. To že já něco nejsem schopný pochopit neznamená, že Vy nebo kdokoli jiný to nepochopí. Nemluvím o obtížnosti výuky, ale o stylu učení se a o stylu vysvětlování. To si prosím zapamatujte. Jedná se o čistě subjektivní dojmy.
 ---
 
@@ -938,7 +938,7 @@ Ahoj, kurz jede až do konce února, každopádně rozladění pokračuje.... U�
 
 
 --- https://discord.com/channels/769966886598737931/1173510753106542652/1191714881506902107
-Já chci zítra veřejně vyslovit ještě jednu myšlenku, co se týká lektorů. Zatím vymýšlím formu, jak to říct, aby to neznělo moc demagogicky nebo namyšleně. Pointa: když se člověk zamyslí, že by tedy chtěl mít kvalitního lektora a IT experta v jednom, pak moc nelze očekávat, že daný člověk chce pracovat po nocích (večerní kurzy) či o víkendech. Zároveň jsou tyhle kurzy většinou dlouhodobé a tak mi z toho vyplývá, že téměř nikdo si nechce na několik týdnů či měsíců zacpat všechny víkendy, tudíž se dá očekávat, že to bude školit více různých lidí a budou se střídat. 
+Já chci zítra veřejně vyslovit ještě jednu myšlenku, co se týká lektorů. Zatím vymýšlím formu, jak to říct, aby to neznělo moc demagogicky nebo namyšleně. Pointa: když se člověk zamyslí, že by tedy chtěl mít kvalitního lektora a IT experta v jednom, pak moc nelze očekávat, že daný člověk chce pracovat po nocích (večerní kurzy) či o víkendech. Zároveň jsou tyhle kurzy většinou dlouhodobé a tak mi z toho vyplývá, že téměř nikdo si nechce na několik týdnů či měsíců zacpat všechny víkendy, tudíž se dá očekávat, že to bude školit více různých lidí a budou se střídat.
 
 Výjimky se samozřejmě najdou, já k nim nepatřím. Nejraději bych školila v normální pracovní době. PS: Mám 4 hodinové bloky kurzu.
 ---
@@ -964,6 +964,9 @@ A taky si uvědom, že kurz musíš „úspěšně“ dokončit, pokud ho začne
 --- https://discord.com/channels/769966886598737931/1172478526134431808/1193184996295458836
 Vypadá to, že s tím už maj nějaký zkušenosti: https://coderslab.cz/cz/blog/dotace-z-uradu-prace-krok-za-krokem
 ---
+
+
+https://cc.cz/ani-ucitele-ani-pracovni-sesity-skola-programovani-v-praze-nechava-studenty-ucit-se-od-sebe-navzajem/
 
 
 #} -->

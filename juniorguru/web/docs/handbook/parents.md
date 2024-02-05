@@ -73,5 +73,6 @@ Teď, jak začnu pracovat, tak se budu muset s manželem už domluvit, aby mě o
 ---
 
 http://www.zasnem.cz/2023/04/26/maly-hacker/
+https://cc.cz/matkam-a-firmam-pomaha-skloubit-praci-a-rodinny-zivot-vetsina-manazeru-svym-lidem-neveri-rika/
 
 #} -->
