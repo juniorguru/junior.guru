@@ -15,6 +15,7 @@ USER_AGENT = (
 
 EXCLUDE_URLS = [
     "*static/*.*",  # local links to static files
+    "beta.www.jobs.cz/rpd/*",  # expired job posts
     "facebook.com/search/",  # HTTP_404 in response if user isn't logged in
     "juniorguru.memberful.com",  # HTTP_403, rightfully
     "support.discord.com",  # Discord ¯\_(ツ)_/¯
