@@ -125,7 +125,6 @@ Přestože jde o balancování na hraně zákona o [švarc systému](https://cs.
 Být živnostníkem má však tyto nevýhody:
 
 *   Administrativa je na tobě. Pro každou vydělanou částku musíš vydat a poslat fakturu. Jednou za rok podáváš [daňové přiznání](https://cs.wikipedia.org/wiki/Da%C5%88ov%C3%A9_p%C5%99izn%C3%A1n%C3%AD), přehled pro ČSSZ a přehled pro zdravotní pojišťovnu.
-*   Při fakturaci do zahraničí nebo obratu nad 80 000 Kč měsíčně ti hrozí [povinnost platit DPH](https://www.jakpodnikat.cz/platce-dph-registrace-povinna.php). To znamená ze dne na den začít odvádět 21 %, mít velké množství byrokracie navíc (daňová přiznání a kontrolní hlášení podáváš každý měsíc) a bát se vysokých pokut za přešlapy.
 *   Pokud si při podnikání vytvoříš dluhy, máš povinnost k uhrazení využít i veškerý svůj čistě soukromý majetek (ručíš vším, na rozdíl od s. r. o., tedy [společnosti s ručením omezeným](https://cs.wikipedia.org/wiki/Spole%C4%8Dnost_s_ru%C4%8Den%C3%ADm_omezen%C3%BDm)).
 *   I pokud by ti každý měsíc na účet chodilo více peněz než průměrnému zaměstnanci, u banky máš jako OSVČ [výrazně horší pozici pro získání hypotéky](https://www.chytryhonza.cz/hypoteka-pro-osvc-jak-u-banky-s-zadosti-uspet).
 *   Za léta práce na živnostenský list budeš mít od státu nižší důchod.

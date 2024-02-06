@@ -760,8 +760,6 @@ glue kariéra, dobře komunikující lidi na pomezí technical a communitative h
 
 https://cestakzamestnani.cz/
 
-Jinak k tomu DPH drobnost, limit není těch 80k obratu ale aktuálně 1mil ročně, bude prý až 2mil ročně. PLus to je jen povinost při výdělku u nás nebo v EU. Pokud obrat pochází mimo EU (usa), tak se povinnost DPH nevztahuje.
-
 http://simonwillison.net/2022/Nov/6/what-to-blog-about/
 
 v létě jsou hiring manažeři a HR často na dovolené + s juniorními pozicemi počítají, že nejvíce zájemců bude v září - absolventi si většinou udělají poslední hezké léto na půl úvazek nebo na žádný, a nastupujou až v září. Léto je určitě slabší. Stejně jako prosinec.
