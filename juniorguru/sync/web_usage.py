@@ -4,6 +4,7 @@ import requests
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import charts, loggers
+from juniorguru.lib.cache import cache
 from juniorguru.models.base import db
 from juniorguru.models.web_usage import WebUsage
 
@@ -65,24 +66,30 @@ def main():
         )
         for slug, pages in PRODUCTS.items():
             logger.debug(f'Fetching analytics for {slug!r}: {", ".join(pages)}')
-            params = dict(
-                version=5,
-                fields="pageviews",
-                info="false",
-                pages=",".join(pages),
-                **time_range,
-            )
-            response = requests.get(
-                "https://simpleanalytics.com/junior.guru.json", params=params
-            )
-            response.raise_for_status()
-            data = response.json()
+            pageviews = fetch_analytics(pages, time_range)
             starts_on = date.fromisoformat(time_range["start"])
             logger.info(
-                f'Product {slug!r} got {data["pageviews"]} pageviews on {starts_on:%Y-%m}'
+                f"Product {slug!r} got {pageviews} pageviews on {starts_on:%Y-%m}"
             )
             WebUsage.create(
                 product_slug=slug,
                 month_starts_on=starts_on,
-                pageviews=data["pageviews"],
+                pageviews=pageviews,
             )
+
+
+@cache(expire=timedelta(days=40), tag="web-usage")
+def fetch_analytics(pages: list[str], time_range: dict[str, str]) -> int:
+    params = dict(
+        version=5,
+        fields="pageviews",
+        info="false",
+        pages=",".join(pages),
+        **time_range,
+    )
+    response = requests.get(
+        "https://simpleanalytics.com/junior.guru.json", params=params
+    )
+    response.raise_for_status()
+    data = response.json()
+    return data["pageviews"]
