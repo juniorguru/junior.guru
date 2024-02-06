@@ -94,6 +94,7 @@ HIDDEN_ELEMENTS = [
     "#cc--main",  # seduo.cz
     "#cc_div",  # seduo.cz
     '[class*="frb-"]',  # wikipedia.org
+    '[id="siteNotice"]',  # wikipedia.org
     '[id*="drift-"]',  # pluralsight.com
     "body > .announcement",  # junior.guru
     "body > .notice",  # pyvo.cz
