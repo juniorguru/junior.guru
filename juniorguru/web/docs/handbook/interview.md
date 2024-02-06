@@ -889,7 +889,7 @@ Od října do konce roku se nábor často zpomaluje, nebo úplně zastavuje, pod
 vytahuju ven citát od <@852528987208024074> z <#1160119402369384498>
 > ideálne je sa už rovno na pohovore spýtať v akom stave u nich momentálne je ak je ponuka písaná ako hybrid
 
-Myslím, že tohle platí obecně. 
+Myslím, že tohle platí obecně.
 
 Chcete hlavně programovat v Reactu, ale „zatím budete hlavně psát CSS a víc Reactu časem“? Zeptejte se kolik toho v Reactu aktuálně dělají nebo za poslední půl roku dělali, možná zjistíte, že je to „spíš jako v plánu“ a tedy vůbec není jisté, jestli to půjde. Jasně, třeba tu práci vezmete jako první zkušenost tak jako tak, ale nebudete za pár měsíců frustrovaní z toho, že jste se ještě k Reactu nedostali.
 ---
@@ -901,7 +901,7 @@ Když bych si jako junior hledala novou práci, na co si dát pozor? Jak naznač
 
 
 --- https://discord.com/channels/769966886598737931/1085592788676120636/1143825015171723304
-Body pro sebe: pohovorování je extrémně náhodné. Pohovory, ze kterých mám dobrý pocit jsou často negativní a naopak. Nikdy nevím, co bude "ta správná" informace, co je zaujme. 
+Body pro sebe: pohovorování je extrémně náhodné. Pohovory, ze kterých mám dobrý pocit jsou často negativní a naopak. Nikdy nevím, co bude "ta správná" informace, co je zaujme.
 
 Umím skvěle předstírat, že nejsem nervózní a když proti mne sedí lidi s ještě mizernějším sociálním skillem, vypadá to pro mne dobře.
 
@@ -928,6 +928,9 @@ I kdyz je kamarad, do tve hlavy nevidi, a tvoje ucebni/pracovni schopnosti znat 
 To, co ti nabizi je "postav mi zadarmo stodolu, a kdyz se to dobre naucis (o cemz rozhodnu ja a ty mas malou sanci to ovlivnit), zaplatim ti, abys mi postavil i barak".
 Kazdy kope za sebe, coz je uplne prirozena lidska vlastnost.
 ---
+
+https://karierko.cz/clanek/petra-co-cekat-na-pohovoru/
+https://www.platy.cz/
 
 
 #} -->
