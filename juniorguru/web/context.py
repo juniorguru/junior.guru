@@ -44,6 +44,9 @@ def on_shared_context(context):
     context["now"] = now
     context["today"] = today
 
+    # theme, but also macros.html used in .jinja pages
+    context["cloudinary_host"] = CLOUDINARY_HOST
+
     # main.html
     context["revenue_ttm_breakdown"] = Transaction.revenue_ttm_breakdown(today)
 
@@ -155,7 +158,6 @@ def on_docs_page_context(context, page, config, files):
 
 @db.connection_context()
 def on_theme_context(context):
-    context["cloudinary_host"] = CLOUDINARY_HOST
     context["partnerships_handbook"] = Partnership.handbook_listing()
     context["course_providers"] = CourseProvider.listing()
 
