@@ -47,8 +47,6 @@ EMPLOYMENT_TYPES_RULES = [
     ({"FULL_TIME"}, set()),
 ]
 
-JOB_NEW_DAYS = 3
-
 JOB_EXPIRED_SOON_DAYS = 10
 
 
@@ -248,20 +246,13 @@ class ListedJob(BaseModel):
     def is_highlighted(self):
         return self.is_submitted
 
-    def tags(self, today=None):
+    def tags(self):
         tags = []
-
-        today = today or date.today()
-        if (today - self.first_seen_on).days < JOB_NEW_DAYS:
-            tags.append("NEW")
-
         if self.remote:
             tags.append("REMOTE")
-
         if self.employment_types:
             employment_types = frozenset(self.employment_types)
             tags.extend(get_employment_types_tags(employment_types))
-
         return tags
 
     @property

@@ -39,7 +39,6 @@ def remove_p(html):
 
 
 TAGS_MAPPING = {
-    "NEW": "nové",
     "REMOTE": "na dálku",
     "PART_TIME": "částečný úvazek",
     "CONTRACT": "kontrakt",
