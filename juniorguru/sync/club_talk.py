@@ -62,6 +62,8 @@ async def announce_talk(client: ClubClient, channel_id: int, today: date):
     #
     # Zakládám skupinku pro odkládání témat a jakoukoliv konverzaci ohledně pondělního povídání, když zrovna nejsme v klubovně, nebo jiné z roomek.
     # https://discord.com/channels/769966886598737931/1198999483309117582/1198999483309117582
+    #
+    # Jestli už teď víš, co bys chtěl/a dnes večer probrat, tak klidně napiš tady do vlákna 😉
 
     mentions = sorted([user.mention async for user in talk.subscribers()])
     if mentions:
@@ -69,7 +71,7 @@ async def announce_talk(client: ClubClient, channel_id: int, today: date):
 
     channel = await client.fetch_channel(channel_id)
     with mutating_discord(channel) as proxy:
-        await proxy.send(text)
+        await proxy.send(text, silent=True)
 
 
 def is_talk(scheduled_event: ScheduledEvent) -> bool:
