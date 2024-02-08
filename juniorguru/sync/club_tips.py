@@ -22,7 +22,8 @@ from juniorguru.lib.mutations import mutating_discord
 from juniorguru.lib.reading_time import reading_time
 from juniorguru.lib.remove_emoji import remove_emoji
 from juniorguru.models.base import db
-from juniorguru.models.club import ClubDocumentedRole, ClubMessage
+from juniorguru.models.club import ClubMessage
+from juniorguru.models.documented_role import DocumentedRole
 from juniorguru.models.tip import Tip
 from juniorguru.sync.club_threads import DEFAULT_AUTO_ARCHIVE_DURATION
 
@@ -50,8 +51,8 @@ logger = loggers.from_path(__file__)
 def main(tips_path: Path, force_dose: bool):
     with db.connection_context():
         roles = {
-            documented_role.slug: documented_role.id
-            for documented_role in ClubDocumentedRole.listing()
+            documented_role.slug: documented_role.club_id
+            for documented_role in DocumentedRole.listing()
         }
     tips = list(load_tips(tips_path, roles=roles))
     logger.info(f"Loaded {len(tips)} tips")
@@ -243,7 +244,7 @@ async def dose_tips(client: ClubClient, tips: list[dict], force_dose: bool):
     dose_thread = threads[dose_tip["emoji"]]
 
     logger.info(f"Dosing: {dose_tip['title']} - {dose_thread.jump_url}")
-    newcomers_mention = ClubDocumentedRole.get_by_slug("newcomer").mention
+    newcomers_mention = DocumentedRole.get_by_slug("newcomer").mention
     content = f"{DOSE_EMOJI} **Tip dne** pro {newcomers_mention} ({reading_time(len(dose_tip['content']))} min čtení)"
     with mutations.mutating_discord(channel) as proxy:
         await proxy.send(

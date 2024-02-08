@@ -13,7 +13,8 @@ from juniorguru.lib.discord_club import (
 )
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
-from juniorguru.models.club import ClubDocumentedRole, ClubMessage
+from juniorguru.models.club import ClubMessage
+from juniorguru.models.documented_role import DocumentedRole
 
 
 IMAGES_DIR = Path("juniorguru/images")
@@ -39,7 +40,7 @@ def main(channel_id: int, recreate_interval_days: int):
 async def recreate_archive(
     client: ClubClient, channel_id: int, recreate_interval_days: int
 ):
-    roles = list(ClubDocumentedRole.listing())
+    roles = list(DocumentedRole.listing())
     messages = ClubMessage.channel_listing(channel_id, by_bot=True)
     try:
         last_message = messages[-1]

@@ -421,28 +421,6 @@ class ClubPin(BaseModel):
         )
 
 
-class ClubDocumentedRole(BaseModel):
-    id = IntegerField(primary_key=True)
-    name = CharField(unique=True)
-    mention = CharField(unique=True)
-    slug = CharField(unique=True)
-    description = TextField()
-    position = IntegerField(unique=True)
-    emoji = CharField(null=True)
-    color = IntegerField(null=True)
-    icon_path = CharField(null=True)
-
-    @classmethod
-    def get_by_slug(cls, slug):
-        if not slug:
-            raise ValueError(repr(slug))
-        return cls.select().where(cls.slug == slug).get()
-
-    @classmethod
-    def listing(cls):
-        return cls.select().order_by(cls.position)
-
-
 def non_empty_min(values):
     values = list(filter(None, values))
     if values:

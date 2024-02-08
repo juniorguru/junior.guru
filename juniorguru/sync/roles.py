@@ -12,7 +12,8 @@ from juniorguru.lib import discord_task, loggers
 from juniorguru.lib.discord_club import ClubClient, get_user_roles, resolve_references
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
-from juniorguru.models.club import ClubDocumentedRole, ClubUser
+from juniorguru.models.club import ClubUser
+from juniorguru.models.documented_role import DocumentedRole
 from juniorguru.models.event import Event
 from juniorguru.models.mentor import Mentor
 from juniorguru.models.partner import Partnership
@@ -55,8 +56,8 @@ def main():
 @db.connection_context()
 async def sync_roles(client: ClubClient):
     logger.info("Setting up db table for documented roles")
-    ClubDocumentedRole.drop_table()
-    ClubDocumentedRole.create_table()
+    DocumentedRole.drop_table()
+    DocumentedRole.create_table()
 
     logger.info("Fetching info about roles")
     yaml_records = {
@@ -97,8 +98,8 @@ async def sync_roles(client: ClubClient):
         else:
             icon_path = None
 
-        ClubDocumentedRole.create(
-            id=discord_role.id,
+        DocumentedRole.create(
+            club_id=discord_role.id,
             position=position,
             name=discord_role.name,
             mention=discord_role.mention,
@@ -119,7 +120,7 @@ async def sync_roles(client: ClubClient):
     logger.info(f"members_count={len(members)}, top_members_limit={top_members_limit}")
 
     logger.info("Computing how to re-assign role: most_discussing")
-    role_id = ClubDocumentedRole.get_by_slug("most_discussing").id
+    role_id = DocumentedRole.get_by_slug("most_discussing").club_id
     content_size_stats = calc_stats(
         members, lambda m: m.content_size(), top_members_limit
     )
@@ -144,7 +145,7 @@ async def sync_roles(client: ClubClient):
         )
 
     logger.info("Computing how to re-assign role: most_helpful")
-    role_id = ClubDocumentedRole.get_by_slug("most_helpful").id
+    role_id = DocumentedRole.get_by_slug("most_helpful").club_id
     upvotes_count_stats = calc_stats(
         members, lambda m: m.upvotes_count(), top_members_limit
     )
@@ -167,7 +168,7 @@ async def sync_roles(client: ClubClient):
         )
 
     logger.info("Computing how to re-assign role: has_intro_and_avatar")
-    role_id = ClubDocumentedRole.get_by_slug("has_intro_and_avatar").id
+    role_id = DocumentedRole.get_by_slug("has_intro_and_avatar").club_id
     intro_avatar_members_ids = [
         member.id for member in members if member.has_avatar and member.intro
     ]
@@ -180,7 +181,7 @@ async def sync_roles(client: ClubClient):
         )
 
     logger.info("Computing how to re-assign role: newcomer")
-    role_id = ClubDocumentedRole.get_by_slug("newcomer").id
+    role_id = DocumentedRole.get_by_slug("newcomer").club_id
     new_members_ids = [member.id for member in members if member.is_new()]
     logger.debug(f"new_members_ids: {repr_ids(members, new_members_ids)}")
     for member in members:
@@ -189,7 +190,7 @@ async def sync_roles(client: ClubClient):
         )
 
     logger.info("Computing how to re-assign role: year_old")
-    role_id = ClubDocumentedRole.get_by_slug("year_old").id
+    role_id = DocumentedRole.get_by_slug("year_old").club_id
     year_old_members_ids = [member.id for member in members if member.is_year_old]
     logger.debug(f"year_old_members_ids: {repr_ids(members, year_old_members_ids)}")
     for member in members:
@@ -200,7 +201,7 @@ async def sync_roles(client: ClubClient):
         )
 
     logger.info("Computing how to re-assign role: speaker")
-    role_id = ClubDocumentedRole.get_by_slug("speaker").id
+    role_id = DocumentedRole.get_by_slug("speaker").club_id
     speaking_members_ids = [member.id for member in Event.list_speaking_members()]
     logger.debug(f"speaking_members_ids: {repr_ids(members, speaking_members_ids)}")
     for member in members:
@@ -211,7 +212,7 @@ async def sync_roles(client: ClubClient):
         )
 
     logger.info("Computing how to re-assign role: mentor")
-    role_id = ClubDocumentedRole.get_by_slug("mentor").id
+    role_id = DocumentedRole.get_by_slug("mentor").club_id
     mentors_members_ids = [mentor.user.id for mentor in Mentor.listing()]
     logger.debug(f"mentors_ids: {repr_ids(members, mentors_members_ids)}")
     for member in members:
@@ -222,7 +223,7 @@ async def sync_roles(client: ClubClient):
         )
 
     logger.info("Computing how to re-assign role: founder")
-    role_id = ClubDocumentedRole.get_by_slug("founder").id
+    role_id = DocumentedRole.get_by_slug("founder").club_id
     founders_members_ids = [member.id for member in members if member.is_founder()]
     logger.debug(f"founders_members_ids: {repr_ids(members, founders_members_ids)}")
     for member in members:
@@ -233,7 +234,7 @@ async def sync_roles(client: ClubClient):
         )
 
     logger.info("Computing how to re-assign role: partner")
-    role_id = ClubDocumentedRole.get_by_slug("partner").id
+    role_id = DocumentedRole.get_by_slug("partner").club_id
     coupons = list(filter(None, (partner.coupon for partner in partners)))
     partners_members_ids = [member.id for member in members if member.coupon in coupons]
     logger.debug(f"partners_members_ids: {repr_ids(members, partners_members_ids)}")
