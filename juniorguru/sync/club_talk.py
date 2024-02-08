@@ -7,6 +7,8 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib.discord_club import ClubChannelID, ClubClient, parse_channel
 from juniorguru.models.club import ClubMessage
 from juniorguru.lib.mutations import mutating_discord
+from juniorguru.models.tip import Tip
+from juniorguru.models.base import db
 
 
 logger = loggers.from_path(__file__)
@@ -15,7 +17,7 @@ logger = loggers.from_path(__file__)
 TALK_EMOJI = "💬"
 
 
-@cli.sync_command(dependencies=["club-content"])
+@cli.sync_command(dependencies=["club-content", "club-tips"])
 @click.option("--channel", "channel_id", default="announcements", type=parse_channel)
 @click.option(
     "--today",
@@ -27,10 +29,14 @@ def main(channel_id: int, today: date):
     if message and message.created_at.date() == today:
         logger.info("Talk announcement already exists")
         return
-    discord_task.run(announce_talk, channel_id, today)
+
+    with db.connection_context():
+        tip_url = Tip.get_by_id("talk").club_url
+
+    discord_task.run(announce_talk, channel_id, tip_url, today)
 
 
-async def announce_talk(client: ClubClient, channel_id: int, today: date):
+async def announce_talk(client: ClubClient, channel_id: int, tip_url: str, today: date):
     talks = filter(is_talk, client.club_guild.scheduled_events)
     talks = filter(lambda talk: talk.start_time.date() == today, talks)
     try:
@@ -40,23 +46,19 @@ async def announce_talk(client: ClubClient, channel_id: int, today: date):
         return
 
     logger.info(f"Announcing talk {talk.url}")
-    text = f"{TALK_EMOJI} **Today's talk**: {talk.url}"
-    # TODO udělat tip do klub tipy, kam dám většinu toho textu
-    # znamená to mít aktuální link na tip
-    # znamená to uložit si někam link tip, když ho vytvářím, do db, a dát tipy do závislostí tohoto skriptu
-    #
-    # Jako každé pondělí se i dnes setkáme v online klubovně v rámci eventu Pondělní povídání, viz events (události). Až na pár výjimek není striktně daný program.
-    # Co čekat? TIP
-    # Jestli už teď víš, co bys chtěl/a dnes večer probrat, tak klidně napiš tady do vlákna 😉
-    # @ყυɾαყƙσ, @YpsiX 🧅, @David Knotek, @Kuba, @Dan Srb, @Dale, @Petr Kašička, @nathalie6811, @Petr Kopecký, @Wewa na viděnou, slyšenou večer 👋
-    # + thread
+    text = (
+        f"{TALK_EMOJI} Jako každý týden, i dnes večer bude v klubovně [Pondělní povídání]({talk.url})!\n\n"
+        f"- Co čekat? Mrkni na {tip_url}"
+        "\n"
+        f"- Chceš něco konkrétního probrat? Piš do https://discord.com/channels/769966886598737931/1198999483309117582/1198999483309117582"
+    )
     mentions = sorted([user.mention async for user in talk.subscribers()])
     if mentions:
-        text += f"\n\nUž teď to vypadá, že na akci potkáš {' '.join(mentions)}"
+        text += f"\n\n{' '.join(mentions)} na viděnou, slyšenou večer 👋"
 
     channel = await client.fetch_channel(channel_id)
     with mutating_discord(channel) as proxy:
-        await proxy.send(text, silent=True)
+        await proxy.send(text, silent=True, suppress=True)
 
 
 def is_talk(scheduled_event: ScheduledEvent) -> bool:

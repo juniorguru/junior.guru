@@ -23,6 +23,7 @@ from juniorguru.lib.reading_time import reading_time
 from juniorguru.lib.remove_emoji import remove_emoji
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubDocumentedRole, ClubMessage
+from juniorguru.models.tip import Tip
 from juniorguru.sync.club_threads import DEFAULT_AUTO_ARCHIVE_DURATION
 
 
@@ -65,11 +66,13 @@ def load_tips(tips_path: Path, roles: dict[str, int] | None = None):
             continue
         logger.info(f"Loading tip {tip_path}")
         yield dict(
-            url=get_tip_url(tip_path), **parse_tip(tip_path.read_text(), roles=roles)
+            edit_url=get_edit_url(tip_path),
+            slug=tip_path.stem.split("_", 1)[1],
+            **parse_tip(tip_path.read_text(), roles=roles),
         )
 
 
-def get_tip_url(path: Path, cwd: Path = None) -> str:
+def get_edit_url(path: Path, cwd: Path = None) -> str:
     cwd = cwd or Path.cwd()
     path = path.absolute().relative_to(cwd)
     return f"https://github.com/juniorguru/junior.guru/blob/main/{path}"
@@ -128,6 +131,12 @@ async def sync_tips(client: ClubClient, tips: list[dict]):
             tasks.append(asyncio.create_task(create_tip(channel, tip)))
     await asyncio.gather(*tasks)
 
+    Tip.drop_table()
+    Tip.create_table()
+    channel = await client.fetch_channel(ClubChannelID.TIPS)  # avoid cached data
+    for emoji, thread in threads_by_emoji(channel.threads).items():
+        Tip.create(club_url=thread.jump_url, **tips_by_emoji[emoji])
+
 
 @mutations.mutates_discord()
 async def delete_thread(thread: Thread) -> None:
@@ -143,7 +152,7 @@ async def create_tip(channel: ForumChannel, tip: dict) -> Thread:
         content=tip["content"],
         allowed_mentions=AllowedMentions.none(),
         auto_archive_duration=DEFAULT_AUTO_ARCHIVE_DURATION,
-        view=(await create_view(tip["url"])),
+        view=(await create_view(tip["edit_url"])),
     )
     message = thread.get_partial_message(thread.id)
     await message.edit(suppress=True)
@@ -158,7 +167,7 @@ async def update_tip(thread: Thread, tip: dict) -> None:
         if thread.starting_message
         else (await thread.fetch_message(thread.id))
     )
-    view = await create_view(tip["url"])
+    view = await create_view(tip["edit_url"])
 
     thread_params = {}
     if thread.archived:
@@ -189,12 +198,13 @@ async def update_tip(thread: Thread, tip: dict) -> None:
         await message.edit(**message_params)
 
 
-async def create_view(url: str) -> ui.View:  # View's __init__ touches the event loop
+# async, because View's __init__ touches the event loop 🙄
+async def create_view(edit_url: str) -> ui.View:
     return ui.View(
         ui.Button(
             emoji="<:github:842685206095724554>",
             label="Upravit tip",
-            url=url,
+            url=edit_url,
         )
     )
 
