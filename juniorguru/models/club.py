@@ -370,7 +370,9 @@ class ClubMessage(BaseModel):
         return query.order_by(cls.created_at.desc()).first()
 
     @classmethod
-    def last_bot_message(cls, channel_id, starting_emoji=None, contains_text=None):
+    def last_bot_message(
+        cls, channel_id, starting_emoji=None, contains_text=None
+    ) -> Self | None:
         query = (
             cls.select()
             .where(cls.author_is_bot == True, cls.channel_id == channel_id)

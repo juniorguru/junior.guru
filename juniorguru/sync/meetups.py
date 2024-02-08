@@ -428,7 +428,7 @@ def generate_thread_message_content(
 ) -> str:
     text = CALL_TO_ACTION_TEXT
     if mentions:
-        mentions = sorted(mentions or [])
+        mentions = sorted(mentions)
         text += f"\n\nUž teď to vypadá, že na akci potkáš {' '.join(mentions)}\n\n"
     else:
         text += " "
