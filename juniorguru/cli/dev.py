@@ -20,9 +20,10 @@ def main():
 
 @main.command()
 @click.option("--pull/--no-pull", default=True)
+@click.option("--packages/--no-packages", default=True)
 @click.option("--push/--no-push", default=True)
 @click.option("--stash/--no-stash", default=False)
-def update(pull, push, stash):
+def update(pull, packages, push, stash):
     try:
         logger.info("Terminating running processes")
         python_path = sys.executable
@@ -35,20 +36,23 @@ def update(pull, push, stash):
         if pull:
             logger.info("Pulling changes")
             subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=True)
+        logger.info("Installing packages")
+        subprocess.run(["poetry", "install"], check=True)
+        subprocess.run(["npm", "install"], check=True)
+        if packages:
+            logger.info("Updating packages")
+            subprocess.run(["poetry", "update"], check=True)
+            subprocess.run(["npm", "update"], check=True)
+            subprocess.run(["git", "add", "poetry.lock", "package-lock.json"])
+            subprocess.run(["git", "commit", "-m", "update packages 📦"])
+        logger.info("Installing Playwright browsers")
+        subprocess.run(["playwright", "install", "firefox"], check=True)
         if push:
             logger.info("Pushing changes")
             subprocess.run(["git", "push"], check=True)
         if stash:
             logger.info("Getting work in progress back from stash")
             subprocess.run(["git", "stash", "pop"], check=True)
-        logger.info("Installing Python packages")
-        subprocess.run(["poetry", "install"], check=True)
-        logger.info("Updating juniorguru-chick")
-        subprocess.run(["poetry", "update", "juniorguru-chick"], check=True)
-        logger.info("Installing Playwright browsers")
-        subprocess.run(["playwright", "install", "firefox"], check=True)
-        logger.info("Installing Node packages")
-        subprocess.run(["npm", "install"], check=True)
         logger.info("Removing the 'public' directory")
         shutil.rmtree("public", ignore_errors=True)
     except subprocess.CalledProcessError:
