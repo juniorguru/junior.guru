@@ -2,13 +2,14 @@ from datetime import date
 
 import click
 from discord import ScheduledEvent
-from juniorguru.lib import discord_task, loggers
+
 from juniorguru.cli.sync import main as cli
+from juniorguru.lib import discord_task, loggers
 from juniorguru.lib.discord_club import ClubChannelID, ClubClient, parse_channel
-from juniorguru.models.club import ClubMessage
 from juniorguru.lib.mutations import mutating_discord
-from juniorguru.models.tip import Tip
 from juniorguru.models.base import db
+from juniorguru.models.club import ClubMessage
+from juniorguru.models.tip import Tip
 
 
 logger = loggers.from_path(__file__)

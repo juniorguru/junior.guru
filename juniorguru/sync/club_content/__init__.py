@@ -1,4 +1,5 @@
 from pprint import pformat
+
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_task, loggers
 from juniorguru.models.base import db
