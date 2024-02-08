@@ -45,26 +45,11 @@ async def announce_talk(client: ClubClient, channel_id: int, today: date):
     # znamená to mít aktuální link na tip
     # znamená to uložit si někam link tip, když ho vytvářím, do db, a dát tipy do závislostí tohoto skriptu
     #
-    #
-    # Ahojte, dneska večer bude opět pondělní povídání bla bla bla. Na viděnou minimámálně s {interested-users}
-    #
-    #
     # Jako každé pondělí se i dnes setkáme v online klubovně v rámci eventu Pondělní povídání, viz events (události). Až na pár výjimek není striktně daný program.
-    #
-    # Po sedmé zpravidla začínáme s úvodním "kolečkem", kdy každý účastník má kolem 1:30 min, aby ostatním řekl, čemu se zrovna věnuje, s čím bojuje atd. Když je někdo na Pondělním povídání poprvé, tak se v rámci této aktivity také představí.
-    #
-    # Po úvodním kolečku volně pokračujeme na jakékoliv téma. Jestli už teď víš, co bys chtěl/a dnes večer probrat, tak klidně napiš tady do vlákna 😉 Můžeme se tomu pověnovat přednostně. V případě většího počtu účastníků a/nebo témat se rozdělíme do více voice chatů.
-    #
-    # Většinou má alespoň tak půlka lidí zapnutou kameru, ale není to pravidlem. Jestli se chceš připojit a jen poslouchat, tak to napiš do chatu, nebo mě do soukromé zprávy. Jinak se často s nově příchozí/m pokusím interagovat, když je prostor.
-    #
-    # @ყυɾαყƙσ, @YpsiX 🧅, @David Knotek, @Kuba, @Dan Srb, @Dale, @Petr Kašička, @nathalie6811, @Petr Kopecký, @Wewa na viděnou, slyšenou večer 👋
-    #
-    #
-    # Zakládám skupinku pro odkládání témat a jakoukoliv konverzaci ohledně pondělního povídání, když zrovna nejsme v klubovně, nebo jiné z roomek.
-    # https://discord.com/channels/769966886598737931/1198999483309117582/1198999483309117582
-    #
+    # Co čekat? TIP
     # Jestli už teď víš, co bys chtěl/a dnes večer probrat, tak klidně napiš tady do vlákna 😉
-
+    # @ყυɾαყƙσ, @YpsiX 🧅, @David Knotek, @Kuba, @Dan Srb, @Dale, @Petr Kašička, @nathalie6811, @Petr Kopecký, @Wewa na viděnou, slyšenou večer 👋
+    # + thread
     mentions = sorted([user.mention async for user in talk.subscribers()])
     if mentions:
         text += f"\n\nUž teď to vypadá, že na akci potkáš {' '.join(mentions)}"
