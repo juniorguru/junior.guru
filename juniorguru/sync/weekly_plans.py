@@ -15,7 +15,9 @@ from juniorguru.lib.discord_club import (
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
+from juniorguru.models.documented_role import DocumentedRole
 from juniorguru.models.wisdom import Wisdom
+from juniorguru_chick.lib.threads import add_members_with_role
 
 
 WEEK_RE = re.compile(
@@ -40,7 +42,7 @@ WEEK_RE = re.compile(
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=["club-content", "wisdom"])
+@cli.sync_command(dependencies=["club-content", "wisdom", "roles"])
 @click.option("--channel", "channel_id", default="weekly_plans", type=parse_channel)
 @click.option(
     "--today",
@@ -61,14 +63,15 @@ def main(channel_id: int, today: date):
             return
 
     with db.connection_context():
+        role_id = DocumentedRole.get_by_slug("week_planner").club_id
         wisdom = random.choice(Wisdom.listing())
     logger.info(f"Selected wisdom by {wisdom.name}: {wisdom.text}")
 
-    discord_task.run(kickoff_weekly_plans, channel_id, wisdom, monday)
+    discord_task.run(kickoff_weekly_plans, channel_id, role_id, wisdom, monday)
 
 
 async def kickoff_weekly_plans(
-    client: ClubClient, channel_id: int, wisdom: Wisdom, monday: date
+    client: ClubClient, channel_id: int, role_id: int, wisdom: Wisdom, monday: date
 ):
     logger.info("Kicking off the weekly plans")
 
@@ -99,12 +102,13 @@ async def kickoff_weekly_plans(
 
     channel = await client.fetch_channel(channel_id)
     with mutating_discord(channel) as proxy:
-        await proxy.create_thread(
+        thread = await proxy.create_thread(
             name=name,
             content=content,
             embeds=[template_embed, wisdom_embed],
             auto_archive_duration=DEFAULT_AUTO_ARCHIVE_DURATION,
         )
+        await add_members_with_role(thread, role_id)
 
 
 def parse_week(thread_name: str, year: int) -> date:
