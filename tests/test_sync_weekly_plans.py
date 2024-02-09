@@ -1,5 +1,6 @@
-import pytest
 from datetime import date
+
+import pytest
 
 from juniorguru.sync.weekly_plans import parse_week
 
@@ -19,9 +20,9 @@ from juniorguru.sync.weekly_plans import parse_week
     ],
 )
 def test_parse_week(thread_name: str, year: int, expected: date):
-    assert parse_week(thread_name, year=year) == expected
+    assert parse_week(thread_name, year) == expected
 
 
 def test_parse_week_raises():
     with pytest.raises(ValueError):
-        parse_week("Týden posvátného pečení chleba")
+        parse_week("Týden posvátného pečení chleba", 2000)
