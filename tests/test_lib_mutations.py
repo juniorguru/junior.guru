@@ -207,6 +207,16 @@ async def test_mutating_proxy_not_allowed_async_raises(global_state):
             await proxy.async_method(4, 4)
 
 
+def test_mutations_not_allowed_works_as_boolean(global_state):
+    obj = Something(123)
+
+    with mutating("discord", obj) as proxy:
+        result = proxy.method(4, 4)
+
+    assert isinstance(result, MutationsNotAllowedError)
+    assert not result
+
+
 def test_allowing(global_state):
     allow("fakturoid")
 

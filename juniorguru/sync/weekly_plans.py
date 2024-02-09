@@ -73,8 +73,6 @@ def main(channel_id: int, today: date):
 async def kickoff_weekly_plans(
     client: ClubClient, channel_id: int, role_id: int, wisdom: Wisdom, monday: date
 ):
-    logger.info("Kicking off the weekly plans")
-
     name = f"Týden {monday:%-d.%-m.} - {monday + timedelta(days=6):%-d.%-m.}"
     content = (
         "🗓️ Jak jsi na tom? Napiš krátký _update_! Je jedno, jestli jde o učení, práci, nebo vlastní projekt. "
@@ -100,6 +98,7 @@ async def kickoff_weekly_plans(
     wisdom_embed = Embed(title="Moudro týdne", description=f"„{wisdom.text}“")
     wisdom_embed.set_footer(text=f"— {wisdom.name}")
 
+    logger.info("Kicking off the weekly plans")
     channel = await client.fetch_channel(channel_id)
     with mutating_discord(channel) as proxy:
         thread = await proxy.create_thread(
@@ -108,7 +107,10 @@ async def kickoff_weekly_plans(
             embeds=[template_embed, wisdom_embed],
             auto_archive_duration=DEFAULT_AUTO_ARCHIVE_DURATION,
         )
-        await add_members_with_role(thread, role_id)
+    if thread:
+        logger.info("Adding members with the week planner role to the thread")
+        with mutating_discord(thread) as proxy:
+            await add_members_with_role(proxy, role_id)
 
 
 def parse_week(thread_name: str, year: int) -> date:

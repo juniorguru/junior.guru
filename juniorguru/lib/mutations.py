@@ -1,7 +1,7 @@
 import inspect
 from contextlib import contextmanager
 from functools import partial, wraps
-from typing import Any, Generator, Iterable
+from typing import Any, Generator, Iterable, Literal
 
 from juniorguru.lib import global_state, loggers
 
@@ -22,7 +22,8 @@ KNOWN_SERVICES = [
 
 
 class MutationsNotAllowedError(Exception):
-    pass
+    def __bool__(self) -> Literal[False]:
+        return False
 
 
 def _get_allowed() -> set:
