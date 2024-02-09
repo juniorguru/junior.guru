@@ -52,6 +52,7 @@ CHANNELS_SKIP = [
     # skip channels
     ClubChannelID.MODERATION,
     ClubChannelID.BOT,
+    ClubChannelID.BOT_FORUM,
     ClubChannelID.JOBS,
     # skip práce-bot (archived)
     834443926655598592,

@@ -319,12 +319,23 @@ class ClubMessage(BaseModel):
             query = query.where(cls.content_starting_emoji == starting_emoji)
         return query.order_by(cls.created_at)
 
+    # TODO squash with channel_listing
     @classmethod
     def channel_listing_since(cls, channel_id, since_at):
         return (
             cls.select()
             .where((cls.channel_id == channel_id) & (cls.created_at >= since_at))
             .order_by(cls.created_at)
+        )
+
+    @classmethod
+    def forum_listing(cls, channel_id: int) -> Iterable[Self]:
+        return (
+            cls.select()
+            .where(cls.channel_id != channel_id, cls.parent_channel_id == channel_id)
+            .group_by(cls.channel_id)
+            .having(cls.id == fn.min(cls.id))
+            .order_by(cls.created_at.desc())
         )
 
     @classmethod
@@ -369,6 +380,7 @@ class ClubMessage(BaseModel):
             query = query.where(cls.channel_id == channel_id)
         return query.order_by(cls.created_at.desc()).first()
 
+    # TODO squash with last_message
     @classmethod
     def last_bot_message(
         cls, channel_id, starting_emoji=None, contains_text=None

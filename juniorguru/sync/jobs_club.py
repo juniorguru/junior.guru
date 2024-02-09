@@ -34,6 +34,7 @@ def main():
     discord_task.run(sync_jobs)
 
 
+# TODO use club content, see how weekly plans are done
 @db.connection_context()
 async def sync_jobs(client: ClubClient):
     since_at = datetime.now(timezone.utc) - timedelta(days=JOBS_REPEATING_PERIOD_DAYS)

@@ -1,11 +1,12 @@
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_task, loggers
-from juniorguru.lib.discord_club import ClubChannelID, ClubClient
+from juniorguru.lib.discord_club import (
+    DEFAULT_AUTO_ARCHIVE_DURATION,
+    ClubChannelID,
+    ClubClient,
+)
 from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
-
-
-DEFAULT_AUTO_ARCHIVE_DURATION = 10080  # minutes
 
 
 logger = loggers.from_path(__file__)

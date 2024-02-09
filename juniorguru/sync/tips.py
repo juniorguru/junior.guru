@@ -10,6 +10,7 @@ from discord import AllowedMentions, ForumChannel, Thread, ui
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_task, loggers, mutations
 from juniorguru.lib.discord_club import (
+    DEFAULT_AUTO_ARCHIVE_DURATION,
     ClubChannelID,
     ClubClient,
     ClubMemberID,
@@ -25,7 +26,6 @@ from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.documented_role import DocumentedRole
 from juniorguru.models.tip import Tip
-from juniorguru.sync.club_threads import DEFAULT_AUTO_ARCHIVE_DURATION
 
 
 DOSE_EMOJI = "💡"

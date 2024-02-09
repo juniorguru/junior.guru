@@ -17,6 +17,7 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_task, loggers, mutations
 from juniorguru.lib.cache import cache
 from juniorguru.lib.discord_club import (
+    DEFAULT_AUTO_ARCHIVE_DURATION,
     ClubClient,
     ClubMemberID,
     fetch_threads,
@@ -24,7 +25,6 @@ from juniorguru.lib.discord_club import (
 )
 from juniorguru.lib.locations import fetch_location
 from juniorguru.models.club import ClubMessage
-from juniorguru.sync.club_threads import DEFAULT_AUTO_ARCHIVE_DURATION
 
 
 NAME_PREFIX = "Mini sraz juniorů"
