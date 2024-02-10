@@ -4,6 +4,7 @@ from datetime import date, timedelta
 
 import click
 from discord import Color, Embed
+from juniorguru_chick.lib.threads import add_members_with_role
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_task, loggers
@@ -17,7 +18,6 @@ from juniorguru.models.base import db
 from juniorguru.models.club import ClubMessage
 from juniorguru.models.documented_role import DocumentedRole
 from juniorguru.models.wisdom import Wisdom
-from juniorguru_chick.lib.threads import add_members_with_role
 
 
 WEEK_RE = re.compile(
