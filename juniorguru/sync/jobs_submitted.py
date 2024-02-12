@@ -3,9 +3,6 @@ import re
 from datetime import date, timedelta
 from urllib.parse import urlparse
 
-import langdetect
-from w3lib.html import remove_tags
-
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import google_sheets, loggers
 from juniorguru.lib.google_coerce import (
@@ -27,6 +24,7 @@ from juniorguru.sync.jobs_scraped.pipelines.boards_ids import (
 from juniorguru.sync.jobs_scraped.pipelines.employment_types_cleaner import (
     clean_employment_types,
 )
+from juniorguru.sync.jobs_scraped.pipelines.language_parser import parse_language
 
 
 logger = loggers.from_path(__file__)
@@ -102,10 +100,6 @@ def coerce_record(record, today=None):
 
     data["lang"] = parse_language(data["description_html"])
     return data
-
-
-def parse_language(description_html: str) -> str:
-    return langdetect.detect(remove_tags(description_html))
 
 
 def parse_locations(value):
