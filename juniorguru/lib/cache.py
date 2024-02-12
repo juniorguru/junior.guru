@@ -1,6 +1,6 @@
 import asyncio
 from datetime import timedelta
-from functools import lru_cache, partial, wraps
+from functools import lru_cache, wraps
 from typing import Any, Callable
 
 from diskcache import Cache
@@ -9,6 +9,7 @@ from jinja2 import BytecodeCache as BaseBytecodeCache
 from jinja2.bccache import Bucket
 
 from juniorguru.lib import loggers
+from juniorguru.lib.async_utils import call_async
 
 
 CACHE_DIR = ".cache"
@@ -54,12 +55,12 @@ def cache(
             @wraps(fn)
             async def wrapper(*args, **kwargs) -> Any:
                 key = args_to_key(base, args, kwargs, False, ignore)
-                result = await _call_async(cache.get, key, default=ENOVAL, retry=True)
+                result = await call_async(cache.get, key, default=ENOVAL, retry=True)
 
                 if result is ENOVAL:
                     result = await fn(*args, **kwargs)
                     if expire is None or expire > 0:
-                        await _call_async(
+                        await call_async(
                             cache.set, key, result, expire, tag=tag, retry=True
                         )
 
@@ -90,8 +91,3 @@ class BytecodeCache(BaseBytecodeCache):
 @lru_cache()
 def get_jinja_cache() -> BytecodeCache:
     return BytecodeCache(get_cache())
-
-
-def _call_async(fn, *args, **kwargs):
-    loop = asyncio.get_running_loop()
-    return loop.run_in_executor(None, partial(fn, *args, **kwargs))

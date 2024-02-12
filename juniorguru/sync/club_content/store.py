@@ -1,11 +1,9 @@
-import asyncio
-from functools import partial, wraps
-
 import arrow
 import peewee
 from discord import DMChannel, Member, Message, User
 
 from juniorguru.lib import loggers
+from juniorguru.lib.async_utils import make_async
 from juniorguru.lib.discord_club import (
     ClubMemberID,
     emoji_name,
@@ -22,15 +20,6 @@ from juniorguru.models.club import ClubMessage, ClubPin, ClubUser
 
 
 logger = loggers.from_path(__file__)
-
-
-def make_async(fn):
-    @wraps(fn)
-    async def wrapper(*args, **kwargs):
-        loop = asyncio.get_running_loop()
-        return await loop.run_in_executor(None, partial(fn, *args, **kwargs))
-
-    return wrapper
 
 
 @make_async

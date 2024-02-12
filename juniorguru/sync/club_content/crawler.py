@@ -4,7 +4,7 @@ from copy import deepcopy
 from datetime import datetime, timedelta, timezone
 from functools import partial
 from operator import itemgetter
-from typing import Generator
+from typing import AsyncGenerator
 
 from discord import DMChannel, Member, Message, Reaction, User
 from discord.abc import GuildChannel
@@ -13,7 +13,8 @@ from discord.types.message import Message as MessagePayload
 from discord.utils import time_snowflake
 
 from juniorguru.lib import loggers
-from juniorguru.lib.cache import _call_async, get_cache
+from juniorguru.lib.async_utils import call_async
+from juniorguru.lib.cache import get_cache
 from juniorguru.lib.discord_club import (
     DEFAULT_CHANNELS_HISTORY_SINCE,
     ClubChannelID,
@@ -186,7 +187,7 @@ async def fetch_messages(
     cache_cutoff_at: datetime,
     payloads_expire_days=5,
     payloads_expire_randomness=10,
-) -> Generator[Message, None, None]:
+) -> AsyncGenerator[Message, None]:
     logger_m = logger["messages"][channel.id]
 
     # Get channel history iterator
@@ -201,7 +202,7 @@ async def fetch_messages(
     cache = get_cache()
     cache_key = f"message-payloads:{channel.id}"
 
-    payloads_mapping: dict[int, MessagePayload] = await _call_async(
+    payloads_mapping: dict[int, MessagePayload] = await call_async(
         cache.get, cache_key, {}
     )
     payloads = filter_payloads(payloads_mapping.values(), after, cache_cutoff_at)
@@ -211,7 +212,7 @@ async def fetch_messages(
     if getattr(channel, "last_message_id", None) in cached_ids:
         logger_m.debug("Reading whole channel from cache")
         for payload in payloads:
-            yield await _call_async(create_message, iterator.state, channel, payload)
+            yield await call_async(create_message, iterator.state, channel, payload)
         return
 
     # Patch the iterator to collect payloads
@@ -232,9 +233,7 @@ async def fetch_messages(
     async for message in iterator:
         if message.id in cached_ids:
             for payload in payloads:
-                yield await _call_async(
-                    create_message, iterator.state, channel, payload
-                )
+                yield await call_async(create_message, iterator.state, channel, payload)
                 count_cached += 1
             break
         else:
@@ -254,7 +253,7 @@ async def fetch_messages(
         # of a few days.
         days = payloads_expire_days + random.randint(0, payloads_expire_randomness)
         logger_m.debug(f"Caching {len(payloads_mapping)} messages for {days} days")
-        await _call_async(
+        await call_async(
             cache.set,
             cache_key,
             payloads_mapping,
@@ -301,7 +300,7 @@ def create_message(
 
 async def fetch_members_reacting_by_pin(
     reactions: list[Reaction],
-) -> Generator[User | Member, None, None]:
+) -> AsyncGenerator[User | Member, None]:
     for reaction in reactions:
         if emoji_name(reaction.emoji) == ClubEmoji.PIN:
             async for user in reaction.users():
