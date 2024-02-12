@@ -5,7 +5,7 @@ from juniorguru.sync.jobs_scraped import DropItem
 logger = loggers.from_path(__file__)
 
 
-RELEVANT_LANGS = ["cs", "en"]
+RELEVANT_LANGS = ["cs", "en", "sk"]
 
 
 async def process(item: dict) -> dict:
