@@ -66,7 +66,7 @@ async def announce_talk(client: ClubClient, channel_id: int, tip_url: str, today
 
 
 def is_monday_talk(scheduled_event: ScheduledEvent) -> bool:
-    if scheduled_event.title.lower().strip() != "pondělní povídání":
+    if scheduled_event.name.lower().strip() != "pondělní povídání":
         return False
     location_id = getattr(scheduled_event.location.value, "id", None)
     return location_id == ClubChannelID.CLUBHOUSE
