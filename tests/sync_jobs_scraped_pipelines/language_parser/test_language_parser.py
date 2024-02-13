@@ -1,3 +1,4 @@
+import asyncio
 from pathlib import Path
 
 import pytest
@@ -25,6 +26,18 @@ async def test_language_parser_process(description_html: str, expected_lang: str
     item = await process(dict(description_html=description_html))
 
     assert item["lang"] == expected_lang
+
+
+@pytest.mark.asyncio
+async def test_language_parser_process_does_not_error_when_ran_in_parallel():
+    results = await asyncio.gather(
+        *[
+            process(dict(description_html=path.read_text()))
+            for path in (Path(__file__).parent).rglob("*.html")
+        ]
+    )
+
+    assert len(results) > 5, "Not enough fixtures to test parallelism"
 
 
 @pytest.mark.parametrize("description_html, expected_lang", fixtures)
