@@ -3221,17 +3221,6 @@ tooling = ["black (>=23.7.0)", "pyright (>=1.1.325)", "ruff (>=0.0.287)"]
 tooling-extras = ["pyaml (>=23.7.0)", "pypandoc-binary (>=1.11)", "pytest (>=7.4.0)"]
 
 [[package]]
-name = "w3lib"
-version = "2.1.2"
-description = "Library of web-related functions"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "w3lib-2.1.2-py3-none-any.whl", hash = "sha256:c4432926e739caa8e3f49f5de783f336df563d9490416aebd5d39fb896d264e7"},
-    {file = "w3lib-2.1.2.tar.gz", hash = "sha256:ed5b74e997eea2abe3c1321f916e344144ee8e9072a6f33463ee8e57f858a4b1"},
-]
-
-[[package]]
 name = "watchdog"
 version = "4.0.0"
 description = "Filesystem events monitoring"
@@ -3409,4 +3398,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.*"
-content-hash = "a019343accb3ae39d78010d50c7e18f3137a15d1e21019930c64c519033d088c"
+content-hash = "0d120b812a782d5c95eea95e3c070c72f7248f3e2b20c498e0fdd1981d63b7a6"
