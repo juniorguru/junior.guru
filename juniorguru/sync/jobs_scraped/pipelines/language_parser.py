@@ -1,4 +1,5 @@
 from functools import lru_cache
+
 from lingua import LanguageDetector, LanguageDetectorBuilder
 
 from juniorguru.lib import loggers
