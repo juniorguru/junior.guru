@@ -52,10 +52,10 @@ stripe = "8.1.0"
 diskcache = "5.6.3"
 apify-client = "1.6.1"
 apify-shared = "1.1.0"
-langdetect = "1.0.9"
 w3lib = "2.1.2"
 openai = "1.9.0"
 tenacity = "8.2.3"
+lingua-language-detector = "2.0.2"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "7.4.2"

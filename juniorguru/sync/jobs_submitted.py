@@ -16,6 +16,7 @@ from juniorguru.lib.google_coerce import (
     parse_url,
 )
 from juniorguru.lib.md import md
+from juniorguru.lib.text import extract_text
 from juniorguru.models.base import db
 from juniorguru.models.job import SubmittedJob
 from juniorguru.sync.jobs_scraped.pipelines.boards_ids import (
@@ -98,7 +99,8 @@ def coerce_record(record, today=None):
     urls = filter(None, [data["url"], data.get("apply_url")])
     data["boards_ids"] = parse_board_ids(urls)
 
-    data["lang"] = parse_language(data["description_html"])
+    data["description_text"] = extract_text(data["description_html"])
+    data["lang"] = parse_language(data["description_text"])
     return data
 
 
