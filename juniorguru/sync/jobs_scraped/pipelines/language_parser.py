@@ -1,7 +1,7 @@
 import langdetect
-from juniorguru.lib import loggers
 from w3lib.html import remove_tags
 
+from juniorguru.lib import loggers
 from juniorguru.lib.async_utils import call_async
 
 

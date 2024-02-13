@@ -2,6 +2,7 @@ from pathlib import Path
 
 import pytest
 from langdetect import DetectorFactory
+
 from juniorguru.sync.jobs_scraped.pipelines.language_parser import (
     parse_language,
     process,
