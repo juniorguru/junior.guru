@@ -57,7 +57,7 @@ tenacity = "8.2.3"
 lingua-language-detector = "2.0.2"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "7.4.2"
+pytest = "7.4.4"
 pync = "2.0.3"
 flake8 = "6.1.0"
 isort = "5.13.2"
