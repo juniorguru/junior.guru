@@ -87,15 +87,15 @@
   name: Arges
 
 - date: 2023-09-16
-  text: Čtěte, prosím, manuál. 
+  text: Čtěte, prosím, manuál.
   name: anonym
 
 - date: 2023-09-16
-  text: Ukládej si závislosti svého projektu, abys mohla jeho prostředí vytvořit později znovu. 
+  text: Ukládej si závislosti svého projektu, abys mohla jeho prostředí vytvořit později znovu.
   name: anonym
 
 - date: 2023-09-16
-  text: Řekni si o hodně peněz! Udělej to! 
+  text: Řekni si o hodně peněz! Udělej to!
   name: anonym
 
 - date: 2023-09-16
@@ -107,11 +107,11 @@
   name: anonym
 
 - date: 2023-09-16
-  text: Není to žádná magie! 
+  text: Není to žádná magie!
   name: David
 
 - date: 2023-09-16
-  text: Je úplně ok být po osmi hodinách debugování vytočený. 
+  text: Je úplně ok být po osmi hodinách debugování vytočený.
   name: anonym
 
 - date: 2023-09-16
@@ -123,7 +123,7 @@
   name: Petra V.
 
 - date: 2023-09-16
-  text: Něco vědět je často méně důležité než schopnost si to najít. 
+  text: Něco vědět je často méně důležité než schopnost si to najít.
   name: Piotr
 
 - date: 2023-09-16
@@ -131,7 +131,7 @@
   name: Franta
 
 - date: 2023-09-16
-  text: Živ své vášně. 
+  text: Živ své vášně.
   name: anonym
 
 - date: 2023-09-16
@@ -155,7 +155,7 @@
   name: Furkan
 
 - date: 2023-09-16
-  text: Neparsujte HTML/XML regulárními výrazy. 
+  text: Neparsujte HTML/XML regulárními výrazy.
   name: anonym
 
 - date: 2023-09-16
@@ -171,7 +171,7 @@
   name: anonym
 
 - date: 2023-09-16
-  text: Každá kombinace dovedností je výjimečná. Ergo: dělej, co tě baví!
+  text: "Každá kombinace dovedností je výjimečná. Ergo: dělej, co tě baví!"
   name: anonym
 
 - date: 2023-09-16
@@ -183,7 +183,7 @@
   name: anonym
 
 - date: 2023-09-16
-  text: Najdi obtížný problém. Pomož lidstvu. 
+  text: Najdi obtížný problém. Pomož lidstvu.
   name: _@oh.duran
 
 - date: 2023-09-16
@@ -191,7 +191,7 @@
   name: anonym
 
 - date: 2023-09-16
-  text: Nebojte se pochválit sami sebe. Za každým z vás je nějaký příběh a vaše cesta je obdivuhodná. Jste skvělí. 
+  text: Nebojte se pochválit sami sebe. Za každým z vás je nějaký příběh a vaše cesta je obdivuhodná. Jste skvělí.
   name: Bershee
 
 - date: 2023-09-16
@@ -201,7 +201,7 @@
 - date: 2023-09-16
   text: Posiluj náladu v týmu, nikdo nečeká, že "napíšeš nejvíc řádek", najdi si něco jiného, čím pomůžeš.
   name: anonym
-  
+
 - date: 2023-09-15
   text: Je ok být motivovaný penězi :) (ale je to na prd).
   name: anonym
@@ -215,7 +215,7 @@
   name: anonym
 
 - date: 2023-09-15
-  text: "Dítě x" nemusí umět mluvit.
+  text: "\"Dítě x\" nemusí umět mluvit."
   name: anonym
 
 - date: 2023-09-15
@@ -259,7 +259,7 @@
   name: anonym
 
 - date: 2023-09-15
-  text: čti! 
+  text: čti!
   name: anonym
 
 - date: 2023-09-15
@@ -267,11 +267,11 @@
   name: anonym
 
 - date: 2023-09-15
-  text: Opravdu porozuměj problematice, snaž se jít do hloubky. 
+  text: Opravdu porozuměj problematice, snaž se jít do hloubky.
   name: anonym
 
 - date: 2023-09-15
-  text: Pokud jsi zvědavý jak něco funguje, nakóduj to namísto použití knihovny, ale nakonec tu knihovnu stejně použij. 
+  text: Pokud jsi zvědavý jak něco funguje, nakóduj to namísto použití knihovny, ale nakonec tu knihovnu stejně použij.
   name: anonym
 
 - date: 2023-09-15
@@ -288,4 +288,4 @@
 
 - date: 2023-09-15
   text: "Neselži, ovšem pokud selžeš další firma tě vezme všema deseti :)"
-  name: anonym  
+  name: anonym
