@@ -43,7 +43,9 @@ def test_emoji_name(emoji, expected):
         pytest.param("", None, id="empty"),
         pytest.param("😀", "😀", id="emoji"),
         pytest.param("😀 blah blah blah", "😀", id="emoji with text"),
-        pytest.param("👨‍👩‍👦 blah blah blah", "👨‍👩‍👦", id="multi-byte emoji with text"),
+        pytest.param(
+            "👨‍👩‍👦 blah blah blah", "👨‍👩‍👦", id="multi-byte emoji with text"
+        ),
         pytest.param("     😀", "😀", id="emoji with spaces"),
         pytest.param(
             "<:discordthread:993580255287705681>",
@@ -267,7 +269,10 @@ def test_get_missing_reactions_excludes_emojis_from_others():
     StubReaction = namedtuple("Reaction", ["emoji", "me"])
     reactions = [StubReaction("👍", False), StubReaction("👎", True)]
 
-    assert discord_club.get_missing_reactions(reactions, ["👍", "👎", "🤷"]) == {"👍", "🤷"}
+    assert discord_club.get_missing_reactions(reactions, ["👍", "👎", "🤷"]) == {
+        "👍",
+        "🤷",
+    }
 
 
 def test_get_reaction():

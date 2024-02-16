@@ -62,7 +62,9 @@ async def report(client: ClubClient, channel_id: int):
         )
         buttons = [
             ui.Button(
-                emoji="💳", label="Memberful", url=memberful_url(cancellation.account_id)
+                emoji="💳",
+                label="Memberful",
+                url=memberful_url(cancellation.account_id),
             )
         ]
 
