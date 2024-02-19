@@ -1268,18 +1268,19 @@ test = ["objgraph", "psutil"]
 
 [[package]]
 name = "gspread"
-version = "5.12.4"
+version = "6.0.2"
 description = "Google Spreadsheets Python API"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "gspread-5.12.4-py3-none-any.whl", hash = "sha256:1e453d87e0fde23bc5546e33eb684cf8b8c26540615f2f1ae004a9084a29051d"},
-    {file = "gspread-5.12.4.tar.gz", hash = "sha256:3fcef90183f15d3c9233b4caa021a83682f2b2ee678340c42d7ca7d8be98c6d1"},
+    {file = "gspread-6.0.2-py3-none-any.whl", hash = "sha256:0238ba43f3bd45e7fa96fd206e9ceb73b03c2896eb143d7f4373c6d0cfe6fddf"},
+    {file = "gspread-6.0.2.tar.gz", hash = "sha256:0982beeb07fa3ec4482a3aaa96ca13a1e6b427a0aca4058beab4cdc33c0cbb64"},
 ]
 
 [package.dependencies]
 google-auth = ">=1.12.0"
 google-auth-oauthlib = ">=0.4.1"
+StrEnum = "0.4.15"
 
 [[package]]
 name = "h11"
@@ -3026,6 +3027,22 @@ test = ["black", "cogapp", "hypothesis", "pytest"]
 tui = ["trogon"]
 
 [[package]]
+name = "strenum"
+version = "0.4.15"
+description = "An Enum that inherits from str."
+optional = false
+python-versions = "*"
+files = [
+    {file = "StrEnum-0.4.15-py3-none-any.whl", hash = "sha256:a30cda4af7cc6b5bf52c8055bc4bf4b2b6b14a93b574626da33df53cf7740659"},
+    {file = "StrEnum-0.4.15.tar.gz", hash = "sha256:878fb5ab705442070e4dd1929bb5e2249511c0bcf2b0eeacf3bcd80875c82eff"},
+]
+
+[package.extras]
+docs = ["myst-parser[linkify]", "sphinx", "sphinx-rtd-theme"]
+release = ["twine"]
+test = ["pylint", "pytest", "pytest-black", "pytest-cov", "pytest-pylint"]
+
+[[package]]
 name = "strictyaml"
 version = "1.7.3"
 description = "Strict, typed YAML parser"
@@ -3430,4 +3447,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.*"
-content-hash = "37061e4493fa4e6780cf04b3a4629db4bb5443e4227a840517b9e55ca1255ed5"
+content-hash = "a4bd01dff229ec99f61174a511534b7bfb6b12ed50c9804c2936ba8a13c37fe0"
