@@ -71,7 +71,7 @@ datasette = {version = "1.0a7", allow-prereleases = true}
 [tool.pytest.ini_options]
 python_files = "test_*.py *_test.py test.py"
 testpaths = "."
-norecursedirs = "node_modules jobs_legacy"
+norecursedirs = "node_modules"
 addopts = "--ff"
 filterwarnings = [
     "ignore:'audioop' is deprecated:DeprecationWarning",
@@ -89,7 +89,6 @@ node_modules\
 profile = "black"
 lines_after_imports = 2
 combine_as_imports = true
-extend_skip = ["jobs_legacy"]
 known_local_folder = ["testing_utils"]
 
 [build-system]
