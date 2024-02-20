@@ -87,76 +87,72 @@
   name: Arges
 
 - date: 2023-09-16
-  text: Čtěte, prosím, manuál.
-  name: anonym
+  text: Čti, prosím, dokumentaci.
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-16
   text: Ukládej si závislosti svého projektu, abys mohla jeho prostředí vytvořit později znovu.
-  name: anonym
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-16
   text: Řekni si o hodně peněz! Udělej to!
-  name: anonym
-
-- date: 2023-09-16
-  text: To je očividné!!!
-  name: anonym
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-16
   text: Nepřestávej si hrát.
-  name: anonym
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-16
-  text: Není to žádná magie!
+  text: Programování není žádná magie!
   name: David
 
 - date: 2023-09-16
-  text: Je úplně ok být po osmi hodinách debugování vytočený.
-  name: anonym
+  text: Je úplně OK být po osmi hodinách debugování vytočený.
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-16
-  text: Předstírej, dokud to opravdu nedokážeš.
-  name: anonym
+  text: Fake it till you make it.
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-16
   text: Když nevíš, tak se ptej. Nečekej na zázrak z nebe.
   name: Petra V.
 
 - date: 2023-09-16
-  text: Něco vědět je často méně důležité než schopnost si to najít.
+  text: Něco vědět je často méně důležité, než umět si to najít.
   name: Piotr
 
 - date: 2023-09-16
-  text: Neboj se ptát "Proč?".
+  text: Neboj se ptát „Proč“.
   name: Franta
 
 - date: 2023-09-16
   text: Živ své vášně.
-  name: anonym
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-16
-  text: Nepoužívej zástupné znaky!
-  name: anonym
+  text: Nepoužívej placeholder names!
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-16
-  text: Pij více kávy :)
-  name: anonym
+  text: Pij víc kávy :)
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-16
-  text: Slova uložená v paměti počítače mohou provádět různé věci v reálném světě. Kouzlo?
-  name: anonym
+  text: Slova uložená v paměti počítače mohou provádět jiné věci v reálném světě. Kouzlo?
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-16
   text: Všechno je snadné, když tomu dáš čas, protože software píší LIDÉ pro LIDI.
-  name: anonym
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-16
-  text: Pojďme to nasadit! Co se asi tak může stát...
+  text: Pojďme to nasadit! Co se asi tak může stát…
   name: Furkan
 
 - date: 2023-09-16
-  text: Neparsujte HTML/XML regulárními výrazy.
-  name: anonym
+  text: Neparsujte HTML nebo XML regulárními výrazy.
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-16
   text: Pořád zpochybňuj. Pořád pátrej hlouběji. Pořád se soustřeď na hodnotu. Protože dobrý kód, který nepřináší hodnotu, je BEZCENNÝ!
@@ -164,23 +160,19 @@
 
 - date: 2023-09-16
   text: Tvoje otázky nejsou vůbec hloupé.
-  name: anonym
-
-- date: 2023-09-16
-  text: Překážka je cesta.
-  name: anonym
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-16
   text: "Každá kombinace dovedností je výjimečná. Ergo: dělej, co tě baví!"
-  name: anonym
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-16
   text: Nepoužívej v pandas itertools :(
-  name: anonym
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-16
   text: Nevzdávej se.
-  name: anonym
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-16
   text: Najdi obtížný problém. Pomož lidstvu.
@@ -188,7 +180,7 @@
 
 - date: 2023-09-16
   text: Nepřemýšlej nad tím, jak začít správně. Proště začni. Stejně jako v životě musíš nejprve přetrpět chaos, než je nastolen řád.
-  name: anonym
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-16
   text: Nebojte se pochválit sami sebe. Za každým z vás je nějaký příběh a vaše cesta je obdivuhodná. Jste skvělí.
@@ -196,15 +188,15 @@
 
 - date: 2023-09-16
   text: Programovat se dá naučit i v češtině.
-  name: anonym
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-16
-  text: Posiluj náladu v týmu, nikdo nečeká, že "napíšeš nejvíc řádek", najdi si něco jiného, čím pomůžeš.
-  name: anonym
+  text: Posiluj náladu v týmu. Nikdo nečeká, že „napíšeš nejvíc řádek“. Najdi si něco jiného, čím pomůžeš.
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-15
-  text: Je ok být motivovaný penězi :) (ale je to na prd).
-  name: anonym
+  text: Je OK být motivovaný penězi :) (ale je to na prd).
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-15
   text: Chybama se člověk učí. Neboj se je dělat! A pak se z nich vždycky pouč.
@@ -212,67 +204,55 @@
 
 - date: 2023-09-15
   text: Zůstaň hravý.
-  name: anonym
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-15
-  text: "\"Dítě x\" nemusí umět mluvit."
-  name: anonym
+  text: Používej debugger!
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-15
-  text: Používej debuger!
-  name: anonym
+  text: Neboj se ptát! Dej vědět o problémech už v raných fázích. Zůstaň zvědavý!
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-15
-  text: Neboj se ptát! Hlas problémy v raných fázích. Zůstaň zvědavý!
-  name: anonym
+  text: Najdi si projekt a hackuj na něm s dalšími lidmi!
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-15
-  text: Najdi si projekt a hackni ho s dalšími lidmi!
-  name: anonym
+  text: "Dvě věci: Kritické myšlení. Vědecký přístup."
+  name: N. K.
 
 - date: 2023-09-15
-  text: Kritické myšlení. Vědecký přístup.
-  name: N.K.
+  text: Život není pouze o IT, pamatuj na to!
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-15
-  text: Život není pouze o "IT", pamatuj na to!
-  name: anonym
+  text: Chceš být vyjímečný? Chceš aby tě testeři měli rádi? Čti dokumentaci, čti zadání - budeš jeden nebo jedna z mála! :)
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-15
-  text: Přesvědč lidi kteří tě nabírají, že jsi génius a legenda v kódování.
-  name: anonym
-
-- date: 2023-09-15
-  text: Miluj & nepruď.
-  name: anonym
-
-- date: 2023-09-15
-  text: Chceš být vyjímečný? Chceš aby tě testeři měli rádi? Čti dokumentaci, čti zadání - budeš jeden*na z mála! :)
-  name: anonym
-
-- date: 2023-09-15
-  text: "Základní dovednosti: - trpělivost - umět relaxovat - dotahovat detaily"
-  name: Ypsix
+  text: "Základní dovednosti: Trpělivost, umět relaxovat, dotahovat detaily."
+  name: YpsiX
 
 - date: 2023-09-15
   text: Sleduj CS50. Získáš dobré základy.
-  name: anonym
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-15
-  text: čti!
-  name: anonym
+  text: Hodně čti!
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-15
   text: Jsi čaroděj! Tak čaruj.
-  name: anonym
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-15
-  text: Opravdu porozuměj problematice, snaž se jít do hloubky.
-  name: anonym
+  text: Opravdu zkus porozumět problematice, snaž se jít do hloubky.
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-15
-  text: Pokud jsi zvědavý jak něco funguje, nakóduj to namísto použití knihovny, ale nakonec tu knihovnu stejně použij.
-  name: anonym
+  text: Pokud jsi zvědavý jak něco funguje, nakóduj to namísto použití knihovny. Nakonec tam tu knihovnu ale stejně použij.
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-15
   text: Hravá mysl a hackerské myšlení - to je naše cesta.
@@ -280,12 +260,12 @@
 
 - date: 2023-09-15
   text: Udělej to asynchronně!
-  name: anonym
+  name: návštěvník PyCon CZ 23
 
 - date: 2023-09-15
-  text: Když něco hledáš na internetu ohranič si to časově, pokud to nenajdeš, zeptej se.
+  text: Když něco hledáš na internetu, ohranič si to časově. Pokud to nenajdeš, zeptej se.
   name: Honza
 
 - date: 2023-09-15
-  text: "Neselži, ovšem pokud selžeš další firma tě vezme všema deseti :)"
-  name: anonym
+  text: "Pokud „selžeš“, vezme tě další firma :)"
+  name: návštěvník PyCon CZ 23
