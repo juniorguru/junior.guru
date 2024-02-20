@@ -103,7 +103,7 @@ class SubmittedJob(BaseModel):
                 and field_name not in ["id", "submitted_job"]
             )
         }
-        data["first_seen_on"] = self.posted_on
+        data["posted_on"] = self.posted_on
         data["submitted_job"] = self
         return ListedJob(**data)
 
@@ -112,7 +112,7 @@ class ScrapedJob(BaseModel):
     boards_ids = JSONField(default=list, index=True)
 
     title = CharField()
-    first_seen_on = DateField(index=True)
+    posted_on = DateField(index=True)
     last_seen_on = DateField(index=True)
     lang = CharField(null=True)
 
@@ -153,11 +153,10 @@ class ScrapedJob(BaseModel):
             for field_name in cls._meta.fields.keys()
             if field_name in item
         }
-
-        # FIXME https://github.com/juniorguru/plucker/issues/12
-        data["first_seen_on"] = date.fromisoformat(data["first_seen_on"])
-        data["last_seen_on"] = data["first_seen_on"]
-
+        # backwards compatibility
+        posted_on = data.get("posted_on", data["first_seen_on"])
+        # parse date from string
+        data["posted_on"] = date.fromisoformat(posted_on)
         return cls(**data)
 
     def to_item(self):
@@ -171,9 +170,7 @@ class ScrapedJob(BaseModel):
                 setattr(self, field_name, merge_method(item))
             except AttributeError:
                 # overwrite with newer data
-
-                # FIXME https://github.com/juniorguru/plucker/issues/12
-                if date.fromisoformat(item["first_seen_on"]) >= self.last_seen_on:
+                if date.fromisoformat(item["posted_on"]) >= self.posted_on:
                     old_value = getattr(self, field_name)
                     new_value = item.get(field_name, old_value)
                     setattr(self, field_name, new_value)
@@ -187,13 +184,8 @@ class ScrapedJob(BaseModel):
     def _merge_source_urls(self, item):
         return list(set(self.source_urls + item.get("source_urls", [])))
 
-    def _merge_first_seen_on(self, item):
-        # FIXME https://github.com/juniorguru/plucker/issues/12
-        return min(self.first_seen_on, date.fromisoformat(item["first_seen_on"]))
-
-    def _merge_last_seen_on(self, item):
-        # FIXME https://github.com/juniorguru/plucker/issues/12
-        return max(self.last_seen_on, date.fromisoformat(item["first_seen_on"]))
+    def _merge_posted_on(self, item):
+        return min(self.posted_on, date.fromisoformat(item["posted_on"]))
 
     def _merge_items_merged_count(self, item):
         return self.items_merged_count + 1
@@ -215,7 +207,7 @@ class ListedJob(BaseModel):
     submitted_job = ForeignKeyField(SubmittedJob, unique=True, null=True)
 
     title = CharField()
-    first_seen_on = DateField(index=True)
+    posted_on = DateField(index=True)
     lang = CharField()
 
     url = CharField()
@@ -292,9 +284,9 @@ class ListedJob(BaseModel):
     @classmethod
     def listing(cls, today=None):
         today = today or date.today()
-        days_since_first_seen = fn.julianday(today) - fn.julianday(cls.first_seen_on)
+        days_since_posted = fn.julianday(today) - fn.julianday(cls.posted_on)
         return cls.select().order_by(
-            cls.submitted_job.is_null(), Expression(days_since_first_seen, "%", 30)
+            cls.submitted_job.is_null(), Expression(days_since_posted, "%", 30)
         )
 
     @classmethod
@@ -345,7 +337,7 @@ class ListedJob(BaseModel):
 
     @classmethod
     def api_listing(cls):
-        return cls.select().order_by(cls.first_seen_on.desc())
+        return cls.select().order_by(cls.posted_on.desc())
 
     def to_api(self):
         return dict(
@@ -355,7 +347,7 @@ class ListedJob(BaseModel):
                 url=self.effective_url,
                 remote=self.remote,
                 first_seen_at=datetime.combine(
-                    self.first_seen_on, time(0, 0)
+                    self.posted_on, time(0, 0)
                 ),  # datetime for backwards compatibility
                 last_seen_at=None,  # not relevant anymore, equals to present moment
                 lang=self.lang,
