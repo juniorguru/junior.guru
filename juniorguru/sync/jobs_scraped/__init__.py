@@ -8,6 +8,7 @@ from peewee import IntegrityError
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import apify, loggers
+from juniorguru.lib.async_utils import make_async
 from juniorguru.lib.cli import async_command
 from juniorguru.models.base import db
 from juniorguru.models.job import ScrapedJob
@@ -114,10 +115,11 @@ async def process_item(
         return 0
 
     logger.debug(f"Saving {item['url']}")
-    await asyncio.get_running_loop().run_in_executor(None, save_item, item)
+    await save_item(item)
     return 1
 
 
+@make_async
 @db.connection_context()
 def save_item(item: dict) -> None:
     job = ScrapedJob.from_item(item)
