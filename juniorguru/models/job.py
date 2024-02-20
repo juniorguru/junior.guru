@@ -113,7 +113,6 @@ class ScrapedJob(BaseModel):
 
     title = CharField()
     posted_on = DateField(index=True)
-    last_seen_on = DateField(index=True)
     lang = CharField(null=True)
 
     url = CharField(unique=True)
@@ -135,12 +134,12 @@ class ScrapedJob(BaseModel):
 
     @classmethod
     def date_listing(cls, date_):
-        return cls.select().where(cls.last_seen_on == date_)
+        return cls.select().where(cls.posted_on == date_)
 
     @classmethod
-    def latest_seen_on(cls):
-        job = cls.select().order_by(cls.last_seen_on.desc()).first()
-        return job.last_seen_on if job else None
+    def latest_posted_on(cls):
+        job = cls.select().order_by(cls.posted_on.desc()).first()
+        return job.posted_on if job else None
 
     @classmethod
     def get_by_item(cls, item):

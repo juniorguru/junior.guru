@@ -24,7 +24,7 @@ def main():
         job.save()
         logger.debug(f"Saved {submitted_job!r} as {job!r}")
 
-    listing_date = ScrapedJob.latest_seen_on()
+    listing_date = ScrapedJob.latest_posted_on()
     logger.info(f"Processing scraped jobs: {listing_date}")
     query = ScrapedJob.date_listing(listing_date)
     for scraped_job in query.iterator():
