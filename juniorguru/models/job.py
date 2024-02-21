@@ -148,13 +148,13 @@ class ScrapedJob(BaseModel):
     @classmethod
     def from_item(cls, item):
         # TODO simplify (backwards compatibility)
-        posted_on = item.get("posted_on") or item["first_seen_on"]
+        posted_on = date.fromisoformat(item.get("posted_on") or item["first_seen_on"])
         data = {
             field_name: item.get(field_name)
             for field_name in cls._meta.fields.keys()
             if field_name in item
         }
-        data["posted_on"] = date.fromisoformat(posted_on)
+        data["posted_on"] = posted_on
         return cls(**data)
 
     def to_item(self):
