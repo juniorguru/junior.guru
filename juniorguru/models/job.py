@@ -147,14 +147,13 @@ class ScrapedJob(BaseModel):
 
     @classmethod
     def from_item(cls, item):
+        # backwards compatibility
+        posted_on = item.get("posted_on", item["first_seen_on"])
         data = {
             field_name: item.get(field_name)
             for field_name in cls._meta.fields.keys()
             if field_name in item
         }
-        # backwards compatibility
-        posted_on = data.get("posted_on", data["first_seen_on"])
-        # parse date from string
         data["posted_on"] = date.fromisoformat(posted_on)
         return cls(**data)
 
