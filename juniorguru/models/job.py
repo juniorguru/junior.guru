@@ -167,8 +167,12 @@ class ScrapedJob(BaseModel):
                 merge_method = getattr(self, f"_merge_{field_name}")
                 setattr(self, field_name, merge_method(item))
             except AttributeError:
+                # TODO simplify (backwards compatibility)
+                posted_on = date.fromisoformat(
+                    item.get("posted_on") or item["first_seen_on"]
+                )
                 # overwrite with newer data
-                if date.fromisoformat(item["posted_on"]) >= self.posted_on:
+                if posted_on >= self.posted_on:
                     old_value = getattr(self, field_name)
                     new_value = item.get(field_name, old_value)
                     setattr(self, field_name, new_value)
@@ -183,7 +187,9 @@ class ScrapedJob(BaseModel):
         return list(set(self.source_urls + item.get("source_urls", [])))
 
     def _merge_posted_on(self, item):
-        return min(self.posted_on, date.fromisoformat(item["posted_on"]))
+        # TODO simplify (backwards compatibility)
+        posted_on = date.fromisoformat(item.get("posted_on") or item["first_seen_on"])
+        return min(self.posted_on, posted_on)
 
     def _merge_items_merged_count(self, item):
         return self.items_merged_count + 1
