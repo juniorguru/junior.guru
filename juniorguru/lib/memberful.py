@@ -26,7 +26,7 @@ from juniorguru.lib.cache import cache
 
 USER_AGENT = "JuniorGuruBot (+https://junior.guru)"
 
-COLLECTION_NAME_RE = re.compile(r"(?P<collection_name>\w+)\(after:\s*\$cursor")
+COLLECTION_NAME_RE = re.compile(r"(?P<collection_name>\w+)\([^\)]*after:\s*\$cursor")
 
 MEMBERFUL_API_KEY = os.environ.get("MEMBERFUL_API_KEY")
 
