@@ -1,5 +1,5 @@
 query fetch($cursor: String!, $type: ActivityType!, $createdAt: CreatedAtFilter!) {
-    activities(after: $cursor, type: $type, createdAt: $createdAt) {
+    activities(first: 100, after: $cursor, type: $type, createdAt: $createdAt) {
         totalCount
         pageInfo {
             endCursor
