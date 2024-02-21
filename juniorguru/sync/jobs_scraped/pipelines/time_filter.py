@@ -3,8 +3,9 @@ from juniorguru.sync.jobs_scraped import DropItem
 
 
 async def process(item: dict, today: date | None = None, days=90) -> dict:
-    today = today or date.today()
-    min_date = today - timedelta(days=days)
-    if item["posted_on"] < min_date:
+    # TODO simplify (backwards compatibility)
+    posted_on = item.get("posted_on") or item["first_seen_on"]
+    threshold_on = (today or date.today()) - timedelta(days=days)
+    if posted_on < threshold_on:
         raise DropItem(f"Older than {days} days: {item['posted_on']}")
     return item

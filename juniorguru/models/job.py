@@ -147,8 +147,8 @@ class ScrapedJob(BaseModel):
 
     @classmethod
     def from_item(cls, item):
-        # backwards compatibility
-        posted_on = item.get("posted_on", item["first_seen_on"])
+        # TODO simplify (backwards compatibility)
+        posted_on = item.get("posted_on") or item["first_seen_on"]
         data = {
             field_name: item.get(field_name)
             for field_name in cls._meta.fields.keys()
