@@ -22,6 +22,7 @@ ACTORS = [
 ]
 
 PIPELINES = [
+    "juniorguru.sync.jobs_scraped.pipelines.time_filter",
     "juniorguru.sync.jobs_scraped.pipelines.blocklist_filter",
     "juniorguru.sync.jobs_scraped.pipelines.broken_encoding_filter",
     "juniorguru.sync.jobs_scraped.pipelines.description_parser",
