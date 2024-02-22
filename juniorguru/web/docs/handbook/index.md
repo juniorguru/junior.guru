@@ -11,11 +11,7 @@ template: main_handbook.html
 # Příručka pro juniory
 
 {% call lead() %}
-  Uvažuješ o programování? Láká tě zjistit, jak automatizovat část své práce? Přemýšlíš nad kariérní změnou do IT, ale nevíš jak na to? Studuješ informatiku a zajímá tě, co dál? Příručka je tu pro tebe.
-{% endcall %}
-
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Úvodní stránka příručky je zatím spíše provizorní. Jednou bude jistě vymazlenější, ale zatím se společně radujme z toho, že vůbec je.
+  Uvažuješ o programování? Láká tě zjistit, jak automatizovat část své práce? Přemýšlíš nad kariérní změnou do IT, ale nevíš jak na to? Studuješ informatiku a zajímá tě, co dál?
 {% endcall %}
 
 ## Cesta juniora
@@ -43,6 +39,12 @@ Ne každou fázi se zatím povedlo pokrýt kapitolami v příručce, ale se vše
 
 
 <!-- {#
+
+## Jak funguje tato příručka
+
+- Kdo ji píše
+- Proč ji píše
+- message na úvodní stránce příručky - články versus content, dnes už nikdo content nedělá, chtějí to spláchnout clankem, ne udržovat nějaké informace (Czechitas, Engeto)
 
 fáze https://discord.com/channels/769966886598737931/788826407412170752/904981964208087070
 
