@@ -5,7 +5,7 @@ description: Proč by měl programátor umět anglicky? Jak dobrá angličtina s
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import lead, link_card, links_note with context %}
+{% from 'macros.html' import lead, link_card with context %}
 
 # Angličtina pro programátory
 
@@ -78,8 +78,6 @@ template: main_handbook.html
     badge_text='Živá setkání',
   ) }}
 </div>
-
-{{ links_note() }}
 
 ## Jak to neflákat
 
