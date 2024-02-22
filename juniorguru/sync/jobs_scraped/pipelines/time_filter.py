@@ -1,4 +1,5 @@
 from datetime import date, timedelta
+
 from juniorguru.sync.jobs_scraped import DropItem
 
 
