@@ -27,7 +27,7 @@ Pokud o IT teprve přemýšlíš (fáze 0), budou pro tebe zajímavé jiné rady
 {% for stage in stages %}
 1.  {{ stage.icon|icon }} **{{ stage.title }}:** {{ stage.description }}<br>
     {% for p in stage.list_pages -%}
-      [{{ p.meta.title }}]({{ p.src_uri }})
+      [{{ p.meta.title }}]({{ pages|docs_url(p.src_uri)|url }})
       {%- if not loop.last %}, {% endif -%}
     {%- endfor %}
 {% endfor %}
