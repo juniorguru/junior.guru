@@ -24,7 +24,7 @@ description: Příběhy těch, kdo se rekvalifikovali do IT, nebo jim nějak pr
 Inspirativní příbehy lidí jako ty, kteří se bez předchozí znalosti naučili programovat, programování jim v něčem pomohlo, nebo si v IT dokonce našli i práci.
 {% endcall %}
 
-## Nesrovnávej se!
+## Inspiruj se
 
 Jako **inspirace a motivace** jsou příběhy fajn.
 A je důležité, abychom je měli.
@@ -32,7 +32,17 @@ Když malá holka uvidí úspěšné vědkyně a programátorky, nenechá si nam
 Když si Rom všimne, že jinému se povedlo programování vystudovat, nebude mu už hlas v hlavě říkat: „Ty na to nemáš, žádný jiný Rom to nedokázal“.
 To samé horník, když ve filmu uvidí [Tomáše Hisema](#z-hornika-programatorem).
 
-Snadno se však může stát, že se s příběhy začneš **srovnávat**.
+{% call blockquote_avatar(
+  'Studie zjistila, že ihned po zhlédnutí inspirativních dokumentů – a pozoruhodně i o pět let později – byly aspirace a optimismus o lepší budoucnosti mnohem vyšší než v kontrolní skupině.',
+  'petr-houdek.jpg',
+  'Petr Houdek'
+) %}
+  Petr Houdek, behaviorální ekonom, v [článku pro Lidové noviny](https://houdekpetr.blogspot.com/2024/02/co-sledujete-v-televizi.html)
+{% endcall %}
+
+## Nesrovnávej se
+
+Snadno se však stane, že se s příběhy začneš **srovnávat**.
 Nedělej to, pro tvou psychiku je to strašně nezdravé.
 **Srovnávej se pouze se sebou a svými předešlými výkony.**
 

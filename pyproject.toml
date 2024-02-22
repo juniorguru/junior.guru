@@ -78,7 +78,7 @@ filterwarnings = [
 ]
 
 [tool.black]
-target-versions = ["py311"]
+target-version = ["py311"]
 include = "\\.py$"
 exclude = """(\
 juniorguru/[^_]+_legacy|\
