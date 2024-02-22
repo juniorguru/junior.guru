@@ -374,4 +374,13 @@ Neni potreba ani jedna z tech veci a asi nikdo neceka, ze takovy projekt bude mi
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1206299260153237544/1206341306700529715
+Souhlas s ostatními a trochu to rozepíšu:
+- **více autorů kódu?** čtu: paráda umí nějak spolupracovat na kódu a když budu chtít vidět, co dělala ona, není to moc problém i když pokud to bylo nějak vymezené (třeba A dělal frontend a B dělala backend), tak bych to ještě rovnou zmínil v README
+- v extrému si umím i představit, že na větším „cizím“ projektu někdo udělá pár pull requestů, tak odkáže přímo na ně a ne nutně na celý projekt
+- **reviews?** čtu: super, někdo se už tomu začátečníkovi věnoval, není to čistej samouk, kterej má většinou hrozný díry
+- i když je to projekt toho jednoho člověka nebo není, tak bych se stejně ptal, jak to funguje, co tam bylo těžký atd. jeden člověk dneska může, klidně i sám, spoustu věcí opsat nebo si nechat vygenerovat AI, aniž by jim příliš rozuměl.
+---
+
+
 #} -->

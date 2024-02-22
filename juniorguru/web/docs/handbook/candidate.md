@@ -1392,4 +1392,9 @@ V <#769966887055392768> se konverzace nedávno opět stočila k situaci na praco
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1208794856709824552
+https://www.lukaspitra.cz/10-zkusenosti-z-naboru-200-lidi/
+---
+
+
 #} -->

@@ -42,4 +42,9 @@ https://medium.com/@lenka.stawarczyk/pro%C4%8D-si-%C5%BEeny-p%C5%99i-hled%C3%A1n
 https://www.youtube.com/watch?v=X0iyjV9aEM8
 https://www.heroine.cz/zeny-it/11329-nemam-skolu-a-nejsem-technicky-typ-nejcastejsi-povery-ktere-zeny-odrazuji-od-prace-v-it
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1209840122757914644
+💪
+---
+
+
 #} -->

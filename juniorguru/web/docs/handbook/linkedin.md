@@ -265,4 +265,16 @@ p.s.: Vím, že musím zapracovat na aktivitě 😇
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1206930781226664006/1207966934080159764
+Ahoj, CV mi přijde super, je stručné, ale vypovídající, vizuálně atraktivní, máš tam relevantní odkazy. Drobná stylistická věc - u některých textů za odrážkami máš tečky, u některých ne, nezávisle na tom, jeslti to je výčet nebo věta. Sjednotila bych to. Nejvíc mě to tahalo za oči u Soft skills/hobbies. Ale je to drobnost.
+LinkedIn určitě chce nějakou lásku, co mi tam chybí nejvíc, jsou víc na první dobrou viditelné odkazy na projekty. Máš je teď v About, LinkedIn ale umožňuje dát si do profilu odkazy do Featured sekce, kde se zobrazují i s náhledem, takže na to lidi spíš kliknou. Určitě doporučuju aspoň pro https://aberran.pythonanywhere.com/. Ale klindě i https://chickenbook.pythonanywhere.com/.
+Neboj se do LI víc rozepsat i aktuální doktorské studium včetně tématu disertačky. A nebála bych se být kreativnější s popiskem, máš tam Student at Technical University of Košice, klidně bych tam dala to, co máš na začátku CV - doctoral student and aspiring Python developer.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1209778778411110431
+Dneska jsem zjistil, že <@672433063690633216> před víc jak měsícem napsal tohle! LinkedIn tipy pro juniory <:linkedin:915267970752712734> 🤩 https://developers.mews.com/linkedin-tips-for-juniors/
+---
+
+
 #} -->

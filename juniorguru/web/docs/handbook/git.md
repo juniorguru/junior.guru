@@ -425,4 +425,25 @@ https://www.linkedin.com/posts/ebandersen_programming-jobsearch-softwareengineer
 https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile
 
 
+--- https://discord.com/channels/769966886598737931/789087476072710174/1205512562809110578
+Ale jinak si přečti naši kapitolu o Gitu, je tam všechno podstatné, včetně kompletní příručky ke Gitu.
+
+Najdeš na webu **Nauč mě IT** 🧠 
+https://naucme.it/chapter/qa-08
+---
+
+
+--- https://discord.com/channels/769966886598737931/1205441444291022889/1205441444291022889
+Programováním se sice už nějakou chvíli živím, přesto Git/Github považuji za svoji velmi slabou stránku. Prošel jsem si v minulosti různými systémy (TFS, SVN, VS Online) a obávám se, že ve mně zanechaly kontraproduktivní návyky, které mi teď brání k plnému pochopení Gitu jako konceptu. Nebo se Git ve firmách, kde jsem dělal používal nějakým nestandardním způsobem, což opět vedlo k tomu, že mám spoustu otázek a pochybností. Potřeboval bych si věci ujasnit, osvojit si nějaké „best practices“ a zodpovědět například:
+•    Musí se do veřejného repositáře přispívat pomocí forků a pull requestů, nebo je to možné nějakou přímočařejší metodou. Co je technicky možné, a co je doporučené?
+•    Mohou kodéři commitovat přímo do master větve, nebo na sebemenší úkol musí vytvořit vlastní větev a u té pak dělat merge? Opět – co je možné, co je doporučené.
+•    Liší se nějak Github a Gitlab?
+•    Je možné si v Githubu vynutit revizi větve před merge do master?
+•    Jak je to se spouštěním testů – kde se to nastaví, je to zadarmo?
+•    Zkušenosti s nasazováním do více prostředí (testovací, produkční)
+Bohužel všechny tutoriály, které jsem našel jen popisují, jak ovládat Git z příkazové řádky, všechno je takové sterilní, bez reálných konfliktů v kódu. Je to o tom jak, ne proč.
+Vím, že toto se nedá snadno sepsat, tak mě zajímá, jestli by byl někdo ochotný mi otazníky výše objasnit v rámci nějakého mentoringu, případně jestli by se diskuse o zkušenostech s Gitem nemohla stát tématem některého z pondělních srazů. Díky.
+---
+
+
 #} -->

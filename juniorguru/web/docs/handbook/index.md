@@ -40,6 +40,10 @@ Ne každou fázi se zatím povedlo pokrýt kapitolami v příručce, ale se vše
 
 <!-- {#
 
+## Tempo
+
+neda se smichat intenzivni a pozvolna zmena, mit to jako dve ruzne cesty, nevedi vubec jak dlouho to muze trvat, co je neni normalni, jake jsou tam milniky
+
 ## Jak funguje tato příručka
 
 - Kdo ji píše

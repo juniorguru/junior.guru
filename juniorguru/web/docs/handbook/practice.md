@@ -1118,4 +1118,13 @@ Dobré ráno. Na mastodonu někdo sdílel tenhle anglický materiál o networkin
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788832177135026197/1206557180996747294
+Je to sice už trochu mimo zaměření JG, ale jen trochu.
+Klára Scholleová sepsala návod „Jak do UX“
+http://bit.ly/klary-jak-do-UX
+
+<@668226181769986078> skoro si říkám, jestli bys na to nemohl odkázat někde strategicky v tvojí příručce 🙂
+---
+
+
 #} -->

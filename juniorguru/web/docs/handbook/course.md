@@ -970,4 +970,18 @@ Vypadá to, že s tím už maj nějaký zkušenosti: https://coderslab.cz/cz/blo
 https://cc.cz/ani-ucitele-ani-pracovni-sesity-skola-programovani-v-praze-nechava-studenty-ucit-se-od-sebe-navzajem/
 
 
+--- https://discord.com/channels/769966886598737931/1110176484951330888/1204369052240191498
+Upřesním to proplácení přes ÚP, který řeší i ty evropské peníze. 
+Máš nárok na maximálně 50000 Kč na vzdělávání během 3 let. Je to částka, kterou má ÚP jako limit pro proplácení rekvalifikací už dlouhá léta. 
+
+Můžeš to vyčerpat jako 5×10000 Kč nebo v kuse, to je jedno a není to nárokové, můžou ti to tedy „libovolně“ zamítnout.
+
+Aktuálně je možnost proplatit ledascos přes program _Jsem v kurzu_, kde jsou právě zdrojem financování ty peníze z EU. Tam je podmínka pro neakreditované kurzy ta, že máš spoluúčast minimálně 18 % a 82 % tedy zaplatí oni, ale jen do toho limitu 50000 Kč. Tedy v tom extrému může stát kurz 60975 Kč a zaplatíš za něj jen 10976 Kč a stát těch padesát.
+
+Takže rozhodně by ti stát neproplatil 80 % ze 120000 Kč.
+
+Dobrá zpráva je, že máš pořád těch 50000 Kč k dispozici a můžeš je využít na jiný kurz.
+---
+
+
 #} -->

@@ -295,4 +295,9 @@ Jak se správně ptát, když chcete poradit s kódem - narazil jsem na nový č
 ---
 
 
+--- https://discord.com/channels/769966886598737931/797040163325870092/1207487079743758416
+<:exactly:1100463303190396968> https://dontasktoask.com/
+---
+
+
 #} -->

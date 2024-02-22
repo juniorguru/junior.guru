@@ -640,4 +640,9 @@ Díky, co dočetli tu hrůzu až sem.
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1206229649546543174
+O učení: https://twitter.com/karpathy/status/1756380066580455557#m
+---
+
+
 #} -->
