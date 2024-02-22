@@ -118,7 +118,7 @@ Nikdo od tebe nečeká, že budeš oslňovat technickými znalostmi. Dej najevo,
 
 #### Velmi užitečné znalosti navíc
 
-*   [Angličtina](learn.md#jak-si-zlepsit-anglictinu), čím víc tím líp!
+*   [Angličtina](english.md), čím víc tím líp!
 *   Základy práce s [Gitem](https://naucse.python.cz/course/pyladies/sessions/foss/).
 *   Práce s příkazovou řádkou (ideálně tou v [Linuxu](https://cs.wikipedia.org/wiki/Linux), tzn. Bash).
 
@@ -330,7 +330,7 @@ Mají více peněz a nebývá pro ně problém je investovat. Ovšem jen pokud m
 *   Upřednostňovány jsou starší technologie, které má firma roky odzkoušené a všichni s nimi umí. Ke zkoušení nových moc vůle nebývá.
 *   Mezinárodní firmy musí splňovat širokou škálu zákonů a regulací. Z toho plynou omezení a komplikace. Jednoduché věci často nelze dělat jednoduše.
 *   Můžeš si připadat jako kapka v moři, číslo v kartotéce. Užitek tvé práce může působit vzdáleně.
-*   U mezinárodních firem je ze zřejmých důvodů zcela nepostradatelná komunikativní úroveň [angličtiny](learn.md#jak-si-zlepsit-anglictinu).
+*   U mezinárodních firem je ze zřejmých důvodů zcela nepostradatelná komunikativní úroveň [angličtiny](english.md).
 
 Zajímavě korporace rozebírá [Lukáš Linhart v přednášce o své kariéře](https://youtu.be/l7zUC0T1E98?t=5671) nebo [Dan Luu v článku Big companies v. startups](https://danluu.com/startup-tradeoffs/). Oproti obecnému přesvědčení **nemusí být velká firma nutně bez zajímavé práce nebo divokých změn**. Vnitřní reorganizace nebo změny korporátní politiky umí přinést stejný stres jako je ten, který ti budou slibovat ve [startupech](#prace-pro-startup).
 
@@ -937,9 +937,6 @@ To je čas, který může stačit, ale má to několik podmínek:
 — Chce to mít v podstatě fulltime čas a trávit tím řekněme 18–22 hodin čistého času týdně.
 Ono to reálně ani o moc víc nejde, protože to není rutina, ale dělání a učení se stále nových věcí a to je záhul.
 Nejde to tedy dělat spolu s prací.
-
-— Zvládnout psané návody a zdroje v angličtině. Bez ní se v IT funguje jen velmi těžko. Není potřeba mluvit, psát vysloveně bez chyb apod. většinu toho stejně ani nepíšou rodilí mluvčí. Ale přečíst si nějaký text a vědět o čem je, třeba: _By default, browsers separate paragraphs with a single blank line. Alternate separation methods, such as first-line indentation, can be achieved with CSS._ je skoro nutnost. Měl jsem klientku, která si hodně pomáhala automatickým překladačem a nějak to zvládla ale ideálně bys na angličtině měl zároveň pracovat, aby sis ji zlepšil. Za půl roku můžeš mít viditelné pokroky a rozhodně se ti to neztratí.
-A to, že je alespoň nějaká angličtina v podstatě nutnost vědí i ve firmách. Takže když tam pošleš CV s tím, že umíš velmi málo, tak už si tím snižuješ šance i kdyby ta firma byla plná lidí, kteří mluví česky. Protože i v takové firmě je většinou zvykem psát třeba komentáře a další texty okolo kódu v angličtině.
 
 — Dělat to efektivně: nevěnovat se věcem, které jsou zbytečné a učit se jen to nejnutnější (můžu ti dát detailní seznam, většinou anglicky…)
 

@@ -378,25 +378,15 @@ Na konference je potřeba si koupit lístek. Výše zmíněné konference mají 
 
 ## Neflákej angličtinu    <span id="english"></span>
 
-**Bez angličtiny se neobejdeš.** Je to klíč ke dveřím do celého světa. Vybíráš ze dvou českých mentorů, ze tří českých online kurzů? S angličtinou vybíráš ze stovek mentorů a desítek kurzů. **Nedostatečná angličtina je v IT jako bolavý zub.** Chvíli s ním vydržíš, ale když to nezačneš řešit včas, budeš hodně litovat. Nauč se ji aspoň pasivně — pokud zvládáš číst anglický text, pochopit v něm zadání a učit se z něj nové věci, pro start to stačí.
-
-<div class="link-cards">
-  {{ link_card(
-    'Jak se opravdu naučit anglicky',
-    'https://www.youtube.com/watch?v=Xt7QIgzyxLk',
-    'Praktický návod jak <strong>opravdu</strong> začít od <a href="https://www.youtube.com/user/BBSobotka">Broni</a>.'
-  ) }}
-
-  {% call link_card(
-    'Jak si zlepšit angličtinu?',
-    pages|docs_url('handbook/learn.md')|url + '#jak-si-zlepsit-anglictinu',
-  ) -%}
-    Nauč se anglicky podle tipů na junior.guru.
-  {%- endcall %}
-</div>
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Z této kapitoly je teď samostatná stránka: [Angličtina](english.md)
+{% endcall %}
 
 
 <!-- {#
+
+— Zvládnout psané návody a zdroje v angličtině. Bez ní se v IT funguje jen velmi těžko. Není potřeba mluvit, psát vysloveně bez chyb apod. většinu toho stejně ani nepíšou rodilí mluvčí. Ale přečíst si nějaký text a vědět o čem je, třeba: _By default, browsers separate paragraphs with a single blank line. Alternate separation methods, such as first-line indentation, can be achieved with CSS._ je skoro nutnost. Měl jsem klientku, která si hodně pomáhala automatickým překladačem a nějak to zvládla ale ideálně bys na angličtině měl zároveň pracovat, aby sis ji zlepšil. Za půl roku můžeš mít viditelné pokroky a rozhodně se ti to neztratí.
+A to, že je alespoň nějaká angličtina v podstatě nutnost vědí i ve firmách. Takže když tam pošleš CV s tím, že umíš velmi málo, tak už si tím snižuješ šance i kdyby ta firma byla plná lidí, kteří mluví česky. Protože i v takové firmě je většinou zvykem psát třeba komentáře a další texty okolo kódu v angličtině.
 
 algoritmy http://jeffe.cs.illinois.edu/teaching/algorithms/
 

@@ -457,16 +457,6 @@ představ si recept na koláč, kde je napsáno místo „200 g“ mouky jen: �
 ---
 
 
---- https://discord.com/channels/769966886598737931/788826407412170752/1001957868565696632
-<@788486062430355497>  Nevím kde jsi se ptala na tu angličtinu, ale napíšu to sem, tady to bude asi nejvíc namístě:
-
-Z angličtiny používané ve firmách, které mají pobočku v Česku a pracují v ní převážně Češi, není potřeba mít stres.
-Z mých zkušeností (ne jedné) se komunikuje na úrovni basic English s odbornou slovní zásobou, která ale čítá tak 20 základních výrazů. Žádné košaté větné struktury nikdo nevyrábí  a skvostnou oxfordskou výslovností taky trpí málokdo 🙂
-Tu slovní zásobu pobereš po prvních pár meetech od kolegů. Většinu toho už budeš znát pasivně  z různých tutorálů, které kolem tebe prošly.
-Jestli se základně domluvíš a jsi schopna složit větu, tak bych se angličtinou speciálně netrápila a brousila ji až za pochodu 🙂
----
-
-
 --- https://discord.com/channels/769966886598737931/769966887055392768/1001961604889452598
 Hele, co me se tyka, je to "deleni" uplne k prdu a zbytecny, ale kdybych nutne musel rict co pro me znamena rozdil mezi Juniorem/Mediorem/Seniorem/Whateverbullshiterem tak jak s nima interaguju ja, tak je to
  - samostatnost - jak moc detailne musim rozepisovat zadani - srovnej "Naprogramuj backend pro blog" s "Zadani z Appliftingu"
