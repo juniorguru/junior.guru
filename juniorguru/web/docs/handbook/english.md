@@ -1,7 +1,7 @@
 ---
 title: Angličtina pro programátory
 emoji: 🇬🇧
-stages: learning, preparing, onboarding, working
+stages: [learning, preparing, onboarding, working]
 description: Proč by měl programátor umět anglicky? Jak dobrá angličtina stačí? Jak se efektivně angličtinu učit, nebo si ji zlepšit?
 template: main_handbook.html
 ---

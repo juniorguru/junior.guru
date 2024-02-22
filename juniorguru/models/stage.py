@@ -1,6 +1,8 @@
+from typing import Iterable, Self
 from peewee import CharField, IntegerField
 
 from juniorguru.models.base import BaseModel
+from juniorguru.models.page import Page
 
 
 class Stage(BaseModel):
@@ -11,5 +13,9 @@ class Stage(BaseModel):
     description = CharField()
 
     @classmethod
-    def listing(cls):
+    def listing(cls) -> Iterable[Self]:
         return cls.select().order_by(cls.position)
+
+    @property
+    def list_pages(self) -> Iterable[Page]:
+        return Page.stage_listing(self.slug)

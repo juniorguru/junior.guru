@@ -1,7 +1,7 @@
 ---
 title: Zaučování
 emoji: 🤹
-stages: onboarding, working
+stages: [onboarding, working]
 description: TODO
 template: main_handbook.html
 noindex: true

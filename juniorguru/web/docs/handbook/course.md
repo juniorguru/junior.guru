@@ -1,7 +1,7 @@
 ---
 title: Jak vybrat kurz programování
 emoji: 🧑‍🏫
-stages: learning
+stages: [learning]
 description: Jaký kurz základů programování je vhodný zrovna pro tebe? Které jsou rekvalifikační a jak je to s úřadem práce? Prezenčně, nebo online? Za peníze, nebo zdarma?
 template: main_handbook.html
 ---
@@ -971,8 +971,8 @@ https://cc.cz/ani-ucitele-ani-pracovni-sesity-skola-programovani-v-praze-nechava
 
 
 --- https://discord.com/channels/769966886598737931/1110176484951330888/1204369052240191498
-Upřesním to proplácení přes ÚP, který řeší i ty evropské peníze. 
-Máš nárok na maximálně 50000 Kč na vzdělávání během 3 let. Je to částka, kterou má ÚP jako limit pro proplácení rekvalifikací už dlouhá léta. 
+Upřesním to proplácení přes ÚP, který řeší i ty evropské peníze.
+Máš nárok na maximálně 50000 Kč na vzdělávání během 3 let. Je to částka, kterou má ÚP jako limit pro proplácení rekvalifikací už dlouhá léta.
 
 Můžeš to vyčerpat jako 5×10000 Kč nebo v kuse, to je jedno a není to nárokové, můžou ti to tedy „libovolně“ zamítnout.
 

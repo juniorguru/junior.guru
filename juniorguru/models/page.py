@@ -1,6 +1,6 @@
 from typing import Iterable, Self
 
-from peewee import CharField, DateField, IntegerField, TextField
+from peewee import CharField, DateField, IntegerField, TextField, BooleanField
 
 from juniorguru.models.base import BaseModel, JSONField
 
@@ -11,8 +11,10 @@ class Page(BaseModel):
     meta = JSONField(default=dict)
     size = IntegerField(null=True)
     notes = TextField(null=True)
+    wip = BooleanField(default=False, index=True)
     date = DateField(null=True)
     thumbnail_path = CharField(null=True)
+    stages = JSONField(null=True, index=True)
 
     @property
     def notes_size(self) -> int:
@@ -37,6 +39,15 @@ class Page(BaseModel):
     @classmethod
     def listing(cls) -> Iterable[Self]:
         return cls.select()
+
+    @classmethod
+    def stage_listing(cls, slug: str) -> Iterable[Self]:
+        stages = cls.stages.children().alias("stages")
+        return (
+            cls.listing()
+            .from_(cls, stages)
+            .where(cls.wip == False, stages.c.value == slug)
+        )
 
     @classmethod
     def handbook_listing(cls) -> Iterable[Self]:

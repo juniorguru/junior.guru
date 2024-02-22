@@ -1,7 +1,7 @@
 ---
 title: Pohovor v IT
 emoji: 🤝
-stages: preparing, applying, deciding
+stages: [preparing, applying, deciding]
 description: Jaké otázky ti nejspíš položí u pohovoru na pozici programátor? Jak bude celý pohovor vlastně probíhat? Jak by měla vypadat tvoje příprava?
 template: main_handbook.html
 ---

@@ -10,15 +10,15 @@ def test_parse_meta():
         parse_meta(
             dedent(
                 """
-        ---
-        title: Jak na Git a GitHub
-        description: Co je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a GitHubem? Jak začít s Gitem?
-        template: main_handbook.html
-        ---
+                    ---
+                    title: Jak na Git a GitHub
+                    description: Co je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a GitHubem? Jak začít s Gitem?
+                    template: main_handbook.html
+                    ---
 
-        # Git a GitHub
+                    # Git a GitHub
 
-    """
+                """
             )
         )
         == dict(
@@ -34,44 +34,44 @@ def test_parse_notes():
         parse_notes(
             dedent(
                 """
-        ---
-        title: Jak na Git a GitHub
-        description: Co je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a GitHubem? Jak začít s Gitem?
-        template: main_handbook.html
-        ---
+                    ---
+                    title: Jak na Git a GitHub
+                    description: Co je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a GitHubem? Jak začít s Gitem?
+                    template: main_handbook.html
+                    ---
 
-        # Git a GitHub
+                    # Git a GitHub
 
-        <!-- {#
+                    <!-- {#
 
-        https://dariagrudzien.com/posts/the-one-about-your-github-account/
-        https://dev.to/yuridevat/how-to-create-a-stunning-github-profile-2mh5
+                    https://dariagrudzien.com/posts/the-one-about-your-github-account/
+                    https://dev.to/yuridevat/how-to-create-a-stunning-github-profile-2mh5
 
-        {% call blockquote_avatar(
-        'GitHub vyčistit, _polishnout_, upravit. Stejně jako CVčko je to věc, která vás má prodat. Projekty, kterými se chlubit nechceš, radši skryj.',
-        'jiri-psotka.jpg',
-        'Jiří Psotka'
-        ) %}
-        Jiří Psotka, recruiter v [Red Hatu](https://red.ht/juniorguru) v prvním dílu podcastu junior.guru
-        {% endcall %}
+                    {% call blockquote_avatar(
+                    'GitHub vyčistit, _polishnout_, upravit. Stejně jako CVčko je to věc, která vás má prodat. Projekty, kterými se chlubit nechceš, radši skryj.',
+                    'jiri-psotka.jpg',
+                    'Jiří Psotka'
+                    ) %}
+                    Jiří Psotka, recruiter v [Red Hatu](https://red.ht/juniorguru) v prvním dílu podcastu junior.guru
+                    {% endcall %}
 
-        #} -->
-    """
+                    #} -->
+                """
             )
         )
         == dedent(
             """
-        https://dariagrudzien.com/posts/the-one-about-your-github-account/
-        https://dev.to/yuridevat/how-to-create-a-stunning-github-profile-2mh5
+                https://dariagrudzien.com/posts/the-one-about-your-github-account/
+                https://dev.to/yuridevat/how-to-create-a-stunning-github-profile-2mh5
 
-        {% call blockquote_avatar(
-        'GitHub vyčistit, _polishnout_, upravit. Stejně jako CVčko je to věc, která vás má prodat. Projekty, kterými se chlubit nechceš, radši skryj.',
-        'jiri-psotka.jpg',
-        'Jiří Psotka'
-        ) %}
-        Jiří Psotka, recruiter v [Red Hatu](https://red.ht/juniorguru) v prvním dílu podcastu junior.guru
-        {% endcall %}
-    """
+                {% call blockquote_avatar(
+                'GitHub vyčistit, _polishnout_, upravit. Stejně jako CVčko je to věc, která vás má prodat. Projekty, kterými se chlubit nechceš, radši skryj.',
+                'jiri-psotka.jpg',
+                'Jiří Psotka'
+                ) %}
+                Jiří Psotka, recruiter v [Red Hatu](https://red.ht/juniorguru) v prvním dílu podcastu junior.guru
+                {% endcall %}
+            """
         ).strip()
     )
 
@@ -81,14 +81,14 @@ def test_parse_notes_multiple():
         parse_notes(
             dedent(
                 """
-            <!-- {#
-            https://dariagrudzien.com/posts/the-one-about-your-github-account/
-            #} -->
+                    <!-- {#
+                    https://dariagrudzien.com/posts/the-one-about-your-github-account/
+                    #} -->
 
-            <!-- {#
-            https://dev.to/yuridevat/how-to-create-a-stunning-github-profile-2mh5
-            #} -->
-        """
+                    <!-- {#
+                    https://dev.to/yuridevat/how-to-create-a-stunning-github-profile-2mh5
+                    #} -->
+                """
             )
         )
 
@@ -101,10 +101,10 @@ def test_parse_notes_empty():
     assert (
         parse_notes(
             """
-        <!-- {#
+                <!-- {#
 
-        #} -->
-    """
+                #} -->
+            """
         )
         is None
     )

@@ -3,6 +3,7 @@ from typing import Generator
 import uuid
 import pytest
 from juniorguru.models.base import SqliteDatabase
+from juniorguru.models.page import Page
 from juniorguru.models.stage import Stage
 
 from testing_utils import prepare_test_db
@@ -10,7 +11,7 @@ from testing_utils import prepare_test_db
 
 @pytest.fixture
 def test_db() -> Generator[SqliteDatabase, None, None]:
-    yield from prepare_test_db([Stage])
+    yield from prepare_test_db([Stage, Page])
 
 
 def create_stage(**kwargs) -> Stage:
@@ -30,3 +31,42 @@ def test_listing_sorts_by_position(test_db: SqliteDatabase):
     stage2 = create_stage(position=2)
 
     assert list(Stage.listing()) == [stage1, stage2, stage3]
+
+
+def test_list_pages(test_db: SqliteDatabase):
+    stage = create_stage(slug="learning")
+    Page.create(
+        src_uri="handbook/remote.md",
+        dest_uri="handbook/remote/index.html",
+        stages=["foo"],
+    )
+    page2 = Page.create(
+        src_uri="handbook/university.md",
+        dest_uri="handbook/university/index.html",
+        stages=["bar", "learning"],
+    )
+    page3 = Page.create(
+        src_uri="handbook/women.md",
+        dest_uri="handbook/women/index.html",
+        stages=["learning"],
+    )
+
+    assert list(stage.list_pages) == [page2, page3]
+
+
+def test_list_pages_skips_noindex(test_db: SqliteDatabase):
+    stage = create_stage(slug="learning")
+    Page.create(
+        src_uri="handbook/university.md",
+        dest_uri="handbook/university/index.html",
+        stages=["bar", "learning"],
+        wip=True,
+    )
+    page2 = Page.create(
+        src_uri="handbook/women.md",
+        dest_uri="handbook/women/index.html",
+        stages=["learning"],
+        wip=False,
+    )
+
+    assert list(stage.list_pages) == [page2]

@@ -1,7 +1,7 @@
 ---
 title: Studium informatiky
 emoji: 🧑‍🎓
-stages: learning
+stages: [learning]
 description: TODO
 template: main_handbook.html
 noindex: true

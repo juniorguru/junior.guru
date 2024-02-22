@@ -1,7 +1,7 @@
 ---
 title: Rodiče v IT
 emoji: 👶
-stages: thinking, preparing, applying
+stages: [thinking, preparing, applying]
 description: TODO
 template: main_handbook.html
 noindex: true

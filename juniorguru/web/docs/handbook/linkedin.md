@@ -1,7 +1,7 @@
 ---
 title: Proč mít a jak si vyladit LinkedIn profil
 emoji: 🦸
-stages: preparing, applying
+stages: [preparing, applying]
 description: Proč by měl mít každý junior v IT profil na síti LinkedIn? Jak jej vyladit, aby ti pomohl s hledáním práce?
 template: main_handbook.html
 ---

@@ -20,6 +20,7 @@ from juniorguru.models.job import ListedJob
 from juniorguru.models.page import Page
 from juniorguru.models.partner import Partner, Partnership
 from juniorguru.models.podcast import PodcastEpisode
+from juniorguru.models.stage import Stage
 from juniorguru.models.story import Story
 from juniorguru.models.topic import Topic
 from juniorguru.models.transaction import Transaction
@@ -91,6 +92,9 @@ def on_docs_context(context):
     context["partners_course_providers"] = [
         partner for partner in Partner.active_listing() if partner.course_provider
     ]
+
+    # handbook/index.md
+    context["stages"] = Stage.listing()
 
     # handbook/motivation.md
     context["stories_by_tags"] = Story.tags_mapping()

@@ -14,6 +14,7 @@ template: main_handbook.html
   Uvažuješ o programování? Láká tě zjistit, jak automatizovat část své práce? Přemýšlíš nad kariérní změnou do IT, ale nevíš jak na to? Studuješ informatiku a zajímá tě, co dál?
 {% endcall %}
 
+{#
 ## Cesta juniora
 
 Na základě reálných zkušeností mnohých začátečníků jsme v [klubu](../club.md) sestavili **osvědčenou cestu juniora**, která má deset fází. Možná existují i jiné cesty, ale tato **úspěšně zafungovala pro spoustu různých lidí**, a proto ji lze obecně doporučit.
@@ -21,7 +22,17 @@ Na základě reálných zkušeností mnohých začátečníků jsme v [klubu](..
 **Ujasni si, co už umíš a co je tvým cílem.** Jednak ti to pomůže uvědomit si, co tě ještě čeká a co nesmíš vynechat, jednak zjistíš, které části příručky pro tebe budou nejpřínosnější.
 
 Pokud o IT teprve přemýšlíš (fáze 0), budou pro tebe zajímavé jiné rady, než pokud už máš za sebou nějaký kurz (fáze 2 až 3). A jestli tě programování zajímá proto, že chceš automatizovat zalévání rajčat na zahradě (fáze 3), nemusí tě zajímat kapitoly o shánění práce v oboru (fáze 4 až 10).
+#}
 
+{% for stage in stages %}
+1.  {{ stage.icon|icon }} **{{ stage.title }}:** {{ stage.description }}<br>
+    {% for p in stage.list_pages -%}
+      [{{ p.meta.title }}]({{ p.src_uri }})
+      {%- if not loop.last %}, {% endif -%}
+    {%- endfor %}
+{% endfor %}
+
+{#
 0. Občas mě napadne, že by nemusela být úplná blbost učit se programovat: [Motivace](motivation.md)
 {: value=0 }
 1. Nezávazně zkouším všechno možné, nebo začínám s jednou věcí, o které si myslím, že ji chci dělat: [Základy](motivation.md), [Vybírání kurzu](course.md), [Řešení problémů](help.md)
@@ -34,6 +45,7 @@ Pokud o IT teprve přemýšlíš (fáze 0), budou pro tebe zajímavé jiné rady
 8. Pracuji po zkušební době.
 9. Mám 1 až 2 roky komerční praxe.
 10. Už nejsem junior.
+#}
 
 Ne každou fázi se zatím povedlo pokrýt kapitolami v příručce, ale se všemi pomáháme a všechny diskutujeme ve zdejším [klubu](../club.md).
 

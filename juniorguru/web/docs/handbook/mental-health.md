@@ -1,7 +1,7 @@
 ---
 title: Jak přežít cestu juniora po psychické stránce
 emoji: 💆
-stages: learning, preparing, applying, onboarding
+stages: [learning, preparing, applying, onboarding]
 description: Cesta do IT může být náročná životní změna. Vysoké nároky na sebe sama, srovnávání se s ostatními, nedostatek odpočinku, nejistota. Přečti si, jak se to dá zvládat.
 template: main_handbook.html
 ---

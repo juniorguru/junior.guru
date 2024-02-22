@@ -1,7 +1,7 @@
 ---
 title: Co sledovat
 emoji: 📺
-stages: trying, learning, preparing, onboarding
+stages: [trying, learning, preparing, onboarding]
 description: TODO
 template: main_handbook.html
 noindex: true

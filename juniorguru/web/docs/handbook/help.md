@@ -1,7 +1,7 @@
 ---
 title: Kde a jak hledat pomoc během programování? Jak se ptát? Jak debugovat?
 emoji: 🙋
-stages: learning, creating
+stages: [learning, creating]
 thumbnail_title: Řešení problémů během programování
 description: Při programování tě i drobný zádrhel může zaseknout na týdny a úplně ti zkazit radost z učení. Kde můžeš své problémy konzultovat a jak se ptát tak, aby se ti dostalo odpovědi?
 template: main_handbook.html

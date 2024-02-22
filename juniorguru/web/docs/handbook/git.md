@@ -1,7 +1,7 @@
 ---
 title: Jak na Git a GitHub
 emoji: 🔀
-stages: learning, creating, preparing
+stages: [learning, creating, preparing]
 description: Co je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a GitHubem? Jak začít s Gitem?
 template: main_handbook.html
 ---
@@ -428,7 +428,7 @@ https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-gith
 --- https://discord.com/channels/769966886598737931/789087476072710174/1205512562809110578
 Ale jinak si přečti naši kapitolu o Gitu, je tam všechno podstatné, včetně kompletní příručky ke Gitu.
 
-Najdeš na webu **Nauč mě IT** 🧠 
+Najdeš na webu **Nauč mě IT** 🧠
 https://naucme.it/chapter/qa-08
 ---
 

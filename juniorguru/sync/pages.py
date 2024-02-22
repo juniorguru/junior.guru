@@ -9,6 +9,7 @@ from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.models.base import db
 from juniorguru.models.page import Page
+from juniorguru.models.stage import Stage
 from juniorguru.web.templates import TEMPLATES
 
 
@@ -16,7 +17,9 @@ logger = loggers.from_path(__file__)
 
 
 # See 'Generating pages from templates' on why the dependencies are needed
-@cli.sync_command(dependencies=["course-providers", "partners", "events", "podcast"])
+@cli.sync_command(
+    dependencies=["stages", "course-providers", "partners", "events", "podcast"]
+)
 @db.connection_context()
 def main():
     logger.info("Setting up db table")
@@ -31,13 +34,24 @@ def main():
         with open(file.abs_src_path, encoding="utf-8-sig", errors="strict") as f:
             source = f.read()
         meta_data = parse_meta(source)
+
+        if "stages" in meta_data:
+            stages = set(meta_data["stages"])
+            unknown_stages = stages - {stage.slug for stage in Stage.listing()}
+            if unknown_stages:
+                raise ValueError(f"Unknown stages: {','.join(unknown_stages)}")
+        else:
+            stages = None
+
         data = dict(
             src_uri=file.src_uri,
             dest_uri=file.dest_uri,
             size=len(source),
             meta=meta_data,
             notes=parse_notes(source),
+            wip=meta_data.get("noindex", False),
             date=meta_data["date"] if "date" in meta_data else None,
+            stages=stages,
         )
         logger.debug(f"Saving:\n{pformat(data)}")
         if not data["meta"].get("title"):
@@ -59,7 +73,7 @@ def main():
     logger.info(f"Created {Page.select().count()} pages")
 
 
-def parse_meta(source) -> dict[str, Any]:
+def parse_meta(source: str) -> dict[str, Any]:
     return meta.get_data(source.strip())[1]
 
 
