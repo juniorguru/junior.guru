@@ -1,6 +1,7 @@
 ---
 title: Hledání první práce v IT
 emoji: 👔
+stages: preparing, applying
 thumbnail_title: Jak najít svou první práci v IT
 description: Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
 template: main_handbook.html

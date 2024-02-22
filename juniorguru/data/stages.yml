@@ -1,0 +1,44 @@
+- slug: thinking
+  title: Přemýšlím
+  icon: lightbulb
+  description: Občas mě napadne, že by nemusela být úplná blbost učit se programovat.
+
+- slug: trying
+  title: Zkouším
+  icon: search-heart
+  description: Nezávazně zkouším všechno možné, nebo začínám s jednou věcí, o které si myslím, že ji chci dělat.
+
+- slug: learning
+  title: Učím se
+  icon: book
+  description: Učím se to, co si myslím, že chci dělat. Samostatně, ve škole, v kurzu.
+
+- slug: creating
+  title: Tvořím
+  icon: tools
+  description: Pracuju na projektech. Vytvářím vlastní portfolio, případně se zapojuji např. do open source.
+
+- slug: preparing
+  title: Chci hledat práci
+  icon: pen
+  description: Připravuji se na hledání práce, ladím CV, LinkedIn, GitHub. Pasivně pokukuji po nabídkách.
+
+- slug: applying
+  title: Hledám práci
+  icon: envelope-arrow-up
+  description: Hledám práci, stáž, brigádu. Aktivně reaguji na nabídky, posílám CV, chodím na pohovory.
+
+- slug: deciding
+  title: Mám nabídku
+  icon: trophy
+  description: Mám nabídku a rozhoduji se, zda ji přijmout, nebo mám už domluvenou práci a nastupuji v budoucnu.
+
+- slug: onboarding
+  title: Zaučuju se
+  icon: battery-half
+  description: Zkušební doba v první práci v oboru. Zaučuji se, zjišťuji co je běžné, vyrovnávám se s nároky.
+
+- slug: working
+  title: Mám komerční praxi
+  icon: rocket-takeoff
+  description: Mám jeden až dva roky komerční praxe. Možná už nejsem junior. Posouvám se dál.

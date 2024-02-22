@@ -1,6 +1,7 @@
 ---
 title: Mentoring
 emoji: 💁
+stages: learning, creating, preparing
 description: TODO
 template: main_handbook.html
 noindex: true

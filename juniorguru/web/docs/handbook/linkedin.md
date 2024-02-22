@@ -1,6 +1,7 @@
 ---
 title: Proč mít a jak si vyladit LinkedIn profil
 emoji: 🦸
+stages: preparing, applying
 description: Proč by měl mít každý junior v IT profil na síti LinkedIn? Jak jej vyladit, aby ti pomohl s hledáním práce?
 template: main_handbook.html
 ---
@@ -248,16 +249,16 @@ Máš profily ve dvou jazycích. (Osobně bych si udělal jen anglický).
 
 
 --- https://discord.com/channels/769966886598737931/788826407412170752/1128348049748545536
-třeba mrkni na můj profil (https://www.linkedin.com/in/mia-bajic/) a všimni si prvního odstavce: 
-> My primary area of focus is backend development, but I am also highly interested in exploring new technologies in the realm of infrastructure, particularly Kubernetes, and data science. 
-v celém profilu mám python zmíněný x-krát, takže mi ty nabídky na Python, backend a i Kubernetes chodí i když o ně nemám zájem. 
+třeba mrkni na můj profil (https://www.linkedin.com/in/mia-bajic/) a všimni si prvního odstavce:
+> My primary area of focus is backend development, but I am also highly interested in exploring new technologies in the realm of infrastructure, particularly Kubernetes, and data science.
+v celém profilu mám python zmíněný x-krát, takže mi ty nabídky na Python, backend a i Kubernetes chodí i když o ně nemám zájem.
 
 disclaimer: nejsem HR, tak třeba někdo líp poradí
 ---
 
 
 --- https://discord.com/channels/769966886598737931/1154468833382371430/1154468833382371430
-Ahoj všem do klubu <:juniorguru:841683119291760640> 
+Ahoj všem do klubu <:juniorguru:841683119291760640>
 s životopisem jste mi již pomohli 💪  chci vás teď požádat o kontrolu mého profilu na LinkedIn.. něco jsem tam už upravovala, ale jelikož jsem tam úplný zelenáč, tak nevím, co by chtělo ještě vylepšit - jsem ve výsledcích vyhledávání, nějaká zobrazení mám taky, ale určitě se tam něco najde 😇  moc děkuji za váš čas ⌛ https://www.linkedin.com/in/sandra-heinzova/
 
 p.s.: Vím, že musím zapracovat na aktivitě 😇

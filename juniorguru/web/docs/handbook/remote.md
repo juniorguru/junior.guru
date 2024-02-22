@@ -1,6 +1,7 @@
 ---
 title: Práce na dálku
 emoji: 📡
+stages: preparing, applying, onboarding
 description: TODO
 template: main_handbook.html
 noindex: true

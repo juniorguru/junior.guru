@@ -1,6 +1,7 @@
 ---
 title: Co sledovat
 emoji: 📺
+stages: trying, learning, preparing, onboarding
 description: TODO
 template: main_handbook.html
 noindex: true
@@ -128,7 +129,7 @@ Nevím, zda tady už Rita byla, ale já ji sleduji dlouho a těším se vlastně
 
 
 --- https://discord.com/channels/769966886598737931/769966887055392768/1187068624591130654
-Doplním další podcasty, o kterých vím 🙂 
+Doplním další podcasty, o kterých vím 🙂
 
 - BlueGhost Update
 - Czechitas Podcast

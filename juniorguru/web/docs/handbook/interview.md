@@ -1,6 +1,7 @@
 ---
 title: Pohovor v IT
 emoji: 🤝
+stages: preparing, applying, deciding
 description: Jaké otázky ti nejspíš položí u pohovoru na pozici programátor? Jak bude celý pohovor vlastně probíhat? Jak by měla vypadat tvoje příprava?
 template: main_handbook.html
 ---
@@ -403,7 +404,7 @@ Těmi věcmi, které ovlivnit nejdou jsem myslel (a výčet to asi není úplný
 
 
 --- https://discord.com/channels/769966886598737931/864434067968360459/1023737337957589032
-4) technicky leader/ vedoucí tymu/ .... který bude na vašem pohovoru -->  většinou při dalším pohovornim kole po HR, je pohovor s technicky leaderem který se jednak snaží i zjistit něco o vás (jak se chováte,, jaký jste.. jaké maté rysy).. snaží se zjistit zda budete pasovat do jeho tymu po stránce osobnosti, s tím mu pomáhá otázky od HR. a poté ho bude zajímat váš technicky skill, což odhalí jak třeba nějaký test na papíru tak úkol na vypracovaní.
+4) technicky leader/ vedoucí tymu/ .... který bude na vašem pohovoru -> většinou při dalším pohovornim kole po HR, je pohovor s technicky leaderem který se jednak snaží i zjistit něco o vás (jak se chováte,, jaký jste.. jaké maté rysy).. snaží se zjistit zda budete pasovat do jeho tymu po stránce osobnosti, s tím mu pomáhá otázky od HR. a poté ho bude zajímat váš technicky skill, což odhalí jak třeba nějaký test na papíru tak úkol na vypracovaní.
 
 Muže se stát i to že ty znalosti máte, ale nemáte dostatečné vyjadřovací znalosti (nebo jen velká míra stressu) na to tyto znalosti proti straně přednést a dokázat že je opravdu máte (na to je ale většinou právě ten test, aby tohle odhalilo)
 některé firmy ale tyto technicky pohovory mají až po úkolu, a tímto pohovorem se snaží z validovat skill který vychází od úkolu či testu. (takže zde nějaký vyjadřovací block muže velmi ublížit u pohovoru)
@@ -422,9 +423,9 @@ neříkám že připravenost ti nedá plusové body, ale je to jen nějaká mal�
 
 asi bych to shrnul na následující aspekty
 
-1) jak má firma nastavené přijímací řízení --> je velký rozdíl pokud má firma 4 kola které se táhnou celkem měsíc, nebo pokud má jen dvě kola které jsou do jednoho týdne hotové
+1) jak má firma nastavené přijímací řízení -> je velký rozdíl pokud má firma 4 kola které se táhnou celkem měsíc, nebo pokud má jen dvě kola které jsou do jednoho týdne hotové
 
-2) HR / komunikace --> takový první dojem dělá to jak firma komunikuje s novými uchazeči. prvotní odpověď na váš email (či vůbec neodepíšou), nebo naopak zavolají na druhy den a domluví si schůzku.  zažil jsem například HR která mi napsala email že mí v pátek zavolá ohledně výsledku přijímacího řízení, a nakonec po celodenním čekáním v pátek, jsem dostal odpověď a to přes email v 8 večer. Což nedělá zrovna moc dobry dojem o firmě, pak je tu druha strana mince, člověk během těch všech přijímacích řízení nesmí na ně myslet, nesmí byt upření jen na to zda to vyjde nebo ne. pak se o tom zbytečně uvažuje, a psychicky akorát stresuje, kdy konečně dostane odpověď. Každopádně tento aspekt HR jsem zmínil i hlavně proto že HR většinou s vámi má osobně pohovor, a je možné že přes HR do dalšího kola nedáte.
+2) HR / komunikace -> takový první dojem dělá to jak firma komunikuje s novými uchazeči. prvotní odpověď na váš email (či vůbec neodepíšou), nebo naopak zavolají na druhy den a domluví si schůzku.  zažil jsem například HR která mi napsala email že mí v pátek zavolá ohledně výsledku přijímacího řízení, a nakonec po celodenním čekáním v pátek, jsem dostal odpověď a to přes email v 8 večer. Což nedělá zrovna moc dobry dojem o firmě, pak je tu druha strana mince, člověk během těch všech přijímacích řízení nesmí na ně myslet, nesmí byt upření jen na to zda to vyjde nebo ne. pak se o tom zbytečně uvažuje, a psychicky akorát stresuje, kdy konečně dostane odpověď. Každopádně tento aspekt HR jsem zmínil i hlavně proto že HR většinou s vámi má osobně pohovor, a je možné že přes HR do dalšího kola nedáte.
 ---
 
 

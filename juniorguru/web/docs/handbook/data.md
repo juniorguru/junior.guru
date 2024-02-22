@@ -1,6 +1,7 @@
 ---
 title: Data
 emoji: 📊
+stages: thinking
 description: TODO
 template: main_handbook.html
 noindex: true

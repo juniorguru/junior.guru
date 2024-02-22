@@ -1,6 +1,7 @@
 ---
 title: Jak vybrat kurz programování
 emoji: 🧑‍🏫
+stages: learning
 description: Jaký kurz základů programování je vhodný zrovna pro tebe? Které jsou rekvalifikační a jak je to s úřadem práce? Prezenčně, nebo online? Za peníze, nebo zdarma?
 template: main_handbook.html
 ---

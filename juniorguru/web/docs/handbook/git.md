@@ -1,6 +1,7 @@
 ---
 title: Jak na Git a GitHub
 emoji: 🔀
+stages: learning, creating, preparing
 description: Co je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a GitHubem? Jak začít s Gitem?
 template: main_handbook.html
 ---

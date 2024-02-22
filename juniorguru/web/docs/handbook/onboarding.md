@@ -1,6 +1,7 @@
 ---
 title: Zaučování
 emoji: 🤹
+stages: onboarding, working
 description: TODO
 template: main_handbook.html
 noindex: true
@@ -551,10 +552,10 @@ Zajímavá myšlenka. Diskutujme 😅 https://mastodon.social/@theincredibleholk
 
 --- https://discord.com/channels/769966886598737931/991010207280807986/1176893807900499988
 K tomu, co se tu nedávno psalo o code review, resp. pull requestům a jejich review (nebo se v praxi dělá code review i nějak jinak?), mě napadá pár poznámek:
-- Není to sranda ani pro protistranu (toho, kdo dělá review). Musím si k tomu sednout, naladit se na projekt, pochopit kontext, co se vůbec má dělat. Pokud se mi implementace "nelíbí", tak se musím zamyslet, jestli je to jenom proto, že sám bych to dělal jinak a i takhle je to vlastně ok, nebo je tam fakt nějaký objektivní problém. Blbé je, že to, že se mi to "nelíbí", cítím hned, ale ten objektivní důvod můžu dávat dohromady hodiny. 
+- Není to sranda ani pro protistranu (toho, kdo dělá review). Musím si k tomu sednout, naladit se na projekt, pochopit kontext, co se vůbec má dělat. Pokud se mi implementace "nelíbí", tak se musím zamyslet, jestli je to jenom proto, že sám bych to dělal jinak a i takhle je to vlastně ok, nebo je tam fakt nějaký objektivní problém. Blbé je, že to, že se mi to "nelíbí", cítím hned, ale ten objektivní důvod můžu dávat dohromady hodiny.
 - Pokud to review má proběhnout do hloubky, zvlášť pokud se nelze spolehnout na senioritu a zkušenosti autora, tak to může trvat nakonec déle, než to samotné naprogramování. Takové to jestli komunikace komponent dává smysl, jestli někde nevznikne race condition, co kde bude úzkým hrdlem při zatížení, co všechno se může pokazit a rozbít, kdo to kde může jak hacknout...
 - Takže sorry, pokud na review nechceš čekat dva týdny, než na to budu mít celé odpoledne čas, tak se může stát, že se ten feedback bude dávkovat postupně 🙂 Taky když vidím issues na první pohled, tak řešíme nejdřív ty, a až je to nějaká "skutečně" finální verze, tak to projdu víc do hloubky.
-- Občas pozoruji, že někdo jde, neporadí se a rovnou to naprogramuje a první "komunikací" z jeho strany je až ten pull request. A já na to koukám a říkám si, že to není ono, že by to chtělo se nejdřív poradit, jak vůbec na to. Někdy jsem se u juniorů setkal s tím, že vidí jen tu hlavní cestu bez odboček/alternativ (a ještě k tomu ji vidí jen na jeden krok dopředu) a tedy vlastně nevědí, kde a o čem se mohou poradit. Nebo může vyvstat námitka, že to mělo být zohledněno už v zadání, ale to bych pak to zadání psal tak dlouho a podrobně, že jsem si to mohl naprogramovat sám 😇 
+- Občas pozoruji, že někdo jde, neporadí se a rovnou to naprogramuje a první "komunikací" z jeho strany je až ten pull request. A já na to koukám a říkám si, že to není ono, že by to chtělo se nejdřív poradit, jak vůbec na to. Někdy jsem se u juniorů setkal s tím, že vidí jen tu hlavní cestu bez odboček/alternativ (a ještě k tomu ji vidí jen na jeden krok dopředu) a tedy vlastně nevědí, kde a o čem se mohou poradit. Nebo může vyvstat námitka, že to mělo být zohledněno už v zadání, ale to bych pak to zadání psal tak dlouho a podrobně, že jsem si to mohl naprogramovat sám 😇
 Holt i review je týmová záležitost, není to odevzdávání písemky ve škole nebo úřední žádost o vyplacení mzdy.
 ---
 
@@ -578,7 +579,7 @@ Kdybych někam nastupovala teď, tak bych viděla jako ideální:
 **Nezkoušet rovnou samostatnost** -> odmítnout dělat úkol nového typu samostatně
 U každého typu úkolu udělat první přišedší úkol z té kategorie společně se seniorem / podívat se na splnění úkolu z té množiny někým zkušenějším [typy úkolů pro představu: kód (+ release cycle) | napojení klienta kupujícího hlavní řešení | menší udělátko pro klienta | důležité PoC]. Zkrátka: nejdřív se jen/hlavně dívej, příště ty sama.
 
-Já jsem zůstala pod bodem, kdy se dokážu efektivně učit a pohybovat a strávila jsem spoustu času základním nahazováním sebe sama, protože jsem vlastně nevěděla, kde jsem. Stala se mi bezbřehá ztracenost, lepší by bylo tápaní ve vymezeném prostoru. 
+Já jsem zůstala pod bodem, kdy se dokážu efektivně učit a pohybovat a strávila jsem spoustu času základním nahazováním sebe sama, protože jsem vlastně nevěděla, kde jsem. Stala se mi bezbřehá ztracenost, lepší by bylo tápaní ve vymezeném prostoru.
 
 Když Ti řeknou, že si jdete začutat na hřiště za školu, asi to najdeš, dorazíš ve sportovním oblečení a cestou si zvládneš najít základní pravidla fotbalu. Možná nebudeš excelovat, ale budeš platný hráč, nebudeš se cítit úplně mimo a asi Ti hra i dost dá.
 Když víš, že budeš něco dělat někde, tak je to podstatně horší (bude to návštěva divadlo, plavání, výkopová práce nebo něco jiného? s sebou oblek, plavky nebo montérky? a jak mluvit s kolemjdoucími?). Zkusíš něco vydedukovat, čímž ztratíš dost sil i času, a nakonec to stejně není ono...
@@ -597,7 +598,7 @@ https://www.shepherdingheart.com/blog/a-layoff-is-not-to-be-feared-it-should-be-
 
 
 --- https://discord.com/channels/769966886598737931/1194368531433783407/1194566730417197106
-Taky je rozdíl v tom nárůstu, pokladní sice dostane třeba 35, za rok za dva třeba i 40, ale výš už se nedostane, ikdyž tam bude dalších 5 let. Kdežto u programování, pokud budeš šikovný, tak se za 5 let nebo dřív můžeš dostat i na dvojnásobek. 
+Taky je rozdíl v tom nárůstu, pokladní sice dostane třeba 35, za rok za dva třeba i 40, ale výš už se nedostane, ikdyž tam bude dalších 5 let. Kdežto u programování, pokud budeš šikovný, tak se za 5 let nebo dřív můžeš dostat i na dvojnásobek.
 
 Manžel zrovna půl roku zpátky hledal práci jako junior v Brně a většinou nabízeli něco mezi 30-40k, s tím, že třeba po zkušebce mu přidají +5k. Nemá VŠ, maturitu tedy ano, ale jako truhlář, ale zase předtím pracoval jako IT administrátor a tam se trochu setkával s Pythonem a C#.
 ---
