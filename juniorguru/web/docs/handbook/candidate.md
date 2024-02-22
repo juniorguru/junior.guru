@@ -26,7 +26,7 @@ A věci mohou přibývat i díky tobě! Pokud máš připomínku, vlastní zkuš
 Znáš [základy](learn.md) a máš [praxi](practice.md)? Nastal čas zkoušet své štěstí na pracovním trhu. Jak si ale začít hledat svou první práci v IT? Jak se připravit na pohovor?
 
 {{ blockquote_toxic(
-  'Nauč se programovat, firmy v IT berou z nedostatku lidí každého, kdo má jen zájem. Do začátku si řekni aspoň o pade.',
+  'Nauč se programovat, firmy v IT berou z nedostatku lidí každého, kdo má jen zájem. Do začátku si řekni aspoň o sto tisíc.',
   'český programátorský folklór',
 ) }}
 

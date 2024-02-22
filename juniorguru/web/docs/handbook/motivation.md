@@ -103,7 +103,7 @@ Snad není žádný jiný profesionální obor vyučovaný na vysokých školác
 Je ovšem důležité počítat s tím, že **příprava ti může zabrat i dva roky učení a praktických cvičení, a že bude chvíli trvat, než dosáhneš na nadstandardní výdělky.** Rekvalifikace na programování je velký krok, který vyžaduje hodně času, úsilí a odhodlání. Nováčci často projdou úvodními kurzy a pak zjistí, že sehnat první práci vůbec není tak snadné. Místo dobrých rad se jim dostane [nejrůznějších mýtů](#myty-o-programovani), takže se na vypsané nabídky hlásí nepřipravení a s nerealistickými očekáváními.
 
 {{ blockquote_toxic(
-  'Nauč se programovat, firmy v IT berou z nedostatku lidí každého, kdo má jen zájem. Do začátku si řekni aspoň o pade.',
+  'Nauč se programovat, firmy v IT berou z nedostatku lidí každého, kdo má jen zájem. Do začátku si řekni aspoň o sto tisíc.',
   'český programátorský folklór',
 ) }}
 
