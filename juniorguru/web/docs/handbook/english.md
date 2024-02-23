@@ -127,6 +127,11 @@ Jestli se základně domluvíš a jsi schopna složit větu, tak bych se anglič
 
 
 ---
+nejvíc jsem tam postrádal  "co dělat" sekci pro lidi kteří fakt mají skoro nulovou angličtinu, tzn je problém složit i základní větu. Myslím že jich je překvapivě hodně a může být pro ně zajímavé že se na ně junior guru nevyprdlo, I když je třeba otázka jestli s IT kariérou vůbec zacnou
+---
+
+
+---
 na co potrebuju anglictinu v it
 https://discord.com/channels/769966886598737931/788826407412170752/866750581644722186
 ---
