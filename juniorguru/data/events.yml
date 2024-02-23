@@ -57,6 +57,24 @@
 #    a poslat prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
+- id: 41
+  title: "(bude upřesněno)"
+  date: "2024-03-12"
+  description: |
+    (bude upřesněno)
+  avatar_path: avatars-participants/roman-lonik.jpg
+  bio_name: Roman Loník
+  bio_title: (bude upřesněno)
+  bio: |
+    (bude upřesněno)
+  bio_links:
+    - https://www.linkedin.com/in/lonikroman/
+    - https://www.naucmese.cz/kurz/chci-efektivni-tym-chci-uspesny-projekt
+    - https://www.naucmese.cz/kurz/ziskej-praci-v-it
+  logo_path: logos/slivka.svg
+  speakers:
+
+
 - id: 40
   title: "Úvod do Advent of Code a „přátelský pokec u kakaa“"
   date: "2023-11-28"

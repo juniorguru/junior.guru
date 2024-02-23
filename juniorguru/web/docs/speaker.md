@@ -48,7 +48,7 @@ Tady ještě časová osa večera, zdokumentovaná v bodech:
     Žádný stres.
 7.  Rozloučíme se.
     Jsi jediná hvězda večera, takže je na tobě, jestli chceš mluvit 20, 30, nebo 40 minut.
-    V ideálním případě by ale přednáška neměla s následnými dotazy překročit hodinu, ale když přetáhnem…
+    V ideálním případě by přednáška neměla s následnými dotazy překročit hodinu, ale když přetáhnem…
     žádný stres 🙂
 8.  Hned po ukončení bývá k dispozici záznam, který zůstane v archivu pro členy.
     Odkaz na záznam můžeš ty nebo členové klidně poslat kamarádům, ale nemusel by se šířit úplně veřejně (pokud jsme se nedohodli jinak).
@@ -120,7 +120,7 @@ A pokud chceš jen mluvit, nemusíš ukazovat nic 😎
 
 ### Kdo je v publiku?
 
-Publikum jsou především junioři, začátečníci v programování. Občas studenti, častěji ale lidé všeho věku a z různých koutů republiky, kteří se rekvalifikují do IT. Členy klubu jsou i senioři a na přednášky mohou přijít, ale přednáška by neměla být pro ně. Cílem je podat úvod do problematiky a přiblížit ji začátečníkům. Používej slova, kterým porozumí téměř laik. Zkratky vysvětluj.
+Publikum jsou především junioři, začátečníci v programování. Občas studenti, častěji ale lidé všeho věku a z různých koutů republiky, kteří se rekvalifikují do IT. Členy klubu jsou i seniorní programátoři a na přednášky mohou přijít, ale přednáška by neměla být pro ně. Cílem je podat úvod do problematiky a přiblížit ji začátečníkům. Používej slova, kterým porozumí téměř laik. Zkratky vysvětluj.
 
 Pro lepší obrázek si projdi kanál <kbd>#ahoj</kbd>.
 Kdokoliv může klub zdarma vyzkoušet na dva týdny. Pokud se někdo přidá těsně před přednáškou, může na ni jít, ačkoliv si klub neplatí. Má tedy smysl na přednášku zvát i veřejnost mimo klub.

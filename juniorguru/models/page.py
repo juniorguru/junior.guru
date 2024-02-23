@@ -8,8 +8,8 @@ from juniorguru.models.base import BaseModel, JSONField
 class Page(BaseModel):
     src_uri = CharField(unique=True)
     dest_uri = CharField(unique=True)
-    title = CharField()
-    name = CharField(null=True)
+    # title = CharField()
+    # name = CharField(null=True)
     meta = JSONField(default=dict)
     size = IntegerField(null=True)
     notes = TextField(null=True)
