@@ -1397,4 +1397,9 @@ https://www.lukaspitra.cz/10-zkusenosti-z-naboru-200-lidi/
 ---
 
 
+--- https://discord.com/channels/769966886598737931/789107031939481641/1210341399250341888
+Tohle je sice pro zkušené programátory, ale myslím, že tam jsou zajímavé rady i pro leckterého juniora. https://newsletter.pragmaticengineer.com/p/finding-the-next-company
+---
+
+
 #} -->

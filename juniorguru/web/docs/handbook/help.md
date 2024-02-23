@@ -300,4 +300,9 @@ Jak se správně ptát, když chcete poradit s kódem - narazil jsem na nový č
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1210182361816498226
+(Další) návod jak se dobře ptát https://www.pythondiscord.com/pages/guides/pydis-guides/asking-good-questions/
+---
+
+
 #} -->
