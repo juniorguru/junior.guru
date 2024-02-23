@@ -1,7 +1,9 @@
 import random
-from typing import Generator
 import uuid
+from typing import Generator
+
 import pytest
+
 from juniorguru.models.base import SqliteDatabase
 from juniorguru.models.page import Page
 from juniorguru.models.stage import Stage

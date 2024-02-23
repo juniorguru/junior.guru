@@ -1,9 +1,11 @@
 from pathlib import Path
+
+from strictyaml import Map, Seq, Str, load
+
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
 from juniorguru.models.base import db
 from juniorguru.models.stage import Stage
-from strictyaml import Map, Seq, Str, load
 
 
 YAML_PATH = Path("juniorguru/data/stages.yml")
