@@ -1,5 +1,9 @@
 $icon-size: $spacer * 4;
 
+.stage-cards {
+  margin-top: map-get($spacers, 4);
+}
+
 .stage-card {
   @extend .card;
   margin: 0 0 map-get($spacers, 4) 0;

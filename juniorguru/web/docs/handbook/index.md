@@ -11,18 +11,19 @@ template: main_handbook.html
 # Příručka pro juniory
 
 {% call lead() %}
-  Uvažuješ o programování? Láká tě zjistit, jak automatizovat část své práce? Přemýšlíš nad kariérní změnou do IT, ale nevíš jak na to? Studuješ informatiku a zajímá tě, co dál?
+  Uvažuješ o programování?
+  Přemýšlíš nad kariérní změnou do IT, ale nevíš jak na to?
+  Láká tě zjistit, jak automatizovat část své práce?
+  Studuješ informatiku a zajímá tě, co dál?
+  V téhle příručce se postupně hromadí veškerá moudrost, která na toto téma existuje.
 {% endcall %}
 
-{#
-## Cesta juniora
+Celá **cesta juniora** má zhruba {{ stages|length }} fází a připomíná [Člověče, nezlob se](https://cs.wikipedia.org/wiki/%C4%8Clov%C4%9B%C4%8De%2C_nezlob_se!).
+Namalované je to hezky jedno za druhým, ale realita je vždy zamotanější.
+Je normální, že se zasekneš, nebo něco přeskočíš.
+A nemálo lidí se v půlce vrátí zpátky do domečku.
 
-Na základě reálných zkušeností mnohých začátečníků jsme v [klubu](../club.md) sestavili **osvědčenou cestu juniora**, která má deset fází. Možná existují i jiné cesty, ale tato **úspěšně zafungovala pro spoustu různých lidí**, a proto ji lze obecně doporučit.
-
-**Ujasni si, co už umíš a co je tvým cílem.** Jednak ti to pomůže uvědomit si, co tě ještě čeká a co nesmíš vynechat, jednak zjistíš, které části příručky pro tebe budou nejpřínosnější.
-
-Pokud o IT teprve přemýšlíš (fáze 0), budou pro tebe zajímavé jiné rady, než pokud už máš za sebou nějaký kurz (fáze 2 až 3). A jestli tě programování zajímá proto, že chceš automatizovat zalévání rajčat na zahradě (fáze 3), nemusí tě zajímat kapitoly o shánění práce v oboru (fáze 4 až 10).
-#}
+Ne všechna témata se zatím povedlo pokrýt kapitolami v příručce, ale se všemi pomáháme a diskutujeme je ve zdejším [klubu](../club.md).
 
 <div class="stage-cards">
 {% for stage in stages %}
@@ -56,11 +57,13 @@ Pokud o IT teprve přemýšlíš (fáze 0), budou pro tebe zajímavé jiné rady
 {% endfor %}
 </div>
 
-{#
-Ne každou fázi se zatím povedlo pokrýt kapitolami v příručce, ale se všemi pomáháme a všechny diskutujeme ve zdejším [klubu](../club.md).
-#}
-
 <!-- {#
+
+Na základě reálných zkušeností mnohých začátečníků jsme v [klubu](../club.md) sestavili **osvědčenou cestu juniora**, která má deset fází. Možná existují i jiné cesty, ale tato **úspěšně zafungovala pro spoustu různých lidí**, a proto ji lze obecně doporučit.
+
+**Ujasni si, co už umíš a co je tvým cílem.** Jednak ti to pomůže uvědomit si, co tě ještě čeká a co nesmíš vynechat, jednak zjistíš, které části příručky pro tebe budou nejpřínosnější.
+
+Pokud o IT teprve přemýšlíš (fáze 0), budou pro tebe zajímavé jiné rady, než pokud už máš za sebou nějaký kurz (fáze 2 až 3). A jestli tě programování zajímá proto, že chceš automatizovat zalévání rajčat na zahradě (fáze 3), nemusí tě zajímat kapitoly o shánění práce v oboru (fáze 4 až 10).
 
 ## Tempo
 

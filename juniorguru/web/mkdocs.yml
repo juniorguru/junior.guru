@@ -8,7 +8,7 @@ nav:
       - Rozcestník pro členy: membership.jinja
       - Klubové lekce angličtiny: membership-english.jinja
   - Příručka:
-      - Úvod: handbook/index.md
+      - Cesta juniora: handbook/index.md
       - Motivace: handbook/motivation.md
       - Základy: handbook/learn.md
       - Angličtina: handbook/english.md
