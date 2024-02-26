@@ -26,34 +26,37 @@ A nemálo lidí se v půlce vrátí zpátky do domečku.
 Ne všechna témata se zatím povedlo pokrýt kapitolami v příručce, ale se všemi pomáháme a diskutujeme je ve zdejším [klubu](../club.md).
 
 <div class="stage-cards">
-{% for stage in stages %}
-<div class="stage-card">
-  <div class="stage-card-row">
-    <div class="stage-card-media">
-      <div class="stage-card-icon">{{ stage.icon|icon }}</div>
-    </div>
-    <div class="stage-card-body">
-      <h4 class="stage-card-title">{{ stage.title }}</h4>
-      <p class="stage-card-description">
-        {{ stage.description }}
-      </p>
-      <p class="stage-card-pages">
-        {% for p in stage.list_pages -%}
-          <a href="{{ pages|docs_url(p.src_uri)|url }}">{{ p.nav_name }}</a>
-        {%- endfor %}
-      </p>
-      {% if stage.list_todo_pages|length %}
-      <p class="stage-card-todo-pages">
-        Plánované kapitoly:
-        {% for p in stage.list_todo_pages -%}
-          {{ p.title }}
-          {%- if not loop.last %}, {% endif -%}
-        {%- endfor %}
-      </p>
-      {% endif %}
+{% for stage_group in stages|slice(3) %}
+  <!-- stage group {{ loop.index }} -->
+  {% for stage in stage_group %}
+  <div class="stage-card">
+    <div class="stage-card-row">
+      <div class="stage-card-media">
+        <div class="stage-card-icon">{{ stage.icon|icon }}</div>
+      </div>
+      <div class="stage-card-body">
+        <h4 class="stage-card-title">{{ stage.title }}</h4>
+        <p class="stage-card-description">
+          {{ stage.description }}
+        </p>
+        <p class="stage-card-pages">
+          {% for p in stage.list_pages -%}
+            <a href="{{ pages|docs_url(p.src_uri)|url }}">{{ p.nav_name }}</a>
+          {%- endfor %}
+        </p>
+        {% if stage.list_todo_pages|length %}
+        <p class="stage-card-todo-pages">
+          Plánované kapitoly:
+          {% for p in stage.list_todo_pages -%}
+            {{ p.title }}
+            {%- if not loop.last %}, {% endif -%}
+          {%- endfor %}
+        </p>
+        {% endif %}
+      </div>
     </div>
   </div>
-</div>
+  {% endfor %}
 {% endfor %}
 </div>
 
