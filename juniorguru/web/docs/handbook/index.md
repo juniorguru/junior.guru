@@ -6,7 +6,7 @@ description: Obsáhlá příručka pro všechny, kdo se chtějí naučit program
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import lead, note, blockquote_avatar with context %}
+{% from 'macros.html' import lead with context %}
 
 # Příručka pro juniory
 
@@ -24,40 +24,41 @@ Na základě reálných zkušeností mnohých začátečníků jsme v [klubu](..
 Pokud o IT teprve přemýšlíš (fáze 0), budou pro tebe zajímavé jiné rady, než pokud už máš za sebou nějaký kurz (fáze 2 až 3). A jestli tě programování zajímá proto, že chceš automatizovat zalévání rajčat na zahradě (fáze 3), nemusí tě zajímat kapitoly o shánění práce v oboru (fáze 4 až 10).
 #}
 
+<div class="stage-cards">
 {% for stage in stages %}
-1.  {{ stage.icon|icon }} **{{ stage.title }}:** {{ stage.description }}<br>
-    {% for p in stage.list_pages -%}
-      [{{ p.nav_name }}]({{ pages|docs_url(p.src_uri)|url }})
-      {%- if not loop.last %}, {% endif -%}
-    {%- endfor %}
-    {%- if stage.list_todo_pages|length -%}
-      <br><small>
-      **Plánované kapitoly:**
-      {% for p in stage.list_todo_pages -%}
-        {{ p.title }}
-        {%- if not loop.last %}, {% endif -%}
-      {%- endfor %}
-      </small>
-    {%- endif -%}
+<div class="stage-card">
+  <div class="stage-card-row">
+    <div class="stage-card-media">
+      <div class="stage-card-icon">{{ stage.icon|icon }}</div>
+    </div>
+    <div class="stage-card-body">
+      <h4 class="stage-card-title">{{ stage.title }}</h4>
+      <p class="stage-card-description">
+        {{ stage.description }}
+      </p>
+      <p class="stage-card-pages">
+        {% for p in stage.list_pages -%}
+          <a href="{{ pages|docs_url(p.src_uri)|url }}">{{ p.nav_name }}</a>
+        {%- endfor %}
+      </p>
+      {% if stage.list_todo_pages|length %}
+      <p class="stage-card-todo-pages">
+        Plánované kapitoly:
+        {% for p in stage.list_todo_pages -%}
+          {{ p.title }}
+          {%- if not loop.last %}, {% endif -%}
+        {%- endfor %}
+      </p>
+      {% endif %}
+    </div>
+  </div>
+</div>
 {% endfor %}
+</div>
 
 {#
-0. Občas mě napadne, že by nemusela být úplná blbost učit se programovat: [Motivace](motivation.md)
-{: value=0 }
-1. Nezávazně zkouším všechno možné, nebo začínám s jednou věcí, o které si myslím, že ji chci dělat: [Základy](motivation.md), [Vybírání kurzu](course.md), [Řešení problémů](help.md)
-2. Učím se to, co si myslím, že chci dělat. Samostatně, ve škole, v kurzu: [Základy](motivation.md), [Vybírání kurzu](course.md), [Řešení problémů](help.md), [První praxe](practice.md), [Git a GitHub](git.md)
-3. Pracuju na projektech: [První praxe](practice.md), [Git a GitHub](git.md)
-4. Připravuji se na hledání práce, ladím CV apod.: [Životopis](cv.md), [LinkedIn](linkedin.md), [Hledání práce](candidate.md)
-5. Hledám práci: [Hledání práce](candidate.md)
-6. Mám nalezenou nebo domluvenou práci a nastupuji v budoucnu.
-7. Zkušební doba v první práci v oboru.
-8. Pracuji po zkušební době.
-9. Mám 1 až 2 roky komerční praxe.
-10. Už nejsem junior.
-#}
-
 Ne každou fázi se zatím povedlo pokrýt kapitolami v příručce, ale se všemi pomáháme a všechny diskutujeme ve zdejším [klubu](../club.md).
-
+#}
 
 <!-- {#
 

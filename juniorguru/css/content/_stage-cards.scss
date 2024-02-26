@@ -1,0 +1,59 @@
+$icon-size: $spacer * 4;
+
+.stage-card {
+  @extend .card;
+  margin: 0 0 map-get($spacers, 4) 0;
+  background: $jg-blue-light;
+  border: 1px solid transparent;
+}
+
+.stage-card-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.stage-card-media {
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding: $spacer;
+  padding-right: 0;
+}
+
+.stage-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $icon-size;
+  height: $icon-size;
+  font-size: $icon-size - 2rem;
+  border: 2px solid $jg-black;
+  border-radius: 100%;
+}
+
+.stage-card-body {
+  @extend .card-body;
+  padding-top: $spacer;
+}
+
+.stage-card-title {
+  @extend .card-title;
+}
+
+.stage-card-description {
+  @extend .card-text;
+}
+
+.stage-card-pages {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.stage-card-pages a {
+  margin-right: $spacer;
+  white-space: nowrap;
+}
+
+.stage-card-todo-pages {
+  @extend .card-text;
+  @extend .small;
+}
