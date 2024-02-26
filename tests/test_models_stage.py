@@ -40,16 +40,22 @@ def test_list_pages(test_db: SqliteDatabase):
     Page.create(
         src_uri="handbook/remote.md",
         dest_uri="handbook/remote/index.html",
+        title="Foo",
+        nav_name="Foo",
         stages=["foo"],
     )
     page2 = Page.create(
         src_uri="handbook/university.md",
         dest_uri="handbook/university/index.html",
+        title="Bar",
+        nav_name="Bar",
         stages=["bar", "learning"],
     )
     page3 = Page.create(
         src_uri="handbook/women.md",
         dest_uri="handbook/women/index.html",
+        title="Moo",
+        nav_name="Moo",
         stages=["learning"],
     )
 
@@ -61,14 +67,38 @@ def test_list_pages_skips_noindex(test_db: SqliteDatabase):
     Page.create(
         src_uri="handbook/university.md",
         dest_uri="handbook/university/index.html",
+        title="Foo",
+        nav_name="Foo",
         stages=["bar", "learning"],
-        wip=True,
+        noindex=True,
     )
     page2 = Page.create(
         src_uri="handbook/women.md",
         dest_uri="handbook/women/index.html",
+        title="Moo",
+        nav_name="Moo",
         stages=["learning"],
-        wip=False,
+        noindex=False,
+    )
+
+    assert list(stage.list_pages) == [page2]
+
+
+def test_list_pages_skips_without_nav_name(test_db: SqliteDatabase):
+    stage = create_stage(slug="learning")
+    Page.create(
+        src_uri="handbook/university.md",
+        dest_uri="handbook/university/index.html",
+        title="Foo",
+        nav_name=None,
+        stages=["bar", "learning"],
+    )
+    page2 = Page.create(
+        src_uri="handbook/women.md",
+        dest_uri="handbook/women/index.html",
+        title="Moo",
+        nav_name="Moo",
+        stages=["learning"],
     )
 
     assert list(stage.list_pages) == [page2]
