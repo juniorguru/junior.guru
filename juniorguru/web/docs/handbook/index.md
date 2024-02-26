@@ -27,9 +27,18 @@ Pokud o IT teprve přemýšlíš (fáze 0), budou pro tebe zajímavé jiné rady
 {% for stage in stages %}
 1.  {{ stage.icon|icon }} **{{ stage.title }}:** {{ stage.description }}<br>
     {% for p in stage.list_pages -%}
-      [{{ p.meta.title }}]({{ pages|docs_url(p.src_uri)|url }})
+      [{{ p.nav_name }}]({{ pages|docs_url(p.src_uri)|url }})
       {%- if not loop.last %}, {% endif -%}
     {%- endfor %}
+    {%- if stage.list_todo_pages|length -%}
+      <br><small>
+      **Plánované kapitoly:**
+      {% for p in stage.list_todo_pages -%}
+        {{ p.title }}
+        {%- if not loop.last %}, {% endif -%}
+      {%- endfor %}
+      </small>
+    {%- endif -%}
 {% endfor %}
 
 {#

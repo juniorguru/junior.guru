@@ -20,3 +20,7 @@ class Stage(BaseModel):
     @property
     def list_pages(self) -> Iterable[Page]:
         return Page.stage_listing(self.slug)
+
+    @property
+    def list_todo_pages(self) -> Iterable[Page]:
+        return Page.stage_todo_listing(self.slug)

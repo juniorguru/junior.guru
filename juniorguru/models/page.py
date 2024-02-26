@@ -1,6 +1,6 @@
 from typing import Iterable, Self
 
-from peewee import BooleanField, CharField, DateField, IntegerField, TextField
+from peewee import BooleanField, CharField, DateField, IntegerField
 
 from juniorguru.models.base import BaseModel, JSONField
 
@@ -8,24 +8,40 @@ from juniorguru.models.base import BaseModel, JSONField
 class Page(BaseModel):
     src_uri = CharField(unique=True)
     dest_uri = CharField(unique=True)
-    # title = CharField()
-    # name = CharField(null=True)
-    meta = JSONField(default=dict)
+    title = CharField()
     size = IntegerField(null=True)
-    notes = TextField(null=True)
-    wip = BooleanField(default=False, index=True)
+    notes_size = IntegerField(null=True)
+    noindex = BooleanField(default=False, index=True)
     date = DateField(null=True)
     thumbnail_path = CharField(null=True)
+    thumbnail_title = CharField(null=True)
+    nav_name = CharField(null=True)
+    nav_sort_key = IntegerField(null=True)
     stages = JSONField(null=True, index=True)
+    meta = JSONField(default=dict)
 
-    @property
-    def notes_size(self) -> int:
-        return len(self.notes) if self.notes else 0
+    @classmethod
+    def from_meta(
+        cls,
+        src_uri: str,
+        dest_uri: str,
+        meta_data: dict,
+    ):
+        return cls(
+            src_uri=src_uri,
+            dest_uri=dest_uri,
+            title=meta_data["title"],
+            thumbnail_title=meta_data.get("thumbnail_title"),
+            noindex=meta_data.get("noindex", False),
+            date=meta_data.get("date"),
+            stages=sorted(set(meta_data["stages"])) if "stages" in meta_data else None,
+            meta=meta_data,
+        )
 
     def to_card(self) -> dict:
         if self.src_uri.startswith("stories/"):
             return dict(
-                title=self.meta["title"],
+                title=self.title,
                 url=self.src_uri,
                 image_path=self.meta["interviewee_avatar_path"],
                 image_alt=self.meta["interviewee"],
@@ -48,7 +64,25 @@ class Page(BaseModel):
         return (
             cls.listing()
             .from_(cls, stages)
-            .where(cls.wip == False, stages.c.value == slug)
+            .where(
+                cls.nav_name.is_null(False),
+                cls.noindex == False,
+                stages.c.value == slug,
+            )
+            .order_by(cls.nav_sort_key)
+        )
+
+    @classmethod
+    def stage_todo_listing(cls, slug: str) -> Iterable[Self]:
+        stages = cls.stages.children().alias("stages")
+        return (
+            cls.listing()
+            .from_(cls, stages)
+            .where(
+                cls.noindex == True,
+                stages.c.value == slug,
+            )
+            .order_by(cls.title)
         )
 
     @classmethod

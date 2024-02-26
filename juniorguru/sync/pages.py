@@ -1,9 +1,12 @@
 from pprint import pformat
 from typing import Any
 
+from playhouse.shortcuts import model_to_dict
 from mkdocs.config import load_config
 from mkdocs.structure.files import get_files
+from mkdocs.structure.nav import get_navigation
 from mkdocs.utils import meta
+from mkdocs.structure.nav import Navigation
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
@@ -29,46 +32,42 @@ def main():
     logger.info("Reading Markdown source files")
     config = load_config(config_file="juniorguru/web/mkdocs.yml")
     files = get_files(config)
+    nav = get_navigation(files, config)
     for file in files.documentation_pages():
         logger.debug(f"Reading: {file.src_uri}")
         with open(file.abs_src_path, encoding="utf-8-sig", errors="strict") as f:
             source = f.read()
         meta_data = parse_meta(source)
+        notes = parse_notes(source)
 
-        if "stages" in meta_data:
-            stages = set(meta_data["stages"])
-            unknown_stages = stages - {stage.slug for stage in Stage.listing()}
-            if unknown_stages:
-                raise ValueError(f"Unknown stages: {','.join(unknown_stages)}")
-        else:
-            stages = None
+        page = Page.from_meta(file.src_uri, file.dest_uri, meta_data)
+        page.nav_name = get_nav_name(file.src_uri, nav)
+        page.nav_sort_key = get_nav_sort_key(file.src_uri, nav)
+        page.size = len(source)
+        page.notes_size = len(notes) if notes else 0
 
-        data = dict(
-            src_uri=file.src_uri,
-            dest_uri=file.dest_uri,
-            size=len(source),
-            meta=meta_data,
-            notes=parse_notes(source),
-            wip=meta_data.get("noindex", False),
-            date=meta_data["date"] if "date" in meta_data else None,
-            stages=stages,
-        )
-        logger.debug(f"Saving:\n{pformat(data)}")
-        if not data["meta"].get("title"):
-            raise ValueError(f"Page {file.src_uri} is missing a title")
-        Page.create(**data)
+        # TODO this is M:N and should be a table with foreign keys
+        stages = set(meta_data.get("stages", []))
+        unknown_stages = stages - {stage.slug for stage in Stage.listing()}
+        if unknown_stages:
+            raise ValueError(f"Unknown stages: {','.join(unknown_stages)}")
+
+        page.save()
+        logger.debug(f"Saved: {pformat(model_to_dict(page))}")
 
     logger.info("Generating pages from templates")
     for _, generate_pages in TEMPLATES.items():
         for page in generate_pages():
             logger.debug(f"Reading: {page['path']}")
-            data = dict(
-                src_uri=page["path"],
-                dest_uri=page["path"].replace(".md", "/index.html"),
-                meta=page["meta"],
+            page = Page.from_meta(
+                page["path"],
+                page["path"].replace(".md", "/index.html"),
+                page["meta"],
             )
-            logger.debug(f"Saving:\n{pformat(data)}")
-            Page.create(**data)
+            page.nav_name = get_nav_name(file.src_uri, nav)
+            page.nav_sort_key = get_nav_sort_key(file.src_uri, nav)
+            page.save()
+            logger.debug(f"Saved: {pformat(model_to_dict(page))}")
 
     logger.info(f"Created {Page.select().count()} pages")
 
@@ -77,7 +76,7 @@ def parse_meta(source: str) -> dict[str, Any]:
     return meta.get_data(source.strip())[1]
 
 
-def parse_notes(source) -> str:
+def parse_notes(source: str) -> str:
     source = source.strip()
     parts = source.split("<!-- {#")
     if len(parts) == 1:
@@ -85,3 +84,18 @@ def parse_notes(source) -> str:
     if len(parts) > 2:
         raise ValueError("More than one block of notes")
     return parts[1].strip().removesuffix("#} -->").strip() or None
+
+
+def get_nav_name(src_uri: str, nav: Navigation):
+    try:
+        item = [item for item in nav.pages if item.file.src_uri == src_uri][0]
+    except IndexError:
+        return None
+    return item.title
+
+
+def get_nav_sort_key(src_uri: str, nav: Navigation) -> int | None:
+    for sort_key, item in enumerate(nav.pages):
+        if item.file.src_uri == src_uri:
+            return sort_key
+    return None
