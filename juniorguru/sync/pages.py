@@ -1,12 +1,11 @@
 from pprint import pformat
 from typing import Any
 
-from playhouse.shortcuts import model_to_dict
 from mkdocs.config import load_config
 from mkdocs.structure.files import get_files
-from mkdocs.structure.nav import get_navigation
+from mkdocs.structure.nav import Navigation, get_navigation
 from mkdocs.utils import meta
-from mkdocs.structure.nav import Navigation
+from playhouse.shortcuts import model_to_dict
 
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import loggers
