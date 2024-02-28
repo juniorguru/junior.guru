@@ -52,7 +52,7 @@ stripe = "8.2.0"
 diskcache = "5.6.3"
 apify-client = "1.6.3"
 apify-shared = "1.1.1"
-openai = "1.9.0"
+openai = "1.12.0"
 tenacity = "8.2.3"
 lingua-language-detector = "2.0.2"
 
