@@ -4,17 +4,20 @@ updates:
   directory: "/"
   schedule:
     interval: daily
-    time: "06:00"
-    timezone: Europe/Prague
   open-pull-requests-limit: 1
   labels:
-  - dependencies
+    - dependencies
 - package-ecosystem: npm
   directory: "/"
   schedule:
     interval: daily
-    time: "06:00"
-    timezone: Europe/Prague
   open-pull-requests-limit: 1
   labels:
-  - dependencies
+    - dependencies
+- package-ecosystem: github-actions
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 1
+  labels:
+    - dependencies
