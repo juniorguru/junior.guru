@@ -984,4 +984,9 @@ Dobrá zpráva je, že máš pořád těch 50000 Kč k dispozici a můžeš je v
 ---
 
 
+--- https://discord.com/channels/769966886598737931/811910782664704040/1212103644778856568
+MDN spustilo vlastní vzdělávací materiály https://developer.mozilla.org/en-US/curriculum/
+---
+
+
 #} -->

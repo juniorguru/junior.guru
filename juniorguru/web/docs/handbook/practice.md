@@ -1127,4 +1127,34 @@ http://bit.ly/klary-jak-do-UX
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1212864059591098438
+Dalo mi celkem problém pochopit, jak se to vůbec hraje 😅 Ale třeba jsem teď při nemoci jen „pomalejší“. Zkuste! Hra, která by vás měla naučit reguláry. https://regexcrossword.com/
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1212779118647574538
+Nedá mi to nezmínit tuhle klasiku :)) https://videacesky.cz/video/problem-s-casovymi-pasmy
+Dívali jsme se na ní s kolegy před lety když jsme řešili časová pásma a posílal jsem to kolegům nedávno co pracovali na google calendar integraci 😁
+---
+
+
+--- https://discord.com/channels/769966886598737931/1176897784302014565/1211723120290037790
+https://refactoring.guru
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1210520377952829440
+> You can ask stupid questions of ChatGPT anytime you like and it can help guide you through to the right answer.
+> 
+> ...
+> 
+> I've had real life teaching assistants who super smart, really great, help you with a bunch of things and on a few things they're stubbornly wrong.
+> 
+> If you want to get good at learning, one of the things you have to do is you have to be able to consult multiple sources and have a sort of sceptical eye.
+> 
+> Be aware that there is no teacher on earth who knows everything and never makes any mistakes.
+https://simonwillison.net/2024/Jan/17/oxide-and-friends/#llms-for-learning
+---
+
+
 #} -->

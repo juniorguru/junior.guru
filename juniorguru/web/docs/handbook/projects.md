@@ -383,4 +383,30 @@ Souhlas s ostatními a trochu to rozepíšu:
 ---
 
 
+Don't contribute to open source
+https://www.youtube.com/watch?v=5nY_cy8zcO4
+
+
+--- https://discord.com/channels/769966886598737931/1076121659976720494/1212283617808486411
+Kdo obcas koukne na muj github, tak si muze vsimnout, ze tam pribyvaji ruzne casti kodu, nove tridy, metody a tak. 
+S <@708265650619154521> jsme udelali ohromny pokrok (alespon z me strany) a navic se na tom hodne ucim. Velky plus je to, ze mi Dale pomaha hodne 🙂 
+Jde to dobrym smerem, momentalne pracujeme na vyberu hry. Je to trochu tvrdsi orisek pro me, ale na druhou stranu uz vim +- co a jak. Chybi mi jeste ta zkusenost, kterou ma Dale. 
+Dale mi vcera odpoledne poslal zajimavou a velmi motivujici zpravu, cituji: ,,Neboj se experimentovat, neboj se 
+udelat rozhodnuti, vzdycky to muzes prepsat, zvykej si na to. Udelat "spravne" rozhodnuti na zacatku je temer nemozne.”
+
+Toto me hodne namotivovalo 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1212371552457330719
+A nemá smysl se tím, především v případě domácího projektu, nějak trápit. Mám co mám. Ukážu, co mám. Jasně, za půl roku můžu třeba ukázat víc, ale to je nekonečný závod. Je lepší nechat posoudit druhou stranu, jestli je to pro ně dost, než se upinat na to, ze něco musí mít nějakou laťku, aby to bylo “dokončené” 🤷‍♂️
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1212356957240033331
+> My advice to a beginner dev struggling with their side-projects would be to always make sure that you're doing them for yourself, and for the right reasons. Instead of approaching your first project purely as a means to make it big or to impress recruiters, see it firstly as a means to learn and explore what's possible.
+https://robbowen.digital/wrote-about/abandoned-side-projects/
+---
+
+
 #} -->

@@ -615,4 +615,25 @@ Na pondělních callech často zmiňovaná/diskutovaná skutečnost. Nejde samoz
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1213067684489596928
+Hezký:
+> The best software tester I’ve ever known once said to me, “Whenever I start at a new place, I find out which teams hate each other. Where their systems interface with each other is the first place I look for bugs — because they’re not talking to each other.”
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1213068879467651114
+> Now please don’t misunderstand me: when I say it’s “intensely social,” I don’t mean that you have to be an extroverted social butterfly.
+> 
+> You can be the world’s biggest introvert and make great software.
+> 
+> You can be socially clumsy (I am!) and make great software.
+> 
+> You can be autistic and make great software.
+> 
+> You can be chatty and charming, or silly, or dry and serious, or linear, or chaotic, or or or…and make great software.
+> 
+> What you can’t be is misanthropic. When you write software, you are in relationship with other people…
+---
+
+
 #} -->

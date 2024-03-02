@@ -743,4 +743,24 @@ Dneska jsem narazila na zajimave video od Kayla https://m.youtube.com/watch?v=a6
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1213068879467651114
+> Now please don’t misunderstand me: when I say it’s “intensely social,” I don’t mean that you have to be an extroverted social butterfly.
+> 
+> You can be the world’s biggest introvert and make great software.
+> 
+> You can be socially clumsy (I am!) and make great software.
+> 
+> You can be autistic and make great software.
+> 
+> You can be chatty and charming, or silly, or dry and serious, or linear, or chaotic, or or or…and make great software.
+> 
+> What you can’t be is misanthropic. When you write software, you are in relationship with other people…
+---
+
+
+--- https://discord.com/channels/769966886598737931/916728874023391233/1212869983873269780
+Nemám to ještě přečtený a asi to nebude veselý čtení. Ale tak myslím, že je dobrý být nohama na zemi a raději být připraven, než překvapen. https://newsletter.pragmaticengineer.com/p/native-vs-cross-platform
+---
+
+
 #} -->
