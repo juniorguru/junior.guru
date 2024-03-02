@@ -1145,16 +1145,22 @@ https://refactoring.guru
 
 --- https://discord.com/channels/769966886598737931/769966887055392768/1210520377952829440
 > You can ask stupid questions of ChatGPT anytime you like and it can help guide you through to the right answer.
-> 
+>
 > ...
-> 
+>
 > I've had real life teaching assistants who super smart, really great, help you with a bunch of things and on a few things they're stubbornly wrong.
-> 
+>
 > If you want to get good at learning, one of the things you have to do is you have to be able to consult multiple sources and have a sort of sceptical eye.
-> 
+>
 > Be aware that there is no teacher on earth who knows everything and never makes any mistakes.
 https://simonwillison.net/2024/Jan/17/oxide-and-friends/#llms-for-learning
 ---
+
+
+I regret to say it, but it's true: most of today's programming consists of regurgitating the same things in slightly different forms. High levels of reasoning are not required. LLMs are quite good at doing this, although they remain strongly limited by the maximum size of their context. This should really make programmers think. Is it worth writing programs of this kind? Sure, you get paid, and quite handsomely, but if an LLM can do part of it, maybe it's not the best place to be in five or ten years.
+...
+Finally, what sense does it make today not to use LLMs for programming? Asking LLMs the right questions is a fundamental skill. The less it is practiced, the less one will be able to improve their work thanks to AI. And then, developing a descriptive ability of problems is also useful when talking to other human beings. LLMs are not the only ones who sometimes don't understand what we want to say. Communicating poorly is a great limitation, and many programmers communicate very poorly despite being very capable in their specific field. And now Google is unusable: using LLMs even just as a compressed form of documentation is a good idea. For my part, I will continue to make extensive use of them. I have never loved learning the details of an obscure communication protocol or the convoluted methods of a library written by someone who wants to show how good they are. It seems like "junk knowledge" to me. LLMs save me from all this more and more every day.
+http://antirez.com/news/140
 
 
 #} -->
