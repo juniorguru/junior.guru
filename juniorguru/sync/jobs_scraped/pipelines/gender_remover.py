@@ -35,6 +35,8 @@ GENDER_RES = [
     ),
     # emojis
     re.compile(r"👩‍💻[\/\|]👨‍💻|👨‍💻[\/\|]👩‍💻"),
+    # 'all genders'
+    re.compile(r"\(\s*all\s+genders\s*\)"),
 ]
 
 
