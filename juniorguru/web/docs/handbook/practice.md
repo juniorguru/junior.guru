@@ -82,12 +82,6 @@ Pokud vlastní nápad nepřichází a mentor není po ruce, můžeš zkusit [hac
 {% endcall %}
 
 
-## Osvoj si Git a GitHub    <span id="git-github"></span>
-
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Z této kapitoly je teď samostatná stránka: [Git a GitHub](git.md)
-{% endcall %}
-
 ## Najdi si mentora    <span id="mentors"></span>
 
 Mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady. Nemusí to být vyloženě mistr v oboru, stačí když bude v programování alespoň o něco zkušenější než ty. A klidně může stačit, když se uvidíte jednu hodinu týdně přes videohovor. Pokud znáš někoho, kdo by mohl být tvým mentorem, ale nemá s tím praktické zkušenosti, projděte spolu [přednášku o mentorování](https://github.com/honzajavorek/become-mentor/blob/master/cs.md#readme) a prostě to zkuste!
@@ -299,13 +293,6 @@ Vždy, když narazíš na nový pojem nebo zkratku, přečti si alespoň co to j
 </div>
 
 
-### Kde hledat kurzy a workshopy?    <span id="courses"></span>
-
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Z této kapitoly je teď samostatná stránka: [Kurzy](../courses.md)
-{% endcall %}
-
-
 ## Najdi inspiraci, poznej lidi    <span id="events"></span>
 
 Je velmi těžké se učit zcela samostatně, bez kontaktu s dalšími samouky nebo lidmi z nového oboru. Důvodů, proč polevit, může nastat hodně. Proto je dobré pravidelně se setkávat s komunitou začínajících i pokročilých programátorů a nabíjet se tak novou energií a inspirací. Dříve existovaly hlavně dva druhy setkání: místní srazy a celostátní konference. Během covidu-19 bylo mnoho akcí zrušeno, nebo přešlo do online podoby.
@@ -375,13 +362,6 @@ Výše uvedené akce jsou vhodné i pro začátečníky a účastní se jich vý
 ### Kde na to vzít?    <span id="fin-aid"></span>
 
 Na konference je potřeba si koupit lístek. Výše zmíněné konference mají velmi dostupné lístky se slevami (např. pro studenty), ale i tak je možné, že je mimo tvé finanční možnosti se účastnit. Pro takový případ konference poskytují „Financial Aid“ — finanční pomoc s lístkem, ubytováním nebo cestou.
-
-
-## Neflákej angličtinu    <span id="english"></span>
-
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Z této kapitoly je teď samostatná stránka: [Angličtina](english.md)
-{% endcall %}
 
 
 <!-- {#
