@@ -6,7 +6,7 @@ description: Obsáhlá příručka pro všechny, kdo se chtějí naučit program
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import lead with context %}
+{% from 'macros.html' import lead, img with context %}
 
 # Příručka pro juniory
 
@@ -19,7 +19,7 @@ template: main_handbook.html
 {% endcall %}
 
 Celá **cesta juniora** má zhruba {{ stages|length }} fází a připomíná [Člověče, nezlob se](https://cs.wikipedia.org/wiki/%C4%8Clov%C4%9B%C4%8De%2C_nezlob_se!).
-Namalované je to hezky jedno za druhým, ale realita je vždy zamotanější.
+Namalované je to hezky jedno za druhým, ale realita je zamotanější.
 Je normální, že se zasekneš, nebo něco přeskočíš.
 A nemálo lidí se v půlce vrátí zpátky do domečku.
 
@@ -27,7 +27,6 @@ Ne všechna témata se zatím povedlo pokrýt kapitolami v příručce, ale se v
 
 <div class="stage-cards">
 {% for stage_group in stages|slice(3) %}
-  <!-- stage group {{ loop.index }} -->
   {% for stage in stage_group %}
   <div class="stage-card">
     <div class="stage-card-row">
@@ -57,6 +56,9 @@ Ne všechna témata se zatím povedlo pokrýt kapitolami v příručce, ale se v
     </div>
   </div>
   {% endfor %}
+  <div class="stage-illustration">
+    {{ img('static/chick' + loop.index|string + '.svg', 'Kuře', 50, 50, lazy=False) }}
+  </div>
 {% endfor %}
 </div>
 
