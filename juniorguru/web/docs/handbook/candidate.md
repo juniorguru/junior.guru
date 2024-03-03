@@ -494,24 +494,6 @@ Cokoliv z toho pro tebe může být zásadní. Je dobré si v tom dopředu uděl
 
 Seznam udělej podle sebe. Netrap se tím, co chtějí ostatní — každý je v jiné situaci, každého motivuje něco jiného. Tvoje priority **jsou tvoje a jsou důležité**.
 
-### Životopis    <span id="cv"></span>
-
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Z této kapitoly jsou teď dvě samostatné stránky: [Životopis](cv.md) a [LinkedIn](linkedin.md)
-{% endcall %}
-
-### Zkušenosti získané mimo IT    <span id="non-tech-experience"></span>
-
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Z této kapitoly je teď samostatná stránka: [Životopis](cv.md)
-{% endcall %}
-
-### Projekty    <span id="projects"></span>
-
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Z této kapitoly jsou teď dvě samostatné stránky: [Životopis](cv.md) a [GitHub](git.md)
-{% endcall %}
-
 ### Informace o firmě    <span id="research"></span>
 
 Než firmě napíšeš, **něco si o ní zjisti**. Vyhledej si firmu na internetu, zkus pochopit její produkt, [kulturu](#firemni-kultura), apod. Lidé na pohovorech často zjišťují, jestli o firmě něco víš, a kromě toho ti to pomůže i s [vlastními dotazy](interview.md#tvoje-otazky). Pokud firma [pořádá nějaké své akce](#firemni-akce), můžeš část svého průzkumu provést i tam.
@@ -604,13 +586,6 @@ Jedním z nejefektivnějších způsobů, jak si v malé ČR sehnat dobrou prác
 Networking je také způsob, jak od lidí dostat doporučení. Někteří lidé jsou schopní tě ve své firmě doporučit i po pěti minutách rozhovoru, ať už protože mají dobré srdce, protože na ně zapůsobíš, nebo protože chtějí dostat _referral bonus_ (odměna za doporučení nového zaměstnance, kterou některé firmy nabízejí).
 
 Česká komunita programátorů je malá a existuje na malém prostoru — z Plzně do Ostravy je to pár hodin vlakem. **„Všichni se znají“, je snadné se setkávat**. Díky tomu je u nás networking velmi důležitou složkou budování kariéry.
-
-
-## Pohovor    <span id="interview"></span>
-
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Z této kapitoly je teď samostatná stránka: [Pohovor](interview.md)
-{% endcall %}
 
 
 ## Firemní kultura    <span id="culture"></span>
