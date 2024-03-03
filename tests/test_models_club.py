@@ -520,25 +520,6 @@ def test_user_is_new(test_db, today, expected):
 
 
 @pytest.mark.parametrize(
-    "days, expected",
-    [
-        (None, False),
-        (0, False),
-        (10, False),
-        (300, False),
-        (364, False),
-        (365, True),
-        (366, True),
-        (1000, True),
-    ],
-)
-def test_user_is_year_old(test_db, days: int, expected: bool):
-    user = create_user(1, subscribed_days=days)
-
-    assert user.is_year_old is expected
-
-
-@pytest.mark.parametrize(
     "coupon, expected",
     [
         (None, False),

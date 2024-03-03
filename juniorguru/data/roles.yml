@@ -58,11 +58,6 @@
   description: |
     Kdo je v klubu od jeho vzniku v únoru 2021. Roli automaticky spravuje bot.
 
-- id: 917430017993093140
-  slug: year_old
-  description: |
-    Kdo už je tady s námi více než rok. Roli automaticky spravuje bot.
-
 - id: 836959652100702248
   slug: has_intro_and_avatar
   description: |

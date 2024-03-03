@@ -156,13 +156,6 @@ class ClubUser(BaseModel):
             today or date.today()
         )
 
-    @property
-    def is_year_old(self) -> bool:
-        if self.subscribed_days is None:
-            # can happen for users like ClubMemberID.HONZA, ClubMemberID.HONZA_TEST
-            return False
-        return self.subscribed_days >= YEAR_PERIOD_DAYS
-
     def is_founder(self):
         return bool(
             self.coupon and parse_coupon(self.coupon)["slug"] in ("founders", "founder")

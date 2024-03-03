@@ -189,17 +189,6 @@ async def sync_roles(client: ClubClient):
             evaluate_changes(member.id, member.initial_roles, new_members_ids, role_id)
         )
 
-    logger.info("Computing how to re-assign role: year_old")
-    role_id = DocumentedRole.get_by_slug("year_old").club_id
-    year_old_members_ids = [member.id for member in members if member.is_year_old]
-    logger.debug(f"year_old_members_ids: {repr_ids(members, year_old_members_ids)}")
-    for member in members:
-        changes.extend(
-            evaluate_changes(
-                member.id, member.initial_roles, year_old_members_ids, role_id
-            )
-        )
-
     logger.info("Computing how to re-assign role: speaker")
     role_id = DocumentedRole.get_by_slug("speaker").club_id
     speaking_members_ids = [member.id for member in Event.list_speaking_members()]
