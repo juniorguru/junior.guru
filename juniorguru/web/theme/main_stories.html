@@ -54,12 +54,11 @@
         <div>
           <span class="members mb-0">
           {% for member in members|sample(10) %}
-            {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50, lazy=False) }}
+            {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50) }}
           {% endfor %}
           </span>
         </div>
       </div>
-
     </div>
   </div>
   {% endblock %}

@@ -53,3 +53,37 @@
   </div>
 </div>
 {% endblock %}
+
+
+{% block main %}
+{{ super() }}
+
+<hr class="visually-hidden">
+
+<div class="sidebar-comments">
+  <div class="sidebar-comments-container">
+    <div class="sidebar-comments-body">
+      <div class="comments-container">
+        <h2>Chceš se taky na něco zeptat?</h2>
+        <p>
+          Můžeš!
+          Na našem klubovém Discordu je nejen <strong>Blabla</strong>,
+          ale i {{ members_total_count }} lidí, které tohle téma zajímá.
+        </p>
+        <div class="mt-4">
+          <a class="btn btn-lg btn-primary mb-4" href="{{ pages|docs_url('club.md')|url }}">
+            Přidej se do klubu
+          </a>
+          <div>
+            <span class="members mb-0">
+            {% for member in members|sample(10) %}
+              {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50) }}
+            {% endfor %}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
