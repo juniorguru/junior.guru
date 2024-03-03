@@ -64,6 +64,25 @@ Ne všechna témata se zatím povedlo pokrýt kapitolami v příručce, ale se v
 
 <!-- {#
 
+
+
+# Příručka pro juniory
+
+Vítej na příručce pro všechny, kteří chtějí začít s programováním. Najdeš tady rozcestník a rady, jež ti pomohou se zorientovat a díky kterým budeš vědět jak začít.
+
+-   **Je to živá stránka**, kde stále probíhají úpravy, ne nějaká hotová kniha. Kdykoliv tady může přibýt něco nového, takže není od věci se sem občas vrátit. O důležitých změnách se můžeš dovědět na [sociálních sítích](#kontakt) junior.guru nebo prostřednictvím [klubu](club.md).
+
+-   **Je zdarma pro každého**, žádná její část není zpoplatněná. Zdrojové kódy příručky jsou [veřejně na GitHubu](https://github.com/honzajavorek/junior.guru/) a veškerý zdejší text může kdokoliv použít, pokud uvede autora a výsledek vystaví pod stejnou [licencí](https://creativecommons.org/licenses/by-sa/4.0/deed.cs).
+
+-   **Příručka je financována
+
+-   **Autorem příručky je [Honza Javorek](#honza)**, stejně jako i celého junior.guru. Psaní příručky je možné jen díky financím získaným z individuálních a firemních členství v [klubu](club.md).
+
+-   **Cílem je zpřístupnit programování komukoliv**, kdo se jej bude chtít naučit. Programovat se můžeš naučit i bez vysoké školy, materiálů a kurzů je k tomu na internetu dost. Ať už to děláš pro zábavu, chceš si usnadnit nějakou činnost, nebo toužíš po kariéře v IT, příručka ti ukáže, jak na to. Ať už jsi z velkého města s širokými možnostmi nebo z odlehlé vesnice, příručka je tu pro tebe.
+
+
+
+
 Na základě reálných zkušeností mnohých začátečníků jsme v [klubu](../club.md) sestavili **osvědčenou cestu juniora**, která má deset fází. Možná existují i jiné cesty, ale tato **úspěšně zafungovala pro spoustu různých lidí**, a proto ji lze obecně doporučit.
 
 **Ujasni si, co už umíš a co je tvým cílem.** Jednak ti to pomůže uvědomit si, co tě ještě čeká a co nesmíš vynechat, jednak zjistíš, které části příručky pro tebe budou nejpřínosnější.
