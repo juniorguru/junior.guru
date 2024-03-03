@@ -1,4 +1,5 @@
 import itertools
+from collections import namedtuple
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -19,10 +20,9 @@ from juniorguru.sync.meetups import (
 )
 
 
-class StubScheduledEvent:
-    def __init__(self, name: str, creator_id: int = 123):
-        self.name = name
-        self.creator_id = creator_id
+StubScheduledEvent = namedtuple(
+    "ScheduledEvent", ["name", "creator_id"], defaults=[123]
+)
 
 
 @pytest.fixture

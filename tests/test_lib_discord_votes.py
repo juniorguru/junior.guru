@@ -1,15 +1,11 @@
+from collections import namedtuple
+
 from juniorguru.lib import discord_votes
 
 
-class StubReaction:
-    def __init__(self, emoji: str, count: int):
-        self.emoji = emoji
-        self.count = count
+StubReaction = namedtuple("Reaction", ["emoji", "count"])
 
-
-class StubEmoji:
-    def __init__(self, name: str):
-        self.name = name
+StubEmoji = namedtuple("Emoji", ["name"])
 
 
 def test_count_upvotes():

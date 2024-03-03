@@ -1,3 +1,4 @@
+from collections import namedtuple
 from datetime import date
 
 import pytest
@@ -7,16 +8,6 @@ from juniorguru.sync.core_members_discount import (
     is_recent_reminder,
     repr_members,
 )
-
-
-class StubMessage:
-    def __init__(self, created_at: date):
-        self.created_at = created_at
-
-
-class StubMember:
-    def __init__(self, display_name: str):
-        self.display_name = display_name
 
 
 @pytest.mark.parametrize(
@@ -32,9 +23,11 @@ class StubMember:
     ],
 )
 def test_is_recent_reminder(created_at: date, expected: bool):
+    today = date(2023, 8, 23)
+    StubMessage = namedtuple("Message", ["created_at"])
     message = StubMessage(created_at=created_at)
 
-    assert is_recent_reminder(message, today=date(2023, 8, 23), days=3) is expected
+    assert is_recent_reminder(message, today=today, days=3) is expected
 
 
 def test_is_recent_reminder_returns_false_when_given_no_message():
@@ -42,6 +35,7 @@ def test_is_recent_reminder_returns_false_when_given_no_message():
 
 
 def test_repr_members_sorts_by_lowercased():
+    StubMember = namedtuple("Member", ["display_name"])
     members = [
         StubMember(display_name="Bob"),
         StubMember(display_name="Alice"),

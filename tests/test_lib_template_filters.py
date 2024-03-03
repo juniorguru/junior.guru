@@ -1,3 +1,4 @@
+from collections import namedtuple
 from datetime import date, datetime
 
 import arrow
@@ -93,10 +94,7 @@ def test_sample_random():
     assert random_called is True
 
 
-class StubJob:
-    def __init__(self, id: int, is_submitted: bool):
-        self.id = id
-        self.is_submitted = is_submitted
+StubJob = namedtuple("Job", ["id", "is_submitted"])
 
 
 @pytest.mark.parametrize(

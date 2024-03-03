@@ -1,3 +1,4 @@
+from collections import namedtuple
 from operator import attrgetter
 
 from juniorguru.sync.roles import (
@@ -9,29 +10,23 @@ from juniorguru.sync.roles import (
 )
 
 
-class StubRole:
-    def __init__(self, name: str):
-        self.name = name
-
-
-class StubMember:
-    def __init__(self, id: int, display_name: str, upvotes_count: int = 0):
-        self.id = id
-        self.display_name = display_name
-        self.upvotes_count = upvotes_count
+DummyRole = namedtuple("Role", ["name"])
+DummyMember = namedtuple(
+    "Member", ["id", "display_name", "upvotes_count"], defaults=[0]
+)
 
 
 def test_repr_roles():
-    roles = [StubRole("admin"), StubRole("member"), StubRole("hero")]
+    roles = [DummyRole("admin"), DummyRole("member"), DummyRole("hero")]
 
     assert repr_roles(roles) == "['admin', 'member', 'hero']"
 
 
 def test_repr_ids():
     members = [
-        StubMember(1, "Zuzka"),
-        StubMember(2, "Honza"),
-        StubMember(3, "Ondřej"),
+        DummyMember(1, "Zuzka"),
+        DummyMember(2, "Honza"),
+        DummyMember(3, "Ondřej"),
     ]
 
     assert repr_ids(members, [1, 2]) == "['Honza', 'Zuzka']"
@@ -39,9 +34,9 @@ def test_repr_ids():
 
 def test_repr_ids_case_doesnt_matter():
     members = [
-        StubMember(1, "Zuzka"),
-        StubMember(2, "honza"),
-        StubMember(3, "ondřej"),
+        DummyMember(1, "Zuzka"),
+        DummyMember(2, "honza"),
+        DummyMember(3, "ondřej"),
     ]
 
     assert repr_ids(members, [1, 2]) == "['honza', 'Zuzka']"
@@ -49,9 +44,9 @@ def test_repr_ids_case_doesnt_matter():
 
 def test_repr_stats():
     members = [
-        StubMember(1, "Zuzka"),
-        StubMember(2, "Honza"),
-        StubMember(3, "Ondřej"),
+        DummyMember(1, "Zuzka"),
+        DummyMember(2, "Honza"),
+        DummyMember(3, "Ondřej"),
     ]
     stats = {1: 42, 2: 420}
 
@@ -60,9 +55,9 @@ def test_repr_stats():
 
 def test_calc_stats():
     members = [
-        StubMember(1, "Zuzka", 20),
-        StubMember(2, "Honza", 1),
-        StubMember(3, "Ondřej", 5),
+        DummyMember(1, "Zuzka", 20),
+        DummyMember(2, "Honza", 1),
+        DummyMember(3, "Ondřej", 5),
     ]
 
     assert calc_stats(members, attrgetter("upvotes_count"), 1) == {1: 20}
@@ -70,9 +65,9 @@ def test_calc_stats():
 
 def test_calc_stats_higher_top_limit():
     members = [
-        StubMember(1, "Zuzka", 20),
-        StubMember(2, "Honza", 1),
-        StubMember(3, "Ondřej", 5),
+        DummyMember(1, "Zuzka", 20),
+        DummyMember(2, "Honza", 1),
+        DummyMember(3, "Ondřej", 5),
     ]
 
     assert calc_stats(members, attrgetter("upvotes_count"), 2) == {1: 20, 3: 5}

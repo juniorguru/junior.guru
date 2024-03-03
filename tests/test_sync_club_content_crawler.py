@@ -1,16 +1,10 @@
 import logging
+from collections import namedtuple
 from datetime import datetime, timedelta, timezone
-from typing import Self
 
 import pytest
 
 from juniorguru.sync.club_content.crawler import get_channel_logger, get_history_after
-
-
-class StubChannel:
-    def __init__(self, id: int, parent: Self | None = None):
-        self.id = id
-        self.parent = parent
 
 
 def test_get_history_after_given_naive_datetime():
@@ -28,6 +22,7 @@ def test_get_history_after_given_timezone_aware_datetime():
 
 def test_get_channel_logger():
     logger = logging.getLogger("test_get_channel_logger")
+    StubChannel = namedtuple("Channel", ["id"])
     channel = StubChannel(1)
     channel_logger = get_channel_logger(logger, channel)
 
@@ -36,6 +31,7 @@ def test_get_channel_logger():
 
 def test_get_channel_logger_thread():
     logger = logging.getLogger("test_get_channel_logger")
+    StubChannel = namedtuple("Channel", ["id", "parent"])
     channel = StubChannel(1, None)
     thread = StubChannel(2, channel)
     channel_logger = get_channel_logger(logger, thread)
