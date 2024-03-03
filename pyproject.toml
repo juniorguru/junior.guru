@@ -55,6 +55,7 @@ apify-shared = "1.1.1"
 openai = "1.12.0"
 tenacity = "8.2.3"
 lingua-language-detector = "2.0.2"
+pygithub = "2.2.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "7.4.4"
