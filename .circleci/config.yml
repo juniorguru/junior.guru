@@ -82,10 +82,7 @@ jobs:
       - attach_workspace:
           at: "~"
       - run:
-          name: Lint
-          command: poetry run jg lint
-      - run:
-          name: Test
+          name: Lint and test
           command: poetry run jg test -v
 
   # Requires:
