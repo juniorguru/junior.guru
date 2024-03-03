@@ -446,6 +446,9 @@ Vím, že toto se nedá snadno sepsat, tak mě zajímá, jestli by byl někdo oc
 ---
 
 
+https://naucme.it/chapter/qa-08
+
+
 https://opensource.net/why-single-vendor-is-the-new-proprietary/
 
 That approach led to a lot of excesses, especially as Microsoft decided to exploit that dominant position. Openly-developed Open Source software grew in the 90s in reaction to this evil proprietary approach. In this model, software is produced as a commons by a community of organizations and individuals openly collaborating, and value is shared among the participants in the community. This is all made possible thanks to free and Open Source licenses which guarantee a number of freedoms, like the freedom to build on it without asking for permission, and the freedom to use it for any purpose, including making money.
