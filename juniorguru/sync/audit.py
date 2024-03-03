@@ -1,7 +1,7 @@
 import click
-from juniorguru.cli.sync import default_from_env, main as cli
 from github import Auth, Github
 
+from juniorguru.cli.sync import default_from_env, main as cli
 from juniorguru.lib import loggers
 
 

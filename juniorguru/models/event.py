@@ -84,7 +84,11 @@ class Event(BaseModel):
 
     @classmethod
     def list_speaking_members(cls):
-        return ClubUser.select().where(ClubUser.is_member == True).join(EventSpeaking)
+        return (
+            ClubUser.select()
+            .where(ClubUser.is_member == True)  # noqa: E712
+            .join(EventSpeaking)
+        )
 
     @classmethod
     def listing(cls):
@@ -161,7 +165,7 @@ class EventSpeaking(BaseModel):
             cls.listing(from_date, to_date)
             .switch(cls)
             .join(ClubUser)
-            .where(ClubUser.has_feminine_name == True)
+            .where(ClubUser.has_feminine_name == True)  # noqa: E712
         )
 
     @classmethod

@@ -60,36 +60,33 @@ pygithub = "2.2.0"
 [tool.poetry.group.dev.dependencies]
 pytest = "7.4.4"
 pync = "2.0.3"
-flake8 = "6.1.0"
-isort = "5.13.2"
 sqlite-utils = "3.36"
 ghp-import = "2.1.0"
 pytest-asyncio = "0.23.5"
 scour = "0.38.2"
-black = "24.2.0"
+pytest-ruff = "0.2.1"
+ruff = "0.2.1"
 
 [tool.pytest.ini_options]
-python_files = "test_*.py *_test.py test.py"
-testpaths = "."
+python_files = "test_*.py"
+testpaths = "tests"
 norecursedirs = "node_modules"
-addopts = "--ff"
+addopts = "--ff --ruff --ruff-format"
 filterwarnings = [
     "ignore:'audioop' is deprecated:DeprecationWarning",
 ]
 
-[tool.black]
-target-version = ["py311"]
-include = "\\.py$"
-exclude = """(\
-juniorguru/[^_]+_legacy|\
-node_modules\
-)"""
+[tool.ruff]
+target-version = "py311"
+extend-exclude = ["*_legacy"]
 
-[tool.isort]
-profile = "black"
-lines_after_imports = 2
-combine_as_imports = true
-known_local_folder = ["testing_utils"]
+[tool.ruff.lint]
+extend-select = ["I"]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+lines-after-imports = 2
+known-local-folder = ["testing_utils"]
 
 [build-system]
 requires = ["poetry-core>=1.5.0"]

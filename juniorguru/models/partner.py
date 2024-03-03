@@ -37,7 +37,10 @@ class Partner(BaseModel):
         return (
             ClubUser.select()
             .join(self.__class__, on=(ClubUser.coupon == self.__class__.coupon))
-            .where((ClubUser.is_member == True) & (ClubUser.coupon == self.coupon))
+            .where(
+                (ClubUser.is_member == True)  # noqa: E712
+                & (ClubUser.coupon == self.coupon)
+            )
             .order_by(ClubUser.display_name)
         )
 

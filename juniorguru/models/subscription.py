@@ -375,7 +375,7 @@ class SubscriptionActivity(BaseModel):
     def active_women_count(cls, date: date) -> int:
         return (
             cls.active_listing(date)
-            .where(cls.account_has_feminine_name == True)
+            .where(cls.account_has_feminine_name == True)  # noqa: E712
             .count()
         )
 

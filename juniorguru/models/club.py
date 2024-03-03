@@ -92,9 +92,9 @@ class ClubUser(BaseModel):
 
     @property
     def list_public_messages(self):
-        return self.list_messages.where(ClubMessage.is_private == False).order_by(
-            ClubMessage.created_at.desc()
-        )
+        return self.list_messages.where(
+            ClubMessage.is_private == False  # noqa: E712
+        ).order_by(ClubMessage.created_at.desc())
 
     @property
     def intro_thread_id(self):
@@ -187,7 +187,10 @@ class ClubUser(BaseModel):
 
     @classmethod
     def members_listing(cls, shuffle=False):
-        members = cls.listing().where(cls.is_bot == False, cls.is_member == True)
+        members = cls.listing().where(
+            cls.is_bot == False,  # noqa: E712
+            cls.is_member == True,  # noqa: E712
+        )
         if shuffle:
             members = members.order_by(fn.random())
         return members
@@ -279,15 +282,19 @@ class ClubMessage(BaseModel):
         messages = (
             cls.select()
             .where(cls.created_month == f"{date:%Y-%m}")
-            .where(cls.author_is_bot == False)
-            .where(cls.is_private == False)
+            .where(cls.author_is_bot == False)  # noqa: E712
+            .where(cls.is_private == False)  # noqa: E712
             .where(cls.channel_id.not_in(STATS_EXCLUDE_CHANNELS))
         )
         return sum(message.content_size for message in messages)
 
     @classmethod
     def listing(cls):
-        return cls.select().where(cls.is_private == False).order_by(cls.created_at)
+        return (
+            cls.select()
+            .where(cls.is_private == False)  # noqa: E712
+            .order_by(cls.created_at)
+        )
 
     @classmethod
     def pinning_listing(cls):
@@ -307,7 +314,7 @@ class ClubMessage(BaseModel):
         else:
             query = query.where(cls.channel_id == channel_id)
         if by_bot:
-            query = query.where(cls.author_is_bot == True)
+            query = query.where(cls.author_is_bot == True)  # noqa: E712
         if starting_emoji:
             query = query.where(cls.content_starting_emoji == starting_emoji)
         return query.order_by(cls.created_at)
@@ -336,7 +343,7 @@ class ClubMessage(BaseModel):
         return (
             cls.select()
             .where(
-                cls.is_private == False,
+                cls.is_private == False,  # noqa: E712
                 ClubMessage.parent_channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS),
                 cls.created_at >= since_dt,
             )
@@ -356,7 +363,7 @@ class ClubMessage(BaseModel):
                 cls.parent_channel_name,
             )
             .where(
-                cls.is_private == False,
+                cls.is_private == False,  # noqa: E712
                 ClubMessage.parent_channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS),
                 cls.created_at >= since_dt,
             )
@@ -380,7 +387,10 @@ class ClubMessage(BaseModel):
     ) -> Self | None:
         query = (
             cls.select()
-            .where(cls.author_is_bot == True, cls.channel_id == channel_id)
+            .where(
+                cls.author_is_bot == True,  # noqa: E712
+                cls.channel_id == channel_id,
+            )
             .order_by(cls.created_at.desc())
         )
         if starting_emoji:

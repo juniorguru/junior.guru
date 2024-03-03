@@ -7,19 +7,19 @@ from juniorguru.lib.locations import fetch_locations, get_region, optimize_geoco
 
 def test_locations():
     address = {"place": "Řevnice", "region": "Středočeský kraj", "country": "Česko"}
-    results = fetch_locations(["252 30 Řevnice, Česko"], geocode=lambda l: address)
+    results = fetch_locations(["252 30 Řevnice, Česko"], geocode=lambda _: address)
 
     assert results == [{"name": "Řevnice", "region": "Praha"}]
 
 
 def test_locations_remote():
-    results = fetch_locations([], geocode=lambda l: {})
+    results = fetch_locations([], geocode=lambda _: {})
 
     assert results == []
 
 
 def test_locations_no_response():
-    results = fetch_locations(["???"], geocode=lambda l: None)
+    results = fetch_locations(["???"], geocode=lambda _: None)
 
     assert results == []
 
@@ -32,7 +32,7 @@ def test_locations_multiple():
         ]
     )
     results = fetch_locations(
-        ["252 30 Řevnice, Česko", "Brno, Česko"], geocode=lambda l: next(addresses)
+        ["252 30 Řevnice, Česko", "Brno, Česko"], geocode=lambda _: next(addresses)
     )
 
     assert sorted(results, key=itemgetter("name")) == [
@@ -45,7 +45,7 @@ def test_locations_multiple_no_response():
     addresses = iter(
         [None, {"place": "Brno", "region": "Jihomoravský kraj", "country": "Česko"}]
     )
-    results = fetch_locations(["???", "Brno, Česko"], geocode=lambda l: next(addresses))
+    results = fetch_locations(["???", "Brno, Česko"], geocode=lambda _: next(addresses))
 
     assert results == [{"name": "Brno", "region": "Brno"}]
 
@@ -58,7 +58,7 @@ def test_locations_multiple_unique():
         ]
     )
     results = fetch_locations(
-        ["Plevova 1, Brno, Česko", "Brno, Česko"], geocode=lambda l: next(addresses)
+        ["Plevova 1, Brno, Česko", "Brno, Česko"], geocode=lambda _: next(addresses)
     )
 
     assert results == [{"name": "Brno", "region": "Brno"}]

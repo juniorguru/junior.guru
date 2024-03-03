@@ -147,7 +147,7 @@ def store_dm_channel(channel: DMChannel) -> None:
     )
     rows_count = (
         ClubUser.update({ClubUser.dm_channel_id: channel.id})
-        .where(ClubUser.id == member.id, ClubUser.is_member == True)
+        .where(ClubUser.id == member.id, ClubUser.is_member == True)  # noqa: E712
         .execute()
     )
     if rows_count != 1:

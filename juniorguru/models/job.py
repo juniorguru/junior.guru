@@ -318,7 +318,7 @@ class ListedJob(BaseModel):
 
     @classmethod
     def remote_listing(cls):
-        return cls.listing().where(cls.remote == True)
+        return cls.listing().where(cls.remote == True)  # noqa: E712
 
     @classmethod
     def tags_listing(cls, tags):

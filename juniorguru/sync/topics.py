@@ -77,7 +77,6 @@ KEYWORDS = {
         r"unicorn\w*": "unicornhatchery",
         r"\w*hatchery": "unicornhatchery",
         r"courser\w*": "coursera",
-        r"udemy": "udemy",
         r"udacity": "udacity",
         r"data\s*camp\w*": "datacamp",
         r"(it\s*)?step(\.org)?": "step",

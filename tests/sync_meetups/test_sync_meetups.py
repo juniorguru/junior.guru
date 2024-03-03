@@ -185,9 +185,9 @@ def test_thread_name(event: dict):
 
 
 def test_thread_name_too_long(event: dict):
-    event["name_raw"] = (
-        "Pražské Pyvo #149 Engineering Of Structured, Semi-Structured And Unstructured Data & Language Models and the Non-English Languages"
-    )
+    event[
+        "name_raw"
+    ] = "Pražské Pyvo #149 Engineering Of Structured, Semi-Structured And Unstructured Data & Language Models and the Non-English Languages"
     name = thread_name(event, limit=40)
 
     assert len(name) == 40

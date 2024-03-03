@@ -114,7 +114,7 @@ class PodcastEpisode(BaseModel):
     @classmethod
     def women_listing(cls, from_date, to_date):
         return cls.guests_listing(from_date, to_date).where(
-            cls.guest_has_feminine_name == True
+            cls.guest_has_feminine_name == True  # noqa: E712
         )
 
     @classmethod
