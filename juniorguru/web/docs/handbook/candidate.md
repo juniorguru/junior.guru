@@ -450,7 +450,7 @@ Další rady ohledně rozjíždění vlastního podnikání jsou nad rámec tét
 
 ## Příprava    <span id="preparation"></span>
 
-Jak bylo už zmíněno, [nečekej příliš dlouho](#kdy-zacit-hledat). Zkoušej to, i když si myslíš, že na to nemáš. Uč se v průběhu na základě toho, co zjistíš na [pohovorech](#pohovor). Speciálně pokud jsi žena, buď až „drzá“. **Muži jdou na pohovor i pokud mají pocit, že mají polovinu znalostí. Žena se často neodváží, dokud nevěří, že má 120 % požadovaného**. Tento problém se nazývá _[confidence gap](https://www.theatlantic.com/magazine/archive/2014/05/the-confidence-gap/359815/)_, ale [kořeny má nejspíš hlouběji než jen v malém sebevědomí](https://www.theatlantic.com/family/archive/2018/09/women-workplace-confidence-gap/570772/).
+Jak bylo už zmíněno, [nečekej příliš dlouho](#kdy-zacit-hledat). Zkoušej to, i když si myslíš, že na to nemáš. Uč se v průběhu na základě toho, co zjistíš na [pohovorech](interview.md). Speciálně pokud jsi žena, buď až „drzá“. **Muži jdou na pohovor i pokud mají pocit, že mají polovinu znalostí. Žena se často neodváží, dokud nevěří, že má 120 % požadovaného**. Tento problém se nazývá _[confidence gap](https://www.theatlantic.com/magazine/archive/2014/05/the-confidence-gap/359815/)_, ale [kořeny má nejspíš hlouběji než jen v malém sebevědomí](https://www.theatlantic.com/family/archive/2018/09/women-workplace-confidence-gap/570772/).
 
 Nepodceňuj se, v inzerátech je ideál, který ti má spíše ukázat kam pozice směřuje. Mnohdy ani sama firma nemá úplně jasno v tom, koho přesně chce, a rozhoduje se až o konkrétních lidech. **Jestliže je v inzerátu něco, co toužíš jednou dělat, zkus to i přesto, že to ještě neumíš.**
 
