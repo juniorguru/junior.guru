@@ -902,7 +902,7 @@ Vývoj počtu sledujících na profilech na relevantních sociálních sítích 
                 'label': 'Mastodon',
                 'data': charts.followers_breakdown.pop('mastodon'),
                 'borderColor': '#563acc',
-                'borderWidth': 2,
+                'borderWidth': 1,
             },
             {
                 'label': 'newsletter',
