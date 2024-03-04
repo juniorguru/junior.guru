@@ -1,9 +1,11 @@
+from functools import partial
 import re
 from datetime import date
 from pathlib import Path
 from urllib.parse import urlencode, urlparse
 
 import click
+from github import Github, Auth
 import requests
 from lxml import html
 from playwright.sync_api import TimeoutError, sync_playwright
@@ -30,6 +32,10 @@ LINKEDIN_PERSONAL_SEARCH_URL = "https://duckduckgo.com/?hps=1&q=honza+javorek&ia
 
 LINKEDIN_PERSONAL_URL = "https://cz.linkedin.com/in/honzajavorek"
 
+GITHUB_USERNAME = "juniorguru"
+
+GITHUB_PERSONAL_USERNAME = "honzajavorek"
+
 
 @cli.sync_command()
 @click.option(
@@ -39,8 +45,11 @@ LINKEDIN_PERSONAL_URL = "https://cz.linkedin.com/in/honzajavorek"
 )
 @click.option("--ecomail-api-key", default=default_from_env("ECOMAIL_API_KEY"))
 @click.option("--ecomail-list", "ecomail_list_id", default=1, type=int)
+@click.option(
+    "--github-api-key", default=default_from_env("GITHUB_API_KEY"), required=True
+)
 @db.connection_context()
-def main(history_path: Path, ecomail_api_key: str, ecomail_list_id: int):
+def main(history_path: Path, ecomail_api_key: str, ecomail_list_id: int, github_api_key: str):
     logger.info("Preparing database")
     Followers.drop_table()
     Followers.create_table()
@@ -71,6 +80,8 @@ def main(history_path: Path, ecomail_api_key: str, ecomail_list_id: int):
         "linkedin": scrape_linkedin,
         "linkedin_personal": scrape_linkedin_personal,
         "mastodon": scrape_mastodon,
+        "github": partial(scrape_github, api_key=github_api_key),
+        "github_personal": partial(scrape_github_personal, api_key=github_api_key),
     }
     for name, scrape in scrapers.items():
         logger.info(f"Scraping {name!r}")
@@ -172,7 +183,7 @@ def scrape_linkedin_personal():
     ):
         return int(match.group(1))
 
-    logger.error(f"Scraping failed!\n\n{response_text}")
+    logger.error(f"Scraping {page.url} failed!\n\n{response_text}")
     return None
 
 
@@ -201,3 +212,15 @@ def scrape_mastodon():
             details = f"\n\n{e.response.text}" if getattr(e, "response", None) else ""
             logger.exception(f"Scraping failed!{details}")
     return None
+
+
+def scrape_github_personal(api_key: str):
+    logger.info("Scraping personal GitHub")
+    client = Github(auth=Auth.Token(api_key))
+    return client.get_user(login=GITHUB_PERSONAL_USERNAME).followers
+
+
+def scrape_github(api_key: str):
+    logger.info("Scraping GitHub")
+    client = Github(auth=Auth.Token(api_key))
+    return client.get_organization(login=GITHUB_USERNAME).followers

@@ -869,6 +869,18 @@ Vývoj počtu sledujících na profilech na relevantních sociálních sítích 
         'labels': charts.followers_breakdown_labels,
         'datasets': [
             {
+                'label': 'osobní GitHub',
+                'data': charts.followers_breakdown.pop('github_personal'),
+                'borderColor': '#343434',
+                'borderWidth': 2,
+            },
+            {
+                'label': 'GitHub',
+                'data': charts.followers_breakdown.pop('github'),
+                'borderColor': '#a9a9a9',
+                'borderWidth': 2,
+            },
+            {
                 'label': 'osobní LinkedIn',
                 'data': charts.followers_breakdown.pop('linkedin_personal'),
                 'borderColor': '#1755d1',
