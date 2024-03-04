@@ -85,6 +85,7 @@ KEYWORDS = {
         r"tvrd[íi]kov\w+": "lucietvrdikova",
         r"umimpython": "umimpython",
         r"jet\s*brains\s*academy": "jetbrains",
+        r"robot?\s*dreams?": "robotdreams",
     }.items()
 }
 
