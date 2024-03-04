@@ -57,6 +57,22 @@
 #    a poslat prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 
+- id: 42
+  title: "(situace na trhu, bude upřesněno)"
+  date: "2024-05-28"
+  description: |
+    (bude upřesněno)
+  avatar_path: avatars-participants/tomas-ervin-dombrovsky.jpg
+  bio_name: Tomáš Ervín Dombrovský
+  bio_title: Datový analytik v Alma Career
+  bio: |
+    (bude upřesněno)
+  bio_links:
+    - https://www.linkedin.com/in/tomas-ervin-dombrovsky/
+  logo_path: logos/almacareer.svg
+  speakers:
+
+
 - id: 41
   title: "„Agile is dead!“ …nebo ne?"
   date: "2024-03-12"
