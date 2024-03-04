@@ -101,13 +101,9 @@ $stage-arrow-height: $stage-arrow-width * .5;
 }
 
 .stage-card-pages {
+  @extend .column-gap-3;
   display: flex;
   flex-wrap: wrap;
-}
-
-.stage-card-pages a {
-  margin-right: $spacer;
-  white-space: nowrap;
 }
 
 .stage-card-todo-pages {
