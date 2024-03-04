@@ -1,12 +1,12 @@
-from functools import partial
 import re
 from datetime import date
+from functools import partial
 from pathlib import Path
 from urllib.parse import urlencode, urlparse
 
 import click
-from github import Github, Auth
 import requests
+from github import Auth, Github
 from lxml import html
 from playwright.sync_api import TimeoutError, sync_playwright
 
@@ -49,7 +49,9 @@ GITHUB_PERSONAL_USERNAME = "honzajavorek"
     "--github-api-key", default=default_from_env("GITHUB_API_KEY"), required=True
 )
 @db.connection_context()
-def main(history_path: Path, ecomail_api_key: str, ecomail_list_id: int, github_api_key: str):
+def main(
+    history_path: Path, ecomail_api_key: str, ecomail_list_id: int, github_api_key: str
+):
     logger.info("Preparing database")
     Followers.drop_table()
     Followers.create_table()
