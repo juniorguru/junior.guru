@@ -55,6 +55,12 @@ def salary(transaction: dict, secrets: dict) -> TransactionsCategory:
 
 
 @category_rule
+def cashflow(transaction: dict, secrets: dict) -> TransactionsCategory:
+    if "keš na cashflow" in transaction["message"]:
+        return TransactionsCategory.IGNORE
+
+
+@category_rule
 def sideline(transaction: dict, secrets: dict) -> TransactionsCategory:
     if transaction["variable_symbol"] == "15":
         return TransactionsCategory.IGNORE
