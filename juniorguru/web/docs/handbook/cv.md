@@ -497,4 +497,7 @@ V takovém případě používáš svou možnost chovat se příznakově (a psá
 ---
 
 
+Lenka: Nedávat si do CV atd slovo junior ani na LinkedIn, proste napsat umím to a to a podložit to tím a tím a nechat na druhé straně, at si zhodnoti senioritu
+
+
 #} -->

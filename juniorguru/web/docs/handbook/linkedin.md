@@ -277,4 +277,7 @@ Dneska jsem zjistil, že <@672433063690633216> před víc jak měsícem napsal t
 ---
 
 
+Lenka: Nedávat si do CV atd slovo junior ani na LinkedIn, proste napsat umím to a to a podložit to tím a tím a nechat na druhé straně, at si zhodnoti senioritu
+
+
 #} -->
