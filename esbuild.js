@@ -1,31 +1,31 @@
-import * as esbuild from 'esbuild'
-import { sassPlugin } from 'esbuild-sass-plugin';
+import * as esbuild from "esbuild";
+import { sassPlugin } from "esbuild-sass-plugin";
 
 const outdir = process.argv[2];
 if (!outdir) {
-  console.error('Missing output directory argument');
+  console.error("Missing output directory argument");
   process.exit(1);
 }
 
 await esbuild.build({
   entryPoints: [
     "juniorguru/js/index.js",
-    'juniorguru/css/index.scss',
-    'juniorguru/css_legacy/index.scss',
+    "juniorguru/css/index.scss",
+    "juniorguru/css_legacy/index.scss",
   ],
   bundle: true,
   minify: true,
   sourcemap: true,
   target: "es2020",
   loader: {
-    '.svg': 'copy',
-    '.jpg': 'copy',
-    '.png': 'copy',
-    '.webp': 'copy',
-    '.woff': 'copy',
-    '.woff2': 'copy',
+    ".svg": "copy",
+    ".jpg": "copy",
+    ".png": "copy",
+    ".webp": "copy",
+    ".woff": "copy",
+    ".woff2": "copy",
   },
-  assetNames: 'assets/[name]',
+  assetNames: "assets/[name]",
   plugins: [
     sassPlugin({
       // async transform(source) {
@@ -35,4 +35,4 @@ await esbuild.build({
     }),
   ],
   outdir,
-})
+});
