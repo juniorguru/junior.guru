@@ -76,13 +76,34 @@ class MemberfulAPI:
             collection_name = match.group("collection_name")
         else:
             raise ValueError("Could not parse collection name")
+
+        declared_count = None
+        nodes_count = 0
         for result in self._query(
             query,
             lambda result: result[collection_name]["pageInfo"],
             variable_values=variable_values,
         ):
+            # save total count so we can later check if we got all the nodes
+            count = result[collection_name]["totalCount"]
+            if declared_count is None:
+                logger.debug(f"Expecting {count} nodes")
+                declared_count = count
+            if declared_count != count:
+                raise ValueError(
+                    f"Memberful API suddenly declares different total count: {count} (≠ {declared_count})"
+                )
+
+            # yield and count nodes
             for edge in result[collection_name]["edges"]:
                 yield edge["node"]
+                nodes_count += 1
+
+        # check if we got all the nodes
+        if declared_count != nodes_count:
+            raise ValueError(
+                f"Memberful API returned {nodes_count} nodes instead of {declared_count}"
+            )
 
     def _query(self, query: str, get_page_info: Callable, variable_values: dict = None):
         variable_values = variable_values or {}
