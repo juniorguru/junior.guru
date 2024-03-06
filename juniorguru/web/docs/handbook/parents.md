@@ -4,16 +4,44 @@ emoji: 👶
 stages: [thinking, preparing, applying]
 description: TODO
 template: main_handbook.html
-noindex: true
 ---
 
-{% from 'macros.html' import note with context %}
+{% from 'macros.html' import blockquote, blockquote_avatar, blockquote_toxic, lead, link_card, stories_list, video_card_engeto with context %}
 
 # Rodiče v IT
 
 {% call note(standout=True) %}
   {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
+
+
+## Programování pro děti    <span id="kids"></span>
+
+I když je v názvu tohoto webu slovo _junior_, není vhodný k tomu, aby se podle něj učily programovat děti. Slovem junior se označují začátečníci na pracovním trhu a tento web ukazuje cestu k programování a kariéře v IT dospělým, případně dospívajícím lidem. Pokud chceš programovat s dětmi a trénovat tak jejich [informatické myšlení](https://imysleni.cz/informaticke-mysleni/co-je-informaticke-mysleni), následující odkazy tě nasměrují na stránky, které jsou pro ten účel vhodnější.
+
+**Programování pro děti se odehrává v barevném prostředí, kde jde s dětmi vytvářet zábavné příběhy, hry, animace.** Rozhodně by nemělo spočívat v psaní písmenek na černou obrazovku nebo v práci s Wordem.
+
+<div class="link-cards">
+  {{ link_card(
+    'Code.org',
+    'https://code.org/',
+    'Programování, které zvládne každý rodič, kroužek, družina.'
+  ) }}
+
+  {{ link_card(
+    'ScratchJr',
+    'https://www.scratchjr.org/',
+    'V mobilu nebo na tabletu, pro nejmenší děti.'
+  ) }}
+
+  {{ link_card(
+    'Scratch',
+    'https://scratch.mit.edu/',
+    'Vytvoř hru nebo příběh a sdílej je s kamarády.'
+  ) }}
+</div>
+
+Pokud tě programování pro děti začně bavit fakt hodně, můžeš se inspirovat u [Ivy a Martina](https://cz.pycon.org/2018/programme/detail/talk/13/) nebo u [Luboše](https://blog.zvestov.cz/tag/krou%C5%BEek-programov%C3%A1n%C3%AD/) a **zkusit něco zorganizovat i pro děti z okolí**. Potom by se ti mohla hodit [příručka pro pedagogy a rodiče od Mirka Suchého](https://github.com/xsuchy/programovani_pro_deti/#readme).
 
 
 <!-- {#

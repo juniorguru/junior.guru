@@ -4,7 +4,7 @@ description: Máš přednášet v klubu junior.guru? Tady najdeš všechno co po
 template: main.html
 ---
 
-{% from 'macros.html' import note, figure, lead with context %}
+{% from 'macros.html' import figure, lead with context %}
 
 # Pro přednášející
 
