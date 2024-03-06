@@ -48,6 +48,7 @@ def main(context):
     if context.invoked_subcommand:
         return
     context.invoke(format_python)
+    context.invoke(format_jinja)
     context.invoke(optimize_avatars)
     context.invoke(optimize_svg)
 
@@ -62,7 +63,8 @@ def format_python():
 
 
 @main.command()
-def unused_macros():
+def format_jinja():
+    # remove unused imports
     cwd = Path.cwd()
     web_dir = Path("juniorguru/web/").resolve()
     paths = itertools.chain(web_dir.rglob("*.jinja"), web_dir.rglob("*.md"))
@@ -162,7 +164,7 @@ def replace_jinja_imports(markup: str, names: Iterable[str]) -> str:
         if len(matches) > 1:
             raise ValueError("Multiple Jinja imports found")
         match = matches[0]
-        old_names = match.group("names")
+        old_names = match.group("names").strip()
         new_names = ", ".join(sorted(names))
         if old_names.endswith("with context"):
             new_names += " with context"
