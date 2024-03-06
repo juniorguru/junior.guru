@@ -7,7 +7,7 @@ description: "Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat ales
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, lead, link_card, links_note, note with context %}
+{% from 'macros.html' import blockquote_avatar, lead, link_card, links_note with context %}
 
 
 # Získej praxi v programování

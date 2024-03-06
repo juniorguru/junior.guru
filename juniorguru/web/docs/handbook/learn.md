@@ -7,7 +7,7 @@ description: Jak začít programovat? Zde najdeš pečlivě nachystané jen to, 
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, lead, link_card, links_note, video_card_engeto, note with context %}
+{% from 'macros.html' import blockquote_avatar, lead, link_card, links_note, video_card_engeto with context %}
 
 
 # Nauč se základy programování

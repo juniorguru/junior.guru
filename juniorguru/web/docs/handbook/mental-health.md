@@ -6,7 +6,7 @@ description: Cesta do IT může být náročná životní změna. Vysoké náro
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import guarantor, lead, note, video_card, link_card, md with context %}
+{% from 'macros.html' import guarantor, lead, link_card, video_card with context %}
 
 # Psychika na cestě do IT
 

@@ -6,7 +6,7 @@ description: TODO
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, lead, stories_list, video_card_engeto with context %}
+{% from 'macros.html' import blockquote_avatar, stories_list, video_card_engeto with context %}
 
 # Mýty o programování
 

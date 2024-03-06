@@ -6,7 +6,7 @@ description: TODO
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote, blockquote_avatar, blockquote_toxic, lead, link_card, stories_list, video_card_engeto with context %}
+{% from 'macros.html' import link_card, note with context %}
 
 # Rodiče v IT
 

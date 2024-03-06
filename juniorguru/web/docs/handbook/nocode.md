@@ -6,7 +6,7 @@ description: TODO
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import lead, link_card with context %}
+{% from 'macros.html' import link_card with context %}
 
 # Jde to i „bez kódu“
 

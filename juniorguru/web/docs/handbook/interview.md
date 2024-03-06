@@ -6,7 +6,7 @@ description: Jaké otázky ti nejspíš položí u pohovoru na pozici programát
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import lead, blockquote_avatar, blockquote, link_card, note with context %}
+{% from 'macros.html' import blockquote, blockquote_avatar, link_card, note with context %}
 
 # Pohovor
 

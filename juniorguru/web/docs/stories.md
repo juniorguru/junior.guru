@@ -3,7 +3,7 @@ title: Inspirativní příběhy
 description: Příběhy těch, kdo se rekvalifikovali do IT, nebo jim nějak programování pomáhá
 ---
 
-{% from 'macros.html' import lead, link_card, blockquote_avatar, news_card, note with context %}
+{% from 'macros.html' import blockquote_avatar, lead, link_card, news_card with context %}
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">

@@ -6,7 +6,7 @@ description: Proč by měl mít každý junior v IT profil na síti LinkedIn? J
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import lead, note, blockquote_avatar with context %}
+{% from 'macros.html' import blockquote_avatar, note with context %}
 
 # Profil na LinkedIn
 
