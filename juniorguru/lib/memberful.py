@@ -120,7 +120,7 @@ class MemberfulAPI:
             else:
                 cursor = None
 
-    @cache(expire=timedelta(days=1), ignore=(0,), tag="memberful-api")
+    # TODO @cache(expire=timedelta(days=1), ignore=(0,), tag="memberful-api")
     def _execute_query(self, query: str, variable_values: dict) -> dict:
         logger.debug(
             f"Querying Memberful API, variable values: {json.dumps(variable_values)}"
