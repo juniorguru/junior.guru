@@ -49,6 +49,7 @@ def main(context):
         return
     context.invoke(format_python)
     context.invoke(format_jinja)
+    context.invoke(format_web)
     context.invoke(optimize_avatars)
     context.invoke(optimize_svg)
 
@@ -79,7 +80,7 @@ def format_web():
             check=True,
         )
         logger.info("Formatting code by Prettier")
-        # subprocess.run(["prettier", "--write", "juniorguru/web"], check=True)
+        subprocess.run(["npx", "prettier", "--write", "."], check=True)
     except subprocess.CalledProcessError:
         raise click.Abort()
 
