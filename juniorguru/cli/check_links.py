@@ -48,6 +48,7 @@ EXCLUDE_REASONS = [
         r"^BLC_UNKNOWN$",  # crawling protection?
         r"^ERRNO_EPROTO$",  # Czech TV website ¯\_(ツ)_/¯
         r"^ERRNO_ENOTFOUND$",  # crawling protection? can't even find the domain name
+        r"^HTTP_418$",  # Veltrusky, lol
         r"^HTTP_999$",  # LinkedIn crawling protection
         r"^HTTP_429$",  # Twitter crawling protection, also https://github.com/stevenvachon/broken-link-checker/issues/198
         r"^HTTP_5\d\d$",  # server-side problem, can't do anything about that
