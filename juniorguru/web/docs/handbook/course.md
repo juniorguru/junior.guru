@@ -11,7 +11,7 @@ template: main_handbook.html
 # Jak vybírat kurz
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
   Mezitím si můžeš přečíst [Jak si vybrat IT kurz?](https://lucietvrdikova.cz/nahlednete-za-oponu-jak-si-vybrat-it-kurz/) od Lucie Tvrdíkové, což je zatím nejlepší popis téhle problematiky, ačkoliv ne 100% nezávislý.
 {% endcall %}
 
@@ -22,7 +22,7 @@ template: main_handbook.html
 <!-- projekt -->
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 ## Potřebuješ (další) kurz?
@@ -30,13 +30,13 @@ template: main_handbook.html
 <!-- tutorial hell -->
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 ## Jaký kurz je vhodný pro tebe?
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 ## Typy kurzů
@@ -44,19 +44,19 @@ template: main_handbook.html
 ### Bootcamp
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 ### Prezenční výuka
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 ### Online výuka
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 ### Samostudium
@@ -66,25 +66,25 @@ template: main_handbook.html
 <!-- nedelaji chyby na obrazovce -->
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 ### Jednodenní workshopy
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 ### Mentoring
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 ### Školení
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 ### Certifikace
@@ -92,7 +92,7 @@ template: main_handbook.html
 <!-- certifikát vs certifikace -->
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 ## Za peníze nebo zdarma?
@@ -100,7 +100,7 @@ template: main_handbook.html
 <!-- Přednášky vysokých škol -->
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 ## Proplacení Úřadem práce
@@ -108,13 +108,13 @@ template: main_handbook.html
 ### Akreditované rekvalifikační kurzy
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 ### Jsem v kurzu
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 ## Jak poznat kvalitu
@@ -124,19 +124,19 @@ template: main_handbook.html
 <!-- Income Share Agreement -->
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 ### Materiály
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 ### Příběhy absolventů
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 ### Certifikáty, osvědčení, diplomy
@@ -144,13 +144,13 @@ template: main_handbook.html
 <!-- certifikát vs certifikace -->
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 ### Psychotesty
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto část Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 

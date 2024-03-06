@@ -12,7 +12,7 @@ noindex: true
 # Studium informatiky
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto stránku Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 

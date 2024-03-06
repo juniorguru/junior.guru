@@ -11,7 +11,8 @@ template: main_handbook.html
 # Profil na LinkedIn
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto stránku Honza právě připravuje. Brzy tady něco bude. Mezitím si můžeš přečíst o tom, jak si vyladit [životopis](cv.md).
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
+  Mezitím si můžeš přečíst o tom, jak si vyladit [životopis](cv.md).
 {% endcall %}
 
 

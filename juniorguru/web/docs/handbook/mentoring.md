@@ -12,7 +12,7 @@ noindex: true
 # Mentoring
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto stránku Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 
@@ -85,13 +85,13 @@ https://pyvec.slack.com/archives/C1MAJMWTU/p1697534662660139
 
 --- https://discord.com/channels/769966886598737931/769966887055392768/1210520377952829440
 > You can ask stupid questions of ChatGPT anytime you like and it can help guide you through to the right answer.
-> 
+>
 > ...
-> 
+>
 > I've had real life teaching assistants who super smart, really great, help you with a bunch of things and on a few things they're stubbornly wrong.
-> 
+>
 > If you want to get good at learning, one of the things you have to do is you have to be able to consult multiple sources and have a sort of sceptical eye.
-> 
+>
 > Be aware that there is no teacher on earth who knows everything and never makes any mistakes.
 https://simonwillison.net/2024/Jan/17/oxide-and-friends/#llms-for-learning
 ---

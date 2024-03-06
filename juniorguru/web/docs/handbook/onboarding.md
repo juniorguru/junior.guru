@@ -12,7 +12,7 @@ noindex: true
 # Zaučování
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto stránku Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 
@@ -623,15 +623,15 @@ Hezký:
 
 --- https://discord.com/channels/769966886598737931/769966887055392768/1213068879467651114
 > Now please don’t misunderstand me: when I say it’s “intensely social,” I don’t mean that you have to be an extroverted social butterfly.
-> 
+>
 > You can be the world’s biggest introvert and make great software.
-> 
+>
 > You can be socially clumsy (I am!) and make great software.
-> 
+>
 > You can be autistic and make great software.
-> 
+>
 > You can be chatty and charming, or silly, or dry and serious, or linear, or chaotic, or or or…and make great software.
-> 
+>
 > What you can’t be is misanthropic. When you write software, you are in relationship with other people…
 ---
 

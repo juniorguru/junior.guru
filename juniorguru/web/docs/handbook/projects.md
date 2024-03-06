@@ -12,7 +12,7 @@ noindex: true
 # Projekty
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto stránku Honza právě připravuje. Brzy tady něco bude.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 
@@ -388,10 +388,10 @@ https://www.youtube.com/watch?v=5nY_cy8zcO4
 
 
 --- https://discord.com/channels/769966886598737931/1076121659976720494/1212283617808486411
-Kdo obcas koukne na muj github, tak si muze vsimnout, ze tam pribyvaji ruzne casti kodu, nove tridy, metody a tak. 
-S <@708265650619154521> jsme udelali ohromny pokrok (alespon z me strany) a navic se na tom hodne ucim. Velky plus je to, ze mi Dale pomaha hodne 🙂 
-Jde to dobrym smerem, momentalne pracujeme na vyberu hry. Je to trochu tvrdsi orisek pro me, ale na druhou stranu uz vim +- co a jak. Chybi mi jeste ta zkusenost, kterou ma Dale. 
-Dale mi vcera odpoledne poslal zajimavou a velmi motivujici zpravu, cituji: ,,Neboj se experimentovat, neboj se 
+Kdo obcas koukne na muj github, tak si muze vsimnout, ze tam pribyvaji ruzne casti kodu, nove tridy, metody a tak.
+S <@708265650619154521> jsme udelali ohromny pokrok (alespon z me strany) a navic se na tom hodne ucim. Velky plus je to, ze mi Dale pomaha hodne 🙂
+Jde to dobrym smerem, momentalne pracujeme na vyberu hry. Je to trochu tvrdsi orisek pro me, ale na druhou stranu uz vim +- co a jak. Chybi mi jeste ta zkusenost, kterou ma Dale.
+Dale mi vcera odpoledne poslal zajimavou a velmi motivujici zpravu, cituji: ,,Neboj se experimentovat, neboj se
 udelat rozhodnuti, vzdycky to muzes prepsat, zvykej si na to. Udelat "spravne" rozhodnuti na zacatku je temer nemozne.”
 
 Toto me hodne namotivovalo 🙂

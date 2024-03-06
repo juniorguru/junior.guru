@@ -81,7 +81,7 @@ Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. **Žádná o
 </div>
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tuto stránku Honza právě přepisuje. Brzy tady bude jiný text, lepší, voňavější, nápomocnější.
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
 
