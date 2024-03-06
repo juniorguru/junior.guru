@@ -67,7 +67,9 @@ def format_jinja():
     # remove unused imports
     cwd = Path.cwd()
     web_dir = Path("juniorguru/web/").resolve()
-    paths = itertools.chain(web_dir.rglob("*.jinja"), web_dir.rglob("*.md"))
+    paths = itertools.chain(
+        web_dir.rglob("*.jinja"), web_dir.rglob("*.md"), web_dir.rglob("*.html")
+    )
     for path in paths:
         logger.info(path.relative_to(cwd))
         markup = path.read_text()
