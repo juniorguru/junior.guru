@@ -7,7 +7,7 @@ description: "Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat ales
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, lead, link_card, links_note with context %}
+{% from 'macros.html' import blockquote_avatar, lead, link_card with context %}
 
 
 # Získej praxi v programování
@@ -58,8 +58,6 @@ template: main_handbook.html
     badge_text='Pro matematiky',
   ) }}
 </div>
-
-{{ links_note() }}
 
 
 ## Najdi si projekt    <span id="projects"></span>
@@ -262,8 +260,6 @@ Začátky s open source nejsou přímočaré. Většinou na něm lidé pracují 
     'Kontaktuj někoho z těch, kdo se sami nabízí zaučovat nováčky na OSS projektech.'
   ) }}
 </div>
-
-{{ links_note() }}
 
 
 ## Rozšiřuj si znalosti    <span id="skills"></span>

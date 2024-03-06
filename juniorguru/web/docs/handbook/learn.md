@@ -7,7 +7,7 @@ description: Jak začít programovat? Zde najdeš pečlivě nachystané jen to, 
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, lead, link_card, links_note, video_card_engeto with context %}
+{% from 'macros.html' import blockquote_avatar, lead, link_card, video_card_engeto with context %}
 
 
 # Nauč se základy programování
@@ -165,59 +165,6 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
     'Nejlepší kniha do startu. Nech nudnou práci dělat počítač!',
     badge_icon='book',
     badge_text='Kniha',
-  ) }}
-</div>
-
-{{ links_note() }}
-
-
-## Dámy mají přednost    <span id="ladies"></span>
-
-Žen je v IT málo — v Evropských státech je to mezi 10 až 30 %. [Česko je na tom se svými 10 % hůř než Turecko](https://www.ceskovdatech.cz/clanek/128-neni-ajtak-jako-ajtak/), takže existují aktivity, které se snaží ženám cestu do IT usnadnit.
-
-{% call blockquote_avatar(
-  'Po několika kurzech programování jsem si uvědomila, že mě to baví víc než laboratoř. Šlo to dělat kdykoliv a kdekoliv, v noci, z hřiště, během kojení…',
-  'lenka-segura.jpg',
-  'Lenka Segura',
-) %}
-  Lenka Segura v [rozhovoru pro CyberMagnolia](https://cybermagnolia.com/blog/lenka-segura-interview/), bývalá agrochemička
-{% endcall %}
-
-<div class="link-cards">
-  {{ link_card(
-    'PyLadies',
-    'https://pyladies.cz',
-    'Komunitní půlroční kurzy programování a navazující workshopy.'
-  ) }}
-
-  {{ link_card(
-    'Czechitas',
-    'https://www.czechitas.cz',
-    'Česká neziskovka otevírající IT ženám skrze workshopy, kurzy a další akce.'
-  ) }}
-
-  {{ link_card(
-    'Aj Ty v IT',
-    'https://www.ajtyvit.sk',
-    'Slovenská neziskovka otevírající IT ženám skrze workshopy, kurzy a další akce.'
-  ) }}
-
-  {{ link_card(
-    'ReactGirls',
-    'https://reactgirls.com/',
-    'Komunitní jednodenní workshop tvorby webu v JavaScriptu.'
-  ) }}
-
-  {{ link_card(
-    'Django Girls',
-    'https://djangogirls.org/',
-    'Komunitní jednorázový startovací workshop tvorby webu v Pythonu.'
-  ) }}
-
-  {{ link_card(
-    'Rails Girls',
-    'https://railsgirls.com/',
-    'Komunitní jednorázový startovací workshop tvorby webu v Ruby.'
   ) }}
 </div>
 

@@ -2,18 +2,73 @@
 title: Ženy v IT
 emoji: 👩
 stages: [thinking, preparing, applying]
-description: TODO
+description: Je IT pro ženy? Existují vůbec nějaké programátorky? Jak do oboru prorazit jako žena? Co očekávat? A co ti může na cestě pomoci?
 template: main_handbook.html
-noindex: true
 ---
 
-{% from 'macros.html' import note with context %}
+{% from 'macros.html' import lead, blockquote_avatar, link_card, note with context %}
 
-# Ženy v IT
+# Ženy a kariéra v IT
+
+{% call lead() %}
+Je IT pro ženy?
+Existují vůbec nějaké programátorky?
+Jak do oboru prorazit jako žena?
+Co očekávat?
+A co ti může na cestě pomoci?
+{% endcall %}
 
 {% call note(standout=True) %}
   {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
+
+Žen je v IT málo — v Evropských státech je to mezi 10 až 30 %. [Česko je na tom se svými 10 % hůř než Turecko](https://www.ceskovdatech.cz/clanek/128-neni-ajtak-jako-ajtak/), takže existují aktivity, které se snaží ženám cestu do IT usnadnit.
+
+{% call blockquote_avatar(
+  'Po několika kurzech programování jsem si uvědomila, že mě to baví víc než laboratoř. Šlo to dělat kdykoliv a kdekoliv, v noci, z hřiště, během kojení…',
+  'lenka-segura.jpg',
+  'Lenka Segura',
+) %}
+  Lenka Segura v [rozhovoru pro CyberMagnolia](https://cybermagnolia.com/blog/lenka-segura-interview/), bývalá agrochemička
+{% endcall %}
+
+<div class="link-cards">
+  {{ link_card(
+    'PyLadies',
+    'https://pyladies.cz',
+    'Komunitní půlroční kurzy programování a navazující workshopy.'
+  ) }}
+
+  {{ link_card(
+    'Czechitas',
+    'https://www.czechitas.cz',
+    'Česká neziskovka otevírající IT ženám skrze workshopy, kurzy a další akce.'
+  ) }}
+
+  {{ link_card(
+    'Aj Ty v IT',
+    'https://www.ajtyvit.sk',
+    'Slovenská neziskovka otevírající IT ženám skrze workshopy, kurzy a další akce.'
+  ) }}
+
+  {{ link_card(
+    'ReactGirls',
+    'https://reactgirls.com/',
+    'Komunitní jednodenní workshop tvorby webu v JavaScriptu.'
+  ) }}
+
+  {{ link_card(
+    'Django Girls',
+    'https://djangogirls.org/',
+    'Komunitní jednorázový startovací workshop tvorby webu v Pythonu.'
+  ) }}
+
+  {{ link_card(
+    'Rails Girls',
+    'https://railsgirls.com/',
+    'Komunitní jednorázový startovací workshop tvorby webu v Ruby.'
+  ) }}
+</div>
 
 
 <!-- {#
