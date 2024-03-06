@@ -56,7 +56,9 @@ def main(context):
 @main.command()
 def format_python():
     try:
+        logger.info("Fixing Python code")
         subprocess.run(["ruff", "check", "--fix"], check=True)
+        logger.info("Formatting Python code")
         subprocess.run(["ruff", "format"], check=True)
     except subprocess.CalledProcessError:
         raise click.Abort()
@@ -64,14 +66,14 @@ def format_python():
 
 @main.command()
 def format_jinja():
-    # remove unused imports
+    logger.info("Removing unused Jinja imports")
     cwd = Path.cwd()
     web_dir = Path("juniorguru/web/").resolve()
     paths = itertools.chain(
         web_dir.rglob("*.jinja"), web_dir.rglob("*.md"), web_dir.rglob("*.html")
     )
     for path in paths:
-        logger.info(path.relative_to(cwd))
+        logger.debug(path.relative_to(cwd))
         markup = path.read_text()
         imports = get_jinja_imports(markup)
         calls = get_jinja_calls(markup)
@@ -84,6 +86,7 @@ def format_jinja():
 @main.command()
 @click.option("--size", "size_px", default=500, type=int)
 def optimize_avatars(size_px):
+    logger.info("Optimizing avatars")
     images_dir = Path("juniorguru/images")
     paths = itertools.chain.from_iterable(
         avatars_dir.rglob("*.jpg") for avatars_dir in images_dir.glob("avatars-*")
@@ -111,6 +114,7 @@ def optimize_avatars(size_px):
 
 @main.command()
 def optimize_svg():
+    logger.info("Optimizing SVGs")
     images_dir = Path("juniorguru/images")
     paths = images_dir.rglob("*.svg")
     for path in paths:
