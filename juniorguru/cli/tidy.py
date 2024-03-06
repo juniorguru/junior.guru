@@ -5,7 +5,6 @@ import subprocess
 from io import BytesIO
 from pathlib import Path
 from typing import Iterable
-from arrow import get
 
 import click
 from PIL import Image
