@@ -1143,4 +1143,7 @@ Finally, what sense does it make today not to use LLMs for programming? Asking L
 http://antirez.com/news/140
 
 
+https://twitter.com/kondrej/status/1535586323461033984
+
+
 #} -->

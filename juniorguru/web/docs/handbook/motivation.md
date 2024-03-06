@@ -100,7 +100,7 @@ IT samozřejmě neexistuje ve vzduchoprázdnu a ostatní obory potřebuje. Vyrá
 
 Snad není žádný jiný profesionální obor vyučovaný na vysokých školách, který je pro samouky stejně přístupný jako IT. Všechno ohledně programování si můžeš nastudovat na internetu a vždy se najde někdo, kdo ti rád poradí. Do chirurgie nebo architektury se takto dostat nelze, i když budeš sebevětší nadšenec. Získat první práci v IT oproti tomu samostudiem jde. Není to jednoduché, ale jde to.
 
-Je ovšem důležité počítat s tím, že **příprava ti může zabrat i dva roky učení a praktických cvičení, a že bude chvíli trvat, než dosáhneš na nadstandardní výdělky.** Rekvalifikace na programování je velký krok, který vyžaduje hodně času, úsilí a odhodlání. Nováčci často projdou úvodními kurzy a pak zjistí, že sehnat první práci vůbec není tak snadné. Místo dobrých rad se jim dostane [nejrůznějších mýtů](#myty-o-programovani), takže se na vypsané nabídky hlásí nepřipravení a s nerealistickými očekáváními.
+Je ovšem důležité počítat s tím, že **příprava ti může zabrat i dva roky učení a praktických cvičení, a že bude chvíli trvat, než dosáhneš na nadstandardní výdělky.** Rekvalifikace na programování je velký krok, který vyžaduje hodně času, úsilí a odhodlání. Nováčci často projdou úvodními kurzy a pak zjistí, že sehnat první práci vůbec není tak snadné. Místo dobrých rad se jim dostane [nejrůznějších mýtů](myths.md), takže se na vypsané nabídky hlásí nepřipravení a s nerealistickými očekáváními.
 
 {{ blockquote_toxic(
   'Nauč se programovat, firmy v IT berou z nedostatku lidí každého, kdo má jen zájem. Do začátku si řekni aspoň o sto tisíc.',
@@ -128,66 +128,22 @@ Tento web se zabývá vytvářením softwaru, tedy programů pro počítače neb
 
 <!-- {#
 
-Kapitola o mobilech
-
-děti https://www.coderebels.cz/
-(nepřesunout do parents.md?)
-https://twitter.com/programohrajeme/status/1462698199001489411
-
-student versus career switcher
-https://discord.com/channels/769966886598737931/788826407412170752/868086772201062420
+- Je vám 30 a ještě jste nic nedokázali? https://www.systemovemysleni.com/post/je-vam-30-a-jeste-jste-nic-nedokazali Nezoufejte – rád bych vám dnes na pár číslech ukázal, proč si myslím, že to vůbec není důvod ke stresu. Je mi 31, práci na plný úvazek se věnuju posledních 8 let Odnepaměti jsem žil v nevysloveném očekávání, že v tomhle věku už bude moje kariéra jasně daná a já budu stavět na své vybudované specializaci. Jak asi tušíte, tohle očekávání se nenaplnilo. Pojďme si těch 8 let dát do širší perspektivy. Pokud patříte k mojí generaci, v kolika letech byste si tipli, že půjdeme do důchodu? Můj osobní tip
 
 https://www.heroine.cz/zeny-it/6385-v-it-berou-vsechny-na-tom-nic-neni
 
-https://twitter.com/kondrej/status/1535586323461033984
-
-Ještě bych dodal, abych nastavil správně očekávání, že IT určitě umožňuje dělat poměrně dlouhé úseky práce bez ostatních lidí nebo s kontaktem třeba jen na chatu, ale zároveň je to většinou týmová záležitost a je proto nutné komunikovat přinejmenším i s ostatními vývojáři v týmu. Tedy taková ta představa o někom zalezlém celé dny u počítače, kdo mluví jen s počítačem je spíš stereotyp než realita.
-
 nikdy nebude dost vyvojaru https://whoisnnamdi.com/never-enough-developers/
+- Přidat odstavec o AI na JG https://honzajavorek.cz/blog/empowered-by-ai-why-junior-devs-have-the-winning-edge/
 
-ageism https://www.newyorker.com/magazine/2017/11/20/why-ageism-never-gets-old
-
-- Přidat odstavec o AI na JG
-- stránka pro úplné začátečníky s code.org a scratchem pak poslat Pavlovi
-- https://www.facebook.com/groups/144621756262987/posts/840714789987010/
-- Být ajťák ve sklepě je sociální dostatečně! https://www.facebook.com/groups/junior.guru/posts/603771920546419/?comment_id=603893173867627&reply_comment_id=604521060471505&__cft__[0]=AZWvoQ7k4LtsUi2GvJ5V8o1d9-z3kLYiayBP87mrrziVf8swj67evDh4C-oMjVDL56j0Ikb9xvYiOP2Kholscjoq3hS4x5OtaZld3Bj34ovQLF1wxBPsCiC8P8-uM2gNQUaINrc810Kq9adv7EhE7Z4zxWAP1gd1ol5xD7lpDsSLyPvjhZ8Kz2m3AE6HJPcr45U&__tn__=R]-R
-- Nástupní mzdy se pohybují od 35 do 40 tisíc korun hrubého. Lze se dostat i na vyšší částky, je to ale vykoupené tím, že firma očekává vyšší samostatnost a rychlejší rozvoj dovedností. My našim studentům doporučujeme, aby do šesti až devíti měsíců od absolvování kurzu upřednostňovali nabídku s nižší mzdou a větším mentoringem ze strany právě seniorního pracovníka. V začátku kariéry je důležitější nabírat zkušenosti než několik tisícikorun navíc ke mzdě.
-- ajtaci asocialove ze sklepa? a videl nekdy nekdo ten sklep? me to prijde socialni dost (KMENY) https://www.youtube.com/watch?v=xg7xv6adtmI
 - Kolik to trva casu https://discord.com/channels/769966886598737931/788826407412170752/859537028081123358
 - https://engeto.cz/blog/kariera/budoucnost-pracovniho-trhu-v-cesku-maji-ajtaci-vyhodu/
-- separátní stránka se stories
-- vlozit video s tomasem hisemem z dvtv
-- Je vám 30 a ještě jste nic nedokázali? https://www.systemovemysleni.com/post/je-vam-30-a-jeste-jste-nic-nedokazali Nezoufejte – rád bych vám dnes na pár číslech ukázal, proč si myslím, že to vůbec není důvod ke stresu. Je mi 31, práci na plný úvazek se věnuju posledních 8 let Odnepaměti jsem žil v nevysloveném očekávání, že v tomhle věku už bude moje kariéra jasně daná a já budu stavět na své vybudované specializaci. Jak asi tušíte, tohle očekávání se nenaplnilo. Pojďme si těch 8 let dát do širší perspektivy. Pokud patříte k mojí generaci, v kolika letech byste si tipli, že půjdeme do důchodu? Můj osobní tip
-- https://www.youtube.com/watch?v=HluANRwPyNo
+
 - disclaimer u success stories https://discord.com/channels/769966886598737931/788826407412170752/823925224520155166 a ještě https://discord.com/channels/769966886598737931/864434067968360459/895988057419956224
-- https://www.csfd.cz/film/892942-nova-sichta/prehled/
-- Je daleko jednodušší začít v malém při aktuálním fungování, než se pokoušet o něco velkého, co pravděpodobně nevydrží.
-
-
-Ebbinghaus observed that each time the newly-learned information was reviewed, the EFC was reset at the starting point, but with a *slower decay curve*.
-https://twitter.com/SahilBloom/status/1597940360025899008
-
-
-https://www.youtube.com/watch?v=EkUuXQUByuw
-
-
-2. Jak si vybrat první jazyk
-https://www.youtube.com/watch?v=NE-cOGmaMWs
-
-
-Přemýšlím, že se vrátím na šachtu, tam jsem měl prázdnou hlavu. Teď chodím z práce domů, vole, a furt nad něčím přemýšlím, furt mám něco v hlavě, vole, něco tě napadne, musím si ku**a zapnout komp, ty p**o. Mně se zdálo o závorkách - složené závorky, dvě složené závorky, ty p**o, jak to tam mám dát?
-https://zpravy.aktualne.cz/domaci/tomas-hisem-z-hornika-programatorem/r~927d3882bc9a11ebaedf0cc47ab5f122/
-
-
-Motivace: když koukáš na video, není to reálný odraz práce programátora
-https://discord.com/channels/769966886598737931/789045589869461536/825440188858630194
-
 
 stránka na JG o hurá-do-IT článcích
 https://twitter.com/honzajavorek/status/1589624519311835136
 https://img.ihned.cz/attachment.php/190/78043190/D1Wh0Gc9EtgpMuTUqsroKQv4FBOANaH2/HN_221208_Prace_v_IT.pdf
 https://archiv.hn.cz/c1-67147200-ajtakem-za-tri-mesice-firmy-maji-zajem-i-o-ty-bdquo-preskolene-ldquo
-
 
 clovek musi mit pro zmenu zazemi - podcast s GFA lukasem, hovory s Janem z Mews o samozivitelkach, lidi se vrhaji do zmeny kariery, protoze jsou na tom spatne, ale to neni vhodna chvile, kdy do toho jit, plus mozna by bylo vhodne zvazit nejakou soft IT pozici a ne programovani
 
@@ -205,20 +161,19 @@ https://honzajavorek.cz/blog/empowered-by-ai-why-junior-devs-have-the-winning-ed
  Nahradí umelá inteligencia programátorov? #63
 https://www.youtube.com/watch?v=FMtoqfZuGs4
 
+https://www.youtube.com/watch?v=JhCl-GeT4jw
+
 
 https://www.idnes.cz/finance/prace-a-podnikani/it-kariera-vzdelani.A210701_615448_podnikani_sov
 https://www.novinky.cz/clanek/zena-styl-z-ucitelek-a-servirek-ajtacky-40329377
 https://honzajavorek.cz/blog/proc-se-neucit-python-v-roce-2021/
 
 
-https://docs.google.com/document/d/1sT4uWA3tqKOUD9Ql7OQ0SWqlH8dApV0k2efr8YcyZyg/edit
-
-
 motivace, talent, řemeslo (Tomáš Kai)
 https://www.facebook.com/groups/junior.guru/posts/607656380157973/?comment_id=607684926821785&reply_comment_id=608254406764837&__cft__[0]=AZUHC0TcaD2howuYZAWE7KHJbm1SepMNwNv6H94ggXL-Akg9DVVjVIIqj4vlosaER4_CUdNqPQlrCpbTLCu7RGL2Hh6tK9KDHTHSFFylFnJjANu-0KYm6GMTUnID_p-Fk29VD2Y8xuhmgqaJPb6gjmQQ&__tn__=R]-R
 
 
-
+https://docs.google.com/document/d/1sT4uWA3tqKOUD9Ql7OQ0SWqlH8dApV0k2efr8YcyZyg/edit
 CESTA K PRACI DO IT (vytazek z engeto dokumentu)
 Jakým způsobem byste měli postupovat, pokud zatím programovat vůbec neumíte, ale chtěli byste se to naučit a potom se tím i živit? Jak vypadá ona <osvědčená cesta>, která <funguje>, a po které jde dojít od nulových předchozích znalostí až k první práci v IT? Za junior.guru a Engeto Academy se shodujeme v tom, jaký postup bychom doporučili, a byl to i jeden z hlavních důvodů, proč jsme se rozhodli dělat tato videa společně. Myslíme si, že byste měli postupně projít přes následující kroky.
 
@@ -299,14 +254,6 @@ https://github.com/juniorguru/junior.guru/issues/3#issuecomment-734427076
 Specializations list
 https://github.com/juniorguru/junior.guru/issues/19
 
-ageism a kam mizí staří programátoři
-https://abrarmasum.medium.com/when-do-programmers-retire-is-35-the-end-72d173760ee2
-
-hraje věk roli?
-https://discord.com/channels/769966886598737931/769966887055392768/818610012866740274
-https://discord.com/channels/769966886598737931/788823881024405544/806262752975912960
-https://discord.com/channels/769966886598737931/769966887055392768/808041228239241256
-
 I totally forgot to warn people to not quit their job before joining my course, but I also think I *really* need to make this some kind of digital signature requirement.  You agree to not quit your job and submit a photo with the date and your name on a piece of paper for proof.
 https://twitter.com/lzsthw/status/1362490493402304513
 
@@ -321,49 +268,8 @@ Já mám taky pocit, že nejsme názorově tak vzdálený. Snad všichni tu souh
 ---
 
 
---- https://discord.com/channels/769966886598737931/789107031939481641/978387259881562213
-„opravdový programování“ 🙄
-https://en.wikipedia.org/wiki/Real_Programmers_Don%27t_Use_Pascal
----
-
-
 --- https://discord.com/channels/769966886598737931/788826407412170752/1099996552291942471
 Na to jsou dokonce data: https://whoisnnamdi.com/never-enough-developers/ zajímavé je, že ti nejlepší lidi odchází z oboru, zatímco zůstávají průměrní (oni to označili jako fast-pace learners a average-page learners). Je to tím, že náklad obětované příležitosti pro lidi, co se rychle učí může být vyšší než jejich TC (total compensation).
----
-
-
---- https://discord.com/channels/769966886598737931/769966887055392768/1082587990104215613
-Jak je IT úžasný víme všichni.
-Namátkou: topíme se v penězích, pracujeme z pláže v Karibiku / vrcholku Everestu / sklepa na samotě u lesa, měníme svět, pořád se máme co nového učit, umíme opravit libovolnou tiskárnu atd.
-
-Co jsou ale podle vás nevýhody tohoto oboru?
----
-
-
---- https://discord.com/channels/769966886598737931/1080041944236953623/1080549618271666257
-Titul není v IT příliš podstatný, ale to co ti škola umožní už podstatné být může.
-Všimni si, že píšu **umožní**, ne naučí.
-
-Na VŠ platí mnohem více to než na střední (o základce nemluvě), že to není jen místo, kde do tebe nalejou znalosti, pak prověří, jestli jich v tobě dost utkvělo a „musíš“ to dokončit. Samozřejmě někdo to tak vnímá a chová se tak.
-
-Teď už „nemusíš“, ale můžeš **chtít** nebo si uvědomit, že tam **potřebuješ** chodit k dosažení cíle, který **chceš**.
-
-Ta škola kromě toho, že tě vede nějakými předměty a vyžaduje po tobě nějakou aktivitu, tak je hlavně prostředí, které tě může přivést ke všemu možnému, dát ti možnost si to vyzkoušet, ukázat ti možnosti.
-
-Často je důležitější, co se naučíš sám, protože budeš se spolužákama dělat nějakej projekt mimo školu.
-A to, že nebudeš tlačenej v praxi hned vše aplikovat tak, aby to něco vydělalo.
-
-Budeš mít čas a podmínky si hrát a **učit se**.
-Toho samozřejmě budeš mít víc, pokud tě během studia budou živit rodiče.
-
-Pro někoho může být prostředí VŠ silně demotivační, akademická sféra umí být všelijaká.
-Některé předměty můžou být skoro k ničemu, jiné zase těžké a otravné a sám by ses k nim nedokopal, ale dají ti nějaké základy, které využiješ.
-
-Ty si z toho vem co potřebuješ, studium se dá i všelijak rozkládat, dělat u toho práci atd. není to jako střední, kde propadnout nebo nedat maturitu je průšvih. Dá se odejít po roce, dvou i před těma státnicema jak psala <@773601329095376906>. Ber to tak, že tvůj mozek bude časem jen pomalejší, takže jestli chceš bejt dobrej, tak teď je nejlepší šance se pustit do těch těžších věcí z IT.
-
-A přestože je v IT spousta práce i pro lidi, kteří toho zas tolik neumí, tak jsou tam i hodně těžký problémy, který bez tý VŠ (nebo ekvivalentní znalosti) budou dělat jen těžko.
-
-_Kéž bych tohle svému mladšímu já mohl před 25 lety předat…a ještě i to, že je jedno, jak se mi nepravděpodobné zdá, že se někam dostanu, ať to zkusím. Přinejhorším je tu další rok a ten rok můžu strávit prací a přípravou na studium / zkoušky._
 ---
 
 
@@ -490,27 +396,11 @@ Dá se nastoupit jako junior klidně i za kilo. S vystudovanou VŠ. Je to jen o 
 ---
 
 
-https://mastodonczech.cz/@nedbat@hachyderm.io/111789013379418126
 https://www.youtube.com/watch?v=I2s2BtrHw3I
 
 
 --- https://discord.com/channels/769966886598737931/769966887055392768/1202352655717114007
 Dneska jsem narazila na zajimave video od Kayla https://m.youtube.com/watch?v=a6IIhwZv4ls
----
-
-
---- https://discord.com/channels/769966886598737931/769966887055392768/1213068879467651114
-> Now please don’t misunderstand me: when I say it’s “intensely social,” I don’t mean that you have to be an extroverted social butterfly.
->
-> You can be the world’s biggest introvert and make great software.
->
-> You can be socially clumsy (I am!) and make great software.
->
-> You can be autistic and make great software.
->
-> You can be chatty and charming, or silly, or dry and serious, or linear, or chaotic, or or or…and make great software.
->
-> What you can’t be is misanthropic. When you write software, you are in relationship with other people…
 ---
 
 

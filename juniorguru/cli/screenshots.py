@@ -233,7 +233,13 @@ def download_yt_cover_image(screenshot):
     resp = requests.get(
         f"https://img.youtube.com/vi/{parse_yt_id(url)}/maxresdefault.jpg"
     )
-    resp.raise_for_status()
+    try:
+        resp.raise_for_status()
+    except requests.HTTPError:
+        resp = requests.get(
+            f"https://img.youtube.com/vi/{parse_yt_id(url)}/hqdefault.jpg"
+        )
+        resp.raise_for_status()
     image_bytes = edit_image(resp.content)
     logger.info(f"Writing {path}")
     Path(path).write_bytes(image_bytes)

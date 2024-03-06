@@ -73,7 +73,7 @@ Neočekávej, že se programování jednou naučíš a vystačíš si s tím. Ne
 
 ### Co nepotřebuješ    <span id="myths"></span>
 
-O programování [koluje řada mýtů](motivation.md#myty-o-programovani). Třeba že se o něj můžeš zajímat jen pokud jsi geniální na matematiku, že se to musí roky studovat na vysoké škole, že to není pro holky, že už je pro tebe pozdě začít. Jsou to pouze předsudky, nenech se jimi odradit! Raději si projdi [příběhy lidí, kteří se programovat naučili](../stories.md) a dnes jim to pomáhá při práci, nebo se tím začali přímo živit.
+O programování [koluje řada mýtů](myths.md). Třeba že se o něj můžeš zajímat jen pokud jsi geniální na matematiku, že se to musí roky studovat na vysoké škole, že to není pro holky, že už je pro tebe pozdě začít. Jsou to pouze předsudky, nenech se jimi odradit! Raději si projdi [příběhy lidí, kteří se programovat naučili](../stories.md) a dnes jim to pomáhá při práci, nebo se tím začali přímo živit.
 
 <small>Rady v této kapitole volně vychází i z [úvodní lekce týmového online kurzu Petra Viktorina](https://naucse.python.cz/2021/online-jaro/adm/intro/), se svolením autora. Díky!</small>
 
@@ -223,6 +223,22 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
 
 
 <!-- {#
+
+Motivace: když koukáš na video, není to reálný odraz práce programátora
+https://discord.com/channels/769966886598737931/789045589869461536/825440188858630194
+
+2. Jak si vybrat první jazyk
+https://www.youtube.com/watch?v=NE-cOGmaMWs
+
+https://www.youtube.com/watch?v=EkUuXQUByuw
+
+Ebbinghaus observed that each time the newly-learned information was reviewed, the EFC was reset at the starting point, but with a *slower decay curve*.
+https://twitter.com/SahilBloom/status/1597940360025899008
+
+- stránka pro úplné začátečníky s code.org a scratchem pak poslat Pavlovi
+- Je daleko jednodušší začít v malém při aktuálním fungování, než se pokoušet o něco velkého, co pravděpodobně nevydrží.
+
+Kapitola o mobilech
 
 KSI, neboli Korespondenční seminář z informatiky, je celoroční soutěž organizovaná primárně studenty Fakulty informatiky Masarykovy univerzity. Cílem semináře je seznámit řešitele se zajímavými oblastmi informatiky a procvičit programátorské, matematické a logické myšlení. Seminář je uzpůsoben jak pro úplné začátečníky, kteří si na jednoduchých příkladech procvičí danou problematiku, tak pro zkušenější řešitele, kteří se pokusí pokořit hlavní soutěžní úlohy.
 https://ksi.fi.muni.cz/

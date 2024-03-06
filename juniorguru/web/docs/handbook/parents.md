@@ -2,24 +2,44 @@
 title: Rodiče v IT
 emoji: 👶
 stages: [thinking, preparing, applying]
-description: TODO
+description: Jak na kariéru v IT během rodičovství? Mateřská, rodičovská, částečný úvazek, programování s dětmi a mnoho dalšího.
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import link_card, note with context %}
+{% from 'macros.html' import lead, link_card, note, blockquote_avatar with context %}
 
-# Rodiče v IT
+# Rodičovství a kariéra v IT
+
+{% call lead() %}
+Jak se dá s programováním kombinovat mateřská nebo rodičovská?
+Je těžké najít v IT práci na částečný pracovní úvazek?
+Jak prezentovat péči o děti v životopisu?
+A mohou programovat i děti?
+{% endcall %}
 
 {% call note(standout=True) %}
   {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
+## Programování pro děti
 
-## Programování pro děti    <span id="kids"></span>
+Proč učit děti programovat? Jak začít? Kdy začít?
+Přečti si [článek Luboše Račanského](https://www.heroine.cz/zeny-it/7677-u-budoucich-ajtaku-je-nejdulezitejsi-touha-nespokojit-se-s-prvnim-resenim-rika-lektor-programovani-pro-deti), který to celé krásně vysvětluje.
 
-I když je v názvu tohoto webu slovo _junior_, není vhodný k tomu, aby se podle něj učily programovat děti. Slovem junior se označují začátečníci na pracovním trhu a tento web ukazuje cestu k programování a kariéře v IT dospělým, případně dospívajícím lidem. Pokud chceš programovat s dětmi a trénovat tak jejich [informatické myšlení](https://imysleni.cz/informaticke-mysleni/co-je-informaticke-mysleni), následující odkazy tě nasměrují na stránky, které jsou pro ten účel vhodnější.
+{% call blockquote_avatar(
+  'Z dítěte se základy programování může být jednou šikovný soustružník, který si na pomoc vezme CNC stroj. Nebo umělec – jako sochař Michal Trpák, který vytváří 3D tisk z betonu. Nebo zemědělec, který bude chtít použít co nejméně hnojiv a co nejlépe zacílit zavlažování. Případně politik, který se v době pandemie bude muset rozhodovat na základě obrovské sady dat.',
+  'lubos-racansky.jpg',
+  'Luboš Račanský'
+) %}
+  Luboš Račanský, lektor kroužku pro děti a autor článku [U budoucích ajťáků je nejdůležitější touha nespokojit se s prvním řešením, říká lektor programování pro děti](https://www.heroine.cz/zeny-it/7677-u-budoucich-ajtaku-je-nejdulezitejsi-touha-nespokojit-se-s-prvnim-resenim-rika-lektor-programovani-pro-deti)
+{% endcall %}
 
-**Programování pro děti se odehrává v barevném prostředí, kde jde s dětmi vytvářet zábavné příběhy, hry, animace.** Rozhodně by nemělo spočívat v psaní písmenek na černou obrazovku nebo v práci s Wordem.
+Pokud tě láká to zkusit a trénovat s dětmi [informatické myšlení](https://imysleni.cz/informaticke-mysleni/co-je-informaticke-mysleni), následující odkazy tě nasměrují na stránky, které jsou vhodnější než junior.guru. I když je v názvu tohoto webu slovo _junior_, není pro děti.
+Slovem junior se označují začátečníci na pracovním trhu a tento web ukazuje cestu k programování a kariéře v IT dospělým, případně dospívajícím lidem.
+
+### Kde začít
+
+Programování pro děti se odehrává v **barevném prostředí, kde jde s dětmi vytvářet zábavné příběhy, hry, animace**. Rozhodně by nemělo spočívat v psaní písmenek na černou obrazovku nebo v práci s Wordem.
 
 <div class="link-cards">
   {{ link_card(
@@ -41,10 +61,44 @@ I když je v názvu tohoto webu slovo _junior_, není vhodný k tomu, aby se pod
   ) }}
 </div>
 
-Pokud tě programování pro děti začně bavit fakt hodně, můžeš se inspirovat u [Ivy a Martina](https://cz.pycon.org/2018/programme/detail/talk/13/) nebo u [Luboše](https://blog.zvestov.cz/tag/krou%C5%BEek-programov%C3%A1n%C3%AD/) a **zkusit něco zorganizovat i pro děti z okolí**. Potom by se ti mohla hodit [příručka pro pedagogy a rodiče od Mirka Suchého](https://github.com/xsuchy/programovani_pro_deti/#readme).
+### Pro nadšence
+
+Zkusili jste s dětmi programování a fakt hodně vás to baví?
+Možná by z tebe mohl být nadšenec!
+Tady máš pár odkazů, které by tě mohly inspirovat.
+
+<div class="link-cards">
+  {{ link_card(
+    'Proč a jak učit děti programovat',
+    'https://www.youtube.com/watch?v=WHwD8AgpQG8',
+    'Iva a Martin Javorkovi o svých začátcích s kroužkem programování.',
+    badge_icon='play-circle-fill',
+    badge_text='Přednáška',
+  ) }}
+
+  {{ link_card(
+    'Lubošův kroužek programování',
+    'https://blog.zvestov.cz/tag/krou%C5%BEek-programov%C3%A1n%C3%AD/',
+    'Články o tom, jak Luboš Račanský rozjel a provozuje kroužek programování.',
+    badge_icon='book',
+    badge_text='Blog',
+  ) }}
+
+  {{ link_card(
+    'Příručka pro pedagogy a rodiče',
+    'https://github.com/xsuchy/programovani_pro_deti/#readme',
+    'Mirek Suchý sesbíral do jednoho dokumentu vše, co šlo.',
+    badge_icon='book',
+    badge_text='Příručka',
+  ) }}
+</div>
 
 
 <!-- {#
+
+děti https://www.coderebels.cz/
+(nepřesunout do parents.md?)
+https://twitter.com/programohrajeme/status/1462698199001489411
 
 - Magda https://mail.google.com/mail/u/0/#inbox/KtbxLrjGQcnLHJfGrPfPsPdVzHDfvDThLB
 

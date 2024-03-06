@@ -145,7 +145,7 @@ Nenech se tím vykolejit! **Při prvním kontaktu s firmou se ujisti, že jste n
 
 ### Je potřeba VŠ?    <span id="university"></span>
 
-[Ne](motivation.md#potrebujes-vysokou-skolu). Běžní zaměstnavatelé ocení [praxi](practice.md) víc než titul. **Webovky nebo mobilní appky udělá samouk stejně dobře jako absolvent.** Studenti VŠ jsou tvá největší konkurence, ale na rozdíl od tebe jsou semletí pěti lety v českém školství. Nadšení z nich zpravidla nesrší a nemají moc praxe. Žena po rodičovské, která si rok šla za svým a učila se při všem shonu programovat po večerech, smete svou motivací každé ucho z VŠ jako nic.
+[Ne](myths.md). Běžní zaměstnavatelé ocení [praxi](practice.md) víc než titul. **Webovky nebo mobilní appky udělá samouk stejně dobře jako absolvent.** Studenti VŠ jsou tvá největší konkurence, ale na rozdíl od tebe jsou semletí pěti lety v českém školství. Nadšení z nich zpravidla nesrší a nemají moc praxe. Žena po rodičovské, která si rok šla za svým a učila se při všem shonu programovat po večerech, smete svou motivací každé ucho z VŠ jako nic.
 
 Zrovna v inzerátech nabízejících první práci v IT nebo částečný úvazek se však ještě stále lze setkat s **omezením, že jsou jen pro studenty či absolventy**. Je to proto, že lidi na druhé straně inzerátu ([recruitery](#naborari), šéfy) vůbec nenapadlo, že nováčci v oboru se rodí i jinde než na univerzitě. **Zkus se ozvat i tak.** Nic za to nedáš. Buď firmě otevřeš oči, nebo se rozloučíte už při prvním kontaktu.
 
@@ -159,7 +159,7 @@ Zrovna v inzerátech nabízejících první práci v IT nebo částečný úvaz
 
 ### Záleží na věku? Pohlaví?    <span id="age-gender"></span>
 
-[Ne a ne](motivation.md#myty-o-programovani). Programování není balet, [začít se dá v jakémkoli věku](https://www.youtube.com/watch?v=dKclZ55d_F0). Byť jsou stále ještě v menšině, ženy se dnes programátorkami stávají běžně. IT už dávno nevypadá jako na [této fotce](https://www.forum24.cz/jak-dopadli-chlapci-z-brutalni-parby-informatiku-2/), i když si toho někteří možná ještě nevšimli. **Pokud je z pracovního inzerátu cítit diskriminace, vůbec se jím nezabývej**. Kromě toho, že je to [protizákonné](https://www.google.cz/search?q=pracovn%C3%AD%20inzer%C3%A1t%20diskriminace), tak firma, která se myšlenkově zasekla ve středověku, nebude zrovna dobrým přístavem pro začátečníky.
+[Ne a ne](myths.md). Programování není balet, [začít se dá v jakémkoli věku](https://www.youtube.com/watch?v=dKclZ55d_F0). Byť jsou stále ještě v menšině, ženy se dnes programátorkami stávají běžně. IT už dávno nevypadá jako na [této fotce](https://www.forum24.cz/jak-dopadli-chlapci-z-brutalni-parby-informatiku-2/), i když si toho někteří možná ještě nevšimli. **Pokud je z pracovního inzerátu cítit diskriminace, vůbec se jím nezabývej**. Kromě toho, že je to [protizákonné](https://www.google.cz/search?q=pracovn%C3%AD%20inzer%C3%A1t%20diskriminace), tak firma, která se myšlenkově zasekla ve středověku, nebude zrovna dobrým přístavem pro začátečníky.
 
 {{ video_card(
   'Tomáš Hisem: Z horníka programátorem',
