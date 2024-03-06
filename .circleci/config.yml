@@ -1,16 +1,13 @@
 version: 2.1
 
-
 executors:
   python-js:
     docker:
       - image: cimg/python:3.11.2-browsers
     working_directory: ~/project
 
-
 orbs:
   git-shallow-clone: guitarrapc/git-shallow-clone@2.8.0
-
 
 commands:
   enable-github-pushing:
@@ -28,7 +25,6 @@ commands:
           command: |
             git config user.email "kure@junior.guru"
             git config user.name "Kuře"
-
 
 jobs:
   # Requires:
@@ -72,9 +68,9 @@ jobs:
       - persist_to_workspace:
           root: "~"
           paths:
-              - .cache/pypoetry/virtualenvs
-              - .cache/ms-playwright
-              - project
+            - .cache/pypoetry/virtualenvs
+            - .cache/ms-playwright
+            - project
 
   test:
     executor: python-js
@@ -119,7 +115,7 @@ jobs:
       - persist_to_workspace:
           root: "~"
           paths:
-              - project/persist-to-workspace
+            - project/persist-to-workspace
 
   data-1:
     executor: python-js
@@ -137,9 +133,9 @@ jobs:
       - persist_to_workspace:
           root: "~"
           paths:
-              - project/.cache
-              - project/juniorguru/data
-              - project/juniorguru/images
+            - project/.cache
+            - project/juniorguru/data
+            - project/juniorguru/images
 
   # Requires:
   #
@@ -169,7 +165,7 @@ jobs:
       - persist_to_workspace:
           root: "~"
           paths:
-              - project/persist-to-workspace
+            - project/persist-to-workspace
 
   data-2:
     executor: python-js
@@ -195,11 +191,11 @@ jobs:
       - persist_to_workspace:
           root: "~"
           paths:
-              - project/juniorguru/data
-              - project/juniorguru/images
+            - project/juniorguru/data
+            - project/juniorguru/images
       - when:
           condition:
-            equal: [ main, << pipeline.git.branch >> ]
+            equal: [main, << pipeline.git.branch >>]
           steps:
             - enable-github-pushing
             - run:
@@ -224,7 +220,7 @@ jobs:
       - persist_to_workspace:
           root: "~"
           paths:
-              - project/public
+            - project/public
 
   tidy:
     executor: python-js
@@ -289,7 +285,6 @@ jobs:
       - attach_workspace:
           at: "~"
       - run: poetry run jg check-bot
-
 
 workflows:
   push:

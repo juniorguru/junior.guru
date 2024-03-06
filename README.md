@@ -45,6 +45,7 @@ Sensitive information should always go to DEBUG. The CI is set to log only INFO.
     junior.guru '@' MX mx2.improvmx.com 20
     junior.guru '@' TXT 'v=spf1 include:spf.improvmx.com include:_spf.google.com ~all'
     ```
+
 1.  Fill the form at [ImprovMX](https://improvmx.com/)
 
 ## Setting up Google Drive credentials
