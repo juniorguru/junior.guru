@@ -9,8 +9,11 @@ nav:
       - Klubové lekce angličtiny: membership-english.jinja
   - Příručka:
       - Cesta juniora: handbook/index.md
-      - Motivace: handbook/motivation.md
+      - Proč programovat: handbook/motivation.md
+      - Mýty: handbook/myths.md
+      - Rodiče v IT: handbook/parents.md
       - Základy: handbook/learn.md
+      - Bez kódu: handbook/nocode.md
       - Angličtina: handbook/english.md
       - Vybírání kurzu: handbook/course.md
       - Řešení problémů: handbook/help.md
