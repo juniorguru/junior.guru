@@ -59,28 +59,26 @@ def update(pull, packages, push, stash):
         raise click.Abort()
 
 
-@main.command()
-def lint():
+@main.command(context_settings={"ignore_unknown_options": True})
+@click.argument("pytest_args", nargs=-1, type=click.UNPROCESSED)
+def test(pytest_args):
+    logger.info("Running tests")
+    code = pytest.main(list(pytest_args))
+    if code:
+        raise click.Abort()
+
+    logger.info("Linting SCSS")
     try:
-        subprocess.run(["ruff", "check"], check=True)
         subprocess.run(
             [
                 "npx",
                 "stylelint",
-                "juniorguru/scss/**/*.*css",
+                "juniorguru/css/**/*.*css",
                 "juniorguru/image_templates/*.*css",
             ],
             check=True,
         )
     except subprocess.CalledProcessError:
-        raise click.Abort()
-
-
-@main.command(context_settings={"ignore_unknown_options": True})
-@click.argument("pytest_args", nargs=-1, type=click.UNPROCESSED)
-def test(pytest_args):
-    code = pytest.main(list(pytest_args))
-    if code:
         raise click.Abort()
 
 

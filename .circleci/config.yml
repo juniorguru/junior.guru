@@ -76,13 +76,13 @@ jobs:
               - .cache/ms-playwright
               - project
 
-  lint-and-test:
+  test:
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
       - run:
-          name: Lint and test
+          name: Test
           command: poetry run jg test -v
 
   # Requires:
@@ -226,7 +226,7 @@ jobs:
           paths:
               - project/public
 
-  tidyup:
+  tidy:
     executor: python-js
     steps:
       - attach_workspace:
@@ -295,7 +295,7 @@ workflows:
   push:
     jobs:
       - install
-      - lint-and-test:
+      - test:
           requires:
             - install
       - sync-1:
@@ -323,7 +323,7 @@ workflows:
                 - main
           requires:
             - web
-            - lint-and-test
+            - test
 
   nightly:
     jobs:
@@ -363,10 +363,10 @@ workflows:
               only:
                 - main
 
-  nightly-tidyup:
+  nightly-tidy:
     jobs:
       - install
-      - tidyup:
+      - tidy:
           requires:
             - install
     triggers:

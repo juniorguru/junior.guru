@@ -65,6 +65,26 @@ def format_python():
 
 
 @main.command()
+def format_web():
+    try:
+        logger.info("Fixing SCSS code")
+        subprocess.run(
+            [
+                "npx",
+                "stylelint",
+                "--fix",
+                "juniorguru/css/**/*.*css",
+                "juniorguru/image_templates/*.*css",
+            ],
+            check=True,
+        )
+        logger.info("Formatting code by Prettier")
+        # subprocess.run(["prettier", "--write", "juniorguru/web"], check=True)
+    except subprocess.CalledProcessError:
+        raise click.Abort()
+
+
+@main.command()
 def format_jinja():
     logger.info("Removing unused Jinja imports")
     cwd = Path.cwd()
