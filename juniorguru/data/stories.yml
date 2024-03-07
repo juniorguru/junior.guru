@@ -15,6 +15,14 @@
 # https://www.pracujprosiliconvalley.cz/pracovala-jsem-na-realnem-it-projektu/
 # https://mamakoduje.cz/
 
+- url: https://www.frantiseknemet.cz/posts/jak-jsem-se-stal-programatorem
+  date: 2024-02-17
+  title: "Spletitou cestou k práci programátora: „Jedničkář jsem vážně nebyl“"
+  name: František Német
+  image_path: avatars-stories/frantisek-samouk.jpg
+  tags:
+    - student
+
 - url: https://benative.hn.cz/c1-67208400-neznam-vlidnejsi-obor-nez-it-rika-byvala-ucitelka-ktere-profesni-certifikat-zmenil-karieru
   date: 2023-05-24
   title: Učila angličtinu a zeměpis na ZŠ, dnes programuje webovky pro zahraniční firmu
