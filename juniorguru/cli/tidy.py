@@ -95,48 +95,6 @@ def fix_scss():
 
 @main.command()
 def format_jinja():
-    try:
-        logger.info("Formatting Jinja code")
-        subprocess.run(
-            [
-                "djlint",
-                ".",
-                "--reformat",
-                "--quiet",
-                "--extension=jinja",
-                "--profile=jinja",
-                "--indent=2",
-            ],
-            check=True,
-        )
-        # subprocess.run(
-        #     [
-        #         "djlint",
-        #         "juniorguru/web",
-        #         "juniorguru/web_legacy",
-        #         "--reformat",
-        #         "--quiet",
-        #         "--extension=html",
-        #         "--profile=jinja",
-        #         "--indent=2",
-        #     ],
-        #     check=True,
-        # )
-        # subprocess.run(
-        #     [
-        #         "djlint",
-        #         "juniorguru/web",
-        #         "--reformat",
-        #         "--quiet",
-        #         "--extension=md",
-        #         "--profile=jinja",
-        #         "--indent=2",
-        #     ],
-        #     check=True,
-        # )
-    except subprocess.CalledProcessError:
-        raise click.Abort()
-
     logger.info("Removing unused Jinja imports")
     cwd = Path.cwd()
     web_dir = Path("juniorguru/web/").resolve()
