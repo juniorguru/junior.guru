@@ -14,7 +14,7 @@ Git je **nástroj, který ti umožňuje sledovat historii změn v kódu a sdíle
 
 ## GitHub
 
-[GitHub](https://github.com/) je **úložiště kódu a něco jako sociální síť pro programátory**. Kód tam lze poslat pomocí Gitu. GitHub není jediným takovým úložištěm, další jsou např. GitLab nebo BitBucket. GitHub je ale nejoblíbenějším pro [open source](practice.md#zkus-open-source), takže tam najdeš nejvíc projektů a lidí.
+[GitHub](https://github.com/) je **úložiště kódu a něco jako sociální síť pro programátory**. Kód tam lze poslat pomocí Gitu. GitHub není jediným takovým úložištěm, další jsou např. GitLab nebo BitBucket. GitHub je ale nejoblíbenějším pro [open source](collaboration.md), takže tam najdeš nejvíc projektů a lidí.
 
 ## Neboj se ukázat kód!    <span id="showoff"></span>
 
@@ -44,14 +44,14 @@ Nenech se omezovat strachem, že někdo uvidí tvůj kód a pomyslí si, že nic
   ) }}
 </div>
 
-
-<!-- {#
-
 ## README
 
 {% call note(standout=True) %}
   {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
+
+
+<!-- {#
 
 https://dariagrudzien.com/posts/the-one-about-your-github-account/
 https://dev.to/yuridevat/how-to-create-a-stunning-github-profile-2mh5

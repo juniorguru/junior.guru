@@ -297,7 +297,7 @@ Stáž přitom může být **dobrá příležitost, jak začít bez zkušeností
 
 Pokud studuješ, máš k dispozici nástěnky, poradenská centra, pracovní veletrhy, webové stránky studentských spolků, webové stránky aj. prezentace výzkumných pracovních skupin, spolužáky, cvičící, přednášející…
 
-**Ostatním zbývá [asertivita](https://cs.wikipedia.org/wiki/Asertivita).** Odmítli tě v nějaké firmě, protože hledají někoho zkušenějšího? Zeptej se jich na stáž. Líbí se ti nějaká firma? Napiš jim a zeptej se na stáž. Významnou roli hraje také [networking](#networking). Choď na [srazy a konference](practice.md#najdi-inspiraci-poznej-lidi), tam se aktivně druž a — ptej se na stáž.
+**Ostatním zbývá [asertivita](https://cs.wikipedia.org/wiki/Asertivita).** Odmítli tě v nějaké firmě, protože hledají někoho zkušenějšího? Zeptej se jich na stáž. Líbí se ti nějaká firma? Napiš jim a zeptej se na stáž. Významnou roli hraje také [networking](#networking). Choď na [srazy a konference](community.md), tam se aktivně druž a — ptej se na stáž.
 
 {% call blockquote_avatar(
   'Už jsem viděl stáže dohozené přes bratrance, klienty, plesy, spolujízdu. Najednou jsi konkrétní člověk a pokud vypadáš inteligentně, firma si řekne: „Proč ne?“',
@@ -322,7 +322,7 @@ Velké firmy a instituce [jsou v lepší pozici](#proc-praci-nabizi-hlavne-velke
 *   V mezinárodních firmách pracuješ s lidmi různých jazyků a kultur. Čeká tě moderní a profesionální _workplace_.
 *   V širokých týmech se můžeš specializovat na určitou věc, pracovat na tématu do hloubky.
 *   Kariérní růst je zorganizovaný a tvůj postup _mohou_ určovat jasná pravidla, ne pouze rozmar šéfa.
-*   Můžeš mít k dispozici dražší služby a nástroje. Můžeš mít větší možnosti cestovat za firemní peníze, např. na [konference](practice.md#najdi-inspiraci-poznej-lidi).
+*   Můžeš mít k dispozici dražší služby a nástroje. Můžeš mít větší možnosti cestovat za firemní peníze, např. na [konference](community.md).
 
 Mají více peněz a nebývá pro ně problém je investovat. Ovšem jen pokud mají pocit, že je daná věc dobrý nápad, a občas je bohužel velmi těžké korporaci o takových dobrých nápadech přesvědčit. Preferuje své zajeté koleje. Mezi další **nevýhody** patří:
 
@@ -408,7 +408,7 @@ O nástrahách práce „na IČO“ je tady [celá další kapitola](interview.m
 *   Než do toho půjdeš naplno, můžeš si „něco jako práci na volné noze“ **nejdříve vyzkoušet**, a to v podobě tzv. [příležitostné činnosti](https://www.jakpodnikat.cz/prilezitostna-cinnost.php).
 *   Firmy [outsourcují](https://cs.wikipedia.org/wiki/Outsourcing) spoustu úkolů, ale **nebudou je chtít svěřit amatérovi**. Ujasni si, jaké jsou tvé přednosti a jak hodláš klientům kompenzovat své nedostatky (např. nízkou cenou). Vytvoř si [portfolio](#osobni-web-a-blog), kde to firmám „vysvětlíš“. Začni s jednoduchými, jasně zadanými a ohraničenými úkoly, které zvládneš vypracovat. Nesnaž se dělat všechno (např. weby, nebo i frontend jsou příliš široká zaměření). Vyber si směr, kterým se chceš vydat a na který se budeš specializovat (např. [kódování newsletterů](https://www.google.cz/search?q=k%C3%B3dov%C3%A1n%C3%AD%20newsletter%C5%AF)). Začni malými krůčky, propracovávej se k větším úkolům a s nimi i k sebedůvěře, která ti pomůže odhadnout, do čeho se zvládneš pustit a kolik si za to máš říct.
 *   **Poptávky nepřijdou samy.** Je velká pravděpodobnost, že nikdo zatím ani neví, že vůbec existuješ a něco nabízíš. Zkus si na internetu najít vhodné firmy a napsat jim e-mail s nabídkou svých služeb, účastni se [srazů nezávislých profesionálů](https://www.facebook.com/navolnenoze/events/), procházej různá internetová tržiště s poptávkami. V Česku má jistou tradici fórum [Webtrh](https://webtrh.cz/), ale existuje toho spousta (abecedně): [fiverr.com](https://fiverr.com/), [freelance.cz](https://freelance.cz), [freelancer.com](https://freelancer.com), [guru.com](https://guru.com), [navolnenoze.cz](https://navolnenoze.cz), [peopleperhour.com](https://peopleperhour.com), [topcoder.com](https://topcoder.com), [toptal.com](https://toptal.com), [upwork.com](https://upwork.com)… Připrav se na to, že musíš každý měsíc platit zálohy na pojištění (minimálně kolem 5 000 Kč měsíčně), ať už něco vyděláš, nebo ne.
-*   **Žádný senior nebude mít v popisu práce se ti věnovat a rozvíjet tě**, pokud budeš vůbec dělat v týmu. Intenzivní samostudium a vypracovávání zakázek budou zřejmě jedinými způsoby, jakými se budeš učit. Pokud na to vyděláš, můžeš si [platit mentora](mentoring.md). Počítej s tím, že ze začátku budeš moci klientovi účtovat jen zlomek hodin, než kolik jich reálně nad úkolem strávíš. Neboj se ale s nabytými zkušenostmi tento poměr vylepšovat. Chybějící tým kompenzuj v [coworkingu](https://navolnenoze.cz/blog/coworkingy/), účastí v profesní komunitě, na [srazech](practice.md#najdi-inspiraci-poznej-lidi) nebo [online](help.md).
+*   **Žádný senior nebude mít v popisu práce se ti věnovat a rozvíjet tě**, pokud budeš vůbec dělat v týmu. Intenzivní samostudium a vypracovávání zakázek budou zřejmě jedinými způsoby, jakými se budeš učit. Pokud na to vyděláš, můžeš si [platit mentora](mentoring.md). Počítej s tím, že ze začátku budeš moci klientovi účtovat jen zlomek hodin, než kolik jich reálně nad úkolem strávíš. Neboj se ale s nabytými zkušenostmi tento poměr vylepšovat. Chybějící tým kompenzuj v [coworkingu](https://navolnenoze.cz/blog/coworkingy/), účastí v profesní komunitě, na [srazech](community.md) nebo [online](help.md).
 
 Další rady ohledně rozjíždění vlastního podnikání jsou nad rámec této příručky. Následující odkazy by ti nicméně měly ukázat cestu k tomu hlavnímu, co se může do startu hodit. Hodně štěstí!
 
@@ -483,7 +483,7 @@ Pokud hledáš ve velkém městě, kde je nabídek více, připrav si **seznam k
 *   pružnou pracovní dobu,
 *   [příjemný kolektiv](#firemni-kultura),
 *   stabilitu, nebo naopak [startup](#prace-pro-startup) plný rychlých změn,
-*   prostředí, kde nebude problém se učit nebo [zajet na konferenci](practice.md#najdi-inspiraci-poznej-lidi),
+*   prostředí, kde nebude problém se učit nebo [zajet na konferenci](community.md),
 *   rovnováhu mezi prací a volným časem,
 *   malou dojezdovou dobu do kanceláře,
 *   [mzdu větší než určitou částku](#kolik-si-vydelam),
@@ -547,7 +547,7 @@ Přímo na junior.guru také najdeš [pracovní portál](/jobs/), ale s nabídka
 
 Existují dva druhy náborářů (anglicky _recruiter_):
 
-*   **Pracují přímo pro konkrétní firmu**, zpravidla velkou, a hledají na trhu lidi jen do ní. Můžeš se s nimi setkat na stáncích firem na [konferencích](practice.md#najdi-inspiraci-poznej-lidi) či pracovních veletrzích. Také jsou to oni, kdo s tebou řeší přijímací pohovor, když se velké firmě ozveš na nabídku práce. Navenek je reprezentují „kariérní portály“.
+*   **Pracují přímo pro konkrétní firmu**, zpravidla velkou, a hledají na trhu lidi jen do ní. Můžeš se s nimi setkat na stáncích firem na [konferencích](community.md) či pracovních veletrzích. Také jsou to oni, kdo s tebou řeší přijímací pohovor, když se velké firmě ozveš na nabídku práce. Navenek je reprezentují „kariérní portály“.
     Příklady: [Red Hat](https://www.redhat.com/en/jobs), [ČSOB](https://www.csob.cz/portal/v-obraze/kariera)…
 *   **Pracují samostatně pro více firem**, hledají kandidáty a snaží se je umístit. Najímají si je firmy, které nemají náboráře vlastní. Jejich odměna je zpravidla výkonová, tzn. že dostávají provizi až v případě, že se jim podaří umístit kandidáta. Provizi vyplácí firma, a to ve výši několika měsíčních mezd kandidáta.
     Příklady: [dreamBIG](https://www.dreambig.cz/), [Three Queens](https://www.3queens.cz/)…
@@ -572,7 +572,7 @@ Nenech se odradit tím, že firma neinzeruje pracovní nabídky nebo že mezi je
 
 ### Firemní akce    <span id="company-events"></span>
 
-Občas firmy pořádají přednášky, dny otevřených dveří, školení, [hackathony](practice.md#zkus-hackathon), [srazy](practice.md#najdi-inspiraci-poznej-lidi), aj. **akce přímo na své domácí půdě**. Na nich se dá obhlédnout prostředí, neformálně navázat kontakty, poptat se osobně na [stáž](#staze). Některé firmy dokonce přímo konají kurzy pro začátečníky nebo s nějakými spolupracují, a nabízí práci nejšikovnějším absolventům.
+Občas firmy pořádají přednášky, dny otevřených dveří, školení, [hackathony](collaboration.md), [srazy](community.md), aj. **akce přímo na své domácí půdě**. Na nich se dá obhlédnout prostředí, neformálně navázat kontakty, poptat se osobně na [stáž](#staze). Některé firmy dokonce přímo konají kurzy pro začátečníky nebo s nějakými spolupracují, a nabízí práci nejšikovnějším absolventům.
 
 Činnost tohoto typu vypovídá minimálně o tom, že **firma není uzavřená do sebe**, že se snaží být aktivní v širší komunitě programátorů, a že u svých lidí podporuje i aktivity nad rámec sezení za počítačem „od devíti do pěti“.
 
@@ -580,7 +580,7 @@ Tyto akce najdeš na stránkách jednotlivých firem, nebo i na [meetup.com](htt
 
 ### Networking
 
-Jedním z nejefektivnějších způsobů, jak si v malé ČR sehnat dobrou práci, je **networking, tedy setkávání s lidmi a získávání kontaktů**. Staň se [aktivním členem programátorské komunity](#projev-aktivitu-navic) a zajímavé nabídky práce po čase přijdou samy. Choď na [srazy a konference](practice.md#najdi-inspiraci-poznej-lidi), seznamuj se s lidmi, představuj se. Jsou to místa, kde lidé zhusta mění a získávají práci — i proto se na nich vyskytují [recruiteři velkých firem](#naborari). Můžeš zkusit i veletrhy práce, které jsou na toto přímo zaměřené (např. [Job Fair Czechitas](https://jobfair.czechitas.cz/)). **Velké akce lze pojmout systematicky** — vytiskni si 50 vizitek s nápisem „sháním stáž“ a jdi je rozdat mezi lidi. Představuj se, vysvětli co umíš a co hledáš, prodej se. **Malé akce jako srazy ber jako způsob jak najít nové kamarády** v oboru a pracovním příležitostem tam nech spíš volný průběh.
+Jedním z nejefektivnějších způsobů, jak si v malé ČR sehnat dobrou práci, je **networking, tedy setkávání s lidmi a získávání kontaktů**. Staň se [aktivním členem programátorské komunity](#projev-aktivitu-navic) a zajímavé nabídky práce po čase přijdou samy. Choď na [srazy a konference](community.md), seznamuj se s lidmi, představuj se. Jsou to místa, kde lidé zhusta mění a získávají práci — i proto se na nich vyskytují [recruiteři velkých firem](#naborari). Můžeš zkusit i veletrhy práce, které jsou na toto přímo zaměřené (např. [Job Fair Czechitas](https://jobfair.czechitas.cz/)). **Velké akce lze pojmout systematicky** — vytiskni si 50 vizitek s nápisem „sháním stáž“ a jdi je rozdat mezi lidi. Představuj se, vysvětli co umíš a co hledáš, prodej se. **Malé akce jako srazy ber jako způsob jak najít nové kamarády** v oboru a pracovním příležitostem tam nech spíš volný průběh.
 
 Networking je také způsob, jak od lidí dostat doporučení. Někteří lidé jsou schopní tě ve své firmě doporučit i po pěti minutách rozhovoru, ať už protože mají dobré srdce, protože na ně zapůsobíš, nebo protože chtějí dostat _referral bonus_ (odměna za doporučení nového zaměstnance, kterou některé firmy nabízejí).
 
@@ -659,7 +659,7 @@ Na PyLadies kurzech **můžeš „koučovat“ i bez velkých znalostí programo
 
 ### Přednášení    <span id="giving-talks"></span>
 
-Podobně jako učení, přednášení na [srazech a konferencích](practice.md#najdi-inspiraci-poznej-lidi) vypadá jako něco, co je vyhrazeno profesionálům, ale není to tak. **Zmíněné akce jsou komunitní a obvykle podporují přednášky od začátečníků a pro začátečníky.** Neboj se toho! Přijít na pohovor s tím, že máš za sebou přednášku na srazu nebo dokonce konferenci, je naprostá pecka! Pro inspiraci si projdi nějaké přednášky z minulých let konference [PyCon CZ](https://cz.pycon.org/). Nejsou to nutně pokročilá technická témata:
+Podobně jako učení, přednášení na [srazech a konferencích](community.md) vypadá jako něco, co je vyhrazeno profesionálům, ale není to tak. **Zmíněné akce jsou komunitní a obvykle podporují přednášky od začátečníků a pro začátečníky.** Neboj se toho! Přijít na pohovor s tím, že máš za sebou přednášku na srazu nebo dokonce konferenci, je naprostá pecka! Pro inspiraci si projdi nějaké přednášky z minulých let konference [PyCon CZ](https://cz.pycon.org/). Nejsou to nutně pokročilá technická témata:
 
 *   [Keep formatting consistent with Black](https://cz.pycon.org/2019/programme/talks/29/)
 *   [Proč a jak učit děti programovat](https://cz.pycon.org/2018/programme/detail/talk/13/)
@@ -685,7 +685,7 @@ Aktivitu lze projevit i **organizováním akcí** ve volném čase — můžeš 
 
 ### Přispívání do open source    <span id="oss-contributing"></span>
 
-V neposlední řadě si lze vybudovat jméno [přispíváním do open source](practice.md#zkus-open-source). I pokud se necítíš na samotné programování, [je i hodně jiných způsobů, jak můžeš přiložit ruku k dílu](https://opensource.guide/how-to-contribute/#what-it-means-to-contribute). Je to skvělá příležitost jak nabrat zkušenosti, vyniknout, získat kontakty mezi lidmi z oboru.
+V neposlední řadě si lze vybudovat jméno [přispíváním do open source](collaboration.md). I pokud se necítíš na samotné programování, [je i hodně jiných způsobů, jak můžeš přiložit ruku k dílu](https://opensource.guide/how-to-contribute/#what-it-means-to-contribute). Je to skvělá příležitost jak nabrat zkušenosti, vyniknout, získat kontakty mezi lidmi z oboru.
 
 
 ## Závěrem    <span id="end"></span>

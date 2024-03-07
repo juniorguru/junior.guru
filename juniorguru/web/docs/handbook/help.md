@@ -16,7 +16,7 @@ template: main_handbook.html
 #}
 
 {% call lead() %}
-  Je velmi těžké se učit zcela bez cizí pomoci. I drobný zádrhel tě může zaseknout na týdny a úplně ti zkazit radost z učení. Neboj se ptát online, radit se s lidmi na [akcích](practice.md#najdi-inspiraci-poznej-lidi), nebo si najít [mentora](mentoring.md).
+  Je velmi těžké se učit zcela bez cizí pomoci. I drobný zádrhel tě může zaseknout na týdny a úplně ti zkazit radost z učení. Neboj se ptát online, radit se s lidmi na [akcích](community.md), nebo si najít [mentora](mentoring.md).
 {% endcall %}
 
 ## Kde a jak se ptát
@@ -85,6 +85,9 @@ Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. **Žádná o
 
 
 <!-- {#
+
+vylepsit stranku kde hledat pomoc - a v tom mit i AI
+
 
 Nechceš o tom napsat článek? Rozepsat tyhle body (nebo tak něco, viděls asi hodinu, kdy sem šel spát…) 1) rady je těžké dávat 2) neraď to, co fungovalo tobě, každý je jiný a zbytek kontextu je taky jiný, říkej mě fungovalo toto 3) neraď, dokud nevíš, co někdo potřebuje Krátkej, že bychom to dali do pravidel nebo doporučení.
 

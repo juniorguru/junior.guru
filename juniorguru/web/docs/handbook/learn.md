@@ -142,12 +142,12 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
   ) }}
 
   {% call link_card(
-    'Umíme programovat',
-    'https://www.umimeprogramovat.cz',
+    'Umíme informatiku',
+    'https://www.umimeinformatiku.cz',
     badge_icon='list-check',
     badge_text='Cvičení',
   ) -%}
-    Uč se skrze cvičení a opakování, [podložený výzkumy](https://www.umimeto.org/podlozeno-vyzkumem).
+    Uč se skrze cvičení a opakování. [Podloženo výzkumem](https://www.umimeto.org/podlozeno-vyzkumem).
   {%- endcall %}
 
   {{ link_card(

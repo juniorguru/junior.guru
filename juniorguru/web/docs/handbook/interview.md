@@ -51,7 +51,7 @@ Na pohovorech se můžeš až příliš často setkat s úlohami u tabule, _chal
 Holt, nedá se nic dělat. Zhluboka se nadechni a hurá do toho:
 
 1.  **Projdi si základy** algoritmizace a práce s datovými strukturami. Začni třeba s [BaseCS](practice.md#zaklady). Algoritmy se nejlépe vysvětlují na videu, takže je [hledej na YouTube](https://www.youtube.com/results?search_query=quicksort).
-2.  **Řeš úlohy** na [webech jako Codewars nebo HackerRank](practice.md#procvicuj). Procvičíš si algoritmizaci a datové struktury na reálných problémech. Projdi si [příručky](candidate.md#souvisejici-prirucky) zabývající se řešením úloh z pohovorů.
+2.  **Řeš úlohy** na [webech jako Codewars nebo HackerRank](practice.md). Procvičíš si algoritmizaci a datové struktury na reálných problémech. Projdi si [příručky](candidate.md#souvisejici-prirucky) zabývající se řešením úloh z pohovorů.
 3.  **Dělej si poznámky**. Díky nim se budeš moci k nabytým vědomostem snadno vracet a budeš je mít v podobě, která ti nejvíc vyhovuje. Psaní navíc upevňuje paměť. Mrkni třeba na [poznámky Ali Spittel](https://github.com/aspittel/coding-cheat-sheets), které si původně psala rukou na papír.
 
 {% call blockquote_avatar(
