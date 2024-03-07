@@ -1,9 +1,8 @@
 ---
-title: Proč se učit programovat? Úvod do programování a motivace
+title: Proč se učit programovat
 emoji: 🤔
 stages: [thinking]
-thumbnail_title: Proč se učit programování
-description: K čemu se hodí programování? Není jen pro ty, kdo chtějí pracovat v IT. Pomáhá vědcům, úředníkům nebo novinářům — a práci může usnadnit i tobě.
+description: Úvod do programování. K čemu se hodí? Pomáhá vědcům, úředníkům nebo novinářům — a práci může usnadnit i tobě
 template: main_handbook.html
 ---
 

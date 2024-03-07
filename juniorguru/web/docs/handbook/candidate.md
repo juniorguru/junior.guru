@@ -1,8 +1,7 @@
 ---
-title: Hledání první práce v IT
+title: Jak najít svou první práci v IT
 emoji: 👔
 stages: [preparing, applying]
-thumbnail_title: Jak najít svou první práci v IT
 description: Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?
 template: main_handbook.html
 ---
@@ -114,7 +113,7 @@ Nikdo od tebe nečeká, že budeš oslňovat technickými znalostmi. Dej najevo,
 ### Základní minimum    <span id="minimum-requirements"></span>
 
 1.  Znalost jakéhokoliv běžného jazyka alespoň v rozsahu začátečnického kurzu na [Nauč se Python!](learn.md#jak-zacit)
-2.  Mít vytvořený nějaký [malý vlastní projekt](practice.md#najdi-si-projekt) jako praktickou ukázku své práce.
+2.  Mít vytvořený nějaký [malý vlastní projekt](projects.md) jako praktickou ukázku své práce.
 3.  Mít na projektech naučenou schopnost dostat zadání a rozložit ho na podproblémy (algoritmizace).
 
 #### Velmi užitečné znalosti navíc
@@ -125,7 +124,7 @@ Nikdo od tebe nečeká, že budeš oslňovat technickými znalostmi. Dej najevo,
 
 Ano, **toto opravdu většinou stačí!** Neboj se toho, že se učíš Python, ale v nabídkách je Java. Důležité je především **umět programovat** — další jazyk nebo technologie se dá doučit poměrně rychle.
 
-Není potřeba jít víc do šířky a bez jasného cíle se učit tady trochu HTML, tu základy C#, tam úvod do datové analýzy — jen proto, že někde o těchto věcech uslyšíš. Místo toho si **[vyber projekt](practice.md#najdi-si-projekt) a na tom pracuj.** Potřebuješ získat praktické schopnosti, které ti jednodenní workshop nebo čtení knih nedají. Dlouhodobá práce na projektu ti sama ukáže, jaké konkrétní dovednosti a technologie se potřebuješ doučit. A po dokončení projektu ti to ukážou požadavky v pracovních inzerátech a [dotazy na pohovorech](interview.md#otazky-na-tebe).
+Není potřeba jít víc do šířky a bez jasného cíle se učit tady trochu HTML, tu základy C#, tam úvod do datové analýzy — jen proto, že někde o těchto věcech uslyšíš. Místo toho si **[vyber projekt](projects.md) a na tom pracuj.** Potřebuješ získat praktické schopnosti, které ti jednodenní workshop nebo čtení knih nedají. Dlouhodobá práce na projektu ti sama ukáže, jaké konkrétní dovednosti a technologie se potřebuješ doučit. A po dokončení projektu ti to ukážou požadavky v pracovních inzerátech a [dotazy na pohovorech](interview.md#otazky-na-tebe).
 
 Angličtina je důležitá, ale **i s omezenou, pasivní angličtinou se dá začít**. Pokud zvládáš číst anglický text, pochopit v něm zadání a učit se z něj nové věci, pro start to stačí.
 
@@ -504,7 +503,7 @@ Zjisti si **zákulisní informace**. Ty nejzajímavější věci z lidí vytáhn
 
 Jedna z věcí, které chceš ukázat potenciálnímu nebo stávajícímu zaměstnavateli je, že se umíš učit a zlepšovat. A chceš to ostatně ukázat i sobě, pomůže ti to bojovat s nedostatečným sebevědomím („[Impostor syndrom](https://www.google.cz/search?q=impostor+syndrome&lr=lang_cs)“). Jak na to? **Dělej si poznámky o naučených vědomostech.** Vždy, když se k seznamu vrátíš, pomůže ti to **uvědomit si, jak dlouhou cestu máš za sebou** a kolik nových skvělých věcí umíš od posledně.
 
-Veď si seznam svých [projektů](practice.md#najdi-si-projekt) na [osobní stránce](#osobni-web-a-blog), na LinkedIn profilu, nebo na GitHubu. **Možná se budeš za svůj nejstarší kód stydět, ale to je normální. Aspoň jde vidět tvůj posun!** Profesionální programátoři se stále učí nové věci a tak je běžné, že se stydí i za to, co napsali před pár měsíci, natož před lety. Eviduj svoje [přednášky a články](#projev-aktivitu-navic). Pokud o tvé práci někdo napíše něco pochvalného (na sociálních sítích, na LinkedIn, do e-mailu), poznamenej si to a klidně si ulož i [snímek obrazovky](https://cs.wikipedia.org/wiki/Sn%C3%ADmek_obrazovky). Na [osobní stránce](#osobni-web-a-blog) to můžeš využít do seznamu referencí (anglicky _testimonials_).
+Veď si seznam svých [projektů](projects.md) na [osobní stránce](#osobni-web-a-blog), na LinkedIn profilu, nebo na GitHubu. **Možná se budeš za svůj nejstarší kód stydět, ale to je normální. Aspoň jde vidět tvůj posun!** Profesionální programátoři se stále učí nové věci a tak je běžné, že se stydí i za to, co napsali před pár měsíci, natož před lety. Eviduj svoje [přednášky a články](#projev-aktivitu-navic). Pokud o tvé práci někdo napíše něco pochvalného (na sociálních sítích, na LinkedIn, do e-mailu), poznamenej si to a klidně si ulož i [snímek obrazovky](https://cs.wikipedia.org/wiki/Sn%C3%ADmek_obrazovky). Na [osobní stránce](#osobni-web-a-blog) to můžeš využít do seznamu referencí (anglicky _testimonials_).
 
 Nejen že **se takovými věcmi dobře chlubí na pohovoru nebo při pokusu o zvýšení mzdy**, ale i pro tebe to bude hezká připomínka úspěchů, které máš za sebou.
 
@@ -629,9 +628,9 @@ Tyto aktivity mohou navíc podněcovat [networking](#networking), tedy setkává
 
 ### Osobní web a blog    <span id="portfolio"></span>
 
-Vlastní osobní webová stránka (_portfolio_) ti dává prostor **vyniknout mezi ostatními kandidáty**. Je to [projekt](practice.md#najdi-si-projekt), na kterém si prakticky vyzkoušíš různé technologie a který klidně můžeš ukázat při pohovoru jako důkaz, že něco umíš. Mimo to můžeš na své webovce dát průchod vlastní osobnosti a kreativitě.
+Vlastní osobní webová stránka (_portfolio_) ti dává prostor **vyniknout mezi ostatními kandidáty**. Je to [projekt](projects.md), na kterém si prakticky vyzkoušíš různé technologie a který klidně můžeš ukázat při pohovoru jako důkaz, že něco umíš. Mimo to můžeš na své webovce dát průchod vlastní osobnosti a kreativitě.
 
-Stránka nemusí být komplikovaná, stačí aby to byl **rozcestník**. Dvě věty o sobě, popis zkušeností, odkazy na profily (LinkedIn, GitHub…) a případně na tvé [projekty](practice.md#najdi-si-projekt). Pokud tě baví psaní, časem můžeš přidat **blog**. Můžeš psát o své cestě do IT (a tak se [objevit na těchto stránkách](../stories.md)) nebo přidat článek vždy, když se naučíš něco nového — čímž pomůžeš dalším začátečníkům a zároveň tím vystoupíš z davu. Začneš si v oboru budovat své jméno a to ti může pomoci nejen u pohovorů, ale i pokud budeš chtít [přednášet na konferencích](#projev-aktivitu-navic).
+Stránka nemusí být komplikovaná, stačí aby to byl **rozcestník**. Dvě věty o sobě, popis zkušeností, odkazy na profily (LinkedIn, GitHub…) a případně na tvé [projekty](projects.md). Pokud tě baví psaní, časem můžeš přidat **blog**. Můžeš psát o své cestě do IT (a tak se [objevit na těchto stránkách](../stories.md)) nebo přidat článek vždy, když se naučíš něco nového — čímž pomůžeš dalším začátečníkům a zároveň tím vystoupíš z davu. Začneš si v oboru budovat své jméno a to ti může pomoci nejen u pohovorů, ale i pokud budeš chtít [přednášet na konferencích](#projev-aktivitu-navic).
 
 {% call blockquote_avatar(
   'Tweetuju nebo píšu články o všem, co se naučím. Mohu se k tomu vždy vrátit a zároveň s učením pomáhám ostatním. Díky psaní článků navíc věcem porozumím do hloubky a umím je vysvětlit.',

@@ -1,6 +1,5 @@
 ---
-title: Pravidla chování na junior.guru
-thumbnail_title: Pravidla chování
+title: Pravidla chování
 ---
 
 {% from 'macros.html' import lead, note %}

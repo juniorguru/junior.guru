@@ -1,9 +1,8 @@
 ---
-title: Jak se naučit programovat? Úvod do programování v podobě rozcestníku na nejlepší materiály
+title: Jak se naučit programovat
 emoji: 🚀
 stages: [trying, learning]
-thumbnail_title: Jak se naučit programovat
-description: Jak začít programovat? Zde najdeš pečlivě nachystané jen to, co pro tebe bude do úplného startu nejlepší a nejefektivnější.
+description: Jak začít programovat? Tady máš úvod do programování v podobě rozcestníku na nejlepší a nejefektivnější materiály
 template: main_handbook.html
 ---
 

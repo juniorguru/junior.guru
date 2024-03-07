@@ -1,6 +1,5 @@
 ---
-title: Zásady ochrany osobních údajů na junior.guru
-thumbnail_title: Zásady ochrany osobních údajů
+title: Zásady ochrany osobních údajů
 ---
 
 {% from 'macros.html' import lead %}

@@ -1,16 +1,15 @@
 ---
-title: Kde a jak hledat pomoc během programování? Jak se ptát? Jak debugovat?
+title: Kde a jak hledat pomoc během programování
 emoji: 🙋
 stages: [learning, creating]
-thumbnail_title: Řešení problémů během programování
-description: Při programování tě i drobný zádrhel může zaseknout na týdny a úplně ti zkazit radost z učení. Kde můžeš své problémy konzultovat a jak se ptát tak, aby se ti dostalo odpovědi?
+description: Jak se ptát? Jak debugovat? Při programování tě i drobný zádrhel může zaseknout na týdny a úplně ti zkazit radost z učení. Kde můžeš své problémy konzultovat a jak se ptát tak, aby se ti dostalo odpovědi?
 template: main_handbook.html
 ---
 
 {% from 'macros.html' import lead, link_card, note with context %}
 
 
-# Kde najdeš pomoc
+# Řešení problémů během programování
 
 {#
   spravne se ptat je dost narocna samostatna disciplina, je potreba se to naucit jako kazdy jiny skill, googlit je skill, cist odpovedi je skill. zkus vyhledavac, ale pokud vysledkum nerozumis, ptej se, ptej se, kdo se pta, ten se dozvi

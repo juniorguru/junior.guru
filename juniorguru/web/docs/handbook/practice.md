@@ -2,7 +2,6 @@
 title: Jak získat praxi v programování
 emoji: 🛠️
 stages: [learning, creating, onboarding, working]
-thumbnail_title: Jak získat praxi v programování
 description: "Znáš základy? Tvým úkolem jsou nyní dvě věci: Získat alespoň minimální praxi a dál si rozšiřovat znalosti."
 template: main_handbook.html
 ---
@@ -58,27 +57,6 @@ template: main_handbook.html
     badge_text='Pro matematiky',
   ) }}
 </div>
-
-
-## Najdi si projekt    <span id="projects"></span>
-
-Nic tě nenaučí tolik, jako když si zkusíš něco samostatně vyrobit. Říká se tomu [projektové učení](https://cs.wikipedia.org/wiki/Projektov%C3%A9_u%C4%8Den%C3%AD). Nejlepší je vymyslet si něco vlastního a řešení procházet s [mentorem](mentoring.md). Inspirace na projekt se nejlépe hledá přímo okolo tebe:
-
-*   Jednoduchá hra, např. piškvorky nebo [had](https://naucse.python.cz/2018/snake-brno/),
-*   automatizace něčeho, co teď na počítači musíš dělat ručně (mrkni na [tuto knihu](https://automatetheboringstuff.com)),
-*   program na procvičování příkladů nebo slovíček pro děti do školy,
-*   [osobní webová stránka](candidate.md#osobni-web-a-blog).
-
-Pokud vlastní nápad nepřichází a mentor není po ruce, můžeš zkusit [hackathon](#zkus-hackathon) nebo [open source](#zkus-open-source).
-
-{% call blockquote_avatar(
-  'Junioři si často udělají kurz, certifikaci, ale potom už tu znalost neprocvičují. A to je strašná škoda, protože ji do pár měsíců zapomenou. Lepší méně kurzů, ale potom začít praktikovat a něco si vytvořit. Nákupní seznam, jednoduchého bota, malou aplikaci.',
-  'jiri-psotka.jpg',
-  'Jiří Psotka'
-) %}
-  Jiří Psotka, recruiter v [Red Hatu](https://red.ht/juniorguru) v [prvním dílu podcastu junior.guru](../podcast/1.jinja)
-{% endcall %}
-
 
 ## Zkus „hackathon“    <span id="hackathons"></span>
 

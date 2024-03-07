@@ -1,6 +1,5 @@
 ---
-title: Obchodní podmínky junior.guru
-thumbnail_title: Obchodní podmínky
+title: Obchodní podmínky
 ---
 
 {% from 'macros.html' import lead %}

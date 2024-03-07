@@ -1,6 +1,5 @@
 ---
-title: Kurzy programování
-thumbnail_title: Katalog kurzů programování
+title: Katalog kurzů programování
 ---
 
 {% from 'macros.html' import link_card, note, lead with context %}
