@@ -1,5 +1,5 @@
+juniorguru/**/*.jinja
 juniorguru/web/**/*.html
-juniorguru/web/**/*.jinja
 juniorguru/web/**/*.md
 juniorguru/*_legacy
 tests
