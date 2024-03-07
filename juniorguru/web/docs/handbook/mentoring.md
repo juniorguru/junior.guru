@@ -2,18 +2,73 @@
 title: Mentoring
 emoji: 💁
 stages: [learning, creating, preparing]
-description: TODO
+description: Kde najít mentory, jak s nimi komunikovat, a proč se toho nebát? Může ti s mentorováním pomoci ChatGPT?
 template: main_handbook.html
-noindex: true
 ---
 
-{% from 'macros.html' import note with context %}
+{% from 'macros.html' import note, lead, link_card with context %}
 
-# Mentoring
+# Mentoring při programování
+
+{% call lead() %}
+  Mentorka nebo mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady.
+  Kde takové lidi najít, jak s nimi komunikovat, a proč se toho nebát?
+  Může ti s mentorováním pomoci AI?
+{% endcall %}
 
 {% call note(standout=True) %}
   {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
+
+Mentor nemusí být vyloženě mistr v oboru, stačí když bude v programování alespoň o něco zkušenější než ty. A klidně může stačit, když se uvidíte jednu hodinu týdně přes videohovor. Pokud znáš někoho, kdo by mohl být tvým mentorem, ale nemá s tím praktické zkušenosti, projděte spolu [přednášku o mentorování](https://github.com/honzajavorek/become-mentor/blob/master/cs.md#readme) a prostě to zkuste!
+
+<div class="link-cards">
+  {{ link_card(
+    'Coding Coach',
+    'https://mentors.codingcoach.io/',
+    'Mentoři z celého světa, kteří nabízí své služby zdarma.'
+  ) }}
+
+  {{ link_card(
+    'Codementor',
+    'https://www.codementor.io/',
+    'Profesionální, placení mentoři z celého světa.'
+  ) }}
+
+  {{ link_card(
+    'Mentoring na robime.it',
+    'https://robime.it/mentoring-program-robime-it/',
+    'Slovenský mentoringový program.'
+  ) }}
+
+  {{ link_card(
+    'ReactGirls Mentoring',
+    'https://reactgirls.com/mentoring',
+    'Mentoringový program pro ženy zajímající se o webový frontend.',
+    badge_icon='gender-female',
+    badge_text='Pro ženy',
+  ) }}
+
+  {{ link_card(
+    'Femme Palette',
+    'https://www.femmepalette.com/mentoring-for-women-it',
+    'Český program placeného mentoringu pro ženy.',
+    badge_icon='gender-female',
+    badge_text='Pro ženy',
+  ) }}
+
+  {{ link_card(
+    'PyWorking Sessions',
+    'https://pyworking.cz/',
+    'Zastav se na pravidelná setkání začátečníků, kde jsou i koučové.'
+  ) }}
+
+  {{ link_card(
+    'GISMentors',
+    'https://gismentors.cz/',
+    'Mentoři, kteří učí využívaní programování v geografii.'
+  ) }}
+</div>
 
 
 <!-- {#

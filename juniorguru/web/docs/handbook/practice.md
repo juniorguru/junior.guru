@@ -62,7 +62,7 @@ template: main_handbook.html
 
 ## Najdi si projekt    <span id="projects"></span>
 
-Nic tě nenaučí tolik, jako když si zkusíš něco samostatně vyrobit. Říká se tomu [projektové učení](https://cs.wikipedia.org/wiki/Projektov%C3%A9_u%C4%8Den%C3%AD). Nejlepší je vymyslet si něco vlastního a řešení procházet s [mentorem](#najdi-si-mentora). Inspirace na projekt se nejlépe hledá přímo okolo tebe:
+Nic tě nenaučí tolik, jako když si zkusíš něco samostatně vyrobit. Říká se tomu [projektové učení](https://cs.wikipedia.org/wiki/Projektov%C3%A9_u%C4%8Den%C3%AD). Nejlepší je vymyslet si něco vlastního a řešení procházet s [mentorem](mentoring.md). Inspirace na projekt se nejlépe hledá přímo okolo tebe:
 
 *   Jednoduchá hra, např. piškvorky nebo [had](https://naucse.python.cz/2018/snake-brno/),
 *   automatizace něčeho, co teď na počítači musíš dělat ručně (mrkni na [tuto knihu](https://automatetheboringstuff.com)),
@@ -78,59 +78,6 @@ Pokud vlastní nápad nepřichází a mentor není po ruce, můžeš zkusit [hac
 ) %}
   Jiří Psotka, recruiter v [Red Hatu](https://red.ht/juniorguru) v [prvním dílu podcastu junior.guru](../podcast/1.jinja)
 {% endcall %}
-
-
-## Najdi si mentora    <span id="mentors"></span>
-
-Mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady. Nemusí to být vyloženě mistr v oboru, stačí když bude v programování alespoň o něco zkušenější než ty. A klidně může stačit, když se uvidíte jednu hodinu týdně přes videohovor. Pokud znáš někoho, kdo by mohl být tvým mentorem, ale nemá s tím praktické zkušenosti, projděte spolu [přednášku o mentorování](https://github.com/honzajavorek/become-mentor/blob/master/cs.md#readme) a prostě to zkuste!
-
-<div class="link-cards">
-  {{ link_card(
-    'Coding Coach',
-    'https://mentors.codingcoach.io/',
-    'Mentoři z celého světa, kteří nabízí své služby zdarma.'
-  ) }}
-
-  {{ link_card(
-    'Codementor',
-    'https://www.codementor.io/',
-    'Profesionální, placení mentoři z celého světa.'
-  ) }}
-
-  {{ link_card(
-    'Mentoring na robime.it',
-    'https://robime.it/mentoring-program-robime-it/',
-    'Slovenský mentoringový program.'
-  ) }}
-
-  {{ link_card(
-    'ReactGirls Mentoring',
-    'https://reactgirls.com/mentoring',
-    'Mentoringový program pro ženy zajímající se o webový frontend.',
-    badge_icon='gender-female',
-    badge_text='Pro ženy',
-  ) }}
-
-  {{ link_card(
-    'Femme Palette',
-    'https://www.femmepalette.com/mentoring-for-women-it',
-    'Český program placeného mentoringu pro ženy.',
-    badge_icon='gender-female',
-    badge_text='Pro ženy',
-  ) }}
-
-  {{ link_card(
-    'PyWorking Sessions',
-    'https://pyworking.cz/',
-    'Zastav se na pravidelná setkání začátečníků, kde jsou i koučové.'
-  ) }}
-
-  {{ link_card(
-    'GISMentors',
-    'https://gismentors.cz/',
-    'Mentoři, kteří učí využívaní programování v geografii.'
-  ) }}
-</div>
 
 
 ## Zkus „hackathon“    <span id="hackathons"></span>
@@ -179,7 +126,7 @@ Do open source nemusíš hned přispívat. Ze začátku se můžeš hodně nauč
 
 ### Jak začít?    <span id="how-to-start"></span>
 
-Začátky s open source nejsou přímočaré. Většinou na něm lidé pracují ve volném čase. Nováčci jsou vítáni, ale jen málo projektů má sílu aktivně nabízet [mentorování](#najdi-si-mentora). Nejsnazší cesta vede přes různé programy a stáže, jako např. [Google Summer of Code](https://summerofcode.withgoogle.com/), ale nejčastěji se lidé k open source dostanou posloupností „vidím rozbitou věc, spravím, pošlu opravu“.
+Začátky s open source nejsou přímočaré. Většinou na něm lidé pracují ve volném čase. Nováčci jsou vítáni, ale jen málo projektů má sílu aktivně nabízet [mentorování](mentoring.md). Nejsnazší cesta vede přes různé programy a stáže, jako např. [Google Summer of Code](https://summerofcode.withgoogle.com/), ale nejčastěji se lidé k open source dostanou posloupností „vidím rozbitou věc, spravím, pošlu opravu“.
 
 {% call blockquote_avatar(
   'Stáž na veřejném softwarovém projektu přes Outreachy mi změnila život. Učící křivka byla strmá, ale pomoc komunity kolem projektu byla ohromná. Naučila jsem se všechny běžné postupy, jak se co správně dělá, jak se komunikuje.',
