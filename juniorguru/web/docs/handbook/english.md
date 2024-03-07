@@ -116,6 +116,8 @@ Honzovy instrukce pro Veroniku:
 
 
 
+https://www.youtube.com/watch?v=gv21O_A5X2k
+
 --- https://discord.com/channels/769966886598737931/788826407412170752/1001957868565696632
 <@788486062430355497>  Nevím kde jsi se ptala na tu angličtinu, ale napíšu to sem, tady to bude asi nejvíc namístě:
 
