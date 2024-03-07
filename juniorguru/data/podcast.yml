@@ -7,6 +7,7 @@
 # Pavlína sem přidává popisky k novým epizodám pomocí Pull Requestu. Nevyplňuje
 # image_path, media_size, nebo media_duration_s, to nechává na dořešení Honzovi.
 
+
 - number: 20
   guest_name: Karolina Surma a Petr Viktorin
   guest_affiliation: Red Hat
@@ -185,6 +186,7 @@
   media_size: 26516824
   media_duration_s: 1894
 
+
 - number: 4
   guest_name: Tereza Vaňková
   guest_affiliation: Deepnote
@@ -195,6 +197,7 @@
   image_path: avatars-participants/tereza-vankova.jpg
   media_size: 28322005
   media_duration_s: 2023
+
 
 - number: 3
   guest_name: Filip Kirschner
@@ -207,6 +210,7 @@
   media_size: 42512450
   media_duration_s: 3037
 
+
 - number: 2
   guest_name: Roman Hraška (yablko)
   title: "o kurzech webového vývoje"
@@ -216,6 +220,7 @@
   image_path: avatars-participants/roman-hraska.jpg
   media_size: 44598119
   media_duration_s: 3186
+
 
 - number: 1
   guest_name: Jiří Psotka
@@ -227,6 +232,7 @@
   image_path: avatars-participants/jiri-psotka.jpg
   media_size: 46558026
   media_duration_s: 3326
+
 
 - number: 0
   title: "Startujeme!"
