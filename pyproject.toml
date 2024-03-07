@@ -33,7 +33,7 @@ favicon = "0.7.0"
 feedparser = "6.0.11"
 py-cord = {version = "2.5.0", extras = ["speed"]}
 gql = {extras = ["requests"], version = "3.5.0"}
-mkdocs = "1.5.2"
+mkdocs = "1.5.3"
 markupsafe = "2.1.5"
 ics = {version = "0.8.0.dev0", allow-prereleases = true}
 pod2gen = "1.0.3"
