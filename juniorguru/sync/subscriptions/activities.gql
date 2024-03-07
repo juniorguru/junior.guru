@@ -1,19 +1,23 @@
-query fetch($cursor: String!, $type: ActivityType!, $createdAt: CreatedAtFilter!) {
-    activities(first: 100, after: $cursor, type: $type, createdAt: $createdAt) {
-        totalCount
-        pageInfo {
-            endCursor
-            hasNextPage
-        }
-        edges {
-            node {
-                createdAt
-              	type
-                member {
-                    id
-                    fullName
-                }
-            }
-        }
+query fetch(
+  $cursor: String!
+  $type: ActivityType!
+  $createdAt: CreatedAtFilter!
+) {
+  activities(first: 100, after: $cursor, type: $type, createdAt: $createdAt) {
+    totalCount
+    pageInfo {
+      endCursor
+      hasNextPage
     }
+    edges {
+      node {
+        createdAt
+        type
+        member {
+          id
+          fullName
+        }
+      }
+    }
+  }
 }

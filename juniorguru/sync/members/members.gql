@@ -1,40 +1,40 @@
 query fetch($cursor: String!) {
-    members(first: 100, after: $cursor, state: ACTIVE) {
-        totalCount
-        pageInfo {
-            endCursor
-            hasNextPage
-        }
-        edges {
-            node {
-                id
-                discordUserId
-                email
-                fullName
-                totalSpendCents
-                stripeCustomerId
-              	subscriptions {
-                    id
-                    active
-                    activatedAt
-                    expiresAt
-                    coupon {
-                        code
-                    }
-                    orders {
-                        createdAt
-                        coupon {
-                            code
-                        }
-                    }
-                    plan {
-                        intervalUnit
-                        planGroup {
-                            name
-                        }
-                    }
-                }
-            }
-        }
+  members(first: 100, after: $cursor, state: ACTIVE) {
+    totalCount
+    pageInfo {
+      endCursor
+      hasNextPage
     }
+    edges {
+      node {
+        id
+        discordUserId
+        email
+        fullName
+        totalSpendCents
+        stripeCustomerId
+        subscriptions {
+          id
+          active
+          activatedAt
+          expiresAt
+          coupon {
+            code
+          }
+          orders {
+            createdAt
+            coupon {
+              code
+            }
+          }
+          plan {
+            intervalUnit
+            planGroup {
+              name
+            }
+          }
+        }
+      }
+    }
+  }
 }

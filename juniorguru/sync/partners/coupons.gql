@@ -1,15 +1,15 @@
 query fetch($cursor: String!) {
-    coupons(first: 100, after: $cursor) {
-        totalCount
-        pageInfo {
-            endCursor
-            hasNextPage
-        }
-        edges {
-            node {
-                code
-                state
-            }
-        }
+  coupons(first: 100, after: $cursor) {
+    totalCount
+    pageInfo {
+      endCursor
+      hasNextPage
     }
+    edges {
+      node {
+        code
+        state
+      }
+    }
+  }
 }
