@@ -92,12 +92,20 @@
   margin: 0;
 }
 
-.media-card-title a { text-decoration: none; }
+.media-card-title a {
+  text-decoration: none;
+}
 .media-card-title a:hover,
 .media-card-title a:focus,
-.media-card-title a:active { text-decoration: underline; }
-.media-card-title a:visited { color: $link-color; }
-.media-card-title a:visited:hover { color: $link-hover-color; }
+.media-card-title a:active {
+  text-decoration: underline;
+}
+.media-card-title a:visited {
+  color: $link-color;
+}
+.media-card-title a:visited:hover {
+  color: $link-hover-color;
+}
 
 .media-card-link {
   @extend .stretched-link;

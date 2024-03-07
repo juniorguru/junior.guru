@@ -110,8 +110,12 @@
   font-weight: $font-weight-normal;
 }
 
-.news-card-title a:visited { color: $link-color; }
-.news-card-title a:visited:hover { color: $link-hover-color; }
+.news-card-title a:visited {
+  color: $link-color;
+}
+.news-card-title a:visited:hover {
+  color: $link-hover-color;
+}
 
 .news-card-link {
   @extend .stretched-link;
@@ -120,7 +124,9 @@
 
 .news-card-link:hover,
 .news-card-link:focus,
-.news-card-link:active { text-decoration: underline; }
+.news-card-link:active {
+  text-decoration: underline;
+}
 
 .news-card-body {
   @extend .card-body;

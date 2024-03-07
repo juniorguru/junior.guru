@@ -17,15 +17,16 @@ $jg-gray: lighten($jg-dark, 25%);
 $jg-gray-light: lighten($jg-gray, 45%);
 $jg-gray-white: lighten($jg-gray, 50%);
 
-$jg-yellow-light-legacy: #fffee3;  // equals to lighten($jg-yellow, 22.2%)
+$jg-yellow-light-legacy: #fffee3; // equals to lighten($jg-yellow, 22.2%)
 $jg-gray-light-legacy: darken($jg-white, 20%);
-
 
 /*
   CHANGING BOOTSTRAP DEFAULTS
 */
 
-$font-family-sans-serif: "Inter", "Helvetica Neue", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-sans-serif: "Inter", "Helvetica Neue", "Helvetica", "Arial",
+  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+  "Noto Color Emoji";
 
 $white: $jg-white;
 $gray-100: $jg-gray-white;

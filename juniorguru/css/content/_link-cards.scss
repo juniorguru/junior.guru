@@ -89,8 +89,12 @@
   margin: 0;
 }
 
-.link-card-title a:visited { color: $link-color; }
-.link-card-title a:visited:hover { color: $link-hover-color; }
+.link-card-title a:visited {
+  color: $link-color;
+}
+.link-card-title a:visited:hover {
+  color: $link-hover-color;
+}
 
 .link-card-link {
   @extend .stretched-link;
@@ -99,7 +103,9 @@
 
 .link-card-link:hover,
 .link-card-link:focus,
-.link-card-link:active { text-decoration: underline; }
+.link-card-link:active {
+  text-decoration: underline;
+}
 
 .link-card-body {
   @extend .card-body;

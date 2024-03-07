@@ -57,7 +57,9 @@ $stage-arrow-height: $stage-arrow-width * .5;
   flex-shrink: 0;
   align-items: center;
   justify-content: start;
-  padding: $stage-icon-space-y ($stage-icon-space-x - $spacer) $stage-icon-space-y $stage-icon-space-x;
+  padding:
+    $stage-icon-space-y ($stage-icon-space-x - $spacer)
+    $stage-icon-space-y $stage-icon-space-x;
 }
 
 .stage-card-media::before {
