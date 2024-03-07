@@ -1,3 +1,4 @@
+juniorguru/data/tips/*.md
 juniorguru/**/*.jinja
 juniorguru/web/**/*.html
 juniorguru/web/**/*.md
