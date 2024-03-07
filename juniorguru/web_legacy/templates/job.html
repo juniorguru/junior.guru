@@ -1,7 +1,9 @@
 {% extends 'layouts/base.html' %}
 
-{% block title %}{{ job.title }} &mdash; {{ job.company_name }} &mdash;
-{{ job.location }}{% endblock %}
+{% block title %}
+  {{ job.title }}
+  &mdash; {{ job.company_name }} &mdash; {{ job.location }}
+{% endblock %}
 
 {%- block description -%}
   Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash;

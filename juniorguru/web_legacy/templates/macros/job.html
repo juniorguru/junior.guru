@@ -41,10 +41,9 @@
             itemtype="http://schema.org/Organization"
           >
             <span itemprop="name">{{ job.company_name }}</span>
-            {% if job.company_url %}<link
-              itemprop="url"
-              href="{{ job.company_url }}"
-            />{% endif %}
+            {% if job.company_url %}
+              <link itemprop="url" href="{{ job.company_url }}" />
+            {% endif %}
           </p>
           <p
             class="jobs__location"
