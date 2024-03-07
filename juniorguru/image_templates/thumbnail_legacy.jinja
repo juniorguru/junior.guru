@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="./thumbnail-legacy.css">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./thumbnail-legacy.css" />
   </head>
   {% if job_title and job_company and job_location %}
     <body class="thumbnail-legacy-job">
@@ -15,16 +15,20 @@
     </body>
   {% elif title %}
     <body class="thumbnail-legacy-title">
-      <img src="{{ images_dir }}/logo-legacy.svg">
+      <img src="{{ images_dir }}/logo-legacy.svg" />
       <h1>
-        {% if above_title %}<small>{{ above_title }}<small>{% endif %}
+        {% if above_title %}
+          <small>{{ above_title }}<small></small></small>
+        {% endif %}
         <strong>{{ title }}</strong>
-        {% if below_title %}<small>{{ below_title }}<small>{% endif %}
+        {% if below_title %}
+          <small>{{ below_title }}<small></small></small>
+        {% endif %}
       </h1>
     </body>
   {% else %}
     <body class="thumbnail-legacy">
-      <img src="{{ images_dir }}/logo-legacy.svg">
+      <img src="{{ images_dir }}/logo-legacy.svg" />
     </body>
   {% endif %}
 </html>

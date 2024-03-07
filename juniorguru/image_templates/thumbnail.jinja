@@ -1,22 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="./thumbnail.css">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./thumbnail.css" />
   </head>
   <body class="thumbnail">
     <main class="thumbnail-main">
-      <h1 class="thumbnail-title{% if title|length > 100 %} long{% elif title|length > 50 %} medium{% endif %}">{{ title }}</h1>
-      <hr class="thumbnail-hr">
+      <h1
+        class="thumbnail-title{% if title|length > 100 %}long{% elif title|length > 50 %}medium{% endif %}"
+      >
+        {{ title }}
+      </h1>
+      <hr class="thumbnail-hr" />
       {% if image_path %}
-        <img class="thumbnail-image" src="{{ images_dir }}/{{ image_path }}">
+        <img class="thumbnail-image" src="{{ images_dir }}/{{ image_path }}" />
       {% endif %}
       {% if badge %}
         <strong class="thumbnail-badge">{{ badge }}</strong>
       {% endif %}
     </main>
     <footer class="thumbnail-footer">
-      <img class="thumbnail-logo" src="{{ images_dir }}/logo.svg">
+      <img class="thumbnail-logo" src="{{ images_dir }}/logo.svg" />
       <p class="thumbnail-claim">
         Jsou věci, se kterými ti kurz programování nepomůže
       </p>

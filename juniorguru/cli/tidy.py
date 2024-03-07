@@ -49,8 +49,8 @@ def main(context):
         return
     context.invoke(format_python)
     context.invoke(format_jinja)
-    context.invoke(fix_scss)
     context.invoke(prettier)
+    context.invoke(fix_scss)
     context.invoke(optimize_avatars)
     context.invoke(optimize_svg)
 

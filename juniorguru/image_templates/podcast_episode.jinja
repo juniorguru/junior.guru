@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="./podcast-episode.css">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./podcast-episode.css" />
   </head>
   <body>
     <main>
       <section class="podcast-photos">
-        <img src="{{ images_dir }}/avatars-participants/pavlina-fronkova.jpg">
-        <img src="{{ images_dir }}/{{ podcast_episode.image_path }}">
+        <img src="{{ images_dir }}/avatars-participants/pavlina-fronkova.jpg" />
+        <img src="{{ images_dir }}/{{ podcast_episode.image_path }}" />
       </section>
       <h1>{{ podcast_episode.format_title() }}</h1>
       <section class="podcast-url">
@@ -17,9 +17,13 @@
     </main>
     <footer>
       <p>
-        <a class="podcast-button spotify" href="#">{{ 'spotify'|icon }} Spotify</a>
+        <a class="podcast-button spotify" href="#"
+          >{{ 'spotify'|icon }} Spotify</a
+        >
         <a class="podcast-button apple" href="#">{{ 'apple'|icon }} Apple</a>
-        <a class="podcast-button youtube" href="#">{{ 'youtube'|icon }} YouTube</a>
+        <a class="podcast-button youtube" href="#"
+          >{{ 'youtube'|icon }} YouTube</a
+        >
         <a class="podcast-button rss" href="#">{{ 'rss-fill'|icon }} RSS</a>
       </p>
     </footer>
