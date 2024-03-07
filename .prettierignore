@@ -1,3 +1,6 @@
-juniorguru/web
+juniorguru/web/**/*.html
+juniorguru/web/**/*.jinja
+juniorguru/web/**/*.md
+juniorguru/web_legacy
 juniorguru/css_legacy
 tests

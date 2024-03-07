@@ -1,6 +1,9 @@
+# Removed 'strict', because it gives warnings if linking non-existing targets. Once the Flask
+# app is gone, 'strict' should return to be enabled.
+#strict: true
+
 site_name: junior.guru
 site_url: https://junior.guru/
-
 
 nav:
   - Klub:
@@ -20,7 +23,7 @@ nav:
       - Řešení problémů: handbook/help.md
       - První praxe: handbook/practice.md
       - Psychika: handbook/mental-health.md
-      - Git a GitHub: handbook/git.md
+      - Git a GitHub: handbook/git.md
       - Hledání práce: handbook/candidate.md
       - Životopis: handbook/cv.md
       - LinkedIn: handbook/linkedin.md
@@ -47,7 +50,7 @@ nav:
       - Pravidla chování: coc.md
       - Obchodní podmínky: tos.md
       - Zásady ochrany osobních údajů: privacy.md
-      - Čísla a grafy: open.md
+      - Čísla a grafy: open.md
       - Licence obsahu (CC BY-SA): https://creativecommons.org/licenses/by-sa/4.0/deed.cs
   - Témata:
       - ... | flat | topics/*.md
@@ -58,29 +61,24 @@ nav:
   - Ostatní:
       - ... | flat
 
-
 validation:
   absolute_links: ignore
 
-
 markdown_extensions:
   - toc:
-      toc_depth: '2-2'
-      permalink: '#'
+      toc_depth: "2-2"
+      permalink: "#"
       permalink_title: Odkaz na tuto sekci
   - tables
   - fenced_code
   - attr_list
 
-
 theme:
   name: null
   custom_dir: theme/
 
-
 hooks:
   - hooks.py
-
 
 plugins:
   - gen-files:
@@ -88,8 +86,3 @@ plugins:
         - templates.py
   - awesome-pages:
       strict: true
-
-
-# Removed 'strict', because it gives warnings if linking non-existing targets. Once the Flask
-# app is gone, 'strict' should return to be enabled.
-#strict: true
