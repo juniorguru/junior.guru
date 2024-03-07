@@ -56,7 +56,6 @@
 #    ještě spustit 'jg sync events', takže… takže je vlastně lepší to neřešit
 #    a poslat prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
-
 - id: 42
   title: "(situace na trhu, bude upřesněno)"
   date: "2024-05-28"
@@ -71,7 +70,6 @@
     - https://www.linkedin.com/in/tomas-ervin-dombrovsky/
   logo_path: logos/almacareer.svg
   speakers:
-
 
 - id: 41
   title: "„Agile is dead!“ …nebo ne?"
@@ -90,7 +88,6 @@
   logo_path: logos/slivka.svg
   speakers:
 
-
 - id: 40
   title: "Úvod do Advent of Code a „přátelský pokec u kakaa“"
   date: "2023-11-28"
@@ -106,7 +103,6 @@
   logo_path: logos/redhat.svg
   speakers: 797088930758524959
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1179462183667630282
-
 
 - id: 39
   title: "Programování jako kariéra? Ptej se! (Q&A v rámci Týdne pro Digitální Česko)"
@@ -127,7 +123,6 @@
   public_recording_url: https://youtube.com/live/9mpIl8kFulA
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1176596905908764682
 
-
 - id: 38
   title: "Směrem k úspěchu aneb jak vykročit tou správnou nohou"
   date: "2023-12-19"
@@ -143,7 +138,6 @@
   logo_path: logos/vortex.svg
   speakers: 1168093838192148483
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1186742229633617980
-
 
 - id: 37
   title: "Proč mají programátoři rádi šifrovací hry a proč by mohly bavit i vás"
@@ -161,7 +155,6 @@
     - https://www.linkedin.com/in/m%C3%ADla-votradovec-2a659920/
   speakers: 514847931040530433
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1181669143993389149
-
 
 - id: 36
   title: "Jak se jako ajťák/čka zbavit pochyb a pocitu, že nejsem dost"
@@ -181,7 +174,6 @@
   public_recording_url: https://youtu.be/FIijszEVQHY
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1120773553164402708
 
-
 - id: 35
   title: "Začínáme správně: klíčové faktory pro úspěšný frontend projekt"
   date: "2023-05-02"
@@ -199,7 +191,6 @@
   speakers: 392659924552777730
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1103007844732784691
 
-
 - id: 34
   title: "Dev Fiction: Junioři a realita vývojářského týmu"
   date: "2023-04-25"
@@ -215,7 +206,6 @@
   logo_path: logos/lundegaard.svg
   speakers: 1081144172632879167
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1100474817930612828
-
 
 - id: 33
   title: "Programování jako kariéra? Ptej se! (Q&A)"
@@ -233,7 +223,6 @@
   speakers: 668226181769986078
   public_recording_url: https://youtube.com/live/vN235cq8xP4
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1095399134313336942
-
 
 - id: 32
   title: "Práce a dítě: Jak být k sobě laskavější"
@@ -255,7 +244,6 @@
   speakers: 1084944417716178965
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1088457105910026240
 
-
 - id: 31
   title: "Vývoj desktopových aplikací v C#: Nové trendy a možnosti"
   date: "2023-02-21"
@@ -271,7 +259,6 @@
   logo_path: logos/edhouse.svg
   speakers: 113033048957665280
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1077657861397684396
-
 
 - id: 30
   title: "Základy bezpečnosti pro vývojáře"
@@ -308,7 +295,6 @@
   speakers: 844877506259845140
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1067870620739711067
 
-
 - id: 28
   title: "Kdo je to IT analytik a jak se jím stát?"
   date: "2023-01-10"
@@ -344,7 +330,6 @@
   speakers: 775619876152672268
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1049755762081140766
 
-
 - id: 26
   title: "Jak funguje mentoring a uvítání mentorů z Mews"
   date: "2022-11-15"
@@ -355,7 +340,7 @@
   partner: mews
   bio_name: Honza Javorek a mentoři z Mews
   bio: |
-      Mews je softwarová firma, která buduje moderní systém pro správu ubytovacích zařízení. Zjednodušuje a automatizuje (často nudné) úkony což umožňuje hoteliérům věnovat se naplno svým klientům.
+    Mews je softwarová firma, která buduje moderní systém pro správu ubytovacích zařízení. Zjednodušuje a automatizuje (často nudné) úkony což umožňuje hoteliérům věnovat se naplno svým klientům.
   bio_links:
     - https://www.mews.com/
     - https://www.mews.com/en/careers
@@ -363,7 +348,6 @@
   logo_path: logos/mews.svg
   speakers: 668226181769986078, 672433063690633216
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1042158897999392819
-
 
 - id: 25
   title: "Technologický dluh – zabiják inovace"
@@ -381,7 +365,6 @@
     - https://twitter.com/michalsimon
   logo_path: logos/codeac.svg
   speakers: 383551603678117888
-
 
 - id: 24
   title: "Jak se správně připravit na pohovor"
@@ -402,7 +385,6 @@
   speakers: 909742782254579763
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1031996509694205953
 
-
 - id: 23
   title: "Jak se stát webovým analytikem"
   date: "2022-10-12"
@@ -421,7 +403,6 @@
   speakers: 1002158848540413952, 782702546065424405
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1029831740514115647
 
-
 - id: 22
   title: "Od C# k .NETu"
   date: "2022-06-07"
@@ -431,7 +412,7 @@
   bio_name: Vojtěch Mádr
   bio_title: CTO v Motionlab, moderátor podcastů ProgramHRování a .NET.CZ
   bio: |
-      Technický ředitel ve startupu, podcaster a hrdý otec. Rád používá Microsoftí technologíe a mluví o nich, takže je opakovaným držitelem titulu Microsoft MVP.
+    Technický ředitel ve startupu, podcaster a hrdý otec. Rád používá Microsoftí technologíe a mluví o nich, takže je opakovaným držitelem titulu Microsoft MVP.
   bio_links:
     - https://www.linkedin.com/in/madrvojtech/
     - https://www.programhrovani.cz/
@@ -440,7 +421,6 @@
   logo_path: logos/motionlab.svg
   speakers: 839123616665698354
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/983788617107390474
-
 
 - id: 21
   title: "Jak funguje mentoring a uvítání mentorů z Pure Storage"
@@ -451,14 +431,13 @@
   partner: purestorage
   bio_name: Honza Javorek a mentoři z Pure Storage
   bio: |
-      Pure Storage je pražská pobočka firmy ze Silicon Valley, která se zabývá ukládáním dat. Chtějí junior.guru podpořit především jako mentoři.
+    Pure Storage je pražská pobočka firmy ze Silicon Valley, která se zabývá ukládáním dat. Chtějí junior.guru podpořit především jako mentoři.
   bio_links:
     - https://www.purestorage.com/
     - https://www.welcometothejungle.com/en/companies/pure-storage
   logo_path: logos/purestorage.svg
   speakers: 668226181769986078
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/974000560841842708
-
 
 - id: 20
   title: "Next.js úvod pre juniorov"
@@ -480,7 +459,6 @@
   speakers: 477895566085324801
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/966037882643034153
 
-
 - id: 19
   title: "Představení Jetveo"
   date: "2022-02-23"
@@ -497,7 +475,6 @@
   logo_path: logos/jetveo.svg
   speakers: 736963862099918968
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/946376703691882497
-
 
 - id: 18
   title: "Jak přežít cestu juniora po psychické stránce"
@@ -516,7 +493,6 @@
   speakers: 791020144661889054
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/946710822506344500
   public_recording_url: https://youtu.be/6G4TKGQICw0
-
 
 - id: 17
   title: "Chcem mobilnú aplikáciu. Ako a kde začať?"
@@ -539,7 +515,6 @@
   speakers: 477895566085324801
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/940697182439362580
 
-
 - id: 16
   title: "Dobrá mzda je jen začátkem"
   date: "2022-01-11"
@@ -557,7 +532,6 @@
   speakers: 925744853508304897
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/930537584386506852
 
-
 - id: 15
   title: "Tester jako ideální první práce, aneb čím začít kariéru v IT"
   date: "2021-12-07"
@@ -573,7 +547,6 @@
   logo_path: logos/mews.svg
   speakers: 869504117154934824
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/917855271374700575
-
 
 - id: 14
   title: "10 klíčových otázek, na které by každý junior měl znát odpověď"
@@ -631,7 +604,6 @@
   speakers: 514189468673114122
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/900105360038326342
 
-
 - id: 11
   title: "AMA: Mentoři na frontend"
   date: "2021-09-29"
@@ -642,7 +614,7 @@
   bio_name: Daniel Srb, Kate Miháliková
   bio_title: vývojáři a mentoři, CoreSkill
   bio: |
-      Dan Srb se zaměřuje na návrh a implementaci webových uživatelských rozhraní. Jezdí na skládačce a má rád dobrou kávu, i když už ji moc nepije. Kate Miháliková je frontedová vývojářka se zaměřením na TypeScript a JavaScript. Baví ji vlaky, hraje si ráda s Arduinem a na první dobrou rozezná jména Pokémonů od buzzwordů a názvů technologií.
+    Dan Srb se zaměřuje na návrh a implementaci webových uživatelských rozhraní. Jezdí na skládačce a má rád dobrou kávu, i když už ji moc nepije. Kate Miháliková je frontedová vývojářka se zaměřením na TypeScript a JavaScript. Baví ji vlaky, hraje si ráda s Arduinem a na první dobrou rozezná jména Pokémonů od buzzwordů a názvů technologií.
   bio_links:
     - https://coreskill.tech/
     - https://github.com/katemihalikova
@@ -652,7 +624,6 @@
   logo_path: logos/coreskill.svg
   speakers: 652142810291765248, 488415538117214220
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/893578992853086218
-
 
 - id: 10
   title: Relační databáze efektivně
@@ -674,7 +645,6 @@
   speakers: 821709585588551701
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/882327482559246397
 
-
 - id: 9
   title: Od recruitingu cez Lambda School až do globálneho startupu
   date: "2021-08-17"
@@ -694,7 +664,6 @@
   logo_path: logos/grafana.svg
   speakers: 561313047390715904
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/877260218650751056
-
 
 - id: 8
   title: Jak jsou datové struktury uloženy v paměti
@@ -719,7 +688,6 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/875483337744089139
   public_recording_url: https://youtu.be/1-Bwa7yp0C4
 
-
 - id: 7
   title: Proč a jak být technickým redaktorem?
   date: "2021-07-27"
@@ -737,7 +705,6 @@
   logo_path: logos/suse.svg
   speakers: 501682297930645504
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/869642782355103814
-
 
 - id: 6
   title: Život HTTP požadavku
@@ -757,7 +724,6 @@
   logo_path: logos/oracle.svg
   speakers: 817453228283133982
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/844488172364890123
-
 
 - id: 5
   title: "AMA: Recruiter se zaměřením na juniory"
@@ -794,7 +760,6 @@
   speakers: 382474361300451328
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/842104677943869440
 
-
 - id: 4
   title: Designování vysněné práce
   date: "2021-04-13"
@@ -814,7 +779,6 @@
   logo_path: logos/adinafoxova.svg
   speakers: 658628731337965586
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/836906198426320906
-
 
 - id: 3
   title: Jamstack
@@ -836,7 +800,6 @@
   speakers: 779257315782164490
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/826872579427794955
 
-
 - id: 2
   title: "#Junioring 101 - How Not To Go Bonkers At The Start"
   date: "2021-03-16"
@@ -856,7 +819,6 @@
   logo_path: logos/cybermagnolia.svg
   speakers: 789165121771536404
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/822066882298642462
-
 
 - id: 1
   title: První klubový sraz
