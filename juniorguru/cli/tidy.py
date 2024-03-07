@@ -49,7 +49,8 @@ def main(context):
         return
     context.invoke(format_python)
     context.invoke(format_jinja)
-    context.invoke(format_web)
+    context.invoke(fix_scss)
+    context.invoke(prettier)
     context.invoke(optimize_avatars)
     context.invoke(optimize_svg)
 
@@ -66,7 +67,16 @@ def format_python():
 
 
 @main.command()
-def format_web():
+def prettier():
+    try:
+        logger.info("Formatting code by Prettier")
+        subprocess.run(["npx", "prettier", "--write", "."], check=True)
+    except subprocess.CalledProcessError:
+        raise click.Abort()
+
+
+@main.command()
+def fix_scss():
     try:
         logger.info("Fixing SCSS code")
         subprocess.run(
@@ -79,8 +89,6 @@ def format_web():
             ],
             check=True,
         )
-        logger.info("Formatting code by Prettier")
-        subprocess.run(["npx", "prettier", "--write", "."], check=True)
     except subprocess.CalledProcessError:
         raise click.Abort()
 
