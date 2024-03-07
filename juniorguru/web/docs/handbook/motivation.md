@@ -66,7 +66,7 @@ Programování není cíl, ale nástroj — jako šroubovák nebo matematika. Do
   Karolína Hábová z květinové farmy [LoukyKvět](https://www.loukykvet.cz/) v [rozhovoru pro Forbes](https://forbes.cz/kvetinarstvi-online-mlady-par-farmaru-dela-revoluci-v-prodeji-kvetin/)
 {% endcall %}
 
-Doktoři a vědci přicházejí na to, že když výpočty naprogramují, mohou svůj výzkum provést mnohem rychleji. Novináři, kteří umí zpracovávat velká množství dat, díky tomu [přinášejí zajímavé analýzy](https://www.irozhlas.cz/zpravy-tag/datova-zurnalistika). Kromě toho, s příchodem covidu-19 se dostaly složité grafy a datová žurnalistika do každé větší redakce. Prakticky každý, kdo má základy programování, si zase dokáže ušetřit práci s excelovskými tabulkami nebo s uspořádáním velkého množství souborů na disku. Místo toho, aby se někde muselo 500× udělat Ctrl+C a Ctrl+V, můžeš si to naprogramovat.
+Doktoři a vědci přicházejí na to, že když výpočty naprogramují, mohou svůj výzkum provést mnohem rychleji. Novináři, kteří umí zpracovávat velká množství dat, díky tomu [přinášejí zajímavé analýzy](https://www.irozhlas.cz/zpravy-tag/datova-zurnalistika). Kromě toho, během covidu-19 se dostaly složité grafy a datová žurnalistika do každé větší redakce. Prakticky každý, kdo má základy programování, si zase dokáže ušetřit práci s excelovskými tabulkami nebo s uspořádáním velkého množství souborů na disku. Místo toho, aby se někde muselo 500× udělat Ctrl+C a Ctrl+V, můžeš si to naprogramovat.
 
 {% call blockquote(
   'Vývojáři-amatéři ve firmách se stále častěji uchylují k vlastnoruční tvorbě nástrojů, které potřebují k práci. Počet takových lidí stoupá geometrickou řadou.',
@@ -81,7 +81,7 @@ Pokud chceš mít programování jako pomocníka, tento web ti na dalších str�
 
 ### Programování jako kariéra    <span id="coding-career"></span>
 
-Průměrná mzda programátorů je 50.000 Kč a [těch zkušených je dlouhodobě nedostatek](https://www.czso.cz/csu/czso/na-trhu-je-nedostatek-ict-odborniku). Vysokoškolský diplom po tobě většinou nikdo nevyžaduje, můžeš mít pružnou pracovní dobu, můžeš pracovat na dálku. Jestli v roce {{ now.year }} existuje výtah k lepší životní úrovni, je to IT. Zkušenějším programátorům navíc nehrozí, že by měli v blízké době problém sehnat si práci, a to i přes ekonomický dopad, který může mít covid-19:
+Průměrná mzda programátorů je 50.000 Kč a [těch zkušených je dlouhodobě nedostatek](https://www.czso.cz/csu/czso/na-trhu-je-nedostatek-ict-odborniku). Vysokoškolský diplom po tobě většinou nikdo nevyžaduje, můžeš mít pružnou pracovní dobu, můžeš pracovat na dálku. Jestli v roce {{ now.year }} existuje výtah k lepší životní úrovni, je to IT. Zkušenějším programátorům navíc nehrozí, že by měli problém sehnat si práci:
 
 -   V roce 2018 rostlo IT v Evropě [5× rychleji než vše ostatní](https://2018.stateofeuropeantech.com/). Takto rozjetý vlak se nezastaví, zvlášť když není zasažen přímo a podílí se dokonce na řešení krize.
 

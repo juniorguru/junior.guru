@@ -65,6 +65,11 @@ Ne všechna témata se zatím povedlo pokrýt kapitolami v příručce, ale se v
 <!-- {#
 
 
+celkově Hele za mě dobrý, ale asi bych tam ocenil, v rámci přehledu nejen název a popis co se tam dělá, ale i stručně PROČ ta fáze má smysl, co je CÍLem, nějakou větičku.
+
+
+„Je nor­mál­ní, že se za­sek­neš, nebo něco pře­sko­číš“ Tady říkáš, že to je v pořádku. I když samozřejmě slovo normální neznamená v pořádku, tak si to tak dost lidí vysvětluje. Ale není. Vynecháním něčeho pravděpodobně bude takový člověk dost trpět a možná se mu to nakonec nepovede.
+
 
 # Příručka pro juniory
 
