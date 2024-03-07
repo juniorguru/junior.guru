@@ -8,7 +8,10 @@
   </ul>
   {% if jobs|length > n %}
     <p class="button-compartment button-compartment--compact">
-      <a class="button button--secondary button--small" href="{{ url_for(jobs_link) }}">
+      <a
+        class="button button--secondary button--small"
+        href="{{ url_for(jobs_link) }}"
+      >
         Další nabídky
       </a>
     </p>
