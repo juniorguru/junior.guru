@@ -81,7 +81,7 @@ async def kickoff_weekly_plans(
         "💭 Proč? Uspořádáš si myšlenky. Uvědomíš si, jak se posunuješ. Dáš do slov, čím teď procházíš. "
         "Všimneš si, s čím zápasí ostatní a třeba uvidíš, že si nějak můžete pomoci. "
         "A někdo když veřejně přislíbí, že něco udělá, tak se k tomu pak spíš dokope. "
-        "\n\u200B"  # forces margin between message and the embeds
+        "\n\u200b"  # forces margin between message and the embeds
     )
 
     template_embed = Embed(
