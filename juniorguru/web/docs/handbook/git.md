@@ -53,6 +53,12 @@ Nenech se omezovat strachem, že někdo uvidí tvůj kód a pomyslí si, že nic
 
 <!-- {#
 
+https://www.linkedin.com/posts/marketa-willis_p%C5%99i-hled%C3%A1n%C3%AD-pr%C3%A1ce-ned%C3%A1vejte-odkaz-na-sv%C5%AFj-activity-7171783495235661824-d9m-?utm_source=share&utm_medium=member_desktop
+Při hledání práce nedávejte odkaz na svůj Github.
+Proč? Pokud jste jako většina vývojářů, zvlášť pokud se učíte programovat, tak váš Github profil není reprezentativní přehled vašich schopností, ale spíš (jak jsem jednou slyšela v podcastu) hřbitov našich nedokončených projektů.
+Desítky repozitářů pojmenované "kurz", "try", "learn", "udemy", "personal project". Projekty nemají strukturu a chybí readme. Ano je potřeba si takové repozitáře dělat a tak se učit, ale při hledání práce to dává spíše obrázek chaotického nadšence do programování.
+Pokud chcete opravdu ukázat své schopnosti, věnujte čas tomu dotáhnout do konce pár projektů, vyšperkovat Readme a dát potom odkaz už přímo na tyto repozitáře, ideálně s motivací k projektu a vysvětlením, co jste se na něm naučili. Souhlasíte?
+
 https://dariagrudzien.com/posts/the-one-about-your-github-account/
 https://dev.to/yuridevat/how-to-create-a-stunning-github-profile-2mh5
 
