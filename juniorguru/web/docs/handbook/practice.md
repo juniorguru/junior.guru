@@ -6,7 +6,7 @@ description: Znáš základy, ale na větší projekt si ještě netroufáš? Pr
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, lead, link_card with context %}
+{% from 'macros.html' import lead, link_card with context %}
 
 
 # Jak procvičovat a rozšiřovat si znalosti
