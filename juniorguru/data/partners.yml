@@ -286,3 +286,11 @@
       benefits:
         - slug: welcome_social
           done: https://www.linkedin.com/posts/honzajavorek_faktury-rubyonrails-ruby-activity-6914182951429648384-hRoV
+
+- name: ITnetwork
+  slug: itnetwork
+  url: https://www.itnetwork.cz/
+  partnerships:
+    - plan: basic
+      starts_on: 2024-03-11
+      expires_on: 2025-03-11
