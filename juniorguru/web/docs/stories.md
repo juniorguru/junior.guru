@@ -37,7 +37,7 @@ To samé horník, když ve filmu uvidí [Tomáše Hisema](#z-hornika-programator
   'petr-houdek.jpg',
   'Petr Houdek'
 ) %}
-  Petr Houdek, behaviorální ekonom, v [článku pro Lidové noviny](https://houdekpetr.blogspot.com/2024/02/co-sledujete-v-televizi.html)
+  Petr Houdek, behaviorální ekonom, v článku [Co sledujete v televizi?](https://houdekpetr.blogspot.com/2024/02/co-sledujete-v-televizi.html)
 {% endcall %}
 
 ## Nesrovnávej se
