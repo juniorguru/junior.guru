@@ -144,3 +144,10 @@ Začátky s open source nejsou přímočaré. Většinou na něm lidé pracují 
     'Kontaktuj někoho z těch, kdo se sami nabízí zaučovat nováčky na OSS projektech.'
   ) }}
 </div>
+
+
+<!-- {#
+
+https://mastodonczech.cz/@brainwane@social.coop/112083256753100254
+
+#} -->
