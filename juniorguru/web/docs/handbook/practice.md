@@ -869,4 +869,19 @@ http://antirez.com/news/140
 https://twitter.com/kondrej/status/1535586323461033984
 
 
+--- https://discord.com/channels/769966886598737931/1211759227320803449/1211965435420090393
+Včera jsem konečně dojel dvoudílnou nalejvárnu od <@1002301544496119838> a <@1118626383183237200> právě o testingu. Od vstupních požadavků oboru až po zkušenosti přímo z pracovních pozic. Nic lepšího jsem na tohle téma ještě neviděl. To určitě doporučuju zkouknout https://www.youtube.com/watch?v=1efZbhcYY4g + https://www.youtube.com/watch?v=QUWbs_vqSbs
+---
+
+
+--- https://discord.com/channels/769966886598737931/789087476072710174/1215932558286782474
+Super nástroj - rozloží URL na kousky a pojmenuje ty kousky https://url-parts.glitch.me/
+---
+
+
+--- https://discord.com/channels/769966886598737931/789087476072710174/1215242926485929994
+Návod, jak používat ChatGPT jako svého mentora: https://realpython.com/chatgpt-coding-mentor-python/
+---
+
+
 #} -->

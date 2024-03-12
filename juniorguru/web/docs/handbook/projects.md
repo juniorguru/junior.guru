@@ -438,4 +438,9 @@ https://robbowen.digital/wrote-about/abandoned-side-projects/
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1215708215527088218/1217120094392553503
+Přijde mi strašně super, že když něco vytvoříš, tak si z toho uděláš video, aby to šlo ukázat. Odkaz na takovou věc se pak dá dát i do CVčka a je to mnohem efektnější, než ukazovat kód. Je jasný, že kód je to důležité, ale holt jsme jenom lidi a když se to dobře odprezentuje, vždycky to zaujme víc. Kéž by tohle umělo víc juniorů.
+---
+
+
 #} -->

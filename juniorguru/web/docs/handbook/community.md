@@ -89,4 +89,17 @@ Na konference je potřeba si koupit lístek. Výše zmíněné konference mají 
 
 pracovní veletrhy
 
+--- https://discord.com/channels/769966886598737931/1214233351242776646/1214244615499022366
+- kolik se sluší sníst chlebicku - nechám odpověď odborníkovi <@652142810291765248> 
+- dress code většinou není, takže jestli chceš za slusnaka tak svetr a rifle a jestli za pohodare tak mikinu a rifle 😀 nějaký čistý hezký
+- firmy tam budou mít stánky s letacky a prospekty a tak, budou se ti snažit vysvětlit na čem delaji a kolik stravenek dávají a ze je cool pro ne pracovat
+- když reknes ze jsi junior tak zachovají poker face a budou se ti snažit vysvětlit ze se ti určitě možná někdy ozvou, možná kolega Kvído, který tady zrovna neni
+- ale třeba prehanim 😉 každopádně bych se na to připravil
+- základ je nebát se stánku a strávit na nich maximum času a bavit se s těmi lidmi na nich
+- zkus si pripravit strategii: priprav si třeba 3 otázky které jim budeš pokladat, co te zajímá o te firmě a o tom jak pracuji a koho hledají a tak
+- zároveň měj něco co jim das - měj vizitku s QR kódem na svůj LinkedIn nebo něco takového, proste at si te zapamatujou, at se ti muzou ozvat a tak
+- sám si ty lidi z HR a recruitmentu co je potkas na stáncích pridavej během vašich konverzaci na LinkedInu a zkus jim týden po akci (až budou mít klid) napsat do zpráv a připomenout se, i kdyby jen “chtěl bych jen podekovat za příjemný pokec na vašem stánku minuly týden, bylo to přínosné, at se daří”
+---
+
+
 #} -->

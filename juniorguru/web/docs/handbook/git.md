@@ -436,4 +436,14 @@ Don't contribute to open source
 https://www.youtube.com/watch?v=5nY_cy8zcO4
 
 
+--- https://discord.com/channels/769966886598737931/789087476072710174/1215216528543453214
+Ještě je dobré: https://ohshitgit.com
+---
+
+
+--- https://discord.com/channels/769966886598737931/789087476072710174/1214224330427207710
+Slovníček na Git https://jvns.ca/blog/2023/11/01/confusing-git-terminology/
+---
+
+
 #} -->

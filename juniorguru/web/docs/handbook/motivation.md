@@ -411,4 +411,19 @@ Nemám to ještě přečtený a asi to nebude veselý čtení. Ale tak myslím, 
 než se do toho pustíš - aby se šlo do IT dostat, tak člověk potřebuje bazalni napr. ekonomickou stabilitu, škodlivé hurá do IT články, přemotivované czechitas... mýty o programování, success stories disclaimer
 
 
+--- https://discord.com/channels/769966886598737931/1211759227320803449/1211988423196549121
+Switch kariéry není levná ani snadná záležitost, často lidi, kteří měli vyšší příjem v oboru, kde už něčeho dosáhli, potom jdou na menší peníze, i když jen dočasně.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1211759227320803449/1211965435420090393
+Včera jsem konečně dojel dvoudílnou nalejvárnu od <@1002301544496119838> a <@1118626383183237200> právě o testingu. Od vstupních požadavků oboru až po zkušenosti přímo z pracovních pozic. Nic lepšího jsem na tohle téma ještě neviděl. To určitě doporučuju zkouknout https://www.youtube.com/watch?v=1efZbhcYY4g + https://www.youtube.com/watch?v=QUWbs_vqSbs
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1215252621653319690
+Já to považuju za zcela nepodstatný detail, který většinou figuruje v debatách (neříkám nutně že tady v klubu, spíš „tam venku“ 😄 ) jen jako klacek, kterým jeden druhému říká „umíš něco podřadného“ a „jsi míň programátor“, případně „nejsi programátor jako já, jsi kodér“ apod. Z hlediska praxe jsem nepřišel na jediný důvod, proč tohle nějak rozlišovat. Naučit se a používat dobře Python je hodně práce a chce to hodně vědomostí, a totéž se dá říct o SQL nebo HTML 🤷‍♂️ Takže já to považuju za hnidopišství. Pokud je to v rámci vtípků, tak to ještě beru, folklór a tak, ale pokud je to použito jako klacek, tak lze očekávat můj hněv.
+---
+
+
 #} -->
