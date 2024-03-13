@@ -38,7 +38,7 @@ Pracovní a nepracovní život se nesnažím oddělovat, ale spíš sjednotit. N
 
 **Na jaké pozici teď pracuješ?**
 
-Živím se především jako externí Tech Lead pro Keyguru. S touto firmou jsem začal spolupracovat na jaře 2022, do té doby jsem pracoval mimo IT. Moje první úkoly se týkaly úpravy frontendu jejich rezervačního systému a postupně jsem pronikl do backendu. Na konci roku 2022 z firmy odešel projektový manažer, po kterém v týmu zůstala díra. Navrhl jsem, že část jeho kompetencí převezmu, a tak se ze mě na začátku roku 2023 stal vedoucí vývoje. Dávalo to smysl, protože Keyguru nevyvíjí jen SW, ale taky vlastní HW a mechanický design, a já jsem původní profesí mechanik-elektronik.
+Živím se především jako externí Tech Lead pro [Keyguru](https://keyguru.cz/). S touto firmou jsem začal spolupracovat na jaře 2022, do té doby jsem pracoval mimo IT. Moje první úkoly se týkaly úpravy frontendu jejich rezervačního systému a postupně jsem pronikl do backendu. Na konci roku 2022 z firmy odešel projektový manažer, po kterém v týmu zůstala díra. Navrhl jsem, že část jeho kompetencí převezmu, a tak se ze mě na začátku roku 2023 stal vedoucí vývoje. Dávalo to smysl, protože Keyguru nevyvíjí jen SW, ale taky vlastní HW a mechanický design, a já jsem původní profesí mechanik-elektronik.
 
 **Takže jsi v sobě objevil ještě i vůdcovského ducha. Jak se tvoje role proměnila?**
 
@@ -70,7 +70,7 @@ Věděl jsem, že nikde jinde nebudu mít lepší perspektivu, než v IT. Cokoli
 
 **V Junior Guru se ti dostalo mentoringu, přitom jde spíš o diskusní fórum. Pokaždé ti radil někdo jiný, nebo sis tam našel opravdového guru?**
 
-Klub Junior Guru pro mě byl tak trochu chybějící střípek do mozaiky, věci potom nabraly rychlý spád. Taky by se dalo říct, že mě to odbrzdilo. Když jsem poprvé narazil na příručku Junior Guru, tak na mě působila nedůvěryhodně. Připadalo mi to přehnaně pozitivní, sluníčkářské. Pak jsem jednou narazil na nabídku placeného členství v diskusní skupině a to mi dávalo smysl. Právě proto, že to nebylo zadarmo.
+[Klub Junior Guru](../club.md) pro mě byl tak trochu chybějící střípek do mozaiky, věci potom nabraly rychlý spád. Taky by se dalo říct, že mě to odbrzdilo. Když jsem poprvé narazil na [příručku Junior Guru](../handbook/index.md), tak na mě působila nedůvěryhodně. Připadalo mi to přehnaně pozitivní, sluníčkářské. Pak jsem jednou narazil na nabídku placeného členství v diskusní skupině a to mi dávalo smysl. Právě proto, že to nebylo zadarmo.
 
 **V čem ti skupina pomohla?**
 

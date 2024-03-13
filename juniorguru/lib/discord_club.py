@@ -3,7 +3,7 @@ import re
 from datetime import date, datetime, timedelta, timezone
 from enum import IntEnum, StrEnum, unique
 from functools import wraps
-from typing import TYPE_CHECKING, Generator
+from typing import TYPE_CHECKING, AsyncGenerator
 
 import discord
 import emoji
@@ -212,7 +212,7 @@ def is_message_over_period_ago(
 
 async def fetch_threads(
     channel: discord.abc.GuildChannel | discord.DMChannel,
-) -> Generator[discord.Thread, None, None]:
+) -> AsyncGenerator[discord.Thread, None]:
     try:
         channel_threads = channel.threads
     except AttributeError:
