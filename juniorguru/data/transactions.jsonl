@@ -760,3 +760,4 @@
 {"_id": "26427403510", "amount": -23589, "category": "tax", "happened_on": "2024-03-11"}
 {"_id": "26429242759", "amount": -2400, "category": "miscellaneous", "happened_on": "2024-03-12"}
 {"_id": "26429798373", "amount": -147, "category": "tax", "happened_on": "2024-03-12"}
+{"_id": "26431000501", "amount": 6, "category": "donations", "happened_on": "2024-03-13"}
