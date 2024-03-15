@@ -884,4 +884,16 @@ Návod, jak používat ChatGPT jako svého mentora: https://realpython.com/chatg
 ---
 
 
+--- https://discord.com/channels/769966886598737931/916339896963190785/1217392184572117083
+Ahoj, za mě osobně jak už psala Kayla, TryHackMe je super start. Interaktivní forma, spousta roomek je i ve free tieru, ideální forma jak se IT bezpečnosti podívat pod pokličku <:meowthumbsup:842730599906279494> . Pokud tě to chytne a zajímala by tě nějaká teorie, tak doporučuju další free zdroj: https://www.youtube.com/watch?v=KiEptGbnEBc&list=PLG49S3nxzAnl4QDVqK-hOnoqcSKEIDDuv. Pokud by tě zajímal obsah ohledně kariéry v IT bezpečnosti, potom můžu osobně doporučit https://www.youtube.com/@UnixGuy/videos. Pokud bys do toho joooo chtěl jít, tak je super Google CyberSecurity cert https://www.coursera.org/professional-certificates/google-cybersecurity. Stojí tě to akorát předplatné Coursery, po splnění dostaneš certifikát, který mi přijde, že je na start úplně super, protože tam v labech děláš i věci, který ti mohou posoužit jako nějaká forma portfolia (Python skripty, SQL query, atd.). Lepší cert je potom Security+, ale prvně bych si asi udělal ten od Googlu <:meowthumbsup:842730599906279494> . Co se těch kariérních směrů týče, dělám IT bezpečnost už třetím rokem a pořád nevím, kam se budu chtít směřovat, takže bych to na začátku asi moc neřešil <:exactly:1100463303190396968> . Není to samozřejmostí samozřejmě, ale entry-level job v IT bezpečnosti je stejně SOC Analytik/IT Security analytik, takže je to hodně o data analýze, SIEMu, EDR, síťařině, atd. Pokud by tě ještě něco zajímalo, tak se ptej <:meowthumbsup:842730599906279494>
+---
+
+
+--- https://discord.com/channels/769966886598737931/916339896963190785/1217218996747767848
+Ahoj, pokud začínáš se cybersecurity z nuly a ještě nevíš, tak fajn je https://www.tryhackme.com - je to v podstatě interaktivní učebnice mnoha podob cybersecurity a jsou tam různé průchody.
+
+Pokud tě zajímá bezpečnost frontendu, tak základ je OWASP a takový interaktivní OWASP pro programátory najdeš na https://www.hacksplaining.com
+---
+
+
 #} -->

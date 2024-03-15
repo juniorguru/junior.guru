@@ -281,4 +281,14 @@ Dneska jsem zjistil, že <@672433063690633216> před víc jak měsícem napsal t
 Lenka: Nedávat si do CV atd slovo junior ani na LinkedIn, proste napsat umím to a to a podložit to tím a tím a nechat na druhé straně, at si zhodnoti senioritu
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1217952706795409428
+Měla jsem taky 2 měsíce v téhle akci a práci jsem za tu dobu našla. Pro mě byla velký plus ta analytika - vidíš, kolik lidí tě vyhledalo a kudy, vidíš odkud jsou atd. Je to možná trochu data-úchylka, ale vyhovuje mi to 🙂 A ano, byl rozdíl v počtech zobrazení profilu, když jsem premium měla a když ho nemám. Taky se mi během premium účtu prvně v životě stalo, že mě někdo nahiroval aktivně 😄 Nevím, jestli to souviselo, ale je to dost dobře možný. Algoritmy určitě preferují platící. Dlouhodobě si to platit nebudu, je to za mě jednoznačně nejúchylnější socnet, ale na rychlý vytěžení to bylo fajn.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1217377143533735946
+Taky jsem to mela mesic zadarmo, jako obycejny clovek hledajici praci a absolutne jsem nepoznala rozdil mezi tim kdy jsem to nemela. Za me skoda penez.
+---
+
+
 #} -->
