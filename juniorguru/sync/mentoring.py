@@ -57,6 +57,8 @@ async def sync_mentoring(client: ClubClient):
     info_message = ClubMessage.last_bot_message(ClubChannelID.MENTORING, INFO_EMOJI)
     discord_channel = await client.fetch_channel(ClubChannelID.MENTORING)
 
+    return  # FIXME TODO https://app.circleci.com/pipelines/github/juniorguru/junior.guru/10230/workflows/877b3680-5b19-4586-ba74-10fc3b672b77/jobs/49075
+
     logger.info("Syncing mentors")
     for mentor in mentors:
         try:
