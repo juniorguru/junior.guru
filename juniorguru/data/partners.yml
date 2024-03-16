@@ -1,6 +1,6 @@
 - name: Glance Media
   slug: glancemedia
-  url: https://glancemedia.cz/
+  url: https://www.glancemedia.cz/
   partnerships:
     - plan: silver
       starts_on: 2023-02-09
