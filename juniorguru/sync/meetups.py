@@ -135,6 +135,14 @@ FEEDS = [
         source_url="https://www.meetup.com/techmeetupostrava/events/",
         skip=["conference", "konference", "agile circle"],
     ),
+    dict(
+        slug="praguegenai",
+        emoji="🤖",
+        name=f"{NAME_PREFIX} na akci AI nadšenců",
+        poster_path="posters-meetups/praguegenai.png",
+        format="meetup_com",
+        source_url="https://www.meetup.com/prague-gen-ai/events/",
+    ),
 ]
 
 USER_AGENT = "JuniorGuruBot (+https://junior.guru)"
