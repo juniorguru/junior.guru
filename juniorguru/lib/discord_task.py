@@ -44,8 +44,8 @@ def run(task_fn: Callable[..., Awaitable], *args, **kwargs) -> None:
 
         def exc_handler(loop, context):
             nonlocal exc
-            logger.debug("Recording exception")
             exc = context.get("exception")
+            logger.debug(f"Recording exception: {exc}")
             loop.default_exception_handler(context)
             logger.debug("Stopping async execution")
             loop.stop()
