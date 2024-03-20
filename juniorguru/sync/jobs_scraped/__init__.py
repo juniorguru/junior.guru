@@ -16,7 +16,7 @@ from juniorguru.models.job import ScrapedJob
 
 ACTORS = [
     "honzajavorek/jobs-jobscz",
-    # "honzajavorek/jobs-linkedin",  TODO FIXME https://app.circleci.com/pipelines/github/juniorguru/junior.guru/10231/workflows/16d0f669-5183-4966-bb3d-0170a69c38e6/jobs/49078
+    "honzajavorek/jobs-linkedin",
     "honzajavorek/jobs-startupjobs",
     "honzajavorek/jobs-weworkremotely",
 ]
