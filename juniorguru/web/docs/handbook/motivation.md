@@ -127,6 +127,43 @@ Tento web se zabývá vytvářením softwaru, tedy programů pro počítače neb
 
 <!-- {#
 
+--- https://discord.com/channels/769966886598737931/788832177135026197/1061972910488703036
+Spíše motivační četba, ale pěkný článek. Něco jako příručka junior.guru ale od freeCodeCamp 🙂
+https://www.freecodecamp.org/news/learn-to-code-book/#500-word-executive-summary
+---
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1054800375703683113
+Níže založím vlákno s malým shrnutím mého hledání práce, které jsem teď završil přijetím nabídky na pozici Java vývojáře s nástupem v únoru. Přidám pár postřehů o tom, co bych udělal stejně/jinak, kdybych si znovu hledal práci. Taky zmíním jména pár firem, které na mě působily velmi dobře, nebo naopak velmi špatně, a proč. Celé je to založené na mých zkušenostech podpořenými zkušenostmi z práce v IT recruitmentu. Takže všechno můj názor, i když to místy napíšu jako “poučku s absolutní pravdou” nebo tak něco 🙂
+---
+
+https://www.freecodecamp.org/news/what-is-web-development-how-to-become-a-web-developer-career-path/
+
+https://twitter.com/jzunigacoayla/status/1380694681911226373
+
+https://blog.lewagon.com/skills/programming-language-to-learn/
+
+https://roadmap.sh/
+
+https://codeburst.io/the-2018-web-developer-roadmap-826b1b806e8d
+
+https://twitter.com/ladybugpodcast/status/1247051343212281856
+
+Front-end Developer Handbook 2019
+https://frontendmasters.com/guides/front-end-handbook/2019/
+
+How to Learn to Code & Get a Developer Job [Full Book]
+https://www.freecodecamp.org/news/learn-to-code-book/#500-word-executive-summary
+
+https://learntocodewith.me/
+
+https://www.pythondiscord.com/resources/
+
+## Tempo
+
+neda se smichat intenzivni a pozvolna zmena, mit to jako dve ruzne cesty, nevedi vubec jak dlouho to muze trvat, co je neni normalni, jake jsou tam milniky
+
+nela https://github.com/NelliaS/development-timeline
+
 - Je vám 30 a ještě jste nic nedokázali? https://www.systemovemysleni.com/post/je-vam-30-a-jeste-jste-nic-nedokazali Nezoufejte – rád bych vám dnes na pár číslech ukázal, proč si myslím, že to vůbec není důvod ke stresu. Je mi 31, práci na plný úvazek se věnuju posledních 8 let Odnepaměti jsem žil v nevysloveném očekávání, že v tomhle věku už bude moje kariéra jasně daná a já budu stavět na své vybudované specializaci. Jak asi tušíte, tohle očekávání se nenaplnilo. Pojďme si těch 8 let dát do širší perspektivy. Pokud patříte k mojí generaci, v kolika letech byste si tipli, že půjdeme do důchodu? Můj osobní tip
 
 https://www.heroine.cz/zeny-it/6385-v-it-berou-vsechny-na-tom-nic-neni

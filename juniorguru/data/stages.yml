@@ -1,44 +1,83 @@
 - slug: thinking
   title: Přemýšlím
   icon: lightbulb
-  description: Občas mě napadne, že by nemusela být úplná blbost učit se programovat.
+  description: |
+    Občas mě napadne, že by nemusela být úplná blbost učit se programovat.
+    Potřebuji víc informací, ať vím, jestli do toho jít.
+    Nevím, zda se na to hodím.
 
 - slug: trying
   title: Zkouším
   icon: search-heart
-  description: Nezávazně zkouším všechno možné, nebo začínám s jednou věcí, o které si myslím, že ji chci dělat.
+  description: |
+    Zkouším všechno možné.
+    Nevím, čím začít.
+    Neumím vybrat směr.
+    Začínám s tím, o čem si myslím, že to chci dělat.
 
 - slug: learning
   title: Učím se
   icon: book
-  description: Učím se to, co si myslím, že chci dělat. Samostatně, ve škole, v kurzu.
+  description: |
+    Učím se to, co si myslím, že chci dělat.
+    Samostatně, ve škole, v kurzu.
+    Nejde mi to.
+    Neumím vybrat kurz, nebo neplní moje očekávání.
+    Jedu jeden kurz za druhým, ale nevím jak dál.
 
 - slug: creating
   title: Tvořím
   icon: tools
-  description: Pracuju na projektech. Vytvářím vlastní portfolio, zapojuji se např. do open source.
+  description: |
+    Pracuju na projektech, vytvářím si portfolio.
+    Nevím jak začít, co tvořit.
+    Zasekávám se, nikdo mi nepomáhá, nevím jak dál.
+    Nevím, jestli můj výtvor nemá zásadní chyby.
 
 - slug: preparing
   title: Chci hledat práci
   icon: pen
-  description: Připravuji se na hledání práce, ladím CV, LinkedIn, GitHub. Pasivně pokukuji po nabídkách.
+  description: |
+    Ladím CV, LinkedIn, GitHub.
+    Pasivně pokukuji po nabídkách.
+    Nevím, zda už umím dost.
+    Neumím se prodat.
+    Mám problém o sobě do CV napsat pozitivní větu.
 
 - slug: applying
   title: Hledám práci
   icon: envelope-arrow-up
-  description: Hledám práci, stáž, brigádu. Aktivně reaguji na nabídky, posílám CV, chodím na pohovory.
+  description: |
+    Hledám práci, stáž, brigádu.
+    Reaguji na nabídky, posílám CV, chodím na pohovory.
+    Nemám zpětnou vazbu, nezvou mě.
+    Nevím, co se ode mně čeká.
+    Neposoudím, zda jde o běžný zážitek z pohovoru, nebo šlo o divnou firmu.
+    Dochází mi čas a úspory.
 
 - slug: deciding
   title: Mám nabídku
   icon: trophy
-  description: Mám nabídku a rozhoduji se, zda ji přijmout, nebo mám už domluvenou práci a nastupuji v budoucnu.
+  description: |
+    Mám nabídku a rozhoduji se, zda ji přijmout.
+    Váhám, zda nevzít cokoliv, jen aby už něco bylo.
+    Mám domluvenou práci a nastupuji v budoucnu.
+    Nástup mě děsí, nevím co mě čeká.
 
 - slug: onboarding
   title: Zaučuju se
   icon: battery-half
-  description: Zkušební doba v první práci v oboru. Zaučuji se, zjišťuji co je běžné, vyrovnávám se s nároky.
+  description: |
+    Zkušební doba, první práce v oboru.
+    Zaučuji se, zjišťuji co je běžné, vyrovnávám se s nároky.
+    Pokud nemám k dispozici seniory, topím se v úkolech.
+    Pokud je firma špatná, bojím se odejít.
 
 - slug: working
   title: Mám komerční praxi
   icon: rocket-takeoff
-  description: Mám jeden až dva roky komerční praxe. Možná už nejsem junior. Posouvám se dál.
+  description: |
+    Mám jeden až dva roky komerční praxe.
+    Možná už nejsem junior.
+    Posouvám se dál, řeším kariérní růst.
+    Nevím, jak dostat složitější úkoly nebo větší peníze.

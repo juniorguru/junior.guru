@@ -619,4 +619,26 @@ https://simonwillison.net/2024/Jan/17/oxide-and-friends/#llms-for-learning
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788832177135026197/894840146845925427
+https://www.codecademy.com/resources/docs
+
+Blog post k tomu https://www.codecademy.com/resources/blog/introducing-docs/
+
+Samozřejmě jsou jiné existující zdroje, ale tady je to hodně stručně, takže to začátečníci asi ocení.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1055146186413187102
+Doufal jsem, že sem taky budu moct jednou napsat, že jsem konečně v klubu a našel jsem práci. A stalo se to ! Od února se budu podílet na softwaru v automobilech v Pythonu. 🤩
+
+Od začátku utekly dva roky, kolik jsem oslovil firem přesně nevím, ale mohlo to být kolem dvaceti. Hlavně bych ale chtěl říct, že na začátku není důležité někam spěchat - což se mi také stalo. Pak jsem si uvědomil, že stihnout to za pár měsíců souběžně s prací a rodinou je blbost. A tak jsem v klidnějším tempu pokračoval k cíli.
+
+Pár slov a odkazů k cestě, na začátku za mě nejlepší start na https://www.umimeinformatiku.cz/programovani-v-pythonu , to mi pomohlo nejvíc a je to hlavně zábavnou formou příkladů. Pak jsem si vybral projekt od https://www.techwithtim.net/ , který má super tutorialy na Youtube a zakončil jsem to projektem s Corey Schafer také na Youtube, nicméně ty už jsou pro pokročilejší.
+
+U pohovoru také dost pomohl GitHub, který doporučuji si založit hned první den. Jednak mě motivoval ten kalendář příspěvků udělat něco pokud možno alespoň každý druhý den. A poté je vidět jak dlouho už se člověk tématem zabývá. 🙂
+
+Hodně zdaru, sil a velký dík Honzovi, že to tu založil a spravuje <:dk:842727526736068609> 🥳
+---
+
+
 #} -->
