@@ -47,7 +47,7 @@ A co ti může na cestě pomoci?
 
   {{ link_card(
     'Aj Ty v IT',
-    'https://www.ajtyvit.sk',
+    'https://ajtyvit.sk',
     'Slovenská neziskovka otevírající IT ženám skrze workshopy, kurzy a další akce.'
   ) }}
 

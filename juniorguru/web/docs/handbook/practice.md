@@ -89,6 +89,9 @@ Vždy, když narazíš na nový pojem nebo zkratku, přečti si alespoň co to j
 
 <!-- {#
 
+ChatGPT
+https://www.linkedin.com/posts/marketa-willis_junior%C5%AFm-bych-nedoporu%C4%8Dila-pou%C5%BE%C3%ADvat-chatgpt-activity-7176515147228663808-pODd?utm_source=share&utm_medium=member_desktop
+
 — Zvládnout psané návody a zdroje v angličtině. Bez ní se v IT funguje jen velmi těžko. Není potřeba mluvit, psát vysloveně bez chyb apod. většinu toho stejně ani nepíšou rodilí mluvčí. Ale přečíst si nějaký text a vědět o čem je, třeba: _By default, browsers separate paragraphs with a single blank line. Alternate separation methods, such as first-line indentation, can be achieved with CSS._ je skoro nutnost. Měl jsem klientku, která si hodně pomáhala automatickým překladačem a nějak to zvládla ale ideálně bys na angličtině měl zároveň pracovat, aby sis ji zlepšil. Za půl roku můžeš mít viditelné pokroky a rozhodně se ti to neztratí.
 A to, že je alespoň nějaká angličtina v podstatě nutnost vědí i ve firmách. Takže když tam pošleš CV s tím, že umíš velmi málo, tak už si tím snižuješ šance i kdyby ta firma byla plná lidí, kteří mluví česky. Protože i v takové firmě je většinou zvykem psát třeba komentáře a další texty okolo kódu v angličtině.
 
