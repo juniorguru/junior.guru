@@ -8,11 +8,11 @@ from urllib.parse import urlparse
 import click
 from slugify import slugify
 
-from juniorguru.lib.mutations import mutating_discord
 from juniorguru.cli.sync import main as cli
 from juniorguru.lib import discord_task, loggers
 from juniorguru.lib.discord_club import ClubClient, parse_channel
 from juniorguru.lib.memberful import MemberfulAPI, MemberfulCSV, memberful_url
+from juniorguru.lib.mutations import mutating_discord
 from juniorguru.models.base import db
 from juniorguru.models.subscription import (
     SubscriptionCancellation,
