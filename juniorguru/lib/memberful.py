@@ -183,7 +183,7 @@ class MemberfulCSV:
             | retry_if_exception_type(requests.exceptions.ConnectionError)
         ),
         wait=wait_random_exponential(max=60),
-        stop=stop_after_attempt(3),
+        stop=stop_after_attempt(5),
         reraise=True,
         before_sleep=before_sleep_log(logger, logging.WARNING),
     )
@@ -200,7 +200,7 @@ class MemberfulCSV:
     @retry(
         retry=retry_if_exception_type(requests.exceptions.HTTPError),
         wait=wait_fixed(5),
-        stop=stop_after_attempt(10),
+        stop=stop_after_attempt(20),
         reraise=True,
         before_sleep=before_sleep_log(logger, logging.DEBUG),
     )
