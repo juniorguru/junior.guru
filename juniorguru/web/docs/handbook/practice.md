@@ -899,4 +899,12 @@ Pokud tě zajímá bezpečnost frontendu, tak základ je OWASP a takový interak
 ---
 
 
+
+Ano, je to právě o praxi, o nekonečném cyklu "napíšu kód" -> "v něčem nevyhovuje, tak ho zkusím zlepšit" -> "ze změny odvodím nějaký obecný závěr, který mohu příště aplikovat v podobných situacích" -> "napíšu další kód" ...  Někomu to jde samozřejmě lépe, někomu hůře, ale každý si tím musí projít.
+
+Když už se v programování člověk trochu orientuje, tak znám dvě "zkratky", jak je možné se samostatně hodně zlepšit v relativně krátkém čase:
+1. Číst kód jiných, zkušenějších - najít si třeba nějakou open-source knihovnu, procházet její kód a všímat si, jak je strukturovaný, jaké jsou použité konstrukce apod. Bude to lépe fungovat pro knihovny, které spravuje primárně jednotlivec či menší tým, který na kvalitu hodně dbá - to bohužel nelze na první pohled poznat, lze se trochu orientovat množstvím uživatelů (více = lépe) a množstvím přispívajících (méně = lépe). V PHP mohu doporučit např. Nette, kde David Grudl drží laťku poměrně vysoko. V Pythonu má dobrý kód například knihovna requests, za kterou stojí Kenneth Reitz (a lze kouknout i na další projekty tohoto autora).
+2. Nastudovat si odbornou knížku na toto téma a znalosti ihned zkusit aplikovat na své projekty - knížka v bude fungovat asi nejlépe, protože prošla náročným procesem korektur a revize a nakonec někomu stálo za to, aby jí vydal. Navíc hodně pomáhá rychle listovat mezi jednotlivými sekcemi, což je snadné zvlášť u fyzické knihy. V češtině vyšla například kniha Čistý kód od Roberta C. Martina (tu už asi bude problém sehnat). V angličtině mohu doporučit knihu Refactoring od Martina Fowlera. Na pozoru bych byl v případě knih od Packt Publishing, u nich pozoruji hodně kolísající kvalitu - vždy se rozhoduji podle negativnách recenzí. Kniha nejspíš bude uvádět příklady v jiném programovacím jazyce, než na který jste zvyklí, typicky ale stačí jen velmi malá znalost daného jazyka a naprostá většina tipů je přenositelná i do jiných jazyků.
+
+
 #} -->

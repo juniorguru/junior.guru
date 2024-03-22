@@ -102,7 +102,7 @@ Pozice **nezahrnuje název firmy**. Ani té, kde zrovna pracuješ, ani té, kam 
 
 ### 3. Kontakty
 
-V kontaktech by určitě měl být **e-mail a telefon**, na který se recruiter dovolá. Což běžně dělají, takže zvedej neznámá čísla. Můžeš přidat i odkazy na své [GitHub](git.md#github) a [LinkedIn](linkedin.md) profily.
+V kontaktech by určitě měl být **e-mail a telefon**, na který se recruiter dovolá. Což běžně dělají, takže zvedej neznámá čísla. Můžeš přidat i odkazy na své [GitHub](github-profile.md) a [LinkedIn](linkedin.md) profily.
 
 **Adresu bydliště vynech**, je to zbytečný údaj. V rámci výběrového řízení ti firmy žádné dopisy posílat nebudou. Pokud se někam hlásíš, předpokládá se, že se na místo pracoviště zvládneš dopravit, nebo že si vyřešíš stěhování.
 
@@ -211,9 +211,9 @@ Máš nějaký **větší vlastní výtvor**? Bakalářku nebo diplomku? Vypomá
 
 U každé takové věci by neměl chybět **název, krátký popis a odkazy**. Nejen odkaz na kód, ale i na ukázku. Pokud jde o dobrovolnictví nebo jinou spolupráci, popiš kontext a svůj přínos.
 
-Kód projektu můžeš poskytnout **ke stažení jako zip** na nějakém veřejném odkazu. Dropbox bude působit lépe než Ulož.to. Nejmazanější volbou je ale **používat [GitHub](git.md#github)**, ideálně už během samotného programování. Prokážeš tím, že umíš aspoň trochu pracovat s Gitem a druhá strana si může vše projít přímo v prohlížeči.
+Kód projektu můžeš poskytnout **ke stažení jako zip** na nějakém veřejném odkazu. Dropbox bude působit lépe než Ulož.to. Nejmazanější volbou je ale [používat GitHub](github-profile.md), ideálně už během samotného programování. Prokážeš tím, že umíš aspoň trochu pracovat s Gitem a druhá strana si může vše projít přímo v prohlížeči.
 
-Nikdo si nebude nic instalovat, takže **ukázka je zásadní**. Recruiteři kód vůbec nečtou a i programátoři z týmu, kam chcete nastoupit, si jej otevřou až v průběhu technického kola pohovoru. Buď ať to jde proklikat v prohlížeči, nebo někam dejte aspoň snímky obrazovky. Když vyrobíš něco interaktivního, třeba hru, můžeš natočit záznam obrazovky jak ji hraješ a do CV dát odkaz na YouTube.
+Nikdo si nebude nic instalovat, takže **ukázka je zásadní**. Recruiteři kód vůbec nečtou a i programátoři z týmu, kam chceš nastoupit, si jej otevřou až v průběhu technického kola pohovoru. Buď ať to jde proklikat v prohlížeči, nebo někam dej aspoň snímky obrazovky. Když vyrobíš něco interaktivního, třeba hru, můžeš natočit záznam obrazovky, jak ji hraješ, a do CV dát odkaz na YouTube.
 
 Určitě do CV **vypíchni konkrétní projekty**, které chceš ukázat a u každého měj zvlášť odkazy na jejich repozitáře. Nespoléhej se na jeden odkaz na GitHub profil, do hloubky si jej bude procházet málokdo. Pokud si někdo při rozřazování kandidátů otevře repozitář na GitHubu, **proletí očima hlavně [README](git.md#readme)**. Ujisti se, že všechny tvé významné projekty ho mají.
 

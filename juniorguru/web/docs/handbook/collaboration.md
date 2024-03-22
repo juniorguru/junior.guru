@@ -150,4 +150,22 @@ Začátky s open source nejsou přímočaré. Většinou na něm lidé pracují 
 
 https://mastodonczech.cz/@brainwane@social.coop/112083256753100254
 
+https://github.com/firstcontributions/first-contributions
+
+A recent trick I discovered to learning this is to pick an open source project written by developers you like and start writing docs and tests.
+https://twitter.com/hamelhusain/status/1296601185470709760
+
+Talk to maintainers
+https://twitter.com/simonw/status/1293017371536265221
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/1062732102237437973
+Pěkný materiál pro prvo-přispěvatele/ky na GitHubu: https://github.com/firstcontributions/first-contributions
+---
+
+https://opensource.net/why-single-vendor-is-the-new-proprietary/
+That approach led to a lot of excesses, especially as Microsoft decided to exploit that dominant position. Openly-developed Open Source software grew in the 90s in reaction to this evil proprietary approach. In this model, software is produced as a commons by a community of organizations and individuals openly collaborating, and value is shared among the participants in the community. This is all made possible thanks to free and Open Source licenses which guarantee a number of freedoms, like the freedom to build on it without asking for permission, and the freedom to use it for any purpose, including making money.
+
+Don't contribute to open source
+https://www.youtube.com/watch?v=5nY_cy8zcO4
+
 #} -->

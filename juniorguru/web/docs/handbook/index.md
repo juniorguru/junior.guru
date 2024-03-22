@@ -6,7 +6,7 @@ description: Obsáhlá příručka pro všechny, kdo se chtějí naučit program
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import lead, img with context %}
+{% from 'macros.html' import lead, img, note with context %}
 
 # Cesta juniora
 
@@ -24,14 +24,15 @@ Ne všechna témata se zatím povedlo pokrýt kapitolami v příručce, ale na k
 
 Ujasni si, **co už umíš a co je tvým cílem.** Jednak ti to pomůže uvědomit si, co tě ještě čeká a co nesmíš vynechat, jednak zjistíš, které části příručky pro tebe budou nejpřínosnější.
 
+{% call note() %}
+  {{ 'lightbulb'|icon }} Příručka je živá stránka a kdykoliv tady může přibýt něco nového, takže je dobré se sem vracet. O změnách se můžeš dovědět prostřednictvím [klubu](../club.md) nebo [newsletteru](../news.jinja).
+{% endcall %}
+
 Celá cesta má zhruba {{ stages|length }} fází a připomíná Člověče, nezlob se.
 Namalované je to hezky jedno za druhým, ale realita je zamotanější.
 Nemálo lidí se několikrát vrací do domečku.
 Počítej s tím, že se někde zasekneš, nebo že se ti zamíchá pořadí.
 U každé fáze je v popisku naznačeno, s jakými problémy ti junior.guru může pomoci.
-
-Příručka je živá stránka a kdykoliv tady může přibýt něco nového, takže je dobré se sem vracet.
-O změnách se můžeš dovědět prostřednictvím [klubu](../club.md) nebo [newsletteru](../news.jinja).
 
 <div class="stage-cards">
 {% for stage_group in stages|slice(3) %}

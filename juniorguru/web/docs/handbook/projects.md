@@ -6,9 +6,13 @@ description: Pokud se učíš programovat, práce na vlastních projektech je ne
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar with context %}
+{% from 'macros.html' import blockquote_avatar, note with context %}
 
 # Projekty jako první praxe
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
+{% endcall %}
 
 Nic tě nenaučí tolik, jako když si zkusíš něco samostatně vyrobit. Říká se tomu [projektové učení](https://cs.wikipedia.org/wiki/Projektov%C3%A9_u%C4%8Den%C3%AD). Nejlepší je vymyslet si něco vlastního a řešení procházet s [mentorem](mentoring.md). Inspirace na projekt se nejlépe hledá přímo okolo tebe:
 
@@ -46,6 +50,8 @@ Pokud se za nějaký starý kód vyloženě stydíš, můžeš repozitář s ní
 Máš-li za sebou nějakou vysokou školu z oboru, ukaž svou bakalářku nebo diplomku. Je to něco, co je výsledkem tvé dlouhodobé, intenzivní práce. Pochlub se s tím!
 
 <!-- {#
+
+https://dariagrudzien.com/posts/the-one-about-your-github-account/
 
 kam veřejně napsat, že tady chybí https://junior.guru/handbook/practice/#najdi-si-projekt info o tom, že projekt nemusí být unikátní? že to může klidně být todolist
 protože mám pocit, že si to tak 2/3 lidí myslí, možná i víc
@@ -441,6 +447,171 @@ https://robbowen.digital/wrote-about/abandoned-side-projects/
 --- https://discord.com/channels/769966886598737931/1215708215527088218/1217120094392553503
 Přijde mi strašně super, že když něco vytvoříš, tak si z toho uděláš video, aby to šlo ukázat. Odkaz na takovou věc se pak dá dát i do CVčka a je to mnohem efektnější, než ukazovat kód. Je jasný, že kód je to důležité, ale holt jsme jenom lidi a když se to dobře odprezentuje, vždycky to zaujme víc. Kéž by tohle umělo víc juniorů.
 ---
+
+
+Souhlasím, že dělat nějaké projekty navíc po večerech by nemělo být nutnou podmínkou, ale u juniorů to tak bohužel je, a to především u těch, kteří usilují o career switch a musí tím kompenzovat chybějící formální vzdělání nebo prostě jakoukoliv jinou praxi.
+
+
+Zadání práce na doma mi dává smysl jen pokud není kód, nad kterým se můžu s kandidátem bavit a když ten kód je, ideálně bez práce dostupný na GitHubu, tak nemá cenu je zadávat.
+A na pohovoru se budu (kromě samotné náplně práce) bavit právě o tom kódu… Ne každý si může dovolit mít projekty, ale pořád je to mnohem víc lidí, než si může dovolit studovat VŠ.
+
+
+Když jsme u toho, tak sice říkáme GitHub a veřejně, ale ve skutečnosti prostě chci vidět kód a pokud je vystavený takhle, tak je to prostě pohodlné, nic víc.
+
+
+Ber to tak, že na GitHub ti nikdo nekouká, i když je to veřejné, dokud mu k tomu nedáš hodně dobrý důvod. Těch profilů je tam milion a dá velkou práci způsobit, aby se tam někdo na něco koukal, když chceš 🙂
+
+
+@Honza Javorek jj, o tom vím, díky. Používám ještě popis repositáře, aby na první pohled bylo jasné, že jsem nepsala kód, ale odněkud převzala.
+
+K ostatním projektům doplň informace přímo na GitHubu i do README.md a někam je nasaď, statické jdou přímo na GitHubu.
+
+GitHub mám, ale projektov nemám veľa, sú skôr menšie a momentálne pracujem na jednom rozsiahlom, na ktorom to celé sebaprezentovanie tak nejak staviam. Tiež som si vzala k srdcu rady ohľadom GitHubu a pomaly dokončujem popisy a Readme ku všetkým projektom, takže keď to budem mať hotové, tak to určite zazdieľam do
+
+
+![👍](https://discord.com/assets/7a934d8b65db3219592b.svg) **dobrý nápad**: Poslat se žádostí o práci odkaz na svůj veřejný projekt na GitHubu
+![👎](https://discord.com/assets/cac0458c05c01c5f03c1.svg) **špatný nápad**: Poslat se žádostí o práci odkaz na svůj veřejný projekt na GitHubu, kam jste commitli a pushli také složky jako `__pycache__`, `node_modules` a další a taky přístupy na ssh, k databázi a k emailu, které ta aplikace využívá.
+- Tak poprvé se to dá pochopit, když se to stane podruhé, tak už je to docela špatný (a smutný).
+- Github se to trochu snaží hlídat, ale samozřejmě to není stoprocentní: [https://docs.github.com/en/code-security/secret-security/about-secret-scanning](https://docs.github.com/en/code-security/secret-security/about-secret-scanning "https://docs.github.com/en/code-security/secret-security/about-secret-scanning")
+- Jasně. Ty složky, co jsem jmenoval, se do verzovacího systému nepřidávají, protože to nemá smysl. Je to spíš znak toho, že ti jako samoukovi a začátečníkovi něco uteklo.
+- Ostatně to druhý taky, ale přeci jen to je o dost větší chyba, protože jde o bezpečnost.
+- Přístupy = heslo + jméno.
+- SSH je vlastně přístup na nějaký server [https://searchsecurity.techtarget.com/definition/Secure-Shell](https://searchsecurity.techtarget.com/definition/Secure-Shell "https://searchsecurity.techtarget.com/definition/Secure-Shell")
+- Databázi taky nechceš mít veřejně přístupnou a ani nějaký e-mailový účet.
+- Jsou místa v konfiguracích nebo prostě v kódu, kde je potřeba ty přístupy mít, to je jasný, ale řeší se to tak, aby nebyly přímo v kódu a tedy v repozitáři i kdyby nebyl veřejný.
+
+
+
+- název repozitáře `python-012021.` mě triggeruje hned dvakrát - ta tečka na konci, a to (asi) datum, které se dá vykládat třemi způsoby ![🙂](https://discord.com/assets/6e72cca8dcf91e01fac8.svg)
+- `.DS_Store` má asi být v `.gitignore`, ale aspoň je vidět, že máš macOS ![🙂](https://discord.com/assets/6e72cca8dcf91e01fac8.svg) (např. v [https://github.com/MartinaHytychova/martinahytychova.github.io](https://github.com/MartinaHytychova/martinahytychova.github.io "https://github.com/MartinaHytychova/martinahytychova.github.io"))
+- tohle asi taky mělo být v gitignore? [https://github.com/MartinaHytychova/CSharp_Calculator/tree/master/obj](https://github.com/MartinaHytychova/CSharp_Calculator/tree/master/obj "https://github.com/MartinaHytychova/CSharp_Calculator/tree/master/obj") a adresář bin nejspíš taky
+- hele, apiKey ![🙂](https://discord.com/assets/6e72cca8dcf91e01fac8.svg) [https://github.com/MartinaHytychova/pet-finder/blob/main/src/db.js](https://github.com/MartinaHytychova/pet-finder/blob/main/src/db.js "https://github.com/MartinaHytychova/pet-finder/blob/main/src/db.js")
+- jinak ten pet-finder vypadá už aspoň docela netriviálně ![👍](https://discord.com/assets/7a934d8b65db3219592b.svg) ![🙂](https://discord.com/assets/6e72cca8dcf91e01fac8.svg) škoda, že má generické readme. A dokonce i nasazené to je ![👍](https://discord.com/assets/7a934d8b65db3219592b.svg) [https://pet-finder.netlify.app/#/](https://pet-finder.netlify.app/#/ "https://pet-finder.netlify.app/#/")
+- Pokud zakladate novy repozitar na GitHubu, muzete rovnou pridat .gitignore pro dany jazyk/ide. Pripadne se da pro vetsinu jazyku stahnout tady - [https://github.com/github/gitignore](https://github.com/github/gitignore "https://github.com/github/gitignore")
+- S těmi tokeny apod. doporucuju projít si [https://12factor.net/](https://12factor.net/ "https://12factor.net/"), to je v podstatě standard, jak se dnes delaji webové aplikace z hlediska konfigurace, nasazováni, apod. Mnoho lidi by řeklo ze to je takový nepsany, obecně prijimany standard, ale on není nepsany, je popsaný tady na tom webu ![😀](https://discord.com/assets/503f3c92fca30bb4275f.svg) Především [https://12factor.net/config](https://12factor.net/config "https://12factor.net/config") se konkrétně zabývá tím jak dělat konfiguraci tak, aby se nemusel nějaký token nebo heslo commitnout do gitu, kde to uvidí všichni
+- gitignore.io
+
+
+
+
+Bylo by fajn v tom CV k MealPalu dát nějaký testovací login. Ne každému se bude chtít registrovat, aby viděl funkcionalitu uvnitř a venku jí tolik k vidění není a to je velká škoda!
+
+Vše, co jsem nenapsal mi přijde fakt fajn 👍 , máš u všeho na GH popisky, readme (u jednoho ne, ale to je nějakej cvičnej Czechitas projektík, možná bych ho schoval), url atd. Máš i pořádnej velkej projekt a tak dále. Držím palce.
+
+
+Jinak pokud bys chtěl ještě víc zdůraznit, že https://github.com/spaze/libini-djgpp je jen pro archivní účely, můžeš teď na GH repo přímo označit jako archivované, což dá návštěvníkům na první pohled jasnou message. Je to repo > settings > dole dole dole danger zone > Archive this repository
+
+
+https://www.drmaciver.com/2015/04/its-ok-for-your-open-source-library-to-be-a-bit-shitty/
+
+
+Taky mrkni na .gitignore a přidej si tam složku .idea.
+
+
+Mrkni na https://www.makeareadme.com/ jsou tam dobré tipy na to, jak a co napsat.
+
+Taky využij funkce GitHubu a doplň popisy těch projektů. Radši dobrou češtinou než špatnou angličtinou.
+
+Nicméně v kódu je asi lepší angličtina pro názvy proměnných i když upřímně je to to poslední, co bych při zkoumání toho, jak někdo přemýšlí řešil. To už by mě víc zajímalo, jestli ty názvy opravdu popisují to, co obsahují nebo co funkce dělají…
+
+
+
+Těm projektům na Githubu chybí třeba popis, co to vlastně je, jak to funguje, a odkaz na nasazenou verzi, ale asi na tom ještě pracuješ. Bude se to hodit, až/pokud se těmito projekty a svým Github profilem budeš prezentovat při hledání práce.
+
+gitleaks projdou kod a oznami vsechno co vypada jako token atd.
+
+
+
+dobrá, upravím to podle toho co jste mi napsal, zdá se to celkem i rozumné, a jsem rád za nějakou zpětnou vazbu od někoho kdo se tomu aktivně věnuje, mohl bych se ještě zeptat jak by měl vypadat ideálně github? většina projektu mam převážně ve azure devops, a jen nějaké vybrané jsem si dal do nového github učtu https://github.com/LukePavelka
+
+jedno zadaní od firmy, které jsem vypracoval, jsem si dal taky na github, kritickou chybu nejspiš vidim v tom že jsem udělal jeden velky commit až pak když jsem to měl skoro hotové
+
+
+
+Líbí se mi, že projekty maji README, ze kterého jde pochopit, o co jde. Kód samotný úplně neposoudím, ale jinak mi to přijde v pohodě. Jestli je někde jeden velký commit, s tím nic nenaděláš, pokud by se tě na to ptali u pohovoru, tak řekneš, že si to uvědomuješ a že se holt učíš, tak už víš, že se to má dělat jinak. Ale ani jeden velký commit, pokud je na začátku projektu, není úplně chyba. Typicky „initial commit“ v repozitáři může být dost velký, protože před tím, než byl kód Open Source na GitHubu, mohl vzniknout někde vedle a tímto commitem se vše teprve dostalo do repozitáře.
+
+
+
+Vpravo nahoře se dá u jednotlivých projektů kdyžtak dopsat jedna větička o projektu a přidat případně odkaz, pokud projekt třeba jede někde spuštěný a má svou webovku.
+
+
+
+Zaujalo mě, že některé projekty mají dva contributors, podle jména si vyvozuji, že máš dva GitHub účty. Je pro to nějaký důvod? Přijde mi škoda dělit svou aktivitu na dva účty, pokud ten jeden nepoužíváš na nějakou podvratnou činnost nebo jej nechceš spojovat s vážnou prací (ale jak vidíš, tím že tam má commity, tak se na něj stejně doklikám). Pokud jeden účet nepoužíváš, repozitáře lze přesunout mezi uživateli. Commity na účty GitHub páruje podle e-mailů, takže stačí starý účet smazat a e-mail, pod kterým jsou commity vytvořeny, si přidat k tomu účtu, který chceš používat (GitHub účet může být spárovaný na více e-mailů).
+
+
+A k těm si vyplň **dobře** 1) popis, abych rychle zjistil o co jde už z přehledu a url přímo na GitHubu, abych se mohl podívat na běžící web, pokud to jde (k tomu ne moc podstatná věc, [https://pet-finder.netlify.app/#/](https://pet-finder.netlify.app/#/ "https://pet-finder.netlify.app/#/") -> [https://pet-finder.netlify.app/](https://pet-finder.netlify.app/ "https://pet-finder.netlify.app/")) 2) readme soubor, nějaký rady na [https://www.makeareadme.com/](https://www.makeareadme.com/ "https://www.makeareadme.com/") abych jako zkoumač toho, co umíš a) snadno a bez práce zjistil o co jde detailněji a třeba jaký technologie / knihovny atd. si tam použila atd. b) uměl si to v případě zájmu snadno rozjet a otestovat sám c) viděl, že dokumentuješ
+
+U každého projektu minimálně do README napsat co to je (mapa útulků), v čem to je vyrobené (React...), proč jsi to vyrobila (dlouhodobě urdžovaný hobby projekt / jednorázové cvičení na kurzu / nějaká cvičení / ...).
+
+A pokud si jsi vědoma nedostatků na tom projektu, lze je do README napsat a přiznat taky: třeba že víš, že tam nejsou testy nebo že blbne přihlašování, ale už se projektu intenzivně nevěnuješ, tak to tak necháváš. Nebo že se k tomu zas někdy chceš vrátit, až bude čas, a napsat, co se tam chystáš vylepšit (todo / roadmap)
+
+
+dokumentace: Začal bych minimalistickou verzí, kterou zvládneš třeba za hodinu nebo méně. Prostě si dej časový limit a stihni to. Rozepsat to případně můžeš potom.
+
+Já bych asi nějaký opravdu „odpadní“ nebo interní, dočasný apod. radši dal private, míň práce než psát u každýho, že to je jen cosi, co není nic moc a není to udržovaný, což si stejně spousta lidí nepřečte a nedá se vyloučit, že na to nějak nenarazí.
+
+
+Za sebe: do repositářů, které pošleš, budu koukat na kód a jak pracuješ s gitem. Do těch ostatní nahlédnu také, ale bude mě zajímat spíš jejich historie, než kód: jestli je to tvůj kód, nebo cizí, jak jsou velké commity a jaké píšeš commit messages. To totiž vypovídá o tom, jaké máš návyky: pokud jsou tam commit messages ve stylu "asdfasdf", kde jsou navíc soubory, které spolu očividně nesouvisí, tak to nejspíš značí, nepostupuješ dostatečně organizovaně a ve stresu přestaneš dodržovat konvence. Ten, kdo dokáže udržovat smysluplnou historii vždy, má určitě plus.
+Já na tohle zkusím napsat svůj pohled. Dělám většinou technické hodnocení kandidátů a většinou mám max 15-20 minut, abych se dozvěděl co nejvíc o kandidátovi před ústním pohovorem. Takže pokud mám v ruce konkrétní repo, začnu tím. Pak se samozřejmě podívám i zběžně na ostatní projekty. Za mě je lepší, že vidím nějakou aktivitu, i když to jsou školní projekty. Ale rozhodně chlubit se čistě školními projekty nedoporučuji (jsou zde i výjimky). V kódu se většinou dívám jak ten člověk píše kód = má jednotný styl (teď jsem viděl školní projekt, kdy v části souborů bylo odsazeno tabem místo 4 mezer v pythonu), jestli tam používá české komentáře (na tohle jde zavést řeč) Jelikož se u nás ve firmě komunikuje výhradně v AJ, tak u nás musí být všechen kód komentován v AJ... Doporučuji, zkus si tohle 20 minutové kolečko sama na náhodném uživateli a dá ti to představu, kolik zhruba stihneš projít. U ústního pohovoru se pak na kód trochu obrátím, ale zajímají mě i další věci, které v kódu nenajdu.
+
+
+„... každého věc a svoboda mít na GitHubu co chce.“ To není tak úplně pravda: znám člověka, co na GitHubu chtěl mít práci někoho jiného, vydávat jí za svojí a vydělávat na ní. To bych určitě neoznačoval za jeho svobodu. ![🙂](https://discord.com/assets/6e72cca8dcf91e01fac8.svg) Vím, extrémní případ, ale i s tím je nutné počítat a jakýkoliv kód s nejasným autorstvím (nebo očividně zkopírovaný odjinud) může vyvolat otázky.
+
+Jasně, psal jsem to ne absolutně, ale v kontextu juniorů, kteří podle mě někdy až moc přemýšlí nad tím, jestli by jejich GitHub neměl být učesaný na míru pohovorům. Můj názor je, že ne, že GitHub je moje osobní skříň, kam si odkládám cokoliv, na čem pracuju. Že ta skříň je zároveň i vitrínka pro kolemjdoucí, to je jen příjemný bonus, protože nemusím posílat kód, který chci někomu ukázat, po zipech v mailu.
+
+
+
+Když to tady tak čtu, tak mi čím dál víc dává smysl varianta, ke které zatím směřuju: mít pár veřejných projektů v repre verzi = bez komentářů nebo s minimalistickýma v AJ, a zbytek, nebo klidně totéž, v private výukové verzi = podrobně okomentované, abych si i s delším odstupem byla schopná vzpomenout, proč jsem něco napsala tak a tak. Rozhodně ale takové komentáře nemůžu vystavovat veřejně, s tím mám už i přímou negativní zkušenost. Tolik k té svobodě na githubu ![🙂](https://discord.com/assets/6e72cca8dcf91e01fac8.svg)
+
+
+
+--- https://discord.com/channels/769966886598737931/1090649291804135485/1090912862542766121
+
+Pokud ti to pomůže, tak je to asi nejčastější chyba začátečníků. Možná bych to měl mít někde napsané, až budu mít v příručce hezkou stránku o projektech 🤔
+
+---
+
+
+--- https://discord.com/channels/769966886598737931/1082249171278512151/1083785079702163496
+
+Na GitHubu může být ještě detailnější, ale tam nebude koukat recruiter, ten mrkne CV, řekne si, hele má nějakou appku, něco dělá, to pošlu dál. Na GH zase kouká spíš ten technickej člověk, co to posuzuje, mrkne na README, mrkne na kód.
+
+---
+
+
+--- https://discord.com/channels/769966886598737931/1082316811703427102/1082316817424466000
+Mám nějaké vlastní drobné "projekty" a ráda bych je na GitHub dala jako ukázku práce, hlavně přímo kvůli hledání práce, kvůli komunitnímu hodokvasu a poznámkám ani ne 🙂 A teď.
+Mám například aplikaci v shiny (dělám v Rku). Takže na GH nahraju kód a do readme dám odkaz na tu apku na webu, kde je možné ji vyzkoušet? Obdobně, když mám script (je to správně použitá terminologie?), kde jsem zpracovala data (u kterých si ani nejsem jistá, jestli bych je mohla publikovat, nejsou moje) a dělám tam klasifikátor - udělám to tak, že nahraju do GH kód, popíšu v readme, co ten script dělá a pak tam například někam nahraju grafy nebo screenshoty úspěšnosti, které z toho klasifikátoru na konci vypadly? Pochopila jsem to správně?
+Jde mi o to, že je mi vlastně nepříjemný, že si uživatel/nahlížející nemůže ten kód pustit, aby viděl, jak to funguje. Ani mi nepřišlo, že by to nějak šlo, ale možná jen špatně koukám a hledám. Taky tam cpát ta zdrojová data mi nepřipadá úplně dobré, z vícero důvodů.
+
+---
+
+
+
+
+--- https://discord.com/channels/769966886598737931/1017008201427845153/1017377812602179594
+
+K tomu readme: syntaxe Markdownu
+
+https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+
+Něco k tomu jak je psát
+
+https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes
+
+https://www.makeareadme.com/
+
+---
+
+
+
+Jak hodnotíte na GitHubu školní / osobní projekty, které tam kandidáti často nahrají, "jen aby něco bylo na GitHubu"? Z mých zkušeností to jsou častokrát samostatné skripty s pomíchanou češtinou a ne nejlepšími best-practices.
+
+Já to vidím tak, že se juniorům často řekne, aby měli GitHub, ale vlastně se jim tak úplně nevysvětlí, k čemu nebo proč. Přitom se tím myslí spíš to, aby měli pár nějakých větších projektů, kterými prokážou praktické použití znalostí, a na pohovoru už je jedno, jestli jsou na GitHubu nebo v .zipu v příloze. Jenže jak je GitHub známý a používaný pro Open Source, je to vlastně takové nejlepší místo, kam ty projekty dávat, takže se ta rada zkrátí na „mějte GitHub“ a „vše dávejte na GitHub“. Junior pak pokrčí rameny, řekne si OK, asi to je něco jako „mějte LinkedIn“ a něco nebo všechno tam dá, podle toho, jakých rad se mu dostane. Školní projekty nebo cvičení z Codewars, pokud je má. Nebo větší projekty, pokud je má. Nemá ale ponětí, jestli je to dobře, špatně, kolik tam toho má mít, jak moc mají být ty projekty velké, hotové, jak vyzdvihnout ty lepší a jak potlačit ty, kde si člověk jen něco zkoušel (já mám teď třeba 161 repozitářů), atd. V tomto má upřímně mezery ještě i příručka na junior.guru, chtěl bych to vysvětlovat lépe.
+
+To, co tam mají, je pak většinou to, co mají. To, co by rád viděl technický recruiter, je „hezky uklizený a načančaný“ repozitář, ideálně s projektem o rozsahu zhruba bakalářky (teď nemyslím tu textovou část, ale tu programovací).
+
+Asi bych se 1) zeptal, jestli si nesyslí ještě něco v šuplíku, protože spousta lidí se přece jenom svůj kód stydí dávat veřejně, 2) na ty projekty bych se díval hlavně z pohledu „toto je to, co ten člověk umí, jaké best practices má zažité a jaké ne a dává mi představu, co ho budu muset doučit“. České komentáře nebo proměnné by mi nutně asi nevadily, pokud jsou v nějakých cvičeních (některé české knihy např. o Pythonu to tak bohužel dokonce učí). Commitnuté tokeny nebo node_modules jsou už horší, tam vidím, jak daleko se ten člověk dostal k praxi.
 
 
 #} -->
