@@ -73,16 +73,19 @@ def main():
     today = date.today()
     for chart_slug, chart_fn in CHARTS.items():
         logger.info(f"Generating: {chart_slug}")
-        chart = chart_fn(today)
-        chart.setdefault("slug", chart_slug)
         try:
-            months = chart.pop("months")
-        except KeyError:
-            pass
-        else:
-            chart.setdefault("labels", charts.labels(months))
-            chart.setdefault("annotations", charts.milestones(months, MILESTONES))
-        Chart.create(**chart)
+            chart = chart_fn(today)
+            chart.setdefault("slug", chart_slug)
+            try:
+                months = chart.pop("months")
+            except KeyError:
+                pass
+            else:
+                chart.setdefault("labels", charts.labels(months))
+                chart.setdefault("annotations", charts.milestones(months, MILESTONES))
+            Chart.create(**chart)
+        except Exception:
+            logger.exception(f"Failed to generate: {chart_slug}")
 
 
 def chart(chart_fn: Callable) -> Callable:
