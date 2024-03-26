@@ -49,7 +49,7 @@ def test_parse_notes():
                     'jiri-psotka.jpg',
                     'Jiří Psotka'
                     ) %}
-                    Jiří Psotka, recruiter v [Red Hatu](https://red.ht/juniorguru) v prvním dílu podcastu junior.guru
+                    Jiří Psotka, recruiter v [Red Hatu](https://www.redhat.com/en/jobs) v prvním dílu podcastu junior.guru
                     {% endcall %}
 
                     #} -->
@@ -66,7 +66,7 @@ def test_parse_notes():
                 'jiri-psotka.jpg',
                 'Jiří Psotka'
                 ) %}
-                Jiří Psotka, recruiter v [Red Hatu](https://red.ht/juniorguru) v prvním dílu podcastu junior.guru
+                Jiří Psotka, recruiter v [Red Hatu](https://www.redhat.com/en/jobs) v prvním dílu podcastu junior.guru
                 {% endcall %}
             """
         ).strip()

@@ -73,7 +73,7 @@ https://www.honeybadger.io/blog/git-tricks/
   'jiri-psotka.jpg',
   'Jiří Psotka'
 ) %}
-  Jiří Psotka, recruiter v [Red Hatu](https://red.ht/juniorguru) v [prvním dílu podcastu junior.guru](../podcast/1.jinja)
+  Jiří Psotka, recruiter v [Red Hatu](https://www.redhat.com/en/jobs) v [prvním dílu podcastu junior.guru](../podcast/1.jinja)
 {% endcall %}
 
 Já osobně jej používal hlavně jako přenos rozpracovaného projektu mezi prací, kde jsem na něm sem tam dělal a domovem. Až docela nedávno jsem se dozvěděl o merge requestech, a jak by se vlastně mělo pushovat. Mít nějaký "návod" jak s ním pracovat (všeobecně s GITem) byl bylo super. Když vemu přímo GITHub, líbí se mi jeho desktopová aplikace, je dost user friendly a pěkně se s ní pracuje...
