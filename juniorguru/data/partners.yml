@@ -279,7 +279,7 @@
   partnerships:
     - plan: gold
       starts_on: 2023-04-01
-      expires_on: 2024-04-01
+      expires_on: 2024-05-01
     - plan: branding
       starts_on: 2020-09-01
       expires_on: 2023-04-01
