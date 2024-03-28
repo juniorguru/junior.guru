@@ -614,4 +614,6 @@ To, co tam mají, je pak většinou to, co mají. To, co by rád viděl technick
 Asi bych se 1) zeptal, jestli si nesyslí ještě něco v šuplíku, protože spousta lidí se přece jenom svůj kód stydí dávat veřejně, 2) na ty projekty bych se díval hlavně z pohledu „toto je to, co ten člověk umí, jaké best practices má zažité a jaké ne a dává mi představu, co ho budu muset doučit“. České komentáře nebo proměnné by mi nutně asi nevadily, pokud jsou v nějakých cvičeních (některé české knihy např. o Pythonu to tak bohužel dokonce učí). Commitnuté tokeny nebo node_modules jsou už horší, tam vidím, jak daleko se ten člověk dostal k praxi.
 
 
+https://www.linkedin.com/posts/marketa-willis_jak%C3%BD-je-recept-na-top-osobn%C3%AD-projekt-kter%C3%BD-activity-7179030416480194560-pfqP?utm_source=share&utm_medium=member_desktop
+
 #} -->
