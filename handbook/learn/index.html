@@ -1,0 +1,1052 @@
+<html lang="cs" data-updated-at="2024-03-28T09:55:54.110663+01:00">
+  <head prefix="og: https://ogp.me/ns# website: https://ogp.me/ns/website#">
+    <meta charset="utf-8">
+    <link rel="canonical" href="https://junior.guru/handbook/learn/">
+    <title>Jak se naučit programovat</title>
+
+    
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="Accept-CH" content="DPR,Viewport-Width,Width,Save-Data">
+
+      <link rel="dns-prefetch" href="https://sa.junior.guru">
+      <link rel="dns-prefetch" href="https://res.cloudinary.com">
+      <link rel="preconnect" href="https://res.cloudinary.com">
+
+      <link rel="stylesheet" href="../../static/css/index.css?hash=02cce8ced67872acfb8bb230c215127a">
+      <link rel="preload" href="../../static/assets/bootstrap-icons.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+      <script defer src="../../static/js/index.js?hash=c81995da8df7ec7651648967bb946ae8"></script>
+
+      <meta property="og:title" content="Jak se naučit programovat">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://junior.guru/handbook/learn/">
+      <meta property="og:locale" content="cs_CZ">
+
+      <link href="https://mastodonczech.cz/@honzajavorek" rel="me">
+
+      
+      <meta property="og:image" content="https://res.cloudinary.com/juniorguru/image/fetch/w_auto,dpr_auto,q_auto,f_auto/https://junior.guru/static/thumbnails/8fbff896a52eebf76611597b89898820e1047519229d137393ddc4fad8218823.png">
+      <meta property="og:image:width" content="1200">
+      <meta property="og:image:height" content="630">
+      <meta name="twitter:card" content="photo">
+      <meta name="twitter:image" content="https://res.cloudinary.com/juniorguru/image/fetch/w_auto,dpr_auto,q_auto,f_auto/https://junior.guru/static/thumbnails/8fbff896a52eebf76611597b89898820e1047519229d137393ddc4fad8218823.png">
+      
+
+      <meta name="description" content="Jak začít programovat? Tady máš úvod do programování v podobě rozcestníku na nejlepší a nejefektivnější materiály">
+    
+  </head>
+  
+<body>
+  
+  <header id="header" class="navbar navbar-light">
+    <nav class="navbar-container">
+      <a class="navbar-brand " href="../../">
+        
+<img src="../../static/logo.svg" alt="Logo junior.guru" width="90" height="40">
+
+      </a>
+      <div class="navbar-buttons">
+        <a class="btn btn-outline-dark" href="../../pricing/">Pro firmy</a>
+        
+          <a class="btn btn-dark" href="../../club/">Přidej se</a>
+        
+      </div>
+      
+      <ul class="nav nav-foldable">
+        
+        <li class="nav-item">
+          <a class="nav-link" href="../../club/">
+            Klub
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="../">
+            Příručka
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="../../courses/">
+            Kurzy
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="../../jobs/">
+            Práce
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="../../news/">
+            Novinky
+          </a>
+        </li>
+        
+      </ul>
+      
+    </nav>
+  </header>
+
+  
+<div class="logobar">
+  <div class="logobar-container">
+    <h3 class="logobar-heading">
+      <span>Partneři <span class="logobar-nonessential">příručky</span></span>
+    </h3>
+    <ul class="logobar-list">
+      
+        
+        
+  <li class="logobar-item" title="Fakturoid">
+    
+    <a class="logobar-link" href="https://www.fakturoid.cz/" target="_blank" rel="noopener" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="partnership">
+    
+
+    
+<img src="../../static/logos/fakturoid.svg" alt="Fakturoid" width="130" height="60" class="logobar-image">
+
+
+    
+    </a>
+    
+  </li>
+
+      
+        
+        
+  <li class="logobar-item" title="Rector">
+    
+    <a class="logobar-link" href="https://getrector.com/" target="_blank" rel="noopener" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="partnership">
+    
+
+    
+<img src="../../static/logos/rector.svg" alt="Rector" width="130" height="60" class="logobar-image">
+
+
+    
+    </a>
+    
+  </li>
+
+      
+        
+        
+  <li class="logobar-item" title="Red Hat">
+    
+    <a class="logobar-link" href="https://www.redhat.com/en/jobs" target="_blank" rel="noopener" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="partnership">
+    
+
+    
+<img src="../../static/logos/redhat.svg" alt="Red Hat" width="130" height="60" class="logobar-image">
+
+
+    
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </div>
+</div>
+
+<nav class="tocbar">
+  <div class="tocbar-container">
+    <a class="tocbar-item tocbar-toc-link" href="#toc">
+      <i class="bi bi-list"></i> Obsah
+    </a>
+    <span class="tocbar-item tocbar-current"></span>
+  </div>
+</nav>
+
+
+
+  <hr class="visually-hidden">
+
+  
+<div class="main main-sidebar">
+  <div class="content-container">
+    <main class="content document">
+      
+<h1 id="nauc-se-zaklady-programovani">Nauč se zá­klady pro­gra­mo­vá­ní<a class="headerlink" href="#nauc-se-zaklady-programovani" title="Odkaz na tuto sekci">#</a></h1>
+<div class="lead">
+    <p>Jak za­čít pro­gra­mo­vat? Zde na­jdeš peč­li­vě na­chys­ta­né jen to, co pro tebe bude do úpl­né­ho star­tu nej­lep­ší a nej­e­fek­tiv­něj­ší. Až tím pro­jdeš, mů­žeš za­čít <a href="../practice/">zís­ká­vat pra­xi</a>.</p>
+  </div>
+
+<h2 id="co-budes-potrebovat">Co bu­deš po­tře­bo­vat    <span id="requirements"></span><a class="headerlink" href="#co-budes-potrebovat" title="Odkaz na tuto sekci">#</a></h2>
+<h3 id="vybaveni-ktere-musis-mit">Vy­ba­ve­ní, kte­ré mu­síš mít    <span id="equipment"></span><a class="headerlink" href="#vybaveni-ktere-musis-mit" title="Odkaz na tuto sekci">#</a></h3>
+<p>Pře­de­vším bu­deš po­tře­bo­vat <strong>po­čí­tač a in­ter­net</strong>. Na mo­bi­lu ani table­tu se pro­gra­mo­vat prak­tic­ky nedá a bez při­po­je­ní ne­bu­deš mít ma­te­ri­ály, ani ne­na­jdeš po­třeb­nou po­moc.</p>
+<p>Ide­ál­ní je mít svůj vlast­ní po­čí­tač, nad kte­rým máš pl­nou kon­t­ro­lu a na němž je ope­rač­ní systém Li­nux, Win­dows nebo ma­cOS. Po­kud máš jiný systém, jako An­dro­id nebo Chro­me­OS, mož­ná se ti po­vede na něm pro­gra­mo­vá­ní roz­jet, ale v pra­xi je k tomu ni­kdo ne­po­u­ží­vá a bu­deš mít vel­ký pro­blém se­hnat ně­ko­ho, kdo ti po­radí v pří­padě pro­blé­mů. Na mo­bi­lu mů­žeš ně­kte­ré věci pro­cvi­čo­vat, ale je to jako se v app­ce učit akor­dy, vzo­reč­ky nebo slo­víč­ka — prak­tic­ké zna­losti tím ne­zís­káš.</p>
+<div class="media-card" data-screenshot-source-url="https://www.youtube.com/watch?v=Z-r8xiKX6uM&amp;list=PLrsbT5TVJXZa2daxo8_3NagDzPqHjBEpI" data-screenshot-image-url="static/screenshots/youtube-com-watch-v-z-r8xikx6um-list-plrsbt5tvjxza2daxo8-3nagdzpqhjbepi.webp">
+  <div class="media-card-link-section">
+    <div class="media-card-image-cover">
+
+<img data-src="../../static/screenshots/youtube-com-watch-v-z-r8xikx6um-list-plrsbt5tvjxza2daxo8-3nagdzpqhjbepi.webp" src="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_auto,q_auto,f_auto/https://junior.guru/static/screenshots/youtube-com-watch-v-z-r8xikx6um-list-plrsbt5tvjxza2daxo8-3nagdzpqhjbepi.webp" srcset="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1,q_auto,f_auto/https://junior.guru/static/screenshots/youtube-com-watch-v-z-r8xikx6um-list-plrsbt5tvjxza2daxo8-3nagdzpqhjbepi.webp,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1.5,q_auto,f_auto/https://junior.guru/static/screenshots/youtube-com-watch-v-z-r8xikx6um-list-plrsbt5tvjxza2daxo8-3nagdzpqhjbepi.webp 1.5x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_2,q_auto,f_auto/https://junior.guru/static/screenshots/youtube-com-watch-v-z-r8xikx6um-list-plrsbt5tvjxza2daxo8-3nagdzpqhjbepi.webp 2x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_3,q_auto,f_auto/https://junior.guru/static/screenshots/youtube-com-watch-v-z-r8xikx6um-list-plrsbt5tvjxza2daxo8-3nagdzpqhjbepi.webp 3x" onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;" alt="Vybavení a programy, které budeš potřebovat" width="640" height="360" loading="lazy" class="media-card-image">
+
+      <div class="media-card-button">
+        <span class="media-card-play"><i class="bi bi-play-circle-fill"></i></span>
+        <span class="media-card-duration">5min</span>
+      </div>
+    </div>
+    <h4 class="media-card-title">
+      <a href="https://www.youtube.com/watch?v=Z-r8xiKX6uM&amp;list=PLrsbT5TVJXZa2daxo8_3NagDzPqHjBEpI" class="media-card-link" target="_blank" rel="noopener">Vy­ba­ve­ní a pro­gra­my, kte­ré bu­deš po­tře­bo­vat</a>
+    </h4>
+  </div>
+  <div class="media-card-body">
+
+      <p class="media-card-text">
+
+          K pro­gra­mo­vá­ní se ti bude ho­dit hned ně­ko­lik věcí – no­te­bo­ok, při­po­je­ní k in­ter­ne­tu nebo tře­ba pro­gra­my, ve kte­rých si mů­žeš zku­sit psát kód.
+
+
+          <small class="media-card-note"><i class="bi bi-info-circle"></i> Vi­deo je sou­částí sé­rie <a href="https://www.youtube.com/playlist?list=PLrsbT5TVJXZa2daxo8_3NagDzPqHjBEpI">Prů­vod­ce no­váč­ka v IT</a>, kte­rou na­to­či­lo <a href="https://engeto.cz/">En­ge­to</a> ve spo­lu­práci s <a href="#honza">Hon­zou</a> z ju­ni­or.guru.</small>
+
+      </p>
+
+  </div>
+</div>
+
+<h3 id="sezen-si-kamarady">Se­žeň si ka­ma­rá­dy    <span id="friends"></span><a class="headerlink" href="#sezen-si-kamarady" title="Odkaz na tuto sekci">#</a></h3>
+<p>Říká se, že <strong>na­va­zo­vá­ní me­zi­lid­ských vzta­hů</strong> by mělo vy­pl­ňo­vat pě­tinu času, kte­rý trá­víš uče­ním (tzv. <a href="https://en.wikipedia.org/wiki/70/20/10_Model_(Learning_and_Development)">mo­del 70-20-10</a>). Na­víc bu­deš po­tře­bo­vat <strong>vel­ké množ­ství mo­ti­va­ce</strong>. Mož­ná si čteš ten­to text a při­jde ti, že jí máš vr­cho­vatě, ale věř tomu, že už zí­t­ra jí bude méně a za tý­den jí bude po­lo­vi­na. Zvláště po­kud ne­dě­láš pre­zenč­ní kurz a chys­táš se do toho jít jako sa­mouk, ne­bu­deš mít ani žád­né ter­mí­ny, ani lidi ko­lem sebe, díky kte­rým se u uče­ní udr­žíš. Je snad­né dal­ší lek­ci od­lo­žit, pro­to­že se ti to zrov­na ne­hodí, po­tom ji od­lo­žit zno­va, a tak dále.</p>
+<p>Na­jdi si pro­to <strong>stu­dij­ní sku­pinu</strong>. Ať už do toho pů­jdeš s ka­ma­rád­kou nebo míst­ním zá­jmo­vým krouž­kem, v par­tě to prostě od­sý­pá lépe a máš mno­ho­ná­sob­ně, oprav­du mno­ho­ná­sob­ně vyšší šan­ci na úspěch. Vy­u­žít mů­žeš přímo i <a href="../../club/">zdej­ší on­line klub</a>.</p>
+<h3 id="co-je-dobre-umet-predem">Co je dob­ré umět pře­dem    <span id="prerequisities"></span><a class="headerlink" href="#co-je-dobre-umet-predem" title="Odkaz na tuto sekci">#</a></h3>
+<p>S pro­gra­mo­vá­ním mů­žeš za­čít úpl­ně v po­hodě pouze se <strong>zá­klady ovlá­dá­ní po­čí­ta­če</strong>. Po­tře­bu­ješ umět vy­tvo­řit a na­jít sou­bor nebo ad­re­sář (slož­ku). Po­tře­bu­ješ umět na­in­sta­lo­vat nový pro­gram.</p>
+<p>Dále se ti mo­hou ho­dit <strong>zá­klady ma­te­ma­ti­ky ze zá­klad­ky</strong>: tře­ba co je to dě­le­ní se zbyt­kem nebo ob­sah čtver­ce. De­tai­ly nejsou po­tře­ba, vzo­reč­ky se dají na­jít na Wi­ki­pe­dii. Spíš po­tře­bu­ješ vě­dět, že když máš po­koj tři krát čty­ři me­t­ry, tak se ty­hle čís­la dají ně­jak zkom­bi­no­vat a zjis­tíš vý­mě­ru pod­la­hy.</p>
+<p>Bu­deš mít vý­hodu, po­kud bu­deš <a href="../english/"><strong>ro­zu­mět ale­spoň psa­né an­g­lič­tině</strong></a>. Ma­te­ri­ály a kur­zy pro za­čá­teč­ní­ky na­jdeš i v češ­tině, ale brzy zjis­tíš, že spo­lé­hat se jen na ně je vel­mi ome­zu­jící.</p>
+<h3 id="kolik-to-bude-stat">Ko­lik to bude stát    <span id="price"></span><a class="headerlink" href="#kolik-to-bude-stat" title="Odkaz na tuto sekci">#</a></h3>
+<p>Ne­musí to stát <strong>žád­né pe­ní­ze</strong>. Ano, exis­tu­jí pla­ce­né kur­zy, pla­ce­ní men­to­ři, <a href="../../club/">pla­ce­né ko­mu­ni­ty</a>, ale jde to i bez toho. Po­kud máš po­čí­tač a in­ter­net, mů­žeš se na­u­čit pro­gra­mo­vat bez ja­kých­ko­liv dal­ších in­ves­tic. Ně­kte­ré kur­zy dá­va­jí své ma­te­ri­ály zdar­ma k dis­po­zici, na pro­blémy mů­žeš na­jít ře­še­ní v dis­ku­zích na in­ter­ne­tu, učeb­ní krou­žek si mů­žeš zor­ga­ni­zo­vat i mezi svými ka­ma­rá­dy. Po­kud ale ně­jaké pe­ní­ze do své­ho uče­ní in­ves­to­vat mů­žeš, <strong>mo­hou tvou ces­tu usnad­nit a urych­lit</strong>.</p>
+<h3 id="kolik-casu-potrebujes">Ko­lik času po­tře­bu­ješ    <span id="time"></span><a class="headerlink" href="#kolik-casu-potrebujes" title="Odkaz na tuto sekci">#</a></h3>
+<p>Úpl­ně prv­ní pro­gram vy­tvo­říš v řádu ho­din nebo dní, ale po­kud chceš mít <a href="../candidate/#co-budou-chtit">zá­klad vhod­ný pro start ka­ri­é­ry v IT</a>, bu­deš se tomu po­tře­bo­vat vě­no­vat <strong>ale­spoň 3 mě­síce po 10 ho­di­nách týd­ně</strong> (ori­en­tač­ní od­had, kaž­dý má jiné mož­nosti, tem­po, vý­drž…). Je to stej­né jako u spor­tu nebo hry na hu­deb­ní ná­stroj: Prin­cip mož­ná po­cho­píš rych­le, ale bu­deš muset vždy hod­ně pro­cvi­čo­vat, než to bu­deš umět správ­ně po­u­žít v pra­xi.</p>
+<p>Co když <strong>ne­máš čas</strong>? „Ne­mám čas“ zna­me­ná „ne­chci si jej vy­hra­dit, je­li­kož mám dů­le­ži­těj­ší věci, nebo věci, kte­ré mě baví víc“. Mož­ná se ti jen líbí před­sta­va, že umíš pro­gra­mo­vat, ale ne­chce se ti to do­o­prav­dy dě­lat, stej­ně jako se spoustě li­dem líbí před­sta­va, že umí hrát na ky­taru, ale ne­ma­jí chuť si po ve­če­rech brn­kat a cvi­čit akor­dy. Je úpl­ně v po­řád­ku dě­lat dů­le­ži­těj­ší nebo zá­bav­něj­ší věci, ako­rát <a href="https://twitter.com/mjavorek/status/687386493036396544">je dob­ré si to při­znat</a>, vě­do­mě to ne­chat pla­vat a ne­vy­čí­tat si to.</p>
+<p>Mož­ná oprav­du chceš, ale máš ná­roč­nou práci, cho­díš domů po ve­če­rech a bě­hem vol­na se sotva stí­háš zre­la­xo­vat nebo po­sta­rat o ro­dinu. Bo­hu­žel, bez času to nejde. Na­u­čit se při tom všem pro­gra­mo­vat bude vel­mi těž­ké. I ta­ko­ví se ale na­šli! <strong>Ne­vzdá­vej to a zkus vy­myslet, jak by šlo tvůj den uspo­řá­dat ji­nak</strong>, jestli by ně­kte­ré po­vin­nosti ne­mohli dě­lat jiní lidé, atd. Ně­kdo se učí o ví­ken­dech nebo po ve­če­rech, když usnou děti. Ně­kdo má pro­sto­je ve svém za­měst­ná­ní, tak se učí bě­hem nich.</p>
+<div class="blockquote-container avatar">
+    <figure class="blockquote-content">
+
+<img data-src="../../static/avatars-quotes/vladlena-benesova.jpg" src="https://res.cloudinary.com/juniorguru/image/fetch/w_50,dpr_auto,q_auto,f_auto/https://junior.guru/static/avatars-quotes/vladlena-benesova.jpg" srcset="https://res.cloudinary.com/juniorguru/image/fetch/w_50,dpr_1,q_auto,f_auto/https://junior.guru/static/avatars-quotes/vladlena-benesova.jpg,https://res.cloudinary.com/juniorguru/image/fetch/w_50,dpr_1.5,q_auto,f_auto/https://junior.guru/static/avatars-quotes/vladlena-benesova.jpg 1.5x,https://res.cloudinary.com/juniorguru/image/fetch/w_50,dpr_2,q_auto,f_auto/https://junior.guru/static/avatars-quotes/vladlena-benesova.jpg 2x,https://res.cloudinary.com/juniorguru/image/fetch/w_50,dpr_3,q_auto,f_auto/https://junior.guru/static/avatars-quotes/vladlena-benesova.jpg 3x" onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;" alt="Vladlena Benešová" width="50" height="50" loading="lazy" class="blockquote-avatar">
+
+      <blockquote class="blockquote">
+        <p>Pra­co­va­la jsem už v IT, ale chtě­la jsem lep­ší po­zici. I se dvěma dětmi a pl­ným úvaz­kem to šlo, po ve­če­rech jsem dě­la­la vlast­ní pro­jek­ty a dál­ko­vě stu­do­va­la. Byl to ko­ní­ček, ne­va­di­lo mi u toho trá­vit vol­ný čas.</p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+
+          Vladle­na Be­ne­šo­vá, bý­va­lá mar­ke­tér­ka, nyní pro­gra­má­tor­ka
+
+      </figcaption>
+    </figure>
+  </div>
+
+<h3 id="nauc-se-ucit">Nauč se učit    <span id="learning"></span><a class="headerlink" href="#nauc-se-ucit" title="Odkaz na tuto sekci">#</a></h3>
+<p>Jakmi­le se jed­nou pus­tíš do pro­gra­mo­vá­ní, na­stou­píš do vlaku, jenž už se ni­kdy ne­za­sta­ví. Tech­no­lo­gie se vy­ví­její rych­le a tak je pro­gra­mo­vá­ní, mož­ná více než jiné obo­ry, o ne­u­stá­lém uče­ní. Ně­kdo to do­vá­dí do ex­trému a hltá hned kaž­dou no­vin­ku, ale ani <strong>běž­ný pro­gra­má­tor ne­může úpl­ně za­spat a často se téměř kaž­dý tý­den na­učí něco no­vé­ho</strong>, tře­ba i prů­běž­ně bě­hem práce.</p>
+<p>Ne­o­če­ká­vej, že se pro­gra­mo­vá­ní jed­nou na­u­číš a vy­sta­číš si s tím. Ne­měj ale ani hrů­zu z toho, že se učíš pro­gra­mo­vat dva roky a stále toho ještě spous­tu ne­u­míš. <strong>Učí se ne­u­stále i ti, kte­ří mají de­sít­ky let zku­še­ností.</strong> Nemá tedy smy­sl se tím pří­liš trá­pit. Na­jdi si vlast­ní tem­po a způ­sob, ja­kým se do­ká­žeš učit efek­tiv­ně a jak tě to bude nej­více ba­vit. Ně­kdo leží v kni­hách, jiný si pouští ná­vody na You­Tube, dal­ší si zase nej­ra­ději zkouší věci prak­tic­ky. Co­ko­liv z toho je v po­řád­ku, hlav­ně po­kud ti to sedí.</p>
+<h3 id="co-nepotrebujes">Co ne­po­tře­bu­ješ    <span id="myths"></span><a class="headerlink" href="#co-nepotrebujes" title="Odkaz na tuto sekci">#</a></h3>
+<p>O pro­gra­mo­vá­ní <a href="../myths/">ko­lu­je řada mýtů</a>. Tře­ba že se o něj mů­žeš za­jí­mat jen po­kud jsi ge­ni­ál­ní na ma­te­ma­ti­ku, že se to musí roky stu­do­vat na vy­so­ké ško­le, že to není pro hol­ky, že už je pro tebe pozdě za­čít. Jsou to pouze před­sud­ky, ne­nech se jimi od­ra­dit! Ra­ději si pro­jdi <a href="../../stories/">pří­běhy lidí, kte­ří se pro­gra­mo­vat na­u­či­li</a> a dnes jim to po­máhá při práci, nebo se tím za­ča­li přímo ži­vit.</p>
+<p><small>Rady v této ka­pi­to­le vol­ně vy­chá­zí i z <a href="https://naucse.python.cz/2021/online-jaro/adm/intro/">úvod­ní lek­ce tý­mo­vé­ho on­line kur­zu Pe­t­ra Vik­to­ri­na</a>, se svo­le­ním au­to­ra. Díky!</small></p>
+<h2 id="proc-python">Proč Py­thon?    <span id="python"></span><a class="headerlink" href="#proc-python" title="Odkaz na tuto sekci">#</a></h2>
+<p>Ať už bu­deš na­ko­nec dě­lat co­ko­liv, za­čít s pro­gra­mo­va­cím ja­zy­kem <a href="https://python.cz">Py­thon</a> je skvě­lý tah. Je to nej­vhod­něj­ší prv­ní ja­zyk.</p>
+<ul>
+<li>Dob­ře se učí. Ne­ob­sa­hu­je pří­liš mno­ho div­ných zna­ček, vy­padá spíš jako an­g­lic­ká věta.</li>
+<li>Má přá­tel­skou ko­mu­ni­tu lidí, kte­ří pí­šou ma­te­ri­ály pro za­čá­teč­ní­ky a po­řá­da­jí nej­růz­něj­ší akce.</li>
+<li>Dob­ře se hledá po­moc při ře­še­ní pro­blé­mů bě­hem uče­ní, a to i v češ­tině.</li>
+<li>Je to dnes je­den z nej­po­u­ží­va­něj­ších a nej­ob­lí­be­něj­ších ja­zy­ků vů­bec.<ul>
+<li><a href="https://meterpreter.org/python-will-become-the-official-programming-language-for-french-high-schools/">In­fo­Tech News: Ofi­ci­ál­ní ja­zyk pro vý­uku ve Fran­cii</a></li>
+<li><a href="https://www.economist.com/graphic-detail/2018/07/26/python-is-becoming-the-worlds-most-popular-coding-language">The Eco­no­mist: Stá­vá se nej­ob­lí­be­něj­ším ja­zy­kem na světě</a></li>
+<li><a href="https://insights.stackoverflow.com/survey/2019">Stac­kO­ver­flow: Ja­zyk s nej­rych­leji ros­tou­cí po­pu­la­ri­tou a dru­hý nej­mi­lo­va­něj­ší</a></li>
+<li><a href="https://www.youtube.com/watch?v=cKzP61Gjf00">Vý­voj dat ze Stac­kO­ver­flow: Bě­hem 10 let se stal nej­ob­lí­be­něj­ším ja­zy­kem</a></li>
+<li><a href="https://www.jetbrains.com/research/devecosystem-2018/">Jet­Bra­ins: Tře­tí ja­zyk, kte­rý lidé mají jako hlav­ní. Prv­ní, kte­rý se nej­víc učí</a></li>
+<li><a href="https://www.zdnet.com/article/programming-languages-python-predicted-to-overtake-c-and-java-in-next-4-years/">ZDNet: Od­ha­du­je se, že do ně­ko­li­ka let bude nej­po­u­ží­va­něj­ší na světě</a></li>
+</ul>
+</li>
+<li>Je uni­ver­zál­ní: tvor­ba webu, ser­ve­ry, da­to­vá ana­lý­za, au­to­ma­ti­za­ce, vě­dec­ké vý­po­čty, …</li>
+<li>Exis­tu­je pro něj <a href="http://python.cz/prace">mno­ho na­bí­dek práce</a>.</li>
+</ul>
+<p>Co když ale bude na­ko­nec v pra­cov­ním in­ze­rá­tu Java? Dů­le­ži­té je pře­de­vším umět pro­gra­mo­vat — dal­ší ja­zyk nebo tech­no­lo­gie se dá do­u­čit po­měr­ně rych­le.</p>
+<div class="blockquote-container avatar">
+    <figure class="blockquote-content">
+
+<img data-src="../../static/avatars-quotes/jakub-mrozek.jpg" src="https://res.cloudinary.com/juniorguru/image/fetch/w_50,dpr_auto,q_auto,f_auto/https://junior.guru/static/avatars-quotes/jakub-mrozek.jpg" srcset="https://res.cloudinary.com/juniorguru/image/fetch/w_50,dpr_1,q_auto,f_auto/https://junior.guru/static/avatars-quotes/jakub-mrozek.jpg,https://res.cloudinary.com/juniorguru/image/fetch/w_50,dpr_1.5,q_auto,f_auto/https://junior.guru/static/avatars-quotes/jakub-mrozek.jpg 1.5x,https://res.cloudinary.com/juniorguru/image/fetch/w_50,dpr_2,q_auto,f_auto/https://junior.guru/static/avatars-quotes/jakub-mrozek.jpg 2x,https://res.cloudinary.com/juniorguru/image/fetch/w_50,dpr_3,q_auto,f_auto/https://junior.guru/static/avatars-quotes/jakub-mrozek.jpg 3x" onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;" alt="Jakub Mrozek" width="50" height="50" loading="lazy" class="blockquote-avatar">
+
+      <blockquote class="blockquote">
+        <p>Pí­šou mi lidi, že se chtějí na­u­čit pro­gra­mo­vat. Po­sí­lám je na kur­zy Py­thonu.</p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+
+          Ja­kub Mro­zek, pro­pa­gá­tor ja­zy­ka Ja­vaScri­pt
+
+      </figcaption>
+    </figure>
+  </div>
+
+<h2 id="jak-zacit">Jak za­čít    <span id="learn"></span><a class="headerlink" href="#jak-zacit" title="Odkaz na tuto sekci">#</a></h2>
+<p>Ne­mu­síš se pře­bí­rat hro­ma­da­mi mož­ností a pře­mýš­let, do kte­ré se vy­platí in­ves­to­vat. Tyto ma­te­ri­ály pro­šly peč­li­vým a přís­ným vý­bě­rem. Jsou to ty nej­lep­ší do­stup­né. Vy­ber si je­den z ná­sle­du­jí­cích ma­te­ri­álů pod­le toho, jestli ti více vy­ho­vu­je kurz nebo kni­ha, a za­čni!</p>
+<div class="link-cards">
+
+
+
+<div class="link-card" data-screenshot-source-url="https://naucse.python.cz" data-screenshot-image-url="static/screenshots/naucse-python-cz.webp">
+  <div class="link-card-header">
+
+
+<img data-src="../../static/screenshots/naucse-python-cz.webp" src="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_auto,q_auto,f_auto/https://junior.guru/static/screenshots/naucse-python-cz.webp" srcset="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1,q_auto,f_auto/https://junior.guru/static/screenshots/naucse-python-cz.webp,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1.5,q_auto,f_auto/https://junior.guru/static/screenshots/naucse-python-cz.webp 1.5x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_2,q_auto,f_auto/https://junior.guru/static/screenshots/naucse-python-cz.webp 2x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_3,q_auto,f_auto/https://junior.guru/static/screenshots/naucse-python-cz.webp 3x" onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;" alt="Nauč se Python!" width="640" height="360" loading="lazy" class="link-card-image">
+
+
+
+      <div class="link-card-badge">
+        <i class="bi bi-layout-text-sidebar-reverse"></i> On­line kurz
+      </div>
+
+    <h4 class="link-card-title">
+      <a href="https://naucse.python.cz" class="link-card-link">Nauč se Py­thon!</a>
+    </h4>
+  </div>
+  <div class="link-card-body">
+
+      <p class="link-card-text">
+
+          Nej­lep­ší čes­ké tex­to­vé ma­te­ri­ály.
+
+      </p>
+
+  </div>
+</div>
+
+
+
+
+
+<div class="link-card" data-screenshot-source-url="https://e-learning.engeto.cz/kurz/python-uvod-do-programovani" data-screenshot-image-url="static/screenshots/e-learning-engeto-cz-kurz-python-uvod-do-programovani.webp">
+  <div class="link-card-header">
+
+
+<img data-src="../../static/screenshots/e-learning-engeto-cz-kurz-python-uvod-do-programovani.webp" src="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_auto,q_auto,f_auto/https://junior.guru/static/screenshots/e-learning-engeto-cz-kurz-python-uvod-do-programovani.webp" srcset="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1,q_auto,f_auto/https://junior.guru/static/screenshots/e-learning-engeto-cz-kurz-python-uvod-do-programovani.webp,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1.5,q_auto,f_auto/https://junior.guru/static/screenshots/e-learning-engeto-cz-kurz-python-uvod-do-programovani.webp 1.5x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_2,q_auto,f_auto/https://junior.guru/static/screenshots/e-learning-engeto-cz-kurz-python-uvod-do-programovani.webp 2x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_3,q_auto,f_auto/https://junior.guru/static/screenshots/e-learning-engeto-cz-kurz-python-uvod-do-programovani.webp 3x" onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;" alt="Engeto" width="640" height="360" loading="lazy" class="link-card-image">
+
+
+
+      <div class="link-card-badge">
+        <i class="bi bi-layout-text-sidebar-reverse"></i> On­line kurz
+      </div>
+
+    <h4 class="link-card-title">
+      <a href="https://e-learning.engeto.cz/kurz/python-uvod-do-programovani" class="link-card-link">En­ge­to</a>
+    </h4>
+  </div>
+  <div class="link-card-body">
+
+      <p class="link-card-text">
+
+          Je­diný plně in­ter­ak­tiv­ní kurz v češ­tině.
+
+      </p>
+
+  </div>
+</div>
+
+
+
+
+
+<div class="link-card" data-screenshot-source-url="https://www.coursera.org/learn/python" data-screenshot-image-url="static/screenshots/coursera-org-learn-python.webp">
+  <div class="link-card-header">
+
+
+<img data-src="../../static/screenshots/coursera-org-learn-python.webp" src="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_auto,q_auto,f_auto/https://junior.guru/static/screenshots/coursera-org-learn-python.webp" srcset="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1,q_auto,f_auto/https://junior.guru/static/screenshots/coursera-org-learn-python.webp,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1.5,q_auto,f_auto/https://junior.guru/static/screenshots/coursera-org-learn-python.webp 1.5x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_2,q_auto,f_auto/https://junior.guru/static/screenshots/coursera-org-learn-python.webp 2x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_3,q_auto,f_auto/https://junior.guru/static/screenshots/coursera-org-learn-python.webp 3x" onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;" alt="Coursera" width="640" height="360" loading="lazy" class="link-card-image">
+
+
+
+      <div class="link-card-badge">
+        <i class="bi bi-layout-text-sidebar-reverse"></i> On­line kurz
+      </div>
+
+    <h4 class="link-card-title">
+      <a href="https://www.coursera.org/learn/python" class="link-card-link">Cour­se­ra</a>
+    </h4>
+  </div>
+  <div class="link-card-body">
+
+      <p class="link-card-text">
+
+          Pro­fe­si­o­nál­ně ve­de­ný vi­deo kurz Uni­ver­si­ty of Mi­chi­gan.
+
+      </p>
+
+  </div>
+</div>
+
+
+
+
+
+<div class="link-card" data-screenshot-source-url="https://www.codecademy.com/learn/learn-python-3" data-screenshot-image-url="static/screenshots/codecademy-com-learn-learn-python-3.webp">
+  <div class="link-card-header">
+
+
+<img data-src="../../static/screenshots/codecademy-com-learn-learn-python-3.webp" src="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_auto,q_auto,f_auto/https://junior.guru/static/screenshots/codecademy-com-learn-learn-python-3.webp" srcset="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1,q_auto,f_auto/https://junior.guru/static/screenshots/codecademy-com-learn-learn-python-3.webp,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1.5,q_auto,f_auto/https://junior.guru/static/screenshots/codecademy-com-learn-learn-python-3.webp 1.5x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_2,q_auto,f_auto/https://junior.guru/static/screenshots/codecademy-com-learn-learn-python-3.webp 2x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_3,q_auto,f_auto/https://junior.guru/static/screenshots/codecademy-com-learn-learn-python-3.webp 3x" onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;" alt="Codecademy" width="640" height="360" loading="lazy" class="link-card-image">
+
+
+
+      <div class="link-card-badge">
+        <i class="bi bi-layout-text-sidebar-reverse"></i> On­line kurz
+      </div>
+
+    <h4 class="link-card-title">
+      <a href="https://www.codecademy.com/learn/learn-python-3" class="link-card-link">Co­de­ca­demy</a>
+    </h4>
+  </div>
+  <div class="link-card-body">
+
+      <p class="link-card-text">
+
+          Kurz za­lo­že­ný na tex­tu a cvi­če­ních. Rych­lej­ší po­stup, méně hloub­ky.
+
+      </p>
+
+  </div>
+</div>
+
+
+
+
+
+<div class="link-card" data-screenshot-source-url="https://www.umimeinformatiku.cz" data-screenshot-image-url="static/screenshots/umimeinformatiku-cz.webp">
+  <div class="link-card-header">
+
+
+<img data-src="../../static/screenshots/umimeinformatiku-cz.webp" src="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_auto,q_auto,f_auto/https://junior.guru/static/screenshots/umimeinformatiku-cz.webp" srcset="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1,q_auto,f_auto/https://junior.guru/static/screenshots/umimeinformatiku-cz.webp,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1.5,q_auto,f_auto/https://junior.guru/static/screenshots/umimeinformatiku-cz.webp 1.5x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_2,q_auto,f_auto/https://junior.guru/static/screenshots/umimeinformatiku-cz.webp 2x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_3,q_auto,f_auto/https://junior.guru/static/screenshots/umimeinformatiku-cz.webp 3x" onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;" alt="Umíme informatiku" width="640" height="360" loading="lazy" class="link-card-image">
+
+
+
+      <div class="link-card-badge">
+        <i class="bi bi-list-check"></i> Cvi­če­ní
+      </div>
+
+    <h4 class="link-card-title">
+      <a href="https://www.umimeinformatiku.cz" class="link-card-link">Umí­me in­for­ma­ti­ku</a>
+    </h4>
+  </div>
+  <div class="link-card-body">
+
+      <p class="link-card-text">
+
+          Uč se skr­ze cvi­če­ní a opa­ko­vá­ní. <a href="https://www.umimeto.org/podlozeno-vyzkumem">Pod­lo­že­no vý­zku­mem</a>.
+
+      </p>
+
+  </div>
+</div>
+
+
+
+
+
+<div class="link-card" data-screenshot-source-url="http://diveintopython3.py.cz" data-screenshot-image-url="static/screenshots/diveintopython3-py-cz.webp">
+  <div class="link-card-header">
+
+
+<img data-src="../../static/screenshots/diveintopython3-py-cz.webp" src="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_auto,q_auto,f_auto/https://junior.guru/static/screenshots/diveintopython3-py-cz.webp" srcset="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1,q_auto,f_auto/https://junior.guru/static/screenshots/diveintopython3-py-cz.webp,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1.5,q_auto,f_auto/https://junior.guru/static/screenshots/diveintopython3-py-cz.webp 1.5x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_2,q_auto,f_auto/https://junior.guru/static/screenshots/diveintopython3-py-cz.webp 2x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_3,q_auto,f_auto/https://junior.guru/static/screenshots/diveintopython3-py-cz.webp 3x" onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;" alt="Ponořme se do Pythonu 3" width="640" height="360" loading="lazy" class="link-card-image">
+
+
+
+      <div class="link-card-badge">
+        <i class="bi bi-book"></i> Kni­ha
+      </div>
+
+    <h4 class="link-card-title">
+      <a href="http://diveintopython3.py.cz" class="link-card-link">Po­noř­me se do Py­thonu 3</a>
+    </h4>
+  </div>
+  <div class="link-card-body">
+
+      <p class="link-card-text">
+
+          Mož­ná stro­há, ale i tak nej­lep­ší kni­ha pře­lo­že­ná do češ­ti­ny.
+
+      </p>
+
+  </div>
+</div>
+
+
+
+
+
+<div class="link-card" data-screenshot-source-url="https://automatetheboringstuff.com" data-screenshot-image-url="static/screenshots/automatetheboringstuff-com.webp">
+  <div class="link-card-header">
+
+
+<img data-src="../../static/screenshots/automatetheboringstuff-com.webp" src="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_auto,q_auto,f_auto/https://junior.guru/static/screenshots/automatetheboringstuff-com.webp" srcset="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1,q_auto,f_auto/https://junior.guru/static/screenshots/automatetheboringstuff-com.webp,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1.5,q_auto,f_auto/https://junior.guru/static/screenshots/automatetheboringstuff-com.webp 1.5x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_2,q_auto,f_auto/https://junior.guru/static/screenshots/automatetheboringstuff-com.webp 2x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_3,q_auto,f_auto/https://junior.guru/static/screenshots/automatetheboringstuff-com.webp 3x" onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;" alt="Automate the Boring Stuff with Python" width="640" height="360" loading="lazy" class="link-card-image">
+
+
+
+      <div class="link-card-badge">
+        <i class="bi bi-book"></i> Kni­ha
+      </div>
+
+    <h4 class="link-card-title">
+      <a href="https://automatetheboringstuff.com" class="link-card-link">Au­to­ma­te the Bo­ring Stu­ff with Py­thon</a>
+    </h4>
+  </div>
+  <div class="link-card-body">
+
+      <p class="link-card-text">
+
+          Nej­lep­ší kni­ha do star­tu. Nech nud­nou práci dě­lat po­čí­tač!
+
+      </p>
+
+  </div>
+</div>
+
+</div>
+
+<!--  -->
+<div class="pagination">
+  <div class="pagination-control">
+  
+  
+    <a href="../parents/" class="pagination-button" title="Předchozí téma">
+      <i class="bi bi-arrow-left"></i>
+      Ro­di­če v IT
+    </a>
+  
+  </div>
+  <div class="pagination-control">
+  
+  
+    <a href="../nocode/" class="pagination-button" title="Další téma">
+      Bez kódu
+      <i class="bi bi-arrow-right"></i>
+    </a>
+  
+  </div>
+</div>
+
+    </main>
+
+    
+<nav id="toc" class="toc">
+      <div class="toc-container">
+        <h3 class="toc-heading">
+          <i class="bi bi-journals"></i> Příručka
+        </h3>
+        <ul class="toc-list">
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../">
+                Cesta juniora
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../motivation/">
+                Proč programovat
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../myths/">
+                Mýty
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../women/">
+                Ženy v IT
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../parents/">
+                Rodiče v IT
+              </a>
+              
+            </li>
+          
+            <li class="toc-item active">
+              <a class="toc-link" href="./">
+                Základy
+              </a>
+              
+                
+                <ul class="toc-sublist">
+                  
+                    <li class="toc-subitem">
+                      <a class="toc-sublink" href="#co-budes-potrebovat">Co budeš potřebovat    </a>
+                    </li>
+                  
+                    <li class="toc-subitem">
+                      <a class="toc-sublink" href="#proc-python">Proč Python?    </a>
+                    </li>
+                  
+                    <li class="toc-subitem">
+                      <a class="toc-sublink" href="#jak-zacit">Jak začít    </a>
+                    </li>
+                  
+                </ul>
+                
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../nocode/">
+                Bez kódu
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../english/">
+                Angličtina
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../course/">
+                Vybírání kurzu
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../practice/">
+                Procvičování
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../community/">
+                Komunity
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../help/">
+                Řešení problémů
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../mentoring/">
+                Mentoring
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../projects/">
+                Projekty
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../git/">
+                Git a GitHub
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../collaboration/">
+                Spolupráce
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../mental-health/">
+                Psychika
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../candidate/">
+                Hledání práce
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../cv/">
+                Životopis
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../github-profile/">
+                GitHub profil
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../linkedin/">
+                LinkedIn
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../interview/">
+                Pohovor
+              </a>
+              
+            </li>
+          
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+  <hr class="visually-hidden">
+
+  <footer class="footer">
+    <div class="footer-address-container">
+      <address class="footer-section footer-address">
+        </address><ul class="footer-address-list">
+          <li class="footer-address-item">
+            
+<img src="../../static/logo-i.svg" alt="Logo junior.guru" width="90" height="40" loading="lazy" class="footer-address-logo">
+
+          </li>
+          <li class="footer-address-item">
+            <h3 class="footer-subheading">Projekt</h3>
+            Junior Guru<br>
+            stylizovaně „junior.guru“<br>
+            <a href="https://logo.junior.guru/" target="_blank" rel="noopener">logo a barvy</a>
+          </li>
+          <li class="footer-address-item">
+            <h3 class="footer-subheading">Provozovatel</h3>
+            Jan Javorek<br>
+            OSVČ, neplátce DPH<br>
+            IČO: <a href="https://ares.gov.cz/ekonomicke-subjekty?ico=74279858" target="_blank" rel="noopener">74279858</a><br>
+            Lupáčova 375/24<br>
+            130 00 Praha
+          </li>
+          <li class="footer-address-item footer-links">
+            <h3 class="footer-subheading">Kontakt a sociální sítě</h3>
+            <p class="footer-links-email"><a href="mailto:honza@junior.guru">honza@<!---->junior.guru</a></p>
+            <ul class="footer-links-icons footer-icons-list">
+              <li class="footer-icons-item">
+                <a href="https://www.youtube.com/@juniordotguru" target="_blank" rel="noopener">
+                  <i class="bi bi-youtube" role="img" aria-label="YouTube"></i>
+                </a>
+              </li>
+              <li class="footer-icons-item">
+                <a href="https://www.linkedin.com/in/honzajavorek/" target="_blank" rel="noopener">
+                  <i class="bi bi-linkedin" role="img" aria-label="LinkedIn"></i>
+                </a>
+              </li>
+              <li class="footer-icons-item">
+                <a href="../../club/">
+                  <i class="bi bi-discord" role="img" aria-label="Discord"></i>
+                </a>
+              </li>
+              <li class="footer-icons-item">
+                <a href="https://mastodonczech.cz/@honzajavorek/tagged/juniorguru" target="_blank" rel="noopener">
+                  <i class="bi bi-mastodon" role="img" aria-label="Mastodon"></i>
+                </a>
+              </li>
+              <li class="footer-icons-item">
+                <a href="https://github.com/juniorguru/junior.guru" target="_blank" rel="noopener">
+                  <i class="bi bi-github" role="img" aria-label="GitHub"></i>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      
+    </div>
+    <div id="honza" class="footer-section footer-about">
+      <h3 class="footer-heading">Kdo to provozuje? Na čem vydělává?</h3>
+      <div class="footer-about-content">
+        <div class="footer-about-text">
+          
+<img data-src="../../static/avatars-participants/honza-javorek.jpg" src="https://res.cloudinary.com/juniorguru/image/fetch/w_100,dpr_auto,q_auto,f_auto/https://junior.guru/static/avatars-participants/honza-javorek.jpg" srcset="https://res.cloudinary.com/juniorguru/image/fetch/w_100,dpr_1,q_auto,f_auto/https://junior.guru/static/avatars-participants/honza-javorek.jpg,https://res.cloudinary.com/juniorguru/image/fetch/w_100,dpr_1.5,q_auto,f_auto/https://junior.guru/static/avatars-participants/honza-javorek.jpg 1.5x,https://res.cloudinary.com/juniorguru/image/fetch/w_100,dpr_2,q_auto,f_auto/https://junior.guru/static/avatars-participants/honza-javorek.jpg 2x,https://res.cloudinary.com/juniorguru/image/fetch/w_100,dpr_3,q_auto,f_auto/https://junior.guru/static/avatars-participants/honza-javorek.jpg 3x" onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;" alt="Honza Javorek" width="100" height="100" loading="lazy" class="footer-about-avatar">
+
+          <p>
+            Jmenuji se Honza Javorek a býval jsem obyčejný programátor. Díky dobrovolným aktivitám jsem se dostal k pomáhání začátečníkům, a to mě hodně bavilo. Časem mi přišlo, že chybí jedno místo, kde by byly všechny pracovní nabídky pro juniory, nezávislé informace a základní praktické rady. Proto jsem odešel z korporátu a založil tento projekt.
+          </p>
+          <p>
+            Chci začátečníkům zpříjemnit cestu k jejich první práci v IT a dodat jim kultivovanou podpůrnou komunitu, kde budou vítáni a mezi svými. Chci nezávisle informovat o vzdělávacích agenturách a propojovat juniory s firmami, kam by mohli nastoupit. Chci, aby každý Luďan z Mostu, každá puberťačka, každý vědec nebo každá máma na rodičovské měli po ruce návod, jak začít s programováním.
+          </p>
+          <p>
+            Tento web má <a href="../../open/">veřejná čísla</a>, <a href="https://github.com/juniorguru/junior.guru">otevřený zdrojový kód</a> a obsah je pod <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs">CC licencí</a>. Ilustrace si kreslím sám. Projekt tvořím jako podnikatel na volné noze, jenž nemá ambice rozjíždět firmu. Své úspěchy a selhání otevřeně popisuji v každotýdenních poznámkách na <a href="https://honzajavorek.cz/blog/">osobním blogu</a>. Cílem je vydělat si tak akorát, aby se žilo dobře mojí rodině.
+          </p>
+        </div>
+        <div class="footer-about-finances">
+          <h4 class="footer-subheading">Můj aktuální čistý zisk</h4>
+          <p class="footer-finances-number">52.045 Kč měsíčně</p>
+
+          <h4 class="footer-subheading">Zdroje příjmů, zaokrouhleno</h4>
+          <ul class="footer-finances-list">
+            
+              <li>
+                <strong class="footer-finances-value">61 %</strong>
+                členství v klubu
+              </li>
+            
+              <li>
+                <strong class="footer-finances-value">35 %</strong>
+                partnerství s firmami
+              </li>
+            
+              <li>
+                <strong class="footer-finances-value">6 %</strong>
+                dobrovolné příspěvky
+              </li>
+            
+              <li>
+                <strong class="footer-finances-value">1 %</strong>
+                inzerce nabídek práce
+              </li>
+            
+          </ul>
+          <p class="footer-finances-actions">
+            <span class="footer-finances-button">
+              <a class="btn btn-lg btn-primary" href="../../open/">Čísla a grafy</a>
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-nav-container">
+      <nav class="footer-section footer-nav">
+        <h3 class="footer-heading">Buď v obraze</h3>
+        <p>
+          <a href="../../news/">Novinky</a>, 
+          <a href="../../podcast/">Podcast</a>, 
+          <a href="../../events/">Klubové akce</a>, 
+          <a href="../../stories/">Příběhy</a>, 
+          <a href="../../wisdom/">Moudra</a>
+          
+        </p>
+
+        <h3 class="footer-heading">Příručka</h3>
+        <p>
+          
+            <a href="../">Cesta juniora</a>, 
+          
+            <a href="../motivation/">Proč programovat</a>, 
+          
+            <a href="../myths/">Mýty</a>, 
+          
+            <a href="../women/">Ženy v IT</a>, 
+          
+            <a href="../parents/">Rodiče v IT</a>, 
+          
+            <a href="./">Základy</a>, 
+          
+            <a href="../nocode/">Bez kódu</a>, 
+          
+            <a href="../english/">Angličtina</a>, 
+          
+            <a href="../course/">Vybírání kurzu</a>, 
+          
+            <a href="../practice/">Procvičování</a>, 
+          
+            <a href="../community/">Komunity</a>, 
+          
+            <a href="../help/">Řešení problémů</a>, 
+          
+            <a href="../mentoring/">Mentoring</a>, 
+          
+            <a href="../projects/">Projekty</a>, 
+          
+            <a href="../git/">Git a GitHub</a>, 
+          
+            <a href="../collaboration/">Spolupráce</a>, 
+          
+            <a href="../mental-health/">Psychika</a>, 
+          
+            <a href="../candidate/">Hledání práce</a>, 
+          
+            <a href="../cv/">Životopis</a>, 
+          
+            <a href="../github-profile/">GitHub profil</a>, 
+          
+            <a href="../linkedin/">LinkedIn</a>, 
+          
+            <a href="../interview/">Pohovor</a>
+          
+        </p>
+
+        <h3 class="footer-heading">Kurzy</h3>
+        <p>
+          
+            <a href="../../courses/coreskill/">CoreSkill</a>, 
+          
+            <a href="../../courses/engeto/">ENGETO Academy</a>, 
+          
+            <a href="../../courses/itnetwork/">ITnetwork</a>, 
+          
+            <a href="../../courses/ajtyvit/">Aj Ty v IT</a>, 
+          
+            <a href="../../courses/beeit/">BeeIT</a>, 
+          
+            <a href="../../courses/codecademy/">Codecademy</a>, 
+          
+            <a href="../../courses/coderslab/">Coders Lab</a>, 
+          
+            <a href="../../courses/codewars/">Codewars</a>, 
+          
+            <a href="../../courses/codingbootcamppraha/">Coding Bootcamp Praha</a>, 
+          
+            <a href="../../courses/coursera/">Coursera</a>, 
+          
+            <a href="../../courses/cs50/">CS50</a>, 
+          
+            <a href="../../courses/czechitas/">Czechitas</a>, 
+          
+            <a href="../../courses/datacamp/">DataCamp</a>, 
+          
+            <a href="../../courses/djangogirls/">Django Girls</a>, 
+          
+            <a href="../../courses/edx/">edX</a>, 
+          
+            <a href="../../courses/egghead/">egghead.io</a>, 
+          
+            <a href="../../courses/freecodecamp/">freeCodeCamp</a>, 
+          
+            <a href="../../courses/greenfox/">Green Fox Academy</a>, 
+          
+            <a href="../../courses/hacknisvoubudoucnost/">Hackni svou budoucnost (David Šetek)</a>, 
+          
+            <a href="../../courses/inventi/">INVENTI</a>, 
+          
+            <a href="../../courses/itvkurze/">IT v kurze</a>, 
+          
+            <a href="../../courses/itabsolvent/">IT-absolvent</a>, 
+          
+            <a href="../../courses/jetbrains/">JetBrains Academy</a>, 
+          
+            <a href="../../courses/lovelydata/">Lovely Data</a>, 
+          
+            <a href="../../courses/lucietvrdikova/">Lucie Tvrdíková</a>, 
+          
+            <a href="../../courses/naucmeit/">Nauč mě IT</a>, 
+          
+            <a href="../../courses/naucsepython/">Nauč se Python</a>, 
+          
+            <a href="../../courses/pluralsight/">Pluralsight</a>, 
+          
+            <a href="../../courses/prahacodingschool/">Praha CODING School</a>, 
+          
+            <a href="../../courses/primakurzy/">PrimaKurzy</a>, 
+          
+            <a href="../../courses/programkonet/">Programko.NET (Petr Voborník)</a>, 
+          
+            <a href="../../courses/pyladies/">PyLadies</a>, 
+          
+            <a href="../../courses/radekkitner/">Radek Kitner</a>, 
+          
+            <a href="../../courses/railsgirls/">Rails Girls</a>, 
+          
+            <a href="../../courses/reactgirls/">ReactGirls</a>, 
+          
+            <a href="../../courses/kurzyvsb/">Rekvalifikační kurzy VŠB-TU</a>, 
+          
+            <a href="../../courses/robweb/">ROB WEB (yablko)</a>, 
+          
+            <a href="../../courses/robotdreams/">robot_dreams</a>, 
+          
+            <a href="../../courses/scrimba/">Scrimba</a>, 
+          
+            <a href="../../courses/seduo/">Seduo</a>, 
+          
+            <a href="../../courses/schoolofcode/">School of Code</a>, 
+          
+            <a href="../../courses/skillmea/">Skillmea</a>, 
+          
+            <a href="../../courses/sdacademy/">Software Development Academy</a>, 
+          
+            <a href="../../courses/step/">STEP</a>, 
+          
+            <a href="../../courses/streetofcode/">Street of Code</a>, 
+          
+            <a href="../../courses/udacity/">Udacity</a>, 
+          
+            <a href="../../courses/udemy/">Udemy</a>, 
+          
+            <a href="../../courses/umimpython/">UmimPython.cz</a>, 
+          
+            <a href="../../courses/unicornhatchery/">Unicorn Hatchery</a>, 
+          
+            <a href="../../courses/webykvalitne/">Webařce pod rukou</a>, 
+          
+            <a href="../../courses/webrebel/">Webrebel</a>, 
+          
+            <a href="../../courses/42prague/">42 Prague</a>
+          
+        </p>
+
+        <h3 class="footer-heading">Pracovní nabídky</h3>
+        <p>
+          <a href="../../jobs/remote/">Junior programátor na dálku</a>,
+          <a href="../../jobs/region/praha/">Junior programátor Praha</a>,
+          <a href="../../jobs/region/brno/">Junior programátor Brno</a>,
+          <a href="../../jobs/region/ostrava/">Junior programátor Ostrava</a>
+        </p>
+
+        <h3 class="footer-heading">Témata, která řešíme v klubu</h3>
+        <p>
+          
+            <a href="../../topics/adventofcode/">Advent of Code</a>, 
+          
+            <a href="../../topics/javascript/">JavaScript</a>, 
+          
+            <a href="../../topics/python/">Python</a>
+          
+        </p>
+      </nav>
+    </div>
+    <nav class="footer-section footer-rules">
+      <h3 class="visually-hidden">Pravidla</h3>
+      <ul class="footer-rules-list">
+        
+          <li class="footer-rules-item">
+            <a href="../../faq/">Otázky a odpovědi</a>
+          </li>
+        
+          <li class="footer-rules-item">
+            <a href="../../coc/">Pravidla chování</a>
+          </li>
+        
+          <li class="footer-rules-item">
+            <a href="../../tos/">Obchodní podmínky</a>
+          </li>
+        
+          <li class="footer-rules-item">
+            <a href="../../privacy/">Zásady ochrany osobních údajů</a>
+          </li>
+        
+          <li class="footer-rules-item">
+            <a href="../../open/">Čísla a grafy</a>
+          </li>
+        
+          <li class="footer-rules-item">
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs" target="_blank" rel="noopener">Licence obsahu (CC BY-SA)</a>
+          </li>
+        
+      </ul>
+    </nav>
+  </footer>
+
+  <script async src="https://sa.junior.guru/latest.js"></script>
+  <script async src="https://sa.junior.guru/auto-events.js"></script>
+  <noscript><img src="https://sa.junior.guru/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+</body>
+
+</html>

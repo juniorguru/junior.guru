@@ -1,0 +1,958 @@
+<html lang="cs" data-updated-at="2024-03-28T09:55:54.110663+01:00">
+  <head prefix="og: https://ogp.me/ns# website: https://ogp.me/ns/website#">
+    <meta charset="utf-8">
+    <link rel="canonical" href="https://junior.guru/handbook/practice/">
+    <title>Jak procvičovat programování</title>
+
+    
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="Accept-CH" content="DPR,Viewport-Width,Width,Save-Data">
+
+      <link rel="dns-prefetch" href="https://sa.junior.guru">
+      <link rel="dns-prefetch" href="https://res.cloudinary.com">
+      <link rel="preconnect" href="https://res.cloudinary.com">
+
+      <link rel="stylesheet" href="../../static/css/index.css?hash=02cce8ced67872acfb8bb230c215127a">
+      <link rel="preload" href="../../static/assets/bootstrap-icons.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+      <script defer src="../../static/js/index.js?hash=c81995da8df7ec7651648967bb946ae8"></script>
+
+      <meta property="og:title" content="Jak procvičovat programování">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://junior.guru/handbook/practice/">
+      <meta property="og:locale" content="cs_CZ">
+
+      <link href="https://mastodonczech.cz/@honzajavorek" rel="me">
+
+      
+      <meta property="og:image" content="https://res.cloudinary.com/juniorguru/image/fetch/w_auto,dpr_auto,q_auto,f_auto/https://junior.guru/static/thumbnails/ec7dad5c50d0dbf22e925d0af99e2806fb18411336087338755ded9e94274da3.png">
+      <meta property="og:image:width" content="1200">
+      <meta property="og:image:height" content="630">
+      <meta name="twitter:card" content="photo">
+      <meta name="twitter:image" content="https://res.cloudinary.com/juniorguru/image/fetch/w_auto,dpr_auto,q_auto,f_auto/https://junior.guru/static/thumbnails/ec7dad5c50d0dbf22e925d0af99e2806fb18411336087338755ded9e94274da3.png">
+      
+
+      <meta name="description" content="Znáš základy, ale na větší projekt si ještě netroufáš? Procvičuj programování na malých úkolech a rozšiřuj si znalosti">
+    
+  </head>
+  
+<body>
+  
+  <header id="header" class="navbar navbar-light">
+    <nav class="navbar-container">
+      <a class="navbar-brand " href="../../">
+        
+<img src="../../static/logo.svg" alt="Logo junior.guru" width="90" height="40">
+
+      </a>
+      <div class="navbar-buttons">
+        <a class="btn btn-outline-dark" href="../../pricing/">Pro firmy</a>
+        
+          <a class="btn btn-dark" href="../../club/">Přidej se</a>
+        
+      </div>
+      
+      <ul class="nav nav-foldable">
+        
+        <li class="nav-item">
+          <a class="nav-link" href="../../club/">
+            Klub
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="../">
+            Příručka
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="../../courses/">
+            Kurzy
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="../../jobs/">
+            Práce
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="../../news/">
+            Novinky
+          </a>
+        </li>
+        
+      </ul>
+      
+    </nav>
+  </header>
+
+  
+<div class="logobar">
+  <div class="logobar-container">
+    <h3 class="logobar-heading">
+      <span>Partneři <span class="logobar-nonessential">příručky</span></span>
+    </h3>
+    <ul class="logobar-list">
+      
+        
+        
+  <li class="logobar-item" title="Fakturoid">
+    
+    <a class="logobar-link" href="https://www.fakturoid.cz/" target="_blank" rel="noopener" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="partnership">
+    
+
+    
+<img src="../../static/logos/fakturoid.svg" alt="Fakturoid" width="130" height="60" class="logobar-image">
+
+
+    
+    </a>
+    
+  </li>
+
+      
+        
+        
+  <li class="logobar-item" title="Rector">
+    
+    <a class="logobar-link" href="https://getrector.com/" target="_blank" rel="noopener" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="partnership">
+    
+
+    
+<img src="../../static/logos/rector.svg" alt="Rector" width="130" height="60" class="logobar-image">
+
+
+    
+    </a>
+    
+  </li>
+
+      
+        
+        
+  <li class="logobar-item" title="Red Hat">
+    
+    <a class="logobar-link" href="https://www.redhat.com/en/jobs" target="_blank" rel="noopener" data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="partnership">
+    
+
+    
+<img src="../../static/logos/redhat.svg" alt="Red Hat" width="130" height="60" class="logobar-image">
+
+
+    
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </div>
+</div>
+
+<nav class="tocbar">
+  <div class="tocbar-container">
+    <a class="tocbar-item tocbar-toc-link" href="#toc">
+      <i class="bi bi-list"></i> Obsah
+    </a>
+    <span class="tocbar-item tocbar-current"></span>
+  </div>
+</nav>
+
+
+
+  <hr class="visually-hidden">
+
+  
+<div class="main main-sidebar">
+  <div class="content-container">
+    <main class="content document">
+      
+<h1 id="jak-procvicovat-a-rozsirovat-si-znalosti">Jak pro­cvi­čo­vat a roz­ši­řo­vat si zna­losti<a class="headerlink" href="#jak-procvicovat-a-rozsirovat-si-znalosti" title="Odkaz na tuto sekci">#</a></h1>
+<div class="lead">
+    <p>Do­ká­žeš na­psat pár řád­ků kódu, ale na vět­ší pro­jekt si ještě ne­trou­fáš?
+  Po­může ti pro­cvi­čo­vá­ní a po­stup­né po­sou­vá­ní zna­lostí ře­še­ním ma­lých úko­lů.</p>
+  </div>
+
+<h2 id="procvicuj">Pro­cvi­čuj<a class="headerlink" href="#procvicuj" title="Odkaz na tuto sekci">#</a></h2>
+<div class="link-cards">
+
+
+
+<div class="link-card" data-screenshot-source-url="https://exercism.io/" data-screenshot-image-url="static/screenshots/exercism-io.webp">
+  <div class="link-card-header">
+
+
+<img data-src="../../static/screenshots/exercism-io.webp" src="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_auto,q_auto,f_auto/https://junior.guru/static/screenshots/exercism-io.webp" srcset="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1,q_auto,f_auto/https://junior.guru/static/screenshots/exercism-io.webp,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1.5,q_auto,f_auto/https://junior.guru/static/screenshots/exercism-io.webp 1.5x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_2,q_auto,f_auto/https://junior.guru/static/screenshots/exercism-io.webp 2x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_3,q_auto,f_auto/https://junior.guru/static/screenshots/exercism-io.webp 3x" onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;" alt="Exercism" width="640" height="360" loading="lazy" class="link-card-image">
+
+
+
+    <h4 class="link-card-title">
+      <a href="https://exercism.io/" class="link-card-link">Exer­cism</a>
+    </h4>
+  </div>
+  <div class="link-card-body">
+
+      <p class="link-card-text">
+
+          Řeš malé úlo­hy, do­staň zpět­nou vazbu od men­to­ra, uč se z ře­še­ní dru­hých.
+
+      </p>
+
+  </div>
+</div>
+
+
+
+
+
+<div class="link-card" data-screenshot-source-url="https://www.codewars.com/" data-screenshot-image-url="static/screenshots/codewars-com.webp">
+  <div class="link-card-header">
+
+
+<img data-src="../../static/screenshots/codewars-com.webp" src="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_auto,q_auto,f_auto/https://junior.guru/static/screenshots/codewars-com.webp" srcset="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1,q_auto,f_auto/https://junior.guru/static/screenshots/codewars-com.webp,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1.5,q_auto,f_auto/https://junior.guru/static/screenshots/codewars-com.webp 1.5x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_2,q_auto,f_auto/https://junior.guru/static/screenshots/codewars-com.webp 2x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_3,q_auto,f_auto/https://junior.guru/static/screenshots/codewars-com.webp 3x" onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;" alt="Codewars" width="640" height="360" loading="lazy" class="link-card-image">
+
+
+
+    <h4 class="link-card-title">
+      <a href="https://www.codewars.com/" class="link-card-link">Co­de­wars</a>
+    </h4>
+  </div>
+  <div class="link-card-body">
+
+      <p class="link-card-text">
+
+          Řeš malé úlo­hy přímo v pro­hlí­žeči, uč se z ře­še­ní dru­hých.
+
+      </p>
+
+  </div>
+</div>
+
+
+
+
+
+<div class="link-card" data-screenshot-source-url="https://checkio.org/" data-screenshot-image-url="static/screenshots/checkio-org.webp">
+  <div class="link-card-header">
+
+
+<img data-src="../../static/screenshots/checkio-org.webp" src="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_auto,q_auto,f_auto/https://junior.guru/static/screenshots/checkio-org.webp" srcset="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1,q_auto,f_auto/https://junior.guru/static/screenshots/checkio-org.webp,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1.5,q_auto,f_auto/https://junior.guru/static/screenshots/checkio-org.webp 1.5x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_2,q_auto,f_auto/https://junior.guru/static/screenshots/checkio-org.webp 2x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_3,q_auto,f_auto/https://junior.guru/static/screenshots/checkio-org.webp 3x" onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;" alt="CheckiO" width="640" height="360" loading="lazy" class="link-card-image">
+
+
+
+    <h4 class="link-card-title">
+      <a href="https://checkio.org/" class="link-card-link">Chec­kiO</a>
+    </h4>
+  </div>
+  <div class="link-card-body">
+
+      <p class="link-card-text">
+
+          Pro­chá­zej on­line hru po­mo­cí pro­gra­mo­va­cích úloh, uč se od dru­hých.
+
+      </p>
+
+  </div>
+</div>
+
+
+
+
+
+<div class="link-card" data-screenshot-source-url="https://www.umimeinformatiku.cz" data-screenshot-image-url="static/screenshots/umimeinformatiku-cz.webp">
+  <div class="link-card-header">
+
+
+<img data-src="../../static/screenshots/umimeinformatiku-cz.webp" src="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_auto,q_auto,f_auto/https://junior.guru/static/screenshots/umimeinformatiku-cz.webp" srcset="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1,q_auto,f_auto/https://junior.guru/static/screenshots/umimeinformatiku-cz.webp,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1.5,q_auto,f_auto/https://junior.guru/static/screenshots/umimeinformatiku-cz.webp 1.5x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_2,q_auto,f_auto/https://junior.guru/static/screenshots/umimeinformatiku-cz.webp 2x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_3,q_auto,f_auto/https://junior.guru/static/screenshots/umimeinformatiku-cz.webp 3x" onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;" alt="Umíme informatiku" width="640" height="360" loading="lazy" class="link-card-image">
+
+
+
+    <h4 class="link-card-title">
+      <a href="https://www.umimeinformatiku.cz" class="link-card-link">Umí­me in­for­ma­ti­ku</a>
+    </h4>
+  </div>
+  <div class="link-card-body">
+
+      <p class="link-card-text">
+
+          Uč se skr­ze cvi­če­ní a opa­ko­vá­ní. <a href="https://www.umimeto.org/podlozeno-vyzkumem">Pod­lo­že­no vý­zku­mem</a>.
+
+      </p>
+
+  </div>
+</div>
+
+
+
+
+
+<div class="link-card" data-screenshot-source-url="https://www.hackerrank.com" data-screenshot-image-url="static/screenshots/hackerrank-com.webp">
+  <div class="link-card-header">
+
+
+<img data-src="../../static/screenshots/hackerrank-com.webp" src="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_auto,q_auto,f_auto/https://junior.guru/static/screenshots/hackerrank-com.webp" srcset="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1,q_auto,f_auto/https://junior.guru/static/screenshots/hackerrank-com.webp,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1.5,q_auto,f_auto/https://junior.guru/static/screenshots/hackerrank-com.webp 1.5x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_2,q_auto,f_auto/https://junior.guru/static/screenshots/hackerrank-com.webp 2x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_3,q_auto,f_auto/https://junior.guru/static/screenshots/hackerrank-com.webp 3x" onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;" alt="HackerRank" width="640" height="360" loading="lazy" class="link-card-image">
+
+
+
+    <h4 class="link-card-title">
+      <a href="https://www.hackerrank.com" class="link-card-link">Hac­kerRa­nk</a>
+    </h4>
+  </div>
+  <div class="link-card-body">
+
+      <p class="link-card-text">
+
+          Sou­těž ře­še­ním za­pekli­tých úloh. Pro­po­je­no s na­bíd­ka­mi práce.
+
+      </p>
+
+  </div>
+</div>
+
+
+
+
+
+<div class="link-card" data-screenshot-source-url="https://projecteuler.net/" data-screenshot-image-url="static/screenshots/projecteuler-net.webp">
+  <div class="link-card-header">
+
+
+<img data-src="../../static/screenshots/projecteuler-net.webp" src="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_auto,q_auto,f_auto/https://junior.guru/static/screenshots/projecteuler-net.webp" srcset="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1,q_auto,f_auto/https://junior.guru/static/screenshots/projecteuler-net.webp,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1.5,q_auto,f_auto/https://junior.guru/static/screenshots/projecteuler-net.webp 1.5x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_2,q_auto,f_auto/https://junior.guru/static/screenshots/projecteuler-net.webp 2x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_3,q_auto,f_auto/https://junior.guru/static/screenshots/projecteuler-net.webp 3x" onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;" alt="Project Euler" width="640" height="360" loading="lazy" class="link-card-image">
+
+
+
+      <div class="link-card-badge">
+        <i class="bi bi-calculator"></i> Pro ma­te­ma­ti­ky
+      </div>
+
+    <h4 class="link-card-title">
+      <a href="https://projecteuler.net/" class="link-card-link">Pro­ject Eu­ler</a>
+    </h4>
+  </div>
+  <div class="link-card-body">
+
+      <p class="link-card-text">
+
+          Řeš ma­te­ma­tic­ké úlo­hy po­mo­cí pro­gra­mo­vá­ní.
+
+      </p>
+
+  </div>
+</div>
+
+</div>
+
+<h2 id="rozsiruj-si-znalosti">Roz­ši­řuj si zna­losti    <span id="skills"></span><a class="headerlink" href="#rozsiruj-si-znalosti" title="Odkaz na tuto sekci">#</a></h2>
+<p>Umět pro­gra­mo­vat např. v Py­thonu je dob­rý zá­klad, ale pro pl­no­hod­not­nou práci to ne­stačí. S prv­ními po­kusy se uplat­nit zjis­tíš, že by se ti ho­di­lo aspoň tro­chu znát Git, HTML, SQL, Ja­vaScri­pt, … Pro kaž­dou ta­ko­vou tech­no­lo­gii exis­tu­jí kur­zy, worksho­py, kni­hy.</p>
+<p>Vždy, když na­ra­zíš na nový po­jem nebo zkrat­ku, pře­čti si ale­spoň co to je a k čemu se to po­u­ží­vá. Po­kud o tom usly­šíš po­ně­ko­li­káté, zkus si na­jít víc a po­cho­pit zá­klady.</p>
+<h3 id="zaklady">Zá­klady    <span id="basics"></span><a class="headerlink" href="#zaklady" title="Odkaz na tuto sekci">#</a></h3>
+<div class="link-cards">
+
+
+
+<div class="link-card" data-screenshot-source-url="https://medium.com/basecs" data-screenshot-image-url="static/screenshots/medium-com-basecs.webp">
+  <div class="link-card-header">
+
+
+<img data-src="../../static/screenshots/medium-com-basecs.webp" src="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_auto,q_auto,f_auto/https://junior.guru/static/screenshots/medium-com-basecs.webp" srcset="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1,q_auto,f_auto/https://junior.guru/static/screenshots/medium-com-basecs.webp,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1.5,q_auto,f_auto/https://junior.guru/static/screenshots/medium-com-basecs.webp 1.5x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_2,q_auto,f_auto/https://junior.guru/static/screenshots/medium-com-basecs.webp 2x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_3,q_auto,f_auto/https://junior.guru/static/screenshots/medium-com-basecs.webp 3x" onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;" alt="BaseCS" width="640" height="360" loading="lazy" class="link-card-image">
+
+
+
+    <h4 class="link-card-title">
+      <a href="https://medium.com/basecs" class="link-card-link">BaseCS</a>
+    </h4>
+  </div>
+  <div class="link-card-body">
+
+      <p class="link-card-text">
+
+          Zá­klady in­for­ma­ti­ky od <a href="https://twitter.com/vaidehijoshi">Vai­dehi Joshi</a>.
+        Exis­tu­je i jako
+        <a href="https://dev.to/vaidehijoshi/linked-lists--basecs-video-series--2le8">vi­deo</a>
+        a
+        <a href="https://www.codenewbie.org/basecs">pod­cast</a>.
+
+      </p>
+
+  </div>
+</div>
+
+
+
+
+
+<div class="link-card" data-screenshot-source-url="https://missing.csail.mit.edu/" data-screenshot-image-url="static/screenshots/missing-csail-mit-edu.webp">
+  <div class="link-card-header">
+
+
+<img data-src="../../static/screenshots/missing-csail-mit-edu.webp" src="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_auto,q_auto,f_auto/https://junior.guru/static/screenshots/missing-csail-mit-edu.webp" srcset="https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1,q_auto,f_auto/https://junior.guru/static/screenshots/missing-csail-mit-edu.webp,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_1.5,q_auto,f_auto/https://junior.guru/static/screenshots/missing-csail-mit-edu.webp 1.5x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_2,q_auto,f_auto/https://junior.guru/static/screenshots/missing-csail-mit-edu.webp 2x,https://res.cloudinary.com/juniorguru/image/fetch/w_640,dpr_3,q_auto,f_auto/https://junior.guru/static/screenshots/missing-csail-mit-edu.webp 3x" onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;" alt="MIT: The Missing Semester" width="640" height="360" loading="lazy" class="link-card-image">
+
+
+
+    <h4 class="link-card-title">
+      <a href="https://missing.csail.mit.edu/" class="link-card-link">MIT: The Mis­sing Se­mes­ter</a>
+    </h4>
+  </div>
+  <div class="link-card-body">
+
+      <p class="link-card-text">
+
+          Úvod do všeho mož­né­ho, co se ti bude v za­čát­ku ho­dit. Pří­ka­zo­vá řád­ka, Git, edi­tor…
+
+      </p>
+
+  </div>
+</div>
+
+</div>
+
+<!--  -->
+<div class="pagination">
+  <div class="pagination-control">
+  
+  
+    <a href="../course/" class="pagination-button" title="Předchozí téma">
+      <i class="bi bi-arrow-left"></i>
+      Vy­bí­rá­ní kur­zu
+    </a>
+  
+  </div>
+  <div class="pagination-control">
+  
+  
+    <a href="../community/" class="pagination-button" title="Další téma">
+      Ko­mu­ni­ty
+      <i class="bi bi-arrow-right"></i>
+    </a>
+  
+  </div>
+</div>
+
+    </main>
+
+    
+<nav id="toc" class="toc">
+      <div class="toc-container">
+        <h3 class="toc-heading">
+          <i class="bi bi-journals"></i> Příručka
+        </h3>
+        <ul class="toc-list">
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../">
+                Cesta juniora
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../motivation/">
+                Proč programovat
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../myths/">
+                Mýty
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../women/">
+                Ženy v IT
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../parents/">
+                Rodiče v IT
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../learn/">
+                Základy
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../nocode/">
+                Bez kódu
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../english/">
+                Angličtina
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../course/">
+                Vybírání kurzu
+              </a>
+              
+            </li>
+          
+            <li class="toc-item active">
+              <a class="toc-link" href="./">
+                Procvičování
+              </a>
+              
+                
+                <ul class="toc-sublist">
+                  
+                    <li class="toc-subitem">
+                      <a class="toc-sublink" href="#procvicuj">Procvičuj</a>
+                    </li>
+                  
+                    <li class="toc-subitem">
+                      <a class="toc-sublink" href="#rozsiruj-si-znalosti">Rozšiřuj si znalosti    </a>
+                    </li>
+                  
+                </ul>
+                
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../community/">
+                Komunity
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../help/">
+                Řešení problémů
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../mentoring/">
+                Mentoring
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../projects/">
+                Projekty
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../git/">
+                Git a GitHub
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../collaboration/">
+                Spolupráce
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../mental-health/">
+                Psychika
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../candidate/">
+                Hledání práce
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../cv/">
+                Životopis
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../github-profile/">
+                GitHub profil
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../linkedin/">
+                LinkedIn
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../interview/">
+                Pohovor
+              </a>
+              
+            </li>
+          
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+  <hr class="visually-hidden">
+
+  <footer class="footer">
+    <div class="footer-address-container">
+      <address class="footer-section footer-address">
+        </address><ul class="footer-address-list">
+          <li class="footer-address-item">
+            
+<img src="../../static/logo-i.svg" alt="Logo junior.guru" width="90" height="40" loading="lazy" class="footer-address-logo">
+
+          </li>
+          <li class="footer-address-item">
+            <h3 class="footer-subheading">Projekt</h3>
+            Junior Guru<br>
+            stylizovaně „junior.guru“<br>
+            <a href="https://logo.junior.guru/" target="_blank" rel="noopener">logo a barvy</a>
+          </li>
+          <li class="footer-address-item">
+            <h3 class="footer-subheading">Provozovatel</h3>
+            Jan Javorek<br>
+            OSVČ, neplátce DPH<br>
+            IČO: <a href="https://ares.gov.cz/ekonomicke-subjekty?ico=74279858" target="_blank" rel="noopener">74279858</a><br>
+            Lupáčova 375/24<br>
+            130 00 Praha
+          </li>
+          <li class="footer-address-item footer-links">
+            <h3 class="footer-subheading">Kontakt a sociální sítě</h3>
+            <p class="footer-links-email"><a href="mailto:honza@junior.guru">honza@<!---->junior.guru</a></p>
+            <ul class="footer-links-icons footer-icons-list">
+              <li class="footer-icons-item">
+                <a href="https://www.youtube.com/@juniordotguru" target="_blank" rel="noopener">
+                  <i class="bi bi-youtube" role="img" aria-label="YouTube"></i>
+                </a>
+              </li>
+              <li class="footer-icons-item">
+                <a href="https://www.linkedin.com/in/honzajavorek/" target="_blank" rel="noopener">
+                  <i class="bi bi-linkedin" role="img" aria-label="LinkedIn"></i>
+                </a>
+              </li>
+              <li class="footer-icons-item">
+                <a href="../../club/">
+                  <i class="bi bi-discord" role="img" aria-label="Discord"></i>
+                </a>
+              </li>
+              <li class="footer-icons-item">
+                <a href="https://mastodonczech.cz/@honzajavorek/tagged/juniorguru" target="_blank" rel="noopener">
+                  <i class="bi bi-mastodon" role="img" aria-label="Mastodon"></i>
+                </a>
+              </li>
+              <li class="footer-icons-item">
+                <a href="https://github.com/juniorguru/junior.guru" target="_blank" rel="noopener">
+                  <i class="bi bi-github" role="img" aria-label="GitHub"></i>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      
+    </div>
+    <div id="honza" class="footer-section footer-about">
+      <h3 class="footer-heading">Kdo to provozuje? Na čem vydělává?</h3>
+      <div class="footer-about-content">
+        <div class="footer-about-text">
+          
+<img data-src="../../static/avatars-participants/honza-javorek.jpg" src="https://res.cloudinary.com/juniorguru/image/fetch/w_100,dpr_auto,q_auto,f_auto/https://junior.guru/static/avatars-participants/honza-javorek.jpg" srcset="https://res.cloudinary.com/juniorguru/image/fetch/w_100,dpr_1,q_auto,f_auto/https://junior.guru/static/avatars-participants/honza-javorek.jpg,https://res.cloudinary.com/juniorguru/image/fetch/w_100,dpr_1.5,q_auto,f_auto/https://junior.guru/static/avatars-participants/honza-javorek.jpg 1.5x,https://res.cloudinary.com/juniorguru/image/fetch/w_100,dpr_2,q_auto,f_auto/https://junior.guru/static/avatars-participants/honza-javorek.jpg 2x,https://res.cloudinary.com/juniorguru/image/fetch/w_100,dpr_3,q_auto,f_auto/https://junior.guru/static/avatars-participants/honza-javorek.jpg 3x" onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;" alt="Honza Javorek" width="100" height="100" loading="lazy" class="footer-about-avatar">
+
+          <p>
+            Jmenuji se Honza Javorek a býval jsem obyčejný programátor. Díky dobrovolným aktivitám jsem se dostal k pomáhání začátečníkům, a to mě hodně bavilo. Časem mi přišlo, že chybí jedno místo, kde by byly všechny pracovní nabídky pro juniory, nezávislé informace a základní praktické rady. Proto jsem odešel z korporátu a založil tento projekt.
+          </p>
+          <p>
+            Chci začátečníkům zpříjemnit cestu k jejich první práci v IT a dodat jim kultivovanou podpůrnou komunitu, kde budou vítáni a mezi svými. Chci nezávisle informovat o vzdělávacích agenturách a propojovat juniory s firmami, kam by mohli nastoupit. Chci, aby každý Luďan z Mostu, každá puberťačka, každý vědec nebo každá máma na rodičovské měli po ruce návod, jak začít s programováním.
+          </p>
+          <p>
+            Tento web má <a href="../../open/">veřejná čísla</a>, <a href="https://github.com/juniorguru/junior.guru">otevřený zdrojový kód</a> a obsah je pod <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs">CC licencí</a>. Ilustrace si kreslím sám. Projekt tvořím jako podnikatel na volné noze, jenž nemá ambice rozjíždět firmu. Své úspěchy a selhání otevřeně popisuji v každotýdenních poznámkách na <a href="https://honzajavorek.cz/blog/">osobním blogu</a>. Cílem je vydělat si tak akorát, aby se žilo dobře mojí rodině.
+          </p>
+        </div>
+        <div class="footer-about-finances">
+          <h4 class="footer-subheading">Můj aktuální čistý zisk</h4>
+          <p class="footer-finances-number">52.045 Kč měsíčně</p>
+
+          <h4 class="footer-subheading">Zdroje příjmů, zaokrouhleno</h4>
+          <ul class="footer-finances-list">
+            
+              <li>
+                <strong class="footer-finances-value">61 %</strong>
+                členství v klubu
+              </li>
+            
+              <li>
+                <strong class="footer-finances-value">35 %</strong>
+                partnerství s firmami
+              </li>
+            
+              <li>
+                <strong class="footer-finances-value">6 %</strong>
+                dobrovolné příspěvky
+              </li>
+            
+              <li>
+                <strong class="footer-finances-value">1 %</strong>
+                inzerce nabídek práce
+              </li>
+            
+          </ul>
+          <p class="footer-finances-actions">
+            <span class="footer-finances-button">
+              <a class="btn btn-lg btn-primary" href="../../open/">Čísla a grafy</a>
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-nav-container">
+      <nav class="footer-section footer-nav">
+        <h3 class="footer-heading">Buď v obraze</h3>
+        <p>
+          <a href="../../news/">Novinky</a>, 
+          <a href="../../podcast/">Podcast</a>, 
+          <a href="../../events/">Klubové akce</a>, 
+          <a href="../../stories/">Příběhy</a>, 
+          <a href="../../wisdom/">Moudra</a>
+          
+        </p>
+
+        <h3 class="footer-heading">Příručka</h3>
+        <p>
+          
+            <a href="../">Cesta juniora</a>, 
+          
+            <a href="../motivation/">Proč programovat</a>, 
+          
+            <a href="../myths/">Mýty</a>, 
+          
+            <a href="../women/">Ženy v IT</a>, 
+          
+            <a href="../parents/">Rodiče v IT</a>, 
+          
+            <a href="../learn/">Základy</a>, 
+          
+            <a href="../nocode/">Bez kódu</a>, 
+          
+            <a href="../english/">Angličtina</a>, 
+          
+            <a href="../course/">Vybírání kurzu</a>, 
+          
+            <a href="./">Procvičování</a>, 
+          
+            <a href="../community/">Komunity</a>, 
+          
+            <a href="../help/">Řešení problémů</a>, 
+          
+            <a href="../mentoring/">Mentoring</a>, 
+          
+            <a href="../projects/">Projekty</a>, 
+          
+            <a href="../git/">Git a GitHub</a>, 
+          
+            <a href="../collaboration/">Spolupráce</a>, 
+          
+            <a href="../mental-health/">Psychika</a>, 
+          
+            <a href="../candidate/">Hledání práce</a>, 
+          
+            <a href="../cv/">Životopis</a>, 
+          
+            <a href="../github-profile/">GitHub profil</a>, 
+          
+            <a href="../linkedin/">LinkedIn</a>, 
+          
+            <a href="../interview/">Pohovor</a>
+          
+        </p>
+
+        <h3 class="footer-heading">Kurzy</h3>
+        <p>
+          
+            <a href="../../courses/coreskill/">CoreSkill</a>, 
+          
+            <a href="../../courses/engeto/">ENGETO Academy</a>, 
+          
+            <a href="../../courses/itnetwork/">ITnetwork</a>, 
+          
+            <a href="../../courses/ajtyvit/">Aj Ty v IT</a>, 
+          
+            <a href="../../courses/beeit/">BeeIT</a>, 
+          
+            <a href="../../courses/codecademy/">Codecademy</a>, 
+          
+            <a href="../../courses/coderslab/">Coders Lab</a>, 
+          
+            <a href="../../courses/codewars/">Codewars</a>, 
+          
+            <a href="../../courses/codingbootcamppraha/">Coding Bootcamp Praha</a>, 
+          
+            <a href="../../courses/coursera/">Coursera</a>, 
+          
+            <a href="../../courses/cs50/">CS50</a>, 
+          
+            <a href="../../courses/czechitas/">Czechitas</a>, 
+          
+            <a href="../../courses/datacamp/">DataCamp</a>, 
+          
+            <a href="../../courses/djangogirls/">Django Girls</a>, 
+          
+            <a href="../../courses/edx/">edX</a>, 
+          
+            <a href="../../courses/egghead/">egghead.io</a>, 
+          
+            <a href="../../courses/freecodecamp/">freeCodeCamp</a>, 
+          
+            <a href="../../courses/greenfox/">Green Fox Academy</a>, 
+          
+            <a href="../../courses/hacknisvoubudoucnost/">Hackni svou budoucnost (David Šetek)</a>, 
+          
+            <a href="../../courses/inventi/">INVENTI</a>, 
+          
+            <a href="../../courses/itvkurze/">IT v kurze</a>, 
+          
+            <a href="../../courses/itabsolvent/">IT-absolvent</a>, 
+          
+            <a href="../../courses/jetbrains/">JetBrains Academy</a>, 
+          
+            <a href="../../courses/lovelydata/">Lovely Data</a>, 
+          
+            <a href="../../courses/lucietvrdikova/">Lucie Tvrdíková</a>, 
+          
+            <a href="../../courses/naucmeit/">Nauč mě IT</a>, 
+          
+            <a href="../../courses/naucsepython/">Nauč se Python</a>, 
+          
+            <a href="../../courses/pluralsight/">Pluralsight</a>, 
+          
+            <a href="../../courses/prahacodingschool/">Praha CODING School</a>, 
+          
+            <a href="../../courses/primakurzy/">PrimaKurzy</a>, 
+          
+            <a href="../../courses/programkonet/">Programko.NET (Petr Voborník)</a>, 
+          
+            <a href="../../courses/pyladies/">PyLadies</a>, 
+          
+            <a href="../../courses/radekkitner/">Radek Kitner</a>, 
+          
+            <a href="../../courses/railsgirls/">Rails Girls</a>, 
+          
+            <a href="../../courses/reactgirls/">ReactGirls</a>, 
+          
+            <a href="../../courses/kurzyvsb/">Rekvalifikační kurzy VŠB-TU</a>, 
+          
+            <a href="../../courses/robweb/">ROB WEB (yablko)</a>, 
+          
+            <a href="../../courses/robotdreams/">robot_dreams</a>, 
+          
+            <a href="../../courses/scrimba/">Scrimba</a>, 
+          
+            <a href="../../courses/seduo/">Seduo</a>, 
+          
+            <a href="../../courses/schoolofcode/">School of Code</a>, 
+          
+            <a href="../../courses/skillmea/">Skillmea</a>, 
+          
+            <a href="../../courses/sdacademy/">Software Development Academy</a>, 
+          
+            <a href="../../courses/step/">STEP</a>, 
+          
+            <a href="../../courses/streetofcode/">Street of Code</a>, 
+          
+            <a href="../../courses/udacity/">Udacity</a>, 
+          
+            <a href="../../courses/udemy/">Udemy</a>, 
+          
+            <a href="../../courses/umimpython/">UmimPython.cz</a>, 
+          
+            <a href="../../courses/unicornhatchery/">Unicorn Hatchery</a>, 
+          
+            <a href="../../courses/webykvalitne/">Webařce pod rukou</a>, 
+          
+            <a href="../../courses/webrebel/">Webrebel</a>, 
+          
+            <a href="../../courses/42prague/">42 Prague</a>
+          
+        </p>
+
+        <h3 class="footer-heading">Pracovní nabídky</h3>
+        <p>
+          <a href="../../jobs/remote/">Junior programátor na dálku</a>,
+          <a href="../../jobs/region/praha/">Junior programátor Praha</a>,
+          <a href="../../jobs/region/brno/">Junior programátor Brno</a>,
+          <a href="../../jobs/region/ostrava/">Junior programátor Ostrava</a>
+        </p>
+
+        <h3 class="footer-heading">Témata, která řešíme v klubu</h3>
+        <p>
+          
+            <a href="../../topics/adventofcode/">Advent of Code</a>, 
+          
+            <a href="../../topics/javascript/">JavaScript</a>, 
+          
+            <a href="../../topics/python/">Python</a>
+          
+        </p>
+      </nav>
+    </div>
+    <nav class="footer-section footer-rules">
+      <h3 class="visually-hidden">Pravidla</h3>
+      <ul class="footer-rules-list">
+        
+          <li class="footer-rules-item">
+            <a href="../../faq/">Otázky a odpovědi</a>
+          </li>
+        
+          <li class="footer-rules-item">
+            <a href="../../coc/">Pravidla chování</a>
+          </li>
+        
+          <li class="footer-rules-item">
+            <a href="../../tos/">Obchodní podmínky</a>
+          </li>
+        
+          <li class="footer-rules-item">
+            <a href="../../privacy/">Zásady ochrany osobních údajů</a>
+          </li>
+        
+          <li class="footer-rules-item">
+            <a href="../../open/">Čísla a grafy</a>
+          </li>
+        
+          <li class="footer-rules-item">
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs" target="_blank" rel="noopener">Licence obsahu (CC BY-SA)</a>
+          </li>
+        
+      </ul>
+    </nav>
+  </footer>
+
+  <script async src="https://sa.junior.guru/latest.js"></script>
+  <script async src="https://sa.junior.guru/auto-events.js"></script>
+  <noscript><img src="https://sa.junior.guru/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+</body>
+
+</html>
