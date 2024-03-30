@@ -14834,3 +14834,16 @@
 {"account_id": 5366748, "f": false, "happened_at": "2024-02-26T15:05:13", "subscription_interval": "month", "type": "trial_end"}
 {"account_id": 5367405, "f": false, "happened_at": "2024-02-26T19:49:05", "subscription_interval": "month", "type": "deactivation"}
 {"account_id": 5367405, "f": false, "happened_at": "2024-02-26T19:49:05", "subscription_interval": "month", "type": "trial_end"}
+{"account_id": 5368492, "f": false, "happened_at": "2024-02-27T07:54:54", "subscription_interval": "month", "type": "trial_end"}
+{"account_id": 5412704, "f": true, "happened_at": "2024-02-27T07:54:58", "subscription_interval": "month", "type": "order"}
+{"account_id": 5412704, "f": true, "happened_at": "2024-02-27T07:54:58", "subscription_interval": "month", "type": "trial_start"}
+{"account_id": 5368492, "f": false, "happened_at": "2024-02-27T08:03:11", "subscription_interval": "month", "type": "order"}
+{"account_id": 2293452, "f": false, "happened_at": "2024-02-27T08:31:54", "order_coupon_slug": "thankyouforever", "subscription_interval": "year", "type": "order"}
+{"account_id": 5368658, "f": false, "happened_at": "2024-02-27T10:54:08", "subscription_interval": "month", "type": "deactivation"}
+{"account_id": 5368658, "f": false, "happened_at": "2024-02-27T10:54:08", "subscription_interval": "month", "type": "trial_end"}
+{"account_id": 4300794, "f": false, "happened_at": "2024-02-27T12:20:06", "subscription_interval": "year", "type": "deactivation"}
+{"account_id": 5368780, "f": true, "happened_at": "2024-02-27T12:44:50", "subscription_interval": "month", "type": "deactivation"}
+{"account_id": 5368780, "f": true, "happened_at": "2024-02-27T12:44:50", "subscription_interval": "month", "type": "trial_end"}
+{"account_id": 4959324, "f": false, "happened_at": "2024-02-27T18:31:52", "subscription_interval": "month", "type": "order"}
+{"account_id": 2182264, "f": true, "happened_at": "2024-02-27T18:45:31", "subscription_interval": "month", "type": "order"}
+{"account_id": 4632060, "f": true, "happened_at": "2024-02-27T22:41:28", "subscription_interval": "month", "type": "order"}
