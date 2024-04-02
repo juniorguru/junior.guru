@@ -168,4 +168,7 @@ That approach led to a lot of excesses, especially as Microsoft decided to explo
 Don't contribute to open source
 https://www.youtube.com/watch?v=5nY_cy8zcO4
 
+
+https://davidism.com/school-assignment-open-source/
+
 #} -->
