@@ -1205,13 +1205,13 @@ test = ["objgraph", "psutil"]
 
 [[package]]
 name = "gspread"
-version = "6.0.2"
+version = "6.1.0"
 description = "Google Spreadsheets Python API"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "gspread-6.0.2-py3-none-any.whl", hash = "sha256:0238ba43f3bd45e7fa96fd206e9ceb73b03c2896eb143d7f4373c6d0cfe6fddf"},
-    {file = "gspread-6.0.2.tar.gz", hash = "sha256:0982beeb07fa3ec4482a3aaa96ca13a1e6b427a0aca4058beab4cdc33c0cbb64"},
+    {file = "gspread-6.1.0-py3-none-any.whl", hash = "sha256:67aa3335cfcbb2625e41b53129433ba779f2890244a4c532624362ce5e022342"},
+    {file = "gspread-6.1.0.tar.gz", hash = "sha256:576b72b628b251d2ee41e02b982d3c714d511d2a5aa3a88e587ed9efc4d6e752"},
 ]
 
 [package.dependencies]
@@ -3420,4 +3420,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.*"
-content-hash = "14bb0d9e1b5058dad2ede92028a3188226506f05c572d65399403d2f36f81167"
+content-hash = "408c9799dab7531f67042d92980fc81b274fd163033c179f7a61e0fa1fc40ad7"
