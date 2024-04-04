@@ -616,4 +616,6 @@ Asi bych se 1) zeptal, jestli si nesyslí ještě něco v šuplíku, protože sp
 
 https://www.linkedin.com/posts/marketa-willis_jak%C3%BD-je-recept-na-top-osobn%C3%AD-projekt-kter%C3%BD-activity-7179030416480194560-pfqP?utm_source=share&utm_medium=member_desktop
 
+https://docs.google.com/document/d/1gk-sER2SHuW6T9sJZyYg5nMUaKNh0w2_-5HCGiF9zxs/edit?usp=sharing
+
 #} -->

@@ -636,4 +636,9 @@ Hezký:
 ---
 
 
+Marketa Willis
+„Pokud si berete někoho pod křídla, je důležité při code reviews, pair programmingu, nebo konzultaci rozlišovat...“
+https://www.linkedin.com/feed/update/urn:li:activity:7181581062764953602/
+
+
 #} -->

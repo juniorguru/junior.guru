@@ -146,4 +146,18 @@ O učení: https://twitter.com/karpathy/status/1756380066580455557#m
 ---
 
 
+QCast
+## https://ceskepodcasty.cz/podcasty/qcast
+## Scriptease
+https://ceskepodcasty.cz/podcasty/scriptease
+PodVocasem https://www.podvocasem.cz
+IT svět podle Jury
+https://ceskepodcasty.cz/podcasty/it-svet-podle-jury100 VECI které by kazdy programátor mel znat https://www.starynec.cz/6-dependencies/
+.NET.CZ
+CZPodcast
+Kafemlejnek
+## **PROGRAMOVÁNÍ POD POKLIČKOU**
+https://www.youtube.com/watch?v=RVCjcIqMeh8
+
+
 #} -->

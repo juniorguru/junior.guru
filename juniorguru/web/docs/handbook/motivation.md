@@ -463,4 +463,7 @@ Já to považuju za zcela nepodstatný detail, který většinou figuruje v deba
 ---
 
 
+K tomu dostávání lidí do IT: Já tu hranici teď vidím tak, že člověk přijde na junior.guru, aby se dostal do IT. Já mu vysvětlím, co to obnáší, a v ideálním případě (teď to tam není) mu vysvětlím, že v IT je 10 dalších povolání než programátor. Vysvětlím jaké skills na to člověk potřebuje a co to povolání zhruba dělá. Ale kromě programování nebo testování napíšu „sorry, tohle je out of scope a junior.guru ti s tím nepomůže, tady máš nějaké jiné weby, třeba ti pomůžou tam“. A poslat UXáky na jejich asociaci, technical writery do jejich komunity, apod. Ale dál to nerozvádět, jen lidi nasměrovat, nicméně tu hlavní linku JG držet programovací, protože tomu rozumím nejvíc a nejlíp.
+
+
 #} -->
