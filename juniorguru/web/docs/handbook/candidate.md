@@ -1376,4 +1376,8 @@ Tohle je sice pro zkušené programátory, ale myslím, že tam jsou zajímavé 
 ---
 
 
+Tvrdíková - různé pozice do startu
+https://www.linkedin.com/posts/lucietvrdikova_startvit-activity-7183000015961780224-j885?utm_source=share&utm_medium=member_desktop
+
+
 #} -->
