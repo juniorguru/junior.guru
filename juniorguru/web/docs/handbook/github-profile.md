@@ -39,7 +39,7 @@ U lidí s praxí je GitHub [velmi špatné měřítko dovedností](https://www.b
 Pokud někdo už pracoval v oboru, nepotřebuje osobní projekty.
 Že umí s Gitem nebo s něčím, co jim kód zobrazí v prohlížeči, se tak nějak předpokládá.
 A jestliže chce firma vidět kód, tak si člověka prozkouší, nebo zadá k vypracování nějaký úkol na doma.
-Firmě je úplně jedno, jestli to kandidát odevzdá jako přílohu v e-mailu nebo repozitář na GitHubu.
+Firmám bývá úplně jedno, zda to kandidát odevzdá jako přílohu v e-mailu nebo repozitář na GitHubu.
 
 {% call blockquote_avatar(
   '83% nemá žádné commity za poslední rok, stejně jako 88% nemá žádné sledující. To neznamená, že jsou tito vývojáři špatní, jen to, že nepřispívají do open source a nemají nic veřejného, co by mohli ukázat.',
@@ -115,7 +115,7 @@ Takže **posílej odkazy přímo na jednotlivé repozitáře**, ne na celý prof
 
 Když se někam hlásíš, projdeš pod rukama nejdřív náborářům, a potom programátorům, do jejichž týmu se hledá posila.
 Náboráři kódu nerozumí, takže si nic na GitHubu nečtou.
-Programátoři chtějí vidět co umíš, takže jim uděláš největší službu, když od tebe dostanou odkazy přímo na konkrétní projekty, kterými se chceš chlubit.
+Programátoři chtějí vidět, co umíš, takže jim uděláš největší službu, když od tebe dostanou odkazy přímo na konkrétní projekty, kterými se chceš chlubit.
 
 {% call blockquote_avatar(
   'Pokud chcete opravdu ukázat své schopnosti, věnujte čas tomu dotáhnout do konce pár projektů, vyšperkovat README a dát potom odkaz už přímo na tyto repozitáře, ideálně s motivací k projektu a vysvětlením, co jste se na něm naučili.',
@@ -149,7 +149,7 @@ Velké množství juniorů na vlastní obrázek kašle, takže i když je to dvo
 Doplň si v [nastavení](https://github.com/settings/profile) svoje jméno.
 Pokud chceš, uveď _Bio_, tzn. nějakou větu o sobě.
 
-Můžeš vyplnit _Location_, ale není to nutné a klidně napiš jen _Czechia_, stačí to.
+Můžeš vyplnit _Location_, ale není to nutné a klidně napiš jen „Czechia“, stačí to.
 GitHub je globální, takže jestli tam chceš dát město, doplň i stát, třeba „Prešov, Slovakia“.
 
 Stejně tak se může hodit vyplnit _Pronouns_, zvlášť pokud máš obrázek místo fotky.

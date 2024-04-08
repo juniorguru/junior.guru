@@ -989,4 +989,40 @@ MDN spustilo vlastní vzdělávací materiály https://developer.mozilla.org/en-
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1217738430713430080/1217769846369161276
+# Co si představuješ pod pojmem _rekvalifikační kurz_?
+
+Ono to má totiž nějakou definici podle české legislativy, jde o kurzy, která jsou jako rekvalifikační akreditované (buď Ministerstvem školství nebo jinou institucí, typicky univerzitou, která má udělené právo akreditace udělovat).
+
+Samotná akreditace znamená splnění především hromady formálních podmínek a nezaručuje kvalitu. Přesto ji některé soukromé (nestátní) kurzy mají, protože jim to zajišťuje přísun lidí z úřadů práce, které takové kurzy proplácejí celé a taky to, že nemusí z takových kurzů odvádět DPH, což je efektivně zlevňuje o cca 17 %, pokud je ta firma plátcem.
+
+Naopak označení _rekvalifikační kurz_ nezaručuje a často taky neznamená, že po jeho absolvování máš dostatečné znalosti s kterými najdeš práci, stačí si pročíst diskuze tady.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1217738430713430080/1217770368736034826
+Osobně bych kurz vybíral opatrně, protože příspěvek od státu na takové vzdělání je jen 50000 Kč celkem za 3 roky, takže bych to nevyplácal na nějakou blbost s tím, že to mám zdarma nebo levně.
+
+Spousta z nich má taky pochybnou kvalitu a nedostatečnou náplň (bez ohledu na akreditaci)
+
+Navíc ještě nevíš kam se chceš přesně dostat, takže zaplatit teď desítky tisíc abys zjistil, že to vlastně nechceš dělat, asi moc smysl nedává.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1217738430713430080/1217770654594498624
+A taky všechno, co potřebuješ umět a vědět najdeš zadarmo nebo za pár korun na internetu. Pokud ten kurz není lepší než tohle, tak není moc důvod ho platit.
+Ne, to, že dostaneš na konci nějakej papír není podstatný, v IT to nikoho nezajímá.
+---
+
+
+--- https://discord.com/channels/769966886598737931/797040163325870092/1221455038182854686
+Tady je pak info, kam jít na studia, pokud někoho neodradí ta krutější realita vývoje počítačových her https://visiongame.cz/kde-v-cesku-studovat-pocitacove-hry/ <@1219792752196325418>
+---
+
+
+--- https://discord.com/channels/769966886598737931/1084817360352989294/1220016270125301820
+teďka už pár týdnů zkouším https://codegym.cc/ a zatím můžu doporučit! Těším až se proklikám k pokročilejším částem jako jsou Core Java (lets see) a multithreading, - nedá se úplně otestovat a přeskočit tak si to procházím od píky :))
+---
+
+
 #} -->

@@ -500,4 +500,9 @@ V takovém případě používáš svou možnost chovat se příznakově (a psá
 Lenka: Nedávat si do CV atd slovo junior ani na LinkedIn, proste napsat umím to a to a podložit to tím a tím a nechat na druhé straně, at si zhodnoti senioritu
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1220317640174731334
+Tak mě napadá, že v CV by se rovnou dal možná naznačit ten „deal“, že za možnost se věnovat rodině (pružná pracovní doba) získají loajálnějšího člověka do týmu, protože ví, že to není běžné nebo tak něco. Ideál by samozřejmě byl, kdybychom to nemuseli řešit, protože je to normální, ale jsme tam kde jsme.
+---
+
+
 #} -->

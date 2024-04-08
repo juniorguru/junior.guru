@@ -641,4 +641,47 @@ Hodně zdaru, sil a velký dík Honzovi, že to tu založil a spravuje <:dk:8427
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1217738430713430080/1217767457964429313
+Za mě je dobré vyzkoušet si to. Věnovat třeba 10 hodin čistého času tomu, začít s každou specializací, abys viděl prakticky, co to znamená. 
+Tedy opravdu začít nějakej kurzík a to nejlépe něco, kde to budeš sám dělat, ne se jen koukat na YT, jak to někdo dělá.
+A taky si třeba zkusit o té specializaci něco vyhledat, případně se zeptat tady.
+
+Ty základní směry jsou zhruba tyto
+- testing
+- backend (a devops), jazyků celá řada
+- frontend (HTML, CSS, JS)
+- mobilní aplikace (kde ale už dominují frontendové technologie)
+- data (datová analýza, engineering atd.)
+- cybersecurity (bezpečnost)
+---
+
+
+--- https://discord.com/channels/769966886598737931/1217738430713430080/1217771487792992347
+# Plán
+Máš v podstatě tady https://junior.guru/handbook/
+
+První si vyzkoušej, co tě nejvíc láká, kde si umíš představit, že bys chtěl skončit a až si budeš myslet, že to víš, tak se do toho zakousni. Pořád bych radši začal s online kurzy zdarma/levně než bych se pustil do něčeho většího.
+
+Je to mentálně hodně náročné, takže i když lidi nemají nic jiného na práci, tak obvykle nedají víc než 18–22 hodin týdně čistého času se tomu věnovat. To je fulltime. Krátkodobě jde samozřejmě víc, ale protože potřebuješ cca 400–600 hodin, aby ses dostal na úroveň, kdy má smysl hledat práci, tak je potřeba to vydržet měsíce a nepřepálit start.
+---
+
+
+--- https://discord.com/channels/769966886598737931/797040163325870092/1221400946928652339
+OK, tak možná ať si zkusí projet tohle https://blockly.games/?lang=en používáme to i s dospělými, co nikdy neprogramovali, aby si rozvičili mozky tím správným směrem, než začnou psát kód (i když trochu kódu se píše i tam ke konci) (a třeba malování želvou mě jednou chytlo tak, že jsem u toho seděl pár hodin 😅)
+---
+
+
+--- https://discord.com/channels/769966886598737931/797040163325870092/1221394579811471391
+To hodně záleží, co by přesně ráda dělala. V zásadě jsou 2 možnosti pro "programování her" - tvořit engine, kde se pak vše vykresluje (extrémně náročné na výkon, spousta matematiky a optimalizací), nebo řešit scriptování her (jak se třeba chovají postavy, jak reaguje prostředí atd.).
+
+Jsou to 2 dost odlišné věci, kdy ta první vyžaduje typicky precizní znalost algoritmů, matematiky a nízkoúrovňových jazyků (C / C++).
+Ta druhá je naopak nějaký scriptovací jazyk a k tomu (dnes už) grafické rozhraní na spojování tzv. nodes. Tam se hodí spíš jazyky typu Lua, JavaScript, případně C#. 
+
+Doporučím se podívat na **Nauč mě IT** 🧠 přednášku o hrách (byť zaměřeno na 3D tvorbu charakterů).
+https://youtu.be/LTBGnZun8dc
+
+Kdyby pak byl zájem dál, můžu propojit s přednášejícím a ten by určitě věděl, na jakého programátora se obrátit, aby dal bližší informace.
+---
+
+
 #} -->

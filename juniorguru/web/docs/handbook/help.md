@@ -307,4 +307,9 @@ Jak se správně ptát, když chcete poradit s kódem - narazil jsem na nový č
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1220986911401705572
+Zrovna čtu https://simonwillison.net/2024/Mar/22/claude-and-chatgpt-case-study/ a jen se mi potvrzuje, že AI je hodně užitečné, ale (zatím?) není snadné umět si tím správně pomoct. Přijde mi skvělé, co vše to umí, ale necítím se nahrazen, ani ohrožen 🙂 Prostě toho jen stihneme víc.
+---
+
+
 #} -->

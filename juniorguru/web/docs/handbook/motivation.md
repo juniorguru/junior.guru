@@ -466,4 +466,26 @@ Já to považuju za zcela nepodstatný detail, který většinou figuruje v deba
 K tomu dostávání lidí do IT: Já tu hranici teď vidím tak, že člověk přijde na junior.guru, aby se dostal do IT. Já mu vysvětlím, co to obnáší, a v ideálním případě (teď to tam není) mu vysvětlím, že v IT je 10 dalších povolání než programátor. Vysvětlím jaké skills na to člověk potřebuje a co to povolání zhruba dělá. Ale kromě programování nebo testování napíšu „sorry, tohle je out of scope a junior.guru ti s tím nepomůže, tady máš nějaké jiné weby, třeba ti pomůžou tam“. A poslat UXáky na jejich asociaci, technical writery do jejich komunity, apod. Ale dál to nerozvádět, jen lidi nasměrovat, nicméně tu hlavní linku JG držet programovací, protože tomu rozumím nejvíc a nejlíp.
 
 
+--- https://discord.com/channels/769966886598737931/797040163325870092/1221400946928652339
+OK, tak možná ať si zkusí projet tohle https://blockly.games/?lang=en používáme to i s dospělými, co nikdy neprogramovali, aby si rozvičili mozky tím správným směrem, než začnou psát kód (i když trochu kódu se píše i tam ke konci) (a třeba malování želvou mě jednou chytlo tak, že jsem u toho seděl pár hodin 😅)
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1221165224111902851
+Potkala jsem cestou na FB - zatím nejsem neposlouchala:
+**Úvod do IT: Kolik si vydělává programátor? Je potřeba vysoká škola? | Bee IT Podcast**
+https://www.youtube.com/watch?v=8zmBr-oe_oo
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1220986911401705572
+Zrovna čtu https://simonwillison.net/2024/Mar/22/claude-and-chatgpt-case-study/ a jen se mi potvrzuje, že AI je hodně užitečné, ale (zatím?) není snadné umět si tím správně pomoct. Přijde mi skvělé, co vše to umí, ale necítím se nahrazen, ani ohrožen 🙂 Prostě toho jen stihneme víc.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1219971933248950292
+Ještě k tomu AI, tady je hezký komentář o tom, jak si dřív lidi mysleli, že za nás všechno budou dělat počítače, když se objevily počítače 🙂 https://mastodonczech.cz/@Binks@cosocial.ca/112121227816606835
+---
+
+
 #} -->

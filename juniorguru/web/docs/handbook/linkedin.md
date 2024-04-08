@@ -291,4 +291,11 @@ Taky jsem to mela mesic zadarmo, jako obycejny clovek hledajici praci a absolutn
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1220022760051576842/1220729642617540658
+Nemám bohužel teď čas, ale aniž bych to otevřel, tak bych si udělal kratší url bez diakritiky
+
+https://www.linkedin.com/help/linkedin/answer/a542685/manage-your-public-profile-url?lang=en
+---
+
+
 #} -->

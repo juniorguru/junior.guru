@@ -907,4 +907,27 @@ Když už se v programování člověk trochu orientuje, tak znám dvě "zkratky
 2. Nastudovat si odbornou knížku na toto téma a znalosti ihned zkusit aplikovat na své projekty - knížka v bude fungovat asi nejlépe, protože prošla náročným procesem korektur a revize a nakonec někomu stálo za to, aby jí vydal. Navíc hodně pomáhá rychle listovat mezi jednotlivými sekcemi, což je snadné zvlášť u fyzické knihy. V češtině vyšla například kniha Čistý kód od Roberta C. Martina (tu už asi bude problém sehnat). V angličtině mohu doporučit knihu Refactoring od Martina Fowlera. Na pozoru bych byl v případě knih od Packt Publishing, u nich pozoruji hodně kolísající kvalitu - vždy se rozhoduji podle negativnách recenzí. Kniha nejspíš bude uvádět příklady v jiném programovacím jazyce, než na který jste zvyklí, typicky ale stačí jen velmi malá znalost daného jazyka a naprostá většina tipů je přenositelná i do jiných jazyků.
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1221027991480700978
+A jak pojmenovávate proměnné a funkce vy?
+https://github.com/kettanaito/naming-cheatsheet
+Jak známo
+> There are 2 hard problems in computer science: cache invalidation, naming things, and off‑by‑1 errors.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1084817360352989294/1220016270125301820
+teďka už pár týdnů zkouším https://codegym.cc/ a zatím můžu doporučit! Těším až se proklikám k pokročilejším částem jako jsou Core Java (lets see) a multithreading, - nedá se úplně otestovat a přeskočit tak si to procházím od píky :))
+---
+
+
+--- https://discord.com/channels/769966886598737931/1217484087065968684/1219223656895348797
+Tak jsem se Devin AI podíval pořádně na zoubek a zatím bych se držel Copilota a ChatGPT. 🙂
+
+Věřím, že průměrný junior tady odsud by podával lepší výsledky než DevinAI!
+
+Tady je o tom příspěvek, lajkujte, sdílejte dle libosti. 🙂
+https://www.linkedin.com/posts/bleedingdev_problems-with-devinai-activity-7175429487478603776-5CCS
+---
+
+
 #} -->

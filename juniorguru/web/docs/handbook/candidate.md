@@ -1380,4 +1380,16 @@ Tvrdíková - různé pozice do startu
 https://www.linkedin.com/posts/lucietvrdikova_startvit-activity-7183000015961780224-j885?utm_source=share&utm_medium=member_desktop
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1223220648957186070
+Firmy nemají sdílenou představu ani o tom kdo je vůbec junior, takže asi tolik k jakýmkoliv složitějším konstruktům 😅
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1222146790460231710
+Když se tady říká part time, tak se neříká se jak moc „part“: 80 % vs. 60 % vs. 20 % je velký rozdíl. 
+Taky je rozdíl, jestli někdo pracuje každý den, jen kratší dobu nebo jsou celé dny, kdy tam není. Stejně tak může být ok, že je někdo dostupný jen 4 hodiny dopoledne a jinde je zase lepší, když je dostupný 2 hodiny dopoledne a 2 hodiny odpoledne.
+Samozřejmě záleží na typu práce a tom, jak je to kde organizované.
+---
+
+
 #} -->

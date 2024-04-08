@@ -163,4 +163,23 @@ https://cc.cz/matkam-a-firmam-pomaha-skloubit-praci-a-rodinny-zivot-vetsina-mana
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1223179054039961711
+Co si přesně představit, když v inzerátu vidím jako jeden z benefitů: "pro-rodinný přistup" a podobné mutace téhož? Je mi jasný, kam asi míří, ale zajímalo by mě, jak to potom funguje prakticky (Jsou posunuté core hours, aby všichni stihli zajet do školky? Nejsou core hours vůbec? Výplaty jsou ve formě kindr vajec? 🤔)
+
+P.S. Nemůžu teď dohledat ten konkrétní inzeráta, velmi výjimečně na to narazím a jaksi přirozeně to se mnou rezonuje.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1222146790460231710
+Když se tady říká part time, tak se neříká se jak moc „part“: 80 % vs. 60 % vs. 20 % je velký rozdíl. 
+Taky je rozdíl, jestli někdo pracuje každý den, jen kratší dobu nebo jsou celé dny, kdy tam není. Stejně tak může být ok, že je někdo dostupný jen 4 hodiny dopoledne a jinde je zase lepší, když je dostupný 2 hodiny dopoledne a 2 hodiny odpoledne.
+Samozřejmě záleží na typu práce a tom, jak je to kde organizované.
+---
+
+
+--- https://discord.com/channels/769966886598737931/797040163325870092/1221400946928652339
+OK, tak možná ať si zkusí projet tohle https://blockly.games/?lang=en používáme to i s dospělými, co nikdy neprogramovali, aby si rozvičili mozky tím správným směrem, než začnou psát kód (i když trochu kódu se píše i tam ke konci) (a třeba malování želvou mě jednou chytlo tak, že jsem u toho seděl pár hodin 😅)
+---
+
+
 #} -->

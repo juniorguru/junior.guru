@@ -933,4 +933,15 @@ Tohle je sice pro zkušené programátory, ale myslím, že tam jsou zajímavé 
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1223220648957186070
+Firmy nemají sdílenou představu ani o tom kdo je vůbec junior, takže asi tolik k jakýmkoliv složitějším konstruktům 😅
+---
+
+
+--- https://discord.com/channels/769966886598737931/1222105029851484250/1222127360116264982
+> má to rizika, ale s tím počítám
+Já bych napsal, že si (už) můžeš dovolit s tím počítat. Něco sis třeba naspořila, tvoje cena na trhu vzrostla, protože toho umíš víc, a když tě někdo vyhodí ze dne na den, tak chvíli vydržíš a práci asi najdeš. Což je fér a přesně takhle většina IT v Česku funguje. Ale pro mnoho juniorů bude chvíli trvat, než se do téhle pozice dostanou, protože jsou po rekvalifikaci v situaci, že by je taková událost akorát dorazila.
+---
+
+
 #} -->

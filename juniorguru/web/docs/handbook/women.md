@@ -102,4 +102,8 @@ https://www.heroine.cz/zeny-it/11329-nemam-skolu-a-nejsem-technicky-typ-nejcaste
 ---
 
 
+https://mastodonczech.cz/@SmudgeTheInsultCat@mas.to/112225723955493154
+https://mas.to/@SmudgeTheInsultCat/112225723796627574
+
+
 #} -->
