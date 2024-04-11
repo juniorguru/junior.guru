@@ -2,7 +2,7 @@ from textwrap import dedent
 
 import pytest
 
-from project.cli.data import get_row_updates, make_schema_idempotent
+from jg.core.cli.data import get_row_updates, make_schema_idempotent
 
 
 def test_make_schema_idempotent():

@@ -1,4 +1,4 @@
-from project.sync.partners import get_coupons_mapping
+from jg.core.sync.partners import get_coupons_mapping
 
 
 def test_get_coupons_mapping():

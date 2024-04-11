@@ -1,6 +1,6 @@
 import pytest
 
-from project.sync.jobs_scraped.pipelines.employment_types_cleaner import (
+from jg.core.sync.jobs_scraped.pipelines.employment_types_cleaner import (
     clean_employment_type,
     clean_employment_types,
     process,

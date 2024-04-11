@@ -1,6 +1,6 @@
 import pytest
 
-from project.lib import coupons
+from jg.core.lib import coupons
 
 
 @pytest.mark.parametrize(

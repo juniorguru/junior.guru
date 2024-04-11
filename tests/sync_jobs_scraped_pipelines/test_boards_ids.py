@@ -1,6 +1,6 @@
 import pytest
 
-from project.sync.jobs_scraped.pipelines.boards_ids import process
+from jg.core.sync.jobs_scraped.pipelines.boards_ids import process
 
 
 @pytest.mark.parametrize(

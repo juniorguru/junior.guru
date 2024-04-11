@@ -4,9 +4,9 @@ from typing import Generator
 
 import pytest
 
-from project.models.base import SqliteDatabase
-from project.models.page import Page
-from project.models.stage import Stage
+from jg.core.models.base import SqliteDatabase
+from jg.core.models.page import Page
+from jg.core.models.stage import Stage
 
 from testing_utils import prepare_test_db
 

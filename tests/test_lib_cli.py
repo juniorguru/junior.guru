@@ -1,6 +1,6 @@
 import pytest
 
-from project.lib.cli import command_name
+from jg.core.lib.cli import command_name
 
 
 @pytest.mark.parametrize(

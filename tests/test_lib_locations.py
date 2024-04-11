@@ -2,7 +2,7 @@ from operator import itemgetter
 
 import pytest
 
-from project.lib.locations import fetch_locations, get_region, optimize_geocoding
+from jg.core.lib.locations import fetch_locations, get_region, optimize_geocoding
 
 
 def test_locations():

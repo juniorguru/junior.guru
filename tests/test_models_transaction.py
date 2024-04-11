@@ -2,7 +2,7 @@ from datetime import date, timedelta
 
 import pytest
 
-from project.models.transaction import Transaction
+from jg.core.models.transaction import Transaction
 
 from testing_utils import prepare_test_db
 

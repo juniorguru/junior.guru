@@ -1,7 +1,7 @@
 import pytest
 
-from project.sync.jobs_scraped import DropItem
-from project.sync.jobs_scraped.pipelines.juniority_filter import process
+from jg.core.sync.jobs_scraped import DropItem
+from jg.core.sync.jobs_scraped.pipelines.juniority_filter import process
 
 
 @pytest.mark.parametrize(

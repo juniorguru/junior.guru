@@ -1,6 +1,6 @@
 import pytest
 
-from project.lib.remove_emoji import remove_emoji
+from jg.core.lib.remove_emoji import remove_emoji
 
 
 @pytest.mark.parametrize(

@@ -1,6 +1,6 @@
-project/data/tips/*.md
-project/**/*.jinja
-project/web/**/*.html
-project/web/**/*.md
-project/*_legacy
+jg/core/data/tips/*.md
+jg/core/**/*.jinja
+jg/core/web/**/*.html
+jg/core/web/**/*.md
+jg/core/*_legacy
 tests

@@ -8,7 +8,7 @@ import pytest
 from peewee import SqliteDatabase
 from strictyaml import load
 
-from project.models.base import BaseModel, db as production_db
+from jg.core.models.base import BaseModel, db as production_db
 
 
 def prepare_test_db(models: list[BaseModel]) -> Generator[SqliteDatabase, None, None]:
