@@ -2,8 +2,8 @@ from datetime import date, datetime
 
 import pytest
 
-from jg.core.models.subscription import SubscriptionActivityType
-from jg.core.sync.subscriptions import (
+from coop.models.subscription import SubscriptionActivityType
+from coop.sync.subscriptions import (
     activities_from_subscription,
     get_coupon_slug,
     get_timestamp,

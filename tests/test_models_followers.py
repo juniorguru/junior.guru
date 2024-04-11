@@ -2,7 +2,7 @@ from datetime import date
 
 import pytest
 
-from jg.core.models.followers import Followers
+from coop.models.followers import Followers
 
 from testing_utils import prepare_test_db
 

@@ -3,8 +3,8 @@ from pathlib import Path
 
 import pytest
 
-from jg.core.lib.text import extract_text
-from jg.core.sync.jobs_scraped.pipelines.language_parser import (
+from coop.lib.text import extract_text
+from coop.sync.jobs_scraped.pipelines.language_parser import (
     parse_language,
     process,
 )

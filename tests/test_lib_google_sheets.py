@@ -1,6 +1,6 @@
 import pytest
 
-from jg.core.lib import google_sheets
+from coop.lib import google_sheets
 
 
 def test_records_to_rows():

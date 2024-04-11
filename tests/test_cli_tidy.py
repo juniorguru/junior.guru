@@ -2,7 +2,7 @@ from textwrap import dedent
 
 import pytest
 
-from jg.core.cli.tidy import get_jinja_calls, get_jinja_imports
+from coop.cli.tidy import get_jinja_calls, get_jinja_imports
 
 
 @pytest.mark.parametrize(

@@ -2,9 +2,9 @@ from datetime import date
 
 import pytest
 
-from jg.core.lib.benefits_evaluators import evaluate_members
-from jg.core.models.club import ClubUser
-from jg.core.models.partner import Partner, Partnership
+from coop.lib.benefits_evaluators import evaluate_members
+from coop.models.club import ClubUser
+from coop.models.partner import Partner, Partnership
 
 from testing_utils import prepare_partner_data, prepare_test_db
 

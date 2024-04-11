@@ -1,8 +1,8 @@
 import pytest
 
-from jg.core.lib.discord_club import CLUB_GUILD
-from jg.core.models.club import ClubMessage, ClubUser
-from jg.core.sync.digest import (
+from coop.lib.discord_club import CLUB_GUILD
+from coop.models.club import ClubMessage, ClubUser
+from coop.sync.digest import (
     format_channel,
     format_channel_digest,
     format_content,

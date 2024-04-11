@@ -1,6 +1,6 @@
 import pytest
 
-from jg.core.models.sync import Sync, SyncCommand
+from coop.models.sync import Sync, SyncCommand
 
 from testing_utils import prepare_test_db
 

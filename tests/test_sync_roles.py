@@ -1,7 +1,7 @@
 from collections import namedtuple
 from operator import attrgetter
 
-from jg.core.sync.roles import (
+from coop.sync.roles import (
     calc_stats,
     evaluate_changes,
     repr_ids,

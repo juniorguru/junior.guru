@@ -9,9 +9,9 @@ if (!outdir) {
 }
 
 await esbuild.build({
-  entryPoints: (await readdir("jg/core/image_templates"))
+  entryPoints: (await readdir("coop/image_templates"))
     .filter((file) => file.endsWith(".scss"))
-    .map((file) => `jg/core/image_templates/${file}`),
+    .map((file) => `coop/image_templates/${file}`),
   bundle: true,
   minify: true,
   sourcemap: true,

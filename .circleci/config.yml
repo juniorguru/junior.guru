@@ -134,8 +134,8 @@ jobs:
           root: "~"
           paths:
             - project/.cache
-            - project/jg/core/data
-            - project/jg/core/images
+            - project/coop/data
+            - project/coop/images
 
   # Requires:
   #
@@ -184,15 +184,15 @@ jobs:
           key: cache-v2-{{ .Branch }}-{{ .Revision }}
           paths:
             - .cache
-            - jg/core/images/posters-events
-            - jg/core/images/posters-partners
-            - jg/core/images/posters-podcast
-            - jg/core/images/thumbnails
+            - coop/images/posters-events
+            - coop/images/posters-partners
+            - coop/images/posters-podcast
+            - coop/images/thumbnails
       - persist_to_workspace:
           root: "~"
           paths:
-            - project/jg/core/data
-            - project/jg/core/images
+            - project/coop/data
+            - project/coop/images
       - when:
           condition:
             equal: [main, << pipeline.git.branch >>]
@@ -201,9 +201,9 @@ jobs:
             - run:
                 name: Save to GitHub
                 command: |
-                  poetry run jg save-changes jg/core/data/followers.jsonl --message="record followers 📊🦸‍♂️"
-                  poetry run jg save-changes jg/core/data/transactions.jsonl --message="record transactions 📊💰"
-                  poetry run jg save-changes jg/core/data/subscription_activities.jsonl --message="record subscriptions 📊💳"
+                  poetry run jg save-changes coop/data/followers.jsonl --message="record followers 📊🦸‍♂️"
+                  poetry run jg save-changes coop/data/transactions.jsonl --message="record transactions 📊💰"
+                  poetry run jg save-changes coop/data/subscription_activities.jsonl --message="record subscriptions 📊💳"
 
   web:
     executor: python-js

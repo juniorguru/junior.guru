@@ -1,4 +1,4 @@
-from jg.core.cli.sync import default_from_env, get_parallel_chains
+from coop.cli.sync import default_from_env, get_parallel_chains
 
 
 def test_get_parallel_chains():

@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "jg.core"
+name = "jg.coop"
 version = "0.0"
 description = "The junior.guru website, Discord bot, and synchronization scripts"
 authors = ["Honza Javorek <honza@junior.guru>"]
@@ -7,10 +7,11 @@ license = "MIT"
 readme = "README.md"
 homepage = "https://junior.guru/"
 repository = "https://github.com/juniorguru/junior.guru/"
-packages = [{ include = "jg" }]
+packages = [{ include = "coop" }]
 
 [tool.poetry.scripts]
-jg = "jg.core.cli:main"
+jg = "coop.cli:main"
+coop = "coop.cli:main"
 
 [tool.poetry.dependencies]
 python = "3.11.*"

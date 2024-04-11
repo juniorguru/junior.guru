@@ -1,0 +1,838 @@
+# Ahoj! Toto je soubor s daty o akcích junior.guru. Z dat se generuje stránka
+# https://junior.guru/events/ a různé jiné věci na webu, které se akcí týkají.
+# Také data využívá Discord bot, který na akce upozorňuje. Z dat se rovněž
+# automaticky generují plakátky, tj. upoutávky, které Honza sdílí na sociální
+# sítě.
+#
+# Pokud chceš, můžeš se sem po domluvě s Honzou přidat pomocí Pull Requestu,
+# ale není to nutné. Stačí Honzovi detaily napsat a poslat fotku nebo avatar,
+# on to už celé zařídí. Pokud se ale přes Git přidat chceš, můžeš. Akce jsou
+# v souboru od nejnovější po nejstarší, takže přidávej nahoru. Využij šablonu
+# níže nebo se inspiruj tím, jak jsou zdokumentovány už proběhlé akce.
+#
+#
+#- id: 0                                  # POŘADOVÉ ČÍSLO
+#  title: Jak se stát někým a dělat věci  # NÁZEV PŘEDNÁŠKY
+#  date: "0000-00-00"                     # DATUM PŘEDNÁŠKY
+#  time: "00:00"                          # VÝCHOZÍ JE 18:00, TAKŽE VE VĚTŠINĚ PŘÍPADŮ PROSTĚ JEN ODEBER CELÝ TENTO ŘÁDEK
+#  description: |                         # LÁKADLO NA PŘEDNÁŠKU, MŮŽEŠ POUŽÍT MARKDOWN
+#    Kdo by se nechtěl někým stát a dělat věci? Jana Nováková je
+#    na věci expertka a ukáže ti, jak se věci dělají a jak se stát
+#    tím, kým se stát chceš. Budeš žasnout, kolik věcí potom můžeš dělat!
+#  short_description: |                  # KRATŠÍ TEXT LÁKADLA (NAPŘ. PRO PLAKÁTEK), POKUD JE POTŘEBA
+#    Jana Nováková je expertka na věci a ukáže ti, jak se věci
+#    dělají a jak se stát tím, kým se stát chceš.
+#  partner: google                        # DOPLNÍ HONZA, POKUD JDE O PARTNERSKOU PŘEDNÁŠKU
+#  avatar_path: |                         # CESTA KE TVÉ FOTCE, 500x500px JPG, IDEÁLNĚ
+#    avatars-participants/jana-novakova.jpg
+#  bio_name: Jana Nováková                # TVOJE JMÉNO
+#  bio_title: |                           # TVOJE ROLE
+#    API designerka ve Velkém Korporátku,
+#    organizátorka Srazu Technologie
+#  bio: |                                 # O TOBĚ. TADY MŮŽEŠ POUŽÍT MARKDOWN, KLIDNĚ ODKAŽ NA SVOJE VĚCI
+#    Jana Nováková je nadšená API designerka ve Velkém Korporátku.
+#    [Maluje](https://example.com), ráda jezdí na kole a peče si
+#    vlastní chleba. Na hlídání kvásku si vytvořila
+#    [budík postavený na RapsberryPi](https://example.com).
+#  bio_links:                             # ODKAZY NA TVOJE PROFILY A OSOBNÍ WEB, BLOG
+#    - https://examplejanedoe.example.com
+#    - https://www.linkedin.com/in/examplejanedoe/
+#    - https://github.com/examplejanedoe
+#    - https://www.instagram.com/examplejanedoe/
+#  logo_path: logos/example.svg           # LOGO FIRMY, KDE PRACUJEŠ. NENÍ POVINNÉ (NEBO DOPLNÍ HONZA)
+#  speakers: 000000000000000000           # ID TVÉHO DISCORD ÚČTU, DOPLNÍ HONZA
+#  recording_url: https://example.com     # ODKAZ NA ZÁZNAM PŘEDNÁŠKY, DOPLNÍ HONZA
+#  public_recording_url: https://yt.com/  # ODKAZ NA VEŘEJNÝ STREAM NEBO ZÁZNAM PŘEDNÁŠKY, DOPLNÍ HONZA
+#
+#
+# Nakonec ještě dva tipy:
+#
+# 1. Lze používat Unicode pevné mezery (na macOS se napíšou option + mezerník) k prevenci
+#    nevhodného rozdělení slov na dva řádky. To se hodí v 90 % případů pro 'bio_title',
+#    které je potřeba na plakátku zalomit do sloupce.
+# 2. Bude potřeba ještě fotka, nebo pokud se nerad(a) fotíš, tak alespoň nějaký avatar, obrázek.
+#    Ten je potřeba přidat do složky 'coop/images/speakers' tak, že název souboru
+#    je stejný, jako tvoje ID na Discordu. Přípona a formát jsou jedno. No a pak je potřeba
+#    ještě spustit 'jg sync events', takže… takže je vlastně lepší to neřešit
+#    a poslat prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
+
+- id: 42
+  title: "(situace na trhu, bude upřesněno)"
+  date: "2024-05-28"
+  description: |
+    (bude upřesněno)
+  avatar_path: avatars-participants/tomas-ervin-dombrovsky.jpg
+  bio_name: Tomáš Ervín Dombrovský
+  bio_title: Datový analytik v Alma Career
+  bio: |
+    (bude upřesněno)
+  bio_links:
+    - https://www.linkedin.com/in/tomas-ervin-dombrovsky/
+  logo_path: logos/almacareer.svg
+  speakers:
+
+- id: 41
+  title: "„Agile is dead!“ …nebo ne?"
+  date: "2024-03-12"
+  description: |
+    SCRUM, Kanban, stand-up, sprint, backlog, user story, retrospektiva… Kdo není agilní s námi je agilní proti nám, aneb kdo zabil Agile. Společně se ponoříme do oceánu nepochopení agilních přístupů, řekneme si o nejběžnějších mýtech kolem a na závěr se podíváme, jak lze pozitivně infikovat jakékoliv prostředí hodnotami, na kterých agilní svět stojí.
+  avatar_path: avatars-participants/roman-lonik.jpg
+  bio_name: Roman Loník
+  bio_title: Scrum Master a agilní kouč
+  bio: |
+    Bývalý programátor (Microsoft Redmond), trochu projekťák, scrum master a agilní kouč tělem i duší. Pomáhám vytvářet efektivní týmy a prostředí. Lidem nepolíbeným světem IT ukazuji, že cesty do IT existují, i když nemají vzdělání v oboru a programování není jejich parketa.
+  bio_links:
+    - https://www.linkedin.com/in/lonikroman/
+    - https://www.naucmese.cz/kurz/chci-efektivni-tym-chci-uspesny-projekt
+    - https://www.naucmese.cz/kurz/ziskej-praci-v-it
+  speakers: 801044009366716448
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1217187841382285332
+
+- id: 40
+  title: "Úvod do Advent of Code a „přátelský pokec u kakaa“"
+  date: "2023-11-28"
+  description: |
+    Advent of Code každý rok přináší 50 programátorských hádanek. Mají různé úrovně složitosti, od docela jednoduchých po ty, které zaberou několik dní (nebo týdnů…). Než začne prosinec, Karolina udělá v klubu variaci na svou [přednášku z letošního PyCon CZ](https://cz.pycon.org/2023/program/talks/71/). Jak Advent of Code probíhá? Co se bude při řešení hodit? Co procvičit navíc? Po úvodu bude s Karolinou „pokec u kakaa“, kde se můžete na cokoliv ptát.
+  avatar_path: avatars-participants/karolina-surma.jpg
+  bio_name: Karolina Surma
+  bio_title: Software Engineer, Red Hat
+  bio: |
+    Od roku 2017 je aktivní v české Python komunitě, kde dlouhé roky učila, koučovala, a organizovala brněnské začátečnické kurzy pořádané PyLadies. Pomohlo jí to upevnit si základy Pythonu, seznámit se s Linuxem a s open source. Díky tomu pak našla práci nejdříve v QA, poté jako vývojářka. Na balkoně vášnivě pěstuje bylinky a rajčata, čte beletrii a s přáteli hraje deskovky.
+  bio_links:
+    - https://www.linkedin.com/in/karolina-surma-950452b7/
+  logo_path: logos/redhat.svg
+  speakers: 797088930758524959
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1179462183667630282
+
+- id: 39
+  title: "Programování jako kariéra? Ptej se! (Q&A v rámci Týdne pro Digitální Česko)"
+  date: "2023-11-21"
+  description: |
+    Jak dlouho trvá rekvalifikace? Jsem na to starý? Jak vybrat jazyk, kurz? Mám se učit po vlastní ose? Jak hledat práci? Co dělat po kurzu? Co psát do CV? Jak funguje junior.guru? Jakou máš, Honzo, velikost ponožek? A co na to ChatGPT?
+
+    Online akce pro širokou veřejnost v rámci [Týdne pro Digitální Česko](https://www.budoucnostjedigitalni.cz/) pořádaného vládou ČR. Je zároveň pro členy junior.guru/club na Discordu i [veřejně na YouTube](https://youtube.com/live/9mpIl8kFulA). V obou případech můžeš psát otázky do chatu a Honza se na ně snaží odpovídat.
+  short_description: |
+    Jak dlouho trvá rekvalifikace? Jsem na to stará? Jak vybrat jazyk, kurz? Mám se učit po vlastní ose? Jak hledat práci? Co dělat po kurzu? Co psát do CV? A co na to ChatGPT? Online akce pro širokou veřejnost v rámci [Týdne pro Digitální Česko](https://www.budoucnostjedigitalni.cz/) pořádaného vládou ČR. Je zároveň pro členy junior.guru/club na Discordu i [veřejně na YouTube](https://youtube.com/live/9mpIl8kFulA). V obou případech můžeš psát otázky do chatu a Honza se na ně snaží odpovídat.
+  avatar_path: avatars-participants/honza-javorek.jpg
+  bio_name: Honza Javorek
+  bio_title: "Provozovatel junior.guru"
+  bio: |
+    Původně programátor, dnes už spíš kariérový poradce a podnikatel. Od roku 2016 pomáhá začátečníkům naučit se programovat a najít si svou první práci v oboru. Provozuje junior.guru a je dlouholetým dobrovolníkem v české Python komunitě.
+  logo_path: logo.svg
+  speakers: 668226181769986078
+  public_recording_url: https://youtube.com/live/9mpIl8kFulA
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1176596905908764682
+
+- id: 38
+  title: "Směrem k úspěchu aneb jak vykročit tou správnou nohou"
+  date: "2023-12-19"
+  description: |
+    Jak se zorientovat v novém pracovním prostředí? Jak číst firemní kulturu, co nejrychleji zapadnout a přinést novému týmu přidanou hodnotu? Co dělat pro to, aby mě práce naplňovala a nestresovala? Jak efektivně komunikovat v týmu a jak porozumět tomu, co se ode mě očekává? Jak to dělat při práci na dálku? A jak na zpětnou vazbu? Přijďte na uvolněné povídání s Dominikou!
+  avatar_path: avatars-participants/dominika-prazakova.jpg
+  bio_name: Dominika Pražáková
+  bio_title: Business Development Manager ve Vortex
+  bio: |
+    Milovnice moderních technologií, která vám dá vaše podnikání do pohybu. V podvečer se prohání po luzích a hájích na koni.
+  bio_links:
+    - https://www.linkedin.com/in/prazakova/
+  logo_path: logos/vortex.svg
+  speakers: 1168093838192148483
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1186742229633617980
+
+- id: 37
+  title: "Proč mají programátoři rádi šifrovací hry a proč by mohly bavit i vás"
+  date: "2023-12-05"
+  description: |
+    Možná jste na táboře nebo na výletě chodili po šipkách. Nevěděli jste, co bude dál. Na konci byl poklad. A čokoláda. Bavilo vás to! A existují lidé, které to baví pořád. I když to dávno není na táboře a místo šipek nachází divné obrázky ve čtyřrozměrném prostoru. Čokoláda zůstává. A radost taky. Kromě zábavy s kamarády je šifrovačka i intelektuální výzvou. Stejně jako programování. A zábavou v jednom se budete zlepšovat i v tom druhém. Nebo naopak.
+  avatar_path: avatars-participants/mila-votradovec.jpg
+  bio_name: Míla Votradovec
+  bio_title: Programátor v Second Foundation, kytarista a autor šifer
+  bio: |
+    Career switcher before it was cool. Zanechal studia češtiny a začal pracovat a učil se programovat. Prošel různými startupy i velkými firmami. Aktuálně pomáhá matematikům a machine-learning lidem s tvorbou kódu v Second Foundation. Organizoval několik ročníků největší české šifrovačky [TMOU](https://www.tmou.cz/) a vytvořil několik vlastních her. Kromě toho hraje na kytaru a občas někde koncertuje.
+  bio_links:
+    - https://milavotradovec.cz/
+    - https://sifrovacky.cz/
+    - https://www.linkedin.com/in/m%C3%ADla-votradovec-2a659920/
+  speakers: 514847931040530433
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1181669143993389149
+
+- id: 36
+  title: "Jak se jako ajťák/čka zbavit pochyb a pocitu, že nejsem dost"
+  date: "2023-06-20"
+  description: |
+    Co nejvíc narušuje psychickou pohodu juniorů? A co se s tím dá dělat? Z ankety mezi juniory vyplývá, že 70 % z těch, kdo hledají práci, má strach, zda si vůbec nějakou najdou. 55 % z těch, kdo už pracují, má pocit, že jsou neschopní. 44 % se bojí, že ostatní přijdou na to, že jsou k ničemu. Představím svůj pohled na příčiny nejistoty a pochybností a podělím se o několik nápadů, které ti pomohou zvládnout tyto pocity.
+  avatar_path: avatars-participants/nela-slezakova.jpg
+  bio_name: Nela Slezáková
+  bio_title: Psycholožka & programátorka – seberozvoj a terapie pro ajťáky a budoucí ajťáky
+  bio: |
+    Jsem psycholožka a coby samouk jsem uspěla i jako programátorka. Dnes mě živí IT a psychologie dohromady. Rozumím, s čím se potýkáš, ať už v IT jsi, nebo se do něj chystáš.
+  bio_links:
+    - https://www.nelaprovazi.cz/
+    - https://www.linkedin.com/in/nela-slezakova/
+  logo_path: logos/nelaprovazi.svg
+  speakers: 791020144661889054
+  public_recording_url: https://youtu.be/FIijszEVQHY
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1120773553164402708
+
+- id: 35
+  title: "Začínáme správně: klíčové faktory pro úspěšný frontend projekt"
+  date: "2023-05-02"
+  description: |
+    Jaké jsou důležité faktory, které je třeba mít na paměti při vytváření nového projektu. Naučíte se, jak se vyvarovat častých chyb v této fázi a jak psát kód, který bude udržitelný a snadno rozšiřitelný. Povíme si také, proč je důležité uvažovat o rychlosti webu již od počátku a jak ji můžete optimalizovat pro lepší uživatelskou zkušenost.
+  avatar_path: avatars-participants/martin-kolar.jpg
+  bio_name: Martin Kolář
+  bio_title: "Frontendista na volné noze"
+  bio: |
+    Přes 10 let se věnuje webovému frontendu, z toho více než polovinu jako freelancer. Pomáhal organizovat a moderovat srazy Frontendisti, ve volném čase se věnuje české komunitě Waze a rád taky tvoří věci, převážně ze dřeva.
+  bio_links:
+    - https://martinkolar.eu/
+    - https://www.linkedin.com/in/martinkolareu/
+  logo_path: logos/martinkolar.svg
+  speakers: 392659924552777730
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1103007844732784691
+
+- id: 34
+  title: "Dev Fiction: Junioři a realita vývojářského týmu"
+  date: "2023-04-25"
+  description: |
+    A je to doma! Máte podepsanou smlouvu na junior vývojáře. Dostali jste šanci! Podíváme se na to, jaké nástrahy vás od prvního dne čekají: Jak se dorozumět se seniory, kde číhají možné konflikty při práci v týmu, jak se přes všechen stres systematicky vzdělávat a proč vždycky zrovna vy budete muset měnit filtr v kávovaru? Zaměříme se na nejčastější situace, které vás po nástupu čekají a na příkladech a nezdarech z praxe probereme osvědčená řešení.
+  avatar_path: avatars-participants/marta-kirchgessner.jpg
+  bio_name: Marta Kirchgessner
+  bio_title: "Frontendistka v Lundegaard"
+  bio: |
+    Vystudovaná historička, žila několik let v Berlíně a většinu profesního života se věnovala event managementu. Svou cestu do IT začala s Digitální akademií od Czechitas. Na pozici FE vývojářky pracuje rok a půl. Má zkušenosti jak s produktovým vývojem, tak s prací na projektech. Pokud se zrovna nehrabe v Reactu, tak miluje jízdu po německé dálnici.
+  bio_links:
+    - https://www.linkedin.com/in/marta-k-586110243/
+  logo_path: logos/lundegaard.svg
+  speakers: 1081144172632879167
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1100474817930612828
+
+- id: 33
+  title: "Programování jako kariéra? Ptej se! (Q&A)"
+  date: "2023-04-11"
+  description: |
+    Jak dlouho trvá rekvalifikace? Jsem na to stará? Jak vybrat jazyk, kurz? Mám se učit po vlastní ose? Jak hledat práci? Co dělat po kurzu? Co psát do CV? Jak funguje junior.guru? Jakou máš, Honzo, velikost ponožek? A co na to ChatGPT?
+
+    Akce je online, zároveň pro členy junior.guru/club na Discordu i [veřejně na YouTube](https://youtube.com/live/vN235cq8xP4). V obou případech můžeš psát otázky do chatu a Honza se na ně snaží odpovídat. Z akce je veřejný záznam.
+  avatar_path: avatars-participants/honza-javorek.jpg
+  bio_name: Honza Javorek
+  bio_title: "Provozovatel junior.guru"
+  bio: |
+    Původně programátor, dnes už spíš kariérový poradce a podnikatel. Od roku 2016 pomáhá začátečníkům naučit se programovat a najít si svou první práci v oboru. Provozuje junior.guru a je dlouholetým dobrovolníkem v české Python komunitě.
+  logo_path: logo.svg
+  speakers: 668226181769986078
+  public_recording_url: https://youtube.com/live/vN235cq8xP4
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1095399134313336942
+
+- id: 32
+  title: "Práce a dítě: Jak být k sobě laskavější"
+  date: "2023-03-21"
+  time: "18:30"
+  description: |
+    V této přednášce chci povědět svůj příběh hledání sebe jako rodiče i jako člověka se svými sny a kariérními cíli. Doufám, že tato přednáška bude povzbuzením a inspiraci pro hledání rovnováhy mezi rodičovským a pracovním životem.
+  avatar_path: avatars-participants/anastazie-sedlakova.jpg
+  bio_name: Anastázie Sedláková
+  bio_title: "Spoluzákladatelka sedlakovi.org, Community Engagement - Principal Scientist v DNAnexus"
+  bio: |
+    Mám doktorát z genetiky člověka a více než 10 let zkušeností s bioinformatickou analýzou a lektorováním programovacích kurzů. Baví mě zkoumat, jak lze co nejefektivněji naučit dospělé lidi komplexním věcem. Ráda kreslím, chodím do přírody a čtu. Mám tři děti: 5 let, 3 roky a 5 měsíců.
+  bio_links:
+    - https://www.sedlakovi.org/filozofie/
+    - https://www.linkedin.com/in/anastazie-sedlakova/
+    - https://github.com/anastazie
+    - https://twitter.com/datasciencefox
+  logo_path: logos/sedlakovi.svg
+  speakers: 1084944417716178965
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1088457105910026240
+
+- id: 31
+  title: "Vývoj desktopových aplikací v C#: Nové trendy a možnosti"
+  date: "2023-02-21"
+  description: |
+    Ukážu vám C# na desktopu. Minulost, současnost, budoucnost. Proletíme historii aplikací pro Windows, od WinForms až po nejnovější technologie, jako je .NET MAUI. Vysvětlíme si vzorové architektury (MVVM, dependency injection) a ukážeme si je na demo aplikaci v .NET MAUI.
+  avatar_path: avatars-participants/lukas-pavelka.jpg
+  bio_name: Lukáš Pavelka
+  bio_title: "C#/.NET programátor v Edhouse"
+  bio: |
+    Nadšený C# a .NET vývojář, který se neustále snaží rozšiřovat své znalosti a nabírat zkušenosti. Před necelými dvěma lety se přidal do klubu jako junior, který si hledá první práci. Díky své vášni pro technologie a neustálému zkoumání, jak by šlo v praxi využít novinky, se dostal až k tomu, že teď bude juniorům sám přednášet.
+  bio_links:
+    - https://www.linkedin.com/in/lukepavelka0321/
+  logo_path: logos/edhouse.svg
+  speakers: 113033048957665280
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1077657861397684396
+
+- id: 30
+  title: "Základy bezpečnosti pro vývojáře"
+  date: "2023-02-07"
+  description: |
+    Jak chránit sebe, svoji práci a na co myslet, když chci psát bezpečný kód? Nepůjdeme do přílišného detailu, ale podíváme se na bezpečné používání vlastního počítače, ukládání nebo publikování svojí práce, a na pár zásad, které je dobré dodržovat u libovolného programovacího jazyka.
+  avatar_path: avatars-participants/zuzana-pechova.jpg
+  bio_name: Zuzana Pechová
+  bio_title: Security Manager v Rossum
+  bio: |
+    Profesionálka v oboru kybernetické bezpečnosti se zaměřením na technické prostředky ochrany společností - prevence útoků, monitorování systémů, řešení bezpečnostních incidentů. Ve volném čase se věnuje sci-fi a fantasy ve všech podobách, hraje hry a občas píše o feminismu a LGBT tématech na sociálních sítích.
+  bio_links:
+    - https://www.linkedin.com/in/zuzanapechova/
+    - https://twitter.com/kayla_eilhart/
+    - https://witter.cz/@kayla_eilhart
+  logo_path: logos/rossum.svg
+  speakers: 336111357495738368
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1072591921173774456
+
+- id: 29
+  title: "Analýza geoprostorových dat, GIS a geospatial data science"
+  date: "2023-01-25"
+  description: |
+    Co jsou prostorová data, čím jsou speciální a jak je využít? Pomocí satelitů můžeme koukat nejen na současný stav Země, ale i predikovat, co teprve bude. Co se s tím dá dělat za super věci? Kde prostorová data najít a co umět, abychom s nimi mohli pracovat?
+  avatar_path: avatars-participants/tyna-dolezalova.jpg
+  bio_name: Týna Doležalová
+  bio_title: Data Scientist v EOX IT Services, zakladatelka Unlock.IT, organizátorka PyLadies Vienna, mentorka Women+ in Geospatial
+  bio: |
+    Vystudovala jsem geoinformatiku a data science. Baví mě to vzájemně propojovat. Dřív jsem modelovala ceny nemovitostí, dnes pracuji ve firmě, kde děláme na projektech pro ESA (Evropská kosmická agentura). Tak dlouho jsem se dobrovolně angažovala ve vzdělávání IT dovedností, až jsem si na to založila firmu. Ráda čtu, hraji deskovky a chodím po horách.
+  bio_links:
+    - https://www.linkedin.com/in/kristyna-dolezalova/
+    - https://unlock.it/
+  logo_path: logos/eox.svg
+  speakers: 844877506259845140
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1067870620739711067
+
+- id: 28
+  title: "Kdo je to IT analytik a jak se jím stát?"
+  date: "2023-01-10"
+  description: |
+    Kdo je to vlastně IT analytik a jak vypadá jeho běžný den? Co, jak, kde analyzuje a s kým svou práci dělá? Co by měl junior umět a jak se dál zlepšovat?
+  avatar_path: avatars-participants/martin-javorek.jpg
+  bio_name: Martin Javorek
+  bio_title: IT analytik a architekt v Hypoteční bance
+  bio: |
+    Programoval jsem v Javě, ale pak mě víc bavilo systémy vymýšlet, než programovat. 15 let pracuji jako analytik a architekt v Hypoteční bance. Byl jsem u všeho, co se tam za tu dobu vylepšilo kolem nemovitostí. Rád věci rozdělávám a opravuji, hraji si se smarthome, amatérsky natáčím a stříhám, učím se jazyky a běhám.
+  bio_links:
+    - https://www.linkedin.com/in/javorek/
+  logo_path: logos/hypotecni-banka.svg
+  speakers: 1061399828552241204
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1062444547554152582
+
+- id: 27
+  title: "Posuďme Javu podle obalu"
+  date: "2022-12-06"
+  description: |
+    Pohled na ekosystém Javy. Programovací jazyk jako takový dost možná důležitý vůbec není. Přehled pojmů, abyste se hned na začátku své cesty neztratili.
+  avatar_path: avatars-participants/lubos-racansky.jpg
+  bio_name: Luboš Račanský
+  bio_title: Java programátor ve Wultra
+  bio: |
+    Spíš [správce kolonií než kolonizátor](https://honzajavorek.cz/blog/kolonizatori-a-spravci-kolonii/). Programuji v Javě 15 let, z toho 8 let se motám kolem software, který v různé míře zajišťuje bezpečnost. Mám latetní potřebu někoho poučovat, tu teď realizuju v [kroužku programování](https://blog.zvestov.cz/tag/krou%C5%BEek-programov%C3%A1n%C3%AD/) na místní základce. Rád sportuju a čtu, občas fotím. Snažím se dohnat mezery ve svém hudební vzdělání.
+  bio_links:
+    - https://www.linkedin.com/in/lubosracansky/
+    - https://twitter.com/banterCZ
+    - https://witter.cz/@banterCZ
+    - https://blog.zvestov.cz/
+  logo_path: logos/wultra.svg
+  speakers: 775619876152672268
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1049755762081140766
+
+- id: 26
+  title: "Jak funguje mentoring a uvítání mentorů z Mews"
+  date: "2022-11-15"
+  description: |
+    Jak funguje mentoring v klubu a co přesně zahrnuje pravidelná nabídka, která vybízí ke kontaktování mentorů z firem? Uvítáme mentory z Mews, ať je máte v paměti jako reálné tváře a ne pouze jména na seznamu.
+
+    Technický tým Mews má v současné době okolo 170 lidí, kteří si své znalosti a zkušenosti nenechávají jen pro sebe, ale i díky junior.guru je dostávají k více lidem. Nejzásadnějším kanálem pro tuto činnost je mentoring, který mohou využít všichni, kdo se chtějí něco dozvědět, něco si ověřit nebo si jen pokecat o technologiích.
+  partner: mews
+  bio_name: Honza Javorek a mentoři z Mews
+  bio: |
+    Mews je softwarová firma, která buduje moderní systém pro správu ubytovacích zařízení. Zjednodušuje a automatizuje (často nudné) úkony což umožňuje hoteliérům věnovat se naplno svým klientům.
+  bio_links:
+    - https://www.mews.com/
+    - https://www.mews.com/en/careers
+    - https://github.com/MewsSystems/developers
+  logo_path: logos/mews.svg
+  speakers: 668226181769986078, 672433063690633216
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1042158897999392819
+
+- id: 25
+  title: "Technologický dluh – zabiják inovace"
+  date: "2022-11-01"
+  description: |
+    Během přednášky si na praktických příkladech z praxe (CSS, JavaScript a Python) ukážeme, jak technologický dluh nepříznivě ovlivňuje vývoj z dlouhodobého hlediska a řekneme si, jak jeho dopady eliminovat za použití automatizace.
+  avatar_path: avatars-participants/michal-simon.jpg
+  bio_name: Michal Šimon
+  bio_title: CEO, Codeac.io
+  bio: |
+    Po dokončení studia na univerzitě si Michal koupil letenku do Silicon Valley a odjel tam hledat práci jako vývojář ve startupu. Po několika letech a úspěšném exitu se vrátil zpět a začal vyvíjet nástroj [Codeac.io](https://www.codeac.io/), který pomáhá vyvojářům bojovat s technologickým dluhem.
+  bio_links:
+    - https://github.com/michal-simon/
+    - https://www.linkedin.com/in/michal-simon/
+    - https://twitter.com/michalsimon
+  logo_path: logos/codeac.svg
+  speakers: 383551603678117888
+
+- id: 24
+  title: "Jak se správně připravit na pohovor"
+  date: "2022-10-18"
+  description: |
+    Druhá přednáška z cyklu „junioři vs trh práce“. Jak se správně připravit na pohovor? Jaký je běžně jeho průběh? Co je důležité po skončení pohovoru? Po přednášce bude prostor pro delší Q&A, takže si připrav dotazy!
+  avatar_path: avatars-participants/matej-kotrba.jpg
+  bio_name: Matěj Kotrba
+  bio_title: IT headhunter, podcaster
+  bio: |
+    Matěj je IT headhunter, který pomáhá IT odborníkům najít fit pracovní příležitost a firmám najít nové kolegy do týmu. Zároveň je producentem podcastů **Fuckupy v IT** a **Fuckupy recruiterů**, které si můžete poslechnout na všech dostupných platformách.
+  bio_links:
+    - https://twitter.com/MatjKotrba5
+    - https://www.linkedin.com/in/mat%C4%9Bjkotrba/
+    - https://www.instagram.com/matejkotrba/
+    - https://www.vork.cz/
+  logo_path: logos/vork.png
+  speakers: 909742782254579763
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1031996509694205953
+
+- id: 23
+  title: "Jak se stát webovým analytikem"
+  date: "2022-10-12"
+  description: |
+    Data jsou klíčová. Všichni chtějí v investovat jen do věcí, které fungují. Každý chce dělat ta správná rozhodnutí. A nikdo nechce selhat. Ale jak toho dosáhnout v online prostředí? Řešení je webová analytika. Přijďte zjistit, kdo je webový analytik. Jaká data zpracovává. Jak vypadá jeho den. A jak v oboru začít, pokud by vás zaujal.
+  avatar_path: avatars-participants/pavel-sabatka.jpg
+  bio_name: Pavel Šabatka
+  bio_title: Webový analytik, House of Řezáč
+  bio: |
+    Pavel je webový analytik od roku 2010, spoluzakladatel House of Řezáč, táta tří dětí. Aktuálně vede tým analytiků, počítá finance a pere se s dětmi. Do přednášky se zapojila i Katka Hlaváčová, Pavlova kolegyně, která je čerstvou juniorní webovovou analytičkou.
+  bio_links:
+    - https://www.linkedin.com/in/pavel-%C5%A1abatka-009a0020/
+    - https://www.linkedin.com/in/katarina-hlavacova/
+    - https://www.houseofrezac.com/
+  logo_path: logos/houseofrezac.svg
+  speakers: 1002158848540413952, 782702546065424405
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1029831740514115647
+
+- id: 22
+  title: "Od C# k .NETu"
+  date: "2022-06-07"
+  description: |
+    Znáte programovací jazyk C#, ale nikdy jste si jej nezkusili? Kde všude ho můžete využit? Počítá se s ním do budoucna? Co to má společného s .NETem? Je to vhodný jazyk pro juniory? Právě odpovědi na tyto otázky se pokusím odpovědět na této přednášce.
+  avatar_path: avatars-participants/vojtech-madr.png
+  bio_name: Vojtěch Mádr
+  bio_title: CTO v Motionlab, moderátor podcastů ProgramHRování a .NET.CZ
+  bio: |
+    Technický ředitel ve startupu, podcaster a hrdý otec. Rád používá Microsoftí technologíe a mluví o nich, takže je opakovaným držitelem titulu Microsoft MVP.
+  bio_links:
+    - https://www.linkedin.com/in/madrvojtech/
+    - https://www.programhrovani.cz/
+    - https://www.dotnetpodcast.cz/
+    - https://twitter.com/madrvojt
+  logo_path: logos/motionlab.svg
+  speakers: 839123616665698354
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/983788617107390474
+
+- id: 21
+  title: "Jak funguje mentoring a uvítání mentorů z Pure Storage"
+  date: "2022-05-11"
+  time: "18:30"
+  description: |
+    Jak funguje mentoring v klubu a co přesně zahrnuje pravidelná nabídka, která vybízí ke kontaktování mentorů z firem? Už dřív se takto nabídli kamarádi z Mews a Red Hatu, nyní se přidává Pure Storage. Uvítáme je, ať je máte v paměti jako reálné tváře a ne pouze jména na seznamu. Někteří nerozumí česky, takže část nebo celá akce proběhne anglicky.
+  partner: purestorage
+  bio_name: Honza Javorek a mentoři z Pure Storage
+  bio: |
+    Pure Storage je pražská pobočka firmy ze Silicon Valley, která se zabývá ukládáním dat. Chtějí junior.guru podpořit především jako mentoři.
+  bio_links:
+    - https://www.purestorage.com/
+    - https://www.welcometothejungle.com/en/companies/pure-storage
+  logo_path: logos/purestorage.svg
+  speakers: 668226181769986078
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/974000560841842708
+
+- id: 20
+  title: "Next.js úvod pre juniorov"
+  date: "2022-04-19"
+  description: |
+    Ako a prečo prejsť z Reactu na vývoj v Next.js? Čo je potrebné vedieť na začiatok? Vedeli ste, že Next.js je možné využívať aj ako backend? Ukážeme si hlavné featury, ktoré ponúka a aké rôzne spôsoby rendrovania je možné využívať, či navzájom kombinovať s príkladmi využitia z praxe na rôznych aplikáciách.
+  avatar_path: avatars-participants/svetlana-margetova.jpg
+  bio_name: Svetlana Margetová
+  bio_title: Zakladatelka Kompilátor, programátorka, mentorka
+  bio: |
+    Vediem vývoj vo vlastnej firme Kompilátor, kde pomáham nielen klientom, ale aj programátorom prepájať IT svet s tým reálnym. Mám viac než 10 ročné skúsenosti s návrhom a vývojom systémov, pričom som prešla iteračným prechodom od backend vývojára, cez analytika, až k mobilným aplikáciám. Vo voľnom čase chytám pokémony, hrám sa s Arduinom a som večné dieťa, ktoré nikdy neprestane robiť to, čo ho baví.
+  bio_links:
+    - https://margetova.eu/
+    - https://www.kompilator.cz/
+    - https://www.linkedin.com/in/msvetlana/
+    - https://www.instagram.com/swetus/
+    - https://github.com/SvetlanaM
+  logo_path: logos/kompilator.svg
+  speakers: 477895566085324801
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/966037882643034153
+
+- id: 19
+  title: "Představení Jetveo"
+  date: "2022-02-23"
+  description: |
+    Jetveo je low-code platforma se C#, na které by měl být i úplný začátečník s minimální znalostí kódu schopen poměrně rychle vytvořit funkční, produkční appku. Zakladatel Jetveo Dalibor a junior Jakub, který si díky Jetveo našel svou první práci v IT, v klubu udělali představení platformy a odpovídali na dotazy.
+  partner: jetveo
+  bio_name: Dalibor Houfek, Jakub Ráček
+  bio_title: Kluci z Jetveo
+  bio: |
+    Dalibor je spoluzakladatelem platformy Jetveo. Jakub je junior, který se s platformou naučil pracovat a našel si díky tomu svou první práci v IT.
+  bio_links:
+    - https://jetveo.io/
+    - https://jetveo.io/cs/blog/articles/jakub-interview
+  logo_path: logos/jetveo.svg
+  speakers: 736963862099918968
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/946376703691882497
+
+- id: 18
+  title: "Jak přežít cestu juniora po psychické stránce"
+  date: "2022-02-22"
+  description: |
+    Říká se, že zdraví máme pouze jedno. Ale zatímco to fyzické zanedbává málokdo, péče o psychické zdraví zdaleka není takovou normou. Cesta do IT je náročná životní změna. Vysoké nároky na sebe sama, srovnávání se s ostatními, obavy zda jste dost dobří, zda se vám to podaří, nedostatek odpočinku… To vše může vést až k vyhoření. Na přednášce si představíme pět zásad, každou s praktickými tipy, které vám pomohou si na cestě do IT své psychické zdraví nepošlapat.
+  avatar_path: avatars-participants/nela-slezakova.jpg
+  bio_name: Nela Slezáková
+  bio_title: Psycholožka v nelaprovazi.cz, programátorka ve FlowerChecker
+  bio: |
+    Jako samouk jsem se za relativně krátký čas byla schopná uchytit jako Python programátorka. Mimo to jsem ale taky vystudovaná psycholožka, terapeutka a koučka ve výcviku. Hledala jsem způsob, jak spojit své dva milované světy - programování a psychologii. A když jsem se začala pohybovat mezi začátečníky, kteří se do IT snaží dostat, objevila jsem, že jim mám hodně co nabídnout. A nejen jim, ale i lidem, kteří se v IT pohybují a nejsou úplně spokojení.
+  bio_links:
+    - https://www.nelaprovazi.cz/
+    - https://www.linkedin.com/in/nela-slezakova/
+  logo_path: logos/nelaprovazi.svg
+  speakers: 791020144661889054
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/946710822506344500
+  public_recording_url: https://youtu.be/6G4TKGQICw0
+
+- id: 17
+  title: "Chcem mobilnú aplikáciu. Ako a kde začať?"
+  date: "2022-02-08"
+  description: |
+    Mobilné aplikácie naberajú na čoraz väčšej popularite a my si ukážeme, ako sa zorientovať vo svete mobilného vývoja. Aplikácie je možné vyvíjať rôznymi technológiami na rôzne platformy (iOS/Android). Využívať pritom viaceré prístupy vývoja, preto spolu prejdeme hlavnými rozdielmi, či výhodami/nevýhodami, ktoré ich od seba odlišujú. V prednáške sa naučíte, čo je potrebné pred vývojom prvej aplikácie zvážiť a ako ju nasadiť do Google Play, či App Store obchodu.
+  avatar_path: avatars-participants/svetlana-margetova.jpg
+  bio_name: Svetlana Margetová
+  bio_title: Zakladatelka Kompilátor, programátorka, mentorka
+  bio: |
+    Vediem vývoj vo vlastnej firme Kompilátor, kde pomáham nielen klientom, ale aj programátorom prepájať IT svet s tým reálnym. Mám viac než 10 ročné skúsenosti s návrhom a vývojom systémov, pričom som prešla iteračným prechodom od backend vývojára, cez analytika, až k mobilným aplikáciám. Vo voľnom čase chytám pokémony, hrám sa s Arduinom a som večné dieťa, ktoré nikdy neprestane robiť to, čo ho baví.
+  bio_links:
+    - https://margetova.eu/
+    - https://www.kompilator.cz/
+    - https://www.linkedin.com/in/msvetlana/
+    - https://www.instagram.com/swetus/
+    - https://github.com/SvetlanaM
+    - https://svetlanamargetova.wordpress.com/
+  logo_path: logos/kompilator.svg
+  speakers: 477895566085324801
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/940697182439362580
+
+- id: 16
+  title: "Dobrá mzda je jen začátkem"
+  date: "2022-01-11"
+  description: |
+    IT táhne. Vysoké (slibované) mzdy, flexibilní pracovní doba, práce z domova, zaměstnanecké benefity a velký potenciál kariérního růstu láká do IT čím dál tím víc lidí. A co je na tom nejlepší? Že stačí dodržovat pár pravidel a i vy můžete dosáhnout nejen na finančně bezstarostný život, ale i na nejvyšší příčky v podobě finanční nezávislosti.
+  avatar_path: avatars-participants/jakub-dvorak.jpg
+  bio_name: Jakub Dvořák
+  bio_title: Team Lead a datový vědec v Processand, finanční šprt, blogger a podcaster v Rozbité prasátko
+  bio: |
+    Přes den pracuji jako vedoucí datový vědec ve firmě [Processand](https://www.processand.com/), kde pomáháme nadnárodním korporacím zefektivnit firemní procesy skrze tzv. [process mining](https://en.wikipedia.org/wiki/Process_mining). V noci pomáhám lidem s osobními financemi skrze blog a podcast [Rozbité prasátko](https://rozbiteprasatko.cz/). A obojí mě strašně baví.
+  bio_links:
+    - https://rozbiteprasatko.cz/
+    - https://www.linkedin.com/in/dvoorajak/
+  logo_path: logos/processand.svg
+  speakers: 925744853508304897
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/930537584386506852
+
+- id: 15
+  title: "Tester jako ideální první práce, aneb čím začít kariéru v IT"
+  date: "2021-12-07"
+  description: |
+    Možná jste už slyšeli tvrzení, že vhodnou pozicí do startu, na kterou byste se mohli zaměřit, je tester. Je to ale skutečně tak? Je pozice testera ideálním začátkem kariéry v IT zrovna pro tebe?
+  avatar_path: avatars-participants/sona-mistrikova.jpg
+  bio_name: Soňa Mištríková
+  bio_title: QA specialistka v Mews
+  bio: |
+    Soňa je _career-switcherka_, která se dostala do IT ze zvědavosti a díky zápalu naučit se něco úplně nového. Aktuálně pracuje jako QA specialistka v Mews a koučingem podporuje dámy v Czechitas. Přes víkend vždy zmizí do přírody a pokud k večeru uvidíte někoho v horách, jak kope díru ve sněhu, je to pravděpodobně ona, jak se chystá jít spát.
+  bio_links:
+    - https://www.linkedin.com/in/so%C5%88a/
+  logo_path: logos/mews.svg
+  speakers: 869504117154934824
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/917855271374700575
+
+- id: 14
+  title: "10 klíčových otázek, na které by každý junior měl znát odpověď"
+  date: "2021-11-16"
+  description: |
+    Úvodní přednáška do tématu „junioři vs trh práce“, aneb 10 základních klíčových otázek, na které byste měli znát odpovědi, než se pustíte do vytváření CV, přihlašování na pracovní pozice a pohovory. Po přednášce bude prostor pro dotazy na způsob krátké AMA (_ask me anything_).
+  avatar_path: avatars-participants/matej-kotrba.jpg
+  bio_name: Matěj Kotrba
+  bio_title: IT headhunter, podcaster
+  bio: |
+    Matěj je IT headhunter, který pomáhá IT odborníkům najít fit pracovní příležitost a firmám najít nové kolegy do týmu. Zároveň je producentem podcastů **Fuckupy v IT** a **Fuckupy recruiterů**, které si můžete poslechnout na všech dostupných platformách.
+  bio_links:
+    - https://twitter.com/MatjKotrba5
+    - https://www.linkedin.com/in/mat%C4%9Bjkotrba/
+    - https://www.instagram.com/matejkotrba/
+    - https://www.vork.cz/
+  logo_path: logos/vork.png
+  speakers: 909742782254579763
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/910242514676645908
+
+- id: 13
+  title: "Případová studie: Jak se staví rychlý, moderní prezentační web"
+  date: "2021-11-02"
+  description: |
+    Nedávno jsem vytvořil [web pro novináře Davida Klimeše](https://davidklimes.cz/) – offline-first Progressive Web App. A protože to byla důležitá práce, dal jsem si hodně záležet. Rád bych vám na jejím příkladu ukázal jak se staví moderní prezentační web – jak vybírat technologie, co optimalizovat, na co si dát pozor. Určitě zmíníme přístupnost a stihneme-li to, snad si i povíme k čemu jsou dobré service workery.
+  partner: cdn77com
+  avatar_path: avatars-participants/libor-vanek.jpg
+  bio_name: Libor Vaněk
+  bio_title: Vedoucí frontendového vývoje, CDN77
+  bio: |
+    Mám na starost frontend v CDN77.com a zároveň komplet vývoj jednoho z produktů (React, TypeScript, Next.js, Apollo GraphQL, Node.js, TypeORM). Mám rád řemeslně kvalitní weby a aplikace – rychlé, přístupné, s respektem ke standardům a platformě. Rád je stavím a stejně rád o nich i mluvím :) Na frameworku mi nezáleží, používám React, Vue i Svelte.
+  bio_links:
+    - https://twitter.com/liborvanek
+    - https://www.linkedin.com/in/liborvanekcz/
+    - https://github.com/liborvanek
+  logo_path: logos/cdn77com.svg
+  speakers: 330085757211377679
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/905192447276122162
+
+- id: 12
+  title: "AMA: Expert na škálování a architekturu"
+  date: "2021-10-19"
+  description: |
+    AMA znamená _ask me anything_. Honza Král se dlouhá léta zabývá provozem a architekturou složitých systémů. Jak lze navrhovat kód, aby toho zvládl hodně v krátkém čase? Jaké triky má využít webová stránka, pokud chce obsloužit miliony uživatelů? Jak navrhnout a provozovat databáze, aby se popraly s náporem? Zeptej se na cokoliv, co tě zajímá!
+  avatar_path: avatars-participants/honza-kral.jpg
+  bio_name: Honza Král
+  bio_title: Spoluzakladatel a CTO v Aimful
+  bio: |
+    Honza je jedním z prvních propagátorů Djanga u nás. Byl u počátků firmy [Elastic](https://www.elastic.co/), která stojí za jedním z nejpopulárnějších databázových a vyhledávacích systémů. Nejdříve pracoval na integraci Elasticu do Pythonu, později působil v roli nejzkušenějšího konzultanta ve firmě a mezinárodního přednášejícího. Objížděl svět a radil top firmám na trhu jak vyřešit zapeklité situace. Dnes rozjíždí startup [Aimful](https://aimful.io/). Libuje si sice v dobré whisky, ale na [srazu Pythonistů](https://pyvo.cz/praha-pyvo/) ho potkáte spíše s tácem zelené.
+  bio_links:
+    - https://twitter.com/honzakral
+    - https://www.linkedin.com/in/honzakral/
+    - https://github.com/honzakral
+  logo_path: logos/aimful.svg
+  speakers: 514189468673114122
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/900105360038326342
+
+- id: 11
+  title: "AMA: Mentoři na frontend"
+  date: "2021-09-29"
+  description: |
+    AMA znamená _ask me anything_. Zeptej se na cokoliv, co tě zajímá! Dan a Kate pod značkou [CoreSkill](https://coreskill.tech/) pomáhají budoucím frontendistům a frontendistkám se vším, co potřebují k tomu, aby se jimi co nejdřív stali. Tématy určitě budou HTML, CSS i JavaScript, ale i to, co to frontend je a co frontendisti vlastně všechno dělají a co je minimum pro nalezení první práce.
+  partner: coreskill
+  avatar_path: avatars-participants/coreskill.jpg
+  bio_name: Daniel Srb, Kate Miháliková
+  bio_title: vývojáři a mentoři, CoreSkill
+  bio: |
+    Dan Srb se zaměřuje na návrh a implementaci webových uživatelských rozhraní. Jezdí na skládačce a má rád dobrou kávu, i když už ji moc nepije. Kate Miháliková je frontedová vývojářka se zaměřením na TypeScript a JavaScript. Baví ji vlaky, hraje si ráda s Arduinem a na první dobrou rozezná jména Pokémonů od buzzwordů a názvů technologií.
+  bio_links:
+    - https://coreskill.tech/
+    - https://github.com/katemihalikova
+    - https://www.linkedin.com/in/katemihalikova/
+    - https://github.com/benabraham
+    - https://www.linkedin.com/in/danielsrb/
+  logo_path: logos/coreskill.svg
+  speakers: 652142810291765248, 488415538117214220
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/893578992853086218
+
+- id: 10
+  title: Relační databáze efektivně
+  date: "2021-08-31"
+  description: |
+    S relačními databázemi se setkává téměř každý vývojář, ale ne každý vývojář je dokáže efektivně využít. V přednášce si představíme, jak jsou data v relačních databázích uložena, jak databáze vykonávají naše dotazy a jak jim v jejich vykonávání pomoci. Ukážeme si i nástroje pro ladění dotazů v MySQL a PostgreSQL a celou řadu praktických tipů.
+  partner: lynt
+  avatar_path: avatars-participants/jan-smitka.jpg
+  bio_name: Jan Smitka
+  bio_title: Hlavní vývojář, Lynt
+  bio: |
+    Jan Smitka vede vývoj ve společnosti [Lynt](https://lynt.cz/). Má přes 15 let zkušeností s vývojem komplexních aplikací, od analýzy přes řízení vývoje až po nasazení a provoz. Ve volném čase si rád zahraje dobrou deskovku či [Divinity](https://divinity.game/).
+  bio_links:
+    - https://twitter.com/jansmitka
+    - https://www.linkedin.com/in/jansmitka/
+    - https://github.com/jsmitka
+    - https://lynt.cz/
+  logo_path: logos/lynt.svg
+  speakers: 821709585588551701
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/882327482559246397
+
+- id: 9
+  title: Od recruitingu cez Lambda School až do globálneho startupu
+  date: "2021-08-17"
+  description: |
+    Je mnoho ciest ako sa dostať k programovaniu. Vo svojej prednáške by som vám rada porozprávala o tej svojej, ktorá viedla od práce recruiterky v Bratislave cez Lambda School až do globálneho technologického startupu Grafana Labs, s posledným investičným kolom v hodnote 50 miliónov dolárov. Veľmi rada s vami zazdieľam to, čo sa mi podarilo a osvedčilo a naopak, čo som urobila zle a čo by som dnes urobila úplne inak.
+  avatar_path: avatars-participants/ivana-huckova.jpg
+  bio_name: Ivana Hučková
+  bio_title: Software Engineer, Grafana Labs
+  bio: |
+    Ivana Hučková je programátorka v [Grafana Labs](https://grafana.com/). Ivana sa pred 3 rokmi rozhodla zmeniť kariéru a absolvovala 7-mesačný online kurz programovania [Lambda School](https://lambdaschool.com/). Po skončení Lambdy nastúpila ako Software Engineer do Grafany, kde pracuje na vývoji open-source softvéru. Vo svojom voľnom čase sa rada venuje stavaniu menších IoT monitorovacích systémov, napríklad na monitorovanie jej avokáda, sviečok alebo kvásku.
+  bio_links:
+    - https://ivanahuckova.com/
+    - https://ivanahuckova.medium.com/
+    - https://twitter.com/ivanahuckova
+    - https://www.linkedin.com/in/ivana-huckova/
+    - https://github.com/ivanahuckova
+  logo_path: logos/grafana.svg
+  speakers: 561313047390715904
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/877260218650751056
+
+- id: 8
+  title: Jak jsou datové struktury uloženy v paměti
+  date: "2021-08-10"
+  description: |
+    Jedna za věcí které se dozvíte spíše na škole než z praktických kurzů je to, jak jsou informace uloženy v paměti počítače. Kde jsou vlastně ty jedničky a nuly, o kterých celé IT je? A jak s pomocí nich zapsat číslo, text, seznam, slovník nebo třeba barvu?
+
+    Začneme od začátku a postupně se zaměříme na datové typy Pythonu: seznamy a slovníky. Ale nebojte, v JavaScriptu, C# nebo třeba Ruby fungují základní principy odobně.
+  short_description: |
+    Jedna za věcí které se dozvíte spíše na škole než z praktických kurzů je to, jak jsou informace uloženy v paměti počítače. Kde jsou vlastně ty jedničky a nuly, o kterých celé IT je? A jak s pomocí nich zapsat číslo, text, seznam, slovník nebo třeba barvu? Začneme od začátku a postupně se zaměříme na datové typy Pythonu: seznamy a slovníky. Ale nebojte, v jiných jazycích fungují základní principy odobně.
+  avatar_path: avatars-participants/petr-viktorin.jpg
+  bio_name: Petr Viktorin
+  bio_title: Senior Software Engineer, Red Hat
+  bio: |
+    Petr Viktorin v [Red Hatu](https://jobs.redhat.com/) přispívá do vývoje jazyka Python a jeho integraci do linuxových systémů. Kromě toho Python učí a stará se o materiály na [naucse.python.cz](https://naucse.python.cz/).
+  bio_links:
+    - https://encukou.cz/
+    - https://github.com/encukou
+    - https://www.youtube.com/channel/UC-W5H6lqLrhJeOwVAW7ktNw
+  logo_path: logos/redhat.svg
+  speakers: 733309153275019326
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/875483337744089139
+  public_recording_url: https://youtu.be/1-Bwa7yp0C4
+
+- id: 7
+  title: Proč a jak být technickým redaktorem?
+  date: "2021-07-27"
+  description: |
+    Technical writer je zajímavá a žádaná práce, málo kdo ale ví o co v ní běží nebo že vůbec taková kariérní cesta existuje. Přijď si poslechnout, jak se z absolventky obecné lingvistiky stala tech writerka. Nora Kořánová ti poví, s čím se běžně v práci potýká, co ji na tom baví, nebaví a jaké dovednosti se jí hodí. Nebudou chybět ani tipy na to, jak se technical writerem stát.
+  avatar_path: avatars-participants/nora-koranova.jpg
+  bio_name: Nora Kořánová
+  bio_title: Technical Writer, SUSE
+  bio: |
+    Nora Kořánová je technická redaktorka v SUSE. Jako absolventka obecné lingivstiky se do IT dostala i díky PyLadies a v oboru pracuje od roku 2016. Na konferenci Write the Docs 2018 měla lightning talk o [české houbové obsesi](https://www.youtube.com/watch?v=AMkSSIvyu3s). Jednou by si chtěla založit farmu s aspoň jednou kozou, kde by tkala koberce.
+  bio_links:
+    - https://www.linkedin.com/in/nkoranova/
+    - https://github.com/nkoranova
+    - https://www.instagram.com/norka.vokurka/
+  logo_path: logos/suse.svg
+  speakers: 501682297930645504
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/869642782355103814
+
+- id: 6
+  title: Život HTTP požadavku
+  date: "2021-05-18"
+  description: |
+    Tvůrci webových aplikací, ať už na frontendu nebo backendu, by měli o protokolu HTTP vědět co nejvíce, jelikož je to voda, ve které jejich výtvor přímo plave. Nicméně nejen oni. Téměř každý program dnes pracuje s internetem, ať už jede na serveru, na počítači, v prohlížeči, nebo na mobilu. V přednášce si jako přírodovědci v savaně dáme kameru na jeden HTTP požadavek a budeme jej pozorovat na jeho strastiplné cestě divočinou sítě: DNS, TLS, routing, TCP/UDP/IP, podsítě, Wi-Fi a Ethernet, OSI Model…
+  short_description: |
+    Tvůrci webových aplikací, ať už na frontendu nebo backendu, by měli o protokolu HTTP vědět co nejvíce. Nicméně nejen oni. Téměř každý program dnes pracuje s internetem, ať už jede na serveru, na počítači, v prohlížeči, nebo na mobilu. V přednášce si jako přírodovědci v savaně dáme kameru na jeden HTTP požadavek a budeme jej pozorovat na jeho strastiplné cestě divočinou sítě: DNS, TLS, routing, TCP/UDP/IP, podsítě, Wi-Fi a Ethernet, OSI Model…
+  avatar_path: avatars-participants/vilibald-wanca.jpg
+  bio_name: Vilibald Wanča
+  bio_title: Architekt v Oracle, Princ Wilibald na ČRo Wave
+  bio: |
+    Vilibald Wanča je seniorní architekt v Oracle s 20letými zkušenostmi v oboru. Baví ho vymýšlet, jak udělat věci jednoduše, ale přitom zároveň dostatečně robustně, efektivně a výkonně. Málokdo ví o jeho kořenech v žižkovském podsvětí nebo angažmá na dubové scéně. Sedm let na ČRo Wave moderoval své [Dubové okénko Prince Wilibalda](https://hledani.rozhlas.cz/iRadio/?query=Dubov%C3%A9+ok%C3%A9nko+Prince+Wilibalda&reader=&stanice%5B%5D=%C4%8CRo+Radio+Wave&porad%5B%5D=Sc%C3%A9na+s+Jakubem+Joh%C3%A1nkem).
+  bio_links:
+    - https://www.linkedin.com/in/wvi/
+    - https://github.com/w-vi
+  logo_path: logos/oracle.svg
+  speakers: 817453228283133982
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/844488172364890123
+
+- id: 5
+  title: "AMA: Recruiter se zaměřením na juniory"
+  date: "2021-05-05"
+  description: |
+    AMA znamená _ask me anything_. Příklady otázek, které jsme řešili:
+
+    -   Je lepší začít hodně dole s nějakou stáží a podobně, nebo raději mít nastudováno a zkusit naskočit co nejvýš?
+    -   Kolik bylo let nejmladšímu juniorovi bez praxe, kterého jsi přijímal, a naopak kolik bylo let nejstaršímu?
+    -   Jak to máte s juniory na full remote? Jsem z druhého konce republiky.
+    -   Očekáváš nějakou zkušenost s Open Source?
+    -   Co bývá v prvních měsících pro nově nastupující juniory nejtěžší? A co pro ty, co je zaškolují a věnují se jim?
+    -   Uvádět do životopisu netechnické vzdělání nebo neuvádět žádné?
+    -   Co děláte v případě, když si kandidát řekne o míň peněz?
+    -   Jaké je typické zvýšení mzdy juniora a kdy?
+    -   Proč firmy nezaměstnávají zaměstnance na zkrácené úvazky?
+    -   Když procházíš CV, co bys určil jako takový jeden největší nebo tři největší nešvary, které ti brání efektivně se jimi probrat a vyhodnotit kandidáta?
+    -   Jak bys popsal potřebnou úroveň angličtiny?
+    -   O jakou mzdu si mám říct jako junior?
+    -   Jaký je poměr v týmech mezi seniory a juniory, jakou pozornost může junior očekávat, když nastoupí?
+  short_description: |
+    AMA znamená _ask me anything_. Zeptej se na cokoliv, co tě zajímá! Jirka je seniorní recruiter v Red Hatu, který se ve své práci podstatnou měrou zabývá přijímáním juniorů. Ve volném čase spoluorganizuje brněnský sraz Python programátorů a věnuje se DJingu.
+  partner: redhat
+  avatar_path: avatars-participants/jiri-psotka.jpg
+  bio_name: Jiří Psotka
+  bio_title: Senior Recruiter, Red Hat
+  bio: |
+    Jirka Psotka je seniorní recruiter v [Red Hatu](https://jobs.redhat.com/), který se ve své práci podstatnou měrou zabývá přijímáním juniorů. Ve volném čase jako dobrovolník spoluorganizuje brněnský sraz Python programátorů [Pyvo](https://pyvo.cz/brno-pyvo/) a věnuje se [DJingu](https://www.facebook.com/hazeboys). Doma má nekonečnou [sbírku vinylů](https://hearthis.at/krmelec-prostor/dj-hotdogg/).
+  bio_links:
+    - https://twitter.com/jiripsotka/
+    - https://www.linkedin.com/in/jiripsotka/
+    - https://www.instagram.com/dog2y/
+  logo_path: logos/redhat.svg
+  speakers: 382474361300451328
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/842104677943869440
+
+- id: 4
+  title: Designování vysněné práce
+  date: "2021-04-13"
+  description: |
+    Jak se z lektorky angličtiny stane frontendistka? První část přednášky je o těžkých rozhodnutích, motivaci, překážkách a pomoci na cestě k vysněné práci. V druhé se podíváme na související obory s vývojem webů a aplikací, včetně user experience.
+  avatar_path: avatars-participants/adina-foxova.jpg
+  bio_name: Adina Foxová
+  bio_title: Tlumočnice mezi designem a frontendem na volné noze, UXD tým v Leveris
+  bio: |
+    Adina Foxová je tlumočnice mezi designem a frontendem. Na volné noze vylepšuje staré a designuje nové weby a aplikace, v kódu se pak hlavně stará o architekturu stylů v React aplikacích. Má vášeň pro design systémy, zajímavé problémy a dinosaury. Už čtvrtým rokem staví s firmou Leveris kompletní bankovní platformu. Ve volném čase moderuje události v IT a její nejoblíbenější místo je Lucerna, když se koná WebExpo.
+  bio_links:
+    - https://adinafoxova.cz/
+    - https://twitter.com/adinafxv
+    - https://github.com/adinafxv
+    - https://www.linkedin.com/in/adina-foxova/
+    - https://www.instagram.com/adinafxv/
+  logo_path: logos/adinafoxova.svg
+  speakers: 658628731337965586
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/836906198426320906
+
+- id: 3
+  title: Jamstack
+  date: "2021-03-31"
+  description: |
+    Co jsou „staticky generované stránky“? Co je Jamstack a jak ti může pomoci tvořit webovky? Jak se orientovat v existujících řešeních a jak si můžeš na Jamstacku vytvořit třeba vlastní blog?
+  avatar_path: avatars-participants/ladislav-prskavec.jpg
+  bio_name: Ladislav Prskavec
+  bio_title: Senior Developer Manager v Oracle, SRE, školitel, organizátor srazů
+  bio: |
+    Láďa Prskavec je programátor, školitel a organizátor srazů. Jeho oblíbenými jazyky jsou Node.js, Ruby a Go. Dříve pracoval v LMC a Apiary, dnes je seniorním manažerem SRE v Oracle.
+  bio_links:
+    - https://www.prskavec.net/
+    - https://twitter.com/abtris
+    - https://github.com/abtris
+    - https://www.linkedin.com/in/ladislavprskavec/
+    - https://www.instagram.com/abtris/
+  logo_path: logos/oracle.svg
+  speakers: 779257315782164490
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/826872579427794955
+
+- id: 2
+  title: "#Junioring 101 - How Not To Go Bonkers At The Start"
+  date: "2021-03-16"
+  description: |
+    Máš svou první práci v IT? Výborně! Ale co teď? Jak být užitečným členem týmu, jak se dál vzdělávat a jak se z toho všeho nezbláznit? Přednáška bude v angličtině.
+  avatar_path: avatars-participants/daria-grudzien.jpg
+  bio_name: Daria Grudzien
+  bio_title: Spoluzakladatelka CyberMagnolia, ex-Apiary SRE
+  bio: |
+    Daria Grudzien is a Site Reliability Engineer and a [CyberMagnolia community](https://cybermagnolia.com/) founder. She has switched career from a businesswoman to an engineer and now she’s mentoring other juniors starting their career. In her work she’s helping developers deploy code to production faster and brings visibility to production systems. She’s passionate about the topic of oncall training and making sure that all engineers carrying the pager feel confident. Check out also [interview with Daria](https://cybermagnolia.com/blog/daria-grudzien-interview/) or her [blog post on a similar topic](https://dariagrudzien.com/posts/the-one-about-managing-self-as-a-junior/)!
+  bio_links:
+    - https://dariagrudzien.com/
+    - https://www.linkedin.com/in/dariagru/
+    - https://github.com/dariagrudzien
+    - https://twitter.com/dariagrudzien
+    - https://www.instagram.com/gruontheroad/
+  logo_path: logos/cybermagnolia.svg
+  speakers: 789165121771536404
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/822066882298642462
+
+- id: 1
+  title: První klubový sraz
+  date: "2021-02-11"
+  time: "18:30"
+  description: |
+    Začneme s _lightning talks_. Přihlášené příspěvky:
+
+    -   Honza Javorek – Co a jak s GitHub profilem
+    -   Daniel Srb – Jak si přepočítat hodinovku jako OSVČ na mzdu zaměstnance a opačně
+    -   Karolina Surma - OSM + uMap + GitHub a špetka Bashe = dynamická mapa do každé domácnosti
+
+    Pak bude volná debata podobně, jako když se lidi sejdou v hospodě.
+  bio_name: Honza Javorek, Daniel Srb, Karolina Surma
+  bio: |
+    Kdokoliv z účastníků srazu si může přihlásit _lightning talk_ a dostane prostor.
+  speakers: 668226181769986078, 652142810291765248, 797088930758524959

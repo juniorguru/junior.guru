@@ -1,6 +1,6 @@
-jg/core/data/tips/*.md
-jg/core/**/*.jinja
-jg/core/web/**/*.html
-jg/core/web/**/*.md
-jg/core/*_legacy
+coop/data/tips/*.md
+coop/**/*.jinja
+coop/web/**/*.html
+coop/web/**/*.md
+coop/*_legacy
 tests

@@ -1,4 +1,4 @@
-from jg.core.lib.chunks import chunks
+from coop.lib.chunks import chunks
 
 
 def test_chunks():

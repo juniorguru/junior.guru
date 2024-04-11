@@ -2,7 +2,7 @@ from datetime import date
 
 import pytest
 
-from jg.core.sync.transactions import (
+from coop.sync.transactions import (
     get_todo_key,
     normalize_variable_symbol,
     parse_todo_text,

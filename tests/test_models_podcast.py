@@ -3,7 +3,7 @@ from zoneinfo import ZoneInfo
 
 import pytest
 
-from jg.core.models.podcast import PodcastEpisode
+from coop.models.podcast import PodcastEpisode
 
 
 def test_publish_at_prg():
