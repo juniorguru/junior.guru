@@ -3,7 +3,6 @@ from datetime import datetime, timedelta
 
 import discord
 from discord import MessageType, TextChannel
-
 from jg.chick.lib import intro
 from jg.chick.lib.threads import (
     add_members_with_role,
@@ -11,6 +10,7 @@ from jg.chick.lib.threads import (
     is_thread_created,
     name_thread,
 )
+
 from coop.cli.sync import main as cli
 from coop.lib import discord_task, loggers, mutations
 from coop.lib.discord_club import (

@@ -4,8 +4,8 @@ from datetime import date, timedelta
 
 import click
 from discord import Color, Embed
-
 from jg.chick.lib.threads import add_members_with_role
+
 from coop.cli.sync import main as cli
 from coop.lib import discord_task, loggers
 from coop.lib.discord_club import (
