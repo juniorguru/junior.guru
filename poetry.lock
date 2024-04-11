@@ -978,6 +978,30 @@ python-dateutil = ">=2.8.1"
 dev = ["flake8", "markdown", "twine", "wheel"]
 
 [[package]]
+name = "githubkit"
+version = "0.11.3"
+description = "GitHub SDK for Python"
+optional = false
+python-versions = "<4.0,>=3.8"
+files = [
+    {file = "githubkit-0.11.3-py3-none-any.whl", hash = "sha256:94e7a5474b3c9a2e7550f275bdbbafb037ab1bc93d6ca76c67643fdaec49a279"},
+    {file = "githubkit-0.11.3.tar.gz", hash = "sha256:0a592e04541242f812030a7957c2b2f370d34c92eaeb405f641496a46e69c2f3"},
+]
+
+[package.dependencies]
+hishel = ">=0.0.21,<=0.0.24"
+httpx = ">=0.23.0,<1.0.0"
+pydantic = ">=1.9.1,<2.5.0 || >2.5.0,<2.5.1 || >2.5.1,<3.0.0"
+typing-extensions = ">=4.3.0,<5.0.0"
+
+[package.extras]
+all = ["PyJWT[crypto] (>=2.4.0,<3.0.0)", "anyio (>=3.6.1,<5.0.0)"]
+auth = ["PyJWT[crypto] (>=2.4.0,<3.0.0)", "anyio (>=3.6.1,<5.0.0)"]
+auth-app = ["PyJWT[crypto] (>=2.4.0,<3.0.0)"]
+auth-oauth-device = ["anyio (>=3.6.1,<5.0.0)"]
+jwt = ["PyJWT[crypto] (>=2.4.0,<3.0.0)"]
+
+[[package]]
 name = "google-api-core"
 version = "2.18.0"
 description = "Google API client core library"
@@ -1231,6 +1255,27 @@ files = [
 ]
 
 [[package]]
+name = "hishel"
+version = "0.0.24"
+description = "Persistent cache implementation for httpx and httpcore"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "hishel-0.0.24-py3-none-any.whl", hash = "sha256:8b6e43481485e1938d78bd35c0bcb38646fe8f2e090fedb64b4dc1d6015ffe49"},
+    {file = "hishel-0.0.24.tar.gz", hash = "sha256:4ac494c6bfedc431e480ab85d3435d4710230b2ad6092766b6ccf82b1d7e4152"},
+]
+
+[package.dependencies]
+httpx = ">=0.22.0"
+typing-extensions = ">=4.8.0"
+
+[package.extras]
+redis = ["redis (==5.0.1)"]
+s3 = ["boto3 (>=1.15.0,<=1.15.3)", "boto3 (>=1.15.3)"]
+sqlite = ["anysqlite (>=0.0.5)"]
+yaml = ["pyyaml (==6.0.1)"]
+
+[[package]]
 name = "httpcore"
 version = "1.0.5"
 description = "A minimal low-level HTTP client."
@@ -1387,13 +1432,37 @@ develop = false
 
 [package.dependencies]
 aiohttp = "3.9.3"
+click = "8.1.7"
+"jg.hen" = {git = "https://github.com/juniorguru/hen.git"}
 py-cord = {version = "2.5.0", extras = ["speed"]}
 
 [package.source]
 type = "git"
 url = "https://github.com/juniorguru/chick.git"
 reference = "HEAD"
-resolved_reference = "9d2d9c15f87a4b90776ce9d678a766b6061850a1"
+resolved_reference = "06fb256af33e981268d60a801fe11104e6591534"
+
+[[package]]
+name = "jg-hen"
+version = "0.0"
+description = "Automated GitHub profile review"
+optional = false
+python-versions = "3.11.*"
+files = []
+develop = false
+
+[package.dependencies]
+blinker = "1.7.0"
+click = "8.1.7"
+githubkit = "0.11.3"
+httpx = "0.27.0"
+pillow = "10.3.0"
+
+[package.source]
+type = "git"
+url = "https://github.com/juniorguru/hen.git"
+reference = "HEAD"
+resolved_reference = "85f512223f55bd2e83bd17f828e24c2a3127780e"
 
 [[package]]
 name = "jinja2"
