@@ -2,8 +2,8 @@ from datetime import date
 
 import pytest
 
-from juniorguru.models.course_provider import CourseProvider
-from juniorguru.models.partner import Partner, Partnership, PartnershipPlan
+from jg.core.models.course_provider import CourseProvider
+from jg.core.models.partner import Partner, Partnership, PartnershipPlan
 
 from testing_utils import (
     prepare_course_provider_data,

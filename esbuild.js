@@ -9,9 +9,9 @@ if (!outdir) {
 
 await esbuild.build({
   entryPoints: [
-    "juniorguru/js/index.js",
-    "juniorguru/css/index.scss",
-    "juniorguru/css_legacy/index.scss",
+    "jg/core/js/index.js",
+    "jg/core/css/index.scss",
+    "jg/core/css_legacy/index.scss",
   ],
   bundle: true,
   minify: true,

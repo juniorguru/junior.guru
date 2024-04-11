@@ -3,17 +3,17 @@ from datetime import date, datetime
 
 import pytest
 
-from juniorguru.models.club import ClubMessage, ClubUser
-from juniorguru.models.course_provider import CourseProvider
-from juniorguru.models.event import Event
-from juniorguru.models.job import ListedJob, SubmittedJob
-from juniorguru.models.partner import (
+from jg.core.models.club import ClubMessage, ClubUser
+from jg.core.models.course_provider import CourseProvider
+from jg.core.models.event import Event
+from jg.core.models.job import ListedJob, SubmittedJob
+from jg.core.models.partner import (
     Partner,
     Partnership,
     PartnershipBenefit,
     PartnershipPlan,
 )
-from juniorguru.models.podcast import PodcastEpisode
+from jg.core.models.podcast import PodcastEpisode
 
 from testing_utils import (
     prepare_course_provider_data,

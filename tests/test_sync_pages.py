@@ -2,7 +2,7 @@ from textwrap import dedent
 
 import pytest
 
-from juniorguru.sync.pages import parse_meta, parse_notes
+from jg.core.sync.pages import parse_meta, parse_notes
 
 
 def test_parse_meta():

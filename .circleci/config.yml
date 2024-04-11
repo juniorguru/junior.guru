@@ -134,8 +134,8 @@ jobs:
           root: "~"
           paths:
             - project/.cache
-            - project/juniorguru/data
-            - project/juniorguru/images
+            - project/jg/core/data
+            - project/jg/core/images
 
   # Requires:
   #
@@ -184,15 +184,15 @@ jobs:
           key: cache-v2-{{ .Branch }}-{{ .Revision }}
           paths:
             - .cache
-            - juniorguru/images/posters-events
-            - juniorguru/images/posters-partners
-            - juniorguru/images/posters-podcast
-            - juniorguru/images/thumbnails
+            - jg/core/images/posters-events
+            - jg/core/images/posters-partners
+            - jg/core/images/posters-podcast
+            - jg/core/images/thumbnails
       - persist_to_workspace:
           root: "~"
           paths:
-            - project/juniorguru/data
-            - project/juniorguru/images
+            - project/jg/core/data
+            - project/jg/core/images
       - when:
           condition:
             equal: [main, << pipeline.git.branch >>]
@@ -201,9 +201,9 @@ jobs:
             - run:
                 name: Save to GitHub
                 command: |
-                  poetry run jg save-changes juniorguru/data/followers.jsonl --message="record followers 📊🦸‍♂️"
-                  poetry run jg save-changes juniorguru/data/transactions.jsonl --message="record transactions 📊💰"
-                  poetry run jg save-changes juniorguru/data/subscription_activities.jsonl --message="record subscriptions 📊💳"
+                  poetry run jg save-changes jg/core/data/followers.jsonl --message="record followers 📊🦸‍♂️"
+                  poetry run jg save-changes jg/core/data/transactions.jsonl --message="record transactions 📊💰"
+                  poetry run jg save-changes jg/core/data/subscription_activities.jsonl --message="record subscriptions 📊💳"
 
   web:
     executor: python-js

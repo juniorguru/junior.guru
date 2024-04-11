@@ -9,9 +9,9 @@ if (!outdir) {
 }
 
 await esbuild.build({
-  entryPoints: (await readdir("juniorguru/image_templates"))
+  entryPoints: (await readdir("jg/core/image_templates"))
     .filter((file) => file.endsWith(".scss"))
-    .map((file) => `juniorguru/image_templates/${file}`),
+    .map((file) => `jg/core/image_templates/${file}`),
   bundle: true,
   minify: true,
   sourcemap: true,

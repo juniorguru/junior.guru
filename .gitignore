@@ -78,14 +78,14 @@ google_service_account.json
 .*cache
 
 # Synced data
-/juniorguru/data/*.db
-/juniorguru/data/*.db-*
-/juniorguru/images/avatars-club/*.png
-/juniorguru/images/logos-jobs/*.png
-/juniorguru/images/posters-events/*.png
-/juniorguru/images/posters-partners/*.png
-/juniorguru/images/posters-podcast/*.png
-/juniorguru/images/thumbnails/*.png
+/jg/core/data/*.db
+/jg/core/data/*.db-*
+/jg/core/images/avatars-club/*.png
+/jg/core/images/logos-jobs/*.png
+/jg/core/images/posters-events/*.png
+/jg/core/images/posters-partners/*.png
+/jg/core/images/posters-podcast/*.png
+/jg/core/images/thumbnails/*.png
 
 # Data persisting and merging
 .persist-to-workspace-snapshot

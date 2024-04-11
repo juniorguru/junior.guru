@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.sync.subscriptions_csv import (
+from jg.core.sync.subscriptions_csv import (
     classify_marketing_survey_answer,
     classify_referrer,
 )

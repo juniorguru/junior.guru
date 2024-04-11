@@ -1,7 +1,7 @@
 import pytest
 
-from juniorguru.sync.jobs_scraped import DropItem
-from juniorguru.sync.jobs_scraped.pipelines.blocklist_filter import process
+from jg.core.sync.jobs_scraped import DropItem
+from jg.core.sync.jobs_scraped.pipelines.blocklist_filter import process
 
 
 @pytest.mark.asyncio

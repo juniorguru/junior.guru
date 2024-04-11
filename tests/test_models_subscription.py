@@ -2,7 +2,7 @@ from datetime import date, datetime
 
 import pytest
 
-from juniorguru.models.subscription import SubscriptionActivity
+from jg.core.models.subscription import SubscriptionActivity
 
 from testing_utils import prepare_test_db
 

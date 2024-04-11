@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.cli import screenshots
+from jg.core.cli import screenshots
 
 
 @pytest.mark.parametrize(

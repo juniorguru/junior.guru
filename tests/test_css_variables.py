@@ -9,7 +9,7 @@ EXCEPTIONS = ["icon.svg"]
 SCSS_VARIABLE_RE = re.compile(r"(\$[^:]+):\s+([^;]+);")
 CSS_VARIABLE_RE = re.compile(r"(\-\-[^:]+):\s+([^;]+);")
 SVG_FILL_RE = re.compile(r"fill='(\#[^']+)'" + r'|fill="(\#[^"]+)"|fill:\s*(\#[^;]+);')
-PACKAGE_DIR = Path("juniorguru")
+PACKAGE_DIR = Path("jg/core")
 
 
 def parse(css_text, match_re):

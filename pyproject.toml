@@ -1,15 +1,16 @@
 [tool.poetry]
-name = "juniorguru"
-version = "0.0.0"
-description = "Learn to code and get your first job in tech 🐣"
+name = "jg.core"
+version = "0.0"
+description = "The junior.guru website, Discord bot, and synchronization scripts"
 authors = ["Honza Javorek <honza@junior.guru>"]
 license = "MIT"
 readme = "README.md"
 homepage = "https://junior.guru/"
 repository = "https://github.com/juniorguru/junior.guru/"
+packages = [{ include = "jg" }]
 
 [tool.poetry.scripts]
-jg = "juniorguru.cli:main"
+jg = "jg.core.cli:main"
 
 [tool.poetry.dependencies]
 python = "3.11.*"

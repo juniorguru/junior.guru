@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.sync.jobs_scraped.pipelines.gender_remover import process
+from jg.core.sync.jobs_scraped.pipelines.gender_remover import process
 
 
 @pytest.mark.parametrize(

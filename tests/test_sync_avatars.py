@@ -1,6 +1,6 @@
 import pytest
 
-from juniorguru.sync.avatars import is_default_avatar
+from jg.core.sync.avatars import is_default_avatar
 
 
 @pytest.mark.parametrize(

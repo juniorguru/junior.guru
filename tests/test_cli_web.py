@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from juniorguru.cli.web import resolve_path
+from jg.core.cli.web import resolve_path
 
 
 @pytest.mark.parametrize(

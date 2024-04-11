@@ -2,8 +2,8 @@ from datetime import date, datetime
 
 import pytest
 
-from juniorguru.models.subscription import SubscriptionActivityType
-from juniorguru.sync.subscriptions import (
+from jg.core.models.subscription import SubscriptionActivityType
+from jg.core.sync.subscriptions import (
     activities_from_subscription,
     get_coupon_slug,
     get_timestamp,

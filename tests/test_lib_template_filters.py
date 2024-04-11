@@ -5,7 +5,7 @@ import arrow
 import pytest
 from mkdocs.structure.files import File
 
-from juniorguru.lib import template_filters
+from jg.core.lib import template_filters
 
 
 def test_email_link():
@@ -178,9 +178,9 @@ def test_docs_url():
     assert (
         template_filters.docs_url(
             [
-                File("privacy.md", "juniorguru/web/docs", "public", True),
-                File("club.md", "juniorguru/web/docs", "public", True),
-                File("topics/csharp.md", "juniorguru/web/docs", "public", True),
+                File("privacy.md", "jg/core/web/docs", "public", True),
+                File("club.md", "jg/core/web/docs", "public", True),
+                File("topics/csharp.md", "jg/core/web/docs", "public", True),
             ],
             "club.md",
         )

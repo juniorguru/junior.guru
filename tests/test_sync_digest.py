@@ -1,8 +1,8 @@
 import pytest
 
-from juniorguru.lib.discord_club import CLUB_GUILD
-from juniorguru.models.club import ClubMessage, ClubUser
-from juniorguru.sync.digest import (
+from jg.core.lib.discord_club import CLUB_GUILD
+from jg.core.models.club import ClubMessage, ClubUser
+from jg.core.sync.digest import (
     format_channel,
     format_channel_digest,
     format_content,

@@ -1,6 +1,6 @@
-juniorguru/data/tips/*.md
-juniorguru/**/*.jinja
-juniorguru/web/**/*.html
-juniorguru/web/**/*.md
-juniorguru/*_legacy
+jg/core/data/tips/*.md
+jg/core/**/*.jinja
+jg/core/web/**/*.html
+jg/core/web/**/*.md
+jg/core/*_legacy
 tests
