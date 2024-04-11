@@ -1,5 +1,7 @@
 # junior.guru (AKA core) 🐣
 
+The junior.guru website, Discord bot, and synchronization scripts.
+
 ## Status of the README
 
 This README is missing a lot of information. Honza didn't have time yet to add a proper, nice README. The file currently only includes documentation of the hard parts of the development process, which would be easy to forget and difficult to learn again.
