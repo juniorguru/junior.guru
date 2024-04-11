@@ -1,4 +1,4 @@
-# junior.guru aka coop 🐣
+# junior.guru (aka coop) 🐣
 
 The junior.guru website, Discord bot, and synchronization scripts.
 
