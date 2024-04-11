@@ -3,8 +3,8 @@ from datetime import datetime, timedelta
 
 import discord
 from discord import MessageType, TextChannel
-from juniorguru_chick.lib import intro
-from juniorguru_chick.lib.threads import (
+from jg.chick.lib import intro
+from jg.chick.lib.threads import (
     add_members_with_role,
     ensure_thread_name,
     is_thread_created,

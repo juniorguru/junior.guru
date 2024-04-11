@@ -1377,6 +1377,25 @@ files = [
 ]
 
 [[package]]
+name = "jg-chick"
+version = "0.0"
+description = "A real-time, synchronous junior.guru Discord bot"
+optional = false
+python-versions = "3.11.*"
+files = []
+develop = false
+
+[package.dependencies]
+aiohttp = "3.9.3"
+py-cord = {version = "2.5.0", extras = ["speed"]}
+
+[package.source]
+type = "git"
+url = "https://github.com/juniorguru/chick.git"
+reference = "HEAD"
+resolved_reference = "3305b38344e2c9e99f235ec7fbaeed552d930bd0"
+
+[[package]]
 name = "jinja2"
 version = "3.1.3"
 description = "A very fast and expressive template engine."
@@ -1392,25 +1411,6 @@ MarkupSafe = ">=2.0"
 
 [package.extras]
 i18n = ["Babel (>=2.7)"]
-
-[[package]]
-name = "juniorguru-chick"
-version = "0.0.0"
-description = "A real-time, synchronous junior.guru Discord bot"
-optional = false
-python-versions = "3.11.*"
-files = []
-develop = false
-
-[package.dependencies]
-aiohttp = "3.9.3"
-py-cord = {version = "2.5.0", extras = ["speed"]}
-
-[package.source]
-type = "git"
-url = "https://github.com/juniorguru/chick.git"
-reference = "HEAD"
-resolved_reference = "88e859c790a83dbdfdb240ae0a94b612a49d754a"
 
 [[package]]
 name = "lingua-language-detector"
@@ -3375,4 +3375,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.*"
-content-hash = "87647dada4bdcd3ab06ee45012bc6efa3bb7c8ce9de9a4c0a1c34b1863f9f486"
+content-hash = "638764a2b24b9ceb46a1649b651be0e7b369203caa3867feff8f3e6290dbce9a"
