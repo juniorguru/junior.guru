@@ -91,7 +91,7 @@
 
 - name: CDN77.com
   slug: cdn77com
-  url: https://cdn77.jobs/
+  url: https://www.cdn77.com/
   partnerships:
     - plan: branding
       starts_on: 2021-11-01

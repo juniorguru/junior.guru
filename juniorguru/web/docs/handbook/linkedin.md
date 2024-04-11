@@ -18,6 +18,8 @@ template: main_handbook.html
 
 <!-- {#
 
+https://www.linkedin.com/posts/marketa-willis_tohle-bude-mo%C5%BEn%C3%A1-zn%C3%ADt-drsn%C4%9B-pokud-jste-na-activity-7183855127559065600-jmo9?utm_source=share&utm_medium=member_desktop
+
 https://navolnenoze.cz/novinky/minutovy-kurz-linkedin/
 
 — na linkedin si můžeš nastavit vlastní URL a nebude to tak dlouhé
