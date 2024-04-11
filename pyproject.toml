@@ -44,7 +44,7 @@ playwright = "1.43.0"
 click = "8.1.7"
 mkdocs-gen-files = "0.5.0"
 mkdocs-awesome-pages-plugin = "2.9.2"
-"jg.chick" = { git = "https://github.com/juniorguru/chick.git" }
+jg-chick = { git = "https://github.com/juniorguru/chick.git" }
 pycircleci = "0.7.0"
 livereload = "2.6.3"
 beautifulsoup4 = "4.12.3"
