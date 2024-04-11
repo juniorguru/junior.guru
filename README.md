@@ -1,4 +1,4 @@
-# junior.guru
+# junior.guru (AKA core) 🐣
 
 ## Status of the README
 
@@ -6,17 +6,9 @@ This README is missing a lot of information. Honza didn't have time yet to add a
 
 ## Contributions
 
-Don't panic, failing build under your PR is unrelated to your changes. Contributions are welcome, but Honza didn't have much time yet to make the repo very friendly to contributors. Very likely, your PR fixing a typo in the text will get merged regardless the failing checks.
+Contributions are welcome, but Honza didn't have much time yet to make the repo very friendly to contributors.
 
 ## Installation on macOS M1
-
-This is needed for SciPy to work (thanks [@lutzroeder](https://github.com/scipy/scipy/issues/13409#issuecomment-774640468)):
-
-```
-$ brew install openblas gfortran
-$ export OPENBLAS=$(/usr/local/bin/brew --prefix openblas)
-$ export CFLAGS="-falign-functions=8 ${CFLAGS}"
-```
 
 This is needed for decrypting backups:
 
