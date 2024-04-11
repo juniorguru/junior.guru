@@ -1,6 +1,6 @@
 import pytest
 
-from coop.lib.cli import command_name
+from jg.coop.lib.cli import command_name
 
 
 @pytest.mark.parametrize(

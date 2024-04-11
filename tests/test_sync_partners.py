@@ -1,4 +1,4 @@
-from coop.sync.partners import get_coupons_mapping
+from jg.coop.sync.partners import get_coupons_mapping
 
 
 def test_get_coupons_mapping():

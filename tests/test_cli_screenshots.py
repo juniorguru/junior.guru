@@ -1,6 +1,6 @@
 import pytest
 
-from coop.cli import screenshots
+from jg.coop.cli import screenshots
 
 
 @pytest.mark.parametrize(

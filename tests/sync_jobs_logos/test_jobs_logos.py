@@ -3,7 +3,7 @@ from pathlib import Path
 import pytest
 from PIL import Image
 
-from coop.sync.jobs_logos import (
+from jg.coop.sync.jobs_logos import (
     SIZE_PX,
     choose_user_agent,
     convert_image,

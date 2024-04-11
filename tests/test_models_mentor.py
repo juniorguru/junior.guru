@@ -1,7 +1,7 @@
 import pytest
 
-from coop.models.club import ClubUser
-from coop.models.mentor import Mentor
+from jg.coop.models.club import ClubUser
+from jg.coop.models.mentor import Mentor
 
 from testing_utils import prepare_test_db
 

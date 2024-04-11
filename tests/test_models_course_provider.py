@@ -2,8 +2,8 @@ from datetime import date
 
 import pytest
 
-from coop.models.course_provider import CourseProvider
-from coop.models.partner import Partner, Partnership, PartnershipPlan
+from jg.coop.models.course_provider import CourseProvider
+from jg.coop.models.partner import Partner, Partnership, PartnershipPlan
 
 from testing_utils import (
     prepare_course_provider_data,

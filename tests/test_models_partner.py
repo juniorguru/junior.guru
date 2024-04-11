@@ -3,17 +3,17 @@ from datetime import date, datetime
 
 import pytest
 
-from coop.models.club import ClubMessage, ClubUser
-from coop.models.course_provider import CourseProvider
-from coop.models.event import Event
-from coop.models.job import ListedJob, SubmittedJob
-from coop.models.partner import (
+from jg.coop.models.club import ClubMessage, ClubUser
+from jg.coop.models.course_provider import CourseProvider
+from jg.coop.models.event import Event
+from jg.coop.models.job import ListedJob, SubmittedJob
+from jg.coop.models.partner import (
     Partner,
     Partnership,
     PartnershipBenefit,
     PartnershipPlan,
 )
-from coop.models.podcast import PodcastEpisode
+from jg.coop.models.podcast import PodcastEpisode
 
 from testing_utils import (
     prepare_course_provider_data,

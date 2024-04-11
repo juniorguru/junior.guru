@@ -2,7 +2,7 @@ from datetime import date, datetime
 
 import pytest
 
-from coop.models.subscription import SubscriptionActivity
+from jg.coop.models.subscription import SubscriptionActivity
 
 from testing_utils import prepare_test_db
 

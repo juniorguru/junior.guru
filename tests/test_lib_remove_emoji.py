@@ -1,6 +1,6 @@
 import pytest
 
-from coop.lib.remove_emoji import remove_emoji
+from jg.coop.lib.remove_emoji import remove_emoji
 
 
 @pytest.mark.parametrize(

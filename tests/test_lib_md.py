@@ -1,4 +1,4 @@
-from coop.lib.md import md, strip_links
+from jg.coop.lib.md import md, strip_links
 
 
 def test_md():

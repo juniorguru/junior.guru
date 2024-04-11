@@ -1,6 +1,6 @@
 from collections import namedtuple
 
-from coop.lib import discord_votes
+from jg.coop.lib import discord_votes
 
 
 StubReaction = namedtuple("Reaction", ["emoji", "count"])

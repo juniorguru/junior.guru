@@ -1393,7 +1393,7 @@ py-cord = {version = "2.5.0", extras = ["speed"]}
 type = "git"
 url = "https://github.com/juniorguru/chick.git"
 reference = "HEAD"
-resolved_reference = "679c1ad14c8d7eea08ac628c59363316c0210fc2"
+resolved_reference = "9d2d9c15f87a4b90776ce9d678a766b6061850a1"
 
 [[package]]
 name = "jinja2"
@@ -3375,4 +3375,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.*"
-content-hash = "75efa9dbf0a62b234a85c6704e8d2d04af5f34e3eb6fac9c84fc87e1e875b8a3"
+content-hash = "7a5b5ab1448b24a04353f99af1c4e1cf54df7cd3d19ce6e941ab286c18737cdb"

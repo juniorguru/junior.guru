@@ -3,7 +3,7 @@ from datetime import date
 
 import pytest
 
-from coop.sync.core_members_discount import (
+from jg.coop.sync.core_members_discount import (
     get_discount_info,
     is_recent_reminder,
     repr_members,

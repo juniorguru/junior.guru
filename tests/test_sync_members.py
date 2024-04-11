@@ -2,7 +2,7 @@ from datetime import date, datetime
 
 import pytest
 
-from coop.sync.members import get_active_subscription, get_coupon, get_expires_at
+from jg.coop.sync.members import get_active_subscription, get_coupon, get_expires_at
 
 
 PLAN_CLUB = dict(planGroup=dict(name="abc"))

@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from coop.cli.web import resolve_path
+from jg.coop.cli.web import resolve_path
 
 
 @pytest.mark.parametrize(

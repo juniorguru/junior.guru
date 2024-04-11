@@ -1,6 +1,6 @@
 import pytest
 
-from coop.sync.avatars import is_default_avatar
+from jg.coop.sync.avatars import is_default_avatar
 
 
 @pytest.mark.parametrize(

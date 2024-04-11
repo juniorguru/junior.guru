@@ -1,6 +1,6 @@
 import pytest
 
-from coop.lib import url_params
+from jg.coop.lib import url_params
 
 
 @pytest.mark.parametrize(

@@ -1,6 +1,6 @@
 import pytest
 
-from coop.sync.subscriptions_csv import (
+from jg.coop.sync.subscriptions_csv import (
     classify_marketing_survey_answer,
     classify_referrer,
 )

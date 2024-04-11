@@ -7,11 +7,11 @@ license = "MIT"
 readme = "README.md"
 homepage = "https://junior.guru/"
 repository = "https://github.com/juniorguru/junior.guru/"
-packages = [{ include = "coop" }]
+packages = [{ include = "jg" }]
 
 [tool.poetry.scripts]
-jg = "coop.cli:main"
-coop = "coop.cli:main"
+jg = "jg.coop.cli:main"
+coop = "jg.coop.cli:main"
 
 [tool.poetry.dependencies]
 python = "3.11.*"
@@ -44,7 +44,7 @@ playwright = "1.43.0"
 click = "8.1.7"
 mkdocs-gen-files = "0.5.0"
 mkdocs-awesome-pages-plugin = "2.9.2"
-jg-chick = { git = "https://github.com/juniorguru/chick.git" }
+"jg.chick" = { git = "https://github.com/juniorguru/chick.git" }
 pycircleci = "0.7.0"
 livereload = "2.6.3"
 beautifulsoup4 = "4.12.3"
@@ -88,6 +88,7 @@ extend-select = ["I"]
 [tool.ruff.lint.isort]
 combine-as-imports = true
 lines-after-imports = 2
+known-third-party = ["jg.chick", "jg.hen"]
 known-local-folder = ["testing_utils"]
 
 [build-system]

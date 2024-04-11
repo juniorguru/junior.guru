@@ -1,6 +1,6 @@
-coop/data/tips/*.md
-coop/**/*.jinja
-coop/web/**/*.html
-coop/web/**/*.md
-coop/*_legacy
+jg/coop/data/tips/*.md
+jg/coop/**/*.jinja
+jg/coop/web/**/*.html
+jg/coop/web/**/*.md
+jg/coop/*_legacy
 tests

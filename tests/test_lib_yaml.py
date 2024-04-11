@@ -3,7 +3,7 @@ from datetime import date
 import pytest
 from strictyaml import Map, load
 
-from coop.lib.yaml import Date
+from jg.coop.lib.yaml import Date
 
 
 def test_date():

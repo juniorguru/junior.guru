@@ -2,8 +2,8 @@ from datetime import datetime
 
 import pytest
 
-from coop.models.club import ClubUser
-from coop.models.event import Event, EventSpeaking
+from jg.coop.models.club import ClubUser
+from jg.coop.models.event import Event, EventSpeaking
 
 from testing_utils import prepare_test_db
 

@@ -4,7 +4,7 @@ from datetime import datetime, timedelta, timezone
 
 import pytest
 
-from coop.sync.club_content.crawler import get_channel_logger, get_history_after
+from jg.coop.sync.club_content.crawler import get_channel_logger, get_history_after
 
 
 def test_get_history_after_given_naive_datetime():

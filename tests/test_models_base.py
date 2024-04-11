@@ -2,7 +2,7 @@ from datetime import date, datetime, time
 
 import pytest
 
-from coop.models.base import json_dumps
+from jg.coop.models.base import json_dumps
 
 
 @pytest.mark.parametrize(

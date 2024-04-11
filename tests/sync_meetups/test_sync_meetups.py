@@ -6,8 +6,8 @@ from typing import Any
 
 import pytest
 
-from coop.lib.discord_club import ClubMemberID
-from coop.sync.meetups import (
+from jg.coop.lib.discord_club import ClubMemberID
+from jg.coop.sync.meetups import (
     generate_scheduled_event,
     generate_starting_message_content,
     generate_thread_message_content,

@@ -1,7 +1,7 @@
 import pytest
 
-from coop.sync.jobs_scraped import DropItem
-from coop.sync.jobs_scraped.pipelines.language_filter import process
+from jg.coop.sync.jobs_scraped import DropItem
+from jg.coop.sync.jobs_scraped.pipelines.language_filter import process
 
 
 @pytest.mark.parametrize("lang", ["cs", "en", "sk"])

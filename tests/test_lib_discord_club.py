@@ -4,8 +4,8 @@ from datetime import date, datetime, timedelta, timezone
 import pytest
 from discord import ChannelType, Route
 
-from coop.lib import discord_club
-from coop.lib.mutations import MutationsNotAllowedError
+from jg.coop.lib import discord_club
+from jg.coop.lib.mutations import MutationsNotAllowedError
 
 
 StubEmoji = namedtuple("Emoji", ["name"])

@@ -2,11 +2,11 @@ import asyncio
 
 import pytest
 
-from coop.lib.global_state import (
+from jg.coop.lib.global_state import (
     load as load_global_state,
     save as save_global_state,
 )
-from coop.lib.mutations import (
+from jg.coop.lib.mutations import (
     MutationsNotAllowedError,
     allow,
     allow_all,

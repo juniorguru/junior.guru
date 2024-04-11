@@ -4,9 +4,9 @@ from typing import Generator
 
 import pytest
 
-from coop.models.base import SqliteDatabase
-from coop.models.page import Page
-from coop.models.stage import Stage
+from jg.coop.models.base import SqliteDatabase
+from jg.coop.models.page import Page
+from jg.coop.models.stage import Stage
 
 from testing_utils import prepare_test_db
 
