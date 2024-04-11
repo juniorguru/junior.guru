@@ -22,19 +22,19 @@ ACTORS = [
 ]
 
 PIPELINES = [
-    "juniorguru.sync.jobs_scraped.pipelines.time_filter",
-    "juniorguru.sync.jobs_scraped.pipelines.blocklist_filter",
-    "juniorguru.sync.jobs_scraped.pipelines.broken_encoding_filter",
-    "juniorguru.sync.jobs_scraped.pipelines.description_parser",
-    "juniorguru.sync.jobs_scraped.pipelines.language_parser",
-    "juniorguru.sync.jobs_scraped.pipelines.language_filter",
-    "juniorguru.sync.jobs_scraped.pipelines.llm_opinion",
-    "juniorguru.sync.jobs_scraped.pipelines.relevance_filter",
-    "juniorguru.sync.jobs_scraped.pipelines.juniority_filter",
-    "juniorguru.sync.jobs_scraped.pipelines.boards_ids",
-    "juniorguru.sync.jobs_scraped.pipelines.gender_remover",
-    "juniorguru.sync.jobs_scraped.pipelines.emoji_remover",
-    "juniorguru.sync.jobs_scraped.pipelines.employment_types_cleaner",
+    "jg.coop.jobs_scraped.pipelines.time_filter",
+    "jg.coop.jobs_scraped.pipelines.blocklist_filter",
+    "jg.coop.jobs_scraped.pipelines.broken_encoding_filter",
+    "jg.coop.jobs_scraped.pipelines.description_parser",
+    "jg.coop.jobs_scraped.pipelines.language_parser",
+    "jg.coop.jobs_scraped.pipelines.language_filter",
+    "jg.coop.jobs_scraped.pipelines.llm_opinion",
+    "jg.coop.jobs_scraped.pipelines.relevance_filter",
+    "jg.coop.jobs_scraped.pipelines.juniority_filter",
+    "jg.coop.jobs_scraped.pipelines.boards_ids",
+    "jg.coop.jobs_scraped.pipelines.gender_remover",
+    "jg.coop.jobs_scraped.pipelines.emoji_remover",
+    "jg.coop.jobs_scraped.pipelines.employment_types_cleaner",
 ]
 
 
