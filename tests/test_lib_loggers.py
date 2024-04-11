@@ -1,18 +1,18 @@
 import pytest
 
-from jg.core.lib import loggers
+from project.lib import loggers
 
 
 @pytest.mark.parametrize(
     "path, expected",
     [
         (
-            "/a/b/c/juniorguru/jg/core/sync/club_content/__init__.py",
-            "jg.core.sync.club_content",
+            "/a/b/c/juniorguru/project/sync/club_content/__init__.py",
+            "core.sync.club_content",
         ),
         (
-            "/a/b/c/juniorguru/jg/core/sync/club_content/crawler.py",
-            "jg.core.sync.club_content.crawler",
+            "/a/b/c/juniorguru/project/sync/club_content/crawler.py",
+            "core.sync.club_content.crawler",
         ),
     ],
 )

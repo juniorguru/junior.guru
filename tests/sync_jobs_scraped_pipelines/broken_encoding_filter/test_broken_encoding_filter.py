@@ -2,8 +2,8 @@ from pathlib import Path
 
 import pytest
 
-from jg.core.sync.jobs_scraped import DropItem
-from jg.core.sync.jobs_scraped.pipelines.broken_encoding_filter import process
+from project.sync.jobs_scraped import DropItem
+from project.sync.jobs_scraped.pipelines.broken_encoding_filter import process
 
 
 fixtures_raising = [

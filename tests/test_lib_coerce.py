@@ -2,7 +2,7 @@ from datetime import date, datetime
 
 import pytest
 
-from jg.core.lib import google_coerce
+from project.lib import google_coerce
 
 
 def test_coerce():

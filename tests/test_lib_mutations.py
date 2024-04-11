@@ -2,11 +2,11 @@ import asyncio
 
 import pytest
 
-from jg.core.lib.global_state import (
+from project.lib.global_state import (
     load as load_global_state,
     save as save_global_state,
 )
-from jg.core.lib.mutations import (
+from project.lib.mutations import (
     MutationsNotAllowedError,
     allow,
     allow_all,

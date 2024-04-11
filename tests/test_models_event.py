@@ -2,8 +2,8 @@ from datetime import datetime
 
 import pytest
 
-from jg.core.models.club import ClubUser
-from jg.core.models.event import Event, EventSpeaking
+from project.models.club import ClubUser
+from project.models.event import Event, EventSpeaking
 
 from testing_utils import prepare_test_db
 

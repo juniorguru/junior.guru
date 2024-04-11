@@ -4,7 +4,6 @@ executors:
   python-js:
     docker:
       - image: cimg/python:3.11.2-browsers
-    working_directory: ~/project
 
 orbs:
   git-shallow-clone: guitarrapc/git-shallow-clone@2.8.0
@@ -134,8 +133,8 @@ jobs:
           root: "~"
           paths:
             - project/.cache
-            - project/jg/core/data
-            - project/jg/core/images
+            - project/project/data
+            - project/project/images
 
   # Requires:
   #
@@ -184,15 +183,15 @@ jobs:
           key: cache-v2-{{ .Branch }}-{{ .Revision }}
           paths:
             - .cache
-            - jg/core/images/posters-events
-            - jg/core/images/posters-partners
-            - jg/core/images/posters-podcast
-            - jg/core/images/thumbnails
+            - project/images/posters-events
+            - project/images/posters-partners
+            - project/images/posters-podcast
+            - project/images/thumbnails
       - persist_to_workspace:
           root: "~"
           paths:
-            - project/jg/core/data
-            - project/jg/core/images
+            - project/project/data
+            - project/project/images
       - when:
           condition:
             equal: [main, << pipeline.git.branch >>]
@@ -201,9 +200,9 @@ jobs:
             - run:
                 name: Save to GitHub
                 command: |
-                  poetry run jg save-changes jg/core/data/followers.jsonl --message="record followers 📊🦸‍♂️"
-                  poetry run jg save-changes jg/core/data/transactions.jsonl --message="record transactions 📊💰"
-                  poetry run jg save-changes jg/core/data/subscription_activities.jsonl --message="record subscriptions 📊💳"
+                  poetry run jg save-changes project/data/followers.jsonl --message="record followers 📊🦸‍♂️"
+                  poetry run jg save-changes project/data/transactions.jsonl --message="record transactions 📊💰"
+                  poetry run jg save-changes project/data/subscription_activities.jsonl --message="record subscriptions 📊💳"
 
   web:
     executor: python-js

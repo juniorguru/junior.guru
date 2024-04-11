@@ -1,6 +1,6 @@
 import pytest
 
-from jg.core.lib import images
+from project.lib import images
 
 
 @pytest.mark.parametrize(

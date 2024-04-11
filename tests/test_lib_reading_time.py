@@ -1,6 +1,6 @@
 import pytest
 
-from jg.core.lib.reading_time import reading_time
+from project.lib.reading_time import reading_time
 
 
 @pytest.mark.parametrize(

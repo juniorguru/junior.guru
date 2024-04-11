@@ -2,8 +2,8 @@ from datetime import date, datetime, timedelta
 
 import pytest
 
-from jg.core.lib.discord_club import ClubChannelID, ClubMemberID, get_starting_emoji
-from jg.core.models.club import ClubMessage, ClubPin, ClubUser
+from project.lib.discord_club import ClubChannelID, ClubMemberID, get_starting_emoji
+from project.models.club import ClubMessage, ClubPin, ClubUser
 
 from testing_utils import prepare_test_db
 

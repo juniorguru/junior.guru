@@ -1,7 +1,7 @@
 import pytest
 from discord import Reaction
 
-from jg.core.sync.intro import get_missing_reactions
+from project.sync.intro import get_missing_reactions
 
 
 def create_reaction(emoji, me=True):

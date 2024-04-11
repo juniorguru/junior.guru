@@ -1,7 +1,7 @@
 import pytest
 
-from jg.core.models.club import ClubUser
-from jg.core.models.mentor import Mentor
+from project.models.club import ClubUser
+from project.models.mentor import Mentor
 
 from testing_utils import prepare_test_db
 

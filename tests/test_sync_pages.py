@@ -2,13 +2,14 @@ from textwrap import dedent
 
 import pytest
 
-from jg.core.sync.pages import parse_meta, parse_notes
+from project.sync.pages import parse_meta, parse_notes
 
 
 def test_parse_meta():
-    assert parse_meta(
-        dedent(
-            """
+    assert (
+        parse_meta(
+            dedent(
+                """
                     ---
                     title: Jak na Git a GitHub
                     description: Co je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a GitHubem? Jak začít s Gitem?
@@ -18,11 +19,13 @@ def test_parse_meta():
                     # Git a GitHub
 
                 """
+            )
         )
-    ) == dict(
-        title="Jak na Git a GitHub",
-        description="Co je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a GitHubem? Jak začít s Gitem?",
-        template="main_handbook.html",
+        == dict(
+            title="Jak na Git a GitHub",
+            description="Co je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a GitHubem? Jak začít s Gitem?",
+            template="main_handbook.html",
+        )
     )
 
 

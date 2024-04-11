@@ -2,7 +2,7 @@ from datetime import date
 
 import pytest
 
-from jg.core.sync.weekly_plans import parse_week
+from project.sync.weekly_plans import parse_week
 
 
 @pytest.mark.parametrize(

@@ -1,4 +1,4 @@
-from jg.core.lib.md import md, strip_links
+from project.lib.md import md, strip_links
 
 
 def test_md():

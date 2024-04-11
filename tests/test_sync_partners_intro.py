@@ -2,10 +2,10 @@ from datetime import date
 
 import pytest
 
-from jg.core.lib.discord_club import ClubChannelID, ClubEmoji, ClubMemberID
-from jg.core.models.club import ClubMessage, ClubUser
-from jg.core.models.partner import Partner, Partnership, PartnershipPlan
-from jg.core.sync.partners_intro import get_partners_without_intro
+from project.lib.discord_club import ClubChannelID, ClubEmoji, ClubMemberID
+from project.models.club import ClubMessage, ClubUser
+from project.models.partner import Partner, Partnership, PartnershipPlan
+from project.sync.partners_intro import get_partners_without_intro
 
 from testing_utils import prepare_partner_data, prepare_test_db
 

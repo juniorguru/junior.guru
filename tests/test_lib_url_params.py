@@ -1,6 +1,6 @@
 import pytest
 
-from jg.core.lib import url_params
+from project.lib import url_params
 
 
 @pytest.mark.parametrize(

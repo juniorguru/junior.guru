@@ -78,14 +78,14 @@ google_service_account.json
 .*cache
 
 # Synced data
-/jg/core/data/*.db
-/jg/core/data/*.db-*
-/jg/core/images/avatars-club/*.png
-/jg/core/images/logos-jobs/*.png
-/jg/core/images/posters-events/*.png
-/jg/core/images/posters-partners/*.png
-/jg/core/images/posters-podcast/*.png
-/jg/core/images/thumbnails/*.png
+/project/data/*.db
+/project/data/*.db-*
+/project/images/avatars-club/*.png
+/project/images/logos-jobs/*.png
+/project/images/posters-events/*.png
+/project/images/posters-partners/*.png
+/project/images/posters-podcast/*.png
+/project/images/thumbnails/*.png
 
 # Data persisting and merging
 .persist-to-workspace-snapshot

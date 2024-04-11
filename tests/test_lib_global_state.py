@@ -3,7 +3,7 @@ from time import perf_counter_ns
 
 import pytest
 
-from jg.core.lib.global_state import get, load, save, set
+from project.lib.global_state import get, load, save, set
 
 
 @pytest.fixture

@@ -2,7 +2,7 @@ from datetime import date
 
 import pytest
 
-from jg.core.lib import charts
+from project.lib import charts
 
 
 def test_months():
