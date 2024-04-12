@@ -1,9 +1,8 @@
 import base64
-import html
 import re
 from datetime import date, datetime, timedelta
 from pathlib import Path
-from pprint import pformat, pprint
+from pprint import pformat
 from typing import Callable
 
 import click
