@@ -1,13 +1,11 @@
 import csv
-from dataclasses import dataclass
 import json
 import logging
 import os
-from pathlib import Path
 import re
+from dataclasses import dataclass
 from datetime import timedelta
-from typing import Any, Callable, Generator, Self
-from urllib.parse import urlencode
+from typing import Any, Callable, Generator
 
 import requests
 from gql import Client, gql
