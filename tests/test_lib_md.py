@@ -16,15 +16,13 @@ def test_md_headings():
 
 
 def test_strip_links():
-    assert (
-        strip_links(
-            """
+    text = """
         Sedm let na ČRo Wave moderoval své [Dubové okénko
         Prince Wilibalda](https://hledani.rozhlas.cz/iRadio/?query=Dubov%C3%A9+ok%C3%A9nko+Prince+Wilibalda&reader=&stanice%5B%5D=%C4%8CRo+Radio+Wave&porad%5B%5D=Sc%C3%A9na+s+Jakubem+Joh%C3%A1nkem).
     """
-        )
-        == """
+    expected = """
         Sedm let na ČRo Wave moderoval své Dubové okénko
         Prince Wilibalda.
     """
-    )
+
+    assert strip_links(text) == expected

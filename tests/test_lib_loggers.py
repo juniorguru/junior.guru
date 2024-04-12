@@ -8,11 +8,11 @@ from jg.coop.lib import loggers
     [
         (
             "/a/b/c/juniorguru/jg/coop/sync/club_content/__init__.py",
-            "jg.jg.coop.sync.club_content",
+            "jg.coop.sync.club_content",
         ),
         (
             "/a/b/c/juniorguru/jg/coop/sync/club_content/crawler.py",
-            "jg.jg.coop.sync.club_content.crawler",
+            "jg.coop.sync.club_content.crawler",
         ),
     ],
 )

@@ -1,10 +1,12 @@
 import csv
+from dataclasses import dataclass
 import json
 import logging
 import os
+from pathlib import Path
 import re
 from datetime import timedelta
-from typing import Any, Callable, Generator
+from typing import Any, Callable, Generator, Self
 from urllib.parse import urlencode
 
 import requests
@@ -24,7 +26,9 @@ from jg.coop.lib import loggers
 from jg.coop.lib.cache import cache
 
 
-USER_AGENT = "JuniorGuruBot (+https://junior.guru)"
+BOT_USER_AGENT = "JuniorGuruBot (+https://junior.guru)"
+
+BROWSER_USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:124.0) Gecko/20100101 Firefox/124.0"
 
 COLLECTION_NAME_RE = re.compile(r"(?P<collection_name>\w+)\([^\)]*after:\s*\$cursor")
 
@@ -45,8 +49,10 @@ class MemberfulAPI:
     def __init__(
         self,
         api_key: str = None,
+        user_agent: str | None = None,
     ):
         self.api_key = api_key or MEMBERFUL_API_KEY
+        self.user_agent = user_agent or BOT_USER_AGENT
         self._client = None
 
     @property
@@ -57,7 +63,7 @@ class MemberfulAPI:
                 url="https://juniorguru.memberful.com/api/graphql/",
                 headers={
                     "Authorization": f"Bearer {self.api_key}",
-                    "User-Agent": USER_AGENT,
+                    "User-Agent": self.user_agent,
                 },
                 verify=True,
                 retries=3,
@@ -120,7 +126,7 @@ class MemberfulAPI:
             else:
                 cursor = None
 
-    # TODO @cache(expire=timedelta(days=1), ignore=(0,), tag="memberful-api")
+    @cache(expire=timedelta(hours=1), ignore=(0,), tag="memberful-api")
     def _execute_query(self, query: str, variable_values: dict) -> dict:
         logger.debug(
             f"Querying Memberful API, variable values: {json.dumps(variable_values)}"
@@ -132,33 +138,41 @@ class DownloadError(Exception):
     pass
 
 
+@dataclass
+class MemberfulAuthToken:
+    param: str
+    value: str
+
+
 class MemberfulCSV:
     def __init__(
         self,
         email: str = None,
         password: str = None,
+        user_agent: str | None = None,
     ):
         self.email = email or MEMBERFUL_EMAIL
         self.password = password or MEMBERFUL_PASSWORD
+        self.user_agent = user_agent or BROWSER_USER_AGENT
         self._session = None
-        self._csrf_token = None
+        self._auth_token = None
 
     @property
     def session(self) -> requests.Session:
         if not self._session:
-            self._session, self._csrf_token = self._auth()
+            self._session, self._auth_token = self._auth()
         return self._session
 
     @property
-    def csrf_token(self) -> str:
-        if not self._csrf_token:
-            self._session, self._csrf_token = self._auth()
-        return self._csrf_token
+    def auth_token(self) -> MemberfulAuthToken:
+        if not self._auth_token:
+            self._session, self._auth_token = self._auth()
+        return self._auth_token
 
     def _auth(self) -> tuple[requests.Session, Any]:
         logger.debug("Logging into Memberful")
         session = requests.Session()
-        session.headers.update({"User-Agent": USER_AGENT})
+        session.headers.update({"User-Agent": BROWSER_USER_AGENT})
         response = session.get("https://juniorguru.memberful.com/admin/auth/sign_in")
         response.raise_for_status()
         html_tree = html.fromstring(response.content)
@@ -168,39 +182,62 @@ class MemberfulCSV:
         form.fields["password"] = self.password
         response = session.post(form.action, data=form.form_values())
         response.raise_for_status()
+        logger.debug("Parsing auth token")
         html_tree = html.fromstring(response.content)
-        csrf_token = html_tree.cssselect('meta[name="csrf-token"]')[0].get("content")
-        logger.debug("Success!")
-        return session, csrf_token
+        return session, MemberfulAuthToken(
+            html_tree.cssselect('meta[name="csrf-param"]')[0].get("content"),
+            html_tree.cssselect('meta[name="csrf-token"]')[0].get("content"),
+        )
 
-    def download_csv(self, params: dict) -> csv.DictReader:
-        return csv.DictReader(self._download_csv(params).splitlines())
+    def download_csv(self, *args, **kwargs) -> csv.DictReader:
+        return csv.DictReader(self._download_csv(*args, **kwargs).splitlines())
 
-    @cache(expire=timedelta(days=1), ignore=(0,), tag="memberful-csv")
+    @cache(expire=timedelta(hours=1), ignore=(0,), tag="memberful-csv")
     @retry(
         retry=(
             retry_if_exception_type(requests.exceptions.HTTPError)
             | retry_if_exception_type(requests.exceptions.ConnectionError)
         ),
         wait=wait_random_exponential(max=60),
-        stop=stop_after_attempt(5),
+        stop=stop_after_attempt(3),
         reraise=True,
         before_sleep=before_sleep_log(logger, logging.WARNING),
     )
-    def _download_csv(self, params: dict) -> str:
-        url = f"https://juniorguru.memberful.com/admin/csv_exports?{urlencode(params)}"
-        logger.debug(f"Downloading CSV export: {url}")
+    def _download_csv(
+        self,
+        path: str,
+        url_params: dict[str, str] | None = None,
+        form_params: dict[str, str] | None = None,
+    ) -> str:
+        logger.debug(f"Downloading CSV export: {path}")
         response = self.session.post(
-            url, allow_redirects=False, headers={"X-CSRF-Token": self.csrf_token}
+            f"https://juniorguru.memberful.com/{path.strip('/')}",
+            params=url_params or {},
+            headers={
+                "User-Agent": BROWSER_USER_AGENT,
+                "X-CSRF-Token": self.auth_token.value,
+            },
+            data={self.auth_token.param: self.auth_token.value} | (form_params or {}),
         )
         response.raise_for_status()
-        download_url = f"{response.headers['Location']}/download"
+
+        location_url = response.headers.get("Location") or None
+        if location_url is None:
+            logger.debug("Parsing download URL from HTML")
+            html_tree = html.fromstring(response.content)
+            export_id = parse_export_id(html_tree)
+            download_url = f"https://juniorguru.memberful.com/admin/csv_exports/{export_id}/download"
+        else:
+            logger.debug("Using Location header for download URL")
+            download_url = f"{location_url}/download"
+
+        logger.debug(f"Polling: {download_url}")
         return self._poll_for_csv(download_url)
 
     @retry(
         retry=retry_if_exception_type(requests.exceptions.HTTPError),
         wait=wait_fixed(5),
-        stop=stop_after_attempt(20),
+        stop=stop_after_attempt(10),
         reraise=True,
         before_sleep=before_sleep_log(logger, logging.DEBUG),
     )
@@ -212,3 +249,11 @@ class MemberfulCSV:
 
 def memberful_url(account_id: int | str) -> str:
     return f"https://juniorguru.memberful.com/admin/members/{account_id}/"
+
+
+def parse_export_id(html_tree: html.HtmlElement) -> int:
+    html_element = html_tree.cssselect("*[data-auto-refreshable-url-value]")[0]
+    refreshable_url = html_element.get("data-auto-refreshable-url-value")
+
+    # refreshable_url is something like /admin/members/exports/68746
+    return int(refreshable_url.split("/")[-1])

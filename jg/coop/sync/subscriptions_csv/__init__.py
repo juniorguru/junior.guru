@@ -63,7 +63,12 @@ def main(error_channel_id: int):
         memberful = MemberfulCSV()
         seen_account_ids = set()
         for csv_row in memberful.download_csv(
-            dict(type="MembersCsvExport", filter="all")
+            path="/admin/members/exports",
+            form_params={
+                "csv_export[filter]": "active",
+                "csv_export[preset]": "all_time",
+                "commit": "Export",
+            },
         ):
             account_id = int(csv_row["Memberful ID"])
             if account_id in seen_account_ids:
@@ -117,9 +122,20 @@ def main(error_channel_id: int):
 
         logger.info("Fetching cancellations data from Memberful CSV")
         csv_rows = itertools.chain(
-            memberful.download_csv(dict(type="CancellationsCsvExport", filter="all")),
             memberful.download_csv(
-                dict(type="CancellationsCsvExport", scope="completed", filter="all")
+                path="/admin/csv_exports",
+                url_params={
+                    "filter": "all",
+                    "type": "CancellationsCsvExport",
+                },
+            ),
+            memberful.download_csv(
+                path="/admin/csv_exports",
+                url_params={
+                    "filter": "all",
+                    "type": "CancellationsCsvExport",
+                    "scope": "completed",
+                },
             ),
         )
         for csv_row in csv_rows:

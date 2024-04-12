@@ -131,7 +131,7 @@ def from_path(path, cwd=None) -> Logger:
         .rstrip("/")
         .split("/")
     )
-    return get(f"jg.{name}")
+    return get(name)
 
 
 if not getattr(logging.root, "configured", False):
