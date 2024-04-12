@@ -14,11 +14,17 @@ def test_get_todo_key():
         "name": "invoice_payment_unpaired",
         "created_at": "2022-02-23T09:33:55.575+01:00",
         "completed_at": None,
-        "invoice_id": None,
-        "subject_id": None,
-        "text": "Nespárovaná příchozí platba - VS: 444222, částka: 644,00 Kč ",
-        "invoice_url": None,
-        "subject_url": None,
+        "text": "Nespárovaná příchozí platba - VS: 444222, částka: 6,00 Kč at se dari",
+        "related_objects": [],
+        "params": {
+            "amount": "6.0",
+            "bank_account_id": "9862",
+            "bank_account_name": "Bankovní účet",
+            "counterparty_bank_account_number": "1027672020/3030",
+            "currency": "CZK",
+            "note": "at se dari",
+            "variable_symbol": "444222",
+        },
     }
 
     assert get_todo_key(todo) == (date(2022, 2, 23), "444222", 644.0)
