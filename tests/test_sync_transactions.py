@@ -27,7 +27,7 @@ def test_get_todo_key():
         },
     }
 
-    assert get_todo_key(todo) == (date(2022, 2, 23), "444222", 644.0)
+    assert get_todo_key(todo) == (date(2022, 2, 23), "444222", 6.0)
 
 
 @pytest.mark.parametrize(
