@@ -3,7 +3,7 @@ import html
 import re
 from datetime import date, datetime, timedelta
 from pathlib import Path
-from pprint import pformat
+from pprint import pformat, pprint
 from typing import Callable
 
 import click
@@ -239,7 +239,7 @@ def get_transaction_category(
     raise ValueError("Could not categorize transaction")
 
 
-def get_transaction_key(transaction):
+def get_transaction_key(transaction) -> tuple[date, str | None, float]:
     return (
         transaction["date"],
         normalize_variable_symbol(transaction["variable_symbol"]),
@@ -247,24 +247,15 @@ def get_transaction_key(transaction):
     )
 
 
-def get_todo_key(todo):
-    parse_result = parse_todo_text(todo["text"])
+def get_todo_key(todo: dict) -> tuple[date, str | None, float]:
     return (
         datetime.fromisoformat(todo["created_at"]).date(),
-        normalize_variable_symbol(parse_result["variable_symbol"]),
-        parse_result["amount"],
+        normalize_variable_symbol(todo["params"]["variable_symbol"]),
+        float(todo["params"]["amount"]),
     )
 
 
-def parse_todo_text(text):
-    text = html.unescape(text)
-    match = TODO_TEXT_RE.search(text)
-    parse_result = match.groupdict()
-    amount = float(parse_result["amount"].replace("\xa0", "").replace(",", "."))
-    return dict(variable_symbol=parse_result["variable_symbol"], amount=amount)
-
-
-def normalize_variable_symbol(variable_symbol):
+def normalize_variable_symbol(variable_symbol: str) -> str | None:
     if not variable_symbol:
         return None
     if variable_symbol == "0":
