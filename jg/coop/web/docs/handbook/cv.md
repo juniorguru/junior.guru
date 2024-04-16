@@ -229,7 +229,7 @@ Pokud máš kurzy, do vzdělání si je určitě napiš. Pouze však ty, které 
 
 Kurzů je hodně a druhá strana skoro nikdy nebude ten tvůj znát nějak blíž. Nemá smysl soutěžit v tom, zda je jeden prestižnější než druhý, jen aby to vypadalo dobře na CV. Na první pohled zaujmou maximálně jména s dobrým marketingem, např. Czechitas. Práci si ale najdou i samouci bez kurzů, protože **na kurzy se nehraje**. Hraje se na praxi, tedy na [projekty](#6-projekty).
 
-Jestliže máš nějaký **certifikát**, nezapomeň jej zmínit. Certifikátem se myslí např. ISTQB u testerů, tedy široce uznávaná věc s vlastní stránkou na Wikipedii. Omalovánku, kterou ti dali za absolvování kurzu, si založ k diplomům z plavání.
+Jestliže máš nějaké **certifikace**, nezapomeň je zmínit. Certifikacemi se myslí např. ISTQB u testerů, tedy široce uznávaná věc s vlastní stránkou na Wikipedii. Omalovánku, kterou ti dali za absolvování kurzu, si založ k diplomům z plavání z páté třídy.
 
 Pokud ti z toho vyšlo více záznamů o vzdělání než jeden, seřaď je chronologicky od nejnovějšího po nejstarší.
 
@@ -269,7 +269,7 @@ Někde na konci CV měj seznam všech jazyků, které ovládáš. Většinu fire
 
 [Europass](https://europass.cz/) používá **sebehodnotící škálu** založenou na SERR v pěti okruzích: Poslech, čtení, mluvená komunikace, samostatný ústní projev a psaní. Ke každému okruhu a každé úrovni jsou tam navíc jedno až dvouvětné popisky pro orientaci.
 
-Na druhou stranu, v IT to nikdo zas tak moc neřeší. Stejně všichni nakonec mluví nějakou variantou [Euro English](https://cs.wikipedia.org/wiki/Euro_English). **Gramatika jde stranou, hlavně když se domluvíš.** Většinou si jazyk ověří během pohovoru a pokud dokážeš vést konverzaci, bývá to _good enough_. Určitě nemusíš mít oficiální certifikáty.
+Na druhou stranu, v IT to nikdo zas tak moc neřeší. Stejně všichni nakonec mluví nějakou variantou [Euro English](https://cs.wikipedia.org/wiki/Euro_English). **Gramatika jde stranou, hlavně když se domluvíš.** Většinou si jazyk ověří během pohovoru a pokud dokážeš vést konverzaci, bývá to _good enough_. Určitě nemusíš mít oficiální certifikace.
 
 ## Zbytečnosti
 
