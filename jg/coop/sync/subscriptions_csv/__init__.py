@@ -234,7 +234,7 @@ def classify_marketing_survey_answer(text: str) -> str:
     if re.search(r"\b(goo?gl\w*|vyhled[aá]v\w+)\b", text, re.I):
         return "search"
     if re.search(
-        r"\b(komunit\w+|kamar[aá]d\w*|brat\w*|koleg\w*|br[aá]ch\w*|manžel\w*|partner\w*|p[řr][íi]a?tel\w*|přátelé|pratele|zn[áa]m[ée]\w*|doporu[čc]en\w+|Skládanka|Stan\w+ Prokop\w*|Tom\w* Hrn\w*)\b",
+        r"\b(znám(ý|á)|komunit\w+|kamar[aá]d\w*|brat\w*|koleg\w*|br[aá]ch\w*|manžel\w*|partner\w*|p[řr][íi]a?tel\w*|přátelé|pratele|zn[áa]m[ée]\w*|doporu[čc]en\w+|Skládanka|Stan\w+ Prokop\w*|Tom\w* Hrn\w*)\b",
         text,
         re.I,
     ):

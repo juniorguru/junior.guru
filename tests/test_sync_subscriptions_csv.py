@@ -56,6 +56,7 @@ def test_classify_referrer(url, expected):
         ("z webu", "internet"),
         ("tip od sestry", "friend"),
         ("Nauč mě IT", "courses"),
+        ("známý poslal odkaz", "friend"),
     ],
 )
 def test_classify_marketing_survey_answer(text, expected):
