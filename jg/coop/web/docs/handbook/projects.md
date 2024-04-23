@@ -618,4 +618,6 @@ https://www.linkedin.com/posts/marketa-willis_jak%C3%BD-je-recept-na-top-osobn%C
 
 https://docs.google.com/document/d/1gk-sER2SHuW6T9sJZyYg5nMUaKNh0w2_-5HCGiF9zxs/edit?usp=sharing
 
+nikdo už nechce vidět projekt typu todolist
+
 #} -->

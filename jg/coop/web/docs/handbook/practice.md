@@ -89,6 +89,9 @@ Vždy, když narazíš na nový pojem nebo zkratku, přečti si alespoň co to j
 
 <!-- {#
 
+Lenertova doporucuje:
+https://app.finxter.com/learn/computer/science/
+
 ChatGPT
 https://www.linkedin.com/posts/marketa-willis_junior%C5%AFm-bych-nedoporu%C4%8Dila-pou%C5%BE%C3%ADvat-chatgpt-activity-7176515147228663808-pODd?utm_source=share&utm_medium=member_desktop
 
