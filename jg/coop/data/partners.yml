@@ -278,6 +278,9 @@
   url: https://www.fakturoid.cz/
   partnerships:
     - plan: gold
+      starts_on: 2024-05-01
+      expires_on: 2025-05-01
+    - plan: gold
       starts_on: 2023-04-01
       expires_on: 2024-05-01
     - plan: branding
