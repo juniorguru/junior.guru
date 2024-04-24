@@ -67,6 +67,16 @@ def sideline(transaction: dict, secrets: dict) -> TransactionsCategory:
 
 
 @category_rule
+def sideline_apify(transaction: dict, secrets: dict) -> TransactionsCategory:
+    if (
+        transaction["variable_symbol"]
+        and "Apify Technologies" in transaction["message"]
+        and transaction["amount"] > 0
+    ):
+        return TransactionsCategory.IGNORE
+
+
+@category_rule
 def double_payment_by_mistake(transaction: dict, secrets: dict) -> TransactionsCategory:
     if transaction["date"] == date(2023, 9, 7) and transaction["amount"] == 12753:
         return TransactionsCategory.IGNORE
