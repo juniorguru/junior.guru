@@ -68,7 +68,9 @@ class DisguisedGenerator:
 @async_command
 async def main():
     logger.info(f"Actors:\n{pformat(ACTORS)}")
-    items = itertools.chain.from_iterable(apify.fetch_data(actor) for actor in ACTORS)
+    items = itertools.chain.from_iterable(
+        apify.fetch_data(actor, raise_if_missing=False) for actor in ACTORS
+    )
 
     logger.info(f"Pipelines:\n{pformat(PIPELINES)}")
     pipelines = [
