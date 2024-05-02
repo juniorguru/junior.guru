@@ -6,7 +6,7 @@
 
 .news-card {
   @extend .card;
-  margin: 0 0 map-get($spacers, 4) 0;
+  margin: 0 0 map-get($spacers, 4);
   overflow: hidden;
   background: $jg-blue-light;
   border: 1px solid transparent;
@@ -20,7 +20,7 @@
   flex-grow: 0;
   flex-shrink: 0;
   width: 100%;
-  margin: 0 0 $spacer 0;
+  margin: 0 0 $spacer;
 
   @include media-breakpoint-up(sm) {
     $w: calc((100% - #{$spacer}) / 2);

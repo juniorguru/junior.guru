@@ -9,10 +9,10 @@
 .logos-item {
   display: flex;
   align-items: center;
-  margin: 0 map-get($spacers, 2) $spacer map-get($spacers, 2);
+  margin: 0 map-get($spacers, 2) $spacer;
 
   @include media-breakpoint-up(sm) {
-    margin: 0 map-get($spacers, 4) $spacer map-get($spacers, 4);
+    margin: 0 map-get($spacers, 4) $spacer;
   }
 }
 

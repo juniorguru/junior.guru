@@ -2,7 +2,7 @@
   @extend .list-unstyled;
   display: flex;
   align-items: center;
-  margin: (-1 * $spacer) 0 $main-spacer 0;
+  margin: (-1 * $spacer) 0 $main-spacer;
   font-size: $small-font-size;
   color: $body-secondary-color;
   text-transform: uppercase;

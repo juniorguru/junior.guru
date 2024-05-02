@@ -71,7 +71,7 @@
   line-height: $line-height-sm;
   border-color: $body-color;
   border-style: solid;
-  border-width: 0 0 map-get($border-widths, 1) 0;
+  border-width: 0 0 map-get($border-widths, 1);
 }
 
 .toc-link:hover {
@@ -83,7 +83,7 @@
   font-weight: $headings-font-weight;
   color: $link-color;
   border-color: $link-color;
-  border-width: 0 0 map-get($border-widths, 2) 0;
+  border-width: 0 0 map-get($border-widths, 2);
 }
 
 .toc-item.active .toc-link:hover {
