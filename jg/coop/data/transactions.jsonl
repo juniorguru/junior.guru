@@ -792,3 +792,6 @@
 {"_id": "26488114573", "amount": 6584, "category": "tax", "happened_on": "2024-04-24"}
 {"_id": "26489972817", "amount": 80000, "category": "partnerships", "happened_on": "2024-04-25"}
 {"_id": "26492914115", "amount": 9732, "category": "memberships", "happened_on": "2024-04-29"}
+{"_id": "26494903543", "amount": -868, "category": "miscellaneous", "happened_on": "2024-04-30"}
+{"_id": "26495182470", "amount": -2000, "category": "office", "happened_on": "2024-04-30"}
+{"_id": "26495491576", "amount": -241, "category": "miscellaneous", "happened_on": "2024-04-30"}
