@@ -261,13 +261,13 @@ lxml = ["lxml"]
 
 [[package]]
 name = "blinker"
-version = "1.7.0"
+version = "1.8.1"
 description = "Fast, simple object-to-object and broadcast signaling"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "blinker-1.7.0-py3-none-any.whl", hash = "sha256:c3f865d4d54db7abc53758a01601cf343fe55b84c1de4e3fa910e420b438d5b9"},
-    {file = "blinker-1.7.0.tar.gz", hash = "sha256:e6820ff6fa4e4d1d8e2747c2283749c3f547e4fee112b98555cdcdae32996182"},
+    {file = "blinker-1.8.1-py3-none-any.whl", hash = "sha256:5f1cdeff423b77c31b89de0565cd03e5275a03028f44b2b15f912632a58cced6"},
+    {file = "blinker-1.8.1.tar.gz", hash = "sha256:da44ec748222dcd0105ef975eed946da197d5bdf8bafb6aa92f5bc89da63fa25"},
 ]
 
 [[package]]
@@ -1003,13 +1003,13 @@ jwt = ["PyJWT[crypto] (>=2.4.0,<3.0.0)"]
 
 [[package]]
 name = "google-api-core"
-version = "2.18.0"
+version = "2.19.0"
 description = "Google API client core library"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "google-api-core-2.18.0.tar.gz", hash = "sha256:62d97417bfc674d6cef251e5c4d639a9655e00c45528c4364fbfebb478ce72a9"},
-    {file = "google_api_core-2.18.0-py3-none-any.whl", hash = "sha256:5a63aa102e0049abe85b5b88cb9409234c1f70afcda21ce1e40b285b9629c1d6"},
+    {file = "google-api-core-2.19.0.tar.gz", hash = "sha256:cf1b7c2694047886d2af1128a03ae99e391108a08804f87cfd35970e49c9cd10"},
+    {file = "google_api_core-2.19.0-py3-none-any.whl", hash = "sha256:8661eec4078c35428fd3f69a2c7ee29e342896b70f01d1a1cbcb334372dd6251"},
 ]
 
 [package.dependencies]
@@ -1440,7 +1440,7 @@ py-cord = {version = "2.5.0", extras = ["speed"]}
 type = "git"
 url = "https://github.com/juniorguru/chick.git"
 reference = "HEAD"
-resolved_reference = "496e0ae14c4cf3affd832f5082a8e541c3efbaf2"
+resolved_reference = "e88cc9230fd31fa3b3f9ed845b5681e35d6a7298"
 
 [[package]]
 name = "jg-hen"
@@ -1452,7 +1452,7 @@ files = []
 develop = false
 
 [package.dependencies]
-blinker = "1.7.0"
+blinker = "1.8.1"
 click = "8.1.7"
 githubkit = "0.11.4"
 httpx = "0.27.0"
@@ -1462,7 +1462,7 @@ pillow = "10.3.0"
 type = "git"
 url = "https://github.com/juniorguru/hen.git"
 reference = "HEAD"
-resolved_reference = "8afb97eee482bd06bfae51d299241bee9b1cd33d"
+resolved_reference = "3b076880a2a1ffd1cf6f724df258e172a09fd533"
 
 [[package]]
 name = "jinja2"
