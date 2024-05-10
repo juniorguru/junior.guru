@@ -15370,3 +15370,26 @@
 {"account_id": 5508134, "f": false, "happened_at": "2024-04-07T19:04:21", "subscription_interval": "month", "type": "trial_start"}
 {"account_id": 5508286, "f": false, "happened_at": "2024-04-07T20:40:43", "subscription_interval": "month", "type": "order"}
 {"account_id": 5508286, "f": false, "happened_at": "2024-04-07T20:40:43", "subscription_interval": "month", "type": "trial_start"}
+{"account_id": 3461255, "f": true, "happened_at": "2024-04-08T03:42:05", "subscription_interval": "month", "type": "order"}
+{"account_id": 5473053, "f": false, "happened_at": "2024-04-08T06:06:36", "subscription_interval": "month", "type": "deactivation"}
+{"account_id": 5473053, "f": false, "happened_at": "2024-04-08T06:06:36", "subscription_interval": "month", "type": "trial_end"}
+{"account_id": 5473261, "f": false, "happened_at": "2024-04-08T10:10:45", "order_coupon_slug": "itnetwork", "subscription_interval": "year", "type": "trial_end"}
+{"account_id": 5473269, "f": false, "happened_at": "2024-04-08T10:18:11", "subscription_interval": "year", "type": "trial_end"}
+{"account_id": 5473269, "f": false, "happened_at": "2024-04-08T10:22:13", "order_coupon_slug": "itnetwork", "subscription_interval": "year", "type": "order"}
+{"account_id": 5473351, "f": true, "happened_at": "2024-04-08T11:36:17", "order_coupon_slug": "itnetwork", "subscription_interval": "year", "type": "trial_end"}
+{"account_id": 5473368, "f": false, "happened_at": "2024-04-08T11:49:09", "subscription_interval": "month", "type": "deactivation"}
+{"account_id": 5473368, "f": false, "happened_at": "2024-04-08T11:49:09", "subscription_interval": "month", "type": "trial_end"}
+{"account_id": 5473461, "f": false, "happened_at": "2024-04-08T12:51:48", "subscription_interval": "month", "type": "deactivation"}
+{"account_id": 5473461, "f": false, "happened_at": "2024-04-08T12:51:48", "subscription_interval": "month", "type": "trial_end"}
+{"account_id": 3516538, "f": false, "happened_at": "2024-04-08T13:30:17", "subscription_interval": "month", "type": "deactivation"}
+{"account_id": 2286549, "f": false, "happened_at": "2024-04-08T13:53:12", "subscription_interval": "month", "type": "deactivation"}
+{"account_id": 5462519, "f": false, "happened_at": "2024-04-08T14:27:17", "subscription_interval": "month", "type": "order"}
+{"account_id": 2489501, "f": false, "happened_at": "2024-04-08T15:12:15", "order_coupon_slug": "coreskill", "subscription_interval": "month", "type": "order"}
+{"account_id": 4212685, "f": false, "happened_at": "2024-04-08T16:03:19", "subscription_interval": "month", "type": "order"}
+{"account_id": 5509867, "f": false, "happened_at": "2024-04-08T16:48:20", "subscription_interval": "month", "type": "order"}
+{"account_id": 5509867, "f": false, "happened_at": "2024-04-08T16:48:20", "subscription_interval": "month", "type": "trial_start"}
+{"account_id": 5302859, "f": false, "happened_at": "2024-04-08T16:52:05", "subscription_interval": "month", "type": "order"}
+{"account_id": 5509926, "f": false, "happened_at": "2024-04-08T17:18:59", "subscription_interval": "month", "type": "order"}
+{"account_id": 5509926, "f": false, "happened_at": "2024-04-08T17:18:59", "subscription_interval": "month", "type": "trial_start"}
+{"account_id": 5510336, "f": false, "happened_at": "2024-04-08T21:00:50", "subscription_interval": "month", "type": "order"}
+{"account_id": 5510336, "f": false, "happened_at": "2024-04-08T21:00:50", "subscription_interval": "month", "type": "trial_start"}
