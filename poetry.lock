@@ -261,13 +261,13 @@ lxml = ["lxml"]
 
 [[package]]
 name = "blinker"
-version = "1.8.1"
+version = "1.8.2"
 description = "Fast, simple object-to-object and broadcast signaling"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "blinker-1.8.1-py3-none-any.whl", hash = "sha256:5f1cdeff423b77c31b89de0565cd03e5275a03028f44b2b15f912632a58cced6"},
-    {file = "blinker-1.8.1.tar.gz", hash = "sha256:da44ec748222dcd0105ef975eed946da197d5bdf8bafb6aa92f5bc89da63fa25"},
+    {file = "blinker-1.8.2-py3-none-any.whl", hash = "sha256:1779309f71bf239144b9399d06ae925637cf6634cf6bd131104184531bf67c01"},
+    {file = "blinker-1.8.2.tar.gz", hash = "sha256:8f77b09d3bf7c795e969e9486f39c2c5e9c39d4ee07424be2bc594ece9642d83"},
 ]
 
 [[package]]
@@ -1440,7 +1440,7 @@ py-cord = {version = "2.5.0", extras = ["speed"]}
 type = "git"
 url = "https://github.com/juniorguru/chick.git"
 reference = "HEAD"
-resolved_reference = "0fa2103f7f03ea1d4df66ac51d6b3ad3bc430412"
+resolved_reference = "a49ef9696972d9ff84f0475b301f90afeda9cda2"
 
 [[package]]
 name = "jg-hen"
@@ -1452,7 +1452,7 @@ files = []
 develop = false
 
 [package.dependencies]
-blinker = "1.8.1"
+blinker = "1.8.2"
 click = "8.1.7"
 githubkit = "0.11.4"
 httpx = "0.27.0"
@@ -1462,7 +1462,7 @@ pillow = "10.3.0"
 type = "git"
 url = "https://github.com/juniorguru/hen.git"
 reference = "HEAD"
-resolved_reference = "46be92009070a5644a2def4b85398054c05fcae8"
+resolved_reference = "9b6b11dd4af10dc3b255728d58010bb696e28fff"
 
 [[package]]
 name = "jinja2"
