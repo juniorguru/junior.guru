@@ -23,7 +23,8 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command(dependencies=["club-content", "mentoring"])
 def main():
-    discord_task.run(sync_interviews_tips)
+    return
+    discord_task.run(sync_interviews_tips)  # TODO FIXME
 
 
 @db.connection_context()
