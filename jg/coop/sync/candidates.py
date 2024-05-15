@@ -20,7 +20,7 @@ def main(api_url: str):
     logger.info("Reading API")
     response = requests.get(api_url)
     response.raise_for_status()
-    for profile in response.json():
+    for profile in response.json()["profiles"]:
         candidate = Candidate.from_api(profile)
         candidate.save()
         logger.info(f"Saved {candidate.github_username!r} ( ↔ {candidate.user!r})")
