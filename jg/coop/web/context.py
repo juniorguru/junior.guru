@@ -10,6 +10,7 @@ from jg.coop.lib.benefits_evaluators import BENEFITS_EVALUATORS
 from jg.coop.lib.discord_club import CLUB_GUILD
 from jg.coop.models.base import db
 from jg.coop.models.blog import BlogArticle
+from jg.coop.models.candidate import Candidate
 from jg.coop.models.chart import Chart
 from jg.coop.models.club import ClubMessage, ClubUser
 from jg.coop.models.course_provider import CourseProvider
@@ -87,6 +88,9 @@ def on_docs_context(context):
 
     # courses.md
     context["course_providers"] = CourseProvider.listing()
+
+    # candidates.md
+    context["candidates"] = Candidate.listing()
 
     # faq.md
     context["partners_course_providers"] = [

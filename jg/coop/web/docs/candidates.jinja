@@ -1,0 +1,24 @@
+---
+title: Kandidáti na pozici junior programátor/programátorka
+description: Ověřený a seřazený seznam těch nejšikovnějších juniorů a juniorek, kteří právě teď hledají práci.
+---
+
+{% from 'macros.html' import lead with context %}
+
+<h1>Juniorní programátoři</h1>
+
+{% call lead() %}
+  Hledáš do firmy juniora?
+  Zapomeň na inzeráty a stohy životopisů.
+  Vyber si prostě ze seznamu.
+  Každý junior tady je ověřený a má zaručené základní schopnosti.
+  Vybíráš z toho nejlepšího na trhu.
+  Oslovuješ napřímo, nic neplatíš.
+{% endcall %}
+
+<ul>
+{% for candidate in candidates %}
+    <li>{{ candidate.github_username }}</li>
+{% endfor %}
+    <li><a href="https://github.com/juniorguru/eggtray/">Přidej se do seznamu</a></li>
+</ul>
