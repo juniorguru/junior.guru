@@ -6,7 +6,7 @@ from urllib.parse import urlencode, urlparse
 
 import click
 import requests
-from github import Auth, Github
+from githubkit import GitHub
 from lxml import html
 from playwright.sync_api import TimeoutError, sync_playwright
 
@@ -219,13 +219,17 @@ def scrape_mastodon():
     return None
 
 
-def scrape_github_personal(api_key: str):
+def scrape_github_personal(api_key: str) -> int:
     logger.info("Scraping personal GitHub")
-    client = Github(auth=Auth.Token(api_key))
-    return client.get_user(login=GITHUB_PERSONAL_USERNAME).followers
+    with GitHub(api_key) as github:
+        response = github.rest.users.get_by_username(GITHUB_PERSONAL_USERNAME)
+        user = response.parsed_data
+        return user.followers
 
 
-def scrape_github(api_key: str):
+def scrape_github(api_key: str) -> int:
     logger.info("Scraping GitHub")
-    client = Github(auth=Auth.Token(api_key))
-    return client.get_organization(login=GITHUB_USERNAME).followers
+    with GitHub(api_key) as github:
+        response = github.rest.orgs.get(GITHUB_USERNAME)
+        org = response.parsed_data
+        return org.followers
