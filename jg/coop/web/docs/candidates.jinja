@@ -18,7 +18,11 @@ description: Ověřený a seřazený seznam těch nejšikovnějších juniorů a
 
 <ul>
 {% for candidate in candidates %}
-    <li>{{ candidate.github_username }}</li>
+    <li>
+        {{ candidate.name }}, <a href="{{ candidate.github_url }}">{{ candidate.github_username }}</a>
+    </li>
 {% endfor %}
-    <li><a href="https://github.com/juniorguru/eggtray/">Přidej se do seznamu</a></li>
+    <li>
+        <a href="https://github.com/juniorguru/eggtray/">Přidej se do seznamu</a>
+    </li>
 </ul>
