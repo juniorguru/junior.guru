@@ -15,7 +15,6 @@ from jg.coop.models.base import db
 from jg.coop.models.club import ClubUser
 from jg.coop.models.documented_role import DocumentedRole
 from jg.coop.models.event import Event
-from jg.coop.models.mentor import Mentor
 from jg.coop.models.partner import Partnership
 
 
@@ -46,7 +45,6 @@ logger = loggers.from_path(__file__)
         "avatars",
         "members",
         "partners",
-        "mentoring",
     ]
 )
 def main():
@@ -197,17 +195,6 @@ async def sync_roles(client: ClubClient):
         changes.extend(
             evaluate_changes(
                 member.id, member.initial_roles, speaking_members_ids, role_id
-            )
-        )
-
-    logger.info("Computing how to re-assign role: mentor")
-    role_id = DocumentedRole.get_by_slug("mentor").club_id
-    mentors_members_ids = [mentor.user.id for mentor in Mentor.listing()]
-    logger.debug(f"mentors_ids: {repr_ids(members, mentors_members_ids)}")
-    for member in members:
-        changes.extend(
-            evaluate_changes(
-                member.id, member.initial_roles, mentors_members_ids, role_id
             )
         )
 

@@ -18,11 +18,6 @@
   description: |
     Kdo dělá [podcast](https://junior.guru/podcast/) nebo videa z akcí v klubu.
 
-- id: 974297387935866910
-  slug: mentor
-  description: |
-    Kdo se nabízí v <#MENTORING>. Roli automaticky spravuje bot.
-
 - id: 836928169092710441
   slug: speaker
   description: |
