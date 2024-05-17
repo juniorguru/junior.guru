@@ -505,4 +505,7 @@ Tak mě napadá, že v CV by se rovnou dal možná naznačit ten „deal“, že
 ---
 
 
+https://www.linkedin.com/posts/petranulickova_sharingiscaring-zivotopis-activity-7193200652393607170-Sh6Y?utm_source=share&utm_medium=member_desktop
+
+
 #} -->

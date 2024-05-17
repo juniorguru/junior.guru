@@ -58,6 +58,7 @@ class SubmittedJob(BaseModel):
     posted_on = DateField(index=True)
     expires_on = DateField(index=True)
     lang = CharField()
+    description_html = TextField()
 
     url = CharField(unique=True)
     apply_email = CharField(null=True)
@@ -70,8 +71,6 @@ class SubmittedJob(BaseModel):
     locations_raw = JSONField(null=True)
     remote = BooleanField(default=False)
     employment_types = JSONField(null=True)
-
-    description_html = TextField()
 
     def analytics_url(self, days, end_on=None):
         end_on = end_on or date.today()
@@ -114,6 +113,8 @@ class ScrapedJob(BaseModel):
     title = CharField()
     posted_on = DateField(index=True)
     lang = CharField(null=True)
+    description_html = TextField()
+    llm_opinion = JSONField(null=True)
 
     url = CharField(unique=True)
     apply_url = CharField(null=True)
@@ -125,9 +126,6 @@ class ScrapedJob(BaseModel):
     locations_raw = JSONField(null=True)
     remote = BooleanField(default=False)
     employment_types = JSONField(null=True)
-
-    description_html = TextField()
-    llm_opinion = JSONField(null=True)
 
     source = CharField()
     source_urls = JSONField(default=list)
@@ -213,6 +211,7 @@ class ListedJob(BaseModel):
     title = CharField()
     posted_on = DateField(index=True)
     lang = CharField()
+    description_html = TextField()
 
     url = CharField()
     apply_email = CharField(null=True)
@@ -376,6 +375,9 @@ class ListedJob(BaseModel):
                 f"employment_types_{i}": value
                 for i, value in columns(self.employment_types, 10)
             },
+            **dict(
+                description_html=self.description_html,
+            ),
         )
 
 
