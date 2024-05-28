@@ -57,15 +57,15 @@
 #    a poslat prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 - id: 42
-  title: "(situace na trhu, bude upřesněno)"
+  title: "Situace na IT trhu z pohledu dat a co to znamená pro juniory"
   date: "2024-05-28"
   description: |
-    (bude upřesněno)
+    Spoustu juniorů trápí aktuální zbrždění náboru IT odborníků a především těch, kteří své první zkušenosti v oboru teprve hledají. Je to horší než před lety? Lepší? Jaké jsou vyhlídky? Všude se mluví o tom, že sehnat první práci je aktuálně nesnadné, ale je to vždy založeno na dojmech a anekdotách. Nikdo vlastně neví, jaká jsou data. Nikdo až na Tomáše.
   avatar_path: avatars-participants/tomas-ervin-dombrovsky.jpg
   bio_name: Tomáš Ervín Dombrovský
   bio_title: Datový analytik v Alma Career
   bio: |
-    (bude upřesněno)
+    Analytik ve společnosti Alma Career (dříve LMC). Věnuje se rozboru dat, jevů a trendů v propojených světech vzdělávání a práce. Snaží se nacházet, pojmenovávat a rozvíjet to, co je zásadní pro smysluplné uplatnění lidí a jejich lepší spolupráci ve firmách i veřejných institucích. Přednáší pro lidi z HR i vedení firem, pro odbornou i širší veřejnost.
   bio_links:
     - https://www.linkedin.com/in/tomas-ervin-dombrovsky/
   logo_path: logos/almacareer.svg
