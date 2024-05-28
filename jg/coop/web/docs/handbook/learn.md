@@ -119,7 +119,7 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
 
   {{ link_card(
     'Engeto',
-    'https://e-learning.engeto.cz/kurz/python-uvod-do-programovani',
+    'https://learn.engeto.com/cs/kurz/python-uvod-do-programovani/studium/7vOS92OWQgWOzK6WDxF4cw/uvod-do-programovani/ciselne-hodnoty/komplikace-s-cisly',
     'Jediný plně interaktivní kurz v češtině.',
     badge_icon='layout-text-sidebar-reverse',
     badge_text='Online kurz',
@@ -642,7 +642,7 @@ Hodně zdaru, sil a velký dík Honzovi, že to tu založil a spravuje <:dk:8427
 
 
 --- https://discord.com/channels/769966886598737931/1217738430713430080/1217767457964429313
-Za mě je dobré vyzkoušet si to. Věnovat třeba 10 hodin čistého času tomu, začít s každou specializací, abys viděl prakticky, co to znamená. 
+Za mě je dobré vyzkoušet si to. Věnovat třeba 10 hodin čistého času tomu, začít s každou specializací, abys viděl prakticky, co to znamená.
 Tedy opravdu začít nějakej kurzík a to nejlépe něco, kde to budeš sám dělat, ne se jen koukat na YT, jak to někdo dělá.
 A taky si třeba zkusit o té specializaci něco vyhledat, případně se zeptat tady.
 
@@ -675,7 +675,7 @@ OK, tak možná ať si zkusí projet tohle https://blockly.games/?lang=en použ�
 To hodně záleží, co by přesně ráda dělala. V zásadě jsou 2 možnosti pro "programování her" - tvořit engine, kde se pak vše vykresluje (extrémně náročné na výkon, spousta matematiky a optimalizací), nebo řešit scriptování her (jak se třeba chovají postavy, jak reaguje prostředí atd.).
 
 Jsou to 2 dost odlišné věci, kdy ta první vyžaduje typicky precizní znalost algoritmů, matematiky a nízkoúrovňových jazyků (C / C++).
-Ta druhá je naopak nějaký scriptovací jazyk a k tomu (dnes už) grafické rozhraní na spojování tzv. nodes. Tam se hodí spíš jazyky typu Lua, JavaScript, případně C#. 
+Ta druhá je naopak nějaký scriptovací jazyk a k tomu (dnes už) grafické rozhraní na spojování tzv. nodes. Tam se hodí spíš jazyky typu Lua, JavaScript, případně C#.
 
 Doporučím se podívat na **Nauč mě IT** 🧠 přednášku o hrách (byť zaměřeno na 3D tvorbu charakterů).
 https://youtu.be/LTBGnZun8dc
