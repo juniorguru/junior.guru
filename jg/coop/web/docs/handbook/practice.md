@@ -933,4 +933,40 @@ https://www.linkedin.com/posts/bleedingdev_problems-with-devinai-activity-717542
 ---
 
 
+--- https://discord.com/channels/769966886598737931/789107031939481641/1235975819755786310
+A přesně pro tyhle případy mám v **Nauč mě IT** 🧠  super zdroj na učení KONCEPTŮ, abys pochopil principy napříč frameworky. Tady se učí tak, abys chápal všechny 3 hlavní. 🙂
+
+https://unicorn-utterances.com/collections/framework-field-guide
+---
+
+
+--- https://discord.com/channels/769966886598737931/1237340412545339392/1238050805739683901
+Já bych tam zahrnul klidně i ty cvičné příklady k certifikaci. Samozřejmě bych u nich viditelně uvedl o co jde a v rámci čeho jsi je dělal. Počítej s tím, že budou mít daleko menší váhu, než nějaký reálný projekt, na kterém pracuješ. Osobně si myslím, že ten jeden projekt stačit klidně může. Bude dělat lepší dojem, když budeš mít jeden projekt, který máš rád, dává ti smysl, víš o něm první poslední a vyzkoušel sis na něm vše co ses naučil. Uchazečů s vypracovanou tisící kalkulačkou a úkolníčkem (nejčastější mikroprojekty na internetu v portfoliích začátečníků) bude doslova plný pytel. Těch jako ty, s nějakým komplexním projektem s osobní vazbou, zase tolik nebude. Ve finále právě díky těm pohovorům se dozvíš, jaká je ta reálná poptávka, jaký stack bys měl asi tak mít a kam směřovat. Abys s každým dalším pohovorem byl lepší a žádanější.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/1236340466665132133
+Našiel na nete, možno sa to niekomu zíde. https://andreasbm.github.io/web-skills/
+---
+
+
+--- https://discord.com/channels/769966886598737931/1233369095236354109/1233372219833450527
+Stáhni Unity (nebo teď už možná radši Godot), otevři dokumentaci k enginu i k C# a začni. Víc nepotřebuješ. Už vůbec nepotřebuješ začínat Cčkem. Tím, že tu hru děláš, se učíš nejrychleji. A vůbec nevadí, že tvoje první hra bude mít špagety kód. Spousta úspěšných indie her má hrozně zprasenej kód, ale pro jejich potřeby funguje.
+
+Udělej kostičku, nauč jí pohyb, pak jí nauč kolidovat s jinou kostičkou, nauč se interakci s prostředím, animaci, textury, level design. Klidně začni s freebies modely a prostředími z Asset Store a uč se na nich. Jakmile uděláš něco funkčního, budeš z toho mít radost a budeš se učit ani nevíš jak 🙂 Později se pak rozhodneš, jestli chceš dělat celou hru a nebo se zaměříš na konkrétní disciplíny toho celýho procesu.
+
+Hlavně začni dělat nějakou hru, klidně jednoduchou. Jestli se teď zaboříš do nějakého C, tak v něm budeš plavat dny, týdny, měsíce aniž bys začal na hře vůbec dělat a tvůj entusiasmus je fuč. Jako takovýho malýho průvodce tvorbou první hry od startu do konce můžeš brát tenhle manuál https://develop.games/#nav-skills. Probírá všechny aspekty herního vývoje hodně jednoduše, ale jasně.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/1232629397971009608
+Kdybyste se chtěli učit regulární výrazy https://regexone.com/
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/1234430460851916831
+Python pro matematiky 🙂 https://vknight.org/pfm/cover.html
+---
+
+
 #} -->

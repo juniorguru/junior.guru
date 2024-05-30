@@ -102,4 +102,9 @@ pracovní veletrhy
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1235275845753372814
+Znáte tenhle tip jak se propojovat s lidmi na akcích a jinde v terénu? https://www.linkedin.com/posts/marek-velas_linkedin-moneyphoo-edupunk-ugcPost-7190503461828878337-GLGX
+---
+
+
 #} -->

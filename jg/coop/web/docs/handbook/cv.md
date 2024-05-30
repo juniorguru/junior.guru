@@ -508,4 +508,40 @@ Tak mě napadá, že v CV by se rovnou dal možná naznačit ten „deal“, že
 https://www.linkedin.com/posts/petranulickova_sharingiscaring-zivotopis-activity-7193200652393607170-Sh6Y?utm_source=share&utm_medium=member_desktop
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1241953460014809170
+CV! Až zas budete designovat jako nedesignéři… tak si přečtěte https://www.linkedin.com/posts/petranulickova_sharingiscaring-zivotopis-activity-7193200652393607170-Sh6Y méně je více… ano, až mi nebude blbě z chemoterapie, udělám vám přednášku a věnuju šablonu. Kdo chce šablonu otestovat dřív napište DM.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1241959718100930570
+Bohužel blog, na který odkazuje je nečitelný taky <:lolpain:859017227515854879>, ale už jsem jí psal https://www.petranulickova.cz/l/chyby-v-zivotopisech/
+---
+
+
+--- https://discord.com/channels/769966886598737931/1230251641358258317/1237281354090287117
+Odcituju sám sebe 
+
+> Nejsi zkušený designér a kombinovat více různých prvků, tvarů, barev, velikostí pro tebe nebude snadné.
+> 
+> Drž se tedy spíš při zemi a nekomplikuj si to.
+> 
+> Kvalita obsahu je v tvém CV mnohem podstatnější než unikátní vzhled.
+> 
+> Když se zamyslíš nad tím, jak vypadají ty obchodně nejúspěšnější e-shopy, tak jsou velmi nudné a podobné jako vejce vejci. Lidi tam jdou nakoupit a ne obdivovat krásu nebo řešit rébus, jak se zrovna tam nakupuje. 
+> 
+> Stejně tak recruiteři tvoje CV berou jako zdroj informací o tobě a kandidáty nezvou podle originality CV, ale jestli o nich najdou informace, které zapadají do profilu pozice, kterou obsazují. A na to zjištění informací nemají moc času, proto: čím přehlednější, tím lepší.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1230251641358258317/1237297419847471134
+A aby to neznělo jako od puristického funkcionalisty, tak emoční reakce na estetický vjem samozřejmě existuje a má svoji neodpáratelnou roli ve vnímání a přeneseně i vás. 
+
+Problém tkví v tom, že něco designovat s tím záměrem a aby to navíc zasáhlo široké publikum je velmi těžké a dřou na tom lidi, co na to mají školy, léta praxe atd.
+
+Proto si myslím, že začít funkcionalisticky není od věci. Čisté a přehledné je lepší než zpatlané. A z toho, co tady často vidím, takové jednoduché CV spíš vynikne v davu nepřehledných z šablon z Canvy. <:lolpain:859017227515854879> 
+
+Pro větší zajímavost často stačí trochu zajímavější font…
+---
+
+
 #} -->

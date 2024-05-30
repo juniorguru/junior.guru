@@ -1392,4 +1392,9 @@ Samozřejmě záleží na typu práce a tom, jak je to kde organizované.
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1231221825665499156/1231459291165102194
+V tom shrnutí od <@668226181769986078> jsou spíš obecné nevýhody té právní formy.
+---
+
+
 #} -->

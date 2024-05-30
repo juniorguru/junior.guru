@@ -208,4 +208,13 @@ Slovníček na Git https://jvns.ca/blog/2023/11/01/confusing-git-terminology/
 Jestli mohu z druhé strany, tak naučit se sám s Githubem je pro mě dost složité. Snažím se ho používat. Nedokážu si ale pořádně ujasnit, jak ho správně používat a k čemu by to mělo vést (asi tím, že to, co občas napíšu, jsou maličkaté věci). A bez zpětné vazby vlastně ani nedokážu posoudit, jestli jdu správným směrem.
 
 
+--- https://discord.com/channels/769966886598737931/1241051418153058394/1241257870486671392
+GitHub (a další podobné služby) se dají shrnout do toho, že jde o 2 části:
+1) část, která je opravdu **git**, tedy to co máš i u sebe na disku v repository (tedy ta složka, kde si dala `git init` nebo sis to tam naklonovala přes `git clone`) a který leží i někde na jejich serveru (a je vyřešeno jak se tam připojíš po internetu)
+2) všechny ty nadstavby kolem, ať už jde o prohlížení repa, jeho editaci přímo v prohlížeči, komentáře, issues, PR, projekty, hostování statických webů a hromada dalšího)
+
+A samozřejmě při některých těch operacích vlastně GitHub za tebe píše příkazy Gitu, takže commity, merge atd. Jen to tam je trochu skryté tím, že jen zmáčkneš tlačítko. Ale stane se to a potom je potřeba `git pull` abys ty změny dostala k sobě.
+---
+
+
 #} -->

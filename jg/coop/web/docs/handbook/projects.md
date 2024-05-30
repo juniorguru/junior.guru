@@ -620,4 +620,16 @@ https://docs.google.com/document/d/1gk-sER2SHuW6T9sJZyYg5nMUaKNh0w2_-5HCGiF9zxs/
 
 nikdo už nechce vidět projekt typu todolist
 
+--- https://discord.com/channels/769966886598737931/1237340412545339392/1237349106721226793
+Souhlas, hlavně ta druhá část od 
+> Projekt nemusí být dokončený
+je přesná.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1237340412545339392/1237347362008203305
+Mám z toho, co píšeš, tak trochu pocit, že bojuješ s tímhle https://en.wikipedia.org/wiki/Feature_creep a pak trochu se strachem, že ten projekt není dostatečně dobrý nebo dokončený pro účely hledání práce. Trochu zpomal, nadechni se, projekt klidně na pár dní pusť k ledu a pusť se do těch záležitostí, které ti najdou tu práci (Github, LinkedIn, CV, soft skills, portfolio). To vše je jednorázová práce v podstatě. S perfekcionismem je třeba občas bojovat a mírnit ho. Je to dobrý sluha, ale zlý pán. Plánům dávej jasné časové rámce a tvoř si nějaké větší milníky, kterých když těmi menšími plány dosáhneš, budeš spokojenější, směřuj to k nějakému MVP (minimal viable product), setkáš se s tím často i v budoucí práci. Projekt nemusí být dokončený a nemusí mít zdaleka všechny funkce, které jsi si vysnil. Je v pořádku přijít na pohovor a mluvit o projektu, na kterém pracuješ kontinuálně a umíš vysvětlit jak v základu funguje a co na něm chystáš do budoucna (ergo co se chystáš naučit nového). Nijak to nesnižuje tvoji kvalitu jako uchazeče. Pokud si říkáš, že si najdeš práci, až to dokončíš, tak si ji taky nemusíš začít hledat nikdy. A to dle mého není tvým hlavním a největším cílem. Tím hlavním cílem je  najít si tu pozici.
+---
+
+
 #} -->
