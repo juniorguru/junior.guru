@@ -91,6 +91,6 @@ async def process(item: dict) -> dict:
             if key.startswith("tag_") and value
         },
     )
-    logger.debug(f"LLM opinion (PyDantic): {llm_opinion.model_dump()!r}")
-    item["llm_opinion"] = llm_opinion
+    item["llm_opinion"] = llm_opinion.model_dump()
+    logger.debug(f"LLM opinion: {item["llm_opinion"]!r}")
     return item
