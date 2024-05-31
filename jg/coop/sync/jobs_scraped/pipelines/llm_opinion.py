@@ -92,5 +92,5 @@ async def process(item: dict) -> dict:
         },
     )
     item["llm_opinion"] = llm_opinion.model_dump()
-    logger.debug(f"LLM opinion: {item["llm_opinion"]!r}")
+    logger.debug(f"LLM opinion: {item['llm_opinion']!r}")
     return item
