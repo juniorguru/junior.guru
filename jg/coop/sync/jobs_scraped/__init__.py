@@ -30,7 +30,6 @@ PIPELINES = [
     "jg.coop.sync.jobs_scraped.pipelines.language_filter",
     "jg.coop.sync.jobs_scraped.pipelines.llm_opinion",
     "jg.coop.sync.jobs_scraped.pipelines.relevance_filter",
-    "jg.coop.sync.jobs_scraped.pipelines.juniority_filter",
     "jg.coop.sync.jobs_scraped.pipelines.boards_ids",
     "jg.coop.sync.jobs_scraped.pipelines.gender_remover",
     "jg.coop.sync.jobs_scraped.pipelines.emoji_remover",
