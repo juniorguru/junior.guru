@@ -45,6 +45,23 @@ class DropItem(Exception):
     pass
 
 
+# TODO use PyDantic one day
+# class Item(BaseModel):
+#     title = str
+#     posted_on = date
+#     url = str
+#     apply_url = str | None
+#     company_name = str
+#     company_url = str | None
+#     company_logo_urls = list[str]
+#     locations_raw = list[str]
+#     remote = bool | None
+#     employment_types = list[str]
+#     description_html = str
+#     source = str
+#     source_urls = list[str]
+
+
 # Python 3.12 should start supporting generators for asyncio.as_completed,
 # so remove this class then
 class DisguisedGenerator:
@@ -91,7 +108,9 @@ async def main():
     drops = 0
     for processing in logger.progress(
         asyncio.as_completed(
-            DisguisedGenerator(process_item(pipelines, item) for item in items)
+            DisguisedGenerator(
+                process_item(pipelines, item) for item in list(items)[:5]
+            )
         )
     ):
         count += 1
