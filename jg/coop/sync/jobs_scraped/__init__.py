@@ -108,9 +108,7 @@ async def main():
     drops = 0
     for processing in logger.progress(
         asyncio.as_completed(
-            DisguisedGenerator(
-                process_item(pipelines, item) for item in list(items)[:5]
-            )
+            DisguisedGenerator(process_item(pipelines, item) for item in items)
         )
     ):
         count += 1
