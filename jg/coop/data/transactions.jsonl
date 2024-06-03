@@ -814,3 +814,5 @@
 {"_id": "26535585589", "amount": -2000, "category": "office", "happened_on": "2024-05-28"}
 {"_id": "26536490084", "amount": 6, "category": "donations", "happened_on": "2024-05-29"}
 {"_id": "26538341375", "amount": -234, "category": "miscellaneous", "happened_on": "2024-05-30"}
+{"_id": "26545061080", "amount": 8268, "category": "memberships", "happened_on": "2024-06-03"}
+{"_id": "26545500823", "amount": 604, "category": "donations", "happened_on": "2024-06-03"}
