@@ -276,4 +276,8 @@ trocha "motivace" https://mastodon.social/@mhoye/111420190239350648
 ---
 
 
+https://blog.gardeviance.org/2008/04/three-stages-of-expertise.html?m=1
+https://mastodonczech.cz/@brohrer@recsys.social/112558203075404703
+
+
 #} -->
