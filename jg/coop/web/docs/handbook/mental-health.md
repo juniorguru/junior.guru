@@ -283,11 +283,6 @@ Teď jsem narazil na velice zajímavou myšlenku, která by mohla rozproudit dis
 ---
 
 
---- https://discord.com/channels/769966886598737931/864434067968360459/980834407839571988
-Velmi dobrá otázka, já si myslím, že např. 1) ti psychické obtíže zasahují do života - způsobují problémy v práci, vztazích... 2) ostatní ti říkají, že to už není normální, 3) můžeš si udělat screening, který zaštituje Národní ústav duševního zdraví https://www.opatruj.se/otestujte-se .... 4) + pokud máš v rodině historii duševních obtíží, tak je to další důvod
----
-
-
 --- https://discord.com/channels/769966886598737931/788826407412170752/972950345863028737
 Strach a vzrušení před prvním zveřejněním životopisu…, před prvním pohovorem…, před nástupem do práce… Už vím, že mě chtějí, mám domluvenou pozici i mzdu, a přece se to první pracovní ráno cítím jako kdybych šla k maturitě. Sevřená nervozitou, plná očekávání. Co se bude dít první den? A co ty dny další?
 Obecně je nástupní den hlavně o setkání a poznání prostředí, vyřízení administrace, předání notebooku a mobilu, přidělení práv a přístupů, absolvování prvních „školení“ o firmě, práci, režimu, atd. Informace jsem hltala možná až moc vehementně, nevím proč jsem si myslela, že musím nasadit vražedné tempo a všechno si hned zapamatovat… Měla jsem toho tak plnou hlavu, že jsem v noci neusnula.
