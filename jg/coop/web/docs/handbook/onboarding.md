@@ -647,7 +647,12 @@ Let’s start here: hiring engineers is not a process of “picking the best per
 And the best teams are always the ones with a diversity of strengths, perspectives, and levels of expertise. A monoculture can be spectacularly successful in the short term—it may even outperform a diverse team. But they do not scale well, and they do not adapt to unfamiliar challenges gracefully. The longer you wait to diversify, the harder it will be.
 
 https://www.linkedin.com/posts/honzajavorek_generative-ai-is-not-going-to-build-your-activity-7209465614342443010-VsG6?utm_source=share&utm_medium=member_desktop
----
 
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/972950345863028737
+Strach a vzrušení před prvním zveřejněním životopisu…, před prvním pohovorem…, před nástupem do práce… Už vím, že mě chtějí, mám domluvenou pozici i mzdu, a přece se to první pracovní ráno cítím jako kdybych šla k maturitě. Sevřená nervozitou, plná očekávání. Co se bude dít první den? A co ty dny další?
+Obecně je nástupní den hlavně o setkání a poznání prostředí, vyřízení administrace, předání notebooku a mobilu, přidělení práv a přístupů, absolvování prvních „školení“ o firmě, práci, režimu, atd. Informace jsem hltala možná až moc vehementně, nevím proč jsem si myslela, že musím nasadit vražedné tempo a všechno si hned zapamatovat… Měla jsem toho tak plnou hlavu, že jsem v noci neusnula.
+Druhý den jsem nastoupila na projekt do jiné společnosti. Takže stejné kolečko co předchozí den: další nové prostředí, setkání, administrace, notebook, školení… někdy jste na tom tak dobře, že přijdete, první den dostanete notebook a smlouvu, druhý den vám zařídí přístupy a vysvětlí práci, a třetí den už přispíváte jako plnohodnotný člen týmu. Mně se ty dny změnily v týdny (slabina korporátů), takže třeba první měsíc jsem dost intenzivně bojovala se strachem z vyhazovu a s pocitem, že jsem tam k ničemu, protože „nic neprogramuji a jen čtu dokumentaci“ k projektu. Ale v týmu se vědělo, že jsem úplný nováček a zaškoluji se na nových technologiích, takže všichni byli klidní, nápomocní a já se postupně uklidňovala taky… Hlavně díky rozhovorům v kuchyňkách a na obědech (které vřele doporučuji), protože jsem se dozvěděla, že i mým kolegům trval proces rozkoukávání dlouho, že je to normální, pochopitelné, že není kam spěchat, mám být v klidu a pokud budou mít pocit, že bych „měla zrychlit“, určitě to jasně řeknou – opadly tak moje obavy, že bych ze dne na den dostala smsku, ať už do práce nechodím. Postupně jsem začala psát kód a těšilo mě, že byl schvalován bez připomínek a s pochvalou, že mi to jde. Takže nevzdávejte to!
+---
 
 #} -->

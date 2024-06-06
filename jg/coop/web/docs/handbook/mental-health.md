@@ -257,98 +257,24 @@ Kouč je někdo, kdo absolvoval dlouhodobý a ideálně i akreditovaný koučova
 Přemýšlím, že se vrátím na šachtu, tam jsem měl prázdnou hlavu. Teď chodím z práce domů, vole, a furt nad něčím přemýšlím, furt mám něco v hlavě, vole, něco tě napadne, musím si ku**a zapnout komp, ty p**o. Mně se zdálo o závorkách - složené závorky, dvě složené závorky, ty p**o, jak to tam mám dát?
 https://zpravy.aktualne.cz/domaci/tomas-hisem-z-hornika-programatorem/r~927d3882bc9a11ebaedf0cc47ab5f122/
 
-feedback na stránku https://discord.com/channels/769966886598737931/789046675247333397/1025450055999692910
-
-Don’t compare yourself
-https://twitter.com/traversymedia/status/1298585427016908801
-
-6, 8 - nepropadej panice
-https://www.youtube.com/playlist?list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_
-
-workoholismus
-https://discord.com/channels/769966886598737931/864434067968360459/900281705246633995
-
-Ahoj :-) tohle mi připadá supr! Sám jsem tím trpěl, teď už tolik ne. A věřím, že spousta juniorů a zvlášť juniorek má tenhle syndrom. Tak jsem si říkal, že by tě to mohlo zaujmout... https://www.youtube.com/watch?v=l_Vqp1dPuPo
+Je ťažké učiť sa programovať? - yablko vysvětluje jak vznikají jeho kurzy a že nepíše kód takhle rychle z hlavy
+https://www.youtube.com/watch?v=Fkvx5fOOHLw&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_&index=6
 
 Produktivita
-https://discord.com/channels/769966886598737931/864434067968360459/901243092856889384
+https://www.youtube.com/watch?v=VJpJOiVLXro
 
---- https://discord.com/channels/769966886598737931/789107031939481641/999239037187534898
-Na "jak zvýšit psychickou odolnost" jsou psaný celý knížky 😄 ale já osobně jsem spíš zastánce toho, že tě zocelují náročné životní situace, které jsi překonal. Je rozdíl mezi eustresem a distresem, eustres je mírný a nabudí tě k lepšímu výkonu, distres už je za hranou a tvůj výkon zhorší. Můj tip na snížení stresu je určitě nácvik. Kognitivně behaviorální terapie vystavování se podnětům, které způsobují úzkost hodně propaguje, a funguje to. Takže poprosit někoho blízkého, ať se mnou simuluje pohovorovou situaci může snížit stres při samotném pohovoru.
----
+Manuál duševního zdraví vysokoškoláka
+https://www.elsa.cvut.cz/wp-content/uploads/2022/11/manual-dusevniho-zdravi-vysokoskolaka.pdf
 
+Podcast s Nelou
+https://www.programhrovani.cz/1843229/13207355-dev-stories-9-nela-slezakova-flowerchecker-o-programovani-a-psychologii
 
---- https://discord.com/channels/769966886598737931/864434067968360459/997241498452111441
-Teď jsem narazil na velice zajímavou myšlenku, která by mohla rozproudit diskuzi. Čtu zrovna knihu Psychologie peněz (všiml jsem si ze téma financí se tu někde nedávno řešilo) a velice mě tam zaujala myšlenka toho, že pokud člověk zjistí, že chce najednou dělat něco nového (třeba nastartovat kariéru v IT jako asi většina z nás) tak má tendenci se na to až nezdravě soustředit. Plus ho k tomu ještě svírá lítost, že obětoval tolik času něčemu jinému co zrovna opouští a takovéto “kéž bych začal dřív” mu může dost ublížit. Co vy na to? Znáte to? Já osobně jsem s tímhle pocitem bojoval dost dlouhou dobu. Jednou za čas mě to přepadne, ale naučil jsem se s tím pracovat a soustředit se na fakt, že vše v životě má své opodstatnění a vše má svůj čas. Proto taky třeba tolik nespěchám na učení a je to pro mě až na druhém místě za rodinou. 😊
----
+Balanc - Bůh je mrtev a na jeho trůn jsme posadili práci. Jak moc je pro vás práce důležitá a co v ní hledáte?
+https://www.mujrozhlas.cz/balanc/buh-je-mrtev-na-jeho-trun-jsme-posadili-praci-jak-moc-je-pro-vas-prace-dulezita-co-v-ni
 
-
---- https://discord.com/channels/769966886598737931/788826407412170752/972950345863028737
-Strach a vzrušení před prvním zveřejněním životopisu…, před prvním pohovorem…, před nástupem do práce… Už vím, že mě chtějí, mám domluvenou pozici i mzdu, a přece se to první pracovní ráno cítím jako kdybych šla k maturitě. Sevřená nervozitou, plná očekávání. Co se bude dít první den? A co ty dny další?
-Obecně je nástupní den hlavně o setkání a poznání prostředí, vyřízení administrace, předání notebooku a mobilu, přidělení práv a přístupů, absolvování prvních „školení“ o firmě, práci, režimu, atd. Informace jsem hltala možná až moc vehementně, nevím proč jsem si myslela, že musím nasadit vražedné tempo a všechno si hned zapamatovat… Měla jsem toho tak plnou hlavu, že jsem v noci neusnula.
-Druhý den jsem nastoupila na projekt do jiné společnosti. Takže stejné kolečko co předchozí den: další nové prostředí, setkání, administrace, notebook, školení… někdy jste na tom tak dobře, že přijdete, první den dostanete notebook a smlouvu, druhý den vám zařídí přístupy a vysvětlí práci, a třetí den už přispíváte jako plnohodnotný člen týmu. Mně se ty dny změnily v týdny (slabina korporátů), takže třeba první měsíc jsem dost intenzivně bojovala se strachem z vyhazovu a s pocitem, že jsem tam k ničemu, protože „nic neprogramuji a jen čtu dokumentaci“ k projektu. Ale v týmu se vědělo, že jsem úplný nováček a zaškoluji se na nových technologiích, takže všichni byli klidní, nápomocní a já se postupně uklidňovala taky… Hlavně díky rozhovorům v kuchyňkách a na obědech (které vřele doporučuji), protože jsem se dozvěděla, že i mým kolegům trval proces rozkoukávání dlouho, že je to normální, pochopitelné, že není kam spěchat, mám být v klidu a pokud budou mít pocit, že bych „měla zrychlit“, určitě to jasně řeknou – opadly tak moje obavy, že bych ze dne na den dostala smsku, ať už do práce nechodím. Postupně jsem začala psát kód a těšilo mě, že byl schvalován bez připomínek a s pochvalou, že mi to jde. Takže nevzdávejte to!
----
-
-
---- https://discord.com/channels/769966886598737931/1089542061910413345/1089645111840886836
-Ahoj Jamébo, vítej v klubu.
-Máš tedy v životě aktuálně řádně naloženo, ne že ne. 😓
-Jsme sice stejně staří a už sem taky nějakou tou krizí prošel, ale jako bezdětný, si tohle neumím moc představit. 😮
-
-Co si představit umím, je to, co je potřeba pro změnu kariéry do IT, protože posledních několik let tím lidi provázím.
-
-Ne všem se to povede a ty důvody jsou v naprosté většině stejné:
-🪫 nejsou na tom psychicky dobře, vyhoření, deprese, rozpad vztahu, to všechno je často bohužel smrtelná rána téhle snaze, prostě už nemáš energii
-💸 nemají dost finančních rezerv: není to levné, místo práce se učit, platit kurzy, hledání práce taky trvá, nástupní peníze v IT nejsou žádná výhra (pořád není výjimkou 30 hrubého za fulltime) i když to samozřejmě stoupá relativně rychle
-🫂 chybí podpora partnerů / rodiny / okolí: tohle je trochu propojené s těmi předchozími, okolí ti to může financovat, hlídat děti a vůbec ten pocit, že ti někdo blízký říká, že to zvládneš je taky dost důležitej.
-
-A teď když se touhle optikou dívám na tvoji situaci, jak ji tu popisuješ, tak kromě odhodlání, které z toho cítím (respekt!), tam vidím i dost rizik. Trh aktuálně taky není na tvé straně, poněkud to vychladlo a je potřeba umět víc a práci juniorům trvá najít déle než třeba před rokem.
-
-Nerad bych tě tím demotivoval, ale v tvé situaci asi nemůžeš moc riskovat a jít do toho po hlavě bez ohledu na šance a je proto na místě spíš opatrnější přístup. ☹️
-
-Zkusme přijít na nějakou cestu, jak by to mohlo jít. 🤔
----
-
-
-
-
---- https://discord.com/channels/769966886598737931/864434067968360459/1108854118119919667
-Zajímavá pomůcka 🙂 https://www.starterstory.com/how-to-say-no
----
-
-
---- https://discord.com/channels/769966886598737931/864434067968360459/1111537040358654012
-Vykouklo na mě na <:facebook:976201141924802580>: https://www.elsa.cvut.cz/wp-content/uploads/2022/11/manual-dusevniho-zdravi-vysokoskolaka.pdf
----
-
-
---- https://discord.com/channels/769966886598737931/916339896963190785/1118274720081641662
-
----
-
-
---- https://discord.com/channels/769966886598737931/864434067968360459/1128945673409134642
-Můj první podcast! 😅 Povídáme si (nečekaně) o juniorech, na cestě za první prací v IT a juniorech v novém zaměstnání. A Vojtěch Mádr a Šárka Kousalová ze mě mámí řadu tipů, "Co dělat když...". Dotkla jsem se tak i témat, které jsem zatím v přednáškách nepokryla. Příjemný poslech 😉
-
-https://bit.ly/43kQTxx
----
-
-
-https://overcast.fm/+sSMxujIAI
-
-
-https://www.facebook.com/groups/karieroviporadci/posts/1313279362724110/?comment_id=1313335772718469&reply_comment_id=1314594812592565&__cft__[0]=AZWMcRq7AQKxLajYQRUHc8KUh12uhBk86ogWa5bGWQ1G6owkzUnl2Y0mXj1vTgE04JaFMruyABkKAJuJO9Yzmnmm0VmInArKa9GB-uHnlb-o1V3HdvfPjPHQoLgUW6bzgMoNBUMhCuoes3nXwBJFemEK&__tn__=R]-R
-Řešíme téma zvládání změn, zpracované je v jedné z kapitol knize "Cesta za horizont kariérového poradenství" (je ke stažení na našem webu: https://ekskurzy.cz/cs/nase-publikace) a k ní jsou navázané dvě prezentace, které máme na youtube kanálu:[ https://youtu.be/wihsODx3TqY?si=5UiMKge0YqbvnRK](https://youtu.be/wihsODx3TqY?si=5UiMKge0YqbvnRK "‌") a https://youtu.be/L18b9qJeS6A?si=-MAoJX8JtipvZQVv Kurz jsme měli jen v rámci projektu, aktuálně je možnost téma podrobněji řešit v rámci individuální konzultace.
-Případně ještě kniha k posilování odolnosti "Životem s lehkostí", také zdarma na našem webu
-
-
---- https://discord.com/channels/769966886598737931/864434067968360459/1182021718919872522
-Impostor syndrom. Je to vlákno, po rozkliknutí byste měli vidět navazující příspěvky. https://jawns.club/@skyfaller/111531328646480058
----
-
-
+D-K
 https://blog.gardeviance.org/2008/04/three-stages-of-expertise.html?m=1
 https://mastodonczech.cz/@brohrer@recsys.social/112558203075404703
-
+https://medium.com/geekculture/dunning-kruger-effect-and-journey-of-a-software-engineer-a35f2ff18f1a
 
 #} -->
