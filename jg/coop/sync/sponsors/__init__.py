@@ -30,9 +30,3 @@ def main(github_api_key: str):
             for node in data["user"]["sponsorshipsAsMaintainer"]["nodes"]
         }
         pprint(sponsors)
-
-        data = github.graphql(SPONSORS_VALUE_GQL, {"login": GITHUB_PERSONAL_USERNAME})
-        for node in data["user"]["lifetimeReceivedSponsorshipValues"]["nodes"]:
-            sponsors[node["sponsor"]["login"]]["amountInCents"] = node["amountInCents"]
-
-        pprint(sponsors)
