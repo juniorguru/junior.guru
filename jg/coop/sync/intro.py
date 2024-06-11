@@ -66,7 +66,7 @@ async def sync_intro(client: ClubClient):
 
 async def process_message(discord_channel: TextChannel, message: ClubMessage):
     if message.author.id == ClubMemberID.BOT:
-        logger.info(f"Message {message.url} sent by the bot itself, skipping")
+        logger.debug(f"Message {message.url} sent by the bot itself, skipping")
         return
     if message.type == "default" and message.is_intro:
         logger.info(f"Welcoming member #{message.author.id}")
@@ -81,52 +81,52 @@ async def process_message(discord_channel: TextChannel, message: ClubMessage):
 
 @mutations.mutates_discord()
 async def welcome(discord_channel: TextChannel, message: ClubMessage):
-    logger.info(f"Welcoming {message.author.display_name!r} with emojis, {message.url}")
+    logger.debug(f"Welcoming {message.author.display_name!r} with emojis")
 
     if message.created_at < THREADS_STARTING_AT:
         logger.warning("The message is from before threads were introduced, skipping")
         return
 
-    logger.info(f"Ensuring emojis for {message.author.display_name!r}")
+    logger.debug(f"Ensuring emojis for {message.author.display_name!r}")
     discord_message = await discord_channel.fetch_message(message.id)
     emojis = intro.choose_intro_emojis(message.content)
     missing_emojis = get_missing_reactions(discord_message.reactions, emojis)
-    logger.info(f"Reacting to {message.author.display_name!r} with {emojis!r}")
+    logger.debug(f"Reacting to {message.author.display_name!r} with {emojis!r}")
     await add_reactions(discord_message, missing_emojis)
 
-    logger.info(f"Ensuring thread for {message.author.display_name!r}")
+    logger.debug(f"Ensuring thread for {message.author.display_name!r}")
     if discord_message.flags.has_thread:
-        logger.info(f"Thread for {message.author.display_name!r} already exists")
+        logger.debug(f"Thread for {message.author.display_name!r} already exists")
         thread = await discord_message.guild.fetch_channel(message.id)
     else:
-        logger.info(f"Creating thread for {message.author.display_name!r}")
+        logger.debug(f"Creating thread for {message.author.display_name!r}")
         thread = await discord_message.create_thread(
             name=name_thread(intro.THREAD_NAME_TEMPLATE)
         )
 
     if thread.archived or thread.locked:
-        logger.info(
+        logger.debug(
             f"Thread for {message.author.display_name!r} is archived or locked, skipping"
         )
         return
 
-    logger.info(f"Ensuring correct thread name for {message.author.display_name!r}")
+    logger.debug(f"Ensuring correct thread name for {message.author.display_name!r}")
     await ensure_thread_name(thread, intro.THREAD_NAME_TEMPLATE)
 
-    logger.info(f"Ensuring welcome messages for {message.author.display_name!r}")
+    logger.debug(f"Ensuring welcome messages for {message.author.display_name!r}")
     discord_messages = [
         discord_message
         async for discord_message in thread.history(limit=None)
         if is_welcome_message(discord_message)
     ]
     if discord_messages:
-        logger.info(
+        logger.debug(
             f"Thread for {message.author.display_name!r} already has some messages from bot, skipping"
         )
     else:
         await thread.send(**intro.generate_intro_message())
 
-    logger.info(
+    logger.debug(
         f"Analyzing if greeters are involved for {message.author.display_name!r}"
     )
     thread_members = thread.members or await thread.fetch_members()
@@ -139,7 +139,7 @@ async def welcome_back(discord_channel: TextChannel, message: ClubMessage):
     missing_emojis = get_missing_reactions(
         discord_message.reactions, WELCOME_BACK_REACTIONS
     )
-    logger.info(
+    logger.debug(
         f"Welcoming back {message.author.display_name!r} with emojis {missing_emojis!r}"
     )
     await add_reactions(discord_message, missing_emojis)
