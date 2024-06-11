@@ -74,7 +74,7 @@ async def process_message(discord_channel: TextChannel, message: ClubMessage):
             await welcome(discord_channel, message)
         except discord.NotFound:
             logger.error(
-                f"WELCOME: Message {message.url} by {message.author.display_name}, {message.created_at} not found in the channel"
+                f"WELCOME: Message {message.url} by {message.author.name}, {message.created_at} not found in the channel"
             )
             raise
     elif (
@@ -86,7 +86,7 @@ async def process_message(discord_channel: TextChannel, message: ClubMessage):
             await welcome_back(discord_channel, message)
         except discord.NotFound:
             logger.error(
-                f"WELCOME BACK: Message {message.url} by {message.author.display_name}, {message.created_at} not found in the channel"
+                f"WELCOME BACK: Message {message.url} by {message.author.name}, {message.created_at} not found in the channel"
             )
             raise
 
