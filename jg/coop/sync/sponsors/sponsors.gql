@@ -1,0 +1,12 @@
+query fetch($login: String!) {
+  user(login: $login) {
+    sponsorshipsAsMaintainer(first: 100, includePrivate: false, activeOnly: false) {
+      nodes {
+        sponsorEntity {
+          ... on User { login, avatarUrl, url }
+          ... on Organization { login, avatarUrl, url }
+        }
+      }
+    }
+  }
+}
