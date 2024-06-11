@@ -124,25 +124,19 @@ description: Komunita pro začátečníky v programování, průvodce programov�
 
 
 <div class="section-background blue-light"><section class="section">
-  <h2>Kolik to stojí?</h2>
+  <h2>Zdarma?</h2>
   {% call lead() -%}
     Cílem junior.guru je, aby co nejvíc lidí v Česku a na Slovensku mělo příležitost naučit se programovat.
     Takže **všechno kromě klubu je zdarma**.
-    Provoz projektu financují členové klubu svým předplatným a dobrovolní sponzoři.
+    Provoz projektu financují členové klubu svým předplatným a firemní či individuální sponzoři.
   {%- endcall %}
   <ul class="logos standout">
-    <li class="logos-item logos-caption">
-      Firemní sponzoři
-    </li>
     {% for partnership in partnerships %}
       {% set partner = partnership.partner %}
       {{ logo(partner.name, partner.logo_path, partner.url) }}
     {% endfor %}
   </ul>
   <ul class="sponsor-avatars standout-bottom">
-    <li class="sponsor-avatars-item sponsor-avatars-caption">
-      Individuální sponzoři
-    </li>
   {% for sponsor in sponsors_github %}
     <li class="sponsor-avatars-item">
       <a href="{{ sponsor.url }}" target="_blank" rel="noopener"
