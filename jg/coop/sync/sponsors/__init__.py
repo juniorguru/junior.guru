@@ -38,6 +38,5 @@ def main(github_api_key: str):
                 name=node["sponsorEntity"]["name"],
                 url=node["sponsorEntity"]["url"],
                 avatar_url=node["sponsorEntity"]["avatarUrl"],
-                sponsored_on=datetime.fromisoformat(node["createdAt"]).date(),
                 is_active=node["isActive"],
             )

@@ -1,4 +1,4 @@
-from peewee import BooleanField, CharField, DateField
+from peewee import BooleanField, CharField, DateField, fn
 
 from jg.coop.models.base import BaseModel
 
@@ -8,5 +8,8 @@ class GitHubSponsor(BaseModel):
     name = CharField(null=True)
     url = CharField()
     avatar_url = CharField()
-    sponsored_on = DateField()
     is_active = BooleanField()
+
+    @classmethod
+    def listing(cls):
+        return cls.select().where(cls.is_active == True).order_by(fn.random())

@@ -21,6 +21,7 @@ from jg.coop.models.job import ListedJob
 from jg.coop.models.page import Page
 from jg.coop.models.partner import Partner, Partnership
 from jg.coop.models.podcast import PodcastEpisode
+from jg.coop.models.sponsor import GitHubSponsor
 from jg.coop.models.stage import Stage
 from jg.coop.models.story import Story
 from jg.coop.models.topic import Topic
@@ -78,6 +79,9 @@ def on_shared_page_context(context, page, config, files):
 
 @db.connection_context()
 def on_docs_context(context):
+    # index.jinja
+    context["sponsors_github"] = GitHubSponsor.listing()
+
     # club.md
     context["messages_count"] = ClubMessage.count()
     context["events"] = Event.listing()

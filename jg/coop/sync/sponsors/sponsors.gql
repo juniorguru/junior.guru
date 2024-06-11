@@ -2,7 +2,6 @@ query fetch($login: String!) {
   user(login: $login) {
     sponsorshipsAsMaintainer(first: 100, includePrivate: false, activeOnly: false) {
       nodes {
-        createdAt
         isActive
         sponsorEntity {
           ... on User { name, login, avatarUrl, url }

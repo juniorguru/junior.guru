@@ -1,0 +1,36 @@
+$sponsor-avatar-size: 3rem;
+
+.sponsor-avatars {
+  @extend .list-unstyled;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: -1 * $spacer;
+}
+
+.sponsor-avatars-item {
+  display: flex;
+  align-items: center;
+  margin: 0 map-get($spacers, 1) $spacer;
+
+  @include media-breakpoint-up(sm) {
+    margin: 0 map-get($spacers, 2) $spacer;
+  }
+}
+
+.sponsor-avatars-caption {
+  @extend .small;
+  white-space: nowrap;
+}
+
+.sponsor-avatars-caption,
+.sponsor-avatars-caption a {
+  @extend .text-body-secondary;
+}
+
+.sponsor-avatars img {
+  width: $sponsor-avatar-size;
+  height: $sponsor-avatar-size;
+  background: $white;
+  border-radius: 100%;
+}

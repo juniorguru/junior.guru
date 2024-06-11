@@ -4,7 +4,7 @@ template: main_sections.html
 description: Komunita pro začátečníky v programování, průvodce programováním pro samouky, kurzy programování, nabídky práce pro juniory
 ---
 
-{% from 'macros.html' import lead, link_card, logo, news_card with context %}
+{% from 'macros.html' import lead, link_card, logo, news_card, img with context %}
 
 
 <header class="masthead"><div class="masthead-container">
@@ -138,6 +138,18 @@ description: Komunita pro začátečníky v programování, průvodce programov�
       {% set partner = partnership.partner %}
       {{ logo(partner.name, partner.logo_path, partner.url) }}
     {% endfor %}
+  </ul>
+  <ul class="sponsor-avatars standout-bottom">
+    <li class="sponsor-avatars-item sponsor-avatars-caption">
+      Individuální sponzoři
+    </li>
+  {% for sponsor in sponsors_github %}
+    <li class="sponsor-avatars-item">
+      <a href="{{ sponsor.url }}" target="_blank" rel="noopener">
+        {{ img(sponsor.avatar_url, sponsor.name, 50, 50, lazy=False) }}
+      </a>
+    </li>
+  {% endfor %}
   </ul>
 </section></div>
 
