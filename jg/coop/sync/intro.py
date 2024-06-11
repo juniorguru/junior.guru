@@ -69,26 +69,14 @@ async def process_message(discord_channel: TextChannel, message: ClubMessage):
         logger.debug(f"Message {message.url} sent by the bot itself, skipping")
         return
     if message.type == "default" and message.is_intro:
-        try:
-            logger.info(f"Welcoming member #{message.author.id}")
-            await welcome(discord_channel, message)
-        except discord.NotFound:
-            logger.error(
-                f"WELCOME: Message {message.url} by {message.author.name}, {message.created_at} not found in the channel"
-            )
-            raise
+        logger.info(f"Welcoming member #{message.author.id}")
+        await welcome(discord_channel, message)
     elif (
         message.type == "new_member"
         and message.author.first_seen_on() < message.created_at.date()
     ):
-        try:
-            logger.info(f"Welcoming back member #{message.author.id}")
-            await welcome_back(discord_channel, message)
-        except discord.NotFound:
-            logger.error(
-                f"WELCOME BACK: Message {message.url} by {message.author.name}, {message.created_at} not found in the channel"
-            )
-            raise
+        logger.info(f"Welcoming back member #{message.author.id}")
+        await welcome_back(discord_channel, message)
 
 
 @mutations.mutates_discord()
