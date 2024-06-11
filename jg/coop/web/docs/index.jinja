@@ -145,7 +145,8 @@ description: Komunita pro začátečníky v programování, průvodce programov�
     </li>
   {% for sponsor in sponsors_github %}
     <li class="sponsor-avatars-item">
-      <a href="{{ sponsor.url }}" target="_blank" rel="noopener">
+      <a href="{{ sponsor.url }}" target="_blank" rel="noopener"
+        data-metrics-utm data-metrics-utm-medium="avatar" data-metrics-utm-campaign="sponsorship">
         {{ img(sponsor.avatar_url, sponsor.name, 50, 50, lazy=False) }}
       </a>
     </li>
