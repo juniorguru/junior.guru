@@ -1,4 +1,4 @@
-from peewee import BooleanField, CharField, DateField, fn
+from peewee import BooleanField, CharField, fn
 
 from jg.coop.models.base import BaseModel
 
@@ -12,4 +12,8 @@ class GitHubSponsor(BaseModel):
 
     @classmethod
     def listing(cls):
-        return cls.select().where(cls.is_active == True).order_by(fn.random())
+        return (
+            cls.select()
+            .where(cls.is_active == True)  # noqa: E712
+            .order_by(fn.random())
+        )
