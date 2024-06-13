@@ -1396,5 +1396,7 @@ Samozřejmě záleží na typu práce a tom, jak je to kde organizované.
 V tom shrnutí od <@668226181769986078> jsou spíš obecné nevýhody té právní formy.
 ---
 
+deleni firem spis podle cost/profit https://newsletter.pragmaticengineer.com/p/profit-centers-cost-centers
+
 
 #} -->
