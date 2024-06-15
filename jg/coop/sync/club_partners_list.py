@@ -14,7 +14,7 @@ from jg.coop.lib.discord_club import (
 from jg.coop.lib.mutations import mutating_discord
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
-from jg.coop.models.partner import Partnership
+from jg.coop.models.sponsor import Sponsor
 
 
 IMAGES_DIR = Path("jg/coop/images")
@@ -23,8 +23,8 @@ IMAGES_DIR = Path("jg/coop/images")
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=["club-content", "partners"])
-@click.option("--channel", "channel_id", default="partners_list", type=parse_channel)
+@cli.sync_command(dependencies=["club-content", "sponsors"])
+@click.option("--channel", "channel_id", default="sponsors_list", type=parse_channel)
 @click.option(
     "--recreate-interval",
     "recreate_interval_days",
@@ -40,7 +40,7 @@ def main(channel_id: int, recreate_interval_days: int):
 async def recreate_archive(
     client: ClubClient, channel_id: int, recreate_interval_days: int
 ):
-    partnerships = list(Partnership.active_listing())
+    sponsors = Sponsor.club_listing()
     messages = ClubMessage.channel_listing(channel_id, by_bot=True)
     try:
         last_message = messages[-1]
@@ -61,33 +61,28 @@ async def recreate_archive(
     with mutating_discord(channel) as proxy:
         await proxy.send(
             (
-                "# Seznam partnerských firem\n\n"
-                "Tyto firmy se podílejí na financování junior.guru. "
+                "# Seznam sponzorů\n\n"
+                "Tyto organizace se podílejí na financování junior.guru. "
                 "Můžeš se tady prokliknout na jejich stránky. "
-                "Partnerství neznamená, že junior.guru doporučuje konkrétní kurzy, nebo že na ně nemáš psát recenze v klubu. "
+                "Sponzorství neznamená, že junior.guru doporučuje konkrétní kurzy, nebo že na ně nemáš psát recenze v klubu. "
                 "\n\n"
-                "Když sem partnerské firmy pošlou lidi, tak ti dostanou roli <@&837316268142493736> a k tomu ještě i roli pro konkrétní firmu, například <@&938306918097747968>. "
-                "Role využívej a firmu označ, pokud po ní něco potřebuješ. "
-                "Seznam firem je tady seřazený podle počtu lidí v klubu. "
+                "Když sem sponzoři pošlou lidi, tak ti dostanou roli <@&837316268142493736> a k tomu ještě i roli pro konkrétní subjekt, například <@&938306918097747968>. "
+                "Role využívej a sponzory klidně označ, pokud po nich něco potřebuješ. "
+                "Seznam sponzorů je tady seřazený podle počtu jejich lidí v klubu. "
             ),
             suppress=True,
             allowed_mentions=AllowedMentions.none(),
         )
-    partners = sorted(
-        [partnership.partner for partnership in partnerships],
-        key=lambda partner: (len(partner.list_members), partner.name),
-        reverse=True,
-    )
-    for partner in partners:
-        logger.info(f"Posting {partner.name!r}")
+    for sponsor in sponsors:
+        logger.info(f"Posting {sponsor.name!r}")
         embed = Embed(
-            title=partner.name,
-            url=partner.url,
+            title=sponsor.name,
+            url=sponsor.url,
             color=Color.dark_grey(),
-            description=f"Role: <@&{partner.role_id}>\nČlenů: {len(partner.list_members)}",
+            description=f"Role: <@&{sponsor.role_id}>\nČlenů: {sponsor.members_count}",
         )
-        embed.set_thumbnail(url=f"attachment://{Path(partner.poster_path).name}")
-        file = File(IMAGES_DIR / partner.poster_path)
+        embed.set_thumbnail(url=f"attachment://{Path(sponsor.poster_path).name}")
+        file = File(IMAGES_DIR / sponsor.poster_path)
         with mutating_discord(channel) as proxy:
             await proxy.send(
                 embed=embed,

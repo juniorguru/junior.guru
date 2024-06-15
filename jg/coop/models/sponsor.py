@@ -11,6 +11,7 @@ from peewee import (
 )
 
 from jg.coop.models.base import BaseModel
+from jg.coop.models.club import ClubUser
 
 
 class SponsorTier(BaseModel):
@@ -43,8 +44,35 @@ class Sponsor(BaseModel):
         )
 
     @classmethod
+    def club_listing(cls) -> Iterable[Self]:
+        return sorted(
+            cls.listing(),
+            key=lambda sponsor: (sponsor.members_count, sponsor.name),
+            reverse=True,
+        )
+
+    @classmethod
     def count(cls) -> int:
         return cls.select().count()
+
+    @property
+    def list_members(self) -> Iterable[ClubUser]:
+        if not self.coupon:
+            return []
+        cls = self.__class__
+        return (
+            ClubUser.select()
+            .join(cls, on=(ClubUser.coupon == cls.coupon))
+            .where(
+                (ClubUser.is_member == True)  # noqa: E712
+                & (ClubUser.coupon == self.coupon)
+            )
+            .order_by(ClubUser.display_name)
+        )
+
+    @property
+    def members_count(self) -> int:
+        return len(self.list_members)
 
 
 class PastSponsor(BaseModel):
