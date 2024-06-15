@@ -233,17 +233,7 @@ async def announce_new_episode(client: ClubClient):
         )
         poster_file = File(IMAGES_DIR / last_episode.poster_path)
 
-        if last_episode.partner:
-            details = (
-                ":star: Epizoda vznikla v rámci"
-                f" [placeného partnerství](https://junior.guru/open/{last_episode.partner.slug})"
-                f" s firmou [{last_episode.partner.name}]({last_episode.partner.url}"
-                "?utm_source=juniorguru&utm_medium=podcast&utm_campaign=partnership)"
-                "\n"
-            )
-        else:
-            details = ""
-        details += (
+        details = (
             f"⏱️ {last_episode.media_duration_m} minut poslechu\n"
             f"<a:vincent:900831887591882782> Do půl hodiny to bude na webu, brzo potom i na ostatních službách\n"
         )

@@ -110,17 +110,11 @@ O klub se stará **Honza Javorek, autor junior.guru**. Okolo se však „poflak
 Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý s jiným životním příběhem, ale s velmi podobnými dotazy a problémy.
 {% endcall %}
 <ul class="logos standout">
-  <li class="logos-item logos-caption">
-    <a href="{{ pages|docs_url('faq.md')|url }}#firmy" target="_blank" rel="noopener">Firemní partneři</a>
-  </li>
   {% for sponsor in sponsors %}
     {{ logo(sponsor.name, sponsor.logo_path, sponsor.url) }}
   {% endfor %}
 </ul>
 <ul class="logos standout-top">
-  <li class="logos-item logos-caption">
-    <a href="{{ pages|docs_url('faq.md')|url }}#komunity">Komunitní partneři</a>
-  </li>
   {{ logo('Aj ty v IT', 'logos/ajtyvit.svg', 'https://ajtyvit.sk/') }}
   {{ logo('Česko.Digital', 'logos/ceskodigital.svg', 'https://cesko.digital/') }}
   {{ logo('Czechitas', 'logos/czechitas.svg', 'https://www.czechitas.cz/') }}
