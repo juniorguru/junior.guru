@@ -30,7 +30,7 @@ class Sponsor(BaseModel):
     renews_on = DateField()
     note = TextField(null=True)
     coupon = CharField(null=True, index=True)
-    # logo_path = CharField()
+    logo_path = CharField()
     # poster_path = CharField()
     # role_id = IntegerField(null=True)
 

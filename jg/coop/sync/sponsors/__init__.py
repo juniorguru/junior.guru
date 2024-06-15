@@ -79,6 +79,15 @@ def main(today: date):
     for sponsor in sponsors.registry:
         if renews_on := get_renews_on(sponsor.periods, today):
             logger.info(f"Sponsor {sponsor.name} ({sponsor.slug})")
+
+            logo_path = LOGOS_DIR / f"{sponsor.slug}.svg"
+            if not logo_path.exists():
+                logo_path = logo_path.with_suffix(".png")
+            if not logo_path.exists():
+                raise FileNotFoundError(
+                    f"'There is no {sponsor.slug}.svg or .png inside {LOGOS_DIR}"
+                )
+
             Sponsor.create(
                 slug=sponsor.slug,
                 name=sponsor.name,
@@ -86,6 +95,7 @@ def main(today: date):
                 tier=tiers[sponsor.tier] if sponsor.tier else None,
                 renews_on=renews_on,
                 coupon=coupons_mapping.get(sponsor.slug),
+                logo_path=logo_path.relative_to(IMAGES_DIR),
             )
         else:
             logger.info(f"Past sponsor {sponsor.name} ({sponsor.slug})")
