@@ -124,7 +124,6 @@ Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý
   {{ logo('PyLadies', 'logos/pyladies.svg', 'https://pyladies.cz/') }}
   {{ logo('Pyvec', 'logos/pyvec.svg', 'https://pyvec.org/') }}
   {{ logo('ReactGirls', 'logos/reactgirls.svg', 'https://reactgirls.com/') }}
-  {{ logo('TWguild.cz', 'logos/twguild.svg', 'https://www.twguild.cz/') }}
   {{ logo('Týden pro Digitální Česko', 'logos/tdc.svg', 'https://www.budoucnostjedigitalni.cz') }}
   {{ logo('yablko', 'logos/yablko.svg', 'http://robweb.sk/') }}
 </ul>
