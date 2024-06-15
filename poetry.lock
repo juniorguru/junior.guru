@@ -1369,7 +1369,7 @@ py-cord = {version = "2.5.0", extras = ["speed"]}
 type = "git"
 url = "https://github.com/juniorguru/chick.git"
 reference = "HEAD"
-resolved_reference = "0a88d98e9eb4182a2f66c32d9e8d1ee3933d188c"
+resolved_reference = "ad4248f2065b8346ef1745a4afb2f0f71238cb4b"
 
 [[package]]
 name = "jg-hen"
