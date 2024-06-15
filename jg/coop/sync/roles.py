@@ -33,7 +33,7 @@ YAML_SCHEMA = Seq(
     )
 )
 
-SPONSOR_ROLE_PREFIX = "Sponzor: "
+SPONSOR_ROLE_PREFIX = "Firma: "
 
 
 logger = loggers.from_path(__file__)
