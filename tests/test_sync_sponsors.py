@@ -23,7 +23,7 @@ from jg.coop.sync.sponsors import get_coupons_mapping, get_renews_on
         pytest.param(
             [["2021-06", None]],
             date(2024, 6, 1),
-            date(2024, 7, 1),
+            date(2025, 7, 1),
             id="no end, start this month",
         ),
         pytest.param(

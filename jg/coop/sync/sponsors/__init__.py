@@ -157,10 +157,11 @@ def get_renews_on(periods: list[tuple[str, str | None]], today: date) -> bool:
         return None if renew_date < today else renew_date
 
     month = int(period_start.split("-")[1])
-    if date(today.year, month, 1) < today.replace(day=1):
+    pivot_date = date(today.year, month, 1)
+    if pivot_date <= today.replace(day=1):
         return next_month(date(today.year + 1, month, 1))
 
-    return next_month(date(today.year, month, 1))
+    return next_month(pivot_date)
 
 
 def next_month(month: date) -> date:
