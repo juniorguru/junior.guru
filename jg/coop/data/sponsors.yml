@@ -1,0 +1,171 @@
+tiers:
+  - slug: barter
+  - slug: basic
+  - slug: handbook
+
+
+registry:
+  - name: Fakturoid
+    slug: fakturoid
+    url: https://www.fakturoid.cz/
+    tier: handbook
+    periods:
+      - [2020-09, 2025-05]
+
+  - name: RedHat
+    slug: redhat
+    url: https://www.redhat.com/en/jobs
+    tier: handbook
+    periods:
+      - [2020-09, 2024-09]
+
+  - name: Rector
+    slug: rector
+    url: https://getrector.com/
+    tier: handbook
+    periods:
+      - [2023-07, 2024-07]
+      - [2020-09, 2021-11]
+
+  - name: CoreSkill
+    slug: coreskill
+    url: https://coreskill.tech/
+    tier: barter
+    periods:
+      - [2021-02, null]
+    note: |
+      Dan Srb v klubu moderuje a radí s frontendem. CoreSkill využívá klub pro komunikaci se svými klienty (studenty).
+
+  - name: ITnetwork
+    slug: itnetwork
+    url: https://www.itnetwork.cz/
+    tier: basic
+    periods:
+      - [2024-03, 2025-03]
+
+  - name: Creatiweb
+    slug: creatiweb
+    url: https://creatiweb.cz/
+    tier: barter
+    periods:
+      - [2023-06, null]
+      - [2021-02, 2022-02]
+    note: |
+      Creatiweb za symbolickou cenu poskytuje junior.guru pracovní místo ve své kanceláři.
+
+  - name: ENGETO Academy
+    slug: engeto
+    url: https://engeto.cz/
+    tier: basic
+    periods:
+      - [2021-05, 2024-07]
+
+  - name: Mews
+    slug: mews
+    url: https://www.mews.com/
+    tier: basic
+    periods:
+      - [2021-05, 2024-08]
+    note: |
+      Podílí se na rozšířené pomoci pro lidi, kteří na junior.guru žádají o [stipendium](https://junior.guru/finaid).
+
+  - name: Skoumal
+    slug: skoumal
+    url: https://www.skoumal.com/
+    tier: barter
+    periods:
+      - [2021-02, null]
+    note: |
+      Nemusí za partnerství nic platit jako vděčnost za to, že šlo historicky o první partnerství s klubem. Když Skoumal díky junior.guru získá zajímavé benefity (např. nové zaměstnance), může mít chuť jednorázově finančně junior.guru podpořit.
+
+
+# PAST SPONSORS
+  - name: Glance Media
+    slug: glancemedia
+    url: https://www.glancemedia.cz/
+    periods:
+      - [2023-02, 2024-02]
+
+  - name: Green Fox Academy
+    slug: greenfox
+    url: https://www.greenfoxacademy.cz/
+    periods:
+      - [2023-01, 2023-12]
+
+  - name: Processand
+    slug: processand
+    url: https://www.processand.com/
+    periods:
+      - [2022-06, 2023-05]
+
+  - name: Ataccama
+    slug: ataccama
+    url: https://www.ataccama.com/
+    periods:
+      - [2022-06, 2024-05]
+
+  - name: STRV
+    slug: strv
+    url: https://www.strv.com/careers
+    periods:
+      - [2022-03, 2023-04]
+
+  - name: Pure Storage
+    slug: purestorage
+    url: https://www.welcometothejungle.com/en/companies/pure-storage
+    periods:
+      - [2022-04, 2023-04]
+
+  - name: Jetveo
+    slug: jetveo
+    url: https://jetveo.io/cs
+    periods:
+      - [2022-02, 2023-04]
+
+  - name: wf tech
+    slug: wftech
+    url: https://www.wftech.cz/
+    periods:
+      - [2021-11, 2022-11]
+
+  - name: CDN77.com
+    slug: cdn77
+    url: https://www.cdn77.com/
+    periods:
+      - [2021-11, 2022-10]
+
+  - name: Credo Ventures
+    slug: credo
+    url: https://jobs.credoventures.com/
+    periods:
+      - [2021-08, 2022-10]
+
+  - name: pipetail.io
+    slug: pipetail
+    url: https://pipetail.io/
+    periods:
+      - [2021-06, 2022-10]
+
+  - name: OpenGeoLabs
+    slug: opengeolabs
+    url: https://opengeolabs.cz/
+    periods:
+      - [2020-09, 2021-02]
+
+  - name: Inuits
+    slug: inuits
+    url: https://inuits.eu/
+    periods:
+      - [2021-04, 2023-06]
+
+  - name: Lynt
+    slug: lynt
+    url: https://lynt.cz/
+    periods:
+      - [2021-03, 2023-04]
+
+  - name: Software Development Academy
+    slug: sdacademy
+    url: https://sdacademy.cz/
+    periods:
+      - [2021-06, 2022-10]

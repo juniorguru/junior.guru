@@ -34,8 +34,8 @@ logger = loggers.from_path(__file__)
 )
 @db.connection_context()
 def main(github_api_key: str):
-    db.drop_tables([GitHubSponsor])
-    db.create_tables([GitHubSponsor])
+    GitHubSponsor.drop_table()
+    GitHubSponsor.create_table()
 
     AVATARS_PATH.mkdir(exist_ok=True, parents=True)
     for path in AVATARS_PATH.glob("*.png"):
@@ -64,3 +64,5 @@ def main(github_api_key: str):
                 avatar_path=avatar_path,
                 is_active=node["isActive"],
             )
+
+    logger.info(f"Saved {GitHubSponsor.count()} GitHub sponsors")
