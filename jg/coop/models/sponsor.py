@@ -31,7 +31,7 @@ class Sponsor(BaseModel):
     note = TextField(null=True)
     coupon = CharField(null=True, index=True)
     logo_path = CharField()
-    # poster_path = CharField()
+    poster_path = CharField()
     # role_id = IntegerField(null=True)
 
     @classmethod
