@@ -294,7 +294,7 @@
 
 
 {% macro partner_link(text, url, utm_medium) -%}
-  <a href="{{ url }}" target="_blank" rel="noopener" data-metrics-utm data-metrics-utm-medium="{{ utm_medium }}" data-metrics-utm-campaign="partnership">
+  <a href="{{ url }}" target="_blank" rel="noopener" data-metrics-utm data-metrics-utm-medium="{{ utm_medium }}" data-metrics-utm-campaign="sponsorship">
     {{- text -}}
   </a>
 {%- endmacro %}
@@ -304,7 +304,7 @@
   <li class="{{ class_prefix }}-item" title="{{ name }}">
     {% if url %}
     <a class="{{ class_prefix }}-link" href="{{ url }}" target="_blank" rel="noopener"
-      data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="partnership">
+      data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship">
     {% endif %}
 
     {{ img('static/' + path, name, 130, 60, class=class_prefix + '-image', lazy=lazy) }}
