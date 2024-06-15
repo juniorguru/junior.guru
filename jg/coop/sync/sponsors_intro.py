@@ -44,7 +44,7 @@ DESCRIPTION_TEMPLATE = dedent(
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=["club-content", "partners", "roles"])
+@cli.sync_command(dependencies=["club-content", "sponsors", "roles"])
 def main():
     return  # FIXME TODO, temporarily disabled until rewritten
     discord_task.run(sync_partners_intro)
