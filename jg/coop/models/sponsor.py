@@ -44,6 +44,17 @@ class Sponsor(BaseModel):
         )
 
     @classmethod
+    def handbook_listing(cls) -> Iterable[Self]:
+        priority = fn.max(SponsorTier.priority).alias("priority")
+        return (
+            cls.select(cls, priority)
+            .join(SponsorTier)
+            .where(SponsorTier.priority == priority)
+            .group_by(Sponsor)
+            .order_by(Sponsor.name)
+        )
+
+    @classmethod
     def club_listing(cls) -> Iterable[Self]:
         return sorted(
             cls.listing(),
