@@ -19,6 +19,7 @@ logger = loggers.from_path(__file__)
 
 class TierConfig(BaseModel):
     slug: str
+    priority: int
 
 
 class SponsorConfig(BaseModel):
@@ -49,7 +50,10 @@ def main(today: date):
     yaml_data = yaml.safe_load(YAML_PATH.read_text())
     sponsors = SponsorsConfig(**yaml_data)
 
-    tiers = {tier.slug: SponsorTier.create(slug=tier.slug) for tier in sponsors.tiers}
+    tiers = {
+        tier.slug: SponsorTier.create(slug=tier.slug, priority=tier.priority)
+        for tier in sponsors.tiers
+    }
     logger.info(f"Tiers: {', '.join(tiers.keys())}")
 
     for sponsor in sponsors.registry:

@@ -1,21 +1,46 @@
 from typing import Iterable, Self
 
-from peewee import BooleanField, CharField, DateField, ForeignKeyField, TextField, fn
+from peewee import (
+    BooleanField,
+    CharField,
+    DateField,
+    ForeignKeyField,
+    IntegerField,
+    TextField,
+    fn,
+)
 
 from jg.coop.models.base import BaseModel
 
 
 class SponsorTier(BaseModel):
     slug = CharField(primary_key=True)
+    priority = IntegerField()
+
+    @property
+    def list_sponsors(cls) -> Iterable["Sponsor"]:
+        return cls._list_sponsors.order_by(Sponsor.name)
 
 
 class Sponsor(BaseModel):
     slug = CharField(primary_key=True)
     name = CharField()
     url = CharField()
-    tier = ForeignKeyField(SponsorTier, backref="list_sponsors", null=True)
+    tier = ForeignKeyField(SponsorTier, backref="_list_sponsors", null=True)
     renews_on = DateField()
     note = TextField(null=True)
+    # coupon = CharField(index=True)
+    # logo_path = CharField()
+    # poster_path = CharField()
+    # role_id = IntegerField(null=True)
+
+    @classmethod
+    def listing(cls) -> Iterable[Self]:
+        return (
+            cls.select()
+            .join(SponsorTier)
+            .order_by(SponsorTier.priority.desc(), Sponsor.name)
+        )
 
     @classmethod
     def count(cls) -> int:
