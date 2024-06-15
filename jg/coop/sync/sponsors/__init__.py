@@ -1,6 +1,6 @@
-from collections import defaultdict
 from datetime import date, timedelta
 from pathlib import Path
+from typing import Iterable, Literal, TypedDict
 
 import click
 import yaml
@@ -24,6 +24,11 @@ LOGOS_DIR = IMAGES_DIR / "logos"
 
 
 logger = loggers.from_path(__file__)
+
+
+class CouponEntity(TypedDict):
+    code: str
+    state: Literal["enabled", "disabled"]
 
 
 class TierConfig(BaseModel):
@@ -58,10 +63,8 @@ def main(today: date):
 
     logger.info("Getting coupons data from Memberful")
     memberful = MemberfulAPI()
-    coupons_mapping = get_coupons_mapping(
-        memberful.get_nodes(COUPONS_GQL_PATH.read_text())
-    )
-    logger.info(f"Got data about {len(coupons_mapping)} coupons")
+    coupons: Iterable[CouponEntity] = memberful.get_nodes(COUPONS_GQL_PATH.read_text())
+    coupons_mapping = get_coupons_mapping(coupons)
 
     logger.info(f"Loading sponsors data from {YAML_PATH}")
     yaml_data = yaml.safe_load(YAML_PATH.read_text())
@@ -74,7 +77,7 @@ def main(today: date):
     logger.info(f"Tiers: {', '.join(tiers.keys())}")
 
     for sponsor in sponsors.registry:
-        if renews_on := renew_date(sponsor.periods, today):
+        if renews_on := get_renews_on(sponsor.periods, today):
             logger.info(f"Sponsor {sponsor.name} ({sponsor.slug})")
             Sponsor.create(
                 slug=sponsor.slug,
@@ -82,7 +85,7 @@ def main(today: date):
                 url=sponsor.url,
                 tier=tiers[sponsor.tier] if sponsor.tier else None,
                 renews_on=renews_on,
-                coupon=coupons_mapping.get(sponsor.slug, {}).get("coupon"),
+                coupon=coupons_mapping.get(sponsor.slug),
             )
         else:
             logger.info(f"Past sponsor {sponsor.name} ({sponsor.slug})")
@@ -97,17 +100,15 @@ def main(today: date):
     )
 
 
-def get_coupons_mapping(coupons) -> dict[str, dict]:
-    coupons_mapping = defaultdict(dict)
-    for coupon in coupons:
-        if coupon["state"] == "enabled":
-            parts = parse_coupon(coupon["code"])
-            slug = parts["slug"].lower()
-            coupons_mapping[slug]["coupon"] = coupon["code"]
-    return dict(coupons_mapping)
+def get_coupons_mapping(coupons: Iterable[CouponEntity]) -> dict[str, str]:
+    return {
+        parse_coupon(coupon["code"])["slug"].lower(): coupon["code"]
+        for coupon in coupons
+        if coupon["state"] == "enabled"
+    }
 
 
-def renew_date(periods: list[tuple[str, str | None]], today: date) -> bool:
+def get_renews_on(periods: list[tuple[str, str | None]], today: date) -> bool:
     current_period = sorted(periods, reverse=True)[0]
     period_start, period_end = current_period
 

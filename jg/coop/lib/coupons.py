@@ -1,4 +1,5 @@
 import re
+from typing import TypedDict
 
 
 COUPON_RE = re.compile(
@@ -15,7 +16,12 @@ COUPON_RE = re.compile(
 )
 
 
-def parse_coupon(coupon: str) -> dict[str, str]:
+class CouponParts(TypedDict):
+    slug: str
+    coupon: str
+
+
+def parse_coupon(coupon: str) -> CouponParts:
     if match := COUPON_RE.match(coupon):
         parts = match.groupdict()
         parts["coupon"] = "".join(
