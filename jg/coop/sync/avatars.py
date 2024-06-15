@@ -24,7 +24,7 @@ MEMBERS_CHUNK_SIZE = 10
 
 AVATARS_LIMIT = 40
 
-AVATAR_SIZE_PX = 60
+AVATAR_SIZE_PX = 120
 
 
 @cli.sync_command(dependencies=["club-content"])
@@ -74,7 +74,7 @@ async def process_member(client: ClubClient, member):
     member.save()
 
 
-async def download_avatar(avatar):
+async def download_avatar(avatar) -> str:
     buffer = BytesIO()
     await avatar.save(buffer)
     image = Image.open(buffer)

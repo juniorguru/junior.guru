@@ -7,7 +7,7 @@ class GitHubSponsor(BaseModel):
     slug = CharField(primary_key=True)
     name = CharField(null=True)
     url = CharField()
-    avatar_url = CharField()
+    avatar_path = CharField()
     is_active = BooleanField()
 
     @classmethod

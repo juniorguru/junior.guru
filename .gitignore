@@ -81,6 +81,7 @@ google_service_account.json
 /jg/coop/data/*.db
 /jg/coop/data/*.db-*
 /jg/coop/images/avatars-club/*.png
+/jg/coop/images/avatars-sponsors/*.png
 /jg/coop/images/logos-jobs/*.png
 /jg/coop/images/posters-events/*.png
 /jg/coop/images/posters-partners/*.png

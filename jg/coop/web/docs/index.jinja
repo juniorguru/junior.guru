@@ -141,7 +141,7 @@ description: Komunita pro začátečníky v programování, průvodce programov�
     <li class="sponsor-avatars-item">
       <a href="{{ sponsor.url }}" target="_blank" rel="noopener"
         data-metrics-utm data-metrics-utm-medium="avatar" data-metrics-utm-campaign="sponsorship">
-        {{ img(sponsor.avatar_url, sponsor.name, 50, 50, lazy=False) }}
+        {{ img('static/' + sponsor.avatar_path, sponsor.name, 50, 50) }}
       </a>
     </li>
   {% endfor %}
