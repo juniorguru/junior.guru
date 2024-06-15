@@ -29,7 +29,7 @@ class Sponsor(BaseModel):
     tier = ForeignKeyField(SponsorTier, backref="_list_sponsors", null=True)
     renews_on = DateField()
     note = TextField(null=True)
-    # coupon = CharField(index=True)
+    coupon = CharField(null=True, index=True)
     # logo_path = CharField()
     # poster_path = CharField()
     # role_id = IntegerField(null=True)

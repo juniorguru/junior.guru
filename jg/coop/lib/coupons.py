@@ -15,7 +15,7 @@ COUPON_RE = re.compile(
 )
 
 
-def parse_coupon(coupon):
+def parse_coupon(coupon: str) -> dict[str, str]:
     if match := COUPON_RE.match(coupon):
         parts = match.groupdict()
         parts["coupon"] = "".join(

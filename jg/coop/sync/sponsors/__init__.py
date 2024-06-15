@@ -1,3 +1,4 @@
+from collections import defaultdict
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -7,11 +8,19 @@ from pydantic import BaseModel, HttpUrl
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
+from jg.coop.lib.coupons import parse_coupon
+from jg.coop.lib.memberful import MemberfulAPI
 from jg.coop.models.base import db
 from jg.coop.models.sponsor import PastSponsor, Sponsor, SponsorTier
 
 
 YAML_PATH = Path("jg/coop/data/sponsors.yml")
+
+COUPONS_GQL_PATH = Path(__file__).parent / "coupons.gql"
+
+IMAGES_DIR = Path("jg/coop/images")
+
+LOGOS_DIR = IMAGES_DIR / "logos"
 
 
 logger = loggers.from_path(__file__)
@@ -47,6 +56,14 @@ def main(today: date):
     db.drop_tables([Sponsor, SponsorTier, PastSponsor])
     db.create_tables([Sponsor, SponsorTier, PastSponsor])
 
+    logger.info("Getting coupons data from Memberful")
+    memberful = MemberfulAPI()
+    coupons_mapping = get_coupons_mapping(
+        memberful.get_nodes(COUPONS_GQL_PATH.read_text())
+    )
+    logger.info(f"Got data about {len(coupons_mapping)} coupons")
+
+    logger.info(f"Loading sponsors data from {YAML_PATH}")
     yaml_data = yaml.safe_load(YAML_PATH.read_text())
     sponsors = SponsorsConfig(**yaml_data)
 
@@ -65,6 +82,7 @@ def main(today: date):
                 url=sponsor.url,
                 tier=tiers[sponsor.tier] if sponsor.tier else None,
                 renews_on=renews_on,
+                coupon=coupons_mapping.get(sponsor.slug, {}).get("coupon"),
             )
         else:
             logger.info(f"Past sponsor {sponsor.name} ({sponsor.slug})")
@@ -77,6 +95,16 @@ def main(today: date):
     logger.info(
         f"Created {Sponsor.count()} sponsors and {PastSponsor.count()} past sponsors"
     )
+
+
+def get_coupons_mapping(coupons) -> dict[str, dict]:
+    coupons_mapping = defaultdict(dict)
+    for coupon in coupons:
+        if coupon["state"] == "enabled":
+            parts = parse_coupon(coupon["code"])
+            slug = parts["slug"].lower()
+            coupons_mapping[slug]["coupon"] = coupon["code"]
+    return dict(coupons_mapping)
 
 
 def renew_date(periods: list[tuple[str, str | None]], today: date) -> bool:
