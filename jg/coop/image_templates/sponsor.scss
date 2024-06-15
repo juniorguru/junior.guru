@@ -1,0 +1,81 @@
+@import "./variables";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-family);
+  color: var(--color-dark);
+  background: var(--color-yellow);
+}
+
+main {
+  display: flex;
+  height: 100vh;
+}
+
+main div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100vh;
+  padding: 5vh;
+  padding-bottom: 40vh;
+}
+
+main div:first-child {
+  background: var(--color-white);
+}
+
+main img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 16vh;
+}
+
+aside {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 50vh;
+  margin: 0 auto;
+}
+
+aside div {
+  padding: 3vh 5vh;
+  font-size: 4vh;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-white);
+  text-align: center;
+  background: var(--color-blue);
+  border-radius: .3rem;
+  box-shadow: rgba(149, 157, 165, .2) 0 8px 24px;
+}
+
+aside img {
+  display: block;
+  width: 15vh;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 2vh;
+}
+
+aside p {
+  margin: 0;
+}
+
+aside strong {
+  display: block;
+}

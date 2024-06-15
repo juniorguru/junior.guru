@@ -9,6 +9,7 @@ from pydantic import BaseModel, HttpUrl
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
 from jg.coop.lib.coupons import parse_coupon
+from jg.coop.lib.images import PostersCache, render_image_file
 from jg.coop.lib.memberful import MemberfulAPI
 from jg.coop.models.base import db
 from jg.coop.models.sponsor import PastSponsor, Sponsor, SponsorTier
@@ -21,6 +22,10 @@ COUPONS_GQL_PATH = Path(__file__).parent / "coupons.gql"
 IMAGES_DIR = Path("jg/coop/images")
 
 LOGOS_DIR = IMAGES_DIR / "logos"
+
+POSTERS_DIR = IMAGES_DIR / "posters-sponsors"
+
+POSTER_SIZE = 700
 
 
 logger = loggers.from_path(__file__)
@@ -56,8 +61,14 @@ class SponsorsConfig(BaseModel):
     default=lambda: date.today().isoformat(),
     type=date.fromisoformat,
 )
+@click.option("--clear-posters/--keep-posters", default=False)
 @db.connection_context()
-def main(today: date):
+def main(today: date, clear_posters: bool):
+    logger.debug("Initializing posters cache")
+    posters = PostersCache(POSTERS_DIR)
+    posters.init(clear=clear_posters)
+
+    logger.debug("Resetting sponsors tables")
     db.drop_tables([Sponsor, SponsorTier, PastSponsor])
     db.create_tables([Sponsor, SponsorTier, PastSponsor])
 
@@ -79,7 +90,9 @@ def main(today: date):
     for sponsor in sponsors.registry:
         if renews_on := get_renews_on(sponsor.periods, today):
             logger.info(f"Sponsor {sponsor.name} ({sponsor.slug})")
+            tier = tiers[sponsor.tier] if sponsor.tier else None
 
+            logger.debug(f"Checking logo for {sponsor.slug!r} exists")
             logo_path = LOGOS_DIR / f"{sponsor.slug}.svg"
             if not logo_path.exists():
                 logo_path = logo_path.with_suffix(".png")
@@ -87,15 +100,30 @@ def main(today: date):
                 raise FileNotFoundError(
                     f"'There is no {sponsor.slug}.svg or .png inside {LOGOS_DIR}"
                 )
+            logo_path = logo_path.relative_to(IMAGES_DIR)
 
+            logger.debug(f"Rendering poster for {sponsor.slug!r}")
+            image_path = render_image_file(
+                POSTER_SIZE,
+                POSTER_SIZE,
+                "sponsor.jinja",
+                dict(sponsor_name=sponsor.name, sponsor_logo_path=logo_path, tier=tier),
+                POSTERS_DIR,
+                prefix=sponsor.slug,
+            )
+            poster_path = image_path.relative_to(IMAGES_DIR)
+            posters.record(IMAGES_DIR / poster_path)
+
+            logger.debug(f"Saving {sponsor.slug!r}")
             Sponsor.create(
                 slug=sponsor.slug,
                 name=sponsor.name,
                 url=sponsor.url,
-                tier=tiers[sponsor.tier] if sponsor.tier else None,
+                tier=tier,
                 renews_on=renews_on,
                 coupon=coupons_mapping.get(sponsor.slug),
-                logo_path=logo_path.relative_to(IMAGES_DIR),
+                logo_path=logo_path,
+                poster_path=poster_path,
             )
         else:
             logger.info(f"Past sponsor {sponsor.name} ({sponsor.slug})")
@@ -105,6 +133,7 @@ def main(today: date):
                 url=sponsor.url,
             )
 
+    posters.cleanup()
     logger.info(
         f"Created {Sponsor.count()} sponsors and {PastSponsor.count()} past sponsors"
     )

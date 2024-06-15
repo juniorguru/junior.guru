@@ -61,7 +61,7 @@ IMAGES_DIR = Path("jg/coop/images")
 
 LOGOS_DIR = IMAGES_DIR / "logos"
 
-POSTERS_DIR = IMAGES_DIR / "posters-partners"
+POSTERS_DIR = IMAGES_DIR / "posters-sponsors"
 
 POSTER_WIDTH = 700
 
