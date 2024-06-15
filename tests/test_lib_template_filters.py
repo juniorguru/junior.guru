@@ -194,12 +194,12 @@ def test_revenue_categories():
             "donations": 10,
             "jobs": 20,
             "memberships": 1,
-            "partnerships": 4,
+            "sponsorships": 4,
         }
     ) == [
         ("inzerce nabídek práce", 20),
         ("dobrovolné příspěvky", 10),
-        ("partnerství s firmami", 4),
+        ("příspěvky sponzorů", 4),
         ("členství v klubu", 1),
     ]
 
@@ -207,12 +207,12 @@ def test_revenue_categories():
 def test_revenue_categories_less():
     assert template_filters.revenue_categories(
         {
-            "partnerships": 4,
+            "sponsorships": 4,
             "jobs": 20,
         }
     ) == [
         ("inzerce nabídek práce", 20),
-        ("partnerství s firmami", 4),
+        ("příspěvky sponzorů", 4),
     ]
 
 
@@ -221,7 +221,7 @@ def test_revenue_categories_unknown():
         template_filters.revenue_categories(
             {
                 "! doesnt exist !": 20,
-                "partnerships": 4,
+                "sponsorships": 4,
             }
         )
 

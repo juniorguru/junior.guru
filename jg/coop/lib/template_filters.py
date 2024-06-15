@@ -111,7 +111,7 @@ REVENUE_CATEGORIES = {
     "donations": "dobrovolné příspěvky",
     "jobs": "inzerce nabídek práce",
     "memberships": "členství v klubu",
-    "partnerships": "partnerství s firmami",
+    "sponsorships": "příspěvky sponzorů",
 }
 
 

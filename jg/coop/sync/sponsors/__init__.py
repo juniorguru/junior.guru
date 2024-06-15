@@ -107,7 +107,11 @@ def main(today: date, clear_posters: bool):
                 POSTER_SIZE,
                 POSTER_SIZE,
                 "sponsor.jinja",
-                dict(sponsor_name=sponsor.name, sponsor_logo_path=logo_path, tier=tier),
+                dict(
+                    sponsor_name=sponsor.name,
+                    sponsor_logo_path=logo_path,
+                    tier_priority=tier.priority,
+                ),
                 POSTERS_DIR,
                 prefix=sponsor.slug,
             )

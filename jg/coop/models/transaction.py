@@ -16,7 +16,7 @@ from jg.coop.models.base import BaseModel, check_enum
 class TransactionsCategory(StrEnum):
     MEMBERSHIPS = "memberships"
     DONATIONS = "donations"
-    PARTNERSHIPS = "partnerships"
+    SPONSORSHIPS = "sponsorships"
     JOBS = "jobs"
     PRODUCTION = "production"
     LAWYER = "lawyer"

@@ -20,7 +20,7 @@ Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáha
 {% call markdown() %}
 - **{{ messages_count|thousands }}** příspěvků
 - **{{ members_total_count }}** členů
-- **{{ partnerships|length }}** firem
+- **{{ sponsors|length }}** firem
 - **{{ events|length }}** akcí
 {% endcall %}
 </div>

@@ -201,8 +201,8 @@ V počátcích mohlo junior.guru existovat z velké části jen díky dobrovoln�
                 'backgroundColor': '#1755d1',
             },
             {
-                'label': 'partnerství s firmami',
-                'data': charts.revenue_breakdown.pop('partnerships'),
+                'label': 'příspěvky sponzorů',
+                'data': charts.revenue_breakdown.pop('sponsorships'),
                 'backgroundColor': '#638cdd',
             },
             {

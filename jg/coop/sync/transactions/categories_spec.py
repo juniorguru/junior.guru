@@ -39,13 +39,13 @@ def tdc_conference_booth(transaction: dict, secrets: dict) -> TransactionsCatego
 @category_rule
 def podcasty_cz_commission(transaction: dict, secrets: dict) -> TransactionsCategory:
     if "SKLIK" in transaction["message"] and "SEZNAM" in transaction["message"]:
-        return TransactionsCategory.PARTNERSHIPS
+        return TransactionsCategory.DONATIONS
 
 
 @category_rule
 def mews_partnership_2022(transaction: dict, secrets: dict) -> TransactionsCategory:
     if transaction["variable_symbol"] == "226":
-        return TransactionsCategory.PARTNERSHIPS
+        return TransactionsCategory.SPONSORSHIPS
 
 
 @category_rule
@@ -135,9 +135,9 @@ def memberful(transaction: dict, secrets: dict) -> TransactionsCategory:
 
 
 @category_rule
-def red_hat_partnerships(transaction: dict, secrets: dict) -> TransactionsCategory:
+def red_hat_sponsorships(transaction: dict, secrets: dict) -> TransactionsCategory:
     if "RED HAT" in transaction["message"] and transaction["amount"] >= 8000:
-        return TransactionsCategory.PARTNERSHIPS
+        return TransactionsCategory.SPONSORSHIPS
 
 
 @category_rule
@@ -227,9 +227,9 @@ def direct_donations(transaction: dict, secrets: dict) -> TransactionsCategory:
 
 
 @category_rule
-def partnerships_fallback(transaction: dict, secrets: dict) -> TransactionsCategory:
+def sponsorships_fallback(transaction: dict, secrets: dict) -> TransactionsCategory:
     if transaction["variable_symbol"] and transaction["amount"] >= 8000:
-        return TransactionsCategory.PARTNERSHIPS
+        return TransactionsCategory.SPONSORSHIPS
 
 
 @category_rule
