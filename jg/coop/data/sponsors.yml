@@ -1,12 +1,12 @@
 tiers:
-  - slug: barter
-    priority: 0
+  - slug: handbook
+    priority: 2
 
   - slug: basic
     priority: 1
 
-  - slug: handbook
-    priority: 2
+  - slug: barter
+    priority: 0
 
 
 registry:
