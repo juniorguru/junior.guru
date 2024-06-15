@@ -33,7 +33,7 @@ class Sponsor(BaseModel):
     coupon = CharField(null=True, index=True)
     logo_path = CharField()
     poster_path = CharField()
-    # role_id = IntegerField(null=True)
+    role_id = IntegerField(null=True)
 
     @classmethod
     def listing(cls) -> Iterable[Self]:
@@ -54,6 +54,12 @@ class Sponsor(BaseModel):
     @classmethod
     def count(cls) -> int:
         return cls.select().count()
+
+    @classmethod
+    def coupons(cls) -> set[str]:
+        return frozenset(
+            cls.select(cls.coupon).distinct().where(cls.coupon.is_null(False))
+        )
 
     @property
     def list_members(self) -> Iterable[ClubUser]:
