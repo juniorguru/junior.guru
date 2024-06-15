@@ -131,9 +131,8 @@ description: Komunita pro začátečníky v programování, průvodce programov�
     Provoz projektu financují členové klubu svým předplatným a firemní či individuální sponzoři.
   {%- endcall %}
   <ul class="logos standout">
-    {% for partnership in partnerships %}
-      {% set partner = partnership.partner %}
-      {{ logo(partner.name, partner.logo_path, partner.url) }}
+    {% for sponsor in sponsors %}
+      {{ logo(sponsor.name, sponsor.logo_path, sponsor.url) }}
     {% endfor %}
   </ul>
   <ul class="sponsor-avatars standout-bottom">

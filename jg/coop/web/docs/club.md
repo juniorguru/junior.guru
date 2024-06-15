@@ -113,9 +113,8 @@ Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý
   <li class="logos-item logos-caption">
     <a href="{{ pages|docs_url('faq.md')|url }}#firmy" target="_blank" rel="noopener">Firemní partneři</a>
   </li>
-  {% for partnership in partnerships %}
-    {% set partner = partnership.partner %}
-    {{ logo(partner.name, partner.logo_path, partner.url) }}
+  {% for sponsor in sponsors %}
+    {{ logo(sponsor.name, sponsor.logo_path, sponsor.url) }}
   {% endfor %}
 </ul>
 <ul class="logos standout-top">
