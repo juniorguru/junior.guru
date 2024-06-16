@@ -112,7 +112,7 @@ class ClubChannelID(IntEnum):
 
 class ClubEmoji(StrEnum):
     PIN = "📌"
-    PARTNER_INTRO = "👋"
+    SPONSOR_INTRO = "👋"
 
 
 def _check_mutations(request):

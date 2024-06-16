@@ -13,7 +13,7 @@ from jg.coop.lib.coupons import parse_coupon
 from jg.coop.lib.memberful import MemberfulAPI
 from jg.coop.models.base import db
 from jg.coop.models.feminine_name import FeminineName
-from jg.coop.models.partner import Partner
+from jg.coop.models.sponsor import Sponsor
 from jg.coop.models.subscription import (
     SubscriptionActivity,
     SubscriptionActivityType,
@@ -50,7 +50,7 @@ SUBSCRIPTION_TYPES_MAPPING = {
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=["partners", "feminine-names"])
+@cli.sync_command(dependencies=["sponsors", "feminine-names"])
 @click.option("--from-date", default="2021-01-01", type=date.fromisoformat)
 @click.option("--multiple-products-date", default="2023-12-01", type=date.fromisoformat)
 @click.option(
@@ -69,8 +69,8 @@ def main(from_date, multiple_products_date, history_path, clear_history):
 
     subscripton_types_mapping = {
         **{
-            parse_coupon(coupon)["slug"]: SubscriptionType.PARTNER
-            for coupon in Partner.coupons()
+            parse_coupon(coupon)["slug"]: SubscriptionType.SPONSOR
+            for coupon in Sponsor.coupons()
         },
         **SUBSCRIPTION_TYPES_MAPPING,
     }

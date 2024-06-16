@@ -5,9 +5,7 @@
 {% block extra_header %}
 <div class="logobar">
   <div class="logobar-container">
-    <h3 class="logobar-heading">
-      <span>Partneři <span class="logobar-nonessential">příručky</span></span>
-    </h3>
+    <h3 class="logobar-heading"><span hidden>Sponzoři</span></h3>
     <ul class="logobar-list">
       {% for sponsor in sponsors_handbook %}
         {{ logo(sponsor.name, sponsor.logo_path, sponsor.url, class_prefix='logobar') }}

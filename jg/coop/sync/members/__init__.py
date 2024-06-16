@@ -25,9 +25,7 @@ logger = loggers.from_path(__file__)
 MEMBERS_GQL_PATH = Path(__file__).parent / "members.gql"
 
 
-@cli.sync_command(
-    dependencies=["club-content", "partners", "feminine-names", "subscriptions"]
-)
+@cli.sync_command(dependencies=["club-content", "feminine-names", "subscriptions"])
 @db.connection_context()
 def main():
     logger.info("Getting data from Memberful")

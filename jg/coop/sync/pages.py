@@ -19,9 +19,7 @@ logger = loggers.from_path(__file__)
 
 
 # See 'Generating pages from templates' on why the dependencies are needed
-@cli.sync_command(
-    dependencies=["stages", "course-providers", "partners", "events", "podcast"]
-)
+@cli.sync_command(dependencies=["stages", "course-providers", "events", "podcast"])
 @db.connection_context()
 def main():
     logger.info("Setting up db table")

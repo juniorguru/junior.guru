@@ -17,7 +17,7 @@ title: Katalog kurzů programování
 
 <div class="link-cards">
   {% for course_provider in course_providers %}
-    {% if course_provider.active_partnership() %}
+    {% if course_provider.sponsor %}
       {{ link_card(
         course_provider.name,
         pages|docs_url(course_provider.page_url)|url,

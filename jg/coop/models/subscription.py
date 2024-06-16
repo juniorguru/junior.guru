@@ -46,7 +46,7 @@ class SubscriptionType(StrEnum):
     FINAID = "finaid"
     INDIVIDUAL = "individual"
     TRIAL = "trial"
-    PARTNER = "partner"
+    SPONSOR = "sponsor"
 
 
 @unique

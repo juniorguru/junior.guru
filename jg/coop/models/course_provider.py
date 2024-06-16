@@ -1,11 +1,10 @@
-from datetime import date
 from functools import cached_property
-from typing import Iterable
+from typing import Iterable, Self
 
 from peewee import CharField, ForeignKeyField, IntegerField, TextField, fn
 
 from jg.coop.models.base import BaseModel
-from jg.coop.models.partner import Partner, Partnership
+from jg.coop.models.sponsor import Sponsor, SponsorTier
 
 
 class CourseProvider(BaseModel):
@@ -18,8 +17,8 @@ class CourseProvider(BaseModel):
     page_description = CharField()
     page_lead = CharField()
     page_pageviews = IntegerField(null=True)
-    partner = ForeignKeyField(
-        Partner, backref="_course_provider", null=True, unique=True
+    sponsor = ForeignKeyField(
+        Sponsor, backref="_course_provider", null=True, unique=True
     )
 
     # nemít description, ale schválně USP, aby bylo jasné, co je účelem popisku
@@ -28,9 +27,6 @@ class CourseProvider(BaseModel):
     @property
     def page_url(self) -> str:
         return f"courses/{self.slug}.md"
-
-    def active_partnership(self, today: date = None) -> Partnership | None:
-        return self.partner.active_partnership(today=today) if self.partner else None
 
     @cached_property
     def list_courses_up(self) -> Iterable["CourseUP"]:
@@ -41,12 +37,18 @@ class CourseProvider(BaseModel):
         )
 
     @classmethod
-    def listing(cls, today: date = None) -> Iterable["CourseProvider"]:
-        priority = [
-            partner.course_provider
-            for partner in Partner.active_listing(today=today)
-            if partner.course_provider
-        ]
+    def sponsors_listing(cls) -> Iterable[Self]:
+        return (
+            cls.select()
+            .join(Sponsor)
+            .where(cls.sponsor.is_null(False))
+            .join(SponsorTier)
+            .order_by(SponsorTier.priority.desc(), fn.czech_sort(cls.name))
+        )
+
+    @classmethod
+    def listing(cls) -> Iterable[Self]:
+        priority = list(cls.sponsors_listing())
         priority_slugs = [course_provider.slug for course_provider in priority]
         query = (
             cls.select()
@@ -56,7 +58,7 @@ class CourseProvider(BaseModel):
         return priority + list(query)
 
     @classmethod
-    def get_by_slug(cls, slug) -> "CourseProvider":
+    def get_by_slug(cls, slug: str) -> Self:
         return cls.get(cls.slug == slug)
 
     def __str__(self) -> str:

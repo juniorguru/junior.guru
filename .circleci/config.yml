@@ -185,7 +185,7 @@ jobs:
           paths:
             - .cache
             - jg/coop/images/posters-events
-            - jg/coop/images/posters-partners
+            - jg/coop/images/posters-sponsors
             - jg/coop/images/posters-podcast
             - jg/coop/images/thumbnails
       - persist_to_workspace:

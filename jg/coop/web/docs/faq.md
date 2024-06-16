@@ -56,7 +56,7 @@ Osvěžující, že?
 
 ### Jak přesně funguje členství?
 
-Dokud máš aktivní předplatné, tak jsi členem klubu a máš přístup do klubovny. Ta má podobu uzavřeného komunitního chatu na službě [Discord](https://discord.com/). K členství se mohou vázat i další výhody, které jsou nad rámec Discordu, například přístup k záznamům přednášek, možnost vyhrát lístek na konferenci, sleva u partnerů klubu, apod., ale bez čtení Discordu se o nich nemáš jak dovědět, veškerá komunikace probíhá tam.
+Dokud máš aktivní předplatné, tak jsi členem klubu a máš přístup do klubovny. Ta má podobu uzavřeného komunitního chatu na službě [Discord](https://discord.com/). K členství se mohou vázat i další výhody, které jsou nad rámec Discordu, například přístup k záznamům přednášek, možnost vyhrát lístek na konferenci, sleva u sponzorů, apod., ale bez čtení Discordu se o nich nemáš jak dovědět, veškerá komunikace probíhá tam.
 
 ### Můžu být v klubu anonymní?
 
@@ -172,9 +172,9 @@ Dlouhodobý plán je takový, že by členství v klubu zcela nahradilo původn�
 
 Zaregistruj se jako člen klubu a plať členství. Nemusíš si vytvářet účet na Discordu, ani tam chodit. V souvislosti s klubem by ti neměly chodit žádné zprávy, pouze systémová upozornění do e-mailu např. v případě, že ti končí platnost karty.
 
-## {{ 'building'|icon }} Partnerství s firmami
+## {{ 'building'|icon }} Sponzoři
 
-### Co vyplývá z toho, že je nějaká firma partnerem junior.guru? {: #firmy }
+### Co vyplývá z toho, že je nějaká firma sponzorem junior.guru? {: #firmy }
 
 Je žádoucí, aby junior.guru stálo na pomezí firem a juniorů a vyvažovalo diskuzi na obě strany, ne aby mazalo med kolem pusy jedné z nich a stavělo ji proti druhé.
 Rozložení příjmů junior.guru mezi juniory i firmy je způsob, jak to zajistit.
@@ -182,42 +182,26 @@ Také díky tomu může být členství v klubu pro samotné juniory mnohem levn
 
 Honza Javorek, autor junior.guru, má ale nakonec vždy na prvním místě dobro samotných juniorů.
 Ačkoliv dělá obchody s firmami, zachovává si nezávislost a nenechává se ovlivnit ve prospěch konkrétního produktu.
-Aby nebylo pochyb o tom, s kým si co domluvil, všechna partnerství jsou do detailu [transparentně zdokumentována](open.md#firemni-partnerstvi).
+Všechna sponzorství jsou [transparentně zdokumentována](open.md#sponzori).
 
-Firmy si v [ceníku](pricing.md) vybírají tarif podle toho, co od spolupráce očekávají.
-Partnerství je na rok.
-Každý tarif má sadu benefitů, které během toho roku může firma čerpat.
-Důvody, proč firmy s junior.guru spolupracují, jsou různé.
-Buď je to [CSR](https://cs.wikipedia.org/wiki/Spole%C4%8Densk%C3%A1_odpov%C4%9Bdnost_firem), nebo by rády najaly nějaké juniory, nebo jim chtějí prezentovat svůj produkt.
+Firmy si v [ceníku](pricing.md) vybírají tarif podle toho, jak moc chtějí junior.guru podpořit.
+Sponzorství je na rok.
+Hlavními důvody, proč firmy junior.guru podporují, je [CSR](https://cs.wikipedia.org/wiki/Spole%C4%8Densk%C3%A1_odpov%C4%9Bdnost_firem) a nábor.
 
 ### Co firma získává členstvím v klubu?   {: #firmy-klub :}
 
-Partnerské firmy mají přístup do klubu. Mohou vyhlížet talentované juniory, promovat ve vyhrazených kanálech své aktivity, poskytovat slevy na své produkty. Mohou se zapojit do diskuzí a radit, nebo poskytovat pohled z druhé strany. Mohou spolu s klubem vymýšlet různé způsoby vzájemné podpory, ať už jde o vzájemnou propagaci, slevy, nebo tvorbu společných článků, podcastů, videí. Je na firmě, jak to uchopí a co z toho „vyždíme“. Už jen tím, že svými financemi podpoří existenci junior.guru a bude vidět její logo, si buduje dobré jméno jak mezi lidmi z nastupující generace vývojářů, tak mezi zainteresovanými profíky.
+Sponzoři mají přístup do klubu. Mohou vyhlížet talentované juniory, promovat ve vyhrazených kanálech své aktivity, poskytovat slevy na své produkty. Mohou se zapojit do diskuzí a radit, nebo poskytovat pohled z druhé strany. Mohou spolu s klubem vymýšlet různé způsoby vzájemné podpory, ať už jde o vzájemnou propagaci, slevy, nebo tvorbu společných článků, podcastů, videí. Je na firmě, jak to uchopí a co z toho „vyždíme“. Už jen tím, že svými financemi podpoří existenci junior.guru a bude vidět její logo, si buduje dobré jméno jak mezi lidmi z nastupující generace vývojářů, tak mezi zainteresovanými profíky.
 
-### Co vyplývá z toho, že je partnerem vzdělávací agentura?  {: #vzdelavaci-agentury :}
+### Co vyplývá z toho, že je sponzorem vzdělávací agentura?  {: #vzdelavaci-agentury :}
 
-{% if partners_course_providers -%}
-Aktuálně jde o firmy {% for partner in partners_course_providers %}{{ partner.name -}}
-{% if loop.last %}{% else %}, {% endif %}{% endfor %}.
-{%- endif %}
-Všechna partnerství jsou do detailu [transparentně zdokumentována](open.md#firemni-partnerstvi).
-
+Všichni sponzoři jsou [transparentně zdokumentováni](open.md#sponzori).
 Firmy respektují, že klub je místem, kde lze o nabídce kurzů diskutovat na neutrální půdě, sdílet si zkušenosti, porovnávat.
 Recenze členů jsou subjektivním hodnocením konkrétních lidí a firmy nemají možnost do něj zasahovat.
 Pokud chce vzdělávací agentura propagovat své produkty, může tak činit ve vyhrazených místech v klubu.
-Honza si dává pozor na to, aby žádný konkrétní kurz sám neprotežoval a aby aktivity v rámci partnerství nezasahovaly do nestrannosti junior.guru.
+Honza si dává pozor na to, aby žádný konkrétní kurz sám neprotežoval a aby aktivity v rámci sponzorství nezasahovaly do nestrannosti junior.guru.
 
 Web junior.guru a především příručka jsou nezávislým rozcestníkem a žádný běžný odkaz si tam nelze koupit.
 Pokud je tam odkaz na konkrétní produkt, tak proto, že je Honza upřímně přesvědčen o jeho jedinečném přínosu v daném kontextu.
-
-### Přednášející v klubu nebo host v podcastu je z nějaké firmy, proč to není označeno jako spolupráce?  {: #neoznacena-spoluprace :}
-
-Na akce v klubu a do podcastu si zveme zajímavé lidi z oboru.
-Většinou zrovna někde pracují, takže to pro kontext uvádíme u jejich jména.
-Neznamená to, že k nám firma toho člověka poslala, nebo že za to něco zaplatila.
-
-Jako „placená spolupráce“ jsou viditelně označeny jen akce v klubu a epizody podcastu, které na základě [transparentně zdokumentovaného](open.md#firemni-partnerstvi) partnerství iniciovala firma.
-Zaplatila za to a vybrala si, koho k nám pošle.
 
 ## {{ 'people'|icon }} Partnerství s komunitami  {: #komunity }
 

@@ -6,7 +6,6 @@ from urllib.parse import urljoin
 import arrow
 
 from jg.coop.lib import loggers
-from jg.coop.lib.benefits_evaluators import BENEFITS_EVALUATORS
 from jg.coop.lib.discord_club import CLUB_GUILD
 from jg.coop.models.base import db
 from jg.coop.models.blog import BlogArticle
@@ -19,7 +18,6 @@ from jg.coop.models.exchange_rate import ExchangeRate
 from jg.coop.models.followers import Followers
 from jg.coop.models.job import ListedJob
 from jg.coop.models.page import Page
-from jg.coop.models.partner import Partner, Partnership
 from jg.coop.models.podcast import PodcastEpisode
 from jg.coop.models.sponsor import GitHubSponsor, PastSponsor, Sponsor
 from jg.coop.models.stage import Stage
@@ -92,7 +90,6 @@ def on_docs_context(context):
 
     # open.md
     context["sponsors_github_past"] = GitHubSponsor.past_listing()
-    context["partnerships"] = Partnership.active_listing()
     context["sponsors_by_tier"] = Sponsor.tier_grouping()
 
     # courses.md
@@ -100,11 +97,6 @@ def on_docs_context(context):
 
     # candidates.md
     context["candidates"] = Candidate.listing()
-
-    # faq.md
-    context["partners_course_providers"] = [
-        partner for partner in Partner.active_listing() if partner.course_provider
-    ]
 
     # handbook/index.md
     context["stages"] = Stage.listing()
@@ -123,9 +115,6 @@ def on_docs_context(context):
     context["sponsors_past"] = PastSponsor.listing()
     context["handbook_total_size"] = Page.handbook_total_size()
     context["charts"] = Chart.as_dict()
-
-    # open/*
-    context["benefits_evaluators"] = BENEFITS_EVALUATORS
 
     # index.jinja, podcast.md, handbook/cv.md, news.jinja
     context["podcast_episodes"] = PodcastEpisode.listing()
@@ -159,7 +148,6 @@ def on_docs_page_context(context, page, config, files):
     meta_model_getters = (
         ("topic_name", Topic.get_by_id, "topic"),
         ("event_id", Event.get_by_id, "event"),
-        ("partner_slug", Partner.get_by_slug, "partner"),
         ("course_provider_slug", CourseProvider.get_by_slug, "course_provider"),
         ("podcast_episode_number", PodcastEpisode.get_by_number, "podcast_episode"),
     )

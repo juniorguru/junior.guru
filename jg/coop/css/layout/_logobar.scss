@@ -18,19 +18,7 @@
 }
 
 .logobar-heading {
-  @extend .text-body-secondary;
-  @include font-size($sub-sup-font-size);
-  display: flex;
-  align-items: center;
-  padding: 0 $spacer;
   margin: 0;
-  font-weight: $font-weight-normal;
-  line-height: 1;
-  white-space: nowrap;
-
-  @include media-breakpoint-up(sm) {
-    @include font-size($small-font-size);
-  }
 
   @include media-breakpoint-up(lg) {
     flex-grow: 1;
@@ -41,14 +29,6 @@
   @include media-breakpoint-up(xxl) {
     flex-grow: 0;
     width: $main-toc-width;
-  }
-}
-
-.logobar-nonessential {
-  display: none;
-
-  @include media-breakpoint-up(sm) {
-    display: inline;
   }
 }
 

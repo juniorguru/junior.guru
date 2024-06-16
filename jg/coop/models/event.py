@@ -15,7 +15,6 @@ from jg.coop.lib.charts import month_range, ttm_range
 from jg.coop.lib.md import strip_links
 from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubUser
-from jg.coop.models.partner import Partner
 
 
 class Event(BaseModel):
@@ -28,7 +27,6 @@ class Event(BaseModel):
     bio_name = TextField()
     bio_title = TextField(null=True)
     bio_links = JSONField(default=list)
-    partner = ForeignKeyField(Partner, backref="list_events", null=True)
     recording_url = CharField(null=True)
     public_recording_url = CharField(null=True)
     poster_yt_path = CharField(null=True)

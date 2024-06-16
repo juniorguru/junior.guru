@@ -17,7 +17,9 @@ from jg.coop.lib.discord_club import (
 from jg.coop.lib.mutations import MutationsNotAllowedError, mutating_discord
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
-from jg.coop.models.partner import Partnership
+
+
+# from jg.coop.models.partner import Partnership
 
 
 BOT_REACTIONS = ["👋", "👍", "💕", "💰", "🎉"]
@@ -58,7 +60,7 @@ async def sync_partners_intro(client: ClubClient):
     if is_message_over_period_ago(last_message, timedelta(weeks=1)):
         logger.info("Last partner intro message is more than one week old!")
 
-        partners = list(get_partners_without_intro(Partnership.active_listing()))
+        partners = []  # list(get_partners_without_intro(Partnership.active_listing()))
         if partners:
             partners_names = ", ".join(partner.name for partner in partners)
             logger.info(f"Partners without intro: {partners_names}")

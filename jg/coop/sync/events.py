@@ -21,7 +21,6 @@ from jg.coop.lib.yaml import Date
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
 from jg.coop.models.event import Event, EventSpeaking
-from jg.coop.models.partner import Partner
 
 
 logger = loggers.from_path(__file__)
@@ -58,7 +57,6 @@ schema = Seq(
             Optional("bio_title"): Str(),
             "bio": Str(),
             Optional("bio_links"): Seq(Str()),
-            Optional("partner"): Str(),
             Optional("logo_path"): Str(),
             "speakers": CommaSeparated(Int()),
             Optional("recording_url"): Url(),
@@ -68,7 +66,7 @@ schema = Seq(
 )
 
 
-@cli.sync_command(dependencies=["club-content", "partners"])
+@cli.sync_command(dependencies=["club-content"])
 @click.option("--clear-posters/--keep-posters", default=False)
 def main(clear_posters):
     posters = PostersCache(POSTERS_DIR)
@@ -92,8 +90,6 @@ def main(clear_posters):
             name = record["title"]
             logger.info(f"Creating '{name}'")
             speakers_ids = record.pop("speakers", [])
-            if "partner" in record:
-                record["partner"] = Partner.get_by_slug(record["partner"])
             event = Event.create(**record)
 
             for speaker_id in speakers_ids:

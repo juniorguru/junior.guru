@@ -8,7 +8,6 @@ from strictyaml import as_document
 from jg.coop.lib import loggers
 from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.event import Event
-from jg.coop.models.partner import Partnership
 from jg.coop.models.podcast import PodcastEpisode
 
 
@@ -108,21 +107,6 @@ def generate_course_provider_pages() -> Generator[dict[str, Any], None, None]:
                 topic_name=course_provider.slug,
             ),
             template="course_provider.md",
-        )
-
-
-@template
-def generate_partner_pages() -> Generator[dict[str, Any], None, None]:
-    for partnership in Partnership.active_listing():
-        partner = partnership.partner
-        yield dict(
-            path=f"open/{partner.slug}.md",
-            meta=dict(
-                title=f"Partnerství s firmou {partner.name}",
-                partner_slug=partner.slug,
-                noindex=True,
-            ),
-            template="partner.md",
         )
 
 

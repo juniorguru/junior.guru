@@ -1,6 +1,6 @@
 from datetime import date
 from itertools import groupby
-from typing import Iterable, Self
+from typing import TYPE_CHECKING, Iterable, Self
 
 from peewee import (
     BooleanField,
@@ -12,8 +12,13 @@ from peewee import (
     fn,
 )
 
+from jg.coop.lib.discord_club import ClubChannelID, ClubEmoji
 from jg.coop.models.base import BaseModel
-from jg.coop.models.club import ClubUser
+from jg.coop.models.club import ClubMessage, ClubUser
+
+
+if TYPE_CHECKING:
+    from jg.coop.models.course_provider import CourseProvider
 
 
 class SponsorTier(BaseModel):
@@ -31,8 +36,8 @@ class Sponsor(BaseModel):
     slug = CharField(primary_key=True)
     name = CharField()
     url = CharField()
-    tier = ForeignKeyField(SponsorTier, backref="_list_sponsors", null=True)
-    start_on = DateField()
+    tier = ForeignKeyField(SponsorTier, backref="_list_sponsors")
+    start_on = DateField(null=True)  # TODO remove this
     renews_on = DateField()
     note = TextField(null=True)
     coupon = CharField(null=True, index=True)
@@ -50,12 +55,13 @@ class Sponsor(BaseModel):
 
     @classmethod
     def handbook_listing(cls) -> Iterable[Self]:
-        priority = fn.max(SponsorTier.priority).alias("priority")
         return (
-            cls.select(cls, priority)
+            cls.select()
             .join(SponsorTier)
-            .where(SponsorTier.priority == priority)
-            .group_by(Sponsor)
+            .where(
+                SponsorTier.priority
+                == SponsorTier.select(fn.max(SponsorTier.priority)).scalar()
+            )
             .order_by(Sponsor.name)
         )
 
@@ -81,8 +87,30 @@ class Sponsor(BaseModel):
     @classmethod
     def coupons(cls) -> set[str]:
         return frozenset(
-            cls.select(cls.coupon).distinct().where(cls.coupon.is_null(False))
+            (
+                row[0]
+                for row in cls.select(cls.coupon)
+                .distinct()
+                .where(cls.coupon.is_null(False))
+                .tuples()
+            )
         )
+
+    @property
+    def name_markdown_bold(self) -> str:
+        return f"**{self.name}**"
+
+    @property
+    def intro(self) -> ClubMessage:
+        return ClubMessage.last_bot_message(
+            ClubChannelID.INTRO,
+            starting_emoji=ClubEmoji.SPONSOR_INTRO,
+            contains_text=self.name_markdown_bold,
+        )
+
+    @property
+    def course_provider(self) -> "CourseProvider | None":
+        return self._course_provider.first()
 
     @property
     def list_members(self) -> Iterable[ClubUser]:

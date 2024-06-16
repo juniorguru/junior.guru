@@ -175,10 +175,7 @@ Původně jsem se snažil junior.guru živit z inzerce nabídek práce, ale byzn
 
 Ke konci roku 2020 jsem se rozhodl změnit byznys model a vytvořit kolem junior.guru placenou komunitu na Discordu. Toto detailně popisuji ve svém [článku na blogu](https://honzajavorek.cz/blog/spoustim-klub/). [Klub](club.md) se veřejnosti otevřel v únoru 2021.
 
-V ideálním případě by mě živilo individuální členství lidí v klubu, protože je to pravidelný, předvídatelný příjem, který mi navíc zajišťuje největší nezávislost. Individuální členství ale nevystačí, takže si domlouvám i [partnerství s firmami](#firemni-partnerstvi). Jsou z toho větší jednorázové příjmy, které lze obtížně předvídat a mohou ovlivňovat mou kritičnost k firmám, se kterými spolupracuji.
-Proto všechna partnerství [transparentně popisuji](#firemni-partnerstvi).
-
-V počátcích mohlo junior.guru existovat z velké části jen díky dobrovolným příspěvkům. Když jsem našel funkční byznys model, možnost přispět jsem přestal propagovat a snažím se postavit na vlastní nohy.
+V ideálním případě by mě živilo individuální členství lidí v klubu, protože je to pravidelný, předvídatelný příjem, který mi navíc zajišťuje největší nezávislost. Individuální členství ale nevystačí, takže mám i [sponzory](#sponzori). Z těch na fakturu jsou větší jednorázové příjmy, které lze obtížně předvídat. Tyto dohody taky mohou ovlivňovat mou kritičnost ke konkrétním firmám. Proto všechna sponzorství [transparentně popisuji](#sponzori).
 
 {% call note() %}
   {{ 'bar-chart-line'|icon }} Finanční data se každý den stahují přímo z mého podnikatelského účtu u Fio banky.
@@ -307,12 +304,7 @@ Z nich {{ sponsors_github|length }} využívá [GitHub Sponsors](https://github.
   &nbsp;{{- 'star'|icon -}}
 {%- endfor -%}</small>
 
-<div class="table-responsive"><table class="table">
-  <tr>
-    <th>Detaily</th>
-    <th style="width: 25%">Zbývá</th>
-    <th style="width: 200px">Logo</th>
-  </tr>
+<div class="table-responsive"><table class="table align-middle">
   {% for sponsor in sponsors %}
     <tr>
       <td>
@@ -321,14 +313,17 @@ Z nich {{ sponsors_github|length }} využívá [GitHub Sponsors](https://github.
         <br><small>{{ sponsor.note|md }}</small>
         {% endif %}
       </td>
-      <td{% if sponsor.days_until_renew() < 30 %}
+      <td style="width: 25%">
+        <span {% if sponsor.days_until_renew() < 30 %}
         class="problem-very-soon"
       {% elif sponsor.days_until_renew() < 60 %}
         class="problem-soon"
       {%- endif %}>
-        {{ sponsor.days_until_renew() }} dní
+          {{ sponsor.days_until_renew() }} dní<br>
+          <small>zbývá</small>
+        </span>
       </td>
-      <td>
+      <td style="width: 200px">
         {{ img('static/' + sponsor.logo_path, sponsor.name, 130, 60) }}
       </td>
     </tr>
@@ -339,17 +334,13 @@ Z nich {{ sponsors_github|length }} využívá [GitHub Sponsors](https://github.
 ### GitHub Sponsors <small>{{ 'github'|icon }}</small>
 
 <div class="table-responsive"><table class="table">
-  <tr>
-    <th>Detaily</th>
-    <th style="width: 200px">Avatar</th>
-  </tr>
   {% for sponsor in sponsors_github %}
     <tr>
       <td>
         <a href="{{ sponsor.url }}" target="_blank" rel="noopener">@{{ sponsor.slug }}</a>
         {% if sponsor.name %}<br><small>{{ sponsor.name }}</small>{% endif %}
       </td>
-      <td>
+      <td style="width: 200px">
         {{ img('static/' + sponsor.avatar_path, sponsor.name, 50, 50) }}
       </td>
     </tr>
@@ -357,7 +348,8 @@ Z nich {{ sponsors_github|length }} využívá [GitHub Sponsors](https://github.
 </table></div>
 
 ### Bývalí sponzoři <small>{{ 'heart'|icon }}</small>
-{% for sponsor in sponsors_past %}{{ sponsor.name }}{% if not loop.last %}, {% endif %}{% endfor %}.
+
+**Na fakturu:** {% for sponsor in sponsors_past %}{{ sponsor.name }}{% if not loop.last %}, {% endif %}{% endfor %}.
 
 **GitHub Sponsors:** {% for sponsor in sponsors_github_past %}@{{ sponsor.slug }}{% if not loop.last %}, {% endif %}{% endfor %}.
 
@@ -511,7 +503,7 @@ S mentory z [CoreSkill](https://coreskill.tech/) máme symbiózu. Nic si navzáj
             },
             {
                 'label': 'členství platí firma',
-                'data': charts.subscriptions_breakdown.pop('partner'),
+                'data': charts.subscriptions_breakdown.pop('sponsor'),
                 'backgroundColor': '#638cdd',
             },
         ],

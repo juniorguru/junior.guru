@@ -26,21 +26,6 @@
 {% endcall %}
 #}
 
-{% if podcast_episode.partner %}
-<p>
-  <span class="badge text-bg-primary">Spolupráce</span>
-  <small>
-  Akce vznikla v rámci
-  {% set active_partnership = podcast_episode.partner.active_partnership() %}
-  {% if active_partnership %}
-    <a href="{{ pages|docs_url(active_partnership.page_url)|url }}">placeného partnerství</a>
-  {% else %}
-    placeného partnerství
-  {% endif %}
-  s firmou {{ sponsor_link(podcast_episode.partner.name, podcast_episode.partner.url, 'podcast') }}
-  </small>
-</p>
-{% endif %}
 {{ img('static/' + podcast_episode.image_path, podcast_episode.format_title(), 100, 100, class='news-page-image') }}
 <p>
   <strong>{{ '{:%-d.%-m.%Y}'.format(podcast_episode.publish_on) }}</strong> — {{ podcast_episode.description|md }}

@@ -118,14 +118,15 @@ def prepare_logo_data(id, **kwargs):
     )
 
 
-def prepare_partner_data(id, **kwargs):
+def prepare_sponsor_data(slug: str, **kwargs):
     return dict(
-        id=id,
-        slug=kwargs.pop("slug", f"banana{id}"),
-        name=kwargs.pop("name", f"Banana #{id}"),
-        logo_path=kwargs.pop("logo_path", "logos/banana.svg"),
+        slug=slug,
+        name=kwargs.pop("name", slug.upper()),
         url=kwargs.pop("url", "https://banana.example.com"),
+        renews_on=kwargs.pop("renews_on", date.today() + timedelta(days=365)),
         coupon=kwargs.pop("coupon", "BANANA123123123"),
+        logo_path=kwargs.pop("logo_path", "logos/banana.svg"),
+        poster_path=kwargs.pop("poster_path", "posters/banana.png"),
         **kwargs,
     )
 

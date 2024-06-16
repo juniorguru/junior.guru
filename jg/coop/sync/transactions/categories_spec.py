@@ -43,7 +43,7 @@ def podcasty_cz_commission(transaction: dict, secrets: dict) -> TransactionsCate
 
 
 @category_rule
-def mews_partnership_2022(transaction: dict, secrets: dict) -> TransactionsCategory:
+def mews_sponsorship_2022(transaction: dict, secrets: dict) -> TransactionsCategory:
     if transaction["variable_symbol"] == "226":
         return TransactionsCategory.SPONSORSHIPS
 

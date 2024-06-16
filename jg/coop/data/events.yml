@@ -22,7 +22,6 @@
 #  short_description: |                  # KRATŠÍ TEXT LÁKADLA (NAPŘ. PRO PLAKÁTEK), POKUD JE POTŘEBA
 #    Jana Nováková je expertka na věci a ukáže ti, jak se věci
 #    dělají a jak se stát tím, kým se stát chceš.
-#  partner: google                        # DOPLNÍ HONZA, POKUD JDE O PARTNERSKOU PŘEDNÁŠKU
 #  avatar_path: |                         # CESTA KE TVÉ FOTCE, 500x500px JPG, IDEÁLNĚ
 #    avatars-participants/jana-novakova.jpg
 #  bio_name: Jana Nováková                # TVOJE JMÉNO
@@ -338,7 +337,6 @@
     Jak funguje mentoring v klubu a co přesně zahrnuje pravidelná nabídka, která vybízí ke kontaktování mentorů z firem? Uvítáme mentory z Mews, ať je máte v paměti jako reálné tváře a ne pouze jména na seznamu.
 
     Technický tým Mews má v současné době okolo 170 lidí, kteří si své znalosti a zkušenosti nenechávají jen pro sebe, ale i díky junior.guru je dostávají k více lidem. Nejzásadnějším kanálem pro tuto činnost je mentoring, který mohou využít všichni, kdo se chtějí něco dozvědět, něco si ověřit nebo si jen pokecat o technologiích.
-  partner: mews
   bio_name: Honza Javorek a mentoři z Mews
   bio: |
     Mews je softwarová firma, která buduje moderní systém pro správu ubytovacích zařízení. Zjednodušuje a automatizuje (často nudné) úkony což umožňuje hoteliérům věnovat se naplno svým klientům.
@@ -429,7 +427,6 @@
   time: "18:30"
   description: |
     Jak funguje mentoring v klubu a co přesně zahrnuje pravidelná nabídka, která vybízí ke kontaktování mentorů z firem? Už dřív se takto nabídli kamarádi z Mews a Red Hatu, nyní se přidává Pure Storage. Uvítáme je, ať je máte v paměti jako reálné tváře a ne pouze jména na seznamu. Někteří nerozumí česky, takže část nebo celá akce proběhne anglicky.
-  partner: purestorage
   bio_name: Honza Javorek a mentoři z Pure Storage
   bio: |
     Pure Storage je pražská pobočka firmy ze Silicon Valley, která se zabývá ukládáním dat. Chtějí junior.guru podpořit především jako mentoři.
@@ -465,7 +462,6 @@
   date: "2022-02-23"
   description: |
     Jetveo je low-code platforma se C#, na které by měl být i úplný začátečník s minimální znalostí kódu schopen poměrně rychle vytvořit funkční, produkční appku. Zakladatel Jetveo Dalibor a junior Jakub, který si díky Jetveo našel svou první práci v IT, v klubu udělali představení platformy a odpovídali na dotazy.
-  partner: jetveo
   bio_name: Dalibor Houfek, Jakub Ráček
   bio_title: Kluci z Jetveo
   bio: |
@@ -573,7 +569,6 @@
   date: "2021-11-02"
   description: |
     Nedávno jsem vytvořil [web pro novináře Davida Klimeše](https://davidklimes.cz/) – offline-first Progressive Web App. A protože to byla důležitá práce, dal jsem si hodně záležet. Rád bych vám na jejím příkladu ukázal jak se staví moderní prezentační web – jak vybírat technologie, co optimalizovat, na co si dát pozor. Určitě zmíníme přístupnost a stihneme-li to, snad si i povíme k čemu jsou dobré service workery.
-  partner: cdn77com
   avatar_path: avatars-participants/libor-vanek.jpg
   bio_name: Libor Vaněk
   bio_title: Vedoucí frontendového vývoje, CDN77
@@ -610,7 +605,6 @@
   date: "2021-09-29"
   description: |
     AMA znamená _ask me anything_. Zeptej se na cokoliv, co tě zajímá! Dan a Kate pod značkou [CoreSkill](https://coreskill.tech/) pomáhají budoucím frontendistům a frontendistkám se vším, co potřebují k tomu, aby se jimi co nejdřív stali. Tématy určitě budou HTML, CSS i JavaScript, ale i to, co to frontend je a co frontendisti vlastně všechno dělají a co je minimum pro nalezení první práce.
-  partner: coreskill
   avatar_path: avatars-participants/coreskill.jpg
   bio_name: Daniel Srb, Kate Miháliková
   bio_title: vývojáři a mentoři, CoreSkill
@@ -631,7 +625,6 @@
   date: "2021-08-31"
   description: |
     S relačními databázemi se setkává téměř každý vývojář, ale ne každý vývojář je dokáže efektivně využít. V přednášce si představíme, jak jsou data v relačních databázích uložena, jak databáze vykonávají naše dotazy a jak jim v jejich vykonávání pomoci. Ukážeme si i nástroje pro ladění dotazů v MySQL a PostgreSQL a celou řadu praktických tipů.
-  partner: lynt
   avatar_path: avatars-participants/jan-smitka.jpg
   bio_name: Jan Smitka
   bio_title: Hlavní vývojář, Lynt
@@ -747,7 +740,6 @@
     -   Jaký je poměr v týmech mezi seniory a juniory, jakou pozornost může junior očekávat, když nastoupí?
   short_description: |
     AMA znamená _ask me anything_. Zeptej se na cokoliv, co tě zajímá! Jirka je seniorní recruiter v Red Hatu, který se ve své práci podstatnou měrou zabývá přijímáním juniorů. Ve volném čase spoluorganizuje brněnský sraz Python programátorů a věnuje se DJingu.
-  partner: redhat
   avatar_path: avatars-participants/jiri-psotka.jpg
   bio_name: Jiří Psotka
   bio_title: Senior Recruiter, Red Hat

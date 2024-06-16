@@ -26,21 +26,6 @@
 {% endcall %}
 #}
 
-{% if event.partner %}
-<p>
-  <span class="badge text-bg-primary">Spolupráce</span>
-  <small>
-  Akce vznikla v rámci
-  {% set active_partnership = event.partner.active_partnership() %}
-  {% if active_partnership %}
-    <a href="{{ pages|docs_url(active_partnership.page_url)|url }}">placeného partnerství</a>
-  {% else %}
-    placeného partnerství
-  {% endif %}
-  s firmou {{ sponsor_link(event.partner.name, event.partner.url, 'event') }}
-  </small>
-</p>
-{% endif %}
 <p>
   <strong>{{ '{:%-d.%-m.%Y}'.format(event.start_at) }}</strong>
   —

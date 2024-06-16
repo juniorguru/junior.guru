@@ -1,16 +1,16 @@
 tiers:
   - slug: handbook
-    name: Příručka
+    name: Sponzoři příručky
     description: Mají logo i na [stránce s příručkou](https://junior.guru/handbook).
     priority: 2
 
   - slug: basic
-    name: Základní
+    name: Sponzoři
     description: Mají logo na [úvodní stránce](https://junior.guru/).
     priority: 1
 
   - slug: barter
-    name: Partnerství
+    name: Barter
     description: Barterová spolupráce. Mají logo na [úvodní stránce](https://junior.guru/).
     priority: 0
 

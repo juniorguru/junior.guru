@@ -59,8 +59,6 @@ nav:
       - Licence obsahu (CC BY-SA): https://creativecommons.org/licenses/by-sa/4.0/deed.cs
   - Témata:
       - ... | flat | topics/*.md
-  - Partnerství:
-      - ... | flat | open/*.md
   - Připravované:
       - ... | flat | handbook/*.md
   - Ostatní:

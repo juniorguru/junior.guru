@@ -1,7 +1,5 @@
 {% from 'macros.html' import link_card, note, lead, img with context %}
 
-{% set active_partnership = course_provider.active_partnership() %}
-
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
@@ -22,7 +20,7 @@
   <!-- TODO Tady je aspoň základní info, které ti pomůže s rozhodováním. -->
 {% endcall %}
 
-{% if active_partnership %}
+{% if course_provider.sponsor %}
   {{ link_card(course_provider.name, course_provider.url, class='highlighted') }}
 {% else %}
   {{ link_card(course_provider.name, course_provider.url, nofollow=True) }}
@@ -75,12 +73,11 @@ Provozovatel {{ course_provider.name }} tam nabízí tyto kurzy:
 {{ course_provider.name }} tam žádné kurzy nenabízí.
 {% endif %}
 
-{% if active_partnership %}
-## Partnerství s junior.guru
+{% if course_provider.sponsor %}
+## Sponzorství junior.guru
 
-{{ course_provider.name }} si tady platí zvýraznění.
+{{ course_provider.name }} finančně podporuje junior.guru a díky tomu tady má zvýraznění.
 Neznamená to, že jsou nejlepší, že je kurz nějak ověřený, nebo že je junior.guru doporučuje.
-Vše kolem partnerství je transparentní, takže [mrkni na detaily]({{ pages|docs_url(active_partnership.page_url)|url }}).
 {% else %}
 ## Vztah s junior.guru
 

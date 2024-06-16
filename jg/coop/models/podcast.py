@@ -2,11 +2,10 @@ import math
 from datetime import date, datetime, time
 from zoneinfo import ZoneInfo
 
-from peewee import BooleanField, CharField, DateField, ForeignKeyField, IntegerField
+from peewee import BooleanField, CharField, DateField, IntegerField
 
 from jg.coop.lib.charts import ttm_range
 from jg.coop.models.base import BaseModel
-from jg.coop.models.partner import Partner
 
 
 class PodcastEpisode(BaseModel):
@@ -23,7 +22,6 @@ class PodcastEpisode(BaseModel):
     media_type = CharField()
     media_duration_s = IntegerField()
     description = CharField()
-    partner = ForeignKeyField(Partner, backref="list_podcast_episodes", null=True)
     poster_path = CharField(null=True)
 
     @property

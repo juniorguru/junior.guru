@@ -24,7 +24,6 @@ from jg.coop.lib.yaml import Date
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
 from jg.coop.models.feminine_name import FeminineName
-from jg.coop.models.partner import Partner
 from jg.coop.models.podcast import PodcastEpisode
 
 
@@ -45,7 +44,6 @@ YAML_SCHEMA = Seq(
             "image_path": Str(),
             Optional("media_size"): Int(),
             Optional("media_duration_s"): Int(),
-            Optional("partner"): Str(),
         }
     )
 )
@@ -67,7 +65,7 @@ TODAY = date.today()
 MESSAGE_EMOJI = "🎙"
 
 
-@cli.sync_command(dependencies=["club-content", "partners", "feminine-names"])
+@cli.sync_command(dependencies=["club-content", "feminine-names"])
 @click.option("--clear-posters/--keep-posters", default=False)
 @db.connection_context()
 def main(clear_posters):
@@ -149,14 +147,6 @@ def process_episode(yaml_record):
             return None
         raise
 
-    logger_ep.debug("Figuring out partner")
-    if "partner" in yaml_record:
-        with db.connection_context():
-            partner = Partner.get_by_slug(yaml_record["partner"])
-        logger_ep.info(f"Partner: {partner.name}")
-    else:
-        partner = None
-
     if guest_name := yaml_record.get("guest_name"):
         guest_has_feminine_name = FeminineName.is_feminine(guest_name)
     else:
@@ -181,7 +171,6 @@ def process_episode(yaml_record):
         media_size=media_size,
         media_type=media_type,
         media_duration_s=media_duration_s,
-        partner=partner,
     )
 
     logger_ep.debug("Rendering poster")

@@ -40,7 +40,7 @@ async def sync_dashboard(client: ClubClient):
     sections = [
         render_basic_tips(),
         render_roles(),
-        render_partners(),
+        render_sponsors(),
         render_events(),
         render_open(),
     ]
@@ -86,9 +86,9 @@ def render_roles():
     }
 
 
-def render_partners():
+def render_sponsors():
     return {
-        "title": "Partneři",
+        "title": "Sponzoři",
         "color": Color.dark_grey(),
         "description": "Přesunuto do <#1177200287107264554>.",
     }

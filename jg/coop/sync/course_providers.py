@@ -9,7 +9,7 @@ from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
 from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
-from jg.coop.models.partner import Partner
+from jg.coop.models.sponsor import Sponsor
 
 
 YAML_DIR_PATH = Path("jg/coop/data/course_providers")
@@ -29,7 +29,7 @@ STRING_LENGTH_SEO_LIMIT = 150
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=["partners"])
+@cli.sync_command(dependencies=["sponsors"])
 @db.connection_context()
 def main():
     CourseProvider.drop_table()
@@ -50,7 +50,10 @@ def main():
             record["name"], record.get("questions")
         )
         record["page_lead"] = compile_page_lead(record["name"], record.get("questions"))
-        record["partner"] = Partner.first_by_slug(record["slug"])
+        try:
+            record["sponsor"] = Sponsor.get(record["slug"])
+        except Sponsor.DoesNotExist:
+            logger.debug(f"Course provider {record['slug']!r} is not a sponsor")
 
         CourseProvider.create(**record)
         logger.info(f'Loaded {yaml_path.name} as {record["name"]!r}')
