@@ -313,7 +313,11 @@ Z nich {{ sponsors_github|length }} využívá [GitHub Sponsors](https://github.
         <br><small>{{ sponsor.note|md }}</small>
         {% endif %}
       </td>
-      <td style="width: 25%">
+      <td style="width: 5rem">
+        {{ sponsor.members_count }}<br>
+        <small>členů</small>
+      </td>
+      <td style="width: 5rem">
         <span {% if sponsor.days_until_renew() < 30 %}
         class="problem-very-soon"
       {% elif sponsor.days_until_renew() < 60 %}
