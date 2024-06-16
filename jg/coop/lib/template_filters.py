@@ -220,3 +220,9 @@ def sibling_page(page: Page, offset: int) -> StructureItem | None:
 
 def skip(items: Iterable, n: int) -> list:
     return list(items)[n:]
+
+
+def shuffle(items: Iterable) -> list:
+    items = list(items)
+    random.shuffle(items)
+    return items

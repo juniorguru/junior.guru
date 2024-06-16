@@ -38,6 +38,8 @@ class CouponEntity(TypedDict):
 
 class TierConfig(BaseModel):
     slug: str
+    name: str
+    description: str
     priority: int
 
 
@@ -82,7 +84,12 @@ def main(today: date, clear_posters: bool):
     sponsors = SponsorsConfig(**yaml_data)
 
     tiers = {
-        tier.slug: SponsorTier.create(slug=tier.slug, priority=tier.priority)
+        tier.slug: SponsorTier.create(
+            slug=tier.slug,
+            name=tier.name,
+            description=tier.description,
+            priority=tier.priority,
+        )
         for tier in sponsors.tiers
     }
     logger.info(f"Tiers: {', '.join(tiers.keys())}")
@@ -124,7 +131,9 @@ def main(today: date, clear_posters: bool):
                 name=sponsor.name,
                 url=sponsor.url,
                 tier=tier,
+                start_on=get_start_on(sponsor.periods),
                 renews_on=renews_on,
+                note=sponsor.note,
                 coupon=coupons_mapping.get(sponsor.slug),
                 logo_path=logo_path,
                 poster_path=poster_path,
@@ -149,6 +158,12 @@ def get_coupons_mapping(coupons: Iterable[CouponEntity]) -> dict[str, str]:
         for coupon in coupons
         if coupon["state"] == "enabled"
     }
+
+
+def get_start_on(periods: list[tuple[str, str | None]]) -> date:
+    first_period_start = sorted(periods)[0][0]
+    year, month = map(int, first_period_start.split("-"))
+    return date(year, month, 1)
 
 
 def get_renews_on(periods: list[tuple[str, str | None]], today: date) -> bool:

@@ -65,11 +65,11 @@
   filter: grayscale(0%);
 }
 
-.expires-soon,
-.expires-very-soon {
+.problem-soon,
+.problem-very-soon {
   color: $danger;
 }
 
-.expires-very-soon {
+.problem-very-soon {
   font-weight: $font-weight-bold;
 }

@@ -1,4 +1,4 @@
-{% from 'macros.html' import lead, img, partner_link, podcast_player with context %}
+{% from 'macros.html' import lead, img, sponsor_link, podcast_player with context %}
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
@@ -37,7 +37,7 @@
   {% else %}
     placeného partnerství
   {% endif %}
-  s firmou {{ partner_link(podcast_episode.partner.name, podcast_episode.partner.url, 'podcast') }}
+  s firmou {{ sponsor_link(podcast_episode.partner.name, podcast_episode.partner.url, 'podcast') }}
   </small>
 </p>
 {% endif %}

@@ -33,6 +33,7 @@ TEMPLATE_FILTERS = [
     "parent_page",
     "sibling_page",
     "skip",
+    "shuffle",
 ]
 
 

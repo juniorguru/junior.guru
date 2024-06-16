@@ -21,7 +21,7 @@ from jg.coop.models.job import ListedJob
 from jg.coop.models.page import Page
 from jg.coop.models.partner import Partner, Partnership
 from jg.coop.models.podcast import PodcastEpisode
-from jg.coop.models.sponsor import GitHubSponsor, Sponsor
+from jg.coop.models.sponsor import GitHubSponsor, PastSponsor, Sponsor
 from jg.coop.models.stage import Stage
 from jg.coop.models.story import Story
 from jg.coop.models.topic import Topic
@@ -79,7 +79,7 @@ def on_shared_page_context(context, page, config, files):
 
 @db.connection_context()
 def on_docs_context(context):
-    # index.jinja
+    # index.jinja, open.md
     context["sponsors_github"] = GitHubSponsor.listing()
 
     # index.jinja, club.md, open.md
@@ -91,7 +91,9 @@ def on_docs_context(context):
     context["events_promo"] = Event.promo_listing()
 
     # open.md
+    context["sponsors_github_past"] = GitHubSponsor.past_listing()
     context["partnerships"] = Partnership.active_listing()
+    context["sponsors_by_tier"] = Sponsor.tier_grouping()
 
     # courses.md
     context["course_providers"] = CourseProvider.listing()
@@ -118,7 +120,7 @@ def on_docs_context(context):
 
     # open.md
     context["blog"] = BlogArticle.listing()
-    context["partners_expired"] = Partner.expired_listing()
+    context["sponsors_past"] = PastSponsor.listing()
     context["handbook_total_size"] = Page.handbook_total_size()
     context["charts"] = Chart.as_dict()
 

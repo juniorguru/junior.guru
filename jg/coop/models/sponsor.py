@@ -1,3 +1,5 @@
+from datetime import date
+from itertools import groupby
 from typing import Iterable, Self
 
 from peewee import (
@@ -16,6 +18,8 @@ from jg.coop.models.club import ClubUser
 
 class SponsorTier(BaseModel):
     slug = CharField(primary_key=True)
+    name = CharField()
+    description = TextField()
     priority = IntegerField()
 
     @property
@@ -28,6 +32,7 @@ class Sponsor(BaseModel):
     name = CharField()
     url = CharField()
     tier = ForeignKeyField(SponsorTier, backref="_list_sponsors", null=True)
+    start_on = DateField()
     renews_on = DateField()
     note = TextField(null=True)
     coupon = CharField(null=True, index=True)
@@ -63,6 +68,13 @@ class Sponsor(BaseModel):
         )
 
     @classmethod
+    def tier_grouping(cls) -> list[tuple[SponsorTier, list[Self]]]:
+        return [
+            (tier, list(sponsors))
+            for tier, sponsors in groupby(cls.listing(), lambda sponsor: sponsor.tier)
+        ]
+
+    @classmethod
     def count(cls) -> int:
         return cls.select().count()
 
@@ -91,6 +103,10 @@ class Sponsor(BaseModel):
     def members_count(self) -> int:
         return len(self.list_members)
 
+    def days_until_renew(self, today=None) -> int:
+        today = today or date.today()
+        return max(0, (self.renews_on - today).days)
+
 
 class PastSponsor(BaseModel):
     slug = CharField(primary_key=True)
@@ -100,6 +116,10 @@ class PastSponsor(BaseModel):
     @classmethod
     def count(cls) -> int:
         return cls.select().count()
+
+    @classmethod
+    def listing(cls) -> Iterable[Self]:
+        return cls.select().order_by(cls.name)
 
 
 class GitHubSponsor(BaseModel):
@@ -112,9 +132,13 @@ class GitHubSponsor(BaseModel):
     @classmethod
     def listing(cls) -> Iterable[Self]:
         return (
-            cls.select()
-            .where(cls.is_active == True)  # noqa: E712
-            .order_by(fn.random())
+            cls.select().where(cls.is_active == True).order_by(cls.slug)  # noqa: E712
+        )
+
+    @classmethod
+    def past_listing(cls) -> Iterable[Self]:
+        return (
+            cls.select().where(cls.is_active == False).order_by(cls.slug)  # noqa: E712
         )
 
     @classmethod

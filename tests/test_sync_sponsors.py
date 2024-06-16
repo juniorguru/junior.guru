@@ -2,7 +2,7 @@ from datetime import date
 
 import pytest
 
-from jg.coop.sync.sponsors import get_coupons_mapping, get_renews_on
+from jg.coop.sync.sponsors import get_coupons_mapping, get_renews_on, get_start_on
 
 
 @pytest.mark.parametrize(
@@ -62,6 +62,17 @@ def test_get_renews_on(
     periods: list[tuple[str, str | None]], today: date, expected: date
 ):
     assert get_renews_on(periods, today) == expected
+
+
+@pytest.mark.parametrize(
+    "periods, expected",
+    [
+        ([["2021-02", None]], date(2021, 2, 1)),
+        ([["2021-02", None], ["1999-02", "2001-02"]], date(1999, 2, 1)),
+    ],
+)
+def test_get_start_on(periods: list[tuple[str, str | None]], expected: date):
+    assert get_start_on(periods) == expected
 
 
 def test_get_coupons_mapping():

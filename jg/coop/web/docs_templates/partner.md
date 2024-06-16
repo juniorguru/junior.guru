@@ -1,4 +1,4 @@
-{% from 'macros.html' import lead, figure, partner_link with context %}
+{% from 'macros.html' import lead, figure, sponsor_link with context %}
 
 {% set active_partnership = partner.active_partnership() %}
 
@@ -20,7 +20,7 @@
   </tr>
   <tr>
     <th>Odkaz</th>
-    <td>{{ partner_link(partner.url, partner.url, 'open') }}</td>
+    <td>{{ sponsor_link(partner.url, partner.url, 'open') }}</td>
   </tr>
   <tr>
     <th>Tarif</th>

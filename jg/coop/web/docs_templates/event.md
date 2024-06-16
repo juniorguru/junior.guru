@@ -1,4 +1,4 @@
-{% from 'macros.html' import lead, img, partner_link with context %}
+{% from 'macros.html' import lead, img, sponsor_link with context %}
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
@@ -37,7 +37,7 @@
   {% else %}
     placeného partnerství
   {% endif %}
-  s firmou {{ partner_link(event.partner.name, event.partner.url, 'event') }}
+  s firmou {{ sponsor_link(event.partner.name, event.partner.url, 'event') }}
   </small>
 </p>
 {% endif %}

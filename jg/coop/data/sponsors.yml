@@ -1,13 +1,18 @@
 tiers:
   - slug: handbook
+    name: Příručka
+    description: Mají logo i na [stránce s příručkou](https://junior.guru/handbook).
     priority: 2
 
   - slug: basic
+    name: Základní
+    description: Mají logo na [úvodní stránce](https://junior.guru/).
     priority: 1
 
   - slug: barter
+    name: Partnerství
+    description: Barterová spolupráce. Mají logo na [úvodní stránce](https://junior.guru/).
     priority: 0
-
 
 registry:
   - name: Fakturoid
@@ -17,7 +22,7 @@ registry:
     periods:
       - [2020-09, 2025-05]
 
-  - name: RedHat
+  - name: Red Hat
     slug: redhat
     url: https://www.redhat.com/en/jobs
     tier: handbook
@@ -39,7 +44,7 @@ registry:
     periods:
       - [2021-02, null]
     note: |
-      Dan Srb v klubu moderuje a radí s frontendem. CoreSkill využívá klub pro komunikaci se svými klienty (studenty).
+      Využívají klub pro komunikaci se svými klienty (studenty). Dan Srb v klubu moderuje a radí s frontendem.
 
   - name: ITnetwork
     slug: itnetwork
@@ -56,7 +61,7 @@ registry:
       - [2023-06, null]
       - [2021-02, 2022-02]
     note: |
-      Creatiweb za symbolickou cenu poskytuje junior.guru pracovní místo ve své kanceláři.
+      Za symbolickou cenu poskytují pracovní místo ve své kanceláři.
 
   - name: ENGETO Academy
     slug: engeto
@@ -81,10 +86,9 @@ registry:
     periods:
       - [2021-02, null]
     note: |
-      Nemusí za nic platit jako vděčnost za to, že šlo historicky o první sponzorství s klubem. Když Skoumal díky junior.guru získá zajímavé benefity (např. nové zaměstnance), může mít chuť jednorázově finančně junior.guru podpořit.
+      Historicky o první klubové sponzorství. Když Skoumal díky junior.guru získá zajímavé benefity (např. nové zaměstnance), může mít chuť přihodit i finanční podporu.
 
-
-# PAST SPONSORS
+  # PAST SPONSORS
   - name: Glance Media
     slug: glancemedia
     url: https://www.glancemedia.cz/

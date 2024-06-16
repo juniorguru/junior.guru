@@ -136,10 +136,9 @@ description: Komunita pro začátečníky v programování, průvodce programov�
     {% endfor %}
   </ul>
   <ul class="sponsor-avatars standout-bottom">
-  {% for sponsor in sponsors_github %}
+  {% for sponsor in sponsors_github|shuffle %}
     <li class="sponsor-avatars-item">
-      <a href="{{ sponsor.url }}" target="_blank" rel="noopener"
-        data-metrics-utm data-metrics-utm-medium="avatar" data-metrics-utm-campaign="sponsorship">
+      <a href="{{ sponsor.url }}" target="_blank" rel="noopener">
         {{ img('static/' + sponsor.avatar_path, sponsor.name, 50, 50) }}
       </a>
     </li>
