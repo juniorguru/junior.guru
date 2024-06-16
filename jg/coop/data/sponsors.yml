@@ -14,7 +14,16 @@ tiers:
     description: Barterová spolupráce. Mají logo na [úvodní stránce](https://junior.guru/).
     priority: 0
 
+
 registry:
+  # CURRENT SPONSORS
+
+  # TODO Migrate community partners to barter sponsors.
+  # TODO Barters:
+  # - CDN77.com gives me CDN for podcast, but I don't use it (yet).
+  # - Merk.cz gives me API for companies, but I don't use it (yet).
+  # - 'Popitchi mentoring' gives me landing page, but it would make more sense to put her community there as a partner.
+
   - name: Fakturoid
     slug: fakturoid
     url: https://www.fakturoid.cz/
@@ -88,7 +97,9 @@ registry:
     note: |
       Historicky o první klubové sponzorství. Když Skoumal díky junior.guru získá zajímavé benefity (např. nové zaměstnance), může mít chuť přihodit i finanční podporu.
 
+
   # PAST SPONSORS
+
   - name: Glance Media
     slug: glancemedia
     url: https://www.glancemedia.cz/
