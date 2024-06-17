@@ -14,7 +14,6 @@ tiers:
     description: Barterová spolupráce. Mají logo na [úvodní stránce](https://junior.guru/).
     priority: 0
 
-
 registry:
   # CURRENT SPONSORS
 
@@ -96,7 +95,6 @@ registry:
       - [2021-02, null]
     note: |
       Historicky o první klubové sponzorství. Když Skoumal díky junior.guru získá zajímavé benefity (např. nové zaměstnance), může mít chuť přihodit i finanční podporu.
-
 
   # PAST SPONSORS
 

@@ -1,4 +1,4 @@
-{% from 'macros.html' import lead, img, sponsor_link with context %}
+{% from 'macros.html' import img, lead with context %}
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
