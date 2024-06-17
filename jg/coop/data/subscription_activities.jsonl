@@ -15886,3 +15886,11 @@
 {"account_id": 4803128, "f": true, "happened_at": "2024-05-16T18:39:46", "subscription_interval": "month", "type": "order"}
 {"account_id": 2183409, "f": false, "happened_at": "2024-05-16T19:02:25", "subscription_interval": "month", "type": "order"}
 {"account_id": 4930585, "f": false, "happened_at": "2024-05-16T22:41:27", "subscription_interval": "month", "type": "order"}
+{"account_id": 4302688, "f": false, "happened_at": "2024-05-17T07:21:03", "subscription_interval": "month", "type": "order"}
+{"account_id": 5578489, "f": false, "happened_at": "2024-05-17T07:43:54", "subscription_interval": "month", "type": "deactivation"}
+{"account_id": 5578489, "f": false, "happened_at": "2024-05-17T07:43:54", "subscription_interval": "month", "type": "trial_end"}
+{"account_id": 4557855, "f": false, "happened_at": "2024-05-17T14:20:39", "order_coupon_slug": "thankyouforever", "subscription_interval": "year", "type": "order"}
+{"account_id": 2815728, "f": false, "happened_at": "2024-05-17T15:31:29", "subscription_interval": "month", "type": "order"}
+{"account_id": 5644022, "f": false, "happened_at": "2024-05-17T16:42:27", "subscription_interval": "month", "type": "order"}
+{"account_id": 5644022, "f": false, "happened_at": "2024-05-17T16:42:27", "subscription_interval": "month", "type": "trial_start"}
+{"account_id": 5422244, "f": true, "happened_at": "2024-05-17T19:11:36", "subscription_interval": "month", "type": "order"}
