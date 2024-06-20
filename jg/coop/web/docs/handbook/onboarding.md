@@ -641,4 +641,13 @@ Marketa Willis
 https://www.linkedin.com/feed/update/urn:li:activity:7181581062764953602/
 
 
+--- https://stackoverflow.blog/2024/06/10/generative-ai-is-not-going-to-build-your-engineering-team-for-you/
+Let’s start here: hiring engineers is not a process of “picking the best person for the job”. **Hiring engineers is about composing teams**. The smallest unit of software ownership is not the individual, it’s the team. Only teams can own, build, and maintain a corpus of software. It is inherently a collaborative, cooperative activity.
+
+And the best teams are always the ones with a diversity of strengths, perspectives, and levels of expertise. A monoculture can be spectacularly successful in the short term—it may even outperform a diverse team. But they do not scale well, and they do not adapt to unfamiliar challenges gracefully. The longer you wait to diversify, the harder it will be.
+
+https://www.linkedin.com/posts/honzajavorek_generative-ai-is-not-going-to-build-your-activity-7209465614342443010-VsG6?utm_source=share&utm_medium=member_desktop
+---
+
+
 #} -->
