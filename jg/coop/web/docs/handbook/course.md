@@ -1025,4 +1025,8 @@ teďka už pár týdnů zkouším https://codegym.cc/ a zatím můžu doporučit
 ---
 
 
+https://www.sandofsky.com/lambda-school/
+Income Share Agreements
+
+
 #} -->
