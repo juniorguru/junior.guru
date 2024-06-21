@@ -15,7 +15,7 @@ template: main_handbook.html
 {% endcall %}
 
 {% call guarantor('Nela Slezáková', 'avatars-participants/nela-slezakova.jpg', url='https://www.nelaprovazi.cz/', standout=True) %}
-  Jak psycholožka, tak programátorka. Rozumí tomu, jak funguje lidská psychika a sama si zažila, co obnáší dostat se do IT po vlastní ose. Ve vlastní praxi pomáhá lidem v IT anebo do IT. S otázkami kolem duševního zdraví juniorům pomáhá i ve [zdejším klubu](../club.md).
+  Jak psycholožka, tak programátorka. Rozumí tomu, jak funguje lidská psychika a sama si zažila, co obnáší dostat se do IT po vlastní ose. Ve vlastní praxi pomáhá lidem v IT anebo do IT. S otázkami kolem duševního zdraví juniorům pomáhá i ve [zdejším klubu](/club.md).
 {% endcall %}
 
 ## Zásady duševní hygieny pro juniory
@@ -27,7 +27,7 @@ Pět zásad, díky kterým můžeš svou cestu do IT zvládnout ve větší duš
   '40min',
   'https://www.youtube.com/watch?v=6G4TKGQICw0',
   'Pět zásad a ke každé z nich praktické tipy, díky kterým můžeš svou cestu do IT zvládnout udržitelně.',
-  note='Záznamy [klubových přednášek](../events.md) bývají dostupné jen pro členy, ale tento jsme zveřejnili, ať pomáhá všem.',
+  note='Záznamy [klubových přednášek](/events.md) bývají dostupné jen pro členy, ale tento jsme zveřejnili, ať pomáhá všem.',
 ) }}
 
 ## Když je krize

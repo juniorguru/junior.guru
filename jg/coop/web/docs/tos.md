@@ -140,7 +140,7 @@ E-mail: [honza@junior.guru](mailto:honza@junior.guru)<br>
 
 **6.1.** Zavazujete se uchovávat své uživatelské jméno a heslo v tajnosti.
 
-**6.2.** Při komunikaci v klubu se zavazujete dodržovat tzv. etický kodex, tedy především se zdržet diskriminujícího nebo obtěžujícího chování. Zakazuje se chování sexuální nebo násilné povahy, zveřejnění nebo hrozba zveřejnění osobních údajů „doxing,“ sexuální obtěžování, návrhy, nevítaná pozornost, pronásledování “stalking”. Zakazuje se také obhajoba nebo povzbuzování kteréhokoliv z výše zmíněných prohřešků či opakované obtěžování ostatních. V této souvislosti si vás dovoluji odkázat na dokument [Pravidla chování](/coc/).
+**6.2.** Při komunikaci v klubu se zavazujete dodržovat tzv. etický kodex, tedy především se zdržet diskriminujícího nebo obtěžujícího chování. Zakazuje se chování sexuální nebo násilné povahy, zveřejnění nebo hrozba zveřejnění osobních údajů „doxing,“ sexuální obtěžování, návrhy, nevítaná pozornost, pronásledování “stalking”. Zakazuje se také obhajoba nebo povzbuzování kteréhokoliv z výše zmíněných prohřešků či opakované obtěžování ostatních. V této souvislosti si vás dovoluji odkázat na dokument [Pravidla chování](coc.md).
 
 **6.3.** Zveřejňovaný obsah můžete využívat pouze pro vlastní potřebu a nesmíte jej poskytnout nebo zprostředkovat třetí osobě.
 
@@ -167,7 +167,7 @@ E-mail: [honza@junior.guru](mailto:honza@junior.guru)<br>
 
 ## 9\. Ochrana a zpracování osobních údajů
 
-**9.1.** V souvislosti s vyřízením vašich objednávek musím zpracovávat a přechovávat vaše osobní údaje. V této souvislosti si vás dovoluji odkázat na dokument [Zásady ochrany osobních údajů](/privacy/).
+**9.1.** V souvislosti s vyřízením vašich objednávek musím zpracovávat a přechovávat vaše osobní údaje. V této souvislosti si vás dovoluji odkázat na dokument [Zásady ochrany osobních údajů](privacy.md).
 
 ## 10\. Doručování
 

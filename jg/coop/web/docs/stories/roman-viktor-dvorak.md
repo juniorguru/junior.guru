@@ -70,7 +70,7 @@ Věděl jsem, že nikde jinde nebudu mít lepší perspektivu, než v IT. Cokoli
 
 **V Junior Guru se ti dostalo mentoringu, přitom jde spíš o diskusní fórum. Pokaždé ti radil někdo jiný, nebo sis tam našel opravdového guru?**
 
-[Klub Junior Guru](../club.md) pro mě byl tak trochu chybějící střípek do mozaiky, věci potom nabraly rychlý spád. Taky by se dalo říct, že mě to odbrzdilo. Když jsem poprvé narazil na [příručku Junior Guru](../handbook/index.md), tak na mě působila nedůvěryhodně. Připadalo mi to přehnaně pozitivní, sluníčkářské. Pak jsem jednou narazil na nabídku placeného členství v diskusní skupině a to mi dávalo smysl. Právě proto, že to nebylo zadarmo.
+[Klub Junior Guru](/club.md) pro mě byl tak trochu chybějící střípek do mozaiky, věci potom nabraly rychlý spád. Taky by se dalo říct, že mě to odbrzdilo. Když jsem poprvé narazil na [příručku Junior Guru](/handbook/index.md), tak na mě působila nedůvěryhodně. Připadalo mi to přehnaně pozitivní, sluníčkářské. Pak jsem jednou narazil na nabídku placeného členství v diskusní skupině a to mi dávalo smysl. Právě proto, že to nebylo zadarmo.
 
 **V čem ti skupina pomohla?**
 

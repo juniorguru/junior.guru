@@ -51,12 +51,12 @@ Co mi připadalo přístupné, byl web. První webovky jsem si seskládala v roc
 
 **A pak ses rozhodla pro nějaké systematické vzdělávání?**
 
-První systematický krok k IT jsem udělala v roce 2018 vstupem do kurzu od [Czechitas](../courses/czechitas.md).
+První systematický krok k IT jsem udělala v roce 2018 vstupem do kurzu od [Czechitas](/courses/czechitas.md).
 Impulsem bylo skokové zlepšení Google Translatoru. Živila jsem se tenkrát jako překladatelka technických textů a najednou jsem si všimla, jak výrazně se ten překladač zlepšil. Bylo jasné, že tohle odvětví překladatelství spěje ke konci a že se budu muset poohlédnout jinde. Tehdy se znovu vynořila myšlenka na programování.
 
 **Kde se v tobě najednou vzalo to odhodlání, že IT přeci jen může být i pro tebe?**
 
-K tomu jít si vyzkoušet programování v nějakém kurzu mě inspirovali lidé v okolí. Samouků, kteří pracovali v IT, aniž by to vystudovali, jsem znala několik. Kamarádka se jen tak pro zábavu učila základy programování v [PyLadies](../courses/pyladies.md). A od PyLadies byl už jen krůček k nalezení Czechitas. Zrovna v té době se oblast IT začala více otevírat ženám, a to mě hodně povzbudilo.
+K tomu jít si vyzkoušet programování v nějakém kurzu mě inspirovali lidé v okolí. Samouků, kteří pracovali v IT, aniž by to vystudovali, jsem znala několik. Kamarádka se jen tak pro zábavu učila základy programování v [PyLadies](/courses/pyladies.md). A od PyLadies byl už jen krůček k nalezení Czechitas. Zrovna v té době se oblast IT začala více otevírat ženám, a to mě hodně povzbudilo.
 
 **Rovnou jsi skočila do Javy a objektově orientovaného programování. Jak to tehdy na tebe působilo?**
 
@@ -66,7 +66,7 @@ Koncept mi přišel srozumitelný, těžší bylo porovnat se s programovacím j
 
 Java mi připadala poměrně komplikovaná přípravou prostředí. Chtěla jsem zkusit něco jednoduššího a weby byly jasná volba. Stará láska, známé pole, uchopitelný výsledek. To jsem ale netušila, kam se technologie posunuly a o čem je JavaScript. Ve finále se mi ale hodilo všechno, co jsem se naučila.
 
-**„Switch do IT jde udělat i po 40, se třemi dětmi, nevěřícím manželem a trojkou z matiky na gymplu,” sdílela jsi v [klubu Junior Guru](../club.md). Takže nezbývalo, než věřit si sama. Musela jsi mít asi hodně pevnou vůli a odhodlání, obzvlášť s dětmi. Jak jsi to zvládala a proč ti manžel moc nevěřil?**
+**„Switch do IT jde udělat i po 40, se třemi dětmi, nevěřícím manželem a trojkou z matiky na gymplu,” sdílela jsi v [klubu Junior Guru](/club.md). Takže nezbývalo, než věřit si sama. Musela jsi mít asi hodně pevnou vůli a odhodlání, obzvlášť s dětmi. Jak jsi to zvládala a proč ti manžel moc nevěřil?**
 
 Myslím, že žil v takovém tom klasickém klišé, že programování rovná se matematika. A mé matematické limity zná. Také je náročný na výsledek, u sebe i druhých, a nedělá nic, pro co nemá výrazné předpoklady. Já jsem naopak nadšenec, vrhám se bez zvláštního talentu do čehokoli, co mě přitahuje a baví.
 
@@ -131,7 +131,7 @@ Tak jsem zavolala kamarádce, že bych to na tu QA pozici zkusila.
 
 **Jak to šlo na pohovoru?**
 
-Byl to první pohovor, kde jsem se na technickém kole necítila nepatřičně. Bodovalo všechno, co jsem dosud v IT oblasti vyzkoušela. Že jsem reálně testovala i že vím něco o automatizaci. Že umím udělat vlastní projekt. Že mám základy JavaScriptu a Javy. Ano, hledali přesně tuhle kombinaci. A díky tomu, že jsem v předchozích měsících drtila úlohy na [Hackerranku](../handbook/practice.md), jsem zvládla úkol tohoto typu i tady. Vlastně mě nenapadá nic, co bych během těch 2 let vyzkoušela a nakonec nevyužila. Vše do sebe krásně zapadlo.
+Byl to první pohovor, kde jsem se na technickém kole necítila nepatřičně. Bodovalo všechno, co jsem dosud v IT oblasti vyzkoušela. Že jsem reálně testovala i že vím něco o automatizaci. Že umím udělat vlastní projekt. Že mám základy JavaScriptu a Javy. Ano, hledali přesně tuhle kombinaci. A díky tomu, že jsem v předchozích měsících drtila úlohy na [Hackerranku](/handbook/practice.md), jsem zvládla úkol tohoto typu i tady. Vlastně mě nenapadá nic, co bych během těch 2 let vyzkoušela a nakonec nevyužila. Vše do sebe krásně zapadlo.
 
 **Teď jsi v práci spokojená, ale přesto se nemůžu nezeptat, zda do budoucna zvažuješ ještě programování zkusit. Jak vidíš budoucnost?**
 
