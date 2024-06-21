@@ -92,6 +92,9 @@ def on_docs_context(context):
     context["sponsors_github_past"] = GitHubSponsor.past_listing()
     context["sponsors_by_tier"] = Sponsor.tier_grouping()
 
+    # sponsorship.md
+    context["github_sponsors_czk"] = ExchangeRate.from_currency(4, "USD")
+
     # courses.md
     context["course_providers"] = CourseProvider.listing()
 

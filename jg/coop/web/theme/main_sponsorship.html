@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+
+{% block meta %}
+  {{ super() }}
+  <link rel="dns-prefetch" href="https://js.memberful.com">
+  <link rel="dns-prefetch" href="https://assets.memberful.com">
+  <link rel="dns-prefetch" href="https://js.stripe.com/">
+  <link rel="dns-prefetch" href="https://m.stripe.network/">
+  <link rel="preconnect" href="https://js.memberful.com">
+  <link rel="preconnect" href="https://assets.memberful.com">
+  <link rel="preconnect" href="https://js.stripe.com/">
+  <link rel="preconnect" href="https://m.stripe.network/">
+  <link rel="preload" href="https://js.memberful.com/embed.js" as="script">
+  <script>
+    (function(c) {
+      var script = document.createElement("script");
+      script.src = "https://js.memberful.com/embed.js";
+      script.onload = function() { Memberful.setup(c) };
+      document.head.appendChild(script);
+    })({
+      site: ["https://juniorguru.memberful.com"]
+    });
+  </script>
+{% endblock %}
