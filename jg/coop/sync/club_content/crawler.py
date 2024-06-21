@@ -1,9 +1,17 @@
 import asyncio
 from datetime import datetime, timedelta, timezone
+import logging
 from typing import AsyncGenerator
 
-from discord import DMChannel, Member, Message, Reaction, User
+from discord import DMChannel, DiscordServerError, Member, Message, Reaction, User
 from discord.abc import GuildChannel
+from tenacity import (
+    before_sleep_log,
+    retry,
+    retry_if_exception_type,
+    stop_after_attempt,
+    wait_random_exponential,
+)
 
 from jg.coop.lib import loggers
 from jg.coop.lib.discord_club import (
@@ -173,6 +181,13 @@ def get_channel_logger(
     return logger
 
 
+@retry(
+    retry=retry_if_exception_type(DiscordServerError),
+    wait=wait_random_exponential(min=60, max=5 * 60),
+    stop=stop_after_attempt(3),
+    reraise=True,
+    before_sleep=before_sleep_log(logger, logging.WARNING),
+)
 async def fetch_messages(
     channel: GuildChannel | DMChannel,
     after: datetime | None,
