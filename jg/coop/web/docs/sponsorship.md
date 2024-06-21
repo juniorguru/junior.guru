@@ -45,7 +45,7 @@ template: main_sponsorship.html
 - Platba kartou nebo na fakturu
 
 <p>
-  <a class="btn btn-success" href="#" target="_blank" rel="noopener">
+  <a class="btn btn-success" href="{{ pages|docs_url('sponsorship.md')|url }}" target="_blank" rel="noopener">
     {{ 'heart-fill'|icon }}
     15.000 Kč/rok
   </a>
@@ -59,7 +59,7 @@ template: main_sponsorship.html
 - Platba kartou nebo na fakturu
 
 <p>
-  <a class="btn btn-secondary" href="#" target="_blank" rel="noopener">
+  <a class="btn btn-secondary" href="{{ pages|docs_url('sponsorship.md')|url }}" target="_blank" rel="noopener">
     {{ 'star-fill'|icon }}
     40.000 Kč/rok
   </a>
@@ -73,7 +73,7 @@ template: main_sponsorship.html
 - Platba kartou nebo na fakturu
 
 <p>
-  <a class="btn btn-danger" href="#" target="_blank" rel="noopener">
+  <a class="btn btn-danger" href="{{ pages|docs_url('sponsorship.md')|url }}" target="_blank" rel="noopener">
     {{ 'shield-fill'|icon }}
     80.000 Kč/rok
   </a>
