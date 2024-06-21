@@ -32,6 +32,8 @@ def main():
     nav = get_navigation(files, config)
     for file in files.documentation_pages():
         logger.debug(f"Reading: {file.src_uri}")
+        # Beware https://github.com/mkdocs/mkdocs/releases/tag/1.6.0,
+        # it could happen that file.abs_src_path won't exist
         with open(file.abs_src_path, encoding="utf-8-sig", errors="strict") as f:
             source = f.read()
         meta_data = parse_meta(source)
