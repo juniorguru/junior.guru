@@ -46,6 +46,10 @@ class Sponsor(BaseModel):
     role_id = IntegerField(null=True)
 
     @classmethod
+    def get_by_slug(cls, slug: str) -> Self:
+        return cls.get(cls.slug == slug)
+
+    @classmethod
     def listing(cls) -> Iterable[Self]:
         return (
             cls.select()

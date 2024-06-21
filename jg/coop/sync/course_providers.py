@@ -51,7 +51,7 @@ def main():
         )
         record["page_lead"] = compile_page_lead(record["name"], record.get("questions"))
         try:
-            record["sponsor"] = Sponsor.get(record["slug"])
+            record["sponsor"] = Sponsor.get_by_slug(record["slug"])
         except Sponsor.DoesNotExist:
             logger.debug(f"Course provider {record['slug']!r} is not a sponsor")
 
