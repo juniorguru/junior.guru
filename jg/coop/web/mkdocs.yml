@@ -65,7 +65,11 @@ nav:
       - ... | flat
 
 validation:
-  absolute_links: ignore
+  nav:
+    absolute_links: ignore
+  links:
+    absolute_links: relative_to_docs
+  anchors: warn
 
 markdown_extensions:
   - toc:
