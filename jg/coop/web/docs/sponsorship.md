@@ -98,6 +98,22 @@ nejsem neziskovka, ale myslím to upřímně
 Projekt junior.guru provozuje Honza Javorek. Příspěvky nelze odečíst z daní jako dar.
 -->
 
+## Kdo přispívá
+
+**Na fakturu nebo jako barter:** {% for sponsor in sponsors %}{{ sponsor.name }}{% if not loop.last %}, {% endif %}{% endfor %}.
+
+**Přes GitHub:** {% for sponsor in sponsors_github %}@{{ sponsor.slug }}{% if not loop.last %}, {% endif %}{% endfor %}, a k tomu několik dalších neveřejně.
+
+## Kdo přispíval dřív
+
+**Na fakturu:** {% for sponsor in sponsors_past %}{{ sponsor.name }}{% if not loop.last %}, {% endif %}{% endfor %}.
+
+**Přes GitHub:** {% for sponsor in sponsors_github_past %}@{{ sponsor.slug }}{% if not loop.last %}, {% endif %}{% endfor %}, a k tomu několik dalších neveřejně.
+
+**Přes Patreon:** (to už nejde) Tomáš Ehrlich, Tomáš Jeřábek, Vojta Tranta, Petr Viktorin.
+
+A další a další… Někteří i **přímo na účet** (to už taky nejde).
+
 ## Jak přidat pracovní inzerát
 
 <!--
