@@ -111,4 +111,5 @@ inzerce práce - zdarma - založte si účet v klubu a dejte to ručně do fóra
 <!--
 TODO přidat social proof (kolik je na jakém tarifu)
 TODO přidat ty samotné tarify v Memberful a prolinkovat
+TODO přidat lenertovou do sponzorů
 -->
