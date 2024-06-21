@@ -62,7 +62,7 @@ def on_shared_context(context):
     # club.md, courses/*.md, main_stories.html
     context["members"] = ClubUser.avatars_listing()
 
-    # club.md, open.md, main_stories.html
+    # club.md, open.md, main_stories.html, sponsorship.md
     context["members_total_count"] = ClubUser.members_count()
 
 
@@ -77,7 +77,7 @@ def on_shared_page_context(context, page, config, files):
 
 @db.connection_context()
 def on_docs_context(context):
-    # index.jinja, open.md
+    # index.jinja, open.md, sponsorship.md
     context["sponsors_github"] = GitHubSponsor.listing()
 
     # index.jinja, club.md, open.md

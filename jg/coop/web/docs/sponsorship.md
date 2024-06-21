@@ -22,6 +22,7 @@ template: main_sponsorship.html
     {{ 'github'|icon }}
     od {{ github_sponsors_czk }} Kč/měs
   </a>
+  <small class="ms-3">jako už {{ sponsors_github|length }}+ sponzorů</small>
 </p>
 
 ### Členství v klubu
@@ -35,6 +36,7 @@ template: main_sponsorship.html
     {{ 'person-circle'|icon }}
     199 Kč/měs
   </a>
+  <small class="ms-3">jako už {{ members_total_count }} členů</small>
 </p>
 
 ### Tarif „Sponzorujeme“
@@ -49,6 +51,7 @@ template: main_sponsorship.html
     {{ 'heart-fill'|icon }}
     15.000 Kč/rok
   </a>
+  <small class="ms-3">jako už X sponzorů</small>
 </p>
 
 ### Tarif „Poskytujeme kurzy“
@@ -63,6 +66,7 @@ template: main_sponsorship.html
     {{ 'star-fill'|icon }}
     40.000 Kč/rok
   </a>
+  <small class="ms-3">jako už X sponzorů</small>
 </p>
 
 ### Tarif „Budujeme brand“
@@ -77,6 +81,7 @@ template: main_sponsorship.html
     {{ 'shield-fill'|icon }}
     80.000 Kč/rok
   </a>
+  <small class="ms-3">jako už X sponzorů</small>
 </p>
 
 ## Na co přispíváš
