@@ -4,7 +4,7 @@ description: Líbí se ti tento web? Pošli LOVE! Podpoř finančně junior.guru
 template: main_sponsorship.html
 ---
 
-{% from 'macros.html' import lead, img, logo with context %}
+{% from 'macros.html' import lead with context %}
 
 # Pošli LOVE
 
