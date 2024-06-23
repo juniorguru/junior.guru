@@ -15951,3 +15951,10 @@
 {"account_id": 5432469, "f": false, "happened_at": "2024-05-21T15:51:32", "subscription_interval": "month", "type": "order"}
 {"account_id": 4555337, "f": false, "happened_at": "2024-05-21T17:21:18", "subscription_interval": "month", "type": "order"}
 {"account_id": 4943524, "f": true, "happened_at": "2024-05-21T18:02:31", "subscription_interval": "month", "type": "order"}
+{"account_id": 5434437, "f": false, "happened_at": "2024-05-22T09:02:49", "subscription_interval": "month", "type": "order"}
+{"account_id": 2382457, "f": false, "happened_at": "2024-05-22T10:21:32", "subscription_interval": "month", "type": "order"}
+{"account_id": 3021955, "f": false, "happened_at": "2024-05-22T11:41:05", "subscription_interval": "month", "type": "order"}
+{"account_id": 5656941, "f": true, "happened_at": "2024-05-22T12:58:30", "subscription_interval": "month", "type": "order"}
+{"account_id": 5656941, "f": true, "happened_at": "2024-05-22T12:58:30", "subscription_interval": "month", "type": "trial_start"}
+{"account_id": 4470533, "f": false, "happened_at": "2024-05-22T16:02:34", "subscription_interval": "month", "type": "order"}
+{"account_id": 5509926, "f": false, "happened_at": "2024-05-22T17:21:35", "subscription_interval": "month", "type": "order"}
