@@ -61,15 +61,17 @@ template: main_sponsorship.html
 </div>
 </div>
 
-<ul class="logos compact muted standout">
-  {{ logo('Ataccama', 'logos/ataccama.svg') }}
-  {{ logo('Credo', 'logos/credo.svg') }}
-  {{ logo('Fakturoid', 'logos/fakturoid.svg') }}
-  {{ logo('Mews', 'logos/mews.svg') }}
-  {{ logo('Pure Storage', 'logos/purestorage.svg') }}
-  {{ logo('Red Hat', 'logos/redhat.svg') }}
-  {{ logo('STRV', 'logos/strv.svg') }}
-</ul>
+<div class="standout">
+  <ul class="logos compact muted">
+    {{ logo('Ataccama', 'logos/ataccama.svg') }}
+    {{ logo('Credo', 'logos/credo.svg') }}
+    {{ logo('Fakturoid', 'logos/fakturoid.svg') }}
+    {{ logo('Mews', 'logos/mews.svg') }}
+    {{ logo('Pure Storage', 'logos/purestorage.svg') }}
+    {{ logo('Red Hat', 'logos/redhat.svg') }}
+    {{ logo('STRV', 'logos/strv.svg') }}
+  </ul>
+</div>
 
 <div class="tiers-cards">
 {% for tier in sponsor_tiers %}
@@ -170,9 +172,4 @@ Spousta jednotlivců i firem! Současné i bývalé sponzory najdeš v [podrobn�
 <h2>Jak přidat pracovní inzerát</h2>
 {% call markdown() %}
 Zdejší robot pravidelně stahuje pracovní inzeráty z různých portálů. Pokud vyhodnotí, že inzerát je vhodný pro juniory, zobrazí jej automaticky mezi [pracovními inzeráty](/jobs/) a pošle ho na Discord členům [klubu](club.md). Pokud ti to takto nestačí, vytvoř si v klubu účet (první dva týdny jsou zdarma) a do fóra `#práce-inzeráty` zadej inzerát ručně. Taky můžeš napsat na {{ 'honza@junior.guru'|email_link }}.
-{% endcall %}
-
-<h2>Jak se pozvat</h2>
-{% call markdown() %}
-Do [podcastu](podcast.md) nebo na [klubové akce](events.md) si zveme různé odborníky bez ohledu na to, jestli junior.guru sponzorují, ale jsme velmi vybíraví. Pokud máš tipy na zajímavé hosty, pošli je na {{ 'honza@junior.guru'|email_link }}.
 {% endcall %}
