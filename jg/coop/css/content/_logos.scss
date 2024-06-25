@@ -45,7 +45,8 @@
   }
 }
 
-.logos.grayscale .logos-image {
+.logos.grayscale .logos-image,
+.logos.muted .logos-image {
   // comments here: https://stackoverflow.com/a/52936970/325365
   filter: saturate(0) brightness(.7) contrast(3);
   mix-blend-mode: multiply;
@@ -54,7 +55,14 @@
 
 .logos.grayscale a:hover .logos-image,
 .logos.grayscale a:focus .logos-image,
-.logos.grayscale a:active .logos-image {
+.logos.grayscale a:active .logos-image,
+.logos.muted a:hover .logos-image,
+.logos.muted a:focus .logos-image,
+.logos.muted a:active .logos-image {
   filter: none;
   opacity: 1;
+}
+
+.logos.muted {
+  opacity: .5;
 }

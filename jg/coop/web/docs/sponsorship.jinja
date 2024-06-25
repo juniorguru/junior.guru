@@ -4,7 +4,7 @@ description: Líbí se ti tento web? Pošli LOVE! Podpoř finančně junior.guru
 template: main_sponsorship.html
 ---
 
-{% from 'macros.html' import lead, note, markdown with context %}
+{% from 'macros.html' import lead, note, markdown, logo with context %}
 
 <h1>Pošli LOVE</h1>
 {% call lead() %}
@@ -59,7 +59,19 @@ template: main_sponsorship.html
     </small>
   </p>
 </div>
+</div>
 
+<ul class="logos compact muted standout">
+  {{ logo('Ataccama', 'logos/ataccama.svg') }}
+  {{ logo('Credo', 'logos/credo.svg') }}
+  {{ logo('Fakturoid', 'logos/fakturoid.svg') }}
+  {{ logo('Mews', 'logos/mews.svg') }}
+  {{ logo('Pure Storage', 'logos/purestorage.svg') }}
+  {{ logo('Red Hat', 'logos/redhat.svg') }}
+  {{ logo('STRV', 'logos/strv.svg') }}
+</ul>
+
+<div class="tiers-cards">
 {% for tier in sponsor_tiers %}
   {% set sponsors_count = tier.list_sponsors|length %}
   <div class="tiers-card{% if tier.is_sold_out %} soldout{% endif %}">
