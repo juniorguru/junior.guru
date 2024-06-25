@@ -1,9 +1,12 @@
+import itertools
+import re
 from datetime import date, timedelta
 from pathlib import Path
-from typing import Iterable, Literal, TypedDict
+from typing import Annotated, Iterable, Literal, TypedDict
 
 import click
 import yaml
+from annotated_types import Len
 from pydantic import BaseModel, HttpUrl
 
 from jg.coop.cli.sync import main as cli
@@ -18,6 +21,8 @@ from jg.coop.models.sponsor import PastSponsor, Sponsor, SponsorTier
 YAML_PATH = Path("jg/coop/data/sponsors.yml")
 
 COUPONS_GQL_PATH = Path(__file__).parent / "coupons.gql"
+
+PLANS_GQL_PATH = Path(__file__).parent / "plans.gql"
 
 IMAGES_DIR = Path("jg/coop/images")
 
@@ -36,11 +41,18 @@ class CouponEntity(TypedDict):
     state: Literal["enabled", "disabled"]
 
 
+class PlanEntity(TypedDict):
+    id: str
+    name: str
+    forSale: bool
+    priceCents: int
+    additionalMemberPriceCents: int | None
+
+
 class TierConfig(BaseModel):
     slug: str
     name: str
-    description: str
-    priority: int
+    plans: Annotated[list[HttpUrl], Len(min_length=1)]
 
 
 class SponsorConfig(BaseModel):
@@ -74,24 +86,37 @@ def main(today: date, clear_posters: bool):
     db.drop_tables([Sponsor, SponsorTier, PastSponsor])
     db.create_tables([Sponsor, SponsorTier, PastSponsor])
 
-    logger.info("Getting coupons data from Memberful")
+    logger.info("Getting data from Memberful")
     memberful = MemberfulAPI()
     coupons: Iterable[CouponEntity] = memberful.get_nodes(COUPONS_GQL_PATH.read_text())
     coupons_mapping = get_coupons_mapping(coupons)
+    plans: Iterable[PlanEntity] = memberful.get(PLANS_GQL_PATH.read_text())["plans"]
+    plans_mapping = get_plans_mapping(plans)
 
     logger.info(f"Loading sponsors data from {YAML_PATH}")
     yaml_data = yaml.safe_load(YAML_PATH.read_text())
     sponsors = SponsorsConfig(**yaml_data)
+    check_plans_integrity(sponsors, plans_mapping.keys())
+    tiers = {}
+    for priority, tier in enumerate(sponsors.tiers):
+        tier_plan_ids = [get_plan_id(plan_url) for plan_url in tier.plans]
+        tier_plans = [plans_mapping[plan_id] for plan_id in tier_plan_ids]
+        try:
+            main_plan = get_main_plan(tier_plans)
+            price = from_cents(main_plan["priceCents"])
+            member_price = from_cents(main_plan["additionalMemberPriceCents"]) or None
+        except ValueError:
+            price = None
+            member_price = None
 
-    tiers = {
-        tier.slug: SponsorTier.create(
+        tiers[tier.slug] = SponsorTier.create(
             slug=tier.slug,
             name=tier.name,
-            description=tier.description,
-            priority=tier.priority,
+            price=price,
+            member_price=member_price,
+            plans=tier_plan_ids,
+            priority=priority,
         )
-        for tier in sponsors.tiers
-    }
     logger.info(f"Tiers: {', '.join(tiers.keys())}")
 
     for sponsor in sponsors.registry:
@@ -160,6 +185,14 @@ def get_coupons_mapping(coupons: Iterable[CouponEntity]) -> dict[str, str]:
     }
 
 
+def get_plans_mapping(plans: Iterable[PlanEntity]) -> dict[str, int]:
+    return {
+        int(plan["id"]): plan
+        for plan in plans
+        if plan["additionalMemberPriceCents"] is not None
+    }
+
+
 def get_start_on(periods: list[tuple[str, str | None]]) -> date:
     first_period_start = sorted(periods)[0][0]
     year, month = map(int, first_period_start.split("-"))
@@ -185,3 +218,35 @@ def get_renews_on(periods: list[tuple[str, str | None]], today: date) -> bool:
 
 def next_month(month: date) -> date:
     return (month.replace(day=1) + timedelta(days=32)).replace(day=1)
+
+
+def get_plan_id(plan_url: str | HttpUrl) -> int:
+    return int(re.search(r"\d+", str(plan_url)).group())
+
+
+def check_plans_integrity(
+    yaml_sponsors: SponsorConfig, memberful_plan_ids: Iterable[int]
+) -> None:
+    yaml_ids = {
+        get_plan_id(url)
+        for url in itertools.chain.from_iterable(
+            tier.plans for tier in yaml_sponsors.tiers
+        )
+    }
+    memberful_ids = set(memberful_plan_ids)
+    if yaml_ids != memberful_ids:
+        raise ValueError(
+            "Plans in YAML don't match group plans in Memberful: "
+            f"{yaml_ids!r} vs {memberful_ids!r}"
+        )
+
+
+def get_main_plan(plans: list[PlanEntity]) -> PlanEntity:
+    try:
+        return [plan for plan in plans if plan["forSale"]][0]
+    except IndexError:
+        raise ValueError("No main plan found")
+
+
+def from_cents(cents: int) -> int:
+    return int(cents / 100)

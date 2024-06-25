@@ -4,7 +4,7 @@ description: Líbí se ti tento web? Pošli LOVE! Podpoř finančně junior.guru
 template: main_sponsorship.html
 ---
 
-{% from 'macros.html' import lead with context %}
+{% from 'macros.html' import lead, note with context %}
 
 # Pošli LOVE
 
@@ -22,7 +22,19 @@ template: main_sponsorship.html
     {{ 'github'|icon }}
     od {{ github_sponsors_czk }} Kč/měs
   </a>
-  <small class="ms-3">jako už {{ sponsors_github|length }}+ sponzorů</small>
+  {% set sponsors_count = sponsors_github|length %}
+  {% if sponsors_count %}
+  <small class="ms-3">
+    jako už {{ sponsors_count }}+ sponzo
+    {%- if sponsors_count == 1 -%}
+      r
+    {%- elif sponsors_count <= 4 -%}
+      ři
+    {%- else -%}
+      rů
+    {%- endif -%}
+  </small>
+  {% endif %}
 </p>
 
 ### Členství v klubu
@@ -39,50 +51,62 @@ template: main_sponsorship.html
   <small class="ms-3">jako už {{ members_total_count }} členů</small>
 </p>
 
-### Tarif „Sponzorujeme“
+{% for tier in sponsor_tiers %}
+### Tarif „{{ tier.name }}“ {: #{{ tier.anchor }} }
+
+{% if tier.slug == "supporting" %}
+{% set btn = "success" %}
+{% set icon = "heart-fill" %}
 
 - Logo na [úvodní stránce](index.jinja)
 - Skupinové členství v [klubu](club.md) pro 15 lidí
 - Láskyplné uvítání sponzora příspěvkem v klubu
 - Platba kartou nebo na fakturu
 
-<p>
-  <a class="btn btn-success" href="{{ pages|docs_url('sponsorship.md')|url }}" target="_blank" rel="noopener">
-    {{ 'heart-fill'|icon }}
-    15.000 Kč/rok
-  </a>
-  <small class="ms-3">jako už X sponzorů</small>
-</p>
-
-### Tarif „Poskytujeme kurzy“
+{% elif tier.slug == "providing_courses" %}
+{% set btn = "secondary" %}
+{% set icon = "star-fill" %}
 
 - Všechno co předchozí tarif
 - Zvýrazněný zápis v [katalogu kurzů](courses.md) s logem a odkazem, který nemá _nofollow_ (zlepší vaše SEO)
-- Možnost poslat do klubu studenty za 100 Kč/měs/os
+- Možnost poslat do klubu studenty za {{ tier.member_price }} Kč/měs/os
 - Platba kartou nebo na fakturu
 
-<p>
-  <a class="btn btn-secondary" href="{{ pages|docs_url('sponsorship.md')|url }}" target="_blank" rel="noopener">
-    {{ 'star-fill'|icon }}
-    40.000 Kč/rok
-  </a>
-  <small class="ms-3">jako už X sponzorů</small>
-</p>
-
-### Tarif „Budujeme brand“
+{% elif tier.slug == "building_brand" %}
+{% set btn = "danger" %}
+{% set icon = "shield-fill" %}
 
 - Všechno co předchozí tarify
 - Logo i na [příručce](handbook/index.md)
 - Omezené množství, maximálně 4 firmy
 - Platba kartou nebo na fakturu
 
+{% else %}
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tady něco má být, ale není to tu. Napiš prosím na {{ 'honza@junior.guru'|email_link }}
+{% endcall %}
+{% endif %}
+
 <p>
-  <a class="btn btn-danger" href="{{ pages|docs_url('sponsorship.md')|url }}" target="_blank" rel="noopener">
-    {{ 'shield-fill'|icon }}
-    80.000 Kč/rok
+  <a class="btn btn-{{ btn }}" href="{{ tier.plan_url }}" target="_blank" rel="noopener">
+    {{ icon|icon }}
+    {{ tier.price|thousands }} Kč/rok
   </a>
-  <small class="ms-3">jako už X sponzorů</small>
+  {% set sponsors_count = tier.list_sponsors|length %}
+  {% if sponsors_count %}
+  <small class="ms-3">
+    jako už {{ sponsors_count }} sponzo
+    {%- if sponsors_count == 1 -%}
+      r
+    {%- elif sponsors_count <= 4 -%}
+      ři
+    {%- else -%}
+      rů
+    {%- endif -%}
+  </small>
+  {% endif %}
 </p>
+{% endfor %}
 
 ## Na co přispíváš
 
@@ -98,21 +122,9 @@ nejsem neziskovka, ale myslím to upřímně
 Projekt junior.guru provozuje Honza Javorek. Příspěvky nelze odečíst z daní jako dar.
 -->
 
-## Kdo přispívá
+## Kdo přispívá, nebo dřív přispíval
 
-**Na fakturu nebo jako barter:** {% for sponsor in sponsors %}{{ sponsor.name }}{% if not loop.last %}, {% endif %}{% endfor %}.
-
-**Přes GitHub:** {% for sponsor in sponsors_github %}@{{ sponsor.slug }}{% if not loop.last %}, {% endif %}{% endfor %}, a k tomu několik dalších neveřejně.
-
-## Kdo přispíval dřív
-
-**Na fakturu:** {% for sponsor in sponsors_past %}{{ sponsor.name }}{% if not loop.last %}, {% endif %}{% endfor %}.
-
-**Přes GitHub:** {% for sponsor in sponsors_github_past %}@{{ sponsor.slug }}{% if not loop.last %}, {% endif %}{% endfor %}, a k tomu několik dalších neveřejně.
-
-**Přes Patreon:** (to už nejde) Tomáš Ehrlich, Tomáš Jeřábek, Vojta Tranta, Petr Viktorin.
-
-A další a další… Někteří i **přímo na účet** (to už taky nejde).
+Spousta jednotlivců i firem! Současné i bývalé sponzory najdeš na [stránce, kde je transparentně i vše ostatní](open.md) o tomto projektu.
 
 ## Jak přidat pracovní inzerát
 

@@ -13,7 +13,7 @@ from peewee import (
 )
 
 from jg.coop.lib.discord_club import ClubChannelID, ClubEmoji
-from jg.coop.models.base import BaseModel
+from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubMessage, ClubUser
 
 
@@ -24,12 +24,31 @@ if TYPE_CHECKING:
 class SponsorTier(BaseModel):
     slug = CharField(primary_key=True)
     name = CharField()
-    description = TextField()
     priority = IntegerField()
+    icon = CharField(null=True)
+    price = IntegerField(null=True)
+    member_price = IntegerField(null=True)
+    plans = JSONField(default=list)
+
+    @property
+    def url(self) -> str:
+        return f"https://junior.guru/sponsorship/#{self.anchor}"
+
+    @property
+    def plan_url(self) -> str:
+        return f"https://juniorguru.memberful.com/checkout?plan={self.plans[0]}"
+
+    @property
+    def anchor(self) -> str:
+        return f"tier-{self.slug.replace('_', '-')}"
 
     @property
     def list_sponsors(cls) -> Iterable["Sponsor"]:
         return cls._list_sponsors.order_by(Sponsor.name)
+
+    @classmethod
+    def pricing_listing(cls) -> Iterable[Self]:
+        return cls.select().where(cls.price.is_null(False)).order_by(cls.priority)
 
 
 class Sponsor(BaseModel):

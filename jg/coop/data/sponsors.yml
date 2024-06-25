@@ -1,18 +1,24 @@
 tiers:
-  - slug: handbook
-    name: Sponzoři příručky
-    description: Mají logo i na [stránce s příručkou](https://junior.guru/handbook).
-    priority: 2
+  - slug: bartering
+    name: Spolupracujeme
+    plans:
+      - https://juniorguru.memberful.com/admin/plans/111020
+      - https://juniorguru.memberful.com/admin/plans/111021
 
-  - slug: basic
-    name: Sponzoři
-    description: Mají logo na [úvodní stránce](https://junior.guru/).
-    priority: 1
+  - slug: supporting
+    name: Sponzorujeme
+    plans:
+      - https://juniorguru.memberful.com/admin/plans/111099
 
-  - slug: barter
-    name: Barter
-    description: Barterová spolupráce. Mají logo na [úvodní stránce](https://junior.guru/).
-    priority: 0
+  - slug: providing_courses
+    name: Poskytujeme kurzy
+    plans:
+      - https://juniorguru.memberful.com/admin/plans/111100
+
+  - slug: building_brand
+    name: Budujeme brand
+    plans:
+      - https://juniorguru.memberful.com/admin/plans/111101
 
 registry:
   # CURRENT SPONSORS
@@ -26,21 +32,21 @@ registry:
   - name: Fakturoid
     slug: fakturoid
     url: https://www.fakturoid.cz/
-    tier: handbook
+    tier: building_brand
     periods:
       - [2020-09, 2025-05]
 
   - name: Red Hat
     slug: redhat
     url: https://www.redhat.com/en/jobs
-    tier: handbook
+    tier: building_brand
     periods:
       - [2020-09, 2024-09]
 
   - name: Rector
     slug: rector
     url: https://getrector.com/
-    tier: handbook
+    tier: building_brand
     periods:
       - [2023-07, 2024-07]
       - [2020-09, 2021-11]
@@ -48,7 +54,7 @@ registry:
   - name: CoreSkill
     slug: coreskill
     url: https://coreskill.tech/
-    tier: barter
+    tier: bartering
     periods:
       - [2021-02, null]
     note: |
@@ -57,14 +63,14 @@ registry:
   - name: ITnetwork
     slug: itnetwork
     url: https://www.itnetwork.cz/
-    tier: basic
+    tier: supporting
     periods:
       - [2024-03, 2025-03]
 
   - name: Creatiweb
     slug: creatiweb
     url: https://creatiweb.cz/
-    tier: barter
+    tier: bartering
     periods:
       - [2023-06, null]
       - [2021-02, 2022-02]
@@ -74,14 +80,14 @@ registry:
   - name: ENGETO Academy
     slug: engeto
     url: https://engeto.cz/
-    tier: basic
+    tier: supporting
     periods:
       - [2021-05, 2024-07]
 
   - name: Mews
     slug: mews
     url: https://www.mews.com/
-    tier: basic
+    tier: supporting
     periods:
       - [2021-05, 2024-08]
     note: |
@@ -90,7 +96,7 @@ registry:
   - name: Skoumal
     slug: skoumal
     url: https://www.skoumal.com/
-    tier: barter
+    tier: bartering
     periods:
       - [2021-02, null]
     note: |

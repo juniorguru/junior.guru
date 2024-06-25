@@ -109,6 +109,9 @@ class MemberfulAPI:
                 f"Memberful API returned {nodes_count} nodes instead of {declared_count}"
             )
 
+    def get(self, query: str, variable_values: dict = None) -> list[dict]:
+        return self._execute_query(query, variable_values)
+
     def _query(self, query: str, get_page_info: Callable, variable_values: dict = None):
         variable_values = variable_values or {}
         cursor = ""
