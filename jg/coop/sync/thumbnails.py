@@ -72,8 +72,6 @@ def main(images_path, output_dir, width, height, clear):
             "/podcast/": "podcast.md",
             "/handbook/": "handbook/index.md",
             "/handbook/candidate/": "handbook/candidate.md",
-            "/hire-juniors/": "pricing.md",
-            "/pricing/": "pricing.md",
             "/news/": "news.jinja",
         }
         for url, src_uri in equivalents.items():
@@ -85,7 +83,6 @@ def main(images_path, output_dir, width, height, clear):
         )
         for url in [
             "/404.html",
-            "/donate/",
             "/press/",
             "/press/crisis/",
             "/press/handbook/",

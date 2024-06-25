@@ -297,7 +297,7 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
 ## Sponzoři
 
 Provoz junior.guru aktuálně podporuje **{{ sponsors|length + sponsors_github|length }} sponzorů**.
-Z nich {{ sponsors_github|length }} využívá [GitHub Sponsors](https://github.com/sponsors/honzajavorek/), ostatní mají sjednané sponzorství přes fakturu nebo jako barter.
+Z nich {{ sponsors_github|length }} využívá [GitHub Sponsors](https://github.com/sponsors/honzajavorek/).
 
 {% for tier, sponsors in sponsors_by_tier %}
 ### {{ tier.name }}<small>{%- for _ in range(tier.priority + 1) -%}
@@ -353,13 +353,13 @@ Z nich {{ sponsors_github|length }} využívá [GitHub Sponsors](https://github.
 
 ### Bývalí sponzoři <small>{{ 'heart'|icon }}</small>
 
-**Na fakturu:** {% for sponsor in sponsors_past %}{{ sponsor.name }}{% if not loop.last %}, {% endif %}{% endfor %}.
+{% for sponsor in sponsors_past %}[{{ sponsor.name }}]({{ sponsor.url }}){% if not loop.last %}, {% endif %}{% endfor %}.
 
-**GitHub Sponsors:** {% for sponsor in sponsors_github_past %}@{{ sponsor.slug }}{% if not loop.last %}, {% endif %}{% endfor %}.
+**GitHub Sponsors:** {% for sponsor in sponsors_github_past %}[@{{ sponsor.slug }}]({{ sponsor.url }}){% if not loop.last %}, {% endif %}{% endfor %}.
 
 **Patreon:** Tomáš Ehrlich, Tomáš Jeřábek, Vojta Tranta, Petr Viktorin
 
-A další… Někteří tajně přímo na účet, někteří tajně přes GitHub Sponsors.
+A další neveřejně, někteří přes GitHub Sponsors, někteří přímo na účet.
 
 ## Aktivita v klubu
 

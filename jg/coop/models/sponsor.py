@@ -29,6 +29,7 @@ class SponsorTier(BaseModel):
     price = IntegerField(null=True)
     member_price = IntegerField(null=True)
     plans = JSONField(default=list)
+    max_sponsors = IntegerField(null=True)
 
     @property
     def url(self) -> str:
@@ -43,8 +44,15 @@ class SponsorTier(BaseModel):
         return f"tier-{self.slug.replace('_', '-')}"
 
     @property
-    def list_sponsors(cls) -> Iterable["Sponsor"]:
-        return cls._list_sponsors.order_by(Sponsor.name)
+    def list_sponsors(self) -> Iterable["Sponsor"]:
+        return self._list_sponsors.order_by(Sponsor.name)
+
+    @property
+    def is_sold_out(self) -> bool:
+        return (
+            self.max_sponsors is not None
+            and len(self.list_sponsors) >= self.max_sponsors
+        )
 
     @classmethod
     def pricing_listing(cls) -> Iterable[Self]:

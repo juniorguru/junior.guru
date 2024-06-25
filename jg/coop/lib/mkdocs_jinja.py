@@ -34,6 +34,7 @@ TEMPLATE_FILTERS = [
     "sibling_page",
     "skip",
     "shuffle",
+    "nplurals",
 ]
 
 

@@ -241,16 +241,6 @@ def open():
     return REFRESH_PAGE
 
 
-@app.route("/pricing/")
-def pricing():
-    return REFRESH_PAGE
-
-
-@app.route("/hire-juniors/")
-def hire_juniors():
-    return redirect(url_for("pricing", _external=True))
-
-
 @app.route("/press/")
 def press():
     return redirect(url_for("club", _external=True) + "#honza")
@@ -269,11 +259,6 @@ def press_release_women():
 @app.route("/press/crisis/")
 def press_release_crisis():
     return redirect(url_for("club", _external=True) + "#honza")
-
-
-@app.route("/donate/")
-def donate():
-    return redirect(url_for("open", _external=True))
 
 
 @app.route("/membership/")

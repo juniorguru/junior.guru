@@ -1,0 +1,166 @@
+---
+title: Sponzoruj junior.guru
+description: Líbí se ti tento web? Pošli LOVE! Podpoř finančně junior.guru, jako jednotlivec, nebo jako firma.
+template: main_sponsorship.html
+---
+
+{% from 'macros.html' import lead, note, markdown with context %}
+
+<h1>Pošli LOVE</h1>
+{% call lead() %}
+  Líbí se ti tento web? Ukázal ti cestu k programování? K lepší práci? Pomohl vaší firmě najmout super kolegy? Chcete jako firma podpořit juniory v jejich snažení? Aby mohlo junior.guru dál existovat a pomáhat co nejvíce lidem, potřebuje peníze na provoz.
+{% endcall %}
+
+<div class="tiers-cards">
+<div class="tiers-card">
+  <h4 class="tiers-card-header">GitHub Sponsors</h3>
+  <div class="card-body">
+    <ul class="card-text">
+      <li>Pokud zaškrtneš, že podporuješ veřejně, objeví se tvůj avatar na <a href="{{ pages|docs_url('index.jinja')|url }}">úvodní stránce</a></li>
+      <li>Platba kartou</li>
+    </ul>
+  </div>
+  <p class="tier-card-footer">
+    <a class="btn btn-dark" href="https://github.com/sponsors/honzajavorek/" target="_blank" rel="noopener">
+      {{ 'github'|icon }}
+      od {{ github_sponsors_czk }} Kč/měs
+    </a>
+    {% set sponsors_count = sponsors_github|length %}
+    {% if sponsors_count %}
+    <small>
+      jako
+      {{ sponsors_count }}+
+      {{ sponsors_count|nplurals("další", "další", "dalších") }}
+      {{ sponsors_count|nplurals("sponzor", "sponzoři", "sponzorů") }}
+    </small>
+    {% endif %}
+  </p>
+</div>
+
+<div class="tiers-card">
+  <h4 class="tiers-card-header">Členství v klubu</h3>
+  <div class="card-body">
+    <ul class="card-text">
+      <li>Normální členství v <a href="{{ pages|docs_url('club.md')|url }}">klubu</a> pro 1 člověka</li>
+      <li>Můžeš do klubu házet promo, pozvánky, pracovní inzeráty</li>
+      <li>2 týdny zdarma na zkoušku, potom platba kartou</li>
+    </ul>
+  </div>
+  <p class="tier-card-footer">
+    <a class="btn btn-primary" href="https://juniorguru.memberful.com/checkout?plan=89511" target="_blank" rel="noopener">
+      {{ 'person-circle'|icon }}
+      199 Kč/měs
+    </a>
+    <small>
+      jako
+      {{ members_total_count }}
+      {{ members_total_count|nplurals("další", "další", "dalších") }}
+      {{ members_total_count|nplurals("člen", "členové", "členů") }}
+    </small>
+  </p>
+</div>
+
+{% for tier in sponsor_tiers %}
+  {% set sponsors_count = tier.list_sponsors|length %}
+  <div class="tiers-card{% if tier.is_sold_out %} soldout{% endif %}">
+    <h4 class="tiers-card-header" id="{{ tier.anchor }}">Tarif „{{ tier.name }}“</h3>
+    <div class="card-body">
+      {% if tier.slug == "supporting" %}
+        {% set btn = "success" %}
+        {% set icon = "heart-fill" %}
+        <ul class="card-text">
+          <li>Logo na <a href="{{ pages|docs_url('index.jinja')|url }}">úvodní stránce</a></li>
+          <li>Skupinové členství v <a href="{{ pages|docs_url('club.md')|url }}">klubu</a> pro až 15 lidí</li>
+          <li>Láskyplné uvítání sponzora příspěvkem v klubu</li>
+          <li>Platba kartou nebo na fakturu</li>
+        </ul>
+
+      {% elif tier.slug == "providing_courses" %}
+        {% set btn = "secondary" %}
+        {% set icon = "star-fill" %}
+        <ul class="card-text">
+          <li>Všechno co předchozí tarif</li>
+          <li>Zvýrazněný zápis v <a href="{{ pages|docs_url('courses.md')|url }}">katalogu kurzů</a> s logem a odkazem bez <em>nofollow</em> (zlepší vaše SEO)</li>
+          <li>Možnost poslat do klubu studenty za {{ tier.member_price }} Kč/měs/os</li>
+          <li>Platba kartou nebo na fakturu</li>
+        </ul>
+
+      {% elif tier.slug == "building_brand" %}
+        {% set btn = "danger" %}
+        {% set icon = "shield-fill" %}
+        <ul class="card-text">
+          <li>Všechno co předchozí tarify</li>
+          <li>Logo i na <a href="{{ pages|docs_url('handbook/index.md')|url }}">příručce</a></li>
+          <li>Omezené množství, maximálně {{ tier.max_sponsors }} firmy</li>
+          <li>Platba kartou nebo na fakturu</li>
+        </ul>
+
+      {% else %}
+        {% call note(standout=True) %}
+          {{ 'exclamation-circle'|icon }} Tady něco má být, ale není to tu. Napiš prosím na {{ 'honza@junior.guru'|email_link }}
+        {% endcall %}
+      {% endif %}
+    </div>
+    <p class="tier-card-footer">
+    {% if tier.is_sold_out %}
+      <button class="btn btn-{{ btn }}" disabled>
+        {{ icon|icon }}
+        {{ tier.price|thousands }} Kč/rok
+      </button>
+      <small>vyprodáno!</small>
+    {% else %}
+      <a class="btn btn-{{ btn }}" href="{{ tier.plan_url }}" target="_blank" rel="noopener">
+        {{ icon|icon }}
+        {{ tier.price|thousands }} Kč/rok
+      </a>
+      {% if sponsors_count %}
+      <small>
+        jako
+        {{ sponsors_count }}
+        {{ sponsors_count|nplurals("další", "další", "dalších") }}
+        {{ sponsors_count|nplurals("sponzor", "sponzoři", "sponzorů") }}
+      </small>
+      {% endif %}
+    {% endif %}
+    </p>
+  </div>
+{% endfor %}
+</div>
+
+{#
+
+<h2>Komu tím prospěješ</h2>
+
+<h2>Na co přispíváš</h2>
+{% call markdown() %}
+{% endcall %}
+
+<!--
+https://web.archive.org/web/20220127081903/https://junior.guru/donate/
+https://docs.google.com/document/d/1CIKQKQ9eTpS8LmdxGqppOSim4gYOpoRcekqmPpnyLEI/edit
+-->
+
+<h2>Komu přispíváš</h2>
+{% call markdown() %}
+{% endcall %}
+
+<!--
+nejsem neziskovka, ale myslím to upřímně
+Projekt junior.guru provozuje Honza Javorek. Příspěvky nelze odečíst z daní jako dar.
+-->
+#}
+
+<h2>Kdo přispívá, nebo dřív přispíval</h2>
+{% call markdown() %}
+Spousta jednotlivců i firem! Současné i bývalé sponzory najdeš v [podrobném seznamu](open.md#sponzori).
+{% endcall %}
+
+<h2>Jak přidat pracovní inzerát</h2>
+{% call markdown() %}
+Zdejší robot pravidelně stahuje pracovní inzeráty z různých portálů. Pokud vyhodnotí, že inzerát je vhodný pro juniory, zobrazí jej automaticky mezi [pracovními inzeráty](/jobs/) a pošle ho na Discord členům [klubu](club.md). Pokud ti to takto nestačí, vytvoř si v klubu účet (první dva týdny jsou zdarma) a do fóra `#práce-inzeráty` zadej inzerát ručně. Taky můžeš napsat na {{ 'honza@junior.guru'|email_link }}.
+{% endcall %}
+
+<h2>Jak se pozvat</h2>
+{% call markdown() %}
+Do [podcastu](podcast.md) nebo na [klubové akce](events.md) si zveme různé odborníky bez ohledu na to, jestli junior.guru sponzorují, ale jsme velmi vybíraví. Pokud máš tipy na zajímavé hosty, pošli je na {{ 'honza@junior.guru'|email_link }}.
+{% endcall %}

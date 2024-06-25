@@ -1,0 +1,60 @@
+.tiers-cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: -1 * $spacer;
+}
+
+.tiers-card {
+  @extend .card;
+  margin: 0 0 map-get($spacers, 4);
+  overflow: hidden;
+  background: lighten($jg-blue-light, 1%);
+  border: 1px solid $jg-blue-light;
+}
+
+.tiers-cards .tiers-card {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 100%;
+  margin: 0 0 $spacer;
+
+  @include media-breakpoint-up(sm) {
+    $w: calc((100% - #{$spacer}) / 2);
+    width: $w;
+    min-width: $w;
+    max-width: $w;
+    margin-right: $spacer;
+  }
+}
+
+.tiers-card:nth-child(2n) {
+  @include media-breakpoint-up(sm) {
+    margin-right: 0;
+  }
+}
+
+.tiers-card-header {
+  @extend .card-header;
+  @extend .fs-5;
+  background: $jg-blue-light;
+  border-color: darken($jg-blue-light, 2%);
+}
+
+.tiers-card.soldout {
+  opacity: .5;
+}
+
+.tier-card-footer {
+  @extend .card-footer;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0;
+  background-color: $jg-blue-light;
+  border-color: darken($jg-blue-light, 2%);
+}
+
+.tier-card-footer small {
+  margin-top: map-get($spacers, 2);
+}

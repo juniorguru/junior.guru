@@ -19,6 +19,7 @@ tiers:
     name: Budujeme brand
     plans:
       - https://juniorguru.memberful.com/admin/plans/111101
+    max_sponsors: 4
 
 registry:
   # CURRENT SPONSORS
@@ -63,7 +64,7 @@ registry:
   - name: ITnetwork
     slug: itnetwork
     url: https://www.itnetwork.cz/
-    tier: supporting
+    tier: providing_courses
     periods:
       - [2024-03, 2025-03]
 
@@ -80,7 +81,7 @@ registry:
   - name: ENGETO Academy
     slug: engeto
     url: https://engeto.cz/
-    tier: supporting
+    tier: providing_courses
     periods:
       - [2021-05, 2024-07]
 
@@ -91,7 +92,7 @@ registry:
     periods:
       - [2021-05, 2024-08]
     note: |
-      Podílí se na rozšířené pomoci pro lidi, kteří na junior.guru žádají o [stipendium](https://junior.guru/finaid).
+      Podílí se na mentoringu a rozšířené pomoci pro lidi, kteří na junior.guru žádají o [stipendium](https://junior.guru/finaid).
 
   - name: Skoumal
     slug: skoumal

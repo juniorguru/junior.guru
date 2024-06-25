@@ -53,6 +53,7 @@ class TierConfig(BaseModel):
     slug: str
     name: str
     plans: Annotated[list[HttpUrl], Len(min_length=1)]
+    max_sponsors: int | None = None
 
 
 class SponsorConfig(BaseModel):
@@ -115,6 +116,7 @@ def main(today: date, clear_posters: bool):
             price=price,
             member_price=member_price,
             plans=tier_plan_ids,
+            max_sponsors=tier.max_sponsors,
             priority=priority,
         )
     logger.info(f"Tiers: {', '.join(tiers.keys())}")

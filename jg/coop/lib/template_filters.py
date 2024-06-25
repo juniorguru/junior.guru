@@ -1,6 +1,7 @@
 import math
 import random
 import re
+from numbers import Number
 from operator import itemgetter
 from typing import Generator, Iterable, Literal
 from urllib.parse import unquote, urljoin
@@ -226,3 +227,16 @@ def shuffle(items: Iterable) -> list:
     items = list(items)
     random.shuffle(items)
     return items
+
+
+def nplurals(
+    value: Number,
+    suffix_1: str,
+    suffix_2: str,
+    suffix_3: str,
+) -> str:
+    if value == 1:
+        return suffix_1
+    if 2 <= value <= 4:
+        return suffix_2
+    return suffix_3
