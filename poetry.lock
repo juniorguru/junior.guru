@@ -2062,12 +2062,12 @@ files = [
 
 [[package]]
 name = "peewee"
-version = "3.17.3"
+version = "3.17.5"
 description = "a little orm"
 optional = false
 python-versions = "*"
 files = [
-    {file = "peewee-3.17.3.tar.gz", hash = "sha256:ef15f90b628e41a584be8306cdc3243c51f73ce88b06154d9572f6d0284a0169"},
+    {file = "peewee-3.17.5.tar.gz", hash = "sha256:e1b6a64192207fd3ddb4e1188054820f42aef0aadfa749e3981af3c119a76420"},
 ]
 
 [[package]]
@@ -3310,4 +3310,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.11"
-content-hash = "4517d37c132456827395940c9bee109161388fc29b7a57bf4726ff4988d39e39"
+content-hash = "d46c80116d254de49a4cc0beba8a4d9293c7e87320f082212b41320ce51b6e51"
