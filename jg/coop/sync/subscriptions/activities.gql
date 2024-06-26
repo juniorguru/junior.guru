@@ -4,7 +4,6 @@ query fetch(
   $createdAt: CreatedAtFilter!
 ) {
   activities(first: 100, after: $cursor, type: $type, createdAt: $createdAt) {
-    totalCount
     pageInfo {
       endCursor
       hasNextPage

@@ -1,6 +1,5 @@
 query fetch($cursor: String!) {
   members(first: 100, after: $cursor, state: ACTIVE) {
-    totalCount
     pageInfo {
       endCursor
       hasNextPage

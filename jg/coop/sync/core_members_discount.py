@@ -67,7 +67,6 @@ def main(report_channel_id: int):
             """
             query fetch($cursor: String) {
                 coupons(after: $cursor) {
-                    totalCount
                     pageInfo {
                         endCursor
                         hasNextPage
