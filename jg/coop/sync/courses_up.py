@@ -16,4 +16,5 @@ def main():
     for course in (item for item in apify.fetch_data("honzajavorek/courses-up")):
         logger.info(f'Saving {course["name"]!r}')
         CourseUP.create(**course)
+
     logger.info(f"Saved {CourseUP.count()} courses in total")
