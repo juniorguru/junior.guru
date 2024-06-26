@@ -1,9 +1,9 @@
 query fetch {
-    plans {
-        id
-        name
-        forSale
-        priceCents
-        additionalMemberPriceCents
-    }
+  plans {
+    id
+    name
+    forSale
+    priceCents
+    additionalMemberPriceCents
+  }
 }
