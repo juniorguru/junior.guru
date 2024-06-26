@@ -70,6 +70,7 @@ class CourseUP(BaseModel):
     url = CharField()
     name = CharField()
     description = TextField()
+    company_name = CharField()
     cz_business_id = IntegerField()
 
     @classmethod
