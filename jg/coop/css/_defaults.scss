@@ -16,6 +16,8 @@ $jg-dark: #343434;
 $jg-gray: lighten($jg-dark, 25%);
 $jg-gray-light: lighten($jg-gray, 45%);
 $jg-gray-white: lighten($jg-gray, 50%);
+$jg-pink: #db61a2;
+$jg-pink-dark: darken($jg-pink, 5%);
 
 $jg-yellow-light-legacy: #fffee3; // equals to lighten($jg-yellow, 22.2%)
 $jg-gray-light-legacy: darken($jg-white, 20%);

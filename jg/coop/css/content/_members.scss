@@ -3,6 +3,7 @@ $member-shift: $member-size - ($member-size * .8);
 
 .members {
   display: inline-flex;
+  flex-wrap: wrap;
   padding-left: $member-shift;
   margin-bottom: $spacer;
   overflow: hidden;
@@ -16,4 +17,13 @@ $member-shift: $member-size - ($member-size * .8);
   margin-left: -1 * $member-shift;
   background: $white;
   border-radius: 100%;
+}
+
+.members.centered {
+  justify-content: center;
+}
+
+.members.muted {
+  filter: saturate(0);
+  opacity: .5;
 }

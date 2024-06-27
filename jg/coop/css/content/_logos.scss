@@ -9,6 +9,7 @@
 .logos-item {
   display: flex;
   align-items: center;
+  min-height: 3rem;
   margin: 0 map-get($spacers, 2) $spacer;
 
   @include media-breakpoint-up(sm) {

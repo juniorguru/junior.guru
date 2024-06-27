@@ -4,16 +4,20 @@ description: Líbí se ti tento web? Pošli LOVE! Podpoř finančně junior.guru
 template: main_sponsorship.html
 ---
 
-{% from 'macros.html' import lead, note, markdown, logo with context %}
+{% from 'macros.html' import lead, note, markdown, logo, img with context %}
 
 <h1>Pošli LOVE</h1>
 {% call lead() %}
   Líbí se ti tento web? Ukázal ti cestu k programování? K lepší práci? Pomohl vaší firmě najmout super kolegy? Chcete jako firma podpořit juniory v jejich snažení? Aby mohlo junior.guru dál existovat a pomáhat co nejvíce lidem, potřebuje peníze na provoz.
 {% endcall %}
 
+<div class="text-center standout">
+{{ img('static/heart.svg', 'srdíčko', 80, 80, lazy=False) }}
+</div>
+
 <div class="tiers-cards">
 <div class="tiers-card">
-  <h4 class="tiers-card-header">GitHub Sponsors</h3>
+  <h3 class="tiers-card-header">GitHub Sponsors</h3>
   <div class="card-body">
     <ul class="card-text">
       <li>Pokud zaškrtneš, že podporuješ veřejně, objeví se tvůj avatar na <a href="{{ pages|docs_url('index.jinja')|url }}">úvodní stránce</a></li>
@@ -38,7 +42,7 @@ template: main_sponsorship.html
 </div>
 
 <div class="tiers-card">
-  <h4 class="tiers-card-header">Členství v klubu</h3>
+  <h3 class="tiers-card-header">Členství v klubu</h3>
   <div class="card-body">
     <ul class="card-text">
       <li>Normální členství v <a href="{{ pages|docs_url('club.md')|url }}">klubu</a> pro 1 člověka</li>
@@ -61,23 +65,22 @@ template: main_sponsorship.html
 </div>
 </div>
 
-<div class="standout">
-  <ul class="logos compact muted">
-    {{ logo('Ataccama', 'logos/ataccama.svg') }}
-    {{ logo('Credo', 'logos/credo.svg') }}
-    {{ logo('Fakturoid', 'logos/fakturoid.svg') }}
-    {{ logo('Mews', 'logos/mews.svg') }}
-    {{ logo('Pure Storage', 'logos/purestorage.svg') }}
-    {{ logo('Red Hat', 'logos/redhat.svg') }}
-    {{ logo('STRV', 'logos/strv.svg') }}
-  </ul>
+<div class="standout text-center">
+  <span class="members centered muted mb-0">
+  {% for sponsor in sponsors_github|sample(5) %}
+    {{ img('static/' + sponsor.avatar_path, 'Profilovka sponzora', 50, 50, lazy=False) }}
+  {% endfor %}
+  {% for member in members|sample(10) %}
+    {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50, lazy=False) }}
+  {% endfor %}
+  </span>
 </div>
 
 <div class="tiers-cards">
 {% for tier in sponsor_tiers %}
   {% set sponsors_count = tier.list_sponsors|length %}
   <div class="tiers-card{% if tier.is_sold_out %} soldout{% endif %}">
-    <h4 class="tiers-card-header" id="{{ tier.anchor }}">Tarif „{{ tier.name }}“</h3>
+    <h3 class="tiers-card-header" id="{{ tier.anchor }}">Tarif „{{ tier.name }}“</h3>
     <div class="card-body">
       {% if tier.slug == "supporting" %}
         {% set btn = "success" %}
@@ -141,6 +144,25 @@ template: main_sponsorship.html
 {% endfor %}
 </div>
 
+<div class="standout">
+  <ul class="logos compact muted">
+    {{ logo('Ataccama', 'logos/ataccama.svg') }}
+    {{ logo('Credo', 'logos/credo.svg') }}
+    {{ logo('Fakturoid', 'logos/fakturoid.svg') }}
+    {{ logo('Mews', 'logos/mews.svg') }}
+    {{ logo('Pure Storage', 'logos/purestorage.svg') }}
+    {{ logo('Red Hat', 'logos/redhat.svg') }}
+    {{ logo('STRV', 'logos/strv.svg') }}
+  </ul>
+</div>
+
+<div class="text-center standout">
+  <a href="mailto:honza&#64;junior.guru" class="btn btn-primary btn-lg">
+    {{ 'envelope-fill'|icon }}
+    honza&#64;<!---->junior.guru
+  </a>
+</div>
+
 {#
 
 <h2>Komu tím prospěješ</h2>
@@ -162,7 +184,7 @@ https://docs.google.com/document/d/1CIKQKQ9eTpS8LmdxGqppOSim4gYOpoRcekqmPpnyLEI/
 nejsem neziskovka, ale myslím to upřímně
 Projekt junior.guru provozuje Honza Javorek. Příspěvky nelze odečíst z daní jako dar.
 -->
-#}
+
 
 <h2>Kdo přispívá, nebo dřív přispíval</h2>
 {% call markdown() %}
@@ -173,3 +195,4 @@ Spousta jednotlivců i firem! Současné i bývalé sponzory najdeš v [podrobn�
 {% call markdown() %}
 Zdejší robot pravidelně stahuje pracovní inzeráty z různých portálů. Pokud vyhodnotí, že inzerát je vhodný pro juniory, zobrazí jej automaticky mezi [pracovními inzeráty](/jobs/) a pošle ho na Discord členům [klubu](club.md). Pokud ti to takto nestačí, vytvoř si v klubu účet (první dva týdny jsou zdarma) a do fóra `#práce-inzeráty` zadej inzerát ručně. Taky můžeš napsat na {{ 'honza@junior.guru'|email_link }}.
 {% endcall %}
+#}

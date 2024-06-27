@@ -16,10 +16,10 @@ from jg.coop.lib.md import md as md_
 from jg.coop.lib.url_params import strip_utm_params
 
 
-def email_link(email):
+def email_link(email: str) -> Markup:
     user, server = email.split("@")
     return Markup(
-        f'<a href="mailto:{user}&#64;{server}">' f"{user}&#64;<!---->{server}" "</a>"
+        f'<a href="mailto:{user}&#64;{server}">{user}&#64;<!---->{server}</a>'
     )
 
 
