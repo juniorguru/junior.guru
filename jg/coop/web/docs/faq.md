@@ -46,7 +46,7 @@ Všechna čísla jsou k tomu [transparentně na webu](open.md).
 Jak je vidět z grafů, psaní příručky je možné díky předplatnému za [klub](club.md) a [příspěvkům firem](love.jinja).
 
 Žádná část příručky není zpoplatněná.
-Zdrojový kód je [veřejně](https://github.com/juniorguru/junior.guru/) a veškerý text může kdokoliv použít, pokud uvede autora a výsledek vystaví pod [stejnou licencí](https://creativecommons.org/licenses/by-sa/4.0/deed.cs).
+Zdrojový kód je [veřejně](https://github.com/juniorguru/junior.guru) a veškerý text může kdokoliv použít, pokud uvede autora a výsledek vystaví pod [stejnou licencí](https://creativecommons.org/licenses/by-sa/4.0/deed.cs).
 Honza nemá rád reklamy, takže na webu žádné nejsou.
 Ani žádný sběr dat o uživatelích.
 Žádné cookies.
@@ -72,15 +72,15 @@ Jsou mezi námi nejen junioři na všech úrovních znalostí, ale i mnozí seni
 
 Zatímco čekáš na poště, můžeš někoho posunout o kousek blíž vysněné kariéře v IT. Stačí ti „poflakovat“ se na Discordu, pokud máš zrovna čas. Když vidíš příležitost někomu pomoci, zkusíš pomoci. Někdy to může být debugovací seance na hodinu, někdy dva krátké příspěvky, někdy jedno emoji s palcem nahoru. Nemusíš mít učitelské nadání, stačí [když ti ego nebrání v laskavosti a respektu k druhým](coc.md). Navíc finančně přispíváš na provoz a rozšiřování [otevřených](https://github.com/juniorguru/junior.guru/) materiálů pro začátečníky, ve kterých nejde o senzační titulky, ale o upřímné a dobře míněné rady.
 
-### Co mám z členství v klubu jako profesionál(ka) na volné noze?
+### Co mám z členství v klubu jako profesionál(ka) na volné noze?  {: #freelanceri }
 
 Kromě [konání dobra](#seniori) můžeš klub naplno využít k propagaci svých aktivit. Ve vyhrazených kanálech klidně zvi členy na svá komerční školení, propaguj svou nabídku mentoringu, upozorňuj na svá videa nebo knihy. Můžeš členům nabídnout slevu, ale nemusíš. Buduj si osobní značku, ať začátečníci ví, kdo je tady ten expert na bezpečnost, nebo na frontend. Ostatně, oni těmi začátečníky nebudou věčně a kromě nich to v klubu uvidí i spousta zajímavých seniorů.
 
-### Co mám z členství v klubu jako recruiter(ka)?
+### Co mám z členství v klubu jako recruiter(ka)?  {: #recruiteri }
 
 Zatímco čekáš na kafe, můžeš někoho posunout o kousek blíž vysněné kariéře v IT. Stačí ti „poflakovat“ se na Discordu, pokud máš zrovna čas. Když vidíš příležitost někomu pomoci, zkusíš pomoci. Někdy to mohou být dva krátké příspěvky, někdy jedno emoji s palcem nahoru. Klub není zdaleka jen o programování, ale i o kariérním rozhodování, pohovorech, životopisech. Můžeš si číst, jak proces náboru vnímají junioři, poskytovat zpětnou vazbu z druhé strany, radit s CVčkem, vyhlížet nadějné talenty, sdílet nabídky práce. Navíc podporuješ rozšiřování [příručky](handbook/index.md), díky které se můžou kandidáti lépe připravit už před tím, než se ti ozvou na inzerát.
 
-### Co mám z členství v klubu jako komunitní manažer(ka)?
+### Co mám z členství v klubu jako komunitní manažer(ka)?  {: #komunitaci }
 
 Získáš publikum nejen mezi nastupující generací programátorek a programátorů, ale i mezi seniory, kteří mají chuť jim pomáhat. Klub můžeš naplno využít k propagaci svých aktivit. Ve vyhrazených kanálech klidně upozorňuj na srazy, konference, hackathony. Ať už jde o vstupenky nebo produkty, můžeš nabízet slevy, organizovat soutěže. Dokonce můžeš vymyslet i nějakou speciální nebo pravidelnou online akci, která se bude odehrávat přímo v klubu. Fantazii se meze nekladou!
 
