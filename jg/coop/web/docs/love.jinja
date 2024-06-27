@@ -87,7 +87,7 @@ template: main_love.html
         <ul class="card-text">
           <li>Logo na <a href="{{ pages|docs_url('index.jinja')|url }}">úvodní stránce</a></li>
           <li>Skupinové členství v <a href="{{ pages|docs_url('club.md')|url }}">klubu</a> pro až 15 lidí</li>
-          <li>Láskyplné uvítání sponzora příspěvkem v klubu</li>
+          <li>Uvítání sponzora příspěvkem v klubu</li>
           <li>Kartou nebo na fakturu, neplátce DPH</li>
         </ul>
 
@@ -163,6 +163,23 @@ template: main_love.html
     <small><a href="{{ pages|docs_url('tos.md')|url }}">Obchodní podmínky</a></small>
   </p>
 </div>
+
+<h2>Kolik stojí „zdarma“ a bez reklam</h2>
+{% call markdown() %}
+Kromě [klubu](club.md) je tady všechno zdarma, i celá [příručka](handbook/index.md), za kterou jsou stovky hodin práce.
+
+**Výhodou** je, že si můžeš všechno hezky přečíst. Můžeš to poslat kamarádce. Může si to projít každý horník z Ostravy. Není to uzavřené v nějaké placené knize. Máš to pěkně na mobilu. Nevyskakují na tebe reklamy. Vše se tady doporučuje podle poctivého průzkumu a svědomí. Ne proto, že si někdo to doporučení zaplatil.
+
+**Nevýhodou** je, že si tím junior.guru nevydělá na provoz. Bez příjmů si bude muset Honza Javorek, autor projektu, najít jiný způsob, jak uživit rodinu. Na aktualizace nebo rozšiřování obsahu nebude mít čas. Web postupně zastará a přestane být užitečný.
+
+Sponzorství je způsob, jak nechat obsah junior.guru zdarma a zároveň dát lidem možnost poděkovat, pokud jim projekt pomohl. Nebo jak dát firmám možnost to tady nějak podpořit.
+{% endcall %}
+{{ blockquote_avatar(
+  'Pomáhat začátečníkům mě baví. Myslím si, že tak mohu nejefektivněji využít všechno, co umím. A že tak mohu nejlépe přispět k tomu, aby byl svět kolem mě lepší. Díky každému, kdo mi umožní v tom pokračovat!',
+  'honza-javorek.jpg',
+  'Honza Javorek',
+  'Honza Javorek, provozovatel junior.guru a autor příručky',
+) }}
 
 <h2>Komu tím prospěješ</h2>
 {% call markdown() %}
@@ -252,21 +269,4 @@ Soustřeď se na svůj <em>core business</em>, tedy výuku programování, a tyh
   'lucie-lenertova.jpg',
   'Lucie Lénertová',
   'Lucie Lénertová, provozovatelka kurzu Dokážeš programovat!',
-) }}
-
-<h2>Kolik stojí „zdarma“ a bez reklam</h2>
-{% call markdown() %}
-Kromě [klubu](club.md) je tady všechno zdarma, i celá [příručka](handbook/index.md), za kterou jsou stovky hodin práce.
-
-**Výhodou** je, že si můžeš všechno hezky přečíst. Můžeš to poslat kamarádce. Může si to projít každý horník z Ostravy. Není to uzavřené v nějaké placené knize. Máš to pěkně na mobilu. Nevyskakují na tebe reklamy. Vše se tady doporučuje podle poctivého průzkumu a svědomí. Ne proto, že si někdo to doporučení zaplatil.
-
-**Nevýhodou** je, že si tím junior.guru nevydělá na provoz. Bez příjmů si bude muset Honza Javorek, autor projektu, najít jiný způsob, jak uživit rodinu. Na aktualizace nebo rozšiřování obsahu nebude mít čas. Web postupně zastará a přestane být užitečný.
-
-Sponzorství je způsob, jak nechat obsah junior.guru zdarma a zároveň dát lidem možnost poděkovat, pokud jim projekt pomohl. Nebo jak dát firmám možnost to tady nějak podpořit.
-{% endcall %}
-{{ blockquote_avatar(
-  'Pomáhat začátečníkům mě baví. Myslím si, že tak mohu nejefektivněji využít všechno, co umím. A že tak mohu nejlépe přispět k tomu, aby byl svět kolem mě lepší. Díky každému, kdo mi umožní v tom pokračovat!',
-  'honza-javorek.jpg',
-  'Honza Javorek',
-  'Honza Javorek, provozovatel junior.guru a autor příručky',
 ) }}
