@@ -4,7 +4,7 @@ description: Líbí se ti tento web? Pošli LOVE! Sponzoruj junior.guru, jako je
 template: main_love.html
 ---
 
-{% from 'macros.html' import lead, note, markdown, logo, img with context %}
+{% from 'macros.html' import lead, note, markdown, logo, img, blockquote_avatar with context %}
 
 <h1>Pošli LOVE</h1>
 {% call lead() %}
@@ -89,7 +89,7 @@ template: main_love.html
           <li>Logo na <a href="{{ pages|docs_url('index.jinja')|url }}">úvodní stránce</a></li>
           <li>Skupinové členství v <a href="{{ pages|docs_url('club.md')|url }}">klubu</a> pro až 15 lidí</li>
           <li>Láskyplné uvítání sponzora příspěvkem v klubu</li>
-          <li>Platba kartou nebo na fakturu</li>
+          <li>Kartou nebo na fakturu, neplátce DPH</li>
         </ul>
 
       {% elif tier.slug == "providing_courses" %}
@@ -99,7 +99,7 @@ template: main_love.html
           <li>Všechno co předchozí tarif</li>
           <li>Zvýrazněný zápis v <a href="{{ pages|docs_url('courses.md')|url }}">katalogu kurzů</a> s logem a odkazem bez <em>nofollow</em> (zlepší vaše SEO)</li>
           <li>Možnost poslat do klubu studenty za {{ tier.member_price }} Kč/měs/os</li>
-          <li>Platba kartou nebo na fakturu</li>
+          <li>Kartou nebo na fakturu, neplátce DPH</li>
         </ul>
 
       {% elif tier.slug == "building_brand" %}
@@ -109,7 +109,7 @@ template: main_love.html
           <li>Všechno co předchozí tarify</li>
           <li>Logo i na <a href="{{ pages|docs_url('handbook/index.md')|url }}">příručce</a></li>
           <li>Omezené množství, maximálně {{ tier.max_sponsors }} firmy</li>
-          <li>Platba kartou nebo na fakturu</li>
+          <li>Kartou nebo na fakturu, neplátce DPH</li>
         </ul>
 
       {% else %}
@@ -156,42 +156,69 @@ template: main_love.html
   </ul>
 </div>
 
-<div class="text-center standout">
-  <a href="mailto:honza&#64;junior.guru" class="btn btn-primary btn-lg">
+<div class="contact">
+  <a href="mailto:honza&#64;junior.guru" class="contact-button pulse">
     honza&#64;<!---->junior.guru
   </a>
+  <p class="contact-small">
+    <small><a href="{{ pages|docs_url('tos.md')|url }}">Obchodní podmínky</a></small>
+  </p>
 </div>
 
-{#
-
 <h2>Komu tím prospěješ</h2>
-
-<h2>Na co přispíváš</h2>
 {% call markdown() %}
-{% endcall %}
 
+{% endcall %}
 <!--
 https://web.archive.org/web/20220127081903/https://junior.guru/donate/
 https://docs.google.com/document/d/1CIKQKQ9eTpS8LmdxGqppOSim4gYOpoRcekqmPpnyLEI/edit
 -->
-
-<h2>Komu přispíváš</h2>
-{% call markdown() %}
-{% endcall %}
-
 <!--
 nejsem neziskovka, ale myslím to upřímně
 Projekt junior.guru provozuje Honza Javorek. Příspěvky nelze odečíst z daní jako dar.
 -->
 
-
-<h2>Kdo přispívá, nebo dřív přispíval</h2>
+<h2>Proč tady mít logo</h2>
 {% call markdown() %}
-Spousta jednotlivců i firem! Současné i bývalé sponzory najdeš v [podrobném seznamu](open.md#sponzori).
+Protože tenhle projekt je _love brand_. Spojovat se jakkoliv s junior.guru může tvé značce jen pomoci.
+
+Mnozí **top senioři** na trhu jsou v místní komunitě, doporučují junior.guru každému na potkání a mnohdy projekt i sami finančně podporují. Chodí sem **hromady začínajících programátorů a testerů**, kteří se jednou těmi seniory stanou.
+
+Pokud chceš, aby pro tebe pracovali, aby si kupovali tvůj produkt, nebo aby věděli, že podporuješ super věci, které mají rádi, tak tady chceš mít logo.
 {% endcall %}
 
-<h2>Jak přidat pracovní inzerát</h2>
+<figure class="figure"><div class="chart-figure"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="bar"
+    data-chart="{{ {
+        'labels': {
+            'home': 'úvodní stránka',
+            'courses': 'katalog kurzů',
+            'handbook': 'příručka',
+        }|mapping(charts.logo_impressions_breakdown.keys()),
+        'datasets': [
+            {
+                'label': 'počet impresí měsíčně',
+                'data': charts.logo_impressions_breakdown.values()|list,
+                'backgroundColor': '#1755d1',
+            },
+        ],
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}},
+    }|tojson|forceescape }}"></canvas></div></figure>
+
+<h2>Proč posílat studenty kurzu do klubu</h2>
 {% call markdown() %}
-Zdejší robot pravidelně stahuje pracovní inzeráty z různých portálů. Pokud vyhodnotí, že inzerát je vhodný pro juniory, zobrazí jej automaticky mezi [pracovními inzeráty](/jobs/) a pošle ho na Discord členům [klubu](club.md). Pokud ti to takto nestačí, vytvoř si v klubu účet (první dva týdny jsou zdarma) a do fóra `#práce-inzeráty` zadej inzerát ručně. Taky můžeš napsat na {{ 'honza@junior.guru'|email_link }}.
+Discord si umí založit každý, ale budování **opravdu funkční komunity** je náročné a vyžaduje hodně času. Můžeš svým studentům udělat nějaký kariérní seminář, ale pokud má být podpora studentů při hledání práce efektivní, musí být **soustavná a trvat měsíce**.
+
+Soustřeď se na svůj <em>core business</em>, tedy výuku programování, a tyhle věci neřeš. V klubu tvým studentům zajistíme živou komunitu, dostatečně dobré kariérové poradenství, podporu během hledání práce, nebo zpětnou vazbu na CV.
 {% endcall %}
-#}
+{% call blockquote_avatar(
+  'Mám již vypsán nový termín kurzu a mám tam přístup do junior.guru klubu jako benefit. Lidé si toho všimli a chválí si to.',
+  'lucie-lenertova.jpg',
+  'Lucie Lénertová',
+) %}
+  Lucie Lénertová, provozovatelka [Dokážeš programovat!](https://www.dokazesprogramovat.cz)
+{% endcall %}

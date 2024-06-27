@@ -401,6 +401,30 @@ def web_usage_breakdown(today: date):
 
 
 @chart
+def logo_impressions_breakdown(today: date):
+    product_names = ["home", "courses", "handbook"]
+    months = charts.months(*WebUsage.months_range())
+    months_len = len(months)
+    web_usage_breakdown = charts.per_month_breakdown(WebUsage.breakdown, months)
+    web_usage_breakdown_items = sorted(
+        web_usage_breakdown.items(), key=lambda item: position(product_names, item[0])
+    )
+    impressions_breakdown = {
+        product_name: int(sum(values) / months_len)
+        for product_name, values in web_usage_breakdown_items
+        if product_name in product_names
+    }
+    return dict(data=impressions_breakdown)
+
+
+def position(names: list[str], name: str):
+    try:
+        return names.index(name)
+    except ValueError:
+        return len(names)
+
+
+@chart
 def countries(today: date):
     breakdown = SubscriptionCountry.total_breakdown_ptc()
 

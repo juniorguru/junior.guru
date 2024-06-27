@@ -3,11 +3,22 @@
   overflow-x: scroll;
 }
 
-.chart-container {
+.chart-container,
+.chart-figure {
   position: relative;
   width: 100%;
   min-width: 40rem;
   min-height: 20rem;
+}
+
+.chart-figure {
+  min-width: 20rem;
+  max-width: 30rem;
+  min-height: 10rem;
+  padding: $spacer;
+  margin: 0 auto;
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
 }
 
 .table-mood {

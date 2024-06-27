@@ -1,0 +1,16 @@
+.contact {
+  padding: $main-spacer $spacer;
+  text-align: center;
+  background: $jg-yellow;
+  border-radius: $border-radius;
+}
+
+.contact-button {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-lg;
+}
+
+.contact-small {
+  margin: map-get($spacers, 2) 0 0;
+}
