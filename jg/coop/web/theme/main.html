@@ -20,14 +20,14 @@
         {{ img('static/logo.svg', 'logo junior.guru', 90, 40, lazy=False) }}
       </a>
       <div class="navbar-buttons">
-        {% if page.url not in ['sponsorship/', 'club/'] %}
-        <a href="{{ pages|docs_url('sponsorship.jinja')|url }}" class="love-button" title="Klikni!">
+        {% if page.url not in ['love/', 'club/'] %}
+        <a href="{{ pages|docs_url('love.jinja')|url }}" class="love-button" title="Klikni!">
           {{ 'heart-fill'|icon }}
         </a>
         {#
           {{ page.url }}
           {{ img('static/heart.svg', 'srdíčko', 50, 50, lazy=False) }}
-          <a class="btn btn-outline-dark" href="{{ pages|docs_url('sponsorship.jinja')|url }}">Pro firmy</a>
+          <a class="btn btn-outline-dark" href="{{ pages|docs_url('love.jinja')|url }}">Pro firmy</a>
           {% if page.url != 'club/' %}
           <a class="btn btn-dark" href="{{ pages|docs_url('club.md')|url }}">Přidej se</a>
         #}

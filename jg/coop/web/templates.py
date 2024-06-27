@@ -50,9 +50,10 @@ def generate_redirects() -> Generator[dict[str, Any], None, None]:
         ("topics/unicorn.md", "courses/unicornhatchery.md"),
         ("topics/vsb.md", "courses/kurzyvsb.md"),
         ("topics/skillmea.md", "courses/skillmea.md"),
-        ("donate.md", "sponsorship.jinja"),
-        ("hire-juniors.md", "sponsorship.jinja"),
-        ("pricing.md", "sponsorship.jinja"),
+        ("donate.md", "love.jinja"),
+        ("hire-juniors.md", "love.jinja"),
+        ("pricing.md", "love.jinja"),
+        ("sponsorship.md", "love.jinja"),
     ]:
         yield dict(
             path=path,

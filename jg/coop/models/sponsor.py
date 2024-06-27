@@ -33,7 +33,7 @@ class SponsorTier(BaseModel):
 
     @property
     def url(self) -> str:
-        return f"https://junior.guru/sponsorship/#{self.anchor}"
+        return f"https://junior.guru/love/#{self.anchor}"
 
     @property
     def plan_url(self) -> str:

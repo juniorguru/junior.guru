@@ -43,7 +43,7 @@ Kromě toho, neprovádí se tady žádný affiliate marketing, výměna odkazů,
 Autorem příručky je [Honza Javorek](#honza), stejně jako i celého junior.guru.
 Provoz a vylepšování celé věci je jeho hlavní pracovní náplň.
 Všechna čísla jsou k tomu [transparentně na webu](open.md).
-Jak je vidět z grafů, psaní příručky je možné díky předplatnému za [klub](club.md) a [příspěvkům firem](sponsorship.jinja).
+Jak je vidět z grafů, psaní příručky je možné díky předplatnému za [klub](club.md) a [příspěvkům firem](love.jinja).
 
 Žádná část příručky není zpoplatněná.
 Zdrojový kód je [veřejně](https://github.com/juniorguru/junior.guru/) a veškerý text může kdokoliv použít, pokud uvede autora a výsledek vystaví pod [stejnou licencí](https://creativecommons.org/licenses/by-sa/4.0/deed.cs).
@@ -184,7 +184,7 @@ Honza Javorek, autor junior.guru, má ale nakonec vždy na prvním místě dobro
 Ačkoliv dělá obchody s firmami, zachovává si nezávislost a nenechává se ovlivnit ve prospěch konkrétního produktu.
 Všechna sponzorství jsou [transparentně zdokumentována](open.md#sponzori).
 
-Firmy si v [ceníku](sponsorship.jinja) vybírají tarif podle toho, jak moc chtějí junior.guru podpořit.
+Firmy si v [ceníku](love.jinja) vybírají tarif podle toho, jak moc chtějí junior.guru podpořit.
 Sponzorství je na rok.
 Hlavními důvody, proč firmy junior.guru podporují, je [CSR](https://cs.wikipedia.org/wiki/Spole%C4%8Densk%C3%A1_odpov%C4%9Bdnost_firem) a nábor.
 

@@ -59,10 +59,10 @@ def on_shared_context(context):
     context["profit_ttm_usd"] = ExchangeRate.in_currency(profit_ttm, "USD")
     context["profit_ttm_eur"] = ExchangeRate.in_currency(profit_ttm, "EUR")
 
-    # club.md, courses/*.md, main_stories.html, sponsorship.md
+    # club.md, courses/*.md, main_stories.html, love.jinja
     context["members"] = ClubUser.avatars_listing()
 
-    # club.md, open.md, main_stories.html, sponsorship.md
+    # club.md, open.md, main_stories.html, love.jinja
     context["members_total_count"] = ClubUser.members_count()
 
 
@@ -77,7 +77,7 @@ def on_shared_page_context(context, page, config, files):
 
 @db.connection_context()
 def on_docs_context(context):
-    # index.jinja, open.md, sponsorship.md
+    # index.jinja, open.md, love.jinja
     context["sponsors_github"] = GitHubSponsor.listing()
 
     # index.jinja, club.md, open.md
@@ -88,7 +88,7 @@ def on_docs_context(context):
     context["events"] = Event.listing()
     context["events_promo"] = Event.promo_listing()
 
-    # sponsorship.md
+    # love.jinja
     context["github_sponsors_czk"] = ExchangeRate.from_currency(4, "USD")
     context["sponsor_tiers"] = SponsorTier.pricing_listing()
 
