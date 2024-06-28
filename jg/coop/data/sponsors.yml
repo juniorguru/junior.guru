@@ -61,6 +61,15 @@ registry:
     note: |
       Využívají klub pro komunikaci se svými klienty (studenty). Dan Srb v klubu moderuje a radí s frontendem.
 
+  - name: Dokážeš programovat!
+    slug: dokazesprogramovat
+    url: https://www.dokazesprogramovat.cz/
+    tier: bartering
+    periods:
+      - [2024-07, null]
+    note: |
+      Využívají klub jako komunitu pro své studenty. Lucie Lenértová v klubu pořádá různé online akce.
+
   - name: ITnetwork
     slug: itnetwork
     url: https://www.itnetwork.cz/

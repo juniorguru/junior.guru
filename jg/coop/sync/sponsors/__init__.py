@@ -123,7 +123,10 @@ def main(today: date, clear_posters: bool):
     logger.info(f"Tiers: {', '.join(tiers.keys())}")
 
     for sponsor in sponsors.registry:
-        if renews_on := get_renews_on(sponsor.periods, today):
+        start_on = get_start_on(sponsor.periods)
+        if start_on > today:
+            logger.warning(f"Future sponsor {sponsor.name} ({sponsor.slug})")
+        elif renews_on := get_renews_on(sponsor.periods, today):
             logger.info(f"Sponsor {sponsor.name} ({sponsor.slug})")
             tier = tiers[sponsor.tier] if sponsor.tier else None
 
@@ -159,7 +162,7 @@ def main(today: date, clear_posters: bool):
                 name=sponsor.name,
                 url=sponsor.url,
                 tier=tier,
-                start_on=get_start_on(sponsor.periods),
+                start_on=start_on,
                 renews_on=renews_on,
                 note=sponsor.note,
                 coupon=coupons_mapping.get(sponsor.slug),

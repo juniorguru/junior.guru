@@ -59,6 +59,7 @@ KEYWORDS = {
         r"egg\s*head": "egghead",
         r"free\s*code\s*camp\w*": "freecodecamp",
         r"street\s*of\s*code\w*": "streetofcode",
+        r"soc": "streetofcode",
         r"inventi": "inventi",
         r"it[.\s]?absolvent": "itabsolvent",
         r"nau[čc][.\s]?m[ěe][.\s]?it": "naucmeit",
@@ -86,6 +87,8 @@ KEYWORDS = {
         r"umimpython": "umimpython",
         r"jet\s*brains\s*academy": "jetbrains",
         r"robot?\s*dreams?": "robotdreams",
+        r"dok[aá][zž]e[sš]\s*programovat": "dokazesprogramovat",
+        r"len[eé]rtov\w+": "dokazesprogramovat",
     }.items()
 }
 
