@@ -16,7 +16,7 @@ coop = "jg.coop.cli:main"
 [tool.poetry.dependencies]
 python = "~3.11"
 jinja2 = "3.1.4"
-gspread = "6.1.0"
+gspread = "6.1.2"
 oauth2client = "4.1.3"
 arrow = "1.3.0"
 markdown = "3.6"
