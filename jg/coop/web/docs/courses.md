@@ -1,14 +1,14 @@
 ---
-title: Katalog kurzů programování
+title: Katalog kurzů programování a testování
 ---
 
 {% from 'macros.html' import link_card, note, lead with context %}
 
 
-# Kurzy programování
+# Kurzy programování a testování
 
 {% call lead() %}
-  Seznam všech míst, kde se můžeš učit programovat.
+  Seznam všech míst, kde se můžeš učit programovat nebo testovat.
   Umístění na seznam neznamená, že jde o kurzy dobré, ověřené, nebo že je junior.guru doporučuje.
   Ty, které sponzorují provoz junior.guru, jsou v přehledu první.
   Neznamená to, že jsou nejlepší.
