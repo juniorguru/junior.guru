@@ -61,7 +61,7 @@ registry:
     note: |
       Využívají klub pro komunikaci se svými klienty (studenty). Dan Srb v klubu moderuje a radí s frontendem.
 
-  - name: Dokážeš programovat!
+  - name: Dokážeš programovat
     slug: dokazesprogramovat
     url: https://www.dokazesprogramovat.cz/
     tier: bartering
