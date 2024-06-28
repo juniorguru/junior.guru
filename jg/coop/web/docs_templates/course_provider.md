@@ -17,7 +17,7 @@
 
 {% call lead() %}
   {{ course_provider.page_lead }}
-  <!-- TODO Tady je aspoň základní info, které ti pomůže s rozhodováním. -->
+  {% if course_provider.usp_description %}Tady je aspoň základní info, které ti pomůže s rozhodováním.{% endif %}
 {% endcall %}
 
 {% if course_provider.sponsor %}
@@ -26,13 +26,21 @@
   {{ link_card(course_provider.name, course_provider.url, nofollow=True) }}
 {% endif %}
 
+{% if course_provider.usp_description %}
+{{ course_provider.usp_description }}
+
+<small>
+Pokud tento popis umíš nějak doplnit, napiš prosím na {{ 'honza@junior.guru'|email_link }}.
+Umíš s GitHubem? [Pošli Pull Request]({{ course_provider.edit_url }})!
+</small>
+{% else %}
 {% call note(standout=True) %}
   {{ 'exclamation-circle'|icon }}
   Zatím tady chybí základní info.
   Pokud o {{ course_provider.name }} něco víš, napiš prosím na {{ 'honza@junior.guru'|email_link }}.
-  Umíš s GitHubem?
-  [Pošli Pull Request]({{ course_provider.edit_url }})!
+  Umíš s GitHubem? [Pošli Pull Request]({{ course_provider.edit_url }})!
 {% endcall %}
+{% endif %}
 
 ## Recenze
 

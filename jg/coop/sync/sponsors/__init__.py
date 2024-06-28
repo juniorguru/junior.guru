@@ -7,13 +7,14 @@ from typing import Annotated, Iterable, Literal, TypedDict
 import click
 import yaml
 from annotated_types import Len
-from pydantic import BaseModel, HttpUrl
+from pydantic import HttpUrl
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
 from jg.coop.lib.coupons import parse_coupon
 from jg.coop.lib.images import PostersCache, render_image_file
 from jg.coop.lib.memberful import MemberfulAPI
+from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
 from jg.coop.models.sponsor import PastSponsor, Sponsor, SponsorTier
 
@@ -49,14 +50,14 @@ class PlanEntity(TypedDict):
     additionalMemberPriceCents: int | None
 
 
-class TierConfig(BaseModel):
+class TierConfig(YAMLConfig):
     slug: str
     name: str
     plans: Annotated[list[HttpUrl], Len(min_length=1)]
     max_sponsors: int | None = None
 
 
-class SponsorConfig(BaseModel):
+class SponsorConfig(YAMLConfig):
     name: str
     slug: str
     url: HttpUrl
@@ -65,7 +66,7 @@ class SponsorConfig(BaseModel):
     note: str | None = None
 
 
-class SponsorsConfig(BaseModel):
+class SponsorsConfig(YAMLConfig):
     tiers: list[TierConfig]
     registry: list[SponsorConfig]
 

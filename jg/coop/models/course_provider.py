@@ -16,13 +16,11 @@ class CourseProvider(BaseModel):
     page_title = CharField()
     page_description = CharField()
     page_lead = CharField()
-    page_pageviews = IntegerField(null=True)
+    page_monthly_pageviews = IntegerField(null=True)
     sponsor = ForeignKeyField(
         Sponsor, backref="_course_provider", null=True, unique=True
     )
-
-    # nemít description, ale schválně USP, aby bylo jasné, co je účelem popisku
-    # https://en.wikipedia.org/wiki/Unique_selling_proposition
+    usp_description = TextField(null=True)  # unique selling proposition
 
     @property
     def page_url(self) -> str:

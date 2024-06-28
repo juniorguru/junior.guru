@@ -1,12 +1,15 @@
+from datetime import date, timedelta
 from functools import wraps
 from pathlib import Path
 from typing import Callable
 
 import requests
-from strictyaml import Int, Map, Optional, Seq, Str, Url, load
+import yaml
+from pydantic import HttpUrl
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
+from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.sponsor import Sponsor
@@ -14,19 +17,18 @@ from jg.coop.models.sponsor import Sponsor
 
 YAML_DIR_PATH = Path("jg/coop/data/course_providers")
 
-YAML_SCHEMA = Map(
-    {
-        "name": Str(),
-        "url": Url(),
-        Optional("questions"): Seq(Str()),
-        Optional("cz_business_id"): Int(),
-    }
-)
-
 STRING_LENGTH_SEO_LIMIT = 150
 
 
 logger = loggers.from_path(__file__)
+
+
+class CourseProviderConfig(YAMLConfig):
+    name: str
+    url: HttpUrl
+    usp_description: str | None = None
+    questions: list[str] | None = None
+    cz_business_id: int | None = None
 
 
 @cli.sync_command(dependencies=["sponsors"])
@@ -37,29 +39,37 @@ def main():
 
     for yaml_path in YAML_DIR_PATH.glob("*.yml"):
         logger.info(f"Reading {yaml_path.name}")
-        yaml_record = load(yaml_path.read_text(), YAML_SCHEMA)
-        record = yaml_record.data
-
-        record["slug"] = yaml_path.stem
-        record["edit_url"] = (
-            "https://github.com/juniorguru/junior.guru/"
-            f"blob/main/jg/coop/data/course_providers/{record['slug']}.yml"
-        )
-        record["page_title"] = compile_page_title(record["name"])
-        record["page_description"] = compile_page_description(
-            record["name"], record.get("questions")
-        )
-        record["page_lead"] = compile_page_lead(record["name"], record.get("questions"))
+        yaml_data = yaml.safe_load(yaml_path.read_text())
+        config = CourseProviderConfig(**yaml_data)
+        slug = yaml_path.stem
         try:
-            record["sponsor"] = Sponsor.get_by_slug(record["slug"])
+            sponsor = Sponsor.get_by_slug(slug)
         except Sponsor.DoesNotExist:
-            logger.debug(f"Course provider {record['slug']!r} is not a sponsor")
+            logger.debug(f"Course provider {slug!r} is not a sponsor")
+            sponsor = None
 
-        CourseProvider.create(**record)
-        logger.info(f'Loaded {yaml_path.name} as {record["name"]!r}')
+        CourseProvider.create(
+            slug=slug,
+            edit_url=(
+                "https://github.com/juniorguru/junior.guru/"
+                f"blob/main/jg/coop/data/course_providers/{slug}.yml"
+            ),
+            page_title=compile_page_title(config.name),
+            page_description=compile_page_description(config.name, config.questions),
+            page_lead=compile_page_lead(config.name, config.questions),
+            sponsor=sponsor,
+            **config.model_dump(),
+        )
+        logger.info(f"Loaded {yaml_path.name} as {config.name!r}")
 
     logger.info("Fetching analytics")
-    params = dict(version=5, fields="pageviews,pages", info="false", page="/courses/*")
+    params = dict(
+        version=5,
+        fields="pageviews,pages",
+        info="false",
+        page="/courses/*",
+        start=str(date.today() - timedelta(days=365)),
+    )
     response = requests.get(
         "https://simpleanalytics.com/junior.guru.json", params=params
     )
@@ -69,8 +79,10 @@ def main():
         slug = page["value"].replace("/courses/", "")
         try:
             course_provider = CourseProvider.get_by_slug(slug)
-            course_provider.page_pageviews = page["pageviews"]
+            monthly_pageviews = int(page["pageviews"] / 12)
+            course_provider.page_monthly_pageviews = monthly_pageviews
             course_provider.save()
+            logger.info(f"Saved {monthly_pageviews} pageviews of {slug!r}")
         except CourseProvider.DoesNotExist:
             logger.warning(f"Course provider {slug!r} not found in the database")
 

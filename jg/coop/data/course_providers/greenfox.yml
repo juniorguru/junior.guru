@@ -1,20 +1,17 @@
 name: Green Fox Academy
 url: https://www.greenfoxacademy.cz/
 cz_business_id: 7513666
-# ---
-# title: Zkušenosti s Green Fox Academy
-# topic_name: greenfox
-# topic_link_text: Green Fox Academy
-# description: Hledáš někoho, kdo má zkušenosti s Green Fox Academy? Má smysl hlásit se na jejich kurzy? Vyplatí se ti učit se programování na kurzu typu bootcamp? Když neprojdeš jejich přijímacím řízením s kognitivním testem a psycholožkou, znamená to, že se nehodíš do IT? Jak funguje záruka pracovního umístění?
-# ---
-# {% from 'macros_topic.html' import intro, mentions with context %}
+usp_description: |
+  Green Fox Academy **už neexistuje**. V tomto katalogu je jen pro úplnost, kdyby je někdo ještě hledal.
+  Byl to _bootcamp_, tedy velmi intenzivní kurz programování, který se snažil připravit účastníky na práci v IT v řádu měsíců.
+  Dokonce garantovali i první pracovní příležitost.
+  Víc o jejich fungování si můžeš pustit ve [14. epizodě Junior Guru podcastu](https://junior.guru/podcast/14/).
 
-# {{ intro('Recenze na Green Fox Academy', page.meta.description) }}
+  Firma byla založena v Maďarsku, v Česku působila od roku 2018.
+  Na rozjíždění pobočky se podílela Dita Formánková, spoluzakladatelka [Czechitas](https://junior.guru/courses/czechitas/).
+  Časem se z Green Fox Academy stal etablovaný a nepřehlédnutelný hráč na trhu s IT kurzy, především díky silnému marketingu.
 
-# {{ mentions(topic, 'Green Foxu') }}
-
-# <p class="button-compartment">
-#   <a href="{{ pages|docs_url('club.md')|url }}" class="button">
-#     Přidej se&nbsp;k&nbsp;nám
-#   </a>
-# </p>
+  Během roku 2023 se na trhu zbrzdil zájem o juniory a firma se dostala do potíží.
+  Investoři si mohli vybrat, zda chtějí změnit způsob jejího fungování, nebo ji zavřít.
+  [Rozhodli se pro to druhé](https://www.idnes.cz/ekonomika/domaci/green-fox-academy-programatori-it-rekvalifikacni-kurz.A231221_112205_ekonomika_alis), a to dokonce uprostřed rozjetých kurzů.
+  Studenty z těchto kurzů přebral CodeCool, který v Česku a na Slovensku funguje pod značkou [SDA](https://junior.guru/courses/sdacademy/).
