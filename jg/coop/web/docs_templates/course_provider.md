@@ -46,7 +46,7 @@ Umíš s GitHubem? [Pošli Pull Request]({{ course_provider.edit_url }})!
 
 Nějaké recenze najdeš na místním Discordu.
 {% if topic.mentions_count > 5 -%}
-  Vyloženě o {{ course_provider.name }} tam je už **{{ topic.mentions_count|thousands }} zmínek**.
+  Vyloženě o {{ course_provider.name }} tam je **{{ topic.mentions_count|thousands }} zmínek**.
 {%- endif %}
 Dojmy absolventů ti mohou pomoci poodhalit celkovou kvalitu, ale čti je s rezervou.
 Nevíš, s jakými očekáváními si kurz vybrali.
