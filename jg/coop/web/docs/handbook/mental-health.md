@@ -6,7 +6,7 @@ description: Cesta do IT může být náročná životní změna. Vysoké náro
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import guarantor, lead, link_card, video_card with context %}
+{% from 'macros.html' import guarantor, lead, link_card, video_card, blockquote with context %}
 
 # Psychika na cestě do IT
 
@@ -26,8 +26,6 @@ První aspekt, který pečlivě promysli, je **zdraví**. Pokud se necítíš dl
 
 Druhým aspektem jsou **peníze**. Kurzy něco stojí a hledání práce se může oproti původním odhadům docela protáhnout. Sledovat ztenčující se finanční rezervu a stále nemít nabídku práce je extrémně stresující. Možná si aktuálně potřebuješ spíš vytvořit finanční polštář a poté se o změnu pokusit s čistou hlavou.
 
-<!-- napsal jsem Katce mail, jestli by byla OK s takovým citátem v příručce -->
-
 {% call blockquote(
   'Chci být k dispozici dceři, než trochu doroste a zvykne si ve školce. Takže jsem byla ráda, když jsem dostala příležitost pracovat u nás ve městě na zámku. Budu mít jistý příjem, stabilitu a čas na postupné vzdělávání. Najít si práci v IT mám pořád v plánu.'
 ) %}
@@ -36,7 +34,7 @@ Druhým aspektem jsou **peníze**. Kurzy něco stojí a hledání práce se mů�
 
 Pak je tady **čas**. Kolik času můžeš věnovat učení a zároveň nevyškrtat ze svého diáře všechen odpočinek? Možná je nejdříve potřeba zamyslet se, jaké povinnosti a aktivity můžeš zrušit, zkrátit si úvazek, anebo i počkat na vhodnější životní období.
 
-A nakonec, máš dostatečnou **podporu okolí**? Může být velmi náročné potýkat se s vlastními obavami, zároveň se nemít o koho opřít, a nad to ještě rozhánět pochyby své rodiny a přátel. Možná si chceš nejprve najít nějaké spojence. Co třeba v [klubu na junior.guru](../club.md)?
+A nakonec, máš dostatečnou **podporu okolí**? Může být velmi náročné potýkat se s vlastními obavami, zároveň se nemít o koho opřít, a nad to ještě rozhánět pochyby své rodiny a přátel. Možná si chceš nejprve najít nějaké spojence. Co třeba v [klubu na junior.guru](/club.md)?
 
 ## Duševní hygiena pro juniory
 
@@ -52,13 +50,13 @@ Vybav se pro začátek 5 zásadami, díky kterým můžeš svou cestu do IT zvl�
 
 ## Impostor syndrom
 
-Znáš ten pocit, když dosáhneš úspěchu, ale místo radosti ti hlavou víří pochybnosti a obavy, že tvůj úspěch je spíše výsledkem náhody než tvého skutečného talentu?
+Znáš ten pocit, když **dosáhneš úspěchu, ale místo radosti ti hlavou víří pochybnosti a obavy**, že tvůj úspěch je spíše výsledkem náhody než tvého skutečného talentu?
 
-Možná zažíváš [syndrom podvodníka](https://cs.wikipedia.org/wiki/Syndrom_podvodn%C3%ADka), anglicky _impostor syndrom_. Definují ho pocity vlastní neschopnosti, kdy úspěch vnímáš jako nezasloužený. Je doprovázený strachem z toho, že jednoho dne ostatní prohlédnou, že ve toho skutečnosti toho tolik neumíš. Že svoje znalosti jen předstíráš.
+Možná zažíváš [syndrom podvodníka](https://cs.wikipedia.org/wiki/Syndrom_podvodn%C3%ADka), anglicky _impostor syndrom_. Definují ho pocity vlastní neschopnosti, kdy úspěch vnímáš jako nezasloužený. Je doprovázený **strachem z toho, že jednoho dne ostatní prohlédnou, že ve toho skutečnosti toho tolik neumíš**. Že svoje znalosti jen předstíráš.
 
 Možná se to nezdá, ale impostor syndrom je poměrně častý. Co s tím? Začni si nadměrných obav všímat, ověřuj si pravidělně svoje vidění s okolím (a ber vážně to, co říkají), anebo zkus psychoterapii.
 
-<!-- tady bych napsal, že může pomoct zapisovat si úspěchy a po čase si to pročíst a uvědomit si, jakou cestu člověk už ušel? -->
+Docela dobře funguje **deníček, kam si zapisuješ svou cestu**. Pomůže ti ohlédnout se a uvědomit si, jak velký kus cesty už máš za sebou. Ve [zdejším klubu](/club.md) si lidi přesně takové deníčky píšou.
 
 <div class="link-cards">
   {{ link_card(
@@ -77,6 +75,22 @@ Možná se to nezdá, ale impostor syndrom je poměrně častý. Co s tím? Zač
     'Většinu jobů jsem neuměl udělat',
     'https://www.youtube.com/watch?v=S3NKRswt1d0',
     'Yablko o tom, proč je OK ze začátku úkolu vůbec nevědět, jak začít.',
+  ) }}
+</div>
+
+## Sokratovo „vím, že nic nevím“
+
+Jako většině juniorů se ti nejspíš nevyhne onen opojný stav, kdy do sebe všechno jakoby zapadne. Proměnné, cykly, podmínky i funkce už nejsou žádnou výzvou a od teď už to bude jen lehčí!
+
+Jak bolestné je zjistit, že **za horizontem se tyčí další hory a velehory**, které je potřeba zdolat. Že šíře poznání a dovedností v IT se rozpíná jako vesmír a nikde nemá hranice.
+
+Nenech se tím zviklat! Vědět, že víš fakt málo, je **známkou toho, že už něco umíš**, a je to zcela normální.
+
+<div class="link-cards">
+  {{ link_card(
+    'Co je Dunning-Kruger efekt?',
+    'https://www.youtube.com/watch?v=H01nrHnqUfI',
+    'Vědět, že nic nevíte, je lepší, než si myslet, že víte všechno.',
   ) }}
 </div>
 

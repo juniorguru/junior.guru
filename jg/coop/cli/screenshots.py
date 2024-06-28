@@ -115,6 +115,11 @@ HIDDEN_ELEMENTS = [
     "#axeptio_overlay",  # welcometothejungle.com
     '[class*="Modal_modalBackground__"]',  # make.com
     ".hsbeacon-chat__button",  # fakturoid.cz
+    ".n-ads-branding-spacer",  # heroine.cz
+    ".n-paywall-notification",  # heroine.cz
+    "#didomi-notice",  # heroine.cz
+    ".cm-wrapper",  #
+    '[id*="CybotCookiebotDialog"]',  # shoptet.cz
 ]
 
 BLOCKED_ROUTES = [
