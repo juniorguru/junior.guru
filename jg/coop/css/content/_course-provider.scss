@@ -1,0 +1,21 @@
+.course-provider-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.course-provider-logo {
+  @include media-breakpoint-up(sm) {
+    $w: calc((100% - #{$spacer}) / 2);
+    width: $w;
+    min-width: $w;
+    max-width: $w;
+  }
+
+  @include media-breakpoint-up(md) {
+    $w: calc((100% - (2 * #{$spacer})) / 3);
+    width: $w;
+    min-width: $w;
+    max-width: $w;
+  }
+}

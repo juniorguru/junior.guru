@@ -1,4 +1,4 @@
-{% from 'macros.html' import link_card, note, lead, img with context %}
+{% from 'macros.html' import link_card, note, lead, img, figure with context %}
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
@@ -21,7 +21,10 @@
 {% endcall %}
 
 {% if course_provider.sponsor %}
+<div class="course-provider-header">
   {{ link_card(course_provider.name, course_provider.url, class='highlighted') }}
+  {{ figure(course_provider.sponsor.logo_path, "logo " + course_provider.name, 200, 100, lazy=False, class="course-provider-logo") }}
+</div>
 {% else %}
   {{ link_card(course_provider.name, course_provider.url, nofollow=True) }}
 {% endif %}
@@ -84,7 +87,7 @@ Provozovatel {{ course_provider.name }} tam nabízí tyto kurzy:
 {% if course_provider.sponsor %}
 ## Sponzorství junior.guru
 
-{{ course_provider.name }} finančně podporuje junior.guru a díky tomu tady má zvýraznění.
+{{ course_provider.name }} sponzoruje junior.guru a díky tomu tady má zvýraznění.
 Neznamená to, že jsou nejlepší, že je kurz nějak ověřený, nebo že je junior.guru doporučuje.
 {% else %}
 ## Vztah s junior.guru

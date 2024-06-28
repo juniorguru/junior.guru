@@ -10,7 +10,7 @@ title: Katalog kurzů programování
 {% call lead() %}
   Seznam všech míst, kde se můžeš učit programovat.
   Umístění na seznam neznamená, že jde o kurzy dobré, ověřené, nebo že je junior.guru doporučuje.
-  Ty, které zaplatily za zvýraznění, jsou v přehledu první.
+  Ty, které sponzorují provoz junior.guru, jsou v přehledu první.
   Neznamená to, že jsou nejlepší.
   Jinak je seznam abecedně.
 {% endcall %}
