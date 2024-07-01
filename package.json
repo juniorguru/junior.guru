@@ -15,7 +15,7 @@
   "devDependencies": {
     "bootstrap": "5.3.3",
     "broken-link-checker-local": "0.2.1",
-    "esbuild": "0.21.5",
+    "esbuild": "0.22.0",
     "esbuild-sass-plugin": "3.3.1",
     "hyphen": "1.10.4",
     "prettier": "3.3.2",
