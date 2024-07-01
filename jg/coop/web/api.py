@@ -91,7 +91,8 @@ def build_podcast_xml(api_dir, config):
         generator="JuniorGuruBot (+https://junior.guru)",
         image="https://junior.guru/static/podcast-v1.png",
         fundings=[
-            Funding("Přidej se do klubu junior.guru", "https://junior.guru/club/")
+            Funding("Přidej se do klubu junior.guru", "https://junior.guru/club/"),
+            Funding("Přispěj junior.guru", "https://junior.guru/love/"),
         ],
         explicit=False,
     )
