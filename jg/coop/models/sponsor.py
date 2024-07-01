@@ -48,6 +48,10 @@ class SponsorTier(BaseModel):
         return self._list_sponsors.order_by(Sponsor.name)
 
     @property
+    def is_barter(self) -> bool:
+        return self.priority == 0
+
+    @property
     def is_sold_out(self) -> bool:
         return (
             self.max_sponsors is not None
@@ -71,6 +75,7 @@ class Sponsor(BaseModel):
     logo_path = CharField()
     poster_path = CharField()
     role_id = IntegerField(null=True)
+    listed = BooleanField(default=True)
 
     @classmethod
     def get_by_slug(cls, slug: str) -> Self:
@@ -81,6 +86,7 @@ class Sponsor(BaseModel):
         return (
             cls.select()
             .join(SponsorTier)
+            .where(cls.listed == True)  # noqa: E712
             .order_by(SponsorTier.priority.desc(), Sponsor.name)
         )
 
@@ -90,8 +96,11 @@ class Sponsor(BaseModel):
             cls.select()
             .join(SponsorTier)
             .where(
-                SponsorTier.priority
-                == SponsorTier.select(fn.max(SponsorTier.priority)).scalar()
+                cls.listed == True,  # noqa: E712
+                (
+                    SponsorTier.priority
+                    == SponsorTier.select(fn.max(SponsorTier.priority)).scalar()
+                ),
             )
             .order_by(Sponsor.name)
         )

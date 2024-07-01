@@ -132,7 +132,9 @@ description: Komunita pro začátečníky v programování, průvodce programov�
   {%- endcall %}
   <ul class="logos standout">
     {% for sponsor in sponsors %}
-      {{ logo(sponsor.name, sponsor.logo_path, sponsor.url) }}
+      {% if not sponsor.tier.is_barter %}
+        {{ logo(sponsor.name, sponsor.logo_path, sponsor.url) }}
+      {% endif %}
     {% endfor %}
   </ul>
   <ul class="sponsor-avatars standout-bottom">

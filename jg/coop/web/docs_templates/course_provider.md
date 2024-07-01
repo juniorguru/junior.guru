@@ -84,7 +84,17 @@ Provozovatel {{ course_provider.name }} tam nabízí tyto kurzy:
 {{ course_provider.name }} tam žádné kurzy nenabízí.
 {% endif %}
 
-{% if course_provider.sponsor %}
+{% if course_provider.sponsor and course_provider.sponsor.tier.is_barter %}
+## Spolupráce s junior.guru
+
+{{ course_provider.name }} spolupracuje s junior.guru a díky tomu tady má zvýraznění.
+{%- if course_provider.sponsor.note %}
+Vztah s junior.guru je v interních záznamech popsán následovně:
+
+„{{ course_provider.sponsor.note }}“
+{% endif %}
+Není v možnostech junior.guru ověřovat kvalitu kurzů, ale takováto spolupráce se asi dá brát jako známka toho, že jde o něco důvěryhodného.
+{% elif course_provider.sponsor %}
 ## Sponzorství junior.guru
 
 {{ course_provider.name }} sponzoruje junior.guru a díky tomu tady má zvýraznění.

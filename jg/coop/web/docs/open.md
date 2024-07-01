@@ -296,13 +296,15 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
 
 ## Sponzoři
 
-Provoz junior.guru aktuálně podporuje **{{ sponsors|length + sponsors_github|length }} sponzorů**.
+Provoz junior.guru aktuálně podporuje **{{ sponsors|length + sponsors_github|length }} sponzorů a partnerů**.
 Z nich {{ sponsors_github|length }} využívá [GitHub Sponsors](https://github.com/sponsors/honzajavorek/).
 
 {% for tier, sponsors in sponsors_by_tier %}
-### {{ tier.name }}<small>{%- for _ in range(tier.priority + 1) -%}
+### {{ tier.name }}<small>{%- for _ in range(tier.priority) -%}
   &nbsp;{{- 'star'|icon -}}
-{%- endfor -%}</small>
+{%- endfor -%}{% if tier.priority == 0 -%}
+  &nbsp;{{- 'balloon'|icon -}}
+{%- endif %}</small>
 
 <div class="table-responsive"><table class="table align-middle">
   {% for sponsor in sponsors %}
@@ -317,16 +319,18 @@ Z nich {{ sponsors_github|length }} využívá [GitHub Sponsors](https://github.
         {{ sponsor.members_count }}<br>
         <small>členů</small>
       </td>
-      <td style="width: 5rem">
-        <span {% if sponsor.days_until_renew() < 30 %}
-        class="problem-very-soon"
-      {% elif sponsor.days_until_renew() < 60 %}
-        class="problem-soon"
-      {%- endif %}>
-          {{ sponsor.days_until_renew() }} dní<br>
-          <small>zbývá</small>
-        </span>
-      </td>
+      {% if tier.priority != 0 %}
+        <td style="width: 5rem">
+          <span {% if sponsor.days_until_renew() < 30 %}
+          class="problem-very-soon"
+        {% elif sponsor.days_until_renew() < 60 %}
+          class="problem-soon"
+        {%- endif %}>
+            {{ sponsor.days_until_renew() }} dní<br>
+            <small>zbývá</small>
+          </span>
+        </td>
+      {% endif %}
       <td style="width: 200px">
         {{ img('static/' + sponsor.logo_path, sponsor.name, 130, 60) }}
       </td>

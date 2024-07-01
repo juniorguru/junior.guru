@@ -114,19 +114,6 @@ Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý
     {{ logo(sponsor.name, sponsor.logo_path, sponsor.url) }}
   {% endfor %}
 </ul>
-<ul class="logos standout-top">
-  {{ logo('Aj ty v IT', 'logos/ajtyvit.svg', 'https://ajtyvit.sk/') }}
-  {{ logo('Česko.Digital', 'logos/ceskodigital.svg', 'https://cesko.digital/') }}
-  {{ logo('Czechitas', 'logos/czechitas.svg', 'https://www.czechitas.cz/') }}
-  {{ logo('DigiKoalice', 'logos/digikoalice.svg', 'https://digikoalice.cz/') }}
-  {{ logo('Frontendisti', 'logos/frontendisti.svg', 'https://frontendisti.cz/') }}
-  {{ logo('#HolkyzMarketingu', 'logos/holkyzmarketingu.svg', 'https://www.holkyzmarketingu.cz/') }}
-  {{ logo('PyLadies', 'logos/pyladies.svg', 'https://pyladies.cz/') }}
-  {{ logo('Pyvec', 'logos/pyvec.svg', 'https://pyvec.org/') }}
-  {{ logo('ReactGirls', 'logos/reactgirls.svg', 'https://reactgirls.com/') }}
-  {{ logo('Týden pro Digitální Česko', 'logos/tdc.svg', 'https://www.budoucnostjedigitalni.cz') }}
-  {{ logo('yablko', 'logos/yablko.svg', 'http://robweb.sk/') }}
-</ul>
 </section>
 
 

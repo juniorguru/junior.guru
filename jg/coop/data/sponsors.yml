@@ -2,8 +2,9 @@ tiers:
   - slug: bartering
     name: Spolupracujeme
     plans:
-      - https://juniorguru.memberful.com/admin/plans/111020
-      - https://juniorguru.memberful.com/admin/plans/111021
+      - https://juniorguru.memberful.com/admin/plans/111610
+      - https://juniorguru.memberful.com/admin/plans/111020  # Dokážeš programovat
+      - https://juniorguru.memberful.com/admin/plans/111021  # CoreSkill
 
   - slug: supporting
     name: Sponzorujeme
@@ -24,11 +25,110 @@ tiers:
 registry:
   # CURRENT SPONSORS
 
-  # TODO Migrate community partners to barter sponsors.
   # TODO Barters:
-  # - CDN77.com gives me CDN for podcast, but I don't use it (yet).
-  # - Merk.cz gives me API for companies, but I don't use it (yet).
-  # - 'Popitchi mentoring' gives me landing page, but it would make more sense to put her community there as a partner.
+  # - CDN77.com (Oct 21) gives me CDN for podcast, but I don't use it (yet).
+  # - Merk.cz (Jul 24) gives me API for companies, but I don't use it (yet).
+  # - 'Popitchi mentoring' (Feb 24) gives me landing page, but it would make more sense to put her community there as a partner.
+
+  - name: Česko.Digital
+    slug: ceskodigital
+    url: https://www.cesko.digital/
+    tier: bartering
+    periods:
+      - [2019-07, null]
+    note: |
+      Spolupráce mezi komunitami. Snaha zapojit juniory do dobrovolných aktivit podporující digitalizaci státu a neziskovek.
+
+  - name: DigiKoalice
+    slug: digikoalice
+    url: https://digikoalice.cz/
+    tier: bartering
+    periods:
+      - [2021-11, null]
+    note: |
+      Projekt junior.guru je členem DigiKoalice, české národní koalice pro digitální dovednosti a pracovní místa.
+
+  - name: Týden pro Digitální Česko
+    slug: tdc
+    url: https://budoucnostjedigitalni.gov.cz/
+    tier: bartering
+    periods:
+      - [2023-06, null]
+    note: |
+      Projekt junior.guru je každoročním partnerem Týdne pro Digitální Česko, celostátní vzdělávací akce v oblasti digitalizace.
+
+  - name: ReactGirls
+    slug: reactgirls
+    url: https://reactgirls.com/
+    tier: bartering
+    periods:
+      - [2021-11, null]
+    note: |
+      Spolupráce mezi komunitami. Mohou v klubu propagovat své akce apod.
+
+  - name: Pyvec
+    slug: pyvec
+    url: https://pyvec.org/
+    tier: bartering
+    periods:
+      - [2019-07, null]
+    note: |
+      Spolupráce mezi komunitami. Python komunita může v klubu propagovat své akce apod. Provozovatel junior.guru je nejen členem, ale dokonce ve vedení Pyvce. Celé junior.guru kdysi vzniklo jako výsledek dobrovolnictví pro Python komunitu.
+
+  - name: Django Girls
+    slug: djangogirls
+    url: https://djangogirls.org/
+    tier: bartering
+    periods:
+      - [2019-07, null]
+    note: |
+      Mohou v klubu propagovat své akce. Django Girls typicky na českém území organizují dobrovolníci podporovaní neziskovkou Pyvec. Provozovatel junior.guru je nejen členem, ale dokonce ve vedení Pyvce. Celé junior.guru kdysi vzniklo jako výsledek dobrovolnictví pro Python komunitu, které zahrnovalo i organizaci nebo koučování na Django Girls workshopech.
+    listed: false
+
+  - name: PyLadies
+    slug: pyladies
+    url: https://pyladies.cz/
+    tier: bartering
+    periods:
+      - [2019-07, null]
+    note: |
+      Spolupráce mezi komunitami. Mohou v klubu propagovat své akce apod. Celé junior.guru kdysi vzniklo v rámci dobrovolnictví pro PyLadies a na základě podnětů z PyLadies.
+
+  - name: Aj Ty v IT
+    slug: ajtyvit
+    url: https://ajtyvit.sk/
+    tier: bartering
+    periods:
+      - [2022-05, null]
+    note: |
+      Spolupráce mezi komunitami. Mohou v klubu propagovat své akce apod. Až bude junior.guru umět SK portály, mají slíbený pravidelný export z databáze pracovních inzerátů.
+
+  - name: yablko
+    slug: robweb
+    url: http://robweb.sk/
+    tier: bartering
+    periods:
+      - [2020-09, null]
+    note: |
+      Spolupráce mezi spřízněnými projekty. Videa s yablkovými moudry jsou v příručce, yablko chválí klub kudy chodí.
+
+  - name: Frontendisti
+    slug: frontendisti
+    url: https://frontendisti.cz/
+    tier: bartering
+    periods:
+      - [2021-02, null]
+    note: |
+      Spolupráce mezi komunitami. Mohou v klubu propagovat své akce apod.
+
+  - name: Czechitas
+    slug: czechitas
+    url: https://www.czechitas.cz/
+    tier: bartering
+    periods:
+      - [2021-02, null]
+    note: |
+      Spolupráce mezi komunitami. Mohou v klubu propagovat své akce apod. Dostávají pravidelný export z databáze pracovních inzerátů.
 
   - name: Fakturoid
     slug: fakturoid

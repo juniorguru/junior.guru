@@ -64,6 +64,7 @@ class SponsorConfig(YAMLConfig):
     tier: str | None = None
     periods: list[tuple[str, str | None]]
     note: str | None = None
+    listed: bool | None = True
 
 
 class SponsorsConfig(YAMLConfig):
@@ -164,10 +165,11 @@ def main(today: date, clear_posters: bool):
                 tier=tier,
                 start_on=start_on,
                 renews_on=renews_on,
-                note=sponsor.note,
+                note=sponsor.note.strip() if sponsor.note else None,
                 coupon=coupons_mapping.get(sponsor.slug),
                 logo_path=logo_path,
                 poster_path=poster_path,
+                listed=sponsor.listed,
             )
         else:
             logger.info(f"Past sponsor {sponsor.name} ({sponsor.slug})")
