@@ -29,6 +29,7 @@ class CourseProviderConfig(YAMLConfig):
     usp_description: str | None = None
     questions: list[str] | None = None
     cz_business_id: int | None = None
+    sk_business_id: int | None = None
 
 
 @cli.sync_command(dependencies=["sponsors"])

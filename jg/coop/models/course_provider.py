@@ -12,6 +12,7 @@ class CourseProvider(BaseModel):
     slug = CharField(unique=True)
     url = CharField()
     cz_business_id = IntegerField(null=True)
+    sk_business_id = IntegerField(null=True)
     edit_url = CharField()
     page_title = CharField()
     page_description = CharField()
