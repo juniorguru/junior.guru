@@ -206,11 +206,11 @@ Hodina sezení tě zpravidla vyjde na 1000-1200 Kč, ale mnozí poskytují **sle
   ) }}
 </div>
 
-### Když psychoterapie nestačí
+### Psychiatr
 
-Pokud ti potíže významně zasahují do života, nebo jsou hodně intenzivní a terapie nezabírá, je dobré **konzultovat tvůj stav s psychiatrem**, tedy lékařem. Nejspíš to doporučí i tvůj terapeut, obzvlášť pokud máš v rodině příbuzné s psychickými obtížemi.
+Adekvátně hloubce problému se může míra prožívaných obtíží jevit až neúnosně. Ve chvíli, kdy ti **základní nároky každodenního života připomínají výstup na Everest**, může být na místě konzultovat tvůj stav s psychiatrem, tedy lékařem. Říká se, že pro psychoterapii potřebuje být člověk alespoň trochu „v kondici“, aby měl energii posvítit si na příčiny svých problémů a započít tak proces úzdravy.
 
-Návštěva u psychiatra neznamená, že automaticky odejdeš s diagnózou a hromadou léků! Psychiatr tě vyslechne, proberete tvůj stav a pak může nabídnout předepsání léků, ale také nemusí. Ty navíc nemusí být nutné brát doživotně, **mohou ti pouze pomoci dočasně překlenout náročné životní období**. Až odezní, můžete se domluvit, že léky vysadíte.
+Psychiatr tě vyslechne, proberete tvůj stav, a pak ti nabídne pomoc. Může ti nabídnout **vyladění režimu** (např. spánku, každodenních rutin…), doporučit **doplňky stravy** podporující zlepšení tvého stavu, nebo předepsat **léky (tzv. psychofarmaka)** zaměřené na konkrétní obtíže. Cílem je překlenout náročné životní období (snížit úzkosti, zvýšit tvou životní energii…) a dostat tě do kondice pro psychoterapii. Pokud se vám to podaří s pomocí psychofarmak, typicky se časem můžete s lékařem domluvit, že léky zase vysadíte.
 
 <div class="link-cards">
   {{ link_card(
