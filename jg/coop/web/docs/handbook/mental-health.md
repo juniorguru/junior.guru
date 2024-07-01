@@ -15,7 +15,7 @@ template: main_handbook.html
 {% endcall %}
 
 {% call guarantor('Nela Slezáková', 'avatars-participants/nela-slezakova.jpg', url='https://www.nelaprovazi.cz/', standout=True) %}
-  Jak psycholožka, tak programátorka. Rozumí tomu, jak funguje lidská psychika a sama si zažila, co obnáší dostat se do IT po vlastní ose. Ve vlastní praxi pomáhá lidem v IT anebo do IT. S otázkami kolem duševního zdraví juniorům pomáhá i ve [zdejším klubu](/club.md).
+  Jak psycholožka, tak programátorka. Rozumí tomu, jak funguje lidská psychika a sama si zažila, co obnáší dostat se do IT po vlastní ose. Ve vlastní praxi pomáhá lidem v IT anebo do IT. S otázkami kolem duševního zdraví juniorům pomáhá i ve [zdejším klubu](../club.md).
 {% endcall %}
 
 ## Správné načasování
@@ -34,7 +34,7 @@ Druhým aspektem jsou **peníze**. Kurzy něco stojí a hledání práce se mů�
 
 Pak je tady **čas**. Kolik času můžeš věnovat učení a zároveň nevyškrtat ze svého diáře všechen odpočinek? Možná je nejdříve potřeba zamyslet se, jaké povinnosti a aktivity můžeš zrušit, zkrátit si úvazek, anebo i počkat na vhodnější životní období.
 
-A nakonec, máš dostatečnou **podporu okolí**? Může být velmi náročné potýkat se s vlastními obavami, zároveň se nemít o koho opřít, a nad to ještě rozhánět pochyby své rodiny a přátel. Možná si chceš nejprve najít nějaké spojence. Co třeba v [klubu na junior.guru](/club.md)?
+A nakonec, máš dostatečnou **podporu okolí**? Může být velmi náročné potýkat se s vlastními obavami, zároveň se nemít o koho opřít, a nad to ještě rozhánět pochyby své rodiny a přátel. Možná si chceš nejprve najít nějaké spojence. Co třeba v [klubu na junior.guru](../club.md)?
 
 ## Duševní hygiena pro juniory
 
@@ -45,7 +45,7 @@ Vybav se pro začátek 5 zásadami, díky kterým můžeš svou cestu do IT zvl�
   '40min',
   'https://www.youtube.com/watch?v=6G4TKGQICw0',
   'Pět zásad a ke každé z nich praktické tipy, díky kterým můžeš svou cestu do IT zvládnout udržitelně.',
-  note='Záznamy [klubových přednášek](/events.md) bývají dostupné jen pro členy, ale tento jsme zveřejnili, ať pomáhá všem.',
+  note='Záznamy [klubových přednášek](../events.md) bývají dostupné jen pro členy, ale tento jsme zveřejnili, ať pomáhá všem.',
 ) }}
 
 ## Impostor syndrom
@@ -56,7 +56,7 @@ Možná zažíváš [syndrom podvodníka](https://cs.wikipedia.org/wiki/Syndrom_
 
 Možná se to nezdá, ale impostor syndrom je poměrně častý. Co s tím? Začni si nadměrných obav všímat, ověřuj si pravidělně svoje vidění s okolím (a ber vážně to, co říkají), anebo zkus psychoterapii.
 
-Docela dobře funguje **deníček, kam si zapisuješ svou cestu**. Pomůže ti ohlédnout se a uvědomit si, jak velký kus cesty už máš za sebou. Ve [zdejším klubu](/club.md) si lidi přesně takové deníčky píšou.
+Docela dobře funguje **deníček, kam si zapisuješ svou cestu**. Pomůže ti ohlédnout se a uvědomit si, jak velký kus cesty už máš za sebou. Ve [zdejším klubu](../club.md) si lidi přesně takové deníčky píšou.
 
 <div class="link-cards">
   {{ link_card(

@@ -73,7 +73,7 @@ Pomohl mi ujasnit si, co chci. Naučila jsem se zorganizovat si práci a čas, a
 To se taky stávalo. A tak dlouho jsem se v tom šťourala, až jsem se „odsekla“. Miluji
 _aha_ a _yes_ momenty, když si něco uvědomím nebo se něco podaří. Takže metodou krok za krokem jsem procházela články, tutoriály, YouTube videa, simulátory, dokumentace a fóra… Prostě jsem se do toho ponořila, dokud jsem nepochopila, o co jde a neposunula se.
 
-Při každém větším záseku je ale vhodné si říct, zda má smysl se jím zabývat, nebo ho s klidem přejít. S tím jsem se setkala i v tom kurzu, kdy v prvních týdnech mohli účastníci odejít, pokud zjistili, že to není pro ně. A tuším, že i v [příručce na Junior Guru](/handbook/index.md) jsem četla, že nemáš mít výčitky, pokud se zasekneš a zjistíš, že tě programování vlastně ani tak moc nebaví.
+Při každém větším záseku je ale vhodné si říct, zda má smysl se jím zabývat, nebo ho s klidem přejít. S tím jsem se setkala i v tom kurzu, kdy v prvních týdnech mohli účastníci odejít, pokud zjistili, že to není pro ně. A tuším, že i v [příručce na Junior Guru](../handbook/index.md) jsem četla, že nemáš mít výčitky, pokud se zasekneš a zjistíš, že tě programování vlastně ani tak moc nebaví.
 
 **Co je podle tebe nejefektivnější cestou, jak se něco nového naučit?**
 
@@ -100,7 +100,7 @@ Byla jsem smířená s tím, že to „může bolet“. A někdy i bolelo. Únav
 
 **V jakém momentu ti do života přišlo Junior Guru a co se pro tebe změnilo příchodem do klubu?**
 
-Ke konci kurzu byl jeden blok věnovaný kariéře, kde lektor kromě praktických tipů k pohovoru zmínil i důležitost networkingu a členství jak na sociální síti LinkedIn, tak v různých komunitách. Představil nám i Junior Guru pro začínající programátory, a jak nám může pomoci. Do [klubu](/club.md) jsem přišla o pár měsíců později. Dodělávala jsem v té době projekt, který bych pak mohla představit na pohovoru, a potřebovala jsem nasávat další informace. Komunita mě pohltila natolik, že jsem z plánovaných tří měsíců na zkoušku členkou už přes dva roky.
+Ke konci kurzu byl jeden blok věnovaný kariéře, kde lektor kromě praktických tipů k pohovoru zmínil i důležitost networkingu a členství jak na sociální síti LinkedIn, tak v různých komunitách. Představil nám i Junior Guru pro začínající programátory, a jak nám může pomoci. Do [klubu](../club.md) jsem přišla o pár měsíců později. Dodělávala jsem v té době projekt, který bych pak mohla představit na pohovoru, a potřebovala jsem nasávat další informace. Komunita mě pohltila natolik, že jsem z plánovaných tří měsíců na zkoušku členkou už přes dva roky.
 
 **Kolik let ti trvalo než ses odhodlala začít hledat práci v IT?**
 

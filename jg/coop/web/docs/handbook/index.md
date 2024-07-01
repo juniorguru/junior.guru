@@ -18,14 +18,14 @@ template: main_handbook.html
   V téhle příručce se postupně hromadí veškerá moudrost, která na toto téma existuje.
 {% endcall %}
 
-Na základě reálných zkušeností mnohých začátečníků jsme v [klubu](/club.md) sestavili **osvědčenou cestu juniora**.
+Na základě reálných zkušeností mnohých začátečníků jsme v [klubu](../club.md) sestavili **osvědčenou cestu juniora**.
 Možná existují i jiné cesty, ale tato **úspěšně zafungovala pro spoustu různých lidí**, a proto ji lze obecně doporučit.
 Ne všechna témata se zatím povedlo pokrýt kapitolami v příručce, ale na klubovém Discordu se všemi pomáháme a diskutujeme je.
 
 Ujasni si, **co už umíš a co je tvým cílem.** Jednak ti to pomůže uvědomit si, co tě ještě čeká a co nesmíš vynechat, jednak zjistíš, které části příručky pro tebe budou nejpřínosnější.
 
 {% call note() %}
-  {{ 'lightbulb'|icon }} Příručka je živá stránka a kdykoliv tady může přibýt něco nového, takže je dobré se sem vracet. O změnách se můžeš dovědět prostřednictvím [klubu](/club.md) nebo [newsletteru](../news.jinja).
+  {{ 'lightbulb'|icon }} Příručka je živá stránka a kdykoliv tady může přibýt něco nového, takže je dobré se sem vracet. O změnách se můžeš dovědět prostřednictvím [klubu](../club.md) nebo [newsletteru](../news.jinja).
 {% endcall %}
 
 Celá cesta má zhruba {{ stages|length }} fází a připomíná Člověče, nezlob se.

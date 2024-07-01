@@ -41,7 +41,7 @@ Pozor, životopis není „sebechvála“, za kterou se máš stydět. V Česku 
 Pokud chceš v Česku nebo na Slovensku vystoupit z davu, nehledej okrasný font, ale **nauč se zdravě bavit o sobě**. Když dokážeš popsat svůj potenciál, úspěch, přínos, nebo pokud máš dokonce čísla, která můžeš do svého tvrzení dát, je to pecka.
 
 {% call note() %}
-  {{ 'lightbulb'|icon }} V [klubu](/club.md) probíráme sebevědomí a sebelásku celkem často. Dáváme si zpětnou vazbu a podporujeme se.
+  {{ 'lightbulb'|icon }} V [klubu](../club.md) probíráme sebevědomí a sebelásku celkem často. Dáváme si zpětnou vazbu a podporujeme se.
 {% endcall %}
 
 ## Posílej „papír“
@@ -71,7 +71,7 @@ Polotovar CV měj v obou jazycích a následuj jednoduché pravidlo: **Na inzer�
 Nech si ale CV někým aspoň jednou přečíst, ať **odchytáš největší hrubky**. Ruší při čtení a působí amatérsky. Je v pořádku jít v oblíbeném tričku, protože chceš působit autenticky. Nesmí ale mít díry.
 
 {% call note() %}
-  {{ 'lightbulb'|icon }} V [klubu](/club.md) ti rádi na CV mrkneme. Víc očí, méně hrubek!
+  {{ 'lightbulb'|icon }} V [klubu](../club.md) ti rádi na CV mrkneme. Víc očí, méně hrubek!
 {% endcall %}
 
 ## Obsah životopisu
@@ -79,7 +79,7 @@ Nech si ale CV někým aspoň jednou přečíst, ať **odchytáš největší hr
 Části CV seřaď **od nejpodstatnějších po méně důležité, od nejnovějších po nejstarší**. Co přesně je důležité, se liší pro různé obory, profese, zkušenosti a dokonce i jednotlivé pozice. Pro juniory, kteří zatím nemají pracovní zkušenosti v oboru, je velmi důležitý **souhrn a projekty**, v druhé řadě pak vzdělání.
 
 {% call podcast_card(podcast_episodes|selectattr('number', 'equalto', 1)|first) %}
-  Poslechni si [podcast junior.guru](/podcast.md), kde spolu Pavlína a Jirka mluví o tom, jak vyrobit skvělé juniorní CV. Probírají také nejčastější chyby, které při své prezentaci junioři dělají.
+  Poslechni si [podcast junior.guru](../podcast.md), kde spolu Pavlína a Jirka mluví o tom, jak vyrobit skvělé juniorní CV. Probírají také nejčastější chyby, které při své prezentaci junioři dělají.
 {% endcall %}
 
 Následující kapitoly jsou v pořadí, v jakém by se měly dané části na životopisu vyskytovat.
@@ -152,7 +152,7 @@ Nikdo neříká, že je jednoduché souhrn napsat, ale když se ti to povede, **
 Vizuálně ať je to **velkorysé** jako vstup do významné budovy. Kresbu monumentálního sloupořadí si odpusť, ale ať je souhrn první, hned za hlavičkou dokumentu. Dej mu celou šířku stránky a dopřej mu klidně větší písmo.
 
 {% call note() %}
-  {{ 'lightbulb'|icon }} V [klubu](/club.md) ti rádi dáme na souhrn zpětnou vazbu. Je tam jak Honza, autor tohoto návodu, tak i spousta lidí, kteří mají zkušenosti z obou stran pohovorů.
+  {{ 'lightbulb'|icon }} V [klubu](../club.md) ti rádi dáme na souhrn zpětnou vazbu. Je tam jak Honza, autor tohoto návodu, tak i spousta lidí, kteří mají zkušenosti z obou stran pohovorů.
 {% endcall %}
 
 ### 5. Dovednosti
@@ -218,7 +218,7 @@ Nikdo si nebude nic instalovat, takže **ukázka je zásadní**. Recruiteři kó
 Určitě do CV **vypíchni konkrétní projekty**, které chceš ukázat a u každého měj zvlášť odkazy na jejich repozitáře. Nespoléhej se na jeden odkaz na GitHub profil, do hloubky si jej bude procházet málokdo. Pokud si někdo při rozřazování kandidátů otevře repozitář na GitHubu, **proletí očima hlavně [README](git.md#readme)**. Ujisti se, že všechny tvé významné projekty ho mají.
 
 {% call note() %}
-  {{ 'lightbulb'|icon }} Pochlub se svými výrobky v [klubu](/club.md)! Rádi na ně mrkneme, pomůžeme ti vyladit si GitHub a vylepšit README tvých projektů.
+  {{ 'lightbulb'|icon }} Pochlub se svými výrobky v [klubu](../club.md)! Rádi na ně mrkneme, pomůžeme ti vyladit si GitHub a vylepšit README tvých projektů.
 {% endcall %}
 
 ### 7. Vzdělání

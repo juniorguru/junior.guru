@@ -35,7 +35,7 @@ Ideální je mít svůj vlastní počítač, nad kterým máš plnou kontrolu a 
 
 Říká se, že **navazování mezilidských vztahů** by mělo vyplňovat pětinu času, který trávíš učením (tzv. [model 70-20-10](https://en.wikipedia.org/wiki/70/20/10_Model_(Learning_and_Development))). Navíc budeš potřebovat **velké množství motivace**. Možná si čteš tento text a přijde ti, že jí máš vrchovatě, ale věř tomu, že už zítra jí bude méně a za týden jí bude polovina. Zvláště pokud neděláš prezenční kurz a chystáš se do toho jít jako samouk, nebudeš mít ani žádné termíny, ani lidi kolem sebe, díky kterým se u učení udržíš. Je snadné další lekci odložit, protože se ti to zrovna nehodí, potom ji odložit znova, a tak dále.
 
-Najdi si proto **studijní skupinu**. Ať už do toho půjdeš s kamarádkou nebo místním zájmovým kroužkem, v partě to prostě odsýpá lépe a máš mnohonásobně, opravdu mnohonásobně vyšší šanci na úspěch. Využít můžeš přímo i [zdejší online klub](/club.md).
+Najdi si proto **studijní skupinu**. Ať už do toho půjdeš s kamarádkou nebo místním zájmovým kroužkem, v partě to prostě odsýpá lépe a máš mnohonásobně, opravdu mnohonásobně vyšší šanci na úspěch. Využít můžeš přímo i [zdejší online klub](../club.md).
 
 ### Co je dobré umět předem    <span id="prerequisities"></span>
 
@@ -47,7 +47,7 @@ Budeš mít výhodu, pokud budeš [**rozumět alespoň psané angličtině**](en
 
 ### Kolik to bude stát    <span id="price"></span>
 
-Nemusí to stát **žádné peníze**. Ano, existují placené kurzy, placení mentoři, [placené komunity](/club.md), ale jde to i bez toho. Pokud máš počítač a internet, můžeš se naučit programovat bez jakýchkoliv dalších investic. Některé kurzy dávají své materiály zdarma k dispozici, na problémy můžeš najít řešení v diskuzích na internetu, učební kroužek si můžeš zorganizovat i mezi svými kamarády. Pokud ale nějaké peníze do svého učení investovat můžeš, **mohou tvou cestu usnadnit a urychlit**.
+Nemusí to stát **žádné peníze**. Ano, existují placené kurzy, placení mentoři, [placené komunity](../club.md), ale jde to i bez toho. Pokud máš počítač a internet, můžeš se naučit programovat bez jakýchkoliv dalších investic. Některé kurzy dávají své materiály zdarma k dispozici, na problémy můžeš najít řešení v diskuzích na internetu, učební kroužek si můžeš zorganizovat i mezi svými kamarády. Pokud ale nějaké peníze do svého učení investovat můžeš, **mohou tvou cestu usnadnit a urychlit**.
 
 ### Kolik času potřebuješ    <span id="time"></span>
 
@@ -72,7 +72,7 @@ Neočekávej, že se programování jednou naučíš a vystačíš si s tím. Ne
 
 ### Co nepotřebuješ    <span id="myths"></span>
 
-O programování [koluje řada mýtů](myths.md). Třeba že se o něj můžeš zajímat jen pokud jsi geniální na matematiku, že se to musí roky studovat na vysoké škole, že to není pro holky, že už je pro tebe pozdě začít. Jsou to pouze předsudky, nenech se jimi odradit! Raději si projdi [příběhy lidí, kteří se programovat naučili](/stories.md) a dnes jim to pomáhá při práci, nebo se tím začali přímo živit.
+O programování [koluje řada mýtů](myths.md). Třeba že se o něj můžeš zajímat jen pokud jsi geniální na matematiku, že se to musí roky studovat na vysoké škole, že to není pro holky, že už je pro tebe pozdě začít. Jsou to pouze předsudky, nenech se jimi odradit! Raději si projdi [příběhy lidí, kteří se programovat naučili](../stories.md) a dnes jim to pomáhá při práci, nebo se tím začali přímo živit.
 
 <small>Rady v této kapitole volně vychází i z [úvodní lekce týmového online kurzu Petra Viktorina](https://naucse.python.cz/2021/online-jaro/adm/intro/), se svolením autora. Díky!</small>
 
