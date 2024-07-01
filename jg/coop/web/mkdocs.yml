@@ -65,10 +65,9 @@ nav:
       - ... | flat
 
 validation:
-  nav:
-    absolute_links: ignore
-  links:
-    absolute_links: relative_to_docs
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
   anchors: warn
 
 markdown_extensions:
