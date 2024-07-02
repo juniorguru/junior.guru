@@ -1,0 +1,986 @@
+<html lang="cs" data-updated-at="2024-07-02T15:11:20.080771+02:00">
+  <head prefix="og: https://ogp.me/ns# website: https://ogp.me/ns/website#">
+    <meta charset="utf-8">
+    <link rel="canonical" href="https://junior.guru/handbook/">
+    <title>Cesta juniora</title>
+
+    
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="Accept-CH" content="DPR,Viewport-Width,Width,Save-Data">
+
+      <link rel="dns-prefetch" href="https://sa.junior.guru">
+      <link rel="dns-prefetch" href="https://res.cloudinary.com">
+      <link rel="preconnect" href="https://res.cloudinary.com">
+
+      <link rel="stylesheet" href="../static/css/index.css?hash=6c8a324d0d6acf7bba8139c3317690ad">
+      <link rel="preload" href="../static/assets/bootstrap-icons.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+      <script defer src="../static/js/index.js?hash=74a8ac0b58d61b1c5403a92a5f689813"></script>
+
+      <meta property="og:title" content="Cesta juniora">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://junior.guru/handbook/">
+      <meta property="og:locale" content="cs_CZ">
+
+      <link href="https://mastodonczech.cz/@honzajavorek" rel="me">
+
+      
+      <meta property="og:image" content="https://res.cloudinary.com/juniorguru/image/fetch/w_auto,dpr_auto,q_auto,f_auto/https://junior.guru/static/thumbnails/e0b5b4b940c139e1386f478381208ba8c7b01c70adbf01062b8e62d5040074ab.png">
+      <meta property="og:image:width" content="1200">
+      <meta property="og:image:height" content="630">
+      <meta name="twitter:card" content="photo">
+      <meta name="twitter:image" content="https://res.cloudinary.com/juniorguru/image/fetch/w_auto,dpr_auto,q_auto,f_auto/https://junior.guru/static/thumbnails/e0b5b4b940c139e1386f478381208ba8c7b01c70adbf01062b8e62d5040074ab.png">
+      
+
+      <meta name="description" content="Obsáhlá příručka pro všechny, kdo se chtějí naučit programovat a najít si práci v oboru.">
+    
+  </head>
+  
+<body>
+  
+  <header id="header" class="navbar navbar-light">
+    <nav class="navbar-container">
+      <a class="navbar-brand " href="../">
+        
+<img src="../static/logo.svg" alt="logo junior.guru" width="90" height="40">
+
+      </a>
+      <div class="navbar-buttons">
+        
+        <a href="../love/" class="love-button" title="Klikni!">
+          <i class="bi bi-heart-fill"></i>
+        </a>
+        
+        
+      </div>
+      
+      <ul class="nav nav-foldable">
+        
+        <li class="nav-item">
+          <a class="nav-link" href="../club/">
+            Klub
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="./">
+            Příručka
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="../courses/">
+            Kurzy
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="../jobs/">
+            Práce
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="../news/">
+            Novinky
+          </a>
+        </li>
+        
+      </ul>
+      
+    </nav>
+  </header>
+
+  
+<div class="logobar">
+  <div class="logobar-container">
+    <h3 class="logobar-heading"><span hidden>Sponzoři</span></h3>
+    <ul class="logobar-list">
+      
+        
+  <li class="logobar-item" title="Fakturoid">
+    
+    <a class="logobar-link" href="https://www.fakturoid.cz/" target="_blank" rel="noopener">
+    
+
+    
+<img src="../static/logos/fakturoid.svg" alt="Fakturoid" width="130" height="60" class="logobar-image">
+
+
+    
+    </a>
+    
+  </li>
+
+      
+        
+  <li class="logobar-item" title="Rector">
+    
+    <a class="logobar-link" href="https://getrector.com/" target="_blank" rel="noopener">
+    
+
+    
+<img src="../static/logos/rector.svg" alt="Rector" width="130" height="60" class="logobar-image">
+
+
+    
+    </a>
+    
+  </li>
+
+      
+        
+  <li class="logobar-item" title="Red Hat">
+    
+    <a class="logobar-link" href="https://www.redhat.com/en/jobs" target="_blank" rel="noopener">
+    
+
+    
+<img src="../static/logos/redhat.svg" alt="Red Hat" width="130" height="60" class="logobar-image">
+
+
+    
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </div>
+</div>
+
+<nav class="tocbar">
+  <div class="tocbar-container">
+    <a class="tocbar-item tocbar-toc-link" href="#toc">
+      <i class="bi bi-list"></i> Obsah
+    </a>
+    <span class="tocbar-item tocbar-current"></span>
+  </div>
+</nav>
+
+
+
+  <hr class="visually-hidden">
+
+  
+<div class="main main-sidebar">
+  <div class="content-container">
+    <main class="content document">
+      
+<h1 id="cesta-juniora">Ces­ta ju­ni­o­ra<a class="headerlink" href="#cesta-juniora" title="Odkaz na tuto sekci">#</a></h1>
+<div class="lead">
+    <p>Uva­žu­ješ o pro­gra­mo­vá­ní?
+  Pře­mýš­líš nad ka­ri­ér­ní změ­nou do IT, ale ne­víš jak na to?
+  Láká tě zjis­tit, jak au­to­ma­ti­zo­vat část své práce?
+  Stu­du­ješ in­for­ma­ti­ku a za­jí­má tě, co dál?
+  V té­hle pří­ruč­ce se po­stup­ně hro­madí veš­kerá moud­rost, která na toto téma exis­tu­je.</p>
+  </div>
+
+<p>Na zá­kladě re­ál­ných zku­še­ností mno­hých za­čá­teč­ní­ků jsme v <a href="../club/">klubu</a> se­sta­vi­li <strong>osvěd­če­nou ces­tu ju­ni­o­ra</strong>.
+Mož­ná exis­tu­jí i jiné ces­ty, ale tato <strong>úspěš­ně za­fun­go­va­la pro spous­tu růz­ných lidí</strong>, a pro­to ji lze obec­ně do­po­ru­čit.
+Ne všech­na té­mata se za­tím po­ved­lo po­krýt ka­pi­to­la­mi v pří­ruč­ce, ale na klu­bo­vém Dis­cor­du se všemi po­má­há­me a dis­ku­tu­je­me je.</p>
+<p>Ujas­ni si, <strong>co už umíš a co je tvým cí­lem.</strong> Jed­nak ti to po­může uvě­do­mit si, co tě ještě čeká a co ne­smíš vy­ne­chat, jed­nak zjis­tíš, kte­ré části pří­ruč­ky pro tebe bu­dou nej­pří­nos­něj­ší.</p>
+<div class="note" role="alert">
+  <p><i class="bi bi-lightbulb"></i> Pří­ruč­ka je živá strán­ka a kdy­ko­liv tady může při­být něco no­vé­ho, tak­že je dob­ré se sem vra­cet. O změ­nách se mů­žeš do­vě­dět pro­střed­nic­tvím <a href="../club/">klubu</a> nebo <a href="../news/">news­let­te­ru</a>.</p>
+</div>
+
+<p>Celá ces­ta má zhru­ba 9 fází a při­po­mí­ná Člo­vě­če, ne­zlob se.
+Na­ma­lo­va­né je to hezky jed­no za dru­hým, ale re­a­li­ta je za­mo­ta­něj­ší.
+Ne­málo lidí se ně­ko­li­krát vra­cí do do­meč­ku.
+Po­čí­tej s tím, že se ně­kde za­sek­neš, nebo že se ti za­mí­chá po­řadí.
+U kaž­dé fáze je v po­pisku na­zna­če­no, s ja­kými pro­blémy ti ju­ni­or.guru může po­mo­ci.</p>
+<div class="stage-cards">
+
+
+  <div class="stage-card">
+    <div class="stage-card-row">
+      <div class="stage-card-media">
+        <div class="stage-card-icon"><i class="bi bi-lightbulb"></i></div>
+      </div>
+      <div class="stage-card-body">
+        <h4 class="stage-card-title">Pře­mýš­lím</h4>
+        <p class="stage-card-description">
+          Ob­čas mě na­pad­ne, že by ne­mu­se­la být úpl­ná bl­bost učit se pro­gra­mo­vat.
+Po­tře­bu­ji víc in­for­ma­cí, ať vím, jestli do toho jít.
+Ne­vím, zda se na to ho­dím.
+
+        </p>
+        <p class="stage-card-pages">
+          <a href="motivation/">Proč pro­gra­mo­vat</a><a href="myths/">Mýty</a><a href="women/">Ženy v IT</a><a href="parents/">Ro­di­če v IT</a><a href="nocode/">Bez kódu</a>
+        </p>
+
+        <p class="stage-card-todo-pages">
+          Plá­no­va­né ka­pi­to­ly:
+          Data
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="stage-card">
+    <div class="stage-card-row">
+      <div class="stage-card-media">
+        <div class="stage-card-icon"><i class="bi bi-search-heart"></i></div>
+      </div>
+      <div class="stage-card-body">
+        <h4 class="stage-card-title">Zkou­ším</h4>
+        <p class="stage-card-description">
+          Zkou­ším všech­no mož­né.
+Ne­vím, čím za­čít.
+Ne­u­mím vy­brat směr.
+Za­čí­nám s tím, o čem si mys­lím, že to chci dě­lat.
+
+        </p>
+        <p class="stage-card-pages">
+          <a href="learn/">Zá­klady</a><a href="community/">Ko­mu­ni­ty</a>
+        </p>
+
+        <p class="stage-card-todo-pages">
+          Plá­no­va­né ka­pi­to­ly:
+          Co sle­do­vat
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="stage-card">
+    <div class="stage-card-row">
+      <div class="stage-card-media">
+        <div class="stage-card-icon"><i class="bi bi-book"></i></div>
+      </div>
+      <div class="stage-card-body">
+        <h4 class="stage-card-title">Učím se</h4>
+        <p class="stage-card-description">
+          Učím se to, co si mys­lím, že chci dě­lat.
+Sa­mo­stat­ně, ve ško­le, v kur­zu.
+Nejde mi to.
+Ne­u­mím vy­brat kurz, nebo ne­pl­ní moje oče­ká­vá­ní.
+Jedu je­den kurz za dru­hým, ale ne­vím jak dál.
+
+        </p>
+        <p class="stage-card-pages">
+          <a href="learn/">Zá­klady</a><a href="english/">An­g­lič­ti­na</a><a href="course/">Vy­bí­rá­ní kur­zu</a><a href="practice/">Pro­cvi­čo­vá­ní</a><a href="help/">Ře­še­ní pro­blé­mů</a><a href="mentoring/">Men­to­ring</a><a href="git/">Git a Gi­tHub</a><a href="collaboration/">Spo­lu­práce</a><a href="mental-health/">Psy­chi­ka</a>
+        </p>
+
+        <p class="stage-card-todo-pages">
+          Plá­no­va­né ka­pi­to­ly:
+          Co sle­do­vat, Stu­dium in­for­ma­ti­ky, Zdra­ví těla na cestě do IT
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="stage-illustration">
+
+<img src="../static/chick1.svg" alt="Kuře" width="50" height="50">
+
+  </div>
+
+
+  <div class="stage-card">
+    <div class="stage-card-row">
+      <div class="stage-card-media">
+        <div class="stage-card-icon"><i class="bi bi-tools"></i></div>
+      </div>
+      <div class="stage-card-body">
+        <h4 class="stage-card-title">Tvo­řím</h4>
+        <p class="stage-card-description">
+          Pra­cu­ju na pro­jek­tech, vy­tvá­řím si port­fo­lio.
+Ne­vím jak za­čít, co tvo­řit.
+Za­se­ká­vám se, ni­kdo mi ne­po­máhá, ne­vím jak dál.
+Ne­vím, jestli můj vý­tvor nemá zá­sad­ní chy­by.
+
+        </p>
+        <p class="stage-card-pages">
+          <a href="practice/">Pro­cvi­čo­vá­ní</a><a href="help/">Ře­še­ní pro­blé­mů</a><a href="mentoring/">Men­to­ring</a><a href="projects/">Pro­jek­ty</a><a href="git/">Git a Gi­tHub</a><a href="collaboration/">Spo­lu­práce</a>
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="stage-card">
+    <div class="stage-card-row">
+      <div class="stage-card-media">
+        <div class="stage-card-icon"><i class="bi bi-pen"></i></div>
+      </div>
+      <div class="stage-card-body">
+        <h4 class="stage-card-title">Chci hle­dat práci</h4>
+        <p class="stage-card-description">
+          La­dím CV, Lin­ke­dIn, Gi­tHub.
+Pa­siv­ně po­ku­ku­ji po na­bíd­kách.
+Ne­vím, zda už umím dost.
+Ne­u­mím se pro­dat.
+Mám pro­blém o sobě do CV na­psat po­zi­tiv­ní větu.
+
+        </p>
+        <p class="stage-card-pages">
+          <a href="women/">Ženy v IT</a><a href="parents/">Ro­di­če v IT</a><a href="english/">An­g­lič­ti­na</a><a href="community/">Ko­mu­ni­ty</a><a href="mentoring/">Men­to­ring</a><a href="git/">Git a Gi­tHub</a><a href="mental-health/">Psy­chi­ka</a><a href="candidate/">Hle­dá­ní práce</a><a href="cv/">Ži­vo­to­pis</a><a href="github-profile/">Gi­tHub pro­fil</a><a href="linkedin/">Lin­ke­dIn</a><a href="interview/">Po­ho­vor</a>
+        </p>
+
+        <p class="stage-card-todo-pages">
+          Plá­no­va­né ka­pi­to­ly:
+          Co sle­do­vat, Práce na dál­ku
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="stage-card">
+    <div class="stage-card-row">
+      <div class="stage-card-media">
+        <div class="stage-card-icon"><i class="bi bi-envelope-arrow-up"></i></div>
+      </div>
+      <div class="stage-card-body">
+        <h4 class="stage-card-title">Hle­dám práci</h4>
+        <p class="stage-card-description">
+          Hle­dám práci, stáž, bri­gá­du.
+Re­a­gu­ji na na­bíd­ky, po­sí­lám CV, cho­dím na po­ho­vo­ry.
+Ne­mám zpět­nou vazbu, ne­zvou mě.
+Ne­vím, co se ode mně čeká.
+Ne­po­sou­dím, zda jde o běž­ný zá­ži­tek z po­ho­vo­ru, nebo šlo o div­nou fir­mu.
+Do­chá­zí mi čas a úspo­ry.
+
+        </p>
+        <p class="stage-card-pages">
+          <a href="women/">Ženy v IT</a><a href="parents/">Ro­di­če v IT</a><a href="community/">Ko­mu­ni­ty</a><a href="mental-health/">Psy­chi­ka</a><a href="candidate/">Hle­dá­ní práce</a><a href="linkedin/">Lin­ke­dIn</a><a href="interview/">Po­ho­vor</a>
+        </p>
+
+        <p class="stage-card-todo-pages">
+          Plá­no­va­né ka­pi­to­ly:
+          Práce na dál­ku
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="stage-illustration">
+
+<img src="../static/chick2.svg" alt="Kuře" width="50" height="50">
+
+  </div>
+
+
+  <div class="stage-card">
+    <div class="stage-card-row">
+      <div class="stage-card-media">
+        <div class="stage-card-icon"><i class="bi bi-trophy"></i></div>
+      </div>
+      <div class="stage-card-body">
+        <h4 class="stage-card-title">Mám na­bíd­ku</h4>
+        <p class="stage-card-description">
+          Mám na­bíd­ku a roz­ho­du­ji se, zda ji při­jmout.
+Vá­hám, zda ne­vzít co­ko­liv, jen aby už něco bylo.
+Mám do­mlu­ve­nou práci a na­stu­pu­ji v bu­douc­nu.
+Ná­stup mě děsí, ne­vím co mě čeká.
+
+        </p>
+        <p class="stage-card-pages">
+          <a href="interview/">Po­ho­vor</a>
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="stage-card">
+    <div class="stage-card-row">
+      <div class="stage-card-media">
+        <div class="stage-card-icon"><i class="bi bi-battery-half"></i></div>
+      </div>
+      <div class="stage-card-body">
+        <h4 class="stage-card-title">Za­u­ču­ju se</h4>
+        <p class="stage-card-description">
+          Zku­šeb­ní doba, prv­ní práce v obo­ru.
+Za­u­ču­ji se, zjiš­ťu­ji co je běž­né, vy­rov­ná­vám se s ná­ro­ky.
+Po­kud ne­mám k dis­po­zici se­ni­o­ry, to­pím se v úko­lech.
+Po­kud je fir­ma špat­ná, bo­jím se ode­jít.
+
+        </p>
+        <p class="stage-card-pages">
+          <a href="english/">An­g­lič­ti­na</a><a href="mental-health/">Psy­chi­ka</a>
+        </p>
+
+        <p class="stage-card-todo-pages">
+          Plá­no­va­né ka­pi­to­ly:
+          Co sle­do­vat, Práce na dál­ku, Za­u­čo­vá­ní
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="stage-card">
+    <div class="stage-card-row">
+      <div class="stage-card-media">
+        <div class="stage-card-icon"><i class="bi bi-rocket-takeoff"></i></div>
+      </div>
+      <div class="stage-card-body">
+        <h4 class="stage-card-title">Mám ko­merč­ní pra­xi</h4>
+        <p class="stage-card-description">
+          Mám je­den až dva roky ko­merč­ní pra­xe.
+Mož­ná už nej­sem ju­ni­or.
+Po­sou­vám se dál, ře­ším ka­ri­ér­ní růst.
+Ne­vím, jak do­stat slo­ži­těj­ší úko­ly nebo vět­ší pe­ní­ze.
+
+        </p>
+        <p class="stage-card-pages">
+          <a href="english/">An­g­lič­ti­na</a>
+        </p>
+
+        <p class="stage-card-todo-pages">
+          Plá­no­va­né ka­pi­to­ly:
+          Za­u­čo­vá­ní
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="stage-illustration">
+
+<img src="../static/chick3.svg" alt="Kuře" width="50" height="50">
+
+  </div>
+
+</div>
+<div class="pagination">
+  <div class="pagination-control">
+  
+  
+  </div>
+  <div class="pagination-control">
+  
+  
+    <a href="motivation/" class="pagination-button" title="Další téma">
+      Proč pro­gra­mo­vat
+      <i class="bi bi-arrow-right"></i>
+    </a>
+  
+  </div>
+</div>
+
+    </main>
+
+    
+<nav id="toc" class="toc">
+      <div class="toc-container">
+        <h3 class="toc-heading">
+          <i class="bi bi-journals"></i> Příručka
+        </h3>
+        <ul class="toc-list">
+          
+            <li class="toc-item active">
+              <a class="toc-link" href="./">
+                Cesta juniora
+              </a>
+              
+                
+                <ul class="toc-sublist">
+                  
+                </ul>
+                
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="motivation/">
+                Proč programovat
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="myths/">
+                Mýty
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="women/">
+                Ženy v IT
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="parents/">
+                Rodiče v IT
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="learn/">
+                Základy
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="nocode/">
+                Bez kódu
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="english/">
+                Angličtina
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="course/">
+                Vybírání kurzu
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="practice/">
+                Procvičování
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="community/">
+                Komunity
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="help/">
+                Řešení problémů
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="mentoring/">
+                Mentoring
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="projects/">
+                Projekty
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="git/">
+                Git a GitHub
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="collaboration/">
+                Spolupráce
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="mental-health/">
+                Psychika
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="candidate/">
+                Hledání práce
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="cv/">
+                Životopis
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="github-profile/">
+                GitHub profil
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="linkedin/">
+                LinkedIn
+              </a>
+              
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="interview/">
+                Pohovor
+              </a>
+              
+            </li>
+          
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+  <hr class="visually-hidden">
+
+  <footer class="footer">
+    <div class="footer-address-container">
+      <address class="footer-section footer-address">
+        </address><ul class="footer-address-list">
+          <li class="footer-address-item">
+            
+<img src="../static/logo-i.svg" alt="Logo junior.guru" width="90" height="40" loading="lazy" class="footer-address-logo">
+
+          </li>
+          <li class="footer-address-item">
+            <h3 class="footer-subheading">Projekt</h3>
+            Junior Guru<br>
+            stylizovaně „junior.guru“<br>
+            <a href="https://logo.junior.guru/" target="_blank" rel="noopener">logo a barvy</a>
+          </li>
+          <li class="footer-address-item">
+            <h3 class="footer-subheading">Provozovatel</h3>
+            Jan Javorek<br>
+            OSVČ, neplátce DPH<br>
+            IČO: <a href="https://ares.gov.cz/ekonomicke-subjekty?ico=74279858" target="_blank" rel="noopener">74279858</a><br>
+            Lupáčova 375/24<br>
+            130 00 Praha
+          </li>
+          <li class="footer-address-item footer-links">
+            <h3 class="footer-subheading">Kontakt a sociální sítě</h3>
+            <p class="footer-links-email"><a href="mailto:honza@junior.guru">honza@<!---->junior.guru</a></p>
+            <ul class="footer-links-icons footer-icons-list">
+              <li class="footer-icons-item">
+                <a href="https://www.youtube.com/@juniordotguru" target="_blank" rel="noopener">
+                  <i class="bi bi-youtube" role="img" aria-label="YouTube"></i>
+                </a>
+              </li>
+              <li class="footer-icons-item">
+                <a href="https://www.linkedin.com/in/honzajavorek/" target="_blank" rel="noopener">
+                  <i class="bi bi-linkedin" role="img" aria-label="LinkedIn"></i>
+                </a>
+              </li>
+              <li class="footer-icons-item">
+                <a href="../club/">
+                  <i class="bi bi-discord" role="img" aria-label="Discord"></i>
+                </a>
+              </li>
+              <li class="footer-icons-item">
+                <a href="https://mastodonczech.cz/@honzajavorek/tagged/juniorguru" target="_blank" rel="noopener">
+                  <i class="bi bi-mastodon" role="img" aria-label="Mastodon"></i>
+                </a>
+              </li>
+              <li class="footer-icons-item">
+                <a href="https://github.com/juniorguru/" target="_blank" rel="noopener">
+                  <i class="bi bi-github" role="img" aria-label="GitHub"></i>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      
+    </div>
+    <div id="honza" class="footer-section footer-about">
+      <h3 class="footer-heading">Kdo to provozuje? Na čem vydělává?</h3>
+      <div class="footer-about-content">
+        <div class="footer-about-text">
+          
+<img data-src="../static/avatars-participants/honza-javorek.jpg" src="https://res.cloudinary.com/juniorguru/image/fetch/w_100,dpr_auto,q_auto,f_auto/https://junior.guru/static/avatars-participants/honza-javorek.jpg" srcset="https://res.cloudinary.com/juniorguru/image/fetch/w_100,dpr_1,q_auto,f_auto/https://junior.guru/static/avatars-participants/honza-javorek.jpg,https://res.cloudinary.com/juniorguru/image/fetch/w_100,dpr_1.5,q_auto,f_auto/https://junior.guru/static/avatars-participants/honza-javorek.jpg 1.5x,https://res.cloudinary.com/juniorguru/image/fetch/w_100,dpr_2,q_auto,f_auto/https://junior.guru/static/avatars-participants/honza-javorek.jpg 2x,https://res.cloudinary.com/juniorguru/image/fetch/w_100,dpr_3,q_auto,f_auto/https://junior.guru/static/avatars-participants/honza-javorek.jpg 3x" onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;" alt="Honza Javorek" width="100" height="100" loading="lazy" class="footer-about-avatar">
+
+          <p>
+            Jmenuji se Honza Javorek a býval jsem obyčejný programátor. Díky dobrovolným aktivitám jsem se dostal k pomáhání začátečníkům, a to mě hodně bavilo. Časem mi přišlo, že chybí jedno místo, kde by byly všechny pracovní nabídky pro juniory, nezávislé informace a základní praktické rady. Proto jsem odešel z korporátu a založil tento projekt.
+          </p>
+          <p>
+            Chci začátečníkům zpříjemnit cestu k jejich první práci v IT a dodat jim kultivovanou podpůrnou komunitu, kde budou vítáni a mezi svými. Chci nezávisle informovat o vzdělávacích agenturách a propojovat juniory s firmami, kam by mohli nastoupit. Chci, aby každý Luďan z Mostu, každá puberťačka, každý vědec nebo každá máma na rodičovské měli po ruce návod, jak začít s programováním.
+          </p>
+          <p>
+            Tento web má <a href="../open/">veřejná čísla</a>, <a href="https://github.com/juniorguru/">otevřený zdrojový kód</a> a obsah je pod <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs">CC licencí</a>. Ilustrace si kreslím sám. Projekt tvořím jako podnikatel na volné noze, jenž nemá ambice rozjíždět firmu. Své úspěchy a selhání otevřeně popisuji v každotýdenních poznámkách na <a href="https://honzajavorek.cz/blog/">osobním blogu</a>. Cílem je vydělat si tak akorát, aby se žilo dobře mojí rodině.
+          </p>
+        </div>
+        <div class="footer-about-finances">
+          <h4 class="footer-subheading">Můj aktuální čistý zisk</h4>
+          <p class="footer-finances-number">55.083 Kč měsíčně</p>
+
+          <h4 class="footer-subheading">Zdroje příjmů, zaokrouhleno</h4>
+          <ul class="footer-finances-list">
+            
+              <li>
+                <strong class="footer-finances-value">57 %</strong>
+                členství v klubu
+              </li>
+            
+              <li>
+                <strong class="footer-finances-value">38 %</strong>
+                příspěvky sponzorů
+              </li>
+            
+              <li>
+                <strong class="footer-finances-value">6 %</strong>
+                dobrovolné příspěvky
+              </li>
+            
+              <li>
+                <strong class="footer-finances-value">1 %</strong>
+                inzerce nabídek práce
+              </li>
+            
+          </ul>
+          <p class="footer-finances-actions">
+            <span class="footer-finances-button">
+              <a class="btn btn-lg btn-primary" href="../open/">Čísla a grafy</a>
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-nav-container">
+      <nav class="footer-section footer-nav">
+        <h3 class="footer-heading">Buď v obraze</h3>
+        <p>
+          <a href="../news/">Novinky</a>, 
+          <a href="../podcast/">Podcast</a>, 
+          <a href="../events/">Klubové akce</a>, 
+          <a href="../stories/">Příběhy</a>, 
+          <a href="../wisdom/">Moudra</a>
+          
+        </p>
+
+        <h3 class="footer-heading">Příručka</h3>
+        <p>
+          
+            <a href="./">Cesta juniora</a>, 
+          
+            <a href="motivation/">Proč programovat</a>, 
+          
+            <a href="myths/">Mýty</a>, 
+          
+            <a href="women/">Ženy v IT</a>, 
+          
+            <a href="parents/">Rodiče v IT</a>, 
+          
+            <a href="learn/">Základy</a>, 
+          
+            <a href="nocode/">Bez kódu</a>, 
+          
+            <a href="english/">Angličtina</a>, 
+          
+            <a href="course/">Vybírání kurzu</a>, 
+          
+            <a href="practice/">Procvičování</a>, 
+          
+            <a href="community/">Komunity</a>, 
+          
+            <a href="help/">Řešení problémů</a>, 
+          
+            <a href="mentoring/">Mentoring</a>, 
+          
+            <a href="projects/">Projekty</a>, 
+          
+            <a href="git/">Git a GitHub</a>, 
+          
+            <a href="collaboration/">Spolupráce</a>, 
+          
+            <a href="mental-health/">Psychika</a>, 
+          
+            <a href="candidate/">Hledání práce</a>, 
+          
+            <a href="cv/">Životopis</a>, 
+          
+            <a href="github-profile/">GitHub profil</a>, 
+          
+            <a href="linkedin/">LinkedIn</a>, 
+          
+            <a href="interview/">Pohovor</a>
+          
+        </p>
+
+        <h3 class="footer-heading">Kurzy</h3>
+        <p>
+          
+            <a href="../courses/engeto/">ENGETO Academy</a>, 
+          
+            <a href="../courses/itnetwork/">ITnetwork</a>, 
+          
+            <a href="../courses/ajtyvit/">Aj Ty v IT</a>, 
+          
+            <a href="../courses/coreskill/">CoreSkill</a>, 
+          
+            <a href="../courses/czechitas/">Czechitas</a>, 
+          
+            <a href="../courses/djangogirls/">Django Girls</a>, 
+          
+            <a href="../courses/dokazesprogramovat/">Dokážeš programovat</a>, 
+          
+            <a href="../courses/naucsepython/">Nauč se Python</a>, 
+          
+            <a href="../courses/pyladies/">PyLadies</a>, 
+          
+            <a href="../courses/reactgirls/">ReactGirls</a>, 
+          
+            <a href="../courses/robweb/">ROB WEB (yablko)</a>, 
+          
+            <a href="../courses/beeit/">BeeIT</a>, 
+          
+            <a href="../courses/codecademy/">Codecademy</a>, 
+          
+            <a href="../courses/coderslab/">Coders Lab</a>, 
+          
+            <a href="../courses/codewars/">Codewars</a>, 
+          
+            <a href="../courses/codingbootcamppraha/">Coding Bootcamp Praha</a>, 
+          
+            <a href="../courses/coursera/">Coursera</a>, 
+          
+            <a href="../courses/cs50/">CS50</a>, 
+          
+            <a href="../courses/datacamp/">DataCamp</a>, 
+          
+            <a href="../courses/edx/">edX</a>, 
+          
+            <a href="../courses/egghead/">egghead.io</a>, 
+          
+            <a href="../courses/freecodecamp/">freeCodeCamp</a>, 
+          
+            <a href="../courses/greenfox/">Green Fox Academy</a>, 
+          
+            <a href="../courses/hacknisvoubudoucnost/">Hackni svou budoucnost (David Šetek)</a>, 
+          
+            <a href="../courses/inventi/">INVENTI</a>, 
+          
+            <a href="../courses/itvkurze/">IT v kurze</a>, 
+          
+            <a href="../courses/itabsolvent/">IT-absolvent</a>, 
+          
+            <a href="../courses/jetbrains/">JetBrains Academy</a>, 
+          
+            <a href="../courses/lovelydata/">Lovely Data</a>, 
+          
+            <a href="../courses/lucietvrdikova/">Lucie Tvrdíková</a>, 
+          
+            <a href="../courses/naucmeit/">Nauč mě IT</a>, 
+          
+            <a href="../courses/pluralsight/">Pluralsight</a>, 
+          
+            <a href="../courses/prahacodingschool/">Praha CODING School</a>, 
+          
+            <a href="../courses/primakurzy/">PrimaKurzy</a>, 
+          
+            <a href="../courses/programkonet/">Programko.NET (Petr Voborník)</a>, 
+          
+            <a href="../courses/radekkitner/">Radek Kitner</a>, 
+          
+            <a href="../courses/railsgirls/">Rails Girls</a>, 
+          
+            <a href="../courses/kurzyvsb/">Rekvalifikační kurzy VŠB-TU</a>, 
+          
+            <a href="../courses/robotdreams/">robot_dreams</a>, 
+          
+            <a href="../courses/scrimba/">Scrimba</a>, 
+          
+            <a href="../courses/seduo/">Seduo</a>, 
+          
+            <a href="../courses/schoolofcode/">School of Code</a>, 
+          
+            <a href="../courses/skillmea/">Skillmea</a>, 
+          
+            <a href="../courses/sdacademy/">Software Development Academy</a>, 
+          
+            <a href="../courses/step/">STEP</a>, 
+          
+            <a href="../courses/streetofcode/">Street of Code</a>, 
+          
+            <a href="../courses/udacity/">Udacity</a>, 
+          
+            <a href="../courses/udemy/">Udemy</a>, 
+          
+            <a href="../courses/umimpython/">UmimPython.cz</a>, 
+          
+            <a href="../courses/unicornhatchery/">Unicorn Hatchery</a>, 
+          
+            <a href="../courses/webykvalitne/">Webařce pod rukou</a>, 
+          
+            <a href="../courses/webrebel/">Webrebel</a>, 
+          
+            <a href="../courses/42prague/">42 Prague</a>
+          
+        </p>
+
+        <h3 class="footer-heading">Pracovní nabídky</h3>
+        <p>
+          <a href="../jobs/remote/">Junior programátor na dálku</a>,
+          <a href="../jobs/region/praha/">Junior programátor Praha</a>,
+          <a href="../jobs/region/brno/">Junior programátor Brno</a>,
+          <a href="../jobs/region/ostrava/">Junior programátor Ostrava</a>
+        </p>
+
+        <h3 class="footer-heading">Témata, která řešíme v klubu</h3>
+        <p>
+          
+            <a href="../topics/adventofcode/">Advent of Code</a>, 
+          
+            <a href="../topics/javascript/">JavaScript</a>, 
+          
+            <a href="../topics/python/">Python</a>
+          
+        </p>
+      </nav>
+    </div>
+    <nav class="footer-section footer-rules">
+      <h3 class="visually-hidden">Pravidla</h3>
+      <ul class="footer-rules-list">
+        
+          <li class="footer-rules-item">
+            <a href="../faq/">Otázky a odpovědi</a>
+          </li>
+        
+          <li class="footer-rules-item">
+            <a href="../coc/">Pravidla chování</a>
+          </li>
+        
+          <li class="footer-rules-item">
+            <a href="../tos/">Obchodní podmínky</a>
+          </li>
+        
+          <li class="footer-rules-item">
+            <a href="../privacy/">Zásady ochrany osobních údajů</a>
+          </li>
+        
+          <li class="footer-rules-item">
+            <a href="../open/">Čísla a grafy</a>
+          </li>
+        
+          <li class="footer-rules-item">
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs" target="_blank" rel="noopener">Licence obsahu (CC BY-SA)</a>
+          </li>
+        
+      </ul>
+    </nav>
+  </footer>
+
+  <script async src="https://sa.junior.guru/latest.js"></script>
+  <script async src="https://sa.junior.guru/auto-events.js"></script>
+  <noscript><img src="https://sa.junior.guru/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+</body>
+
+</html>
