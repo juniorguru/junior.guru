@@ -4,7 +4,7 @@ template: main_sections.html
 description: Komunita pro začátečníky v programování, průvodce programováním pro samouky, kurzy programování, nabídky práce pro juniory
 ---
 
-{% from 'macros.html' import lead, link_card, logo, news_card, img with context %}
+{% from 'macros.html' import lead, link_card, logo, news_card, img, logos_list with context %}
 
 
 <header class="masthead"><div class="masthead-container">
@@ -46,7 +46,7 @@ description: Komunita pro začátečníky v programování, průvodce programov�
 </section>
 
 
-<section class="section">
+<section class="section pt-0">
 {#
 {% call lead() %}
   Díky junior.guru se snadněji rozkoukáš a vybereš si správně zaměření.
@@ -56,8 +56,7 @@ description: Komunita pro začátečníky v programování, průvodce programov�
   A dostaneš podporu, díky které to celé ustojíš.
 {% endcall %}
 #}
-<div class="standout">
-<div class="link-cards">
+<div class="link-cards standout-bottom">
   {{ link_card(
     'Klub',
     pages|docs_url('club.md')|url,
@@ -90,9 +89,6 @@ description: Komunita pro začátečníky v programování, průvodce programov�
     image=false,
   ) }}
 </div>
-</div>
-
-<div class="standout">
 <div class="news-cards">
   {% set podcast_episode = podcast_episodes|list|first %}
   {{
@@ -119,25 +115,20 @@ description: Komunita pro začátečníky v programování, průvodce programov�
     )
   }}
 </div>
-</div>
 </section>
 
 
 <div class="section-background blue-light"><section class="section">
-  <h2>Zdarma?</h2>
+<h2>Zdarma?</h2>
   {% call lead() -%}
     Cílem junior.guru je, aby co nejvíc lidí v Česku a na Slovensku mělo příležitost naučit se programovat.
     Takže **všechno kromě klubu je zdarma**.
     Provoz projektu financují členové [klubu](club.md) svým předplatným a firemní či individuální [sponzoři](love.jinja).
   {%- endcall %}
-  <ul class="logos standout">
-    {% for sponsor in sponsors %}
-      {% if not sponsor.tier.is_barter %}
-        {{ logo(sponsor.name, sponsor.logo_path, sponsor.url) }}
-      {% endif %}
-    {% endfor %}
-  </ul>
-  <ul class="sponsor-avatars standout-bottom">
+  <div class="mb-3">
+    {{ logos_list(sponsors_by_tier) }}
+  </div>
+  <ul class="sponsor-avatars">
   {% for sponsor in sponsors_github|shuffle %}
     <li class="sponsor-avatars-item">
       <a href="{{ sponsor.url }}" target="_blank" rel="noopener">

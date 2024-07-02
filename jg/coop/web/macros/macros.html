@@ -316,6 +316,19 @@
 {% endmacro %}
 
 
+{% macro logos_list(sponsors_by_tier, priorities=[1, 2, 3], class=none) %}
+  {% for tier, sponsors in sponsors_by_tier %}
+    {% if not priorities or tier.priority in priorities %}
+      <ul class="logos logos-tier-{{ tier.priority }}{% if class %} {{ class }}{% endif %}">
+        {% for sponsor in sponsors %}
+          {{ logo(sponsor.name, sponsor.logo_path, sponsor.url) }}
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endfor %}
+{% endmacro %}
+
+
 {% macro stories_list(stories) %}
   <div class="stories">
     {% for story in stories %}

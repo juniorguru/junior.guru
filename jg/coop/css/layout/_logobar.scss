@@ -49,7 +49,6 @@
 
 .logobar-item {
   @extend .logos-item;
-  margin-bottom: 0;
 }
 
 .logobar-item:first-child {
@@ -58,6 +57,10 @@
 
 .logobar-item:last-child {
   margin-right: 0;
+}
+
+.logobar-list .logobar-item {
+  margin-bottom: 0;
 }
 
 .logobar-link {

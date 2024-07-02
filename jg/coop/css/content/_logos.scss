@@ -3,19 +3,73 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: -1 * $spacer;
 }
 
 .logos-item {
   display: flex;
   align-items: center;
-  min-height: 3rem;
-  margin: 0 map-get($spacers, 2) $spacer;
+}
 
-  @include media-breakpoint-up(sm) {
-    margin: 0 map-get($spacers, 4) $spacer;
+.logos-image {
+  display: block;
+  width: auto;
+  height: auto;
+}
+
+/*
+  TIERS
+*/
+
+@mixin logos-tier($size-base) {
+  $sm-width: $size-base;
+  $sm-height: $size-base * .4;
+  $width: $size-base * 1.8;
+  $height: $size-base * .7;
+
+  .logos-item {
+    min-height: $sm-height;
+    margin: 0 ($size-base * .1) .1rem;
+
+    @include media-breakpoint-up(sm) {
+      min-height: $height;
+      margin: 0 ($size-base * .3) .3rem;
+    }
+  }
+
+  .logos-image {
+    max-width: $sm-width;
+    max-height: $sm-height;
+
+    @include media-breakpoint-up(sm) {
+      max-width: $width;
+      max-height: $height;
+    }
   }
 }
+
+.logos {  /* stylelint-disable-line no-duplicate-selectors */
+  @include logos-tier(3rem);
+}
+
+.logos-tier-0 {
+  @include logos-tier(3rem);
+}
+
+.logos-tier-1 {
+  @include logos-tier(4.5rem);
+}
+
+.logos-tier-2 {
+  @include logos-tier(6.5rem);
+}
+
+.logos-tier-3 {
+  @include logos-tier(8rem);
+}
+
+/*
+  CAPTION
+*/
 
 .logos-caption {
   @extend .small;
@@ -33,18 +87,9 @@
   color: $link-color;
 }
 
-.logos-image {
-  display: block;
-  width: auto;
-  max-width: 6rem;
-  height: auto;
-  max-height: 3rem;
-
-  @include media-breakpoint-up(sm) {
-    max-width: 8rem;
-    max-height: 3rem;
-  }
-}
+/*
+  COLORING
+*/
 
 .logos.grayscale .logos-image,
 .logos.muted .logos-image {

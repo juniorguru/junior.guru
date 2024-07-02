@@ -29,6 +29,10 @@ IMAGES_DIR = Path("jg/coop/images")
 
 LOGOS_DIR = IMAGES_DIR / "logos"
 
+LOGOS_CSS_PATH = Path("jg/coop/css/content/_logos.scss")
+
+LOGOS_CSS_RE = re.compile(r"\.logos-tier-(\d+)\b")
+
 POSTERS_DIR = IMAGES_DIR / "posters-sponsors"
 
 POSTER_SIZE = 700
@@ -121,6 +125,7 @@ def main(today: date, clear_posters: bool):
             max_sponsors=tier.max_sponsors,
             priority=priority,
         )
+    check_css_integrity(tiers.values(), LOGOS_CSS_PATH.read_text())
     logger.info(f"Tiers: {', '.join(tiers.keys())}")
 
     for sponsor in sponsors.registry:
@@ -246,6 +251,16 @@ def check_plans_integrity(
         raise ValueError(
             "Plans in YAML don't match group plans in Memberful: "
             f"{yaml_ids!r} vs {memberful_ids!r}"
+        )
+
+
+def check_css_integrity(tiers: list[SponsorTier], css: str) -> None:
+    tiers_priorities = {tier.priority for tier in tiers}
+    css_priorities = set(map(int, LOGOS_CSS_RE.findall(css)))
+    if tiers_priorities != css_priorities:
+        raise ValueError(
+            "Not all tier priorities are covered by CSS: "
+            f"{tiers_priorities!r} vs {css_priorities!r}"
         )
 
 
