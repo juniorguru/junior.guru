@@ -107,3 +107,116 @@ def test_sponsor_coupons(test_db: SqliteDatabase, tier_low: SponsorTier):
     create_sponsor("lemon", coupon="LEMON", tier=tier_low)
 
     assert Sponsor.coupons() == {"BANANA", "APPLE", "ORANGE", "LEMON"}
+
+
+def test_sponsor_get_for_course_provider_cz_business_id(
+    test_db: SqliteDatabase, tier_low: SponsorTier
+):
+    create_sponsor("banana", cz_business_id=789, tier=tier_low)
+    sponsor = create_sponsor("apple", cz_business_id=123, tier=tier_low)
+    create_sponsor("orange", cz_business_id=456, tier=tier_low)
+
+    assert Sponsor.get_for_course_provider("xyz", cz_business_id=123) == sponsor
+
+
+def test_sponsor_get_for_course_provider_cz_business_id_no_match(
+    test_db: SqliteDatabase, tier_low: SponsorTier
+):
+    create_sponsor("banana", cz_business_id=789, tier=tier_low)
+    create_sponsor("apple", cz_business_id=123, tier=tier_low)
+    create_sponsor("orange", cz_business_id=456, tier=tier_low)
+
+    with pytest.raises(Sponsor.DoesNotExist):
+        Sponsor.get_for_course_provider("xyz", cz_business_id=999)
+
+
+def test_sponsor_get_for_course_provider_sk_business_id(
+    test_db: SqliteDatabase, tier_low: SponsorTier
+):
+    create_sponsor("banana", sk_business_id=789, tier=tier_low)
+    sponsor = create_sponsor("apple", sk_business_id=123, tier=tier_low)
+    create_sponsor("orange", sk_business_id=456, tier=tier_low)
+
+    assert Sponsor.get_for_course_provider("xyz", sk_business_id=123) == sponsor
+
+
+def test_sponsor_get_for_course_provider_sk_business_id_no_match(
+    test_db: SqliteDatabase, tier_low: SponsorTier
+):
+    create_sponsor("banana", sk_business_id=789, tier=tier_low)
+    create_sponsor("apple", sk_business_id=123, tier=tier_low)
+    create_sponsor("orange", sk_business_id=456, tier=tier_low)
+
+    with pytest.raises(Sponsor.DoesNotExist):
+        Sponsor.get_for_course_provider("xyz", sk_business_id=999)
+
+
+def test_sponsor_get_for_course_provider_slug(
+    test_db: SqliteDatabase, tier_low: SponsorTier
+):
+    create_sponsor("banana", tier=tier_low)
+    sponsor = create_sponsor("apple", tier=tier_low)
+    create_sponsor("orange", tier=tier_low)
+
+    assert Sponsor.get_for_course_provider("apple") == sponsor
+
+
+def test_sponsor_get_for_course_provider_slug_no_match(
+    test_db: SqliteDatabase, tier_low: SponsorTier
+):
+    create_sponsor("banana", tier=tier_low)
+    create_sponsor("apple", tier=tier_low)
+    create_sponsor("orange", tier=tier_low)
+
+    with pytest.raises(Sponsor.DoesNotExist):
+        Sponsor.get_for_course_provider("xyz")
+
+
+def test_sponsor_get_for_course_provider_cz_business_id_trumps_sk_business_id(
+    test_db: SqliteDatabase, tier_low: SponsorTier
+):
+    sponsor = create_sponsor(
+        "cz", cz_business_id=123, sk_business_id=123, tier=tier_low
+    )
+    create_sponsor("sk", cz_business_id=789, sk_business_id=789, tier=tier_low)
+
+    assert (
+        Sponsor.get_for_course_provider("xyz", cz_business_id=123, sk_business_id=789)
+        == sponsor
+    )
+
+
+def test_sponsor_get_for_course_provider_cz_business_id_trumps_slug(
+    test_db: SqliteDatabase, tier_low: SponsorTier
+):
+    sponsor = create_sponsor("cz", cz_business_id=123, tier=tier_low)
+    create_sponsor("sk", cz_business_id=789, tier=tier_low)
+
+    assert Sponsor.get_for_course_provider("sk", cz_business_id=123) == sponsor
+
+
+def test_sponsor_get_for_course_provider_sk_business_id_trumps_slug(
+    test_db: SqliteDatabase, tier_low: SponsorTier
+):
+    create_sponsor("cz", sk_business_id=123, tier=tier_low)
+    sponsor = create_sponsor("sk", sk_business_id=789, tier=tier_low)
+
+    assert Sponsor.get_for_course_provider("sk", sk_business_id=789) == sponsor
+
+
+def test_sponsor_get_for_course_provider_slug_decides_if_cz_business_ids_are_equal(
+    test_db: SqliteDatabase, tier_low: SponsorTier
+):
+    sponsor = create_sponsor("apple", cz_business_id=123, tier=tier_low)
+    create_sponsor("banana", cz_business_id=123, tier=tier_low)
+
+    assert Sponsor.get_for_course_provider("apple", cz_business_id=123) == sponsor
+
+
+def test_sponsor_get_for_course_provider_slug_decides_if_sk_business_ids_are_equal(
+    test_db: SqliteDatabase, tier_low: SponsorTier
+):
+    sponsor = create_sponsor("apple", sk_business_id=123, tier=tier_low)
+    create_sponsor("banana", sk_business_id=123, tier=tier_low)
+
+    assert Sponsor.get_for_course_provider("apple", sk_business_id=123) == sponsor

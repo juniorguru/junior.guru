@@ -18,9 +18,7 @@ class CourseProvider(BaseModel):
     page_description = CharField()
     page_lead = CharField()
     page_monthly_pageviews = IntegerField(null=True)
-    sponsor = ForeignKeyField(
-        Sponsor, backref="_course_provider", null=True, unique=True
-    )
+    sponsor = ForeignKeyField(Sponsor, backref="_course_provider", null=True)
     usp_description = TextField(null=True)  # unique selling proposition
 
     @property

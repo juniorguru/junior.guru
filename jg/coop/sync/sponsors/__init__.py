@@ -65,6 +65,8 @@ class SponsorConfig(YAMLConfig):
     name: str
     slug: str
     url: HttpUrl
+    cz_business_id: int | None = None
+    sk_business_id: int | None = None
     tier: str | None = None
     periods: list[tuple[str, str | None]]
     note: str | None = None
@@ -164,9 +166,6 @@ def main(today: date, clear_posters: bool):
 
             logger.debug(f"Saving {sponsor.slug!r}")
             Sponsor.create(
-                slug=sponsor.slug,
-                name=sponsor.name,
-                url=sponsor.url,
                 tier=tier,
                 start_on=start_on,
                 renews_on=renews_on,
@@ -174,7 +173,7 @@ def main(today: date, clear_posters: bool):
                 coupon=coupons_mapping.get(sponsor.slug),
                 logo_path=logo_path,
                 poster_path=poster_path,
-                listed=sponsor.listed,
+                **sponsor.model_dump(exclude=["tier", "note", "periods"]),
             )
         else:
             logger.info(f"Past sponsor {sponsor.name} ({sponsor.slug})")

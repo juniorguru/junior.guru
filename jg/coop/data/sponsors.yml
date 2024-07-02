@@ -33,6 +33,7 @@ registry:
   - name: Česko.Digital
     slug: ceskodigital
     url: https://www.cesko.digital/
+    cz_business_id: 8178607
     tier: bartering
     periods:
       - [2019-07, null]
@@ -60,6 +61,7 @@ registry:
   - name: ReactGirls
     slug: reactgirls
     url: https://reactgirls.com/
+    cz_business_id: 9587535
     tier: bartering
     periods:
       - [2021-11, null]
@@ -69,6 +71,7 @@ registry:
   - name: Pyvec
     slug: pyvec
     url: https://pyvec.org/
+    cz_business_id: 22746668
     tier: bartering
     periods:
       - [2019-07, null]
@@ -78,6 +81,7 @@ registry:
   - name: Django Girls
     slug: djangogirls
     url: https://djangogirls.org/
+    cz_business_id: 22746668
     tier: bartering
     periods:
       - [2019-07, null]
@@ -88,6 +92,7 @@ registry:
   - name: PyLadies
     slug: pyladies
     url: https://pyladies.cz/
+    cz_business_id: 22746668
     tier: bartering
     periods:
       - [2019-07, null]
@@ -97,6 +102,7 @@ registry:
   - name: Aj Ty v IT
     slug: ajtyvit
     url: https://ajtyvit.sk/
+    sk_business_id: 42352657
     tier: bartering
     periods:
       - [2022-05, null]
@@ -104,8 +110,9 @@ registry:
       Spolupráce mezi komunitami. Mohou v klubu propagovat své akce apod. Až bude junior.guru umět SK portály, mají slíbený pravidelný export z databáze pracovních inzerátů.
 
   - name: yablko
-    slug: robweb
+    slug: yablko
     url: http://robweb.sk/
+    sk_business_id: 50518224
     tier: bartering
     periods:
       - [2020-09, null]
@@ -115,6 +122,7 @@ registry:
   - name: Frontendisti
     slug: frontendisti
     url: https://frontendisti.cz/
+    cz_business_id: 3591263
     tier: bartering
     periods:
       - [2021-02, null]
@@ -124,6 +132,7 @@ registry:
   - name: Czechitas
     slug: czechitas
     url: https://www.czechitas.cz/
+    cz_business_id: 22834958
     tier: bartering
     periods:
       - [2021-02, null]
@@ -133,6 +142,7 @@ registry:
   - name: Fakturoid
     slug: fakturoid
     url: https://www.fakturoid.cz/
+    cz_business_id: 4656679
     tier: building_brand
     periods:
       - [2020-09, 2025-05]
@@ -140,6 +150,7 @@ registry:
   - name: Red Hat
     slug: redhat
     url: https://www.redhat.com/en/jobs
+    cz_business_id: 27690016
     tier: building_brand
     periods:
       - [2020-09, 2024-09]
@@ -147,6 +158,7 @@ registry:
   - name: Rector
     slug: rector
     url: https://getrector.com/
+    cz_business_id: 7536721
     tier: building_brand
     periods:
       - [2023-07, 2024-07]
@@ -155,6 +167,7 @@ registry:
   - name: CoreSkill
     slug: coreskill
     url: https://coreskill.tech/
+    cz_business_id: 69320144
     tier: bartering
     periods:
       - [2021-02, null]
@@ -164,6 +177,7 @@ registry:
   - name: Dokážeš programovat
     slug: dokazesprogramovat
     url: https://www.dokazesprogramovat.cz/
+    cz_business_id: 14389762
     tier: bartering
     periods:
       - [2024-07, null]
@@ -173,6 +187,7 @@ registry:
   - name: ITnetwork
     slug: itnetwork
     url: https://www.itnetwork.cz/
+    cz_business_id: 5861381
     tier: providing_courses
     periods:
       - [2024-03, 2025-03]
@@ -180,6 +195,7 @@ registry:
   - name: Creatiweb
     slug: creatiweb
     url: https://creatiweb.cz/
+    cz_business_id: 8237107
     tier: bartering
     periods:
       - [2023-06, null]
@@ -190,6 +206,7 @@ registry:
   - name: ENGETO Academy
     slug: engeto
     url: https://engeto.cz/
+    cz_business_id: 4671317
     tier: providing_courses
     periods:
       - [2021-05, 2024-07]
@@ -197,6 +214,7 @@ registry:
   - name: Mews
     slug: mews
     url: https://www.mews.com/
+    cz_business_id: 24227781
     tier: supporting
     periods:
       - [2021-05, 2024-08]
@@ -206,6 +224,7 @@ registry:
   - name: Skoumal
     slug: skoumal
     url: https://www.skoumal.com/
+    cz_business_id: 3529151
     tier: bartering
     periods:
       - [2021-02, null]

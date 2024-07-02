@@ -44,7 +44,12 @@ def main():
         config = CourseProviderConfig(**yaml_data)
         slug = yaml_path.stem
         try:
-            sponsor = Sponsor.get_by_slug(slug)
+            sponsor = Sponsor.get_for_course_provider(
+                slug,
+                cz_business_id=config.cz_business_id,
+                sk_business_id=config.sk_business_id,
+            )
+            logger.info(f"Course provider {slug!r} is a sponsor {sponsor.slug!r}")
         except Sponsor.DoesNotExist:
             logger.debug(f"Course provider {slug!r} is not a sponsor")
             sponsor = None

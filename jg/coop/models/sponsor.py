@@ -67,8 +67,10 @@ class Sponsor(BaseModel):
     slug = CharField(primary_key=True)
     name = CharField()
     url = CharField()
+    cz_business_id = IntegerField(null=True)
+    sk_business_id = IntegerField(null=True)
     tier = ForeignKeyField(SponsorTier, backref="_list_sponsors")
-    start_on = DateField(null=True)  # TODO remove this
+    start_on = DateField(null=True)
     renews_on = DateField()
     note = TextField(null=True)
     coupon = CharField(null=True, index=True)
@@ -78,8 +80,27 @@ class Sponsor(BaseModel):
     listed = BooleanField(default=True)
 
     @classmethod
-    def get_by_slug(cls, slug: str) -> Self:
-        return cls.get(cls.slug == slug)
+    def get_for_course_provider(
+        cls,
+        slug: str,
+        cz_business_id: int | None = None,
+        sk_business_id: int | None = None,
+    ) -> Self:
+        if cz_business_id:
+            query = cls.select().where(cls.cz_business_id == cz_business_id)
+        elif sk_business_id:
+            query = cls.select().where(cls.sk_business_id == sk_business_id)
+        else:
+            query = cls.select().where(
+                cls.slug == slug,
+                cls.cz_business_id.is_null(),
+                cls.sk_business_id.is_null(),
+            )
+        sponsors = sorted(query, key=lambda sponsor: 0 if sponsor.slug == slug else 1)
+        try:
+            return sponsors[0]
+        except IndexError:
+            raise cls.DoesNotExist()
 
     @classmethod
     def listing(cls) -> Iterable[Self]:
