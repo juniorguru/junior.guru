@@ -70,7 +70,6 @@ class SponsorConfig(YAMLConfig):
     tier: str | None = None
     periods: list[tuple[str, str | None]]
     note: str | None = None
-    listed: bool | None = True
 
 
 class SponsorsConfig(YAMLConfig):
@@ -138,6 +137,11 @@ def main(today: date, clear_posters: bool):
             logger.info(f"Sponsor {sponsor.name} ({sponsor.slug})")
             tier = tiers[sponsor.tier] if sponsor.tier else None
 
+            logger.debug("Processing note")
+            note = parse_note(sponsor.note)
+            if tier.is_partner and not note:
+                raise ValueError(f"Partners must have note ({sponsor.slug})")
+
             logger.debug(f"Checking logo for {sponsor.slug!r} exists")
             logo_path = LOGOS_DIR / f"{sponsor.slug}.svg"
             if not logo_path.exists():
@@ -169,7 +173,7 @@ def main(today: date, clear_posters: bool):
                 tier=tier,
                 start_on=start_on,
                 renews_on=renews_on,
-                note=sponsor.note.strip() if sponsor.note else None,
+                note=note,
                 coupon=coupons_mapping.get(sponsor.slug),
                 logo_path=logo_path,
                 poster_path=poster_path,
@@ -272,3 +276,10 @@ def get_main_plan(plans: list[PlanEntity]) -> PlanEntity:
 
 def from_cents(cents: int) -> int:
     return int(cents / 100)
+
+
+def parse_note(note: str | None) -> str | None:
+    try:
+        return note.strip() or None
+    except AttributeError:
+        return None

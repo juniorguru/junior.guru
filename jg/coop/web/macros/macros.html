@@ -300,11 +300,13 @@
 {%- endmacro %}
 
 
-{% macro logo(name, path, url=none, lazy=False, class_prefix='logos') %}
+{% macro logo(name, path, url=none, lazy=False, class_prefix='logos', utm_campaign=none) %}
   <li class="{{ class_prefix }}-item" title="{{ name }}">
     {% if url %}
     <a class="{{ class_prefix }}-link" href="{{ url }}" target="_blank" rel="noopener"
-      data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="sponsorship">
+      {% if utm_campaign -%}
+        data-metrics-utm data-metrics-utm-medium="logo" data-metrics-utm-campaign="{{ utm_campaign }}"
+      {%- endif %}>
     {% endif %}
 
     {{ img('static/' + path, name, 130, 60, class=class_prefix + '-image', lazy=lazy) }}
@@ -321,7 +323,7 @@
     {% if not priorities or tier.priority in priorities %}
       <ul class="logos logos-tier-{{ tier.priority }}{% if class %} {{ class }}{% endif %}">
         {% for sponsor in sponsors %}
-          {{ logo(sponsor.name, sponsor.logo_path, sponsor.url) }}
+          {{ logo(sponsor.name, sponsor.logo_path, sponsor.url, utm_campaign=sponsor.utm_campaign) }}
         {% endfor %}
       </ul>
     {% endif %}

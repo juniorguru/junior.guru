@@ -1,10 +1,19 @@
+from enum import StrEnum
 from functools import cached_property
+from itertools import groupby
+from operator import attrgetter
 from typing import Iterable, Self
 
 from peewee import CharField, ForeignKeyField, IntegerField, TextField, fn
 
 from jg.coop.models.base import BaseModel
 from jg.coop.models.sponsor import Sponsor, SponsorTier
+
+
+class CourseProviderGroup(StrEnum):
+    SPONSORS = "sponsors"
+    PARTNERS = "partners"
+    OTHERS = "others"
 
 
 class CourseProvider(BaseModel):
@@ -24,6 +33,14 @@ class CourseProvider(BaseModel):
     @property
     def page_url(self) -> str:
         return f"courses/{self.slug}.md"
+
+    @cached_property
+    def group(self) -> CourseProviderGroup:
+        if not self.sponsor:
+            return CourseProviderGroup.OTHERS
+        if self.sponsor.tier.is_partner:
+            return CourseProviderGroup.PARTNERS
+        return CourseProviderGroup.SPONSORS
 
     @cached_property
     def list_courses_up(self) -> Iterable["CourseUP"]:
@@ -53,6 +70,18 @@ class CourseProvider(BaseModel):
             .order_by(fn.czech_sort(cls.name))
         )
         return priority + list(query)
+
+    @classmethod
+    def grouping(cls) -> list[tuple[SponsorTier | None, list[Self]]]:
+        groups = list(CourseProviderGroup)
+        course_providers = sorted(
+            cls.listing(),
+            key=lambda course_provider: groups.index(course_provider.group),
+        )
+        return [
+            (group, list(sponsors))
+            for group, sponsors in groupby(course_providers, attrgetter("group"))
+        ]
 
     @classmethod
     def get_by_slug(cls, slug: str) -> Self:

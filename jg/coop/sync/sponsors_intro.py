@@ -116,9 +116,9 @@ def get_partners_without_intro(active_partnerships, today=None):
         if partner.intro:
             intro_created_on = partner.intro.created_at.date()
             is_intro_before_partnership = intro_created_on < partnership.starts_on
-            is_barter = not partnership.expires_on
+            is_partner = not partnership.expires_on
             is_intro_before_year_ago = today - intro_created_on > timedelta(days=365)
-            if is_intro_before_partnership or (is_barter and is_intro_before_year_ago):
+            if is_intro_before_partnership or (is_partner and is_intro_before_year_ago):
                 yield partner
         else:
             yield partner

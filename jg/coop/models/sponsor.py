@@ -1,6 +1,6 @@
 from datetime import date
 from itertools import groupby
-from typing import TYPE_CHECKING, Iterable, Self
+from typing import TYPE_CHECKING, Iterable, Literal, Self
 
 from peewee import (
     BooleanField,
@@ -9,7 +9,6 @@ from peewee import (
     ForeignKeyField,
     IntegerField,
     TextField,
-    fn,
 )
 
 from jg.coop.lib.discord_club import ClubChannelID, ClubEmoji
@@ -48,7 +47,7 @@ class SponsorTier(BaseModel):
         return self._list_sponsors.order_by(Sponsor.name)
 
     @property
-    def is_barter(self) -> bool:
+    def is_partner(self) -> bool:
         return self.priority == 0
 
     @property
@@ -77,85 +76,10 @@ class Sponsor(BaseModel):
     logo_path = CharField()
     poster_path = CharField()
     role_id = IntegerField(null=True)
-    listed = BooleanField(default=True)
 
-    @classmethod
-    def get_for_course_provider(
-        cls,
-        slug: str,
-        cz_business_id: int | None = None,
-        sk_business_id: int | None = None,
-    ) -> Self:
-        if cz_business_id:
-            query = cls.select().where(cls.cz_business_id == cz_business_id)
-        elif sk_business_id:
-            query = cls.select().where(cls.sk_business_id == sk_business_id)
-        else:
-            query = cls.select().where(
-                cls.slug == slug,
-                cls.cz_business_id.is_null(),
-                cls.sk_business_id.is_null(),
-            )
-        sponsors = sorted(query, key=lambda sponsor: 0 if sponsor.slug == slug else 1)
-        try:
-            return sponsors[0]
-        except IndexError:
-            raise cls.DoesNotExist()
-
-    @classmethod
-    def listing(cls) -> Iterable[Self]:
-        return (
-            cls.select()
-            .join(SponsorTier)
-            .where(cls.listed == True)  # noqa: E712
-            .order_by(SponsorTier.priority.desc(), Sponsor.name)
-        )
-
-    @classmethod
-    def handbook_listing(cls) -> Iterable[Self]:
-        return (
-            cls.select()
-            .join(SponsorTier)
-            .where(
-                cls.listed == True,  # noqa: E712
-                (
-                    SponsorTier.priority
-                    == SponsorTier.select(fn.max(SponsorTier.priority)).scalar()
-                ),
-            )
-            .order_by(Sponsor.name)
-        )
-
-    @classmethod
-    def club_listing(cls) -> Iterable[Self]:
-        return sorted(
-            cls.listing(),
-            key=lambda sponsor: (sponsor.members_count, sponsor.name),
-            reverse=True,
-        )
-
-    @classmethod
-    def tier_grouping(cls) -> list[tuple[SponsorTier, list[Self]]]:
-        return [
-            (tier, list(sponsors))
-            for tier, sponsors in groupby(cls.listing(), lambda sponsor: sponsor.tier)
-        ]
-
-    @classmethod
-    def count(cls) -> int:
-        return cls.select().count()
-
-    @classmethod
-    def coupons(cls) -> set[str]:
-        return frozenset(
-            (
-                row[0]
-                for row in cls.select(cls.coupon)
-                .distinct()
-                .where(cls.coupon.is_null(False))
-                .tuples()
-            )
-        )
+    @property
+    def utm_campaign(self) -> Literal["partnership", "sponsorship"]:
+        return "partnership" if self.tier.is_partner else "sponsorship"
 
     @property
     def name_markdown_bold(self) -> str:
@@ -195,6 +119,73 @@ class Sponsor(BaseModel):
     def days_until_renew(self, today=None) -> int:
         today = today or date.today()
         return max(0, (self.renews_on - today).days)
+
+    @classmethod
+    def get_for_course_provider(
+        cls,
+        slug: str,
+        cz_business_id: int | None = None,
+        sk_business_id: int | None = None,
+    ) -> Self:
+        if cz_business_id:
+            query = cls.select().where(cls.cz_business_id == cz_business_id)
+        elif sk_business_id:
+            query = cls.select().where(cls.sk_business_id == sk_business_id)
+        else:
+            query = cls.select().where(
+                cls.slug == slug,
+                cls.cz_business_id.is_null(),
+                cls.sk_business_id.is_null(),
+            )
+        sponsors = sorted(query, key=lambda sponsor: 0 if sponsor.slug == slug else 1)
+        try:
+            return sponsors[0]
+        except IndexError:
+            raise cls.DoesNotExist()
+
+    @classmethod
+    def listing(cls) -> Iterable[Self]:
+        return (
+            cls.select()
+            .join(SponsorTier)
+            .order_by(SponsorTier.priority.desc(), Sponsor.name)
+        )
+
+    @classmethod
+    def handbook_listing(cls) -> Iterable[Self]:
+        for _, sponsors in cls.tier_grouping():
+            return sponsors
+
+    @classmethod
+    def club_listing(cls) -> Iterable[Self]:
+        return sorted(
+            cls.listing(),
+            key=lambda sponsor: (sponsor.members_count, sponsor.name),
+            reverse=True,
+        )
+
+    @classmethod
+    def tier_grouping(cls) -> list[tuple[SponsorTier, list[Self]]]:
+        return [
+            (tier, list(sponsors))
+            for tier, sponsors in groupby(cls.listing(), lambda sponsor: sponsor.tier)
+        ]
+
+    @classmethod
+    def count(cls) -> int:
+        return cls.select().count()
+
+    @classmethod
+    def coupons(cls) -> set[str]:
+        return frozenset(
+            (
+                row[0]
+                for row in cls.select(cls.coupon)
+                .distinct()
+                .where(cls.coupon.is_null(False))
+                .tuples()
+            )
+        )
 
 
 class PastSponsor(BaseModel):

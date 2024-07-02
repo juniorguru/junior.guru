@@ -20,7 +20,7 @@
   {% if course_provider.usp_description %}Tady je aspoň základní info, které ti pomůže s rozhodováním.{% endif %}
 {% endcall %}
 
-{% if course_provider.sponsor %}
+{% if course_provider.group == "sponsors" %}
 <div class="course-provider-header">
   {{ link_card(course_provider.name, course_provider.url, class='highlighted') }}
   {{ figure(course_provider.sponsor.logo_path, "logo " + course_provider.name, 200, 100, lazy=False, class="course-provider-logo") }}
@@ -84,21 +84,20 @@ Provozovatel {{ course_provider.name }} tam nabízí tyto kurzy:
 {{ course_provider.name }} tam žádné kurzy nenabízí.
 {% endif %}
 
-{% if course_provider.sponsor and course_provider.sponsor.tier.is_barter %}
+{% if course_provider.sponsor and course_provider.sponsor.tier.is_partner %}
 ## Spolupráce s junior.guru
 
-{{ course_provider.name }} spolupracuje s junior.guru a díky tomu tady má zvýraznění.
-{%- if course_provider.sponsor.note %}
-Vztah s junior.guru je v interních záznamech popsán následovně:
+{{ course_provider.name }} spolupracuje s junior.guru. Vztah s junior.guru je v interních záznamech popsán následovně:
 
 „{{ course_provider.sponsor.note }}“
-{% endif %}
+
 Není v možnostech junior.guru ověřovat kvalitu kurzů, ale takováto spolupráce se asi dá brát jako známka toho, že jde o něco důvěryhodného.
 {% elif course_provider.sponsor %}
 ## Sponzorství junior.guru
 
 {{ course_provider.name }} sponzoruje junior.guru a díky tomu tady má zvýraznění.
 Neznamená to, že jsou nejlepší, že je kurz nějak ověřený, nebo že je junior.guru doporučuje.
+Budiž jim však ke cti, že podporují tento projekt.
 {% else %}
 ## Vztah s junior.guru
 

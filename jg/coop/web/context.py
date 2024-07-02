@@ -81,9 +81,10 @@ def on_docs_context(context):
     context["sponsors_github"] = GitHubSponsor.listing()
 
     # index.jinja, club.md, open.md
-    context["sponsors"] = Sponsor.listing()
+    context["sponsors_by_tier"] = Sponsor.tier_grouping()
 
     # club.md
+    context["sponsors"] = Sponsor.listing()
     context["messages_count"] = ClubMessage.count()
     context["events"] = Event.listing()
     context["events_promo"] = Event.promo_listing()
@@ -93,7 +94,7 @@ def on_docs_context(context):
     context["sponsor_tiers"] = SponsorTier.pricing_listing()
 
     # courses.md
-    context["course_providers"] = CourseProvider.listing()
+    context["course_providers_by_group"] = CourseProvider.grouping()
 
     # candidates.md
     context["candidates"] = Candidate.listing()
@@ -114,7 +115,6 @@ def on_docs_context(context):
     context["blog"] = BlogArticle.listing()
     context["sponsors_past"] = PastSponsor.listing()
     context["sponsors_github_past"] = GitHubSponsor.past_listing()
-    context["sponsors_by_tier"] = Sponsor.tier_grouping()
     context["handbook_total_size"] = Page.handbook_total_size()
 
     # open.md, love.jinja

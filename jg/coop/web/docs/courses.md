@@ -10,30 +10,46 @@ title: Katalog kurzů programování a testování
 {% call lead() %}
   Seznam všech míst, kde se můžeš učit programovat nebo testovat.
   Umístění na seznam neznamená, že jde o kurzy dobré, ověřené, nebo že je junior.guru doporučuje.
-  Ty, které sponzorují provoz junior.guru, jsou v přehledu první.
-  Neznamená to, že jsou nejlepší.
-  Jinak je seznam abecedně.
 {% endcall %}
 
-<div class="link-cards">
-  {% for course_provider in course_providers %}
-    {% if course_provider.sponsor %}
-      {{ link_card(
-        course_provider.name,
-        pages|docs_url(course_provider.page_url)|url,
-        screenshot_source_url=course_provider.url,
-        class='highlighted',
-      ) }}
-    {% else %}
-      {{ link_card(
-        course_provider.name,
-        pages|docs_url(course_provider.page_url)|url,
-        screenshot_source_url=course_provider.url,
-        nofollow=True,
-      ) }}
-    {% endif %}
-  {% endfor %}
-</div>
+{% for group, course_providers in course_providers_by_group %}
+  {% if group == "sponsors" %}
+
+## Sponzoři
+Vybrali si [tarif z ceníku](love.jinja) a poslali finanční prostředky na provoz junior.guru. Neznamená to, že jsou nejlepší, ale budiž jim ke cti, že podporují tento projekt.
+
+  {% elif group == "partners" %}
+
+## Partneři
+Spolupracujeme. Není v možnostech junior.guru ověřovat kvalitu kurzů, ale takováto spolupráce se asi dá brát jako známka toho, že jde o něco důvěryhodného. Na každé podstránce je popis spolupráce.
+
+  {% else %}
+
+## Ostatní
+Abecední seznam ostatních poskytovatelů kurzů.
+
+  {% endif %}
+
+  <div class="link-cards">
+    {% for course_provider in course_providers %}
+      {% if course_provider.group == "sponsors" %}
+        {{ link_card(
+          course_provider.name,
+          pages|docs_url(course_provider.page_url)|url,
+          screenshot_source_url=course_provider.url,
+          class='highlighted',
+        ) }}
+      {% else %}
+        {{ link_card(
+          course_provider.name,
+          pages|docs_url(course_provider.page_url)|url,
+          screenshot_source_url=course_provider.url,
+          nofollow=True,
+        ) }}
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endfor %}
 
 {% call note() %}
   {{ 'plus-circle'|icon }} Pokud víš o dalších kurzech, piš na {{ 'honza@junior.guru'|email_link }}

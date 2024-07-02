@@ -1,5 +1,5 @@
 tiers:
-  - slug: bartering
+  - slug: partnering
     name: Spolupracujeme
     plans:
       - https://juniorguru.memberful.com/admin/plans/111610
@@ -25,7 +25,7 @@ tiers:
 registry:
   # CURRENT SPONSORS
 
-  # TODO Barters:
+  # TODO partners:
   # - CDN77.com (Oct 21) gives me CDN for podcast, but I don't use it (yet).
   # - Merk.cz (Jul 24) gives me API for companies, but I don't use it (yet).
   # - 'Popitchi mentoring' (Feb 24) gives me landing page, but it would make more sense to put her community there as a partner.
@@ -34,7 +34,7 @@ registry:
     slug: ceskodigital
     url: https://www.cesko.digital/
     cz_business_id: 8178607
-    tier: bartering
+    tier: partnering
     periods:
       - [2019-07, null]
     note: |
@@ -43,7 +43,7 @@ registry:
   - name: DigiKoalice
     slug: digikoalice
     url: https://digikoalice.cz/
-    tier: bartering
+    tier: partnering
     periods:
       - [2021-11, null]
     note: |
@@ -52,7 +52,7 @@ registry:
   - name: Týden pro Digitální Česko
     slug: tdc
     url: https://budoucnostjedigitalni.gov.cz/
-    tier: bartering
+    tier: partnering
     periods:
       - [2023-06, null]
     note: |
@@ -62,7 +62,7 @@ registry:
     slug: reactgirls
     url: https://reactgirls.com/
     cz_business_id: 9587535
-    tier: bartering
+    tier: partnering
     periods:
       - [2021-11, null]
     note: |
@@ -72,7 +72,7 @@ registry:
     slug: pyvec
     url: https://pyvec.org/
     cz_business_id: 22746668
-    tier: bartering
+    tier: partnering
     periods:
       - [2019-07, null]
     note: |
@@ -82,18 +82,17 @@ registry:
     slug: djangogirls
     url: https://djangogirls.org/
     cz_business_id: 22746668
-    tier: bartering
+    tier: partnering
     periods:
       - [2019-07, null]
     note: |
       Mohou v klubu propagovat své akce. Django Girls typicky na českém území organizují dobrovolníci podporovaní neziskovkou Pyvec. Provozovatel junior.guru je nejen členem, ale dokonce ve vedení Pyvce. Celé junior.guru kdysi vzniklo jako výsledek dobrovolnictví pro Python komunitu, které zahrnovalo i organizaci nebo koučování na Django Girls workshopech.
-    listed: false
 
   - name: PyLadies
     slug: pyladies
     url: https://pyladies.cz/
     cz_business_id: 22746668
-    tier: bartering
+    tier: partnering
     periods:
       - [2019-07, null]
     note: |
@@ -103,7 +102,7 @@ registry:
     slug: ajtyvit
     url: https://ajtyvit.sk/
     sk_business_id: 42352657
-    tier: bartering
+    tier: partnering
     periods:
       - [2022-05, null]
     note: |
@@ -113,7 +112,7 @@ registry:
     slug: yablko
     url: http://robweb.sk/
     sk_business_id: 50518224
-    tier: bartering
+    tier: partnering
     periods:
       - [2020-09, null]
     note: |
@@ -123,7 +122,7 @@ registry:
     slug: frontendisti
     url: https://frontendisti.cz/
     cz_business_id: 3591263
-    tier: bartering
+    tier: partnering
     periods:
       - [2021-02, null]
     note: |
@@ -133,7 +132,7 @@ registry:
     slug: czechitas
     url: https://www.czechitas.cz/
     cz_business_id: 22834958
-    tier: bartering
+    tier: partnering
     periods:
       - [2021-02, null]
     note: |
@@ -168,7 +167,7 @@ registry:
     slug: coreskill
     url: https://coreskill.tech/
     cz_business_id: 69320144
-    tier: bartering
+    tier: partnering
     periods:
       - [2021-02, null]
     note: |
@@ -178,7 +177,7 @@ registry:
     slug: dokazesprogramovat
     url: https://www.dokazesprogramovat.cz/
     cz_business_id: 14389762
-    tier: bartering
+    tier: partnering
     periods:
       - [2024-07, null]
     note: |
@@ -196,7 +195,7 @@ registry:
     slug: creatiweb
     url: https://creatiweb.cz/
     cz_business_id: 8237107
-    tier: bartering
+    tier: partnering
     periods:
       - [2023-06, null]
       - [2021-02, 2022-02]
@@ -225,7 +224,7 @@ registry:
     slug: skoumal
     url: https://www.skoumal.com/
     cz_business_id: 3529151
-    tier: bartering
+    tier: partnering
     periods:
       - [2021-02, null]
     note: |
