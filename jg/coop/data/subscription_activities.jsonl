@@ -16051,3 +16051,6 @@
 {"account_id": 5694251, "f": true, "happened_at": "2024-05-31T16:04:56", "subscription_interval": "month", "type": "trial_start"}
 {"account_id": 5644022, "f": false, "happened_at": "2024-05-31T16:42:27", "subscription_interval": "month", "type": "deactivation"}
 {"account_id": 5644022, "f": false, "happened_at": "2024-05-31T16:42:27", "subscription_interval": "month", "type": "trial_end"}
+{"account_id": 4468862, "f": true, "happened_at": "2024-06-01T10:27:11", "subscription_interval": "month", "type": "deactivation"}
+{"account_id": 5373234, "f": true, "happened_at": "2024-06-01T18:21:42", "subscription_interval": "month", "type": "order"}
+{"account_id": 4288201, "f": false, "happened_at": "2024-06-01T19:41:49", "subscription_interval": "month", "type": "order"}
