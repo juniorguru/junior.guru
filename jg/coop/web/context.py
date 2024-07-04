@@ -18,6 +18,7 @@ from jg.coop.models.exchange_rate import ExchangeRate
 from jg.coop.models.followers import Followers
 from jg.coop.models.job import ListedJob
 from jg.coop.models.page import Page
+from jg.coop.models.partner import Partner
 from jg.coop.models.podcast import PodcastEpisode
 from jg.coop.models.sponsor import GitHubSponsor, PastSponsor, Sponsor, SponsorTier
 from jg.coop.models.stage import Stage
@@ -84,10 +85,13 @@ def on_docs_context(context):
     context["sponsors_by_tier"] = Sponsor.tier_grouping()
 
     # club.md
-    context["sponsors"] = Sponsor.listing()
     context["messages_count"] = ClubMessage.count()
     context["events"] = Event.listing()
     context["events_promo"] = Event.promo_listing()
+
+    # club.md, open.md
+    context["sponsors"] = Sponsor.listing()
+    context["partners"] = Partner.listing()
 
     # love.jinja
     context["github_sponsors_czk"] = ExchangeRate.from_currency(4, "USD")

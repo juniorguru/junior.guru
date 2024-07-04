@@ -1,148 +1,11 @@
-tiers:
-  - slug: partnering
-    name: Spolupracujeme
-    plans:
-      - https://juniorguru.memberful.com/admin/plans/111610
-      - https://juniorguru.memberful.com/admin/plans/111020  # Dokážeš programovat
-      - https://juniorguru.memberful.com/admin/plans/111021  # CoreSkill
-
-  - slug: supporting
-    name: Sponzorujeme
-    plans:
-      - https://juniorguru.memberful.com/admin/plans/111099
-
-  - slug: providing_courses
-    name: Poskytujeme kurzy
-    plans:
-      - https://juniorguru.memberful.com/admin/plans/111100
-
-  - slug: building_brand
-    name: Budujeme brand
-    plans:
-      - https://juniorguru.memberful.com/admin/plans/111101
-    max_sponsors: 4
-
 registry:
   # CURRENT SPONSORS
-
-  # TODO partners:
-  # - CDN77.com (Oct 21) gives me CDN for podcast, but I don't use it (yet).
-  # - Merk.cz (Jul 24) gives me API for companies, but I don't use it (yet).
-  # - 'Popitchi mentoring' (Feb 24) gives me landing page, but it would make more sense to put her community there as a partner.
-
-  - name: Česko.Digital
-    slug: ceskodigital
-    url: https://www.cesko.digital/
-    cz_business_id: 8178607
-    tier: partnering
-    periods:
-      - [2019-07, null]
-    note: |
-      Spolupráce mezi komunitami. Snaha zapojit juniory do dobrovolných aktivit podporující digitalizaci státu a neziskovek.
-
-  - name: DigiKoalice
-    slug: digikoalice
-    url: https://digikoalice.cz/
-    tier: partnering
-    periods:
-      - [2021-11, null]
-    note: |
-      Projekt junior.guru je členem DigiKoalice, české národní koalice pro digitální dovednosti a pracovní místa.
-
-  - name: Týden pro Digitální Česko
-    slug: tdc
-    url: https://budoucnostjedigitalni.gov.cz/
-    tier: partnering
-    periods:
-      - [2023-06, null]
-    note: |
-      Projekt junior.guru je každoročním partnerem Týdne pro Digitální Česko, celostátní vzdělávací akce v oblasti digitalizace.
-
-  - name: ReactGirls
-    slug: reactgirls
-    url: https://reactgirls.com/
-    cz_business_id: 9587535
-    tier: partnering
-    periods:
-      - [2021-11, null]
-    note: |
-      Spolupráce mezi komunitami. Mohou v klubu propagovat své akce apod.
-
-  - name: Pyvec
-    slug: pyvec
-    url: https://pyvec.org/
-    cz_business_id: 22746668
-    tier: partnering
-    periods:
-      - [2019-07, null]
-    note: |
-      Spolupráce mezi komunitami. Python komunita může v klubu propagovat své akce apod. Provozovatel junior.guru je nejen členem, ale dokonce ve vedení Pyvce. Celé junior.guru kdysi vzniklo jako výsledek dobrovolnictví pro Python komunitu.
-
-  - name: Django Girls
-    slug: djangogirls
-    url: https://djangogirls.org/
-    cz_business_id: 22746668
-    tier: partnering
-    periods:
-      - [2019-07, null]
-    note: |
-      Mohou v klubu propagovat své akce. Django Girls typicky na českém území organizují dobrovolníci podporovaní neziskovkou Pyvec. Provozovatel junior.guru je nejen členem, ale dokonce ve vedení Pyvce. Celé junior.guru kdysi vzniklo jako výsledek dobrovolnictví pro Python komunitu, které zahrnovalo i organizaci nebo koučování na Django Girls workshopech.
-
-  - name: PyLadies
-    slug: pyladies
-    url: https://pyladies.cz/
-    cz_business_id: 22746668
-    tier: partnering
-    periods:
-      - [2019-07, null]
-    note: |
-      Spolupráce mezi komunitami. Mohou v klubu propagovat své akce apod. Celé junior.guru kdysi vzniklo v rámci dobrovolnictví pro PyLadies a na základě podnětů z PyLadies.
-
-  - name: Aj Ty v IT
-    slug: ajtyvit
-    url: https://ajtyvit.sk/
-    sk_business_id: 42352657
-    tier: partnering
-    periods:
-      - [2022-05, null]
-    note: |
-      Spolupráce mezi komunitami. Mohou v klubu propagovat své akce apod. Až bude junior.guru umět SK portály, mají slíbený pravidelný export z databáze pracovních inzerátů.
-
-  - name: yablko
-    slug: yablko
-    url: http://robweb.sk/
-    sk_business_id: 50518224
-    tier: partnering
-    periods:
-      - [2020-09, null]
-    note: |
-      Spolupráce mezi spřízněnými projekty. Videa s yablkovými moudry jsou v příručce, yablko chválí klub kudy chodí.
-
-  - name: Frontendisti
-    slug: frontendisti
-    url: https://frontendisti.cz/
-    cz_business_id: 3591263
-    tier: partnering
-    periods:
-      - [2021-02, null]
-    note: |
-      Spolupráce mezi komunitami. Mohou v klubu propagovat své akce apod.
-
-  - name: Czechitas
-    slug: czechitas
-    url: https://www.czechitas.cz/
-    cz_business_id: 22834958
-    tier: partnering
-    periods:
-      - [2021-02, null]
-    note: |
-      Spolupráce mezi komunitami. Mohou v klubu propagovat své akce apod. Dostávají pravidelný export z databáze pracovních inzerátů.
 
   - name: Fakturoid
     slug: fakturoid
     url: https://www.fakturoid.cz/
     cz_business_id: 4656679
-    tier: building_brand
+    subscription: https://juniorguru.memberful.com/admin/subscriptions/3696149
     periods:
       - [2020-09, 2025-05]
 
@@ -150,7 +13,7 @@ registry:
     slug: redhat
     url: https://www.redhat.com/en/jobs
     cz_business_id: 27690016
-    tier: building_brand
+    plan: https://juniorguru.memberful.com/admin/plans/111101
     periods:
       - [2020-09, 2024-09]
 
@@ -158,55 +21,24 @@ registry:
     slug: rector
     url: https://getrector.com/
     cz_business_id: 7536721
-    tier: building_brand
+    plan: https://juniorguru.memberful.com/admin/plans/111101
     periods:
       - [2023-07, 2024-07]
       - [2020-09, 2021-11]
-
-  - name: CoreSkill
-    slug: coreskill
-    url: https://coreskill.tech/
-    cz_business_id: 69320144
-    tier: partnering
-    periods:
-      - [2021-02, null]
-    note: |
-      Využívají klub pro komunikaci se svými klienty (studenty). Dan Srb v klubu moderuje a radí s frontendem.
-
-  - name: Dokážeš programovat
-    slug: dokazesprogramovat
-    url: https://www.dokazesprogramovat.cz/
-    cz_business_id: 14389762
-    tier: partnering
-    periods:
-      - [2024-07, null]
-    note: |
-      Využívají klub jako komunitu pro své studenty. Lucie Lenértová v klubu pořádá různé online akce.
 
   - name: ITnetwork
     slug: itnetwork
     url: https://www.itnetwork.cz/
     cz_business_id: 5861381
-    tier: providing_courses
+    plan: https://juniorguru.memberful.com/admin/plans/111100
     periods:
       - [2024-03, 2025-03]
-
-  - name: Creatiweb
-    slug: creatiweb
-    url: https://creatiweb.cz/
-    cz_business_id: 8237107
-    tier: partnering
-    periods:
-      - [2023-06, null]
-      - [2021-02, 2022-02]
-    note: |
-      Za symbolickou cenu poskytují pracovní místo ve své kanceláři.
 
   - name: ENGETO Academy
     slug: engeto
     url: https://engeto.cz/
     cz_business_id: 4671317
-    tier: providing_courses
+    plan: https://juniorguru.memberful.com/admin/plans/111100
     periods:
       - [2021-05, 2024-07]
 
@@ -214,21 +46,11 @@ registry:
     slug: mews
     url: https://www.mews.com/
     cz_business_id: 24227781
-    tier: supporting
+    plan: https://juniorguru.memberful.com/admin/plans/111099
     periods:
       - [2021-05, 2024-08]
     note: |
       Podílí se na mentoringu a rozšířené pomoci pro lidi, kteří na junior.guru žádají o [stipendium](https://junior.guru/finaid).
-
-  - name: Skoumal
-    slug: skoumal
-    url: https://www.skoumal.com/
-    cz_business_id: 3529151
-    tier: partnering
-    periods:
-      - [2021-02, null]
-    note: |
-      Historicky o první klubové sponzorství. Když Skoumal díky junior.guru získá zajímavé benefity (např. nové zaměstnance), může mít chuť přihodit i finanční podporu.
 
   # PAST SPONSORS
 
@@ -283,6 +105,7 @@ registry:
   - name: CDN77.com
     slug: cdn77
     url: https://www.cdn77.com/
+    cz_business_id: 24149624
     periods:
       - [2021-11, 2022-10]
 
@@ -321,3 +144,10 @@ registry:
     url: https://sdacademy.cz/
     periods:
       - [2021-06, 2022-10]
+
+  - name: Creatiweb
+    slug: creatiweb
+    url: https://creatiweb.cz/
+    cz_business_id: 8237107
+    periods:
+      - [2021-02, 2022-02]

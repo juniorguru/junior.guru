@@ -45,7 +45,7 @@ logger = loggers.from_path(__file__)
         "events",
         "avatars",
         "members",
-        "sponsors",
+        "organizations",
     ]
 )
 def main():
@@ -113,8 +113,8 @@ async def sync_roles(client: ClubClient):
 
     logger.info("Preparing data for computing how to re-assign roles")
     members = ClubUser.members_listing()
-    sponsors = Sponsor.listing()
-    coupons = Sponsor.coupons()
+    # sponsors = Sponsor.listing()
+    # coupons = Sponsor.coupons()
     changes = []
     top_members_limit = ClubUser.top_members_limit()
     logger.info(f"members_count={len(members)}, top_members_limit={top_members_limit}")
@@ -211,35 +211,36 @@ async def sync_roles(client: ClubClient):
             )
         )
 
-    logger.info("Computing how to re-assign role: sponsor")
-    role_id = DocumentedRole.get_by_slug("sponsor").club_id
-    sponsors_members_ids = [member.id for member in members if member.coupon in coupons]
-    logger.debug(f"sponsors_members_ids: {repr_ids(members, sponsors_members_ids)}")
-    for member in members:
-        changes.extend(
-            evaluate_changes(
-                member.id, member.initial_roles, sponsors_members_ids, role_id
-            )
-        )
+    # TODO SPONSORS
+    # logger.info("Computing how to re-assign role: sponsor")
+    # role_id = DocumentedRole.get_by_slug("sponsor").club_id
+    # sponsors_members_ids = [member.id for member in members if member.coupon in coupons]
+    # logger.debug(f"sponsors_members_ids: {repr_ids(members, sponsors_members_ids)}")
+    # for member in members:
+    #     changes.extend(
+    #         evaluate_changes(
+    #             member.id, member.initial_roles, sponsors_members_ids, role_id
+    #         )
+    #     )
 
-    # syncing with Discord
-    logger.info(f"Managing roles for {len(sponsors)} sponsors")
-    await manage_sponsor_roles(client, discord_roles, sponsors)
+    # # syncing with Discord
+    # logger.info(f"Managing roles for {len(sponsors)} sponsors")
+    # await manage_sponsor_roles(client, discord_roles, sponsors)
 
-    for sponsor in sponsors:
-        sponsor_members_ids = [member.id for member in sponsor.list_members]
-        logger.debug(
-            f"sponsor_members_ids({sponsor!r}): {repr_ids(members, sponsor_members_ids)}"
-        )
-        for member in members:
-            changes.extend(
-                evaluate_changes(
-                    member.id,
-                    member.initial_roles,
-                    sponsor_members_ids,
-                    sponsor.role_id,
-                )
-            )
+    # for sponsor in sponsors:
+    #     sponsor_members_ids = [member.id for member in sponsor.list_members]
+    #     logger.debug(
+    #         f"sponsor_members_ids({sponsor!r}): {repr_ids(members, sponsor_members_ids)}"
+    #     )
+    #     for member in members:
+    #         changes.extend(
+    #             evaluate_changes(
+    #                 member.id,
+    #                 member.initial_roles,
+    #                 sponsor_members_ids,
+    #                 sponsor.role_id,
+    #             )
+    #         )
 
     logger.info(f"Applying {len(changes)} changes to roles:\n{pformat(changes)}")
     await apply_changes(client, changes)

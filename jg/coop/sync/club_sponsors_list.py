@@ -23,7 +23,7 @@ IMAGES_DIR = Path("jg/coop/images")
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=["club-content", "sponsors", "roles"])
+@cli.sync_command(dependencies=["club-content", "organizations", "roles"])
 @click.option("--channel", "channel_id", default="sponsors_list", type=parse_channel)
 @click.option(
     "--recreate-interval",

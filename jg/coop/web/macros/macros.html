@@ -293,8 +293,8 @@
 {% endmacro %}
 
 
-{% macro sponsor_link(text, url, utm_medium) -%}
-  <a href="{{ url }}" target="_blank" rel="noopener" data-metrics-utm data-metrics-utm-medium="{{ utm_medium }}" data-metrics-utm-campaign="sponsorship">
+{% macro utm_link(text, url, utm_medium, campaign) -%}
+  <a href="{{ url }}" target="_blank" rel="noopener" data-metrics-utm data-metrics-utm-medium="{{ utm_medium }}" data-metrics-utm-campaign="{{ campaign }}">
     {{- text -}}
   </a>
 {%- endmacro %}
@@ -318,15 +318,18 @@
 {% endmacro %}
 
 
-{% macro logos_list(sponsors_by_tier, priorities=[1, 2, 3], class=none) %}
+{% macro logos_list(organizations, class=none) %}
+  <ul class="logos{% if class %} {{ class }}{% endif %}">
+    {% for org in organizations %}
+      {{ logo(org.name, org.logo_path, org.url, utm_campaign=org.utm_campaign) }}
+    {% endfor %}
+  </ul>
+{% endmacro %}
+
+
+{% macro logos_sponsors_by_tier(sponsors_by_tier) %}
   {% for tier, sponsors in sponsors_by_tier %}
-    {% if not priorities or tier.priority in priorities %}
-      <ul class="logos logos-tier-{{ tier.priority }}{% if class %} {{ class }}{% endif %}">
-        {% for sponsor in sponsors %}
-          {{ logo(sponsor.name, sponsor.logo_path, sponsor.url, utm_campaign=sponsor.utm_campaign) }}
-        {% endfor %}
-      </ul>
-    {% endif %}
+    {{ logos_list(sponsors, class="logos-tier-" + tier.priority|string) }}
   {% endfor %}
 {% endmacro %}
 

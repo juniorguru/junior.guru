@@ -12,7 +12,6 @@ from jg.coop.lib import loggers
 from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
-from jg.coop.models.sponsor import Sponsor
 
 
 YAML_DIR_PATH = Path("jg/coop/data/course_providers")
@@ -32,7 +31,7 @@ class CourseProviderConfig(YAMLConfig):
     sk_business_id: int | None = None
 
 
-@cli.sync_command(dependencies=["sponsors"])
+@cli.sync_command()
 @db.connection_context()
 def main():
     CourseProvider.drop_table()
@@ -43,17 +42,8 @@ def main():
         yaml_data = yaml.safe_load(yaml_path.read_text())
         config = CourseProviderConfig(**yaml_data)
         slug = yaml_path.stem
-        try:
-            sponsor = Sponsor.get_for_course_provider(
-                slug,
-                cz_business_id=config.cz_business_id,
-                sk_business_id=config.sk_business_id,
-            )
-            logger.info(f"Course provider {slug!r} is a sponsor {sponsor.slug!r}")
-        except Sponsor.DoesNotExist:
-            logger.debug(f"Course provider {slug!r} is not a sponsor")
-            sponsor = None
 
+        logger.debug(f"Saving course provider {config.name!r}")
         CourseProvider.create(
             slug=slug,
             edit_url=(
@@ -63,7 +53,6 @@ def main():
             page_title=compile_page_title(config.name),
             page_description=compile_page_description(config.name, config.questions),
             page_lead=compile_page_lead(config.name, config.questions),
-            sponsor=sponsor,
             **config.model_dump(),
         )
         logger.info(f"Loaded {yaml_path.name} as {config.name!r}")

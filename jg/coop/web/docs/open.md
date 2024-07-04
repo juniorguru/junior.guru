@@ -3,7 +3,7 @@ title: Jak se daří provozovat junior.guru
 description: Čísla, statistiky, grafy. Jak se Honzovi daří provozovat junior.guru?
 ---
 
-{% from 'macros.html' import note, lead, sponsor_link, img with context %}
+{% from 'macros.html' import note, lead, utm_link, img with context %}
 
 # Čísla a grafy
 
@@ -296,41 +296,37 @@ Neplatím si žádnou reklamu. Výdaje na marketing jsou předplatné nástrojů
 
 ## Sponzoři
 
-Provoz junior.guru aktuálně podporuje **{{ sponsors|length + sponsors_github|length }} sponzorů a partnerů**.
+Provoz junior.guru aktuálně podporuje **{{ sponsors|length + sponsors_github|length }} sponzorů**.
 Z nich {{ sponsors_github|length }} využívá [GitHub Sponsors](https://github.com/sponsors/honzajavorek/).
 
 {% for tier, sponsors in sponsors_by_tier %}
-### {{ tier.name }}<small>{%- for _ in range(tier.priority) -%}
+### {{ tier.name }}<small>{%- for _ in range(tier.priority + 1) -%}
   &nbsp;{{- 'star'|icon -}}
-{%- endfor -%}{% if tier.priority == 0 -%}
-  &nbsp;{{- 'balloon'|icon -}}
-{%- endif %}</small>
+{%- endfor -%}</small>
 
 <div class="table-responsive"><table class="table align-middle">
   {% for sponsor in sponsors %}
     <tr>
       <td>
-        {{ sponsor_link(sponsor.name, sponsor.url, 'about') }}
+        {{ utm_link(sponsor.name, sponsor.url, 'about', sponsor.utm_campaign) }}
         {% if sponsor.note %}
         <br><small>{{ sponsor.note|md }}</small>
         {% endif %}
       </td>
       <td style="width: 5rem">
         {{ sponsor.members_count }}<br>
-        <small>členů</small>
+        <small>{{ sponsor.members_count|nplurals("člen", "členové", "členů") }}</small>
       </td>
-      {% if tier.priority != 0 %}
-        <td style="width: 5rem">
-          <span {% if sponsor.days_until_renew() < 30 %}
-          class="problem-very-soon"
-        {% elif sponsor.days_until_renew() < 60 %}
-          class="problem-soon"
-        {%- endif %}>
-            {{ sponsor.days_until_renew() }} dní<br>
-            <small>zbývá</small>
-          </span>
-        </td>
-      {% endif %}
+      <td style="width: 5rem">
+        <span {% if sponsor.days_until_renew() < 30 %}
+        class="problem-very-soon"
+      {% elif sponsor.days_until_renew() < 60 %}
+        class="problem-soon"
+      {%- endif %}>
+          {{ sponsor.days_until_renew() }} dní<br>
+          <small>zbývá</small>
+        </span>
+      </td>
       <td style="width: 200px">
         {{ img('static/' + sponsor.logo_path, sponsor.name, 130, 60) }}
       </td>
@@ -357,13 +353,35 @@ Z nich {{ sponsors_github|length }} využívá [GitHub Sponsors](https://github.
 
 ### Bývalí sponzoři <small>{{ 'heart'|icon }}</small>
 
-{% for sponsor in sponsors_past %}[{{ sponsor.name }}]({{ sponsor.url }}){% if not loop.last %}, {% endif %}{% endfor %}.
+{% for sponsor in sponsors_past %}{{ utm_link(sponsor.name, sponsor.url, "about", sponsor.utm_campaign) }}{% if not loop.last %}, {% endif %}{% endfor %}.
 
 **GitHub Sponsors:** {% for sponsor in sponsors_github_past %}[@{{ sponsor.slug }}]({{ sponsor.url }}){% if not loop.last %}, {% endif %}{% endfor %}.
 
 **Patreon:** Tomáš Ehrlich, Tomáš Jeřábek, Vojta Tranta, Petr Viktorin
 
 A další neveřejně, někteří přes GitHub Sponsors, někteří přímo na účet.
+
+## Partneři
+
+Aktuálně junior.guru spolupracuje s **{{ partners|length }} partnery**.
+
+<div class="table-responsive"><table class="table align-middle">
+  {% for partner in partners %}
+    <tr>
+      <td>
+        {{ utm_link(partner.name, partner.url, 'about', partner.utm_campaign) }}
+        <br><small>{{ partner.note|md }}</small>
+      </td>
+      <td style="width: 5rem">
+        {{ partner.members_count }}<br>
+        <small>{{ partner.members_count|nplurals("člen", "členové", "členů") }}</small>
+      </td>
+      <td style="width: 200px">
+        {{ img('static/' + partner.logo_path, partner.name, 130, 60) }}
+      </td>
+    </tr>
+  {% endfor %}
+</table></div>
 
 ## Aktivita v klubu
 

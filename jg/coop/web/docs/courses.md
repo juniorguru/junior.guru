@@ -13,7 +13,7 @@ title: Katalog kurzů programování a testování
 {% endcall %}
 
 {% for group, course_providers in course_providers_by_group %}
-  {% if group == "sponsors" %}
+  {% if group == "highlighted" %}
 
 ## Sponzoři
 Vybrali si [tarif z ceníku](love.jinja) a poslali finanční prostředky na provoz junior.guru. Neznamená to, že jsou nejlepší, ale budiž jim ke cti, že podporují tento projekt.
@@ -32,7 +32,7 @@ Abecední seznam ostatních poskytovatelů kurzů.
 
   <div class="link-cards">
     {% for course_provider in course_providers %}
-      {% if course_provider.group == "sponsors" %}
+      {% if course_provider.group == "highlighted" %}
         {{ link_card(
           course_provider.name,
           pages|docs_url(course_provider.page_url)|url,

@@ -46,9 +46,9 @@ DESCRIPTION_TEMPLATE = dedent(
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=["club-content", "sponsors", "roles"])
+@cli.sync_command(dependencies=["club-content", "organizations", "roles"])
 def main():
-    return  # FIXME TODO, temporarily disabled until rewritten
+    return  # TODO SPONSORS, temporarily disabled until rewritten
     discord_task.run(sync_partners_intro)
 
 
@@ -122,3 +122,12 @@ def get_partners_without_intro(active_partnerships, today=None):
                 yield partner
         else:
             yield partner
+
+
+# @property
+# def intro(self) -> ClubMessage:
+#     return ClubMessage.last_bot_message(
+#         ClubChannelID.INTRO,
+#         starting_emoji=ClubEmoji.SPONSOR_INTRO,
+#         contains_text=self.name_markdown_bold,
+#     )

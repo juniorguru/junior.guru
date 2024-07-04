@@ -1,7 +1,8 @@
 from datetime import date
 from itertools import groupby
-from typing import TYPE_CHECKING, Iterable, Literal, Self
+from typing import Iterable, Literal, Self
 
+import czech_sort
 from peewee import (
     BooleanField,
     CharField,
@@ -9,46 +10,37 @@ from peewee import (
     ForeignKeyField,
     IntegerField,
     TextField,
+    fn,
 )
 
-from jg.coop.lib.discord_club import ClubChannelID, ClubEmoji
 from jg.coop.models.base import BaseModel, JSONField
-from jg.coop.models.club import ClubMessage, ClubUser
-
-
-if TYPE_CHECKING:
-    from jg.coop.models.course_provider import CourseProvider
+from jg.coop.models.club import ClubUser
 
 
 class SponsorTier(BaseModel):
-    slug = CharField(primary_key=True)
     name = CharField()
     priority = IntegerField()
-    icon = CharField(null=True)
     price = IntegerField(null=True)
     member_price = IntegerField(null=True)
-    plans = JSONField(default=list)
+    plan_id = IntegerField()
     max_sponsors = IntegerField(null=True)
+    courses_highlight = BooleanField(default=False)
 
     @property
     def url(self) -> str:
-        return f"https://junior.guru/love/#{self.anchor}"
+        return f"https://junior.guru/love/#{self.slug}"
 
     @property
     def plan_url(self) -> str:
         return f"https://juniorguru.memberful.com/checkout?plan={self.plans[0]}"
 
     @property
-    def anchor(self) -> str:
-        return f"tier-{self.slug.replace('_', '-')}"
+    def slug(self) -> str:
+        return f"tier-{self.priority}"
 
     @property
     def list_sponsors(self) -> Iterable["Sponsor"]:
         return self._list_sponsors.order_by(Sponsor.name)
-
-    @property
-    def is_partner(self) -> bool:
-        return self.priority == 0
 
     @property
     def is_sold_out(self) -> bool:
@@ -63,105 +55,56 @@ class SponsorTier(BaseModel):
 
 
 class Sponsor(BaseModel):
+    # organization
     slug = CharField(primary_key=True)
     name = CharField()
     url = CharField()
     cz_business_id = IntegerField(null=True)
     sk_business_id = IntegerField(null=True)
+    subscription_id = IntegerField(null=True)
+    logo_path = CharField()
+    role_id = IntegerField(null=True)
+    members_ids = JSONField(default=list)
+
+    # sponsor
     tier = ForeignKeyField(SponsorTier, backref="_list_sponsors")
     start_on = DateField(null=True)
     renews_on = DateField()
     note = TextField(null=True)
-    coupon = CharField(null=True, index=True)
-    logo_path = CharField()
     poster_path = CharField()
-    role_id = IntegerField(null=True)
 
     @property
-    def utm_campaign(self) -> Literal["partnership", "sponsorship"]:
-        return "partnership" if self.tier.is_partner else "sponsorship"
-
-    @property
-    def name_markdown_bold(self) -> str:
-        return f"**{self.name}**"
-
-    @property
-    def intro(self) -> ClubMessage:
-        return ClubMessage.last_bot_message(
-            ClubChannelID.INTRO,
-            starting_emoji=ClubEmoji.SPONSOR_INTRO,
-            contains_text=self.name_markdown_bold,
-        )
-
-    @property
-    def course_provider(self) -> "CourseProvider | None":
-        return self._course_provider.first()
+    def utm_campaign(self) -> Literal["sponsorship"]:
+        return "sponsorship"
 
     @property
     def list_members(self) -> Iterable[ClubUser]:
-        if not self.coupon:
-            return []
-        cls = self.__class__
-        return (
-            ClubUser.select()
-            .join(cls, on=(ClubUser.coupon == cls.coupon))
-            .where(
-                (ClubUser.is_member == True)  # noqa: E712
-                & (ClubUser.coupon == self.coupon)
-            )
-            .order_by(ClubUser.display_name)
-        )
+        return ClubUser.select().where(ClubUser.account_id.in_(self.members_ids))
 
     @property
     def members_count(self) -> int:
-        return len(self.list_members)
+        return len(self.members_ids)
 
     def days_until_renew(self, today=None) -> int:
         today = today or date.today()
         return max(0, (self.renews_on - today).days)
 
     @classmethod
-    def get_for_course_provider(
-        cls,
-        slug: str,
-        cz_business_id: int | None = None,
-        sk_business_id: int | None = None,
-    ) -> Self:
-        if cz_business_id:
-            query = cls.select().where(cls.cz_business_id == cz_business_id)
-        elif sk_business_id:
-            query = cls.select().where(cls.sk_business_id == sk_business_id)
-        else:
-            query = cls.select().where(
-                cls.slug == slug,
-                cls.cz_business_id.is_null(),
-                cls.sk_business_id.is_null(),
-            )
-        sponsors = sorted(query, key=lambda sponsor: 0 if sponsor.slug == slug else 1)
-        try:
-            return sponsors[0]
-        except IndexError:
-            raise cls.DoesNotExist()
-
-    @classmethod
     def listing(cls) -> Iterable[Self]:
         return (
             cls.select()
             .join(SponsorTier)
-            .order_by(SponsorTier.priority.desc(), Sponsor.name)
+            .order_by(SponsorTier.priority.desc(), fn.czech_sort(cls.name))
         )
-
-    @classmethod
-    def handbook_listing(cls) -> Iterable[Self]:
-        for _, sponsors in cls.tier_grouping():
-            return sponsors
 
     @classmethod
     def club_listing(cls) -> Iterable[Self]:
         return sorted(
             cls.listing(),
-            key=lambda sponsor: (sponsor.members_count, sponsor.name),
-            reverse=True,
+            key=lambda sponsor: (
+                -1 * sponsor.members_count,
+                czech_sort.key(sponsor.name),
+            ),
         )
 
     @classmethod
@@ -172,26 +115,23 @@ class Sponsor(BaseModel):
         ]
 
     @classmethod
-    def count(cls) -> int:
-        return cls.select().count()
+    def handbook_listing(cls) -> Iterable[Self]:
+        for _, sponsors in cls.tier_grouping():
+            return sponsors
 
     @classmethod
-    def coupons(cls) -> set[str]:
-        return frozenset(
-            (
-                row[0]
-                for row in cls.select(cls.coupon)
-                .distinct()
-                .where(cls.coupon.is_null(False))
-                .tuples()
-            )
-        )
+    def count(cls) -> int:
+        return cls.select().count()
 
 
 class PastSponsor(BaseModel):
     slug = CharField(primary_key=True)
     name = CharField()
     url = CharField()
+
+    @property
+    def utm_campaign(self) -> Literal["past-sponsorship"]:
+        return "past-sponsorship"
 
     @classmethod
     def count(cls) -> int:

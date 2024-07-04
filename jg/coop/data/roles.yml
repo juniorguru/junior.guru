@@ -28,6 +28,11 @@
   description: |
     Kdo má předplatné zaplacené sponzorem. Roli automaticky spravuje bot.
 
+- id: 1257709183156097208
+  slug: partner
+  description: |
+    Kdo má předplatné v rámci partnerství. Roli automaticky spravuje bot.
+
 - id: 806851592799649874
   slug: booster
   description: |

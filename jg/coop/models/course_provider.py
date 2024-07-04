@@ -1,17 +1,19 @@
+import itertools
 from enum import StrEnum
-from functools import cached_property
 from itertools import groupby
 from operator import attrgetter
 from typing import Iterable, Self
 
-from peewee import CharField, ForeignKeyField, IntegerField, TextField, fn
+import czech_sort
+from peewee import CharField, IntegerField, TextField, fn
 
 from jg.coop.models.base import BaseModel
+from jg.coop.models.partner import Partner
 from jg.coop.models.sponsor import Sponsor, SponsorTier
 
 
 class CourseProviderGroup(StrEnum):
-    SPONSORS = "sponsors"
+    HIGHLIGHTED = "highlighted"
     PARTNERS = "partners"
     OTHERS = "others"
 
@@ -27,22 +29,22 @@ class CourseProvider(BaseModel):
     page_description = CharField()
     page_lead = CharField()
     page_monthly_pageviews = IntegerField(null=True)
-    sponsor = ForeignKeyField(Sponsor, backref="_course_provider", null=True)
     usp_description = TextField(null=True)  # unique selling proposition
 
     @property
     def page_url(self) -> str:
         return f"courses/{self.slug}.md"
 
-    @cached_property
+    @property
     def group(self) -> CourseProviderGroup:
-        if not self.sponsor:
-            return CourseProviderGroup.OTHERS
-        if self.sponsor.tier.is_partner:
-            return CourseProviderGroup.PARTNERS
-        return CourseProviderGroup.SPONSORS
+        if org := self.organization:
+            if isinstance(org, Sponsor) and org.tier.courses_highlight:
+                return CourseProviderGroup.HIGHLIGHTED
+            if isinstance(org, Partner):
+                return CourseProviderGroup.PARTNERS
+        return CourseProviderGroup.OTHERS
 
-    @cached_property
+    @property
     def list_courses_up(self) -> Iterable["CourseUP"]:
         return (
             CourseUP.select()
@@ -50,33 +52,42 @@ class CourseProvider(BaseModel):
             .order_by(fn.czech_sort(CourseUP.name))
         )
 
-    @classmethod
-    def sponsors_listing(cls) -> Iterable[Self]:
-        return (
-            cls.select()
-            .join(Sponsor)
-            .where(cls.sponsor.is_null(False))
-            .join(SponsorTier)
-            .order_by(SponsorTier.priority.desc(), fn.czech_sort(cls.name))
-        )
+    @property
+    def organization(self) -> Sponsor | Partner | None:
+        orgs = list(itertools.chain(Sponsor.listing(), Partner.listing()))
+        if self.cz_business_id:
+            orgs = (org for org in orgs if org.cz_business_id == self.cz_business_id)
+        elif self.sk_business_id:
+            orgs = (org for org in orgs if org.sk_business_id == self.sk_business_id)
+        else:
+            orgs = (
+                org
+                for org in orgs
+                if (
+                    org.cz_business_id is None
+                    and org.sk_business_id is None
+                    and org.slug == self.slug
+                )
+            )
+        orgs = sorted(orgs, key=lambda subject: 0 if subject.slug == self.slug else 1)
+        try:
+            return orgs[0]
+        except IndexError:
+            return None
 
     @classmethod
     def listing(cls) -> Iterable[Self]:
-        priority = list(cls.sponsors_listing())
-        priority_slugs = [course_provider.slug for course_provider in priority]
-        query = (
-            cls.select()
-            .where(cls.slug.not_in(priority_slugs))
-            .order_by(fn.czech_sort(cls.name))
-        )
-        return priority + list(query)
+        return cls.select().order_by(fn.czech_sort(cls.name))
 
     @classmethod
     def grouping(cls) -> list[tuple[SponsorTier | None, list[Self]]]:
         groups = list(CourseProviderGroup)
         course_providers = sorted(
-            cls.listing(),
-            key=lambda course_provider: groups.index(course_provider.group),
+            cls.select(),
+            key=lambda course_provider: (
+                groups.index(course_provider.group),
+                czech_sort.key(course_provider.name),
+            ),
         )
         return [
             (group, list(sponsors))

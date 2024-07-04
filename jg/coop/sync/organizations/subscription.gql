@@ -1,0 +1,15 @@
+query fetch($id: ID!) {
+  subscription(id: $id) {
+    plan {
+      id
+    }
+    members {
+      nodes {
+        id
+      }
+      pageInfo {
+        hasNextPage
+      }
+    }
+  }
+}

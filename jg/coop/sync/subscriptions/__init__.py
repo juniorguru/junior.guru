@@ -50,7 +50,7 @@ SUBSCRIPTION_TYPES_MAPPING = {
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=["sponsors", "feminine-names"])
+@cli.sync_command(dependencies=["organizations", "feminine-names"])
 @click.option("--from-date", default="2021-01-01", type=date.fromisoformat)
 @click.option("--multiple-products-date", default="2023-12-01", type=date.fromisoformat)
 @click.option(
@@ -67,11 +67,9 @@ def main(from_date, multiple_products_date, history_path, clear_history):
     SubscriptionActivity.drop_table()
     SubscriptionActivity.create_table()
 
+    # TODO SPONSORS subscription mapping to sponsors and partners
     subscripton_types_mapping = {
-        **{
-            parse_coupon(coupon)["slug"]: SubscriptionType.SPONSOR
-            for coupon in Sponsor.coupons()
-        },
+        **{parse_coupon(coupon)["slug"]: SubscriptionType.SPONSOR for coupon in []},
         **SUBSCRIPTION_TYPES_MAPPING,
     }
 

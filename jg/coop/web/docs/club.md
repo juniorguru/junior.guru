@@ -5,7 +5,7 @@ template: main_club.html
 description: Přidej se na junior.guru Discord! Jsme tvoje online programovací parta, skupina, fórum. Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáhat. Svoje programování nebo hledání práce posuneš o 1 % každý den.
 ---
 
-{% from 'macros.html' import img, markdown, blockquote_avatar, blockquote_toxic, lead, logos_list, event_circle with context %}
+{% from 'macros.html' import img, markdown, blockquote_avatar, blockquote_toxic, lead, logos_sponsors_by_tier, logos_list, event_circle with context %}
 
 
 <header class="masthead"><div class="masthead-container">
@@ -109,8 +109,8 @@ O klub se stará **Honza Javorek, autor junior.guru**. Okolo se však „poflak
 
 Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý s jiným životním příběhem, ale s velmi podobnými dotazy a problémy.
 {% endcall %}
-<div class="standout-bottom">{{ logos_list(sponsors_by_tier, priorities=[3, 2, 1]) }}</div>
-{{ logos_list(sponsors_by_tier, priorities=[0], class="mb-0") }}
+<div class="standout-bottom">{{ logos_sponsors_by_tier(sponsors_by_tier) }}</div>
+{{ logos_list(partners, class="mb-0") }}
 </section>
 
 

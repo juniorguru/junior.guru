@@ -1,25 +1,3 @@
-.logos {
-  @extend .list-unstyled;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.logos-item {
-  display: flex;
-  align-items: center;
-}
-
-.logos-image {
-  display: block;
-  width: auto;
-  height: auto;
-}
-
-/*
-  TIERS
-*/
-
 @mixin logos-tier($size-base) {
   $sm-width: $size-base;
   $sm-height: $size-base * .4;
@@ -47,23 +25,42 @@
   }
 }
 
-.logos {  /* stylelint-disable-line no-duplicate-selectors */
+/*
+  BASE
+*/
+
+.logos {
+  @extend .list-unstyled;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   @include logos-tier(3.5rem);
 }
 
-.logos-tier-0 {
-  @include logos-tier(3rem);
+.logos-item {
+  display: flex;
+  align-items: center;
 }
 
-.logos-tier-1 {
+.logos-image {
+  display: block;
+  width: auto;
+  height: auto;
+}
+
+/*
+  TIERS
+*/
+
+.logos-tier-0 {
   @include logos-tier(4.5rem);
 }
 
-.logos-tier-2 {
+.logos-tier-1 {
   @include logos-tier(6.5rem);
 }
 
-.logos-tier-3 {
+.logos-tier-2 {
   @include logos-tier(8rem);
 }
 

@@ -4,7 +4,7 @@ template: main_sections.html
 description: Komunita pro začátečníky v programování, průvodce programováním pro samouky, kurzy programování, nabídky práce pro juniory
 ---
 
-{% from 'macros.html' import lead, link_card, logo, news_card, img, logos_list with context %}
+{% from 'macros.html' import lead, link_card, logo, news_card, img, logos_sponsors_by_tier with context %}
 
 
 <header class="masthead"><div class="masthead-container">
@@ -126,7 +126,7 @@ description: Komunita pro začátečníky v programování, průvodce programov�
     Provoz projektu financují členové [klubu](club.md) svým předplatným a firemní či individuální [sponzoři](love.jinja).
   {%- endcall %}
   <div class="mb-3">
-    {{ logos_list(sponsors_by_tier) }}
+    {{ logos_sponsors_by_tier(sponsors_by_tier) }}
   </div>
   <ul class="sponsor-avatars">
   {% for sponsor in sponsors_github|shuffle %}
