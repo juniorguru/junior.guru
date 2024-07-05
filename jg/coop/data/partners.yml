@@ -34,6 +34,7 @@ registry:
     url: https://www.skoumal.com/
     cz_business_id: 3529151
     start_on: 2021-02
+    subscription: https://juniorguru.memberful.com/admin/subscriptions/3699637
     note: |
       Historicky o první klubové sponzorství. Když Skoumal díky junior.guru získá zajímavé benefity (např. nové zaměstnance), může mít chuť přihodit i finanční podporu.
 
@@ -72,6 +73,7 @@ registry:
     url: https://reactgirls.com/
     cz_business_id: 9587535
     start_on: 2021-11
+    subscription: https://juniorguru.memberful.com/admin/subscriptions/3699670
     note: |
       Spolupráce mezi komunitami. Mohou v klubu propagovat své akce apod.
 
@@ -80,6 +82,7 @@ registry:
     url: https://pyvec.org/
     cz_business_id: 22746668
     start_on: 2019-07
+    subscription: https://juniorguru.memberful.com/admin/subscriptions/3699671
     note: |
       Spolupráce mezi komunitami. Python komunita může v klubu propagovat své akce apod. Provozovatel junior.guru je nejen členem, ale dokonce ve vedení Pyvce. Celé junior.guru kdysi vzniklo jako výsledek dobrovolnictví pro Python komunitu.
 
@@ -88,6 +91,7 @@ registry:
     url: https://djangogirls.org/
     cz_business_id: 22746668
     start_on: 2019-07
+    subscription: https://juniorguru.memberful.com/admin/subscriptions/3699671
     note: |
       Mohou v klubu propagovat své akce. Django Girls typicky na českém území organizují dobrovolníci podporovaní neziskovkou Pyvec. Provozovatel junior.guru je nejen členem, ale dokonce ve vedení Pyvce. Celé junior.guru kdysi vzniklo jako výsledek dobrovolnictví pro Python komunitu, které zahrnovalo i organizaci nebo koučování na Django Girls workshopech.
 
@@ -96,6 +100,7 @@ registry:
     url: https://pyladies.cz/
     cz_business_id: 22746668
     start_on: 2019-07
+    subscription: https://juniorguru.memberful.com/admin/subscriptions/3699671
     note: |
       Spolupráce mezi komunitami. Mohou v klubu propagovat své akce apod. Celé junior.guru kdysi vzniklo v rámci dobrovolnictví pro PyLadies a na základě podnětů z PyLadies.
 
@@ -104,6 +109,7 @@ registry:
     url: https://ajtyvit.sk/
     sk_business_id: 42352657
     start_on: 2022-05
+    subscription: https://juniorguru.memberful.com/admin/subscriptions/3699665
     note: |
       Spolupráce mezi komunitami. Mohou v klubu propagovat své akce apod. Až bude junior.guru umět SK portály, mají slíbený pravidelný export z databáze pracovních inzerátů.
 
@@ -112,6 +118,7 @@ registry:
     url: http://robweb.sk/
     sk_business_id: 50518224
     start_on: 2020-09
+    subscription: https://juniorguru.memberful.com/admin/subscriptions/3699660
     note: |
       Spolupráce mezi spřízněnými projekty. Videa s yablkovými moudry jsou v příručce, yablko chválí klub kudy chodí.
 
@@ -120,6 +127,7 @@ registry:
     url: https://frontendisti.cz/
     cz_business_id: 3591263
     start_on: 2021-02
+    subscription: https://juniorguru.memberful.com/admin/subscriptions/3699662
     note: |
       Spolupráce mezi komunitami. Mohou v klubu propagovat své akce apod.
 
@@ -128,6 +136,7 @@ registry:
     url: https://www.czechitas.cz/
     cz_business_id: 22834958
     start_on: 2021-02
+    subscription: https://juniorguru.memberful.com/admin/subscriptions/3699663
     note: |
       Spolupráce mezi komunitami. Mohou v klubu propagovat své akce apod. Dostávají pravidelný export z databáze pracovních inzerátů.
 
@@ -136,15 +145,15 @@ registry:
     url: https://coreskill.tech/
     cz_business_id: 69320144
     start_on: 2021-02
+    subscription: https://juniorguru.memberful.com/admin/subscriptions/3699681
     note: |
       Využívají klub pro komunikaci se svými klienty (studenty). Dan Srb v klubu moderuje a radí s frontendem.
-    plan: https://juniorguru.memberful.com/admin/plans/111021
 
   - name: Dokážeš programovat
     slug: dokazesprogramovat
     url: https://www.dokazesprogramovat.cz/
     cz_business_id: 14389762
     start_on: 2024-07
+    subscription: https://juniorguru.memberful.com/admin/subscriptions/3680582
     note: |
       Využívají klub jako komunitu pro své studenty. Lucie Lenértová v klubu pořádá různé online akce.
-    subscription: https://juniorguru.memberful.com/admin/subscriptions/3680582
