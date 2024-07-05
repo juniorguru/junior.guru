@@ -80,11 +80,11 @@ Pokud chceš mít programování jako pomocníka, tento web ti na dalších str�
 
 ### Programování jako kariéra    <span id="coding-career"></span>
 
-Průměrná mzda programátorů je 50.000 Kč a [těch zkušených je dlouhodobě nedostatek](https://www.czso.cz/csu/czso/na-trhu-je-nedostatek-ict-odborniku). Vysokoškolský diplom po tobě většinou nikdo nevyžaduje, můžeš mít pružnou pracovní dobu, můžeš pracovat na dálku. Jestli v roce {{ now.year }} existuje výtah k lepší životní úrovni, je to IT. Zkušenějším programátorům navíc nehrozí, že by měli problém sehnat si práci:
+Průměrná mzda programátorů je 50.000 Kč a [těch zkušených je dlouhodobě nedostatek](https://csu.gov.cz/produkty/na-trhu-je-nedostatek-ict-odborniku). Vysokoškolský diplom po tobě většinou nikdo nevyžaduje, můžeš mít pružnou pracovní dobu, můžeš pracovat na dálku. Jestli v roce {{ now.year }} existuje výtah k lepší životní úrovni, je to IT. Zkušenějším programátorům navíc nehrozí, že by měli problém sehnat si práci:
 
 -   V roce 2018 rostlo IT v Evropě [5× rychleji než vše ostatní](https://2018.stateofeuropeantech.com/). Takto rozjetý vlak se nezastaví, zvlášť když není zasažen přímo a podílí se dokonce na řešení krize.
 
--   Před krizí [měly dvě třetiny IT firem v Česku nedostatek lidí a poptávka stále rostla](https://www.czso.cz/csu/czso/na-trhu-je-nedostatek-ict-odborniku). I pokud část firem zmizí a bude na trhu více lidí hledajících práci, programátorů bude pořád nedostatek.
+-   Před krizí [měly dvě třetiny IT firem v Česku nedostatek lidí a poptávka stále rostla](https://csu.gov.cz/produkty/na-trhu-je-nedostatek-ict-odborniku). I pokud část firem zmizí a bude na trhu více lidí hledajících práci, programátorů bude pořád nedostatek.
 
 -   Oproti jiným oborům je u IT minimální pokles poptávky, někde je dokonce i nárůst — viz např. [data od profesia.sk](https://public.tableau.com/profile/profesia.analytics4840#!/vizhome/ProfesiaReport/Covid?publish=yes), největšího slovenského portálu s nabídkami práce.
 
@@ -94,7 +94,7 @@ IT samozřejmě neexistuje ve vzduchoprázdnu a ostatní obory potřebuje. Vyrá
   'Na rozdíl od řady dalších profesí je pro IT odborníky specifické především to, že jsou rozptýleni napříč hospodářskými odvětvími.',
   'Český statistický úřad'
 ) %}
-  [Zpráva Českého statistického úřadu](https://www.czso.cz/csu/czso/ict-odbornici)
+  [Zpráva Českého statistického úřadu](https://csu.gov.cz/ict-odbornici)
 {% endcall %}
 
 Snad není žádný jiný profesionální obor vyučovaný na vysokých školách, který je pro samouky stejně přístupný jako IT. Všechno ohledně programování si můžeš nastudovat na internetu a vždy se najde někdo, kdo ti rád poradí. Do chirurgie nebo architektury se takto dostat nelze, i když budeš sebevětší nadšenec. Získat první práci v IT oproti tomu samostudiem jde. Není to jednoduché, ale jde to.

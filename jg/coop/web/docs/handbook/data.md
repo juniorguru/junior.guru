@@ -23,7 +23,7 @@ https://www.jetbrains.com/lp/python-developers-survey-2020/
 Statistiky zaměstnaných správců a programátorů
 http://kurzy.vsb.cz/zamstat.php
 
-- https://www.czso.cz/csu/czso/cri/lidske-zdroje-v-informacnich-technologiich-2020
+- https://csu.gov.cz/rychle-informace/lidske-zdroje-v-informacnich-technologiich-2020
 - smitio ankety
 - engeto anketa
 - data o pracovních nabídkách
