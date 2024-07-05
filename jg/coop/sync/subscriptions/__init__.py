@@ -13,7 +13,6 @@ from jg.coop.lib.coupons import parse_coupon
 from jg.coop.lib.memberful import MemberfulAPI
 from jg.coop.models.base import db
 from jg.coop.models.feminine_name import FeminineName
-from jg.coop.models.sponsor import Sponsor
 from jg.coop.models.subscription import (
     SubscriptionActivity,
     SubscriptionActivityType,
