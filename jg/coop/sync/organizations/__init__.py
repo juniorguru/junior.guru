@@ -175,6 +175,7 @@ def main(today: date, clear_posters: bool):
             logger.info(f"Sponsor {sponsor.name} ({sponsor.slug})")
 
             logger.debug("Checking plan, subscription, and figuring out tier")
+            subscription_id = None
             if sponsor.plan:
                 plan_id = parse_plan_id(sponsor.plan)
                 tier = tiers_by_plan_id[plan_id]
@@ -216,6 +217,7 @@ def main(today: date, clear_posters: bool):
             logger.debug(f"Saving {sponsor.slug!r} ({len(members_ids)} members)")
             Sponsor.create(
                 tier=tier,
+                subscription_id=subscription_id,
                 start_on=start_on,
                 renews_on=renews_on,
                 note=note,
