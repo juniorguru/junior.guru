@@ -31,6 +31,7 @@ query fetch($cursor: String!) {
             planGroup {
               name
             }
+            additionalMemberPriceCents
           }
         }
       }

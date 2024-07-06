@@ -5,9 +5,11 @@ import pytest
 from jg.coop.sync.members import get_active_subscription, get_coupon, get_expires_at
 
 
-PLAN_CLUB = dict(planGroup=dict(name="abc"))
+PLAN_CLUB = dict(planGroup=dict(name="abc"), additionalMemberPriceCents=None)
 
-PLAN_OTHER = dict(planGroup=None)
+PLAN_GROUP = dict(planGroup=None, additionalMemberPriceCents=0)
+
+PLAN_OTHER = dict(planGroup=None, additionalMemberPriceCents=None)
 
 
 def test_get_coupon():
@@ -87,7 +89,7 @@ def test_get_active_subscription():
     ) == dict(id=2, active=True, activatedAt=123, plan=PLAN_CLUB)
 
 
-def test_get_active_subscription_skip_without_plan_group():
+def test_get_active_subscription_skip_other_plans():
     assert get_active_subscription(
         [
             dict(id=1, active=True, activatedAt=123, plan=PLAN_CLUB),
@@ -95,6 +97,16 @@ def test_get_active_subscription_skip_without_plan_group():
             dict(id=3, active=False, activatedAt=123, plan=PLAN_CLUB),
         ]
     ) == dict(id=1, active=True, activatedAt=123, plan=PLAN_CLUB)
+
+
+def test_get_active_subscription_dont_skip_group_plans():
+    assert get_active_subscription(
+        [
+            dict(id=1, active=True, activatedAt=123, plan=PLAN_GROUP),
+            dict(id=2, active=True, activatedAt=123, plan=PLAN_OTHER),
+            dict(id=3, active=False, activatedAt=123, plan=PLAN_CLUB),
+        ]
+    ) == dict(id=1, active=True, activatedAt=123, plan=PLAN_GROUP)
 
 
 def test_get_active_subscription_multiple_active():

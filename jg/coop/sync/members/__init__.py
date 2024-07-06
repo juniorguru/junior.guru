@@ -1,4 +1,3 @@
-import itertools
 import math
 from datetime import date, datetime
 from operator import itemgetter
@@ -17,8 +16,6 @@ from jg.coop.lib.mutations import mutating_discord
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubUser
 from jg.coop.models.feminine_name import FeminineName
-from jg.coop.models.partner import Partner
-from jg.coop.models.sponsor import Sponsor
 from jg.coop.models.subscription import SubscriptionActivity
 
 
@@ -28,18 +25,9 @@ logger = loggers.from_path(__file__)
 MEMBERS_GQL_PATH = Path(__file__).parent / "members.gql"
 
 
-@cli.sync_command(
-    dependencies=["club-content", "feminine-names", "subscriptions", "organizations"]
-)
+@cli.sync_command(dependencies=["club-content", "feminine-names", "subscriptions"])
 @db.connection_context()
 def main():
-    logger.info("Getting group subcriptions")
-    group_subscription_ids = {}
-    for org in itertools.chain(Sponsor.listing(), Partner.listing()):
-        group_subscription_ids.update(
-            {member_id: org.subscription_id for member_id in org.members_ids}
-        )
-
     logger.info("Getting data from Memberful")
     memberful = MemberfulAPI()
 
@@ -68,17 +56,11 @@ def main():
                 )
             subscribed_days = SubscriptionActivity.account_subscribed_days(account_id)
 
-            if subscription_id := group_subscription_ids.get(account_id):
-                logger.debug(f"User #{user.id} has group subscription")
-                coupon_parts = {}
-                expires_at = datetime.max  # TODO SPONSORS
-            else:
-                logger.debug(f"User #{user.id} has individual subscription")
-                subscription = get_active_subscription(member["subscriptions"])
-                subscription_id = str(subscription["id"])
-                coupon = get_coupon(subscription)
-                coupon_parts = parse_coupon(coupon) if coupon else {}
-                expires_at = get_expires_at(member["subscriptions"])
+            subscription = get_active_subscription(member["subscriptions"])
+            subscription_id = str(subscription["id"])
+            coupon = get_coupon(subscription)
+            coupon_parts = parse_coupon(coupon) if coupon else {}
+            expires_at = get_expires_at(member["subscriptions"])
 
             logger.debug(
                 f"Updating club user #{user.id} with data from {member_admin_url}"
@@ -144,7 +126,10 @@ def get_active_subscription(subscriptions: list[dict], today: date = None) -> di
         for s in subscriptions
         if s["active"]
         and datetime.utcfromtimestamp(s["activatedAt"]).date() <= today
-        and s["plan"]["planGroup"]
+        and (
+            s["plan"]["planGroup"]  # standard individual plans
+            or s["plan"]["additionalMemberPriceCents"] is not None  # group plans
+        )
     ]
     if len(subscriptions) > 1:
         try:
