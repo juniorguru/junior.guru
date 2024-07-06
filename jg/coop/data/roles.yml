@@ -1,99 +1,100 @@
-- id: 795609174385098762
-  slug: moderator
-  description: |
-    Kdo hlídá fajn atmosféru v klubu, nasměruje tě, poradí ti.
+registry:
+  - id: 795609174385098762
+    slug: moderator
+    description: |
+      Kdo hlídá fajn atmosféru v klubu, nasměruje tě, poradí ti.
 
-- id: 836960665578766396
-  slug: most_helpful
-  description: |
-    Kdo má nejvíc pozitivně hodnocených příspěvků (palce, srdíčka…). Nejprestižnější ocenění! Roli automaticky spravuje bot.
+  - id: 836960665578766396
+    slug: most_helpful
+    description: |
+      Kdo má nejvíc pozitivně hodnocených příspěvků (palce, srdíčka…). Nejprestižnější ocenění! Roli automaticky spravuje bot.
 
-- id: 915967369661251624
-  slug: psychologist
-  description: |
-    Pro info, aby bylo ve <#MENTAL_HEALTH> vidět, kdo je a není laik. Role je vysoko jen aby barva a ikonka přebily ostatní.
+  - id: 915967369661251624
+    slug: psychologist
+    description: |
+      Pro info, aby bylo ve <#MENTAL_HEALTH> vidět, kdo je a není laik. Role je vysoko jen aby barva a ikonka přebily ostatní.
 
-- id: 927544920292601906
-  slug: multimedia
-  description: |
-    Kdo dělá [podcast](https://junior.guru/podcast/) nebo videa z akcí v klubu.
+  - id: 927544920292601906
+    slug: multimedia
+    description: |
+      Kdo dělá [podcast](https://junior.guru/podcast/) nebo videa z akcí v klubu.
 
-- id: 836928169092710441
-  slug: speaker
-  description: |
-    Kdo měl, nebo teprve bude mít přednášku v klubu. Akce minulé i budoucí najdeš [na webu](https://junior.guru/events/). Roli automaticky spravuje bot.
+  - id: 836928169092710441
+    slug: speaker
+    description: |
+      Kdo měl, nebo teprve bude mít přednášku v klubu. Akce minulé i budoucí najdeš [na webu](https://junior.guru/events/). Roli automaticky spravuje bot.
 
-- id: 837316268142493736
-  slug: sponsor
-  description: |
-    Kdo má předplatné zaplacené sponzorem. Roli automaticky spravuje bot.
+  - id: 837316268142493736
+    slug: sponsor
+    description: |
+      Kdo má předplatné zaplacené sponzorem. Roli automaticky spravuje bot.
 
-- id: 1257709183156097208
-  slug: partner
-  description: |
-    Kdo má předplatné v rámci partnerství. Roli automaticky spravuje bot.
+  - id: 1257709183156097208
+    slug: partner
+    description: |
+      Kdo má předplatné v rámci partnerství. Roli automaticky spravuje bot.
 
-- id: 806851592799649874
-  slug: booster
-  description: |
-    Kdo si kromě předplatného v klubu platí ještě i Discord a [dá tady boost](https://support.discord.com/hc/en-us/articles/360028038352). Roli automaticky spravuje Discord.
+  - id: 806851592799649874
+    slug: booster
+    description: |
+      Kdo si kromě předplatného v klubu platí ještě i Discord a [dá tady boost](https://support.discord.com/hc/en-us/articles/360028038352). Roli automaticky spravuje Discord.
 
-- id: 836930259982352435
-  slug: newcomer
-  description: |
-    Kdo je prvních 20 dní v klubu. Roli automaticky spravuje bot.
+  - id: 836930259982352435
+    slug: newcomer
+    description: |
+      Kdo je prvních 20 dní v klubu. Roli automaticky spravuje bot.
 
-- id: 1196763177099210782
-  slug: adventofcode
-  description: |
-    Kdo chce řešit letošní <#ADVENTOFCODE>. V prosinci bývá role vysoko, ale jen proto, aby stromeček přebil ostatní ikonky. Roli si dáš vlastnoručně v _Kanály a role_.
+  - id: 1196763177099210782
+    slug: adventofcode
+    description: |
+      Kdo chce řešit letošní <#ADVENTOFCODE>. V prosinci bývá role vysoko, ale jen proto, aby stromeček přebil ostatní ikonky. Roli si dáš vlastnoručně v _Kanály a role_.
 
-- id: 836929320706113567
-  slug: most_discussing
-  description: |
-    Kdo se tady v klubu nejvíc vykecává. Jen pro info, záměrně to není žádné ocenění, protože kvantita není kvalita. Roli automaticky spravuje bot.
+  - id: 836929320706113567
+    slug: most_discussing
+    description: |
+      Kdo se tady v klubu nejvíc vykecává. Jen pro info, záměrně to není žádné ocenění, protože kvantita není kvalita. Roli automaticky spravuje bot.
 
-- id: 917431428227145780
-  slug: founder
-  description: |
-    Kdo je v klubu od jeho vzniku v únoru 2021. Roli automaticky spravuje bot.
+  - id: 917431428227145780
+    slug: founder
+    description: |
+      Kdo je v klubu od jeho vzniku v únoru 2021. Roli automaticky spravuje bot.
 
-- id: 836959652100702248
-  slug: has_intro_and_avatar
-  description: |
-    Kdo má představení v <#INTRO> a nastavený profilový obrázek. Roli automaticky spravuje bot. Může trvat i den, než se změny projeví.
+  - id: 836959652100702248
+    slug: has_intro_and_avatar
+    description: |
+      Kdo má představení v <#INTRO> a nastavený profilový obrázek. Roli automaticky spravuje bot. Může trvat i den, než se změny projeví.
 
-- id: 1078667139881377913
-  slug: events_organizer
-  description: |
-    Kdo má chuť organizovat vlastní akce, např. v <#CLUBHOUSE>. Roli si dáš vlastnoručně v _Kanály a role_.
+  - id: 1078667139881377913
+    slug: events_organizer
+    description: |
+      Kdo má chuť organizovat vlastní akce, např. v <#CLUBHOUSE>. Roli si dáš vlastnoručně v _Kanály a role_.
 
-- id: 1062755787153358879
-  slug: greeter
-  description: |
-    Kdo má chuť vítat nově příchozí v <#INTRO>. Bot je přidává do vítacích vláken. Roli si dáš vlastnoručně v _Kanály a role_.
+  - id: 1062755787153358879
+    slug: greeter
+    description: |
+      Kdo má chuť vítat nově příchozí v <#INTRO>. Bot je přidává do vítacích vláken. Roli si dáš vlastnoručně v _Kanály a role_.
 
-- id: 1075044541796716604
-  slug: cv_commenter
-  description: |
-    Kdo má chuť komentovat v <#CV_GITHUB_LINKEDIN>. Roli si dáš vlastnoručně v _Kanály a role_.
+  - id: 1075044541796716604
+    slug: cv_commenter
+    description: |
+      Kdo má chuť komentovat v <#CV_GITHUB_LINKEDIN>. Roli si dáš vlastnoručně v _Kanály a role_.
 
-- id: 1055919988222992418
-  slug: has_github
-  description: |
-    Kdo má s Discordem propojený svůj účet na GitHubu. Roli automaticky spravuje Discord.
+  - id: 1055919988222992418
+    slug: has_github
+    description: |
+      Kdo má s Discordem propojený svůj účet na GitHubu. Roli automaticky spravuje Discord.
 
-- id: 1123557007874596976
-  slug: week_planner
-  description: |
-    Kdo chce být aktivní v <#WEEKLY_PLANS>. Přidáváme je do vláken pro jednotlivé týdny. Roli si dáš vlastnoručně v _Kanály a role_.
+  - id: 1123557007874596976
+    slug: week_planner
+    description: |
+      Kdo chce být aktivní v <#WEEKLY_PLANS>. Přidáváme je do vláken pro jednotlivé týdny. Roli si dáš vlastnoručně v _Kanály a role_.
 
-- id: 1134476995229663374
-  slug: candidate
-  description: |
-    Kdo posílá CVčka a shání práci. Roli si dáš vlastnoručně v _Kanály a role_.
+  - id: 1134476995229663374
+    slug: candidate
+    description: |
+      Kdo posílá CVčka a shání práci. Roli si dáš vlastnoručně v _Kanály a role_.
 
-- id: 1186316722450473081
-  slug: english
-  description: |
-    Kdo v klubu chodí na lekce angličtiny. Vše o lekcích zjistíš [tady na webu](https://junior.guru/membership-english/).
+  - id: 1186316722450473081
+    slug: english
+    description: |
+      Kdo v klubu chodí na lekce angličtiny. Vše o lekcích zjistíš [tady na webu](https://junior.guru/membership-english/).

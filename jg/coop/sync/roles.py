@@ -4,9 +4,10 @@ from pprint import pformat
 from typing import Iterable
 
 import emoji
+import yaml
 from discord import Color
+from pydantic import BaseModel
 from slugify import slugify
-from strictyaml import Int, Map, Seq, Str, load
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
@@ -23,20 +24,20 @@ IMAGES_DIR = Path("jg/coop/images")
 
 YAML_PATH = Path("jg/coop/data/roles.yml")
 
-YAML_SCHEMA = Seq(
-    Map(
-        {
-            "id": Int(),
-            "slug": Str(),
-            "description": Str(),
-        }
-    )
-)
-
 SPONSOR_ROLE_PREFIX = "Firma: "
 
 
 logger = loggers.from_path(__file__)
+
+
+class RoleConfig(BaseModel):
+    id: int
+    slug: str
+    description: str
+
+
+class RolesConfig(BaseModel):
+    registry: Iterable[RoleConfig]
 
 
 @cli.sync_command(
@@ -60,8 +61,8 @@ async def sync_roles(client: ClubClient):
 
     logger.info("Fetching info about roles")
     yaml_records = {
-        record.data["id"]: record.data
-        for record in load(YAML_PATH.read_text(), YAML_SCHEMA)
+        role.id: role
+        for role in RolesConfig(**yaml.safe_load(YAML_PATH.read_text())).registry
     }
     discord_roles = await client.club_guild.fetch_roles()
     documented_discord_roles = [
@@ -73,10 +74,7 @@ async def sync_roles(client: ClubClient):
     # Why sorting and enumeration? Citing docs: "The recommended and correct way
     # to compare for roles in the hierarchy is using the comparison operators on
     # the role objects themselves."
-    documented_discord_roles = sorted(
-        documented_discord_roles,
-        reverse=True,
-    )
+    documented_discord_roles = sorted(documented_discord_roles, reverse=True)
     for position, discord_role in enumerate(documented_discord_roles, start=1):
         logger.debug(f"#{position} {discord_role.name}")
 
@@ -102,9 +100,9 @@ async def sync_roles(client: ClubClient):
             position=position,
             name=discord_role.name,
             mention=discord_role.mention,
-            slug=yaml_records[discord_role.id]["slug"],
+            slug=yaml_records[discord_role.id].slug,
             description=resolve_references(
-                yaml_records[discord_role.id]["description"].strip()
+                yaml_records[discord_role.id].description.strip()
             ),
             emoji=discord_role.unicode_emoji,
             color=discord_role.color.value,
