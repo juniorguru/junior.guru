@@ -159,13 +159,13 @@ trio = ["trio (>=0.23)"]
 
 [[package]]
 name = "apify-client"
-version = "1.7.0"
+version = "1.6.4"
 description = "Apify API client for Python"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "apify_client-1.7.0-py3-none-any.whl", hash = "sha256:b1d175ff04280d730ffd1ece040e7406a4a99baca06085d0ef88c94a34cdfa20"},
-    {file = "apify_client-1.7.0.tar.gz", hash = "sha256:4a9ebc14fe9ea147da7b73368ee42316122e42bd57a617911f21009a3517bc4b"},
+    {file = "apify_client-1.6.4-py3-none-any.whl", hash = "sha256:9846202fadbbcfff2019e817abdd00fb336d9d936c45c8abc338e35ab82d2977"},
+    {file = "apify_client-1.6.4.tar.gz", hash = "sha256:b7b6b67a9631e86e829b42079e2864fec46a5be6fd0b5ccde941453006f494bb"},
 ]
 
 [package.dependencies]
@@ -3301,4 +3301,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.11"
-content-hash = "49e44abce2ef946ffad39a89c379f4998851a88953901bab59d323d26a6c1041"
+content-hash = "499c39bfdcedb760b5fd61c6b2e0d3cc3164a293bdf9b26493c5b682de09a172"
