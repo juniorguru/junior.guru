@@ -16,7 +16,7 @@ class Partner(BaseModel):
     subscription_id = IntegerField(null=True)
     logo_path = CharField()
     role_id = IntegerField(null=True)
-    members_ids = JSONField(default=list)
+    account_ids = JSONField(default=list)
 
     # partner
     plan_id = IntegerField()
@@ -30,11 +30,11 @@ class Partner(BaseModel):
 
     @property
     def list_members(self) -> Iterable[ClubUser]:
-        return ClubUser.select().where(ClubUser.account_id.in_(self.members_ids))
+        return ClubUser.select().where(ClubUser.account_id.in_(self.account_ids))
 
     @property
     def members_count(self) -> int:
-        return len(self.members_ids)
+        return len(self.account_ids)
 
     @classmethod
     def listing(cls) -> Iterable[Self]:

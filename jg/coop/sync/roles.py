@@ -1,3 +1,4 @@
+import itertools
 from collections import Counter
 from pathlib import Path
 from pprint import pformat
@@ -17,6 +18,7 @@ from jg.coop.models.base import db
 from jg.coop.models.club import ClubUser
 from jg.coop.models.documented_role import DocumentedRole
 from jg.coop.models.event import Event
+from jg.coop.models.partner import Partner
 from jg.coop.models.sponsor import Sponsor
 
 
@@ -24,7 +26,7 @@ IMAGES_DIR = Path("jg/coop/images")
 
 YAML_PATH = Path("jg/coop/data/roles.yml")
 
-SPONSOR_ROLE_PREFIX = "Firma: "
+ROLE_PREFIXES = {Sponsor: "Sponzor: ", Partner: "Partner: "}
 
 
 logger = loggers.from_path(__file__)
@@ -111,8 +113,7 @@ async def sync_roles(client: ClubClient):
 
     logger.info("Preparing data for computing how to re-assign roles")
     members = ClubUser.members_listing()
-    # sponsors = Sponsor.listing()
-    # coupons = Sponsor.coupons()
+    organizations = list(itertools.chain(Sponsor.listing(), Partner.listing()))
     changes = []
     top_members_limit = ClubUser.top_members_limit()
     logger.info(f"members_count={len(members)}, top_members_limit={top_members_limit}")
@@ -209,55 +210,71 @@ async def sync_roles(client: ClubClient):
             )
         )
 
-    # TODO SPONSORS
-    # logger.info("Computing how to re-assign role: sponsor")
-    # role_id = DocumentedRole.get_by_slug("sponsor").club_id
-    # sponsors_members_ids = [member.id for member in members if member.coupon in coupons]
-    # logger.debug(f"sponsors_members_ids: {repr_ids(members, sponsors_members_ids)}")
-    # for member in members:
-    #     changes.extend(
-    #         evaluate_changes(
-    #             member.id, member.initial_roles, sponsors_members_ids, role_id
-    #         )
-    #     )
+    logger.info("Computing how to re-assign role: sponsor")
+    role_id = DocumentedRole.get_by_slug("sponsor").club_id
+    sponsors_members_ids = [
+        member.id
+        for member in itertools.chain.from_iterable(
+            sponsor.list_members for sponsor in Sponsor.listing()
+        )
+    ]
+    logger.debug(f"sponsors_members_ids: {repr_ids(members, sponsors_members_ids)}")
+    for member in members:
+        changes.extend(
+            evaluate_changes(
+                member.id, member.initial_roles, sponsors_members_ids, role_id
+            )
+        )
 
-    # # syncing with Discord
-    # logger.info(f"Managing roles for {len(sponsors)} sponsors")
-    # await manage_sponsor_roles(client, discord_roles, sponsors)
+    logger.info("Computing how to re-assign role: partner")
+    role_id = DocumentedRole.get_by_slug("partner").club_id
+    partners_members_ids = [
+        member.id
+        for member in itertools.chain.from_iterable(
+            partner.list_members for partner in Partner.listing()
+        )
+    ]
+    logger.debug(f"partners_members_ids: {repr_ids(members, partners_members_ids)}")
+    for member in members:
+        changes.extend(
+            evaluate_changes(
+                member.id, member.initial_roles, partners_members_ids, role_id
+            )
+        )
 
-    # for sponsor in sponsors:
-    #     sponsor_members_ids = [member.id for member in sponsor.list_members]
-    #     logger.debug(
-    #         f"sponsor_members_ids({sponsor!r}): {repr_ids(members, sponsor_members_ids)}"
-    #     )
-    #     for member in members:
-    #         changes.extend(
-    #             evaluate_changes(
-    #                 member.id,
-    #                 member.initial_roles,
-    #                 sponsor_members_ids,
-    #                 sponsor.role_id,
-    #             )
-    #         )
+    # syncing with Discord
+    logger.info(f"Managing roles for {len(organizations)} organizations")
+    await manage_organization_roles(client, discord_roles, organizations)
+
+    for org in organizations:
+        org_members_ids = set(member.id for member in org.list_members)
+        logger.debug(f"{org.slug}_members_ids: {repr_ids(members, org_members_ids)}")
+        for member in members:
+            changes.extend(
+                evaluate_changes(
+                    member.id, member.initial_roles, org_members_ids, org.role_id
+                )
+            )
 
     logger.info(f"Applying {len(changes)} changes to roles:\n{pformat(changes)}")
     await apply_changes(client, changes)
 
 
 # TODO rewrite so it doesn't need any async/await and can be tested
-async def manage_sponsor_roles(
-    client: ClubClient, discord_roles, sponsors: Iterable[Sponsor]
+async def manage_organization_roles(
+    client: ClubClient, discord_roles, organizations: Iterable[Sponsor | Partner]
 ):
-    sponsor_roles_mapping = {
-        SPONSOR_ROLE_PREFIX + sponsor.name: sponsor for sponsor in sponsors
+    org_roles_mapping = {
+        f"{ROLE_PREFIXES[type(org)]}{org.name}": org for org in organizations
     }
-    roles_names = list(sponsor_roles_mapping.keys())
-    logger.info(f"There should be {len(roles_names)} roles with sponsor prefixes")
+    roles_names = list(org_roles_mapping.keys())
+    roles_prefixes = tuple(ROLE_PREFIXES.values())
+    logger.info(f"There should be {len(roles_names)} roles with organization prefixes")
 
     existing_roles = [
-        role for role in discord_roles if role.name.startswith(SPONSOR_ROLE_PREFIX)
+        role for role in discord_roles if role.name.startswith(roles_prefixes)
     ]
-    logger.info(f"Found {len(existing_roles)} roles with sponsor prefixes")
+    logger.info(f"Found {len(existing_roles)} roles with organization prefixes")
 
     roles_to_remove = [role for role in existing_roles if role.name not in roles_names]
     logger.info(
@@ -274,21 +291,20 @@ async def manage_sponsor_roles(
         logger.info(f"Adding role '{role_name}'")
         color = (
             Color.dark_grey()
-            if role_name.startswith(SPONSOR_ROLE_PREFIX)
+            if role_name.startswith(roles_prefixes)
             else Color.default()
         )
         with mutating_discord(client.club_guild) as proxy:
             await proxy.create_role(name=role_name, color=color, mentionable=True)
 
     existing_roles = [
-        role for role in discord_roles if role.name.startswith(SPONSOR_ROLE_PREFIX)
+        role for role in discord_roles if role.name.startswith(roles_prefixes)
     ]
     for role in existing_roles:
-        sponsor = sponsor_roles_mapping.get(role.name)
-        if sponsor:
-            logger.info(f"Setting '{role.name}' to be employee role of {sponsor!r}'")
-            sponsor.role_id = role.id
-            sponsor.save()
+        if org := org_roles_mapping.get(role.name):
+            logger.info(f"Setting {role.name!r} to be organization role of {org!r}'")
+            org.role_id = role.id
+            org.save()
 
 
 async def apply_changes(client: ClubClient, changes):
@@ -302,8 +318,11 @@ async def apply_changes(client: ClubClient, changes):
 
     changes_by_members = {}
     for member_id, op, role_id in changes:
-        changes_by_members.setdefault(member_id, dict(add=[], remove=[]))
-        changes_by_members[member_id][op].append(role_id)
+        if role_id is None:
+            logger.error(f"Cannot {op} role for #{member_id}: role_id not created yet")
+        else:
+            changes_by_members.setdefault(member_id, dict(add=[], remove=[]))
+            changes_by_members[member_id][op].append(role_id)
 
     for member_id, changes in changes_by_members.items():
         discord_member = await client.club_guild.fetch_member(member_id)

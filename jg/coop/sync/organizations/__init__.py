@@ -70,12 +70,16 @@ class NodeID(TypedDict):
     id: str
 
 
+class Edge(TypedDict):
+    node: NodeID
+
+
 class PageInfo(TypedDict):
     hasNextPage: bool
 
 
 class MembersCollection(TypedDict):
-    nodes: list[NodeID]
+    edges: list[Edge]
     pageInfo: PageInfo
 
 
@@ -179,7 +183,7 @@ def main(today: date, clear_posters: bool):
             if sponsor.plan:
                 plan_id = parse_plan_id(sponsor.plan)
                 tier = tiers_by_plan_id[plan_id]
-                members_ids = []
+                account_ids = []
             elif sponsor.subscription:
                 subscription_id = parse_subscription_id(sponsor.subscription)
                 subscription = memberful.get(
@@ -187,7 +191,7 @@ def main(today: date, clear_posters: bool):
                 )["subscription"]
                 plan_id = get_plan_id(subscription)
                 tier = tiers_by_plan_id[plan_id]
-                members_ids = get_members_ids(subscription)
+                account_ids = get_account_ids(subscription)
             else:
                 raise ValueError("Sponsor must have either plan or subscription")
             logger.debug(f"Using tier {tier.name!r} for {sponsor.slug!r}")
@@ -214,7 +218,7 @@ def main(today: date, clear_posters: bool):
             poster_path = image_path.relative_to(IMAGES_DIR)
             posters.record(IMAGES_DIR / poster_path)
 
-            logger.debug(f"Saving {sponsor.slug!r} ({len(members_ids)} members)")
+            logger.debug(f"Saving {sponsor.slug!r} ({len(account_ids)} members)")
             Sponsor.create(
                 tier=tier,
                 subscription_id=subscription_id,
@@ -223,7 +227,7 @@ def main(today: date, clear_posters: bool):
                 note=note,
                 logo_path=logo_path,
                 poster_path=poster_path,
-                members_ids=members_ids,
+                account_ids=account_ids,
                 **sponsor.model_dump(
                     exclude=["plan", "subscription", "note", "periods"]
                 ),
@@ -258,7 +262,7 @@ def main(today: date, clear_posters: bool):
             logger.info(f"Partner {partner.name} ({partner.slug})")
             logger.debug("Checking plan and subscription")
             subscription_id = None
-            members_ids = []
+            account_ids = []
             if partner.plan:
                 plan_id = parse_plan_id(partner.plan)
             elif partner.subscription:
@@ -267,21 +271,21 @@ def main(today: date, clear_posters: bool):
                     SUBSCRIPTION_GQL_PATH.read_text(), dict(id=subscription_id)
                 )["subscription"]
                 plan_id = get_plan_id(subscription)
-                members_ids = get_members_ids(subscription)
+                account_ids = get_account_ids(subscription)
             else:
                 plan_id = default_plan_id
 
             logger.debug(f"Checking logo for {sponsor.slug!r} exists")
             logo_path = find_logo(partner.slug)
 
-            logger.debug(f"Saving {partner.slug!r} ({len(members_ids)} members)")
+            logger.debug(f"Saving {partner.slug!r} ({len(account_ids)} members)")
             Partner.create(
                 subscription_id=subscription_id,
                 plan_id=plan_id,
                 start_on=start_on,
                 logo_path=logo_path,
                 note=parse_note(partner.note),
-                members_ids=members_ids,
+                account_ids=account_ids,
                 **partner.model_dump(
                     exclude=["start_on", "plan", "subscription", "note"]
                 ),
@@ -303,10 +307,10 @@ def get_plan_id(subscription: SubscriptionEntity) -> int:
     return int(subscription["plan"]["id"])
 
 
-def get_members_ids(subscription: SubscriptionEntity) -> list[int]:
+def get_account_ids(subscription: SubscriptionEntity) -> list[int]:
     if subscription["members"]["pageInfo"]["hasNextPage"]:
         raise NotImplementedError("Pagination not implemented")
-    return [int(node["id"]) for node in subscription["members"]["nodes"]]
+    return [int(edge["node"]["id"]) for edge in subscription["members"]["edges"]]
 
 
 def is_public_plan(plan: PlanEntity) -> bool:

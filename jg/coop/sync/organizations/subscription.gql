@@ -4,8 +4,10 @@ query fetch($id: ID!) {
       id
     }
     members {
-      nodes {
-        id
+      edges {
+        node {
+          id
+        }
       }
       pageInfo {
         hasNextPage
