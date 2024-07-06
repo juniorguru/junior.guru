@@ -40,7 +40,7 @@ jobs:
           name: Update Poetry
           command: |
             poetry --version
-            poetry self update 1.5.1
+            poetry self update 1.8.3
       - run:
           name: Install Python dependencies
           command: poetry -vvv install
