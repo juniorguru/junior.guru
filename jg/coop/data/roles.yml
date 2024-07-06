@@ -98,3 +98,40 @@ registry:
     slug: english
     description: |
       Kdo v klubu chodí na lekce angličtiny. Vše o lekcích zjistíš [tady na webu](https://junior.guru/membership-english/).
+
+founders:
+  - id: 615589948908765206
+    account_id: 2663164
+
+  - id: 789165121771536404
+    account_id: 3001281
+
+  - id: 789217368995135568
+    account_id: 2566706
+
+  - id: 366216756517273604
+    account_id: 2509052
+
+  - id: 789224334799142913
+    account_id: 3000155
+
+  - id: 743031620327440446
+    account_id: 2504636
+
+  - id: 789492276941946912
+    account_id: 2506305
+
+  - id: 692196065591427092
+    account_id: 3531343
+
+  - id: 684360730224361483
+    account_id: 2505412
+
+  - id: 789165531802239026
+    account_id: 3164178
+
+  - id: 223893231832662016
+    account_id: 2516900
+
+  - id: 214110065064542208
+    account_id: 2506459

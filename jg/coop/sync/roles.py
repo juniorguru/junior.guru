@@ -38,8 +38,14 @@ class RoleConfig(BaseModel):
     description: str
 
 
+class FounderConfig(BaseModel):
+    id: int
+    account_id: int
+
+
 class RolesConfig(BaseModel):
-    registry: Iterable[RoleConfig]
+    registry: list[RoleConfig]
+    founders: list[FounderConfig]
 
 
 @cli.sync_command(
@@ -62,15 +68,13 @@ async def sync_roles(client: ClubClient):
     DocumentedRole.create_table()
 
     logger.info("Fetching info about roles")
-    yaml_records = {
-        role.id: role
-        for role in RolesConfig(**yaml.safe_load(YAML_PATH.read_text())).registry
-    }
+    roles_config = RolesConfig(**yaml.safe_load(YAML_PATH.read_text()))
+    roles_config_registry = {role.id: role for role in roles_config.registry}
     discord_roles = await client.club_guild.fetch_roles()
     documented_discord_roles = [
         discord_role
         for discord_role in discord_roles
-        if discord_role.id in yaml_records
+        if discord_role.id in roles_config_registry
     ]
 
     # Why sorting and enumeration? Citing docs: "The recommended and correct way
@@ -102,9 +106,9 @@ async def sync_roles(client: ClubClient):
             position=position,
             name=discord_role.name,
             mention=discord_role.mention,
-            slug=yaml_records[discord_role.id].slug,
+            slug=roles_config_registry[discord_role.id].slug,
             description=resolve_references(
-                yaml_records[discord_role.id].description.strip()
+                roles_config_registry[discord_role.id].description.strip()
             ),
             emoji=discord_role.unicode_emoji,
             color=discord_role.color.value,
