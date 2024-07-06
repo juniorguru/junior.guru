@@ -36,7 +36,7 @@ def main():
     for member in logger.progress(members):
         account_id = int(member["id"])
         member_admin_url = memberful_url(account_id)
-        logger.debug(f"Processing member {member_admin_url}")
+        logger.info(f"Processing member {member_admin_url}")
         try:
             discord_id = int(member["discordUserId"])  # raies TypeError if None
             user = ClubUser.get_by_id(discord_id)  # raises ClubUser.DoesNotExist
@@ -139,7 +139,6 @@ def get_active_subscription(subscriptions: list[dict], today: date = None) -> di
     try:
         return subscriptions[0]
     except IndexError:
-        logger.error(f"Subscriptions: {pformat(subscriptions)}")
         raise ValueError("No active subscriptions")
 
 
