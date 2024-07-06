@@ -139,6 +139,7 @@ def get_active_subscription(subscriptions: list[dict], today: date = None) -> di
     try:
         return subscriptions[0]
     except IndexError:
+        logger.error(f"Subscriptions: {pformat(subscriptions)}")
         raise ValueError("No active subscriptions")
 
 
