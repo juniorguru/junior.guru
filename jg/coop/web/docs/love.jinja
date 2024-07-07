@@ -81,7 +81,7 @@ template: main_love.html
   <div class="tiers-card{% if tier.is_sold_out %} soldout{% endif %}">
     <h3 class="tiers-card-header" id="{{ tier.anchor }}">Tarif „{{ tier.name }}“</h3>
     <div class="card-body">
-      {% if tier.slug == "supporting" %}
+      {% if tier.plan_id == 111099 %}
         {% set btn = "success" %}
         {% set icon = "heart-fill" %}
         <ul class="card-text">
@@ -91,7 +91,7 @@ template: main_love.html
           <li>Kartou nebo na fakturu, neplátce DPH</li>
         </ul>
 
-      {% elif tier.slug == "providing_courses" %}
+      {% elif tier.plan_id == 111100 %}
         {% set btn = "secondary" %}
         {% set icon = "star-fill" %}
         <ul class="card-text">
@@ -101,7 +101,7 @@ template: main_love.html
           <li>Kartou nebo na fakturu, neplátce DPH</li>
         </ul>
 
-      {% elif tier.slug == "building_brand" %}
+      {% elif tier.plan_id == 111101 %}
         {% set btn = "danger" %}
         {% set icon = "shield-fill" %}
         <ul class="card-text">
@@ -112,9 +112,9 @@ template: main_love.html
         </ul>
 
       {% else %}
-        {% call note(standout=True) %}
+        {% call note(standout=True) -%}
           {{ 'exclamation-circle'|icon }} Tady něco má být, ale není to tu. Napiš prosím na {{ 'honza@junior.guru'|email_link }}
-        {% endcall %}
+        {%- endcall %}
       {% endif %}
     </div>
     <p class="tier-card-footer">
