@@ -969,4 +969,7 @@ Python pro matematiky 🙂 https://vknight.org/pfm/cover.html
 ---
 
 
+AI: https://www.linkedin.com/posts/marketa-willis_je-opravdu-ai-takov%C3%BD-pomocn%C3%ADk-v-programov%C3%A1n%C3%AD-activity-7215986228007989248-Sh-p?utm_source=share&utm_medium=member_desktop
+
+
 #} -->
