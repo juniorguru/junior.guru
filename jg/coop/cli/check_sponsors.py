@@ -24,7 +24,12 @@ logger = loggers.from_path(__file__)
 @click.option("--weekday", default=1, type=int)
 @click.option("--days", default=60, type=int)
 def main(path: Path, today: date, weekday: int, days: int):
-    from jg.coop.sync.organizations import SponsorsConfig, get_renews_on  # TODO FIXME
+    # Because jg.coop.sync.organizations imports db from jg.coop.models.base,
+    # importing at the top of the file would open the database and this would
+    # cause 'jg sync data persist' to crash on 'database locked'. This is
+    # a workaround. To avoid this issue, all commands in 'jg' would have to be
+    # lazy-loaded.
+    from jg.coop.sync.organizations import SponsorsConfig, get_renews_on
 
     if today.isoweekday() != weekday:
         logger.warning(f"No check today (weekday {today.isoweekday()} ≠ {weekday})")
