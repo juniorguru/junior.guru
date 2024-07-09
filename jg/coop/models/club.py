@@ -14,7 +14,6 @@ from peewee import (
     fn,
 )
 
-from jg.coop.lib.coupons import parse_coupon
 from jg.coop.lib.discord_club import ClubChannelID, ClubMemberID, parse_message_url
 from jg.coop.models.base import BaseModel, JSONField
 
