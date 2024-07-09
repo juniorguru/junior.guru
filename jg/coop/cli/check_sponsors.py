@@ -1,17 +1,15 @@
-# from datetime import date
-# from pathlib import Path
-
-# import click
-# import yaml
-
-# from jg.coop.lib import loggers
-# from jg.coop.sync.organizations import SPONSORS_YAML_PATH, SponsorsConfig, get_renews_on
-# logger = loggers.from_path(__file__)
 from datetime import date
+from pathlib import Path
 
 import click
+import yaml
 
+from jg.coop.lib import loggers
 from jg.coop.models.base import db
+from jg.coop.sync.organizations import SPONSORS_YAML_PATH, SponsorsConfig, get_renews_on
+
+
+logger = loggers.from_path(__file__)
 
 
 @click.command()
