@@ -332,7 +332,7 @@ def get_tier_data(plan: PlanEntity) -> dict[str, Any]:
 
 def prepare_tiers(
     plans: Iterable[PlanEntity], extras: dict[str, dict[str, Any]] | None = None
-) -> list[SponsorTier]:
+) -> list[dict[str, Any]]:
     tiers = sorted(
         [
             get_tier_data(plan)
