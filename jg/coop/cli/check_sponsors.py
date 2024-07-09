@@ -5,7 +5,6 @@ import click
 import yaml
 
 from jg.coop.lib import loggers
-from jg.coop.models.base import db
 
 
 logger = loggers.from_path(__file__)
@@ -24,7 +23,6 @@ logger = loggers.from_path(__file__)
 )
 @click.option("--weekday", default=1, type=int)
 @click.option("--days", default=60, type=int)
-@db.connection_context()
 def main(path: Path, today: date, weekday: int, days: int):
     from jg.coop.sync.organizations import SponsorsConfig, get_renews_on  # TODO FIXME
 
