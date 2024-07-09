@@ -5,16 +5,13 @@
 # import yaml
 
 # from jg.coop.lib import loggers
-# from jg.coop.models.base import db
 # from jg.coop.sync.organizations import SPONSORS_YAML_PATH, SponsorsConfig, get_renews_on
-
-
 # logger = loggers.from_path(__file__)
-
-
 from datetime import date
 
 import click
+
+from jg.coop.models.base import db
 
 
 @click.command()
@@ -30,7 +27,7 @@ import click
 )
 @click.option("--weekday", default=1, type=int)
 @click.option("--days", default=60, type=int)
-# @db.connection_context()
+@db.connection_context()
 def main(today: date, weekday: int, days: int):  # path: Path
     pass
     # if today.isoweekday() != weekday:
