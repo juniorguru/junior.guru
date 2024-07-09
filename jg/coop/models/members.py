@@ -1,7 +1,7 @@
 import json
 from typing import Iterable, Self
 
-from peewee import Case, CharField, IntegerField
+from peewee import CharField, IntegerField
 from playhouse.shortcuts import model_to_dict
 
 from jg.coop.models.base import BaseModel
