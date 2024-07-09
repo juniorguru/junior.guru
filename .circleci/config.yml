@@ -286,6 +286,13 @@ jobs:
           at: "~"
       - run: poetry run jg check-bot
 
+  check-sponsors:
+    executor: python-js
+    steps:
+      - attach_workspace:
+          at: "~"
+      - run: poetry run jg check-sponsors
+
 workflows:
   push:
     jobs:
@@ -324,6 +331,9 @@ workflows:
     jobs:
       - install
       - check-bot:
+          requires:
+            - install
+      - check-sponsors:
           requires:
             - install
       - sync-1:
