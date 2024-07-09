@@ -63,6 +63,10 @@ jobs:
       - restore_cache:
           key: cache-v2-{{ .Branch }}
       - run:
+          name: Fix cache
+          command: |
+            poetry run jg cache fix
+      - run:
           name: Snapshot files
           command: poetry run jg data snapshot
       - persist_to_workspace:
