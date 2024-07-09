@@ -519,20 +519,6 @@ def test_user_is_new(test_db, today, expected):
     assert user.is_new(today=today) is expected
 
 
-@pytest.mark.parametrize(
-    "coupon, expected",
-    [
-        (None, False),
-        ("FOUNDERS12345678", True),
-        ("FOUNDER12345678", True),
-    ],
-)
-def test_user_is_founder(test_db, coupon, expected):
-    user = create_user(1, coupon=coupon)
-
-    assert user.is_founder() is expected
-
-
 def test_user_intro_doesnt_exist(test_db):
     user = create_user(1)
     create_message(1, user, channel_id=222)

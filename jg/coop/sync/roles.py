@@ -205,7 +205,7 @@ async def sync_roles(client: ClubClient):
 
     logger.info("Computing how to re-assign role: founder")
     role_id = DocumentedRole.get_by_slug("founder").club_id
-    founders_members_ids = [member.id for member in members if member.is_founder()]
+    founders_members_ids = [founder.id for founder in roles_config.founders]
     logger.debug(f"founders_members_ids: {repr_ids(members, founders_members_ids)}")
     for member in members:
         changes.extend(

@@ -156,11 +156,6 @@ class ClubUser(BaseModel):
             today or date.today()
         )
 
-    def is_founder(self):
-        return bool(
-            self.coupon and parse_coupon(self.coupon)["slug"] in ("founders", "founder")
-        )
-
     @classmethod
     def get_member_by_id(cls, id):
         return cls.members_listing().where(cls.id == id).get()
