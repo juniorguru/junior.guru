@@ -86,15 +86,6 @@ registry:
     note: |
       Spolupráce mezi komunitami. Python komunita může v klubu propagovat své akce apod. Provozovatel junior.guru je nejen členem, ale dokonce ve vedení Pyvce. Celé junior.guru kdysi vzniklo jako výsledek dobrovolnictví pro Python komunitu.
 
-  - name: Django Girls
-    slug: djangogirls
-    url: https://djangogirls.org/
-    cz_business_id: 22746668
-    start_on: 2019-07
-    subscription: https://juniorguru.memberful.com/admin/subscriptions/3699671
-    note: |
-      Mohou v klubu propagovat své akce. Django Girls typicky na českém území organizují dobrovolníci podporovaní neziskovkou Pyvec. Provozovatel junior.guru je nejen členem, ale dokonce ve vedení Pyvce. Celé junior.guru kdysi vzniklo jako výsledek dobrovolnictví pro Python komunitu, které zahrnovalo i organizaci nebo koučování na Django Girls workshopech.
-
   - name: PyLadies
     slug: pyladies
     url: https://pyladies.cz/
