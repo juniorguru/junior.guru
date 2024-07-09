@@ -103,6 +103,7 @@ class Sponsor(BaseModel):
             cls.listing(),
             key=lambda sponsor: (
                 -1 * sponsor.members_count,
+                -1 * sponsor.tier.priority,
                 czech_sort.key(sponsor.name),
             ),
         )

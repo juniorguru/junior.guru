@@ -3,7 +3,7 @@ from typing import Generator
 import pytest
 
 from jg.coop.models.base import SqliteDatabase
-from jg.coop.models.course_provider import CourseProvider
+from jg.coop.models.course_provider import CourseProvider, CourseProviderGroup
 from jg.coop.models.partner import Partner
 from jg.coop.models.sponsor import Sponsor, SponsorTier
 
@@ -156,17 +156,58 @@ def test_organization_slug_decides_if_sk_business_ids_are_equal(
     assert cp.organization == sponsor
 
 
-@pytest.mark.skip()  # TODO SPONSORS
-def test_group(test_db: SqliteDatabase):
-    pass
+def test_group_others(test_db: SqliteDatabase):
+    cp = create_course_provider(1)
+
+    assert cp.group == CourseProviderGroup.OTHERS
 
 
-@pytest.mark.skip()  # TODO SPONSORS
-def test_grouping(test_db: SqliteDatabase):
-    pass
+def test_group_partner(test_db: SqliteDatabase):
+    create_partner("banana", cz_business_id=111)
+    cp = create_course_provider(1, cz_business_id=111)
+
+    assert cp.group == CourseProviderGroup.PARTNERS
 
 
-@pytest.mark.skip()  # TODO SPONSORS
+def test_group_sponsor_others(test_db: SqliteDatabase, tier_mid: SponsorTier):
+    create_sponsor("banana", tier=tier_mid, cz_business_id=111)
+    cp = create_course_provider(1, cz_business_id=111)
+
+    assert cp.group == CourseProviderGroup.OTHERS
+
+
+def test_group_sponsor_highlighted(test_db: SqliteDatabase, tier_mid: SponsorTier):
+    tier_mid.courses_highlight = True
+    tier_mid.save()
+    create_sponsor("banana", tier=tier_mid, cz_business_id=111)
+    cp = create_course_provider(1, cz_business_id=111)
+
+    assert cp.group == CourseProviderGroup.HIGHLIGHTED
+
+
+def test_grouping(
+    test_db: SqliteDatabase, tier_low: SponsorTier, tier_mid: SponsorTier
+):
+    create_partner("banana", cz_business_id=111)
+    cp1 = create_course_provider(1, cz_business_id=111)
+
+    create_sponsor("pear", tier=tier_low, cz_business_id=222)
+    cp2 = create_course_provider(2, name="Pear", cz_business_id=222)
+
+    cp3 = create_course_provider(3, name="Avocado", cz_business_id=333)
+
+    tier_mid.courses_highlight = True
+    tier_mid.save()
+    create_sponsor("peach", tier=tier_mid, cz_business_id=444)
+    cp4 = create_course_provider(4, cz_business_id=444)
+
+    assert CourseProvider.grouping() == [
+        (CourseProviderGroup.HIGHLIGHTED, [cp4]),
+        (CourseProviderGroup.PARTNERS, [cp1]),
+        (CourseProviderGroup.OTHERS, [cp3, cp2]),
+    ]
+
+
 def test_listing_sorts_alphabetically(test_db: SqliteDatabase):
     cp1 = create_course_provider(1, name="Cool Courses")
     cp2 = create_course_provider(2, name="Awesome Courses")
@@ -175,7 +216,6 @@ def test_listing_sorts_alphabetically(test_db: SqliteDatabase):
     assert list(CourseProvider.listing()) == [cp2, cp1, cp3]
 
 
-@pytest.mark.skip()  # TODO SPONSORS
 def test_listing_sorts_alphabetically_czech(test_db: SqliteDatabase):
     cp1 = create_course_provider(1, name="Cool Courses")
     cp2 = create_course_provider(2, name="Awesome Courses")
@@ -185,7 +225,6 @@ def test_listing_sorts_alphabetically_czech(test_db: SqliteDatabase):
     assert list(CourseProvider.listing()) == [cp2, cp1, cp4, cp3]
 
 
-@pytest.mark.skip()  # TODO SPONSORS
 def test_listing_sorts_alphabetically_case_insensitive(test_db: SqliteDatabase):
     cp1 = create_course_provider(1, name="Cool Courses")
     cp2 = create_course_provider(2, name="awesome Courses")
@@ -193,29 +232,3 @@ def test_listing_sorts_alphabetically_case_insensitive(test_db: SqliteDatabase):
     cp4 = create_course_provider(4, name="zzz Courses")
 
     assert list(CourseProvider.listing()) == [cp2, cp1, cp3, cp4]
-
-
-@pytest.mark.skip()  # TODO SPONSORS
-def test_listing_sorts_sponsors_first(test_db: SqliteDatabase, tier_low: SponsorTier):
-    cp1 = create_course_provider(1, name="Cool Courses")
-    cp2 = create_course_provider(2, name="Awesome Courses")
-    cp3 = create_course_provider(
-        3, name="Wonderful Courses", sponsor=create_sponsor("banana", tier=tier_low)
-    )
-
-    assert list(CourseProvider.listing()) == [cp3, cp2, cp1]
-
-
-@pytest.mark.skip()  # TODO SPONSORS
-def test_listing_sorts_sponsors_by_tier_then_by_name(
-    test_db: SqliteDatabase,
-    tier_low: SponsorTier,
-    tier_top: SponsorTier,
-):
-    sponsor_top = create_sponsor("banana", tier=tier_top)
-    sponsor_low = create_sponsor("cherry", tier=tier_low)
-    cp1 = create_course_provider(1, name="Cool Courses", sponsor=sponsor_low)
-    cp2 = create_course_provider(2, name="Awesome Courses")
-    cp3 = create_course_provider(3, name="Wonderful Courses", sponsor=sponsor_top)
-
-    assert list(CourseProvider.listing()) == [cp3, cp1, cp2]

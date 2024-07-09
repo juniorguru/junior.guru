@@ -18,6 +18,19 @@ class CourseProviderGroup(StrEnum):
     OTHERS = "others"
 
 
+class CourseUP(BaseModel):
+    id = IntegerField(primary_key=True)
+    url = CharField()
+    name = CharField()
+    description = TextField()
+    company_name = CharField()
+    cz_business_id = IntegerField(index=True)
+
+    @classmethod
+    def count(cls) -> int:
+        return cls.select().count()
+
+
 class CourseProvider(BaseModel):
     name = CharField()
     slug = CharField(unique=True)
@@ -45,7 +58,7 @@ class CourseProvider(BaseModel):
         return CourseProviderGroup.OTHERS
 
     @property
-    def list_courses_up(self) -> Iterable["CourseUP"]:
+    def list_courses_up(self) -> Iterable[CourseUP]:
         return (
             CourseUP.select()
             .where(CourseUP.cz_business_id == self.cz_business_id)
@@ -100,16 +113,3 @@ class CourseProvider(BaseModel):
 
     def __str__(self) -> str:
         return self.name
-
-
-class CourseUP(BaseModel):
-    id = IntegerField(primary_key=True)
-    url = CharField()
-    name = CharField()
-    description = TextField()
-    company_name = CharField()
-    cz_business_id = IntegerField()
-
-    @classmethod
-    def count(cls) -> int:
-        return cls.select().count()
