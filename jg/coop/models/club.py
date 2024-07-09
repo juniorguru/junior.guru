@@ -197,18 +197,6 @@ class ClubUser(BaseModel):
     def avatars_listing(cls):
         return cls.members_listing().where(cls.avatar_path.is_null(False))
 
-    @classmethod
-    def core_discount_listing(
-        cls, today: date = None, expiration_buffer_days: int = 10
-    ) -> Iterable[Self]:
-        today = today or date.today()
-        return cls.members_listing().where(
-            cls.subscribed_days >= YEAR_PERIOD_DAYS,
-            cls.coupon.is_null(),
-            cls.expires_at >= today,
-            cls.expires_at <= today + timedelta(days=expiration_buffer_days),
-        )
-
 
 class ClubMessage(BaseModel):
     id = IntegerField(primary_key=True)
