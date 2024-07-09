@@ -19,27 +19,22 @@ class Followers(BaseModel):
     @classmethod
     def deserialize(cls, line: str) -> Self | None:
         data = json.loads(line)
-        data["month"] = data.pop("_month")
         if data["count"] is not None:
             return cls.add(**data)
 
     def serialize(self) -> str:
-        data = model_to_dict(self)
-        del data["id"]  # irrelevant
-        data["_month"] = data.pop("month")
-        return json.dumps(data, sort_keys=True, ensure_ascii=False) + "\n"
+        data = model_to_dict(self, exclude=[self.__class__.id])
+        return json.dumps(data, ensure_ascii=False) + "\n"
 
     @classmethod
     def add(cls, **kwargs) -> None:
-        unique_key_fields = cls._meta.indexes[0][0]
-        conflict_target = [getattr(cls, field) for field in unique_key_fields]
         update = {
             cls.count: Case(
                 None, [(cls.count < kwargs["count"], kwargs["count"])], cls.count
             )
         }
         insert = cls.insert(**kwargs).on_conflict(
-            action="update", update=update, conflict_target=conflict_target
+            action="update", update=update, conflict_target=[cls.month, cls.name]
         )
         insert.execute()
 
