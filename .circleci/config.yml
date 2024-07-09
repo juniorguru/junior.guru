@@ -61,7 +61,7 @@ jobs:
             - ~/.cache/ms-playwright
             - ./node_modules
       - restore_cache:
-          key: cache-v3-{{ .Branch }}
+          key: cache-v2-{{ .Branch }}
       - run:
           name: Snapshot files
           command: poetry run jg data snapshot
@@ -181,7 +181,7 @@ jobs:
             poetry run jg cache fix
             poetry run jg cache tags
       - save_cache:
-          key: cache-v3-{{ .Branch }}-{{ .Revision }}
+          key: cache-v2-{{ .Branch }}-{{ .Revision }}
           paths:
             - .cache
             - jg/coop/images/posters-events
