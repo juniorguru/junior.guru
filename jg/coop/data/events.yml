@@ -55,6 +55,20 @@
 #    ještě spustit 'jg sync events', takže… takže je vlastně lepší to neřešit
 #    a poslat prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
+- id: 43
+  title: "(Bude upřesněno: Docker)"
+  date: "2024-08-06"
+  description: |
+    (Bude upřesněno: Docker)
+  avatar_path: avatars-participants/lukas-pavelka.jpg
+  bio_name: Lukáš Pavelka
+  bio_title: "C#/.NET programátor"
+  bio: |
+    Nadšený C# a .NET vývojář, který se neustále snaží rozšiřovat své znalosti a nabírat zkušenosti. Před pár roky se přidal do klubu jako junior, který si hledá první práci. Díky své vášni pro technologie a neustálému zkoumání, jak by šlo v praxi využít novinky, se dostal až k tomu, že teď pro juniory přednáší.
+  bio_links:
+    - https://www.linkedin.com/in/lukepavelka0321/
+  speakers: 113033048957665280
+
 - id: 42
   title: "Situace na IT trhu z pohledu dat a co to znamená pro juniory"
   date: "2024-05-28"
