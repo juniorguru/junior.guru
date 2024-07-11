@@ -1362,13 +1362,13 @@ develop = false
 aiohttp = "3.9.5"
 click = "8.1.7"
 "jg.hen" = {git = "https://github.com/juniorguru/hen.git"}
-py-cord = {version = "2.5.0", extras = ["speed"]}
+py-cord = {version = "2.6.0", extras = ["speed"]}
 
 [package.source]
 type = "git"
 url = "https://github.com/juniorguru/chick.git"
 reference = "HEAD"
-resolved_reference = "3ef7a8bc9956196a41b95e54cc32c475c89b3aa5"
+resolved_reference = "c9b82f3f292c11f762391b59e120423118f93dc9"
 
 [[package]]
 name = "jg-hen"
@@ -2259,13 +2259,13 @@ files = [
 
 [[package]]
 name = "py-cord"
-version = "2.5.0"
+version = "2.6.0"
 description = "A Python wrapper for the Discord API"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "py-cord-2.5.0.tar.gz", hash = "sha256:faf08af5da5eac2ed3d1c8a43d8307d5a1e3f01602def283330c9d2cde0b1162"},
-    {file = "py_cord-2.5.0-py3-none-any.whl", hash = "sha256:9e5fc79feec5a48f53aa4c066b57dd75fe67d29021b042d12f378a513d308bbc"},
+    {file = "py_cord-2.6.0-py3-none-any.whl", hash = "sha256:906cc077904a4d478af0264ae4374b0412ed9f9ab950d0162c4f31239a906d26"},
+    {file = "py_cord-2.6.0.tar.gz", hash = "sha256:bbc0349542965d05e4b18cc4424136206430a8cc911fda12a0a57df6fdf9cd9c"},
 ]
 
 [package.dependencies]
@@ -3108,13 +3108,13 @@ zstd = ["zstandard (>=0.18.0)"]
 
 [[package]]
 name = "validators"
-version = "0.31.0"
+version = "0.32.0"
 description = "Python Data Validation for Humans™"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "validators-0.31.0-py3-none-any.whl", hash = "sha256:e15a600d81555a4cd409b17bf55946c5edec7748e776afc85ed0a19bdee54e56"},
-    {file = "validators-0.31.0.tar.gz", hash = "sha256:de7574fc56a231c788162f3e7da15bc2053c5ff9e0281d9ff1afb3a7b69498df"},
+    {file = "validators-0.32.0-py3-none-any.whl", hash = "sha256:e9ce1703afb0adf7724b0f98e4081d9d10e88fa5d37254d21e41f27774c020cd"},
+    {file = "validators-0.32.0.tar.gz", hash = "sha256:9ee6e6d7ac9292b9b755a3155d7c361d76bb2dce23def4f0627662da1e300676"},
 ]
 
 [package.extras]
@@ -3301,4 +3301,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.11"
-content-hash = "499c39bfdcedb760b5fd61c6b2e0d3cc3164a293bdf9b26493c5b682de09a172"
+content-hash = "b8c1aeb7168b9dde511df98476b6daa1cbc583c883c230d6e5f696976edda9e5"
