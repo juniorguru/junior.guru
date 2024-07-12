@@ -19,7 +19,6 @@ def create_user(id_, **kwargs):
         coupon=kwargs.get("coupon"),
         joined_at=kwargs.get("joined_at", datetime.now() - timedelta(days=3)),
         subscribed_at=kwargs.get("subscribed_at", None),
-        subscribed_days=kwargs.get("subscribed_days", None),
         expires_at=kwargs.get("expires_at", datetime.now() + timedelta(days=100)),
     )
 

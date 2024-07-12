@@ -17,9 +17,7 @@ class Members(BaseModel):
 
     @classmethod
     def deserialize(cls, line: str) -> Self | None:
-        data = json.loads(line)
-        if data["count"] is not None:
-            return cls.add(**data)
+        return cls.record(**json.loads(line))
 
     def serialize(self) -> str:
         data = model_to_dict(self, exclude=[self.__class__.id])

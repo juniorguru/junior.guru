@@ -1,11 +1,13 @@
 import logging
 import os
 from pathlib import Path
-from typing import Any, Generator, Iterable, cast
+from typing import Any, Generator, Iterable, TypeVar, cast
 
 from jg.coop.lib import global_state
 from jg.coop.lib.chunks import chunks
 
+
+T = TypeVar("T")
 
 MUTED_LOGGERS = [
     "asyncio",
@@ -39,8 +41,8 @@ class Logger(logging.Logger):
         return self.getChild(str(name))
 
     def progress(
-        self, iterable: Iterable, chunk_size=100
-    ) -> Generator[Any, None, None]:
+        self, iterable: Iterable[T], chunk_size=100
+    ) -> Generator[T, None, None]:
         total_count = 0
         for chunk in chunks(iterable, size=chunk_size):
             yield from chunk

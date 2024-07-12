@@ -15,7 +15,13 @@ from pydantic import (
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
 from jg.coop.lib.images import PostersCache, render_image_file
-from jg.coop.lib.memberful import MemberfulAPI
+from jg.coop.lib.memberful import (
+    MemberfulAPI,
+    from_cents,
+    is_group_plan,
+    is_public_plan,
+    parse_tier_name,
+)
 from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
 from jg.coop.models.partner import Partner
@@ -313,14 +319,6 @@ def get_account_ids(subscription: SubscriptionEntity) -> list[int]:
     return [int(edge["node"]["id"]) for edge in subscription["members"]["edges"]]
 
 
-def is_public_plan(plan: PlanEntity) -> bool:
-    return plan["forSale"]
-
-
-def is_group_plan(plan: PlanEntity) -> bool:
-    return plan["additionalMemberPriceCents"] is not None
-
-
 def get_tier_data(plan: PlanEntity) -> dict[str, Any]:
     return dict(
         plan_id=int(plan["id"]),
@@ -377,6 +375,23 @@ def next_month(month: date) -> date:
     return (month.replace(day=1) + timedelta(days=32)).replace(day=1)
 
 
+def check_css_integrity(tiers: Iterable[SponsorTier], css: str) -> None:
+    tiers_priorities = {tier.priority for tier in tiers}
+    css_priorities = set(map(int, LOGOS_CSS_RE.findall(css)))
+    if tiers_priorities != css_priorities:
+        raise ValueError(
+            "Discrepancy between tier priorities and CSS: "
+            f"{tiers_priorities!r} vs {css_priorities!r}"
+        )
+
+
+def parse_note(note: str | None) -> str | None:
+    try:
+        return note.strip() or None
+    except AttributeError:
+        return None
+
+
 def parse_plan_id(plan_url: str | HttpUrl) -> int:
     return int(
         str(plan_url)
@@ -391,30 +406,3 @@ def parse_subscription_id(subscription_url: str | HttpUrl) -> int:
         .removeprefix("https://juniorguru.memberful.com/admin/subscriptions/")
         .rstrip("/")
     )
-
-
-def check_css_integrity(tiers: Iterable[SponsorTier], css: str) -> None:
-    tiers_priorities = {tier.priority for tier in tiers}
-    css_priorities = set(map(int, LOGOS_CSS_RE.findall(css)))
-    if tiers_priorities != css_priorities:
-        raise ValueError(
-            "Discrepancy between tier priorities and CSS: "
-            f"{tiers_priorities!r} vs {css_priorities!r}"
-        )
-
-
-def parse_tier_name(plan_name: str) -> str:
-    if match := re.search(r"^Tarif „([^“]+)“$", plan_name):
-        return match.group(1)
-    raise ValueError(f"Invalid main plan name: {plan_name!r}")
-
-
-def from_cents(cents: int) -> int:
-    return int(cents / 100)
-
-
-def parse_note(note: str | None) -> str | None:
-    try:
-        return note.strip() or None
-    except AttributeError:
-        return None

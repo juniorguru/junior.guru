@@ -4,7 +4,7 @@ import logging
 import os
 import re
 from dataclasses import dataclass
-from datetime import timedelta
+from datetime import date, datetime, timedelta, timezone
 from typing import Any, Callable, Generator
 
 import requests
@@ -228,6 +228,8 @@ class MemberfulCSV:
 
 
 def memberful_url(account_id: int | str) -> str:
+    if not account_id:
+        raise ValueError(f"{account_id}")
     return f"https://juniorguru.memberful.com/admin/members/{account_id}/"
 
 
@@ -237,3 +239,47 @@ def parse_export_id(html_tree: html.HtmlElement) -> int:
 
     # refreshable_url is something like /admin/members/exports/68746
     return int(refreshable_url.split("/")[-1])
+
+
+def from_cents(cents: int) -> int:
+    return int(cents / 100)
+
+
+def parse_tier_name(plan_name: str) -> str:
+    if match := re.search(r"^Tarif „([^“]+)“$", plan_name):
+        return match.group(1)
+    raise ValueError(f"Invalid plan name: {plan_name!r}")
+
+
+def is_public_plan(plan: dict) -> bool:
+    return plan["forSale"]
+
+
+def is_group_plan(plan: dict) -> bool:
+    return plan["additionalMemberPriceCents"] is not None
+
+
+def is_sponsor_plan(plan: dict) -> bool:
+    if not is_group_plan(plan):
+        return False
+    try:
+        parse_tier_name(plan["name"])
+    except ValueError:
+        return False
+    return True
+
+
+def is_partner_plan(plan: dict) -> bool:
+    return is_group_plan(plan) and not is_sponsor_plan(plan)
+
+
+def is_individual_plan(plan: dict) -> bool:
+    return not is_group_plan(plan) and plan["planGroup"]
+
+
+def timestamp_to_datetime(timestamp: int) -> datetime:
+    return datetime.fromtimestamp(timestamp, tz=timezone.utc).replace(tzinfo=None)
+
+
+def timestamp_to_date(timestamp: int) -> date:
+    return timestamp_to_datetime(timestamp).date()

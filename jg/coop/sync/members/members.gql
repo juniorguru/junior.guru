@@ -1,5 +1,5 @@
 query fetch($cursor: String!) {
-  members(first: 100, after: $cursor, state: ACTIVE) {
+  members(first: 100, after: $cursor) {
     pageInfo {
       endCursor
       hasNextPage
@@ -16,6 +16,8 @@ query fetch($cursor: String!) {
           id
           active
           activatedAt
+          trialStartAt
+          trialEndAt
           expiresAt
           coupon {
             code
@@ -27,10 +29,12 @@ query fetch($cursor: String!) {
             }
           }
           plan {
+            name
             intervalUnit
             planGroup {
               name
             }
+            forSale
             additionalMemberPriceCents
           }
         }

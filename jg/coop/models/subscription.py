@@ -536,24 +536,6 @@ class SubscriptionActivity(BaseModel):
         if first_activity:
             return first_activity.happened_at
 
-    @classmethod
-    def account_subscribed_days(cls, account_id: int, today: date = None) -> int:
-        days = 0
-        today = today or date.today()
-        start = None
-        for activity in cls.account_listing(account_id):
-            if activity.type == SubscriptionActivityType.DEACTIVATION:
-                if start:
-                    days += (
-                        activity.happened_at.date() - start.happened_at.date()
-                    ).days
-                    start = None
-            elif start is None:
-                start = activity
-        if start:
-            days += (today - start.happened_at.date()).days
-        return days
-
 
 class SubscriptionCancellation(BaseModel):
     account_id = IntegerField(unique=True)

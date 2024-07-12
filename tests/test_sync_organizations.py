@@ -4,7 +4,6 @@ import pytest
 
 from jg.coop.sync.organizations import (
     PlanEntity,
-    from_cents,
     get_renews_on,
     get_start_on,
     next_month,
@@ -102,21 +101,6 @@ def test_get_start_on(periods: list[tuple[str, str | None]], expected: date):
 )
 def test_parse_note(note: str | None, expected: str | None):
     assert parse_note(note) == expected
-
-
-def test_from_cents():
-    assert from_cents(123456) == 1234
-
-
-@pytest.mark.parametrize(
-    "name, expected",
-    [
-        ("Tarif „Budujeme brand“", "Budujeme brand"),
-        ("Tarif „Voníme“", "Voníme"),
-    ],
-)
-def test_parse_tier_name(name: str, expected: str):
-    assert parse_tier_name(name) == expected
 
 
 @pytest.mark.parametrize(

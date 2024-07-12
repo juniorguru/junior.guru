@@ -1,6 +1,7 @@
+import pytest
 from lxml import html
 
-from jg.coop.lib.memberful import parse_export_id
+from jg.coop.lib.memberful import from_cents, parse_export_id, parse_tier_name
 
 
 def test_parse_export_id_members():
@@ -64,3 +65,18 @@ def test_parse_export_id_cancellations():
     )
 
     assert parse_export_id(html_tree) == 68751
+
+
+def test_from_cents():
+    assert from_cents(123456) == 1234
+
+
+@pytest.mark.parametrize(
+    "name, expected",
+    [
+        ("Tarif „Budujeme brand“", "Budujeme brand"),
+        ("Tarif „Voníme“", "Voníme"),
+    ],
+)
+def test_parse_tier_name(name: str, expected: str):
+    assert parse_tier_name(name) == expected
