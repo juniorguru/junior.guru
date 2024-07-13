@@ -1,7 +1,7 @@
 import logging
 import os
 from pathlib import Path
-from typing import Any, Generator, Iterable, TypeVar, cast
+from typing import Generator, Iterable, TypeVar, cast
 
 from jg.coop.lib import global_state
 from jg.coop.lib.chunks import chunks
