@@ -846,3 +846,4 @@
 {"_id": "26604877741", "amount": 9674, "category": "memberships", "happened_on": "2024-07-15"}
 {"_id": "26605392881", "amount": -2968, "category": "tax", "happened_on": "2024-07-15"}
 {"_id": "26607722559", "amount": -49, "category": "tax", "happened_on": "2024-07-16"}
+{"_id": "26609013575", "amount": 6, "category": "donations", "happened_on": "2024-07-17"}
