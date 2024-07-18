@@ -46,7 +46,7 @@ mkdocs-gen-files = "0.5.0"
 mkdocs-awesome-pages-plugin = "2.9.2"
 "jg.chick" = { git = "https://github.com/juniorguru/chick.git" }
 pycircleci = "0.7.0"
-livereload = "2.6.3"
+livereload = "2.7.0"
 beautifulsoup4 = "4.12.3"
 czech-sort = "1.1.0"
 teemup = "1.0.2"
