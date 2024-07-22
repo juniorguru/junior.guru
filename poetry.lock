@@ -177,17 +177,17 @@ dev = ["build (>=1.2.0,<1.3.0)", "mypy (>=1.10.0,<1.11.0)", "pre-commit (>=3.5.0
 
 [[package]]
 name = "apify-shared"
-version = "1.1.1"
+version = "1.1.2"
 description = "Tools and constants shared across Apify projects."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "apify_shared-1.1.1-py3-none-any.whl", hash = "sha256:955c966a5b7b32a19c93c14e53d96d1af89ee00f0197f31923d88332fbfb15ec"},
-    {file = "apify_shared-1.1.1.tar.gz", hash = "sha256:3298c8260cab9f277c1c1d8c020270e5fe829425eb96767f0cfecd9dd85954e5"},
+    {file = "apify_shared-1.1.2-py3-none-any.whl", hash = "sha256:a422b4cb3ea536257f0c0dd3778b3c22ec6647708d2fc06c97fe0c9fe183c3c9"},
+    {file = "apify_shared-1.1.2.tar.gz", hash = "sha256:3f98f526635c4c3f92c1496916513a1c4013bb47158d7e0f914df8987147366c"},
 ]
 
 [package.extras]
-dev = ["build (>=1.0.3,<1.1.0)", "filelock (>=3.12.4,<3.13.0)", "mypy (>=1.7.1,<1.8.0)", "pre-commit (>=3.4.0,<3.5.0)", "pydoc-markdown (>=4.8.2,<4.9.0)", "pytest (>=7.4.2,<7.5.0)", "pytest-asyncio (>=0.21.0,<0.22.0)", "pytest-cov (>=4.1.0,<4.2.0)", "pytest-only (>=2.0.0,<2.1.0)", "pytest-timeout (>=2.2.0,<2.3.0)", "pytest-xdist (>=3.3.1,<3.4.0)", "respx (>=0.20.1,<0.21.0)", "ruff (>=0.1.6,<0.2.0)", "twine (>=4.0.2,<4.1.0)"]
+dev = ["build (>=1.0.3,<1.1.0)", "filelock (>=3.12.4,<3.13.0)", "mypy (>=1.7.1,<1.8.0)", "pre-commit (>=3.4.0,<3.5.0)", "pydoc-markdown (>=4.8.2,<4.9.0)", "pytest (>=7.4.2,<7.5.0)", "pytest-asyncio (>=0.21.0,<0.22.0)", "pytest-cov (>=4.1.0,<4.2.0)", "pytest-only (>=2.0.0,<2.1.0)", "pytest-timeout (>=2.2.0,<2.3.0)", "pytest-xdist (>=3.3.1,<3.4.0)", "respx (>=0.20.1,<0.21.0)", "ruff (>=0.1.13,<0.2.0)", "setuptools (>=68.0.0)", "twine (>=5.1.1,<5.2.0)"]
 
 [[package]]
 name = "arrow"
@@ -3343,4 +3343,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.11"
-content-hash = "1d56c14bfd53e5910947dd0ba9daf8e76611e771790529da7afb8444148c6753"
+content-hash = "9f9adb96d3e7f3f24c5e9590f7dc177b83c3c14213077bcba439f3bb6021c1cd"
