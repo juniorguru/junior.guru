@@ -16272,3 +16272,17 @@
 {"account_id": 5708554, "f": false, "happened_at": "2024-06-19T17:44:34", "subscription_interval": "month", "type": "trial_end"}
 {"account_id": 5708554, "f": false, "happened_at": "2024-06-19T18:22:13", "subscription_interval": "month", "type": "order"}
 {"account_id": 5184452, "f": true, "happened_at": "2024-06-19T22:41:55", "subscription_interval": "month", "type": "order"}
+{"account_id": 5505436, "f": false, "happened_at": "2024-06-20T07:02:58", "subscription_interval": "month", "type": "order"}
+{"account_id": 3331292, "f": false, "happened_at": "2024-06-20T07:52:06", "subscription_interval": "month", "type": "order"}
+{"account_id": 5429620, "f": true, "happened_at": "2024-06-20T08:51:44", "subscription_interval": "month", "type": "order"}
+{"account_id": 2358883, "f": true, "happened_at": "2024-06-20T10:03:04", "subscription_interval": "month", "type": "order"}
+{"account_id": 4444057, "f": false, "happened_at": "2024-06-20T10:12:04", "subscription_interval": "month", "type": "order"}
+{"account_id": 5026031, "f": true, "happened_at": "2024-06-20T12:41:53", "subscription_interval": "month", "type": "order"}
+{"account_id": 5742439, "f": false, "happened_at": "2024-06-20T14:38:14", "subscription_interval": "month", "type": "order"}
+{"account_id": 5742439, "f": false, "happened_at": "2024-06-20T14:38:14", "subscription_interval": "month", "type": "trial_start"}
+{"account_id": 5711010, "f": false, "happened_at": "2024-06-20T15:14:10", "subscription_interval": "month", "type": "trial_end"}
+{"account_id": 5711010, "f": false, "happened_at": "2024-06-20T15:21:43", "subscription_interval": "month", "type": "order"}
+{"account_id": 5742541, "f": true, "happened_at": "2024-06-20T15:53:32", "subscription_interval": "month", "type": "order"}
+{"account_id": 5742541, "f": true, "happened_at": "2024-06-20T15:53:32", "subscription_interval": "month", "type": "trial_start"}
+{"account_id": 5742741, "f": false, "happened_at": "2024-06-20T17:52:41", "subscription_interval": "month", "type": "order"}
+{"account_id": 5742741, "f": false, "happened_at": "2024-06-20T17:52:41", "subscription_interval": "month", "type": "trial_start"}
