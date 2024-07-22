@@ -19,7 +19,7 @@
     "esbuild-sass-plugin": "3.3.1",
     "hyphen": "1.10.4",
     "prettier": "3.3.3",
-    "stylelint": "16.6.1",
+    "stylelint": "16.7.0",
     "stylelint-config-twbs-bootstrap": "14.2.0",
     "stylelint-order": "6.0.4"
   }
