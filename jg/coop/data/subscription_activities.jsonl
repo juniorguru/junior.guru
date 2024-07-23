@@ -16307,3 +16307,9 @@
 {"account_id": 4555337, "f": false, "happened_at": "2024-06-21T17:12:16", "subscription_interval": "month", "type": "order"}
 {"account_id": 4943524, "f": true, "happened_at": "2024-06-21T18:02:52", "subscription_interval": "month", "type": "order"}
 {"account_id": 4107604, "f": false, "happened_at": "2024-06-21T19:07:23", "subscription_interval": "month", "type": "order"}
+{"account_id": 5434437, "f": false, "happened_at": "2024-06-22T09:02:56", "subscription_interval": "month", "type": "order"}
+{"account_id": 2382457, "f": false, "happened_at": "2024-06-22T10:11:58", "subscription_interval": "month", "type": "order"}
+{"account_id": 3021955, "f": false, "happened_at": "2024-06-22T11:41:54", "subscription_interval": "month", "type": "order"}
+{"account_id": 5227477, "f": true, "happened_at": "2024-06-22T13:12:07", "subscription_interval": "month", "type": "order"}
+{"account_id": 4470533, "f": false, "happened_at": "2024-06-22T16:02:53", "subscription_interval": "month", "type": "order"}
+{"account_id": 5509926, "f": false, "happened_at": "2024-06-22T17:22:00", "subscription_interval": "month", "type": "order"}
