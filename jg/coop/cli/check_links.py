@@ -41,6 +41,7 @@ EXCLUDE_URLS = [
     "reddit.com",  # crawling protection?
     "imysleni.cz",  # crawling protection?
     "*.linkedin.com",  # crawling protection
+    "toptal.com",  # crawling protection
 ]
 
 EXCLUDE_REASONS = [
