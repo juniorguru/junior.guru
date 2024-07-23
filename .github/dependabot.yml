@@ -7,6 +7,11 @@ updates:
     open-pull-requests-limit: 1
     labels:
       - dependencies
+    ignore:
+      - dependency-name: "ruff"
+        update-types: ["version-update:semver-patch"]
+      - dependency-name: "pytest"
+        update-types: ["version-update:semver-patch"]
   - package-ecosystem: npm
     directory: "/"
     schedule:
