@@ -5,18 +5,25 @@ updates:
     schedule:
       interval: daily
     open-pull-requests-limit: 1
+    groups:
+      patch-upgrades:
+        update-types: ["patch"]
+      dev-upgrades:
+        dependency-type: "development"
+        update-types: ["minor"]
     labels:
       - dependencies
-    ignore:
-      - dependency-name: "ruff"
-        update-types: ["version-update:semver-patch"]
-      - dependency-name: "pytest"
-        update-types: ["version-update:semver-patch"]
   - package-ecosystem: npm
     directory: "/"
     schedule:
       interval: daily
     open-pull-requests-limit: 1
+    groups:
+      patch-upgrades:
+        update-types: ["patch"]
+      dev-upgrades:
+        dependency-type: "development"
+        update-types: ["minor"]
     labels:
       - dependencies
   - package-ecosystem: github-actions
