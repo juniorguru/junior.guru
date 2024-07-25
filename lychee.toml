@@ -1,0 +1,47 @@
+# Interface
+verbose = "info"
+no_progress = true
+cache = true
+max_cache_age = "10m"
+
+# Stealth
+user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:128.0) Gecko/20100101 Firefox/128.0"
+
+# Prevent 'Too Many Open Files'
+max_concurrency = 32
+
+# Check links inside `<code>` and `<pre>` blocks and Markdown code blocks
+include_verbatim = true
+
+# Check fragments in links
+include_fragments = true
+
+# Add 'Too many requests'
+accept = ["100..=103", "200..=299", "429"]
+
+# Exclude
+exclude = [
+    # Specifications
+    "https://ogp.me/ns/website",
+
+    # Infrastructure
+    "juniorguru.memberful.com",
+    "js.memberful.com",
+    "assets.memberful.com",
+    "js.stripe.com",
+    "m.stripe.network",
+
+    # Anti-scraping protections
+    "glassdoor.com",
+    "upwork.com",
+    "toptal.com",
+    "make.com",
+    "udemy.com",
+    "datacamp.com",
+    "europass.cz",
+    "support.discord.com",
+
+    # Expiring jobs
+    "www.jobs.cz/fp/",
+    "www.jobs.cz/rpd/",
+]

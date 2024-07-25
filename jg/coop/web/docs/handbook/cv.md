@@ -20,7 +20,7 @@ template: main_handbook.html
 
 Tím prvním jistě nic nepokazíš, ale jde to udělat lépe. To však nutně neznamená originálně. Některá CV jsou **natolik „kreativní“, že brání recruiterům v práci**. Životopis s kudrlinkami sice v paměti uvízne, ale pouze proto, že písmo bylo špatně čitelné a čtvrt hodiny trvalo zjistit, kdo vlastně jsi a co chceš.
 
-{% call figure('figures/daniel-nekonecny.jpg', 470, 296, 'Daniel Nekonečný') %}
+{% call figure('static/figures/daniel-nekonecny.jpg', 470, 296, 'Daniel Nekonečný') %}
   Daniel Nekonečný by tvé CV možná pochválil, recruiter si zaťuká na čelo a vyhodí ho
 {% endcall %}
 
@@ -321,7 +321,7 @@ Ačkoliv LinkedIn **umožňuje stáhnout profil jako PDF**, nepoužívej to jako
 
 Pokud se učíš vytvářet webovky, **vyrob si osobní stránky**. Bude se to počítat jako projekt a zároveň je to možnost, jak se představit barevněji, než PDF dokumentem. Můžeš do toho vložit tolik kreativity, kolik jen chceš. Víc je o tom v kapitole [osobní web a blog](candidate.md#osobni-web-a-blog).
 
-{% call figure('figures/robert-belan.png', 1024, 583, 'Robert Belan') %}
+{% call figure('static/figures/robert-belan.png', 1024, 583, 'Robert Belan') %}
   [Robert Belan](https://www.robertbelan.com/) má osobní webovky jako konfigurátor postavy v RPG hře
 {% endcall %}
 

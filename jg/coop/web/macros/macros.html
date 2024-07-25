@@ -9,12 +9,12 @@
     src="{{ filename|url }}"
   {% else %}
     data-src="{{ filename|url }}"
-    src="https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_auto,q_auto,f_auto/https://junior.guru/{{ filename }}"
+    src="https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }}%2Cdpr_auto%2Cq_auto%2Cf_auto/https://junior.guru/{{ filename }}"
     srcset="{{- '' -}}
-      https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_1,q_auto,f_auto/https://junior.guru/{{ filename }}, {{- '' -}}
-      https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_1.5,q_auto,f_auto/https://junior.guru/{{ filename }} 1.5x, {{- '' -}}
-      https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_2,q_auto,f_auto/https://junior.guru/{{ filename }} 2x, {{- '' -}}
-      https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }},dpr_3,q_auto,f_auto/https://junior.guru/{{ filename }} 3x {{- '' -}}
+      https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }}%2Cdpr_1%2Cq_auto%2Cf_auto/https://junior.guru/{{ filename }}, {{ '' -}}
+      https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }}%2Cdpr_1.5%2Cq_auto%2Cf_auto/https://junior.guru/{{ filename }} 1.5x, {{ '' -}}
+      https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }}%2Cdpr_2%2Cq_auto%2Cf_auto/https://junior.guru/{{ filename }} 2x, {{ '' -}}
+      https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }}%2Cdpr_3%2Cq_auto%2Cf_auto/https://junior.guru/{{ filename }} 3x {{- '' -}}
     "
     onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;"
   {% endif %}
@@ -28,7 +28,7 @@
 
 {% macro figure(path, alt, width, height, lazy=True, caption=none, class=none) %}
 <figure class="figure{% if class %} {{ class }}{% endif %}">
-  {{ img('static/' + path, alt, width, height, class='figure-img', lazy=lazy) }}
+  {{ img(path, alt, width, height, class='figure-img', lazy=lazy) }}
   {% if caption %}
     <figcaption class="figure-caption">{{ caption|md|remove_p }}</figcaption>
   {% elif caller %}
@@ -383,7 +383,7 @@
               </h5>
               <p class="jobs-inline-company" itemprop="hiringOrganization" itemscope itemtype="http://schema.org/Organization">
                 <span itemprop="name">{{ job.company_name }}</span>
-                <link itemprop="url" href="{{ job.company_url }}">
+                {% if job.company_url %}<link itemprop="url" href="{{ job.company_url }}">{% endif %}
               </p>
             </div>
           </a>

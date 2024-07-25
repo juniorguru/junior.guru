@@ -23,7 +23,7 @@
 {% if course_provider.group == "highlighted" %}
 <div class="course-provider-header">
   {{ link_card(course_provider.name, course_provider.url, class='highlighted') }}
-  {{ figure(course_provider.organization.logo_path, "logo " + course_provider.name, 200, 100, lazy=False, class="course-provider-logo") }}
+  {{ figure('static/' + course_provider.organization.logo_path, 'logo ' + course_provider.name, 200, 100, lazy=False, class='course-provider-logo') }}
 </div>
 {% else %}
   {{ link_card(course_provider.name, course_provider.url, nofollow=True) }}
@@ -74,7 +74,7 @@ Poradíme!
 
 ## Úřad práce
 
-Úřad práce ČR přispívá na kurzy, které má ve svém katalogu na [jsemvkurzu.cz](http://www.jsemvkurzu.cz).
+Úřad práce ČR přispívá na kurzy, které má ve svém katalogu [Jsem v kurzu](https://www.mpsv.cz/jsem-v-kurzu).
 {%- if course_provider.list_courses_up|length %}
 Provozovatel {{ course_provider.name }} tam nabízí tyto kurzy:
 {% for course in course_provider.list_courses_up %}

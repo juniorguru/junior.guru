@@ -601,12 +601,6 @@ Pokud cítíš, že ti firemní kultura něčím nesedne, **vždy je lepší zku
 
 <div class="link-cards">
   {{ link_card(
-    'WinWinJob',
-    'https://www.winwinjob.cz/',
-    'Vyber si práci podle šéfa.'
-  ) }}
-
-  {{ link_card(
     'Cocuma',
     'https://www.cocuma.cz/',
     'Projdi si firmy podle jejich kultury.'

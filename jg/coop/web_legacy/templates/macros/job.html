@@ -4,19 +4,19 @@
     itemscope
     itemtype="https://schema.org/JobPosting"
   >
-    <meta itemprop="industry" content="Informační technologie" />
-    <meta itemprop="datePosted" content="{{ job.posted_on.isoformat() }}" />
+    <meta itemprop="industry" content="Informační technologie">
+    <meta itemprop="datePosted" content="{{ job.posted_on.isoformat() }}">
     <meta
       itemprop="description"
       content="Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ job.company_name }}, {{ job.location }}"
-    />
+    >
 
     <a
       class="jobs__link"
       href="{{ job.effective_url|relative_url }}"
       {% if not job.is_submitted %}target="_blank" rel="noopener nofollow"{% endif %}
     >
-      <link itemprop="url" href="{{ job.effective_url }}" />
+      <link itemprop="url" href="{{ job.effective_url }}">
       <div class="jobs__content">
         <div class="jobs__company-logo">
           {% if job.company_logo_path %}
@@ -27,7 +27,7 @@
               class="jobs__company-logo-image"
               src="{{ url_for('static', filename=job.company_logo_path) }}"
               alt="Logo {{ job.company_name }}"
-            />
+            >
           {% endif %}
         </div>
         <div class="jobs__content-body">
@@ -42,7 +42,7 @@
           >
             <span itemprop="name">{{ job.company_name }}</span>
             {% if job.company_url %}
-              <link itemprop="url" href="{{ job.company_url }}" />
+              <link itemprop="url" href="{{ job.company_url }}">
             {% endif %}
           </p>
           <p

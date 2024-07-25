@@ -140,7 +140,7 @@ Působí to líp.
 Je to zapamatovatelné a vysílá to signál, že GitHub aspoň trochu používáš.
 Velké množství juniorů na vlastní obrázek kašle, takže i když je to dvouminutová záležitost, vážně tím vynikneš.
 
-{% call figure('figures/github-hankaesha.png', 1352, 790, 'Profil Hanky Milotové') %}
+{% call figure('static/figures/github-hankaesha.png', 1352, 790, 'Profil Hanky Milotové') %}
   [Hanka Milotová](https://github.com/hankaEsha) má pěkně vyladěný celý profil. Výrazný obrázek místo fotky je úplně OK
 {% endcall %}
 
@@ -164,7 +164,7 @@ GitHub to rozezná a umí to pak na profilu zobrazit s příslušnou ikonkou.
 Pokud si „pěstuješ“ nějaký další profil, třeba jako [Petr Valenta na Instagramu](https://www.instagram.com/petr_thedev/), klidně si to tam taky hoď.
 Musí to být celý odkaz i s `https://` na začátku.
 
-{% call figure('figures/github-profile-links.png', 776, 175, 'Odkazy Honzy Javorka') %}
+{% call figure('static/figures/github-profile-links.png', 776, 175, 'Odkazy Honzy Javorka') %}
   [Honza Javorek](https://github.com/honzajavorek) má na profilu odkaz na svůj web, LinkedIn a Mastodon. GitHub automaticky pozná, kam odkaz vede, a podle toho jej zobrazí, třeba s ikonkou, nebo jen jako uživatelské jméno
 {% endcall %}
 
@@ -192,7 +192,7 @@ To nejzajímavější dej jako první.
 Je fajn, že přišpendlit můžeš i repozitáře, které patří někomu jinému.
 Jestliže například dobrovolně pomůžeš s [kódem webovky konference PyCon CZ](https://github.com/pyvec/cz.pycon.org), můžeš se tím pochlubit i přesto, že repozitář patří pod organizaci Pyvec.
 
-{% call figure('figures/github-profile-pins.png', 776, 175, 'Repozitáře Petra Viktorina') %}
+{% call figure('static/figures/github-profile-pins.png', 776, 175, 'Repozitáře Petra Viktorina') %}
   Ač má [Petr Viktorin](https://github.com/encukou) přes 400 repozitářů (číslo na záložce vlevo nahoře), vypíchnutých má jen šest. Jsou to ty, do kterých nejvíc přispívá, nebo na které je nejvíc hrdý. Má tam svoje věci, ale i projekty odjinud
 {% endcall %}
 
@@ -205,7 +205,7 @@ Na stránce s repozitářem vždy pomocí ozubeného kolečka doplň jednu větu
 Ideální je mít popsané všechny své projekty, ale u přišpendlených je to nejdůležitější.
 Popisky se totiž zobrazí na profilu a zlepšují návštěvníkovi orientaci.
 
-{% call figure('figures/github-profile-descriptions.png', 1352, 732, 'Repozitáře uživatele Baraker42') %}
+{% call figure('static/figures/github-profile-descriptions.png', 1352, 732, 'Repozitáře uživatele Baraker42') %}
   Uživatel [Baraker42](https://github.com/Baraker42) nemá na profilu skoro nic, ale projekty tam jsou, a to je nakonec to podstatné. Popisky vše zachraňují, umožňují rozeznat, co je co. Nic nepřipíchl, takže GitHub vybral 6 náhodných projektů. Na záložce vidíme, že má 9, ale kdo tam neklikne, zbývající tři projekty přehlédne.
 {% endcall %}
 
@@ -218,7 +218,7 @@ Pokud ti přijde, že to je málo, tak můžeš upravit README projektu a zřete
 
 Jestliže ani to nezabrání, aby s tebou cloumaly obavy, že někdo kód z určitého repozitáře uvidí, můžeš ho v nastavení přepnout z veřejného na privátní, a je vymalováno.
 
-{% call figure('figures/github-archived.png', 1352, 790, 'Archivovaný repozitář') %}
+{% call figure('static/figures/github-archived.png', 1352, 790, 'Archivovaný repozitář') %}
   Honza Javorek má na GitHubu velmi starý kód své bakalářky.
   Trénované oko by si všimlo, že poslední změny proběhly před devíti či dvanácti lety, ale pro jistotu je repozitář zřetelně označený jako archiv.
 {% endcall %}
@@ -239,7 +239,7 @@ Taková programátorsky na koleně vyrobená, „ručně malovaná“ obdoba [Li
 I když si to uděláš mega vyladěné, nikdo se podle toho nebude rozhodovat, zda ti nabídne práci.
 Pokud se ti s tím nechce ztrácet čas, je to úplně v pohodě.
 
-{% call figure('figures/github-profile-readme.png', 1352, 636, 'Mia Bajić') %}
+{% call figure('static/figures/github-profile-readme.png', 1352, 636, 'Mia Bajić') %}
   [Mia Bajić](https://github.com/clytaemnestra) má barevné profilové README s technologiemi, které ji zajímají
 {% endcall %}
 
@@ -250,4 +250,4 @@ Někdo to bere jako soutěž, ale soutěž to není.
 Víc zelených čtverečků reálně o ničem nevypovídá.
 Navíc jde u tohoto grafu snadno „podvádět“ a dokonce existují [sranda nástroje, které ti do něj nakreslí cokoliv chceš](https://github.com/Annihil/github-spray).
 
-{{ figure('figures/github-chart.png', 'Zelené čtverečky', 1480, 306) }}
+{{ figure('static/figures/github-chart.png', 'Zelené čtverečky', 1480, 306) }}

@@ -71,7 +71,7 @@ Komunity na Discordu se dělí do různých „kanálů“.
 Ty mohou být různých typů, nejčastěji textové.
 Jsou tam ale i hlasové, do kterých když přijdeš, tak si můžeš volat s lidmi.
 
-{% call figure('figures/discord-voice-channels.png', 1024, 590, 'Snímek obrazovky, Discord') %}
+{% call figure('static/figures/discord-voice-channels.png', 1024, 590, 'Snímek obrazovky, Discord') %}
   Hlasové kanály jsou v červeném kroužku.
 {% endcall %}
 
@@ -84,7 +84,7 @@ V klubu tě zajímají především:
 
 Když klikneš na nějaký hlasový kanál, uvidíš něco jako tohle:
 
-{% call figure('figures/discord-voice-call.png', 1024, 590, 'Snímek obrazovky, Discord') %}
+{% call figure('static/figures/discord-voice-call.png', 1024, 590, 'Snímek obrazovky, Discord') %}
   V kanálu jsme zrovna dva, nemáme zapnuté kamery.
   U názvu kanálu je malá ikonka, která umožňuje otevřít chat.
   Dole je klasické ovládání: kamera, sdílení obrazovky, ukončení hovoru.

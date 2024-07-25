@@ -278,7 +278,11 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - run: poetry run jg check-links --no-build --retry
+      # Read https://github.com/lycheeverse/lychee/blob/master/README.md#cargo
+      - run: curl -sSf 'https://sh.rustup.rs' | sh
+      - run: apt install gcc pkg-config libc6-dev libssl-dev
+      - run: cargo install lychee
+      # - run: poetry run jg check-links --no-build --retry
 
   check-bot:
     executor: python-js
