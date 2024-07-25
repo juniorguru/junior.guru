@@ -282,7 +282,7 @@ jobs:
       - run: curl -sSf 'https://sh.rustup.rs' | sh
       - run: apt install gcc pkg-config libc6-dev libssl-dev
       - run: cargo install lychee
-      # - run: poetry run jg check-links --no-build --retry
+      - run: lychee public
 
   check-bot:
     executor: python-js
