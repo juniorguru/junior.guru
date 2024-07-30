@@ -279,8 +279,6 @@ jobs:
       - attach_workspace:
           at: "~"
       # Read https://github.com/lycheeverse/lychee/blob/master/README.md#cargo
-      - run: curl -sSf 'https://sh.rustup.rs' | sh -s -- -y
-      - run: apt install gcc pkg-config libc6-dev libssl-dev
       - run: cargo install lychee
       - run: lychee public
 
