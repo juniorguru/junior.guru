@@ -1371,7 +1371,7 @@ py-cord = {version = "2.6.0", extras = ["speed"]}
 type = "git"
 url = "https://github.com/juniorguru/chick.git"
 reference = "HEAD"
-resolved_reference = "2af207486aeecfd6df94550c99e8f82118cf4b1c"
+resolved_reference = "c8ee32429ac9424da2fb06d2c279366feca68173"
 
 [[package]]
 name = "jg-hen"
@@ -1396,7 +1396,7 @@ pydantic = "2.8.2"
 type = "git"
 url = "https://github.com/juniorguru/hen.git"
 reference = "HEAD"
-resolved_reference = "65a10b9206d85d9ead2a8b618557400edf5fbfc0"
+resolved_reference = "263199f83966a06f7db01d62a835b49abfefe0aa"
 
 [[package]]
 name = "jinja2"
