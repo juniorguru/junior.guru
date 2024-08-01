@@ -749,13 +749,13 @@ sgmllib3k = "*"
 
 [[package]]
 name = "fiobank"
-version = "3.0.0"
+version = "3.1.0"
 description = "Fio Bank API in Python"
 optional = false
 python-versions = "*"
 files = [
-    {file = "fiobank-3.0.0-py2.py3-none-any.whl", hash = "sha256:6b335210f92be648342ee879a1156e8fb450ff1d059f6e8757c857611a55ef26"},
-    {file = "fiobank-3.0.0.tar.gz", hash = "sha256:ecc13d37046bc2f36f50c9ee563e389eedab955c158b6c7293e00d5ee0c39bb3"},
+    {file = "fiobank-3.1.0-py2.py3-none-any.whl", hash = "sha256:155ded544cc74737da275044fb887b8733cb42b0cce67f02c00ff889bf6a400b"},
+    {file = "fiobank-3.1.0.tar.gz", hash = "sha256:f232f7b30b696d2f57227ab65c737024a720807014342faee595ce8db451fe6d"},
 ]
 
 [package.dependencies]
@@ -3344,4 +3344,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.11"
-content-hash = "5287254cbdbe61f0311b24f62792c8b5182c7a4995ba37fba62cd6e9b5823a99"
+content-hash = "15698a57de7c94241c953f23daeba82463927139da937e8b9e076bd2716ad2d6"
