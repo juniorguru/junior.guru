@@ -28,9 +28,9 @@ YOUTUBE_LANGUAGE_FORM_URL = "https://consent.youtube.com/ml"
 
 LINKEDIN_URL = "https://www.linkedin.com/company/juniorguru"
 
-LINKEDIN_PERSONAL_SEARCH_URL = "https://duckduckgo.com/?hps=1&q=honza+javorek&ia=web"
-
-LINKEDIN_PERSONAL_URL = "https://cz.linkedin.com/in/honzajavorek"
+LINKEDIN_PERSONAL_SEARCH_URL = (
+    "https://duckduckgo.com/?q=honza+javorek+site%3Alinkedin.com&ia=web"
+)
 
 GITHUB_USERNAME = "juniorguru"
 
@@ -174,22 +174,15 @@ def scrape_linkedin_personal():
         browser = playwright.firefox.launch()
         page = browser.new_page()
         page.goto(LINKEDIN_PERSONAL_SEARCH_URL, wait_until="networkidle")
-        url_parts = urlparse(LINKEDIN_PERSONAL_URL)
-        _, domain = url_parts.netloc.split(".", 1)
-        page.click(f"a[href*='{domain}{url_parts.path}']")
+        page.click('a[data-testid="result-title-a"]')
         if "/authwall" in page.url:
             logger.error(f"Loaded {page.url}")
             return None
-        response_text = str(page.content())
+        page.wait_for_selector(".public-post-author-card__followers")
+        count_element = page.query_selector(".public-post-author-card__followers")
+        count_text = count_element.inner_text()
         browser.close()
-
-    if match := re.search(
-        r'"name":\s*"Follows"\s*,\s*"userInteractionCount":\s*(\d+)', response_text
-    ):
-        return int(match.group(1))
-
-    logger.error(f"Scraping {page.url} failed!\n\n{response_text}")
-    return None
+        return int(re.sub(r"\D", "", count_text))
 
 
 def scrape_mastodon():
