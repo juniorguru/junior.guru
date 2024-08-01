@@ -2,7 +2,7 @@ import re
 from datetime import date
 from functools import partial
 from pathlib import Path
-from urllib.parse import urlencode, urlparse
+from urllib.parse import urlencode
 
 import click
 import requests
