@@ -280,7 +280,10 @@ def test_get_subscription_type_recognizes_trial():
         },
     }
 
-    assert get_subscription_type(subscription) == SubscriptionType.TRIAL
+    assert (
+        get_subscription_type(subscription, today=date(2024, 7, 12))
+        == SubscriptionType.TRIAL
+    )
 
 
 @pytest.mark.parametrize("member_price_cents", [0, 10000])
