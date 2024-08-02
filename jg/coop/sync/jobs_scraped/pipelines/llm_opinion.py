@@ -1,3 +1,5 @@
+from pydantic import BaseModel
+
 from jg.coop.lib import loggers
 from jg.coop.lib.llm import ask_for_json
 from jg.coop.lib.mutations import MutationsNotAllowedError
@@ -5,31 +7,45 @@ from jg.coop.sync.jobs_scraped import DropItem
 
 
 SYSTEM_PROMPT = """
-You are assistant for classifying job postings to simplify job search
-for people who have just finished a coding bootcamp and who are looking
-for SW engineering or SW testing jobs. User provides a job posting and you reply
-with a valid JSON object containing the following keys:
+You're helping someone who has just learned programming to find their first job.
+Decide if given job is relevant based on the following criteria:
 
-- is_entry_level (bool) - Is it relevant to entry level candidates?
-- reason (string) - Short explanation why it is entry level or not
-- is_sw_engineering (bool) - Is it relevant to SW engineering?
-- is_sw_testing (bool) - Is it relevant to SW testing?
-- tag_python (bool) - Do they want Python?
-- tag_javascript (bool) - Do they want JavaScript?
-- tag_java (bool) - Do they want Java?
-- tag_degree (bool) - Do they require university degree?
+- Involves coding in a mainstream programming language
+- Mentions it's for juniors, offers mentoring or onboarding, or otherwise seems beginner-friendly
+- DOES NOT require designing or architecting systems
+- DOES NOT require advanced or excellent knowledge of any technology
+- DOES NOT require more than 1 year of experience
+
+User provides the job posting and you reply with a valid JSON object containing
+the following keys:
+
+- reason (string) - Concisely explain why you think the job is relevant or not, 200-500 characters
+- is_relevant (bool) - Is the job relevant based on the above?
 """
 
 
 logger = loggers.from_path(__file__)
 
 
+class LLMOpinion(BaseModel):
+    is_relevant: bool
+    reason: str
+
+
 async def process(item: dict) -> dict:
     try:
-        item["llm_opinion"] = await ask_for_json(
+        llm_reply = await ask_for_json(
             SYSTEM_PROMPT,
             f"{item['title']}\n\n{item['description_text']}",
         )
     except MutationsNotAllowedError:
         raise DropItem("Asking LLM is not allowed")
+
+    logger.debug(f"LLM reply (JSON): {llm_reply!r}")
+    llm_opinion = LLMOpinion(
+        is_relevant=llm_reply["is_relevant"],
+        reason=llm_reply["reason"],
+    )
+    item["llm_opinion"] = llm_opinion.model_dump()
+    logger.debug(f"LLM opinion: {item['llm_opinion']!r}")
     return item

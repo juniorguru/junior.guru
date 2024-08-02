@@ -22,6 +22,8 @@ from jg.coop.lib.mutations import mutates
 
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
+OPENAI_MODEL = "gpt-4o-mini"
+
 
 logger = loggers.from_path(__file__)
 
@@ -71,7 +73,7 @@ async def ask_for_json(system_prompt: str, user_prompt: str) -> dict:
     client = get_client()
     async with limit:
         completion = await client.chat.completions.create(
-            model="gpt-3.5-turbo-1106",
+            model=OPENAI_MODEL,
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt},
