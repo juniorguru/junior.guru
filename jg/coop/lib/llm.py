@@ -20,13 +20,9 @@ from jg.coop.lib.cache import cache
 from jg.coop.lib.mutations import mutates
 
 
-if API_KEY := os.environ.get("REPLICATE_API_KEY"):
-    BASE_URL = "https://openai-proxy.replicate.com/v1"
-    MODEL = "meta/llama-2-7b-chat"
-else:
-    API_KEY = os.environ.get("OPENAI_API_KEY")
-    BASE_URL = None
-    MODEL = "gpt-3.5-turbo-1106"
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+
+OPENAI_MODEL = "gpt-4o-mini"
 
 
 logger = loggers.from_path(__file__)
@@ -36,8 +32,7 @@ limit = asyncio.Semaphore(4)
 
 @lru_cache
 def get_client() -> AsyncOpenAI:
-    logger.debug(f"Creating OpenAI client with base_url={BASE_URL}")
-    return AsyncOpenAI(api_key=API_KEY, base_url=BASE_URL)
+    return AsyncOpenAI(api_key=OPENAI_API_KEY)
 
 
 retry_defaults = dict(
@@ -77,7 +72,7 @@ async def ask_for_json(system_prompt: str, user_prompt: str) -> dict:
     client = get_client()
     async with limit:
         completion = await client.chat.completions.create(
-            model=MODEL,
+            model=OPENAI_MODEL,
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt},
