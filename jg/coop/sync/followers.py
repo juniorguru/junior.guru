@@ -178,7 +178,11 @@ def scrape_linkedin_personal():
         if "/authwall" in page.url:
             logger.error(f"Loaded {page.url}")
             return None
-        page.wait_for_selector(".public-post-author-card__followers")
+        try:
+            page.wait_for_selector(".public-post-author-card__followers")
+        except TimeoutError:
+            logger.error(f"Timeout on {page.url}")
+            return None
         count_element = page.query_selector(".public-post-author-card__followers")
         count_text = count_element.inner_text()
         browser.close()
