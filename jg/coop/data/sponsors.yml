@@ -23,7 +23,7 @@ registry:
     cz_business_id: 7536721
     plan: https://juniorguru.memberful.com/admin/plans/111101
     periods:
-      - [2023-07, 2024-07]
+      - [2023-07, 2024-08]
       - [2020-09, 2021-11]
 
   - name: ITnetwork
