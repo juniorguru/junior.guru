@@ -13,6 +13,7 @@ Decide if given job is relevant based on the following criteria:
 - Involves coding in a mainstream programming language
 - Mentions it's for juniors, offers mentoring or onboarding, or otherwise seems beginner-friendly
 - DOES NOT require designing or architecting systems
+- DOES NOT require advanced or excellent knowledge of any technology
 - DOES NOT require more than 1 year of experience
 
 User provides the job posting and you reply with a valid JSON object containing
