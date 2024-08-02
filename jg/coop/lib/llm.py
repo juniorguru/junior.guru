@@ -32,6 +32,7 @@ limit = asyncio.Semaphore(4)
 
 @lru_cache
 def get_client() -> AsyncOpenAI:
+    logger.debug("Creating OpenAI client")
     return AsyncOpenAI(api_key=OPENAI_API_KEY)
 
 
