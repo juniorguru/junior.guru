@@ -3,27 +3,31 @@ updates:
   - package-ecosystem: pip
     directory: "/"
     schedule:
+      interval: daily
+    open-pull-requests-limit: 1
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-patch"]
+    labels:
+      - dependencies
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
       interval: weekly
-    open-pull-requests-limit: 3
+    open-pull-requests-limit: 1
     groups:
       patch-upgrades:
         update-types: ["patch"]
-      dev-upgrades:
-        dependency-type: "development"
-        update-types: ["minor"]
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
     labels:
       - dependencies
   - package-ecosystem: npm
     directory: "/"
     schedule:
-      interval: weekly
-    open-pull-requests-limit: 3
-    groups:
-      patch-upgrades:
-        update-types: ["patch"]
-      dev-upgrades:
-        dependency-type: "development"
-        update-types: ["minor"]
+      interval: daily
+    open-pull-requests-limit: 1
     labels:
       - dependencies
   - package-ecosystem: github-actions
