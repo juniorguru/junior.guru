@@ -248,6 +248,10 @@ class ListedJob(BaseModel):
         return f"https://www.google.cz/search?q={quote_plus(self.company_name)}"
 
     @property
+    def company_linkedin_url(self) -> str:
+        return f"https://www.linkedin.com/search/results/companies/?keywords={quote_plus(self.company_name)}"
+
+    @property
     def is_submitted(self) -> bool:
         return bool(self.submitted_job)
 
