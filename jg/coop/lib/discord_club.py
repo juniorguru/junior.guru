@@ -8,7 +8,6 @@ from typing import TYPE_CHECKING, AsyncGenerator
 
 import discord
 import emoji
-from discord.types.components import ButtonComponent
 
 from jg.coop.lib import loggers, mutations
 
