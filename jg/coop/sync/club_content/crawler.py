@@ -43,6 +43,7 @@ WORKERS_COUNT = 6
 CHANNELS_HISTORY_SINCE = {
     ClubChannelID.FUN: timedelta(days=30),
     ClubChannelID.FUN_TOPICS: timedelta(days=30),
+    ClubChannelID.JOBS: timedelta(days=60),
     ClubChannelID.INTRO: None,  # all history since ever
     ClubChannelID.BUSINESS: None,  # all history since ever
     ClubChannelID.MENTORING: None,  # all history since ever
@@ -53,7 +54,6 @@ CHANNELS_SKIP = [
     ClubChannelID.MODERATION,
     ClubChannelID.BOT,
     ClubChannelID.BOT_FORUM,
-    ClubChannelID.JOBS,
     # skip archived channels
     976054742117658634,
     819935312272424982,

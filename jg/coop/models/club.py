@@ -259,6 +259,7 @@ class ClubMessage(BaseModel):
     type = CharField(default="default")
     is_private = BooleanField(default=False)
     pinned_message_url = IntegerField(null=True, index=True)
+    ui_urls = JSONField(default=list)
 
     @property
     def is_pinning(self) -> bool:

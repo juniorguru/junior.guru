@@ -27,7 +27,7 @@ ID_RE = re.compile(r"`#(\d+)`")
 
 @cli.sync_command(dependencies=["club-content", "subscriptions-csv"])
 @click.option("--channel", "channel_id", default="business", type=parse_channel)
-def main(channel_id):
+def main(channel_id: int):
     discord_task.run(report, channel_id)
 
 

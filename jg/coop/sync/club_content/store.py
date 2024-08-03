@@ -11,6 +11,7 @@ from jg.coop.lib.discord_club import (
     get_parent_channel,
     get_pinned_message_url,
     get_starting_emoji,
+    get_ui_urls,
     get_user_roles,
     is_channel_private,
 )
@@ -110,6 +111,7 @@ def store_message(message: Message) -> ClubMessage:
             type=message.type.name,
             is_private=is_channel_private(channel),
             pinned_message_url=get_pinned_message_url(message),
+            ui_urls=get_ui_urls(message),
         )
     except peewee.IntegrityError:
         message_obj = ClubMessage.get_by_id(message.id)

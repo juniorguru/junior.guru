@@ -1,4 +1,5 @@
 import asyncio
+import itertools
 import re
 from datetime import date, datetime, timedelta, timezone
 from enum import IntEnum, StrEnum, unique
@@ -7,6 +8,7 @@ from typing import TYPE_CHECKING, AsyncGenerator
 
 import discord
 import emoji
+from discord.types.components import ButtonComponent
 
 from jg.coop.lib import loggers, mutations
 
@@ -321,6 +323,15 @@ def get_pinned_message_url(message: discord.Message) -> int:
         if match := PINNED_MESSAGE_URL_RE.search(embed_description):
             return match.group("url")
     return None
+
+
+def get_ui_urls(message: discord.Message) -> list[str]:
+    return sorted(
+        itertools.chain.from_iterable(
+            [button.url for button in action_row.children]
+            for action_row in message.components
+        )
+    )
 
 
 def parse_message_url(url: str) -> int:
