@@ -1,6 +1,6 @@
+import textwrap
 from datetime import date, datetime, time, timedelta
 from functools import lru_cache
-import textwrap
 
 from peewee import (
     BooleanField,
