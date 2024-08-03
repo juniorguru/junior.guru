@@ -2,6 +2,7 @@ import asyncio
 import textwrap
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
+from typing import AsyncGenerator
 
 from discord import Embed, File, ForumChannel, Message, ui
 
@@ -54,13 +55,15 @@ async def sync_jobs(client: ClubClient):
         await asyncio.gather(*[post_job(channel, job) for job in jobs_chunk])
 
 
-async def fetch_starting_messages(channel: ForumChannel, after: date | None = None):
+async def fetch_starting_messages(
+    channel: ForumChannel, after: date | None = None
+) -> AsyncGenerator[Message, None]:
     async for thread in fetch_threads(channel):
         if is_thread_after(thread, after=after):
             yield await thread.fetch_message(thread.id)
 
 
-def get_effective_url(message: Message):
+def get_effective_url(message: Message) -> str | None:
     try:
         action_row = message.components[0]
         button = action_row.children[0]
