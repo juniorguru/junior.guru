@@ -1,9 +1,9 @@
 import asyncio
 import textwrap
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
-from discord import Embed, File, ui
+from discord import Embed, File, ForumChannel, Message, ui
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
@@ -54,13 +54,13 @@ async def sync_jobs(client: ClubClient):
         await asyncio.gather(*[post_job(channel, job) for job in jobs_chunk])
 
 
-async def fetch_starting_messages(channel, after=None):
+async def fetch_starting_messages(channel: ForumChannel, after: date | None = None):
     async for thread in fetch_threads(channel):
         if is_thread_after(thread, after=after):
             yield await thread.fetch_message(thread.id)
 
 
-def get_effective_url(message):
+def get_effective_url(message: Message):
     try:
         action_row = message.components[0]
         button = action_row.children[0]
@@ -69,21 +69,18 @@ def get_effective_url(message):
         return None
 
 
-async def post_job(channel, job):
+async def post_job(channel: ForumChannel, job: ListedJob):
     logger[str(job.id)].info(f"Posting {job!r}: {job.effective_url}")
     title = textwrap.shorten(job.title, 90, placeholder="…")
-
     embed = Embed(title=job.company_name)
+    params = dict(
+        title=title,
+        content=job.location,
+        embed=embed,
+        view=ui.View(ui.Button(emoji="👉", label="Zjistit víc", url=job.effective_url)),
+    )
     if job.company_logo_path:
         embed.set_thumbnail(url=f"attachment://{Path(job.company_logo_path).name}")
-
+        params["file"] = File(IMAGES_DIR.absolute() / job.company_logo_path)
     with mutating_discord(channel) as proxy:
-        await proxy.create_thread(
-            title,
-            job.location,
-            file=File(IMAGES_DIR.absolute() / job.company_logo_path),
-            embed=embed,
-            view=ui.View(
-                ui.Button(emoji="👉", label="Zjistit víc", url=job.effective_url)
-            ),
-        )
+        await proxy.create_thread(**params)
