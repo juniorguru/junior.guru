@@ -81,6 +81,7 @@ async def post_job(channel, job):
         await proxy.create_thread(
             title,
             job.location,
+            file=File(IMAGES_DIR.absolute() / job.company_logo_path),
             embed=embed,
             view=ui.View(
                 ui.Button(emoji="👉", label="Zjistit víc", url=job.effective_url)
