@@ -37,6 +37,7 @@ GENDER_RES = [
     re.compile(r"👩‍💻[\/\|]👨‍💻|👨‍💻[\/\|]👩‍💻"),
     # 'all genders'
     re.compile(r"\(\s*all\s+genders\s*\)"),
+    re.compile(r"\(\s*all\s+humans\s*\)"),
 ]
 
 
