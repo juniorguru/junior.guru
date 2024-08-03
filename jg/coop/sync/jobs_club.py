@@ -54,10 +54,9 @@ async def sync_jobs(client: ClubClient, channel_id: int):
 
 
 async def post_job(channel: ForumChannel, job: ListedJob):
-    name = textwrap.shorten(job.title, 90, placeholder="…")
     embed = Embed(title=job.company_name)
     params = dict(
-        name=name,
+        name=job.title_short,
         content=job.location,
         embed=embed,
         view=ui.View(ui.Button(emoji="👉", label="Zjistit víc", url=job.effective_url)),

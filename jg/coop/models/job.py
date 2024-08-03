@@ -1,5 +1,6 @@
 from datetime import date, datetime, time, timedelta
 from functools import lru_cache
+import textwrap
 
 from peewee import (
     BooleanField,
@@ -226,6 +227,10 @@ class ListedJob(BaseModel):
     locations = JSONField(null=True)
     remote = BooleanField(default=False)
     employment_types = JSONField(null=True)
+
+    @property
+    def title_short(self) -> str:
+        return textwrap.shorten(self.title, 90, placeholder="…")
 
     @property
     def effective_url(self):
