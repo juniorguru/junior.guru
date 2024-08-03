@@ -20,7 +20,8 @@ updates:
         update-types: ["patch"]
     ignore:
       - dependency-name: "*"
-        update-types: ["version-update:semver-major", "version-update:semver-minor"]
+        update-types:
+          ["version-update:semver-major", "version-update:semver-minor"]
     labels:
       - dependencies
   - package-ecosystem: npm
