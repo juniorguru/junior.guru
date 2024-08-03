@@ -11,7 +11,7 @@ from jg.coop.lib import apify, loggers
 from jg.coop.lib.async_utils import make_async
 from jg.coop.lib.cli import async_command
 from jg.coop.models.base import db
-from jg.coop.models.job import ScrapedJob
+from jg.coop.models.job import DroppedJob, ScrapedJob
 
 
 ACTORS = [
@@ -80,10 +80,10 @@ async def main():
         for pipeline_name in PIPELINES
     ]
 
-    logger.info("Setting up db table")
+    logger.info("Setting up db tables")
     with db.connection_context():
-        ScrapedJob.drop_table()
-        ScrapedJob.create_table()
+        db.drop_tables([DroppedJob, ScrapedJob])
+        db.create_tables([DroppedJob, ScrapedJob])
 
     logger.info("Processing items")
     count = 0
@@ -114,16 +114,18 @@ async def process_item(
                 logger.error(f"Pipeline {pipeline_name!r} failed:\n{pformat(item)}")
                 raise
     except DropItem:
+        logger.debug(f"Saving dropped job {item['url']}")
+        await save_dropped_job(item)
         return 0
 
-    logger.debug(f"Saving {item['url']}")
-    await save_item(item)
+    logger.debug(f"Saving scraped job {item['url']}")
+    await save_scraped_job(item)
     return 1
 
 
 @make_async
 @db.connection_context()
-def save_item(item: dict) -> None:
+def save_scraped_job(item: dict) -> None:
     job = ScrapedJob.from_item(item)
     try:
         job.save()
@@ -133,3 +135,11 @@ def save_item(item: dict) -> None:
         job.merge_item(item)
         job.save()
         logger.debug(f"Merged {item['url']} to {job!r}")
+
+
+@make_async
+@db.connection_context()
+def save_dropped_job(item: dict) -> None:
+    job = DroppedJob.from_item(item)
+    job.save()
+    logger.debug(f"Created {item['url']} as {job!r}")

@@ -132,31 +132,24 @@ class ScrapedJob(BaseModel):
     source_urls = JSONField(default=list)
 
     @classmethod
-    def date_listing(cls, date_):
-        return cls.select().where(cls.posted_on == date_)
+    def listing(cls) -> Iterable[Self]:
+        return cls.select().order_by(cls.posted_on.desc())
 
     @classmethod
-    def latest_posted_on(cls):
-        job = cls.select().order_by(cls.posted_on.desc()).first()
-        return job.posted_on if job else None
-
-    @classmethod
-    def get_by_item(cls, item):
+    def get_by_item(cls, item) -> Self:
         return cls.select().where(cls.url == item["url"]).get()
 
     @classmethod
-    def from_item(cls, item):
-        # TODO simplify (backwards compatibility)
-        posted_on = date.fromisoformat(item.get("posted_on") or item["first_seen_on"])
+    def from_item(cls, item) -> Self:
         data = {
             field_name: item.get(field_name)
             for field_name in cls._meta.fields.keys()
             if field_name in item
         }
-        data["posted_on"] = posted_on
+        data["posted_on"] = date.fromisoformat(item["posted_on"])
         return cls(**data)
 
-    def to_item(self):
+    def to_item(self) -> dict:
         return model_to_dict(self)
 
     def merge_item(self, item):
@@ -166,34 +159,30 @@ class ScrapedJob(BaseModel):
                 merge_method = getattr(self, f"_merge_{field_name}")
                 setattr(self, field_name, merge_method(item))
             except AttributeError:
-                # TODO simplify (backwards compatibility)
-                posted_on = date.fromisoformat(
-                    item.get("posted_on") or item["first_seen_on"]
-                )
                 # overwrite with newer data
+                posted_on = date.fromisoformat(item["posted_on"])
                 if posted_on >= self.posted_on:
                     old_value = getattr(self, field_name)
                     new_value = item.get(field_name, old_value)
                     setattr(self, field_name, new_value)
 
-    def _merge_boards_ids(self, item):
+    def _merge_boards_ids(self, item) -> list[str]:
         return list(set(self.boards_ids + item.get("boards_ids", [])))
 
-    def _merge_items_hashes(self, item):
+    def _merge_items_hashes(self, item) -> list[str]:
         return list(set(self.items_hashes + item.get("items_hashes", [])))
 
-    def _merge_source_urls(self, item):
+    def _merge_source_urls(self, item) -> list[str]:
         return list(set(self.source_urls + item.get("source_urls", [])))
 
-    def _merge_posted_on(self, item):
-        # TODO simplify (backwards compatibility)
-        posted_on = date.fromisoformat(item.get("posted_on") or item["first_seen_on"])
+    def _merge_posted_on(self, item) -> date:
+        posted_on = date.fromisoformat(item["posted_on"])
         return min(self.posted_on, posted_on)
 
-    def _merge_items_merged_count(self, item):
+    def _merge_items_merged_count(self, item) -> int:
         return self.items_merged_count + 1
 
-    def to_listed(self):
+    def to_listed(self) -> "ListedJob":
         data = {
             field_name: getattr(self, field_name, None)
             for field_name in ListedJob._meta.fields.keys()
@@ -203,6 +192,33 @@ class ScrapedJob(BaseModel):
             )
         }
         return ListedJob(reason=self.llm_opinion["reason"], **data)
+
+
+class DroppedJob(BaseModel):
+    title = CharField()
+    url = CharField()
+    reason = CharField(null=True, index=True)
+
+    @classmethod
+    def from_item(cls, item) -> Self:
+        return cls(
+            title=item["title"],
+            url=item["url"],
+            reason=item["llm_opinion"]["reason"] if item.get("llm_opinion") else None,
+        )
+
+    @classmethod
+    def count(cls) -> int:
+        return cls.select().count()
+
+    @classmethod
+    def sample_listing(cls, size: int) -> Iterable[Self]:
+        return (
+            cls.select()
+            .where(cls.reason.is_null(False), cls.title ** "%junior%")
+            .order_by(fn.random())
+            .limit(size)
+        )
 
 
 class ListedJob(BaseModel):
@@ -303,12 +319,8 @@ class ListedJob(BaseModel):
         return cls.listing().count()
 
     @classmethod
-    def listing(cls, today=None):
-        today = today or date.today()
-        days_since_posted = fn.julianday(today) - fn.julianday(cls.posted_on)
-        return cls.select().order_by(
-            cls.submitted_job.is_null(), Expression(days_since_posted, "%", 30)
-        )
+    def listing(cls) -> Iterable[Self]:
+        return cls.select().order_by(cls.submitted_job.is_null(), cls.posted_on.desc())
 
     @classmethod
     def favicon_listing(cls) -> Iterable[Self]:

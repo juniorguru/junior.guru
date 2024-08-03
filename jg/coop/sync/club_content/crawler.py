@@ -54,6 +54,7 @@ CHANNELS_SKIP = [
     ClubChannelID.MODERATION,
     ClubChannelID.BOT,
     ClubChannelID.BOT_FORUM,
+    ClubChannelID.JOBS_TRASH,
     # skip archived channels
     976054742117658634,
     819935312272424982,
