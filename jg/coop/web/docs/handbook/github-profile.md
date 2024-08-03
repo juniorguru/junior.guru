@@ -35,7 +35,7 @@ Jak je tedy možné, že se často o profilu na GitHubu mluví jako o něčem, c
 -   Je fajn, když se junioři umí pohybovat v nějakém prostředí na sdílení kódu (GitHub, BitBucket, GitLab…), protože každá firma něco takového interně používá.
 -   Během pohovorů chtějí firmy vidět kód, aby měly představu, co budou muset kandidáty ještě doučit.
 
-U lidí s praxí je GitHub [velmi špatné měřítko dovedností](https://www.benfrederickson.com/github-wont-help-with-hiring/).
+U lidí s praxí je GitHub [velmi špatné měřítko dovedností](https://web.archive.org/web/20240329194129/https://www.benfrederickson.com/github-wont-help-with-hiring/).
 Pokud někdo už pracoval v oboru, nepotřebuje osobní projekty.
 Že umí s Gitem nebo s něčím, co jim kód zobrazí v prohlížeči, se tak nějak předpokládá.
 A jestliže chce firma vidět kód, tak si člověka prozkouší, nebo zadá k vypracování nějaký úkol na doma.
@@ -46,7 +46,7 @@ Firmám bývá úplně jedno, zda to kandidát odevzdá jako přílohu v e-mailu
   'ben-frederickson.jpg',
   'Ben Frederickson'
 ) %}
-  Ben Frederickson, autor článku [Why GitHub Won't Help You With Hiring](https://www.benfrederickson.com/github-wont-help-with-hiring/)
+  Ben Frederickson, autor článku [Why GitHub Won't Help You With Hiring](https://web.archive.org/web/20240329194129/https://www.benfrederickson.com/github-wont-help-with-hiring/)
 {% endcall %}
 
 Pro juniory je ale projekt na GitHubu přímočaré řešení všech zmíněných bodů.

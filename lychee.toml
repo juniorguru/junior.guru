@@ -16,6 +16,9 @@ include_verbatim = true
 # Check fragments in links
 include_fragments = true
 
+# Don't check emails, it's problematic
+include_mail = false
+
 # Add 'Too many requests'
 accept = ["100..=103", "200..=299", "429"]
 
@@ -40,6 +43,8 @@ exclude = [
     "datacamp.com",
     "europass.cz",
     "support.discord.com",
+    "keyguru.cz",
+    "robime.it",
 
     # Expiring jobs
     "www.jobs.cz/fp/",
