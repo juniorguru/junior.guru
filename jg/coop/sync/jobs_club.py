@@ -3,7 +3,7 @@ from datetime import date, timedelta
 from pathlib import Path
 
 import click
-from discord import Embed, EmbedAuthor, File, ForumChannel, ui
+from discord import Embed, File, ForumChannel, ui
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
