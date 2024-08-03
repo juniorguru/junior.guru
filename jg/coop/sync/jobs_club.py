@@ -3,7 +3,7 @@ from datetime import date, timedelta
 from pathlib import Path
 
 import click
-from discord import Embed, File, ForumChannel, ui
+from discord import Embed, EmbedAuthor, File, ForumChannel, ui
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
@@ -17,6 +17,8 @@ from jg.coop.models.job import ListedJob
 JOBS_REPEATING_PERIOD_DAYS = 30
 
 IMAGES_DIR = Path("jg/coop/images")
+
+REASON_ICON_PATH = IMAGES_DIR / "emoji" / "sparkles.png"
 
 
 logger = loggers.from_path(__file__)
@@ -53,15 +55,48 @@ async def sync_jobs(client: ClubClient, channel_id: int):
 
 
 async def post_job(channel: ForumChannel, job: ListedJob):
-    embed = Embed(title=job.company_name)
-    params = dict(
-        name=job.title_short,
-        content=job.location,
-        embed=embed,
-        view=ui.View(ui.Button(emoji="👉", label="Zjistit víc", url=job.effective_url)),
+    files = []
+    embeds = []
+
+    # company
+    company_links = [
+        f"🔬 [Atmoskop]({job.company_atmoskop_url})",
+        f"🔍 [Hledání]({job.company_search_url})",
+    ]
+    if job.company_url:
+        company_links.insert(0, f"🏠 [Web]({job.company_url})")
+    company_embed = Embed(
+        title=job.company_name,
+        description="\n".join(company_links),
     )
     if job.company_logo_path:
-        embed.set_thumbnail(url=f"attachment://{Path(job.company_logo_path).name}")
-        params["file"] = File(IMAGES_DIR.absolute() / job.company_logo_path)
+        files.append(File(IMAGES_DIR.absolute() / job.company_logo_path))
+        company_embed.set_thumbnail(
+            url=f"attachment://{Path(job.company_logo_path).name}"
+        )
+    embeds.append(company_embed)
+
+    # reason
+    if job.reason:
+        files.append(File(REASON_ICON_PATH))
+        reason_embed = Embed(description=f"_{job.reason}_")
+        reason_embed.set_author(
+            name="Proč si můj AI mozeček myslí, že je to juniorní",
+            icon_url=f"attachment://{REASON_ICON_PATH.name}",
+        )
+        embeds.append(reason_embed)
+
+    # job
+    params = dict(
+        name=job.title_short,
+        content=f"{job.location} — {job.company_name}",
+        files=files,
+        embeds=embeds,
+        view=ui.View(
+            ui.Button(emoji="👉", label="Celý inzerát", url=job.effective_url)
+        ),
+    )
+
+    # create!
     with mutating_discord(channel) as proxy:
         await proxy.create_thread(**params)

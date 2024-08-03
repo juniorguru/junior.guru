@@ -19,7 +19,7 @@ Decide if given job is relevant based on the following criteria:
 User provides the job posting and you reply with a valid JSON object containing
 the following keys:
 
-- reason (string) - Concisely explain why you think the job is relevant or not, 200-500 characters
+- reason (string) - Concisely explain why you think the job is relevant or not, 200-300 characters
 - is_relevant (bool) - Is the job relevant based on the above?
 """
 

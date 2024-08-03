@@ -1,6 +1,8 @@
 import textwrap
 from datetime import date, datetime, time, timedelta
 from functools import lru_cache
+from typing import Iterable, Self
+from urllib.parse import quote_plus
 
 from peewee import (
     BooleanField,
@@ -103,9 +105,7 @@ class SubmittedJob(BaseModel):
                 and field_name not in ["id", "submitted_job"]
             )
         }
-        data["posted_on"] = self.posted_on
-        data["submitted_job"] = self
-        return ListedJob(**data)
+        return ListedJob(submitted_job=self, reason=None, **data)
 
 
 class ScrapedJob(BaseModel):
@@ -202,12 +202,13 @@ class ScrapedJob(BaseModel):
                 and field_name not in ["id", "submitted_job"]
             )
         }
-        return ListedJob(**data)
+        return ListedJob(reason=self.llm_opinion["reason"], **data)
 
 
 class ListedJob(BaseModel):
     boards_ids = JSONField(default=list, index=True)
     submitted_job = ForeignKeyField(SubmittedJob, unique=True, null=True)
+    reason = CharField(null=True)
 
     title = CharField()
     posted_on = DateField(index=True)
@@ -233,20 +234,28 @@ class ListedJob(BaseModel):
         return textwrap.shorten(self.title, 90, placeholder="…")
 
     @property
-    def effective_url(self):
+    def effective_url(self) -> str:
         if self.is_submitted:
             return self.url
         return self.apply_url or self.url
 
     @property
-    def is_submitted(self):
+    def company_atmoskop_url(self) -> str:
+        return f"https://www.atmoskop.cz/hledani?q={quote_plus(self.company_name)}"
+
+    @property
+    def company_search_url(self) -> str:
+        return f"https://www.google.cz/search?q={quote_plus(self.company_name)}"
+
+    @property
+    def is_submitted(self) -> bool:
         return bool(self.submitted_job)
 
     @property
-    def is_highlighted(self):
+    def is_highlighted(self) -> bool:
         return self.is_submitted
 
-    def tags(self):
+    def tags(self) -> list:
         tags = []
         if self.remote:
             tags.append("REMOTE")
@@ -256,7 +265,7 @@ class ListedJob(BaseModel):
         return tags
 
     @property
-    def location(self):
+    def location(self) -> str:
         # TODO refactor, this is terrible
         locations = self.locations or []
         if len(locations) == 1:
@@ -298,21 +307,21 @@ class ListedJob(BaseModel):
         )
 
     @classmethod
-    def favicon_listing(cls):
+    def favicon_listing(cls) -> Iterable[Self]:
         return cls.select().where(
             cls.company_logo_path.is_null() & cls.company_url.is_null(False)
         )
 
     @classmethod
-    def submitted_listing(cls):
+    def submitted_listing(cls) -> Iterable[Self]:
         return cls.select().where(cls.submitted_job.is_null(False))
 
     @classmethod
-    def get_by_submitted_id(cls, submitted_job_id):
+    def get_by_submitted_id(cls, submitted_job_id) -> Iterable[Self]:
         return cls.select().where(cls.submitted_job == submitted_job_id).get()
 
     @classmethod
-    def region_listing(cls, region):
+    def region_listing(cls, region) -> Iterable[Self]:
         locations = cls.locations.tree().alias("locations")
         return (
             cls.listing()
@@ -321,16 +330,16 @@ class ListedJob(BaseModel):
         )
 
     @classmethod
-    def remote_listing(cls):
+    def remote_listing(cls) -> Iterable[Self]:
         return cls.listing().where(cls.remote == True)  # noqa: E712
 
     @classmethod
-    def tags_listing(cls, tags):
+    def tags_listing(cls, tags) -> Iterable[Self]:
         tags = set(tags)
         return [job for job in cls.listing() if tags & set(job.tags())]
 
     @classmethod
-    def internship_listing(cls):
+    def internship_listing(cls) -> Iterable[Self]:
         return cls.tags_listing(
             [
                 "INTERNSHIP",
@@ -340,14 +349,14 @@ class ListedJob(BaseModel):
         )
 
     @classmethod
-    def volunteering_listing(cls):
+    def volunteering_listing(cls) -> Iterable[Self]:
         return cls.tags_listing(["VOLUNTEERING"])
 
     @classmethod
-    def api_listing(cls):
+    def api_listing(cls) -> Iterable[Self]:
         return cls.select().order_by(cls.posted_on.desc())
 
-    def to_api(self):
+    def to_api(self) -> dict[str, str | int | datetime | None]:
         return dict(
             **dict(
                 title=self.title,
