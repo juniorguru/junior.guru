@@ -45,6 +45,9 @@ exclude = [
     "support.discord.com",
     "keyguru.cz",
     "robime.it",
+    "reddit.com",
+    "ulekare.cz",
+    "epravo.cz",
 
     # Expiring jobs
     "www.jobs.cz/fp/",
