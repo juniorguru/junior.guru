@@ -48,8 +48,9 @@ exclude = [
     "reddit.com",
     "ulekare.cz",
     "epravo.cz",
+    "linkedin.com",
 
     # Expiring jobs
-    "www.jobs.cz/fp/",
-    "www.jobs.cz/rpd/",
+    "jobs.cz/fp/",
+    "jobs.cz/rpd/",
 ]
