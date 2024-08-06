@@ -488,4 +488,7 @@ Ještě k tomu AI, tady je hezký komentář o tom, jak si dřív lidi mysleli, 
 ---
 
 
+https://www.linkedin.com/pulse/jak-bych-si-jako-junior-hledala-pr%C3%A1ci-v-motivace-d%C3%ADl-i-jana-moudr%C3%A1-h3x8e/
+
+
 #} -->
