@@ -98,19 +98,19 @@ Jak přesně rekfalifikační program probíhal a kolik horníků se dostalo do�
 
 <div class="link-cards">
   {{ link_card(
-    'Nová šichta na dafilms.cz',
-    'https://dafilms.cz/film/12793-nova-sichta',
-    'Tady si můžeš film legálně pustit, nebo i stáhnout.',
-    badge_icon='play-circle-fill',
-    badge_text='65 Kč',
-  ) }}
-
-  {{ link_card(
     'Nová šichta na KVIFF.TV',
     'https://kviff.tv/katalog/nova-sichta',
     'Tady si můžeš film legálně pustit, nebo i stáhnout.',
     badge_icon='play-circle-fill',
-    badge_text='70 Kč',
+    badge_text='80 Kč',
+  ) }}
+
+  {{ link_card(
+    'Nová šichta na dafilms.cz',
+    'https://dafilms.cz/film/12793-nova-sichta',
+    'Tady si můžeš film legálně pustit, nebo i stáhnout.',
+    badge_icon='play-circle-fill',
+    badge_text='80 Kč',
   ) }}
 
   {{ link_card(
