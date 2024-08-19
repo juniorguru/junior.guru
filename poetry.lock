@@ -1772,13 +1772,13 @@ source = ["Cython (>=3.0.10)"]
 
 [[package]]
 name = "markdown"
-version = "3.6"
+version = "3.7"
 description = "Python implementation of John Gruber's Markdown."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "Markdown-3.6-py3-none-any.whl", hash = "sha256:48f276f4d8cfb8ce6527c8f79e2ee29708508bf4d40aa410fbc3b4ee832c850f"},
-    {file = "Markdown-3.6.tar.gz", hash = "sha256:ed4f41f6daecbeeb96e576ce414c41d2d876daa9a16cb35fa8ed8c2ddfad0224"},
+    {file = "Markdown-3.7-py3-none-any.whl", hash = "sha256:7eb6df5690b81a1d7942992c97fad2938e956e79df20cbc6186e9c3a77b1c803"},
+    {file = "markdown-3.7.tar.gz", hash = "sha256:2ae2471477cfd02dbbf038d5d9bc226d40def84b4fe2986e49b59b6b472bbed2"},
 ]
 
 [package.extras]
@@ -3447,4 +3447,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.11"
-content-hash = "245ebf313bb4eb1ef6d303a4979b2a2a94b9d38bf4266f64a24794095cbbd474"
+content-hash = "784b2de3fd6228123034dd6d8a73302bce61cb7e5a7d721669e8752d6cf8df41"
