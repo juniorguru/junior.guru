@@ -16,7 +16,6 @@
     "bootstrap": "5.3.3",
     "esbuild": "0.23.1",
     "esbuild-sass-plugin": "3.3.1",
-    "hyphen": "1.10.4",
     "prettier": "3.3.3",
     "stylelint": "16.8.2",
     "stylelint-config-twbs-bootstrap": "14.2.0",

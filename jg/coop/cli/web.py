@@ -187,19 +187,6 @@ def post_process(output_path: Path):
                 src = f"{src}?hash={hash_file(js_path)}"
                 script.set("src", src)
 
-        # Hyphenation
-        # https://github.com/ytiurin/hyphen
-        for document in html_tree.cssselect(".document"):
-            document_bytes = html.tostring(document, encoding="unicode").encode("utf-8")
-            result = subprocess.run(
-                ["node", "jg/coop/js/hyphenate.cjs"],
-                input=document_bytes,
-                stdout=subprocess.PIPE,
-                check=True,
-            )
-            hyphenated_document = html.fromstring(result.stdout.decode("utf-8"))
-            document.getparent().replace(document, hyphenated_document)
-
         html_path.write_text(html.tostring(html_tree, encoding="unicode"))
 
 
