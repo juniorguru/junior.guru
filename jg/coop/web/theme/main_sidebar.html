@@ -1,23 +1,26 @@
 {% extends 'main.html' %}
 
 
-{% block extra_header %}
-<nav class="tocbar">
-  <div class="tocbar-container">
-    <a class="tocbar-item tocbar-toc-link" href="#toc">
-      {{ 'list'|icon }} Obsah
-    </a>
-  </div>
-</nav>
-{% endblock %}
-
-
 {% block main %}
 <div class="main main-sidebar">
   <div class="content-container">
     <main class="content document">
       {% block content %}
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="#toc">
+                {{ page.parent.title }}
+              </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              {{ page.title }}
+            </li>
+          </ol>
+        </nav>
+
         {{ super() }}
+
         <div class="pagination">
           <div class="pagination-control">
           {% set previous_page = page|sibling_page(-1) %}

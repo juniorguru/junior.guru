@@ -49,8 +49,7 @@ nav:
           - Příběhy: stories.md
           - ... | flat | stories/*.md
       - Moudra: wisdom.jinja
-
-  - O projektu:
+  - Info:
       - Vše o projektu: about/index.md
       - Vše o klubu: about/club.md
       - Vše o příručce: about/handbook.md
@@ -65,7 +64,6 @@ nav:
       - Pravidla chování: coc.md
       - Obchodní podmínky: tos.md
       - Ochrana osobních údajů: privacy.md
-
   - Témata:
       - ... | flat | topics/*.md
   - Připravované:

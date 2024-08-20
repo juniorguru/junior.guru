@@ -37,7 +37,7 @@
   padding-right: $container-padding-x * .5;
 
   @include media-breakpoint-up(lg) {
-    padding-top: $spacer;
+    padding-top: map-get($spacers, 2);
   }
 }
 
@@ -51,22 +51,17 @@
   }
 }
 
-.toc-list,
-.toc-sublist {
+.toc-list {
   @extend .list-unstyled;
   margin: 0;
 }
 
-.toc-link,
-.toc-sublink {
-  display: block;
-  color: $body-color;
-  text-decoration: none;
-}
-
 .toc-link {
+  display: block;
   margin-top: map-get($spacers, 3);
   line-height: $line-height-sm;
+  color: $body-color;
+  text-decoration: none;
   border-color: $body-color;
   border-style: solid;
   border-width: 0 0 map-get($border-widths, 1);
@@ -102,5 +97,11 @@
     padding-right: $container-padding-x;
     padding-left: $main-spacer;
     margin: 0;
+  }
+}
+
+.main-sidebar .breadcrumb {
+  @include media-breakpoint-up(lg) {
+    display: none;
   }
 }
