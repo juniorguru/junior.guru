@@ -123,7 +123,7 @@ def on_docs_context(context):
     # about/index.md
     context["blog"] = BlogArticle.listing()
 
-    # open.md, love.jinja
+    # open.md, about/*.md, love.jinja
     context["charts"] = Chart.as_dict()
 
     # index.jinja, podcast.md, handbook/cv.md, news.jinja
