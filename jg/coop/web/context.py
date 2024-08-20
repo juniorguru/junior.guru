@@ -52,11 +52,11 @@ def on_shared_context(context):
     # main.html
     context["revenue_ttm_breakdown"] = Transaction.revenue_ttm_breakdown(today)
 
-    # main.html, open.md
+    # main.html, about/*.md
     profit_ttm = Transaction.profit_ttm(today)
     context["profit_ttm"] = profit_ttm
 
-    # open.md
+    # about/*.md
     context["profit_ttm_usd"] = ExchangeRate.in_currency(profit_ttm, "USD")
     context["profit_ttm_eur"] = ExchangeRate.in_currency(profit_ttm, "EUR")
 
@@ -115,15 +115,13 @@ def on_docs_context(context):
     context["jobs_internship"] = ListedJob.internship_listing()
     context["jobs_volunteering"] = ListedJob.volunteering_listing()
 
-    # open.md
+    # about/*.md
+    context["blog"] = BlogArticle.listing()
     context["sponsors_past"] = PastSponsor.listing()
     context["sponsors_github_past"] = GitHubSponsor.past_listing()
     context["handbook_total_size"] = Page.handbook_total_size()
 
-    # about/index.md
-    context["blog"] = BlogArticle.listing()
-
-    # open.md, about/*.md, love.jinja
+    # about/*.md, love.jinja
     context["charts"] = Chart.as_dict()
 
     # index.jinja, podcast.md, handbook/cv.md, news.jinja
