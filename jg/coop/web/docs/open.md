@@ -13,10 +13,6 @@ Jmenuji se Honza Javorek a provozuji junior.guru. Tuto stránku jsem vytvořil p
 
 [TOC]
 
-## Plány na rok 2023
-
-Plnění mých [plánů na rok 2023](https://honzajavorek.cz/blog/strategie-na-2023/) lze sledovat [na GitHubu](https://github.com/orgs/juniorguru/projects/1/).
-
 ## Týdenní poznámky
 
 Od května 2020 píšu na svůj osobní blog týdenní poznámky, ve kterých popisuji, jak makám na junior.guru.
