@@ -63,8 +63,11 @@ def on_shared_context(context):
     # club.md, courses/*.md, main_stories.html, love.jinja
     context["members"] = ClubUser.avatars_listing()
 
-    # club.md, open.md, main_stories.html, love.jinja
+    # club.md, about/*.md, main_stories.html, love.jinja
     context["members_total_count"] = ClubUser.members_count()
+
+    # about/handbook.md, main_handbook.html
+    context["sponsors_handbook"] = Sponsor.handbook_listing()
 
 
 def on_shared_page_context(context, page, config, files):
@@ -78,10 +81,10 @@ def on_shared_page_context(context, page, config, files):
 
 @db.connection_context()
 def on_docs_context(context):
-    # index.jinja, open.md, love.jinja
+    # index.jinja, about/*.md, love.jinja
     context["sponsors_github"] = GitHubSponsor.listing()
 
-    # index.jinja, club.md, open.md
+    # index.jinja, club.md, about/*.md
     context["sponsors_by_tier"] = Sponsor.tier_grouping()
 
     # club.md
@@ -89,7 +92,7 @@ def on_docs_context(context):
     context["events"] = Event.listing()
     context["events_promo"] = Event.promo_listing()
 
-    # club.md, open.md
+    # club.md, about/*.md
     context["sponsors"] = Sponsor.listing()
     context["partners"] = Partner.listing()
 
@@ -171,7 +174,6 @@ def on_docs_page_context(context, page, config, files):
 
 @db.connection_context()
 def on_theme_context(context):
-    context["sponsors_handbook"] = Sponsor.handbook_listing()
     context["course_providers"] = CourseProvider.listing()
 
 

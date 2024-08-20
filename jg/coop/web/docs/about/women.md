@@ -27,7 +27,7 @@ Nejde o žádnou přesnou metriku. Nikdo nikde nevyplňuje, zda je žena. Pro ú
 
 ## Podíl žen v klubu
 
-Graf zobrazuje procentuální podíl žen na počtu členů klubu. Aktuálně je to **{{ charts.members_women[-1] }} %**.
+Graf zobrazuje procentuální podíl žen na počtu členů [klubu](../club.md). Aktuálně je to **{{ charts.members_women[-1] }} %**.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -52,7 +52,7 @@ Graf zobrazuje procentuální podíl žen na počtu členů klubu. Aktuálně je
 
 ## Podíl žen mezi přednášejícími
 
-Graf zobrazuje procentuální podíl žen na počtu přednášejících za posledních 12 měsíců (TTM, _trailing twelve months_).
+Graf zobrazuje procentuální podíl žen na počtu [přednášejících](../events.md) za posledních 12 měsíců (TTM, _trailing twelve months_).
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -75,7 +75,7 @@ Graf zobrazuje procentuální podíl žen na počtu přednášejících za posle
 
 ## Podíl žen mezi hosty podcastu
 
-Graf zobrazuje procentuální podíl žen na počtu hostů za posledních 12 měsíců (TTM, _trailing twelve months_).
+Graf zobrazuje procentuální podíl žen na počtu hostů [podcastu](../podcast.md) za posledních 12 měsíců (TTM, _trailing twelve months_).
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"

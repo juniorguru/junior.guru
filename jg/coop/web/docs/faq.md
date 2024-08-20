@@ -14,45 +14,6 @@ Vrtá ti hlavou, jak to tady přesně funguje? Prolétni si tuto stránku, třeb
 
 [TOC]
 
-## {{ 'book'|icon }} Příručka
-
-### Proč příručka existuje a pro koho je?
-
-Aby se programování mohl naučit kdokoliv, kdo se ho naučit chce.
-Cílem je ukázat, že to jde i bez vysoké školy, protože materiálů a kurzů je k tomu na internetu dost.
-A že i jako samouk je možné sehnat si v oboru práci, a tím si splnit sen, nebo zlepšit životní úroveň.
-
-Bez keců o tom, jak firmy berou každého, peníze se budou jen sypat, a programovat se naučíš za měsíc.
-Na junior.guru se dovíš, co je doopravdy potřeba.
-Díky tomu budeš vědět, co očekávat, ať se na to můžeš adekvátně připravit.
-
-A je jedno, jestli chceš programovat pro zábavu, plánuješ si něco automatizovat, nebo toužíš po kariéře v IT.
-Jestli jsi z velkého města s širokými možnostmi, nebo z odlehlé vesnice.
-Jestli jsi žena, muž, stará, mladý.
-Jestli máš kůži růžovou nebo hnědou.
-
-### Jak se vybírají odkazy v příručce?
-
-Pokud je na internetu něco dobrého a užitečného, nebo je někde dobře zpracované určité téma, příručka na to odkáže.
-Tenhle výběr je subjektivní.
-Není dnes problém něco najít, ale je problém rozlišit, čemu se vyplatí věnovat pozornost.
-Proto se příručka snaží snižovat [rozhodovací paralýzu](https://cs.wikipedia.org/wiki/Rozhodovac%C3%AD_paral%C3%BDza), ne tě zaplavit odkazy na padesát „taky zajímavých“ věcí.
-Kromě toho, neprovádí se tady žádný affiliate marketing, výměna odkazů, sponzorované odkazy, nic takového.
-
-### Jakto, že je příručka zdarma?
-
-Autorem příručky je [Honza Javorek](#honza), stejně jako i celého junior.guru.
-Provoz a vylepšování celé věci je jeho hlavní pracovní náplň.
-Všechna čísla jsou k tomu [transparentně na webu](open.md).
-Jak je vidět z grafů, psaní příručky je možné díky předplatnému za [klub](club.md) a [příspěvkům firem](love.jinja).
-
-Žádná část příručky není zpoplatněná.
-Zdrojový kód je [veřejně](https://github.com/juniorguru/junior.guru) a veškerý text může kdokoliv použít, pokud uvede autora a výsledek vystaví pod [stejnou licencí](https://creativecommons.org/licenses/by-sa/4.0/deed.cs).
-Honza nemá rád reklamy, takže na webu žádné nejsou.
-Ani žádný sběr dat o uživatelích.
-Žádné cookies.
-Osvěžující, že?
-
 ## {{ 'person-plus'|icon }} Členství v klubu
 
 ### Jak přesně funguje členství?
@@ -217,7 +178,3 @@ Na junior.guru byly původně pouze [rady](handbook/index.md) a [pracovní nabí
 ### Budou nové rady už pouze pro členy klubu?
 
 Všechen obsah junior.guru zůstává zdarma na webu a rozhodně je v plánu jeho rozšiřování a vylepšování. Klub je způsob, jak tuto dobročinnost financovat a posunout ji na interaktivnější úroveň. [Honza Javorek](#honza), autor příručky na junior.guru, v klubu diskutuje o nových kapitolách, sbírá tam tipy na témata, získává zpětnou vazbu. Má tedy každodenní kontakt s juniory a jejich radostmi i strastmi, a to bez ohledu na aktuální pandemická omezení. Díky tomu může být veřejná část junior.guru lepší, než kdy mohla být bez klubu.
-
-## {{ 'star'|icon }} Garanti kapitol v příručce  {: #garanti }
-
-Autorem příručky na junior.guru je [Honza Javorek](#honza). Protože ale nerozumí všemu a chce, aby čtenáři mohli získat i rady, které by sám zpracovat nedokázal, začal některé kapitoly dělat ve spolupráci s dalšími profíky z oboru. Ti mohou takzvaně „garantovat“ kapitolu na téma, kterému rozumí. To znamená, že připravili texty a odkazy v kapitole a zavazují se stránku doplňovat a udržovat ji aktuální. Jako poděkování dostávají na oné stránce prostor zviditelnit sebe nebo své služby. Honza garantům nic neplatí, ani oni jemu. Obsah kapitol edituje, tzn. hlídá kvalitu a texty upravuje tak, aby zapadly do zbytku příručky.
