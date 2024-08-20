@@ -144,7 +144,7 @@ Také díky tomu může být členství v klubu pro samotné juniory mnohem levn
 
 Honza Javorek, autor junior.guru, má ale nakonec vždy na prvním místě dobro samotných juniorů.
 Ačkoliv dělá obchody s firmami, zachovává si nezávislost a nenechává se ovlivnit ve prospěch konkrétního produktu.
-Všechna sponzorství jsou [transparentně zdokumentována](open.md#sponzori).
+Všechna sponzorství jsou [transparentně zdokumentována](./about/sponsors-partners.md).
 
 Firmy si v [ceníku](love.jinja) vybírají tarif podle toho, jak moc chtějí junior.guru podpořit.
 Sponzorství je na rok.
@@ -156,7 +156,7 @@ Sponzoři mají přístup do klubu. Mohou vyhlížet talentované juniory, promo
 
 ### Co vyplývá z toho, že je sponzorem vzdělávací agentura?  {: #vzdelavaci-agentury :}
 
-Všichni sponzoři jsou [transparentně zdokumentováni](open.md#sponzori).
+Všichni sponzoři jsou [transparentně zdokumentováni](./about/sponsors-partners.md).
 Firmy respektují, že klub je místem, kde lze o nabídce kurzů diskutovat na neutrální půdě, sdílet si zkušenosti, porovnávat.
 Recenze členů jsou subjektivním hodnocením konkrétních lidí a firmy nemají možnost do něj zasahovat.
 Pokud chce vzdělávací agentura propagovat své produkty, může tak činit ve vyhrazených místech v klubu.

@@ -159,7 +159,7 @@ Původně jsem se snažil junior.guru živit z inzerce nabídek práce, ale byzn
 
 Ke konci roku 2020 jsem se rozhodl změnit byznys model a vytvořit kolem junior.guru placenou komunitu na Discordu. Toto detailně popisuji ve svém [článku na blogu](https://honzajavorek.cz/blog/spoustim-klub/). [Klub](club.md) se veřejnosti otevřel v únoru 2021.
 
-V ideálním případě by mě živilo individuální členství lidí v klubu, protože je to pravidelný, předvídatelný příjem, který mi navíc zajišťuje největší nezávislost. Individuální členství ale nevystačí, takže mám i [sponzory](#sponzori). Z těch na fakturu jsou větší jednorázové příjmy, které lze obtížně předvídat. Tyto dohody taky mohou ovlivňovat mou kritičnost ke konkrétním firmám. Proto všechna sponzorství [transparentně popisuji](#sponzori).
+V ideálním případě by mě živilo individuální členství lidí v klubu, protože je to pravidelný, předvídatelný příjem, který mi navíc zajišťuje největší nezávislost. Individuální členství ale nevystačí, takže mám i [sponzory](./about/sponsors-partners.md). Z těch na fakturu jsou větší jednorázové příjmy, které lze obtížně předvídat. Tyto dohody taky mohou ovlivňovat mou kritičnost ke konkrétním firmám. Proto všechna sponzorství [transparentně popisuji](./about/sponsors-partners.md).
 
 {% call note() %}
   {{ 'bar-chart-line'|icon }} Finanční data se každý den stahují přímo z mého podnikatelského účtu u Fio banky.
