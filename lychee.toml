@@ -22,6 +22,10 @@ include_mail = false
 # Add 'Too many requests'
 accept = ["100..=103", "200..=299", "429"]
 
+# Be benevolent
+max_retries = 5
+timeout = 30
+
 # Exclude
 exclude = [
     # Specifications
