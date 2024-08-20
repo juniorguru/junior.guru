@@ -27,19 +27,17 @@
     order: -1;
     width: $main-toc-width;
     padding-top: $main-spacer;
-    padding-right: $main-spacer;
+    padding-right: $container-padding-x * .5;
     padding-bottom: $main-spacer;
     padding-left: $container-padding-x;
   }
 }
 
 .main-sidebar .toc-container {
+  padding-right: $container-padding-x * .5;
+
   @include media-breakpoint-up(lg) {
-    position: sticky;
-    top: 0;
-    height: 100vh;
     padding-top: $spacer;
-    overflow-y: auto;
   }
 }
 
@@ -89,25 +87,6 @@
 .toc-item.active .toc-link:hover {
   color: $link-hover-color;
   border-color: $link-hover-color;
-}
-
-.toc-sublink {
-  padding: map-get($spacers, 2) 0 map-get($spacers, 2) map-get($spacers, 2);
-  font-size: $small-font-size;
-  line-height: $line-height-sm;
-}
-
-.toc-subitem.active .toc-sublink {
-  font-weight: $headings-font-weight;
-  color: $link-color;
-}
-
-.toc-subitem:first-child .toc-sublink {
-  padding-top: map-get($spacers, 3);
-}
-
-.toc-subitem:last-child .toc-sublink {
-  padding-bottom: map-get($spacers, 3);
 }
 
 .main-sidebar .content {

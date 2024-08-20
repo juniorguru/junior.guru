@@ -1,0 +1,35 @@
+.document-toc {
+  position: relative;
+  padding: map-get($spacers, 4);
+  padding-top: map-get($spacers, 4) + .3rem;
+  margin-bottom: $main-spacer;
+  border: 2px solid $jg-blue;
+  border-radius: $border-radius;
+}
+
+.document-toc::before {
+  position: absolute;
+  top: -$spacer;
+  left: $spacer;
+  display: block;
+  padding: 0 map-get($spacers, 2);
+  font-size: $font-size-lg;
+  color: $jg-blue;
+  content: "Obsah stránky";
+  background: $jg-white;
+}
+
+.document-toc ul {
+  @extend .list-unstyled;
+  margin: 0;
+  columns: auto 30ch;
+}
+
+.document-toc li {
+  margin-bottom: map-get($spacers, 2);
+}
+
+.document-toc a {
+  color: $jg-gray;
+  text-decoration-style: dotted;
+}

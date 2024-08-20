@@ -1,5 +1,6 @@
 ---
 title: Obchodní podmínky
+template: main_about.html
 ---
 
 {% from 'macros.html' import lead %}

@@ -14,6 +14,8 @@ template: main_handbook.html
   Říká se, že všechno je to v hlavě. Mysl ti může být skvělým spojencem – zdrojem motivace, odvahy a vytrvalosti. Stejně tak ti ale může cestu do IT i pěkně znesnadnit. Nejeden junior se utápí v nadměrných pochybách, má na sebe příliš velké nároky a cítí se pod tlakem. Jak se nenechat brzdit, ale mít svou psychiku za spojence?
 {% endcall %}
 
+[TOC]
+
 {% call guarantor('Nela Slezáková', 'avatars-participants/nela-slezakova.jpg', url='https://www.nelaprovazi.cz/', standout=True) %}
   Jak psycholožka, tak programátorka. Rozumí tomu, jak funguje lidská psychika a sama si zažila, co obnáší dostat se do IT po vlastní ose. Ve vlastní praxi pomáhá lidem v IT anebo do IT. S otázkami kolem duševního zdraví juniorům pomáhá i ve [zdejším klubu](../club.md).
 {% endcall %}

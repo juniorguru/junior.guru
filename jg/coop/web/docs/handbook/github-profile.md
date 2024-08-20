@@ -18,6 +18,8 @@ template: main_handbook.html
   Co je opravdu důležité tam mít a co jsou jen bonusy navíc?
 {% endcall %}
 
+[TOC]
+
 ## GitHub profil? Cože?
 
 Pokud něco děláš na GitHubu, tak máš GitHub profil.

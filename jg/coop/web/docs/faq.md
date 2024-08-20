@@ -1,5 +1,6 @@
 ---
 title: Otázky a odpovědi
+template: main_about.html
 ---
 
 {% from 'macros.html' import lead %}

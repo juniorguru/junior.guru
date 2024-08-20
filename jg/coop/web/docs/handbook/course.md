@@ -15,6 +15,8 @@ template: main_handbook.html
   Mezitím si můžeš přečíst [Jak si vybrat IT kurz?](https://lucietvrdikova.cz/nahlednete-za-oponu-jak-si-vybrat-it-kurz/) od Lucie Tvrdíkové, což je zatím nejlepší popis téhle problematiky, ačkoliv ne 100% nezávislý.
 {% endcall %}
 
+[TOC]
+
 ## Stačí kurz?
 
 <!-- 80 % hodnoty kurzu je na tobe -->

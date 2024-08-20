@@ -17,6 +17,8 @@ template: main_handbook.html
   Ve skupině je vše veselejší, učení rychlejší, motivace nezlomnější.
 {% endcall %}
 
+[TOC]
+
 ## Zkus „hackathon“
 
 [Hackathon](https://cs.wikipedia.org/wiki/Hackathon) je akce, kde se sejdou lidi se zájmem o nějaké téma, utvoří smíšené týmy (zkušení i začínající programátoři, designéři) a v daném čase vymyslí a zpracují nějaké řešení. Nejlepší někdy dostanou ceny. Pro lepší představu si přečti [článek od účastnice Michaely](https://medium.com/@misasebestova/m%C5%AFj-prvn%C3%AD-datov%C3%BD-hackathon-6f753a4730cf).

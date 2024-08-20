@@ -5,23 +5,11 @@ description: Čísla, statistiky, grafy. Jak se Honzovi daří provozovat junior
 
 {% from 'macros.html' import note, lead, utm_link, img with context %}
 
-# Čísla a grafy
-
-{% call lead() %}
-Jmenuji se Honza Javorek a provozuji junior.guru. Tuto stránku jsem vytvořil po vzoru [jiných otevřených projektů](https://openstartuplist.com/). Čísla a grafy stejně potřebuji pro svou vlastní potřebu, takže proč je v rámci transparentnosti nemít rovnou na webu, že?
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tuhle stránku zrovna po kouskách přesouvám [sem](about/index.md), takže si raději vezměte ochranné pomůcky, pohybujete se po staveništi.
 {% endcall %}
 
-[TOC]
-
-## Týdenní poznámky
-
-Od května 2020 píšu na svůj osobní blog týdenní poznámky, ve kterých popisuji, jak makám na junior.guru.
-Pomáhá mi to s páteční psychikou a zároveň si u toho uspořádám myšlenky.
-Tady je posledních pět článků:
-
-{% for blog_article in blog[:5] %}
--   [{{ blog_article.title }}]({{ blog_article.url }}), {{ '{:%-d.%-m.%Y}'.format(blog_article.published_on) }}
-{% endfor %}
+# Čísla a grafy
 
 ## Čistý zisk
 
@@ -1238,7 +1226,3 @@ Sice do toho Pavlíně nekecám, ale za mě by bylo fajn, kdyby v průměru polo
         'interaction': {'mode': 'index'},
         'scales': {'y': {'min': 0, 'suggestedMax': 50}},
     }|tojson|forceescape }}"></canvas></div></div>
-
-## Kód
-
-Práci na kódu lze sledovat [na GitHubu](https://github.com/juniorguru/).

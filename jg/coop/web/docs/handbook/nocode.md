@@ -16,6 +16,8 @@ Kdy je použít?
 A má vlastně smysl učit se programovat, když se dá dnes leccos vytvořit pouhým klikáním?
 {% endcall %}
 
+[TOC]
+
 ## Co je „low-code“ nebo „no-code“
 
 Těmito výrazy se v posledních letech nazývají „hotová řešení“.

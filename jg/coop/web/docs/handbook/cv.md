@@ -14,6 +14,8 @@ template: main_handbook.html
   Co dát do životopisu, když jsi junior v IT a nemáš ještě praxi? Tady máš návod na přehledné a úderné CV, ze kterého budou mít recruiteři radost.
 {% endcall %}
 
+[TOC]
+
 ## Chceš přehlednost, ne krásu
 
 Životopis většiny lidí spadá do jednoho ze dvou extrémů. Buď vyplní [nejobyčejnější šablonu z internetu](https://europass.cz/), nebo se snaží zaujmout růžovými puntíky, kudrlinkami a zlatými kolibříky.

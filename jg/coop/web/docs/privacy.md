@@ -1,5 +1,6 @@
 ---
 title: Zásady ochrany osobních údajů
+template: main_about.html
 ---
 
 {% from 'macros.html' import lead %}

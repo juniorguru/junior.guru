@@ -16,6 +16,10 @@ Ale taky: Naučíš se to za tři měsíce a utrhnou ti ruce! Sto tisíc mzda!
 Všelijakých mýtů o kariéře v IT koluje spousta. Takže jak to je?
 {% endcall %}
 
+[TOC]
+
+## Nejčastější mýty
+
 Některé představy o programování a programátorské profesi nemají moc společného s realitou, ačkoliv je lidé stále opakují. Následující odstavce se snaží věci uvést na pravou míru a zabránit různým falešným obavám nebo naopak nereálným očekáváním. Můžeš si to pustit i jako video.
 
 {{ video_card_engeto(

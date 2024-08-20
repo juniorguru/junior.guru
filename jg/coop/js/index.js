@@ -3,7 +3,6 @@ import "./charts";
 import "./email";
 import "./membership";
 import "./metrics";
-import "./toc";
 
 import "instant.page";
 

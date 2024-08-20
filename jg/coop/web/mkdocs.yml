@@ -50,13 +50,22 @@ nav:
           - ... | flat | stories/*.md
       - Moudra: wisdom.jinja
 
-  - Pravidla:
+  - O projektu:
+      - Vše o projektu: about/index.md
+      - Vše o klubu: about/club.md
+      - Vše o příručce: about/handbook.md
       - Otázky a odpovědi: faq.md
+      - Finanční výsledky: about/finances.md
+      - Sponzoři a partneři: about/sponsors-partners.md
+      - Aktivita v klubu: about/activity.md
+      - Návštěvnost webu: about/web-usage.md
+      - Marketing: about/marketing.md
+      - Podpora žen v IT: about/women.md
+      - Zdrojový kód: about/code.md
       - Pravidla chování: coc.md
       - Obchodní podmínky: tos.md
-      - Zásady ochrany osobních údajů: privacy.md
-      - Čísla a grafy: open.md
-      - Licence obsahu (CC BY-SA): https://creativecommons.org/licenses/by-sa/4.0/deed.cs
+      - Ochrana osobních údajů: privacy.md
+
   - Témata:
       - ... | flat | topics/*.md
   - Připravované:
@@ -75,6 +84,7 @@ markdown_extensions:
       toc_depth: "2-2"
       permalink: "#"
       permalink_title: Odkaz na tuto sekci
+      toc_class: "document-toc"
   - tables
   - fenced_code
   - attr_list

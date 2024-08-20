@@ -1,5 +1,6 @@
 ---
 title: Pravidla chování
+template: main_about.html
 ---
 
 {% from 'macros.html' import lead, note %}
@@ -8,8 +9,10 @@ title: Pravidla chování
 # Pravidla chování
 
 {% call lead() %}
-Jsme klub začátečníků, dobrovolníků, mentorů, profesionálů, sponzorů a dalších. Rozmanitost je jednou z našich silných stránek, ale může vést i k nedorozuměním a nespokojenosti. Proto máme pár společných pravidel, které bychom chtěli, aby lidé dodržovali. Tato pravidla platí rovnocenně pro všechny. Pravidla nejsou vyčerpávajícím seznamem věcí, které nemáš dělat. Měly by ti spíš dát obecnou představu, jaký je jejich záměr.
+Jsme klub začátečníků, dobrovolníků, mentorů, profesionálů, sponzorů a dalších. Rozmanitost je jednou z našich silných stránek, ale může vést i k nedorozuměním a nespokojenosti. Proto máme pár společných pravidel, které bychom chtěli, aby lidé dodržovali.
 {% endcall %}
+
+Tato pravidla platí rovnocenně pro všechny. Pravidla nejsou vyčerpávajícím seznamem věcí, které nemáš dělat. Měly by ti spíš dát obecnou představu, jaký je jejich záměr.
 
 Pravidla platí pro všechny účastníky akcí a diskuzí pod hlavičkou Junior Guru, a to na všech místech, kde spolu členové a příznivci klubu komunikují. Kromě toho, i prohřešky mimo tato místa mohou ovlivnit, jakým způsobem bude dané osobě umožněno se akcí a diskuzí pod hlavičkou Junior Guru účastnit.
 
@@ -28,7 +31,7 @@ Pravidla platí pro všechny účastníky akcí a diskuzí pod hlavičkou Junior
 *   **Chybovat je lidské.** Obviňování nikam nevede. Chyba je standardní součástí lidského učení. Pomáháme řešit následky a zamýšlíme se nad poučením do budoucna.
 
 
-## {{ 'question-circle'|icon }} Otázky a odpovědi
+## Otázky a odpovědi
 
 ### Jak nahlásit porušení?
 

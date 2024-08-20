@@ -204,11 +204,21 @@
     <nav class="footer-section footer-rules">
       <h3 class="visually-hidden">Pravidla</h3>
       <ul class="footer-rules-list">
-        {% for nav_item in (nav|selectattr('title', 'equalto', 'Pravidla')|list)[0].children %}
           <li class="footer-rules-item">
-            <a href="{{ nav_item.url|url }}"{% if nav_item.is_link %} target="_blank" rel="noopener"{% endif %}>{{ nav_item.title }}</a>
+            <a href="{{ pages|docs_url('open.md')|url }}">Čísla a grafy</a>
           </li>
-        {% endfor %}
+          <li class="footer-rules-item">
+            <a href="{{ pages|docs_url('coc.md')|url }}">Pravidla chování</a>
+          </li>
+          <li class="footer-rules-item">
+            <a href="{{ pages|docs_url('tos.md')|url }}">Obchodní podmínky</a>
+          </li>
+          <li class="footer-rules-item">
+            <a href="{{ pages|docs_url('privacy.md')|url }}">Ochrana osobních údajů</a>
+          </li>
+          <li class="footer-rules-item">
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs" target="_blank" rel="noopener">Licence obsahu (CC BY-SA)</a>
+          </li>
       </ul>
     </nav>
   </footer>

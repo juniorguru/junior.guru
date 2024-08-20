@@ -116,10 +116,12 @@ def on_docs_context(context):
     context["jobs_volunteering"] = ListedJob.volunteering_listing()
 
     # open.md
-    context["blog"] = BlogArticle.listing()
     context["sponsors_past"] = PastSponsor.listing()
     context["sponsors_github_past"] = GitHubSponsor.past_listing()
     context["handbook_total_size"] = Page.handbook_total_size()
+
+    # about/index.md
+    context["blog"] = BlogArticle.listing()
 
     # open.md, love.jinja
     context["charts"] = Chart.as_dict()

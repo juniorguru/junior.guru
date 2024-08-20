@@ -15,6 +15,8 @@ template: main_handbook.html
   {{ 'exclamation-circle'|icon }} Původně se „Příručka“ říkalo pouze této stránce, takže má velkolepý úvod a závěr, jako by tady další stránky ani nebyly. Cílem je postupně tuto dlouhou „nudli“ rozsekávat do kratších samostatných stránek.
 {% endcall %}
 
+[TOC]
+
 ## Úvod    <span id="preface"></span>
 
 Ještě než se začteš, jednu věc si musíme ujasnit hned. **Toto není e-book.** Nacházíš se na „živé stránce“, na které stále probíhají úpravy. Kdykoliv tady může přibýt něco nového, takže není od věci se sem občas vrátit. Všechny změny [najdeš na GitHubu](https://github.com/juniorguru/junior.guru/commits/main/jg/coop/web/docs/handbook/), o těch důležitých se můžeš dovědět na sociálních sítích junior.guru nebo prostřednictvím [klubu](../club.md).
