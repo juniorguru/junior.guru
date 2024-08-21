@@ -3,7 +3,7 @@ title: Aktivita v junior.guru klubu
 template: main_about.html
 ---
 
-{% from 'macros.html' import lead, note with context %}
+{% from 'macros.html' import note with context %}
 
 # Aktivita v klubu
 

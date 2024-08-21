@@ -3,7 +3,7 @@ title: Jak junior.guru podporuje ženy v IT
 template: main_about.html
 ---
 
-{% from 'macros.html' import lead, note with context %}
+{% from 'macros.html' import lead with context %}
 
 # Podpora žen v IT
 

@@ -3,7 +3,7 @@ title: Sponzoři a partneři junior.guru
 template: main_about.html
 ---
 
-{% from 'macros.html' import lead, note, utm_link, img with context %}
+{% from 'macros.html' import img, lead, utm_link with context %}
 
 # Sponzoři a partneři
 

@@ -3,7 +3,7 @@ title: Finanční výsledky junior.guru
 template: main_about.html
 ---
 
-{% from 'macros.html' import lead, note with context %}
+{% from 'macros.html' import note with context %}
 
 # Finanční výsledky
 
