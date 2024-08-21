@@ -120,6 +120,8 @@ def main(history_path: Path, today: date):
 
                 subscribed_at = SubscriptionActivity.account_subscribed_at(account_id)
                 if not subscribed_at:
+                    logger.warning(f"No subscription activities: {member_admin_url}")
+                    continue  # TODO FIXME https://juniorguru.memberful.com/admin/members/5878334
                     raise ValueError(f"No subscription activities: {member_admin_url}")
 
                 subscription = get_active_subscription(member["subscriptions"])
