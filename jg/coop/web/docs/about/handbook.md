@@ -3,7 +3,7 @@ title: O příručce na junior.guru
 template: main_about.html
 ---
 
-{% from 'macros.html' import lead with context %}
+{% from 'macros.html' import lead, utm_link with context %}
 
 # Vše o příručce
 
