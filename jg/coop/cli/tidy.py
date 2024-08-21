@@ -26,11 +26,13 @@ JINJA_IMPORT_RE = re.compile(
 
 JINJA_CALL_RE = re.compile(
     r"""
-        {{\s*
+        {{
+            -?\s*
             ([\w_]+)
             \(
         |
-        {%\s*
+        {%
+            -?\s*
             call\s*
             ([\w_]+)
             \(
