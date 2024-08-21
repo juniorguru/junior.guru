@@ -40,7 +40,7 @@ registry:
     cz_business_id: 4671317
     subscription: https://juniorguru.memberful.com/admin/subscriptions/3699644
     periods:
-      - [2021-05, 2024-08]
+      - [2021-05, 2025-08]
 
   - name: Mews
     slug: mews
@@ -48,7 +48,7 @@ registry:
     cz_business_id: 24227781
     subscription: https://juniorguru.memberful.com/admin/subscriptions/3699647
     periods:
-      - [2021-05, 2024-08]
+      - [2021-05, 2025-08]
     note: |
       Podílí se na mentoringu a rozšířené pomoci pro lidi, kteří na junior.guru žádají o [stipendium](https://junior.guru/finaid).
 
