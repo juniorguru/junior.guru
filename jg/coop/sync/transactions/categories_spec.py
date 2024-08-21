@@ -25,6 +25,18 @@ def membership_by_invoice(transaction: dict, secrets: dict) -> TransactionsCateg
 
 
 @category_rule
+def pavlun(transaction: dict, secrets: dict) -> TransactionsCategory:
+    if "doniocz" in transaction["message"] and transaction["amount"] == 6180:
+        return TransactionsCategory.PRODUCTION
+
+
+@category_rule
+def geekpower(transaction: dict, secrets: dict) -> TransactionsCategory:
+    if "geekpower" in transaction["message"].lower() and transaction["amount"] < 0:
+        return TransactionsCategory.PRODUCTION
+
+
+@category_rule
 def frontendisti_honorarium(transaction: dict, secrets: dict) -> TransactionsCategory:
     if "FRONTENDISTICZ" in transaction["message"] and transaction["amount"] > 0:
         return TransactionsCategory.DONATIONS
@@ -118,7 +130,13 @@ def accounting(transaction: dict, secrets: dict) -> TransactionsCategory:
 
 @category_rule
 def office(transaction: dict, secrets: dict) -> TransactionsCategory:
-    if "VITEZSLAV PLISKA" in transaction["message"] and transaction["amount"] < 0:
+    message = transaction["message"].lower()
+    if (
+        "vitezslav pliska" in message
+        or "vítek pliska" in message
+        or "vitek pliska" in message
+        or "creatiweb" in message
+    ) and transaction["amount"] < 0:
         return TransactionsCategory.OFFICE
 
 

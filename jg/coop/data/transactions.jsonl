@@ -649,7 +649,7 @@
 {"_id": "26244183916", "amount": 9167, "category": "memberships", "happened_on": "2023-10-30"}
 {"_id": "26244315647", "amount": -239, "category": "miscellaneous", "happened_on": "2023-10-30"}
 {"_id": "26244636813", "amount": -2000, "category": "office", "happened_on": "2023-10-30"}
-{"_id": "26245828996", "amount": -6180, "category": "miscellaneous", "happened_on": "2023-10-31"}
+{"_id": "26245828996", "amount": -6180, "category": "production", "happened_on": "2023-10-31"}
 {"_id": "26248378362", "amount": 6, "category": "donations", "happened_on": "2023-11-01"}
 {"_id": "26251566761", "amount": 610, "category": "donations", "happened_on": "2023-11-02"}
 {"_id": "26252860843", "amount": -592, "category": "memberful", "happened_on": "2023-11-03"}
@@ -693,7 +693,7 @@
 {"_id": "26316802398", "amount": 6109, "category": "memberships", "happened_on": "2023-12-18"}
 {"_id": "26320311125", "amount": 6, "category": "donations", "happened_on": "2023-12-20"}
 {"_id": "26323653598", "amount": 2037, "category": "donations", "happened_on": "2023-12-22"}
-{"_id": "26324637692", "amount": -1500, "category": "miscellaneous", "happened_on": "2023-12-22"}
+{"_id": "26324637692", "amount": -1500, "category": "production", "happened_on": "2023-12-22"}
 {"_id": "26327214199", "amount": 22590, "category": "memberships", "happened_on": "2023-12-27"}
 {"_id": "26327612987", "amount": 6, "category": "donations", "happened_on": "2023-12-27"}
 {"_id": "26331248234", "amount": -2000, "category": "office", "happened_on": "2023-12-30"}
@@ -704,7 +704,7 @@
 {"_id": "26340040960", "amount": -579, "category": "memberful", "happened_on": "2024-01-05"}
 {"_id": "26341585801", "amount": 21049, "category": "memberships", "happened_on": "2024-01-08"}
 {"_id": "26342285125", "amount": -5000, "category": "miscellaneous", "happened_on": "2024-01-08"}
-{"_id": "26344277328", "amount": -2400, "category": "miscellaneous", "happened_on": "2024-01-09"}
+{"_id": "26344277328", "amount": -2400, "category": "production", "happened_on": "2024-01-09"}
 {"_id": "26345066999", "amount": 6, "category": "donations", "happened_on": "2024-01-10"}
 {"_id": "26349679648", "amount": -300, "category": "miscellaneous", "happened_on": "2024-01-13"}
 {"_id": "26350713126", "amount": -3852, "category": "tax", "happened_on": "2024-01-15"}
@@ -777,7 +777,7 @@
 {"_id": "26458518026", "amount": -242, "category": "miscellaneous", "happened_on": "2024-04-02"}
 {"_id": "26458556254", "amount": -1186, "category": "memberful", "happened_on": "2024-04-02"}
 {"_id": "26459739986", "amount": 6, "category": "donations", "happened_on": "2024-04-03"}
-{"_id": "26459919421", "amount": -2400, "category": "miscellaneous", "happened_on": "2024-04-03"}
+{"_id": "26459919421", "amount": -2400, "category": "production", "happened_on": "2024-04-03"}
 {"_id": "26465251784", "amount": 11374, "category": "memberships", "happened_on": "2024-04-08"}
 {"_id": "26468610906", "amount": 6, "category": "donations", "happened_on": "2024-04-10"}
 {"_id": "26471107630", "amount": -49, "category": "tax", "happened_on": "2024-04-11"}
@@ -797,7 +797,7 @@
 {"_id": "26495491576", "amount": -241, "category": "miscellaneous", "happened_on": "2024-04-30"}
 {"_id": "26501042812", "amount": 614, "category": "donations", "happened_on": "2024-05-02"}
 {"_id": "26501135834", "amount": 6, "category": "donations", "happened_on": "2024-05-02"}
-{"_id": "26501422078", "amount": -3000, "category": "miscellaneous", "happened_on": "2024-05-02"}
+{"_id": "26501422078", "amount": -3000, "category": "production", "happened_on": "2024-05-02"}
 {"_id": "26501562500", "amount": -242, "category": "miscellaneous", "happened_on": "2024-05-02"}
 {"_id": "26501640168", "amount": -1178, "category": "memberful", "happened_on": "2024-05-02"}
 {"_id": "26505532061", "amount": 5752, "category": "memberships", "happened_on": "2024-05-06"}
@@ -816,7 +816,7 @@
 {"_id": "26538341375", "amount": -234, "category": "miscellaneous", "happened_on": "2024-05-30"}
 {"_id": "26545061080", "amount": 8268, "category": "memberships", "happened_on": "2024-06-03"}
 {"_id": "26545500823", "amount": 604, "category": "donations", "happened_on": "2024-06-03"}
-{"_id": "26546792988", "amount": -2400, "category": "miscellaneous", "happened_on": "2024-06-03"}
+{"_id": "26546792988", "amount": -2400, "category": "production", "happened_on": "2024-06-03"}
 {"_id": "26547370646", "amount": -242, "category": "miscellaneous", "happened_on": "2024-06-04"}
 {"_id": "26547559429", "amount": -1140, "category": "memberful", "happened_on": "2024-06-04"}
 {"_id": "26548911023", "amount": 6, "category": "donations", "happened_on": "2024-06-05"}
@@ -838,7 +838,7 @@
 {"_id": "26589434713", "amount": -1181, "category": "memberful", "happened_on": "2024-07-02"}
 {"_id": "26589435621", "amount": -242, "category": "miscellaneous", "happened_on": "2024-07-02"}
 {"_id": "26590078164", "amount": 6, "category": "donations", "happened_on": "2024-07-03"}
-{"_id": "26593211084", "amount": -3000, "category": "miscellaneous", "happened_on": "2024-07-05"}
+{"_id": "26593211084", "amount": -3000, "category": "production", "happened_on": "2024-07-05"}
 {"_id": "26594691119", "amount": 6833, "category": "memberships", "happened_on": "2024-07-08"}
 {"_id": "26598280002", "amount": 6, "category": "donations", "happened_on": "2024-07-10"}
 {"_id": "26599366304", "amount": -362, "category": "miscellaneous", "happened_on": "2024-07-10"}
@@ -853,13 +853,13 @@
 {"_id": "26622626441", "amount": 11595, "category": "memberships", "happened_on": "2024-07-29"}
 {"_id": "26625051417", "amount": -241, "category": "miscellaneous", "happened_on": "2024-07-30"}
 {"_id": "26625618434", "amount": 6, "category": "donations", "happened_on": "2024-07-31"}
-{"_id": "26629157994", "amount": -2000, "category": "miscellaneous", "happened_on": "2024-08-01"}
+{"_id": "26629157994", "amount": -2000, "category": "office", "happened_on": "2024-08-01"}
 {"_id": "26633216927", "amount": -242, "category": "miscellaneous", "happened_on": "2024-08-02"}
 {"_id": "26633217368", "amount": -1164, "category": "memberful", "happened_on": "2024-08-02"}
 {"_id": "26633945770", "amount": -172, "category": "miscellaneous", "happened_on": "2024-08-03"}
 {"_id": "26634964304", "amount": 10132, "category": "memberships", "happened_on": "2024-08-05"}
 {"_id": "26635798414", "amount": -286, "category": "miscellaneous", "happened_on": "2024-08-05"}
-{"_id": "26637059102", "amount": -1800, "category": "miscellaneous", "happened_on": "2024-08-06"}
+{"_id": "26637059102", "amount": -1800, "category": "production", "happened_on": "2024-08-06"}
 {"_id": "26638097591", "amount": 6, "category": "donations", "happened_on": "2024-08-07"}
 {"_id": "26641092873", "amount": -123, "category": "tax", "happened_on": "2024-08-09"}
 {"_id": "26643953617", "amount": 10736, "category": "memberships", "happened_on": "2024-08-12"}
