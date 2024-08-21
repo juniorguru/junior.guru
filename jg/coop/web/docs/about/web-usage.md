@@ -8,16 +8,25 @@ template: main_about.html
 # Návštěvnost webu
 
 {% call lead() %}
-Na junior.guru se měří návštěvnost pomocí Simple Analytics, které nesledují uživatele, nepoužívají _cookies_ a odpovídají všem zákonným i etickým normám.
+Na junior.guru se měří návštěvnost pomocí Simple Analytics, které nesledují uživatele, nepoužívají cookies a odpovídají všem zákonným i etickým normám. Všechny grafy níže zobrazují trend pouze zpětně za jeden rok, protože to tak Honzovi stačí.
 {% endcall %}
 
 [TOC]
 
 ## Otevřená data o návštěvnosti
 
-Veškerá čísla jde [veřejně procházet přímo na Simple Analytics](https://simpleanalytics.com/junior.guru).
-Tady jsou jen grafy, které by se tam špatně naklikávaly ručně.
-Všechny grafy zobrazují trend pouze zpětně za jeden rok, protože to tak Honzovi stačí.
+Na této stránce jsou jen grafy, které by se ručně špatně naklikávaly na [Simple Analytics](https://simpleanalytics.com/junior.guru). Kompletní data o návštěvnosti jsou veřejně přístupná tam.
+
+## Proč Simple Analytics
+
+Rozhraní Google Analytics bylo komplikované a nepřehledné. Jejich skripty zpomalují načítání stránek. Google sleduje lidi a junior.guru by muselo mít cookie lištu.
+
+Lidi na web junior.guru zavítají mnohokrát, než se pak rozhodnou, že půjdou do klubu zkusí jej.
+Lze měřit, kolik jich projde od objednávky do Discordu, ale… V jednom člověku a v byznysu, který nemá jasnou cestu od načtení stránky po nákup, Honzovi stačí vidět to nahrubo a pocitově.
+Pokročilé měření je zbytečné, stačí počítadlo.
+
+Simple Analytics jsou přehledné a splňují veškeré zákonné i etické normy.
+Nijak nenarušují soukromí návštěvníků webu, nezpomalují načítání, nevyžadují cookie lištu.
 
 ## Celková návštěvnost
 

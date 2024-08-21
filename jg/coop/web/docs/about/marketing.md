@@ -8,10 +8,59 @@ template: main_about.html
 # Marketing
 
 {% call lead() %}
-Co dělá junior.guru v rámci marketingu a jak se mu v tom daří? Sociální sítě, newsletter, základní měření výkonnosti jednotlivých kanálů.
+Co dělá junior.guru v rámci marketingu a jak se mu v tom daří? Týdenní poznámky, sociální sítě, newsletter… K tomu pár grafů se základním měřením výkonnosti jednotlivých kanálů.
 {% endcall %}
 
 [TOC]
+
+## Reklama
+
+Od začátku existence si junior.guru nikde nezaplatilo žádnou reklamu. Spoléhá se na vlastní marketingové aktivity a čistě organický dosah.
+Je to částečně proto, že Honza v osobním životě reklamu rád nemá a spíš mu vadí.
+Za veškerým dosavadním úspěchem junior.guru stojí víra v samonosný obsah užitečný pro společnost, který si pak lidi sdílí dobrovolně.
+
+## Otevřenost a „týdenní poznámky“
+
+Jednou z hodnot junior.guru je otevřenost.
+Díky ní existuje celá tato sekce webu, kde jsou transparentně všechny čísla a grafy.
+V souladu s otevřeností jsou i pravidelné „týdenní poznámky” na Honzově blogu:
+
+{% for blog_article in blog[:5] %}
+-   [{{ blog_article.title }}]({{ blog_article.url }}), {{ '{:%-d.%-m.%Y}'.format(blog_article.published_on) }}
+{% endfor %}
+
+Byť primárním záměrem této otevřenosti není marketing, je vedlejším produktem.
+Lidé rádi nakukují pod pokličku, projektu potom fandí a šíří o něm povědomí.
+Když jeli [trabanti do Afriky](https://www.ceskatelevize.cz/porady/10660318675-trabantem-napric-afrikou/), našlo se ohromné publikum lidí, kteří by tam nikdy nejeli, ale fandili jim a drželi palce, bavilo je sledovat tu cestu a ty obtíže. Taková trochu reality show. Když Honza píše o svém podnikání, lidi si připadají, že jsou součástí toho příběhu, že mají kousek toho úspěchu.
+
+## Sociální sítě
+
+V roce 2022 [Honzu unavily sociální sítě](https://honzajavorek.cz/blog/moje-nova-strategie-na-socialni-site/) a z většiny odešel.
+Aktuálně je aktivní hlavně na LinkedInu a uvažuje o tom, že by víc využíval YouTube.
+Nejraději používá [Mastodon](https://mastodonczech.cz/@honzajavorek), ale spíš pro soukromé než marketingové účely.
+
+- [LinkedIn](https://www.linkedin.com/in/honzajavorek/)
+- [YouTube](https://www.youtube.com/@juniordotguru)
+- [Mastodon](https://mastodonczech.cz/@honzajavorek/)
+
+Žádnou ucelenou strategii nemá a plácá příspěvky na sítě tak, jak to cítí.
+Nemá rád poskakování podle toho, jak algoritmus píská, takže nedbá obecných doporučení a příspěvky hází nepravidelně, podle nálady, ne podle redakčního plánu.
+
+## Newsletter
+
+Dříve existoval newsletter junior.guru, kde se rozesílaly aktuální nabídky práce, postupně i zajímavé tipy.
+Ten byl zrušen pro nedostatek sil se mu věnovat a také jako zbytečná duplicita vedle [klubu](../club.md).
+
+Newsletter na obnovení stále čeká, ale alespoň se na web už vrátil [sběrný formulář pro zadávání e-mailové adresy](../news.jinja).
+Restart rozesílání je v plánu, ale zatím bohužel pouze v plánu a nic se neposílá.
+
+## Veřejná vystoupení a publikace
+
+Honza postupně opouští přednášení na srazech a oborových konferencích nebo psaní článků.
+Preferuje vystupování v podcastech, rozhovorech a diskuzních panelech.
+Oproti přednášce, která vyžaduje týden příprav a stresu, nebo psaní článku, které může zabrat i týden, jsou nároky na rozhovor minimální, a přesto to má dosah.
+
+{# TODO seznam vystoupení #}
 
 ## Sociální sítě a newsletter
 
