@@ -21,7 +21,7 @@ Vybrali si [tarif z ceníku](love.jinja) a poslali finanční prostředky na pro
   {% elif group == "partners" %}
 
 ## Partneři
-Spolupracujeme. Není v možnostech junior.guru ověřovat kvalitu kurzů, ale takováto spolupráce se asi dá brát jako známka toho, že jde o něco důvěryhodného. Na každé podstránce je popis spolupráce.
+Komunity a malé subjekty, s nimiž má junior.guru domluvenou nějakou oboustrannou nefinanční výpomoc. Není v možnostech junior.guru ověřovat kvalitu, ale takováto spolupráce se asi dá brát jako známka toho, že jde o něco důvěryhodného. Na každé podstránce je detailní popis spolupráce.
 
   {% else %}
 
