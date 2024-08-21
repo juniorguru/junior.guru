@@ -49,12 +49,10 @@ def on_shared_context(context):
     # theme, but also macros.html used in .jinja pages
     context["cloudinary_host"] = CLOUDINARY_HOST
 
-    # main.html
-    context["revenue_ttm_breakdown"] = Transaction.revenue_ttm_breakdown(today)
-
     # main.html, about/*.md
     profit_ttm = Transaction.profit_ttm(today)
     context["profit_ttm"] = profit_ttm
+    context["revenue_ttm_breakdown"] = Transaction.revenue_ttm_breakdown(today)
 
     # about/*.md
     context["profit_ttm_usd"] = ExchangeRate.in_currency(profit_ttm, "USD")
