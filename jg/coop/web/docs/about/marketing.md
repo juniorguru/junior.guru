@@ -3,7 +3,7 @@ title: Marketing junior.guru
 template: main_about.html
 ---
 
-{% from 'macros.html' import note, lead with context %}
+{% from 'macros.html' import lead with context %}
 
 # Marketing
 
