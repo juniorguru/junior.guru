@@ -13,11 +13,16 @@ Co dělá junior.guru v rámci marketingu a jak se mu v tom daří? Týdenní po
 
 [TOC]
 
-## Reklama
+## Reklama vs. inbound marketing
 
 Od začátku existence si junior.guru nikde nezaplatilo žádnou reklamu. Spoléhá se na vlastní marketingové aktivity a čistě organický dosah.
 Je to částečně proto, že Honza v osobním životě reklamu rád nemá a spíš mu vadí.
-Za veškerým dosavadním úspěchem junior.guru stojí víra v samonosný obsah užitečný pro společnost, který si pak lidi sdílí dobrovolně.
+
+Za dosavadním úspěchem junior.guru stojí především víra v samonosný obsah užitečný pro společnost, který si pak lidi sdílí dobrovolně.
+Tahounem návštěvnosti je tedy [inbound marketing](https://cs.wikipedia.org/wiki/Inbound_marketing).
+Obsah ale není tvořen s účelem, aby někoho přilákal, je tvořen primárně proto, aby byl někomu užitečný.
+
+Honza se snaží dávat důraz na základní SEO poučky a vytvářet rychle se načítající webovou stránku, což má Google rád a přivádí potom na web lidi z vyhledávání.
 
 ## Otevřenost a „týdenní poznámky“
 
@@ -31,6 +36,7 @@ V souladu s otevřeností jsou i pravidelné „týdenní poznámky” na Honzov
 
 Byť primárním záměrem této otevřenosti není marketing, je vedlejším produktem.
 Lidé rádi nakukují pod pokličku, projektu potom fandí a šíří o něm povědomí.
+
 Když jeli [trabanti do Afriky](https://www.ceskatelevize.cz/porady/10660318675-trabantem-napric-afrikou/), našlo se ohromné publikum lidí, kteří by tam nikdy nejeli, ale fandili jim a drželi palce, bavilo je sledovat tu cestu a ty obtíže. Taková trochu reality show. Když Honza píše o svém podnikání, lidi si připadají, že jsou součástí toho příběhu, že mají kousek toho úspěchu.
 
 ## Sociální sítě
@@ -58,13 +64,14 @@ Restart rozesílání je v plánu, ale zatím bohužel pouze v plánu a nic se n
 
 Honza postupně opouští přednášení na srazech a oborových konferencích nebo psaní článků.
 Preferuje vystupování v podcastech, rozhovorech a diskuzních panelech.
-Oproti přednášce, která vyžaduje týden příprav a stresu, nebo psaní článku, které může zabrat i týden, jsou nároky na rozhovor minimální, a přesto to má dosah.
 
-{# TODO seznam vystoupení #}
+Oproti přednášce, která vyžaduje mnoho příprav a stresu, nebo psaní článku, které může zabrat i týden, jsou nároky na rozhovor minimální, a přesto má výsledek dosah.
+
+Na Honzově webu je [historie všech jeho vystoupení a publikací](https://honzajavorek.cz/#appearances).
 
 ## Sociální sítě a newsletter
 
-Vývoj počtu sledujících na profilech na relevantních sociálních sítích a počtu odběratelů [newsletteru](../news.jinja).
+Vývoj počtu sledujících na profilech na relevantních sociálních sítích a počtu odběratelů newsletteru.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="300"
