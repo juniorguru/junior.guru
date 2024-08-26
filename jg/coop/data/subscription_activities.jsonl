@@ -16740,3 +16740,12 @@
 {"account_id": 3733240, "f": false, "happened_at": "2024-07-25T15:02:50", "subscription_interval": "month", "type": "trial_start"}
 {"account_id": 5811759, "f": false, "happened_at": "2024-07-25T15:13:46", "subscription_interval": "month", "type": "order"}
 {"account_id": 5811759, "f": false, "happened_at": "2024-07-25T15:13:46", "subscription_interval": "month", "type": "trial_start"}
+{"account_id": 5473053, "f": false, "happened_at": "2024-07-26T07:41:37", "subscription_interval": "month", "type": "order"}
+{"account_id": 5813206, "f": false, "happened_at": "2024-07-26T07:58:27", "subscription_interval": "month", "type": "trial_start"}
+{"account_id": 5813206, "f": false, "happened_at": "2024-07-26T07:58:28", "subscription_interval": "month", "type": "order"}
+{"account_id": 5783075, "f": false, "happened_at": "2024-07-26T09:07:19", "subscription_interval": "month", "type": "order"}
+{"account_id": 4857834, "f": false, "happened_at": "2024-07-26T10:02:42", "subscription_interval": "month", "type": "order"}
+{"account_id": 5785602, "f": false, "happened_at": "2024-07-26T11:38:20", "subscription_interval": "month", "type": "deactivation"}
+{"account_id": 5785602, "f": false, "happened_at": "2024-07-26T11:38:20", "subscription_interval": "month", "type": "trial_end"}
+{"account_id": 5785643, "f": true, "happened_at": "2024-07-26T12:06:32", "subscription_interval": "month", "type": "deactivation"}
+{"account_id": 5785643, "f": true, "happened_at": "2024-07-26T12:06:32", "subscription_interval": "month", "type": "trial_end"}
