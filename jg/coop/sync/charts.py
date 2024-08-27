@@ -1,5 +1,5 @@
 from datetime import date
-from typing import Callable
+from typing import Callable, TypedDict
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import charts, loggers
@@ -10,10 +10,10 @@ from jg.coop.models.club import ClubMessage
 from jg.coop.models.event import Event, EventSpeaking
 from jg.coop.models.exchange_rate import ExchangeRate
 from jg.coop.models.followers import Followers
+from jg.coop.models.members import Members
 from jg.coop.models.page import Page
 from jg.coop.models.podcast import PodcastEpisode
 from jg.coop.models.subscription import (
-    LEGACY_PLANS_DELETED_ON,
     SubscriptionActivity,
     SubscriptionCancellation,
     SubscriptionCountry,
@@ -33,21 +33,35 @@ PODCAST_BEGIN_ON = date(2022, 1, 1)
 
 SURVEYS_BEGIN_ON = date(2023, 1, 1)
 
+MEMBERS_DATA_BEGIN_ON = date(2024, 7, 1)
+
 MILESTONES = [
     (BUSINESS_BEGIN_ON, "Začátek podnikání"),
     (date(2020, 9, 1), "Vznik příručky"),
     (CLUB_BEGIN_ON, "Vznik klubu"),
     (PODCAST_BEGIN_ON, "Vznik podcastu"),
-    (date(2022, 9, 1), "Zdražení firmám"),
-    (date(2022, 12, 30), "Zdražení členům"),
     (date(2023, 5, 1), "Vznik kurzů"),
-    (date(2023, 8, 31), "Restart newsletteru"),
 ]
 
 CHARTS = {}
 
 
 logger = loggers.from_path(__file__)
+
+
+class IntChart(TypedDict):
+    data: list[int]
+    months: list[date]
+
+
+class IntBreakdownChart(TypedDict):
+    data: dict[str, int]
+    months: list[date]
+
+
+class FloatChart(TypedDict):
+    data: list[float]
+    months: list[date]
 
 
 @cli.sync_command(
@@ -177,45 +191,45 @@ def podcast_women(today: date):
 
 
 @chart
-def members(today: date):
-    months = charts.months(CLUB_BEGIN_ON, today)
-    data = charts.per_month(SubscriptionActivity.active_count, months)
+def members(today: date) -> IntChart:
+    months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
+    data = Members.monthly_members(months)
     return dict(data=data, months=months)
 
 
 @chart
-def members_individuals(today: date):
-    months = charts.months(CLUB_BEGIN_ON, today)
-    data = charts.per_month(SubscriptionActivity.active_individuals_count, months)
+def members_individuals(today: date) -> IntChart:
+    months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
+    data = Members.monthly_members_individuals(months)
     return dict(data=data, months=months)
 
 
-@chart
-def members_individuals_yearly(today: date):
-    months = charts.months(CLUB_BEGIN_ON, today)
-    data = charts.per_month(
-        SubscriptionActivity.active_individuals_yearly_count, months
-    )
-    return dict(data=data, months=months)
+# @chart
+# def members_individuals_yearly(today: date):
+#     months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
+#     data = charts.per_month(
+#         SubscriptionActivity.active_individuals_yearly_count, months
+#     )
+#     return dict(data=data, months=months)
 
 
 @chart
-def members_women(today: date):
-    months = charts.months(CLUB_BEGIN_ON, today)
-    data = charts.per_month(SubscriptionActivity.active_women_ptc, months)
+def members_women(today: date) -> FloatChart:
+    months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
+    data = Members.monthly_members_women_ptc(months)
     return dict(data=data, months=months)
 
 
 @chart
 def subscriptions_duration(today: date):
-    months = charts.months(CLUB_BEGIN_ON, today)
+    months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
     data = charts.per_month(SubscriptionActivity.active_duration_avg, months)
     return dict(data=data, months=months)
 
 
 @chart
 def subscriptions_duration_individuals(today: date):
-    months = charts.months(CLUB_BEGIN_ON, today)
+    months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
     data = charts.per_month(
         SubscriptionActivity.active_individuals_duration_avg, months
     )
@@ -289,61 +303,57 @@ def total_cancellations_breakdown(today: date):
 
 
 @chart
-def subscriptions_breakdown(today: date):
-    months = charts.months(charts.next_month(LEGACY_PLANS_DELETED_ON), today)
-    data = charts.per_month_breakdown(
-        SubscriptionActivity.active_subscription_type_breakdown, months
-    )
+def subscription_types_breakdown(today: date) -> IntBreakdownChart:
+    months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
+    data = Members.monthly_subscription_types_breakdown(months)
     return dict(data=data, months=months)
 
 
 @chart
 def trials_conversion(today: date):
-    months = charts.months(
-        charts.next_month(LEGACY_PLANS_DELETED_ON), charts.previous_month(today)
-    )
+    months = charts.months(MEMBERS_DATA_BEGIN_ON, charts.previous_month(today))
     data = charts.per_month(SubscriptionActivity.trial_conversion_ptc, months)
     return dict(data=data, months=months)
 
 
 @chart
 def signups(today: date):
-    months = charts.months(CLUB_BEGIN_ON, charts.previous_month(today))
+    months = charts.months(MEMBERS_DATA_BEGIN_ON, charts.previous_month(today))
     data = charts.per_month(SubscriptionActivity.signups_count, months)
     return dict(data=data, months=months)
 
 
 @chart
 def signups_individuals(today: date):
-    months = charts.months(CLUB_BEGIN_ON, charts.previous_month(today))
+    months = charts.months(MEMBERS_DATA_BEGIN_ON, charts.previous_month(today))
     data = charts.per_month(SubscriptionActivity.individuals_signups_count, months)
     return dict(data=data, months=months)
 
 
 @chart
 def quits(today: date):
-    months = charts.months(CLUB_BEGIN_ON, charts.previous_month(today))
+    months = charts.months(MEMBERS_DATA_BEGIN_ON, charts.previous_month(today))
     data = charts.per_month(SubscriptionActivity.quits_count, months)
     return dict(data=data, months=months)
 
 
 @chart
 def quits_individuals(today: date):
-    months = charts.months(CLUB_BEGIN_ON, charts.previous_month(today))
+    months = charts.months(MEMBERS_DATA_BEGIN_ON, charts.previous_month(today))
     data = charts.per_month(SubscriptionActivity.individuals_quits_count, months)
     return dict(data=data, months=months)
 
 
 @chart
 def churn(today: date):
-    months = charts.months(CLUB_BEGIN_ON, charts.previous_month(today))
+    months = charts.months(MEMBERS_DATA_BEGIN_ON, charts.previous_month(today))
     data = charts.per_month(SubscriptionActivity.churn_ptc, months)
     return dict(data=data, months=months)
 
 
 @chart
 def churn_individuals(today: date):
-    months = charts.months(CLUB_BEGIN_ON, charts.previous_month(today))
+    months = charts.months(MEMBERS_DATA_BEGIN_ON, charts.previous_month(today))
     data = charts.per_month(SubscriptionActivity.individuals_churn_ptc, months)
     return dict(data=data, months=months)
 

@@ -195,16 +195,22 @@ class ClubUser(BaseModel):
 
     @classmethod
     def subscription_types_breakdown(cls) -> dict[str, int]:
-        return {
+        breakdown = {
             row.subscription_type: row.count
             for row in cls.select(
                 cls.subscription_type,
                 fn.COUNT(cls.id).alias("count"),
             )
-            .where(cls.subscription_type.is_null(False))
+            .where(
+                cls.is_bot == False,  # noqa: E712
+                cls.is_member == True,  # noqa: E712
+            )
             .group_by(cls.subscription_type)
             .order_by(cls.subscription_type)
         }
+        if None in breakdown:
+            raise ValueError("Subscription type is not set for some members")
+        return breakdown
 
     @classmethod
     def top_members_limit(cls) -> int:

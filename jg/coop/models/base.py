@@ -2,14 +2,17 @@ import asyncio
 import json
 import sqlite3
 from collections.abc import Set
+from enum import Enum
 from functools import wraps
 from pathlib import Path
+from typing import Iterable
 
 from czech_sort import bytes_key as czech_sort_key
 from peewee import (
     Check,
     ConnectionContext as BaseConnectionContext,
     Model,
+    Node,
     SqliteDatabase as BaseSqliteDatabase,
 )
 from playhouse.sqlite_ext import JSONField as BaseJSONField
@@ -80,7 +83,11 @@ def json_dumps(value):
     return json.dumps(value, ensure_ascii=False, default=default)
 
 
-def check_enum(field_name, enum_cls):
-    values = tuple(member.value for member in enum_cls)
+def check_enum(field_name: str, enum_cls: Enum) -> Node:
+    return check(field_name, (member.value for member in enum_cls))
+
+
+def check(field_name: str, iterable: Iterable) -> Node:
+    values = tuple(iterable)
     sql = f"{field_name} in {values!r}"
     return Check(sql)

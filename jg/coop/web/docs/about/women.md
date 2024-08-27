@@ -3,7 +3,7 @@ title: Jak junior.guru podporuje ženy v IT
 template: main_about.html
 ---
 
-{% from 'macros.html' import lead with context %}
+{% from 'macros.html' import lead, note with context %}
 
 # Podpora žen v IT
 
@@ -27,7 +27,11 @@ Nejde o žádnou přesnou metriku. Nikdo nikde nevyplňuje, zda je žena. Pro ú
 
 ## Podíl žen v klubu
 
-Graf zobrazuje procentuální podíl žen na počtu členů [klubu](../club.md). Aktuálně je to **{{ charts.members_women[-1] }} %**.
+Graf zobrazuje procentuální podíl žen na počtu členů [klubu](../club.md). Aktuálně je to **{{ charts.members_women[-1]|round|int }} %**.
+
+{% call note() %}
+  {{ 'trash'|icon }} V létě 2024 se změnila metodika ukládání dat ohledně členství v klubu. Starší data bohužel nejsou k dispozici.
+{% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"

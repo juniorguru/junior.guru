@@ -37,6 +37,8 @@ logger = loggers.from_path(__file__)
 
 MEMBERS_GQL_PATH = Path(__file__).parent / "members.gql"
 
+ADMIN_MEMBER_IDS = [ClubMemberID.HONZA, ClubMemberID.HONZA_TEST]
+
 
 class MemberState(StrEnum):
     ACTIVE = "ACTIVE"
@@ -135,7 +137,7 @@ def main(history_path: Path, today: date):
                 user.update_expires_at(expires_at)
                 user.has_feminine_name = has_feminine_name
                 user.total_spend = math.ceil(member["totalSpendCents"] / 100)
-                user.subscription_type = get_subscription_type(subscription)
+                user.subscription_type = get_subscription_type(subscription, today)
                 user.save()
         else:
             logger.info(f"Inactive: {member_admin_url}")
@@ -145,13 +147,31 @@ def main(history_path: Path, today: date):
         stats["signups"] += int(had_signup(member, stats_from, stats_to))
         stats["trials"] += int(had_trial(member, stats_from, stats_to))
 
+    logger.info("Adding subscription types to admins and checking consistency")
+    for user in ClubUser.members_listing():
+        if user.id in ADMIN_MEMBER_IDS:
+            user.subscription_type = SubscriptionType.FREE
+            user.save()
+        if not user.subscription_type:
+            raise ValueError(
+                f"Member {memberful_url(account_id)} doesn't have a subscription type"
+            )
+    members_count = ClubUser.members_count()
+    members_subscription_types_count = sum(
+        ClubUser.subscription_types_breakdown().values()
+    )
+    if members_count != members_subscription_types_count:
+        raise ValueError(
+            f"Number of all members ({members_count}) isn't equal to a sum of members with a subscription type ({members_subscription_types_count})"
+        )
+
     logger.info("Processing remaining Discord users who are not in Memberful")
     remaining_users = (
         user for user in ClubUser.members_listing() if user.id not in seen_discord_ids
     )
     extra_users_ids = []
     for user in remaining_users:
-        if user.id in (ClubMemberID.HONZA, ClubMemberID.HONZA_TEST):
+        if user.id in ADMIN_MEMBER_IDS:
             logger.debug(f"Skipping admin account #{user.id}")
         elif user.is_bot:
             logger.debug(f"Skipping bot account #{user.id}")
