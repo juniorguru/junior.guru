@@ -55,6 +55,7 @@ exclude = [
     "linkedin.com",
     "podnikatel.cz",
     "root.cz",
+    "akamai.com",
 
     # Expiring jobs
     "jobs.cz/fp/",
