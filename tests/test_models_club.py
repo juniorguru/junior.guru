@@ -18,7 +18,6 @@ def create_user(id_, **kwargs):
         mention=kwargs.get("mention", f"<@{id_}>"),
         coupon=kwargs.get("coupon"),
         joined_at=kwargs.get("joined_at", datetime.now() - timedelta(days=3)),
-        subscribed_at=kwargs.get("subscribed_at", None),
         expires_at=kwargs.get("expires_at", datetime.now() + timedelta(days=100)),
     )
 
@@ -400,17 +399,9 @@ def test_user_first_seen_on_from_joined_at(test_db):
     assert user.first_seen_on() == date(2021, 4, 1)
 
 
-def test_user_first_seen_on_ignores_subscribed_at(test_db):
-    user = create_user(
-        1, joined_at=datetime(2021, 4, 1), subscribed_at=datetime(2021, 3, 1)
-    )
-
-    assert user.first_seen_on() == date(2021, 4, 1)
-
-
 def test_user_first_seen_on_from_pins(test_db):
     user1 = create_user(1)
-    user2 = create_user(2, joined_at=None, subscribed_at=None)
+    user2 = create_user(2, joined_at=None)
 
     message = create_message(1, user1, created_at=datetime(2021, 12, 19))
     ClubPin.create(member=user2, pinned_message=message)

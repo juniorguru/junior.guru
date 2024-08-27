@@ -68,7 +68,6 @@ class ClubUser(BaseModel):
     subscription_id = CharField(null=True)
     customer_id = CharField(null=True, unique=True)
     joined_at = DateTimeField(null=True)
-    subscribed_at = DateTimeField(null=True)
     expires_at = DateTimeField(null=True)
     is_bot = BooleanField(default=False)
     is_member = BooleanField(default=True)
@@ -90,10 +89,6 @@ class ClubUser(BaseModel):
     @property
     def joined_on(self) -> date | None:
         return self.joined_at.date() if self.joined_at else None
-
-    @property
-    def subscribed_on(self) -> date | None:
-        return self.subscribed_at.date() if self.subscribed_at else None
 
     @property
     def intro(self) -> Optional["ClubMessage"]:

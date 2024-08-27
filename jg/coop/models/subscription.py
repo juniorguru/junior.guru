@@ -530,12 +530,6 @@ class SubscriptionActivity(BaseModel):
             cls.select().where(cls.account_id == account_id).order_by(cls.happened_at)
         )
 
-    @classmethod
-    def account_subscribed_at(cls, account_id: int) -> datetime | None:
-        first_activity = cls.account_listing(account_id).first()
-        if first_activity:
-            return first_activity.happened_at
-
 
 class SubscriptionCancellation(BaseModel):
     account_id = IntegerField(unique=True)

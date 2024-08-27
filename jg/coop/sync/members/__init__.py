@@ -118,12 +118,6 @@ def main(history_path: Path, today: date):
                 name = member["fullName"].strip()
                 has_feminine_name = FeminineName.is_feminine(name)
 
-                subscribed_at = SubscriptionActivity.account_subscribed_at(account_id)
-                if not subscribed_at:
-                    logger.warning(f"No subscription activities: {member_admin_url}")
-                    continue  # TODO FIXME https://juniorguru.memberful.com/admin/members/5878334
-                    raise ValueError(f"No subscription activities: {member_admin_url}")
-
                 subscription = get_active_subscription(member["subscriptions"])
                 logger.debug(f"Subscription of {member_admin_url}: {subscription}")
 
@@ -138,7 +132,6 @@ def main(history_path: Path, today: date):
                 user.account_id = account_id
                 user.subscription_id = subscription_id
                 user.customer_id = member["stripeCustomerId"]
-                user.subscribed_at = subscribed_at
                 user.coupon = coupon_parts.get("coupon")
                 user.update_expires_at(expires_at)
                 user.has_feminine_name = has_feminine_name
