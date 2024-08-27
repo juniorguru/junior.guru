@@ -30,7 +30,6 @@ from jg.coop.models.base import db
 from jg.coop.models.club import ClubUser, SubscriptionType
 from jg.coop.models.feminine_name import FeminineName
 from jg.coop.models.members import Members
-from jg.coop.models.subscription import SubscriptionActivity
 
 
 logger = loggers.from_path(__file__)
