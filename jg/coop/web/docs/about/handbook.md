@@ -113,17 +113,19 @@ Příliš velké stránky bych měly být kratší, nebo by se měly rozdělit d
 Ideální stránka příručky by měla pouze modrý sloupeček a ten by nesahal výše než k červené čáře.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="300"
+    class="chart" width="400" height="500"
     data-chart-type="bar"
     data-chart="{{ {
         'labels': charts.handbook_labels,
         'datasets': [
             {
+                'axis': 'y',
                 'label': 'znaků TODO',
                 'data': charts.handbook_notes,
                 'backgroundColor': '#a9a9a9',
             },
             {
+                'axis': 'y',
                 'label': 'znaků obsahu',
                 'data': charts.handbook,
                 'backgroundColor': '#1755d1',
@@ -131,15 +133,16 @@ Ideální stránka příručky by měla pouze modrý sloupeček a ten by nesahal
         ],
     }|tojson|forceescape }}"
     data-chart-options="{{ {
+        'indexAxis': 'y',
         'interaction': {'mode': 'index'},
-        'scales': {'x': {'stacked': true}},
+        'scales': {'y': {'stacked': true}},
         'plugins': {
             'annotation': {
                 'common': {'drawTime': 'beforeDatasetsDraw'},
                 'annotations': {
                     'threshold': {
                         'value': 20000,
-                        'scaleID': 'y',
+                        'scaleID': 'x',
                         'type': 'line',
                         'borderColor': '#dc3545',
                         'borderWidth': 1,
