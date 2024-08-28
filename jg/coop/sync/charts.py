@@ -292,6 +292,7 @@ def subscription_types_breakdown(today: date) -> IntBreakdownChartDict:
     return dict(data=data, months=months)
 
 
+# TODO
 @chart
 def trials_conversion(today: date):
     months = charts.months(MEMBERS_DATA_BEGIN_ON, charts.previous_month(today))
@@ -299,6 +300,7 @@ def trials_conversion(today: date):
     return dict(data=data, months=months)
 
 
+# TODO
 @chart
 def signups(today: date):
     months = charts.months(MEMBERS_DATA_BEGIN_ON, charts.previous_month(today))
@@ -306,6 +308,7 @@ def signups(today: date):
     return dict(data=data, months=months)
 
 
+# TODO
 @chart
 def signups_individuals(today: date):
     months = charts.months(MEMBERS_DATA_BEGIN_ON, charts.previous_month(today))
@@ -313,6 +316,7 @@ def signups_individuals(today: date):
     return dict(data=data, months=months)
 
 
+# TODO
 @chart
 def quits(today: date):
     months = charts.months(MEMBERS_DATA_BEGIN_ON, charts.previous_month(today))
@@ -320,6 +324,7 @@ def quits(today: date):
     return dict(data=data, months=months)
 
 
+# TODO
 @chart
 def quits_individuals(today: date):
     months = charts.months(MEMBERS_DATA_BEGIN_ON, charts.previous_month(today))
@@ -327,6 +332,7 @@ def quits_individuals(today: date):
     return dict(data=data, months=months)
 
 
+# TODO
 @chart
 def churn(today: date):
     months = charts.months(MEMBERS_DATA_BEGIN_ON, charts.previous_month(today))
@@ -334,6 +340,7 @@ def churn(today: date):
     return dict(data=data, months=months)
 
 
+# TODO
 @chart
 def churn_individuals(today: date):
     months = charts.months(MEMBERS_DATA_BEGIN_ON, charts.previous_month(today))
@@ -372,21 +379,21 @@ def handbook_notes(today: date) -> IntChartDict:
 
 
 @chart
-def followers_breakdown(today: date):
+def followers_breakdown(today: date) -> IntBreakdownChartDict:
     months = charts.months(*Followers.months_range())
     data = charts.per_month_breakdown(Followers.breakdown, months)
     return dict(data=data, months=months)
 
 
 @chart
-def web_usage_total(today: date):
+def web_usage_total(today: date) -> ChartDict:
     months = charts.months(*WebUsage.months_range())
     breakdown = charts.per_month_breakdown(WebUsage.breakdown, months)
     return dict(data=breakdown.pop("total"), months=months)
 
 
 @chart
-def web_usage_breakdown(today: date):
+def web_usage_breakdown(today: date) -> IntBreakdownChartDict:
     months = charts.months(*WebUsage.months_range())
     breakdown = charts.per_month_breakdown(WebUsage.breakdown, months)
     del breakdown["total"]
@@ -394,7 +401,7 @@ def web_usage_breakdown(today: date):
 
 
 @chart
-def logo_impressions_breakdown(today: date):
+def logo_impressions_breakdown(today: date) -> IntBreakdownChartDict:
     product_names = ["home", "courses", "handbook"]
     months = charts.months(*WebUsage.months_range())
     months_len = len(months)
