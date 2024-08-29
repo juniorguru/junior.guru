@@ -81,7 +81,6 @@ class FloatBreakdownChartDict(ChartDict):
         "pages",
         "podcast",
         "subscriptions-country",
-        "subscriptions",
         "transactions",
         "web-usage",
     ]

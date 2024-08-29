@@ -25,7 +25,7 @@ logger = loggers.from_path(__file__)
 @cli.sync_command(
     dependencies=[
         "club-content",
-        "subscriptions",
+        "members",
         "blog",
     ]
 )
