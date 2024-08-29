@@ -77,7 +77,7 @@ class MemberEntity(TypedDict):
 StatName = Literal["quits", "signups", "trials"]
 
 
-@cli.sync_command(dependencies=["club-content", "feminine-names", "subscriptions"])
+@cli.sync_command(dependencies=["club-content", "feminine-names"])
 @click.option(
     "--history-path",
     default="jg/coop/data/members.jsonl",
