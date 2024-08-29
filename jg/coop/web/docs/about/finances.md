@@ -284,3 +284,41 @@ Výdaje na [marketing](./marketing.md) jsou předplatné nástrojů, tisk samole
         'plugins': {'annotation': charts.cost_breakdown_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
+## Odkud jsou platící členové klubu
+
+Samotné junior.guru o členech [klubu](../club.md) žádné detailní informace nesbírá, ale platební systém Stripe umožňuje zjistit, v jaké zemi byla vydána jejich karta.
+Díky tomu lze odhadnout, kolik lidí není z Česka.
+
+Honza to potřebuje sledovat, aby věděl, jestli nepřesáhl limit pro [One Stop Shop](https://vat-one-stop-shop.ec.europa.eu/one-stop-shop/declare-and-pay-oss_en). Ten je {{ charts.countries.oss_limit_eur|thousands }}€/rok, což je {{ charts.countries.oss_limit_czk|thousands }} Kč/rok, což je {{ charts.countries.oss_limit_czk_monthly|thousands }}/měsíc.
+
+Přes karty minulý měsíc přišlo celkem {{ charts.countries.revenue_memberships|thousands }} Kč.
+Když se použijí procenta z grafu níže, odhadem by mělo být {{ charts.countries.revenue_memberships_non_cz|thousands }} Kč odjinud než z Česka. {% if charts.countries.oss_limit_czk_monthly > charts.countries.revenue_memberships_non_cz %}**Takže asi dobrý.**{% endif %}
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="bar"
+    data-chart="{{ {
+        'labels': [
+            'Česko',
+            'Slovensko',
+            'jinde',
+        ],
+        'datasets': [
+            {
+                'axis': 'y',
+                'label': '% členů',
+                'data': [
+                    charts.countries.breakdown.pop('CZ'),
+                    charts.countries.breakdown.pop('SK'),
+                    charts.countries.breakdown.pop('other'),
+                ],
+                'backgroundColor': '#1755d1',
+            },
+        ],
+    }|tojson|forceescape }}"
+    {{ charts.countries.breakdown.keys()|list|assert_empty }}
+    data-chart-options="{{ {
+        'indexAxis': 'y',
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'min': 0, 'suggestedMax': 100}},
+    }|tojson|forceescape }}"></canvas></div></div>

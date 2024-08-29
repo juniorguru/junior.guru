@@ -11,13 +11,15 @@ template: main_about.html
 Informace o [klubu pro juniory](../club.md). Záměr a hodnoty, se kterými je provozován. K tomu ještě pár zajímavých statistik.
 {% endcall %}
 
+[TOC]
+
 {% call note(standout=True) %}
   {{ 'exclamation-circle'|icon }} Tady něco teprve bude.
 {% endcall %}
 
 ## Počet členů
 
-Klub má teď **{{ members_total_count }} členů** celkem. Z nich si to **{{ charts.members_individuals[-1] }} platí ze svého**.
+Klub má teď **{{ members_total_count }} členů** celkem. Z nich si to **{{ charts.members_individuals_today }} platí ze svého**, tj. {{ charts.members_individuals_today_ptc|round|int }} %.
 
 {% call note() %}
   {{ 'trash'|icon }} V létě 2024 se změnila metodika ukládání dat ohledně členství v klubu. Starší data bohužel nejsou k dispozici.
@@ -164,6 +166,154 @@ Bylo by fajn mít v klubu v průměru aspoň jednu [oficiální online akci](../
         'plugins': {'annotation': charts.events_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
+## Konverze dvou týdnů na zkoušku
+
+Nově registrovaní mají v klubu dva týdny zdarma na zkoušku, tzv. _trial_.
+Jejich členství není nijak omezeno, mohou dělat všechno, co ostatní členové.
+Po dvou týdnech buď vyplní kartu a začnou platit, nebo je jim členství zrušeno.
+Graf ukazuje konverzi _trialů_.
+
+{% call note() %}
+  {{ 'trash'|icon }} V létě 2024 se změnila metodika ukládání dat ohledně členství v klubu. Starší data bohužel nejsou k dispozici.
+{% endcall %}
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts.trials_conversion_labels,
+        'datasets': [
+            {
+                'label': '% konverze trialu',
+                'data': charts.trials_conversion,
+                'borderColor': '#1755d1',
+                'borderWidth': 2,
+            },
+        ]
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}},
+        'plugins': {'annotation': charts.trials_conversion_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+
+## Příchody a odchody
+
+Graf s **příchody** ukazuje počet členů, kteří v daném měsíci přešli na individuální placení. Graf s **odchody** ukazuje počet členů, kteří už za klub něco ze svého zaplatili a v daném měsíci platit přestali.
+
+{% call note() %}
+  {{ 'trash'|icon }} V létě 2024 se změnila metodika ukládání dat ohledně členství v klubu. Starší data bohužel nejsou k dispozici.
+{% endcall %}
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts.signups_labels,
+        'datasets': [
+            {
+                'label': 'nová individuální členství',
+                'data': charts.signups,
+                'borderColor': '#1755d1',
+                'borderWidth': 2,
+            },
+            {
+                'label': 'odchody individuálních členů',
+                'data': charts.quits,
+                'borderColor': '#dc3545',
+                'borderWidth': 2,
+            },
+        ]
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}},
+        'plugins': {'annotation': charts.signups_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+
+## Retence klubu
+
+Procento členů, kteří si klub platí ze svého a odcházejí, neboli _churn_.
+
+{% call note() %}
+  {{ 'trash'|icon }} V létě 2024 se změnila metodika ukládání dat ohledně členství v klubu. Starší data bohužel nejsou k dispozici.
+{% endcall %}
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts.churn_labels,
+        'datasets': [
+            {
+                'label': '% úbytku individuálních členů',
+                'data': charts.churn,
+                'borderColor': '#dc3545',
+                'borderWidth': 2,
+            },
+        ]
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}},
+        'plugins': {'annotation': charts.churn_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+
+## Důvody odchodu
+
+Když někdo ukončuje členství v klubu, může sdělit důvod, proč tak činí.
+Data jsou celkem od **{{ charts.cancellations_breakdown_count }}** lidí.
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="300"
+    data-chart-type="bar"
+    data-chart="{{ {
+        'labels': charts.cancellations_breakdown_labels,
+        'datasets': [
+            {
+                'label': '% neudali důvod',
+                'data': charts.cancellations_breakdown.pop('unknown'),
+                'backgroundColor': '#ddd',
+            },
+            {
+                'label': '% jiný důvod',
+                'data': charts.cancellations_breakdown.pop('other'),
+                'backgroundColor': '#a9a9a9',
+            },
+            {
+                'label': '% klub už nepotřebuju',
+                'data': charts.cancellations_breakdown.pop('necessity'),
+                'backgroundColor': '#1755d1',
+            },
+            {
+                'label': '% potřeboval(a) jsem klub na omezenou dobu',
+                'data': charts.cancellations_breakdown.pop('temporary_use'),
+                'backgroundColor': '#02cabb',
+            },
+            {
+                'label': '% vybral(a) jsem jinou službu, která mi vyhovuje víc',
+                'data': charts.cancellations_breakdown.pop('competition'),
+                'backgroundColor': '#083284',
+            },
+            {
+                'label': '% klub nesplnil moje očekávání',
+                'data': charts.cancellations_breakdown.pop('misunderstood'),
+                'backgroundColor': '#00b7eb',
+            },
+            {
+                'label': '% klub je moc drahý',
+                'data': charts.cancellations_breakdown.pop('affordability'),
+                'backgroundColor': '#dc3545',
+            },
+        ],
+    }|tojson|forceescape }}"
+    {{ charts.cancellations_breakdown.keys()|list|assert_empty }}
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'x': {'stacked': True}, 'y': {'stacked': True, 'beginAtZero': true, 'max': 100}},
+        'plugins': {'annotation': charts.cancellations_breakdown_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+
 ## Důvody odchodu za celou historii
 
 Celkový poměr důvodů odchodu za celou historii, po kterou se sbírá tento typ zpětné vazby.
@@ -202,43 +352,3 @@ Data jsou celkem od **{{ charts.total_cancellations_breakdown_count }}** lidí.
         'aspectRatio': 2,
     }|tojson|forceescape }}"
     data-chart-milestones-offset-ptc="0"></canvas></div></div>
-
-## Odkud jsou platící členové
-
-O členech junior.guru neuchovává žádné informace, ze kterých by šlo zjistit, odkud jsou.
-Platební systém Stripe ale umožňuje zjistit, v jaké zemi byla vydána jejich karta.
-Díky tomu lze odhadnout, kolik lidí není z Česka.
-
-Honza to potřebuje sledovat, aby věděl, jestli nepřesáhl limit pro [One Stop Shop](https://vat-one-stop-shop.ec.europa.eu/one-stop-shop/declare-and-pay-oss_en). Ten je {{ charts.countries.oss_limit_eur|thousands }}€/rok, což je {{ charts.countries.oss_limit_czk|thousands }} Kč/rok, což je {{ charts.countries.oss_limit_czk_monthly|thousands }}/měsíc.
-
-Z individuálních členství minulý měsíc vydělal {{ charts.countries.revenue_memberships|thousands }} Kč celkem.
-Když se použijí procenta z grafu níže, odhadem by mělo být {{ charts.countries.revenue_memberships_non_cz|thousands }} Kč odjinud než z Česka. {% if charts.countries.oss_limit_czk_monthly > charts.countries.revenue_memberships_non_cz %}**Takže asi dobrý.**{% endif %}
-
-<div class="chart-scroll"><div class="chart-container"><canvas
-    class="chart" width="400" height="230"
-    data-chart-type="bar"
-    data-chart="{{ {
-        'labels': [
-            'Česko',
-            'Slovensko',
-            'jinde',
-        ],
-        'datasets': [
-            {
-                'axis': 'y',
-                'label': '% členů',
-                'data': [
-                    charts.countries.breakdown.pop('CZ'),
-                    charts.countries.breakdown.pop('SK'),
-                    charts.countries.breakdown.pop('other'),
-                ],
-                'backgroundColor': '#1755d1',
-            },
-        ],
-    }|tojson|forceescape }}"
-    {{ charts.countries.breakdown.keys()|list|assert_empty }}
-    data-chart-options="{{ {
-        'indexAxis': 'y',
-        'interaction': {'mode': 'index'},
-        'scales': {'y': {'min': 0, 'suggestedMax': 100}},
-    }|tojson|forceescape }}"></canvas></div></div>

@@ -100,7 +100,7 @@ Hodí se vědět, kolikrát se takové logo lidem zobrazí.
         'scales': {'y': {'beginAtZero': true}},
     }|tojson|forceescape }}"></canvas></div></figure>
 
-## Práce na příručce
+## Práce na kapitolách
 
 Všechny soubory spadající pod příručku mají aktuálně **{{ handbook_total_size|thousands }}** znaků.
 Počítání znaků v souborech, kde se míchají Markdown a Jinja značky, má spoustu vad, ale aspoň něco.

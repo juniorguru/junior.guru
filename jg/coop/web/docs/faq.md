@@ -14,6 +14,10 @@ Vrtá ti hlavou, jak to tady přesně funguje? Prolétni si tuto stránku, třeb
 
 [TOC]
 
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Na této stránce teď probíhají změny.
+{% endcall %}
+
 ## {{ 'person-plus'|icon }} Členství v klubu
 
 ### Jak přesně funguje členství?

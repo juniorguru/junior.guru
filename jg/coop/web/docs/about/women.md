@@ -27,7 +27,7 @@ Nejde o žádnou přesnou metriku. Nikdo nikde nevyplňuje, zda je žena. Pro ú
 
 ## Podíl žen v klubu
 
-Graf zobrazuje procentuální podíl žen na počtu členů [klubu](../club.md). Aktuálně je to **{{ charts.members_women[-1]|round|int }} %**.
+Graf zobrazuje procentuální podíl žen na počtu členů [klubu](../club.md). Aktuálně je to **{{ charts.members_women_today|round|int }} %**.
 
 {% call note() %}
   {{ 'trash'|icon }} V létě 2024 se změnila metodika ukládání dat ohledně členství v klubu. Starší data bohužel nejsou k dispozici.

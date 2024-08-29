@@ -102,3 +102,33 @@ class Members(BaseModel):
             name.removeprefix(SUBSCRIPTION_TYPES_PREFIX): cls.per_month(name, months)
             for name in subscription_types
         }
+
+    @classmethod
+    def monthly_signups(cls, months: Iterable[date]) -> list[int]:
+        return cls.per_month("subscriptions_signups", months)
+
+    @classmethod
+    def monthly_quits(cls, months: Iterable[date]) -> list[int]:
+        return cls.per_month("subscriptions_quits", months)
+
+    @classmethod
+    def monthly_trials(cls, months: Iterable[date]) -> list[int]:
+        return cls.per_month("subscriptions_trials", months)
+
+    @classmethod
+    def monthly_converting_trials_ptc(cls, months: Iterable[date]) -> list[int]:
+        return [
+            count_signups * 100 / count_trials
+            for (count_signups, count_trials) in zip(
+                cls.monthly_signups(months), cls.monthly_trials(months)
+            )
+        ]
+
+    @classmethod
+    def monthly_churn_ptc(cls, months: Iterable[date]) -> list[int]:
+        return [
+            (count_quits * 100) / count_members
+            for (count_members, count_quits) in zip(
+                cls.monthly_members_individuals(months), cls.monthly_quits(months)
+            )
+        ]

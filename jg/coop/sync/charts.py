@@ -213,10 +213,30 @@ def members_individuals(today: date) -> IntChartDict:
 
 
 @chart
+def members_individuals_today(today: date) -> ChartDict:
+    data = Members.monthly_members_individuals([today])[-1]
+    return dict(data=data)
+
+
+@chart
+def members_individuals_today_ptc(today: date) -> ChartDict:
+    members_individuals_count = Members.monthly_members_individuals([today])[-1]
+    members_count = Members.monthly_members([today])[-1]
+    data = (members_individuals_count * 100) / members_count
+    return dict(data=data)
+
+
+@chart
 def members_women(today: date) -> FloatChartDict:
     months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
     data = Members.monthly_members_women_ptc(months)
     return dict(data=data, months=months)
+
+
+@chart
+def members_women_today(today: date) -> ChartDict:
+    data = Members.monthly_members_women_ptc([today])[-1]
+    return dict(data=data)
 
 
 @chart
@@ -292,59 +312,31 @@ def subscription_types_breakdown(today: date) -> IntBreakdownChartDict:
     return dict(data=data, months=months)
 
 
-# TODO
 @chart
-def trials_conversion(today: date):
-    months = charts.months(MEMBERS_DATA_BEGIN_ON, charts.previous_month(today))
-    data = charts.per_month(SubscriptionActivity.trial_conversion_ptc, months)
+def trials_conversion(today: date) -> FloatChartDict:
+    months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
+    data = Members.monthly_converting_trials_ptc(months)
     return dict(data=data, months=months)
 
 
-# TODO
 @chart
-def signups(today: date):
-    months = charts.months(MEMBERS_DATA_BEGIN_ON, charts.previous_month(today))
-    data = charts.per_month(SubscriptionActivity.signups_count, months)
+def signups(today: date) -> IntChartDict:
+    months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
+    data = Members.monthly_signups(months)
     return dict(data=data, months=months)
 
 
-# TODO
 @chart
-def signups_individuals(today: date):
-    months = charts.months(MEMBERS_DATA_BEGIN_ON, charts.previous_month(today))
-    data = charts.per_month(SubscriptionActivity.individuals_signups_count, months)
+def quits(today: date) -> IntChartDict:
+    months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
+    data = Members.monthly_quits(months)
     return dict(data=data, months=months)
 
 
-# TODO
 @chart
-def quits(today: date):
-    months = charts.months(MEMBERS_DATA_BEGIN_ON, charts.previous_month(today))
-    data = charts.per_month(SubscriptionActivity.quits_count, months)
-    return dict(data=data, months=months)
-
-
-# TODO
-@chart
-def quits_individuals(today: date):
-    months = charts.months(MEMBERS_DATA_BEGIN_ON, charts.previous_month(today))
-    data = charts.per_month(SubscriptionActivity.individuals_quits_count, months)
-    return dict(data=data, months=months)
-
-
-# TODO
-@chart
-def churn(today: date):
-    months = charts.months(MEMBERS_DATA_BEGIN_ON, charts.previous_month(today))
-    data = charts.per_month(SubscriptionActivity.churn_ptc, months)
-    return dict(data=data, months=months)
-
-
-# TODO
-@chart
-def churn_individuals(today: date):
-    months = charts.months(MEMBERS_DATA_BEGIN_ON, charts.previous_month(today))
-    data = charts.per_month(SubscriptionActivity.individuals_churn_ptc, months)
+def churn(today: date) -> FloatChartDict:
+    months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
+    data = Members.monthly_churn_ptc(months)
     return dict(data=data, months=months)
 
 
