@@ -34,7 +34,7 @@ Díky dobrovolným aktivitám se dostal k pomáhání začátečníkům, a to ho
 V roce 2019 odešel z korporátu a založil tento projekt. Provozuje jej jako podnikatel na volné noze bez ambice rozjíždět firmu. Cílem je vydělat si tak akorát, aby se dobře žilo jeho rodině.
 
 <p class="text-center">
-  <a href="{{ pages|docs_url("love.jinja")|url }}" class="love-button pulse">Pošli LOVE</a>
+  <a href="{{ pages|docs_url("love.jinja")|url }}" class="love-button pulse">{{ 'heart-fill'|icon }} Pošli LOVE</a>
 </p>
 
 ## Týdenní poznámky
