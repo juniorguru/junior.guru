@@ -75,7 +75,6 @@ class ClubUser(BaseModel):
     display_name = CharField()
     has_feminine_name = BooleanField(null=True)
     mention = CharField(unique=True)
-    coupon = CharField(null=True, index=True)
     initial_roles = JSONField(default=list)
     updated_roles = JSONField(null=True)
     dm_channel_id = IntegerField(null=True, unique=True)

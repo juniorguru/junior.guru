@@ -13,7 +13,6 @@ from playhouse.shortcuts import model_to_dict
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
-from jg.coop.lib.coupons import parse_coupon
 from jg.coop.lib.discord_club import ClubChannelID, ClubClient, ClubMemberID
 from jg.coop.lib.memberful import (
     MemberfulAPI,
@@ -116,24 +115,15 @@ def main(history_path: Path, today: date):
                 logger.debug(f"Identified as club user #{user.id}")
                 seen_discord_ids.add(user.id)
 
-                name = member["fullName"].strip()
-                has_feminine_name = FeminineName.is_feminine(name)
-
                 subscription = get_active_subscription(member["subscriptions"])
                 logger.debug(f"Subscription of {member_admin_url}: {subscription}")
-
-                coupon = get_coupon(subscription)
-                coupon_parts = parse_coupon(coupon) if coupon else {}
-                expires_at = get_expires_at(member["subscriptions"])
-
                 logger.debug(
                     f"Updating club user #{user.id} with data from {member_admin_url}"
                 )
                 user.account_id = account_id
                 user.customer_id = member["stripeCustomerId"]
-                user.coupon = coupon_parts.get("coupon")
-                user.update_expires_at(expires_at)
-                user.has_feminine_name = has_feminine_name
+                user.update_expires_at(get_expires_at(member["subscriptions"]))
+                user.has_feminine_name = FeminineName.is_feminine(member["fullName"])
                 user.total_spend = math.ceil(member["totalSpendCents"] / 100)
                 user.subscription_type = get_subscription_type(subscription, today)
                 user.save()

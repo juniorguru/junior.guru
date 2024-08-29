@@ -32,8 +32,6 @@ SPONSORS_YAML_PATH = Path("jg/coop/data/sponsors.yml")
 
 PARTNERS_YAML_PATH = Path("jg/coop/data/partners.yml")
 
-COUPONS_GQL_PATH = Path(__file__).parent / "coupons.gql"
-
 PLANS_GQL_PATH = Path(__file__).parent / "plans.gql"
 
 SUBSCRIPTION_GQL_PATH = Path(__file__).parent / "subscription.gql"

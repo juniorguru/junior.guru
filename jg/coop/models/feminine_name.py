@@ -15,7 +15,7 @@ class FeminineName(BaseModel):
 
     @classmethod
     def is_feminine(cls, full_name):
-        name_parts = NAME_SPLIT_RE.split(full_name.lower())
+        name_parts = NAME_SPLIT_RE.split(full_name.lower().strip())
         for name in name_parts:
             if FEMININE_SURNAME_RE.search(name):
                 return True
