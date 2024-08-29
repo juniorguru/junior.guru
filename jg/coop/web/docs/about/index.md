@@ -155,4 +155,4 @@ Toto jsou hlavní hodnoty, které se snaží Honza vtisknout do DNA klubu pro ju
 
 ## Logo a barvy
 
-Všechno by mělo být na [logo.junior.guru](https://logo.junior.guru/), ale už dlouho to nebylo aktualizované, takže raději napište e-mail.
+Všechno by mělo být na [logo.junior.guru](https://logo.junior.guru/), ale už dlouho to nebylo aktualizované, takže raději napiš e-mail.
