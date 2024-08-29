@@ -53,7 +53,6 @@ nav:
       - Vše o projektu: about/index.md
       - Vše o klubu: about/club.md
       - Vše o příručce: about/handbook.md
-      - Otázky a odpovědi: faq.md
       - Finanční výsledky: about/finances.md
       - Sponzoři a partneři: about/sponsors-partners.md
       - Návštěvnost webu: about/web-usage.md
@@ -63,6 +62,7 @@ nav:
       - Pravidla chování: coc.md
       - Obchodní podmínky: tos.md
       - Ochrana osobních údajů: privacy.md
+      - "Klub: Otázky a odpovědi": faq.md
   - Témata:
       - ... | flat | topics/*.md
   - Připravované:

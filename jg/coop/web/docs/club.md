@@ -227,11 +227,11 @@ Vrtá ti hlavou, jak přesně to celé funguje? Máš nějaké problémy s regis
 
 <div class="standout-top"><div class="topics topics-grid">
 {% call markdown() %}
-- [{{ 'person-plus'|icon }} Členství v klubu](faq.md#clenstvi-v-klubu)
-- [{{ 'person-check'|icon }} Pro koho je klub](faq.md#pro-koho-je-klub)
-- [{{ 'compass'|icon }} Co je a není klub](faq.md#co-je-a-neni-klub)
-- [{{ 'chat-right'|icon }} Discord](faq.md#discord)
-- [{{ 'credit-card'|icon }} Placení za klub](faq.md#placeni-za-klub)
+- [{{ 'person-plus'|icon }} Členství v klubu](faq.md#jak-funguje-clenstvi)
+- [{{ 'person-check'|icon }} Pro koho je klub](faq.md#je-to-jen-pro-zacatecniky)
+- [{{ 'compass'|icon }} Co je a není klub](faq.md#jak-se-klub-lisi-od-skol-akademii-a-kurzu)
+- [{{ 'chat-right'|icon }} Discord](faq.md#proc-zrovna-discord)
+- [{{ 'credit-card'|icon }} Placení za klub](faq.md#proc-je-klub-placeny)
 - [{{ 'three-dots'|icon }} Další](faq.md)
 {% endcall %}
 </div></div>

@@ -13,9 +13,9 @@ Informace o [klubu pro juniory](../club.md). Záměr a hodnoty, se kterými je p
 
 [TOC]
 
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tady něco teprve bude.
-{% endcall %}
+## Vznik
+
+Na junior.guru byla původně pouze příručka a pracovní nabídky. Placená komunita vznikla až v roce 2021. Honza tenkrát svou motivaci a veškeré okolnosti vzniku klubu otevřeně popsal v [rozsáhlém článku na svém blogu](https://honzajavorek.cz/blog/spoustim-klub/).
 
 ## Počet členů
 

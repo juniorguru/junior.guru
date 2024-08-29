@@ -13,6 +13,17 @@ template: main_about.html
 
 [TOC]
 
+## Proč má junior.guru sponzory
+
+Protože **peníze od juniorů nestačí na provoz**, viz [finanční výsledky](./finances.md).
+Díky sponzorům může být členství v klubu pro juniory levnější.
+
+Také je žádoucí, aby junior.guru **stálo na pomezí firem a juniorů a vyvažovalo diskuzi na obě strany**, ne aby mazalo med kolem pusy jedné z nich a stavělo ji proti druhé.
+Rozložení příjmů junior.guru mezi juniory i firmy je způsob, jak to zajistit.
+
+Honza se ale nakonec vždy **snaží mít na prvním místě dobro samotných juniorů**.
+Ačkoliv dělá obchody s firmami, zachovává si nezávislost a nenechává se ovlivnit ve prospěch konkrétního produktu.
+
 {% for tier, sponsors in sponsors_by_tier %}
 ## Tarif „{{ tier.name }}“
 
@@ -77,9 +88,26 @@ Sponzoři, kteří využívají [GitHub Sponsors](https://github.com/sponsors/ho
 
 A další neveřejně, někteří přes GitHub Sponsors, někteří přímo na účet.
 
+## Sponzoři a klub
+
+Sponzoři mají přístup do klubu. Mohou vyhlížet talentované juniory, promovat ve vyhrazených kanálech své aktivity, poskytovat slevy na své produkty. Mohou se zapojit do diskuzí a radit, nebo poskytovat pohled z druhé strany. Mohou spolu s klubem vymýšlet různé způsoby vzájemné podpory, ať už jde o propagaci, slevy, nebo tvorbu společných článků, podcastů, videí.
+
+Je na firmě, jak to uchopí, a co z toho „vyždíme“. Už jen tím, že svými financemi podpoří existenci junior.guru a bude vidět její logo, si **buduje dobré jméno** jak mezi lidmi z nastupující generace vývojářů, tak mezi zainteresovanými profíky.
+
+## Poskytovatelé kurzů jako sponzoři
+
+Sponzory mohou být i poskytovatelé kurzů, což **staví junior.guru do konfliktu zájmů**.
+Na této stránce je proto transparentně zdokumentována každá dohoda, aby nebylo pochyb, že junior.guru je nestranné.
+
+Firmy i přes své sponzorství respektují, že junior.guru a klub jsou místa, kde se o nabídce kurzů **diskutuje na neutrální půdě, lidé si sdílí zkušenosti a porovnávají**.
+Recenze členů v klubu jsou subjektivním hodnocením konkrétních lidí a firmy nemají možnost do něj zasahovat.
+Pokud chce poskytovatel kurzů propagovat své produkty, může tak činit ve vyhrazených místech v klubu.
+
+Honza si dává pozor na to, aby **žádný konkrétní kurz sám neprotežoval** a aby aktivity v rámci sponzorství nezasahovaly do nestrannosti junior.guru.
+
 ## Partneři
 
-Aktuálně junior.guru spolupracuje s **{{ partners|length }} partnery**.
+Aktuálně junior.guru spolupracuje s **{{ partners|length }} partnery**. Partneři jsou komunity a malé subjekty, s nimiž má junior.guru domluvenou nějakou oboustrannou nefinanční výpomoc.
 
 <div class="table-responsive"><table class="table align-middle">
   {% for partner in partners %}
@@ -98,3 +126,9 @@ Aktuálně junior.guru spolupracuje s **{{ partners|length }} partnery**.
     </tr>
   {% endfor %}
 </table></div>
+
+## Partnerství s komunitami
+
+Organizátoři komunit, které jsou partnery junior.guru, mají přístup do klubu. Mohou v něm promovat svoje aktivity. Mohou spolu s klubem vymýšlet různé způsoby vzájemné podpory, ať už jde o propagaci, slevy, nebo tvorbu společných článků, podcastů, videí.
+
+Je na lidech z partnerské komunity, jak to uchopí, a co z toho „vyždímou“. Spolupráce by ale neměla být samoúčelná, měla by vždy vyústit **něco, co bude především sloužit samotným juniorům**.

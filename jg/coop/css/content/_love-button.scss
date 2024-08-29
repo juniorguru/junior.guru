@@ -14,18 +14,14 @@
 }
 
 .love-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: map-get($spacers, 4);
-  height: map-get($spacers, 4);
-  font-size: map-get($spacers, 3);
-  color: $jg-pink;
-  animation: heartbeat 3s ease-in-out infinite;
-}
-
-.love-button:hover {
-  font-size: map-get($spacers, 4);
-  color: $jg-pink-dark;
-  animation: none;
+  @extend .btn;
+  @extend .btn-lg;
+  @include button-variant(
+    $jg-pink,
+    $jg-pink,
+    $jg-white,
+    $hover-color: $jg-white,
+    $active-color: $jg-white,
+    $disabled-color: $jg-white
+  );
 }

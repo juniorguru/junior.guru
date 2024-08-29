@@ -2,10 +2,12 @@
 {% from 'macros.html' import img with context %}
 
 
-{% block stylesheet %}<link rel="stylesheet" href="{{ 'static/css/index.css'|url }}">{% endblock %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ 'static/css/index.css'|url }}">{% endblock %}
 
 
 {% block body %}
+
 <body>
   {#
   <a href="https://forms.gle/CvcrqJLwaU9bSLzf7" class="announcement" target="_blank" rel="noopener">
@@ -21,15 +23,15 @@
       </a>
       <div class="navbar-buttons">
         {% if page.url not in ['love/', 'club/'] %}
-        <a href="{{ pages|docs_url('love.jinja')|url }}" class="love-button" title="Klikni!">
+        <a href="{{ pages|docs_url('love.jinja')|url }}" class="love-heart" title="Klikni!">
           {{ 'heart-fill'|icon }}
         </a>
         {#
-          {{ page.url }}
-          {{ img('static/heart.svg', 'srdíčko', 50, 50, lazy=False) }}
-          <a class="btn btn-outline-dark" href="{{ pages|docs_url('love.jinja')|url }}">Pro firmy</a>
-          {% if page.url != 'club/' %}
-          <a class="btn btn-dark" href="{{ pages|docs_url('club.md')|url }}">Přidej se</a>
+        {{ page.url }}
+        {{ img('static/heart.svg', 'srdíčko', 50, 50, lazy=False) }}
+        <a class="btn btn-outline-dark" href="{{ pages|docs_url('love.jinja')|url }}">Pro firmy</a>
+        {% if page.url != 'club/' %}
+        <a class="btn btn-dark" href="{{ pages|docs_url('club.md')|url }}">Přidej se</a>
         #}
         {% endif %}
       </div>
@@ -37,9 +39,8 @@
       <ul class="nav nav-foldable">
         {% for nav_item in nav|menu %}
         <li class="nav-item">
-          <a
-            {% if nav_item.is_active %}class="nav-link active" aria-current="page"{% else %}class="nav-link"{% endif %}
-            href="{{ nav_item.url|url }}">
+          <a {% if nav_item.is_active %}class="nav-link active" aria-current="page" {% else %}class="nav-link" {% endif
+            %} href="{{ nav_item.url|url }}">
             {{ nav_item.title }}
           </a>
         </li>
@@ -80,7 +81,8 @@
             <h3 class="footer-subheading">Provozovatel</h3>
             Jan Javorek<br>
             OSVČ, neplátce DPH<br>
-            IČO: <a href="https://ares.gov.cz/ekonomicke-subjekty?ico=74279858" target="_blank" rel="noopener">74279858</a><br>
+            IČO: <a href="https://ares.gov.cz/ekonomicke-subjekty?ico=74279858" target="_blank"
+              rel="noopener">74279858</a><br>
             Lupáčova 375/24<br>
             130 00 Praha
           </li>
@@ -122,15 +124,27 @@
       <h3 class="footer-heading">Kdo to provozuje? Na čem vydělává?</h3>
       <div class="footer-about-content">
         <div class="footer-about-text">
-          {{ img('static/avatars-participants/honza-javorek.jpg', 'Honza Javorek', 100, 100, class='footer-about-avatar') }}
+          {{ img('static/avatars-participants/honza-javorek.jpg', 'Honza Javorek', 100, 100,
+          class='footer-about-avatar') }}
           <p>
-            Jmenuji se Honza Javorek a býval jsem obyčejný programátor. Díky dobrovolným aktivitám jsem se dostal k pomáhání začátečníkům, a to mě hodně bavilo. Časem mi přišlo, že chybí jedno místo, kde by byly všechny pracovní nabídky pro juniory, nezávislé informace a základní praktické rady. Proto jsem odešel z korporátu a založil tento projekt.
+            Jmenuji se Honza Javorek a býval jsem obyčejný programátor. Díky dobrovolným aktivitám jsem se dostal k
+            pomáhání začátečníkům, a to mě hodně bavilo. Časem mi přišlo, že chybí jedno místo, kde by byly všechny
+            pracovní nabídky pro juniory, nezávislé informace a základní praktické rady. Proto jsem odešel z korporátu a
+            založil tento projekt.
           </p>
           <p>
-            Chci začátečníkům zpříjemnit cestu k jejich první práci v IT a dodat jim kultivovanou podpůrnou komunitu, kde budou vítáni a mezi svými. Chci nezávisle informovat o vzdělávacích agenturách a propojovat juniory s firmami, kam by mohli nastoupit. Chci, aby každý Luďan z Mostu, každá puberťačka, každý vědec nebo každá máma na rodičovské měli po ruce návod, jak začít s programováním.
+            Chci začátečníkům zpříjemnit cestu k jejich první práci v IT a dodat jim kultivovanou podpůrnou komunitu,
+            kde budou vítáni a mezi svými. Chci nezávisle informovat o vzdělávacích agenturách a propojovat juniory s
+            firmami, kam by mohli nastoupit. Chci, aby každý Luďan z Mostu, každá puberťačka, každý vědec nebo každá
+            máma na rodičovské měli po ruce návod, jak začít s programováním.
           </p>
           <p>
-            Tento web má <a href="{{ pages|docs_url('open.md')|url }}">veřejná čísla</a>, <a href="https://github.com/juniorguru/">otevřený zdrojový kód</a> a obsah je pod <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs">CC licencí</a>. Ilustrace si kreslím sám. Projekt tvořím jako podnikatel na volné noze, jenž nemá ambice rozjíždět firmu. Své úspěchy a selhání otevřeně popisuji v každotýdenních poznámkách na <a href="https://honzajavorek.cz/blog/">osobním blogu</a>. Cílem je vydělat si tak akorát, aby se žilo dobře mojí rodině.
+            Tento web má <a href="{{ pages|docs_url('open.md')|url }}">veřejná čísla</a>, <a
+              href="https://github.com/juniorguru/">otevřený zdrojový kód</a> a obsah je pod <a
+              href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs">CC licencí</a>. Ilustrace si kreslím sám.
+            Projekt tvořím jako podnikatel na volné noze, jenž nemá ambice rozjíždět firmu. Své úspěchy a selhání
+            otevřeně popisuji v každotýdenních poznámkách na <a href="https://honzajavorek.cz/blog/">osobním blogu</a>.
+            Cílem je vydělat si tak akorát, aby se žilo dobře mojí rodině.
           </p>
         </div>
         <div class="footer-about-finances">
@@ -140,10 +154,10 @@
           <h4 class="footer-subheading">Zdroje příjmů, zaokrouhleno</h4>
           <ul class="footer-finances-list">
             {% for name, value_pct in revenue_ttm_breakdown|money_breakdown_ptc|revenue_categories %}
-              <li>
-                <strong class="footer-finances-value">{{ value_pct }} %</strong>
-                {{ name }}
-              </li>
+            <li>
+              <strong class="footer-finances-value">{{ value_pct }} %</strong>
+              {{ name }}
+            </li>
             {% endfor %}
           </ul>
           <p class="footer-finances-actions">
@@ -159,28 +173,28 @@
         <h3 class="footer-heading">Buď v obraze</h3>
         <p>
           {% for nav_item in (nav|selectattr('title', 'equalto', 'Novinky')|list)[0].children %}
-            {%- if nav_item.children -%}
-              <a href="{{ (nav_item.children|first).url|url }}">{{ nav_item.title }}</a>
-            {%- else -%}
-              <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
-            {%- endif -%}
-            {%- if not loop.last %}, {% endif %}
+          {%- if nav_item.children -%}
+          <a href="{{ (nav_item.children|first).url|url }}">{{ nav_item.title }}</a>
+          {%- else -%}
+          <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+          {%- endif -%}
+          {%- if not loop.last %}, {% endif %}
           {% endfor %}
         </p>
 
         <h3 class="footer-heading">Příručka</h3>
         <p>
           {% for nav_item in (nav|selectattr('title', 'equalto', 'Příručka')|list)[0].children %}
-            <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
-            {%- if not loop.last %}, {% endif %}
+          <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+          {%- if not loop.last %}, {% endif %}
           {% endfor %}
         </p>
 
         <h3 class="footer-heading">Kurzy</h3>
         <p>
           {% for course_provider in course_providers %}
-            <a href="{{ pages|docs_url(course_provider.page_url)|url }}">{{ course_provider.name }}</a>
-            {%- if not loop.last %}, {% endif %}
+          <a href="{{ pages|docs_url(course_provider.page_url)|url }}">{{ course_provider.name }}</a>
+          {%- if not loop.last %}, {% endif %}
           {% endfor %}
         </p>
 
@@ -194,9 +208,10 @@
 
         <h3 class="footer-heading">Témata, která řešíme v klubu</h3>
         <p>
-          {% for nav_item in (nav|selectattr('title', 'equalto', 'Témata')|list)[0].children if nav_item.meta.topic_link_text %}
-            <a href="{{ nav_item.url|url }}">{{ nav_item.meta.topic_link_text }}</a>
-            {%- if not loop.last %}, {% endif %}
+          {% for nav_item in (nav|selectattr('title', 'equalto', 'Témata')|list)[0].children if
+          nav_item.meta.topic_link_text %}
+          <a href="{{ nav_item.url|url }}">{{ nav_item.meta.topic_link_text }}</a>
+          {%- if not loop.last %}, {% endif %}
           {% endfor %}
         </p>
       </nav>
@@ -204,27 +219,29 @@
     <nav class="footer-section footer-rules">
       <h3 class="visually-hidden">Pravidla</h3>
       <ul class="footer-rules-list">
-          <li class="footer-rules-item">
-            <a href="{{ pages|docs_url('open.md')|url }}">Čísla a grafy</a>
-          </li>
-          <li class="footer-rules-item">
-            <a href="{{ pages|docs_url('coc.md')|url }}">Pravidla chování</a>
-          </li>
-          <li class="footer-rules-item">
-            <a href="{{ pages|docs_url('tos.md')|url }}">Obchodní podmínky</a>
-          </li>
-          <li class="footer-rules-item">
-            <a href="{{ pages|docs_url('privacy.md')|url }}">Ochrana osobních údajů</a>
-          </li>
-          <li class="footer-rules-item">
-            <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs" target="_blank" rel="noopener">Licence obsahu (CC BY-SA)</a>
-          </li>
+        <li class="footer-rules-item">
+          <a href="{{ pages|docs_url('open.md')|url }}">Čísla a grafy</a>
+        </li>
+        <li class="footer-rules-item">
+          <a href="{{ pages|docs_url('coc.md')|url }}">Pravidla chování</a>
+        </li>
+        <li class="footer-rules-item">
+          <a href="{{ pages|docs_url('tos.md')|url }}">Obchodní podmínky</a>
+        </li>
+        <li class="footer-rules-item">
+          <a href="{{ pages|docs_url('privacy.md')|url }}">Ochrana osobních údajů</a>
+        </li>
+        <li class="footer-rules-item">
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs" target="_blank" rel="noopener">Licence obsahu
+            (CC BY-SA)</a>
+        </li>
       </ul>
     </nav>
   </footer>
 
   <script async src="https://sa.junior.guru/latest.js"></script>
   <script async src="https://sa.junior.guru/auto-events.js"></script>
-  <noscript><img src="https://sa.junior.guru/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+  <noscript><img src="https://sa.junior.guru/noscript.gif" alt=""
+      referrerpolicy="no-referrer-when-downgrade"></noscript>
 </body>
 {% endblock %}

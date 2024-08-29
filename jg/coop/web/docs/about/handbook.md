@@ -13,21 +13,6 @@ Informace o [příručce pro juniory](../handbook/index.md). Záměr a hodnoty, 
 
 [TOC]
 
-## Záměr
-
-Příručka existuje, aby se programování mohl naučit kdokoliv, kdo se ho naučit chce.
-Cílem je ukázat, že to jde i bez vysoké školy, protože materiálů a kurzů je k tomu na internetu dost.
-A že i jako samouk je možné sehnat si v oboru práci, a tím si splnit sen, nebo zlepšit životní úroveň.
-
-Bez keců o tom, jak firmy berou každého, peníze se budou jen sypat, a programovat se naučíš za měsíc.
-Na junior.guru se dovíš, co je doopravdy potřeba.
-Díky tomu budeš vědět, co očekávat, ať se na to můžeš adekvátně připravit.
-
-A je jedno, jestli chceš programovat pro zábavu, plánuješ si něco automatizovat, nebo toužíš po kariéře v IT.
-Jestli jsi z velkého města s širokými možnostmi, nebo z odlehlé vesnice.
-Jestli jsi žena, muž, stará, mladý.
-Jestli máš kůži růžovou nebo hnědou.
-
 ## Licence
 
 Příručka je vydávána pod licencí [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.cs).

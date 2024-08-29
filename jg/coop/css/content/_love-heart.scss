@@ -1,0 +1,31 @@
+@keyframes heartbeat {
+  0% {
+    font-size: map-get($spacers, 3);
+    color: $jg-pink;
+  }
+  50% {
+    font-size: map-get($spacers, 4);
+    color: $jg-pink-dark;
+  }
+  100% {
+    font-size: map-get($spacers, 3);
+    color: $jg-pink;
+  }
+}
+
+.love-heart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: map-get($spacers, 4);
+  height: map-get($spacers, 4);
+  font-size: map-get($spacers, 3);
+  color: $jg-pink;
+  animation: heartbeat 3s ease-in-out infinite;
+}
+
+.love-heart:hover {
+  font-size: map-get($spacers, 4);
+  color: $jg-pink-dark;
+  animation: none;
+}

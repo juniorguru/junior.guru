@@ -76,6 +76,10 @@ Z předchozích angažmá má úspory, díky nimž může projekt držet při ž
 
 Částky nelze přímočaře srovnávat se mzdou. Jako podnikatel potřebuje velkou rezervu, aby se nemusel strachovat s každou změnou rodinných nákladů, jestli může pokračovat. Také mu nikdo neplatí dovolenou, nemocenskou, nespoří na důchod.
 
+<p class="text-center standout-top">
+  <a href="{{ pages|docs_url("love.jinja")|url }}" class="love-button pulse">Pošli LOVE</a>
+</p>
+
 ## Čistý zisk
 
 Zisk jsou výnosy mínus náklady včetně daní, tedy částka, která už jde z Honzova podnikání přímo do rodinného rozpočtu. Aktuální čistý zisk junior.guru je **{{ profit_ttm|thousands }} Kč měsíčně**. Spočítáno jako zisk za posledních 12 měsíců (TTM, _trailing twelve months_) vydělený 12.
