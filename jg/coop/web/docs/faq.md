@@ -3,7 +3,7 @@ title: Otázky a odpovědi
 template: main_about.html
 ---
 
-{% from 'macros.html' import lead %}
+{% from 'macros.html' import lead, note %}
 
 
 # Otázky a odpovědi
