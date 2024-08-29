@@ -122,7 +122,6 @@ def main(history_path: Path, today: date):
                 subscription = get_active_subscription(member["subscriptions"])
                 logger.debug(f"Subscription of {member_admin_url}: {subscription}")
 
-                subscription_id = str(subscription["id"])
                 coupon = get_coupon(subscription)
                 coupon_parts = parse_coupon(coupon) if coupon else {}
                 expires_at = get_expires_at(member["subscriptions"])
@@ -131,7 +130,6 @@ def main(history_path: Path, today: date):
                     f"Updating club user #{user.id} with data from {member_admin_url}"
                 )
                 user.account_id = account_id
-                user.subscription_id = subscription_id
                 user.customer_id = member["stripeCustomerId"]
                 user.coupon = coupon_parts.get("coupon")
                 user.update_expires_at(expires_at)
