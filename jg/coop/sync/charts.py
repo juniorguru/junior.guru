@@ -14,7 +14,6 @@ from jg.coop.models.members import Members
 from jg.coop.models.page import Page
 from jg.coop.models.podcast import PodcastEpisode
 from jg.coop.models.subscription import (
-    SubscriptionActivity,
     SubscriptionCancellation,
     SubscriptionCountry,
     SubscriptionInternalReferrer,

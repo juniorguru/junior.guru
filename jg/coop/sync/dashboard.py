@@ -11,7 +11,7 @@ from jg.coop.lib.mutations import mutating_discord
 from jg.coop.models.base import db
 from jg.coop.models.blog import BlogArticle
 from jg.coop.models.club import ClubMessage, ClubUser
-from jg.coop.models.subscription import SubscriptionActivity
+from jg.coop.models.members import Members
 
 
 TODAY = date.today()
@@ -103,7 +103,7 @@ def render_events():
 
 def render_open():
     members_total_count = ClubUser.members_count()
-    members_women_ptc = SubscriptionActivity.active_women_ptc(TODAY)
+    members_women_ptc = Members.monthly_members_women_ptc([TODAY])
     blog_article = BlogArticle.latest()
 
     description = ", ".join(
