@@ -97,7 +97,6 @@ class Members(BaseModel):
                 .tuples()
             )
         )
-        print(subscription_types)
         return {
             name.removeprefix(SUBSCRIPTION_TYPES_PREFIX): cls.per_month(name, months)
             for name in subscription_types
@@ -118,7 +117,7 @@ class Members(BaseModel):
     @classmethod
     def monthly_converting_trials_ptc(cls, months: Iterable[date]) -> list[int]:
         return [
-            count_signups * 100 / count_trials
+            (count_signups * 100 / count_trials) if count_trials else None
             for (count_signups, count_trials) in zip(
                 cls.monthly_signups(months), cls.monthly_trials(months)
             )
