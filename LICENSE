@@ -1,7 +1,8 @@
-Copyright (c) 2019-2023 Jan Javorek and contributors
+Copyright (c) 2019-2024 Jan Javorek, and contributors
 
-Content (texts and images) of the website is released under the CC BY-SA 4.0 license
-https://creativecommons.org/licenses/by-sa/4.0
+Content (texts and images) of the website is released under the CC BY-SA 4.0 license.
+The license text is attached in the LICENSE-CONTENT file.
+Human-readable version is at https://creativecommons.org/licenses/by-sa/4.0
 
-Programming code of the website is released under the MIT license
-The MIT license is attached in the LICENSE.MIT file
+Programming code of the website is released under the AGPL-3.0-only license.
+The license text is attached in the LICENSE-CODE file.
