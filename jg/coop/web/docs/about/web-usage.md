@@ -110,6 +110,31 @@ Například klub nebo podcast mají „to hlavní“ jinde než na webu.
         'plugins': {'annotation': charts.web_usage_breakdown_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
+## Konverze klubové prodejní stránky
+
+Vývoj poměru mezi počtem zobrazení [klubové prodejní stránky](../club.md) a počtem dvou týdnů na zkoušku.
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts.web_club_conversion_labels,
+        'datasets': [
+            {
+                'label': '% konverze',
+                'data': charts.web_club_conversion,
+                'borderColor': '#1755d1',
+                'borderWidth': 2,
+            },
+        ]
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'min': 0}},
+        'plugins': {'annotation': charts.web_club_conversion_annotations},
+    }|tojson|forceescape }}"
+    data-chart-milestones-offset-ptc="0"></canvas></div></div>
+
 ## Registrace do klubu podle předchozí stránky
 
 Když se někdo registruje do klubu, systém si uloží [referrer](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer), tzn. z jaké webové stránky přišel.

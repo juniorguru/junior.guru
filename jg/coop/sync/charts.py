@@ -391,6 +391,25 @@ def web_usage_breakdown(today: date) -> IntBreakdownChartDict:
 
 
 @chart
+def web_club_conversion(today: date) -> FloatChartDict:
+    start_on, end_on = WebUsage.months_range()
+    start_on = max(start_on, MEMBERS_DATA_BEGIN_ON)
+    months = charts.months(start_on, end_on)
+    data = [
+        (
+            (count_trials / count_visits) * 100
+            if (count_trials is not None and count_visits)
+            else None
+        )
+        for (count_trials, count_visits) in zip(
+            Members.monthly_trials(months),
+            [WebUsage.breakdown(month).get("club") for month in months],
+        )
+    ]
+    return dict(data=data, months=months)
+
+
+@chart
 def logo_impressions_breakdown(today: date) -> IntBreakdownChartDict:
     product_names = ["home", "courses", "handbook"]
     months = charts.months(*WebUsage.months_range())
