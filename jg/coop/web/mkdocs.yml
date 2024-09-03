@@ -51,6 +51,8 @@ nav:
       - Moudra: wisdom.jinja
   - Info:
       - Vše o projektu: about/index.md
+      - Provozovatel: about/team.md
+      - Mise a hodnoty: about/mission.md
       - Vše o klubu: about/club.md
       - Vše o příručce: about/handbook.md
       - Finanční výsledky: about/finances.md

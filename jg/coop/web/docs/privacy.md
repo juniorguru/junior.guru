@@ -3,7 +3,7 @@ title: Zásady ochrany osobních údajů
 template: main_about.html
 ---
 
-{% from 'macros.html' import lead %}
+{% from 'macros.html' import lead, contact %}
 
 
 # Zásady ochrany osobních údajů
@@ -14,13 +14,7 @@ Se zřízením registrace v klientské sekci či odesláním objednávky na mé 
 
 ## Správce osobních údajů
 
-Junior Guru, stylizovaně „junior.guru“<br>
-**Jan Javorek**<br>
-fyzická osoba podnikající dle živnostenského zákona nezapsaná v obchodním rejstříku<br>
-se sídlem Lupáčova 375/24, 130 00 Praha<br>
-IČO: [74279858](https://ares.gov.cz/ekonomicke-subjekty?ico=74279858),<br>
-neplátce DPH,<br>
-E-mail: [honza@junior.guru](mailto:honza@junior.guru)<br>
+{{ contact() }}
 
 ## V textu se dozvíte
 

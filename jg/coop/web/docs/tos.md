@@ -3,7 +3,7 @@ title: Obchodní podmínky
 template: main_about.html
 ---
 
-{% from 'macros.html' import lead %}
+{% from 'macros.html' import lead, contact %}
 
 # Obchodní podmínky
 
@@ -13,13 +13,7 @@ Tyto obchodní podmínky pokrývají digitální předplatné a podmínky přís
 
 ## Poskytovatel služeb
 
-Junior Guru, stylizovaně „junior.guru“<br>
-**Jan Javorek**<br>
-fyzická osoba podnikající dle živnostenského zákona nezapsaná v obchodním rejstříku<br>
-se sídlem Lupáčova 375/24, 130 00 Praha<br>
-IČO: [74279858](https://ares.gov.cz/ekonomicke-subjekty?ico=74279858),<br>
-neplátce DPH,<br>
-E-mail: [honza@junior.guru](mailto:honza@junior.guru)<br>
+{{ contact() }}
 
 (dále jako „poskytovatel“)
 

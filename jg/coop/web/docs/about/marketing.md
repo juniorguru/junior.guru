@@ -24,10 +24,9 @@ Obsah ale není tvořen s účelem, aby někoho přilákal, je tvořen primárn�
 
 Honza se snaží dávat důraz na základní SEO poučky a vytvářet rychle se načítající webovou stránku, což má Google rád a přivádí potom na web lidi z vyhledávání.
 
-## Otevřenost a „týdenní poznámky“
+## Otevřenost a Týdenní poznámky
 
-Jednou z hodnot junior.guru je otevřenost.
-Díky ní existuje celá tato sekce webu, kde jsou transparentně všechny čísla a grafy.
+Jednou z [hodnot junior.guru](./mission.md) je otevřenost, díky které existuje celá tato sekce webu, kde jsou transparentně všechny čísla a grafy.
 V souladu s otevřeností jsou i pravidelné „týdenní poznámky” na Honzově blogu:
 
 {% for blog_article in blog[:5] %}
@@ -62,12 +61,11 @@ Restart rozesílání je v plánu, ale zatím bohužel pouze v plánu a nic se n
 
 ## Veřejná vystoupení a publikace
 
-Honza postupně opouští přednášení na srazech a oborových konferencích nebo psaní článků.
+Na Honzově webu je [historie všech jeho vystoupení a publikací](https://honzajavorek.cz/#appearances).
+Postupně opouští psaní článků nebo přednášení na srazech a oborových konferencích.
 Preferuje vystupování v podcastech, rozhovorech a diskuzních panelech.
 
-Oproti přednášce, která vyžaduje mnoho příprav a stresu, nebo psaní článku, které může zabrat i týden, jsou nároky na rozhovor minimální, a přesto má výsledek dosah.
-
-Na Honzově webu je [historie všech jeho vystoupení a publikací](https://honzajavorek.cz/#appearances).
+Oproti psaní článku, které může zabrat i týden, nebo přednášce, která vyžaduje mnoho příprav a stresu, jsou nároky na rozhovor minimální, a přesto má výsledek dosah.
 
 ## Sociální sítě a newsletter
 
