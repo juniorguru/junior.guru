@@ -60,7 +60,7 @@
   date: "2024-10-01"
   description: |
     (bude upřesněno)
-  avatar_path: avatars-participants/lukas-pavelka.jpg
+  avatar_path: avatars-participants/lukas-pavelka2.jpg
   bio_name: Lukáš Pavelka
   bio_title: "C#/.NET Software Engineer"
   bio: |
@@ -74,7 +74,7 @@
   date: "2024-08-06"
   description: |
     Seznamte se se základy Dockeru a objevte, jak kontejnery usnadňují vývoj a nasazení aplikací. Praktické ukázky a tipy vám pomohou začít rychle a efektivně.
-  avatar_path: avatars-participants/lukas-pavelka.jpg
+  avatar_path: avatars-participants/lukas-pavelka2.jpg
   bio_name: Lukáš Pavelka
   bio_title: "C#/.NET Software Engineer"
   bio: |
@@ -278,7 +278,7 @@
   date: "2023-02-21"
   description: |
     Ukážu vám C# na desktopu. Minulost, současnost, budoucnost. Proletíme historii aplikací pro Windows, od WinForms až po nejnovější technologie, jako je .NET MAUI. Vysvětlíme si vzorové architektury (MVVM, dependency injection) a ukážeme si je na demo aplikaci v .NET MAUI.
-  avatar_path: avatars-participants/lukas-pavelka.jpg
+  avatar_path: avatars-participants/lukas-pavelka2.jpg
   bio_name: Lukáš Pavelka
   bio_title: "C#/.NET programátor v Edhouse"
   bio: |
