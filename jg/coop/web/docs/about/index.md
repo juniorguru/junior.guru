@@ -14,7 +14,7 @@ template: main_about.html
 
 <div class="standout-top"><div class="topics topics-grid">
 {% call markdown() %}
-- [{{ 'person-circle'|icon }} Kdo tvoří junior.guru](./team.md)
+- [{{ 'person-circle'|icon }} Kdo tvoří junior.guru](./contact.md)
 - [{{ 'currency-exchange'|icon }} Finanční výsledky](./finances.md)
 - [{{ 'people-fill'|icon }} Klubové statistiky](./club.md)
 - [{{ 'gift-fill'|icon }} Sponzoři a partneři](./sponsors-partners.md)
