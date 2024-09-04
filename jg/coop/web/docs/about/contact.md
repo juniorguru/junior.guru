@@ -3,7 +3,7 @@ title: O provozovateli junior.guru
 template: main_about.html
 ---
 
-{% from 'macros.html' import lead, utm_link, contact with context %}
+{% from 'macros.html' import contact, lead with context %}
 
 # Provozovatel
 

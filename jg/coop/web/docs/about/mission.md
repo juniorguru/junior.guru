@@ -4,7 +4,7 @@ description: Čísla, statistiky, grafy, kontext. Jak se Honzovi daří provozov
 template: main_about.html
 ---
 
-{% from 'macros.html' import lead, contact, markdown with context %}
+{% from 'macros.html' import lead with context %}
 
 # Mise a hodnoty
 
