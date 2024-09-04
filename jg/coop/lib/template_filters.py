@@ -9,8 +9,8 @@ from urllib.parse import unquote, urljoin
 import arrow
 from markupsafe import Markup
 from mkdocs.structure import StructureItem
-from mkdocs.structure.pages import Page
 from mkdocs.structure.nav import Navigation
+from mkdocs.structure.pages import Page
 from slugify import slugify
 
 from jg.coop.lib.md import md as md_

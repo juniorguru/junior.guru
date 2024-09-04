@@ -6,7 +6,7 @@ from urllib.parse import urlparse
 
 import favicon
 import requests
-from PIL import Image, ImageChops, ImageOps, ImageDraw, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageFont, ImageOps
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
