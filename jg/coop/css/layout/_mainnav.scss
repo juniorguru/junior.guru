@@ -1,37 +1,21 @@
-.navbar-light {
+.mainnav {
+  @extend .navbar;
   background-color: $jg-yellow;
 }
 
-.navbar-container {
+.mainnav-container {
   @extend .container-xxl;
 }
 
-.navbar-brand {
+.mainnav-brand {
+  @extend .navbar-brand;
   padding: 0;
 }
 
-.nav-link:hover,
-.nav-link:focus,
-.nav-link:active,
-.nav-link.active {
-  text-decoration: underline;
-}
+.mainnav-items {
+  @extend .nav;
+  @extend .justify-content-center;
 
-.nav-link.active {
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.navbar-buttons {
-  @extend .order-md-last;
-}
-
-.navbar-buttons .btn:hover {
-  background: $jg-black;
-  border-color: $jg-black;
-}
-
-.nav-foldable {
   position: relative;
   top: $navbar-padding-y;
   flex-wrap: nowrap;
@@ -50,4 +34,28 @@
     border-top: none;
     @include font-size($font-size-base);
   }
+}
+
+.mainnav-item {
+  @extend .nav-item;
+}
+
+.mainnav-link {
+  @extend .nav-link;
+}
+
+.mainnav-link:hover,
+.mainnav-link:focus,
+.mainnav-link:active,
+.mainnav-link.active {
+  text-decoration: underline;
+}
+
+.mainnav-link.active {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.mainnav-buttons {
+  @extend .order-md-last;
 }

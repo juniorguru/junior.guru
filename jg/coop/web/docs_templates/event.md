@@ -1,23 +1,5 @@
 {% from 'macros.html' import img, lead with context %}
 
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item">
-      <a href="{{ (page|parent_page|parent_page).url|url }}">
-        {{ (page|parent_page|parent_page).title }}
-      </a>
-    </li>
-    <li class="breadcrumb-item">
-      <a href="{{ (page|parent_page).url|url }}">
-        {{ (page|parent_page).title }}
-      </a>
-    </li>
-    <li class="breadcrumb-item active" aria-current="page">
-      {{ '{:%-d.%-m.%Y}'.format(event.start_at) }}
-    </li>
-  </ol>
-</nav>
-
 # {{ event.title }}
 
 {#

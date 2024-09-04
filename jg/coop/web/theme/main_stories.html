@@ -1,27 +1,10 @@
-{% extends 'main.html' %}
+{% extends 'main_subnav.html' %}
 
 
 {% block main %}
   <div class="main main-simple">
     <main class="content document">
       {% block content %}
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="{{ (page|parent_page|parent_page).url|url }}">
-              {{ (page|parent_page|parent_page).title }}
-            </a>
-          </li>
-          <li class="breadcrumb-item">
-            <a href="{{ (page|parent_page).url|url }}">
-              {{ (page|parent_page).title }}
-            </a>
-          </li>
-          <li class="breadcrumb-item active" aria-current="page">
-            {{ page.meta.thumbnail_title }}
-          </li>
-        </ol>
-      </nav>
 
       {{ page.content }}
 

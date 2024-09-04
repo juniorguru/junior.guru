@@ -1,22 +1,10 @@
 ---
 title: Inspirativní příběhy
 description: Příběhy těch, kdo se rekvalifikovali do IT, nebo jim nějak programování pomáhá
+template: main_subnav.html
 ---
 
 {% from 'macros.html' import blockquote_avatar, lead, link_card, news_card with context %}
-
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item">
-      <a href="{{ (page|parent_page).url|url }}">
-        {{ (page|parent_page).title }}
-      </a>
-    </li>
-    <li class="breadcrumb-item active" aria-current="page">
-      Příběhy
-    </li>
-  </ol>
-</nav>
 
 # Příběhy
 

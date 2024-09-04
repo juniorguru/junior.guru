@@ -14,30 +14,23 @@
     <i class="bi bi-book-fill"></i>
     Můžeš dostat Grokking Algorithms, bestseller v hodnotě 1.500 Kč
   </a>
-  <header id="header" class="navbar navbar-light">
-    <nav class="navbar-container">
-      <a class="navbar-brand " href="{{ pages|docs_url('index.jinja')|url }}">
+  <header id="header" class="mainnav">
+    <nav class="mainnav-container">
+      <a class="mainnav-brand" href="{{ pages|docs_url('index.jinja')|url }}">
         {{ img('static/logo.svg', 'logo junior.guru', 90, 40, lazy=False) }}
       </a>
-      <div class="navbar-buttons">
+      <div class="mainnav-buttons">
         {% if page.url not in ['love/', 'club/'] %}
         <a href="{{ pages|docs_url('love.jinja')|url }}" class="love-heart" title="Klikni!">
           {{ 'heart-fill'|icon }}
         </a>
-        {#
-        {{ page.url }}
-        {{ img('static/heart.svg', 'srdíčko', 50, 50, lazy=False) }}
-        <a class="btn btn-outline-dark" href="{{ pages|docs_url('love.jinja')|url }}">Pro firmy</a>
-        {% if page.url != 'club/' %}
-        <a class="btn btn-dark" href="{{ pages|docs_url('club.md')|url }}">Přidej se</a>
-        #}
         {% endif %}
       </div>
       {% if nav %}
-      <ul class="nav nav-foldable">
-        {% for nav_item in nav|menu %}
-        <li class="nav-item">
-          <a {% if nav_item.is_active %}class="nav-link active" aria-current="page" {% else %}class="nav-link" {% endif
+      <ul class="mainnav-items">
+        {% for nav_item in nav|mainnav %}
+        <li class="mainnav-item">
+          <a {% if nav_item.is_active %}class="mainnav-link active" aria-current="page" {% else %}class="mainnav-link" {% endif
             %} href="{{ nav_item.url|url }}">
             {{ nav_item.title }}
           </a>

@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+{% from 'macros.html' import logo with context %}
+
+
+{% block extra_header %}
+<div class="subnav">
+  <div class="subnav-container">
+    <ul class="subnav-items">
+      {% for nav_item in nav|subnav %}
+      <li class="subnav-item">
+        <a {% if nav_item.is_active %}class="subnav-link active" aria-current="page" {% else %}class="subnav-link" {% endif
+          %} href="{{ nav_item.url|url }}">
+          {{ nav_item.title }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{{ super() }}
+{% endblock %}

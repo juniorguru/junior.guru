@@ -1,22 +1,10 @@
 ---
 title: Online akce pro začátečníky v programování
 description: Online akce pro členy klubu junior.guru. Seznam akcí proběhlých i budoucích. Přednášky, streamy, Q&A, AMA, webináře, a další.
+template: main_subnav.html
 ---
 
 {% from 'macros.html' import lead, news_card with context %}
-
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item">
-      <a href="{{ (page|parent_page).url|url }}">
-        {{ (page|parent_page).title }}
-      </a>
-    </li>
-    <li class="breadcrumb-item active" aria-current="page">
-      Klubové akce
-    </li>
-  </ol>
-</nav>
 
 # Klubové akce
 

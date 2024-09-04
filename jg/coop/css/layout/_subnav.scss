@@ -1,0 +1,82 @@
+$subnav-link-padding-y: ($nav-link-padding-y * .5);
+$subnav-border-color: $border-color;
+$subnav-hover-border-color: $border-color;
+
+.subnav {
+  @extend .navbar;
+  @extend .navbar-dark;
+  background-color: $jg-blue-light;
+
+  @include media-breakpoint-up(sm) {
+    padding-bottom: 0;
+    border-bottom: $nav-tabs-border-width solid $subnav-border-color;
+  }
+}
+
+.subnav-container {
+  @extend .container;
+  max-width: $main-document-width;
+}
+
+.subnav-items {
+  @extend .nav;
+  width: 100%;
+  @include font-size($font-size-sm);
+
+  @include media-breakpoint-up(md) {
+    justify-content: start;
+    @include font-size($font-size-base);
+  }
+}
+
+.subnav-item {
+  @extend .nav-item;
+  margin-right: map-get($spacers, 1);
+}
+
+.subnav-link {
+  @extend .nav-link;
+  padding: $subnav-link-padding-y $nav-link-padding-x;
+  border: $nav-tabs-border-width solid transparent;
+  transition: none;
+
+  @include media-breakpoint-up(sm) {
+    margin-bottom: calc(-1 * #{$nav-tabs-border-width});
+    border-top-left-radius: $nav-tabs-border-radius;
+    border-top-right-radius: $nav-tabs-border-radius;
+  }
+}
+
+.subnav-link:hover {
+  border-color: $subnav-hover-border-color;
+  border-radius: $nav-pills-border-radius;
+
+  @include media-breakpoint-up(sm) {
+    border-bottom: none;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.subnav-link.active {
+  font-weight: 700;
+  background-color: $jg-white;
+  border-color: $subnav-border-color;
+  border-radius: $nav-pills-border-radius;
+
+  @include media-breakpoint-up(sm) {
+    padding-top: $subnav-link-padding-y + .1rem;
+    padding-bottom: $subnav-link-padding-y - .1rem;
+    background-color: $nav-tabs-link-active-bg;
+    border-color: $subnav-border-color;
+    border-bottom: $nav-tabs-border-width solid $jg-white;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.subnav-link.active:hover {
+  @include media-breakpoint-up(sm) {
+    border-bottom: $nav-tabs-border-width solid $jg-white;
+  }
+}

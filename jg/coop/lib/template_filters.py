@@ -10,6 +10,7 @@ import arrow
 from markupsafe import Markup
 from mkdocs.structure import StructureItem
 from mkdocs.structure.pages import Page
+from mkdocs.structure.nav import Navigation
 from slugify import slugify
 
 from jg.coop.lib.md import md as md_
@@ -159,17 +160,28 @@ def mapping(mapping: dict, keys: Iterable) -> list:
     return [mapping[key] for key in keys]
 
 
-def menu(nav) -> Generator[dict, None, None]:
+def mainnav(nav: Navigation) -> Generator[dict, None, None]:
     for item in list(nav)[:5]:
-        # for items without children, this should result in the same
-        # value as item.url, but for pages with a tree of descendants,
-        # this ensures we use the first child's URL, regardless
-        # of the depth where it resides
-        first_children = [item]
-        while first_children[0].children:
-            first_children.insert(0, first_children[0].children[0])
-        first_child = first_children[0]
+        first_child = _get_first_child(item)
         yield dict(title=item.title, url=first_child.url, is_active=item.active)
+
+
+def subnav(nav: Navigation) -> Generator[dict, None, None]:
+    mainnav_item = next(item for item in nav if item.active)
+    for item in mainnav_item.children:
+        first_child = _get_first_child(item)
+        yield dict(title=item.title, url=first_child.url, is_active=item.active)
+
+
+def _get_first_child(item: StructureItem) -> StructureItem:
+    # for items without children, URL should result in the same
+    # value as item.url, but for pages with a tree of descendants,
+    # this ensures we use the first child's URL, regardless
+    # of the depth where it resides
+    children = [item]
+    while children[0].children:
+        children.insert(0, children[0].children[0])
+    return children[0]
 
 
 def toc(page: Page) -> Generator[dict, None, None]:

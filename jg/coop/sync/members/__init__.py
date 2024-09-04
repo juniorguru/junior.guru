@@ -16,7 +16,6 @@ from jg.coop.lib import discord_task, loggers
 from jg.coop.lib.discord_club import ClubChannelID, ClubClient, ClubMemberID
 from jg.coop.lib.memberful import (
     MemberfulAPI,
-    is_group_plan,
     is_individual_plan,
     is_partner_plan,
     is_sponsor_plan,
@@ -240,9 +239,6 @@ def get_active_subscription(
         for subscription, subscription_type in active_subscriptions_and_types
         if subscription_type is not None
     ]
-    # from pprint import pprint
-
-    # pprint(active_club_subscriptions_and_types)
 
     if len(active_club_subscriptions_and_types) == 1:
         return active_club_subscriptions_and_types[0][0]

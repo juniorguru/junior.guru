@@ -6,19 +6,6 @@ template: main_podcast.html
 
 {% from 'macros.html' import lead, markdown, img, news_card with context %}
 
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item">
-      <a href="{{ (page|parent_page).url|url }}">
-        {{ (page|parent_page).title }}
-      </a>
-    </li>
-    <li class="breadcrumb-item active" aria-current="page">
-      Podcast
-    </li>
-  </ol>
-</nav>
-
 # Podcast
 
 {% call lead() %}

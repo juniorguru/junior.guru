@@ -80,6 +80,7 @@ def generate_event_pages() -> Generator[dict[str, Any], None, None]:
                 ),
                 event_id=event.id,
                 thumbnail_image_path=event.avatar_path,
+                template="main_subnav.html",
             ),
             template="event.md",
         )
@@ -95,6 +96,7 @@ def generate_podcast_episode_pages() -> Generator[dict[str, Any], None, None]:
                 description=f"Poslechni si {podcast_episode.number}. díl Junior Guru podcastu.",
                 podcast_episode_number=podcast_episode.number,
                 thumbnail_image_path=podcast_episode.image_path,
+                template="main_subnav.html",
             ),
             template="podcast_episode.jinja",
         )

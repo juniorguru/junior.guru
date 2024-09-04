@@ -36,7 +36,10 @@ nav:
   - Kurzy:
       - Kurzy programování: courses.md
       - ... | flat | courses/*.md
-  - Práce: jobs/
+  - Práce:
+      - Inzeráty: jobs/
+      - Inzeráty 2: jobs2.jinja
+      - Kandidáti: candidates.jinja
   - Novinky:
       - Novinky: news.jinja
       - Podcast:

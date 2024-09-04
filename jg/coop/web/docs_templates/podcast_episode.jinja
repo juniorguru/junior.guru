@@ -1,23 +1,5 @@
 {% from 'macros.html' import img, lead, podcast_player with context %}
 
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item">
-      <a href="{{ (page|parent_page|parent_page).url|url }}">
-        {{ (page|parent_page|parent_page).title }}
-      </a>
-    </li>
-    <li class="breadcrumb-item">
-      <a href="{{ (page|parent_page).url|url }}">
-        {{ (page|parent_page).title }}
-      </a>
-    </li>
-    <li class="breadcrumb-item active" aria-current="page">
-      Epizoda {{ podcast_episode.number }}
-    </li>
-  </ol>
-</nav>
-
 <h1>{{ podcast_episode.format_title(affiliation=false) }}</h1>
 
 {#
