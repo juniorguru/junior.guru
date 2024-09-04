@@ -4,7 +4,7 @@ description: Nabídky práce, stáže a brigády zaměřené výhradně na za�
 template: main_subnav.html
 ---
 
-{% from 'macros.html' import lead, note with context %}
+{% from 'macros.html' import lead, note, img with context %}
 
 <h1>Pracovní inzeráty pro juniory</h1>
 {% call lead() %}
@@ -12,6 +12,25 @@ template: main_subnav.html
   Robot každý den stahuje inzeráty z celého internetu a pomocí umělé inteligence vybírá jen ty,
   které jsou vhodné pro začátečníky.
 {% endcall %}
+
+<ul>
+{% for job in jobs %}
+<li>
+  <h3>{{ job.title }}</h3>
+  {{ img('static/' + job.company_logo_path, 'Logo ' + job.company_name, 100, 100) }}
+  <p>
+    {{ job.company_name }}, {{ job.location }}<br>
+    {% if job.is_submitted %}
+      <a class="jobs-inline-link" href="{{ job.url|relative_url }}" itemprop="url">
+    {% else %}
+      <a class="jobs-inline-link" href="{{ jobs_url }}">
+    {% endif %}
+        odkaz
+      </a>
+  </p>
+</li>
+{% endfor %}
+</ul>
 
 {% call note(standout=True) %}
   {{ 'exclamation-circle'|icon }} Zbytek se teprve připravuje.

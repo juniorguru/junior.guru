@@ -104,7 +104,8 @@ def main():
             if not image_path.exists():
                 image = create_fallback_image(job.initial)
                 image.save(image_path)
-            job.company_logo_path = Path(image_path).relative_to(IMAGES_DIR)
+            job.company_logo_path = image_path.relative_to(IMAGES_DIR)
+            job.save()
             logger.debug(f"Logo for {job!r}: {job.company_logo_path}")
 
 

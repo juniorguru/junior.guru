@@ -110,7 +110,7 @@ def on_docs_context(context):
     # handbook/motivation.md
     context["stories_by_tags"] = Story.tags_mapping()
 
-    # handbook/candidate.md
+    # jobs.jinja, handbook/candidate.md
     context["jobs"] = ListedJob.listing()
     context["jobs_remote"] = ListedJob.remote_listing()
     context["jobs_internship"] = ListedJob.internship_listing()
