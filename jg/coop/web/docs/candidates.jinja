@@ -4,16 +4,15 @@ description: Ověřený a seřazený seznam těch nejšikovnějších juniorů a
 template: main_subnav.html
 ---
 
-{% from 'macros.html' import lead with context %}
+{% from 'macros.html' import lead, note with context %}
 
-<h1>Juniorní programátoři</h1>
+<h1>Juniorní programátoři a testeři</h1>
 
 {% call lead() %}
   Hledáš do firmy juniora?
   Zapomeň na inzeráty a stohy životopisů.
-  Vyber si prostě ze seznamu.
-  Každý junior tady je ověřený a má zaručené základní schopnosti.
-  Vybíráš z toho nejlepšího na trhu.
+  Tady vybíráš z toho nejlepšího na trhu.
+  Každý v seznamu je ověřený a má zaručené základní schopnosti.
   Oslovuješ napřímo, nic neplatíš.
 {% endcall %}
 
@@ -27,3 +26,7 @@ template: main_subnav.html
         <a href="https://github.com/juniorguru/eggtray/">Přidej se do seznamu</a>
     </li>
 </ul>
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Zbytek se teprve připravuje.
+{% endcall %}

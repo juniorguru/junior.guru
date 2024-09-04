@@ -4,11 +4,15 @@ description: Nabídky práce, stáže a brigády zaměřené výhradně na za�
 template: main_subnav.html
 ---
 
-{% from 'macros.html' import lead with context %}
+{% from 'macros.html' import lead, note with context %}
 
 <h1>Pracovní inzeráty pro juniory</h1>
 {% call lead() %}
   Už žádné „požadujeme 4 roky zkušeností“. Tento pracovní portál je na tvé straně.
   Robot každý den stahuje inzeráty z celého internetu a pomocí umělé inteligence vybírá jen ty,
   které jsou vhodné pro začátečníky.
+{% endcall %}
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Zbytek se teprve připravuje.
 {% endcall %}
