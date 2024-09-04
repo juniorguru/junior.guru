@@ -249,6 +249,10 @@ class ListedJob(BaseModel):
         return textwrap.shorten(self.title, 90, placeholder="…")
 
     @property
+    def initial(self) -> str:
+        return self.company_name[0].upper()
+
+    @property
     def effective_url(self) -> str:
         if self.is_submitted:
             return self.url
@@ -326,6 +330,10 @@ class ListedJob(BaseModel):
         return cls.select().where(
             cls.company_logo_path.is_null() & cls.company_url.is_null(False)
         )
+
+    @classmethod
+    def no_logo_listing(cls) -> Iterable[Self]:
+        return cls.select().where(cls.company_logo_path.is_null())
 
     @classmethod
     def submitted_listing(cls) -> Iterable[Self]:

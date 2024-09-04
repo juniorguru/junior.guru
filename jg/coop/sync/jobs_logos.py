@@ -6,7 +6,7 @@ from urllib.parse import urlparse
 
 import favicon
 import requests
-from PIL import Image, ImageChops, ImageOps
+from PIL import Image, ImageChops, ImageOps, ImageDraw, ImageFont
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
@@ -21,6 +21,10 @@ SIZE_PX = 100
 IMAGES_DIR = Path("jg/coop/images")
 
 LOGOS_DIR = IMAGES_DIR / "logos-jobs"
+
+FONT_PATH = Path(
+    "node_modules/@fontsource/inter/files/inter-latin-ext-800-normal.woff2"
+)
 
 WORKERS = 4
 
@@ -93,6 +97,16 @@ def main():
                 logger.debug(f"Logo for {job!r}: {job.company_logo_path}")
             job.save()
 
+        logger.info("Generating logos for remaining jobs")
+        for job in ListedJob.no_logo_listing():
+            hash = hashlib.sha1(job.initial.encode()).hexdigest()
+            image_path = LOGOS_DIR / f"{hash}.png"
+            if not image_path.exists():
+                image = create_fallback_image(job.initial)
+                image.save(image_path)
+            job.company_logo_path = Path(image_path).relative_to(IMAGES_DIR)
+            logger.debug(f"Logo for {job!r}: {job.company_logo_path}")
+
 
 def sort_key(logo):
     # Such image didn't download, put it to the end of the list
@@ -162,7 +176,7 @@ def download_image(image_url):
         return image_url, None, None, None
 
 
-def convert_image(image):
+def convert_image(image: Image) -> Image:
     # transparent to white
     image = image.convert("RGBA")
     background = Image.new("RGBA", image.size, (255, 255, 255))
@@ -181,6 +195,26 @@ def convert_image(image):
 
     # resize
     image = image.resize((SIZE_PX, SIZE_PX))
+
+    return image
+
+
+def create_fallback_image(
+    initial: str,
+    color: tuple[int] = (231, 231, 231),
+    bg_color: tuple[int] = (255, 255, 255),
+    padding: int = 5,
+) -> Image:
+    image = Image.new("RGB", (SIZE_PX, SIZE_PX), bg_color)
+    draw = ImageDraw.Draw(image)
+    font = ImageFont.truetype(FONT_PATH, SIZE_PX - (padding * 2))
+
+    # centering the text
+    _, _, box_width, box_height = draw.textbbox(xy=(0, 0), text=initial, font=font)
+    text_width, text_height = font.getmask(initial).size
+    x_text = (SIZE_PX - text_width) / 2
+    y_text = ((SIZE_PX - box_height) / 2) - ((box_height - text_height) / 2)
+    draw.text((x_text, y_text), text=initial, font=font, fill=color)
 
     return image
 
