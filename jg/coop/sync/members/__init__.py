@@ -224,32 +224,61 @@ def get_active_subscription(
     subscriptions: list[SubscriptionEntity], today: date = None
 ) -> SubscriptionEntity:
     today = today or date.today()
-    subscriptions = [
+
+    active_subscriptions = (
         subscription
         for subscription in subscriptions
-        if (
-            subscription["active"]
-            and timestamp_to_date(subscription["activatedAt"]) <= today
-            and (
-                is_individual_plan(subscription["plan"])
-                or is_group_plan(subscription["plan"])
-            )
-        )
+        if subscription["active"]
+        and timestamp_to_date(subscription["activatedAt"]) <= today
+    )
+    active_subscriptions_and_types = (
+        (subscription, get_subscription_type_or_none(subscription, today=today))
+        for subscription in active_subscriptions
+    )
+    active_club_subscriptions_and_types = [
+        (subscription, subscription_type)
+        for subscription, subscription_type in active_subscriptions_and_types
+        if subscription_type is not None
     ]
-    if len(subscriptions) > 1:
-        overlapping_subscriptions = [
-            subscription
-            for subscription in subscriptions
-            if timestamp_to_date(subscription["activatedAt"]) == today
-        ]
-        try:
-            return overlapping_subscriptions[0]
-        except IndexError:
-            raise ValueError("Multiple active subscriptions")
-    try:
-        return subscriptions[0]
-    except IndexError:
+    # from pprint import pprint
+
+    # pprint(active_club_subscriptions_and_types)
+
+    if len(active_club_subscriptions_and_types) == 1:
+        return active_club_subscriptions_and_types[0][0]
+    if len(active_club_subscriptions_and_types) < 1:
         raise ValueError("No active subscriptions")
+
+    if len(active_club_subscriptions_and_types) == 2:
+        # Tolerate having two active subscriptions where one is group
+        # and the other is free (e.g. finaid and sponsored)
+        pseudo_types_mapping = {
+            SubscriptionType.TRIAL: "free",
+            SubscriptionType.MONTHLY: "individual",
+            SubscriptionType.YEARLY: "individual",
+            SubscriptionType.SPONSOR: "group",
+            SubscriptionType.PARTNER: "group",
+            SubscriptionType.FINAID: "free",
+            SubscriptionType.FREE: "free",
+        }
+        assert set(pseudo_types_mapping.keys()) == set(SubscriptionType)
+
+        subscription1, type1 = active_club_subscriptions_and_types[0]
+        pseudo_type1 = pseudo_types_mapping[type1]
+        subscription2, type2 = active_club_subscriptions_and_types[1]
+        pseudo_type2 = pseudo_types_mapping[type2]
+
+        if {pseudo_type1, pseudo_type2} == {"group", "free"}:
+            return subscription1 if pseudo_type1 == "group" else subscription2
+
+        # Tolerate having two active subscriptions where the start of the
+        # subsequent subscription overlaps with the current one for one day
+        if timestamp_to_date(subscription1["activatedAt"]) == today:
+            return subscription1
+        if timestamp_to_date(subscription2["activatedAt"]) == today:
+            return subscription2
+
+    raise ValueError("Multiple active subscriptions")
 
 
 def is_active(subscriptions: list[SubscriptionEntity]) -> bool:
@@ -305,6 +334,15 @@ def get_subscription_type(
         if plan["intervalUnit"] == "year":
             return SubscriptionType.YEARLY
     raise ValueError(f"Unknown subscription type: {subscription}")
+
+
+def get_subscription_type_or_none(
+    subscription: SubscriptionEntity, today: date | None = None
+) -> SubscriptionType | None:
+    try:
+        return get_subscription_type(subscription, today)
+    except ValueError:
+        return None
 
 
 def is_individual_subscription(subscription: SubscriptionEntity) -> bool:

@@ -14,11 +14,26 @@ from jg.coop.sync.members import (
 )
 
 
-PLAN_CLUB = dict(planGroup=dict(name="abc"), additionalMemberPriceCents=None)
+PLAN_CLUB = {
+    "name": "Měsíčně",
+    "planGroup": {"name": "abc"},
+    "intervalUnit": "month",
+    "additionalMemberPriceCents": None,
+}
 
-PLAN_GROUP = dict(planGroup=None, additionalMemberPriceCents=0)
+PLAN_GROUP = {
+    "name": "Skupinka",
+    "planGroup": None,
+    "intervalUnit": "year",
+    "additionalMemberPriceCents": 0,
+}
 
-PLAN_OTHER = dict(planGroup=None, additionalMemberPriceCents=None)
+PLAN_OTHER = {
+    "name": "Angličtina",
+    "planGroup": None,
+    "intervalUnit": "month",
+    "additionalMemberPriceCents": None,
+}
 
 
 def test_get_coupon():
@@ -89,98 +104,255 @@ def test_get_coupon_looks_at_last_order_only():
 
 
 def test_get_active_subscription():
-    assert get_active_subscription(
+    subscription = get_active_subscription(
         [
-            dict(id=1, active=False, activatedAt=123, plan=PLAN_CLUB),
-            dict(id=2, active=True, activatedAt=123, plan=PLAN_CLUB),
-            dict(id=3, active=False, activatedAt=123, plan=PLAN_CLUB),
+            {
+                "id": 1,
+                "active": False,
+                "activatedAt": 1725177843,
+                "trialEndAt": None,
+                "plan": PLAN_CLUB,
+                "coupon": None,
+                "orders": [{"coupon": None, "createdAt": 100}],
+            },
+            {
+                "id": 2,
+                "active": True,
+                "activatedAt": 1725177843,
+                "trialEndAt": None,
+                "plan": PLAN_CLUB,
+                "coupon": None,
+                "orders": [{"coupon": None, "createdAt": 100}],
+            },
+            {
+                "id": 3,
+                "active": False,
+                "activatedAt": 1725177843,
+                "trialEndAt": None,
+                "plan": PLAN_CLUB,
+                "coupon": None,
+                "orders": [{"coupon": None, "createdAt": 100}],
+            },
         ]
-    ) == dict(id=2, active=True, activatedAt=123, plan=PLAN_CLUB)
+    )
+
+    assert subscription["id"] == 2
 
 
 def test_get_active_subscription_skip_other_plans():
-    assert get_active_subscription(
+    subscription = get_active_subscription(
         [
-            dict(id=1, active=True, activatedAt=123, plan=PLAN_CLUB),
-            dict(id=2, active=True, activatedAt=123, plan=PLAN_OTHER),
-            dict(id=3, active=False, activatedAt=123, plan=PLAN_CLUB),
+            {
+                "id": 1,
+                "active": True,
+                "activatedAt": 1725177843,
+                "trialEndAt": None,
+                "plan": PLAN_CLUB,
+                "coupon": None,
+                "orders": [{"coupon": None, "createdAt": 100}],
+            },
+            {
+                "id": 2,
+                "active": True,
+                "activatedAt": 1725177843,
+                "trialEndAt": None,
+                "plan": PLAN_OTHER,
+                "coupon": None,
+                "orders": [{"coupon": None, "createdAt": 100}],
+            },
+            {
+                "id": 3,
+                "active": False,
+                "activatedAt": 1725177843,
+                "trialEndAt": None,
+                "plan": PLAN_CLUB,
+                "coupon": None,
+                "orders": [{"coupon": None, "createdAt": 100}],
+            },
         ]
-    ) == dict(id=1, active=True, activatedAt=123, plan=PLAN_CLUB)
+    )
+
+    assert subscription["id"] == 1
 
 
 def test_get_active_subscription_dont_skip_group_plans():
-    assert get_active_subscription(
+    subscription = get_active_subscription(
         [
-            dict(id=1, active=True, activatedAt=123, plan=PLAN_GROUP),
-            dict(id=2, active=True, activatedAt=123, plan=PLAN_OTHER),
-            dict(id=3, active=False, activatedAt=123, plan=PLAN_CLUB),
+            {
+                "id": 1,
+                "active": True,
+                "activatedAt": 1725177843,
+                "trialEndAt": None,
+                "plan": PLAN_GROUP,
+                "coupon": None,
+                "orders": [{"coupon": None, "createdAt": 100}],
+            },
+            {
+                "id": 2,
+                "active": True,
+                "activatedAt": 1725177843,
+                "trialEndAt": None,
+                "plan": PLAN_OTHER,
+                "coupon": None,
+                "orders": [{"coupon": None, "createdAt": 100}],
+            },
+            {
+                "id": 3,
+                "active": False,
+                "activatedAt": 1725177843,
+                "trialEndAt": None,
+                "plan": PLAN_GROUP,
+                "coupon": None,
+                "orders": [{"coupon": None, "createdAt": 100}],
+            },
         ]
-    ) == dict(id=1, active=True, activatedAt=123, plan=PLAN_GROUP)
+    )
+
+    assert subscription["id"] == 1
 
 
 def test_get_active_subscription_multiple_active():
     with pytest.raises(ValueError):
         get_active_subscription(
             [
-                dict(id=1, active=True, activatedAt=123, plan=PLAN_CLUB),
-                dict(id=2, active=True, activatedAt=123, plan=PLAN_CLUB),
-                dict(id=3, active=False, activatedAt=123, plan=PLAN_CLUB),
+                {
+                    "id": 1,
+                    "active": True,
+                    "activatedAt": 1725177843,
+                    "trialEndAt": None,
+                    "plan": PLAN_CLUB,
+                    "coupon": None,
+                    "orders": [{"coupon": None, "createdAt": 100}],
+                },
+                {
+                    "id": 2,
+                    "active": True,
+                    "activatedAt": 1725177843,
+                    "trialEndAt": None,
+                    "plan": PLAN_CLUB,
+                    "coupon": None,
+                    "orders": [{"coupon": None, "createdAt": 100}],
+                },
+                {
+                    "id": 3,
+                    "active": False,
+                    "activatedAt": 1725177843,
+                    "trialEndAt": None,
+                    "plan": PLAN_CLUB,
+                    "coupon": None,
+                    "orders": [{"coupon": None, "createdAt": 100}],
+                },
             ]
         )
 
 
+def test_get_active_subscription_multiple_active_tolerates_finaid_together_with_group_plan():
+    subscription = get_active_subscription(
+        [
+            {
+                "id": 1,
+                "active": True,
+                "activatedAt": 1725177843,
+                "trialEndAt": None,
+                "plan": PLAN_GROUP,
+                "coupon": None,
+                "orders": [{"coupon": None, "createdAt": 100}],
+            },
+            {
+                "id": 2,
+                "active": True,
+                "activatedAt": 1725177843,
+                "trialEndAt": None,
+                "plan": PLAN_CLUB,
+                "coupon": None,
+                "orders": [{"coupon": {"code": "FINAID12345678"}, "createdAt": 100}],
+            },
+            {
+                "id": 3,
+                "active": False,
+                "activatedAt": 1725177843,
+                "trialEndAt": None,
+                "plan": PLAN_CLUB,
+                "coupon": None,
+                "orders": [{"coupon": None, "createdAt": 100}],
+            },
+        ]
+    )
+
+    assert subscription["id"] == 1
+
+
 @pytest.mark.parametrize(
-    "today, active1, expected",
+    "today, active1, expected_id",
     [
-        (
-            date(2023, 8, 10),
-            True,
-            dict(id=1, active=True, activatedAt=1663146115, plan=PLAN_CLUB),
-        ),
-        (
-            date(2023, 9, 14),
-            True,
-            dict(id=2, active=True, activatedAt=1694685504, plan=PLAN_CLUB),
-        ),
-        (
-            date(2023, 9, 14),
-            False,
-            dict(id=2, active=True, activatedAt=1694685504, plan=PLAN_CLUB),
-        ),
-        (
-            date(2023, 9, 15),
-            False,
-            dict(id=2, active=True, activatedAt=1694685504, plan=PLAN_CLUB),
-        ),
-        (
-            date(2023, 9, 16),
-            False,
-            dict(id=2, active=True, activatedAt=1694685504, plan=PLAN_CLUB),
-        ),
+        (date(2023, 8, 10), True, 1),
+        (date(2023, 9, 14), True, 2),
+        (date(2023, 9, 14), False, 2),
+        (date(2023, 9, 15), False, 2),
+        (date(2023, 9, 16), False, 2),
     ],
 )
 def test_get_active_subscription_multiple_active_but_one_starts_in_the_future(
-    today, active1, expected
+    today, active1, expected_id
 ):
-    assert (
-        get_active_subscription(
-            [
-                dict(id=2, active=True, activatedAt=1694685504, plan=PLAN_CLUB),
-                dict(id=1, active=active1, activatedAt=1663146115, plan=PLAN_CLUB),
-            ],
-            today=today,
-        )
-        == expected
+    subscription = get_active_subscription(
+        [
+            {
+                "id": 2,
+                "active": True,
+                "activatedAt": 1694685504,
+                "trialEndAt": None,
+                "plan": PLAN_CLUB,
+                "coupon": None,
+                "orders": [{"coupon": None, "createdAt": 100}],
+            },
+            {
+                "id": 1,
+                "active": active1,
+                "activatedAt": 1663146115,
+                "trialEndAt": None,
+                "plan": PLAN_CLUB,
+                "coupon": None,
+                "orders": [{"coupon": None, "createdAt": 100}],
+            },
+        ],
+        today=today,
     )
+
+    assert subscription["id"] == expected_id
 
 
 def test_get_active_subscription_no_active():
     with pytest.raises(ValueError):
         get_active_subscription(
             [
-                dict(id=1, active=False, activatedAt=123, plan=PLAN_CLUB),
-                dict(id=2, active=False, activatedAt=123, plan=PLAN_CLUB),
-                dict(id=3, active=False, activatedAt=123, plan=PLAN_CLUB),
+                {
+                    "id": 1,
+                    "active": False,
+                    "activatedAt": 1725177843,
+                    "trialEndAt": None,
+                    "plan": PLAN_CLUB,
+                    "coupon": None,
+                    "orders": [{"coupon": None, "createdAt": 100}],
+                },
+                {
+                    "id": 2,
+                    "active": False,
+                    "activatedAt": 1725177843,
+                    "trialEndAt": None,
+                    "plan": PLAN_CLUB,
+                    "coupon": None,
+                    "orders": [{"coupon": None, "createdAt": 100}],
+                },
+                {
+                    "id": 3,
+                    "active": False,
+                    "activatedAt": 1725177843,
+                    "trialEndAt": None,
+                    "plan": PLAN_CLUB,
+                    "coupon": None,
+                    "orders": [{"coupon": None, "createdAt": 100}],
+                },
             ]
         )
 
@@ -193,8 +365,20 @@ def test_get_active_subscription_no_items():
 def test_get_expires_at():
     expires_at = get_expires_at(
         [
-            dict(id=1, active=True, expiresAt=1663146115, plan=PLAN_CLUB),
-            dict(id=2, active=False, expiresAt=1694685504, plan=PLAN_CLUB),
+            {
+                "id": 1,
+                "active": True,
+                "expiresAt": 1663146115,
+                "plan": PLAN_CLUB,
+                "coupon": None,
+            },
+            {
+                "id": 2,
+                "active": False,
+                "expiresAt": 1694685504,
+                "plan": PLAN_CLUB,
+                "coupon": None,
+            },
         ]
     )
 
@@ -204,8 +388,20 @@ def test_get_expires_at():
 def test_get_expires_at_multiple_active_and_one_expires_later():
     expires_at = get_expires_at(
         [
-            dict(id=1, active=True, expiresAt=1663146115, plan=PLAN_CLUB),
-            dict(id=2, active=True, expiresAt=1694685504, plan=PLAN_CLUB),
+            {
+                "id": 1,
+                "active": True,
+                "expiresAt": 1663146115,
+                "plan": PLAN_CLUB,
+                "coupon": None,
+            },
+            {
+                "id": 2,
+                "active": True,
+                "expiresAt": 1694685504,
+                "plan": PLAN_CLUB,
+                "coupon": None,
+            },
         ]
     )
 
