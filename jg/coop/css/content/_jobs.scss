@@ -1,0 +1,35 @@
+.jobs-list {
+  @extend .list-unstyled;
+  margin-bottom: $spacer;
+}
+
+.jobs-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+  padding: $spacer;
+  margin-bottom: $spacer;
+  background: $jg-blue-light;
+  border-radius: $border-radius;
+}
+
+.jobs-logo {
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding: .25rem;
+  margin-right: $spacer;
+  background: $jg-white;
+  // border: 1px solid $border-color;
+  border-radius: $border-radius;
+}
+
+.jobs-image {
+  display: block;
+  width: map-get($spacers, 5);
+  height: map-get($spacers, 5);
+}
+
+.jobs-title {
+  @extend .fs-5;
+  font-weight: $font-weight-normal;
+}

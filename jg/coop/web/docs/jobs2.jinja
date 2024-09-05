@@ -13,25 +13,38 @@ template: main_subnav.html
   které jsou vhodné pro začátečníky.
 {% endcall %}
 
-<ul>
-{% for job in jobs %}
-<li>
-  <h3>{{ job.title }}</h3>
-  {{ img('static/' + job.company_logo_path, 'Logo ' + job.company_name, 100, 100) }}
-  <p>
-    {{ job.company_name }}, {{ job.location }}<br>
-    {% if job.is_submitted %}
-      <a class="jobs-inline-link" href="{{ job.url|relative_url }}" itemprop="url">
-    {% else %}
-      <a class="jobs-inline-link" href="{{ jobs_url }}">
-    {% endif %}
-        odkaz
-      </a>
-  </p>
-</li>
-{% endfor %}
-</ul>
-
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Zbytek se teprve připravuje.
+  {{ 'exclamation-circle'|icon }} Teprve se to tady připravuje.
 {% endcall %}
+
+<div class="jobs">
+  <ul class="jobs-list">
+  {% for job in jobs %}
+    <li class="jobs-item">
+      <div class="jobs-logo">
+        {{ img('static/' + job.company_logo_path, 'Logo ' + job.company_name, 100, 100, class="jobs-image") }}
+      </div>
+      <div class="jobs-body">
+        <h3 class="jobs-title">{{ job.title }}</h3>
+        <p class="jobs-description">
+          <strong>{{ job.company_name }}</strong>
+          {% if job.location != "?" %}
+          — {{ job.location }}
+          {% endif %}
+        </p>
+      </div>
+
+      {# <p>
+        {{ job.company_name }}, {{ job.location }}<br>
+        {% if job.is_submitted %}
+          <a class="jobs-inline-link" href="{{ job.url|relative_url }}" itemprop="url">
+        {% else %}
+          <a class="jobs-inline-link" href="{{ jobs_url }}">
+        {% endif %}
+            odkaz
+          </a>
+      </p> #}
+    </li>
+  {% endfor %}
+  </ul>
+</div>
