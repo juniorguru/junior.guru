@@ -6,6 +6,7 @@ from urllib.parse import urlparse
 
 import favicon
 import requests
+from fontTools.ttLib import TTFont
 from PIL import Image, ImageChops, ImageDraw, ImageFont, ImageOps
 
 from jg.coop.cli.sync import main as cli
@@ -22,9 +23,9 @@ IMAGES_DIR = Path("jg/coop/images")
 
 LOGOS_DIR = IMAGES_DIR / "logos-jobs"
 
-FONT_PATH = Path(
-    "node_modules/@fontsource/inter/files/inter-latin-ext-800-normal.woff2"
-)
+FONT_DIR = Path("node_modules/@fontsource/inter/files")
+
+FONT_WIDTH = 800
 
 WORKERS = 4
 
@@ -58,10 +59,17 @@ logger = loggers.from_path(__file__)
 @cli.sync_command(dependencies=["jobs-listing"])
 @db.connection_context()
 def main():
+    jobs = ListedJob.listing()
+
+    logger.info("Clear old logos")
     Path(LOGOS_DIR).mkdir(exist_ok=True, parents=True)
+    for path in LOGOS_DIR.glob("*.png"):
+        path.unlink()
+    for job in jobs:
+        job.company_logo_path = None
+        job.save()
 
     with Pool(WORKERS) as pool:
-        jobs = ListedJob.listing()
         urls = {}
 
         logger.info("Registering company logo URLs")
@@ -97,16 +105,17 @@ def main():
                 logger.debug(f"Logo for {job!r}: {job.company_logo_path}")
             job.save()
 
-        logger.info("Generating logos for remaining jobs")
-        for job in ListedJob.no_logo_listing():
-            hash = hashlib.sha1(job.initial.encode()).hexdigest()
-            image_path = LOGOS_DIR / f"{hash}.png"
-            if not image_path.exists():
-                image = create_fallback_image(job.initial)
-                image.save(image_path)
-            job.company_logo_path = image_path.relative_to(IMAGES_DIR)
-            job.save()
-            logger.debug(f"Logo for {job!r}: {job.company_logo_path}")
+    logger.info("Generating fallback logo images for remaining jobs")
+    for job in ListedJob.no_logo_listing():
+        hash = hashlib.sha1(job.initial.encode()).hexdigest()
+        image_path = LOGOS_DIR / f"{hash}.png"
+        if not image_path.exists():
+            logger.debug(f"Generating initial {job.initial!r}")
+            image = create_fallback_image(job.initial)
+            image.save(image_path)
+        job.company_logo_path = image_path.relative_to(IMAGES_DIR)
+        job.save()
+        logger.debug(f"Logo for {job!r}: {job.company_logo_path}")
 
 
 def sort_key(logo):
@@ -206,9 +215,21 @@ def create_fallback_image(
     bg_color: tuple[int] = (255, 255, 255),
     padding: int = 5,
 ) -> Image:
+    # the fonts provided by @fontsource/inter are split into files according to
+    # the character set they support, so we need to choose the right one based
+    # on the initial character
+    font_path = next(
+        font_path
+        for font_path in [
+            FONT_DIR / f"inter-latin-{FONT_WIDTH}-normal.woff2",
+            FONT_DIR / f"inter-latin-ext-{FONT_WIDTH}-normal.woff2",
+        ]
+        if any(ord(initial) in table.cmap for table in TTFont(font_path)["cmap"].tables)
+    )
+
     image = Image.new("RGB", (SIZE_PX, SIZE_PX), bg_color)
     draw = ImageDraw.Draw(image)
-    font = ImageFont.truetype(FONT_PATH, SIZE_PX - (padding * 2))
+    font = ImageFont.truetype(font_path, SIZE_PX - (padding * 2))
 
     # centering the text
     _, _, box_width, box_height = draw.textbbox(xy=(0, 0), text=initial, font=font)
