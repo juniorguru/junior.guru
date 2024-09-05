@@ -45,13 +45,6 @@
             </span>
           </span>
         {% endif %}
-        {% set tags = job.tags()|reject('eq', 'NEW')|list %}
-        {% if tags %}
-          &mdash;
-          {% for tag in tags %}
-            {{ tag|tag_label }}{% if not loop.last %},{% endif %}
-          {% endfor %}
-        {% endif %}
       </p>
     </header>
 

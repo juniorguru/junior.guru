@@ -15,6 +15,7 @@ from slugify import slugify
 
 from jg.coop.lib.md import md as md_
 from jg.coop.lib.url_params import strip_utm_params
+from jg.coop.models.job import Tag
 
 
 def email_link(email: str) -> Markup:
@@ -38,23 +39,6 @@ def md(*args, **kwargs):
 
 def remove_p(html):
     return Markup(re.sub(r"</?p[^>]*>", "", html))
-
-
-TAGS_MAPPING = {
-    "REMOTE": "na dálku",
-    "PART_TIME": "částečný úvazek",
-    "CONTRACT": "kontrakt",
-    "INTERNSHIP": "stáž",
-    "UNPAID_INTERNSHIP": "neplacená stáž",
-    "VOLUNTEERING": "dobrovolnictví",
-    "ALSO_PART_TIME": "lze i částečný úvazek",
-    "ALSO_CONTRACT": "lze i kontrakt",
-    "ALSO_INTERNSHIP": "lze i stáž",
-}
-
-
-def tag_label(tag):
-    return TAGS_MAPPING[tag]
 
 
 def local_time(dt):

@@ -10,50 +10,57 @@ from jg.coop.sync.jobs_scraped.pipelines.employment_types_cleaner import (
 @pytest.mark.parametrize(
     "employment_type, expected",
     [
-        # common sense
-        ("fulltime", "FULL_TIME"),
-        ("full time", "FULL_TIME"),
-        ("parttime", "PART_TIME"),
-        ("part time", "PART_TIME"),
-        # StackOverflow
-        ("Full-time", "FULL_TIME"),
-        ("Internship", "INTERNSHIP"),
-        ("Contract", "CONTRACT"),
-        # StartupJobs
-        ("external collaboration", "CONTRACT"),
-        # Jobs
-        ("full-time work", "FULL_TIME"),
-        ("práce na plný úvazek", "FULL_TIME"),
-        ("part-time work", "PART_TIME"),
-        ("práce na zkrácený úvazek", "PART_TIME"),
-        # junior.guru
-        ("paid internship", "PAID_INTERNSHIP"),
-        ("unpaid internship", "UNPAID_INTERNSHIP"),
-        ("internship", "INTERNSHIP"),
-        ("volunteering", "VOLUNTEERING"),
-        ("plný úvazek", "FULL_TIME"),
-        ("částečný úvazek", "PART_TIME"),
-        ("placená stáž", "PAID_INTERNSHIP"),
-        ("neplacená stáž", "UNPAID_INTERNSHIP"),
-        ("stáž", "INTERNSHIP"),
-        ("dobrovolnictví", "VOLUNTEERING"),
-        # removing an unknown employment type
-        ("Gargamel", None),
+        ("částečný úvazek", "parttime"),
+        ("Contract", "contract"),
+        ("dobrovolnictví", "volunteering"),
+        ("external collaboration", "contract"),
+        ("full time", "fulltime"),
+        ("full-time work", "fulltime"),
+        ("Full-time", "fulltime"),
+        ("fulltime", "fulltime"),
+        ("internship", "internship"),
+        ("Internship", "internship"),
+        ("neplacená stáž", "internship"),
+        ("paid internship", "internship"),
+        ("part time", "parttime"),
+        ("part-time work", "parttime"),
+        ("parttime", "parttime"),
+        ("placená stáž", "internship"),
+        ("plný úvazek", "fulltime"),
+        ("práce na plný úvazek", "fulltime"),
+        ("práce na zkrácený úvazek", "parttime"),
+        ("praxe a stáže", "internship"),
+        ("stáž", "internship"),
+        ("trainee programs", "internship"),
+        ("trainee programy", "internship"),
+        ("unpaid internship", "internship"),
+        ("volunteering", "volunteering"),
     ],
 )
-def test_employment_types_cleaner_clean_employment_type(employment_type, expected):
+def test_clean_employment_type(employment_type, expected):
     assert clean_employment_type(employment_type) == expected
+
+
+def test_clean_employment_type_raises():
+    with pytest.raises(ValueError):
+        assert clean_employment_type("gargamel")
 
 
 @pytest.mark.parametrize(
     "item, expected",
     [
-        (dict(employment_types=["Full-Time"]), dict(employment_types=["FULL_TIME"])),
+        (
+            dict(employment_types=["Full-Time"]),
+            dict(employment_types=["fulltime"]),
+        ),
         (
             dict(employment_types=["part time", "Full-Time"]),
-            dict(employment_types=["FULL_TIME", "PART_TIME"]),
+            dict(employment_types=["fulltime", "parttime"]),
         ),
-        (dict(), dict()),
+        (
+            dict(),
+            dict(),
+        ),
     ],
 )
 @pytest.mark.asyncio
@@ -66,10 +73,15 @@ async def test_employment_types_cleaner(item, expected):
 @pytest.mark.parametrize(
     "employment_types, expected",
     [
-        (["Full-Time", "Gargamel"], ["FULL_TIME"]),
-        (["Gargamel"], []),
-        (["Full-Time", "Gargamel", "full time"], ["FULL_TIME"]),
+        (["Full-Time", "dobrovolnictví"], ["fulltime", "volunteering"]),
+        (["Full-Time", "full time"], ["fulltime"]),
+        (["Full-Time", "part time"], ["fulltime", "parttime"]),
     ],
 )
-def test_employment_types_cleaner_clean_employment_types(employment_types, expected):
+def test_clean_employment_types(employment_types, expected):
     assert clean_employment_types(employment_types) == expected
+
+
+def test_clean_employment_types_raises():
+    with pytest.raises(ValueError):
+        assert clean_employment_types(["Full-Time", "Gargamel"])

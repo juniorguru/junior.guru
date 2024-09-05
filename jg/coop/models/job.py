@@ -1,6 +1,6 @@
 import textwrap
 from datetime import date, datetime, time, timedelta
-from functools import lru_cache
+from enum import StrEnum, auto
 from typing import Iterable, Self
 from urllib.parse import quote_plus
 
@@ -13,41 +13,26 @@ from peewee import (
     fn,
 )
 from playhouse.shortcuts import model_to_dict
+from pydantic import BaseModel as PydanticBaseModel
 
 from jg.coop.models.base import BaseModel, JSONField
 
 
-EMPLOYMENT_TYPES = [
-    "FULL_TIME",
-    "PART_TIME",
-    "CONTRACT",
-    "PAID_INTERNSHIP",
-    "UNPAID_INTERNSHIP",
-    "INTERNSHIP",
-    "VOLUNTEERING",
-]
+class TagType(StrEnum):
+    REMOTE = auto()
+    EMPLOYMENT = auto()
+    LOCATION = auto()
+    SOURCE = auto()
 
-EMPLOYMENT_TYPES_RULES = [
-    # internship
-    ({"INTERNSHIP", "PAID_INTERNSHIP"}, {"INTERNSHIP"}),
-    ({"UNPAID_INTERNSHIP", "PAID_INTERNSHIP"}, {"INTERNSHIP"}),
-    ({"INTERNSHIP", "UNPAID_INTERNSHIP"}, {"UNPAID_INTERNSHIP"}),
-    # volunteering
-    ({"CONTRACT", "VOLUNTEERING"}, {"CONTRACT"}),
-    ({"PART_TIME", "VOLUNTEERING"}, {"PART_TIME"}),
-    ({"FULL_TIME", "VOLUNTEERING"}, {"FULL_TIME"}),
-    ({"INTERNSHIP", "VOLUNTEERING"}, {"INTERNSHIP"}),
-    ({"PAID_INTERNSHIP", "VOLUNTEERING"}, {"INTERNSHIP"}),
-    # full time
-    ({"FULL_TIME", "PART_TIME"}, {"FULL_TIME", "ALSO_PART_TIME"}),
-    ({"FULL_TIME", "CONTRACT"}, {"FULL_TIME", "ALSO_CONTRACT"}),
-    ({"FULL_TIME", "PAID_INTERNSHIP"}, {"FULL_TIME", "ALSO_INTERNSHIP"}),
-    ({"FULL_TIME", "UNPAID_INTERNSHIP"}, {"FULL_TIME", "ALSO_INTERNSHIP"}),
-    ({"FULL_TIME", "INTERNSHIP"}, {"FULL_TIME", "ALSO_INTERNSHIP"}),
-    # paid internship
-    ({"PAID_INTERNSHIP"}, {"INTERNSHIP"}),
-    ({"FULL_TIME"}, set()),
-]
+
+class Tag(PydanticBaseModel):
+    slug: str
+    type: TagType
+
+    @property
+    def name(self) -> str:
+        return f"#{self.slug}"
+
 
 JOB_EXPIRED_SOON_DAYS = 10
 
@@ -278,14 +263,20 @@ class ListedJob(BaseModel):
     def is_highlighted(self) -> bool:
         return self.is_submitted
 
-    def tags(self) -> list:
+    @property
+    def tags(self) -> list[Tag]:
         tags = []
         if self.remote:
-            tags.append("REMOTE")
-        if self.employment_types:
-            employment_types = frozenset(self.employment_types)
-            tags.extend(get_employment_types_tags(employment_types))
+            tags.append(Tag(slug="remote", type=TagType.REMOTE))
+        for employment_type in self.employment_types:
+            tags.append(Tag(slug=employment_type, type=TagType.EMPLOYMENT))
+        for source in self.sources:
+            tags.append(Tag(slug=source, type=TagType.SOURCE))
         return tags
+
+    @property
+    def sources(self) -> list[str]:
+        return [board_id.split("#")[0] for board_id in self.boards_ids]
 
     @property
     def location(self) -> str:
@@ -359,17 +350,13 @@ class ListedJob(BaseModel):
     @classmethod
     def tags_listing(cls, tags) -> Iterable[Self]:
         tags = set(tags)
-        return [job for job in cls.listing() if tags & set(job.tags())]
+        return [
+            job for job in cls.listing() if tags & set([tag.slug for tag in job.tags])
+        ]
 
     @classmethod
     def internship_listing(cls) -> Iterable[Self]:
-        return cls.tags_listing(
-            [
-                "INTERNSHIP",
-                "UNPAID_INTERNSHIP",
-                "ALSO_INTERNSHIP",
-            ]
-        )
+        return cls.tags_listing(["INTERNSHIP"])
 
     @classmethod
     def volunteering_listing(cls) -> Iterable[Self]:
@@ -416,15 +403,6 @@ class ListedJob(BaseModel):
                 description_html=self.description_html,
             ),
         )
-
-
-@lru_cache()
-def get_employment_types_tags(types):
-    types = set(types)
-    for rule_match, rule_repl in EMPLOYMENT_TYPES_RULES:
-        if rule_match <= types:
-            types = (types - rule_match) | rule_repl
-    return types
 
 
 def columns(values, columns_count):

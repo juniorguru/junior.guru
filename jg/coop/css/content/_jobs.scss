@@ -38,3 +38,19 @@
   // font-weight: $font-weight-normal;
   color: $jg-blue;
 }
+
+.jobs-info-item {
+  margin-right: $spacer;
+  text-wrap: nowrap;
+}
+
+.jobs-tag {
+  @extend .badge;
+  color: $jg-dark;
+  background: $jg-white;
+}
+
+.jobs-source {
+  @extend .small;
+  margin-bottom: 0;
+}

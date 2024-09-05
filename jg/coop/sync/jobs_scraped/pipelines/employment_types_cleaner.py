@@ -1,27 +1,44 @@
 import re
+from enum import StrEnum, auto
 
-from jg.coop.models.job import EMPLOYMENT_TYPES
+
+class EmploymentTypes(StrEnum):
+    CONTRACT = auto()
+    FULLTIME = auto()
+    INTERNSHIP = auto()
+    PARTTIME = auto()
+    VOLUNTEERING = auto()
 
 
 STOP_WORDS = [
     re.compile(r"\bwork\b"),
     re.compile(r"\bpráce\s+na\b"),
     re.compile(r"\bpráce\b"),
+    re.compile(r"\bprogram[sy]?\b"),
 ]
 
 SEPARATORS_RE = re.compile(r"[\-\s]+")
 
 EMPLOYMENT_TYPES_MAPPING = {
-    "fulltime": "FULL_TIME",
-    "parttime": "PART_TIME",
-    "external_collaboration": "CONTRACT",
-    "plný_úvazek": "FULL_TIME",
-    "částečný_úvazek": "PART_TIME",
-    "zkrácený_úvazek": "PART_TIME",
-    "placená_stáž": "PAID_INTERNSHIP",
-    "neplacená_stáž": "UNPAID_INTERNSHIP",
-    "stáž": "INTERNSHIP",
-    "dobrovolnictví": "VOLUNTEERING",
+    "částečný_úvazek": EmploymentTypes.PARTTIME,
+    "contract": EmploymentTypes.CONTRACT,
+    "dobrovolnictví": EmploymentTypes.VOLUNTEERING,
+    "external_collaboration": EmploymentTypes.CONTRACT,
+    "full_time": EmploymentTypes.FULLTIME,
+    "fulltime": EmploymentTypes.FULLTIME,
+    "internship": EmploymentTypes.INTERNSHIP,
+    "neplacená_stáž": EmploymentTypes.INTERNSHIP,
+    "paid_internship": EmploymentTypes.INTERNSHIP,
+    "part_time": EmploymentTypes.PARTTIME,
+    "parttime": EmploymentTypes.PARTTIME,
+    "placená_stáž": EmploymentTypes.INTERNSHIP,
+    "plný_úvazek": EmploymentTypes.FULLTIME,
+    "stáž": EmploymentTypes.INTERNSHIP,
+    "trainee": EmploymentTypes.INTERNSHIP,
+    "unpaid_internship": EmploymentTypes.INTERNSHIP,
+    "volunteering": EmploymentTypes.VOLUNTEERING,
+    "zkrácený_úvazek": EmploymentTypes.PARTTIME,
+    "praxe_a_stáže": EmploymentTypes.INTERNSHIP,
 }
 
 
@@ -31,15 +48,16 @@ async def process(item: dict) -> dict:
     return item
 
 
-def clean_employment_types(employment_types):
-    employment_types = map(clean_employment_type, employment_types)
-    return sorted(set(filter(None, employment_types)))
+def clean_employment_types(employment_types: list[str]) -> list[str]:
+    return sorted(set(map(clean_employment_type, employment_types)))
 
 
-def clean_employment_type(employment_type):
+def clean_employment_type(employment_type: str) -> str:
     value = employment_type.lower()
     for stop_word_re in STOP_WORDS:
         value = stop_word_re.sub("", value)
     mapping_key = SEPARATORS_RE.sub("_", value.strip())
-    value = EMPLOYMENT_TYPES_MAPPING.get(mapping_key, mapping_key.upper())
-    return value if value in EMPLOYMENT_TYPES else None
+    try:
+        return str(EMPLOYMENT_TYPES_MAPPING[mapping_key]).lower()
+    except KeyError:
+        raise ValueError(f"Unknown employment type: {employment_type}")

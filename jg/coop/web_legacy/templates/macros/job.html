@@ -55,13 +55,7 @@
           </p>
         </div>
       </div>
-      <ul class="jobs__tags">
-        {% for tag in job.tags() %}
-          <li class="jobs__tag jobs__tag--{{ tag|lower|replace('_', '-') }}">
-            {{ tag|tag_label }}
-          </li>
-        {% endfor %}
-      </ul>
+      <ul class="jobs__tags"></ul>{# intentionally deleted #}
     </a>
   </li>
 {% endmacro %}

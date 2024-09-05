@@ -92,7 +92,6 @@ for template_filter in [
     template_filters.email_link,
     template_filters.md,
     template_filters.remove_p,
-    template_filters.tag_label,
     template_filters.sample,
     template_filters.sample_jobs,
     template_filters.relative_url,

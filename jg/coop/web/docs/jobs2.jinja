@@ -9,7 +9,7 @@ template: main_subnav.html
 <h1>Pracovní inzeráty pro juniory</h1>
 {% call lead() %}
   Už žádné „požadujeme 4 roky zkušeností“. Tento pracovní portál je na tvé straně.
-  Robot každý den stahuje inzeráty z celého internetu a pomocí umělé inteligence vybírá jen ty,
+  Robot každý den stahuje inzeráty z celého internetu a pomocí umělé inteligence {{ "stars"|icon }} vybírá jen ty,
   které jsou vhodné pro začátečníky.
 {% endcall %}
 
@@ -26,12 +26,31 @@ template: main_subnav.html
       </div>
       <div class="jobs-body">
         <h3 class="jobs-title">{{ job.title }}</h3>
-        <p class="jobs-description">
-          <strong>{{ job.company_name }}</strong>
+        <p class="jobs-info">
+          <strong class="jobs-info-item">
+            {{ job.company_name }}
+          </strong>
           {% if job.location != "?" %}
-          — {{ job.location }}
+            <span class="jobs-info-item">
+              {{ "geo-alt"|icon }}
+              {{ job.location }}
+            </span>
           {% endif %}
         </p>
+        <p class="jobs-tags">
+          {% for tag in job.tags %}
+            <span class="jobs-tag">{{ tag.name }}</span>
+          {% endfor %}
+        </p>
+          <!--
+        <p class="jobs-toolbar">
+            vysvetlit co znamena diskutovat
+            mit URL na inzerat v klubu
+            reklama na to že když chceš dostávat nabídky práce realtime, tak se přidej do klubu
+            <button class="btn btn-outline-dark btn-sm">Diskutovat</button>
+            <button class="btn btn-primary btn-sm">{{ "arrow-up-right-circle-fill"|icon }} Celý inzerát</button>
+        </p>
+          -->
       </div>
 
       {# <p>

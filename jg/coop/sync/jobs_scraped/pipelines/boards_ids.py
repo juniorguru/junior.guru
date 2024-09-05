@@ -29,7 +29,8 @@ async def process(item: dict) -> dict:
     except KeyError as e:
         raise DropItem(str(e))
 
-    item["boards_ids"] = parse_urls(filter(None, [url, item.get("apply_url")]))
+    urls = filter(None, item.get("source_urls", []) + [url, item.get("apply_url")])
+    item["boards_ids"] = parse_urls(urls)
     return item
 
 
