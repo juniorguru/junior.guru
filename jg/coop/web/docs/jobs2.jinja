@@ -20,7 +20,7 @@ template: main_subnav.html
 <div class="jobs">
   <ul class="jobs-list">
   {% for job in jobs %}
-    <li class="jobs-item">
+    <li class="jobs-item{% if job.is_highlighted %} highlighted{% endif %}">
       <div class="jobs-logo">
         {{ img('static/' + job.company_logo_path, 'Logo ' + job.company_name, 100, 100, class="jobs-image") }}
       </div>

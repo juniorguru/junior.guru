@@ -13,6 +13,10 @@
   border-radius: $border-radius;
 }
 
+.jobs-item.highlighted {
+  background: $jg-yellow-light;
+}
+
 .jobs-logo {
   flex-grow: 0;
   flex-shrink: 0;
@@ -31,5 +35,6 @@
 
 .jobs-title {
   @extend .fs-5;
-  font-weight: $font-weight-normal;
+  // font-weight: $font-weight-normal;
+  color: $jg-blue;
 }
