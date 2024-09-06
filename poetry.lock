@@ -1508,7 +1508,7 @@ pydantic = "2.8.2"
 type = "git"
 url = "https://github.com/juniorguru/hen.git"
 reference = "HEAD"
-resolved_reference = "bb25fd86a05a11fc39e612ae0b186248dfecbf75"
+resolved_reference = "3830b84108e39f6be01afa545d3a8db2f164a69b"
 
 [[package]]
 name = "jinja2"
