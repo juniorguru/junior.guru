@@ -15,7 +15,6 @@ from slugify import slugify
 
 from jg.coop.lib.md import md as md_
 from jg.coop.lib.url_params import strip_utm_params
-from jg.coop.models.job import Tag
 
 
 def email_link(email: str) -> Markup:
