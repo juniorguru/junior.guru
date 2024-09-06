@@ -99,19 +99,6 @@ for template_filter in [
     app.template_filter()(template_filter)
 
 
-@app.route("/jobs/")
-@db.connection_context()
-def jobs():
-    jobs = ListedJob.listing()
-    return render_template(
-        "jobs.html",
-        nav_active="jobs",
-        jobs=jobs,
-        regions=REGIONS,
-        thumbnail=LegacyThumbnail.image_path_by_url("/jobs/"),
-    )
-
-
 @app.route("/jobs/remote/")
 @db.connection_context()
 def jobs_remote():
@@ -197,6 +184,11 @@ REFRESH_PAGE = (
 
 @app.route("/")
 def index():
+    return REFRESH_PAGE
+
+
+@app.route("/jobs/")
+def jobs():
     return REFRESH_PAGE
 
 

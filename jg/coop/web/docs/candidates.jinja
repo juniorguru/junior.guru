@@ -16,17 +16,21 @@ template: main_subnav.html
   Oslovuješ napřímo, nic neplatíš.
 {% endcall %}
 
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tato stránka se teprve připravuje.
+{% endcall %}
+
 <ul>
 {% for candidate in candidates %}
     <li>
-        {{ candidate.name }}, <a href="{{ candidate.github_url }}">{{ candidate.github_username }}</a>
+        {{ candidate.name }}:
+        <a href="{{ candidate.github_url }}">{{ "github"|icon }} GitHub</a>
+        {% if candidate.linkedin_url %}
+          <a href="{{ candidate.linkedin_url }}">{{ "linkedin"|icon }} LinkedIn</a>
+        {% endif %}
     </li>
 {% endfor %}
     <li>
         <a href="https://github.com/juniorguru/eggtray/">Přidej se do seznamu</a>
     </li>
 </ul>
-
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Zbytek se teprve připravuje.
-{% endcall %}

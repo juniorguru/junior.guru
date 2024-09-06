@@ -103,7 +103,6 @@ def main(images_path, output_dir, width, height, clear):
             )
             for url, title in [
                 ("/membership/", "Rozcestník pro členy klubu"),
-                ("/jobs/", "Práce v IT pro začátečníky"),
                 ("/jobs/remote/", "Práce v IT pro začátečníky — na dálku"),
                 ("/jobs/region/praha/", "Práce v IT pro začátečníky — Praha"),
                 ("/jobs/region/brno/", "Práce v IT pro začátečníky — Brno"),

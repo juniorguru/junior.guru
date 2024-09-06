@@ -200,7 +200,7 @@ Možná znáš pojem [digitální nomádství](https://honzajavorek.cz/blog/prac
 
 {% if jobs_remote %}
 #### Nabídky práce na dálku
-Přímo na junior.guru najdeš [nabídky práce výhradně pro juniory](/jobs/). Některé z nich práci na dálku umožňují!
+Přímo na junior.guru najdeš [nabídky práce výhradně pro juniory](../jobs.jinja). Některé z nich práci na dálku umožňují!
 {{ jobs_inline(jobs_remote, 2, jobs_url='/jobs/remote/') }}
 {% endif %}
 
@@ -286,7 +286,7 @@ Nemáš-li nápady, mrkni na [Pyvec](https://pyvec.org/), [Česko.Digital](https
 {% endcall %}
 
 {% if jobs_volunteering %}
-Přímo na junior.guru jsou [nabídky práce výhradně pro juniory](/jobs/) a občas se mezi nimi objeví i nabídka dobrovolnictví (neziskovky a malé projekty zde mohou inzerovat zdarma). Zrovna dnes tam něco je:
+Přímo na junior.guru jsou [nabídky práce výhradně pro juniory](../jobs.jinja) a občas se mezi nimi objeví i nabídka dobrovolnictví (neziskovky a malé projekty zde mohou inzerovat zdarma). Zrovna dnes tam něco je:
 {{ jobs_inline(jobs_volunteering, 2, jobs_url='/jobs/remote/') }}
 {% endif %}
 
@@ -312,7 +312,7 @@ Pokud studuješ, máš k dispozici nástěnky, poradenská centra, pracovní vel
 Pozor na **neplacené stáže**. Je na tobě si vyhodnotit, zda se ti stáž bez odměny ve tvé situaci vyplatí a zda si to vůbec můžeš dovolit. Ač je možné se s neplacenými stážemi setkat běžně u nás i v zahraničí, je to [věc na hranici zákona i etiky](https://www.e15.cz/the-student-times/neplacene-staze-aneb-jak-nedocenitelna-je-zkusenost-1348117). Podle českého práva [není neplacená stáž jednoznačně protizákonná](https://www.epravo.cz/top/clanky/neplacena-praxe-ve-firmach-studenti-i-zamestnavatele-na-hrane-zakona-100528.html), ale **existuje šance, že v případě kontroly ze strany inspektorátu může být taková praxe vyhodnocena jako nelegální práce**.
 
 {% if jobs_internship %}
-Přímo na junior.guru najdeš [nabídky práce výhradně pro juniory](/jobs/). Zrovna dnes jsou mezi nimi i nějaké stáže:
+Přímo na junior.guru najdeš [nabídky práce výhradně pro juniory](../jobs.jinja). Zrovna dnes jsou mezi nimi i nějaké stáže:
 {{ jobs_inline(jobs_internship, 2, jobs_url='/jobs/remote/') }}
 {% endif %}
 
@@ -541,7 +541,7 @@ Např. amatérská analýza dat z LinkedIn [odhalila](https://www.reddit.com/r/d
 
 {% if jobs %}
 #### Nabídky práce na junior.guru
-Přímo na junior.guru také najdeš [pracovní portál](/jobs/), ale s nabídkami jen a pouze pro juniory. Jiné zde inzerovat ani nelze. Navíc se každý den spouští robot, který se rozhlíží i po nabídkách z dalších zdrojů. Poté je filtruje na základě přísných pravidel a nechá jen ty, o nichž usoudí, že jsou opravdu pro začátečníky:
+Přímo na junior.guru také najdeš [pracovní portál](../jobs.jinja), ale s nabídkami jen a pouze pro juniory. Jiné zde inzerovat ani nelze. Navíc se každý den spouští robot, který se rozhlíží i po nabídkách z dalších zdrojů. Poté je filtruje na základě přísných pravidel a nechá jen ty, o nichž usoudí, že jsou opravdu pro začátečníky:
 {{ jobs_inline(jobs, 3, jobs_url='/jobs/remote/') }}
 {% endif %}
 
