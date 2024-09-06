@@ -2,7 +2,7 @@ import json
 import textwrap
 from datetime import date, datetime, time, timedelta
 from enum import StrEnum, auto
-from typing import Any, Iterable, Self
+from typing import Iterable, Self
 from urllib.parse import quote_plus
 
 from peewee import (
