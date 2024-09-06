@@ -58,7 +58,6 @@
 .jobs-info-item {
   width: 100%;
   padding-right: $spacer;
-  text-wrap: nowrap;
 
   @include media-breakpoint-up(sm) {
     width: auto;
