@@ -1,14 +1,13 @@
-import itertools
 from datetime import date, timedelta
 from pathlib import Path
 
 import click
-from discord import Embed, File, ForumChannel, ui
+from discord import Embed, File, ForumChannel, Thread, ui
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
 from jg.coop.lib.discord_club import ClubClient, parse_channel
-from jg.coop.lib.mutations import mutating_discord
+from jg.coop.lib.mutations import MutationsNotAllowedError, mutating_discord
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
 from jg.coop.models.job import ListedJob
@@ -33,28 +32,36 @@ def main(channel_id: int):
 @db.connection_context()
 async def sync_jobs(client: ClubClient, channel_id: int):
     since_on = date.today() - timedelta(days=JOBS_REPEATING_PERIOD_DAYS)
-    messages = [
-        message
-        for message in ClubMessage.forum_listing(channel_id)
-        if message.created_at.date() > since_on
-    ]
+
+    messages = ClubMessage.forum_listing(channel_id)
     logger.info(f"Found {len(messages)} threads since {since_on}")
-    urls = frozenset(
-        itertools.chain.from_iterable(message.ui_urls for message in messages)
-    )
-    logger.info(f"Found {len(urls)} job URLs since {since_on}")
-    jobs = [job for job in ListedJob.listing() if job.effective_url not in urls]
+    for message in messages:
+        if message.created_at.date() > since_on:
+            if len(message.ui_urls) > 1:
+                raise ValueError(f"Multiple URLs: {message.url} {message.ui_urls!r}")
+            try:
+                url = message.ui_urls[0]
+            except IndexError:
+                # manually submitted job
+                logger.debug(f"Manually submitted job without URL: {message.url}")
+            else:
+                try:
+                    job = ListedJob.get_by_url(url)
+                    job.discord_url = message.url
+                    job.save()
+                except ListedJob.DoesNotExist:
+                    logger.debug(f"URL to a job no longer listed: {url}")
+
+    jobs = ListedJob.no_discord_listing()
+    logger.info(f"Posting {len(jobs)} new jobs to the channel")
     if jobs:
-        logger.info(f"Posting {len(jobs)} new jobs to the channel")
         channel = await client.club_guild.fetch_channel(channel_id)
         for job in jobs:
-            logger.info(f"Posting: {job.effective_url}")
-            await post_job(channel, job)
-    else:
-        logger.info("No new jobs to post")
+            job.discord_url = await post_job(channel, job)
+            job.save()
 
 
-async def post_job(channel: ForumChannel, job: ListedJob):
+async def post_job(channel: ForumChannel, job: ListedJob) -> str:
     files = []
     embeds = []
 
@@ -99,5 +106,9 @@ async def post_job(channel: ForumChannel, job: ListedJob):
     )
 
     # create!
-    with mutating_discord(channel) as proxy:
-        await proxy.create_thread(**params)
+    try:
+        with mutating_discord(channel, raises=True) as proxy:
+            thread: Thread = await proxy.create_thread(**params)
+            return thread.jump_url
+    except MutationsNotAllowedError:
+        return None

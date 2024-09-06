@@ -220,6 +220,7 @@ class ListedJob(BaseModel):
     url = CharField()
     apply_email = CharField(null=True)
     apply_url = CharField(null=True)
+    discord_url = CharField(null=True)
 
     company_name = CharField()
     company_url = CharField(null=True)
@@ -335,12 +336,20 @@ class ListedJob(BaseModel):
         return cls.select().where(cls.company_logo_path.is_null())
 
     @classmethod
+    def no_discord_listing(cls) -> Iterable[Self]:
+        return cls.select().where(cls.discord_url.is_null())
+
+    @classmethod
     def submitted_listing(cls) -> Iterable[Self]:
         return cls.select().where(cls.submitted_job.is_null(False))
 
     @classmethod
     def get_by_submitted_id(cls, submitted_job_id) -> Iterable[Self]:
         return cls.select().where(cls.submitted_job == submitted_job_id).get()
+
+    @classmethod
+    def get_by_url(cls, url) -> Self:
+        return cls.select().where(cls.apply_url == url | cls.url == url).get()
 
     @classmethod
     def region_listing(cls, region) -> Iterable[Self]:
