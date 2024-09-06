@@ -349,7 +349,10 @@ class ListedJob(BaseModel):
 
     @classmethod
     def get_by_url(cls, url) -> Self:
-        return cls.select().where(cls.apply_url == url | cls.url == url).get()
+        try:
+            return cls.select().where(cls.url == url).get()
+        except cls.DoesNotExist:
+            return cls.select().where(cls.apply_url == url).get()
 
     @classmethod
     def region_listing(cls, region) -> Iterable[Self]:

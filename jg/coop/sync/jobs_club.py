@@ -33,6 +33,12 @@ def main(channel_id: int):
 async def sync_jobs(client: ClubClient, channel_id: int):
     since_on = date.today() - timedelta(days=JOBS_REPEATING_PERIOD_DAYS)
 
+    logger.debug("Clearing Discord URLs")
+    jobs = ListedJob.listing()
+    for job in jobs:
+        job.discord_url = None
+    logger.info(f"Currently listed jobs: {len(jobs)}")
+
     messages = ClubMessage.forum_listing(channel_id)
     logger.info(f"Found {len(messages)} threads since {since_on}")
     for message in messages:
@@ -57,6 +63,7 @@ async def sync_jobs(client: ClubClient, channel_id: int):
     if jobs:
         channel = await client.club_guild.fetch_channel(channel_id)
         for job in jobs:
+            logger.debug(f"Posting: {job.effective_url}")
             job.discord_url = await post_job(channel, job)
             job.save()
 
