@@ -1,7 +1,8 @@
+import json
 import textwrap
 from datetime import date, datetime, time, timedelta
 from enum import StrEnum, auto
-from typing import Iterable, Self
+from typing import Any, Iterable, Self
 from urllib.parse import quote_plus
 
 from peewee import (
@@ -14,8 +15,12 @@ from peewee import (
 )
 from playhouse.shortcuts import model_to_dict
 from pydantic import BaseModel as PydanticBaseModel
+from slugify import slugify
 
 from jg.coop.models.base import BaseModel, JSONField
+
+
+JOB_EXPIRED_SOON_DAYS = 10
 
 
 class TagType(StrEnum):
@@ -32,9 +37,6 @@ class Tag(PydanticBaseModel):
     @property
     def name(self) -> str:
         return f"#{self.slug}"
-
-
-JOB_EXPIRED_SOON_DAYS = 10
 
 
 class SubmittedJob(BaseModel):
@@ -270,6 +272,8 @@ class ListedJob(BaseModel):
             tags.append(Tag(slug="remote", type=TagType.REMOTE))
         for employment_type in self.employment_types:
             tags.append(Tag(slug=employment_type, type=TagType.EMPLOYMENT))
+        for region in self.regions:
+            tags.append(Tag(slug=slugify(region, separator=""), type=TagType.LOCATION))
         for source in self.sources:
             tags.append(Tag(slug=source, type=TagType.SOURCE))
         return tags
@@ -277,6 +281,10 @@ class ListedJob(BaseModel):
     @property
     def sources(self) -> list[str]:
         return [board_id.split("#")[0] for board_id in self.boards_ids]
+
+    @property
+    def regions(self) -> list[str]:
+        return sorted(set(location["region"] for location in self.locations))
 
     @property
     def location(self) -> str:
@@ -365,6 +373,34 @@ class ListedJob(BaseModel):
     @classmethod
     def api_listing(cls) -> Iterable[Self]:
         return cls.select().order_by(cls.posted_on.desc())
+
+    def to_json_ld(self) -> str:
+        return json.dumps(
+            {
+                "@context": "https://schema.org",
+                "@type": "JobPosting",
+                "title": self.title,
+                "url": self.effective_url,
+                "description": (
+                    "Pracovní nabídka pro začínající programátory nebo testery: "
+                    + " — ".join([self.title, self.company_name, self.location])
+                ),
+                "datePosted": self.posted_on.isoformat(),
+                "industry": "Informační technologie",
+                "jobLocation": {
+                    "@type": "Place",
+                    "address": self.location,
+                },
+                "image": "https://junior.guru/static/" + self.company_logo_path,
+                "hiringOrganization": {
+                    "@type": "Organization",
+                    "name": self.company_name,
+                    "logo": "https://junior.guru/static/" + self.company_logo_path,
+                },
+            },
+            ensure_ascii=False,
+            sort_keys=True,
+        )
 
     def to_api(self) -> dict[str, str | int | datetime | None]:
         return dict(

@@ -4,17 +4,20 @@
 }
 
 .jobs-item {
+  position: relative;
   display: flex;
   align-items: flex-start;
   justify-content: start;
   padding: $spacer;
   margin-bottom: $spacer;
-  background: $jg-blue-light;
+  background-color: $jg-blue-light;
+  border: 1px solid $jg-blue-light;
   border-radius: $border-radius;
 }
 
 .jobs-item.highlighted {
-  background: $jg-yellow-light;
+  background-color: $jg-yellow-light;
+  border-color: $jg-yellow;
 }
 
 .jobs-logo {
@@ -23,7 +26,7 @@
   padding: .25rem;
   margin-right: $spacer;
   background: $jg-white;
-  // border: 1px solid $border-color;
+  border: 1px solid $border-color;
   border-radius: $border-radius;
 }
 
@@ -35,13 +38,31 @@
 
 .jobs-title {
   @extend .fs-5;
-  // font-weight: $font-weight-normal;
   color: $jg-blue;
 }
 
+.jobs-title-link {
+  text-decoration: none;
+  @extend .stretched-link;
+}
+
+.jobs-item:hover .jobs-title-link {
+  text-decoration: underline;
+}
+
+.jobs-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .jobs-info-item {
-  margin-right: $spacer;
+  width: 100%;
+  padding-right: $spacer;
   text-wrap: nowrap;
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+  }
 }
 
 .jobs-tag {

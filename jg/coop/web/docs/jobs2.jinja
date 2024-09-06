@@ -13,28 +13,30 @@ template: main_subnav.html
   které jsou vhodné pro začátečníky.
 {% endcall %}
 
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Teprve se to tady připravuje.
-{% endcall %}
-
 <div class="jobs">
   <ul class="jobs-list">
   {% for job in jobs %}
     <li class="jobs-item{% if job.is_highlighted %} highlighted{% endif %}">
+      <script type="application/ld+json">{{ job.to_json_ld() }}</script>
       <div class="jobs-logo">
         {{ img('static/' + job.company_logo_path, 'Logo ' + job.company_name, 100, 100, class="jobs-image") }}
       </div>
       <div class="jobs-body">
-        <h3 class="jobs-title">{{ job.title }}</h3>
+        <h3 class="jobs-title">
+          <a class="jobs-title-link"
+            {% if job.is_submitted %}
+              href="{{ job.url|relative_url }}"
+            {% else %}
+               href="{{ job.url }}" rel="nofollow noopener" target="_blank"
+            {% endif %}
+          >
+            {{ job.title }}
+          </a>
+        </h3>
         <p class="jobs-info">
-          <strong class="jobs-info-item">
-            {{ job.company_name }}
-          </strong>
+          <strong class="jobs-info-item">{{ job.company_name }}</strong>
           {% if job.location != "?" %}
-            <span class="jobs-info-item">
-              {{ "geo-alt"|icon }}
-              {{ job.location }}
-            </span>
+            <span class="jobs-info-item">{{ "geo-alt"|icon }} {{ job.location }}</span>
           {% endif %}
         </p>
         <p class="jobs-tags">
@@ -43,26 +45,15 @@ template: main_subnav.html
           {% endfor %}
         </p>
           <!--
-        <p class="jobs-toolbar">
-            vysvetlit co znamena diskutovat
-            mit URL na inzerat v klubu
-            reklama na to že když chceš dostávat nabídky práce realtime, tak se přidej do klubu
-            <button class="btn btn-outline-dark btn-sm">Diskutovat</button>
-            <button class="btn btn-primary btn-sm">{{ "arrow-up-right-circle-fill"|icon }} Celý inzerát</button>
-        </p>
+            <p class="jobs-toolbar">
+                vysvetlit co znamena diskutovat
+                mit URL na inzerat v klubu
+                reklama na to že když chceš dostávat nabídky práce realtime, tak se přidej do klubu
+                <button class="btn btn-outline-dark btn-sm">Diskutovat</button>
+                <button class="btn btn-primary btn-sm">{{ "arrow-up-right-circle-fill"|icon }} Celý inzerát</button>
+            </p>
           -->
       </div>
-
-      {# <p>
-        {{ job.company_name }}, {{ job.location }}<br>
-        {% if job.is_submitted %}
-          <a class="jobs-inline-link" href="{{ job.url|relative_url }}" itemprop="url">
-        {% else %}
-          <a class="jobs-inline-link" href="{{ jobs_url }}">
-        {% endif %}
-            odkaz
-          </a>
-      </p> #}
     </li>
   {% endfor %}
   </ul>

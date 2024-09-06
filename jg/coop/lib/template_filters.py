@@ -25,7 +25,7 @@ def email_link(email: str) -> Markup:
 
 
 def relative_url(url):
-    return url.replace("https://junior.guru", "")
+    return url.removeprefix("https://junior.guru")
 
 
 def absolute_url(url):
