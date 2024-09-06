@@ -73,6 +73,7 @@ def main(images_path, output_dir, width, height, clear):
             "/handbook/": "handbook/index.md",
             "/handbook/candidate/": "handbook/candidate.md",
             "/news/": "news.jinja",
+            "/jobs/": "jobs.jinja",
         }
         for url, src_uri in equivalents.items():
             page = Page.get(Page.src_uri == src_uri)
