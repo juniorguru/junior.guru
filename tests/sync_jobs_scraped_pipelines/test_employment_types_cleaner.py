@@ -35,6 +35,7 @@ from jg.coop.sync.jobs_scraped.pipelines.employment_types_cleaner import (
         ("trainee programy", "internship"),
         ("unpaid internship", "internship"),
         ("volunteering", "volunteering"),
+        ("other", None),
     ],
 )
 def test_clean_employment_type(employment_type, expected):
@@ -56,6 +57,14 @@ def test_clean_employment_type_raises():
         (
             dict(employment_types=["part time", "Full-Time"]),
             dict(employment_types=["fulltime", "parttime"]),
+        ),
+        (
+            dict(employment_types=["other", "Full-Time"]),
+            dict(employment_types=["fulltime"]),
+        ),
+        (
+            dict(employment_types=["other"]),
+            dict(employment_types=[]),
         ),
         (
             dict(),

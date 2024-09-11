@@ -39,6 +39,7 @@ EMPLOYMENT_TYPES_MAPPING = {
     "volunteering": EmploymentTypes.VOLUNTEERING,
     "zkrácený_úvazek": EmploymentTypes.PARTTIME,
     "praxe_a_stáže": EmploymentTypes.INTERNSHIP,
+    "other": None,
 }
 
 
@@ -49,15 +50,17 @@ async def process(item: dict) -> dict:
 
 
 def clean_employment_types(employment_types: list[str]) -> list[str]:
-    return sorted(set(map(clean_employment_type, employment_types)))
+    return sorted(set(filter(None, map(clean_employment_type, employment_types))))
 
 
-def clean_employment_type(employment_type: str) -> str:
+def clean_employment_type(employment_type: str) -> str | None:
     value = employment_type.lower()
     for stop_word_re in STOP_WORDS:
         value = stop_word_re.sub("", value)
     mapping_key = SEPARATORS_RE.sub("_", value.strip())
     try:
-        return str(EMPLOYMENT_TYPES_MAPPING[mapping_key]).lower()
+        employment_type = EMPLOYMENT_TYPES_MAPPING[mapping_key]
     except KeyError:
         raise ValueError(f"Unknown employment type: {employment_type}")
+    else:
+        return str(employment_type).lower() if employment_type else None
