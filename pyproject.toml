@@ -63,14 +63,14 @@ pyyaml = "6.0.2"
 fonttools = "4.53.1"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "8.3.2"
+pytest = "8.3.3"
 pync = "2.0.3"
 sqlite-utils = "3.37"
 ghp-import = "2.1.0"
 pytest-asyncio = "0.24.0"
 scour = "0.38.2"
 pytest-ruff = "0.4.1"
-ruff = "0.6.4"
+ruff = "0.6.5"
 
 [tool.pytest.ini_options]
 python_files = "test_*.py"
