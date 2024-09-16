@@ -1480,13 +1480,13 @@ develop = false
 aiohttp = "3.10.5"
 click = "8.1.7"
 "jg.hen" = {git = "https://github.com/juniorguru/hen.git"}
-py-cord = {version = "2.6.0", extras = ["speed"]}
+py-cord = {version = "2.6.1", extras = ["speed"]}
 
 [package.source]
 type = "git"
 url = "https://github.com/juniorguru/chick.git"
 reference = "HEAD"
-resolved_reference = "000024f7028c77539e2670fe7c11cd24eb15d25f"
+resolved_reference = "e252cfe9c5a3428063b6ab33519ba4033147e78b"
 
 [[package]]
 name = "jg-hen"
@@ -2473,13 +2473,13 @@ files = [
 
 [[package]]
 name = "py-cord"
-version = "2.6.0"
+version = "2.6.1"
 description = "A Python wrapper for the Discord API"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "py_cord-2.6.0-py3-none-any.whl", hash = "sha256:906cc077904a4d478af0264ae4374b0412ed9f9ab950d0162c4f31239a906d26"},
-    {file = "py_cord-2.6.0.tar.gz", hash = "sha256:bbc0349542965d05e4b18cc4424136206430a8cc911fda12a0a57df6fdf9cd9c"},
+    {file = "py_cord-2.6.1-py3-none-any.whl", hash = "sha256:e3d3b528c5e37b0e0825f5b884cbb9267860976c1e4878e28b55da8fd3af834b"},
+    {file = "py_cord-2.6.1.tar.gz", hash = "sha256:36064f225f2c7bbddfe542d5ed581f2a5744f618e039093cf7cd2659a58bc79b"},
 ]
 
 [package.dependencies]
@@ -3529,4 +3529,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.11"
-content-hash = "58c237aa94a246d3f4041f11618507e0b7fe394826f99817ee5ba30228547c7f"
+content-hash = "62bed3e846149bfbd90afb05d0a3b22144df6e983a0524b450091e71df905035"
