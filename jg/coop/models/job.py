@@ -1,7 +1,9 @@
+import itertools
 import json
 import textwrap
 from datetime import date, datetime, time, timedelta
 from enum import StrEnum, auto
+from operator import attrgetter
 from typing import Iterable, Self
 from urllib.parse import quote_plus
 
@@ -33,6 +35,9 @@ class TagType(StrEnum):
 class Tag(PydanticBaseModel):
     slug: str
     type: TagType
+
+    class Config:
+        frozen = True
 
     @property
     def name(self) -> str:
@@ -323,6 +328,13 @@ class ListedJob(BaseModel):
     @classmethod
     def count(cls):
         return cls.listing().count()
+
+    @classmethod
+    def all_tags(cls) -> list:
+        return sorted(
+            set(itertools.chain.from_iterable(job.tags for job in cls.listing())),
+            key=attrgetter("slug"),
+        )
 
     @classmethod
     def listing(cls) -> Iterable[Self]:

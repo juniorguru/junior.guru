@@ -16,6 +16,12 @@ template: main_subnav.html
 
 <p class="standout">Pokud chceš přidat inzerát, napiš na {{ "honza@junior.guru"|email_link }}.</p>
 
+<p class="jobs-tags standout" hidden>
+{% for tag in jobs_tags %}
+  <span class="jobs-tag" data-jobs-tag="{{ tag.slug }}">{{ tag.name }}</span>
+{% endfor %}
+</p>
+
 <div class="jobs">
   <ul class="jobs-list">
   {% for job in jobs %}
@@ -52,9 +58,9 @@ template: main_subnav.html
             {% endif %}
           </p>
         {% endif %}
-        <p class="jobs-tags">
+        <p>
           {% for tag in job.tags %}
-            <span class="jobs-tag">{{ tag.name }}</span>
+            <span class="jobs-tag" data-jobs-tag="{{ tag.slug }}">{{ tag.name }}</span>
           {% endfor %}
         </p>
           <!--

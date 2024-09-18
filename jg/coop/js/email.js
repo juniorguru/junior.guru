@@ -1,19 +1,25 @@
 function setupForm() {
+  const form = document.querySelector("#email-form");
+  const subscribed = document.querySelector("#email-subscribed");
+  const confirmed = document.querySelector("#email-confirmed");
+
+  if (!form || !subscribed || !confirmed) return;
+
   switch (window.location.hash) {
     case "#email-subscribed":
-      document.querySelector("#email-form").setAttribute("hidden", "");
-      document.querySelector("#email-subscribed").removeAttribute("hidden");
-      document.querySelector("#email-confirmed").setAttribute("hidden", "");
+      form.setAttribute("hidden", "");
+      subscribed.removeAttribute("hidden");
+      confirmed.setAttribute("hidden", "");
       break;
     case "#email-confirmed":
-      document.querySelector("#email-form").setAttribute("hidden", "");
-      document.querySelector("#email-subscribed").setAttribute("hidden", "");
-      document.querySelector("#email-confirmed").removeAttribute("hidden");
+      form.setAttribute("hidden", "");
+      subscribed.setAttribute("hidden", "");
+      confirmed.removeAttribute("hidden");
       break;
     default:
-      document.querySelector("#email-form").removeAttribute("hidden");
-      document.querySelector("#email-subscribed").setAttribute("hidden", "");
-      document.querySelector("#email-confirmed").setAttribute("hidden", "");
+      form.removeAttribute("hidden");
+      subscribed.setAttribute("hidden", "");
+      confirmed.setAttribute("hidden", "");
       break;
   }
 }

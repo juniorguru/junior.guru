@@ -15,6 +15,10 @@
   border-radius: $border-radius;
 }
 
+.jobs-item[hidden] {
+  display: none;
+}
+
 .jobs-item.highlighted {
   background-color: $jg-yellow-light;
   border-color: $jg-yellow;
@@ -64,10 +68,25 @@
   }
 }
 
+.jobs-tags[hidden] {
+  display: none;
+}
+
 .jobs-tag {
   @extend .badge;
   color: $jg-dark;
+  cursor: pointer;
   background: $jg-white;
+}
+
+.jobs-tag:hover {
+  color: $jg-blue;
+  background: $jg-blue-light;
+}
+
+.jobs-tag.active {
+  color: $jg-white;
+  background: $jg-blue;
 }
 
 .jobs-source {

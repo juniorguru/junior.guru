@@ -115,6 +115,7 @@ def on_docs_context(context):
     context["jobs_remote"] = ListedJob.remote_listing()
     context["jobs_internship"] = ListedJob.internship_listing()
     context["jobs_volunteering"] = ListedJob.volunteering_listing()
+    context["jobs_tags"] = ListedJob.all_tags()
 
     # about/*.md
     context["blog"] = BlogArticle.listing()
