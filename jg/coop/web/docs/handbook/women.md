@@ -29,7 +29,7 @@ A co ti může na cestě pomoci?
   'lenka-segura.jpg',
   'Lenka Segura',
 ) %}
-  Lenka Segura v [rozhovoru pro CyberMagnolia](https://cybermagnolia.com/blog/lenka-segura-interview/), bývalá agrochemička
+  Lenka Segura v [rozhovoru pro CyberMagnolia](https://web.archive.org/web/20221204155402/https://cybermagnolia.com/blog/page/2/), bývalá agrochemička
 {% endcall %}
 
 <div class="link-cards">
@@ -73,7 +73,7 @@ A co ti může na cestě pomoci?
 
 <!-- {#
 
-https://cybermagnolia.com/blog/the-money-talk-meetup/
+https://web.archive.org/web/20230322060142/https://cybermagnolia.com/blog/the-money-talk-meetup/
 
 - https://www.heroine.cz/zeny-it/7701-zeny-jsou-z-it-trhu-vytlacovany-rika-vedouci-analytik-lmc-tomas-dombrovsky
 - ženy v it stránka přímo v příručce kde jsou heroine články atd. a třeba i díl moderná firma o ženách nebo motherhood atd.

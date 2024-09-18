@@ -20,7 +20,7 @@ noindex: true
 
 https://towardsdatascience.com/minimal-viable-developer-acing-your-first-month-in-software-8273663edb38
 
-https://cybermagnolia.com/blog/the-money-talk-meetup/
+https://web.archive.org/web/20230322060142/https://cybermagnolia.com/blog/the-money-talk-meetup/
 
 https://www.sijinjoseph.com/programmer-competency-matrix/
 

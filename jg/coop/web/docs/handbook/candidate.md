@@ -723,7 +723,7 @@ jak jsem hledal práci - https://discord.com/channels/769966886598737931/7891070
 
 https://www.freelance.cz/
 
-https://cybermagnolia.com/blog/the-money-talk-meetup/
+https://web.archive.org/web/20230322060142/https://cybermagnolia.com/blog/the-money-talk-meetup/
 
 podle čeho vybrat první job https://youtu.be/dyQTfuL1Q0g
 

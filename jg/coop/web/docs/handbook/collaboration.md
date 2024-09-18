@@ -72,7 +72,7 @@ Začátky s open source nejsou přímočaré. Většinou na něm lidé pracují 
   'lenka-segura.jpg',
   'Lenka Segura',
 ) %}
-  Lenka Segura v [rozhovoru pro CyberMagnolia](https://cybermagnolia.com/blog/lenka-segura-interview/), bývalá agrochemička
+  Lenka Segura v [rozhovoru pro CyberMagnolia](https://web.archive.org/web/20221204155402/https://cybermagnolia.com/blog/page/2/), bývalá agrochemička
 {% endcall %}
 
 {% call blockquote_avatar(
