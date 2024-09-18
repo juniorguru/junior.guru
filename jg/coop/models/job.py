@@ -210,6 +210,7 @@ class DroppedJob(BaseModel):
 class ListedJob(BaseModel):
     boards_ids = JSONField(default=list, index=True)
     submitted_job = ForeignKeyField(SubmittedJob, unique=True, null=True)
+    is_manual = BooleanField(default=False)
     reason = CharField(null=True)
 
     title = CharField()
@@ -222,7 +223,7 @@ class ListedJob(BaseModel):
     apply_url = CharField(null=True)
     discord_url = CharField(null=True)
 
-    company_name = CharField()
+    company_name = CharField(null=True)
     company_url = CharField(null=True)
     company_logo_urls = JSONField(default=list)
     company_logo_path = CharField(null=True)
@@ -237,8 +238,10 @@ class ListedJob(BaseModel):
         return textwrap.shorten(self.title, 90, placeholder="…")
 
     @property
-    def initial(self) -> str:
-        return self.company_name[0].upper()
+    def initial(self) -> str | None:
+        if self.company_name:
+            return self.company_name[0].upper()
+        return None
 
     @property
     def effective_url(self) -> str:
@@ -271,7 +274,7 @@ class ListedJob(BaseModel):
         tags = []
         if self.remote:
             tags.append(Tag(slug="remote", type=TagType.REMOTE))
-        for employment_type in self.employment_types:
+        for employment_type in self.employment_types or []:
             tags.append(Tag(slug=employment_type, type=TagType.EMPLOYMENT))
         for region in self.regions:
             tags.append(Tag(slug=slugify(region, separator=""), type=TagType.LOCATION))
@@ -285,7 +288,7 @@ class ListedJob(BaseModel):
 
     @property
     def regions(self) -> list[str]:
-        return sorted(set(location["region"] for location in self.locations))
+        return sorted(set(location["region"] for location in self.locations or []))
 
     @property
     def location(self) -> str:
@@ -387,6 +390,8 @@ class ListedJob(BaseModel):
         return cls.select().order_by(cls.posted_on.desc())
 
     def to_json_ld(self) -> str:
+        if self.is_manual:
+            raise NotImplementedError("Manual jobs don't have JSON-LD representation")
         return json.dumps(
             {
                 "@context": "https://schema.org",

@@ -1,5 +1,6 @@
 from datetime import date, timedelta
 from pathlib import Path
+from pprint import pformat
 
 import click
 from discord import Embed, File, ForumChannel, Thread, ui
@@ -7,6 +8,8 @@ from discord import Embed, File, ForumChannel, Thread, ui
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
 from jg.coop.lib.discord_club import ClubClient, parse_channel
+from jg.coop.lib.lang import parse_language
+from jg.coop.lib.md import md, md_as_text
 from jg.coop.lib.mutations import MutationsNotAllowedError, mutating_discord
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
@@ -19,6 +22,7 @@ IMAGES_DIR = Path("jg/coop/images")
 
 REASON_ICON_PATH = IMAGES_DIR / "emoji" / "sparkles.png"
 
+UNKNOWN_LOGO_PATH = IMAGES_DIR / "logos-jobs" / "unknown.png"
 
 logger = loggers.from_path(__file__)
 
@@ -48,8 +52,16 @@ async def sync_jobs(client: ClubClient, channel_id: int):
             try:
                 url = message.ui_urls[0]
             except IndexError:
-                # manually submitted job
-                logger.debug(f"Manually submitted job without URL: {message.url}")
+                logger.info(f"Creating manually submitted job: {message.url}")
+                try:
+                    job = ListedJob.get_by_url(message.url)
+                    logger.debug(f"Found, deleting: {job!r}")
+                    job.delete_instance()
+                except ListedJob.DoesNotExist:
+                    pass
+                data = get_job_data(message)
+                logger.debug(f"Creating:\n{pformat(data)}")
+                ListedJob.create(**data)
             else:
                 try:
                     job = ListedJob.get_by_url(url)
@@ -119,3 +131,17 @@ async def post_job(channel: ForumChannel, job: ListedJob) -> str:
             return thread.jump_url
     except MutationsNotAllowedError:
         return None
+
+
+def get_job_data(message: ClubMessage) -> dict:
+    return dict(
+        boards_ids=[f"discord#{message.id}"],
+        is_manual=True,
+        title=message.channel_name,
+        posted_on=message.created_at.date(),
+        lang=parse_language(md_as_text(message.content)),
+        description_html=md(message.content),
+        url=message.url,
+        discord_url=message.url,
+        company_logo_path=UNKNOWN_LOGO_PATH.relative_to(IMAGES_DIR),
+    )

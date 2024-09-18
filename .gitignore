@@ -88,6 +88,9 @@ google_service_account.json
 /jg/coop/images/posters-podcast/*.png
 /jg/coop/images/thumbnails/*.png
 
+# Special question mark logo
+!/jg/coop/images/logos-jobs/unknown.png
+
 # Data persisting and merging
 .persist-to-workspace-snapshot
 /persist-to-workspace/

@@ -15,6 +15,7 @@ from jg.coop.lib.google_coerce import (
     parse_text,
     parse_url,
 )
+from jg.coop.lib.lang import parse_language
 from jg.coop.lib.md import md
 from jg.coop.lib.text import extract_text
 from jg.coop.models.base import db
@@ -25,7 +26,6 @@ from jg.coop.sync.jobs_scraped.pipelines.boards_ids import (
 from jg.coop.sync.jobs_scraped.pipelines.employment_types_cleaner import (
     clean_employment_types,
 )
-from jg.coop.sync.jobs_scraped.pipelines.language_parser import parse_language
 
 
 logger = loggers.from_path(__file__)

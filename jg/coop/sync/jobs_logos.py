@@ -13,6 +13,7 @@ from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
 from jg.coop.models.base import db
 from jg.coop.models.job import ListedJob
+from jg.coop.sync.jobs_club import UNKNOWN_LOGO_PATH
 
 
 MAX_SIZE_PX = 1000
@@ -116,6 +117,9 @@ def main():
         job.company_logo_path = image_path.relative_to(IMAGES_DIR)
         job.save()
         logger.debug(f"Logo for {job!r}: {job.company_logo_path}")
+
+    logger.info("Generating special question mark logo for club jobs")
+    create_fallback_image("?").save(UNKNOWN_LOGO_PATH)
 
 
 def sort_key(logo):

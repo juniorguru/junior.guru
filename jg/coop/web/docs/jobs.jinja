@@ -20,9 +20,17 @@ template: main_subnav.html
   <ul class="jobs-list">
   {% for job in jobs %}
     <li class="jobs-item{% if job.is_highlighted %} highlighted{% endif %}">
-      <script type="application/ld+json">{{ job.to_json_ld() }}</script>
+      {% if not job.is_manual %}
+        <script type="application/ld+json">{{ job.to_json_ld() }}</script>
+      {% endif %}
       <div class="jobs-logo">
-        {{ img('static/' + job.company_logo_path, 'Logo ' + job.company_name, 100, 100, class="jobs-image") }}
+        {{ img(
+          'static/' + job.company_logo_path,
+          'Bez loga' if job.is_manual else ('Logo ' + job.company_name),
+          100,
+          100,
+          class="jobs-image",
+        ) }}
       </div>
       <div class="jobs-body">
         <h3 class="jobs-title">
@@ -36,12 +44,14 @@ template: main_subnav.html
             {{ job.title }}
           </a>
         </h3>
-        <p class="jobs-info">
-          <strong class="jobs-info-item">{{ job.company_name }}</strong>
-          {% if job.location != "?" %}
-            <span class="jobs-info-item">{{ "geo-alt"|icon }} {{ job.location }}</span>
-          {% endif %}
-        </p>
+        {% if not job.is_manual %}
+          <p class="jobs-info">
+            <strong class="jobs-info-item">{{ job.company_name }}</strong>
+            {% if job.location != "?" %}
+              <span class="jobs-info-item">{{ "geo-alt"|icon }} {{ job.location }}</span>
+            {% endif %}
+          </p>
+        {% endif %}
         <p class="jobs-tags">
           {% for tag in job.tags %}
             <span class="jobs-tag">{{ tag.name }}</span>
