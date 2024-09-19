@@ -1,0 +1,25 @@
+.discord-dialog {
+  max-width: 90%;
+  padding: $spacer;
+  text-align: center;
+  border: none;
+  border-radius: $border-radius;
+
+  @include media-breakpoint-up(sm) {
+    max-width: 30rem;
+  }
+}
+
+.discord-dialog::backdrop {
+  backdrop-filter: blur(.1rem) grayscale(100%) brightness(60%);
+}
+
+.discord-dialog-continue {
+  @extend .btn;
+  @extend .btn-outline-primary;
+}
+
+.discord-dialog-club {
+  @extend .btn;
+  @extend .btn-primary;
+}

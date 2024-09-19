@@ -1,5 +1,6 @@
 import "./annotations";
 import "./charts";
+import "./discord";
 import "./email";
 import "./jobs";
 import "./membership";

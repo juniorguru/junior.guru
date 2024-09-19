@@ -7,7 +7,6 @@
 
 
 {% block body %}
-
 <body>
   <a href="https://forms.gle/TJbV5ANrUWZbE6L78" class="announcement" target="_blank" rel="noopener">
     <strong>VYPLŇ DOTAZNÍK, VYHRAJ KNIHU</strong>
@@ -234,5 +233,18 @@
   <script async src="https://sa.junior.guru/auto-events.js"></script>
   <noscript><img src="https://sa.junior.guru/noscript.gif" alt=""
       referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+  <dialog class="discord-dialog">
+    <p>
+      Odkaz vede do <strong>klubu</strong> na sociální síti <strong>Discord</strong>, kam mají přístup jen členové.
+      Pokud v klubu nejsi, neotevře se ti to správně.
+    </p>
+    <a class="discord-dialog-continue">
+      Otevřít
+    </a>
+    <a class="discord-dialog-club" href="{{ pages|docs_url('club.md')|url }}">
+      Co je klub?
+    </a>
+  </dialog>
 </body>
 {% endblock %}
