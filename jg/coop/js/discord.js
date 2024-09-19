@@ -16,7 +16,9 @@ function interceptDiscordLinks() {
   });
 
   const continueLink = dialog.querySelector(".discord-dialog-continue");
-  continueLink.addEventListener("click", function () {
+  const clubLink = dialog.querySelector(".discord-dialog-club");
+
+  continueLink.addEventListener("click", function() {
     dialog.close();
   });
 
@@ -26,6 +28,7 @@ function interceptDiscordLinks() {
       continueLink.setAttribute("href", link.href);
       continueLink.setAttribute("target", link.target);
       dialog.showModal();
+      clubLink.focus();
     });
   });
 }
