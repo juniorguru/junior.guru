@@ -40,25 +40,25 @@ function updateJobsURL(tags) {
   const tagsCopy = Array.from(tags);
   tagsCopy.sort();
   const currentURL = new URL(window.location.href);
-  const tagsParam = tagsCopy.join('|');
+  const tagsParam = tagsCopy.join("|");
   if (tagsParam) {
-    currentURL.searchParams.set('tags', tagsParam);
+    currentURL.searchParams.set("tags", tagsParam);
   } else {
-    currentURL.searchParams.delete('tags');
+    currentURL.searchParams.delete("tags");
   }
-  window.history.pushState({}, '', currentURL);
+  window.history.pushState({}, "", currentURL);
 }
 
 function updateJobsUI() {
   const newURL = new URL(window.location.href);
-  const tagsParam = newURL.searchParams.get('tags') || "";
-  const tags = tagsParam.split('|');
-  const container = document.querySelector('.jobs-tags');
-  container.querySelectorAll('.jobs-tag').forEach(tag => {
+  const tagsParam = newURL.searchParams.get("tags") || "";
+  const tags = tagsParam.split("|");
+  const container = document.querySelector(".jobs-tags");
+  container.querySelectorAll(".jobs-tag").forEach((tag) => {
     if (tags.includes(tag.dataset.jobsTag)) {
-      tag.classList.add('active');
+      tag.classList.add("active");
     } else {
-      tag.classList.remove('active');
+      tag.classList.remove("active");
     }
   });
   filterJobs();
