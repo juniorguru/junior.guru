@@ -13,20 +13,22 @@ function setupJobsTags() {
 }
 
 function filterJobs() {
-  const activeTags = Array.from(document.querySelectorAll(".jobs-tag.active"))
+  const activeTags = Array.from(document.querySelectorAll(".jobs-tag.active"));
   const activeTagsByType = activeTags.reduce((mapping, tag) => {
     mapping[tag.dataset.jobsTagType] ||= [];
     mapping[tag.dataset.jobsTagType].push(tag.dataset.jobsTag);
     return mapping;
   }, {});
-  Object.values(activeTagsByType).forEach(tags => tags.sort());
+  Object.values(activeTagsByType).forEach((tags) => tags.sort());
 
   const url = new URL(window.location.href);
-  Array.from(url.searchParams.keys()).forEach(type => url.searchParams.delete(type));
+  Array.from(url.searchParams.keys()).forEach((type) =>
+    url.searchParams.delete(type),
+  );
   Object.entries(activeTagsByType).forEach(([type, tags]) => {
     url.searchParams.set(type, tags.join("|"));
   });
-  window.history.pushState({}, '', url);
+  window.history.pushState({}, "", url);
 
   const jobs = Array.from(document.querySelectorAll(".jobs-item"));
   if (Object.keys(activeTagsByType).length === 0) {
@@ -38,9 +40,9 @@ function filterJobs() {
   jobs.forEach((job) => {
     const jobTags = Array.from(job.querySelectorAll(".jobs-tag"));
     const jobSlugs = jobTags.map((tag) => tag.dataset.jobsTag);
-    const isRelevant = Object
-      .entries(activeTagsByType)
-      .every(([type, tags]) => tags.some(tag => jobSlugs.includes(tag)))
+    const isRelevant = Object.entries(activeTagsByType).every(([type, tags]) =>
+      tags.some((tag) => jobSlugs.includes(tag)),
+    );
     if (isRelevant) {
       job.removeAttribute("hidden");
     } else {
@@ -51,10 +53,13 @@ function filterJobs() {
 
 function updateJobsUI() {
   const url = new URL(window.location.href);
-  const activeSlugsByType = Array.from(url.searchParams.keys()).reduce((mapping, type) => {
-    mapping[type] = url.searchParams.get(type).split("|");
-    return mapping;
-  }, {});
+  const activeSlugsByType = Array.from(url.searchParams.keys()).reduce(
+    (mapping, type) => {
+      mapping[type] = url.searchParams.get(type).split("|");
+      return mapping;
+    },
+    {},
+  );
   const container = document.querySelector(".jobs-tags");
   container.querySelectorAll(".jobs-tag").forEach((tag) => {
     const activeSlugs = activeSlugsByType[tag.dataset.jobsTagType] || [];

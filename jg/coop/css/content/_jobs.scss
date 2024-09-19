@@ -93,7 +93,7 @@
   @extend .list-unstyled;
   position: relative;
   display: grid;
-  grid-template-columns: min-content  1fr;
+  grid-template-columns: min-content 1fr;
   padding: map-get($spacers, 4);
   padding-top: map-get($spacers, 4) + .3rem;
   margin-bottom: $main-spacer;
