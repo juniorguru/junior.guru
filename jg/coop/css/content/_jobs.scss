@@ -85,7 +85,7 @@
   background: $jg-blue;
 }
 
-.jobs-item .jobs-tag {
+.jobs-list .jobs-tag {
   background-color: $jg-white;
 }
 
@@ -128,4 +128,12 @@
 .jobs-source {
   @extend .small;
   margin-bottom: 0;
+}
+
+.jobs-empty[hidden] {
+  display: none;
+}
+
+.jobs-empty .note {
+  background-color: $jg-blue-light;
 }

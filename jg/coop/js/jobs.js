@@ -37,7 +37,8 @@ function filterJobs() {
     });
     return;
   }
-  jobs.forEach((job) => {
+
+  const count = jobs.map((job) => {
     const jobTags = Array.from(job.querySelectorAll(".jobs-tag"));
     const jobSlugs = jobTags.map((tag) => tag.dataset.jobsTag);
     const isRelevant = Object.entries(activeTagsByType).every(([type, tags]) =>
@@ -45,10 +46,18 @@ function filterJobs() {
     );
     if (isRelevant) {
       job.removeAttribute("hidden");
-    } else {
-      job.setAttribute("hidden", "");
+      return 1;
     }
-  });
+    job.setAttribute("hidden", "");
+    return 0;
+  }).reduce((a, b) => a + b, 0);
+
+  const empty = document.querySelector(".jobs-empty");
+  if (count === 0) {
+    empty.removeAttribute("hidden");
+  } else {
+    empty.setAttribute("hidden", "");
+  }
 }
 
 function updateJobsUI() {

@@ -4,7 +4,7 @@ description: Nabídky práce, stáže a brigády zaměřené výhradně na za�
 template: main_subnav.html
 ---
 
-{% from 'macros.html' import img, lead with context %}
+{% from 'macros.html' import img, lead, note with context %}
 
 <h1>Pracovní inzeráty pro juniory</h1>
 {% call lead() %}
@@ -57,6 +57,12 @@ template: main_subnav.html
 
 <div class="jobs">
   <ul class="jobs-list">
+    <li class="jobs-empty" hidden>
+      {% call note() -%}
+        {{ 'search'|icon }} Tvým filtrům neodpovídají žádné inzeráty. Pokud hledáš podle místa,
+        zkus přidat <span class="jobs-tag">#remote</span>.
+      {%- endcall %}
+    </li>
   {% for job in jobs %}
     <li class="jobs-item{% if job.is_highlighted %} highlighted{% endif %}">
       {% if not job.is_manual %}
