@@ -15,10 +15,6 @@
   border-radius: $border-radius;
 }
 
-.jobs-item[hidden] {
-  display: none;
-}
-
 .jobs-item.highlighted {
   background-color: $jg-yellow-light;
   border-color: $jg-yellow;
@@ -114,10 +110,6 @@
   background: $jg-white;
 }
 
-.jobs-tags[hidden] {
-  display: none;
-}
-
 .jobs-tags-heading {
   margin-right: $spacer;
   font-weight: $font-weight-normal;
@@ -128,10 +120,6 @@
 .jobs-source {
   @extend .small;
   margin-bottom: 0;
-}
-
-.jobs-empty[hidden] {
-  display: none;
 }
 
 .jobs-empty .note {
