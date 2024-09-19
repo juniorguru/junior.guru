@@ -13,13 +13,23 @@ function setupJobsTags() {
 }
 
 function filterJobs() {
-  const activeTags = Array.from(document.querySelectorAll(".jobs-tag.active"));
+  const activeTags = Array.from(document.querySelectorAll(".jobs-tag.active"))
+  const activeTagsByType = activeTags.reduce((mapping, tag) => {
+    mapping[tag.dataset.jobsTagType] ||= [];
+    mapping[tag.dataset.jobsTagType].push(tag.dataset.jobsTag);
+    return mapping;
+  }, {});
+  Object.values(activeTagsByType).forEach(tags => tags.sort());
 
-  const activeSlugs = activeTags.map((tag) => tag.dataset.jobsTag);
-  updateJobsURL(activeSlugs);
+  const url = new URL(window.location.href);
+  Array.from(url.searchParams.keys()).forEach(type => url.searchParams.delete(type));
+  Object.entries(activeTagsByType).forEach(([type, tags]) => {
+    url.searchParams.set(type, tags.join("|"));
+  });
+  window.history.pushState({}, '', url);
 
   const jobs = Array.from(document.querySelectorAll(".jobs-item"));
-  if (activeSlugs.length === 0) {
+  if (Object.keys(activeTagsByType).length === 0) {
     jobs.forEach((job) => {
       job.removeAttribute("hidden");
     });
@@ -28,7 +38,10 @@ function filterJobs() {
   jobs.forEach((job) => {
     const jobTags = Array.from(job.querySelectorAll(".jobs-tag"));
     const jobSlugs = jobTags.map((tag) => tag.dataset.jobsTag);
-    if (activeSlugs.every((slug) => jobSlugs.includes(slug))) {
+    const isRelevant = Object
+      .entries(activeTagsByType)
+      .every(([type, tags]) => tags.some(tag => jobSlugs.includes(tag)))
+    if (isRelevant) {
       job.removeAttribute("hidden");
     } else {
       job.setAttribute("hidden", "");
@@ -36,26 +49,17 @@ function filterJobs() {
   });
 }
 
-function updateJobsURL(tags) {
-  const tagsCopy = Array.from(tags);
-  tagsCopy.sort();
-  const currentURL = new URL(window.location.href);
-  const tagsParam = tagsCopy.join("|");
-  if (tagsParam) {
-    currentURL.searchParams.set("tags", tagsParam);
-  } else {
-    currentURL.searchParams.delete("tags");
-  }
-  window.history.pushState({}, "", currentURL);
-}
-
 function updateJobsUI() {
-  const newURL = new URL(window.location.href);
-  const tagsParam = newURL.searchParams.get("tags") || "";
-  const tags = tagsParam.split("|");
+  const url = new URL(window.location.href);
+  const activeSlugsByType = Array.from(url.searchParams.keys()).reduce((mapping, type) => {
+    mapping[type] = url.searchParams.get(type).split("|");
+    return mapping;
+  }, {});
   const container = document.querySelector(".jobs-tags");
   container.querySelectorAll(".jobs-tag").forEach((tag) => {
-    if (tags.includes(tag.dataset.jobsTag)) {
+    const activeSlugs = activeSlugsByType[tag.dataset.jobsTagType] || [];
+    const isActive = activeSlugs.includes(tag.dataset.jobsTag);
+    if (isActive) {
       tag.classList.add("active");
     } else {
       tag.classList.remove("active");

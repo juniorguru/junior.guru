@@ -68,25 +68,61 @@
   }
 }
 
-.jobs-tags[hidden] {
-  display: none;
-}
-
 .jobs-tag {
   @extend .badge;
   color: $jg-dark;
   cursor: pointer;
-  background: $jg-white;
+  user-select: none;
+  background: $jg-blue-light;
 }
 
 .jobs-tag:hover {
   color: $jg-blue;
-  background: $jg-blue-light;
 }
 
 .jobs-tag.active {
   color: $jg-white;
   background: $jg-blue;
+}
+
+.jobs-item .jobs-tag {
+  background-color: $jg-white;
+}
+
+.jobs-tags {
+  @extend .list-unstyled;
+  position: relative;
+  display: grid;
+  grid-template-columns: min-content  1fr;
+  padding: map-get($spacers, 4);
+  padding-top: map-get($spacers, 4) + .3rem;
+  margin-bottom: $main-spacer;
+  vertical-align: middle;
+  border: 2px solid $jg-blue;
+  border-radius: $border-radius;
+}
+
+.jobs-tags::before {
+  position: absolute;
+  top: -$spacer;
+  left: $spacer;
+  display: block;
+  padding: 0 map-get($spacers, 2);
+  font-size: $font-size-lg;
+  color: $jg-blue;
+  content: "Filtry";
+  background: $jg-white;
+}
+
+.jobs-tags[hidden] {
+  display: none;
+}
+
+.jobs-tags-heading {
+  margin-right: $spacer;
+  font-weight: $font-weight-normal;
+  color: $jg-gray;
+  white-space: nowrap;
 }
 
 .jobs-source {

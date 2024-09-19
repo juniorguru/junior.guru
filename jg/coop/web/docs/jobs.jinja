@@ -16,11 +16,44 @@ template: main_subnav.html
 
 <p class="standout">Pokud chceš přidat inzerát, napiš na {{ "honza@junior.guru"|email_link }}.</p>
 
-<p class="jobs-tags standout" hidden>
-{% for tag in jobs_tags %}
-  <span class="jobs-tag" data-jobs-tag="{{ tag.slug }}">{{ tag.name }}</span>
-{% endfor %}
-</p>
+<dl class="jobs-tags standout" hidden>
+  <dt class="jobs-tags-heading">{{ "geo-alt"|icon }} Místo:</dt>
+  <dd>
+    {% for tag in jobs_tags.location %}
+      <span
+        class="jobs-tag"
+        data-jobs-tag="{{ tag.slug }}"
+        data-jobs-tag-type="{{ tag.type|lower }}"
+      >
+        {{- tag.name -}}
+      </span>
+    {% endfor %}
+  </dd>
+  <dt class="jobs-tags-heading">{{ "hourglass"|icon }} Úvazek:</dt>
+  <dd>
+    {% for tag in jobs_tags.employment %}
+      <span
+        class="jobs-tag"
+        data-jobs-tag="{{ tag.slug }}"
+        data-jobs-tag-type="{{ tag.type|lower }}"
+      >
+        {{- tag.name -}}
+      </span>
+    {% endfor %}
+  </dd>
+  <dt class="jobs-tags-heading">{{ "box-arrow-down"|icon }} Zdroj:</dt>
+  <dd>
+    {% for tag in jobs_tags.source %}
+      <span
+        class="jobs-tag"
+        data-jobs-tag="{{ tag.slug }}"
+        data-jobs-tag-type="{{ tag.type|lower }}"
+      >
+        {{- tag.name -}}
+      </span>
+    {% endfor %}
+  </dd>
+</dl>
 
 <div class="jobs">
   <ul class="jobs-list">
@@ -60,7 +93,13 @@ template: main_subnav.html
         {% endif %}
         <p>
           {% for tag in job.tags %}
-            <span class="jobs-tag" data-jobs-tag="{{ tag.slug }}">{{ tag.name }}</span>
+            <span
+              class="jobs-tag"
+              data-jobs-tag="{{ tag.slug }}"
+              data-jobs-tag-type="{{ tag.type|lower }}"
+            >
+              {{- tag.name -}}
+            </span>
           {% endfor %}
         </p>
           <!--

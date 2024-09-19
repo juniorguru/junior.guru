@@ -26,7 +26,6 @@ JOB_EXPIRED_SOON_DAYS = 10
 
 
 class TagType(StrEnum):
-    REMOTE = auto()
     EMPLOYMENT = auto()
     LOCATION = auto()
     SOURCE = auto()
@@ -278,7 +277,7 @@ class ListedJob(BaseModel):
     def tags(self) -> list[Tag]:
         tags = []
         if self.remote:
-            tags.append(Tag(slug="remote", type=TagType.REMOTE))
+            tags.append(Tag(slug="remote", type=TagType.LOCATION))
         for employment_type in self.employment_types or []:
             tags.append(Tag(slug=employment_type, type=TagType.EMPLOYMENT))
         for region in self.regions:
@@ -330,11 +329,15 @@ class ListedJob(BaseModel):
         return cls.listing().count()
 
     @classmethod
-    def all_tags(cls) -> list:
-        return sorted(
+    def tags_by_type(cls) -> dict[str, list[Tag]]:
+        tags = sorted(
             set(itertools.chain.from_iterable(job.tags for job in cls.listing())),
-            key=attrgetter("slug"),
+            key=attrgetter("type", "slug"),
         )
+        return {
+            str(type).lower(): list(tags)
+            for type, tags in itertools.groupby(tags, key=attrgetter("type"))
+        }
 
     @classmethod
     def listing(cls) -> Iterable[Self]:
