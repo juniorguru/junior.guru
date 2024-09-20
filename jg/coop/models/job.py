@@ -12,8 +12,8 @@ from peewee import (
     CharField,
     DateField,
     ForeignKeyField,
-    TextField,
     IntegerField,
+    TextField,
     fn,
 )
 from playhouse.shortcuts import model_to_dict

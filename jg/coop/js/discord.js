@@ -18,7 +18,7 @@ function interceptDiscordLinks() {
   const continueLink = dialog.querySelector(".discord-dialog-continue");
   const clubLink = dialog.querySelector(".discord-dialog-club");
 
-  continueLink.addEventListener("click", function() {
+  continueLink.addEventListener("click", function () {
     dialog.close();
   });
 
