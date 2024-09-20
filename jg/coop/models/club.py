@@ -89,6 +89,10 @@ class ClubUser(BaseModel):
         return self.joined_at.date() if self.joined_at else None
 
     @property
+    def initials(self) -> str:
+        return "".join(f"{part[0].upper()}." for part in self.display_name.split())
+
+    @property
     def intro(self) -> Optional["ClubMessage"]:
         return (
             self.list_public_messages.where(

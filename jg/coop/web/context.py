@@ -16,7 +16,7 @@ from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.event import Event
 from jg.coop.models.exchange_rate import ExchangeRate
 from jg.coop.models.followers import Followers
-from jg.coop.models.job import ListedJob
+from jg.coop.models.job import DiscordJob, ListedJob
 from jg.coop.models.page import Page
 from jg.coop.models.partner import Partner
 from jg.coop.models.podcast import PodcastEpisode
@@ -112,6 +112,7 @@ def on_docs_context(context):
 
     # jobs.jinja, handbook/candidate.md
     context["jobs"] = ListedJob.listing()
+    context["jobs_discord"] = DiscordJob.listing()
     context["jobs_remote"] = ListedJob.remote_listing()
     context["jobs_internship"] = ListedJob.internship_listing()
     context["jobs_volunteering"] = ListedJob.volunteering_listing()

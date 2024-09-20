@@ -40,6 +40,7 @@ EMPLOYMENT_TYPES_MAPPING = {
     "zkrácený_úvazek": EmploymentTypes.PARTTIME,
     "praxe_a_stáže": EmploymentTypes.INTERNSHIP,
     "other": None,
+    "jiný_typ": None,
 }
 
 

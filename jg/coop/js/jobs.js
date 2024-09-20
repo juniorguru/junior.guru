@@ -30,7 +30,7 @@ function filterJobs() {
   });
   window.history.pushState({}, "", url);
 
-  const jobs = Array.from(document.querySelectorAll(".jobs-item"));
+  const jobs = Array.from(document.querySelectorAll(".jobs-item.tagged"));
   if (Object.keys(activeTagsByType).length === 0) {
     jobs.forEach((job) => {
       job.removeAttribute("hidden");

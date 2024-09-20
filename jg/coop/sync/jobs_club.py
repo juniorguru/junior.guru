@@ -1,6 +1,5 @@
 from datetime import date, timedelta
 from pathlib import Path
-from pprint import pformat
 
 import click
 from discord import Embed, File, ForumChannel, Thread, ui
@@ -8,12 +7,11 @@ from discord import Embed, File, ForumChannel, Thread, ui
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
 from jg.coop.lib.discord_club import ClubClient, parse_channel
-from jg.coop.lib.lang import parse_language
-from jg.coop.lib.md import md, md_as_text
+from jg.coop.lib.md import md
 from jg.coop.lib.mutations import MutationsNotAllowedError, mutating_discord
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
-from jg.coop.models.job import ListedJob
+from jg.coop.models.job import DiscordJob, ListedJob
 
 
 JOBS_REPEATING_PERIOD_DAYS = 30
@@ -21,8 +19,6 @@ JOBS_REPEATING_PERIOD_DAYS = 30
 IMAGES_DIR = Path("jg/coop/images")
 
 REASON_ICON_PATH = IMAGES_DIR / "emoji" / "sparkles.png"
-
-UNKNOWN_LOGO_PATH = IMAGES_DIR / "logos-jobs" / "unknown.png"
 
 logger = loggers.from_path(__file__)
 
@@ -37,7 +33,9 @@ def main(channel_id: int):
 async def sync_jobs(client: ClubClient, channel_id: int):
     since_on = date.today() - timedelta(days=JOBS_REPEATING_PERIOD_DAYS)
 
-    logger.debug("Clearing Discord URLs")
+    logger.debug("Clearing Discord jobs and URLs")
+    DiscordJob.drop_table()
+    DiscordJob.create_table()
     jobs = ListedJob.listing()
     for job in jobs:
         job.discord_url = None
@@ -47,6 +45,7 @@ async def sync_jobs(client: ClubClient, channel_id: int):
     logger.info(f"Found {len(messages)} threads since {since_on}")
     for message in messages:
         if message.created_at.date() > since_on:
+            comments_count = len(ClubMessage.channel_listing(message.channel_id)) - 1
             if len(message.ui_urls) > 1:
                 raise ValueError(f"Multiple URLs: {message.url} {message.ui_urls!r}")
             try:
@@ -54,21 +53,30 @@ async def sync_jobs(client: ClubClient, channel_id: int):
             except IndexError:
                 logger.info(f"Creating manually submitted job: {message.url}")
                 try:
-                    job = ListedJob.get_by_url(message.url)
+                    job = DiscordJob.get_by_url(message.url)
                     logger.debug(f"Found, deleting: {job!r}")
                     job.delete_instance()
-                except ListedJob.DoesNotExist:
+                except DiscordJob.DoesNotExist:
                     pass
-                data = get_job_data(message)
-                logger.debug(f"Creating:\n{pformat(data)}")
-                ListedJob.create(**data)
+                DiscordJob.create(
+                    title=message.channel_name,
+                    author=message.author,
+                    posted_on=message.created_at.date(),
+                    description_html=md(message.content),
+                    url=message.url,
+                    upvotes_count=message.upvotes_count,
+                    comments_count=comments_count,
+                )
             else:
                 try:
                     job = ListedJob.get_by_url(url)
                     job.discord_url = message.url
+                    job.upvotes_count = message.upvotes_count
+                    job.comments_count = comments_count
                     job.save()
                 except ListedJob.DoesNotExist:
                     logger.debug(f"URL to a job no longer listed: {url}")
+    logger.info(f"Created {DiscordJob.count()} Discord jobs")
 
     jobs = ListedJob.no_discord_listing()
     logger.info(f"Posting {len(jobs)} new jobs to the channel")
@@ -131,17 +139,3 @@ async def post_job(channel: ForumChannel, job: ListedJob) -> str:
             return thread.jump_url
     except MutationsNotAllowedError:
         return None
-
-
-def get_job_data(message: ClubMessage) -> dict:
-    return dict(
-        boards_ids=[f"discord#{message.id}"],
-        is_manual=True,
-        title=message.channel_name,
-        posted_on=message.created_at.date(),
-        lang=parse_language(md_as_text(message.content)),
-        description_html=md(message.content),
-        url=message.url,
-        discord_url=message.url,
-        company_logo_path=UNKNOWN_LOGO_PATH.relative_to(IMAGES_DIR),
-    )

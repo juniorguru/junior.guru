@@ -13,13 +13,15 @@ from peewee import (
     DateField,
     ForeignKeyField,
     TextField,
+    IntegerField,
     fn,
 )
 from playhouse.shortcuts import model_to_dict
-from pydantic import BaseModel as PydanticBaseModel
+from pydantic import BaseModel as PydanticBaseModel, ConfigDict
 from slugify import slugify
 
 from jg.coop.models.base import BaseModel, JSONField
+from jg.coop.models.club import ClubUser
 
 
 JOB_EXPIRED_SOON_DAYS = 10
@@ -32,11 +34,10 @@ class TagType(StrEnum):
 
 
 class Tag(PydanticBaseModel):
+    model_config = ConfigDict(frozen=True)
+
     slug: str
     type: TagType
-
-    class Config:
-        frozen = True
 
     @property
     def name(self) -> str:
@@ -214,7 +215,6 @@ class DroppedJob(BaseModel):
 class ListedJob(BaseModel):
     boards_ids = JSONField(default=list, index=True)
     submitted_job = ForeignKeyField(SubmittedJob, unique=True, null=True)
-    is_manual = BooleanField(default=False)
     reason = CharField(null=True)
 
     title = CharField()
@@ -225,9 +225,12 @@ class ListedJob(BaseModel):
     url = CharField()
     apply_email = CharField(null=True)
     apply_url = CharField(null=True)
-    discord_url = CharField(null=True)
 
-    company_name = CharField(null=True)
+    discord_url = CharField(null=True)
+    upvotes_count = IntegerField(null=True)
+    comments_count = IntegerField(null=True)
+
+    company_name = CharField()
     company_url = CharField(null=True)
     company_logo_urls = JSONField(default=list)
     company_logo_path = CharField(null=True)
@@ -405,8 +408,6 @@ class ListedJob(BaseModel):
         return cls.select().order_by(cls.posted_on.desc())
 
     def to_json_ld(self) -> str:
-        if self.is_manual:
-            raise NotImplementedError("Manual jobs don't have JSON-LD representation")
         return json.dumps(
             {
                 "@context": "https://schema.org",
@@ -471,6 +472,32 @@ class ListedJob(BaseModel):
                 description_html=self.description_html,
             ),
         )
+
+
+class DiscordJob(BaseModel):
+    title = CharField()
+    author = ForeignKeyField(ClubUser, backref="list_jobs")
+    posted_on = DateField(index=True)
+    description_html = TextField()
+    url = CharField(unique=True)
+    upvotes_count = IntegerField()
+    comments_count = IntegerField()
+
+    @classmethod
+    def get_by_url(cls, url) -> Self:
+        return cls.select().where(cls.url == url).get()
+
+    @classmethod
+    def listing(cls) -> Iterable[Self]:
+        return cls.select().order_by(
+            (cls.upvotes_count + cls.comments_count).desc(),
+            cls.posted_on.desc(),
+            cls.url.desc(),
+        )
+
+    @classmethod
+    def count(cls) -> int:
+        return cls.select().count()
 
 
 def columns(values, columns_count):
