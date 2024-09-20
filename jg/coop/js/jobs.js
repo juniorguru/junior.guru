@@ -38,19 +38,21 @@ function filterJobs() {
     return;
   }
 
-  const count = jobs.map((job) => {
-    const jobTags = Array.from(job.querySelectorAll(".jobs-tag"));
-    const jobSlugs = jobTags.map((tag) => tag.dataset.jobsTag);
-    const isRelevant = Object.entries(activeTagsByType).every(([type, tags]) =>
-      tags.some((tag) => jobSlugs.includes(tag)),
-    );
-    if (isRelevant) {
-      job.removeAttribute("hidden");
-      return 1;
-    }
-    job.setAttribute("hidden", "");
-    return 0;
-  }).reduce((a, b) => a + b, 0);
+  const count = jobs
+    .map((job) => {
+      const jobTags = Array.from(job.querySelectorAll(".jobs-tag"));
+      const jobSlugs = jobTags.map((tag) => tag.dataset.jobsTag);
+      const isRelevant = Object.entries(activeTagsByType).every(
+        ([type, tags]) => tags.some((tag) => jobSlugs.includes(tag)),
+      );
+      if (isRelevant) {
+        job.removeAttribute("hidden");
+        return 1;
+      }
+      job.setAttribute("hidden", "");
+      return 0;
+    })
+    .reduce((a, b) => a + b, 0);
 
   const empty = document.querySelector(".jobs-empty");
   if (count === 0) {
