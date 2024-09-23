@@ -56,15 +56,15 @@
 #    a poslat prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 - id: 44
-  title: "(Kubernetes pro začátečníky, bude upřesněno)"
+  title: "Kubernetes: Co, proč a jak – průvodce pro začátečníky"
   date: "2024-10-01"
   description: |
-    (bude upřesněno)
+    Prozkoumejte, jak Kubernetes funguje pod pokličkou a co vám může nabídnout v praxi.
   avatar_path: avatars-participants/lukas-pavelka2.jpg
   bio_name: Lukáš Pavelka
   bio_title: "C#/.NET Software Engineer"
   bio: |
-    Nadšený C# a .NET vývojář, který se neustále snaží rozšiřovat své znalosti a nabírat zkušenosti. Před pár roky se přidal do klubu jako junior, který si hledá první práci. Díky své vášni pro technologie a neustálému zkoumání, jak by šlo v praxi využít novinky, se dostal až k tomu, že teď pro juniory přednáší.
+    .NET vývojář, který se neustále snaží rozšiřovat své znalosti a nabírat zkušenosti. Před pár roky se přidal do klubu jako junior, který si hledá první práci. Díky své vášni pro technologie a neustálému zkoumání, jak by šlo v praxi využít novinky, se dostal až k tomu, že teď pro juniory přednáší.
   bio_links:
     - https://www.linkedin.com/in/lukaspavelka/
   speakers: 113033048957665280
