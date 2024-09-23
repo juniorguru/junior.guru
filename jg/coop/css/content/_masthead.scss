@@ -35,9 +35,9 @@ $masthead-eggshell-height: map-get($spacers, 5);
   margin-bottom: map-get($spacers, 5) + $spacer;
 
   @include media-breakpoint-up(md) {
-    flex-basis: 50%;
     flex-grow: 0;
     flex-shrink: 1;
+    flex-basis: 50%;
     margin-right: map-get($spacers, 5);
   }
 }
@@ -104,9 +104,9 @@ $masthead-eggshell-height: map-get($spacers, 5);
   margin-left: auto;
 
   @include media-breakpoint-up(md) {
-    flex-basis: 50%;
     flex-grow: 0;
     flex-shrink: 1;
+    flex-basis: 50%;
     margin-top: $spacer;
   }
 }

@@ -22,8 +22,8 @@
   background: $jg-blue-light;
 
   @include media-breakpoint-up(lg) {
-    flex-basis: $main-toc-width;
     flex-shrink: 0;
+    flex-basis: $main-toc-width;
     order: -1;
     width: $main-toc-width;
     padding-top: $main-spacer;
@@ -91,8 +91,8 @@
   background: $white;
 
   @include media-breakpoint-up(lg) {
-    flex-basis: 100% - $main-toc-width;
     flex-shrink: 1;
+    flex-basis: 100% - $main-toc-width;
     max-width: $main-document-width;
     padding-right: $container-padding-x;
     padding-left: $main-spacer;
