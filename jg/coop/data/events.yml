@@ -55,6 +55,23 @@
 #    ještě spustit 'jg sync events', takže… takže je vlastně lepší to neřešit
 #    a poslat prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
+- id: 45
+  title: "(životopisy, bude upřesněno)"
+  date: "2024-11-19"
+  description: |
+    (bude upřesněno)
+  avatar_path: avatars-participants/daniel-srb.jpg
+  bio_name: Daniel Srb
+  bio_title: vývojář a mentor, CoreSkill
+  bio: |
+    Dan Srb se zaměřuje na návrh a implementaci webových uživatelských rozhraní. Jezdí na skládačce a má rád dobrou kávu, i když už ji moc nepije.
+  bio_links:
+    - https://coreskill.tech/
+    - https://github.com/benabraham
+    - https://www.linkedin.com/in/danielsrb/
+  logo_path: logos/coreskill.svg
+  speakers: 652142810291765248
+
 - id: 44
   title: "Kubernetes: Co, proč a jak – průvodce pro začátečníky"
   date: "2024-10-01"
