@@ -20,6 +20,10 @@
   border-color: $jg-yellow;
 }
 
+.jobs-item.expanded {
+  border-color: $jg-blue;
+}
+
 .jobs-logo {
   flex-grow: 0;
   flex-shrink: 0;
@@ -36,6 +40,10 @@
   height: map-get($spacers, 5);
 }
 
+.jobs-body {
+  flex-grow: 1;
+}
+
 .jobs-title {
   @extend .fs-5;
   color: $jg-blue;
@@ -43,9 +51,6 @@
 
 .jobs-title-link {
   text-decoration: none;
-}
-
-.jobs-title-link.stretched {
   @extend .stretched-link;
 }
 
@@ -128,9 +133,39 @@
   white-space: nowrap;
 }
 
-.jobs-source {
+.jobs-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacer;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: $spacer;
+  margin: 0;
+  background: $jg-white;
+  border-radius: $border-radius;
+}
+
+.jobs-links {
   @extend .small;
-  margin-bottom: 0;
+  display: flex;
+  gap: $spacer;
+}
+
+.jobs-links a {
+  text-decoration: none;
+}
+
+.jobs-links a:hover,
+.jobs-links a:focus,
+.jobs-links a:active {
+  color: $body-color;
+}
+
+.jobs-buttons {
+  display: flex;
+  gap: $spacer;
+  justify-content: flex-end;
 }
 
 .jobs-empty .note {

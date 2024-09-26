@@ -77,7 +77,7 @@ template: main_subnav.html
       </div>
       <div class="jobs-body">
         <h3 class="jobs-title">
-          <a class="jobs-title-link stretched"
+          <a class="jobs-title-link"
             {% if job.is_submitted %}
               href="{{ job.url|relative_url }}"
             {% else %}
@@ -104,15 +104,79 @@ template: main_subnav.html
             </span>
           {% endfor %}
         </p>
-          <!--
-            <p class="jobs-toolbar">
-                vysvetlit co znamena diskutovat
-                mit URL na inzerat v klubu
-                reklama na to že když chceš dostávat nabídky práce realtime, tak se přidej do klubu
-                <button class="btn btn-outline-dark btn-sm">Diskutovat</button>
-                <button class="btn btn-primary btn-sm">{{ "arrow-up-right-circle-fill"|icon }} Celý inzerát</button>
-            </p>
-          -->
+        <p class="jobs-toolbar" hidden>
+          <small class="jobs-links">
+            <a
+              href="{{ job.company_linkedin_url }}"
+              rel="nofollow noopener"
+              target="_blank"
+            >
+              {{ "linkedin"|icon }} LinkedIn
+            </a>
+            <a
+              href="{{ job.company_atmoskop_url }}"
+              rel="nofollow noopener"
+              target="_blank"
+            >
+              {{ "zoom-in"|icon }} Atmoskop
+            </a>
+            <a
+              href="{{ job.company_search_url }}"
+              rel="nofollow noopener"
+              target="_blank"
+            >
+              {{ "google"|icon }} Google
+            </a>
+            {% if job.company_url %}
+              <a
+                href="{{ job.company_url }}"
+                rel="nofollow noopener"
+                target="_blank"
+              >
+                {{ "house"|icon }} Web
+              </a>
+            {% endif %}
+          </small>
+
+          <span class="jobs-buttons">
+            {% if job.upvotes_count %}
+              <span>
+                {{ "hand-thumbs-up"|icon }} {{ job.upvotes_count }}
+              </span>
+            {% endif %}
+            {% if job.comments_count %}
+              <span>
+                {{ "chat"|icon }} {{ job.comments_count }}
+              </span>
+            {% endif %}
+            {% if job.discord_url %}
+              <a
+                href="{{ job.discord_url }}"
+                class="btn btn-dark btn-sm"
+                rel="nofollow noopener"
+                target="_blank"
+              >
+                {{ "discord"|icon }} Diskutovat
+              </a>
+            {% endif %}
+          </span>
+          <a
+            {% if job.is_submitted %}
+              href="{{ job.url|relative_url }}"
+            {% else %}
+               href="{{ job.url }}" rel="nofollow noopener" target="_blank"
+            {% endif %}
+            class="btn btn-primary btn-sm"
+          >
+            Celý inzerát
+          </a>
+
+            {# vysvetlit co znamena diskutovat
+            mit URL na inzerat v klubu
+            reklama na to že když chceš dostávat nabídky práce realtime, tak se přidej do klubu
+            <button class="btn btn-outline-dark btn-sm">Diskutovat</button>
+            <button class="btn btn-primary btn-sm">{{ "arrow-up-right-circle-fill"|icon }} Celý inzerát</button> #}
+        </p>
       </div>
     </li>
   {% endfor %}
@@ -134,7 +198,7 @@ template: main_subnav.html
           </div>
           <div class="jobs-body">
             <h3 class="jobs-title">
-              <a class="jobs-title-link stretched" href="{{ job.url }}" rel="nofollow noopener" target="_blank">
+              <a class="jobs-title-link" href="{{ job.url }}" rel="nofollow noopener" target="_blank">
                 {{ job.title }}
               </a>
             </h3>
