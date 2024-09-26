@@ -147,12 +147,13 @@
 }
 
 .jobs-links {
-  @extend .small;
+  @extend .list-unstyled;
   display: flex;
   gap: $spacer;
 }
 
 .jobs-links a {
+  @extend .small;
   text-decoration: none;
 }
 
@@ -163,9 +164,22 @@
 }
 
 .jobs-buttons {
+  @extend .list-unstyled;
   display: flex;
   gap: $spacer;
   justify-content: flex-end;
+}
+
+.jobs-button-club {
+  @extend .btn;
+  @extend .btn-dark;
+  @extend .btn-sm;
+}
+
+.jobs-button-primary {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-sm;
 }
 
 .jobs-empty .note {
