@@ -86,6 +86,8 @@ template: main_subnav.html
           >
             {{ job.title }}
           </a>
+          <span class="jobs-title-text" hidden>{{ job.title }}</span>
+          <span class="jobs-close" hidden>{{ "x-lg"|icon }}</span>
         </h3>
         <p class="jobs-info">
           <strong class="jobs-info-item">{{ job.company_name }}</strong>

@@ -20,7 +20,7 @@
   border-color: $jg-yellow;
 }
 
-.jobs-item.expanded {
+.jobs-item.open {
   border-color: $jg-blue;
 }
 
@@ -46,13 +46,43 @@
 
 .jobs-title {
   @extend .fs-5;
+  display: flex;
   color: $jg-blue;
 }
 
-.jobs-title-link {
-  text-decoration: none;
-  @extend .stretched-link;
+.jobs-title-link,
+.jobs-title-text {
+  flex-grow: 1;
 }
+
+.jobs-title-link {
+  @extend .stretched-link;
+  text-decoration: none;
+}
+
+.jobs-close {
+  font-size: $font-size-sm;
+  cursor: pointer;
+}
+
+// .jobs-item::before {
+//   position: absolute;
+//   text-align: center;
+//   line-height: 2rem;
+//   width: 2rem;
+//   height: 2rem;
+//   top: $spacer;
+//   right: $spacer;
+//   display: block;
+//   font-size: $font-size-sm;
+//   color: $jg-blue;
+//   background: $jg-white;
+//   border-radius: 100%;
+// }
+
+// .jobs-item.collapsed {
+
+// }
 
 .jobs-item:hover .jobs-title-link {
   text-decoration: underline;

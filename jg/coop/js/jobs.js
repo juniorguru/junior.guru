@@ -9,27 +9,45 @@ function setupJobsTags() {
       tag.removeAttribute("hidden");
     });
     updateJobsTagsUI();
+    container.classList.remove("noscript");
   }
   document.querySelectorAll(".jobs-noscript").forEach(function (noscript) {
     noscript.remove();
   });
-  container.classList.remove("noscript");
 }
 
 function setupJobs() {
   document.querySelectorAll(".jobs-toolbar").forEach(function (toolbar) {
     const job = toolbar.closest(".jobs-item");
-    const jobTitleLink = job.querySelector(".jobs-title-link");
+    job.classList.remove("open");
 
-    jobTitleLink.addEventListener("click", function (event) {
+    const close = job.querySelector('.jobs-close');
+    const titleText = job.querySelector(".jobs-title-text");
+    const titleLink = job.querySelector(".jobs-title-link");
+
+    close.addEventListener("click", function () {
+      job.classList.remove("open");
+
+      // show
+      titleLink.removeAttribute("hidden");
+
+      // hide
+      close.setAttribute("hidden", "");
+      toolbar.setAttribute("hidden", "");
+      titleText.setAttribute("hidden", "");
+    });
+
+    titleLink.addEventListener("click", function (event) {
       event.preventDefault();
-      job.classList.add("expanded");
-      toolbar.removeAttribute("hidden");
+      job.classList.add("open");
 
-      const span = document.createElement("span");
-      span.textContent = jobTitleLink.textContent;
-      span.classList.add("jobs-title-text");
-      jobTitleLink.parentNode.replaceChild(span, jobTitleLink);
+      // show
+      close.removeAttribute("hidden");
+      toolbar.removeAttribute("hidden");
+      titleText.removeAttribute("hidden");
+
+      // hide
+      titleLink.setAttribute("hidden", "");
     });
   });
 }
