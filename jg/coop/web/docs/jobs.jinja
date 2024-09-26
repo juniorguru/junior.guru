@@ -16,42 +16,48 @@ template: main_subnav.html
 
 <p class="standout">Pokud chceš přidat inzerát, napiš na {{ "honza@junior.guru"|email_link }}.</p>
 
-<dl class="jobs-tags standout" hidden>
+<dl class="jobs-tags standout noscript">
   <dt class="jobs-tags-heading">{{ "geo-alt"|icon }} Místo:</dt>
   <dd>
     {% for tag in jobs_tags.location %}
       <span
         class="jobs-tag"
+        hidden
         data-jobs-tag="{{ tag.slug }}"
         data-jobs-tag-type="{{ tag.type|lower }}"
       >
         {{- tag.name -}}
       </span>
     {% endfor %}
+    <span class="jobs-noscript">Stala se chyba a filtrování nefunguje</span>
   </dd>
   <dt class="jobs-tags-heading">{{ "hourglass-split"|icon }} Úvazek:</dt>
   <dd>
     {% for tag in jobs_tags.employment %}
       <span
         class="jobs-tag"
+        hidden
         data-jobs-tag="{{ tag.slug }}"
         data-jobs-tag-type="{{ tag.type|lower }}"
       >
         {{- tag.name -}}
       </span>
     {% endfor %}
+    <span class="jobs-noscript">Stala se chyba a filtrování nefunguje</span>
   </dd>
   <dt class="jobs-tags-heading">{{ "box-arrow-down"|icon }} Zdroj:</dt>
   <dd>
     {% for tag in jobs_tags.source %}
       <span
         class="jobs-tag"
+        hidden
         data-jobs-tag="{{ tag.slug }}"
         data-jobs-tag-type="{{ tag.type|lower }}"
       >
         {{- tag.name -}}
       </span>
     {% endfor %}
+    <span class="jobs-noscript">Stala se chyba a filtrování nefunguje</span>
   </dd>
 </dl>
 
@@ -71,7 +77,7 @@ template: main_subnav.html
       </div>
       <div class="jobs-body">
         <h3 class="jobs-title">
-          <a class="jobs-title-link"
+          <a class="jobs-title-link stretched"
             {% if job.is_submitted %}
               href="{{ job.url|relative_url }}"
             {% else %}
@@ -128,7 +134,7 @@ template: main_subnav.html
           </div>
           <div class="jobs-body">
             <h3 class="jobs-title">
-              <a class="jobs-title-link" href="{{ job.url }}" rel="nofollow noopener" target="_blank">
+              <a class="jobs-title-link stretched" href="{{ job.url }}" rel="nofollow noopener" target="_blank">
                 {{ job.title }}
               </a>
             </h3>

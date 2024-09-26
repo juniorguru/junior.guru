@@ -43,6 +43,9 @@
 
 .jobs-title-link {
   text-decoration: none;
+}
+
+.jobs-title-link.stretched {
   @extend .stretched-link;
 }
 
@@ -98,6 +101,10 @@
   border-radius: $border-radius;
 }
 
+.jobs-tags.noscript {
+  border-color: $jg-red;
+}
+
 .jobs-tags::before {
   position: absolute;
   top: -$spacer;
@@ -108,6 +115,10 @@
   color: $jg-blue;
   content: "Filtry";
   background: $jg-white;
+}
+
+.jobs-tags.noscript::before {
+  color: $jg-red;
 }
 
 .jobs-tags-heading {

@@ -6,10 +6,14 @@ function setupJobsTags() {
         tag.classList.toggle("active");
         filterJobs();
       });
+      tag.removeAttribute("hidden");
     });
     updateJobsUI();
-    container.removeAttribute("hidden");
   }
+  document.querySelectorAll(".jobs-noscript").forEach(function (noscript) {
+    noscript.remove();
+  });
+  container.classList.remove("noscript");
 }
 
 function filterJobs() {
