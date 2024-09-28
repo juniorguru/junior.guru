@@ -896,3 +896,5 @@
 {"_id": "26704003205", "amount": 10179, "category": "memberships", "happened_on": "2024-09-23"}
 {"_id": "26707378573", "amount": 6, "category": "donations", "happened_on": "2024-09-25"}
 {"_id": "26709462895", "amount": 2189, "category": "jobs", "happened_on": "2024-09-26"}
+{"_id": "26710296659", "amount": -2343, "category": "miscellaneous", "happened_on": "2024-09-27"}
+{"_id": "26710297272", "amount": -2000, "category": "office", "happened_on": "2024-09-27"}
