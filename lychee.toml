@@ -57,6 +57,11 @@ exclude = [
     "root.cz",
     "akamai.com",
     "udacity.com",
+    "hearthis.at",
+
+    # Read the Docs anti-scraping protections
+    "docs.pyvec.org",
+    "writethedocs.org",
 
     # Expiring jobs
     "jobs.cz/fp/",

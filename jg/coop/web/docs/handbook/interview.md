@@ -36,7 +36,7 @@ Ber si všude s sebou notes na poznámky a **zapisuj si všechno, co nevíš. Do
 
 Během pohovoru **ukaž, jak přemýšlíš**. Vysvětli, jakým způsobem se propracováváš k odpovědi, kresli diagramy, piš kód, vysvětluj díry ve svém přístupu. Ptej se, pokud ti něco není jasné. Situace, kdy mlčíš a přemýšlíš, není příjemná ani tobě, ani ostatním přítomným. Vždy je lepší „přemýšlet nahlas“, ale také prostě říct „nevím“, ideálně spolu s „můžete mi to trochu popsat, ať se mám od čeho odrazit?“.
 
-Pokud neznáš [Django](https://www.djangoproject.com/), **odpověz upřímně!** Nelži a nesnaž se nic zamaskovat, pro tazatele bude snadné tě prokouknout. Člověka, který mlží, mít nikdo v týmu nechce. Raději řekni „Nevím, ale chci se to naučit“. Nebo: „Mám jeden projekt ve [Flasku](https://flask.palletsprojects.com/), což je taky webový framework v Pythonu, tak snad by nebylo těžké do toho proniknout“. Pokud nevíš vůbec, klidně se na správné řešení na místě zeptej. **Ukaž, že se nebojíš ptát když nevíš, a že máš chuť se posouvat.**
+Pokud neznáš Django, **odpověz upřímně!** Nelži a nesnaž se nic zamaskovat, pro tazatele bude snadné tě prokouknout. Člověka, který mlží, mít nikdo v týmu nechce. Raději řekni „Nevím, ale chci se to naučit“. Nebo: „Mám jeden projekt ve Flasku, což je taky webový framework v Pythonu, tak snad by nebylo těžké do toho proniknout“. Pokud nevíš vůbec, klidně se na správné řešení na místě zeptej. **Ukaž, že se nebojíš ptát když nevíš, a že máš chuť se posouvat.**
 
 {% call blockquote(
   'Říkej pravdu a dostaneš se tam, kam chceš.'

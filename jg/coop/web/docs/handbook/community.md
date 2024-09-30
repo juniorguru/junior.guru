@@ -66,14 +66,6 @@ Je velmi těžké se učit zcela samostatně, bez kontaktu s dalšími samouky n
     badge_icon='calendar-check',
     badge_text='Konference',
   ) }}
-
-  {{ link_card(
-    'Write The Docs Prague',
-    'https://www.writethedocs.org/conf/',
-    'Přijeď na konferenci o psaní technické dokumentace.',
-    badge_icon='calendar-check',
-    badge_text='Konference',
-  ) }}
 </div>
 
 ### Nebudu mimo mísu?    <span id="beginner-friendly"></span>
@@ -90,7 +82,7 @@ Na konference je potřeba si koupit lístek. Výše zmíněné konference mají 
 pracovní veletrhy
 
 --- https://discord.com/channels/769966886598737931/1214233351242776646/1214244615499022366
-- kolik se sluší sníst chlebicku - nechám odpověď odborníkovi <@652142810291765248> 
+- kolik se sluší sníst chlebicku - nechám odpověď odborníkovi <@652142810291765248>
 - dress code většinou není, takže jestli chceš za slusnaka tak svetr a rifle a jestli za pohodare tak mikinu a rifle 😀 nějaký čistý hezký
 - firmy tam budou mít stánky s letacky a prospekty a tak, budou se ti snažit vysvětlit na čem delaji a kolik stravenek dávají a ze je cool pro ne pracovat
 - když reknes ze jsi junior tak zachovají poker face a budou se ti snažit vysvětlit ze se ti určitě možná někdy ozvou, možná kolega Kvído, který tady zrovna neni
