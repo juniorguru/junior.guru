@@ -70,7 +70,7 @@ ghp-import = "2.1.0"
 pytest-asyncio = "0.24.0"
 scour = "0.38.2"
 pytest-ruff = "0.4.1"
-ruff = "0.6.7"
+ruff = "0.6.8"
 
 [tool.pytest.ini_options]
 python_files = "test_*.py"
