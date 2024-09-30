@@ -45,9 +45,8 @@
           {% endif %}
         </p>
       </div>
-      <div
-        class="about{% if event.public_recording_url %}about-invisible{% endif %}"
-      >
+      <div class="about">
+        {% if not event.public_recording_url %}
         <div>
           <img class="about-logo" src="{{ images_dir }}/logo.svg" />
         </div>
@@ -58,6 +57,7 @@
           se z ní záznam. Členové klubu mají přístup k záznamům všech proběhlých
           akcí, které najdeš na <strong>junior.guru/events</strong>
         </p>
+        {% endif %}
       </div>
     </div>
   </body>
