@@ -1018,17 +1018,17 @@ dev = ["flake8", "markdown", "twine", "wheel"]
 
 [[package]]
 name = "githubkit"
-version = "0.11.10"
+version = "0.11.11"
 description = "GitHub SDK for Python"
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "githubkit-0.11.10-py3-none-any.whl", hash = "sha256:e95074916af4a5f357d47005022a555984e16729d9e6204161ef67bc29a78789"},
-    {file = "githubkit-0.11.10.tar.gz", hash = "sha256:9729783ba44935ca47b3bebaad76971ccc3d3b548b8af54e06d16a489b0ece90"},
+    {file = "githubkit-0.11.11-py3-none-any.whl", hash = "sha256:1296548278c8e2a9aeff21f2415d1cbd7cb1aca337730789947c486bcaf580a8"},
+    {file = "githubkit-0.11.11.tar.gz", hash = "sha256:575a601a80d2d2a4d1bb75f63a27f0e1c316d8f0d3e8bea8613af2681a4bf6fb"},
 ]
 
 [package.dependencies]
-hishel = ">=0.0.21,<=0.0.30"
+hishel = ">=0.0.21,<=0.0.32"
 httpx = ">=0.23.0,<1.0.0"
 pydantic = ">=1.9.1,<2.5.0 || >2.5.0,<2.5.1 || >2.5.1,<3.0.0"
 typing-extensions = ">=4.3.0,<5.0.0"
@@ -1294,13 +1294,13 @@ files = [
 
 [[package]]
 name = "hishel"
-version = "0.0.30"
+version = "0.0.32"
 description = "Persistent cache implementation for httpx and httpcore"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "hishel-0.0.30-py3-none-any.whl", hash = "sha256:0c73a779a6b554b52dff75e5962057df25764fd798c31b9435ce6398b1b171c8"},
-    {file = "hishel-0.0.30.tar.gz", hash = "sha256:656393ee77e9c39a0d6c527c74810e15d96e598dcb9b191f20a788608ceaca99"},
+    {file = "hishel-0.0.32-py3-none-any.whl", hash = "sha256:62807cd16f3e2f69f1d12182fb8e167ba8dd763cf1039479dfd13fc15ce5d684"},
+    {file = "hishel-0.0.32.tar.gz", hash = "sha256:64d674c058d59920995f01db8dea12408c526de9d5d112ac955dbe2485ceae1c"},
 ]
 
 [package.dependencies]
@@ -1501,7 +1501,7 @@ develop = false
 blinker = "1.8.2"
 click = "8.1.7"
 cssselect = "1.2.0"
-githubkit = "0.11.10"
+githubkit = "0.11.11"
 httpx = "0.27.2"
 lxml = "5.3.0"
 pillow = "10.4.0"
@@ -1511,7 +1511,7 @@ pydantic = "2.9.2"
 type = "git"
 url = "https://github.com/juniorguru/hen.git"
 reference = "HEAD"
-resolved_reference = "7dd6a7950df2ddc137ea8893423188fc59f18f2c"
+resolved_reference = "0ea92b73d84ae5211311138a325db1fdedbc707b"
 
 [[package]]
 name = "jinja2"
@@ -3529,4 +3529,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.11"
-content-hash = "79d2a1b25bec0f0e471707af9dc8ea85a2244356bd9d6b22ee48dcb9e03fafab"
+content-hash = "28d675c6f09e84384d793f05831ff8232dbf844e3a9714d4b83c7386a20caaf9"
