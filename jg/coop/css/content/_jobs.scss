@@ -296,24 +296,24 @@
 
 .jobs-subscribe {
   position: fixed;
+  right: 0;
   bottom: 0;
   left: 0;
-  right: 0;
-  width: 100%;
-  padding: map-get($spacers, 2) $spacer;
   z-index: $zindex-fixed;
-  background: $jg-yellow;
   display: flex;
   gap: $spacer;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  padding: map-get($spacers, 2) $spacer;
+  background: $jg-yellow;
 }
 
 .jobs-subscribe-text {
-  margin: 0;
   height: 0%;
-  hyphens: none;
+  margin: 0;
   font-size: $font-size-sm;
+  hyphens: none;
 
   @include media-breakpoint-up(sm) {
     font-size: $font-size-base;
