@@ -6,7 +6,7 @@ function setupJobsTags() {
         tag.classList.toggle("active");
         filterJobs();
       });
-      tag.removeAttribute("hidden");
+      showElement(tag);
     });
     updateJobsTagsUI();
     container.classList.remove("noscript");
@@ -17,9 +17,6 @@ function setupJobsTags() {
 }
 
 function setupJobs() {
-  show = (element) => element.removeAttribute("hidden");
-  hide = (element) => element.setAttribute("hidden", "");
-
   document.querySelectorAll(".jobs-item.openable").forEach(function (job) {
     job.classList.remove("open");
 
@@ -32,14 +29,14 @@ function setupJobs() {
     titleLink.addEventListener("click", function (event) {
       event.preventDefault();
       job.classList.add("open");
-      inside.forEach(show);
-      outside.forEach(hide);
+      inside.forEach(showElement);
+      outside.forEach(hideElement);
     });
 
     close.addEventListener("click", function () {
       job.classList.remove("open");
-      inside.forEach(hide);
-      outside.forEach(show);
+      inside.forEach(hideElement);
+      outside.forEach(showElement);
     });
   });
 }
@@ -64,9 +61,7 @@ function filterJobs() {
 
   const jobs = Array.from(document.querySelectorAll(".jobs-item.tagged"));
   if (Object.keys(activeTagsByType).length === 0) {
-    jobs.forEach((job) => {
-      job.removeAttribute("hidden");
-    });
+    jobs.forEach(showElement);
     return;
   }
 
@@ -78,19 +73,19 @@ function filterJobs() {
         ([type, tags]) => tags.some((tag) => jobSlugs.includes(tag)),
       );
       if (isRelevant) {
-        job.removeAttribute("hidden");
+        showElement(job);
         return 1;
       }
-      job.setAttribute("hidden", "");
+      hideElement(job);
       return 0;
     })
     .reduce((a, b) => a + b, 0);
 
   const empty = document.querySelector(".jobs-empty");
   if (count === 0) {
-    empty.removeAttribute("hidden");
+    showElement(empty);
   } else {
-    empty.setAttribute("hidden", "");
+    hideElement(empty);
   }
 }
 
@@ -114,6 +109,14 @@ function updateJobsTagsUI() {
     }
   });
   filterJobs();
+}
+
+function showElement(element) {
+  element.removeAttribute("hidden");
+}
+
+function hideElement(element) {
+  element.setAttribute("hidden", "");
 }
 
 document.addEventListener("DOMContentLoaded", setupJobsTags);
