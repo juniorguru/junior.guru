@@ -8,12 +8,40 @@ function setupJobsTags() {
       });
       tag.removeAttribute("hidden");
     });
-    updateJobsUI();
+    updateJobsTagsUI();
+    container.classList.remove("noscript");
   }
   document.querySelectorAll(".jobs-noscript").forEach(function (noscript) {
     noscript.remove();
   });
-  container.classList.remove("noscript");
+}
+
+function setupJobs() {
+  show = (element) => element.removeAttribute("hidden");
+  hide = (element) => element.setAttribute("hidden", "");
+
+  document.querySelectorAll(".jobs-item.openable").forEach(function (job) {
+    job.classList.remove("open");
+
+    const titleLink = job.querySelector(".jobs-title-link");
+    const close = job.querySelector('.jobs-close');
+
+    const inside = [close].concat(Array.from(job.querySelectorAll(".jobs-title-text, .jobs-actions, .jobs-company")));
+    const outside = [titleLink];
+
+    titleLink.addEventListener("click", function (event) {
+      event.preventDefault();
+      job.classList.add("open");
+      inside.forEach(show);
+      outside.forEach(hide);
+    });
+
+    close.addEventListener("click", function () {
+      job.classList.remove("open");
+      inside.forEach(hide);
+      outside.forEach(show);
+    });
+  });
 }
 
 function filterJobs() {
@@ -66,7 +94,7 @@ function filterJobs() {
   }
 }
 
-function updateJobsUI() {
+function updateJobsTagsUI() {
   const url = new URL(window.location.href);
   const activeSlugsByType = Array.from(url.searchParams.keys()).reduce(
     (mapping, type) => {
@@ -89,4 +117,5 @@ function updateJobsUI() {
 }
 
 document.addEventListener("DOMContentLoaded", setupJobsTags);
-window.addEventListener("popstate", updateJobsUI);
+document.addEventListener("DOMContentLoaded", setupJobs);
+window.addEventListener("popstate", updateJobsTagsUI);

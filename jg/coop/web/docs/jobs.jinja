@@ -70,50 +70,140 @@ template: main_subnav.html
       {%- endcall %}
     </li>
   {% for job in jobs %}
-    <li class="jobs-item tagged{% if job.is_highlighted %} highlighted{% endif %}">
+    <li class="jobs-item openable tagged{% if job.is_highlighted %} highlighted{% endif %}">
       <script type="application/ld+json">{{ job.to_json_ld() }}</script>
-      <div class="jobs-logo">
-        {{ img('static/' + job.company_logo_path, 'Logo ' + job.company_name, 100, 100, class="jobs-image") }}
-      </div>
-      <div class="jobs-body">
-        <h3 class="jobs-title">
-          <a class="jobs-title-link stretched"
-            {% if job.is_submitted %}
-              href="{{ job.url|relative_url }}"
-            {% else %}
-               href="{{ job.url }}" rel="nofollow noopener" target="_blank"
-            {% endif %}
-          >
-            {{ job.title }}
-          </a>
-        </h3>
-        <p class="jobs-info">
-          <strong class="jobs-info-item">{{ job.company_name }}</strong>
-          {% if job.location != "?" %}
-            <span class="jobs-info-item">{{ "geo-alt"|icon }} {{ job.location }}</span>
-          {% endif %}
-        </p>
-        <p>
-          {% for tag in job.tags %}
-            <span
-              class="jobs-tag"
-              data-jobs-tag="{{ tag.slug }}"
-              data-jobs-tag-type="{{ tag.type|lower }}"
+      <div class="jobs-item-container">
+        <div class="jobs-logo">
+          {{ img('static/' + job.company_logo_path, 'Logo ' + job.company_name, 100, 100, class="jobs-image") }}
+        </div>
+        <div class="jobs-body">
+          <h3 class="jobs-title">
+            <a class="jobs-title-link"
+              {% if job.is_submitted %}
+                href="{{ job.url|relative_url }}"
+              {% else %}
+                href="{{ job.url }}" rel="nofollow noopener" target="_blank"
+              {% endif %}
             >
-              {{- tag.name -}}
-            </span>
-          {% endfor %}
-        </p>
-          <!--
-            <p class="jobs-toolbar">
-                vysvetlit co znamena diskutovat
-                mit URL na inzerat v klubu
-                reklama na to že když chceš dostávat nabídky práce realtime, tak se přidej do klubu
-                <button class="btn btn-outline-dark btn-sm">Diskutovat</button>
-                <button class="btn btn-primary btn-sm">{{ "arrow-up-right-circle-fill"|icon }} Celý inzerát</button>
-            </p>
-          -->
+              {{ job.title }}
+            </a>
+            <span class="jobs-title-text" hidden>{{ job.title }}</span>
+            <span class="jobs-close" hidden>{{ "x-lg"|icon }}</span>
+          </h3>
+          <p class="jobs-info">
+            <strong class="jobs-info-item">{{ job.company_name }}</strong>
+            {% if job.location != "?" %}
+              <span class="jobs-info-item">{{ "geo-alt"|icon }} {{ job.location }}</span>
+            {% endif %}
+          </p>
+          <p>
+            {% for tag in job.tags %}
+              <span
+                class="jobs-tag"
+                data-jobs-tag="{{ tag.slug }}"
+                data-jobs-tag-type="{{ tag.type|lower }}"
+              >
+                {{- tag.name -}}
+              </span>
+            {% endfor %}
+          </p>
+          <div class="jobs-company" hidden>
+            <h4 class="jobs-company-heading">Vyhledat firmu</h4>
+            <ul class="jobs-company-links">
+              <li class="jobs-company-links-item">
+                <a
+                  href="{{ job.company_linkedin_url }}"
+                  rel="nofollow noopener"
+                  target="_blank"
+                  class="jobs-company-link"
+                >
+                  <span class="jobs-company-link-icon">{{ "linkedin"|icon }}</span>
+                  <span class="jobs-company-link-label">LinkedIn</span>
+                </a>
+              </li>
+              <li class="jobs-company-links-item">
+                <a
+                  href="{{ job.company_atmoskop_url }}"
+                  rel="nofollow noopener"
+                  target="_blank"
+                  class="jobs-company-link"
+                >
+                  <span class="jobs-company-link-icon">{{ "zoom-in"|icon }}</span>
+                  <span class="jobs-company-link-label">Atmoskop</span>
+                </a>
+              </li>
+              <li class="jobs-company-links-item">
+                <a
+                  href="{{ job.company_search_url }}"
+                  rel="nofollow noopener"
+                  target="_blank"
+                  class="jobs-company-link"
+                >
+                  <span class="jobs-company-link-icon">{{ "google"|icon }}</span>
+                  <span class="jobs-company-link-label">Google</span>
+                </a>
+              </li>
+              {% if job.company_url %}
+                <li class="jobs-company-links-item">
+                  <a
+                    href="{{ job.company_url }}"
+                    rel="nofollow noopener"
+                    target="_blank"
+                    class="jobs-company-link"
+                  >
+                    <span class="jobs-company-link-icon">{{ "house"|icon }}</span>
+                    <span class="jobs-company-link-label">Web</span>
+                  </a>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
       </div>
+      <div class="jobs-actions" hidden>
+        <ul class="jobs-actions-list">
+          {% if job.discord_url %}
+            <li class="jobs-action-club">
+              {% if job.upvotes_count %}
+                <span>
+                  {{ "hand-thumbs-up"|icon }} {{ job.upvotes_count }}
+                </span>
+              {% endif %}
+              {% if job.comments_count %}
+                <span>
+                  {{ "chat"|icon }} {{ job.comments_count }}
+                </span>
+              {% endif %}
+              <a
+                href="{{ job.discord_url }}"
+                class="jobs-action-button club"
+                rel="nofollow noopener"
+                target="_blank"
+              >
+                {{ "discord"|icon }} Diskutovat
+              </a>
+            </li>
+          {% endif %}
+          <li class="jobs-action-continue">
+            <a
+              {% if job.is_submitted %}
+                href="{{ job.url|relative_url }}"
+              {% else %}
+                href="{{ job.url }}" rel="nofollow noopener" target="_blank"
+              {% endif %}
+              class="jobs-action-button continue"
+            >
+              Celý inzerát
+            </a>
+          </li>
+        </ul>
+      </div>
+
+            {# vysvetlit co znamena diskutovat
+            mit URL na inzerat v klubu
+            reklama na to že když chceš dostávat nabídky práce realtime, tak se přidej do klubu
+            <button class="btn btn-outline-dark btn-sm">Diskutovat</button>
+            <button class="btn btn-primary btn-sm">{{ "arrow-up-right-circle-fill"|icon }} Celý inzerát</button> #}
     </li>
   {% endfor %}
   </ul>
@@ -129,30 +219,32 @@ template: main_subnav.html
     <ul class="jobs-list">
       {% for job in jobs_discord %}
         <li class="jobs-item">
-          <div class="jobs-logo">
-            {{ img('static/logos-jobs/unknown.png', 'Bez loga', 100, 100, class="jobs-image") }}
-          </div>
-          <div class="jobs-body">
-            <h3 class="jobs-title">
-              <a class="jobs-title-link stretched" href="{{ job.url }}" rel="nofollow noopener" target="_blank">
-                {{ job.title }}
-              </a>
-            </h3>
-            <p class="jobs-info">
-              <span class="jobs-info-item">
-                Děkujeme <strong>{{ job.author.initials }}</strong> za sdílení!
-              </span>
-              {% if job.upvotes_count %}
+          <div class="jobs-item-container">
+            <div class="jobs-logo">
+              {{ img('static/logos-jobs/unknown.png', 'Bez loga', 100, 100, class="jobs-image") }}
+            </div>
+            <div class="jobs-body">
+              <h3 class="jobs-title">
+                <a class="jobs-title-link" href="{{ job.url }}" rel="nofollow noopener" target="_blank">
+                  {{ job.title }}
+                </a>
+              </h3>
+              <p class="jobs-info">
                 <span class="jobs-info-item">
-                  {{ "hand-thumbs-up"|icon }} {{ job.upvotes_count }}
+                  Děkujeme <strong>{{ job.author.initials }}</strong> za sdílení!
                 </span>
-              {% endif %}
-              {% if job.comments_count %}
-                <span class="jobs-info-item">
-                  {{ "chat"|icon }} {{ job.comments_count }}
-                </span>
-              {% endif %}
-            </p>
+                {% if job.upvotes_count %}
+                  <span class="jobs-info-item">
+                    {{ "hand-thumbs-up"|icon }} {{ job.upvotes_count }}
+                  </span>
+                {% endif %}
+                {% if job.comments_count %}
+                  <span class="jobs-info-item">
+                    {{ "chat"|icon }} {{ job.comments_count }}
+                  </span>
+                {% endif %}
+              </p>
+            </div>
           </div>
         </li>
       {% endfor %}
