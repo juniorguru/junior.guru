@@ -293,3 +293,37 @@
 .jobs-empty .note {
   background-color: $jg-blue-light;
 }
+
+.jobs-subscribe {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: map-get($spacers, 2) $spacer;
+  z-index: $zindex-fixed;
+  background: $jg-yellow;
+  display: flex;
+  gap: $spacer;
+  align-items: center;
+  justify-content: center;
+}
+
+.jobs-subscribe-text {
+  margin: 0;
+  height: 0%;
+  hyphens: none;
+  font-size: $font-size-sm;
+
+  @include media-breakpoint-up(sm) {
+    font-size: $font-size-base;
+    text-align: center;
+  }
+}
+
+.jobs-subscribe-button {
+  @extend .btn;
+  @extend .btn-dark;
+  @extend .stretched-link;
+  white-space: nowrap;
+}

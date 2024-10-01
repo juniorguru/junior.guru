@@ -62,15 +62,23 @@ template: main_subnav.html
   </dd>
 </dl>
 
+<div class="jobs-subscribe">
+  <p class="jobs-subscribe-text">
+    Členové klubu mohou na Discordu sledovat nové inzeráty hned jak se objeví
+  </p>
+  <a
+    class="jobs-subscribe-button"
+    href="https://discord.com/channels/769966886598737931/1080052057752477716"
+    rel="nofollow noopener"
+    target="_blank"
+  >
+    {{ "discord"|icon }} Sledovat
+  </a>
+</div>
+
 <div class="jobs">
   <ul class="jobs-list">
-    <li class="jobs-empty" hidden>
-      {% call note() -%}
-        {{ 'search'|icon }} Tvým filtrům neodpovídají žádné inzeráty. Pokud hledáš podle místa,
-        zkus přidat <span class="jobs-tag">#remote</span>.
-      {%- endcall %}
-    </li>
-  {% for job in jobs %}
+    {% for job in jobs %}
     <li class="jobs-item openable tagged{% if job.is_highlighted %} highlighted{% endif %}">
       <script type="application/ld+json">{{ job.to_json_ld() }}</script>
       <div class="jobs-item-container">
@@ -190,7 +198,9 @@ template: main_subnav.html
               {% if job.is_submitted %}
                 href="{{ job.url|relative_url }}"
               {% else %}
-                href="{{ job.url }}" rel="nofollow noopener" target="_blank"
+                href="{{ job.url }}"
+                rel="nofollow noopener"
+                target="_blank"
               {% endif %}
               class="jobs-action-button continue"
             >
@@ -199,14 +209,14 @@ template: main_subnav.html
           </li>
         </ul>
       </div>
-
-            {# vysvetlit co znamena diskutovat
-            mit URL na inzerat v klubu
-            reklama na to že když chceš dostávat nabídky práce realtime, tak se přidej do klubu
-            <button class="btn btn-outline-dark btn-sm">Diskutovat</button>
-            <button class="btn btn-primary btn-sm">{{ "arrow-up-right-circle-fill"|icon }} Celý inzerát</button> #}
     </li>
   {% endfor %}
+    <li class="jobs-empty" hidden>
+      {% call note() -%}
+        {{ 'search'|icon }} Tvým filtrům neodpovídají žádné inzeráty. Pokud hledáš podle místa,
+        zkus přidat <span class="jobs-tag">#remote</span>.
+      {%- endcall %}
+    </li>
   </ul>
 
   {% if jobs_discord %}
