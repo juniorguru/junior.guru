@@ -635,4 +635,8 @@ Mám z toho, co píšeš, tak trochu pocit, že bojuješ s tímhle https://en.wi
 https://www.linkedin.com/feed/update/urn:li:ugcPost:7224054319896039424?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7224054319896039424%2C7226646759999971328%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287226646759999971328%2Curn%3Ali%3AugcPost%3A7224054319896039424%29
 
 
+https://roadmap.sh/backend/projects
+https://roadmap.sh/frontend/projects
+
+
 #} -->
