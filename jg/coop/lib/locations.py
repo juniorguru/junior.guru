@@ -1,3 +1,4 @@
+from datetime import timedelta
 import re
 from functools import lru_cache, wraps
 
@@ -5,6 +6,7 @@ import requests
 from lxml import etree
 
 from jg.coop.lib import loggers
+from jg.coop.lib.cache import cache
 
 
 logger = loggers.from_path(__file__)
@@ -111,12 +113,14 @@ def fetch_location(location_raw, geocode=None, debug_info=None):
 
 
 def optimize_geocoding(geocode):
+    geocoding_cache = cache(tag="geocoding", expire=timedelta(days=30))
+
     @wraps(geocode)
     def wrapper(location_raw):
         for location_re, value in OPTIMIZATIONS:
             if location_re.search(location_raw):
                 return value
-        return lru_cache(geocode)(location_raw)
+        return geocoding_cache(geocode)(location_raw)
 
     return wrapper
 

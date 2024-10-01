@@ -20,6 +20,7 @@ from jg.coop.sync.club_content.crawler import crawl
 logger = loggers.from_path(__file__)
 
 
+@cli.sync_command()
 @retry(
     retry=retry_if_exception_type(DiscordServerError),
     wait=wait_random_exponential(min=60, max=5 * 60),
@@ -27,7 +28,6 @@ logger = loggers.from_path(__file__)
     reraise=True,
     before_sleep=before_sleep_log(logger, logging.WARNING),
 )
-@cli.sync_command()
 def main():
     with db.connection_context():
         db.drop_tables([ClubMessage, ClubUser, ClubPin])

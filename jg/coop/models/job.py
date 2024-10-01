@@ -344,7 +344,13 @@ class ListedJob(BaseModel):
 
     @classmethod
     def listing(cls) -> Iterable[Self]:
-        return cls.select().order_by(cls.submitted_job.is_null(), cls.posted_on.desc())
+        upvotes_count = fn.coalesce(cls.upvotes_count, 0)
+        comments_count = fn.coalesce(cls.comments_count, 0)
+        return cls.select().order_by(
+            cls.submitted_job.is_null(),
+            (upvotes_count + comments_count).desc(),
+            cls.posted_on.desc(),
+        )
 
     @classmethod
     def favicon_listing(cls) -> Iterable[Self]:

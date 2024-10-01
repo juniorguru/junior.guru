@@ -17,37 +17,29 @@ function setupJobsTags() {
 }
 
 function setupJobs() {
-  document.querySelectorAll(".jobs-toolbar").forEach(function (toolbar) {
-    const job = toolbar.closest(".jobs-item");
+  show = (element) => element.removeAttribute("hidden");
+  hide = (element) => element.setAttribute("hidden", "");
+
+  document.querySelectorAll(".jobs-item.openable").forEach(function (job) {
     job.classList.remove("open");
 
-    const close = job.querySelector('.jobs-close');
-    const titleText = job.querySelector(".jobs-title-text");
     const titleLink = job.querySelector(".jobs-title-link");
+    const close = job.querySelector('.jobs-close');
 
-    close.addEventListener("click", function () {
-      job.classList.remove("open");
-
-      // show
-      titleLink.removeAttribute("hidden");
-
-      // hide
-      close.setAttribute("hidden", "");
-      toolbar.setAttribute("hidden", "");
-      titleText.setAttribute("hidden", "");
-    });
+    const inside = [close].concat(Array.from(job.querySelectorAll(".jobs-title-text, .jobs-actions, .jobs-company")));
+    const outside = [titleLink];
 
     titleLink.addEventListener("click", function (event) {
       event.preventDefault();
       job.classList.add("open");
+      inside.forEach(show);
+      outside.forEach(hide);
+    });
 
-      // show
-      close.removeAttribute("hidden");
-      toolbar.removeAttribute("hidden");
-      titleText.removeAttribute("hidden");
-
-      // hide
-      titleLink.setAttribute("hidden", "");
+    close.addEventListener("click", function () {
+      job.classList.remove("open");
+      inside.forEach(hide);
+      outside.forEach(show);
     });
   });
 }
