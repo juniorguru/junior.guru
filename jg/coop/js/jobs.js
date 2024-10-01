@@ -60,10 +60,21 @@ function filterJobs() {
   window.history.pushState({}, "", url);
 
   const jobs = Array.from(document.querySelectorAll(".jobs-item.tagged"));
+  const allJobTags = Array.from(document.querySelectorAll(".jobs-item.tagged .jobs-tag"));
+
   if (Object.keys(activeTagsByType).length === 0) {
     jobs.forEach(showElement);
+    allJobTags.forEach((tag) => tag.classList.remove("matching"));
     return;
   }
+
+  allJobTags.forEach((tag) => {
+    if (activeTagsByType[tag.dataset.jobsTagType]?.includes(tag.dataset.jobsTag)) {
+      tag.classList.add("matching");
+    } else {
+      tag.classList.remove("matching");
+    }
+  });
 
   const count = jobs
     .map((job) => {

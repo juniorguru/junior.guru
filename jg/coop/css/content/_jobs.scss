@@ -1,6 +1,72 @@
+.jobs-tag {
+  @extend .badge;
+  color: $jg-dark;
+  user-select: none;
+  background: $jg-blue-light;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+}
+
+.jobs-tags {
+  @extend .list-unstyled;
+  position: relative;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  padding: map-get($spacers, 4);
+  padding-top: map-get($spacers, 4) + .3rem;
+  margin-bottom: $main-spacer;
+  vertical-align: middle;
+  border: 2px solid $jg-blue;
+  border-radius: $border-radius;
+}
+
+.jobs-tags.noscript {
+  border-color: $jg-red;
+}
+
+.jobs-tags::before {
+  position: absolute;
+  top: -$spacer;
+  left: $spacer;
+  display: block;
+  padding: 0 map-get($spacers, 2);
+  font-size: $font-size-lg;
+  color: $jg-blue;
+  content: "Filtry";
+  background: $jg-white;
+}
+
+.jobs-tags.noscript::before {
+  color: $jg-red;
+}
+
+.jobs-tags-heading {
+  margin-right: $spacer;
+  font-weight: $font-weight-normal;
+  color: $jg-gray;
+  white-space: nowrap;
+}
+
+.jobs-tags .jobs-tag {
+  cursor: pointer;
+}
+
+.jobs-tags .jobs-tag:hover {
+  color: $jg-blue;
+}
+
+.jobs-tags .jobs-tag.active {
+  color: $jg-white;
+  background: $jg-blue;
+}
+
 .jobs-list {
   @extend .list-unstyled;
   margin-bottom: $spacer;
+}
+
+.jobs-list .jobs-tag {
+  background-color: $jg-white;
 }
 
 .jobs-item {
@@ -98,67 +164,12 @@
   }
 }
 
-.jobs-tag {
-  @extend .badge;
-  color: $jg-dark;
-  cursor: pointer;
-  user-select: none;
-  background: $jg-blue-light;
-  font-size: $font-size-base;
-  font-weight: $font-weight-medium;
+.jobs-item .jobs-tag {
+  opacity: .5;
 }
 
-.jobs-tag:hover {
-  color: $jg-blue;
-}
-
-.jobs-tag.active {
-  color: $jg-white;
-  background: $jg-blue;
-}
-
-.jobs-list .jobs-tag {
-  background-color: $jg-white;
-}
-
-.jobs-tags {
-  @extend .list-unstyled;
-  position: relative;
-  display: grid;
-  grid-template-columns: min-content 1fr;
-  padding: map-get($spacers, 4);
-  padding-top: map-get($spacers, 4) + .3rem;
-  margin-bottom: $main-spacer;
-  vertical-align: middle;
-  border: 2px solid $jg-blue;
-  border-radius: $border-radius;
-}
-
-.jobs-tags.noscript {
-  border-color: $jg-red;
-}
-
-.jobs-tags::before {
-  position: absolute;
-  top: -$spacer;
-  left: $spacer;
-  display: block;
-  padding: 0 map-get($spacers, 2);
-  font-size: $font-size-lg;
-  color: $jg-blue;
-  content: "Filtry";
-  background: $jg-white;
-}
-
-.jobs-tags.noscript::before {
-  color: $jg-red;
-}
-
-.jobs-tags-heading {
-  margin-right: $spacer;
-  font-weight: $font-weight-normal;
-  color: $jg-gray;
-  white-space: nowrap;
+.jobs-item .jobs-tag.matching {
+  opacity: 1;
 }
 
 .jobs-company {
