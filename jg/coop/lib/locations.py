@@ -1,6 +1,6 @@
-from datetime import timedelta
 import re
-from functools import lru_cache, wraps
+from datetime import timedelta
+from functools import wraps
 
 import requests
 from lxml import etree

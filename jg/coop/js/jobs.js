@@ -21,9 +21,13 @@ function setupJobs() {
     job.classList.remove("open");
 
     const titleLink = job.querySelector(".jobs-title-link");
-    const close = job.querySelector('.jobs-close');
+    const close = job.querySelector(".jobs-close");
 
-    const inside = [close].concat(Array.from(job.querySelectorAll(".jobs-title-text, .jobs-actions, .jobs-company")));
+    const inside = [close].concat(
+      Array.from(
+        job.querySelectorAll(".jobs-title-text, .jobs-actions, .jobs-company"),
+      ),
+    );
     const outside = [titleLink];
 
     titleLink.addEventListener("click", function (event) {
@@ -60,7 +64,9 @@ function filterJobs() {
   window.history.pushState({}, "", url);
 
   const jobs = Array.from(document.querySelectorAll(".jobs-item.tagged"));
-  const allJobTags = Array.from(document.querySelectorAll(".jobs-item.tagged .jobs-tag"));
+  const allJobTags = Array.from(
+    document.querySelectorAll(".jobs-item.tagged .jobs-tag"),
+  );
 
   if (Object.keys(activeTagsByType).length === 0) {
     jobs.forEach(showElement);
@@ -69,7 +75,9 @@ function filterJobs() {
   }
 
   allJobTags.forEach((tag) => {
-    if (activeTagsByType[tag.dataset.jobsTagType]?.includes(tag.dataset.jobsTag)) {
+    if (
+      activeTagsByType[tag.dataset.jobsTagType]?.includes(tag.dataset.jobsTag)
+    ) {
       tag.classList.add("matching");
     } else {
       tag.classList.remove("matching");

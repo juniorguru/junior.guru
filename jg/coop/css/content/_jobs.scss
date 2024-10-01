@@ -1,10 +1,10 @@
 .jobs-tag {
   @extend .badge;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
   color: $jg-dark;
   user-select: none;
   background: $jg-blue-light;
-  font-size: $font-size-base;
-  font-weight: $font-weight-medium;
 }
 
 .jobs-tags {
@@ -110,8 +110,8 @@
 }
 
 .jobs-body {
-  flex-grow: 1;
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   gap: $spacer;
 }
@@ -123,8 +123,8 @@
 .jobs-title {
   @extend .fs-5;
   display: flex;
-  color: $jg-blue;
   margin-bottom: -1 * ($spacer - $headings-margin-bottom);
+  color: $jg-blue;
 }
 
 .jobs-title-link,
@@ -177,8 +177,8 @@
 
   @include media-breakpoint-up(sm) {
     display: flex;
-    align-items: start;
     gap: $spacer;
+    align-items: start;
   }
 }
 
@@ -198,8 +198,8 @@
 .jobs-company-links {
   @extend .list-unstyled;
   display: flex;
-  gap: 0 $spacer;
   flex-wrap: wrap;
+  gap: 0 $spacer;
   font-size: $font-size-sm;
 
   @include media-breakpoint-up(sm) {
@@ -208,15 +208,12 @@
 }
 
 .jobs-company-link {
-  white-space: nowrap;
-}
-
-.jobs-company-link {
-  text-decoration: none;
   display: flex;
-  align-items: middle;
   flex-direction: row;
   gap: .3rem;
+  align-items: middle;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .jobs-company-link-label {
@@ -226,9 +223,9 @@
 .jobs-club-items {
   @extend .list-unstyled;
   display: flex;
-  white-space: nowrap;
-  align-items: center;
   gap: $spacer;
+  align-items: center;
+  white-space: nowrap;
 }
 
 .jobs-actions {
@@ -236,8 +233,8 @@
   justify-content: center;
   width: 100%;
   padding: $spacer;
-  background: $jg-white;
   overflow: hidden;
+  background: $jg-white;
   border-radius: 0 0 $border-radius $border-radius;
 
   @include media-breakpoint-up(sm) {
@@ -248,10 +245,10 @@
 .jobs-actions-list {
   @extend .list-unstyled;
   display: flex;
-  gap: $spacer;
-  white-space: nowrap;
   flex-wrap: wrap;
+  gap: $spacer;
   justify-content: center;
+  white-space: nowrap;
 
   @include media-breakpoint-up(sm) {
     flex-wrap: nowrap;
@@ -276,7 +273,12 @@
   @extend .btn-sm;
 
   @include media-breakpoint-up(sm) {
-    @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
+    @include button-size(
+      $btn-padding-y,
+      $btn-padding-x,
+      $btn-font-size,
+      $btn-border-radius
+    );
   }
 }
 
