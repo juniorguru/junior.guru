@@ -93,7 +93,7 @@ extend-select = ["I"]
 [tool.ruff.lint.isort]
 combine-as-imports = true
 lines-after-imports = 2
-known-third-party = ["jg.chick", "jg.hen"]
+known-third-party = ["jg.chick", "jg.hen", "jg.beak"]
 known-local-folder = ["testing_utils"]
 
 [build-system]
