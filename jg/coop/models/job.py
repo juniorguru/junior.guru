@@ -239,6 +239,7 @@ class ListedJob(BaseModel):
     locations = JSONField(null=True)
     remote = BooleanField(default=False)
     employment_types = JSONField(null=True)
+    tech_tags = JSONField(default=list)
 
     @property
     def title_short(self) -> str:

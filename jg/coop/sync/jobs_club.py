@@ -25,7 +25,7 @@ REASON_ICON_PATH = IMAGES_DIR / "emoji" / "sparkles.png"
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=["club-content", "jobs-locations", "jobs-logos"])
+@cli.sync_command(dependencies=["club-content", "jobs-logos"])
 @click.option("--channel", "channel_id", default="jobs", type=parse_channel)
 def main(channel_id: int):
     discord_task.run(sync_jobs, channel_id)

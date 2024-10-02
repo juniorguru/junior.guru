@@ -1,9 +1,17 @@
+import logging
 import re
 from datetime import timedelta
 from functools import wraps
 
 import requests
 from lxml import etree
+from tenacity import (
+    before_sleep_log,
+    retry,
+    retry_if_exception_type,
+    stop_after_attempt,
+    wait_random_exponential,
+)
 
 from jg.coop.lib import loggers
 from jg.coop.lib.cache import cache
@@ -82,8 +90,6 @@ ADDRESS_TYPES_MAPPING = {
     "osmc": "country",
 }
 
-RETRY_ON_503_MAX_SECONDS = 3
-
 
 class GeocodeError(Exception):
     pass
@@ -101,8 +107,7 @@ def fetch_location(location_raw, geocode=None, debug_info=None):
     geocode = geocode or geocode_mapycz
     try:
         logger.debug(f"Geocoding '{location_raw}'")
-        address = geocode(location_raw)
-        if address:
+        if address := geocode(location_raw):
             try:
                 return (address["place"], get_region(address))
             except KeyError as e:
@@ -126,6 +131,13 @@ def optimize_geocoding(geocode):
 
 
 @optimize_geocoding
+@retry(
+    retry=retry_if_exception_type(GeocodeError),
+    wait=wait_random_exponential(min=1, max=3),
+    stop=stop_after_attempt(3),
+    reraise=True,
+    before_sleep=before_sleep_log(logger, logging.WARNING),
+)
 def geocode_mapycz(location_raw):
     try:
         logger.debug(f"Geocoding '{location_raw}' using api.mapy.cz/v0/geocode")
@@ -173,6 +185,8 @@ def geocode_mapycz(location_raw):
             for item in items
             if item.attrib["type"] in ADDRESS_TYPES_MAPPING
         }
+        if not address.get("place"):
+            return None
         return address
     except requests.RequestException as e:
         raise GeocodeError(
@@ -192,7 +206,7 @@ if __name__ == "__main__":
     """
     Usage:
 
-        poetry run python -m juniorguru.lib.locations 'Ústí nad Orlicí, Pardubice, Czechia'
+        poetry run python -m jg.coop.lib.locations 'Ústí nad Orlicí, Pardubice, Czechia'
     """
     import sys
     from pprint import pprint
