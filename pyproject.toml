@@ -61,6 +61,7 @@ githubkit = "0.11.11"
 pydantic = "2.9.2"
 pyyaml = "6.0.2"
 fonttools = "4.53.1"
+"jg.beak" = { git = "https://github.com/juniorguru/beak.git" }
 
 [tool.poetry.group.dev.dependencies]
 pytest = "8.3.3"

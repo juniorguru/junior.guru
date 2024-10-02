@@ -1468,6 +1468,24 @@ files = [
 ]
 
 [[package]]
+name = "jg-beak"
+version = "0.0"
+description = "Analyzes text, returns tags"
+optional = false
+python-versions = ">=3.11 <4.0"
+files = []
+develop = false
+
+[package.dependencies]
+click = "8.1.7"
+
+[package.source]
+type = "git"
+url = "https://github.com/juniorguru/beak.git"
+reference = "HEAD"
+resolved_reference = "6bfcea5a5415c26a43d2d25ea25f1453724eb485"
+
+[[package]]
 name = "jg-chick"
 version = "0.0"
 description = "A real-time, synchronous junior.guru Discord bot"
@@ -3529,4 +3547,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.11"
-content-hash = "28d675c6f09e84384d793f05831ff8232dbf844e3a9714d4b83c7386a20caaf9"
+content-hash = "eb478b6bdb918ad76219a5c05747c107be0f353965e2a456d8aebfafb2ff5b06"
