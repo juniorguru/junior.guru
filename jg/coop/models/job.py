@@ -30,6 +30,7 @@ JOB_EXPIRED_SOON_DAYS = 10
 class TagType(StrEnum):
     EMPLOYMENT = auto()
     LOCATION = auto()
+    TECHNOLOGY = auto()
     SOURCE = auto()
 
 
@@ -286,6 +287,8 @@ class ListedJob(BaseModel):
             tags.append(Tag(slug=employment_type, type=TagType.EMPLOYMENT))
         for region in self.regions:
             tags.append(Tag(slug=slugify(region, separator=""), type=TagType.LOCATION))
+        for tech_tag in self.tech_tags:
+            tags.append(Tag(slug=tech_tag, type=TagType.TECHNOLOGY))
         for source in self.sources:
             tags.append(Tag(slug=source, type=TagType.SOURCE))
         return tags
