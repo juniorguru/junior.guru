@@ -1,8 +1,10 @@
+import asyncio
 from datetime import date, timedelta
 from pathlib import Path
 
 import click
-from discord import Embed, File, ForumChannel, Thread, ui
+import requests
+from discord import Embed, File, ForumChannel, Message, Thread, ui
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
@@ -83,12 +85,42 @@ async def sync_jobs(client: ClubClient, channel_id: int):
     if jobs:
         channel = await client.club_guild.fetch_channel(channel_id)
         for job in jobs:
-            logger.debug(f"Posting: {job.effective_url}")
-            job.discord_url = await post_job(channel, job)
+            logger.info(f"Posting: {job.effective_url}")
+            job.discord_url = await create_thread(channel, job)
             job.save()
 
 
-async def post_job(channel: ForumChannel, job: ListedJob) -> str:
+async def create_thread(
+    channel: ForumChannel, job: ListedJob, sleep_on_retry: int = 3
+) -> str:
+    try:
+        with mutating_discord(channel, raises=True) as proxy:
+            for attempt_no in range(1, 4):
+                logger.debug(f"Creating thread, attempt #{attempt_no}")
+                params = await prepare_thread_params(job)
+                thread: Thread = await proxy.create_thread(**params)
+
+                logger.debug("Verifying that images got uploaded correctly")
+                message: Message = await thread.fetch_message(thread.id)
+                thumbnail_url = message.embeds[0].thumbnail.url
+                response = requests.head(thumbnail_url)
+                thumbnail_bytes_count = int(response.headers.get("Content-Length", 0))
+                if thumbnail_bytes_count == 0:
+                    logger.warning(
+                        f"Thumbnail is empty (attempt #{attempt_no}): {thumbnail_url}"
+                        f" ({thread.name}: {thread.jump_url})"
+                    )
+                    await thread.delete()
+                    await asyncio.sleep(sleep_on_retry)
+                else:
+                    return thread.jump_url
+        logger.error("Failed to create thread!")
+        return None
+    except MutationsNotAllowedError:
+        return None
+
+
+async def prepare_thread_params(job: ListedJob) -> dict:
     files = []
     embeds = []
 
@@ -122,7 +154,7 @@ async def post_job(channel: ForumChannel, job: ListedJob) -> str:
         embeds.append(reason_embed)
 
     # job
-    params = dict(
+    return dict(
         name=job.title_short,
         content=f"{job.location} — {job.company_name}",
         files=files,
@@ -131,11 +163,3 @@ async def post_job(channel: ForumChannel, job: ListedJob) -> str:
             ui.Button(emoji="👉", label="Celý inzerát", url=job.effective_url)
         ),
     )
-
-    # create!
-    try:
-        with mutating_discord(channel, raises=True) as proxy:
-            thread: Thread = await proxy.create_thread(**params)
-            return thread.jump_url
-    except MutationsNotAllowedError:
-        return None
