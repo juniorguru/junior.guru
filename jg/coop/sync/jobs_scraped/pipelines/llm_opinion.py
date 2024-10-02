@@ -1,3 +1,5 @@
+import os
+
 from pydantic import BaseModel
 
 from jg.coop.lib import loggers

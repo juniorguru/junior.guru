@@ -316,6 +316,6 @@ def confirm(question, default=True):
 
 def default_from_env(name, default="", type=str):
     def env_reader():
-        return type(os.environ.get(name) or default)
+        return type(os.getenv(name) or default)
 
     return env_reader

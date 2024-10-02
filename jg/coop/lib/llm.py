@@ -20,7 +20,7 @@ from jg.coop.lib.cache import cache
 from jg.coop.lib.mutations import mutates
 
 
-OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 OPENAI_MODEL = "gpt-4o-mini"
 

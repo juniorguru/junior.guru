@@ -54,6 +54,7 @@ class SubmittedJob(BaseModel):
     expires_on = DateField(index=True)
     lang = CharField()
     description_html = TextField()
+    description_text = TextField()
 
     url = CharField(unique=True)
     apply_email = CharField(null=True)
@@ -107,6 +108,7 @@ class ScrapedJob(BaseModel):
     posted_on = DateField(index=True)
     lang = CharField(null=True)
     description_html = TextField()
+    description_text = TextField()
     llm_opinion = JSONField(null=True)
 
     url = CharField(unique=True)
@@ -222,6 +224,7 @@ class ListedJob(BaseModel):
     posted_on = DateField(index=True)
     lang = CharField()
     description_html = TextField()
+    description_text = TextField()
 
     url = CharField()
     apply_email = CharField(null=True)

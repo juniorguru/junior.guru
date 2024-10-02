@@ -8,7 +8,7 @@ from jg.coop.lib import loggers
 from jg.coop.lib.cache import cache
 
 
-APIFY_API_KEY = os.environ.get("APIFY_API_KEY")
+APIFY_API_KEY = os.getenv("APIFY_API_KEY")
 
 
 logger = loggers.from_path(__file__)

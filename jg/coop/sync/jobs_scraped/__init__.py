@@ -34,8 +34,6 @@ PIPELINES = [
     "jg.coop.sync.jobs_scraped.pipelines.gender_remover",
     "jg.coop.sync.jobs_scraped.pipelines.emoji_remover",
     "jg.coop.sync.jobs_scraped.pipelines.employment_types_cleaner",
-    "jg.coop.sync.jobs_scraped.pipelines.locations",
-    "jg.coop.sync.jobs_scraped.pipelines.tech_tags",
 ]
 
 

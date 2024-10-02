@@ -30,11 +30,11 @@ BROWSER_USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:124.0) Ge
 
 COLLECTION_NAME_RE = re.compile(r"(?P<collection_name>\w+)\([^\)]*after:\s*\$cursor")
 
-MEMBERFUL_API_KEY = os.environ.get("MEMBERFUL_API_KEY")
+MEMBERFUL_API_KEY = os.getenv("MEMBERFUL_API_KEY")
 
-MEMBERFUL_EMAIL = os.environ.get("MEMBERFUL_EMAIL", "kure@junior.guru")
+MEMBERFUL_EMAIL = os.getenv("MEMBERFUL_EMAIL") or "kure@junior.guru"
 
-MEMBERFUL_PASSWORD = os.environ.get("MEMBERFUL_PASSWORD")
+MEMBERFUL_PASSWORD = os.getenv("MEMBERFUL_PASSWORD")
 
 
 logger = loggers.from_path(__file__)
