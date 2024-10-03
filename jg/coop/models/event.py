@@ -1,7 +1,7 @@
 import math
-from datetime import datetime, timedelta
+from datetime import UTC, datetime, timedelta
+from zoneinfo import ZoneInfo
 
-import arrow
 from peewee import (
     CharField,
     DateTimeField,
@@ -41,7 +41,8 @@ class Event(BaseModel):
 
     @property
     def start_at_prg(self):
-        return arrow.get(self.start_at).to("Europe/Prague").naive
+        start_at_utc = self.start_at.replace(tzinfo=UTC)
+        return start_at_utc.astimezone(ZoneInfo("Europe/Prague")).replace(tzinfo=None)
 
     @property
     def end_at(self):
@@ -77,7 +78,7 @@ class Event(BaseModel):
 
     @classmethod
     def next(cls, now=None):
-        now = now or datetime.utcnow()
+        now = now or datetime.now(UTC).replace(tzinfo=None)
         return cls.select().where(cls.start_at >= now).order_by(cls.start_at).first()
 
     @classmethod
@@ -98,12 +99,12 @@ class Event(BaseModel):
 
     @classmethod
     def archive_listing(cls, now=None):
-        now = now or datetime.utcnow()
+        now = now or datetime.now(UTC).replace(tzinfo=None)
         return cls.select().where(cls.start_at < now).order_by(cls.start_at.desc())
 
     @classmethod
     def planned_listing(cls, now=None):
-        now = now or datetime.utcnow()
+        now = now or datetime.now(UTC).replace(tzinfo=None)
         return cls.select().where(cls.start_at >= now).order_by(cls.start_at)
 
     @classmethod

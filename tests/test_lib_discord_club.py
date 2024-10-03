@@ -101,7 +101,7 @@ def test_get_guild_role_not_found_raises():
     ],
 )
 def test_is_message_older_than(date_, expected):
-    created_at = datetime.utcnow().replace(2022, 1, 25)
+    created_at = datetime(2022, 1, 25)
     message = StubClubMessage(created_at)
 
     assert discord_club.is_message_older_than(message, date_) is expected
@@ -120,7 +120,7 @@ def test_is_message_older_than_no_message():
     ],
 )
 def test_is_message_over_period_ago(today, expected):
-    created_at = datetime.utcnow().replace(2022, 1, 18)
+    created_at = datetime(2022, 1, 18)
     message = StubClubMessage(created_at)
 
     assert (

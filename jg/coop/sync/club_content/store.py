@@ -1,4 +1,3 @@
-import arrow
 import peewee
 from discord import DMChannel, Member, Message, User
 
@@ -35,7 +34,7 @@ def store_member(member: Member) -> ClubUser:
         has_avatar=bool(member.avatar),
         display_name=member.display_name,
         mention=member.mention,
-        joined_at=arrow.get(member.joined_at).naive,
+        joined_at=member.joined_at.replace(tzinfo=None),
         initial_roles=get_user_roles(member),
     )
 
@@ -60,7 +59,9 @@ def _store_user(user: User) -> ClubUser:
             display_name=user.display_name,
             mention=user.mention,
             joined_at=(
-                arrow.get(user.joined_at).naive if hasattr(user, "joined_at") else None
+                user.joined_at.replace(tzinfo=None)
+                if hasattr(user, "joined_at")
+                else None
             ),
             initial_roles=get_user_roles(user),
         )
@@ -96,10 +97,10 @@ def store_message(message: Message) -> ClubMessage:
             },
             upvotes_count=count_upvotes(message.reactions),
             downvotes_count=count_downvotes(message.reactions),
-            created_at=arrow.get(message.created_at).naive,
+            created_at=message.created_at.replace(tzinfo=None),
             created_month=f"{message.created_at:%Y-%m}",
             edited_at=(
-                arrow.get(message.edited_at).naive if message.edited_at else None
+                message.edited_at.replace(tzinfo=None) if message.edited_at else None
             ),
             author=_store_user(message.author),
             author_is_bot=message.author.id == ClubMemberID.BOT,

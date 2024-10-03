@@ -2,8 +2,6 @@ import re
 from datetime import datetime
 from urllib.parse import urlparse
 
-import arrow
-
 
 def coerce(mapping, record):
     data = {}
@@ -42,19 +40,19 @@ def parse_datetime(value):
     if value:
         value = value.strip()
         try:
-            return arrow.get(value, "M/D/YYYY H:m:s").naive
+            return datetime.strptime(value, "%m/%d/%Y %H:%M:%S")
         except ValueError:
-            return arrow.get(datetime.fromisoformat(value)).naive
+            return datetime.fromisoformat(value).replace(tzinfo=None)
 
 
 def parse_date(value):
     if value:
         value = value.strip()
         try:
-            return arrow.get(value, "M/D/YYYY H:m:s").date()
+            return datetime.strptime(value, "%m/%d/%Y %H:%M:%S").date()
         except ValueError:
             try:
-                return arrow.get(value, "M/D/YYYY").date()
+                return datetime.strptime(value, "%m/%d/%Y").date()
             except ValueError:
                 return datetime.fromisoformat(value).date()
 

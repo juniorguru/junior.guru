@@ -1,7 +1,7 @@
-from datetime import date, timedelta
+from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
-import arrow
 import click
 from discord import ScheduledEvent
 from strictyaml import CommaSeparated, Int, Map, Optional, Seq, Str, Url, load
@@ -151,7 +151,7 @@ def main(clear_posters):
 @db.connection_context()
 async def sync_scheduled_events(client: ClubClient):
     discord_events = {
-        arrow.get(scheduled_event.start_time).naive: scheduled_event
+        scheduled_event.start_time.replace(tzinfo=None): scheduled_event
         for scheduled_event in client.club_guild.scheduled_events
         if is_event_scheduled_event(scheduled_event)
     }
@@ -294,10 +294,12 @@ async def post_next_event_messages(client: ClubClient):
 
 
 def load_record(record):
-    start_at = arrow.get(
+    start_at_prg = datetime(
         *map(int, str(record.pop("date")).split("-")),
         *map(int, record.pop("time").split(":")),
-        tzinfo="Europe/Prague",
+        tzinfo=ZoneInfo("Europe/Prague"),
     )
-    record["start_at"] = start_at.to("UTC").naive
+    start_at_utc = start_at_prg.astimezone(UTC)
+    start_at = start_at_utc.replace(tzinfo=None)
+    record["start_at"] = start_at
     return record

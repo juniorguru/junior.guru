@@ -37,23 +37,25 @@ def main(force_since):
 
 @db.connection_context()
 async def sync_digest(client: ClubClient, force_since: date):
-    since = force_since or date.today() - timedelta(weeks=1)
+    since_on = force_since or date.today() - timedelta(weeks=1)
     message = ClubMessage.last_bot_message(ClubChannelID.ANNOUNCEMENTS, DIGEST_EMOJI)
 
-    if not is_message_older_than(message, since):
+    if not is_message_older_than(message, since_on):
         if not force_since:
             logger.info("Digest not needed")
             return
         logger.warning("Digest forced!")
 
     if not force_since and message:
-        since = message.created_at.date()
-    logger.info(f"Analyzing since {since}")
+        since_on = message.created_at.date()
+    logger.info(f"Analyzing since {since_on}")
 
-    content = f"{DIGEST_EMOJI} Co se tu dělo za poslední týden? (od {since:%-d.%-m.})"
+    content = (
+        f"{DIGEST_EMOJI} Co se tu dělo za poslední týden? (od {since_on:%-d.%-m.})"
+    )
 
     logger.info(f"Listing {TOP_MESSAGES_LIMIT} top messages")
-    messages = ClubMessage.digest_listing(since, limit=TOP_MESSAGES_LIMIT)
+    messages = ClubMessage.digest_listing(since_on, limit=TOP_MESSAGES_LIMIT)
     for n, message in enumerate(messages, start=1):
         logger.info(
             f"Message #{n}: {message.upvotes_count} votes for {message.author.display_name} in #{message.channel_name}, {message.url}"
@@ -70,7 +72,7 @@ async def sync_digest(client: ClubClient, force_since: date):
     )
 
     logger.info(f"Listing {TOP_CHANNELS_LIMIT} top channels")
-    channels_digest = ClubMessage.digest_channels(since, limit=TOP_CHANNELS_LIMIT)
+    channels_digest = ClubMessage.digest_channels(since_on, limit=TOP_CHANNELS_LIMIT)
     for n, channel_digest in enumerate(channels_digest, start=1):
         logger.info(
             f"Channel #{n}: {channel_digest['size']} characters in {channel_digest['channel_name']!r}, parent channel #{channel_digest['parent_channel_name']}"

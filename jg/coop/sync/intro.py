@@ -1,5 +1,5 @@
 import asyncio
-from datetime import datetime, timedelta
+from datetime import UTC, datetime, timedelta
 
 import discord
 from discord import MessageType, TextChannel
@@ -49,7 +49,7 @@ async def sync_intro(client: ClubClient):
     discord_channel = await client.club_guild.fetch_channel(ClubChannelID.INTRO)
 
     logger.info("Processing messages")
-    since_at = datetime.utcnow() - PROCESS_HISTORY_SINCE
+    since_at = datetime.now(UTC).replace(tzinfo=None) - PROCESS_HISTORY_SINCE
     tasks = []
     for message in ClubMessage.channel_listing_since(ClubChannelID.INTRO, since_at):
         tasks.append(asyncio.create_task(process_message(discord_channel, message)))

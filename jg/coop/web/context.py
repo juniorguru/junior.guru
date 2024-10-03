@@ -1,9 +1,7 @@
 import os
-from datetime import date, timedelta
+from datetime import UTC, date, datetime, timedelta
 from operator import attrgetter
 from urllib.parse import urljoin
-
-import arrow
 
 from jg.coop.lib import loggers
 from jg.coop.lib.discord_club import CLUB_GUILD
@@ -41,7 +39,7 @@ logger = loggers.from_path(__file__)
 
 @db.connection_context()
 def on_shared_context(context):
-    now = arrow.utcnow()
+    now = datetime.now(UTC)
     today = now.date()
     context["now"] = now
     context["today"] = today

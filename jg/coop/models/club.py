@@ -1,6 +1,5 @@
-import datetime
 import math
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 from enum import StrEnum, auto, unique
 from itertools import groupby
 from operator import attrgetter
@@ -351,10 +350,14 @@ class ClubMessage(BaseModel):
 
     # TODO squash with channel_listing
     @classmethod
-    def channel_listing_since(cls, channel_id: int, since: datetime) -> Iterable[Self]:
+    def channel_listing_since(
+        cls, channel_id: int, since_at: datetime
+    ) -> Iterable[Self]:
+        if since_at.tzinfo:
+            raise ValueError("Naive UTC datetime expected, got timezone-aware")
         return (
             cls.select()
-            .where((cls.channel_id == channel_id) & (cls.created_at >= since))
+            .where((cls.channel_id == channel_id) & (cls.created_at >= since_at))
             .order_by(cls.created_at)
         )
 
@@ -369,20 +372,20 @@ class ClubMessage(BaseModel):
         )
 
     @classmethod
-    def digest_listing(cls, since: datetime, limit: int = 5) -> Iterable[Self]:
+    def digest_listing(cls, since_on: date, limit: int = 5) -> Iterable[Self]:
         return (
             cls.select()
             .where(
                 cls.is_private == False,  # noqa: E712
                 ClubMessage.parent_channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS),
-                cls.created_at >= since,
+                cls.created_at >= datetime.combine(since_on, datetime.min.time()),
             )
             .order_by(cls.upvotes_count.desc())
             .limit(limit)
         )
 
     @classmethod
-    def digest_channels(cls, since: datetime, limit: int = 5) -> Iterable[dict]:
+    def digest_channels(cls, since_on: date, limit: int = 5) -> Iterable[dict]:
         size = fn.sum(cls.content_size).alias("size")
         return (
             cls.select(
@@ -395,7 +398,7 @@ class ClubMessage(BaseModel):
             .where(
                 cls.is_private == False,  # noqa: E712
                 ClubMessage.parent_channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS),
-                cls.created_at >= since,
+                cls.created_at >= datetime.combine(since_on, datetime.min.time()),
             )
             .group_by(cls.channel_id)
             .order_by(size.desc())

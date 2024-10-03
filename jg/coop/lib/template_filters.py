@@ -1,12 +1,13 @@
 import math
 import random
 import re
+from datetime import UTC
 from numbers import Number
 from operator import itemgetter
 from typing import Generator, Iterable, Literal
 from urllib.parse import unquote, urljoin
+from zoneinfo import ZoneInfo
 
-import arrow
 from markupsafe import Markup
 from mkdocs.structure import StructureItem
 from mkdocs.structure.nav import Navigation
@@ -41,7 +42,9 @@ def remove_p(html):
 
 
 def local_time(dt):
-    return arrow.get(dt).to("Europe/Prague").format("H:mm")
+    dt_utc = dt.replace(tzinfo=UTC)
+    dt_prg = dt_utc.astimezone(ZoneInfo("Europe/Prague"))
+    return dt_prg.strftime("%-H:%M")
 
 
 def weekday(dt):

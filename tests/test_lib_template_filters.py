@@ -1,7 +1,6 @@
 from collections import namedtuple
-from datetime import date, datetime
+from datetime import UTC, date, datetime
 
-import arrow
 import pytest
 from mkdocs.structure.files import File
 
@@ -25,10 +24,10 @@ def test_remove_p():
 
 
 @pytest.mark.parametrize(
-    "dt,expected",
+    "dt, expected",
     [
         (datetime(2020, 4, 21, 12, 1, 48), "14:01"),
-        (arrow.get(datetime(2020, 4, 21, 20, 30, 00), "UTC"), "22:30"),
+        (datetime(2020, 4, 21, 20, 30, 00, tzinfo=UTC), "22:30"),
         (datetime(2020, 4, 21, 5, 0, 48), "7:00"),
     ],
 )
@@ -37,7 +36,7 @@ def test_local_time(dt, expected):
 
 
 @pytest.mark.parametrize(
-    "dt,expected",
+    "dt, expected",
     [
         (datetime(2020, 4, 21, 12, 1, 48), "úterý"),
         (date(2020, 4, 21), "úterý"),

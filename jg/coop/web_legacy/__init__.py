@@ -1,4 +1,4 @@
-import arrow
+from datetime import UTC, datetime
 from flask import Flask, render_template, url_for
 from flask_frozen import Freezer
 
@@ -166,7 +166,7 @@ def not_found():
 
 @app.context_processor
 def inject_defaults():
-    now = arrow.utcnow()
+    now = datetime.now(UTC)
     return dict(nav_tabs=NAV_TABS, now=now, today=now.date())
 
 
