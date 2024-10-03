@@ -14,7 +14,7 @@ jg = "jg.coop.cli:main"
 coop = "jg.coop.cli:main"
 
 [tool.poetry.dependencies]
-python = "~3.11"
+python = "~3.12"
 "jg.beak" = { git = "https://github.com/juniorguru/beak.git" }
 "jg.chick" = { git = "https://github.com/juniorguru/chick.git" }
 apify-client = "1.7.1"
@@ -60,7 +60,7 @@ pyyaml = "6.0.2"
 requests = "2.32.3"
 strictyaml = "1.7.3"
 stripe = "10.12.0"
-teemup = "1.0.3"
+teemup = "1.0.4"
 tenacity = "9.0.0"
 
 [tool.poetry.group.dev.dependencies]
