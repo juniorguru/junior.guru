@@ -13,7 +13,7 @@ import ics
 import requests
 import teemup
 
-from jg.coop.cli.sync import main as cli
+# from jg.coop.cli.sync import main as cli  TODO FIXME temporarily disabled!
 from jg.coop.lib import discord_task, loggers, mutations
 from jg.coop.lib.cache import cache
 from jg.coop.lib.discord_club import (
@@ -155,7 +155,7 @@ TAG_NAME = "sraz"
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=["club-content"])
+# @cli.sync_command(dependencies=["club-content"])  TODO FIXME temporarily disabled!
 @click.option("--channel", "channel_id", default="promo", type=parse_channel)
 def main(channel_id):
     today = date.today()
