@@ -71,16 +71,18 @@ def test_get_region_from_country():
 
 
 @pytest.mark.parametrize(
-    "country",
+    "region, country, expected",
     [
-        "Česko",
-        "Česká republika",
+        ("Středočeský kraj", "Česko", "Praha"),
+        ("Středočeský kraj", "Česká republika", "Praha"),
+        ("Praha", "Česko", "Praha"),
+        ("Praha", "Česká republika", "Praha"),
     ],
 )
-def test_get_region_from_region(country):
-    address = dict(region="Středočeský kraj", country=country)
+def test_get_region_from_region(region: str, country: str, expected: str):
+    address = dict(region=region, country=country)
 
-    assert get_region(address) == "Praha"
+    assert get_region(address) == expected
 
 
 GEOCODED_ADDRESS = {
@@ -91,7 +93,7 @@ GEOCODED_ADDRESS = {
 
 
 @pytest.mark.parametrize(
-    "location_raw,expected",
+    "location_raw, expected",
     [
         ("252 30 Řevnice, Česko", GEOCODED_ADDRESS),
         (
