@@ -38,10 +38,38 @@ MAPYCZ_REQUEST_HEADERS = {
 OPTIMIZATIONS = [
     (re.compile(pattern, re.I), value)
     for pattern, value in [
-        (r"\bpraha\b", {"place": "Praha", "region": "Praha", "country": "Česko"}),
-        (r"\bprague\b", {"place": "Praha", "region": "Praha", "country": "Česko"}),
-        (r"\bbrno\b", {"place": "Brno", "region": "Brno", "country": "Česko"}),
-        (r"\bostrava\b", {"place": "Ostrava", "region": "Ostrava", "country": "Česko"}),
+        (
+            r"\bpraha\b",
+            {
+                "place": "Praha",
+                "region": "Praha",
+                "country": "Česko",
+            },
+        ),
+        (
+            r"\bprague\b",
+            {
+                "place": "Praha",
+                "region": "Praha",
+                "country": "Česko",
+            },
+        ),
+        (
+            r"\bbrno\b",
+            {
+                "place": "Brno",
+                "region": "Brno",
+                "country": "Česko",
+            },
+        ),
+        (
+            r"\bostrava\b",
+            {
+                "place": "Ostrava",
+                "region": "Ostrava",
+                "country": "Česko",
+            },
+        ),
         (
             r"\b[čc]\S+\s+bud[ěe]jovic\w+",
             {
@@ -50,33 +78,67 @@ OPTIMIZATIONS = [
                 "country": "Česko",
             },
         ),
+        (
+            r"\bbratislava\b",
+            {
+                "place": "Bratislava",
+                "region": "Bratislava",
+                "country": "Slovensko",
+            },
+        ),
+        (
+            r"\bprešov\b",
+            {
+                "place": "Prešov",
+                "region": "Prešov",
+                "country": "Slovensko",
+            },
+        ),
+        (
+            r"\bkošice\b",
+            {
+                "place": "Košice",
+                "region": "Košice",
+                "country": "Slovensko",
+            },
+        ),
         (r"^česko$", None),
         (r"^czechia$", None),
         (r"^česká rep[a-z\.]+$", None),
         (r"^czech rep[a-z\.]+$", None),
+        (r"^(slovakia|slovensko)$", None),
     ]
 ]
 
 REGIONS_MAPPING = {
     # countries
     "Deutschland": "Německo",
-    "Polska": "Polsko",
     "Österreich": "Rakousko",
-    # regions
+    "Polska": "Polsko",
+    # czech regions
     "Hlavní město Praha": "Praha",
-    "Středočeský kraj": "Praha",
     "Jihočeský kraj": "České Budějovice",
-    "Plzeňský kraj": "Plzeň",
-    "Karlovarský kraj": "Karlovy Vary",
-    "Ústecký kraj": "Ústí nad Labem",
-    "Liberecký kraj": "Liberec",
-    "Královéhradecký kraj": "Hradec Králové",
-    "Pardubický kraj": "Pardubice",
-    "Olomoucký kraj": "Olomouc",
-    "Moravskoslezský kraj": "Ostrava",
     "Jihomoravský kraj": "Brno",
-    "Zlínský kraj": "Zlín",
+    "Karlovarský kraj": "Karlovy Vary",
     "Kraj Vysočina": "Jihlava",
+    "Královéhradecký kraj": "Hradec Králové",
+    "Liberecký kraj": "Liberec",
+    "Moravskoslezský kraj": "Ostrava",
+    "Olomoucký kraj": "Olomouc",
+    "Pardubický kraj": "Pardubice",
+    "Plzeňský kraj": "Plzeň",
+    "Středočeský kraj": "Praha",
+    "Ústecký kraj": "Ústí nad Labem",
+    "Zlínský kraj": "Zlín",
+    # slovak regions
+    "Banskobystrický kraj": "Banská Bystrica",
+    "Bratislavský kraj": "Bratislava",
+    "Košický kraj": "Košice",
+    "Nitriansky kraj": "Nitra",
+    "Prešovský kraj": "Prešov",
+    "Trenčiansky kraj": "Trenčín",
+    "Trnavský kraj": "Trnava",
+    "Žilinský kraj": "Žilina",
 }
 
 ADDRESS_TYPES_MAPPING = {
@@ -195,7 +257,10 @@ def geocode_mapycz(location_raw):
 
 
 def get_region(address):
-    if address["country"].lower().startswith("česk"):
+    if (
+        address["country"].lower().startswith("česk")
+        or address["country"].lower() == "slovensko"
+    ):
         region = address["region"]
     else:
         region = address["country"]

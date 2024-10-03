@@ -5,11 +5,25 @@ import pytest
 from jg.coop.lib.locations import fetch_locations, get_region, optimize_geocoding
 
 
-def test_locations():
-    address = {"place": "Řevnice", "region": "Středočeský kraj", "country": "Česko"}
-    results = fetch_locations(["252 30 Řevnice, Česko"], geocode=lambda _: address)
+@pytest.mark.parametrize(
+    "locations_raw, address, expected",
+    [
+        (
+            ["252 30 Řevnice, Česko"],
+            {"place": "Řevnice", "region": "Středočeský kraj", "country": "Česko"},
+            [{"name": "Řevnice", "region": "Praha"}],
+        ),
+        (
+            ["Bočiar, Slovensko"],
+            {"place": "Bočiar", "region": "Košický kraj", "country": "Slovensko"},
+            [{"name": "Bočiar", "region": "Košice"}],
+        ),
+    ],
+)
+def test_locations(locations_raw: list[str], address: dict, expected: list[dict]):
+    results = fetch_locations(locations_raw, geocode=lambda _: address)
 
-    assert results == [{"name": "Řevnice", "region": "Praha"}]
+    assert results == expected
 
 
 def test_locations_remote():
