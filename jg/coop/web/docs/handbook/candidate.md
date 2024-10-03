@@ -1395,4 +1395,10 @@ V tom shrnutí od <@668226181769986078> jsou spíš obecné nevýhody té právn
 deleni firem spis podle cost/profit https://newsletter.pragmaticengineer.com/p/profit-centers-cost-centers
 
 
+místa, kde se mohou lidi nabízet, nebo kde mohou hledat práci - https://discord.com/channels/769966886598737931/788833053425926195/1002163691120246834
+
+
+For the most part all entry level jobs are “we understand you are going to be worthless and be a net drain on productivity for your team for at least 6 months” with the expectation that you learn and grow to be contributing and advance to mid level.
+
+
 #} -->

@@ -951,4 +951,9 @@ V tom shrnutí od <@668226181769986078> jsou spíš obecné nevýhody té právn
 ---
 
 
+Peníze:
+https://blog.pragmaticengineer.com/software-engineering-salaries-in-the-netherlands-and-europe/
+https://trello.com/1/cards/634d7ed102a75102f33dca4e/attachments/634d7ed202a75102f33dcc6f/download/H1_2022-Salary-guide-CZ.pdf
+
+
 #} -->
