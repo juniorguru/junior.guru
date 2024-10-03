@@ -81,7 +81,7 @@ async def send_daily_report(client: ClubClient):
             f"\nTo je jako {daniel_all_content_size / 1800:.1f} normostran."
             "\nPamatuj však, že nevidím všechno, takže ta celková čísla mohou být výšší."
             f"\nHonza tentýž den veřejně napsal {honza_content_size} písmenek, ale nikdy se to nedoví, protože tyhle zprávy posílám jen tobě."
-            f"\n\*\*{czech_weekday}\*\* :abc: {daniel_all_content_size} :speech_left: {len(daniel_all_messages)} <:discordthread:993580255287705681> {len(daniel_all_threads)}"
+            f"\n**{czech_weekday}** :abc: {daniel_all_content_size} :speech_left: {len(daniel_all_messages)} <:discordthread:993580255287705681> {len(daniel_all_threads)}"
         )
         logger.info(f"Sending:\n{content}")
         with mutating_discord(channel) as proxy:
