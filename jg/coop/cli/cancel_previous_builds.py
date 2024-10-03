@@ -19,7 +19,7 @@ def main(circleci_branch, circleci_workflow_id, production, circleci_api_key):
     pipelines = circleci.get_project_pipelines(
         "juniorguru", "junior.guru", branch=circleci_branch, paginate=True
     )
-    recently = datetime.now(UTC) - timedelta(days=3)
+    recently = datetime.now(UTC).replace(tzinfo=None) - timedelta(days=3)
     pipelines = [
         pipeline
         for pipeline in pipelines
