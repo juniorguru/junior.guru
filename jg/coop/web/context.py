@@ -2,6 +2,7 @@ import os
 from datetime import UTC, date, datetime, timedelta
 from operator import attrgetter
 from urllib.parse import urljoin
+from zoneinfo import ZoneInfo
 
 from jg.coop.lib import loggers
 from jg.coop.lib.discord_club import CLUB_GUILD
