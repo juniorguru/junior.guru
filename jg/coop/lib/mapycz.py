@@ -175,6 +175,11 @@ def generate_queries(
         location_raw = ZIP_CODE_RE.sub("", location_raw)
         yield from generate_queries(location_raw)
 
+    # remove the first part (e.g. TietoEvry Organica Ostrava, Nám. Biskupa Bruna 3399/5, Ostrava)
+    if "," in location_raw:
+        _, location_raw = location_raw.split(",", 1)
+        yield from generate_queries(location_raw)
+
 
 def get_location(location_raw: str, item: ResponseItem) -> Location:
     municipalities = [
