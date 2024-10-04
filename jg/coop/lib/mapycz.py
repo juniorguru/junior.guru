@@ -73,7 +73,13 @@ class Location(BaseModel):
     raw: str
     place: str
     region: str
-    country: str
+    country_code: str
+
+    # TODO
+    # def __str__(self) -> str:
+    #     if self.place == self.region:
+    #         return self.place
+    #     return f"{self.place}, {self.region}"
 
 
 class ResponseRegionType(StrEnum):
@@ -221,7 +227,7 @@ def get_location(location_raw: str, item: ResponseItem) -> Location:
         raw=location_raw,
         place=municipality_name or region_name,
         region=region_name,
-        country=country.name,
+        country_code=country.isoCode,
     )
 
 
