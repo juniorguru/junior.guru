@@ -58,9 +58,9 @@ REGIONS_MAPPING_SK = {
     "Banskobystrický kraj": "Banská Bystrica",
     "Bratislavský kraj": "Bratislava",
     "Košický kraj": "Košice",
-    "Nitriansky kraj": "Nitra",
+    "Nitranský kraj": "Nitra",
     "Prešovský kraj": "Prešov",
-    "Trenčiansky kraj": "Trenčín",
+    "Trenčínský kraj": "Trenčín",
     "Trnavský kraj": "Trnava",
     "Žilinský kraj": "Žilina",
 }
