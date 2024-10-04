@@ -257,11 +257,10 @@ def geocode_mapycz(location_raw):
 
 
 def get_region(address):
-    if (
-        address["country"].lower().startswith("česk")
-        or address["country"].lower() == "slovensko"
-    ):
+    if address["country"].lower().startswith("česk"):
         region = address["region"]
+    elif address["country"].lower() == "slovensko":
+        raise NotImplementedError("Slovakia not implemented yet")
     else:
         region = address["country"]
     return REGIONS_MAPPING.get(region, region)
