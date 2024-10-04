@@ -124,7 +124,7 @@ async def locate(
     bounding_box = bounding_box or BOUNDING_BOX
 
     async with limit:
-        logger.info(f"Locating: {location_raw!r}")
+        logger.debug(f"Locating: {location_raw!r}")
         async with httpx.AsyncClient(headers=DEFAULT_HEADERS) as client:
             for query, type in generate_queries(location_raw):
                 logger.debug(f"Locating as {type}: {query!r}")
