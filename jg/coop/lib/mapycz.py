@@ -224,6 +224,10 @@ if __name__ == "__main__":
     Usage:
 
         poetry run python -m jg.coop.lib.mapycz 'Ústí nad Orlicí, Pardubice, Czechia'
+
+    See also:
+
+        https://pro.mapy.cz/examples/geocode/
     """
     import sys
     from pprint import pp
