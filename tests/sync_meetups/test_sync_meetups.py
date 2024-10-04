@@ -7,6 +7,7 @@ from typing import Any
 import pytest
 
 from jg.coop.lib.discord_club import ClubMemberID
+from jg.coop.lib.mapycz import Location
 from jg.coop.sync.meetups import (
     generate_scheduled_event,
     generate_starting_message_content,
@@ -38,7 +39,12 @@ def icalendar_tentative_content() -> str:
 @pytest.fixture
 def event() -> dict[str, Any]:
     return dict(
-        location=("Rohanské nábř. 19, 186 00 Karlín", "Praha"),
+        location=Location(
+            raw="Applifting, Rohanské nábř. 19, Praha",
+            place="Praha",
+            region="Praha",
+            country="Česko",
+        ),
         location_raw="Applifting, Rohanské nábř. 19, Praha",
         name="Mini sraz juniorů na akci pythonistů",
         name_raw="ReactGirls & Applifting meetup",
@@ -84,16 +90,8 @@ def test_parse_meetup_com_location():
 
 
 def test_parse_meetup_com_location_online_event():
-    venue = {
-        "address": None,
-        "city": None,
-        "country": None,
-        "name": "Online event",
-        "state": None,
-    }
-
     with pytest.raises(ValueError):
-        assert parse_meetup_com_location(venue)
+        assert parse_meetup_com_location(None)
 
 
 @pytest.mark.parametrize(

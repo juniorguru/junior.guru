@@ -1,6 +1,9 @@
+import asyncio
+
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
-from jg.coop.lib.locations import fetch_locations
+from jg.coop.lib.cli import async_command
+from jg.coop.lib.mapycz import Location, locate
 from jg.coop.models.base import db
 from jg.coop.models.job import ListedJob
 
@@ -9,16 +12,25 @@ logger = loggers.from_path(__file__)
 
 
 @cli.sync_command(dependencies=["jobs-listing"])
-@db.connection_context()
-def main():
-    for job in ListedJob.listing():
-        if locations_raw := job.locations_raw:
-            logger.info(f"Normalizing locations: {locations_raw!r}")
-            debug_info = {"title": job.title, "company_name": job.company_name}
-            locations = fetch_locations(
-                locations_raw,
-                debug_info=debug_info,
-            )
-            logger.debug(f"Locations normalized: {locations_raw} → {locations}")
-            job.locations = locations
+@async_command
+async def main():
+    with db.connection_context():
+        jobs = list(ListedJob.listing())
+
+    values = await asyncio.gather(
+        *[asyncio.create_task(locate_list(job.locations_raw)) for job in jobs]
+    )
+
+    with db.connection_context():
+        for job, locations in zip(jobs, values):
+            logger.info(f"Locations normalized: {job.locations_raw} → {locations}")
+            job.locations = [location.model_dump() for location in locations]
             job.save()
+
+
+async def locate_list(locations_raw: list[str]) -> list[Location]:
+    if locations_raw:
+        return await asyncio.gather(
+            *[asyncio.create_task(locate(location)) for location in locations_raw]
+        )
+    return []

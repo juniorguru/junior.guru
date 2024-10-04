@@ -310,8 +310,8 @@ class ListedJob(BaseModel):
         locations = self.locations or []
         if len(locations) == 1:
             location = locations[0]
-            name, region = location["name"], location["region"]
-            parts = [name] if name == region else [name, region]
+            place, region = location["place"], location["region"]
+            parts = [place] if place == region else [place, region]
             if self.remote:
                 parts.append("na dálku")
             parts = list(filter(None, parts))
@@ -319,7 +319,7 @@ class ListedJob(BaseModel):
                 return ", ".join(parts)
             return "?"
         else:
-            parts = list(sorted(filter(None, [loc["name"] for loc in locations])))
+            parts = list(sorted(filter(None, [loc["place"] for loc in locations])))
             if len(parts) > 2:
                 parts = parts[:2]
                 if self.remote:
@@ -470,7 +470,7 @@ class ListedJob(BaseModel):
                 )
             },
             **{
-                f"locations_{i}_name": (value["name"] if value else None)
+                f"locations_{i}_name": (value["place"] if value else None)
                 for i, value in columns(self.locations, 20)
             },
             **{

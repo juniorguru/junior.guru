@@ -61,6 +61,7 @@ strictyaml = "1.7.3"
 stripe = "10.12.0"
 teemup = "1.1.0"
 tenacity = "9.0.0"
+httpx = "0.27.2"
 
 [tool.poetry.group.dev.dependencies]
 ghp-import = "2.1.0"

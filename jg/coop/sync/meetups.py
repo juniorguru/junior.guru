@@ -16,6 +16,7 @@ import teemup
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers, mutations
 from jg.coop.lib.cache import cache
+from jg.coop.lib.cli import async_command
 from jg.coop.lib.discord_club import (
     DEFAULT_AUTO_ARCHIVE_DURATION,
     ClubClient,
@@ -23,7 +24,7 @@ from jg.coop.lib.discord_club import (
     fetch_threads,
     parse_channel,
 )
-from jg.coop.lib.locations import fetch_location
+from jg.coop.lib.mapycz import locate
 from jg.coop.models.club import ClubMessage
 
 
@@ -171,7 +172,8 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command(dependencies=["club-content"])
 @click.option("--channel", "channel_id", default="promo", type=parse_channel)
-def main(channel_id):
+@async_command
+async def main(channel_id):
     today = date.today()
     events = []
     for feed in fetch_feeds():
@@ -217,11 +219,7 @@ def main(channel_id):
     logger.info("Processing location")
     for event in events:
         logger.debug(f"Locating: {event['name_raw']}")
-        location = fetch_location(event["location_raw"])
-        if location:
-            event["location"] = location
-        else:
-            raise ValueError(f"Could not locate: {event['location_raw']!r}")
+        event["location"] = await locate(event["location_raw"])
 
     logger.info(
         f"Syncing {len(events)} events with Discord, using channel #{channel_id}"
@@ -424,7 +422,7 @@ def parse_meetup_url(text: str) -> str:
 
 def generate_scheduled_event(event: dict) -> dict:
     return dict(
-        name=f"{event['location'][1]}: {event['name']}",
+        name=f"{event['location'].place}: {event['name']}",
         description=(
             f'**Akce:** {event["name_raw"]}\n**Více info:** {event["url"]}\n\n{CALL_TO_ACTION_TEXT}'
         ),
@@ -437,9 +435,7 @@ def generate_scheduled_event(event: dict) -> dict:
 
 
 def thread_name(event: dict, limit=NAME_LENGTH_LIMIT) -> str:
-    name = (
-        f"{event['location'][1]}, {event['starts_at']:%-d.%-m.} – {event['name_raw']}"
-    )
+    name = f"{event['location'].place}, {event['starts_at']:%-d.%-m.} – {event['name_raw']}"
     if len(name) >= limit:
         return name[: limit - 1] + "…"
     return name
