@@ -3192,13 +3192,13 @@ widechars = ["wcwidth"]
 
 [[package]]
 name = "teemup"
-version = "1.0.4"
+version = "1.1.0"
 description = "If Meetup didn't become a walled garden, the world wouldn't need Teemup"
 optional = false
 python-versions = "<4.0,>=3.11"
 files = [
-    {file = "teemup-1.0.4-py3-none-any.whl", hash = "sha256:485d6b9427e1739fd928c2911e44ebc2dc180e7431c31d023ab0180c26de2574"},
-    {file = "teemup-1.0.4.tar.gz", hash = "sha256:26e4f1dc95315294c3fe5142563713d7f3f6edc8eeff73e8af22aba322ae494b"},
+    {file = "teemup-1.1.0-py3-none-any.whl", hash = "sha256:b04c2bf6744d3e4ab04e06f709785de86cfa907cb3def2713995de776a0c5fd9"},
+    {file = "teemup-1.1.0.tar.gz", hash = "sha256:dcd8b2986ac8121adab2d0d0012249bb13bf1cfa6a28a0a5b40f2496cd8ca059"},
 ]
 
 [package.dependencies]
@@ -3519,4 +3519,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.12"
-content-hash = "293ca126cff062597f201c2fda5b94413d1da329a1acfa9e553ced8f1389412f"
+content-hash = "ce257f5d475431a44801273bc773eaadad9f30c3386af6df5a4f1083bb61ac0b"

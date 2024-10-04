@@ -43,6 +43,10 @@ CALL_TO_ACTION_TEXT = (
 
 IMAGES_DIR = Path("jg/coop/images")
 
+USER_AGENT = "JuniorGuruBot (+https://junior.guru)"
+
+USER_AGENT_MEETUP = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:130.0) Gecko/20100101 Firefox/130.0"
+
 FEEDS = [
     dict(
         slug="pyvo",
@@ -51,6 +55,7 @@ FEEDS = [
         poster_path="posters-meetups/pyvo.png",
         format="icalendar",
         source_url="https://pyvo.cz/api/pyvo.ics",
+        user_agent=USER_AGENT,
     ),
     dict(
         slug="pydata",
@@ -59,6 +64,7 @@ FEEDS = [
         poster_path="posters-meetups/pydata.png",
         format="meetup_com",
         source_url="https://www.meetup.com/pydata-prague/events/",
+        user_agent=USER_AGENT_MEETUP,
     ),
     dict(
         slug="reactgirls",
@@ -67,6 +73,7 @@ FEEDS = [
         poster_path="posters-meetups/reactgirls.png",
         format="meetup_com",
         source_url="https://www.meetup.com/reactgirls/events/",
+        user_agent=USER_AGENT_MEETUP,
         skip=["workshop", "canvas:"],
     ),
     dict(
@@ -76,6 +83,7 @@ FEEDS = [
         poster_path="posters-meetups/frontendisti.png",
         format="meetup_com",
         source_url="https://www.meetup.com/frontendisti/events/",
+        user_agent=USER_AGENT_MEETUP,
         skip=["konference"],
     ),
     dict(
@@ -85,6 +93,7 @@ FEEDS = [
         poster_path="posters-meetups/pehapkari.png",
         format="meetup_com",
         source_url="https://www.meetup.com/pehapkari/events/",
+        user_agent=USER_AGENT_MEETUP,
     ),
     dict(
         slug="pehapkari-brno",
@@ -93,6 +102,7 @@ FEEDS = [
         poster_path="posters-meetups/pehapkari.png",
         format="meetup_com",
         source_url="https://www.meetup.com/pehapkari-brno/events/",
+        user_agent=USER_AGENT_MEETUP,
     ),
     dict(
         slug="ctvrtkon",
@@ -101,6 +111,7 @@ FEEDS = [
         poster_path="posters-meetups/ctvrtkon.png",
         format="ctvrtkon",
         source_url="https://ctvrtkon.cz/api/events/feed",
+        user_agent=USER_AGENT_MEETUP,
     ),
     dict(
         slug="czechtesters",
@@ -109,6 +120,7 @@ FEEDS = [
         poster_path="posters-meetups/czechtesters.png",
         format="meetup_com",
         source_url="https://www.meetup.com/professionaltesting/events/",
+        user_agent=USER_AGENT_MEETUP,
     ),
     dict(
         slug="protest",
@@ -117,6 +129,7 @@ FEEDS = [
         poster_path="posters-meetups/protest.png",
         format="meetup_com",
         source_url="https://www.meetup.com/protest_cz/events/",
+        user_agent=USER_AGENT_MEETUP,
     ),
     dict(
         slug="praguejs",
@@ -125,6 +138,7 @@ FEEDS = [
         poster_path="posters-meetups/praguejs.png",
         format="meetup_com",
         source_url="https://www.meetup.com/praguejs/events/",
+        user_agent=USER_AGENT_MEETUP,
     ),
     dict(
         slug="techmeetup",
@@ -133,6 +147,7 @@ FEEDS = [
         poster_path="posters-meetups/techmeetup.png",
         format="meetup_com",
         source_url="https://www.meetup.com/techmeetupostrava/events/",
+        user_agent=USER_AGENT_MEETUP,
         skip=["conference", "konference", "agile circle"],
     ),
     dict(
@@ -142,10 +157,9 @@ FEEDS = [
         poster_path="posters-meetups/praguegenai.png",
         format="meetup_com",
         source_url="https://www.meetup.com/prague-gen-ai/events/",
+        user_agent=USER_AGENT_MEETUP,
     ),
 ]
-
-USER_AGENT = "JuniorGuruBot (+https://junior.guru)"
 
 TIMELINE_LIMIT_DAYS = 60
 
@@ -364,9 +378,9 @@ def parse_meetup_com(content: str) -> Generator[dict[str, Any], None, None]:
                 )
 
 
-def parse_meetup_com_location(venue: dict[str, Any]) -> str:
-    if venue["name"] == "Online event":
-        raise ValueError("Online event")
+def parse_meetup_com_location(venue: dict[str, Any] | None) -> str:
+    if not venue:
+        raise ValueError("Event without venue (e.g. online event)")
     parts = [
         venue["name"],
         venue["address"],
