@@ -31,7 +31,7 @@ fiobank = "3.1.0"
 flask = "3.0.3"
 fonttools = "4.53.1"
 frozen-flask = "1.0.2"
-githubkit = "0.11.11"
+githubkit = "0.11.12"
 google-api-python-client = "2.146.0"
 gql = {extras = ["requests"], version = "3.5.0"}
 gspread = "6.1.2"
