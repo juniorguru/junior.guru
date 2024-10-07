@@ -7,7 +7,7 @@ updates:
     open-pull-requests-limit: 1
     groups:
       python:
-        patterns: "*"
+        patterns: ["*"]
     labels:
       - dependencies
   - package-ecosystem: npm
@@ -17,7 +17,7 @@ updates:
     open-pull-requests-limit: 1
     groups:
       js:
-        patterns: "*"
+        patterns: ["*"]
     labels:
       - dependencies
   - package-ecosystem: github-actions
