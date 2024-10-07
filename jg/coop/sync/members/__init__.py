@@ -142,7 +142,7 @@ def main(history_path: Path, today: date):
         for member in ClubUser.members_listing()
         if member.id not in seen_discord_ids
     )
-    extra_members_ids = []
+    trespassing_members_ids = []
     for member in remaining_members:
         if member.id in ADMIN_MEMBER_IDS:
             logger.debug(f"Adding subscription type to admin user #{member.id}")
@@ -155,11 +155,11 @@ def main(history_path: Path, today: date):
                 f"Discord member #{member.id} doesn't have a Memberful account!"
             )
             logger.debug(f"User #{member.id}:\n{pformat(model_to_dict(member))}")
-            member.is_member = False
+            member.is_trespassing = True
             member.save()
-            extra_members_ids.append(member.id)
-    if extra_members_ids:
-        discord_task.run(report_extra_members, extra_members_ids)
+            trespassing_members_ids.append(member.id)
+    if trespassing_members_ids:
+        discord_task.run(report_trespassing_members, trespassing_members_ids)
 
     logger.info("Checking consistency")
     for member in ClubUser.members_listing():
@@ -204,21 +204,21 @@ def main(history_path: Path, today: date):
 
 
 @db.connection_context()
-async def report_extra_members(client: ClubClient, extra_members_ids: list[int]):
+async def report_trespassing_members(client: ClubClient, members_ids: list[int]):
     logger.info("Prevent mistakes caused by out-of-sync data")
-    extra_members = []
-    for extra_member_id in extra_members_ids:
+    trespassing_members = []
+    for member_id in members_ids:
         try:
-            extra_members.append(await client.club_guild.fetch_member(extra_member_id))
+            trespassing_members.append(await client.club_guild.fetch_member(member_id))
         except NotFound:
-            logger.info(f"User #{extra_member_id} is not on Discord anymore, skipping")
-    if extra_members:
-        logger.info(f"Verified {len(extra_members)} members, reporting them")
+            logger.info(f"User #{member_id} is not on Discord anymore, skipping")
+    if trespassing_members:
+        logger.info(f"Verified {len(trespassing_members)} members, reporting them")
         channel = await client.fetch_channel(ClubChannelID.BUSINESS)
         with mutating_discord(channel) as proxy:
             await proxy.send(
                 "⚠️ Vypadá to, že tito členové nemají účet na Memberful: "
-                f"{', '.join(member.mention for member in extra_members)}"
+                f"{', '.join(member.mention for member in trespassing_members)}"
             )
     else:
         logger.info("After all, there are no users to report")

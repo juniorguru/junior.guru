@@ -69,6 +69,7 @@ class ClubUser(BaseModel):
     expires_at = DateTimeField(null=True)
     is_bot = BooleanField(default=False)
     is_member = BooleanField(default=True)
+    is_trespassing = BooleanField(null=True)
     has_avatar = BooleanField(default=True)
     avatar_path = CharField(null=True)
     display_name = CharField()
@@ -200,11 +201,15 @@ class ClubUser(BaseModel):
             row.subscription_type: row.count
             for row in cls.select(
                 cls.subscription_type,
-                fn.COUNT(cls.id).alias("count"),
+                fn.count(cls.id).alias("count"),
             )
             .where(
                 cls.is_bot == False,  # noqa: E712
                 cls.is_member == True,  # noqa: E712
+                (
+                    (cls.is_trespassing == False)  # noqa: E712
+                    | cls.is_trespassing.is_null()
+                ),
             )
             .group_by(cls.subscription_type)
             .order_by(cls.subscription_type)
@@ -226,6 +231,10 @@ class ClubUser(BaseModel):
         members = cls.listing().where(
             cls.is_bot == False,  # noqa: E712
             cls.is_member == True,  # noqa: E712
+            (
+                (cls.is_trespassing == False)  # noqa: E712
+                | cls.is_trespassing.is_null()
+            ),
         )
         if shuffle:
             members = members.order_by(fn.random())
