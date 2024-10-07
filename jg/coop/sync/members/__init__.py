@@ -63,7 +63,7 @@ class SubscriptionEntity(TypedDict):
     plan: PlanEntity
 
 
-class MemberEntity(TypedDict):
+class AccountEntity(TypedDict):
     id: str
     discordUserId: str
     email: str
@@ -92,56 +92,80 @@ def main(history_path: Path, today: date):
     logger.info("Getting data from Memberful")
     memberful = MemberfulAPI()
 
-    members: Iterable[MemberEntity] = memberful.get_nodes(MEMBERS_GQL_PATH.read_text())
+    accounts: Iterable[AccountEntity] = memberful.get_nodes(
+        MEMBERS_GQL_PATH.read_text()
+    )
     seen_discord_ids = set()
 
     stats_from = today.replace(day=1)
     stats_to = today
     stats: DefaultDict[StatName, int] = defaultdict(int)
 
-    for member in logger.progress(members):
-        account_id = int(member["id"])
-        member_admin_url = memberful_url(account_id)
+    for account in logger.progress(accounts):
+        account_id = int(account["id"])
+        account_admin_url = memberful_url(account_id)
 
-        logger.info(f"Processing member {member_admin_url}")
-        if is_active(member["subscriptions"]):
+        logger.info(f"Processing account {account_admin_url}")
+        if is_active(account["subscriptions"]):
             try:
-                discord_id = int(member["discordUserId"])  # raies TypeError if None
-                user = ClubUser.get_by_id(discord_id)  # raises ClubUser.DoesNotExist
+                discord_id = int(account["discordUserId"])  # raies TypeError if None
+                member = ClubUser.get_by_id(discord_id)  # raises ClubUser.DoesNotExist
             except (TypeError, ClubUser.DoesNotExist):
-                logger.warning(f"Member {member_admin_url} isn't on Discord")
+                logger.warning(f"Member {account_admin_url} isn't on Discord")
             else:
-                logger.debug(f"Identified as club user #{user.id}")
-                seen_discord_ids.add(user.id)
+                logger.debug(f"Identified as member #{member.id}")
+                seen_discord_ids.add(member.id)
 
-                subscription = get_active_subscription(member["subscriptions"])
-                logger.debug(f"Subscription of {member_admin_url}: {subscription}")
+                subscription = get_active_subscription(account["subscriptions"])
+                logger.debug(f"Subscription of {account_admin_url}: {subscription}")
                 logger.debug(
-                    f"Updating club user #{user.id} with data from {member_admin_url}"
+                    f"Updating member #{member.id} with data from {account_admin_url}"
                 )
-                user.account_id = account_id
-                user.customer_id = member["stripeCustomerId"]
-                user.update_expires_at(get_expires_at(member["subscriptions"]))
-                user.has_feminine_name = FeminineName.is_feminine(member["fullName"])
-                user.total_spend = math.ceil(member["totalSpendCents"] / 100)
-                user.subscription_type = get_subscription_type(subscription, today)
-                user.save()
+                member.account_id = account_id
+                member.customer_id = account["stripeCustomerId"]
+                member.update_expires_at(get_expires_at(account["subscriptions"]))
+                member.has_feminine_name = FeminineName.is_feminine(account["fullName"])
+                member.total_spend = math.ceil(account["totalSpendCents"] / 100)
+                member.subscription_type = get_subscription_type(subscription, today)
+                member.save()
         else:
-            logger.info(f"Inactive: {member_admin_url}")
+            logger.info(f"Inactive: {account_admin_url}")
 
-        logger.debug(f"Recording stats for {member_admin_url}")
-        stats["quits"] += int(had_quit(member, stats_from, stats_to))
-        stats["signups"] += int(had_signup(member, stats_from, stats_to))
-        stats["trials"] += int(had_trial(member, stats_from, stats_to))
+        logger.debug(f"Recording stats for {account_admin_url}")
+        stats["quits"] += int(had_quit(account, stats_from, stats_to))
+        stats["signups"] += int(had_signup(account, stats_from, stats_to))
+        stats["trials"] += int(had_trial(account, stats_from, stats_to))
 
-    logger.info("Adding subscription types to admins and checking consistency")
-    for user in ClubUser.members_listing():
-        if user.id in ADMIN_MEMBER_IDS:
-            user.subscription_type = SubscriptionType.FREE
-            user.save()
-        if not user.subscription_type:
+    logger.info("Processing remaining Discord members who are not in Memberful")
+    remaining_members = (
+        member
+        for member in ClubUser.members_listing()
+        if member.id not in seen_discord_ids
+    )
+    extra_members_ids = []
+    for member in remaining_members:
+        if member.id in ADMIN_MEMBER_IDS:
+            logger.debug(f"Adding subscription type to admin user #{member.id}")
+            member.subscription_type = SubscriptionType.FREE
+            member.save()
+        elif member.is_bot:
+            logger.debug(f"Skipping bot user #{member.id}")
+        else:
+            logger.warning(
+                f"Discord member #{member.id} doesn't have a Memberful account!"
+            )
+            logger.debug(f"User #{member.id}:\n{pformat(model_to_dict(member))}")
+            member.is_member = False
+            member.save()
+            extra_members_ids.append(member.id)
+    if extra_members_ids:
+        discord_task.run(report_extra_members, extra_members_ids)
+
+    logger.info("Checking consistency")
+    for member in ClubUser.members_listing():
+        if not member.subscription_type:
             raise ValueError(
-                f"Member {memberful_url(account_id)} doesn't have a subscription type"
+                f"Member {memberful_url(member.account_id)} doesn't have a subscription type"
             )
     members_count = ClubUser.members_count()
     members_subscription_types_count = sum(
@@ -151,25 +175,6 @@ def main(history_path: Path, today: date):
         raise ValueError(
             f"Number of all members ({members_count}) isn't equal to a sum of members with a subscription type ({members_subscription_types_count})"
         )
-
-    logger.info("Processing remaining Discord users who are not in Memberful")
-    remaining_users = (
-        user for user in ClubUser.members_listing() if user.id not in seen_discord_ids
-    )
-    extra_users_ids = []
-    for user in remaining_users:
-        if user.id in ADMIN_MEMBER_IDS:
-            logger.debug(f"Skipping admin account #{user.id}")
-        elif user.is_bot:
-            logger.debug(f"Skipping bot account #{user.id}")
-        else:
-            logger.warning(
-                f"Club user #{user.id} is on Discord, but doesn't have a Memberful account!"
-            )
-            logger.debug(f"User #{user.id}:\n{pformat(model_to_dict(user))}")
-            extra_users_ids.append(user.id)
-    if extra_users_ids:
-        discord_task.run(report_extra_users, extra_users_ids)
 
     logger.info("Loading stats history from file to db")
     Members.drop_table()
@@ -199,21 +204,21 @@ def main(history_path: Path, today: date):
 
 
 @db.connection_context()
-async def report_extra_users(client: ClubClient, extra_users_ids: list[int]):
+async def report_extra_members(client: ClubClient, extra_members_ids: list[int]):
     logger.info("Prevent mistakes caused by out-of-sync data")
-    extra_users = []
-    for extra_user_id in extra_users_ids:
+    extra_members = []
+    for extra_member_id in extra_members_ids:
         try:
-            extra_users.append(await client.club_guild.fetch_member(extra_user_id))
+            extra_members.append(await client.club_guild.fetch_member(extra_member_id))
         except NotFound:
-            logger.info(f"User #{extra_user_id} is not on Discord anymore, skipping")
-    if extra_users:
-        logger.info(f"Verified {len(extra_users)} users, reporting them")
+            logger.info(f"User #{extra_member_id} is not on Discord anymore, skipping")
+    if extra_members:
+        logger.info(f"Verified {len(extra_members)} members, reporting them")
         channel = await client.fetch_channel(ClubChannelID.BUSINESS)
         with mutating_discord(channel) as proxy:
             await proxy.send(
                 "⚠️ Vypadá to, že tito členové nemají účet na Memberful: "
-                f"{', '.join(user.mention for user in extra_users)}"
+                f"{', '.join(member.mention for member in extra_members)}"
             )
     else:
         logger.info("After all, there are no users to report")
@@ -356,8 +361,8 @@ def is_individual_subscription(subscription: SubscriptionEntity) -> bool:
         return False
 
 
-def had_signup(member: MemberEntity, from_date: date, to_date: date) -> bool:
-    for subscription in member["subscriptions"]:
+def had_signup(account: AccountEntity, from_date: date, to_date: date) -> bool:
+    for subscription in account["subscriptions"]:
         if (
             not is_individual_subscription(subscription)
             or not subscription["trialEndAt"]
@@ -376,8 +381,8 @@ def had_signup(member: MemberEntity, from_date: date, to_date: date) -> bool:
     return False
 
 
-def had_trial(member: MemberEntity, from_date: date, to_date: date) -> bool:
-    for subscription in member["subscriptions"]:
+def had_trial(account: AccountEntity, from_date: date, to_date: date) -> bool:
+    for subscription in account["subscriptions"]:
         if not is_individual_subscription(subscription):
             continue
         if trial_start_at := subscription["trialStartAt"]:
@@ -391,13 +396,13 @@ def had_trial(member: MemberEntity, from_date: date, to_date: date) -> bool:
     return False
 
 
-def had_quit(member: MemberEntity, from_date: date, to_date: date) -> bool:
-    if is_active(member["subscriptions"]):
+def had_quit(account: AccountEntity, from_date: date, to_date: date) -> bool:
+    if is_active(account["subscriptions"]):
         return False
-    for subscription in member["subscriptions"]:
+    for subscription in account["subscriptions"]:
         if (
             not is_individual_subscription(subscription)
-            or member["totalSpendCents"] == 0
+            or account["totalSpendCents"] == 0
         ):
             continue
         if subscription["expiresAt"]:

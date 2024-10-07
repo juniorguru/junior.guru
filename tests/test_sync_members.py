@@ -596,6 +596,29 @@ def test_get_subscription_type_recognizes_yearly():
     assert get_subscription_type(subscription) == SubscriptionType.YEARLY
 
 
+def test_bug():
+    today = date(2024, 10, 7)
+    subscription = {
+        "id": "3831901",
+        "active": True,
+        "activatedAt": 1728281556,
+        "trialStartAt": 1728281556,
+        "trialEndAt": 1729491156,
+        "expiresAt": 1729491156,
+        "coupon": None,
+        "orders": [{"createdAt": 1728281556, "coupon": None}],
+        "plan": {
+            "name": "Členství v klubu",
+            "intervalUnit": "month",
+            "forSale": True,
+            "additionalMemberPriceCents": None,
+            "planGroup": {"name": "Členství v klubu"},
+        },
+    }
+
+    assert get_subscription_type(subscription, today) == SubscriptionType.TRIAL
+
+
 def test_is_signup():
     member = {
         "totalSpendCents": 0,

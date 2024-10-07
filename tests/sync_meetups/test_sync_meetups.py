@@ -43,7 +43,7 @@ def event() -> dict[str, Any]:
             raw="Applifting, Rohanské nábř. 19, Praha",
             place="Praha",
             region="Praha",
-            country="Česko",
+            country_code="CZ",
         ),
         location_raw="Applifting, Rohanské nábř. 19, Praha",
         name="Mini sraz juniorů na akci pythonistů",
