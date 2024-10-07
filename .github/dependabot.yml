@@ -6,7 +6,7 @@ updates:
       interval: weekly
     open-pull-requests-limit: 1
     groups:
-      python:
+      python: {}
     labels:
       - dependencies
   - package-ecosystem: npm
@@ -15,7 +15,7 @@ updates:
       interval: weekly
     open-pull-requests-limit: 1
     groups:
-      js:
+      js: {}
     labels:
       - dependencies
   - package-ecosystem: github-actions
