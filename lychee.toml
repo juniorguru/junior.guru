@@ -58,6 +58,8 @@ exclude = [
     "akamai.com",
     "udacity.com",
     "hearthis.at",
+    "freecodecamp.org",
+    "techinterviewhandbook.org",
 
     # Read the Docs anti-scraping protections
     "docs.pyvec.org",
