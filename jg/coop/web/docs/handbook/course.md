@@ -1030,5 +1030,8 @@ teďka už pár týdnů zkouším https://codegym.cc/ a zatím můžu doporučit
 https://www.sandofsky.com/lambda-school/
 Income Share Agreements
 
+https://lucietvrdikova.cz/nahlednete-za-oponu-ocekavani-versus-realita-it-sveta/
+https://www.linkedin.com/posts/lucietvrdikova_nerealistick%C3%A9-o%C4%8Dek%C3%A1v%C3%A1n%C3%AD-od-it-activity-7252206625707425792-ztCl?utm_source=share&utm_medium=member_desktop
+
 
 #} -->

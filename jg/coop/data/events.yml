@@ -105,6 +105,7 @@
     - https://www.linkedin.com/in/lukaspavelka/
   speakers: 113033048957665280
   logo_path: logos/quadient.svg
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1296189731037515940
 
 - id: 43
   title: "Docker pro začátečníky: Základy kontejnerizace"
