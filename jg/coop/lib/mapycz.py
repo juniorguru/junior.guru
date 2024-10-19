@@ -149,6 +149,7 @@ async def locate(
 
                 if items := response.json()["items"]:
                     item = ResponseItem(**items[0])
+                    logger.debug(f"Processing: {item!r}")
                     location = get_location(location_raw, item)
                     logger.debug(f"Located! {location.model_dump()!r}")
                     return location
@@ -201,27 +202,12 @@ def get_location(location_raw: str, item: ResponseItem) -> Location:
         for admin_unit in item.regionalStructure
         if admin_unit.type == ResponseRegionType.country
     ][-1]
-
     regions = [
         admin_unit
         for admin_unit in item.regionalStructure
         if admin_unit.type == ResponseRegionType.region
     ]
-
-    match country.isoCode:
-        case "CZ":
-            region_name_official = regions[-1].name
-            region_name = REGIONS_MAPPING_CZ[region_name_official]
-        case "SK":
-            try:
-                # avoiding e.g. 'oblast RŠÚJ Západné Slovensko'
-                region_name_official = regions[-2].name
-            except IndexError:
-                # Bratislava
-                region_name_official = regions[-1].name
-            region_name = REGIONS_MAPPING_SK[region_name_official]
-        case _:
-            region_name = country.name
+    region_name = get_region_name(country, regions)
 
     return Location(
         raw=location_raw,
@@ -229,6 +215,27 @@ def get_location(location_raw: str, item: ResponseItem) -> Location:
         region=region_name,
         country_code=country.isoCode,
     )
+
+
+def get_region_name(country: ResponseCountry, regions: list[ResponseRegion]) -> str:
+    if country.isoCode == "CZ":
+        if not regions:
+            return "Česko"
+        region_name_official = regions[-1].name
+        return REGIONS_MAPPING_CZ[region_name_official]
+
+    if country.isoCode == "SK":
+        if not regions:
+            return "Slovensko"
+        try:
+            # avoiding e.g. 'oblast RŠÚJ Západné Slovensko'
+            region_name_official = regions[-2].name
+        except IndexError:
+            # Bratislava
+            region_name_official = regions[-1].name
+        return REGIONS_MAPPING_SK[region_name_official]
+
+    return country.name
 
 
 if __name__ == "__main__":
