@@ -1,3 +1,4 @@
+import re
 import shutil
 import subprocess
 import sys
@@ -41,7 +42,7 @@ def update(pull, packages, push, stash):
         subprocess.run(["npm", "install"], check=True)
         if packages:
             logger.info("Updating packages")
-            subprocess.run(["poetry", "update"], check=True)
+            poetry_update()
             subprocess.run(["npm", "update"], check=True)
             subprocess.run(["git", "add", "poetry.lock", "package-lock.json"])
             subprocess.run(["git", "commit", "-m", "update packages 📦"])
@@ -57,6 +58,29 @@ def update(pull, packages, push, stash):
         shutil.rmtree("public", ignore_errors=True)
     except subprocess.CalledProcessError:
         raise click.Abort()
+
+
+def poetry_update():
+    changes = []
+    while True:
+        logger.info("Running Poetry update")
+        result = subprocess.run(
+            ["poetry", "update"], capture_output=True, text=True, check=False
+        )
+        if result.returncode == 0:
+            break
+        if "version solving failed" in result.stderr:
+            logger.warning("Version solving failed")
+            if match := re.search(r"requires\s+(\S+)\s+\(([^\)]+)\)", result.stderr):
+                package, version = match.group(1), match.group(2)
+                changes.append(f"{package}=={version}")
+                subprocess.run(["poetry", "remove", package], check=True)
+                continue
+        logger.error(f"Failed to update Python packages:\n{result.stderr}")
+        raise click.Abort()
+    if changes:
+        logger.warning(f"Changes: {', '.join(changes)}")
+        subprocess.run(["poetry", "add"] + changes, check=True)
 
 
 @main.command(context_settings={"ignore_unknown_options": True})
