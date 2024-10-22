@@ -77,11 +77,6 @@ class Event(BaseModel):
         )
 
     @classmethod
-    def next(cls, now=None):
-        now = now or datetime.now(UTC).replace(tzinfo=None)
-        return cls.select().where(cls.start_at >= now).order_by(cls.start_at).first()
-
-    @classmethod
     def list_speaking_members(cls):
         return (
             ClubUser.select()

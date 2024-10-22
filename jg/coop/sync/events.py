@@ -8,7 +8,13 @@ from strictyaml import CommaSeparated, Int, Map, Optional, Seq, Str, Url, load
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
-from jg.coop.lib.discord_club import ClubChannelID, ClubClient, ClubMemberID
+from jg.coop.lib.discord_club import (
+    ClubChannelID,
+    ClubClient,
+    ClubMemberID,
+    add_reactions,
+    parse_channel,
+)
 from jg.coop.lib.images import (
     PostersCache,
     is_image,
@@ -42,6 +48,16 @@ DISCORD_THUMBNAIL_WIDTH = 1280
 
 DISCORD_THUMBNAIL_HEIGHT = 512
 
+ANNOUNCEMENT_EMOJIS = [
+    "👀",
+    "🤩",
+    "😍",
+    "👍",
+    "📺",
+    "🍿",
+    "<a:yayfrog:976193164471853097>",
+]
+
 
 schema = Seq(
     Map(
@@ -67,8 +83,19 @@ schema = Seq(
 
 
 @cli.sync_command(dependencies=["club-content"])
+@click.option(
+    "--announcements-channel",
+    "announcements_channel_id",
+    default="announcements",
+    type=parse_channel,
+)
+@click.option(
+    "--today",
+    default=lambda: date.today().isoformat(),
+    type=date.fromisoformat,
+)
 @click.option("--clear-posters/--keep-posters", default=False)
-def main(clear_posters):
+def main(announcements_channel_id: int, today: date, clear_posters: bool):
     posters = PostersCache(POSTERS_DIR)
     posters.init(clear=clear_posters)
 
@@ -145,7 +172,7 @@ def main(clear_posters):
 
     logger.info("Syncing with Discord")
     discord_task.run(sync_scheduled_events)
-    discord_task.run(post_next_event_messages)
+    discord_task.run(post_next_event_messages, today, announcements_channel_id)
 
 
 @db.connection_context()
@@ -202,95 +229,105 @@ def is_event_scheduled_event(scheduled_event: ScheduledEvent) -> bool:
 
 
 @db.connection_context()
-async def post_next_event_messages(client: ClubClient):
-    announcements_channel = await client.fetch_channel(ClubChannelID.ANNOUNCEMENTS)
+async def post_next_event_messages(
+    client: ClubClient, today: date, announcements_channel_id: int
+):
+    announcements_channel = await client.fetch_channel(announcements_channel_id)
     events_channel = await client.fetch_channel(ClubChannelID.EVENTS)
 
-    event = Event.next()
-    if not event:
-        logger.info("There is no upcoming event")
-        return
-    speakers = ", ".join([speaking.speaker.mention for speaking in event.list_speaking])
-    speakers = speakers or event.bio_name
-
-    logger.info("About to post a message 7 days prior to the event")
-    if event.start_at.date() - timedelta(days=7) <= date.today():
-        message = ClubMessage.last_bot_message(
-            ClubChannelID.ANNOUNCEMENTS, "🗓", event.discord_url
+    for event in Event.planned_listing():
+        logger.info(f"Processing event {event.title!r}")
+        speakers = ", ".join(
+            [speaking.speaker.mention for speaking in event.list_speaking]
         )
-        if message:
-            logger.info(
-                f"Looks like the message about {event.discord_url} already exists: {message.url}"
-            )
-        else:
-            logger.info("Found no message, posting!")
-            content = f"🗓 Už **za týden** bude v klubu akce „{event.title}” s {speakers}! {event.discord_url}"
-            with mutating_discord(announcements_channel) as proxy:
-                await proxy.send(content)
-    else:
-        logger.info("It's not 7 days prior to the event")
+        speakers = speakers or event.bio_name
 
-    logger.info("About to post a message 1 day prior to the event")
-    if event.start_at.date() - timedelta(days=1) == date.today():
-        message = ClubMessage.last_bot_message(
-            ClubChannelID.ANNOUNCEMENTS, "🤩", event.discord_url
-        )
-        if message:
-            logger.info(
-                f"Looks like the message about {event.discord_url} already exists: {message.url}"
+        logger.info("About to post a message on the day when the event is")
+        if event.start_at.date() == today:
+            message = ClubMessage.last_bot_message(
+                announcements_channel_id, "⏰", event.discord_url
             )
+            if message:
+                logger.info(
+                    f"Looks like the message about {event.discord_url} already exists: {message.url}"
+                )
+            else:
+                logger.info("Found no message, posting!")
+                content = f"⏰ @everyone Už **dnes v {event.start_at_prg:%H:%M}** bude v klubu akce „{event.title}” s {speakers}! Odehrávat se to bude v {events_channel.mention}, dotazy jde pokládat v tamním chatu 💬 Akce se nahrávají, odkaz na záznam se objeví v tomto kanálu. {event.discord_url}"
+                with mutating_discord(announcements_channel) as proxy:
+                    discord_message = await proxy.send(content)
+                with mutating_discord(discord_message) as proxy:
+                    await add_reactions(discord_message, ["⏰"] + ANNOUNCEMENT_EMOJIS)
         else:
-            logger.info("Found no message, posting!")
-            content = f"🤩 Už **zítra v {event.start_at_prg:%H:%M}** bude v klubu akce „{event.title}” s {speakers}! {event.discord_url}"
-            with mutating_discord(announcements_channel) as proxy:
-                await proxy.send(content)
-    else:
-        logger.info("It's not 1 day prior to the event")
+            logger.info("It's not the day when the event is")
+            logger.info("About to post a message 1 day prior to the event")
+            if event.start_at.date() - timedelta(days=1) == today:
+                message = ClubMessage.last_bot_message(
+                    announcements_channel_id, "🤩", event.discord_url
+                )
+                if message:
+                    logger.info(
+                        f"Looks like the message about {event.discord_url} already exists: {message.url}"
+                    )
+                else:
+                    logger.info("Found no message, posting!")
+                    content = f"🤩 Už **zítra v {event.start_at_prg:%H:%M}** bude v klubu akce „{event.title}” s {speakers}! {event.discord_url}"
+                    with mutating_discord(announcements_channel) as proxy:
+                        discord_message = await proxy.send(content)
+                    with mutating_discord(discord_message) as proxy:
+                        await add_reactions(
+                            discord_message, ["✨"] + ANNOUNCEMENT_EMOJIS
+                        )
+            else:
+                logger.info("It's not 1 day prior to the event")
+                logger.info("About to post a message 7 days prior to the event")
+                if event.start_at.date() - timedelta(days=7) <= today:
+                    message = ClubMessage.last_bot_message(
+                        announcements_channel_id, "🗓", event.discord_url
+                    )
+                    if message:
+                        logger.info(
+                            f"Looks like the message about {event.discord_url} already exists: {message.url}"
+                        )
+                    else:
+                        logger.info("Found no message, posting!")
+                        content = f"🗓 Už **za týden** bude v klubu akce „{event.title}” s {speakers}! {event.discord_url}"
+                        with mutating_discord(announcements_channel) as proxy:
+                            discord_message = await proxy.send(content)
+                        with mutating_discord(discord_message) as proxy:
+                            await add_reactions(
+                                discord_message, ["🗓"] + ANNOUNCEMENT_EMOJIS
+                            )
+                else:
+                    logger.info("It's not 7 days prior to the event")
 
-    logger.info("About to post a message on the day when the event is")
-    if event.start_at.date() == date.today():
-        message = ClubMessage.last_bot_message(
-            ClubChannelID.ANNOUNCEMENTS, "⏰", event.discord_url
-        )
-        if message:
-            logger.info(
-                f"Looks like the message about {event.discord_url} already exists: {message.url}"
-            )
-        else:
-            logger.info("Found no message, posting!")
-            content = f"⏰ @everyone Už **dnes v {event.start_at_prg:%H:%M}** bude v klubu akce „{event.title}” s {speakers}! Odehrávat se to bude v {events_channel.mention}, dotazy jde pokládat v tamním chatu 💬 Akce se nahrávají, odkaz na záznam se objeví v tomto kanálu. {event.discord_url}"
-            with mutating_discord(announcements_channel) as proxy:
-                await proxy.send(content)
-    else:
-        logger.info("It's not the day when the event is")
-
-    # See https://github.com/Pycord-Development/pycord/issues/1934
-    #
-    # logger.info("About to post a message to event chat on the day when the event is")
-    # if event.start_at.date() == date.today():
-    #     message = ClubMessage.last_bot_message(ClubChannelID.EVENTS, '👋', event.discord_url)
-    #     if message:
-    #         logger.info(f'Looks like the message already exists: {message.url}')
-    #     else:
-    #         logger.info("Found no message, posting!")
-    #         content = [
-    #             f"👋 Už **dnes v {event.start_at_prg:%H:%M}** tady bude probíhat „{event.title}” s {speakers} (viz {announcements_channel.mention}). Tento kanál slouží k pokládání dotazů, sdílení odkazů, slajdů k prezentaci…",
-    #             "",
-    #             "⚠️ Ve výchozím nastavení Discord udělá zvuk při každé aktivitě v hlasovém kanálu, např. při připojení nového účastníka, odpojení, vypnutí zvuku, zapnutí, apod. Zvuky si vypni v Uživatelských nastaveních (_User Settings_), na stránce Oznámení (_Notifications_), sekce Zvuky (_Sounds_). Většina zvuků souvisí s hovory, takže je potřeba povypínat skoro vše.",
-    #             "",
-    #             f"📺 Limit přímých účastníků je 25, takže přijďte včas. Kdo se nevleze, bude mít možnost sledovat stream na YouTube, odkaz se kdyžtak objeví tady v chatu. Záznam se po akci objeví v {announcements_channel.mention}.",
-    #             "",
-    #             f"ℹ️ {event.description_plain}",
-    #             "",
-    #             f"🦸 {event.bio_plain}"
-    #             "",
-    #             "",
-    #             f"👉 {event.url}",
-    #         ]
-    #         with mutating_discord(events_channel) as proxy:
-    #             await proxy.send('\n'.join(content))
-    # else:
-    #     logger.info("It's not the day when the event is")
+        # See https://github.com/Pycord-Development/pycord/issues/1934
+        #
+        # logger.info("About to post a message to event chat on the day when the event is")
+        # if event.start_at.date() == today:
+        #     message = ClubMessage.last_bot_message(ClubChannelID.EVENTS, '👋', event.discord_url)
+        #     if message:
+        #         logger.info(f'Looks like the message already exists: {message.url}')
+        #     else:
+        #         logger.info("Found no message, posting!")
+        #         content = [
+        #             f"👋 Už **dnes v {event.start_at_prg:%H:%M}** tady bude probíhat „{event.title}” s {speakers} (viz {announcements_channel.mention}). Tento kanál slouží k pokládání dotazů, sdílení odkazů, slajdů k prezentaci…",
+        #             "",
+        #             "⚠️ Ve výchozím nastavení Discord udělá zvuk při každé aktivitě v hlasovém kanálu, např. při připojení nového účastníka, odpojení, vypnutí zvuku, zapnutí, apod. Zvuky si vypni v Uživatelských nastaveních (_User Settings_), na stránce Oznámení (_Notifications_), sekce Zvuky (_Sounds_). Většina zvuků souvisí s hovory, takže je potřeba povypínat skoro vše.",
+        #             "",
+        #             f"📺 Limit přímých účastníků je 25, takže přijďte včas. Kdo se nevleze, bude mít možnost sledovat stream na YouTube, odkaz se kdyžtak objeví tady v chatu. Záznam se po akci objeví v {announcements_channel.mention}.",
+        #             "",
+        #             f"ℹ️ {event.description_plain}",
+        #             "",
+        #             f"🦸 {event.bio_plain}"
+        #             "",
+        #             "",
+        #             f"👉 {event.url}",
+        #         ]
+        #         with mutating_discord(events_channel) as proxy:
+        #             await proxy.send('\n'.join(content))
+        # else:
+        #     logger.info("It's not the day when the event is")
 
 
 def load_record(record):
