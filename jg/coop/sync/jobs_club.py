@@ -40,6 +40,7 @@ def main(channel_id: int):
 
 @db.connection_context()
 async def sync_jobs(client: ClubClient, channel_id: int):
+    channel = await client.club_guild.fetch_channel(channel_id)
     since_on = date.today() - timedelta(days=JOBS_REPEATING_PERIOD_DAYS)
 
     logger.debug("Clearing Discord jobs and URLs")
@@ -61,12 +62,6 @@ async def sync_jobs(client: ClubClient, channel_id: int):
                 url = message.ui_urls[0]
             except IndexError:
                 logger.info(f"Creating manually submitted job: {message.url}")
-                try:
-                    job = DiscordJob.get_by_url(message.url)
-                    logger.debug(f"Found, deleting: {job!r}")
-                    job.delete_instance()
-                except DiscordJob.DoesNotExist:
-                    pass
                 DiscordJob.create(
                     title=message.channel_name,
                     author=message.author,
@@ -77,24 +72,39 @@ async def sync_jobs(client: ClubClient, channel_id: int):
                     comments_count=comments_count,
                 )
             else:
+                thread: Thread = channel.get_thread(message.id)
                 try:
                     job = ListedJob.get_by_url(url)
+                except ListedJob.DoesNotExist:
+                    logger.info(f"Archiving: {url}")
+                    await archive_thread(thread)
+                else:
+                    logger.info(f"Syncing: {url}")
                     job.discord_url = message.url
                     job.upvotes_count = message.upvotes_count
                     job.comments_count = comments_count
                     job.save()
-                except ListedJob.DoesNotExist:
-                    logger.debug(f"URL to a job no longer listed: {url}")
+                    await unarchive_thread(thread)
     logger.info(f"Created {DiscordJob.count()} Discord jobs")
 
     jobs = ListedJob.no_discord_listing()
     logger.info(f"Posting {len(jobs)} new jobs to the channel")
-    if jobs:
-        channel = await client.club_guild.fetch_channel(channel_id)
-        for job in jobs:
-            logger.info(f"Posting: {job.effective_url}")
-            job.discord_url = await create_thread(channel, job)
-            job.save()
+    for job in jobs:
+        logger.info(f"Posting: {job.effective_url}")
+        job.discord_url = await create_thread(channel, job)
+        job.save()
+
+
+async def archive_thread(thread: Thread) -> None:
+    with mutating_discord(thread) as proxy:
+        await proxy.archive()
+
+
+async def unarchive_thread(thread: Thread) -> None:
+    if not thread.archived:
+        return
+    with mutating_discord(thread) as proxy:
+        await proxy.unarchive()
 
 
 async def create_thread(
