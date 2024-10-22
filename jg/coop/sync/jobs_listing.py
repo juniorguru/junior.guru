@@ -1,12 +1,11 @@
 from datetime import date, timedelta
-from operator import itemgetter
 
 import click
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import apify, loggers
-from jg.coop.lib.mutations import MutationsNotAllowedError
 from jg.coop.lib.cache import cache
+from jg.coop.lib.mutations import MutationsNotAllowedError
 from jg.coop.models.base import db
 from jg.coop.models.job import ListedJob, ScrapedJob, SubmittedJob
 
