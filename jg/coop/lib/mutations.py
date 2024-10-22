@@ -18,6 +18,7 @@ KNOWN_SERVICES = [
     "google_sheets",
     "memberful",
     "openai",
+    "apify",
 ]
 
 

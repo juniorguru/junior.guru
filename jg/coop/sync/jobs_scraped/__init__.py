@@ -25,7 +25,6 @@ PIPELINES = [
     "jg.coop.sync.jobs_scraped.pipelines.time_filter",
     "jg.coop.sync.jobs_scraped.pipelines.blocklist_filter",
     "jg.coop.sync.jobs_scraped.pipelines.broken_encoding_filter",
-    "jg.coop.sync.jobs_scraped.pipelines.expiration_filter",
     "jg.coop.sync.jobs_scraped.pipelines.description_parser",
     "jg.coop.sync.jobs_scraped.pipelines.language_parser",
     "jg.coop.sync.jobs_scraped.pipelines.language_filter",
