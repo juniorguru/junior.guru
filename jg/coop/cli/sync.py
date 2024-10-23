@@ -1,7 +1,7 @@
-from graphlib import TopologicalSorter
 import os
 import sys
 from functools import cached_property, wraps
+from graphlib import TopologicalSorter
 from pathlib import Path
 from time import perf_counter_ns
 

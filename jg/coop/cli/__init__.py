@@ -16,7 +16,7 @@ from jg.coop.cli import (
     winners,
 )
 from jg.coop.cli.dev import main as dev
-from jg.coop.lib import loggers, mutations
+from jg.coop.lib import loggers
 from jg.coop.lib.cache import close_cache
 from jg.coop.lib.cli import load_command
 
