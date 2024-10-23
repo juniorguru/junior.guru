@@ -63,7 +63,7 @@ def update(pull, packages, push, stash):
 def poetry_update():
     changes = []
     while True:
-        logger.info("Running Poetry update")
+        logger.debug("Running Poetry update")
         result = subprocess.run(
             ["poetry", "update"], capture_output=True, text=True, check=False
         )
