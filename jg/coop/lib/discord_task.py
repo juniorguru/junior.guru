@@ -40,6 +40,21 @@ def run(task_fn: Callable[..., Awaitable], *args, **kwargs) -> None:
                 logger.debug("Got an error, raising")
                 raise
 
+            async def close(self):
+                # See https://github.com/Pycord-Development/pycord/pull/2618
+                if self._closed:
+                    return
+                await self.http.close()
+                self._closed = True
+                for voice in self.voice_clients:
+                    try:
+                        await voice.disconnect(force=True)
+                    except Exception:
+                        pass
+                if self.ws is not None and self.ws.open:
+                    await self.ws.close(code=1000)
+                self._ready.clear()
+
         client = Client(loop=asyncio.new_event_loop())
 
         def exc_handler(loop, context):
