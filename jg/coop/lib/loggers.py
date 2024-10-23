@@ -87,7 +87,11 @@ def reconfigure_level(level: str):
 
 
 def clear_configuration():
-    get_cache().evict(CACHE_TAG)
+    try:
+        get_cache().evict(CACHE_TAG)
+    except Exception as e:
+        logger = logging.getLogger("jg.coop.lib.loggers")
+        logger.warning(f"Failed to clear loggers configuration: {e}")
 
 
 _original_record_factory = logging.getLogRecordFactory()
