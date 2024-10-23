@@ -27,6 +27,8 @@ SNAPSHOT_EXCLUDE = [
     ".image_templates_cache",
     ".pytest_cache",
     ".vscode",
+    ".venv",
+    ".ruff_cache",
     SNAPSHOT_FILE,
     PERSIST_DIR,
 ]
@@ -133,12 +135,14 @@ def take_snapshot(dir, exclude=None):
             yield path.relative_to(dir), path.stat().st_mtime
 
 
-def persist_file(source_dir, source_path, persist_dir, move=False):
+def persist_file(
+    source_dir: Path, source_path: Path, persist_dir: Path, move: bool = False
+):
     persist_path = persist_dir / source_path.relative_to(source_dir)
     persist_path.parent.mkdir(parents=True, exist_ok=True)
-    if source_path == f"{CACHE_DIR}/cache.db":
-        close_cache()
     if source_path.suffix == ".db":
+        if source_path.is_relative_to(CACHE_DIR):
+            close_cache()
         prepare_database_for_moving(source_path)
     (shutil.move if move else shutil.copy2)(source_path, persist_path)
 
