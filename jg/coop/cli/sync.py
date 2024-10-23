@@ -132,9 +132,6 @@ class Command(click.Command):
 )
 @click.option("--mutate", multiple=True)
 @click.option("--allow-mutations/--disallow-mutations", default=False)
-@click.option(
-    "--clear-image-templates-cache/--keep-image-templates-cache", default=True
-)
 @click.pass_context
 def main(
     context,
@@ -142,18 +139,12 @@ def main(
     deps,
     mutate,
     allow_mutations,
-    clear_image_templates_cache,
 ):
     if allow_mutations:
         mutations.allow_all()
     else:
         mutations.allow(*mutate)
-
-    if clear_image_templates_cache:
-        images.init_templates_cache()
-    else:
-        logger.info("Keeping image templates cache")
-
+    images.init_templates_cache()
     with db.connection_context():
         sync = Sync.start(id)
     context.obj = dict(sync=sync, skip_dependencies=not deps)
