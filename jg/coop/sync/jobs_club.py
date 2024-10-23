@@ -72,7 +72,7 @@ async def sync_jobs(client: ClubClient, channel_id: int):
                     comments_count=comments_count,
                 )
             else:
-                thread: Thread = channel.get_thread(message.id)
+                thread: Thread = await client.fetch_channel(message.id)
                 try:
                     job = ListedJob.get_by_url(url)
                 except ListedJob.DoesNotExist:
