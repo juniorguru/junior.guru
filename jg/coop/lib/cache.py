@@ -34,8 +34,11 @@ def close_cache() -> None:
     if caches := _cache_instances.values():
         logger.debug("Cache clean up")
         for cache in caches:
-            cache.expire()
-            cache.close()
+            try:
+                cache.expire()
+                cache.close()
+            except Exception as e:
+                logger.warning(f"Failed to close cache: {e}")
 
 
 def cache(
