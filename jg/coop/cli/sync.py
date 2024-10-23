@@ -124,26 +124,25 @@ class Command(click.Command):
 @click.group(chain=True, cls=Group)
 @click.option("--id", envvar="CIRCLE_WORKFLOW_WORKSPACE_ID", default=perf_counter_ns)
 @click.option(
-    "--dependencies/--skip-dependencies",
-    "--deps/--skip-deps",
+    "--dependencies/--no-dependencies",
     "--deps/--no-deps",
     "deps",
     default=True,
 )
-@click.option("--mutate", multiple=True)
-@click.option("--allow-mutations/--disallow-mutations", default=False)
+@click.option("--allow", "--mutate", "allow", multiple=True)
+@click.option("--allow-mutations", is_flag=True, default=False)
 @click.pass_context
 def main(
     context,
     id,
     deps,
-    mutate,
+    allow,
     allow_mutations,
 ):
     if allow_mutations:
         mutations.allow_all()
     else:
-        mutations.allow(*mutate)
+        mutations.allow(*allow)
     images.init_templates_cache()
     with db.connection_context():
         sync = Sync.start(id)
