@@ -12,6 +12,7 @@ from sqlite_utils import Database
 from sqlite_utils.db import NotFoundError, Table
 
 from jg.coop.lib import loggers
+from jg.coop.lib.cache import CACHE_DIR, close_cache
 
 
 SNAPSHOT_FILE = ".persist-to-workspace-snapshot"
@@ -135,6 +136,8 @@ def take_snapshot(dir, exclude=None):
 def persist_file(source_dir, source_path, persist_dir, move=False):
     persist_path = persist_dir / source_path.relative_to(source_dir)
     persist_path.parent.mkdir(parents=True, exist_ok=True)
+    if source_path == f"{CACHE_DIR}/cache.db":
+        close_cache()
     if source_path.suffix == ".db":
         prepare_database_for_moving(source_path)
     (shutil.move if move else shutil.copy2)(source_path, persist_path)
