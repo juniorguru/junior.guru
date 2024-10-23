@@ -1,3 +1,4 @@
+from graphlib import TopologicalSorter
 import os
 import sys
 from functools import cached_property, wraps
@@ -202,6 +203,24 @@ def ci(context, job, node_index, nodes, print_only):
 
 
 @main.command()
+@click.option("-p", "--print-only", is_flag=True, default=False, show_default=True)
+@click.pass_context
+def jobs(context: click.Context, print_only: bool):
+    graph = {
+        name: set(deps)
+        for name, deps in main.dependencies_map.items()
+        if name.startswith("jobs-")
+    }
+    sorter = TopologicalSorter(graph)
+    for name in sorter.static_order():
+        if print_only:
+            click.echo(name)
+        else:
+            command = main.get_command(context, name)
+            context.invoke(command)
+
+
+@main.command()
 @click.option(
     "--config-path",
     default=".circleci/config.yml",
@@ -257,8 +276,11 @@ def all(context, print_only):
 
 @click.pass_context
 def close(context):
+    mutations.allow_none()
+
     exception = sys.exception()
     sync = context.obj["sync"]
+
     if exception and getattr(exception, "exit_code", 0) != 0:
         logger.error(
             f"Sync #{sync.id} crashed after {sync.count_commands()} commands recorded"
@@ -267,6 +289,7 @@ def close(context):
         logger.debug(
             f"Sync #{sync.id} done with {sync.count_commands()} commands recorded"
         )
+
     times = sync.times_min()
     if times:
         times_repr = ", ".join(

@@ -1,4 +1,5 @@
 import asyncio
+import logging
 from datetime import timedelta
 from functools import lru_cache, wraps
 from typing import Any, Callable
@@ -8,14 +9,14 @@ from diskcache.core import ENOVAL, args_to_key, full_name
 from jinja2 import BytecodeCache as BaseBytecodeCache
 from jinja2.bccache import Bucket
 
-from jg.coop.lib import loggers
 from jg.coop.lib.async_utils import call_async
 
 
 CACHE_DIR = ".cache"
 
 
-logger = loggers.from_path(__file__)
+# avoid circular import, loggers depend on cache
+logger = logging.getLogger("jg.coop.lib.cache")
 
 _cache_instances = {}
 

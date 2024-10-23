@@ -16,7 +16,7 @@ from jg.coop.cli import (
     winners,
 )
 from jg.coop.cli.dev import main as dev
-from jg.coop.lib import loggers
+from jg.coop.lib import loggers, mutations
 from jg.coop.lib.cache import close_cache
 from jg.coop.lib.cli import load_command
 
@@ -52,4 +52,9 @@ def main(context: click.Context, debug: bool):
     if debug:
         loggers.reconfigure_level("DEBUG")
         loggers.from_path(__file__).info("Logging level set to DEBUG")
-    context.call_on_close(close_cache)
+    context.call_on_close(close)
+
+
+def close():
+    loggers.clear_configuration()
+    close_cache()

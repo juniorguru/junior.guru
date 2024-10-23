@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 from typing import Generator, Iterable, TypeVar, cast
 
-from jg.coop.lib import global_state
+from jg.coop.lib.cache import get_cache
 from jg.coop.lib.chunks import chunks
 
 
@@ -31,6 +31,8 @@ MUTED_LOGGERS = [
     "urllib3",
 ]
 
+CACHE_TAG = "loggers"
+
 
 class Logger(logging.Logger):
     def __init__(self, *args, **kwargs):
@@ -51,8 +53,10 @@ class Logger(logging.Logger):
 
 
 def _configure():
-    level = _infer_level(global_state.get("log_level"), os.environ)
-    timestamp = _infer_timestamp(global_state.get("log_timestamp"), os.environ)
+    cache = get_cache()
+
+    level = _infer_level(cache.get("loggers:log_level"), os.environ)
+    timestamp = _infer_timestamp(cache.get("loggers:log_timestamp"), os.environ)
     format = "[%(asctime)s] " if timestamp else ""
     format += "[%(name)s%(processSuffix)s] %(levelname)s: %(message)s"
 
@@ -70,8 +74,8 @@ def _configure():
 
     # In multiprocessing, the child processes won't automatically
     # inherit logger configuration and this function will run again.
-    global_state.set("log_level", level)
-    global_state.set("log_timestamp", "true" if timestamp else "false")
+    cache.set("loggers:log_level", level, tag=CACHE_TAG)
+    cache.set("loggers:log_timestamp", timestamp, tag=CACHE_TAG)
 
     logging.root.configured = True
 
@@ -79,7 +83,11 @@ def _configure():
 def reconfigure_level(level: str):
     for handler in logging.root.handlers:
         handler.setLevel(getattr(logging, level.upper()))
-    global_state.set("log_level", level)
+    get_cache().set("loggers:log_level", level, tag=CACHE_TAG)
+
+
+def clear_configuration():
+    get_cache().evict(CACHE_TAG)
 
 
 _original_record_factory = logging.getLogRecordFactory()
@@ -100,8 +108,8 @@ def _get_process_suffix(process_name: str) -> str:
     )
 
 
-def _infer_level(global_value: str, env: dict) -> str:
-    value = global_value
+def _infer_level(cached_value: str | None, env: dict) -> str:
+    value = cached_value
     if value is None:
         value = env.get("LOG_LEVEL")
     if not value:
@@ -109,8 +117,8 @@ def _infer_level(global_value: str, env: dict) -> str:
     return value.upper()
 
 
-def _infer_timestamp(global_value: str, env: dict) -> bool:
-    value = global_value
+def _infer_timestamp(cached_value: bool | None, env: dict) -> bool:
+    value = cached_value
     if value is None:
         value = env.get("LOG_TIMESTAMP")
     if value is None:

@@ -5,7 +5,12 @@ import pytest
 from discord import ChannelType, Route
 
 from jg.coop.lib import discord_club
-from jg.coop.lib.mutations import MutationsNotAllowedError
+from jg.coop.lib.mutations import (
+    MutationsNotAllowedError,
+    _get_allowed,
+    _set_allowed,
+    allow,
+)
 
 
 StubEmoji = namedtuple("Emoji", ["name"])
@@ -21,6 +26,16 @@ StubGuild = namedtuple("Guild", ["roles"])
 StubMessage = namedtuple("Message", ["author", "content"])
 
 StubClubMessage = namedtuple("ClubMessage", ["created_at"])
+
+
+@pytest.fixture
+def nothing_allowed():
+    dump = _get_allowed()
+    _set_allowed([])
+    try:
+        yield
+    finally:
+        _set_allowed(dump)
 
 
 @pytest.mark.parametrize(
@@ -194,7 +209,7 @@ def test_parse_message_url(url, expected):
     ],
 )
 @pytest.mark.asyncio
-async def test_check_mutations(method):
+async def test_check_mutations(nothing_allowed, method):
     @discord_club._check_mutations
     async def request(*args, **kwargs):
         return args, kwargs
@@ -217,7 +232,7 @@ async def test_check_mutations(method):
     ],
 )
 @pytest.mark.asyncio
-async def test_check_mutations_raises(method):
+async def test_check_mutations_raises(nothing_allowed, method):
     @discord_club._check_mutations
     async def request(*args, **kwargs):
         return args, kwargs
@@ -226,6 +241,31 @@ async def test_check_mutations_raises(method):
 
     with pytest.raises(MutationsNotAllowedError):
         await request(route, 1, 2, kwarg1=3, kwarg2=4)
+
+
+@pytest.mark.parametrize(
+    "method",
+    [
+        "POST",
+        "PUT",
+        "DELETE",
+        "PATCH",
+    ],
+)
+@pytest.mark.asyncio
+async def test_check_mutations_doesnt_raise_if_discord_allowed(nothing_allowed, method):
+    allow("discord")
+
+    @discord_club._check_mutations
+    async def request(*args, **kwargs):
+        return args, kwargs
+
+    route = Route(method, "/something")
+
+    assert await request(route, 1, 2, kwarg1=3, kwarg2=4) == (
+        (route, 1, 2),
+        {"kwarg1": 3, "kwarg2": 4},
+    )
 
 
 @pytest.mark.parametrize(

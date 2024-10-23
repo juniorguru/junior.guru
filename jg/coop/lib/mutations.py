@@ -3,7 +3,8 @@ from contextlib import contextmanager
 from functools import partial, wraps
 from typing import Any, Generator, Iterable, Literal
 
-from jg.coop.lib import global_state, loggers
+from jg.coop.lib import loggers
+from jg.coop.lib.cache import get_cache
 
 
 __all__ = ["allow", "allow_all", "is_allowed", "mutates", "mutating", "allowing"]
@@ -21,6 +22,8 @@ KNOWN_SERVICES = [
     "apify",
 ]
 
+CACHE_KEY = "mutations:allowed"
+
 
 class MutationsNotAllowedError(Exception):
     def __bool__(self) -> Literal[False]:
@@ -28,11 +31,11 @@ class MutationsNotAllowedError(Exception):
 
 
 def _get_allowed() -> set:
-    return set(global_state.get("mutations.allowed") or [])
+    return set(get_cache().get(CACHE_KEY) or [])
 
 
 def _set_allowed(allowed: Iterable) -> None:
-    global_state.set("mutations.allowed", list(allowed))
+    get_cache().set(CACHE_KEY, set(allowed))
 
 
 def allow(*services: str) -> None:
@@ -47,6 +50,11 @@ def allow(*services: str) -> None:
 
 def allow_all() -> None:
     allow(*KNOWN_SERVICES)
+
+
+def allow_none() -> None:
+    _set_allowed([])
+    logger.info("Allowed: []")
 
 
 def is_allowed(service) -> bool:
@@ -122,7 +130,7 @@ def allowing(service) -> Generator[None, None, None]:
 
     dump = _get_allowed()
     try:
-        global_state.set("mutations.allowed", [service])
+        _set_allowed([service])
         logger["allowing"].debug(f"Force-allowed: {service!r}")
         yield
     finally:
