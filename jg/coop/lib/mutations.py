@@ -54,7 +54,7 @@ def allow_all() -> None:
 
 def allow_none() -> None:
     _set_allowed([])
-    logger.info("Allowed: []")
+    logger.debug("Allowed: []")
 
 
 def is_allowed(service) -> bool:

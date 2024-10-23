@@ -8,13 +8,14 @@ if (!outdir) {
   process.exit(1);
 }
 
-await esbuild.build({
+const result = await esbuild.build({
   entryPoints: (await readdir("jg/coop/image_templates"))
     .filter((file) => file.endsWith(".scss"))
     .map((file) => `jg/coop/image_templates/${file}`),
   bundle: true,
   minify: true,
   sourcemap: true,
+  metafile: true,
   target: "es2020",
   loader: {
     ".svg": "copy",
@@ -40,3 +41,5 @@ await esbuild.build({
   ],
   outdir,
 });
+
+console.log(JSON.stringify(result.metafile, null, 2))

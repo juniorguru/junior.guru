@@ -1,3 +1,4 @@
+import json
 import mimetypes
 import os
 import pickle
@@ -7,14 +8,14 @@ from hashlib import sha256
 from io import BytesIO
 from pathlib import Path
 from subprocess import run
-from typing import Any, Callable
+from typing import Any, Callable, Generator, Iterable
 
 from jinja2 import Environment, FileSystemLoader
 from PIL import Image
 from playwright.sync_api import sync_playwright
 
 from jg.coop.lib import loggers
-from jg.coop.lib.cache import get_jinja_cache
+from jg.coop.lib.cache import get_cache, get_jinja_cache
 
 
 CACHE_DIR = Path(".image_templates_cache")
@@ -136,8 +137,18 @@ def render_template(
     return image_bytes
 
 
-def init_templates_cache(cache_dir=None):
+def init_templates_cache(
+    cache_dir: str | Path | None = None, cache_key: str = "image-templates-cache"
+):
+    cache = get_cache()
     cache_dir = Path(cache_dir or CACHE_DIR).absolute()
+
+    if cache_dir.exists() and (prev_sources := cache.get(cache_key)):
+        sources = dict(_get_fs_snapshot(prev_sources.keys()))
+        if sources == prev_sources:
+            logger.debug(f"Cache already initialized: {cache_dir}")
+            return
+
     t = time.perf_counter()
 
     logger.debug(f"Removing cache: {cache_dir}")
@@ -147,9 +158,41 @@ def init_templates_cache(cache_dir=None):
     logger.debug(f"Cache created: {cache_dir}")
 
     logger.debug("Building static assets")
-    run(["node", "esbuild-image-templates.js", str(cache_dir)], check=True)
+    command = ["node", "esbuild-image-templates.js", str(cache_dir)]
+    result = run(command, check=True, capture_output=True, text=True)
+    if stderr := result.stderr.strip():
+        logger.warning(
+            f"Running `{' '.join(command)}` produced {len(stderr)} stderr characters"
+        )
+
+    logger.debug("Reading esbuild metafile")
+    source_paths = _get_source_paths(json.loads(result.stdout))
+    sources = dict(_get_fs_snapshot(source_paths))
+    cache.set(cache_key, sources)
 
     logger.info(f"Initialized {cache_dir} in {time.perf_counter() - t:.2f}s")
+
+
+def _get_source_paths(metafile: dict[str, Any]) -> list[str]:
+    source_paths = set()
+    for input_path, input_spec in metafile["inputs"].items():
+        source_paths.add(input_path)
+        for import_spec in input_spec["imports"]:
+            source_paths.add(import_spec["path"])
+    return sorted(
+        path.split("?", 1)[0] for path in source_paths if not path.startswith("data:")
+    )
+
+
+def _get_fs_snapshot(
+    paths: Iterable[str | Path],
+) -> Generator[tuple[str, tuple[float, int]], None, None]:
+    for path in paths:
+        try:
+            stat = Path(path).stat()
+        except FileNotFoundError:
+            continue
+        yield path, (stat.st_mtime, stat.st_size)
 
 
 class PostersCache:
