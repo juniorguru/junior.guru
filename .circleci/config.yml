@@ -283,7 +283,19 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - run: cargo install lychee
+      - run: cargo install sccache
+      - run: sccache --version
+      - restore_cache:
+          key: lychee-deps-{{ arch }}
+      - run:
+          env:
+            RUSTC_WRAPPER: "sccache"
+            SCCACHE_CACHE_SIZE: "1G"
+          command: cargo install lychee
+      - save_cache:
+          key: lychee-deps-{{ arch }}-{{ epoch }}
+          paths:
+            - "~/.cache/sccache"
       - run: lychee public
 
   check-bot:
