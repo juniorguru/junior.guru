@@ -42,4 +42,4 @@ const result = await esbuild.build({
   outdir,
 });
 
-console.log(JSON.stringify(result.metafile, null, 2))
+console.log(JSON.stringify(result.metafile, null, 2));
