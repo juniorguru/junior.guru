@@ -1,8 +1,23 @@
-- region: Praha
-  group: https://discord.com/channels/769966886598737931/1295314307147632692
+groups:
+  - group_url: https://discord.com/channels/769966886598737931/1296383796727386132
+    regions:
+      - Praha
 
-- region: Brno
-  group: https://discord.com/channels/...
+  - group_url: https://discord.com/channels/769966886598737931/1296508522451832853
+    regions:
+      - Brno
 
-- region: Ostrava
-  group: https://discord.com/channels/...
+  - group_url: https://discord.com/channels/769966886598737931/1296486471670304878
+    regions:
+      - Ostrava
+
+  - group_url: https://discord.com/channels/769966886598737931/1296425496141107221
+    regions:
+      - Pardubice
+      - Hradec Králové
+
+  - group_url: https://discord.com/channels/769966886598737931/1296483846237454447
+    regions:
+      - Zlín
+      - Olomouc
+      - Ostrava

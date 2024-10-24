@@ -6,6 +6,7 @@ from decimal import Decimal
 from enum import StrEnum
 from typing import Generator, Literal
 
+import czech_sort
 import httpx
 from pydantic import BaseModel
 
@@ -65,6 +66,11 @@ REGIONS_MAPPING_SK = {
     "Trnavský kraj": "Trnava",
     "Žilinský kraj": "Žilina",
 }
+
+REGIONS = sorted(
+    set(REGIONS_MAPPING_CZ.values()) | set(REGIONS_MAPPING_SK.values()),
+    key=czech_sort.key,
+)
 
 ZIP_CODE_RE = re.compile(r"\b\d{3} ?\d{2}\b")
 
