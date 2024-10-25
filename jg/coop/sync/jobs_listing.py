@@ -1,4 +1,5 @@
 from datetime import date, timedelta
+from time import perf_counter_ns
 
 import click
 
@@ -33,10 +34,18 @@ def main(actor_name: str):
     scraped_jobs = list(ScrapedJob.listing())
     try:
         logger.info(f"Running checks for {len(scraped_jobs)} URLs")
+        t = perf_counter_ns()
         checks = check_jobs(actor_name, [job.url for job in scraped_jobs])
+        duration_min = (perf_counter_ns() - t) / 60_000_000_000
+        logger.info(f"Checks took {duration_min:.2f} minutes")
     except MutationsNotAllowedError:
-        logger.warning("Cannot check for expired jobs!")
+        logger.warning("Cannot check for expired jobs, relying on stale data")
         checks = apify.fetch_data(actor_name)
+    if len(checks) != len(scraped_jobs):
+        logger.warning(
+            f"Number of checks ({len(checks)}) does not match "
+            f"the number of scraped jobs ({len(scraped_jobs)})!"
+        )
 
     status_by_url = {check["url"]: check["ok"] for check in checks}
     for scraped_job in scraped_jobs:
@@ -56,11 +65,4 @@ def main(actor_name: str):
 
 @cache(expire=timedelta(hours=6), tag="job-checks")
 def check_jobs(actor_name: str, urls: list[str]) -> list[dict]:
-    checks = apify.run(actor_name, {"links": [{"url": url} for url in urls]})
-    if len(checks) != len(urls):
-        raise RuntimeError(
-            f"Number of checks ({len(checks)}) does not match "
-            f"the number of URLs ({len(urls)})! "
-            f"Something went wrong with the {actor_name} actor."
-        )
-    return checks
+    return apify.run(actor_name, {"links": [{"url": url} for url in urls]})
