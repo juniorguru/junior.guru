@@ -5,7 +5,7 @@ from jg.coop.models.sync import Sync, SyncCommand
 from testing_utils import prepare_test_db
 
 
-NS_IN_MIN = 60000000000
+NS_IN_MIN = 60_000_000_000
 
 
 @pytest.fixture
