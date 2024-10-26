@@ -14,7 +14,7 @@ from jg.coop.lib.discord_club import (
     get_or_create_dm_channel,
     get_pinned_message_url,
     get_reaction,
-    parse_message_url,
+    parse_link,
 )
 from jg.coop.models.base import db
 from jg.coop.models.page import Page
@@ -80,7 +80,7 @@ async def process_pins(client: ClubClient):
         logger.info(f"Adding {len(messages)} notes to {path}")
         notes = []
         for message in messages:
-            pinned_message_details = parse_message_url(get_pinned_message_url(message))
+            pinned_message_details = parse_link(get_pinned_message_url(message))
             try:
                 channel = await client.club_guild.fetch_channel(
                     pinned_message_details["channel_id"]

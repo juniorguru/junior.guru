@@ -7,9 +7,6 @@ from jg.coop.lib import loggers
 from jg.coop.lib.cache import get_cache
 
 
-__all__ = ["allow", "allow_all", "is_allowed", "mutates", "mutating", "allowing"]
-
-
 logger = loggers.from_path(__file__)
 
 
@@ -94,9 +91,12 @@ def mutates(service, raises=False):
     return decorator
 
 
-for service in KNOWN_SERVICES:
-    globals()[f"mutates_{service}"] = partial(mutates, service)
-    __all__.append(f"mutates_{service}")
+mutates_discord = partial(mutates, "discord")
+mutates_fakturoid = partial(mutates, "fakturoid")
+mutates_google_sheets = partial(mutates, "google_sheets")
+mutates_memberful = partial(mutates, "memberful")
+mutates_openai = partial(mutates, "openai")
+mutates_apify = partial(mutates, "apify")
 
 
 class MutatingProxy:
@@ -118,9 +118,12 @@ def mutating(*args, **kwargs) -> Generator[MutatingProxy, None, None]:
     yield MutatingProxy(*args, **kwargs)
 
 
-for service in KNOWN_SERVICES:
-    globals()[f"mutating_{service}"] = partial(mutating, service)
-    __all__.append(f"mutating_{service}")
+mutating_discord = partial(mutating, "discord")
+mutating_fakturoid = partial(mutating, "fakturoid")
+mutating_google_sheets = partial(mutating, "google_sheets")
+mutating_memberful = partial(mutating, "memberful")
+mutating_openai = partial(mutating, "openai")
+mutating_apify = partial(mutating, "apify")
 
 
 @contextmanager
@@ -138,6 +141,16 @@ def allowing(service) -> Generator[None, None, None]:
         logger["allowing"].debug(f"Back to: {dump!r}")
 
 
+allowing_discord = partial(allowing, "discord")
+allowing_fakturoid = partial(allowing, "fakturoid")
+allowing_google_sheets = partial(allowing, "google_sheets")
+allowing_memberful = partial(allowing, "memberful")
+allowing_openai = partial(allowing, "openai")
+allowing_apify = partial(allowing, "apify")
+
+
+_globals = globals()
 for service in KNOWN_SERVICES:
-    globals()[f"allowing_{service}"] = partial(allowing, service)
-    __all__.append(f"allowing_{service}")
+    assert f"mutates_{service}" in _globals
+    assert f"mutating_{service}" in _globals
+    assert f"allowing_{service}" in _globals

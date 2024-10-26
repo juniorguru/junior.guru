@@ -150,7 +150,7 @@ jobs:
   sync-2:
     executor: python-js
     resource_class: large
-    parallelism: 11
+    parallelism: 12
     steps:
       - attach_workspace:
           at: "~"
