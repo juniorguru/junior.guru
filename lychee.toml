@@ -60,6 +60,7 @@ exclude = [
     "hearthis.at",
     "freecodecamp.org",
     "techinterviewhandbook.org",
+    "facebook.com",
 
     # Read the Docs anti-scraping protections
     "docs.pyvec.org",
