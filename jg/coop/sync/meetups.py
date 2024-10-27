@@ -198,7 +198,7 @@ async def sync_meetups(client: ClubClient, instructions: list[PostingInstruction
             )
             message = await proxy.send(embed=embed)
         if message:
-            await add_reactions(proxy, "🙋")
+            await add_reactions(message, "🙋")
 
 
 def parse_channel_id(url: str | HttpUrl) -> int:
