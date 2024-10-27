@@ -18,7 +18,7 @@ if TYPE_CHECKING:
 
 CLUB_GUILD = 769966886598737931
 
-DEFAULT_AUTO_ARCHIVE_DURATION = 10080  # minutes
+DEFAULT_AUTO_ARCHIVE_DURATION = 10_080  # minutes
 
 DEFAULT_THREAD_CREATED_AT = datetime(
     2022, 1, 9, tzinfo=timezone.utc
@@ -26,7 +26,7 @@ DEFAULT_THREAD_CREATED_AT = datetime(
 
 DEFAULT_CHANNELS_HISTORY_SINCE = timedelta(days=380)
 
-MESSAGE_URL_RE = re.compile(
+LINK_RE = re.compile(
     r"""
         https://discord.com/channels/
         (
@@ -34,8 +34,9 @@ MESSAGE_URL_RE = re.compile(
             |
             (@\w+)
         )/
-        (?P<channel_id>\d+)/
-        (?P<message_id>\d+)/?
+        (?P<channel_id>\d+)
+        (/(?P<message_id>\d+))?
+        /?
     """,
     re.VERBOSE,
 )
@@ -326,16 +327,16 @@ def get_pinned_message_url(message: discord.Message) -> int:
 
 
 def get_ui_urls(message: discord.Message) -> list[str]:
-    return sorted(
-        itertools.chain.from_iterable(
-            [button.url for button in action_row.children]
-            for action_row in message.components
-        )
+    button_urls = itertools.chain.from_iterable(
+        [button.url for button in action_row.children]
+        for action_row in message.components
     )
+    embed_urls = (embed.url for embed in message.embeds)
+    return sorted(filter(None, itertools.chain(button_urls, embed_urls)))
 
 
-def parse_message_url(url: str) -> int:
-    if match := MESSAGE_URL_RE.search(url):
+def parse_link(url: str) -> int:
+    if match := LINK_RE.search(url):
         return {
             name: int(value) if value else None
             for name, value in match.groupdict().items()

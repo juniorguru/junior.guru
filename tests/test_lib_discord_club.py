@@ -194,10 +194,18 @@ def test_get_pinned_message_url(link_text):
                 "message_id": 968729020357296139,
             },
         ),
+        (
+            "https://discord.com/channels/769966886598737931/1295314307147632692",
+            {
+                "guild_id": 769966886598737931,
+                "channel_id": 1295314307147632692,
+                "message_id": None,
+            },
+        ),
     ],
 )
-def test_parse_message_url(url, expected):
-    assert discord_club.parse_message_url(url) == expected
+def test_parse_link(url, expected):
+    assert discord_club.parse_link(url) == expected
 
 
 @pytest.mark.parametrize(
