@@ -10,9 +10,9 @@ Kanály jsou rozděleny do kategorií, např. Rituály, Studium, Shánění prá
 ## Stejně nevíš? 🤔
 Máš téma, které chceš probrat, ale není ti jasné kam s ním? Ujistit se můžeš v kanálu <#META>, nebo se soukromě zeptej moderátorů a oni ti poradí. Ale určitě nad tím nedumej moc dlouho. Vždycky to můžeš dát do <#CHAT>, který snese cokoliv.
 
-## Je toho moc! 🔕
+## Je toho moc! 🙈
 Pokud nemáš čas sledovat všechny diskuze, mrkni občas aspoň do <#ANNOUNCEMENTS>. Každý týden je tam shrnutí s nejoceňovanějšími příspěvky.
 
-Kanály, které víš, že tě nebudou zajímat, si můžeš povypínat. Jdi do kanálu a použij zvoneček. Na počítači je v horní liště, na mobilu se lišta zobrazí, až když zprava vysuneš seznam členů.
+V seznamu kanálů úplně nahoře máš nastavení s názvem Kanály a role (_Channels & Roles_). Na záložce Procházet kanály (_Browse Channels_) si můžeš ručně schovat vše, co tě nezajímá.
 
-Kategorii Archiv (úplně dole) si můžeš schovat kliknutím na její název. Jsou tam staré kanály, které už nepoužíváme, ale chceme, aby jejich historie zůstala ve vyhledávání.
+Schovej si třeba celou kategorii Archiv. Tam jsou staré kanály, které už nepoužíváme, ale chceme, aby jejich historie zůstala ve vyhledávání.
