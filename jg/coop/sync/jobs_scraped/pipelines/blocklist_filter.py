@@ -24,6 +24,7 @@ BLOCKLIST = [
     ("company_name", re.compile(r"Hitachi Energy", re.I)),
     ("company_name", re.compile(r"SPORTISIMO", re.I)),
     ("company_name", re.compile(r"Jobs Contact Personal", re.I)),
+    ("company_name", re.compile(r"INIZIO", re.I)),
     ("description_html", re.compile(r"\b(plc|cnc|cad|cam)\s+programátor", re.I)),
 ]
 
