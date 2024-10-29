@@ -15,3 +15,8 @@ Když otevíráš téma, které se může hodně rozjet, hodí se založit vlák
 Do většiny kanálů můžeš psát volně a nemusíš nad tím moc přemýšlet, ale Rituály (<#INTRO>, <#TIL>, <#VENTING>) mají speciální režim. Aby zůstaly přehledné, odpovídá se v nich pouze pomocí vláken.
 
 Vlákno zmizí ze seznamu kanálů po týdnu bez aktivity. Můžeš ho ale kdykoliv oživit novým příspěvkem.
+
+## Upozornění 🔕
+Každý kanál můžeš „umlčet“. Jdi do něj a použij zvoneček. Na počítači je v horní liště, na mobilu se lišta zobrazí, až když zprava vysuneš seznam členů.
+
+Existuje i nastavení, kde si můžeš přehledně nastavit upozornění pro celý klub. Nad seznamem kanálů ťukni na „junior.guru“ (název Discord serveru) a otevře se nabídka. Tam opět hledej ikonu zvonečku.
