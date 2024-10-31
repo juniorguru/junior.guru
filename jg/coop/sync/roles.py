@@ -4,11 +4,9 @@ from pathlib import Path
 from pprint import pformat
 from typing import Iterable
 
-import emoji
 import yaml
-from discord import Color
+from discord import Color, Role
 from pydantic import BaseModel
-from slugify import slugify
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
@@ -83,24 +81,6 @@ async def sync_roles(client: ClubClient):
     documented_discord_roles = sorted(documented_discord_roles, reverse=True)
     for position, discord_role in enumerate(documented_discord_roles, start=1):
         logger.debug(f"#{position} {discord_role.name}")
-
-        if discord_role.icon:
-            icon_path = IMAGES_DIR / "emoji" / f"club-role-{discord_role.id}.png"
-            if not icon_path.exists():
-                raise ValueError(
-                    f"Missing icon file: {icon_path} (download at {discord_role.icon.url})"
-                )
-        elif discord_role.unicode_emoji:
-            icon_path = (
-                IMAGES_DIR / "emoji" / f"{emoji_slug(discord_role.unicode_emoji)}.png"
-            )
-            if not icon_path.exists():
-                raise ValueError(
-                    f"Missing icon file: {icon_path} (download at https://emojipedia.org/twitter/twemoji-15.0.1/{emoji_slug(discord_role.unicode_emoji)})"
-                )
-        else:
-            icon_path = None
-
         DocumentedRole.create(
             club_id=discord_role.id,
             position=position,
@@ -112,7 +92,7 @@ async def sync_roles(client: ClubClient):
             ),
             emoji=discord_role.unicode_emoji,
             color=discord_role.color.value,
-            icon_path=icon_path.relative_to(IMAGES_DIR) if icon_path else None,
+            icon_path=resolve_icon_path(discord_role),
         )
 
     logger.info("Preparing data for computing how to re-assign roles")
@@ -387,5 +367,12 @@ def repr_roles(roles):
     return repr([role.name for role in roles])
 
 
-def emoji_slug(unicode_emoji: str) -> str:
-    return slugify(emoji.demojize(unicode_emoji))
+def resolve_icon_path(role: Role | None) -> str | None:
+    if role.icon:
+        icon_path = IMAGES_DIR / "roles" / f"{role.id}.png"
+        if not icon_path.exists():
+            raise ValueError(
+                f"Missing icon file: {icon_path} (download at {role.icon.url})"
+            )
+        return str(icon_path.relative_to(IMAGES_DIR))
+    return None

@@ -14,11 +14,11 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command()
 def main():
-    discord_task.run(sync_club_threads)
+    discord_task.run(sync_threads)
 
 
 @db.connection_context()
-async def sync_club_threads(client: ClubClient):
+async def sync_threads(client: ClubClient):
     channels = (
         channel
         for channel in client.club_guild.channels

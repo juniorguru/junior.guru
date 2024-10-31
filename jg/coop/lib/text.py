@@ -1,6 +1,7 @@
 import re
 import unicodedata
 
+import emoji
 from lxml import etree, html
 from lxml.html import soupparser as html_soup
 
@@ -127,3 +128,31 @@ def split_blocks(text: str) -> list[str]:
         for block in MULTIPLE_NEWLINES_RE.split(text)
     )
     return [block for block in blocks if block]
+
+
+def remove_emoji(text: str) -> str:
+    return _strip_whitespace(emoji.replace_emoji(_strip_whitespace(text), replace=""))
+
+
+def _strip_whitespace(text: str) -> str:
+    previous = text
+    while True:
+        stripped = previous
+        stripped = stripped.strip()
+        stripped = stripped.strip("\u200d")
+
+        if stripped == previous:
+            return stripped
+        previous = stripped
+
+
+def emoji_url(text: str) -> str:
+    if not text:
+        raise ValueError("Emoji is empty")
+    codepoints = [
+        codepoint
+        for codepoint in [hex(ord(char)).removeprefix("0x") for char in text]
+        if not re.match(r"fe0[0-9a-f]", codepoint)  # variation selectors
+    ]
+    basename = "-".join(codepoints)
+    return f"https://jdecked.github.io/twemoji/v/latest/72x72/{basename}.png"

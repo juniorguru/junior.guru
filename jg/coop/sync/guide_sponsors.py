@@ -1,4 +1,3 @@
-from datetime import timedelta
 from pathlib import Path
 
 import click
@@ -6,14 +5,10 @@ from discord import AllowedMentions, Color, Embed, File
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
-from jg.coop.lib.discord_club import (
-    ClubClient,
-    is_message_over_period_ago,
-    parse_channel,
-)
+from jg.coop.lib.cache import get_cache
+from jg.coop.lib.discord_club import ClubClient, parse_channel
 from jg.coop.lib.mutations import mutating_discord
-from jg.coop.models.base import db
-from jg.coop.models.club import ClubMessage
+from jg.coop.models.base import db, hash_models
 from jg.coop.models.sponsor import Sponsor
 
 
@@ -23,38 +18,29 @@ IMAGES_DIR = Path("jg/coop/images")
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=["club-content", "organizations", "roles"])
-@click.option("--channel", "channel_id", default="sponsors_list", type=parse_channel)
-@click.option(
-    "--recreate-interval",
-    "recreate_interval_days",
-    default=30,
-    type=int,
-    help="In days.",
-)
-def main(channel_id: int, recreate_interval_days: int):
-    discord_task.run(recreate_archive, channel_id, recreate_interval_days)
+@cli.sync_command(dependencies=["organizations", "roles"])
+@click.option("--channel", "channel_id", default="guide_sponsors", type=parse_channel)
+@click.option("--cache-key", default="guide:sponsors")
+@click.option("--cache-days", default=30, type=int)
+@click.option("--force", is_flag=True, default=False)
+def main(channel_id: int, cache_key: str, cache_days: int, force: bool):
+    with db.connection_context():
+        sponsors = list(Sponsor.club_listing())
+    cache = get_cache()
+    sponsors_hash = hash_models(sponsors)
+    cache_miss = cache.get(cache_key) != sponsors_hash
 
-
-@db.connection_context()
-async def recreate_archive(
-    client: ClubClient, channel_id: int, recreate_interval_days: int
-):
-    sponsors = Sponsor.club_listing()
-    messages = ClubMessage.channel_listing(channel_id, by_bot=True)
-    try:
-        last_message = messages[-1]
-    except IndexError:
-        logger.info("No messages in the channel")
+    if force or cache_miss:
+        logger.info(f"Recreating channel! (force={force}, cache_miss={cache_miss})")
+        discord_task.run(recreate_channel, channel_id, sponsors)
+        cache.set(cache_key, sponsors_hash, expire=86_400 * cache_days)
     else:
-        if is_message_over_period_ago(
-            last_message, timedelta(days=recreate_interval_days)
-        ):
-            logger.info("Channel content is too old")
-        else:
-            logger.info("Channel content is recent, skipping")
-            return
+        logger.info("Channel is up-to-date")
 
+
+async def recreate_channel(
+    client: ClubClient, channel_id: int, sponsors: list[Sponsor]
+):
     channel = await client.fetch_channel(channel_id)
     with mutating_discord(channel) as proxy:
         await proxy.purge(limit=None)

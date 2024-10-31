@@ -5,7 +5,7 @@ from operator import attrgetter
 from pathlib import Path
 
 import click
-from discord import AllowedMentions, ForumChannel, Thread, ui
+from discord import AllowedMentions, ForumChannel, NotFound, Thread, ui
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers, mutations
@@ -21,7 +21,7 @@ from jg.coop.lib.discord_club import (
 )
 from jg.coop.lib.mutations import mutating_discord
 from jg.coop.lib.reading_time import reading_time
-from jg.coop.lib.remove_emoji import remove_emoji
+from jg.coop.lib.text import remove_emoji
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
 from jg.coop.models.documented_role import DocumentedRole
@@ -66,9 +66,11 @@ def load_tips(tips_path: Path, roles: dict[str, int] | None = None):
         if tip_path.name == "README.md":
             continue
         logger.info(f"Loading tip {tip_path}")
+        position, slug = tip_path.stem.split("_", 1)
         yield dict(
+            slug=slug,
+            position=position,
             edit_url=get_edit_url(tip_path),
-            slug=tip_path.stem.split("_", 1)[1],
             **parse_tip(tip_path.read_text(), roles=roles),
         )
 
@@ -136,7 +138,12 @@ async def sync_tips(client: ClubClient, tips: list[dict]):
     Tip.create_table()
     channel = await client.fetch_channel(ClubChannelID.TIPS)  # avoid cached data
     for emoji, thread in threads_by_emoji(channel.threads).items():
-        Tip.create(club_url=thread.jump_url, **tips_by_emoji[emoji])
+        data = tips_by_emoji[emoji]
+        Tip.create(
+            title_text=remove_emoji(data["title"]),
+            discord_url=thread.jump_url,
+            **data,
+        )
 
 
 @mutations.mutates_discord()
@@ -286,10 +293,13 @@ async def ensure_intro_reminder(client: ClubClient):
             )
 
         if last_message:
-            logger.info("Deleting previous reminder")
-            message = await channel.fetch_message(last_message.id)
-            with mutating_discord(message) as proxy:
-                await proxy.delete()
+            logger.info(f"Deleting previous reminder: {last_message.url}")
+            try:
+                message = await channel.fetch_message(last_message.id)
+                with mutating_discord(message) as proxy:
+                    await proxy.delete()
+            except NotFound:
+                logger.warning("Message not found, probably already deleted")
 
 
 def threads_by_emoji(threads: list[Thread]) -> dict[str, Thread]:

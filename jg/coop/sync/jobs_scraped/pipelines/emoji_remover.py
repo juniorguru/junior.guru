@@ -1,4 +1,4 @@
-from jg.coop.lib.remove_emoji import remove_emoji
+from jg.coop.lib.text import remove_emoji
 
 
 async def process(item: dict) -> dict:

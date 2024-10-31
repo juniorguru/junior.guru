@@ -1,6 +1,6 @@
 import pytest
 
-from jg.coop.lib.remove_emoji import remove_emoji
+from jg.coop.lib.text import emoji_url, remove_emoji
 
 
 @pytest.mark.parametrize(
@@ -12,7 +12,7 @@ from jg.coop.lib.remove_emoji import remove_emoji
         "🦸🏻  Kurz Programátor www aplikací  🦸🏻",
     ],
 )
-def test_remove_emoji(text):
+def test_remove_emoji(text: str):
     assert remove_emoji(text) == "Kurz Programátor www aplikací"
 
 
@@ -24,5 +24,16 @@ def test_remove_emoji(text):
         "\u200d  QA Engineer/Tester",
     ],
 )
-def test_remove_emoji_zero_width_joiner(text):
+def test_remove_emoji_zero_width_joiner(text: str):
     assert remove_emoji(text) == "QA Engineer/Tester"
+
+
+@pytest.mark.parametrize(
+    "emoji, expected",
+    [
+        ("❤️", "https://jdecked.github.io/twemoji/v/latest/72x72/2764.png"),
+        ("3️⃣", "https://jdecked.github.io/twemoji/v/latest/72x72/33-20e3.png"),
+    ],
+)
+def test_emoji_url(emoji: str, expected: str):
+    assert emoji_url(emoji) == expected

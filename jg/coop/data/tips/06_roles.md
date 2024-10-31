@@ -4,7 +4,7 @@ Proč je někdo zelený, nebo žlutý? Co znamená srdce vedle jména? A proč s
 ## Role 🏅
 Na Discordu mohou lidi mít role, díky kterým mají barvu, ikonu vedle jména, jsou oddělení v seznamu členů, nebo mají nějaká oprávnění navíc.
 
-Na každém Discordu je to jinak, zcela podle chuti správců. V klubu se o většinu rolí starám já. Některé dávám jen pro lepší orientaci, jiné za zásluhy. Dvě role ti vysvětlím přímo tady. Popis ostatních najdeš kdykoliv v kanálu <#ROLES_DOC>.
+Na každém Discordu je to jinak, zcela podle chuti správců. V klubu se o většinu rolí starám já. Některé dávám jen pro lepší orientaci, jiné za zásluhy. Dvě role ti vysvětlím přímo tady. Popis ostatních najdeš kdykoliv v kanálu <#GUIDE_ROLES>.
 
 ## Mám #ahoj a profilovku 🦸
 Když se představíš v <#INTRO> a dáš si profilový obrázek, dostaneš ode mě roli <@&HAS_INTRO_AND_AVATAR>. V uživatelském nastavení hledej sekci Profily (_Profiles_). Nemusí to být fotka, jde pouze o to, abychom tu neměli deset Honzů, které nerozeznáme od sebe. Role měním zhruba jednou denně, takže je potřeba počkat, než se ti objeví.

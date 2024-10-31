@@ -33,7 +33,7 @@ UPVOTES_EXCLUDE_CHANNELS = [
     ClubChannelID.INTRO,
     ClubChannelID.ANNOUNCEMENTS,
     ClubChannelID.BOT,
-    ClubChannelID.DASHBOARD,
+    ClubChannelID.GUIDE_DASHBOARD,
     ClubChannelID.FUN,
     ClubChannelID.FUN_TOPICS,
     ClubChannelID.NEWCOMERS,
@@ -43,7 +43,7 @@ STATS_EXCLUDE_CHANNELS = [
     ClubChannelID.ANNOUNCEMENTS,
     ClubChannelID.JOBS,
     ClubChannelID.BOT,
-    ClubChannelID.DASHBOARD,
+    ClubChannelID.GUIDE_DASHBOARD,
     ClubChannelID.FUN,
     ClubChannelID.FUN_TOPICS,
     834443926655598592,  # práce-bot (archived)
