@@ -32,7 +32,7 @@ def main(channel_id: int, today: date):
         return
 
     with db.connection_context():
-        tip_url = Tip.get_by_id("monday_talk").club_url
+        tip_url = Tip.get_by_id("monday_talk").discord_url
 
     discord_task.run(announce_talk, channel_id, tip_url, today)
 
