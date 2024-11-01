@@ -11,6 +11,7 @@ from jg.coop.lib import discord_task, loggers
 from jg.coop.lib.discord_club import ClubClient, parse_channel
 from jg.coop.lib.md import md
 from jg.coop.lib.mutations import MutationsNotAllowedError, mutating_discord
+from jg.coop.lib.text import emoji_url
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
 from jg.coop.models.job import DiscordJob, ListedJob
@@ -19,8 +20,6 @@ from jg.coop.models.job import DiscordJob, ListedJob
 JOBS_REPEATING_PERIOD_DAYS = 30
 
 IMAGES_DIR = Path("jg/coop/images")
-
-REASON_ICON_PATH = IMAGES_DIR / "emoji" / "sparkles.png"
 
 logger = loggers.from_path(__file__)
 
@@ -162,11 +161,10 @@ async def prepare_thread_params(job: ListedJob) -> dict:
 
     # reason
     if job.reason:
-        files.append(File(REASON_ICON_PATH))
         reason_embed = Embed(description=f"_{job.reason}_")
         reason_embed.set_author(
             name="Proč si můj AI mozeček myslí, že je to juniorní",
-            icon_url=f"attachment://{REASON_ICON_PATH.name}",
+            icon_url=emoji_url("✨"),
         )
         embeds.append(reason_embed)
 
