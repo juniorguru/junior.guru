@@ -921,3 +921,5 @@
 {"_id": "26757136236", "amount": 6, "category": "donations", "happened_on": "2024-10-30"}
 {"_id": "26757997707", "amount": -120, "category": "miscellaneous", "happened_on": "2024-10-30"}
 {"_id": "26757997727", "amount": -240, "category": "miscellaneous", "happened_on": "2024-10-30"}
+{"_id": "26765997453", "amount": -242, "category": "miscellaneous", "happened_on": "2024-11-02"}
+{"_id": "26765998852", "amount": -1173, "category": "memberful", "happened_on": "2024-11-02"}
