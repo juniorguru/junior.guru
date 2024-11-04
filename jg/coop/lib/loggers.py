@@ -1,8 +1,8 @@
 import logging
 import os
-from pathlib import Path
 import threading
 import time
+from pathlib import Path
 from typing import Callable, Generator, Iterable, TypeVar, cast
 
 from jg.coop.lib.cache import get_cache
