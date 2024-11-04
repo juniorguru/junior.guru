@@ -1,5 +1,4 @@
 from datetime import date, timedelta
-from time import perf_counter_ns
 
 import click
 
@@ -34,10 +33,7 @@ def main(actor_name: str):
     scraped_jobs = list(ScrapedJob.listing())
     try:
         logger.info(f"Running checks for {len(scraped_jobs)} URLs")
-        t = perf_counter_ns()
-        checks = check_jobs(actor_name, [job.url for job in scraped_jobs])
-        duration_min = (perf_counter_ns() - t) / 60_000_000_000
-        logger.info(f"Checks took {duration_min:.2f} minutes")
+        checks = logger.wait(check_jobs, actor_name, [job.url for job in scraped_jobs])
     except MutationsNotAllowedError:
         logger.warning("Cannot check for expired jobs, relying on stale data")
         checks = apify.fetch_data(actor_name)
