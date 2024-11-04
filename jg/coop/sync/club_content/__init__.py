@@ -1,4 +1,5 @@
 import logging
+import os
 from pprint import pformat
 
 from discord import DiscordServerError
@@ -12,6 +13,7 @@ from tenacity import (
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
+from jg.coop.lib.cache import cache
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage, ClubPin, ClubUser
 from jg.coop.sync.club_content.crawler import crawl
@@ -21,6 +23,7 @@ logger = loggers.from_path(__file__)
 
 
 @cli.sync_command()
+@cache(expire=int(os.getenv("CACHE_CLUB_CONTENT", "0")), tag="club-content")
 @retry(
     retry=retry_if_exception_type(DiscordServerError),
     wait=wait_random_exponential(min=60, max=5 * 60),
