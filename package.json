@@ -7,7 +7,7 @@
   "dependencies": {
     "@fontsource/inter": "5.1.0",
     "bootstrap-icons": "1.11.3",
-    "chart.js": "4.4.5",
+    "chart.js": "4.4.6",
     "chartjs-plugin-annotation": "3.1.0",
     "instant.page": "5.2.0",
     "rough-notation": "0.5.1"
