@@ -98,5 +98,7 @@ pracovní veletrhy
 Znáte tenhle tip jak se propojovat s lidmi na akcích a jinde v terénu? https://www.linkedin.com/posts/marek-velas_linkedin-moneyphoo-edupunk-ugcPost-7190503461828878337-GLGX
 ---
 
+https://blog.glyph.im/2024/05/how-to-pycon.html
+
 
 #} -->
