@@ -1,7 +1,9 @@
 import logging
 import os
 from pathlib import Path
-from typing import Generator, Iterable, TypeVar, cast
+import threading
+import time
+from typing import Callable, Generator, Iterable, TypeVar, cast
 
 from jg.coop.lib.cache import get_cache
 from jg.coop.lib.chunks import chunks
@@ -50,6 +52,24 @@ class Logger(logging.Logger):
             yield from chunk
             total_count += len(chunk)
             self.info(f"Done {total_count} items")
+
+    def wait(self, fn: Callable[..., T], *args, **kwargs) -> T:
+        stop = False
+
+        def wait() -> None:
+            t = time.perf_counter()
+            time.sleep(3)
+            while not stop:
+                self.info(f"Waiting… ({(time.perf_counter() - t) / 60:.0f}min)")
+                time.sleep(60)
+
+        thread = threading.Thread(target=wait)
+        thread.start()
+        try:
+            return fn(*args, **kwargs)
+        finally:
+            stop = True
+            thread.join()
 
 
 def _configure():
