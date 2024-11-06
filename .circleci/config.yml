@@ -5,10 +5,6 @@ executors:
     docker:
       - image: cimg/python:3.12-browsers
     working_directory: ~/project
-  rust:
-    docker:
-      - image: cimg/rust:1.80.0
-    working_directory: ~/project
 
 orbs:
   git-shallow-clone: guitarrapc/git-shallow-clone@2.8.0
@@ -278,7 +274,7 @@ jobs:
       - run: poetry run jg check-docs --no-build
 
   check-links:
-    executor: rust
+    executor: python-js
     steps:
       - attach_workspace:
           at: "~"
@@ -287,7 +283,7 @@ jobs:
           command: wget "https://github.com/lycheeverse/lychee/releases/download/nightly/lychee-x86_64-unknown-linux-gnu.tar.gz" -O "lychee.tar.gz"
       - run:
           name: Extract Lychee
-          command: tar -C /usr/local/bin -xzvf "lychee.tar.gz"
+          command: tar -xzvf "lychee.tar.gz"
       - run:
           name: Lychee version
           command: lychee --version
