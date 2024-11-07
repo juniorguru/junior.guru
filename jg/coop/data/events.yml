@@ -15,6 +15,7 @@
 #  title: Jak se stát někým a dělat věci  # NÁZEV PŘEDNÁŠKY
 #  date: "0000-00-00"                     # DATUM PŘEDNÁŠKY
 #  time: "00:00"                          # VÝCHOZÍ JE 18:00, TAKŽE VE VĚTŠINĚ PŘÍPADŮ PROSTĚ JEN ODEBER CELÝ TENTO ŘÁDEK
+#  duration: 2                            # DÉLKA PŘEDNÁŠKY V HODINÁCH, VÝCHOZÍ JE 1
 #  description: |                         # LÁKADLO NA PŘEDNÁŠKU, MŮŽEŠ POUŽÍT MARKDOWN
 #    Kdo by se nechtěl někým stát a dělat věci? Jana Nováková je
 #    na věci expertka a ukáže ti, jak se věci dělají a jak se stát
@@ -54,6 +55,45 @@
 #    je stejný, jako tvoje ID na Discordu. Přípona a formát jsou jedno. No a pak je potřeba
 #    ještě spustit 'jg sync events', takže… takže je vlastně lepší to neřešit
 #    a poslat prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
+
+- id: 47
+  title: Úvod do Obsidianu a organizace poznámek (workshop)
+  date: "2024-11-30"
+  time: "09:30"
+  duration: 2
+  description: |
+    Máš pocit, že ve tvém digitálním obsahu panuje chaos? 🤯 Ztrácíš se často ve svých složkách s dokumenty nebo nemáš žádný systém na poznámky? Workshop tě provede základními i pokročilejšími funkcemi Obsidianu. Naučíš se, jak efektivně zachytávat a organizovat své myšlenky, nápady a další digitální obsah.
+
+    ### 📝 Co je třeba před workshopem
+    Mít nainstalovaný Obsidian a umět vytvořit novou poznámku, viz [YouTube video](https://youtu.be/JyyweqNkdZ0?si=118FXHj5pMhRgVhB).
+    ### 🤓 Pro koho je workshop určen
+    - Kdo chce začít používat poznámkový nástroj, který si může přizpůsobit podle svých potřeb.
+    - Kdo chce mít své poznámky uložené lokálně na počítači, ale zároveň mít možnost přístupu k nim napříč různými zařízeními.
+    - Kdo hledá jednoduchý způsob, jak začít organizovat své digitální informace a vytvořit si efektivní systém.
+    - Kdo má základní představu o tom, co Obsidian je, viz [YouTube video](https://youtu.be/JyyweqNkdZ0?si=118FXHj5pMhRgVhB).
+    ### 🚫 Workshop není určen pro
+    - Kdo hledá „hotový“ nástroj bez nutnosti investovat čas do jeho přizpůsobení.
+    - Kdo používá Obsidian již delší dobu a má fungující systém na organizaci poznámek.
+    - Kdo potřebuje sdílet poznámky s ostatními a pracovat na nich ve skupinách.
+    ### 🚀 Během workshopu si ukážeme
+    - Základy používání Obsidianu, včetně navigace po rozhraní a jak se vyznat v nastavení.
+    - Jak si přizpůsobit vzhled Obsidianu.
+    - Různé pluginy pro zjednodušení práce.
+    - Jak vytvářet klávesové zkratky a další užitečné tipy.
+    - Jak zavést systém organizace poznámek (metoda PARA), který dlouhodobě pomůže udržet si přehled a neztrácet se v digitálním obsahu.
+  short_description: |
+    Máš pocit, že ve tvém digitálním obsahu panuje chaos? 🤯 Ztrácíš se často ve svých složkách s dokumenty nebo nemáš žádný systém na poznámky? Workshop tě provede základními i pokročilejšími funkcemi Obsidianu. Naučíš se, jak efektivně zachytávat a organizovat své myšlenky, nápady a další digitální obsah.
+  avatar_path: avatars-participants/lucie-lenertova.jpg
+  bio_name: Lucie Lenértová
+  bio_title: Průvodkyně světem programování pro začátečníky
+  bio: |
+    Lucie Lénertová je průvodkyně začátečníků světem programování a umělé inteligence. Prostřednictvím YouTube videí a newsletterů předává své znalosti srozumitelně a motivuje začátečníky k objevování radosti z programování.
+  bio_links:
+    - https://www.youtube.com/@LucieLenertova
+    - https://www.lucielenertova.cz
+    - https://www.linkedin.com/in/lucielenertova/
+  logo_path: logos/dokazesprogramovat.svg
+  speakers: 1002301544496119838
 
 - id: 46
   title: "Programování jako kariéra? Ptej se! (Q&A)"

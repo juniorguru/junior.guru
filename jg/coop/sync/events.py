@@ -4,7 +4,7 @@ from zoneinfo import ZoneInfo
 
 import click
 from discord import ScheduledEvent
-from strictyaml import CommaSeparated, Int, Map, Optional, Seq, Str, Url, load
+from strictyaml import CommaSeparated, Float, Int, Map, Optional, Seq, Str, Url, load
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
@@ -66,6 +66,7 @@ schema = Seq(
             "title": Str(),
             "date": Date(),
             Optional("time", default="18:00"): Str(),
+            Optional("duration", default=1.5): Float(),
             "description": Str(),
             Optional("short_description"): Str(),
             Optional("avatar_path"): Str(),
@@ -339,4 +340,5 @@ def load_record(record):
     start_at_utc = start_at_prg.astimezone(UTC)
     start_at = start_at_utc.replace(tzinfo=None)
     record["start_at"] = start_at
+    record["end_at"] = start_at + timedelta(hours=record.pop("duration"))
     return record

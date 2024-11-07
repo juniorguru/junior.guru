@@ -1,5 +1,5 @@
 import math
-from datetime import UTC, datetime, timedelta
+from datetime import UTC, datetime
 from zoneinfo import ZoneInfo
 
 from peewee import (
@@ -20,6 +20,7 @@ from jg.coop.models.club import ClubUser
 class Event(BaseModel):
     title = CharField()
     start_at = DateTimeField(index=True)
+    end_at = DateTimeField()
     description = TextField()
     short_description = TextField(null=True)
     bio = TextField()
@@ -43,10 +44,6 @@ class Event(BaseModel):
     def start_at_prg(self):
         start_at_utc = self.start_at.replace(tzinfo=UTC)
         return start_at_utc.astimezone(ZoneInfo("Europe/Prague")).replace(tzinfo=None)
-
-    @property
-    def end_at(self):
-        return self.start_at + timedelta(hours=1)
 
     @property
     def discord_description(self) -> str:

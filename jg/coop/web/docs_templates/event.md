@@ -11,7 +11,7 @@
 <p>
   <strong>{{ '{:%-d.%-m.%Y}'.format(event.start_at) }}</strong>
   —
-  {{ event.start_at|local_time }} online v klubovně</strong>{% if event.recording_url %},
+  {{ event.start_at|local_time }} až {{ event.end_at|local_time }} online v klubovně</strong>{% if event.recording_url %},
   <a href="{{ event.recording_url }}">záznam pro členy</a>{% endif %}{% if event.public_recording_url %},
   <a href="{{ event.public_recording_url }}">veřejný záznam</a>{% endif %}
 </p>

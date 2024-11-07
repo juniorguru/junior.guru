@@ -2,6 +2,7 @@ import logging
 import os
 from pprint import pformat
 
+from aiohttp import ClientError
 from discord import DiscordServerError
 from tenacity import (
     before_sleep_log,
@@ -25,7 +26,7 @@ logger = loggers.from_path(__file__)
 @cli.sync_command()
 @cache(expire=int(os.getenv("CACHE_CLUB_CONTENT", "0")), tag="club-content")
 @retry(
-    retry=retry_if_exception_type(DiscordServerError),
+    retry=retry_if_exception_type((DiscordServerError, ClientError)),
     wait=wait_random_exponential(min=60, max=5 * 60),
     stop=stop_after_attempt(3),
     reraise=True,
