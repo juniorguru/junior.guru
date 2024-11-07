@@ -49,7 +49,7 @@ class Event(BaseModel):
     def discord_description(self) -> str:
         return "\n\n".join(
             [
-                strip_links(self.description).strip(),
+                strip_links(self.short_description or self.description).strip(),
                 strip_links(self.bio).strip(),
                 self.url,
             ]
