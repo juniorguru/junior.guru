@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 
 import pytest
 
@@ -21,6 +21,7 @@ def create_event(id, **kwargs):
             "bio_name": "Jane Doe",
             "bio": "Jane Doe is so anonymous that we do not really know anything about her.",
             "start_at": datetime.now(),
+            "end_at": datetime.now() + timedelta(hours=1),
             **kwargs,
         },
     )
