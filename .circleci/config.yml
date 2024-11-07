@@ -283,13 +283,13 @@ jobs:
           command: wget "https://github.com/lycheeverse/lychee/releases/download/nightly/lychee-x86_64-unknown-linux-gnu.tar.gz" -O "lychee.tar.gz"
       - run:
           name: Extract Lychee
-          command: tar -xzvf "lychee.tar.gz"
+          command: tar -xzvf "lychee.tar.gz" && chmod +x "lychee"
       - run:
           name: Lychee version
-          command: lychee --version
+          command: ./lychee --version
       - run:
           name: Check links
-          command: lychee public
+          command: ./lychee public
 
   check-bot:
     executor: python-js
