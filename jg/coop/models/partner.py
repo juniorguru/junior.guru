@@ -1,6 +1,6 @@
 from typing import Iterable, Literal, Self
 
-from peewee import CharField, DateField, IntegerField, TextField, fn
+from peewee import BooleanField, CharField, DateField, IntegerField, TextField, fn
 
 from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubUser
@@ -21,6 +21,7 @@ class Partner(BaseModel):
     # partner
     plan_id = IntegerField()
     start_on = DateField()
+    is_free = BooleanField(default=True)
     note = TextField()
     role_id = IntegerField(null=True)
 
@@ -39,6 +40,10 @@ class Partner(BaseModel):
     @classmethod
     def listing(cls) -> Iterable[Self]:
         return cls.select().order_by(fn.czech_sort(cls.name))
+
+    @classmethod
+    def free_listing(cls) -> Iterable[Self]:
+        return cls.listing().where(cls.is_free == True)  # noqa: E712
 
     @classmethod
     def count(cls) -> int:

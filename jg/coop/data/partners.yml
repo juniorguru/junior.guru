@@ -146,5 +146,6 @@ registry:
     cz_business_id: 14389762
     start_on: 2024-07
     subscription: https://juniorguru.memberful.com/admin/subscriptions/3680582
+    is_free: false
     note: |
       Využívají klub jako komunitu pro své studenty. Lucie Lenértová v klubu pořádá různé online akce.

@@ -135,6 +135,7 @@ class SponsorsConfig(YAMLConfig):
 
 class PartnerConfig(OrganizationConfig):
     start_on: str
+    is_free: bool = True
     note: str
 
 

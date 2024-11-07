@@ -27,7 +27,7 @@ def main():
             }
         }
     """
-    for org in itertools.chain(Sponsor.listing(), Partner.listing()):
+    for org in itertools.chain(Sponsor.listing(), Partner.free_listing()):
         if org.subscription_id:
             renews_on = getattr(org, "renews_on", today + timedelta(days=365))
             logger.info(f"Organization {org.slug!r} renews on {renews_on}")
