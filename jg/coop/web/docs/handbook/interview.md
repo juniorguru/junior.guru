@@ -956,4 +956,98 @@ https://blog.pragmaticengineer.com/software-engineering-salaries-in-the-netherla
 https://trello.com/1/cards/634d7ed102a75102f33dca4e/attachments/634d7ed202a75102f33dcc6f/download/H1_2022-Salary-guide-CZ.pdf
 
 
+--- https://discord.com/channels/769966886598737931/1288193728087064740/1303817228973772944
+Motivační/průvodní dopis:
+
+Dobrý den,
+reaguji na pozici… Bohužel aplikace z předchozích zaměstnání nejsou veřejně dostupné a jejich kód není open-source ani source-available. Nemám ani právo sdílet kód jinak, ale rád s vámi na pohovoru proberu technické problémy a možná řešení, na která jsem u projektů tohoto typu narazil. V CV najdete obecné popisy toho, co jsem dělal a jaké k tomu používal technologie. Pokud je kód, který u vás píšete, k dispozici veřejně na GitHubu, ocením odkaz, rád se podívám, jaké nástroje a postupy používáte. Bohužel hledání NázevFirmy mi nic nenašlo.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1301606738331435088
+o úkolech v přijímacích řízeních
+
+> Nenechte se odradit, pokud budete muset vypracovat úkol. U každé firmy a pozice je to jiné, ale pokud vám na konkrétní firmě opravdu záleží, úkol vypracujte i když chápu, že je to žrout času. Důležité je mít transparentní informace o tom, jak bude úkol hodnocen a jakou roli hraje ve výběrovém řízení. Úkoly jsou běžné zejména pro juniorní pozice, ale mohou se vyskytnout i u seniorních pozic.
+> 
+> Pokud narazíte na zadání, které zahrnuje technologii, kterou zcela neovládáte, komunikujte to. Napište, že se ji budete snažit doučit nebo že potřebujete více času. U našich klientů se například stalo, že zadavatel ocenil komunikaci kandidáta a přizpůsobil úkol jeho znalostem.
+> 
+> Komunikace je klíčová. Dejte vědět, že úkol přijímáte, nebo že budete potřebovat více času kvůli pracovním, studijním nebo rodinným závazkům. Většina firem to pochopí, a pokud je výběrové řízení urgentní, dají vám vědět, ať úkol neřešíte a neztrácíte čas.
+> 
+> Závěrem bych řekla: chovejte se k firmám tak, jak chcete, aby se chovaly k vám. Možná narazíte, ale začněte u sebe. Když očekáváte zpětnou vazbu a transparentnost, jděte příkladem. Pokud firma vaše úsilí neocení, zkuste to jinde. Věřím, že existuje firma, kde budete spokojení. Vysílejte energii, kterou chcete zpět. Podle mě je to hlavní klíč k úspěchu.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1301863841486999652
+Když se vrátím k původnímu problému, kterým to <@1012083835892138074> otevřela:
+
+Zaměstnanecký poměr nabízí menší rizika, aniž o tom musel zaměstnanec moc přemýšlet.
+Potenciálních háčků je mnohem méně a funguje to víceméně tak, jak lidi očekávají.
+
+U OSVČ (ve smyslu švarc) je potřeba si **všechno** ohlídat a spočítat a to i s ohledem na realitu.
+Tím myslím to, jakou sílu ve vyjednávání máš v různých situacích, které můžou nastat.
+
+Když si budeš vědoma rozdílů a nastavíš si podle toho jak svoje očekávání, tak podmínky spolupráce, tak do toho klidně jdi.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/1294323134924718102
+Ano, to je samozřejmě možné, že se tak dozví věk, ale stačí se podívat na LI (nevím jestli v CV máš, kdy jsi studovala VŠ) a i kdyby ti nějak bylo 18, když jsi začla, tak z toho zjistím, že ses narodila v roce 1989 nejpozději, takže nějakou představu (bez ohledu na vzhled) si udělají stejně. A rok, dva, tři navíc už asi není rozdíl z tohoto pohledu. 🤷‍♂️
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/1301975275982291028
+Nejen junioři zažívají pohovory, který jim nedávaj smysl: https://www.linkedin.com/posts/tom%C3%A1%C5%A1-nov%C3%A1k-51a066258_techhiring-programming-dotnet-activity-7257821574500700162-cjfM/ v diskuzi jsou taky slušný perly.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/1290347772532228217
+Tak mě ještě napadlo zeptat se dopředu jaký pohovor tě čeká a na příklad otázek. Třeba v současné firmě dávají code review na pohovor a řekli mi to hned v prvním kole, tak jsem si lokálně nainstalovala asi 10 statických nástrojů na statickou analýzu kódu, o kterých jsem ani nevěděla, že existují, protože jsem věděla, že mi to pak pomůže. Zároveň jsem si udělala code review checklist ze zdrojů na internetu a když mi poslali úkol, tak jsem měla nachystané nástroje a šla jsem podle checklistu.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789087476072710174/1294259606297776168
+<@&1134476995229663374> 
+Po čase připomínám, že jsem dal k zdarma dispozici malý nástroj, který vám může pomoci: [Tabulka pro plánování, sledování času a hledání práce](https://discord.com/channels/769966886598737931/1047219933647487146)
+
+Trackovat si kam a na jaké inzeráty jste poslali reakci není vůbec od věci. Většinou to totiž nevyjde na pár pokusů a v hlavě to neudržíte.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/1288179526521589760
+Přemýšlím, jestli přeci jen nechceš to IČO zvážit — [po důkladném spočítání si](https://www.youtube.com/watch?v=iJGjTFDYw9A) samozřejmě — pokud to pro některý firmy je blok.
+
+S paušální daní to ani není moc administrativy: založit živnost a přihlásit se k paušální dani a pak jen platit měsíčně fixní částku. Není potřeba nic dalšího vykazovat a odevzdávat. 
+
+Proti o něco složitější (nutnost odevzdat daňové přiznání a poslat 2 „přehledy“ k pojištěním) možnosti se to vyplatí od cca 680 tisíc ročně.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1283445215323099197/1283469132104335380
+odkážu svoje video https://youtu.be/iJGjTFDYw9A 
+sice bych tam pár věcí odebral a pár přidal, ale to hlavní platí.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/1277882869469024266
+Neměl jsem zatím čas to přečíst, ale napsal to člověk, o kterém si myslím hodně dobrého, má hodně zkušeností, a který umí psát, takže to asi bude dobré.
+> This article contains twelve fairly simple rules or principles that job candidates can put into practice, to improve the quality of their applications and their performance in interviews.
+https://vurt.org/articles/twelve-rules/
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1254803183570518117
+Má smysl posílat CV do firmy, kam jsem ho již posílala a firma se vůbec neozvala? Je nějaká doba, kterou by se mělo počkat? 🤔 Mám případně nějak zmiňovat, že jsem již jednou na nějakou jejich otevřenou nabídku reagovala? 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1251180512828063774
+📹  Jo a videovizitky jí prej dorazily v jednotkách a většinu těch lidí umístila, nevím kde je tam příčina a následek, ale ušetřili si prý minimálně screener, protože tam o sobě všecko podstatné pověděli. A můžete si to v klidu připravit… To mě docela zaujalo jako cesta jak vystoupit z davu a ještě to některým nervóznějším může usnadnit první kontakt.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/1245067053593919529
+Tohle bych rád vypíchl z aktuální přednášky: https://discord.com/channels/769966886598737931/1075814161138860135/1245066837117632513
+---
+
+
 #} -->

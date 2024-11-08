@@ -101,4 +101,28 @@ Znáte tenhle tip jak se propojovat s lidmi na akcích a jinde v terénu? https:
 https://blog.glyph.im/2024/05/how-to-pycon.html
 
 
+--- https://discord.com/channels/769966886598737931/1288770115050934304/1290626100879163392
+teď bych to asi udělala oběma způsoby, tzn. přidat na LinkedInu + nechat papírový životopis. protože když jen někoho přidáš, tak si tě ten člověk nebude pamatovat. po akcích jsem měla případy, kde mě přidalo najednou 30 lidí a já netušila kdo je kdo, což si myslím, že může být přípat recruiterů. zároveň jenom papír znamená, že na ně nemáš kontakt. takže teď bych nechala papírový životopis, přidala na LI a po několika dnech poslala zprávu s poděkováním a zeptala se, jestli se někdo už podíval na můj životopis. tím, že už mají papír, to můžou začít řešit a nečekat, až jim to pošlu a pokud to nezačali řešit, tak moje zpráva je připomene. samozřejmě oni to řešít nemusí nebo taky můžou neodpovědět, ale každým krokem si člověk zvyšuje šanci a pokud mám čas, tak lepší než nic.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1287360897932857404/1288086857778987008
+Je to sice podobné všude, ale konkétně tady:
+
+1. od 18.00 se začnou trousit lidi, je to v kancelářích firmy, která má zároveň prostor s plátnem a projektorem, ve kterém si sedne ~50 lidí a kde je k dispozici i nějaké jídlo a pití (zdarma, platí firma), takže si můžeš něco zakousnout a seznámit se s lidmi, co už tam jsou
+2. cca v 18.30 začne první přednáška, takže sedíš a koukáš a posloucháš spolu s ostatními
+3. často bývá mezi přednáškama krátká pauza, využiješ na 🚽, vezmeš si ještě něco k jídlu nebo k pití/pokecáš chvíli s ostatními účastníky
+4. je druhá přednáška (děláš to samé)
+5. po skončení přednášek je ještě nějaká doba, kdy se zůstává ve firmě a dojídá se co zbylo a opět kecáš s účastníky
+6. odchází se z kanceláří
+7. ti co si ještě chtějí pokecat, jdou společně ještě do nějaké přilehlé hospody
+
+Samozřejmě nic není povinné, můžeš kdykoli odejít podle svých možností a taky přijít, třeba později, když nestíháš. Jsou lidi, kteří po přednáškách odchází ať už proto, že to mají domů daleko nebo nemají zájem si povídat s lidmi. Na jednu stranu každého volba, ale pokud tě zajímá jen obsah přednášek, tak ho najdeš na YouTube…
+
+Obecně doporučuju využít možnosti pokecat i kdyby to znamenalo, že hlavně posloucháš a tedy naplánovat si to tak, že nebude problém dorazit domů třeba i později.
+
+Nepotřebuješ nic speciálního s sebou (laptop třeba), jsou to přednášky a ne workshopy, takže jen posloucháš. Je to hodně neformální, není tam dresscode nebo něco takovýho, všichni si tykají.
+---
+
+
 #} -->

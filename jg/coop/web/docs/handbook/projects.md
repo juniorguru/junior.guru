@@ -639,4 +639,22 @@ https://roadmap.sh/backend/projects
 https://roadmap.sh/frontend/projects
 
 
+--- https://discord.com/channels/769966886598737931/1256028325105897583/1256201188039458857
+Kdy bych s portfoliem neztrácel čas (stačí splnit jediný bod).
+- Nejsem frontendista.
+- Mám už jiný projekt na kterém demonstruji stejné skilly jako bych demonstroval na portfoliu.
+- Designová stránka frontendu mě spíš nezajímá a nemám k dispozici návrh a neumím si ho najít.
+- Jsem schopen popsat projekty a co jsem na nich dělal dostatečně v CV a README.md každého.
+---
+
+
+--- https://discord.com/channels/769966886598737931/916346318048337960/1257588804521300052
+Z newsletteru Datažurnál od Samizdat:
+
+> Teresa Ibarra si se svým expřítelem vyměnila 80 tisíc zpráv, které pitvá v datové analýze. Ačkoliv jde o docela banální rozbor intenzity a obsahu, stal se virálním – vyvozujeme z toho, že málokoho napadne takovou věc udělat. Přitom je to skvělý projekt pro začínající a mírně pokročilé datařstvo. Snad všechny chatovací platformy umožňují export zpráv a na těch datech si pak lze osahat ledasco: analýzu časových řad i sentimentu, knihovny pro zpracování přirozeného jazyka, regulární výrazy nebo třeba generování word cloudů jako v roce 2012. Hlavně ale potrénujte práci se souborem .gitignore, ať vedle grafů neskončí někde vyvěšený i JSON s kompletní konverzací.
+
+https://teresaibarra.com/texts/
+---
+
+
 #} -->

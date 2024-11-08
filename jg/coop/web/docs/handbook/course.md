@@ -1034,4 +1034,23 @@ https://lucietvrdikova.cz/nahlednete-za-oponu-ocekavani-versus-realita-it-sveta/
 https://www.linkedin.com/posts/lucietvrdikova_nerealistick%C3%A9-o%C4%8Dek%C3%A1v%C3%A1n%C3%AD-od-it-activity-7252206625707425792-ztCl?utm_source=share&utm_medium=member_desktop
 
 
+--- https://discord.com/channels/769966886598737931/1291475372122181754/1291650794873163803
+Spíš do <#1075052469303906335>, ale nechme klidně už tady. Nicméně ten záběr mi přijde hodně široký a vágní.
+
+Chápu, proč chce kurz, ale podle mě je, jako obvykle, ta složitější cesta správnější - nejdřív si říct, co se chci naučit a proč, a pak si pro jednotlivé věci hledat adekvátní a nejvhodnější materiály pro jeho situaci. V mixu pak může být kniha, video, online kurz, nebo něco ze Jsem v kurzu. Určitě dojde k lepšímu výsledku a spokojenosti, než když bude hledat kurz tak nějak na všechno, hlavně aby byl dotovaný…
+---
+
+
+--- https://discord.com/channels/769966886598737931/1259503667283759145/1259753451882024972
+Ahoj, s DataCampom som sam zacinal a aktualne ho plati nasa firma. Za posledny rok nim teda prechadzalo 20 mojich kolegov. Pokial smerujes do dat tak za tie peniaze (myslim cenu v zlave kde byva skoro porad) je to asi najlepsi self paced kurz na trhu. Pokial nesmerujes do dat tak ta hodnota bude mala.
+
+Co sa tyka certifikatov tak to ti tu napisu asi aj ostatny, ze jedine certifikaty ktore maju aky taky zmysel su tie za dlhodobe kurzy a akadamie, z tych online platforiem to imho skoro nikto nesleduje. Poviem to ale takto: ked by si sa hlasila k nam a sedela by si so mnou na pohovore a povedala by si mi ze si robila kurzy z datcampu a k tomu preukazala nejaky projekt tak by ti to pomohlo. Keby sa u nas ale datacamp nerobil tak si myslim ze sa to neriesi.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1247917068360355840/1247919822142963754
+V první řadě to, že má kurz v názvu „rekvalifikační“ neznamená, že z tebe udělá dostatečně vybaveného vývojáře. To můžou tvrdit třeba rekvalifikační kurzy pro svářeče zakončené přislušnými zkouškami/certifikacemi, kde máš v ruce svářečský průkaz a někde tě s tím vezmou. V IT takové certifikace v podstatě nejsou nebo ne na tvé úrovni nebo ne pro ty specializace, takže rekvalifikační znamená jen schválený někde na základě formálních kritérií.
+---
+
+
 #} -->

@@ -293,4 +293,23 @@ https://blog.gardeviance.org/2008/04/three-stages-of-expertise.html?m=1
 https://mastodonczech.cz/@brohrer@recsys.social/112558203075404703
 https://medium.com/geekculture/dunning-kruger-effect-and-journey-of-a-software-engineer-a35f2ff18f1a
 
+--- https://discord.com/channels/769966886598737931/864434067968360459/1275071860479885334
+Vyšly videa z PyCon CZ 2023, a s nimi i moje "Prohřešky (juniorních) ajťáků proti psychickému zdraví" https://youtu.be/FuHr7a6M980?si=AP_NHLVizmL_jtCk
+---
+
+
+--- https://discord.com/channels/769966886598737931/1260632853193162794/1260658117339910306
+Ve své první práci jsem pravidelně min. jednou týdně brečela u kódu s tím (když jsem zrovna měla HO), že na to nemám. Po nocích jsem se snažila tásky dodělávát, to mi ale samozřejmě vůbec nepomohlo a asi bylo mnohem efektivnější odpočívat a ráno mít čistou hlavu.
+Ten stres jsem si vytvářela sama, nikdo ode mě nic velkého neočekával, nic špatného mi neřekl, jen já jsem měla pocit, že  musím něco dodávat.
+Doporučuju se aktivně ptát a mít nastavené, co od tebe firma očekává a co od tebe chtějí, říkej si o zpětnou vazbu. Málokdo jí dává sám od sebe. Ať si představy netvoříš sama podle domněnek, které nejsou pravdivé a jen si připadáš hůř. Jo a hodně pomáhá chodit na meetupy, ať slyšíš i problémy ostatních, najednou zjistíš, že v tom nejsi sama a že i senioři řeší stejné problémy.
+
+Jsi tam jen pár dní, v některých firmách za tu dobu ani pořádně  nerozjedeš projekt a prostředí 😆 takže klid, bude to lepší
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1247634603473113109
+Tohle je přesný 🙂 Schválně to nedávám do <#797040163325870092>, protože je to hodně relevantní k učení 📈
+---
+
+
 #} -->

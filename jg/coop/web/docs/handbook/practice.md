@@ -972,4 +972,98 @@ Python pro matematiky 🙂 https://vknight.org/pfm/cover.html
 AI: https://www.linkedin.com/posts/marketa-willis_je-opravdu-ai-takov%C3%BD-pomocn%C3%ADk-v-programov%C3%A1n%C3%AD-activity-7215986228007989248-Sh-p?utm_source=share&utm_medium=member_desktop
 
 
+--- https://discord.com/channels/769966886598737931/789087476072710174/1297821423875653676
+Když už jsme u databází, narazil jsem dnes na databázi databází! Takže až na vás někdo vytáhne něco jako „my to hážem do DuckDB 🦆 “, nemusíte jen nepřítomně mrkat a přemýšlet, jestli si dělá srandu, nebo fakt existuje nějaká kačeno-databáze. Můžete si to tady najít a něco si o tom přečíst: https://dbdb.io/
+---
+
+
+--- https://discord.com/channels/769966886598737931/811910782664704040/1288801642489053218
+První díl tohohle seriálu jsem sem už dával (na jiný kanál) a původně jsem neměl záměr spamovat s tím, že vyšel další skvělý díl téhož seriálu, nicméně vzhledem k tomu, že ten dnešní se zaměřuje na nejdůležitější věcí kolem písem na webu, tak to sem přece jenom hodím. Je tam za mě celá řada věcí, o kterých se domnívám, že by měly být univerzálně přijímány a používány (a bohužel nejsou), ale přihodím jenom jednu citaci:
+
+*„Na obrazovku nepatří absolutní jednotky. Žádné body nebo pixely. Sice už není pravda, že takto definovanou velikost písma nelze v prohlížeči zvětšit či zmenšit, ale pořád platí, že o jeho prostředí nic nevíte. Proto je rozumné držet se jednotek rem a em. Ta první odpovídá výchozí velikosti písma prohlížeče. Lze předpokládat, že uživatel v ní má hodnotu, která mu vyhovuje. Většina si nechá tu, která zde byla po instalaci, ale pokud uživateli výrazně nesedí, nejspíš si ji upravil podle své potřeby.“*
+
+https://www.root.cz/clanky/pisma-na-webu-rodina-je-zaklad-pisma/
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1285194129495560192
+Na LinkedInu, u svých studentů nebo i tady často vidím, jak se lidé dostávají do problémů, jako je tutorial hell, porovnávání s ostatními, učení všeho nazpaměť, nevytváření vlastního projektu. A ve výsledku to pak často vzdají.
+
+Ale řekla bych, že v poslední době vede tutorial hell (společně s nedostatkem sebedůvěry), a nemusí se jednat jen o kurzy typu Udemy, ale i různé intenzivní kurzy.
+
+Jelikož už je to doba, co jsem tento problém řešila u sebe, co byste doporučili lidem, kteří se dostali do takové pasti?
+
+A pokud byste měli chuť, před nějakou dobou jsem na toto téma natočila video. https://www.youtube.com/watch?v=I2s2BtrHw3I
+---
+
+
+--- https://discord.com/channels/769966886598737931/1279530837452263435/1279531421178007633
+A práve preto si myslím, že tu môžu excelovať aj začínajúci programátori - je to totiž znova viac o premýšľaní a soft skilloch ako o hard skilloch - tie sa začnú do popredia dostávať až za pár rokov, až obor maturuje a bude jasné, čo je potrebné a čo nie - dnes to jasné nie je, môžeme iba hádať.
+
+Pokiaľ by sa do toho teda chcel niekto pustiť, tu je pár tipov čo si pridať do portfólia - a pozor, tu si myslím, že tieto úlohy dokážu pomôcť aj u iných pozícii nielen u AI specialistov. Niektoré firmy dnes na AI proste počujú. Skúsim to popísať čo najviac jazykovo neutrálne ale najfrekventovanejší jazyk v AI svete je asi python a sám z toho sveta pochádzam, preto si dovolím túto skupinu aj tagnúť <@&1085220736957947905> .
+- prečítajte si niečo o písaní technických promptov, u všetkých úloh budete model inštruovať, čo má robiť. Nevenujte tomu ale priveľa času. Inšpirujte sa ako to robia iný - existujú napr leaknute system prompty od Applu, oficálne ich publikuje aj spoločnosť Anthropic. 
+- osahajte si OpenAI API - dnes to už skoro nič nestojí, do začiatku dostanete aj nejaký budget na voľné testovanie
+- následne sa pozrite na to, ako sa dnes stavajú konverzácie - aký je rozdiel medzi správou uživateľa a asistenta, čo sú to systémové správy - a následne si nejaké konverzácie sami postavte
+- a teraz sa dostávame k prvému veľkému pojmu sveta AI: RAG (Retrieval-augmented generation). Pozrite sa na to, čo to je, ako to funguje.
+- naimplementovať RAG bola kedysi zložitá úloha. Vy sa ale pozriete na to, ako využiť OpenAI API pre asistentov - konkrétne funkcionalitu Vector Stores 
+- keď už budete skúmať API pre asistentov pozrite sa aj na ostatné funkcionality - code interpreter a function calling
+---
+
+
+--- https://discord.com/channels/769966886598737931/1279530837452263435/1279531508931100694
+Tieto funkcionality boli ešte rok a pol dozadu celý programátorský tým a tisícky riadkov kódu. Dnes je to jedno API, jeden balíček v Pythone alebo inom jazyku. Postavte si na tomto svoje portfólio projektov a skúste demonštrovať rôzne využitia týchto funkcií v svete, ktorý poznáte. Príklady:
+- unstructured to structured - stiahnite si sadu nejakých neštruktúrovaných formátov dát - články z internetu, texty atď - preveďte tieto dáta do štruktúrovanej podoby - nechajte AI určiť titulok, zakategorizovať, vyťiahnuť osoby, miesta, určiť sentiment atď. Tieto úlohy sú veľmi populárne a užitočné
+- vymyslite jednoduchú automatizáciu procesu na ktorej demonštrujete svoju komplexitu - na vstupe máte nejaký formát, ten môžete nejako transformovať, niečo z toho programaticky vybrať, nechať to spracovať modelom a následne dostať nejaký pekný výstup - napr. sledujete obľúbené newslattery ale nemáte čas všetko čítať - preto by ste chceli pocníka, ktorý to prečíta za vás a vyberie 5 pre vás najrelevantnejších informácii. Na môžete demonštrovať, že si dokáže scrappnuť stránku, nastaviť prompt a celé to poskladať dokopy. 
+- postavte si chatbota alebo asistenta - zamerajte ho na niečo, vytvorte si vektorovú databázu - napr. máte vlastné recepty v 50 rôznych PDF. Vytvorte si asistenta, ktorý vám bude navrhovať recepty na základe surovín a vďaka RAGu bude poznať aj tie vaše :).
+- nefixujte sa iba na chatbotov - ako sa ukazuje prázdne chatovacie okno je vlastne veľmi špatný frontend pre väčšinu use casov - väčšina ľudí netuší čo tam zadať. Pripravte funkciu, ktorá na vstupe dostane text a na výstupe vráti sumarizáciu. Ako parametre príjma dĺžku sumarizácie (stručná/podrobná), tón (formálna/neformálna), typ (súvislý text, v bodoch) atď. Pokiaľ vás bavia maličké aplikácie vytvorte si jednoduchý frontext napr v dashi alebo streamlite.
+---
+
+
+--- https://discord.com/channels/769966886598737931/811910782664704040/1282974118387388477
+Asi nejlidštější vysvětlení CORS https://jakearchibald.com/2021/cors/
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1282439742184624129
+ja som si trénoval Python na týchto cvičeniach:
+https://www.hackinscience.org/
+(spravuje to jeden Francúz, python-core-developer
+
+resp. tento menší tým:
+https://www.hackinscience.org/team/
+)
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1279530837452263435
+Ahojte, 
+vopred sa ospravedlňujem, tento post bude dlhý. Dúfam ale, že to dá podrobnejší vhľad do AI ako oboru v IT. Mám za sebou 2 mesiace od momentu, keď som svoju kariéru poslal all in do segmentu AI. Mojou prácou sa stalo hľadanie hodnoty rôznych AI riešení pre našu banku a ich privádzanie k životu. Už dlhšie som tu chcel spísať svoje myšlienky a hlavne svoje myšlienky k otázke: **Som ašpirujúci junior v IT, čo pre mňa znamená smerovať svoju kariéru do oboru AI a má to zmysel?**
+
+Hneď na začiatok by som rád poďakoval <@668226181769986078>, vďaka ktorému som objavil Simona Willisona, ktorý o AI veľa píše a veľa hovorí a to čo píše a hovorí je veľmi rozumné :). A okrem toho prednášal aj na PyConUS: 
+https://youtu.be/P1-KQZZarpc?feature=shared&t=247.
+Ak sa chcete dozvedieť, kde sa obor umelej inteligencie nachádzal v květnu 2024 (+- je to stále platné aj pre srpen 2024) dajte si tento talk, je to pre ľudí z IT, ktorý sa ale AI nevenujú, ten najlepší status ktorý som zatiaľ našiel. 
+
+Prečo na to odkazujem? Pretože sú to závery veľmi podobné tým, ktoré aktuálne vyvodzujeme aj my v banke. Za prvé je vďaka tomu možné vyvodzovať, čo by sa ašpirujúci junior potreboval naučiť (o tom neskôr) a za druhé, je dôležité uvedomiť si, že pokiaľ sa dostanete do tém, ktoré je možné zhrnúť v 40 minútovom talku, budete patriť medzi 5% najlepších v obore :). Na prvý pohľad odvážne tvrdenie, treba si ale uvedomiť o akom obore sa bavíme.
+
+Keď sa dnes budete baviť s ľuďmi, ktorý o sebe deklarujú, že sa venujú alebo zaujímajú o AI dozviete sa pravdepodobne: Že používajú ChatGPT, že im naplánoval výlet, pripravil recept alebo zhrnul novinový článok. Z pohľadu práce sa možno dozviete o tom, že im zosumarizoval alebo napísal email, preložil text alebo pomohol vybrainstormovať názov udalosti. A tieto odpovede boli u väčšiny ľudí rovnaké mesiac po tom, čo ChatGPT vyšiel a dnes. Existujú ale aj use casy, ktoré prinášajú obrovskú hodnotu a tu môžete aj ako junior excelovať. 
+
+A viac vo vlákne 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/806621830383271937/1268489379798716497
+Dobra stranka na rychle vyskusanie si jinja templatov  https://j2live.ttl255.com/
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1250701548015849492
+Mám tady dvě věci na věčné téma AI a programování. Jedna je tenhle krátký příspěvek: https://mamot.fr/@ploum/112591341366625479
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1250701886185672774
+Druhá je strašně dlouhý článek, který má argumentovat, že ne, AI fakt programátory nenahradí. Ale ještě jsem ho nestihl celý přečíst. https://stackoverflow.blog/2024/06/10/generative-ai-is-not-going-to-build-your-engineering-team-for-you/
+---
+
+
 #} -->

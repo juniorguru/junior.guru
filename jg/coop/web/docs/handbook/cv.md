@@ -546,4 +546,53 @@ Pro větší zajímavost často stačí trochu zajímavější font…
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1301602352893001768
+Vytáhnu z toho (jde o upravený přepis titulků, nejsou to tedy přesné citáty)
+
+> „CV dává smysl, protože když se podíváme na HR nebo na člověka obecně, tak je to líná osoba. Potřebuje vidět hned na první pohled technologie, které jsou relevantní pro danou pozici. Opravdu si projděte všechny zmíněné nástroje v CV tak, aby při prvním otevření CV na ně okamžitě vyskočily. Aby si mohli říct: ‘Jo, tady je C#, Microsoft SQL, SQL jazyk… Super, můžeme ho nebo ji pozvat na online pohovor.’
+> 
+> Asi na to rovnou navážu tím, jestli vůbec musím mít CV, když žádám o roli v IT. V ideálním světě by třeba stačil odkaz na nějaký git, kde mám ukázky kódu a svoje projekty. Nechci tím nijak shazovat HRisty nebo jejich práci, ale mějte tu trpělivost a CV si opravdu připravte. Neplatí to jen pro juniorní pozice. Jak říká Denisa, první síto často nedělají lidé, kteří tomu do hloubky rozumí, takže půjdou hlavně po klíčových slovech. Chápu frustraci, že to možná nemá takovou hodnotu, ale i když je to jen kus papíru, pro nás, když ten filtr děláme – ať už osobně nebo pomocí AI nástrojů – opravdu stojí za to CV přizpůsobit.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1301604177105125427
+k motivačním dopisům
+
+> Pokud v inzerátu není vyžadován motivační dopis, klidně bych ho vynechala. Když dělám nábor, zaměřuji se na to, co je v CV – jaké má kandidát projekty, zkušenosti, jakým směrem se chce dál vyvíjet. První krok je stejně telefonát, kde se ptám přímo na motivaci. Nechci číst text vygenerovaný AI, ale ráda si s kandidátem popovídám o tom, co ho opravdu baví, co potřebuje k efektivní práci a co ho v minulých firmách třeba zklamalo. To mi pomůže zjistit, jestli u nás nebude řešit stejné problémy.
+> 
+> Ne všechny firmy ale nábor dělají takhle. Některé HR  mají tendenci vytvářet si domněnky z CV, a ne vždy zavolají, aby se zeptaly na detaily a kandidáta rovnou eliminují z výběrka. Třeba vidí v CV adresu a usoudí, že kandidát by u nich, pracovat nechtěl, protože je to daleko.
+> 
+> Souhlasím, že motivační dopisy napsané AI jsou zbytečné. Stačí však tři nebo čtyři věty – stručně a vlastními slovy. Něco ve stylu: ‘Viděl jsem, že se technologicky shodujeme, zaujal mě váš manažer na meetupu…’ Prostě osobní zpráva připojená k CV, která naznačí zájem. To není motivační dopis v pravém slova smyslu, dříve se psaly dlouhé a přikládaly k CV. Ale těch pár vět dává to CV lidský rozměr a ukazuje, že kandidát má skutečný zájem a umožňuje to doplnit i informace o tom, že bude stěhovat z Prahy do Brna apod.
+> Nemusíte ale psát formální motivační dopis.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/1294323134924718102
+Ano, to je samozřejmě možné, že se tak dozví věk, ale stačí se podívat na LI (nevím jestli v CV máš, kdy jsi studovala VŠ) a i kdyby ti nějak bylo 18, když jsi začla, tak z toho zjistím, že ses narodila v roce 1989 nejpozději, takže nějakou představu (bez ohledu na vzhled) si udělají stejně. A rok, dva, tři navíc už asi není rozdíl z tohoto pohledu. 🤷‍♂️
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/1268445846555594772
+Kdyžtak <@668226181769986078> někam přesuň. 
+
+Můj kontakt na LI - Petra Kubita Nulíčková - sdílela velmi dobré rady a tipy ohledně CV: https://www.petranulickova.cz/l/chyby-v-zivotopisech/
+
+Petra v životě viděla cca 50 000 životopisů a další desítky možná stovky tisíc LI profilů.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1251180184158208122
+Ve středu na frontedistech povídala Petra Nulíčková spoustu zajímavého (přednášku si dejte, video bude na https://www.youtube.com/c/FrontendistiCz), ale i když ona je asi trochu extrém, tak sem chtěl vypíchnout jednu věc: vidí prý až několik set CV denně.
+
+Jakákoli vaše „kreativita“ bránící rychlé a snadné čitelnosti CV není v takovém kontextu asi moc vhodná, že? A i když jich někdo vidí „jen“ desítky, tak pořád, že?
+
+Já jen abyste si nepředstavovali, že dorazí vaše CV a pět HR lidí ho hodinu soustředěně analyzuje…
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1251180512828063774
+📹  Jo a videovizitky jí prej dorazily v jednotkách a většinu těch lidí umístila, nevím kde je tam příčina a následek, ale ušetřili si prý minimálně screener, protože tam o sobě všecko podstatné pověděli. A můžete si to v klidu připravit… To mě docela zaujalo jako cesta jak vystoupit z davu a ještě to některým nervóznějším může usnadnit první kontakt.
+---
+
+
 #} -->

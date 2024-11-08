@@ -1401,4 +1401,83 @@ místa, kde se mohou lidi nabízet, nebo kde mohou hledat práci - https://disco
 For the most part all entry level jobs are “we understand you are going to be worthless and be a net drain on productivity for your team for at least 6 months” with the expectation that you learn and grow to be contributing and advance to mid level.
 
 
+--- https://discord.com/channels/769966886598737931/789087476072710174/1294259606297776168
+<@&1134476995229663374> 
+Po čase připomínám, že jsem dal k zdarma dispozici malý nástroj, který vám může pomoci: [Tabulka pro plánování, sledování času a hledání práce](https://discord.com/channels/769966886598737931/1047219933647487146)
+
+Trackovat si kam a na jaké inzeráty jste poslali reakci není vůbec od věci. Většinou to totiž nevyjde na pár pokusů a v hlavě to neudržíte.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1288888379668168796
+Párkrát jsem tu už podobnou debatu viděl, ale zapomněl jsem to zainzerovat do <#1187770159595794472>, tak aspoň napíšu tady.
+
+Za malou chvíli nám začíná diskuzní **Nakopni svou kariéru aneb jak to chodí v korporátu**, kde si budu povídat s Honzou Baráškem a já budu zastávat roli oponenta vůči korporátům, tak se můžete těšit na dynamickou debatu s pohledy z obou stran! 🙂
+
+https://www.youtube.com/watch?v=Lyut1YWYuyw
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/1288179526521589760
+Přemýšlím, jestli přeci jen nechceš to IČO zvážit — [po důkladném spočítání si](https://www.youtube.com/watch?v=iJGjTFDYw9A) samozřejmě — pokud to pro některý firmy je blok.
+
+S paušální daní to ani není moc administrativy: založit živnost a přihlásit se k paušální dani a pak jen platit měsíčně fixní částku. Není potřeba nic dalšího vykazovat a odevzdávat. 
+
+Proti o něco složitější (nutnost odevzdat daňové přiznání a poslat 2 „přehledy“ k pojištěním) možnosti se to vyplatí od cca 680 tisíc ročně.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1285884920648040449/1285927173827461210
+4. Hack je, že nehledáš part-time nabídky ani jim dopředu nepíšeš, že to chceš a řekneš si o to až na pohovoru, kdy měli šanci tě poznat. mluvíš třeba už s teamleadem a ne jen s HR. Ano, třeba to bude dealbreaker, ale pořád větší šance…
+---
+
+
+--- https://discord.com/channels/769966886598737931/1283445215323099197/1283469132104335380
+odkážu svoje video https://youtu.be/iJGjTFDYw9A 
+sice bych tam pár věcí odebral a pár přidal, ale to hlavní platí.
+---
+
+
+--- https://discord.com/channels/769966886598737931/916361226588684328/1275769449722413109
+Takze si vyber no. Ale osobne si nemyslim, ze to je jednodussi cesta. Junior manualni tester, je dle meho nazoru mene kvalifikovana pozice nez junior programator. Takze zabere mene casu a usili se na to pripravit, ale bude vetsi natrask na vypsane pozice, vyber kandidatu bude trochu random podle “culture fit” a ne podle “hard skills”, a dostanes mene penez. Nic to nevypovida o te praci, ta je dulezita a vede k seniornim pozicim, ktere jsou taky dulezite a je tam uz potom i kvalifikace, kterou se muzes ohanet. Byt dobry QA neni jen tak a je potreba umet a znat hodne veci. Ale ten uplny zacatek ma relativne nizkou vstupni latku. Jenze je to dvojsecna zbran. A jsou to ruzne prace, mezi kterymi se tezko karierne preskakuje. Takze osobne bych se vydal na cestu, ktera plni moje zadani - napriklad pokud chci programovat, tak pracovat na tom abych byl programator, pokud chci testovat a bavi me to, abych byl tester. Neohlizel bych se na zdanlivou jednoduchost, protoze co je jednoduche v kroku 1 je pak nakonec velmi tezke v kroku 2. Neexistujou zkratky.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1257570562352353320
+Nedávno tu byla přednáška od analytika z Alma Career  (Jobs.cz atd.)
+Vytahal jsem data z toho videa, protože mi přijde zajímavé číslo počet **reakcí na inzerát**. Chápu ho tak, že říká, jaká je tlačenice na dané pozice. To je unikátní pohled, který zvenku nemáme.
+
+Data jsou tuším za první 4 měsíce tohoto roku a nejde jen o juniorní pozice (sice filtroval i podle „vhodné pro absolventy“, ale pak nebylo vidět data u poloviny pozic).
+
+Tak jak to prezentoval, tak ty nižší čísla znamenají, že tam je fakt problém lidi sehnat (i když vám 8 nebo 10 zájemců může připadat hodně, tak je to průměr! navíc ve výběrkách bývá část zájemců fakt mimo), naopak přes 30 u testerů znamená určitě, že mají už z čeho vybírat.
+
+**Zdaleka si ale nemyslím, že by to měl být hlavní faktor, pokud se rozhodujete pro jazyk.** Vypadá to sice exaktně, ale nic to neříká o tom, s jakou úrovní dané specializace máte šanci najít první práci a jak je těžké se na ni dostat a tipl bych, že u C++ se čeká mnohem hlubší pochopení než třeba u Pythonu.
+
+A taky tam chybí informace o tom, jaké procento lidí se hlásí na kterou pozici „špatně“, tedy bez dostatečné kvalifikace. Opět tipuju, že na testing nebo React bude mnohem víc těch, kteří toho ještě neumí dost, ale zkouší to, než s C++, takže je možné, že reálně tam taková konkurence není.
+
+```markdown
+| pozice         | inzerátů | reakcí na inzerát |
+|----------------|----------|-------------------|
+| C++            | 241      |  8.0              |
+| DevOps         | 155      | 10.8              |
+| C#             | 342      | 12.4              |
+| Node.js        |  74      | 13.9              |
+| .NET           | 317      | 14.1              |
+| Java           | 279      | 15.3              |
+| Android        |   ?      | 17.6              |
+| PHP            |  95      | 17.7              |
+| Python         | 197      | 19.2              |
+| JavaScript     | 265      | 19.6              |
+| Data Scientist | 166      | 22.2              |
+| React          | 170      | 24.5              |
+| Tester         | 337      | 32.1              |
+```
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/1245067053593919529
+Tohle bych rád vypíchl z aktuální přednášky: https://discord.com/channels/769966886598737931/1075814161138860135/1245066837117632513
+---
+
+
 #} -->

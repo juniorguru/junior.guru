@@ -492,4 +492,66 @@ Ještě k tomu AI, tady je hezký komentář o tom, jak si dřív lidi mysleli, 
 https://www.linkedin.com/pulse/jak-bych-si-jako-junior-hledala-pr%C3%A1ci-v-motivace-d%C3%ADl-i-jana-moudr%C3%A1-h3x8e/
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1297494638726352897
+Myslim, ze rikame totez. Nicmene 
+> komu šla matika velmi dobře, tak bude mít znatelnou výhodu
+neznamena, ze komu matematika nesla, tak nemuze byt schopny programator (pro matematiky: opacna implikace neplati :-))
+Urcite je spousta lidi, kterym ta abstrakce v kontextu matematiky dela problem, ale v programovani jim jde uplne v pohode. Nebo treba proste meli spatneho ucitele matematiky a vytvorili si k ni odpor, ale pritom s tim abstraktim myslenim nemaji problem.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1288514750673588280/1288768045149458552
+Ahoj a čau a vítej! S tím jazykem to není zas tak důležitý. Jsou takové tři úrovně:
+
+- Učit se programovat (cyklus, funkce, proměnná... debugování, rozpadání úkolu na podúkoly... algoritmy...)
+- Učit se specifika konkrétního jazyka (syntaxe Pythonu, JavaScriptu, někde je `const promenna`, někde jsou `}`, někde nejsou...)
+- Učit se ekosystém jazyka (standardní knihovna v Pythonu, balíčky z PyPI, Node.js, balíčky z npm...)
+
+Čím dál jsi v tom seznamu, tím víc jsi zapečený v určitém jazyce. Ale když začínáš, tak jsi typicky hodně v tom prvním bodu a trochu v tom druhém. No a tyhle věci jsou dost podobné u všech jazyků a pokud nejdeš moc hluboko, není zas takový problém přeskakovat. Naučíš se C#, ale pak přeskočíš na Javu a pak si s ní najdeš první práci, kde tě natlačí do toho, aby ses naučil TypeScript... a ty vlastně zjistíš, že ten první bod zůstává stejný, jen se učíš rozdíly v tom druhém bodě. A pak se třeba učíš co obnáší ten třetí bod.
+
+No takže na úplném začátku prostě není vůbec potřeba se zaseknout na tom, jestli máš vybraný "jazyk na celý život". Nauč se hlavně programovat, a potom klidně randi s různýma jazykama a pak zůstaň u toho, který se ti bude nejvíc líbit, nebo se kterým seženeš práci. Tam to teda chvíli drž - je dobré si něco vybrat a pak to chvíli neměnit, a s tím si sehnat tu práci, aby zas člověk nepřeskakoval moc a byl trochu zacílený a soustředěný. Ale později v kariéře můžeš klidně další jazyky přidávat, nebo to zase měnit.
+
+Důležité je začínat v něčem, co tě trochu baví, protože pak ti to půjde rychleji. Takže pokud máš nějaký projekt, který chceš udělat, třeba hru, nebo nějaký prográmek na testování francouzských slovíček, tak si vyber nějaký jazyk, ve kterém to půjde vytvořit, a ten se uč a v něm to tvoř. Takový jazyk je pro tebe nejlepší, protože v něm tě bude učení samo bavit a půjde ti to nejvíc od ruky.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1279530837452263435/1279531421178007633
+A práve preto si myslím, že tu môžu excelovať aj začínajúci programátori - je to totiž znova viac o premýšľaní a soft skilloch ako o hard skilloch - tie sa začnú do popredia dostávať až za pár rokov, až obor maturuje a bude jasné, čo je potrebné a čo nie - dnes to jasné nie je, môžeme iba hádať.
+
+Pokiaľ by sa do toho teda chcel niekto pustiť, tu je pár tipov čo si pridať do portfólia - a pozor, tu si myslím, že tieto úlohy dokážu pomôcť aj u iných pozícii nielen u AI specialistov. Niektoré firmy dnes na AI proste počujú. Skúsim to popísať čo najviac jazykovo neutrálne ale najfrekventovanejší jazyk v AI svete je asi python a sám z toho sveta pochádzam, preto si dovolím túto skupinu aj tagnúť <@&1085220736957947905> .
+- prečítajte si niečo o písaní technických promptov, u všetkých úloh budete model inštruovať, čo má robiť. Nevenujte tomu ale priveľa času. Inšpirujte sa ako to robia iný - existujú napr leaknute system prompty od Applu, oficálne ich publikuje aj spoločnosť Anthropic. 
+- osahajte si OpenAI API - dnes to už skoro nič nestojí, do začiatku dostanete aj nejaký budget na voľné testovanie
+- následne sa pozrite na to, ako sa dnes stavajú konverzácie - aký je rozdiel medzi správou uživateľa a asistenta, čo sú to systémové správy - a následne si nejaké konverzácie sami postavte
+- a teraz sa dostávame k prvému veľkému pojmu sveta AI: RAG (Retrieval-augmented generation). Pozrite sa na to, čo to je, ako to funguje.
+- naimplementovať RAG bola kedysi zložitá úloha. Vy sa ale pozriete na to, ako využiť OpenAI API pre asistentov - konkrétne funkcionalitu Vector Stores 
+- keď už budete skúmať API pre asistentov pozrite sa aj na ostatné funkcionality - code interpreter a function calling
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1280060964196188233
+Kdo byste uvažovali o učení Go, nebo Rustu, apod. a nebyli si jistí, zda si s tím jako junioři najdete práci, tak tady jsem se zkusil trochu rozepsat, co si o tom myslím: https://discord.com/channels/769966886598737931/1274946893440487487/1280059945080852523 Je to zahrabané ve vlákně s týdenními plány, tak tady na to udělám trochu „reklamu“.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1279530837452263435
+Ahojte, 
+vopred sa ospravedlňujem, tento post bude dlhý. Dúfam ale, že to dá podrobnejší vhľad do AI ako oboru v IT. Mám za sebou 2 mesiace od momentu, keď som svoju kariéru poslal all in do segmentu AI. Mojou prácou sa stalo hľadanie hodnoty rôznych AI riešení pre našu banku a ich privádzanie k životu. Už dlhšie som tu chcel spísať svoje myšlienky a hlavne svoje myšlienky k otázke: **Som ašpirujúci junior v IT, čo pre mňa znamená smerovať svoju kariéru do oboru AI a má to zmysel?**
+
+Hneď na začiatok by som rád poďakoval <@668226181769986078>, vďaka ktorému som objavil Simona Willisona, ktorý o AI veľa píše a veľa hovorí a to čo píše a hovorí je veľmi rozumné :). A okrem toho prednášal aj na PyConUS: 
+https://youtu.be/P1-KQZZarpc?feature=shared&t=247.
+Ak sa chcete dozvedieť, kde sa obor umelej inteligencie nachádzal v květnu 2024 (+- je to stále platné aj pre srpen 2024) dajte si tento talk, je to pre ľudí z IT, ktorý sa ale AI nevenujú, ten najlepší status ktorý som zatiaľ našiel. 
+
+Prečo na to odkazujem? Pretože sú to závery veľmi podobné tým, ktoré aktuálne vyvodzujeme aj my v banke. Za prvé je vďaka tomu možné vyvodzovať, čo by sa ašpirujúci junior potreboval naučiť (o tom neskôr) a za druhé, je dôležité uvedomiť si, že pokiaľ sa dostanete do tém, ktoré je možné zhrnúť v 40 minútovom talku, budete patriť medzi 5% najlepších v obore :). Na prvý pohľad odvážne tvrdenie, treba si ale uvedomiť o akom obore sa bavíme.
+
+Keď sa dnes budete baviť s ľuďmi, ktorý o sebe deklarujú, že sa venujú alebo zaujímajú o AI dozviete sa pravdepodobne: Že používajú ChatGPT, že im naplánoval výlet, pripravil recept alebo zhrnul novinový článok. Z pohľadu práce sa možno dozviete o tom, že im zosumarizoval alebo napísal email, preložil text alebo pomohol vybrainstormovať názov udalosti. A tieto odpovede boli u väčšiny ľudí rovnaké mesiac po tom, čo ChatGPT vyšiel a dnes. Existujú ale aj use casy, ktoré prinášajú obrovskú hodnotu a tu môžete aj ako junior excelovať. 
+
+A viac vo vlákne 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/916361226588684328/1275769449722413109
+Takze si vyber no. Ale osobne si nemyslim, ze to je jednodussi cesta. Junior manualni tester, je dle meho nazoru mene kvalifikovana pozice nez junior programator. Takze zabere mene casu a usili se na to pripravit, ale bude vetsi natrask na vypsane pozice, vyber kandidatu bude trochu random podle “culture fit” a ne podle “hard skills”, a dostanes mene penez. Nic to nevypovida o te praci, ta je dulezita a vede k seniornim pozicim, ktere jsou taky dulezite a je tam uz potom i kvalifikace, kterou se muzes ohanet. Byt dobry QA neni jen tak a je potreba umet a znat hodne veci. Ale ten uplny zacatek ma relativne nizkou vstupni latku. Jenze je to dvojsecna zbran. A jsou to ruzne prace, mezi kterymi se tezko karierne preskakuje. Takze osobne bych se vydal na cestu, ktera plni moje zadani - napriklad pokud chci programovat, tak pracovat na tom abych byl programator, pokud chci testovat a bavi me to, abych byl tester. Neohlizel bych se na zdanlivou jednoduchost, protoze co je jednoduche v kroku 1 je pak nakonec velmi tezke v kroku 2. Neexistujou zkratky.
+---
+
+
 #} -->

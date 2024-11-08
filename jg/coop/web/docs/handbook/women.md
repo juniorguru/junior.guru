@@ -106,4 +106,15 @@ https://mastodonczech.cz/@SmudgeTheInsultCat@mas.to/112225723955493154
 https://mas.to/@SmudgeTheInsultCat/112225723796627574
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1296409124849848340
+Další rozhovor do ouška 👂tentokrát s <@1275834407470497985> 
+👉 https://www.youtube.com/watch?v=5J1SgIo0KBY
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1266001455534575637
+https://csu.gov.cz/produkty/ict-specialistky-berou-o-16-tisic-mene-nez-muzi
+---
+
+
 #} -->

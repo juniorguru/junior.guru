@@ -300,4 +300,47 @@ https://www.linkedin.com/help/linkedin/answer/a542685/manage-your-public-profile
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1300921054042132500/1304372419439362101
+Teď budu trochu cynický, ale LI je dnes víc sociální síť než CVčko, takže si tam asi neškodíš velmi ničím. Jestli se chceš zviditelňovat, klidně si můžeš už teď dělat selfíčka u toho jak koukáš na řádky s nabídkama práce na Jobs.cz, přidávat statusy o tom jak ranní jóga ve 4 zlepšuje konverzi zaslaných CVček, apod. 😄
+---
+
+
+--- https://discord.com/channels/769966886598737931/1300921054042132500/1304374280200519785
+Pokud máš nastaveno, že hledáš práci, znamená to, že hledáš práci a může se ti někdo ozvat. To je v pořádku. Že tam nemáš všechno info nebo zatím nemáš mnoho projektů apod., tak to ovlivní jen někoho, kdo zrovna teď zakopne o tvůj profil, ale kolik takových bude? Zřejmě jsi v pozici, kdy musíš svůj profil někomu poslat, aby se na něj podíval. Kdyby jsi zuřivě komentovala pod jinými statusy nebo publikovala svoje posty, tak to může fungovat jako nějaký _inbound marketing_ pro tvůj profil, ale bez toho jsi neviditelná. Buduj si profil tím, že si přidáš zajímavé lidi, nebo ty, které znáš, a postupně si rozšiřuj svou sociální síť (v původním slova smyslu). Některé kontakty zrajou časem, je lepší neotálet. Cokoliv navíc je navíc, co ti může zvýšit šance, ale bude to vyžadovat aktivitu a je otázka, jak moc se tomu chceš věnovat a jak moc velký dopad to bude mít. Můžeš být LI influencerkou, když budeš chtít, i kdybys byla nezaměstnaná (viděl jsem takové), ale nevím jak moc jim to pomohlo. Podle mě budování osobní značky na LI funguje víc freelancerům, kteří pak prodají svou práci klientům a školení a mentoringy 🙂 Pro juniory je to nejistá investice času a energie, doporučil bych to těm, kteří to dělají přirozeně a tíhnou k marketingu a sockám a není to pro ně „práce navíc“ a přemáhání. Pro ostatní bych doporučil mít tam aktualizovaný profil, vyplnit si tam projekty a všechno, a lážo plážo networkovat, přidávat si lidi, nebát se někoho přidat si, oslovit ve zprávě, nabídnout se, ale nad rámec toho asi zbytečný to hrotit. (Už to co jsem vyjmenoval bude pro většinu introvertů a absolventů českého školství, kteří bojují se sebevědomím, nepředstavitelná věc - třeba si přidávat proaktivně recruitery, nebo někomu napsat osobní zprávu přes LI a nabídnout se do firmy.)
+---
+
+
+--- https://discord.com/channels/769966886598737931/1302927935824724010/1303760856827428904
+Myslím, že na LinkedIn je sekce Projekty, jak píše Radek, kterou si tam můžeš přidat. To pak máš v rámci profilu permanentně k vidění.
+
+A samozřejmě tam můžeš o tom psát i statusy. Asi bych se nespoléhal na to, že uděláš jeden status a dostaneš 300 lajků, ale když budeš pravidelně publikovat o tom, co děláš, co ses naučil, co jsi zrovna ten který den překonal a vyřešil, tak myslím, že si postupně publikum najdeš 🙂 Silný je na LinkedInu třeba https://www.linkedin.com/in/pavel-polcr/, ale ten už programuje trochu déle, zkus projet jeho starší příspěvky.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/1268445846555594772
+Kdyžtak <@668226181769986078> někam přesuň. 
+
+Můj kontakt na LI - Petra Kubita Nulíčková - sdílela velmi dobré rady a tipy ohledně CV: https://www.petranulickova.cz/l/chyby-v-zivotopisech/
+
+Petra v životě viděla cca 50 000 životopisů a další desítky možná stovky tisíc LI profilů.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1255618685884698746/1256019413250084976
+Vždy se podívám, zda nějaký můj blízký kontakt zná cílovou osobu.
+Tento blízký kontakt oslovím, jasně popíšu, co je můj záměr a požádám, zda by mi domluvil schůzku/telefonát apod. 
+Takže musím být aktivní, jasně říct, co chci, a jít do toho dravě. Beru to vždy jako hru, ne jako otázku života a smrti. V nejhorším případě, budu muset partii rozjet jinak, nebo hledat novou příležitost. A vše ostatní jsou ty lepší případy;)
+---
+
+
+--- https://discord.com/channels/769966886598737931/1255618685884698746/1255717150203576370
+Taky bych "navázala spojení". 
+
+Buď jak píše <@801044009366716448> s osobním vzkazem (ale někteří jsme limitování viz. moje poznámka, napíšu jako poslední) a nebo když bez osobního vzkazu, tak můžeš naopak obratem po přijetí žádosti napsat, proč sis HR přidala do své sítě 🙂 .
+
+Co horšího se může při žádosti o spojení je odmítnutí.
+Co lepšího, že pokud to neklapne na poprvé, tak to může vyjít při další příležitosti a budeš o krok vpřed, že jste ve spojení, i kdyby u prac. pozice byl jako HR uvedený někdo jiný.
+---
+
+
 #} -->

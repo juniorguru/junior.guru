@@ -655,4 +655,70 @@ Obecně je nástupní den hlavně o setkání a poznání prostředí, vyřízen
 Druhý den jsem nastoupila na projekt do jiné společnosti. Takže stejné kolečko co předchozí den: další nové prostředí, setkání, administrace, notebook, školení… někdy jste na tom tak dobře, že přijdete, první den dostanete notebook a smlouvu, druhý den vám zařídí přístupy a vysvětlí práci, a třetí den už přispíváte jako plnohodnotný člen týmu. Mně se ty dny změnily v týdny (slabina korporátů), takže třeba první měsíc jsem dost intenzivně bojovala se strachem z vyhazovu a s pocitem, že jsem tam k ničemu, protože „nic neprogramuji a jen čtu dokumentaci“ k projektu. Ale v týmu se vědělo, že jsem úplný nováček a zaškoluji se na nových technologiích, takže všichni byli klidní, nápomocní a já se postupně uklidňovala taky… Hlavně díky rozhovorům v kuchyňkách a na obědech (které vřele doporučuji), protože jsem se dozvěděla, že i mým kolegům trval proces rozkoukávání dlouho, že je to normální, pochopitelné, že není kam spěchat, mám být v klidu a pokud budou mít pocit, že bych „měla zrychlit“, určitě to jasně řeknou – opadly tak moje obavy, že bych ze dne na den dostala smsku, ať už do práce nechodím. Postupně jsem začala psát kód a těšilo mě, že byl schvalován bez připomínek a s pochvalou, že mi to jde. Takže nevzdávejte to!
 ---
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1285522672222076962
+Ridit projekty je dulezite, kdyz je clovek na senorni urovni anebo se chce na ni dostat. Pred tim je to rozptyleni, protoze clovek rozviji komunikacni dovednosti na ukor technickych. Ano, pro zamestnavatele je ideal rozvijet komunikacni dovednosti u komunikativniho cloveka, protoze pro nej je to mensi investice a tak vas bude podporovat, ale je to medvedi sluzba. Pokud se chcete technicky posouvat, trvejte na tom, abyste pracovali jenom na technickych ukolech. 
+
+
+https://www.noidea.dog/glue
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1285349724664369175
+Pusť si moji přednášku **Jak si říct o zvýšení platu?**, kterou jsme dělali v rámci **Nauč mě IT** 🧠 streamů.
+
+https://youtu.be/fVA7Ln4crDQ
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1285108546127532054
+Jak si říct o víc peněz? 
+
+A) Fungují nějaké obecné časové milníky, kdy se očekává nějaký posun/zhodnocení? Představuju si třeba správně první takový záchytný bod po zkušebce, pak třeba půlrok-rok? 
+
+B) A kdo vlastně takový moment vykopává - mám se ozvat spíš já nebo je "slušnější" počkat na hlas shůry? 
+
+C) A o kolik víc si říct - platí tam nějaké zlomky (jako poprvé o 1/3, pak za rok zas něco atd)? 
+
+D) Jsem navíc na IČO, tak jestli vlastně pro mě vůbec nějaká taková pravidla platí? 😂
+
+
+Ve firmě jsem od června a od té doby už jsem se úspěšně rozkoukal a na hrbu mi přistála velmi pestrá směska úkolů:
+
+- programování aplikace v angularu: tam jsem hodně nesamostatný a závislý na seniorovi, jeho pomoci a kontrole
+
+- programování webu ve Webstudiu: tam jsem měl na starosti celkovou koordinaci projektu, takže držet v kurzu grafika, copy, marketing a programátory, sám jsem se pak podílel částečně na programování
+
+- plus mám teď na starosti náš rozlítaný tým držet organizačně aspoň trochu pohromadě a sloužím jako spojka i s ostatními týmy (marketing, obchod), protože vycítili moje soft skills a sami na tenhle networking moc nemají buňky.
+
+
+(dobrý, jak jsem si to tu sepsal, tak už i já jsem získal silnější pocit, že bych si opravdu ty prachy zasloužil 💪)
+
+Moc děkuji 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1282444761591971982
+https://softwaredoug.com/blog/2024/09/07/your-team-needs-juniors
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1273932470395342930
+Zajímavý článek o učení a kompetencích juniora, který už někde pracuje https://www.sheenaoc.com/articles/2024-02-07-glass-ceilings
+---
+
+
+--- https://discord.com/channels/769966886598737931/1260632853193162794/1260658117339910306
+Ve své první práci jsem pravidelně min. jednou týdně brečela u kódu s tím (když jsem zrovna měla HO), že na to nemám. Po nocích jsem se snažila tásky dodělávát, to mi ale samozřejmě vůbec nepomohlo a asi bylo mnohem efektivnější odpočívat a ráno mít čistou hlavu.
+Ten stres jsem si vytvářela sama, nikdo ode mě nic velkého neočekával, nic špatného mi neřekl, jen já jsem měla pocit, že  musím něco dodávat.
+Doporučuju se aktivně ptát a mít nastavené, co od tebe firma očekává a co od tebe chtějí, říkej si o zpětnou vazbu. Málokdo jí dává sám od sebe. Ať si představy netvoříš sama podle domněnek, které nejsou pravdivé a jen si připadáš hůř. Jo a hodně pomáhá chodit na meetupy, ať slyšíš i problémy ostatních, najednou zjistíš, že v tom nejsi sama a že i senioři řeší stejné problémy.
+
+Jsi tam jen pár dní, v některých firmách za tu dobu ani pořádně  nerozjedeš projekt a prostředí 😆 takže klid, bude to lepší
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1251078481648029716
+Ehm, tady si dovolím svůj starší překlad staršího článku Jak býti seniorním inženýrem https://zdrojak.cz/clanky/byti-seniornim-inzenyrem/
+---
+
+
 #} -->
