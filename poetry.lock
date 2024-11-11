@@ -267,13 +267,13 @@ lxml = ["lxml"]
 
 [[package]]
 name = "blinker"
-version = "1.8.2"
+version = "1.9.0"
 description = "Fast, simple object-to-object and broadcast signaling"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 files = [
-    {file = "blinker-1.8.2-py3-none-any.whl", hash = "sha256:1779309f71bf239144b9399d06ae925637cf6634cf6bd131104184531bf67c01"},
-    {file = "blinker-1.8.2.tar.gz", hash = "sha256:8f77b09d3bf7c795e969e9486f39c2c5e9c39d4ee07424be2bc594ece9642d83"},
+    {file = "blinker-1.9.0-py3-none-any.whl", hash = "sha256:ba0efaa9080b619ff2f3459d1d500c57bddea4a6b424b60a91141db6fd2f08bc"},
+    {file = "blinker-1.9.0.tar.gz", hash = "sha256:b4ce2265a7abece45e7cc896e98dbebe6cead56bcf805a3d23136d145f5445bf"},
 ]
 
 [[package]]
@@ -1544,7 +1544,7 @@ files = []
 develop = false
 
 [package.dependencies]
-blinker = "1.8.2"
+blinker = "1.9.0"
 click = "8.1.7"
 cssselect = "1.2.0"
 githubkit = "0.11.14"
@@ -1557,7 +1557,7 @@ pydantic = "2.9.2"
 type = "git"
 url = "https://github.com/juniorguru/hen.git"
 reference = "HEAD"
-resolved_reference = "a2f4acf517ff6d6c14ecb09d07f300d252249b6d"
+resolved_reference = "1ffc64addf7a42d09df02398e13c94868c899c31"
 
 [[package]]
 name = "jinja2"
