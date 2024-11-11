@@ -141,8 +141,10 @@ def main(
 ):
     if allow_mutations:
         mutations.allow_all()
-    else:
+    elif allow:
         mutations.allow(*allow)
+    else:
+        mutations.allow_none()
     images.init_templates_cache()
     with db.connection_context():
         sync = Sync.start(id)
