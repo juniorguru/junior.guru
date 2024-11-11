@@ -1511,7 +1511,7 @@ click = "8.1.7"
 type = "git"
 url = "https://github.com/juniorguru/beak.git"
 reference = "HEAD"
-resolved_reference = "58264fbe28459fcaf8e39af100c15c042f40d979"
+resolved_reference = "eab26e9cd2446956d7c4aea83b29614910371641"
 
 [[package]]
 name = "jg-chick"
@@ -1532,7 +1532,7 @@ py-cord = {version = "2.6.1", extras = ["speed"]}
 type = "git"
 url = "https://github.com/juniorguru/chick.git"
 reference = "HEAD"
-resolved_reference = "39e08ce2ad831e814cdb71bc8815ae780452aa5d"
+resolved_reference = "0d0cc452f7adcf136cd6f579e6f4037492411336"
 
 [[package]]
 name = "jg-hen"
