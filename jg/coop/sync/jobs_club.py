@@ -1,13 +1,14 @@
 import asyncio
 from datetime import date, timedelta
 from pathlib import Path
+from pprint import pformat
 
 import click
 import requests
-from discord import Embed, File, ForumChannel, Message, Thread, ui
+from discord import Embed, File, ForumChannel, ForumTag, Message, Thread, ui
 
 from jg.coop.cli.sync import main as cli
-from jg.coop.lib import discord_task, loggers
+from jg.coop.lib import discord_task, loggers, mutations
 from jg.coop.lib.discord_club import ClubClient, parse_channel
 from jg.coop.lib.md import md
 from jg.coop.lib.mutations import MutationsNotAllowedError, mutating_discord
@@ -20,6 +21,30 @@ from jg.coop.models.job import DiscordJob, ListedJob
 JOBS_REPEATING_PERIOD_DAYS = 30
 
 IMAGES_DIR = Path("jg/coop/images")
+
+FORUM_TO_TECH_TAGS = {
+    "Angular": ["angular"],
+    "C & C++": ["c", "cpp"],
+    "C#": ["csharp"],
+    "databáze": ["database", "postgresql", "mysql"],
+    "datová analýza": ["dataanalysis", "excel", "pandas", "powerbi"],
+    "Django": ["django"],
+    "Flask": ["flask"],
+    "hardware": ["hardware"],
+    "HTML & CSS": ["html", "css", "bootstrap", "tailwind"],
+    "Java & Kotlin": ["java", "kotlin"],
+    "JavaScript": ["javascript", "typescript", "react", "node", "angular", "vuejs"],
+    "Linux": ["linux"],
+    "Node.js": ["node"],
+    "PHP": ["php"],
+    "Python": ["python", "django", "flask"],
+    "React": ["react"],
+    "Ruby": ["ruby"],
+    "Swift": ["swift"],
+    "testování": ["testing"],
+    "Vue.js": ["vuejs"],
+}
+
 
 logger = loggers.from_path(__file__)
 
@@ -48,7 +73,22 @@ async def sync_jobs(client: ClubClient, channel_id: int):
     jobs = ListedJob.listing()
     for job in jobs:
         job.discord_url = None
+        job.save()
     logger.info(f"Currently listed jobs: {len(jobs)}")
+
+    logger.info("Creating tags mapping")
+    forum_tags = {forum_tag.name: forum_tag for forum_tag in channel.available_tags}
+    missing_forum_tags = set()
+    tech_to_forum_tags = {}
+    for forum_tag_name, tech_tags in FORUM_TO_TECH_TAGS.items():
+        for tech_tag in tech_tags:
+            try:
+                tech_to_forum_tags[tech_tag] = forum_tags[forum_tag_name]
+            except KeyError:
+                missing_forum_tags.add(forum_tag_name)
+    if missing_forum_tags:
+        logger.error(f"Missing forum tags! {sorted(missing_forum_tags)}")
+    logger.debug(f"Tech tags mapping:\n{pformat(tech_to_forum_tags)}")
 
     messages = ClubMessage.forum_listing(channel_id)
     logger.info(f"Found {len(messages)} threads since {since_on}")
@@ -90,31 +130,41 @@ async def sync_jobs(client: ClubClient, channel_id: int):
     logger.info(f"Posting {len(jobs)} new jobs to the channel")
     for job in jobs:
         logger.info(f"Posting: {job.effective_url}")
-        job.discord_url = await create_thread(channel, job)
+        forum_tags = [
+            tech_to_forum_tags[tech_tag]
+            for tech_tag in job.tech_tags
+            if tech_tag in tech_to_forum_tags
+        ]
+        job.discord_url = await create_thread(channel, job, forum_tags)
         job.save()
 
 
+@mutations.mutates_discord()
 async def archive_thread(thread: Thread) -> None:
-    with mutating_discord(thread) as proxy:
-        await proxy.archive()
+    await thread.archive()
 
 
+@mutations.mutates_discord()
 async def unarchive_thread(thread: Thread) -> None:
     if not thread.archived:
         return
-    with mutating_discord(thread) as proxy:
-        await proxy.unarchive()
+    await thread.unarchive()
 
 
 async def create_thread(
-    channel: ForumChannel, job: ListedJob, sleep_on_retry: int = 3
+    channel: ForumChannel,
+    job: ListedJob,
+    forum_tags: list[ForumTag],
+    sleep_on_retry: int = 3,
 ) -> str:
     try:
         with mutating_discord(channel, raises=True) as proxy:
             for attempt_no in range(1, 4):
                 logger.debug(f"Creating thread, attempt #{attempt_no}")
-                params = await prepare_thread_params(job)
-                thread: Thread = await proxy.create_thread(**params)
+                thread: Thread = await proxy.create_thread(
+                    applied_tags=forum_tags,
+                    **(await prepare_thread_params(job)),
+                )
 
                 logger.debug("Verifying that images got uploaded correctly")
                 message: Message = await thread.fetch_message(thread.id)
@@ -137,6 +187,13 @@ async def create_thread(
 
 
 async def prepare_thread_params(job: ListedJob) -> dict:
+    content = f"{job.location} — {job.company_name}"
+
+    # tech tags
+    if job.tech_tags:
+        content += "\n\n"
+        content += " ".join(f"`#{tag}`" for tag in sorted(job.tech_tags))
+
     files = []
     embeds = []
 
@@ -171,7 +228,7 @@ async def prepare_thread_params(job: ListedJob) -> dict:
     # job
     return dict(
         name=job.title_short,
-        content=f"{job.location} — {job.company_name}",
+        content=content,
         files=files,
         embeds=embeds,
         view=ui.View(
