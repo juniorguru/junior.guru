@@ -164,7 +164,7 @@
       <nav class="footer-section footer-nav">
         <h3 class="footer-heading">Buď v obraze</h3>
         <p>
-          {% for nav_item in (nav|selectattr('title', 'equalto', 'Novinky')|list)[0].children %}
+          {% for nav_item in (nav|selectattr('title', 'equalto', 'Inspirace')|list)[0].children %}
           {%- if nav_item.children -%}
           <a href="{{ (nav_item.children|first).url|url }}">{{ nav_item.title }}</a>
           {%- else -%}

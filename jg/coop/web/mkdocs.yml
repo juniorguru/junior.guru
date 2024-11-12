@@ -39,7 +39,7 @@ nav:
   - Práce:
       - Inzeráty: jobs.jinja
       - Kandidáti: candidates.jinja
-  - Novinky:
+  - Inspirace:
       - Novinky: news.jinja
       - Podcast:
           - Podcast: podcast.md
