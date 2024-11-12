@@ -57,18 +57,20 @@
 #    a poslat prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 - id: 48
-  title: "(Bude upřesněno: Něco praktického o AI a programování)"
+  title: "Jak používat AI asistenty a odnést si z nich maximum"
   date: "2025-12-10"
   description: |
     (Bude upřesněno)
-  # avatar_path: avatars-participants/petr-glaser.jpg
+  avatar_path: avatars-participants/petr-glaser.jpg
   bio_name: Petr Glaser
-  bio_title: "(Bude upřesněno)"
+  bio_title: "Zakladatel Nauč mě IT a Coursition"
   bio: |
-    (Bude upřesněno)
-  # bio_links:
-  #   - https://www.linkedin.com/in/bleedingdev/
-  # logo_path:
+    Petr jako konzultant pomáhá týmům při integraci AI do pracovních postupů. Jako bývalý Staff Engineer klade důraz na praktickou aplikaci. Produktivitu zlepšoval např. v T-Mobile, Sazce, Fortuně, nebo Travelportu. Spoluzaložil platformu Nauč mě IT, kde měl na starosti mentoring a vzdělávání. Rád experimentuje s moderními technologiemi. Ověřuje, na co jsou dobré a na co ne, aby pak mohl sám používat to nejlepší a doporučovat to ostatním.
+  bio_links:
+    - https://www.linkedin.com/in/bleedingdev/
+    - https://ai.bleeding.dev/
+    - https://github.com/BleedingDev/
+  logo_path: logos/naucmeit.svg
   speakers: 442003355653636107
 
 - id: 47
