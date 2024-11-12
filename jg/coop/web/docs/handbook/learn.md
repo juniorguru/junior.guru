@@ -153,7 +153,7 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
 
   {{ link_card(
     'Ponořme se do Pythonu 3',
-    'http://diveintopython3.py.cz',
+    'http://diveintopython3.py.cz/index.html',
     'Možná strohá, ale i tak nejlepší kniha přeložená do češtiny.',
     badge_icon='book',
     badge_text='Kniha',
@@ -686,7 +686,7 @@ Kdyby pak byl zájem dál, můžu propojit s přednášejícím a ten by určit�
 
 
 --- https://discord.com/channels/769966886598737931/788826407412170752/1271768679297843230
-Dneska jsem narazila na skvělý článek o učení se: 
+Dneska jsem narazila na skvělý článek o učení se:
 > When I talk to software developers today, the situation is always the same: high anxiety and imposter syndrome with a touch of depression. They feel lost and confused about what to learn and to what degree to learn it. The overt bombardment of “You are not good enough to be a real software developer” comes at them from every angle. Training courses, conferences, articles, tweets, and peer pressure reinforces their fear that what they know is not good enough. The fear of missing out hits our colleagues who are self-taught or fresh out of code school the hardest. The industry makes them feel inadequate and worthless, all for the sake of pushing the thinly veiled agenda of “Learn our technologies so that people know we’re the best tech company.”
 https://neilonsoftware.com/articles/how-to-keep-up-to-date-with-technologies-as-a-software-developer/
 ---
