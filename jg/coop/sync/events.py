@@ -257,8 +257,11 @@ async def post_next_event_messages(
                 content = f"⏰ @everyone Už **dnes v {event.start_at_prg:%H:%M}** bude v klubu akce „{event.title}” s {speakers}! Odehrávat se to bude v {events_channel.mention}, dotazy jde pokládat v tamním chatu 💬 Akce se nahrávají, odkaz na záznam se objeví v tomto kanálu. {event.discord_url}"
                 with mutating_discord(announcements_channel) as proxy:
                     discord_message = await proxy.send(content)
-                with mutating_discord(discord_message) as proxy:
-                    await add_reactions(discord_message, ["⏰"] + ANNOUNCEMENT_EMOJIS)
+                if discord_message:
+                    with mutating_discord(discord_message) as proxy:
+                        await add_reactions(
+                            discord_message, ["⏰"] + ANNOUNCEMENT_EMOJIS
+                        )
         else:
             logger.info("It's not the day when the event is")
             logger.info("About to post a message 1 day prior to the event")
@@ -275,10 +278,11 @@ async def post_next_event_messages(
                     content = f"🤩 Už **zítra v {event.start_at_prg:%H:%M}** bude v klubu akce „{event.title}” s {speakers}! {event.discord_url}"
                     with mutating_discord(announcements_channel) as proxy:
                         discord_message = await proxy.send(content)
-                    with mutating_discord(discord_message) as proxy:
-                        await add_reactions(
-                            discord_message, ["✨"] + ANNOUNCEMENT_EMOJIS
-                        )
+                    if discord_message:
+                        with mutating_discord(discord_message) as proxy:
+                            await add_reactions(
+                                discord_message, ["✨"] + ANNOUNCEMENT_EMOJIS
+                            )
             else:
                 logger.info("It's not 1 day prior to the event")
                 logger.info("About to post a message 7 days prior to the event")
@@ -295,10 +299,11 @@ async def post_next_event_messages(
                         content = f"🗓 Už **za týden** bude v klubu akce „{event.title}” s {speakers}! {event.discord_url}"
                         with mutating_discord(announcements_channel) as proxy:
                             discord_message = await proxy.send(content)
-                        with mutating_discord(discord_message) as proxy:
-                            await add_reactions(
-                                discord_message, ["🗓"] + ANNOUNCEMENT_EMOJIS
-                            )
+                        if discord_message:
+                            with mutating_discord(discord_message) as proxy:
+                                await add_reactions(
+                                    discord_message, ["🗓"] + ANNOUNCEMENT_EMOJIS
+                                )
                 else:
                     logger.info("It's not 7 days prior to the event")
 

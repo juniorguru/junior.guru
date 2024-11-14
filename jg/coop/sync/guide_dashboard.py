@@ -81,16 +81,6 @@ async def recreate_channel(client: ClubClient, channel_id: int, tips: list[Tip])
                     label="Zpětná vazba",
                     url=f"https://discord.com/channels/{CLUB_GUILD}/{ClubChannelID.META}",
                 ),
-                ui.Button(
-                    emoji="📊",
-                    label="Statistiky",
-                    url="https://junior.guru/about/",
-                ),
-                ui.Button(
-                    emoji="📝",
-                    label="Blog",
-                    url=f"https://discord.com/channels/{CLUB_GUILD}/{ClubChannelID.BLOG}",
-                ),
             ),
         )
         await proxy.send(
