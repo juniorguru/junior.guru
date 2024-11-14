@@ -1,7 +1,7 @@
 import asyncio
 from datetime import date, timedelta
+from enum import StrEnum
 from pathlib import Path
-from pprint import pformat
 
 import click
 import requests
@@ -20,29 +20,51 @@ from jg.coop.models.job import DiscordJob, ListedJob
 
 JOBS_REPEATING_PERIOD_DAYS = 30
 
+MAX_FORUM_TAGS = 5
+
 IMAGES_DIR = Path("jg/coop/images")
 
-FORUM_TO_TECH_TAGS = {
-    "Angular": ["angular"],
-    "C & C++": ["c", "cpp"],
-    "C#": ["csharp"],
-    "databáze": ["database", "postgresql", "mysql"],
-    "datová analýza": ["dataanalysis", "excel", "pandas", "powerbi"],
-    "Django": ["django"],
-    "Flask": ["flask"],
-    "hardware": ["hardware"],
-    "HTML & CSS": ["html", "css", "bootstrap", "tailwind"],
-    "Java & Kotlin": ["java", "kotlin"],
-    "JavaScript": ["javascript", "typescript", "react", "node", "angular", "vuejs"],
-    "Linux": ["linux"],
-    "Node.js": ["node"],
-    "PHP": ["php"],
-    "Python": ["python", "django", "flask"],
-    "React": ["react"],
-    "Ruby": ["ruby"],
-    "Swift": ["swift"],
-    "testování": ["testing"],
-    "Vue.js": ["vuejs"],
+
+class ForumTagName(StrEnum):
+    ccpp = "C & C++"
+    csharp = "C#"
+    dataanalysis = "datová analýza"
+    database = "databáze"
+    hardware = "hardware"
+    htmlcss = "HTML & CSS"
+    javakotlin = "Java & Kotlin"
+    javascript = "JavaScript"
+    linux = "Linux"
+    node = "Node.js"
+    php = "PHP"
+    python = "Python"
+    ruby = "Ruby"
+    swift = "Swift"
+    testing = "testování"
+
+
+TAGS_MAPPING = {
+    "c": ForumTagName.ccpp,
+    "cpp": ForumTagName.ccpp,
+    "csharp": ForumTagName.csharp,
+    "css": ForumTagName.htmlcss,
+    "dataanalysis": ForumTagName.dataanalysis,
+    "database": ForumTagName.database,
+    "excel": ForumTagName.dataanalysis,
+    "hardware": ForumTagName.hardware,
+    "html": ForumTagName.htmlcss,
+    "java": ForumTagName.javakotlin,
+    "javascript": ForumTagName.javascript,
+    "kotlin": ForumTagName.javakotlin,
+    "linux": ForumTagName.linux,
+    "node": ForumTagName.node,
+    "pandas": ForumTagName.dataanalysis,
+    "php": ForumTagName.php,
+    "powerbi": ForumTagName.dataanalysis,
+    "python": ForumTagName.python,
+    "ruby": ForumTagName.ruby,
+    "swift": ForumTagName.swift,
+    "testing": ForumTagName.testing,
 }
 
 
@@ -67,6 +89,12 @@ async def sync_jobs(client: ClubClient, channel_id: int):
     channel = await client.club_guild.fetch_channel(channel_id)
     since_on = date.today() - timedelta(days=JOBS_REPEATING_PERIOD_DAYS)
 
+    logger.debug("Checking if tags are in sync")
+    tags_enum = set(map(str, ForumTagName))
+    tags_discord = set(t.name for t in channel.available_tags)
+    if tags_enum != tags_discord:
+        raise ValueError(f"Tags don't match! {tags_discord ^ tags_enum}")
+
     logger.debug("Clearing Discord jobs and URLs")
     DiscordJob.drop_table()
     DiscordJob.create_table()
@@ -75,20 +103,6 @@ async def sync_jobs(client: ClubClient, channel_id: int):
         job.discord_url = None
         job.save()
     logger.info(f"Currently listed jobs: {len(jobs)}")
-
-    logger.info("Creating tags mapping")
-    forum_tags = {forum_tag.name: forum_tag for forum_tag in channel.available_tags}
-    missing_forum_tags = set()
-    tech_to_forum_tags = {}
-    for forum_tag_name, tech_tags in FORUM_TO_TECH_TAGS.items():
-        for tech_tag in tech_tags:
-            try:
-                tech_to_forum_tags[tech_tag] = forum_tags[forum_tag_name]
-            except KeyError:
-                missing_forum_tags.add(forum_tag_name)
-    if missing_forum_tags:
-        logger.error(f"Missing forum tags! {sorted(missing_forum_tags)}")
-    logger.debug(f"Tech tags mapping:\n{pformat(tech_to_forum_tags)}")
 
     messages = ClubMessage.forum_listing(channel_id)
     logger.info(f"Found {len(messages)} threads since {since_on}")
@@ -130,13 +144,22 @@ async def sync_jobs(client: ClubClient, channel_id: int):
     logger.info(f"Posting {len(jobs)} new jobs to the channel")
     for job in jobs:
         logger.info(f"Posting: {job.effective_url}")
-        forum_tags = [
-            tech_to_forum_tags[tech_tag]
-            for tech_tag in job.tech_tags
-            if tech_tag in tech_to_forum_tags
-        ]
+        forum_tags = get_forum_tags(TAGS_MAPPING, channel.available_tags, job.tech_tags)
+        if len(forum_tags) > MAX_FORUM_TAGS:
+            raise ValueError(f"Too many tags: {[tag.name for tag in forum_tags]}")
         job.discord_url = await create_thread(channel, job, forum_tags)
         job.save()
+
+
+def get_forum_tags(
+    mapping: dict[str, ForumTagName],
+    forum_tags: list[ForumTag],
+    tech_tags: list[str],
+) -> list[ForumTag]:
+    forum_tag_names = set(
+        map(str, filter(None, (mapping.get(tech_tag) for tech_tag in tech_tags)))
+    )
+    return [forum_tag for forum_tag in forum_tags if forum_tag.name in forum_tag_names]
 
 
 @mutations.mutates_discord()
