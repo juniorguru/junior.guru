@@ -17,7 +17,7 @@ Zajímá nás všechno, díky čemu tě poznáme, ale piš jen to, co chceš, ab
 Jo, není to jednoduché. Překonat ostych, vymyslet co napsat a ještě nějak poskládat slova za sebe. Když to však zvládneš, klub ti bude umět posloužit mnohem líp.
 
 ## Uvítací vlákno 🧵
-Pokud už máš představení, objeví se pod tvou zprávou vlákno (_thread_), kam mohou ostatní reagovat a kde můžeš případně něco doplnit. Krátké uvítání tam budeš mít i ode mně.
+Pokud už máš představení, objeví se pod tvou zprávou vlákno („thread“), kam mohou ostatní reagovat a kde můžeš případně něco doplnit. Krátké uvítání tam budeš mít i ode mně.
 
 ## Anonymita 🥷
 Je na tobě, jestli chceš být v klubu pod přezdívkou, nebo skutečným jménem. Účet na junior.guru máš na své jméno a e-mail, ale k těm má přístup jen <@HONZA>. Ostatní vidí to, co máš na Discordu.

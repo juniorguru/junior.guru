@@ -2,7 +2,7 @@
 Rituály udávají zdejší komunitě rytmus. Společné a pravidelné sdílení pokroků, objevů, radostí, nebo zlostí tě bude motivovat a sbližovat.
 
 ## Týdenní plány 🗓️
-Každé pondělí vytvářím v <#WEEKLY_PLANS> nové vlákno. Do vlákna hned přidávám všechny, kdo si v Kanály a role (_Channels & Roles_) nastavili, že plánovat chtějí.
+Každé pondělí vytvářím v <#WEEKLY_PLANS> nové vlákno. Do vlákna hned přidávám všechny, kdo si v _Kanály a role_ nastavili, že plánovat chtějí.
 
 Do vlákna napiš, co se ti povedlo minulý týden, co plánuješ dělat tento, a co tě brzdí. Cokoliv tě posunuje vpřed: Učení, práce, vlastní projekt… Zamyslíš se, naplánuješ si věci, ohlédneš se. Tři body, žádná slohovka.
 

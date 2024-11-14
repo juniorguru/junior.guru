@@ -13,6 +13,6 @@ Máš téma, které chceš probrat, ale není ti jasné kam s ním? Ujistit se m
 ## Je toho moc! 🙈
 Pokud nemáš čas sledovat všechny diskuze, mrkni občas aspoň do <#ANNOUNCEMENTS>. Každý týden je tam shrnutí s nejoceňovanějšími příspěvky.
 
-V seznamu kanálů úplně nahoře máš nastavení s názvem Kanály a role (_Channels & Roles_). Na záložce Procházet kanály (_Browse Channels_) si můžeš ručně schovat vše, co tě nezajímá.
+V seznamu kanálů úplně nahoře máš nastavení s názvem _Kanály a role_. Na záložce _Procházet kanály_ si můžeš ručně schovat vše, co tě nezajímá.
 
-Schovej si třeba celou kategorii Archiv. Tam jsou staré kanály, které už nepoužíváme, ale chceme, aby jejich historie zůstala ve vyhledávání.
+Schovej si třeba celou kategorii _Archiv_. Tam jsou staré kanály, které už nepoužíváme, ale chceme, aby jejich historie zůstala ve vyhledávání.
