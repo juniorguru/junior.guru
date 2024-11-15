@@ -24,5 +24,3 @@ Discord pro toto oprávnění vyžaduje, aby tvůj účet měl [2FA zabezpeční
 <@HONZA>, <@LUCIE>, <@PATRIK> a další se podílí na tom, aby v klubu byly i nějaké „oficiální“ akce, většinou přednášky. Bývají ve speciálním kanálu <#EVENTS>. Mají vždy Discord událost a já na ně pravidelně upozorňuji v <#ANNOUNCEMENTS>, když se blíží.
 
 Seznam najdeš na stránce [Klubové akce](https://junior.guru/events/). Videozáznamy jsou v _Průvodci serverem_, konkrétně v <#GUIDE_EVENTS>.
-
-Pokud máš tip na téma nebo zajímavého hosta, dej nám vědět!
