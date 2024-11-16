@@ -4,13 +4,11 @@ Na Discordu si můžeme i volat. Není ani nutné si to domlouvat předem, nebo 
 ## Jak to funguje 🧐
 Kanály mohou být nejen textové, ale i hlasové. V klubu je to třeba <#CLUBHOUSE>. Vejdeš a ocitneš se na callu s kýmkoliv, kdo tam zrovna je taky. Přes ikonu mluvící bubliny tam máte i chat. Pokud je klubovna zabraná, použij další místnosti: salonek, terasa…
 
-## Jak nezůstat viset 📵
-Lidi občas zůstanou viset na callu po tom, co si proklikávají klub v rámci průzkumu. Když si totiž během callu odskočíš do jiných kanálů, Discord tě neodpojí. Musíš ukončit hovor červeným tlačítkem přímo v hlasovém kanálu, kde si voláš.
+Pozor, lidi občas zůstanou viset na callu po tom, co si proklikávají klub v rámci průzkumu. Když si totiž během callu odskočíš do jiných kanálů, Discord tě neodpojí. Musíš ukončit hovor červeným tlačítkem přímo v hlasovém kanálu, kde si voláš.
 
-## Jen tak ☕️
+## Klubovna ☕️
 Chceš chvilku pokecat, pobýt s ostatními? Užít si, že jde o reálné lidi? Zajdi do klubovny a třeba se někdo připojí! Dej o sobě vědět do <#CHAT> nebo <#FUN>.
 
-## O půl druhé v klubovně 🤝
 Někdo nabídl, že tě něco naučí? Máš schůzku s parťáky na projektu? Můžete si zavolat i napřímo, ale pokud je to něco užitečného i pro ostatní, dejte si sraz v klubovně.
 
 ## Spontánní akce 🙌
