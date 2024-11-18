@@ -29,44 +29,26 @@ timeout = 30
 # Exclude
 exclude = [
     # Specifications
-    "https://ogp.me/ns/website",
+    "^https://ogp\\.me/ns/website",
 
     # Infrastructure
-    "juniorguru.memberful.com",
-    "js.memberful.com",
-    "assets.memberful.com",
-    "js.stripe.com",
-    "m.stripe.network",
+    "^https://juniorguru\\.memberful\\.com",
+    "^https://js\\.memberful\\.com",
+    "^https://assets\\.memberful\\.com",
+    "^https://js\\.stripe\\.com",
+    "^https://m\\.stripe\\.network",
 
     # Anti-scraping protections
-    "glassdoor.com",
-    "upwork.com",
-    "toptal.com",
-    "make.com",
-    "udemy.com",
-    "datacamp.com",
-    "europass.cz",
-    "support.discord.com",
-    "keyguru.cz",
-    "robime.it",
-    "reddit.com",
-    "ulekare.cz",
-    "epravo.cz",
-    "linkedin.com",
-    "podnikatel.cz",
-    "root.cz",
-    "akamai.com",
-    "udacity.com",
-    "hearthis.at",
-    "freecodecamp.org",
-    "techinterviewhandbook.org",
-    "facebook.com",
+    "^https://www\\.linkedin\\.com",
 
     # Read the Docs anti-scraping protections
-    "docs.pyvec.org",
-    "writethedocs.org",
+    "^https://docs\\.pyvec\\.org",
+    "^https://www\\.writethedocs\\.org",
 
     # Expiring jobs
-    "jobs.cz/fp/",
-    "jobs.cz/rpd/",
+    "^https://jobs\\.cz/fp/",
+    "^https://jobs\\.cz/rpd/",
+
+    # Mysterious Cloudinary 404s for club avatars
+    "https://res\\.cloudinary\\.com/juniorguru/image/fetch/[^/]+/https://junior\\.guru/static/avatars-club/[^\\.]+\\.png"
 ]
