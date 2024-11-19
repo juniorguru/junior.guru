@@ -16,7 +16,7 @@ from jg.coop.models.job import DroppedJob, ScrapedJob
 
 ACTORS = [
     "honzajavorek/jobs-jobscz",
-    "honzajavorek/jobs-linkedin",
+    # "honzajavorek/jobs-linkedin",
     "honzajavorek/jobs-startupjobs",
     "honzajavorek/jobs-weworkremotely",
 ]
