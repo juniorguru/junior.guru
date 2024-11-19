@@ -2,6 +2,7 @@ import asyncio
 from datetime import date, timedelta
 from enum import StrEnum
 from pathlib import Path
+from typing import Iterable
 
 import click
 import requests
@@ -155,11 +156,20 @@ def get_forum_tags(
     mapping: dict[str, ForumTagName],
     forum_tags: list[ForumTag],
     tech_tags: list[str],
+    limit: int = MAX_FORUM_TAGS,
+    dispensables: list[ForumTagName] | None = None,
 ) -> list[ForumTag]:
-    forum_tag_names = set(
-        map(str, filter(None, (mapping.get(tech_tag) for tech_tag in tech_tags)))
-    )
-    return [forum_tag for forum_tag in forum_tags if forum_tag.name in forum_tag_names]
+    forum_tag_names = set(map(str, filter(None, (mapping.get(tt) for tt in tech_tags))))
+    forum_tags = [ft for ft in forum_tags if ft.name in forum_tag_names]
+
+    dispensables = dispensables or []
+    while len(forum_tags) > limit:
+        if dispensables:
+            dispensable = dispensables.pop()
+            forum_tags = [ft for ft in forum_tags if ft.name != dispensable]
+        else:
+            forum_tags.pop()
+    return forum_tags
 
 
 @mutations.mutates_discord()
