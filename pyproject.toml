@@ -17,7 +17,7 @@ coop = "jg.coop.cli:main"
 python = "~3.12"
 "jg.beak" = { git = "https://github.com/juniorguru/beak.git" }
 "jg.chick" = { git = "https://github.com/juniorguru/chick.git" }
-aiohttp = "3.10.10"
+aiohttp = "3.11.2"
 apify-client = "1.8.1"
 apify-shared = "1.1.2"
 beautifulsoup4 = "4.12.3"
