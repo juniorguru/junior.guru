@@ -2,7 +2,6 @@ import asyncio
 from datetime import date, timedelta
 from enum import StrEnum
 from pathlib import Path
-from typing import Iterable
 
 import click
 import requests
