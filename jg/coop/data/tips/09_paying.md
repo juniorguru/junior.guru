@@ -1,4 +1,4 @@
-# 💸 Jak funguje placení za klub?
+# 💸 Jak funguje placení za klub
 Klub je na první dva týdny zdarma, ale pak se za něj platí. Jak to přesně funguje?
 
 ## Za Discord platit nemusíš 🆓

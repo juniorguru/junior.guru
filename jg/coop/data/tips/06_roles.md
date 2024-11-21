@@ -1,4 +1,4 @@
-# 🙋 Jak tady fungují role?
+# 🙋 Jak tady fungují role
 Proč je někdo zelený, nebo žlutý? Co znamená srdce vedle jména? A proč se hodí používat emoji reakce na příspěvky?
 
 ## Role 🏅

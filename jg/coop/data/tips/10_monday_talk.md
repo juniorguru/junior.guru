@@ -1,4 +1,4 @@
-# 🍻 Co je Pondělní povídání?
+# 🍻 Co je Pondělní povídání
 Každé pondělí se můžeš v <#CLUBHOUSE> potkat s ostatními a popovídat si. Na povídání nebývá předem daný program. Když se lidi zakecají, loučí se klidně až před půlnocí, ale je čistě na tobě, jak dlouho zůstaneš.
 
 ## Úvodní kolečko 👋

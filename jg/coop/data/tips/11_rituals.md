@@ -1,4 +1,4 @@
-# ☕️ Jak se zapojit do rituálů?
+# ☕️ Jak se zapojit do rituálů
 Rituály udávají zdejší komunitě rytmus. Společné a pravidelné sdílení pokroků, objevů, radostí, nebo zlostí tě bude motivovat a sbližovat.
 
 ## Týdenní plány 🗓️

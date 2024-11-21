@@ -1,4 +1,4 @@
-# 🐣 Co ještě najdeš na junior.guru?
+# 🐣 Co ještě najdeš na junior.guru
 Na junior.guru není jen klub, ale i spousta motivace a užitečných rad, které by bylo škoda minout.
 
 ## Příručka 📖

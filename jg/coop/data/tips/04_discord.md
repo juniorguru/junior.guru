@@ -1,4 +1,4 @@
-# 💬 Jak funguje Discord?
+# 💬 Jak funguje Discord
 Co to vlastně ten Discord je? Jak tady správně komunikovat? K čemu jsou a jak fungují vlákna?
 
 ## Co je Discord? 👾

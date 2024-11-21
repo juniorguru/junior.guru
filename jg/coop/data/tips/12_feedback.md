@@ -1,4 +1,4 @@
-# 🔬 Jak dostat zpětnou vazbu na CV nebo kód?
+# 🔬 Jak dostat zpětnou vazbu na CV nebo kód
 Jedna z hlavních výhod toho, že kolem sebe máš další lidi z oboru, je zpětná vazba. Ať už na životopis, nebo na kód, je to způsob, jak se aspoň trochu konfrontovat s realitou ještě před tím, než do ní vyrazíš naplno.
 
 ## Příručka 📖

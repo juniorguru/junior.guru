@@ -1,4 +1,4 @@
-# 🧭 Jak se vyznat v klubu?
+# 🧭 Jak se vyznat v klubu
 Kanálů je tady mnoho, ale neboj se toho. Po pár dnech si všimneš, že někde se toho děje víc, jinde je to klidnější a něco tě vůbec nezajímá, tak si to vypneš.
 
 ## Co jsou kanály? 💬

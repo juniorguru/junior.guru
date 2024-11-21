@@ -1,4 +1,4 @@
-# 👋 Proč se představit?
+# 👋 Proč se představit
 První, co se hodí v klubu udělat, je představit se v kanálu <#INTRO>. Ostatní členové klubu se tak doví, co už máš za sebou a co je tvým cílem.
 
 ## Co psát 📝
