@@ -32,12 +32,35 @@ CONTROL_EMOJI = "💡"
 
 DEFAULT_REACTION_EMOJI = "✅"
 
+# TODO
+# - create separate reminders.py and reminders.yml
+# - the periodicity of reminders should be just days, integer
+# - if multiple reminders with the same periodicity go to the same channel, they should be rotated by random
 REMINDERS = [
     (
+        "👋",
+        ClubChannelID.BOT,
+        (
+            "Ahoj! Toto je speciální kanál, který vidí jen **nově příchozí** jako ty a **moderátoři**. "
+            "Pokud není jasné, jak něco funguje, neboj se tady zeptat. "
+            "Rádi poradíme, nasměrujeme. Žádná otázka není blbá.\n\n"
+            "Každý den sem posílám jeden tip, který by měl pomoci s orientací v klubu. "
+            f"Všechny najdeš tady: <#{ClubChannelID.TIPS}>"
+        ),
+        timedelta(days=7),
+    ),
+    (
+        CONTROL_EMOJI,
         ClubChannelID.INTRO,
         "Proč je dobré se představit ostatním a co vůbec napsat? Přečti si klubový tip {👋}",
         timedelta(days=30),
     ),
+    # (
+    #     CONTROL_EMOJI,
+    #     ClubChannelID.CHAT,
+    #     "Chceš se družit a potkávat s lidmi v místě, kde žiješ? Přečti si klubový tip {👭}",
+    #     timedelta(days=30),
+    # ),
 ]
 
 
@@ -277,7 +300,7 @@ async def dose_tips(client: ClubClient, tips: list[dict], force: bool):
 @db.connection_context()
 async def ensure_reminders(
     client: ClubClient,
-    reminders: list[tuple[ClubChannelID, str, timedelta]],
+    reminders: list[tuple[str, ClubChannelID, str, timedelta]],
     force: bool,
 ):
     logger.info("Ensuring reminders")
@@ -286,8 +309,8 @@ async def ensure_reminders(
         emoji: thread.jump_url
         for emoji, thread in threads_by_emoji(channel_tips.threads).items()
     }
-    for channel_id, content_template, period in reminders:
-        last_message = ClubMessage.last_bot_message(channel_id, CONTROL_EMOJI)
+    for control_emoji, channel_id, content_template, period in reminders:
+        last_message = ClubMessage.last_bot_message(channel_id, control_emoji)
         if force:
             logger.warning("Forcing reminder!")
         elif is_message_over_period_ago(last_message, period):
@@ -296,7 +319,7 @@ async def ensure_reminders(
             logger.info("Reminder is still fresh, skipping")
             return
         channel = await client.fetch_channel(channel_id)
-        content = f"{CONTROL_EMOJI} {content_template.format(**tip_urls_by_emoji)}"
+        content = f"{control_emoji} {content_template.format(**tip_urls_by_emoji)}"
         logger.info(f"Sending: {content!r}")
         with mutating_discord(channel) as proxy:
             await proxy.send(content)
