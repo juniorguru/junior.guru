@@ -28,13 +28,17 @@ from jg.coop.models.documented_role import DocumentedRole
 from jg.coop.models.tip import Tip
 
 
-DOSE_EMOJI = "💡"
-
-INTRO_TIP_EMOJI = "👋"
-
-INTRO_REMINDER_EMOJI = "💡"
+CONTROL_EMOJI = "💡"
 
 DEFAULT_REACTION_EMOJI = "✅"
+
+REMINDERS = [
+    (
+        ClubChannelID.INTRO,
+        "Proč je dobré se představit ostatním a co vůbec napsat? Přečti si klubový tip {👋}",
+        timedelta(days=30),
+    ),
+]
 
 
 logger = loggers.from_path(__file__)
@@ -48,7 +52,8 @@ logger = loggers.from_path(__file__)
     type=click.Path(exists=True, dir_okay=True, file_okay=False, path_type=Path),
 )
 @click.option("--force-dose", is_flag=True)
-def main(tips_path: Path, force_dose: bool):
+@click.option("--force-reminders", is_flag=True)
+def main(tips_path: Path, force_dose: bool, force_reminders: bool):
     with db.connection_context():
         roles = {
             documented_role.slug: documented_role.club_id
@@ -58,7 +63,7 @@ def main(tips_path: Path, force_dose: bool):
     logger.info(f"Loaded {len(tips)} tips")
     discord_task.run(sync_tips, tips)
     discord_task.run(dose_tips, tips, force_dose)
-    discord_task.run(ensure_intro_reminder)
+    discord_task.run(ensure_reminders, REMINDERS, force_reminders)
 
 
 def load_tips(tips_path: Path, roles: dict[str, int] | None = None):
@@ -107,6 +112,7 @@ def parse_tip(markdown: str, roles: dict[str, int] | None = None) -> dict:
 
 @db.connection_context()
 async def sync_tips(client: ClubClient, tips: list[dict]):
+    logger.info("Syncing tips")
     tips_by_emoji = {tip["emoji"]: tip for tip in tips}
     tasks = []
     seen_emojis = set()
@@ -218,19 +224,20 @@ async def create_view(edit_url: str) -> ui.View:
 
 
 @db.connection_context()
-async def dose_tips(client: ClubClient, tips: list[dict], force_dose: bool):
+async def dose_tips(client: ClubClient, tips: list[dict], force: bool):
+    logger.info("Dosing tips")
     channel_tips = await client.fetch_channel(ClubChannelID.TIPS)
     threads = threads_by_emoji(channel_tips.threads)
 
     channel = await client.fetch_channel(ClubChannelID.NEWCOMERS)
     last_dose_db_message = ClubMessage.last_bot_message(
-        ClubChannelID.NEWCOMERS, DOSE_EMOJI
+        ClubChannelID.NEWCOMERS, CONTROL_EMOJI
     )
 
     if last_dose_db_message:
         if last_dose_db_message.created_at.date() == date.today():
             logger.info("Already dosed today")
-            if force_dose:
+            if force:
                 logger.warning("Forcing dose!")
             else:
                 return
@@ -252,7 +259,7 @@ async def dose_tips(client: ClubClient, tips: list[dict], force_dose: bool):
 
     logger.info(f"Dosing: {dose_tip['title']} - {dose_thread.jump_url}")
     newcomers_mention = DocumentedRole.get_by_slug("newcomer").mention
-    content = f"{DOSE_EMOJI} **Tip dne** pro {newcomers_mention} ({reading_time(len(dose_tip['content']))} min čtení)"
+    content = f"{CONTROL_EMOJI} **Tip dne** pro {newcomers_mention} ({reading_time(len(dose_tip['content']))} min čtení)"
     with mutations.mutating_discord(channel) as proxy:
         await proxy.send(
             content,
@@ -268,30 +275,31 @@ async def dose_tips(client: ClubClient, tips: list[dict], force_dose: bool):
 
 
 @db.connection_context()
-async def ensure_intro_reminder(client: ClubClient):
-    last_message = ClubMessage.last_bot_message(
-        ClubChannelID.INTRO, INTRO_REMINDER_EMOJI
-    )
-    if is_message_over_period_ago(last_message, timedelta(days=30)):
-        logger.info("Last reminder is more than one month old!")
-
-        channel_tips = await client.fetch_channel(ClubChannelID.TIPS)
-        threads = threads_by_emoji(channel_tips.threads)
-        intro_tip_thread = threads[INTRO_TIP_EMOJI]
-        logger.info(
-            f"Assuming the intro thread is #{intro_tip_thread.id}, {intro_tip_thread.jump_url}"
-        )
-
-        logger.info("Sending new reminder")
-        channel = await client.fetch_channel(ClubChannelID.INTRO)
+async def ensure_reminders(
+    client: ClubClient,
+    reminders: list[tuple[ClubChannelID, str, timedelta]],
+    force: bool,
+):
+    logger.info("Ensuring reminders")
+    channel_tips = await client.fetch_channel(ClubChannelID.TIPS)
+    tip_urls_by_emoji = {
+        emoji: thread.jump_url
+        for emoji, thread in threads_by_emoji(channel_tips.threads).items()
+    }
+    for channel_id, content_template, period in reminders:
+        last_message = ClubMessage.last_bot_message(channel_id, CONTROL_EMOJI)
+        if force:
+            logger.warning("Forcing reminder!")
+        elif is_message_over_period_ago(last_message, period):
+            logger.warning(f"Last reminder is more than {period.days} old!")
+        else:
+            logger.info("Reminder is still fresh, skipping")
+            return
+        channel = await client.fetch_channel(channel_id)
+        content = f"{CONTROL_EMOJI} {content_template.format(**tip_urls_by_emoji)}"
+        logger.info(f"Sending: {content!r}")
         with mutating_discord(channel) as proxy:
-            await proxy.send(
-                content=(
-                    f"{INTRO_REMINDER_EMOJI} Proč je dobré se představit ostatním a co vůbec napsat? "
-                    f"Přečti si klubový tip {intro_tip_thread.jump_url}"
-                )
-            )
-
+            await proxy.send(content)
         if last_message:
             logger.info(f"Deleting previous reminder: {last_message.url}")
             try:
@@ -299,7 +307,7 @@ async def ensure_intro_reminder(client: ClubClient):
                 with mutating_discord(message) as proxy:
                     await proxy.delete()
             except NotFound:
-                logger.warning("Message not found, probably already deleted")
+                logger.warning("Reminder not found, probably already deleted")
 
 
 def threads_by_emoji(threads: list[Thread]) -> dict[str, Thread]:
