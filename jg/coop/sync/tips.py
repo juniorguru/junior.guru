@@ -36,10 +36,11 @@ DEFAULT_REACTION_EMOJI = "✅"
 # - create separate reminders.py and reminders.yml
 # - the periodicity of reminders should be just days, integer
 # - if multiple reminders with the same periodicity go to the same channel, they should be rotated by random
+# - maybe its just newcomers, intro, and then we should dose tips to chat monthly?!?
 REMINDERS = [
     (
         "👋",
-        ClubChannelID.BOT,
+        ClubChannelID.NEWCOMERS,
         (
             "Ahoj! Toto je speciální kanál, který vidí jen **nově příchozí** jako ty a **moderátoři**. "
             "Pokud není jasné, jak něco funguje, neboj se tady zeptat. "
