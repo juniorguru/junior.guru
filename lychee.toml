@@ -38,8 +38,20 @@ exclude = [
     "^https://js\\.stripe\\.com",
     "^https://m\\.stripe\\.network",
 
+    # Mysterious Cloudinary 404s for club avatars
+    "https://res\\.cloudinary\\.com/juniorguru/image/fetch/[^/]+/https://junior\\.guru/static/avatars-club/[^\\.]+\\.png",
+
     # Anti-scraping protections
     "^https://www\\.linkedin\\.com",
+    "^https://www\\.facebook\\.com",
+    "^https://www\\.reddit\\.com",
+    "^https://robime\\.it",
+    "^https://www\\.techinterviewhandbook\\.org",
+    "^https://www\\.glassdoor\\.com",
+    "^https://toptal\\.com",
+    "^https://upwork\\.com",
+    "^https://www\\.make\\.com",
+    "^https://[^\\.]+\\.discord\\.com",
 
     # Read the Docs anti-scraping protections
     "^https://docs\\.pyvec\\.org",
@@ -48,7 +60,4 @@ exclude = [
     # Expiring jobs
     "^https://jobs\\.cz/fp/",
     "^https://jobs\\.cz/rpd/",
-
-    # Mysterious Cloudinary 404s for club avatars
-    "https://res\\.cloudinary\\.com/juniorguru/image/fetch/[^/]+/https://junior\\.guru/static/avatars-club/[^\\.]+\\.png"
 ]

@@ -131,7 +131,7 @@ Být živnostníkem má však tyto nevýhody:
 *   Pokud si při podnikání vytvoříš dluhy, máš povinnost k uhrazení využít i veškerý svůj čistě soukromý majetek (ručíš vším, na rozdíl od s. r. o., tedy [společnosti s ručením omezeným](https://cs.wikipedia.org/wiki/Spole%C4%8Dnost_s_ru%C4%8Den%C3%ADm_omezen%C3%BDm)).
 *   I pokud by ti každý měsíc na účet chodilo více peněz než průměrnému zaměstnanci, u banky máš jako OSVČ [výrazně horší pozici pro získání hypotéky](https://www.chytryhonza.cz/hypoteka-pro-osvc-jak-u-banky-s-zadosti-uspet).
 *   Za léta práce na živnostenský list budeš mít od státu nižší důchod.
-*   Balancuješ na hraně [švarc systému](https://cs.wikipedia.org/wiki/%C5%A0varc_syst%C3%A9m). Když si to spolu s firmou nepohlídáte, je vaše činnost nelegální a postih hrozí jak tobě (až 100 000 Kč), tak firmě ([masivní pokuty, doplacení odvodů](https://www.podnikatel.cz/specialy/svarcsystem/sankce-a-kontroly/)). Znamená to také, že oficiálně nemáš nadřízeného, pracuješ na vlastním počítači, voláš z vlastního telefonu.
+*   Balancuješ na hraně [švarc systému](https://cs.wikipedia.org/wiki/%C5%A0varc_syst%C3%A9m). Když si to spolu s firmou nepohlídáte, je vaše činnost nelegální a postih hrozí jak tobě (až 100 000 Kč), tak firmě ([masivní pokuty, doplacení odvodů](https://magazin.almacareer.com/cz/svarcsystem-je-v-roce-2024-jeste-vetsim-strasakem-nez-driv-na-co-si-dat-pozor)). Znamená to také, že oficiálně nemáš nadřízeného, pracuješ na vlastním počítači, voláš z vlastního telefonu.
 *   Nemáš ochranu, kterou zaměstnancům dává zákoník práce. Ta jistě není dokonalá, ale jako OSVČ nemáš žádnou. Nejde o stravenky, ale o nárok na odstupné, výpovědní lhůtu, placenou dovolenou nebo nemocenskou. Když nepracuješ, např. z důvodu dlouhé nemoci, tak nemáš příjem. Zároveň každý měsíc stále platíš zálohy na pojištění (minimálně kolem 5 000 Kč měsíčně).
 *   I ti nejlepší mohou být mezi prvními, které firmy „propustí“, když je problém. Ať už jde o krach [startupu](candidate.md#prace-pro-startup) nebo začátek pandemie, když jde do tuhého, firmy neváhají rozloučit se velmi rychle i s celými týmy kontraktorů.
 
@@ -968,11 +968,11 @@ reaguji na pozici… Bohužel aplikace z předchozích zaměstnání nejsou veř
 o úkolech v přijímacích řízeních
 
 > Nenechte se odradit, pokud budete muset vypracovat úkol. U každé firmy a pozice je to jiné, ale pokud vám na konkrétní firmě opravdu záleží, úkol vypracujte i když chápu, že je to žrout času. Důležité je mít transparentní informace o tom, jak bude úkol hodnocen a jakou roli hraje ve výběrovém řízení. Úkoly jsou běžné zejména pro juniorní pozice, ale mohou se vyskytnout i u seniorních pozic.
-> 
+>
 > Pokud narazíte na zadání, které zahrnuje technologii, kterou zcela neovládáte, komunikujte to. Napište, že se ji budete snažit doučit nebo že potřebujete více času. U našich klientů se například stalo, že zadavatel ocenil komunikaci kandidáta a přizpůsobil úkol jeho znalostem.
-> 
+>
 > Komunikace je klíčová. Dejte vědět, že úkol přijímáte, nebo že budete potřebovat více času kvůli pracovním, studijním nebo rodinným závazkům. Většina firem to pochopí, a pokud je výběrové řízení urgentní, dají vám vědět, ať úkol neřešíte a neztrácíte čas.
-> 
+>
 > Závěrem bych řekla: chovejte se k firmám tak, jak chcete, aby se chovaly k vám. Možná narazíte, ale začněte u sebe. Když očekáváte zpětnou vazbu a transparentnost, jděte příkladem. Pokud firma vaše úsilí neocení, zkuste to jinde. Věřím, že existuje firma, kde budete spokojení. Vysílejte energii, kterou chcete zpět. Podle mě je to hlavní klíč k úspěchu.
 ---
 
@@ -1006,7 +1006,7 @@ Tak mě ještě napadlo zeptat se dopředu jaký pohovor tě čeká a na příkl
 
 
 --- https://discord.com/channels/769966886598737931/789087476072710174/1294259606297776168
-<@&1134476995229663374> 
+<@&1134476995229663374>
 Po čase připomínám, že jsem dal k zdarma dispozici malý nástroj, který vám může pomoci: [Tabulka pro plánování, sledování času a hledání práce](https://discord.com/channels/769966886598737931/1047219933647487146)
 
 Trackovat si kam a na jaké inzeráty jste poslali reakci není vůbec od věci. Většinou to totiž nevyjde na pár pokusů a v hlavě to neudržíte.
@@ -1016,14 +1016,14 @@ Trackovat si kam a na jaké inzeráty jste poslali reakci není vůbec od věci.
 --- https://discord.com/channels/769966886598737931/789107031939481641/1288179526521589760
 Přemýšlím, jestli přeci jen nechceš to IČO zvážit — [po důkladném spočítání si](https://www.youtube.com/watch?v=iJGjTFDYw9A) samozřejmě — pokud to pro některý firmy je blok.
 
-S paušální daní to ani není moc administrativy: založit živnost a přihlásit se k paušální dani a pak jen platit měsíčně fixní částku. Není potřeba nic dalšího vykazovat a odevzdávat. 
+S paušální daní to ani není moc administrativy: založit živnost a přihlásit se k paušální dani a pak jen platit měsíčně fixní částku. Není potřeba nic dalšího vykazovat a odevzdávat.
 
 Proti o něco složitější (nutnost odevzdat daňové přiznání a poslat 2 „přehledy“ k pojištěním) možnosti se to vyplatí od cca 680 tisíc ročně.
 ---
 
 
 --- https://discord.com/channels/769966886598737931/1283445215323099197/1283469132104335380
-odkážu svoje video https://youtu.be/iJGjTFDYw9A 
+odkážu svoje video https://youtu.be/iJGjTFDYw9A
 sice bych tam pár věcí odebral a pár přidal, ale to hlavní platí.
 ---
 
