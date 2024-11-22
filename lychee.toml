@@ -38,9 +38,6 @@ exclude = [
     "^https://js\\.stripe\\.com",
     "^https://m\\.stripe\\.network",
 
-    # Mysterious Cloudinary 404s for club avatars
-    "https://res\\.cloudinary\\.com/juniorguru/image/fetch/[^/]+/https://junior\\.guru/static/avatars-club/[^\\.]+\\.png",
-
     # Anti-scraping protections
     "^https://www\\.linkedin\\.com",
     "^https://www\\.facebook\\.com",

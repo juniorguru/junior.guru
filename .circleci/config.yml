@@ -368,7 +368,7 @@ workflows:
             - web
       - check-links:
           requires:
-            - web
+            - deploy-web
       - deploy-web:
           requires:
             - web
