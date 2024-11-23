@@ -937,3 +937,5 @@
 {"_id": "26788339212", "amount": -74, "category": "tax", "happened_on": "2024-11-18"}
 {"_id": "26791682999", "amount": 6, "category": "donations", "happened_on": "2024-11-20"}
 {"_id": "26794270456", "amount": 3105, "category": "donations", "happened_on": "2024-11-22"}
+{"_id": "26795695539", "amount": -87, "category": "miscellaneous", "happened_on": "2024-11-22"}
+{"_id": "26795695561", "amount": -87, "category": "miscellaneous", "happened_on": "2024-11-22"}
