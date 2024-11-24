@@ -34,14 +34,14 @@ def build_events_honza_ics(api_dir, config):
     events = []
     for event in Event.api_listing():
         ics_event_promo_day = ics.Event(
-            summary="(Honza by měl promovat přednášku)",
+            summary="(Honza by měl promovat klubovou akci)",
             begin=event.start_at - timedelta(days=7),
             description=event.url,
         )
         ics_event_promo_day.make_all_day()
         events.append(ics_event_promo_day)
         ics_event_day = ics.Event(
-            summary="Přednáška v klubu",
+            summary="Akce v klubu",
             begin=event.start_at,
             description=event.url,
         )
