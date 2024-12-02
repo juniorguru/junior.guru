@@ -17,7 +17,6 @@ coop = "jg.coop.cli:main"
 python = "~3.12"
 "jg.beak" = { git = "https://github.com/juniorguru/beak.git" }
 "jg.chick" = { git = "https://github.com/juniorguru/chick.git" }
-aiohttp = "3.11.2"
 apify-client = "1.8.1"
 apify-shared = "1.1.2"
 beautifulsoup4 = "4.12.3"
@@ -32,7 +31,6 @@ fiobank = "3.1.0"
 flask = "3.1.0"
 fonttools = "4.55.0"
 frozen-flask = "1.0.2"
-githubkit = "0.11.14"
 google-api-python-client = "2.154.0"
 gql = {extras = ["requests"], version = "3.5.0"}
 gspread = "6.1.4"
@@ -55,13 +53,15 @@ playwright = "1.49.0"
 pod2gen = "1.0.3"
 py-cord = {version = "2.6.1", extras = ["speed"]}
 pycircleci = "0.7.0"
-pydantic = "2.9.2"
 python-slugify = "8.0.4"
 pyyaml = "6.0.2"
 requests = "2.32.3"
 strictyaml = "1.7.3"
 stripe = "11.3.0"
 tenacity = "9.0.0"
+aiohttp = "3.11.7"
+pydantic = "2.10.1"
+githubkit = "0.12.0"
 
 [tool.poetry.group.dev.dependencies]
 ghp-import = "2.1.0"
