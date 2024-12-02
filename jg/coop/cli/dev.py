@@ -71,8 +71,11 @@ def poetry_update():
             break
         if "version solving failed" in result.stderr:
             logger.warning("Version solving failed")
-            if match := re.search(r"requires\s+(\S+)\s+\(([^\)]+)\)", result.stderr):
-                package, version = match.group(1), match.group(2)
+            if match := re.search(
+                r"(requires|depends on) (?P<package>\S+) \((?P<version>[^\)]+)\)",
+                result.stderr,
+            ):
+                package, version = match.group("package"), match.group("version")
                 changes.append(f"{package}=={version}")
                 subprocess.run(["poetry", "remove", package], check=True)
                 continue
