@@ -7,7 +7,7 @@
   "dependencies": {
     "@fontsource/inter": "5.1.0",
     "bootstrap-icons": "1.11.3",
-    "chart.js": "4.4.6",
+    "chart.js": "4.4.7",
     "chartjs-plugin-annotation": "3.1.0",
     "instant.page": "5.2.0",
     "rough-notation": "0.5.1"
@@ -16,8 +16,8 @@
     "bootstrap": "5.3.3",
     "esbuild": "0.24.0",
     "esbuild-sass-plugin": "3.3.1",
-    "prettier": "3.3.3",
-    "stylelint": "16.10.0",
+    "prettier": "3.4.1",
+    "stylelint": "16.11.0",
     "stylelint-config-twbs-bootstrap": "15.1.0",
     "stylelint-order": "6.0.4"
   }
