@@ -324,7 +324,7 @@ Ačkoliv LinkedIn **umožňuje stáhnout profil jako PDF**, nepoužívej to jako
 Pokud se učíš vytvářet webovky, **vyrob si osobní stránky**. Bude se to počítat jako projekt a zároveň je to možnost, jak se představit barevněji, než PDF dokumentem. Můžeš do toho vložit tolik kreativity, kolik jen chceš. Víc je o tom v kapitole [osobní web a blog](candidate.md#osobni-web-a-blog).
 
 {% call figure('static/figures/robert-belan.png', 1024, 583, 'Robert Belan') %}
-  [Robert Belan](https://www.robertbelan.com/) má osobní webovky jako konfigurátor postavy v RPG hře
+  Robert Belan si vyrobil osobní webovky jako konfigurátor postavy v RPG hře
 {% endcall %}
 
 ### Buď člověk
@@ -550,7 +550,7 @@ Pro větší zajímavost často stačí trochu zajímavější font…
 Vytáhnu z toho (jde o upravený přepis titulků, nejsou to tedy přesné citáty)
 
 > „CV dává smysl, protože když se podíváme na HR nebo na člověka obecně, tak je to líná osoba. Potřebuje vidět hned na první pohled technologie, které jsou relevantní pro danou pozici. Opravdu si projděte všechny zmíněné nástroje v CV tak, aby při prvním otevření CV na ně okamžitě vyskočily. Aby si mohli říct: ‘Jo, tady je C#, Microsoft SQL, SQL jazyk… Super, můžeme ho nebo ji pozvat na online pohovor.’
-> 
+>
 > Asi na to rovnou navážu tím, jestli vůbec musím mít CV, když žádám o roli v IT. V ideálním světě by třeba stačil odkaz na nějaký git, kde mám ukázky kódu a svoje projekty. Nechci tím nijak shazovat HRisty nebo jejich práci, ale mějte tu trpělivost a CV si opravdu připravte. Neplatí to jen pro juniorní pozice. Jak říká Denisa, první síto často nedělají lidé, kteří tomu do hloubky rozumí, takže půjdou hlavně po klíčových slovech. Chápu frustraci, že to možná nemá takovou hodnotu, ale i když je to jen kus papíru, pro nás, když ten filtr děláme – ať už osobně nebo pomocí AI nástrojů – opravdu stojí za to CV přizpůsobit.
 ---
 
@@ -559,9 +559,9 @@ Vytáhnu z toho (jde o upravený přepis titulků, nejsou to tedy přesné citá
 k motivačním dopisům
 
 > Pokud v inzerátu není vyžadován motivační dopis, klidně bych ho vynechala. Když dělám nábor, zaměřuji se na to, co je v CV – jaké má kandidát projekty, zkušenosti, jakým směrem se chce dál vyvíjet. První krok je stejně telefonát, kde se ptám přímo na motivaci. Nechci číst text vygenerovaný AI, ale ráda si s kandidátem popovídám o tom, co ho opravdu baví, co potřebuje k efektivní práci a co ho v minulých firmách třeba zklamalo. To mi pomůže zjistit, jestli u nás nebude řešit stejné problémy.
-> 
+>
 > Ne všechny firmy ale nábor dělají takhle. Některé HR  mají tendenci vytvářet si domněnky z CV, a ne vždy zavolají, aby se zeptaly na detaily a kandidáta rovnou eliminují z výběrka. Třeba vidí v CV adresu a usoudí, že kandidát by u nich, pracovat nechtěl, protože je to daleko.
-> 
+>
 > Souhlasím, že motivační dopisy napsané AI jsou zbytečné. Stačí však tři nebo čtyři věty – stručně a vlastními slovy. Něco ve stylu: ‘Viděl jsem, že se technologicky shodujeme, zaujal mě váš manažer na meetupu…’ Prostě osobní zpráva připojená k CV, která naznačí zájem. To není motivační dopis v pravém slova smyslu, dříve se psaly dlouhé a přikládaly k CV. Ale těch pár vět dává to CV lidský rozměr a ukazuje, že kandidát má skutečný zájem a umožňuje to doplnit i informace o tom, že bude stěhovat z Prahy do Brna apod.
 > Nemusíte ale psát formální motivační dopis.
 ---
@@ -573,7 +573,7 @@ Ano, to je samozřejmě možné, že se tak dozví věk, ale stačí se podívat
 
 
 --- https://discord.com/channels/769966886598737931/788832177135026197/1268445846555594772
-Kdyžtak <@668226181769986078> někam přesuň. 
+Kdyžtak <@668226181769986078> někam přesuň.
 
 Můj kontakt na LI - Petra Kubita Nulíčková - sdílela velmi dobré rady a tipy ohledně CV: https://www.petranulickova.cz/l/chyby-v-zivotopisech/
 
