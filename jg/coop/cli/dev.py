@@ -72,7 +72,7 @@ def poetry_update():
         if "version solving failed" in result.stderr:
             logger.warning("Version solving failed")
             if match := re.search(
-                r"(requires|depends on) (?P<package>\S+) \((?P<version>[^\)]+)\)",
+                r"(requires|which depends on) (?P<package>\S+) \((?P<version>[^\)]+)\)",
                 result.stderr,
             ):
                 package, version = match.group("package"), match.group("version")
