@@ -34,7 +34,6 @@ frozen-flask = "1.0.2"
 google-api-python-client = "2.154.0"
 gql = {extras = ["requests"], version = "3.5.0"}
 gspread = "6.1.4"
-httpx = "0.27.2"
 ics = {version = "0.8.0.dev0", allow-prereleases = true}
 jinja2 = "3.1.4"
 lingua-language-detector = "2.0.2"
@@ -59,9 +58,10 @@ requests = "2.32.3"
 strictyaml = "1.7.3"
 stripe = "11.3.0"
 tenacity = "9.0.0"
-aiohttp = "3.11.7"
-pydantic = "2.10.1"
 githubkit = "0.12.0"
+aiohttp = "3.11.9"
+pydantic = "2.10.2"
+httpx = "0.28.0"
 
 [tool.poetry.group.dev.dependencies]
 ghp-import = "2.1.0"
