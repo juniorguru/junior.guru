@@ -49,6 +49,7 @@ exclude = [
     "^https://upwork\\.com",
     "^https://www\\.make\\.com",
     "^https://[^\\.]+\\.discord\\.com",
+    "^https://fiverr\\.com",
 
     # Read the Docs anti-scraping protections
     "^https://docs\\.pyvec\\.org",
