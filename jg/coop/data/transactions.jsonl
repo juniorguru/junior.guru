@@ -952,3 +952,4 @@
 {"_id": "26814895997", "amount": 6, "category": "donations", "happened_on": "2024-12-04"}
 {"_id": "26817503808", "amount": -2400, "category": "production", "happened_on": "2024-12-05"}
 {"_id": "26820869454", "amount": 9952, "category": "memberships", "happened_on": "2024-12-09"}
+{"_id": "26822446318", "amount": -649, "category": "tax", "happened_on": "2024-12-09"}
