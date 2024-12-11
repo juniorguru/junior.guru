@@ -37,6 +37,7 @@ exclude = [
     "^https://assets\\.memberful\\.com",
     "^https://js\\.stripe\\.com",
     "^https://m\\.stripe\\.network",
+    "^https://sa\\.junior\\.guru",
 
     # Anti-scraping protections
     "^https://www\\.linkedin\\.com",
