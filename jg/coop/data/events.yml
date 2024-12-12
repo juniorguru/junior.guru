@@ -57,10 +57,10 @@
 #    a poslat prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 
 - id: 48
-  title: "Jak používat AI asistenty a odnést si z nich maximum"
+  title: "Jak používat AI asistenty a odnést si z nich maximum"
   date: "2024-12-17"
   description: |
-    (Bude upřesněno)
+    Je super, pokud při programování nebo testování používáš AI, ale používáš jej správně? Obzvlášť u juniorů je zásadní nezačít se špatnými návyky. ChatGPT si vymýšlí neexistující funkce. Copilot ti navrhne na pohled pěkné řešení, které ale nese velká bezpečnostní rizika. Mrkneme na efektivní prompty, nástroje, praktické tipy z reálných projektů. Řekneme si, kde AI opravdu pomáhá a kde ti spíš přidělá práci. Naučíš se ověřit, zda je kód od AI správný.
   avatar_path: avatars-participants/petr-glaser.jpg
   bio_name: Petr Glaser
   bio_title: "Zakladatel Nauč mě IT a Coursition"
