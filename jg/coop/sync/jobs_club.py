@@ -108,25 +108,17 @@ async def sync_jobs(client: ClubClient, channel_id: int):
     logger.info(f"Found {len(messages)} threads since {since_on}")
     for message in messages:
         if message.created_at.date() > since_on:
+            thread: Thread = await client.fetch_channel(message.id)
             comments_count = len(ClubMessage.channel_listing(message.channel_id)) - 1
-            if len(message.ui_urls) > 1:
-                raise ValueError(f"Multiple URLs: {message.url} {message.ui_urls!r}")
-            try:
-                url = message.ui_urls[0]
-            except IndexError:
-                logger.info(f"Creating manually submitted job: {message.url}")
-                DiscordJob.create(
-                    title=message.channel_name,
-                    author=message.author,
-                    posted_on=message.created_at.date(),
-                    description_html=md(message.content),
-                    url=message.url,
-                    upvotes_count=message.upvotes_count,
-                    comments_count=comments_count,
-                )
-            else:
-                thread: Thread = await client.fetch_channel(message.id)
+            if message.author_is_bot:
+                if not message.ui_urls:
+                    raise ValueError(f"No URL: {message.url}")
+                if len(message.ui_urls) > 1:
+                    raise ValueError(
+                        f"Multiple URLs: {message.url} {message.ui_urls!r}"
+                    )
                 try:
+                    url = message.ui_urls[0]
                     job = ListedJob.get_by_url(url)
                 except ListedJob.DoesNotExist:
                     logger.info(f"Archiving: {url}")
@@ -138,6 +130,18 @@ async def sync_jobs(client: ClubClient, channel_id: int):
                     job.comments_count = comments_count
                     job.save()
                     await unarchive_thread(thread)
+            else:
+                logger.info(f"Creating manually submitted job: {message.url}")
+                DiscordJob.create(
+                    title=message.channel_name,
+                    author=message.author,
+                    posted_on=message.created_at.date(),
+                    description_html=md(message.content),
+                    url=message.url,
+                    upvotes_count=message.upvotes_count,
+                    comments_count=comments_count,
+                )
+                await unarchive_thread(thread)
     logger.info(f"Created {DiscordJob.count()} Discord jobs")
 
     jobs = ListedJob.no_discord_listing()
