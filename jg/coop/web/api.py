@@ -51,7 +51,7 @@ def build_events_honza_ics(api_dir, config):
             ics.Event(
                 summary=f"{event.bio_name}: {event.title}",
                 begin=event.start_at - timedelta(minutes=30),
-                duration=timedelta(hours=2),
+                duration=timedelta(hours=3),
                 description=event.url,
             )
         )
