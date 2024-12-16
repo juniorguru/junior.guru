@@ -18,7 +18,7 @@ ACTORS = [
     "honzajavorek/jobs-jobscz",
     # "honzajavorek/jobs-linkedin",
     "honzajavorek/jobs-startupjobs",
-    "honzajavorek/jobs-weworkremotely",
+    # "honzajavorek/jobs-weworkremotely",
 ]
 
 PIPELINES = [
