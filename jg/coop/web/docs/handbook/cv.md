@@ -249,7 +249,7 @@ Když přihodíš, **co se ti tam povedlo a co díky tomu umíš**, jen dobře. 
 
 Můžeš napsat obecně o své chuti ke vzdělávání, ale konkrétní **certifikáty z oborů mimo IT** nikomu nic říkat nebudou. Bohužel, třicet osvědčení ze zubařské praxe při programování nevyužiješ. Zarámuj si je, ale na CV budou zbytečně. I když, popravdě málokdo viděl tolik _[technical debt](https://en.wikipedia.org/wiki/Technical_debt)_ a _[legacy](https://en.wikipedia.org/wiki/Legacy_code)_ jako zubaři.
 
-Firma může usoudit, že právě díky znalosti jiného oboru **můžeš přispět něčím, co ještě nemají**, ať už je to vědecký pohled, lidský přístup, nebo pečlivost účetní. Stalo se i to, že při pohovoru ocenili manažerské dovednosti prokázané při hraní online her (viz [Wired](https://www.wired.com/2006/04/learn/), [CNN](https://money.cnn.com/2014/06/19/technology/world-of-warcraft-resume/index.html)). Přemýšlej, jak se díky tomu můžeš lépe prodat, ale aplikuj to spíš v [souhrnu](#4-souhrn) nebo [sekci se _soft skills_](#9-soft-skills). Seznam pracovních zkušeností zachovej stručný.
+Firma může usoudit, že právě díky znalosti jiného oboru **můžeš přispět něčím, co ještě nemají**, ať už je to vědecký pohled, lidský přístup, nebo pečlivost účetní. Stalo se i to, že při pohovoru ocenili manažerské dovednosti prokázané při hraní online her (viz [Wired](https://www.wired.com/2006/04/learn/), [CNN](https://web.archive.org/web/20241118204152/https://money.cnn.com/2014/06/19/technology/world-of-warcraft-resume/index.html)). Přemýšlej, jak se díky tomu můžeš lépe prodat, ale aplikuj to spíš v [souhrnu](#4-souhrn) nebo [sekci se _soft skills_](#9-soft-skills). Seznam pracovních zkušeností zachovej stručný.
 
 ### 9. Soft skills
 
