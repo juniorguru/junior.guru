@@ -1019,13 +1019,13 @@ dev = ["flake8", "markdown", "twine", "wheel"]
 
 [[package]]
 name = "githubkit"
-version = "0.12.1"
+version = "0.12.2"
 description = "GitHub SDK for Python"
 optional = false
 python-versions = "<4.0,>=3.9"
 files = [
-    {file = "githubkit-0.12.1-py3-none-any.whl", hash = "sha256:bfbd46e37fa9ae83e0014d72e3c27fbb838520039198ccec8a84bd398b81bf4c"},
-    {file = "githubkit-0.12.1.tar.gz", hash = "sha256:c8482a85786a508dcf05852a8c58b116ffacb9c94d28e94a72bcfc279169a171"},
+    {file = "githubkit-0.12.2-py3-none-any.whl", hash = "sha256:be37fb2258311362c8398fd26eb7c0370b475cc413237de791dc9e510062a67d"},
+    {file = "githubkit-0.12.2.tar.gz", hash = "sha256:d83f5f2418b0ead3e2a13d7e2a2a3a58f2a3e54eb6e7703a09c0161aad66ef58"},
 ]
 
 [package.dependencies]
@@ -1520,7 +1520,7 @@ py-cord = {version = "2.6.1", extras = ["speed"]}
 type = "git"
 url = "https://github.com/juniorguru/chick.git"
 reference = "HEAD"
-resolved_reference = "654d53fbefb6be02d90453893ac04d2860e9c12c"
+resolved_reference = "f1749740939511f406347fa885198574db9d6243"
 
 [[package]]
 name = "jg-hen"
@@ -1535,7 +1535,7 @@ develop = false
 blinker = "1.9.0"
 click = "8.1.7"
 cssselect = "1.2.0"
-githubkit = "0.12.1"
+githubkit = "0.12.2"
 httpx = "0.28.1"
 lxml = "5.3.0"
 pillow = "11.0.0"
@@ -1545,7 +1545,7 @@ pydantic = "2.10.3"
 type = "git"
 url = "https://github.com/juniorguru/hen.git"
 reference = "HEAD"
-resolved_reference = "7f27a040cceedeed105f44ddb7ab2134d126681b"
+resolved_reference = "6de7f0f1e35619524a2c3c5413891d8a97fe51c4"
 
 [[package]]
 name = "jinja2"
@@ -3691,4 +3691,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.12"
-content-hash = "505b0913a54dde50830155676429832ead85fe77ffe7a2c4e8f692dfd547ad2f"
+content-hash = "eb6300f2168f569bd656fe115dcdedd7d87e6b3bb82c3606800a3bde6dcb648c"

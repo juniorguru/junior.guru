@@ -60,8 +60,8 @@ stripe = "11.3.0"
 tenacity = "9.0.0"
 pydantic = "2.10.3"
 httpx = "0.28.1"
-githubkit = "0.12.1"
 aiohttp = "3.11.10"
+githubkit = "0.12.2"
 
 [tool.poetry.group.dev.dependencies]
 ghp-import = "2.1.0"
