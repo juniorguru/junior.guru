@@ -474,7 +474,7 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1042158897999392819
 
 - id: 25
-  title: "Technologický dluh – zabiják inovace"
+  title: "Technologický dluh, zabiják inovace"
   date: "2022-11-01"
   description: |
     Během přednášky si na praktických příkladech z praxe (CSS, JavaScript a Python) ukážeme, jak technologický dluh nepříznivě ovlivňuje vývoj z dlouhodobého hlediska a řekneme si, jak jeho dopady eliminovat za použití automatizace.
@@ -532,7 +532,7 @@
   date: "2022-06-07"
   description: |
     Znáte programovací jazyk C#, ale nikdy jste si jej nezkusili? Kde všude ho můžete využit? Počítá se s ním do budoucna? Co to má společného s .NETem? Je to vhodný jazyk pro juniory? Právě odpovědi na tyto otázky se pokusím odpovědět na této přednášce.
-  avatar_path: avatars-participants/vojtech-madr.png
+  avatar_path: avatars-participants/vojtech-madr.jpg
   bio_name: Vojtěch Mádr
   bio_title: CTO v Motionlab, moderátor podcastů ProgramHRování a .NET.CZ
   bio: |
@@ -765,7 +765,7 @@
   recording_url: https://discord.com/channels/769966886598737931/789046675247333397/882327482559246397
 
 - id: 9
-  title: Od recruitingu cez Lambda School až do globálneho startupu
+  title: Od recruitingu cez Lambda School až do globálneho startupu
   date: "2021-08-17"
   description: |
     Je mnoho ciest ako sa dostať k programovaniu. Vo svojej prednáške by som vám rada porozprávala o tej svojej, ktorá viedla od práce recruiterky v Bratislave cez Lambda School až do globálneho technologického startupu Grafana Labs, s posledným investičným kolom v hodnote 50 miliónov dolárov. Veľmi rada s vami zazdieľam to, čo sa mi podarilo a osvedčilo a naopak, čo som urobila zle a čo by som dnes urobila úplne inak.

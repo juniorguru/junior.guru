@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./event.css" />
+  </head>
+  <body class="canvas">
+    <main class="canvas-main">
+      <div class="canvas-image-container">
+        <img class="canvas-image" src="{{ images_dir }}/{{ event.avatar_path }}">
+      </div>
+      <div class="canvas-text">
+        <hgroup class="canvas-title">
+          <h1 class="canvas-heading{% if event.title|length > 100 %} long{% elif event.title|length > 50 %} medium{% endif %}">
+            {{ event.title }}
+          </h1>
+          <h2 class="canvas-subheading">
+            {{ event.bio_name }}
+          </h2>
+        </hgroup>
+        <p class="canvas-details">
+          {{ event.start_at|weekday }} {{ '{:%-d.%-m.%Y}'.format(event.start_at) }} — {{ event.start_at|local_time }}
+        </p>
+        <footer class="canvas-footer">
+          <div class="canvas-button-container">
+            <button class="canvas-button">
+              <span class="canvas-button-heading">{{ "arrow-right-circle-fill"|icon }} Sleduj na</span>
+              <strong class="canvas-button-link">
+              {% if event.public_recording_url %}
+                youtube.com/@juniordotguru
+              {% else %}
+                junior.guru/events
+              {% endif %}
+              </strong>
+            </button>
+          </div>
+          {# <div class="canvas-logo-container">
+            <img class="canvas-logo" src="{{ images_dir }}/icon-chick.svg">
+          </div> #}
+        </footer>
+      </div>
+
+      {# <hr class="canvas-hr" /> #}
+      {# {% if image_path %}
+        <img class="canvas-image" src="{{ images_dir }}/{{ image_path }}" />
+      {% endif %}
+      {% if badge %}
+        <strong class="canvas-badge">{{ badge }}</strong>
+      {% endif %} #}
+    </main>
+    {# <footer class="canvas-footer">
+      <img class="canvas-logo" src="{{ images_dir }}/logo.svg" />
+      <p class="canvas-claim">
+        Jsou věci, se kterými ti kurz programování nepomůže
+      </p>
+    </footer> #}
+  </body>
+</html>

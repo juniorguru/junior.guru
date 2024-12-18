@@ -22,7 +22,7 @@ from jg.coop.lib.images import (
     validate_image,
 )
 from jg.coop.lib.mutations import MutationsNotAllowedError, mutating_discord
-from jg.coop.lib.template_filters import local_time, md, weekday
+from jg.coop.lib.template_filters import icon, local_time, md, weekday
 from jg.coop.lib.yaml import Date
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
@@ -39,14 +39,6 @@ IMAGES_DIR = Path("jg/coop/images")
 POSTERS_DIR = IMAGES_DIR / "posters-events"
 
 AVATARS_DIR = IMAGES_DIR / "avatars-participants"
-
-YOUTUBE_THUMBNAIL_WIDTH = 1280
-
-YOUTUBE_THUMBNAIL_HEIGHT = 720
-
-DISCORD_THUMBNAIL_WIDTH = 1280
-
-DISCORD_THUMBNAIL_HEIGHT = 512
 
 ANNOUNCEMENT_EMOJIS = [
     "👀",
@@ -96,7 +88,15 @@ schema = Seq(
     type=date.fromisoformat,
 )
 @click.option("--clear-posters/--keep-posters", default=False)
-def main(announcements_channel_id: int, today: date, clear_posters: bool):
+@click.option("--width", default=1200, type=int)
+@click.option("--height", default=630, type=int)
+def main(
+    announcements_channel_id: int,
+    today: date,
+    clear_posters: bool,
+    width: int,
+    height: int,
+):
     posters = PostersCache(POSTERS_DIR)
     posters.init(clear=clear_posters)
 
@@ -141,32 +141,21 @@ def main(announcements_channel_id: int, today: date, clear_posters: bool):
 
             logger.info(f"Rendering posters for '{name}'")
             tpl_context = dict(event=event)
-            tpl_filters = dict(md=md, local_time=local_time, weekday=weekday)
+            tpl_filters = dict(local_time=local_time, weekday=weekday, icon=icon)
             prefix = event.start_at.date().isoformat().replace("-", "")
             image_path = render_image_file(
-                DISCORD_THUMBNAIL_WIDTH,
-                DISCORD_THUMBNAIL_HEIGHT,
+                width,
+                height,
                 "event.jinja",
                 tpl_context,
                 POSTERS_DIR,
                 filters=tpl_filters,
                 prefix=prefix,
-                suffix="dc",
             )
-            event.poster_dc_path = image_path.relative_to(IMAGES_DIR)
-            posters.record(IMAGES_DIR / event.poster_dc_path)
-            image_path = render_image_file(
-                YOUTUBE_THUMBNAIL_WIDTH,
-                YOUTUBE_THUMBNAIL_HEIGHT,
-                "event.jinja",
-                tpl_context,
-                POSTERS_DIR,
-                filters=tpl_filters,
-                prefix=prefix,
-                suffix="yt",
-            )
-            event.poster_yt_path = image_path.relative_to(IMAGES_DIR)
-            posters.record(IMAGES_DIR / event.poster_yt_path)
+            image_path_relative = image_path.relative_to(IMAGES_DIR)
+            event.poster_dc_path = image_path_relative
+            event.poster_yt_path = image_path_relative
+            posters.record(IMAGES_DIR / image_path_relative)
             logger.info(f"Saving '{name}'")
             event.save()
     posters.cleanup()
@@ -346,4 +335,7 @@ def load_record(record):
     start_at = start_at_utc.replace(tzinfo=None)
     record["start_at"] = start_at
     record["end_at"] = start_at + timedelta(hours=record.pop("duration"))
+    record.setdefault(
+        "avatar_path", str((AVATARS_DIR / "kure.png").relative_to(IMAGES_DIR))
+    )
     return record
