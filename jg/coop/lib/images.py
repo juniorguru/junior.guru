@@ -64,7 +64,6 @@ def render_image_file(
     output_dir,
     filters=None,
     prefix=None,
-    suffix=None,
 ):
     output_dir = Path(output_dir)
     output_dir.mkdir(exist_ok=True, parents=True)
@@ -72,7 +71,7 @@ def render_image_file(
     cache_key = (width, height, template_name, context)
     hash = sha256(pickle.dumps(cache_key)).hexdigest()
 
-    image_name = "-".join(filter(None, [prefix, hash, suffix])) + ".png"
+    image_name = "-".join(filter(None, [prefix, hash])) + ".png"
     image_path = output_dir / image_name
 
     if not image_path.exists():
@@ -202,11 +201,12 @@ class PostersCache:
         self.generated_paths = set()
 
     def init(self, clear: bool = False):
+        self.existing_paths = set(self.posters_dir.glob("*.png"))
         if clear:
             logger.warning("Removing all existing posters")
             for path in self.existing_paths:
                 path.unlink()
-        self.existing_paths.update(self.posters_dir.glob("*.png"))
+            self.existing_paths = set(self.posters_dir.glob("*.png"))
 
     def record(self, path: Path):
         self.generated_paths.add(path)
