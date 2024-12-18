@@ -1,8 +1,8 @@
-from glob import glob
 import itertools
 import math
 import re
 import subprocess
+from glob import glob
 from io import BytesIO
 from pathlib import Path
 from typing import Iterable
