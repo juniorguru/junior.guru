@@ -13,11 +13,12 @@
     "rough-notation": "0.5.1"
   },
   "devDependencies": {
+    "@funboxteam/optimizt": "5.0.2",
     "bootstrap": "5.3.3",
     "esbuild": "0.24.0",
     "esbuild-sass-plugin": "3.3.1",
-    "sass": "1.77.6",
     "prettier": "3.4.2",
+    "sass": "1.77.6",
     "stylelint": "16.12.0",
     "stylelint-config-twbs-bootstrap": "15.1.0",
     "stylelint-order": "6.0.4"

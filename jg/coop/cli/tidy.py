@@ -1,3 +1,4 @@
+from glob import glob
 import itertools
 import math
 import re
@@ -115,15 +116,12 @@ def format_jinja():
 
 
 @main.command()
-@click.option("--size", "size_px", default=500, type=int)
-def optimize_avatars(size_px):
+@click.option("--size", "size_px", default=1000, type=int)
+@click.option("--glob", "glob_pattern", default="jg/coop/images/avatars-*/*.jpg")
+def optimize_avatars(size_px: int, glob_pattern: str):
     logger.info("Optimizing avatars")
-    images_dir = Path("jg/coop/images")
-    paths = itertools.chain.from_iterable(
-        avatars_dir.rglob("*.jpg") for avatars_dir in images_dir.glob("avatars-*")
-    )
-    for path in paths:
-        logger.debug(f"{path.relative_to(images_dir)}")
+    for path in map(Path, glob(glob_pattern)):
+        logger.debug(f"{path}")
         size_before = kilobytes(path.stat().st_size)
         buffer = BytesIO()
         with Image.open(path) as image:
@@ -138,9 +136,11 @@ def optimize_avatars(size_px):
         size_after = kilobytes(len(image_bytes))
         if size_after < size_before:
             path.write_bytes(image_bytes)
-            logger.info(
-                f"{path.relative_to(images_dir)}: {size_before}kB → {size_after}kB"
-            )
+            logger.info(f"{path}: {size_before}kB → {size_after}kB")
+    try:
+        subprocess.run(["npx", "@funboxteam/optimizt", glob_pattern], check=True)
+    except subprocess.CalledProcessError:
+        raise click.Abort()
 
 
 @main.command()
