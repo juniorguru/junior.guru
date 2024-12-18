@@ -12,12 +12,7 @@ from strictyaml import Int, Map, Optional, Seq, Str, load
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
 from jg.coop.lib.discord_club import ClubChannelID, ClubClient, ClubMemberID
-from jg.coop.lib.images import (
-    PostersCache,
-    is_image,
-    render_image_file,
-    validate_image,
-)
+from jg.coop.lib.images import PostersCache, is_image, render_image_file, validate_image
 from jg.coop.lib.mutations import mutating_discord
 from jg.coop.lib.template_filters import icon
 from jg.coop.lib.yaml import Date
