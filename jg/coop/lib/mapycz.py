@@ -213,7 +213,11 @@ def get_location(location_raw: str, item: ResponseItem) -> Location:
         for admin_unit in item.regionalStructure
         if admin_unit.type == ResponseRegionType.region
     ]
-    region_name = get_region_name(country, regions)
+    try:
+        region_name = get_region_name(country, regions)
+    except:
+        logger.error(f"Unable to get region name for {country!r}, {regions!r}")
+        raise
 
     return Location(
         raw=location_raw,
