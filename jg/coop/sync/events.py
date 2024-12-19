@@ -22,7 +22,7 @@ from jg.coop.lib.images import (
     validate_image,
 )
 from jg.coop.lib.mutations import MutationsNotAllowedError, mutating_discord
-from jg.coop.lib.template_filters import icon, local_time, md, weekday
+from jg.coop.lib.template_filters import icon, local_time, weekday
 from jg.coop.lib.yaml import Date
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
