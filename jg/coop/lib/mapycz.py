@@ -241,8 +241,7 @@ def get_region_name(country: ResponseCountry, regions: list[ResponseRegion]) -> 
             # avoiding e.g. 'oblast RŠÚJ Západné Slovensko'
             region_name_official = regions[-2].name
         except IndexError:
-            # Bratislava
-            region_name_official = regions[-1].name
+            return "Bratislava"
         return REGIONS_MAPPING_SK[region_name_official]
 
     return country.name
