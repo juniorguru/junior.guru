@@ -68,7 +68,7 @@ def test_planned_listing_time(test_db):
     assert list(Event.planned_listing(now=datetime(2021, 5, 2, 18))) == [event2]
 
 
-def test_club_listing(test_db):
+def test_promo_listing(test_db):
     create_event(1, start_at=datetime(2021, 4, 15))
     event2 = create_event(2, start_at=datetime(2021, 5, 1), avatar_path="alice.jpg")
     create_event(3, start_at=datetime(2021, 5, 3))

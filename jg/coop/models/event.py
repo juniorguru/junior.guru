@@ -24,7 +24,7 @@ class Event(BaseModel):
     description = TextField()
     short_description = TextField(null=True)
     bio = TextField()
-    avatar_path = CharField()
+    avatar_path = CharField(default="avatars-participants/kure.png")
     bio_name = TextField()
     bio_title = TextField(null=True)
     bio_links = JSONField(default=list)

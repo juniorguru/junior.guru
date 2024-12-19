@@ -335,7 +335,4 @@ def load_record(record):
     start_at = start_at_utc.replace(tzinfo=None)
     record["start_at"] = start_at
     record["end_at"] = start_at + timedelta(hours=record.pop("duration"))
-    record.setdefault(
-        "avatar_path", str((AVATARS_DIR / "kure.png").relative_to(IMAGES_DIR))
-    )
     return record
