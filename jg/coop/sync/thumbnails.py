@@ -177,7 +177,7 @@ def process_thumbnail(args: tuple[int, int, int, str, dict, Path]) -> tuple[int,
 
 def get_thumbnail_context(page: Page) -> dict:
     default_button_icon = {
-        "Klub": "chat-heart",
+        "Klub": "chat",
         "Příručka": "journals",
         "Kurzy": "mortarboard",
         "Práce": "clipboard2-check",
