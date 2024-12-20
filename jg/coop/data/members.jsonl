@@ -58,8 +58,6 @@
 {"month": "2024-11", "name": "subscriptions_quits", "count": 14}
 {"month": "2024-11", "name": "subscriptions_signups", "count": 5}
 {"month": "2024-11", "name": "subscriptions_trials", "count": 30}
-{"month": "2024-12", "name": "members", "count": 381}
-{"month": "2024-12", "name": "members_f", "count": 126}
 {"month": "2024-12", "name": "members", "count": 380}
 {"month": "2024-12", "name": "members_f", "count": 125}
 {"month": "2024-12", "name": "subscription_types_finaid", "count": 15}
