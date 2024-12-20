@@ -23,7 +23,6 @@ logger = loggers.from_path(__file__)
         "course-providers",
         "events",
         "podcast",
-        "jobs-listing",
     ]
 )
 @db.connection_context()
@@ -33,7 +32,7 @@ def main():
     Page.create_table()
 
     logger.info("Reading Markdown source files")
-    config = load_config(config_file="jg/coop/web/mkdocs.yml")
+    config = load_config(config_file="jg/coop/web/mkdocs.yml", hooks=[])
     config = config.plugins.on_config(config)
     config.plugins.on_pre_build(config=config)
     files = get_files(config)
