@@ -12,14 +12,20 @@ from jg.coop.lib import loggers
 from jg.coop.models.base import db
 from jg.coop.models.page import Page
 from jg.coop.models.stage import Stage
-from jg.coop.web.templates import TEMPLATES
 
 
 logger = loggers.from_path(__file__)
 
 
-# See 'Generating pages from templates' on why the dependencies are needed
-@cli.sync_command(dependencies=["stages", "course-providers", "events", "podcast"])
+@cli.sync_command(
+    dependencies=[  # Generating pages from templates, that's why the dependencies are needed
+        "stages",
+        "course-providers",
+        "events",
+        "podcast",
+        "jobs-listing",
+    ]
+)
 @db.connection_context()
 def main():
     logger.info("Setting up db table")
