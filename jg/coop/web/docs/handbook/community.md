@@ -1,5 +1,5 @@
 ---
-title: Komunity
+title: Jak se zapojit do programátorských komunit
 emoji: 🎪
 stages: [trying, preparing, applying]
 description: Programátorské komunity tě dokážou posunout jako nic jiného. Kde je najít? Co od toho čekat?

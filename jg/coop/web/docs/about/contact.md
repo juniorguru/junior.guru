@@ -1,5 +1,5 @@
 ---
-title: O provozovateli junior.guru
+title: O provozovateli junior.guru
 template: main_about.html
 ---
 

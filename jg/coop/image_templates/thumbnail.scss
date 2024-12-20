@@ -8,72 +8,128 @@ html {
 .thumbnail {
   width: 100vw;
   height: 100vh;
+  background: $jg-yellow;
 }
 
 .thumbnail-main {
   display: flex;
-  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+}
+
+.thumbnail-image-container {
+  display: flex;
+  flex: 0 0 auto;
   align-items: center;
   justify-content: center;
-  height: 80vh;
-  padding: calc(2vw + 2vh);
-  border-top: $jg-blue 3vh solid;
-}
-
-.thumbnail-title {
-  margin: 0;
-  font-size: 10vh;
-  font-weight: $font-weight-bold;
-  text-align: center;
-}
-
-.thumbnail-title.medium {
-  font-size: 7vh;
-}
-
-.thumbnail-title.long {
-  font-size: 6vh;
-}
-
-.thumbnail-hr {
-  width: 50vw;
-  margin: 3vh 0 5vh;
-  border-width: 1vh;
-  opacity: 1;
+  width: 80vh;
+  overflow: hidden;
+  clip-path: ellipse(55% 110% at 45% center);
 }
 
 .thumbnail-image {
-  @extend .rounded-circle;
   display: block;
-  width: 30vh;
-  height: 30vh;
+  width: auto;
+  height: 100vh;
+  aspect-ratio: 1 / 1;
+}
+
+.thumbnail-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2.5rem;
+}
+
+.thumbnail-heading,
+.thumbnail-subheading {
   margin: 0;
 }
 
-.thumbnail-badge {
-  @extend .badge;
-  @extend .bg-primary;
-  margin-top: 10vh;
-  font-size: 5vh;
+.thumbnail-title {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  margin-bottom: 1.5rem;
+}
+
+.thumbnail-heading {
+  font-size: 3.2rem;
+  font-weight: 900;
+}
+
+.thumbnail-heading.medium {
+  font-size: 2.9rem;
+}
+
+.thumbnail-heading.long {
+  font-size: 2.6rem;
+}
+
+.thumbnail-heading.looong {
+  font-size: 2.3rem;
+}
+
+.thumbnail-subheading {
+  @extend .font-monospace;
+  @extend .text-uppercase;
+  order: -1;
+}
+
+.thumbnail-subheading,
+.thumbnail-date {
+  font-size: 1.8rem;
 }
 
 .thumbnail-footer {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
-  width: 100vw;
-  height: 20vh;
-  padding: 0 calc(2vw + 2vh);
-  background: $jg-yellow;
+  width: 100%;
+  margin-top: 1rem;
 }
 
-.thumbnail-logo {
-  display: block;
-  width: auto;
-  height: 10vh;
+.thumbnail-button-container {
+  display: flex;
+  gap: 2rem;
 }
 
-.thumbnail-claim {
-  margin: 0;
-  font-size: 2.5vw;
+.thumbnail-button {
+  @extend .btn;
+  @extend .btn-lg;
+  @extend .btn-primary;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.8rem;
+  text-align: left;
+}
+
+.thumbnail-button-heading {
+  font-size: 1.3rem;
+}
+
+.thumbnail-button-link {
+  align-content: center;
+}
+
+.thumbnail-button-link i {
+  margin-right: .5rem;
+}
+
+.thumbnail-platforms {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.thumbnail-platforms-logo {
+  @extend .brand-button;
+  align-content: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 100%;
 }

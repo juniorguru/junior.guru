@@ -1,29 +1,66 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="./thumbnail.css" />
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./thumbnail.css">
   </head>
   <body class="thumbnail">
     <main class="thumbnail-main">
-      <h1
-        class="thumbnail-title{% if title|length > 100 %}long{% elif title|length > 50 %}medium{% endif %}"
-      >
-        {{ title }}
-      </h1>
-      <hr class="thumbnail-hr" />
-      {% if image_path %}
-        <img class="thumbnail-image" src="{{ images_dir }}/{{ image_path }}" />
-      {% endif %}
-      {% if badge %}
-        <strong class="thumbnail-badge">{{ badge }}</strong>
-      {% endif %}
+      <div class="thumbnail-image-container">
+        <img class="thumbnail-image" src="{{ images_dir }}/{{ image_path }}">
+      </div>
+      <div class="thumbnail-text">
+        <hgroup class="thumbnail-title">
+          <h1 class="thumbnail-heading
+            {%- if title|length > 150 %}
+              looong
+            {%- elif title|length > 100 %}
+              long
+            {%- elif title|length > 50 %}
+              medium
+            {%- endif %}">
+            {{ title }}
+          </h1>
+          {% if subheading %}
+            <h2 class="thumbnail-subheading">
+              {{ subheading }}
+            </h2>
+          {% endif %}
+        </hgroup>
+        {% if date %}
+          <aside class="thumbnail-date">
+            {{ date|weekday }} {{ '{:%-d.%-m.%Y}'.format(date) }} — {{ date|local_time }}
+          </aside>
+        {% endif %}
+        <footer class="thumbnail-footer">
+          <div class="thumbnail-button-container">
+            {% if button_link %}
+              <button class="thumbnail-button">
+                {% if button_heading %}
+                  <span class="thumbnail-button-heading">
+                    {{ "arrow-right-circle-fill"|icon }} {{ button_heading }}
+                  </span>
+                {% endif %}
+                <strong class="thumbnail-button-link">
+                  {% if button_icon %}
+                    {{ button_icon|icon }}
+                  {% endif %}
+                  {{ button_link }}
+                </strong>
+              </button>
+            {% endif %}
+            {% if platforms %}
+              <div class="thumbnail-platforms">
+                {% for platform in platforms %}
+                  <button class="thumbnail-platforms-logo {{ platform }}">
+                    {{ platform|icon }}
+                  </button>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </footer>
+      </div>
     </main>
-    <footer class="thumbnail-footer">
-      <img class="thumbnail-logo" src="{{ images_dir }}/logo.svg" />
-      <p class="thumbnail-claim">
-        Jsou věci, se kterými ti kurz programování nepomůže
-      </p>
-    </footer>
   </body>
 </html>

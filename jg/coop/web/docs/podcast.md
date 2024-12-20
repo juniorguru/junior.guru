@@ -1,5 +1,5 @@
 ---
-title: Podcast o programování a kariéře v IT
+title: Podcast o programování a kariéře v IT
 description: Jak začít s programováním? Jak najít práci v IT? Přinášíme odpovědi, inspiraci, motivaci.
 template: main_podcast.html
 ---
@@ -13,10 +13,10 @@ Podcast pro juniory v IT! Jak začít s programováním? Jak najít práci v 
 {% endcall %}
 
 <div class="standout">
-  <a class="podcast-button youtube" href="https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA">{{ 'youtube'|icon }} YouTube</a>
-  <a class="podcast-button spotify" href="https://open.spotify.com/show/12w93IKRzfCsgo7XrGEVw4">{{ 'spotify'|icon }} Spotify</a>
-  <a class="podcast-button apple" href="https://podcasts.apple.com/cz/podcast/junior-guru-podcast/id1603653549">{{ 'apple'|icon }} Apple</a>
-  <a class="podcast-button rss" href="https://junior.guru/api/podcast.xml">{{ 'rss-fill'|icon }} RSS</a>
+  <a class="brand-button youtube" href="https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA">{{ 'youtube'|icon }} YouTube</a>
+  <a class="brand-button spotify" href="https://open.spotify.com/show/12w93IKRzfCsgo7XrGEVw4">{{ 'spotify'|icon }} Spotify</a>
+  <a class="brand-button apple" href="https://podcasts.apple.com/cz/podcast/junior-guru-podcast/id1603653549">{{ 'apple'|icon }} Apple</a>
+  <a class="brand-button rss" href="https://junior.guru/api/podcast.xml">{{ 'rss-fill'|icon }} RSS</a>
 </div>
 
 <h2 class="visually-hidden">Autoři</h2>

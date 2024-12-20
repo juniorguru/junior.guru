@@ -4,6 +4,8 @@ template: main_legacy.html
 topic_name: python
 topic_link_text: Python
 description: Učíš se Python? Hledáš někoho zkušenějšího, kdo ti poradí, když se zasekneš? Kdo ti ukáže správné postupy a nasměruje tě na kvalitní návody nebo kurzy?
+thumbnail_button_link: junior.guru/club
+thumbnail_button_icon: chat-heart
 ---
 {% from 'macros_topic.html' import intro, mentions with context %}
 

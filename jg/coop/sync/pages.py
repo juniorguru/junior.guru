@@ -28,10 +28,16 @@ def main():
 
     logger.info("Reading Markdown source files")
     config = load_config(config_file="jg/coop/web/mkdocs.yml")
+    config = config.plugins.on_config(config)
+    config.plugins.on_pre_build(config=config)
     files = get_files(config)
+    files = config.plugins.on_files(files, config=config)
     nav = get_navigation(files, config)
+    nav = config.plugins.on_nav(nav, config=config, files=files)
+
     for file in files.documentation_pages():
         logger.debug(f"Reading: {file.src_uri}")
+
         # Beware https://github.com/mkdocs/mkdocs/releases/tag/1.6.0,
         # it could happen that file.abs_src_path won't exist
         with open(file.abs_src_path, encoding="utf-8-sig", errors="strict") as f:
@@ -39,8 +45,14 @@ def main():
         meta_data = parse_meta(source)
         notes = parse_notes(source)
 
+        if meta_data.get("template") == "redirect.html":
+            logger.debug(f"Skipping: {file.src_uri} (redirect)")
+            continue
+
         page = Page.from_meta(file.src_uri, file.dest_uri, meta_data)
-        page.nav_name = get_nav_name(file.src_uri, nav)
+        mainnav_name, nav_name = get_nav_names(page.src_uri, nav)
+        page.mainnav_name = mainnav_name
+        page.nav_name = nav_name
         page.nav_sort_key = get_nav_sort_key(file.src_uri, nav)
         page.size = len(source)
         page.notes_size = len(notes) if notes else 0
@@ -53,20 +65,6 @@ def main():
 
         page.save()
         logger.debug(f"Saved: {pformat(model_to_dict(page))}")
-
-    logger.info("Generating pages from templates")
-    for _, generate_pages in TEMPLATES.items():
-        for page in generate_pages():
-            logger.debug(f"Reading: {page['path']}")
-            page = Page.from_meta(
-                page["path"],
-                page["path"].replace(".md", "/index.html"),
-                page["meta"],
-            )
-            page.nav_name = get_nav_name(file.src_uri, nav)
-            page.nav_sort_key = get_nav_sort_key(file.src_uri, nav)
-            page.save()
-            logger.debug(f"Saved: {pformat(model_to_dict(page))}")
 
     logger.info(f"Created {Page.select().count()} pages")
 
@@ -85,12 +83,9 @@ def parse_notes(source: str) -> str:
     return parts[1].strip().removesuffix("#} -->").strip() or None
 
 
-def get_nav_name(src_uri: str, nav: Navigation):
-    try:
-        item = [item for item in nav.pages if item.file.src_uri == src_uri][0]
-    except IndexError:
-        return None
-    return item.title
+def get_nav_names(src_uri: str, nav: Navigation) -> tuple[str, str]:
+    nav_item = [item for item in nav.pages if item.file.src_uri == src_uri][0]
+    return (list(nav_item.ancestors)[-1].title, nav_item.title)
 
 
 def get_nav_sort_key(src_uri: str, nav: Navigation) -> int | None:

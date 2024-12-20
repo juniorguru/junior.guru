@@ -6,8 +6,10 @@ interviewee_avatar_path: avatars-participants/nina-brichackova.jpg
 author: Adéla Pavlun
 author_avatar_path: avatars-participants/adela-pavlun.jpg
 author_url: https://www.linkedin.com/in/adelapavlun/
-thumbnail_title: Rozhovor s Ninou Břicháčkovou
+thumbnail_subheading: Nina Břicháčková
 thumbnail_image_path: avatars-participants/nina-brichackova.jpg
+thumbnail_button_heading: Čti na
+thumbnail_button_link: junior.guru/stories
 template: main_stories.html
 ---
 

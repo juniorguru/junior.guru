@@ -41,6 +41,7 @@ def test_list_pages(test_db: SqliteDatabase):
         src_uri="handbook/remote.md",
         dest_uri="handbook/remote/index.html",
         title="Foo",
+        mainnav_name="Category",
         nav_name="Foo",
         stages=["foo"],
     )
@@ -48,6 +49,7 @@ def test_list_pages(test_db: SqliteDatabase):
         src_uri="handbook/university.md",
         dest_uri="handbook/university/index.html",
         title="Bar",
+        mainnav_name="Category",
         nav_name="Bar",
         stages=["bar", "learning"],
     )
@@ -55,6 +57,7 @@ def test_list_pages(test_db: SqliteDatabase):
         src_uri="handbook/women.md",
         dest_uri="handbook/women/index.html",
         title="Moo",
+        mainnav_name="Category",
         nav_name="Moo",
         stages=["learning"],
     )
@@ -68,6 +71,7 @@ def test_list_pages_skips_noindex(test_db: SqliteDatabase):
         src_uri="handbook/university.md",
         dest_uri="handbook/university/index.html",
         title="Foo",
+        mainnav_name="Category",
         nav_name="Foo",
         stages=["bar", "learning"],
         noindex=True,
@@ -76,6 +80,7 @@ def test_list_pages_skips_noindex(test_db: SqliteDatabase):
         src_uri="handbook/women.md",
         dest_uri="handbook/women/index.html",
         title="Moo",
+        mainnav_name="Category",
         nav_name="Moo",
         stages=["learning"],
         noindex=False,
@@ -90,6 +95,7 @@ def test_list_pages_skips_without_nav_name(test_db: SqliteDatabase):
         src_uri="handbook/university.md",
         dest_uri="handbook/university/index.html",
         title="Foo",
+        mainnav_name="Category",
         nav_name=None,
         stages=["bar", "learning"],
     )
@@ -97,6 +103,7 @@ def test_list_pages_skips_without_nav_name(test_db: SqliteDatabase):
         src_uri="handbook/women.md",
         dest_uri="handbook/women/index.html",
         title="Moo",
+        mainnav_name="Category",
         nav_name="Moo",
         stages=["learning"],
     )

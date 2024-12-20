@@ -227,11 +227,6 @@ def handbook_candidate():
     return REFRESH_PAGE
 
 
-@app.route("/open/")
-def open():
-    return REFRESH_PAGE
-
-
 @app.route("/press/")
 def press():
     return redirect(url_for("club", _external=True) + "#honza")
@@ -250,8 +245,3 @@ def press_release_women():
 @app.route("/press/crisis/")
 def press_release_crisis():
     return redirect(url_for("club", _external=True) + "#honza")
-
-
-@app.route("/membership/")
-def membership():
-    return REFRESH_PAGE

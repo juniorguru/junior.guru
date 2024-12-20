@@ -6,8 +6,10 @@ interviewee_avatar_path: avatars-participants/lucie-cicvarkova.jpg
 author: Adéla Pavlun
 author_avatar_path: avatars-participants/adela-pavlun.jpg
 author_url: https://www.linkedin.com/in/adelapavlun/
-thumbnail_title: Rozhovor s Lucií Cicvárkovou
+thumbnail_subheading: Lucie Cicvárková
 thumbnail_image_path: avatars-participants/lucie-cicvarkova.jpg
+thumbnail_button_heading: Čti na
+thumbnail_button_link: junior.guru/stories
 template: main_stories.html
 ---
 

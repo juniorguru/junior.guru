@@ -57,14 +57,14 @@ def validate_image(path, format=None, max_width=None, max_height=None):
 
 
 def render_image_file(
-    width,
-    height,
-    template_name,
-    context,
-    output_dir,
-    filters=None,
-    prefix=None,
-):
+    width: int,
+    height: int,
+    template_name: str,
+    context: dict[str, Any],
+    output_dir: Path | str,
+    filters: dict[str, Callable] | None = None,
+    prefix: str | None = None,
+) -> Path:
     output_dir = Path(output_dir)
     output_dir.mkdir(exist_ok=True, parents=True)
 

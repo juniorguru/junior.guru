@@ -15,6 +15,7 @@ class Page(BaseModel):
     date = DateField(null=True)
     thumbnail_path = CharField(null=True)
     thumbnail_title = CharField(null=True)
+    mainnav_name = CharField()
     nav_name = CharField(null=True)
     nav_sort_key = IntegerField(null=True)
     stages = JSONField(null=True, index=True)

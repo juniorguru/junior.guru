@@ -1,5 +1,6 @@
 import math
 from datetime import date, datetime, time
+from typing import Iterable, Self
 from zoneinfo import ZoneInfo
 
 from peewee import BooleanField, CharField, DateField, IntegerField
@@ -78,7 +79,7 @@ class PodcastEpisode(BaseModel):
         return cls.listing(today=today).get()
 
     @classmethod
-    def listing(cls, today=None):
+    def listing(cls, today=None) -> Iterable[Self]:
         today = today or date.today()
         return (
             cls.select().where(cls.publish_on <= today).order_by(cls.publish_on.desc())

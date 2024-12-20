@@ -1,9 +1,9 @@
-.podcast-button {
+.brand-button {
   @extend .btn;
   margin-bottom: map-get($spacers, 1);
 }
 
-.podcast-button.spotify {
+.brand-button.spotify {
   @include button-variant(
     #1db954,
     #1db954,
@@ -14,7 +14,7 @@
   );
 }
 
-.podcast-button.apple {
+.brand-button.apple {
   @include button-variant(
     #872ec4,
     #872ec4,
@@ -25,10 +25,10 @@
   );
 }
 
-.podcast-button.youtube {
+.brand-button.youtube {
   @include button-variant(
-    #ff0000,
-    #ff0000,
+    #f00,
+    #f00,
     $jg-white,
     $hover-color: $jg-white,
     $active-color: $jg-white,
@@ -36,10 +36,21 @@
   );
 }
 
-.podcast-button.rss {
+.brand-button.rss {
   @include button-variant(
     #f26522,
     #f26522,
+    $jg-white,
+    $hover-color: $jg-white,
+    $active-color: $jg-white,
+    $disabled-color: $jg-white
+  );
+}
+
+.brand-button.discord {
+  @include button-variant(
+    #5865f2,
+    #5865f2,
     $jg-white,
     $hover-color: $jg-white,
     $active-color: $jg-white,

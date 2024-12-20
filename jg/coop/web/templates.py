@@ -79,7 +79,21 @@ def generate_event_pages() -> Generator[dict[str, Any], None, None]:
                     "kterou junior.guru pořádá na klubovém Discordu."
                 ),
                 event_id=event.id,
+                thumbnail_date=event.start_at.isoformat(),
+                thumbnail_title=event.title,
+                thumbnail_subheading=event.bio_name,
                 thumbnail_image_path=event.avatar_path,
+                thumbnail_button_heading="Sleduj na",
+                thumbnail_button_link=(
+                    "youtube.com/@juniordotguru"
+                    if event.public_recording_url
+                    else "junior.guru/events"
+                ),
+                thumbnail_platforms=(
+                    ["youtube"]
+                    if event.public_recording_url
+                    else ["discord", "youtube"]
+                ),
                 template="main_subnav.html",
             ),
             template="event.md",
@@ -95,7 +109,12 @@ def generate_podcast_episode_pages() -> Generator[dict[str, Any], None, None]:
                 title=f"Podcast – {podcast_episode.format_title()}",
                 description=f"Poslechni si {podcast_episode.number}. díl Junior Guru podcastu.",
                 podcast_episode_number=podcast_episode.number,
+                thumbnail_title=podcast_episode.format_title(affiliation=False),
+                thumbnail_subheading=f"Epizoda {podcast_episode.number}",
                 thumbnail_image_path=podcast_episode.image_path,
+                thumbnail_button_heading="Poslouchej na",
+                thumbnail_button_link="junior.guru/podcast",
+                thumbnail_platforms=["youtube", "spotify", "apple"],
                 template="main_subnav.html",
             ),
             template="podcast_episode.jinja",

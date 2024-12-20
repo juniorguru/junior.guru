@@ -1,3 +1,4 @@
+from datetime import datetime
 from multiprocessing import Pool
 from pathlib import Path
 
@@ -6,6 +7,7 @@ import click
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
 from jg.coop.lib.images import render_image_file
+from jg.coop.lib.template_filters import icon, local_time, weekday
 from jg.coop.models.base import db
 from jg.coop.models.job import ListedJob
 from jg.coop.models.page import LegacyThumbnail, Page
@@ -45,11 +47,7 @@ def main(images_path, output_dir, width, height, clear):
         logger.info(f"Generating {len(pages)} thumbnails")
         args = []
         for i, page in enumerate(pages):
-            context = dict(
-                title=page.meta.get("thumbnail_title", page.meta["title"]),
-                badge=page.meta.get("thumbnail_badge"),
-                image_path=page.meta.get("thumbnail_image_path"),
-            )
+            context = get_thumbnail_context(page)
             args.append((i, width, height, "thumbnail.jinja", context, output_path))
         for i, image_path in pool.imap_unordered(process_thumbnail, args):
             page = pages[i]
@@ -57,9 +55,8 @@ def main(images_path, output_dir, width, height, clear):
             page.save()
             logger.info(f"Page {page.src_uri}: {image_path}")
 
-        logger.info(
-            "Dealing with legacy pages"
-        )  # all below can be deleted once Flask is gone
+        # all below can be deleted once Flask is gone
+        logger.info("Dealing with legacy pages")
         LegacyThumbnail.drop_table()
         LegacyThumbnail.create_table()
 
@@ -68,7 +65,6 @@ def main(images_path, output_dir, width, height, clear):
             "/club/": "club.md",
             "/events/": "events.md",
             "/courses/": "courses.md",
-            "/open/": "open.md",
             "/podcast/": "podcast.md",
             "/handbook/": "handbook/index.md",
             "/handbook/candidate/": "handbook/candidate.md",
@@ -103,7 +99,6 @@ def main(images_path, output_dir, width, height, clear):
                 output_path,
             )
             for url, title in [
-                ("/membership/", "Rozcestník pro členy klubu"),
                 ("/jobs/remote/", "Práce v IT pro začátečníky — na dálku"),
                 ("/jobs/region/praha/", "Práce v IT pro začátečníky — Praha"),
                 ("/jobs/region/brno/", "Práce v IT pro začátečníky — Brno"),
@@ -172,7 +167,42 @@ def main(images_path, output_dir, width, height, clear):
             raise click.Abort()
 
 
-def process_thumbnail(args):
-    id, args = args[0], args[1:]
-    image_path = render_image_file(*args)
-    return id, image_path
+def process_thumbnail(args: tuple[int, int, int, str, dict, Path]) -> tuple[int, Path]:
+    i, args = args[0], args[1:]
+    image_path = render_image_file(
+        *args, filters=dict(local_time=local_time, weekday=weekday, icon=icon)
+    )
+    return i, image_path
+
+
+def get_thumbnail_context(page: Page) -> dict:
+    default_button_icon = {
+        "Klub": "chat-heart",
+        "Příručka": "journals",
+        "Kurzy": "mortarboard",
+        "Práce": "clipboard2-check",
+        "Inspirace": "rocket-takeoff",
+        "Info": "info-square",
+    }.get(page.mainnav_name, "arrow-right-circle")
+    return dict(
+        title=page.meta.get("thumbnail_title", page.meta["title"]),
+        image_path=page.meta.get("thumbnail_image_path", "chick-avatar.png"),
+        date=(
+            datetime.fromisoformat(page.meta["thumbnail_date"])
+            if page.meta.get("thumbnail_date")
+            else None
+        ),
+        subheading=page.meta.get(
+            "thumbnail_subheading", f"junior.guru — {page.mainnav_name}"
+        ),
+        button_heading=page.meta.get("thumbnail_button_heading"),
+        button_icon=(
+            None
+            if page.meta.get("thumbnail_button_heading")
+            else (page.meta.get("thumbnail_button_icon", default_button_icon))
+        ),
+        button_link=page.meta.get(
+            "thumbnail_button_link", f"junior.guru/{page.dest_uri.split("/")[0]}"
+        ),
+        platforms=page.meta.get("thumbnail_platforms", []),
+    )

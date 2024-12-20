@@ -140,17 +140,25 @@ def main(
                     )
 
             logger.info(f"Rendering posters for '{name}'")
-            tpl_context = dict(event=event)
-            tpl_filters = dict(local_time=local_time, weekday=weekday, icon=icon)
-            prefix = event.start_at.date().isoformat().replace("-", "")
             image_path = render_image_file(
                 width,
                 height,
-                "event.jinja",
-                tpl_context,
+                "thumbnail.jinja",
+                dict(
+                    title=event.title,
+                    image_path=event.avatar_path,
+                    subheading=event.bio_name,
+                    date=event.start_at,
+                    button_heading="Sleduj na",
+                    button_link=(
+                        "youtube.com/@juniordotguru"
+                        if event.public_recording_url
+                        else "junior.guru/events"
+                    ),
+                ),
                 POSTERS_DIR,
-                filters=tpl_filters,
-                prefix=prefix,
+                filters=dict(local_time=local_time, weekday=weekday, icon=icon),
+                prefix=event.start_at.date().isoformat().replace("-", ""),
             )
             image_path_relative = image_path.relative_to(IMAGES_DIR)
             event.poster_dc_path = image_path_relative

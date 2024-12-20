@@ -6,8 +6,10 @@ interviewee_avatar_path: avatars-participants/roman-viktor-dvorak.jpg
 author: Adéla Pavlun
 author_avatar_path: avatars-participants/adela-pavlun.jpg
 author_url: https://www.linkedin.com/in/adelapavlun/
-thumbnail_title: Rozhovor s Romanem V. Dvořákem
+thumbnail_subheading: Roman Viktor Dvořák
 thumbnail_image_path: avatars-participants/roman-viktor-dvorak.jpg
+thumbnail_button_heading: Čti na
+thumbnail_button_link: junior.guru/stories
 template: main_stories.html
 ---
 
