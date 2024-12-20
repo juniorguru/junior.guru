@@ -8,7 +8,7 @@ from mkdocs.utils import meta
 from playhouse.shortcuts import model_to_dict
 
 from jg.coop.cli.sync import main as cli
-from jg.coop.lib import loggers
+from jg.coop.lib import loggers, mkdocs_jinja
 from jg.coop.models.base import db
 from jg.coop.models.page import Page
 from jg.coop.models.stage import Stage
@@ -32,6 +32,7 @@ def main():
     Page.create_table()
 
     logger.info("Reading Markdown source files")
+    mkdocs_jinja.monkey_patch()
     config = load_config(config_file="jg/coop/web/mkdocs.yml", hooks=[])
     config = config.plugins.on_config(config)
     config.plugins.on_pre_build(config=config)
