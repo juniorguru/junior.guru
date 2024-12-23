@@ -142,7 +142,7 @@ Existují situace, které nesnesou odkladu. Pokud tě zaplaví velmi silné emoc
 
   {{ link_card(
     'Telefonní linky',
-    'https://www.mvcr.cz/clanek/adresar-pomoci-telefonni-informacni-a-krizove-linky-a-online-pomoc-v-ceske-republice.aspx',
+    'https://mv.gov.cz/clanek/adresar-pomoci-telefonni-informacni-a-krizove-linky-a-online-pomoc-v-ceske-republice.aspx',
     'Linka první psychické pomoci, linky důvěry, a další.',
   ) }}
 
