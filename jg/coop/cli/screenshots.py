@@ -81,6 +81,7 @@ HIDDEN_ELEMENTS = [
     '[class*="cky-consent"]',
     '[data-section-name*="cookie"]',
     '[data-component-name*="cookie"]',
+    '[class*="termsfeed-com---"]',
     ".alert-dismissible",
     ".intercom-app",
     "[data-cookiebanner]",
@@ -99,6 +100,7 @@ HIDDEN_ELEMENTS = [
     "body > .announcement",  # junior.guru
     "body > .notice",  # pyvo.cz
     "body > .ch2",  # czechitas.cz
+    "#voucher-stripe",  # czechitas.cz
     '[data-before-content*="advertisement"]',  # reddit.com
     '[class*="popupThin"]',  # codecademy.com
     '[id*="kz-modal"]',  # ulekare.cz
@@ -120,6 +122,9 @@ HIDDEN_ELEMENTS = [
     "#didomi-notice",  # heroine.cz
     ".cm-wrapper",  #
     '[id*="CybotCookiebotDialog"]',  # shoptet.cz
+    ".toast-container",  # coderslab.cz
+    '[class*="dc-ps-banner"]',  # datacamp.com
+    ".oj-page-content .homebanner",  # onlinejazyky.cz
 ]
 
 BLOCKED_ROUTES = [
