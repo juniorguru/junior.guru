@@ -961,3 +961,5 @@
 {"_id": "26837948802", "amount": 6, "category": "donations", "happened_on": "2024-12-18"}
 {"_id": "26844342487", "amount": 3133, "category": "donations", "happened_on": "2024-12-23"}
 {"_id": "26844561013", "amount": 16101, "category": "memberships", "happened_on": "2024-12-23"}
+{"_id": "26848136144", "amount": 6, "category": "donations", "happened_on": "2024-12-27"}
+{"_id": "26848999845", "amount": -2000, "category": "office", "happened_on": "2024-12-27"}
