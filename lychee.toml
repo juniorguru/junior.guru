@@ -56,7 +56,10 @@ exclude = [
     "^https://docs\\.pyvec\\.org",
     "^https://www\\.writethedocs\\.org",
 
-    # Expiring jobs
+    # Expired jobs
     "^https://jobs\\.cz/fp/",
     "^https://jobs\\.cz/rpd/",
+
+    # Not yet deployed avatars of club members
+    "^https://junior\\.guru/static/avatars-club/[^\\.]+\\.png",
 ]
