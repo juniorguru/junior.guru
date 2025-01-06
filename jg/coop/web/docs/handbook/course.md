@@ -1053,4 +1053,7 @@ V první řadě to, že má kurz v názvu „rekvalifikační“ neznamená, že
 ---
 
 
+https://mamakoduje-cc7d1.web.app/recenze
+
+
 #} -->
