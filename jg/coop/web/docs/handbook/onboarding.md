@@ -656,7 +656,7 @@ Druhý den jsem nastoupila na projekt do jiné společnosti. Takže stejné kole
 ---
 
 --- https://discord.com/channels/769966886598737931/788826407412170752/1285522672222076962
-Ridit projekty je dulezite, kdyz je clovek na senorni urovni anebo se chce na ni dostat. Pred tim je to rozptyleni, protoze clovek rozviji komunikacni dovednosti na ukor technickych. Ano, pro zamestnavatele je ideal rozvijet komunikacni dovednosti u komunikativniho cloveka, protoze pro nej je to mensi investice a tak vas bude podporovat, ale je to medvedi sluzba. Pokud se chcete technicky posouvat, trvejte na tom, abyste pracovali jenom na technickych ukolech. 
+Ridit projekty je dulezite, kdyz je clovek na senorni urovni anebo se chce na ni dostat. Pred tim je to rozptyleni, protoze clovek rozviji komunikacni dovednosti na ukor technickych. Ano, pro zamestnavatele je ideal rozvijet komunikacni dovednosti u komunikativniho cloveka, protoze pro nej je to mensi investice a tak vas bude podporovat, ale je to medvedi sluzba. Pokud se chcete technicky posouvat, trvejte na tom, abyste pracovali jenom na technickych ukolech.
 
 
 https://www.noidea.dog/glue
@@ -671,13 +671,13 @@ https://youtu.be/fVA7Ln4crDQ
 
 
 --- https://discord.com/channels/769966886598737931/788826407412170752/1285108546127532054
-Jak si říct o víc peněz? 
+Jak si říct o víc peněz?
 
-A) Fungují nějaké obecné časové milníky, kdy se očekává nějaký posun/zhodnocení? Představuju si třeba správně první takový záchytný bod po zkušebce, pak třeba půlrok-rok? 
+A) Fungují nějaké obecné časové milníky, kdy se očekává nějaký posun/zhodnocení? Představuju si třeba správně první takový záchytný bod po zkušebce, pak třeba půlrok-rok?
 
-B) A kdo vlastně takový moment vykopává - mám se ozvat spíš já nebo je "slušnější" počkat na hlas shůry? 
+B) A kdo vlastně takový moment vykopává - mám se ozvat spíš já nebo je "slušnější" počkat na hlas shůry?
 
-C) A o kolik víc si říct - platí tam nějaké zlomky (jako poprvé o 1/3, pak za rok zas něco atd)? 
+C) A o kolik víc si říct - platí tam nějaké zlomky (jako poprvé o 1/3, pak za rok zas něco atd)?
 
 D) Jsem navíc na IČO, tak jestli vlastně pro mě vůbec nějaká taková pravidla platí? 😂
 
@@ -719,6 +719,9 @@ Jsi tam jen pár dní, v některých firmách za tu dobu ani pořádně  nerozje
 --- https://discord.com/channels/769966886598737931/769966887055392768/1251078481648029716
 Ehm, tady si dovolím svůj starší překlad staršího článku Jak býti seniorním inženýrem https://zdrojak.cz/clanky/byti-seniornim-inzenyrem/
 ---
+
+
+https://vesecky-adam.medium.com/100-interviews-in-1-year-what-have-i-found-part-iii-recruitment-1fd6c5740b78
 
 
 #} -->
