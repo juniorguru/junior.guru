@@ -13,8 +13,17 @@ def main():
     CourseUP.drop_table()
     CourseUP.create_table()
 
+    courses_with_issues = []
     for course in (item for item in apify.fetch_data("honzajavorek/courses-up")):
         logger.info(f'Saving {course["name"]!r}')
-        CourseUP.create(**course)
+        if course["description"] is None:
+            courses_with_issues.append(course)
+        else:
+            CourseUP.create(**course)
 
-    logger.info(f"Saved {CourseUP.count()} courses in total")
+    if courses_with_issues:
+        for course in courses_with_issues:
+            logger.warning(f"Course {course!r} has issues.")
+        logger.warning(f"Skipped {len(courses_with_issues)} courses in total.")
+
+    logger.info(f"Saved {CourseUP.count()} courses in total.")
