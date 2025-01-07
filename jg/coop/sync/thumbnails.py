@@ -28,8 +28,8 @@ logger = loggers.from_path(__file__)
     type=click.Path(exists=True, path_type=Path),
 )
 @click.option("--output-dir", default="thumbnails", type=click.Path(path_type=Path))
-@click.option("--width", default=1200, type=int)
-@click.option("--height", default=630, type=int)
+@click.option("--width", default=1280, type=int)
+@click.option("--height", default=720, type=int)
 @click.option("--clear/--keep", default=False)
 @db.connection_context()
 def main(images_path, output_dir, width, height, clear):

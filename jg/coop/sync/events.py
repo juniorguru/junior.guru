@@ -88,8 +88,8 @@ schema = Seq(
     type=date.fromisoformat,
 )
 @click.option("--clear-posters/--keep-posters", default=False)
-@click.option("--width", default=1200, type=int)
-@click.option("--height", default=630, type=int)
+@click.option("--width", default=1280, type=int)
+@click.option("--height", default=720, type=int)
 def main(
     announcements_channel_id: int,
     today: date,
