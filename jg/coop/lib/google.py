@@ -2,19 +2,18 @@ import json
 import os
 from pathlib import Path
 
-from apiclient.discovery import build
-from oauth2client.service_account import ServiceAccountCredentials
+from google.oauth2 import service_account
+from googleapiclient.discovery import build
 
 
-SERVICE_ACCOUNT_PATH = Path("google_service_account.json")
-
-
-def get_credentials(scope):
-    service_account_json = (
-        os.getenv("GOOGLE_SERVICE_ACCOUNT") or SERVICE_ACCOUNT_PATH.read_text()
+def get_credentials(scopes) -> service_account.Credentials:
+    info_json = (
+        os.getenv("GOOGLE_SERVICE_ACCOUNT")
+        or Path("google_service_account.json").read_text()
     )
-    service_account = json.loads(service_account_json)
-    return ServiceAccountCredentials.from_json_keyfile_dict(service_account, scope)
+    info = json.loads(info_json)
+    credentials = service_account.Credentials.from_service_account_info(info)
+    return credentials.with_scopes(scopes)
 
 
 def get_client(api_name, api_version, scope):
