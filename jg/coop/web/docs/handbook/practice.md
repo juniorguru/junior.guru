@@ -1066,4 +1066,40 @@ Druhá je strašně dlouhý článek, který má argumentovat, že ne, AI fakt p
 ---
 
 
+--- https://discord.com/channels/769966886598737931/916339896963190785/1326828578570108930
+Ahoj, já pracuji jako SOC analytik pro jednu z předních českých bank. Vzhledem k tomu, že práci SOC analytika vnímám jako vstupní bránu do světa IT bezpečnosti, níže sepsané se bude primárně aplikovat na tuto roli. Zároveň dodávám, že nemám patent na rozum a určitě je mnoho jiných cest, moje tipy jsou tipy, které fungovali konkrétně mě, třeba mě někdo doplní, nebo opraví. Pro vstup do IT bezpečnosti je ideální mít nějaké znalosti ze síťařiny a nějaký úvod do IT bezpečnosti se také hodí. Osobně kdybych v oboru začínal dnes, udělal bych si Google Cybersecurity Professional Certificate, kde dostaneš do povědomí základní koncepty, mají tam skvelé laby a praktická cvičení včetně skriptování v Pythonu. Stojí tě to měsíční členství na Courseře, nečeká tě žádný závěrečný (zpoplatněný) test navíc, jen dílčí testy. Odkaz: https://www.coursera.org/professional-certificates/google-cybersecurity. Pak bych si vyzkoušel TryHackMe, což je v podstatě gamifikované učení IT security a věcí kolem. Mají laby, vlastní virtuálky, je tam toho spoustu, mají věci zadarmo, ale pokud tě to chytne, předplať si, teď ještě běží nějaká akce na 25% slevu. Odkaz: https://tryhackme.com/. Podobného ranku je i HackTheBox, což je spíš ofenzivní bezpečnost, ale pro případ, že by jsi se chtěla vydat cestou penetračního testování, tak je to asi lepší varianta, ale tam nemám zkušenost. Odkaz: https://www.hackthebox.com/. Kdyby tě cokoliv zajímalo, dej vědět a odpovím 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/916339236721004595/1318873426735140875
+Advent of Docker 🐳🎄
+https://adventofdocker.com/
+(možno sa niekomu zíde)
+---
+
+
+--- https://discord.com/channels/769966886598737931/1317108571586035772/1317108571586035772
+https://www.debugdecember.com/intro
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1316522462015651842
+Ahoj,
+tohle jsem adresoval pro <@1160890913900474439>, který taky musel jít cross-framework a je na to skvělý portál:
+https://playfulprogramming.com/collections/framework-field-guide-fundamentals
+---
+
+
+--- https://discord.com/channels/769966886598737931/1177266646579163246/1312718422425079810
+Odpověď na rebelskou otázku je za mě, že to musíš umět, abys ses mohla správně ptát AI a kontrolovat/vybírat z toho, co ti vytváří. U věcí, kde na tom nezáleží a nerozumím tomu (jednoduchá automatizace v PowerShellu), klidně nechám AI vygenerovat v podstatě všechno, ale když se bavíme o produkčním kódu, tak tomu rozumět dost pomáhá.
+A ne, není špatně odpovídat na řečnické otázky. 😉
+---
+
+
+--- https://discord.com/channels/769966886598737931/806621830383271937/1307261443393060965
+Perfektne na cvicenie a ucenie sa pracovat s gitom... Neviem ci to tu je, ale mozno zaciatocnikom to moze pomoct 🙂 a mozno to je blbost 😄 ale mna to ohurilo... 
+https://learngitbranching.js.org/
+---
+
+
 #} -->

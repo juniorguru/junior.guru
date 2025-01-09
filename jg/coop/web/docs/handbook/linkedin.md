@@ -343,4 +343,30 @@ Co lepšího, že pokud to neklapne na poprvé, tak to může vyjít při dalš�
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1313414844925349959
+Ahoj, vím, že to tu už párkrát zaznělo, i na nějakých přednáškách, ale chtěl bych se zeptat cíleně, případně si nechat poradit: Oslovit HR osobu na <:linkedin:915267970752712734>  ve společnosti, kde by se mi líbilo pracovat.
+
+Mám dotyčné/mu napsat do zpráv na LI? Nebo jinak? Mejla? Co je vhodnější?
+Jak dlouhou zprávu? Předpokládám, že nějaký stručný souhrn toho, proč by se mi u nich líbilo a že bych mu poslal CV?
+Jak moc popisovat, proč si myslím, že jsem pro ně vhodný?
+Připojit i motivační dopis nebo je to po té zprávě už zbytečné?
+
+Cokoliv co vás napadne nebo s čím máte zkušenost, uvítám. Díky <:drakeyes:961194410253623306>
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1308026685781966858
+Ahoj, jelikož LinkedIn je s IT hodně spjatý, napsala jsem pro zájemce článek https://zivotdevky.cz/2024/11/16/nekorektne-o-linkedinu-aneb-pozlacena-buzzword-dzungle/
+
+Jeho serióznější, a podstatně nudnější protějšek je zde: https://medium.seznam.cz/clanek/lucie-bazantova-linkedin-socialni-sit-kde-slusnost-jeste-nevymrela-99698
+
+Příjemnou zábavu 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/864434067968360459/1306555831554150420
+zdroj: https://www.linkedin.com/posts/tereza-kubickova_pro%C4%8D-je%C5%A1t%C4%9B-nep%C3%AD%C5%A1ete-na-linkedin-jak-se-zbavit-activity-7262367356373368832-qSs-
+---
+
+
 #} -->

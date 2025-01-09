@@ -312,4 +312,16 @@ Tohle je přesný 🙂 Schválně to nedávám do <#797040163325870092>, protož
 ---
 
 
+--- https://discord.com/channels/769966886598737931/864434067968360459/1311027460728553543
+Tenhle text se mi moc líbí. Myslím, že je hodně právě o lidech jako my tady - co dobrovolně nejdou v životě těmi nejsnadnějšími cestami, protože by to (mimo jiné) byla nuda 🙂 
+https://www.respekt.cz/tydenik/2024/48/kdyz-mate-pocit-ze-se-v-zivote-jen-placate-mozna-je-cas-vyrazit-za-dobrodruzstvim?gift=d2pxst5fco
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1310282688082612236
+Ahoj, kdo byste si chtěl přečíst o Imposter syndromu a o nízkém sebevědomí v IT, přidávám článek  🙂 
+https://zivotdevky.cz/2024/11/24/neumis-to-mas-jenom-stesti-aka-imposter-syndrom/
+---
+
+
 #} -->

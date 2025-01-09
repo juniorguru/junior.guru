@@ -1056,4 +1056,15 @@ V první řadě to, že má kurz v názvu „rekvalifikační“ neznamená, že
 https://mamakoduje-cc7d1.web.app/recenze
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1312949455363899432
+Pokud uvažujete o využití nějakého kurzu v rámci Jsem v kurzu, tak zvažte začít před 1. 3. 2025.
+
+Od toho data se totiž změní podmínky pro poskytovatele a obecně jde spíš o zpřísnění. Přidávají povinnosti a víc to omezují. Je možné, že to bude v důsledku znamenat omezení nabídky nebo změnu podmínek / cen.
+
+V některých případech s tím souhlasím, protože to může pomoci omezit různé fígle, díky kterým to někteří vzdělavatelé efektivněji „dojili“. Třeba omezení na 15 účastníků na jeden běh zní rozumně, otázka jak to budou implementovat.
+
+Nemusí vás potěšit, že bude nově vysloveně zakázáno 18% spoluúčast odpouštět nebo kompenzovat nějakými službami nebo jinou formou.
+---
+
+
 #} -->

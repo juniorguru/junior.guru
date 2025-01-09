@@ -125,4 +125,9 @@ Nepotřebuješ nic speciálního s sebou (laptop třeba), jsou to přednášky a
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1319581312666964011
+Dobrý článek o tom, proč je lepší psát do veřejných kanálů a nesyslit si věci soukromně v DM nebo v uzavřených skupinkách. https://morethancoding.com/2024/12/10/build-libraries-not-vaults-minimizing-private-channels-in-slack-teams/
+---
+
+
 #} -->

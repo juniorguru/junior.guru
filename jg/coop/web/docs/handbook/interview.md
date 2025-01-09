@@ -1056,4 +1056,24 @@ https://vesecky-adam.medium.com/100-interviews-in-1-year-what-have-i-found-part-
 https://www.facebook.com/groups/testericz
 
 
+--- https://discord.com/channels/769966886598737931/1291678484502020128/1307774460509556787
+To ale přece neznamená že je to tvoje chyba. Ohledně těch peněz to trochu chápu. Já si o zvýšení vždycky řekla, když nepřišlo samo.
+A i senioři dělají chybi. Prostě o tom programování je. 
+
+Znáš takový ten příběh o ceně vody?
+V supermarketu stojí 10
+Na nádraží 25
+Ve vlaku 50
+V letadle 100
+
+Znamená to, že občas jsme prostě na místě, kde si nás dostatečně neváží a necení.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1310318803040604170
+Pokud někdo využijete moji tabulku na srovnání peněz za pracovní smlouvu a za práci na živnostenský list, tak jsem udělal verzi pro rok 2025  https://bit.ly/osvc-v-zamestnanec-2025
+Je k tomu i [starší povídání](https://www.youtube.com/watch?v=iJGjTFDYw9A), který bych nejradši předělal, ale lepší než nic.
+---
+
+
 #} -->

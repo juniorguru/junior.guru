@@ -692,4 +692,19 @@ https://neilonsoftware.com/articles/how-to-keep-up-to-date-with-technologies-as-
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1325501165542178936
+Zajímavý článek:
+
+- pozor na dopamin,
+- pozor na motivační videa a vzory, které měly úplně jinou cestu než vy,
+- pozor na „action faking“ (tady často říkáme „tutorial hell“),
+- pozor na zanedbávání sebe a osobního života na úkor „musím bušit víc“,
+- pozor na příliš megalomanské cíle,
+- pozor na dělání věcí jen proto, abyste se zalíbili ostatním,
+- pozor na to být hlavou pořád jen v budoucnosti na úkor přítomného momentu.
+
+https://vesecky-adam.medium.com/major-pitfalls-of-self-development-50c470ee0bf2
+---
+
+
 #} -->

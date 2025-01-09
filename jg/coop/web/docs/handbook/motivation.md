@@ -554,4 +554,21 @@ Takze si vyber no. Ale osobne si nemyslim, ze to je jednodussi cesta. Junior man
 ---
 
 
+--- https://discord.com/channels/769966886598737931/864434067968360459/1311027460728553543
+Tenhle text se mi moc líbí. Myslím, že je hodně právě o lidech jako my tady - co dobrovolně nejdou v životě těmi nejsnadnějšími cestami, protože by to (mimo jiné) byla nuda 🙂 
+https://www.respekt.cz/tydenik/2024/48/kdyz-mate-pocit-ze-se-v-zivote-jen-placate-mozna-je-cas-vyrazit-za-dobrodruzstvim?gift=d2pxst5fco
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1308467736946540555
+Ještě  pár myšlenek z toho, co mi utkvěly:
+
+ "Dvacet životopisů bez odezvy posílají i mladí lidi, věk je tady úplně jedno."
+
+V publiku byl pán, který začal svůj dotaz: "Je mi 61 let a počítám, že na programování mám tedy tak 10 let.... " 
+
+Podle aktuálních teorií budou lidé, kteří teď vstupují na pracovní trh, měnit práci (ne obor), asi 15 - 20 x (!) za život. Doby jedné školy, jednoho oboru a jednoho celoživotního zaměstnání jsou pryč. Je to způsobeno mj. technologickým vývojem, kdy některé práce zanikají a jiné vznikají, a očekává se, že to takto bude pokračovat. Další parametr je věk dožití =  lidé pracují déle, proto mají prostor měnit nejen zaměstnání, ale i obory.
+---
+
+
 #} -->
