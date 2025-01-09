@@ -1053,4 +1053,7 @@ Tohle bych rád vypíchl z aktuální přednášky: https://discord.com/channels
 https://vesecky-adam.medium.com/100-interviews-in-1-year-what-have-i-found-part-ii-the-interviews-492eebbecf48
 
 
+https://www.facebook.com/groups/testericz
+
+
 #} -->
