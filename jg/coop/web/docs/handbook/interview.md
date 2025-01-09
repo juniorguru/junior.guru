@@ -1058,7 +1058,7 @@ https://www.facebook.com/groups/testericz
 
 --- https://discord.com/channels/769966886598737931/1291678484502020128/1307774460509556787
 To ale přece neznamená že je to tvoje chyba. Ohledně těch peněz to trochu chápu. Já si o zvýšení vždycky řekla, když nepřišlo samo.
-A i senioři dělají chybi. Prostě o tom programování je. 
+A i senioři dělají chybi. Prostě o tom programování je.
 
 Znáš takový ten příběh o ceně vody?
 V supermarketu stojí 10
@@ -1074,6 +1074,9 @@ Znamená to, že občas jsme prostě na místě, kde si nás dostatečně nevá�
 Pokud někdo využijete moji tabulku na srovnání peněz za pracovní smlouvu a za práci na živnostenský list, tak jsem udělal verzi pro rok 2025  https://bit.ly/osvc-v-zamestnanec-2025
 Je k tomu i [starší povídání](https://www.youtube.com/watch?v=iJGjTFDYw9A), který bych nejradši předělal, ale lepší než nic.
 ---
+
+
+https://www.jakybylpohovor.cz/
 
 
 #} -->
