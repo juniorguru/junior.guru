@@ -46,7 +46,7 @@ Každý má zcela jiné výchozí podmínky a i když jsou navenek zdánlivě po
   'matous-hrdina.jpg',
   'Matouš Hrdina'
 ) %}
-  Matouš Hrdina, ve [vydání newsletteru Pod čarou o storytellingu](https://seznam-zpravy.u.mailkit.eu/mc/VVQIVPEI/IFFILXQQDLFARYLJIY/CQMCWMIUIPV)
+  Matouš Hrdina, ve [vydání newsletteru Pod čarou o storytellingu](https://www.seznamzpravy.cz/clanek/kultura-pod-carou-kazdy-pribeh-je-lez-neprehanejme-to-s-jejich-vypravenim-208049)
 {% endcall %}
 
 Aby příběhy inspirovaly a někdo se o ně zajímal, musí být výsledkem [storytellingu](https://en.wikipedia.org/wiki/Storytelling), [cherry pickingu](https://en.wikipedia.org/wiki/Cherry_picking) a [survivorship biasu](https://en.wikipedia.org/wiki/Survivorship_bias).
