@@ -183,6 +183,7 @@ OK, tak možná ať si zkusí projet tohle https://blockly.games/?lang=en použ�
 
 
 https://www.linkedin.com/company/mamajob/
+https://www.aperio.cz/clanky/navrat-do-zamestnani-po-materske-rodicovske-dovolene
 
 
 #} -->
