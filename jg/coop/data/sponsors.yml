@@ -62,7 +62,7 @@ registry:
 
   - name: Green Fox Academy
     slug: greenfox
-    url: https://www.greenfoxacademy.cz/
+    url: https://web.archive.org/web/20240803012605/https://www.greenfoxacademy.cz/
     periods:
       - [2023-01, 2023-12]
 
