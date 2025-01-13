@@ -184,7 +184,7 @@ async def delete_thread(thread: Thread) -> None:
 
 @mutations.mutates_discord()
 async def create_tip(channel: ForumChannel, tip: dict) -> Thread:
-    logger.info(f'Creating tip: {tip["title"]}')
+    logger.info(f"Creating tip: {tip['title']}")
     thread = await channel.create_thread(
         name=tip["title"],
         content=tip["content"],
@@ -199,7 +199,7 @@ async def create_tip(channel: ForumChannel, tip: dict) -> Thread:
 
 @mutations.mutates_discord()
 async def update_tip(thread: Thread, tip: dict) -> None:
-    logger.info(f'Updating tip: {tip["title"]}')
+    logger.info(f"Updating tip: {tip['title']}")
     message = (
         thread.starting_message
         if thread.starting_message

@@ -62,10 +62,10 @@ def main():
 
     for time_range in time_ranges:
         logger.debug(
-            f'Fetching analytics from {time_range["start"]} to {time_range["end"]}'
+            f"Fetching analytics from {time_range['start']} to {time_range['end']}"
         )
         for slug, pages in PRODUCTS.items():
-            logger.debug(f'Fetching analytics for {slug!r}: {", ".join(pages)}')
+            logger.debug(f"Fetching analytics for {slug!r}: {', '.join(pages)}")
             pageviews = fetch_analytics(pages, time_range)
             starts_on = date.fromisoformat(time_range["start"])
             logger.info(

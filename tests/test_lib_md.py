@@ -7,7 +7,7 @@ def test_md():
 
 
 def test_md_headings():
-    markup = md(("# heading1\n" "## heading2\n" "### heading3\n"))
+    markup = md(("# heading1\n## heading2\n### heading3\n"))
     assert str(markup) == (
         '<h1 id="heading1">heading1</h1>\n'
         '<h2 id="heading2">heading2</h2>\n'

@@ -46,9 +46,7 @@ async def report(client: ClubClient, channel_id: int):
         logger.debug(f"Reporting marketing survey answer: {answer.account_name}")
         # initial data
         message_content = f"{REPORT_EMOJI} "
-        embed_description = (
-            f"**Odkud:** `{answer.type.upper()}`\n" f"> {answer.value}\n"
-        )
+        embed_description = f"**Odkud:** `{answer.type.upper()}`\n> {answer.value}\n"
         buttons = [
             ui.Button(
                 emoji="💳", label="Memberful", url=memberful_url(answer.account_id)

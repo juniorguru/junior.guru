@@ -34,5 +34,5 @@ def main():
         yaml_record.data for yaml_record in load(YAML_PATH.read_text(), YAML_SCHEMA)
     )
     for position, record in enumerate(records, start=1):
-        logger.info(f'#{position} {record["title"]}')
+        logger.info(f"#{position} {record['title']}")
         Stage.create(position=position, **record)

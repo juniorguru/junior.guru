@@ -163,7 +163,7 @@ def main(images_path, output_dir, width, height, clear):
         urls = frozenset(thumbnail.url for thumbnail in LegacyThumbnail.select())
         missing_urls = expected_urls - urls
         if missing_urls:
-            logger.error(f'Missing legacy pages: {", ".join(sorted(missing_urls))}')
+            logger.error(f"Missing legacy pages: {', '.join(sorted(missing_urls))}")
             raise click.Abort()
 
 
@@ -202,7 +202,7 @@ def get_thumbnail_context(page: Page) -> dict:
             else (page.meta.get("thumbnail_button_icon", default_button_icon))
         ),
         button_link=page.meta.get(
-            "thumbnail_button_link", f"junior.guru/{page.dest_uri.split("/")[0]}"
+            "thumbnail_button_link", f"junior.guru/{page.dest_uri.split('/')[0]}"
         ),
         platforms=page.meta.get("thumbnail_platforms", []),
     )

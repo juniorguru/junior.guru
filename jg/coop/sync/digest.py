@@ -102,14 +102,14 @@ def format_message(message: ClubMessage) -> str:
 def format_channel_digest(channel_digest: dict) -> str:
     text = ""
     if channel_digest["channel_id"] == channel_digest["parent_channel_id"]:
-        text += f'**#{channel_digest["channel_name"]}**'
+        text += f"**#{channel_digest['channel_name']}**"
     else:
-        text += f'**{channel_digest["channel_name"]}** v #{channel_digest["parent_channel_name"]}'
+        text += f"**{channel_digest['channel_name']}** v #{channel_digest['parent_channel_name']}"
     text += (
         "\n"
-        f'{reading_time(channel_digest["size"])} min čtení'
+        f"{reading_time(channel_digest['size'])} min čtení"
         " – "
-        f'[Číst diskuzi](https://discord.com/channels/{CLUB_GUILD}/{channel_digest["channel_id"]}/)'
+        f"[Číst diskuzi](https://discord.com/channels/{CLUB_GUILD}/{channel_digest['channel_id']}/)"
     )
     return text
 

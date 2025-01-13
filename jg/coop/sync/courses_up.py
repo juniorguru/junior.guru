@@ -15,7 +15,7 @@ def main():
 
     courses_with_issues = []
     for course in (item for item in apify.fetch_data("honzajavorek/courses-up")):
-        logger.info(f'Saving {course["name"]!r}')
+        logger.info(f"Saving {course['name']!r}")
         if course["description"] is None:
             courses_with_issues.append(course)
         else:

@@ -109,7 +109,7 @@ def download(circleci_workflow, circleci_api_key):
         logger.error("The job has no backup artifact")
         raise click.Abort()
 
-    logger.info(f'Downloading {backup_artifact["url"]}')
+    logger.info(f"Downloading {backup_artifact['url']}")
     artifact_file = Path(circleci.download_artifact(backup_artifact["url"]))
     logger.info(f"Done! {artifact_file.stat().st_size / 1048576:.0f} MB")
 
