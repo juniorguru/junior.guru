@@ -30,7 +30,6 @@ fiobank = "4.0.0"
 flask = "3.1.0"
 fonttools = "4.55.3"
 frozen-flask = "1.0.2"
-githubkit = "0.12.3"
 google-api-python-client = "2.158.0"
 google-auth = "2.37.0"
 gql = {extras = ["requests"], version = "3.5.0"}
@@ -53,13 +52,14 @@ playwright = "1.49.1"
 pod2gen = "1.0.3"
 py-cord = {version = "2.6.1", extras = ["speed"]}
 pycircleci = "0.7.0"
-pydantic = "2.10.4"
 python-slugify = "8.0.4"
 pyyaml = "6.0.2"
 requests = "2.32.3"
 strictyaml = "1.7.3"
 stripe = "11.4.1"
 tenacity = "9.0.0"
+pydantic = "2.10.5"
+githubkit = "0.12.4"
 
 [tool.poetry.group.dev.dependencies]
 ghp-import = "2.1.0"

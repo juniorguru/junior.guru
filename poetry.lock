@@ -1003,13 +1003,13 @@ dev = ["flake8", "markdown", "twine", "wheel"]
 
 [[package]]
 name = "githubkit"
-version = "0.12.3"
+version = "0.12.4"
 description = "GitHub SDK for Python"
 optional = false
 python-versions = "<4.0,>=3.9"
 files = [
-    {file = "githubkit-0.12.3-py3-none-any.whl", hash = "sha256:4a7a0d6e2e1e04eef2794b8f44b35903c178d67d75e4dfbfe5796e2513587ed9"},
-    {file = "githubkit-0.12.3.tar.gz", hash = "sha256:f10332e81649f3dcbff13d0112d7c8f8df79e8fe4fa3c5135855286b01ecbf5a"},
+    {file = "githubkit-0.12.4-py3-none-any.whl", hash = "sha256:c76d7b5b2a8cfe620529851faad26f0699db5c3c204dd7be530c5137118f49c8"},
+    {file = "githubkit-0.12.4.tar.gz", hash = "sha256:a11e3cce046c8ccebe0428ba95feb2f063af73442204288960207c619f78ef66"},
 ]
 
 [package.dependencies]
@@ -1504,7 +1504,7 @@ py-cord = {version = "2.6.1", extras = ["speed"]}
 type = "git"
 url = "https://github.com/juniorguru/chick.git"
 reference = "HEAD"
-resolved_reference = "45c97e9bb25ee3dda4c574286c90549b4ab576b0"
+resolved_reference = "cbf94fe3d89f0d9aac07b203b3b493da4e606cfa"
 
 [[package]]
 name = "jg-hen"
@@ -1519,17 +1519,17 @@ develop = false
 blinker = "1.9.0"
 click = "8.1.8"
 cssselect = "1.2.0"
-githubkit = "0.12.3"
+githubkit = "0.12.4"
 httpx = "0.28.1"
 lxml = "5.3.0"
 pillow = "11.1.0"
-pydantic = "2.10.4"
+pydantic = "2.10.5"
 
 [package.source]
 type = "git"
 url = "https://github.com/juniorguru/hen.git"
 reference = "HEAD"
-resolved_reference = "de19829b6890371c3b06f92f10be36ad25a3058a"
+resolved_reference = "76b29cdf1c4b4733e5c4bd1157bb35b572248ed1"
 
 [[package]]
 name = "jinja2"
@@ -2770,13 +2770,13 @@ files = [
 
 [[package]]
 name = "pydantic"
-version = "2.10.4"
+version = "2.10.5"
 description = "Data validation using Python type hints"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "pydantic-2.10.4-py3-none-any.whl", hash = "sha256:597e135ea68be3a37552fb524bc7d0d66dcf93d395acd93a00682f1efcb8ee3d"},
-    {file = "pydantic-2.10.4.tar.gz", hash = "sha256:82f12e9723da6de4fe2ba888b5971157b3be7ad914267dea8f05f82b28254f06"},
+    {file = "pydantic-2.10.5-py3-none-any.whl", hash = "sha256:4dd4e322dbe55472cb7ca7e73f4b63574eecccf2835ffa2af9021ce113c83c53"},
+    {file = "pydantic-2.10.5.tar.gz", hash = "sha256:278b38dbbaec562011d659ee05f63346951b3a248a6f3642e1bc68894ea2b4ff"},
 ]
 
 [package.dependencies]
@@ -3654,4 +3654,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.12"
-content-hash = "a3f571bd565d9075e031d9b2d03781f9cd3d32b94600ad3958b45796d73f1a09"
+content-hash = "5b5da1c25d24eff41472c0607d39de3d6d2f1e940d16902fa634d5f8fbbb9296"
