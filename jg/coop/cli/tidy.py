@@ -86,9 +86,9 @@ def fix_scss():
             [
                 "npx",
                 "stylelint",
-                "--fix",
                 "jg/coop/css/**/*.*css",
                 "jg/coop/image_templates/*.*css",
+                "--fix",
             ],
             check=True,
         )
