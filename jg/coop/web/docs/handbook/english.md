@@ -250,4 +250,6 @@ Na youtube mi přijde fajn tento kanál: https://www.youtube.com/c/PerfectWorldj
 Jinak nedávno jsem narazil na zajímavou aplikaci k učení slovíček pomocí paměťové techniky: https://www.2000slovicek.cz/
 ---
 
+Jak si zlepšit angličtinu: přidej se do klubu
+
 #} -->

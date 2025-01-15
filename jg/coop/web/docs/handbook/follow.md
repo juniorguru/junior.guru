@@ -159,5 +159,7 @@ Kafemlejnek
 ## **PROGRAMOVÁNÍ POD POKLIČKOU**
 https://www.youtube.com/watch?v=RVCjcIqMeh8
 
+Co sledovat? Komixy, filmy, seriály (it crowd, Silicon Valley, nova šichta), dat do klubu i do příručky?
+
 
 #} -->
