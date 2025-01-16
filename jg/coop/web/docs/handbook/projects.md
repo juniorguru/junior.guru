@@ -51,6 +51,8 @@ Máš-li za sebou nějakou vysokou školu z oboru, ukaž svou bakalářku nebo d
 
 <!-- {#
 
+Bez projektů jde dnes tvoje CVčko přímo do koše. 200 lidí na jeden inzerát. jak vynikneš?
+
 https://dariagrudzien.com/posts/the-one-about-your-github-account/
 
 kam veřejně napsat, že tady chybí https://junior.guru/handbook/practice/#najdi-si-projekt info o tom, že projekt nemusí být unikátní? že to může klidně být todolist

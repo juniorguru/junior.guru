@@ -493,7 +493,7 @@ https://www.linkedin.com/pulse/jak-bych-si-jako-junior-hledala-pr%C3%A1ci-v-moti
 
 
 --- https://discord.com/channels/769966886598737931/769966887055392768/1297494638726352897
-Myslim, ze rikame totez. Nicmene 
+Myslim, ze rikame totez. Nicmene
 > komu šla matika velmi dobře, tak bude mít znatelnou výhodu
 neznamena, ze komu matematika nesla, tak nemuze byt schopny programator (pro matematiky: opacna implikace neplati :-))
 Urcite je spousta lidi, kterym ta abstrakce v kontextu matematiky dela problem, ale v programovani jim jde uplne v pohode. Nebo treba proste meli spatneho ucitele matematiky a vytvorili si k ni odpor, ale pritom s tim abstraktim myslenim nemaji problem.
@@ -519,11 +519,11 @@ Důležité je začínat v něčem, co tě trochu baví, protože pak ti to půj
 A práve preto si myslím, že tu môžu excelovať aj začínajúci programátori - je to totiž znova viac o premýšľaní a soft skilloch ako o hard skilloch - tie sa začnú do popredia dostávať až za pár rokov, až obor maturuje a bude jasné, čo je potrebné a čo nie - dnes to jasné nie je, môžeme iba hádať.
 
 Pokiaľ by sa do toho teda chcel niekto pustiť, tu je pár tipov čo si pridať do portfólia - a pozor, tu si myslím, že tieto úlohy dokážu pomôcť aj u iných pozícii nielen u AI specialistov. Niektoré firmy dnes na AI proste počujú. Skúsim to popísať čo najviac jazykovo neutrálne ale najfrekventovanejší jazyk v AI svete je asi python a sám z toho sveta pochádzam, preto si dovolím túto skupinu aj tagnúť <@&1085220736957947905> .
-- prečítajte si niečo o písaní technických promptov, u všetkých úloh budete model inštruovať, čo má robiť. Nevenujte tomu ale priveľa času. Inšpirujte sa ako to robia iný - existujú napr leaknute system prompty od Applu, oficálne ich publikuje aj spoločnosť Anthropic. 
+- prečítajte si niečo o písaní technických promptov, u všetkých úloh budete model inštruovať, čo má robiť. Nevenujte tomu ale priveľa času. Inšpirujte sa ako to robia iný - existujú napr leaknute system prompty od Applu, oficálne ich publikuje aj spoločnosť Anthropic.
 - osahajte si OpenAI API - dnes to už skoro nič nestojí, do začiatku dostanete aj nejaký budget na voľné testovanie
 - následne sa pozrite na to, ako sa dnes stavajú konverzácie - aký je rozdiel medzi správou uživateľa a asistenta, čo sú to systémové správy - a následne si nejaké konverzácie sami postavte
 - a teraz sa dostávame k prvému veľkému pojmu sveta AI: RAG (Retrieval-augmented generation). Pozrite sa na to, čo to je, ako to funguje.
-- naimplementovať RAG bola kedysi zložitá úloha. Vy sa ale pozriete na to, ako využiť OpenAI API pre asistentov - konkrétne funkcionalitu Vector Stores 
+- naimplementovať RAG bola kedysi zložitá úloha. Vy sa ale pozriete na to, ako využiť OpenAI API pre asistentov - konkrétne funkcionalitu Vector Stores
 - keď už budete skúmať API pre asistentov pozrite sa aj na ostatné funkcionality - code interpreter a function calling
 ---
 
@@ -534,16 +534,16 @@ Kdo byste uvažovali o učení Go, nebo Rustu, apod. a nebyli si jistí, zda si 
 
 
 --- https://discord.com/channels/769966886598737931/788826407412170752/1279530837452263435
-Ahojte, 
+Ahojte,
 vopred sa ospravedlňujem, tento post bude dlhý. Dúfam ale, že to dá podrobnejší vhľad do AI ako oboru v IT. Mám za sebou 2 mesiace od momentu, keď som svoju kariéru poslal all in do segmentu AI. Mojou prácou sa stalo hľadanie hodnoty rôznych AI riešení pre našu banku a ich privádzanie k životu. Už dlhšie som tu chcel spísať svoje myšlienky a hlavne svoje myšlienky k otázke: **Som ašpirujúci junior v IT, čo pre mňa znamená smerovať svoju kariéru do oboru AI a má to zmysel?**
 
-Hneď na začiatok by som rád poďakoval <@668226181769986078>, vďaka ktorému som objavil Simona Willisona, ktorý o AI veľa píše a veľa hovorí a to čo píše a hovorí je veľmi rozumné :). A okrem toho prednášal aj na PyConUS: 
+Hneď na začiatok by som rád poďakoval <@668226181769986078>, vďaka ktorému som objavil Simona Willisona, ktorý o AI veľa píše a veľa hovorí a to čo píše a hovorí je veľmi rozumné :). A okrem toho prednášal aj na PyConUS:
 https://youtu.be/P1-KQZZarpc?feature=shared&t=247.
-Ak sa chcete dozvedieť, kde sa obor umelej inteligencie nachádzal v květnu 2024 (+- je to stále platné aj pre srpen 2024) dajte si tento talk, je to pre ľudí z IT, ktorý sa ale AI nevenujú, ten najlepší status ktorý som zatiaľ našiel. 
+Ak sa chcete dozvedieť, kde sa obor umelej inteligencie nachádzal v květnu 2024 (+- je to stále platné aj pre srpen 2024) dajte si tento talk, je to pre ľudí z IT, ktorý sa ale AI nevenujú, ten najlepší status ktorý som zatiaľ našiel.
 
 Prečo na to odkazujem? Pretože sú to závery veľmi podobné tým, ktoré aktuálne vyvodzujeme aj my v banke. Za prvé je vďaka tomu možné vyvodzovať, čo by sa ašpirujúci junior potreboval naučiť (o tom neskôr) a za druhé, je dôležité uvedomiť si, že pokiaľ sa dostanete do tém, ktoré je možné zhrnúť v 40 minútovom talku, budete patriť medzi 5% najlepších v obore :). Na prvý pohľad odvážne tvrdenie, treba si ale uvedomiť o akom obore sa bavíme.
 
-Keď sa dnes budete baviť s ľuďmi, ktorý o sebe deklarujú, že sa venujú alebo zaujímajú o AI dozviete sa pravdepodobne: Že používajú ChatGPT, že im naplánoval výlet, pripravil recept alebo zhrnul novinový článok. Z pohľadu práce sa možno dozviete o tom, že im zosumarizoval alebo napísal email, preložil text alebo pomohol vybrainstormovať názov udalosti. A tieto odpovede boli u väčšiny ľudí rovnaké mesiac po tom, čo ChatGPT vyšiel a dnes. Existujú ale aj use casy, ktoré prinášajú obrovskú hodnotu a tu môžete aj ako junior excelovať. 
+Keď sa dnes budete baviť s ľuďmi, ktorý o sebe deklarujú, že sa venujú alebo zaujímajú o AI dozviete sa pravdepodobne: Že používajú ChatGPT, že im naplánoval výlet, pripravil recept alebo zhrnul novinový článok. Z pohľadu práce sa možno dozviete o tom, že im zosumarizoval alebo napísal email, preložil text alebo pomohol vybrainstormovať názov udalosti. A tieto odpovede boli u väčšiny ľudí rovnaké mesiac po tom, čo ChatGPT vyšiel a dnes. Existujú ale aj use casy, ktoré prinášajú obrovskú hodnotu a tu môžete aj ako junior excelovať.
 
 A viac vo vlákne 🙂
 ---
@@ -555,7 +555,7 @@ Takze si vyber no. Ale osobne si nemyslim, ze to je jednodussi cesta. Junior man
 
 
 --- https://discord.com/channels/769966886598737931/864434067968360459/1311027460728553543
-Tenhle text se mi moc líbí. Myslím, že je hodně právě o lidech jako my tady - co dobrovolně nejdou v životě těmi nejsnadnějšími cestami, protože by to (mimo jiné) byla nuda 🙂 
+Tenhle text se mi moc líbí. Myslím, že je hodně právě o lidech jako my tady - co dobrovolně nejdou v životě těmi nejsnadnějšími cestami, protože by to (mimo jiné) byla nuda 🙂
 https://www.respekt.cz/tydenik/2024/48/kdyz-mate-pocit-ze-se-v-zivote-jen-placate-mozna-je-cas-vyrazit-za-dobrodruzstvim?gift=d2pxst5fco
 ---
 
@@ -565,10 +565,13 @@ Ještě  pár myšlenek z toho, co mi utkvěly:
 
  "Dvacet životopisů bez odezvy posílají i mladí lidi, věk je tady úplně jedno."
 
-V publiku byl pán, který začal svůj dotaz: "Je mi 61 let a počítám, že na programování mám tedy tak 10 let.... " 
+V publiku byl pán, který začal svůj dotaz: "Je mi 61 let a počítám, že na programování mám tedy tak 10 let.... "
 
 Podle aktuálních teorií budou lidé, kteří teď vstupují na pracovní trh, měnit práci (ne obor), asi 15 - 20 x (!) za život. Doby jedné školy, jednoho oboru a jednoho celoživotního zaměstnání jsou pryč. Je to způsobeno mj. technologickým vývojem, kdy některé práce zanikají a jiné vznikají, a očekává se, že to takto bude pokračovat. Další parametr je věk dožití =  lidé pracují déle, proto mají prostor měnit nejen zaměstnání, ale i obory.
 ---
+
+
+https://www.mensurdurakovic.com/hard-to-swallow-truths-they-wont-tell-you-about-software-engineer-job/
 
 
 #} -->

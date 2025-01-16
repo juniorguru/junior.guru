@@ -731,4 +731,7 @@ Studie Jozifová:
 nova prace je tvoje nova komunita a musis se nebat tam zeptat, idealne pokud tam mas nekoho, kdo je tam jen o neco chytrejsi spoluzak, ktery ti rekne vtip u obeda, peer 2 peer
 
 
+https://www.mensurdurakovic.com/hard-to-swallow-truths-they-wont-tell-you-about-software-engineer-job/
+
+
 #} -->

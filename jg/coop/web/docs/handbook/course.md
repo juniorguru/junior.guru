@@ -1066,5 +1066,8 @@ V některých případech s tím souhlasím, protože to může pomoci omezit r�
 Nemusí vás potěšit, že bude nově vysloveně zakázáno 18% spoluúčast odpouštět nebo kompenzovat nějakými službami nebo jinou formou.
 ---
 
+ITnetwork
+https://docs.google.com/document/d/1JdfABxil7pMgpNOdDLxIgM4HZKoSCu34Q4OknqesdRc/edit?tab=t.0
+
 
 #} -->

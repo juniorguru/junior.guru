@@ -6,6 +6,10 @@ template: main_subnav.html
 
 {% from 'macros.html' import blockquote_avatar, lead, link_card, news_card with context %}
 
+<!-- {#
+https://houdekpetr.blogspot.com/2024/07/prelud-uspechu.html
+#} -->
+
 # Příběhy
 
 {% call lead() %}

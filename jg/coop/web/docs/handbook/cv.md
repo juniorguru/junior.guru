@@ -356,6 +356,10 @@ Tato strategie je fajn, ale **můžeš být v situaci, kdy se to nehodí**. Nemu
 
 <!-- {#
 
+Only 16% of companies looked for further information (my webpage, YouTube channel, GitHub account). Therefore, it’s important to highlight your accomplishments explicitly. https://vesecky-adam.medium.com/100-interviews-in-1-year-what-have-i-found-part-ii-the-interviews-492eebbecf48
+
+Bez projektů jde dnes tvoje CVčko přímo do koše. 200 lidí na jeden inzerát. jak vynikneš?
+
 S tím souhlasím, mně jednou HR manager řekl, že poslal můj životopis dál jen kvůli tomu, že měl pěkný design a měl dobrý pocit z toho. :)  Tehdy jsem našla designerku na platformě UpWork, které jsem poslala všechny informace a ona mi ho napsala a udělala design, teď bych to už dělala sama. Doporučuju https://flowcv.io/ , je to docela jednoduché na naklikávání a vypadá dobře.
 
 jestli chceš sám zkusit, doporučuji flowcv.io, já v tom vyťukala několik životopisů několika různých lidem a všem se líbilo 🙂
