@@ -977,3 +977,4 @@
 {"_id": "26870749067", "amount": -5400, "category": "accounting", "happened_on": "2025-01-13"}
 {"_id": "26873503596", "amount": -4884, "category": "tax", "happened_on": "2025-01-15"}
 {"_id": "26873503597", "amount": -3143, "category": "tax", "happened_on": "2025-01-15"}
+{"_id": "26874107758", "amount": 6, "category": "donations", "happened_on": "2025-01-15"}
