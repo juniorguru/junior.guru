@@ -608,4 +608,8 @@ Studie Jozifová:
 lidi neznaji a stydi se - neumi se prodat
 
 
+https://latexresu.me/
+https://www.overleaf.com/latex/templates/tagged/cv
+
+
 #} -->
