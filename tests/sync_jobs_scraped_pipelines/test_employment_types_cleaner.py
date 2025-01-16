@@ -37,6 +37,8 @@ from jg.coop.sync.jobs_scraped.pipelines.employment_types_cleaner import (
         ("volunteering", "volunteering"),
         ("other", None),
         ("jiný typ práce", None),
+        ("práca na plný úväzok", "fulltime"),
+        ("práca na zkrátený úväzok", "parttime"),
     ],
 )
 def test_clean_employment_type(employment_type, expected):
