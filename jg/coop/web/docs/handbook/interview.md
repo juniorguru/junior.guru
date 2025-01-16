@@ -1079,4 +1079,11 @@ Je k tomu i [starší povídání](https://www.youtube.com/watch?v=iJGjTFDYw9A),
 https://www.jakybylpohovor.cz/
 
 
+Studie Jozifová:
+recruiteri jsou otevreni career switcherum, ale hiring manazer casto hleda mediora za juniorskej plat a nejsou tak otevreni, odchazi franta, chce za nej frantu
+
+Studie Jozifová:
+recruiteri na switcherech nejvic ocenujou rustovej mindset, ze vidi charakterovy vlastnosti ktery jsou chteny, ale narazi na penize nebo na to ze jsou tak juniorni, ze tam nebude nekdo kdo se jim bude venovat
+
+
 #} -->

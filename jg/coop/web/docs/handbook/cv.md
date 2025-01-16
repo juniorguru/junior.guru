@@ -595,4 +595,17 @@ Já jen abyste si nepředstavovali, že dorazí vaše CV a pět HR lidí ho hodi
 ---
 
 
+Studie Jozifová:
+karierni zmena musi byt reflektovana v CV a motivaku, dulezita je sebereflexe a do jake firmy se hlasim, pokud je to genericky tak se to dava pryc. pokud to byl manazer a jde na programatora, tak to jde bokem, protoze ten bude chtit moc penez, switcheri maji hypoteky a maji prehnana financni ocekavani vyhajpovany, takze s pokorou reflektovat tu tranzici
+
+Studie Jozifová:
+do motivaku napsat ja vim ze pujdu s platem dolu, zvysuje to strasne sance
+
+Studie Jozifová:
+mustr na motivak, ve kterem je "neocekavam ze budu mit stejny plat jako v predchozim zamestnani hned od zacatku", hledam prvni sanci atd.
+
+Studie Jozifová:
+lidi neznaji a stydi se - neumi se prodat
+
+
 #} -->

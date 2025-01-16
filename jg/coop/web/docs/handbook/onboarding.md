@@ -724,4 +724,11 @@ Ehm, tady si dovolím svůj starší překlad staršího článku Jak býti seni
 https://vesecky-adam.medium.com/100-interviews-in-1-year-what-have-i-found-part-iii-recruitment-1fd6c5740b78
 
 
+Studie Jozifová:
+firmy si neuvedomuji ze musi juniorum dat nekoho kdo je trochu pedagogickej, protoze to je casto jejich prvni mentor v zivote a rozhoduje to o cele kariere toho clovkea
+
+Studie Jozifová:
+nova prace je tvoje nova komunita a musis se nebat tam zeptat, idealne pokud tam mas nekoho, kdo je tam jen o neco chytrejsi spoluzak, ktery ti rekne vtip u obeda, peer 2 peer
+
+
 #} -->

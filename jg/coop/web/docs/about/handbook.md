@@ -58,7 +58,7 @@ Jako poděkování dostávají na oné stránce prostor zviditelnit sebe nebo sv
 Honza garantům nic neplatí, ani oni jemu.
 Obsah kapitol edituje, tzn. hlídá kvalitu a texty upravuje tak, aby zapadly do zbytku příručky.
 
-## Počty impresí
+## Počty zobrazení
 
 Pokud si sponzor [zaplatí nejvyšší tarif](../love.jinja), má logo na příručce.
 Hodí se vědět, kolikrát se takové logo lidem zobrazí.
@@ -74,7 +74,7 @@ Hodí se vědět, kolikrát se takové logo lidem zobrazí.
         }|mapping(charts.logo_impressions_breakdown.keys()),
         'datasets': [
             {
-                'label': 'průměrný počet impresí měsíčně',
+                'label': 'průměrný počet zobrazení měsíčně',
                 'data': charts.logo_impressions_breakdown.values()|list,
                 'backgroundColor': '#1755d1',
             },
