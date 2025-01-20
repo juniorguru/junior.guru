@@ -52,13 +52,16 @@ registry:
     note: |
       Podílí se na mentoringu a rozšířené pomoci pro lidi, kteří na junior.guru žádají o [stipendium](https://junior.guru/finaid).
 
-  # PAST SPONSORS
-
   - name: Glance Media
     slug: glancemedia
     url: https://www.glancemedia.cz/
+    cz_business_id: 28394941
+    subscription: https://juniorguru.memberful.com/admin/subscriptions/4001887
     periods:
+      - [2025-01, 2026-02]
       - [2023-02, 2024-02]
+
+  # PAST SPONSORS
 
   - name: Green Fox Academy
     slug: greenfox
