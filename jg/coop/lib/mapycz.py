@@ -243,6 +243,7 @@ def get_region_name(country: ResponseCountry, regions: list[ResponseRegion]) -> 
         except IndexError:
             return "Bratislava"
         if "Bratislava" in region_name_official:
+            # stuff like 'Okres Bratislava III'
             return "Bratislava"
         return REGIONS_MAPPING_SK[region_name_official]
 
