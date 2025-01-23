@@ -407,13 +407,13 @@ cffi = ">=1.0.0"
 
 [[package]]
 name = "cachetools"
-version = "5.5.0"
+version = "5.5.1"
 description = "Extensible memoizing collections and decorators"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "cachetools-5.5.0-py3-none-any.whl", hash = "sha256:02134e8439cdc2ffb62023ce1debca2944c3f289d66bb17ead3ab3dede74b292"},
-    {file = "cachetools-5.5.0.tar.gz", hash = "sha256:2cc24fb4cbe39633fb7badd9db9ca6295d766d9c2995f245725a46715d050f2a"},
+    {file = "cachetools-5.5.1-py3-none-any.whl", hash = "sha256:b76651fdc3b24ead3c648bbdeeb940c1b04d365b38b4af66788f9ec4a81d42bb"},
+    {file = "cachetools-5.5.1.tar.gz", hash = "sha256:70f238fbba50383ef62e55c6aff6d9673175fe59f7c6782c7a0b9e38f4a9df95"},
 ]
 
 [[package]]
@@ -1003,13 +1003,13 @@ dev = ["flake8", "markdown", "twine", "wheel"]
 
 [[package]]
 name = "githubkit"
-version = "0.12.4"
+version = "0.12.5"
 description = "GitHub SDK for Python"
 optional = false
 python-versions = "<4.0,>=3.9"
 files = [
-    {file = "githubkit-0.12.4-py3-none-any.whl", hash = "sha256:c76d7b5b2a8cfe620529851faad26f0699db5c3c204dd7be530c5137118f49c8"},
-    {file = "githubkit-0.12.4.tar.gz", hash = "sha256:a11e3cce046c8ccebe0428ba95feb2f063af73442204288960207c619f78ef66"},
+    {file = "githubkit-0.12.5-py3-none-any.whl", hash = "sha256:9a5c00591a4218ae311ad5797b215143fbd6a34079f1c8aa6d4db7a80e5b530f"},
+    {file = "githubkit-0.12.5.tar.gz", hash = "sha256:d465a8a117c51e53213a6cffca2208f00596c889c3feacd8ad66842ba652ba2d"},
 ]
 
 [package.dependencies]
@@ -1504,7 +1504,7 @@ py-cord = {version = "2.6.1", extras = ["speed"]}
 type = "git"
 url = "https://github.com/juniorguru/chick.git"
 reference = "HEAD"
-resolved_reference = "784fcffdb432f072e6f2e4cc24fba55b1f0b1000"
+resolved_reference = "c053dc0ed3d5a7c8775b6deb8014153edc2ce4c8"
 
 [[package]]
 name = "jg-hen"
@@ -1519,7 +1519,7 @@ develop = false
 blinker = "1.9.0"
 click = "8.1.8"
 cssselect = "1.2.0"
-githubkit = "0.12.4"
+githubkit = "0.12.5"
 httpx = "0.28.1"
 lxml = "5.3.0"
 pillow = "11.1.0"
@@ -1529,7 +1529,7 @@ pydantic = "2.10.5"
 type = "git"
 url = "https://github.com/juniorguru/hen.git"
 reference = "HEAD"
-resolved_reference = "76b29cdf1c4b4733e5c4bd1157bb35b572248ed1"
+resolved_reference = "fe73a2e1b3de1e032bc4bcc4a56d17b8c9033bd2"
 
 [[package]]
 name = "jinja2"
@@ -3654,4 +3654,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.12"
-content-hash = "d5c86abf652b7b3a16dc696391bdeb83fe0e6f0432eb5458ea010623132d4c03"
+content-hash = "c5bca5347c0a5313925ff666c4aa49679700e247605449053e16f6ee26102cc8"
