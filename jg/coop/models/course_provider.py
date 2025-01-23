@@ -2,7 +2,7 @@ import itertools
 from enum import StrEnum
 from itertools import groupby
 from operator import attrgetter
-from typing import Any, Iterable, Self
+from typing import Iterable, Self
 
 import czech_sort
 from peewee import CharField, IntegerField, TextField, fn
