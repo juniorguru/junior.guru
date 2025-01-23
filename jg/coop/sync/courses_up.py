@@ -19,7 +19,7 @@ def main():
         if course["description"] is None:
             courses_with_issues.append(course)
         else:
-            CourseUP.create(**course)
+            CourseUP.add(**course)
 
     if courses_with_issues:
         for course in courses_with_issues:

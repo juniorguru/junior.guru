@@ -2,7 +2,7 @@ import itertools
 from enum import StrEnum
 from itertools import groupby
 from operator import attrgetter
-from typing import Iterable, Self
+from typing import Any, Iterable, Self
 
 import czech_sort
 from peewee import CharField, IntegerField, TextField, fn
@@ -25,6 +25,10 @@ class CourseUP(BaseModel):
     description = TextField()
     company_name = CharField()
     cz_business_id = IntegerField(index=True)
+
+    @classmethod
+    def add(cls, **kwargs) -> None:
+        cls.insert(**kwargs).on_conflict_ignore().execute()
 
     @classmethod
     def count(cls) -> int:
