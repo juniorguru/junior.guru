@@ -62,6 +62,22 @@
 # - https://tinywow.com/image/upscale
 # - https://www.fotor.com/photo-editor-app/editor/beauty
 
+- id: 49
+  title: "(bude upřesněno)"
+  date: "2025-02-04"
+  description: |
+    (bude upřesněno)
+  avatar_path: avatars-participants/lea-bradacova.jpg
+  bio_name: Lea Bradáčová
+  bio_title: "Vedoucí ICT oddělení v NTK"
+  bio: |
+    (bude upřesněno)
+  bio_links:
+    - https://witter.cz/@Lwicze
+    - https://github.com/gedrex
+    - https://www.linkedin.com/in/lea-bradáčová-2b931841/
+  speakers: 377398623777980418
+
 - id: 48
   title: "Jak používat AI asistenty a odnést si z nich maximum"
   date: "2024-12-17"
