@@ -141,7 +141,7 @@ Nezřídka dorazíš po práci domů, a byť máš dostatek síly tělesné, z t
 
 ## Je to samá pohoda    <span id="downsides"></span>
 
-Jak už naznačuje předchozí odstavec, programátorská profese má i své nevýhody. Světe div se, je to práce jako každá jiná. Tvoje každodenní spokojenost bude nakonec záviset na konkrétní firmě, projektu, štěstí, šéfech, týmu kolegů a klidně i na tom, co někdo jiný, koho vůbec neznáš, špatně naprogramoval před pěti lety a ty s tím teď musíš pracovat. Budeš bojovat s [psychickou zátěží](http://borisovo.cz/programming-sucks-cz.html), můžeš [zpochybňovat svůj zápal pro věc](https://www.youtube.com/watch?v=IwqN4c2BOFs) a časem i [vyhořet](https://cs.wikipedia.org/wiki/Syndrom_vyho%C5%99en%C3%AD).
+Jak už naznačuje předchozí odstavec, programátorská profese má i své nevýhody. Světe div se, je to práce jako každá jiná. Tvoje každodenní spokojenost bude nakonec záviset na konkrétní firmě, projektu, štěstí, šéfech, týmu kolegů a klidně i na tom, co někdo jiný, koho vůbec neznáš, špatně naprogramoval před pěti lety a ty s tím teď musíš pracovat. Budeš bojovat s [psychickou zátěží](https://web.archive.org/web/20241113114734/http://borisovo.cz/programming-sucks-cz.html), můžeš [zpochybňovat svůj zápal pro věc](https://www.youtube.com/watch?v=IwqN4c2BOFs) a časem i [vyhořet](https://cs.wikipedia.org/wiki/Syndrom_vyho%C5%99en%C3%AD).
 
 {% call blockquote_avatar(
   'Programování není něco, co bych milovala. Ne, že bych jej nenáviděla, akorát to prostě nemiluju.',

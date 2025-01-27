@@ -51,6 +51,7 @@ exclude = [
     "^https://www\\.make\\.com",
     "^https://[^\\.]+\\.discord\\.com",
     "^https://fiverr\\.com",
+    "^https://keyguru\\.cz",
 
     # Read the Docs anti-scraping protections
     "^https://docs\\.pyvec\\.org",
@@ -60,6 +61,7 @@ exclude = [
     "^https://jobs\\.cz/fp/",
     "^https://jobs\\.cz/rpd/",
 
-    # Not yet deployed avatars of club members
+    # Not yet deployed avatars of club members or company logos
     "^https://junior\\.guru/static/avatars-club/[^\\.]+\\.png",
+    "^https://junior\\.guru/static/logos-jobs/[^\\.]+\\.png",
 ]
