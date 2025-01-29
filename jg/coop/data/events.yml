@@ -63,15 +63,15 @@
 # - https://www.fotor.com/photo-editor-app/editor/beauty
 
 - id: 49
-  title: "(bude upřesněno)"
+  title: "Q&A: Generalista nebo specialista? PyLadies, Linux, cloud, cesta do NTK"
   date: "2025-02-04"
   description: |
-    (bude upřesněno)
+    Je lepší vědět něco o všem, nebo všechno o něčem? Co firmy zamlčují v inzerátech a na HR se tím taky nechlubí? Co by Lea poradila sama sobě na začátku kariéry? Co je a jak funguje Národní technická knihovna? Jaké lidi teď budou hledat do týmu? Po krátké úvodní prezentaci se budete moci v chatu ptát na cokoliv vás zajímá.
   avatar_path: avatars-participants/lea-bradacova.jpg
   bio_name: Lea Bradáčová
-  bio_title: "Vedoucí ICT oddělení v NTK"
+  bio_title: "Vedoucí provozu ICT v NTK"
   bio: |
-    (bude upřesněno)
+    K se IT dostala oklikou až ve 30, když ji v práci frustrovalo, že technické věci „nemůže dělat holka“. Díky přátelům a vlastnímu odhodlání se z administrativní pracovnice vypracovala cloud engineerku v Ataccamě a poté vedoucí provozu ICT v NTK. Prošla PyLadies, světem Linuxu (Fedora, RHEL), cloudových technologií (Kubernetes, AWS, Azure), i sysadminování.
   bio_links:
     - https://witter.cz/@Lwicze
     - https://github.com/gedrex
