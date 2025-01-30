@@ -636,20 +636,20 @@ Stránka nemusí být komplikovaná, stačí aby to byl **rozcestník**. Dvě v�
   Vladimír Gorej, profesionální programátor, o svém [Twitteru](https://twitter.com/vladimirgorej/) a [blogu](https://vladimirgorej.com/)
 {% endcall %}
 
-Příklady osobních stránek s blogem: [Honza Javorek](https://honzajavorek.cz/) (autor této příručky) nebo [Iveta Česalová](https://ivet1987.wz.cz/) (absolventka PyLadies). Další inspiraci lze [snadno najít na internetu](https://www.google.cz/search?q=best%20(personal%20or%20portfolio)%20websites).
+Příklady osobních stránek s blogem: [Honza Javorek](https://honzajavorek.cz/) (autor této příručky) nebo [Iveta Česalová](https://web.archive.org/web/20240421092834/https://ivet1987.wz.cz/blog/) (absolventka PyLadies). Další inspiraci lze [snadno najít na internetu](https://www.google.cz/search?q=best%20(personal%20or%20portfolio)%20websites).
 
 ### Učení    <span id="teaching"></span>
 
 I když se to nezdá, i začátečníci mohou učit! **Nejlepší způsob, jak se něco pořádně naučit, je vysvětlit to někomu jinému.** Učení upevňuje hloubku tvých vlastních znalostí a umožňuje ti setkat se s lidmi z oboru. Můžeš [napsat článek na blog pokaždé, když se naučíš něco nového](#osobni-web-a-blog), můžeš [nabízet mentoring](mentoring.md), můžeš pomáhat na komunitně organizovaných kurzech a workshopech jako jsou ty od [PyLadies](https://pyladies.cz/) nebo [Czechitas](https://www.czechitas.cz/).
 
-Na PyLadies kurzech **můžeš „koučovat“ i bez velkých znalostí programování**, stačí se [přihlásit](https://pyladies.cz/stan_se/). Je to doplňková role bez velké zodpovědnosti, se kterou můžeš kdykoliv přestat. Pro lepší představu si přečti [článek od koučky Ivety](https://ivet1987.wz.cz/2020/03/koucovani-na-pyladies-kurzech/). Další podobná role, kterou jde dokonce dělat na dálku z pohodlí domova, je [opravování úkolů](https://pyladies.cz/stan_se/).
+Na PyLadies kurzech **můžeš „koučovat“ i bez velkých znalostí programování**, stačí se [přihlásit](https://pyladies.cz/stan_se/). Je to doplňková role bez velké zodpovědnosti, se kterou můžeš kdykoliv přestat. Pro lepší představu si přečti [článek od koučky Ivety](https://web.archive.org/web/20240421083253/https://ivet1987.wz.cz/2020/03/koucovani-na-pyladies-kurzech/). Další podobná role, kterou jde dokonce dělat na dálku z pohodlí domova, je [opravování úkolů](https://pyladies.cz/stan_se/).
 
 {% call blockquote_avatar(
   'Na začátku to byly hrozné pocity. Někdo si mě zavolá k problému, se kterým nedokážu pomoci, budu za trubku. Nakonec to ale byly obyčejné, jednoduché problémy, se kterými jsem poradila.',
   'iveta-cesalova.jpg',
   'Iveta Česalová'
 ) %}
-  Iveta Česalová, autorka [článku o koučování na PyLadies](https://ivet1987.wz.cz/2020/03/koucovani-na-pyladies-kurzech/)
+  Iveta Česalová, autorka [článku o koučování na PyLadies](https://web.archive.org/web/20240421083253/https://ivet1987.wz.cz/2020/03/koucovani-na-pyladies-kurzech/)
 {% endcall %}
 
 
@@ -1402,7 +1402,7 @@ For the most part all entry level jobs are “we understand you are going to be 
 
 
 --- https://discord.com/channels/769966886598737931/789087476072710174/1294259606297776168
-<@&1134476995229663374> 
+<@&1134476995229663374>
 Po čase připomínám, že jsem dal k zdarma dispozici malý nástroj, který vám může pomoci: [Tabulka pro plánování, sledování času a hledání práce](https://discord.com/channels/769966886598737931/1047219933647487146)
 
 Trackovat si kam a na jaké inzeráty jste poslali reakci není vůbec od věci. Většinou to totiž nevyjde na pár pokusů a v hlavě to neudržíte.
@@ -1421,7 +1421,7 @@ https://www.youtube.com/watch?v=Lyut1YWYuyw
 --- https://discord.com/channels/769966886598737931/789107031939481641/1288179526521589760
 Přemýšlím, jestli přeci jen nechceš to IČO zvážit — [po důkladném spočítání si](https://www.youtube.com/watch?v=iJGjTFDYw9A) samozřejmě — pokud to pro některý firmy je blok.
 
-S paušální daní to ani není moc administrativy: založit živnost a přihlásit se k paušální dani a pak jen platit měsíčně fixní částku. Není potřeba nic dalšího vykazovat a odevzdávat. 
+S paušální daní to ani není moc administrativy: založit živnost a přihlásit se k paušální dani a pak jen platit měsíčně fixní částku. Není potřeba nic dalšího vykazovat a odevzdávat.
 
 Proti o něco složitější (nutnost odevzdat daňové přiznání a poslat 2 „přehledy“ k pojištěním) možnosti se to vyplatí od cca 680 tisíc ročně.
 ---
@@ -1433,7 +1433,7 @@ Proti o něco složitější (nutnost odevzdat daňové přiznání a poslat 2 �
 
 
 --- https://discord.com/channels/769966886598737931/1283445215323099197/1283469132104335380
-odkážu svoje video https://youtu.be/iJGjTFDYw9A 
+odkážu svoje video https://youtu.be/iJGjTFDYw9A
 sice bych tam pár věcí odebral a pár přidal, ale to hlavní platí.
 ---
 
