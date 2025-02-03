@@ -989,3 +989,5 @@
 {"_id": "26894239353", "amount": -123, "category": "miscellaneous", "happened_on": "2025-01-30"}
 {"_id": "26894689226", "amount": 15000, "category": "sponsorships", "happened_on": "2025-01-31"}
 {"_id": "26901476003", "amount": 9403, "category": "memberships", "happened_on": "2025-02-03"}
+{"_id": "26903045860", "amount": -242, "category": "miscellaneous", "happened_on": "2025-02-03"}
+{"_id": "26903048168", "amount": -1230, "category": "memberful", "happened_on": "2025-02-03"}
