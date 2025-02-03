@@ -58,8 +58,8 @@ requests = "2.32.3"
 strictyaml = "1.7.3"
 stripe = "11.5.0"
 tenacity = "9.0.0"
-githubkit = "0.12.5"
 pydantic = "2.10.6"
+githubkit = "0.12.6"
 
 [tool.poetry.group.dev.dependencies]
 ghp-import = "2.1.0"
