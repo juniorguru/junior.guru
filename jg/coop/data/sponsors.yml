@@ -61,6 +61,14 @@ registry:
       - [2025-01, 2026-02]
       - [2023-02, 2024-02]
 
+  - name: Praha CODING School
+    slug: prahacodingschool
+    url: https://prahacoding.cz/
+    cz_business_id: 14143801
+    subscription: https://juniorguru.memberful.com/admin/subscriptions/4021650
+    periods:
+      - [2025-02, 2026-03]
+
   # PAST SPONSORS
 
   - name: Green Fox Academy
