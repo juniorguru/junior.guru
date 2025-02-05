@@ -83,7 +83,7 @@
 {"month": "2025-01", "name": "subscriptions_signups", "count": 9}
 {"month": "2025-01", "name": "subscriptions_trials", "count": 46}
 {"month": "2025-02", "name": "members", "count": 356}
-{"month": "2025-02", "name": "members_f", "count": 119}
+{"month": "2025-02", "name": "members_f", "count": 118}
 {"month": "2025-02", "name": "subscription_types_finaid", "count": 15}
 {"month": "2025-02", "name": "subscription_types_free", "count": 46}
 {"month": "2025-02", "name": "subscription_types_monthly", "count": 163}
@@ -93,4 +93,4 @@
 {"month": "2025-02", "name": "subscription_types_yearly", "count": 50}
 {"month": "2025-02", "name": "subscriptions_quits", "count": 2}
 {"month": "2025-02", "name": "subscriptions_signups", "count": 1}
-{"month": "2025-02", "name": "subscriptions_trials", "count": 4}
+{"month": "2025-02", "name": "subscriptions_trials", "count": 5}
