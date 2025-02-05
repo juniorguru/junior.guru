@@ -71,12 +71,13 @@
   bio_name: Lea Bradáčová
   bio_title: "Vedoucí provozu ICT v NTK"
   bio: |
-    K se IT dostala oklikou až ve 30, když ji v práci frustrovalo, že technické věci „nemůže dělat holka“. Díky přátelům a vlastnímu odhodlání se z administrativní pracovnice vypracovala cloud engineerku v Ataccamě a poté vedoucí provozu ICT v NTK. Prošla PyLadies, světem Linuxu (Fedora, RHEL), cloudových technologií (Kubernetes, AWS, Azure), i sysadminování.
+    Do IT dostala oklikou až ve 30, když ji v práci frustrovalo, že technické věci „nemůže dělat holka“. Díky přátelům a vlastnímu odhodlání se z administrativní pracovnice vypracovala cloud engineerku v Ataccamě a poté vedoucí provozu ICT v NTK. Prošla PyLadies, světem Linuxu (Fedora, RHEL), cloudových technologií (Kubernetes, AWS, Azure), i sysadminování.
   bio_links:
     - https://witter.cz/@Lwicze
     - https://github.com/gedrex
     - https://www.linkedin.com/in/lea-bradáčová-2b931841/
   speakers: 377398623777980418
+  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1336612967092850699
 
 - id: 48
   title: "Jak používat AI asistenty a odnést si z nich maximum"
