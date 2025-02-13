@@ -24,7 +24,7 @@ accept = ["100..=103", "200..=299", "429"]
 
 # Be benevolent
 max_retries = 5
-timeout = 30
+timeout = 40
 
 # Exclude
 exclude = [
@@ -49,7 +49,7 @@ exclude = [
     "^https://toptal\\.com",
     "^https://upwork\\.com",
     "^https://www\\.make\\.com",
-    "^https://[^\\.]+\\.discord\\.com",
+    "^https://([^\\.]+\\.)?discord\\.com",
     "^https://fiverr\\.com",
     "^https://keyguru\\.cz",
 
