@@ -157,6 +157,17 @@ template: main_subnav.html
               </li>
               <li class="jobs-company-links-item">
                 <a
+                  href="{{ job.company_jakybylpohovor_url }}"
+                  rel="nofollow noopener"
+                  target="_blank"
+                  class="jobs-company-link"
+                >
+                  <span class="jobs-company-link-icon">{{ "suitcase-lg"|icon }}</span>
+                  <span class="jobs-company-link-label">Jaký byl pohovor?</span>
+                </a>
+              </li>
+              <li class="jobs-company-links-item">
+                <a
                   href="{{ job.company_search_url }}"
                   rel="nofollow noopener"
                   target="_blank"

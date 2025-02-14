@@ -185,6 +185,7 @@
 .jobs-company-heading {
   font-size: $font-size-base;
   font-weight: $font-weight-normal;
+  white-space: nowrap;
 
   @include media-breakpoint-up(sm) {
     margin: 0;
@@ -202,7 +203,7 @@
   gap: 0 $spacer;
   font-size: $font-size-sm;
 
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     flex-wrap: nowrap;
   }
 }

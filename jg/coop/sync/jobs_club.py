@@ -307,6 +307,7 @@ async def prepare_thread_params(job: ListedJob) -> dict:
     company_links = [
         f"<:linkedin:915267970752712734> [LinkedIn]({job.company_linkedin_url})",
         f"🔬 [Atmoskop]({job.company_atmoskop_url})",
+        f"🧳 [Jaký byl pohovor?]({job.company_jakybylpohovor_url})",
         f"<:google:976200950886826084> [Google]({job.company_search_url})",
     ]
     if job.company_url:

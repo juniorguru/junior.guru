@@ -274,6 +274,11 @@ class ListedJob(BaseModel):
         return f"https://www.linkedin.com/search/results/companies/?keywords={quote_plus(self.company_name)}"
 
     @property
+    def company_jakybylpohovor_url(self) -> str:
+        utm_params = "&utm_source=junior.guru&utm_medium=web&utm_campaign=jobs"
+        return f"https://www.jakybylpohovor.cz/search/?name={quote_plus(self.company_name)}{utm_params}"
+
+    @property
     def is_submitted(self) -> bool:
         return bool(self.submitted_job)
 
