@@ -1,6 +1,7 @@
 import asyncio
 from datetime import date, timedelta
 from enum import StrEnum
+from operator import is_
 from pathlib import Path
 
 import click
@@ -153,27 +154,9 @@ async def sync_jobs(client: ClubClient, channel_id: int):
     logger.info(f"Created {DiscordJob.count()} Discord jobs")
 
     logger.info("Ensuring there is a summary post")
-    summary_title = "Ručně vložené inzeráty od zdejších členů"
-    summary_content = "…"
-    if summary_id:
-        summary_thread = channel.get_thread(summary_id)
-    else:
-        logger.debug("Creating the summary")
-        with mutating_discord(channel) as proxy:
-            summary_thread: Thread = await proxy.create_thread(
-                name=summary_title, content=summary_content
-            )
-    if summary_thread:
-        if summary_thread.name != summary_title:
-            with mutating_discord(summary_thread) as proxy:
-                await proxy.edit(name=summary_title)
-        if not summary_thread.is_pinned():
-            with mutating_discord(summary_thread) as proxy:
-                await proxy.edit(pinned=True)
-        summary_message = await summary_thread.fetch_message(summary_thread.id)
-        if summary_message.content != summary_content:
-            with mutating_discord(summary_message) as proxy:
-                await proxy.edit(content=summary_content)
+    await ensure_summary(
+        channel, summary_id, "Ručně vložené inzeráty od zdejších členů", "…"
+    )
 
     jobs = ListedJob.no_discord_listing()
     logger.info(f"Posting {len(jobs)} new jobs to the channel")
@@ -204,6 +187,32 @@ def get_forum_tags(
         else:
             forum_tags.pop()
     return forum_tags
+
+
+@mutations.mutates_discord()
+async def ensure_summary(
+    channel: ForumChannel, summary_id: int | None, title: str, content: str
+) -> None:
+    if summary_id:
+        thread = channel.get_thread(summary_id)
+    else:
+        thread = await channel.create_thread(name=title, content=content)
+
+    params = {}
+    if summary_id and thread.name != title:
+        params["name"] = title
+    if not thread.is_pinned():
+        params["pinned"] = True
+    if params:
+        await thread.edit(**params)
+
+    if summary_id:
+        message = await thread.fetch_message(thread.id)
+        params = {}
+        if message.content != content:
+            params["content"] = content
+        if params:
+            await message.edit(**params)
 
 
 @mutations.mutates_discord()
