@@ -232,6 +232,8 @@ async def fetch_threads(
 
 
 def is_thread_after(thread: discord.Thread, after: date = None) -> bool:
+    if thread.is_pinned():
+        return True
     if after:
         return (thread.created_at or DEFAULT_THREAD_CREATED_AT) >= after
     return True
@@ -375,3 +377,11 @@ def resolve_references(markdown: str, roles: dict[str, int] | None = None) -> st
             raise ValueError(f"Could not parse reference: {prefix}{value!r}") from e
 
     return REFERENCE_RE.sub(resolve_reference, markdown)
+
+
+def is_forum_summary(message: discord.Message) -> bool:
+    if message.id != message.channel.id:
+        return False
+    if message.channel.is_pinned():
+        return True
+    return False

@@ -124,17 +124,21 @@ async def channel_worker(worker_no, queue) -> None:
         logger_c = get_channel_logger(logger_cw, channel)
         logger_c.info(f"Crawling {get_channel_name(channel)!r}")
 
-        history_since = CHANNELS_HISTORY_SINCE.get(
-            get_parent_channel(channel).id, DEFAULT_CHANNELS_HISTORY_SINCE
-        )
-        if history_since is None:
+        if hasattr(channel, "is_pinned") and channel.is_pinned():
             history_after = None
-            logger_c.debug("Crawling all channel history")
+            logger_c.debug("Crawling all channel history (pinned forum thread)")
         else:
-            history_after = get_history_after(history_since)
-            logger_c.debug(
-                f"Crawling history after {history_after:%Y-%m-%d} ({history_since.days} days ago)"
+            history_since = CHANNELS_HISTORY_SINCE.get(
+                get_parent_channel(channel).id, DEFAULT_CHANNELS_HISTORY_SINCE
             )
+            if history_since is None:
+                history_after = None
+                logger_c.debug("Crawling all channel history")
+            else:
+                history_after = get_history_after(history_since)
+                logger_c.debug(
+                    f"Crawling history after {history_after:%Y-%m-%d} ({history_since.days} days ago)"
+                )
 
         threads = [
             thread
@@ -182,15 +186,14 @@ async def fetch_messages(
 
     # Get channel history iterator
     try:
-        channel_history = channel.history
+        channel_history = channel.history(limit=None, after=after, oldest_first=False)
     except AttributeError:
         logger_m.debug(f"Channel doesn't support history: {channel.type}")
         return
-    iterator = channel_history(limit=None, after=after, oldest_first=False)
 
     # Iterate over messages
     count = 0
-    async for message in iterator:
+    async for message in channel_history:
         yield message
         count += 1
     logger_m.debug(f"Downloaded {count} messages")

@@ -269,8 +269,9 @@ class ClubMessage(BaseModel):
     category_id = IntegerField(index=True, null=True)
     type = CharField(default="default")
     is_private = BooleanField(default=False)
-    pinned_message_url = IntegerField(null=True, index=True)
+    pinned_message_url = CharField(null=True, index=True)
     ui_urls = JSONField(default=list)
+    is_forum_summary = BooleanField(default=False)
 
     @property
     def is_pinning(self) -> bool:
@@ -378,6 +379,16 @@ class ClubMessage(BaseModel):
             .group_by(cls.channel_id)
             .having(cls.id == fn.min(cls.id))
             .order_by(cls.created_at.desc())
+        )
+
+    @classmethod
+    def forum_summary(cls, channel_id: int) -> Self:
+        return (
+            cls.forum_listing(channel_id)
+            .where(
+                cls.is_forum_summary == True,  # noqa: E712
+            )
+            .first()
         )
 
     @classmethod

@@ -104,7 +104,15 @@ async def sync_jobs(client: ClubClient, channel_id: int):
         job.save()
     logger.info(f"Currently listed jobs: {len(jobs)}")
 
-    messages = ClubMessage.forum_listing(channel_id)
+    if summary_message := ClubMessage.forum_summary(channel_id):
+        summary_id = summary_message.id
+    else:
+        summary_id = None
+    messages = [
+        message
+        for message in ClubMessage.forum_listing(channel_id)
+        if message.id != summary_id
+    ]
     logger.info(f"Found {len(messages)} threads since {since_on}")
     for message in messages:
         if message.created_at.date() > since_on:
@@ -143,6 +151,29 @@ async def sync_jobs(client: ClubClient, channel_id: int):
                 )
                 await unarchive_thread(thread)
     logger.info(f"Created {DiscordJob.count()} Discord jobs")
+
+    logger.info("Ensuring there is a summary post")
+    summary_title = "Ručně vložené inzeráty od zdejších členů"
+    summary_content = "…"
+    if summary_id:
+        summary_thread = channel.get_thread(summary_id)
+    else:
+        logger.debug("Creating the summary")
+        with mutating_discord(channel) as proxy:
+            summary_thread: Thread = await proxy.create_thread(
+                name=summary_title, content=summary_content
+            )
+    if summary_thread:
+        if summary_thread.name != summary_title:
+            with mutating_discord(summary_thread) as proxy:
+                await proxy.edit(name=summary_title)
+        if not summary_thread.is_pinned():
+            with mutating_discord(summary_thread) as proxy:
+                await proxy.edit(pinned=True)
+        summary_message = await summary_thread.fetch_message(summary_id)
+        if summary_message.content != summary_content:
+            with mutating_discord(summary_message) as proxy:
+                await proxy.edit(content=summary_content)
 
     jobs = ListedJob.no_discord_listing()
     logger.info(f"Posting {len(jobs)} new jobs to the channel")
