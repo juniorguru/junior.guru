@@ -170,7 +170,7 @@ async def sync_jobs(client: ClubClient, channel_id: int):
         if not summary_thread.is_pinned():
             with mutating_discord(summary_thread) as proxy:
                 await proxy.edit(pinned=True)
-        summary_message = await summary_thread.fetch_message(summary_id)
+        summary_message = await summary_thread.fetch_message(summary_thread.id)
         if summary_message.content != summary_content:
             with mutating_discord(summary_message) as proxy:
                 await proxy.edit(content=summary_content)
