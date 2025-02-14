@@ -1,9 +1,13 @@
 import csv
 from datetime import timedelta
+import itertools
+import json
 
+import httpx
 import ics
 from pod2gen import Category, Episode, Funding, Media, Person, Podcast
 
+from jg.coop.lib import apify
 from jg.coop.lib.md import md
 from jg.coop.models.base import db
 from jg.coop.models.event import Event
@@ -63,12 +67,44 @@ def build_events_honza_ics(api_dir, config):
 
 @db.connection_context()
 def build_czechitas_csv(api_dir, config):
-    rows = [job.to_api() for job in ListedJob.api_listing()]
+    rows = [job.to_czechitas_api() for job in ListedJob.api_listing()]
     api_file = api_dir / "jobs.csv"
     with api_file.open("w", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
         writer.writeheader()
         writer.writerows(rows)
+
+
+@db.connection_context()
+def build_navigara_api(api_dir, config):
+    actor_names = [
+        actor_name
+        for actor_name in apify.fetch_scheduled_actors()
+        if actor_name.startswith("honzajavorek/jobs-")
+    ]
+    items = itertools.chain.from_iterable(
+        apify.fetch_data(actor_name, raise_if_missing=False)
+        for actor_name in actor_names
+    )
+
+    api_subdir = api_dir / "navigara"
+    api_subdir.mkdir(parents=True, exist_ok=True)
+
+    api_file = api_subdir / "jobs.jsonl"
+    with api_file.open("w", encoding="utf-8") as f:
+        for item in items:
+            f.write(json.dumps(item, ensure_ascii=False, sort_keys=True) + "\n")
+
+    response = httpx.get(
+        "https://raw.githubusercontent.com/"
+        "juniorguru/plucker"  # repo
+        "/refs/heads/main/"
+        "jg/plucker/schemas/jobSchema.json",  # path
+        follow_redirects=True,
+    )
+    response.raise_for_status()
+    schema_file = api_subdir / "schema-apify.json"
+    schema_file.write_bytes(response.content)
 
 
 @db.connection_context()

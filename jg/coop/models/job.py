@@ -448,7 +448,7 @@ class ListedJob(BaseModel):
             sort_keys=True,
         )
 
-    def to_api(self) -> dict[str, str | int | datetime | None]:
+    def to_czechitas_api(self) -> dict[str, str | int | datetime | None]:
         return dict(
             **dict(
                 title=self.title,

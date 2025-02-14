@@ -66,3 +66,4 @@ def on_post_build(config):
     api.build_events_honza_ics(api_dir, config)
     api.build_podcast_xml(api_dir, config)
     api.build_czechitas_csv(api_dir, config)
+    api.build_navigara_api(api_dir, config)
