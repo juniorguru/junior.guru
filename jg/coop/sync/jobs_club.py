@@ -1,7 +1,6 @@
 import asyncio
 from datetime import date, timedelta
 from enum import StrEnum
-from operator import is_
 from pathlib import Path
 
 import click
