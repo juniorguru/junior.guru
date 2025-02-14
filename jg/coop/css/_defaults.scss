@@ -27,9 +27,9 @@ $jg-gray-light-legacy: darken($jg-white, 20%);
   CHANGING BOOTSTRAP DEFAULTS
 */
 
-$font-family-sans-serif: "Inter", "Helvetica Neue", "Helvetica", "Arial",
-  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-  "Noto Color Emoji";
+$font-family-sans-serif: 
+  "Inter", "Helvetica Neue", "Helvetica", "Arial", sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
 $white: $jg-white;
 $gray-100: $jg-gray-white;
