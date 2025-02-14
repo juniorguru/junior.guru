@@ -223,21 +223,23 @@ def prepare_summary_content(
     manual_jobs: list[DiscordJob], submitted_jobs: list[ListedJob]
 ) -> str:
     text = (
-        "Pokud víš o zajímavé nabídce pro juniory, přidej ji sem! Vytvoř nový příspěvek"
-        f"v kanálu #<{ClubChannelID.JOBS}> a vlož popis, nebo i jen odkaz."
+        "Pokud víš o zajímavé nabídce pro juniory, přidej ji sem! Vytvoř nový příspěvek "
+        "a vlož popis, nebo i jen odkaz."
     )
     if manual_jobs:
+        items = [f"- [{job.title}]({job.url})" for job in manual_jobs]
         text += "\n\n## Aktuální inzeráty od členů ❤️\n\n"
-        text += "\n".join([f"- {job.url}" for job in manual_jobs])
+        text += "\n".join(items)
     if submitted_jobs:
+        items = [f"- [{job.title}]({job.discord_url})" for job in submitted_jobs]
         text += "\n\n## Aktuální inzeráty z junior.guru 💛\n\n"
-        text += "\n".join([f"- {job.discord_url}" for job in submitted_jobs])
+        text += "\n".join(items)
     text += (
         "\n\n## Inzeráty odjinud ✨\n\n"
-        f"Už žádné „požadujeme 4 roky zkušeností“. Každý den do #<{ClubChannelID.JOBS}>"
+        f"Už žádné „požadujeme 4 roky zkušeností“. Každý den do <#{ClubChannelID.JOBS}> "
         "stahuju inzeráty z různých zdrojů a pomocí umělé inteligence vybírám jen ty "
         "vhodné pro začátečníky.\n\n"
-        "Tytéž inzeráty najdeš i na [junior.guru/jobs](https://junior.guru/jobs/), ale tady"
+        "Tytéž inzeráty najdeš i na [junior.guru/jobs](https://junior.guru/jobs/), ale tady "
         "se o nich dovíš hned, a navíc na ně můžeš reagovat a komentovat pod nimi."
     )
     return text
