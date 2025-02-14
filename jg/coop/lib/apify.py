@@ -1,6 +1,7 @@
 import os
 from datetime import timedelta
 from functools import lru_cache
+from typing import Generator
 
 from apify_client import ApifyClient
 from apify_shared.consts import ActorJobStatus
@@ -70,3 +71,25 @@ def fetch_data(
     )
     dataset = last_run.dataset()
     return list(dataset.iterate_items())
+
+
+def fetch_scheduled_actors(token: str | None = None) -> Generator[str, None, None]:
+    client = create_client(token=token)
+    schedules = [
+        schedule
+        for schedule in client.schedules().list().items
+        if schedule["isEnabled"]
+    ]
+    actor_ids = set()
+    for schedule in schedules:
+        schedule_actor_ids = [
+            action["actorId"]
+            for action in schedule["actions"]
+            if action["type"] == "RUN_ACTOR"
+        ]
+        actor_ids.update(schedule_actor_ids)
+
+    for actor_id in actor_ids:
+        actor = client.actor(actor_id)
+        actor_info = actor.get()
+        yield f"{actor_info['username']}/{actor_info['name']}"

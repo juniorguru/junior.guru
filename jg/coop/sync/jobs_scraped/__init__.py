@@ -14,13 +14,6 @@ from jg.coop.models.base import db
 from jg.coop.models.job import DroppedJob, ScrapedJob
 
 
-ACTORS = [
-    "honzajavorek/jobs-jobscz",
-    # "honzajavorek/jobs-linkedin",
-    "honzajavorek/jobs-startupjobs",
-    # "honzajavorek/jobs-weworkremotely",
-]
-
 PIPELINES = [
     "jg.coop.sync.jobs_scraped.pipelines.time_filter",
     "jg.coop.sync.jobs_scraped.pipelines.blocklist_filter",
@@ -47,9 +40,15 @@ class DropItem(Exception):
 @cli.sync_command()
 @async_command
 async def main():
-    logger.info(f"Actors:\n{pformat(ACTORS)}")
+    actor_names = [
+        actor_name
+        for actor_name in apify.fetch_scheduled_actors()
+        if actor_name.startswith("honzajavorek/jobs-")
+    ]
+    logger.info(f"Actors:\n{pformat(actor_names)}")
     items = itertools.chain.from_iterable(
-        apify.fetch_data(actor, raise_if_missing=False) for actor in ACTORS
+        apify.fetch_data(actor_name, raise_if_missing=False)
+        for actor_name in actor_names
     )
 
     logger.info(f"Pipelines:\n{pformat(PIPELINES)}")
