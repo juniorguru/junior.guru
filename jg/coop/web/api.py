@@ -1,5 +1,6 @@
 import csv
 from datetime import timedelta
+import gzip
 import itertools
 import json
 
@@ -90,10 +91,11 @@ def build_navigara_api(api_dir, config):
     api_subdir = api_dir / "navigara"
     api_subdir.mkdir(parents=True, exist_ok=True)
 
-    api_file = api_subdir / "jobs.jsonl"
-    with api_file.open("w", encoding="utf-8") as f:
+    api_file = api_subdir / "jobs.jsonl.gz"
+    with gzip.GzipFile(api_file, mode="wb") as gzip_f:
         for item in items:
-            f.write(json.dumps(item, ensure_ascii=False, sort_keys=True) + "\n")
+            line = json.dumps(item, ensure_ascii=False, sort_keys=True) + "\n"
+            gzip_f.write(line.encode("utf-8"))
 
     response = httpx.get(
         "https://raw.githubusercontent.com/"
