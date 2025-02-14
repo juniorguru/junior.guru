@@ -9,7 +9,7 @@ from discord import Embed, File, ForumChannel, ForumTag, Message, Thread, ui
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers, mutations
-from jg.coop.lib.discord_club import ClubClient, parse_channel
+from jg.coop.lib.discord_club import ClubChannelID, ClubClient, parse_channel
 from jg.coop.lib.md import md
 from jg.coop.lib.mutations import MutationsNotAllowedError, mutating_discord
 from jg.coop.lib.text import emoji_url
@@ -154,7 +154,10 @@ async def sync_jobs(client: ClubClient, channel_id: int):
 
     logger.info("Ensuring there is a summary post")
     await ensure_summary(
-        channel, summary_id, "Ručně vložené inzeráty od zdejších členů", "…"
+        channel,
+        summary_id,
+        "Aktuální ručně přidané inzeráty (aby nezapadly)",
+        prepare_summary_content(DiscordJob.listing(), ListedJob.submitted_listing()),
     )
 
     jobs = ListedJob.no_discord_listing()
@@ -202,6 +205,8 @@ async def ensure_summary(
         params["name"] = title
     if not thread.is_pinned():
         params["pinned"] = True
+    if not thread.locked:
+        params["locked"] = True
     if params:
         await thread.edit(**params)
 
@@ -212,6 +217,30 @@ async def ensure_summary(
             params["content"] = content
         if params:
             await message.edit(**params)
+
+
+def prepare_summary_content(
+    manual_jobs: list[DiscordJob], submitted_jobs: list[ListedJob]
+) -> str:
+    text = (
+        "Pokud víš o zajímavé nabídce pro juniory, přidej ji sem! Vytvoř nový příspěvek"
+        f"v kanálu #<{ClubChannelID.JOBS}> a vlož popis, nebo i jen odkaz."
+    )
+    if manual_jobs:
+        text += "\n\n## Aktuální inzeráty od členů ❤️\n\n"
+        text += "\n".join([f"- {job.url}" for job in manual_jobs])
+    if submitted_jobs:
+        text += "\n\n## Aktuální inzeráty z junior.guru 💛\n\n"
+        text += "\n".join([f"- {job.discord_url}" for job in submitted_jobs])
+    text += (
+        "\n\n## Inzeráty odjinud ✨\n\n"
+        f"Už žádné „požadujeme 4 roky zkušeností“. Každý den do #<{ClubChannelID.JOBS}>"
+        "stahuju inzeráty z různých zdrojů a pomocí umělé inteligence vybírám jen ty "
+        "vhodné pro začátečníky.\n\n"
+        "Tytéž inzeráty najdeš i na [junior.guru/jobs](https://junior.guru/jobs/), ale tady"
+        "se o nich dovíš hned, a navíc na ně můžeš reagovat a komentovat pod nimi."
+    )
+    return text
 
 
 @mutations.mutates_discord()
