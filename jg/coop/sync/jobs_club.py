@@ -156,7 +156,7 @@ async def sync_jobs(client: ClubClient, channel_id: int):
     await ensure_summary(
         channel,
         summary_id,
-        "Aktuální ručně přidané inzeráty (aby nezapadly)",
+        "Aktuální ručně přidané inzeráty 👈 (aby nezapadly)",
         prepare_summary_content(DiscordJob.listing(), ListedJob.submitted_listing()),
     )
 
