@@ -277,31 +277,67 @@ async def test_check_mutations_doesnt_raise_if_discord_allowed(nothing_allowed, 
 
 
 @pytest.mark.parametrize(
-    "created_at, after, expected",
+    "created_at, is_pinned, after, expected",
     [
-        (None, datetime(2022, 1, 8, tzinfo=timezone.utc), True),
-        (None, datetime(2022, 1, 9, tzinfo=timezone.utc), True),
-        (None, datetime(2022, 1, 10, tzinfo=timezone.utc), False),
+        (
+            None,
+            False,
+            datetime(2022, 1, 8, tzinfo=timezone.utc),
+            True,
+        ),
+        (
+            None,
+            False,
+            datetime(2022, 1, 9, tzinfo=timezone.utc),
+            True,
+        ),
+        (
+            None,
+            False,
+            datetime(2022, 1, 10, tzinfo=timezone.utc),
+            False,
+        ),
         (
             datetime(2023, 8, 30, tzinfo=timezone.utc),
+            False,
             datetime(2023, 8, 29, tzinfo=timezone.utc),
             True,
         ),
         (
             datetime(2023, 8, 30, tzinfo=timezone.utc),
+            False,
             datetime(2023, 8, 30, tzinfo=timezone.utc),
             True,
         ),
         (
             datetime(2023, 8, 30, tzinfo=timezone.utc),
+            False,
             datetime(2023, 8, 31, tzinfo=timezone.utc),
             False,
         ),
+        (
+            None,
+            True,
+            datetime(2022, 1, 8, tzinfo=timezone.utc),
+            True,
+        ),
+        (
+            None,
+            True,
+            datetime(2022, 1, 10, tzinfo=timezone.utc),
+            True,
+        ),
+        (
+            datetime(2023, 8, 30, tzinfo=timezone.utc),
+            True,
+            datetime(2023, 8, 31, tzinfo=timezone.utc),
+            True,
+        ),
     ],
 )
-def test_is_thread_after_default(created_at, after, expected):
-    StubThread = namedtuple("Thread", ["created_at"])
-    thread = StubThread(created_at)
+def test_is_thread_after_default(created_at, is_pinned, after, expected):
+    StubThread = namedtuple("Thread", ["created_at", "is_pinned"])
+    thread = StubThread(created_at, lambda: is_pinned)
 
     assert discord_club.is_thread_after(thread, after) is expected
 
