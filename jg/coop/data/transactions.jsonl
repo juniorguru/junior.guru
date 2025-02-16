@@ -999,3 +999,5 @@
 {"_id": "26912375402", "amount": 4, "category": "donations", "happened_on": "2025-02-11"}
 {"_id": "26914569002", "amount": 6, "category": "donations", "happened_on": "2025-02-12"}
 {"_id": "26916550729", "amount": -51, "category": "tax", "happened_on": "2025-02-13"}
+{"_id": "26919213680", "amount": -4884, "category": "tax", "happened_on": "2025-02-15"}
+{"_id": "26919213681", "amount": -3143, "category": "tax", "happened_on": "2025-02-15"}
