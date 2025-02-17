@@ -1001,3 +1001,5 @@
 {"_id": "26916550729", "amount": -51, "category": "tax", "happened_on": "2025-02-13"}
 {"_id": "26919213680", "amount": -4884, "category": "tax", "happened_on": "2025-02-15"}
 {"_id": "26919213681", "amount": -3143, "category": "tax", "happened_on": "2025-02-15"}
+{"_id": "26920888508", "amount": -157, "category": "miscellaneous", "happened_on": "2025-02-16"}
+{"_id": "26921032721", "amount": 7715, "category": "memberships", "happened_on": "2025-02-17"}
