@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, timedelta
 from multiprocessing import Pool
 from pathlib import Path
 
@@ -200,6 +200,9 @@ async def announce_new_episode(client: ClubClient):
         f"**{last_episode.number}. epizodu**",
     )
     if not last_message:
+        if last_episode.publish_on < (TODAY - timedelta(days=30 * 3)):
+            logger.warning(f"Last episode {last_episode!r} is too old, not announcing")
+            return
         logger.info(f"Announcing {last_episode!r}")
         channel = await client.fetch_channel(ClubChannelID.ANNOUNCEMENTS)
         content = (
