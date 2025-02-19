@@ -3,6 +3,7 @@ import gzip
 import itertools
 import json
 from datetime import timedelta
+from operator import attrgetter
 
 import httpx
 import ics
@@ -11,9 +12,20 @@ from pod2gen import Category, Episode, Funding, Media, Person, Podcast
 from jg.coop.lib import apify
 from jg.coop.lib.md import md
 from jg.coop.models.base import db
+from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.event import Event
 from jg.coop.models.job import ListedJob
 from jg.coop.models.podcast import PodcastEpisode
+
+
+@db.connection_context()
+def build_courses_up_ids_api(api_dir, config):
+    ids = sorted(
+        filter(None, map(attrgetter("cz_business_id"), CourseProvider.listing()))
+    )
+    api_file = api_dir / "courses-up-ids.json"
+    with api_file.open("w", encoding="utf-8") as f:
+        json.dump(ids, f, ensure_ascii=False, indent=2)
 
 
 @db.connection_context()
