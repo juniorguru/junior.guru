@@ -24,7 +24,7 @@ class CourseUP(BaseModel):
     name = CharField()
     description = TextField()
     company_name = CharField()
-    cz_business_id = IntegerField(index=True)
+    business_id = IntegerField(index=True)
 
     @classmethod
     def add(cls, **kwargs) -> None:
@@ -65,7 +65,7 @@ class CourseProvider(BaseModel):
     def list_courses_up(self) -> Iterable[CourseUP]:
         return (
             CourseUP.select()
-            .where(CourseUP.cz_business_id == self.cz_business_id)
+            .where(CourseUP.business_id == self.cz_business_id)
             .order_by(fn.czech_sort(CourseUP.name))
         )
 

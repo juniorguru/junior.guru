@@ -3,7 +3,6 @@ import gzip
 import itertools
 import json
 from datetime import timedelta
-from operator import attrgetter
 
 import httpx
 import ics
@@ -19,13 +18,17 @@ from jg.coop.models.podcast import PodcastEpisode
 
 
 @db.connection_context()
-def build_courses_up_ids_api(api_dir, config):
-    ids = sorted(
-        filter(None, map(attrgetter("cz_business_id"), CourseProvider.listing()))
+def build_courses_up_business_ids_api(api_dir, config):
+    cz_business_ids = sorted(
+        {
+            str(cp.cz_business_id).zfill(8)
+            for cp in CourseProvider.listing()
+            if cp.cz_business_id
+        }
     )
-    api_file = api_dir / "courses-up-ids.json"
+    api_file = api_dir / "courses-up-business-ids.json"
     with api_file.open("w", encoding="utf-8") as f:
-        json.dump(ids, f, ensure_ascii=False, indent=2)
+        json.dump(cz_business_ids, f, ensure_ascii=False, indent=2)
 
 
 @db.connection_context()

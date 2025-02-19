@@ -19,6 +19,7 @@ def main():
         if course["description"] is None:
             courses_with_issues.append(course)
         else:
+            course["business_id"] = int(course["business_id"].lstrip("0"))
             CourseUP.add(**course)
 
     if courses_with_issues:
