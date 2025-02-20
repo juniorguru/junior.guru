@@ -21,6 +21,7 @@ thumbnail_button_icon: heart
   <h3 class="tiers-card-header">GitHub Sponsors</h3>
   <div class="card-body">
     <ul class="card-text">
+      <li>Podporuješ provoz junior.guru</li>
       <li>Pokud zaškrtneš, že podporuješ veřejně, objeví se tvůj avatar na <a href="{{ pages|docs_url('index.jinja')|url }}">úvodní stránce</a></li>
       <li>Platba kartou</li>
     </ul>
@@ -46,6 +47,7 @@ thumbnail_button_icon: heart
   <h3 class="tiers-card-header">Členství v klubu</h3>
   <div class="card-body">
     <ul class="card-text">
+      <li>Podporuješ provoz junior.guru a navíc jsi v super komunitě</li>
       <li>Normální členství v <a href="{{ pages|docs_url('club.md')|url }}">klubu</a> pro 1 člověka</li>
       <li>2 týdny zdarma, potom platba kartou</li>
     </ul>
@@ -87,9 +89,8 @@ thumbnail_button_icon: heart
         {% set icon = "heart-fill" %}
         <ul class="card-text">
           <li>Logo na <a href="{{ pages|docs_url('index.jinja')|url }}">úvodní stránce</a></li>
-          <li>Skupinové členství v <a href="{{ pages|docs_url('club.md')|url }}">klubu</a> pro až 15 lidí</li>
-          <li>Uvítání sponzora příspěvkem v klubu</li>
-          <li>Kartou nebo na fakturu, neplátce DPH</li>
+          <li>Skupinové členství v <a href="{{ pages|docs_url('club.md')|url }}">klubu</a>, 15 míst</li>
+          <li>Kartou nebo na fakturu, neplátce DPH</li>
         </ul>
 
       {% elif tier.plan_id == 111100 %}
@@ -97,9 +98,9 @@ thumbnail_button_icon: heart
         {% set icon = "star-fill" %}
         <ul class="card-text">
           <li>Všechno co předchozí tarif</li>
-          <li>Zvýrazněný zápis v <a href="{{ pages|docs_url('courses.md')|url }}">katalogu kurzů</a> s logem a odkazem bez <em>nofollow</em> (zlepší vaše SEO)</li>
-          <li>Možnost poslat do klubu studenty za {{ tier.member_price }} Kč/měs/os</li>
-          <li>Kartou nebo na fakturu, neplátce DPH</li>
+          <li>Zvýrazněný zápis v <a href="{{ pages|docs_url('courses.md')|url }}">katalogu kurzů</a> s logem a odkazem bez <em>nofollow</em> (zlepší vaše SEO)</li>
+          <li>Možnost přikupovat místa v klubu pro lektory či studenty, {{ tier.member_price }} Kč/místo/rok</li>
+          <li>Kartou nebo na fakturu, neplátce DPH</li>
         </ul>
 
       {% elif tier.plan_id == 111101 %}
@@ -107,9 +108,9 @@ thumbnail_button_icon: heart
         {% set icon = "shield-fill" %}
         <ul class="card-text">
           <li>Všechno co předchozí tarify</li>
-          <li>Logo i na <a href="{{ pages|docs_url('handbook/index.md')|url }}">příručce</a></li>
+          <li>Logo i na všech stránkách <a href="{{ pages|docs_url('handbook/index.md')|url }}">příručky</a></li>
           <li>Omezené množství, maximálně {{ tier.max_sponsors }} firmy</li>
-          <li>Kartou nebo na fakturu, neplátce DPH</li>
+          <li>Kartou nebo na fakturu, neplátce DPH</li>
         </ul>
 
       {% else %}
