@@ -43,7 +43,7 @@ jobs:
             poetry self update 1.8.3
       - run:
           name: Install Python dependencies
-          command: poetry -vvv install --no-cache
+          command: poetry -vvv install
       - run:
           name: Install browser
           command: poetry run playwright install firefox
