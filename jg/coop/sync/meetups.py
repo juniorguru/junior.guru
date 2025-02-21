@@ -197,6 +197,15 @@ async def sync_meetups(client: ClubClient, instructions: list[PostingInstruction
                 ),
                 inline=False,
             )
+            logger.debug(
+                (
+                    f"Posting:\n- {embed.title!r}\n- {embed.url!r}"
+                    f"\n- {embed.author.name!r}\n"
+                )
+                + "\n".join(
+                    [f"- {field.name!r}: {field.value!r}" for field in embed.fields]
+                )
+            )
             message = await proxy.send(embed=embed)
         if message:
             await add_reactions(message, "🙋")
