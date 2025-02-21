@@ -4,6 +4,7 @@ from datetime import date, datetime, timedelta
 from operator import attrgetter
 from pathlib import Path
 from urllib.parse import quote_plus
+from zoneinfo import ZoneInfo
 
 import click
 import yaml
@@ -185,7 +186,9 @@ async def sync_meetups(client: ClubClient, instructions: list[PostingInstruction
                 url=meetup.url,
             )
             embed.set_author(name=meetup.series_name, url=meetup.series_url)
-            embed.add_field(name="🗓️ Kdy", value=format_time(meetup))
+            embed.add_field(
+                name="🗓️ Kdy", value=format_time(meetup.starts_at, meetup.ends_at)
+            )
             embed.add_field(
                 name="📍 Kde",
                 value=(
@@ -218,18 +221,18 @@ def parse_channel_id(url: str | HttpUrl) -> int:
         raise ValueError(f"Invalid Discord channel URL: {url}")
 
 
-def format_time(meetup: Meetup) -> str:
-    if meetup.starts_at.date() == meetup.ends_at.date():
-        return (
-            f"{weekday(meetup.starts_at)} "
-            f"{meetup.starts_at:%-d.%-m. %H:%M} až "
-            f"{meetup.ends_at:%H:%M}"
-        )
+def format_time(
+    starts_at: datetime, ends_at: datetime, tz: ZoneInfo = ZoneInfo("Europe/Prague")
+) -> str:
+    starts_at = starts_at.astimezone(tz)
+    ends_at = ends_at.astimezone(tz)
+    if starts_at.date() == ends_at.date():
+        return f"{weekday(starts_at)} {starts_at:%-d.%-m. %H:%M} až {ends_at:%H:%M}"
     return (
-        f"{weekday(meetup.starts_at)} "
-        f"{meetup.starts_at:%-d.%-m. %H:%M} až "
-        f"{weekday(meetup.ends_at)} "
-        f"{meetup.ends_at:%-d.%-m. %H:%M}"
+        f"{weekday(starts_at)} "
+        f"{starts_at:%-d.%-m. %H:%M} až "
+        f"{weekday(ends_at)} "
+        f"{ends_at:%-d.%-m. %H:%M}"
     )
 
 
