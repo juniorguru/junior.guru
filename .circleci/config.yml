@@ -35,7 +35,7 @@ jobs:
     steps:
       - git-shallow-clone/checkout
       - restore_cache:
-          key: deps-v2-{{ checksum "poetry.lock" }}-{{ checksum "package-lock.json" }}
+          key: deps-{{ checksum "poetry.lock" }}-{{ checksum "package-lock.json" }}
       - run:
           name: Update Poetry
           command: |
@@ -55,7 +55,7 @@ jobs:
           command: |
             poetry run jg cancel-previous-builds
       - save_cache:
-          key: deps-v2-{{ checksum "poetry.lock" }}-{{ checksum "package-lock.json" }}
+          key: deps-{{ checksum "poetry.lock" }}-{{ checksum "package-lock.json" }}
           paths:
             - ~/.cache/pypoetry/virtualenvs
             - ~/.cache/ms-playwright
