@@ -5,8 +5,8 @@
     scale: 1;
   }
   15% {
-    scale: 1.4;
     color: $jg-pink-dark;
+    scale: 1.4;
   }
 }
 
@@ -18,12 +18,12 @@
   height: map-get($spacers, 4);
   font-size: map-get($spacers, 3);
   color: $jg-pink;
-  animation: heartbeat-double 1.5s ease-in-out infinite alternate;
   transform-origin: center;
+  animation: heartbeat-double 1.5s ease-in-out infinite alternate;
 }
 
 .love-heart:hover {
-  scale: 1.5;
   color: $jg-pink-dark;
+  scale: 1.5;
   animation: none;
 }
