@@ -130,4 +130,20 @@ Dobrý článek o tom, proč je lepší psát do veřejných kanálů a nesyslit
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1333570919507034174
+- Dostaneš se na ně tak, že na ně přijdeš. 🙂
+- Na některé je potřeba se předem registrovat a na některé ne.
+- Otázka je spíš jak se o nich dozvědět, můžeš třeba hned tady v klubu ve skupinách podle měst:<#1296383796727386132> <#1296508522451832853> <#1296486471670304878> <#1296425496141107221>můžeš hledat taky na https://www.meetup.com/, kde ale určitě nejsou všichni. Taky se o tom můžeš dozvědět ze sociálních médií.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1333572790984638464
+- Typicky je to sraz na nějaké téma (Python, Frontend, AI, …), který organizuje buď někdo nezávislý nebo firmy. 
+- Konají se nejčastěji buď v kanclech nějaké firmy (často s občerstvením placeným firmou) nebo někde v hospodě.
+- Obvykle je to ve všední den večer.
+- Pokud jsou pravidelné, což je asi většina, tak frekvence bývá měsíc nebo více.
+- Program se většinou skládá z nějakých přednášek a následné „volné zábavy“, kdy není žádný program, ale můžeš s lidma mluvit a to nejen těma, který znáš, ale počítá se s tím, že tam právě i nový lidi poznáš.
+---
+
+
 #} -->

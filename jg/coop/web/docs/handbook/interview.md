@@ -1086,4 +1086,24 @@ Studie Jozifová:
 recruiteri na switcherech nejvic ocenujou rustovej mindset, ze vidi charakterovy vlastnosti ktery jsou chteny, ale narazi na penize nebo na to ze jsou tak juniorni, ze tam nebude nekdo kdo se jim bude venovat
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1341090446427816046
+https://bit.ly/osvc-v-zamestnanec-2025 máte možnost 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1341084067000750161
+našel jsem pěknou kalkulačku osvč hpp 🙂 jestli to někdo dokážete ověřit jestli je to správně tak feedback super, jinak to vypadá jednoduše a funkčně :)) https://countly.cz/hpp-vs-osvc-kalkulacka?pausalniDan=false&manualPausalniDanIndex=-1
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/1329486370208485467
+
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/1326904186029346938
+Hele, něco jako Atmoskop, ale na pohovory: https://www.jakybylpohovor.cz/
+---
+
+
 #} -->

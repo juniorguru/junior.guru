@@ -734,4 +734,15 @@ nova prace je tvoje nova komunita a musis se nebat tam zeptat, idealne pokud tam
 https://www.mensurdurakovic.com/hard-to-swallow-truths-they-wont-tell-you-about-software-engineer-job/
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1340298440650920007
+Pride mi to presne tak ako pises. Daval by som si este pozor na to, ze neviem kolko je tomu panovu let, ale uplne by som sa nespoliehal na to, ze za par mesicu do toho duchodu odejde. On si je evidentne sve pozice velmi dobre vedom a todle muze byt taky jenom jeho paka na vedeni a klidne tam muze strasit jeste dlouhe leta.
+
+Kazdopadne velka vdaka ze si to tu sdilel aj medzi ostatnych. Z mojich pocitov je toto jedna z najhorsich veci co sa moze juniorovi stat, arogantny senior a nekompetenty nadriadeny. Nedeje sa to len v IT bohuzial takrto pribehy som pocul z prvej ruky nie len raz. A bohuzial vieme ze sa taketo veci deju aj u nas v banke a je extremne zlozite sa toho zbavit. Typicky to byva nejaky arogantny senior a manazer (casto taky, ktory nebol vybrany ako dobry manazer ale ten ktory tam je najdlhsie alebo ten najvecsi hard skills odbornik), ktory existenciu soft skills/teamovej chemie a podobnych veci povazuje za blaboly. Obcas si manazer nabehne ked seniora rovno vezme na pohovor a jeho aroganciu pocitis uz tam.
+
+Omnoho castejsie ale zneuzivaju aktualnu situaciu juniorov, dufaju ze nebudes chciet odist a este sa ti povozia po zadech. Je to hrozne tazke.
+
+Konkretne v tvojom pripade, ak tam citis nejaky potencial tak by som ich nechal ci su schopny to riesit. Ak nie a mozes si dovolit odist tak by som tam dlho neostaval. Ucit juniorov stylom "hodime ta dovody a plav" urcite de, kdyz dostanes plavavi vestu a dela sa to na bazene. Ale ne uorostred oceanu, v -10 stupnich, kdyz kolem krouzi zraloci a jeste ti na halve sedi racek co ti sere na hlavu a klove te do oci
+---
+
+
 #} -->

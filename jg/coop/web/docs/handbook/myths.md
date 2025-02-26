@@ -157,6 +157,9 @@ IT ale naštěstí umožňuje mnoho způsobů, jak se uplatnit i jinak, než jen
 <!-- {#
 
 
+https://www.linkedin.com/posts/lucietvrdikova_antireklama-activity-7284852497221865472-NLhk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA
+
+
 --- https://discord.com/channels/769966886598737931/769966887055392768/1213068879467651114
 > Now please don’t misunderstand me: when I say it’s “intensely social,” I don’t mean that you have to be an extroverted social butterfly.
 >

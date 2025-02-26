@@ -1480,4 +1480,22 @@ Tohle bych rád vypíchl z aktuální přednášky: https://discord.com/channels
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1334481244917858356
+Slyšel jsem to tak, že 100% není problém reagovat po pár měsících znovu.
+1. Ty se můžeš dost posunout, pokud „jen“ hledáš práci a děláš při tom třeba na svém projektu, tak třeba 3 měsíce můžou znamenat ohromný posun.
+2. Může se změnit situace ve firmě a i „stejný“ člověk najednou může dávat smysl.
+3. Nedá se počítat s tím, že by firmy fungovaly tak, že mají databázi lidí, co se k nim někdy hlásili a jen do ní sáhly a ty lidi oslovily. Některé možná víc a spíš u seniornějších lidí. Je tedy lepší se aktivně ozvat.
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/1329486370208485467
+
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1328977405402157078
+Nejsem mobilní vývojář (napsal jsem před dvaceti lety nějakou stáž v Java Mobile edition 👴 ), velmi zhruba tuším, co se v tom světě děje. Tohle shrnutí mi přijde přehledné. https://newsletter.pragmaticengineer.com/p/cross-platform-mobile-development
+---
+
+
 #} -->

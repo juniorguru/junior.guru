@@ -324,4 +324,9 @@ https://zivotdevky.cz/2024/11/24/neumis-to-mas-jenom-stesti-aka-imposter-syndrom
 ---
 
 
+--- https://discord.com/channels/769966886598737931/864434067968360459/1342058393287786536
+Jak se vypořádat s impostor syndromem, tipy od <@362921539613622273> (video, 2min). Lidem jsem dost doporučoval psát si deníček s úspěchy a číst si ho zpětně, ale má tam i další tipy, na které jsem ještě nikdy nenarazil. https://www.linkedin.com/posts/terezia-palascakova_impostor-videoedit-tvorbaobsahu-activity-7298251940923133953-4eAD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA
+---
+
+
 #} -->

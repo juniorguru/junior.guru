@@ -1070,4 +1070,32 @@ ITnetwork
 https://docs.google.com/document/d/1JdfABxil7pMgpNOdDLxIgM4HZKoSCu34Q4OknqesdRc/edit?tab=t.0
 
 
+--- https://discord.com/channels/769966886598737931/1338977550193659944/1338985086200188949
+Ahoj <@1035952691337240676> , vítej v klubu!
+
+Asi si zkus popřemýšlet o tom, jak by pro tebe bylo nejlepší se naučit programovat?
+
+Diskuze o kurzech a cárech papíru pramení asi hlavně z toho, že se obecně prodává myšlenka, že po kurzu budeš plnohodnotnej vývojář a na první dobrou seženeš práci. No, to se tak na 99,99% nestane.
+Znamená to, že by tě ten kurz k tomu cíli vůbec neposunul? No pokud je to mizernej kurz, tak tě nejspíš moc neposune, ale jinak ti vždycky něco dá. A i ten mizernej ti ukáže, co nechceš, takže ses taky něco naučil.
+
+Blbý je se honit za kurzama a nikdy neuhnout k nějakýmu svýmu projektu, kde vlastně reálně budeš řešit "vlastní", kurzem nenalinkovaný problémy.
+Kurzy samy o sobě nejsou špatný, záleží jak je využiješ 🙂
+
+Navíc jsou kurzy, který jsou zadarmo. Menší, větší, lepší, horší ale daj se najít. Pokud jsou peníze problém, ale třeba angličtina problém není, tak se jich dá najít docela dost. Nebo třeba za pár stovek.
+
+Takže jak říká Dan, uvidíš. 
+Jak by sis představoval "samostudium"?
+---
+
+
+--- https://discord.com/channels/769966886598737931/1338977550193659944/1338979912660553750
+Vítej v klubu. Kurzy (ať už jakékoli, zahrnuju do toho i ty online, zadarmo, bez lektora atd.) ber jako součást toho, jak se něco naučíš.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1338977550193659944/1338980373891125371
+Ano, kromě „kurzu“, který se jmenuje „vysoká škola informatického směru“, opravdu nikoho nezajímá jak a kde ses to naučil, ale jestli něco umíš a jestli se umíš učit. Protože v tom i po tom, co ti někdo dá šanci, budeš muset dále pokračovat.
+---
+
+
 #} -->

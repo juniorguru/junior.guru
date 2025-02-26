@@ -1102,4 +1102,40 @@ https://learngitbranching.js.org/
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788832177135026197/1336405349883707504
+Během Q&A s <@377398623777980418> padl tip na tenhle skvělý zdroj informací o DevOps, cloudu, apod. Neznal jsem! https://www.youtube.com/channel/UCdngmbVKX1Tgre699-XLlUA
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1341174664692498553
+> We’re trading deep understanding for quick fixes, and while it feels great in the moment, we’re going to pay for this later.
+https://nmn.gl/blog/ai-and-learning
+---
+
+
+--- https://discord.com/channels/769966886598737931/806621830383271937/1337160739550527548
+Hraju si s AI a mapováním codebase a musím říct, že jsem fakt mile překvapen, jak rychle se jeden může dneska dostat do projektu, když použije AI.
+
+1. Konvertujte repozitář na *AI friendly formát*, např. pomocí Repomix (https://repomix.com/)
+2. Použijte Gemini 2.0 Pro na AI Studio (https://aistudio.google.com/)
+3. Vložte celý markdown vaší codebase. Limit je **až 2 miliony tokenů**, což je fakt dost (pro srovnání ChatGPT má 10x méně!)
+4. Ptejte se.
+
+Kdyby se někdo chtěl podívat na příklad, tak tady je (snad vám půjde načíst konverzace s Gemini - nejspíš musíte být přihlášeni).
+https://drive.google.com/file/d/1DgGLqlgjHVbS-tcHYbDYe6yE5Jeddqu-/view?usp=sharing
+https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221TIN5E3Tjyd-oDVaUHwu1w0Ks-nAAPTdS%22%5D,%22action%22:%22open%22,%22userId%22:%22116194854355489944248%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1327169918596157440
+Jestli se chceš věnovat bezpečnosti, navrhuji začít třeba s coursera Cryptography I, ať víš, do čeho jdeš 😉  https://www.coursera.org/learn/crypto případně knihu (zatím jsem nečetl, ale Manning je záruka kvality) https://www.manning.com/books/real-world-cryptography
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1327170061894418452
+> While AI-Assisted coding can get you 70% of the way there (great for prototypes or MVPs), the final 30% requires significant human intervention for quality and maintainability.
+https://addyo.substack.com/p/the-70-problem-hard-truths-about
+---
+
+
 #} -->

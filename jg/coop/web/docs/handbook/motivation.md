@@ -574,4 +574,43 @@ Podle aktuálních teorií budou lidé, kteří teď vstupují na pracovní trh,
 https://www.mensurdurakovic.com/hard-to-swallow-truths-they-wont-tell-you-about-software-engineer-job/
 
 
+--- https://discord.com/channels/769966886598737931/1341518859257122839/1341758567853723650
+Ahoj, držím palce! Obecně se tohle mění a momentálně jsou zpravidla vyšší nároky na juniory, než byli před patnácti lety. 
+
+Každopádně dá se tomu dát nějaký rámec :)). Zpravidla je potřeba naučit se jazyk, k němu nějaký framework a udělat kromě pár menších i jeden větší projekt, kterým se pak prezentuješ. Obecně tady doporučujeme něco okolo 600 hodin investice vlastního času a studia před tím než člověk začne být ready na pohovory. Samozřejmě určitě pokud seženeš práci dřív / jinak - je to tvoje plus, ale často se juniorům stává že se s nimi firmy vůbec nebaví a jedna z těch věcí můžeš být že nemají portfolio a dostatečné skilly :)). 
+
+Kurz jako takový většinou nestačí, ale je to super start! Určitě nevadí že se k tomu vracíš po letech. Máš čas studovat každý den, nebo pracuješ, nebo jak na tom jsi? 600 hodin je velká časová investice a je dobré si ji nějak rozplánovat :)).  Můžou to být velmi intenzivní měsíce - nebo míň, ale stále intenzivní roky :). 
+
+Každopádně jsi tady správně a rádi tě nasměrujeme podpoříme atp. i kdyby sis nakonec vývoj nevybral. A pokud už teďka víš že určitě chceš, neboj se toho a vzhůru rovnýma nohama! Lets go! :))
+---
+
+
+--- https://discord.com/channels/769966886598737931/1338977550193659944/1338979912660553750
+Vítej v klubu. Kurzy (ať už jakékoli, zahrnuju do toho i ty online, zadarmo, bez lektora atd.) ber jako součást toho, jak se něco naučíš.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1338977550193659944/1338980373891125371
+Ano, kromě „kurzu“, který se jmenuje „vysoká škola informatického směru“, opravdu nikoho nezajímá jak a kde ses to naučil, ale jestli něco umíš a jestli se umíš učit. Protože v tom i po tom, co ti někdo dá šanci, budeš muset dále pokračovat.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1338977550193659944/1339158423937355829
+Pokud si v životě neprogramoval nic, tak můžeš taky zkusit [Blockly.games](https://blockly.games/), tam dostaneš všecko vysvětlené a můžeš si s tím hrát. Už level 10 v Maze většině lidí trvá vyřešit hodiny. A i když nepíšeš kód, tak to programování je. A tím, že nepíšeš kód si zatím ušetříš problémy, které začátečníci mají se syntaxí a můžeš se soustředit právě na to programování (přemýšlení).
+---
+
+
+--- https://discord.com/channels/769966886598737931/1338150387139481730/1338190136063823982
+K tomu frontendu a designu a „citu“:
+1. To, jak věci mají vypadat a fungovat je většinou (zhruba ve 2/3 případů, samozřejmě záleží na roli) definované někým jiným: designérem. Frontend developer není designér. 
+2. Na frontendu je kvůli Reactu a spol. spousta práce na kódu, který neřeší nic vizuálního nebo jen okrajově.
+3. Je samozřejmě vhodné, pokud dostáváš vizuální zadání od designérů, rozumět některým konceptům z designu. Usnadní to komunikaci a leckdy je na frontendistech, aby dotáhli detaily. To se ale dá naučit, není v tom nic, co by souviselo s pojmy jako „talent“, „umění“ apod.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1339941881798332446
+Znáte to někdo? Četli jste? Je to dobré? https://www.lovelydata.cz/mooc/kurz/LDO059-it-je-taky-pro-holky/
+---
+
+
 #} -->
