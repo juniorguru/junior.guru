@@ -24,21 +24,9 @@ Mentor nemusí být vyloženě mistr v oboru, stačí když bude v programován�
 
 <div class="link-cards">
   {{ link_card(
-    'Coding Coach',
-    'https://mentors.codingcoach.io/',
-    'Mentoři z celého světa, kteří nabízí své služby zdarma.'
-  ) }}
-
-  {{ link_card(
-    'Codementor',
-    'https://www.codementor.io/',
-    'Profesionální, placení mentoři z celého světa.'
-  ) }}
-
-  {{ link_card(
-    'Mentoring na robime.it',
-    'https://robime.it/mentoring-program-robime-it/',
-    'Slovenský mentoringový program.'
+    'Kanál #mentoring v klubu junior.guru',
+    pages|docs_url('club.md')|url,
+    'Hledej mentory v klubu pro začátečníky.',
   ) }}
 
   {{ link_card(
@@ -58,15 +46,21 @@ Mentor nemusí být vyloženě mistr v oboru, stačí když bude v programován�
   ) }}
 
   {{ link_card(
-    'PyWorking Sessions',
-    'https://pyworking.cz/',
-    'Zastav se na pravidelná setkání začátečníků, kde jsou i koučové.'
+    'Mentoring na robime.it',
+    'https://robime.it/mentoring-program-robime-it/',
+    'Slovenský mentoringový program.'
   ) }}
 
   {{ link_card(
     'GISMentors',
     'https://gismentors.cz/',
     'Mentoři, kteří učí využívaní programování v geografii.'
+  ) }}
+
+  {{ link_card(
+    'Codementor',
+    'https://www.codementor.io/',
+    'Profesionální, placení mentoři z celého světa.'
   ) }}
 </div>
 
