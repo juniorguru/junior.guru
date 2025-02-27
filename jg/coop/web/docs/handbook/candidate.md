@@ -155,7 +155,7 @@ Zrovna v inzerátech nabízejících první práci v IT nebo částečný úvaz
   'emma-bostian.jpg',
   'Emma Bostian'
 ) %}
-  Emma Bostian, [Coding Coach](https://mentors.codingcoach.io/) & [Ladybug Podcast](https://www.ladybug.dev/)
+  Emma Bostian, inženýrka ve Spotify, podcasterka v [Ladybug Podcast](https://www.ladybug.dev/)
 {% endcall %}
 
 ### Záleží na věku? Pohlaví?    <span id="age-gender"></span>

@@ -165,7 +165,7 @@ Je velmi pravděpodobné, že tě odmítnou na pohovoru, a to **proto, že se to
   'emma-bostian.jpg',
   'Emma Bostian'
 ) %}
-  Emma Bostian, [Coding Coach](https://mentors.codingcoach.io/) & [Ladybug Podcast](https://www.ladybug.dev/)
+  Emma Bostian, inženýrka ve Spotify, podcasterka v [Ladybug Podcast](https://www.ladybug.dev/)
 {% endcall %}
 
 **Neber odmítnutí jako něco negativního.** Znamená to prostě, že si s firmou nesedíte a bylo by z toho stejně akorát mrzení. Nerozhoduje se jen firma o tobě, ale i ty o ní. **Je to rozhovor, ve kterém se dvě rovnocenné strany snaží přijít na to, zda to spolu zkusí.** Není to test, který musíš dát, a který vyhodnotí, zda „na to máš“. Naopak, často se akorát nepotkáš s představou lidí ve firmě a není to vůbec o tvých schopnostech.
