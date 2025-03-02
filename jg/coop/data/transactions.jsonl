@@ -1008,3 +1008,5 @@
 {"_id": "26932249917", "amount": 15639, "category": "memberships", "happened_on": "2025-02-24"}
 {"_id": "26935043201", "amount": 6, "category": "donations", "happened_on": "2025-02-26"}
 {"_id": "26937192057", "amount": -2000, "category": "office", "happened_on": "2025-02-27"}
+{"_id": "26943955124", "amount": -247, "category": "miscellaneous", "happened_on": "2025-03-01"}
+{"_id": "26943955577", "amount": -123, "category": "miscellaneous", "happened_on": "2025-03-01"}
