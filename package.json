@@ -5,7 +5,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@fontsource/inter": "5.1.1",
+    "@fontsource/inter": "5.2.5",
     "bootstrap-icons": "1.11.3",
     "chart.js": "4.4.8",
     "chartjs-plugin-annotation": "3.1.0",
@@ -17,9 +17,9 @@
     "bootstrap": "5.3.3",
     "esbuild": "0.25.0",
     "esbuild-sass-plugin": "3.3.1",
-    "prettier": "3.5.2",
+    "prettier": "3.5.3",
     "sass": "1.77.6",
-    "stylelint": "16.14.1",
+    "stylelint": "16.15.0",
     "stylelint-config-twbs-bootstrap": "15.1.0",
     "stylelint-order": "6.0.4"
   }
