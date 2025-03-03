@@ -1010,3 +1010,6 @@
 {"_id": "26937192057", "amount": -2000, "category": "office", "happened_on": "2025-02-27"}
 {"_id": "26943955124", "amount": -247, "category": "miscellaneous", "happened_on": "2025-03-01"}
 {"_id": "26943955577", "amount": -123, "category": "miscellaneous", "happened_on": "2025-03-01"}
+{"_id": "26944693745", "amount": -242, "category": "miscellaneous", "happened_on": "2025-03-02"}
+{"_id": "26944695736", "amount": -1211, "category": "memberful", "happened_on": "2025-03-02"}
+{"_id": "26944820320", "amount": 8343, "category": "memberships", "happened_on": "2025-03-03"}
