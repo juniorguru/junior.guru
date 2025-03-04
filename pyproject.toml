@@ -59,7 +59,7 @@ stripe = "11.5.0"
 tenacity = "9.0.0"
 pydantic = "2.10.6"
 lxml = "5.3.1"
-githubkit = "0.12.7"
+githubkit = "0.12.8"
 
 [tool.poetry.group.dev.dependencies]
 ghp-import = "2.1.0"

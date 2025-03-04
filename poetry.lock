@@ -16,13 +16,13 @@ pycares = ">=4.0.0"
 
 [[package]]
 name = "aiohappyeyeballs"
-version = "2.4.6"
+version = "2.4.8"
 description = "Happy Eyeballs for asyncio"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "aiohappyeyeballs-2.4.6-py3-none-any.whl", hash = "sha256:147ec992cf873d74f5062644332c539fcd42956dc69453fe5204195e560517e1"},
-    {file = "aiohappyeyeballs-2.4.6.tar.gz", hash = "sha256:9b05052f9042985d32ecbe4b59a77ae19c006a78f1344d7fdad69d28ded3d0b0"},
+    {file = "aiohappyeyeballs-2.4.8-py3-none-any.whl", hash = "sha256:6cac4f5dd6e34a9644e69cf9021ef679e4394f54e58a183056d12009e42ea9e3"},
+    {file = "aiohappyeyeballs-2.4.8.tar.gz", hash = "sha256:19728772cb12263077982d2f55453babd8bec6a052a926cd5c0c42796da8bf62"},
 ]
 
 [[package]]
@@ -1051,13 +1051,13 @@ dev = ["flake8", "markdown", "twine", "wheel"]
 
 [[package]]
 name = "githubkit"
-version = "0.12.7"
+version = "0.12.8"
 description = "GitHub SDK for Python"
 optional = false
 python-versions = "<4.0,>=3.9"
 files = [
-    {file = "githubkit-0.12.7-py3-none-any.whl", hash = "sha256:26278e97feb68b1bde47b309c95885edccab9a27042375d7fa0b6ccebc870a7c"},
-    {file = "githubkit-0.12.7.tar.gz", hash = "sha256:770378423c4a5ee5c035705822bb67ab6cccdf7e914e7b773827282ccd9f04a7"},
+    {file = "githubkit-0.12.8-py3-none-any.whl", hash = "sha256:f90592a0d9e154bde77450daed6b7cd187fcef023a1722b481aa38b082bbb3f6"},
+    {file = "githubkit-0.12.8.tar.gz", hash = "sha256:9339512326d2cc879cd68bf1910aa200c6701b2737bf180f901ca47f76cb6b6d"},
 ]
 
 [package.dependencies]
@@ -1174,13 +1174,13 @@ tool = ["click (>=6.0.0)"]
 
 [[package]]
 name = "googleapis-common-protos"
-version = "1.68.0"
+version = "1.69.0"
 description = "Common protobufs used in Google APIs"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "googleapis_common_protos-1.68.0-py2.py3-none-any.whl", hash = "sha256:aaf179b2f81df26dfadac95def3b16a95064c76a5f45f07e4c68a21bb371c4ac"},
-    {file = "googleapis_common_protos-1.68.0.tar.gz", hash = "sha256:95d38161f4f9af0d9423eed8fb7b64ffd2568c3464eb542ff02c5bfa1953ab3c"},
+    {file = "googleapis_common_protos-1.69.0-py2.py3-none-any.whl", hash = "sha256:17835fdc4fa8da1d61cfe2d4d5d57becf7c61d4112f8d81c67eaa9d7ce43042d"},
+    {file = "googleapis_common_protos-1.69.0.tar.gz", hash = "sha256:5a46d58af72846f59009b9c4710425b9af2139555c71837081706b213b298187"},
 ]
 
 [package.dependencies]
@@ -1531,7 +1531,7 @@ click = "8.1.8"
 type = "git"
 url = "https://github.com/juniorguru/beak.git"
 reference = "HEAD"
-resolved_reference = "2eb66931671ef5599c25529eb4429bae91890eaa"
+resolved_reference = "cc26c8a471953310c35d0174a572d2259533da6c"
 
 [[package]]
 name = "jg-chick"
@@ -1552,7 +1552,7 @@ py-cord = {version = "2.6.1", extras = ["speed"]}
 type = "git"
 url = "https://github.com/juniorguru/chick.git"
 reference = "HEAD"
-resolved_reference = "b1c64b2aaad63bdb8f4baafd20f26be2b9e7a824"
+resolved_reference = "b11e3ab004e1966ec981f16c09b79e8db7e0a5b1"
 
 [[package]]
 name = "jg-hen"
@@ -1567,7 +1567,7 @@ develop = false
 blinker = "1.9.0"
 click = "8.1.8"
 cssselect = "1.2.0"
-githubkit = "0.12.7"
+githubkit = "0.12.8"
 httpx = "0.28.1"
 lxml = "5.3.1"
 pillow = "11.1.0"
@@ -1577,7 +1577,7 @@ pydantic = "2.10.6"
 type = "git"
 url = "https://github.com/juniorguru/hen.git"
 reference = "HEAD"
-resolved_reference = "ec9094e489d3a6ed0e2f682597ee7b6270c42a8b"
+resolved_reference = "143371f6b16fe383c7db2730e036d6755a432dd1"
 
 [[package]]
 name = "jinja2"
@@ -3718,4 +3718,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.12"
-content-hash = "c9472c7d274849af2f8cfcc403f62f6587697d978b6ca8a4f521a846979c4ad8"
+content-hash = "57e2037e4702dc73640b7e63ebc4d7023c6666244eb176145a70b4a7dc818aac"
