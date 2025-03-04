@@ -62,6 +62,20 @@
 # - https://tinywow.com/image/upscale
 # - https://www.fotor.com/photo-editor-app/editor/beauty
 
+- id: 50
+  title: "Jak se jako junior nepos#at z LinkedInu a nebát se ukázat"
+  date: "2025-03-12"
+  description: |
+    Na přednáškách se setkávám s tím, že studenti a junioři nevědí, k čemu jim LinkedIn bude. Mají „málo zkušeností“, do profilu nevědí, co napsat. Když jim ale ukážu, že i s málem si můžou vytunit profil a získat zakázky nebo práci, zjistí, že LinkedIn je super. Jak se na LinkedInu chytit a najít práci snů? A dokáže plně nahradit životopis? To, a mnohem více, si společně zodpovíme.
+  avatar_path: avatars-participants/adam-kral.jpg
+  bio_name: Adam Král
+  bio_title: "Copywriter, student marketingu"
+  bio: |
+    Mladý student marketingu, který píše už několik let. Posledních pár roků se věnuje LinkedInu a přednáší o něm. Dělá copywriting a radí lidem, jak si rozjet kariéru, protože on to dokázal už v patnácti letech bez zkušeností.
+  bio_links:
+    - https://www.linkedin.com/in/adamkral1/
+  speakers: 1097115585424408586
+
 - id: 49
   title: "Q&A: Generalista nebo specialista? PyLadies, Linux, cloud, cesta do NTK"
   date: "2025-02-04"
