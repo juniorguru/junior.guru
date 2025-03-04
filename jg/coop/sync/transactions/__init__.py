@@ -1,4 +1,3 @@
-import base64
 import re
 from datetime import date, datetime, timedelta
 from pathlib import Path
@@ -6,16 +5,15 @@ from pprint import pformat
 from typing import Callable
 
 import click
+import httpx
 import requests
 from fiobank import FioBank
 
 from jg.coop.cli.sync import confirm, default_from_env, main as cli
-from jg.coop.lib import loggers, mutations
+from jg.coop.lib import fakturoid, loggers, mutations
 from jg.coop.models.transaction import Transaction, TransactionsCategory
 from jg.coop.sync.transactions.categories_spec import CATEGORIES_SPEC
 
-
-FAKTUROID_API_USER_AGENT = "JuniorGuruBot (honza@junior.guru; +https://junior.guru)"
 
 TODO_TEXT_RE = re.compile(
     r"""
@@ -43,49 +41,38 @@ logger = loggers.from_path(__file__)
 
 
 @cli.sync_command()
-@click.option("--from-date", default="2020-01-01", type=date.fromisoformat)
-@click.option("--fio-api-key", default=default_from_env("FIOBANK_API_KEY"))
 @click.option(
-    "--fakturoid-api-base-url",
-    default="https://app.fakturoid.cz/api/v3/accounts/honzajavorek",
-)
-@click.option("--fakturoid-client-id", default=default_from_env("FAKTUROID_CLIENT_ID"))
-@click.option(
-    "--fakturoid-client-secret", default=default_from_env("FAKTUROID_CLIENT_SECRET")
+    "--from-date",
+    default="2020-01-01",
+    type=date.fromisoformat,
+    required=True,
 )
 @click.option(
-    "--video-outsourcing-token", default=default_from_env("VIDEO_OUTSOURCING_TOKEN")
+    "--fio-api-key",
+    default=default_from_env("FIOBANK_API_KEY"),
+    required=True,
+)
+@click.option(
+    "--video-outsourcing-token",
+    default=default_from_env("VIDEO_OUTSOURCING_TOKEN"),
+    required=False,
 )
 @click.option(
     "--history-path",
     default="jg/coop/data/transactions.jsonl",
     type=click.Path(exists=True, path_type=Path),
+    required=True,
 )
 @click.option("--clear-history/--keep-history", default=False)
 def main(
-    from_date,
-    fio_api_key,
-    fakturoid_api_base_url,
-    fakturoid_client_id,
-    fakturoid_client_secret,
-    video_outsourcing_token,
-    history_path,
-    clear_history,
+    from_date: str,
+    fio_api_key: str,
+    video_outsourcing_token: str | None,
+    history_path: Path,
+    clear_history: bool,
 ):
     logger.info("Getting Fakturoid API token")
-    credentials = f"{fakturoid_client_id}:{fakturoid_client_secret}"
-    credentials_base64 = base64.b64encode(credentials.encode()).decode()
-    response = requests.post(
-        "https://app.fakturoid.cz/api/v3/oauth/token",
-        headers={
-            "Accept": "application/json",
-            "User-Agent": FAKTUROID_API_USER_AGENT,
-            "Authorization": f"Basic {credentials_base64}",
-        },
-        json=dict(grant_type="client_credentials"),
-    )
-    response.raise_for_status()
-    fakturoid_token = response.json()["access_token"]
+    fakturoid_token = fakturoid.auth()
 
     logger.info("Preparing categories")
     categories_spec = CATEGORIES_SPEC
@@ -104,26 +91,23 @@ def main(
     logger.info("Getting Fakturoid todos for unpaired transactions")
     todos = []
     page = 1
-    while True:
-        logger.debug(f"Fakturoid todos, page {page}")
-        response = requests.get(
-            f"{fakturoid_api_base_url}/todos.json",
-            params=dict(page=page),
-            headers={
-                "User-Agent": FAKTUROID_API_USER_AGENT,
-                "Authorization": f"Bearer {fakturoid_token}",
-            },
-        )
-        response.raise_for_status()
-        todos_page = response.json()
-        todos.extend(
-            todo
-            for todo in todos_page
-            if (todo["name"] == "invoice_payment_unpaired" and not todo["completed_at"])
-        )
-        if not todos_page:
-            break
-        page += 1
+    with fakturoid.get_client(fakturoid_token) as client:
+        while True:
+            logger.debug(f"Fakturoid todos, page {page}")
+            response = client.get("/todos.json", params=dict(page=page))
+            response.raise_for_status()
+            todos_page = response.json()
+            todos.extend(
+                todo
+                for todo in todos_page
+                if (
+                    todo["name"] == "invoice_payment_unpaired"
+                    and not todo["completed_at"]
+                )
+            )
+            if not todos_page:
+                break
+            page += 1
     logger.info(f"Found {len(todos)} Fakturoid todos")
     todos = {get_todo_key(todo): todo for todo in todos}
     logger.debug(f"Mapping Fakturoid todos by key leaves {len(todos)} todos")
@@ -198,24 +182,19 @@ def main(
             f.write(db_object.serialize())
 
     logger.info(f"Toggling {len(todos_to_toggle)} Fakturoid todos")
-    for todo in todos_to_toggle.values():
-        toggle_fakturoid_todo(fakturoid_api_base_url, fakturoid_token, todo["id"])
+    with fakturoid.get_client(fakturoid_token) as client:
+        for todo in todos_to_toggle.values():
+            toggle_fakturoid_todo(client, todo["id"])
 
 
 @mutations.mutates_fakturoid()
-def toggle_fakturoid_todo(api_base_url: str, api_token: str, todo_id: int):
+def toggle_fakturoid_todo(client: httpx.Client, todo_id: int):
     logger.info(f"Toggling todo: ID {todo_id}")
-    response = requests.post(
-        f"{api_base_url}/todos/{todo_id}/toggle_completion.json",
-        headers={
-            "User-Agent": FAKTUROID_API_USER_AGENT,
-            "Authorization": f"Bearer {api_token}",
-        },
-    )
+    response = client.post(f"/todos/{todo_id}/toggle_completion.json")
     response.raise_for_status()
 
 
-def get_transaction_message(transaction):
+def get_transaction_message(transaction: dict) -> str:
     return ", ".join(
         filter(
             None,
