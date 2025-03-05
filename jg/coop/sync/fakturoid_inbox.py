@@ -26,11 +26,14 @@ def main(today: date, expire_days: int):
         for inbox_file in inbox_files:
             updated_at = datetime.fromisoformat(inbox_file["updated_at"])
             if updated_at.date() < (today - timedelta(days=expire_days)):
-                logger.warning(f"File {inbox_file['filename']} is old: {updated_at.date()}")
+                logger.warning(
+                    f"File {inbox_file['filename']} is old: {updated_at.date()}"
+                )
                 remove_inbox_file(client, inbox_file["id"])
             else:
-                logger.debug(f"File {inbox_file['filename']} is ok: {updated_at.date()}")
-
+                logger.debug(
+                    f"File {inbox_file['filename']} is ok: {updated_at.date()}"
+                )
 
 
 @mutations.mutates_fakturoid()

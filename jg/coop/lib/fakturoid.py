@@ -13,7 +13,11 @@ CLIENT_ID = os.getenv("FAKTUROID_CLIENT_ID")
 CLIENT_SECRET = os.getenv("FAKTUROID_CLIENT_SECRET")
 
 
-def auth(client_id: str | None = None, client_secret: str | None = None, user_agent: str | None = None) -> str:
+def auth(
+    client_id: str | None = None,
+    client_secret: str | None = None,
+    user_agent: str | None = None,
+) -> str:
     client_id = client_id or CLIENT_ID
     client_secret = client_secret or CLIENT_SECRET
     user_agent = user_agent or USER_AGENT
@@ -34,14 +38,13 @@ def auth(client_id: str | None = None, client_secret: str | None = None, user_ag
     return response.json()["access_token"]
 
 
-def get_client(token: str, base_url: str | None = None, user_agent: str | None = None) -> httpx.Client:
+def get_client(
+    token: str, base_url: str | None = None, user_agent: str | None = None
+) -> httpx.Client:
     base_url = (base_url or BASE_URL).rstrip("/")
     user_agent = user_agent or USER_AGENT
     return httpx.Client(
         base_url=base_url,
-        headers={
-            "User-Agent": user_agent,
-            "Authorization": f"Bearer {token}"
-        },
+        headers={"User-Agent": user_agent, "Authorization": f"Bearer {token}"},
         follow_redirects=True,
     )
