@@ -54,6 +54,7 @@ exclude = [
     "^https://keyguru\\.cz",
     "^https://www\\.podnikatel\\.cz",
     "^https://www\\.root\\.cz",
+    "^https://www\\.vilniuscoding\\.lt",
 
     # Read the Docs anti-scraping protections
     "^https://docs\\.pyvec\\.org",
