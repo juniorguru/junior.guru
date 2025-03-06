@@ -1015,3 +1015,4 @@
 {"_id": "26944820320", "amount": 8343, "category": "memberships", "happened_on": "2025-03-03"}
 {"_id": "26948399012", "amount": 6, "category": "donations", "happened_on": "2025-03-05"}
 {"_id": "26948602410", "amount": -3000, "category": "production", "happened_on": "2025-03-05"}
+{"_id": "26950802515", "amount": -25, "category": "tax", "happened_on": "2025-03-06"}
