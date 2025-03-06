@@ -36,7 +36,7 @@ gql = {extras = ["requests"], version = "3.5.1"}
 gspread = "6.2.0"
 httpx = "0.28.1"
 ics = {version = "0.8.0.dev0", allow-prereleases = true}
-jinja2 = "3.1.5"
+jinja2 = "3.1.6"
 lingua-language-detector = "2.0.2"
 livereload = "2.7.1"
 markdown = "3.7"
