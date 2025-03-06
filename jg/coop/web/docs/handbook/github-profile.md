@@ -21,7 +21,7 @@ template: main_handbook.html
 <form id="github-profile-form" action="https://github.com/juniorguru/eggtray/issues/new" target="_blank">
   <fieldset class="github-profile">
     <legend class="github-profile-title">
-      <span class="github-profile-background">Automatická zpětná vazba</span>
+      <span class="github-profile-background">Zpětná vazba od robota</span>
     </legend>
     <label for="github-profile-input" class="github-profile-label">Tvůj GitHub profil:</label>
     <div class="github-profile-row">
