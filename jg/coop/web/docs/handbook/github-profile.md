@@ -18,6 +18,26 @@ template: main_handbook.html
   Co je opravdu důležité tam mít a co jsou jen bonusy navíc?
 {% endcall %}
 
+<form id="github-profile-form" action="https://github.com/juniorguru/eggtray/issues/new" target="_blank">
+  <fieldset class="github-profile">
+    <legend class="github-profile-title">
+      <span class="github-profile-background">Automatická zpětná vazba</span>
+    </legend>
+    <label for="github-profile-input" class="github-profile-label">Tvůj GitHub profil:</label>
+    <div class="github-profile-row">
+      <input id="github-profile-input" class="github-profile-input" required placeholder="https://github.com/username">
+      <input type="submit" value="Zkontrolovat" class="github-profile-button">
+    </div>
+    <p class="github-profile-help">
+      Po odeslání se ti otevře předvyplněné GitHub issue. Když jej vytvoříš, spustíš tím robota,
+      který ti dá zpětnou vazbu v komentáři.
+    </p>
+    <input type="hidden" name="template" value="check.md">
+    <input type="hidden" name="title" value="Zpětná vazba na profil">
+    <input type="hidden" name="body" value="Kuřátko, mrkni prosím na @, díky!">
+  </fieldset>
+</form>
+
 [TOC]
 
 ## GitHub profil? Cože?

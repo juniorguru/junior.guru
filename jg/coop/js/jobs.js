@@ -45,9 +45,11 @@ function setupJobs() {
   });
 
   const subscribe = document.querySelector(".jobs-subscribe");
-  subscribe.addEventListener("click", function () {
-    hideElement(subscribe);
-  });
+  if (subscribe) {
+    subscribe.addEventListener("click", function () {
+      hideElement(subscribe);
+    });
+  }
 }
 
 function filterJobs() {

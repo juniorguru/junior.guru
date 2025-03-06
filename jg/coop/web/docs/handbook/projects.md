@@ -659,4 +659,8 @@ https://teresaibarra.com/texts/
 ---
 
 
+I Recreated Shazam's Algorithm from Scratch because no one is hiring jnr devs
+https://www.youtube.com/watch?app=desktop&v=a0CVCcb0RJM
+
+
 #} -->

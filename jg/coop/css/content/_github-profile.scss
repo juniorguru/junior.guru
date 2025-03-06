@@ -1,0 +1,48 @@
+.github-profile {
+  position: relative;
+  padding: map-get($spacers, 4);
+  padding-top: map-get($spacers, 4) + .3rem;
+  margin-bottom: $main-spacer;
+  border: 2px solid $jg-black;
+  border-radius: $border-radius;
+}
+
+.github-profile-title {
+  position: absolute;
+  top: -$spacer;
+  left: $spacer;
+  display: block;
+  font-size: $font-size-lg;
+}
+
+.github-profile-background {
+  padding: 0 map-get($spacers, 2);
+  color: $jg-black;
+  background: $jg-white;
+}
+
+.github-profile-label {
+  display: block;
+  font-size: $font-size-sm;
+}
+
+.github-profile-row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: $spacer;
+}
+
+.github-profile-input {
+  flex: 1;
+  margin-right: map-get($spacers, 2);
+}
+
+.github-profile-button {
+  @extend .btn;
+  @extend .btn-dark;
+}
+
+.github-profile-help {
+  margin: 0;
+}

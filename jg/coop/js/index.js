@@ -5,6 +5,7 @@ import "./email";
 import "./jobs";
 import "./membership";
 import "./metrics";
+import "./github-profile";
 
 import "instant.page";
 

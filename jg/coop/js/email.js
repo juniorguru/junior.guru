@@ -1,4 +1,4 @@
-function setupForm() {
+function setupEmailForm() {
   const form = document.querySelector("#email-form");
   const subscribed = document.querySelector("#email-subscribed");
   const confirmed = document.querySelector("#email-confirmed");
@@ -24,17 +24,17 @@ function setupForm() {
   }
 }
 
-function setupResetButton() {
+function setupEmailResetButton() {
   const resetButton = document.querySelector("#email-reset");
   if (!resetButton) return;
   resetButton.addEventListener("click", function (event) {
     event.preventDefault();
     window.history.pushState({}, "", window.location.pathname);
-    setupForm();
+    setupEmailForm();
   });
 }
 
-document.addEventListener("DOMContentLoaded", setupForm);
-document.addEventListener("hashchange", setupForm);
-document.addEventListener("popstate", setupForm);
-document.addEventListener("DOMContentLoaded", setupResetButton);
+document.addEventListener("DOMContentLoaded", setupEmailForm);
+document.addEventListener("hashchange", setupEmailForm);
+document.addEventListener("popstate", setupEmailForm);
+document.addEventListener("DOMContentLoaded", setupEmailResetButton);
