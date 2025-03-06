@@ -1013,3 +1013,5 @@
 {"_id": "26944693745", "amount": -242, "category": "miscellaneous", "happened_on": "2025-03-02"}
 {"_id": "26944695736", "amount": -1211, "category": "memberful", "happened_on": "2025-03-02"}
 {"_id": "26944820320", "amount": 8343, "category": "memberships", "happened_on": "2025-03-03"}
+{"_id": "26948399012", "amount": 6, "category": "donations", "happened_on": "2025-03-05"}
+{"_id": "26948602410", "amount": -3000, "category": "production", "happened_on": "2025-03-05"}
