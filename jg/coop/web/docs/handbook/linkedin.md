@@ -318,7 +318,7 @@ A samozřejmě tam můžeš o tom psát i statusy. Asi bych se nespoléhal na to
 
 
 --- https://discord.com/channels/769966886598737931/788832177135026197/1268445846555594772
-Kdyžtak <@668226181769986078> někam přesuň. 
+Kdyžtak <@668226181769986078> někam přesuň.
 
 Můj kontakt na LI - Petra Kubita Nulíčková - sdílela velmi dobré rady a tipy ohledně CV: https://www.petranulickova.cz/l/chyby-v-zivotopisech/
 
@@ -328,13 +328,13 @@ Petra v životě viděla cca 50 000 životopisů a další desítky možná stov
 
 --- https://discord.com/channels/769966886598737931/1255618685884698746/1256019413250084976
 Vždy se podívám, zda nějaký můj blízký kontakt zná cílovou osobu.
-Tento blízký kontakt oslovím, jasně popíšu, co je můj záměr a požádám, zda by mi domluvil schůzku/telefonát apod. 
+Tento blízký kontakt oslovím, jasně popíšu, co je můj záměr a požádám, zda by mi domluvil schůzku/telefonát apod.
 Takže musím být aktivní, jasně říct, co chci, a jít do toho dravě. Beru to vždy jako hru, ne jako otázku života a smrti. V nejhorším případě, budu muset partii rozjet jinak, nebo hledat novou příležitost. A vše ostatní jsou ty lepší případy;)
 ---
 
 
 --- https://discord.com/channels/769966886598737931/1255618685884698746/1255717150203576370
-Taky bych "navázala spojení". 
+Taky bych "navázala spojení".
 
 Buď jak píše <@801044009366716448> s osobním vzkazem (ale někteří jsme limitování viz. moje poznámka, napíšu jako poslední) a nebo když bez osobního vzkazu, tak můžeš naopak obratem po přijetí žádosti napsat, proč sis HR přidala do své sítě 🙂 .
 
@@ -367,6 +367,9 @@ Příjemnou zábavu 🙂
 --- https://discord.com/channels/769966886598737931/864434067968360459/1306555831554150420
 zdroj: https://www.linkedin.com/posts/tereza-kubickova_pro%C4%8D-je%C5%A1t%C4%9B-nep%C3%AD%C5%A1ete-na-linkedin-jak-se-zbavit-activity-7262367356373368832-qSs-
 ---
+
+
+https://www.linkedin.com/feed/update/urn:li:activity:7303326672123023361/
 
 
 #} -->
