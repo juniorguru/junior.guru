@@ -616,4 +616,13 @@ https://latexresu.me/
 https://www.overleaf.com/latex/templates/tagged/cv
 
 
+--- https://discord.com/channels/769966886598737931/789107031939481641/1346164546003406869
+Sám nevím jistě, kam to dát, protože do <#1123527619716055040> dáváme už hotové CVs na recenze, tak to dám sem, protože pohovory jsou součástí procesu, kde CV hrají zásadní roli reklamního letáku.
+Narazil jsem včera na YT na docela dobrá videa od recruitera z USA, takže samozřejmě jiný trh, jiné zvyklosti, ale přišlo mi, že většina toho sedí a alespoň uslyšíte „neposílejte ty vizuálně přepatlaný vícesloupcový CV“ ještě od někoho jinýho, než sem já a <@668226181769986078> v příručce.
+https://www.youtube.com/watch?v=R3abknwWX7k
+https://www.youtube.com/watch?v=o5vzR_03vQw
+https://www.youtube.com/watch?v=F3joY9KCoX8
+---
+
+
 #} -->
