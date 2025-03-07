@@ -18,7 +18,7 @@ function setupGitHubProfileForm() {
       .replace(/^@/, "")
       .replace(/^\/+/, "")
       .replace(/\/+$/, "");
-    titleInput.value += ` ${username}`;
+    titleInput.value += ` @${username}`;
     bodyInput.value = bodyInput.value.replace("@", `@${username}`);
 
     setTimeout(() => {
