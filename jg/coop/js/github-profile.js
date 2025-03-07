@@ -6,6 +6,9 @@ function setupGitHubProfileForm() {
 
   if (!form || !input || !titleInput || !bodyInput) return;
 
+  const defaultTitle = titleInput.value;
+  const defaultBody = bodyInput.value;
+
   form.addEventListener("submit", (event) => {
     const username = input.value
       .trim()
@@ -17,8 +20,10 @@ function setupGitHubProfileForm() {
       .replace(/\/+$/, "");
     titleInput.value += ` ${username}`;
     bodyInput.value = bodyInput.value.replace("@", `@${username}`);
+
     setTimeout(() => {
-      form.reset();
+      titleInput.value = defaultTitle;
+      bodyInput.value = defaultBody;
       input.value = `@${username}`;
     }, 100);
   });
