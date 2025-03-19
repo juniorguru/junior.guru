@@ -1,20 +1,13 @@
-name: ENGETO Academy
+name: ENGETO
 url: https://engeto.cz
 cz_business_id: 4671317
-# ---
-# title: Zkušenosti s ENGETO Academy
-# topic_name: engeto
-# topic_link_text: ENGETO Academy
-# description: Hledáš někoho, kdo má zkušenosti s ENGETO Academy? Má smysl hlásit se na jejich kurzy? Vyplatí se ENGETO Pro?
-# ---
-# {% from 'macros_topic.html' import intro, mentions with context %}
+usp_description: |
+  ENGETO je brněnská firma se slovenskými kořeny. Vznikla v roce 2016 a jako jedna z prvních začala v Česku dělat kurzy na Python. Kromě toho dnes nabízí kurzy na Javu, datovou analýzu, Linux, testování, frontend, a další.
 
-# {{ intro('Recenze na ENGETO Academy', page.meta.description) }}
+  Její **IT Akademie** jsou komplexní a probíhají online s lektorem. Výuka je dostupná i ze záznamu a zaměřuje se na praktické dovednosti a reálné projekty.
 
-# {{ mentions(topic, 'Engetu') }}
+  Kromě toho mají i **několikadenní intenzivní kurzy** zaměřené na konkrétní technologie a přístupy (např. React, Excel, OOP, PowerBI, SQL…).
 
-# <p class="button-compartment">
-#   <a href="{{ pages|docs_url('club.md')|url }}" class="button">
-#     Přidej se&nbsp;k&nbsp;nám
-#   </a>
-# </p>
+  Jako jediní v Česku si vyvíjí a stále vylepšují **vlastní vzdělávací platformu**, která kombinuje několik typů učení – od interaktivních a praktických úkolů, AI pomocníka a cvičení, až po práci na reálných projektech se zpětnou vazbou od lektorů.
+
+  Studenti mají k dispozici **komunitu na Discordu, kariérní poradenství, meetupy, hackathony, networkingové akce**. Kromě toho škola organizuje webináře, publikuje články a zasílá newsletter s tipy.
