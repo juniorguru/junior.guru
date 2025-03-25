@@ -146,4 +146,9 @@ Dobrý článek o tom, proč je lepší psát do veřejných kanálů a nesyslit
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1296486471670304878/1347166489643585569
+Ten LI v mobilu je perfektní věc. Chodil jsem furt otevřeným displejem, na kterém svítil QR kód a lidi si samí říkali o toto duchovní propojení.
+---
+
+
 #} -->

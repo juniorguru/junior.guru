@@ -745,4 +745,9 @@ Konkretne v tvojom pripade, ak tam citis nejaky potencial tak by som ich nechal 
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1353691241711140974
+Super článek. „…messy, simple solutions can be powerful if they solve real problems. Eventually, when the time is right, you can clean it up or rebuild from the ground up.“ http://lucumr.pocoo.org/2025/2/20/ugly-code
+---
+
+
 #} -->

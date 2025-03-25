@@ -1138,4 +1138,16 @@ https://addyo.substack.com/p/the-70-problem-hard-truths-about
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1347227383240986766/1349032743731990601
+Ja si prihreju polivcicku - https://www.youtube.com/watch?v=02XHM_XvsWs
+
+Za me je u DevOps nejdulezitejsi Infrastructure as Code (IaC), udelal jsem si prednasku pro zacatecniky na tema, jak ma vypadat novy projekt (v Pythonu, ale je to aplikovatelne na cokoliv) z pohledu DevOps
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1348749488185147463
+🎮 Brácha <@1061399828552241204> slyšel díl podcastu [Technicky vzato](http://www.vutbr.cz/podcast) (#36 – Kdy se z Česka stane tahoun na poli videoher? [mp3 zde](https://www.buzzsprout.com/1279862/episodes/16518248-36-kdy-se-z-ceska-stane-tahoun-na-poli-videoher.mp3)) a prý tam povídala o nějakém komunitním centru pro game vývojáře, indie vývojáře, alternativní scénu a tak: https://www.gamebaze.cz/ Je to v Brně. Nevíte o tom někdo něco? Máte někdo nějakou zkušenost? Možná by to mohlo být zajímavé pro lidi, které láká game dev.
+---
+
+
 #} -->

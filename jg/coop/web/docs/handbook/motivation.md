@@ -613,4 +613,21 @@ Znáte to někdo? Četli jste? Je to dobré? https://www.lovelydata.cz/mooc/kurz
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1348920589871480882/1348970161574772796
+V ČR v IT pracuje hodně lidí bez formálního IT vzdělání. 
+To je možné protože:
+- školy neprodukují tolik lidí, kolik trh potřebuje
+- protože je to relativně nový obor + nejde v něm o život, tak není tolik regulace (jako u stavařů nebo lékařů)
+- všechny informace se dají najít na internetu
+- obor se rychle mění, takže i když školy umí dát i obecný základ, který se hodí, tak je možné se naučit i bez toho dost, aby člověk byl v komerční praxi použitelný i když nebude schopen dělat to, co lidi s PhD
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1351833375668961391
+Měl bych jedno povzbuzení. Pakliže přicházíte z netechnického odvětví, udělejte z toho výhodu, viz odkazovaný článek o charisma. Technické znalosti je snadná se naučit, snadnější než soft-skills. Důležité je umět oboje. Technikům se toho druhého mnohdy nedostává, tak se prodejte tak, že umíte oboje 😉
+> Technical skills come with experience and can be easier to learn. That’s why I don’t worry too much about them when mentoring engineers. Instead, I prefer focusing on human skills, which I think are the most impactful but also the most neglected skills.
+https://utopianengineeringsociety.substack.com/p/new-series-underrated-soft-skills
+---
+
+
 #} -->

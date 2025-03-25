@@ -372,4 +372,9 @@ zdroj: https://www.linkedin.com/posts/tereza-kubickova_pro%C4%8D-je%C5%A1t%C4%9B
 https://www.linkedin.com/feed/update/urn:li:activity:7303326672123023361/
 
 
+--- https://discord.com/channels/769966886598737931/1345004923946930206/1351112744476344331
+A udělej si LinkedIn, uprav si adresu na vlastní /topolcani a bude to i fungovat 🙂 https://www.linkedin.com/help/linkedin/answer/a542685/manage-your-public-profile-url?lang=en
+---
+
+
 #} -->
