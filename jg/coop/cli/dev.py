@@ -88,12 +88,18 @@ def poetry_update():
         subprocess.run(["poetry", "add"] + changes, check=True)
 
 
-@main.command(context_settings={"ignore_unknown_options": True})
-@click.argument("pytest_args", nargs=-1, type=click.UNPROCESSED)
-def test(pytest_args):
-    logger.info("Running tests")
-    code = pytest.main(list(pytest_args))
+@main.command()
+@click.option("-v", "--verbose", is_flag=True)
+def test(verbose: bool):
+    logger.info("Running Python tests")
+    code = pytest.main(["-v"] if verbose else [])
     if code:
+        raise click.Abort()
+
+    logger.info("Running JavaScript tests")
+    try:
+        subprocess.run(["npx", "vitest", "--run"], check=True)
+    except subprocess.CalledProcessError:
         raise click.Abort()
 
     logger.info("Linting SCSS")

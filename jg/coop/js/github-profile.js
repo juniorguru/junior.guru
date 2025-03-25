@@ -10,14 +10,7 @@ function setupGitHubProfileForm() {
   const defaultBody = bodyInput.value;
 
   form.addEventListener("submit", (event) => {
-    const username = input.value
-      .trim()
-      .replace(/^https?:\/\//, "")
-      .replace(/^www\./, "")
-      .replace(/^github\.com/, "")
-      .replace(/^@/, "")
-      .replace(/^\/+/, "")
-      .replace(/\/+$/, "");
+    const username = getGitHubProfileUsername(input.value);
     titleInput.value += ` @${username}`;
     bodyInput.value = bodyInput.value.replace("@", `@${username}`);
 
@@ -27,6 +20,17 @@ function setupGitHubProfileForm() {
       input.value = `@${username}`;
     }, 100);
   });
+}
+
+export function getGitHubProfileUsername(inputValue) {
+  return inputValue
+    .trim()
+    .replace(/^https?:\/\//, "")
+    .replace(/^www\./, "")
+    .replace(/^github\.com/, "")
+    .replace(/^@/, "")
+    .replace(/^\/+/, "")
+    .replace(/\/+$/, "");
 }
 
 document.addEventListener("DOMContentLoaded", setupGitHubProfileForm);

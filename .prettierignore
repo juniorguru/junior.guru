@@ -3,4 +3,4 @@ jg/coop/**/*.jinja
 jg/coop/web/**/*.html
 jg/coop/web/**/*.md
 jg/coop/*_legacy
-tests
+tests/**/*.html

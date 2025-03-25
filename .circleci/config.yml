@@ -79,7 +79,7 @@ jobs:
           at: "~"
       - run:
           name: Test
-          command: poetry run jg test -v
+          command: poetry run jg test --verbose
 
   # Requires:
   #
