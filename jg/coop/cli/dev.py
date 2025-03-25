@@ -98,7 +98,9 @@ def test(verbose: bool):
 
     logger.info("Running JavaScript tests")
     try:
-        subprocess.run(["npx", "vitest", "--run"], check=True)
+        subprocess.run(
+            ["npx", "vitest", "--dir=tests", "--run", "--environment=jsdom"], check=True
+        )
     except subprocess.CalledProcessError:
         raise click.Abort()
 

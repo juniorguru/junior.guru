@@ -23,14 +23,11 @@ function setupGitHubProfileForm() {
 }
 
 export function getGitHubProfileUsername(inputValue) {
-  return inputValue
-    .trim()
-    .replace(/^https?:\/\//, "")
-    .replace(/^www\./, "")
-    .replace(/^github\.com/, "")
-    .replace(/^@/, "")
-    .replace(/^\/+/, "")
-    .replace(/\/+$/, "");
+  const match = inputValue.match(/github\.com\/([^\/?]+)/);
+  if (match) {
+    return match[1];
+  }
+  return inputValue.trim().replace(/^@/, "");
 }
 
 document.addEventListener("DOMContentLoaded", setupGitHubProfileForm);

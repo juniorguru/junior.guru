@@ -24,9 +24,5 @@
     "stylelint-config-twbs-bootstrap": "16.0.0",
     "stylelint-order": "6.0.4",
     "vitest": "3.0.9"
-  },
-  "vitest": {
-    "dir": "tests",
-    "environment": "jsdom"
   }
 }
