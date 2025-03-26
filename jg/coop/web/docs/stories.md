@@ -66,6 +66,23 @@ Ale uvědomovat si, že možná měli v kuchyni šváby, možná se pohádali, m
 
 Pokud víš, že se s druhými srovnávat nemáš, ale stejně si neumíš pomoci, projdi si kapitolu [Psychika na cestě do IT](handbook/mental-health.md).
 
+## Návody na úspěch
+
+K tématu inspirativních příběhů se váže i téma „zaručených návodů na úspěch“.
+Často se vyzdvihují určité vypozorované podmínky, nebo rysy, které spojují úspěšné lidi.
+Každý už nejspíš slyšel o tom, jak jsou nejúspěšnějšími podnikateli ti, kteří ani nedostudovali.
+No a prý když to uděláme stejně, máme vyšší šanci dostat se tam, kam si přejeme.
+
+Tak jednoduché to ale není. Znaky, které najdeme u úspěšných, můžeme stejně snadno najít i u neúspěšných. Tento přelud [hezky popsal](https://houdekpetr.blogspot.com/2024/07/prelud-uspechu.html) ve svém článku behaviorální ekonom Petr Houdek.
+
+{% call blockquote_avatar(
+  'Ve skutečnosti nedostudovaní nejsou disproporčně častěji miliardáři, spíš jsou nezaměstnanými… Podobně rady nehádat se v manželství ignorují příklady párů, které se také nehádaly, ale přesto se rozešly nebo nebyly nikdy šťastné… Zkrátka, z úspěchů lze velmi snadno vybrat určitý rys, ale to neznamená, že je tento rys skutečně klíčový pro úspěch.',
+  'petr-houdek.jpg',
+  'Petr Houdek'
+) %}
+  Petr Houdek, behaviorální ekonom, v článku [Přelud úspěchu](https://houdekpetr.blogspot.com/2024/07/prelud-uspechu.html)
+{% endcall %}
+
 ## Příběhy z junior.guru
 
 Děláme rozhovory s členy zdejšího [klubu](club.md).
@@ -94,7 +111,7 @@ Jak přesně rekfalifikační program probíhal a kolik horníků se dostalo do�
     'https://kviff.tv/katalog/nova-sichta',
     'Tady si můžeš film legálně pustit, nebo i stáhnout.',
     badge_icon='play-circle-fill',
-    badge_text='80 Kč',
+    badge_text='89 Kč',
   ) }}
 
   {{ link_card(
