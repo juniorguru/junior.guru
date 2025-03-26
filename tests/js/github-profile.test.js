@@ -8,7 +8,9 @@ describe("github-profile.js", () => {
     });
 
     it("parses username with whitespace", () => {
-      expect(getGitHubProfileUsername("      honzajavorek      \t        ")).toBe("honzajavorek");
+      expect(
+        getGitHubProfileUsername("      honzajavorek      \t        "),
+      ).toBe("honzajavorek");
     });
 
     it("parses @username", () => {
@@ -16,31 +18,49 @@ describe("github-profile.js", () => {
     });
 
     it("parses @username with whitespace", () => {
-      expect(getGitHubProfileUsername("      @honzajavorek      \t        ")).toBe("honzajavorek");
+      expect(
+        getGitHubProfileUsername("      @honzajavorek      \t        "),
+      ).toBe("honzajavorek");
     });
 
     it("parses repository link", () => {
-      expect(getGitHubProfileUsername("https://github.com/honzajavorek/honzajavorek.cz")).toBe("honzajavorek");
+      expect(
+        getGitHubProfileUsername(
+          "https://github.com/honzajavorek/honzajavorek.cz",
+        ),
+      ).toBe("honzajavorek");
     });
 
     it("parses GitHub profile link", () => {
-      expect(getGitHubProfileUsername("https://github.com/honzajavorek/")).toBe("honzajavorek");
+      expect(getGitHubProfileUsername("https://github.com/honzajavorek/")).toBe(
+        "honzajavorek",
+      );
     });
 
     it("parses GitHub profile link without protocol", () => {
-      expect(getGitHubProfileUsername("github.com/honzajavorek/")).toBe("honzajavorek");
+      expect(getGitHubProfileUsername("github.com/honzajavorek/")).toBe(
+        "honzajavorek",
+      );
     });
 
     it("parses GitHub profile link without HTTPS", () => {
-      expect(getGitHubProfileUsername("http://github.com/honzajavorek/")).toBe("honzajavorek");
+      expect(getGitHubProfileUsername("http://github.com/honzajavorek/")).toBe(
+        "honzajavorek",
+      );
     });
 
     it("parses GitHub profile link with www.", () => {
-      expect(getGitHubProfileUsername("http://www.github.com/honzajavorek/")).toBe("honzajavorek");
+      expect(
+        getGitHubProfileUsername("http://www.github.com/honzajavorek/"),
+      ).toBe("honzajavorek");
     });
 
     it("parses GitHub profile link with parameters", () => {
-      expect(getGitHubProfileUsername("https://github.com/honzajavorek?tab=projects")).toBe("honzajavorek");
+      expect(
+        getGitHubProfileUsername(
+          "https://github.com/honzajavorek?tab=projects",
+        ),
+      ).toBe("honzajavorek");
     });
   });
 });
