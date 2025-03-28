@@ -125,6 +125,7 @@ HIDDEN_ELEMENTS = [
     ".toast-container",  # coderslab.cz
     '[class*="dc-ps-banner"]',  # datacamp.com
     ".oj-page-content .homebanner",  # onlinejazyky.cz
+    "#awsccc-cb-c",  # aws.amazon.com
 ]
 
 BLOCKED_ROUTES = [
@@ -264,8 +265,8 @@ def download_fb_cover_image(screenshot):
         page.goto(url, wait_until="networkidle")
         image_url = page.evaluate(
             """
-            () => document.querySelector('img[data-imgperflogname="profileCoverPhoto"]').src
-        """
+                () => document.querySelector('img[data-imgperflogname="profileCoverPhoto"]').src
+            """
         )
         browser.close()
     resp = requests.get(image_url)
@@ -306,9 +307,9 @@ def create_screenshot(page, url):
                 pass
             page.evaluate(
                 """
-                selectors => Array.from(document.querySelectorAll(selectors.join(', ')))
-                    .forEach(element => element.remove());
-            """,
+                    selectors => Array.from(document.querySelectorAll(selectors.join(', ')))
+                        .forEach(element => element.remove());
+                """,
                 list(HIDDEN_ELEMENTS),
             )
             screenshot_bytes = page.screenshot()
