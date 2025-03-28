@@ -778,14 +778,6 @@ Here are their top tips:
 -    Use Slack Groups- Join various slack groups and find #hiring channels where employers will post open positions, then reach out to the poster via email or on Slack
 -    Don’t underestimate the behavioural interview- Prepare for the most common behavioural questions such as “tell me about yourself,” “what are you looking for in your next role” and “why do you want to work here” questions. Make sure you make these personal, and do your research on the company to make sure your answers align.
 
-Štěpán a certifikace, Certifikace (Štěpán poradí)
-https://docs.google.com/document/d/1FXiYV3uv0pql4tUliSytr7Z_frvKJsLwFxZQiPrMekc/edit
-https://discord.com/channels/769966886598737931/769966887055392768/851844891805876284
-https://engeto.cz/blog/linux/linux-serial-3-pomuzou-certifikaty-k-lepsi-kariere-v-it/
-https://mail.google.com/mail/u/0/#inbox/FMfcgxwLtZnhDVknJZLzkmPFbpGHzrQf
-https://twitter.com/stepanb/status/1301826148545048576
-Štěpán dokument, Luboš mail, Red Hat má taky certifikace?
-
 https://twitter.com/jurri_cz/status/1299425286077976581
 
 Arogantni HR
@@ -971,17 +963,6 @@ https://discord.com/channels/769966886598737931/769966887055392768/8666807514999
 ---
 
 
---- https://discord.com/channels/769966886598737931/788826407412170752/884384782669213727
-Certifikát ISTQB může být užitečný pro hledání první práce, protože je tam hooodně teorie, kterou se člověk musí naučit, na druhou stranu znám spoustu lidí, kteří dostali práci i bez něj. Pokud už člověk má praxi, certifikáty jsou většinou nerelevantní.
-
-Co si myslím, že by mohlo pomoct je ukázat, že člověk ví, kam se chce dál posunout. Automatizované testování je často dalším krokem a aby člověk mohl psát autotesty, musí nejdříve umět programovat na základní úrovni. Doporučuju tady začít s Javou, protože junior testery většinou nabírají v bankách, kde jsou testy v Javě. Pokud nejsou v Javě, jsou většinou v Pythonu a přechod Java ->Python je jednodušší, než naopak. Nicméně, dá se začít i Pythonem, to je možná jednodušší na začátek. Každopádně bych tady doporučila mít nějaký ukázkový projekt. Taky bych doporučila, osvojit si základy DevOPSu - někdo bude muset připravovat testovací prostředí, automaticky na něm spouštět testy atd.
-
-U testera/ky můžou být důležité doménové znalosti - toho bych se nebála využít. Pokud mám vystudované bankovnictví, zkusila bych se primárně hlásit do bank. Je spousta dalších cest, kromě automatizovaného testování - pokud už vím, kam mířím, zkusila bych to na pohovoru zmínit.
-
-Co se týká firem, hledala bych nějakou, kde mají menší poměr manuálních testerů (nebo ideálně žádné), protože se může stát, že se junior/ka zasekne na manuálním testování a nikam neposune. Na pohovoru bych se vyloženě ptala, kolik je manuálních testerů, kolik mají manuálních vs automatizovaných testů, co ode mě očekávají.
----
-
-
 --- https://discord.com/channels/769966886598737931/789092262965280778/1050378327627669544
 Nedávno jsme v <#769966887055392768> řešili návratnost investice (ROI) do switche.
 Byla to diskuze k článku https://www.seznamzpravy.cz/clanek/ekonomika-firmy-cesi-se-predelavaji-na-ajtaky-vydelavaji-i-nasobky-toho-co-driv-216944
@@ -1095,11 +1076,6 @@ Takže Konečně pracuju. Jako vývojář. Success story? Možná možná se mi 
 
 --- https://discord.com/channels/769966886598737931/789107031939481641/977161736987754546
 Formou bodyshoppingu pracuji já, tak kdybys pak sbíral názory, ráda přispěju.
----
-
-
---- https://discord.com/channels/769966886598737931/788826407412170752/975513302614544454
-Obecne certifikaci delej jen kdyz ti ji nekdo zaplati a/nebo je to nutna podminka pro neco co chces (povyseni, job, ...), jinak moc nedavaji smysl imho
 ---
 
 
@@ -1499,7 +1475,7 @@ Nejsem mobilní vývojář (napsal jsem před dvaceti lety nějakou stáž v Jav
 
 
 --- https://discord.com/channels/769966886598737931/789107031939481641/1349716580270997525
-Ahoj. Včera jsem se potkal s IT HR Monety banky, řekl jsem jí, že mám kurz testera a už se na mě dívala skrz prsty (co to zase bude za rychlokvašku) okamžitě byl můj kredit o 50% nižší. 
+Ahoj. Včera jsem se potkal s IT HR Monety banky, řekl jsem jí, že mám kurz testera a už se na mě dívala skrz prsty (co to zase bude za rychlokvašku) okamžitě byl můj kredit o 50% nižší.
 Nakonec se mi jí podařilo trošku přesvědčit, že zas tak marný nejsem, že nějaký slušný základ mám a odnesl jsem si alespoň to na čem víc zapracovat. Ale ten začátek byl hrůzostrašný.
 V rámci aktuální situace/přetlaků juniorů by bylo možná lepší takové rozhovory začínat spíš tím co umím, jaké mám zkušenosti, říct jim Váš příběh o tom co Vás tam přivedlo a ke kurzům se dostat později.
 ---

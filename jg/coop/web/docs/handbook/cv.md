@@ -231,7 +231,7 @@ Pokud máš kurzy, do vzdělání si je určitě napiš. Pouze však ty, které 
 
 Kurzů je hodně a druhá strana skoro nikdy nebude ten tvůj znát nějak blíž. Nemá smysl soutěžit v tom, zda je jeden prestižnější než druhý, jen aby to vypadalo dobře na CV. Na první pohled zaujmou maximálně jména s dobrým marketingem, např. Czechitas. Práci si ale najdou i samouci bez kurzů, protože **na kurzy se nehraje**. Hraje se na praxi, tedy na [projekty](#6-projekty).
 
-Jestliže máš nějaké **certifikace**, nezapomeň je zmínit. Certifikacemi se myslí např. ISTQB u testerů, tedy široce uznávaná věc s vlastní stránkou na Wikipedii. Omalovánku, kterou ti dali za absolvování kurzu, si založ k diplomům z plavání z páté třídy.
+Jestliže máš nějaké **certifikace**, nezapomeň je zmínit. Certifikacemi se myslí např. ISTQB u testerů, tedy široce uznávaná věc s vlastní stránkou na Wikipedii. Omalovánku, kterou ti dali za absolvování kurzu, si založ k diplomům z plavání z páté třídy. Mrkni na kapitolu [Certifikáty a certifikace](./certification.md).
 
 Pokud ti z toho vyšlo více záznamů o vzdělání než jeden, seřaď je chronologicky od nejnovějšího po nejstarší.
 

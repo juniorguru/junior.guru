@@ -94,7 +94,7 @@ template: main_handbook.html
 <!-- certifikát vs certifikace -->
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
+  {{ 'exclamation-circle'|icon }} Viz [Certifikáty a certifikace](./certification.md).
 {% endcall %}
 
 ## Za peníze nebo zdarma?
@@ -146,7 +146,7 @@ template: main_handbook.html
 <!-- certifikát vs certifikace -->
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
+  {{ 'exclamation-circle'|icon }} Viz [Certifikáty a certifikace](./certification.md).
 {% endcall %}
 
 ### Psychotesty
@@ -1083,7 +1083,7 @@ Kurzy samy o sobě nejsou špatný, záleží jak je využiješ 🙂
 
 Navíc jsou kurzy, který jsou zadarmo. Menší, větší, lepší, horší ale daj se najít. Pokud jsou peníze problém, ale třeba angličtina problém není, tak se jich dá najít docela dost. Nebo třeba za pár stovek.
 
-Takže jak říká Dan, uvidíš. 
+Takže jak říká Dan, uvidíš.
 Jak by sis představoval "samostudium"?
 ---
 
