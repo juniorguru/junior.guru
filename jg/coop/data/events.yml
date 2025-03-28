@@ -167,6 +167,7 @@
   logo_path: logo-bg.svg
   speakers: 668226181769986078
   public_recording_url: https://youtube.com/live/GkT0hRhykgk
+  recording_url: https://youtube.com/live/GkT0hRhykgk
 
 - id: 45
   title: "Jak na CV při změně kariéry do IT"
@@ -187,6 +188,7 @@
   logo_path: logos/coreskill.svg
   speakers: 652142810291765248
   public_recording_url: https://youtube.com/live/8_ZUwRKEJ7A
+  recording_url: https://youtube.com/live/8_ZUwRKEJ7A
 
 - id: 44
   title: "Kubernetes: Co, proč a jak – průvodce pro začátečníky"
