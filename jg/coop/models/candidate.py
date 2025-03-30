@@ -40,7 +40,7 @@ class Candidate(BaseModel):
 
 
 class CandidateProject(BaseModel):
-    name = CharField(primary_key=True)
+    name = CharField()
     candidate = ForeignKeyField(Candidate, backref="list_projects")
     title = CharField(null=True)
     source_url = CharField()
