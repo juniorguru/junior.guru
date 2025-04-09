@@ -242,4 +242,6 @@ https://discord.com/channels/769966886598737931/788826407412170752/8680867722010
 
 - Nástupní mzdy se pohybují od 35 do 40 tisíc korun hrubého. Lze se dostat i na vyšší částky, je to ale vykoupené tím, že firma očekává vyšší samostatnost a rychlejší rozvoj dovedností. My našim studentům doporučujeme, aby do šesti až devíti měsíců od absolvování kurzu upřednostňovali nabídku s nižší mzdou a větším mentoringem ze strany právě seniorního pracovníka. V začátku kariéry je důležitější nabírat zkušenosti než několik tisícikorun navíc ke mzdě.
 
+https://www.linkedin.com/posts/lucietvrdikova_antireklama-activity-7284852497221865472-NLhk/?rcm=ACoAAAP3cMQB6Z0KS11itMTIOss5Q1J0OCTXkaQ
+
 #} -->

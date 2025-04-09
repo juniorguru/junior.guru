@@ -1098,4 +1098,7 @@ Ano, kromě „kurzu“, který se jmenuje „vysoká škola informatického sm�
 ---
 
 
+https://lucietvrdikova.cz/nahlednete-za-oponu-it-kurzy-dotace-reklama-a-realita/
+
+
 #} -->

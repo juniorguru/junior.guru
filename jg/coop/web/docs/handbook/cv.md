@@ -625,4 +625,7 @@ https://www.youtube.com/watch?v=F3joY9KCoX8
 ---
 
 
+neuvadet nazvy kurzu? protoze mohou byt na blacklistu https://lucietvrdikova.cz/nahlednete-za-oponu-it-kurzy-dotace-reklama-a-realita/
+
+
 #} -->
