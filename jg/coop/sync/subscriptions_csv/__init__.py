@@ -29,6 +29,9 @@ MEMBERS_GQL_PATH = Path(__file__).parent / "members.gql"
 logger = loggers.from_path(__file__)
 
 
+Row = dict[str, str]
+
+
 @cli.sync_command()
 @click.option(
     "--error-channel", "error_channel_id", default="business", type=parse_channel
@@ -139,39 +142,26 @@ def main(error_channel_id: int):
             ),
         )
         for csv_row in csv_rows:
+            logger.debug(f"Processing cancellation:\n{csv_row!r}")
+            if is_redacted_row(csv_row):
+                logger.warning("Skipping redacted row")
+                continue
             account_email = csv_row["Email"]
-            if "členství v klubu" not in csv_row["Plan"].lower():
-                logger.debug(
-                    f"Skipping cancellation of {account_email}, not a club subscription: {csv_row['Plan']!r}"
-                )
-            else:
-                logger.debug(f"Processing cancellation of {account_email}")
-                if csv_row["Reason"]:
-                    reason = slugify(csv_row["Reason"], separator="_")
-                else:
-                    reason = SubscriptionCancellationReason.UNKNOWN
-                feedback = csv_row["Feedback"] or None
-                try:
-                    date_field_value = csv_row.get("Date") or csv_row.get(
-                        "Expiration Date"
-                    )
-                    expires_on = date.fromisoformat(date_field_value)
-                except ValueError:
-                    logger.warning(f"Invalid date format: {date_field_value!r}")
-                    expires_on = None
+            if is_club_subscription(csv_row):
+                logger.debug(f"Processing {account_email}")
                 account_id = emails[account_email]
-                logger.debug(
-                    f"Adding cancellation of {memberful_url(account_id)} ({account_email})"
-                )
+                logger.debug(f"Adding {memberful_url(account_id)} ({account_email})")
                 SubscriptionCancellation.add(
                     account_id=account_id,
                     account_name=csv_row["Name"],
                     account_email=account_email,
                     account_total_spend=total_spend[account_id],
-                    expires_on=expires_on,
-                    reason=reason,
-                    feedback=feedback,
+                    expires_on=get_date(csv_row),
+                    reason=get_reason(csv_row),
+                    feedback=get_feedback(csv_row),
                 )
+            else:
+                logger.debug(f"Skipping {account_email}, not a club subscription")
     except Exception as e:
         logger.exception("Failed to fetch data from Memberful")
         discord_task.run(report_exception, error_channel_id, e)
@@ -252,3 +242,34 @@ def classify_marketing_survey_answer(text: str) -> str:
     if re.search(r"^\b\w{1,2}\s+(internet|web|net)\w*$", text, re.I):
         return "internet"
     return "other"
+
+
+def get_reason(row: Row) -> SubscriptionCancellationReason:
+    if row["Reason"]:
+        return SubscriptionCancellationReason(slugify(row["Reason"], separator="_"))
+    else:
+        return SubscriptionCancellationReason.UNKNOWN
+
+
+def get_feedback(row: Row) -> str:
+    return row["Feedback"] or None
+
+
+def is_club_subscription(row: Row) -> bool:
+    return "členství v klubu" in row["Plan"].lower()
+
+
+def get_date(row: Row) -> date:
+    value = row.get("Date") or row.get("Expiration Date")
+    if value == "N/A" or not value:
+        return None
+    try:
+        return date.fromisoformat(value)
+    except ValueError:
+        raise ValueError(f"Invalid date format: {value!r}")
+
+
+def is_redacted_row(row: Row) -> bool:
+    data = dict(row)
+    data.pop("Plan")
+    return set(data.values()) <= {None, "N/A", ""}

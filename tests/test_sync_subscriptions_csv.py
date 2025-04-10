@@ -1,8 +1,13 @@
+from datetime import date
+
 import pytest
 
 from jg.coop.sync.subscriptions_csv import (
+    Row,
     classify_marketing_survey_answer,
     classify_referrer,
+    get_date,
+    is_redacted_row,
 )
 
 
@@ -61,3 +66,51 @@ def test_classify_referrer(url, expected):
 )
 def test_classify_marketing_survey_answer(text, expected):
     assert classify_marketing_survey_answer(text) == expected
+
+
+@pytest.mark.parametrize(
+    "row, expected",
+    [
+        (
+            {
+                "Name": "N/A",
+                "Email": "N/A",
+                "Plan": "Členství v klubu",
+                "Price (CZK)": "N/A",
+                "Expiration Date": "N/A",
+                "Reason": "",
+                "Feedback": "",
+            },
+            True,
+        ),
+        (
+            {
+                "Name": "Aleš Novák",
+                "Email": "alesnovak@example.com",
+                "Plan": "Členství v klubu",
+                "Price (CZK)": "199.00",
+                "Expiration Date": "2025-02-23",
+                "Reason": "Other",
+                "Feedback": "",
+            },
+            False,
+        ),
+    ],
+)
+def test_is_redacted_row(row: Row, expected: bool):
+    assert is_redacted_row(row) is expected
+
+
+@pytest.mark.parametrize(
+    "row, expected",
+    [
+        ({"Expiration Date": "2025-03-18"}, date(2025, 3, 18)),
+        ({"Date": "2025-03-18"}, date(2025, 3, 18)),
+        ({"Expiration Date": ""}, None),
+        ({"Date": ""}, None),
+        ({"Expiration Date": "N/A"}, None),
+        ({"Date": "N/A"}, None),
+    ],
+)
+def test_get_date(row: Row, expected: date | None):
+    assert get_date(row) == expected
