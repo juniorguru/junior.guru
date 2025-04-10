@@ -99,7 +99,9 @@ def test_image_templates(name, value, source_of_truth):
     assert source_of_truth[name.replace("--color-", "$jg-")] == value
 
 
-SVG_IMAGES_WEB = list((PACKAGE_DIR / "images").glob("*.svg"))
+SVG_IMAGES_WEB = list((PACKAGE_DIR / "images").glob("*.svg")) + list(
+    (PACKAGE_DIR / "images/illustrations").glob("*.svg")
+)
 
 
 def test_svg_images_exist():

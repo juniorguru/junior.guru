@@ -4,10 +4,10 @@
 
 
 {% macro img(filename, alt, width, height, class=none, lazy=True) %}
-<img
-  {% if filename.endswith('.svg') %}
+<img {{- ' ' -}}
+  {%- if filename.endswith('.svg') -%}
     src="{{ filename|url }}"
-  {% else %}
+  {%- else %}
     data-src="{{ filename|url }}"
     src="https://{{ cloudinary_host }}/juniorguru/image/fetch/w_{{ width }}%2Cdpr_auto%2Cq_auto%2Cf_auto/https://junior.guru/{{ filename }}"
     srcset="{{- '' -}}
@@ -18,10 +18,10 @@
     "
     onerror="this.onerror = null; this.src = this.srcset = this.dataset.src;"
   {% endif %}
+  {{- ' ' -}}
   alt="{{ alt }}" width="{{ width }}" height="{{ height }}"
-  {% if lazy %} loading="lazy"{% endif %}
-  {% if class %} class="{{ class }}"{% endif %}
-  {{- '' -}}
+  {%- if lazy %} loading="lazy"{% endif -%}
+  {%- if class %} class="{{ class }}"{% endif -%}
 >
 {% endmacro %}
 
