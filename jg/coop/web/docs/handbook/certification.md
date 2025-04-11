@@ -20,9 +20,9 @@ template: main_handbook.html
 
 ## Co zajímá firmy
 
-Žádný IT kurz na českém nebo slovenském trhu, ani akreditovaný, tě nevybaví dostatečně na to, aby tě někde hned vzali. I kdyby to v promo materiálech desetkrát tvrdili.
+Nepočítej s tím, že tě nějaký IT kurz na českém nebo slovenském trhu, byť třeba akreditovaný, vybaví dostatečně na to, aby tě někde hned vzali. I kdyby to v promo materiálech desetkrát tvrdili. Najít práci hned po kurzu, nebo dokonce během něj, je **velké štěstí, ale rozhodně ne standard**.
 
-Po absolvování je typicky potřeba ještě na sobě makat, doplnit si řadu znalostí a dovedností, a v případě programování také pracovat na vlastních projektech.
+Po absolvování je typicky potřeba ještě na sobě **makat, doplnit si řadu znalostí a dovedností**, a v případě programování také pracovat na **vlastních projektech**.
 
 Firmy při náboru zajímají především tvé dovednosti. Velké plus je vysokoškolské vzdělání v nějakém IT oboru. Certifikace jsou taky plus, ale pouze ty respektované a pouze v IT oborech, kde to je zvykem.
 
@@ -30,19 +30,19 @@ Firmy při náboru zajímají především tvé dovednosti. Velké plus je vysok
 
 Slovo certifikát se běžně používá pro libovolný papír, který dostaneš po absolvování libovolného vzdělávání. Podobně diplom není nutně jen vysokoškolský diplom, ale může ti ho namalovat i kamarádka za nejrychlejší snězení pytlíku chipsů.
 
-Pokud tvůj kurz dává nějaký „certifikát“ nebo „diplom“, je to pro většinu zaměstnavatelů v IT jako diplom z plavání na základce. Je to milé, ale přihlížet budou spíš k tomu, co ukážeš v bazénu.
+Pokud tvůj kurz dává nějaký „certifikát“ nebo „diplom“, je to pro většinu zaměstnavatelů v IT jako **diplom z plavání na základce**. Je to milé, ale **přihlížet budou spíš k tomu, co ukážeš v bazénu.**
 
 Kurzy rády uvádějí, že po absolvování od nich ozdobný papír dostaneš, protože to jednak dobře zní, jednak si je lidi rádi odnášejí domů. Je to ale pouze na památku, do šuplíku, do rámečku.
 
-Některé mohou mít ve [tvém CV](cv.md) dokonce i zápornou hodnotu. Pokud nějaká vzdělávací instituce chrlí nedostatečně připravené absolventy, firmy se jim při pohovorech mohou začít záměrně vyhýbat.
+Některé mohou mít ve [tvém CV](cv.md) dokonce i **zápornou hodnotu**. Pokud nějaká vzdělávací instituce chrlí nedostatečně připravené absolventy, firmy se jim při pohovorech mohou začít záměrně vyhýbat.
 
-Běžný kurz si proto vždy vybírej podle náplně a recenzí, nikdy podle papíru, který dostaneš na konci.
+Běžný kurz si proto **vždy vybírej podle náplně a recenzí**, nikdy podle papíru, který dostaneš na konci.
 
 ## Osvědčení o rekvalifikaci od MŠMT ČR
 
 Když provozovatel kurzu splní určité podmínky, dostane tzv. _akreditaci_ k tomu, aby mohl dělat tzv. _rekvalifikační_ kurzy. Slovo akreditace zní velmi prestižně a slovo rekvalifikační vybízí k myšlence, že by se čerstvý absolvent mohl snad hned někde ucházet o práci.
 
-Bohužel to tak není. Akreditovaný kurz odpovídá formálním kritériím, ale ta neodpovídají požadavkům IT firem.
+Bohužel to tak není. **Akreditovaný kurz sice odpovídá formálním kritériím, ale ta neodpovídají požadavkům IT firem**.
 
 Opravdu rekvalifikační jsou např. kurzy pro svářeče zakončené přislušnými zkouškami, kde máš v ruce svářečský průkaz a někde tě s tím vezmou.
 
@@ -50,23 +50,23 @@ Kurzy programování se ale nemohou opřít o žádné respektované certifikace
 
 ## Certifikace
 
-Certifikace je proces, kdy se něco učíš, pak složíš jednu nebo více zkoušek u nějaké renomované instituce, a získáš na trhu respektovaný certifikát. Některé pak po letech vyprší a je potřeba si je obnovovat.
+Certifikace je proces, kdy se něco učíš, pak složíš jednu nebo více zkoušek u nějaké renomované instituce, a získáš **na trhu respektovaný certifikát**. Některé pak po letech vyprší a je potřeba si je obnovovat.
 
 V určitých oborech, jako např. kybernetická bezpečnost, cloud a infrastruktura, nebo sítě a administrace systémů, mají certifikace velkou váhu a na tvé cestě ti mohou pomoci.
 
-Naopak třeba u klasického vývoje softwaru jsou mnohem důležitější reálné projekty a dovednosti. Na programování v Pythonu nebo JavaScriptu žádné respektované certifikace neexistují. Občas někdo vytáhne [PCEP](https://pythoninstitute.org/pcep), ale v praxi nikdo z Python programátorů nezná ani tu certifikaci, ani tu instituci za tím.
+Naopak třeba u klasického vývoje softwaru jsou mnohem důležitější reálné projekty a dovednosti. **Na programování v Pythonu nebo JavaScriptu žádné respektované certifikace neexistují**. Občas někdo vytáhne [PCEP](https://pythoninstitute.org/pcep), ale v praxi nikdo z Python programátorů nezná ani tu certifikaci, ani tu instituci za tím.
 
 Relevantní certifikační programy nabízí velké IT firmy nebo známé nezávislé organizace. S orientací může pomoci vyhledávání, např. „[top paying it certifications](https://www.google.cz/search?q=top%20paying%20entry%20level%20it%20certifications)”.
 
-Certifikace mohou stát dost peněz a tak má často smysl jimi procházet až u zaměstnavatele, pokud je ochotný je proplatit v rámci tvého kariérního postupu. Některé jsou však zdarma.
+**Certifikace mohou stát dost peněz** a tak má často smysl jimi procházet až u zaměstnavatele, pokud je ochotný je proplatit v rámci tvého kariérního postupu. Některé jsou však zdarma.
 
 ### Jak se připravovat na certifikaci
 
-Každá certifikace má zveřejněné podmínky na znalosti a doporučené výukové materiály. Většina organizací, které stojí za certifikacemi, k nim zároveň poskytuje i školení (většinou placená) nebo online materiály (většinou zdarma).
+Každá certifikace má zveřejněné podmínky na znalosti a doporučené výukové materiály. Většina organizací, které stojí za certifikacemi, k nim zároveň poskytuje i **školení** (většinou placená) nebo **online materiály** (většinou zdarma).
 
 Vhodné zdroje lze ale najít i na různých vzdělávacích platformách a někdy existují i kurzy od celé řady poskytovatelů, které s přípravou na certifikaci pomáhají.
 
-U některých certifikací se nedá obejít bez dlouhodobých praktických zkušeností. Hledej spíš ty, které jsou přímo určené pro juniory a nepředpokládají velké vstupní znalosti. U takových by mělo být možné se kvalitně připravit za pár týdnů.
+U některých certifikací se nedá obejít bez dlouhodobých praktických zkušeností. Hledej spíš ty, které jsou **přímo určené pro juniory** a nepředpokládají velké vstupní znalosti. U takových by mělo být možné se kvalitně připravit za pár týdnů.
 
 ### Jak probíhá certifikace
 
@@ -83,7 +83,7 @@ Protože je to online, dá se to dělat odkudkoliv. Logicky ale bude nejvhodněj
 
 ### Testování
 
-Pokud se chceš živit testováním, certifikát CTFL od ISTQB ti může pomoci. Není však vyloženě nutné ho mít. Hromada lidí se do oboru dostala i bez něj. A jestli už máš s testováním dokonce nějakou praxi, tak je pro tebe spíš zbytečný.
+Pokud se chceš živit testováním, certifikát **CTFL od ISTQB** ti může pomoci. **Není však vyloženě nutné ho mít.** Hromada lidí se do oboru dostala i bez něj. A jestli už máš s testováním dokonce nějakou praxi, tak je pro tebe spíš zbytečný.
 
 <div class="link-cards">
   {{ link_card(
@@ -106,7 +106,7 @@ Pokud se chceš živit testováním, certifikát CTFL od ISTQB ti může pomoci.
 
 ### Cloudy
 
-Pokukuješ po věcech jako DevOps, SRE, správa serverů, apod.? Může pro tebe mít smysl zvažovat nějakou cloudovou certifikaci. Tady najdeš odkazy na vzdělávací programy od tři největší poskytovatelů cloudových řešení.
+Pokukuješ po věcech jako DevOps, SRE, správa serverů, apod.? Může pro tebe mít smysl zvažovat nějakou cloudovou certifikaci. Tady najdeš odkazy na vzdělávací programy od **tři největších poskytovatelů** cloudových řešení.
 
 <div class="link-cards">
   {{ link_card(
@@ -127,7 +127,7 @@ Pokukuješ po věcech jako DevOps, SRE, správa serverů, apod.? Může pro tebe
 
 ### Síťě
 
-Pokud tě zajímají sítě, jejich protokoly, bezpečnost, a před usínáním si místo počítání oveček opakuješ [vrstvy ISO/OSI modelu](https://cs.wikipedia.org/wiki/Referen%C4%8Dn%C3%AD_model_ISO/OSI), chceš jednoznačně Cisco.
+Pokud tě zajímají sítě, jejich protokoly, bezpečnost, a před usínáním si místo počítání oveček opakuješ [vrstvy ISO/OSI modelu](https://cs.wikipedia.org/wiki/Referen%C4%8Dn%C3%AD_model_ISO/OSI), chceš jednoznačně **Cisco**.
 
 <div class="link-cards">
   {{ link_card(
@@ -138,7 +138,7 @@ Pokud tě zajímají sítě, jejich protokoly, bezpečnost, a před usínáním 
 
 ### Linux
 
-Jestli chceš mít papír na to, že umíš s Linuxem, budou tě zajímat především certifikace od Linux Foundation a od firmy Red Hat. Uznávané jsou i zkoušky od Linux Professional Institute nebo CompTIA.
+Jestli chceš mít papír na to, že umíš s Linuxem, budou tě zajímat především certifikace od **Linux Foundation** a od firmy **Red Hat**. Uznávané jsou i zkoušky od **Linux Professional Institute** nebo **CompTIA**.
 
 Zrovna Red Hat je v Česku a především v Brně významným zaměstnavatelem. Pokud jim plánuješ jednoho dne zaklepat na dveře, libovolný linuxový certifikát jim rozhodně udělá radost.
 
