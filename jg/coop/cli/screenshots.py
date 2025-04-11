@@ -126,6 +126,8 @@ HIDDEN_ELEMENTS = [
     '[class*="dc-ps-banner"]',  # datacamp.com
     ".oj-page-content .homebanner",  # onlinejazyky.cz
     "#awsccc-cb-c",  # aws.amazon.com
+    '[class^="truste-"]',  # redhat.com
+    '[id^="truste-"]',  # redhat.com
 ]
 
 BLOCKED_ROUTES = [

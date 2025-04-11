@@ -626,6 +626,8 @@ https://www.youtube.com/watch?v=F3joY9KCoX8
 
 
 neuvadet nazvy kurzu? protoze mohou byt na blacklistu https://lucietvrdikova.cz/nahlednete-za-oponu-it-kurzy-dotace-reklama-a-realita/
+„Rejpla bych si právě do toho, že pak musíš v CV maskovat, u koho si dělal kurz. Protože název instituce tam dávat nemusíš“
+https://discord.com/channels/769966886598737931/1355246864206926066/1360152352866308216
 
 
 #} -->
