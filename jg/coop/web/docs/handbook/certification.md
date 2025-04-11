@@ -50,15 +50,15 @@ Kurzy programování se ale nemohou opřít o žádné respektované certifikace
 
 ## Certifikace
 
-Jednou z možností, jak zvýšit svou cenu na trhu práce a prokázat, že něco fakt umíš, je certifikace. To je proces, kdy se něco učíš, pak složíš zkoušku nebo zkoušky u nějaké renomované instituce, a získáš opravdu respektovaný certifikát. Některé pak po letech vyprší a je potřeba si je obnovovat.
+Certifikace je proces, kdy se něco učíš, pak složíš jednu nebo více zkoušek u nějaké renomované instituce, a získáš na trhu respektovaný certifikát. Některé pak po letech vyprší a je potřeba si je obnovovat.
 
-V určitých oborech, jako např. kybernetická bezpečnost, cloud a infrastruktura, nebo sítě a administrace systémů, mají certifikace velkou váhu a mohou ti na tvé cestě pomoci.
+V určitých oborech, jako např. kybernetická bezpečnost, cloud a infrastruktura, nebo sítě a administrace systémů, mají certifikace velkou váhu a na tvé cestě ti mohou pomoci.
 
 Naopak třeba u klasického vývoje softwaru jsou mnohem důležitější reálné projekty a dovednosti. Na programování v Pythonu nebo JavaScriptu žádné respektované certifikace neexistují. Občas někdo vytáhne [PCEP](https://pythoninstitute.org/pcep), ale v praxi nikdo z Python programátorů nezná ani tu certifikaci, ani tu instituci za tím.
 
-Relevantní certifikační programy nabízí velké IT firmy nebo známé nezávislé organizace, např. The Linux Foundation. S orientací může pomoci vyhledávání, např. „[top paying it certifications](https://www.google.cz/search?q=top%20paying%20entry%20level%20it%20certifications)”.
+Relevantní certifikační programy nabízí velké IT firmy nebo známé nezávislé organizace. S orientací může pomoci vyhledávání, např. „[top paying it certifications](https://www.google.cz/search?q=top%20paying%20entry%20level%20it%20certifications)”.
 
-Získání certifikátu může stát dost peněz a tak má smysl se o některé snažit až u zaměstnavatele, pokud je ochotný je proplatit v rámci tvého kariérního postupu. Některé jsou však zdarma.
+Certifikace mohou stát dost peněz a tak má často smysl jimi procházet až u zaměstnavatele, pokud je ochotný je proplatit v rámci tvého kariérního postupu. Některé jsou však zdarma.
 
 ### Jak se připravovat na certifikaci
 
