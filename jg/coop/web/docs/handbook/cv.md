@@ -16,6 +16,26 @@ template: main_handbook.html
 
 [TOC]
 
+## Začni s naší přednáškou a šablonou
+
+Návod na dobré CV si můžeš buď přečíst v následujících odstavcích, nebo si jej pustit v podobě **výživné přednášky** od Dana Srba, který má skvělé předpoklady pro to, aby mohl s životopisy radit:
+
+- Dříve nabíral vývojáře, dnes provází juniory změnou kariéry do IT. Viděl už fakt spoustu životopisů a svá doporučení šije na míru přesně pro lidi, jako jsi ty.
+- Pracoval v designu a UX, takže ví, jak věci navrhovat tak, aby se druhé straně příjemně používaly.
+- Rozumí DTP, tedy sazbě textových dokumentů.
+
+V přednášce ukazuje, jak vytvořit **efektivní životopis pro hledání první práce v IT**. Pokrývá i témata, která tento textový návod příliš nezmiňuje, jako samotnou sazbu textu a vzhled, barvy, apod.
+
+Taky v přednášce představuje svou **[šablonu na CV](https://coreskill.tech/sablona-cv), která je vymazlená přesně pro potřeby juniorů** a následuje veškeré rady, které jsou tady v příručce. Nevymýšlej kolo!
+
+{{ video_card(
+  'Daniel Srb: Jak na CV při změně kariéry do IT',
+  '3,5hod',
+  'https://www.youtube.com/live/8_ZUwRKEJ7A',
+  'Jak vytvořit efektivní životopis pro hledání první práce v IT a představení šablony, která tě zdarma provede tvorbou kvalitního CV.',
+  note='Záznamy [klubových přednášek](../events.md) bývají dostupné jen pro členy, ale tato byla v rámci [Týdne pro Digitální Česko](https://budoucnostjedigitalni.gov.cz/) veřejně, aby pomáhala všem.'
+) }}
+
 ## Chceš přehlednost, ne krásu
 
 Životopis většiny lidí spadá do jednoho ze dvou extrémů. Buď vyplní [nejobyčejnější šablonu z internetu](https://europass.cz/), nebo se snaží zaujmout růžovými puntíky, kudrlinkami a zlatými kolibříky.

@@ -36,7 +36,9 @@ HEIGHT = 360
 
 MIN_BYTES_THRESHOLD = 10000
 
-YOUTUBE_URL_RE = re.compile(r"(youtube\.com.+watch\?.*v=|youtu\.be/)([\w\-\_]+)")
+YOUTUBE_URL_RE = re.compile(
+    r"(youtube\.com.+watch\?.*v=|youtube\.com/live/|youtu\.be/)([\w\-\_]+)"
+)
 
 FACEBOOK_URL_RE = re.compile(r"facebook\.com/")
 
