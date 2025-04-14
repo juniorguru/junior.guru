@@ -1037,3 +1037,5 @@
 {"_id": "26992089559", "amount": -1163, "category": "memberful", "happened_on": "2025-04-02"}
 {"_id": "26996847815", "amount": 7471, "category": "memberships", "happened_on": "2025-04-07"}
 {"_id": "27000575496", "amount": 6, "category": "donations", "happened_on": "2025-04-09"}
+{"_id": "27006718703", "amount": -97, "category": "tax", "happened_on": "2025-04-13"}
+{"_id": "27007099340", "amount": 4936, "category": "memberships", "happened_on": "2025-04-14"}
