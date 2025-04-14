@@ -36,7 +36,20 @@ Kurzy rády uvádějí, že po absolvování od nich ozdobný papír dostaneš, 
 
 Některé mohou mít ve [tvém CV](cv.md) dokonce i **zápornou hodnotu**. Pokud nějaká vzdělávací instituce chrlí nedostatečně připravené absolventy, firmy se jim při pohovorech mohou začít záměrně vyhýbat.
 
-Běžný kurz si proto **vždy vybírej podle náplně a recenzí**, nikdy podle papíru, který dostaneš na konci.
+Běžný kurz si proto **vždy vybírej podle náplně a recenzí**, nikdy podle papíru, který dostaneš na konci. Nějaké recenze najdeš na místním Discordu.
+
+<div class="mt-4">
+  <a class="btn btn-lg btn-primary mb-4" href="{{ pages|docs_url('club.md')|url }}">
+    Hledej recenze v klubu
+  </a>
+  <div>
+    <span class="members mb-0">
+    {% for member in members|sample(10) %}
+      {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50, lazy=False) }}
+    {% endfor %}
+    </span>
+  </div>
+</div>
 
 ## Osvědčení o rekvalifikaci od MŠMT ČR
 
@@ -125,17 +138,6 @@ Pokukuješ po věcech jako DevOps, SRE, správa serverů, apod.? Může pro tebe
   ) }}
 </div>
 
-### Síťě
-
-Pokud tě zajímají sítě, jejich protokoly, bezpečnost, a před usínáním si místo počítání oveček opakuješ [vrstvy ISO/OSI modelu](https://cs.wikipedia.org/wiki/Referen%C4%8Dn%C3%AD_model_ISO/OSI), chceš jednoznačně **Cisco**.
-
-<div class="link-cards">
-  {{ link_card(
-    'CCNA (Cisco)',
-    'https://www.comptia.org/certifications/linux'
-  ) }}
-</div>
-
 ### Linux
 
 Jestli chceš mít papír na to, že umíš s Linuxem, budou tě zajímat především certifikace od **Linux Foundation** a od firmy **Red Hat**. Uznávané jsou i zkoušky od **Linux Professional Institute** nebo **CompTIA**.
@@ -161,5 +163,39 @@ Zrovna Red Hat je v Česku a především v Brně významným zaměstnavatelem. 
   {{ link_card(
     'Linux+ (CompTIA)',
     'https://www.comptia.org/certifications/linux'
+  ) }}
+</div>
+
+### Síťě
+
+Pokud tě zajímají sítě, jejich protokoly, bezpečnost, a před usínáním si místo počítání oveček opakuješ [vrstvy ISO/OSI modelu](https://cs.wikipedia.org/wiki/Referen%C4%8Dn%C3%AD_model_ISO/OSI), chceš jednoznačně **Cisco**.
+
+<div class="link-cards">
+  {{ link_card(
+    'CCNA (Cisco)',
+    'https://www.comptia.org/certifications/linux'
+  ) }}
+</div>
+
+### Bezpečnost
+
+Zorientovat se v certifikacích v oblasti bezpečnosti je trochu věda a názory na to, s čím je nejvhodnější začít, se různí. V kontextu začátečníků je nejznámější **CEH**.
+
+<div class="link-cards">
+  {{ link_card(
+    'Security Certification Roadmap',
+    'https://pauljerimy.com/security-certification-roadmap/',
+    'Přehledná mapa certifikací v oblasti bezpečnosti.'
+  ) }}
+
+  {{ link_card(
+    'Srovnání certifikací',
+    'https://www.youtube.com/watch?v=O-SA3igMVaM',
+    'Motasem Hamdan srovnává nejznámější začátečnické certifikace.'
+  ) }}
+
+  {{ link_card(
+    'CEH (EC-Council)',
+    'https://www.eccouncil.org/train-certify/certified-ethical-hacker-ceh/'
   ) }}
 </div>
