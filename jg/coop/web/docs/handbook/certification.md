@@ -6,7 +6,7 @@ description: Jaké v IT existují certifikace? Jaký mají význam? Přihlíží
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import img, lead, link_card with context %}
+{% from 'macros.html' import img, lead, link_card, club_teaser with context %}
 
 # Certifikace a certifikáty
 
@@ -38,18 +38,7 @@ Některé mohou mít ve [tvém CV](cv.md) dokonce i **zápornou hodnotu**. Pokud
 
 Běžný kurz si proto **vždy vybírej podle náplně a recenzí**, nikdy podle papíru, který dostaneš na konci. Nějaké recenze najdeš na místním Discordu.
 
-<div class="mt-4">
-  <a class="btn btn-lg btn-primary mb-4" href="{{ pages|docs_url('club.md')|url }}">
-    Hledej recenze v klubu
-  </a>
-  <div>
-    <span class="members mb-0">
-    {% for member in members|sample(10) %}
-      {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50, lazy=False) }}
-    {% endfor %}
-    </span>
-  </div>
-</div>
+{{ club_teaser("Hledej recenze v klubu") }}
 
 ## Osvědčení o rekvalifikaci od MŠMT ČR
 

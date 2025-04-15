@@ -1,0 +1,30 @@
+.club-teaser {
+  padding: map-get($spacers, 4) $spacer;
+  margin: 0;
+  text-align: center;
+  background: $jg-blue-light;
+  border-radius: $border-radius;
+}
+
+.club-teaser-button {
+  @extend .btn;
+  @extend .btn-lg;
+  @extend .btn-primary;
+  margin: 0 0 $spacer;
+}
+
+.club-teaser-members {
+  display: flex;
+  flex-direction: column;
+  gap: $spacer;
+}
+
+.club-teaser-members .members {
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin: 0;
+}
+
+.club-teaser-note {
+  margin: 0;
+}

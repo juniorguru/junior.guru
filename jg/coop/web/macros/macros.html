@@ -437,3 +437,22 @@
   E-mail: {{ "honza@junior.guru"|email_link }}<br>
 </p>
 {% endmacro %}
+
+
+{% macro club_teaser(button_text) %}
+<div class="club-teaser">
+  <a class="club-teaser-button" href="{{ pages|docs_url('club.md')|url }}">
+    {{ 'discord'|icon }} {{ button_text }}
+  </a>
+  <div class="club-teaser-members">
+    <span class="members">
+    {% for member in members|sample(10) %}
+      {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50, lazy=False) }}
+    {% endfor %}
+    </span>
+    <small class="club-teaser-note">
+      Na junior.guru Discordu si aktuálně pomáhá {{ members_total_count }} lidí
+    </small>
+  </div>
+</div>
+{% endmacro %}
