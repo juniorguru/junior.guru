@@ -72,7 +72,7 @@ U některých certifikací se nedá obejít bez dlouhodobých praktických zkuš
 
 ### Jak probíhá certifikace
 
-Všechny certifikace dnes probíhají online.
+Certifikace dnes probíhají typicky online.
 
 - Před každou certifikační zkouškou dostaneš pokyny, jak si místnost a počítač připravit.
 - Do počítače se nainstaluje aplikace pro vyplnění testu, nebo test probíhá přímo v prohlížeči. Někdy je místo testu nějaké simulované prostředí, kde se plní úkoly a je jedno, jak dosáhneš výsledku, hlavně když splníš zadání.
