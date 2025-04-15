@@ -1,4 +1,4 @@
-{% from 'macros.html' import link_card, note, lead, img, figure with context %}
+{% from 'macros.html' import club_teaser, figure, lead, link_card, note with context %}
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
@@ -59,18 +59,7 @@ Vždy záleží v jaké jsi konkrétní situaci a co zrovna potřebuješ.
 A přesně takové věci se na tom našem Discordu taky probírají.
 Poradíme!
 
-<div class="mt-4">
-  <a class="btn btn-lg btn-primary mb-4" href="{{ pages|docs_url('club.md')|url }}">
-    Přidej se do klubu
-  </a>
-  <div>
-    <span class="members mb-0">
-    {% for member in members|sample(10) %}
-      {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50, lazy=False) }}
-    {% endfor %}
-    </span>
-  </div>
-</div>
+{{ club_teaser("Hledej recenze v klubu") }}
 
 ## Úřad práce
 
