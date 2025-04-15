@@ -33,6 +33,7 @@ Je velmi těžké se učit zcela samostatně, bez kontaktu s dalšími samouky n
     'Diskutuj v klubu pro začátečníky, kde najdeš pomoc, motivaci, kamarády, práci.',
     badge_icon='chat-dots',
     badge_text='Online komunita',
+    class='highlighted',
   ) }}
 
   {{ link_card(
@@ -138,7 +139,7 @@ Dobrý článek o tom, proč je lepší psát do veřejných kanálů a nesyslit
 
 
 --- https://discord.com/channels/769966886598737931/788826407412170752/1333572790984638464
-- Typicky je to sraz na nějaké téma (Python, Frontend, AI, …), který organizuje buď někdo nezávislý nebo firmy. 
+- Typicky je to sraz na nějaké téma (Python, Frontend, AI, …), který organizuje buď někdo nezávislý nebo firmy.
 - Konají se nejčastěji buď v kanclech nějaké firmy (často s občerstvením placeným firmou) nebo někde v hospodě.
 - Obvykle je to ve všední den večer.
 - Pokud jsou pravidelné, což je asi většina, tak frekvence bývá měsíc nebo více.

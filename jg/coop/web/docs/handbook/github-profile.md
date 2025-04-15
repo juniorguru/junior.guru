@@ -6,7 +6,7 @@ description: Má být tvůj GitHub profil spíš naleštěným životopisem, neb
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, figure, lead with context %}
+{% from 'macros.html' import blockquote_avatar, figure, club_teaser, lead with context %}
 
 # GitHub profil
 
@@ -29,7 +29,7 @@ template: main_handbook.html
       <input type="submit" value="Zkontrolovat" class="github-profile-button">
     </div>
     <p class="github-profile-help">
-      Po odeslání se ti otevře předvyplněné GitHub issue. Když jej vytvoříš, spustíš tím robota,
+      Po odeslání se ti otevře předvyplněné GitHub issue. Když jej vytvoříš, spustíš tím bota,
       který ti dá zpětnou vazbu v komentáři.
     </p>
     <input type="hidden" name="template" value="check.md">
@@ -273,3 +273,9 @@ Víc zelených čtverečků reálně o ničem nevypovídá.
 Navíc jde u tohoto grafu snadno „podvádět“ a dokonce existují [sranda nástroje, které ti do něj nakreslí cokoliv chceš](https://github.com/Annihil/github-spray).
 
 {{ figure('static/figures/github-chart.png', 'Zelené čtverečky', 1480, 306) }}
+
+## Zpětná vazba
+
+Než začneš svůj profil ukazovat ve firmách, nech si na něj dát zpětnou vazbu. Pokud nemáš po ruce nikoho, kdo v tomhle umí chodit, nevadí. Máme **bota, který ti vychytá základní věci**. Použij formulář [nahoře na této stránce](#github-profile-form), klidně opakovaně! A na co nestačí bot, to můžeš **probrat na našem Discordu**.
+
+{{ club_teaser("Pošli GitHub do klubu") }}

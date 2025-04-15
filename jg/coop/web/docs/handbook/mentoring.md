@@ -27,6 +27,7 @@ Mentor nemusí být vyloženě mistr v oboru, stačí když bude v programován�
     'Kanál #mentoring v klubu junior.guru',
     pages|docs_url('club.md')|url,
     'Hledej mentory v klubu pro začátečníky.',
+    class='highlighted',
   ) }}
 
   {{ link_card(

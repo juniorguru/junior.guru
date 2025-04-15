@@ -30,6 +30,7 @@ Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. **Žádná o
     'Ptej se v klubu pro začátečníky, kde najdeš nejen pomoc, ale i motivaci, kamarády, práci.',
     badge_icon='discord',
     badge_text='Discord',
+    class='highlighted',
   ) }}
 
   {{ link_card(

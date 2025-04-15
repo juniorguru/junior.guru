@@ -6,7 +6,7 @@ description: Co dát do životopisu, když nemáš praxi? Když jsi student? Jak
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import lead, figure, note, blockquote_avatar, video_card, podcast_card with context %}
+{% from 'macros.html' import lead, figure, note, blockquote_avatar, video_card, podcast_card, club_teaser with context %}
 
 # Životopis
 
@@ -329,13 +329,19 @@ Motivačním dopisem usiluješ o „cenu sympatie“, případně **dodáváš k
 
 Buď spontánní. **Nalaď se na komunikační vlnu z pracovního inzerátu.** Jsou upjatí a seriózní? Formuluj to taky tak. Pohodoví? Piš to jak zprávu kamarádce. Korporátní text plný obecné vaty a nicneříkajících superlativů? Uvař bramboračku z podobných formulací.
 
+## Zpětná vazba
+
+Než začneš CV posílat do firem, nech si na něj dát zpětnou vazbu. Pokud nemáš po ruce někoho z IT nebo HR, nevadí. Skoro kdokoliv ti **zkontroluje překlepy, angličtinu, smysluplnost vět, nebo jestli se dá klikat na odkazy**. Zpětnou vazbu na svůj životopis můžeš dostat i na místním Discordu.
+
+{{ club_teaser("Pošli CV do klubu") }}
+
 ## Něco extra
 
 Stačí životopis? Nemáš vlastně místo CV vytvořit video nebo hru? Možností, jak se firmám odprezetovat, je spousta.
 
 ### Založ si LinkedIn
 
-[LinkedIn](https://www.linkedin.com/) je profesní sociální síť, kde recruiteři hledají kandidáty, kandidáti firmy, firmy byznys, a tak dále. **Založ si tam profil** a využij to na maximum. Pomůže ti návod [jak s LinkedIn pracovat jako junior](linkedin.md).
+[LinkedIn](linkedin.md) je profesní sociální síť, kde recruiteři hledají kandidáty, kandidáti firmy, firmy byznys, a tak dále. **Založ si tam profil** a využij to na maximum.
 
 Ačkoliv LinkedIn **umožňuje stáhnout profil jako PDF**, nepoužívej to jako svoje CV. Výsledný dokument je tragicky nepřehledný.
 
