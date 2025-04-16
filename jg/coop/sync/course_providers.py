@@ -118,7 +118,7 @@ def compile_page_description(name: str, extra_questions: list = None) -> str:
 def compile_page_lead(name: str, extra_questions: list = None) -> str:
     questions = [
         f"Vyplatí se {name}?",
-        "Hledáš někoho, kdo má zkušenosti?",
+        "Hledáš někoho, kdo s tím má zkušenosti?",
         "Je to vhodné jako rekvalifikace?",
     ]
     if extra_questions:

@@ -89,6 +89,8 @@ KEYWORDS = {
         r"robot?\s*dreams?": "robotdreams",
         r"dok[aá][zž]e[sš]\s*programovat": "dokazesprogramovat",
         r"len[eé]rtov\w+": "dokazesprogramovat",
+        r"andrew\s*sharp": "sharpprogrammer",
+        r"sharp\s*programmer": "sharpprogrammer",
     }.items()
 }
 
