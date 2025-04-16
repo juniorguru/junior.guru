@@ -18,17 +18,21 @@ from jg.coop.models.podcast import PodcastEpisode
 
 
 @db.connection_context()
-def build_courses_up_business_ids_api(api_dir, config):
-    cz_business_ids = sorted(
+def build_course_providers_api(api_dir, config):
+    course_providers = [
         {
-            str(cp.cz_business_id).zfill(8)
-            for cp in CourseProvider.listing()
-            if cp.cz_business_id
+            "cz_business_id": (
+                str(cp.cz_business_id).zfill(8) if cp.cz_business_id else None
+            ),
+            "sk_business_id": (
+                str(cp.sk_business_id).zfill(8) if cp.sk_business_id else None
+            ),
         }
-    )
-    api_file = api_dir / "courses-up-business-ids.json"
+        for cp in CourseProvider.listing()
+    ]
+    api_file = api_dir / "course-providers.json"
     with api_file.open("w", encoding="utf-8") as f:
-        json.dump(cz_business_ids, f, ensure_ascii=False, indent=2)
+        json.dump(course_providers, f, ensure_ascii=False, indent=2)
 
 
 @db.connection_context()
