@@ -1,21 +1,67 @@
+.course-provider {
+  @extend .card;
+  background: $jg-blue-light;
+  border-color: $jg-white;
+}
+
+.highlighted.course-provider {
+  background-color: $jg-yellow-light;
+  border: 1px solid $jg-yellow;
+}
+
 .course-provider-header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  padding: $spacer;
+  padding-bottom: map-get($spacers, 4);
+  text-align: center;
+  border-radius: $border-radius $border-radius 0 0;
 }
 
 .course-provider-logo {
-  @include media-breakpoint-up(sm) {
-    $w: calc((100% - #{$spacer}) / 2);
-    width: $w;
-    min-width: $w;
-    max-width: $w;
-  }
+  width: auto;
+  height: 6rem;
+  padding: $spacer;
+  background-color: $jg-white;
+  border-radius: $border-radius;
+}
 
-  @include media-breakpoint-up(md) {
-    $w: calc((100% - (2 * #{$spacer})) / 3);
-    width: $w;
-    min-width: $w;
-    max-width: $w;
+.course-provider-info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @include media-breakpoint-up(lg) {
+    flex-direction: row-reverse;
   }
+}
+
+.course-provider-image,
+.course-provider-items {
+  width: 100%;
+
+  @include media-breakpoint-up(lg) {
+    width: 50%;
+  }
+}
+
+.course-provider-image {
+  padding: $spacer;
+}
+
+.course-provider-screenshot {
+  width: 100%;
+  height: auto;
+  border: 1px solid $jg-gray-light;
+  border-radius: $border-radius;
+}
+
+.course-provider-items {
+  @extend .list-group;
+  @extend .list-group-flush;
+  margin-top: $list-group-item-padding-y;
+}
+
+.course-provider-item {
+  @extend .list-group-item;
+  background-color: transparent;
+  border-color: transparent;
 }

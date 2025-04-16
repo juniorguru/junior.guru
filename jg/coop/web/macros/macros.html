@@ -126,8 +126,7 @@
                    badge_text=none,
                    image=true,
                    screenshot_source_url=none,
-                   class=none,
-                   nofollow=false)
+                   class=none)
 %}
 {% set screenshot_source_url = screenshot_source_url or url %}
 {% set screenshot_image_url = screenshot_source_url|screenshot_url %}
@@ -147,8 +146,7 @@
       </div>
     {% endif %}
     <h4 class="link-card-title">
-      <a href="{{ url }}" class="link-card-link"
-        {%- if nofollow %} rel="nofollow"{% endif -%}>{{ title }}</a>
+      <a href="{{ url }}" class="link-card-link">{{ title }}</a>
     </h4>
   </div>
   <div class="link-card-body">

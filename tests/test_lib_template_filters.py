@@ -259,3 +259,28 @@ def test_money_breakdown_ptc():
 )
 def test_screenshot_url(url, expected):
     assert template_filters.screenshot_url(url) == expected
+
+
+@pytest.mark.parametrize(
+    "url, expected",
+    [
+        (
+            "http://honzajavorek.cz",
+            "honzajavorek.cz",
+        ),
+        (
+            "https://www.youtube.com/watch?v=123",
+            "youtube.com/watch?v=123",
+        ),
+        (
+            "https://cs.wikipedia.org/wiki/Ildik%C3%B3_(jm%C3%A9no)",
+            "cs.wikipedia.org/wiki/Ildikó_(jméno)",
+        ),
+        (
+            "https://coreskill.tech/?utm_source=junior.guru&utm_medium=web&utm_campaign=catalog",
+            "coreskill.tech",
+        ),
+    ],
+)
+def test_nice_url(url: str, expected: str):
+    assert template_filters.nice_url(url) == expected

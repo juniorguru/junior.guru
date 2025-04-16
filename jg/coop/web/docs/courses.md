@@ -44,7 +44,6 @@ Abecední seznam ostatních poskytovatelů kurzů.
           course_provider.name,
           pages|docs_url(course_provider.page_url)|url,
           screenshot_source_url=course_provider.url,
-          nofollow=True,
         ) }}
       {% endif %}
     {% endfor %}

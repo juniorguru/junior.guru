@@ -1,4 +1,4 @@
-{% from 'macros.html' import club_teaser, figure, lead, link_card, note with context %}
+{% from 'macros.html' import club_teaser, img, lead, note with context %}
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
@@ -20,15 +20,55 @@
   {% if course_provider.usp_description %}Tady je aspoň základní info, které ti pomůže s rozhodováním.{% endif %}
 {% endcall %}
 
-{% if course_provider.group == "highlighted" %}
-<div class="course-provider-header">
-  {{ link_card(course_provider.name, course_provider.url, class='highlighted') }}
-  {{ figure('static/' + course_provider.organization.logo_path, 'logo ' + course_provider.name, 200, 100, lazy=False, class='course-provider-logo') }}
+{% set screenshot_image_url = course_provider.url|screenshot_url %}
+<div class="standout course-provider {{ course_provider.group }}"
+  data-screenshot-source-url="{{ course_provider.url }}"
+  data-screenshot-image-url="{{ screenshot_image_url }}">
+  {% if course_provider.group == "highlighted" %}
+    <div class="course-provider-header">
+      {{ img('static/' + course_provider.organization.logo_path, 'logo ' + course_provider.name, 200, 100, class='course-provider-logo', lazy=False) }}
+    </div>
+  {% endif %}
+  <div class="course-provider-info">
+    <div class="course-provider-image">
+      {{ img(screenshot_image_url, title, 640, 360, class='course-provider-screenshot', lazy=False) }}
+    </div>
+    <ul class="course-provider-items">
+      <li class="course-provider-item">
+        <strong>Název:</strong>
+        {{ course_provider.name }}
+      </li>
+      <li class="course-provider-item">
+        <strong>Web:</strong>
+        <a href="{{ course_provider.url }}" target="_blank"
+          {% if course_provider.group != "highlighted" %}rel="nofollow noopener"{% endif -%}
+        >
+          {{ course_provider.url|nice_url }}
+        </a>
+      </li>
+      <li class="course-provider-item">
+        <strong>IČO v Česku:</strong>
+        {% if course_provider.cz_business_id %}
+          {{ '{:08d}'.format(course_provider.cz_business_id) }}
+        {% else %}
+          —
+        {% endif %}
+      </li>
+      <li class="course-provider-item">
+        <strong>IČO na Slovensku:</strong>
+        {% if course_provider.sk_business_id %}
+          {{ '{:08d}'.format(course_provider.sk_business_id) }}
+        {% else %}
+          —
+        {% endif %}
+      </li>
+    </ul>
+  </div>
 </div>
-{% else %}
-  {{ link_card(course_provider.name, course_provider.url, nofollow=True) }}
-{% endif %}
 
+[TOC]
+
+## Popis
 {% if course_provider.usp_description %}
 {{ course_provider.usp_description }}
 
@@ -37,9 +77,9 @@ Pokud tento popis umíš nějak doplnit, napiš prosím na {{ 'honza@junior.guru
 Umíš s GitHubem? [Pošli Pull Request]({{ course_provider.edit_url }})!
 </small>
 {% else %}
-{% call note(standout=True) %}
+{% call note() %}
   {{ 'exclamation-circle'|icon }}
-  Zatím tady chybí základní info.
+  Zatím tady chybí popis.
   Pokud o {{ course_provider.name }} něco víš, napiš prosím na {{ 'honza@junior.guru'|email_link }}.
   Umíš s GitHubem? [Pošli Pull Request]({{ course_provider.edit_url }})!
 {% endcall %}
@@ -66,9 +106,17 @@ Poradíme!
 Úřad práce ČR přispívá na kurzy, které má ve svém katalogu [Jsem v kurzu](https://www.mpsv.cz/jsem-v-kurzu).
 {%- if course_provider.list_courses_up|length %}
 Provozovatel {{ course_provider.name }} tam nabízí tyto kurzy:
+<table class="table">
 {% for course in course_provider.list_courses_up %}
-- [{{ course.name }}]({{ course.url }})
+  <tr>
+    <td>
+      <a href="{{ course.url }}" rel="nofollow noopener" target="_blank">
+        {{ course.name }}
+      </a>
+    </td>
+  </tr>
 {% endfor %}
+</table>
 {% else %}
 {{ course_provider.name }} tam žádné kurzy nenabízí.
 {% endif %}

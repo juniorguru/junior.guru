@@ -133,13 +133,18 @@ def assert_empty(collection: Iterable) -> Literal[""]:
 
 
 def screenshot_url(url: str) -> str:
-    slug = (
-        slugify(unquote(strip_utm_params(url)))
-        .removeprefix("http-")
-        .removeprefix("https-")
-        .removeprefix("www-")
-    )
+    slug = slugify(nice_url(url))
     return f"static/screenshots/{slug}.webp"
+
+
+def nice_url(url: str) -> str:
+    return (
+        unquote(strip_utm_params(url))
+        .removeprefix("http://")
+        .removeprefix("https://")
+        .removeprefix("www.")
+        .rstrip("/")
+    )
 
 
 def mapping(mapping: dict, keys: Iterable) -> list:
