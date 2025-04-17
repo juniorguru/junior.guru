@@ -91,6 +91,8 @@ KEYWORDS = {
         r"len[eé]rtov\w+": "dokazesprogramovat",
         r"andrew\s*sharp": "sharpprogrammer",
         r"sharp\s*programmer": "sharpprogrammer",
+        r"ok\s*[šs]kolení": "okskoleni",
+        r"ok\s*[s]yst[eé]m": "okskoleni",
     }.items()
 }
 
