@@ -1,20 +1,16 @@
 name: ITnetwork
 url: https://www.itnetwork.cz/
 cz_business_id: 5861381
-# ---
-# title: Zkušenosti s ITnetwork
-# topic_name: itnetwork
-# topic_link_text: ITnetwork
-# description: Hledáš někoho, kdo má zkušenosti s kurzy na ITnetwork? Vyplatí se koupit si je? Jsou dostatečně kvalitní a aktuální?
-# ---
-# {% from 'macros_topic.html' import intro, mentions with context %}
+sk_business_id: 52681581
+usp_description: |
+  ITnetwork je pravděpodobně největší český poskytovatel IT kurzů.
 
-# {{ intro('Recenze na ITnetwork', page.meta.description) }}
+  Pořádá velké množství jednodenních školení zaměřených na programování (C#, Java, PHP, JavaScript, Python…), testování nebo databáze. Kromě toho organizuje i delší rekvalifikační kurzy hrazené Úřadem práce, kde se studenti učí vlastním tempem samostatným čtením online e-learningu v kombinaci s následnou prezenční výukou v Praze.
 
-# {{ mentions(topic, 'ITnetwork') }}
+  ITnetwork založili v roce 2009 jako svůj studentský projekt dva programátoři, David Hartinger (dříve Čápka) a David Jančík. První z nich studoval Unicorn University, která byla na webu dlouhá léta zobrazována jako prominentní partner projektu.
 
-# <p class="button-compartment">
-#   <a href="{{ pages|docs_url('club.md')|url }}" class="button">
-#     Přidej se&nbsp;k&nbsp;nám
-#   </a>
-# </p>
+  [Původně šlo o sociální síť](https://web.archive.org/web/20150621214643/http://www.itnetwork.cz/o-projektu) pro české a slovenské začátečníky v programování. Kromě novinek z oboru a diskuzního fóra se na portálu začaly objevovat i návody publikované velkým množstvím autorů. Tyto časem přerostly v kolekci ucelených, částečně zpoplatněných kurzů. Ceny byly velmi dostupné, v řádu desetikorun. Některým odborníkům se zdálo, že kvalita materiálů značně kolísá, ale to začátečníkům nebránilo si ITnetwork hojně doporučovat jako oblíbený zdroj vědomostí.
+
+  Když přišel covid, ITnetwork se pod vlivem poptávky začal transformovat na poskytovatele kurzů. Díky ohromné návštěvnosti a velkému množství návodů, kde se mohli návštěvníci za pár korun stát „studenty“, se mohl okamžitě prohlásit za největší českou IT akademii. Z článků se postupně stal [e-learning](https://www.itnetwork.cz/it-e-learning) a aspekty sociální sítě ustoupily do pozadí. Dodnes ale jejich kurzy cílí na zájemce, pro které je důležitá nízká cena, pod heslem „vzdělání má být dostupné každému“.
+
+  Marketing ITnetworku se už od raných dob vyznačoval lákáním na statisícové výdělky a snové kariérní možnosti v IT. Ty sice seniorní programátoři opravdu mít mohou, ale v kontextu reklam nebo webu ITnetworku nemusí být začátečníkům zřejmé, že jich se to po absolvování kurzu ještě několik let týkat nebude. V zavádějícím marketingu nepolevili ani po roce 2023, kdy pracovní trh s juniory prochází těžkým obdobím, pouze přestali veřejně nabízet garanci zaměstnání.
