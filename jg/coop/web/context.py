@@ -26,9 +26,6 @@ from jg.coop.models.transaction import Transaction
 from jg.coop.models.wisdom import Wisdom
 
 
-CLOUDINARY_HOST = os.getenv("CLOUDINARY_HOST", "res.cloudinary.com")
-
-
 logger = loggers.from_path(__file__)
 
 
@@ -43,9 +40,6 @@ def on_shared_context(context):
     today = now.date()
     context["now"] = now
     context["today"] = today
-
-    # theme, but also macros.html used in .jinja pages
-    context["cloudinary_host"] = CLOUDINARY_HOST
 
     # main.html, about/*.md
     profit_ttm = Transaction.profit_ttm(today)

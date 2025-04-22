@@ -18,8 +18,6 @@
       <meta http-equiv="Accept-CH" content="DPR,Viewport-Width,Width,Save-Data">
 
       <link rel="dns-prefetch" href="https://sa.junior.guru">
-      <link rel="dns-prefetch" href="https://{{ cloudinary_host }}">
-      <link rel="preconnect" href="https://{{ cloudinary_host }}">
 
       {% block stylesheet %}<link rel="stylesheet" href="{{ 'static/css_legacy/index.css'|url }}">{% endblock %}
       <link rel="preload" href="{{ ('static/assets/bootstrap-icons.woff2')|url }}" as="font" type="font/woff2" crossorigin="anonymous">
@@ -34,11 +32,11 @@
       <meta name="fediverse:creator" content="@honzajavorek@mastodonczech.cz">
 
       {% if thumbnail_url %}
-      <meta property="og:image" content="https://{{ cloudinary_host }}/juniorguru/image/fetch/w_auto,dpr_auto,q_auto,f_auto/{{ thumbnail_url }}">
+      <meta property="og:image" content="{{ thumbnail_url }}">
       <meta property="og:image:width" content="1200">
       <meta property="og:image:height" content="630">
       <meta name="twitter:card" content="photo">
-      <meta name="twitter:image" content="https://{{ cloudinary_host }}/juniorguru/image/fetch/w_auto,dpr_auto,q_auto,f_auto/{{ thumbnail_url }}">
+      <meta name="twitter:image" content="{{ thumbnail_url }}">
       {% endif %}
 
       {% if page.meta.description %}<meta name="description" content="{{ page.meta.description }}">{% endif %}
