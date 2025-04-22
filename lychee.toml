@@ -40,20 +40,11 @@ exclude = [
     "^https://sa\\.junior\\.guru",
 
     # Anti-scraping protections
-    "^https://www\\.linkedin\\.com",
-    "^https://www\\.facebook\\.com",
-    "^https://www\\.reddit\\.com",
+    "^https://(www\\.)?(linkedin|facebook|reddit|glassdoor|toptal|upwork|make|fiverr|datacamp|udacity|udemy)\\.com",
+    "^https://(www\\.)?(keyguru|podnikatel|root|robotdreams)\\.cz",
+    "^https://([^\\.]+\\.)?discord\\.com",
     "^https://robime\\.it",
     "^https://www\\.techinterviewhandbook\\.org",
-    "^https://www\\.glassdoor\\.com",
-    "^https://toptal\\.com",
-    "^https://upwork\\.com",
-    "^https://www\\.make\\.com",
-    "^https://([^\\.]+\\.)?discord\\.com",
-    "^https://fiverr\\.com",
-    "^https://keyguru\\.cz",
-    "^https://www\\.podnikatel\\.cz",
-    "^https://www\\.root\\.cz",
     "^https://www\\.vilniuscoding\\.lt",
 
     # Read the Docs anti-scraping protections
