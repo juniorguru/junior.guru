@@ -1,4 +1,3 @@
-import os
 from datetime import UTC, date, datetime, timedelta
 from operator import attrgetter
 from urllib.parse import urljoin
