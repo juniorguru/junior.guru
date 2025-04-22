@@ -8,7 +8,7 @@ import yaml
 from pydantic import HttpUrl
 
 from jg.coop.cli.sync import main as cli
-from jg.coop.lib import loggers
+from jg.coop.lib import apify, loggers
 from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
@@ -37,11 +37,31 @@ def main():
     CourseProvider.drop_table()
     CourseProvider.create_table()
 
+    logger.info("Fetching data about companies")
+    companies = {"cz": {}, "sk": {}}
+    for company in apify.fetch_data("honzajavorek/companies"):
+        companies[company["country_code"]][company["business_id"]] = company
+
+    logger.info(f"Reading {YAML_DIR_PATH}/*.yml")
     for yaml_path in YAML_DIR_PATH.glob("*.yml"):
-        logger.info(f"Reading {yaml_path.name}")
+        logger.debug(f"Reading {yaml_path.name}")
         yaml_data = yaml.safe_load(yaml_path.read_text())
         config = CourseProviderConfig(**yaml_data)
         slug = yaml_path.stem
+
+        logger.debug(f"Pairing {slug!r} with company data")
+        cz_company = (
+            companies["cz"].get(config.cz_business_id)
+            if config.cz_business_id
+            else None
+        )
+        logger.debug(f"Czech company: {cz_company['name'] if cz_company else None!r}")
+        sk_company = (
+            companies["sk"].get(config.sk_business_id)
+            if config.sk_business_id
+            else None
+        )
+        logger.debug(f"Slovak company: {sk_company['name'] if sk_company else None!r}")
 
         logger.debug(f"Saving course provider {config.name!r}")
         CourseProvider.create(
@@ -49,6 +69,16 @@ def main():
             edit_url=(
                 "https://github.com/juniorguru/junior.guru/"
                 f"blob/main/jg/coop/data/course_providers/{slug}.yml"
+            ),
+            cz_name=cz_company["name"] if cz_company else None,
+            cz_legal_form=cz_company["legal_form"] if cz_company else None,
+            cz_years_in_business=(
+                cz_company["years_in_business"] if cz_company else None
+            ),
+            sk_name=sk_company["name"] if sk_company else None,
+            sk_legal_form=sk_company["legal_form"] if sk_company else None,
+            sk_years_in_business=(
+                sk_company["years_in_business"] if sk_company else None
             ),
             page_title=compile_page_title(config.name),
             page_description=compile_page_description(config.name, config.questions),

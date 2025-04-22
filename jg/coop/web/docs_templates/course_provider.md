@@ -33,36 +33,64 @@
     <div class="course-provider-image">
       {{ img(screenshot_image_url, title, 640, 360, class='course-provider-screenshot', lazy=False) }}
     </div>
-    <ul class="course-provider-items">
-      <li class="course-provider-item">
-        <strong>Název:</strong>
-        {{ course_provider.name }}
-      </li>
-      <li class="course-provider-item">
-        <strong>Web:</strong>
-        <a href="{{ course_provider.url }}" target="_blank"
-          {% if course_provider.group != "highlighted" %}rel="nofollow noopener"{% endif -%}
-        >
-          {{ course_provider.url|nice_url }}
-        </a>
-      </li>
-      <li class="course-provider-item">
-        <strong>IČO v Česku:</strong>
-        {% if course_provider.cz_business_id %}
+    <div class="course-provider-body">
+      <ul class="course-provider-items">
+        <li class="course-provider-item">
+          <strong>Název:</strong>
+          {{ course_provider.name }}
+        </li>
+        <li class="course-provider-item">
+          <strong>Web:</strong>
+          <a href="{{ course_provider.url }}" target="_blank"
+            {% if course_provider.group != "highlighted" %}rel="nofollow noopener"{% endif -%}
+          >
+            {{ course_provider.url|nice_url }}
+          </a>
+        </li>
+      </ul>
+      {% if course_provider.cz_business_id %}
+      <h5 class="course-provider-heading">Provozovatel v Česku</h5 class="course-provider-heading">
+      <ul class="course-provider-items">
+        <li class="course-provider-item">
+          {{ course_provider.cz_name }}
+        </li>
+        <li class="course-provider-item">
+          <strong>Forma:</strong>
+          {{ course_provider.cz_legal_form }}
+        </li>
+        <li class="course-provider-item">
+          <strong>IČO:</strong>
           {{ '{:08d}'.format(course_provider.cz_business_id) }}
-        {% else %}
-          —
-        {% endif %}
-      </li>
-      <li class="course-provider-item">
-        <strong>IČO na Slovensku:</strong>
-        {% if course_provider.sk_business_id %}
+        </li>
+        <li class="course-provider-item">
+          <strong>Funguje:</strong>
+          {{ course_provider.cz_years_in_business }}
+          {{ course_provider.cz_years_in_business|nplurals("rok", "roky", "let") }}
+        </li>
+      </ul>
+      {% endif %}
+      {% if course_provider.sk_business_id %}
+      <h5 class="course-provider-heading">Provozovatel na Slovensku</h5 class="course-provider-heading">
+      <ul class="course-provider-items">
+        <li class="course-provider-item">
+          {{ course_provider.sk_name }}
+        </li>
+        <li class="course-provider-item">
+          <strong>Forma:</strong>
+          {{ course_provider.sk_legal_form }}
+        </li>
+        <li class="course-provider-item">
+          <strong>IČO:</strong>
           {{ '{:08d}'.format(course_provider.sk_business_id) }}
-        {% else %}
-          —
+        </li>
+        <li class="course-provider-item">
+          <strong>Funguje:</strong>
+          {{ course_provider.sk_years_in_business }}
+          {{ course_provider.sk_years_in_business|nplurals("rok", "roky", "let") }}
+        </li>
         {% endif %}
-      </li>
-    </ul>
+      </ul>
+    </div>
   </div>
 </div>
 

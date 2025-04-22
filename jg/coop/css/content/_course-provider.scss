@@ -35,7 +35,7 @@
 }
 
 .course-provider-image,
-.course-provider-items {
+.course-provider-body {
   width: 100%;
 
   @include media-breakpoint-up(lg) {
@@ -54,9 +54,25 @@
   border-radius: $border-radius;
 }
 
+.course-provider-heading {
+  @extend .small;
+  @extend .font-monospace;
+  @extend .text-uppercase;
+  padding: $list-group-item-padding-y $list-group-item-padding-x;
+  margin: $spacer 0 0 0;
+  border-bottom: 1px solid $jg-white;
+}
+
+.highlighted .course-provider-heading {
+  border-color: $jg-yellow;
+}
+
 .course-provider-items {
   @extend .list-group;
   @extend .list-group-flush;
+}
+
+.course-provider-items:first-child {
   margin-top: $list-group-item-padding-y;
 }
 
