@@ -149,3 +149,11 @@ registry:
     is_free: false
     note: |
       Využívají klub jako komunitu pro své studenty. Lucie Lenértová v klubu pořádá různé online akce.
+
+  - name: Imper
+    slug: imper
+    url: https://imper.cz/
+    cz_business_id: 28547888
+    start_on: 2025-04
+    note: |
+      Zdarma poskytují přístup k datům o firmách, aby se jimi dal obohatit katalog poskytovatelů kurzů.
