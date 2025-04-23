@@ -51,13 +51,17 @@
       {% if course_provider.cz_business_id %}
       <h5 class="course-provider-heading">Provozovatel v Česku</h5 class="course-provider-heading">
       <ul class="course-provider-items compact">
+        {% if course_provider.cz_name %}
         <li class="course-provider-item">
           {{ course_provider.cz_name }}
         </li>
+        {% endif %}
+        {% if course_provider.cz_legal_form %}
         <li class="course-provider-item">
           <strong>Forma:</strong>
           {{ course_provider.cz_legal_form }}
         </li>
+        {% endif %}
         <li class="course-provider-item">
           <strong>IČO:</strong>
           {{ '{:08d}'.format(course_provider.cz_business_id) }}
@@ -74,13 +78,17 @@
       {% if course_provider.sk_business_id %}
       <h5 class="course-provider-heading">Provozovatel na Slovensku</h5 class="course-provider-heading">
       <ul class="course-provider-items compact">
+        {% if course_provider.sk_name %}
         <li class="course-provider-item">
           {{ course_provider.sk_name }}
         </li>
+        {% endif %}
+        {% if course_provider.sk_legal_form %}
         <li class="course-provider-item">
           <strong>Forma:</strong>
           {{ course_provider.sk_legal_form }}
         </li>
+        {% endif %}
         <li class="course-provider-item">
           <strong>IČO:</strong>
           {{ '{:08d}'.format(course_provider.sk_business_id) }}
