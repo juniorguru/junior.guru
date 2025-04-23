@@ -50,7 +50,7 @@
       </ul>
       {% if course_provider.cz_business_id %}
       <h5 class="course-provider-heading">Provozovatel v Česku</h5 class="course-provider-heading">
-      <ul class="course-provider-items">
+      <ul class="course-provider-items compact">
         <li class="course-provider-item">
           {{ course_provider.cz_name }}
         </li>
@@ -71,7 +71,7 @@
       {% endif %}
       {% if course_provider.sk_business_id %}
       <h5 class="course-provider-heading">Provozovatel na Slovensku</h5 class="course-provider-heading">
-      <ul class="course-provider-items">
+      <ul class="course-provider-items compact">
         <li class="course-provider-item">
           {{ course_provider.sk_name }}
         </li>
@@ -91,6 +91,12 @@
         {% endif %}
       </ul>
     </div>
+    {% if course_provider.cz_business_id or course_provider.sk_business_id %}
+      <p class="course-provider-note">
+        {{ 'info-circle'|icon }}
+        Imper pro junior.guru zdarma poskytl údaje ze své <a href="https://www.merk.cz/?utm_source=junior.guru&utm_medium=web&utm_campaign=catalog" rel="noopener" target="_blank">databáze firem Merk</a>. Děkujeme!
+      </p>
+    {% endif %}
   </div>
 </div>
 

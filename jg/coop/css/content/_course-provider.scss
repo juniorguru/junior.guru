@@ -55,16 +55,19 @@
 }
 
 .course-provider-heading {
-  @extend .small;
-  @extend .font-monospace;
-  @extend .text-uppercase;
   padding: $list-group-item-padding-y $list-group-item-padding-x;
   margin: $spacer 0 0 0;
-  border-bottom: 1px solid $jg-white;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-normal;
 }
 
-.highlighted .course-provider-heading {
-  border-color: $jg-yellow;
+.course-provider-note {
+  @extend .small;
+  flex: 0 0 100%;
+  order: 2;
+  width: 100%;
+  padding: $list-group-item-padding-y $list-group-item-padding-x;
+  margin: $spacer 0 0 0;
 }
 
 .course-provider-items {
@@ -80,4 +83,9 @@
   @extend .list-group-item;
   background-color: transparent;
   border-color: transparent;
+}
+
+.course-provider-items.compact .course-provider-item {
+  padding: ($list-group-item-padding-y * .5) $list-group-item-padding-x;
+  font-size: $font-size-sm;
 }
