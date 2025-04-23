@@ -62,11 +62,13 @@
           <strong>IČO:</strong>
           {{ '{:08d}'.format(course_provider.cz_business_id) }}
         </li>
+        {% if course_provider.cz_years_in_business %}
         <li class="course-provider-item">
           <strong>Funguje:</strong>
           {{ course_provider.cz_years_in_business }}
           {{ course_provider.cz_years_in_business|nplurals("rok", "roky", "let") }}
         </li>
+        {% endif %}
       </ul>
       {% endif %}
       {% if course_provider.sk_business_id %}
@@ -83,6 +85,7 @@
           <strong>IČO:</strong>
           {{ '{:08d}'.format(course_provider.sk_business_id) }}
         </li>
+        {% if course_provider.sk_years_in_business %}
         <li class="course-provider-item">
           <strong>Funguje:</strong>
           {{ course_provider.sk_years_in_business }}
@@ -90,6 +93,7 @@
         </li>
         {% endif %}
       </ul>
+      {% endif %}
     </div>
     {% if course_provider.cz_business_id or course_provider.sk_business_id %}
       <p class="course-provider-note">
