@@ -3459,17 +3459,17 @@ files = [
 
 [[package]]
 name = "tinytag"
-version = "2.1.0"
+version = "2.1.1"
 description = "Read audio file metadata"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "tinytag-2.1.0-py3-none-any.whl", hash = "sha256:1261c25f5dc0a192eb182c4d9ac5facb1e86ba03a005a1322ec545d06a78d719"},
-    {file = "tinytag-2.1.0.tar.gz", hash = "sha256:9a1b2e37aa45723541621133004ae86416086a0b1922e600cff5bfca5ef93e55"},
+    {file = "tinytag-2.1.1-py3-none-any.whl", hash = "sha256:b49da8f41dc0c457ecce32e6c5b2595aed8ac9314402192cd6cdb0fef67747eb"},
+    {file = "tinytag-2.1.1.tar.gz", hash = "sha256:b417d480cf3b0c2d60a3afef705b29ac0080fc72d35b0b579b64184c54ee394c"},
 ]
 
 [package.extras]
-tests = ["coverage", "mypy", "pycodestyle", "pylint", "pytest"]
+tests = ["coverage", "mypy", "pycodestyle", "pylint"]
 
 [[package]]
 name = "tornado"
