@@ -39,6 +39,11 @@
   }
 }
 
+.pricing-benefits-item.price {
+  margin-top: $spacer;
+  font-size: $font-size-lg;
+}
+
 .pricing-button {
   @extend .btn;
   @extend .btn-primary;

@@ -24,7 +24,7 @@ Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáha
 {% endcall %}
 </div>
 
-<a class="masthead-button primary" href="#cenik">199 Kč měsíčně</a>
+<a class="masthead-button primary" href="#cenik">Přidej se</a>
 <span class="masthead-members members">
   {% for member in members|sample(8) %}
     {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50, lazy=False) }}
@@ -198,33 +198,27 @@ Rady kolemjdoucích ve veřejných skupinách jsou náchylné k fanouškovství,
 
 <h2>Prvních 14 dní zdarma</h2>
 {% call lead() %}
-Nemusíš hned zadávat kartu. Vyber si roční nebo měsíční předplatné a nakoukni, jak to u nás vypadá. **Za vyzkoušení nic nedáš.** Pokud ti klub nesedne, prostě akorát nedoplníš platební údaje a systém tě po dvou týdnech vyhodí.
+Nemusíš hned zadávat kartu. Nakoukni, jak to u nás vypadá. **Za vyzkoušení nic nedáš.** Pokud ti klub nesedne, prostě akorát nedoplníš platební údaje a systém tě po dvou týdnech vyhodí.
 {% endcall %}
 
 <div class="pricing standout">
   <div class="pricing-block pulse-hover">
-    <h3 class="pricing-heading">Ušetřím</h3>
-    <ul class="pricing-benefits">
-      <li class="pricing-benefits-item">Prvních 14 dní zdarma</li>
-      <li class="pricing-benefits-item">Jeden měsíc ušetříš</li>
-    </ul>
-    <a class="pricing-button" href="https://juniorguru.memberful.com/checkout?plan=89512">2189 Kč ročně</a>
-  </div>
-  <div class="pricing-block pulse-hover">
-    <h3 class="pricing-heading">Nevážu se</h3>
+    <h3 class="pricing-heading">Předplatné</h3>
     <ul class="pricing-benefits">
       <li class="pricing-benefits-item">Prvních 14 dní zdarma</li>
       <li class="pricing-benefits-item">Můžeš to kdykoliv zrušit</li>
+      <li class="pricing-benefits-item price"><strong>199 Kč měsíčně</strong></li>
     </ul>
-    <a class="pricing-button" href="https://juniorguru.memberful.com/checkout?plan=89511">199 Kč měsíčně</a>
+    <a class="pricing-button" href="https://juniorguru.memberful.com/checkout?plan=89511">Nakoukni dovnitř</a>
   </div>
   <div class="pricing-block pulse-hover">
     <h3 class="pricing-heading">Stipendium</h3>
     <ul class="pricing-benefits">
       <li class="pricing-benefits-item">Podpora pro znevýhodněné</li>
       <li class="pricing-benefits-item">Vyplň formulář a uvidíš</li>
+      <li class="pricing-benefits-item price"><strong>Zdarma na 1 rok</strong></li>
     </ul>
-    <a class="pricing-button" href="{{ pages|docs_url('finaid.md')|url }}" target="_blank" rel="noopener">na rok zdarma</a>
+    <a class="pricing-button" href="{{ pages|docs_url('finaid.md')|url }}" target="_blank" rel="noopener">Zkus štěstí</a>
   </div>
 </div>
 

@@ -76,7 +76,7 @@ Klub neprovozuje firma, ale jednotlivec, [Honza Javorek](#honza). Jedna osoba, r
 
 ## Jak být v klubu zdarma?
 
-První osadníci, kteří pomáhali klub rozjíždět v době jeho počátků, jsou v klubu zdarma, navždy. Přednášející na [klubových akcích](events.md) dostávají jako poděkování roční členství zdarma. Pro znevýhodněné skupiny existuje [stipendium](finaid.md). Pokud si tvoje firma platí v klubu členství, měla by mít k dispozici minimálně šest ročních vstupů pro své lidi. Pokud tady vidíš logo své firmy, poptej se, zda ještě nemají nevyužité vstupy.
+První osadníci, kteří pomáhali klub rozjíždět v době jeho počátků, jsou v klubu zdarma, navždy. Přednášející na [klubových akcích](events.md) dostávají jako poděkování roční členství zdarma. Pro znevýhodněné skupiny existuje [stipendium](finaid.md). Pokud si tvoje firma platí v klubu členství, měla by mít k dispozici minimálně 15 ročních vstupů pro své lidi. Pokud tady vidíš logo své firmy, poptej se, zda ještě nemají nevyužité vstupy.
 
 ## Kdy musím zadat platební kartu?
 
@@ -104,7 +104,7 @@ Zjistíš to v [nastavení](https://juniorguru.memberful.com/account).
 
 ## Jak změním předplatné, např. z měsíčního na roční?
 
-Jde to změnit v [nastavení](https://juniorguru.memberful.com/account).
+Za klub jde platit nejen měsíčně, ale i ročně. Roční předplatné je oproti měsíčnímu s malou slevou. Přejít na roční placení můžeš v [nastavení](https://juniorguru.memberful.com/account).
 
 ## Jak zruším předplatné?
 
