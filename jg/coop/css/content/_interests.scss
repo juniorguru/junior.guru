@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $interests-shades: 7;
 
 .interests {
@@ -20,7 +22,7 @@ $interests-shades: 7;
 
 @for $i from 1 through $interests-shades {
   .interests-item.shade-#{$i} {
-    background-color: mix($jg-white, $jg-yellow, ($i / $interests-shades) * 100%);
+    background-color: mix($jg-white, $jg-yellow, math.div($i, $interests-shades) * 100%);
   }
 }
 
