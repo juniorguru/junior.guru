@@ -1,8 +1,32 @@
+from collections import Counter
 from typing import Iterable, Self
 
 from peewee import CharField, IntegerField, TextField
 
 from jg.coop.models.base import BaseModel
+from jg.coop.models.club import ClubUser
+
+
+class InterestRole(BaseModel):
+    club_id = IntegerField(primary_key=True)
+    name = CharField(unique=True)
+    interest_name = CharField(unique=True)
+
+    @classmethod
+    def count(self) -> int:
+        return self.select().count()
+
+    @classmethod
+    def interests(cls) -> list[tuple[str, int]]:
+        counter = Counter()
+        for member in ClubUser.members_listing():
+            counter.update(member.initial_roles)
+        roles_by_id = {role.club_id: role.interest_name for role in cls.select()}
+        return [
+            (roles_by_id[role_id], count)
+            for role_id, count in counter.most_common()
+            if role_id in roles_by_id
+        ]
 
 
 class DocumentedRole(BaseModel):

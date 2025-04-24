@@ -5,20 +5,11 @@ import pytest
 from jg.coop.lib.discord_club import ClubChannelID, ClubMemberID, get_starting_emoji
 from jg.coop.models.club import ClubMessage, ClubPin, ClubUser
 
-from testing_utils import prepare_test_db
+from testing_utils import prepare_test_db, prepare_user_data
 
 
-def create_user(id_, **kwargs):
-    return ClubUser.create(
-        id=id_,
-        is_member=kwargs.get("is_member", True),
-        is_bot=kwargs.get("is_bot", False),
-        avatar_path=kwargs.get("avatar_path"),
-        display_name=kwargs.get("display_name", "Kuře Žluté"),
-        mention=kwargs.get("mention", f"<@{id_}>"),
-        joined_at=kwargs.get("joined_at", datetime.now() - timedelta(days=3)),
-        expires_at=kwargs.get("expires_at", datetime.now() + timedelta(days=100)),
-    )
+def create_user(id_, **kwargs) -> ClubUser:
+    return ClubUser.create(**prepare_user_data(id_, **kwargs))
 
 
 def create_message(id_, user, **kwargs):

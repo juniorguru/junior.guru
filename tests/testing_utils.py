@@ -1,8 +1,8 @@
 import json
 import random
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
-from typing import Generator
+from typing import Any, Generator
 
 import pytest
 from peewee import SqliteDatabase
@@ -76,9 +76,23 @@ def param_xfail_missing(path, values=2):
     return pytest.param(*args, id=Path(path).name, marks=marks)
 
 
-def prepare_job_data(id, **kwargs):
+def prepare_user_data(id_: int, **kwargs) -> dict[str, Any]:
     return dict(
-        id=str(id),
+        id=id_,
+        is_member=kwargs.get("is_member", True),
+        is_bot=kwargs.get("is_bot", False),
+        avatar_path=kwargs.get("avatar_path"),
+        display_name=kwargs.get("display_name", "Kuře Žluté"),
+        mention=kwargs.get("mention", f"<@{id_}>"),
+        joined_at=kwargs.get("joined_at", datetime.now() - timedelta(days=3)),
+        expires_at=kwargs.get("expires_at", datetime.now() + timedelta(days=100)),
+        initial_roles=kwargs.get("initial_roles", []),
+    )
+
+
+def prepare_job_data(id_: int | str, **kwargs) -> dict[str, Any]:
+    return dict(
+        id=str(id_),
         posted_at=kwargs.get("posted_at", date(2019, 7, 6)),
         company_name=kwargs.get("company_name", "Honza Ltd."),
         employment_types=kwargs.get("employment_types", ["internship"]),
@@ -102,10 +116,10 @@ def prepare_job_data(id, **kwargs):
     )
 
 
-def prepare_logo_data(id, **kwargs):
+def prepare_logo_data(id_: int, **kwargs) -> dict[str, Any]:
     today = date.today()
     return dict(
-        id=id,
+        id=id_,
         name=kwargs.get("name", "Awesome Company"),
         filename=kwargs.get("filename", "awesome-company.svg"),
         email=kwargs.get("email", "recruitment@example.com"),
@@ -118,7 +132,7 @@ def prepare_logo_data(id, **kwargs):
     )
 
 
-def prepare_organization_data(slug: str, **kwargs):
+def prepare_organization_data(slug: str, **kwargs) -> dict[str, Any]:
     return dict(
         slug=slug,
         name=kwargs.pop("name", slug.upper()),
@@ -133,11 +147,11 @@ def prepare_organization_data(slug: str, **kwargs):
     )
 
 
-def prepare_course_provider_data(id, **kwargs):
+def prepare_course_provider_data(id_: int, **kwargs) -> dict[str, Any]:
     return dict(
-        id=id,
+        id=id_,
         name=kwargs.pop("name", "Test Course Provider"),
-        slug=kwargs.pop("slug", f"test-course-provider-{id}"),
+        slug=kwargs.pop("slug", f"test-course-provider-{id_}"),
         url=kwargs.pop("url", "https://example.com"),
         edit_url=kwargs.pop("edit_url", "https://example.com/edit"),
         page_title=kwargs.pop("page_title", "Test Course Provider"),

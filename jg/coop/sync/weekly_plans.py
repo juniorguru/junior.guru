@@ -16,7 +16,7 @@ from jg.coop.lib.discord_club import (
 from jg.coop.lib.mutations import mutating_discord
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
-from jg.coop.models.documented_role import DocumentedRole
+from jg.coop.models.role import DocumentedRole
 from jg.coop.models.wisdom import Wisdom
 
 

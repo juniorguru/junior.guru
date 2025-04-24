@@ -1,0 +1,33 @@
+$interests-shades: 7;
+
+.interests {
+  @extend .list-unstyled;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacer;
+  justify-content: space-around;
+}
+
+.interests-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 10em;
+  padding: $spacer;
+  text-align: center;
+  border-radius: $border-radius;
+}
+
+@for $i from 1 through $interests-shades {
+  .interests-item.shade-#{$i} {
+    background-color: mix($jg-white, $jg-yellow, ($i / $interests-shades) * 100%);
+  }
+}
+
+.interests-name {
+  @extend .fs-5;
+  padding: 0;
+  margin: 0;
+  font-weight: $font-weight-medium;
+  line-height: 1.5;
+}

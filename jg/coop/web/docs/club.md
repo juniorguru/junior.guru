@@ -78,6 +78,22 @@ Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme
 </div>
 </section>
 
+<section class="section">
+<h2>Jaká témata zajímají členy klubu</h2>
+{% call lead() %}
+Chceš mít jistotu, že v klubu najdeš lidi, které zajímá totéž co tebe? Že najdeš publikum pro svůj dotaz nebo parťáky pro svůj projekt? Podívej se, co o svých zájmech prozradili sami členové.
+{% endcall %}
+<ul class="interests standout-top">
+{% set max_count = interests|map(attribute=1)|max %}
+{% for interest_name, count in interests %}
+  {% set shade_index = 7 - ((count / max_count) * 6)|round(0, 'floor')|int %}
+  <li class="interests-item shade-{{ shade_index }}">
+    <strong class="interests-name">{{ interest_name|replace(' a ', ' a ') }}</strong>
+    <span class="interests-badge">{{ count }} členů</span>
+  </li>
+{% endfor %}
+</ul>
+</section>
 
 <div class="section-background blue-light"><section class="section">
 <h2>Užívej si přednášky pro začátečníky</h2>

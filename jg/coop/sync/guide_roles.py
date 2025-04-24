@@ -10,7 +10,7 @@ from jg.coop.lib.discord_club import ClubClient, parse_channel
 from jg.coop.lib.mutations import mutating_discord
 from jg.coop.lib.text import emoji_url
 from jg.coop.models.base import db, hash_models
-from jg.coop.models.documented_role import DocumentedRole
+from jg.coop.models.role import DocumentedRole
 
 
 IMAGES_DIR = Path("jg/coop/images")

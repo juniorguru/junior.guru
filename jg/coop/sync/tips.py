@@ -24,7 +24,7 @@ from jg.coop.lib.reading_time import reading_time
 from jg.coop.lib.text import remove_emoji
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
-from jg.coop.models.documented_role import DocumentedRole
+from jg.coop.models.role import DocumentedRole
 from jg.coop.models.tip import Tip
 
 

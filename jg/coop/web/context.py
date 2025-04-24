@@ -17,6 +17,7 @@ from jg.coop.models.job import DiscordJob, ListedJob
 from jg.coop.models.page import Page
 from jg.coop.models.partner import Partner
 from jg.coop.models.podcast import PodcastEpisode
+from jg.coop.models.role import InterestRole
 from jg.coop.models.sponsor import GitHubSponsor, PastSponsor, Sponsor, SponsorTier
 from jg.coop.models.stage import Stage
 from jg.coop.models.story import Story
@@ -80,6 +81,7 @@ def on_docs_context(context):
     context["messages_count"] = ClubMessage.count()
     context["events"] = Event.listing()
     context["events_promo"] = Event.promo_listing()
+    context["interests"] = InterestRole.interests()
 
     # club.md, about/*.md
     context["sponsors"] = Sponsor.listing()

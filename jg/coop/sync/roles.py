@@ -14,9 +14,9 @@ from jg.coop.lib.discord_club import ClubClient, get_user_roles, resolve_referen
 from jg.coop.lib.mutations import mutating_discord
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubUser
-from jg.coop.models.documented_role import DocumentedRole
 from jg.coop.models.event import Event
 from jg.coop.models.partner import Partner
+from jg.coop.models.role import DocumentedRole, InterestRole
 from jg.coop.models.sponsor import Sponsor
 
 
@@ -24,7 +24,9 @@ IMAGES_DIR = Path("jg/coop/images")
 
 YAML_PATH = Path("jg/coop/data/roles.yml")
 
-ROLE_PREFIXES = {Sponsor: "Sponzor: ", Partner: "Partner: "}
+INTEREST_ROLE_PREFIX = "Zajímá mě: "
+
+ORG_ROLE_PREFIXES = {Sponsor: "Sponzor: ", Partner: "Partner: "}
 
 
 logger = loggers.from_path(__file__)
@@ -62,8 +64,8 @@ def main():
 @db.connection_context()
 async def sync_roles(client: ClubClient):
     logger.info("Setting up db table for documented roles")
-    DocumentedRole.drop_table()
-    DocumentedRole.create_table()
+    db.drop_tables([DocumentedRole, InterestRole])
+    db.create_tables([DocumentedRole, InterestRole])
 
     logger.info("Fetching info about roles")
     roles_config = RolesConfig(**yaml.safe_load(YAML_PATH.read_text()))
@@ -94,6 +96,16 @@ async def sync_roles(client: ClubClient):
             color=discord_role.color.value,
             icon_path=resolve_icon_path(discord_role),
         )
+
+    for discord_role in discord_roles:
+        if discord_role.name.startswith(INTEREST_ROLE_PREFIX):
+            logger.debug(f"Interest role: {discord_role.name}")
+            InterestRole.create(
+                club_id=discord_role.id,
+                name=discord_role.name,
+                interest_name=discord_role.name.removeprefix(INTEREST_ROLE_PREFIX),
+            )
+    logger.info(f"Created {InterestRole.count()} interest roles")
 
     logger.info("Preparing data for computing how to re-assign roles")
     members = ClubUser.members_listing()
@@ -249,10 +261,10 @@ async def manage_organization_roles(
     client: ClubClient, discord_roles, organizations: Iterable[Sponsor | Partner]
 ):
     org_roles_mapping = {
-        f"{ROLE_PREFIXES[type(org)]}{org.name}": org for org in organizations
+        f"{ORG_ROLE_PREFIXES[type(org)]}{org.name}": org for org in organizations
     }
     roles_names = list(org_roles_mapping.keys())
-    roles_prefixes = tuple(ROLE_PREFIXES.values())
+    roles_prefixes = tuple(ORG_ROLE_PREFIXES.values())
     logger.info(f"There should be {len(roles_names)} roles with organization prefixes")
 
     existing_roles = [
