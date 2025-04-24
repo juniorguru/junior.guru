@@ -130,6 +130,11 @@ HIDDEN_ELEMENTS = [
     "#awsccc-cb-c",  # aws.amazon.com
     '[class^="truste-"]',  # redhat.com
     '[id^="truste-"]',  # redhat.com
+    ".cc_banner",  # it-academy.sk
+    "cc_container",  # it-academy.sk
+    "#IMS_box1",  # it-academy.sk
+    "#IMS_iframe1",  # it-academy.sk
+    ".IMS_iframeBox",  # it-academy.sk
 ]
 
 BLOCKED_ROUTES = [
