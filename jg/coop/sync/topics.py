@@ -93,6 +93,9 @@ KEYWORDS = {
         r"sharp\s*programmer": "sharpprogrammer",
         r"ok\s*[šs]kolení": "okskoleni",
         r"ok\s*[s]yst[eé]m": "okskoleni",
+        r"it[\- ]?academy(\.sk)?": "itacademy",
+        r"vita\.sk": "vita",
+        r"vita\s?academy": "vita",
     }.items()
 }
 
