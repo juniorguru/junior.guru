@@ -32,7 +32,7 @@ registry:
     cz_business_id: 5861381
     subscription: https://juniorguru.memberful.com/admin/subscriptions/3699646
     periods:
-      - [2024-03, 2025-04]
+      - [2024-03, 2025-05]
 
   - name: ENGETO Academy
     slug: engeto
