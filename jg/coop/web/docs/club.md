@@ -21,7 +21,7 @@ Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáha
 - **{{ years }}** {{ years|nplurals("rok", "roky", "let") }}
 - **{{ members_total_count }}** členů
 - **{{ charts.members_women_today|round|int }} %** žen
-- **{{ events|length }}** akcí
+- **{{ events|length }}** online akcí
 {% endcall %}
 </div>
 
