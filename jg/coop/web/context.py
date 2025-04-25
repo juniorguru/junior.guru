@@ -117,7 +117,7 @@ def on_docs_context(context):
     context["sponsors_github_past"] = GitHubSponsor.past_listing()
     context["handbook_total_size"] = Page.handbook_total_size()
 
-    # about/*.md, love.jinja
+    # about/*.md, love.jinja, club.md
     context["charts"] = Chart.as_dict()
 
     # index.jinja, podcast.md, handbook/cv.md, news.jinja

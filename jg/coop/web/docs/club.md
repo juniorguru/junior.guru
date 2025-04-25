@@ -16,10 +16,11 @@ Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáha
 {% endcall %}
 
 <div class="masthead-numbers">
+{% set years = today.year - 2021 %}
 {% call markdown() %}
-- **{{ messages_count|thousands }}** příspěvků
+- **{{ years }}** {{ years|nplurals("rok", "roky", "let") }}
 - **{{ members_total_count }}** členů
-- **{{ sponsors|length }}** firem
+- **{{ charts.members_women_today|round|int }} %** žen
 - **{{ events|length }}** akcí
 {% endcall %}
 </div>
