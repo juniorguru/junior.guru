@@ -104,15 +104,14 @@
 {% endmacro %}
 
 
-{% macro link_card(title,
-                   url,
-                   caption=none,
-                   badge_icon=none,
-                   badge_text=none,
-                   image=true,
-                   screenshot_source_url=none,
-                   class=none)
-%}
+{% macro link_card(title, url,
+  caption=none,
+  badge_icon=none,
+  badge_text=none,
+  image=true,
+  screenshot_source_url=none,
+  class=none
+) %}
 {% set screenshot_source_url = screenshot_source_url or url %}
 {% set screenshot_image_url = screenshot_source_url|screenshot_url %}
 <div class="link-card{% if class %} {{ class }}{% endif %}"
