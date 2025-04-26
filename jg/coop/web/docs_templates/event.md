@@ -1,4 +1,4 @@
-{% from 'macros.html' import img, lead, video_card with context %}
+{% from 'macros.html' import img, lead with context %}
 
 # {{ event.title }}
 
