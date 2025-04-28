@@ -42,6 +42,10 @@ jobs:
             poetry --version
             poetry self update 1.8.5
       - run:
+          name: Update npm
+          command: |
+            npm install -g npm@11
+      - run:
           name: Install Python dependencies
           command: poetry -vvv install
       - run:
