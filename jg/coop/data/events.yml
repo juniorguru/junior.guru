@@ -62,19 +62,19 @@
 # - https://tinywow.com/image/upscale
 # - https://www.fotor.com/photo-editor-app/editor/beauty
 
-#- id: 51
-#  title: "(něco o certifikacích a certifikátech)"
-#  date: "2025-05-15"
-#  description: |
-#    (bude upřesněno)
-#  avatar_path: ...
-#  bio_name: Štěpán Bechynský
-#  bio_title: "..."
-#  bio: |
-#    ...
-#  bio_links:
-#    - https://www.linkedin.com/in/stepanbechynsky/
-#  speakers:
+- id: 51
+  title: "(něco o certifikacích a certifikátech)"
+  date: "2025-05-15"
+  description: |
+    (bude upřesněno)
+  avatar_path: ...
+  bio_name: Štěpán Bechynský
+  bio_title: "(bude upřesněno), Microsoft"
+  bio: |
+    ...
+  bio_links:
+    - https://www.linkedin.com/in/stepanbechynsky/
+  speakers:
 
 - id: 50
   title: "Jak se jako junior nepos#at z LinkedInu a nebát se ukázat"
