@@ -13,7 +13,7 @@
     "rough-notation": "0.5.1"
   },
   "devDependencies": {
-    "@funboxteam/optimizt": "5.0.2",
+    "@343dev/optimizt": "10.0.0",
     "bootstrap": "5.3.5",
     "esbuild": "0.25.2",
     "esbuild-sass-plugin": "3.3.1",
