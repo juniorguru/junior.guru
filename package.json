@@ -6,14 +6,14 @@
   "type": "module",
   "dependencies": {
     "@fontsource/inter": "5.2.5",
-    "bootstrap-icons": "1.11.3",
+    "bootstrap-icons": "1.12.1",
     "chart.js": "4.4.9",
     "chartjs-plugin-annotation": "3.1.0",
     "instant.page": "5.2.0",
     "rough-notation": "0.5.1"
   },
   "devDependencies": {
-    "@343dev/optimizt": "10.0.0",
+    "@343dev/optimizt": "11.0.0",
     "bootstrap": "5.3.5",
     "esbuild": "0.25.3",
     "esbuild-sass-plugin": "3.3.1",
