@@ -158,7 +158,7 @@ Jak už bylo zmíněno výše, **vždy si dobře zvaž, zda se ti nabídka oprav
 
 ## Jak zvládnout odmítnutí
 
-Je velmi pravděpodobné, že tě odmítnou na pohovoru, a to **proto, že se to děje úplně každému**. [Ano, i seniorním programátorům](https://sw-samuraj.cz/2017/09/smutna-zprava-o-stavu-it-trhu/). U začátečníků navíc chvíli trvá, než se naladí na aktuální poptávku trhu a na to, jak přesně fungují přijímací pohovory v IT. Raději **počítej s tím, že ze začátku to půjde ztuha** a tvé první hledání práce [bude zahrnovat i desítky pohovorů a může trvat měsíce](candidate.md#jaka-mit-ocekavani).
+Je velmi pravděpodobné, že tě odmítnou na pohovoru, a to **proto, že se to děje úplně každému**. [Ano, i seniorním programátorům](https://web.archive.org/web/20241212065053/https://sw-samuraj.cz/2017/09/smutna-zprava-o-stavu-it-trhu/). U začátečníků navíc chvíli trvá, než se naladí na aktuální poptávku trhu a na to, jak přesně fungují přijímací pohovory v IT. Raději **počítej s tím, že ze začátku to půjde ztuha** a tvé první hledání práce [bude zahrnovat i desítky pohovorů a může trvat měsíce](candidate.md#jaka-mit-ocekavani).
 
 {% call blockquote_avatar(
   'Pokud tě odmítnou, neznamená to, že nejsi dost dobrá. Nevzdávej to. Máš talent a určitě najdeš práci, která zrovna ten tvůj talent ocení. Každého někdy odmítli na pohovoru.',
@@ -1107,7 +1107,7 @@ Hele, něco jako Atmoskop, ale na pohovory: https://www.jakybylpohovor.cz/
 
 
 --- https://discord.com/channels/769966886598737931/789107031939481641/1349716580270997525
-Ahoj. Včera jsem se potkal s IT HR Monety banky, řekl jsem jí, že mám kurz testera a už se na mě dívala skrz prsty (co to zase bude za rychlokvašku) okamžitě byl můj kredit o 50% nižší. 
+Ahoj. Včera jsem se potkal s IT HR Monety banky, řekl jsem jí, že mám kurz testera a už se na mě dívala skrz prsty (co to zase bude za rychlokvašku) okamžitě byl můj kredit o 50% nižší.
 Nakonec se mi jí podařilo trošku přesvědčit, že zas tak marný nejsem, že nějaký slušný základ mám a odnesl jsem si alespoň to na čem víc zapracovat. Ale ten začátek byl hrůzostrašný.
 V rámci aktuální situace/přetlaků juniorů by bylo možná lepší takové rozhovory začínat spíš tím co umím, jaké mám zkušenosti, říct jim Váš příběh o tom co Vás tam přivedlo a ke kurzům se dostat později.
 ---
