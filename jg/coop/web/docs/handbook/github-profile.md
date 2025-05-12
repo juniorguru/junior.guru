@@ -278,4 +278,4 @@ Navíc jde u tohoto grafu snadno „podvádět“ a dokonce existují [sranda n�
 
 Než začneš svůj profil ukazovat ve firmách, nech si na něj dát zpětnou vazbu. Pokud nemáš po ruce nikoho, kdo v tomhle umí chodit, nevadí. Máme **bota, který ti vychytá základní věci**. Použij formulář [nahoře na této stránce](#github-profile-form), klidně opakovaně! A na co nestačí bot, to můžeš **probrat na našem Discordu**.
 
-{{ club_teaser("Pošli GitHub do klubu") }}
+{{ club_teaser("Pojď to probrat do klubu") }}
