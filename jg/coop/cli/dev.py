@@ -37,17 +37,19 @@ def update(pull, packages, push, stash):
         if pull:
             logger.info("Pulling changes")
             subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=True)
-        logger.info("Installing packages")
-        subprocess.run(["poetry", "install"], check=True)
-        subprocess.run(["npm", "install"], check=True)
         if packages:
             logger.info("Updating packages")
             poetry_update()
             subprocess.run(["npm", "update"], check=True)
+            subprocess.run(["npm", "install"], check=True)
             subprocess.run(
                 ["git", "add", "pyproject.toml", "poetry.lock", "package-lock.json"]
             )
             subprocess.run(["git", "commit", "-m", "update packages 📦"])
+        else:
+            logger.info("Installing packages")
+            subprocess.run(["poetry", "install"], check=True)
+            subprocess.run(["npm", "install"], check=True)
         logger.info("Installing Playwright browsers")
         subprocess.run(["playwright", "install", "firefox"], check=True)
         if push:
