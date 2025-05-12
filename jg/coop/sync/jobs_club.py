@@ -223,8 +223,9 @@ def prepare_summary_content(
     manual_jobs: list[DiscordJob], submitted_jobs: list[ListedJob]
 ) -> str:
     text = (
-        "Pokud víš o zajímavé nabídce pro juniory, přidej ji sem! Vytvoř nový příspěvek "
-        "a vlož popis, nebo i jen odkaz."
+        "Pokud víš o zajímavé nabídce pro juniory, "
+        f"**přidej ji normálně ručně** do <#{ClubChannelID.JOBS}> jako nový příspěvek. "
+        "Hned jak si jí všimnu, odkážu ji automaticky i tady. "
     )
     if manual_jobs:
         items = [f"- [{job.title}]({job.url})" for job in manual_jobs]
