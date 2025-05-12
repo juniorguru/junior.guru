@@ -6,7 +6,7 @@
   "type": "module",
   "dependencies": {
     "@fontsource/inter": "5.2.5",
-    "bootstrap-icons": "1.12.1",
+    "bootstrap-icons": "1.13.1",
     "chart.js": "4.4.9",
     "chartjs-plugin-annotation": "3.1.0",
     "instant.page": "5.2.0",
@@ -14,8 +14,8 @@
   },
   "devDependencies": {
     "@343dev/optimizt": "11.0.0",
-    "bootstrap": "5.3.5",
-    "esbuild": "0.25.3",
+    "bootstrap": "5.3.6",
+    "esbuild": "0.25.4",
     "esbuild-sass-plugin": "3.3.1",
     "jsdom": "26.1.0",
     "prettier": "3.5.3",
@@ -23,6 +23,6 @@
     "stylelint": "16.19.1",
     "stylelint-config-twbs-bootstrap": "16.0.0",
     "stylelint-order": "7.0.0",
-    "vitest": "3.1.2"
+    "vitest": "3.1.3"
   }
 }
