@@ -62,6 +62,20 @@
 # - https://tinywow.com/image/upscale
 # - https://www.fotor.com/photo-editor-app/editor/beauty
 
+- id: 52
+  title: "(bude upřesněno: Něco o rozjíždění kariéry v IT ve státní správě)"
+  date: "2025-06-11"
+  description: |
+    ...
+  avatar_path: ...
+  bio_name: Eva Pavlíková
+  bio_title: "Ředitelka IT na Ministerstvu pro místní rozvoj"
+  bio: |
+    ...
+  bio_links:
+    - https://www.linkedin.com/in/evapavlikova/
+  speakers:
+
 - id: 51
   title: "Proč se certifikovat?"
   date: "2025-05-13"
