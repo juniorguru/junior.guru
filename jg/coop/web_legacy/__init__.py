@@ -16,7 +16,7 @@ NAV_TABS = [
     {"endpoint": "handbook", "name": "Příručka"},
     {"endpoint": "courses", "name": "Kurzy"},
     {"endpoint": "jobs", "name": "Práce"},
-    {"endpoint": "news", "name": "Novinky"},
+    {"endpoint": "news", "name": "Inspirace"},
 ]
 
 

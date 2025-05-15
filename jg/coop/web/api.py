@@ -173,7 +173,7 @@ def build_podcast_xml(api_dir, config):
         "- **[Práce](https://junior.guru/jobs/):** "
         "Pracovní inzeráty vyloženě pro juniory, ať to nemusíš složitě hledat a třídit jinde"
         "\n"
-        "- **[Novinky](https://junior.guru/news/):** "
+        "- **[Inspirace](https://junior.guru/news/):** "
         "Podcasty, přednášky, články a další zdroje, které tě posunou a namotivují"
     )
     for number, db_episode in enumerate(PodcastEpisode.api_listing(), start=1):
