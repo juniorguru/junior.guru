@@ -81,14 +81,14 @@ def main():
         logger.info("Fetching and registering company icon URLs")
         inputs = ((job.id, job.company_url) for job in jobs if job.company_url)
         results = pool.imap_unordered(fetch_icon_urls, inputs)
-        for job_id, icon_urls in results:
+        for job_id, icon_urls in logger.progress(results):
             for icon_url in icon_urls:
                 urls.setdefault(icon_url, dict(type="icon", jobs=[]))
                 urls[icon_url]["jobs"].append(job_id)
 
         logger.info("Downloading images from both logo and icon URLs")
         results = pool.imap_unordered(download_image, urls.keys())
-        for image_url, image_path, orig_width, orig_height in results:
+        for image_url, image_path, orig_width, orig_height in logger.progress(results):
             urls[image_url]["image_path"] = image_path
             urls[image_url]["orig_width"] = orig_width
             urls[image_url]["orig_height"] = orig_height
