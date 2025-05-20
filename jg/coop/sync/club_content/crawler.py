@@ -36,9 +36,11 @@ CHANNELS_HISTORY_SINCE = {
     ClubChannelID.FUN: timedelta(days=30),
     ClubChannelID.FUN_TOPICS: timedelta(days=30),
     ClubChannelID.JOBS: timedelta(days=60),
-    ClubChannelID.INTRO: None,  # all history since ever
-    ClubChannelID.BUSINESS: None,  # all history since ever
-    ClubChannelID.MENTORING: None,  # all history since ever
+    # all history since ever
+    ClubChannelID.ANNOUNCEMENTS: None,
+    ClubChannelID.INTRO: None,
+    ClubChannelID.BUSINESS: None,
+    ClubChannelID.MENTORING: None,
 }
 
 CHANNELS_SKIP = [

@@ -14,7 +14,7 @@ from pydantic import BaseModel, HttpUrl, computed_field, field_validator
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import apify, discord_task, loggers
 from jg.coop.lib.cli import async_command
-from jg.coop.lib.discord_club import ClubClient, add_reactions, parse_link
+from jg.coop.lib.discord_club import ClubClient, add_reactions, parse_discord_link
 from jg.coop.lib.mapycz import REGIONS, locate
 from jg.coop.lib.mutations import mutating_discord
 from jg.coop.lib.yaml import YAMLConfig
@@ -216,7 +216,7 @@ async def sync_meetups(client: ClubClient, instructions: list[PostingInstruction
 
 def parse_channel_id(url: str | HttpUrl) -> int:
     try:
-        return parse_link(str(url))["channel_id"]
+        return parse_discord_link(str(url))["channel_id"]
     except KeyError:
         raise ValueError(f"Invalid Discord channel URL: {url}")
 

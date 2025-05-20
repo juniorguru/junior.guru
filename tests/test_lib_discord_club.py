@@ -204,8 +204,8 @@ def test_get_pinned_message_url(link_text):
         ),
     ],
 )
-def test_parse_link(url, expected):
-    assert discord_club.parse_link(url) == expected
+def test_parse_discord_link(url, expected):
+    assert discord_club.parse_discord_link(url) == expected
 
 
 @pytest.mark.parametrize(

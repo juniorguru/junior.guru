@@ -15,7 +15,7 @@ from peewee import (
     fn,
 )
 
-from jg.coop.lib.discord_club import ClubChannelID, ClubMemberID, parse_link
+from jg.coop.lib.discord_club import ClubChannelID, ClubMemberID, parse_discord_link
 from jg.coop.models.base import BaseModel, JSONField, check_enum
 
 
@@ -296,7 +296,7 @@ class ClubMessage(BaseModel):
     def record_pin(self):
         if not self.is_pinning:
             raise ValueError("Message is not a pinning message")
-        pinned_message_id = parse_link(self.pinned_message_url)["message_id"]
+        pinned_message_id = parse_discord_link(self.pinned_message_url)["message_id"]
         rows_count = (
             ClubPin.update({ClubPin.pinning_message: self})
             .where(

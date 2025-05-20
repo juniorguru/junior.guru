@@ -14,7 +14,7 @@ from jg.coop.lib.discord_club import (
     get_or_create_dm_channel,
     get_pinned_message_url,
     get_reaction,
-    parse_link,
+    parse_discord_link,
 )
 from jg.coop.models.base import db
 from jg.coop.models.page import Page
@@ -80,19 +80,15 @@ async def process_pins(client: ClubClient):
         logger.info(f"Adding {len(messages)} notes to {path}")
         notes = []
         for message in messages:
-            pinned_message_details = parse_link(get_pinned_message_url(message))
+            link_ids = parse_discord_link(get_pinned_message_url(message))
             try:
-                channel = await client.club_guild.fetch_channel(
-                    pinned_message_details["channel_id"]
-                )
+                channel = await client.club_guild.fetch_channel(link_ids["channel_id"])
             except discord.errors.NotFound:
                 logger.warning(
-                    f"Channel #{pinned_message_details['channel_id']} not found, {message.jump_url}"
+                    f"Channel #{link_ids['channel_id']} not found, {message.jump_url}"
                 )
             else:
-                pinned_message = await channel.fetch_message(
-                    pinned_message_details["message_id"]
-                )
+                pinned_message = await channel.fetch_message(link_ids["message_id"])
                 note = f"--- {pinned_message.jump_url}\n{pinned_message.content}\n---\n"
                 notes.append(note)
         notes_text = "\n\n" + "\n\n".join(notes) + NOTES_END

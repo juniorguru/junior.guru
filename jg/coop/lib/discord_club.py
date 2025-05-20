@@ -4,7 +4,7 @@ import re
 from datetime import date, datetime, timedelta, timezone
 from enum import IntEnum, StrEnum, unique
 from functools import wraps
-from typing import TYPE_CHECKING, AsyncGenerator
+from typing import TYPE_CHECKING, AsyncGenerator, TypedDict
 
 import discord
 import emoji
@@ -26,7 +26,7 @@ DEFAULT_THREAD_CREATED_AT = datetime(
 
 DEFAULT_CHANNELS_HISTORY_SINCE = timedelta(days=380)
 
-LINK_RE = re.compile(
+DISCORD_LINK_RE = re.compile(
     r"""
         https://discord.com/channels/
         (
@@ -342,12 +342,20 @@ def get_ui_urls(message: discord.Message) -> list[str]:
     return sorted(filter(None, itertools.chain(button_urls, embed_urls)))
 
 
-def parse_link(url: str) -> int:
-    if match := LINK_RE.search(url):
-        return {
-            name: int(value) if value else None
-            for name, value in match.groupdict().items()
-        }
+class DiscordLinkIDs(TypedDict):
+    guild_id: int | None
+    channel_id: int
+    message_id: int | None
+
+
+def parse_discord_link(url: str) -> DiscordLinkIDs:
+    if match := DISCORD_LINK_RE.search(url):
+        return DiscordLinkIDs(
+            {
+                name: int(value) if value else None
+                for name, value in match.groupdict().items()
+            }
+        )
     raise ValueError(url)
 
 

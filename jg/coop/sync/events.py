@@ -6,7 +6,13 @@ from zoneinfo import ZoneInfo
 import click
 import yaml
 from discord import ScheduledEvent
-from pydantic import AfterValidator, BeforeValidator, HttpUrl
+from pydantic import (
+    AfterValidator,
+    BeforeValidator,
+    HttpUrl,
+    PlainSerializer,
+    field_serializer,
+)
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
@@ -17,6 +23,7 @@ from jg.coop.lib.discord_club import (
     ClubMemberID,
     add_reactions,
     parse_channel,
+    parse_discord_link,
 )
 from jg.coop.lib.images import (
     PostersCache,
@@ -30,6 +37,7 @@ from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
 from jg.coop.models.event import Event, EventSpeaking
+from jg.coop.sync.club_content.crawler import CHANNELS_HISTORY_SINCE
 
 
 logger = loggers.from_path(__file__)
@@ -70,9 +78,18 @@ def get_avatar_path(value: Any) -> Path:
 
 
 def check_club_recording_url(value: HttpUrl) -> HttpUrl:
-    if str(value).startswith(f"https://discord.com/channels/{CLUB_GUILD_ID}/"):
-        return value
-    raise ValueError("The club recording URL doesn't lead to the club")
+    discord_ids = parse_discord_link(str(value))
+    if discord_ids["guild_id"] != CLUB_GUILD_ID:
+        raise ValueError(f"The club recording URL {value} doesn't lead to the club")
+    if discord_ids["channel_id"] not in CHANNELS_HISTORY_SINCE:
+        raise ValueError(
+            f"The club recording URL {value} doesn't lead to a channel with fully crawled history"
+        )
+    if CHANNELS_HISTORY_SINCE[discord_ids["channel_id"]] is not None:
+        raise ValueError(
+            f"The club recording URL {value} doesn't lead to a channel with fully crawled history"
+        )
+    return value
 
 
 class EventConfig(YAMLConfig):
@@ -90,9 +107,14 @@ class EventConfig(YAMLConfig):
     bio_links: list[str] = []
     club_speaker_ids: list[int] = []
     club_recording_url: (
-        Annotated[HttpUrl, AfterValidator(check_club_recording_url)] | None
+        Annotated[
+            HttpUrl,
+            AfterValidator(check_club_recording_url),
+            PlainSerializer(str),
+        ]
+        | None
     ) = None
-    public_recording_url: HttpUrl | None = None
+    public_recording_url: Annotated[HttpUrl, PlainSerializer(str)] | None = None
 
 
 class EventsConfig(YAMLConfig):

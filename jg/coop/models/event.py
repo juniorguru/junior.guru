@@ -12,9 +12,10 @@ from peewee import (
 )
 
 from jg.coop.lib.charts import month_range, ttm_range
+from jg.coop.lib.discord_club import parse_discord_link
 from jg.coop.lib.md import strip_links
 from jg.coop.models.base import BaseModel, JSONField
-from jg.coop.models.club import ClubUser
+from jg.coop.models.club import ClubMessage, ClubUser
 
 
 class Event(BaseModel):
@@ -40,6 +41,13 @@ class Event(BaseModel):
     @property
     def full_title(self) -> str:
         return f"{self.bio_name} – {self.title}"
+
+    @property
+    def club_recording_message(self) -> ClubMessage | None:
+        if not self.club_recording_url:
+            return None
+        message_id = parse_discord_link(self.club_recording_url)["message_id"]
+        return ClubMessage.select().where(ClubMessage.id == message_id).first()
 
     @property
     def start_at_prg(self):
