@@ -11,7 +11,6 @@ from pydantic import (
     BeforeValidator,
     HttpUrl,
     PlainSerializer,
-    field_serializer,
 )
 
 from jg.coop.cli.sync import main as cli
