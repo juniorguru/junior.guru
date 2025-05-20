@@ -29,15 +29,13 @@ class Event(BaseModel):
     bio_title = TextField(null=True)
     bio_links = JSONField(default=list)
     club_recording_url = CharField(null=True)
-    recording_url = CharField(null=True)
-    recording_duration_s = IntegerField(null=True)
+    club_event_id = IntegerField(index=True, null=True)
+    club_event_url = CharField(null=True)
+    private_recording_url = CharField(null=True)
+    private_recording_duration_s = IntegerField(null=True)
     public_recording_url = CharField(null=True)
     public_recording_duration_s = IntegerField(null=True)
-    poster_yt_path = CharField(null=True)
-    poster_dc_path = CharField(null=True)
-    logo_path = CharField(null=True)
-    discord_id = IntegerField(index=True, null=True)
-    discord_url = CharField(null=True)
+    poster_path = CharField(null=True)
 
     @property
     def full_title(self) -> str:

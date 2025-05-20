@@ -7,7 +7,7 @@ from discord import Color, Embed
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
 from jg.coop.lib.discord_club import (
-    CLUB_GUILD,
+    CLUB_GUILD_ID,
     ClubChannelID,
     ClubClient,
     is_message_older_than,
@@ -109,7 +109,7 @@ def format_channel_digest(channel_digest: dict) -> str:
         "\n"
         f"{reading_time(channel_digest['size'])} min čtení"
         " – "
-        f"[Číst diskuzi](https://discord.com/channels/{CLUB_GUILD}/{channel_digest['channel_id']}/)"
+        f"[Číst diskuzi](https://discord.com/channels/{CLUB_GUILD_ID}/{channel_digest['channel_id']}/)"
     )
     return text
 

@@ -7,7 +7,7 @@ from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
 from jg.coop.lib.cache import get_cache
 from jg.coop.lib.discord_club import (
-    CLUB_GUILD,
+    CLUB_GUILD_ID,
     ClubChannelID,
     ClubClient,
     parse_channel,
@@ -79,7 +79,7 @@ async def recreate_channel(client: ClubClient, channel_id: int, tips: list[Tip])
                 ui.Button(
                     emoji="💡",
                     label="Zpětná vazba",
-                    url=f"https://discord.com/channels/{CLUB_GUILD}/{ClubChannelID.META}",
+                    url=f"https://discord.com/channels/{CLUB_GUILD_ID}/{ClubChannelID.META}",
                 ),
             ),
         )

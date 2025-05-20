@@ -3,7 +3,7 @@ from operator import attrgetter
 from urllib.parse import urljoin
 
 from jg.coop.lib import loggers
-from jg.coop.lib.discord_club import CLUB_GUILD
+from jg.coop.lib.discord_club import CLUB_GUILD_ID
 from jg.coop.models.base import db
 from jg.coop.models.blog import BlogArticle
 from jg.coop.models.candidate import Candidate
@@ -141,7 +141,7 @@ def on_docs_context(context):
 
     # news.jinja
     context["newsletter_subscribers_count"] = Followers.get_latest("newsletter").count
-    context["club_guild_id"] = CLUB_GUILD
+    context["club_guild_id"] = CLUB_GUILD_ID
     context["channels_digest"] = ClubMessage.digest_channels(
         date.today() - timedelta(days=7), limit=5
     )

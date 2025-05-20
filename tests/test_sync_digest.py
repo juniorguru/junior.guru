@@ -1,6 +1,6 @@
 import pytest
 
-from jg.coop.lib.discord_club import CLUB_GUILD
+from jg.coop.lib.discord_club import CLUB_GUILD_ID
 from jg.coop.models.club import ClubMessage, ClubUser
 from jg.coop.sync.digest import (
     format_channel,
@@ -43,7 +43,7 @@ def test_format_channel_digest():
         "**#general**\n"
         "1 min čtení"
         " – "
-        f"[Číst diskuzi](https://discord.com/channels/{CLUB_GUILD}/123/)"
+        f"[Číst diskuzi](https://discord.com/channels/{CLUB_GUILD_ID}/123/)"
     )
 
 

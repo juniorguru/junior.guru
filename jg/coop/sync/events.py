@@ -1,14 +1,18 @@
 from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
+from typing import Annotated, Any, TypedDict
 from zoneinfo import ZoneInfo
 
 import click
+import yaml
 from discord import ScheduledEvent
-from strictyaml import CommaSeparated, Float, Int, Map, Optional, Seq, Str, Url, load
+from pydantic import AfterValidator, BeforeValidator, HttpUrl, ValidationInfo
 
+from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
 from jg.coop.lib.discord_club import (
+    CLUB_GUILD_ID,
     ClubChannelID,
     ClubClient,
     ClubMemberID,
@@ -32,7 +36,7 @@ from jg.coop.models.event import Event, EventSpeaking
 logger = loggers.from_path(__file__)
 
 
-DATA_PATH = Path("jg/coop/data/events.yml")
+EVENTS_YAML_PATH = Path("jg/coop/data/events.yml")
 
 IMAGES_DIR = Path("jg/coop/images")
 
@@ -51,28 +55,54 @@ ANNOUNCEMENT_EMOJIS = [
 ]
 
 
-schema = Seq(
-    Map(
-        {
-            "id": Int(),
-            "title": Str(),
-            "date": Date(),
-            Optional("time", default="18:00"): Str(),
-            Optional("duration", default=1.5): Float(),
-            "description": Str(),
-            Optional("short_description"): Str(),
-            Optional("avatar_path"): Str(),
-            "bio_name": Str(),
-            Optional("bio_title"): Str(),
-            "bio": Str(),
-            Optional("bio_links"): Seq(Str()),
-            Optional("logo_path"): Str(),
-            "speakers": CommaSeparated(Int()),
-            Optional("recording_url"): Url(),
-            Optional("public_recording_url"): Url(),
-        }
-    )
-)
+def check_time(value: str) -> str:
+    try:
+        datetime.strptime(value, "%H:%M")
+    except ValueError:
+        raise ValueError("The time must be in the format HH:MM")
+    return value
+
+
+def get_avatar_path(value: Any) -> Path:
+    image_path = IMAGES_DIR / value
+    if image_path.exists():
+        return image_path
+    raise ValueError(f"Path doesn't exist: {image_path!r}")
+
+
+def check_club_recording_url(value: HttpUrl) -> HttpUrl:
+    if str(value).startswith(f"https://discord.com/channels/{CLUB_GUILD_ID}/"):
+        return value
+    raise ValueError("The club recording URL doesn't lead to the club")
+
+
+class EventConfig(YAMLConfig):
+    id: int
+    title: str
+    date: date
+    time: Annotated[str, AfterValidator(check_time)] | None = "18:00"
+    expected_duration_h: float = 1.5
+    description: str
+    short_description: str | None = None
+    avatar_path: Annotated[Path, BeforeValidator(get_avatar_path)] | None = None
+    bio_name: str
+    bio_title: str | None = None
+    bio: str
+    bio_links: list[str] = []
+    speakers: list[int] = []
+    club_recording_url: (
+        Annotated[HttpUrl, AfterValidator(check_club_recording_url)] | None
+    ) = None
+    public_recording_url: HttpUrl | None = None
+
+
+class EventsConfig(YAMLConfig):
+    registry: list[EventConfig]
+
+
+class EventStartEnd(TypedDict):
+    start_at: datetime
+    end_at: datetime
 
 
 @cli.sync_command(dependencies=["club-content"])
@@ -111,36 +141,17 @@ def main(
         db.create_tables([Event, EventSpeaking])
 
         logger.info("Processing data from the YAML, creating posters")
-        records = [
-            load_record(record.data) for record in load(DATA_PATH.read_text(), schema)
-        ]
-        for record in records:
-            name = record["title"]
-            logger.info(f"Creating '{name}'")
-            speakers_ids = record.pop("speakers", [])
-            recording_url = record.pop("recording_url", None)
-            event = Event.create(**record)
+        events_yaml_data = yaml.safe_load(EVENTS_YAML_PATH.read_text())
+        events = EventsConfig(**events_yaml_data)
 
-            for speaker_id in speakers_ids:
+        for event_config in events.registry:
+            logger.info(f"Creating event: {event_config.title!r}")
+            event = Event.create(**prepare_event_data(event_config))
+            for speaker_id in event_config.speakers:
                 logger.info(f"Marking member #{speaker_id} as a speaker")
                 EventSpeaking.create(speaker=speaker_id, event=event)
 
-            logger.debug(f"Checking '{event.avatar_path}'")
-            image_path = IMAGES_DIR / event.avatar_path
-            if not image_path.exists():
-                raise ValueError(
-                    f"Event '{name}' references '{image_path}', but it doesn't exist"
-                )
-
-            if event.logo_path:
-                logger.debug(f"Checking '{event.logo_path}'")
-                image_path = IMAGES_DIR / event.logo_path
-                if not image_path.exists():
-                    raise ValueError(
-                        f"Event '{name}' references '{image_path}', but it doesn't exist"
-                    )
-
-            logger.info(f"Rendering posters for '{name}'")
+            logger.info(f"Rendering posters for {event_config.title!r}")
             image_path = render_image_file(
                 width,
                 height,
@@ -162,10 +173,10 @@ def main(
                 prefix=event.start_at.date().isoformat().replace("-", ""),
             )
             image_path_relative = image_path.relative_to(IMAGES_DIR)
-            event.poster_dc_path = image_path_relative
-            event.poster_yt_path = image_path_relative
+            event.poster_path = image_path_relative
             posters.record(IMAGES_DIR / image_path_relative)
-            logger.info(f"Saving '{name}'")
+
+            logger.info(f"Saving {event_config.title!r}")
             event.save()
     posters.cleanup()
 
@@ -194,7 +205,7 @@ async def sync_scheduled_events(client: ClubClient):
                         name=event.full_title,
                         description=event.discord_description,
                         end_time=event.end_at,
-                        cover=(IMAGES_DIR / event.poster_dc_path).read_bytes(),
+                        cover=(IMAGES_DIR / event.poster_path).read_bytes(),
                     )
             else:
                 logger.info(f"Creating Discord event for '{event.title}'")
@@ -209,8 +220,8 @@ async def sync_scheduled_events(client: ClubClient):
         except MutationsNotAllowedError:
             pass
         if discord_event:
-            event.discord_id = discord_event.id
-            event.discord_url = discord_event.url
+            event.club_event_id = discord_event.id
+            event.club_event_url = discord_event.url
             event.save()
 
 
@@ -334,14 +345,25 @@ async def post_next_event_messages(
         #     logger.info("It's not the day when the event is")
 
 
-def load_record(record):
+def prepare_event_data(event_config: EventConfig) -> dict[str, Any]:
+    event_data = event_config.model_dump(
+        exclude=["date", "time", "expected_duration_h", "avatar_path", "speakers"]
+    )
+    event_data |= get_event_start_end(event_config)
+    if event_config.avatar_path:
+        event_data["avatar_path"] = event_config.avatar_path.relative_to(IMAGES_DIR)
+    return event_data
+
+
+def get_event_start_end(event_config: EventConfig) -> EventStartEnd:
     start_at_prg = datetime(
-        *map(int, str(record.pop("date")).split("-")),
-        *map(int, record.pop("time").split(":")),
+        *map(int, str(event_config.date).split("-")),
+        *map(int, event_config.time.split(":")),
         tzinfo=ZoneInfo("Europe/Prague"),
     )
     start_at_utc = start_at_prg.astimezone(UTC)
     start_at = start_at_utc.replace(tzinfo=None)
-    record["start_at"] = start_at
-    record["end_at"] = start_at + timedelta(hours=record.pop("duration"))
-    return record
+    return EventStartEnd(
+        start_at=start_at,
+        end_at=start_at + timedelta(hours=event_config.expected_duration_h),
+    )

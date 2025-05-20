@@ -16,7 +16,7 @@ if TYPE_CHECKING:
     from jg.coop.models.club import ClubMessage
 
 
-CLUB_GUILD = 769966886598737931
+CLUB_GUILD_ID = 769966886598737931
 
 DEFAULT_AUTO_ARCHIVE_DURATION = 10_080  # minutes
 
@@ -148,7 +148,7 @@ class ClubClient(discord.Client):
 
     @property
     def club_guild(self) -> discord.Guild:
-        return self.get_guild(CLUB_GUILD)
+        return self.get_guild(CLUB_GUILD_ID)
 
 
 def emoji_name(reaction_emoji: discord.Emoji | discord.PartialEmoji | str) -> str:
