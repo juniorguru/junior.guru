@@ -4,11 +4,8 @@
 # automaticky generují plakátky, tj. upoutávky, které Honza sdílí na sociální
 # sítě.
 #
-# Pokud chceš, můžeš se sem po domluvě s Honzou přidat pomocí Pull Requestu,
-# ale není to nutné. Stačí Honzovi detaily napsat a poslat fotku nebo avatar,
-# on to už celé zařídí. Pokud se ale přes Git přidat chceš, můžeš. Akce jsou
-# v souboru od nejnovější po nejstarší, takže přidávej nahoru. Využij šablonu
-# níže nebo se inspiruj tím, jak jsou zdokumentovány už proběhlé akce.
+# Akce jsou v souboru od nejnovější po nejstarší, takže přidávej nahoru.
+# Využij šablonu níže, nebo se inspiruj tím, jak jsou zadány už proběhlé akce.
 #
 #
 #- id: 0                                   # POŘADOVÉ ČÍSLO
@@ -49,10 +46,10 @@
 # 1. Lze používat Unicode pevné mezery (na macOS se napíšou option + mezerník) k prevenci
 #    nevhodného rozdělení slov na dva řádky. To se hodí v 90 % případů pro 'bio_title',
 #    které je potřeba na plakátku zalomit do sloupce.
-# 2. Bude potřeba ještě fotka, nebo pokud se nerad(a) fotíš, tak alespoň nějaký avatar, obrázek.
-#    Ten je potřeba přidat do složky 'jg/coop/images/speakers' tak, že název souboru
-#    je stejný, jako tvoje ID na Discordu. Přípona a formát jsou jedno. No a pak je potřeba
-#    ještě spustit 'jg sync events', takže… takže je vlastně lepší to neřešit
+# 2. Bude potřeba ještě fotka, nebo alespoň nějaký avatar, obrázek.
+#    Ten se dá do složky 'jg/coop/images/avatars-participants' tak,
+#    že název souboru odpovídá jménu a příjmení účastníka, oddělené pomlčkou.
+#    Pak je potřeba spustit 'jg sync events', takže… takže je vlastně lepší to neřešit
 #    a poslat prostě fotku nebo avatar Honzovi, ať se s tím popere sám.
 #
 #

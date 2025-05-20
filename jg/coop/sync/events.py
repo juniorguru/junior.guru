@@ -118,6 +118,7 @@ def main(
             name = record["title"]
             logger.info(f"Creating '{name}'")
             speakers_ids = record.pop("speakers", [])
+            recording_url = record.pop("recording_url", None)
             event = Event.create(**record)
 
             for speaker_id in speakers_ids:
