@@ -33,6 +33,12 @@ from jg.coop.lib.images import (
 from jg.coop.lib.mutations import MutationsNotAllowedError, mutating_discord
 from jg.coop.lib.template_filters import icon, local_time, weekday
 from jg.coop.lib.yaml import YAMLConfig
+from jg.coop.lib.youtube import (
+    fetch_youtube_info,
+    get_youtube_url,
+    parse_youtube_id,
+    parse_youtube_info,
+)
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
 from jg.coop.models.event import Event, EventSpeaking
@@ -91,6 +97,10 @@ def check_club_recording_url(value: HttpUrl) -> HttpUrl:
     return value
 
 
+def normalize_youtube_url(value: HttpUrl) -> HttpUrl:
+    return HttpUrl(get_youtube_url(parse_youtube_id(str(value))))
+
+
 class EventConfig(YAMLConfig):
     id: int
     title: str
@@ -113,7 +123,14 @@ class EventConfig(YAMLConfig):
         ]
         | None
     ) = None
-    public_recording_url: Annotated[HttpUrl, PlainSerializer(str)] | None = None
+    public_recording_url: (
+        Annotated[
+            HttpUrl,
+            AfterValidator(normalize_youtube_url),
+            PlainSerializer(str),
+        ]
+        | None
+    ) = None
 
 
 class EventsConfig(YAMLConfig):
@@ -168,6 +185,19 @@ def main(
             for speaker_id in event_config.club_speaker_ids:
                 logger.info(f"Marking member #{speaker_id} as a speaker")
                 EventSpeaking.create(speaker=speaker_id, event=event)
+
+            logger.info(f"Fetching YouTube info: {event_config.title!r}")
+            if private_recording_url := event.private_recording_url:
+                info = parse_youtube_info(fetch_youtube_info(private_recording_url))
+                event.private_recording_duration_s = info.duration_s
+                event.end_at = event.start_at + timedelta(seconds=info.duration_s)
+                event.view_count += info.view_count
+            if public_recording_url := event.public_recording_url:
+                info = parse_youtube_info(fetch_youtube_info(public_recording_url))
+                event.public_recording_duration_s = info.duration_s
+                event.end_at = event.start_at + timedelta(seconds=info.duration_s)
+                event.view_count += info.view_count
+            event.save()
 
             logger.info(f"Rendering posters for {event_config.title!r}")
             image_path = render_image_file(

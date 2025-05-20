@@ -61,12 +61,13 @@ async def recreate_channel(client: ClubClient, channel_id: int, events: list[Eve
         )
         embed.set_thumbnail(url=f"attachment://{Path(event.avatar_path).name}")
         file = File(IMAGES_DIR / event.avatar_path)
+        recording_url = event.private_recording_url or event.public_recording_url
         view = ui.View(
             ui.Button(
                 emoji="<:youtube:976200175490060299>",
                 label="Záznam",
-                url=event.recording_url if event.recording_url else None,
-                disabled=not event.recording_url,
+                url=recording_url if recording_url else None,
+                disabled=not recording_url,
             )
         )
         with mutating_discord(channel) as proxy:

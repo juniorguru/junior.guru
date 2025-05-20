@@ -37,6 +37,7 @@ TEMPLATE_FILTERS = [
     "subnav",
     "thousands",
     "toc",
+    "hours",
 ]
 
 

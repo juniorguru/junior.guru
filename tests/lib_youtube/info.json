@@ -2683,9 +2683,7 @@
   "average_rating": null,
   "age_limit": 0,
   "webpage_url": "https://www.youtube.com/watch?v=8_ZUwRKEJ7A",
-  "categories": [
-    "Science & Technology"
-  ],
+  "categories": ["Science & Technology"],
   "tags": [],
   "playable_in_embed": true,
   "live_status": "was_live",

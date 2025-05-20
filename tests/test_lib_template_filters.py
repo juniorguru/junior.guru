@@ -284,3 +284,24 @@ def test_screenshot_url(url, expected):
 )
 def test_nice_url(url: str, expected: str):
     assert template_filters.nice_url(url) == expected
+
+
+@pytest.mark.parametrize(
+    "seconds, expected",
+    [
+        (60, "1min"),
+        (600, "10min"),
+        (1200, "20min"),
+        (1250, "20min"),
+        (1800, "30min"),
+        (3000, "50min"),
+        (3180, "1h"),
+        (3300, "1h"),
+        (3600, "1h"),
+        (3661, "1h"),
+        (4861, "1,5h"),
+        (90061, "25h"),
+    ],
+)
+def test_hours(seconds: int, expected: str):
+    assert template_filters.hours(seconds) == expected

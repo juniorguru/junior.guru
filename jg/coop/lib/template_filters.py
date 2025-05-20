@@ -243,3 +243,15 @@ def nplurals(
     if 2 <= value <= 4:
         return suffix_2
     return suffix_3
+
+
+def hours(seconds: int) -> str:
+    minutes = seconds / 60
+    if minutes <= 1:
+        return "1min"
+    if minutes < 50:
+        rounded = round(minutes / 5) * 5
+        return f"{int(rounded)}min"
+    hours = round(minutes / 60 * 2) / 2  # rounds to nearest 0.5
+    hours_str = str(int(hours)) if hours.is_integer() else str(hours).replace(".", ",")
+    return f"{hours_str}h"

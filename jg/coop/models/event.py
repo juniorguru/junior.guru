@@ -14,6 +14,7 @@ from peewee import (
 from jg.coop.lib.charts import month_range, ttm_range
 from jg.coop.lib.discord_club import parse_discord_link
 from jg.coop.lib.md import strip_links
+from jg.coop.lib.youtube import get_youtube_url, parse_youtube_id
 from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubMessage, ClubUser
 
@@ -35,6 +36,7 @@ class Event(BaseModel):
     private_recording_duration_s = IntegerField(null=True)
     public_recording_url = CharField(null=True)
     public_recording_duration_s = IntegerField(null=True)
+    view_count = IntegerField(default=0)
     poster_path = CharField(null=True)
 
     @property
@@ -50,7 +52,9 @@ class Event(BaseModel):
 
     @property
     def private_recording_url(self) -> str | None:
-        pass
+        if message := self.club_recording_message:
+            return get_youtube_url(parse_youtube_id(message.content))
+        return None
 
     @property
     def start_at_prg(self):
