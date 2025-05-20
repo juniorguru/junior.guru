@@ -247,11 +247,13 @@ def nplurals(
 
 def hours(seconds: int) -> str:
     minutes = seconds / 60
-    if minutes <= 1:
-        return "1min"
-    if minutes < 50:
-        rounded = round(minutes / 5) * 5
-        return f"{int(rounded)}min"
-    hours = round(minutes / 60 * 2) / 2  # rounds to nearest 0.5
+    if minutes <= 10:
+        return f"{int(minutes)}min"
+    if minutes < 70:
+        rounded_minutes = math.ceil(minutes / 5) * 5
+        if 50 <= rounded_minutes <= 70:
+            return "1h"
+        return f"{int(rounded_minutes)}min"
+    hours = round((minutes / 60) * 2) / 2
     hours_str = str(int(hours)) if hours.is_integer() else str(hours).replace(".", ",")
     return f"{hours_str}h"
