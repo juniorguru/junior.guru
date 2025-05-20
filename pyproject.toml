@@ -60,6 +60,7 @@ pillow = "11.2.1"
 pydantic = "2.11.4"
 lxml = "5.4.0"
 githubkit = "0.12.13"
+yt-dlp = "2025.4.30"
 
 [tool.poetry.group.dev.dependencies]
 ghp-import = "2.1.0"
