@@ -6,9 +6,8 @@ from zoneinfo import ZoneInfo
 import click
 import yaml
 from discord import ScheduledEvent
-from pydantic import AfterValidator, BeforeValidator, HttpUrl, ValidationInfo
+from pydantic import AfterValidator, BeforeValidator, HttpUrl
 
-from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
 from jg.coop.lib.discord_club import (
@@ -27,7 +26,7 @@ from jg.coop.lib.images import (
 )
 from jg.coop.lib.mutations import MutationsNotAllowedError, mutating_discord
 from jg.coop.lib.template_filters import icon, local_time, weekday
-from jg.coop.lib.yaml import Date
+from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
 from jg.coop.models.event import Event, EventSpeaking
@@ -89,7 +88,7 @@ class EventConfig(YAMLConfig):
     bio_title: str | None = None
     bio: str
     bio_links: list[str] = []
-    speakers: list[int] = []
+    club_speaker_ids: list[int] = []
     club_recording_url: (
         Annotated[HttpUrl, AfterValidator(check_club_recording_url)] | None
     ) = None
@@ -141,13 +140,11 @@ def main(
         db.create_tables([Event, EventSpeaking])
 
         logger.info("Processing data from the YAML, creating posters")
-        events_yaml_data = yaml.safe_load(EVENTS_YAML_PATH.read_text())
-        events = EventsConfig(**events_yaml_data)
-
-        for event_config in events.registry:
+        events_config = EventsConfig(**yaml.safe_load(EVENTS_YAML_PATH.read_text()))
+        for event_config in events_config.registry:
             logger.info(f"Creating event: {event_config.title!r}")
             event = Event.create(**prepare_event_data(event_config))
-            for speaker_id in event_config.speakers:
+            for speaker_id in event_config.club_speaker_ids:
                 logger.info(f"Marking member #{speaker_id} as a speaker")
                 EventSpeaking.create(speaker=speaker_id, event=event)
 
@@ -347,7 +344,13 @@ async def post_next_event_messages(
 
 def prepare_event_data(event_config: EventConfig) -> dict[str, Any]:
     event_data = event_config.model_dump(
-        exclude=["date", "time", "expected_duration_h", "avatar_path", "speakers"]
+        exclude=[
+            "date",
+            "time",
+            "expected_duration_h",
+            "avatar_path",
+            "club_speaker_ids",
+        ]
     )
     event_data |= get_event_start_end(event_config)
     if event_config.avatar_path:

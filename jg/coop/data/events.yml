@@ -36,7 +36,7 @@
 #    - https://www.linkedin.com/in/examplejanedoe/
 #    - https://github.com/examplejanedoe
 #    - https://www.instagram.com/examplejanedoe/
-#  speakers:                               # JEDNOTLIVÁ ID DISCORD ÚČTŮ PŘEDNÁŠEJÍCÍCH
+#  club_speaker_ids:                       # JEDNOTLIVÁ ID DISCORD ÚČTŮ PŘEDNÁŠEJÍCÍCH
 #    - 000000000000000000
 #  club_recording_url: https://example.com # ODKAZ NA ZÁZNAM PŘEDNÁŠKY, VEDE NA DISCORD DO #oznámení
 #  public_recording_url: https://yt.com/   # ODKAZ NA VEŘEJNÝ STREAM NEBO ZÁZNAM PŘEDNÁŠKY
@@ -72,7 +72,7 @@ registry:
       (bude upřesněno)
     bio_links:
       - https://www.linkedin.com/in/evapavlikova/
-    speakers: []
+    club_speaker_ids: []
 
   - id: 51
     title: "Proč se certifikovat?"
@@ -86,7 +86,7 @@ registry:
       První kód napsal v roce 1986 na IQ151 v jazyce Basic. Více než dvacet let se věnuje vzdělávání dospělých v oboru IT. Začínal s technologiemi jako MS DOS a Windows 3.1. Láska k vaření ho dohnala až tak daleko, že se před pár lety dálkově vyučil kuchařem. Kromě rodiny vaří i na komunitních IT akcích, kde také přednáší.
     bio_links:
       - https://www.linkedin.com/in/stepanbechynsky/
-    speakers:
+    club_speaker_ids:
       - 1169254844385743049
 
   - id: 50
@@ -101,7 +101,7 @@ registry:
       Mladý student marketingu, který píše už několik let. Posledních pár roků se věnuje LinkedInu a přednáší o něm. Dělá copywriting a radí lidem, jak si rozjet kariéru, protože on to dokázal už v patnácti letech bez zkušeností.
     bio_links:
       - https://www.linkedin.com/in/adamkral1/
-    speakers:
+    club_speaker_ids:
       - 1097115585424408586
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1350022186085253151
 
@@ -119,7 +119,7 @@ registry:
       - https://witter.cz/@Lwicze
       - https://github.com/gedrex
       - https://www.linkedin.com/in/lea-bradáčová-2b931841/
-    speakers:
+    club_speaker_ids:
       - 377398623777980418
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1336612967092850699
 
@@ -137,7 +137,7 @@ registry:
       - https://www.linkedin.com/in/bleedingdev/
       - https://ai.bleeding.dev/
       - https://github.com/BleedingDev/
-    speakers:
+    club_speaker_ids:
       - 442003355653636107
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1325836439841407080
 
@@ -177,7 +177,7 @@ registry:
       - https://www.youtube.com/@LucieLenertova
       - https://www.lucielenertova.cz
       - https://www.linkedin.com/in/lucielenertova/
-    speakers:
+    club_speaker_ids:
       - 1002301544496119838
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1313951216417378336
 
@@ -193,7 +193,7 @@ registry:
     bio_title: "Provozovatel junior.guru"
     bio: |
       Původně programátor, dnes už spíš kariérový poradce a podnikatel. Od roku 2016 pomáhá začátečníkům naučit se programovat a najít si svou první práci v oboru. Provozuje junior.guru a je dlouholetým dobrovolníkem v české Python komunitě.
-    speakers:
+    club_speaker_ids:
       - 668226181769986078
     public_recording_url: https://youtube.com/live/GkT0hRhykgk
 
@@ -213,7 +213,7 @@ registry:
       - https://coreskill.tech/
       - https://github.com/benabraham
       - https://www.linkedin.com/in/danielsrb/
-    speakers:
+    club_speaker_ids:
       - 652142810291765248
     public_recording_url: https://youtube.com/live/8_ZUwRKEJ7A
 
@@ -229,7 +229,7 @@ registry:
       .NET vývojář, který se neustále snaží rozšiřovat své znalosti a nabírat zkušenosti. Před pár roky se přidal do klubu jako junior, který si hledá první práci. Díky své vášni pro technologie a neustálému zkoumání, jak by šlo v praxi využít novinky, se dostal až k tomu, že teď pro juniory přednáší.
     bio_links:
       - https://www.linkedin.com/in/lukaspavelka/
-    speakers:
+    club_speaker_ids:
       - 113033048957665280
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1296189731037515940
 
@@ -245,7 +245,7 @@ registry:
       Nadšený C# a .NET vývojář, který se neustále snaží rozšiřovat své znalosti a nabírat zkušenosti. Před pár roky se přidal do klubu jako junior, který si hledá první práci. Díky své vášni pro technologie a neustálému zkoumání, jak by šlo v praxi využít novinky, se dostal až k tomu, že teď pro juniory přednáší.
     bio_links:
       - https://www.linkedin.com/in/lukaspavelka/
-    speakers:
+    club_speaker_ids:
       - 113033048957665280
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1273977064944435200
 
@@ -261,7 +261,7 @@ registry:
       Analytik ve společnosti Alma Career (dříve LMC). Věnuje se rozboru dat, jevů a trendů v propojených světech vzdělávání a práce. Snaží se nacházet, pojmenovávat a rozvíjet to, co je zásadní pro smysluplné uplatnění lidí a jejich lepší spolupráci ve firmách i veřejných institucích. Přednáší pro lidi z HR i vedení firem, pro odbornou i širší veřejnost.
     bio_links:
       - https://www.linkedin.com/in/tomas-ervin-dombrovsky/
-    speakers:
+    club_speaker_ids:
       - 110671725129129984
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1246040581642391634
 
@@ -279,7 +279,7 @@ registry:
       - https://www.linkedin.com/in/lonikroman/
       - https://www.naucmese.cz/kurz/chci-efektivni-tym-chci-uspesny-projekt
       - https://www.naucmese.cz/kurz/ziskej-praci-v-it
-    speakers:
+    club_speaker_ids:
       - 801044009366716448
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1217187841382285332
 
@@ -295,7 +295,7 @@ registry:
       Od roku 2017 je aktivní v české Python komunitě, kde dlouhé roky učila, koučovala, a organizovala brněnské začátečnické kurzy pořádané PyLadies. Pomohlo jí to upevnit si základy Pythonu, seznámit se s Linuxem a s open source. Díky tomu pak našla práci nejdříve v QA, poté jako vývojářka. Na balkoně vášnivě pěstuje bylinky a rajčata, čte beletrii a s přáteli hraje deskovky.
     bio_links:
       - https://www.linkedin.com/in/karolina-surma-950452b7/
-    speakers:
+    club_speaker_ids:
       - 797088930758524959
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1179462183667630282
 
@@ -313,7 +313,7 @@ registry:
     bio_title: "Provozovatel junior.guru"
     bio: |
       Původně programátor, dnes už spíš kariérový poradce a podnikatel. Od roku 2016 pomáhá začátečníkům naučit se programovat a najít si svou první práci v oboru. Provozuje junior.guru a je dlouholetým dobrovolníkem v české Python komunitě.
-    speakers:
+    club_speaker_ids:
       - 668226181769986078
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1176596905908764682
     public_recording_url: https://youtube.com/live/9mpIl8kFulA
@@ -330,7 +330,7 @@ registry:
       Milovnice moderních technologií, která vám dá vaše podnikání do pohybu. V podvečer se prohání po luzích a hájích na koni.
     bio_links:
       - https://www.linkedin.com/in/prazakova/
-    speakers:
+    club_speaker_ids:
       - 1168093838192148483
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1186742229633617980
 
@@ -348,7 +348,7 @@ registry:
       - https://milavotradovec.cz/
       - https://sifrovacky.cz/
       - https://www.linkedin.com/in/m%C3%ADla-votradovec-2a659920/
-    speakers:
+    club_speaker_ids:
       - 514847931040530433
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1181669143993389149
 
@@ -365,7 +365,7 @@ registry:
     bio_links:
       - https://www.nelaprovazi.cz/
       - https://www.linkedin.com/in/nela-slezakova/
-    speakers:
+    club_speaker_ids:
       - 791020144661889054
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1120773553164402708
     public_recording_url: https://youtu.be/FIijszEVQHY
@@ -383,7 +383,7 @@ registry:
     bio_links:
       - https://martinkolar.eu/
       - https://www.linkedin.com/in/martinkolareu/
-    speakers:
+    club_speaker_ids:
       - 392659924552777730
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1103007844732784691
 
@@ -399,7 +399,7 @@ registry:
       Vystudovaná historička, žila několik let v Berlíně a většinu profesního života se věnovala event managementu. Svou cestu do IT začala s Digitální akademií od Czechitas. Na pozici FE vývojářky pracuje rok a půl. Má zkušenosti jak s produktovým vývojem, tak s prací na projektech. Pokud se zrovna nehrabe v Reactu, tak miluje jízdu po německé dálnici.
     bio_links:
       - https://www.linkedin.com/in/marta-k-586110243/
-    speakers:
+    club_speaker_ids:
       - 1081144172632879167
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1100474817930612828
 
@@ -415,7 +415,7 @@ registry:
     bio_title: "Provozovatel junior.guru"
     bio: |
       Původně programátor, dnes už spíš kariérový poradce a podnikatel. Od roku 2016 pomáhá začátečníkům naučit se programovat a najít si svou první práci v oboru. Provozuje junior.guru a je dlouholetým dobrovolníkem v české Python komunitě.
-    speakers:
+    club_speaker_ids:
       - 668226181769986078
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1095399134313336942
     public_recording_url: https://youtube.com/live/vN235cq8xP4
@@ -436,7 +436,7 @@ registry:
       - https://www.linkedin.com/in/anastazie-sedlakova/
       - https://github.com/anastazie
       - https://twitter.com/datasciencefox
-    speakers:
+    club_speaker_ids:
       - 1084944417716178965
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1088457105910026240
 
@@ -452,7 +452,7 @@ registry:
       Nadšený C# a .NET vývojář, který se neustále snaží rozšiřovat své znalosti a nabírat zkušenosti. Před necelými dvěma lety se přidal do klubu jako junior, který si hledá první práci. Díky své vášni pro technologie a neustálému zkoumání, jak by šlo v praxi využít novinky, se dostal až k tomu, že teď bude juniorům sám přednášet.
     bio_links:
       - https://www.linkedin.com/in/lukaspavelka/
-    speakers:
+    club_speaker_ids:
       - 113033048957665280
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1077657861397684396
 
@@ -470,7 +470,7 @@ registry:
       - https://www.linkedin.com/in/zuzanapechova/
       - https://twitter.com/kayla_eilhart/
       - https://witter.cz/@kayla_eilhart
-    speakers:
+    club_speaker_ids:
       - 336111357495738368
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1072591921173774456
 
@@ -487,7 +487,7 @@ registry:
     bio_links:
       - https://www.linkedin.com/in/kristyna-dolezalova/
       - https://unlock.it/
-    speakers:
+    club_speaker_ids:
       - 844877506259845140
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1067870620739711067
 
@@ -503,7 +503,7 @@ registry:
       Programoval jsem v Javě, ale pak mě víc bavilo systémy vymýšlet, než programovat. 15 let pracuji jako analytik a architekt v Hypoteční bance. Byl jsem u všeho, co se tam za tu dobu vylepšilo kolem nemovitostí. Rád věci rozdělávám a opravuji, hraji si se smarthome, amatérsky natáčím a stříhám, učím se jazyky a běhám.
     bio_links:
       - https://www.linkedin.com/in/javorek/
-    speakers:
+    club_speaker_ids:
       - 1061399828552241204
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1062444547554152582
 
@@ -522,7 +522,7 @@ registry:
       - https://twitter.com/banterCZ
       - https://witter.cz/@banterCZ
       - https://blog.zvestov.cz/
-    speakers:
+    club_speaker_ids:
       - 775619876152672268
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1049755762081140766
 
@@ -540,7 +540,7 @@ registry:
       - https://www.mews.com/
       - https://www.mews.com/en/careers
       - https://github.com/MewsSystems/developers
-    speakers:
+    club_speaker_ids:
       - 668226181769986078
       - 672433063690633216
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1042158897999392819
@@ -559,7 +559,7 @@ registry:
       - https://github.com/michal-simon/
       - https://www.linkedin.com/in/michal-simon/
       - https://twitter.com/michalsimon
-    speakers:
+    club_speaker_ids:
       - 383551603678117888
 
   - id: 24
@@ -577,7 +577,7 @@ registry:
       - https://www.linkedin.com/in/mat%C4%9Bjkotrba/
       - https://www.instagram.com/matejkotrba/
       - https://www.vork.cz/
-    speakers:
+    club_speaker_ids:
       - 909742782254579763
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1031996509694205953
 
@@ -595,7 +595,7 @@ registry:
       - https://www.linkedin.com/in/pavel-%C5%A1abatka-009a0020/
       - https://www.linkedin.com/in/katarina-hlavacova/
       - https://www.houseofrezac.com/
-    speakers:
+    club_speaker_ids:
       - 1002158848540413952
       - 782702546065424405
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1029831740514115647
@@ -615,7 +615,7 @@ registry:
       - https://www.programhrovani.cz/
       - https://www.dotnetpodcast.cz/
       - https://twitter.com/madrvojt
-    speakers:
+    club_speaker_ids:
       - 839123616665698354
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/983788617107390474
 
@@ -631,7 +631,7 @@ registry:
     bio_links:
       - https://www.purestorage.com/
       - https://www.welcometothejungle.com/en/companies/pure-storage
-    speakers:
+    club_speaker_ids:
       - 668226181769986078
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/974000560841842708
 
@@ -651,7 +651,7 @@ registry:
       - https://www.linkedin.com/in/msvetlana/
       - https://www.instagram.com/swetus/
       - https://github.com/SvetlanaM
-    speakers:
+    club_speaker_ids:
       - 477895566085324801
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/966037882643034153
 
@@ -667,7 +667,7 @@ registry:
     bio_links:
       - https://jetveo.io/
       - https://jetveo.io/cs/blog/articles/jakub-interview
-    speakers:
+    club_speaker_ids:
       - 736963862099918968
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/946376703691882497
 
@@ -684,7 +684,7 @@ registry:
     bio_links:
       - https://www.nelaprovazi.cz/
       - https://www.linkedin.com/in/nela-slezakova/
-    speakers:
+    club_speaker_ids:
       - 791020144661889054
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/946710822506344500
     public_recording_url: https://youtu.be/6G4TKGQICw0
@@ -706,7 +706,7 @@ registry:
       - https://www.instagram.com/swetus/
       - https://github.com/SvetlanaM
       - https://svetlanamargetova.wordpress.com/
-    speakers:
+    club_speaker_ids:
       - 477895566085324801
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/940697182439362580
 
@@ -723,7 +723,7 @@ registry:
     bio_links:
       - https://rozbiteprasatko.cz/
       - https://www.linkedin.com/in/dvoorajak/
-    speakers:
+    club_speaker_ids:
       - 925744853508304897
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/930537584386506852
 
@@ -739,7 +739,7 @@ registry:
       Soňa je _career-switcherka_, která se dostala do IT ze zvědavosti a díky zápalu naučit se něco úplně nového. Aktuálně pracuje jako QA specialistka v Mews a koučingem podporuje dámy v Czechitas. Přes víkend vždy zmizí do přírody a pokud k večeru uvidíte někoho v horách, jak kope díru ve sněhu, je to pravděpodobně ona, jak se chystá jít spát.
     bio_links:
       - https://www.linkedin.com/in/so%C5%88a/
-    speakers:
+    club_speaker_ids:
       - 869504117154934824
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/917855271374700575
 
@@ -758,7 +758,7 @@ registry:
       - https://www.linkedin.com/in/mat%C4%9Bjkotrba/
       - https://www.instagram.com/matejkotrba/
       - https://www.vork.cz/
-    speakers:
+    club_speaker_ids:
       - 909742782254579763
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/910242514676645908
 
@@ -776,7 +776,7 @@ registry:
       - https://twitter.com/liborvanek
       - https://www.linkedin.com/in/liborvanekcz/
       - https://github.com/liborvanek
-    speakers:
+    club_speaker_ids:
       - 330085757211377679
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/905192447276122162
 
@@ -794,7 +794,7 @@ registry:
       - https://twitter.com/honzakral
       - https://www.linkedin.com/in/honzakral/
       - https://github.com/honzakral
-    speakers:
+    club_speaker_ids:
       - 514189468673114122
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/900105360038326342
 
@@ -814,7 +814,7 @@ registry:
       - https://www.linkedin.com/in/katemihalikova/
       - https://github.com/benabraham
       - https://www.linkedin.com/in/danielsrb/
-    speakers:
+    club_speaker_ids:
       - 652142810291765248
       - 488415538117214220
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/893578992853086218
@@ -834,7 +834,7 @@ registry:
       - https://www.linkedin.com/in/jansmitka/
       - https://github.com/jsmitka
       - https://lynt.cz/
-    speakers:
+    club_speaker_ids:
       - 821709585588551701
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/882327482559246397
 
@@ -854,7 +854,7 @@ registry:
       - https://twitter.com/ivanahuckova
       - https://www.linkedin.com/in/ivana-huckova/
       - https://github.com/ivanahuckova
-    speakers:
+    club_speaker_ids:
       - 561313047390715904
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/877260218650751056
 
@@ -876,7 +876,7 @@ registry:
       - https://encukou.cz/
       - https://github.com/encukou
       - https://www.youtube.com/channel/UC-W5H6lqLrhJeOwVAW7ktNw
-    speakers:
+    club_speaker_ids:
       - 733309153275019326
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/875483337744089139
     public_recording_url: https://youtu.be/1-Bwa7yp0C4
@@ -895,7 +895,7 @@ registry:
       - https://www.linkedin.com/in/nkoranova/
       - https://github.com/nkoranova
       - https://www.instagram.com/norka.vokurka/
-    speakers:
+    club_speaker_ids:
       - 501682297930645504
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/869642782355103814
 
@@ -914,7 +914,7 @@ registry:
     bio_links:
       - https://www.linkedin.com/in/wvi/
       - https://github.com/w-vi
-    speakers:
+    club_speaker_ids:
       - 817453228283133982
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/844488172364890123
 
@@ -948,7 +948,7 @@ registry:
       - https://twitter.com/jiripsotka/
       - https://www.linkedin.com/in/jiripsotka/
       - https://www.instagram.com/dog2y/
-    speakers:
+    club_speaker_ids:
       - 382474361300451328
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/842104677943869440
 
@@ -968,7 +968,7 @@ registry:
       - https://github.com/adinafxv
       - https://www.linkedin.com/in/adina-foxova/
       - https://www.instagram.com/adinafxv/
-    speakers:
+    club_speaker_ids:
       - 658628731337965586
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/836906198426320906
 
@@ -988,7 +988,7 @@ registry:
       - https://github.com/abtris
       - https://www.linkedin.com/in/ladislavprskavec/
       - https://www.instagram.com/abtris/
-    speakers:
+    club_speaker_ids:
       - 779257315782164490
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/826872579427794955
 
@@ -1008,7 +1008,7 @@ registry:
       - https://github.com/dariagrudzien
       - https://twitter.com/dariagrudzien
       - https://www.instagram.com/gruontheroad/
-    speakers:
+    club_speaker_ids:
       - 789165121771536404
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/822066882298642462
 
@@ -1027,7 +1027,7 @@ registry:
     bio_name: Honza Javorek, Daniel Srb, Karolina Surma
     bio: |
       Kdokoliv z účastníků srazu si může přihlásit _lightning talk_ a dostane prostor.
-    speakers:
+    club_speaker_ids:
       - 668226181769986078
       - 652142810291765248
       - 797088930758524959
