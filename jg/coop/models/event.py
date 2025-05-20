@@ -32,7 +32,6 @@ class Event(BaseModel):
     club_recording_url = CharField(null=True)
     club_event_id = IntegerField(index=True, null=True)
     club_event_url = CharField(null=True)
-    private_recording_url = CharField(null=True)
     private_recording_duration_s = IntegerField(null=True)
     public_recording_url = CharField(null=True)
     public_recording_duration_s = IntegerField(null=True)
@@ -48,6 +47,10 @@ class Event(BaseModel):
             return None
         message_id = parse_discord_link(self.club_recording_url)["message_id"]
         return ClubMessage.select().where(ClubMessage.id == message_id).first()
+
+    @property
+    def private_recording_url(self) -> str | None:
+        pass
 
     @property
     def start_at_prg(self):

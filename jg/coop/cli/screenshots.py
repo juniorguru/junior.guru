@@ -17,6 +17,7 @@ from playwright.sync_api import (
 
 from jg.coop.cli.web import build
 from jg.coop.lib import loggers
+from jg.coop.lib.youtube import parse_youtube_id
 
 
 logger = loggers.from_path(__file__)
@@ -35,10 +36,6 @@ WIDTH = 640
 HEIGHT = 360
 
 MIN_BYTES_THRESHOLD = 10000
-
-YOUTUBE_URL_RE = re.compile(
-    r"(youtube\.com.+watch\?.*v=|youtube\.com/live/|youtu\.be/)([\w\-\_]+)"
-)
 
 FACEBOOK_URL_RE = re.compile(r"facebook\.com/")
 
@@ -231,7 +228,10 @@ def is_existing_screenshot(screenshot):
 
 def is_yt_screenshot(screenshot):
     url, path = screenshot
-    return bool(YOUTUBE_URL_RE.search(url))
+    try:
+        return bool(parse_youtube_id(url))
+    except ValueError:
+        return False
 
 
 def is_fb_screenshot(screenshot):
@@ -239,25 +239,17 @@ def is_fb_screenshot(screenshot):
     return bool(FACEBOOK_URL_RE.search(url))
 
 
-def parse_yt_id(url):
-    match = YOUTUBE_URL_RE.search(url)
-    try:
-        return match.group(2)
-    except AttributeError:
-        raise ValueError(f"URL {url} doesn't contain YouTube ID")
-
-
 def download_yt_cover_image(screenshot):
     url, path = screenshot
     logger.info(f"Shooting {url}")
     resp = requests.get(
-        f"https://img.youtube.com/vi/{parse_yt_id(url)}/maxresdefault.jpg"
+        f"https://img.youtube.com/vi/{parse_youtube_id(url)}/maxresdefault.jpg"
     )
     try:
         resp.raise_for_status()
     except requests.HTTPError:
         resp = requests.get(
-            f"https://img.youtube.com/vi/{parse_yt_id(url)}/hqdefault.jpg"
+            f"https://img.youtube.com/vi/{parse_youtube_id(url)}/hqdefault.jpg"
         )
         resp.raise_for_status()
     image_bytes = edit_image(resp.content)

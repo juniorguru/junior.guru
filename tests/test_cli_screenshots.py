@@ -14,25 +14,5 @@ from jg.coop.cli import screenshots
         ("https://youtu.be/0v5K4GvK4Gs", True),
     ],
 )
-def test_filter_yt_urls(url, expected):
+def test_is_yt_screenshot(url, expected):
     assert screenshots.is_yt_screenshot((url, "... path ...")) is expected
-
-
-@pytest.mark.parametrize(
-    "url,expected",
-    [
-        ("https://www.youtube.com/watch?v=0v5K4GvK4Gs", "0v5K4GvK4Gs"),
-        ("https://youtu.be/0v5K4GvK4Gs", "0v5K4GvK4Gs"),
-        (
-            "https://www.youtube.com/watch?v=3-wsqhCK-wU&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_&index=5",
-            "3-wsqhCK-wU",
-        ),
-    ],
-)
-def test_parse_yt_id(url, expected):
-    assert screenshots.parse_yt_id(url) == expected
-
-
-def test_parse_yt_id_raises():
-    with pytest.raises(ValueError):
-        screenshots.parse_yt_id("https://junior.guru")
