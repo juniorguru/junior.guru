@@ -11,38 +11,37 @@
 # níže nebo se inspiruj tím, jak jsou zdokumentovány už proběhlé akce.
 #
 #
-#- id: 0                                  # POŘADOVÉ ČÍSLO
-#  title: Jak se stát někým a dělat věci  # NÁZEV PŘEDNÁŠKY
-#  date: "0000-00-00"                     # DATUM PŘEDNÁŠKY
-#  time: "00:00"                          # VÝCHOZÍ JE 18:00, TAKŽE VE VĚTŠINĚ PŘÍPADŮ PROSTĚ JEN ODEBER CELÝ TENTO ŘÁDEK
-#  duration: 2                            # DÉLKA PŘEDNÁŠKY V HODINÁCH, VÝCHOZÍ JE 1
-#  description: |                         # LÁKADLO NA PŘEDNÁŠKU, MŮŽEŠ POUŽÍT MARKDOWN
-#    Kdo by se nechtěl někým stát a dělat věci? Jana Nováková je
-#    na věci expertka a ukáže ti, jak se věci dělají a jak se stát
-#    tím, kým se stát chceš. Budeš žasnout, kolik věcí potom můžeš dělat!
-#  short_description: |                  # KRATŠÍ TEXT LÁKADLA (NAPŘ. PRO PLAKÁTEK), POKUD JE POTŘEBA
-#    Jana Nováková je expertka na věci a ukáže ti, jak se věci
-#    dělají a jak se stát tím, kým se stát chceš.
-#  avatar_path: |                         # CESTA KE TVÉ FOTCE, 500x500px JPG, IDEÁLNĚ
+#- id: 0                                   # POŘADOVÉ ČÍSLO
+#  title: Jak se stát někým a dělat věci   # NÁZEV PŘEDNÁŠKY
+#  date: "0000-00-00"                      # DATUM PŘEDNÁŠKY
+#  time: "00:00"                           # VÝCHOZÍ JE 18:00, TAKŽE VE VĚTŠINĚ PŘÍPADŮ SE NEVYPLŇUJE
+#  duration: 2                             # DÉLKA PŘEDNÁŠKY V HODINÁCH, VÝCHOZÍ JE 1
+#  description: |                          # LÁKADLO NA PŘEDNÁŠKU, MŮŽEŠ POUŽÍT MARKDOWN
+#    Kdo by se nechtěl někým stát a dělat věci? Jana Nováková
+#    ti ukáže, jak se věci dělají a jak se stát tím, kým
+#    se stát chceš. Budeš žasnout, kolik věcí potom můžeš dělat!
+#  short_description: |                    # KRATŠÍ TEXT LÁKADLA (NAPŘ. PRO PLAKÁTEK), POKUD JE POTŘEBA
+#    S expertkou na věci si ukážeme, jak dělat věci
+#    a jak se stát tím, kým se stát chceš.
+#  avatar_path: |                          # CESTA K FOTCE, 500x500px JPG, IDEÁLNĚ
 #    avatars-participants/jana-novakova.jpg
-#  bio_name: Jana Nováková                # TVOJE JMÉNO
-#  bio_title: |                           # TVOJE ROLE
+#  bio_name: Jana Nováková                 # JMÉNO
+#  bio_title: |                            # ROLE
 #    API designerka ve Velkém Korporátku,
 #    organizátorka Srazu Technologie
-#  bio: |                                 # O TOBĚ. TADY MŮŽEŠ POUŽÍT MARKDOWN, KLIDNĚ ODKAŽ NA SVOJE VĚCI
+#  bio: |                                  # O TOBĚ. TADY MŮŽEŠ POUŽÍT MARKDOWN, KLIDNĚ ODKAŽ NA SVOJE VĚCI
 #    Jana Nováková je nadšená API designerka ve Velkém Korporátku.
 #    [Maluje](https://example.com), ráda jezdí na kole a peče si
 #    vlastní chleba. Na hlídání kvásku si vytvořila
 #    [budík postavený na RapsberryPi](https://example.com).
-#  bio_links:                             # ODKAZY NA TVOJE PROFILY A OSOBNÍ WEB, BLOG
+#  bio_links:                              # ODKAZY NA PROFILY A OSOBNÍ WEB, BLOG
 #    - https://examplejanedoe.example.com
 #    - https://www.linkedin.com/in/examplejanedoe/
 #    - https://github.com/examplejanedoe
 #    - https://www.instagram.com/examplejanedoe/
-#  logo_path: logos/example.svg           # LOGO FIRMY, KDE PRACUJEŠ. NENÍ POVINNÉ (NEBO DOPLNÍ HONZA)
-#  speakers: 000000000000000000           # ID TVÉHO DISCORD ÚČTU, DOPLNÍ HONZA
-#  recording_url: https://example.com     # ODKAZ NA ZÁZNAM PŘEDNÁŠKY, DOPLNÍ HONZA
-#  public_recording_url: https://yt.com/  # ODKAZ NA VEŘEJNÝ STREAM NEBO ZÁZNAM PŘEDNÁŠKY, DOPLNÍ HONZA
+#  speakers: 000000000000000000            # ID DISCORD ÚČTU. POKUD JE JICH VÍC, ODDĚLÍ SE ČÁRKOU
+#  club_recording_url: https://example.com # ODKAZ NA ZÁZNAM PŘEDNÁŠKY, VEDE NA DISCORD DO #oznámení
+#  public_recording_url: https://yt.com/   # ODKAZ NA VEŘEJNÝ STREAM NEBO ZÁZNAM PŘEDNÁŠKY
 #
 #
 # Nakonec ještě dva tipy:
@@ -63,15 +62,15 @@
 # - https://www.fotor.com/photo-editor-app/editor/beauty
 
 - id: 52
-  title: "(bude upřesněno: Něco o rozjíždění kariéry v IT ve státní správě)"
+  title: "Jak rozjet svou IT kariéru ve státní správě"
   date: "2025-06-11"
   description: |
-    ...
+    (bude upřesněno)
   avatar_path: avatars-participants/eva-pavlikova.jpg
   bio_name: Eva Pavlíková
   bio_title: "Ředitelka IT na Ministerstvu pro místní rozvoj"
   bio: |
-    ...
+    (bude upřesněno)
   bio_links:
     - https://www.linkedin.com/in/evapavlikova/
   speakers:
@@ -103,7 +102,7 @@
   bio_links:
     - https://www.linkedin.com/in/adamkral1/
   speakers: 1097115585424408586
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1350022186085253151
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1350022186085253151
 
 - id: 49
   title: "Q&A: Generalista nebo specialista? PyLadies, Linux, cloud, cesta do NTK"
@@ -120,7 +119,7 @@
     - https://github.com/gedrex
     - https://www.linkedin.com/in/lea-bradáčová-2b931841/
   speakers: 377398623777980418
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1336612967092850699
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1336612967092850699
 
 - id: 48
   title: "Jak používat AI asistenty a odnést si z nich maximum"
@@ -136,9 +135,8 @@
     - https://www.linkedin.com/in/bleedingdev/
     - https://ai.bleeding.dev/
     - https://github.com/BleedingDev/
-  logo_path: logos/naucmeit.svg
   speakers: 442003355653636107
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1325836439841407080
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1325836439841407080
 
 - id: 47
   title: Úvod do Obsidianu a organizace poznámek (workshop)
@@ -176,9 +174,8 @@
     - https://www.youtube.com/@LucieLenertova
     - https://www.lucielenertova.cz
     - https://www.linkedin.com/in/lucielenertova/
-  logo_path: logos/dokazesprogramovat.png
   speakers: 1002301544496119838
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1313951216417378336
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1313951216417378336
 
 - id: 46
   title: "Programování jako kariéra? Ptej se! (Q&A)"
@@ -192,10 +189,9 @@
   bio_title: "Provozovatel junior.guru"
   bio: |
     Původně programátor, dnes už spíš kariérový poradce a podnikatel. Od roku 2016 pomáhá začátečníkům naučit se programovat a najít si svou první práci v oboru. Provozuje junior.guru a je dlouholetým dobrovolníkem v české Python komunitě.
-  logo_path: logo-bg.svg
   speakers: 668226181769986078
+  club_recording_url: https://youtube.com/live/GkT0hRhykgk
   public_recording_url: https://youtube.com/live/GkT0hRhykgk
-  recording_url: https://youtube.com/live/GkT0hRhykgk
 
 - id: 45
   title: "Jak na CV při změně kariéry do IT"
@@ -213,10 +209,9 @@
     - https://coreskill.tech/
     - https://github.com/benabraham
     - https://www.linkedin.com/in/danielsrb/
-  logo_path: logos/coreskill.svg
   speakers: 652142810291765248
+  club_recording_url: https://youtube.com/live/8_ZUwRKEJ7A
   public_recording_url: https://youtube.com/live/8_ZUwRKEJ7A
-  recording_url: https://youtube.com/live/8_ZUwRKEJ7A
 
 - id: 44
   title: "Kubernetes: Co, proč a jak – průvodce pro začátečníky"
@@ -231,8 +226,7 @@
   bio_links:
     - https://www.linkedin.com/in/lukaspavelka/
   speakers: 113033048957665280
-  logo_path: logos/quadient.svg
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1296189731037515940
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1296189731037515940
 
 - id: 43
   title: "Docker pro začátečníky: Základy kontejnerizace"
@@ -247,7 +241,7 @@
   bio_links:
     - https://www.linkedin.com/in/lukaspavelka/
   speakers: 113033048957665280
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1273977064944435200
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1273977064944435200
 
 - id: 42
   title: "Situace na IT trhu z pohledu dat a co to znamená pro juniory"
@@ -261,9 +255,8 @@
     Analytik ve společnosti Alma Career (dříve LMC). Věnuje se rozboru dat, jevů a trendů v propojených světech vzdělávání a práce. Snaží se nacházet, pojmenovávat a rozvíjet to, co je zásadní pro smysluplné uplatnění lidí a jejich lepší spolupráci ve firmách i veřejných institucích. Přednáší pro lidi z HR i vedení firem, pro odbornou i širší veřejnost.
   bio_links:
     - https://www.linkedin.com/in/tomas-ervin-dombrovsky/
-  logo_path: logos/almacareer.svg
   speakers: 110671725129129984
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1246040581642391634
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1246040581642391634
 
 - id: 41
   title: "„Agile is dead!“ …nebo ne?"
@@ -280,7 +273,7 @@
     - https://www.naucmese.cz/kurz/chci-efektivni-tym-chci-uspesny-projekt
     - https://www.naucmese.cz/kurz/ziskej-praci-v-it
   speakers: 801044009366716448
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1217187841382285332
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1217187841382285332
 
 - id: 40
   title: "Úvod do Advent of Code a „přátelský pokec u kakaa“"
@@ -294,9 +287,8 @@
     Od roku 2017 je aktivní v české Python komunitě, kde dlouhé roky učila, koučovala, a organizovala brněnské začátečnické kurzy pořádané PyLadies. Pomohlo jí to upevnit si základy Pythonu, seznámit se s Linuxem a s open source. Díky tomu pak našla práci nejdříve v QA, poté jako vývojářka. Na balkoně vášnivě pěstuje bylinky a rajčata, čte beletrii a s přáteli hraje deskovky.
   bio_links:
     - https://www.linkedin.com/in/karolina-surma-950452b7/
-  logo_path: logos/redhat.svg
   speakers: 797088930758524959
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1179462183667630282
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1179462183667630282
 
 - id: 39
   title: "Programování jako kariéra? Ptej se! (Q&A v rámci Týdne pro Digitální Česko)"
@@ -312,10 +304,9 @@
   bio_title: "Provozovatel junior.guru"
   bio: |
     Původně programátor, dnes už spíš kariérový poradce a podnikatel. Od roku 2016 pomáhá začátečníkům naučit se programovat a najít si svou první práci v oboru. Provozuje junior.guru a je dlouholetým dobrovolníkem v české Python komunitě.
-  logo_path: logo.svg
   speakers: 668226181769986078
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1176596905908764682
   public_recording_url: https://youtube.com/live/9mpIl8kFulA
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1176596905908764682
 
 - id: 38
   title: "Směrem k úspěchu aneb jak vykročit tou správnou nohou"
@@ -329,9 +320,8 @@
     Milovnice moderních technologií, která vám dá vaše podnikání do pohybu. V podvečer se prohání po luzích a hájích na koni.
   bio_links:
     - https://www.linkedin.com/in/prazakova/
-  logo_path: logos/vortex.svg
   speakers: 1168093838192148483
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1186742229633617980
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1186742229633617980
 
 - id: 37
   title: "Proč mají programátoři rádi šifrovací hry a proč by mohly bavit i vás"
@@ -348,7 +338,7 @@
     - https://sifrovacky.cz/
     - https://www.linkedin.com/in/m%C3%ADla-votradovec-2a659920/
   speakers: 514847931040530433
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1181669143993389149
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1181669143993389149
 
 - id: 36
   title: "Jak se jako ajťák/čka zbavit pochyb a pocitu, že nejsem dost"
@@ -363,10 +353,9 @@
   bio_links:
     - https://www.nelaprovazi.cz/
     - https://www.linkedin.com/in/nela-slezakova/
-  logo_path: logos/nelaprovazi.svg
   speakers: 791020144661889054
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1120773553164402708
   public_recording_url: https://youtu.be/FIijszEVQHY
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1120773553164402708
 
 - id: 35
   title: "Začínáme správně: klíčové faktory pro úspěšný frontend projekt"
@@ -381,9 +370,8 @@
   bio_links:
     - https://martinkolar.eu/
     - https://www.linkedin.com/in/martinkolareu/
-  logo_path: logos/martinkolar.svg
   speakers: 392659924552777730
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1103007844732784691
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1103007844732784691
 
 - id: 34
   title: "Dev Fiction: Junioři a realita vývojářského týmu"
@@ -397,9 +385,8 @@
     Vystudovaná historička, žila několik let v Berlíně a většinu profesního života se věnovala event managementu. Svou cestu do IT začala s Digitální akademií od Czechitas. Na pozici FE vývojářky pracuje rok a půl. Má zkušenosti jak s produktovým vývojem, tak s prací na projektech. Pokud se zrovna nehrabe v Reactu, tak miluje jízdu po německé dálnici.
   bio_links:
     - https://www.linkedin.com/in/marta-k-586110243/
-  logo_path: logos/lundegaard.svg
   speakers: 1081144172632879167
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1100474817930612828
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1100474817930612828
 
 - id: 33
   title: "Programování jako kariéra? Ptej se! (Q&A)"
@@ -413,10 +400,9 @@
   bio_title: "Provozovatel junior.guru"
   bio: |
     Původně programátor, dnes už spíš kariérový poradce a podnikatel. Od roku 2016 pomáhá začátečníkům naučit se programovat a najít si svou první práci v oboru. Provozuje junior.guru a je dlouholetým dobrovolníkem v české Python komunitě.
-  logo_path: logo.svg
   speakers: 668226181769986078
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1095399134313336942
   public_recording_url: https://youtube.com/live/vN235cq8xP4
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1095399134313336942
 
 - id: 32
   title: "Práce a dítě: Jak být k sobě laskavější"
@@ -434,9 +420,8 @@
     - https://www.linkedin.com/in/anastazie-sedlakova/
     - https://github.com/anastazie
     - https://twitter.com/datasciencefox
-  logo_path: logos/sedlakovi.svg
   speakers: 1084944417716178965
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1088457105910026240
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1088457105910026240
 
 - id: 31
   title: "Vývoj desktopových aplikací v C#: Nové trendy a možnosti"
@@ -450,9 +435,8 @@
     Nadšený C# a .NET vývojář, který se neustále snaží rozšiřovat své znalosti a nabírat zkušenosti. Před necelými dvěma lety se přidal do klubu jako junior, který si hledá první práci. Díky své vášni pro technologie a neustálému zkoumání, jak by šlo v praxi využít novinky, se dostal až k tomu, že teď bude juniorům sám přednášet.
   bio_links:
     - https://www.linkedin.com/in/lukaspavelka/
-  logo_path: logos/edhouse.svg
   speakers: 113033048957665280
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1077657861397684396
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1077657861397684396
 
 - id: 30
   title: "Základy bezpečnosti pro vývojáře"
@@ -468,9 +452,8 @@
     - https://www.linkedin.com/in/zuzanapechova/
     - https://twitter.com/kayla_eilhart/
     - https://witter.cz/@kayla_eilhart
-  logo_path: logos/rossum.svg
   speakers: 336111357495738368
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1072591921173774456
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1072591921173774456
 
 - id: 29
   title: "Analýza geoprostorových dat, GIS a geospatial data science"
@@ -485,9 +468,8 @@
   bio_links:
     - https://www.linkedin.com/in/kristyna-dolezalova/
     - https://unlock.it/
-  logo_path: logos/eox.svg
   speakers: 844877506259845140
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1067870620739711067
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1067870620739711067
 
 - id: 28
   title: "Kdo je to IT analytik a jak se jím stát?"
@@ -501,9 +483,8 @@
     Programoval jsem v Javě, ale pak mě víc bavilo systémy vymýšlet, než programovat. 15 let pracuji jako analytik a architekt v Hypoteční bance. Byl jsem u všeho, co se tam za tu dobu vylepšilo kolem nemovitostí. Rád věci rozdělávám a opravuji, hraji si se smarthome, amatérsky natáčím a stříhám, učím se jazyky a běhám.
   bio_links:
     - https://www.linkedin.com/in/javorek/
-  logo_path: logos/hypotecni-banka.svg
   speakers: 1061399828552241204
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1062444547554152582
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1062444547554152582
 
 - id: 27
   title: "Posuďme Javu podle obalu"
@@ -520,9 +501,8 @@
     - https://twitter.com/banterCZ
     - https://witter.cz/@banterCZ
     - https://blog.zvestov.cz/
-  logo_path: logos/wultra.svg
   speakers: 775619876152672268
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1049755762081140766
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1049755762081140766
 
 - id: 26
   title: "Jak funguje mentoring a uvítání mentorů z Mews"
@@ -538,9 +518,8 @@
     - https://www.mews.com/
     - https://www.mews.com/en/careers
     - https://github.com/MewsSystems/developers
-  logo_path: logos/mews.svg
   speakers: 668226181769986078, 672433063690633216
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1042158897999392819
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1042158897999392819
 
 - id: 25
   title: "Technologický dluh, zabiják inovace"
@@ -556,7 +535,6 @@
     - https://github.com/michal-simon/
     - https://www.linkedin.com/in/michal-simon/
     - https://twitter.com/michalsimon
-  logo_path: logos/codeac.svg
   speakers: 383551603678117888
 
 - id: 24
@@ -574,9 +552,8 @@
     - https://www.linkedin.com/in/mat%C4%9Bjkotrba/
     - https://www.instagram.com/matejkotrba/
     - https://www.vork.cz/
-  logo_path: logos/vork.png
   speakers: 909742782254579763
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1031996509694205953
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1031996509694205953
 
 - id: 23
   title: "Jak se stát webovým analytikem"
@@ -592,9 +569,8 @@
     - https://www.linkedin.com/in/pavel-%C5%A1abatka-009a0020/
     - https://www.linkedin.com/in/katarina-hlavacova/
     - https://www.houseofrezac.com/
-  logo_path: logos/houseofrezac.svg
   speakers: 1002158848540413952, 782702546065424405
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1029831740514115647
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1029831740514115647
 
 - id: 22
   title: "Od C# k .NETu"
@@ -611,9 +587,8 @@
     - https://www.programhrovani.cz/
     - https://www.dotnetpodcast.cz/
     - https://twitter.com/madrvojt
-  logo_path: logos/motionlab.svg
   speakers: 839123616665698354
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/983788617107390474
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/983788617107390474
 
 - id: 21
   title: "Jak funguje mentoring a uvítání mentorů z Pure Storage"
@@ -627,9 +602,8 @@
   bio_links:
     - https://www.purestorage.com/
     - https://www.welcometothejungle.com/en/companies/pure-storage
-  logo_path: logos/purestorage.svg
   speakers: 668226181769986078
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/974000560841842708
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/974000560841842708
 
 - id: 20
   title: "Next.js úvod pre juniorov"
@@ -647,9 +621,8 @@
     - https://www.linkedin.com/in/msvetlana/
     - https://www.instagram.com/swetus/
     - https://github.com/SvetlanaM
-  logo_path: logos/kompilator.svg
   speakers: 477895566085324801
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/966037882643034153
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/966037882643034153
 
 - id: 19
   title: "Představení Jetveo"
@@ -663,9 +636,8 @@
   bio_links:
     - https://jetveo.io/
     - https://jetveo.io/cs/blog/articles/jakub-interview
-  logo_path: logos/jetveo.svg
   speakers: 736963862099918968
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/946376703691882497
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/946376703691882497
 
 - id: 18
   title: "Jak přežít cestu juniora po psychické stránce"
@@ -680,9 +652,8 @@
   bio_links:
     - https://www.nelaprovazi.cz/
     - https://www.linkedin.com/in/nela-slezakova/
-  logo_path: logos/nelaprovazi.svg
   speakers: 791020144661889054
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/946710822506344500
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/946710822506344500
   public_recording_url: https://youtu.be/6G4TKGQICw0
 
 - id: 17
@@ -702,9 +673,8 @@
     - https://www.instagram.com/swetus/
     - https://github.com/SvetlanaM
     - https://svetlanamargetova.wordpress.com/
-  logo_path: logos/kompilator.svg
   speakers: 477895566085324801
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/940697182439362580
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/940697182439362580
 
 - id: 16
   title: "Dobrá mzda je jen začátkem"
@@ -719,9 +689,8 @@
   bio_links:
     - https://rozbiteprasatko.cz/
     - https://www.linkedin.com/in/dvoorajak/
-  logo_path: logos/processand.svg
   speakers: 925744853508304897
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/930537584386506852
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/930537584386506852
 
 - id: 15
   title: "Tester jako ideální první práce, aneb čím začít kariéru v IT"
@@ -735,9 +704,8 @@
     Soňa je _career-switcherka_, která se dostala do IT ze zvědavosti a díky zápalu naučit se něco úplně nového. Aktuálně pracuje jako QA specialistka v Mews a koučingem podporuje dámy v Czechitas. Přes víkend vždy zmizí do přírody a pokud k večeru uvidíte někoho v horách, jak kope díru ve sněhu, je to pravděpodobně ona, jak se chystá jít spát.
   bio_links:
     - https://www.linkedin.com/in/so%C5%88a/
-  logo_path: logos/mews.svg
   speakers: 869504117154934824
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/917855271374700575
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/917855271374700575
 
 - id: 14
   title: "10 klíčových otázek, na které by každý junior měl znát odpověď"
@@ -754,9 +722,8 @@
     - https://www.linkedin.com/in/mat%C4%9Bjkotrba/
     - https://www.instagram.com/matejkotrba/
     - https://www.vork.cz/
-  logo_path: logos/vork.png
   speakers: 909742782254579763
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/910242514676645908
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/910242514676645908
 
 - id: 13
   title: "Případová studie: Jak se staví rychlý, moderní prezentační web"
@@ -772,9 +739,8 @@
     - https://twitter.com/liborvanek
     - https://www.linkedin.com/in/liborvanekcz/
     - https://github.com/liborvanek
-  logo_path: logos/cdn77com.svg
   speakers: 330085757211377679
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/905192447276122162
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/905192447276122162
 
 - id: 12
   title: "AMA: Expert na škálování a architekturu"
@@ -790,9 +756,8 @@
     - https://twitter.com/honzakral
     - https://www.linkedin.com/in/honzakral/
     - https://github.com/honzakral
-  logo_path: logos/aimful.svg
   speakers: 514189468673114122
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/900105360038326342
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/900105360038326342
 
 - id: 11
   title: "AMA: Mentoři na frontend"
@@ -810,9 +775,8 @@
     - https://www.linkedin.com/in/katemihalikova/
     - https://github.com/benabraham
     - https://www.linkedin.com/in/danielsrb/
-  logo_path: logos/coreskill.svg
   speakers: 652142810291765248, 488415538117214220
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/893578992853086218
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/893578992853086218
 
 - id: 10
   title: Relační databáze efektivně
@@ -829,9 +793,8 @@
     - https://www.linkedin.com/in/jansmitka/
     - https://github.com/jsmitka
     - https://lynt.cz/
-  logo_path: logos/lynt.svg
   speakers: 821709585588551701
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/882327482559246397
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/882327482559246397
 
 - id: 9
   title: Od recruitingu cez Lambda School až do globálneho startupu
@@ -849,9 +812,8 @@
     - https://twitter.com/ivanahuckova
     - https://www.linkedin.com/in/ivana-huckova/
     - https://github.com/ivanahuckova
-  logo_path: logos/grafana.svg
   speakers: 561313047390715904
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/877260218650751056
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/877260218650751056
 
 - id: 8
   title: Jak jsou datové struktury uloženy v paměti
@@ -871,9 +833,8 @@
     - https://encukou.cz/
     - https://github.com/encukou
     - https://www.youtube.com/channel/UC-W5H6lqLrhJeOwVAW7ktNw
-  logo_path: logos/redhat.svg
   speakers: 733309153275019326
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/875483337744089139
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/875483337744089139
   public_recording_url: https://youtu.be/1-Bwa7yp0C4
 
 - id: 7
@@ -890,9 +851,8 @@
     - https://www.linkedin.com/in/nkoranova/
     - https://github.com/nkoranova
     - https://www.instagram.com/norka.vokurka/
-  logo_path: logos/suse.svg
   speakers: 501682297930645504
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/869642782355103814
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/869642782355103814
 
 - id: 6
   title: Život HTTP požadavku
@@ -909,9 +869,8 @@
   bio_links:
     - https://www.linkedin.com/in/wvi/
     - https://github.com/w-vi
-  logo_path: logos/oracle.svg
   speakers: 817453228283133982
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/844488172364890123
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/844488172364890123
 
 - id: 5
   title: "AMA: Recruiter se zaměřením na juniory"
@@ -943,9 +902,8 @@
     - https://twitter.com/jiripsotka/
     - https://www.linkedin.com/in/jiripsotka/
     - https://www.instagram.com/dog2y/
-  logo_path: logos/redhat.svg
   speakers: 382474361300451328
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/842104677943869440
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/842104677943869440
 
 - id: 4
   title: Designování vysněné práce
@@ -963,9 +921,8 @@
     - https://github.com/adinafxv
     - https://www.linkedin.com/in/adina-foxova/
     - https://www.instagram.com/adinafxv/
-  logo_path: logos/adinafoxova.svg
   speakers: 658628731337965586
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/836906198426320906
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/836906198426320906
 
 - id: 3
   title: Jamstack
@@ -983,9 +940,8 @@
     - https://github.com/abtris
     - https://www.linkedin.com/in/ladislavprskavec/
     - https://www.instagram.com/abtris/
-  logo_path: logos/oracle.svg
   speakers: 779257315782164490
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/826872579427794955
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/826872579427794955
 
 - id: 2
   title: "#Junioring 101 - How Not To Go Bonkers At The Start"
@@ -1003,9 +959,8 @@
     - https://github.com/dariagrudzien
     - https://twitter.com/dariagrudzien
     - https://www.instagram.com/gruontheroad/
-  logo_path: logos/cybermagnolia.svg
   speakers: 789165121771536404
-  recording_url: https://discord.com/channels/769966886598737931/789046675247333397/822066882298642462
+  club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/822066882298642462
 
 - id: 1
   title: První klubový sraz
