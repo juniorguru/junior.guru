@@ -108,21 +108,23 @@
   caption=none,
   badge_icon=none,
   badge_text=none,
-  image=true,
+  thumbnail_url=none,
+  screenshot=true,
   screenshot_source_url=none,
   class=none
 ) %}
-{% set screenshot_source_url = screenshot_source_url or url %}
-{% set screenshot_image_url = screenshot_source_url|screenshot_url %}
 <div class="link-card{% if class %} {{ class }}{% endif %}"
-{% if image %}
+{% if not thumbnail_url and screenshot %}
+  {% set screenshot_source_url = screenshot_source_url or url %}
+  {% set thumbnail_url = screenshot_source_url|screenshot_url %}
+
   data-screenshot-source-url="{{ screenshot_source_url }}"
-  data-screenshot-image-url="{{ screenshot_image_url }}"
+  data-screenshot-image-url="{{ thumbnail_url }}"
 {% endif %}
 >
   <div class="link-card-header">
-    {% if image %}
-      {{ img(screenshot_image_url, title, 640, 360, class='link-card-image') }}
+    {% if thumbnail_url %}
+      {{ img(thumbnail_url, title, 640, 360, class='link-card-image') }}
     {% endif %}
     {% if badge_icon and badge_text %}
       <div class="link-card-badge">

@@ -57,3 +57,14 @@
     $disabled-color: $jg-white
   );
 }
+
+.brand-button.email {
+  @include button-variant(
+    $jg-dark,
+    $jg-dark,
+    $jg-white,
+    $hover-color: $jg-white,
+    $active-color: $jg-white,
+    $disabled-color: $jg-white
+  );
+}

@@ -13,10 +13,11 @@ Podcast pro juniory v IT! Jak začít s programováním? Jak najít práci v 
 {% endcall %}
 
 <div class="standout">
-  <a class="brand-button youtube" href="https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA">{{ 'youtube'|icon }} YouTube</a>
-  <a class="brand-button spotify" href="https://open.spotify.com/show/12w93IKRzfCsgo7XrGEVw4">{{ 'spotify'|icon }} Spotify</a>
-  <a class="brand-button apple" href="https://podcasts.apple.com/cz/podcast/junior-guru-podcast/id1603653549">{{ 'apple'|icon }} Apple</a>
-  <a class="brand-button rss" href="https://junior.guru/api/podcast.xml">{{ 'rss-fill'|icon }} RSS</a>
+  <a class="brand-button youtube" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA">{{ 'youtube'|icon }} YouTube</a>
+  <a class="brand-button spotify" target="_blank" rel="noopener" href="https://open.spotify.com/show/12w93IKRzfCsgo7XrGEVw4">{{ 'spotify'|icon }} Spotify</a>
+  <a class="brand-button apple" target="_blank" rel="noopener" href="https://podcasts.apple.com/cz/podcast/junior-guru-podcast/id1603653549">{{ 'apple'|icon }} Apple</a>
+  <a class="brand-button rss" target="_blank" rel="noopener" href="https://junior.guru/api/podcast.xml">{{ 'rss-fill'|icon }} RSS</a>
+  <a class="brand-button email" href="{{ pages|docs_url('news.jinja')|url }}">{{ 'envelope-paper-fill'|icon }} Newsletter</a>
 </div>
 
 <h2 class="visually-hidden">Autoři</h2>
@@ -25,7 +26,7 @@ Podcast pro juniory v IT! Jak začít s programováním? Jak najít práci v 
   <div class="podcast-author-body">
     <h3>Pája Froňková</h3>
     {% call markdown() -%}
-      Autorka podcastu, datová analytička, PyLady. [Svou cestu do IT](https://medium.com/productboard-engineering/making-data-accessible-to-everyone-at-productboard-an-interview-with-p%C3%A1ja-fronkova-7940ecc6aa35) má ještě čerstvě v paměti. Vymýšlí témata, zve hosty, moderuje. Natáčí a stříhá epizody.
+      Autorka podcastu, datová analytička, PyLady. Vymýšlí témata, zve hosty, moderuje. Natáčí a stříhá epizody.
     {%- endcall %}
   </div>
 </div>
