@@ -2,7 +2,7 @@ import string
 
 import gspread
 
-from jg.coop.lib.google import get_credentials
+from jg.coop.lib.google_api import get_credentials
 
 
 def get(doc_key, sheet_name):

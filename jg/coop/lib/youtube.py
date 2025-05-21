@@ -4,8 +4,8 @@ from typing import Annotated
 
 from openai import BaseModel
 from pydantic import HttpUrl, PlainSerializer
-from yt_dlp import YoutubeDL
 
+from jg.coop.lib import google_api
 from jg.coop.lib.cache import cache
 
 
@@ -18,14 +18,12 @@ class YouTubeInfo(BaseModel):
     id: str
     url: Annotated[HttpUrl, PlainSerializer(str)]
     title: str
-    title_full: str
     thumbnail_url: Annotated[HttpUrl, PlainSerializer(str)]
     description: str
     duration_s: int
     view_count: int
     comment_count: int
     like_count: int
-    chapters: list[str]
 
 
 def parse_youtube_id(url) -> str:
@@ -43,20 +41,44 @@ def get_youtube_url(youtube_id: str) -> str:
 def parse_youtube_info(info: dict) -> YouTubeInfo:
     return YouTubeInfo(
         id=info["id"],
-        url=info["webpage_url"],
-        title=info["title"],
-        title_full=info["fulltitle"],
-        thumbnail_url=info["thumbnail"],
-        description=info["description"],
-        duration_s=info["duration"],
-        view_count=info["view_count"],
-        comment_count=info["comment_count"] or 0,
-        like_count=info["like_count"] or 0,
-        chapters=[chapter["title"] for chapter in info["chapters"] or []],
+        url=get_youtube_url(info["id"]),
+        title=info["snippet"]["title"],
+        thumbnail_url=info["snippet"]["thumbnails"]["maxres"]["url"],
+        description=info["snippet"]["description"],
+        duration_s=parse_iso8601_duration(info["contentDetails"]["duration"]),
+        view_count=info["statistics"].get("viewCount", 0),
+        comment_count=info["statistics"].get("commentCount", 0),
+        like_count=info["statistics"].get("likeCount", 0),
     )
+
+
+def parse_iso8601_duration(duration: str) -> int:
+    pattern = re.compile(
+        r"PT"
+        r"(?:(?P<hours>\d+)H)?"
+        r"(?:(?P<minutes>\d+)M)?"
+        r"(?:(?P<seconds>\d+)S)?"
+    )
+    if match := pattern.fullmatch(duration):
+        parts = {k: int(v) if v else 0 for k, v in match.groupdict().items()}
+        return parts["hours"] * 3600 + parts["minutes"] * 60 + parts["seconds"]
+    raise ValueError(f"Invalid ISO 8601 duration: {duration}")
 
 
 @cache(expire=timedelta(hours=12), tag="youtube-info")
 def fetch_youtube_info(youtube_url: str) -> YouTubeInfo:
-    with YoutubeDL({"quiet": True, "no_warnings": True}) as yt:
-        return yt.extract_info(youtube_url, download=False)
+    youtube_id = parse_youtube_id(youtube_url)
+    client = google_api.get_client("youtube", "v3")
+    response = (
+        client.videos()
+        .list(
+            part="snippet,contentDetails,statistics",
+            id=youtube_id,
+            maxResults=1,
+        )
+        .execute()
+    )
+    if not response["items"]:
+        raise ValueError(f"Video {youtube_url} not found")
+
+    return response["items"][0]
