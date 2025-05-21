@@ -99,7 +99,7 @@ Chceš mít jistotu, že v klubu najdeš lidi, které zajímá totéž co tebe? 
 <div class="section-background blue-light"><section class="section">
 <h2>Užívej si přednášky pro začátečníky</h2>
 {% call lead() %}
-Jednou za čas máme na Discordu večerní akci. Je to **online a zhruba na hodinku**, takže můžeš zůstat v bačkorách a stihneš potom díl seriálu, uspat děti, nebo oboje. Můžeš pokládat dotazy, nebo si to jen pustit do uší při vaření večeře. **Záznamy minulých akcí** máš na YouTube. A to nejlepší nakonec: Téma i pojetí je vždy **vyloženě pro začátečníky**! Žádná záplava odborných termitů, které ti nikdo nevysvětlil.
+Jednou za čas máme na Discordu večerní akci. Je to **online a zhruba na hodinku**, takže můžeš zůstat v bačkorách a stihneš potom díl seriálu, uspat děti, nebo oboje. Můžeš pokládat dotazy, nebo si to jen pustit do uší při vaření večeře. **Záznamy minulých akcí** máš na YouTube. A to nejlepší nakonec: Téma i pojetí je vždy **vyloženě pro začátečníky**! Žádná záplava odborných „termitů“, které ti nikdo nevysvětlil.
 {% endcall %}
 
 <ul class="event-circles standout">

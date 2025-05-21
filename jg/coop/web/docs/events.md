@@ -12,7 +12,7 @@ template: main_subnav.html
 Online přednášky a další akce pořádané junior.guru klubem.
 Zveme si profíky na témata kolem programování nebo shánění první práce v oboru.
 Pojetí akcí je vždy vyloženě pro začátečníky.
-Žádná záplava odborných termitů, které ti nikdo nevysvětlil!
+Žádná záplava odborných „termitů“, které ti nikdo nevysvětlil!
 {% endcall %}
 
 <div class="standout">
@@ -63,7 +63,7 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
   {% for event in events_planned %}
     {{ link_card(
       event.title,
-      event.page_url|url,
+      pages|docs_url(event.page_url)|url,
       caption=event.bio_name,
       thumbnail_url=("static/" + event.avatar_path)|url,
       badge_icon='bell-fill',
@@ -79,7 +79,7 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
 {% for event in events_archive %}
   {{ link_card(
     event.title,
-    event.page_url|url,
+    pages|docs_url(event.page_url)|url,
     caption=event.bio_name,
     thumbnail_url=("static/" + event.avatar_path)|url,
     badge_icon='unlock-fill' if event.public_recording_url else none,
