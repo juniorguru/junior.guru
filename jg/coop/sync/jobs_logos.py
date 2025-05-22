@@ -108,17 +108,22 @@ def main():
             job.save()
 
     remaining_jobs = list(ListedJob.no_logo_listing())
-    logger.info(f"Generating fallback logo images for {remaining_jobs} remaining jobs")
-    for job in logger.progress(remaining_jobs, chunk_size=1):
+    logger.info(
+        f"Generating fallback logo images for {len(remaining_jobs)} remaining jobs"
+    )
+    for job in remaining_jobs:
         hash = hashlib.sha1(f"initial-{job.initial}".encode()).hexdigest()
         image_path = LOGOS_DIR / f"{hash}.png"
-        if not image_path.exists():
-            logger.debug(f"Generating initial {job.initial!r}")
+        logger.info(f"Generating to {image_path}")
+        if image_path.exists():
+            logger.info(f"Path {image_path} already exists")
+        else:
+            logger.info(f"Generating initial {job.initial!r}")
             image = create_fallback_image(job.initial)
             image.save(image_path)
         job.company_logo_path = image_path.relative_to(IMAGES_DIR)
         job.save()
-        logger.debug(f"Logo for {job!r}: {job.company_logo_path}")
+        logger.info(f"Logo for {job!r}: {job.company_logo_path}")
 
     logger.info("Generating special question mark logo for club jobs")
     create_fallback_image("?").save(LOGOS_DIR / "unknown.png")
