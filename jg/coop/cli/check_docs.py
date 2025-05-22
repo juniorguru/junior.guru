@@ -14,6 +14,10 @@ class EmailLinkError(ValueError):
     pass
 
 
+class WebCalLinkError(ValueError):
+    pass
+
+
 class ExternalLinkError(ValueError):
     pass
 
@@ -55,7 +59,7 @@ def main(context, output_path, build):
                     (doc_name, normalize_static_link(output_path, doc_path, href))
                 )
             except ValueError:
-                pass  # logger.debug(f'Skipping: {href}')
+                logger.debug(f"Skipping: {href}")
         for element in html_tree.cssselect("img[src]"):
             src = element.get("data-src", element.get("src"))
             try:
@@ -63,7 +67,7 @@ def main(context, output_path, build):
                     (doc_name, normalize_static_link(output_path, doc_path, src))
                 )
             except ValueError:
-                pass  # logger.debug(f'Skipping: {src}')
+                logger.debug(f"Skipping: {src}")
 
     broken = False
     for doc_name, link in links:
@@ -95,6 +99,8 @@ def normalize_link(output_path, doc_path, link):
         raise ExternalLinkError(link)
     if link.startswith("mailto"):
         raise EmailLinkError(link)
+    if link.startswith("webcal"):
+        raise WebCalLinkError(link)
     if Path(link.split("#")[0]).suffix not in ("", ".md"):
         raise StaticFileLinkError(link)
     if link.startswith("#"):
