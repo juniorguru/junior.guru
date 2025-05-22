@@ -2,7 +2,8 @@ import csv
 import gzip
 import itertools
 import json
-from datetime import timedelta
+from datetime import UTC, datetime, timedelta
+from zoneinfo import ZoneInfo
 
 import httpx
 import ics
@@ -41,9 +42,13 @@ def build_events_ics(api_dir, config):
         events=[
             ics.Event(
                 summary=event.title,
-                begin=event.start_at,
-                duration=timedelta(hours=1),
+                begin=naive_utc_to_prg(event.start_at),
+                end=naive_utc_to_prg(event.end_at),
                 description=event.url,
+                organizer=ics.Organizer(
+                    common_name="junior.guru klub", email="honza@junior.guru"
+                ),
+                location=event.club_event_url,
             )
             for event in Event.api_listing()
         ]
@@ -57,16 +62,17 @@ def build_events_ics(api_dir, config):
 def build_events_honza_ics(api_dir, config):
     events = []
     for event in Event.api_listing():
+        start_at = naive_utc_to_prg(event.start_at)
         ics_event_promo_day = ics.Event(
             summary="(Honza by měl promovat klubovou akci)",
-            begin=event.start_at - timedelta(days=7),
+            begin=start_at - timedelta(days=7),
             description=event.url,
         )
         ics_event_promo_day.make_all_day()
         events.append(ics_event_promo_day)
         ics_event_day = ics.Event(
             summary="Akce v klubu",
-            begin=event.start_at,
+            begin=start_at,
             description=event.url,
         )
         ics_event_day.make_all_day()
@@ -74,7 +80,7 @@ def build_events_honza_ics(api_dir, config):
         events.append(
             ics.Event(
                 summary=f"{event.bio_name}: {event.title}",
-                begin=event.start_at - timedelta(minutes=30),
+                begin=start_at - timedelta(minutes=30),
                 duration=timedelta(hours=3),
                 description=event.url,
             )
@@ -196,3 +202,7 @@ def build_podcast_xml(api_dir, config):
         podcast.add_episode(episode)
 
     podcast.rss_file(str(api_dir / "podcast.xml"))
+
+
+def naive_utc_to_prg(dt: datetime) -> datetime:
+    return dt.replace(tzinfo=UTC).astimezone(ZoneInfo("Europe/Prague"))

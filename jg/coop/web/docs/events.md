@@ -17,11 +17,11 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
 
 <div class="standout">
   <a class="brand-button youtube" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA">{{ 'youtube'|icon }} YouTube</a>
+  <a class="brand-button calendar" target="_blank" rel="noopener" href="webcal://junior.guru/api/events.ics">{{ 'calendar-event'|icon }} Kalendář</a>
   <a class="brand-button email" href="{{ pages|docs_url('news.jinja')|url }}">{{ 'envelope-paper-fill'|icon }} Newsletter</a>
 
   {#
-  <a class="brand-button icalendar" target="_blank" rel="noopener" href="https://junior.guru/api/events.ics">{{ 'calendar-event'|icon }} iCalendar</a>
-  <a class="brand-button rss" target="_blank" rel="noopener" href="https://junior.guru/api/events.xml">{{ 'rss-fill'|icon }} RSS</a>
+    <a class="brand-button rss" target="_blank" rel="noopener" href="https://junior.guru/api/events.xml">{{ 'rss-fill'|icon }} RSS</a>
   #}
 </div>
 

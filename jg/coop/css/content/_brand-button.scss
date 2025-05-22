@@ -68,3 +68,14 @@
     $disabled-color: $jg-white
   );
 }
+
+.brand-button.calendar {
+  @include button-variant(
+    #4285f4,
+    #4285f4,
+    $jg-white,
+    $hover-color: $jg-white,
+    $active-color: $jg-white,
+    $disabled-color: $jg-white
+  );
+}
