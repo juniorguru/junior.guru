@@ -2,13 +2,21 @@
 
 # {{ event.title }}
 
-{#
 {% call lead() %}
-  ...
+Klub junior.guru pořádá vzdělávací akce, online na svém Discordu.
+{%- if event.start_at < now.replace(tzinfo=none) %}
+  Toto je jeda z nich. Už proběhla, ale najdeš tady o ní všechny informace
+  {%- if event.has_recording %}, včetně odkazu na záznam.{% else %}.{% endif %}
+{% else %}
+  Toto je upoutávka na jednu z nich, která teprve proběhne. Přečti si, jak se k nám můžeš připojit!
+{% endif %}
 {% endcall %}
-#}
 
 {#
+
+Zveme si profíky na témata kolem programování nebo shánění první práce v oboru.
+  Pojetí akcí je vždy vyloženě pro začátečníky.
+  Žádná záplava odborných „termitů“, které ti nikdo nevysvětlil!
 
 ## Jak to funguje?
 

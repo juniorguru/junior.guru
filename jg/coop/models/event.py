@@ -41,6 +41,10 @@ class Event(BaseModel):
     plain_poster_path = CharField(null=True)
 
     @property
+    def has_recording(self) -> bool:
+        return bool(self.club_recording_url or self.public_recording_url)
+
+    @property
     def full_title(self) -> str:
         return f"{self.bio_name} – {self.title}"
 
@@ -106,9 +110,7 @@ class Event(BaseModel):
                     else "junior.guru/events"
                 ),
                 "platforms": (
-                    ["discord", "youtube"]
-                    if self.club_recording_url or self.public_recording_url
-                    else ["discord"]
+                    ["discord", "youtube"] if self.has_recording else ["discord"]
                 ),
             }
         return context
