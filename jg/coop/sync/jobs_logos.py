@@ -116,14 +116,14 @@ def main():
         image_path = LOGOS_DIR / f"{hash}.png"
         logger.info(f"Generating to {image_path}")
         if image_path.exists():
-            logger.info(f"Path {image_path} already exists")
+            logger.debug(f"Path {image_path} already exists")
         else:
-            logger.info(f"Generating initial {job.initial!r}")
+            logger.debug(f"Generating initial {job.initial!r}")
             image = create_fallback_image(job.initial)
             image.save(image_path)
         job.company_logo_path = image_path.relative_to(IMAGES_DIR)
         job.save()
-        logger.info(f"Logo for {job!r}: {job.company_logo_path}")
+        logger.debug(f"Logo for {job!r}: {job.company_logo_path}")
 
     logger.info("Generating special question mark logo for club jobs")
     create_fallback_image("?").save(LOGOS_DIR / "unknown.png")
