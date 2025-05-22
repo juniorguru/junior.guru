@@ -14,7 +14,9 @@ max_concurrency = 32
 include_verbatim = true
 
 # Check fragments in links
-include_fragments = true
+# https://github.com/lycheeverse/lychee/issues/1709
+# https://github.com/lycheeverse/lychee/pull/1675
+#include_fragments = true
 
 # Don't check emails, it's problematic
 include_mail = false
@@ -52,8 +54,8 @@ exclude = [
     "^https://www\\.writethedocs\\.org",
 
     # Expired jobs
-    "^https://jobs\\.cz/fp/",
-    "^https://jobs\\.cz/rpd/",
+    "^https://(www\\.)?jobs\\.cz/fp/",
+    "^https://(www\\.)?jobs\\.cz/rpd/",
 
     # Not yet deployed avatars of club members or company logos
     "^https://junior\\.guru/static/avatars-club/[^\\.]+\\.png",
