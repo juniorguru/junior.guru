@@ -78,23 +78,9 @@ def generate_event_pages() -> Generator[dict[str, Any], None, None]:
                     "Vše o online akci (přednáška, stream, Q&A, AMA, webinář…), "
                     "kterou junior.guru pořádá na klubovém Discordu."
                 ),
-                event_id=event.id,
-                thumbnail_date=event.start_at.isoformat(),
-                thumbnail_title=event.title,
-                thumbnail_subheading=event.bio_name,
-                thumbnail_image_path=event.avatar_path,
-                thumbnail_button_heading="Sleduj na",
-                thumbnail_button_link=(
-                    "youtube.com/@juniordotguru"
-                    if event.public_recording_url
-                    else "junior.guru/events"
-                ),
-                thumbnail_platforms=(
-                    ["youtube"]
-                    if event.public_recording_url
-                    else ["discord", "youtube"]
-                ),
                 template="main_subnav.html",
+                event_id=event.id,
+                **event.to_thumbnail_meta(),
             ),
             template="event.md",
         )

@@ -38,6 +38,7 @@ class Event(BaseModel):
     public_recording_duration_s = IntegerField(null=True)
     view_count = IntegerField(default=0)
     poster_path = CharField(null=True)
+    plain_poster_path = CharField(null=True)
 
     @property
     def full_title(self) -> str:
@@ -72,7 +73,7 @@ class Event(BaseModel):
         )
 
     @property
-    def url(self):
+    def url(self) -> str:
         return f"https://junior.guru/events/{self.id}/"
 
     @property
@@ -88,6 +89,37 @@ class Event(BaseModel):
             subtitle=self.bio_name,
             date=self.start_at,
         )
+
+    def to_image_template_context(self, plain: bool = False) -> dict:
+        context = {
+            "title": self.title,
+            "image_path": self.avatar_path,
+            "subheading": self.bio_name,
+            "date": self.start_at_prg,
+        }
+        if not plain:
+            context |= {
+                "button_heading": "Sleduj na",
+                "button_link": (
+                    "youtube.com/@juniordotguru"
+                    if self.public_recording_url
+                    else "junior.guru/events"
+                ),
+                "platforms": (
+                    ["discord", "youtube"]
+                    if self.club_recording_url or self.public_recording_url
+                    else ["discord"]
+                ),
+            }
+        return context
+
+    def to_thumbnail_meta(self) -> dict:
+        meta = {
+            f"thumbnail_{key}": value
+            for key, value in self.to_image_template_context().items()
+        }
+        meta["thumbnail_date"] = meta["thumbnail_date"].isoformat()
+        return meta
 
     @classmethod
     def list_speaking_members(cls):

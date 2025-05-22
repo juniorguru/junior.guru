@@ -59,13 +59,13 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
 {% if events_planned|length %}
 ## Plánované akce
 
-<div class="link-cards">
+<div class="link-cards wide">
   {% for event in events_planned %}
     {{ link_card(
       event.title,
       pages|docs_url(event.page_url)|url,
       caption=event.bio_name,
-      thumbnail_url="static/" + event.avatar_path,
+      thumbnail_url="static/" + event.plain_poster_path,
       badge_icon='bell-fill',
       badge_text='{:%-d.%-m.}'.format(event.start_at),
     ) }}
@@ -75,13 +75,13 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
 
 ## Proběhlé akce
 
-<div class="link-cards">
+<div class="link-cards wide">
 {% for event in events_archive %}
   {{ link_card(
     event.title,
     pages|docs_url(event.page_url)|url,
     caption=event.bio_name,
-    thumbnail_url="static/" + event.avatar_path,
+    thumbnail_url="static/" + event.plain_poster_path,
     badge_icon='unlock-fill' if event.public_recording_url else none,
     badge_text='Veřejný záznam' if event.public_recording_url else none,
   ) }}

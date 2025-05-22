@@ -200,29 +200,32 @@ def main(
             event.save()
 
             logger.info(f"Rendering posters for {event_config.title!r}")
-            image_path = render_image_file(
-                width,
-                height,
-                "thumbnail.jinja",
-                dict(
-                    title=event.title,
-                    image_path=event.avatar_path,
-                    subheading=event.bio_name,
-                    date=event.start_at,
-                    button_heading="Sleduj na",
-                    button_link=(
-                        "youtube.com/@juniordotguru"
-                        if event.public_recording_url
-                        else "junior.guru/events"
-                    ),
+            filters = dict(local_time=local_time, weekday=weekday, icon=icon)
+            date_prefix = event.start_at.date().isoformat().replace("-", "")
+            for event_property, context, prefix in [
+                (
+                    "poster_path",
+                    event.to_image_template_context(),
+                    date_prefix,
                 ),
-                POSTERS_DIR,
-                filters=dict(local_time=local_time, weekday=weekday, icon=icon),
-                prefix=event.start_at.date().isoformat().replace("-", ""),
-            )
-            image_path_relative = image_path.relative_to(IMAGES_DIR)
-            event.poster_path = image_path_relative
-            posters.record(IMAGES_DIR / image_path_relative)
+                (
+                    "plain_poster_path",
+                    event.to_image_template_context(plain=True),
+                    f"{date_prefix}-plain",
+                ),
+            ]:
+                image_path = render_image_file(
+                    width,
+                    height,
+                    "thumbnail.jinja",
+                    context,
+                    POSTERS_DIR,
+                    filters=filters,
+                    prefix=prefix,
+                )
+                image_path_relative = image_path.relative_to(IMAGES_DIR)
+                setattr(event, event_property, image_path_relative)
+                posters.record(IMAGES_DIR / image_path_relative)
 
             logger.info(f"Saving {event_config.title!r}")
             event.save()
