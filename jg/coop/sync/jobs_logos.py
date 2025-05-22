@@ -226,6 +226,7 @@ def create_fallback_image(
     bg_color: tuple[int] = (255, 255, 255),
     padding: int = 5,
 ) -> Image:
+    logger.info(f"Creating fallback image for {initial}")
     # the fonts provided by @fontsource/inter are split into files according to
     # the character set they support, so we need to choose the right one based
     # on the initial character
@@ -238,11 +239,12 @@ def create_fallback_image(
         if any(ord(initial) in table.cmap for table in TTFont(font_path)["cmap"].tables)
     )
 
+    logger.info(f"Using font {font_path} for {initial}")
     image = Image.new("RGB", (SIZE_PX, SIZE_PX), bg_color)
     draw = ImageDraw.Draw(image)
     font = ImageFont.truetype(font_path, SIZE_PX - (padding * 2))
 
-    # centering the text
+    logger.info(f"Centering text for {initial}")
     _, _, box_width, box_height = draw.textbbox(xy=(0, 0), text=initial, font=font)
     text_width, text_height = font.getmask(initial).size
     x_text = (SIZE_PX - text_width) / 2
