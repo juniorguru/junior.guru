@@ -225,7 +225,7 @@ def create_fallback_image(
     color: tuple[int] = (231, 231, 231),
     bg_color: tuple[int] = (255, 255, 255),
     padding: int = 5,
-) -> Image:
+) -> Image:  # TODO log as debug once CI stops failing
     logger.info(f"Creating fallback image for {initial}")
     # the fonts provided by @fontsource/inter are split into files according to
     # the character set they support, so we need to choose the right one based
