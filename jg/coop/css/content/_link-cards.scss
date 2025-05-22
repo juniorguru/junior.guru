@@ -1,6 +1,7 @@
 .link-cards {
   display: flex;
   flex-wrap: wrap;
+  gap: $spacer;
 }
 
 .link-card {
@@ -8,7 +9,6 @@
   flex-grow: 0;
   flex-shrink: 0;
   width: 100%;
-  margin: 0 0 $spacer;
   overflow: hidden;
   background: $jg-blue-light;
   border: 1px solid $jg-blue-light;
@@ -18,7 +18,6 @@
     width: $w;
     min-width: $w;
     max-width: $w;
-    margin-right: $spacer;
   }
 
   @include media-breakpoint-up(md) {
@@ -26,29 +25,12 @@
     width: $w;
     min-width: $w;
     max-width: $w;
-    margin-right: $spacer;
   }
 }
 
 .link-card.highlighted {
   background: $jg-yellow;
   border-color: $jg-yellow;
-}
-
-.link-card:nth-child(2n) {
-  @include media-breakpoint-up(sm) {
-    margin-right: 0;
-  }
-
-  @include media-breakpoint-up(md) {
-    margin-right: $spacer;
-  }
-}
-
-.link-card:nth-child(3n) {
-  @include media-breakpoint-up(md) {
-    margin-right: 0;
-  }
 }
 
 .link-card-image {
