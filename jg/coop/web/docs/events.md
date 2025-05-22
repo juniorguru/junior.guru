@@ -65,7 +65,7 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
       event.title,
       pages|docs_url(event.page_url)|url,
       caption=event.bio_name,
-      thumbnail_url=("static/" + event.avatar_path)|url,
+      thumbnail_url="static/" + event.avatar_path,
       badge_icon='bell-fill',
       badge_text='{:%-d.%-m.}'.format(event.start_at),
     ) }}
@@ -81,7 +81,7 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
     event.title,
     pages|docs_url(event.page_url)|url,
     caption=event.bio_name,
-    thumbnail_url=("static/" + event.avatar_path)|url,
+    thumbnail_url="static/" + event.avatar_path,
     badge_icon='unlock-fill' if event.public_recording_url else none,
     badge_text='Veřejný záznam' if event.public_recording_url else none,
   ) }}
