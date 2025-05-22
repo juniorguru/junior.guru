@@ -107,8 +107,9 @@ def main():
                 logger.debug(f"Logo for {job!r}: {job.company_logo_path}")
             job.save()
 
-    logger.info("Generating fallback logo images for remaining jobs")
-    for job in logger.progress(ListedJob.no_logo_listing(), chunk_size=1):
+    remaining_jobs = list(ListedJob.no_logo_listing())
+    logger.info(f"Generating fallback logo images for {remaining_jobs} remaining jobs")
+    for job in logger.progress(remaining_jobs, chunk_size=1):
         hash = hashlib.sha1(f"initial-{job.initial}".encode()).hexdigest()
         image_path = LOGOS_DIR / f"{hash}.png"
         if not image_path.exists():
