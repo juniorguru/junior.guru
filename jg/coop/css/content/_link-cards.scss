@@ -28,6 +28,15 @@
   }
 }
 
+.link-cards.wide .link-card {
+  @include media-breakpoint-up(md) {
+    $w: calc((100% - (2 * #{$spacer})) / 2);
+    width: $w;
+    min-width: $w;
+    max-width: $w;
+  }
+}
+
 .link-card.highlighted {
   background: $jg-yellow;
   border-color: $jg-yellow;
