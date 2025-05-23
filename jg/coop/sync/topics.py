@@ -96,6 +96,8 @@ KEYWORDS = {
         r"it[\- ]?academy(\.sk)?": "itacademy",
         r"vita\.sk": "vita",
         r"vita\s?academy": "vita",
+        r"scripteo": "scripteo",
+        r"(vláďa|vladimír|vlada|vladimir)\s+macek": "scripteo",
     }.items()
 }
 
