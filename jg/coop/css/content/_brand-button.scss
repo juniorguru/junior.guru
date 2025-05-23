@@ -1,6 +1,16 @@
 .brand-button {
   @extend .btn;
   margin-bottom: map-get($spacers, 1);
+
+  &.circle {
+    align-content: center;
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 100%;
+  }
 }
 
 .brand-button.spotify {

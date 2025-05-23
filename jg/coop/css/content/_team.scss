@@ -1,0 +1,38 @@
+$team-photo-width: map-get($spacers, 5) * 1.5;
+
+.team {
+  display: flex;
+  flex-direction: column;
+  gap: $spacer;
+}
+
+.team-member {
+  display: flex;
+}
+
+.team-member-photo {
+  width: $team-photo-width;
+  height: $team-photo-width;
+  border-radius: 100%;
+}
+
+.team-member-body {
+  padding-left: $spacer;
+}
+
+.team-member-body > *:last-child {
+  margin-bottom: 0;
+}
+
+.team-member-body h2,
+.team-member-body h3 {
+  margin-top: 0;
+}
+
+.team-member-link {
+  align-content: center;
+  margin-left: map-get($spacers, 2);
+  font-size: $font-size-base;
+  // color: #0077b5;
+  text-align: center;
+}

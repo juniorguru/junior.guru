@@ -25,36 +25,54 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
   #}
 </div>
 
-{#
-<h2 class="visually-hidden">Autoři</h2>
-<div class="podcast-author">
-  {{ img('static/avatars-participants/honza-javorek.jpg', 'Honza Javorek', 100, 100, lazy=False, class='podcast-author-photo') }}
-  <div class="podcast-author-body">
-    <h3>Honza Javorek</h3>
+<div class="team">
+<h2 class="visually-hidden">Tým</h2>
+<div class="team-member">
+  {{ img('static/avatars-participants/honza-javorek.jpg', 'Honza Javorek', 100, 100, lazy=False, class='team-member-photo') }}
+  <div class="team-member-body">
+    <h3>
+      Honza Javorek
+      <a class="team-member-link" href="https://www.linkedin.com/in/honzajavorek/" target="_blank" rel="noopener">
+        {{ 'linkedin'|icon }}
+        <span class="visually-hidden">LinkedIn</span>
+      </a>
+    </h3>
     {% call markdown() -%}
       Autor projektu junior.guru. Shání hosty, stará se o propagaci, moderuje akce.
     {%- endcall %}
   </div>
 </div>
-<div class="podcast-author">
-  {{ img('static/avatars-participants/pavlina-fronkova.jpg', 'Táňa Váchová', 100, 100, lazy=False, class='podcast-author-photo') }}
-  <div class="podcast-author-body">
-    <h3>Táňa Váchová</h3>
+<div class="team-member">
+  {{ img('static/avatars-participants/tana-vachova.jpg', 'Táňa Váchová', 100, 100, lazy=False, class='team-member-photo') }}
+  <div class="team-member-body">
+    <h3>
+      Táňa Váchová
+      <a class="team-member-link" href="https://www.linkedin.com/in/t%C3%A1%C5%88a-v%C3%A1chov%C3%A1-512981330/" target="_blank" rel="noopener">
+        {{ 'linkedin'|icon }}
+        <span class="visually-hidden">LinkedIn</span>
+      </a>
+    </h3>
     {% call markdown() -%}
       Stará se o domlouvání termínů a veškerou administrativu kolem přípravy přednášek.
     {%- endcall %}
   </div>
 </div>
-<div class="podcast-author">
-  {{ img('static/avatars-participants/pavlina-fronkova.jpg', 'Patrik Brnušák', 100, 100, lazy=False, class='podcast-author-photo') }}
-  <div class="podcast-author-body">
-    <h3>Patrik Brnušák</h3>
+<div class="team-member">
+  {{ img('static/avatars-participants/patrik-brnusak.jpg', 'Patrik Brnušák', 100, 100, lazy=False, class='team-member-photo') }}
+  <div class="team-member-body">
+    <h3>
+      Patrik Brnušák
+      <a class="team-member-link" href="https://www.linkedin.com/in/patrik-brnusak-cz/" target="_blank" rel="noopener">
+        {{ 'linkedin'|icon }}
+        <span class="visually-hidden">LinkedIn</span>
+      </a>
+    </h3>
     {% call markdown() -%}
       Stará se o nahrávání záznamů.
     {%- endcall %}
   </div>
 </div>
-#}
+</div>
 
 {% if events_planned|length %}
 ## Plánované akce

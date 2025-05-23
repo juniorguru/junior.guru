@@ -1,22 +1,22 @@
-.course-provider {
+.details {
   @extend .card;
   background: $jg-blue-light;
   border-color: $jg-white;
 }
 
-.highlighted.course-provider {
+.highlighted.details {
   background-color: $jg-yellow-light;
   border: 1px solid $jg-yellow;
 }
 
-.course-provider-header {
+.details-header {
   padding: $spacer;
   padding-bottom: map-get($spacers, 4);
   text-align: center;
   border-radius: $border-radius $border-radius 0 0;
 }
 
-.course-provider-logo {
+.details-logo {
   width: auto;
   height: 6rem;
   padding: $spacer;
@@ -24,7 +24,7 @@
   border-radius: $border-radius;
 }
 
-.course-provider-info {
+.details-info {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -34,8 +34,8 @@
   }
 }
 
-.course-provider-image,
-.course-provider-body {
+.details-image,
+.details-body {
   width: 100%;
 
   @include media-breakpoint-up(lg) {
@@ -43,25 +43,47 @@
   }
 }
 
-.course-provider-image {
+.details-info.avatar {
+  @include media-breakpoint-up(sm) {
+    flex-direction: row-reverse;
+  }
+}
+
+.details-info.avatar .details-image {
+  @include media-breakpoint-up(sm) {
+    width: 35%;
+  }
+}
+
+.details-info.avatar .details-body {
+  @include media-breakpoint-up(sm) {
+    width: 65%;
+  }
+}
+
+.details-image {
   padding: $spacer;
 }
 
-.course-provider-screenshot {
+.details-thumbnail {
   width: 100%;
   height: auto;
   border: 1px solid $jg-gray-light;
   border-radius: $border-radius;
 }
 
-.course-provider-heading {
+.details-info.avatar .details-thumbnail {
+  border-radius: 100%;
+}
+
+.details-heading {
   padding: $list-group-item-padding-y $list-group-item-padding-x;
   margin: $spacer 0 0 0;
   font-size: $font-size-lg;
   font-weight: $font-weight-normal;
 }
 
-.course-provider-note {
+.details-note {
   @extend .small;
   flex: 0 0 100%;
   order: 2;
@@ -70,22 +92,32 @@
   margin: $spacer 0 0 0;
 }
 
-.course-provider-items {
+.details-items {
   @extend .list-group;
   @extend .list-group-flush;
 }
 
-.course-provider-items:first-child {
+.details-items:first-child {
   margin-top: $list-group-item-padding-y;
 }
 
-.course-provider-item {
+.details-item {
   @extend .list-group-item;
   background-color: transparent;
   border-color: transparent;
 }
 
-.course-provider-items.compact .course-provider-item {
+.details-text {
+  padding: $list-group-item-padding-y $list-group-item-padding-x;
+  margin: 0;
+}
+
+.details-text > *:last-child {
+  margin-bottom: 0;
+}
+
+.details-items.compact .details-item,
+.details-text.compact {
   padding: ($list-group-item-padding-y * .5) $list-group-item-padding-x;
   font-size: $font-size-sm;
 }

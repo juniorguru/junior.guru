@@ -20,24 +20,38 @@ Podcast pro juniory v IT! Jak začít s programováním? Jak najít práci v 
   <a class="brand-button email" href="{{ pages|docs_url('news.jinja')|url }}">{{ 'envelope-paper-fill'|icon }} Newsletter</a>
 </div>
 
-<h2 class="visually-hidden">Autoři</h2>
-<div class="podcast-author">
-  {{ img('static/avatars-participants/pavlina-fronkova.jpg', 'Pája Froňková', 100, 100, lazy=False, class='podcast-author-photo') }}
-  <div class="podcast-author-body">
-    <h3>Pája Froňková</h3>
+<div class="team">
+<h2 class="visually-hidden">Tým</h2>
+<div class="team-member">
+  {{ img('static/avatars-participants/pavlina-fronkova.jpg', 'Pája Froňková', 100, 100, lazy=False, class='team-member-photo') }}
+  <div class="team-member-body">
+    <h3>
+      Pája Froňková
+      <a class="team-member-link" href="https://www.linkedin.com/in/pavlinafronkova/" target="_blank" rel="noopener">
+        {{ 'linkedin'|icon }}
+        <span class="visually-hidden">LinkedIn</span>
+      </a>
+    </h3>
     {% call markdown() -%}
       Autorka podcastu, datová analytička, PyLady. Vymýšlí témata, zve hosty, moderuje. Natáčí a stříhá epizody.
     {%- endcall %}
   </div>
 </div>
-<div class="podcast-author">
-  {{ img('static/avatars-participants/honza-javorek.jpg', 'Honza Javorek', 100, 100, lazy=False, class='podcast-author-photo') }}
-  <div class="podcast-author-body">
-    <h3>Honza Javorek</h3>
+<div class="team-member">
+  {{ img('static/avatars-participants/honza-javorek.jpg', 'Honza Javorek', 100, 100, lazy=False, class='team-member-photo') }}
+  <div class="team-member-body">
+    <h3>
+      Honza Javorek
+      <a class="team-member-link" href="https://www.linkedin.com/in/honzajavorek/" target="_blank" rel="noopener">
+        {{ 'linkedin'|icon }}
+        <span class="visually-hidden">LinkedIn</span>
+      </a>
+    </h3>
     {% call markdown() -%}
-      Autor projektu junior.guru. Pomáhá shánět hosty, stará se o technické zázemí podcastu a propagaci epizod.
+      Autor projektu junior.guru. Pomáhá shánět hosty, stará se o technické zázemí a propagaci podcastu.
     {%- endcall %}
   </div>
+</div>
 </div>
 
 ## Epizody
