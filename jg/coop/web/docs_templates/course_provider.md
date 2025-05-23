@@ -21,25 +21,25 @@
 {% endcall %}
 
 {% set screenshot_image_url = course_provider.url|screenshot_url %}
-<div class="standout course-provider {{ course_provider.group }}"
+<div class="standout details {{ course_provider.group }}"
   data-screenshot-source-url="{{ course_provider.url }}"
   data-screenshot-image-url="{{ screenshot_image_url }}">
   {% if course_provider.group == "highlighted" %}
-    <div class="course-provider-header">
-      {{ img('static/' + course_provider.organization.logo_path, 'logo ' + course_provider.name, 200, 100, class='course-provider-logo', lazy=False) }}
+    <div class="details-header">
+      {{ img('static/' + course_provider.organization.logo_path, 'logo ' + course_provider.name, 200, 100, class='details-logo', lazy=False) }}
     </div>
   {% endif %}
-  <div class="course-provider-info">
-    <div class="course-provider-image">
-      {{ img(screenshot_image_url, title, 640, 360, class='course-provider-screenshot', lazy=False) }}
+  <div class="details-info">
+    <div class="details-image">
+      {{ img(screenshot_image_url, title, 640, 360, class='details-thumbnail', lazy=False) }}
     </div>
-    <div class="course-provider-body">
-      <ul class="course-provider-items">
-        <li class="course-provider-item">
+    <div class="details-body">
+      <ul class="details-items">
+        <li class="details-item">
           <strong>Název:</strong>
           {{ course_provider.name }}
         </li>
-        <li class="course-provider-item">
+        <li class="details-item">
           <strong>Web:</strong>
           <a href="{{ course_provider.url }}" target="_blank"
             {% if course_provider.group != "highlighted" %}rel="nofollow noopener"{% endif -%}
@@ -49,25 +49,25 @@
         </li>
       </ul>
       {% if course_provider.cz_business_id %}
-      <h5 class="course-provider-heading">Provozovatel v Česku</h5 class="course-provider-heading">
-      <ul class="course-provider-items compact">
+      <h5 class="details-heading">Provozovatel v Česku</h5>
+      <ul class="details-items compact">
         {% if course_provider.cz_name %}
-        <li class="course-provider-item">
+        <li class="details-item">
           {{ course_provider.cz_name }}
         </li>
         {% endif %}
         {% if course_provider.cz_legal_form %}
-        <li class="course-provider-item">
+        <li class="details-item">
           <strong>Forma:</strong>
           {{ course_provider.cz_legal_form }}
         </li>
         {% endif %}
-        <li class="course-provider-item">
+        <li class="details-item">
           <strong>IČO:</strong>
           {{ '{:08d}'.format(course_provider.cz_business_id) }}
         </li>
         {% if course_provider.cz_years_in_business %}
-        <li class="course-provider-item">
+        <li class="details-item">
           <strong>Funguje:</strong>
           {{ course_provider.cz_years_in_business }}
           {{ course_provider.cz_years_in_business|nplurals("rok", "roky", "let") }}
@@ -76,25 +76,25 @@
       </ul>
       {% endif %}
       {% if course_provider.sk_business_id %}
-      <h5 class="course-provider-heading">Provozovatel na Slovensku</h5 class="course-provider-heading">
-      <ul class="course-provider-items compact">
+      <h5 class="details-heading">Provozovatel na Slovensku</h5>
+      <ul class="details-items compact">
         {% if course_provider.sk_name %}
-        <li class="course-provider-item">
+        <li class="details-item">
           {{ course_provider.sk_name }}
         </li>
         {% endif %}
         {% if course_provider.sk_legal_form %}
-        <li class="course-provider-item">
+        <li class="details-item">
           <strong>Forma:</strong>
           {{ course_provider.sk_legal_form }}
         </li>
         {% endif %}
-        <li class="course-provider-item">
+        <li class="details-item">
           <strong>IČO:</strong>
           {{ '{:08d}'.format(course_provider.sk_business_id) }}
         </li>
         {% if course_provider.sk_years_in_business %}
-        <li class="course-provider-item">
+        <li class="details-item">
           <strong>Funguje:</strong>
           {{ course_provider.sk_years_in_business }}
           {{ course_provider.sk_years_in_business|nplurals("rok", "roky", "let") }}
@@ -104,7 +104,7 @@
       {% endif %}
     </div>
     {% if course_provider.cz_business_id or course_provider.sk_business_id %}
-      <p class="course-provider-note">
+      <p class="details-note">
         {{ 'info-circle'|icon }}
         Imper pro junior.guru zdarma poskytl údaje ze své <a href="https://www.merk.cz/?utm_source=junior.guru&utm_medium=web&utm_campaign=catalog" rel="noopener" target="_blank">databáze firem Merk</a>. Děkujeme!
       </p>

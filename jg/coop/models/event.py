@@ -41,6 +41,14 @@ class Event(BaseModel):
     plain_poster_path = CharField(null=True)
 
     @property
+    def duration_s(self) -> int:
+        return max(
+            self.public_recording_duration_s or 0,
+            self.private_recording_duration_s or 0,
+            int((self.end_at - self.start_at).total_seconds()),
+        )
+
+    @property
     def has_recording(self) -> bool:
         return bool(self.club_recording_url or self.public_recording_url)
 

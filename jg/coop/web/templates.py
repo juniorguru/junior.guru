@@ -73,10 +73,11 @@ def generate_event_pages() -> Generator[dict[str, Any], None, None]:
         yield dict(
             path=f"events/{event.id}.md",
             meta=dict(
-                title=f"Online akce – {event.full_title}",
+                title=f"{event.full_title} – online akce na Discordu junior.guru",
                 description=(
-                    "Vše o online akci (přednáška, stream, Q&A, AMA, webinář…), "
-                    "kterou junior.guru pořádá na klubovém Discordu."
+                    "Klub junior.guru pořádá vzdělávací akce, online na svém Discordu. "
+                    "Mohou to být přednášky, stream, Q&A, AMA, webináře… "
+                    "Toto je stránka o jedné z nich."
                 ),
                 template="main_subnav.html",
                 event_id=event.id,
