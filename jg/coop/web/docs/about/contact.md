@@ -42,7 +42,7 @@ Tady je posledních pět článků:
 
 ## Tým pomocníků
 
-Je pouhou iluzí, že by šlo celé junior.guru dělat v jednom člověku. Tady jsou všichni, kteří se nějakou větší měrou podílí na úspěchu projektu – ať už jde o dobrovolníky, nebo kontraktory.
+Je pouhou iluzí, že by šlo celé junior.guru dělat v jednom člověku. Tady jsou všichni, kteří se nějakou větší měrou podílí, nebo historicky podíleli na úspěchu projektu – ať už jde o dobrovolníky, nebo kontraktory.
 
 <table class="table">
   <tr>
@@ -65,6 +65,10 @@ Je pouhou iluzí, že by šlo celé junior.guru dělat v jednom člověku. Tady 
   <tr>
     <td><a href="https://www.linkedin.com/in/madrvojtech/">Vojta Mádr</a></td>
     <td>moderování klubu</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.linkedin.com/in/t%C3%A1%C5%88a-v%C3%A1chov%C3%A1-512981330/">Táňa Váchová</a></td>
+    <td>produkce online akcí</td>
   </tr>
   <tr>
     <td><a href="https://www.linkedin.com/in/patrik-brnusak-cz/">Patrik Brnušák</a></td>
@@ -109,6 +113,10 @@ Je pouhou iluzí, že by šlo celé junior.guru dělat v jednom člověku. Tady 
   </tr>
   <tr>
     <td><a href="https://www.linkedin.com/in/adelapavlun/">Adéla Pavlun</a></td>
+    <td>produkce rozhovorů</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.linkedin.com/in/adamkral1/">Adam Král</a></td>
     <td>produkce rozhovorů</td>
   </tr>
   <tr>
