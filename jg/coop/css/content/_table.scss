@@ -1,0 +1,13 @@
+.table-image,
+.table-logo {
+  text-align: center;
+}
+
+.table-image img {
+  border-radius: $border-radius;
+}
+
+.table-logo img {
+  width: 80%;
+  height: auto;
+}

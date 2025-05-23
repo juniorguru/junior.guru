@@ -56,7 +56,7 @@ Sponzoři, kteří zaplatili za tarif číslo {{ tier.priority + 1 }} (vyšší 
           <small>zbývá</small>
         </span>
       </td>
-      <td style="width: 200px">
+      <td style="width: 200px" class="table-logo">
         {{ img('static/' + sponsor.logo_path, sponsor.name, 130, 60) }}
       </td>
     </tr>
@@ -75,7 +75,7 @@ Sponzoři, kteří využívají [GitHub Sponsors](https://github.com/sponsors/ho
         <a href="{{ sponsor.url }}" target="_blank" rel="noopener">@{{ sponsor.slug }}</a>
         {% if sponsor.name %}<br><small>{{ sponsor.name }}</small>{% endif %}
       </td>
-      <td style="width: 200px">
+      <td style="width: 200px" class="table-image">
         {{ img('static/' + sponsor.avatar_path, sponsor.name, 50, 50) }}
       </td>
     </tr>
@@ -124,7 +124,7 @@ Aktuálně junior.guru spolupracuje s **{{ partners|length }} partnery**. Partne
         {{ partner.members_count }}<br>
         <small>{{ partner.members_count|nplurals("člen", "členové", "členů") }}</small>
       </td>
-      <td style="width: 200px">
+      <td style="width: 200px" class="table-logo">
         {{ img('static/' + partner.logo_path, partner.name, 130, 60) }}
       </td>
     </tr>
