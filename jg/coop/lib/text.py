@@ -4,6 +4,7 @@ import unicodedata
 import emoji
 from lxml import etree, html
 from lxml.html import soupparser as html_soup
+from slugify import slugify
 
 
 # http://jkorpela.fi/chars/spaces.html
@@ -156,3 +157,7 @@ def emoji_url(text: str) -> str:
     ]
     basename = "-".join(codepoints)
     return f"https://jdecked.github.io/twemoji/v/latest/72x72/{basename}.png"
+
+
+def get_tag_slug(text: str) -> str:
+    return slugify(text, separator="")

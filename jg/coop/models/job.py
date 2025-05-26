@@ -18,8 +18,8 @@ from peewee import (
 )
 from playhouse.shortcuts import model_to_dict
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
-from slugify import slugify
 
+from jg.coop.lib.text import get_tag_slug
 from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubUser
 
@@ -294,7 +294,7 @@ class ListedJob(BaseModel):
         for employment_type in self.employment_types or []:
             tags.append(Tag(slug=employment_type, type=TagType.EMPLOYMENT))
         for region in self.regions:
-            tags.append(Tag(slug=slugify(region, separator=""), type=TagType.LOCATION))
+            tags.append(Tag(slug=get_tag_slug(region), type=TagType.LOCATION))
         for tech_tag in self.tech_tags:
             tags.append(Tag(slug=tech_tag, type=TagType.TECHNOLOGY))
         for source in self.sources:

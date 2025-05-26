@@ -1,5 +1,6 @@
 from datetime import UTC, datetime
-from flask import Flask, render_template, url_for
+
+from flask import Flask, render_template
 from flask_frozen import Freezer
 
 from jg.coop.lib import loggers, template_filters
@@ -77,15 +78,10 @@ REGIONS = [
 def get_freezer(app) -> Freezer:
     freezer = Freezer(app)
     freezer.register_generator(generate_job_pages)
-    freezer.register_generator(generate_jobs_region_pages)
     return freezer
 
 
 app = Flask(__name__)
-
-
-def redirect(url):
-    return render_template("meta_redirect.html", url=url)
 
 
 for template_filter in [
@@ -111,27 +107,6 @@ def jobs_remote():
         regions=REGIONS,
         thumbnail=LegacyThumbnail.image_path_by_url("/jobs/remote/"),
     )
-
-
-@app.route("/jobs/region/<region_id>/")
-@db.connection_context()
-def jobs_region(region_id):
-    region = [reg for reg in REGIONS if reg["id"] == region_id][0]
-    jobs = ListedJob.region_listing(region["name"])
-    jobs_remote = ListedJob.remote_listing()
-    return render_template(
-        "jobs_region.html",
-        nav_active="jobs",
-        jobs=jobs,
-        jobs_remote=jobs_remote,
-        region=region,
-        regions=REGIONS,
-        thumbnail=LegacyThumbnail.image_path_by_url(f"/jobs/region/{region_id}/"),
-    )
-
-
-def generate_jobs_region_pages():
-    return [("jobs_region", dict(region_id=region["id"])) for region in REGIONS]
 
 
 @app.route("/jobs/<job_id>/")
@@ -188,6 +163,11 @@ def jobs():
     return REFRESH_PAGE
 
 
+@app.route("/jobs/region/<region_id>/")
+def jobs_region(region_id):
+    return REFRESH_PAGE
+
+
 @app.route("/news/")
 def news():
     return REFRESH_PAGE
@@ -225,19 +205,19 @@ def handbook_candidate():
 
 @app.route("/press/")
 def press():
-    return redirect(url_for("club", _external=True) + "#honza")
+    return REFRESH_PAGE
 
 
 @app.route("/press/handbook/")
 def press_release_handbook():
-    return redirect(url_for("club", _external=True) + "#honza")
+    return REFRESH_PAGE
 
 
 @app.route("/press/women/")
 def press_release_women():
-    return redirect(url_for("club", _external=True) + "#honza")
+    return REFRESH_PAGE
 
 
 @app.route("/press/crisis/")
 def press_release_crisis():
-    return redirect(url_for("club", _external=True) + "#honza")
+    return REFRESH_PAGE

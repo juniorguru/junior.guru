@@ -37,6 +37,7 @@ REWRITES_RE = {
     re.compile(r"\bMoravia-Silesia\b", re.I): "Moravskoslezský kraj",
     re.compile(r"\bMetropolitan Area\b", re.I): "",
     re.compile(r"\(\d+\. patro\)", re.I): "",
+    re.compile(r"\bBrno\W+Staré Brno\b", re.I): "Brno",
 }
 
 REGIONS_MAPPING_CZ = {

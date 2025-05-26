@@ -38,7 +38,9 @@ nav:
       - Kurzy programování: courses.md
       - ... | flat | courses/*.md
   - Práce:
-      - Inzeráty: jobs.jinja
+      - Inzeráty:
+          - Inzeráty: jobs.jinja
+          - ... | flat | jobs/*.jinja
       - Kandidáti: candidates.jinja
   - Inspirace:
       - Novinky: news.jinja
@@ -103,6 +105,6 @@ hooks:
 plugins:
   - gen-files:
       scripts:
-        - templates.py
+        - generators.py
   - awesome-pages:
       strict: true

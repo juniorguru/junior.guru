@@ -4,6 +4,8 @@ from urllib.parse import urljoin
 
 from jg.coop.lib import loggers
 from jg.coop.lib.discord_club import CLUB_GUILD_ID
+from jg.coop.lib.mapycz import REGIONS
+from jg.coop.lib.text import get_tag_slug
 from jg.coop.models.base import db
 from jg.coop.models.blog import BlogArticle
 from jg.coop.models.candidate import Candidate
@@ -110,6 +112,9 @@ def on_docs_context(context):
     context["jobs_internship"] = ListedJob.internship_listing()
     context["jobs_volunteering"] = ListedJob.volunteering_listing()
     context["jobs_tags"] = ListedJob.tags_by_type()
+    context["jobs_region_tags"] = ["remote"] + [
+        get_tag_slug(region) for region in REGIONS
+    ]
 
     # about/*.md
     context["blog"] = BlogArticle.listing()

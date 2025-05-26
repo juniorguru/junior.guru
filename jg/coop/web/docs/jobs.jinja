@@ -1,12 +1,12 @@
 ---
-title: Práce pro juniorní programátory a testery
-description: Nabídky práce, stáže a brigády zaměřené výhradně na začínající programátory a testery bez komerční praxe.
+title: Práce pro juniorní programátory, testery nebo dataře
+description: Procházej nabídky práce, stáže a brigády zaměřené výhradně na juniory bez komerční praxe.
 template: main_subnav.html
 ---
 
-{% from 'macros.html' import img, lead, note with context %}
+{% from 'macros.html' import img, lead, note, club_teaser with context %}
 
-<h1>Pracovní inzeráty pro juniory</h1>
+<h1>Pracovní inzeráty pro juniory{% if page.meta.region %}: {{ page.meta.region|replace(' ', ' ') }}{% endif %}</h1>
 {% call lead() %}
   Už žádné „požadujeme 4 roky zkušeností“.
   Robot každý den stahuje inzeráty z různých zdrojů a pomocí umělé inteligence {{ "stars"|icon }} vybírá jen ty,
@@ -21,17 +21,38 @@ template: main_subnav.html
 <dl class="jobs-tags standout noscript">
   <dt class="jobs-tags-heading">{{ "geo-alt"|icon }} Místo:</dt>
   <dd>
-    {% for tag in jobs_tags.location %}
+    {% if page.meta.region_tag_slug %}
       <span
         class="jobs-tag"
         hidden
-        data-jobs-tag="{{ tag.slug }}"
-        data-jobs-tag-type="{{ tag.type|lower }}"
+        data-jobs-tag="remote"
+        data-jobs-tag-type="location"
       >
-        {{- tag.name -}}
+        #remote
       </span>
-    {% endfor %}
-    <span class="jobs-noscript">Stala se chyba a filtrování nefunguje</span>
+      <span
+        class="jobs-tag active disabled"
+        data-jobs-tag="{{ page.meta.region_tag_slug }}"
+        data-jobs-tag-type="location"
+      >
+        #{{- page.meta.region_tag_slug -}}
+      </span>
+      <a href="{{ pages|docs_url('jobs.jinja')|url }}" class="jobs-tag-link">
+        {{ 'geo-alt-fill'|icon }} <span class="jobs-tag-link-label">Procházej další místa</span>
+      </a>
+    {% else %}
+      {% for tag_slug in jobs_region_tags %}
+        <span
+          class="jobs-tag"
+          hidden
+          data-jobs-tag="{{ tag_slug }}"
+          data-jobs-tag-type="location"
+        >
+          #{{- tag_slug -}}
+        </span>
+      {% endfor %}
+      <span class="jobs-noscript">Stala se chyba a filtrování nefunguje</span>
+    {% endif %}
   </dd>
   <dt class="jobs-tags-heading">{{ "hourglass-split"|icon }} Úvazek:</dt>
   <dd>
@@ -249,7 +270,7 @@ template: main_subnav.html
     <h2 id="club" class="standout-top">Ručně přidané inzeráty</h2>
     <p>
       Když někdo narazí na zajímavou nabídku práce, nebo dokonce sám hledá nové kolegy,
-      může to v <a href="{{ pages|docs_url('club.md')|url }}">klubu</a> sdílet s ostatními.
+      může to na našem Discordu sdílet s ostatními.
       Aktuálně tam máme
       {{ jobs_discord|length }} {{ jobs_discord|length|nplurals("takový inzerát", "takové inzeráty", "takových inzerátů") }}.
     </p>
@@ -286,5 +307,6 @@ template: main_subnav.html
         </li>
       {% endfor %}
     </ul>
+    {{ club_teaser("Nakoukni do klubu") }}
   {% endif %}
 </div>

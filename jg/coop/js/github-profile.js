@@ -1,10 +1,13 @@
 function setupGitHubProfileForm() {
   const form = document.querySelector("#github-profile-form");
+
+  if (!form) return;
+
   const input = form.querySelector("#github-profile-input");
   const titleInput = form.querySelector('[name="title"]');
   const bodyInput = form.querySelector('[name="body"]');
 
-  if (!form || !input || !titleInput || !bodyInput) return;
+  if (!input || !titleInput || !bodyInput) return;
 
   const defaultTitle = titleInput.value;
   const defaultBody = bodyInput.value;

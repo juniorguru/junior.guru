@@ -1,7 +1,7 @@
 function setupJobsTags() {
   const container = document.querySelector(".jobs-tags");
   if (container) {
-    container.querySelectorAll(".jobs-tag").forEach(function (tag) {
+    container.querySelectorAll(".jobs-tag:not(.disabled)").forEach(function (tag) {
       tag.addEventListener("click", function () {
         tag.classList.toggle("active");
         filterJobs();
@@ -59,6 +59,10 @@ function filterJobs() {
     mapping[tag.dataset.jobsTagType].push(tag.dataset.jobsTag);
     return mapping;
   }, {});
+  const locationSlug = getLocationSlug(window.location);
+  if (locationSlug && !activeTagsByType["location"].includes(locationSlug)) {
+    activeTagsByType["location"].push(locationSlug);
+  }
   Object.values(activeTagsByType).forEach((tags) => tags.sort());
 
   const url = new URL(window.location.href);
@@ -66,6 +70,12 @@ function filterJobs() {
     url.searchParams.delete(type),
   );
   Object.entries(activeTagsByType).forEach(([type, tags]) => {
+    if (tags.includes(locationSlug)) {
+      tags = tags.filter((tag) => tag !== locationSlug);
+    }
+    if (tags.length === 0) {
+      return;
+    }
     url.searchParams.set(type, tags.join("|"));
   });
   window.history.pushState({}, "", url);
@@ -122,8 +132,12 @@ function updateJobsTagsUI() {
       mapping[type] = url.searchParams.get(type).split("|");
       return mapping;
     },
-    {},
+    {"location": []},
   );
+  const locationSlug = getLocationSlug(window.location);
+  if (locationSlug) {
+    activeSlugsByType["location"].push(locationSlug);
+  }
   const container = document.querySelector(".jobs-tags");
   container.querySelectorAll(".jobs-tag").forEach((tag) => {
     const activeSlugs = activeSlugsByType[tag.dataset.jobsTagType] || [];
@@ -143,6 +157,11 @@ function showElement(element) {
 
 function hideElement(element) {
   element.setAttribute("hidden", "");
+}
+
+function getLocationSlug(location) {
+  const match = location.pathname.match(/\/jobs\/([^/]+)\/?$/);
+  return match ? match[1].replace('-', '') : null;
 }
 
 document.addEventListener("DOMContentLoaded", setupJobsTags);
