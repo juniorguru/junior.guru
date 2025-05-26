@@ -3,11 +3,11 @@ from pathlib import Path
 from typing import Any, Generator
 
 import mkdocs_gen_files
+import yaml
 from mkdocs.utils.meta import get_data as parse_document
 from pydantic import BaseModel, ConfigDict
 from slugify import slugify
 from strictyaml import as_document
-import yaml
 
 from jg.coop.lib import loggers
 from jg.coop.lib.mapycz import REGIONS
@@ -74,7 +74,8 @@ def generate_job_pages() -> Generator[GeneratedDocument, None, None]:
         tag_slug = get_tag_slug(region)
         yield GeneratedDocument(
             path=f"jobs/{doc_slug}.jinja",
-            meta=meta | dict(
+            meta=meta
+            | dict(
                 title=f"{meta['title']}: {region}",
                 description=f"Jaké nabízí {region} příležitosti pro začátečníky v IT? {meta['description']}",
                 region=region,

@@ -1,13 +1,15 @@
 function setupJobsTags() {
   const container = document.querySelector(".jobs-tags");
   if (container) {
-    container.querySelectorAll(".jobs-tag:not(.disabled)").forEach(function (tag) {
-      tag.addEventListener("click", function () {
-        tag.classList.toggle("active");
-        filterJobs();
+    container
+      .querySelectorAll(".jobs-tag:not(.disabled)")
+      .forEach(function (tag) {
+        tag.addEventListener("click", function () {
+          tag.classList.toggle("active");
+          filterJobs();
+        });
+        showElement(tag);
       });
-      showElement(tag);
-    });
     updateJobsTagsUI();
     container.classList.remove("noscript");
   }
@@ -132,7 +134,7 @@ function updateJobsTagsUI() {
       mapping[type] = url.searchParams.get(type).split("|");
       return mapping;
     },
-    {"location": []},
+    { location: [] },
   );
   const locationSlug = getLocationSlug(window.location);
   if (locationSlug) {
@@ -161,7 +163,7 @@ function hideElement(element) {
 
 function getLocationSlug(location) {
   const match = location.pathname.match(/\/jobs\/([^/]+)\/?$/);
-  return match ? match[1].replace('-', '') : null;
+  return match ? match[1].replace("-", "") : null;
 }
 
 document.addEventListener("DOMContentLoaded", setupJobsTags);
