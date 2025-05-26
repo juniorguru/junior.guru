@@ -4,8 +4,6 @@ from urllib.parse import urljoin
 
 from jg.coop.lib import loggers
 from jg.coop.lib.discord_club import CLUB_GUILD_ID
-from jg.coop.lib.mapycz import REGIONS
-from jg.coop.lib.text import get_tag_slug
 from jg.coop.models.base import db
 from jg.coop.models.blog import BlogArticle
 from jg.coop.models.candidate import Candidate
@@ -112,9 +110,7 @@ def on_docs_context(context):
     context["jobs_internship"] = ListedJob.internship_listing()
     context["jobs_volunteering"] = ListedJob.volunteering_listing()
     context["jobs_tags"] = ListedJob.tags_by_type()
-    context["jobs_region_tags"] = ["remote"] + [
-        get_tag_slug(region) for region in REGIONS
-    ]
+    context["jobs_region_tags"] = ListedJob.region_tags()
 
     # about/*.md
     context["blog"] = BlogArticle.listing()
@@ -181,7 +177,7 @@ def on_theme_page_context(context, page, config, files):
     try:
         thumbnail_path = Page.get_by_src_uri(page.file.src_uri).thumbnail_path
     except Page.DoesNotExist:
-        logger.warning(f"No thumbnail for {page.file.src_uri}")
+        logger.debug(f"No thumbnail for {page.file.src_uri}, probably redirect")
     else:
         if thumbnail_path:
             context["thumbnail_url"] = urljoin(

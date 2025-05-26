@@ -6,7 +6,19 @@ template: main_subnav.html
 
 {% from 'macros.html' import img, lead, note, club_teaser with context %}
 
-<h1>Pracovní inzeráty pro juniory{% if page.meta.region %}: {{ page.meta.region|replace(' ', ' ') }}{% endif %}</h1>
+{% set is_region_listing = page.meta.region_tag_slug %}
+{% set is_remote_listing = page.meta.region_tag_slug == "remote" %}
+
+<h1>
+{% if is_remote_listing %}
+  Práce na dálku pro juniory
+{% elif is_region_listing %}
+  Práce pro juniory: {{ page.meta.region|replace(' ', ' ') }}
+{% else %}
+  Pracovní inzeráty pro juniory
+{% endif %}
+</h1>
+
 {% call lead() %}
   Už žádné „požadujeme 4 roky zkušeností“.
   Robot každý den stahuje inzeráty z různých zdrojů a pomocí umělé inteligence {{ "stars"|icon }} vybírá jen ty,
@@ -15,21 +27,23 @@ template: main_subnav.html
 {% endcall %}
 
 {% call note() -%}
-  {{ 'plus-circle'|icon }} Chceš ručně přidat inzerát? Napiš na {{ "honza@junior.guru"|email_link }}
+  {{ 'plus-circle'|icon }} Chceš přidat inzerát? Napiš na {{ "honza@junior.guru"|email_link }}
 {%- endcall %}
 
 <dl class="jobs-tags standout noscript">
   <dt class="jobs-tags-heading">{{ "geo-alt"|icon }} Místo:</dt>
   <dd>
-    {% if page.meta.region_tag_slug %}
-      <span
-        class="jobs-tag"
-        hidden
-        data-jobs-tag="remote"
-        data-jobs-tag-type="location"
-      >
-        #remote
-      </span>
+    {% if is_region_listing %}
+      {% if not is_remote_listing %}
+        <span
+          class="jobs-tag"
+          hidden
+          data-jobs-tag="remote"
+          data-jobs-tag-type="location"
+        >
+          #remote
+        </span>
+      {% endif %}
       <span
         class="jobs-tag active disabled"
         data-jobs-tag="{{ page.meta.region_tag_slug }}"
@@ -38,17 +52,20 @@ template: main_subnav.html
         #{{- page.meta.region_tag_slug -}}
       </span>
       <a href="{{ pages|docs_url('jobs.jinja')|url }}" class="jobs-tag-link">
-        {{ 'geo-alt-fill'|icon }} <span class="jobs-tag-link-label">Procházej další místa</span>
+        {{ 'sliders'|icon }}
+        <span class="jobs-tag-link-label">
+          Procházej všechna místa
+        </span>
       </a>
     {% else %}
-      {% for tag_slug in jobs_region_tags %}
+      {% for tag in jobs_region_tags %}
         <span
           class="jobs-tag"
           hidden
-          data-jobs-tag="{{ tag_slug }}"
-          data-jobs-tag-type="location"
+          data-jobs-tag="{{ tag.slug }}"
+          data-jobs-tag-type="{{ tag.type|lower }}"
         >
-          #{{- tag_slug -}}
+          {{- tag.name -}}
         </span>
       {% endfor %}
       <span class="jobs-noscript">Stala se chyba a filtrování nefunguje</span>
@@ -260,8 +277,11 @@ template: main_subnav.html
   {% endfor %}
     <li class="jobs-empty" hidden>
       {% call note() -%}
-        {{ 'search'|icon }} Tvým filtrům neodpovídají žádné inzeráty. Pokud hledáš podle místa,
-        zkus přidat <span class="jobs-tag">#remote</span>.
+        {{ 'search'|icon }} Tvým filtrům neodpovídají žádné inzeráty.
+        {% if not is_remote_listing %}
+          Pokud hledáš podle místa,
+          zkus přidat <span class="jobs-tag active">#remote</span>.
+        {% endif %}
       {%- endcall %}
     </li>
   </ul>

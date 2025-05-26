@@ -818,29 +818,6 @@ requests = ">=2.28.2,<3.0.0"
 tenacity = ">=9.0.0"
 
 [[package]]
-name = "flask"
-version = "3.1.1"
-description = "A simple framework for building complex web applications."
-optional = false
-python-versions = ">=3.9"
-files = [
-    {file = "flask-3.1.1-py3-none-any.whl", hash = "sha256:07aae2bb5eaf77993ef57e357491839f5fd9f4dc281593a81a9e4d79a24f295c"},
-    {file = "flask-3.1.1.tar.gz", hash = "sha256:284c7b8f2f58cb737f0cf1c30fd7eaf0ccfcde196099d24ecede3fc2005aa59e"},
-]
-
-[package.dependencies]
-blinker = ">=1.9.0"
-click = ">=8.1.3"
-itsdangerous = ">=2.2.0"
-jinja2 = ">=3.1.2"
-markupsafe = ">=2.1.1"
-werkzeug = ">=3.1.0"
-
-[package.extras]
-async = ["asgiref (>=3.2)"]
-dotenv = ["python-dotenv"]
-
-[[package]]
 name = "fonttools"
 version = "4.58.0"
 description = "Tools to manipulate font files"
@@ -904,25 +881,6 @@ type1 = ["xattr"]
 ufo = ["fs (>=2.2.0,<3)"]
 unicode = ["unicodedata2 (>=15.1.0)"]
 woff = ["brotli (>=1.0.1)", "brotlicffi (>=0.8.0)", "zopfli (>=0.1.4)"]
-
-[[package]]
-name = "frozen-flask"
-version = "1.0.2"
-description = "Freezes a Flask application into a set of static files."
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "frozen_flask-1.0.2-py3-none-any.whl", hash = "sha256:b81b69e84babb1da37ba592c7cd48f0822a62a4ef654f29378a0b8934b2076eb"},
-    {file = "frozen_flask-1.0.2.tar.gz", hash = "sha256:53a7895b188b7d59eb8d6fcf3fce18e097d8b4a26b6bb665e176add1a1e03aaf"},
-]
-
-[package.dependencies]
-flask = ">=2.0.0"
-
-[package.extras]
-check = ["flake8", "isort"]
-doc = ["pallets-sphinx-themes", "sphinx"]
-test = ["pytest"]
 
 [[package]]
 name = "frozenlist"
@@ -1491,17 +1449,6 @@ python-versions = ">=3.8"
 files = [
     {file = "iniconfig-2.1.0-py3-none-any.whl", hash = "sha256:9deba5723312380e77435581c6bf4935c94cbfab9b1ed33ef8d238ea168eb760"},
     {file = "iniconfig-2.1.0.tar.gz", hash = "sha256:3abbd2e30b36733fee78f9c7f7308f2d0050e88f0087fd25c2645f63c773e1c7"},
-]
-
-[[package]]
-name = "itsdangerous"
-version = "2.2.0"
-description = "Safely pass data to untrusted environments and back."
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "itsdangerous-2.2.0-py3-none-any.whl", hash = "sha256:c6242fc49e35958c8b15141343aa660db5fc54d4f13a1db01a3f5891b98700ef"},
-    {file = "itsdangerous-2.2.0.tar.gz", hash = "sha256:e0050c0b7da1eea53ffaf149c0cfbb5c6e2e2b69c4bef22c81fa6eb73e5f6173"},
 ]
 
 [[package]]
@@ -3623,23 +3570,6 @@ files = [
 bracex = ">=2.1.1"
 
 [[package]]
-name = "werkzeug"
-version = "3.1.3"
-description = "The comprehensive WSGI web application library."
-optional = false
-python-versions = ">=3.9"
-files = [
-    {file = "werkzeug-3.1.3-py3-none-any.whl", hash = "sha256:54b78bf3716d19a65be4fceccc0d1d7b89e608834989dfae50ea87564639213e"},
-    {file = "werkzeug-3.1.3.tar.gz", hash = "sha256:60723ce945c19328679790e3282cc758aa4a6040e4bb330f53d30fa546d44746"},
-]
-
-[package.dependencies]
-MarkupSafe = ">=2.1.1"
-
-[package.extras]
-watchdog = ["watchdog (>=2.3)"]
-
-[[package]]
 name = "yarl"
 version = "1.20.0"
 description = "Yet another URL library"
@@ -3760,4 +3690,4 @@ propcache = ">=0.2.1"
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.12"
-content-hash = "de4a2355d927d2db7c7fbcac7eb9222684593651feeddf1081527b97a5c96524"
+content-hash = "8af91fbb2a50561dfe5fd3829e35f5bd0deaa54bc543e43eb0724b5f4f34dff6"

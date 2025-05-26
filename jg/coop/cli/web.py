@@ -13,7 +13,6 @@ from lxml import html
 from mkdocs.__main__ import build_command as _build_mkdocs
 
 from jg.coop.lib import loggers
-from jg.coop.web_legacy.__main__ import main as flask_freeze
 
 
 logger = loggers.from_path(__file__)
@@ -61,13 +60,6 @@ def build_static(output_path: Path):
 
 
 @main.command()
-@click.argument("output_path", default="public", type=click.Path(path_type=Path))
-@building("Flask files")
-def build_flask(output_path: Path):
-    flask_freeze(output_path)
-
-
-@main.command()
 @click.pass_context
 @click.argument("output_path", default="public", type=click.Path(path_type=Path))
 @click.argument(
@@ -110,7 +102,6 @@ def build(context, output_path: Path):
     shutil.rmtree(output_path, ignore_errors=True)
     output_path.mkdir(parents=True, exist_ok=True)
     context.invoke(build_static, output_path=output_path)
-    context.invoke(build_flask, output_path=output_path)
     context.invoke(build_mkdocs, output_path=output_path)
 
 
@@ -127,11 +118,6 @@ def serve(context, output_path: Path, open: bool):
     def rebuild_static():
         context.invoke(build_static, output_path=output_path)
 
-    @building("Flask and MkDocs files")
-    def rebuild_flask_and_mkdocs():
-        subprocess.run(["jg", "web", "build-flask", str(output_path)], check=True)
-        subprocess.run(["jg", "web", "build-mkdocs", str(output_path)], check=True)
-
     def rebuild_mkdocs():
         subprocess.run(["jg", "web", "build-mkdocs", str(output_path)], check=True)
 
@@ -140,11 +126,10 @@ def serve(context, output_path: Path, open: bool):
     server.watch("jg/coop/**/*.js", rebuild_static)
     server.watch("jg/coop/**/*.scss", rebuild_static)
     server.watch("jg/coop/images/", rebuild_static)
-    server.watch("jg/coop/data/", rebuild_flask_and_mkdocs, ignore=ignore_data)
-    server.watch("jg/coop/lib/", rebuild_flask_and_mkdocs)
-    server.watch("jg/coop/models/", rebuild_flask_and_mkdocs)
+    server.watch("jg/coop/data/", rebuild_mkdocs, ignore=ignore_data)
+    server.watch("jg/coop/lib/", rebuild_mkdocs)
+    server.watch("jg/coop/models/", rebuild_mkdocs)
     server.watch("jg/coop/web/", rebuild_mkdocs)
-    server.watch("jg/coop/web_legacy/", rebuild_flask_and_mkdocs)
     server.serve(
         host="localhost",
         root=str(output_path.absolute()),

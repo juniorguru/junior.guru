@@ -19,12 +19,15 @@ from peewee import (
 from playhouse.shortcuts import model_to_dict
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
 
+from jg.coop.lib.mapycz import REGIONS
 from jg.coop.lib.text import get_tag_slug
 from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubUser
 
 
 JOB_EXPIRED_SOON_DAYS = 10
+
+REMOTE_TAG_SLUG = "remote"
 
 
 class TagType(StrEnum):
@@ -290,7 +293,7 @@ class ListedJob(BaseModel):
     def tags(self) -> list[Tag]:
         tags = []
         if self.remote:
-            tags.append(Tag(slug="remote", type=TagType.LOCATION))
+            tags.append(Tag(slug=REMOTE_TAG_SLUG, type=TagType.LOCATION))
         for employment_type in self.employment_types or []:
             tags.append(Tag(slug=employment_type, type=TagType.EMPLOYMENT))
         for region in self.regions:
@@ -342,6 +345,12 @@ class ListedJob(BaseModel):
     @classmethod
     def count(cls):
         return cls.listing().count()
+
+    @classmethod
+    def region_tags(cls) -> list[Tag]:
+        return [Tag(slug=REMOTE_TAG_SLUG, type=TagType.LOCATION)] + [
+            Tag(slug=get_tag_slug(region), type=TagType.LOCATION) for region in REGIONS
+        ]
 
     @classmethod
     def tags_by_type(cls) -> dict[str, list[Tag]]:
@@ -442,11 +451,11 @@ class ListedJob(BaseModel):
                     "@type": "Place",
                     "address": self.location,
                 },
-                "image": "https://junior.guru/static/" + self.company_logo_path,
+                "image": f"https://junior.guru/static/{self.company_logo_path}",
                 "hiringOrganization": {
                     "@type": "Organization",
                     "name": self.company_name,
-                    "logo": "https://junior.guru/static/" + self.company_logo_path,
+                    "logo": f"https://junior.guru/static/{self.company_logo_path}",
                 },
             },
             ensure_ascii=False,

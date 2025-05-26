@@ -16,7 +16,7 @@ from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.event import Event
-from jg.coop.models.job import ListedJob
+from jg.coop.models.job import REMOTE_TAG_SLUG, ListedJob
 from jg.coop.models.podcast import PodcastEpisode
 
 
@@ -71,6 +71,20 @@ def generate_region_jobs_pages() -> Generator[GeneratedDocument, None, None]:
     jobs_file = Path("jg/coop/web/docs/jobs.jinja")
     jobs_text = jobs_file.read_text(encoding="utf-8-sig", errors="strict")
     content, meta = parse_document(jobs_text)
+    yield GeneratedDocument(
+        path=f"jobs/{REMOTE_TAG_SLUG}.jinja",
+        meta=meta
+        | dict(
+            title=f"{meta['title']}: na dálku, z domova, remote",
+            description=(
+                "Pracovní příležitosti pro začátečníky v IT, "
+                f"které jsou na dálku, z domova, remote. {meta['description']}"
+            ),
+            region="na dálku",
+            region_tag_slug=REMOTE_TAG_SLUG,
+        ),
+        content=content,
+    )
     for region in REGIONS:
         doc_slug = slugify(region)
         tag_slug = get_tag_slug(region)

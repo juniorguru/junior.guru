@@ -386,7 +386,7 @@ Startupy jsou dnes velký fenomén, a to především v USA. **Americké [Silico
 Podnikání je z pochopitelných důvodů opomíjenou možností, jak začít v IT. Nejefektivnějším způsobem, jak během prvních 1-2 let nabrat zkušenosti, je jít do klasického zaměstnání ve střední nebo větší firmě. **Ne každému ale něco takového zapadne do jeho životní situace.** Pokud budeš u některé z následujících otázek přikyvovat, stojí za zvážení, zda by pro tebe nebyla živnost vhodnější volbou:
 
 *   Hledáš jednorázové přivýdělky? Nedaří se ti najít zaměstnání na částečný úvazek? Např. při studiu na VŠ, péči o dítě nebo při jiném zaměstnání?
-*   Bydlíš mimo velká města, kde se stálé zaměstnání v IT hledá obtížně? [Praha](/jobs/region/praha/) nebo [Brno](/jobs/region/brno/) nabízí jiné příležitosti než Šluknovsko či Jesenicko.
+*   Bydlíš mimo velká města, kde se stálé zaměstnání v IT hledá obtížně? [Praha](../jobs/praha.jinja) nebo [Brno](../jobs/brno.jinja) nabízí jiné příležitosti než Šluknovsko či Jesenicko.
 *   Nějaké podnikání nebo pokusy o něj už máš za sebou a víš co [OSVČ](https://cs.wikipedia.org/wiki/Osoba_samostatn%C4%9B_v%C3%BDd%C4%9Ble%C4%8Dn%C4%9B_%C4%8Dinn%C3%A1) obnáší? Umíš se otáčet, komunikovat, zvládáš samostatnost, samovzdělávání?
 *   Netlačí tě finance a nebude vadit, když během prvních měsíců vyděláš např. jen pár tisíc? Máš velký „sociální kapitál“, ze kterého můžeš čerpat zakázky?
 
