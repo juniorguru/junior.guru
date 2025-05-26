@@ -1,6 +1,12 @@
 .note {
   @extend .alert;
-  background: $jg-gray-white;
+  background: $jg-blue-white;
+  border: 1px dotted $jg-blue;
+}
+
+.note i {
+  margin-right: map-get($spacers, 2);
+  color: $jg-blue;
 }
 
 .note *:last-child {

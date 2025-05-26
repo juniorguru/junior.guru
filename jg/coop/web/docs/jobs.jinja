@@ -14,8 +14,9 @@ template: main_subnav.html
   Tento pracovní portál je na tvé straně!
 {% endcall %}
 
-
-<p class="standout">Pokud chceš přidat inzerát, napiš na {{ "honza@junior.guru"|email_link }}.</p>
+{% call note() -%}
+  {{ 'box-arrow-in-down'|icon }} Chceš ručně přidat inzerát? Napiš na {{ "honza@junior.guru"|email_link }}
+{%- endcall %}
 
 <dl class="jobs-tags standout noscript">
   <dt class="jobs-tags-heading">{{ "geo-alt"|icon }} Místo:</dt>
