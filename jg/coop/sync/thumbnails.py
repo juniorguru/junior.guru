@@ -18,8 +18,7 @@ WORKERS = 4
 logger = loggers.from_path(__file__)
 
 
-# Generating thumbnails for the legacy Flask app requires jobs data and events
-@cli.sync_command(dependencies=["pages", "jobs-listing", "events"])
+@cli.sync_command(dependencies=["pages"])
 @click.option(
     "--images-path",
     default="jg/coop/images",
