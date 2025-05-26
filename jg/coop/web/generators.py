@@ -9,11 +9,11 @@ from pydantic import BaseModel, ConfigDict
 from slugify import slugify
 from strictyaml import as_document
 
-from jg.coop.models.base import db
 from jg.coop.lib import loggers
 from jg.coop.lib.mapycz import REGIONS
 from jg.coop.lib.text import get_tag_slug
 from jg.coop.lib.yaml import YAMLConfig
+from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.event import Event
 from jg.coop.models.job import ListedJob

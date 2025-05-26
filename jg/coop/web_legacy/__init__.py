@@ -76,9 +76,7 @@ REGIONS = [
 
 
 def get_freezer(app) -> Freezer:
-    freezer = Freezer(app)
-    freezer.register_generator(generate_job_pages)
-    return freezer
+    return Freezer(app)
 
 
 app = Flask(__name__)
@@ -107,27 +105,6 @@ def jobs_remote():
         regions=REGIONS,
         thumbnail=LegacyThumbnail.image_path_by_url("/jobs/remote/"),
     )
-
-
-@app.route("/jobs/<job_id>/")
-@db.connection_context()
-def job(job_id):
-    job = ListedJob.get_by_submitted_id(job_id)
-    jobs_count = ListedJob.count()
-    return render_template(
-        "job.html",
-        nav_active="jobs",
-        job=job,
-        jobs_count=jobs_count,
-        thumbnail=LegacyThumbnail.image_path_by_url(f"/jobs/{job_id}/"),
-    )
-
-
-def generate_job_pages():
-    with db.connection_context():
-        jobs = list(ListedJob.submitted_listing())
-    for job in jobs:
-        yield "job", dict(job_id=job.submitted_job.id)
 
 
 @app.context_processor
@@ -160,6 +137,11 @@ def not_found():
 
 @app.route("/jobs/")
 def jobs():
+    return REFRESH_PAGE
+
+
+@app.route("/jobs/<job_id>/")
+def job(job_id):
     return REFRESH_PAGE
 
 
