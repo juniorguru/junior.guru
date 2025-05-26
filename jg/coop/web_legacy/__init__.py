@@ -130,18 +130,8 @@ def index():
     return REFRESH_PAGE
 
 
-@app.route("/404.html")
-def not_found():
-    return REFRESH_PAGE
-
-
 @app.route("/jobs/")
 def jobs():
-    return REFRESH_PAGE
-
-
-@app.route("/jobs/<job_id>/")
-def job(job_id):
     return REFRESH_PAGE
 
 
