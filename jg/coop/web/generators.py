@@ -9,12 +9,14 @@ from pydantic import BaseModel, ConfigDict
 from slugify import slugify
 from strictyaml import as_document
 
+from jg.coop.models.base import db
 from jg.coop.lib import loggers
 from jg.coop.lib.mapycz import REGIONS
 from jg.coop.lib.text import get_tag_slug
 from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.event import Event
+from jg.coop.models.job import ListedJob
 from jg.coop.models.podcast import PodcastEpisode
 
 
@@ -65,7 +67,7 @@ def generate_redirects() -> Generator[GeneratedDocument, None, None]:
         )
 
 
-def generate_job_pages() -> Generator[GeneratedDocument, None, None]:
+def generate_region_jobs_pages() -> Generator[GeneratedDocument, None, None]:
     jobs_file = Path("jg/coop/web/docs/jobs.jinja")
     jobs_text = jobs_file.read_text(encoding="utf-8-sig", errors="strict")
     content, meta = parse_document(jobs_text)
@@ -85,6 +87,24 @@ def generate_job_pages() -> Generator[GeneratedDocument, None, None]:
         )
 
 
+@db.connection_context()
+def generate_job_pages() -> Generator[GeneratedDocument, None, None]:
+    for job in ListedJob.submitted_listing():
+        yield GeneratedDocument(
+            path=f"jobs/{job.submitted_job.id}.jinja",
+            meta=dict(
+                title=f"{job.title_short} – {job.company_name} – {job.location}",
+                description=(
+                    f"Pracovní nabídka pro začínající programátory: {job.title} – {job.company_name}, {job.location}"
+                ),
+                job_id=job.submitted_job.id,
+                template="main_subnav.html",
+            ),
+            content=(DOCS_DIR / "job.jinja").read_text(),
+        )
+
+
+@db.connection_context()
 def generate_event_pages() -> Generator[GeneratedDocument, None, None]:
     for event in Event.listing():
         yield GeneratedDocument(
@@ -104,6 +124,7 @@ def generate_event_pages() -> Generator[GeneratedDocument, None, None]:
         )
 
 
+@db.connection_context()
 def generate_podcast_episode_pages() -> Generator[GeneratedDocument, None, None]:
     for podcast_episode in PodcastEpisode.listing():
         yield GeneratedDocument(
@@ -124,6 +145,7 @@ def generate_podcast_episode_pages() -> Generator[GeneratedDocument, None, None]
         )
 
 
+@db.connection_context()
 def generate_course_provider_pages() -> Generator[GeneratedDocument, None, None]:
     for course_provider in CourseProvider.listing():
         yield GeneratedDocument(
@@ -141,6 +163,7 @@ def generate_course_provider_pages() -> Generator[GeneratedDocument, None, None]
 def main():
     generators = [
         generate_redirects,
+        generate_region_jobs_pages,
         generate_job_pages,
         generate_event_pages,
         generate_podcast_episode_pages,

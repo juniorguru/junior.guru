@@ -157,6 +157,7 @@ def on_docs_page_context(context, page, config, files):
     meta_model_getters = (
         ("topic_name", Topic.get_by_id, "topic"),
         ("event_id", Event.get_by_id, "event"),
+        ("job_id", ListedJob.get_by_submitted_id, "job"),
         ("course_provider_slug", CourseProvider.get_by_slug, "course_provider"),
         ("podcast_episode_number", PodcastEpisode.get_by_number, "podcast_episode"),
     )

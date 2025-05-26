@@ -1,0 +1,52 @@
+<h1>{{ job.title }}</h1>
+<div itemscope itemtype="https://schema.org/JobPosting">
+  <meta itemprop="industry" content="Informační technologie" />
+  <meta itemprop="datePosted" content="{{ job.posted_on.isoformat() }}" />
+  <p>
+    <strong>
+    <a
+      href="{{ job.company_url }}"
+      itemprop="hiringOrganization"
+      itemscope
+      itemtype="http://schema.org/Organization"
+    ><span itemprop="name">{{ job.company_name }}</span></a>
+    {% if job.locations %}
+      –
+      <span
+        itemprop="jobLocation"
+        itemscope
+        itemtype="http://schema.org/Place"
+      >
+        <span itemprop="address">
+          {{ job.location }}
+        </span>
+      </span>
+    {% endif %}
+    </strong>
+  </p>
+  <div itemprop="description">
+    {{ job.submitted_job.description_html|safe }}
+  </div>
+  <div class="c2a" itemprop="applicationContact" itemscope itemtype="https://schema.org/ContactPoint">
+    {% if job.apply_url %}
+      <a id="apply" class="c2a-button pulse" href="{{ job.apply_url }}">
+        Mám zájem!
+      </a>
+    {% else %}
+      <p id="apply" class="c2a-button pulse">
+        Máš zájem? Napiš na<br /><small itemprop="email"
+          >{{ job.apply_email|email_link }}</small
+        >
+      </p>
+    {% endif %}
+  </div>
+</div>
+
+<div class="pagination">
+  <div class="pagination-control">
+    <a href="{{ (page|parent_page).url|url }}" class="pagination-button">
+      {{ 'arrow-left'|icon }}
+      Všechny inzeráty
+    </a>
+  </div>
+</div>
