@@ -105,12 +105,3 @@ class Page(BaseModel):
             .where(cls.src_uri.startswith("stories/"))
             .order_by(cls.date.desc())
         )
-
-
-class LegacyThumbnail(BaseModel):  # can be deleted once Flask is gone
-    url = CharField(index=True, unique=True)
-    image_path = CharField()
-
-    @classmethod
-    def image_path_by_url(cls, url: str) -> str:
-        return cls.get(cls.url == url).image_path
