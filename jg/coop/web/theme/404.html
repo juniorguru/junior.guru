@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{% from 'macros.html' import lead with context %}
+
+{% block content %}
+<h1>Stránka neexistuje</h1>
+
+<div class="lead">
+  Ahoj! junior.guru je průvodce pro začátečníky v programování na jejich cestě do IT.
+  Najdeš tady online komunitu, příručku plnou rad, katalog kurzů, pracovní portál, a navrch ještě spoustu inspirace.
+  Na <span id="not-found-url"></span><noscript>této adrese</noscript> ale nic není.
+</div>
+<script>
+  document.getElementById("not-found-url").innerHTML =
+    "adrese <strong>" + window.location.pathname + "</strong>";
+</script>
+
+<div class="c2a">
+  <a href="https://junior.guru" class="c2a-button pulse">
+    Pojď na úvodní stránku
+  </a>
+</div>
+
+{% endblock %}

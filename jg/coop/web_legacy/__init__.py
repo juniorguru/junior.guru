@@ -155,15 +155,6 @@ def generate_job_pages():
         yield "job", dict(job_id=job.submitted_job.id)
 
 
-@app.route("/404.html")
-@db.connection_context()
-def not_found():
-    jobs = ListedJob.listing()
-    return render_template(
-        "404.html", jobs=jobs, thumbnail=LegacyThumbnail.image_path_by_url("/404.html")
-    )
-
-
 @app.context_processor
 def inject_defaults():
     now = datetime.now(UTC)
@@ -184,6 +175,11 @@ REFRESH_PAGE = (
 
 @app.route("/")
 def index():
+    return REFRESH_PAGE
+
+
+@app.route("/404.html")
+def not_found():
     return REFRESH_PAGE
 
 

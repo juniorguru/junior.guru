@@ -17,6 +17,7 @@ TEMPLATE_FILTERS = [
     "assert_empty",
     "docs_url",
     "email_link",
+    "hours",
     "icon",
     "local_time",
     "mainnav",
@@ -37,7 +38,6 @@ TEMPLATE_FILTERS = [
     "subnav",
     "thousands",
     "toc",
-    "hours",
 ]
 
 

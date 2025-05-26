@@ -1,6 +1,8 @@
 from pathlib import Path
 
+from mkdocs.config.base import Config
 from mkdocs.utils import get_relative_url
+from mkdocs.utils.templates import TemplateContext
 
 from jg.coop.lib import mkdocs_jinja
 from jg.coop.web import api, context as context_hooks
@@ -49,6 +51,14 @@ def on_env(env, config, files):
 
     filters["md"] = md
     env.filters.update(filters)
+
+
+def on_template_context(
+    context: TemplateContext, template_name: str, config: Config
+) -> None:
+    if template_name == "404.html":
+        context.update(config["shared_context"])
+        context.update(config["theme_context"])
 
 
 def on_page_context(context, page, config, nav):

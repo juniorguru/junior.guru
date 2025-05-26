@@ -94,6 +94,8 @@ markdown_extensions:
 theme:
   name: null
   custom_dir: theme/
+  static_templates:
+    - 404.html
 
 hooks:
   - hooks.py

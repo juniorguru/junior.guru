@@ -1,16 +1,20 @@
-.contact {
+.c2a {
   padding: $main-spacer $spacer;
   text-align: center;
-  background: $jg-yellow;
+  background: $jg-blue-light;
   border-radius: $border-radius;
 }
 
-.contact-button {
+.c2a.highlighted {
+  background: $jg-yellow;
+}
+
+.c2a-button {
   @extend .btn;
   @extend .btn-primary;
   @extend .btn-lg;
 }
 
-.contact-small {
+.c2a-small {
   margin: map-get($spacers, 2) 0 0;
 }
