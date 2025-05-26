@@ -1,0 +1,148 @@
+registry:
+
+- from_url: "/candidate-handbook/"
+  to_doc: "handbook/candidate.md"
+
+- from_url: "/donate/"
+  to_doc: "love.jinja"
+
+- from_url: "/hire-juniors/"
+  to_doc: "love.jinja"
+
+- from_url: "/jobs/austria/"
+  to_doc: "jobs.jinja"
+
+- from_url: "/jobs/germany/"
+  to_doc: "jobs.jinja"
+
+- from_url: "/jobs/poland/"
+  to_doc: "jobs.jinja"
+
+- from_url: "/jobs/region/brno/"
+  to_doc: "jobs/brno.jinja"
+
+- from_url: "/jobs/region/ceske-budejovice/"
+  to_doc: "jobs/ceske-budejovice.jinja"
+
+- from_url: "/jobs/region/hradec-kralove/"
+  to_doc: "jobs/hradec-kralove.jinja"
+
+- from_url: "/jobs/region/jihlava/"
+  to_doc: "jobs/jihlava.jinja"
+
+- from_url: "/jobs/region/karlovy-vary/"
+  to_doc: "jobs/karlovy-vary.jinja"
+
+- from_url: "/jobs/region/liberec/"
+  to_doc: "jobs/liberec.jinja"
+
+- from_url: "/jobs/region/olomouc/"
+  to_doc: "jobs/olomouc.jinja"
+
+- from_url: "/jobs/region/ostrava/"
+  to_doc: "jobs/ostrava.jinja"
+
+- from_url: "/jobs/region/pardubice/"
+  to_doc: "jobs/pardubice.jinja"
+
+- from_url: "/jobs/region/plzen/"
+  to_doc: "jobs/plzen.jinja"
+
+- from_url: "/jobs/region/praha/"
+  to_doc: "jobs/praha.jinja"
+
+- from_url: "/jobs/region/usti-nad-labem/"
+  to_doc: "jobs/usti-nad-labem.jinja"
+
+- from_url: "/jobs/region/zlin/"
+  to_doc: "jobs/zlin.jinja"
+
+- from_url: "/jobs/slovakia/"
+  to_doc: "jobs.jinja"
+
+- from_url: "/learn/"
+  to_doc: "handbook/learn.md"
+
+- from_url: "/motivation/"
+  to_doc: "handbook/motivation.md"
+
+- from_url: "/open/"
+  to_doc: "about/index.md"
+
+- from_url: "/practice/"
+  to_doc: "handbook/practice.md"
+
+- from_url: "/pricing/"
+  to_doc: "love.jinja"
+
+- from_url: "/press/"
+  to_doc: "about/index.md"
+
+- from_url: "/press/crisis/"
+  to_doc: "about/index.md"
+
+- from_url: "/press/handbook/"
+  to_doc: "about/handbook.md"
+
+- from_url: "/press/women/"
+  to_doc: "about/women.md"
+
+- from_url: "/sponsorship/"
+  to_doc: "love.jinja"
+
+- from_url: "/topics/codingbootcamppraha/"
+  to_doc: "courses/codingbootcamppraha.md"
+
+- from_url: "/topics/cs50/"
+  to_doc: "courses/cs50.md"
+
+- from_url: "/topics/czechitas/"
+  to_doc: "courses/czechitas.md"
+
+- from_url: "/topics/djangogirls/"
+  to_doc: "courses/djangogirls.md"
+
+- from_url: "/topics/engeto/"
+  to_doc: "courses/engeto.md"
+
+- from_url: "/topics/git/"
+  to_doc: "handbook/git.md"
+
+- from_url: "/topics/github/"
+  to_doc: "handbook/git.md"
+
+- from_url: "/topics/greenfox/"
+  to_doc: "courses/greenfox.md"
+
+- from_url: "/topics/itnetwork/"
+  to_doc: "courses/itnetwork.md"
+
+- from_url: "/topics/learn2code/"
+  to_doc: "courses/skillmea.md"
+
+- from_url: "/topics/primakurzy/"
+  to_doc: "courses/primakurzy.md"
+
+- from_url: "/topics/pyladies/"
+  to_doc: "courses/pyladies.md"
+
+- from_url: "/topics/reactgirls/"
+  to_doc: "courses/reactgirls.md"
+
+- from_url: "/topics/sdacademy/"
+  to_doc: "courses/sdacademy.md"
+
+- from_url: "/topics/skillmea/"
+  to_doc: "courses/skillmea.md"
+
+- from_url: "/topics/step/"
+  to_doc: "courses/step.md"
+
+- from_url: "/topics/udemy/"
+  to_doc: "courses/udemy.md"
+
+- from_url: "/topics/unicorn/"
+  to_doc: "courses/unicornhatchery.md"
+
+- from_url: "/topics/vsb/"
+  to_doc: "courses/kurzyvsb.md"

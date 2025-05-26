@@ -7,10 +7,12 @@ from mkdocs.utils.meta import get_data as parse_document
 from pydantic import BaseModel, ConfigDict
 from slugify import slugify
 from strictyaml import as_document
+import yaml
 
 from jg.coop.lib import loggers
 from jg.coop.lib.mapycz import REGIONS
 from jg.coop.lib.text import get_tag_slug
+from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.event import Event
 from jg.coop.models.podcast import PodcastEpisode
@@ -18,6 +20,8 @@ from jg.coop.models.podcast import PodcastEpisode
 
 logger = loggers.from_path(__file__)
 
+
+REDIRECTS_YAML_PATH = Path("jg/coop/data/redirects.yml")
 
 DOCS_DIR = Path("jg/coop/web/generated_docs")
 
@@ -34,64 +38,28 @@ class GeneratedDocument(BaseModel):
         return f"---\n{yaml}\n---\n{self.content}"
 
 
+class RedirectConfig(YAMLConfig):
+    from_url: str
+    to_doc: str
+
+    @property
+    def from_doc(self) -> str:
+        return self.from_url.strip("/") + "/index.md"
+
+
+class RedirectsConfig(YAMLConfig):
+    registry: list[RedirectConfig]
+
+
 def generate_redirects() -> Generator[GeneratedDocument, None, None]:
-    for path, redirect in [
-        ("candidate-handbook.md", "handbook/candidate.md"),
-        ("donate.md", "love.jinja"),
-        ("hire-juniors.md", "love.jinja"),
-        ("jobs/austria.md", "jobs.jinja"),
-        ("jobs/germany.md", "jobs.jinja"),
-        ("jobs/poland.md", "jobs.jinja"),
-        ("jobs/region/brno.md", "jobs/brno.jinja"),
-        ("jobs/region/ceske-budejovice.md", "jobs/ceske-budejovice.jinja"),
-        ("jobs/region/hradec-kralove.md", "jobs/hradec-kralove.jinja"),
-        ("jobs/region/jihlava.md", "jobs/jihlava.jinja"),
-        ("jobs/region/karlovy-vary.md", "jobs/karlovy-vary.jinja"),
-        ("jobs/region/liberec.md", "jobs/liberec.jinja"),
-        ("jobs/region/olomouc.md", "jobs/olomouc.jinja"),
-        ("jobs/region/ostrava.md", "jobs/ostrava.jinja"),
-        ("jobs/region/pardubice.md", "jobs/pardubice.jinja"),
-        ("jobs/region/plzen.md", "jobs/plzen.jinja"),
-        ("jobs/region/praha.md", "jobs/praha.jinja"),
-        ("jobs/region/usti-nad-labem.md", "jobs/usti-nad-labem.jinja"),
-        ("jobs/region/zlin.md", "jobs/zlin.jinja"),
-        ("jobs/slovakia.md", "jobs.jinja"),
-        ("learn.md", "handbook/learn.md"),
-        ("motivation.md", "handbook/motivation.md"),
-        ("open.md", "about/index.md"),
-        ("practice.md", "handbook/practice.md"),
-        ("pricing.md", "love.jinja"),
-        ("press/index.md", "about/index.md"),
-        ("press/crisis.md", "about/index.md"),
-        ("press/handbook.md", "about/handbook.md"),
-        ("press/women.md", "about/women.md"),
-        ("sponsorship.md", "love.jinja"),
-        ("topics/codingbootcamppraha.md", "courses/codingbootcamppraha.md"),
-        ("topics/cs50.md", "courses/cs50.md"),
-        ("topics/czechitas.md", "courses/czechitas.md"),
-        ("topics/djangogirls.md", "courses/djangogirls.md"),
-        ("topics/engeto.md", "courses/engeto.md"),
-        ("topics/git.md", "handbook/git.md"),
-        ("topics/github.md", "handbook/git.md"),
-        ("topics/greenfox.md", "courses/greenfox.md"),
-        ("topics/itnetwork.md", "courses/itnetwork.md"),
-        ("topics/learn2code.md", "courses/skillmea.md"),
-        ("topics/primakurzy.md", "courses/primakurzy.md"),
-        ("topics/pyladies.md", "courses/pyladies.md"),
-        ("topics/reactgirls.md", "courses/reactgirls.md"),
-        ("topics/sdacademy.md", "courses/sdacademy.md"),
-        ("topics/skillmea.md", "courses/skillmea.md"),
-        ("topics/step.md", "courses/step.md"),
-        ("topics/udemy.md", "courses/udemy.md"),
-        ("topics/unicorn.md", "courses/unicornhatchery.md"),
-        ("topics/vsb.md", "courses/kurzyvsb.md"),
-    ]:
+    config = RedirectsConfig(**yaml.safe_load(REDIRECTS_YAML_PATH.read_text()))
+    for redirect in config.registry:
         yield GeneratedDocument(
-            path=path,
+            path=redirect.from_doc,
             meta=dict(
                 title="Přesměrování",
                 template="redirect.html",
-                redirect=redirect,
+                redirect=redirect.to_doc,
             ),
             content=(DOCS_DIR / "redirect.jinja").read_text(),
         )
