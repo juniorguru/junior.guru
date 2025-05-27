@@ -80,6 +80,7 @@ google_service_account.json
 # Synced data
 /jg/coop/data/*.db
 /jg/coop/data/*.db-*
+/jg/coop/data/jobs/*.*
 /jg/coop/images/avatars-club/*.png
 /jg/coop/images/avatars-sponsors/*.png
 /jg/coop/images/logos-jobs/*.png
@@ -105,5 +106,6 @@ backup.tgz.gpg
 # Testing debug artifacts
 /tests/sync_jobs_logos/logo-converted.png
 
-# Logs
+# Logs, profiling
 *.log
+*.prof

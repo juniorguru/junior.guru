@@ -29,7 +29,7 @@ hooks:
   - hooks.py
 
 plugins:
+  - awesome-nav
   - gen-files:
       scripts:
         - generators.py
-  - awesome-nav

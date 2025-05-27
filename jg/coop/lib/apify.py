@@ -73,7 +73,8 @@ def fetch_data(
     return list(dataset.iterate_items())
 
 
-def fetch_scheduled_actors(token: str | None = None) -> Generator[str, None, None]:
+@cache(expire=timedelta(days=1), tag="apify")
+def fetch_scheduled_actors(token: str | None = None) -> list[str]:
     client = create_client(token=token)
     schedules = [
         schedule
@@ -88,8 +89,7 @@ def fetch_scheduled_actors(token: str | None = None) -> Generator[str, None, Non
             if action["type"] == "RUN_ACTOR"
         ]
         actor_ids.update(schedule_actor_ids)
-
-    for actor_id in actor_ids:
-        actor = client.actor(actor_id)
-        actor_info = actor.get()
-        yield f"{actor_info['username']}/{actor_info['name']}"
+    return [
+        f"{actor_info['username']}/{actor_info['name']}"
+        for actor_info in (client.actor(actor_id).get() for actor_id in actor_ids)
+    ]

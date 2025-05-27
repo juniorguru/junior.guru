@@ -5,7 +5,7 @@ import pickle
 import sqlite3
 from collections.abc import Set
 from enum import Enum
-from functools import wraps
+from functools import cache, wraps
 from pathlib import Path
 from typing import Iterable
 
@@ -55,7 +55,7 @@ class SqliteDatabase(BaseSqliteDatabase):
 db = SqliteDatabase(DB_FILE, pragmas={"journal_mode": "wal"})
 
 
-db.func("czech_sort")(czech_sort_key)
+db.func("czech_sort")(cache(czech_sort_key))
 
 
 class BaseModel(Model):

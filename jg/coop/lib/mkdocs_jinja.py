@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import Callable
 
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader, StrictUndefined
 from mkdocs.config import Config
 from mkdocs.structure.files import File, Files
 from mkdocs.structure.pages import Page
@@ -86,6 +86,7 @@ def get_env(page: Page, config: Config, files: Files) -> Environment:
         loader=FileSystemLoader(get_macros_dir(config)),
         auto_reload=False,
         bytecode_cache=get_jinja_cache(),
+        # undefined=StrictUndefined,
     )
     env.filters.update(get_filters())
     env.filters["url"] = url_filter

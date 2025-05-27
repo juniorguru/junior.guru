@@ -34,16 +34,24 @@ class CourseUP(BaseModel):
     def count(cls) -> int:
         return cls.select().count()
 
+    @classmethod
+    def course_provider_listing(cls, business_id: int) -> Iterable[Self]:
+        return (
+            cls.select()
+            .where(cls.business_id == business_id)
+            .order_by(fn.czech_sort(cls.name))
+        )
+
 
 class CourseProvider(BaseModel):
     name = CharField()
     slug = CharField(unique=True)
     url = CharField()
-    cz_business_id = IntegerField(null=True)
+    cz_business_id = IntegerField(null=True, index=True)
     cz_name = CharField(null=True)
     cz_legal_form = CharField(null=True)
     cz_years_in_business = IntegerField(null=True)
-    sk_business_id = IntegerField(null=True)
+    sk_business_id = IntegerField(null=True, index=True)
     sk_name = CharField(null=True)
     sk_legal_form = CharField(null=True)
     sk_years_in_business = IntegerField(null=True)
@@ -69,11 +77,7 @@ class CourseProvider(BaseModel):
 
     @property
     def list_courses_up(self) -> Iterable[CourseUP]:
-        return (
-            CourseUP.select()
-            .where(CourseUP.business_id == self.cz_business_id)
-            .order_by(fn.czech_sort(CourseUP.name))
-        )
+        return CourseUP.course_provider_listing(self.cz_business_id)
 
     @property
     def organization(self) -> Sponsor | Partner | None:

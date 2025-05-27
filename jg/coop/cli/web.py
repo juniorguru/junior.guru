@@ -4,7 +4,6 @@ import subprocess
 import warnings
 from functools import cache, wraps
 from pathlib import Path
-from tempfile import TemporaryDirectory
 from time import perf_counter
 
 import click
@@ -75,23 +74,14 @@ def build_mkdocs(context, config: Path, output_path: Path, warn: bool):
         # Unfortunately MkDocs sets their own warnings filter, so we have to
         # nuke the whole thing to disable warnings. This is a hack, but it works.
         warnings.simplefilter = lambda *args, **kwargs: None
-
-    # Unfortunately MkDocs doesn't support mixing with existing files inside
-    # the output directory, so we have to build into a temporary directory and
-    # then move the files over manually.
-    with TemporaryDirectory() as temp_dir:
-        try:
-            context.invoke(
-                _build_mkdocs, config_file=str(config.absolute()), site_dir=temp_dir
-            )
-            shutil.copytree(
-                temp_dir,
-                output_path.absolute(),
-                dirs_exist_ok=True,
-                ignore=shutil.ignore_patterns("sitemap.xml*"),
-            )
-        finally:
-            warnings.simplefilter = _simplefilter
+    try:
+        context.invoke(
+            _build_mkdocs,
+            config_file=str(config.absolute()),
+            site_dir=str(output_path.absolute()),
+        )
+    finally:
+        warnings.simplefilter = _simplefilter
 
 
 @main.command()
@@ -101,8 +91,8 @@ def build_mkdocs(context, config: Path, output_path: Path, warn: bool):
 def build(context, output_path: Path):
     shutil.rmtree(output_path, ignore_errors=True)
     output_path.mkdir(parents=True, exist_ok=True)
-    context.invoke(build_static, output_path=output_path)
     context.invoke(build_mkdocs, output_path=output_path)
+    context.invoke(build_static, output_path=output_path)
 
 
 @main.command()

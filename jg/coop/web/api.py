@@ -1,15 +1,13 @@
 import csv
 import gzip
-import itertools
 import json
 from datetime import UTC, datetime, timedelta
+from pathlib import Path
 from zoneinfo import ZoneInfo
 
-import httpx
 import ics
 from pod2gen import Category, Episode, Funding, Media, Person, Podcast
 
-from jg.coop.lib import apify
 from jg.coop.lib.md import md
 from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
@@ -103,35 +101,21 @@ def build_czechitas_csv(api_dir, config):
 
 @db.connection_context()
 def build_navigara_api(api_dir, config):
-    actor_names = [
-        actor_name
-        for actor_name in apify.fetch_scheduled_actors()
-        if actor_name.startswith("honzajavorek/jobs-")
-    ]
-    items = itertools.chain.from_iterable(
-        apify.fetch_data(actor_name, raise_if_missing=False)
-        for actor_name in actor_names
-    )
-
     api_subdir = api_dir / "navigara"
     api_subdir.mkdir(parents=True, exist_ok=True)
 
-    api_file = api_subdir / "jobs.jsonl.gz"
-    with gzip.GzipFile(api_file, mode="wb") as gzip_f:
-        for item in items:
-            line = json.dumps(item, ensure_ascii=False, sort_keys=True) + "\n"
-            gzip_f.write(line.encode("utf-8"))
+    src_dir = Path("jg/coop/data/jobs")
+    src_jobs_path = src_dir / "jobs.jsonl"
 
-    response = httpx.get(
-        "https://raw.githubusercontent.com/"
-        "juniorguru/plucker"  # repo
-        "/refs/heads/main/"
-        "jg/plucker/schemas/jobSchema.json",  # path
-        follow_redirects=True,
-    )
-    response.raise_for_status()
-    schema_file = api_subdir / "schema-apify.json"
-    schema_file.write_bytes(response.content)
+    api_jobs_path = api_subdir / "jobs.jsonl.gz"
+    with gzip.GzipFile(api_jobs_path, mode="wb") as gzip_f:
+        with src_jobs_path.open("r") as f:
+            for line in f:
+                gzip_f.write(line.encode("utf-8"))
+
+    src_schema_path = src_dir / "schema-apify.json"
+    api_schema_path = api_subdir / "schema-apify.json"
+    api_schema_path.write_bytes(src_schema_path.read_bytes())
 
 
 @db.connection_context()
