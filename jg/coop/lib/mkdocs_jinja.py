@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import Callable
 
-from jinja2 import Environment, FileSystemLoader, StrictUndefined
+from jinja2 import Environment, FileSystemLoader
 from mkdocs.config import Config
 from mkdocs.structure.files import File, Files
 from mkdocs.structure.pages import Page

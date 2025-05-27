@@ -1,7 +1,6 @@
 import os
 from datetime import timedelta
 from functools import lru_cache
-from typing import Generator
 
 from apify_client import ApifyClient
 from apify_shared.consts import ActorJobStatus
