@@ -17,14 +17,15 @@ from jg.coop.models.stage import Stage
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(
-    dependencies=[  # Generating pages from templates, that's why the dependencies are needed
-        "stages",
-        "course-providers",
-        "events",
-        "podcast",
-    ]
-)
+GENERATORS_DEPENDENCIES = [  # see generators.py
+    "course-providers",
+    "events",
+    "jobs-listed",
+    "podcast",
+]
+
+
+@cli.sync_command(dependencies=["stages"] + GENERATORS_DEPENDENCIES)
 @db.connection_context()
 def main():
     logger.info("Setting up db table")
