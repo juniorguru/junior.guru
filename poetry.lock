@@ -1991,20 +1991,21 @@ i18n = ["babel (>=2.9.0)"]
 min-versions = ["babel (==2.9.0)", "click (==7.0)", "colorama (==0.4)", "ghp-import (==1.0)", "importlib-metadata (==4.4)", "jinja2 (==2.11.1)", "markdown (==3.3.6)", "markupsafe (==2.0.1)", "mergedeep (==1.3.4)", "mkdocs-get-deps (==0.2.0)", "packaging (==20.5)", "pathspec (==0.11.1)", "pyyaml (==5.1)", "pyyaml-env-tag (==0.1)", "watchdog (==2.0)"]
 
 [[package]]
-name = "mkdocs-awesome-pages-plugin"
-version = "2.10.1"
-description = "An MkDocs plugin that simplifies configuring page titles and their order"
+name = "mkdocs-awesome-nav"
+version = "3.1.2"
+description = "A plugin for customizing the navigation structure of your MkDocs site."
 optional = false
-python-versions = ">=3.8.1"
+python-versions = ">=3.10"
 files = [
-    {file = "mkdocs_awesome_pages_plugin-2.10.1-py3-none-any.whl", hash = "sha256:c6939dbea37383fc3cf8c0a4e892144ec3d2f8a585e16fdc966b34e7c97042a7"},
-    {file = "mkdocs_awesome_pages_plugin-2.10.1.tar.gz", hash = "sha256:cda2cb88c937ada81a4785225f20ef77ce532762f4500120b67a1433c1cdbb2f"},
+    {file = "mkdocs_awesome_nav-3.1.2-py3-none-any.whl", hash = "sha256:2ae0e0bd8494c38277a88cb11b70a0e7e2731c1a3bf9c9c3cfcfd2e1b51a4b87"},
+    {file = "mkdocs_awesome_nav-3.1.2.tar.gz", hash = "sha256:98c5300330ad8e9b665b3f0b38e0116ddc14ce26ac7f3f8c31af5e0faa685a37"},
 ]
 
 [package.dependencies]
-mkdocs = ">=1"
+mkdocs = ">=1.6.0"
 natsort = ">=8.1.0"
-wcmatch = ">=7"
+pydantic = {version = ">=2.0.2", markers = "python_version < \"3.13\""}
+wcmatch = ">=8.4"
 
 [[package]]
 name = "mkdocs-gen-files"
@@ -3690,4 +3691,4 @@ propcache = ">=0.2.1"
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.12"
-content-hash = "8af91fbb2a50561dfe5fd3829e35f5bd0deaa54bc543e43eb0724b5f4f34dff6"
+content-hash = "983867099499bcb84551fb1df56319928694e6a53b7c070f3b7604a4365c0a10"

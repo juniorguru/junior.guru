@@ -277,11 +277,12 @@ template: main_subnav.html
   {% endfor %}
     <li class="jobs-empty" hidden>
       {% call note() -%}
-        {{ 'search'|icon }} Tvým filtrům neodpovídají žádné inzeráty.
-        {% if not is_remote_listing %}
-          Pokud hledáš podle místa,
-          zkus přidat <span class="jobs-tag active">#remote</span>.
-        {% endif %}
+        {{ 'search'|icon }}
+        Tvým filtrům neodpovídají žádné inzeráty.
+        {{- ' ' -}}
+        {%- if not is_remote_listing -%}
+          Pokud hledáš podle místa, zkus přidat <span class="jobs-tag active">#remote</span>.
+        {%- endif -%}
       {%- endcall %}
     </li>
   </ul>

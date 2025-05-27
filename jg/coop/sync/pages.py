@@ -20,7 +20,7 @@ logger = loggers.from_path(__file__)
 GENERATORS_DEPENDENCIES = [  # see generators.py
     "course-providers",
     "events",
-    "jobs-listed",
+    "jobs-listing",
     "podcast",
 ]
 

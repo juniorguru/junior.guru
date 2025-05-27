@@ -1,79 +1,7 @@
-#strict: true
+strict: true
 
 site_name: junior.guru
 site_url: https://junior.guru/
-
-nav:
-  - Klub:
-      - Klub: club.md
-      - Rozcestník pro členy: membership.jinja
-      - Klubové lekce angličtiny: membership-english.jinja
-  - Příručka:
-      - Cesta juniora: handbook/index.md
-      - Proč programovat: handbook/motivation.md
-      - Mýty: handbook/myths.md
-      - Ženy v IT: handbook/women.md
-      - Rodiče v IT: handbook/parents.md
-      - Základy: handbook/learn.md
-      - Bez kódu: handbook/nocode.md
-      - Angličtina: handbook/english.md
-      - Vybírání kurzu: handbook/course.md
-      - Procvičování: handbook/practice.md
-      - Komunity: handbook/community.md
-      - Řešení problémů: handbook/help.md
-      - Certifikace: handbook/certification.md
-      - Mentoring: handbook/mentoring.md
-      - Projekty: handbook/projects.md
-      - Git a GitHub: handbook/git.md
-      - Spolupráce: handbook/collaboration.md
-      - Psychika: handbook/mental-health.md
-      - Hledání práce: handbook/candidate.md
-      - Životopis: handbook/cv.md
-      - GitHub profil: handbook/github-profile.md
-      - LinkedIn: handbook/linkedin.md
-      - Pohovor: handbook/interview.md
-  - Kurzy:
-      - Kurzy programování: courses.md
-      - ... | flat | courses/*.md
-  - Práce:
-      - Inzeráty:
-          - Inzeráty: jobs.jinja
-          - ... | flat | jobs/*.jinja
-      - Kandidáti: candidates.jinja
-  - Inspirace:
-      - Novinky: news.jinja
-      - Podcast:
-          - Podcast: podcast.md
-          - ... | flat | podcast/*.jinja
-      - Klubové akce:
-          - Klubové akce: events.md
-          - ... | flat | events/*.md
-      - Příběhy:
-          - Příběhy: stories.md
-          - ... | flat | stories/*.md
-      - Moudra: wisdom.jinja
-  - Info:
-      - Vše o projektu: about/index.md
-      - Provozovatel: about/contact.md
-      - Mise a hodnoty: about/mission.md
-      - Vše o klubu: about/club.md
-      - Vše o příručce: about/handbook.md
-      - Finanční výsledky: about/finances.md
-      - Sponzoři a partneři: about/sponsors-partners.md
-      - Návštěvnost webu: about/web-usage.md
-      - Marketing: about/marketing.md
-      - Podpora žen v IT: about/women.md
-      - Zdrojový kód: about/code.md
-      - Pravidla chování: coc.md
-      - Obchodní podmínky: tos.md
-      - Ochrana osobních údajů: privacy.md
-      - "Klub: Otázky a odpovědi": faq.md
-  - Témata:
-      - ... | flat | topics/*.md
-  - Připravované:
-      - ... | flat | handbook/*.md
-  - Ostatní:
-      - ... | flat
 
 validation:
   omitted_files: warn
@@ -104,5 +32,4 @@ plugins:
   - gen-files:
       scripts:
         - generators.py
-  - awesome-pages:
-      strict: true
+  - awesome-nav

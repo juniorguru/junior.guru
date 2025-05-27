@@ -8,13 +8,16 @@ registry:
   - from_url: "/hire-juniors/"
     to_doc: "love.jinja"
 
-  - from_url: "/jobs/austria/"
+  - from_url: "/jobs/region/austria/"
     to_doc: "jobs.jinja"
 
-  - from_url: "/jobs/germany/"
+  - from_url: "/jobs/region/germany/"
     to_doc: "jobs.jinja"
 
-  - from_url: "/jobs/poland/"
+  - from_url: "/jobs/region/poland/"
+    to_doc: "jobs.jinja"
+
+  - from_url: "/jobs/region/slovakia/"
     to_doc: "jobs.jinja"
 
   - from_url: "/jobs/region/brno/"
@@ -55,9 +58,6 @@ registry:
 
   - from_url: "/jobs/region/zlin/"
     to_doc: "jobs/zlin.jinja"
-
-  - from_url: "/jobs/slovakia/"
-    to_doc: "jobs.jinja"
 
   - from_url: "/learn/"
     to_doc: "handbook/learn.md"
