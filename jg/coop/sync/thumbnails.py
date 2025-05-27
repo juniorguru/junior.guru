@@ -9,8 +9,7 @@ from jg.coop.lib import loggers
 from jg.coop.lib.images import render_image_file
 from jg.coop.lib.template_filters import icon, local_time, weekday
 from jg.coop.models.base import db
-from jg.coop.models.job import ListedJob
-from jg.coop.models.page import LegacyThumbnail, Page
+from jg.coop.models.page import Page
 
 
 WORKERS = 4
