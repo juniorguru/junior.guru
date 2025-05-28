@@ -7,7 +7,7 @@ registry:
     cz_business_id: 4656679
     subscription: https://juniorguru.memberful.com/admin/subscriptions/3696149
     periods:
-      - [2020-09, 2025-06]
+      - [2020-09, 2026-06]
 
   - name: Red Hat
     slug: redhat
