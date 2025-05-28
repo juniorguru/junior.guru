@@ -181,13 +181,13 @@ Není v možnostech junior.guru ověřovat kvalitu kurzů, ale takováto spolupr
 ## Sponzorství junior.guru
 
 {{ course_provider.name }} sponzoruje junior.guru a díky tomu tady má zvýraznění.
-Neznamená to, že jsou nejlepší, že je kurz nějak ověřený, nebo že je junior.guru doporučuje.
+Neznamená to ale, že junior.guru tvrdí, že jsou dobré, ověřené, nebo je doporučuje.
 Budiž jim však ke cti, že podporují tento projekt.
 {% else %}
 ## Vztah s junior.guru
 
 Kurzy od {{ course_provider.name }} jsou tady v rámci seznamu všech míst, kde se můžeš učit programovat.
-Neznamená to, že jsou dobré, ověřené, nebo že je junior.guru doporučuje.
+Neznamená to, že junior.guru tvrdí, že jsou dobré, ověřené, nebo je doporučuje.
 {% endif %}
 
 <div class="pagination">
