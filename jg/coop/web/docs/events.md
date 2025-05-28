@@ -68,7 +68,7 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
       </a>
     </h3>
     {% call markdown() -%}
-      Stará se o nahrávání záznamů.
+      Technický mág, stará se o nahrávání záznamů.
     {%- endcall %}
   </div>
 </div>
