@@ -1,25 +1,30 @@
 import hashlib
+import itertools
+from datetime import timedelta
+from functools import lru_cache
 from io import BytesIO
-from multiprocessing import Pool
 from pathlib import Path
-from urllib.parse import urlparse
 
-import favicon
-import requests
+import click
+import httpx
 from fontTools.ttLib import TTFont
+from fontTools.ttLib.tables._c_m_a_p import CmapSubtable
 from PIL import Image, ImageChops, ImageDraw, ImageFont, ImageOps
+from pydantic import BaseModel
 
 from jg.coop.cli.sync import main as cli
-from jg.coop.lib import loggers
+from jg.coop.lib import apify, loggers
+from jg.coop.lib.cache import cache
+from jg.coop.lib.mutations import MutationsNotAllowedError
 from jg.coop.models.base import db
-from jg.coop.models.job import ListedJob
+from jg.coop.models.job import ListedJob, LogoSourceType
 
-
-MAX_SIZE_PX = 1000
 
 SIZE_PX = 100
 
 IMAGES_DIR = Path("jg/coop/images")
+
+IMAGE_SAVE_OPTIONS = {"format": "WEBP", "optimize": True}
 
 LOGOS_DIR = IMAGES_DIR / "logos-jobs"
 
@@ -27,174 +32,125 @@ FONT_DIR = Path("node_modules/@fontsource/inter/files")
 
 FONT_WIDTH = 800
 
-WORKERS = 4
-
-# https://docs.python-requests.org/en/master/user/advanced/#timeouts
-REQUEST_TIMEOUT = (3.05, 15)
-
-# Just copy-paste of raw headers Firefox sends to a web page. None of it is
-# intentionally set to a specific value with a specific meaning.
-DEFAULT_REQUEST_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:93.0) Gecko/20100101 Firefox/93.0",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-    "Accept-Language": "en-US,en;q=0.8,cs;q=0.6,sk;q=0.4,es;q=0.2",
-    "DNT": "1",
-    "Upgrade-Insecure-Requests": "1",
-    "Sec-Fetch-Dest": "document",
-    "Sec-Fetch-Mode": "navigate",
-    "Sec-Fetch-Site": "none",
-    "Sec-Fetch-User": "?1",
-    "Sec-GPC": "1",
-    "Cache-Control": "max-age=0",
-}
-
-USER_AGENTS = {
-    "startupjobs.cz": "JuniorGuruBot (+https://junior.guru)",
-}
+FONT_PATHS = [
+    FONT_DIR / f"inter-latin-{FONT_WIDTH}-normal.woff2",
+    FONT_DIR / f"inter-latin-ext-{FONT_WIDTH}-normal.woff2",
+]
 
 
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=["jobs-listing"])
-@db.connection_context()
-def main():
-    jobs = ListedJob.listing()
+class LogoImage(BaseModel):
+    image_url: str
+    original_image_url: str
+    width: int
+    height: int
+    format: str
+    source_url: str
 
-    logger.info("Clear old logos")
+
+class Logo(BaseModel):
+    image: LogoImage
+    source_type: LogoSourceType
+
+
+@cache(expire=timedelta(days=14), tag="job-logos")
+def fetch_logos(actor_name: str, urls: list[str]) -> list[dict]:
+    return apify.run(actor_name, {"links": [{"url": url} for url in urls]})
+
+
+@cli.sync_command(dependencies=["jobs-listing"])
+@click.option("--actor", "actor_name", default="honzajavorek/job-logos")
+@click.option("--clear-files/--keep-files", default=False)
+@db.connection_context()
+def main(actor_name: str, clear_files: bool):
     Path(LOGOS_DIR).mkdir(exist_ok=True, parents=True)
-    for path in LOGOS_DIR.glob("*.png"):
-        path.unlink()
+    jobs = list(ListedJob.listing())
+
+    if clear_files:
+        logger.info("Clearing existing logo files")
+        for path in LOGOS_DIR.glob("*.webp"):
+            path.unlink()
     for job in jobs:
         job.company_logo_path = None
         job.save()
 
-    with Pool(WORKERS) as pool:
-        urls = {}
+    logger.info("Collecting logo URLs")
+    source_urls = sorted(
+        set(itertools.chain.from_iterable(job.company_logo_source_urls for job in jobs))
+    )
+    try:
+        logger.info(f"Fetching {len(source_urls)} logo URLs")
+        logo_images = logger.wait(fetch_logos, actor_name, source_urls)
+    except MutationsNotAllowedError:
+        logger.warning("Not allowed to fetch logos, relying on stale data")
+        logo_images = apify.fetch_data(actor_name)
+    logo_images = [LogoImage(**logo_image) for logo_image in logo_images]
 
-        logger.info("Registering company logo URLs")
-        for job in jobs:
-            for logo_url in job.company_logo_urls:
-                urls.setdefault(logo_url, dict(type="logo", jobs=[]))
-                urls[logo_url]["jobs"].append(job.id)
-
-        logger.info("Fetching and registering company icon URLs")
-        inputs = ((job.id, job.company_url) for job in jobs if job.company_url)
-        results = pool.imap_unordered(fetch_icon_urls, inputs)
-        for job_id, icon_urls in logger.progress(results, chunk_size=5):
-            for icon_url in icon_urls:
-                urls.setdefault(icon_url, dict(type="icon", jobs=[]))
-                urls[icon_url]["jobs"].append(job_id)
-
-        logger.info("Downloading images from both logo and icon URLs")
-        results = pool.imap_unordered(download_image, urls.keys())
-        for image_url, image_path, orig_width, orig_height in logger.progress(
-            results, chunk_size=5
-        ):
-            urls[image_url]["image_path"] = image_path
-            urls[image_url]["orig_width"] = orig_width
-            urls[image_url]["orig_height"] = orig_height
-
-        logger.info("Deciding which images to use")
-        logo_paths = {}
-        for logo in sorted(urls.values(), key=sort_key):
-            for job_id in logo["jobs"]:
-                logo_paths.setdefault(job_id, logo["image_path"])
-        for job in jobs:
-            logo_path = logo_paths.get(job.id)
-            if logo_path:
-                job.company_logo_path = Path(logo_path).relative_to(IMAGES_DIR)
-                logger.debug(f"Logo for {job!r}: {job.company_logo_path}")
+    logger.info(f"Processing {len(logo_images)} logo images")
+    for job in jobs:
+        logger.debug(f"Processing job {job.url}")
+        logos = []
+        for logo_image in logo_images:
+            if source_type := job.get_logo_source_type(logo_image.source_url):
+                logos.append(Logo(image=logo_image, source_type=source_type))
+        logos.sort(key=sort_key)
+        logger.debug(f"Logo candidates: {len(logos)}")
+        for logo in logos:
+            logger.info(f"Source {logo.image.original_image_url}")
+            basename = hashlib.sha256(logo.image.image_url.encode()).hexdigest()
+            logo_path = LOGOS_DIR / f"{basename}.webp"
+            logger.info(f"Destination {logo_path}")
+            if logo_path.exists():
+                logger.debug(f"Logo {logo_path} already exists, skipping download")
+            else:
+                logger.debug(f"Downloading: {logo.image.image_url}")
+                response = httpx.get(logo.image.image_url, follow_redirects=True)
+                response.raise_for_status()
+                image = Image.open(BytesIO(response.content))
+                convert_image(image).save(logo_path, **IMAGE_SAVE_OPTIONS)
+            job.company_logo_path = logo_path.relative_to(IMAGES_DIR)
             job.save()
+            break
 
     remaining_jobs = list(ListedJob.no_logo_listing())
     logger.info(
         f"Generating fallback logo images for {len(remaining_jobs)} remaining jobs"
     )
     for job in remaining_jobs:
-        hash = hashlib.sha1(f"initial-{job.initial}".encode()).hexdigest()
-        image_path = LOGOS_DIR / f"{hash}.png"
-        logger.info(f"Generating to {image_path}")
+        hash = hashlib.sha256(f"initial-{job.initial}".encode()).hexdigest()
+        image_path = LOGOS_DIR / f"{hash}.webp"
+        logger.info(f"Destination {image_path}")
         if image_path.exists():
             logger.debug(f"Path {image_path} already exists")
         else:
             logger.debug(f"Generating initial {job.initial!r}")
             image = create_fallback_image(job.initial)
-            image.save(image_path)
+            image.save(image_path, **IMAGE_SAVE_OPTIONS)
         job.company_logo_path = image_path.relative_to(IMAGES_DIR)
         job.save()
         logger.debug(f"Logo for {job!r}: {job.company_logo_path}")
 
     logger.info("Generating special question mark logo for club jobs")
-    create_fallback_image("?").save(LOGOS_DIR / "unknown.png")
+    create_fallback_image("?").save(LOGOS_DIR / "unknown.webp", **IMAGE_SAVE_OPTIONS)
 
 
-def sort_key(logo):
-    # Such image didn't download, put it to the end of the list
-    if logo["image_path"] is None:
-        return (True, 100000, 0)
-
+def sort_key(logo: Logo) -> tuple[bool, int, int]:
     # Prioritize logos over icons (True sorts after False)
-    is_icon = logo["type"] == "icon"
+    is_icon = logo.source_type == LogoSourceType.ICON
 
     # Closer to zero, more like square. For small images, the shape doesn't
     # matter. All will be compared as if they were perfect squares.
-    if logo["orig_width"] < SIZE_PX or logo["orig_height"] < SIZE_PX:
+    if logo.image.width < SIZE_PX or logo.image.height < SIZE_PX:
         similarity_to_square = 0
     else:
-        similarity_to_square = abs(logo["orig_width"] - logo["orig_height"])
+        similarity_to_square = abs(logo.image.width - logo.image.height)
 
     # Multiplied by -1 to ensure descending sort, i.e. larger is better.
-    area = -1 * logo["orig_width"] * logo["orig_height"]
+    area = -1 * logo.image.width * logo.image.height
 
     return (is_icon, similarity_to_square, area)
-
-
-def fetch_icon_urls(args):
-    logger_f = logger["fetch_icon_urls"]
-    job_id, company_url = args
-    logger_f.debug(f"Fetching icon URLs for <ListedJob: {job_id}>, {company_url}")
-    try:
-        icons = favicon.get(
-            company_url, timeout=REQUEST_TIMEOUT, headers=DEFAULT_REQUEST_HEADERS
-        )
-        urls = unique(icon.url for icon in icons)
-        logger_f.info(
-            f"Icon URLs found for <ListedJob: {job_id}>, {company_url}: {urls!r}"
-        )
-        return job_id, urls
-    except Exception:
-        logger_f.exception(
-            f"Fetching icon URLs for <ListedJob: {job_id}>, {company_url} failed"
-        )
-        return job_id, []
-
-
-def download_image(image_url):
-    logger_d = logger["download_image"]
-    logger_d.debug(f"Downloading {image_url}")
-    try:
-        headers = dict(DEFAULT_REQUEST_HEADERS)
-        headers["User-Agent"] = choose_user_agent(image_url)
-        response = requests.get(image_url, timeout=REQUEST_TIMEOUT, headers=headers)
-        response.raise_for_status()
-
-        orig_image = Image.open(BytesIO(response.content))
-        orig_width, orig_height = orig_image.size
-        if orig_width > MAX_SIZE_PX or orig_height > MAX_SIZE_PX:
-            raise ValueError(
-                f"Image too large ({orig_width}x{orig_height} < {MAX_SIZE_PX}x{MAX_SIZE_PX})"
-            )
-
-        hash = hashlib.sha1(image_url.encode()).hexdigest()
-        image_path = LOGOS_DIR / f"{hash}.png"
-        convert_image(orig_image).save(image_path)
-        logger_d.info(f"Downloaded {image_url} as {image_path}")
-
-        return image_url, image_path, orig_width, orig_height
-    except Exception:
-        logger_d.exception(f"Unable to download {image_url}")
-        return image_url, None, None, None
 
 
 def convert_image(image: Image) -> Image:
@@ -225,26 +181,23 @@ def create_fallback_image(
     color: tuple[int] = (231, 231, 231),
     bg_color: tuple[int] = (255, 255, 255),
     padding: int = 5,
-) -> Image:  # TODO log as debug once CI stops failing
-    logger.info(f"Creating fallback image for {initial}")
+) -> Image:
+    logger.debug(f"Creating fallback image for {initial}")
     # the fonts provided by @fontsource/inter are split into files according to
     # the character set they support, so we need to choose the right one based
     # on the initial character
     font_path = next(
         font_path
-        for font_path in [
-            FONT_DIR / f"inter-latin-{FONT_WIDTH}-normal.woff2",
-            FONT_DIR / f"inter-latin-ext-{FONT_WIDTH}-normal.woff2",
-        ]
-        if any(ord(initial) in table.cmap for table in TTFont(font_path)["cmap"].tables)
+        for font_path in FONT_PATHS
+        if any(ord(initial) in table.cmap for table in load_font_tables(font_path))
     )
 
-    logger.info(f"Using font {font_path} for {initial}")
+    logger.debug(f"Using font {font_path} for {initial}")
     image = Image.new("RGB", (SIZE_PX, SIZE_PX), bg_color)
     draw = ImageDraw.Draw(image)
     font = ImageFont.truetype(font_path, SIZE_PX - (padding * 2))
 
-    logger.info(f"Centering text for {initial}")
+    logger.debug(f"Centering text for {initial}")
     _, _, box_width, box_height = draw.textbbox(xy=(0, 0), text=initial, font=font)
     text_width, text_height = font.getmask(initial).size
     x_text = (SIZE_PX - text_width) / 2
@@ -254,10 +207,7 @@ def create_fallback_image(
     return image
 
 
-def unique(iterable):
-    return list(frozenset(item for item in iterable if item is not None))
-
-
-def choose_user_agent(url):
-    hostname = urlparse(url).hostname.lstrip("www.")
-    return USER_AGENTS.get(hostname, DEFAULT_REQUEST_HEADERS["User-Agent"])
+@lru_cache
+def load_font_tables(font_path: Path) -> list[CmapSubtable]:
+    logger.info(f"Loading font tables from {font_path}")
+    return TTFont(font_path)["cmap"].tables

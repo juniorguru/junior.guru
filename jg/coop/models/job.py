@@ -218,6 +218,11 @@ class DroppedJob(BaseModel):
         )
 
 
+class LogoSourceType(StrEnum):
+    LOGO = "logo"
+    ICON = "icon"
+
+
 class ListedJob(BaseModel):
     boards_ids = JSONField(default=list, index=True)
     submitted_job = ForeignKeyField(SubmittedJob, unique=True, null=True)
@@ -288,6 +293,17 @@ class ListedJob(BaseModel):
     @property
     def is_highlighted(self) -> bool:
         return self.is_submitted
+
+    @property
+    def company_logo_source_urls(self) -> list[str]:
+        return self.company_logo_urls + ([self.company_url] if self.company_url else [])
+
+    def get_logo_source_type(self, logo_source_url: str) -> LogoSourceType | None:
+        if logo_source_url in self.company_logo_urls:
+            return LogoSourceType.LOGO
+        if logo_source_url == self.company_url:
+            return LogoSourceType.ICON
+        return None
 
     @property
     def tags(self) -> list[Tag]:
@@ -371,12 +387,6 @@ class ListedJob(BaseModel):
             cls.submitted_job.is_null(),
             (upvotes_count + comments_count).desc(),
             cls.posted_on.desc(),
-        )
-
-    @classmethod
-    def favicon_listing(cls) -> Iterable[Self]:
-        return cls.select().where(
-            cls.company_logo_path.is_null() & cls.company_url.is_null(False)
         )
 
     @classmethod

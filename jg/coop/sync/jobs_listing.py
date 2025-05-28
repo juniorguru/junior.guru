@@ -35,7 +35,7 @@ def main(actor_name: str):
         logger.info(f"Running checks for {len(scraped_jobs)} URLs")
         checks = logger.wait(check_jobs, actor_name, [job.url for job in scraped_jobs])
     except MutationsNotAllowedError:
-        logger.warning("Cannot check for expired jobs, relying on stale data")
+        logger.warning("Not allowed to check for expired jobs, relying on stale data")
         checks = apify.fetch_data(actor_name)
     if len(checks) != len(scraped_jobs):
         logger.warning(
