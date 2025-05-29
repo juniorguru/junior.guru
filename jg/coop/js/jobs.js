@@ -55,7 +55,9 @@ function setupJobs() {
 }
 
 function filterJobs() {
-  const activeTags = Array.from(document.querySelectorAll(".jobs-tags .jobs-tag.active"));
+  const activeTags = Array.from(
+    document.querySelectorAll(".jobs-tags .jobs-tag.active"),
+  );
   const activeTagsByType = activeTags.reduce((mapping, tag) => {
     mapping[tag.dataset.jobsTagType] ||= [];
     mapping[tag.dataset.jobsTagType].push(tag.dataset.jobsTag);
