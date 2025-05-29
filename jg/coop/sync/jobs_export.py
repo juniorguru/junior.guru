@@ -5,7 +5,7 @@ from pathlib import Path
 import click
 import httpx
 
-from jg.coop.cli.sync import main as cli
+from jg.coop.cli.sync import default_from_env, main as cli
 from jg.coop.lib import apify, loggers
 from jg.coop.models.base import db
 
@@ -19,8 +19,11 @@ logger = loggers.from_path(__file__)
     default=Path("jg/coop/data/jobs"),
     type=click.Path(path_type=Path, file_okay=False, dir_okay=True, writable=True),
 )
+@click.option(
+    "--github-api-key", default=default_from_env("GITHUB_API_KEY"), required=True
+)
 @db.connection_context()
-def main(output_dir: Path):
+def main(output_dir: Path, github_api_key: str):
     actor_names = [
         actor_name
         for actor_name in apify.fetch_scheduled_actors()
@@ -41,12 +44,17 @@ def main(output_dir: Path):
             f.write(line)
     logger.info(f"Saved items to {api_file}")
 
-    logger.info("Fetching schema file from GitHub")
+    logger.info(
+        "Fetching schema file from GitHub"
+        f" (token: {'yes' if github_api_key else 'no'})"
+    )
+    headers = {"Authorization": f"Bearer {github_api_key}"} if github_api_key else {}
     response = httpx.get(
         "https://raw.githubusercontent.com/"
         "juniorguru/plucker"  # repo
         "/refs/heads/main/"
         "jg/plucker/schemas/jobSchema.json",  # path
+        headers=headers,
         follow_redirects=True,
     )
     response.raise_for_status()
