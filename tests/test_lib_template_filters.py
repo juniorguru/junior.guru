@@ -305,3 +305,82 @@ def test_nice_url(url: str, expected: str):
 )
 def test_hours(seconds: int, expected: str):
     assert template_filters.hours(seconds) == expected
+
+
+@pytest.mark.parametrize(
+    "url, expected_icon, expected_text",
+    [
+        (
+            "https://ai.bleeding.dev/",
+            "link-45deg",
+            "ai.bleeding.dev",
+        ),
+        (
+            "https://github.com/gedrex",
+            "github",
+            "@gedrex",
+        ),
+        (
+            "https://github.com/MewsSystems/developers",
+            "github",
+            "@MewsSystems",
+        ),
+        (
+            "https://twitter.com/datasciencefox",
+            "twitter-x",
+            "@datasciencefox",
+        ),
+        (
+            "https://witter.cz/@Lwicze",
+            "mastodon",
+            "@Lwicze@witter.cz",
+        ),
+        (
+            "https://www.instagram.com/matejkotrba/",
+            "instagram",
+            "@matejkotrba",
+        ),
+        (
+            "https://www.linkedin.com/in/evapavlikova/",
+            "linkedin",
+            "in/evapavlikova",
+        ),
+        (
+            "https://www.linkedin.com/in/lea-bradáčová-2b931841/",
+            "linkedin",
+            "in/lea-bradáčová-2b931841",
+        ),
+        (
+            "https://www.linkedin.com/in/m%C3%ADla-votradovec-2a659920/",
+            "linkedin",
+            "in/míla-votradovec-2a659920",
+        ),
+        ("https://www.lucielenertova.cz", "link-45deg", "lucielenertova.cz"),
+        (
+            "https://www.naucmese.cz/kurz/ziskej-praci-v-it",
+            "link-45deg",
+            "naucmese.cz/kurz/ziskej-praci-v-it",
+        ),
+        (
+            "https://www.youtube.com/@LucieLenertova",
+            "youtube",
+            "@LucieLenertova",
+        ),
+        (
+            "https://www.youtube.com/channel/UC-W5H6lqLrhJeOwVAW7ktNw",
+            "youtube",
+            "youtube.com/channel/UC-W5H6lqLrhJeOwVAW7ktNw",
+        ),
+        (
+            "https://x.com/banterCZ",
+            "twitter-x",
+            "@banterCZ",
+        ),
+    ],
+)
+def test_bio_link(url: str, expected_icon: str, expected_text: str):
+    markup = str(template_filters.bio_link(url))
+    assert markup == (
+        f'<a class="icon-link" href="{url}" target="_blank" rel="nofollow noopener noreferrer">'
+        f'<span><i class="bi bi-{expected_icon}"></i></span><span>{expected_text}</span></a>'
+    )

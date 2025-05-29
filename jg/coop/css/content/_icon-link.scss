@@ -1,0 +1,12 @@
+.icon-link {
+  display: inline-flex;
+  flex-direction: row;
+  gap: .3rem;
+  align-items: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.icon-link span:last-child {
+  text-decoration: underline;
+}

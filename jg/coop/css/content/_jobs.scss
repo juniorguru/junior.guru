@@ -233,16 +233,7 @@
 }
 
 .jobs-company-link {
-  display: flex;
-  flex-direction: row;
-  gap: .3rem;
-  align-items: center;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.jobs-company-link-label {
-  text-decoration: underline;
+  @extend .icon-link;
 }
 
 .jobs-club-items {

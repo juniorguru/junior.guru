@@ -15,6 +15,7 @@ from jg.coop.lib.cache import get_jinja_cache
 TEMPLATE_FILTERS = [
     "absolute_url",
     "assert_empty",
+    "bio_link",
     "docs_url",
     "email_link",
     "hours",

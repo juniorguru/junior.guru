@@ -5,7 +5,7 @@ from datetime import UTC
 from numbers import Number
 from operator import itemgetter
 from typing import Generator, Iterable, Literal
-from urllib.parse import unquote, urljoin
+from urllib.parse import unquote, urljoin, urlparse, urlunparse
 from zoneinfo import ZoneInfo
 
 from markupsafe import Markup
@@ -257,3 +257,43 @@ def hours(seconds: int) -> str:
     hours = round((minutes / 60) * 2) / 2
     hours_str = str(int(hours)) if hours.is_integer() else str(hours).replace(".", ",")
     return f"{hours_str}h"
+
+
+def bio_link(url: str) -> Markup:
+    parts = urlparse(url)
+    domain = parts.netloc.removeprefix("www.")
+    icon_name = {
+        "github.com": "github",
+        "youtube.com": "youtube",
+        "youtu.be": "youtube",
+        "linkedin.com": "linkedin",
+        "twitter.com": "twitter-x",
+        "x.com": "twitter-x",
+        "witter.cz": "mastodon",
+        "instagram.com": "instagram",
+    }.get(domain, "link-45deg")
+    username = {
+        "github.com": "@" + parts.path.strip("/").split("/")[0],
+        "twitter.com": "@" + parts.path.strip("/").split("/")[0],
+        "x.com": "@" + parts.path.strip("/").split("/")[0],
+        "witter.cz": parts.path.strip("/").split("/")[0] + "@" + domain,
+        "instagram.com": "@" + parts.path.strip("/").split("/")[0],
+        "linkedin.com": unquote(parts.path.strip("/")),
+        "youtube.com": (
+            parts.path.strip("/").split("/")[0] if "@" in parts.path else None
+        ),
+    }.get(domain)
+    if username:
+        text = username
+    else:
+        text = (
+            urlunparse(parts)
+            .removeprefix("https://")
+            .removeprefix("http://")
+            .removeprefix("www.")
+            .rstrip("/")
+        )
+    return Markup(
+        f'<a class="icon-link" href="{url}" target="_blank" rel="nofollow noopener noreferrer">'
+        f"<span>{icon(icon_name)}</span> <span>{text}</span></a>"
+    )
