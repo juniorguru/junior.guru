@@ -1,3 +1,11 @@
+.icon-links {
+  @extend .list-unstyled;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 $spacer;
+  font-size: $font-size-sm;
+}
+
 .icon-link {
   display: inline-flex;
   flex-direction: row;

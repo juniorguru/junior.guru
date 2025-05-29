@@ -221,15 +221,7 @@
 }
 
 .jobs-company-links {
-  @extend .list-unstyled;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 $spacer;
-  font-size: $font-size-sm;
-
-  @include media-breakpoint-up(md) {
-    flex-wrap: nowrap;
-  }
+  @extend .icon-links;
 }
 
 .jobs-company-link {

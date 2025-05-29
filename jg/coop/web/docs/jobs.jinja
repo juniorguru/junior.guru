@@ -172,7 +172,7 @@ template: main_subnav.html
           <div class="jobs-company" hidden>
             <h4 class="jobs-company-heading">Vyhledat firmu</h4>
             <ul class="jobs-company-links">
-              <li class="jobs-company-links-item">
+              <li>
                 <a
                   href="{{ job.company_linkedin_url }}"
                   rel="nofollow noopener"
@@ -183,7 +183,7 @@ template: main_subnav.html
                   <span>LinkedIn</span>
                 </a>
               </li>
-              <li class="jobs-company-links-item">
+              <li>
                 <a
                   href="{{ job.company_atmoskop_url }}"
                   rel="nofollow noopener"
@@ -194,7 +194,7 @@ template: main_subnav.html
                   <span>Atmoskop</span>
                 </a>
               </li>
-              <li class="jobs-company-links-item">
+              <li>
                 <a
                   href="{{ job.company_jakybylpohovor_url }}"
                   rel="nofollow noopener"
@@ -205,7 +205,7 @@ template: main_subnav.html
                   <span>Jaký byl pohovor?</span>
                 </a>
               </li>
-              <li class="jobs-company-links-item">
+              <li>
                 <a
                   href="{{ job.company_search_url }}"
                   rel="nofollow noopener"
@@ -217,7 +217,7 @@ template: main_subnav.html
                 </a>
               </li>
               {% if job.company_url %}
-                <li class="jobs-company-links-item">
+                <li>
                   <a
                     href="{{ job.company_url }}"
                     rel="nofollow noopener"

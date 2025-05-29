@@ -82,6 +82,10 @@
   margin: $spacer 0 0 0;
 }
 
+.details-info.avatar .details-heading {
+  padding-top: 0;
+}
+
 .details-note {
   @extend .small;
   flex: 0 0 100%;
@@ -98,6 +102,10 @@
 
 .details-items:first-child {
   margin-top: $list-group-item-padding-y;
+}
+
+.details-info.avatar:last-child {
+  margin-bottom: $spacer;
 }
 
 .details-item {

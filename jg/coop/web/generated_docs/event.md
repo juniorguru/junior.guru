@@ -43,17 +43,17 @@ Klub junior.guru pořádá vzdělávací akce, online na svém Discordu.
     </div>
     <div class="details-body">
       <h5 class="details-heading">{{ event.bio_name }}</h5>
-      <div class="details-text compact">
-        {{ event.bio_title }}
-      </div>
+      {% if event.bio_title %}
+        <div class="details-text compact">{{ event.bio_title }}</div>
+      {% endif %}
       <div class="details-text">
         {{ event.bio|md }}
+        <ul class="icon-links">
+          {% for url in event.bio_links %}
+            <li>{{ url|bio_link }}</li>
+          {% endfor %}
+        </ul>
       </div>
-      <ul class="details-items">
-        {% for url in event.bio_links %}
-          <li class="details-item">{{ url|bio_link }}</li>
-        {% endfor %}
-      </ul>
     </div>
   </div>
 </div>
