@@ -382,5 +382,5 @@ def test_bio_link(url: str, expected_icon: str, expected_text: str):
     markup = str(template_filters.bio_link(url))
     assert markup == (
         f'<a class="icon-link" href="{url}" target="_blank" rel="nofollow noopener noreferrer">'
-        f'<span><i class="bi bi-{expected_icon}"></i></span><span>{expected_text}</span></a>'
+        f'<span><i class="bi bi-{expected_icon}"></i></span> <span>{expected_text}</span></a>'
     )
