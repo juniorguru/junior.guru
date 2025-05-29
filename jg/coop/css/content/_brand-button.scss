@@ -24,10 +24,43 @@
   );
 }
 
-.brand-button.apple {
+.brand-button.google {
+  @include button-variant(
+    #4285f4,
+    #4285f4,
+    $jg-white,
+    $hover-color: $jg-white,
+    $active-color: $jg-white,
+    $disabled-color: $jg-white
+  );
+}
+
+.brand-button.microsoft {
+  @include button-variant(
+    #0083bf,
+    #0083bf,
+    $jg-white,
+    $hover-color: $jg-white,
+    $active-color: $jg-white,
+    $disabled-color: $jg-white
+  );
+}
+
+.brand-button.apple-podcasts {
   @include button-variant(
     #872ec4,
     #872ec4,
+    $jg-white,
+    $hover-color: $jg-white,
+    $active-color: $jg-white,
+    $disabled-color: $jg-white
+  );
+}
+
+.brand-button.apple {
+  @include button-variant(
+    #000,
+    #000,
     $jg-white,
     $hover-color: $jg-white,
     $active-color: $jg-white,

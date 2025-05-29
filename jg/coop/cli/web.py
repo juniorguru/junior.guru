@@ -62,25 +62,36 @@ def build_static(output_path: Path):
 @click.pass_context
 @click.argument("output_path", default="public", type=click.Path(path_type=Path))
 @click.argument(
-    "config",
+    "config_path",
     default="jg/coop/web/mkdocs.yml",
     type=click.Path(exists=True, path_type=Path),
 )
 @click.option("-w", "--warnings/--no-warnings", "warn", default=False)
 @building("MkDocs files")
-def build_mkdocs(context, config: Path, output_path: Path, warn: bool):
+def build_mkdocs(context, config_path: Path, output_path: Path, warn: bool):
     _simplefilter = warnings.simplefilter
     if not warn:
         # Unfortunately MkDocs sets their own warnings filter, so we have to
         # nuke the whole thing to disable warnings. This is a hack, but it works.
         warnings.simplefilter = lambda *args, **kwargs: None
+    hidden_static_path = output_path / ".static"
+    static_path = output_path / "static"
+    try:
+        # Trick MkDocs into ignoring static files
+        static_path.rename(hidden_static_path)
+    except FileNotFoundError:
+        pass
     try:
         context.invoke(
             _build_mkdocs,
-            config_file=str(config.absolute()),
+            config_file=str(config_path.absolute()),
             site_dir=str(output_path.absolute()),
         )
     finally:
+        try:
+            hidden_static_path.rename(static_path)
+        except FileNotFoundError:
+            pass
         warnings.simplefilter = _simplefilter
 
 

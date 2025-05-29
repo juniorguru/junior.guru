@@ -15,7 +15,7 @@ Podcast pro juniory v IT! Jak začít s programováním? Jak najít práci v 
 <div class="standout">
   <a class="brand-button youtube" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA">{{ 'youtube'|icon }} YouTube</a>
   <a class="brand-button spotify" target="_blank" rel="noopener" href="https://open.spotify.com/show/12w93IKRzfCsgo7XrGEVw4">{{ 'spotify'|icon }} Spotify</a>
-  <a class="brand-button apple" target="_blank" rel="noopener" href="https://podcasts.apple.com/cz/podcast/junior-guru-podcast/id1603653549">{{ 'apple'|icon }} Apple</a>
+  <a class="brand-button apple-podcasts" target="_blank" rel="noopener" href="https://podcasts.apple.com/cz/podcast/junior-guru-podcast/id1603653549">{{ 'apple'|icon }} Apple</a>
   <a class="brand-button rss" target="_blank" rel="noopener" href="https://junior.guru/api/podcast.xml">{{ 'rss-fill'|icon }} RSS</a>
   <a class="brand-button email" href="{{ pages|docs_url('news.jinja')|url }}">{{ 'envelope-paper-fill'|icon }} Newsletter</a>
 </div>

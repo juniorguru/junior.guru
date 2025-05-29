@@ -16,13 +16,35 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
 {% endcall %}
 
 <div class="standout">
-  <a class="brand-button youtube" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA">{{ 'youtube'|icon }} YouTube</a>
-  <a class="brand-button calendar" target="_blank" rel="noopener" href="webcal://junior.guru/api/events.ics">{{ 'calendar-event'|icon }} Kalendář</a>
-  <a class="brand-button email" href="{{ pages|docs_url('news.jinja')|url }}">{{ 'envelope-paper-fill'|icon }} Newsletter</a>
-
-  {#
-    <a class="brand-button rss" target="_blank" rel="noopener" href="https://junior.guru/api/events.xml">{{ 'rss-fill'|icon }} RSS</a>
-  #}
+  <a
+    class="brand-button google"
+    target="_blank"
+    rel="noopener" href="https://www.google.com/calendar/render?cid=https%3A%2F%2Fjunior.guru%2Fapi%2Fevents.ics">
+    {{ 'google'|icon }} Google Kalendář
+  </a>
+  <a
+    class="brand-button microsoft"
+    target="_blank"
+    rel="noopener" href="https://outlook.live.com/calendar/0/addcalendar?url=webcal%3A%2F%2Fjunior.guru%2Fapi%2Fevents.ics">
+    {{ 'microsoft'|icon }} Outlook Kalendář
+  </a>
+  <a
+    class="brand-button apple"
+    target="_blank"
+    rel="noopener" href="webcal://junior.guru/api/events.ics">
+    {{ 'apple'|icon }} Apple Kalendář
+  </a>
+  <a
+    class="brand-button youtube"
+    target="_blank"
+    rel="noopener" href="https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA">
+    {{ 'youtube'|icon }} YouTube
+  </a>
+  <a
+    class="brand-button email"
+    href="{{ pages|docs_url('news.jinja')|url }}">
+    {{ 'envelope-paper-fill'|icon }} Newsletter
+  </a>
 </div>
 
 <div class="team">
