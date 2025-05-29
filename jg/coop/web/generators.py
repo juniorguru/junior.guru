@@ -124,7 +124,7 @@ def generate_event_pages() -> Generator[GeneratedDocument, None, None]:
         yield GeneratedDocument(
             path=f"events/{event.id}.md",
             meta=dict(
-                title=f"{event.full_title} – online akce na Discordu junior.guru",
+                title=f"{event.get_full_title(separator='–')} – online akce na Discordu junior.guru",
                 description=(
                     "Klub junior.guru pořádá vzdělávací akce, online na svém Discordu. "
                     "Mohou to být přednášky, stream, Q&A, AMA, webináře… "

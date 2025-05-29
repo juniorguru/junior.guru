@@ -1,6 +1,6 @@
-{% from 'macros.html' import img, lead, club_teaser with context %}
+{% from 'macros.html' import img, lead, club_teaser, note, link_card with context %}
 
-# {{ event.title }}
+# {{ event.get_full_title() }}
 
 {% set is_past_event = event.start_at < now.replace(tzinfo=none) %}
 
@@ -14,26 +14,34 @@ Klub junior.guru pořádá vzdělávací akce, online na svém Discordu.
 {% endif %}
 {% endcall %}
 
-## Téma
+{% if is_past_event %}
+<p class="c2a airy">
+  <span class="c2a-text display">
+    Akce proběhla <strong>{{ '{:%-d.%-m.%Y}'.format(event.start_at_prg) }}</strong>
+    a trvala <strong>{{ event.duration_s|hours }}</strong>
+  </span>
+  <a class="c2a-button" href="#zaznam">Pusť si záznam</a>
+</p>
+{% else %}
+<p class="c2a airy">
+  <span class="c2a-text display">
+    Akce bude <strong>{{ '{:%-d.%-m.%Y v %-H:%M}'.format(event.start_at_prg) }}</strong>,
+    trvat má <strong>{{ event.duration_s|hours }}</strong>
+  </span>
+  <a class="c2a-button pulse" href="#jak-se-pripojit">Připoj se</a>
+</p>
+{% endif %}
+
+## O čem to {% if is_past_event %} bylo{% else %}bude{% endif %}
 
 {{ event.description|md }}
 
 <div class="standout details">
   <div class="details-info avatar">
     <div class="details-image">
-      {{ img("static/" + event.avatar_path, event.full_title, 400, 400, class='details-thumbnail', lazy=False) }}
+      {{ img("static/" + event.avatar_path, event.get_full_title(), 400, 400, class='details-thumbnail', lazy=False) }}
     </div>
     <div class="details-body">
-      <ul class="details-items">
-        <li class="details-item">
-          <strong>Kdy:</strong>
-          {{ '{:%-d.%-m.%Y, %-H:%M}'.format(event.start_at_prg) }}
-        </li>
-        <li class="details-item">
-          <strong>{% if is_past_event %}Délka{% else %}Očekávaná délka{% endif %}:</strong>
-          {{ event.duration_s|hours }}
-        </li>
-      </ul>
       <h5 class="details-heading">{{ event.bio_name }}</h5>
       <div class="details-text compact">
         {{ event.bio_title }}
@@ -52,20 +60,28 @@ Klub junior.guru pořádá vzdělávací akce, online na svém Discordu.
   </div>
 </div>
 
-{#
-
 {% if is_past_event %}
 
 ## Záznam
-{{ club_teaser("Hledej recenze v klubu") }}
+<!-- {{ club_teaser("Hledej recenze v klubu") }} -->
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tahle sekce je dočasně mimo provoz. Podívej se sem prosím zítra, už to bude dodělané.
+{% endcall %}
 
 {% else %}
 
 ## Jak se připojit
-{{ club_teaser("Připoj se na 14 dní zdarma") }}
+<!-- {{ club_teaser("Připoj se na 14 dní zdarma") }} -->
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tahle sekce je dočasně mimo provoz. Podívej se sem prosím zítra, už to bude dodělané.
+{% endcall %}
 
 {% endif %}
 
+
+{#
 <p>
   <strong>{{ '{:%-d.%-m.%Y}'.format(event.start_at) }}</strong>
   —
@@ -85,6 +101,26 @@ Večerní tematické přednášky jsou vždy předem oznámeny na konkrétní da
 
 Nepořizujeme profesionální záznam, ale snažíme se alespoň nahrát obrazovku, aby si přednášku mohli pustit i členové, kteří v čas přednášky nemají čas. Nedáváme žádnou záruku na existenci záznamu ani jeho kvalitu. Pokud existuje, je členům k dispozici skrze tajný odkaz na YouTube. Odkaz na video veřejně prosím nesdílej, ale kamarádům jej klidně pošli – asi stejně jako když pro známé odemykáš placený článek v novinách.
 #}
+
+## Mohlo by tě zajímat
+
+<div class="link-cards wide">
+{% set events_planned_sample = events_planned|rejectattr("id", "equalto", event.id)|sample(1) %}
+{% set events_archive_sample = events_archive|rejectattr("id", "equalto", event.id)|sample(2) %}
+{% set events_sample = [
+  events_planned_sample.0 or events_archive_sample.0,
+  events_archive_sample.1,
+] %}
+
+{% for event in events_sample %}
+{{ link_card(
+  event.title,
+  pages|docs_url(event.page_url)|url,
+  caption=event.bio_name,
+  thumbnail_url="static/" + event.plain_poster_path,
+) }}
+{% endfor %}
+</div>
 
 <div class="pagination">
   <div class="pagination-control">

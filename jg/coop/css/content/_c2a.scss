@@ -1,8 +1,19 @@
 .c2a {
+  display: flex;
+  flex-direction: column;
+  gap: $spacer;
+  align-items: center;
   padding: $main-spacer $spacer;
-  text-align: center;
   background: $jg-blue-light;
   border-radius: $border-radius;
+}
+
+.c2a.airy {
+  gap: map-get($spacers, 4);
+}
+
+.c2a.compact {
+  gap: map-get($spacers, 2);
 }
 
 .c2a.highlighted {
@@ -13,8 +24,20 @@
   @extend .btn;
   @extend .btn-primary;
   @extend .btn-lg;
+  width: fit-content;
 }
 
-.c2a-small {
-  margin: map-get($spacers, 2) 0 0;
+.c2a-text {
+  margin: 0;
+  text-align: center;
+}
+
+.c2a-text.display {
+  @extend .fs-3;
+  font-weight: 400;
+  line-height: 1;
+
+  strong {
+    color: $jg-blue;
+  }
 }
