@@ -45,8 +45,7 @@ def main(output_dir: Path, github_api_key: str):
     logger.info(f"Saved items to {api_file}")
 
     logger.info(
-        "Fetching schema file from GitHub"
-        f" (token: {'yes' if github_api_key else 'no'})"
+        f"Fetching schema file from GitHub (token: {'yes' if github_api_key else 'no'})"
     )
     headers = {"Authorization": f"Bearer {github_api_key}"} if github_api_key else {}
     response = httpx.get(

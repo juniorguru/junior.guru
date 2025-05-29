@@ -77,10 +77,9 @@
 }
 
 .details-heading {
+  @extend .fs-4;
   padding: $list-group-item-padding-y $list-group-item-padding-x;
   margin: $spacer 0 0 0;
-  font-size: $font-size-lg;
-  font-weight: $font-weight-normal;
 }
 
 .details-note {

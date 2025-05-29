@@ -51,6 +51,10 @@
   transition: $transition-base;
 }
 
+.media-card-badge {
+  @extend .card-badge, .lg;
+}
+
 .media-card-button {
   @extend .badge;
   position: absolute;

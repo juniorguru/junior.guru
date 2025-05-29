@@ -52,6 +52,10 @@ class Event(BaseModel):
     def has_recording(self) -> bool:
         return bool(self.club_recording_url or self.public_recording_url)
 
+    @property
+    def is_public(self) -> bool:
+        return bool(self.public_recording_url)
+
     def get_full_title(self, separator: str = ":") -> str:
         return f"{self.bio_name}{separator} {self.title}"
 

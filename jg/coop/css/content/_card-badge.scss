@@ -1,0 +1,21 @@
+.card-badge {
+  @extend .badge;
+  position: absolute;
+  top: map-get($spacers, 2);
+  right: map-get($spacers, 2);
+  z-index: 1;
+  font-weight: $font-weight-normal;
+  color: $white;
+  background: $jg-dark;
+  box-shadow: rgba($jg-dark, .24) 0 map-get($spacers, 1) map-get($spacers, 1);
+}
+
+.card-badge.lg {
+  top: map-get($spacers, 3);
+  right: map-get($spacers, 3);
+  font-size: $font-size-base;
+}
+
+.card-badge .bi {
+  margin-right: map-get($spacers, 1);
+}

@@ -104,7 +104,9 @@
 {% endmacro %}
 
 
-{% macro link_card(title, url,
+{% macro link_card(
+  title,
+  url,
   caption=none,
   badge_icon=none,
   badge_text=none,
@@ -117,7 +119,6 @@
 {% if not thumbnail_url and screenshot %}
   {% set screenshot_source_url = screenshot_source_url or url %}
   {% set thumbnail_url = screenshot_source_url|screenshot_url %}
-
   data-screenshot-source-url="{{ screenshot_source_url }}"
   data-screenshot-image-url="{{ thumbnail_url }}"
 {% endif %}
@@ -150,15 +151,32 @@
 {% endmacro %}
 
 
-{% macro video_card(title, duration, url, caption=none, note=none) %}
-{% set screenshot_source_url = url %}
-{% set screenshot_image_url = screenshot_source_url|screenshot_url %}
+{% macro video_card(
+  title,
+  duration,
+  url,
+  caption=none,
+  badge_icon=none,
+  badge_text=none,
+  note=none,
+  thumbnail_url=none,
+  screenshot_source_url=none
+) %}
 <div class="media-card"
-  data-screenshot-source-url="{{ screenshot_source_url }}"
-  data-screenshot-image-url="{{ screenshot_image_url }}">
+  {% if not thumbnail_url %}
+    {% set screenshot_source_url = screenshot_source_url or url %}
+    {% set thumbnail_url = screenshot_source_url|screenshot_url %}
+    data-screenshot-source-url="{{ screenshot_source_url }}"
+    data-screenshot-image-url="{{ thumbnail_url }}"
+  {% endif %}>
   <div class="media-card-link-section">
     <div class="media-card-image-cover">
-      {{ img(screenshot_image_url, title, 640, 360, class='media-card-image') }}
+      {{ img(thumbnail_url, title, 640, 360, class='media-card-image') }}
+      {% if badge_icon and badge_text %}
+        <div class="media-card-badge">
+          {{ badge_icon|icon }} {{ badge_text }}
+        </div>
+      {% endif %}
       <div class="media-card-button">
         <span class="media-card-play">{{ 'play-circle-fill'|icon }}</span>
         <span class="media-card-duration">{{ duration }}</span>
