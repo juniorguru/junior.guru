@@ -19,7 +19,7 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
   <a
     class="brand-button google"
     target="_blank"
-    rel="noopener" href="https://www.google.com/calendar/render?cid=https%3A%2F%2Fjunior.guru%2Fapi%2Fevents.ics">
+    rel="noopener" href="https://calendar.google.com/calendar/u/0/r?cid=cc8h31glt4bj55c8arf8jvqivf5q6vkd%40import.calendar.google.com">
     {{ 'google'|icon }} Google Kalendář
   </a>
   <a
