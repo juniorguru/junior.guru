@@ -48,6 +48,7 @@ exclude = [
     "^https://robime\\.it",
     "^https://www\\.techinterviewhandbook\\.org",
     "^https://www\\.vilniuscoding\\.lt",
+    "^https://www\\.clovekvtisni\\.cz",
 
     # Read the Docs anti-scraping protections
     "^https://docs\\.pyvec\\.org",
