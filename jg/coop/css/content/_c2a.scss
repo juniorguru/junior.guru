@@ -4,20 +4,17 @@
   gap: $spacer;
   align-items: center;
   padding: $main-spacer $spacer;
+  margin: 0;
   background: $jg-blue-light;
   border-radius: $border-radius;
 }
 
+.c2a > * {
+  margin: 0;
+}
+
 .c2a.airy {
   gap: map-get($spacers, 4);
-}
-
-.c2a.compact {
-  gap: map-get($spacers, 2);
-}
-
-.c2a.highlighted {
-  background: $jg-yellow;
 }
 
 .c2a-button {
@@ -32,12 +29,17 @@
   text-align: center;
 }
 
+.c2a-text.small {
+  @extend .small;
+  line-height: $line-height-sm;
+}
+
 .c2a-text.display {
   @extend .fs-3;
   font-weight: 400;
   line-height: 1;
 
-  strong {
+  &.blue strong {
     color: $jg-blue;
   }
 }

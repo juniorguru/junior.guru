@@ -73,7 +73,9 @@
 }
 
 .details-info.avatar .details-thumbnail {
+  filter: grayscale(100%);
   border-radius: 100%;
+  opacity: 80%;
 }
 
 .details-heading {

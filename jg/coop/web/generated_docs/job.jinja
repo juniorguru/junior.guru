@@ -27,7 +27,7 @@
   <div itemprop="description">
     {{ job.submitted_job.description_html|safe }}
   </div>
-  <div class="c2a" itemprop="applicationContact" itemscope itemtype="https://schema.org/ContactPoint">
+  <p class="c2a" itemprop="applicationContact" itemscope itemtype="https://schema.org/ContactPoint">
     {% if job.apply_url %}
       <a id="apply" class="c2a-button pulse" href="{{ job.apply_url }}">
         Mám zájem!
@@ -39,7 +39,7 @@
         >
       </p>
     {% endif %}
-  </div>
+  </p>
 </div>
 
 <div class="pagination">

@@ -1,4 +1,4 @@
-{% from 'macros.html' import img, lead, club_teaser, note, video_card, link_card with context %}
+{% from 'macros.html' import img, lead, club_teaser, note, video_card, link_card, figure with context %}
 
 # {{ event.get_full_title() }}
 
@@ -12,25 +12,33 @@ Klub junior.guru pořádá vzdělávací akce, online na svém Discordu.
 {% else %}
   Toto je upoutávka na jednu z nich, která teprve proběhne. Přečti si, jak se k nám můžeš připojit!
 {% endif %}
+{{- ' ' -}}Pojetí akcí je vždy vyloženě pro začátečníky. Žádná záplava odborných „termitů“, které ti nikdo nevysvětlil!
 {% endcall %}
 
-{% if is_past_event %}
-<p class="c2a airy">
-  <span class="c2a-text display">
+<div class="c2a">
+  {% if is_past_event %}
+  <p class="c2a-text display">
     Akce proběhla <strong>{{ '{:%-d.%-m.%Y}'.format(event.start_at_prg) }}</strong>
     a trvala <strong>{{ event.duration_s|hours }}</strong>
-  </span>
-  <a class="c2a-button" href="#zaznam">{{ 'play-circle-fill'|icon }} Pusť si záznam</a>
-</p>
-{% else %}
-<p class="c2a airy">
-  <span class="c2a-text display">
+  </p>
+  <p>
+    <a class="c2a-button" href="#zaznam">{{ 'play-circle-fill'|icon }} Pusť si záznam</a>
+  </p>
+  {% else %}
+  <p class="c2a-text display blue">
     Akce bude <strong>{{ '{:%-d.%-m.%Y v %-H:%M}'.format(event.start_at_prg) }}</strong>,
     trvat má <strong>{{ event.duration_s|hours }}</strong>
-  </span>
-  <a class="c2a-button pulse" href="#jak-se-pripojit">{{ 'person-plus-fill'|icon }} Připoj se</a>
-</p>
-{% endif %}
+  </p>
+  <p>
+    <a class="c2a-button pulse" href="#jak-se-pripojit">{{ 'person-plus-fill'|icon }} Připoj se</a>
+  </p>
+  {% endif %}
+</div>
+
+<div class="figure-container">
+  {{ figure('static/' + event.plain_poster_path, 1280, 720, event.get_full_title(), class="standout-top") }}
+  <a class="figure-button" href="{{ ("static/" + event.poster_path)|url }}" target="_blank" rel="noopener" download>{{ 'download'|icon }} Stáhni plakát</a>
+</div>
 
 ## O čem to {% if is_past_event %} bylo{% else %}bude{% endif %}
 
@@ -131,28 +139,6 @@ Pokud už máš do klubového Discordu přístup, jdi **{{ '{:%-d.%-m.%Y v %-H:%
 {% endif %}
 
 {% endif %}
-
-
-{#
-<p>
-  <strong>{{ '{:%-d.%-m.%Y}'.format(event.start_at) }}</strong>
-  —
-  {{ event.start_at|local_time }} až {{ event.end_at|local_time }} online v klubovně</strong>{% if event.club_recording_url %},
-  <a href="{{ event.club_recording_url }}">záznam pro členy</a> ({{ event.private_recording_duration_s|hours }}){% endif %}{% if event.public_recording_url %},
-  <a href="{{ event.public_recording_url }}">veřejný záznam</a> ({{ event.public_recording_duration_s|hours }}){% endif %}
-  {%- if event.poster_path %}, <a href="{{ ("static/" + event.poster_path)|url }}">plakátek</a>{% endif -%}
-</p>
-
-Zveme si profíky na témata kolem programování nebo shánění první práce v oboru.
-  Pojetí akcí je vždy vyloženě pro začátečníky.
-  Žádná záplava odborných „termitů“, které ti nikdo nevysvětlil!
-
-## Jak to funguje?
-
-Večerní tematické přednášky jsou vždy předem oznámeny na konkrétní datum a čas. Pokud chceš přednášku slyšet, připoj se v ten čas do hlasové místnosti #přednášky. Po skončení přednášky není žádný další oficiální program. Cílem je, aby přednášky byly spíše rychlé a časté, než plánované do celovečerních bloků. Tak nezaberou příliš mnoho času a můžeš se připojit, i když máš nabitý den, nebo prostě jen nechceš trávit celý večer na nějakém srazu.
-
-Nepořizujeme profesionální záznam, ale snažíme se alespoň nahrát obrazovku, aby si přednášku mohli pustit i členové, kteří v čas přednášky nemají čas. Nedáváme žádnou záruku na existenci záznamu ani jeho kvalitu. Pokud existuje, je členům k dispozici skrze tajný odkaz na YouTube. Odkaz na video veřejně prosím nesdílej, ale kamarádům jej klidně pošli – asi stejně jako když pro známé odemykáš placený článek v novinách.
-#}
 
 ## Mohlo by tě zajímat
 

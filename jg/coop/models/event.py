@@ -117,11 +117,11 @@ class Event(BaseModel):
                 "button_heading": "Sleduj na",
                 "button_link": (
                     "youtube.com/@juniordotguru"
-                    if self.public_recording_url
+                    if self.is_public
                     else "junior.guru/events"
                 ),
                 "platforms": (
-                    ["discord", "youtube"] if self.has_recording else ["discord"]
+                    ["discord", "youtube"] if self.is_public else ["discord"]
                 ),
             }
         return context

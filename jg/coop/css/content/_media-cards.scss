@@ -92,8 +92,11 @@
   @extend .card-title;
   @extend .card-body;
   @extend .fs-5;
-  padding-bottom: map-get($spacers, 2);
   margin: 0;
+}
+
+.media-card-title:not(.standalone) {
+  padding-bottom: map-get($spacers, 2);
 }
 
 .media-card-title a {

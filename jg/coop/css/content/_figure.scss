@@ -1,3 +1,7 @@
+.figure-container {
+  position: relative;
+}
+
 .figure {
   width: 100%;
   text-align: center;
@@ -7,4 +11,28 @@
   @extend .img-fluid;
   @extend .img-thumbnail;
   width: 100%;
+  margin: 0;
+}
+
+.figure-caption {
+  margin-top: map-get($spacers, 1);
+}
+
+.figure-button {
+  @extend .btn;
+  @extend .btn-dark;
+  position: absolute;
+  bottom: $spacer;
+  left: 50%;
+  width: fit-content;
+  margin: 0 auto;
+  text-wrap: nowrap;
+  transform: translate(-50%, -1 * $spacer);
+
+  @include media-breakpoint-up(sm) {
+    right: $spacer;
+    bottom: $spacer;
+    left: auto;
+    transform: translate(0, -1 * $spacer);
+  }
 }
