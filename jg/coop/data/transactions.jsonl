@@ -1071,3 +1071,5 @@
 {"_id": "27073798416", "amount": 6, "category": "donations", "happened_on": "2025-05-28"}
 {"_id": "27073893027", "amount": -2000, "category": "office", "happened_on": "2025-05-28"}
 {"_id": "27076824939", "amount": 80000, "category": "sponsorships", "happened_on": "2025-05-30"}
+{"_id": "27077355868", "amount": -226, "category": "miscellaneous", "happened_on": "2025-05-30"}
+{"_id": "27077355882", "amount": -226, "category": "miscellaneous", "happened_on": "2025-05-30"}
