@@ -26,14 +26,6 @@ registry:
       - [2023-07, 2025-08]
       - [2020-09, 2021-11]
 
-  - name: ITnetwork
-    slug: itnetwork
-    url: https://www.itnetwork.cz/
-    cz_business_id: 5861381
-    subscription: https://juniorguru.memberful.com/admin/subscriptions/3699646
-    periods:
-      - [2024-03, 2025-05]
-
   - name: ENGETO Academy
     slug: engeto
     url: https://engeto.cz/
@@ -70,6 +62,14 @@ registry:
       - [2025-02, 2026-03]
 
   # PAST SPONSORS
+
+  - name: ITnetwork
+    slug: itnetwork
+    url: https://www.itnetwork.cz/
+    cz_business_id: 5861381
+    subscription: https://juniorguru.memberful.com/admin/subscriptions/3699646
+    periods:
+      - [2024-03, 2025-05]
 
   - name: Green Fox Academy
     slug: greenfox

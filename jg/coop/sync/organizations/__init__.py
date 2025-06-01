@@ -178,10 +178,13 @@ def main(today: date, clear_posters: bool):
 
     for sponsor in sponsors.registry:
         start_on = get_start_on(sponsor.periods)
+        renews_on = get_renews_on(sponsor.periods, today)
         if start_on > today:
             logger.warning(f"Future sponsor {sponsor.name} ({sponsor.slug})")
-        elif renews_on := get_renews_on(sponsor.periods, today):
-            logger.info(f"Sponsor {sponsor.name} ({sponsor.slug})")
+        elif renews_on and renews_on > today:
+            logger.info(
+                f"Active sponsor {sponsor.name} ({sponsor.slug}), renews on {renews_on}"
+            )
 
             logger.debug("Checking plan, subscription, and figuring out tier")
             subscription_id = None
