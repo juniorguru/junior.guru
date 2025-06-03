@@ -46,7 +46,7 @@ def main(images_path, output_dir, width, height, clear):
         for i, page in enumerate(pages):
             context = get_thumbnail_context(page)
             args.append((i, width, height, "thumbnail.jinja", context, output_path))
-        for i, image_path in pool.imap(process_thumbnail, args):
+        for i, image_path in pool.imap_unordered(process_thumbnail, args):
             page = pages[i]
             page.thumbnail_path = image_path.relative_to(images_path)
             page.save()

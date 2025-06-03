@@ -82,7 +82,7 @@ def main(clear_posters):
     logger.info(
         "Preparing data: downloading and analyzing the mp3 files, creating posters"
     )
-    records = filter(None, Pool(WORKERS).imap(process_episode, yaml_records))
+    records = filter(None, Pool(WORKERS).imap_unordered(process_episode, yaml_records))
 
     for record in records:
         logger.info(f"Saving episode #{record['number']}")
