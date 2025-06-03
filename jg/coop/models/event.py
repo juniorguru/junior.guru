@@ -1,3 +1,4 @@
+import json
 import math
 from datetime import UTC, datetime
 from zoneinfo import ZoneInfo
@@ -12,7 +13,7 @@ from peewee import (
 )
 
 from jg.coop.lib.charts import month_range, ttm_range
-from jg.coop.lib.discord_club import parse_discord_link
+from jg.coop.lib.discord_club import CLUB_GUILD_ID, ClubChannelID, parse_discord_link
 from jg.coop.lib.md import strip_links
 from jg.coop.lib.youtube import get_youtube_url, parse_youtube_id
 from jg.coop.models.base import BaseModel, JSONField
@@ -103,6 +104,31 @@ class Event(BaseModel):
             image_alt=self.bio_name,
             subtitle=self.bio_name,
             date=self.start_at,
+        )
+
+    def to_json_ld(self) -> str:
+        return json.dumps(
+            {
+                "@context": "https://schema.org",
+                "@type": "EducationEvent",
+                "educationalLevel": "beginner",
+                "endDate": self.end_at.isoformat() + "Z",
+                "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+                "image": f"https://junior.guru/static/{self.poster_path}",
+                "location": {
+                    "@type": "VirtualLocation",
+                    "url": (
+                        self.public_recording_url
+                        or self.club_recording_url
+                        or f"https://discord.com/channels/{CLUB_GUILD_ID}/{ClubChannelID.EVENTS}"
+                    ),
+                },
+                "name": self.get_full_title(),
+                "startDate": self.start_at.isoformat() + "Z",
+                "url": f"https://junior.guru/events/{self.id}/",
+            },
+            ensure_ascii=False,
+            sort_keys=True,
         )
 
     def to_image_template_context(self, plain: bool = False) -> dict:

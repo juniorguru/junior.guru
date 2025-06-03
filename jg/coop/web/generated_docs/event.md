@@ -4,6 +4,8 @@
 
 {% set is_past_event = event.start_at < now.replace(tzinfo=none) %}
 
+<script type="application/ld+json">{{ event.to_json_ld() }}</script>
+
 {% call lead() %}
 Klub junior.guru pořádá vzdělávací akce, online na svém Discordu.
 {%- if is_past_event %}
