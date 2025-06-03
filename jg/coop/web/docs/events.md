@@ -4,7 +4,7 @@ description: Online akce pro členy klubu junior.guru. Seznam akcí proběhlých
 template: main_subnav.html
 ---
 
-{% from 'macros.html' import lead, link_card, markdown, img with context %}
+{% from 'macros.html' import lead, link_card, markdown, img, note with context %}
 
 # Klubové akce
 
@@ -95,6 +95,10 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
   </div>
 </div>
 </div>
+
+{% call note(standout=True) %}
+  {{ 'lightbulb'|icon }} Chceš juniorům taky něco ukázat nebo vysvětlit? Napiš na {{ 'honza@junior.guru'|email_link }} a třeba se domluvíme. Co to obnáší se dovíš v [návodu](speaker.md). Přednášející mají členství v klubu na rok zdarma.
+{% endcall %}
 
 {% if events_planned|length %}
 ## Plánované akce

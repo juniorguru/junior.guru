@@ -9,8 +9,15 @@ template: main.html
 # Pro přednášející
 
 {% call lead() %}
-  Plánuje s tebou Honza [přednášku](events.md) pro členy [klubu](club.md)? Na této stránce najdeš veškeré info. Je fakt supr, že chceš s juniory sdílet svá moudra a zkušenosti. Na přednášku se moc těšíme!
+  Plánuje s tebou Honza přednášku pro členy klubu? Na této stránce najdeš veškeré info. Je fakt supr, že chceš s juniory sdílet svá moudra a zkušenosti. Na přednášku se moc těšíme!
 {% endcall %}
+
+<div class="standout">
+  <a class="btn btn-dark" href="{{ pages|docs_url('events.md')|url }}">{{ 'list'|icon }} Seznam klubových akcí</a>
+  <a class="btn btn-dark" href="{{ pages|docs_url('club.md')|url }}">{{ 'question-circle'|icon }} Co je klub?</a>
+</div>
+
+[TOC]
 
 ## Promo před přednáškou
 
