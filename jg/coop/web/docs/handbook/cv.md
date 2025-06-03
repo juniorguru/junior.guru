@@ -28,11 +28,12 @@ V přednášce ukazuje, jak vytvořit **efektivní životopis pro hledání prvn
 
 Taky v přednášce představuje svou **[šablonu na CV](https://coreskill.tech/sablona-cv), která je vymazlená přesně pro potřeby juniorů** a následuje veškeré rady, které jsou tady v příručce. Nevymýšlej kolo!
 
+{% set event = events|selectattr("id", "equalto", 45)|first %}
 {{ video_card(
-  'Daniel Srb: Jak na CV při změně kariéry do IT',
-  '3,5hod',
-  'https://www.youtube.com/live/8_ZUwRKEJ7A',
-  'Jak vytvořit efektivní životopis pro hledání první práce v IT a představení šablony, která tě zdarma provede tvorbou kvalitního CV.',
+  event.get_full_title(),
+  '3,5h',
+  event.public_recording_url,
+  thumbnail_url="static/" + event.plain_poster_path,
   note='Záznamy [klubových přednášek](../events.md) bývají dostupné jen pro členy, ale tato byla v rámci [Týdne pro Digitální Česko](https://budoucnostjedigitalni.gov.cz/) veřejně, aby pomáhala všem.'
 ) }}
 

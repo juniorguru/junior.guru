@@ -60,7 +60,7 @@ Mentor nemusí být vyloženě mistr v oboru, stačí když bude v programován�
 
   {{ link_card(
     'Codementor',
-    'https://www.codementor.io/',
+    'https://www.codementor.io/tutors',
     'Profesionální, placení mentoři z celého světa.'
   ) }}
 </div>

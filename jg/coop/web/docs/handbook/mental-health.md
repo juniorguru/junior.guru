@@ -42,12 +42,13 @@ A nakonec, máš dostatečnou **podporu okolí**? Může být velmi náročné p
 
 Vybav se pro začátek 5 zásadami, díky kterým můžeš svou cestu do IT zvládnout ve větší duševní pohodě a udržitelně. V přednášce se mimo jiné dozvíš, jak stát nohama víc na zemi, proč je důležité přijímat se i se svými limity anebo jak získat nadhled.
 
+{% set event = events|selectattr("id", "equalto", 18)|first %}
 {{ video_card(
-  'Nela Slezáková: Jak přežít cestu juniora po psychické stránce',
-  '40min',
-  'https://www.youtube.com/watch?v=6G4TKGQICw0',
-  'Pět zásad a ke každé z nich praktické tipy, díky kterým můžeš svou cestu do IT zvládnout udržitelně.',
-  note='Záznamy [klubových přednášek](../events.md) bývají dostupné jen pro členy, ale tento jsme zveřejnili, ať pomáhá všem.',
+  event.get_full_title(),
+  event.public_recording_duration_s|hours,
+  event.public_recording_url,
+  thumbnail_url="static/" + event.plain_poster_path,
+  note='Záznamy [klubových přednášek](../events.md) bývají dostupné jen pro členy, ale tento jsme zveřejnili, ať pomáhá všem.'
 ) }}
 
 ## Impostor syndrom
@@ -106,12 +107,14 @@ Z naší ankety s více než 200 juniory (květen až červen 2023) vyplynulo:
 
 To nejsou vůbec líbivá čísla. V přednášce „Jak se jako ajťák/čka zbavit pochyb a pocitu, že nejsem dost” se můžeš seznámit s kompletními výsledky z ankety a ujistit se, že vůbec nejsi sám/sama, kdo se tolik obává. V druhé části přednášky najdeš tipy jak pracovat s nadměrnými pochybami v kontextu IT.
 
+{% set event = events|selectattr("id", "equalto", 36)|first %}
 {{ video_card(
-  'Nela Slezáková: Jak se jako ajťák/čka zbavit pochyb a pocitu, že nejsem dost',
-  '45min',
-  'https://youtu.be/FIijszEVQHY?si=XLLrdo2Nn1goBejm&t=613',
+  event.get_full_title(),
+  event.public_recording_duration_s|hours,
+  event.public_recording_url + '&t=613',
   'Nadměrné obavy v IT jsou denním chlebem velké části juniorů na cestě do IT i během prvních let v oboru. Seznam se s výsledky ankety a s 11 tipy, jak s pochybami zatočit.',
-  note='Záznamy [klubových přednášek](../events.md) bývají dostupné jen pro členy, ale tento jsme zveřejnili, ať pomáhá všem.',
+  thumbnail_url="static/" + event.plain_poster_path,
+  note='Záznamy [klubových přednášek](../events.md) bývají dostupné jen pro členy, ale tento jsme zveřejnili, ať pomáhá všem.'
 ) }}
 
 ## Rozcestník pomoci
@@ -313,13 +316,13 @@ Tohle je přesný 🙂 Schválně to nedávám do <#797040163325870092>, protož
 
 
 --- https://discord.com/channels/769966886598737931/864434067968360459/1311027460728553543
-Tenhle text se mi moc líbí. Myslím, že je hodně právě o lidech jako my tady - co dobrovolně nejdou v životě těmi nejsnadnějšími cestami, protože by to (mimo jiné) byla nuda 🙂 
+Tenhle text se mi moc líbí. Myslím, že je hodně právě o lidech jako my tady - co dobrovolně nejdou v životě těmi nejsnadnějšími cestami, protože by to (mimo jiné) byla nuda 🙂
 https://www.respekt.cz/tydenik/2024/48/kdyz-mate-pocit-ze-se-v-zivote-jen-placate-mozna-je-cas-vyrazit-za-dobrodruzstvim?gift=d2pxst5fco
 ---
 
 
 --- https://discord.com/channels/769966886598737931/769966887055392768/1310282688082612236
-Ahoj, kdo byste si chtěl přečíst o Imposter syndromu a o nízkém sebevědomí v IT, přidávám článek  🙂 
+Ahoj, kdo byste si chtěl přečíst o Imposter syndromu a o nízkém sebevědomí v IT, přidávám článek  🙂
 https://zivotdevky.cz/2024/11/24/neumis-to-mas-jenom-stesti-aka-imposter-syndrom/
 ---
 

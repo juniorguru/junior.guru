@@ -77,9 +77,11 @@ def on_docs_context(context):
     # index.jinja, club.md, about/*.md
     context["sponsors_by_tier"] = Sponsor.tier_grouping()
 
+    # club.md, handbook/cv.md, handbook/mental-health.md
+    context["events"] = Event.listing()
+
     # club.md
     context["messages_count"] = ClubMessage.count()
-    context["events"] = Event.listing()
     context["events_promo"] = Event.promo_listing()
     context["interests"] = InterestRole.interests()
 

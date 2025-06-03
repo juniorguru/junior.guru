@@ -87,12 +87,6 @@ Nastupuješ jako začátečník a budeš potřebovat, aby ti někdo stále pomá
     'https://github.com/viraptor/reverse-interview#readme',
     'Inspiruj se dlouhým seznamem otázek, které můžeš položit.'
   ) }}
-
-  {{ link_card(
-    'How to do job interview right',
-    'https://trello.com/b/igarGHRw/',
-    'Prostuduj nástěnku plnou tipů jak se připravit a na co se ptát.'
-  ) }}
 </div>
 
 Celkově je dobré se soustředit nejen na firmu, ale i **na sebe**. Jsi juniorní, ale na pohovoru dostáváš rozpačité odpovědi na to, jestli se ti někdo bude věnovat? Vidíš už na pohovoru přebujelá ega, machrování, manipulativní otázky? Nejednají s tebou s respektem? Zaznamenáváš sexistické narážky? Působí firma neorganizovaně? Musíš projít přes desetikolový pohovor se spoustou úloh před tabulí? Až nastoupíš, nebude to lepší! Všechno toto jsou tzv. _red flags_, signály, že **firma, do které se snažíš dostat, [není tak úplně v pořádku](candidate.md#firemni-kultura)** a nejspíš nestojí za to s ní ztrácet čas. Pohovor funguje na obě strany — testuješ si i ty firmu, nejen ona tebe.

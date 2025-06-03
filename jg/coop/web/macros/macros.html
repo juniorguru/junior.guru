@@ -182,22 +182,22 @@
         <span class="media-card-duration">{{ duration }}</span>
       </div>
     </div>
-    <h4 class="media-card-title{% if not (caption or caller or note) %} standalone{% endif %}">
+    <h4 class="media-card-title{% if not (caption or caller is defined or note) %} standalone{% endif %}">
       <a href="{{ url }}" class="media-card-link" target="_blank" rel="noopener">{{ title }}</a>
     </h4>
   </div>
-  {% if caption or caller or note %}
+  {% if caption or caller is defined or note %}
   <div class="media-card-body">
-    <p class="media-card-text">
-      {% if caption %}
-        {{ caption|md|remove_p }}
-      {% else %}
-        {{ caller()|md|remove_p }}
-      {% endif %}
-      {% if note %}
-        <small class="media-card-note">{{ 'info-circle'|icon }} {{ note|md|remove_p }}</small>
-      {% endif %}
-    </p>
+    {% if caption %}
+      <p class="media-card-text">{{ caption|md|remove_p }}</p>
+    {% elif caller is defined %}
+      <p class="media-card-text">{{ caller()|md|remove_p }}</p>
+    {% endif %}
+    {% if note %}
+      <p class="media-card-note">
+        {{ 'info-circle'|icon }} {{ note|md|remove_p }}
+      </p>
+    {% endif %}
   </div>
   {% endif %}
 </div>
