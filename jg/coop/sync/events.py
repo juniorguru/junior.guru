@@ -306,15 +306,15 @@ async def post_next_event_messages(
         logger.info("About to post a message on the day when the event is")
         if event.start_at.date() == today:
             message = ClubMessage.last_bot_message(
-                announcements_channel_id, "⏰", event.discord_url
+                announcements_channel_id, "⏰", event.club_event_url
             )
             if message:
                 logger.info(
-                    f"Looks like the message about {event.discord_url} already exists: {message.url}"
+                    f"Looks like the message about {event.club_event_url} already exists: {message.url}"
                 )
             else:
                 logger.info("Found no message, posting!")
-                content = f"⏰ @everyone Už **dnes v {event.start_at_prg:%H:%M}** bude v klubu akce „{event.title}” s {speakers}! Odehrávat se to bude v {events_channel.mention}, dotazy jde pokládat v tamním chatu 💬 Akce se nahrávají, odkaz na záznam se objeví v tomto kanálu. {event.discord_url}"
+                content = f"⏰ @everyone Už **dnes v {event.start_at_prg:%H:%M}** bude v klubu akce „{event.title}” s {speakers}! Odehrávat se to bude v {events_channel.mention}, dotazy jde pokládat v tamním chatu 💬 Akce se nahrávají, odkaz na záznam se objeví v tomto kanálu. {event.club_event_url}"
                 with mutating_discord(announcements_channel) as proxy:
                     discord_message = await proxy.send(content)
                 if discord_message:
@@ -327,15 +327,15 @@ async def post_next_event_messages(
             logger.info("About to post a message 1 day prior to the event")
             if event.start_at.date() - timedelta(days=1) == today:
                 message = ClubMessage.last_bot_message(
-                    announcements_channel_id, "🤩", event.discord_url
+                    announcements_channel_id, "🤩", event.club_event_url
                 )
                 if message:
                     logger.info(
-                        f"Looks like the message about {event.discord_url} already exists: {message.url}"
+                        f"Looks like the message about {event.club_event_url} already exists: {message.url}"
                     )
                 else:
                     logger.info("Found no message, posting!")
-                    content = f"🤩 Už **zítra v {event.start_at_prg:%H:%M}** bude v klubu akce „{event.title}” s {speakers}! {event.discord_url}"
+                    content = f"🤩 Už **zítra v {event.start_at_prg:%H:%M}** bude v klubu akce „{event.title}” s {speakers}! {event.club_event_url}"
                     with mutating_discord(announcements_channel) as proxy:
                         discord_message = await proxy.send(content)
                     if discord_message:
@@ -348,15 +348,15 @@ async def post_next_event_messages(
                 logger.info("About to post a message 7 days prior to the event")
                 if event.start_at.date() - timedelta(days=7) <= today:
                     message = ClubMessage.last_bot_message(
-                        announcements_channel_id, "🗓", event.discord_url
+                        announcements_channel_id, "🗓", event.club_event_url
                     )
                     if message:
                         logger.info(
-                            f"Looks like the message about {event.discord_url} already exists: {message.url}"
+                            f"Looks like the message about {event.club_event_url} already exists: {message.url}"
                         )
                     else:
                         logger.info("Found no message, posting!")
-                        content = f"🗓 Už **za týden** bude v klubu akce „{event.title}” s {speakers}! {event.discord_url}"
+                        content = f"🗓 Už **za týden** bude v klubu akce „{event.title}” s {speakers}! {event.club_event_url}"
                         with mutating_discord(announcements_channel) as proxy:
                             discord_message = await proxy.send(content)
                         if discord_message:
@@ -371,7 +371,7 @@ async def post_next_event_messages(
         #
         # logger.info("About to post a message to event chat on the day when the event is")
         # if event.start_at.date() == today:
-        #     message = ClubMessage.last_bot_message(ClubChannelID.EVENTS, '👋', event.discord_url)
+        #     message = ClubMessage.last_bot_message(ClubChannelID.EVENTS, '👋', event.club_event_url)
         #     if message:
         #         logger.info(f'Looks like the message already exists: {message.url}')
         #     else:
