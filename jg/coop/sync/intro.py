@@ -51,7 +51,7 @@ async def sync_intro(client: ClubClient):
     logger.info("Processing messages")
     since_at = datetime.now(UTC).replace(tzinfo=None) - PROCESS_HISTORY_SINCE
     tasks = []
-    for message in ClubMessage.channel_listing_since(ClubChannelID.INTRO, since_at):
+    for message in ClubMessage.channel_listing(ClubChannelID.INTRO, since_at=since_at):
         tasks.append(asyncio.create_task(process_message(discord_channel, message)))
 
     logger.info("Purging system messages about created threads")

@@ -346,6 +346,7 @@ class ClubMessage(BaseModel):
         parent: bool = False,
         by_bot: bool = False,
         starting_emoji: str | None = None,
+        since_at: datetime | None = None,
     ) -> Iterable[Self]:
         query = cls.select()
         if parent:
@@ -356,20 +357,11 @@ class ClubMessage(BaseModel):
             query = query.where(cls.author_is_bot == True)  # noqa: E712
         if starting_emoji:
             query = query.where(cls.content_starting_emoji == starting_emoji)
+        if since_at:
+            if since_at.tzinfo:
+                raise ValueError("Naive UTC datetime expected, got timezone-aware")
+            query = query.where(cls.created_at >= since_at)
         return query.order_by(cls.created_at)
-
-    # TODO squash with channel_listing
-    @classmethod
-    def channel_listing_since(
-        cls, channel_id: int, since_at: datetime
-    ) -> Iterable[Self]:
-        if since_at.tzinfo:
-            raise ValueError("Naive UTC datetime expected, got timezone-aware")
-        return (
-            cls.select()
-            .where((cls.channel_id == channel_id) & (cls.created_at >= since_at))
-            .order_by(cls.created_at)
-        )
 
     @classmethod
     def forum_listing(cls, channel_id: int) -> Iterable[Self]:
