@@ -256,7 +256,7 @@ async def sync_scheduled_events(client: ClubClient):
                         name=event.get_full_title(),
                         description=event.discord_description,
                         end_time=event.end_at,
-                        cover=(IMAGES_DIR / event.poster_path).read_bytes(),
+                        cover=(IMAGES_DIR / event.plain_poster_path).read_bytes(),
                     )
             else:
                 logger.info(f"Creating Discord event for '{event.title}'")
