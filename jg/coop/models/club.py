@@ -274,6 +274,10 @@ class ClubMessage(BaseModel):
     is_forum_summary = BooleanField(default=False)
 
     @property
+    def created_on(self) -> date:
+        return self.created_at.date()
+
+    @property
     def is_pinning(self) -> bool:
         return bool(self.pinned_message_url)
 

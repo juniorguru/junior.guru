@@ -5,6 +5,7 @@ import os
 from datetime import timedelta
 from functools import lru_cache
 
+import tiktoken
 from openai import AsyncOpenAI, InternalServerError, RateLimitError
 from tenacity import (
     before_sleep_log,
@@ -84,3 +85,9 @@ async def ask_for_json(system_prompt: str, user_prompt: str) -> dict:
     data = json.loads(choice.message.content)
     data["finish_reason"] = choice.finish_reason
     return data
+
+
+def count_tokens(text: str) -> int:
+    encoding = tiktoken.encoding_for_model(OPENAI_MODEL)
+    tokens = encoding.encode(text)
+    return len(tokens)
