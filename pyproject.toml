@@ -50,7 +50,7 @@ peewee = "3.18.1"
 pillow = "11.2.1"
 playwright = "1.52.0"
 pod2gen = "1.0.3"
-py-cord = {version = "2.6.1", extras = ["speed"]}
+py-cord = { git = "https://github.com/Pycord-Development/pycord.git", extras = ["speed"] }
 pycircleci = "0.7.0"
 pydantic = "2.11.5"
 python-slugify = "8.0.4"
