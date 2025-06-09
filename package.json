@@ -5,7 +5,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@fontsource/inter": "5.2.5",
+    "@fontsource/inter": "5.2.6",
     "bootstrap-icons": "1.13.1",
     "chart.js": "4.4.9",
     "chartjs-plugin-annotation": "3.1.0",
@@ -23,6 +23,6 @@
     "stylelint": "16.20.0",
     "stylelint-config-twbs-bootstrap": "16.0.0",
     "stylelint-order": "7.0.0",
-    "vitest": "3.2.0"
+    "vitest": "3.2.2"
   }
 }
