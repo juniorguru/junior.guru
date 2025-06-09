@@ -1,16 +1,5 @@
-import logging
 import os
 from pprint import pformat
-
-from aiohttp import ClientError
-from discord import DiscordServerError
-from tenacity import (
-    before_sleep_log,
-    retry,
-    retry_if_exception_type,
-    stop_after_attempt,
-    wait_random_exponential,
-)
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
@@ -25,13 +14,6 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command()
 @cache(expire=int(os.getenv("CACHE_CLUB_CONTENT", "0")), tag="club-content")
-@retry(
-    retry=retry_if_exception_type((DiscordServerError, ClientError)),
-    wait=wait_random_exponential(min=60, max=5 * 60),
-    stop=stop_after_attempt(3),
-    reraise=True,
-    before_sleep=before_sleep_log(logger, logging.WARNING),
-)
 def main():
     with db.connection_context():
         db.drop_tables([ClubMessage, ClubUser, ClubPin])

@@ -40,9 +40,9 @@ def run(task_fn: Callable[..., Awaitable], *args, **kwargs) -> None:
                 except Exception as exc:
                     logger.debug("Task function raised an exception")
                     exc_queue.put(exc)
-                finally:
-                    logger.debug("Closing Discord client")
-                    await self.close()
+
+                logger.debug("Closing Discord client")
+                self.loop.stop()
 
             async def on_error(self, event, *args, **kwargs):
                 logger.debug("Got an error")
