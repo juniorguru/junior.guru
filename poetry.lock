@@ -1471,7 +1471,7 @@ click = "8.2.1"
 type = "git"
 url = "https://github.com/juniorguru/beak.git"
 reference = "HEAD"
-resolved_reference = "2e2425dd9d96d175f13141e80e6b3d0f71f60059"
+resolved_reference = "03464261c48cf5063be9c8235650b53875940737"
 
 [[package]]
 name = "jg-chick"
