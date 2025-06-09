@@ -387,7 +387,7 @@ def resolve_references(markdown: str, roles: dict[str, int] | None = None) -> st
     return REFERENCE_RE.sub(resolve_reference, markdown)
 
 
-def is_forum_summary(message: discord.Message) -> bool:
+def is_forum_guide(message: discord.Message) -> bool:
     if message.id != message.channel.id:
         return False
     if message.channel.is_pinned():

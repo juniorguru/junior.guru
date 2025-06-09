@@ -13,7 +13,7 @@ from jg.coop.lib.discord_club import (
     get_ui_urls,
     get_user_roles,
     is_channel_private,
-    is_forum_summary,
+    is_forum_guide,
 )
 from jg.coop.lib.discord_votes import count_downvotes, count_upvotes
 from jg.coop.models.base import db
@@ -114,7 +114,7 @@ def store_message(message: Message) -> ClubMessage:
             is_private=is_channel_private(channel),
             pinned_message_url=get_pinned_message_url(message),
             ui_urls=get_ui_urls(message),
-            is_forum_summary=is_forum_summary(message),
+            is_forum_guide=is_forum_guide(message),
         )
     except peewee.IntegrityError:
         message_obj = ClubMessage.get_by_id(message.id)

@@ -271,7 +271,7 @@ class ClubMessage(BaseModel):
     is_private = BooleanField(default=False)
     pinned_message_url = CharField(null=True, index=True)
     ui_urls = JSONField(default=list)
-    is_forum_summary = BooleanField(default=False)
+    is_forum_guide = BooleanField(default=False)
 
     @property
     def created_on(self) -> date:
@@ -378,11 +378,11 @@ class ClubMessage(BaseModel):
         )
 
     @classmethod
-    def forum_summary(cls, channel_id: int) -> Self:
+    def forum_guide(cls, channel_id: int) -> Self:
         return (
             cls.forum_listing(channel_id)
             .where(
-                cls.is_forum_summary == True,  # noqa: E712
+                cls.is_forum_guide == True,  # noqa: E712
             )
             .first()
         )

@@ -104,7 +104,7 @@ async def sync_jobs(client: ClubClient, channel_id: int):
         job.save()
     logger.info(f"Currently listed jobs: {len(jobs)}")
 
-    if summary_message := ClubMessage.forum_summary(channel_id):
+    if summary_message := ClubMessage.forum_guide(channel_id):
         summary_id = summary_message.id
     else:
         summary_id = None
