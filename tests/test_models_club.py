@@ -29,8 +29,10 @@ def create_message(id_, user, **kwargs):
         created_month=kwargs.get("created_month", f"{created_at:%Y-%d}"),
         channel_id=channel_id,
         channel_name=kwargs.get("channel_name", "random-discussions"),
+        channel_type=kwargs.get("channel_type", "text"),
         parent_channel_id=kwargs.get("parent_channel_id", channel_id),
         parent_channel_name=kwargs.get("parent_channel_name", "random-discussions"),
+        parent_channel_type=kwargs.get("parent_channel_type", "text"),
         type=kwargs.get("type", "default"),
         is_private=kwargs.get("is_private", False),
     )
