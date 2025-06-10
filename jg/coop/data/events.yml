@@ -63,14 +63,17 @@ registry:
     title: "Jak rozjet svou IT kariéru ve státní správě"
     date: "2025-06-11"
     description: |
-      (bude upřesněno)
+      Je státní správa vhodné místo pro rozjezd kariéry v IT? Jaká jsou specifika služby státu? Jaké jsou výhody a nevýhody? Jaké jsou možnosti profesního růstu? A jak se do státní správy dostat?
     avatar_path: avatars-participants/eva-pavlikova.jpg
     bio_name: Eva Pavlíková
     bio_title: "Ředitelka IT na Ministerstvu pro místní rozvoj"
     bio: |
-      (bude upřesněno)
+      Po patnácti letech v byznysu se rozhodla věnovat službě veřejnosti. Pomohla vybudovat dobrovolnickou organizaci Česko.Digital, dnes stojí za platformou Byro a u toho studuje teologii. V roce 2025 uspěla v otevřeném výběrovém řízení na vrchní ředitelku IT na Ministerstvu pro místní rozvoj, kde od března čelí nové, náročné misi. Ráda se otužuje – nejen ve svém kariérním životě. V září získala Stříbrnou medaili předsedy Senátu „za odhodlání překonávat setrvačnost.“
     bio_links:
       - https://www.linkedin.com/in/evapavlikova/
+      - https://mmr.gov.cz/cs/kontakty/kontakty-na-vedeni-ministerstva/sekce-it
+      - https://www.byro.works/
+      - https://www.cesko.digital/
     club_speaker_ids: []
 
   - id: 51
