@@ -40,7 +40,6 @@ CHANNELS_HISTORY_SINCE = {
     ClubChannelID.ANNOUNCEMENTS: None,
     ClubChannelID.INTRO: None,
     ClubChannelID.BUSINESS: None,
-    ClubChannelID.MENTORING: None,
 }
 
 CHANNELS_SKIP = [

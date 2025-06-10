@@ -15,7 +15,12 @@ from peewee import (
     fn,
 )
 
-from jg.coop.lib.discord_club import ClubChannelID, ClubMemberID, parse_discord_link
+from jg.coop.lib.discord_club import (
+    ChannelType,
+    ClubChannelID,
+    ClubMemberID,
+    parse_discord_link,
+)
 from jg.coop.models.base import BaseModel, JSONField, check_enum
 
 
@@ -30,23 +35,35 @@ YEAR_PERIOD_DAYS = 365
 IS_NEW_PERIOD_DAYS = 20
 
 UPVOTES_EXCLUDE_CHANNELS = [
-    ClubChannelID.INTRO,
     ClubChannelID.ANNOUNCEMENTS,
     ClubChannelID.BOT,
-    ClubChannelID.GUIDE_DASHBOARD,
-    ClubChannelID.FUN,
     ClubChannelID.FUN_TOPICS,
+    ClubChannelID.FUN,
+    ClubChannelID.GUIDE_DASHBOARD,
+    ClubChannelID.INTRO,
     ClubChannelID.NEWCOMERS,
 ]
 
 STATS_EXCLUDE_CHANNELS = [
     ClubChannelID.ANNOUNCEMENTS,
-    ClubChannelID.JOBS,
     ClubChannelID.BOT,
     ClubChannelID.GUIDE_DASHBOARD,
-    ClubChannelID.FUN,
+    ClubChannelID.JOBS,
+    ClubChannelID.NEWCOMERS,
+]
+
+SUMMARY_INCLUDE_CHANNELS = [
+    ClubChannelID.ADVENTOFCODE,
     ClubChannelID.FUN_TOPICS,
-    834443926655598592,  # práce-bot (archived)
+    ClubChannelID.QA,
+]
+
+SUMMARY_EXCLUDE_CHANNELS = [
+    ClubChannelID.GUIDE_DASHBOARD,
+    ClubChannelID.GUIDE_EVENTS,
+    ClubChannelID.GUIDE_ROLES,
+    ClubChannelID.GUIDE_SPONSORS,
+    ClubChannelID.VENTING,
 ]
 
 
@@ -264,8 +281,12 @@ class ClubMessage(BaseModel):
     author_is_bot = BooleanField()
     channel_id = IntegerField(index=True)
     channel_name = CharField()
+    channel_type = CharField(constraints=[check_enum("channel_type", ChannelType)])
     parent_channel_id = IntegerField(index=True)
     parent_channel_name = CharField()
+    parent_channel_type = CharField(
+        constraints=[check_enum("parent_channel_type", ChannelType)]
+    )
     category_id = IntegerField(index=True, null=True)
     type = CharField(default="default")
     is_private = BooleanField(default=False)
@@ -385,6 +406,22 @@ class ClubMessage(BaseModel):
                 cls.is_forum_guide == True,  # noqa: E712
             )
             .first()
+        )
+
+    @classmethod
+    def summary_listing(cls, since_on: date) -> Iterable[Self]:
+        return (
+            cls.select()
+            .where(
+                cls.is_private == False,  # noqa: E712
+                ClubMessage.parent_channel_id.not_in(SUMMARY_EXCLUDE_CHANNELS),
+                (
+                    (cls.parent_channel_type == ChannelType.TEXT)
+                    | ClubMessage.parent_channel_id.in_(SUMMARY_INCLUDE_CHANNELS)
+                ),
+                cls.created_at >= datetime.combine(since_on, datetime.min.time()),
+            )
+            .order_by(cls.channel_id, cls.created_at)
         )
 
     @classmethod

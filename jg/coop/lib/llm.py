@@ -73,6 +73,10 @@ retry_defaults = dict(
 async def ask_for_json(system_prompt: str, user_prompt: str) -> dict:
     client = get_client()
     async with limit:
+        logger.debug(
+            f"Prompt lengths: {count_tokens(system_prompt)}"
+            f" + {count_tokens(user_prompt)} tokens"
+        )
         completion = await client.chat.completions.create(
             model=OPENAI_MODEL,
             messages=[
@@ -84,6 +88,7 @@ async def ask_for_json(system_prompt: str, user_prompt: str) -> dict:
     choice = completion.choices[0]
     data = json.loads(choice.message.content)
     data["finish_reason"] = choice.finish_reason
+    logger.debug(f"LLM response: {data!r}")
     return data
 
 

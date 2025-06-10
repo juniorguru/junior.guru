@@ -112,10 +112,26 @@ class ClubChannelID(IntEnum):
     MODERATION = 1062730750648135680
     NEWCOMERS = 1159474100226510888
     PROMO = 1187770159595794472
+    QA = 1067439203983568986
     TIL = 806621830383271937
     TIPS = 1158695711865577533
     VENTING = 815906954534191117
     WEEKLY_PLANS = 1123554774147670046
+
+
+class ChannelType(StrEnum):
+    TEXT = "text"
+    PRIVATE = "private"
+    VOICE = "voice"
+    GROUP = "group"
+    NEWS = "news"
+    NEWS_THREAD = "news_thread"
+    PUBLIC_THREAD = "public_thread"
+    PRIVATE_THREAD = "private_thread"
+    STAGE_VOICE = "stage_voice"
+    DIRECTORY = "directory"
+    FORUM = "forum"
+    MEDIA = "media"
 
 
 class ClubEmoji(StrEnum):

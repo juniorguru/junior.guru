@@ -113,7 +113,7 @@ Ke členství v klubu lze přijít různými způsoby. Každý nově příchozí
 
 Aktivita na Discordu je sezónní. V létě se moc nepíše, v zimě se píše hodně. Celé je to ale pouze orientační metrika:
 
-- V grafu není celá historie, data jsou jen za rok zpětně. Některé kanály se nezapočítávají, např. „volná zábava“. Nejde o kompletní _engagement_, protože lidi se mohou v klubu projevovat různě, např. reagováním pomocí emoji.
+- V grafu není celá historie, data jsou jen za rok zpětně. Některé kanály se nezapočítávají. Nejde o kompletní _engagement_, protože lidi se mohou v klubu projevovat různě, např. reagováním pomocí emoji.
 - Není správné sledovat a glorifikovat _engagement_, protože lidi mají z klubu úplně v pohodě hodnotu i pokud si jej pouze čtou. K tématu např. [Stop Measuring Community Engagement](https://rosie.land/posts/stop-measuring-community-engagement/).
 
 <div class="chart-scroll"><div class="chart-container"><canvas
