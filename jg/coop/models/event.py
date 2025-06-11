@@ -136,7 +136,7 @@ class Event(BaseModel):
             "title": self.title,
             "image_path": self.avatar_path,
             "subheading": self.bio_name,
-            "date": self.start_at_prg,
+            "date": self.start_at,
         }
         if not plain:
             context |= {
