@@ -75,8 +75,8 @@ registry:
       - https://www.cesko.digital/
       - https://mmr.gov.cz/cs/kontakty/kontakty-na-vedeni-ministerstva/sekce-it
     club_speaker_ids:
-    - 822219727219720252
-  
+      - 822219727219720252
+
   - id: 51
     title: "Proč se certifikovat?"
     date: "2025-05-13"
