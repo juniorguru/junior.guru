@@ -4,6 +4,7 @@ import logging
 import os
 from datetime import timedelta
 from functools import lru_cache
+from typing import Literal
 
 import tiktoken
 from openai import AsyncOpenAI, InternalServerError, RateLimitError
@@ -24,6 +25,7 @@ from jg.coop.lib.mutations import mutates
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 OPENAI_MODEL = "gpt-4o-mini"
+OPENAI_MODEL = "gpt-4.1-mini"
 
 
 logger = loggers.from_path(__file__)
@@ -35,6 +37,33 @@ limit = asyncio.Semaphore(4)
 def get_client() -> AsyncOpenAI:
     logger.debug("Creating OpenAI client")
     return AsyncOpenAI(api_key=OPENAI_API_KEY)
+
+
+async def ask_for_text(
+    system_prompt: str,
+    user_prompt: str,
+    better_model=False,
+) -> str:
+    return await _ask_llm(
+        system_prompt,
+        user_prompt,
+        response_format="text",
+        better_model=better_model,
+    )
+
+
+async def ask_for_json(
+    system_prompt: str,
+    user_prompt: str,
+    better_model=False,
+) -> dict:
+    json_text = await _ask_llm(
+        system_prompt,
+        user_prompt,
+        response_format="json_object",
+        better_model=better_model,
+    )
+    return json.loads(json_text)
 
 
 retry_defaults = dict(
@@ -70,7 +99,13 @@ retry_defaults = dict(
     **retry_defaults,
 )
 @cache(expire=timedelta(days=60), tag="llm-opinion")
-async def ask_for_json(system_prompt: str, user_prompt: str) -> dict:
+async def _ask_llm(
+    system_prompt: str,
+    user_prompt: str,
+    response_format: Literal["text", "json_object"],
+    better_model: bool = False,
+) -> dict:
+    model = "gpt-4.1-mini" if better_model else OPENAI_MODEL
     client = get_client()
     async with limit:
         logger.debug(
@@ -78,21 +113,19 @@ async def ask_for_json(system_prompt: str, user_prompt: str) -> dict:
             f" + {count_tokens(user_prompt)} tokens"
         )
         completion = await client.chat.completions.create(
-            model=OPENAI_MODEL,
+            model=model,
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt},
             ],
-            response_format=dict(type="json_object"),
+            response_format={"type": response_format},
         )
     choice = completion.choices[0]
-    data = json.loads(choice.message.content)
-    data["finish_reason"] = choice.finish_reason
-    logger.debug(f"LLM response: {data!r}")
-    return data
+    return choice.message.content
 
 
 def count_tokens(text: str) -> int:
-    encoding = tiktoken.encoding_for_model(OPENAI_MODEL)
+    # https://github.com/openai/tiktoken/issues/395#issuecomment-2835806009
+    encoding = tiktoken.get_encoding("o200k_base")
     tokens = encoding.encode(text)
     return len(tokens)
