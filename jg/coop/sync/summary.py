@@ -94,6 +94,7 @@ logger = loggers.from_path(__file__)
 @db.connection_context()
 @async_command
 async def main(today: date, days: int):
+    return
     since_on = today - timedelta(days=days)
     logger.info(f"Summarizing since: {since_on}")
     messages = ClubMessage.summary_listing(since_on=since_on)
@@ -134,6 +135,12 @@ async def main(today: date, days: int):
                 f"Topic {topic.name!r} refers to a non-existing message ID: {topic.message_id}"
             )
     logger.info(f"Found {len(messages)} messages corresponding to returned topics")
+
+    # TODO
+    # prozkoumat jak se pouziva pydantic s openai
+    # zkusit lepsi model i na samotne shrnuti
+    # zkusit to cele udelat v jednom kroku, protoze ten lepsi model ma extremne velke kontextove okno
+    # zkusit to cele udelat rovnou v cestine
 
 
 async def summarize_channel(messages: list[ClubMessage]) -> ChannelSummary | None:
