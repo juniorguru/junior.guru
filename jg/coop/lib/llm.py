@@ -24,9 +24,6 @@ from jg.coop.lib.mutations import mutates
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-OPENAI_MODEL = "gpt-4o-mini"
-OPENAI_MODEL = "gpt-4.1-mini"
-
 
 logger = loggers.from_path(__file__)
 
@@ -105,7 +102,7 @@ async def _ask_llm(
     response_format: Literal["text", "json_object"],
     better_model: bool = False,
 ) -> dict:
-    model = "gpt-4.1-mini" if better_model else OPENAI_MODEL
+    model = "gpt-4.1-mini" if better_model else "gpt-4o-mini"
     client = get_client()
     async with limit:
         logger.debug(
