@@ -1082,3 +1082,5 @@
 {"_id": "27096921329", "amount": -72, "category": "miscellaneous", "happened_on": "2025-06-10"}
 {"_id": "27097568123", "amount": 6, "category": "donations", "happened_on": "2025-06-11"}
 {"_id": "27097836002", "amount": -6050, "category": "miscellaneous", "happened_on": "2025-06-11"}
+{"_id": "27103659376", "amount": -6190, "category": "tax", "happened_on": "2025-06-15"}
+{"_id": "27103659377", "amount": -3143, "category": "tax", "happened_on": "2025-06-15"}
