@@ -91,6 +91,7 @@ HIDDEN_ELEMENTS = [
     ".tawk-min-container",
     ".fb_iframe_widget",
     ".fb_dialog",
+    '[id*="cookiebanner-container"]',
     "#cc--main",  # seduo.cz
     "#cc_div",  # seduo.cz
     '[class*="frb-"]',  # wikipedia.org
