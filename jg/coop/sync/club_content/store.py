@@ -1,5 +1,6 @@
 import peewee
 from discord import DMChannel, Member, Message, User
+from discord.abc import GuildChannel
 
 from jg.coop.lib import loggers
 from jg.coop.lib.async_utils import make_async
@@ -17,7 +18,7 @@ from jg.coop.lib.discord_club import (
 )
 from jg.coop.lib.discord_votes import count_downvotes, count_upvotes
 from jg.coop.models.base import db
-from jg.coop.models.club import ClubMessage, ClubPin, ClubUser
+from jg.coop.models.club import ClubChannel, ClubMessage, ClubPin, ClubUser
 
 
 logger = loggers.from_path(__file__)
@@ -107,10 +108,10 @@ def store_message(message: Message) -> ClubMessage:
             author_is_bot=message.author.id == ClubMemberID.BOT,
             channel_id=channel.id,
             channel_name=get_channel_name(channel),
-            channel_type=channel.type.name,
+            channel_type=int(channel.type.value),
             parent_channel_id=get_parent_channel(channel).id,
             parent_channel_name=get_channel_name(get_parent_channel(channel)),
-            parent_channel_type=get_parent_channel(channel).type.name,
+            parent_channel_type=int(get_parent_channel(channel).type.value),
             category_id=getattr(channel, "category_id", None),
             type=message.type.name,
             is_private=is_channel_private(channel),
@@ -140,6 +141,17 @@ def store_pin(message: ClubMessage, member: Member) -> ClubPin:
     return ClubPin.create(
         pinned_message=message.id, member=ClubUser.get_member_by_id(member.id)
     )
+
+
+@make_async
+@db.connection_context()
+def store_channel(channel: GuildChannel) -> None:
+    """Stores in database the information about given Discord channel"""
+    name = get_channel_name(channel)
+    logger["channels"].debug(
+        f"Channel #{channel.id} aka {name!r}, type {channel.type.name}"
+    )
+    return ClubChannel.create(id=channel.id, name=name, type=int(channel.type.value))
 
 
 @make_async

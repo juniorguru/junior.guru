@@ -1,8 +1,10 @@
 import asyncio
+import json
+import re
 from datetime import date, timedelta
 from itertools import groupby
 from operator import attrgetter
-from typing import Iterable
+from pprint import pformat
 
 import click
 from pydantic import BaseModel
@@ -11,77 +13,32 @@ from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
 from jg.coop.lib.cli import async_command
 from jg.coop.lib.discord_club import ClubChannelID
-from jg.coop.lib.llm import ask_for_json, ask_for_text
+from jg.coop.lib.llm import LLMModel, ask_llm
 from jg.coop.models.base import db
-from jg.coop.models.club import ClubMessage
-
-
-SUMMARY_PROMPT_TEMPLATE = """
-You are a Discord {container} summarizer. You summarize recent activity across a {container} focused on learning programming and early-career topics. You get a list of {items}. You respond with a JSON object with two fields:
-
-- topics (array of objects): Key discussion topics pulled from the summaries. Each topic has:
-    - name (string): What the topic was about.
-    - message_id (int): The ID of the message that started that topic.
-- text (string): Write exactly what was discussed. No intros, no conclusions, no commentary about the server or atmosphere. Only facts about topics, opinions, and resources shared. Write plain, short sentences. Maximum 3 paragraphs, each up to 5 sentences.
-
-Tone: Professional but casual. No filler words or flowery language. Avoid vague words like "reflected," "resonated," "commitment," or "exchange." Just state the facts plainly.
-
-Example:
-```
-{{
-  "topics": [
-    {{
-      "name": "AI and programming jobs",
-      "message_id": 123
-    }},
-    {{
-      "name": "The fate of Stack Overflow",
-      "message_id": 456
-    }}
-  ],
-  "text": "Members discussed AI's impact on programming jobs and the reliability of Stack Overflow. They debated how job requirements are changing with new tech.\n\nSeveral shared their experiences switching careers to programming, highlighting bootcamps, job applications, and key skills.\n\nThere were recommendations for online courses, AI testing tools, and frameworks for beginners. Members talked about personal projects and networking."
-}}
-```
-
-Double check you return both fields, `topics` and `text`, and that you're not inventing non-existing message IDs.
-"""
-
-STYLE_PROMPT = """
-Change given text accroding to the following style guidelines:
-
-- If suitable, use active voice instead of passive constructions, e.g. "we discussed" instead of "members discussed". But "some members questioned reliability" is still better than "reliability was questioned". Use "we" when it comes to something consensual, but "members" or "member", when it comes to personal experiences or subjective opinions.
-- Write in a professional but informal tone, as if friends were having a casual conversation at work. Avoid jargon and make the text sound natural.
-- Use "people" or "those who", instead of "users".
-"""
-
-TRANSLATE_PROMPT = """
-Jsi robotický asistent, který se jmenuje „kuře”. Text, který dostaneš, přeložíš do češtiny, jako bys to psalo ty samo. Nepřekládej to slovo po slově, větu po větě. Napiš to celé znovu. Drž význam, ale celé to napiš svými slovy, neformální češtinou, jako bys to posílalo v e-mailu kamarádovi nebo kolegovi, ale vyvaruj se vyloženě konverzačního tónu jako "hele" a tak. Dáváš si záležet, aby překlad byly přirozený a čtivý. Vždy po sobě kontroluj, jestli v tom nemáš gramatické nebo stylistické chyby. Piš spisovně, ne jako pražák.
-"""
-
-
-class Topic(BaseModel):
-    name: str
-    message_id: int
-
-
-class Summary(BaseModel):
-    text: str
-    topics: list[Topic]
-
-
-class ChannelStats(BaseModel):
-    messages_count: int
-    authors_count: int
-    reactions_count: int
-    content_size: int
-
-
-class ChannelSummary(BaseModel):
-    stats: ChannelStats
-    summary: Summary
+from jg.coop.models.club import ClubChannel, ClubMessage
 
 
 logger = loggers.from_path(__file__)
+
+
+class Topic(BaseModel):
+    engagement_score: int
+    message_id: int
+    name: str
+    text: str
+
+
+class Summary(BaseModel):
+    topics: list[Topic]
+
+
+class TopicEmoji(BaseModel):
+    topic_id: int
+    emoji: str
+
+
+class TopicEmojis(BaseModel):
+    items: list[TopicEmoji]
 
 
 @cli.sync_command(dependencies=["club-content"])
@@ -94,112 +51,189 @@ logger = loggers.from_path(__file__)
 @db.connection_context()
 @async_command
 async def main(today: date, days: int):
-    return
     since_on = today - timedelta(days=days)
     logger.info(f"Summarizing since: {since_on}")
-    messages = ClubMessage.summary_listing(since_on=since_on)
-    tasks = [
-        asyncio.create_task(summarize_channel(list(channel_messages)))
-        for _, channel_messages in groupby(messages, key=attrgetter("channel_id"))
-    ]
-    logger.info(f"Waiting for {len(tasks)} summaries")
-    summaries = [s for s in await asyncio.gather(*tasks) if s is not None]
-
-    logger.info(f"Waiting for a summary of {len(summaries)} channels")
-    system_prompt = SUMMARY_PROMPT_TEMPLATE.format(container="server", items="channels")
-    llm_response = await ask_for_json(
-        system_prompt, serialize_channel_summaries(summaries)
+    channel_mapping = ClubChannel.names_mapping()
+    messages = ClubMessage.summary_listing(
+        since_on=since_on,
+        exclude_channels=[
+            ClubChannelID.GUIDE_DASHBOARD,
+            ClubChannelID.GUIDE_EVENTS,
+            ClubChannelID.GUIDE_ROLES,
+            ClubChannelID.GUIDE_SPONSORS,
+            ClubChannelID.VENTING,
+            ClubChannelID.META,
+        ],
+        include_channels=[
+            ClubChannelID.ADVENTOFCODE,
+            ClubChannelID.FUN_TOPICS,
+            ClubChannelID.QA,
+        ],
     )
-    summary = Summary(**llm_response)
-    logger.info(f"Summary text:\n\n{summary.text}")
-    logger.info("Translating")
-    summary_text = await ask_for_text(STYLE_PROMPT, summary.text)
-    logger.debug(f"Different style:\n\n{summary_text}")
-    summary_text = await ask_for_text(TRANSLATE_PROMPT, summary_text, better_model=True)
-    logger.debug(f"Translation:\n\n{summary_text}")
 
-    messages = []
+    logger.info(f"Serializing {len(messages)} messages to a text feed")
+    feed = to_feed(
+        list(messages),
+        channel_mapping,
+        threads_only_channels=[ClubChannelID.INTRO, ClubChannelID.TIL],
+    )
+    return  # TODO
+
+    logger.info(f"Summarizing the feed, {len(feed)} characters… (takes a while)")
+    summary = await ask_llm(
+        """
+            Pomáháš sledovat, co se děje v naší komunitě IT juniorů, která je na Discordu a říká si „klub“. Přijde ti přehled kanálů a zpráv. Ty uděláš shrnutí toho nejpodstatnějšího. Podstatná témata poznáš podle toho, že jsme si o nich hodně psali, zapojilo se do debaty víc členů, nebo to mělo dost (emoji) reakcí. Podobná témata nebo delší diskuze ale spoj, ať je ten výběr pestrý, ne že z jedné konverzace uděláš hned několik témat. Na výstupu vrať JSON s tématy, kde každé má čtyři atributy:
+
+            - `topics` (array[object]): Seznam 15 nejpodstatnějších témat. Seřaď je od nejzásadnějších po ty méně významné. Každé téma obsahuje:
+                - `engagement_score` (int): Skóre toho, jak bylo téma podstatné. Vypočítá se jako součet počtu zpráv, unikátních autorů a reakcí. Čím vyšší, tím lépe.
+                - `message_id` (int): ID první zprávy, která to téma odstartovala.
+                - `name` (string): Krátký název vystihující podstatu tématu. Bez slova „diskuze“ aj. zbytečností. NE: „Nahradí AI programátory?” NE: „Diskuze o AI” ANO: „Zkušenosti s nástroji na vibe coding”
+                - `text` (string): Shrnutí tématu. Trochu jako „executive summary”, max 1800 znaků. Bez emotivních hodnocení. Jen fakta, názory, co jsme řešili a co lidi sdíleli. Nepiš úvod ani závěr. Vynech celkové hodnocení, jak na tebe diskuze působily a jaká se ti zdála atmosféra. Nezmiňuj v jaké části klubu (v jakých kanálech) jsme co probírali. Nepoužívej žádné formulace typu „hodně se řešilo“, „výrazná část konverzace“, „rozvinula se debata“, „populární téma bylo“, „nejvíc se mluvilo o“ apod. Napiš to bez jakéhokoli hodnocení četnosti, důležitosti nebo rozsahu témat. Nehodnoť ani nepřibližuj, kolik jsme toho psali. Prostě popiš jen obsah, ne kolik nebo jak moc.
+
+            Důležité:
+            - Nevymýšlej si ID zpráv.
+            - Vše česky.
+            - Přemýšlej nad tím krok za krokem.
+        """,
+        feed,
+        model=LLMModel.advanced,
+        schema=Summary,
+    )
+    logger.info(f"The summary contains {len(summary.topics)} topics")
+    logger.debug(f"Summary:\n{pformat(summary.model_dump())}")
+
+    logger.info("Filtering out low-engagement topics")
+    summary.topics = summary.topics[:10]
+
+    logger.info("Verifying message IDs")  # TODO prompt the LLM for correction
     for topic in summary.topics:
-        try:
-            message = ClubMessage.get_by_id(topic.message_id)
-            if message.channel_id == ClubChannelID.INTRO:
-                logger.warning(
-                    f"Skipping topic {topic.name!r}, {message.url}, "
-                    "as it leads to the top level of the intro channel"
-                )
-            else:
-                logger.info(f"Topic: {topic.name}, {message.url}")
-                messages.append(message)
-        except ClubMessage.DoesNotExist:
-            logger.warning(
-                f"Topic {topic.name!r} refers to a non-existing message ID: {topic.message_id}"
-            )
-    logger.info(f"Found {len(messages)} messages corresponding to returned topics")
+        ClubMessage.get_by_id(topic.message_id)
 
-    # TODO
-    # prozkoumat jak se pouziva pydantic s openai
-    # zkusit lepsi model i na samotne shrnuti
-    # zkusit to cele udelat v jednom kroku, protoze ten lepsi model ma extremne velke kontextove okno
-    # zkusit to cele udelat rovnou v cestine
+    logger.info("Adjusting the summary text's style")
+    tasks = [
+        ask_llm(
+            """
+                Uprav následující český odstavec tak, aby byl čtivý a přirozený – jako když to někomu vyprávíš u kafe v práci.
 
-
-async def summarize_channel(messages: list[ClubMessage]) -> ChannelSummary | None:
-    name = messages[0].channel_name
-    stats = ChannelStats(
-        messages_count=len(messages),
-        authors_count=len(set(m.author.id for m in messages)),
-        reactions_count=sum(sum(m.reactions.values()) for m in messages),
-        content_size=sum(m.content_size for m in messages),
-    )
-    if not stats.content_size:
-        logger.debug(f"Skipping {name!r}: empty")
-        return
-    if stats.authors_count < 3 and stats.reactions_count < 20:
-        logger.debug(f"Skipping {name!r}: {stats!r}")
-        return
-    logger.debug(f"Summarizing {name!r}: {stats!r}")
-    system_prompt = SUMMARY_PROMPT_TEMPLATE.format(
-        container="channel", items="messages"
-    )
-    llm_response = await ask_for_json(system_prompt, serialize_messages(messages))
-    try:
-        summary = Summary(**llm_response)
-    except Exception:
-        logger.debug(
-            f"Failed to parse summary for {name!r}:\n\n{llm_response!r}\n\n"
-            f"Messages:\n\n{serialize_messages(messages)}"
+                - Zestručni to do pár vět, max 500 znaků. Zaměř se na hlavní myšlenky. Vynech detaily a konkrétní příklady.
+                - Můžeš psát jako bys byl jedním z členů klubu, třeba „řešili jsme”, „probrali jsme”, „probírali jsme”, ale přirozeně to střídej s „řešilo se”, „probralo se”, „členové psali”, „lidi psali”, a tak. Občas se může hodit „prý”. NE: „Diskutovali jsme, že se AI nahradí programátory” ANO: „Prý AI nahradí programátory”.
+                - Pokud mluvíš o účastnících diskuze, tak ANO: „lidi”, „členové klubu”, NE: „uživatelé”, „diskutující”.
+                - Piš v minulém čase.
+                - Žádné úvody, shrnutí, ani závěry navíc.
+                - Nepiš nespisovně, ale piš přirozeně. Věty mohou být krátké, hlavně aby se dobře četly.
+                - Dvakrát zkontroluj, že si nevymýšlíš žádné informace navíc. Uprav jen formu, ne obsah. Fakta a názvy musí sedět s původním textem.
+            """,
+            topic.text,
+            model=LLMModel.advanced,
         )
-        raise
-    logger.info(f"Summarized {name!r}")
-    logger.debug(f"Summary:\n\n{summary!r}")
-    return ChannelSummary(stats=stats, summary=summary)
+        for topic in summary.topics
+    ]
+    for i, text in enumerate(await asyncio.gather(*tasks)):
+        summary.topics[i].text = text.strip()
+    logger.debug(f"Summary:\n{pformat(summary.model_dump())}")
 
-
-def serialize_messages(messages: list[ClubMessage]) -> str:
-    return "\n\n---\n\n".join(
-        [
-            f"Message #{message.id} by user <@{message.author.id}>:\n\n{message.content}"
-            for message in messages
-        ]
+    logger.info("Assigning emojis")
+    emojis = await ask_llm(
+        """
+            To each topic in the JSON assign a single emoji that represents the topic. The emoji should be relevant to the topic and should not be too generic. The emojis must be unique accross the JSON. For each topic use only one emoji, not a combination of emojis.
+        """,
+        json.dumps(
+            {
+                "topics": [
+                    {"topic_id": n, "content": f"{topic.name}: {topic.text}"}
+                    for n, topic in enumerate(summary.topics, start=1)
+                ]
+            },
+            indent=2,
+            ensure_ascii=False,
+        ),
+        schema=TopicEmojis,
     )
+    emojis = [item.emoji for item in emojis.items]
+    logger.debug(f"Emojis:\n{pformat(emojis)}")
 
 
-def serialize_channel_summaries(channel_summaries: Iterable[ChannelSummary]) -> str:
-    return "\n\n---\n\n".join(
-        [
-            (
-                f"Channel #{n} has "
-                f"{channel_summary.stats.messages_count} new messages "
-                f"by {channel_summary.stats.authors_count} users "
-                f"({channel_summary.stats.content_size} characters "
-                f"and {channel_summary.stats.reactions_count} emoji reactions total):\n\n"
-                f"{channel_summary.summary.text}\n\n"
-                f"Notable Topics:\n\n"
+def to_feed(
+    messages: list[ClubMessage],
+    channel_mapping: dict[int, str],
+    threads_only_channels: list[int] = None,
+) -> str:
+    docs = []
+    for channel_id, channel_messages in groupby(messages, key=attrgetter("channel_id")):
+        # some channels are only for threads, so we skip the top-level discussion
+        if threads_only_channels and channel_id in threads_only_channels:
+            continue
+
+        # add starting message if it's in the selected period
+        channel_messages = list(channel_messages)
+        channel_messages = [
+            m for m in messages if m.id == channel_id and m.id != channel_messages[0].id
+        ] + channel_messages
+
+        # stats
+        messages_count = len(channel_messages)
+        authors_count = len(set(m.author.id for m in channel_messages))
+        reactions_count = sum(sum(m.reactions.values()) for m in channel_messages)
+        content_size = sum(m.content_size for m in channel_messages)
+
+        # skip low engagement channels
+        if (
+            messages_count < 10
+            and authors_count < 10
+            and reactions_count < 30
+            and content_size < 10000
+        ):
+            logger.debug(f"Skipping channel: {channel_mapping[channel_id]}")
+            continue
+
+        logger.debug(f"Adding channel: {channel_mapping[channel_id]}")
+        channel_header = (
+            f"Kanál <#{channel_id}> má "
+            f"{messages_count} nových příspěvků "
+            f"od {authors_count} členů "
+            f"(celkem písmen {content_size}, "
+            f"emoji reakcí {reactions_count})"
+        )
+        docs.append(f"\n\n{channel_header.upper()}:")
+        for message in channel_messages:
+            reactions = ", ".join(
+                f"{count}×{f':{emoji}:' if re.search(r'^[a-zA-Z0-9]+$', emoji) else emoji}"
+                for emoji, count in message.reactions.items()
             )
-            + "\n".join(
-                f"- {topic.name} (Message ID: {topic.message_id})"
-                for topic in channel_summary.summary.topics
+            reactions = f", reakce {reactions}" if reactions else ""
+            doc = (
+                f"[Příspěvek #{message.id} od člena <@{message.author.id}>{reactions}]\n"
+                f"{message.content}"
             )
-            for n, channel_summary in enumerate(channel_summaries, start=1)
-        ]
-    )
+            docs.append(doc)
+    text = "\n---\n".join(docs)
+    text = simplify_channel_mentions(text, channel_mapping)
+    text = simplify_member_mentions(text)
+    text = simplify_custom_emojis(text)
+    return text
+
+
+def simplify_channel_mentions(text: str, channel_mapping: dict[int, str]) -> str:
+    for match in re.finditer(r"<#!?(\d+)>", text):
+        channel_id = int(match.group(1))
+        name = channel_mapping[channel_id]
+        name_repr = f"#{name}" if re.search(r"^[\w\-]+$", name) else f"<#{name}>"
+        text = text.replace(match.group(0), name_repr)
+    return text
+
+
+def simplify_member_mentions(text: str) -> str:
+    user_ids = []
+    for match in re.finditer(r"<@!?(\d+)>", text):
+        user_id = int(match.group(1))
+        try:
+            index = user_ids.index(user_id)
+        except ValueError:
+            user_ids.append(user_id)
+            index = len(user_ids) - 1
+        text = text.replace(match.group(0), f"@member{index + 1}")
+    return text
+
+
+def simplify_custom_emojis(text: str) -> str:
+    return re.sub(r"<a?:([^:]+):\d+>", r":\1:", text)

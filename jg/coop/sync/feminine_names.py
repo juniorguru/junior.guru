@@ -15,23 +15,24 @@ logger = loggers.from_path(__file__)
 WIKI_URL = "https://cs.wikipedia.org/wiki/Seznam_nej%C4%8Dast%C4%9Bj%C5%A1%C3%ADch_%C5%BEensk%C3%BDch_jmen_v_%C4%8Cesku"
 
 EXTRA_NAMES = [
-    "Kayla",
-    "Hannah",
     "Alisa",
-    "Hany",
-    "Evgenia",
-    "Kate",
-    "Lindice",
     "Anastasija",
     "Anastassiya",
-    "Nataliya",
+    "Darja",
     "Dinara",
     "Eleanor",
-    "Darja",
-    "Tina",
+    "Evgenia",
+    "Hannah",
+    "Hany",
     "Katarína",
+    "Kate",
+    "Kayla",
+    "Lindice",
     "Lívia",
+    "Nataliya",
+    "Oxana",
     "Rozvita",
+    "Tina",
 ]
 
 

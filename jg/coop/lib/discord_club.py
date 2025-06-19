@@ -119,21 +119,6 @@ class ClubChannelID(IntEnum):
     WEEKLY_PLANS = 1123554774147670046
 
 
-class ChannelType(StrEnum):
-    TEXT = "text"
-    PRIVATE = "private"
-    VOICE = "voice"
-    GROUP = "group"
-    NEWS = "news"
-    NEWS_THREAD = "news_thread"
-    PUBLIC_THREAD = "public_thread"
-    PRIVATE_THREAD = "private_thread"
-    STAGE_VOICE = "stage_voice"
-    DIRECTORY = "directory"
-    FORUM = "forum"
-    MEDIA = "media"
-
-
 class ClubEmoji(StrEnum):
     PIN = "📌"
     SPONSOR_INTRO = "👋"

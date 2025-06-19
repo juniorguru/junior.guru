@@ -5,6 +5,8 @@ import time
 from pathlib import Path
 from typing import Callable, Generator, Iterable, TypeVar, cast
 
+import click
+
 from jg.coop.lib.cache import get_cache
 from jg.coop.lib.chunks import chunks
 
@@ -72,13 +74,28 @@ class Logger(logging.Logger):
             thread.join()
 
 
+class ColorFormatter(logging.Formatter):
+    def format(self, record: logging.LogRecord) -> str:
+        if record.levelno == logging.DEBUG:
+            record.levelname = click.style("DEBUG", fg="cyan")
+        elif record.levelno == logging.INFO:
+            record.levelname = click.style("INFO", fg="green")
+        elif record.levelno == logging.WARNING:
+            record.levelname = click.style("WARNING", fg="yellow")
+        elif record.levelno == logging.ERROR:
+            record.levelname = click.style("ERROR", fg="red")
+        elif record.levelno == logging.CRITICAL:
+            record.levelname = click.style("CRITICAL", fg="red")
+        return super().format(record)
+
+
 def _configure():
     cache = get_cache()
 
     level = _infer_level(cache.get("loggers:log_level"), os.environ)
     timestamp = _infer_timestamp(cache.get("loggers:log_timestamp"), os.environ)
     format = "[%(asctime)s] " if timestamp else ""
-    format += "[%(name)s%(processSuffix)s] %(levelname)s: %(message)s"
+    format += "[%(name)s%(processSuffix)s] %(levelname)s %(message)s"
 
     logging.setLogRecordFactory(_record_factory)
     logging.setLoggerClass(Logger)
@@ -89,7 +106,7 @@ def _configure():
 
     stderr = logging.StreamHandler()
     stderr.setLevel(getattr(logging, level))
-    stderr.setFormatter(logging.Formatter(format))
+    stderr.setFormatter(ColorFormatter(format))
     logging.root.addHandler(stderr)
 
     # In multiprocessing, the child processes won't automatically

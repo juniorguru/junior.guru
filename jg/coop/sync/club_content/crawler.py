@@ -2,7 +2,7 @@ import asyncio
 from datetime import datetime, timedelta, timezone
 from typing import AsyncGenerator
 
-from discord import DMChannel, Member, Message, Reaction, User
+from discord import ChannelType, DMChannel, Member, Message, Reaction, User
 from discord.abc import GuildChannel
 
 from jg.coop.lib import loggers
@@ -20,6 +20,7 @@ from jg.coop.lib.discord_club import (
     is_thread_after,
 )
 from jg.coop.sync.club_content.store import (
+    store_channel,
     store_dm_channel,
     store_member,
     store_message,
@@ -109,7 +110,7 @@ async def crawl(client: ClubClient) -> None:
 
 
 async def crawl_dm_channel(queue: asyncio.Queue, member: Member) -> None:
-    channel = await get_or_create_dm_channel(member)
+    channel: DMChannel = await get_or_create_dm_channel(member)
     if channel:
         logger["channels"].debug(
             f"Adding DM channel #{channel.id} for member {channel.recipient.display_name!r}"
@@ -121,9 +122,13 @@ async def crawl_dm_channel(queue: asyncio.Queue, member: Member) -> None:
 async def channel_worker(worker_no, queue) -> None:
     logger_cw = logger[worker_no]["channels"]
     while True:
-        channel = await queue.get()
+        channel: GuildChannel = await queue.get()
         logger_c = get_channel_logger(logger_cw, channel)
         logger_c.info(f"Crawling {get_channel_name(channel)!r}")
+
+        tasks = []
+        if channel.type != ChannelType.category:
+            tasks.append(asyncio.create_task(store_channel(channel)))
 
         if hasattr(channel, "is_pinned") and channel.is_pinned():
             history_after = None
@@ -154,7 +159,6 @@ async def channel_worker(worker_no, queue) -> None:
             )
             queue.put_nowait(thread)
 
-        tasks = []
         async for message in fetch_messages(channel, history_after):
             db_message = await store_message(message)
             async for reacting_member in fetch_members_reacting_by_pin(
