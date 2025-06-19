@@ -1,21 +1,14 @@
 name: Software Development Academy
-url: https://sdacademy.cz/
+url: https://web.archive.org/web/20250615070103/https://sdacademy.cz/
 cz_business_id: 9863427
 sk_business_id: 54088305
-# ---
-# title: Zkušenosti se Software Development Academy
-# topic_name: sdacademy
-# topic_link_text: SDAcademy
-# description: Hledáš někoho, kdo má zkušenosti se Software Development Academy? Vyplatí se jejich kurzy?
-# ---
-# {% from 'macros_topic.html' import intro, mentions with context %}
+usp_description: |
+  Software Development Academy (nebo taky SDA, SDAcademy) **už neexistuje**. V tomto katalogu je jen pro úplnost, kdyby je někdo ještě hledal.
 
-# {{ intro('Recenze na SDAcademy', page.meta.description) }}
+  Jednalo se o lokální pobočky původně polské firmy, která poskytovala kurzy v několika zemích východní Evropy. V Česku a na Slovensku působila od roku 2021.
 
-# {{ mentions(topic, 'SDA') }}
+  Kurzy probíhaly online a měly buď víkendový, nebo večerní režim. Učilo se především testování, datová analýza, Java, Python a JavaScript.
 
-# <p class="button-compartment">
-#   <a href="{{ pages|docs_url('club.md')|url }}" class="button">
-#     Přidej se&nbsp;k&nbsp;nám
-#   </a>
-# </p>
+  V září 2022 se polská SDA spojila s maďarským CodeCool. Na blogu CodeCool [to bylo prezentováno jako sloučení](https://codecool.com/en/blog/codecool-sda-merge/), ale podle všeho ke spojení firem (nakonec?) nedošlo. Oba subjekty si zachovaly své značky a pokrývaly různé trhy. CodeCool v září 2024 na svém webu vyměnili mapku pokrytých zemí, která původně zahrnovala i trhy s SDA. Nová mapka je však už bez SDA. Obě firmy šly dál vlastní cestou. Není jasné, jestli se spojení nepovedlo, protože během roku 2023 na všech trzích zbrzdil zájem o juniory, nebo zda to bylo z jiných důvodů.
+
+  SDA potom normálně dál provozovala kurzy, ale v červnu 2025 přestaly fungovat domény nejen pro českou a slovenskou pobočku, ale i polskou matku a všechny jejich další Evropské pobočky.
