@@ -117,7 +117,7 @@ def check_plan(value: HttpUrl | None, info: ValidationInfo) -> HttpUrl:
 class OrganizationConfig(YAMLConfig):
     name: str
     slug: str
-    url: HttpUrl
+    url: HttpUrl | None = None
     cz_business_id: int | None = None
     sk_business_id: int | None = None
     subscription: Annotated[HttpUrl | None, AfterValidator(check_subscription)] = None

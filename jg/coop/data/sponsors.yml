@@ -73,7 +73,6 @@ registry:
 
   - name: Green Fox Academy
     slug: greenfox
-    url: https://web.archive.org/web/20240803012605/https://www.greenfoxacademy.cz/
     periods:
       - [2023-01, 2023-12]
 
@@ -152,7 +151,6 @@ registry:
 
   - name: Software Development Academy
     slug: sdacademy
-    url: https://sdacademy.cz/
     periods:
       - [2021-06, 2022-10]
 

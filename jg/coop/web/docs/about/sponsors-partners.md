@@ -84,7 +84,14 @@ Sponzoři, kteří využívají [GitHub Sponsors](https://github.com/sponsors/ho
 
 ## Bývalí sponzoři
 
-{% for sponsor in sponsors_past %}{{ utm_link(sponsor.name, sponsor.url, "about", sponsor.utm_campaign) }}{% if not loop.last %}, {% endif %}{% endfor %}.
+{% for sponsor in sponsors_past -%}
+  {% if sponsor.url %}
+    {{- utm_link(sponsor.name, sponsor.url, "about", sponsor.utm_campaign) -}}
+  {% else %}
+    †{{- sponsor.name -}}
+  {% endif %}
+  {%- if not loop.last %}, {% endif -%}
+{%- endfor %}.
 
 **GitHub Sponsors:** {% for sponsor in sponsors_github_past %}[@{{ sponsor.slug }}]({{ sponsor.url }}){% if not loop.last %}, {% endif %}{% endfor %}.
 

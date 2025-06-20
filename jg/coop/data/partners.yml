@@ -11,17 +11,9 @@ registry:
     note: |
       Zdarma poskytují svou CDN pro Junior Guru podcast.
 
-  - name: Imper
-    slug: imper
-    url: https://www.merk.cz/
-    cz_business_id: 28547888
-    start_on: 2100-01 #2024-07
-    note: |
-      Pro účely katalogu poskytovatelů kurzů poskytují zdarma přístup do svého API s daty o firmách.
-
-  - name: Popitchi mentoring
-    slug: popitchimentoring
-    url: http://www.popitchimentoring.cz/
+  - name: ContentParty
+    slug: contentparty
+    url: https://contentparty.cz/
     cz_business_id: 11948167
     start_on: 2100-01 #2024-02
     note: |

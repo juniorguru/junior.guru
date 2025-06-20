@@ -128,7 +128,7 @@ class Sponsor(BaseModel):
 class PastSponsor(BaseModel):
     slug = CharField(primary_key=True)
     name = CharField()
-    url = CharField()
+    url = CharField(null=True)
 
     @property
     def utm_campaign(self) -> Literal["past-sponsorship"]:
