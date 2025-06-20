@@ -540,8 +540,7 @@ class JobStats(BaseModel):
     def deserialize(cls, line: str) -> Self | None:
         data = json.loads(line)
         data["day"] = date.fromisoformat(data["day"])
-        if data["count"] is not None:
-            return cls.add(**data)
+        return cls.add(**data)
 
     def serialize(self) -> str:
         data = model_to_dict(self, exclude=[self.__class__.id])
