@@ -13,9 +13,9 @@ from peewee import (
     DateField,
     ForeignKeyField,
     IntegerField,
+    IntegrityError,
     TextField,
     fn,
-    IntegrityError,
 )
 from playhouse.shortcuts import model_to_dict
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
