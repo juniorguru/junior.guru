@@ -206,9 +206,8 @@ jobs:
             - run:
                 name: Save to GitHub
                 command: |
-                  poetry run jg save-changes jg/coop/data/followers.jsonl --message="record followers 📊🦸‍♂️"
                   poetry run jg save-changes jg/coop/data/transactions.jsonl --message="record transactions 📊💰"
-                  poetry run jg save-changes jg/coop/data/members.jsonl --message="record stats 📊💳"
+                  poetry run jg save-changes jg/coop/data/members.jsonl jg/coop/data/followers.jsonl jg/coop/data/jobs.jsonl --message="record stats 📊💳"
 
   web:
     executor: python-js

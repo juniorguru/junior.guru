@@ -15,9 +15,11 @@ from peewee import (
     IntegerField,
     TextField,
     fn,
+    Case,
 )
 from playhouse.shortcuts import model_to_dict
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
+from jg.beak.tags import TechTag
 
 from jg.coop.lib.mapycz import REGIONS
 from jg.coop.lib.text import get_tag_slug
@@ -413,20 +415,11 @@ class ListedJob(BaseModel):
             return cls.select().where(cls.apply_url == url).get()
 
     @classmethod
-    def region_listing(cls, region) -> Iterable[Self]:
-        locations = cls.locations.tree().alias("locations")
-        return (
-            cls.listing()
-            .from_(cls, locations)
-            .where((locations.c.key == "region") & (locations.c.value == region))
-        )
-
-    @classmethod
     def remote_listing(cls) -> Iterable[Self]:
         return cls.listing().where(cls.remote == True)  # noqa: E712
 
     @classmethod
-    def tags_listing(cls, tags) -> Iterable[Self]:
+    def tags_listing(cls, tags: Iterable[str]) -> Iterable[Self]:
         tags = set(tags)
         return [
             job for job in cls.listing() if tags & set([tag.slug for tag in job.tags])
@@ -535,6 +528,39 @@ class DiscordJob(BaseModel):
     @classmethod
     def count(cls) -> int:
         return cls.select().count()
+
+
+class JobStats(BaseModel):
+    day = DateField(unique=True)
+    count = IntegerField()
+
+    @classmethod
+    def deserialize(cls, line: str) -> Self | None:
+        data = json.loads(line)
+        data["day"] = date.fromisoformat(data["day"])
+        if data["count"] is not None:
+            return cls.add(**data)
+
+    def serialize(self) -> str:
+        data = model_to_dict(self, exclude=[self.__class__.id])
+        data["day"] = self.day.isoformat()
+        return json.dumps(data, ensure_ascii=False) + "\n"
+
+    @classmethod
+    def add(cls, **kwargs) -> None:
+        update = {
+            cls.count: Case(
+                None, [(cls.count < kwargs["count"], kwargs["count"])], cls.count
+            )
+        }
+        insert = cls.insert(**kwargs).on_conflict(
+            action="update", update=update, conflict_target=[cls.day]
+        )
+        insert.execute()
+
+    @classmethod
+    def history(cls) -> Iterable[Self]:
+        return cls.select().order_by(cls.day)
 
 
 def columns(values, columns_count):
