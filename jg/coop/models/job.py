@@ -15,11 +15,10 @@ from peewee import (
     IntegerField,
     TextField,
     fn,
-    Case,
+    IntegrityError,
 )
 from playhouse.shortcuts import model_to_dict
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
-from jg.beak.tags import TechTag
 
 from jg.coop.lib.mapycz import REGIONS
 from jg.coop.lib.text import get_tag_slug
@@ -532,7 +531,10 @@ class DiscordJob(BaseModel):
 
 class JobStats(BaseModel):
     day = DateField(unique=True)
-    count = IntegerField()
+    scraped_count = IntegerField()
+    discord_count = IntegerField()
+    dropped_count = IntegerField()
+    tech = JSONField(default=dict)
 
     @classmethod
     def deserialize(cls, line: str) -> Self | None:
@@ -548,15 +550,10 @@ class JobStats(BaseModel):
 
     @classmethod
     def add(cls, **kwargs) -> None:
-        update = {
-            cls.count: Case(
-                None, [(cls.count < kwargs["count"], kwargs["count"])], cls.count
-            )
-        }
-        insert = cls.insert(**kwargs).on_conflict(
-            action="update", update=update, conflict_target=[cls.day]
-        )
-        insert.execute()
+        try:
+            cls.create(**kwargs)
+        except IntegrityError:
+            pass
 
     @classmethod
     def history(cls) -> Iterable[Self]:

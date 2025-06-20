@@ -1,6 +1,4 @@
 from datetime import date, timedelta
-import json
-from pathlib import Path
 
 import click
 
@@ -9,7 +7,7 @@ from jg.coop.lib import apify, loggers
 from jg.coop.lib.cache import cache
 from jg.coop.lib.mutations import MutationsNotAllowedError
 from jg.coop.models.base import db
-from jg.coop.models.job import JobStats, ListedJob, ScrapedJob, SubmittedJob
+from jg.coop.models.job import ListedJob, ScrapedJob, SubmittedJob
 
 
 logger = loggers.from_path(__file__)
@@ -17,20 +15,10 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command(dependencies=["jobs-scraped", "jobs-submitted"])
 @click.option("--actor", "actor_name", default="honzajavorek/job-checks")
-@click.option(
-    "--history-path",
-    default="jg/coop/data/jobs.jsonl",
-    type=click.Path(path_type=Path),
-)
-@click.option(
-    "--today",
-    default=lambda: date.today().isoformat(),
-    type=date.fromisoformat,
-)
 @db.connection_context()
-def main(actor_name: str, history_path: Path, today: date):
-    db.drop_tables([ListedJob, JobStats])
-    db.create_tables([ListedJob, JobStats])
+def main(actor_name: str):
+    ListedJob.drop_table()
+    ListedJob.create_table()
 
     listing_date = date.today()
     logger.info(f"Processing submitted jobs: {listing_date}")
@@ -69,17 +57,6 @@ def main(actor_name: str, history_path: Path, today: date):
             job = scraped_job.to_listed()
             job.save()
             logger.debug(f"Saved {scraped_job!r} as {job!r}")
-
-    monday = today - timedelta(days=today.weekday())
-    logger.info(f"Updating stats for the closest Monday: {monday}")
-    history_path.touch(exist_ok=True)
-    with history_path.open() as f:
-        for line in f:
-            JobStats.deserialize(line)
-    JobStats.add(day=monday, count=ListedJob.count())
-    with history_path.open("w") as f:
-        for db_object in JobStats.history():
-            f.write(db_object.serialize())
 
 
 @cache(expire=timedelta(hours=6), tag="job-checks")
