@@ -131,6 +131,8 @@ class EventConfig(YAMLConfig):
         ]
         | None
     ) = None
+    venue: str | None = None
+    registration_url: Annotated[HttpUrl, PlainSerializer(str)] | None = None
 
 
 class EventsConfig(YAMLConfig):
@@ -266,7 +268,7 @@ async def sync_scheduled_events(client: ClubClient):
                         description=event.discord_description,
                         start_time=event.start_at,
                         end_time=event.end_at,
-                        location=channel,
+                        location=event.venue if event.venue else channel,
                     )
         except MutationsNotAllowedError:
             pass
@@ -277,17 +279,7 @@ async def sync_scheduled_events(client: ClubClient):
 
 
 def is_event_scheduled_event(scheduled_event: ScheduledEvent) -> bool:
-    # Since October 2023 the creator_id is always None, it's
-    # a Discord bug: https://github.com/discord/discord-api-docs/issues/6481
-    # Checking if it's created by the bot only if it's not None should be future proof.
-    if (
-        scheduled_event.creator_id is not None
-        and int(scheduled_event.creator_id) != ClubMemberID.BOT
-    ):
-        return False
-    location_id = getattr(scheduled_event.location.value, "id", None)
-    return location_id == ClubChannelID.EVENTS
-
+    return int(scheduled_event.creator_id) == ClubMemberID.BOT
 
 @db.connection_context()
 async def post_next_event_messages(

@@ -7,12 +7,12 @@
 <script type="application/ld+json">{{ event.to_json_ld() }}</script>
 
 {% call lead() %}
-Klub junior.guru pořádá vzdělávací akce, online na svém Discordu.
+Klub junior.guru pořádá vzdělávací akce{% if not event.venue %}, online na svém Discordu{% endif %}.
 {%- if is_past_event %}
   Toto je jeda z nich. Už proběhla, ale najdeš tady o ní všechny informace
   {%- if event.has_recording %}, včetně odkazu na záznam.{% else %}.{% endif %}
 {% else %}
-  Toto je upoutávka na jednu z nich, která teprve proběhne. Přečti si, jak se k nám můžeš připojit!
+  Toto je upoutávka na jednu z nich, která teprve proběhne. Přečti si, jak se k nám můžeš {% if event.venue %}přidat{% else %}připojit{% endif %}!
 {% endif %}
 {{- ' ' -}}Pojetí akcí je vždy vyloženě pro začátečníky. Žádná záplava odborných „termitů“, které ti nikdo nevysvětlil!
 {% endcall %}
@@ -32,7 +32,11 @@ Klub junior.guru pořádá vzdělávací akce, online na svém Discordu.
     trvat má <strong>{{ event.duration_s|hours }}</strong>
   </p>
   <p>
-    <a class="c2a-button pulse" href="#jak-se-pripojit">{{ 'person-plus-fill'|icon }} Připoj se</a>
+    {% if event.venue %}
+      <a class="c2a-button pulse" href="#jak-se-pridat">{{ 'person-plus-fill'|icon }} Přidej se</a>
+    {% else %}
+      <a class="c2a-button pulse" href="#jak-se-pripojit">{{ 'person-plus-fill'|icon }} Připoj se</a>
+    {% endif %}
   </p>
   {% endif %}
 </div>
@@ -113,9 +117,30 @@ Nebo se můžeš **zdarma registrovat do klubu**. Nemusíš nic platit, ani nic 
 
 {% else %}
 
+{% if event.venue %}
+## Jak se přidat
+{% else %}
 ## Jak se připojit
+{% endif %}
 
-{% if event.public_recording_url %}
+{% if event.venue %}
+{% if event.registration_url %}
+
+Místo konání: **{{ event.venue }}**. Na tuto akci je potřeba se registrovat, takže než přijdeš, přihlas se přes tohle tlačtko:
+
+<div class="c2a compact">
+  <a class="c2a-button" href="{{ event.registration_url }}" target="_blank" rel="noopener">
+    {{ 'person-plus-fill'|icon }}
+    Registruj se
+  </a>
+</div>
+
+{% else %}
+
+Místo konání: **{{ event.venue }}**. Na tuto akci není potřeba se registrovat, takže prostě jenom přijď!
+
+{% endif %}
+{% elif event.public_recording_url %}
 
 Klubové akce běžně bývají jen pro členy, ale tato je **veřejná**, ať pomáhá všem.
 Jdi **{{ '{:%-d.%-m.%Y v %-H:%M}'.format(event.start_at_prg) }}** na <a href="{{ event.public_recording_url }}" target="_blank" rel="noopener">adresu streamu</a> a čekej, až to začne.

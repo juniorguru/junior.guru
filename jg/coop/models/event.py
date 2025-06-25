@@ -40,6 +40,8 @@ class Event(BaseModel):
     view_count = IntegerField(default=0)
     poster_path = CharField(null=True)
     plain_poster_path = CharField(null=True)
+    venue = CharField(null=True)
+    registration_url = CharField(null=True)
 
     @property
     def duration_s(self) -> int:
@@ -58,6 +60,8 @@ class Event(BaseModel):
         return bool(self.public_recording_url)
 
     def get_full_title(self, separator: str = ":") -> str:
+        if self.venue:
+            return self.title
         return f"{self.bio_name}{separator} {self.title}"
 
     @property
@@ -84,7 +88,7 @@ class Event(BaseModel):
             [
                 strip_links(self.short_description or self.description).strip(),
                 strip_links(self.bio).strip(),
-                self.url,
+                self.registration_url if self.registration_url else self.url,
             ]
         )
 
@@ -139,17 +143,23 @@ class Event(BaseModel):
             "date": self.start_at,
         }
         if not plain:
-            context |= {
-                "button_heading": "Sleduj na",
-                "button_link": (
-                    "youtube.com/@juniordotguru"
-                    if self.is_public
-                    else "junior.guru/events"
-                ),
-                "platforms": (
-                    ["discord", "youtube"] if self.is_public else ["discord"]
-                ),
-            }
+            if self.venue:
+                context |= {
+                    "button_heading": "Více info na",
+                    "button_link": "junior.guru/events",
+                }
+            else:
+                context |= {
+                    "button_heading": "Sleduj na",
+                    "button_link": (
+                        "youtube.com/@juniordotguru"
+                        if self.is_public
+                        else "junior.guru/events"
+                    ),
+                    "platforms": (
+                        ["discord", "youtube"] if self.is_public else ["discord"]
+                    ),
+                }
         return context
 
     def to_thumbnail_meta(self) -> dict:
