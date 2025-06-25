@@ -46,7 +46,7 @@ def build_events_ics(api_dir, config):
                 organizer=ics.Organizer(
                     common_name="junior.guru klub", email="honza@junior.guru"
                 ),
-                location=event.club_event_url,
+                location=event.venue if event.venue else event.club_event_url,
             )
             for event in Event.api_listing()
         ]
