@@ -72,6 +72,7 @@ nav:
   - Připravované:
       - "handbook/*.md"
   - Přesměrování:
+      - "bd.md"
       - "candidate-handbook/index.md"
       - "donate/index.md"
       - "finaid.md"
@@ -84,4 +85,3 @@ nav:
       - "press/**/index.md"
       - "pricing/index.md"
       - "sponsorship/index.md"
-      - "bd/index.md"

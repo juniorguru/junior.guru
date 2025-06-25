@@ -1,7 +1,4 @@
 registry:
-  - from_url: "/bd/"
-    to_doc: "events/53.md"
-
   - from_url: "/candidate-handbook/"
     to_doc: "handbook/candidate.md"
 
