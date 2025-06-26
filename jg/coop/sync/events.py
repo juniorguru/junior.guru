@@ -281,6 +281,7 @@ async def sync_scheduled_events(client: ClubClient):
 def is_event_scheduled_event(scheduled_event: ScheduledEvent) -> bool:
     return int(scheduled_event.creator_id) == ClubMemberID.BOT
 
+
 @db.connection_context()
 async def post_next_event_messages(
     client: ClubClient, today: date, announcements_channel_id: int
