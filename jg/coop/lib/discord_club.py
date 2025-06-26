@@ -51,6 +51,8 @@ REFERENCE_RE = re.compile(
     re.VERBOSE,
 )
 
+EMOJI_RE = re.compile(r"<a?:([^:]+):\d+>")
+
 PINNED_MESSAGE_URL_RE = re.compile(
     r"""
         \[
@@ -156,6 +158,8 @@ def emoji_name(reaction_emoji: discord.GuildEmoji | discord.PartialEmoji | str) 
     try:
         return reaction_emoji.name.lower()
     except AttributeError:
+        if reaction_emoji[0] == "<" and reaction_emoji[-1] == ">":
+            return EMOJI_RE.sub(r"\1", reaction_emoji)
         name = emoji.demojize(reaction_emoji).strip(":")
         if "_skin_tone" in name:
             # waving_hand_light_skin_tone -> waving_hand
@@ -263,9 +267,10 @@ async def add_reactions(
 
 
 def get_missing_reactions(reactions: discord.Reaction, emojis: set[str]) -> set[str]:
-    return set(emojis) - {
+    existing_emojis = {
         emoji_name(reaction.emoji) for reaction in reactions if reaction.me
     }
+    return {emoji for emoji in emojis if emoji_name(emoji) not in existing_emojis}
 
 
 def get_reaction(reactions, emoji) -> discord.Reaction:

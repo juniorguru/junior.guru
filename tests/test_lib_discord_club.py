@@ -46,6 +46,8 @@ def nothing_allowed():
         (StubEmoji("lolpain"), "lolpain"),
         (StubEmoji("BabyYoda"), "babyyoda"),
         ("👋🏻", "👋"),
+        ("<:meowsheart:1002448596572061746>", "meowsheart"),
+        ("<a:batmanhmm:1080478927786610858>", "batmanhmm"),
     ],
 )
 def test_emoji_name(emoji, expected):
@@ -347,6 +349,16 @@ def test_get_missing_reactions():
     reactions = [StubReaction("👍", True), StubReaction("👎", True)]
 
     assert discord_club.get_missing_reactions(reactions, ["👍", "👎", "🤷"]) == {"🤷"}
+
+
+def test_get_missing_reactions_supports_custom_emoji():
+    StubReaction = namedtuple("Reaction", ["emoji", "me"])
+    reactions = [StubReaction("pyconcz", True), StubReaction("batmanhmm", True)]
+
+    assert discord_club.get_missing_reactions(
+        reactions,
+        ["<a:batmanhmm:1080478927786610858>", "<:pyconcz:1117549571757842603>", "🤷"],
+    ) == {"🤷"}
 
 
 def test_get_missing_reactions_excludes_emojis_from_others():
