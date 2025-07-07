@@ -49,6 +49,7 @@ exclude = [
     "^https://www\\.techinterviewhandbook\\.org",
     "^https://www\\.vilniuscoding\\.lt",
     "^https://www\\.clovekvtisni\\.cz",
+    "^https://creativecommons\\.org/licenses/",
 
     # Read the Docs anti-scraping protections
     "^https://docs\\.pyvec\\.org",
