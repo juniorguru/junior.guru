@@ -20,7 +20,7 @@
     "jsdom": "26.1.0",
     "prettier": "3.6.2",
     "sass": "1.77.6",
-    "stylelint": "16.21.0",
+    "stylelint": "16.21.1",
     "stylelint-config-twbs-bootstrap": "16.1.0",
     "stylelint-order": "7.0.0",
     "vitest": "3.2.4"
