@@ -50,6 +50,9 @@ exclude = [
     "^https://www\\.vilniuscoding\\.lt",
     "^https://www\\.clovekvtisni\\.cz",
     "^https://creativecommons\\.org/licenses/",
+    "^https://simonwillison\\.net",
+    "^https://lucietvrdikova\\.cz",
+    "^https://www\\.zdrojak\\.cz",
 
     # Read the Docs anti-scraping protections
     "^https://docs\\.pyvec\\.org",
