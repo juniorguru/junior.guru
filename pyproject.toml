@@ -45,7 +45,6 @@ mkdocs-awesome-nav = "3.1.2"
 mkdocs-gen-files = "0.5.0"
 openai = "1.93.0"
 peewee = "3.18.1"
-pillow = "11.2.1"
 playwright = "1.53.0"
 pod2gen = "1.0.3"
 py-cord = { git = "https://github.com/Pycord-Development/pycord.git", extras = ["speed"] }
@@ -60,6 +59,7 @@ tiktoken = "0.9.0"
 pydantic = "2.11.7"
 lxml = "6.0.0"
 githubkit = "0.12.15"
+pillow = "11.3.0"
 
 [tool.poetry.group.dev.dependencies]
 ghp-import = "2.1.0"
