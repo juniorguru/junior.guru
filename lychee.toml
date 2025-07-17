@@ -64,5 +64,5 @@ exclude = [
 
     # Not yet deployed avatars of club members or company logos
     "^https://junior\\.guru/static/avatars-club/[^\\.]+\\.png",
-    "^https://junior\\.guru/static/logos-jobs/[^\\.]+\\.png",
+    "^https://junior\\.guru/static/logos-jobs/[^\\.]+\\.webp",
 ]
