@@ -663,4 +663,11 @@ I Recreated Shazam's Algorithm from Scratch because no one is hiring jnr devs
 https://www.youtube.com/watch?app=desktop&v=a0CVCcb0RJM
 
 
+--- https://discord.com/channels/769966886598737931/1367214816518996090/1367214816518996090
+Ahoj, 
+napadla mě otázka kolem bezpečnosti a ochrany osobních údajů u demo aplikací, které mám veřejně online (např. na Renderu). Mám tam třeba veřejné API, do budoucna i přihlašování/registraci nebo původní plán byl ukládat IP adresu + user agent, a přemýšlím, jestli do README stačí poznámka, že jde o demo projekt a data nejsou nijak chráněná, nebo jestli řešíte i cookies, privacy policy apod. 
+Jak to máte u svých veřejných projektů vy? Stačí upozornění, nebo to raději děláte „správně“ i pro demo? Nebo to moc řeším? 🙂
+---
+
+
 #} -->

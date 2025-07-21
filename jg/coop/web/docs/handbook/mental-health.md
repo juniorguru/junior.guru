@@ -332,4 +332,9 @@ Jak se vypořádat s impostor syndromem, tipy od <@362921539613622273> (video, 2
 ---
 
 
+--- https://discord.com/channels/769966886598737931/864434067968360459/1366319025608462406
+https://denikn.cz/1715495/nedostatecni-mozna-nejsme-my-ale-system-podivejme-se-konecne-na-syndrom-podvodnika-jinak/?ref=tit
+---
+
+
 #} -->

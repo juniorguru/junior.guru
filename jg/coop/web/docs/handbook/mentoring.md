@@ -147,4 +147,14 @@ https://simonwillison.net/2024/Jan/17/oxide-and-friends/#llms-for-learning
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1394403321682329710/1395417315293659206
+Tohle byla dobrá přednáška, která mi přišla relevantní i pro JG https://ep2025.europython.eu/session/mentoring-both-ways-helping-others-while-leveling-up-yourself
+---
+
+
+--- https://discord.com/channels/769966886598737931/991010207280807986/1394936374947352708
+Tohle je docela zajímavá myšlenka: https://infosec.exchange/@JessTheUnstill/114858783548413554
+---
+
+
 #} -->

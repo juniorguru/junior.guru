@@ -152,4 +152,14 @@ Ten LI v mobilu je perfektní věc. Chodil jsem furt otevřeným displejem, na k
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1351222802296082588/1353734627369422898
+No a c# má Update Conference (https://www.updateconference.net/cs) a TechEd atd. což podle mě jsou větší akce než ta Java v Čechách možná 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/1351222802296082588/1353735180111708280
+A jeste jsem zapomněl na https://wug.cz - to je free , ale Brno 🙂
+---
+
+
 #} -->

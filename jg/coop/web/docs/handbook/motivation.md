@@ -630,4 +630,29 @@ https://utopianengineeringsociety.substack.com/p/new-series-underrated-soft-skil
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1394319792726605907
+Hele hele 🙂 https://medium.com/@kt149/github-ceo-says-the-smartest-companies-will-hire-more-software-engineers-not-less-as-ai-develops-17d157bdd992
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1380171190194143323
+Zajímavé video směřované k juniorům a asi i nejen k nim. Trochu to osvětluje situaci ohledně vstupní laťky do IT v poslední době. Nejvíc to hituje US trh, ale věřím, že to hituje nemálo i ten náš https://www.youtube.com/watch?v=76K2r2UFeM4 (A nebojte, titulek videa je schválně trochu strašidelný 😄 Neplatí to pro všechny)
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1358132662048522390
+Narazil som na veľmi pekný pojem a článok: "Black Matter Developers"
+
+> My coworker Damian Edwards and I hypothesize that there is another kind of developer than the ones we meet all the time. We call them Dark Matter Developers. They don't read a lot of blogs, they never write blogs, they don't go to user groups, they don't tweet or facebook, and you don't often see them at large conferences. Where are these dark matter developers online?
+
+> Where are the dark matter developers? Probably getting work done. Maybe using ASP.NET 1.1 at a local municipality or small office. Maybe working at a bottling plant in Mexico in VB6. Perhaps they are writing PHP calendar applications at a large chip manufacturer.
+
+A pekne su aj komentare, napriklad hned ten prvy:
+
+> Important to remember that for the vast majority of developers it is just a job, nothing more. They go home and watch TV not read geek blogs or Twitter. Their not that worried about upgrading to .NET 4 because they didn't even know it was released yet. Just like 1% of bricklayers go home and read magazines on building better houses, most don't.
+
+https://www.hanselman.com/blog/dark-matter-developers-the-unseen-99
+---
+
+
 #} -->

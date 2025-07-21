@@ -657,4 +657,13 @@ neuvadet nazvy kurzu? protoze mohou byt na blacklistu https://lucietvrdikova.cz/
 https://discord.com/channels/769966886598737931/1355246864206926066/1360152352866308216
 
 
+--- https://discord.com/channels/769966886598737931/1375466381801291918/1383123429494100110
+<@1324778740797935628> Presne tak, tiez mi pride najlepsie co najkonkretnejsie vypisat ake s tym mas skusenosti. Jednak trebars ake nastroje pouzivas a jednak co s nimi konkretne robis. 
+
+Otazka potom je, v akom mnozstve to v zivotpise ma byt. Na trhu mas dnes firmy na celej skale od "ludi co nepracuju s AI a nechytaju vsetky nove trendy ani nechceme" az po "ai je blockchain a za rok to zomrie". V tom prvom pripade by som sa nebal pridat aj komentare k projektom ako si to tam vyuzila atd., v tom druhom pripade ich to skor odradi.
+
+V kazdom pripade by to ale malo znamenat viac ako "ChatGPT - pokročilý". Keď sa na welcome dni kde su kazdy mesiac vsetci nastupujuci zamestnanci do banky pytam kto uz pracoval s ChatGPT tak je hore 90-95% ruk. Samotna zmienka ta dnes uz neodlisi. Ak teda chces ist touto cestou a tymto sposobom skusit zaujat tak je dobre byt co najspecifickejsi 🙂
+---
+
+
 #} -->

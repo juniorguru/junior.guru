@@ -1107,4 +1107,27 @@ V rámci aktuální situace/přetlaků juniorů by bylo možná lepší takové 
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1382587336784740414
+https://www.irozhlas.cz/zpravy-domov/neni-osvc-jako-osvc-chudsim-zivnostnikum-bychom-meli-snizit-dane-tvrdi-sociolog_2506111616_adm
+
+>>> A i v IT jsou lidé, kterým to vadí, protože vzniká taková vynucená konkurence. Vy nejste schopný některé ty lidi zaplatit, protože ten sektor si zvykl veškeré náklady práce snižovat prací na IČO. A když chcete tomu člověku, který je zvyklý mít takovéhle příjmy na IČO, dát legálně zaměstnanecký úvazek, tak je to velmi těžké. Takže i někteří lidé IT říkají, že je to už věc, která je spíš frustruje.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1364204177567387779
+„Účastníci byli v průměru ochotni vzdát se 15 až 30 procent svého platu, aby se vyhnuli toxickému pracovnímu prostředí. Nejvíce ceněnou vlastností byla práce bez sexuálního obtěžování, podle respondentů měla hodnotu téměř třetiny mzdy.“ A pak kde se bere ten pay gap! A ještě: „…ženy se mohou vyhýbat kariérnímu postupu či vedoucím rolím ne proto, že by neměly ambice, ale proto, že chrání samy sebe.“ https://houdekpetr.blogspot.com/2025/04/neco-za-neco.html
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1364108324047425557
+Procházel jsem překlady na svém blogu a úplně zapomněl, co tam mám za pecky. To abyste viděli, že jakkoliv systematický pohovor je, pořád bude výsledek „pocitovka“.
+Baristická lekce v nabírání https://blog.zvestov.cz/software%20development/2019/05/29/baristick%C3%A1-lekce-v-nabirani.html?utm_source=juniorguru
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/1360287243431837747
+https://www.sedlakovalegal.cz/cs/kreativni-ukoly-u-pohovoru-muze-zadavatel-moje-vystupy-pouzit
+---
+
+
 #} -->

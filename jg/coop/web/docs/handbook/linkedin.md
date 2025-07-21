@@ -377,4 +377,9 @@ A udělej si LinkedIn, uprav si adresu na vlastní /topolcani a bude to i fungov
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788832177135026197/1354398101716074578
+Pokud přemýšlíte, jak a co psát na LinkedIn, zvlášť pokud jste viděli přednášku od <@1097115585424408586>, kde k tomu vybízel, tak mě k tomuto účelu baví sledovat Terezu Kubíčkovou a její vzdělávací okénka. Například dnešní: https://www.linkedin.com/posts/tereza-kubickova_jak-na-linkedin-jednodu%C5%A1e-manu%C3%A1l-pro-dvojka%C5%99e-activity-7310562658225704960-m-_5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA
+---
+
+
 #} -->

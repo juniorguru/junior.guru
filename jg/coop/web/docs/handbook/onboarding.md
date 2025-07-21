@@ -750,4 +750,35 @@ Super článek. „…messy, simple solutions can be powerful if they solve real
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1379031482743390330
+<@437150553198559242> sepsal a myslím, že stojí za přečtení https://www.linkedin.com/posts/adam-vesecky_desatero-zam%C4%9Bstnance-co-se-sebou-nenech%C3%A1-activity-7333750040177389568-OOls/ co myslíte?
+---
+
+
+--- https://discord.com/channels/769966886598737931/1310495605038256210/1356936632892395573
+Díky za tento dotaz. Já jsem teď něco přes 2 týdny na své první pozici v IT a cítím se totálně přehlcená. Fáze, že tohle nikdy nemůžu zvládnout na plný pecky . Jedná se o poměrně komplexní systém, ze kterého vidím pouze zlomek na své straně. Jediné, co teď můžu je dát tomu každý den 100% a doufat, že se to brzy zlomí. Ale teda ve stresu jsem dost 😅
+---
+
+
+--- https://discord.com/channels/769966886598737931/991010207280807986/1310495605038256210
+Ahojte, otázka viac pre ľudí, ktorí mali celkový switch do IT alebo kto má s niekym takým skúsenosť. 
+Ako dlho vám trvalo, kým ste sa v novej práci cítili, že tam fakt patríte a vedeli ste pracovať samostatne? ☺️
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1358132662048522390
+Narazil som na veľmi pekný pojem a článok: "Black Matter Developers"
+
+> My coworker Damian Edwards and I hypothesize that there is another kind of developer than the ones we meet all the time. We call them Dark Matter Developers. They don't read a lot of blogs, they never write blogs, they don't go to user groups, they don't tweet or facebook, and you don't often see them at large conferences. Where are these dark matter developers online?
+
+> Where are the dark matter developers? Probably getting work done. Maybe using ASP.NET 1.1 at a local municipality or small office. Maybe working at a bottling plant in Mexico in VB6. Perhaps they are writing PHP calendar applications at a large chip manufacturer.
+
+A pekne su aj komentare, napriklad hned ten prvy:
+
+> Important to remember that for the vast majority of developers it is just a job, nothing more. They go home and watch TV not read geek blogs or Twitter. Their not that worried about upgrading to .NET 4 because they didn't even know it was released yet. Just like 1% of bricklayers go home and read magazines on building better houses, most don't.
+
+https://www.hanselman.com/blog/dark-matter-developers-the-unseen-99
+---
+
+
 #} -->

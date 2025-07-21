@@ -1147,4 +1147,75 @@ Za me je u DevOps nejdulezitejsi Infrastructure as Code (IaC), udelal jsem si pr
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1394319792726605907
+Hele hele 🙂 https://medium.com/@kt149/github-ceo-says-the-smartest-companies-will-hire-more-software-engineers-not-less-as-ai-develops-17d157bdd992
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/1393694955767201893
+Chcete si pohrát s DNS záznamy? Prakticky je to poměrně těžké a zdlouhavé, ale tady je „pískoviště“, které to umožňuje zkoušet snadno a rychle https://messwithdns.net/
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/1390795782306660575
+Jak promptovat ChatGPT, aby vás učilo 🧑‍🏫 https://gist.github.com/Dowwie/5a66cd8df639e4c98043fc7f507dab9e
+---
+
+
+--- https://discord.com/channels/769966886598737931/806621830383271937/1388172079383183441
+Kdo má rád problem-solving, logické úlohy, matiku, AI
+https://brilliant.org/
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1381720088364712039
+Me pomohly tyto materialy 🙂  se od piky v tom vyznat https://youtube.com/playlist?list=PLFt-PM7J_H3HNjtAXCCeQPyRioItF1egJ&si=BOb4FhUlaEz_sd2j
+---
+
+
+--- https://discord.com/channels/769966886598737931/789087476072710174/1379089534985310278
+Tak za mě supr, ale dokumentace to moc není, ono to projede celý commit, sepíše co se událo, rozepíše všechny stránky, layouty, komponenty, store, objekty a jejich typizace, input validátory,  parsování, použité nástroje jako Eslint atd., dokonce i package.json verze jeho balíčků, dokonce i dotazy na DB, no úplně komplet !   😄  A na všechno vytvoří recenzi = doporučení zlepšení, zabezpečení ( XSS zranitelnosti )  ukázky vylepšení kódů, wow. Vlastně takový validátor celého projektu. Popravdě je toho tuna na co bych se měl podívat a vše vypadá aspoň za zkouknutí, nejsou to úplné blbosti.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1372863264756596756
+Je pravda, že v poslední době když tam jdu něco hledat, tak jsou tam otázky i odpovědi zpravidla 3, 5, nebo dokonce 10 let staré, ale aktuálnějšího často nic nenajdu 🫤 https://blog.pragmaticengineer.com/stack-overflow-is-almost-dead/
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1363734255531987084
+Čert aby se v tom vyznal 😀 Jeden tvrdí to, druhej něco jiného. Jeden podporuje juniory, druhý je odrazuje kvůli AI, atd. Tak alespoň jeden povzbuzující článek po ránu 🙂 https://www.vzhurudolu.cz/blog/258-ai-programovani-psani
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1361396017810898975
+https://www.joshwcomeau.com/blog/the-post-developer-era/
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/1356688906950676592
+Za mě top jsou tyhle materiály:
+https://sqlzap.com/
+https://datalemur.com/sql-tutorial
+
+A pak bych se ještě podíval na Zacha Wilsona (ex-Airbnb a ex-Netflix) a taky na Alex the Analyst. 🙂
+
+Případně ti ještě něco může doporučit <@642430988332302347> .
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1360212807135789106
+Zajímavý článek o AI a potřebě programátorů.
+Zaujal mě Jevons Paradox, ten jsem nikdy neslyšel. Je to ekonomické pravidlo, že vyšší efektivita využívání zdroje vede paradoxně k vyšší, spíše než nižší spotřebě.
+A tady se mluví o spotřebě vývojářů <:meowthumbsup:842730599906279494> 
+
+https://www.infoworld.com/article/3955073/ai-will-require-more-software-developers-not-fewer.html
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1356184716683907092
+🎙️ Kdo jste ještě neslyšel <@668226181769986078> na Lupa, tak šup https://www.lupa.cz/clanky/honza-javorek-junior-guru-jenom-clovek-vam-rekne-co-chatgpt-poradil-spatne
+---
+
+
 #} -->

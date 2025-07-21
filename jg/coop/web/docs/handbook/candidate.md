@@ -1481,4 +1481,29 @@ V rámci aktuální situace/přetlaků juniorů by bylo možná lepší takové 
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1380107658127998977
+Daniele Procida sepsal „něco jako junior.guru“ pro africké vývojáře ❤️ https://fanaka.readthedocs.io/ Pokud vám přijde těžký sehnat si IT job v Česku, tohle může posloužit jako reality check. A pokud máte nějaké kamarády z Afriky, sdílejte. A pro mně je to inspirace jak by šlo junior.guru vylepšit, co by šlo doplnit.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1364204177567387779
+„Účastníci byli v průměru ochotni vzdát se 15 až 30 procent svého platu, aby se vyhnuli toxickému pracovnímu prostředí. Nejvíce ceněnou vlastností byla práce bez sexuálního obtěžování, podle respondentů měla hodnotu téměř třetiny mzdy.“ A pak kde se bere ten pay gap! A ještě: „…ženy se mohou vyhýbat kariérnímu postupu či vedoucím rolím ne proto, že by neměly ambice, ale proto, že chrání samy sebe.“ https://houdekpetr.blogspot.com/2025/04/neco-za-neco.html
+---
+
+
+--- https://discord.com/channels/769966886598737931/1351222802296082588/1353735180111708280
+A jeste jsem zapomněl na https://wug.cz - to je free , ale Brno 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/1351222802296082588/1353735208158888039
+Odkaz na největší místní konferenci k danému jazyku, to je cenná věc. Co udělá junior? Možná zváží účast, jasně, ale hlavně si otevře https://www.updateconference.net/cs/2025/partners a všechny prokliká a podívá se na otevřené pozice, případně jim zkusí napsat i „na studeno“ 😄 Protože firmy, které sponzorují = firmy, které mají peníze, případně nabírají.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1351222802296082588/1353735510064894053
+Seznam přednášejících nemají, tam je to podobný trik (každý pro někoho pracuje), ale třeba tady vidím pod jmény hodně firem https://wug.cz/prednasejici
+---
+
+
 #} -->

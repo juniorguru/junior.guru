@@ -313,4 +313,19 @@ Zrovna čtu https://simonwillison.net/2024/Mar/22/claude-and-chatgpt-case-study/
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1372863264756596756
+Je pravda, že v poslední době když tam jdu něco hledat, tak jsou tam otázky i odpovědi zpravidla 3, 5, nebo dokonce 10 let staré, ale aktuálnějšího často nic nenajdu 🫤 https://blog.pragmaticengineer.com/stack-overflow-is-almost-dead/
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1368339153309405307
+Proč na tomhle Discordu najdete lepší rady, než u svého kámoše, který už v oboru programuje 15 roků https://jacobian.org/2025/mar/13/beware-advice-from-old-heads/
+---
+
+
+--- https://discord.com/channels/769966886598737931/1356815451442778256/1359809991372181605
+A pokud je nějaký příspěvěk, kde je toho moc, prostě ho vykopíruj a nech si ty pojmy od ChatGPT klidně vysvětlit <:meowthumbsup:842730599906279494> I já to tak někdy dělám a je to překvapivě nápomocné.
+---
+
+
 #} -->

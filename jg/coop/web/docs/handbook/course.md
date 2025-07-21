@@ -1101,4 +1101,14 @@ Ano, kromě „kurzu“, který se jmenuje „vysoká škola informatického sm�
 https://lucietvrdikova.cz/nahlednete-za-oponu-it-kurzy-dotace-reklama-a-realita/
 
 
+--- https://discord.com/channels/769966886598737931/788832177135026197/1376610091419041934
+Na Harvardu uvolnili celou řadu online kurzů zdarma pro veřejnost. Seznam těch co stojí za pozornost je ve vlákně 👍 (zdroj https://discord.com/channels/769966886598737931/769966887055392768/1375539132159230003)
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1354016959737626676
+Pěkný článek https://www.macchiato.cz/rekvalifikace-do-it-nikdy-to-nebylo-jednodussi-a-zaroven-slozitejsi/
+---
+
+
 #} -->
