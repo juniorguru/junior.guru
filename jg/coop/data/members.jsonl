@@ -142,14 +142,14 @@
 {"month": "2025-06", "name": "subscriptions_quits", "count": 13}
 {"month": "2025-06", "name": "subscriptions_signups", "count": 9}
 {"month": "2025-06", "name": "subscriptions_trials", "count": 60}
-{"month": "2025-07", "name": "members", "count": 391}
+{"month": "2025-07", "name": "members", "count": 390}
 {"month": "2025-07", "name": "members_f", "count": 150}
 {"month": "2025-07", "name": "subscription_types_finaid", "count": 14}
 {"month": "2025-07", "name": "subscription_types_free", "count": 48}
 {"month": "2025-07", "name": "subscription_types_monthly", "count": 162}
 {"month": "2025-07", "name": "subscription_types_partner", "count": 84}
 {"month": "2025-07", "name": "subscription_types_sponsor", "count": 22}
-{"month": "2025-07", "name": "subscription_types_trial", "count": 14}
+{"month": "2025-07", "name": "subscription_types_trial", "count": 13}
 {"month": "2025-07", "name": "subscription_types_yearly", "count": 47}
 {"month": "2025-07", "name": "subscriptions_quits", "count": 9}
 {"month": "2025-07", "name": "subscriptions_signups", "count": 8}
