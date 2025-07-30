@@ -216,7 +216,10 @@ def to_feed(
 def simplify_channel_mentions(text: str, channel_mapping: dict[int, str]) -> str:
     for match in re.finditer(r"<#!?(\d+)>", text):
         channel_id = int(match.group(1))
-        name = channel_mapping[channel_id]
+        try:
+            name = channel_mapping[channel_id]
+        except KeyError:
+            name = f"kanál-{channel_id}"
         name_repr = f"#{name}" if re.search(r"^[\w\-]+$", name) else f"<#{name}>"
         text = text.replace(match.group(0), name_repr)
     return text

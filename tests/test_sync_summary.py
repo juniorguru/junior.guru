@@ -44,6 +44,25 @@ def test_simplify_channel_mentions_thread_names():
     assert simplify_channel_mentions(text, channel_mapping) == expected
 
 
+def test_simplify_channel_mentions_missing():
+    channel_mapping = {
+        788826407412170752: "poradna",
+        1075052469303906335: "Hľadám svoje stratené IT sebavedomie",
+    }
+    text = """
+        - Nevíš co dál? Popiš svou situaci do <#788826407412170752>
+        - Vybíráš kurz? Založ vlákno v <#1075052469303906335>
+        - Hledáš konkrétní recenze? Zkus <#9280524693034443>
+    """
+    expected = """
+        - Nevíš co dál? Popiš svou situaci do #poradna
+        - Vybíráš kurz? Založ vlákno v <#Hľadám svoje stratené IT sebavedomie>
+        - Hledáš konkrétní recenze? Zkus #kanál-9280524693034443
+    """
+
+    assert simplify_channel_mentions(text, channel_mapping) == expected
+
+
 def test_simplify_member_mentions():
     text = """
         Ahoj <@1301837433553293396>! Myslím si, že <@652142810291765248> je fakt borec.
