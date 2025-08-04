@@ -53,7 +53,7 @@ Ale obecně je asi nejsložitější zaučit nováčka z tohoto důvodu: často 
 
 Udělat průzkum ve firmách jak pracuji s juniory a co je pro ne důležité - nasharovat všude a tím zjistit kam zaměřit svůj marketing a produkt
 - Iveta Woffová se nabídla, že mi pomůže (convo v emailu)
-- Smitio https://blog.smitio.com/pruzkumy
+- Smitio https://blog.smitio.com/pruzkumy.html
 
 Junior Job Description Template
 https://weworkremotely.com/remote-job-description-template
@@ -761,7 +761,7 @@ Díky za tento dotaz. Já jsem teď něco přes 2 týdny na své první pozici v
 
 
 --- https://discord.com/channels/769966886598737931/991010207280807986/1310495605038256210
-Ahojte, otázka viac pre ľudí, ktorí mali celkový switch do IT alebo kto má s niekym takým skúsenosť. 
+Ahojte, otázka viac pre ľudí, ktorí mali celkový switch do IT alebo kto má s niekym takým skúsenosť.
 Ako dlho vám trvalo, kým ste sa v novej práci cítili, že tam fakt patríte a vedeli ste pracovať samostatne? ☺️
 ---
 

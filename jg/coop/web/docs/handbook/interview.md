@@ -306,7 +306,7 @@ The Best Medium-Hard Data Analyst SQL Interview Questions
 https://quip.com/2gwZArKuWk7W
 
 7 tipů, jak zvládnout online pohovor
-https://blog.smitio.com/clanek-7-tipu-na-online-pohovor
+https://blog.smitio.com/clanek-7-tipu-na-online-pohovor.html
 
 https://www.glassdoor.com/Salaries/index.htm
 
@@ -330,7 +330,7 @@ https://discord.com/channels/769966886598737931/788826407412170752/8495884847496
 https://hbr.org/2014/06/why-women-dont-negotiate-their-job-offers
 
 Mzdy podle smitia 2.0 Část 2: HPP vs. OSVČ
-https://blog.smitio.com/clanek-mzdy-podle-smitia-2-0-hpp-vs-osvc
+https://blog.smitio.com/clanek-mzdy-podle-smitia-2-0-hpp-vs-osvc.html
 
 diskuze o zkoušení pohovorů
 https://discord.com/channels/769966886598737931/788826407412170752/823163748939595827

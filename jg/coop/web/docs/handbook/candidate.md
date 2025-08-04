@@ -184,7 +184,7 @@ Dalším prostředím, kam se probojuješ snadněji, je **státní správa**. Fi
 
 ### Kolik si vydělám?    <span id="salary"></span>
 
-Bavíme se o první práci. Musíš se ještě hodně učit a bude chvíli trvat, než dosáhneš na ty [vysoké mzdy, kterými se všichni ohání](https://csu.gov.cz/ict-odbornici-a-jejich-mzdy). **Podle dvou anket [Smitia](https://smitio.com/) ([první](https://blog.smitio.com/clanek-mzdy-v-it-podle-smitia), [druhá](https://blog.smitio.com/clanke-mzdy-absolventu-ocima-firem-a-ajtaku)) začínají nováčci průměrně na 30.000 Kč hrubého.** V Praze a Brně to může být i více, v regionech i výrazně méně. Rovněž lze očekávat rozdíly mezi nabídkou větších a menších firem. Platí ale, že šikovní lidé jsou schopni se poměrně rychle dostat se mzdou nahoru — třeba už i za rok praxe.
+Bavíme se o první práci. Musíš se ještě hodně učit a bude chvíli trvat, než dosáhneš na ty [vysoké mzdy, kterými se všichni ohání](https://csu.gov.cz/ict-odbornici-a-jejich-mzdy). **Podle dvou anket [Smitia](https://smitio.com/) ([první](https://blog.smitio.com/clanek-mzdy-v-it-podle-smitia.html), [druhá](https://blog.smitio.com/clanke-mzdy-absolventu-ocima-firem-a-ajtaku.html)) začínají nováčci průměrně na 30.000 Kč hrubého.** V Praze a Brně to může být i více, v regionech i výrazně méně. Rovněž lze očekávat rozdíly mezi nabídkou větších a menších firem. Platí ale, že šikovní lidé jsou schopni se poměrně rychle dostat se mzdou nahoru — třeba už i za rok praxe.
 
 Jedním z vodítek, jak si určit nástupní mzdu, může být i tvé předešlé zaměstnání. Pokud tvá mzda zásadně nepřesahovala 30.000 Kč, můžeš si ze začátku prostě **říct o totéž, co ti chodilo na účet v minulé práci**. Příjem tvé domácnosti zůstane stejný, ale do budoucna má velkou pravděpodobnost růst.
 
