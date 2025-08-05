@@ -59,6 +59,22 @@
 # - https://tinywow.com/image/upscale
 # - https://www.fotor.com/photo-editor-app/editor/beauty
 registry:
+- id: 54
+    title: "Něco o provozu aplikací (bude upřesněno)"
+    date: "2025-08-19"
+    description: |
+      ... bude brzy upřesněno ...
+    avatar_path: 
+    bio_name: Naďa Jašíková, Vilibald Wanča
+    bio_title:
+    bio: |
+
+    bio_links:
+      - https://www.linkedin.com/in/nadajasikova/
+      - https://www.linkedin.com/in/wvi/
+    club_speaker_ids:
+      - 817453228283133982
+
   - id: 53
     title: "Beginners’ Day Unconference"
     date: "2025-07-19"
@@ -876,7 +892,7 @@ registry:
     bio_name: Ivana Hučková
     bio_title: Software Engineer, Grafana Labs
     bio: |
-      Ivana Hučková je programátorka v [Grafana Labs](https://grafana.com/). Ivana sa pred 3 rokmi rozhodla zmeniť kariéru a absolvovala 7-mesačný online kurz programovania Lambda School. Po skončení Lambdy nastúpila ako Software Engineer do Grafany, kde pracuje na vývoji open-source softvéru. Vo svojom voľnom čase sa rada venuje stavaniu menších IoT monitorovacích systémov, napríklad na monitorovanie jej avokáda, sviečok alebo kvásku.
+      Ivana Hučková je programátorka v [Grafana Labs](https://grafana.com/). Ivana sa pred 3 rokmi rozhodla zmeniť kariéru a absolvovala 7-mesačný online kurz programovania [Lambda School](https://lambdaschool.com/). Po skončení Lambdy nastúpila ako Software Engineer do Grafany, kde pracuje na vývoji open-source softvéru. Vo svojom voľnom čase sa rada venuje stavaniu menších IoT monitorovacích systémov, napríklad na monitorovanie jej avokáda, sviečok alebo kvásku.
     bio_links:
       - https://ivanahuckova.com/
       - https://ivanahuckova.medium.com/
