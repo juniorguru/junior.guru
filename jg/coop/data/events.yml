@@ -59,6 +59,22 @@
 # - https://tinywow.com/image/upscale
 # - https://www.fotor.com/photo-editor-app/editor/beauty
 registry:
+- id: 54
+    title: "Něco o provozu aplikací (bude upřesněno)"
+    date: "2025-08-19"
+    description: |
+      ... bude brzy upřesněno ...
+    avatar_path: 
+    bio_name: Naďa Jašíková, Vilibald Wanča
+    bio_title:
+    bio: |
+
+    bio_links:
+      - https://www.linkedin.com/in/nadajasikova/
+      - https://www.linkedin.com/in/wvi/
+    club_speaker_ids:
+      - 817453228283133982
+
   - id: 53
     title: "Beginners’ Day Unconference"
     date: "2025-07-19"
