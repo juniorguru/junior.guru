@@ -1130,4 +1130,12 @@ https://www.sedlakovalegal.cz/cs/kreativni-ukoly-u-pohovoru-muze-zadavatel-moje-
 ---
 
 
+kdyz se nekdo zepta na feedback po pohovoru, tak telefonicky, protoze neni papertrail (unconference moudro od V.K.)
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1401537884808413248
+Hmmm, pročítal jsem si tu pro inspiraci nějaké deníčky a narazil na live coding u pohovoru. Předpokládm, že to se většinou týká jenom online pohovorů, nebo to někde chtějí i přímo při "živém" pohovoru na místě? A dá se říct, jak to vypadá, nebo to může mít každý zorganizované jinak? Jde mi hlavně o to, v jakém prostředí to probíhá – nějaké specializované online platformy, které to i zkontrolují a ohodnotí, nebo naopak sandboxy, codepeny, nebo jak se to všechno jmenuje? Nebo se člověk přihlásí někam na virtuál a dělá to tam? Ta zadání bývají asi dost jednoduchá, aby se to dalo zvládnout i když jsem zvyklý na to svoje přizpůsobené, vyladěné a vypiplané, ale třeba taková blbost, jako jiné rozložení klávesnice, dokáže pěkně rozhodit a zpomalit.
+---
+
+
 #} -->

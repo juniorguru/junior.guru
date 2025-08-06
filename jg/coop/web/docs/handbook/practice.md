@@ -1218,4 +1218,9 @@ https://www.infoworld.com/article/3955073/ai-will-require-more-software-develope
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1401950840411132035
+Raději sem hodím tohle, co mi poslal <@156884455628341249> jako námět k plánovanému https://discord.com/channels/769966886598737931/1375466381801291918: OpenAI má nově mód na studium https://simonwillison.net/2025/Jul/29/openai-introducing-study-mode/
+---
+
+
 #} -->
