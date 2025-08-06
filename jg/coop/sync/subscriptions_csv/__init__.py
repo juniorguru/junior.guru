@@ -272,4 +272,6 @@ def get_date(row: Row) -> date:
 def is_redacted_row(row: Row) -> bool:
     data = dict(row)
     data.pop("Plan")
+    if re.search(r"^Member \d+$", data["Name"]):
+        data.pop("Name")
     return set(data.values()) <= {None, "N/A", ""}
