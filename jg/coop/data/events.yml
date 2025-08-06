@@ -59,16 +59,16 @@
 # - https://tinywow.com/image/upscale
 # - https://www.fotor.com/photo-editor-app/editor/beauty
 registry:
-- id: 54
+  - id: 54
     title: "Něco o provozu aplikací (bude upřesněno)"
     date: "2025-08-19"
     description: |
-      ... bude brzy upřesněno ...
-    avatar_path: 
+      Bude upřesněno.
+    avatar_path: avatars-participants/ybyr.jpg
     bio_name: Naďa Jašíková, Vilibald Wanča
-    bio_title:
+    bio_title: Bude upřesněno
     bio: |
-
+      Bude upřesněno.
     bio_links:
       - https://www.linkedin.com/in/nadajasikova/
       - https://www.linkedin.com/in/wvi/
