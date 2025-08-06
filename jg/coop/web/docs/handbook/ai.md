@@ -1,14 +1,14 @@
 ---
-title: Ženy v IT
+title: Programování s AI
 emoji: ✨
 stages: [thinking, trying, learning, creating]
-description: Je IT pro ženy? Existují vůbec nějaké programátorky? Jak do oboru prorazit jako žena? Co očekávat? A co ti může na cestě pomoci?
+description: TODO
 template: main_handbook.html
 ---
 
 {% from 'macros.html' import lead, note with context %}
 
-# Ženy a kariéra v IT
+# Programování s AI
 
 {% call lead() %}
 ...
