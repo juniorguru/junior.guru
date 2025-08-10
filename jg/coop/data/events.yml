@@ -60,20 +60,22 @@
 # - https://www.fotor.com/photo-editor-app/editor/beauty
 registry:
   - id: 54
-    title: "Něco o provozu aplikací (bude upřesněno)"
+    title: "DevOps/SRE - co to vlastně je a chci to vůbec vědět?"
     date: "2025-08-19"
     description: |
-      Bude upřesněno.
+      Naďa a Vilda nám prozradí, co pro ně znamená DevOps a SRE, na co se zaměřit, pokud nás tato oblast láká a čemu se vyhnout obloukem. 🙂
     avatar_path: avatars-participants/ybyr.jpg
     bio_name: Naďa Jašíková, Vilibald Wanča
-    bio_title: Bude upřesněno
+    bio_title: "Naďa pracuje jako site reliability engineer ve společnosti Microsoft. Vilibald je architekt v Oracle, Princ Wilibald na ČRo Wave."
     bio: |
-      Bude upřesněno.
+      Naďa pracuje jako site reliability engineer ve společnosti Microsoft, kde s kolegy spravují Kubernetes platformu pro všechny produkty MS Defender. Baví ji šťourat do věcí, které nefungují, anebo by aspoň mohly fungovat lépe. 
+      Vilibald je seniorní architekt v Oracle s 20letými zkušenostmi v oboru. Baví ho vymýšlet, jak udělat věci jednoduše, ale přitom zároveň dostatečně robustně, efektivně a výkonně. Málokdo ví o jeho kořenech v žižkovském podsvětí nebo angažmá na dubové scéně. Sedm let na ČRo Wave moderoval své Dubové okénko Prince Wilibalda.
     bio_links:
       - https://www.linkedin.com/in/nadajasikova/
       - https://www.linkedin.com/in/wvi/
     club_speaker_ids:
       - 817453228283133982
+      - 806429279268241419
 
   - id: 53
     title: "Beginners’ Day Unconference"
