@@ -8,6 +8,7 @@ import "./metrics";
 import "./github-profile";
 
 import "instant.page";
+import "lite-youtube-embed";
 
 if (console && console.log) {
   console.log(

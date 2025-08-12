@@ -138,7 +138,7 @@ def optimize_avatars(size_px: int, glob_pattern: str):
             path.write_bytes(image_bytes)
             logger.info(f"{path}: {size_before}kB → {size_after}kB")
     try:
-        subprocess.run(["npx", "@funboxteam/optimizt", glob_pattern], check=True)
+        subprocess.run(["npx", "@343dev/optimizt", glob_pattern], check=True)
     except subprocess.CalledProcessError:
         raise click.Abort()
 

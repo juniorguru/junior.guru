@@ -8,8 +8,9 @@ description: Přidej se na junior.guru Discord! Jsme tvoje online programovací 
 
 
 <header class="masthead"><div class="masthead-container">
-<div class="masthead-content">
+<div class="masthead-column">
 <h1>Tvoje programovací parta</h1>
+<div class="masthead-body">
 
 {% call lead() %}
 Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáhat. V klubu svoje programování nebo hledání práce posuneš o **1 % každý den**.
@@ -20,24 +21,29 @@ Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáha
 {% call markdown() %}
 - **{{ years }}** {{ years|nplurals("rok", "roky", "let") }}
 - **{{ members_total_count }}** členů
-- **{{ charts.members_women_today|round|int }} %** žen
+- **{{ charts.members_women_today|round|int }} %** žen
 - **{{ events|length }}** online akcí
 {% endcall %}
 </div>
 
-<a class="masthead-button primary" href="#cenik">Přidej se</a>
-<span class="masthead-members members">
-  {% for member in members|sample(8) %}
-    {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50, lazy=False) }}
-  {% endfor %}
-</span>
-
+<div class="masthead-row">
+<a class="masthead-button" href="#cenik">Přidej se</a>
+<div class="masthead-members"><span class="members">
+    {% for member in members|sample(8) %}
+      {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50, lazy=False) }}
+    {% endfor %}
+</span></div>
 </div>
-<div class="masthead-illustration">
-  {{ img('static/illustration-club.svg', 'Ilustrace', 400, 400, lazy=False) }}
+
+</div></div>
+<div class="masthead-column masthead-video-container">
+  <lite-youtube class="video" videoid="zHt4z5lp2e0" playlabel="Přehrát představení klubu" params="rel=0&modestbranding=1">
+    <a href="https://www.youtube.com/watch?v=zHt4z5lp2e0" target="_blank" rel="noopener noreferrer" class="lyt-playbtn" title="Přehrát představení klubu">
+      <span class="lyt-visually-hidden">Přehrát představení klubu</span>
+    </a>
+  </lite-youtube>
 </div>
 </div></header>
-
 
 <section class="section">
 <h2>Získej parťáky, mentory, kamarády</h2>

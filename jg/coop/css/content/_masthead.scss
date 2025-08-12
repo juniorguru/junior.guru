@@ -1,7 +1,9 @@
 $masthead-eggshell-height: map-get($spacers, 5);
+$masthead-content-spacer: $spacer;
 
 .masthead {
   position: relative;
+  padding: map-get($spacers, 5) 0 (2 * $masthead-eggshell-height);
   margin-bottom: $spacer;
   overflow: hidden;
   background: $jg-yellow;
@@ -23,47 +25,59 @@ $masthead-eggshell-height: map-get($spacers, 5);
 
 .masthead-container {
   @extend .container-lg;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $masthead-content-spacer;
 
-  @include media-breakpoint-up(md) {
-    display: flex;
-    align-items: center;
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
   }
 }
 
-.masthead-content {
-  margin-top: map-get($spacers, 5);
-  margin-bottom: map-get($spacers, 5) + $spacer;
-
-  @include media-breakpoint-up(md) {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: 50%;
-    margin-right: map-get($spacers, 5);
-  }
+.masthead-column {
+  min-width: 0;
+  max-width: 100%;
 }
 
-.masthead-content .lead p,
-.masthead-content .masthead-numbers {
-  margin-bottom: map-get($spacers, 4);
+.masthead-body {
+  display: flex;
+  flex-direction: column;
+  gap: $masthead-content-spacer;
 }
 
-.masthead-content .lead strong {
+.masthead-body .lead p,
+.masthead-body .masthead-numbers,
+.masthead-body .masthead-members {
+  margin-bottom: 0;
+}
+
+.masthead-body .lead strong {
   font-weight: $lead-font-weight;
+}
+
+.masthead-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: $spacer;
+  align-items: center;
 }
 
 .masthead-button {
   @extend .btn;
   @extend .btn-lg;
-  margin-right: $spacer;
-  margin-bottom: $spacer;
-}
-
-.masthead-button.primary {
   @extend .btn-primary;
+  flex-shrink: 0;
 }
 
-.masthead-button.secondary {
-  @extend .btn-outline-primary;
+.masthead-members {
+  display: block;
+  overflow: hidden;
+}
+
+.masthead-members .members {
+  flex-wrap: nowrap;
+  margin-bottom: 0;
 }
 
 .masthead-numbers {
@@ -71,6 +85,7 @@ $masthead-eggshell-height: map-get($spacers, 5);
     @extend .list-unstyled;
     display: flex;
     justify-content: space-between;
+    margin: 0;
 
     @include media-breakpoint-up(sm) {
       justify-content: flex-start;
@@ -94,24 +109,15 @@ $masthead-eggshell-height: map-get($spacers, 5);
   }
 }
 
-.masthead-illustration {
-  display: block;
-  width: 100%;
-  max-width: 25rem;
-  height: auto;
-  margin-top: map-get($spacers, 5);
-  margin-bottom: $masthead-eggshell-height;
-  margin-left: auto;
-
-  @include media-breakpoint-up(md) {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: 50%;
-    margin-top: $spacer;
-  }
+.masthead-video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.masthead-illustration img {
+.masthead .video {
   width: 100%;
   height: auto;
+  background-image: url("../images/club-video-thumbnail.webp") !important; /* stylelint-disable-line declaration-no-important */
+  border-radius: $border-radius;
 }

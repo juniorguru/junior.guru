@@ -70,6 +70,11 @@ $bootstrap-icons-font-dir: "../../../node_modules/bootstrap-icons/font/fonts";
 @import "./variables";
 
 /*
+  LITE YOUTUBE EMBED: CONTENT
+*/
+@import "../../../node_modules/lite-youtube-embed/src/lite-yt-embed";
+
+/*
   CUSTOM: CONTENT AS A DOCUMENT
 */
 @import "./content/document";
