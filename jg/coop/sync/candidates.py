@@ -28,7 +28,7 @@ def main(api_url: str):
         projects_items = candidate_item.pop("projects", [])
 
         candidate = Candidate.create(is_member=False, **candidate_item)
-        if user := ClubUser.get_or_none(discord_id):
+        if discord_id and (user := ClubUser.get_or_none(discord_id)):
             candidate.user = user
             candidate.is_member = user.is_member
             candidate.save()
