@@ -54,6 +54,10 @@ exclude = [
     "^https://lucietvrdikova\\.cz",
     "^https://www\\.zdrojak\\.cz",
 
+    # Either anti-scraping or just incompetence, who knows?
+    "^https://coi\\.gov\\.cz/",
+    "^https://www\\.evropskyspotrebitel\\.cz",
+
     # Read the Docs anti-scraping protections
     "^https://docs\\.pyvec\\.org",
     "^https://www\\.writethedocs\\.org",
