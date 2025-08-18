@@ -2598,7 +2598,7 @@ files = [
 
 [[package]]
 name = "py-cord"
-version = "2.6.1.dev296+ge1814cce4"
+version = "2.6.1.dev298+g173e1b041"
 description = "A Python wrapper for the Discord API"
 optional = false
 python-versions = ">=3.9"
