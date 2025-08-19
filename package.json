@@ -16,7 +16,7 @@
   "devDependencies": {
     "@343dev/optimizt": "11.0.0",
     "bootstrap": "5.3.7",
-    "esbuild": "0.25.8",
+    "esbuild": "0.25.9",
     "esbuild-sass-plugin": "3.3.1",
     "jsdom": "26.1.0",
     "prettier": "3.6.2",
