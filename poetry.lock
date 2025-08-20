@@ -2615,7 +2615,7 @@ files = [
 
 [[package]]
 name = "py-cord"
-version = "2.6.1.dev298+g173e1b041"
+version = "2.6.1.dev300+g644db42ec"
 description = "A Python wrapper for the Discord API"
 optional = false
 python-versions = ">=3.9"
@@ -2639,7 +2639,7 @@ voice = ["PyNaCl (>=1.3.0,<1.6)"]
 type = "git"
 url = "https://github.com/Pycord-Development/pycord.git"
 reference = "HEAD"
-resolved_reference = "644db42ecf2421bd67402eae1a46e86b728a630c"
+resolved_reference = "2b63af955db9f54e2eec8a93607e8a38b8829c5d"
 
 [[package]]
 name = "pyasn1"
