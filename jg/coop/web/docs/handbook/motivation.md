@@ -52,7 +52,7 @@ Stejně jako u vrtání ale není vůbec od věci, pokud se naučí programovat 
 
 I když nakonec nebudeš vůbec programovat, hodí se rozumět tomu, jak tato práce funguje. Každá firma má dnes IT oddělení a to se mnohem raději baví s lidmi, kteří chápou jak vznikají programy. Můžeš se snadno uplatnit jako prostředník mezi nimi a ostatními. Otevře se ti cesta do dalších oborů, které s počítači souvisí — např. internetový marketing nebo psaní technických textů, které rovněž umožňují vydělat si dobré peníze a mít pružnou pracovní dobu. Občas se straší v novinách, že [přicházejí miliony zlých robotů, kteří jednou všem vezmou práci](https://denikn.cz/62624/komu-mohou-sebrat-praci-roboti-experti-vybrali-profese-ktere-jsou-nejvice-ohrozene-zmenami/). Místo robotů to asi budou spíš mobilní appky, ale jedno je jisté — technologie budou prostupovat naše životy stále více a bude tím pádem potřeba stále více těch, kteří technologiím rozumí.
 
-Při programování se také trénuješ v [informatickém myšlení](https://imysleni.cz/informaticke-mysleni/co-je-informaticke-mysleni), což je zcela obecná dovednost nesouvisející nutně přímo s počítačem. Informatické myšlení zlepšuje tvou schopnost řešit složité problémy, a to i v každodenních situacích. To je také důvod, proč se dnes toto myšlení začíná učit i na základních školách.
+Při programování se také trénuješ v [informatickém myšlení](https://cs.wikipedia.org/wiki/Informatick%C3%A9_my%C5%A1len%C3%AD), což je zcela obecná dovednost nesouvisející nutně přímo s počítačem. Informatické myšlení zlepšuje tvou schopnost řešit složité problémy, a to i v každodenních situacích. To je také důvod, proč se dnes toto myšlení začíná učit i na základních školách.
 
 ### Programování jako pomocník    <span id="coding-tool"></span>
 
@@ -575,11 +575,11 @@ https://www.mensurdurakovic.com/hard-to-swallow-truths-they-wont-tell-you-about-
 
 
 --- https://discord.com/channels/769966886598737931/1341518859257122839/1341758567853723650
-Ahoj, držím palce! Obecně se tohle mění a momentálně jsou zpravidla vyšší nároky na juniory, než byli před patnácti lety. 
+Ahoj, držím palce! Obecně se tohle mění a momentálně jsou zpravidla vyšší nároky na juniory, než byli před patnácti lety.
 
-Každopádně dá se tomu dát nějaký rámec :)). Zpravidla je potřeba naučit se jazyk, k němu nějaký framework a udělat kromě pár menších i jeden větší projekt, kterým se pak prezentuješ. Obecně tady doporučujeme něco okolo 600 hodin investice vlastního času a studia před tím než člověk začne být ready na pohovory. Samozřejmě určitě pokud seženeš práci dřív / jinak - je to tvoje plus, ale často se juniorům stává že se s nimi firmy vůbec nebaví a jedna z těch věcí můžeš být že nemají portfolio a dostatečné skilly :)). 
+Každopádně dá se tomu dát nějaký rámec :)). Zpravidla je potřeba naučit se jazyk, k němu nějaký framework a udělat kromě pár menších i jeden větší projekt, kterým se pak prezentuješ. Obecně tady doporučujeme něco okolo 600 hodin investice vlastního času a studia před tím než člověk začne být ready na pohovory. Samozřejmě určitě pokud seženeš práci dřív / jinak - je to tvoje plus, ale často se juniorům stává že se s nimi firmy vůbec nebaví a jedna z těch věcí můžeš být že nemají portfolio a dostatečné skilly :)).
 
-Kurz jako takový většinou nestačí, ale je to super start! Určitě nevadí že se k tomu vracíš po letech. Máš čas studovat každý den, nebo pracuješ, nebo jak na tom jsi? 600 hodin je velká časová investice a je dobré si ji nějak rozplánovat :)).  Můžou to být velmi intenzivní měsíce - nebo míň, ale stále intenzivní roky :). 
+Kurz jako takový většinou nestačí, ale je to super start! Určitě nevadí že se k tomu vracíš po letech. Máš čas studovat každý den, nebo pracuješ, nebo jak na tom jsi? 600 hodin je velká časová investice a je dobré si ji nějak rozplánovat :)).  Můžou to být velmi intenzivní měsíce - nebo míň, ale stále intenzivní roky :).
 
 Každopádně jsi tady správně a rádi tě nasměrujeme podpoříme atp. i kdyby sis nakonec vývoj nevybral. A pokud už teďka víš že určitě chceš, neboj se toho a vzhůru rovnýma nohama! Lets go! :))
 ---
@@ -602,7 +602,7 @@ Pokud si v životě neprogramoval nic, tak můžeš taky zkusit [Blockly.games](
 
 --- https://discord.com/channels/769966886598737931/1338150387139481730/1338190136063823982
 K tomu frontendu a designu a „citu“:
-1. To, jak věci mají vypadat a fungovat je většinou (zhruba ve 2/3 případů, samozřejmě záleží na roli) definované někým jiným: designérem. Frontend developer není designér. 
+1. To, jak věci mají vypadat a fungovat je většinou (zhruba ve 2/3 případů, samozřejmě záleží na roli) definované někým jiným: designérem. Frontend developer není designér.
 2. Na frontendu je kvůli Reactu a spol. spousta práce na kódu, který neřeší nic vizuálního nebo jen okrajově.
 3. Je samozřejmě vhodné, pokud dostáváš vizuální zadání od designérů, rozumět některým konceptům z designu. Usnadní to komunikaci a leckdy je na frontendistech, aby dotáhli detaily. To se ale dá naučit, není v tom nic, co by souviselo s pojmy jako „talent“, „umění“ apod.
 ---
@@ -614,7 +614,7 @@ Znáte to někdo? Četli jste? Je to dobré? https://www.lovelydata.cz/mooc/kurz
 
 
 --- https://discord.com/channels/769966886598737931/1348920589871480882/1348970161574772796
-V ČR v IT pracuje hodně lidí bez formálního IT vzdělání. 
+V ČR v IT pracuje hodně lidí bez formálního IT vzdělání.
 To je možné protože:
 - školy neprodukují tolik lidí, kolik trh potřebuje
 - protože je to relativně nový obor + nejde v něm o život, tak není tolik regulace (jako u stavařů nebo lékařů)

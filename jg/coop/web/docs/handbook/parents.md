@@ -34,7 +34,7 @@ Přečti si [článek Luboše Račanského](https://www.heroine.cz/zeny-it/7677-
   Luboš Račanský, lektor kroužku pro děti a autor článku [U budoucích ajťáků je nejdůležitější touha nespokojit se s prvním řešením, říká lektor programování pro děti](https://www.heroine.cz/zeny-it/7677-u-budoucich-ajtaku-je-nejdulezitejsi-touha-nespokojit-se-s-prvnim-resenim-rika-lektor-programovani-pro-deti)
 {% endcall %}
 
-Pokud tě láká to zkusit a trénovat s dětmi [informatické myšlení](https://imysleni.cz/informaticke-mysleni/co-je-informaticke-mysleni), následující odkazy tě nasměrují na stránky, které jsou vhodnější než junior.guru. I když je v názvu tohoto webu slovo _junior_, není pro děti.
+Pokud tě láká to zkusit a trénovat s dětmi [informatické myšlení](https://cs.wikipedia.org/wiki/Informatick%C3%A9_my%C5%A1len%C3%AD), následující odkazy tě nasměrují na stránky, které jsou vhodnější než junior.guru. I když je v názvu tohoto webu slovo _junior_, není pro děti.
 Slovem junior se označují začátečníci na pracovním trhu a tento web ukazuje cestu k programování a kariéře v IT dospělým, případně dospívajícím lidem.
 
 ### Kde začít
