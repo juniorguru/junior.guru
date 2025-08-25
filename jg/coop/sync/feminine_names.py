@@ -1,6 +1,6 @@
 import unicodedata
 
-import requests
+import httpx
 from lxml import html
 
 from jg.coop.cli.sync import main as cli
@@ -12,7 +12,10 @@ from jg.coop.models.feminine_name import FeminineName
 logger = loggers.from_path(__file__)
 
 
-WIKI_URL = "https://cs.wikipedia.org/wiki/Seznam_nej%C4%8Dast%C4%9Bj%C5%A1%C3%ADch_%C5%BEensk%C3%BDch_jmen_v_%C4%8Cesku"
+# https://cs.wikipedia.org/wiki/Seznam_nej%C4%8Dast%C4%9Bj%C5%A1%C3%ADch_%C5%BEensk%C3%BDch_jmen_v_%C4%8Cesku
+WIKI_PAGE_TITLE = "Seznam nejčastějších ženských jmen v Česku"
+
+WIKI_API_URL = "https://cs.wikipedia.org/w/api.php"
 
 EXTRA_NAMES = [
     "Alisa",
@@ -42,9 +45,21 @@ def main():
     FeminineName.drop_table()
     FeminineName.create_table()
 
-    response = requests.get(WIKI_URL)
-    response.raise_for_status()
-    html_tree = html.fromstring(response.content)
+    with httpx.Client() as client:
+        resp = client.get(
+            WIKI_API_URL,
+            params={
+                "action": "parse",
+                "page": WIKI_PAGE_TITLE,
+                "prop": "text",
+                "format": "json",
+            },
+        )
+        resp.raise_for_status()
+        data = resp.json()
+
+    page_html = data["parse"]["text"]["*"]
+    html_tree = html.fromstring(page_html)
 
     names = [
         element.text_content().strip()
