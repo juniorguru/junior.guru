@@ -40,9 +40,9 @@ registry:
     cz_business_id: 24227781
     subscription: https://juniorguru.memberful.com/admin/subscriptions/3699647
     periods:
-      - [2021-05, 2025-08]
+      - [2021-05, 2026-08]
     note: |
-      Podílí se na mentoringu a rozšířené pomoci pro lidi, kteří na junior.guru žádají o [stipendium](https://junior.guru/finaid).
+      Podílí se na mentoringu a rozšířené pomoci pro lidi, kteří na junior.guru žádají o [stipendium](https://junior.guru/finaid). Organizujeme spolu akci [AI a junioři: pomocník, nebo riziko?](https://luma.com/eckxgfwc?tk=s7ko8T).
 
   - name: Glance Media
     slug: glancemedia
