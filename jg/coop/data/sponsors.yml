@@ -32,7 +32,7 @@ registry:
     cz_business_id: 4671317
     subscription: https://juniorguru.memberful.com/admin/subscriptions/3699644
     periods:
-      - [2021-05, 2025-09]
+      - [2021-05, 2025-08]
 
   - name: Mews
     slug: mews
