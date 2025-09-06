@@ -1,0 +1,79 @@
+{
+    "title": "Job",
+    "actorSpecification": 1,
+    "views": {
+        "titles": {
+            "title": "Job",
+            "transformation": {
+                "fields": [
+                    "apply_url",
+                    "company_logo_urls",
+                    "company_name",
+                    "company_url",
+                    "description_html",
+                    "employment_types",
+                    "locations_raw",
+                    "posted_on",
+                    "remote",
+                    "source",
+                    "source_urls",
+                    "title",
+                    "url"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "apply_url": {
+                        "label": "apply_url",
+                        "format": "link"
+                    },
+                    "company_logo_urls": {
+                        "label": "company_logo_urls",
+                        "format": "array"
+                    },
+                    "company_name": {
+                        "label": "company_name"
+                    },
+                    "company_url": {
+                        "label": "company_url",
+                        "format": "link"
+                    },
+                    "description_html": {
+                        "label": "description_html"
+                    },
+                    "employment_types": {
+                        "label": "employment_types",
+                        "format": "array"
+                    },
+                    "locations_raw": {
+                        "label": "locations_raw",
+                        "format": "array"
+                    },
+                    "posted_on": {
+                        "label": "posted_on",
+                        "format": "date"
+                    },
+                    "remote": {
+                        "label": "remote",
+                        "format": "boolean"
+                    },
+                    "source": {
+                        "label": "source"
+                    },
+                    "source_urls": {
+                        "label": "source_urls",
+                        "format": "array"
+                    },
+                    "title": {
+                        "label": "title"
+                    },
+                    "url": {
+                        "label": "url",
+                        "format": "link"
+                    }
+                }
+            }
+        }
+    }
+}
