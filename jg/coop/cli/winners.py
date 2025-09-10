@@ -51,8 +51,12 @@ async def draw_winners(client: ClubClient, message_url, winners_count):
                     f"User {user.display_name} doesn't have role '{role.name}' and can't win!"
                 )
     logger.info(f"{len(users)} users reacted")
+
+    users_ids = sorted(user.id for user in users)
+    winners_ids = random.sample(users_ids, winners_count)
+    winners = [user for user in users if user.id in winners_ids]
     for i in range(1, 6):
         logger.info("The winners are…")
         time.sleep(1 * i)
-    for user in random.sample(users, winners_count):
+    for user in winners:
         logger.info(f"🏆 {user.display_name} (id #{user.id})")
