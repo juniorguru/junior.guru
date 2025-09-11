@@ -49,6 +49,12 @@ def tdc_conference_booth(transaction: dict, secrets: dict) -> TransactionsCatego
 
 
 @category_rule
+def belabel(transaction: dict, secrets: dict) -> TransactionsCategory:
+    if "belabel.cz" in transaction["message"] and transaction["amount"] < 0:
+        return TransactionsCategory.MARKETING
+
+
+@category_rule
 def podcasty_cz_commission(transaction: dict, secrets: dict) -> TransactionsCategory:
     if "SKLIK" in transaction["message"] and "SEZNAM" in transaction["message"]:
         return TransactionsCategory.DONATIONS
@@ -196,7 +202,7 @@ def buffer_com(transaction: dict, secrets: dict) -> TransactionsCategory:
 
 @category_rule
 def printall(transaction: dict, secrets: dict) -> TransactionsCategory:
-    if "PrintAll" in transaction["message"] and transaction["amount"] < 0:
+    if "printall" in transaction["message"].lower() and transaction["amount"] < 0:
         return TransactionsCategory.MARKETING
 
 
