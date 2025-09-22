@@ -86,6 +86,7 @@ def build_mkdocs(context, config_path: Path, output_path: Path, warn: bool):
             _build_mkdocs,
             config_file=str(config_path.absolute()),
             site_dir=str(output_path.absolute()),
+            theme=None,
         )
     finally:
         try:
