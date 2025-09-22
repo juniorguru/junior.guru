@@ -5,7 +5,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@fontsource/inter": "5.2.7",
+    "@fontsource/inter": "5.2.8",
     "bootstrap-icons": "1.13.1",
     "chart.js": "4.5.0",
     "chartjs-plugin-annotation": "3.1.0",
@@ -16,7 +16,7 @@
   "devDependencies": {
     "@343dev/optimizt": "11.0.0",
     "bootstrap": "5.3.8",
-    "esbuild": "0.25.9",
+    "esbuild": "0.25.10",
     "esbuild-sass-plugin": "3.3.1",
     "jsdom": "27.0.0",
     "prettier": "3.6.2",
