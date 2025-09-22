@@ -327,5 +327,7 @@ Proč na tomhle Discordu najdete lepší rady, než u svého kámoše, který u�
 A pokud je nějaký příspěvěk, kde je toho moc, prostě ho vykopíruj a nech si ty pojmy od ChatGPT klidně vysvětlit <:meowthumbsup:842730599906279494> I já to tak někdy dělám a je to překvapivě nápomocné.
 ---
 
+https://blog.pragmaticengineer.com/stack-overflow-is-almost-dead/
+
 
 #} -->
