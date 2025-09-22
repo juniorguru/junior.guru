@@ -15,8 +15,12 @@ class Story(BaseModel):
     tags = JSONField(default=list)
 
     @property
-    def publisher(self):
-        return re.sub(r"^www\.", "", urlparse(self.url).netloc).lower()
+    def publisher(self) -> str:
+        if "web.archive.org" in self.url:
+            url = re.sub(r"^https?://(www\.)?web\.archive\.org/web/\d+/", "", self.url)
+        else:
+            url = self.url
+        return re.sub(r"^www\.", "", urlparse(url).netloc).lower()
 
     def to_card(self) -> dict:
         return dict(

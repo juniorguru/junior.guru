@@ -57,6 +57,10 @@ def test_tags_mapping(test_db):
         ("https://blog.example.com/foo-bar", "blog.example.com"),
         ("http://www.example.com/foo-bar?moo=1#hell=o", "example.com"),
         ("https://www.exAMPLE.com/", "example.com"),
+        (
+            "https://web.archive.org/web/20250318124818/https://www.frantiseknemet.cz/posts/jak-jsem-se-stal-programatorem",
+            "frantiseknemet.cz",
+        ),
     ),
 )
 def test_publisher(test_db, url, expected):
