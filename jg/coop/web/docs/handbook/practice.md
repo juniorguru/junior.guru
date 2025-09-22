@@ -1030,4 +1030,14 @@ Případně ti ještě něco může doporučit <@642430988332302347> .
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788832177135026197/1417165018495058101
+Tohle https://discord.com/channels/769966886598737931/797040163325870092/1417164609881641102 je z https://github.com/zakirullin/cognitive-load, trochu si to procházím, vypadá to zajímavě. Je to o tom, jak psát kód tak, aby člověka nebolel mozek, když se ho snaží číst.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/1409868254620684398
+Vysvětlení „big O notation“ https://samwho.dev/big-o/
+---
+
+
 #} -->

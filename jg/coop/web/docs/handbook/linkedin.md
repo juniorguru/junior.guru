@@ -382,4 +382,14 @@ Pokud přemýšlíte, jak a co psát na LinkedIn, zvlášť pokud jste viděli p
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1408450167488647294
+Čili juniorům radíte psát o tom, jak se posouvají, protože se zatím nemůžou profilovat jako experti v oboru, a protože to budou číst "aspoň" recruiteři a vyhodnotí, že ten člověk má potenciál, zatímco seniornějším lidem spíš doporučíte vybudovat si nějakej zapamatovatelnej osobní brand šmrncnutej expertýzou?
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1406564325665013780
+Dobrá rada od <@957908402594545664> ohledně „open to work“ na LI https://www.linkedin.com/posts/marketa-willis_open-to-work-kole%C4%8Dko-d%C3%A1t-%C4%8Di-nedat-activity-7362528744948830209-wqj7
+---
+
+
 #} -->

@@ -655,4 +655,9 @@ https://www.hanselman.com/blog/dark-matter-developers-the-unseen-99
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1413462281970389093
+Dělali jste si někdo IT fitness test? Znáte? https://aavit.cz/it-fitness-test/
+---
+
+
 #} -->

@@ -1138,4 +1138,35 @@ Hmmm, pročítal jsem si tu pro inspiraci nějaké deníčky a narazil na live c
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1412824012983238820/1414938746297778186
+Já začal v IT v 19 jako OSVČ a zaměstnat jsem se nechal po 6 letech (a pak ještě jednou a teď jsem asi 8 let zase OSVČ), takže znám obojí. A obecně spíš doporučuju nebýt OSVČ, pokud si lidi nechtějí dát tu práci a pochopit všechny důsledky. 
+<:youtube:976200175490060299> [moje starší povídání  ](https://www.youtube.com/watch?v=iJGjTFDYw9A) || určitě bych ho dnes pojal trochu jinak, ale základ tam je||
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/1408442345988427786
+Ahoj, 
+vetsinou mas prvni kolo s HR, aby si overila zda sedis na inzerat, a doptala se te pripadne na nejake veci. 
+
+Dalsi technicky kolo, se te budou ptat na to co jsi delal, jak jsi to delal a ty se doptavas na projekt a tym. Oni hledaji juniora a ty jen jdes ukazat co umis. Oni podle toho zhodnoti zda by jsi zapadl do jejich planu a jestli v tobe vidi potencial, nic neni spatne. Bud sam sebou, ukaz ze te to bavi, zajima a vse prijde samo. 
+
+Jedina rada jak tohle zvladnout je projit si tech pohovoru vice ^^ 
+
+Preju hodne stesti
+---
+
+
+--- https://discord.com/channels/769966886598737931/1412824012983238820/1413940076924240013
+V IT to funguje pro část lidí dobře, protože mají silnou vyjednávací pozici, takže si mohou diktovat a firma víceméně souhlasí se vším. Čím máš slabší vyjednávací pozici a taky čím si horší vyjednavač, tím víc hrozí, že ti bude určeno. A klidně víc než zaměstnanci, protože u OSVČ neplatí v podstatě žádná ochrana, kromě obecné typu, že tě nesmí mlátit, protože to nesmí nikoho.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1412824012983238820/1413082577262346312
+k pojištění odpovědnosti bylo nedávno vlákno na root.cz, které kupodivu skončilo už po dvou stránkách, takže by mohlo být relativně čitelné:
+https://forum.root.cz/index.php?topic=30794.0
+plus ještě jedno z roku 2023, taky jenom na dvě stranky:
+https://forum.root.cz/index.php?topic=27496.0
+---
+
+
 #} -->

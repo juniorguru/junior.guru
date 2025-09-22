@@ -162,4 +162,15 @@ A jeste jsem zapomněl na https://wug.cz - to je free , ale Brno 🙂
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1410161605232033832/1418565767108104243
+> nyní jsem začal chodit na offline akce, kde vidím, že jsou tam lidi stejně hloupý jako já a cítím se lépe
+To je skvělý, to si uložím 😂
+---
+
+
+--- https://discord.com/channels/769966886598737931/1296508522451832853/1411973029583519815
+Frontendisti nebo Pyvo většinou probíhají tak, že přijdeš, je nějaký čas na rozkoukání, objednání něčeho co chceš jíst/pít (pokud to není zrovna v nějaké firmě, to tam pak bývá catering, nebo aspoň pizza), pak začnou přednášky, na srazech bývají tak dvě tři, mezitím pauzy, a pak to skončí a je volná zábava, kdy se lidi zakecají mezi sebou.
+---
+
+
 #} -->

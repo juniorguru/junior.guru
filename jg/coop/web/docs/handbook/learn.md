@@ -707,4 +707,28 @@ https://vesecky-adam.medium.com/major-pitfalls-of-self-development-50c470ee0bf2
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1410161605232033832/1410161605232033832
+Ahojte, jdu si pro radu nebo spíš pro tipy jak se efektivně učit v dnešní době. 
+
+Zajímalo by mě jak se učíte novou technologii nebo cokoliv jiného, máte nějakou osvědčenou metodu nebo prostě si to jen tak zkoušíte ?
+
+• **Máte nějakou placenou platformu, která vám udává nějakou pevnou osnovu?** (Boot.dev, codecademy, Hyperskill…)
+
+• **Nebo používáte chatbota jako mentora?** (ChatGPT, Claude…), popřípadě platíte si Pro verzi?
+
+• **Píšete si poznámky?** - mě tohle asi nikdy nefungovalo, nikdy se k ním nevracím, tak si spíš píšu komentáře přímo do kódu. 
+
+• **Projektíky, větší projekty** - Asi se všichni shodneme, že nejlepší co můžeme udělat, je něco tvořit, ale někdy je to těžké uchopit a začít. 
+
+Já mám s tímto problém jak to celé uchopit a nastavit si nějaký studijní plán, který bude efektivní a k něčemu, jsem v tomto trochu autista a potřebuju to mít všechno pěkně rozepsané a nachystané a sledovat svůj pokrok. Chci ty koncepty umět, znát a rozumět tomu. Dnes koukám na videa, kde týpci ukazují jak se učit a že ti stačí AI, v podstatě kopíruji kód do IDE a to prokládají za učení se…tohle nechci, tím se nic nenaučím (alespoň já).
+
+Jak to máte vy? Děkuju moc 🙏🏻
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/1415258347069902868
+Jak se učit https://www.youtube.com/shorts/uU-1T3qKSBA
+---
+
+
 #} -->

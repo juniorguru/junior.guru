@@ -282,4 +282,15 @@ https://honzajavorek.cz/blog/empowered-by-ai-why-junior-devs-have-the-winning-ed
 https://antirez.com/news/154
 
 
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1413861490267656324
+🤔 https://mikelovesrobots.substack.com/p/wheres-the-shovelware-why-ai-coding
+---
+
+
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1409879838650798090
+btw, tohle tu proběhlo? (už je to docela staré)
+https://www.hrnews.cz/lidske-zdroje/trendy-id-148711/od-unora-plati-povinnost-skolit-zamestnance-na-pouzivani-ai-id-4453113
+---
+
+
 #} -->

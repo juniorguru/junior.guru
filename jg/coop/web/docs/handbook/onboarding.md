@@ -781,4 +781,13 @@ https://www.hanselman.com/blog/dark-matter-developers-the-unseen-99
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1411990017944846336
+Na sítích jsem našel zajímavé zamyšlení nad code review.
+
+> I think many people misunderstand the purpose of code review.  **The purpose of code review is not for the reviewer to find bugs**, and certainly not for them to ensure that the code is bug-free.  Anyone who depends on code review to find bugs is living in a fool’s paradise.  As everyone should know by now, it is not in general possible to find bugs by examining the code.  
+> **The primary purpose of code review is to find *code that will be hard to maintain***. The reviewer looks at the code and tries to understand what it is doing and how. If they can’t, that means it will be hard to maintain in the future, and should be fixed now, while the original author is still familiar with it.
+https://witter.cz/@mjd@mathstodon.xyz/115096720350911609
+---
+
+
 #} -->
