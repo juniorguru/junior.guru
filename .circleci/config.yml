@@ -38,7 +38,10 @@ jobs:
           key: deps-{{ checksum "uv.lock" }}-{{ checksum "package-lock.json" }}
       - run:
           name: Install Python dependencies
-          command: uv sync && uv cache prune --ci
+          command: |
+            uv self update
+            uv sync
+            uv cache prune --ci
       - run:
           name: Install browser
           command: uv run playwright install firefox
