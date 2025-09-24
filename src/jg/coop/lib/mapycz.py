@@ -255,7 +255,7 @@ if __name__ == "__main__":
     """
     Usage:
 
-        poetry run python -m jg.coop.lib.mapycz 'Ústí nad Orlicí, Pardubice, Czechia'
+        uv run python -m jg.coop.lib.mapycz 'Ústí nad Orlicí, Pardubice, Czechia'
 
     See also:
 

@@ -38,17 +38,17 @@ def update(pull, packages, push, stash):
             logger.info("Pulling changes")
             subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=True)
         if packages:
-            logger.info("Updating packages")
-            poetry_update()
+            logger.info("Upgrading packages")
+            uv_upgrade()
             subprocess.run(["npm", "update"], check=True)
             subprocess.run(["npm", "install"], check=True)
             subprocess.run(
-                ["git", "add", "pyproject.toml", "poetry.lock", "package-lock.json"]
+                ["git", "add", "pyproject.toml", "uv.lock", "package-lock.json"]
             )
             subprocess.run(["git", "commit", "-m", "update packages 📦"])
         else:
             logger.info("Installing packages")
-            subprocess.run(["poetry", "install"], check=True)
+            subprocess.run(["uv", "install"], check=True)
             subprocess.run(["npm", "install"], check=True)
         logger.info("Installing Playwright browsers")
         subprocess.run(["playwright", "install", "firefox"], check=True)
@@ -64,30 +64,31 @@ def update(pull, packages, push, stash):
         raise click.Abort()
 
 
-def poetry_update():
+def uv_upgrade():
     changes = []
     while True:
-        logger.debug("Running Poetry update")
+        logger.debug("Upgrading Python packages")
         result = subprocess.run(
-            ["poetry", "update"], capture_output=True, text=True, check=False
+            ["uv", "sync", "--upgrade"], capture_output=True, text=True, check=False
         )
         if result.returncode == 0:
             break
-        if "version solving failed" in result.stderr:
-            logger.warning("Version solving failed")
-            if match := re.search(
-                r"(requires|which depends on) (?P<package>\S+) \((?P<version>[^\)]+)\)",
-                result.stderr,
-            ):
-                package, version = match.group("package"), match.group("version")
-                changes.append(f"{package}=={version}")
-                subprocess.run(["poetry", "remove", package], check=True)
-                continue
+        # TODO
+        # if "version solving failed" in result.stderr:
+        #     logger.warning("Version solving failed")
+        #     if match := re.search(
+        #         r"(requires|which depends on) (?P<package>\S+) \((?P<version>[^\)]+)\)",
+        #         result.stderr,
+        #     ):
+        #         package, version = match.group("package"), match.group("version")
+        #         changes.append(f"{package}=={version}")
+        #         subprocess.run(["poetry", "remove", package], check=True)
+        #         continue
         logger.error(f"Failed to update Python packages:\n{result.stderr}")
         raise click.Abort()
     if changes:
         logger.warning(f"Changes: {', '.join(changes)}")
-        subprocess.run(["poetry", "add"] + changes, check=True)
+        subprocess.run(["uv", "add"] + changes, check=True)
 
 
 @main.command()
