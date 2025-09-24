@@ -17,7 +17,7 @@ class InterestRole(BaseModel):
         return self.select().count()
 
     @classmethod
-    def interests(cls) -> list[tuple[str, int]]:
+    def interests(cls, min_count: int = 10) -> list[tuple[str, int]]:
         counter = Counter()
         for member in ClubUser.members_listing():
             counter.update(member.initial_roles)
@@ -25,7 +25,7 @@ class InterestRole(BaseModel):
         return [
             (roles_by_id[role_id], count)
             for role_id, count in counter.most_common()
-            if role_id in roles_by_id
+            if role_id in roles_by_id and count >= min_count
         ]
 
 

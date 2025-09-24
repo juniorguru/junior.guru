@@ -27,6 +27,7 @@ def test_interests(test_db):
     InterestRole.create(
         club_id=4444, name="Zajímá mě: vývoj her", interest_name="vývoj her"
     )
+    InterestRole.create(club_id=5555, name="Zajímá mě: COBOL", interest_name="COBOL")
 
     create_user(1, initial_roles=[1111, 3333])
     create_user(2, initial_roles=[1111])
@@ -34,7 +35,7 @@ def test_interests(test_db):
     create_user(4, initial_roles=[3333])
     create_user(5, initial_roles=[4444])
 
-    assert InterestRole.interests() == [
+    assert InterestRole.interests(min_count=1) == [
         ("Python", 3),
         ("frontend", 2),
         ("vývoj her", 2),
