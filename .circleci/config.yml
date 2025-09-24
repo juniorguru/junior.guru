@@ -39,7 +39,9 @@ jobs:
       - run:
           name: Install Python dependencies
           command: |
+            uv --version
             uv self update
+            uv --version
             uv sync
             uv cache prune --ci
       - run:
@@ -79,6 +81,9 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
+      - run:
+          name: Debug
+          command: uv --version
       - run:
           name: Test
           command: uv run jg test --verbose
