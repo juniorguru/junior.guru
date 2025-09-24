@@ -32,7 +32,7 @@ def main():
 @main.command()
 @click.option(
     "--data-dir",
-    default="jg/coop/data",
+    default="src/jg/coop/data",
     type=click.Path(path_type=Path, exists=True, file_okay=False),
 )
 @click.option(

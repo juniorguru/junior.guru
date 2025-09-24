@@ -86,8 +86,8 @@ def fix_scss():
             [
                 "npx",
                 "stylelint",
-                "jg/coop/css/**/*.*css",
-                "jg/coop/image_templates/*.*css",
+                "src/jg/coop/css/**/*.*css",
+                "src/jg/coop/image_templates/*.*css",
                 "--fix",
             ],
             check=True,
@@ -100,7 +100,7 @@ def fix_scss():
 def format_jinja():
     logger.info("Removing unused Jinja imports")
     cwd = Path.cwd()
-    web_dir = Path("jg/coop/web/").resolve()
+    web_dir = Path("src/jg/coop/web/").resolve()
     paths = itertools.chain(
         web_dir.rglob("*.jinja"), web_dir.rglob("*.md"), web_dir.rglob("*.html")
     )
@@ -117,7 +117,7 @@ def format_jinja():
 
 @main.command()
 @click.option("--size", "size_px", default=1000, type=int)
-@click.option("--glob", "glob_pattern", default="jg/coop/images/avatars-*/*.jpg")
+@click.option("--glob", "glob_pattern", default="src/jg/coop/images/avatars-*/*.jpg")
 def optimize_avatars(size_px: int, glob_pattern: str):
     logger.info("Optimizing avatars")
     for path in map(Path, glob(glob_pattern)):
@@ -146,7 +146,7 @@ def optimize_avatars(size_px: int, glob_pattern: str):
 @main.command()
 def optimize_svg():
     logger.info("Optimizing SVGs")
-    images_dir = Path("jg/coop/images")
+    images_dir = Path("src/jg/coop/images")
     paths = images_dir.rglob("*.svg")
     for path in paths:
         logger.debug(f"{path.relative_to(images_dir)}")

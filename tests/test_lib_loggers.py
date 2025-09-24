@@ -7,11 +7,11 @@ from jg.coop.lib import loggers
     "path, expected",
     [
         (
-            "/a/b/c/juniorguru/jg/coop/sync/club_content/__init__.py",
+            "/a/b/c/juniorguru/src/jg/coop/sync/club_content/__init__.py",
             "jg.coop.sync.club_content",
         ),
         (
-            "/a/b/c/juniorguru/jg/coop/sync/club_content/crawler.py",
+            "/a/b/c/juniorguru/src/jg/coop/sync/club_content/crawler.py",
             "jg.coop.sync.club_content.crawler",
         ),
     ],

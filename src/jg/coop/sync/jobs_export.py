@@ -16,7 +16,7 @@ logger = loggers.from_path(__file__)
 @cli.sync_command()
 @click.option(
     "--output-dir",
-    default=Path("jg/coop/data/jobs"),
+    default=Path("src/jg/coop/data/jobs"),
     type=click.Path(path_type=Path, file_okay=False, dir_okay=True, writable=True),
 )
 @click.option(

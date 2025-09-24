@@ -22,7 +22,7 @@ JOBS_REPEATING_PERIOD_DAYS = 30
 
 MAX_FORUM_TAGS = 5
 
-IMAGES_DIR = Path("jg/coop/images")
+IMAGES_DIR = Path("src/jg/coop/images")
 
 
 class ForumTagName(StrEnum):

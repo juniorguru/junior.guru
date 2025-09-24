@@ -16,7 +16,7 @@ from jg.coop.models.club import ClubUser
 logger = loggers.from_path(__file__)
 
 
-IMAGES_PATH = Path("jg/coop/images")
+IMAGES_PATH = Path("src/jg/coop/images")
 
 AVATARS_PATH = IMAGES_PATH / "avatars-club"
 

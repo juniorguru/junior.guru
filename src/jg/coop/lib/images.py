@@ -20,9 +20,9 @@ from jg.coop.lib.cache import get_cache, get_jinja_cache
 
 CACHE_DIR = Path(".image_templates_cache")
 
-IMAGES_DIR = Path("jg/coop/images")
+IMAGES_DIR = Path("src/jg/coop/images")
 
-TEMPLATES_DIR = Path("jg/coop/image_templates")
+TEMPLATES_DIR = Path("src/jg/coop/image_templates")
 
 
 logger = loggers.from_path(__file__)

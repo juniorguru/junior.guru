@@ -104,7 +104,7 @@ def build_navigara_api(api_dir, config):
     api_subdir = api_dir / "navigara"
     api_subdir.mkdir(parents=True, exist_ok=True)
 
-    src_dir = Path("jg/coop/data/jobs")
+    src_dir = Path("src/jg/coop/data/jobs")
     src_jobs_path = src_dir / "jobs.jsonl"
 
     api_jobs_path = api_subdir / "jobs.jsonl.gz"

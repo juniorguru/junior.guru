@@ -17,7 +17,7 @@ Informace o [příručce pro juniory](../handbook/index.md). Záměr a hodnoty, 
 
 Příručka je vydávána pod licencí [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.cs).
 To znamená, že veškerý text může kdokoliv použít, klidně komerčně, pokud uvede autora a výsledek vystaví pod stejnou licencí.
-Zdrojový text příručky je [na GitHubu](https://github.com/juniorguru/junior.guru/tree/main/jg/coop/web/docs/handbook).
+Zdrojový text příručky je [na GitHubu](https://github.com/juniorguru/junior.guru/tree/main/src/jg/coop/web/docs/handbook).
 
 ## Monetizace
 

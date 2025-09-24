@@ -22,7 +22,7 @@ from jg.coop.models.job import ListedJob, LogoSourceType
 
 SIZE_PX = 100
 
-IMAGES_DIR = Path("jg/coop/images")
+IMAGES_DIR = Path("src/jg/coop/images")
 
 IMAGE_SAVE_OPTIONS = {"format": "WEBP", "optimize": True}
 

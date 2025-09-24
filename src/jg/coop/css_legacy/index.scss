@@ -40,5 +40,5 @@
 @use "spaghetti/page-index";
 
 // bootstrap icons
-$bootstrap-icons-font-dir: "../../../node_modules/bootstrap-icons/font/fonts";
-@import "../../../node_modules/bootstrap-icons/font/bootstrap-icons";
+$bootstrap-icons-font-dir: "../../../../node_modules/bootstrap-icons/font/fonts";
+@import "../../../../node_modules/bootstrap-icons/font/bootstrap-icons";

@@ -78,26 +78,26 @@ google_service_account.json
 .*cache
 
 # Synced data
-/jg/coop/data/*.db
-/jg/coop/data/*.db-*
-/jg/coop/data/jobs/*.*
-/jg/coop/images/avatars-club/*.png
-/jg/coop/images/avatars-club/*.webp
-/jg/coop/images/avatars-sponsors/*.png
-/jg/coop/images/avatars-sponsors/*.webp
-/jg/coop/images/logos-jobs/*.png
-/jg/coop/images/logos-jobs/*.webp
-/jg/coop/images/posters-events/*.png
-/jg/coop/images/posters-events/*.webp
-/jg/coop/images/posters-sponsors/*.png
-/jg/coop/images/posters-sponsors/*.webp
-/jg/coop/images/posters-podcast/*.png
-/jg/coop/images/posters-podcast/*.webp
-/jg/coop/images/thumbnails/*.png
-/jg/coop/images/thumbnails/*.webp
+/src/jg/coop/data/*.db
+/src/jg/coop/data/*.db-*
+/src/jg/coop/data/jobs/*.*
+/src/jg/coop/images/avatars-club/*.png
+/src/jg/coop/images/avatars-club/*.webp
+/src/jg/coop/images/avatars-sponsors/*.png
+/src/jg/coop/images/avatars-sponsors/*.webp
+/src/jg/coop/images/logos-jobs/*.png
+/src/jg/coop/images/logos-jobs/*.webp
+/src/jg/coop/images/posters-events/*.png
+/src/jg/coop/images/posters-events/*.webp
+/src/jg/coop/images/posters-sponsors/*.png
+/src/jg/coop/images/posters-sponsors/*.webp
+/src/jg/coop/images/posters-podcast/*.png
+/src/jg/coop/images/posters-podcast/*.webp
+/src/jg/coop/images/thumbnails/*.png
+/src/jg/coop/images/thumbnails/*.webp
 
 # Special question mark logo
-!/jg/coop/images/logos-jobs/unknown.webp
+!/src/jg/coop/images/logos-jobs/unknown.webp
 
 # Data persisting and merging
 .persist-to-workspace-snapshot

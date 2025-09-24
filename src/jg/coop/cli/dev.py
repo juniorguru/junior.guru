@@ -112,8 +112,8 @@ def test(verbose: bool):
             [
                 "npx",
                 "stylelint",
-                "jg/coop/css/**/*.*css",
-                "jg/coop/image_templates/*.*css",
+                "src/jg/coop/css/**/*.*css",
+                "src/jg/coop/image_templates/*.*css",
             ],
             check=True,
         )

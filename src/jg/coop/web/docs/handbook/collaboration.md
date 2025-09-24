@@ -150,8 +150,6 @@ Začátky s open source nejsou přímočaré. Většinou na něm lidé pracují 
 
 <!-- {#
 
-https://mastodonczech.cz/@brainwane@social.jg/coop/112083256753100254
-
 https://github.com/firstcontributions/first-contributions
 
 A recent trick I discovered to learning this is to pick an open source project written by developers you like and start writing docs and tests.

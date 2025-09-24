@@ -22,7 +22,7 @@ from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
 
 
-YAML_PATH = Path("jg/coop/data/meetups.yml")
+YAML_PATH = Path("src/jg/coop/data/meetups.yml")
 
 
 logger = loggers.from_path(__file__)
@@ -79,7 +79,7 @@ class MeetupsConfig(YAMLConfig):
 @click.option(
     "--config",
     "config_path",
-    default="jg/coop/data/meetups.yml",
+    default="src/jg/coop/data/meetups.yml",
     type=click.Path(exists=True, path_type=Path),
 )
 @click.option(

@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { getGitHubProfileUsername } from "../../jg/coop/js/github-profile";
+import { getGitHubProfileUsername } from "../../src/jg/coop/js/github-profile";
 
 describe("github-profile.js", () => {
   describe("getGitHubProfileUsername()", () => {

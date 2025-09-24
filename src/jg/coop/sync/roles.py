@@ -20,9 +20,9 @@ from jg.coop.models.role import DocumentedRole, InterestRole
 from jg.coop.models.sponsor import Sponsor
 
 
-IMAGES_DIR = Path("jg/coop/images")
+IMAGES_DIR = Path("src/jg/coop/images")
 
-YAML_PATH = Path("jg/coop/data/roles.yml")
+YAML_PATH = Path("src/jg/coop/data/roles.yml")
 
 INTEREST_ROLE_PREFIX = "Zajímá mě: "
 

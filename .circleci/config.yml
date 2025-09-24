@@ -35,18 +35,13 @@ jobs:
     steps:
       - git-shallow-clone/checkout
       - restore_cache:
-          key: deps-{{ checksum "poetry.lock" }}-{{ checksum "package-lock.json" }}
-      - run:
-          name: Update Poetry
-          command: |
-            poetry --version
-            poetry self update 1.8.5
+          key: deps-{{ checksum "uv.lock" }}-{{ checksum "package-lock.json" }}
       - run:
           name: Install Python dependencies
-          command: poetry -vvv install
+          command: uv sync && uv cache prune --ci
       - run:
           name: Install browser
-          command: poetry run playwright install firefox
+          command: uv run playwright install firefox
       - run:
           name: Update npm
           command: |
@@ -57,22 +52,22 @@ jobs:
       - run:
           name: Cancel previous builds
           command: |
-            poetry run jg cancel-previous-builds
+            uv run jg cancel-previous-builds
       - save_cache:
-          key: deps-{{ checksum "poetry.lock" }}-{{ checksum "package-lock.json" }}
+          key: deps-{{ checksum "uv.lock" }}-{{ checksum "package-lock.json" }}
           paths:
-            - ~/.cache/pypoetry/virtualenvs
+            - ~/.cache/uv
             - ~/.cache/ms-playwright
             - ./node_modules
       - restore_cache:
           key: cache-v2-{{ .Branch }}
       - run:
           name: Snapshot files
-          command: poetry run jg data snapshot
+          command: uv run jg data snapshot
       - persist_to_workspace:
           root: "~"
           paths:
-            - .cache/pypoetry/virtualenvs
+            - .cache/uv
             - .cache/ms-playwright
             - project
 
@@ -83,7 +78,7 @@ jobs:
           at: "~"
       - run:
           name: Test
-          command: poetry run jg test --verbose
+          command: uv run jg test --verbose
 
   # Requires:
   #
@@ -109,14 +104,14 @@ jobs:
           at: "~"
       - run:
           name: Cache stats
-          command: poetry run jg cache tags
+          command: uv run jg cache tags
       - run:
           name: Sync data
           command: |
-            poetry run jg sync $(if [[ "$CIRCLE_BRANCH" == "main" ]]; then echo "--allow-mutations"; else echo ""; fi) ci
+            uv run jg sync $(if [[ "$CIRCLE_BRANCH" == "main" ]]; then echo "--allow-mutations"; else echo ""; fi) ci
       - run:
           name: Prepare changed files for persisting
-          command: poetry run jg data persist $CIRCLE_NODE_INDEX --move
+          command: uv run jg data persist $CIRCLE_NODE_INDEX --move
       - persist_to_workspace:
           root: "~"
           paths:
@@ -129,18 +124,18 @@ jobs:
           at: "~"
       - run:
           name: Load data
-          command: poetry run jg data load --move
+          command: uv run jg data load --move
       - run:
           name: Fix cache
           command: |
-            poetry run jg cache fix
-            poetry run jg cache tags
+            uv run jg cache fix
+            uv run jg cache tags
       - persist_to_workspace:
           root: "~"
           paths:
             - project/.cache
-            - project/jg/coop/data
-            - project/jg/coop/images
+            - project/src/jg/coop/data
+            - project/src/jg/coop/images
 
   # Requires:
   #
@@ -156,17 +151,17 @@ jobs:
           at: "~"
       - run:
           name: Snapshot files
-          command: poetry run jg data snapshot
+          command: uv run jg data snapshot
       - run:
           name: Cache stats
-          command: poetry run jg cache tags
+          command: uv run jg cache tags
       - run:
           name: Sync data
           command: |
-            poetry run jg sync $(if [[ "$CIRCLE_BRANCH" == "main" ]]; then echo "--allow-mutations"; else echo ""; fi) ci
+            uv run jg sync $(if [[ "$CIRCLE_BRANCH" == "main" ]]; then echo "--allow-mutations"; else echo ""; fi) ci
       - run:
           name: Prepare changed files for persisting
-          command: poetry run jg data persist $CIRCLE_NODE_INDEX --move
+          command: uv run jg data persist $CIRCLE_NODE_INDEX --move
       - persist_to_workspace:
           root: "~"
           paths:
@@ -179,25 +174,25 @@ jobs:
           at: "~"
       - run:
           name: Load data
-          command: poetry run jg data load --move
+          command: uv run jg data load --move
       - run:
           name: Fix cache
           command: |
-            poetry run jg cache fix
-            poetry run jg cache tags
+            uv run jg cache fix
+            uv run jg cache tags
       - save_cache:
           key: cache-v2-{{ .Branch }}-{{ .Revision }}
           paths:
             - .cache
-            - jg/coop/images/posters-events
-            - jg/coop/images/posters-sponsors
-            - jg/coop/images/posters-podcast
-            - jg/coop/images/thumbnails
+            - src/jg/coop/images/posters-events
+            - src/jg/coop/images/posters-sponsors
+            - src/jg/coop/images/posters-podcast
+            - src/jg/coop/images/thumbnails
       - persist_to_workspace:
           root: "~"
           paths:
-            - project/jg/coop/data
-            - project/jg/coop/images
+            - project/src/jg/coop/data
+            - project/src/jg/coop/images
       - when:
           condition:
             equal: [main, << pipeline.git.branch >>]
@@ -206,8 +201,8 @@ jobs:
             - run:
                 name: Save to GitHub
                 command: |
-                  poetry run jg save-changes jg/coop/data/transactions.jsonl --message="record transactions 📊💰"
-                  poetry run jg save-changes jg/coop/data/members.jsonl jg/coop/data/followers.jsonl jg/coop/data/jobs.jsonl --message="record stats 📊💳"
+                  uv run jg save-changes src/jg/coop/data/transactions.jsonl --message="record transactions 📊💰"
+                  uv run jg save-changes src/jg/coop/data/members.jsonl src/jg/coop/data/followers.jsonl src/jg/coop/data/jobs.jsonl --message="record stats 📊💳"
 
   web:
     executor: python-js
@@ -217,10 +212,10 @@ jobs:
           at: "~"
       - run:
           name: Build web
-          command: poetry run jg web build
+          command: uv run jg web build
       - run:
           name: Post-process web
-          command: poetry run jg web post-process
+          command: uv run jg web post-process
       - persist_to_workspace:
           root: "~"
           paths:
@@ -233,14 +228,14 @@ jobs:
           at: "~"
       - run:
           name: Reset repo
-          command: poetry run jg reset-repo
+          command: uv run jg reset-repo
       - run:
           name: Tidy up code and images
-          command: poetry run jg tidy
+          command: uv run jg tidy
       - enable-github-pushing
       - run:
           name: Save to GitHub
-          command: poetry run jg save-changes . --message="tidy up! 💅"
+          command: uv run jg save-changes . --message="tidy up! 💅"
 
   backup:
     executor: python-js
@@ -249,13 +244,13 @@ jobs:
           at: "~"
       - run:
           name: Backup data
-          command: poetry run jg backup data
+          command: uv run jg backup data
       - run:
           name: Encrypt data
-          command: poetry run jg backup encrypt
+          command: uv run jg backup encrypt
       - run:
           name: Backup Discord
-          command: poetry run jg backup discord
+          command: uv run jg backup discord
       - store_artifacts:
           path: ./backup.tgz.gpg
 
@@ -267,14 +262,14 @@ jobs:
       - enable-github-pushing
       - run:
           name: Deploy to GitHub Pages
-          command: poetry run jg deploy
+          command: uv run jg deploy
 
   check-docs:
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
-      - run: poetry run jg check-docs --no-build
+      - run: uv run jg check-docs --no-build
 
   check-links:
     executor: python-js
@@ -299,14 +294,14 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - run: poetry run jg check-bot
+      - run: uv run jg check-bot
 
   check-sponsors:
     executor: python-js
     steps:
       - attach_workspace:
           at: "~"
-      - run: poetry run jg check-sponsors
+      - run: uv run jg check-sponsors
 
 workflows:
   push:

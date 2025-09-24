@@ -22,7 +22,7 @@ from jg.coop.models.sync import Sync
 from jg.coop.sync.pages import main as sync_pages
 
 
-PAGES_PATH = Path("jg/coop/web/docs")
+PAGES_PATH = Path("src/jg/coop/web/docs")
 
 NOTES_END = "\n\n#} -->"
 

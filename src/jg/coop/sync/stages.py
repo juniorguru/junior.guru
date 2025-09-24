@@ -8,7 +8,7 @@ from jg.coop.models.base import db
 from jg.coop.models.stage import Stage
 
 
-YAML_PATH = Path("jg/coop/data/stages.yml")
+YAML_PATH = Path("src/jg/coop/data/stages.yml")
 
 YAML_SCHEMA = Seq(
     Map(

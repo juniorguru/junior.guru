@@ -9,9 +9,9 @@ if (!outdir) {
 
 await esbuild.build({
   entryPoints: [
-    "jg/coop/js/index.js",
-    "jg/coop/css/index.scss",
-    "jg/coop/css_legacy/index.scss",
+    "src/jg/coop/js/index.js",
+    "src/jg/coop/css/index.scss",
+    "src/jg/coop/css_legacy/index.scss",
   ],
   bundle: true,
   minify: true,

@@ -180,7 +180,7 @@ def from_path(path, cwd=None) -> Logger:
         relative_path.removesuffix(".py")
         .removesuffix("__init__")
         .rstrip("/")
-        .split("/")
+        .split("/")[1:]  # remove leading 'src'
     )
     return get(name)
 

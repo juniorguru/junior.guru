@@ -16,7 +16,7 @@ logger = loggers.from_path(__file__)
 @cli.sync_command(dependencies=["jobs-club"])
 @click.option(
     "--history-path",
-    default="jg/coop/data/jobs.jsonl",
+    default="src/jg/coop/data/jobs.jsonl",
     type=click.Path(path_type=Path),
 )
 @click.option(

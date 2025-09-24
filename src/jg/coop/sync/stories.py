@@ -9,7 +9,7 @@ from jg.coop.models.base import db
 from jg.coop.models.story import Story
 
 
-YAML_PATH = Path("jg/coop/data/stories.yml")
+YAML_PATH = Path("src/jg/coop/data/stories.yml")
 
 YAML_SCHEMA = Seq(
     Map(

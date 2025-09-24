@@ -18,7 +18,7 @@ GITHUB_USERNAME = "juniorguru"
 
 GITHUB_PERSONAL_USERNAME = "honzajavorek"
 
-IMAGES_PATH = Path("jg/coop/images")
+IMAGES_PATH = Path("src/jg/coop/images")
 
 AVATARS_PATH = IMAGES_PATH / "avatars-sponsors"
 

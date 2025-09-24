@@ -177,9 +177,9 @@ def test_docs_url():
     assert (
         template_filters.docs_url(
             [
-                File("privacy.md", "jg/coop/web/docs", "public", True),
-                File("club.md", "jg/coop/web/docs", "public", True),
-                File("topics/csharp.md", "jg/coop/web/docs", "public", True),
+                File("privacy.md", "src/jg/coop/web/docs", "public", True),
+                File("club.md", "src/jg/coop/web/docs", "public", True),
+                File("topics/csharp.md", "src/jg/coop/web/docs", "public", True),
             ],
             "club.md",
         )

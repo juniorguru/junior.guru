@@ -30,7 +30,7 @@ Aby mohl Honza udělat přednášce promo, je potřeba nejpozději týden před 
 -    Tvá fotka nebo avatar (ideálně aspoň 500⨯500px)
 -    Tvoje firma a pozice v ní
 
-Inspirovat se můžeš v [seznamu přednášek, které už proběhly](events.md). Jestli umíš s GitHubem a nebojíš se upravovat YAML soubor, můžeš kouknout i na [events.yml](https://github.com/juniorguru/junior.guru/blob/main/jg/coop/data/events.yml).
+Inspirovat se můžeš v [seznamu přednášek, které už proběhly](events.md). Jestli umíš s GitHubem a nebojíš se upravovat YAML soubor, můžeš kouknout i na [events.yml](https://github.com/juniorguru/junior.guru/blob/main/src/jg/coop/data/events.yml).
 
 ## Přednášení
 

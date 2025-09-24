@@ -25,7 +25,7 @@ from jg.coop.models.podcast import PodcastEpisode
 logger = loggers.from_path(__file__)
 
 
-YAML_PATH = Path("jg/coop/data/podcast.yml")
+YAML_PATH = Path("src/jg/coop/data/podcast.yml")
 
 YAML_SCHEMA = Seq(
     Map(
@@ -45,7 +45,7 @@ YAML_SCHEMA = Seq(
 
 WORKERS = 4
 
-IMAGES_DIR = Path("jg/coop/images")
+IMAGES_DIR = Path("src/jg/coop/images")
 
 POSTERS_DIR = IMAGES_DIR / "posters-podcast"
 

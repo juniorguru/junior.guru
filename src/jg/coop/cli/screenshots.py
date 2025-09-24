@@ -25,7 +25,7 @@ logger = loggers.from_path(__file__)
 
 PUBLIC_DIR = Path("public")
 
-IMAGES_DIR = Path("jg/coop/images")
+IMAGES_DIR = Path("src/jg/coop/images")
 
 SCREENSHOTS_DIR = IMAGES_DIR / "screenshots"
 

@@ -59,7 +59,7 @@ logger = loggers.from_path(__file__)
 )
 @click.option(
     "--history-path",
-    default="jg/coop/data/transactions.jsonl",
+    default="src/jg/coop/data/transactions.jsonl",
     type=click.Path(exists=True, path_type=Path),
     required=True,
 )

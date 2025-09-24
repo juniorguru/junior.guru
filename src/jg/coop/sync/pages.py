@@ -34,7 +34,7 @@ def main():
 
     logger.info("Reading Markdown source files")
     mkdocs_jinja.monkey_patch()
-    config = load_config(config_file="jg/coop/web/mkdocs.yml", hooks=[])
+    config = load_config(config_file="src/jg/coop/web/mkdocs.yml", hooks=[])
     config = config.plugins.on_config(config)
     config.plugins.on_pre_build(config=config)
     files = get_files(config)

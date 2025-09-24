@@ -48,9 +48,9 @@ from jg.coop.sync.club_content.crawler import CHANNELS_HISTORY_SINCE
 logger = loggers.from_path(__file__)
 
 
-EVENTS_YAML_PATH = Path("jg/coop/data/events.yml")
+EVENTS_YAML_PATH = Path("src/jg/coop/data/events.yml")
 
-IMAGES_DIR = Path("jg/coop/images")
+IMAGES_DIR = Path("src/jg/coop/images")
 
 POSTERS_DIR = IMAGES_DIR / "posters-events"
 

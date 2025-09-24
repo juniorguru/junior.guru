@@ -44,13 +44,13 @@ def building(title: str):
 def build_static(output_path: Path):
     static_path = output_path / "static"
     shutil.copytree(
-        "jg/coop/images",
+        "src/jg/coop/images",
         static_path,
         dirs_exist_ok=True,
         ignore=shutil.ignore_patterns("screenshots-overrides"),
     )
     shutil.copytree(
-        "jg/coop/images/screenshots-overrides",
+        "src/jg/coop/images/screenshots-overrides",
         static_path / "screenshots",
         dirs_exist_ok=True,
     )
@@ -63,7 +63,7 @@ def build_static(output_path: Path):
 @click.argument("output_path", default="public", type=click.Path(path_type=Path))
 @click.argument(
     "config_path",
-    default="jg/coop/web/mkdocs.yml",
+    default="src/jg/coop/web/mkdocs.yml",
     type=click.Path(exists=True, path_type=Path),
 )
 @click.option("-w", "--warnings/--no-warnings", "warn", default=False)
@@ -125,13 +125,13 @@ def serve(context, output_path: Path, open: bool):
 
     server = Server()
     server.setHeader("Access-Control-Allow-Origin", "*")
-    server.watch("jg/coop/**/*.js", rebuild_static)
-    server.watch("jg/coop/**/*.scss", rebuild_static)
-    server.watch("jg/coop/images/", rebuild_static)
-    server.watch("jg/coop/data/", rebuild_mkdocs, ignore=ignore_data)
-    server.watch("jg/coop/lib/", rebuild_mkdocs)
-    server.watch("jg/coop/models/", rebuild_mkdocs)
-    server.watch("jg/coop/web/", rebuild_mkdocs)
+    server.watch("src/jg/coop/**/*.js", rebuild_static)
+    server.watch("src/jg/coop/**/*.scss", rebuild_static)
+    server.watch("src/jg/coop/images/", rebuild_static)
+    server.watch("src/jg/coop/data/", rebuild_mkdocs, ignore=ignore_data)
+    server.watch("src/jg/coop/lib/", rebuild_mkdocs)
+    server.watch("src/jg/coop/models/", rebuild_mkdocs)
+    server.watch("src/jg/coop/web/", rebuild_mkdocs)
     server.serve(
         host="localhost",
         root=str(output_path.absolute()),

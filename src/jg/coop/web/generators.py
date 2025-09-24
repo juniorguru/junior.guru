@@ -23,9 +23,9 @@ from jg.coop.models.podcast import PodcastEpisode
 logger = loggers.from_path(__file__)
 
 
-REDIRECTS_YAML_PATH = Path("jg/coop/data/redirects.yml")
+REDIRECTS_YAML_PATH = Path("src/jg/coop/data/redirects.yml")
 
-DOCS_DIR = Path("jg/coop/web/generated_docs")
+DOCS_DIR = Path("src/jg/coop/web/generated_docs")
 
 
 class GeneratedDocument(BaseModel):
@@ -68,7 +68,7 @@ def generate_redirects() -> Generator[GeneratedDocument, None, None]:
 
 
 def generate_region_jobs_pages() -> Generator[GeneratedDocument, None, None]:
-    jobs_file = Path("jg/coop/web/docs/jobs.jinja")
+    jobs_file = Path("src/jg/coop/web/docs/jobs.jinja")
     jobs_text = jobs_file.read_text(encoding="utf-8-sig", errors="strict")
     content, meta = parse_document(jobs_text)
     yield GeneratedDocument(

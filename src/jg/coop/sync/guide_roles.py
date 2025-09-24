@@ -13,7 +13,7 @@ from jg.coop.models.base import db, hash_models
 from jg.coop.models.role import DocumentedRole
 
 
-IMAGES_DIR = Path("jg/coop/images")
+IMAGES_DIR = Path("src/jg/coop/images")
 
 
 logger = loggers.from_path(__file__)

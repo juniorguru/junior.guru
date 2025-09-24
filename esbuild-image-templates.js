@@ -9,9 +9,9 @@ if (!outdir) {
 }
 
 const result = await esbuild.build({
-  entryPoints: (await readdir("jg/coop/image_templates"))
+  entryPoints: (await readdir("src/jg/coop/image_templates"))
     .filter((file) => file.endsWith(".scss"))
-    .map((file) => `jg/coop/image_templates/${file}`),
+    .map((file) => `src/jg/coop/image_templates/${file}`),
   bundle: true,
   minify: true,
   sourcemap: true,
@@ -32,7 +32,7 @@ const result = await esbuild.build({
         if (pathname.endsWith("@fontsource/inter/index.css")) {
           return source.replaceAll(
             "./files/",
-            "../../../node_modules/@fontsource/inter/files/",
+            "../../../../node_modules/@fontsource/inter/files/",
           );
         }
         return source;

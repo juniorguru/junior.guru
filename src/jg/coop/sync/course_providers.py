@@ -14,7 +14,7 @@ from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
 
 
-YAML_DIR_PATH = Path("jg/coop/data/course_providers")
+YAML_DIR_PATH = Path("src/jg/coop/data/course_providers")
 
 STRING_LENGTH_SEO_LIMIT = 150
 

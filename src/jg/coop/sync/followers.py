@@ -37,7 +37,7 @@ GITHUB_PERSONAL_USERNAME = "honzajavorek"
 @cli.sync_command()
 @click.option(
     "--history-path",
-    default="jg/coop/data/followers.jsonl",
+    default="src/jg/coop/data/followers.jsonl",
     type=click.Path(path_type=Path),
 )
 @click.option("--ecomail-api-key", default=default_from_env("ECOMAIL_API_KEY"))

@@ -13,7 +13,7 @@ logger = loggers.from_path(__file__)
 @click.command()
 @click.option(
     "--path",
-    default=Path("jg/coop/data/sponsors.yml"),
+    default=Path("src/jg/coop/data/sponsors.yml"),
     type=click.Path(path_type=Path),
 )
 @click.option(

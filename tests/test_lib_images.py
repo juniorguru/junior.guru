@@ -18,7 +18,7 @@ def test_is_image_mimetype(mimetype, expected):
 def test_get_source_paths():
     metafile = {
         "inputs": {
-            "jg/coop/image_templates/event.scss": {"bytes": 9547, "imports": []},
+            "src/jg/coop/image_templates/event.scss": {"bytes": 9547, "imports": []},
             "node_modules/@fontsource/inter/files/inter-cyrillic-ext-400-normal.woff2": {
                 "bytes": 10216,
                 "imports": [],
@@ -27,7 +27,7 @@ def test_get_source_paths():
                 "bytes": 130396,
                 "imports": [],
             },
-            "jg/coop/image_templates/thumbnail.scss": {
+            "src/jg/coop/image_templates/thumbnail.scss": {
                 "bytes": 1239348,
                 "imports": [
                     {
@@ -46,9 +46,9 @@ def test_get_source_paths():
     }
 
     assert _get_source_paths(metafile) == [
-        "jg/coop/image_templates/event.scss",
-        "jg/coop/image_templates/thumbnail.scss",
         "node_modules/@fontsource/inter/files/inter-cyrillic-400-normal.woff",
         "node_modules/@fontsource/inter/files/inter-cyrillic-ext-400-normal.woff2",
         "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2",
+        "src/jg/coop/image_templates/event.scss",
+        "src/jg/coop/image_templates/thumbnail.scss",
     ]

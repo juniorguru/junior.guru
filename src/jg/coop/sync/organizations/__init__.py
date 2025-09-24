@@ -28,19 +28,19 @@ from jg.coop.models.partner import Partner
 from jg.coop.models.sponsor import PastSponsor, Sponsor, SponsorTier
 
 
-SPONSORS_YAML_PATH = Path("jg/coop/data/sponsors.yml")
+SPONSORS_YAML_PATH = Path("src/jg/coop/data/sponsors.yml")
 
-PARTNERS_YAML_PATH = Path("jg/coop/data/partners.yml")
+PARTNERS_YAML_PATH = Path("src/jg/coop/data/partners.yml")
 
 PLANS_GQL_PATH = Path(__file__).parent / "plans.gql"
 
 SUBSCRIPTION_GQL_PATH = Path(__file__).parent / "subscription.gql"
 
-IMAGES_DIR = Path("jg/coop/images")
+IMAGES_DIR = Path("src/jg/coop/images")
 
 LOGOS_DIR = IMAGES_DIR / "logos"
 
-LOGOS_CSS_PATH = Path("jg/coop/css/content/_logos.scss")
+LOGOS_CSS_PATH = Path("src/jg/coop/css/content/_logos.scss")
 
 LOGOS_CSS_RE = re.compile(r"\.logos-tier-(\d+)\b")
 

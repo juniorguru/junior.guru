@@ -21,7 +21,7 @@ logger = loggers.from_path(__file__)
 @cli.sync_command(dependencies=["pages"])
 @click.option(
     "--images-path",
-    default="jg/coop/images",
+    default="src/jg/coop/images",
     type=click.Path(exists=True, path_type=Path),
 )
 @click.option("--output-dir", default="thumbnails", type=click.Path(path_type=Path))

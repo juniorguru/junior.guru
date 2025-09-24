@@ -72,7 +72,7 @@ logger = loggers.from_path(__file__)
 @click.option(
     "--path",
     "tips_path",
-    default="jg/coop/data/tips",
+    default="src/jg/coop/data/tips",
     type=click.Path(exists=True, dir_okay=True, file_okay=False, path_type=Path),
 )
 @click.option("--force-dose", is_flag=True)

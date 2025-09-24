@@ -10,7 +10,7 @@ from jg.coop.models.base import db
 from jg.coop.models.wisdom import Wisdom
 
 
-YAML_PATH = Path("jg/coop/data/wisdom.yml")
+YAML_PATH = Path("src/jg/coop/data/wisdom.yml")
 
 YAML_SCHEMA = Seq(
     Map(
