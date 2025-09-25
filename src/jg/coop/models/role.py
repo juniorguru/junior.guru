@@ -17,6 +17,10 @@ class InterestRole(BaseModel):
         return self.select().count()
 
     @classmethod
+    def listing(cls) -> Iterable[Self]:
+        return cls.select().order_by(cls.interest_name)
+
+    @classmethod
     def interests(cls, min_count: int = 10) -> list[tuple[str, int]]:
         counter = Counter()
         for member in ClubUser.members_listing():

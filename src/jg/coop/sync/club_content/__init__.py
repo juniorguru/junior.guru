@@ -25,7 +25,8 @@ def main():
         stats = dict(
             messages=ClubMessage.count(),
             users=ClubUser.count(),
+            channels=ClubChannel.count(),
             members=ClubUser.members_count(),
             pins=ClubPin.count(),
         )
-    logger.info(f"Finished with {pformat(stats)}")
+    logger.info(f"Finished with\n{pformat(stats)}")

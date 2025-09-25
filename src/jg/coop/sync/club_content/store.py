@@ -1,5 +1,5 @@
 import peewee
-from discord import DMChannel, Member, Message, User
+from discord import DMChannel, Member, Message, Thread, ThreadMember, User
 from discord.abc import GuildChannel
 
 from jg.coop.lib import loggers
@@ -129,7 +129,7 @@ def store_message(message: Message) -> ClubMessage:
 
 @make_async
 @db.connection_context()
-def store_pin(message: ClubMessage, member: Member) -> ClubPin:
+def store_pin(message: ClubMessage, member: Member) -> None:
     """
     Stores in database the information about given Discord Member pinning given Discord Message
 
@@ -138,8 +138,23 @@ def store_pin(message: ClubMessage, member: Member) -> ClubPin:
     logger["pins"].debug(
         f"Message {message.url} is pinned by member '{member.display_name}' #{member.id}"
     )
-    return ClubPin.create(
+    ClubPin.create(
         pinned_message=message.id, member=ClubUser.get_member_by_id(member.id)
+    )
+
+
+@make_async
+@db.connection_context()
+def store_thread(thread: Thread, members: list[ThreadMember]) -> None:
+    """Stores in database the information about given Discord public thread"""
+    name = get_channel_name(thread)
+    logger["channels"].debug(f"Thread #{thread.id} aka {name!r}")
+    ClubChannel.create(
+        id=thread.id,
+        name=name,
+        type=int(thread.type.value),
+        tags=[tag.name for tag in thread.applied_tags],
+        members_ids=[member.id for member in members if member.id != ClubMemberID.BOT],
     )
 
 
@@ -151,7 +166,7 @@ def store_channel(channel: GuildChannel) -> None:
     logger["channels"].debug(
         f"Channel #{channel.id} aka {name!r}, type {channel.type.name}"
     )
-    return ClubChannel.create(id=channel.id, name=name, type=int(channel.type.value))
+    ClubChannel.create(id=channel.id, name=name, type=int(channel.type.value))
 
 
 @make_async

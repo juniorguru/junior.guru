@@ -2,7 +2,7 @@ import asyncio
 from datetime import datetime, timedelta, timezone
 from typing import AsyncGenerator
 
-from discord import ChannelType, DMChannel, Member, Message, Reaction, User
+from discord import ChannelType, DMChannel, Member, Message, Reaction, Thread, User
 from discord.abc import GuildChannel
 
 from jg.coop.lib import loggers
@@ -25,6 +25,7 @@ from jg.coop.sync.club_content.store import (
     store_member,
     store_message,
     store_pin,
+    store_thread,
 )
 
 
@@ -127,7 +128,11 @@ async def channel_worker(worker_no, queue) -> None:
         logger_c.info(f"Crawling {get_channel_name(channel)!r}")
 
         tasks = []
-        if channel.type != ChannelType.category:
+        if channel.type == ChannelType.public_thread:
+            channel: Thread
+            thread_members = await channel.fetch_members()
+            tasks.append(asyncio.create_task(store_thread(channel, thread_members)))
+        elif channel.type != ChannelType.category:
             tasks.append(asyncio.create_task(store_channel(channel)))
 
         if hasattr(channel, "is_pinned") and channel.is_pinned():

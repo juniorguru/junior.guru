@@ -17,6 +17,7 @@ from peewee import (
 )
 
 from jg.coop.lib.discord_club import (
+    CLUB_GUILD_ID,
     ClubChannelID,
     ClubMemberID,
     parse_discord_link,
@@ -538,6 +539,16 @@ class ClubChannel(BaseModel):
     id = IntegerField(primary_key=True)
     name = CharField()
     type = IntegerField(constraints=[check_enum("type", ChannelType)])
+    tags = JSONField(default=list, index=True)
+    members_ids = JSONField(default=list)
+
+    @property
+    def url(self) -> str:
+        return f"https://discord.com/channels/{CLUB_GUILD_ID}/{self.id}"
+
+    @classmethod
+    def count(cls) -> int:
+        return cls.select().count()
 
     @classmethod
     def get_name_by_id(cls, channel_id: int) -> str:
@@ -546,3 +557,10 @@ class ClubChannel(BaseModel):
     @classmethod
     def names_mapping(cls) -> dict[int, str]:
         return {channel.id: channel.name for channel in cls.select()}
+
+    @classmethod
+    def tag_listing(cls, tag: str) -> Iterable[Self]:
+        tags = cls.tags.children().alias("tags")
+        return (
+            cls.select().from_(cls, tags).where(tags.c.value == tag).order_by(cls.name)
+        )

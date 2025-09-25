@@ -365,6 +365,16 @@ def parse_discord_link(url: str) -> DiscordLinkIDs:
     raise ValueError(url)
 
 
+def parse_channel_link(url: str) -> int:
+    try:
+        ids = parse_discord_link(url)
+    except KeyError:
+        raise ValueError(f"Invalid Discord channel URL: {url}")
+    if ids["guild_id"] != CLUB_GUILD_ID:
+        raise ValueError(f"Channel URL not for the club guild: {url}")
+    return ids["channel_id"]
+
+
 def parse_channel(channel: str) -> int:
     try:
         return int(channel)

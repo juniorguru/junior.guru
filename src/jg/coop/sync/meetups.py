@@ -14,7 +14,11 @@ from pydantic import BaseModel, HttpUrl, computed_field, field_validator
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import apify, discord_task, loggers
 from jg.coop.lib.cli import async_command
-from jg.coop.lib.discord_club import ClubClient, add_reactions, parse_discord_link
+from jg.coop.lib.discord_club import (
+    ClubClient,
+    add_reactions,
+    parse_channel_link,
+)
 from jg.coop.lib.mapycz import REGIONS, locate
 from jg.coop.lib.mutations import mutating_discord
 from jg.coop.lib.yaml import YAMLConfig
@@ -45,19 +49,18 @@ class PostingInstruction(BaseModel):
     meetup: Meetup
 
 
-class GroupConfig(YAMLConfig):
-    group_url: HttpUrl
+class ThreadConfig(YAMLConfig):
+    url: HttpUrl
     regions: list[str]
 
     @computed_field
-    @property
-    def channel_id(self) -> int:
-        return parse_channel_id(self.group_url)
+    def id(self) -> int:
+        return parse_channel_link(str(self.url))
 
-    @field_validator("group_url")
+    @field_validator("url")
     @classmethod
-    def validate_group_url(cls, value: HttpUrl) -> HttpUrl:
-        parse_channel_id(value)
+    def validate_url(cls, value: HttpUrl) -> HttpUrl:
+        parse_channel_link(str(value))
         return value
 
     @field_validator("regions")
@@ -72,7 +75,7 @@ class GroupConfig(YAMLConfig):
 
 
 class MeetupsConfig(YAMLConfig):
-    groups: list[GroupConfig]
+    threads: list[ThreadConfig]
 
 
 @cli.sync_command(dependencies=["club-content"])
@@ -106,7 +109,7 @@ async def main(config_path: Path, actor_names: list[str], today: date, days: int
     logger.info(f"Reading {config_path.name}")
     yaml_data = yaml.safe_load(config_path.read_text())
     config = MeetupsConfig(**yaml_data)
-    logger.info(f"Loaded {len(config.groups)} local groups")
+    logger.info(f"Loaded {len(config.threads)} local groups")
 
     items = itertools.chain.from_iterable(
         apify.fetch_data(actor_name) for actor_name in actor_names
@@ -142,30 +145,32 @@ async def main(config_path: Path, actor_names: list[str], today: date, days: int
     logger.info(f"Meetups by region: {', '.join(stats)}")
 
     instructions = []
-    for group in config.groups:
-        logger.info(f"Group {group.group_url}: {', '.join(group.regions)}")
-        group_meetups = sorted(
+    for thread in config.threads:
+        logger.info(f"Group {thread.url}: {', '.join(thread.regions)}")
+        thread_meetups = sorted(
             itertools.chain.from_iterable(
-                meetups_by_region.get(region, []) for region in group.regions
+                meetups_by_region.get(region, []) for region in thread.regions
             ),
             key=attrgetter("starts_at"),
         )
-        logger.info(f"Found {len(group_meetups)} relevant meetups")
+        logger.info(f"Found {len(thread_meetups)} relevant meetups")
 
         messages_by_url = {
             message.ui_urls[0]: message
-            for message in ClubMessage.channel_listing(group.channel_id, by_bot=True)
+            for message in ClubMessage.channel_listing(thread.id, by_bot=True)
             if message.ui_urls
         }
         logger.info(f"Found {len(messages_by_url)} bot messages with UI URLs")
 
-        group_meetups = [
-            meetup for meetup in group_meetups if str(meetup.url) not in messages_by_url
+        thread_meetups = [
+            meetup
+            for meetup in thread_meetups
+            if str(meetup.url) not in messages_by_url
         ]
-        logger.info(f"Will post {len(group_meetups)} relevant meetups")
+        logger.info(f"Will post {len(thread_meetups)} relevant meetups")
         instructions.extend(
-            PostingInstruction(channel_id=group.channel_id, meetup=meetup)
-            for meetup in group_meetups
+            PostingInstruction(channel_id=thread.id, meetup=meetup)
+            for meetup in thread_meetups
         )
     if instructions:
         discord_task.run(sync_meetups, instructions)
@@ -212,13 +217,6 @@ async def sync_meetups(client: ClubClient, instructions: list[PostingInstruction
             message = await proxy.send(embed=embed)
         if message:
             await add_reactions(message, "🙋")
-
-
-def parse_channel_id(url: str | HttpUrl) -> int:
-    try:
-        return parse_discord_link(str(url))["channel_id"]
-    except KeyError:
-        raise ValueError(f"Invalid Discord channel URL: {url}")
 
 
 def format_time(
