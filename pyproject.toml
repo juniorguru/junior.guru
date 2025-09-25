@@ -5,7 +5,7 @@ description = "The junior.guru website, Discord bot, and synchronization scripts
 readme = "README.md"
 authors = [{name = "Honza Javorek", email = "honza@junior.guru"}]
 license = "AGPL-3.0-only AND CC-BY-SA-4.0"
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 dependencies = [
     "jg.beak@git+https://github.com/juniorguru/beak.git",
     "jg.chick@git+https://github.com/juniorguru/chick.git",
@@ -29,7 +29,7 @@ dependencies = [
     "httpx==0.28.1",
     "ics==0.8.0.dev0",
     "jinja2==3.1.6",
-    "lingua-language-detector==2.0.2",
+    "lingua-language-detector==2.1.1",
     "livereload==2.7.1",
     "lxml==6.0.2",
     "markdown==3.9",

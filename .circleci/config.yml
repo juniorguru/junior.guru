@@ -3,7 +3,7 @@ version: 2.1
 executors:
   python-js:
     docker:
-      - image: cimg/python:3.12-browsers
+      - image: cimg/python:3.13-browsers
     working_directory: ~/project
 
 orbs:
