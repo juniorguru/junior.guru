@@ -190,7 +190,10 @@ async def main(config_path: Path, tag: str):
 
 async def sync_interests(client: ClubClient, instructions: list[MembershipInstruction]):
     threads = {
-        id: client.club_guild.get_thread(id)
+        id: (
+            client.club_guild.get_thread(id)
+            or await client.club_guild.fetch_channel(id)
+        )
         for id in {instruction.thread_id for instruction in instructions}
     }
     dm_channels = {
