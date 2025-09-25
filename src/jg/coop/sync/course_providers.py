@@ -68,7 +68,7 @@ def main():
             slug=slug,
             edit_url=(
                 "https://github.com/juniorguru/junior.guru/"
-                f"blob/main/jg/coop/data/course_providers/{slug}.yml"
+                f"blob/main/src/jg/coop/data/course_providers/{slug}.yml"
             ),
             cz_name=cz_company["name"] if cz_company else None,
             cz_legal_form=cz_company["legal_form"] if cz_company else None,
