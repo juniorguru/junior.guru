@@ -10,13 +10,16 @@ orbs:
   git-shallow-clone: guitarrapc/git-shallow-clone@2.8.0
 
 commands:
-  install-uv:
+  use-updated-uv:
     steps:
+      - attach_workspace:
+          at: ~
       - run:
-          name: Install uv >= 0.8
+          name: Use updated uv
           command: |
-            uv --version
-            uv self update
+            echo 'export PATH=~/bin:$PATH' >> $BASH_ENV
+            echo $PATH
+            which uv
             uv --version
   enable-github-pushing:
     steps:
@@ -44,7 +47,14 @@ jobs:
       - git-shallow-clone/checkout
       - restore_cache:
           key: deps-{{ checksum "uv.lock" }}-{{ checksum "package-lock.json" }}
-      - install-uv
+      - run:
+          name: Install uv >= 0.8
+          command: |
+            uv --version
+            uv self update
+            uv --version
+            mkdir -p ~/bin
+            cp "$(which uv)" ~/bin/uv
       - run:
           name: Install Python dependencies
           command: |
@@ -78,6 +88,7 @@ jobs:
       - persist_to_workspace:
           root: "~"
           paths:
+            - bin
             - .cache/uv
             - .cache/ms-playwright
             - project
@@ -87,7 +98,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - install-uv
+      - use-updated-uv
       - run:
           name: Test
           command: uv run jg test --verbose
@@ -114,7 +125,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - install-uv
+      - use-updated-uv
       - run:
           name: Cache stats
           command: uv run jg cache tags
@@ -135,7 +146,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - install-uv
+      - use-updated-uv
       - run:
           name: Load data
           command: uv run jg data load --move
@@ -163,7 +174,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - install-uv
+      - use-updated-uv
       - run:
           name: Snapshot files
           command: uv run jg data snapshot
@@ -187,7 +198,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - install-uv
+      - use-updated-uv
       - run:
           name: Load data
           command: uv run jg data load --move
@@ -226,7 +237,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - install-uv
+      - use-updated-uv
       - run:
           name: Build web
           command: uv run jg web build
@@ -243,7 +254,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - install-uv
+      - use-updated-uv
       - run:
           name: Reset repo
           command: uv run jg reset-repo
@@ -260,7 +271,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - install-uv
+      - use-updated-uv
       - run:
           name: Backup data
           command: uv run jg backup data
@@ -278,7 +289,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - install-uv
+      - use-updated-uv
       - enable-github-pushing
       - run:
           name: Deploy to GitHub Pages
@@ -289,7 +300,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - install-uv
+      - use-updated-uv
       - run: uv run jg check-docs --no-build
 
   check-links:
@@ -315,7 +326,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - install-uv
+      - use-updated-uv
       - run: uv run jg check-bot
 
   check-sponsors:
@@ -323,7 +334,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - install-uv
+      - use-updated-uv
       - run: uv run jg check-sponsors
 
 workflows:
