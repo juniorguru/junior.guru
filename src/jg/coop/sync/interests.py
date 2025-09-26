@@ -4,7 +4,7 @@ from pathlib import Path
 import click
 import discord
 import yaml
-from discord import ChannelType
+from discord import ChannelType, Thread
 from pydantic import BaseModel, HttpUrl, computed_field, field_validator
 
 from jg.coop.cli.sync import main as cli
@@ -211,31 +211,39 @@ async def sync_interests(client: ClubClient, instructions: list[MembershipInstru
             with mutating_discord(thread) as proxy:
                 await proxy.add_user(discord.Object(id=instruction.member_id))
             with mutating_discord(dm_channel) as proxy:
-                await proxy.send(
-                    f"{EMOJI_NAMESPACE} {EMOJI_ADD} Podle tvých zájmů jsem tě přidalo do vlákna {thread.jump_url}"
-                    "\n\n"
-                    f"**{thread.name}** je „zájmová skupinka”. Sdílí se tam "
-                    "novinky, drby, tipy, filozofické úvahy, vysvětlují obecnější koncepty, "
-                    "nebo řeší společné úlohy."
-                    "\n\n"
-                    "Pokud něco debuguješ, založ separátní vlákno v "
-                    f"https://discord.com/channels/{CLUB_GUILD_ID}/{ClubChannelID.QA} "
-                    "a do skupinky na to hoď jenom odkaz, ať se téma moc nezaspamuje."
-                )
+                await proxy.send(create_adding_message(thread))
         elif instruction.operation == MembershipOperation.INFO:
             logger.info(
                 f"Informing member #{instruction.member_id} about thread #{instruction.thread_id}"
             )
             with mutating_discord(dm_channel) as proxy:
-                await proxy.send(
-                    f"{EMOJI_NAMESPACE} {EMOJI_INFO} Podle tvých zájmů by tě mělo bavit sledování {thread.jump_url}, ale nejsi tam…"
-                    "\n\n"
-                    f"Pokud tě „zájmová skupinka” na téma **{thread.name}** nebaví a odejdeš "
-                    "přes tlačítko _Sledující/Sledovat_, už tě přidávat nebudu. "
-                    "Ale třeba to byl jen nějaký omyl, tak aspoň píšu."
-                    "\n\n"
-                    "Svoje zájmy můžeš upravovat v sekci _Kanály a role_, kterou najdeš úplně nahoře v seznamu kanálů."
-                )
+                await proxy.send(create_info_message(thread))
+
+
+def create_adding_message(thread: Thread) -> str:
+    return (
+        f"{EMOJI_NAMESPACE} {EMOJI_ADD} Podle tvých zájmů jsem tě přidalo do vlákna {thread.jump_url}"
+        "\n\n"
+        f"**{thread.name}** je „zájmová skupinka”. Sdílí se tam "
+        "novinky, drby, tipy, filozofické úvahy, vysvětlují obecnější koncepty, "
+        "nebo řeší společné úlohy."
+        "\n\n"
+        "Pokud něco debuguješ, založ separátní vlákno v "
+        f"https://discord.com/channels/{CLUB_GUILD_ID}/{ClubChannelID.QA} "
+        "a do skupinky na to hoď jenom odkaz, ať se téma moc nezaspamuje."
+    )
+
+
+def create_info_message(thread: Thread) -> str:
+    return (
+        f"{EMOJI_NAMESPACE} {EMOJI_INFO} Podle tvých zájmů by tě mělo bavit sledování {thread.jump_url}, ale nejsi tam…"
+        "\n\n"
+        f"Pokud tě „zájmová skupinka” na téma **{thread.name}** nebaví a odejdeš "
+        "přes tlačítko _Sledující/Sledovat_, už tě přidávat nebudu. "
+        "Ale třeba to byl jen nějaký omyl, tak aspoň píšu."
+        "\n\n"
+        "Svoje zájmy můžeš upravovat v sekci _Kanály a role_, kterou najdeš úplně nahoře v seznamu kanálů."
+    )
 
 
 def contains_adding_message(messages: list[ClubMessage], thread_url: str) -> bool:
