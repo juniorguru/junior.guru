@@ -1,4 +1,3 @@
-from email.policy import default
 from enum import StrEnum
 from itertools import groupby
 from operator import attrgetter
