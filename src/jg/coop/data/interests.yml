@@ -1,25 +1,56 @@
 roles:
+  # Math
   - id: 1420401262658060328
     threads:
       - https://discord.com/channels/769966886598737931/1417459492093693952
       - https://discord.com/channels/769966886598737931/1303022608148594808
 
+  # PHP
   - id: 1085220896005963778
     threads:
       - https://discord.com/channels/769966886598737931/1421134766488420368
 
+  # Servers and Infra
   - id: 1045328275762843648
     threads:
       - https://discord.com/channels/769966886598737931/1421135941619159083
 
+  # C# and .NET
   - id: 1085220839227654204
     threads:
       - https://discord.com/channels/769966886598737931/1421169418263859353
 
+  # Python
   - id: 1085220736957947905
     threads:
       - https://discord.com/channels/769966886598737931/1421170531511566409
 
+  # Data
   - id: 1045328596866170910
     threads:
       - https://discord.com/channels/769966886598737931/1421171257164038231
+
+  # Mobile development
+  - id: 1045328319555571834
+    threads:
+      - https://discord.com/channels/769966886598737931/1421178012480700609
+
+  # Java
+  - id: 1085220806667288646
+    threads:
+      - https://discord.com/channels/769966886598737931/1421180786723262748
+
+  # Security
+  - id: 1045328461901873212
+    threads:
+      - https://discord.com/channels/769966886598737931/1421181822389325828
+
+  # Testing
+  - id: 1045328672254603384
+    threads:
+      - https://discord.com/channels/769966886598737931/1421182846231511202
+
+  # Web frontend
+  - id: 1045328146515370116
+    threads:
+      - https://discord.com/channels/769966886598737931/1421184243563757590
