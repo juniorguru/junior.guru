@@ -7,5 +7,6 @@ logger = loggers.from_path(__file__)
 
 
 async def process(item: dict) -> dict:
-    item["lang"] = await call_async(parse_language, item["description_text"])
+    text = item["description_text"] or item["title"]
+    item["lang"] = await call_async(parse_language, text)
     return item
