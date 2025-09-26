@@ -12,8 +12,6 @@ orbs:
 commands:
   use-updated-uv:
     steps:
-      - attach_workspace:
-          at: ~
       - run:
           name: Use updated uv
           command: |
