@@ -18,7 +18,12 @@ logger = loggers.from_path(__file__)
 @click.command()
 @click.argument("src_channel_id", type=parse_channel)
 @click.argument("dst_forum_id", type=parse_channel)
-@click.option("--archive-id", type=int, default=878944218545025034, help="Category ID to move the archived channel to")
+@click.option(
+    "--archive-id",
+    type=int,
+    default=878944218545025034,
+    help="Category ID to move the archived channel to",
+)
 @click.option(
     "-t",
     "--tag",
@@ -58,7 +63,15 @@ def main(
 ):
     mutations.allow("discord")
     discord_task.run(
-        move, src_channel_id, dst_forum_id, archive_id, tag, name, description, limit, role_id
+        move,
+        src_channel_id,
+        dst_forum_id,
+        archive_id,
+        tag,
+        name,
+        description,
+        limit,
+        role_id,
     )
 
 
