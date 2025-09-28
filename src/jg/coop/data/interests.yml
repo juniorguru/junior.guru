@@ -54,3 +54,8 @@ roles:
   - id: 1045328146515370116
     threads:
       - https://discord.com/channels/769966886598737931/1421184243563757590
+
+  # C, C++, Rust, Zig
+  - id: 1420401521723576340
+    threads:
+      - https://discord.com/channels/769966886598737931/1421900689512202311
