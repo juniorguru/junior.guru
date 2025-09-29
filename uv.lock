@@ -807,7 +807,7 @@ wheels = [
 [[package]]
 name = "jg-beak"
 version = "0.0"
-source = { git = "https://github.com/juniorguru/beak.git#3112e135dc47255f7dd1b98ff56cffb8e1acd39c" }
+source = { git = "https://github.com/juniorguru/beak.git#044b4712c22394a458912e718741e6a309e002fe" }
 dependencies = [
     { name = "click" },
 ]
