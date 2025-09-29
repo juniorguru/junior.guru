@@ -91,12 +91,15 @@ Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme
 Chceš mít jistotu, že v klubu najdeš lidi, které zajímá totéž co tebe? Že najdeš publikum pro svůj dotaz nebo parťáky pro svůj projekt? Podívej se, co o svých zájmech prozradili sami členové.
 {% endcall %}
 <ul class="interests standout-top">
-{% set max_count = interests|map(attribute=1)|max %}
-{% for interest_name, count in interests %}
-  {% set shade_index = 7 - ((count / max_count) * 6)|round(0, 'floor')|int %}
+{% set max_members_count = interests|map(attribute=1)|max %}
+{% for role, members_count in interests[:12] %}
+  {% set shade_index = 7 - ((members_count / max_members_count) * 6)|round(0, 'floor')|int %}
   <li class="interests-item shade-{{ shade_index }}">
-    <strong class="interests-name">{{ interest_name|replace(' a ', ' a ') }}</strong>
-    <span class="interests-badge">{{ count }} členů</span>
+    <span class="interests-icon-container">
+      {{ img('static/' + role.icon_path, 'Logo: ' + role.interest_name, 50, 50, lazy=False, class="interests-icon") }}
+    </span>
+    <strong class="interests-name">{{ role.interest_name|replace(' a ', ' a ') }}</strong>
+    <span class="interests-badge">{{ members_count }} členů</span>
   </li>
 {% endfor %}
 </ul>

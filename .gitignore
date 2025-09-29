@@ -95,6 +95,7 @@ google_service_account.json
 /src/jg/coop/images/posters-podcast/*.webp
 /src/jg/coop/images/thumbnails/*.png
 /src/jg/coop/images/thumbnails/*.webp
+/src/jg/coop/images/interests/*.svg
 
 # Special question mark logo
 !/src/jg/coop/images/logos-jobs/unknown.webp

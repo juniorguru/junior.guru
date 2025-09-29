@@ -6,6 +6,7 @@ from typing import Generator
 
 import click
 import discord
+import httpx
 import yaml
 from discord import ChannelType, Thread
 from pydantic import BaseModel, HttpUrl, computed_field, field_validator
@@ -26,11 +27,14 @@ from jg.coop.models.club import ClubChannel, ClubMessage, ClubUser
 from jg.coop.models.role import InterestRole
 
 
-YAML_PATH = Path("src/jg/coop/data/interests.yml")
-
-
 logger = loggers.from_path(__file__)
 
+
+YAML_PATH = Path("src/jg/coop/data/interests.yml")
+
+IMAGES_DIR = Path("src/jg/coop/images")
+
+ICONS_DIR = IMAGES_DIR / "interests"
 
 EMOJI_NAMESPACE = "🛹"
 
@@ -51,8 +55,19 @@ class MembershipInstruction(BaseModel):
     thread_id: int
 
 
+class IconSet(StrEnum):
+    DEVICON = "devicon"
+    BOOTSTRAP = "bootstrap"
+
+
+class IconConfig(YAMLConfig):
+    set: IconSet
+    slug: str
+
+
 class RoleConfig(YAMLConfig):
     id: int
+    icon: IconConfig
     threads: list[HttpUrl]
 
     @computed_field
@@ -76,13 +91,14 @@ class InterestsConfig(YAMLConfig):
     "--config",
     "config_path",
     default="src/jg/coop/data/interests.yml",
-    type=click.Path(exists=True, path_type=Path),
+    type=click.Path(exists=True, dir_okay=False, path_type=Path),
 )
 @click.option("--tag", default="zájmová skupinka")
 @click.option("--debug-user", default=None, type=int)
 @db.connection_context()
 @async_command
 async def main(config_path: Path, tag: str, debug_user: int | None):
+    # Load configuration
     logger.info(f"Reading {config_path.name}")
     yaml_data = yaml.safe_load(config_path.read_text())
     config = InterestsConfig(**yaml_data)
@@ -100,6 +116,26 @@ async def main(config_path: Path, tag: str, debug_user: int | None):
     if extra_ids := set(config_roles) - set(interest_roles):
         raise ValueError(f"Configured interest roles not found: {extra_ids}")
 
+    # Ensure roles have icons
+    icon_urls = {
+        IconSet.DEVICON: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/{slug}/{slug}-plain.svg",
+        IconSet.BOOTSTRAP: "https://icons.getbootstrap.com/assets/icons/{slug}.svg",
+    }
+    with httpx.Client() as http_client:
+        for role_id, role in interest_roles.items():
+            icon_path = ICONS_DIR / f"{role_id}.svg"
+            if icon_path.exists():
+                logger.debug(f"Icon already exists: {icon_path}")
+            else:
+                config_icon = config_roles[role_id].icon
+                icon_url = icon_urls[config_icon.set].format(slug=config_icon.slug)
+                logger.info(f"Fetching {role.interest_name!r} icon from {icon_url}")
+                response = http_client.get(icon_url)
+                response.raise_for_status()
+                icon_path.write_bytes(response.content)
+            role.icon_path = icon_path.relative_to(IMAGES_DIR)
+            role.save()
+
     # Validate threads configuration against database
     config_thread_ids = {
         thread_id for role in config.roles for thread_id in role.threads_ids
@@ -114,7 +150,7 @@ async def main(config_path: Path, tag: str, debug_user: int | None):
     if extra_ids := config_thread_ids - set(interest_threads):
         raise ValueError(f"Configured interest threads not found: {extra_ids}")
 
-    # Members to process
+    # Members to go through
     if debug_user:
         logger.warning(f"DEBUG MODE enabled, processing only member #{debug_user}!")
         members = [ClubUser.get_by_id(debug_user)]

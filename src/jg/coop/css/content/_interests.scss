@@ -13,10 +13,10 @@ $interests-shades: 7;
 .interests-item {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 10em;
   padding: $spacer;
   text-align: center;
+  border: 1px solid $jg-yellow;
   border-radius: $border-radius;
 }
 
@@ -31,10 +31,34 @@ $interests-shades: 7;
   }
 }
 
+.interests-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto $spacer;
+  background: $jg-white;
+  border: 1px solid $jg-yellow;
+  border-radius: 50%;
+}
+
+.interests-icon {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  filter: brightness(0) saturate(100%);
+  opacity: .8;
+}
+
 .interests-name {
   @extend .fs-5;
   padding: 0;
   margin: 0;
   font-weight: $font-weight-medium;
-  line-height: 1.5;
+  line-height: 1.2;
+}
+
+.interests-badge {
+  line-height: 2;
 }

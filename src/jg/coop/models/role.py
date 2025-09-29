@@ -11,6 +11,7 @@ class InterestRole(BaseModel):
     club_id = IntegerField(primary_key=True)
     name = CharField(unique=True)
     interest_name = CharField(unique=True)
+    icon_path = CharField(null=True)
 
     @classmethod
     def count(self) -> int:
@@ -21,15 +22,15 @@ class InterestRole(BaseModel):
         return cls.select().order_by(cls.interest_name)
 
     @classmethod
-    def interests(cls, min_count: int = 10) -> list[tuple[str, int]]:
+    def interests(cls) -> list[tuple[Self, int]]:
         counter = Counter()
         for member in ClubUser.members_listing():
             counter.update(member.initial_roles)
-        roles_by_id = {role.club_id: role.interest_name for role in cls.select()}
+        roles_by_id = {role.club_id: role for role in cls.select()}
         return [
             (roles_by_id[role_id], count)
             for role_id, count in counter.most_common()
-            if role_id in roles_by_id and count >= min_count
+            if role_id in roles_by_id
         ]
 
 
