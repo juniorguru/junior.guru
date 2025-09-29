@@ -203,35 +203,34 @@ Rady kolemjdoucích ve veřejných skupinách jsou náchylné k fanouškovství,
 
 <div id="cenik" class="section-background yellow"><section class="section">
 
-<h2>Prvních 14 dní zdarma</h2>
+<h2>Přidej se k nám</h2>
 {% call lead() %}
-Nemusíš hned zadávat kartu. Nakoukni, jak to u nás vypadá. **Za vyzkoušení nic nedáš.** Pokud ti klub nesedne, prostě akorát nedoplníš platební údaje a systém tě po dvou týdnech vyhodí.
+Zaregistruj se a nakoukni, jak to u nás vypadá. Kartu nezadáváš. Klidně si všechno nejdřív vyzkoušej. Pokud ti klub nesedne, prostě akorát po dvou týdnech nedoplníš platební údaje a systém tě automaticky vyhodí.
 {% endcall %}
 
 <div class="pricing standout">
   <div class="pricing-block pulse-hover">
-    <h3 class="pricing-heading">Předplatné</h3>
+    <h3 class="pricing-heading">Zdarma na 14 dní</h3>
+    <p class="pricing-subheading">Potom <strong>199 Kč</strong> měsíčně<sup>*</sup></p>
     <ul class="pricing-benefits">
-      <li class="pricing-benefits-item">Prvních 14 dní zdarma</li>
-      <li class="pricing-benefits-item">Můžeš to kdykoliv zrušit</li>
-      <li class="pricing-benefits-item price"><strong>199 Kč měsíčně</strong></li>
+      {# <li class="pricing-benefits-item price"><strong>Zdarma na 14 dní</strong></li> #}
+      <li class="pricing-benefits-item">{{ 'check-circle-fill'|icon }} Bez zadávání karty, bez placení</li>
+      <li class="pricing-benefits-item">{{ 'check-circle-fill'|icon }} Po 2 týdnech se rozhodneš</li>
+      <li class="pricing-benefits-item">{{ 'check-circle-fill'|icon }} I potom to jde kdykoliv zrušit</li>
     </ul>
-    <a class="pricing-button" href="https://juniorguru.memberful.com/checkout?plan=89511">Nakoukni dovnitř</a>
-  </div>
-  <div class="pricing-block pulse-hover">
-    <h3 class="pricing-heading">Stipendium</h3>
-    <ul class="pricing-benefits">
-      <li class="pricing-benefits-item">Podpora pro znevýhodněné</li>
-      <li class="pricing-benefits-item">Vyplň formulář a uvidíš</li>
-      <li class="pricing-benefits-item price"><strong>Zdarma na 1 rok</strong></li>
-    </ul>
-    <a class="pricing-button" href="{{ pages|docs_url('finaid.md')|url }}" target="_blank" rel="noopener">Zkus štěstí</a>
+    <a class="pricing-button" href="https://juniorguru.memberful.com/checkout?plan=89511">Bezplatně vyzkoušet</a>
   </div>
 </div>
 
 {% call markdown() %}
 [Obchodní podmínky](tos.md) jsou napsané lidsky, klidně si je projdi. Je to smlouva, kterou mezi sebou budeme mít. Odkazuje se na [pravidla chování](coc.md), tak na ně taky mrkni, ať znáš mantinely a víš kam pro pomoc. [Zásady ochrany osobních údajů](privacy.md) popisují, jaká data o tobě Honza má a jak s nimi zachází.
 {% endcall %}
+
+<p class="pricing-note">
+  <small>
+    <sup>*</sup> Žádný háček, ani skrytá podmínka. Tohle je jen poznámka na okraj, že pokud by se ti v klubu líbilo, ale 199 Kč měsíčně je na tebe moc, můžeš <a href="{{ pages|docs_url('finaid.md')|url }}">požádat o roční stipendium</a>.
+  </small>
+</p>
 </section></div>
 
 

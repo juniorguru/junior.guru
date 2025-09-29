@@ -13,7 +13,10 @@
 
 .pricing-block {
   position: relative;
-  min-width: 15rem;
+  display: flex;
+  flex-direction: column;
+  gap: map-get($spacers, 1);
+  min-width: 20rem;
   padding: map-get($spacers, 4);
   margin-bottom: $spacer;
   text-align: center;
@@ -22,25 +25,40 @@
   border-radius: $border-radius-lg;
 
   @include media-breakpoint-up(md) {
+    max-width: 30%;
     margin-bottom: 0;
   }
 }
 
-.pricing-heading {
-  margin-top: 0;
+.pricing-heading,
+.pricing-subheading,
+.pricing-benefits {
+  margin: 0;
+}
+
+.pricing-subheading {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
 }
 
 .pricing-benefits {
   @extend .list-unstyled;
+  width: 90%;
+  margin: $spacer auto map-get($spacers, 4);
   font-size: $font-size-sm;
+  text-align: left;
 
   @include media-breakpoint-up(lg) {
     font-size: $font-size-base;
   }
 }
 
+.pricing-benefits .bi {
+  margin-right: map-get($spacers, 1);
+  @extend .text-success;
+}
+
 .pricing-benefits-item.price {
-  margin-top: $spacer;
   font-size: $font-size-lg;
 }
 
@@ -49,4 +67,10 @@
   @extend .btn-primary;
   @extend .btn-lg;
   @extend .stretched-link;
+}
+
+.pricing-note,
+.pricing-note a {
+  @extend .text-muted;
+  white-space: normal;
 }
