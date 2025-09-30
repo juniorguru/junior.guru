@@ -122,8 +122,7 @@ async def main(today: date, days: int, correction_attempts: int):
 
                 {json.dumps(summary.model_dump(), indent=2, ensure_ascii=False)}
 
-                Jenže je tam chyba. Shrnutí má obsahovat vždy ID první zprávy, která téma odstartovala.
-                Jenže zprávy s těmito ID neexistují: {', '.join(map(str, invalid_ids))}
+                Je v něm ale chyba. Shrnutí má obsahovat vždy ID první zprávy, která téma odstartovala. Jenže zprávy s těmito ID neexistují: {', '.join(map(str, invalid_ids))}
 
                 Najdi v přiloženém přehledu kanálů a zpráv nějaké vhodné existující zprávy pro témata s chybnými ID, a nahraď chybná ID za čísla těchto zpráv.
                 Důležité: Nic jiného ve shrnutí neměň, pouze oprav ta neexistující ID!
