@@ -576,7 +576,12 @@ class ClubChannel(BaseModel):
 
 
 class ClubTopic(BaseModel):
+    order = IntegerField()
     name = CharField()
     text = CharField()
     emoji = CharField(unique=True)
     message = ForeignKeyField(ClubMessage)
+
+    @classmethod
+    def listing(cls) -> Iterable[Self]:
+        return cls.select().order_by(cls.order)

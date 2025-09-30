@@ -1,0 +1,29 @@
+Ahoj, tady robotické kuře z junior.guru! Mám pro tebe aktuální dávku novinek.{% if subscribers_new_count >= 5 %} Vítám **{{ subscribers_new_count }} nových odběratelů**, celkem je vás už {{ subscribers_count }}!{% endif %}
+
+## Čísla z pracovního trhu
+
+{# vytvořit základní statistiky kolem jobs a dát je do about - kolik nabidek, jake  hlavni technologie (klidne graf), trend jejich počtu v čase - tohle klidne mit i na webu a jen to v newsletteru odprezentovat, c2a na vsechny jobs na webu, k tomu ty podpultovy tam nejak dostat (chatgpt - btw if i generate chart with chart.js, can i export it to an image, somehow?) #}
+
+## Kurzy programování a testování
+
+{# na jaké 3 kurzy lidi nejvíc chodí v katalogu, ale mít tam i sponzorované kurzy, abych podpořil že si to ty firmy budou platit (přidat to do ceníku) #}
+
+{# sesbírat informace o tom kolik bylo zmínek o jakých kurzech v poslední době (měsíc) v klubu (topics) #}
+
+## Srazy, konference a jiné akce
+
+{# vymyslet jak v newsletteru prezentovat meetup akce - nějaký kalendář? možná jen ty, kam jdou členové? #}
+
+## Inspirace
+
+{# (přednášky, podcast, stories) #}
+
+## Co se dělo v klubu
+V naší Discord komunitě se napsalo **{{ club_content_size }} písmenek**. Tady je shrnutí toho nejzajímavějšího. Pokud v klubu ještě nejsi, nebo vůbec nevíš, o co jde, mrkni na [junior.guru/club](https://junior.guru/club/)
+
+{# kolik bylo v poslední době v klubu nových CVček na review, co se dělo v mentoring tržišti, nejaktivnější 3 skupinky, deníček měsíce (1 nejaktivnější), nové výtvory (všechny), co se dělo v práce hledám, nejvtipnější věc ve volná zábava #}
+
+{% for topic in topics %}
+### {{ topic.emoji }} {{ topic.name }}
+{{ topic.text }} [Celá diskuze]({{ topic.message.url }})
+{% endfor %}

@@ -72,10 +72,11 @@ async def main(today: date, days: int, correction_attempts: int):
     result = await summarize_club(today, days, correction_attempts)
 
     logger.info(f"Saving {len(result.topics)} topics")
-    for topic in result.topics:
+    for order, topic in enumerate(result.topics, start=1):
         message = ClubMessage.get_by_id(topic.message_id)
         logger.debug(f"Topic {message.url}\n{pformat(topic.model_dump())}")
         ClubTopic.create(
+            order=order,
             name=topic.name,
             text=topic.text,
             emoji=topic.emoji,
@@ -116,7 +117,7 @@ async def summarize_club(today: date, days: int, correction_attempts: int):
     logger.info(f"Summarizing the feed, {len(feed)} characters… (takes a while)")
     summary = await ask_llm(
         """
-            Pomáháš sledovat, co se děje v naší komunitě IT juniorů, která je na Discordu a říká si „klub“. Přijde ti přehled kanálů a zpráv. Ty uděláš shrnutí toho nejpodstatnějšího. Podstatná témata poznáš podle toho, že jsme si o nich hodně psali, zapojilo se do debaty víc členů, nebo to mělo dost (emoji) reakcí. Podobná témata nebo delší diskuze ale spoj, ať je ten výběr pestrý, ne že z jedné konverzace uděláš hned několik témat. Na výstupu vrať JSON s tématy, kde každé má čtyři atributy:
+            Pomáháš sledovat, co se děje v naší komunitě IT juniorů, která je na Discordu a říká si „klub“. Přijde ti přehled kanálů a zpráv. Ty uděláš shrnutí toho nejpodstatnějšího. Podstatná témata poznáš podle toho, že jsme si o nich hodně psali, zapojilo se do debaty víc členů, nebo to mělo dost (emoji) reakcí. Na výstupu vrať JSON s tématy, kde každé má čtyři atributy:
 
             - `topics` (array[object]): Seznam 15 nejpodstatnějších témat. Seřaď je od nejzásadnějších po ty méně významné. Každé téma obsahuje:
                 - `engagement_score` (int): Skóre toho, jak bylo téma podstatné. Vypočítá se jako součet počtu zpráv, unikátních autorů a reakcí. Čím vyšší, tím lépe.
@@ -127,6 +128,7 @@ async def summarize_club(today: date, days: int, correction_attempts: int):
             Důležité:
             - Nevymýšlej si ID zpráv.
             - Vše česky.
+            - Témata se nesmí opakovat.
             - Přemýšlej nad tím krok za krokem.
         """,
         feed,
@@ -196,7 +198,7 @@ async def summarize_club(today: date, days: int, correction_attempts: int):
             """
                 Uprav následující český odstavec tak, aby byl čtivý a přirozený – jako když to někomu vyprávíš u kafe v práci.
 
-                - Zestručni to do pár vět, max 500 znaků. Zaměř se na hlavní myšlenky. Vynech detaily a konkrétní příklady.
+                - Zestručni to zhruba do jedné věty, max 200 znaků. Zaměř se na hlavní myšlenky. Vynech detaily a konkrétní příklady.
                 - Můžeš psát jako bys byl jedním z členů klubu, třeba „probrali jsme”, „řešili jsme”, „probírali jsme”, ale přirozeně to střídej s „řešilo se”, „probralo se”, „členové psali”, „lidi psali”, a tak. Občas se může hodit „prý”. NE: „Diskutovali jsme, že se AI nahradí programátory” ANO: „Prý AI nahradí programátory”.
                 - Pokud mluvíš o účastnících diskuze, tak ANO: „lidi”, „členové klubu”, NE: „uživatelé”, „diskutující”.
                 - Piš v minulém čase.

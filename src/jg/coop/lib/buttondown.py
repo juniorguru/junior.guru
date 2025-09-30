@@ -31,12 +31,14 @@ class ButtondownAPI:
             await self._client.aclose()
 
     async def get_emails_since(self, since_date: date) -> dict:
-        response = await self.client.get("emails", params={"creation_date__start": since_date.isoformat()})
+        response = await self._client.get(
+            "emails", params={"creation_date__start": since_date.isoformat()}
+        )
         response.raise_for_status()
         return response.json()
 
     @mutations.mutates_buttondown()
     async def create_draft(self, email_data: dict) -> None:
-        response = await self.client.post("emails", json=email_data)
+        response = await self._client.post("emails", json=email_data)
         response.raise_for_status()
         return response.json()
