@@ -17,6 +17,7 @@ from jg.coop.lib.discord_club import ClubChannelID
 from jg.coop.lib.llm import LLMModel, ask_llm
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubChannel, ClubMessage
+from jg.coop.models.newsletter import NewsletterTopic
 
 
 logger = loggers.from_path(__file__)
@@ -47,7 +48,6 @@ class TopicResult(BaseModel):
     text: str
     emoji: str
     message_id: int
-    message_url: str
 
 
 class SummarizationResult(BaseModel):
@@ -65,8 +65,23 @@ class SummarizationResult(BaseModel):
 @db.connection_context()
 @async_command
 async def main(today: date, days: int, correction_attempts: int):
+    logger.info("Setting up newsletter topics db table")
+    NewsletterTopic.drop_table()
+    NewsletterTopic.create_table()
+
+    logger.info("Summarizing club content")
     result = await summarize_club(today, days, correction_attempts)
-    logger.debug(f"Result:\n{pformat(result.model_dump())}")
+
+    logger.info(f"Saving {len(result.topics)} topics")
+    for topic in result.topics:
+        message = ClubMessage.get_by_id(topic.message_id)
+        logger.debug(f"Topic {message.url}\n{pformat(topic.model_dump())}")
+        NewsletterTopic.create(
+            name=topic.name,
+            text=topic.text,
+            emoji=topic.emoji,
+            message=message,
+        )
 
 
 @cache(expire=timedelta(days=1), tag="summary")
@@ -227,7 +242,6 @@ async def summarize_club(today: date, days: int, correction_attempts: int):
                 text=topic.text,
                 emoji=emojis[i],
                 message_id=topic.message_id,
-                message_url=ClubMessage.get_by_id(topic.message_id).url,
             )
             for i, topic in enumerate(summary.topics)
         ]
