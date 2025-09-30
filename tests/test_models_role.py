@@ -19,15 +19,26 @@ def test_db() -> Generator[SqliteDatabase, None, None]:
 
 
 def test_interests(test_db):
-    InterestRole.create(club_id=1111, name="Zajímá mě: Python", interest_name="Python")
-    InterestRole.create(club_id=2222, name="Zajímá mě: Java", interest_name="Java")
-    InterestRole.create(
-        club_id=3333, name="Zajímá mě: frontend", interest_name="frontend"
+    role1 = InterestRole.create(
+        club_id=1111,
+        name="Zajímá mě: Python",
+        interest_name="Python",
     )
-    InterestRole.create(
-        club_id=4444, name="Zajímá mě: vývoj her", interest_name="vývoj her"
+    role2 = InterestRole.create(
+        club_id=2222,
+        name="Zajímá mě: Java",
+        interest_name="Java",
     )
-    InterestRole.create(club_id=5555, name="Zajímá mě: COBOL", interest_name="COBOL")
+    role3 = InterestRole.create(
+        club_id=3333,
+        name="Zajímá mě: frontend",
+        interest_name="frontend",
+    )
+    role4 = InterestRole.create(
+        club_id=4444,
+        name="Zajímá mě: vývoj her",
+        interest_name="vývoj her",
+    )
 
     create_user(1, initial_roles=[1111, 3333])
     create_user(2, initial_roles=[1111])
@@ -35,9 +46,9 @@ def test_interests(test_db):
     create_user(4, initial_roles=[3333])
     create_user(5, initial_roles=[4444])
 
-    assert InterestRole.interests(min_count=1) == [
-        ("Python", 3),
-        ("frontend", 2),
-        ("vývoj her", 2),
-        ("Java", 1),
+    assert InterestRole.interests() == [
+        (role1, 3),
+        (role3, 2),
+        (role4, 2),
+        (role2, 1),
     ]
