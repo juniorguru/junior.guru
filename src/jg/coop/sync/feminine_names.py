@@ -41,7 +41,7 @@ EXTRA_NAMES = [
 
 @cli.sync_command()
 @db.connection_context()
-async def main():
+def main():
     FeminineName.drop_table()
     FeminineName.create_table()
 
