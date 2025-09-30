@@ -11,12 +11,13 @@ logger = loggers.from_path(__file__)
 
 
 KNOWN_SERVICES = [
+    "apify",
+    "buttondown",
     "discord",
     "fakturoid",
     "google_sheets",
     "memberful",
     "openai",
-    "apify",
 ]
 
 CACHE_KEY = "mutations:allowed"
@@ -91,12 +92,13 @@ def mutates(service, raises=False):
     return decorator
 
 
+mutates_apify = partial(mutates, "apify")
+mutates_buttondown = partial(mutates, "buttondown")
 mutates_discord = partial(mutates, "discord")
 mutates_fakturoid = partial(mutates, "fakturoid")
 mutates_google_sheets = partial(mutates, "google_sheets")
 mutates_memberful = partial(mutates, "memberful")
 mutates_openai = partial(mutates, "openai")
-mutates_apify = partial(mutates, "apify")
 
 
 class MutatingProxy:
@@ -118,12 +120,13 @@ def mutating(*args, **kwargs) -> Generator[MutatingProxy, None, None]:
     yield MutatingProxy(*args, **kwargs)
 
 
+mutating_apify = partial(mutating, "apify")
+mutating_buttondown = partial(mutating, "buttondown")
 mutating_discord = partial(mutating, "discord")
 mutating_fakturoid = partial(mutating, "fakturoid")
 mutating_google_sheets = partial(mutating, "google_sheets")
 mutating_memberful = partial(mutating, "memberful")
 mutating_openai = partial(mutating, "openai")
-mutating_apify = partial(mutating, "apify")
 
 
 @contextmanager
@@ -141,12 +144,13 @@ def allowing(service) -> Generator[None, None, None]:
         logger["allowing"].debug(f"Back to: {dump!r}")
 
 
+allowing_apify = partial(allowing, "apify")
+allowing_buttondown = partial(allowing, "buttondown")
 allowing_discord = partial(allowing, "discord")
 allowing_fakturoid = partial(allowing, "fakturoid")
 allowing_google_sheets = partial(allowing, "google_sheets")
 allowing_memberful = partial(allowing, "memberful")
 allowing_openai = partial(allowing, "openai")
-allowing_apify = partial(allowing, "apify")
 
 
 _globals = globals()

@@ -41,22 +41,21 @@ EXTRA_NAMES = [
 
 @cli.sync_command()
 @db.connection_context()
-def main():
+async def main():
     FeminineName.drop_table()
     FeminineName.create_table()
 
-    with httpx.Client() as client:
-        resp = client.get(
-            WIKI_API_URL,
-            params={
-                "action": "parse",
-                "page": WIKI_PAGE_TITLE,
-                "prop": "text",
-                "format": "json",
-            },
-        )
-        resp.raise_for_status()
-        data = resp.json()
+    response = httpx.get(
+        WIKI_API_URL,
+        params={
+            "action": "parse",
+            "page": WIKI_PAGE_TITLE,
+            "prop": "text",
+            "format": "json",
+        },
+    )
+    response.raise_for_status()
+    data = response.json()
 
     page_html = data["parse"]["text"]["*"]
     html_tree = html.fromstring(page_html)

@@ -2,7 +2,7 @@ from enum import StrEnum
 from itertools import groupby
 from operator import attrgetter
 from pathlib import Path
-from typing import Generator
+from typing import Generator, Literal
 
 import click
 import discord
@@ -42,6 +42,11 @@ EMOJI_ADD = "👋"
 
 EMOJI_INFO = "<a:awkward:985064290044223488>"
 
+ICON_URLS = {
+    "devicon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/{slug}/{slug}-plain.svg",
+    "bootstrap": "https://icons.getbootstrap.com/assets/icons/{slug}.svg",
+}
+
 
 class MembershipOperation(StrEnum):
     ADD = "add"
@@ -55,13 +60,8 @@ class MembershipInstruction(BaseModel):
     thread_id: int
 
 
-class IconSet(StrEnum):
-    DEVICON = "devicon"
-    BOOTSTRAP = "bootstrap"
-
-
 class IconConfig(YAMLConfig):
-    set: IconSet
+    set: Literal["devicon", "bootstrap"]
     slug: str
 
 
@@ -117,20 +117,16 @@ async def main(config_path: Path, tag: str, debug_user: int | None):
         raise ValueError(f"Configured interest roles not found: {extra_ids}")
 
     # Ensure roles have icons
-    icon_urls = {
-        IconSet.DEVICON: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/{slug}/{slug}-plain.svg",
-        IconSet.BOOTSTRAP: "https://icons.getbootstrap.com/assets/icons/{slug}.svg",
-    }
-    with httpx.Client() as http_client:
+    async with httpx.AsyncClient() as http_client:
         for role_id, role in interest_roles.items():
             icon_path = ICONS_DIR / f"{role_id}.svg"
             if icon_path.exists():
                 logger.debug(f"Icon already exists: {icon_path}")
             else:
                 config_icon = config_roles[role_id].icon
-                icon_url = icon_urls[config_icon.set].format(slug=config_icon.slug)
+                icon_url = ICON_URLS[config_icon.set].format(slug=config_icon.slug)
                 logger.info(f"Fetching {role.interest_name!r} icon from {icon_url}")
-                response = http_client.get(icon_url)
+                response = await http_client.get(icon_url)
                 response.raise_for_status()
                 icon_path.write_bytes(response.content)
             role.icon_path = icon_path.relative_to(IMAGES_DIR)

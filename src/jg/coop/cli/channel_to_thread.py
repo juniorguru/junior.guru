@@ -95,10 +95,9 @@ async def move(
         )
 
     with tempfile.NamedTemporaryFile(suffix=".png") as f:
-        with httpx.Client() as http_client:
-            resp = http_client.get(emoji_url(emoji))
-            resp.raise_for_status()
-            f.write(resp.content)
+        response = httpx.get(emoji_url(emoji))
+        response.raise_for_status()
+        f.write(response.content)
         f.flush()
 
         logger.info(
