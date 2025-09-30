@@ -573,3 +573,10 @@ class ClubChannel(BaseModel):
         return (
             cls.select().from_(cls, tags).where(tags.c.value == tag).order_by(cls.name)
         )
+
+
+class ClubTopic(BaseModel):
+    name = CharField()
+    text = CharField()
+    emoji = CharField(unique=True)
+    message = ForeignKeyField(ClubMessage)

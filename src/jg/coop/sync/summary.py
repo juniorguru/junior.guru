@@ -16,42 +16,41 @@ from jg.coop.lib.cli import async_command
 from jg.coop.lib.discord_club import ClubChannelID
 from jg.coop.lib.llm import LLMModel, ask_llm
 from jg.coop.models.base import db
-from jg.coop.models.club import ClubChannel, ClubMessage
-from jg.coop.models.newsletter import NewsletterTopic
+from jg.coop.models.club import ClubChannel, ClubMessage, ClubTopic
 
 
 logger = loggers.from_path(__file__)
 
 
-class Topic(BaseModel):
+class LLMTopic(BaseModel):
     engagement_score: int
     message_id: int
     name: str
     text: str
 
 
-class Summary(BaseModel):
-    topics: list[Topic]
+class LLMSummary(BaseModel):
+    topics: list[LLMTopic]
 
 
-class TopicEmoji(BaseModel):
+class LLMTopicEmoji(BaseModel):
     topic_id: int
     emoji: str
 
 
-class TopicEmojis(BaseModel):
-    items: list[TopicEmoji]
+class LLMTopicEmojis(BaseModel):
+    items: list[LLMTopicEmoji]
 
 
-class TopicResult(BaseModel):
+class Topic(BaseModel):
     name: str
     text: str
     emoji: str
     message_id: int
 
 
-class SummarizationResult(BaseModel):
-    topics: list[TopicResult]
+class Summary(BaseModel):
+    topics: list[Topic]
 
 
 @cli.sync_command(dependencies=["club-content"])
@@ -65,9 +64,9 @@ class SummarizationResult(BaseModel):
 @db.connection_context()
 @async_command
 async def main(today: date, days: int, correction_attempts: int):
-    logger.info("Setting up newsletter topics db table")
-    NewsletterTopic.drop_table()
-    NewsletterTopic.create_table()
+    logger.info("Setting up club topics db table")
+    ClubTopic.drop_table()
+    ClubTopic.create_table()
 
     logger.info("Summarizing club content")
     result = await summarize_club(today, days, correction_attempts)
@@ -76,7 +75,7 @@ async def main(today: date, days: int, correction_attempts: int):
     for topic in result.topics:
         message = ClubMessage.get_by_id(topic.message_id)
         logger.debug(f"Topic {message.url}\n{pformat(topic.model_dump())}")
-        NewsletterTopic.create(
+        ClubTopic.create(
             name=topic.name,
             text=topic.text,
             emoji=topic.emoji,
@@ -132,7 +131,7 @@ async def summarize_club(today: date, days: int, correction_attempts: int):
         """,
         feed,
         model=LLMModel.advanced,
-        schema=Summary,
+        schema=LLMSummary,
     )
     logger.info(f"The summary contains {len(summary.topics)} topics")
     logger.debug(f"Summary:\n{pformat(summary.model_dump())}")
@@ -165,7 +164,7 @@ async def summarize_club(today: date, days: int, correction_attempts: int):
                 Důležité: Nic jiného ve shrnutí neměň, pouze oprav ta neexistující ID!
             """
             corrected_summary = await ask_llm(
-                correction_prompt, feed, model=LLMModel.advanced, schema=Summary
+                correction_prompt, feed, model=LLMModel.advanced, schema=LLMSummary
             )
             logger.debug(
                 f"Corrected summary:\n{pformat(corrected_summary.model_dump())}"
@@ -230,14 +229,14 @@ async def summarize_club(today: date, days: int, correction_attempts: int):
             indent=2,
             ensure_ascii=False,
         ),
-        schema=TopicEmojis,
+        schema=LLMTopicEmojis,
     )
     emojis = [item.emoji for item in emojis.items]
     logger.debug(f"Emojis:\n{pformat(emojis)}")
 
-    return SummarizationResult(
+    return Summary(
         topics=[
-            TopicResult(
+            Topic(
                 name=topic.name,
                 text=topic.text,
                 emoji=emojis[i],
