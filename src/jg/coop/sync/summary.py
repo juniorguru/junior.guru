@@ -11,6 +11,7 @@ from pydantic import BaseModel
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
+from jg.coop.lib.cache import cache
 from jg.coop.lib.cli import async_command
 from jg.coop.lib.discord_club import ClubChannelID
 from jg.coop.lib.llm import LLMModel, ask_llm
@@ -41,6 +42,18 @@ class TopicEmojis(BaseModel):
     items: list[TopicEmoji]
 
 
+class TopicResult(BaseModel):
+    name: str
+    text: str
+    emoji: str
+    message_id: int
+    message_url: str
+
+
+class SummarizationResult(BaseModel):
+    topics: list[TopicResult]
+
+
 @cli.sync_command(dependencies=["club-content"])
 @click.option(
     "--today",
@@ -52,6 +65,12 @@ class TopicEmojis(BaseModel):
 @db.connection_context()
 @async_command
 async def main(today: date, days: int, correction_attempts: int):
+    result = await summarize_club(today, days, correction_attempts)
+    logger.debug(f"Result:\n{pformat(result.model_dump())}")
+
+
+@cache(expire=timedelta(days=1), tag="summary")
+async def summarize_club(today: date, days: int, correction_attempts: int):
     since_on = today - timedelta(days=days)
     logger.info(f"Summarizing since: {since_on}")
     channel_mapping = ClubChannel.names_mapping()
@@ -66,9 +85,10 @@ async def main(today: date, days: int, correction_attempts: int):
             ClubChannelID.META,
         ],
         include_channels=[
+            ClubChannelID.GROUPS,
+            ClubChannelID.QA,
             ClubChannelID.ADVENTOFCODE,
             ClubChannelID.FUN_TOPICS,
-            ClubChannelID.QA,
         ],
     )
 
@@ -103,6 +123,8 @@ async def main(today: date, days: int, correction_attempts: int):
     logger.debug(f"Summary:\n{pformat(summary.model_dump())}")
 
     logger.info("Filtering out low-engagement topics")
+    if len(summary.topics) < 10:
+        raise ValueError("The summary contains less than 10 topics!")
     summary.topics = summary.topics[:10]
 
     for attempt in range(correction_attempts):
@@ -127,10 +149,29 @@ async def main(today: date, days: int, correction_attempts: int):
                 Najdi v přiloženém přehledu kanálů a zpráv nějaké vhodné existující zprávy pro témata s chybnými ID, a nahraď chybná ID za čísla těchto zpráv.
                 Důležité: Nic jiného ve shrnutí neměň, pouze oprav ta neexistující ID!
             """
-            summary = await ask_llm(
+            corrected_summary = await ask_llm(
                 correction_prompt, feed, model=LLMModel.advanced, schema=Summary
             )
-            logger.debug(f"Summary:\n{pformat(summary.model_dump())}")
+            logger.debug(
+                f"Corrected summary:\n{pformat(corrected_summary.model_dump())}"
+            )
+            invalid_topic_indexes_by_name = {
+                topic.name: i
+                for i, topic in enumerate(summary.topics)
+                if topic.message_id in invalid_ids
+            }
+            for corrected_topic in corrected_summary.topics:
+                try:
+                    index = invalid_topic_indexes_by_name[corrected_topic.name]
+                    logger.info(
+                        f"Updating message ID for '{corrected_topic.name}': "
+                        f"{summary.topics[index].message_id} → {corrected_topic.message_id}"
+                    )
+                    summary.topics[index].message_id = corrected_topic.message_id
+                except KeyError:
+                    logger.debug(
+                        f"Topic '{corrected_topic.name}' not invalid, skipping"
+                    )
         else:
             logger.info("All message IDs are valid!")
             break
@@ -142,10 +183,11 @@ async def main(today: date, days: int, correction_attempts: int):
                 Uprav následující český odstavec tak, aby byl čtivý a přirozený – jako když to někomu vyprávíš u kafe v práci.
 
                 - Zestručni to do pár vět, max 500 znaků. Zaměř se na hlavní myšlenky. Vynech detaily a konkrétní příklady.
-                - Můžeš psát jako bys byl jedním z členů klubu, třeba „řešili jsme”, „probrali jsme”, „probírali jsme”, ale přirozeně to střídej s „řešilo se”, „probralo se”, „členové psali”, „lidi psali”, a tak. Občas se může hodit „prý”. NE: „Diskutovali jsme, že se AI nahradí programátory” ANO: „Prý AI nahradí programátory”.
+                - Můžeš psát jako bys byl jedním z členů klubu, třeba „probrali jsme”, „řešili jsme”, „probírali jsme”, ale přirozeně to střídej s „řešilo se”, „probralo se”, „členové psali”, „lidi psali”, a tak. Občas se může hodit „prý”. NE: „Diskutovali jsme, že se AI nahradí programátory” ANO: „Prý AI nahradí programátory”.
                 - Pokud mluvíš o účastnících diskuze, tak ANO: „lidi”, „členové klubu”, NE: „uživatelé”, „diskutující”.
                 - Piš v minulém čase.
                 - Žádné úvody, shrnutí, ani závěry navíc.
+                - Pokud první věta pouze opakuje název tématu, tak ji vynech.
                 - Nepiš nespisovně, ale piš přirozeně. Věty mohou být krátké, hlavně aby se dobře četly.
                 - Dvakrát zkontroluj, že si nevymýšlíš žádné informace navíc. Uprav jen formu, ne obsah. Fakta a názvy musí sedět s původním textem.
             """,
@@ -177,6 +219,19 @@ async def main(today: date, days: int, correction_attempts: int):
     )
     emojis = [item.emoji for item in emojis.items]
     logger.debug(f"Emojis:\n{pformat(emojis)}")
+
+    return SummarizationResult(
+        topics=[
+            TopicResult(
+                name=topic.name,
+                text=topic.text,
+                emoji=emojis[i],
+                message_id=topic.message_id,
+                message_url=ClubMessage.get_by_id(topic.message_id).url,
+            )
+            for i, topic in enumerate(summary.topics)
+        ]
+    )
 
 
 def to_feed(
@@ -266,15 +321,3 @@ def simplify_member_mentions(text: str) -> str:
 
 def simplify_custom_emojis(text: str) -> str:
     return re.sub(r"<a?:([^:]+):\d+>", r":\1:", text)
-
-
-async def blah():
-    pass
-    # correctness = {}
-    # for topic in summary.topics:
-    #     try:
-    #         ClubMessage.get_by_id(topic.message_id)
-    #         correctness[topic.message_id] = True
-    #     except ClubMessage.DoesNotExist:
-    #         correctness[topic.message_id] = False
-    # if not all(correctness.values()):

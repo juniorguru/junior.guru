@@ -417,6 +417,7 @@ class ClubMessage(BaseModel):
             .where(
                 cls.is_private == False,  # noqa: E712
                 cls.author_is_bot == False,  # noqa: E712
+                cls.type.in_(["default", "reply"]),
                 ClubMessage.parent_channel_id.not_in(exclude_channels),
                 (
                     (cls.parent_channel_type == ChannelType.text.value)
