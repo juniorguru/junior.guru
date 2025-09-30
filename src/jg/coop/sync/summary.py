@@ -48,9 +48,10 @@ class TopicEmojis(BaseModel):
     type=date.fromisoformat,
 )
 @click.option("--days", default=30, type=int)
+@click.option("--correction-attempts", default=3, type=int)
 @db.connection_context()
 @async_command
-async def main(today: date, days: int):
+async def main(today: date, days: int, correction_attempts: int):
     since_on = today - timedelta(days=days)
     logger.info(f"Summarizing since: {since_on}")
     channel_mapping = ClubChannel.names_mapping()
@@ -77,7 +78,6 @@ async def main(today: date, days: int):
         channel_mapping,
         threads_only_channels=[ClubChannelID.INTRO, ClubChannelID.TIL],
     )
-    return  # TODO
 
     logger.info(f"Summarizing the feed, {len(feed)} characters… (takes a while)")
     summary = await ask_llm(
@@ -105,9 +105,36 @@ async def main(today: date, days: int):
     logger.info("Filtering out low-engagement topics")
     summary.topics = summary.topics[:10]
 
-    logger.info("Verifying message IDs")  # TODO prompt the LLM for correction
-    for topic in summary.topics:
-        ClubMessage.get_by_id(topic.message_id)
+    for attempt in range(correction_attempts):
+        logger.info(f"Verifying message IDs, attempt #{attempt + 1}")
+        messages_existence = ClubMessage.check_existence(
+            [topic.message_id for topic in summary.topics]
+        )
+        invalid_ids = [
+            message_id
+            for message_id, exists in messages_existence.items()
+            if not exists
+        ]
+        if invalid_ids:
+            logger.warning(f"Found {len(invalid_ids)} invalid message IDs")
+            correction_prompt = f"""
+                Toto je shrnutí toho nejpodstatnějšího, co se událo v naší Discord komunitě:
+
+                {json.dumps(summary.model_dump(), indent=2, ensure_ascii=False)}
+
+                Jenže je tam chyba. Shrnutí má obsahovat vždy ID první zprávy, která téma odstartovala.
+                Jenže zprávy s těmito ID neexistují: {', '.join(map(str, invalid_ids))}
+
+                Najdi v přiloženém přehledu kanálů a zpráv nějaké vhodné existující zprávy pro témata s chybnými ID, a nahraď chybná ID za čísla těchto zpráv.
+                Důležité: Nic jiného ve shrnutí neměň, pouze oprav ta neexistující ID!
+            """
+            summary = await ask_llm(
+                correction_prompt, feed, model=LLMModel.advanced, schema=Summary
+            )
+            logger.debug(f"Summary:\n{pformat(summary.model_dump())}")
+        else:
+            logger.info("All message IDs are valid!")
+            break
 
     logger.info("Adjusting the summary text's style")
     tasks = [
@@ -240,3 +267,15 @@ def simplify_member_mentions(text: str) -> str:
 
 def simplify_custom_emojis(text: str) -> str:
     return re.sub(r"<a?:([^:]+):\d+>", r":\1:", text)
+
+
+async def blah():
+    pass
+    # correctness = {}
+    # for topic in summary.topics:
+    #     try:
+    #         ClubMessage.get_by_id(topic.message_id)
+    #         correctness[topic.message_id] = True
+    #     except ClubMessage.DoesNotExist:
+    #         correctness[topic.message_id] = False
+    # if not all(correctness.values()):

@@ -352,6 +352,14 @@ class ClubMessage(BaseModel):
         )
 
     @classmethod
+    def check_existence(cls, message_ids: list[int]) -> dict[int, bool]:
+        existing_ids = {
+            row.id
+            for row in cls.select(cls.id).where(cls.id.in_(message_ids)).iterator()
+        }
+        return {message_id: message_id in existing_ids for message_id in message_ids}
+
+    @classmethod
     def channel_listing(
         cls,
         channel_id: int,
