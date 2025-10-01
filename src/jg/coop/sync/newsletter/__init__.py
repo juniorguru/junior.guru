@@ -21,18 +21,18 @@ from jg.coop.models.followers import Followers
 
 
 MONTH_NAMES = [
-    "leden",
-    "únor",
-    "březen",
-    "duben",
-    "květen",
-    "červen",
-    "červenec",
-    "srpen",
-    "září",
-    "říjen",
-    "listopad",
-    "prosinec",
+    "Leden",
+    "Únor",
+    "Březen",
+    "Duben",
+    "Květen",
+    "Červen",
+    "Červenec",
+    "Srpen",
+    "Září",
+    "Říjen",
+    "Listopad",
+    "Prosinec",
 ]
 
 
@@ -123,7 +123,7 @@ async def main(force: bool, today: date):
         )
         logger.debug(f"Template context:\n{pformat(template_context)}")
         email_data = {
-            "subject": f"Novinky ze světa IT juniorů 🐣 {month_name} {today.year}",
+            "subject": f"{month_name} {today.year} ve světě IT juniorů 🐣",
             "body": template.render(template_context),
             "status": "draft",
         }

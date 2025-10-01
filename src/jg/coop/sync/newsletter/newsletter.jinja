@@ -1,36 +1,42 @@
 Ahoj, tady robotické kuře z junior.guru! Mám pro tebe aktuální dávku novinek.{% if subscribers_new_count >= 5 %} Vítám **{{ subscribers_new_count }} nových odběratelů**, celkem je vás už {{ subscribers_count }}!{% endif %}
 
-## Čísla z pracovního trhu
+## Čísla z pracovního trhu 📊
 
-Každý den stahuju z různých zdrojů inzeráty a ty, které jsou vhodné pro začátečníky, dávám na [junior.guru/jobs](https://junior.guru/jobs/). Tentokrát jich bylo **{{ jobs_count }}**. Nejčastější technologie, které se v inzerátech objevily:
+Každý den stahuju z různých zdrojů inzeráty a ty, které jsou vhodné pro začátečníky, dávám na [junior.guru/jobs](https://junior.guru/jobs/). Za poslední měsíc jsem našlo **{{ jobs_count }} inzerátů**. Toto jsou technologie, které se v objevovaly nejčastěji:
 
-{% for tag, count in jobs_tags_stats[:10] -%}
-{{ count }}x **{{ tag }}**{% if not loop.last %}, {% endif %}
-{%- endfor %}
+> 🥇 {% for tag, count in jobs_tags_stats[0:3] -%}
+{{ count }}× **{{ tag }}**{% if not loop.last %}, {% endif %}
+{%- endfor %}<br>
+> 🥈 {% for tag, count in jobs_tags_stats[3:6] -%}
+{{ count }}× **{{ tag }}**{% if not loop.last %}, {% endif %}
+{%- endfor %}<br>
+> 🥉 {% for tag, count in jobs_tags_stats[6:9] -%}
+{{ count }}× **{{ tag }}**{% if not loop.last %}, {% endif %}
+{%- endfor %}<br>
 
-## Kurzy programování a testování
-
-Na [junior.guru/courses](https://junior.guru/courses/) je katalog poskytovatelů kurzů. Nejvíc tam teď lidi koukají na tohle:
-
-{% for course_provider in course_providers[:5] -%}
-[{{ course_provider.name }}](https://junior.guru/courses/{{ course_provider.slug }}){% if not loop.last %}, {% endif %}
-{%- endfor %}
-
-V naší [komunitě na Discordu](https://junior.guru/club/) se teď nejvíc psalo o těchto kurzech:
-
-{% for course_provider in course_providers_by_mentions[:5] -%}
-[{{ course_provider.name }}](https://junior.guru/courses/{{ course_provider.slug }}){% if not loop.last %}, {% endif %}
-{%- endfor %}
-
-## Srazy, konference a jiné akce
+## Srazy, konference a jiné akce 🍻
 
 {# vymyslet jak v newsletteru prezentovat meetup akce - nějaký kalendář? možná jen ty, kam jdou členové? #}
 
-## Inspirace
+## Kurzy programování a testování 🧑‍🏫
+
+Na [junior.guru/courses](https://junior.guru/courses/) je katalog poskytovatelů kurzů. Nejvíc tam teď lidi koukají na tohle:
+
+> {% for course_provider in course_providers[:6] -%}
+[{{ course_provider.name }}](https://junior.guru/courses/{{ course_provider.slug }}){% if not loop.last %} ▪️ {% endif %}
+{%- endfor %}
+
+V naší komunitě na Discordu se v poslední době psalo o těchto kurzech:
+
+> {% for course_provider in course_providers_by_mentions[:6] -%}
+[{{ course_provider.name }}](https://junior.guru/courses/{{ course_provider.slug }}){% if not loop.last %} ▪️ {% endif %}
+{%- endfor %}
+
+## Inspirace 💡
 
 {# (přednášky, podcast, stories) #}
 
-## Co se dělo v klubu
+## Co se dělo v klubu 💬
 V naší Discord komunitě se napsalo **{{ club_content_size }} písmenek**. Tady je shrnutí toho nejzajímavějšího. Pokud v klubu ještě nejsi, nebo vůbec nevíš, o co jde, mrkni na [junior.guru/club](https://junior.guru/club/)
 
 {# kolik bylo v poslední době v klubu nových CVček na review, co se dělo v mentoring tržišti, nejaktivnější 3 skupinky, deníček měsíce (1 nejaktivnější), nové výtvory (všechny), co se dělo v práce hledám, nejvtipnější věc ve volná zábava #}
