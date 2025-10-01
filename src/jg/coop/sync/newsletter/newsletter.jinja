@@ -4,21 +4,9 @@ Ahoj, tady robotické kuře z junior.guru! Mám pro tebe aktuální dávku novin
 
 Každý den stahuju z různých zdrojů inzeráty a ty, které jsou vhodné pro začátečníky, dávám na [junior.guru/jobs](https://junior.guru/jobs/). Za poslední měsíc jsem našlo **{{ jobs_count }} inzerátů**. Toto jsou technologie, které se v objevovaly nejčastěji:
 
-<table cellpadding="15" cellspacing="0" border="0" width="100%" style="background-color:#f5f5f5; border-radius:5px;"><tr><td><p style="margin:0;">
-
-🥇 {% for tag, count in jobs_tags_stats[0:3] %}
-    {{ count }}× <strong>{{ tag }}</strong>,
-{% endfor %}<br>
-🥈 {% for tag, count in jobs_tags_stats[3:6] %}
-    {{ count }}× <strong>{{ tag }}</strong>,
-{% endfor %}<br>
-🥉 {% for tag, count in jobs_tags_stats[6:9] %}
-    {{ count }}× <strong>{{ tag }}</strong>
-    {% if not loop.last %}, {% endif %}
-{% endfor %}<br>
-
-</p></td></tr></table>
-<table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td height="20" style="line-height:20px; font-size:0;">&nbsp;</td></tr></table>
+> 🥇 {% for tag, count in jobs_tags_stats[0:3] %}{{ count }}× **{{ tag }}**, {% endfor %}<br>
+> 🥈 {% for tag, count in jobs_tags_stats[3:6] %}{{ count }}× **{{ tag }}**, {% endfor %}<br>
+> 🥉 {% for tag, count in jobs_tags_stats[6:9] %}{{ count }}× **{{ tag }}**{% if not loop.last %}, {% endif %}{% endfor %}<br>
 
 ## Srazy, konference a jiné akce 🍻
 
@@ -28,28 +16,16 @@ Každý den stahuju z různých zdrojů inzeráty a ty, které jsou vhodné pro 
 
 Na [junior.guru/courses](https://junior.guru/courses/) je katalog poskytovatelů kurzů. Nejvíc tam teď lidi koukají na tohle:
 
-<table cellpadding="15" cellspacing="0" border="0" width="100%" style="background-color:#f5f5f5; border-radius:5px;"><tr><td><p style="margin:0;">
-
-{% for course_provider in course_providers[:6] %}
-    <a href="https://junior.guru/courses/{{ course_provider.slug }}">{{ course_provider.name }}</a>
-    {% if not loop.last %} ▪️ {% endif %}
-{% endfor %}
-
-</p></td></tr></table>
-<table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td height="20" style="line-height:20px; font-size:0;">&nbsp;</td></tr></table>
+> {% for course_provider in course_providers[:6] -%}
+    [{{ course_provider.name }}]({{ course_provider.catalogue_url }}){% if not loop.last %} ▪️ {% endif %}
+{%- endfor %}
 
 {% if course_providers_by_mentions %}
 V naší komunitě na Discordu se v poslední době psalo o těchto kurzech:
 
-<table cellpadding="15" cellspacing="0" border="0" width="100%" style="background-color:#f5f5f5; border-radius:5px;"><tr><td><p style="margin:0;">
-
-{% for course_provider in course_providers_by_mentions[:6] -%}
-    <a href="https://junior.guru/courses/{{ course_provider.slug }}">{{ course_provider.name }}</a>
-    {% if not loop.last %} ▪️ {% endif %}
-{% endfor %}
-
-</p></td></tr></table>
-<table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td height="20" style="line-height:20px; font-size:0;">&nbsp;</td></tr></table>
+> {% for course_provider in course_providers_by_mentions[:6] -%}
+    [{{ course_provider.name }}]({{ course_provider.catalogue_url }}){% if not loop.last %} ▪️ {% endif %}
+{%- endfor %}
 {% endif %}
 
 ## Inspirace 💡
@@ -59,7 +35,31 @@ V naší komunitě na Discordu se v poslední době psalo o těchto kurzech:
 ## Co se dělo v klubu 💬
 V naší Discord komunitě se napsalo **{{ club_content_size }} písmenek**. Tady je shrnutí toho nejzajímavějšího. Pokud v klubu ještě nejsi, nebo vůbec nevíš, o co jde, mrkni na [junior.guru/club](https://junior.guru/club/)
 
-{# kolik bylo v poslední době v klubu nových CVček na review, co se dělo v mentoring tržišti, nejaktivnější 3 skupinky, deníček měsíce (1 nejaktivnější), nové výtvory (všechny), co se dělo v práce hledám, nejvtipnější věc ve volná zábava #}
+{% if club_creations|length %}
+### 🛠️ Jaké jsme tvořili projekty
+> {% for message in club_creations -%}
+    [{{ message.channel_name }}]({{ message.url }}){% if not loop.last %} ▪️ {% endif %}
+{%- endfor %}
+{% endif %}
+
+### 👥 V jakých skupinkách to nejvíc žilo
+> {% for message in club_top_groups[:3] -%}
+    {% if loop.index == 1 %}🥇{% elif loop.index == 2 %}🥈{% elif loop.index == 3 %}🥉{% endif -%} 
+    [{{ message.channel_name }}]({{ message.url }})<br>
+{%- endfor %}
+
+### 📔 Do jakých deníčků se nejvíc psalo
+> {% for message in club_top_diaries[:3] -%}
+    {% if loop.index == 1 %}🥇{% elif loop.index == 2 %}🥈{% elif loop.index == 3 %}🥉{% endif -%} 
+    {{ message.author.display_name }}: [{{ message.channel_name }}]({{ message.url }})<br>
+{%- endfor %}
+
+{% if club_cvs|length %}
+### 📝 Zpětná vazba na životopisy
+> {% for message in club_cvs -%}
+    [CV č. {{ loop.index }}]({{ message.url }}){% if not loop.last %} ▪️ {% endif %}
+{%- endfor %}
+{% endif %}
 
 {% for topic in topics %}
 ### {{ topic.emoji }} {{ topic.name }}

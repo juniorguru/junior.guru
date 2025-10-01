@@ -69,6 +69,10 @@ class CourseProvider(BaseModel):
         return Topic.get_by_id(self.slug)
 
     @property
+    def catalogue_url(self) -> str:
+        return f"https://junior.guru/courses/{self.slug}"
+
+    @property
     def page_url(self) -> str:
         return f"courses/{self.slug}.md"
 

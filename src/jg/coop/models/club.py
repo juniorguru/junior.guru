@@ -397,6 +397,18 @@ class ClubMessage(BaseModel):
         return query
 
     @classmethod
+    def forum_top_listing(
+        cls,
+        channel_id: int,
+        since_on: date,
+    ) -> Iterable[Self]:
+        return (
+            cls.forum_listing(channel_id, skip_guide=True)
+            .where(cls.created_at >= datetime.combine(since_on, datetime.min.time()))
+            .order_by(fn.sum(cls.content_size).desc())
+        )
+
+    @classmethod
     def forum_guide(cls, channel_id: int) -> Self:
         return (
             cls.forum_listing(channel_id)

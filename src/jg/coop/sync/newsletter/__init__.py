@@ -1,3 +1,4 @@
+import time
 from collections import Counter
 from datetime import date, timedelta
 from pathlib import Path
@@ -89,7 +90,7 @@ async def main(force: bool, open_browser: bool, today: date):
         logger.debug("Preparing stats about subscribers")
         subscribers_count = Followers.get_latest("newsletter").count
         subscribers_new_count = (
-            Followers.breakdown(prev_prev_month)["newsletter"] - subscribers_count
+            subscribers_count - Followers.breakdown(prev_prev_month)["newsletter"]
         )
         club_content_size = ClubMessage.content_size_by_month(prev_month)
 
@@ -115,6 +116,20 @@ async def main(force: bool, open_browser: bool, today: date):
             CourseProvider.mentions_listing("mentions_last_month_count")
         )
 
+        logger.debug("Preparing stats about club content")
+        club_top_groups = ClubMessage.forum_top_listing(
+            ClubChannelID.GROUPS, prev_month
+        )
+        club_top_diaries = ClubMessage.forum_top_listing(
+            ClubChannelID.DIARIES, prev_month
+        )
+        club_cvs = ClubMessage.forum_top_listing(
+            ClubChannelID.CV_GITHUB_LINKEDIN, prev_month
+        )
+        club_creations = ClubMessage.forum_top_listing(
+            ClubChannelID.CREATIONS, prev_month
+        )
+
         logger.debug("Rendering email body")
         template = Template(Path(__file__).with_name("newsletter.jinja").read_text())
         template_context = dict(
@@ -128,6 +143,10 @@ async def main(force: bool, open_browser: bool, today: date):
             topics=ClubSummaryTopic.listing(),
             course_providers=course_providers,
             course_providers_by_mentions=course_providers_by_mentions,
+            club_top_groups=club_top_groups,
+            club_top_diaries=club_top_diaries,
+            club_cvs=club_cvs,
+            club_creations=club_creations,
         )
         logger.debug(f"Template context:\n{pformat(template_context)}")
         email_data = {
@@ -143,6 +162,7 @@ async def main(force: bool, open_browser: bool, today: date):
                 f"Email created!\nEdit: https://buttondown.com/emails/{data['id']}\nPreview: {data['absolute_url']}"
             )
             if open_browser:
+                time.sleep(1)
                 click.launch(data["absolute_url"])
 
 
