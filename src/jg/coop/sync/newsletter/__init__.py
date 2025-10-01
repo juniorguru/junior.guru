@@ -48,13 +48,21 @@ logger = loggers.from_path(__file__)
     help="Force creating even if there are already emails this month",
 )
 @click.option(
+    "-o",
+    "--open",
+    "open_browser",
+    is_flag=True,
+    default=False,
+    help="Open the created draft in browser",
+)
+@click.option(
     "--today",
     default=lambda: date.today().isoformat(),
     type=date.fromisoformat,
 )
 @db.connection_context()
 @async_command
-async def main(force: bool, today: date):
+async def main(force: bool, open_browser: bool, today: date):
     # TODO change this so that it uses the date of last newsletter published
     # as the anchor date for stats calculation
     this_month = today.replace(day=1)
@@ -134,6 +142,8 @@ async def main(force: bool, today: date):
             logger.info(
                 f"Email created!\nEdit: https://buttondown.com/emails/{data['id']}\nPreview: {data['absolute_url']}"
             )
+            if open_browser:
+                click.launch(data["absolute_url"])
 
 
 def get_job_tags(message: ClubMessage) -> set[str]:
