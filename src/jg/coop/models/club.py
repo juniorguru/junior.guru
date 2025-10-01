@@ -384,14 +384,17 @@ class ClubMessage(BaseModel):
         return query.order_by(cls.created_at)
 
     @classmethod
-    def forum_listing(cls, channel_id: int) -> Iterable[Self]:
-        return (
+    def forum_listing(cls, channel_id: int, skip_guide: bool = False) -> Iterable[Self]:
+        query = (
             cls.select()
             .where(cls.channel_id != channel_id, cls.parent_channel_id == channel_id)
             .group_by(cls.channel_id)
             .having(cls.id == fn.min(cls.id))
             .order_by(cls.created_at.desc())
         )
+        if skip_guide:
+            query = query.where(cls.is_forum_guide == False)  # noqa: E712
+        return query
 
     @classmethod
     def forum_guide(cls, channel_id: int) -> Self:
@@ -575,7 +578,7 @@ class ClubChannel(BaseModel):
         )
 
 
-class ClubTopic(BaseModel):
+class ClubSummaryTopic(BaseModel):
     order = IntegerField()
     name = CharField()
     text = CharField()

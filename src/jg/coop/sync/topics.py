@@ -1,5 +1,8 @@
 import re
 from collections import Counter
+from datetime import date, timedelta
+
+import click
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
@@ -110,8 +113,15 @@ TOPIC_CHANNELS = {
 
 
 @cli.sync_command(dependencies=["club-content"])
+@click.option(
+    "--today",
+    default=lambda: date.today().isoformat(),
+    type=date.fromisoformat,
+)
 @db.connection_context()
-def main():
+def main(today: date):
+    prev_month = (today.replace(day=1) - timedelta(days=1)).replace(day=1)
+
     Topic.drop_table()
     Topic.create_table()
 
@@ -126,6 +136,11 @@ def main():
         for keyword_re, keyword in KEYWORDS.items():
             if keyword_re.search(message.content):
                 topics[keyword]["mentions_count"] += 1
+
+        if message.created_at.date() >= prev_month:
+            for keyword_re, keyword in KEYWORDS.items():
+                if keyword_re.search(message.content):
+                    topics[keyword]["mentions_last_month_count"] += 1
     for name, data in topics.items():
         logger.info(f"{name} {dict(data)}")
         Topic.create(**{"name": name, **data})

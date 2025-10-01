@@ -16,7 +16,7 @@ from jg.coop.lib.cli import async_command
 from jg.coop.lib.discord_club import ClubChannelID
 from jg.coop.lib.llm import LLMModel, ask_llm
 from jg.coop.models.base import db
-from jg.coop.models.club import ClubChannel, ClubMessage, ClubTopic
+from jg.coop.models.club import ClubChannel, ClubMessage, ClubSummaryTopic
 
 
 logger = loggers.from_path(__file__)
@@ -65,8 +65,8 @@ class Summary(BaseModel):
 @async_command
 async def main(today: date, days: int, correction_attempts: int):
     logger.info("Setting up club topics db table")
-    ClubTopic.drop_table()
-    ClubTopic.create_table()
+    ClubSummaryTopic.drop_table()
+    ClubSummaryTopic.create_table()
 
     logger.info("Summarizing club content")
     result = await summarize_club(today, days, correction_attempts)
@@ -75,7 +75,7 @@ async def main(today: date, days: int, correction_attempts: int):
     for order, topic in enumerate(result.topics, start=1):
         message = ClubMessage.get_by_id(topic.message_id)
         logger.debug(f"Topic {message.url}\n{pformat(topic.model_dump())}")
-        ClubTopic.create(
+        ClubSummaryTopic.create(
             order=order,
             name=topic.name,
             text=topic.text,

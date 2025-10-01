@@ -104,15 +104,7 @@ async def sync_jobs(client: ClubClient, channel_id: int):
         job.save()
     logger.info(f"Currently listed jobs: {len(jobs)}")
 
-    if summary_message := ClubMessage.forum_guide(channel_id):
-        summary_id = summary_message.id
-    else:
-        summary_id = None
-    messages = [
-        message
-        for message in ClubMessage.forum_listing(channel_id)
-        if message.id != summary_id
-    ]
+    messages = list(ClubMessage.forum_listing(channel_id, skip_guide=True))
     logger.info(f"Found {len(messages)} threads since {since_on}")
     for message in messages:
         if message.created_at.date() > since_on:
@@ -152,10 +144,11 @@ async def sync_jobs(client: ClubClient, channel_id: int):
                 await unarchive_thread(thread)
     logger.info(f"Created {DiscordJob.count()} Discord jobs")
 
-    logger.info("Ensuring there is a summary post")
+    logger.info("Ensuring there is an up-to-date summary post")
+    summary_message = ClubMessage.forum_guide(channel_id)
     await ensure_summary(
         channel,
-        summary_id,
+        summary_message.id if summary_message else None,
         "Aktuální ručně přidané inzeráty 👈 (aby nezapadly)",
         prepare_summary_content(DiscordJob.listing(), ListedJob.submitted_listing()),
     )

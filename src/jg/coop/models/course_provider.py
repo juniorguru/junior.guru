@@ -10,6 +10,7 @@ from peewee import CharField, IntegerField, TextField, fn
 from jg.coop.models.base import BaseModel
 from jg.coop.models.partner import Partner
 from jg.coop.models.sponsor import Sponsor, SponsorTier
+from jg.coop.models.topic import Topic
 
 
 class CourseProviderGroup(StrEnum):
@@ -60,7 +61,12 @@ class CourseProvider(BaseModel):
     page_description = CharField()
     page_lead = CharField()
     page_monthly_pageviews = IntegerField(null=True)
+    page_last_month_pageviews = IntegerField(null=True)
     usp_description = TextField(null=True)  # unique selling proposition
+
+    @property
+    def topic(self) -> Topic:
+        return Topic.get_by_id(self.slug)
 
     @property
     def page_url(self) -> str:
@@ -107,6 +113,25 @@ class CourseProvider(BaseModel):
         return cls.select().order_by(fn.czech_sort(cls.name))
 
     @classmethod
+    def pageviews_listing(cls, metric_name: str) -> Iterable[Self]:
+        metric_field = getattr(cls, metric_name)
+        return (
+            cls.select()
+            .where(metric_field.is_null(False))
+            .order_by(metric_field.desc())
+        )
+
+    @classmethod
+    def mentions_listing(cls, metric_name: str, min_value: int = 3) -> Iterable[Self]:
+        metric_field = getattr(Topic, metric_name)
+        return (
+            cls.select()
+            .join(Topic, on=(cls.slug == Topic.name))
+            .where(metric_field >= min_value)
+            .order_by(metric_field.desc())
+        )
+
+    @classmethod
     def grouping(cls) -> list[tuple[SponsorTier | None, list[Self]]]:
         groups = list(CourseProviderGroup)
         course_providers = sorted(
@@ -117,8 +142,8 @@ class CourseProvider(BaseModel):
             ),
         )
         return [
-            (group, list(sponsors))
-            for group, sponsors in groupby(course_providers, attrgetter("group"))
+            (group, list(items))
+            for group, items in groupby(course_providers, attrgetter("group"))
         ]
 
     @classmethod

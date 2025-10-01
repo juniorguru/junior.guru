@@ -1,9 +1,10 @@
+import math
 from datetime import date, timedelta
 from functools import wraps
 from pathlib import Path
 from typing import Callable
 
-import requests
+import httpx
 import yaml
 from pydantic import HttpUrl
 
@@ -87,29 +88,34 @@ def main():
         )
         logger.info(f"Loaded {yaml_path.name} as {config.name!r}")
 
-    logger.info("Fetching analytics")
-    params = dict(
-        version=5,
-        fields="pageviews,pages",
-        info="false",
-        page="/courses/*",
-        start=str(date.today() - timedelta(days=365)),
-    )
-    response = requests.get(
-        "https://simpleanalytics.com/junior.guru.json", params=params
-    )
-    response.raise_for_status()
-    data = response.json()
-    for page in data["pages"]:
-        slug = page["value"].replace("/courses/", "")
-        try:
-            course_provider = CourseProvider.get_by_slug(slug)
-            monthly_pageviews = int(page["pageviews"] / 12)
-            course_provider.page_monthly_pageviews = monthly_pageviews
-            course_provider.save()
-            logger.info(f"Saved {monthly_pageviews} pageviews of {slug!r}")
-        except CourseProvider.DoesNotExist:
-            logger.warning(f"Course provider {slug!r} not found in the database")
+    for metric_name, days in [
+        ("page_monthly_pageviews", 365),
+        ("page_last_month_pageviews", 30),
+    ]:
+        logger.info(f"Fetching analytics: {metric_name}")
+        params = dict(
+            version=5,
+            fields="pageviews,pages",
+            info="false",
+            page="/courses/*",
+            start=str(date.today() - timedelta(days=days)),
+        )
+        response = httpx.get(
+            "https://simpleanalytics.com/junior.guru.json", params=params
+        )
+        logger.debug(f"API URL: {response.url}")
+        response.raise_for_status()
+        data = response.json()
+        for page in data["pages"]:
+            slug = page["value"].replace("/courses/", "")
+            try:
+                course_provider = CourseProvider.get_by_slug(slug)
+                metric_value = math.ceil(page["pageviews"] / 12)
+                setattr(course_provider, metric_name, metric_value)
+                course_provider.save()
+                logger.info(f"Saved {slug} metric: {metric_name}={metric_value}")
+            except CourseProvider.DoesNotExist:
+                logger.warning(f"Course provider {slug!r} not found in the database")
 
 
 def raise_if_too_long(fn: Callable[..., str]) -> Callable[..., str]:

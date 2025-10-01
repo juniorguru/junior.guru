@@ -2,13 +2,25 @@ Ahoj, tady robotické kuře z junior.guru! Mám pro tebe aktuální dávku novin
 
 ## Čísla z pracovního trhu
 
-{# vytvořit základní statistiky kolem jobs a dát je do about - kolik nabidek, jake  hlavni technologie (klidne graf), trend jejich počtu v čase - tohle klidne mit i na webu a jen to v newsletteru odprezentovat, c2a na vsechny jobs na webu, k tomu ty podpultovy tam nejak dostat (chatgpt - btw if i generate chart with chart.js, can i export it to an image, somehow?) #}
+Každý den stahuju z různých zdrojů inzeráty a ty, které jsou vhodné pro začátečníky, dávám na [junior.guru/jobs](https://junior.guru/jobs/). Tentokrát jich bylo **{{ jobs_count }}**. Nejčastější technologie, které se v inzerátech objevily:
+
+{% for tag, count in jobs_tags_stats[:10] -%}
+{{ count }}x **{{ tag }}**{% if not loop.last %}, {% endif %}
+{%- endfor %}
 
 ## Kurzy programování a testování
 
-{# na jaké 3 kurzy lidi nejvíc chodí v katalogu, ale mít tam i sponzorované kurzy, abych podpořil že si to ty firmy budou platit (přidat to do ceníku) #}
+Na [junior.guru/courses](https://junior.guru/courses/) je katalog poskytovatelů kurzů. Nejvíc tam teď lidi koukají na tohle:
 
-{# sesbírat informace o tom kolik bylo zmínek o jakých kurzech v poslední době (měsíc) v klubu (topics) #}
+{% for course_provider in course_providers[:5] -%}
+[{{ course_provider.name }}](https://junior.guru/courses/{{ course_provider.slug }}){% if not loop.last %}, {% endif %}
+{%- endfor %}
+
+V naší [komunitě na Discordu](https://junior.guru/club/) se teď nejvíc psalo o těchto kurzech:
+
+{% for course_provider in course_providers_by_mentions[:5] -%}
+[{{ course_provider.name }}](https://junior.guru/courses/{{ course_provider.slug }}){% if not loop.last %}, {% endif %}
+{%- endfor %}
 
 ## Srazy, konference a jiné akce
 
