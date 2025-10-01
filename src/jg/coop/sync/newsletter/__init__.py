@@ -72,8 +72,8 @@ async def main(force: bool, today: date):
         month_name = MONTH_NAMES[today.month - 1]
         subscribers_count = Followers.get_latest("newsletter").count
         subscribers_new_count = (
-            Followers.breakdown(this_month)["newsletter"] -
-            Followers.breakdown(prev_prev_month)["newsletter"]
+            Followers.breakdown(this_month)["newsletter"]
+            - Followers.breakdown(prev_prev_month)["newsletter"]
         )
         club_content_size = ClubMessage.content_size_by_month(prev_month)
 
