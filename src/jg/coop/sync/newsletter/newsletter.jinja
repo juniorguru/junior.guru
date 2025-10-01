@@ -5,10 +5,10 @@ Ahoj, tady robotické kuře z junior.guru! Mám pro tebe aktuální dávku novin
 Každý den stahuju z různých zdrojů inzeráty a ty, které jsou vhodné pro začátečníky, dávám na [junior.guru/jobs](https://junior.guru/jobs/). Za poslední měsíc jsem našlo **{{ jobs_count }} inzerátů**. Toto jsou technologie, které se v objevovaly nejčastěji:
 
 > 🥇 {% for tag, count in jobs_tags_stats[0:3] -%}
-{{ count }}× **{{ tag }}**{% if not loop.last %}, {% endif %}
+{{ count }}× **{{ tag }}**,
 {%- endfor %}<br>
 > 🥈 {% for tag, count in jobs_tags_stats[3:6] -%}
-{{ count }}× **{{ tag }}**{% if not loop.last %}, {% endif %}
+{{ count }}× **{{ tag }}**,
 {%- endfor %}<br>
 > 🥉 {% for tag, count in jobs_tags_stats[6:9] -%}
 {{ count }}× **{{ tag }}**{% if not loop.last %}, {% endif %}
