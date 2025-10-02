@@ -4,7 +4,7 @@ from functools import partial
 from pathlib import Path
 
 import click
-import requests
+import httpx
 from githubkit import GitHub
 from lxml import html
 
@@ -68,7 +68,7 @@ def main(
 
     logger.info("Getting newsletter subscribers from Ecomail")
     try:
-        response = requests.get(
+        response = httpx.get(
             f"https://api2.ecomailapp.cz/lists/{ecomail_list_id}/subscribers",
             headers={
                 "key": ecomail_api_key,
@@ -103,28 +103,30 @@ def main(
 def scrape_youtube():
     # TODO move to Plucker
     logger.info("Scraping YouTube")
-    session = requests.Session()
-    response = session.get(YOUTUBE_URL)
-    response.raise_for_status()
-    html_tree = html.fromstring(response.content)
-    try:
-        consent_form = [
-            form for form in html_tree.forms if form.action == YOUTUBE_CONSENT_FORM_URL
-        ][0]
-        response = session.request(
-            consent_form.method.lower(),
-            consent_form.action,
-            params=consent_form.form_values(),
-        )
+    with httpx.Client(follow_redirects=True) as client:
+        response = client.get(YOUTUBE_URL)
         response.raise_for_status()
-    except IndexError:
-        logger.warning("There is no YouTube consent form")
-    match = re.search(r'"(\d+) (odběratelů|subscribers)"', response.text)
-    try:
-        return int(match.group(1))
-    except AttributeError:
-        logger.error(f"Scraping failed!\n\n{response.text}")
-        return None
+        html_tree = html.fromstring(response.content)
+        try:
+            consent_form = [
+                form
+                for form in html_tree.forms
+                if form.action == YOUTUBE_CONSENT_FORM_URL
+            ][0]
+            response = client.request(
+                consent_form.method.lower(),
+                consent_form.action,
+                params=consent_form.form_values(),
+            )
+            response.raise_for_status()
+        except IndexError:
+            logger.warning("There is no YouTube consent form")
+        match = re.search(r'"(\d+) (odběratelů|subscribers)"', response.text)
+        try:
+            return int(match.group(1))
+        except AttributeError:
+            logger.error(f"Scraping failed!\n\n{response.text}")
+            return None
 
 
 def scrape_github_personal(api_key: str) -> int:
