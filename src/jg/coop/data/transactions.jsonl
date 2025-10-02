@@ -1156,3 +1156,5 @@
 {"_id": "27265544258", "amount": 13189, "category": "memberships", "happened_on": "2025-09-29"}
 {"_id": "27268253723", "amount": -319, "category": "miscellaneous", "happened_on": "2025-09-30"}
 {"_id": "27268253739", "amount": -213, "category": "miscellaneous", "happened_on": "2025-09-30"}
+{"_id": "27272878884", "amount": 6, "category": "donations", "happened_on": "2025-10-01"}
+{"_id": "27274558237", "amount": -325, "category": "miscellaneous", "happened_on": "2025-10-01"}
