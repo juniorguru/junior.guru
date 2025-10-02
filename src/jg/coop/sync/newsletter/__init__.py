@@ -40,7 +40,7 @@ MONTH_NAMES = [
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=["summary", "course-providers"])
+@cli.sync_command(dependencies=["summary", "course-providers", "topics"])
 @click.option(
     "-f",
     "--force",
