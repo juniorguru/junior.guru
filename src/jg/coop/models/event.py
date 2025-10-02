@@ -187,9 +187,19 @@ class Event(BaseModel):
         return cls.listing()
 
     @classmethod
-    def archive_listing(cls, now=None):
+    def archive_listing(
+        cls, now=None, has_recording: bool = False, has_avatar: bool = False
+    ):
         now = now or datetime.now(UTC).replace(tzinfo=None)
-        return cls.select().where(cls.start_at < now).order_by(cls.start_at.desc())
+        query = cls.select().where(cls.start_at < now).order_by(cls.start_at.desc())
+        if has_recording:
+            query = query.where(
+                (cls.club_recording_url.is_null(False))
+                | (cls.public_recording_url.is_null(False))  # noqa: E712
+            )
+        if has_avatar:
+            query = query.where(cls.avatar_path != cls.avatar_path.default)
+        return query
 
     @classmethod
     def planned_listing(cls, now=None):

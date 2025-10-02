@@ -38,9 +38,8 @@ V naší komunitě na Discordu se v poslední době psalo o těchto kurzech:
 
 ## Dávka inspirace 💡
 
-> {% for event in events_archive_sample -%}
-    🧑‍🏫 [{{ event.title }}]({{ event.url }}) – {{ event.bio_name }}<br>
-{%- endfor %}
+> 🧑‍🏫 [{{ event_last.title }}]({{ event_last.url }}) – {{ event_last.bio_name }}<br>
+> 🧑‍🏫 [{{ event_random.title }}]({{ event_random.url }}) – {{ event_random.bio_name }}<br>
 
 ## Co se dělo v klubu 💬
 V naší Discord komunitě se napsalo **{{ club_content_size }} písmenek**. Tady je shrnutí toho nejzajímavějšího. Pokud v klubu ještě nejsi, nebo vůbec nevíš, o co jde, mrkni na [junior.guru/club](https://junior.guru/club/)

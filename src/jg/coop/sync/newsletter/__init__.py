@@ -185,7 +185,11 @@ async def main(force: bool, open_browser: bool, today: date):
 
         logger.debug("Preparing events")
         events_planned = list(Event.planned_listing())
-        events_archive_sample = random.sample(list(Event.archive_listing()), 3)
+        events_archive = list(
+            Event.archive_listing(has_recording=True, has_avatar=True)
+        )
+        event_last = events_archive[0]
+        event_random = random.choice(list(events_archive[1:]))
 
         logger.debug("Rendering email body")
         template = Template(Path(__file__).with_name("newsletter.jinja").read_text())
@@ -197,7 +201,8 @@ async def main(force: bool, open_browser: bool, today: date):
             club_groups=club_groups,
             course_providers_by_mentions=course_providers_by_mentions,
             course_providers=course_providers,
-            events_archive_sample=events_archive_sample,
+            event_last=event_last,
+            event_random=event_random,
             events_planned=events_planned,
             jobs_count=jobs_count,
             jobs_tags_stats=jobs_tags_stats,
