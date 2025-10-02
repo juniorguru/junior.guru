@@ -39,6 +39,10 @@ class Page(BaseModel):
             meta=meta_data,
         )
 
+    @property
+    def absolute_url(self) -> str:
+        return f"https://junior.guru/{self.dest_uri.removesuffix('index.html')}"
+
     def to_card(self) -> dict:
         if self.src_uri.startswith("stories/"):
             return dict(

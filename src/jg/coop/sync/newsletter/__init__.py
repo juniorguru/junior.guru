@@ -22,6 +22,8 @@ from jg.coop.models.club import ClubChannel, ClubMessage, ClubSummaryTopic, Club
 from jg.coop.models.course_provider import CourseProvider, CourseProviderGroup
 from jg.coop.models.event import Event
 from jg.coop.models.followers import Followers
+from jg.coop.models.page import Page
+from jg.coop.models.podcast import PodcastEpisode
 
 
 MONTH_NAMES = [
@@ -99,14 +101,14 @@ async def main(force: bool, open_browser: bool, today: date):
         logger.info("Preparing email data")
         month_name = MONTH_NAMES[today.month - 1]
 
-        logger.debug("Preparing stats about subscribers")
+        logger.debug("Preparing subscribers")
         subscribers_count = Followers.get_latest("newsletter").count
         subscribers_new_count = (
             subscribers_count - Followers.breakdown(prev_prev_month)["newsletter"]
         )
         club_content_size = ClubMessage.content_size_by_month(prev_month)
 
-        logger.debug("Preparing stats about jobs")
+        logger.debug("Preparing jobs")
         jobs_count = 0
         jobs_tags_stats = Counter()
         for message in ClubMessage.forum_listing(ClubChannelID.JOBS):
@@ -115,7 +117,7 @@ async def main(force: bool, open_browser: bool, today: date):
                 jobs_tags_stats.update(get_job_tags(message))
         jobs_tags_stats = jobs_tags_stats.most_common(20)
 
-        logger.debug("Preparing stats about courses")
+        logger.debug("Preparing courses")
         cps_group, cps_items = CourseProvider.grouping()[0]
         cps_sponsors = cps_items if cps_group == CourseProviderGroup.HIGHLIGHTED else []
         cps_most_viewed = [
@@ -128,12 +130,12 @@ async def main(force: bool, open_browser: bool, today: date):
             CourseProvider.mentions_listing("mentions_last_month_count")
         )
 
-        logger.debug("Preparing info about top club groups")
+        logger.debug("Preparing club groups")
         club_groups = list(
             ClubMessage.forum_top_listing(ClubChannelID.GROUPS, prev_month)
         )
 
-        logger.debug("Preparing info about top club diaries")
+        logger.debug("Preparing club diaries")
         club_diaries_threads = list(
             ClubMessage.forum_top_listing(ClubChannelID.DIARIES, prev_month)
         )
@@ -148,7 +150,7 @@ async def main(force: bool, open_browser: bool, today: date):
             for message in club_diaries_threads
         ]
 
-        logger.debug("Preparing info about club creations")
+        logger.debug("Preparing club creations")
         club_creations_threads = list(
             ClubMessage.forum_top_listing(ClubChannelID.CREATIONS, prev_month)
         )
@@ -163,7 +165,7 @@ async def main(force: bool, open_browser: bool, today: date):
             for message in club_creations_threads
         ]
 
-        logger.debug("Preparing info about club CVs")
+        logger.debug("Preparing club CVs")
         club_cv_reviews = []
         club_cv_threads = list(
             ClubMessage.forum_top_listing(ClubChannelID.CV_GITHUB_LINKEDIN, prev_month)
@@ -191,6 +193,16 @@ async def main(force: bool, open_browser: bool, today: date):
         event_last = events_archive[0]
         event_random = random.choice(list(events_archive[1:]))
 
+        logger.debug("Preparing stories")
+        stories_pages = list(Page.stories_listing())
+        story_last = stories_pages[0]
+        story_random = random.choice(list(stories_pages[1:]))
+
+        logger.debug("Preparing podcast")
+        podcast_episodes = list(PodcastEpisode.listing())
+        podcast_last = podcast_episodes[0]
+        podcast_random = random.choice(list(podcast_episodes[1:]))
+
         logger.debug("Rendering email body")
         template = Template(Path(__file__).with_name("newsletter.jinja").read_text())
         template_context = dict(
@@ -208,6 +220,10 @@ async def main(force: bool, open_browser: bool, today: date):
             jobs_tags_stats=jobs_tags_stats,
             members_count=ClubUser.members_count(),
             month_name=month_name,
+            podcast_last=podcast_last,
+            podcast_random=podcast_random,
+            story_last=story_last,
+            story_random=story_random,
             subscribers_count=subscribers_count,
             subscribers_new_count=subscribers_new_count,
             topics=ClubSummaryTopic.listing(),

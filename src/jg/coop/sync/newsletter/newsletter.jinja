@@ -8,7 +8,7 @@ Každý den stahuju z různých zdrojů inzeráty a ty, které jsou vhodné pro 
 > 🥈 {% for tag, count in jobs_tags_stats[3:6] %}{{ count }}× **{{ tag }}**, {% endfor %}<br>
 > 🥉 {% for tag, count in jobs_tags_stats[6:9] %}{{ count }}× **{{ tag }}**{% if not loop.last %}, {% endif %}{% endfor %}<br>
 
-{% if events_planned|length %}
+{%- if events_planned|length %}
 ## Plánované online akce 🗓️
 
 > {% for event in events_planned[:3] -%}
@@ -36,10 +36,17 @@ V naší komunitě na Discordu se v poslední době psalo o těchto kurzech:
 {%- endfor %}
 {% endif %}
 
-## Dávka inspirace 💡
+## Nepřibarvené příběhy juniorů 💆
+▪️ {{ story_last.title }} – [Přečti]({{ story_last.absolute_url }})<br>
+▪️ {{ story_random.title }} – [Přečti]({{ story_random.absolute_url }})<br>
 
-> 🧑‍🏫 [{{ event_last.title }}]({{ event_last.url }}) – {{ event_last.bio_name }}<br>
-> 🧑‍🏫 [{{ event_random.title }}]({{ event_random.url }}) – {{ event_random.bio_name }}<br>
+## Podcast 🎙️
+▪️ {{ podcast_last.format_title(affiliation=false) }} – [Poslouchej]({{ podcast_last.url }})<br>
+▪️ {{ podcast_random.format_title(affiliation=false) }} – [Poslouchej]({{ podcast_random.url }})<br>
+
+## Záznamy z online akcí 📺
+▪️ {{ event_last.bio_name }}: {{ event_last.title }} – [Sleduj]({{ event_last.url }}#zaznam)<br>
+▪️ {{ event_random.bio_name }}: {{ event_random.title }} – [Sleduj]({{ event_random.url }}#zaznam)<br>
 
 ## Co se dělo v klubu 💬
 V naší Discord komunitě se napsalo **{{ club_content_size }} písmenek**. Tady je shrnutí toho nejzajímavějšího. Pokud v klubu ještě nejsi, nebo vůbec nevíš, o co jde, mrkni na [junior.guru/club](https://junior.guru/club/)
@@ -50,7 +57,7 @@ V naší Discord komunitě se napsalo **{{ club_content_size }} písmenek**. Tad
     [{{ message.channel_name }}]({{ message.url }})<br>
 {%- endfor %}
 
-{% if club_creations|length %}
+{%- if club_creations|length %}
 ### 🛠️ Jaké jsme tvořili projekty
 > {% for club_creation in club_creations -%}
     {{ club_creation.author }}: [{{ club_creation.name }}]({{ club_creation.url }}){% if not loop.last %} ▪️ {% endif %}
@@ -63,7 +70,7 @@ V naší Discord komunitě se napsalo **{{ club_content_size }} písmenek**. Tad
     [{{ club_diary.name }}]({{ club_diary.url }}) – {{ club_diary.author }}<br>
 {%- endfor %}
 
-{% if club_cv_reviews|length %}
+{%- if club_cv_reviews|length %}
 ### 🔬 Zpětná vazba na CV, GitHub, LinkedIn
 > {% for cv_review in club_cv_reviews -%}
     {{ cv_review.author }}: [
@@ -76,5 +83,5 @@ V naší Discord komunitě se napsalo **{{ club_content_size }} písmenek**. Tad
 
 {% for topic in topics %}
 ### {{ topic.emoji }} {{ topic.name }}
-{{ topic.text }} [Celá diskuze]({{ topic.message.url }})
+{{ topic.text }} [Diskutuj]({{ topic.message.url }})
 {% endfor %}
