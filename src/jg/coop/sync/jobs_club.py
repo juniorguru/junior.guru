@@ -104,7 +104,7 @@ async def sync_jobs(client: ClubClient, channel_id: int):
         job.save()
     logger.info(f"Currently listed jobs: {len(jobs)}")
 
-    messages = list(ClubMessage.forum_listing(channel_id, skip_guide=True))
+    messages = list(ClubMessage.forum_listing(channel_id))
     logger.info(f"Found {len(messages)} threads since {since_on}")
     for message in messages:
         if message.created_at.date() > since_on:

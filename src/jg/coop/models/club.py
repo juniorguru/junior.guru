@@ -384,7 +384,7 @@ class ClubMessage(BaseModel):
         return query.order_by(cls.created_at)
 
     @classmethod
-    def forum_listing(cls, channel_id: int, skip_guide: bool = False) -> Iterable[Self]:
+    def forum_listing(cls, channel_id: int, skip_guide: bool = True) -> Iterable[Self]:
         query = (
             cls.select()
             .where(cls.channel_id != channel_id, cls.parent_channel_id == channel_id)
@@ -393,7 +393,7 @@ class ClubMessage(BaseModel):
             .order_by(cls.created_at.desc())
         )
         if skip_guide:
-            query = query.where(cls.is_forum_guide == False)  # noqa: E712
+            query = query.having(fn.max(cls.is_forum_guide == False))  # noqa: E712
         return query
 
     @classmethod
@@ -402,16 +402,25 @@ class ClubMessage(BaseModel):
         channel_id: int,
         since_on: date,
     ) -> Iterable[Self]:
+        threads = cls.forum_listing(channel_id)
         return (
-            cls.forum_listing(channel_id, skip_guide=True)
-            .where(cls.created_at >= datetime.combine(since_on, datetime.min.time()))
+            cls.select()
+            .where(
+                cls.channel_id.in_([message.channel_id for message in threads]),
+                cls.is_private == False,  # noqa: E712
+                cls.author_is_bot == False,  # noqa: E712
+                cls.type.in_(["default", "reply"]),
+                cls.created_at >= datetime.combine(since_on, datetime.min.time()),
+            )
+            .group_by(cls.channel_id)
+            .having(cls.id == fn.min(cls.id))
             .order_by(fn.sum(cls.content_size).desc())
         )
 
     @classmethod
     def forum_guide(cls, channel_id: int) -> Self:
         return (
-            cls.forum_listing(channel_id)
+            cls.forum_listing(channel_id, skip_guide=False)
             .where(
                 cls.is_forum_guide == True,  # noqa: E712
             )

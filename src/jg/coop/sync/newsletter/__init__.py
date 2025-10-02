@@ -1,8 +1,10 @@
+import random
 import time
 from collections import Counter
 from datetime import date, timedelta
 from pathlib import Path
 from pprint import pformat
+from typing import Generator, Literal
 
 import click
 from jinja2 import Template
@@ -16,8 +18,9 @@ from jg.coop.lib.discord_club import ClubChannelID
 from jg.coop.lib.md import md
 from jg.coop.lib.template_filters import thousands
 from jg.coop.models.base import db
-from jg.coop.models.club import ClubMessage, ClubSummaryTopic, ClubUser
+from jg.coop.models.club import ClubChannel, ClubMessage, ClubSummaryTopic, ClubUser
 from jg.coop.models.course_provider import CourseProvider, CourseProviderGroup
+from jg.coop.models.event import Event
 from jg.coop.models.followers import Followers
 
 
@@ -40,7 +43,16 @@ MONTH_NAMES = [
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=["summary", "course-providers", "topics"])
+@cli.sync_command(
+    dependencies=[
+        "course-providers",
+        "events",
+        "pages",
+        "podcast",
+        "summary",
+        "topics",
+    ]
+)
 @click.option(
     "-f",
     "--force",
@@ -97,7 +109,7 @@ async def main(force: bool, open_browser: bool, today: date):
         logger.debug("Preparing stats about jobs")
         jobs_count = 0
         jobs_tags_stats = Counter()
-        for message in ClubMessage.forum_listing(ClubChannelID.JOBS, skip_guide=True):
+        for message in ClubMessage.forum_listing(ClubChannelID.JOBS):
             if message.created_at.date() >= prev_month:
                 jobs_count += 1
                 jobs_tags_stats.update(get_job_tags(message))
@@ -116,37 +128,84 @@ async def main(force: bool, open_browser: bool, today: date):
             CourseProvider.mentions_listing("mentions_last_month_count")
         )
 
-        logger.debug("Preparing stats about club content")
-        club_top_groups = ClubMessage.forum_top_listing(
-            ClubChannelID.GROUPS, prev_month
+        logger.debug("Preparing info about top club groups")
+        club_groups = list(
+            ClubMessage.forum_top_listing(ClubChannelID.GROUPS, prev_month)
         )
-        club_top_diaries = ClubMessage.forum_top_listing(
-            ClubChannelID.DIARIES, prev_month
+
+        logger.debug("Preparing info about top club diaries")
+        club_diaries_threads = list(
+            ClubMessage.forum_top_listing(ClubChannelID.DIARIES, prev_month)
         )
-        club_cvs = ClubMessage.forum_top_listing(
-            ClubChannelID.CV_GITHUB_LINKEDIN, prev_month
+        club_diaries = [
+            {
+                "name": message.channel_name,
+                "url": message.url,
+                "author": get_initials(
+                    ClubMessage.get_by_id(message.channel_id).author.display_name
+                ),
+            }
+            for message in club_diaries_threads
+        ]
+
+        logger.debug("Preparing info about club creations")
+        club_creations_threads = list(
+            ClubMessage.forum_top_listing(ClubChannelID.CREATIONS, prev_month)
         )
-        club_creations = ClubMessage.forum_top_listing(
-            ClubChannelID.CREATIONS, prev_month
+        club_creations = [
+            {
+                "name": message.channel_name,
+                "url": message.url,
+                "author": get_initials(
+                    ClubMessage.get_by_id(message.channel_id).author.display_name
+                ),
+            }
+            for message in club_creations_threads
+        ]
+
+        logger.debug("Preparing info about club CVs")
+        club_cv_reviews = []
+        club_cv_threads = list(
+            ClubMessage.forum_top_listing(ClubChannelID.CV_GITHUB_LINKEDIN, prev_month)
         )
+        for message in club_cv_threads:
+            thread = ClubChannel.get_by_id(message.channel_id)
+            for review_type in get_cv_review_types(thread.tags):
+                club_cv_reviews.append(
+                    {
+                        "type": review_type,
+                        "url": message.url,
+                        "author": get_initials(
+                            ClubMessage.get_by_id(
+                                message.channel_id
+                            ).author.display_name
+                        ),
+                    }
+                )
+
+        logger.debug("Preparing events")
+        events_planned = list(Event.planned_listing())
+        events_archive_sample = random.sample(list(Event.archive_listing()), 3)
 
         logger.debug("Rendering email body")
         template = Template(Path(__file__).with_name("newsletter.jinja").read_text())
         template_context = dict(
+            club_content_size=thousands(club_content_size),
+            club_creations=club_creations,
+            club_cv_reviews=club_cv_reviews,
+            club_diaries=club_diaries,
+            club_groups=club_groups,
+            course_providers_by_mentions=course_providers_by_mentions,
+            course_providers=course_providers,
+            events_archive_sample=events_archive_sample,
+            events_planned=events_planned,
+            jobs_count=jobs_count,
+            jobs_tags_stats=jobs_tags_stats,
             members_count=ClubUser.members_count(),
             month_name=month_name,
             subscribers_count=subscribers_count,
             subscribers_new_count=subscribers_new_count,
-            club_content_size=thousands(club_content_size),
-            jobs_count=jobs_count,
-            jobs_tags_stats=jobs_tags_stats,
             topics=ClubSummaryTopic.listing(),
-            course_providers=course_providers,
-            course_providers_by_mentions=course_providers_by_mentions,
-            club_top_groups=club_top_groups,
-            club_top_diaries=club_top_diaries,
-            club_cvs=club_cvs,
-            club_creations=club_creations,
         )
         logger.debug(f"Template context:\n{pformat(template_context)}")
         email_data = {
@@ -174,3 +233,16 @@ def get_job_tags(message: ClubMessage) -> set[str]:
         if text.startswith("#"):
             tags.add(text)
     return tags
+
+
+def get_cv_review_types(
+    tags: list[str],
+) -> Generator[Literal["cv", "gh", "li"], None, None]:
+    prefix = "zpětná vazba na"
+    relevant_tags = [tag for tag in map(str.lower, tags) if tag.startswith(prefix)]
+    return [tag.removeprefix(prefix).strip() for tag in relevant_tags]
+
+
+def get_initials(name: str) -> str:
+    parts = name.split()
+    return "".join([f"{part[0]}." for part in parts])

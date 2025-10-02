@@ -8,6 +8,14 @@ Každý den stahuju z různých zdrojů inzeráty a ty, které jsou vhodné pro 
 > 🥈 {% for tag, count in jobs_tags_stats[3:6] %}{{ count }}× **{{ tag }}**, {% endfor %}<br>
 > 🥉 {% for tag, count in jobs_tags_stats[6:9] %}{{ count }}× **{{ tag }}**{% if not loop.last %}, {% endif %}{% endfor %}<br>
 
+{% if events_planned|length %}
+## Plánované online akce 🗓️
+
+> {% for event in events_planned[:3] -%}
+    **{{ '{:%-d.%-m. %H:%M}'.format(event.start_at) }}** [{{ event.title }}]({{ event.url }}) ({{ event.bio_name }})<br>
+{%- endfor %}
+{% endif %}
+
 ## Srazy, konference a jiné akce 🍻
 
 {# vymyslet jak v newsletteru prezentovat meetup akce - nějaký kalendář? možná jen ty, kam jdou členové? #}
@@ -28,36 +36,42 @@ V naší komunitě na Discordu se v poslední době psalo o těchto kurzech:
 {%- endfor %}
 {% endif %}
 
-## Inspirace 💡
+## Dávka inspirace 💡
 
-{# (přednášky, podcast, stories) #}
+> {% for event in events_archive_sample -%}
+    🧑‍🏫 [{{ event.title }}]({{ event.url }}) – {{ event.bio_name }}<br>
+{%- endfor %}
 
 ## Co se dělo v klubu 💬
 V naší Discord komunitě se napsalo **{{ club_content_size }} písmenek**. Tady je shrnutí toho nejzajímavějšího. Pokud v klubu ještě nejsi, nebo vůbec nevíš, o co jde, mrkni na [junior.guru/club](https://junior.guru/club/)
 
-{% if club_creations|length %}
-### 🛠️ Jaké jsme tvořili projekty
-> {% for message in club_creations -%}
-    [{{ message.channel_name }}]({{ message.url }}){% if not loop.last %} ▪️ {% endif %}
-{%- endfor %}
-{% endif %}
-
 ### 👥 V jakých skupinkách to nejvíc žilo
-> {% for message in club_top_groups[:3] -%}
-    {% if loop.index == 1 %}🥇{% elif loop.index == 2 %}🥈{% elif loop.index == 3 %}🥉{% endif -%} 
+> {% for message in club_groups[:3] -%}
+    {% if loop.index == 1 %}🥇 {% elif loop.index == 2 %}🥈 {% elif loop.index == 3 %}🥉 {% endif -%}
     [{{ message.channel_name }}]({{ message.url }})<br>
 {%- endfor %}
 
+{% if club_creations|length %}
+### 🛠️ Jaké jsme tvořili projekty
+> {% for club_creation in club_creations -%}
+    {{ club_creation.author }}: [{{ club_creation.name }}]({{ club_creation.url }}){% if not loop.last %} ▪️ {% endif %}
+{%- endfor %}
+{% endif %}
+
 ### 📔 Do jakých deníčků se nejvíc psalo
-> {% for message in club_top_diaries[:3] -%}
-    {% if loop.index == 1 %}🥇{% elif loop.index == 2 %}🥈{% elif loop.index == 3 %}🥉{% endif -%} 
-    {{ message.author.display_name }}: [{{ message.channel_name }}]({{ message.url }})<br>
+> {% for club_diary in club_diaries[:3] -%}
+    {% if loop.index == 1 %}🥇 {% elif loop.index == 2 %}🥈 {% elif loop.index == 3 %}🥉 {% endif -%}
+    [{{ club_diary.name }}]({{ club_diary.url }}) – {{ club_diary.author }}<br>
 {%- endfor %}
 
-{% if club_cvs|length %}
-### 📝 Zpětná vazba na životopisy
-> {% for message in club_cvs -%}
-    [CV č. {{ loop.index }}]({{ message.url }}){% if not loop.last %} ▪️ {% endif %}
+{% if club_cv_reviews|length %}
+### 🔬 Zpětná vazba na CV, GitHub, LinkedIn
+> {% for cv_review in club_cv_reviews -%}
+    {{ cv_review.author }}: [
+        {%- if cv_review.type == "cv" %}CVčko{% elif cv_review.type == "gh" %}GitHub{% elif cv_review.type == "li" %}LinkedIn{% endif -%}
+    ](
+        {{- cv_review.url -}}
+    ){% if not loop.last %} ▪️ {% endif %}
 {%- endfor %}
 {% endif %}
 
