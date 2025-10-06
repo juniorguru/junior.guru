@@ -44,7 +44,6 @@ dependencies = [
     "pod2gen==1.0.3",
     "py-cord[speed]@git+https://github.com/Pycord-Development/pycord.git",
     "pycircleci==0.7.0",
-    "pydantic==2.11.9",
     "python-slugify==8.0.4",
     "pyyaml==6.0.3",
     "requests==2.32.5",
@@ -52,6 +51,7 @@ dependencies = [
     "stripe==12.5.1",
     "tenacity==9.1.2",
     "tiktoken==0.11.0",
+    "pydantic==2.11.10",
 ]
 
 [project.urls]
