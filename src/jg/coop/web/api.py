@@ -93,10 +93,11 @@ def build_events_honza_ics(api_dir, config):
 def build_czechitas_csv(api_dir, config):
     rows = [job.to_czechitas_api() for job in ListedJob.api_listing()]
     api_file = api_dir / "jobs.csv"
-    with api_file.open("w", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
-        writer.writeheader()
-        writer.writerows(rows)
+    if rows:
+        with api_file.open("w", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+            writer.writeheader()
+            writer.writerows(rows)
 
 
 @db.connection_context()
