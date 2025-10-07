@@ -1,5 +1,5 @@
 query fetch($cursor: String!) {
-  members(first: 100, after: $cursor) {
+  members(first: 100, after: $cursor, state: ACTIVE) {
     pageInfo {
       endCursor
       hasNextPage

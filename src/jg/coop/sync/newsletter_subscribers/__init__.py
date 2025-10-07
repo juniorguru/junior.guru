@@ -5,6 +5,7 @@ import httpx
 
 from jg.coop.cli.sync import default_from_env, main as cli
 from jg.coop.lib import loggers
+from jg.coop.lib.buttondown import ButtondownAPI
 from jg.coop.lib.cache import get_cache
 from jg.coop.lib.cli import async_command
 from jg.coop.lib.memberful import MemberfulAPI
@@ -80,21 +81,12 @@ async def main(
                     logger.info(f"Fetched {ecomail_count} subscribers from Ecomail")
                     break
         logger.debug("Caching subscribers")
-        cache.set(cache_key, subscribers, expire=3600 * cache_hrs)
+        cache.set(cache_key, subscribers, expire=3600 * cache_hrs, tag="subscribers")
+
+    return  # TODO
 
     logger.info(f"Adding {len(subscribers)} subscribers to Buttondown")
-    # TODO
-    # for email, sources in subscribers.items():
-    #     try:
-    #         # TODO
-    #         # async with ButtondownAPI() as buttondown:
-    #         #     await buttondown.add_subscriber(email=email, tags=sources)
-    #         logger.debug(f"Added subscriber {email} from {sources}")
-    #     except httpx.HTTPStatusError as e:
-    #         error_data = e.response.json()
-    #         error_code = error_data.get("code")
-    #         if error_code == SubscriberErrorCode.EMAIL_ALREADY_EXISTS:
-    #             logger.debug(f"Subscriber {email} already exists, skipping")
-    #             continue
-    #         logger.error(f"Failed to add subscriber {email} from {sources}: {e}")
-    #     break
+    for email, sources in logger.progress(subscribers.items()):
+        async with ButtondownAPI() as buttondown:
+            logger.debug(f"Adding subscriber {email} from {sources}")
+            await buttondown.add_subscriber(email=email, tags=sources)

@@ -33,6 +33,15 @@ class SubscriberErrorCode(StrEnum):
     TAG_INVALID = "tag_invalid"
 
 
+class ButtondownError(Exception):
+    def __init__(
+        self, message: str, code: str | None = None, metadata: dict | None = None
+    ):
+        super().__init__(message)
+        self.code = code
+        self.metadata = metadata or {}
+
+
 class ButtondownAPI:
     def __init__(self, token: str | None = None) -> None:
         self.token = token or BUTTONDOWN_API_KEY
@@ -49,6 +58,13 @@ class ButtondownAPI:
     async def __aexit__(self, exc_type, exc_val, exc_tb) -> None:
         if self._client:
             await self._client.aclose()
+        if exc_type:
+            exc_data = exc_val.response.json()
+            raise ButtondownError(
+                exc_data["detail"],
+                code=exc_data["code"],
+                metadata=exc_data.get("metadata"),
+            ) from exc_val
 
     async def get_emails_since(self, since_date: date) -> dict:
         response = await self._client.get(
@@ -63,42 +79,39 @@ class ButtondownAPI:
         response.raise_for_status()
         return response.json()
 
-    # @mutations.mutates_buttondown()
-    async def add_subscriber(self, email: str, tags=set[SubscriberSource]) -> None:
-        # first get subscriber by email, check if all is ok
-        # if not, either update tags or create
+    @mutations.mutates_buttondown()
+    async def add_subscriber(self, email: str, tags=set[SubscriberSource]) -> dict:
         try:
             response = await self._client.get(f"subscribers/{email}")
             response.raise_for_status()
-            subscriber = response.json()
-            existing_tags = set(subscriber.get("tags", []))
-            print(existing_tags)
         except httpx.HTTPStatusError as e:
             if e.response.status_code == 404:
+                logger.debug(f"Creating subscriber {email}")
+                subscriber_type = (
+                    "unactivated" if tags == {SubscriberSource.MEMBERFUL} else "regular"
+                )
+                logger.debug(f"Subscriber {email} classified as {subscriber_type!r}")
                 response = await self._client.post(
                     "subscribers",
                     json={
                         "email_address": email,
                         "tags": list(tags),
-                        "type": "regular",
+                        "type": subscriber_type,
                     },
                 )
                 response.raise_for_status()
-            else:
-                raise
+                return response.json()
+            raise
 
-        # response = await self._client.post(
-        #     "subscribers",
-        #     json={"email_address": email, "tags": list(tags), "type": "regular"},
-        # )
-        # try:
-        #     response.raise_for_status()
-        # except httpx.HTTPStatusError as e:
-        #     if e.response.status_code != 400:
-        #         raise
-        #     error_data = e.response.json()
-        #     error_code = error_data.get("code")
-        #     if error_code == SubscriberErrorCode.EMAIL_ALREADY_EXISTS:
-        #         subscriber_id = error_data["metadata"]["subscriber_id"]
-        #         raise EmailAreadyExistsError(subscriber_id) from e
-        # return response.json()
+        subscriber = response.json()
+        existing_tags = set(subscriber.get("tags", []))
+        if existing_tags == tags:
+            logger.debug(f"Subscriber {email} up-to-date, skipping")
+            return subscriber
+
+        logger.debug(f"Updating subscriber {email}, tags: {existing_tags} → {tags}")
+        response = await self._client.patch(
+            f"subscribers/{email}", data={"tags": list(existing_tags | tags)}
+        )
+        response.raise_for_status()
+        return response.json()
