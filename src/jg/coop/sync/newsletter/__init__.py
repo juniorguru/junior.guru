@@ -49,6 +49,7 @@ logger = loggers.from_path(__file__)
     dependencies=[
         "course-providers",
         "events",
+        "newsletter-subscribers",
         "pages",
         "podcast",
         "summary",
@@ -102,148 +103,145 @@ async def main(
                 )
                 return
 
-        logger.info("Preparing email data")
-        month_name = MONTH_NAMES[today.month - 1]
+    logger.info("Preparing email data")
+    month_name = MONTH_NAMES[today.month - 1]
 
-        logger.debug("Preparing subscribers")
-        subscribers_count = Followers.get_latest("newsletter").count
-        subscribers_new_count = (
-            subscribers_count - Followers.breakdown(prev_prev_month)["newsletter"]
-        )
-        club_content_size = ClubMessage.content_size_by_month(prev_month)
+    logger.debug("Preparing subscribers")
+    subscribers_count = Followers.get_latest("newsletter").count
+    subscribers_new_count = (
+        subscribers_count - Followers.breakdown(prev_prev_month)["newsletter"]
+    )
+    club_content_size = ClubMessage.content_size_by_month(prev_month)
 
-        logger.debug("Preparing jobs")
-        jobs_count = 0
-        jobs_tags_stats = Counter()
-        for message in ClubMessage.forum_listing(ClubChannelID.JOBS):
-            if message.created_at.date() >= prev_month:
-                jobs_count += 1
-                jobs_tags_stats.update(get_job_tags(message))
-        jobs_tags_stats = jobs_tags_stats.most_common(20)
+    logger.debug("Preparing jobs")
+    jobs_count = 0
+    jobs_tags_stats = Counter()
+    for message in ClubMessage.forum_listing(ClubChannelID.JOBS):
+        if message.created_at.date() >= prev_month:
+            jobs_count += 1
+            jobs_tags_stats.update(get_job_tags(message))
+    jobs_tags_stats = jobs_tags_stats.most_common(20)
 
-        logger.debug("Preparing courses")
-        cps_group, cps_items = CourseProvider.grouping()[0]
-        cps_sponsors = cps_items if cps_group == CourseProviderGroup.HIGHLIGHTED else []
-        cps_most_viewed = [
-            cp
-            for cp in CourseProvider.pageviews_listing("page_last_month_pageviews")
-            if cp not in cps_sponsors
-        ]
-        course_providers = cps_sponsors + cps_most_viewed
-        course_providers_by_mentions = list(
-            CourseProvider.mentions_listing("mentions_last_month_count")
-        )
+    logger.debug("Preparing courses")
+    cps_group, cps_items = CourseProvider.grouping()[0]
+    cps_sponsors = cps_items if cps_group == CourseProviderGroup.HIGHLIGHTED else []
+    cps_most_viewed = [
+        cp
+        for cp in CourseProvider.pageviews_listing("page_last_month_pageviews")
+        if cp not in cps_sponsors
+    ]
+    course_providers = cps_sponsors + cps_most_viewed
+    course_providers_by_mentions = list(
+        CourseProvider.mentions_listing("mentions_last_month_count")
+    )
 
-        logger.debug("Preparing club groups")
-        club_groups = list(
-            ClubMessage.forum_top_listing(ClubChannelID.GROUPS, prev_month)
-        )
+    logger.debug("Preparing club groups")
+    club_groups = list(ClubMessage.forum_top_listing(ClubChannelID.GROUPS, prev_month))
 
-        logger.debug("Preparing club diaries")
-        club_diaries_threads = list(
-            ClubMessage.forum_top_listing(ClubChannelID.DIARIES, prev_month)
-        )
-        club_diaries = [
-            {
-                "name": message.channel_name,
-                "url": message.url,
-                "author": get_initials(
-                    ClubMessage.get_by_id(message.channel_id).author.display_name
-                ),
-            }
-            for message in club_diaries_threads
-        ]
-
-        logger.debug("Preparing club creations")
-        club_creations_threads = list(
-            ClubMessage.forum_top_listing(ClubChannelID.CREATIONS, prev_month)
-        )
-        club_creations = [
-            {
-                "name": message.channel_name,
-                "url": message.url,
-                "author": get_initials(
-                    ClubMessage.get_by_id(message.channel_id).author.display_name
-                ),
-            }
-            for message in club_creations_threads
-        ]
-
-        logger.debug("Preparing club CVs")
-        club_cv_reviews = []
-        club_cv_threads = list(
-            ClubMessage.forum_top_listing(ClubChannelID.CV_GITHUB_LINKEDIN, prev_month)
-        )
-        for message in club_cv_threads:
-            thread = ClubChannel.get_by_id(message.channel_id)
-            for review_type in get_cv_review_types(thread.tags):
-                club_cv_reviews.append(
-                    {
-                        "type": review_type,
-                        "url": message.url,
-                        "author": get_initials(
-                            ClubMessage.get_by_id(
-                                message.channel_id
-                            ).author.display_name
-                        ),
-                    }
-                )
-
-        logger.debug("Preparing events")
-        events_planned = list(Event.planned_listing())
-        events_archive = list(
-            Event.archive_listing(has_recording=True, has_avatar=True)
-        )
-        event_last = events_archive[0]
-        event_random = random.choice(list(events_archive[1:]))
-
-        logger.debug("Preparing stories")
-        stories_pages = list(Page.stories_listing())
-        story_last = stories_pages[0]
-        story_random = random.choice(list(stories_pages[1:]))
-
-        logger.debug("Preparing podcast")
-        podcast_episodes = list(PodcastEpisode.listing())
-        podcast_last = podcast_episodes[0]
-        podcast_random = random.choice(list(podcast_episodes[1:]))
-
-        logger.debug("Rendering email body")
-        template = Template(Path(__file__).with_name("newsletter.jinja").read_text())
-        template_context = dict(
-            club_content_size=thousands(club_content_size),
-            club_creations=club_creations,
-            club_cv_reviews=club_cv_reviews,
-            club_diaries=club_diaries,
-            club_groups=club_groups,
-            course_providers_by_mentions=course_providers_by_mentions,
-            course_providers=course_providers,
-            event_last=event_last,
-            event_random=event_random,
-            events_planned=events_planned,
-            jobs_count=jobs_count,
-            jobs_tags_stats=jobs_tags_stats,
-            members_count=ClubUser.members_count(),
-            month_name=month_name,
-            podcast_last=podcast_last,
-            podcast_random=podcast_random,
-            story_last=story_last,
-            story_random=story_random,
-            subscribers_count=subscribers_count,
-            subscribers_new_count=subscribers_new_count,
-            topics=ClubSummaryTopic.listing(),
-        )
-        logger.debug(f"Template context:\n{pformat(template_context)}")
-        email_data = {
-            "subject": f"{month_name} {today.year} ve světě IT juniorů 🐣",
-            "body": template.render(template_context),
-            "status": "draft",
+    logger.debug("Preparing club diaries")
+    club_diaries_threads = list(
+        ClubMessage.forum_top_listing(ClubChannelID.DIARIES, prev_month)
+    )
+    club_diaries = [
+        {
+            "name": message.channel_name,
+            "url": message.url,
+            "author": get_initials(
+                ClubMessage.get_by_id(message.channel_id).author.display_name
+            ),
         }
-        logger.debug(f"Email data:\n{pformat(email_data)}")
+        for message in club_diaries_threads
+    ]
 
-        logger.info("Creating draft")
+    logger.debug("Preparing club creations")
+    club_creations_threads = list(
+        ClubMessage.forum_top_listing(ClubChannelID.CREATIONS, prev_month)
+    )
+    club_creations = [
+        {
+            "name": message.channel_name,
+            "url": message.url,
+            "author": get_initials(
+                ClubMessage.get_by_id(message.channel_id).author.display_name
+            ),
+        }
+        for message in club_creations_threads
+    ]
+
+    logger.debug("Preparing club CVs")
+    club_cv_reviews = []
+    club_cv_threads = list(
+        ClubMessage.forum_top_listing(ClubChannelID.CV_GITHUB_LINKEDIN, prev_month)
+    )
+    for message in club_cv_threads:
+        thread = ClubChannel.get_by_id(message.channel_id)
+        for review_type in get_cv_review_types(thread.tags):
+            club_cv_reviews.append(
+                {
+                    "type": review_type,
+                    "url": message.url,
+                    "author": get_initials(
+                        ClubMessage.get_by_id(message.channel_id).author.display_name
+                    ),
+                }
+            )
+
+    logger.debug("Preparing events")
+    events_planned = list(Event.planned_listing())
+    events_archive = list(Event.archive_listing(has_recording=True, has_avatar=True))
+    event_last = events_archive[0]
+    event_random = random.choice(list(events_archive[1:]))
+
+    logger.debug("Preparing stories")
+    stories_pages = list(Page.stories_listing())
+    story_last = stories_pages[0]
+    story_random = random.choice(list(stories_pages[1:]))
+
+    logger.debug("Preparing podcast")
+    podcast_episodes = list(PodcastEpisode.listing())
+    podcast_last = podcast_episodes[0]
+    podcast_random = random.choice(list(podcast_episodes[1:]))
+
+    logger.debug("Rendering email body")
+    template = Template(Path(__file__).with_name("newsletter.jinja").read_text())
+    template_context = dict(
+        club_content_size=thousands(club_content_size),
+        club_creations=club_creations,
+        club_cv_reviews=club_cv_reviews,
+        club_diaries=club_diaries,
+        club_groups=club_groups,
+        course_providers_by_mentions=course_providers_by_mentions,
+        course_providers=course_providers,
+        event_last=event_last,
+        event_random=event_random,
+        events_planned=events_planned,
+        jobs_count=jobs_count,
+        jobs_tags_stats=jobs_tags_stats,
+        members_count=ClubUser.members_count(),
+        month_name=month_name,
+        podcast_last=podcast_last,
+        podcast_random=podcast_random,
+        story_last=story_last,
+        story_random=story_random,
+        subscribers_count=subscribers_count,
+        subscribers_new_count=subscribers_new_count,
+        topics=ClubSummaryTopic.listing(),
+    )
+    logger.debug(f"Template context:\n{pformat(template_context)}")
+    email_data = {
+        "subject": f"{month_name} {today.year} ve světě IT juniorů 🐣",
+        "body": template.render(template_context),
+        "status": "draft",
+    }
+    logger.debug(f"Email data:\n{pformat(email_data)}")
+
+    logger.info("Creating draft")
+    async with ButtondownAPI() as api:
         if data := await api.create_draft(email_data):
             logger.info(
-                f"Email created!\nEdit: https://buttondown.com/emails/{data['id']}\nPreview: {data['absolute_url']}"
+                f"Email created!\n"
+                f"Edit: https://buttondown.com/emails/{data['id']}\n"
+                f"Preview: {data['absolute_url']}"
             )
             if open_browser:
                 time.sleep(1)
