@@ -24,7 +24,9 @@ logger = loggers.from_path(__file__)
 @click.option("--ecomail-list", "ecomail_list_id", default=1, type=int)
 @db.connection_context()
 @async_command
-async def main(cache_key: str, cache_hrs: int, ecomail_api_key: str, ecomail_list_id: int):
+async def main(
+    cache_key: str, cache_hrs: int, ecomail_api_key: str, ecomail_list_id: int
+):
     cache = get_cache()
     if subscribers := cache.get(cache_key):
         logger.info(f"Using cached {len(subscribers)} subscribers")
@@ -41,7 +43,9 @@ async def main(cache_key: str, cache_hrs: int, ecomail_api_key: str, ecomail_lis
         logger.info("Fetching subscribers from Ecomail")
         # According to https://ecomailczv2.docs.apiary.io/
         # Status = 1: subscribed, 2: unsubscribed, 3: soft bounce, 4: hard bounce, 5: spam complaint, 6: unconfirmed
-        ecomail_page_url = f"https://api2.ecomailapp.cz/lists/{ecomail_list_id}/subscribers"
+        ecomail_page_url = (
+            f"https://api2.ecomailapp.cz/lists/{ecomail_list_id}/subscribers"
+        )
         ecomail_headers = {
             "key": ecomail_api_key,
             "User-Agent": "JuniorGuruBot (+https://junior.guru)",
@@ -51,14 +55,17 @@ async def main(cache_key: str, cache_hrs: int, ecomail_api_key: str, ecomail_lis
             for page in range(1, 100):  # safety break at 100 pages
                 logger.debug(f"Getting subscribers from {ecomail_page_url}")
                 response = await client.get(
-                    ecomail_page_url, params={"status": 1, "per_page": 100, "page": page}
+                    ecomail_page_url,
+                    params={"status": 1, "per_page": 100, "page": page},
                 )
                 logger.debug(f"Parsing response: {response.url}")
                 response.raise_for_status()
                 response_json = response.json()
                 for subscriber in response_json["data"]:
                     source = (
-                        "mailchimp" if subscriber["source"] == "mailchimp" else "ecomail"
+                        "mailchimp"
+                        if subscriber["source"] == "mailchimp"
+                        else "ecomail"
                     )
                     subscribers.setdefault(subscriber["email"], set())
                     subscribers[subscriber["email"]].add(source)

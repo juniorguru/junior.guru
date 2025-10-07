@@ -34,7 +34,6 @@ class SubscriberErrorCode(StrEnum):
 
 
 class ButtondownAPI:
-
     def __init__(self, token: str | None = None) -> None:
         self.token = token or BUTTONDOWN_API_KEY
         self._client = None
