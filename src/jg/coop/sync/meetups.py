@@ -3,6 +3,7 @@ from asyncio import TaskGroup
 from datetime import UTC, date, datetime, timedelta
 from operator import attrgetter
 from pathlib import Path
+from pprint import pp
 from typing import Annotated
 from urllib.parse import quote_plus
 from zoneinfo import ZoneInfo
@@ -181,15 +182,22 @@ async def main(config_path: Path, actor_names: list[str], today: date, days: int
         )
         logger.info(f"Found {len(thread_meetups)} relevant meetups")
 
+        messages_since_at = datetime.combine(
+            today - timedelta(days=2 * days), datetime.min.time()
+        )
         messages_by_url = {
             message.ui_urls[0]: message
-            for message in ClubMessage.channel_listing(thread.id, by_bot=True)
+            for message in ClubMessage.channel_listing(
+                thread.id, by_bot=True, since_at=messages_since_at
+            )
             if message.ui_urls
         }
         logger.info(f"Found {len(messages_by_url)} bot messages with UI URLs")
 
         thread_meetups = [
-            meetup for meetup in thread_meetups if meetup.url not in messages_by_url
+            meetup
+            for meetup in thread_meetups
+            if str(meetup.url) not in messages_by_url
         ]
         logger.info(f"Will post {len(thread_meetups)} relevant meetups")
         instructions.extend(
