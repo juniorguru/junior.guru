@@ -22,6 +22,7 @@ from jg.coop.models.club import ClubChannel, ClubMessage, ClubSummaryTopic, Club
 from jg.coop.models.course_provider import CourseProvider, CourseProviderGroup
 from jg.coop.models.event import Event
 from jg.coop.models.followers import Followers
+from jg.coop.models.meetup import Meetup
 from jg.coop.models.page import Page
 from jg.coop.models.podcast import PodcastEpisode
 
@@ -49,6 +50,7 @@ logger = loggers.from_path(__file__)
     dependencies=[
         "course-providers",
         "events",
+        "meetups",
         "newsletter-subscribers",
         "pages",
         "podcast",
@@ -83,12 +85,10 @@ async def main(
     open_browser: bool,
     today: date,
 ):
-    # TODO change this so that it uses the date of last newsletter published
-    # as the anchor date for stats calculation
     this_month = today.replace(day=1)
-    prev_month = (this_month - timedelta(days=1)).replace(day=1)
-    prev_prev_month = (prev_month - timedelta(days=1)).replace(day=1)
 
+    # TODO change this so that it's smarter in guessing what I want to do,
+    # and maybe add an option to create several drafts with different AI/random content
     async with ButtondownAPI() as api:
         logger.info(f"Checking existing emails since {this_month:%Y-%m-%d}")
         emails_count = (await api.get_emails_since(this_month))["count"]
@@ -103,9 +103,14 @@ async def main(
                 )
                 return
 
-    logger.info("Preparing email data")
+    logger.info("Calculating date ranges")
+    # TODO change this so that it uses the date of last newsletter published
+    # as the anchor date for stats calculation
+    prev_month = (this_month - timedelta(days=1)).replace(day=1)
+    prev_prev_month = (prev_month - timedelta(days=1)).replace(day=1)
     month_name = MONTH_NAMES[today.month - 1]
 
+    logger.info(f"Preparing email data: {prev_month} → {this_month}")
     logger.debug("Preparing subscribers")
     subscribers_count = Followers.get_latest("newsletter").count
     subscribers_new_count = (
@@ -217,6 +222,7 @@ async def main(
         events_planned=events_planned,
         jobs_count=jobs_count,
         jobs_tags_stats=jobs_tags_stats,
+        meetups=list(Meetup.listing()),
         members_count=ClubUser.members_count(),
         month_name=month_name,
         podcast_last=podcast_last,
@@ -225,7 +231,7 @@ async def main(
         story_random=story_random,
         subscribers_count=subscribers_count,
         subscribers_new_count=subscribers_new_count,
-        topics=ClubSummaryTopic.listing(),
+        topics=list(ClubSummaryTopic.listing()),
     )
     logger.debug(f"Template context:\n{pformat(template_context)}")
     email_data = {

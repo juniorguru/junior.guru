@@ -76,6 +76,7 @@ registry:
     club_speaker_ids:
       - 817453228283133982
       - 806429279268241419
+    club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1407682777851105401
 
   - id: 53
     title: "Beginners’ Day Unconference"

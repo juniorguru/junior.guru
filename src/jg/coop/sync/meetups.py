@@ -1,29 +1,35 @@
 import itertools
 from asyncio import TaskGroup
-from datetime import date, datetime, timedelta
+from datetime import UTC, date, datetime, timedelta
 from operator import attrgetter
 from pathlib import Path
+from typing import Annotated
 from urllib.parse import quote_plus
 from zoneinfo import ZoneInfo
 
 import click
 import yaml
 from discord import Embed
-from pydantic import BaseModel, HttpUrl, computed_field, field_validator
+from pydantic import (
+    AfterValidator,
+    BaseModel,
+    BeforeValidator,
+    HttpUrl,
+    PlainSerializer,
+    computed_field,
+    field_validator,
+)
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import apify, discord_task, loggers
 from jg.coop.lib.cli import async_command
-from jg.coop.lib.discord_club import (
-    ClubClient,
-    add_reactions,
-    parse_channel_link,
-)
+from jg.coop.lib.discord_club import ClubClient, add_reactions, parse_channel_link
 from jg.coop.lib.mapycz import REGIONS, locate
 from jg.coop.lib.mutations import mutating_discord
 from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
+from jg.coop.models.meetup import Meetup
 
 
 YAML_PATH = Path("src/jg/coop/data/meetups.yml")
@@ -32,21 +38,33 @@ YAML_PATH = Path("src/jg/coop/data/meetups.yml")
 logger = loggers.from_path(__file__)
 
 
-class Meetup(BaseModel):
-    title: str
-    starts_at: datetime
-    ends_at: datetime
+def to_utc(dt: datetime) -> datetime:
+    if dt.tzinfo is None:
+        raise ValueError("Datetime must be timezone-aware")
+    return dt.astimezone(UTC)
+
+
+class MeetupData(BaseModel):
+    title: Annotated[str, BeforeValidator(str.strip)]
+    starts_at: Annotated[datetime, AfterValidator(to_utc)]
+    ends_at: Annotated[datetime, AfterValidator(to_utc)]
     location: str
     region: str | None = None
-    url: HttpUrl
+    url: Annotated[HttpUrl, PlainSerializer(str)]
     series_name: str
     series_org: str
-    series_url: HttpUrl
+    series_url: Annotated[HttpUrl, PlainSerializer(str)]
+
+    def model_dump_db(self) -> dict:
+        data = self.model_dump()
+        data["starts_at"] = self.starts_at.replace(tzinfo=None)
+        data["ends_at"] = self.ends_at.replace(tzinfo=None)
+        return data
 
 
 class PostingInstruction(BaseModel):
     channel_id: int
-    meetup: Meetup
+    meetup: MeetupData
 
 
 class ThreadConfig(YAMLConfig):
@@ -106,6 +124,10 @@ class MeetupsConfig(YAMLConfig):
 @db.connection_context()
 @async_command
 async def main(config_path: Path, actor_names: list[str], today: date, days: int):
+    logger.info("Setting up meetups db table")
+    Meetup.drop_table()
+    Meetup.create_table()
+
     logger.info(f"Reading {config_path.name}")
     yaml_data = yaml.safe_load(config_path.read_text())
     config = MeetupsConfig(**yaml_data)
@@ -114,7 +136,7 @@ async def main(config_path: Path, actor_names: list[str], today: date, days: int
     items = itertools.chain.from_iterable(
         apify.fetch_data(actor_name) for actor_name in actor_names
     )
-    meetups = [Meetup(**item) for item in items]
+    meetups = [MeetupData(**item) for item in items]
     logger.info(f"Fetched {len(meetups)} meetups")
 
     meetups = [
@@ -132,6 +154,10 @@ async def main(config_path: Path, actor_names: list[str], today: date, days: int
         tasks = [task_group.create_task(locate(meetup.location)) for meetup in meetups]
     for meetup, task in zip(meetups, tasks):
         meetup.region = task.result().region
+
+    logger.info("Saving meetups to the database")
+    for meetup in meetups:
+        Meetup.create(**meetup.model_dump_db())
 
     logger.info("Sorting meetups by region")
     meetups.sort(key=attrgetter("region"))
@@ -163,9 +189,7 @@ async def main(config_path: Path, actor_names: list[str], today: date, days: int
         logger.info(f"Found {len(messages_by_url)} bot messages with UI URLs")
 
         thread_meetups = [
-            meetup
-            for meetup in thread_meetups
-            if str(meetup.url) not in messages_by_url
+            meetup for meetup in thread_meetups if meetup.url not in messages_by_url
         ]
         logger.info(f"Will post {len(thread_meetups)} relevant meetups")
         instructions.extend(

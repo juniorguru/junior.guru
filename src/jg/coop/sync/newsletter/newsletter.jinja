@@ -4,9 +4,12 @@ Ahoj, tady robotické kuře z junior.guru! Mám pro tebe aktuální dávku novin
 
 Každý den stahuju z různých zdrojů inzeráty a ty, které jsou vhodné pro začátečníky, dávám na [junior.guru/jobs](https://junior.guru/jobs/). Za poslední měsíc jsem našlo **{{ jobs_count }} inzerátů**. Toto jsou technologie, které se v objevovaly nejčastěji:
 
-> 🥇 {% for tag, count in jobs_tags_stats[0:3] %}{{ count }}× **{{ tag }}**, {% endfor %}<br>
-> 🥈 {% for tag, count in jobs_tags_stats[3:6] %}{{ count }}× **{{ tag }}**, {% endfor %}<br>
-> 🥉 {% for tag, count in jobs_tags_stats[6:9] %}{{ count }}× **{{ tag }}**{% if not loop.last %}, {% endif %}{% endfor %}<br>
+{% set jobs_max_count = jobs_tags_stats[0][1] -%}
+{%- set jobs_scale = 10 -%}
+{%- for tag, count in jobs_tags_stats[:10] -%}
+    {%- set bar_length = (count / jobs_max_count * jobs_scale)|round(0, 'floor')|int -%}
+    {{- "⬛️" * bar_length }} {{ count }}× {{ tag }}<br>
+{%- endfor %}
 
 {%- if events_planned|length %}
 ## Plánované online akce 🗓️
@@ -18,20 +21,26 @@ Každý den stahuju z různých zdrojů inzeráty a ty, které jsou vhodné pro 
 
 ## Srazy, konference a jiné akce 🍻
 
-{# vymyslet jak v newsletteru prezentovat meetup akce - nějaký kalendář? možná jen ty, kam jdou členové? #}
+{% for meetup in meetups -%}
+**{{ '{:%-d.%-m.}'.format(meetup.starts_at) }} {{ meetup.region }}**, {{ meetup.series_org }}:<br>
+[{{ meetup.title }}]({{ meetup.url }})
+{%- if not loop.last %}
+
+{% endif -%}
+{%- endfor %}
 
 ## Kurzy programování a testování 🧑‍🏫
 
 Na [junior.guru/courses](https://junior.guru/courses/) je katalog poskytovatelů kurzů. Nejvíc tam teď lidi koukají na tohle:
 
-> {% for course_provider in course_providers[:6] -%}
+{% for course_provider in course_providers[:6] -%}
     [{{ course_provider.name }}]({{ course_provider.catalogue_url }}){% if not loop.last %} ▪️ {% endif %}
 {%- endfor %}
 
 {% if course_providers_by_mentions %}
 V naší komunitě na Discordu se v poslední době psalo o těchto kurzech:
 
-> {% for course_provider in course_providers_by_mentions[:6] -%}
+{% for course_provider in course_providers_by_mentions[:6] -%}
     [{{ course_provider.name }}]({{ course_provider.catalogue_url }}){% if not loop.last %} ▪️ {% endif %}
 {%- endfor %}
 {% endif %}
@@ -52,27 +61,25 @@ V naší komunitě na Discordu se v poslední době psalo o těchto kurzech:
 V naší Discord komunitě se napsalo **{{ club_content_size }} písmenek**. Tady je shrnutí toho nejzajímavějšího. Pokud v klubu ještě nejsi, nebo vůbec nevíš, o co jde, mrkni na [junior.guru/club](https://junior.guru/club/)
 
 ### 👥 V jakých skupinkách to nejvíc žilo
-> {% for message in club_groups[:3] -%}
-    {% if loop.index == 1 %}🥇 {% elif loop.index == 2 %}🥈 {% elif loop.index == 3 %}🥉 {% endif -%}
-    [{{ message.channel_name }}]({{ message.url }})<br>
+{% for message in club_groups[:3] -%}
+    [{{ message.channel_name }}]({{ message.url }}){% if not loop.last %} ▪️ {% endif %}
 {%- endfor %}
 
 {%- if club_creations|length %}
 ### 🛠️ Jaké jsme tvořili projekty
-> {% for club_creation in club_creations -%}
+{% for club_creation in club_creations -%}
     {{ club_creation.author }}: [{{ club_creation.name }}]({{ club_creation.url }}){% if not loop.last %} ▪️ {% endif %}
 {%- endfor %}
 {% endif %}
 
 ### 📔 Do jakých deníčků se nejvíc psalo
-> {% for club_diary in club_diaries[:3] -%}
-    {% if loop.index == 1 %}🥇 {% elif loop.index == 2 %}🥈 {% elif loop.index == 3 %}🥉 {% endif -%}
-    [{{ club_diary.name }}]({{ club_diary.url }}) – {{ club_diary.author }}<br>
+{% for club_diary in club_diaries[:3] -%}
+    [{{ club_diary.name }}]({{ club_diary.url }}) – {{ club_diary.author }}{% if not loop.last %} ▪️ {% endif %}
 {%- endfor %}
 
 {%- if club_cv_reviews|length %}
 ### 🔬 Zpětná vazba na CV, GitHub, LinkedIn
-> {% for cv_review in club_cv_reviews -%}
+{% for cv_review in club_cv_reviews -%}
     {{ cv_review.author }}: [
         {%- if cv_review.type == "cv" %}CVčko{% elif cv_review.type == "gh" %}GitHub{% elif cv_review.type == "li" %}LinkedIn{% endif -%}
     ](
@@ -81,7 +88,7 @@ V naší Discord komunitě se napsalo **{{ club_content_size }} písmenek**. Tad
 {%- endfor %}
 {% endif %}
 
-{% for topic in topics %}
+{%- for topic in topics %}
 ### {{ topic.emoji }} {{ topic.name }}
 {{ topic.text }} [Diskutuj]({{ topic.message.url }})
-{% endfor %}
+{% endfor -%}
