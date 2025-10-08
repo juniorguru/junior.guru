@@ -108,7 +108,6 @@ async def main(
     # as the anchor date for stats calculation
     prev_month = (this_month - timedelta(days=1)).replace(day=1)
     prev_prev_month = (prev_month - timedelta(days=1)).replace(day=1)
-    month_name = MONTH_NAMES[today.month - 1]
 
     logger.info(f"Preparing email data: {prev_month} → {this_month}")
     logger.debug("Preparing subscribers")
@@ -116,7 +115,6 @@ async def main(
     subscribers_new_count = (
         subscribers_count - Followers.breakdown(prev_prev_month)["newsletter"]
     )
-    club_content_size = ClubMessage.content_size_by_month(prev_month)
 
     logger.debug("Preparing jobs")
     jobs_count = 0
@@ -207,14 +205,32 @@ async def main(
     podcast_last = podcast_episodes[0]
     podcast_random = random.choice(list(podcast_episodes[1:]))
 
+    logger.debug("Preparing meetups")
+    meetups = list(Meetup.listing())
+    club_promo_events = []
+    club_promo_threads = list(
+        ClubMessage.forum_top_listing(ClubChannelID.PROMO, prev_month)
+    )
+    for message in club_promo_threads:
+        thread = ClubChannel.get_by_id(message.channel_id)
+        if is_promo_event(thread.tags):
+            club_promo_events.append(
+                {
+                    "name": thread.name,
+                    "url": message.url,
+                    "giveaway": is_giveaway(thread.tags),
+                }
+            )
+
     logger.debug("Rendering email body")
     template = Template(Path(__file__).with_name("newsletter.jinja").read_text())
     template_context = dict(
-        club_content_size=thousands(club_content_size),
+        club_content_size=thousands(ClubMessage.content_size_by_month(prev_month)),
         club_creations=club_creations,
         club_cv_reviews=club_cv_reviews,
         club_diaries=club_diaries,
         club_groups=club_groups,
+        club_promo_events=club_promo_events,
         course_providers_by_mentions=course_providers_by_mentions,
         course_providers=course_providers,
         event_last=event_last,
@@ -222,11 +238,11 @@ async def main(
         events_planned=events_planned,
         jobs_count=jobs_count,
         jobs_tags_stats=jobs_tags_stats,
-        meetups=list(Meetup.listing()),
+        meetups=meetups,
         members_count=ClubUser.members_count(),
-        month_name=month_name,
         podcast_last=podcast_last,
         podcast_random=podcast_random,
+        prev_month=prev_month,
         story_last=story_last,
         story_random=story_random,
         subscribers_count=subscribers_count,
@@ -234,8 +250,9 @@ async def main(
         topics=list(ClubSummaryTopic.listing()),
     )
     logger.debug(f"Template context:\n{pformat(template_context)}")
+    month_name = f"{MONTH_NAMES[prev_month.month - 1]} {prev_month.year}"
     email_data = {
-        "subject": f"{month_name} {today.year} ve světě IT juniorů 🐣",
+        "subject": f"{month_name} ve světě IT juniorů 🐣",
         "body": template.render(template_context),
         "status": "draft",
     }
@@ -270,6 +287,14 @@ def get_cv_review_types(
     prefix = "zpětná vazba na"
     relevant_tags = [tag for tag in map(str.lower, tags) if tag.startswith(prefix)]
     return [tag.removeprefix(prefix).strip() for tag in relevant_tags]
+
+
+def is_promo_event(tags: list[str]) -> bool:
+    return bool(len(set(tags) - {"kurz"}))
+
+
+def is_giveaway(tags: list[str]) -> bool:
+    return "soutěž" in tags
 
 
 def get_initials(name: str) -> str:

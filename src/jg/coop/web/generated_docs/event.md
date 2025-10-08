@@ -109,7 +109,7 @@ Nebo se můžeš **zdarma registrovat do klubu**. Nemusíš nic platit, ani nic 
 
 Členové junior.guru klubu mohou akce sledovat živě a **pokládat hostům dotazy**. Taky mají k dispozici **záznamy všech proběhlých akcí**.
 
-{% if event.public_recording_url and event.club_recording_url %}{% call note() %}
+{% if event.public_recording_url and event.club_recording_url and event.public_recording_duration_s != event.private_recording_duration_s %}{% call note() %}
   {{ 'lightbulb'|icon }} Tato akce má **dva záznamy**. Kromě veřejného sestřihu, který má {{ event.public_recording_duration_s|hours }}, existuje ještě i verze pro členy s délkou {{ event.private_recording_duration_s|hours }}. Pokud máš přístup do klubu, můžeš si <a href="{{ event.club_recording_url }}" target="_blank" rel="noopener">pustit i členskou verzi</a>.
 {% endcall %}{% endif %}
 

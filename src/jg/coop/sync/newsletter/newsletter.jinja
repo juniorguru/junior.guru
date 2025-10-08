@@ -2,13 +2,13 @@ Ahoj, tady robotické kuře z junior.guru! Mám pro tebe aktuální dávku novin
 
 ## Čísla z pracovního trhu 📊
 
-Každý den stahuju z různých zdrojů inzeráty a ty, které jsou vhodné pro začátečníky, dávám na [junior.guru/jobs](https://junior.guru/jobs/). Za poslední měsíc jsem našlo **{{ jobs_count }} inzerátů**. Toto jsou technologie, které se v objevovaly nejčastěji:
+Každý den stahuju z různých zdrojů inzeráty a ty, které jsou vhodné pro začátečníky, dávám na [junior.guru/jobs](https://junior.guru/jobs/). Za poslední měsíc jsem našlo **{{ jobs_count }} inzerátů**. Toto jsou technologie, které se objevovaly nejčastěji:
 
 {% set jobs_max_count = jobs_tags_stats[0][1] -%}
 {%- set jobs_scale = 10 -%}
 {%- for tag, count in jobs_tags_stats[:10] -%}
     {%- set bar_length = (count / jobs_max_count * jobs_scale)|round(0, 'floor')|int -%}
-    {{- "⬛️" * bar_length }} {{ count }}× {{ tag }}<br>
+    {{- "🟨" * bar_length }} {{ count }}× {{ tag }}<br>
 {%- endfor %}
 
 {%- if events_planned|length %}
@@ -28,6 +28,16 @@ Každý den stahuju z různých zdrojů inzeráty a ty, které jsou vhodné pro 
 
 {% endif -%}
 {%- endfor %}
+{%- if club_promo_events|length %}
+
+O těchto akcích se psalo v naší [komunitě na Discordu](https://junior.guru/club/):
+
+{% for club_promo_event in club_promo_events -%}
+    ▪️ [{{ club_promo_event.name|truncate(50, false, '…', 5) }}]({{ club_promo_event.url }})
+    {%- if club_promo_event.giveaway %} **🎲 soutěž!**{% endif -%}
+    <br>
+{%- endfor %}
+{% endif %}
 
 ## Kurzy programování a testování 🧑‍🏫
 
@@ -38,7 +48,7 @@ Na [junior.guru/courses](https://junior.guru/courses/) je katalog poskytovatelů
 {%- endfor %}
 
 {% if course_providers_by_mentions %}
-V naší komunitě na Discordu se v poslední době psalo o těchto kurzech:
+V naší [komunitě na Discordu](https://junior.guru/club/) se v poslední době psalo o těchto kurzech:
 
 {% for course_provider in course_providers_by_mentions[:6] -%}
     [{{ course_provider.name }}]({{ course_provider.catalogue_url }}){% if not loop.last %} ▪️ {% endif %}
@@ -58,7 +68,7 @@ V naší komunitě na Discordu se v poslední době psalo o těchto kurzech:
 ▪️ {{ event_random.bio_name }}: {{ event_random.title }} – [Sleduj]({{ event_random.url }}#zaznam)<br>
 
 ## Co se dělo v klubu 💬
-V naší Discord komunitě se napsalo **{{ club_content_size }} písmenek**. Tady je shrnutí toho nejzajímavějšího. Pokud v klubu ještě nejsi, nebo vůbec nevíš, o co jde, mrkni na [junior.guru/club](https://junior.guru/club/)
+V naší Discord komunitě se od {{ '{:%-d.%-m.}'.format(prev_month) }} napsalo **{{ club_content_size }} písmenek**. Tady je shrnutí toho nejzajímavějšího. Pokud v klubu ještě nejsi, nebo vůbec nevíš, o co jde, mrkni na [junior.guru/club](https://junior.guru/club/)
 
 ### 👥 V jakých skupinkách to nejvíc žilo
 {% for message in club_groups[:3] -%}
@@ -68,19 +78,19 @@ V naší Discord komunitě se napsalo **{{ club_content_size }} písmenek**. Tad
 {%- if club_creations|length %}
 ### 🛠️ Jaké jsme tvořili projekty
 {% for club_creation in club_creations -%}
-    {{ club_creation.author }}: [{{ club_creation.name }}]({{ club_creation.url }}){% if not loop.last %} ▪️ {% endif %}
+    {{ club_creation.author }} – [{{ club_creation.name }}]({{ club_creation.url }}){% if not loop.last %} ▪️ {% endif %}
 {%- endfor %}
 {% endif %}
 
 ### 📔 Do jakých deníčků se nejvíc psalo
 {% for club_diary in club_diaries[:3] -%}
-    [{{ club_diary.name }}]({{ club_diary.url }}) – {{ club_diary.author }}{% if not loop.last %} ▪️ {% endif %}
+    {{ club_diary.author }} – [{{ club_diary.name }}]({{ club_diary.url }}){% if not loop.last %} ▪️ {% endif %}
 {%- endfor %}
 
 {%- if club_cv_reviews|length %}
 ### 🔬 Zpětná vazba na CV, GitHub, LinkedIn
 {% for cv_review in club_cv_reviews -%}
-    {{ cv_review.author }}: [
+    {{ cv_review.author }} – [
         {%- if cv_review.type == "cv" %}CVčko{% elif cv_review.type == "gh" %}GitHub{% elif cv_review.type == "li" %}LinkedIn{% endif -%}
     ](
         {{- cv_review.url -}}
