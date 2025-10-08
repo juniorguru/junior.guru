@@ -30,8 +30,9 @@ registry:
     slug: engeto
     url: https://engeto.cz/
     cz_business_id: 4671317
-    subscription: https://juniorguru.memberful.com/admin/subscriptions/3699644
+    subscription: https://juniorguru.memberful.com/admin/subscriptions/4367080
     periods:
+      - [2025-10, 2026-10]
       - [2021-05, 2025-08]
 
   - name: Mews
