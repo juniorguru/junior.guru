@@ -5,7 +5,7 @@ import httpx
 
 from jg.coop.cli.sync import default_from_env, main as cli
 from jg.coop.lib import loggers
-from jg.coop.lib.buttondown import ButtondownAPI
+from jg.coop.lib.buttondown import ButtondownAPI, ButtondownError
 from jg.coop.lib.cache import get_cache
 from jg.coop.lib.cli import async_command
 from jg.coop.lib.memberful import MemberfulAPI
@@ -21,15 +21,20 @@ logger = loggers.from_path(__file__)
 @cli.sync_command()
 @click.option("--cache-key", default="newsletter:subscribers")
 @click.option("--cache-hrs", default=60, type=int)
+@click.option("-f", "--force", is_flag=True, default=False)
 @click.option("--ecomail-api-key", default=default_from_env("ECOMAIL_API_KEY"))
 @click.option("--ecomail-list", "ecomail_list_id", default=1, type=int)
 @db.connection_context()
 @async_command
 async def main(
-    cache_key: str, cache_hrs: int, ecomail_api_key: str, ecomail_list_id: int
+    cache_key: str,
+    cache_hrs: int,
+    force: bool,
+    ecomail_api_key: str,
+    ecomail_list_id: int,
 ):
     cache = get_cache()
-    if subscribers := cache.get(cache_key):
+    if not force and (subscribers := cache.get(cache_key)):
         logger.info(f"Using cached {len(subscribers)} subscribers")
     else:
         subscribers = {}
@@ -81,12 +86,22 @@ async def main(
                     logger.info(f"Fetched {ecomail_count} subscribers from Ecomail")
                     break
         logger.debug("Caching subscribers")
-        cache.set(cache_key, subscribers, expire=3600 * cache_hrs, tag="subscribers")
-
-    return  # TODO
+        cache.set(
+            cache_key,
+            subscribers,
+            expire=3600 * cache_hrs,
+            tag="newsletter-subscribers",
+        )
 
     logger.info(f"Adding {len(subscribers)} subscribers to Buttondown")
-    for email, sources in logger.progress(subscribers.items()):
+    # TODO chunk this and do in a really async way, also do some caching to limit requests
+    try:
         async with ButtondownAPI() as buttondown:
-            logger.debug(f"Adding subscriber {email} from {sources}")
-            await buttondown.add_subscriber(email=email, tags=sources)
+            for email, sources in logger.progress(subscribers.items()):
+                logger.debug(f"Adding subscriber {email} from {sources}")
+                await buttondown.add_subscriber(email=email, tags=sources)
+    except ButtondownError as e:
+        if e.code == "rate_limited":
+            logger.error("Rate limited for today")
+        else:
+            raise
