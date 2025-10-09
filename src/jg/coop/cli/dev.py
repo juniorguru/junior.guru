@@ -39,8 +39,8 @@ def update(pull, packages, push, stash):
         if packages:
             logger.info("Upgrading packages")
             uv_upgrade()
-            subprocess.run(["npx", "npm", "update"], check=True)
-            subprocess.run(["npx", "npm", "install"], check=True)
+            subprocess.run(["npm", "update"], check=True)
+            subprocess.run(["npm", "install"], check=True)
             subprocess.run(
                 ["git", "add", "pyproject.toml", "uv.lock", "package-lock.json"]
             )
@@ -48,7 +48,7 @@ def update(pull, packages, push, stash):
         else:
             logger.info("Installing packages")
             subprocess.run(["uv", "install"], check=True)
-            subprocess.run(["npx", "npm", "install"], check=True)
+            subprocess.run(["npm", "install"], check=True)
         logger.info("Installing Playwright browsers")
         subprocess.run(["playwright", "install", "firefox"], check=True)
         if push:

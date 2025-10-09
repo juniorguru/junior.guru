@@ -62,12 +62,8 @@ jobs:
           name: Install browser
           command: uv run playwright install firefox
       - run:
-          name: Update npm
-          command: |
-            npm install npm@11 --no-save
-      - run:
           name: Install JavaScript dependencies
-          command: npx npm ci
+          command: npm ci
       - run:
           name: Cancel previous builds
           command: |
