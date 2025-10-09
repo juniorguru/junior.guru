@@ -64,10 +64,10 @@ jobs:
       - run:
           name: Update npm
           command: |
-            npm install -g npm@11
+            npm install npm@11 --no-save
       - run:
           name: Install JavaScript dependencies
-          command: npm ci
+          command: npx npm ci
       - run:
           name: Cancel previous builds
           command: |
