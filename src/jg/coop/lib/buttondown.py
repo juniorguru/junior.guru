@@ -1,12 +1,20 @@
+import functools
 import os
 from datetime import date
 from enum import StrEnum
+from pathlib import Path
 from typing import Self
+import functools
+import httpx
+from typing import Any, Awaitable, Callable, TypeVar
+import csv
 
 import httpx
 
 from jg.coop.lib import loggers, mutations
 
+
+T = TypeVar("T")
 
 BUTTONDOWN_API_KEY = os.getenv("BUTTONDOWN_API_KEY")
 
@@ -42,6 +50,24 @@ class ButtondownError(Exception):
         self.metadata = metadata or {}
 
 
+def convert_http_exceptions(
+    fn: Callable[..., Awaitable[T]],
+) -> Callable[..., Awaitable[T]]:
+    @functools.wraps(fn)
+    async def wrapper(*args: Any, **kwargs: Any) -> T:
+        try:
+            return await fn(*args, **kwargs)
+        except httpx.HTTPStatusError as e:
+            exc_data = e.response.json()
+            raise ButtondownError(
+                exc_data["detail"],
+                code=exc_data["code"],
+                metadata=exc_data.get("metadata"),
+            ) from e
+
+    return wrapper
+
+
 class ButtondownAPI:
     def __init__(self, token: str | None = None) -> None:
         self.token = token or BUTTONDOWN_API_KEY
@@ -58,14 +84,8 @@ class ButtondownAPI:
     async def __aexit__(self, exc_type, exc_val, exc_tb) -> None:
         if self._client:
             await self._client.aclose()
-        if exc_type:
-            exc_data = exc_val.response.json()
-            raise ButtondownError(
-                exc_data["detail"],
-                code=exc_data["code"],
-                metadata=exc_data.get("metadata"),
-            ) from exc_val
 
+    @convert_http_exceptions
     async def get_emails_since(self, since_date: date) -> dict:
         response = await self._client.get(
             "emails", params={"creation_date__start": since_date.isoformat()}
@@ -74,22 +94,23 @@ class ButtondownAPI:
         return response.json()
 
     @mutations.mutates_buttondown()
+    @convert_http_exceptions
     async def create_draft(self, email_data: dict) -> None:
         response = await self._client.post("emails", json=email_data)
         response.raise_for_status()
         return response.json()
 
     @mutations.mutates_buttondown()
+    @convert_http_exceptions
     async def add_subscriber(self, email: str, tags=set[SubscriberSource]) -> dict:
+        logger.debug(f"Adding subscriber {email} with tags {tags}")
         try:
             response = await self._client.get(f"subscribers/{email}")
             response.raise_for_status()
         except httpx.HTTPStatusError as e:
             if e.response.status_code == 404:
                 logger.debug(f"Creating subscriber {email}")
-                subscriber_type = (
-                    "unactivated" if tags == {SubscriberSource.MEMBERFUL} else "regular"
-                )
+                subscriber_type = get_subscriber_type(tags)
                 logger.debug(f"Subscriber {email} classified as {subscriber_type!r}")
                 response = await self._client.post(
                     "subscribers",
@@ -115,3 +136,17 @@ class ButtondownAPI:
         )
         response.raise_for_status()
         return response.json()
+
+
+def get_subscriber_type(tags: set[SubscriberSource]) -> str:
+    return "unactivated" if tags == {SubscriberSource.MEMBERFUL} else "regular"
+
+
+def save_subscribers(
+    subscribers: list[tuple[str, set[SubscriberSource]]], csv_path: Path
+) -> None:
+    with csv_path.open("w") as csv_file:
+        writer = csv.writer(csv_file)
+        writer.writerow(["email", "tags", "status"])
+        for email, tags in sorted(subscribers):
+            writer.writerow([email, ",".join(sorted(tags)), get_subscriber_type(tags)])

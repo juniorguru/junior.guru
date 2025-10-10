@@ -78,6 +78,7 @@ google_service_account.json
 .*cache
 
 # Synced data
+/src/jg/coop/data/newsletter-*.csv
 /src/jg/coop/data/*.db
 /src/jg/coop/data/*.db-*
 /src/jg/coop/data/jobs/*.*
