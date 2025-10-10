@@ -1,13 +1,10 @@
+import csv
 import functools
 import os
 from datetime import date
 from enum import StrEnum
 from pathlib import Path
-from typing import Self
-import functools
-import httpx
-from typing import Any, Awaitable, Callable, TypeVar
-import csv
+from typing import Any, Awaitable, Callable, Self, TypeVar
 
 import httpx
 

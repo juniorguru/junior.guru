@@ -3,7 +3,6 @@ from pathlib import Path
 
 import click
 import httpx
-import csv
 
 from jg.coop.cli.sync import default_from_env, main as cli
 from jg.coop.lib import loggers
