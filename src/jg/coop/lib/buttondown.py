@@ -58,7 +58,7 @@ def convert_http_exceptions(
             exc_data = e.response.json()
             raise ButtondownError(
                 exc_data["detail"],
-                code=exc_data["code"],
+                code=exc_data.get("code"),
                 metadata=exc_data.get("metadata"),
             ) from e
 
