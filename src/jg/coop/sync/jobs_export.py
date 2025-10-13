@@ -52,7 +52,7 @@ def main(output_dir: Path, github_api_key: str):
         "https://raw.githubusercontent.com/"
         "juniorguru/plucker"  # repo
         "/refs/heads/main/"
-        "jg/plucker/schemas/jobSchema.json",  # path
+        "src/jg/plucker/schemas/jobSchema.json",  # path
         headers=headers,
         follow_redirects=True,
     )
