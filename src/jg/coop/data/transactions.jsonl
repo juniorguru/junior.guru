@@ -1163,3 +1163,5 @@
 {"_id": "27279526796", "amount": 6650, "category": "memberships", "happened_on": "2025-10-06"}
 {"_id": "27282444435", "amount": -89, "category": "miscellaneous", "happened_on": "2025-10-07"}
 {"_id": "27282825387", "amount": 6, "category": "donations", "happened_on": "2025-10-08"}
+{"_id": "27289523281", "amount": 3237, "category": "memberships", "happened_on": "2025-10-13"}
+{"_id": "27290217954", "amount": -175, "category": "tax", "happened_on": "2025-10-13"}
