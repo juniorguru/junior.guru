@@ -39,8 +39,13 @@ class SubscriberErrorCode(StrEnum):
 
 
 class ButtondownError(Exception):
+
     def __init__(
-        self, message: str, code: str | None = None, metadata: dict | None = None
+        self,
+        message: str,
+        code: str | None = None,
+        metadata: dict | None = None,
+        url: str | None = None,
     ):
         super().__init__(message)
         self.code = code
@@ -57,7 +62,7 @@ def convert_http_exceptions(
         except httpx.HTTPStatusError as e:
             exc_data = e.response.json()
             raise ButtondownError(
-                exc_data["detail"],
+                f"{exc_data['detail']} – {e.request.method} {e.request.url}",
                 code=exc_data.get("code"),
                 metadata=exc_data.get("metadata"),
             ) from e
@@ -101,13 +106,13 @@ class ButtondownAPI:
     @convert_http_exceptions
     async def add_subscriber(self, email: str, tags=set[SubscriberSource]) -> dict:
         logger.debug(f"Adding subscriber {email} with tags {tags}")
+        subscriber_type = get_subscriber_type(tags)
         try:
             response = await self._client.get(f"subscribers/{email}")
             response.raise_for_status()
         except httpx.HTTPStatusError as e:
             if e.response.status_code == 404:
                 logger.debug(f"Creating subscriber {email}")
-                subscriber_type = get_subscriber_type(tags)
                 logger.debug(f"Subscriber {email} classified as {subscriber_type!r}")
                 response = await self._client.post(
                     "subscribers",
@@ -122,6 +127,12 @@ class ButtondownAPI:
             raise
 
         subscriber = response.json()
+        if subscriber_type == "regular" and subscriber["type"] != "regular":
+            logger.warning(
+                f"Subscriber {email} has type {subscriber['type']!r}, "
+                f"but should be {subscriber_type!r}"
+            )
+
         existing_tags = set(subscriber.get("tags", []))
         if existing_tags == tags:
             logger.debug(f"Subscriber {email} up-to-date, skipping")
@@ -129,7 +140,7 @@ class ButtondownAPI:
 
         logger.debug(f"Updating subscriber {email}, tags: {existing_tags} → {tags}")
         response = await self._client.patch(
-            f"subscribers/{email}", data={"tags": list(existing_tags | tags)}
+            f"subscribers/{email}", json={"tags": list(existing_tags | tags)}
         )
         response.raise_for_status()
         return response.json()

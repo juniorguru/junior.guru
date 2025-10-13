@@ -24,11 +24,6 @@ logger = loggers.from_path(__file__)
 @click.option("--cache-key", default="newsletter:subscribers")
 @click.option("--cache-hrs", default=60, type=int)
 @click.option("-f", "--force", is_flag=True, default=False)
-@click.option(
-    "--csv-path",
-    default="src/jg/coop/data/newsletter-import.csv",
-    type=click.Path(path_type=Path, dir_okay=False, writable=True),
-)
 @click.option("--ecomail-api-key", default=default_from_env("ECOMAIL_API_KEY"))
 @click.option("--ecomail-list", "ecomail_list_id", default=1, type=int)
 @click.option("--chunk-size", default=5, type=int)
@@ -38,47 +33,10 @@ async def main(
     cache_key: str,
     cache_hrs: int,
     force: bool,
-    csv_path: Path,
     ecomail_api_key: str,
     ecomail_list_id: int,
     chunk_size: int,
 ):
-    # TODO fuckup
-    # async with ButtondownAPI() as buttondown:
-    #     for page in range(1, 100):  # safety break at 100 pages
-    #         response = await buttondown._client.get(
-    #             "subscribers", params={"page": page}
-    #         )
-    #         response.raise_for_status()
-    #         data = response.json()
-    #         logger.info(f"Processing page {page} with {data['count']} subscribers")
-    #         for subscriber in data["results"]:
-    #             if metadata := subscriber["metadata"]:
-    #                 status = metadata["status"]
-    #                 if status == subscriber["type"]:
-    #                     logger.debug(f"{subscriber['email_address']} is OK")
-    #                 else:
-    #                     logger.debug(
-    #                         f"{subscriber['email_address']} should be {status}, is {subscriber['type']}"
-    #                     )
-    #                     print(f"{subscriber['email_address']}")
-    #                     # response = await buttondown._client.patch(
-    #                     #     f"subscribers/{subscriber['email_address']}",
-    #                     #     json={"type": status},
-    #                     # )
-    #                     # print(response.json())
-    #                     # response.raise_for_status()
-    #                     # logger.info(
-    #                     #     f"Changed {subscriber['email_address']} to {status}"
-    #                     # )
-    #             else:
-    #                 logger.debug(f"{subscriber['email_address']} has no metadata")
-    #         if not data["next"]:
-    #             logger.info("All pages processed")
-    #             break
-    #         logger.info("Fetching next page")
-    # return
-
     cache = get_cache()
     if not force and (subscribers := cache.get(cache_key)):
         logger.info(f"Using cached {len(subscribers)} subscribers")
@@ -155,20 +113,3 @@ async def main(
             logger.error("Rate limited for today")
         else:
             raise
-
-    # TODO remove this in the future
-    logger.info("Checking which subscribers were added successfully")
-    emails_done = set()
-    for email, task in tasks.items():
-        if task.done() and not task.cancelled() and not task.exception():
-            emails_done.add(email)
-    subscribers_remaining = {
-        email: sources
-        for email, sources in subscribers.items()
-        if email not in emails_done
-    }
-    if subscribers_remaining:
-        logger.info(f"Exporting {len(subscribers_remaining)} subscribers to CSV")
-        save_subscribers(subscribers_remaining.items(), csv_path)
-    else:
-        logger.info("All subscribers added successfully, no CSV created")
