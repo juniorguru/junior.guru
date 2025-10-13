@@ -1,9 +1,7 @@
-import csv
 import functools
 import os
 from datetime import date
 from enum import StrEnum
-from pathlib import Path
 from typing import Any, Awaitable, Callable, Self, TypeVar
 
 import httpx
@@ -39,7 +37,6 @@ class SubscriberErrorCode(StrEnum):
 
 
 class ButtondownError(Exception):
-
     def __init__(
         self,
         message: str,
@@ -148,13 +145,3 @@ class ButtondownAPI:
 
 def get_subscriber_type(tags: set[SubscriberSource]) -> str:
     return "unactivated" if tags == {SubscriberSource.MEMBERFUL} else "regular"
-
-
-def save_subscribers(
-    subscribers: list[tuple[str, set[SubscriberSource]]], csv_path: Path
-) -> None:
-    with csv_path.open("w") as csv_file:
-        writer = csv.writer(csv_file)
-        writer.writerow(["email", "tags", "status"])
-        for email, tags in sorted(subscribers):
-            writer.writerow([email, ",".join(sorted(tags)), get_subscriber_type(tags)])

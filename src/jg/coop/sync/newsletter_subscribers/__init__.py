@@ -6,7 +6,7 @@ import httpx
 
 from jg.coop.cli.sync import default_from_env, main as cli
 from jg.coop.lib import loggers
-from jg.coop.lib.buttondown import ButtondownAPI, ButtondownError, save_subscribers
+from jg.coop.lib.buttondown import ButtondownAPI, ButtondownError
 from jg.coop.lib.cache import get_cache
 from jg.coop.lib.chunks import chunks
 from jg.coop.lib.cli import async_command
