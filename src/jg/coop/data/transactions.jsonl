@@ -1165,3 +1165,7 @@
 {"_id": "27282825387", "amount": 6, "category": "donations", "happened_on": "2025-10-08"}
 {"_id": "27289523281", "amount": 3237, "category": "memberships", "happened_on": "2025-10-13"}
 {"_id": "27290217954", "amount": -175, "category": "tax", "happened_on": "2025-10-13"}
+{"_id": "27293675394", "amount": -6190, "category": "tax", "happened_on": "2025-10-15"}
+{"_id": "27293675395", "amount": -3143, "category": "tax", "happened_on": "2025-10-15"}
+{"_id": "27294096831", "amount": 6, "category": "donations", "happened_on": "2025-10-15"}
+{"_id": "27294174650", "amount": 35000, "category": "sponsorships", "happened_on": "2025-10-15"}
