@@ -20,7 +20,7 @@ template: main_handbook.html
 
 Na pohovoru ti budou pokládat otázky a také se očekává, že [nějaké otázky budeš mít ty](#tvoje-otazky). Začněme těmi, které můžeš dostat:
 
-*   **Behaviorální otázky.** „Kdo tě nejvíce ovlivnil ve tvé kariéře?“ [Další příklady](https://www.pathrise.com/guides/25-behavioral-interview-questions/).
+*   **Behaviorální otázky.** „Kdo tě nejvíce ovlivnil ve tvé kariéře?“ Pro další příklady se zeptej AI na typické _behavioral interview questions_.
 *   **Technické otázky.** „Představ si, že nic nevím o [Reactu](https://react.dev/). Vysvětli mi, co to je.“ Nebo: „Co je [float](https://developer.mozilla.org/en-US/docs/Web/CSS/float) v CSS?“
 *   **[Úlohy u tabule](#ulohy-na-algoritmizaci)**, programování na místě, hádanky. Viz např. [HackerRank](https://www.hackerrank.com/).
 *   **Úkoly na doma.** Úkol zpracováváš mimo pohovor a máš na něj kolik času potřebuješ.
@@ -1139,18 +1139,18 @@ Hmmm, pročítal jsem si tu pro inspiraci nějaké deníčky a narazil na live c
 
 
 --- https://discord.com/channels/769966886598737931/1412824012983238820/1414938746297778186
-Já začal v IT v 19 jako OSVČ a zaměstnat jsem se nechal po 6 letech (a pak ještě jednou a teď jsem asi 8 let zase OSVČ), takže znám obojí. A obecně spíš doporučuju nebýt OSVČ, pokud si lidi nechtějí dát tu práci a pochopit všechny důsledky. 
+Já začal v IT v 19 jako OSVČ a zaměstnat jsem se nechal po 6 letech (a pak ještě jednou a teď jsem asi 8 let zase OSVČ), takže znám obojí. A obecně spíš doporučuju nebýt OSVČ, pokud si lidi nechtějí dát tu práci a pochopit všechny důsledky.
 <:youtube:976200175490060299> [moje starší povídání  ](https://www.youtube.com/watch?v=iJGjTFDYw9A) || určitě bych ho dnes pojal trochu jinak, ale základ tam je||
 ---
 
 
 --- https://discord.com/channels/769966886598737931/789107031939481641/1408442345988427786
-Ahoj, 
-vetsinou mas prvni kolo s HR, aby si overila zda sedis na inzerat, a doptala se te pripadne na nejake veci. 
+Ahoj,
+vetsinou mas prvni kolo s HR, aby si overila zda sedis na inzerat, a doptala se te pripadne na nejake veci.
 
-Dalsi technicky kolo, se te budou ptat na to co jsi delal, jak jsi to delal a ty se doptavas na projekt a tym. Oni hledaji juniora a ty jen jdes ukazat co umis. Oni podle toho zhodnoti zda by jsi zapadl do jejich planu a jestli v tobe vidi potencial, nic neni spatne. Bud sam sebou, ukaz ze te to bavi, zajima a vse prijde samo. 
+Dalsi technicky kolo, se te budou ptat na to co jsi delal, jak jsi to delal a ty se doptavas na projekt a tym. Oni hledaji juniora a ty jen jdes ukazat co umis. Oni podle toho zhodnoti zda by jsi zapadl do jejich planu a jestli v tobe vidi potencial, nic neni spatne. Bud sam sebou, ukaz ze te to bavi, zajima a vse prijde samo.
 
-Jedina rada jak tohle zvladnout je projit si tech pohovoru vice ^^ 
+Jedina rada jak tohle zvladnout je projit si tech pohovoru vice ^^
 
 Preju hodne stesti
 ---
