@@ -38,7 +38,7 @@ def update(pull, packages, push, stash):
             subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=True)
         if packages:
             logger.info("Upgrading packages")
-            uv_upgrade()
+            subprocess.run(["uv", "sync", "--upgrade"], check=True)
             subprocess.run(["npm", "update"], check=True)
             subprocess.run(["npm", "install"], check=True)
             subprocess.run(
@@ -61,21 +61,6 @@ def update(pull, packages, push, stash):
         shutil.rmtree("public", ignore_errors=True)
     except subprocess.CalledProcessError:
         raise click.Abort()
-
-
-def uv_upgrade():
-    changes = []
-    while True:
-        logger.debug("Upgrading Python packages")
-        result = subprocess.run(
-            ["uv", "sync", "--upgrade"], capture_output=True, text=True, check=False
-        )
-        if result.returncode == 0:
-            break
-        raise click.Abort()
-    if changes:
-        logger.warning(f"Changes: {', '.join(changes)}")
-        subprocess.run(["uv", "add"] + changes, check=True)
 
 
 @main.command()
