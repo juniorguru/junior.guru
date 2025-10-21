@@ -156,5 +156,8 @@ Tohle byla dobrá přednáška, která mi přišla relevantní i pro JG https://
 Tohle je docela zajímavá myšlenka: https://infosec.exchange/@JessTheUnstill/114858783548413554
 ---
 
+https://en.wikipedia.org/wiki/Bloom's_2_sigma_problem
+Mani https://www.youtube.com/watch?v=DIt7K2gGdoA
+
 
 #} -->
