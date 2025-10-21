@@ -72,18 +72,6 @@ def uv_upgrade():
         )
         if result.returncode == 0:
             break
-        # TODO
-        # if "version solving failed" in result.stderr:
-        #     logger.warning("Version solving failed")
-        #     if match := re.search(
-        #         r"(requires|which depends on) (?P<package>\S+) \((?P<version>[^\)]+)\)",
-        #         result.stderr,
-        #     ):
-        #         package, version = match.group("package"), match.group("version")
-        #         changes.append(f"{package}=={version}")
-        #         subprocess.run(["poetry", "remove", package], check=True)
-        #         continue
-        logger.error(f"Failed to update Python packages:\n{result.stderr}")
         raise click.Abort()
     if changes:
         logger.warning(f"Changes: {', '.join(changes)}")
