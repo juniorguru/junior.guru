@@ -101,6 +101,17 @@
   );
 }
 
+.brand-button.buttondown {
+  @include button-variant(
+    #046AFE,
+    #046AFE,
+    $jg-white,
+    $hover-color: $jg-white,
+    $active-color: $jg-white,
+    $disabled-color: $jg-white
+  );
+}
+
 .brand-button.email {
   @include button-variant(
     $jg-dark,

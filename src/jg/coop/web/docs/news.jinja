@@ -10,8 +10,15 @@ template: main_subnav.html
 
 {% call lead() %}
   Začínáš v IT?
-  Tady máš podcasty, přednášky, články a další zdroje, které tě posunou a namotivují.
+  Odebírej pozvánky, kurzy, podcasty, přednášky, články a další zdroje, které tě posunou a namotivují.
 {% endcall %}
+
+{#
+<div class="standout">
+  <a class="brand-button buttondown" target="_blank" rel="noopener" href="https://buttondown.com/juniorguru">{{ 'envelope-paper-fill'|icon }} Buttondown</a>
+  <a class="brand-button rss" target="_blank" rel="noopener" href="https://junior.guru/api/podcast.xml">{{ 'rss-fill'|icon }} RSS</a>
+</div>
+#}
 
 <div class="newsletter">
   <form class="newsletter-container" id="email-form" method="post" action="https://buttondown.com/api/emails/embed-subscribe/juniorguru">
@@ -56,6 +63,19 @@ template: main_subnav.html
   </div>
 </div>
 
+<div class="standout"><div class="topics">
+<ul>
+  <li>{{ 'bar-chart-line-fill'|icon }} Čísla z pracovního trhu</li>
+  <li>{{ 'calendar-week-fill'|icon }} Pozvánky na srazy a konference</li>
+  <li>{{ 'chat-dots-fill'|icon }} Shrnutí aktivit v klubu</li>
+  <li>{{ 'mortarboard-fill'|icon }} Jaké kurzy zrovna frčí</li>
+  <li>{{ 'mic-fill'|icon }} Epizody podcastu</li>
+  <li>{{ 'play-btn-fill'|icon }} Klubové akce</li>
+  <li>{{ 'file-person-fill'|icon }} Příběhy juniorů</li>
+</ul>
+</div></div>
+
+{#
 <section class="document-section">
   <h2 class="document-section-heading">{{ 'envelope-heart'|icon }} Moudro dne</h2>
   {% for wisdom in wisdoms|sample(1) %}
@@ -150,7 +170,7 @@ template: main_subnav.html
     </a>
   </p>
 </section>
-
+#}
 {#
 <section class="document-section">
   <h2 class="document-section-heading">{{ 'chat'|icon }} Co se řeší v klubu</h2>
