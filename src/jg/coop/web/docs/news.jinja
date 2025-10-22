@@ -14,7 +14,7 @@ template: main_subnav.html
 {% endcall %}
 
 <div class="newsletter">
-  <form class="newsletter-container" id="email-form" method="post" action="https://juniorguru.ecomailapp.cz/public/subscribe/1/43c2cd496486bcc27217c3e790fb4088?source={{ page.url|default('/', true)|urlencode }}">
+  <form class="newsletter-container" id="email-form" method="post" action="https://buttondown.com/api/emails/embed-subscribe/juniorguru">
     <h2 class="newsletter-heading">Novinky pravidelně v mailu</h2>
     <p>
       Zadej e-mail a přidej se k <strong>{{ newsletter_subscribers_count }} lidem</strong>, kteří rádi sledují novinky z junior.guru.
@@ -39,7 +39,7 @@ template: main_subnav.html
       Teď už jen prosím potvrď odběr přes odkaz v e-mailu, který ti přijde.
     </p>
     <p class="newsletter-note">
-      {{ 'info-circle'|icon }} Maily chodí z adresy <a href="mailto:kure@junior.guru">kure@junior.guru</a>, posílá je místní robot zvaný <strong>kuře</strong>.
+      {{ 'info-circle'|icon }} Maily chodí z adresy <a href="mailto:juniorguru@buttondown.email">juniorguru@buttondown.email</a>, posílá je místní robot zvaný <strong>kuře</strong>.
       Pokud nechceš, aby ti novinky padaly do spamu, přidej si kuře do kontaktů.
     </p>
   </div>
@@ -50,7 +50,7 @@ template: main_subnav.html
     </p>
     <button class="newsletter-button" id="email-reset">Hotovo</button>
     <p class="newsletter-note">
-      {{ 'info-circle'|icon }} Maily chodí z adresy <a href="mailto:kure@junior.guru">kure@junior.guru</a>, posílá je místní robot zvaný <strong>kuře</strong>.
+      {{ 'info-circle'|icon }} Maily chodí z adresy <a href="mailto:juniorguru@buttondown.email">juniorguru@buttondown.email</a>, posílá je místní robot zvaný <strong>kuře</strong>.
       Pokud nechceš, aby ti novinky padaly do spamu, přidej si kuře do kontaktů.
     </p>
   </div>

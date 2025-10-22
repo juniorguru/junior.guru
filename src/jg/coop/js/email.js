@@ -5,13 +5,14 @@ function setupEmailForm() {
 
   if (!form || !subscribed || !confirmed) return;
 
-  switch (window.location.hash) {
-    case "#email-subscribed":
+  const status = new URLSearchParams(window.location.search).get("status");
+  switch (status) {
+    case "subscribed":
       form.setAttribute("hidden", "");
       subscribed.removeAttribute("hidden");
       confirmed.setAttribute("hidden", "");
       break;
-    case "#email-confirmed":
+    case "confirmed":
       form.setAttribute("hidden", "");
       subscribed.setAttribute("hidden", "");
       confirmed.removeAttribute("hidden");
@@ -29,12 +30,13 @@ function setupEmailResetButton() {
   if (!resetButton) return;
   resetButton.addEventListener("click", function (event) {
     event.preventDefault();
-    window.history.pushState({}, "", window.location.pathname);
+    const url = new URL(window.location.href);
+    url.searchParams.delete("status");
+    window.history.pushState({}, "", url.pathname + url.search);
     setupEmailForm();
   });
 }
 
 document.addEventListener("DOMContentLoaded", setupEmailForm);
-document.addEventListener("hashchange", setupEmailForm);
 document.addEventListener("popstate", setupEmailForm);
 document.addEventListener("DOMContentLoaded", setupEmailResetButton);
