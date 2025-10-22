@@ -6,7 +6,7 @@ function setupEmailForm() {
   if (!form || !subscribed || !confirmed) return;
 
   const emailAddress = new URLSearchParams(window.location.search).get("email_address");
-  if (emailAddress.includes("@")) {
+  if (emailAddress && emailAddress.includes("@")) {
     // subscribed: https://junior.guru/news/?email_address=example@example.com
     form.setAttribute("hidden", "");
     subscribed.removeAttribute("hidden");
