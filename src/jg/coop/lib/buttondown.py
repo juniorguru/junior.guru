@@ -87,7 +87,7 @@ class ButtondownAPI:
     @convert_http_exceptions
     async def get_emails_since(self, since_date: date) -> dict:
         response = await self._client.get(
-            "emails", params={"creation_date__start": since_date.isoformat()}
+            "emails", params={"publish_date__start": since_date.isoformat()}
         )
         response.raise_for_status()
         return response.json()

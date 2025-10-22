@@ -86,11 +86,11 @@ async def main(
     today: date,
 ):
     this_month = months.this_month(today)
+    prev_month = months.prev_month(today)
+    prev_prev_month = months.prev_prev_month(today)
 
-    # TODO change this so that it's smarter in guessing what I want to do,
-    # and maybe add an option to create several drafts with different AI/random content
+    logger.info(f"Checking existing emails since {this_month}")
     async with ButtondownAPI() as api:
-        logger.info(f"Checking existing emails since {this_month:%Y-%m-%d}")
         emails_count = (await api.get_emails_since(this_month))["count"]
         if emails_count:
             if force:
@@ -99,13 +99,9 @@ async def main(
                 )
             else:
                 logger.warning(
-                    "There are emails created this month. Skipping newsletter! Check https://buttondown.com/emails"
+                    "There are emails published this month. Skipping newsletter! Check https://buttondown.com/emails"
                 )
                 return
-
-    logger.info("Calculating date ranges")
-    prev_month = months.prev_month(today)
-    prev_prev_month = months.prev_prev_month(today)
 
     logger.info(f"Preparing email data: {prev_month} → {this_month}")
     logger.debug("Preparing subscribers")
