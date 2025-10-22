@@ -36,7 +36,7 @@ V souladu s otevřeností jsou i pravidelné „týdenní poznámky” na Honzov
 Byť primárním záměrem této otevřenosti není marketing, je vedlejším produktem.
 Lidé rádi nakukují pod pokličku, projektu potom fandí a šíří o něm povědomí.
 
-Když jeli [trabanti do Afriky](https://www.ceskatelevize.cz/porady/10660318675-trabantem-napric-afrikou/), našlo se ohromné publikum lidí, kteří by tam nikdy nejeli, ale fandili jim a drželi palce, bavilo je sledovat tu cestu a ty obtíže. Taková trochu reality show. Když Honza píše o svém podnikání, lidi si připadají, že jsou součástí toho příběhu, že mají kousek toho úspěchu.
+Když jeli [trabanti do Afriky](https://www.ceskatelevize.cz/porady/10660318675-trabantem-napric-afrikou/), našlo se ohromné publikum lidí, kteří by tam nikdy nejeli, ale fandili jim a drželi palce, bavilo je sledovat tu cestu a ty obtíže. Taková trochu reality show. Když Honza píše o svém podnikání, lidi si připadají, že jsou součástí toho příběhu, že mají kousek toho (ne)úspěchu.
 
 ## Sociální sítě
 

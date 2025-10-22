@@ -11,6 +11,7 @@ from pydantic import BaseModel
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
+from jg.coop.lib import months
 from jg.coop.lib.cache import cache
 from jg.coop.lib.cli import async_command
 from jg.coop.lib.discord_club import ClubChannelID
@@ -59,17 +60,16 @@ class Summary(BaseModel):
     default=lambda: date.today().isoformat(),
     type=date.fromisoformat,
 )
-@click.option("--days", default=30, type=int)
 @click.option("--correction-attempts", default=3, type=int)
 @db.connection_context()
 @async_command
-async def main(today: date, days: int, correction_attempts: int):
+async def main(today: date, correction_attempts: int):
     logger.info("Setting up club topics db table")
     ClubSummaryTopic.drop_table()
     ClubSummaryTopic.create_table()
 
     logger.info("Summarizing club content")
-    result = await summarize_club(today, days, correction_attempts)
+    result = await summarize_club(today, correction_attempts)
 
     logger.info(f"Saving {len(result.topics)} topics")
     for order, topic in enumerate(result.topics, start=1):
@@ -85,12 +85,12 @@ async def main(today: date, days: int, correction_attempts: int):
 
 
 @cache(expire=timedelta(days=1), tag="summary")
-async def summarize_club(today: date, days: int, correction_attempts: int):
-    since_on = today - timedelta(days=days)
-    logger.info(f"Summarizing since: {since_on}")
+async def summarize_club(today: date, correction_attempts: int) -> Summary:
+    prev_month = months.prev_month(today)
+    logger.info(f"Summarizing since: {prev_month}")
     channel_mapping = ClubChannel.names_mapping()
     messages = ClubMessage.summary_listing(
-        since_on=since_on,
+        since_on=prev_month,
         exclude_channels=[
             ClubChannelID.GUIDE_DASHBOARD,
             ClubChannelID.GUIDE_EVENTS,

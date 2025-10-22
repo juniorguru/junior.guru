@@ -11,7 +11,7 @@ from jinja2 import Template
 from lxml import html
 
 from jg.coop.cli.sync import main as cli
-from jg.coop.lib import loggers
+from jg.coop.lib import loggers, months
 from jg.coop.lib.buttondown import ButtondownAPI
 from jg.coop.lib.cli import async_command
 from jg.coop.lib.discord_club import ClubChannelID
@@ -85,7 +85,7 @@ async def main(
     open_browser: bool,
     today: date,
 ):
-    this_month = today.replace(day=1)
+    this_month = months.this_month(today)
 
     # TODO change this so that it's smarter in guessing what I want to do,
     # and maybe add an option to create several drafts with different AI/random content
@@ -104,10 +104,8 @@ async def main(
                 return
 
     logger.info("Calculating date ranges")
-    # TODO change this so that it uses the date of last newsletter published
-    # as the anchor date for stats calculation
-    prev_month = (this_month - timedelta(days=1)).replace(day=1)
-    prev_prev_month = (prev_month - timedelta(days=1)).replace(day=1)
+    prev_month = months.prev_month(today)
+    prev_prev_month = months.prev_prev_month(today)
 
     logger.info(f"Preparing email data: {prev_month} → {this_month}")
     logger.debug("Preparing subscribers")
