@@ -11,7 +11,7 @@ function setupEmailForm() {
     form.setAttribute("hidden", "");
     subscribed.removeAttribute("hidden");
     confirmed.setAttribute("hidden", "");
-  } else if (emailAddress) {
+  } else if (emailAddress === "confirmed") {
     // confirmed: https://junior.guru/news/?email_address=confirmed
     form.setAttribute("hidden", "");
     subscribed.setAttribute("hidden", "");
