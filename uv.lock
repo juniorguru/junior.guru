@@ -786,20 +786,23 @@ wheels = [
 
 [[package]]
 name = "impit"
-version = "0.7.3"
+version = "0.8.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/1b/b4/b3c6da88ee061dbd24e428c0527585d19982c54edf7f195ceba1da89445a/impit-0.7.3.tar.gz", hash = "sha256:c3ec302480a7cf2ceeec439391f5e903c6d113e935750150c1a4b7fb93dc2e37", size = 128658, upload-time = "2025-10-17T12:00:00.531Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c9/0e/86ba7c4d4093cf332d69b09053bf9211c58a6d8ac198c2370c502b1abbd7/impit-0.8.0.tar.gz", hash = "sha256:a6786af6fb3a32a4e87fe35ab96cec9388818c92608b9e79fa4ce77fcd67edfb", size = 122274, upload-time = "2025-10-22T11:17:52.534Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/0e/23/72c79850271a3d170395249c256a3f735c31b414915f5a0d54a407e84e00/impit-0.7.3-cp313-cp313-macosx_10_12_x86_64.whl", hash = "sha256:13692606df77fabc0c5874327cdd7c0665bd9c2f13fec4a5b28684012e84c20d", size = 3866009, upload-time = "2025-10-17T11:59:10.065Z" },
-    { url = "https://files.pythonhosted.org/packages/30/65/74fdd805cc561b2d033fee5e3c88239e1892b5b34f26aad55034179ca717/impit-0.7.3-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:6d0b2853409311f79dfbfd1beca10b4a120d0f9495ef6ef44205ded0836f8f88", size = 3687765, upload-time = "2025-10-17T11:59:11.469Z" },
-    { url = "https://files.pythonhosted.org/packages/6c/4d/8b800e4f2a90bf25eb7dbda153bb9a495b11724aa568339768b79a441290/impit-0.7.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b1585c022409fffeae866159a983485a4768454489814e888c2f792c05fe8b18", size = 6032026, upload-time = "2025-10-17T11:59:13.166Z" },
-    { url = "https://files.pythonhosted.org/packages/68/40/835903467cfb6a38cf32e841fd4e90b612b886cd9d8a47c9297721b9b4a2/impit-0.7.3-cp313-cp313-manylinux_2_28_aarch64.whl", hash = "sha256:f0276ff3d607f2807c1a6ca9de1a8e43540634ee37f11423443771f6af48e514", size = 6041109, upload-time = "2025-10-17T11:59:14.662Z" },
-    { url = "https://files.pythonhosted.org/packages/5e/01/9755634aa5f4449ed31bc9c226448baeda036870a275a03d8763048a0b70/impit-0.7.3-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:80af53fe8302aa3aa5a3715cda4d21850e6f86b46c475538d09717c007a3fdad", size = 6397974, upload-time = "2025-10-17T11:59:16.115Z" },
-    { url = "https://files.pythonhosted.org/packages/b3/4f/553a0030c2d8a5107d38c061ae84980809bded7b98397d80b56412f3ae25/impit-0.7.3-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:9b4700c30918e8a5a25e4d7083825bbe6e35231b342e9c1661af61d055ff5db4", size = 6253870, upload-time = "2025-10-17T11:59:17.589Z" },
-    { url = "https://files.pythonhosted.org/packages/a5/d1/61b4075a648401f10db091a893952296f8fea4384c1fdf5c8faf7f085739/impit-0.7.3-cp313-cp313-win_amd64.whl", hash = "sha256:1dbe66b0e2592995489c6ae1f26bbd84d22ad78a794bd9730fefcbe3a7ed7024", size = 3870856, upload-time = "2025-10-17T11:59:19.028Z" },
-    { url = "https://files.pythonhosted.org/packages/81/5c/963fe4763ad58d036edec53ce829379160c7070fcdd8655a6d743cc5b8e3/impit-0.7.3-cp313-cp313t-manylinux_2_28_aarch64.whl", hash = "sha256:13b599172458d8d83f6d6d5fb237739c24cc05c5861ec0c5053fb4876322e3c4", size = 6041072, upload-time = "2025-10-17T11:59:20.554Z" },
-    { url = "https://files.pythonhosted.org/packages/94/39/027add475676927440a950212261c28bea0660a2f250d7b7b7f494722198/impit-0.7.3-cp313-cp313t-musllinux_1_2_aarch64.whl", hash = "sha256:3cb17c6657334a8491ee53d8b79a105d348cf98fea3b6f21cbf2184d558c3ef4", size = 6397790, upload-time = "2025-10-17T11:59:22.476Z" },
-    { url = "https://files.pythonhosted.org/packages/2e/c4/d3c5f1a8e6acf03ede86ac71bc61b23d19f27888dd049453f9aa41dc8677/impit-0.7.3-cp313-cp313t-musllinux_1_2_x86_64.whl", hash = "sha256:327db35707fdd84642a7a94ecdc5128a37d5eb2ea97cd7e6639db2f2278f306a", size = 6254792, upload-time = "2025-10-17T11:59:26.454Z" },
+    { url = "https://files.pythonhosted.org/packages/df/90/988bc72e96aaa328ab618e981369028a4de81e8e6f0606269c4f7a33ca3a/impit-0.8.0-cp313-cp313-macosx_10_12_x86_64.whl", hash = "sha256:e594d5f90bb7620b4b6efd0c1c0ff25d36af349f8867d8a6c538273eb715b805", size = 3874307, upload-time = "2025-10-22T11:17:06.651Z" },
+    { url = "https://files.pythonhosted.org/packages/6b/aa/3fac076b91238fb168664744427123d9fbb3751cc00fb41a372c2950c0d0/impit-0.8.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:a5b7324fb7fd134a36fda126f9afe1a83f3cae6cd0b1e50015cb943c9a51a474", size = 3692583, upload-time = "2025-10-22T11:17:10.961Z" },
+    { url = "https://files.pythonhosted.org/packages/11/f7/ad7a1abdf06d256d188fe4a8d0ac88cdfa0d43d89a6f55a67a2b1fcb5f3d/impit-0.8.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a1dfcb47b7c30952d10a18b1b316371ff746c871092756c6b501e85b067565a2", size = 6041341, upload-time = "2025-10-22T11:17:12.697Z" },
+    { url = "https://files.pythonhosted.org/packages/3f/43/1ad3b4447b9395d5e11d30e641971c4db3a276d971df4c52edab212abcf7/impit-0.8.0-cp313-cp313-manylinux_2_28_aarch64.whl", hash = "sha256:4d6ad5c220bbb7e9a56972e52a8398bc9dfa9535ed25724c4f0ca64a4483ebd9", size = 6052948, upload-time = "2025-10-22T11:17:14.566Z" },
+    { url = "https://files.pythonhosted.org/packages/87/eb/bc0b8cd8a85dc540c98f503efbd24927784d3eb4147354e70b3eeba2de58/impit-0.8.0-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:acb0c93271976f36b26ad061a18262b82becb7f0be5a44a8284d6a5396da211b", size = 6405573, upload-time = "2025-10-22T11:17:16.039Z" },
+    { url = "https://files.pythonhosted.org/packages/25/f1/30c2028f588e5abcbdf63eb7f06bcadc43b05df878ee209573512f70118a/impit-0.8.0-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:38e7796dbdf51cda16bc7188cde15e0d3474670077ec95843a05d1dfeff78834", size = 6263299, upload-time = "2025-10-22T11:17:18.406Z" },
+    { url = "https://files.pythonhosted.org/packages/8e/47/1cc5698ae1620049938ee99422b16a49695ca14de51e5389bfc6379ccaba/impit-0.8.0-cp313-cp313-win_amd64.whl", hash = "sha256:736cef35c308db97dd5bf89b2fde64c0466895c24f26e0be90df525fec41b119", size = 3877934, upload-time = "2025-10-22T11:17:19.857Z" },
+    { url = "https://files.pythonhosted.org/packages/20/b3/06ee60bae27d539346ce85b497662a0649266e3dca3fa13e1039c80f66ea/impit-0.8.0-cp313-cp313t-macosx_10_12_x86_64.whl", hash = "sha256:a357ee9a5a2ff00a70e70d7af625bfae8e37b82ba6042428a57267aa39c8b24b", size = 3874970, upload-time = "2025-10-22T11:17:21.676Z" },
+    { url = "https://files.pythonhosted.org/packages/17/66/a797050d9aa08239cf95f7fa2822350f81a5e5c734b670b9b1a15b1ee685/impit-0.8.0-cp313-cp313t-macosx_11_0_arm64.whl", hash = "sha256:d39b26233bffe8c8d6655a9a4fc71f56456b02951322c15c6e3911517ea8f1dd", size = 3692498, upload-time = "2025-10-22T11:17:23.412Z" },
+    { url = "https://files.pythonhosted.org/packages/de/2b/266a8fc7baf8c1e5e76869694cef28a4aa8656601f4b0dd577da060b51fb/impit-0.8.0-cp313-cp313t-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:af53a51000c8421cec6840b63bd3f39096d27d35f1d1bfa34f5a58a357c0e188", size = 6041055, upload-time = "2025-10-22T11:17:25.522Z" },
+    { url = "https://files.pythonhosted.org/packages/74/9a/e8da4929061c88054bdbb6ac9eb5e529159be79cecfc827e4d5eeaa776c6/impit-0.8.0-cp313-cp313t-manylinux_2_28_aarch64.whl", hash = "sha256:b49931d3796ddc212d079e5759063e1cfa9199150f36bd582753ac7840e55328", size = 6052927, upload-time = "2025-10-22T11:17:27.234Z" },
+    { url = "https://files.pythonhosted.org/packages/c0/e0/513bc7a7396507b98057e605a96dc854ca85eca109595dcf95d47c571510/impit-0.8.0-cp313-cp313t-musllinux_1_2_aarch64.whl", hash = "sha256:e347da23762b8004ef37abd6d9bc38f84704605eb6991803dd4b7f664adce683", size = 6405688, upload-time = "2025-10-22T11:17:28.819Z" },
+    { url = "https://files.pythonhosted.org/packages/be/e6/c942d1a101f27094649d39533ac7ba24e3341d3b5ff9b4132d73aa55fc37/impit-0.8.0-cp313-cp313t-musllinux_1_2_x86_64.whl", hash = "sha256:7fe38938d27bca09692a67ddc74b82b2746bb7ac5517daf94885eec77dbebd4b", size = 6263322, upload-time = "2025-10-22T11:17:30.292Z" },
 ]
 
 [[package]]
@@ -1486,8 +1489,8 @@ wheels = [
 
 [[package]]
 name = "py-cord"
-version = "2.7.0rc2.dev103+g34595ac62"
-source = { git = "https://github.com/Pycord-Development/pycord.git#34595ac628ac5065fe57251bf0b579b4dbf92eed" }
+version = "2.7.0rc3.dev1+gd18442806"
+source = { git = "https://github.com/Pycord-Development/pycord.git#d18442806745a204acc0245722ffb30617a9ea08" }
 dependencies = [
     { name = "aiohttp" },
     { name = "typing-extensions" },
