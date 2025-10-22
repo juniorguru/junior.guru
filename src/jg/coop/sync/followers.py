@@ -10,6 +10,8 @@ from lxml import html
 
 from jg.coop.cli.sync import default_from_env, main as cli
 from jg.coop.lib import apify, loggers
+from jg.coop.lib.buttondown import ButtondownAPI
+from jg.coop.lib.cli import async_command
 from jg.coop.models.base import db
 from jg.coop.models.followers import Followers
 
@@ -40,15 +42,12 @@ GITHUB_PERSONAL_USERNAME = "honzajavorek"
     default="src/jg/coop/data/followers.jsonl",
     type=click.Path(path_type=Path),
 )
-@click.option("--ecomail-api-key", default=default_from_env("ECOMAIL_API_KEY"))
-@click.option("--ecomail-list", "ecomail_list_id", default=1, type=int)
 @click.option(
     "--github-api-key", default=default_from_env("GITHUB_API_KEY"), required=True
 )
 @db.connection_context()
-def main(
-    history_path: Path, ecomail_api_key: str, ecomail_list_id: int, github_api_key: str
-):
+@async_command
+async def main(history_path: Path, github_api_key: str):
     logger.info("Preparing database")
     Followers.drop_table()
     Followers.create_table()
@@ -66,17 +65,11 @@ def main(
     for item in apify.fetch_data("honzajavorek/followers"):
         Followers.add(month=item["date"][:7], name=item["name"], count=item["count"])
 
-    logger.info("Getting newsletter subscribers from Ecomail")
+    logger.info("Getting newsletter subscribers from Buttondown")
     try:
-        response = httpx.get(
-            f"https://api2.ecomailapp.cz/lists/{ecomail_list_id}/subscribers",
-            headers={
-                "key": ecomail_api_key,
-                "User-Agent": "JuniorGuruBot (+https://junior.guru)",
-            },
-        )
-        response.raise_for_status()
-        subscribers_count = response.json()["total"]
+        async with ButtondownAPI() as buttondown:
+            subscribers_count = await buttondown.count_subscribers()
+        logger.info(f"Saving result: {subscribers_count}")
         Followers.add(month=month, name="newsletter", count=subscribers_count)
     except Exception:
         logger.exception("Failed to get newsletter subscribers")

@@ -35,7 +35,7 @@ Když mne kontaktujete (telefonicky, e-mailem nebo prostřednictvím webových s
 
 **a. osobní údaje návštěvníků webu.** Jedná se o údaje o akcích uživatelů, které slouží čistě pro statistické účely. Tyto údaje uchovává [Simple Analytics](https://www.simpleanalytics.com/) agregované do souhrnných čísel a není z nich možné identifikovat jednotlivce.
 
-**b. osoby odebírající newsletter.** U osob, které souhlasí se zasíláním e-mailů s novinkami, je uchováván jejich e-mail, a to prostřednictvím služeb [Ecomail.cz](https://ecomail.cz/) a [Buttondown](https://buttondown.com/). Z odběru se lze kdykoliv odhlásit pomocí odkazu v každém e-mailu.
+**b. osoby odebírající newsletter.** U osob, které souhlasí se zasíláním e-mailů s novinkami, je uchováván jejich e-mail, a to prostřednictvím služby [Buttondown](https://buttondown.com/). Z odběru se lze kdykoliv odhlásit pomocí odkazu v každém e-mailu.
 
 **c. osobní údaje členů digitálního klubu.** Jedná se o osobní údaje jednotlivých členů [klubu](club.md) dostupné z [klientské sekce](https://juniorguru.memberful.com/account/). tj. uživatelské jméno, e-mail, domovská země člena a dále údaje o platební kartě člena. K vašim zadaným osobním údajům má vzhledem k charakteru služeb přístup také platforma [Memberful](https://memberful.com/), [Discord](https://discord.com/), [Google Sheets](https://www.google.com/sheets/about/). K údajům o platební kartě má přístup pouze služba [Stripe](https://stripe.com), která zajišťuje bezpečnost a realizaci jednotlivých plateb, mě osobně známy nejsou.
 
@@ -51,7 +51,7 @@ Vaše údaje mohou být předány níže vyjmenovaným subjektům. Dbáme na to,
 
 *   Orgány veřejné moci (např. soudy, správní orgány),
 *   poskytovatelé údržby informačního systému,
-*   služby třetích stran nezbytné pro realizaci služeb, a to [Simple Analytics](https://www.simpleanalytics.com/), [Google Sheets](https://www.google.com/sheets/about/), [Ecomail.cz](https://ecomail.cz/), [Buttondown](https://buttondown.com/), [Memberful](https://memberful.com/), [Discord](https://discord.com/),
+*   služby třetích stran nezbytné pro realizaci služeb, a to [Simple Analytics](https://www.simpleanalytics.com/), [Google Sheets](https://www.google.com/sheets/about/), [Buttondown](https://buttondown.com/), [Memberful](https://memberful.com/), [Discord](https://discord.com/),
 *   služba třetí strany nezbytná pro realizaci bezkontaktních plateb, a to [Stripe](https://stripe.com),
 *   služba třetí stany spravující účetnictví, a to [Fakturoid](https://www.fakturoid.cz/).
 

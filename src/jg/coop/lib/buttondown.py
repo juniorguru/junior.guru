@@ -99,6 +99,12 @@ class ButtondownAPI:
         response.raise_for_status()
         return response.json()
 
+    async def count_subscribers(self) -> int:
+        response = await self._client.get("subscribers", params={"type": "regular"})
+        response.raise_for_status()
+        data = response.json()
+        return data["count"]
+
     @mutations.mutates_buttondown()
     @convert_http_exceptions
     async def add_subscriber(self, email: str, tags=set[SubscriberSource]) -> dict:

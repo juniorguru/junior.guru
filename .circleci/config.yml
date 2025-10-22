@@ -109,7 +109,6 @@ jobs:
   # $OPENAI_API_KEY
   # $APIFY_API_KEY
   # $STRIPE_API_KEY
-  # $ECOMAIL_API_KEY
   # $GITHUB_API_KEY
   # $MAPYCZ_API_KEY
   sync-1:
