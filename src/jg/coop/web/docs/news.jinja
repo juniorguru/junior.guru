@@ -6,7 +6,7 @@ template: main_subnav.html
 
 {% from 'macros.html' import lead, news_card, blockquote with context %}
 
-<h1>Novinky</h1>
+<h1>Novinky ze světa IT juniorů</h1>
 
 {% call lead() %}
   Začínáš v IT?
@@ -17,7 +17,7 @@ template: main_subnav.html
   <form class="newsletter-container" id="email-form" method="post" action="https://buttondown.com/api/emails/embed-subscribe/juniorguru">
     <h2 class="newsletter-heading">Novinky pravidelně v mailu</h2>
     <p>
-      Zadej e-mail a přidej se k <strong>{{ newsletter_subscribers_count }} lidem</strong>, kteří rádi sledují novinky z junior.guru.
+      Zadej e-mail a přidej se k <strong>{{ newsletter_subscribers_count }} lidem</strong>, kteří sledují newsletter z junior.guru:
     </p>
     <fieldset class="newsletter-fieldset">
       <div class="newsletter-email">
