@@ -128,6 +128,7 @@ async def ask_llm(
                             text_format=schema,
                         )
                     ).output_parsed
+                    break
                 except ValidationError as e:
                     if attempt == validation_attempts:
                         raise
