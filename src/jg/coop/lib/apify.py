@@ -72,7 +72,7 @@ def fetch_data(
     return list(dataset.iterate_items())
 
 
-@cache(expire=timedelta(days=1), tag="apify")
+@cache(expire=timedelta(seconds=10 * 60), tag="apify")
 def fetch_scheduled_actors(token: str | None = None) -> list[str]:
     client = create_client(token=token)
     schedules = [
