@@ -10,8 +10,7 @@ import click
 from pydantic import BaseModel
 
 from jg.coop.cli.sync import main as cli
-from jg.coop.lib import loggers
-from jg.coop.lib import months
+from jg.coop.lib import loggers, months
 from jg.coop.lib.cache import cache
 from jg.coop.lib.cli import async_command
 from jg.coop.lib.discord_club import ClubChannelID
