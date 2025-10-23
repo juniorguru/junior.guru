@@ -1,4 +1,5 @@
 import asyncio
+from collections import Counter
 import json
 import re
 from datetime import date, timedelta
@@ -7,7 +8,7 @@ from operator import attrgetter
 from pprint import pformat
 
 import click
-from pydantic import BaseModel
+from pydantic import BaseModel, field_validator
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers, months
@@ -40,6 +41,15 @@ class LLMTopicEmoji(BaseModel):
 
 class LLMTopicEmojis(BaseModel):
     items: list[LLMTopicEmoji]
+
+    @field_validator("items")
+    @classmethod
+    def validate_items(cls, value: list[LLMTopicEmoji]) -> list[LLMTopicEmoji]:
+        emoji_counts = Counter(item.emoji for item in value)
+        duplicate_emojis = [emoji for emoji, count in emoji_counts.items() if count > 1]
+        if duplicate_emojis:
+            raise ValueError(f"Duplicate emojis found: {duplicate_emojis}")
+        return value
 
 
 class Topic(BaseModel):
