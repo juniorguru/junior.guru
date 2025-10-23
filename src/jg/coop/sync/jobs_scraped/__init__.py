@@ -12,6 +12,7 @@ from jg.coop.lib.async_utils import make_async
 from jg.coop.lib.cli import async_command
 from jg.coop.models.base import db
 from jg.coop.models.job import DroppedJob, ScrapedJob
+from jg.coop.sync.jobs_scraped import linkedin
 
 
 PIPELINES = [
@@ -40,16 +41,22 @@ class DropItem(Exception):
 @cli.sync_command()
 @async_command
 async def main():
-    actor_names = [
+    scheduled_actor_names = apify.fetch_scheduled_actors()
+    jobs_actor_names = [
         actor_name
-        for actor_name in apify.fetch_scheduled_actors()
+        for actor_name in scheduled_actor_names
         if actor_name.startswith("honzajavorek/jobs-")
     ]
-    logger.info(f"Actors:\n{pformat(actor_names)}")
+    logger.info(f"Actors:\n{pformat(jobs_actor_names)}")
     items = itertools.chain.from_iterable(
         apify.fetch_data(actor_name, raise_if_missing=False)
-        for actor_name in actor_names
+        for actor_name in jobs_actor_names
     )
+
+    if linkedin.ACTOR_NAME in scheduled_actor_names:
+        logger.info(f"LinkedIn Actor: {linkedin.ACTOR_NAME}")
+        linkedin_items = apify.fetch_data(linkedin.ACTOR_NAME, raise_if_missing=False)
+        items = itertools.chain(items, map(linkedin.transform_item, linkedin_items))
 
     logger.info(f"Pipelines:\n{pformat(PIPELINES)}")
     pipelines = [
