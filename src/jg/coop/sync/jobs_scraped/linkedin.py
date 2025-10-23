@@ -67,7 +67,7 @@ def clean_url(url: str) -> str:
     return url
 
 
-# TODO, this is ugly copy-paste from plucker
+# TODO, the rest of this file is ugly copy-paste from plucker
 
 
 UTM_PARAM_NAMES = ["utm_source", "utm_medium", "utm_campaign"]
