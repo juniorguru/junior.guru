@@ -68,7 +68,7 @@ def get_thumbnail_context(page: Page) -> dict:
         "Kurzy": "mortarboard",
         "Práce": "clipboard2-check",
         "Inspirace": "rocket-takeoff",
-        "Info": "info-square",
+        "Info": "info-circle",
     }.get(page.mainnav_name, "arrow-right-circle")
     return dict(
         title=page.meta.get("thumbnail_title", page.meta["title"]),
