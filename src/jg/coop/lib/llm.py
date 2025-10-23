@@ -9,7 +9,7 @@ from typing import TypeVar, overload
 
 import tiktoken
 from openai import AsyncOpenAI, InternalServerError, RateLimitError
-from pydantic import BaseModel
+from pydantic import BaseModel, ValidationError
 from tenacity import (
     before_sleep_log,
     retry,
@@ -53,6 +53,7 @@ async def ask_llm(
     user_prompt: str,
     model: LLMModel = LLMModel.simple,
     schema: None = None,
+    validation_attempts: int = 3,
 ) -> str: ...
 
 
@@ -62,6 +63,7 @@ async def ask_llm(
     user_prompt: str,
     model: LLMModel = LLMModel.simple,
     schema: type[Schema] = ...,
+    validation_attempts: int = 3,
 ) -> Schema: ...
 
 
@@ -103,6 +105,7 @@ async def ask_llm(
     user_prompt: str,
     model: LLMModel = LLMModel.simple,
     schema: type[Schema] | None = None,
+    validation_attempts: int = 3,
 ) -> Schema | str:
     client = get_client()
     async with limit:
@@ -115,13 +118,20 @@ async def ask_llm(
             {"role": "user", "content": prompt(user_prompt)},
         ]
         if schema:
-            result = (
-                await client.responses.parse(
-                    model=str(model),
-                    input=llm_input,
-                    text_format=schema,
-                )
-            ).output_parsed
+            for attempt in range(1, validation_attempts + 1):
+                logger.debug(f"Asking LLM with schema validation, attempt #{attempt}")
+                try:
+                    result = (
+                        await client.responses.parse(
+                            model=str(model),
+                            input=llm_input,
+                            text_format=schema,
+                        )
+                    ).output_parsed
+                except ValidationError as e:
+                    if attempt == validation_attempts:
+                        raise
+                    logger.warning(f"Schema validation failed, attempt #{attempt}: {e}")
         else:
             result = (
                 await client.responses.create(
