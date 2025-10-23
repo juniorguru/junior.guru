@@ -25,6 +25,10 @@ from jg.coop.lib import loggers
 
 DB_FILE = Path("src/jg/coop/data/data.db")
 
+SQLITE_INT_MIN = -(1 << 63)
+
+SQLITE_INT_MAX = (1 << 63) - 1
+
 
 logger = loggers.from_path(__file__)
 

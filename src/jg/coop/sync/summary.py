@@ -8,7 +8,7 @@ from operator import attrgetter
 from pprint import pformat
 
 import click
-from pydantic import BaseModel, field_validator
+from pydantic import BaseModel, conint, field_validator
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers, months
@@ -16,7 +16,7 @@ from jg.coop.lib.cache import cache
 from jg.coop.lib.cli import async_command
 from jg.coop.lib.discord_club import ClubChannelID
 from jg.coop.lib.llm import LLMModel, ask_llm
-from jg.coop.models.base import db
+from jg.coop.models.base import SQLITE_INT_MAX, SQLITE_INT_MIN, db
 from jg.coop.models.club import ClubChannel, ClubMessage, ClubSummaryTopic
 
 
@@ -25,7 +25,7 @@ logger = loggers.from_path(__file__)
 
 class LLMTopic(BaseModel):
     engagement_score: int
-    message_id: int
+    message_id: conint(ge=SQLITE_INT_MIN, le=SQLITE_INT_MAX)  # type: ignore
     name: str
     text: str
 
