@@ -15,7 +15,7 @@ registry:
     cz_business_id: 27690016
     subscription: https://juniorguru.memberful.com/admin/subscriptions/3699651
     periods:
-      - [2020-09, 2025-10]
+      - [2020-09, 2025-11]
 
   - name: Rector
     slug: rector
