@@ -6,9 +6,7 @@ ACTOR_NAME = "curious_coder/linkedin-jobs-scraper"
 
 
 def transform_item(item: dict) -> dict:
-    apply_url = clean_url(
-        clean_validated_url(clean_proxied_url(item["applyUrl"]))
-    )
+    apply_url = clean_url(clean_validated_url(clean_proxied_url(item["applyUrl"])))
     return dict(
         title=item["title"],
         posted_on=item["postedAt"],
