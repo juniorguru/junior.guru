@@ -15,7 +15,7 @@ def transform_item(item: dict) -> dict:
         company_name=item["companyName"],
         company_url=item.get("companyWebsite"),
         company_logo_urls=[item["companyLogo"]],
-        locations_raw=item["location"],
+        locations_raw=[item["location"]],
         employment_types=[item["employmentType"]],
         description_html=item["descriptionHtml"],
         source="linkedin",
