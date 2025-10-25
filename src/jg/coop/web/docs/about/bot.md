@@ -3,7 +3,7 @@ title: Co umí kuře, klubový Discord bot
 template: main_about.html
 ---
 
-{% from 'macros.html' import lead, note with context %}
+{% from 'macros.html' import lead with context %}
 
 # Kuře, klubový Discord bot
 
