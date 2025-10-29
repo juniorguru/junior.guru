@@ -27,6 +27,21 @@ async def test_language_parser_process():
         socjalno-motywacyjny, w tym prywatną opiekę zdrowotną i Pracowniczy Program Emerytalny,</li>
         <li> konkurencyjne wynagrodzenie,</li><li> pakiet benefitów,</li><li> profesjonalny system...
     """
-    item = await process(dict(description_text=extract_text(description_text)))
+    item = dict(
+        title="Junior Software Engineer",
+        description_text=extract_text(description_text),
+    )
+    item = await process(item)
 
     assert item["lang"] == "pl"
+
+
+@pytest.mark.asyncio
+async def test_language_parser_process_missing_body_does_not_raise():
+    item = dict(
+        title="Junior Software Engineer",
+        description_text="-",
+    )
+    item = await process(item)
+
+    assert len(item["lang"]) == 2
