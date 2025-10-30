@@ -124,7 +124,7 @@ logger = loggers.from_path(__file__)
 limit = asyncio.Semaphore(4)
 
 
-@cache(tag="mapycz", expire=timedelta(days=60), ignore=("api_key", "bounding_box"))
+@cache(tag="mapycz-2", expire=timedelta(days=60), ignore=("api_key", "bounding_box"))
 async def locate(
     location_raw: str,
     api_key: str | None = None,
