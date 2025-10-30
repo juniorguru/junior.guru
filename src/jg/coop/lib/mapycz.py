@@ -239,6 +239,8 @@ def get_region_name(country: ResponseCountry, regions: list[ResponseRegion]) -> 
         if not regions:
             return "Slovensko"
         try:
+            if regions[-1].name == "Bratislavský kraj":
+                return "Bratislava"
             # avoiding e.g. 'oblast RŠÚJ Západné Slovensko'
             region_name_official = regions[-2].name
         except IndexError:
