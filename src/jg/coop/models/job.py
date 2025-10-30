@@ -20,7 +20,7 @@ from peewee import (
 from playhouse.shortcuts import model_to_dict
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
 
-from jg.coop.lib.mapycz import REGIONS
+from jg.coop.lib.mapycz import REGIONS, Location, repr_locations
 from jg.coop.lib.text import get_tag_slug
 from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubUser
@@ -331,33 +331,8 @@ class ListedJob(BaseModel):
 
     @property
     def location(self) -> str:
-        # TODO refactor, this is terrible
-        locations = self.locations or []
-        if len(locations) == 1:
-            location = locations[0]
-            place, region = location["place"], location["region"]
-            parts = [place] if place == region else [place, region]
-            if self.remote:
-                parts.append("na dálku")
-            parts = list(filter(None, parts))
-            if parts:
-                return ", ".join(parts)
-            return "?"
-        else:
-            parts = list(sorted(filter(None, [loc["place"] for loc in locations])))
-            if len(parts) > 2:
-                parts = parts[:2]
-                if self.remote:
-                    parts[-1] += " a další"
-                    parts.append("na dálku")
-                    return ", ".join(parts)
-                else:
-                    return ", ".join(parts) + "…"
-            elif parts:
-                return ", ".join(parts + (["na dálku"] if self.remote else []))
-            if self.remote:
-                return "na dálku"
-            return "?"
+        locations = [Location(**location) for location in self.locations or []]
+        return repr_locations(locations)
 
     @classmethod
     def count(cls):

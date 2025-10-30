@@ -82,12 +82,6 @@ class Location(BaseModel):
     region: str
     country_code: str
 
-    # TODO
-    # def __str__(self) -> str:
-    #     if self.place == self.region:
-    #         return self.place
-    #     return f"{self.place}, {self.region}"
-
 
 class ResponseRegionType(StrEnum):
     address = "regional.address"
@@ -251,6 +245,24 @@ def get_region_name(country: ResponseCountry, regions: list[ResponseRegion]) -> 
         return REGIONS_MAPPING_SK[region_name_official]
 
     return country.name
+
+
+def repr_locations(locations: list[Location], remote: bool = False) -> str:
+    if not locations and not remote:
+        return "?"
+
+    parts = []
+    for location in locations:
+        if location.region and location.place != location.region:
+            parts.append(f"{location.place} ({location.region})")
+        else:
+            parts.append(location.place)
+    parts.sort(key=czech_sort.key)
+
+    if remote:
+        parts.append("také na dálku")
+
+    return ", ".join(parts)
 
 
 if __name__ == "__main__":
