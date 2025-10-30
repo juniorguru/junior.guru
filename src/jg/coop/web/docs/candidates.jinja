@@ -16,9 +16,9 @@ template: main_subnav.html
   Oslovuješ napřímo, nic neplatíš.
 {% endcall %}
 
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tato stránka se teprve připravuje.
-{% endcall %}
+{% call note() -%}
+  {{ 'plus-circle'|icon }} Chceš tady být taky? Přidej se přes <a href="https://github.com/juniorguru/eggtray/">github.com/juniorguru/eggtray</a>, jestli to dokážeš!
+{%- endcall %}
 
 <ul>
 {% for candidate in candidates %}
@@ -34,3 +34,7 @@ template: main_subnav.html
         <a href="https://github.com/juniorguru/eggtray/">Přidej se do seznamu</a>
     </li>
 </ul>
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Tato stránka se teprve připravuje.
+{% endcall %}
