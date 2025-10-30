@@ -660,4 +660,7 @@ Dělali jste si někdo IT fitness test? Znáte? https://aavit.cz/it-fitness-test
 ---
 
 
+https://zpravy.aktualne.cz/domaci/diskriminace-starsich-na-trhu-prace-ctyricetiletym-ajtakum-u/r~09ae8f2ca50411f0a065ac1f6b220ee8/
+
+
 #} -->
