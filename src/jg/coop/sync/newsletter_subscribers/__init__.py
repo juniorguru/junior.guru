@@ -23,7 +23,7 @@ logger = loggers.from_path(__file__)
 @click.option("--cache-key", default="newsletter:subscribers")
 @click.option("--cache-hrs", default=60, type=int)
 @click.option("-f", "--force", is_flag=True, default=False)
-@click.option("--chunk-size", default=5, type=int)
+@click.option("--chunk-size", default=3, type=int)
 @db.connection_context()
 @async_command
 async def main(cache_key: str, cache_hrs: int, force: bool, chunk_size: int):
