@@ -13,26 +13,18 @@ Spoustu věcí v [klubu pro juniory](../club.md) dělá Discord bot, který se j
 
 [TOC]
 
-## Co všechno je kuře
+## Co umí rychlé kuře
 
-Infrastruktura našeho Discord bota je dvojí:
+Je schopno reagovat okamžitě:
 
-- **Pomalé kuře** - Minimálně jednou denně v noci, nebo pokaždé, když Honza udělá `git push` do [hlavního repozitáře s kódem](https://github.com/juniorguru/junior.guru), se spustí [build na CircleCI](https://app.circleci.com/pipelines/github/juniorguru/junior.guru?branch=main). V rámci něj proběhnou desítky skriptů, které něco stahují, synchronizují, přepočítávají, vše uloží do SQLite a nakonec z těch dat vybuildí celou junior.guru MkDocs webovku, kterou si právě čteš. Skripty, které něco dělají na Discordu, se tam připojují a navenek tváří jako kuře.
-- **Rychlé kuře** - Mrňavá appka s [vlastním repozitářem](https://github.com/juniorguru/chick/), která [neustále běží](https://juniorguru-chick.fly.dev/) na [Fly](https://fly.io/) a má na starosti pár věcí, kde je potřeba okamžitá odezva. Je to skutečný bot, který se jako kuře připojí na Discord a reaguje na věci, které se tam napíšou. Tento kód ale nic nepřepočitává, nic nikam neukládá a neeviduje si žádný stav čehokoliv. Prostě jen reaguje na skutečnosti: zakládá vlákna, rozdává emoji…
-
-Pak si robotickou identitu kuřete propůjčují i jiné systémy, které komunikují s členy klubu. Například pro správu uživatelských účtu a placení se používá systém [Memberful](https://memberful.com/). Ten posílá různé e-maily, např. že vyprší členství, nebo že se nepovedlo strhnout platbu z karty. Tyto jsou psány jako „Ahoj, tady kuře“, aby se rozlišilo, že jsou automatické a nepíše je přímo Honza, ale s kódem Discord bota nemají vlastně nic společného.
-
-## Proč zvlášť pomalé a rychlé
-
-Celé junior.guru je navrženo tak, aby jej Honza mohl provozovat v jednom člověku. Jenže každou aplikaci, která má běžící _runtime_, je potřeba monitorovat, a když spadne, je potřeba řešit, proč spadla, a nahodit ji, aby služby a funkce, které na ní závisí, fungovaly.
-
-V tomto směru je z hlediska _work-life balance_ lepší noční přepočet. Buď se vše povede, nebo to spadne, ale pak má člověk spoustu času to opravit. Webovka je statická a běží, i když třeba v mírně neaktualizované verzi. Fungování klubu není krátkodobě závislé na tom, jestli někde spadl nějaký složitý skript. Když začně _nightly build_ o víkendu padat, Honza to opraví v pondělí, pohoda.
-
-Dříve ani rychlé kuře neexistovalo, klub si vystačil s pomalým. Časem ale Honza uznal, že UX by v některých věcech byla o dost lepší, kdyby se odehrály okamžitě. A tak vzniklo rychlé kuře, které sice jede pořád a může kdykoliv spadnout, ale zase je dost jednoduché na to, aby nebylo obtížné jej restartovat, nebo rychle opravit. A když na pár dní spadne pomalé kuře, základní UX v klubu tím není zasaženo.
+- **Vytváří vlákna** - Když někdo napíše zprávu do kanálů #ahoj, #past-vedle-pasti, nebo #můj-dnešní-objev, kuře pod to okamžitě vytvoří vlákno k diskuzi.
+- **Vítá** - V kanálu #ahoj do vlákna ještě hned přidává každému uvítání v klubu se základními informacemi. Do vlákna přidá lidi, kteří se dobrovolně přihlásili k vítání nováčků.
+- **Reaguje** - Když někdo vloží ručně inzerát do #práce-inzeráty, kuře reaguje „ĎK“. Když někdo napíše do #práce-hledám, kuře reaguje 👍
+- **Dává zpětnou vazbu na GitHub profil** - Když někdo v #cv-github-linkedin vytvoří nové vlákno, tak se kuře podívá, co v něm je. Když tam najde CVčko nebo LinkedIn profil, napíše k tomu zprávu se základními informacemi a poprosí ostatní členy, aby se na to podívali. Pokud tam najde odkaz na GitHub profil, spustí [nástroj](https://github.com/juniorguru/hen), který to umí projít a poskytnout zpětnou vazbu. Tu do Discord vlákna přepošle barevně naformátovanou.
 
 ## Co umí pomalé kuře
 
-Kód „pomalého kuřete“ se prolíná se vším ostatním, co je kolem junior.guru automatizováno. Věci, které nějak souvisí s Discordem jsou tyto:
+Spouští se zhruba jednou denně. Kód „pomalého kuřete“ se prolíná se vším ostatním, co je kolem junior.guru automatizováno. Věci, které nějak souvisí s Discordem jsou tyto:
 
 - **Vytváří týdenní souhrny** - Každý týden do #oznámení pošle zprávu, která se snaží upozornit na nejzajímavější věci, které se v klubu řešily.
 - **Vytváří nápovědu a pomáhá se zaučením nováčků** - Podle předpřipravených souborů vytváří a udržuje kanál #klub-tipy, kde je nápověda na používání klubu. Nováčci v klubu mají tajný kanál, do kterého kuře jednou denně postupně posílá jednotlivé tipy, aby si je přečetli.
@@ -52,9 +44,21 @@ Kód „pomalého kuřete“ se prolíná se vším ostatním, co je kolem junio
 - **Upravuje trvanlivost vláken v klubu** - U všech fór v klubu automaticky prodlužuje tzv. _auto archive duration_ na co nejdelší, aby se jednotlivá vlákna archivovala až za týden a ne třeba za den, což je výchozí chování Discordu.
 - **Reportuje Honzovi** - Do tajného kanálu kuře Honzovi píše, že někdo přišel do klubu a co napsal do políčka „odkud přicházíš“. Nebo že někdo ruší předplatné a co uvedl jako důvod.
 
-## Co umí rychlé kuře
+## Infrastruktura kuřete
 
-- **Vytváří vlákna** - Když někdo napíše zprávu do kanálů #ahoj, #past-vedle-pasti, nebo #můj-dnešní-objev, kuře pod to okamžitě vytvoří vlákno k diskuzi.
-- **Vítá** - V kanálu #ahoj do vlákna ještě hned přidává každému uvítání v klubu se základními informacemi. Do vlákna přidá lidi, kteří se dobrovolně přihlásili k vítání nováčků.
-- **Reaguje** - Když někdo vloží ručně inzerát do #práce-inzeráty, kuře reaguje „ĎK“. Když někdo napíše do #práce-hledám, kuře reaguje 👍
-- **Dává zpětnou vazbu na GitHub profil** - Když někdo v #cv-github-linkedin vytvoří nové vlákno, tak se kuře podívá, co v něm je. Když tam najde CVčko nebo LinkedIn profil, napíše k tomu zprávu se základními informacemi a poprosí ostatní členy, aby se na to podívali. Pokud tam najde odkaz na GitHub profil, spustí [nástroj](https://github.com/juniorguru/hen), který to umí projít a poskytnout zpětnou vazbu. Tu do Discord vlákna přepošle barevně naformátovanou.
+Backend našeho Discord bota je dvojí:
+
+- **Rychlé kuře** - Mrňavá appka s [vlastním repozitářem](https://github.com/juniorguru/chick/), která [neustále běží](https://juniorguru-chick.fly.dev/) na [Fly](https://fly.io/) a má na starosti pár věcí, kde je potřeba okamžitá odezva. Je to skutečný bot, který se jako kuře připojí na Discord a reaguje na věci, které se tam napíšou. Tento kód ale nic nepřepočitává, nic nikam neukládá a neeviduje si žádný stav čehokoliv. Prostě jen reaguje na skutečnosti: zakládá vlákna, rozdává emoji…
+- **Pomalé kuře** - Minimálně jednou denně v noci, nebo pokaždé, když Honza udělá `git push` do [hlavního repozitáře s kódem](https://github.com/juniorguru/junior.guru), se spustí [build na CircleCI](https://app.circleci.com/pipelines/github/juniorguru/junior.guru?branch=main). V rámci něj proběhnou desítky skriptů, které něco stahují, synchronizují, přepočítávají, vše uloží do SQLite a nakonec z těch dat vybuildí celou junior.guru MkDocs webovku, kterou si právě čteš. Skripty, které něco dělají na Discordu, se tam připojují a navenek tváří jako kuře.
+
+## Proč jsou rychlé a pomalé kuře zvlášť
+
+Celé junior.guru je navrženo tak, aby jej Honza mohl provozovat v jednom člověku. Jenže každou aplikaci, která má běžící _runtime_, je potřeba monitorovat, a když spadne, je potřeba řešit, proč spadla, a nahodit ji, aby služby a funkce, které na ní závisí, fungovaly.
+
+V tomto směru je z hlediska _work-life balance_ lepší noční přepočet. Buď se vše povede, nebo to spadne, ale pak má člověk spoustu času to opravit. Webovka je statická a běží, i když třeba v mírně neaktualizované verzi. Fungování klubu není krátkodobě závislé na tom, jestli někde spadl nějaký složitý skript. Když začně _nightly build_ o víkendu padat, Honza to opraví v pondělí, pohoda.
+
+Dříve ani rychlé kuře neexistovalo, klub si vystačil s pomalým. Časem ale Honza uznal, že UX by v některých věcech byla o dost lepší, kdyby se odehrály okamžitě. A tak vzniklo rychlé kuře, které sice jede pořád a může kdykoliv spadnout, ale zase je dost jednoduché na to, aby nebylo obtížné jej restartovat, nebo rychle opravit. A když na pár dní spadne pomalé kuře, základní UX v klubu tím není zasaženo.
+
+## Co ještě se tváří jako kuře
+
+Robotickou identitu kuřete si propůjčují i jiné systémy, které komunikují s členy klubu. Například pro správu uživatelských účtu a placení se používá systém [Memberful](https://memberful.com/). Ten posílá různé e-maily, např. že vyprší členství, nebo že se nepovedlo strhnout platbu z karty. Tyto jsou psány jako „Ahoj, tady kuře“, aby se rozlišilo, že jsou automatické a nepíše je přímo Honza, ale s kódem Discord bota nemají vlastně nic společného.
