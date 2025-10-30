@@ -833,8 +833,8 @@ dependencies = [
 
 [[package]]
 name = "jg-chick"
-version = "0.0"
-source = { git = "https://github.com/juniorguru/chick.git#1e1ff2bc06fdc7104f3a13509b438ab57050f457" }
+version = "0.0.1"
+source = { git = "https://github.com/juniorguru/chick.git#2512aa9a34621c6e35fca99c4123f721c69473a6" }
 dependencies = [
     { name = "aiohttp" },
     { name = "click" },
