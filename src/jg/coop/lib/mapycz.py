@@ -254,11 +254,16 @@ def repr_locations(locations: list[Location], remote: bool = False) -> str:
         return "na dálku" if remote else "?"
 
     places = []
+    seen = set()
     for location in locations:
         if location.region and location.place != location.region:
-            places.append(f"{location.place} ({location.region})")
+            rendered = f"{location.place} ({location.region})"
         else:
-            places.append(location.place)
+            rendered = location.place
+
+        if rendered not in seen:
+            places.append(rendered)
+            seen.add(rendered)
 
     if len(places) == 1:
         result = places[0]
