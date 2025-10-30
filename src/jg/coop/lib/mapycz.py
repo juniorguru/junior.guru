@@ -253,26 +253,22 @@ def repr_locations(locations: list[Location], remote: bool = False) -> str:
     if not locations:
         return "na dálku" if remote else "?"
 
-    places = []
-    seen = set()
+    places = set()
     for location in locations:
         if location.region and location.place != location.region:
-            rendered = f"{location.place} ({location.region})"
+            place = f"{location.place} ({location.region})"
         else:
-            rendered = location.place
-
-        if rendered not in seen:
-            places.append(rendered)
-            seen.add(rendered)
+            place = location.place
+        places.add(place)
+    places = sorted(places, key=czech_sort.key)
 
     if len(places) == 1:
         result = places[0]
     elif len(places) == 2:
         result = ", ".join(places)
     else:
-        top_two = sorted(places, key=czech_sort.key)[:2]
+        top_two = places[:2]
         result = f"{top_two[0]}, {top_two[1]} a další"
-
     if remote:
         result = f"{result}, na dálku"
 

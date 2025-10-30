@@ -108,7 +108,7 @@ def test_get_region_name(country, regions, expected):
                 ),
             ],
             False,
-            "Ústí nad Orlicí (Pardubice), Bratislava",
+            "Bratislava, Ústí nad Orlicí (Pardubice)",
         ),
         (
             [
