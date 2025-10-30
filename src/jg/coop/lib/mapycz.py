@@ -248,21 +248,28 @@ def get_region_name(country: ResponseCountry, regions: list[ResponseRegion]) -> 
 
 
 def repr_locations(locations: list[Location], remote: bool = False) -> str:
-    if not locations and not remote:
-        return "?"
+    if not locations:
+        return "na dálku" if remote else "?"
 
-    parts = []
+    places = []
     for location in locations:
         if location.region and location.place != location.region:
-            parts.append(f"{location.place} ({location.region})")
+            places.append(f"{location.place} ({location.region})")
         else:
-            parts.append(location.place)
-    parts.sort(key=czech_sort.key)
+            places.append(location.place)
+
+    if len(places) == 1:
+        result = places[0]
+    elif len(places) == 2:
+        result = ", ".join(places)
+    else:
+        top_two = sorted(places, key=czech_sort.key)[:2]
+        result = f"{top_two[0]}, {top_two[1]} a další"
 
     if remote:
-        parts.append("také na dálku")
+        result = f"{result}, na dálku"
 
-    return ", ".join(parts)
+    return result
 
 
 if __name__ == "__main__":
