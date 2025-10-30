@@ -170,6 +170,24 @@ def test_get_region_name(country, regions, expected):
             True,
             "Bratislava, Brno a další, na dálku",
         ),
+        (
+            [
+                Location(
+                    raw="Praha – Stodůlky",
+                    place="Praha",
+                    region="Praha",
+                    country_code="CZ",
+                ),
+                Location(
+                    raw="Siemensova 2715/1, Praha – Stodůlky",
+                    place="Praha",
+                    region="Praha",
+                    country_code="CZ",
+                ),
+            ],
+            False,
+            "Praha",
+        ),
     ],
 )
 def test_repr_locations(locations, remote, expected):

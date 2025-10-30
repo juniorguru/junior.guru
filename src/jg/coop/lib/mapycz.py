@@ -39,6 +39,7 @@ REWRITES_RE = {
     re.compile(r"\(\d+\. patro\)", re.I): "",
     re.compile(r"\bBrno\W+Staré Brno\b", re.I): "Brno",
     re.compile(r"\bPraha\W+Nové Město\b", re.I): "Praha",
+    re.compile(r"\bPraha\W+(východ|západ)\b", re.I): "Středočeský kraj",
 }
 
 REGIONS_MAPPING_CZ = {
