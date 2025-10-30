@@ -1,8 +1,9 @@
+import random
 from pydantic import BaseModel
 
 from jg.coop.lib import loggers
 from jg.coop.lib.llm import ask_llm
-from jg.coop.lib.mutations import MutationsNotAllowedError
+from jg.coop.lib.mutations import MutationsNotAllowedError, is_allowed
 from jg.coop.sync.jobs_scraped import DropItem
 
 
@@ -36,7 +37,14 @@ async def process(item: dict) -> dict:
             schema=LLMOpinion,
         )
     except MutationsNotAllowedError:
-        raise DropItem("Asking LLM is not allowed")
+        if is_allowed("discord"):
+            raise DropItem("Asking LLM is not allowed")
+        else:
+            logger.debug("Generating random opinion")
+            llm_opinion = LLMOpinion(
+                reason="Random opinion, because asking LLM was not allowed.",
+                is_relevant=random.choice([True, False]),
+            )
 
     logger.debug(f"LLM opinion: {llm_opinion!r}")
     item["llm_opinion"] = llm_opinion.model_dump()
