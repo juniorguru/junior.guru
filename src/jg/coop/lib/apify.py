@@ -63,10 +63,11 @@ def fetch_data(
     run_url = (
         f"https://console.apify.com/actors/{run_info['actId']}/runs/{run_info['id']}"
     )
+    duration_s = (run_info["finishedAt"] - run_info["startedAt"]).total_seconds()
     logger.debug(
         f"Last successful run of {actor_name}: {run_url}, "
         f"finished {run_info['finishedAt']}, "
-        f"took {run_info['stats']['runTimeSecs']}s"
+        f"took {duration_s}s"
     )
     dataset = last_run.dataset()
     return list(dataset.iterate_items())
