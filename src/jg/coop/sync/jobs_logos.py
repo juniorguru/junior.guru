@@ -1,20 +1,18 @@
 import hashlib
 import itertools
 from datetime import timedelta
-from functools import lru_cache
 from io import BytesIO
 from pathlib import Path
 
 import click
 import httpx
-from fontTools.ttLib import TTFont
-from fontTools.ttLib.tables._c_m_a_p import CmapSubtable
-from PIL import Image, ImageChops, ImageDraw, ImageFont, ImageOps
+from PIL import Image, ImageChops, ImageOps
 from pydantic import BaseModel
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import apify, loggers
 from jg.coop.lib.cache import cache
+from jg.coop.lib.images import create_fallback_image
 from jg.coop.lib.mutations import MutationsNotAllowedError
 from jg.coop.models.base import db
 from jg.coop.models.job import ListedJob, LogoSourceType
@@ -27,15 +25,6 @@ IMAGES_DIR = Path("src/jg/coop/images")
 IMAGE_SAVE_OPTIONS = {"format": "WEBP", "optimize": True}
 
 LOGOS_DIR = IMAGES_DIR / "logos-jobs"
-
-FONT_DIR = Path("node_modules/@fontsource/inter/files")
-
-FONT_WIDTH = 800
-
-FONT_PATHS = [
-    FONT_DIR / f"inter-latin-{FONT_WIDTH}-normal.woff2",
-    FONT_DIR / f"inter-latin-ext-{FONT_WIDTH}-normal.woff2",
-]
 
 
 logger = loggers.from_path(__file__)
@@ -134,14 +123,16 @@ def main(actor_name: str, clear_files: bool):
             logger.debug(f"Path {image_path} already exists")
         else:
             logger.debug(f"Generating initial {job.initial!r}")
-            image = create_fallback_image(job.initial)
+            image = create_fallback_image(job.initial, SIZE_PX)
             image.save(image_path, **IMAGE_SAVE_OPTIONS)
         job.company_logo_path = image_path.relative_to(IMAGES_DIR)
         job.save()
         logger.debug(f"Logo for {job!r}: {job.company_logo_path}")
 
     logger.info("Generating special question mark logo for club jobs")
-    create_fallback_image("?").save(LOGOS_DIR / "unknown.webp", **IMAGE_SAVE_OPTIONS)
+    create_fallback_image("?", SIZE_PX).save(
+        LOGOS_DIR / "unknown.webp", **IMAGE_SAVE_OPTIONS
+    )
 
 
 def sort_key(logo: Logo) -> tuple[bool, int, int]:
@@ -182,40 +173,3 @@ def convert_image(image: Image) -> Image:
     image = image.resize((SIZE_PX, SIZE_PX))
 
     return image
-
-
-def create_fallback_image(
-    initial: str,
-    color: tuple[int] = (231, 231, 231),
-    bg_color: tuple[int] = (255, 255, 255),
-    padding: int = 5,
-) -> Image:
-    logger.debug(f"Creating fallback image for {initial}")
-    # the fonts provided by @fontsource/inter are split into files according to
-    # the character set they support, so we need to choose the right one based
-    # on the initial character
-    font_path = next(
-        font_path
-        for font_path in FONT_PATHS
-        if any(ord(initial) in table.cmap for table in load_font_tables(font_path))
-    )
-
-    logger.debug(f"Using font {font_path} for {initial}")
-    image = Image.new("RGB", (SIZE_PX, SIZE_PX), bg_color)
-    draw = ImageDraw.Draw(image)
-    font = ImageFont.truetype(font_path, SIZE_PX - (padding * 2))
-
-    logger.debug(f"Centering text for {initial}")
-    _, _, box_width, box_height = draw.textbbox(xy=(0, 0), text=initial, font=font)
-    text_width, text_height = font.getmask(initial).size
-    x_text = (SIZE_PX - text_width) / 2
-    y_text = ((SIZE_PX - box_height) / 2) - ((box_height - text_height) / 2)
-    draw.text((x_text, y_text), text=initial, font=font, fill=color)
-
-    return image
-
-
-@lru_cache
-def load_font_tables(font_path: Path) -> list[CmapSubtable]:
-    logger.info(f"Loading font tables from {font_path}")
-    return TTFont(font_path)["cmap"].tables

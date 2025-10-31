@@ -21,7 +21,10 @@ class Candidate(BaseModel):
     bio = CharField(null=True)
     email = CharField(null=True)
     avatar_url = CharField()
-    location = CharField(null=True)
+    avatar_path = CharField(null=True)
+    location_raw = CharField(null=True)
+    location = JSONField(null=True)
+    location_repr = CharField(null=True)
     linkedin_url = CharField(null=True)
     topics = JSONField(default=list)
     domains = JSONField(default=list)
@@ -31,6 +34,10 @@ class Candidate(BaseModel):
     languages = JSONField(default=list)
     is_ready = BooleanField()
     is_member = BooleanField()
+
+    @property
+    def is_highlighted(self) -> bool:
+        return self.is_ready and self.is_member
 
     @classmethod
     def listing(cls) -> Iterable[Self]:
