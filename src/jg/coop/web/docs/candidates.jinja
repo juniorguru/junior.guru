@@ -4,7 +4,7 @@ description: Ověřený a seřazený seznam těch nejšikovnějších juniorů a
 template: main_subnav.html
 ---
 
-{% from 'macros.html' import lead, note with context %}
+{% from 'macros.html' import lead, note, img with context %}
 
 <h1>Juniorní programátoři a testeři</h1>
 
@@ -20,21 +20,85 @@ template: main_subnav.html
   {{ 'plus-circle'|icon }} Chceš tady být taky? Přidej se přes <a href="https://github.com/juniorguru/eggtray/">github.com/juniorguru/eggtray</a>, jestli to dokážeš!
 {%- endcall %}
 
-<ul>
-{% for candidate in candidates %}
-    <li>
-        {{ candidate.name }}:
-        <a href="{{ candidate.github_url }}">{{ "github"|icon }} GitHub</a>
-        {% if candidate.linkedin_url %}
-          <a href="{{ candidate.linkedin_url }}">{{ "linkedin"|icon }} LinkedIn</a>
-        {% endif %}
+<div class="candidates">
+  <ul class="candidates-list">
+    {% for candidate in candidates %}
+    <li class="candidates-item openable tagged{% if candidate.is_highlighted %} highlighted{% endif %}">
+      <div class="candidates-item-container">
+        <div class="candidates-avatar">
+          {{ img('static/' + candidate.avatar_path, candidate.name + ' (avatar)', 100, 100, class="candidates-image") }}
+        </div>
+        <div class="candidates-body">
+          <h3 class="candidates-title">
+            <a class="candidates-title-link"
+                href="{{ candidate.github_url }}" rel="nofollow noopener" target="_blank"
+            >
+              {{ candidate.name }}
+            </a>
+            <span class="candidates-title-text" hidden>{{ candidate.name }}</span>
+            <span class="candidates-close" hidden>{{ "x-lg"|icon }}</span>
+          </h3>
+          <p class="candidates-info">
+            <strong class="candidates-info-item">{{ candidate.email }}</strong>
+            {% if candidate.location %}
+              <span class="candidates-info-item">{{ "geo-alt"|icon }} {{ candidate.location_repr }}</span>
+            {% endif %}
+          </p>
+          {#
+          <p>
+            {% for tag in candidate.tags %}
+              <span
+                class="candidates-tag"
+                data-candidates-tag="{{ tag.slug }}"
+                data-candidates-tag-type="{{ tag.type|lower }}"
+              >
+                {{- tag.name -}}
+              </span>
+            {% endfor %}
+          </p>
+          #}
+          <div class="candidates-profiles" {# hidden #}>
+            <h4 class="candidates-profiles-heading">Profily</h4>
+            <ul class="candidates-profiles-links">
+              <li>
+                <a
+                  href="{{ candidate.linkedin_url }}"
+                  rel="nofollow noopener"
+                  target="_blank"
+                  class="candidates-profiles-link"
+                >
+                  <span>{{ "linkedin"|icon }}</span>
+                  <span>LinkedIn</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="{{ candidate.github_url }}"
+                  rel="nofollow noopener"
+                  target="_blank"
+                  class="candidates-profiles-link"
+                >
+                  <span>{{ "github"|icon }}</span>
+                  <span>GitHub</span>
+                </a>
+              </li>
+              {# {% if candidate.profiles_url %}
+                <li>
+                  <a
+                    href="{{ candidate.profiles_url }}"
+                    rel="nofollow noopener"
+                    target="_blank"
+                    class="candidates-profiles-link"
+                  >
+                    <span>{{ "house"|icon }}</span>
+                    <span>Web</span>
+                  </a>
+                </li>
+              {% endif %} #}
+            </ul>
+          </div>
+        </div>
+      </div>
     </li>
-{% endfor %}
-    <li>
-        <a href="https://github.com/juniorguru/eggtray/">Přidej se do seznamu</a>
-    </li>
+  {% endfor %}
 </ul>
-
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tato stránka se teprve připravuje.
-{% endcall %}

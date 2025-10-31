@@ -4,14 +4,17 @@ import os
 import pickle
 import shutil
 import time
+from functools import lru_cache
 from hashlib import sha256
 from io import BytesIO
 from pathlib import Path
 from subprocess import run
 from typing import Any, Callable, Generator, Iterable
 
+from fontTools.ttLib import TTFont
+from fontTools.ttLib.tables._c_m_a_p import CmapSubtable
 from jinja2 import Environment, FileSystemLoader
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
 from playwright.sync_api import sync_playwright
 
 from jg.coop.lib import loggers
@@ -23,6 +26,15 @@ CACHE_DIR = Path(".image_templates_cache")
 IMAGES_DIR = Path("src/jg/coop/images")
 
 TEMPLATES_DIR = Path("src/jg/coop/image_templates")
+
+FONT_DIR = Path("node_modules/@fontsource/inter/files")
+
+FONT_WIDTH = 800
+
+FONT_PATHS = [
+    FONT_DIR / f"inter-latin-{FONT_WIDTH}-normal.woff2",
+    FONT_DIR / f"inter-latin-ext-{FONT_WIDTH}-normal.woff2",
+]
 
 
 logger = loggers.from_path(__file__)
@@ -215,3 +227,41 @@ class PostersCache:
         for path in self.existing_paths - self.generated_paths:
             logger.info(f"Removing {path}")
             path.unlink()
+
+
+def create_fallback_image(
+    initial: str,
+    size_px: int,
+    color: tuple[int] = (231, 231, 231),
+    bg_color: tuple[int] = (255, 255, 255),
+    padding: int = 5,
+) -> Image:
+    logger.debug(f"Creating fallback image for {initial}")
+    # the fonts provided by @fontsource/inter are split into files according to
+    # the character set they support, so we need to choose the right one based
+    # on the initial character
+    font_path = next(
+        font_path
+        for font_path in FONT_PATHS
+        if any(ord(initial) in table.cmap for table in load_font_tables(font_path))
+    )
+
+    logger.debug(f"Using font {font_path} for {initial}")
+    image = Image.new("RGB", (size_px, size_px), bg_color)
+    draw = ImageDraw.Draw(image)
+    font = ImageFont.truetype(font_path, size_px - (padding * 2))
+
+    logger.debug(f"Centering text for {initial}")
+    _, _, box_width, box_height = draw.textbbox(xy=(0, 0), text=initial, font=font)
+    text_width, text_height = font.getmask(initial).size
+    x_text = (size_px - text_width) / 2
+    y_text = ((size_px - box_height) / 2) - ((box_height - text_height) / 2)
+    draw.text((x_text, y_text), text=initial, font=font, fill=color)
+
+    return image
+
+
+@lru_cache
+def load_font_tables(font_path: Path) -> list[CmapSubtable]:
+    logger.info(f"Loading font tables from {font_path}")
+    return TTFont(font_path)["cmap"].tables
