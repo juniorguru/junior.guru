@@ -31,7 +31,7 @@ template: main_subnav.html
         <div class="candidates-body">
           <h3 class="candidates-title">
             <a class="candidates-title-link"
-                href="{{ candidate.github_url }}" rel="nofollow noopener" target="_blank"
+                href="{{ candidate.contact_url }}" rel="nofollow noopener" target="_blank"
             >
               {{ candidate.name }}
             </a>
@@ -42,7 +42,6 @@ template: main_subnav.html
             {# <strong class="candidates-info-item">{{ candidate.email }}</strong> #}
             <span class="candidates-info-item">{{ "geo-alt"|icon }} {{ candidate.location_text }}</span>
           </p>
-          {#
           <p>
             {% for tag in candidate.tags %}
               <span
@@ -54,48 +53,78 @@ template: main_subnav.html
               </span>
             {% endfor %}
           </p>
-          #}
-          <div class="candidates-profiles" {# hidden #}>
-            <h4 class="candidates-profiles-heading">Profily</h4>
-            <ul class="candidates-profiles-links">
-              <li>
-                <a
-                  href="{{ candidate.linkedin_url }}"
-                  rel="nofollow noopener"
-                  target="_blank"
-                  class="candidates-profiles-link"
-                >
-                  <span>{{ "linkedin"|icon }}</span>
-                  <span>LinkedIn</span>
-                </a>
+          {% if candidate.experience_text %}
+          <div class="candidates-details" {# hidden #}>
+            <h4 class="candidates-details-heading">Praxe</h4>
+            <ul class="candidates-details-items">
+              <li class="candidate-details-item">
+                {{ candidate.experience_text }}
               </li>
-              <li>
-                <a
-                  href="{{ candidate.github_url }}"
-                  rel="nofollow noopener"
-                  target="_blank"
-                  class="candidates-profiles-link"
-                >
-                  <span>{{ "github"|icon }}</span>
-                  <span>GitHub</span>
-                </a>
-              </li>
-              {# {% if candidate.profiles_url %}
-                <li>
-                  <a
-                    href="{{ candidate.profiles_url }}"
-                    rel="nofollow noopener"
-                    target="_blank"
-                    class="candidates-profiles-link"
-                  >
-                    <span>{{ "house"|icon }}</span>
-                    <span>Web</span>
-                  </a>
-                </li>
-              {% endif %} #}
             </ul>
           </div>
+          {% endif %}
+          <div class="candidates-details" {# hidden #}>
+            <h4 class="candidates-details-heading">Škola</h4>
+            <ul class="candidates-details-items">
+              <li class="candidate-details-item">
+                {{ candidate.school_text }}
+              </li>
+            </ul>
+          </div>
+          {% if candidate.domains %}
+          <div class="candidates-details" {# hidden #}>
+            <h4 class="candidates-details-heading">Čemu také rozumí</h4>
+            <ul class="candidates-details-items">
+              {% for domain in candidate.domains %}
+              <li class="candidate-details-item">
+                {{ domain }}
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
         </div>
+      </div>
+      <div class="candidates-actions" {# hidden #}>
+        <ul class="candidates-actions-list">
+          {% if candidate.email %}
+          <li class="candidates-action-email">
+            {{ candidate.email|replace("@", "&#64;<!---->")|safe }}
+          </li>
+          {% endif %}
+          {% if candidate.linkedin_url %}
+          <li class="candidates-action-contact">
+            <a
+              href="{{ candidate.contact_url }}"
+              rel="nofollow noopener"
+              target="_blank"
+              class="candidates-action-button profile"
+            >
+              {{ "linkedin"|icon }} LinkedIn
+            </a>
+          </li>
+          {% endif %}
+          <li class="candidates-action-contact">
+            <a
+              href="{{ candidate.github_url }}"
+              rel="nofollow noopener"
+              target="_blank"
+              class="candidates-action-button profile"
+            >
+              {{ "github"|icon }} GitHub
+            </a>
+          </li>
+          <li class="candidates-action-contact">
+            <a
+              href="{{ candidate.contact_url }}"
+              rel="nofollow noopener"
+              target="_blank"
+              class="candidates-action-button contact"
+            >
+              Kontaktovat
+            </a>
+          </li>
+        </ul>
       </div>
     </li>
   {% endfor %}
