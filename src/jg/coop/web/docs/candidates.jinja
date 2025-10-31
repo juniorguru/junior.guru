@@ -4,7 +4,7 @@ description: Ověřený a seřazený seznam těch nejšikovnějších juniorů a
 template: main_subnav.html
 ---
 
-{% from 'macros.html' import lead, note with context %}
+{% from 'macros.html' import lead, note, img with context %}
 
 <h1>Juniorní programátoři a testeři</h1>
 
@@ -20,21 +20,112 @@ template: main_subnav.html
   {{ 'plus-circle'|icon }} Chceš tady být taky? Přidej se přes <a href="https://github.com/juniorguru/eggtray/">github.com/juniorguru/eggtray</a>, jestli to dokážeš!
 {%- endcall %}
 
-<ul>
-{% for candidate in candidates %}
-    <li>
-        {{ candidate.name }}:
-        <a href="{{ candidate.github_url }}">{{ "github"|icon }} GitHub</a>
-        {% if candidate.linkedin_url %}
-          <a href="{{ candidate.linkedin_url }}">{{ "linkedin"|icon }} LinkedIn</a>
-        {% endif %}
+<div class="candidates">
+  <ul class="candidates-list">
+    {% for candidate in candidates %}
+    <li class="candidates-item openable tagged{% if candidate.is_highlighted %} highlighted{% endif %}">
+      <div class="candidates-item-container">
+        <div class="candidates-avatar">
+          {{ img('static/' + candidate.avatar_path, candidate.name + ' (avatar)', 100, 100, class="candidates-image") }}
+        </div>
+        <div class="candidates-body">
+          <h3 class="candidates-title">
+            <a class="candidates-title-link"
+                href="{{ candidate.contact_url }}" rel="nofollow noopener" target="_blank"
+            >
+              {{ candidate.name }}
+            </a>
+            <span class="candidates-title-text" hidden>{{ candidate.name }}</span>
+            <span class="candidates-close" hidden>{{ "x-lg"|icon }}</span>
+          </h3>
+          <p class="candidates-info">
+            {# <strong class="candidates-info-item">{{ candidate.email }}</strong> #}
+            <span class="candidates-info-item">{{ "geo-alt"|icon }} {{ candidate.location_text }}</span>
+          </p>
+          <p>
+            {% for tag in candidate.tags %}
+              <span
+                class="candidates-tag"
+                data-candidates-tag="{{ tag.slug }}"
+                data-candidates-tag-type="{{ tag.type|lower }}"
+              >
+                {{- tag.name -}}
+              </span>
+            {% endfor %}
+          </p>
+          {% if candidate.experience_text %}
+          <div class="candidates-details" {# hidden #}>
+            <h4 class="candidates-details-heading">Praxe</h4>
+            <ul class="candidates-details-items">
+              <li class="candidate-details-item">
+                {{ candidate.experience_text }}
+              </li>
+            </ul>
+          </div>
+          {% endif %}
+          <div class="candidates-details" {# hidden #}>
+            <h4 class="candidates-details-heading">Škola</h4>
+            <ul class="candidates-details-items">
+              <li class="candidate-details-item">
+                {{ candidate.school_text }}
+              </li>
+            </ul>
+          </div>
+          {% if candidate.domains %}
+          <div class="candidates-details" {# hidden #}>
+            <h4 class="candidates-details-heading">Čemu také rozumí</h4>
+            <ul class="candidates-details-items">
+              {% for domain in candidate.domains %}
+              <li class="candidate-details-item">
+                {{ domain }}
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="candidates-actions" {# hidden #}>
+        <ul class="candidates-actions-list">
+          {% if candidate.email %}
+          <li class="candidates-action-email">
+            {{ candidate.email|replace("@", "&#64;<!---->")|safe }}
+          </li>
+          {% endif %}
+          {% if candidate.linkedin_url %}
+          <li class="candidates-action-contact">
+            <a
+              href="{{ candidate.contact_url }}"
+              rel="nofollow noopener"
+              target="_blank"
+              class="candidates-action-button profile"
+            >
+              {{ "linkedin"|icon }} LinkedIn
+            </a>
+          </li>
+          {% endif %}
+          <li class="candidates-action-contact">
+            <a
+              href="{{ candidate.github_url }}"
+              rel="nofollow noopener"
+              target="_blank"
+              class="candidates-action-button profile"
+            >
+              {{ "github"|icon }} GitHub
+            </a>
+          </li>
+          <li class="candidates-action-contact">
+            <a
+              href="{{ candidate.contact_url }}"
+              rel="nofollow noopener"
+              target="_blank"
+              class="candidates-action-button contact"
+            >
+              Kontaktovat
+            </a>
+          </li>
+        </ul>
+      </div>
     </li>
-{% endfor %}
-    <li>
-        <a href="https://github.com/juniorguru/eggtray/">Přidej se do seznamu</a>
-    </li>
+  {% endfor %}
 </ul>
-
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tato stránka se teprve připravuje.
-{% endcall %}
