@@ -330,7 +330,7 @@ class ListedJob(BaseModel):
         return sorted(set(location["region"] for location in self.locations or []))
 
     @property
-    def location(self) -> str:
+    def location_text(self) -> str:
         locations = [Location(**location) for location in self.locations or []]
         return repr_locations(locations)
 
@@ -420,13 +420,13 @@ class ListedJob(BaseModel):
                 "url": self.effective_url,
                 "description": (
                     "Pracovní nabídka pro začínající programátory nebo testery: "
-                    + " — ".join([self.title, self.company_name, self.location])
+                    + " — ".join([self.title, self.company_name, self.location_text])
                 ),
                 "datePosted": self.posted_on.isoformat(),
                 "industry": "Informační technologie",
                 "jobLocation": {
                     "@type": "Place",
-                    "address": self.location,
+                    "address": self.location_text,
                 },
                 "image": f"https://junior.guru/static/{self.company_logo_path}",
                 "hiringOrganization": {

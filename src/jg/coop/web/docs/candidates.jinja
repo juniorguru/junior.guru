@@ -39,10 +39,8 @@ template: main_subnav.html
             <span class="candidates-close" hidden>{{ "x-lg"|icon }}</span>
           </h3>
           <p class="candidates-info">
-            <strong class="candidates-info-item">{{ candidate.email }}</strong>
-            {% if candidate.location %}
-              <span class="candidates-info-item">{{ "geo-alt"|icon }} {{ candidate.location_repr }}</span>
-            {% endif %}
+            {# <strong class="candidates-info-item">{{ candidate.email }}</strong> #}
+            <span class="candidates-info-item">{{ "geo-alt"|icon }} {{ candidate.location_text }}</span>
           </p>
           {#
           <p>
