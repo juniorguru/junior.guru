@@ -7,7 +7,6 @@ from PIL import Image
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
-from jg.coop.lib.async_utils import call_async
 from jg.coop.lib.cli import async_command
 from jg.coop.lib.images import create_fallback_image
 from jg.coop.lib.mapycz import locate, repr_locations
@@ -65,7 +64,9 @@ async def main(
 
             github_username = candidate_item["github_username"]
             avatar_path = avatars_path / f"{github_username}.webp"
-            if avatar_url := candidate_item.get("avatar_url"):
+
+            if has_avatar(candidate_item):
+                avatar_url = candidate_item["avatar_url"]
                 logger.debug(f"Downloading avatar: {avatar_url}")
                 response = await client.get(avatar_url)
                 response.raise_for_status()
@@ -73,7 +74,10 @@ async def main(
                 image = image.resize((avatar_size_px, avatar_size_px))
                 image.save(avatar_path, **IMAGE_SAVE_OPTIONS)
             else:
-                initial = "?"  # TODO derive from name
+                if name := candidate_item.get("name"):
+                    initial = name.split()[-1][0].upper()
+                else:
+                    initial = "?"
                 logger.debug(f"Generating fallback avatar: {initial}")
                 create_fallback_image(initial, avatar_size_px).save(
                     avatar_path, **IMAGE_SAVE_OPTIONS
@@ -93,3 +97,11 @@ async def main(
             for project_item in projects_items:
                 CandidateProject.create(candidate=candidate, **project_item)
             logger.info(f"Saved {len(projects_items)} projects for {candidate!r}")
+
+
+def has_avatar(item: dict) -> bool:
+    return not any(
+        issue
+        for issue in item["issues"]
+        if issue["rule"] == "has_avatar" and issue["status"] == "error"
+    )
