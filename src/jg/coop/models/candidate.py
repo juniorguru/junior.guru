@@ -1,5 +1,7 @@
+from enum import StrEnum, auto
 from typing import Iterable, Self
 
+from emoji import LANGUAGES
 from peewee import (
     BooleanField,
     CharField,
@@ -8,10 +10,29 @@ from peewee import (
     ForeignKeyField,
     IntegerField,
 )
+from pydantic import BaseModel as PydanticBaseModel, ConfigDict
 
 from jg.coop.lib.mapycz import Location, repr_locations
+from jg.coop.lib.text import get_tag_slug
 from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubUser
+
+
+class TagType(StrEnum):
+    LOCATION = auto()
+    TOPIC = auto()
+    LANGUAGE = auto()
+
+
+class Tag(PydanticBaseModel):
+    model_config = ConfigDict(frozen=True)
+
+    slug: str
+    type: TagType
+
+    @property
+    def name(self) -> str:
+        return f"#{self.slug}"
 
 
 class Candidate(BaseModel):
@@ -37,9 +58,59 @@ class Candidate(BaseModel):
     is_member = BooleanField()
 
     @property
+    def contact_url(self) -> str:
+        if self.email:
+            return f"mailto:{self.email}"
+        if self.linkedin_url:
+            return self.linkedin_url
+        return self.github_url
+
+    @property
+    def tags(self) -> list[Tag]:
+        tags = []
+        for topic in self.topics:
+            tags.append(Tag(slug=get_tag_slug(topic), type=TagType.TOPIC))
+        if self.location:
+            slug = get_tag_slug(self.location["region"])
+            tags.append(Tag(slug=slug, type=TagType.LOCATION))
+        for lang in self.languages:
+            tags.append(Tag(slug=get_tag_slug(lang), type=TagType.LANGUAGE))
+        return tags
+
+    @property
     def location_text(self) -> str:
         locations = [Location(**self.location)] if self.location else []
         return repr_locations(locations)
+
+    @property
+    def school_text(self) -> str:
+        prefixes = {
+            "it": "IT ",
+            "math": "matematická ",
+            "non_it": "",
+        }
+        schools = []
+        if self.secondary_school != "non_it" or not self.university:
+            schools.append(prefixes[self.secondary_school] + "střední")
+        if self.university:
+            schools.append(prefixes[self.university] + "vysoká")
+        return ", ".join(schools)
+
+    @property
+    def experience_text(self) -> str:
+        experience = []
+        if self.list_projects.count() > 0:
+            experience.append("vlastní projekty")
+        for exp in self.experience:
+            experience.append(
+                {
+                    "volunteering": "dobrovolnictví v IT",
+                    "intern": "stáž v IT",
+                    "trainee": "trainee v IT",
+                    "employee": "práce v IT",
+                }[exp]
+            )
+        return ", ".join(experience)
 
     @property
     def is_highlighted(self) -> bool:
