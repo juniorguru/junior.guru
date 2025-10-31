@@ -8,6 +8,7 @@ class EmploymentTypes(StrEnum):
     INTERNSHIP = auto()
     PARTTIME = auto()
     VOLUNTEERING = auto()
+    TEMPORARY = auto()
 
 
 STOP_WORDS = [
@@ -38,6 +39,7 @@ EMPLOYMENT_TYPES_MAPPING = {
     "plný úväzok": EmploymentTypes.FULLTIME,
     "praxe a stáže": EmploymentTypes.INTERNSHIP,
     "stáž": EmploymentTypes.INTERNSHIP,
+    "temporary": EmploymentTypes.TEMPORARY,
     "trainee": EmploymentTypes.INTERNSHIP,
     "unpaid internship": EmploymentTypes.INTERNSHIP,
     "volunteering": EmploymentTypes.VOLUNTEERING,
