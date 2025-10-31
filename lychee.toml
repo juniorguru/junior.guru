@@ -45,7 +45,7 @@ exclude = [
     "^https://(www\\.)?sdacademy\\.cz",
 
     # Anti-scraping protections
-    "^https://(www\\.)?(linkedin|facebook|reddit|glassdoor|toptal|upwork|make|fiverr|datacamp|udacity|udemy|economist|stackoverflow|solarturbines)\\.com",
+    "^https://(www\\.)?(linkedin|facebook|reddit|glassdoor|toptal|upwork|make|fiverr|datacamp|udacity|udemy|economist|stackoverflow|solarturbines|sap)\\.com",
     "^https://(www\\.)?(keyguru|podnikatel|root|robotdreams|lucietvrdikova|zdrojak|clovekvtisni|irozhlas)\\.cz",
     "^https://([^\\.]+\\.)?discord\\.com",
     "^https://robime\\.it",
