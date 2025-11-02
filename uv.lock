@@ -647,11 +647,11 @@ requests = [
 
 [[package]]
 name = "graphql-core"
-version = "3.2.6"
+version = "3.2.7"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/c4/16/7574029da84834349b60ed71614d66ca3afe46e9bf9c7b9562102acb7d4f/graphql_core-3.2.6.tar.gz", hash = "sha256:c08eec22f9e40f0bd61d805907e3b3b1b9a320bc606e23dc145eebca07c8fbab", size = 505353, upload-time = "2025-01-26T16:36:27.374Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/ac/9b/037a640a2983b09aed4a823f9cf1729e6d780b0671f854efa4727a7affbe/graphql_core-3.2.7.tar.gz", hash = "sha256:27b6904bdd3b43f2a0556dad5d579bdfdeab1f38e8e8788e555bdcb586a6f62c", size = 513484, upload-time = "2025-11-01T22:30:40.436Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ae/4f/7297663840621022bc73c22d7d9d80dbc78b4db6297f764b545cd5dd462d/graphql_core-3.2.6-py3-none-any.whl", hash = "sha256:78b016718c161a6fb20a7d97bbf107f331cd1afe53e45566c59f776ed7f0b45f", size = 203416, upload-time = "2025-01-26T16:36:24.868Z" },
+    { url = "https://files.pythonhosted.org/packages/0a/14/933037032608787fb92e365883ad6a741c235e0ff992865ec5d904a38f1e/graphql_core-3.2.7-py3-none-any.whl", hash = "sha256:17fc8f3ca4a42913d8e24d9ac9f08deddf0a0b2483076575757f6c412ead2ec0", size = 207262, upload-time = "2025-11-01T22:30:38.912Z" },
 ]
 
 [[package]]
@@ -1489,8 +1489,8 @@ wheels = [
 
 [[package]]
 name = "py-cord"
-version = "2.7.0rc3.dev2+g8a5a48484"
-source = { git = "https://github.com/Pycord-Development/pycord.git#8a5a484844b5c0ca8e7d5ee37591a49148bc3fe5" }
+version = "2.7.0rc3.dev4+gfc0b6233a"
+source = { git = "https://github.com/Pycord-Development/pycord.git#fc0b6233a5c87de04f8d84ee06efbc1fc576d82f" }
 dependencies = [
     { name = "aiohttp" },
     { name = "typing-extensions" },
@@ -1962,15 +1962,15 @@ wheels = [
 
 [[package]]
 name = "stripe"
-version = "13.1.0"
+version = "13.1.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "requests" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c7/f7/4a99eca635f34c62c8fcc00e7381565dd93162d23593a4894718d6bbb194/stripe-13.1.0.tar.gz", hash = "sha256:059effec8c2c6a3cf987aceccf47eda4c5e16b6097fd8fe70025079816afc3cc", size = 1356892, upload-time = "2025-10-29T22:52:43.651Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/12/a0/3d13718648b8d93140ac649f70202aeb7bfc12516626d308d6fec73a5503/stripe-13.1.1.tar.gz", hash = "sha256:62141a5a2ede69c35e0f257a77acc3fa9cec6e8a30131a49f001bd90fda7a681", size = 1357445, upload-time = "2025-10-31T20:10:49.789Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b9/10/bc32d2c0f450ecea1f111ef66ebe30351b282b79123b5761d8d081bccf11/stripe-13.1.0-py3-none-any.whl", hash = "sha256:952f1d37c9d19bb3637e2ea0f2e683c3065c5f9630c375197912b8b12bc88219", size = 1961486, upload-time = "2025-10-29T22:52:41.146Z" },
+    { url = "https://files.pythonhosted.org/packages/03/c9/6a968b6e3da48224f4f473884566ef660560e4f90072f14261a347987b1b/stripe-13.1.1-py3-none-any.whl", hash = "sha256:2a74981ba559f6e518e657b808c6339a397c3862f3e5dd10ec7603c3829addba", size = 1961719, upload-time = "2025-10-31T20:10:47.603Z" },
 ]
 
 [[package]]
