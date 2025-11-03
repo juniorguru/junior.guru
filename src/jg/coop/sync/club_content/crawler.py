@@ -2,7 +2,7 @@ import asyncio
 from datetime import datetime, timedelta, timezone
 from typing import AsyncGenerator
 
-from discord import ChannelType, DMChannel, Member, Message, Reaction, Thread, User
+from discord import ChannelType, DMChannel, Member, Message, Reaction, User
 from discord.abc import GuildChannel
 
 from jg.coop.lib import loggers
