@@ -16,14 +16,14 @@
   "devDependencies": {
     "@343dev/optimizt": "11.0.0",
     "bootstrap": "5.3.8",
-    "esbuild": "0.25.11",
+    "esbuild": "0.25.12",
     "esbuild-sass-plugin": "3.3.1",
-    "jsdom": "27.0.1",
+    "jsdom": "27.1.0",
     "prettier": "3.6.2",
     "sass": "1.77.6",
     "stylelint": "16.25.0",
     "stylelint-config-twbs-bootstrap": "16.1.0",
     "stylelint-order": "7.0.0",
-    "vitest": "4.0.3"
+    "vitest": "4.0.6"
   }
 }
