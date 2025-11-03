@@ -237,11 +237,11 @@ async def fetch_threads(
         yield thread
 
 
-def is_thread_after(thread: discord.Thread, after: date = None) -> bool:
+def is_thread_after(thread: discord.Thread, after: datetime = None) -> bool:
     if thread.is_pinned():
         return True
-    if after:
-        return (thread.created_at or DEFAULT_THREAD_CREATED_AT) >= after
+    if thread.archived and thread.archive_timestamp <= after:
+        return False
     return True
 
 

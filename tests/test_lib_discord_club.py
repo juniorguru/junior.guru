@@ -28,6 +28,13 @@ StubMessage = namedtuple("Message", ["author", "content"])
 StubClubMessage = namedtuple("ClubMessage", ["created_at"])
 
 
+class StubThread:
+    def __init__(self, is_pinned: bool, archived: bool, archive_timestamp: datetime):
+        self.is_pinned = lambda: is_pinned
+        self.archived = archived
+        self.archive_timestamp = archive_timestamp
+
+
 @pytest.fixture
 def nothing_allowed():
     dump = _get_allowed()
@@ -279,67 +286,55 @@ async def test_check_mutations_doesnt_raise_if_discord_allowed(nothing_allowed, 
 
 
 @pytest.mark.parametrize(
-    "created_at, is_pinned, after, expected",
+    "is_pinned, expected",
     [
-        (
-            None,
-            False,
-            datetime(2022, 1, 8, tzinfo=timezone.utc),
-            True,
-        ),
-        (
-            None,
-            False,
-            datetime(2022, 1, 9, tzinfo=timezone.utc),
-            True,
-        ),
-        (
-            None,
-            False,
-            datetime(2022, 1, 10, tzinfo=timezone.utc),
-            False,
-        ),
-        (
-            datetime(2023, 8, 30, tzinfo=timezone.utc),
-            False,
-            datetime(2023, 8, 29, tzinfo=timezone.utc),
-            True,
-        ),
-        (
-            datetime(2023, 8, 30, tzinfo=timezone.utc),
-            False,
-            datetime(2023, 8, 30, tzinfo=timezone.utc),
-            True,
-        ),
-        (
-            datetime(2023, 8, 30, tzinfo=timezone.utc),
-            False,
-            datetime(2023, 8, 31, tzinfo=timezone.utc),
-            False,
-        ),
-        (
-            None,
-            True,
-            datetime(2022, 1, 8, tzinfo=timezone.utc),
-            True,
-        ),
-        (
-            None,
-            True,
-            datetime(2022, 1, 10, tzinfo=timezone.utc),
-            True,
-        ),
-        (
-            datetime(2023, 8, 30, tzinfo=timezone.utc),
-            True,
-            datetime(2023, 8, 31, tzinfo=timezone.utc),
-            True,
-        ),
+        (False, False),
+        (True, True),
     ],
 )
-def test_is_thread_after_default(created_at, is_pinned, after, expected):
-    StubThread = namedtuple("Thread", ["created_at", "is_pinned"])
-    thread = StubThread(created_at, lambda: is_pinned)
+def test_is_thread_after_is_always_true_for_pinned(is_pinned, expected):
+    thread = StubThread(
+        is_pinned=is_pinned,
+        archived=True,
+        archive_timestamp=datetime(2022, 1, 10, tzinfo=timezone.utc),
+    )
+    after = datetime(2024, 1, 10, tzinfo=timezone.utc)
+
+    assert discord_club.is_thread_after(thread, after) is expected
+
+
+@pytest.mark.parametrize(
+    "archived, expected",
+    [
+        (False, True),
+        (True, False),
+    ],
+)
+def test_is_thread_after_is_always_true_for_unarchived(archived, expected):
+    thread = StubThread(
+        is_pinned=False,
+        archived=archived,
+        archive_timestamp=datetime(2022, 1, 9, tzinfo=timezone.utc),
+    )
+    after = datetime(2024, 1, 10, tzinfo=timezone.utc)
+
+    assert discord_club.is_thread_after(thread, after) is expected
+
+
+@pytest.mark.parametrize(
+    "archive_timestamp, expected",
+    [
+        (datetime(2024, 1, 1, tzinfo=timezone.utc), False),
+        (datetime(2025, 1, 1, tzinfo=timezone.utc), True),
+    ],
+)
+def test_is_thread_after_is_true_for_recently_archived(archive_timestamp, expected):
+    thread = StubThread(
+        is_pinned=False,
+        archived=True,
+        archive_timestamp=archive_timestamp,
+    )
+    after = datetime(2024, 1, 10, tzinfo=timezone.utc)
 
     assert discord_club.is_thread_after(thread, after) is expected
 
