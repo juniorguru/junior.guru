@@ -285,60 +285,6 @@ async def test_check_mutations_doesnt_raise_if_discord_allowed(nothing_allowed, 
     )
 
 
-@pytest.mark.parametrize(
-    "is_pinned, expected",
-    [
-        (False, False),
-        (True, True),
-    ],
-)
-def test_is_thread_after_is_always_true_for_pinned(is_pinned, expected):
-    thread = StubThread(
-        is_pinned=is_pinned,
-        archived=True,
-        archive_timestamp=datetime(2022, 1, 10, tzinfo=timezone.utc),
-    )
-    after = datetime(2024, 1, 10, tzinfo=timezone.utc)
-
-    assert discord_club.is_thread_after(thread, after) is expected
-
-
-@pytest.mark.parametrize(
-    "archived, expected",
-    [
-        (False, True),
-        (True, False),
-    ],
-)
-def test_is_thread_after_is_always_true_for_unarchived(archived, expected):
-    thread = StubThread(
-        is_pinned=False,
-        archived=archived,
-        archive_timestamp=datetime(2022, 1, 9, tzinfo=timezone.utc),
-    )
-    after = datetime(2024, 1, 10, tzinfo=timezone.utc)
-
-    assert discord_club.is_thread_after(thread, after) is expected
-
-
-@pytest.mark.parametrize(
-    "archive_timestamp, expected",
-    [
-        (datetime(2024, 1, 1, tzinfo=timezone.utc), False),
-        (datetime(2025, 1, 1, tzinfo=timezone.utc), True),
-    ],
-)
-def test_is_thread_after_is_true_for_recently_archived(archive_timestamp, expected):
-    thread = StubThread(
-        is_pinned=False,
-        archived=True,
-        archive_timestamp=archive_timestamp,
-    )
-    after = datetime(2024, 1, 10, tzinfo=timezone.utc)
-
-    assert discord_club.is_thread_after(thread, after) is expected
-
-
 def test_get_missing_reactions():
     StubReaction = namedtuple("Reaction", ["emoji", "me"])
     reactions = [StubReaction("👍", True), StubReaction("👎", True)]

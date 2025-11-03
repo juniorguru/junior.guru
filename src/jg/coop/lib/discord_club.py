@@ -237,14 +237,6 @@ async def fetch_threads(
         yield thread
 
 
-def is_thread_after(thread: discord.Thread, after: datetime = None) -> bool:
-    if thread.is_pinned():
-        return True
-    if thread.archived and thread.archive_timestamp <= after:
-        return False
-    return True
-
-
 async def add_reactions(
     message: discord.Message, emojis: list[str], ordered: bool = False
 ):

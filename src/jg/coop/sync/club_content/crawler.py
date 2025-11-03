@@ -17,7 +17,6 @@ from jg.coop.lib.discord_club import (
     get_or_create_dm_channel,
     get_parent_channel,
     is_member,
-    is_thread_after,
 )
 from jg.coop.sync.club_content.store import (
     store_channel,
@@ -44,16 +43,19 @@ CHANNELS_HISTORY_SINCE = {
     ClubChannelID.BUSINESS: None,
 }
 
+CATEGORIES_SKIP = [
+    1186355795311480852,  # English
+    878944218545025034,  # archive
+    806097273536512010,  # CoreSkill
+    1005416455107526666,  # CoreSkill
+    1273972027132350569,  # DP
+]
+
 CHANNELS_SKIP = [
-    # skip channels
     ClubChannelID.MODERATION,
     ClubChannelID.BOT,
     ClubChannelID.BOT_FORUM,
     ClubChannelID.JOBS_TRASH,
-    # skip archived channels
-    976054742117658634,
-    819935312272424982,
-    789092262965280778,
 ]
 
 
@@ -69,11 +71,13 @@ async def crawl(client: ClubClient) -> None:
     logger.info("Crawling club channels")
     queue = asyncio.Queue()
     for channel in client.club_guild.channels:
-        if (
-            channel.type != "category"
-            and channel.permissions_for(client.club_guild.me).read_messages
-        ):
-            if channel.id not in CHANNELS_SKIP:
+        if channel.type == ChannelType.category:
+            continue
+        if channel.permissions_for(client.club_guild.me).read_messages:
+            if (
+                channel.id not in CHANNELS_SKIP
+                and channel.category_id not in CATEGORIES_SKIP
+            ):
                 queue.put_nowait(channel)
             else:
                 logger.debug(
@@ -126,15 +130,9 @@ async def channel_worker(worker_no, queue) -> None:
         channel: GuildChannel = await queue.get()
         logger_c = get_channel_logger(logger_cw, channel)
         logger_c.info(f"Crawling {get_channel_name(channel)!r}")
+        is_thread = channel.type == ChannelType.public_thread
 
-        tasks = []
-        if channel.type == ChannelType.public_thread:
-            channel: Thread
-            thread_members = await channel.fetch_members()
-            tasks.append(asyncio.create_task(store_thread(channel, thread_members)))
-        elif channel.type != ChannelType.category:
-            tasks.append(asyncio.create_task(store_channel(channel)))
-
+        # Determine how far back to crawl the channel history
         if hasattr(channel, "is_pinned") and channel.is_pinned():
             history_after = None
             logger_c.debug("Crawling all channel history (pinned forum thread)")
@@ -151,19 +149,9 @@ async def channel_worker(worker_no, queue) -> None:
                     f"Crawling history after {history_after:%Y-%m-%d} ({history_since.days} days ago)"
                 )
 
-        threads = [
-            thread
-            async for thread in fetch_threads(channel)
-            if is_thread_after(thread, after=history_after) and not thread.is_private()
-        ]
-        if threads:
-            logger_c.info(f"Adding {len(threads)} threads")
-        for thread in threads:
-            logger_c.debug(
-                f"Adding thread '{thread.name}' #{thread.id} {thread.jump_url}"
-            )
-            queue.put_nowait(thread)
-
+        # Crawl the channel or decide on skipping it
+        tasks = []
+        messages_count = 0
         async for message in fetch_messages(channel, history_after):
             db_message = await store_message(message)
             async for reacting_member in fetch_members_reacting_by_pin(
@@ -172,9 +160,40 @@ async def channel_worker(worker_no, queue) -> None:
                 tasks.append(
                     asyncio.create_task(store_pin(db_message, reacting_member))
                 )
-        await asyncio.gather(*tasks)
+            messages_count += 1
+        logger_c.debug(f"Stored {messages_count} messages")
 
-        logger_c.debug(f"Done crawling {get_channel_name(channel)!r}")
+        if is_thread and not messages_count:
+            # Skip empty threads
+            logger_c.debug(
+                f"Skipping {get_channel_name(channel)!r} (no recent messages)"
+            )
+        else:
+            if is_thread:
+                # Threads cannot have threads, so just store it
+                thread_members = await channel.fetch_members()
+                tasks.append(asyncio.create_task(store_thread(channel, thread_members)))
+            else:
+                # Enqueue threads if any
+                threads = [
+                    thread
+                    async for thread in fetch_threads(channel)
+                    if not thread.is_private()
+                ]
+                if threads:
+                    logger_c.info(f"Adding {len(threads)} threads")
+                for thread in threads:
+                    logger_c.debug(
+                        f"Adding thread '{thread.name}' #{thread.id} {thread.jump_url}"
+                    )
+                    queue.put_nowait(thread)
+                # Store the channel itself
+                tasks.append(asyncio.create_task(store_channel(channel)))
+
+            await asyncio.gather(*tasks)
+            logger_c.debug(f"Done crawling {get_channel_name(channel)!r}")
+
+        # Mark the channel as done
         queue.task_done()
 
 
