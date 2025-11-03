@@ -826,7 +826,7 @@ wheels = [
 [[package]]
 name = "jg-beak"
 version = "0.0"
-source = { git = "https://github.com/juniorguru/beak.git#6fcaf19cb9b9d63ca7fb4b86d6c28ebd6f9f11cd" }
+source = { git = "https://github.com/juniorguru/beak.git#429b9d2dc86715f0afa748c604c2d7a0baea87d8" }
 dependencies = [
     { name = "click" },
 ]
@@ -971,7 +971,7 @@ dev = [
 [[package]]
 name = "jg-hen"
 version = "0.0"
-source = { git = "https://github.com/juniorguru/hen.git#39d289be2a467f245eaee8c850e182f41c94d4c3" }
+source = { git = "https://github.com/juniorguru/hen.git#3c138430654615f02babbdee529ad3cae08bb5a1" }
 dependencies = [
     { name = "blinker" },
     { name = "click" },
