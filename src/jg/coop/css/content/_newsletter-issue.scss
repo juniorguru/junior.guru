@@ -1,0 +1,20 @@
+.newsletter-issue {
+  max-width: 70ch;
+  padding: $spacer;
+  margin: 0 auto;
+  background: $jg-blue-white;
+  border: 1px solid $jg-gray-light;
+  border-radius: $border-radius;
+
+  @include media-breakpoint-up(md) {
+    padding: $main-spacer;
+  }
+}
+
+.newsletter-issue-date {
+  @extend .font-monospace;
+  @extend .text-uppercase;
+  margin-bottom: $main-spacer;
+  color: $jg-gray;
+  text-align: center;
+}
