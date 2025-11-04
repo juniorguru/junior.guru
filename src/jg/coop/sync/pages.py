@@ -26,7 +26,7 @@ GENERATORS_DEPENDENCIES = [  # see generators.py
 
 
 @cli.sync_command(
-    dependencies=["stages", "newsletter_archive"] + GENERATORS_DEPENDENCIES
+    dependencies=["stages", "newsletter-archive"] + GENERATORS_DEPENDENCIES
 )
 @db.connection_context()
 def main():
