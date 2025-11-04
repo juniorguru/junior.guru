@@ -1,5 +1,5 @@
-from datetime import date, datetime
 import json
+from datetime import date, datetime
 from pathlib import Path
 from textwrap import dedent
 
@@ -32,8 +32,9 @@ async def main(pages_dir: Path, today: date):
             published_on = datetime.fromisoformat(item["publish_date"]).date()
             logger.info(f"Email published on {published_on}: {item['absolute_url']}")
 
-            content = dedent(
-                f"""
+            content = (
+                dedent(
+                    f"""
                     ---
                     title: {json.dumps(item["subject"], ensure_ascii=False)}
                     date: {published_on.isoformat()}
@@ -43,7 +44,10 @@ async def main(pages_dir: Path, today: date):
 
                     # {item["subject"]}
                 """
-            ).strip() + "\n\n" + item["body"]
+                ).strip()
+                + "\n\n"
+                + item["body"]
+            )
 
             path = pages_dir / f"{item['slug']}.md"
             path.write_text(content)

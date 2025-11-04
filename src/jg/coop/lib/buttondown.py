@@ -1,8 +1,7 @@
-import functools
 import os
 from datetime import date
 from enum import StrEnum
-from typing import Any, AsyncGenerator, Awaitable, Callable, Generator, Self, TypeVar
+from typing import AsyncGenerator, Self, TypeVar
 
 import httpx
 
@@ -37,7 +36,6 @@ class SubscriberErrorCode(StrEnum):
 
 
 class ButtondownError(Exception):
-
     def __init__(
         self,
         message: str,
