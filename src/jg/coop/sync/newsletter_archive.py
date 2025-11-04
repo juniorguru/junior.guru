@@ -9,6 +9,7 @@ from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
 from jg.coop.lib.buttondown import ButtondownAPI
 from jg.coop.lib.cli import async_command
+from jg.coop.lib.text import remove_emoji
 from jg.coop.models.base import db
 
 
@@ -32,17 +33,23 @@ async def main(pages_dir: Path, today: date):
             published_on = datetime.fromisoformat(item["publish_date"]).date()
             logger.info(f"Email published on {published_on}: {item['absolute_url']}")
 
+            title = remove_emoji(item["subject"])
             content = (
                 dedent(
                     f"""
                     ---
-                    title: {json.dumps(item["subject"], ensure_ascii=False)}
-                    date: {published_on.isoformat()}
+                    title: {json.dumps(title, ensure_ascii=False)}
+                    description: Začínáš v IT? V tomhle newsletteru najdeš pozvánky, kurzy, podcasty, přednášky, články a další zdroje, které tě posunou a namotivují.
+                    date: {published_on}
+                    thumbnail_title: {title}
+                    thumbnail_subheading: Newsletter
+                    thumbnail_date: {published_on}
                     thumbnail_button_heading: Čti na
                     thumbnail_button_link: junior.guru/news
+                    template: main_subnav.html
                     ---
 
-                    # {item["subject"]}
+                    # {title}
                 """
                 ).strip()
                 + "\n\n"

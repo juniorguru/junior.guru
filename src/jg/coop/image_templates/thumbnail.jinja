@@ -29,7 +29,8 @@
         </hgroup>
         {% if date %}
           <aside class="thumbnail-date">
-            {{ date|weekday }} {{ '{:%-d.%-m.%Y}'.format(date) }} — {{ date|local_time }}
+            {{ date|weekday }} {{ '{:%-d.%-m.%Y}'.format(date) }}
+            {%- if not (date.hour == 0 and date.minute == 0) %} — {{ date|local_time }}{% endif %}
           </aside>
         {% endif %}
         <footer class="thumbnail-footer">
