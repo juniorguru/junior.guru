@@ -2,7 +2,7 @@ import functools
 import os
 from datetime import date
 from enum import StrEnum
-from typing import Any, Awaitable, Callable, Self, TypeVar
+from typing import Any, AsyncGenerator, Awaitable, Callable, Generator, Self, TypeVar
 
 import httpx
 
@@ -37,34 +37,19 @@ class SubscriberErrorCode(StrEnum):
 
 
 class ButtondownError(Exception):
+
     def __init__(
         self,
         message: str,
+        http_code: int | None = None,
         code: str | None = None,
         metadata: dict | None = None,
         url: str | None = None,
     ):
         super().__init__(message)
+        self.http_code = http_code
         self.code = code
         self.metadata = metadata or {}
-
-
-def convert_http_exceptions(
-    fn: Callable[..., Awaitable[T]],
-) -> Callable[..., Awaitable[T]]:
-    @functools.wraps(fn)
-    async def wrapper(*args: Any, **kwargs: Any) -> T:
-        try:
-            return await fn(*args, **kwargs)
-        except httpx.HTTPStatusError as e:
-            exc_data = e.response.json()
-            raise ButtondownError(
-                f"{exc_data['detail']} – {e.request.method} {e.request.url}",
-                code=exc_data.get("code"),
-                metadata=exc_data.get("metadata"),
-            ) from e
-
-    return wrapper
 
 
 class ButtondownAPI:
@@ -84,40 +69,54 @@ class ButtondownAPI:
         if self._client:
             await self._client.aclose()
 
-    @convert_http_exceptions
+    async def _request(self, method: str, url: str, **kwargs) -> dict:
+        try:
+            response = await self._client.request(method.lower(), url, **kwargs)
+            response.raise_for_status()
+            return response.json()
+        except httpx.HTTPStatusError as e:
+            exc_data = e.response.json()
+            raise ButtondownError(
+                f"{exc_data['detail']} – {e.request.method} {e.request.url}",
+                http_code=e.response.status_code,
+                code=exc_data.get("code"),
+                metadata=exc_data.get("metadata"),
+            ) from e
+
+    async def get_emails_before(self, before_date: date) -> AsyncGenerator[dict, None]:
+        next_url = f"emails?publish_date__end={before_date}"
+        while next_url:
+            logger.debug(f"Fetching emails: {next_url}")
+            data = await self._request("GET", next_url)
+            for item in data["results"]:
+                yield item
+            next_url = data["next"]
+
     async def get_emails_since(self, since_date: date) -> dict:
-        response = await self._client.get(
-            "emails", params={"publish_date__start": since_date.isoformat()}
+        return await self._request(
+            "GET", "emails", params={"publish_date__start": since_date.isoformat()}
         )
-        response.raise_for_status()
-        return response.json()
 
     @mutations.mutates_buttondown()
-    @convert_http_exceptions
     async def create_draft(self, email_data: dict) -> None:
-        response = await self._client.post("emails", json=email_data)
-        response.raise_for_status()
-        return response.json()
+        return await self._request("POST", "emails", json=email_data)
 
     async def count_subscribers(self) -> int:
-        response = await self._client.get("subscribers", params={"type": "regular"})
-        response.raise_for_status()
-        data = response.json()
+        data = await self._request("GET", "subscribers", params={"type": "regular"})
         return data["count"]
 
     @mutations.mutates_buttondown()
-    @convert_http_exceptions
     async def add_subscriber(self, email: str, tags=set[SubscriberSource]) -> dict:
         logger.debug(f"Adding subscriber {email} with tags {tags}")
         subscriber_type = get_subscriber_type(tags)
         try:
-            response = await self._client.get(f"subscribers/{email}")
-            response.raise_for_status()
-        except httpx.HTTPStatusError as e:
-            if e.response.status_code == 404:
+            subscriber = await self._request("GET", f"subscribers/{email}")
+        except ButtondownError as e:
+            if e.http_code == 404:
                 logger.debug(f"Creating subscriber {email}")
                 logger.debug(f"Subscriber {email} classified as {subscriber_type!r}")
-                response = await self._client.post(
+                return await self._request(
+                    "POST",
                     "subscribers",
                     json={
                         "email_address": email,
@@ -125,11 +124,8 @@ class ButtondownAPI:
                         "type": subscriber_type,
                     },
                 )
-                response.raise_for_status()
-                return response.json()
             raise
 
-        subscriber = response.json()
         if subscriber_type == "regular" and subscriber["type"] != "regular":
             logger.warning(
                 f"Subscriber {email} has type {subscriber['type']!r}, "
@@ -142,11 +138,9 @@ class ButtondownAPI:
             return subscriber
 
         logger.debug(f"Updating subscriber {email}, tags: {existing_tags} → {tags}")
-        response = await self._client.patch(
-            f"subscribers/{email}", json={"tags": list(existing_tags | tags)}
+        return await self._request(
+            "PATCH", f"subscribers/{email}", json={"tags": list(existing_tags | tags)}
         )
-        response.raise_for_status()
-        return response.json()
 
 
 def get_subscriber_type(tags: set[SubscriberSource]) -> str:

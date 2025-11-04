@@ -36,7 +36,9 @@ nav:
           - "jobs/*.jinja"
       - Kandidáti: candidates.jinja
   - Inspirace:
-      - Novinky: news.jinja
+      - Novinky:
+          - Novinky: news.jinja
+          - "news/*.md"
       - Podcast:
           - Podcast: podcast.md
           - "podcast/*.jinja"
