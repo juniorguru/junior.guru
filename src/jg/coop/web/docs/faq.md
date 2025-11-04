@@ -80,7 +80,7 @@ První osadníci, kteří pomáhali klub rozjíždět v době jeho počátků, j
 
 ## Kdy musím zadat platební kartu?
 
-Při registraci kartu zadávat nemusíš, prvních 14 dní je zdarma. Před koncem zkušebního období by ti mělo přijít e-mailem upozornění, že nemáš zadanou kartu. Pokud ji do konce zkušebního období nevyplníš, systém tě z klubu automaticky vyhodí. Skončí ti pouze přístup do klubu, účet na junior.guru ti zůstane. V [nastavení](https://juniorguru.memberful.com/account) můžeš kdykoliv později kartu vyplnit a členství obnovit. Discord účet ti samozřejmě zůstane taky.
+Při registraci kartu zadávat nemusíš, prvních 14 dní je zdarma. Před koncem zkušebního období by ti mělo přijít e-mailem upozornění, že nemáš zadanou kartu. Pokud ji do konce zkušebního období nevyplníš, systém tě z klubu automaticky odebere. Skončí ti pouze přístup do klubu, účet na junior.guru ti zůstane. V [nastavení](https://juniorguru.memberful.com/account) můžeš kdykoliv později kartu vyplnit a členství obnovit. Discord účet ti samozřejmě zůstane taky.
 
 ## Jsou údaje o mé kartě v bezpečí?
 
@@ -88,7 +88,7 @@ Jasně! K údajům o tvé kartě nemá nikdo z junior.guru přístup, jsou bezpe
 
 ## Proč mě systém vyhodil z klubu?
 
-S největší pravděpodobností tě vyhodil proto, že nemáš vyplněny údaje o kartě, nebo proto, že tvé kartě vypršela platnost. Platební údaje lze změnit v [nastavení](https://juniorguru.memberful.com/account). Než tě systém vyhodí, měl by ti poslat e-mailové upozornění, že s kartou něco není v pořádku. Jenže to se, jak už to tak bývá, může někam zatoulat. Neboj, nepřijdeš o žádná nasbíraná ocenění a role. Discord bot pozná, že jsi zpět, a při nejbližší příležitosti ti vše zase přiřadí.
+S největší pravděpodobností tě vyhodil proto, že nemáš vyplněny údaje o kartě, nebo proto, že tvé kartě vypršela platnost. Platební údaje lze změnit v [nastavení](https://juniorguru.memberful.com/account). Než tě systém odebere, měl by ti poslat e-mailové upozornění, že s kartou něco není v pořádku. Jenže to se, jak už to tak bývá, může někam zatoulat. Neboj, nepřijdeš o žádná nasbíraná ocenění a role. Discord bot pozná, že jsi zpět, a při nejbližší příležitosti ti vše zase přiřadí.
 
 ## Kde mohu změnit údaje o kartě?
 

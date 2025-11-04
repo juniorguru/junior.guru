@@ -208,7 +208,7 @@ Rady kolemjdoucích ve veřejných skupinách jsou náchylné k fanouškovství,
 
 <h2>Přidej se k nám</h2>
 {% call lead() %}
-Zaregistruj se a nakoukni, jak to u nás vypadá. Kartu nezadáváš. Klidně si všechno nejdřív vyzkoušej. Pokud ti klub nesedne, prostě akorát po dvou týdnech nedoplníš platební údaje a systém tě automaticky vyhodí.
+Zaregistruj se a nakoukni, jak to u nás vypadá. Kartu nezadáváš. Klidně si všechno nejdřív vyzkoušej. Pokud ti klub nesedne, prostě akorát po dvou týdnech nedoplníš platební údaje a systém tě automaticky odebere.
 {% endcall %}
 
 <div class="pricing standout">

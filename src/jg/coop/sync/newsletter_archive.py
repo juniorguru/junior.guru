@@ -1,7 +1,6 @@
 from datetime import date, datetime
 import json
 from pathlib import Path
-from pprint import pp
 from textwrap import dedent
 
 import click
