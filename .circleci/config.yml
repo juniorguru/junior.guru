@@ -154,6 +154,7 @@ jobs:
             - project/.cache
             - project/src/jg/coop/data
             - project/src/jg/coop/images
+            - project/src/jg/coop/web/docs/news
 
   # Requires:
   #
@@ -213,6 +214,7 @@ jobs:
           paths:
             - project/src/jg/coop/data
             - project/src/jg/coop/images
+            - project/src/jg/coop/web/docs/news
       - when:
           condition:
             equal: [main, << pipeline.git.branch >>]
@@ -221,8 +223,13 @@ jobs:
             - run:
                 name: Save to GitHub
                 command: |
-                  uv run jg save-changes src/jg/coop/data/transactions.jsonl --message="record transactions 📊💰"
-                  uv run jg save-changes src/jg/coop/data/members.jsonl src/jg/coop/data/followers.jsonl src/jg/coop/data/jobs.jsonl --message="record stats 📊💳"
+                  uv run jg save-changes \
+                    src/jg/coop/web/docs/news \
+                    src/jg/coop/data/transactions.jsonl \
+                    src/jg/coop/data/members.jsonl \
+                    src/jg/coop/data/followers.jsonl \
+                    src/jg/coop/data/jobs.jsonl \
+                    --message="record automatic updates 📥"
 
   web:
     executor: python-js
