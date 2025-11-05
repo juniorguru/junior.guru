@@ -6,7 +6,7 @@ ACTOR_NAME = "curious_coder/linkedin-jobs-scraper"
 
 
 def transform_item(item: dict) -> dict:
-    apply_url = clean_url(clean_validated_url(clean_proxied_url(item["applyUrl"])))
+    apply_url = clean_url(clean_proxied_url(item["applyUrl"]))
     return dict(
         title=item["title"],
         posted_on=item["postedAt"],
@@ -43,15 +43,13 @@ def clean_proxied_url(url: str) -> str:
     return url
 
 
-def clean_validated_url(url: str) -> str:
-    if url and "validate.perfdrive.com" in url:
-        if ssc_url := get_param(url, "ssc"):
-            return ssc_url
-        raise ValueError(f"Could not parse SSC URL: {url}")
-    return url
-
-
 def clean_url(url: str) -> str:
+    if url and "jobs.cz" in url:
+        # TODO test https://mafra.jobs.cz/detail-pozice?r=detail&id=2000811755&impressionId=b81a20bd-36ec-4219-9a49-4f8def3b9a23
+        return strip_params(url, ["impressionId"])
+    if url and "profesia.sk" in url:
+        # TODO test https://www.profesia.sk/praca/engie-services-slovensko/O5122216?search_id=6acdb21d-5ab0-40b3-9c63-dca56adbe1cf
+        return strip_params(url, ["search_id"])
     if url and "linkedin.com" in url:
         return strip_params(url, ["refId", "trk", "trackingId"])
     if url and "talentify.io" in url:
