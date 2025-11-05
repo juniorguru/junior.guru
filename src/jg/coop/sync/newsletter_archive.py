@@ -42,7 +42,7 @@ async def main(archive_dir: Path, today: date):
     logger.info("Saving published issues to database")
     NewsletterIssue.drop_table()
     NewsletterIssue.create_table()
-    for path in archive_dir.glob("*.json"):
+    for path in sorted(archive_dir.glob("*.json")):
         logger.info(f"Reading {path}")
         data = json.loads(path.read_text())
         newsletter_issue = NewsletterIssue.from_buttondown(data)

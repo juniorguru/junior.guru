@@ -9,7 +9,7 @@ from jg.coop.models.base import BaseModel
 
 
 class NewsletterIssue(BaseModel):
-    id = CharField(primary_key=True)
+    buttondown_id = CharField(unique=True)
     slug = CharField(unique=True)
     publish_on = DateField(unique=True)
     subject = CharField()
@@ -22,7 +22,7 @@ class NewsletterIssue(BaseModel):
     @classmethod
     def from_buttondown(cls, data: dict) -> Self:
         return cls(
-            id=data["id"],
+            buttondown_id=data["id"],
             slug=data["slug"],
             publish_on=datetime.fromisoformat(data["publish_date"]).date(),
             subject=data["subject"],
