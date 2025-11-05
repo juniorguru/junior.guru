@@ -11,12 +11,13 @@ from strictyaml import as_document
 
 from jg.coop.lib import loggers
 from jg.coop.lib.mapycz import REGIONS
-from jg.coop.lib.text import get_tag_slug
+from jg.coop.lib.text import get_tag_slug, remove_emoji
 from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.event import Event
 from jg.coop.models.job import REMOTE_TAG_SLUG, ListedJob
+from jg.coop.models.newsletter import NewsletterIssue
 from jg.coop.models.podcast import PodcastEpisode
 
 
@@ -184,14 +185,35 @@ def generate_course_provider_pages() -> Generator[GeneratedDocument, None, None]
         )
 
 
+@db.connection_context()
+def generate_newsletter_issue_pages() -> Generator[GeneratedDocument, None, None]:
+    for newsletter_issue in NewsletterIssue.listing():
+        yield GeneratedDocument(
+            path=f"news/{newsletter_issue.slug}.md",
+            meta=dict(
+                title=remove_emoji(newsletter_issue.subject),
+                description="Začínáš v IT? V tomhle newsletteru najdeš pozvánky, kurzy, podcasty, přednášky, články a další zdroje, které tě posunou a namotivují.",
+                newsletter_issue_id=newsletter_issue.id,
+                template="main_subnav.html",
+                thumbnail_title=remove_emoji(newsletter_issue.subject),
+                thumbnail_subheading="Newsletter",
+                thumbnail_date=newsletter_issue.publish_on,
+                thumbnail_button_heading="Čti na",
+                thumbnail_button_link="junior.guru/news",
+            ),
+            content=(DOCS_DIR / "newsletter_issue.md").read_text(),
+        )
+
+
 def main():
     generators = [
+        generate_course_provider_pages,
+        generate_event_pages,
+        generate_job_pages,
+        generate_newsletter_issue_pages,
+        generate_podcast_episode_pages,
         generate_redirects,
         generate_region_jobs_pages,
-        generate_job_pages,
-        generate_event_pages,
-        generate_podcast_episode_pages,
-        generate_course_provider_pages,
     ]
     logger.info(f"Generating documents ({len(generators)} generators)")
     counter = Counter()

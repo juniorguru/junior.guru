@@ -1,5 +1,4 @@
 import json
-import re
 from datetime import date, datetime
 from pathlib import Path
 
@@ -9,8 +8,8 @@ from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
 from jg.coop.lib.buttondown import ButtondownAPI
 from jg.coop.lib.cli import async_command
-from jg.coop.lib.text import remove_emoji
 from jg.coop.models.base import db
+from jg.coop.models.newsletter import NewsletterIssue
 
 
 logger = loggers.from_path(__file__)
@@ -18,8 +17,8 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command()
 @click.option(
-    "--pages-dir",
-    default=Path("src/jg/coop/web/docs/news"),
+    "--archive-dir",
+    default=Path("src/jg/coop/data/newsletter"),
     type=click.Path(path_type=Path, file_okay=False, writable=True),
 )
 @click.option(
@@ -27,67 +26,26 @@ logger = loggers.from_path(__file__)
 )
 @db.connection_context()
 @async_command
-async def main(pages_dir: Path, today: date):
+async def main(archive_dir: Path, today: date):
+    archive_dir.mkdir(parents=True, exist_ok=True)
+    logger.info(f"Newsletter archive: {archive_dir}")
+
+    logger.info("Fetching newsletter issues from Buttondown")
     async with ButtondownAPI() as api:
-        async for item in api.get_emails_before(today):
-            published_on = datetime.fromisoformat(item["publish_date"]).date()
-            logger.info(f"Email published on {published_on}: {item['absolute_url']}")
-
-            title = remove_emoji(item["subject"])
-            body = process_body(item["body"])
-
-            content = f"""---
-title: {json.dumps(title, ensure_ascii=False)}
-description: Začínáš v IT? V tomhle newsletteru najdeš pozvánky, kurzy, podcasty, přednášky, články a další zdroje, které tě posunou a namotivují.
-date: {published_on}
-thumbnail_title: {title}
-thumbnail_subheading: Newsletter
-thumbnail_date: {published_on}
-thumbnail_button_heading: Čti na
-thumbnail_button_link: junior.guru/news
-template: main_subnav.html
----
-
-{{% from 'macros.html' import lead with context %}}
-
-# {title}
-
-{{% call lead() %}}
-Prohrabáváš se archivem zdejšího newsletteru a koukáš na jedno ze starších vydání.
-Pokud chceš, aby ti takové e-maily chodily čerstvé, [přihlaš se k odebírání](../news.jinja)!
-{{% endcall %}}
-
-<div class="newsletter-issue">
-<p class="newsletter-issue-date">Odesláno {published_on:%-d.%-m.%Y}</p>
-{body}
-</div>
-
-<div class="pagination">
-  <div class="pagination-control">
-    <a href="{{{{ (page|parent_page).url|url }}}}" class="pagination-button">
-      {{{{ 'arrow-left'|icon }}}}
-      Všechna vydání
-    </a>
-  </div>
-</div>
-"""
-            path = pages_dir / f"{item['slug']}.md"
-            path.write_text(content)
+        async for email_data in api.get_emails_before(today):
+            logger.info(f"Fetched {email_data['absolute_url']}")
+            published_on = datetime.fromisoformat(email_data["publish_date"]).date()
+            path = archive_dir / f"{published_on}.json"
+            path.write_text(json.dumps(email_data, ensure_ascii=False, indent=2))
             logger.info(f"Archived as {path}")
 
-            # TODO canonical_url, image
-
-
-def process_body(body: str) -> str:
-    # remove double <br>
-    body = re.sub(r"<br>\s*<br>", "<br>", body)
-
-    # strip emoji from <h2> and <h3>
-    body = re.sub(r"(<h2[^>]*>)(.*?)(</h2>)", _strip_emoji, body)
-    body = re.sub(r"(<h3[^>]*>)(.*?)(</h3>)", _strip_emoji, body)
-
-    return body
-
-
-def _strip_emoji(match: re.Match) -> str:
-    return f"{match.group(1)}{remove_emoji(match.group(2))}{match.group(3)}"
+    logger.info("Saving published issues to database")
+    NewsletterIssue.drop_table()
+    NewsletterIssue.create_table()
+    for path in archive_dir.glob("*.json"):
+        logger.info(f"Reading {path}")
+        data = json.loads(path.read_text())
+        newsletter_issue = NewsletterIssue.from_buttondown(data)
+        newsletter_issue.save()
+        logger.info(f"Saved as {newsletter_issue!r}")
+    logger.info(f"Done, {NewsletterIssue.count()} issues saved")

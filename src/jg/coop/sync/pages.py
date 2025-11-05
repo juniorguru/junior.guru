@@ -21,13 +21,12 @@ GENERATORS_DEPENDENCIES = [  # see generators.py
     "course-providers",
     "events",
     "jobs-listing",
+    "newsletter-archive",
     "podcast",
 ]
 
 
-@cli.sync_command(
-    dependencies=["stages", "newsletter-archive"] + GENERATORS_DEPENDENCIES
-)
+@cli.sync_command(dependencies=["stages"] + GENERATORS_DEPENDENCIES)
 @db.connection_context()
 def main():
     logger.info("Setting up db table")
