@@ -96,6 +96,10 @@ class ButtondownAPI:
         )
 
     @mutations.mutates_buttondown()
+    async def update_email(self, email_id: str, email_data: dict) -> None:
+        return await self._request("PATCH", f"emails/{email_id}", json=email_data)
+
+    @mutations.mutates_buttondown()
     async def create_draft(self, email_data: dict) -> None:
         return await self._request("POST", "emails", json=email_data)
 

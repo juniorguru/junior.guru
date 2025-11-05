@@ -1,6 +1,5 @@
 from datetime import UTC, date, datetime, timedelta
 from operator import attrgetter
-from urllib.parse import urljoin
 
 from jg.coop.lib import loggers
 from jg.coop.lib.discord_club import CLUB_GUILD_ID
@@ -180,13 +179,9 @@ def on_theme_context(context):
 @db.connection_context()
 def on_theme_page_context(context, page, config, files):
     try:
-        thumbnail_path = Page.get_by_src_uri(page.file.src_uri).thumbnail_path
-    except Page.DoesNotExist:
-        logger.debug(f"No thumbnail for {page.file.src_uri}, probably redirect")
-    else:
-        if thumbnail_path:
-            context["thumbnail_url"] = urljoin(
-                config["site_url"], f"static/{thumbnail_path}"
-            )
+        if thumbnail_url := Page.get_by_src_uri(page.file.src_uri).thumbnail_url:
+            context["thumbnail_url"] = thumbnail_url
         else:
             logger.warning(f"No thumbnail for {page.file.src_uri}")
+    except Page.DoesNotExist:
+        logger.debug(f"No thumbnail for {page.file.src_uri}, probably redirect")

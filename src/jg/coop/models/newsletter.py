@@ -7,6 +7,7 @@ from peewee import CharField, DateField, IntegerField
 from jg.coop.lib.reading_time import reading_time
 from jg.coop.lib.text import extract_text, remove_emoji
 from jg.coop.models.base import BaseModel
+from jg.coop.models.page import Page
 
 
 class NewsletterIssue(BaseModel):
@@ -18,6 +19,30 @@ class NewsletterIssue(BaseModel):
     content_html = CharField()
     content_html_raw = CharField()
     reading_time = IntegerField()
+    canonical_url = CharField(null=True)
+    thumbnail_url = CharField(null=True)
+
+    @property
+    def absolute_url(self) -> str:
+        return f"https://junior.guru/news/{self.slug}/"
+
+    @property
+    def page(self) -> Page:
+        return Page.get_by_src_uri(f"news/{self.slug}.md")
+
+    def get_buttondown_updates(self) -> dict:
+        updates = {}
+
+        # Canonical URL
+        if self.canonical_url != self.absolute_url:
+            updates["canonical_url"] = self.absolute_url
+
+        # Thumbnail
+        page = self.page
+        if self.thumbnail_url != page.thumbnail_url:
+            updates["image"] = page.thumbnail_url
+
+        return updates
 
     @classmethod
     def from_buttondown(cls, data: dict) -> Self:
@@ -30,6 +55,8 @@ class NewsletterIssue(BaseModel):
             content_html=process_content_html(data["body"]),
             content_html_raw=data["body"],
             reading_time=reading_time(len(extract_text(data["body"]))),
+            canonical_url=data.get("canonical_url") or None,
+            thumbnail_url=data.get("image") or None,
         )
 
     @classmethod

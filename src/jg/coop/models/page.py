@@ -43,6 +43,12 @@ class Page(BaseModel):
     def absolute_url(self) -> str:
         return f"https://junior.guru/{self.dest_uri.removesuffix('index.html')}"
 
+    @property
+    def thumbnail_url(self) -> str | None:
+        if self.thumbnail_path:
+            return f"https://junior.guru/static/{self.thumbnail_path}"
+        return None
+
     def to_card(self) -> dict:
         if self.src_uri.startswith("stories/"):
             return dict(
