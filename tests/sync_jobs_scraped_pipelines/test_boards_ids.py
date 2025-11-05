@@ -60,6 +60,22 @@ from jg.coop.sync.jobs_scraped.pipelines.boards_ids import process
             ),
             ["jobscz#1614397443"],
         ),
+        (
+            dict(
+                url="https://cz.linkedin.com/jobs/view/produk%C4%8Dn%C3%AD-food-redaktorka-at-medi%C3%A1ln%C3%AD-skupina-mafra-4334201503?refId=kJU16eXE%2FMi6hQo%2Fw3EdaQ%3D%3D&trackingId=JW1qDjdfJGsjYA2es4DzKA%3D%3D&position=24&pageNum=0"
+            ),
+            ["linkedin#4334201503"],
+        ),
+        (
+            dict(
+                source_urls=[
+                    "https://www.linkedin.com/jobs/search?keywords=junior%20programator&location=Czechia&geoId=104508036&f_TPR=r86400&position=1&pageNum=0"
+                ],
+                url="https://www.linkedin.com/jobs/view/4334211481",
+                apply_url="https://mafra.jobs.cz/detail-pozice?r=detail&id=2000805294",
+            ),
+            ["linkedin#4334211481", "jobscz#2000805294"],
+        ),
     ],
 )
 @pytest.mark.asyncio

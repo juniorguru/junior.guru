@@ -16,7 +16,10 @@ RE_IDENTIFY_MAPPING = [
         "weworkremotely",
         re.compile(r"\bweworkremotely\.com/remote-jobs/(?P<id>[\w+\-]+)", re.I),
     ),
-    ("linkedin", re.compile(r"\blinkedin\.com/jobs/view/[\w+\-%]+\-(?P<id>\d+)", re.I)),
+    (
+        "linkedin",
+        re.compile(r"\blinkedin\.com/jobs/view/([\w+\-%]+\-)?(?P<id>\d+)", re.I),
+    ),
     ("jobscz", re.compile(r"\bwww\.jobs\.cz/rpd/(?P<id>\d+)", re.I)),
     ("jobscz", re.compile(r"\bwww\.jobs\.cz/fp/[^/]+/(?P<id>\d+)", re.I)),
     ("jobscz", re.compile(r"\.jobs\.cz/detail-pozice.*[\&\?]id=(?P<id>\d+)", re.I)),
