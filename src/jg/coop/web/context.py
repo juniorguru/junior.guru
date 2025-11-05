@@ -145,6 +145,7 @@ def on_docs_context(context):
 
     # news.jinja
     context["newsletter_subscribers_count"] = Followers.get_latest("newsletter").count
+    context["newsletter_issues"] = NewsletterIssue.listing()
     context["club_guild_id"] = CLUB_GUILD_ID
     context["channels_digest"] = ClubMessage.digest_channels(
         date.today() - timedelta(days=7), limit=5

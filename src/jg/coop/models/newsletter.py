@@ -2,9 +2,10 @@ import re
 from datetime import datetime
 from typing import Self
 
-from peewee import CharField, DateField
+from peewee import CharField, DateField, IntegerField
 
-from jg.coop.lib.text import remove_emoji
+from jg.coop.lib.reading_time import reading_time
+from jg.coop.lib.text import extract_text, remove_emoji
 from jg.coop.models.base import BaseModel
 
 
@@ -12,12 +13,11 @@ class NewsletterIssue(BaseModel):
     buttondown_id = CharField(unique=True)
     slug = CharField(unique=True)
     published_on = DateField(unique=True)
+    subject_raw = CharField()
     subject = CharField()
+    content_html = CharField()
     content_html_raw = CharField()
-
-    @property
-    def content_html(self) -> str:
-        return process_content_html(self.content_html_raw)
+    reading_time = IntegerField()
 
     @classmethod
     def from_buttondown(cls, data: dict) -> Self:
@@ -25,8 +25,11 @@ class NewsletterIssue(BaseModel):
             buttondown_id=data["id"],
             slug=data["slug"],
             published_on=datetime.fromisoformat(data["publish_date"]).date(),
-            subject=data["subject"],
+            subject_raw=data["subject"],
+            subject=remove_emoji(data["subject"]),
+            content_html=process_content_html(data["body"]),
             content_html_raw=data["body"],
+            reading_time=reading_time(len(extract_text(data["body"]))),
         )
 
     @classmethod

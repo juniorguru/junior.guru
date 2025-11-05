@@ -11,7 +11,7 @@ from strictyaml import as_document
 
 from jg.coop.lib import loggers
 from jg.coop.lib.mapycz import REGIONS
-from jg.coop.lib.text import get_tag_slug, remove_emoji
+from jg.coop.lib.text import get_tag_slug
 from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
@@ -191,11 +191,11 @@ def generate_newsletter_issue_pages() -> Generator[GeneratedDocument, None, None
         yield GeneratedDocument(
             path=f"news/{newsletter_issue.slug}.md",
             meta=dict(
-                title=remove_emoji(newsletter_issue.subject),
+                title=newsletter_issue.subject,
                 description="Začínáš v IT? V tomhle newsletteru najdeš pozvánky, kurzy, podcasty, přednášky, články a další zdroje, které tě posunou a namotivují.",
                 newsletter_issue_id=newsletter_issue.id,
                 template="main_subnav.html",
-                thumbnail_title=remove_emoji(newsletter_issue.subject),
+                thumbnail_title=newsletter_issue.subject,
                 thumbnail_subheading="Newsletter",
                 thumbnail_date=newsletter_issue.published_on.isoformat(),
                 thumbnail_button_heading="Čti na",
