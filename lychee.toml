@@ -29,6 +29,9 @@ max_retries = 5
 timeout = 40
 
 # Exclude
+exclude_path = [
+    "/jobs/.*"
+]
 exclude = [
     # Specifications
     "^https://ogp\\.me/ns/website",
@@ -45,7 +48,7 @@ exclude = [
     "^https://(www\\.)?sdacademy\\.cz",
 
     # Anti-scraping protections
-    "^https://(www\\.)?(linkedin|facebook|reddit|glassdoor|toptal|upwork|make|fiverr|datacamp|udacity|udemy|economist|stackoverflow|solarturbines|sap)\\.com",
+    "^https://(www\\.)?(linkedin|facebook|reddit|glassdoor|toptal|upwork|make|fiverr|datacamp|udacity|udemy|economist|stackoverflow)\\.com",
     "^https://(www\\.)?(keyguru|podnikatel|root|robotdreams|lucietvrdikova|zdrojak|clovekvtisni|irozhlas)\\.cz",
     "^https://([^\\.]+\\.)?discord\\.com",
     "^https://robime\\.it",
@@ -57,10 +60,6 @@ exclude = [
     # Read the Docs anti-scraping protections
     "^https://docs\\.pyvec\\.org",
     "^https://www\\.writethedocs\\.org",
-
-    # Expired jobs
-    "^https://(www\\.)?jobs\\.cz/fp/",
-    "^https://(www\\.)?jobs\\.cz/rpd/",
 
     # Not yet deployed avatars of club members or company logos
     "^https://junior\\.guru/static/avatars-club/[^\\.]+\\.png",
