@@ -27,7 +27,7 @@ def update(pull, packages, push, stash):
     try:
         logger.info("Terminating running processes")
         python_path = sys.executable
-        jg_path = f"{python_path.removesuffix('/python')}/jg"
+        jg_path = f"{python_path.removesuffix('3').removesuffix('/python')}/jg"
         subprocess.run(["pgrep", "-fl", jg_path])  # prints what's getting terminated
         subprocess.run(["pkill", "-SIGTERM", "-f", jg_path])
         if stash:
