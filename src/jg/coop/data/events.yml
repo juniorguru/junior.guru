@@ -76,7 +76,6 @@ registry:
       - https://www.linkedin.com/in/lucielenertova/
     club_speaker_ids:
       - 1002301544496119838
-    club_recording_url:
 
   - id: 54
     title: "DevOps/SRE - co to vlastně je a chci to vůbec vědět?"
@@ -236,7 +235,7 @@ registry:
     short_description: |
       Máš pocit, že ve tvém digitálním obsahu panuje chaos? Ztrácíš se často ve svých složkách s dokumenty nebo nemáš žádný systém na poznámky? Workshop tě provede základními i pokročilejšími funkcemi Obsidianu. Naučíš se, jak efektivně zachytávat a organizovat své myšlenky, nápady a další digitální obsah. **Před workshopem je potřeba** mít nainstalovaný Obsidian a umět v něm vytvořit novou poznámku.
     avatar_path: avatars-participants/lucie-lenertova.jpg
-    bio_name: Lucie Lenértová
+    bio_name: Lucie Lénertová
     bio_title: Průvodkyně světem programování pro začátečníky
     bio: |
       Lucie Lénertová je průvodkyně začátečníků světem programování a umělé inteligence. Prostřednictvím YouTube videí a newsletterů předává své znalosti srozumitelně a motivuje začátečníky k objevování radosti z programování.
