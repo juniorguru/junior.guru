@@ -1,9 +1,9 @@
 from textwrap import dedent
 
-from jg.coop.sync.newsletter_archive import process_body
+from jg.coop.models.newsletter import process_content_html
 
 
-def test_process_body_removes_double_br():
+def test_process_content_html_removes_double_br():
     body = dedent(
         """
             <p>
@@ -22,10 +22,10 @@ def test_process_body_removes_double_br():
         """
     ).strip()
 
-    assert process_body(body) == expected
+    assert process_content_html(body) == expected
 
 
-def test_process_body_preserves_chart():
+def test_process_content_html_preserves_chart():
     chart = dedent(
         """
             <p>
@@ -42,10 +42,10 @@ def test_process_body_preserves_chart():
             </p>
         """
     ).strip()
-    assert process_body(chart) == chart
+    assert process_content_html(chart) == chart
 
 
-def test_process_body_strips_emoji_from_h2():
+def test_process_content_html_strips_emoji_from_h2():
     body = dedent(
         """
             <h2>🚀 Nové kurzy a články</h2>
@@ -59,4 +59,4 @@ def test_process_body_strips_emoji_from_h2():
         """
     ).strip()
 
-    assert process_body(body) == expected
+    assert process_content_html(body) == expected
