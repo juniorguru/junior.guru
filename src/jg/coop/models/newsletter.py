@@ -11,7 +11,7 @@ from jg.coop.models.base import BaseModel
 class NewsletterIssue(BaseModel):
     buttondown_id = CharField(unique=True)
     slug = CharField(unique=True)
-    publish_on = DateField(unique=True)
+    published_on = DateField(unique=True)
     subject = CharField()
     content_html_raw = CharField()
 
@@ -24,7 +24,7 @@ class NewsletterIssue(BaseModel):
         return cls(
             buttondown_id=data["id"],
             slug=data["slug"],
-            publish_on=datetime.fromisoformat(data["publish_date"]).date(),
+            published_on=datetime.fromisoformat(data["publish_date"]).date(),
             subject=data["subject"],
             content_html_raw=data["body"],
         )
@@ -35,7 +35,7 @@ class NewsletterIssue(BaseModel):
 
     @classmethod
     def listing(cls) -> list[Self]:
-        return list(cls.select().order_by(cls.publish_on.desc()))
+        return list(cls.select().order_by(cls.published_on.desc()))
 
 
 def process_content_html(content_html: str) -> str:

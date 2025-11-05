@@ -14,6 +14,7 @@ from jg.coop.models.event import Event
 from jg.coop.models.exchange_rate import ExchangeRate
 from jg.coop.models.followers import Followers
 from jg.coop.models.job import DiscordJob, ListedJob
+from jg.coop.models.newsletter import NewsletterIssue
 from jg.coop.models.page import Page
 from jg.coop.models.partner import Partner
 from jg.coop.models.podcast import PodcastEpisode
@@ -153,11 +154,12 @@ def on_docs_context(context):
 @db.connection_context()
 def on_docs_page_context(context, page, config, files):
     meta_model_getters = (
-        ("topic_name", Topic.get_by_id, "topic"),
+        ("course_provider_slug", CourseProvider.get_by_slug, "course_provider"),
         ("event_id", Event.get_by_id, "event"),
         ("job_id", ListedJob.get_by_submitted_id, "job"),
-        ("course_provider_slug", CourseProvider.get_by_slug, "course_provider"),
+        ("newsletter_issue_id", NewsletterIssue.get_by_id, "newsletter_issue"),
         ("podcast_episode_number", PodcastEpisode.get_by_number, "podcast_episode"),
+        ("topic_name", Topic.get_by_id, "topic"),
     )
     for meta_key, model_getter, model_var in meta_model_getters:
         if meta_key in page.meta:

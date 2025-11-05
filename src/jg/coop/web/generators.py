@@ -197,7 +197,7 @@ def generate_newsletter_issue_pages() -> Generator[GeneratedDocument, None, None
                 template="main_subnav.html",
                 thumbnail_title=remove_emoji(newsletter_issue.subject),
                 thumbnail_subheading="Newsletter",
-                thumbnail_date=newsletter_issue.publish_on,
+                thumbnail_date=newsletter_issue.published_on.isoformat(),
                 thumbnail_button_heading="Čti na",
                 thumbnail_button_link="junior.guru/news",
             ),

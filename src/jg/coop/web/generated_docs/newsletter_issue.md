@@ -1,10 +1,10 @@
 {% from 'macros.html' import lead with context %}
 
-# {title}
+# {{ newsletter_issue.subject }}
 
 {% call lead() %}
 Prohrabáváš se archivem zdejšího newsletteru a koukáš na jedno ze starších vydání.
-Pokud chceš, aby ti takové e-maily chodily čerstvé, [přihlaš se k odebírání](../news.jinja)!
+Pokud chceš, aby ti takové e-maily chodily za čerstva, [přihlaš se k odebírání](../news.jinja)!
 {% endcall %}
 
 <div class="newsletter-issue">
