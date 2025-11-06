@@ -81,6 +81,7 @@ logger = loggers.from_path(__file__)
 )
 @click.option("--channel", "channel_id", default="jobs", type=parse_channel)
 def main(channel_id: int):
+    return  # TODO temporary disable
     discord_task.run(sync_jobs, channel_id)
 
 
@@ -95,9 +96,11 @@ async def sync_jobs(client: ClubClient, channel_id: int):
     if tags_enum != tags_discord:
         raise ValueError(f"Tags don't match! {tags_discord ^ tags_enum}")
 
-    logger.debug("Clearing Discord jobs and URLs")
+    logger.debug("Clearing database of Discord jobs")
     DiscordJob.drop_table()
     DiscordJob.create_table()
+
+    logger.debug("Clearing Discord URLs")
     jobs = ListedJob.listing()
     for job in jobs:
         job.discord_url = None
@@ -119,6 +122,7 @@ async def sync_jobs(client: ClubClient, channel_id: int):
                     )
                 try:
                     url = message.ui_urls[0]
+                    logger.debug(f"Looking up: {url}")
                     job = ListedJob.get_by_url(url)
                 except ListedJob.DoesNotExist:
                     logger.info(f"Archiving: {url}")

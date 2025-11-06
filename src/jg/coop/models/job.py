@@ -20,6 +20,7 @@ from peewee import (
 from playhouse.shortcuts import model_to_dict
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
 
+from jg.coop.lib.job_urls import to_canonical_url
 from jg.coop.lib.mapycz import REGIONS, Location, repr_locations
 from jg.coop.lib.text import get_tag_slug
 from jg.coop.models.base import BaseModel, JSONField
@@ -51,7 +52,7 @@ class Tag(PydanticBaseModel):
 
 class SubmittedJob(BaseModel):
     id = CharField(primary_key=True)
-    boards_ids = JSONField(default=list, index=True)
+    canonical_ids = JSONField(default=list, index=True)
 
     title = CharField()
     posted_on = DateField(index=True)
@@ -106,7 +107,7 @@ class SubmittedJob(BaseModel):
 
 
 class ScrapedJob(BaseModel):
-    boards_ids = JSONField(default=list, index=True)
+    canonical_ids = JSONField(default=list, index=True)
 
     title = CharField()
     posted_on = DateField(index=True)
@@ -164,8 +165,8 @@ class ScrapedJob(BaseModel):
                     new_value = item.get(field_name, old_value)
                     setattr(self, field_name, new_value)
 
-    def _merge_boards_ids(self, item) -> list[str]:
-        return list(set(self.boards_ids + item.get("boards_ids", [])))
+    def _merge_canonical_ids(self, item) -> list[str]:
+        return list(set(self.canonical_ids + item.get("canonical_ids", [])))
 
     def _merge_items_hashes(self, item) -> list[str]:
         return list(set(self.items_hashes + item.get("items_hashes", [])))
@@ -225,7 +226,7 @@ class LogoSourceType(StrEnum):
 
 
 class ListedJob(BaseModel):
-    boards_ids = JSONField(default=list, index=True)
+    canonical_ids = JSONField(default=list, index=True)
     submitted_job = ForeignKeyField(SubmittedJob, unique=True, null=True)
     reason = CharField(null=True)
 
@@ -323,7 +324,7 @@ class ListedJob(BaseModel):
 
     @property
     def sources(self) -> list[str]:
-        return [board_id.split("#")[0] for board_id in self.boards_ids]
+        return [canonical_id.split("#")[0] for canonical_id in self.canonical_ids]
 
     @property
     def regions(self) -> list[str]:
@@ -382,10 +383,11 @@ class ListedJob(BaseModel):
         return cls.select().where(cls.submitted_job == submitted_job_id).get()
 
     @classmethod
-    def get_by_url(cls, url) -> Self:
+    def get_by_url(cls, url: str) -> Self:
+        # TODO look for URLs everywhere, be backwards compatible
         try:
-            return cls.select().where(cls.url == url).get()
-        except cls.DoesNotExist:
+            return cls.select().where(cls.url == to_canonical_url(url)).get()
+        except (ValueError, cls.DoesNotExist):
             return cls.select().where(cls.apply_url == url).get()
 
     @classmethod
@@ -457,7 +459,7 @@ class ListedJob(BaseModel):
             **{
                 f"external_ids_{i}": value
                 for i, value in columns(  # renamed elsewhere, but keeping backwards compatible
-                    self.boards_ids, 10
+                    self.canonical_ids, 10
                 )
             },
             **{

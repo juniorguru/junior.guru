@@ -1,7 +1,18 @@
 from urllib.parse import parse_qs, urlencode, urlparse, urlunparse
 
 
-UTM_PARAM_NAMES = ["utm_source", "utm_medium", "utm_campaign"]
+UTM_PARAM_NAMES = [
+    "utm_campaign",
+    "utm_content",
+    "utm_medium",
+    "utm_source",
+    "utm_term",
+]
+
+
+def get_params(url: str) -> dict[str, str]:
+    qs = urlparse(url).query
+    return {name: values[0] for name, values in parse_qs(qs).items()}
 
 
 def strip_params(url, param_names):

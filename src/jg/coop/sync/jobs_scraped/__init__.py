@@ -12,7 +12,6 @@ from jg.coop.lib.async_utils import make_async
 from jg.coop.lib.cli import async_command
 from jg.coop.models.base import db
 from jg.coop.models.job import DroppedJob, ScrapedJob
-from jg.coop.sync.jobs_scraped import linkedin
 
 
 PIPELINES = [
@@ -24,12 +23,15 @@ PIPELINES = [
     "jg.coop.sync.jobs_scraped.pipelines.language_filter",
     "jg.coop.sync.jobs_scraped.pipelines.llm_opinion",
     "jg.coop.sync.jobs_scraped.pipelines.relevance_filter",
-    "jg.coop.sync.jobs_scraped.pipelines.boards_ids",
+    "jg.coop.sync.jobs_scraped.pipelines.canonical_url",
     "jg.coop.sync.jobs_scraped.pipelines.gender_remover",
     "jg.coop.sync.jobs_scraped.pipelines.emoji_remover",
     "jg.coop.sync.jobs_scraped.pipelines.url_fixer",
+    "jg.coop.sync.jobs_scraped.pipelines.canonical_url",
     "jg.coop.sync.jobs_scraped.pipelines.employment_types_cleaner",
 ]
+
+LINKEDIN_ACTOR_NAME = "curious_coder/linkedin-jobs-scraper"
 
 
 logger = loggers.from_path(__file__)
@@ -54,10 +56,10 @@ async def main():
         for actor_name in jobs_actor_names
     )
 
-    if linkedin.ACTOR_NAME in scheduled_actor_names:
-        logger.info(f"LinkedIn Actor: {linkedin.ACTOR_NAME}")
-        linkedin_items = apify.fetch_data(linkedin.ACTOR_NAME, raise_if_missing=False)
-        items = itertools.chain(items, map(linkedin.transform_item, linkedin_items))
+    if LINKEDIN_ACTOR_NAME in scheduled_actor_names:
+        logger.info(f"LinkedIn Actor: {LINKEDIN_ACTOR_NAME}")
+        linkedin_items = apify.fetch_data(LINKEDIN_ACTOR_NAME, raise_if_missing=False)
+        items = itertools.chain(items, map(transform_linkedin_item, linkedin_items))
 
     logger.info(f"Pipelines:\n{pformat(PIPELINES)}")
     pipelines = [
@@ -82,6 +84,26 @@ async def main():
         count += 1
         drops += 1 - (await processing)
     logger.info(f"Stats: {count} items, {drops} drops")
+
+
+def transform_linkedin_item(item: dict) -> dict:
+    try:
+        return dict(
+            title=item["title"],
+            posted_on=item["postedAt"],
+            url=item["link"],
+            apply_url=item.get("applyUrl") or None,
+            company_name=item["companyName"],
+            company_url=item.get("companyWebsite"),
+            company_logo_urls=[item["companyLogo"]],
+            locations_raw=[item["location"]],
+            employment_types=[item.get("employmentType", "Full-time")],
+            description_html=item.get("descriptionHtml", item["descriptionText"]),
+            source="jobs-linkedin",
+            source_urls=[item["inputUrl"]],
+        )
+    except Exception as e:
+        raise RuntimeError(f"Couldn't transform LinkedIn item:\n{pformat(item)}") from e
 
 
 async def process_item(

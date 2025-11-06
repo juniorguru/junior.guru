@@ -20,8 +20,8 @@ from jg.coop.lib.md import md
 from jg.coop.lib.text import extract_text
 from jg.coop.models.base import db
 from jg.coop.models.job import SubmittedJob
-from jg.coop.sync.jobs_scraped.pipelines.boards_ids import (
-    parse_urls as parse_board_ids,
+from jg.coop.sync.jobs_scraped.pipelines.canonical_url import (
+    urls_to_ids as urls_to_canonical_ids,
 )
 from jg.coop.sync.jobs_scraped.pipelines.employment_types_cleaner import (
     clean_employment_types,
@@ -97,7 +97,7 @@ def coerce_record(record, today=None):
     data["id"] = create_id(data["submitted_at"], data["company_url"])
     data["url"] = f"https://junior.guru/jobs/{data['id']}/"
     urls = filter(None, [data["url"], data.get("apply_url")])
-    data["boards_ids"] = parse_board_ids(urls)
+    data["canonical_ids"] = urls_to_canonical_ids(urls)
 
     data["description_text"] = extract_text(data["description_html"])
     data["lang"] = parse_language(data["description_text"])
