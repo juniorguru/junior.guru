@@ -20,7 +20,7 @@ from peewee import (
 from playhouse.shortcuts import model_to_dict
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
 
-from jg.coop.lib.job_urls import to_canonical_url
+from jg.coop.lib.job_urls import url_to_id
 from jg.coop.lib.mapycz import REGIONS, Location, repr_locations
 from jg.coop.lib.text import get_tag_slug
 from jg.coop.models.base import BaseModel, JSONField
@@ -136,7 +136,17 @@ class ScrapedJob(BaseModel):
 
     @classmethod
     def get_by_item(cls, item) -> Self:
-        return cls.select().where(cls.url == item["url"]).get()
+        url = item["url"]
+        if canonical_id := url_to_id(url):
+            canonical_ids = cls.canonical_ids.children().alias("canonical_ids")
+            return (
+                cls.select()
+                .from_(cls, canonical_ids)
+                .where(canonical_ids.c.value == canonical_id)
+                .get()
+            )
+        else:
+            raise ValueError(f"Could not determine canonical ID: {url}")
 
     @classmethod
     def from_item(cls, item) -> Self:
@@ -384,11 +394,16 @@ class ListedJob(BaseModel):
 
     @classmethod
     def get_by_url(cls, url: str) -> Self:
-        # TODO look for URLs everywhere, be backwards compatible
-        try:
-            return cls.select().where(cls.url == to_canonical_url(url)).get()
-        except (ValueError, cls.DoesNotExist):
-            return cls.select().where(cls.apply_url == url).get()
+        if canonical_id := url_to_id(url):
+            canonical_ids = cls.canonical_ids.children().alias("canonical_ids")
+            return (
+                cls.select()
+                .from_(cls, canonical_ids)
+                .where(canonical_ids.c.value == canonical_id)
+                .get()
+            )
+        else:
+            raise ValueError(f"Could not determine canonical ID: {url}")
 
     @classmethod
     def remote_listing(cls) -> Iterable[Self]:

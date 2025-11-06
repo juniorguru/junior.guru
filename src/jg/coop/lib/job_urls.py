@@ -58,9 +58,3 @@ def get_order(canonical_id: str) -> int:
 def urls_to_ids(urls: list[str]) -> list[str]:
     ids = filter(None, map(url_to_id, urls))
     return sorted(set(ids), key=get_order)
-
-
-def to_canonical_url(url: str) -> str:
-    if canonical_id := url_to_id(url):
-        return id_to_url(canonical_id)
-    raise ValueError(f"Could not determine canonical ID from URL: {url}")

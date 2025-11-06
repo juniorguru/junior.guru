@@ -81,7 +81,6 @@ logger = loggers.from_path(__file__)
 )
 @click.option("--channel", "channel_id", default="jobs", type=parse_channel)
 def main(channel_id: int):
-    return  # TODO temporary disable
     discord_task.run(sync_jobs, channel_id)
 
 
