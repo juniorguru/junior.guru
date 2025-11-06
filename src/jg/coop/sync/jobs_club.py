@@ -159,7 +159,7 @@ async def sync_jobs(client: ClubClient, channel_id: int):
     jobs = ListedJob.no_discord_listing()
     logger.info(f"Posting {len(jobs)} new jobs to the channel")
     for job in jobs:
-        logger.info(f"Posting: {job.effective_url}")
+        logger.info(f"Posting: {job.url}")
         forum_tags = get_forum_tags(TAGS_MAPPING, channel.available_tags, job.tech_tags)
         if len(forum_tags) > MAX_FORUM_TAGS:
             raise ValueError(f"Too many tags: {[tag.name for tag in forum_tags]}")
@@ -335,7 +335,5 @@ async def prepare_thread_params(job: ListedJob) -> dict:
         content=content,
         files=files,
         embeds=embeds,
-        view=ui.View(
-            ui.Button(emoji="👉", label="Celý inzerát", url=job.effective_url)
-        ),
+        view=ui.View(ui.Button(emoji="👉", label="Celý inzerát", url=job.url)),
     )

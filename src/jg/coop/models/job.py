@@ -276,12 +276,6 @@ class ListedJob(BaseModel):
         return None
 
     @property
-    def effective_url(self) -> str:
-        if self.is_submitted:
-            return self.url
-        return self.apply_url or self.url
-
-    @property
     def company_atmoskop_url(self) -> str:
         return f"https://www.atmoskop.cz/hledani?q={quote_plus(self.company_name)}"
 
@@ -434,7 +428,7 @@ class ListedJob(BaseModel):
                 "@context": "https://schema.org",
                 "@type": "JobPosting",
                 "title": self.title,
-                "url": self.effective_url,
+                "url": self.url,
                 "description": (
                     "Pracovní nabídka pro začínající programátory nebo testery: "
                     + " — ".join([self.title, self.company_name, self.location])
@@ -461,7 +455,7 @@ class ListedJob(BaseModel):
             **dict(
                 title=self.title,
                 company_name=self.company_name,
-                url=self.effective_url,
+                url=self.url,
                 remote=self.remote,
                 first_seen_at=datetime.combine(
                     self.posted_on, time(0, 0)
