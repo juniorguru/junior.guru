@@ -5,6 +5,7 @@ from enum import StrEnum
 def regex(pattern: str) -> re.Pattern:
     return re.compile(pattern, re.I)
 
+
 class Names(StrEnum):
     GOVCZ = "govcz"
     JOBSCZ = "jobscz"
@@ -15,7 +16,12 @@ class Names(StrEnum):
 
 REGEXES = [
     (Names.JUNIORGURU, regex(r"\bjunior\.guru/jobs/(?P<id>[0-9a-fA-F]+)")),
-    (Names.GOVCZ, regex(r"\bportal\.isoss\.gov\.cz/irj/portal/anonymous/eosmlistpublic#/detail/(?P<id>\d+)")),
+    (
+        Names.GOVCZ,
+        regex(
+            r"\bportal\.isoss\.gov\.cz/irj/portal/anonymous/eosmlistpublic#/detail/(?P<id>\d+)"
+        ),
+    ),
     (Names.STARTUPJOBS, regex(r"\bstartupjobs\.cz/nabidka/(?P<id>\d+/[^/]+)")),
     (Names.JOBSCZ, regex(r"\bwww\.jobs\.cz/rpd/(?P<id>\d+)")),
     (Names.JOBSCZ, regex(r"\bwww\.jobs\.cz/fp/[^/]+/(?P<id>\d+)")),
