@@ -1,8 +1,8 @@
 from datetime import date, datetime, timedelta
 
 import click
-from discord.abc import GuildChannel
 import httpx
+from discord.abc import GuildChannel
 from pydantic import BaseModel
 
 from jg.coop.cli.sync import main as cli
@@ -14,7 +14,6 @@ from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
 from jg.coop.models.newsletter import NewsletterIssue
 from jg.coop.models.page import Page
-from jg.coop.sync import newsletter
 
 
 logger = loggers.from_path(__file__)
@@ -40,7 +39,9 @@ class PreparedMessage(BaseModel):
 @click.option("--emoji", default="💌", type=str)
 @db.connection_context()
 @async_command
-async def main(users_channel_id: int, admin_channel_id: int, today: date, emoji: str) -> None:
+async def main(
+    users_channel_id: int, admin_channel_id: int, today: date, emoji: str
+) -> None:
     this_month = months.this_month(today)
     messages = []
     logger.info(f"Checking email drafts since {this_month}")
@@ -71,11 +72,17 @@ async def main(users_channel_id: int, admin_channel_id: int, today: date, emoji:
 
         if newsletter_issue_date >= (today - timedelta(days=60)):
             logger.info("Newsletter issue is recent enough!")
-            if message := ClubMessage.last_bot_message(users_channel_id, starting_emoji=emoji, contains_text=newsletter_issue_url):
+            if message := ClubMessage.last_bot_message(
+                users_channel_id,
+                starting_emoji=emoji,
+                contains_text=newsletter_issue_url,
+            ):
                 logger.info(f"Club post for users already exists: {message.url}")
             else:
                 logger.info("Preparing club post for users")
-                messages.append(create_users_message(emoji, users_channel_id, newsletter_issue))
+                messages.append(
+                    create_users_message(emoji, users_channel_id, newsletter_issue)
+                )
         else:
             logger.warning("Latest newsletter issue not recent enough")
     logger.debug(f"Prepared {len(messages)} messages:\n{messages!r}")
@@ -99,7 +106,9 @@ def create_admin_message(emoji: str, channel_id: int, data: dict) -> PreparedMes
     )
 
 
-def create_users_message(emoji: str, channel_id: int, newsletter_issue: NewsletterIssue) -> PreparedMessage:
+def create_users_message(
+    emoji: str, channel_id: int, newsletter_issue: NewsletterIssue
+) -> PreparedMessage:
     return PreparedMessage(
         channel_id=channel_id,
         content=(

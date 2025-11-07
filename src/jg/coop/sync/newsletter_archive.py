@@ -36,7 +36,7 @@ async def main(archive_dir: Path, today: date):
             logger.info(f"Fetched {email_data['absolute_url']}")
             published_on = datetime.fromisoformat(email_data["publish_date"]).date()
             path = archive_dir / f"{published_on}.json"
-            path.write_text(json.dumps(email_data, ensure_ascii=False, indent=2))
+            path.write_text(json.dumps(email_data, ensure_ascii=False, indent=2) + "\n")
             logger.info(f"Archived as {path}")
 
     logger.info("Saving published issues to database")

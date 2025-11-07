@@ -28,11 +28,7 @@ def strip_utm_params(url: str) -> str:
 def get_utm_params(url: str) -> dict[str, str]:
     parts = urlparse(url)
     params = parse_qs(parts.query)
-    return {
-        name: params[name][0]
-        for name in UTM_PARAM_NAMES
-        if params.get(name)
-    }
+    return {name: params[name][0] for name in UTM_PARAM_NAMES if params.get(name)}
 
 
 def put_utm_params(url: str, utm_params: dict[str, str]) -> str:
