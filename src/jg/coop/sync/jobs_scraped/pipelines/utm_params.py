@@ -6,11 +6,6 @@ from jg.coop.lib.utm_params import get_utm_params, put_utm_params
 
 
 async def process(item: dict) -> dict:
-    try:
-        url = item["url"]
-    except KeyError:
-        raise ValueError(f"Item has no URLs:\n{pformat(item)}")
-
     utm_params = defaultdict(set)
     for url in get_all_urls(item):
         for name, value in get_utm_params(url).items():
@@ -21,5 +16,9 @@ async def process(item: dict) -> dict:
     }
     utm_params = dict(sorted(utm_params.items()))  # deterministic order for tests
 
-    item["url"] = put_utm_params(url, utm_params)
+    try:
+        canonical_url = item["url"]
+    except KeyError:
+        raise ValueError(f"Item has no URLs:\n{pformat(item)}")
+    item["url"] = put_utm_params(canonical_url, utm_params)
     return item

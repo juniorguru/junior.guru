@@ -42,16 +42,16 @@ from jg.coop.sync.jobs_scraped.pipelines.utm_params import process
             "https://www.startupjobs.cz/nabidka/97145/backend-engineer?utm_campaign=linkedin&utm_source=juniorguru",
             id="URLs contain conflicting params, source changes to JG, drop others if differing",
         ),
-        # pytest.param(
-        #     dict(
-        #         url="https://example.com/?something=12345",
-        #         source_urls=[
-        #             "https://example.com/?utm_source=linkedin&utm_medium=cpc&utm_campaign=linkedin"
-        #         ],
-        #     ),
-        #     "https://example.com/?something=12345&utm_campaign=linkedin&utm_medium=cpc&utm_source=juniorguru",
-        #     id="Other params in URL are preserved",
-        # ),
+        pytest.param(
+            dict(
+                url="https://example.com/?something=12345",
+                source_urls=[
+                    "https://example.com/?utm_source=linkedin&utm_medium=cpc&utm_campaign=linkedin"
+                ],
+            ),
+            "https://example.com/?something=12345&utm_campaign=linkedin&utm_medium=cpc&utm_source=juniorguru",
+            id="Other params in URL are preserved",
+        ),
     ],
 )
 @pytest.mark.asyncio
