@@ -1,6 +1,7 @@
 import pytest
 
 from jg.coop.lib.job_urls import (
+    get_all_urls,
     get_order,
     id_to_url,
     url_to_id,
@@ -93,6 +94,10 @@ def test_id_to_url_raises_not_implemented_error_for_unknown_name():
             "https://portal.isoss.gov.cz/irj/portal/anonymous/eosmlistpublic#/detail/30093955",
             "govcz#30093955",
         ),
+        (
+            "https://www.startupjobs.cz/nabidka/97145/backend-engineer?utm_source=juniorguru&utm_medium=cpc&utm_campaign=juniorguru",
+            "startupjobs#97145/backend-engineer",
+        ),
     ],
 )
 def test_url_to_id(url: str, expected: str):
@@ -156,3 +161,46 @@ def test_get_order():
     assert get_order("juniorguru#abcdef", ordering) == 0
     assert get_order("linkedin#123456", ordering) == 1
     assert get_order("jobscz#654321", ordering) == 2
+
+
+def test_get_all_urls():
+    item = {
+        "url": "https://www.startupjobs.cz/nabidka/48407/venture-capital-analyst-associate",
+        "apply_url": "https://www.startupjobs.cz/nabidka/48407/venture-capital-analyst-associate/apply",
+        "source_urls": [
+            "https://example.com/some-job-posting",
+            "https://www.startupjobs.cz/nabidka/48407/venture-capital-analyst-associate",
+        ],
+    }
+
+    assert get_all_urls(item) == [
+        "https://example.com/some-job-posting",
+        "https://www.startupjobs.cz/nabidka/48407/venture-capital-analyst-associate",
+        "https://www.startupjobs.cz/nabidka/48407/venture-capital-analyst-associate/apply",
+    ]
+
+
+def test_get_all_urls_no_urls():
+    assert get_all_urls({}) == []
+
+
+def test_get_all_urls_empty_apply_url():
+    item = {
+        "url": "https://www.startupjobs.cz/nabidka/48407/venture-capital-analyst-associate",
+    }
+
+    assert get_all_urls(item) == [
+        "https://www.startupjobs.cz/nabidka/48407/venture-capital-analyst-associate",
+    ]
+
+
+def test_get_all_urls_empty_source_urls():
+    item = {
+        "url": "https://www.startupjobs.cz/nabidka/48407/venture-capital-analyst-associate",
+        "apply_url": "https://www.startupjobs.cz/nabidka/48407/venture-capital-analyst-associate/apply",
+    }
+
+    assert get_all_urls(item) == [
+        "https://www.startupjobs.cz/nabidka/48407/venture-capital-analyst-associate",
+        "https://www.startupjobs.cz/nabidka/48407/venture-capital-analyst-associate/apply",
+    ]

@@ -15,7 +15,7 @@ from mkdocs.structure.pages import Page
 from slugify import slugify
 
 from jg.coop.lib.md import md as md_
-from jg.coop.lib.url_params import strip_utm_params
+from jg.coop.lib.utm_params import strip_utm_params
 
 
 def email_link(email: str) -> Markup:

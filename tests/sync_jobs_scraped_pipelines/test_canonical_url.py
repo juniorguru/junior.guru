@@ -21,6 +21,19 @@ from jg.coop.sync.jobs_scraped.pipelines.canonical_url import process
         ),
         pytest.param(
             dict(
+                url="https://www.startupjobs.cz/nabidka/97145/backend-engineer?utm_source=juniorguru&utm_medium=cpc&utm_campaign=juniorguru"
+            ),
+            dict(
+                canonical_ids=["startupjobs#97145/backend-engineer"],
+                url="https://www.startupjobs.cz/nabidka/97145/backend-engineer",
+                source_urls=[
+                    "https://www.startupjobs.cz/nabidka/97145/backend-engineer?utm_source=juniorguru&utm_medium=cpc&utm_campaign=juniorguru"
+                ],
+            ),
+            id="UTM params",
+        ),
+        pytest.param(
+            dict(
                 url="https://www.linkedin.com/jobs/view/4334211481",
                 apply_url="https://mafra.jobs.cz/detail-pozice?r=detail&id=2000805294",
                 source_urls=[
@@ -68,8 +81,8 @@ async def test_canonical_url(item: dict, expected: dict):
 
 
 @pytest.mark.asyncio
-async def test_canonical_url_without_url():
-    with pytest.raises(RuntimeError, match="Item has no URL"):
+async def test_canonical_url_without_urls():
+    with pytest.raises(ValueError, match="Item has no URLs"):
         await process({})
 
 
@@ -81,5 +94,5 @@ async def test_canonical_url_no_ids():
         "source_urls": [],
     }
 
-    with pytest.raises(NotImplementedError, match="Could not parse canonical IDs"):
+    with pytest.raises(NotImplementedError, match="No canonical IDs"):
         await process(item)

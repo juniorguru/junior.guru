@@ -23,7 +23,7 @@ REGEXES = [
             r"\bportal\.isoss\.gov\.cz/irj/portal/anonymous/eosmlistpublic#/detail/(?P<id>\d+)"
         ),
     ),
-    (Names.STARTUPJOBS, regex(r"\bstartupjobs\.cz/nabidka/(?P<id>\d+/[^/]+)")),
+    (Names.STARTUPJOBS, regex(r"\bstartupjobs\.cz/nabidka/(?P<id>\d+/[\w\-]+)")),
     (Names.JOBSCZ, regex(r"\bwww\.jobs\.cz/rpd/(?P<id>\d+)")),
     (Names.JOBSCZ, regex(r"\bwww\.jobs\.cz/fp/[^/]+/(?P<id>\d+)")),
     (Names.JOBSCZ, regex(r"\.jobs\.cz/detail-pozice.*[\&\?]id=(?P<id>\d+)")),
@@ -67,3 +67,9 @@ def get_order(canonical_id: str, ordering: list[str] | None = None) -> int:
 def urls_to_ids(urls: list[str], ordering: list[str] | None = None) -> list[str]:
     ids = filter(None, map(url_to_id, urls))
     return sorted(set(ids), key=partial(get_order, ordering=ordering))
+
+
+def get_all_urls(item: dict) -> list[str]:
+    source_urls = item.get("source_urls", [])
+    urls = source_urls + [item.get("url"), item.get("apply_url")]
+    return sorted(filter(None, set(urls)))

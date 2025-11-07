@@ -23,11 +23,11 @@ PIPELINES = [
     "jg.coop.sync.jobs_scraped.pipelines.language_filter",
     "jg.coop.sync.jobs_scraped.pipelines.llm_opinion",
     "jg.coop.sync.jobs_scraped.pipelines.relevance_filter",
-    "jg.coop.sync.jobs_scraped.pipelines.canonical_url",
     "jg.coop.sync.jobs_scraped.pipelines.gender_remover",
     "jg.coop.sync.jobs_scraped.pipelines.emoji_remover",
     "jg.coop.sync.jobs_scraped.pipelines.url_fixer",
     "jg.coop.sync.jobs_scraped.pipelines.canonical_url",
+    "jg.coop.sync.jobs_scraped.pipelines.utm_params",
     "jg.coop.sync.jobs_scraped.pipelines.employment_types_cleaner",
 ]
 
