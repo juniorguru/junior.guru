@@ -193,6 +193,7 @@ def generate_newsletter_issue_pages() -> Generator[GeneratedDocument, None, None
             meta=dict(
                 title=newsletter_issue.subject,
                 description="Začínáš v IT? V tomhle newsletteru najdeš pozvánky, kurzy, podcasty, přednášky, články a další zdroje, které tě posunou a namotivují.",
+                date=newsletter_issue.published_on.isoformat(),
                 newsletter_issue_id=newsletter_issue.id,
                 template="main_subnav.html",
                 thumbnail_title=newsletter_issue.subject,

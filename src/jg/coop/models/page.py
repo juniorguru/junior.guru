@@ -70,6 +70,14 @@ class Page(BaseModel):
         return cls.select()
 
     @classmethod
+    def newsletter_listing(cls) -> Iterable[Self]:
+        return (
+            cls.listing()
+            .where(cls.src_uri.startswith("news/"))
+            .order_by(cls.date.desc())
+        )
+
+    @classmethod
     def stage_listing(cls, slug: str) -> Iterable[Self]:
         stages = cls.stages.children().alias("stages")
         return (

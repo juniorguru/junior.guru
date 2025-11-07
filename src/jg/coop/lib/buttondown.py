@@ -95,6 +95,13 @@ class ButtondownAPI:
             "GET", "emails", params={"publish_date__start": since_date.isoformat()}
         )
 
+    async def get_drafts_since(self, since_date: date) -> dict:
+        return await self._request(
+            "GET",
+            "emails",
+            params={"status": "draft", "creation_date__start": since_date.isoformat()},
+        )
+
     @mutations.mutates_buttondown()
     async def update_email(self, email_id: str, email_data: dict) -> None:
         return await self._request("PATCH", f"emails/{email_id}", json=email_data)
