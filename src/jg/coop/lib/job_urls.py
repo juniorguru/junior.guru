@@ -1,5 +1,6 @@
 import re
 from enum import StrEnum
+from functools import partial
 
 
 def regex(pattern: str) -> re.Pattern:
@@ -44,23 +45,25 @@ def id_to_url(canonical_id: str) -> str:
     name, id_ = canonical_id.split("#", 1)
     try:
         return TEMPLATES[Names(name)].format(id=id_)
+    except ValueError:
+        raise NotImplementedError(f"Unknown name {name!r}")
     except KeyError:
         raise NotImplementedError(f"No URL template for {name!r}")
 
 
 def url_to_id(url) -> str | None:
     for name, id_regex in REGEXES:
-        match = id_regex.search(url)
-        if match:
+        if match := id_regex.search(url):
             return f"{name}#{match.group('id')}"
     return None
 
 
-def get_order(canonical_id: str) -> int:
+def get_order(canonical_id: str, ordering: list[str] | None = None) -> int:
+    ordering = ordering or ORDERING
     board_name = canonical_id.split("#", 1)[0]
-    return ORDERING.index(board_name)
+    return ordering.index(board_name)
 
 
-def urls_to_ids(urls: list[str]) -> list[str]:
+def urls_to_ids(urls: list[str], ordering: list[str] | None = None) -> list[str]:
     ids = filter(None, map(url_to_id, urls))
-    return sorted(set(ids), key=get_order)
+    return sorted(set(ids), key=partial(get_order, ordering=ordering))
