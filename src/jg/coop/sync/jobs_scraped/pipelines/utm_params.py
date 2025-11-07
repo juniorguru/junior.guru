@@ -15,10 +15,11 @@ async def process(item: dict) -> dict:
     for url in get_all_urls(item):
         for name, value in get_utm_params(url).items():
             utm_params[name].add(value)
-    utm_params = {name: values.pop() for name, values in utm_params.items() if len(values) == 1}
     utm_params["utm_source"] = {"juniorguru"}
+    utm_params = {
+        name: values.pop() for name, values in utm_params.items() if len(values) == 1
+    }
     utm_params = dict(sorted(utm_params.items()))  # deterministic order for tests
 
     item["url"] = put_utm_params(url, utm_params)
     return item
-
