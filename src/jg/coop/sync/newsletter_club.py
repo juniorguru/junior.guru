@@ -46,12 +46,16 @@ async def main(
     messages = []
     logger.info(f"Checking email drafts since {this_month}")
     async with ButtondownAPI() as api:
-        data = await api.get_drafts_since(this_month)
+        data = await api.get_emails_since(this_month)
         if data["count"]:
-            logger.info("Preparing admin club post")
-            messages.append(create_admin_message(emoji, admin_channel_id, data))
+            logger.info("Newsletter already published this month")
         else:
-            logger.info("No email drafts found")
+            data = await api.get_drafts_since(this_month)
+            if data["count"]:
+                logger.info("Preparing admin club post")
+                messages.append(create_admin_message(emoji, admin_channel_id, data))
+            else:
+                logger.info("No drafts found")
 
     logger.info("Checking published and archived newsletter issues")
     newsletter_issue_page = Page.newsletter_listing()[0]
