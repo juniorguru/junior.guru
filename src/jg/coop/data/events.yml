@@ -62,6 +62,8 @@ registry:
   - id: 55
     title: "Jak se učit v době AI"
     date: "2025-11-22"
+    time: "09:30"
+    expected_duration_h: 2
     description: |
       Sledování tutoriálů, podtrhávání textu, opakované čtení – většina z nás se učí způsobem, který nefunguje. Na přednášce si vysvětlíme, jak učení skutečně funguje – co se děje v mozku, když se něco učíme, a proč některé metody selhávají. Na základě toho pochopíte, jak si sestavit vlastní strategii učení, která bude odpovídat vám, i vašim studijním cílům. Zjistíte, jak vám v tom může pomoci umělá inteligence, a kdy je lepší ji nepoužít.
     avatar_path: avatars-participants/lucie-lenertova.jpg
