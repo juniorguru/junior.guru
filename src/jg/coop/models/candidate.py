@@ -1,7 +1,8 @@
+import itertools
 from enum import StrEnum, auto
+from operator import attrgetter
 from typing import Iterable, Self
 
-from emoji import LANGUAGES
 from peewee import (
     BooleanField,
     CharField,
@@ -12,7 +13,7 @@ from peewee import (
 )
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
 
-from jg.coop.lib.mapycz import Location, repr_locations
+from jg.coop.lib.mapycz import REGIONS, Location, repr_locations
 from jg.coop.lib.text import get_tag_slug
 from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubUser
@@ -121,6 +122,27 @@ class Candidate(BaseModel):
         return cls.select().order_by(
             cls.is_ready.desc(), cls.is_member.desc(), cls.name
         )
+
+    @classmethod
+    def region_tags(cls) -> list[Tag]:
+        return [
+            Tag(slug=get_tag_slug(region), type=TagType.LOCATION) for region in REGIONS
+        ]
+
+    @classmethod
+    def tags_by_type(cls) -> dict[str, list[Tag]]:
+        tags = sorted(
+            set(
+                itertools.chain.from_iterable(
+                    candidate.tags for candidate in cls.listing()
+                )
+            ),
+            key=attrgetter("type", "slug"),
+        )
+        return {
+            str(type).lower(): list(tags)
+            for type, tags in itertools.groupby(tags, key=attrgetter("type"))
+        }
 
 
 class CandidateProject(BaseModel):

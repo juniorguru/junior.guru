@@ -98,6 +98,8 @@ def on_docs_context(context):
 
     # candidates.md
     context["candidates"] = Candidate.listing()
+    context["candidates_tags"] = Candidate.tags_by_type()
+    context["candidates_region_tags"] = Candidate.region_tags()
 
     # handbook/index.md
     context["stages"] = Stage.listing()

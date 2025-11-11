@@ -16,14 +16,93 @@ template: main_subnav.html
   Oslovuješ napřímo, nic neplatíš.
 {% endcall %}
 
-{% call note() -%}
+<h2 hidden>Jak to funguje</h2>
+<ul class="explainer">
+  <li class="explainer-item">
+    {{ 'github'|icon }}
+    <span>
+      Junioři musí <strong>prokázat iniciativu a základní technickou zdatnost</strong>, aby se v seznamu vůbec objevili.
+      <small>Sami se musí dokázat přidat přes <a href="https://github.com/juniorguru/eggtray/">github.com/juniorguru/eggtray</a>.</small>
+    </span>
+  </li>
+  <li class="explainer-item">
+    {{ 'check-circle-fill'|icon }}
+    <span>
+      Robot každý den vyhodnocuje, které profily <strong>splňují naše standardy</strong>. Ty ostatní se zobrazí poloprůhledně.
+      <small>Klidně si <a href="{{ pages|docs_url('handbook/github-profile.md')|url }}">zpětnou vazbu od robota</a> vyzkoušej.</small>
+    </span>
+  </li>
+  <li class="explainer-item">
+    {{ 'star-fill'|icon }}
+    <span>
+      Pokud junior vše splňuje a navíc <strong>se rozvíjí v našem klubu</strong>, zobrazí se žlutě.
+      <small>Naše <a href="{{ pages|docs_url('club.md')|url }}">online komunita</a> dává juniorům kontakt s realitou, seniorní dohled a ověřuje jejich komunikační schopnosti.</small>
+    </span>
+  </li>
+  <li class="explainer-item">
+    {{ 'piggy-bank-fill'|icon }}
+    <span>
+      Když si někoho vybereš, <strong>opravdu nic neplatíš</strong>. Oslovuješ napřímo.
+      <small>Pokud chceš projevit vděčnost, podpoř junior.guru <a href="{{ pages|docs_url('love.jinja')|url }}">dobrovolným příspěvkem nebo sponzorstvím</a>.</small>
+    </span>
+  </li>
+</ul>
+
+{#
+{% call note(standout=true) -%}
   {{ 'plus-circle'|icon }} Chceš tady být taky? Přidej se přes <a href="https://github.com/juniorguru/eggtray/">github.com/juniorguru/eggtray</a>, jestli to dokážeš!
 {%- endcall %}
+#}
+
+<dl class="candidates-tags standout noscript">
+  <dt class="candidates-tags-heading">{{ "geo-alt"|icon }} Místo:</dt>
+  <dd>
+      {% for tag in candidates_region_tags %}
+        <span
+          class="candidates-tag"
+          hidden
+          data-candidates-tag="{{ tag.slug }}"
+          data-candidates-tag-type="{{ tag.type|lower }}"
+        >
+          {{- tag.name -}}
+        </span>
+      {% endfor %}
+      <span class="candidates-noscript">Stala se chyba a filtrování nefunguje</span>
+  </dd>
+  <dt class="candidates-tags-heading">{{ "tools"|icon }} Zaměření:</dt>
+  <dd>
+    {% for tag in candidates_tags.topic %}
+      <span
+        class="candidates-tag"
+        hidden
+        data-candidates-tag="{{ tag.slug }}"
+        data-candidates-tag-type="{{ tag.type|lower }}"
+      >
+        {{- tag.name -}}
+      </span>
+    {% endfor %}
+    <span class="candidates-noscript">Stala se chyba a filtrování nefunguje</span>
+  </dd>
+  <dt class="candidates-tags-heading">{{ "chat-dots"|icon }} Jazyky:</dt>
+  <dd>
+    {% for tag in candidates_tags.language %}
+      <span
+        class="candidates-tag"
+        hidden
+        data-candidates-tag="{{ tag.slug }}"
+        data-candidates-tag-type="{{ tag.type|lower }}"
+      >
+        {{- tag.name -}}
+      </span>
+    {% endfor %}
+    <span class="candidates-noscript">Stala se chyba a filtrování nefunguje</span>
+  </dd>
+</dl>
 
 <div class="candidates">
   <ul class="candidates-list">
     {% for candidate in candidates %}
-    <li class="candidates-item openable tagged{% if candidate.is_highlighted %} highlighted{% endif %}">
+    <li class="candidates-item openable tagged{% if candidate.is_highlighted %} highlighted{% elif not candidate.is_ready %} muted{% endif %}">
       <div class="candidates-item-container">
         <div class="candidates-avatar">
           {{ img('static/' + candidate.avatar_path, candidate.name + ' (avatar)', 100, 100, class="candidates-image") }}
@@ -54,7 +133,7 @@ template: main_subnav.html
             {% endfor %}
           </p>
           {% if candidate.experience_text %}
-          <div class="candidates-details" {# hidden #}>
+          <div class="candidates-details" hidden>
             <h4 class="candidates-details-heading">Praxe</h4>
             <ul class="candidates-details-items">
               <li class="candidate-details-item">
@@ -63,7 +142,7 @@ template: main_subnav.html
             </ul>
           </div>
           {% endif %}
-          <div class="candidates-details" {# hidden #}>
+          <div class="candidates-details" hidden>
             <h4 class="candidates-details-heading">Škola</h4>
             <ul class="candidates-details-items">
               <li class="candidate-details-item">
@@ -72,7 +151,7 @@ template: main_subnav.html
             </ul>
           </div>
           {% if candidate.domains %}
-          <div class="candidates-details" {# hidden #}>
+          <div class="candidates-details" hidden>
             <h4 class="candidates-details-heading">Čemu také rozumí</h4>
             <ul class="candidates-details-items">
               {% for domain in candidate.domains %}
@@ -85,7 +164,7 @@ template: main_subnav.html
           {% endif %}
         </div>
       </div>
-      <div class="candidates-actions" {# hidden #}>
+      <div class="candidates-actions" hidden>
         <ul class="candidates-actions-list">
           {% if candidate.email %}
           <li class="candidates-action-email">
@@ -128,4 +207,14 @@ template: main_subnav.html
       </div>
     </li>
   {% endfor %}
+    <li class="candidates-empty" hidden>
+      {% call note() -%}
+        {{ 'search'|icon }}
+        Tvým filtrům neodpovídají žádní kandidáti.
+        {{- ' ' -}}
+        {%- if not is_remote_listing -%}
+          Pokud hledáš podle místa, zkus přidat <span class="candidates-tag active">#remote</span>.
+        {%- endif -%}
+      {%- endcall %}
+    </li>
 </ul>
