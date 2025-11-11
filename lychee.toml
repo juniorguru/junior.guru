@@ -32,6 +32,7 @@ timeout = 40
 exclude_path = [
     "/jobs/index\\.html$",
     "/jobs/[^/]+/index\\.html$",
+    "/news/[^/]+/index\\.html$",
 ]
 exclude = [
     # Specifications
