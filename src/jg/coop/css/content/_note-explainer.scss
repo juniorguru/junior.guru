@@ -1,4 +1,4 @@
-.explainer {
+.note-explainer {
   @extend .list-unstyled;
   // @extend .fs-4;
   display: flex;
@@ -10,12 +10,12 @@
   border-radius: $border-radius;
 }
 
-.explainer-item {
+.note-explainer-item {
   display: flex;
   gap: $spacer;
   align-items: flex-start;
 }
 
-.explainer-item i {
+.note-explainer-item i {
   color: $jg-blue;
 }
