@@ -1,12 +1,10 @@
 .note-explainer {
   @extend .list-unstyled;
-  // @extend .fs-4;
   display: flex;
   flex-direction: column;
   gap: $spacer;
   padding: $spacer;
-  background: $jg-yellow-light;
-  border: 1px dotted $jg-yellow;
+  background: $jg-blue-light;
   border-radius: $border-radius;
 }
 
