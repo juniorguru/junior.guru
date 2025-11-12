@@ -21,7 +21,7 @@ from jg.coop.models.club import ClubUser
 
 class TagType(StrEnum):
     LOCATION = auto()
-    TOPIC = auto()
+    SKILL = auto()
     LANGUAGE = auto()
 
 
@@ -49,7 +49,7 @@ class Candidate(BaseModel):
     location_raw = CharField(null=True)
     location = JSONField(null=True)
     linkedin_url = CharField(null=True)
-    topics = JSONField(default=list)
+    skills = JSONField(default=list)
     domains = JSONField(default=list)
     experience = JSONField(default=list)
     secondary_school = CharField(null=True)
@@ -69,8 +69,8 @@ class Candidate(BaseModel):
     @property
     def tags(self) -> list[Tag]:
         tags = []
-        for topic in self.topics:
-            tags.append(Tag(slug=get_tag_slug(topic), type=TagType.TOPIC))
+        for skill in self.skills:
+            tags.append(Tag(slug=get_tag_slug(skill), type=TagType.SKILL))
         if self.location:
             slug = get_tag_slug(self.location["region"])
             tags.append(Tag(slug=slug, type=TagType.LOCATION))
