@@ -1,5 +1,5 @@
 import click
-import requests
+import httpx
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
@@ -19,7 +19,7 @@ def main(api_url: str):
     db.create_tables([Candidate, CandidateProject])
 
     logger.info("Reading API")
-    response = requests.get(api_url)
+    response = httpx.get(api_url)
     response.raise_for_status()
 
     for candidate_item in response.json()["items"]:

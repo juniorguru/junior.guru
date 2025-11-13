@@ -9,6 +9,11 @@ registry:
     description: |
       Kdo má nejvíc pozitivně hodnocených příspěvků (palce, srdíčka…). Nejprestižnější ocenění! Roli automaticky spravuje bot.
 
+  - id: 1134476995229663374
+    slug: candidate
+    description: |
+      Kdo se [přes Pull Request](https://github.com/juniorguru/eggtray) přidal do [seznamu kandidátů](https://junior.guru/candidates). Roli automaticky spravuje bot. Může trvat i den, než se změny projeví.
+
   - id: 915967369661251624
     slug: psychologist
     description: |
@@ -79,20 +84,10 @@ registry:
     description: |
       Kdo má chuť komentovat v <#CV_GITHUB_LINKEDIN>. Roli si dáš vlastnoručně v _Kanály a role_.
 
-  - id: 1055919988222992418
-    slug: has_github
-    description: |
-      Kdo má s Discordem propojený svůj účet na GitHubu. Roli automaticky spravuje Discord.
-
   - id: 1123557007874596976
     slug: week_planner
     description: |
       Kdo chce být aktivní v <#WEEKLY_PLANS>. Přidáváme je do vláken pro jednotlivé týdny. Roli si dáš vlastnoručně v _Kanály a role_.
-
-  - id: 1134476995229663374
-    slug: candidate
-    description: |
-      Kdo posílá CVčka a shání práci. Roli si dáš vlastnoručně v _Kanály a role_.
 
   - id: 1186316722450473081
     slug: english

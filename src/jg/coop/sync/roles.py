@@ -13,6 +13,7 @@ from jg.coop.lib import discord_task, loggers
 from jg.coop.lib.discord_club import ClubClient, get_user_roles, resolve_references
 from jg.coop.lib.mutations import mutating_discord
 from jg.coop.models.base import db
+from jg.coop.models.candidate import Candidate
 from jg.coop.models.club import ClubUser
 from jg.coop.models.event import Event
 from jg.coop.models.partner import Partner
@@ -50,9 +51,10 @@ class RolesConfig(BaseModel):
 
 @cli.sync_command(
     dependencies=[
+        "avatars",
+        "candidates",
         "club-content",
         "events",
-        "avatars",
         "members",
         "organizations",
     ]
@@ -159,6 +161,20 @@ async def sync_roles(client: ClubClient):
         changes.extend(
             evaluate_changes(
                 member.id, member.initial_roles, most_helpful_members_ids, role_id
+            )
+        )
+
+    logger.info("Computing how to re-assign role: candidate")
+    role_id = DocumentedRole.get_by_slug("candidate").club_id
+    candidate_members = filter(
+        None, [candidate.user for candidate in Candidate.listing()]
+    )
+    candidate_members_ids = [member.id for member in candidate_members]
+    logger.debug(f"candidate_members: {repr_ids(members, candidate_members_ids)}")
+    for member in members:
+        changes.extend(
+            evaluate_changes(
+                member.id, member.initial_roles, candidate_members_ids, role_id
             )
         )
 
