@@ -59,6 +59,21 @@
 # - https://tinywow.com/image/upscale
 # - https://www.fotor.com/photo-editor-app/editor/beauty
 registry:
+  - id: 56
+    title: "Z diplomacie do jednorožce: Jak jsem se ocitl v IT bez řádku kódu"
+    date: "2025-11-26"
+    description: |
+      IT svět není jen o programování. Povím svůj příběh o tom, jak se dá z úplně jiné dráhy, v mém případě z mezinárodních vztahů a diplomacie, dostat do technologické firmy, která vyrostla v „jednorožce“. O tom, jaké role v IT existují mimo vývoj, jak se v nich dá uplatnit zvídavost, komunikace a empatie víc než technické znalosti. A proč je právě tahle rozmanitost pro svět technologií klíčová.
+    avatar_path: avatars-participants/jan-meissner.jpg
+    bio_name: Jan Meissner
+    bio_title: "Vedoucí komunitního oddělení v Mews"
+    bio: |
+      Do IT jsem se dostal tak trochu omylem. Původně jsem studoval mezinárodní vztahy a až do pětadvaceti pro mě bylo programování černá magie. Vždycky mě ale lákalo prostředí hotelů a práce s lidmi. A právě to mě nakonec přivedlo k Mews, se kterou jsem se poprvé potkal jako portýr v prvním hotelu, kde jejich systém používali. Tehdy nás bylo devět, dnes je z Mews český technologický jednorožec. Starám o to, aby se v naší komunitě lidé cítili propojení, měli prostor růst a sdílet, co umí. Když zrovna nejsem u počítače, nořím se do rodinné genealogie, sportovních statistik a občas prohrávám s o dvacet let mladšími trojskokany.
+    bio_links:
+      - https://www.linkedin.com/in/jan-meissner/
+    club_speaker_ids:
+      - 672433063690633216
+  
   - id: 55
     title: "Jak se učit v době AI"
     date: "2025-11-22"
