@@ -62,7 +62,6 @@ registry:
   - id: 56
     title: "Z diplomacie do jednorožce: Jak jsem se ocitl v IT bez řádku kódu"
     date: "2025-11-26"
-    time: "18:00"
     expected_duration_h: 1
     description: |
       IT svět není jen o programování. Povím svůj příběh o tom, jak se dá z úplně jiné dráhy, v mém případě z mezinárodních vztahů a diplomacie, dostat do technologické firmy, která vyrostla v „jednorožce“. O tom, jaké role v IT existují mimo vývoj, jak se v nich dá uplatnit zvídavost, komunikace a empatie víc než technické znalosti. A proč je právě tahle rozmanitost pro svět technologií klíčová.
