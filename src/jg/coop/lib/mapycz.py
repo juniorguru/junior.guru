@@ -11,6 +11,7 @@ import httpx
 from pydantic import BaseModel
 
 from jg.coop.lib import loggers
+from jg.coop.lib.async_utils import limit
 from jg.coop.lib.cache import cache
 
 
@@ -121,8 +122,6 @@ class ResponseItem(BaseModel):
 
 logger = loggers.from_path(__file__)
 
-limit = asyncio.Semaphore(4)
-
 
 @cache(tag="mapycz-2", expire=timedelta(days=60), ignore=("api_key", "bounding_box"))
 async def locate(
@@ -133,7 +132,7 @@ async def locate(
     api_key = api_key or MAPYCZ_API_KEY
     bounding_box = bounding_box or BOUNDING_BOX
 
-    async with limit:
+    async with limit(4):
         logger.debug(f"Locating: {location_raw!r}")
         async with httpx.AsyncClient(headers=DEFAULT_HEADERS) as client:
             for query, type in generate_queries(location_raw):

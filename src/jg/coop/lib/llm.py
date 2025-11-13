@@ -1,4 +1,3 @@
-import asyncio
 import logging
 import os
 from datetime import timedelta
@@ -20,6 +19,7 @@ from tenacity import (
 )
 
 from jg.coop.lib import loggers
+from jg.coop.lib.async_utils import limit
 from jg.coop.lib.cache import cache
 from jg.coop.lib.mutations import mutates
 
@@ -28,8 +28,6 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 
 logger = loggers.from_path(__file__)
-
-limit = asyncio.Semaphore(4)
 
 
 Schema = TypeVar("T", bound=BaseModel)
@@ -108,7 +106,7 @@ async def ask_llm(
     validation_attempts: int = 3,
 ) -> Schema | str:
     client = get_client()
-    async with limit:
+    async with limit(4):
         logger.debug(
             f"Prompt lengths: {count_tokens(system_prompt)}"
             f" + {count_tokens(user_prompt)} tokens"
