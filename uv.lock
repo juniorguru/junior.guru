@@ -880,7 +880,7 @@ dependencies = [
 [[package]]
 name = "jg-chick"
 version = "0.0.1"
-source = { git = "https://github.com/juniorguru/chick.git#940cfefb4ac932260cef72542c400d2b01aedbee" }
+source = { git = "https://github.com/juniorguru/chick.git#b80de501ccaf2883ca53b9ae19dba20ff197b9a8" }
 dependencies = [
     { name = "aiohttp" },
     { name = "click" },
@@ -1018,7 +1018,7 @@ dev = [
 [[package]]
 name = "jg-eggtray"
 version = "0.0"
-source = { git = "https://github.com/juniorguru/eggtray.git#dfb051ef9801f02c6fea3e29a1a4eec26a2d7b2b" }
+source = { git = "https://github.com/juniorguru/eggtray.git#09f86decd928f560b66ee2b33f8354019e50a161" }
 dependencies = [
     { name = "click" },
     { name = "githubkit", extra = ["auth-app"] },
@@ -1031,7 +1031,7 @@ dependencies = [
 [[package]]
 name = "jg-hen"
 version = "0.0"
-source = { git = "https://github.com/juniorguru/hen.git#05035e0bec9f82f54868768b778a0a704103c999" }
+source = { git = "https://github.com/juniorguru/hen.git#853bac4f8e4b2371c8614ae2a996cf180c76f94c" }
 dependencies = [
     { name = "blinker" },
     { name = "click" },
