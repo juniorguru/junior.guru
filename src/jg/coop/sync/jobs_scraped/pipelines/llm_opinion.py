@@ -41,7 +41,7 @@ async def process(item: dict) -> dict:
         if is_allowed("discord"):
             raise DropItem("Asking LLM is not allowed")
         else:
-            logger.debug("Generating random opinion")
+            logger.warning("Generating random opinion")
             llm_opinion = LLMOpinion(
                 reason="Random opinion, because asking LLM was not allowed.",
                 is_relevant=random.choice([True, False]),

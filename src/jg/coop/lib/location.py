@@ -1,4 +1,5 @@
 import os
+import random
 import re
 from datetime import timedelta
 from decimal import Decimal
@@ -164,7 +165,11 @@ async def locate_fuzzy(location_raw: str) -> Location:
             schema=LLMFuzzyLocation,
         )
     except MutationsNotAllowedError:
-        raise RuntimeError("Asking LLM not allowed")
+        logger.warning("Generating random fuzzy location")
+        fuzzy_location = LLMFuzzyLocation(
+            locations=[await locate(location_raw)],
+            is_universal=random.choice([True, False]),
+        )
     return FuzzyLocation(
         locations=[
             await locate(raw_location) for raw_location in fuzzy_location.locations
