@@ -362,9 +362,9 @@
         <li class="jobs-inline-item" itemscope itemtype="https://schema.org/JobPosting">
           <meta itemprop="industry" content="Informační technologie">
           <meta itemprop="datePosted" content="{{ job.posted_on.isoformat() }}">
-          <meta itemprop="description" content="Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ job.company_name }}, {{ job.location_text }}">
+          <meta itemprop="description" content="Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ job.company_name }}, {{ job.location_text|default('?', true) }}">
           <div itemprop="jobLocation" itemscope itemtype="http://schema.org/Place">
-            <meta itemprop="address" content="{{ job.location_text }}">
+            <meta itemprop="address" content="{{ job.location_text|default('?', true) }}">
           </div>
 
           {% if job.is_submitted %}

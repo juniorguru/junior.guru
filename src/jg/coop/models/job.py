@@ -335,7 +335,7 @@ class ListedJob(BaseModel):
         return sorted(set(location["region"] for location in self.locations or []))
 
     @property
-    def location_text(self) -> str:
+    def location_text(self) -> str | None:
         locations = [Location(**location) for location in self.locations or []]
         return repr_locations(locations)
 

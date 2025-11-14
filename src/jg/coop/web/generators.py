@@ -108,10 +108,10 @@ def generate_job_pages() -> Generator[GeneratedDocument, None, None]:
         yield GeneratedDocument(
             path=f"jobs/{job.submitted_job.id}.jinja",
             meta=dict(
-                title=f"{job.title_short} – {job.company_name} – {job.location_text}",
+                title=f"{job.title_short} – {job.company_name} – {job.location_text or '?'}",
                 description=(
                     f"Pracovní nabídka pro začínající programátory: "
-                    f"{job.title} – {job.company_name}, {job.location_text}"
+                    f"{job.title} – {job.company_name}, {job.location_text or '?'}"
                 ),
                 job_id=job.submitted_job.id,
                 template="main_subnav.html",

@@ -154,7 +154,7 @@ template: main_subnav.html
           </h3>
           <p class="jobs-info">
             <strong class="jobs-info-item">{{ job.company_name }}</strong>
-            {% if job.location_text != "?" %}
+            {% if job.location_text %}
               <span class="jobs-info-item">{{ "geo-alt"|icon }} {{ job.location_text }}</span>
             {% endif %}
           </p>

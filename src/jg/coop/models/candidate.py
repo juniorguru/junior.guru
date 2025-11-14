@@ -19,6 +19,9 @@ from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubUser
 
 
+ANYWHERE_TAG_SLUG = "kdekoliv"
+
+
 class TagType(StrEnum):
     LOCATION = auto()
     SKILL = auto()
@@ -71,6 +74,8 @@ class Candidate(BaseModel):
         tags = []
         for skill in self.skills:
             tags.append(Tag(slug=get_tag_slug(skill), type=TagType.SKILL))
+        if not self.locations:
+            tags.append(Tag(slug=ANYWHERE_TAG_SLUG, type=TagType.LOCATION))
         for location in self.locations:
             slug = get_tag_slug(location.region)
             tags.append(Tag(slug=slug, type=TagType.LOCATION))
@@ -87,7 +92,7 @@ class Candidate(BaseModel):
         return []
 
     @property
-    def location_text(self) -> str:
+    def location_text(self) -> str | None:
         return repr_locations(self.locations)
 
     @property
@@ -132,7 +137,7 @@ class Candidate(BaseModel):
 
     @classmethod
     def region_tags(cls) -> list[Tag]:
-        return [
+        return [Tag(slug=ANYWHERE_TAG_SLUG, type=TagType.LOCATION)] + [
             Tag(slug=get_tag_slug(region), type=TagType.LOCATION) for region in REGIONS
         ]
 

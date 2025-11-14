@@ -299,9 +299,9 @@ def get_region_name(country: ResponseCountry, regions: list[ResponseRegion]) -> 
     return country.name
 
 
-def repr_locations(locations: list[Location], remote: bool = False) -> str:
+def repr_locations(locations: list[Location], remote: bool = False) -> str | None:
     if not locations:
-        return "na dálku" if remote else "kdekoliv"
+        return "na dálku" if remote else None
 
     places = set()
     for location in locations:

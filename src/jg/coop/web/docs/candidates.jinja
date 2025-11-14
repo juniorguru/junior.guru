@@ -117,11 +117,9 @@ template: main_subnav.html
             <span class="candidates-title-text" hidden>{{ candidate.name }}</span>
             <span class="candidates-close" hidden>{{ "x-lg"|icon }}</span>
           </h3>
-          {% if candidate.locations|length %}
-            <p class="candidates-info">
-              <span class="candidates-info-item">{{ "geo-alt"|icon }} {{ candidate.location_text }}</span>
-            </p>
-          {% endif %}
+          <p class="candidates-info">
+            <span class="candidates-info-item">{{ "geo-alt"|icon }} {{ candidate.location_text|default("všudezdejší", true) }}</span>
+          </p>
           <p>
             {% for tag in candidate.tags %}
               <span
@@ -214,7 +212,7 @@ template: main_subnav.html
         Tvým filtrům neodpovídají žádní kandidáti.
         {{- ' ' -}}
         {%- if not is_remote_listing -%}
-          Pokud hledáš podle místa, zkus přidat <span class="candidates-tag active">#remote</span>.
+          Pokud hledáš podle místa, zkus přidat <span class="candidates-tag active">#kdekoliv</span>.
         {%- endif -%}
       {%- endcall %}
     </li>

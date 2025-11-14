@@ -290,7 +290,7 @@ async def create_thread(
 
 
 async def prepare_thread_params(job: ListedJob) -> dict:
-    content = f"{job.location_text} — {job.company_name}"
+    content = f"{job.location_text or '?'} — {job.company_name}"
 
     # tech tags
     if job.tech_tags:
