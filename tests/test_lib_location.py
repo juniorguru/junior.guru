@@ -1,6 +1,6 @@
 import pytest
 
-from jg.coop.lib.mapycz import (
+from jg.coop.lib.location import (
     Location,
     ResponseCountry,
     ResponseRegion,

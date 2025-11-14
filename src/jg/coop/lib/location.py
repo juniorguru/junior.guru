@@ -1,4 +1,3 @@
-import asyncio
 import os
 import re
 from datetime import timedelta
@@ -123,7 +122,7 @@ class ResponseItem(BaseModel):
 logger = loggers.from_path(__file__)
 
 
-@cache(tag="mapycz-2", expire=timedelta(days=60), ignore=("api_key", "bounding_box"))
+@cache(expire=timedelta(days=60), tag="location-locate", ignore=("api_key", "bounding_box"))
 async def locate(
     location_raw: str,
     api_key: str | None = None,
@@ -137,6 +136,7 @@ async def locate(
         async with httpx.AsyncClient(headers=DEFAULT_HEADERS) as client:
             for query, type in generate_queries(location_raw):
                 logger.debug(f"Locating as {type}: {query!r}")
+                # See also https://pro.mapy.cz/examples/geocode/
                 response = await client.get(
                     "https://api.mapy.cz/v1/geocode",
                     params={
@@ -272,19 +272,3 @@ def repr_locations(locations: list[Location], remote: bool = False) -> str:
         result = f"{result}, na dálku"
 
     return result
-
-
-if __name__ == "__main__":
-    """
-    Usage:
-
-        uv run python -m jg.coop.lib.mapycz 'Ústí nad Orlicí, Pardubice, Czechia'
-
-    See also:
-
-        https://pro.mapy.cz/examples/geocode/
-    """
-    import sys
-    from pprint import pp
-
-    pp(asyncio.run(locate(sys.argv[1])))

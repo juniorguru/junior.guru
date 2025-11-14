@@ -3,7 +3,7 @@ import asyncio
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
 from jg.coop.lib.cli import async_command
-from jg.coop.lib.mapycz import Location, locate
+from jg.coop.lib.location import Location, locate
 from jg.coop.models.base import db
 from jg.coop.models.job import ListedJob
 

@@ -9,7 +9,7 @@ from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
 from jg.coop.lib.cli import async_command
 from jg.coop.lib.images import create_fallback_image
-from jg.coop.lib.mapycz import locate
+from jg.coop.lib.location import locate
 from jg.coop.models.base import db
 from jg.coop.models.candidate import Candidate, CandidateProject
 from jg.coop.models.club import ClubUser

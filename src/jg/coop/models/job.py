@@ -21,7 +21,7 @@ from playhouse.shortcuts import model_to_dict
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
 
 from jg.coop.lib.job_urls import url_to_id
-from jg.coop.lib.mapycz import REGIONS, Location, repr_locations
+from jg.coop.lib.location import REGIONS, Location, repr_locations
 from jg.coop.lib.text import get_tag_slug
 from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubUser
