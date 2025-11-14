@@ -1018,7 +1018,7 @@ dev = [
 [[package]]
 name = "jg-eggtray"
 version = "0.0"
-source = { git = "https://github.com/juniorguru/eggtray.git#09f86decd928f560b66ee2b33f8354019e50a161" }
+source = { git = "https://github.com/juniorguru/eggtray.git#7ad5bb317127207587f7660bab72f8578159dd3f" }
 dependencies = [
     { name = "click" },
     { name = "githubkit", extra = ["auth-app"] },
@@ -1031,7 +1031,7 @@ dependencies = [
 [[package]]
 name = "jg-hen"
 version = "0.0"
-source = { git = "https://github.com/juniorguru/hen.git#853bac4f8e4b2371c8614ae2a996cf180c76f94c" }
+source = { git = "https://github.com/juniorguru/hen.git#f82a9a5b7b879f671f40359fcb6bda0b960e86f8" }
 dependencies = [
     { name = "blinker" },
     { name = "click" },
