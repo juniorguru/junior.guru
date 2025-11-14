@@ -10,7 +10,7 @@ from slugify import slugify
 from strictyaml import as_document
 
 from jg.coop.lib import loggers
-from jg.coop.lib.mapycz import REGIONS
+from jg.coop.lib.location import REGIONS
 from jg.coop.lib.text import get_tag_slug
 from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
@@ -108,9 +108,10 @@ def generate_job_pages() -> Generator[GeneratedDocument, None, None]:
         yield GeneratedDocument(
             path=f"jobs/{job.submitted_job.id}.jinja",
             meta=dict(
-                title=f"{job.title_short} – {job.company_name} – {job.location}",
+                title=f"{job.title_short} – {job.company_name} – {job.location_text or '?'}",
                 description=(
-                    f"Pracovní nabídka pro začínající programátory: {job.title} – {job.company_name}, {job.location}"
+                    f"Pracovní nabídka pro začínající programátory: "
+                    f"{job.title} – {job.company_name}, {job.location_text or '?'}"
                 ),
                 job_id=job.submitted_job.id,
                 template="main_subnav.html",

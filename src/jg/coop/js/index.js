@@ -1,11 +1,12 @@
 import "./annotations";
+import "./candidates";
 import "./charts";
 import "./discord";
 import "./email";
+import "./github-profile";
 import "./jobs";
 import "./membership";
 import "./metrics";
-import "./github-profile";
 
 import "instant.page";
 import "lite-youtube-embed";

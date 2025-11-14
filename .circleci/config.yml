@@ -97,20 +97,6 @@ jobs:
           name: Test
           command: uv run jg test --verbose
 
-  # Requires:
-  #
-  # $GOOGLE_SERVICE_ACCOUNT
-  # $FIOBANK_API_KEY
-  # $DISCORD_API_KEY
-  # $MEMBERFUL_API_KEY
-  # $MEMBERFUL_PASSWORD
-  # $VIDEO_OUTSOURCING_TOKEN
-  # $FAKTUROID_API_KEY
-  # $OPENAI_API_KEY
-  # $APIFY_API_KEY
-  # $STRIPE_API_KEY
-  # $GITHUB_API_KEY
-  # $MAPYCZ_API_KEY
   sync-1:
     executor: python-js
     resource_class: large
@@ -155,11 +141,6 @@ jobs:
             - project/src/jg/coop/data
             - project/src/jg/coop/images
 
-  # Requires:
-  #
-  # $GOOGLE_SERVICE_ACCOUNT
-  # $DISCORD_API_KEY
-  # $MEMBERFUL_API_KEY
   sync-2:
     executor: python-js
     resource_class: large

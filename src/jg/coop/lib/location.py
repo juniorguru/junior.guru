@@ -1,5 +1,5 @@
-import asyncio
 import os
+import random
 import re
 from datetime import timedelta
 from decimal import Decimal
@@ -13,6 +13,8 @@ from pydantic import BaseModel
 from jg.coop.lib import loggers
 from jg.coop.lib.async_utils import limit
 from jg.coop.lib.cache import cache
+from jg.coop.lib.llm import ask_llm
+from jg.coop.lib.mutations import MutationsNotAllowedError
 
 
 MAPYCZ_API_KEY = os.getenv("MAPYCZ_API_KEY")
@@ -86,6 +88,16 @@ class Location(BaseModel):
     country_code: str
 
 
+class LLMFuzzyLocation(BaseModel):
+    locations: list[str]
+    is_universal: bool
+
+
+class FuzzyLocation(BaseModel):
+    locations: list[Location]
+    is_universal: bool
+
+
 class ResponseRegionType(StrEnum):
     address = "regional.address"
     street = "regional.street"
@@ -123,7 +135,50 @@ class ResponseItem(BaseModel):
 logger = loggers.from_path(__file__)
 
 
-@cache(tag="mapycz-2", expire=timedelta(days=60), ignore=("api_key", "bounding_box"))
+async def locate_fuzzy(location_raw: str) -> Location:
+    try:
+        fuzzy_location: LLMFuzzyLocation = await ask_llm(
+            """
+                You are an assistant who helps to identify locations based on user input.
+                Sometimes the user input may refer to multiple locations or be ambiguous.
+                Analyze the given location input and provide:
+
+                - A list of locations if the input tries to refer to multiple places.
+                If the input is clear and refers to a single location,
+                provide a list with just that one location.
+
+                Example: For the input "Prague, Brno - Czechia", return ["Prague, Czechia", "Brno, Czechia"]
+                Example: For the input "Ostrava", return ["Ostrava"]
+
+                - A boolean indicating whether the user tries to refer to a universal
+                location (e.g., "Czechia", "Slovakia", "remote", "anywhere").
+
+                Example: For the input "Czechia", return true
+                Example: For the input "Slovakia", return true
+                Example: For the input "Brno", return false
+                Example: For the input "Praha, Brno, Ostrava (remote)", return true
+                Example: For the input "Europe", return true
+
+                The context of processing the input is Czechia and Slovakia.
+            """,
+            location_raw,
+            schema=LLMFuzzyLocation,
+        )
+        return FuzzyLocation(
+            locations=[
+                await locate(raw_location) for raw_location in fuzzy_location.locations
+            ],
+            is_universal=fuzzy_location.is_universal,
+        )
+    except MutationsNotAllowedError:
+        logger.warning("Generating random fuzzy location")
+        return FuzzyLocation(
+            locations=[await locate(location_raw)],
+            is_universal=random.choice([True, False]),
+        )
+
+
+@cache(expire=timedelta(days=60), tag="location-locate", ignore=("api_key", "bounding_box"))
 async def locate(
     location_raw: str,
     api_key: str | None = None,
@@ -137,6 +192,7 @@ async def locate(
         async with httpx.AsyncClient(headers=DEFAULT_HEADERS) as client:
             for query, type in generate_queries(location_raw):
                 logger.debug(f"Locating as {type}: {query!r}")
+                # See also https://pro.mapy.cz/examples/geocode/
                 response = await client.get(
                     "https://api.mapy.cz/v1/geocode",
                     params={
@@ -248,9 +304,9 @@ def get_region_name(country: ResponseCountry, regions: list[ResponseRegion]) -> 
     return country.name
 
 
-def repr_locations(locations: list[Location], remote: bool = False) -> str:
+def repr_locations(locations: list[Location], remote: bool = False) -> str | None:
     if not locations:
-        return "na dálku" if remote else "?"
+        return "na dálku" if remote else None
 
     places = set()
     for location in locations:
@@ -272,19 +328,3 @@ def repr_locations(locations: list[Location], remote: bool = False) -> str:
         result = f"{result}, na dálku"
 
     return result
-
-
-if __name__ == "__main__":
-    """
-    Usage:
-
-        uv run python -m jg.coop.lib.mapycz 'Ústí nad Orlicí, Pardubice, Czechia'
-
-    See also:
-
-        https://pro.mapy.cz/examples/geocode/
-    """
-    import sys
-    from pprint import pp
-
-    pp(asyncio.run(locate(sys.argv[1])))

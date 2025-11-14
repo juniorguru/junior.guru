@@ -24,7 +24,7 @@ from jg.coop.cli.sync import main as cli
 from jg.coop.lib import apify, discord_task, loggers
 from jg.coop.lib.cli import async_command
 from jg.coop.lib.discord_club import ClubClient, add_reactions, parse_channel_link
-from jg.coop.lib.mapycz import REGIONS, locate
+from jg.coop.lib.location import REGIONS, locate
 from jg.coop.lib.mutations import mutating_discord
 from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db

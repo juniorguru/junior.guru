@@ -21,7 +21,7 @@ from playhouse.shortcuts import model_to_dict
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
 
 from jg.coop.lib.job_urls import url_to_id
-from jg.coop.lib.mapycz import REGIONS, Location, repr_locations
+from jg.coop.lib.location import REGIONS, Location, repr_locations
 from jg.coop.lib.text import get_tag_slug
 from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubUser
@@ -335,7 +335,7 @@ class ListedJob(BaseModel):
         return sorted(set(location["region"] for location in self.locations or []))
 
     @property
-    def location(self) -> str:
+    def location_text(self) -> str | None:
         locations = [Location(**location) for location in self.locations or []]
         return repr_locations(locations)
 
@@ -431,13 +431,13 @@ class ListedJob(BaseModel):
                 "url": self.url,
                 "description": (
                     "Pracovní nabídka pro začínající programátory nebo testery: "
-                    + " — ".join([self.title, self.company_name, self.location])
+                    + " — ".join([self.title, self.company_name, self.location_text])
                 ),
                 "datePosted": self.posted_on.isoformat(),
                 "industry": "Informační technologie",
                 "jobLocation": {
                     "@type": "Place",
-                    "address": self.location,
+                    "address": self.location_text,
                 },
                 "image": f"https://junior.guru/static/{self.company_logo_path}",
                 "hiringOrganization": {

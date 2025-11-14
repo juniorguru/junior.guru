@@ -1,0 +1,349 @@
+.candidates-tag {
+  @extend .badge;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $jg-dark;
+  user-select: none;
+  background: $jg-blue-light;
+}
+
+.candidates-tag-link {
+  display: flex;
+  flex-direction: row;
+  grid-column: 1 / -1;
+  gap: .3rem;
+  align-items: center;
+  width: fit-content;
+  margin: $spacer 0;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.candidates-tag-link-label {
+  text-decoration: underline;
+}
+
+.candidates-tags {
+  @extend .list-unstyled;
+  position: relative;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  padding: map-get($spacers, 4);
+  padding-top: map-get($spacers, 4) + .3rem;
+  margin-bottom: $main-spacer;
+  vertical-align: middle;
+  border: 2px solid $jg-blue;
+  border-radius: $border-radius;
+}
+
+.candidates-tags dd {
+  vertical-align: middle;
+}
+
+.candidates-tags.noscript {
+  border-color: $jg-red;
+}
+
+.candidates-tags::before {
+  position: absolute;
+  top: -$spacer;
+  left: $spacer;
+  display: block;
+  padding: 0 map-get($spacers, 2);
+  font-size: $font-size-lg;
+  color: $jg-blue;
+  content: "Filtry";
+  background: $jg-white;
+}
+
+.candidates-tags.noscript::before {
+  color: $jg-red;
+}
+
+.candidates-tags-heading {
+  margin-right: $spacer;
+  font-weight: $font-weight-normal;
+  color: $jg-gray;
+  white-space: nowrap;
+}
+
+.candidates-tags .candidates-tag {
+  cursor: pointer;
+}
+
+.candidates-tags .candidates-tag:hover {
+  color: $jg-blue;
+}
+
+.candidates-tags .candidates-tag.active {
+  color: $jg-white;
+  background: $jg-blue;
+}
+
+.candidates-tags .candidates-tag.disabled {
+  cursor: default;
+}
+
+.candidates-list {
+  @extend .list-unstyled;
+  margin-bottom: $spacer;
+}
+
+.candidates-list .candidates-tag {
+  background-color: $jg-white;
+}
+
+.candidates-item {
+  position: relative;
+  margin-bottom: $spacer;
+  background-color: $jg-blue-light;
+  border: 1px solid $jg-blue-light;
+  border-radius: $border-radius;
+}
+
+.candidates-item.highlighted {
+  background-color: $jg-yellow-light;
+  border-color: $jg-yellow;
+}
+
+.candidates-item.muted {
+  opacity: .5;
+}
+
+.candidates-item.open {
+  border-color: $jg-blue;
+}
+
+.candidates-item-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+  padding: $spacer;
+}
+
+.candidates-avatar {
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding: .25rem;
+  margin-right: $spacer;
+  background: $jg-white;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+}
+
+.candidates-image {
+  display: block;
+  width: map-get($spacers, 5);
+  height: map-get($spacers, 5);
+}
+
+.candidates-body {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  gap: $spacer;
+}
+
+.candidates-body > * {
+  margin: 0;
+}
+
+.candidates-title {
+  @extend .fs-5;
+  display: flex;
+  margin-bottom: -1 * ($spacer - $headings-margin-bottom);
+  color: $jg-blue;
+}
+
+.candidates-title-link,
+.candidates-title-text {
+  flex-grow: 1;
+}
+
+.candidates-title-link {
+  @extend .stretched-link;
+  text-decoration: none;
+}
+
+.candidates-title-text {
+  color: $jg-dark;
+}
+
+.candidates-close {
+  font-size: $font-size-sm;
+  cursor: pointer;
+}
+
+.candidates-debug {
+  margin-left: $spacer;
+  font-size: $font-size-sm;
+  color: $jg-red;
+}
+
+.candidates-item:hover .candidates-title-link {
+  text-decoration: underline;
+}
+
+.candidates-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 $spacer;
+}
+
+.candidates-info-item {
+  width: 100%;
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+  }
+}
+
+.candidates-item .candidates-tag {
+  opacity: .5;
+}
+
+.candidates-item .candidates-tag.matching {
+  opacity: 1;
+}
+
+.candidates-details {
+  @include media-breakpoint-up(sm) {
+    display: flex;
+    gap: $spacer;
+    align-items: start;
+  }
+}
+
+.candidates-details:first-of-type {
+  margin-top: $spacer;
+}
+
+.candidates-details-heading {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  white-space: nowrap;
+
+  @include media-breakpoint-up(sm) {
+    margin: 0;
+  }
+}
+
+.candidates-details-heading::after {
+  content: ":";
+}
+
+.candidates-details-items {
+  @extend .icon-links;
+}
+
+.candidates-details-item {
+  @extend .icon-link;
+}
+
+.candidates-club-items {
+  @extend .list-unstyled;
+  display: flex;
+  gap: $spacer;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.candidates-actions {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: $spacer;
+  overflow: hidden;
+  background: $jg-white;
+  border-radius: 0 0 $border-radius $border-radius;
+
+  @include media-breakpoint-up(sm) {
+    justify-content: flex-end;
+  }
+}
+
+.candidates-actions-list {
+  @extend .list-unstyled;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacer;
+  justify-content: center;
+  white-space: nowrap;
+
+  @include media-breakpoint-up(sm) {
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+  }
+}
+
+.candidates-action-email,
+.candidates-action-contact {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.candidates-action-email {
+  gap: $spacer;
+  font-size: $font-size-sm;
+}
+
+.candidates-action-button {
+  @extend .btn;
+  @extend .btn-sm;
+
+  @include media-breakpoint-up(sm) {
+    @include button-size(
+      $btn-padding-y,
+      $btn-padding-x,
+      $btn-font-size,
+      $btn-border-radius
+    );
+  }
+}
+
+.candidates-action-button.profile {
+  @extend .btn-dark;
+}
+
+.candidates-action-button.contact {
+  @extend .btn-primary;
+}
+
+.candidates-empty .note {
+  background-color: $jg-blue-light;
+}
+
+.candidates-subscribe {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zindex-fixed;
+  display: flex;
+  gap: $spacer;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: map-get($spacers, 2) $spacer;
+  background: $jg-yellow;
+}
+
+.candidates-subscribe-text {
+  height: 0%;
+  margin: 0;
+  font-size: $font-size-sm;
+  hyphens: none;
+
+  @include media-breakpoint-up(sm) {
+    font-size: $font-size-base;
+    text-align: center;
+  }
+}
+
+.candidates-subscribe-button {
+  @extend .btn;
+  @extend .btn-dark;
+  @extend .stretched-link;
+  white-space: nowrap;
+}

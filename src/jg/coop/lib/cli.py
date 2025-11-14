@@ -36,7 +36,7 @@ def async_command(fn: Callable[..., Awaitable]) -> Callable:
         thread.start()
         thread.join()
 
-        if exc:
+        if exc is not None:
             raise exc
 
     return wrapper

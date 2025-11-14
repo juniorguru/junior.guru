@@ -1,0 +1,19 @@
+.note-explainer {
+  @extend .list-unstyled;
+  display: flex;
+  flex-direction: column;
+  gap: $spacer;
+  padding: $spacer;
+  background: $jg-blue-light;
+  border-radius: $border-radius;
+}
+
+.note-explainer-item {
+  display: flex;
+  gap: $spacer;
+  align-items: flex-start;
+}
+
+.note-explainer-item .bi {
+  color: $jg-blue;
+}

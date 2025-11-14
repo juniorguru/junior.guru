@@ -4,7 +4,7 @@ description: Ověřený a seřazený seznam těch nejšikovnějších juniorů a
 template: main_subnav.html
 ---
 
-{% from 'macros.html' import lead, note with context %}
+{% from 'macros.html' import lead, note, img with context %}
 
 <h1>Juniorní programátoři a testeři</h1>
 
@@ -16,25 +16,214 @@ template: main_subnav.html
   Oslovuješ napřímo, nic neplatíš.
 {% endcall %}
 
-{% call note() -%}
-  {{ 'plus-circle'|icon }} Chceš tady být taky? Přidej se přes <a href="https://github.com/juniorguru/eggtray/">github.com/juniorguru/eggtray</a>, jestli to dokážeš!
-{%- endcall %}
-
-<ul>
-{% for candidate in candidates %}
-    <li>
-        {{ candidate.name }}:
-        <a href="{{ candidate.github_url }}">{{ "github"|icon }} GitHub</a>
-        {% if candidate.linkedin_url %}
-          <a href="{{ candidate.linkedin_url }}">{{ "linkedin"|icon }} LinkedIn</a>
-        {% endif %}
-    </li>
-{% endfor %}
-    <li>
-        <a href="https://github.com/juniorguru/eggtray/">Přidej se do seznamu</a>
-    </li>
+<h2 hidden>Jak to funguje</h2>
+<ul class="note-explainer">
+  <li class="note-explainer-item">
+    {{ 'github'|icon }}
+    <span>
+      Junioři musí <strong>prokázat iniciativu a základní technickou zdatnost</strong>, aby se v seznamu vůbec objevili.
+      <small>Sami se musí dokázat přidat přes <a href="https://github.com/juniorguru/eggtray/">github.com/juniorguru/eggtray</a>.</small>
+    </span>
+  </li>
+  <li class="note-explainer-item">
+    {{ 'check-circle-fill'|icon }}
+    <span>
+      Robot každý den vyhodnocuje, které profily <strong>splňují naše standardy</strong>. Ty ostatní se zobrazí poloprůhledně.
+      <small>Klidně si <a href="{{ pages|docs_url('handbook/github-profile.md')|url }}">zpětnou vazbu od robota</a> vyzkoušej.</small>
+    </span>
+  </li>
+  <li class="note-explainer-item">
+    {{ 'star-fill'|icon }}
+    <span>
+      Pokud junior vše splňuje a navíc <strong>se rozvíjí v našem klubu</strong>, zobrazí se žlutě.
+      <small>Naše <a href="{{ pages|docs_url('club.md')|url }}">online komunita</a> dává juniorům kontakt s realitou, seniorní dohled a ověřuje jejich komunikační schopnosti.</small>
+    </span>
+  </li>
+  <li class="note-explainer-item">
+    {{ 'piggy-bank-fill'|icon }}
+    <span>
+      Když si někoho vybereš, <strong>opravdu nic neplatíš</strong>. Oslovuješ napřímo.
+      <small>Pokud chceš projevit vděčnost, podpoř junior.guru <a href="{{ pages|docs_url('love.jinja')|url }}">dobrovolným příspěvkem nebo sponzorstvím</a>.</small>
+    </span>
+  </li>
 </ul>
 
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Tato stránka se teprve připravuje.
-{% endcall %}
+{#
+{% call note(standout=true) -%}
+  {{ 'plus-circle'|icon }} Chceš tady být taky? Přidej se přes <a href="https://github.com/juniorguru/eggtray/">github.com/juniorguru/eggtray</a>, jestli to dokážeš!
+{%- endcall %}
+#}
+
+<dl class="candidates-tags standout noscript">
+  <dt class="candidates-tags-heading">{{ "geo-alt"|icon }} Místo:</dt>
+  <dd>
+      {% for tag in candidates_region_tags %}
+        <span
+          class="candidates-tag"
+          hidden
+          data-candidates-tag="{{ tag.slug }}"
+          data-candidates-tag-type="{{ tag.type|lower }}"
+        >
+          {{- tag.name -}}
+        </span>
+      {% endfor %}
+      <span class="candidates-noscript">Stala se chyba a filtrování nefunguje</span>
+  </dd>
+  <dt class="candidates-tags-heading">{{ "tools"|icon }} Zaměření:</dt>
+  <dd>
+    {% for tag in candidates_tags.skill %}
+      <span
+        class="candidates-tag"
+        hidden
+        data-candidates-tag="{{ tag.slug }}"
+        data-candidates-tag-type="{{ tag.type|lower }}"
+      >
+        {{- tag.name -}}
+      </span>
+    {% endfor %}
+    <span class="candidates-noscript">Stala se chyba a filtrování nefunguje</span>
+  </dd>
+  <dt class="candidates-tags-heading">{{ "chat-dots"|icon }} Jazyky:</dt>
+  <dd>
+    {% for tag in candidates_tags.language %}
+      <span
+        class="candidates-tag"
+        hidden
+        data-candidates-tag="{{ tag.slug }}"
+        data-candidates-tag-type="{{ tag.type|lower }}"
+      >
+        {{- tag.name -}}
+      </span>
+    {% endfor %}
+    <span class="candidates-noscript">Stala se chyba a filtrování nefunguje</span>
+  </dd>
+</dl>
+
+<div class="candidates">
+  <ul class="candidates-list">
+    {% for candidate in candidates %}
+    <li class="candidates-item openable tagged{% if candidate.is_highlighted %} highlighted{% elif not candidate.is_ready %} muted{% endif %}">
+      <div class="candidates-item-container">
+        <div class="candidates-avatar">
+          {{ img('static/' + candidate.avatar_path, candidate.name + ' (avatar)', 100, 100, class="candidates-image") }}
+        </div>
+        <div class="candidates-body">
+          <h3 class="candidates-title">
+            <a class="candidates-title-link"
+                href="{{ candidate.contact_url }}" rel="nofollow noopener" target="_blank"
+            >
+              {{ candidate.name }}
+            </a>
+            <span class="candidates-title-text" hidden>{{ candidate.name }}</span>
+            <span class="candidates-close" hidden>{{ "x-lg"|icon }}</span>
+          </h3>
+          <p class="candidates-info">
+            <span class="candidates-info-item">{{ "geo-alt"|icon }} {{ candidate.location_text|default("všudezdejší", true) }}</span>
+          </p>
+          <p>
+            {% for tag in candidate.tags %}
+              <span
+                class="candidates-tag"
+                data-candidates-tag="{{ tag.slug }}"
+                data-candidates-tag-type="{{ tag.type|lower }}"
+              >
+                {{- tag.name -}}
+              </span>
+            {% endfor %}
+          </p>
+          {% if candidate.experience_text %}
+          <div class="candidates-details" hidden>
+            <h4 class="candidates-details-heading">Praxe</h4>
+            <ul class="candidates-details-items">
+              <li class="candidate-details-item">
+                {{ candidate.experience_text }}
+              </li>
+            </ul>
+          </div>
+          {% endif %}
+          <div class="candidates-details" hidden>
+            <h4 class="candidates-details-heading">Škola</h4>
+            <ul class="candidates-details-items">
+              <li class="candidate-details-item">
+                {{ candidate.school_text }}
+              </li>
+            </ul>
+          </div>
+          {% if candidate.domains %}
+          <div class="candidates-details" hidden>
+            <h4 class="candidates-details-heading">Čemu také rozumí</h4>
+            <ul class="candidates-details-items">
+              {% for domain in candidate.domains %}
+              <li class="candidate-details-item">
+                {{ domain }}
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+          {% if not candidate.is_ready %}
+          <div class="candidates-details" hidden>
+            <h4 class="candidates-details-heading">Co chybí doladit</h4>
+            <ul class="candidates-details-items">
+              <li class="candidate-details-item">
+                <a href="{{ candidate.report_url }}" rel="nofollow noopener" target="_blank">{{ candidate.report_url|github_url }}</a>
+              </li>
+            </ul>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="candidates-actions" hidden>
+        <ul class="candidates-actions-list">
+          {% if candidate.email %}
+          <li class="candidates-action-email">
+            {{ candidate.email|replace("@", "&#64;<!---->")|safe }}
+          </li>
+          {% endif %}
+          {% if candidate.linkedin_url %}
+          <li class="candidates-action-contact">
+            <a
+              href="{{ candidate.contact_url }}"
+              rel="nofollow noopener"
+              target="_blank"
+              class="candidates-action-button profile"
+            >
+              {{ "linkedin"|icon }} LinkedIn
+            </a>
+          </li>
+          {% endif %}
+          <li class="candidates-action-contact">
+            <a
+              href="{{ candidate.github_url }}"
+              rel="nofollow noopener"
+              target="_blank"
+              class="candidates-action-button profile"
+            >
+              {{ "github"|icon }} GitHub
+            </a>
+          </li>
+          <li class="candidates-action-contact">
+            <a
+              href="{{ candidate.contact_url }}"
+              rel="nofollow noopener"
+              target="_blank"
+              class="candidates-action-button contact"
+            >
+              Kontaktovat
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+  {% endfor %}
+    <li class="candidates-empty" hidden>
+      {% call note() -%}
+        {{ 'search'|icon }}
+        Tvým filtrům neodpovídají žádní kandidáti.
+        {{- ' ' -}}
+        {%- if not is_remote_listing -%}
+          Pokud hledáš podle místa, zkus přidat <span class="candidates-tag active">#kdekoliv</span>.
+        {%- endif -%}
+      {%- endcall %}
+    </li>
+</ul>

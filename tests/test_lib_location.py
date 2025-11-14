@@ -1,6 +1,6 @@
 import pytest
 
-from jg.coop.lib.mapycz import (
+from jg.coop.lib.location import (
     Location,
     ResponseCountry,
     ResponseRegion,
@@ -37,7 +37,7 @@ def test_get_region_name(country, regions, expected):
         (
             [],
             False,
-            "?",
+            None,
         ),
         (
             [],
