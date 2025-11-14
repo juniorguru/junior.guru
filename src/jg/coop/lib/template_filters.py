@@ -147,6 +147,20 @@ def nice_url(url: str) -> str:
     )
 
 
+def github_url(url: str) -> str:
+    if "github.com" not in url:
+        raise ValueError("Not a GitHub URL")
+    parts = urlparse(url)
+    path_parts = parts.path.strip("/").split("/")
+    if len(path_parts) < 4:
+        raise ValueError("Not a GitHub issue or PR URL")
+    repo = "/".join(path_parts[:2])
+    if path_parts[2] not in ("issues", "pull"):
+        raise ValueError("Not a GitHub issue or PR URL")
+    number = path_parts[3]
+    return f"{parts.netloc}/{repo}#{number}"
+
+
 def mapping(mapping: dict, keys: Iterable) -> list:
     return [mapping[key] for key in keys]
 

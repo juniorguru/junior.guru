@@ -60,6 +60,7 @@ class Candidate(BaseModel):
     languages = JSONField(default=list)
     is_ready = BooleanField()
     is_member = BooleanField()
+    report_url = CharField(null=True)
 
     @property
     def contact_url(self) -> str:

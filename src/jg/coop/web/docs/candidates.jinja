@@ -161,6 +161,16 @@ template: main_subnav.html
             </ul>
           </div>
           {% endif %}
+          {% if not candidate.is_ready %}
+          <div class="candidates-details" hidden>
+            <h4 class="candidates-details-heading">Co chybí doladit</h4>
+            <ul class="candidates-details-items">
+              <li class="candidate-details-item">
+                <a href="{{ candidate.report_url }}" rel="nofollow noopener" target="_blank">{{ candidate.report_url|github_url }}</a>
+              </li>
+            </ul>
+          </div>
+          {% endif %}
         </div>
       </div>
       <div class="candidates-actions" hidden>

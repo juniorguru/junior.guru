@@ -287,6 +287,28 @@ def test_nice_url(url: str, expected: str):
 
 
 @pytest.mark.parametrize(
+    "url, expected",
+    [
+        (
+            "https://github.com/apify/apify-docs/issues/1243#issuecomment-2418055868",
+            "github.com/apify/apify-docs#1243",
+        ),
+        (
+            "https://github.com/apify/apify-docs/pull/1907/files",
+            "github.com/apify/apify-docs#1907",
+        ),
+    ],
+)
+def test_github_url(url: str, expected: str):
+    assert template_filters.github_url(url) == expected
+
+
+def test_github_url_error():
+    with pytest.raises(ValueError):
+        template_filters.github_url("https://example.com")
+
+
+@pytest.mark.parametrize(
     "seconds, expected",
     [
         (60 * 1, "1min"),
