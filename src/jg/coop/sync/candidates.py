@@ -9,7 +9,7 @@ from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
 from jg.coop.lib.cli import async_command
 from jg.coop.lib.images import create_fallback_image
-from jg.coop.lib.location import locate
+from jg.coop.lib.location import locate, locate_fuzzy
 from jg.coop.models.base import db
 from jg.coop.models.candidate import Candidate, CandidateProject
 from jg.coop.models.club import ClubUser
@@ -73,8 +73,8 @@ async def main(
 
             if location_raw:
                 candidate.location_raw = location_raw
-                location = await locate(location_raw)
-                candidate.location = location.model_dump()
+                location_fuzzy = await locate_fuzzy(location_raw)
+                candidate.location_fuzzy = location_fuzzy.model_dump()
                 candidate.save()
                 logger.info(f"Located {location_raw!r} as {candidate.location_text!r}")
 

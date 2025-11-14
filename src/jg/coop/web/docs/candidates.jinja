@@ -117,10 +117,11 @@ template: main_subnav.html
             <span class="candidates-title-text" hidden>{{ candidate.name }}</span>
             <span class="candidates-close" hidden>{{ "x-lg"|icon }}</span>
           </h3>
-          <p class="candidates-info">
-            {# <strong class="candidates-info-item">{{ candidate.email }}</strong> #}
-            <span class="candidates-info-item">{{ "geo-alt"|icon }} {{ candidate.location_text }}</span>
-          </p>
+          {% if candidate.locations|length %}
+            <p class="candidates-info">
+              <span class="candidates-info-item">{{ "geo-alt"|icon }} {{ candidate.location_text }}</span>
+            </p>
+          {% endif %}
           <p>
             {% for tag in candidate.tags %}
               <span

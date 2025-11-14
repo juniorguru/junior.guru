@@ -3,8 +3,8 @@ from pprint import pp
 
 import click
 
-from jg.coop.lib import loggers
-from jg.coop.lib.location import locate
+from jg.coop.lib import loggers, mutations
+from jg.coop.lib.location import locate, locate_fuzzy
 
 
 logger = loggers.from_path(__file__)
@@ -15,5 +15,7 @@ logger = loggers.from_path(__file__)
 @click.option("--fuzzy/--no-fuzzy", is_flag=True, default=False)
 def main(location_raw: str, fuzzy: bool):
     if fuzzy:
-        raise NotImplementedError("Fuzzy location is not implemented yet")
-    pp(asyncio.run(locate(location_raw)))
+        mutations.allow("openai")
+        pp(asyncio.run(locate_fuzzy(location_raw)))
+    else:
+        pp(asyncio.run(locate(location_raw)))

@@ -13,7 +13,7 @@ from peewee import (
 )
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
 
-from jg.coop.lib.location import REGIONS, Location, repr_locations
+from jg.coop.lib.location import REGIONS, FuzzyLocation, Location, repr_locations
 from jg.coop.lib.text import get_tag_slug
 from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubUser
@@ -47,7 +47,7 @@ class Candidate(BaseModel):
     avatar_is_default = BooleanField()
     avatar_path = CharField(null=True)
     location_raw = CharField(null=True)
-    location = JSONField(null=True)
+    location_fuzzy = JSONField(null=True)
     linkedin_url = CharField(null=True)
     skills = JSONField(default=list)
     domains = JSONField(default=list)
@@ -71,17 +71,24 @@ class Candidate(BaseModel):
         tags = []
         for skill in self.skills:
             tags.append(Tag(slug=get_tag_slug(skill), type=TagType.SKILL))
-        if self.location:
-            slug = get_tag_slug(self.location["region"])
+        for location in self.locations:
+            slug = get_tag_slug(location.region)
             tags.append(Tag(slug=slug, type=TagType.LOCATION))
         for lang in self.languages:
             tags.append(Tag(slug=get_tag_slug(lang), type=TagType.LANGUAGE))
         return tags
 
     @property
+    def locations(self) -> list[Location]:
+        if self.location_fuzzy:
+            location_fuzzy = FuzzyLocation(**self.location_fuzzy)
+            if not location_fuzzy.is_universal and len(location_fuzzy.locations) < 3:
+                return location_fuzzy.locations
+        return []
+
+    @property
     def location_text(self) -> str:
-        locations = [Location(**self.location)] if self.location else []
-        return repr_locations(locations)
+        return repr_locations(self.locations)
 
     @property
     def school_text(self) -> str:
