@@ -164,18 +164,18 @@ async def locate_fuzzy(location_raw: str) -> Location:
             location_raw,
             schema=LLMFuzzyLocation,
         )
+        return FuzzyLocation(
+            locations=[
+                await locate(raw_location) for raw_location in fuzzy_location.locations
+            ],
+            is_universal=fuzzy_location.is_universal,
+        )
     except MutationsNotAllowedError:
         logger.warning("Generating random fuzzy location")
-        fuzzy_location = LLMFuzzyLocation(
+        return FuzzyLocation(
             locations=[await locate(location_raw)],
             is_universal=random.choice([True, False]),
         )
-    return FuzzyLocation(
-        locations=[
-            await locate(raw_location) for raw_location in fuzzy_location.locations
-        ],
-        is_universal=fuzzy_location.is_universal,
-    )
 
 
 @cache(expire=timedelta(days=60), tag="location-locate", ignore=("api_key", "bounding_box"))
