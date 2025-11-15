@@ -178,7 +178,9 @@ async def locate_fuzzy(location_raw: str) -> Location:
         )
 
 
-@cache(expire=timedelta(days=60), tag="location-locate", ignore=("api_key", "bounding_box"))
+@cache(
+    expire=timedelta(days=60), tag="location-locate", ignore=("api_key", "bounding_box")
+)
 async def locate(
     location_raw: str,
     api_key: str | None = None,

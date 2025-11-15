@@ -13,38 +13,44 @@ function setupCandidatesTags() {
     updateCandidatesTagsUI();
     container.classList.remove("noscript");
   }
-  document.querySelectorAll(".candidates-noscript").forEach(function (noscript) {
-    noscript.remove();
-  });
+  document
+    .querySelectorAll(".candidates-noscript")
+    .forEach(function (noscript) {
+      noscript.remove();
+    });
 }
 
 function setupCandidates() {
-  document.querySelectorAll(".candidates-item.openable").forEach(function (candidate) {
-    candidate.classList.remove("open");
-
-    const titleLink = candidate.querySelector(".candidates-title-link");
-    const close = candidate.querySelector(".candidates-close");
-
-    const inside = [close].concat(
-      Array.from(
-        candidate.querySelectorAll(".candidates-title-text, .candidates-actions, .candidates-details"),
-      ),
-    );
-    const outside = [titleLink];
-
-    titleLink.addEventListener("click", function (event) {
-      event.preventDefault();
-      candidate.classList.add("open");
-      inside.forEach(showElement);
-      outside.forEach(hideElement);
-    });
-
-    close.addEventListener("click", function () {
+  document
+    .querySelectorAll(".candidates-item.openable")
+    .forEach(function (candidate) {
       candidate.classList.remove("open");
-      inside.forEach(hideElement);
-      outside.forEach(showElement);
+
+      const titleLink = candidate.querySelector(".candidates-title-link");
+      const close = candidate.querySelector(".candidates-close");
+
+      const inside = [close].concat(
+        Array.from(
+          candidate.querySelectorAll(
+            ".candidates-title-text, .candidates-actions, .candidates-details",
+          ),
+        ),
+      );
+      const outside = [titleLink];
+
+      titleLink.addEventListener("click", function (event) {
+        event.preventDefault();
+        candidate.classList.add("open");
+        inside.forEach(showElement);
+        outside.forEach(hideElement);
+      });
+
+      close.addEventListener("click", function () {
+        candidate.classList.remove("open");
+        inside.forEach(hideElement);
+        outside.forEach(showElement);
+      });
     });
-  });
 
   const subscribe = document.querySelector(".candidates-subscribe");
   if (subscribe) {
@@ -77,7 +83,9 @@ function filterCandidates() {
   });
   window.history.pushState({}, "", url);
 
-  const candidates = Array.from(document.querySelectorAll(".candidates-item.tagged"));
+  const candidates = Array.from(
+    document.querySelectorAll(".candidates-item.tagged"),
+  );
   const allCandidateTags = Array.from(
     document.querySelectorAll(".candidates-item.tagged .candidates-tag"),
   );
@@ -90,7 +98,9 @@ function filterCandidates() {
 
   allCandidateTags.forEach((tag) => {
     if (
-      activeTagsByType[tag.dataset.candidatesTagType]?.includes(tag.dataset.candidatesTag)
+      activeTagsByType[tag.dataset.candidatesTagType]?.includes(
+        tag.dataset.candidatesTag,
+      )
     ) {
       tag.classList.add("matching");
     } else {
@@ -100,8 +110,12 @@ function filterCandidates() {
 
   const count = candidates
     .map((candidate) => {
-      const candidateTags = Array.from(candidate.querySelectorAll(".candidates-tag"));
-      const candidateSlugs = candidateTags.map((tag) => tag.dataset.candidatesTag);
+      const candidateTags = Array.from(
+        candidate.querySelectorAll(".candidates-tag"),
+      );
+      const candidateSlugs = candidateTags.map(
+        (tag) => tag.dataset.candidatesTag,
+      );
       const isRelevant = Object.entries(activeTagsByType).every(
         ([type, tags]) => tags.some((tag) => candidateSlugs.includes(tag)),
       );
