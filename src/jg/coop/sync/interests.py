@@ -233,6 +233,7 @@ async def main(config_path: Path, tag: str, debug_user: int | None):
                     )
                 )
     if instructions:
+        return  # TEMPORARY DISABLE, https://discord.com/channels/769966886598737931/806215364379148348/1439631865605787811
         discord_task.run(sync_interests, instructions)
 
 
