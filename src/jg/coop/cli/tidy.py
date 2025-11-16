@@ -52,7 +52,7 @@ def main(context):
         return
     context.invoke(format_python)
     context.invoke(format_jinja)
-    context.invoke(prettier)
+    context.invoke(format_web)
     context.invoke(fix_scss)
     context.invoke(optimize_avatars)
     context.invoke(optimize_svg)
@@ -70,10 +70,10 @@ def format_python():
 
 
 @main.command()
-def prettier():
+def format_web():
     try:
-        logger.info("Formatting code by Prettier")
-        subprocess.run(["npx", "prettier", "--write", "."], check=True)
+        logger.info("Formatting web platform code")
+        subprocess.run(["npx", "@biomejs/biome", "format", "--write"], check=True)
     except subprocess.CalledProcessError:
         raise click.Abort()
 
