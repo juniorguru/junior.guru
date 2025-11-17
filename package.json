@@ -10,20 +10,20 @@
     "chart.js": "4.5.1",
     "chartjs-plugin-annotation": "3.1.0",
     "instant.page": "5.2.0",
-    "lite-youtube-embed": "0.3.3",
+    "lite-youtube-embed": "0.3.4",
     "rough-notation": "0.5.1"
   },
   "devDependencies": {
     "@343dev/optimizt": "11.0.0",
-    "@biomejs/biome": "2.3.5",
+    "@biomejs/biome": "2.3.6",
     "bootstrap": "5.3.8",
     "esbuild": "0.27.0",
     "esbuild-sass-plugin": "3.3.1",
-    "jsdom": "27.1.0",
+    "jsdom": "27.2.0",
     "sass": "1.77.6",
     "stylelint": "16.25.0",
     "stylelint-config-twbs-bootstrap": "16.1.0",
     "stylelint-order": "7.0.0",
-    "vitest": "4.0.8"
+    "vitest": "4.0.9"
   }
 }
