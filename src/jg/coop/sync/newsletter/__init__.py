@@ -25,6 +25,7 @@ from jg.coop.models.followers import Followers
 from jg.coop.models.meetup import Meetup
 from jg.coop.models.page import Page
 from jg.coop.models.podcast import PodcastEpisode
+from jg.coop.sync.newsletter.summary import create_club_summary_topics
 
 
 MONTH_NAMES = [
@@ -48,13 +49,13 @@ logger = loggers.from_path(__file__)
 
 @cli.sync_command(
     dependencies=[
+        "club-content",
         "course-providers",
         "events",
         "meetups",
         "newsletter-subscribers",
         "pages",
         "podcast",
-        "summary",
         "topics",
     ]
 )
@@ -78,12 +79,14 @@ logger = loggers.from_path(__file__)
     default=lambda: date.today().isoformat(),
     type=date.fromisoformat,
 )
+@click.option("--summary-correction-attempts", default=3, type=int)
 @db.connection_context()
 @async_command
 async def main(
     force: bool,
     open_browser: bool,
     today: date,
+    summary_correction_attempts: int,
 ):
     this_month = months.this_month(today)
     prev_month = months.prev_month(today)
@@ -216,6 +219,10 @@ async def main(
                 }
             )
 
+    logger.debug("Preparing club topics")
+    await create_club_summary_topics(today, summary_correction_attempts)
+    topics = list(ClubSummaryTopic.listing())
+
     logger.debug("Rendering email body")
     template = Template(Path(__file__).with_name("newsletter.jinja").read_text())
     template_context = dict(
@@ -241,7 +248,7 @@ async def main(
         story_random=story_random,
         subscribers_count=subscribers_count,
         subscribers_new_count=subscribers_new_count,
-        topics=list(ClubSummaryTopic.listing()),
+        topics=topics,
     )
     logger.debug(f"Template context:\n{pformat(template_context)}")
     month_name = f"{MONTH_NAMES[prev_month.month - 1]} {prev_month.year}"

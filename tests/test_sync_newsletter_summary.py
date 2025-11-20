@@ -1,4 +1,4 @@
-from jg.coop.sync.summary import (
+from jg.coop.sync.newsletter.summary import (
     simplify_channel_mentions,
     simplify_custom_emojis,
     simplify_member_mentions,

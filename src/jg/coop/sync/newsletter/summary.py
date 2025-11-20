@@ -7,16 +7,13 @@ from itertools import groupby
 from operator import attrgetter
 from pprint import pformat
 
-import click
 from pydantic import BaseModel, conint, field_validator
 
-from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers, months
 from jg.coop.lib.cache import cache
-from jg.coop.lib.cli import async_command
 from jg.coop.lib.discord_club import ClubChannelID
 from jg.coop.lib.llm import LLMModel, ask_llm
-from jg.coop.models.base import SQLITE_INT_MAX, SQLITE_INT_MIN, db
+from jg.coop.models.base import SQLITE_INT_MAX, SQLITE_INT_MIN
 from jg.coop.models.club import ClubChannel, ClubMessage, ClubSummaryTopic
 
 
@@ -63,16 +60,7 @@ class Summary(BaseModel):
     topics: list[Topic]
 
 
-@cli.sync_command(dependencies=["club-content"])
-@click.option(
-    "--today",
-    default=lambda: date.today().isoformat(),
-    type=date.fromisoformat,
-)
-@click.option("--correction-attempts", default=3, type=int)
-@db.connection_context()
-@async_command
-async def main(today: date, correction_attempts: int):
+async def create_club_summary_topics(today: date, correction_attempts: int):
     logger.info("Setting up club topics db table")
     ClubSummaryTopic.drop_table()
     ClubSummaryTopic.create_table()
