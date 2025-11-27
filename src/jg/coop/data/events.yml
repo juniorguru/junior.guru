@@ -73,6 +73,7 @@ registry:
       - https://www.linkedin.com/in/jan-meissner/
     club_speaker_ids:
       - 672433063690633216
+    club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1443507110229966878  
 
   - id: 55
     title: "Jak se učit v době AI"
