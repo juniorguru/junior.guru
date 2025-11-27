@@ -1,10 +1,13 @@
+import shlex
 import shutil
 import subprocess
 import sys
 from pathlib import Path
 
 import click
+import httpx
 import pytest
+import yaml
 from ghp_import import ghp_import
 
 from jg.coop.lib import loggers
@@ -38,12 +41,13 @@ def update(pull, packages, push, stash):
             subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=True)
         if packages:
             logger.info("Upgrading packages")
+            ci_config_path = ".circleci/config.yml"
+            upgrade_lychee(ci_config_path)
             subprocess.run(["uv", "sync", "--upgrade"], check=True)
             subprocess.run(["npm", "update"], check=True)
             subprocess.run(["npm", "install"], check=True)
-            subprocess.run(
-                ["git", "add", "pyproject.toml", "uv.lock", "package-lock.json"]
-            )
+            paths = ["pyproject.toml", "uv.lock", "package-lock.json", ci_config_path]
+            subprocess.run(["git", "add", paths])
             subprocess.run(["git", "commit", "-m", "update packages 📦"])
         else:
             logger.info("Installing packages")
@@ -61,6 +65,42 @@ def update(pull, packages, push, stash):
         shutil.rmtree("public", ignore_errors=True)
     except subprocess.CalledProcessError:
         raise click.Abort()
+
+
+def upgrade_lychee(ci_config_path: Path | str):
+    config_text = Path(ci_config_path).read_text()
+    config = yaml.safe_load(config_text)
+
+    logger.debug(f"Loaded CI config from {ci_config_path}")
+    original_command = next(
+        step["run"]["command"]
+        for step in config["jobs"]["check-links"]["steps"]
+        if "run" in step and step["run"]["name"].lower() == "download lychee"
+    )
+    logger.debug(f"Lychee download command: {original_command!r}")
+
+    api_url = "https://api.github.com/repos/lycheeverse/lychee/releases/latest"
+    response = httpx.get(api_url)
+    response.raise_for_status()
+    linux_musl = next(
+        (
+            asset
+            for asset in response.json().get("assets", [])
+            if "x86_64-unknown-linux-musl" in asset["name"]
+        )
+    )
+    download_url = linux_musl["browser_download_url"]
+    logger.debug(f"Latest lychee release download URL: {download_url}")
+
+    command_tokens = [
+        (download_url if token.startswith("https://github.com/") else token)
+        for token in shlex.split(original_command)
+    ]
+    updated_command = shlex.join(command_tokens)
+    logger.debug(f"Updated lychee download command: {updated_command!r}")
+
+    ci_config_path.write_text(config_text.replace(original_command, updated_command))
+    logger.debug(f"Updated CI config written to {ci_config_path}")
 
 
 @main.command()
