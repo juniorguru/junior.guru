@@ -349,9 +349,6 @@ workflows:
           requires:
             - web
             - test
-      - check-links:  # JUST DEBUG
-          requires:
-            - deploy-web
 
   nightly:
     jobs:
