@@ -68,7 +68,8 @@ def update(pull, packages, push, stash):
 
 
 def upgrade_lychee(ci_config_path: Path | str):
-    config_text = Path(ci_config_path).read_text()
+    ci_config_path = Path(ci_config_path)
+    config_text = ci_config_path.read_text()
     config = yaml.safe_load(config_text)
 
     logger.debug(f"Loaded CI config from {ci_config_path}")
