@@ -47,7 +47,7 @@ def update(pull, packages, push, stash):
             subprocess.run(["npm", "update"], check=True)
             subprocess.run(["npm", "install"], check=True)
             paths = ["pyproject.toml", "uv.lock", "package-lock.json", ci_config_path]
-            subprocess.run(["git", "add", paths])
+            subprocess.run(["git", "add"] + paths)
             subprocess.run(["git", "commit", "-m", "update packages 📦"])
         else:
             logger.info("Installing packages")
