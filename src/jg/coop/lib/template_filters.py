@@ -147,6 +147,13 @@ def nice_url(url: str) -> str:
     )
 
 
+def unwrap_webarchive_url(url: str) -> str:
+    if "web.archive.org/web/" in url:
+        _, url = re.split(r"/http", url, maxsplit=1)
+        return f"http{url}"
+    return url
+
+
 def github_url(url: str) -> str:
     if "github.com" not in url:
         raise ValueError("Not a GitHub URL")

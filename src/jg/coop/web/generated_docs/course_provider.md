@@ -17,7 +17,7 @@
 
 {% call lead() %}
   {{ course_provider.page_lead }}
-  {% if course_provider.usp_description %}Tady je aspoň základní info, které ti pomůže s rozhodováním.{% endif %}
+  {% if not course_provider.is_gone and course_provider.usp_description %}Tady je aspoň základní info, které ti pomůže s rozhodováním.{% endif %}
 {% endcall %}
 
 {% set screenshot_image_url = course_provider.url|screenshot_url %}
@@ -44,7 +44,7 @@
           <a href="{{ course_provider.url }}" target="_blank"
             {% if course_provider.group != "highlighted" %}rel="nofollow noopener"{% endif -%}
           >
-            {{ course_provider.url|nice_url }}
+            {{ course_provider.url|unwrap_webarchive_url|nice_url }}
           </a>
         </li>
       </ul>
@@ -66,7 +66,7 @@
           <strong>IČO:</strong>
           {{ '{:08d}'.format(course_provider.cz_business_id) }}
         </li>
-        {% if course_provider.cz_years_in_business %}
+        {% if not course_provider.is_gone and course_provider.cz_years_in_business %}
         <li class="details-item">
           <strong>Funguje:</strong>
           {{ course_provider.cz_years_in_business }}
@@ -112,7 +112,7 @@
   </div>
 </div>
 
-[TOC]
+{% if not course_provider.is_gone %}[TOC]{% endif %}
 
 ## Popis
 {% if course_provider.usp_description %}
@@ -133,6 +133,16 @@ Umíš s GitHubem? [Pošli Pull Request]({{ course_provider.edit_url }})!
 
 ## Recenze
 
+{% if course_provider.is_gone %}
+Recenze kurzů najdeš na místním Discordu.
+{% if topic.mentions_count > 5 -%}
+  I když už neexistuje, o {{ course_provider.name }} tam je **{{ topic.mentions_count|thousands }} zmínek**.
+{%- endif %}
+Nevíš si rady s výběrem kurzů?
+Vždy záleží v jaké jsi konkrétní situaci a co zrovna potřebuješ.
+A přesně takové věci se na tom našem Discordu taky probírají.
+Poradíme!
+{% else %}
 Nějaké recenze najdeš na místním Discordu.
 {% if topic.mentions_count > 5 -%}
   Vyloženě o {{ course_provider.name }} tam je **{{ topic.mentions_count|thousands }} zmínek**.
@@ -144,9 +154,10 @@ Jak zjistíš, zda je vzdělávání u {{ course_provider.name }} vhodné zrovna
 Vždy záleží v jaké jsi konkrétní situaci a co zrovna potřebuješ.
 A přesně takové věci se na tom našem Discordu taky probírají.
 Poradíme!
-
+{% endif %}
 {{ club_teaser("Hledej recenze v klubu") }}
 
+{% if not course_provider.is_gone %}
 ## Úřad práce
 
 {% set courses_up = course_provider.list_courses_up|list %}
@@ -198,3 +209,4 @@ Neznamená to, že junior.guru tvrdí, že jsou dobré, ověřené, nebo je dopo
     </a>
   </div>
 </div>
+{% endif %}

@@ -280,10 +280,31 @@ def test_screenshot_url(url, expected):
             "https://coreskill.tech/?utm_source=junior.guru&utm_medium=web&utm_campaign=catalog",
             "coreskill.tech",
         ),
+        (
+            "https://web.archive.org/web/20241212205702/https://www.codingbootcamp.cz",
+            "web.archive.org/web/20241212205702/https://www.codingbootcamp.cz",
+        ),
     ],
 )
 def test_nice_url(url: str, expected: str):
     assert template_filters.nice_url(url) == expected
+
+
+@pytest.mark.parametrize(
+    "url, expected",
+    [
+        (
+            "https://coreskill.tech/?utm_source=junior.guru&utm_medium=web&utm_campaign=catalog",
+            "https://coreskill.tech/?utm_source=junior.guru&utm_medium=web&utm_campaign=catalog",
+        ),
+        (
+            "https://web.archive.org/web/20241212205702/https://www.codingbootcamp.cz",
+            "https://www.codingbootcamp.cz",
+        ),
+    ],
+)
+def test_unwrap_webarchive_url(url: str, expected: str):
+    assert template_filters.unwrap_webarchive_url(url) == expected
 
 
 @pytest.mark.parametrize(

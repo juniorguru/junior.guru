@@ -5,7 +5,7 @@ from operator import attrgetter
 from typing import Iterable, Self
 
 import czech_sort
-from peewee import CharField, IntegerField, TextField, fn
+from peewee import CharField, IntegerField, TextField, fn, BooleanField
 
 from jg.coop.models.base import BaseModel
 from jg.coop.models.partner import Partner
@@ -48,6 +48,7 @@ class CourseProvider(BaseModel):
     name = CharField()
     slug = CharField(unique=True)
     url = CharField()
+    is_gone = BooleanField(default=False)
     cz_business_id = IntegerField(null=True, index=True)
     cz_name = CharField(null=True)
     cz_legal_form = CharField(null=True)

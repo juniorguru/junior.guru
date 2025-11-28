@@ -30,6 +30,7 @@ class CourseProviderConfig(YAMLConfig):
     questions: list[str] | None = None
     cz_business_id: int | None = None
     sk_business_id: int | None = None
+    is_gone: bool = False
 
 
 @cli.sync_command()
@@ -82,8 +83,16 @@ def main():
                 sk_company["years_in_business"] if sk_company else None
             ),
             page_title=compile_page_title(config.name),
-            page_description=compile_page_description(config.name, config.questions),
-            page_lead=compile_page_lead(config.name, config.questions),
+            page_description=(
+                compile_gone_text(config.name)
+                if config.is_gone
+                else compile_page_description(config.name, config.questions)
+            ),
+            page_lead=(
+                compile_gone_text(config.name)
+                if config.is_gone
+                else compile_page_lead(config.name, config.questions)
+            ),
             **config.model_dump(),
         )
         logger.info(f"Loaded {yaml_path.name} as {config.name!r}")
@@ -160,3 +169,8 @@ def compile_page_lead(name: str, extra_questions: list = None) -> str:
     if extra_questions:
         questions += extra_questions
     return " ".join(questions)
+
+
+@raise_if_too_long
+def compile_gone_text(name: str) -> str:
+    return f"{name} už neexistuje. V tomto katalogu je jen pro úplnost, kdyby je někdo ještě hledal."

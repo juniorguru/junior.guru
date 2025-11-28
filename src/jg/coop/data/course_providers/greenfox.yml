@@ -2,12 +2,11 @@ name: Green Fox Academy
 url: https://web.archive.org/web/20240803012605/https://www.greenfoxacademy.cz/
 cz_business_id: 7513666
 usp_description: |
-  Green Fox Academy **už neexistuje**. V tomto katalogu je jen pro úplnost, kdyby je někdo ještě hledal.
-
-  Byl to _bootcamp_, tedy velmi intenzivní kurz programování, který se snažil připravit účastníky na práci v IT v řádu měsíců. Dokonce garantovali i první pracovní příležitost. Víc o jejich fungování si můžeš pustit ve [14. epizodě Junior Guru podcastu](https://junior.guru/podcast/14/).
+  Green Fox Academy byl _bootcamp_, tedy velmi intenzivní kurz programování, který se snažil připravit účastníky na práci v IT v řádu měsíců. Dokonce garantovali i první pracovní příležitost. Víc o jejich fungování si můžeš pustit ve [14. epizodě Junior Guru podcastu](https://junior.guru/podcast/14/).
 
   Firma byla založena v Maďarsku, v Česku působila od roku 2018. Na rozjíždění pobočky se podílela Dita Formánková, spoluzakladatelka [Czechitas](https://junior.guru/courses/czechitas/). Časem se z Green Fox Academy stal etablovaný a nepřehlédnutelný hráč na trhu s IT kurzy, především díky silnému marketingu.
 
   Během roku 2023 se na trhu zbrzdil zájem o juniory a firma se dostala do potíží. Investoři si mohli vybrat, zda chtějí změnit způsob jejího fungování, nebo ji zavřít. [Rozhodli se pro to druhé](https://www.idnes.cz/ekonomika/domaci/green-fox-academy-programatori-it-rekvalifikacni-kurz.A231221_112205_ekonomika_alis), a to dokonce uprostřed rozjetých kurzů. Studenty z těchto kurzů přebral maďarský CodeCool.
 
   V červnu 2025 doménu **greenfoxacademy.cz** ulovili nebo koupili [CodersLab](https://junior.guru/courses/coderslab/), takže to vypadá, jako by Green Fox Academy stále fungovala, ale s původním bootcampem to nemá nic společného.
+is_gone: true

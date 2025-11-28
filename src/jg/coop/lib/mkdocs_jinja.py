@@ -40,6 +40,7 @@ TEMPLATE_FILTERS = [
     "subnav",
     "thousands",
     "toc",
+    "unwrap_webarchive_url",
 ]
 
 
