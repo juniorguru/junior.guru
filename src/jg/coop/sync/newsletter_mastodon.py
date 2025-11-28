@@ -21,6 +21,7 @@ logger = loggers.from_path(__file__)
     type=date.fromisoformat,
 )
 @click.option("--server-url", default="https://mastodonczech.cz")
+@click.option("--history-limit", default=200, type=int)
 @click.option("--client-id", default=default_from_env("MASTODON_CLIENT_ID"))
 @click.option("--client-secret", default=default_from_env("MASTODON_CLIENT_SECRET"))
 @click.option("--access-token", default=default_from_env("MASTODON_ACCESS_TOKEN"))
@@ -28,6 +29,7 @@ logger = loggers.from_path(__file__)
 def main(
     today: date,
     server_url: str,
+    history_limit: int,
     client_id: str | None = None,
     client_secret: str | None = None,
     access_token: str | None = None,
@@ -51,6 +53,17 @@ def main(
                 client_secret=client_secret,
                 access_token=access_token,
             )
+            account_id = mastodon.me()["id"]
+            for status in mastodon.account_statuses(
+                account_id,
+                limit=history_limit,
+                exclude_replies=True,
+                exclude_reblogs=True,
+            ):
+                if newsletter.absolute_url in status["content"]:
+                    logger.info("Newsletter already announced on Mastodon, skipping")
+                    return
+            logger.info("Announcing newsletter on Mastodon")
             with mutating_mastodon(mastodon) as proxy:
                 proxy.status_post(
                     (
