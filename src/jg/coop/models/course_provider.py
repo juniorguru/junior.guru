@@ -5,7 +5,7 @@ from operator import attrgetter
 from typing import Iterable, Self
 
 import czech_sort
-from peewee import CharField, IntegerField, TextField, fn, BooleanField
+from peewee import BooleanField, CharField, IntegerField, TextField, fn
 
 from jg.coop.models.base import BaseModel
 from jg.coop.models.partner import Partner
@@ -17,6 +17,7 @@ class CourseProviderGroup(StrEnum):
     HIGHLIGHTED = "highlighted"
     PARTNERS = "partners"
     OTHERS = "others"
+    GRAVEYARD = "graveyard"
 
 
 class CourseUP(BaseModel):
@@ -79,6 +80,8 @@ class CourseProvider(BaseModel):
 
     @property
     def group(self) -> CourseProviderGroup:
+        if self.is_gone:
+            return CourseProviderGroup.GRAVEYARD
         if org := self.organization:
             if isinstance(org, Sponsor) and org.tier.courses_highlight:
                 return CourseProviderGroup.HIGHLIGHTED

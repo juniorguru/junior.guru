@@ -12,6 +12,12 @@ title: Katalog kurzů programování a testování
   Umístění na seznam neznamená, že jde o kurzy dobré, ověřené, nebo že je junior.guru doporučuje.
 {% endcall %}
 
+{% call note(standout=true) %}
+  {{ 'plus-circle'|icon }} Pokud víš o kurzech, které tady chybí, piš na {{ 'honza@junior.guru'|email_link }}
+{% endcall %}
+
+[TOC]
+
 {% for group, course_providers in course_providers_by_group %}
   {% if group == "highlighted" %}
 
@@ -22,6 +28,11 @@ Vybrali si [tarif z ceníku](love.jinja) a poslali finanční prostředky na pro
 
 ## Partneři
 Komunity a malé subjekty, s nimiž má junior.guru domluvenou nějakou oboustrannou nefinanční výpomoc. Není v možnostech junior.guru ověřovat kvalitu, ale takováto spolupráce se asi dá brát jako známka toho, že jde o něco důvěryhodného. Na každé podstránce je detailní popis spolupráce.
+
+  {% elif group == "graveyard" %}
+
+## Hřbitov
+Subjekty, které v minulosti kurzy poskytovaly, ale dnes už neposkytují. V katalogu jsou jen pro úplnost, kdyby je někdo ještě hledal.
 
   {% else %}
 
@@ -49,7 +60,3 @@ Abecední seznam ostatních poskytovatelů kurzů.
     {% endfor %}
   </div>
 {% endfor %}
-
-{% call note() %}
-  {{ 'plus-circle'|icon }} Pokud víš o dalších kurzech, piš na {{ 'honza@junior.guru'|email_link }}
-{% endcall %}

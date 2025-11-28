@@ -185,6 +185,12 @@ def test_group_sponsor_highlighted(test_db: SqliteDatabase, tier_mid: SponsorTie
     assert cp.group == CourseProviderGroup.HIGHLIGHTED
 
 
+def test_group_graveyard(test_db: SqliteDatabase):
+    cp = create_course_provider(1, is_gone=True)
+
+    assert cp.group == CourseProviderGroup.GRAVEYARD
+
+
 def test_grouping(
     test_db: SqliteDatabase, tier_low: SponsorTier, tier_mid: SponsorTier
 ):
