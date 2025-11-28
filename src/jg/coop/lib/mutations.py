@@ -18,6 +18,7 @@ KNOWN_SERVICES = [
     "google_sheets",
     "memberful",
     "openai",
+    "mastodon",
 ]
 
 CACHE_KEY = "mutations:allowed"
@@ -97,6 +98,7 @@ mutates_buttondown = partial(mutates, "buttondown")
 mutates_discord = partial(mutates, "discord")
 mutates_fakturoid = partial(mutates, "fakturoid")
 mutates_google_sheets = partial(mutates, "google_sheets")
+mutates_mastodon = partial(mutates, "mastodon")
 mutates_memberful = partial(mutates, "memberful")
 mutates_openai = partial(mutates, "openai")
 
@@ -125,6 +127,7 @@ mutating_buttondown = partial(mutating, "buttondown")
 mutating_discord = partial(mutating, "discord")
 mutating_fakturoid = partial(mutating, "fakturoid")
 mutating_google_sheets = partial(mutating, "google_sheets")
+mutating_mastodon = partial(mutating, "mastodon")
 mutating_memberful = partial(mutating, "memberful")
 mutating_openai = partial(mutating, "openai")
 
@@ -149,6 +152,7 @@ allowing_buttondown = partial(allowing, "buttondown")
 allowing_discord = partial(allowing, "discord")
 allowing_fakturoid = partial(allowing, "fakturoid")
 allowing_google_sheets = partial(allowing, "google_sheets")
+allowing_mastodon = partial(allowing, "mastodon")
 allowing_memberful = partial(allowing, "memberful")
 allowing_openai = partial(allowing, "openai")
 

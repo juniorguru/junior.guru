@@ -13,7 +13,6 @@ from jg.coop.lib.discord_club import ClubClient, parse_channel
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
 from jg.coop.models.newsletter import NewsletterIssue
-from jg.coop.models.page import Page
 
 
 logger = loggers.from_path(__file__)
@@ -57,38 +56,32 @@ async def main(
             else:
                 logger.info("No drafts found")
 
-    logger.info("Checking published and archived newsletter issues")
-    newsletter_issue_page = Page.newsletter_listing()[0]
-    newsletter_issue_url = newsletter_issue_page.absolute_url
-    logger.info(f"Latest newsletter issue page: {newsletter_issue_url}")
-
-    logger.info("Verifying newsletter issue page accessibility")
+    logger.info("Checking published and archived newsletters")
+    newsletter = NewsletterIssue.latest()
+    logger.info(f"Latest newsletter URL: {newsletter.absolute_url}")
     try:
-        response = httpx.head(newsletter_issue_url, timeout=5.0)
+        logger.info("Verifying newsletter page accessibility")
+        response = httpx.head(newsletter.absolute_url, timeout=5.0)
         response.raise_for_status()
     except httpx.HTTPError as e:
-        logger.warning(f"Newsletter issue page not accessible: {e}")
+        logger.warning(f"Newsletter page not accessible: {e}")
     else:
-        newsletter_issue_id = newsletter_issue_page.meta["newsletter_issue_id"]
-        newsletter_issue = NewsletterIssue.get_by_id(newsletter_issue_id)
-        newsletter_issue_date = newsletter_issue.published_on
-        logger.info(f"Newsletter issue published on: {newsletter_issue_date}")
-
-        if newsletter_issue_date >= (today - timedelta(days=60)):
-            logger.info("Newsletter issue is recent enough!")
+        logger.info(f"Newsletter published on: {newsletter.published_on}")
+        if newsletter.published_on >= (today - timedelta(days=60)):
+            logger.info("Newsletter is recent enough!")
             if message := ClubMessage.last_bot_message(
                 users_channel_id,
                 starting_emoji=emoji,
-                contains_text=newsletter_issue_url,
+                contains_text=newsletter.absolute_url,
             ):
                 logger.info(f"Club post for users already exists: {message.url}")
             else:
                 logger.info("Preparing club post for users")
                 messages.append(
-                    create_users_message(emoji, users_channel_id, newsletter_issue)
+                    create_users_message(emoji, users_channel_id, newsletter)
                 )
         else:
-            logger.warning("Latest newsletter issue not recent enough")
+            logger.warning("Latest newsletter not recent enough")
     logger.debug(f"Prepared {len(messages)} messages:\n{messages!r}")
     discord_task.run(post, messages)
 
@@ -118,7 +111,7 @@ def create_users_message(
         content=(
             f"{emoji} Nový newsletter je venku! "
             f"**{newsletter_issue.subject}** je k přečtení tady: "
-            f"{newsletter_issue.page.absolute_url} ({newsletter_issue.reading_time} min čtení)"
+            f"{newsletter_issue.absolute_url} ({newsletter_issue.reading_time} min čtení)"
         ),
     )
 

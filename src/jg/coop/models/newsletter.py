@@ -1,6 +1,6 @@
 import re
 from datetime import datetime
-from typing import Self
+from typing import Iterable, Self
 
 from peewee import CharField, DateField, IntegerField
 
@@ -24,7 +24,7 @@ class NewsletterIssue(BaseModel):
 
     @property
     def absolute_url(self) -> str:
-        return f"https://junior.guru/news/{self.slug}/"
+        return self.page.absolute_url
 
     @property
     def page(self) -> Page:
@@ -64,8 +64,12 @@ class NewsletterIssue(BaseModel):
         return cls.select().count()
 
     @classmethod
-    def listing(cls) -> list[Self]:
-        return list(cls.select().order_by(cls.published_on.desc()))
+    def listing(cls) -> Iterable[Self]:
+        return cls.select().order_by(cls.published_on.desc())
+
+    @classmethod
+    def latest(cls) -> Self:
+        return cls.listing().get()
 
 
 def process_content_html(content_html: str) -> str:
