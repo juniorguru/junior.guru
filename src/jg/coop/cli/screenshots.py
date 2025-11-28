@@ -4,6 +4,7 @@ from io import BytesIO
 from itertools import chain
 from multiprocessing import Pool
 from pathlib import Path
+from time import sleep
 
 import click
 import requests
@@ -81,6 +82,8 @@ HIDDEN_ELEMENTS = [
     '[data-section-name*="cookie"]',
     '[data-component-name*="cookie"]',
     '[class*="termsfeed-com---"]',
+    "[fs-consent-element]",
+    ".fs-consent_banner",
     ".alert-dismissible",
     ".intercom-app",
     "[data-cookiebanner]",
@@ -120,7 +123,7 @@ HIDDEN_ELEMENTS = [
     ".n-ads-branding-spacer",  # heroine.cz
     ".n-paywall-notification",  # heroine.cz
     "#didomi-notice",  # heroine.cz
-    ".cm-wrapper",  #
+    ".cm-wrapper",
     '[id*="CybotCookiebotDialog"]',  # shoptet.cz
     ".toast-container",  # coderslab.cz
     '[class*="dc-ps-banner"]',  # datacamp.com
@@ -133,6 +136,9 @@ HIDDEN_ELEMENTS = [
     "#IMS_box1",  # it-academy.sk
     "#IMS_iframe1",  # it-academy.sk
     ".IMS_iframeBox",  # it-academy.sk
+    "rpl-modal-card",  # reddit.com
+    '[class*="truste_"]',
+    "[data-backdrop]",  # welcometothejungle.com
 ]
 
 BLOCKED_ROUTES = [
@@ -290,6 +296,7 @@ def create_screenshots(screenshots):
         page = browser.new_page()
         for url, path in screenshots:
             logger.info(f"Shooting {url}")
+            sleep(0.3)
             image_bytes = create_screenshot(page, url)
             image_bytes = edit_image(image_bytes)
             logger.info(f"Writing {path}")
