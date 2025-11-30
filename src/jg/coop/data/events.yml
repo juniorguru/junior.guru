@@ -59,6 +59,23 @@
 # - https://tinywow.com/image/upscale
 # - https://www.fotor.com/photo-editor-app/editor/beauty
 registry:
+id: 57
+    title: "Přežít a zazářit: Průvodce světem konferencí (nejen) pro introverty"
+    date: "2025-12-10"
+    description: |
+      Networking nemusí být sprosté slovo, a to ani když jsi introvert. Přijď si poslechnout, jak využít IT akce ve svůj prospěch, i když se nerad/a seznamuješ. Probereme, jak si eventy strategicky vybírat, jak se na ně připravit a jak je využít pro svůj osobní brand i vzdělávání. Odneseš si konkrétní praktické tipy od introverta pro introverty (i ty ostatní), které mi fungují už léta.
+    avatar_path: avatars-participants/irena-zatloukalova.jpg
+    bio_name: Irena Zatloukalová
+    bio_title: "Founder/CEO, Diversight.ai"
+    bio: |
+      Irča se ve světě technologií pohybuje přes 15 let. Působila jako tisková mluvčí Seznamu, Tech Community Maneger v Heurece a konzultovala pro firmy jako Bizmachine, Apify či Keboola. V projektu PeopleOps ukazuje, jak se ze špičkových specialistů proměnit v dobré leadery. Aktuálně buduje startup Diversight.ai, kde propojuje svět datových anotací a analýz s jedinečným talentem lidí na autistickém spektru. Věří, že pro dlouhodobý úspěch v IT jsou komunikační dovednosti a týmová souhra stejně důležité jako kvalitní kód.
+    bio_links:
+      - https://bsky.app/profile/izatlouk.cz
+      - https://www.linkedin.com/in/izatlouk/
+      - www.izatlouk.cz
+      - www.peopleops.cz
+      - www.diversight.ai 
+
   - id: 56
     title: "Z diplomacie do jednorožce: Jak jsem se ocitl v IT bez řádku kódu"
     date: "2025-11-26"
