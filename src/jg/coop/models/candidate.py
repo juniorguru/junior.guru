@@ -63,14 +63,6 @@ class Candidate(BaseModel):
     report_url = CharField(null=True)
 
     @property
-    def contact_url(self) -> str:
-        if self.email:
-            return f"mailto:{self.email}"
-        if self.linkedin_url:
-            return self.linkedin_url
-        return self.github_url
-
-    @property
     def tags(self) -> list[Tag]:
         tags = []
         for skill in self.skills:

@@ -110,7 +110,7 @@ template: main_subnav.html
         <div class="candidates-body">
           <h3 class="candidates-title">
             <a class="candidates-title-link"
-                href="{{ candidate.contact_url }}" rel="nofollow noopener" target="_blank"
+                href="{{ candidate.github_url }}" rel="nofollow noopener" target="_blank"
             >
               {{ candidate.name }}
             </a>
@@ -175,45 +175,45 @@ template: main_subnav.html
       </div>
       <div class="candidates-actions" hidden>
         <ul class="candidates-actions-list">
-          {% if candidate.email %}
-          <li class="candidates-action-email">
-            {{ candidate.email|replace("@", "&#64;<!---->")|safe }}
-          </li>
-          {% endif %}
-          {% if candidate.linkedin_url %}
-          <li class="candidates-action-contact">
-            <a
-              href="{{ candidate.contact_url }}"
-              rel="nofollow noopener"
-              target="_blank"
-              class="candidates-action-button profile"
-            >
-              {{ "linkedin"|icon }} LinkedIn
-            </a>
-          </li>
-          {% endif %}
           <li class="candidates-action-contact">
             <a
               href="{{ candidate.github_url }}"
               rel="nofollow noopener"
               target="_blank"
-              class="candidates-action-button profile"
+              class="candidates-action-button {% if candidate.linkedin_url %}profile{% else %}contact{% endif %}"
             >
               {{ "github"|icon }} GitHub
             </a>
           </li>
+          {% if candidate.linkedin_url %}
           <li class="candidates-action-contact">
             <a
-              href="{{ candidate.contact_url }}"
+              href="{{ candidate.linkedin_url }}"
               rel="nofollow noopener"
               target="_blank"
-              class="candidates-action-button contact"
+              class="candidates-action-button {% if candidate.email %}profile{% else %}contact{% endif %}"
             >
-              Kontaktovat
+              {{ "linkedin"|icon }} LinkedIn
             </a>
           </li>
+          {% endif %}
+          {% if candidate.email %}
+          <li class="candidates-action-contact">
+            <a
+              href="mailto:{{ candidate.email }}"
+              class="candidates-action-button contact"
+            >
+              {{ "envelope-fill"|icon }} E-mail
+            </a>
+          </li>
+          {% endif %}
         </ul>
       </div>
+      {% if candidate.email %}
+        <address class="candidates-action-email" hidden>
+          {{ candidate.email|replace("@", "&#64;<!---->")|safe }}
+        </address>
+        {% endif %}
     </li>
   {% endfor %}
     <li class="candidates-empty" hidden>

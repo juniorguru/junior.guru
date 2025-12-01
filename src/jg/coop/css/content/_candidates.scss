@@ -262,6 +262,21 @@
   }
 }
 
+.candidates-action-email {
+  width: 100%;
+  padding: 0 $spacer $spacer;
+  margin: 0;
+  overflow: hidden;
+  font-size: $font-size-sm;
+  text-align: center;
+  background: $jg-white;
+  border-radius: 0 0 $border-radius $border-radius;
+
+  @include media-breakpoint-up(sm) {
+    text-align: right;
+  }
+}
+
 .candidates-actions-list {
   @extend .list-unstyled;
   display: flex;
@@ -276,16 +291,10 @@
   }
 }
 
-.candidates-action-email,
 .candidates-action-contact {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-}
-
-.candidates-action-email {
-  gap: $spacer;
-  font-size: $font-size-sm;
 }
 
 .candidates-action-button {
