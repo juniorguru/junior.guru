@@ -153,24 +153,6 @@ class Candidate(BaseModel):
                 )
             )
 
-        has_diary = (
-            ClubChannel.select()
-            .join(ClubMessage, on=(ClubChannel.id == ClubMessage.channel_id))
-            .where(
-                ClubChannel.author_id == self.user_id,
-                ClubMessage.parent_channel_id == ClubChannelID.DIARIES,
-            )
-            .first()
-        )
-        if has_diary:
-            badges.append(
-                Badge(
-                    label="vede si deník",
-                    color=Colors.secondary,
-                    help_text="Vede si deník o cestě do IT na klubovém Discordu",
-                )
-            )
-
         has_feedback = (
             ClubChannel.select()
             .join(ClubMessage, on=(ClubChannel.id == ClubMessage.channel_id))
@@ -188,6 +170,24 @@ class Candidate(BaseModel):
                     label="nebojí se zpětné vazby",
                     color=Colors.secondary,
                     help_text="Žádá o zpětnou vazbu na klubovém Discordu (projekty, CV)",
+                )
+            )
+
+        has_diary = (
+            ClubChannel.select()
+            .join(ClubMessage, on=(ClubChannel.id == ClubMessage.channel_id))
+            .where(
+                ClubChannel.author_id == self.user_id,
+                ClubMessage.parent_channel_id == ClubChannelID.DIARIES,
+            )
+            .first()
+        )
+        if has_diary:
+            badges.append(
+                Badge(
+                    label="vede si deník",
+                    color=Colors.secondary,
+                    help_text="Vede si deník o cestě do IT na klubovém Discordu",
                 )
             )
 
