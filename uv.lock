@@ -1036,7 +1036,7 @@ dev = [
 [[package]]
 name = "jg-eggtray"
 version = "0.0"
-source = { git = "https://github.com/juniorguru/eggtray.git#4014602332fc030af4c07c417eed94ec99df8e31" }
+source = { git = "https://github.com/juniorguru/eggtray.git#fdea9c2dae7163d41457d2fd698ccf6ac9746515" }
 dependencies = [
     { name = "click" },
     { name = "githubkit", extra = ["auth-app"] },
