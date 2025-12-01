@@ -59,8 +59,8 @@
 # - https://tinywow.com/image/upscale
 # - https://www.fotor.com/photo-editor-app/editor/beauty
 registry:
-id: 57
-    title: "Přežít a zazářit: Průvodce světem konferencí (nejen) pro introverty"
+  - id: 57
+    title: "Jak vytěžit z IT eventů maximum: Strategie pro introverty (i extroverty)"
     date: "2025-12-10"
     description: |
       Networking nemusí být sprosté slovo, a to ani když jsi introvert. Přijď si poslechnout, jak využít IT akce ve svůj prospěch, i když se nerad/a seznamuješ. Probereme, jak si eventy strategicky vybírat, jak se na ně připravit a jak je využít pro svůj osobní brand i vzdělávání. Odneseš si konkrétní praktické tipy od introverta pro introverty (i ty ostatní), které mi fungují už léta.
@@ -70,11 +70,11 @@ id: 57
     bio: |
       Irča se ve světě technologií pohybuje přes 15 let. Působila jako tisková mluvčí Seznamu, Tech Community Maneger v Heurece a konzultovala pro firmy jako Bizmachine, Apify či Keboola. V projektu PeopleOps ukazuje, jak se ze špičkových specialistů proměnit v dobré leadery. Aktuálně buduje startup Diversight.ai, kde propojuje svět datových anotací a analýz s jedinečným talentem lidí na autistickém spektru. Věří, že pro dlouhodobý úspěch v IT jsou komunikační dovednosti a týmová souhra stejně důležité jako kvalitní kód.
     bio_links:
-      - https://bsky.app/profile/izatlouk.cz
       - https://www.linkedin.com/in/izatlouk/
-      - www.izatlouk.cz
-      - www.peopleops.cz
-      - www.diversight.ai 
+      - https://bsky.app/profile/izatlouk.cz
+      - https://www.izatlouk.cz
+      - https://www.peopleops.cz
+      - https://www.diversight.ai
 
   - id: 56
     title: "Z diplomacie do jednorožce: Jak jsem se ocitl v IT bez řádku kódu"
@@ -90,7 +90,7 @@ id: 57
       - https://www.linkedin.com/in/jan-meissner/
     club_speaker_ids:
       - 672433063690633216
-    club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1443507110229966878  
+    club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1443507110229966878
 
   - id: 55
     title: "Jak se učit v době AI"
