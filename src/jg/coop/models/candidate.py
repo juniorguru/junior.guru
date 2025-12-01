@@ -10,13 +10,15 @@ from peewee import (
     DateField,
     ForeignKeyField,
     IntegerField,
+    fn,
 )
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
 
+from jg.coop.lib.discord_club import ClubChannelID
 from jg.coop.lib.location import REGIONS, FuzzyLocation, Location, repr_locations
 from jg.coop.lib.text import get_tag_slug
 from jg.coop.models.base import BaseModel, JSONField
-from jg.coop.models.club import ClubUser
+from jg.coop.models.club import ClubChannel, ClubMessage, ClubUser
 
 
 ANYWHERE_TAG_SLUG = "kdekoliv"
@@ -37,6 +39,19 @@ class Tag(PydanticBaseModel):
     @property
     def name(self) -> str:
         return f"#{self.slug}"
+
+
+class Colors(StrEnum):
+    primary = auto()
+    secondary = auto()
+
+
+class Badge(PydanticBaseModel):
+    model_config = ConfigDict(frozen=True)
+
+    label: str
+    color: Colors
+    help_text: str | None = None
 
 
 class Candidate(BaseModel):
@@ -75,6 +90,108 @@ class Candidate(BaseModel):
         for lang in self.languages:
             tags.append(Tag(slug=get_tag_slug(lang), type=TagType.LANGUAGE))
         return tags
+
+    @property
+    def badges(self) -> list[Badge]:
+        badges = []
+        if projects_count := self.list_projects.count():
+            match projects_count:
+                case 1:
+                    label = "1 projekt"
+                case _ if projects_count in range(2, 5):
+                    label = f"{projects_count} projekty"
+                case _:
+                    label = f"{projects_count} projektů"
+            badges.append(Badge(label=label, color=Colors.primary))
+
+        knows_ai = (
+            ClubMessage.select()
+            .where(
+                ClubMessage.author_id == self.user_id,
+                ClubMessage.channel_id == ClubChannelID.AI,
+            )
+            .count()
+            > 5
+        )
+        if knows_ai:
+            badges.append(
+                Badge(
+                    label="umí používat AI",
+                    color=Colors.primary,
+                    help_text="Na klubovém Discordu se aktivně účastní debat o umělé inteligenci",
+                )
+            )
+
+        communicates_online = (
+            ClubMessage.select().where(ClubMessage.author_id == self.user_id).count()
+            > 50
+        )
+        if communicates_online:
+            badges.append(
+                Badge(
+                    label="dobře komunikuje na dálku",
+                    color=Colors.secondary,
+                    help_text="Aktivně píše na klubovém Discordu",
+                )
+            )
+
+        is_organized = (
+            ClubMessage.select()
+            .where(
+                ClubMessage.author_id == self.user_id,
+                ClubMessage.parent_channel_id == ClubChannelID.WEEKLY_PLANS,
+            )
+            .count()
+            > 10
+        )
+        if is_organized:
+            badges.append(
+                Badge(
+                    label="systematický přístup",
+                    color=Colors.secondary,
+                    help_text="Pravidelně plánuje svůj týden na klubovém Discordu",
+                )
+            )
+
+        has_diary = (
+            ClubChannel.select()
+            .join(ClubMessage, on=(ClubChannel.id == ClubMessage.channel_id))
+            .where(
+                ClubChannel.author_id == self.user_id,
+                ClubMessage.parent_channel_id == ClubChannelID.DIARIES,
+            )
+            .first()
+        )
+        if has_diary:
+            badges.append(
+                Badge(
+                    label="vede si deník",
+                    color=Colors.secondary,
+                    help_text="Vede si deník o cestě do IT na klubovém Discordu",
+                )
+            )
+
+        has_feedback = (
+            ClubChannel.select()
+            .join(ClubMessage, on=(ClubChannel.id == ClubMessage.channel_id))
+            .where(
+                ClubChannel.author_id == self.user_id,
+                ClubMessage.parent_channel_id.in_(
+                    [ClubChannelID.CV_GITHUB_LINKEDIN, ClubChannelID.CREATIONS]
+                ),
+            )
+            .count()
+        )
+        if has_feedback:
+            badges.append(
+                Badge(
+                    label="nebojí se zpětné vazby",
+                    color=Colors.secondary,
+                    help_text="Žádá o zpětnou vazbu na klubovém Discordu (projekty, CV)",
+                )
+            )
+
+        return badges
 
     @property
     def locations(self) -> list[Location]:
@@ -125,7 +242,7 @@ class Candidate(BaseModel):
     @classmethod
     def listing(cls) -> Iterable[Self]:
         return cls.select().order_by(
-            cls.is_ready.desc(), cls.is_member.desc(), cls.name
+            cls.is_ready.desc(), cls.is_member.desc(), fn.random()
         )
 
     @classmethod

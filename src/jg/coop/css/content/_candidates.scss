@@ -206,6 +206,28 @@
   opacity: 1;
 }
 
+.candidates-badge {
+  @extend .badge;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $jg-white;
+  user-select: none;
+  background: $jg-dark;
+}
+
+.candidates-badge[title] {
+  cursor: help;
+}
+
+.candidates-badge.primary {
+  @extend .text-bg-primary;
+}
+
+.candidates-badge.secondary {
+  @extend .text-bg-secondary;
+  background-color: $jg-gray;
+}
+
 .candidates-details {
   @include media-breakpoint-up(sm) {
     display: flex;

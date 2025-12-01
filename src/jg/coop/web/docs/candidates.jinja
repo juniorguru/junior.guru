@@ -121,6 +121,13 @@ template: main_subnav.html
             <span class="candidates-info-item">{{ "geo-alt"|icon }} {{ candidate.location_text|default("všudezdejší", true) }}</span>
           </p>
           <p>
+            {% for badge in candidate.badges %}
+              <span class="candidates-badge {{ badge.color|lower }}"{% if badge.help_text %} title="{{ badge.help_text }}"{% endif %}>
+                {{- badge.label -}}
+              </span>
+            {% endfor %}
+          </p>
+          <p>
             {% for tag in candidate.tags %}
               <span
                 class="candidates-tag"
