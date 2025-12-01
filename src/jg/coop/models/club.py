@@ -572,6 +572,7 @@ class ClubChannel(BaseModel):
     id = IntegerField(primary_key=True)
     name = CharField()
     type = IntegerField(constraints=[check_enum("type", ChannelType)])
+    author = ForeignKeyField(ClubUser, null=True)
     tags = JSONField(default=list, index=True)
     members_ids = JSONField(default=list)
 

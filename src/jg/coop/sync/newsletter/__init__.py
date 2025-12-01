@@ -147,7 +147,7 @@ async def main(
             "name": message.channel_name,
             "url": message.url,
             "author": get_initials(
-                ClubMessage.get_by_id(message.channel_id).author.display_name
+                ClubChannel.get_by_id(message.channel_id).author.display_name
             ),
         }
         for message in club_diaries_threads
@@ -162,7 +162,7 @@ async def main(
             "name": message.channel_name,
             "url": message.url,
             "author": get_initials(
-                ClubMessage.get_by_id(message.channel_id).author.display_name
+                ClubChannel.get_by_id(message.channel_id).author.display_name
             ),
         }
         for message in club_creations_threads
@@ -181,7 +181,7 @@ async def main(
                     "type": review_type,
                     "url": message.url,
                     "author": get_initials(
-                        ClubMessage.get_by_id(message.channel_id).author.display_name
+                        ClubChannel.get_by_id(message.channel_id).author.display_name
                     ),
                 }
             )

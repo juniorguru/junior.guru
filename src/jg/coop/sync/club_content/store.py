@@ -154,6 +154,7 @@ def store_thread(thread: Thread, members: list[ThreadMember]) -> None:
         name=name,
         type=int(thread.type.value),
         tags=[tag.name for tag in thread.applied_tags],
+        author_id=thread.owner_id,
         members_ids=[member.id for member in members if member.id != ClubMemberID.BOT],
     )
 
