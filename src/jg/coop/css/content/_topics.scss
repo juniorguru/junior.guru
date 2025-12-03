@@ -8,6 +8,8 @@
   }
 
   li {
+    display: flex;
+    flex-direction: column;
     width: 10em;
     padding-right: calc(#{$spacer} / 2);
     padding-left: calc(#{$spacer} / 2);
