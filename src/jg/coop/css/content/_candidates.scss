@@ -209,14 +209,21 @@
 .candidates-badge {
   @extend .badge;
   font-size: $font-size-sm;
-  font-weight: $font-weight-medium;
+  font-weight: $font-weight-normal;
   color: $jg-white;
   user-select: none;
   background: $jg-dark;
+  border: none;
 }
 
-.candidates-badge[title] {
+.candidates-badge[title],
+.candidates-badge[data-bs-title],
+.candidates-badge[data-bs-original-title] {
   cursor: help;
+}
+
+.candidates-badge-tooltip {
+  font-size: $font-size-xs;
 }
 
 .candidates-badge.primary {

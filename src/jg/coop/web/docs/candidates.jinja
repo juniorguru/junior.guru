@@ -122,9 +122,18 @@ template: main_subnav.html
           </p>
           <p>
             {% for badge in candidate.badges %}
-              <span class="candidates-badge {{ badge.color|lower }}"{% if badge.help_text %} title="{{ badge.help_text }}"{% endif %}>
+              {% set badge_tag = "button" if badge.help_text else "span" %}
+              <{{ badge_tag }}
+                class="candidates-badge {{ badge.color|lower }}"
+                {% if badge.help_text %}
+                  title="{{ badge.help_text }}"
+                  data-bs-toggle="tooltip"
+                  data-bs-custom-class="candidates-badge-tooltip"
+                  data-bs-placement="bottom"
+                {% endif -%}
+              >
                 {{- badge.label -}}
-              </span>
+              </{{ badge_tag }}>
             {% endfor %}
           </p>
           <p>

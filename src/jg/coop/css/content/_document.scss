@@ -112,3 +112,12 @@
   margin-top: $document-spacer;
   margin-bottom: $document-spacer - $spacer;
 }
+
+[popover] {
+  padding: 0 .5rem;
+  font-size: $small-font-size;
+  color: $jg-white;
+  background: $jg-dark;
+  border: none;
+  border-radius: $border-radius;
+}
