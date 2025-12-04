@@ -1,5 +1,5 @@
-import * as popperjs from '@popperjs/core';
-import * as bootstrap from 'bootstrap';
+import * as popperjs from "@popperjs/core";
+import * as bootstrap from "bootstrap";
 
 function setupCandidatesTags() {
   const container = document.querySelector(".candidates-tags");
@@ -24,8 +24,8 @@ function setupCandidatesTags() {
 }
 
 function setupCandidates() {
-  const badges = document.querySelectorAll('.candidates-badge[title]');
-  [...badges].map(badge => new bootstrap.Tooltip(badge));
+  const badges = document.querySelectorAll(".candidates-badge[title]");
+  [...badges].map((badge) => new bootstrap.Tooltip(badge));
 
   document
     .querySelectorAll(".candidates-item.openable")
