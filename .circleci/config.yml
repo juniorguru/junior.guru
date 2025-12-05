@@ -289,7 +289,7 @@ jobs:
           at: "~"
       - run:
           name: Download Lychee
-          command: wget https://github.com/lycheeverse/lychee/releases/download/lychee-v0.21.0/lychee-x86_64-unknown-linux-musl.tar.gz -O lychee.tar.gz
+          command: wget https://github.com/lycheeverse/lychee/releases/download/lychee-v0.22.0/lychee-x86_64-unknown-linux-musl.tar.gz -O lychee.tar.gz
       - run:
           name: Extract Lychee
           command: tar -xzvf lychee.tar.gz && chmod +x lychee
