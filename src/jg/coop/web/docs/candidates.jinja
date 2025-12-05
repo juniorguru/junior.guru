@@ -148,6 +148,31 @@ template: main_subnav.html
               </span>
             {% endfor %}
           </p>
+          {# TODO
+          <div>
+            {% for project in candidate.projects %}
+              <h4 class="candidates-project-heading">
+                {{ project.name_repo }}
+              </h4>
+              <p>{{ project.description }}</p>
+              <p><small>{{ project.duration|duration }} práce, hotovo {{ project.end_on.year }}</small></p>
+              <a
+                href="{{ project.source_url }}"
+                rel="nofollow noopener"
+                target="_blank"
+                class="{% if not project.live_url %} primary{% endif %}"
+              >Zdrojový kód</a>
+              {% if project.live_url %}
+                <a
+                  href="{{ project.live_url }}"
+                  rel="nofollow noopener"
+                  target="_blank"
+                  class="primary"
+                >Ukázka</a>
+              {% endif %}
+            {% endfor %}
+          </div>
+          #}
           {% if candidate.experience_text %}
           <div class="candidates-details" hidden>
             <h4 class="candidates-details-heading">Praxe</h4>

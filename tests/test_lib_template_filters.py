@@ -1,5 +1,5 @@
 from collections import namedtuple
-from datetime import UTC, date, datetime
+from datetime import UTC, date, datetime, timedelta
 
 import pytest
 from mkdocs.structure.files import File
@@ -427,3 +427,27 @@ def test_bio_link(url: str, expected_icon: str, expected_text: str):
         f'<a class="icon-link" href="{url}" target="_blank" rel="nofollow noopener noreferrer">'
         f'<span><i class="bi bi-{expected_icon}"></i></span> <span>{expected_text}</span></a>'
     )
+
+
+@pytest.mark.parametrize(
+    "value, expected",
+    [
+        (timedelta(seconds=45), "1 den"),
+        (timedelta(seconds=90), "1 den"),
+        (timedelta(minutes=150), "1 den"),
+        (timedelta(hours=5), "1 den"),
+        (timedelta(hours=30), "1 den"),
+        (timedelta(days=1), "1 den"),
+        (timedelta(days=2), "2 dny"),
+        (timedelta(days=5), "5 dní"),
+        (timedelta(days=7), "1 týden"),
+        (timedelta(days=15), "2 týdny"),
+        (timedelta(days=40), "1 měsíc"),
+        (timedelta(days=65), "2 měsíce"),
+        (timedelta(days=400), "1 rok"),
+        (timedelta(days=800), "2 roky"),
+        (timedelta(days=2200), "6 let"),
+    ],
+)
+def test_duration(value: timedelta, expected: str):
+    assert template_filters.duration(value) == expected

@@ -1,7 +1,7 @@
 import math
 import random
 import re
-from datetime import UTC
+from datetime import UTC, timedelta
 from numbers import Number
 from operator import itemgetter
 from typing import Generator, Iterable, Literal
@@ -318,3 +318,19 @@ def bio_link(url: str) -> Markup:
         f'<a class="icon-link" href="{url}" target="_blank" rel="nofollow noopener noreferrer">'
         f"<span>{icon(icon_name)}</span> <span>{text}</span></a>"
     )
+
+
+def duration(value: timedelta) -> str:
+    days = value.days
+    if days <= 1:
+        return "1 den"
+    if days < 7:
+        return f"{days} " + nplurals(days, "den", "dny", "dní")
+    if days < 30:
+        weeks = round(days / 7)
+        return f"{weeks} " + nplurals(weeks, "týden", "týdny", "týdnů")
+    if days < 365:
+        months = round(days / 30)
+        return f"{months} " + nplurals(months, "měsíc", "měsíce", "měsíců")
+    years = round(days / 365)
+    return f"{years} " + nplurals(years, "rok", "roky", "let")

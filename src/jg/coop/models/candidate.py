@@ -1,4 +1,5 @@
 import itertools
+from datetime import timedelta
 from enum import StrEnum, auto
 from operator import attrgetter
 from typing import Iterable, Self
@@ -195,6 +196,10 @@ class Candidate(BaseModel):
         return badges
 
     @property
+    def projects(self) -> Iterable["CandidateProject"]:
+        return self.list_projects.order_by(CandidateProject.priority.desc())
+
+    @property
     def locations(self) -> list[Location]:
         if self.location_fuzzy:
             location_fuzzy = FuzzyLocation(**self.location_fuzzy)
@@ -279,3 +284,11 @@ class CandidateProject(BaseModel):
     start_on = DateField()
     end_on = DateField()
     topics = JSONField(default=list)
+
+    @property
+    def name_repo(self) -> str:
+        return self.source_url.rstrip("/").split("/")[-1]
+
+    @property
+    def duration(self) -> timedelta:
+        return self.end_on - self.start_on

@@ -17,6 +17,7 @@ TEMPLATE_FILTERS = [
     "assert_empty",
     "bio_link",
     "docs_url",
+    "duration",
     "email_link",
     "github_url",
     "hours",
