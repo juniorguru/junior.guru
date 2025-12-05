@@ -16,7 +16,7 @@ Každý den stahuju z různých zdrojů inzeráty a ty, které jsou vhodné pro 
 ## Plánované online akce 🗓️
 
 {% for event in events_planned[:3] -%}
-    **{{ '{:%-d.%-m. %H:%M}'.format(event.start_at) }}** [{{ event.title }}]({{ event.url }}) ({{ event.bio_name }})<br>
+    **{{ '{:%-d.%-m. %H:%M}'.format(event.start_at_prg) }}** [{{ event.title }}]({{ event.url }}) ({{ event.bio_name }})<br>
 {%- endfor %}
 {% endif %}
 
