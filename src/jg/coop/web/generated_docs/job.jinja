@@ -1,5 +1,5 @@
-<h1>{{ job.title }}</h1>
 <div itemscope itemtype="https://schema.org/JobPosting">
+  <h1 itemprop="title">{{ job.title }}</h1>
   <meta itemprop="industry" content="Informační technologie" />
   <meta itemprop="datePosted" content="{{ job.posted_on.isoformat() }}" />
   <p>
