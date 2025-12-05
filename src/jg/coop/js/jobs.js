@@ -30,7 +30,7 @@ function setupJobs() {
         job.querySelectorAll(".jobs-title-text, .jobs-actions, .jobs-company"),
       ),
     );
-    const outside = [titleLink];
+    const outside = [titleLink].concat(Array.from(job.querySelectorAll(".jobs-open")));
 
     titleLink.addEventListener("click", function (event) {
       event.preventDefault();

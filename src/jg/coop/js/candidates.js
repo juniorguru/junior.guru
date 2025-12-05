@@ -42,7 +42,7 @@ function setupCandidates() {
           ),
         ),
       );
-      const outside = [titleLink];
+      const outside = [titleLink].concat(Array.from(candidate.querySelectorAll(".candidates-open")));
 
       titleLink.addEventListener("click", function (event) {
         event.preventDefault();

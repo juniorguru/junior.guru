@@ -150,7 +150,8 @@ template: main_subnav.html
               {{ job.title }}
             </a>
             <span class="jobs-title-text" hidden>{{ job.title }}</span>
-            <span class="jobs-close" hidden>{{ "x-lg"|icon }}</span>
+            <span class="jobs-open">{{ "arrow-down-square"|icon }}</span>
+            <button class="jobs-close" hidden>{{ "x-lg"|icon }}</button>
           </h3>
           <p class="jobs-info">
             <strong class="jobs-info-item">{{ job.company_name }}</strong>

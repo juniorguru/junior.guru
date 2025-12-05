@@ -169,9 +169,13 @@
   color: $jg-dark;
 }
 
+.candidates-open,
 .candidates-close {
-  font-size: $font-size-sm;
+  padding: 0;
+  color: $jg-blue;
   cursor: pointer;
+  background: none;
+  border: none;
 }
 
 .candidates-debug {
@@ -198,22 +202,23 @@
   }
 }
 
-.candidates-item .candidates-tag {
-  opacity: .5;
+.candidates-item .candidates-tag.matching {
+  color: $jg-white;
+  background-color: $jg-dark;
 }
 
-.candidates-item .candidates-tag.matching {
-  opacity: 1;
+.candidates-badges {
+  line-height: 2;
 }
 
 .candidates-badge {
   @extend .badge;
   font-size: $font-size-sm;
   font-weight: $font-weight-normal;
-  color: $jg-white;
+  color: $jg-dark;
   user-select: none;
-  background: $jg-dark;
-  border: none;
+  background-color: transparent;
+  border: 1px solid $jg-dark;
 }
 
 .candidates-badge[title],
@@ -226,14 +231,14 @@
   font-size: $font-size-xs;
 }
 
-.candidates-badge.primary {
-  @extend .text-bg-primary;
-}
+// .candidates-badge.primary {
+//   @extend .text-bg-primary;
+// }
 
-.candidates-badge.secondary {
-  @extend .text-bg-secondary;
-  background-color: $jg-gray;
-}
+// .candidates-badge.secondary {
+//   @extend .text-bg-secondary;
+//   background-color: $jg-gray;
+// }
 
 .candidates-details {
   @include media-breakpoint-up(sm) {

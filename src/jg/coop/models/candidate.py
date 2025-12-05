@@ -41,17 +41,12 @@ class Tag(PydanticBaseModel):
         return f"#{self.slug}"
 
 
-class Colors(StrEnum):
-    primary = auto()
-    secondary = auto()
-
-
 class Badge(PydanticBaseModel):
     model_config = ConfigDict(frozen=True)
 
+    icon: str
     label: str
-    color: Colors
-    help_text: str | None = None
+    help_text: str
 
 
 class Candidate(BaseModel):
@@ -102,7 +97,13 @@ class Candidate(BaseModel):
                     label = f"{projects_count} projekty"
                 case _:
                     label = f"{projects_count} projektů"
-            badges.append(Badge(label=label, color=Colors.primary))
+            badges.append(
+                Badge(
+                    icon="tools",
+                    label=label,
+                    help_text="Počet připnutých projektů na GitHubu",
+                )
+            )
 
         knows_ai = (
             ClubMessage.select()
@@ -116,8 +117,8 @@ class Candidate(BaseModel):
         if knows_ai:
             badges.append(
                 Badge(
+                    icon="stars",
                     label="umí používat AI",
-                    color=Colors.primary,
                     help_text="Na klubovém Discordu se aktivně účastní debat o umělé inteligenci",
                 )
             )
@@ -129,8 +130,8 @@ class Candidate(BaseModel):
         if communicates_online:
             badges.append(
                 Badge(
+                    icon="chat",
                     label="dobře komunikuje na dálku",
-                    color=Colors.secondary,
                     help_text="Aktivně píše na klubovém Discordu",
                 )
             )
@@ -147,8 +148,8 @@ class Candidate(BaseModel):
         if is_organized:
             badges.append(
                 Badge(
+                    icon="calendar-check",
                     label="systematický přístup",
-                    color=Colors.secondary,
                     help_text="Pravidelně plánuje svůj týden na klubovém Discordu",
                 )
             )
@@ -167,8 +168,8 @@ class Candidate(BaseModel):
         if has_feedback:
             badges.append(
                 Badge(
+                    icon="check2-square",
                     label="nebojí se zpětné vazby",
-                    color=Colors.secondary,
                     help_text="Žádá o zpětnou vazbu na klubovém Discordu (projekty, CV)",
                 )
             )
@@ -185,8 +186,8 @@ class Candidate(BaseModel):
         if has_diary:
             badges.append(
                 Badge(
+                    icon="journals",
                     label="vede si deník",
-                    color=Colors.secondary,
                     help_text="Vede si deník o cestě do IT na klubovém Discordu",
                 )
             )

@@ -165,9 +165,13 @@
   color: $jg-dark;
 }
 
+.jobs-open,
 .jobs-close {
-  font-size: $font-size-sm;
+  padding: 0;
+  color: $jg-blue;
   cursor: pointer;
+  background: none;
+  border: none;
 }
 
 .jobs-item:hover .jobs-title-link {
@@ -188,12 +192,9 @@
   }
 }
 
-.jobs-item .jobs-tag {
-  opacity: .5;
-}
-
 .jobs-item .jobs-tag.matching {
-  opacity: 1;
+  color: $jg-white;
+  background-color: $jg-dark;
 }
 
 .jobs-company {

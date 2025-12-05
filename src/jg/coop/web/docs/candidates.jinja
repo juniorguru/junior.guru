@@ -115,12 +115,13 @@ template: main_subnav.html
               {{ candidate.name }}
             </a>
             <span class="candidates-title-text" hidden>{{ candidate.name }}</span>
-            <span class="candidates-close" hidden>{{ "x-lg"|icon }}</span>
+            <span class="candidates-open">{{ "arrow-down-square"|icon }}</span>
+            <button class="candidates-close" hidden>{{ "x-lg"|icon }}</button>
           </h3>
           <p class="candidates-info">
             <span class="candidates-info-item">{{ "geo-alt"|icon }} {{ candidate.location_text|default("všudezdejší", true) }}</span>
           </p>
-          <p>
+          <p class="candidates-badges">
             {% for badge in candidate.badges %}
               {% set badge_tag = "button" if badge.help_text else "span" %}
               <{{ badge_tag }}
@@ -132,7 +133,7 @@ template: main_subnav.html
                   data-bs-placement="bottom"
                 {% endif -%}
               >
-                {{- badge.label -}}
+                {{- badge.icon|icon }} {{ badge.label -}}
               </{{ badge_tag }}>
             {% endfor %}
           </p>
