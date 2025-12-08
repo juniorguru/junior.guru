@@ -1,9 +1,49 @@
 from textwrap import dedent
 
-from jg.coop.models.newsletter import process_content_html
+from jg.coop.models.newsletter import content_to_html, edit_content_html
 
 
-def test_process_content_html_removes_double_br():
+def test_content_to_html_with_markdown():
+    body = dedent(
+        """
+            # Nadpis
+
+            Toto je **tučný** text s [odkazem](https://example.com).
+
+            - Položka 1
+            - Položka 2
+        """
+    ).strip()
+    expected = dedent(
+        """
+            <h1 id="nadpis">Nadpis</h1>
+            <p>Toto je <strong>tučný</strong> text s <a href="https://example.com">odkazem</a>.</p>
+            <ul>
+            <li>Položka 1</li>
+            <li>Položka 2</li>
+            </ul>
+        """
+    ).strip()
+
+    assert content_to_html(body) == expected
+
+
+def test_content_to_html_with_html():
+    body = dedent(
+        """
+            <h1>Nadpis</h1>
+            <p>Toto je <strong>tučný</strong> text s <a href="https://example.com">odkazem</a>.</p>
+            <ul>
+            <li>Položka 1</li>
+            <li>Položka 2</li>
+            </ul>
+        """
+    ).strip()
+
+    assert content_to_html(body) == body
+
+
+def test_edit_content_html_removes_double_br():
     body = dedent(
         """
             <p>
@@ -22,10 +62,10 @@ def test_process_content_html_removes_double_br():
         """
     ).strip()
 
-    assert process_content_html(body) == expected
+    assert edit_content_html(body) == expected
 
 
-def test_process_content_html_preserves_chart():
+def test_edit_content_html_preserves_chart():
     chart = dedent(
         """
             <p>
@@ -42,10 +82,10 @@ def test_process_content_html_preserves_chart():
             </p>
         """
     ).strip()
-    assert process_content_html(chart) == chart
+    assert edit_content_html(chart) == chart
 
 
-def test_process_content_html_strips_emoji_from_h2():
+def test_edit_content_html_strips_emoji_from_h2():
     body = dedent(
         """
             <h2>🚀 Nové kurzy a články</h2>
@@ -59,4 +99,4 @@ def test_process_content_html_strips_emoji_from_h2():
         """
     ).strip()
 
-    assert process_content_html(body) == expected
+    assert edit_content_html(body) == expected
