@@ -278,7 +278,7 @@ class CandidateProject(BaseModel):
     candidate = ForeignKeyField(Candidate, backref="list_projects")
     title = CharField(null=True)
     source_url = CharField()
-    live_url = CharField(null=True)
+    demo_url = CharField(null=True)
     description = CharField(null=True)
     priority = IntegerField(constraints=[Check("priority == 0 or priority == 1")])
     start_on = DateField()

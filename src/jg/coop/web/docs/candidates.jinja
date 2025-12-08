@@ -162,11 +162,11 @@ template: main_subnav.html
                 href="{{ project.source_url }}"
                 rel="nofollow noopener"
                 target="_blank"
-                class="{% if not project.live_url %} primary{% endif %}"
+                class="{% if not project.demo_url %} primary{% endif %}"
               >Zdrojový kód</a>
-              {% if project.live_url %}
+              {% if project.demo_url %}
                 <a
-                  href="{{ project.live_url }}"
+                  href="{{ project.demo_url }}"
                   rel="nofollow noopener"
                   target="_blank"
                   class="primary"
