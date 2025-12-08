@@ -1037,7 +1037,7 @@ dev = [
 [[package]]
 name = "jg-eggtray"
 version = "0.0"
-source = { git = "https://github.com/juniorguru/eggtray.git#fdea9c2dae7163d41457d2fd698ccf6ac9746515" }
+source = { git = "https://github.com/juniorguru/eggtray.git#d096c0061dd8286069996d8f16b51dfcf54ce3c0" }
 dependencies = [
     { name = "click" },
     { name = "githubkit", extra = ["auth-app"] },
@@ -1050,7 +1050,7 @@ dependencies = [
 [[package]]
 name = "jg-hen"
 version = "0.0"
-source = { git = "https://github.com/juniorguru/hen.git#02d67c89feb02701c0b43e95ab1e562bbb9c080d" }
+source = { git = "https://github.com/juniorguru/hen.git#e5d58ddbc83ed9d3aa8334295f697cd524017613" }
 dependencies = [
     { name = "blinker" },
     { name = "click" },
@@ -1595,8 +1595,8 @@ wheels = [
 
 [[package]]
 name = "py-cord"
-version = "2.7.0rc3.dev20+g1907c724a"
-source = { git = "https://github.com/Pycord-Development/pycord.git#1907c724a344f05e5d3ace29da68f3a0dd45a418" }
+version = "2.7.0rc3.dev21+ge90089d19"
+source = { git = "https://github.com/Pycord-Development/pycord.git#e90089d19db1a50ea28003ffc3e505a97c05d893" }
 dependencies = [
     { name = "aiohttp" },
     { name = "typing-extensions" },
