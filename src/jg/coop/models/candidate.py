@@ -4,15 +4,7 @@ from enum import StrEnum, auto
 from operator import attrgetter
 from typing import Iterable, Self
 
-from peewee import (
-    BooleanField,
-    CharField,
-    Check,
-    DateField,
-    ForeignKeyField,
-    IntegerField,
-    fn,
-)
+from peewee import BooleanField, CharField, DateField, ForeignKeyField, IntegerField, fn
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
 
 from jg.coop.lib.discord_club import ClubChannelID
@@ -274,13 +266,13 @@ class Candidate(BaseModel):
 
 
 class CandidateProject(BaseModel):
-    name = CharField()
+    name = CharField(unique=True)
     candidate = ForeignKeyField(Candidate, backref="list_projects")
     title = CharField(null=True)
     source_url = CharField()
     demo_url = CharField(null=True)
     description = CharField(null=True)
-    priority = IntegerField(constraints=[Check("priority == 0 or priority == 1")])
+    priority = IntegerField()
     start_on = DateField()
     end_on = DateField()
     topics = JSONField(default=list)
