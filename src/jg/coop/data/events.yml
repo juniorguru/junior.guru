@@ -75,9 +75,9 @@ registry:
       - https://www.izatlouk.cz
       - https://www.peopleops.cz
       - https://www.diversight.ai
-      club_speaker_ids:
+    club_speaker_ids:
       - 1429928596113195248
-        
+
   - id: 56
     title: "Z diplomacie do jednorožce: Jak jsem se ocitl v IT bez řádku kódu"
     date: "2025-11-26"
