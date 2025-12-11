@@ -42,6 +42,7 @@ EMPLOYMENT_TYPES_MAPPING = {
     "temporary": EmploymentTypes.TEMPORARY,
     "trainee": EmploymentTypes.INTERNSHIP,
     "unpaid internship": EmploymentTypes.INTERNSHIP,
+    "volunteer": EmploymentTypes.VOLUNTEERING,
     "volunteering": EmploymentTypes.VOLUNTEERING,
     "zkrácený úvazek": EmploymentTypes.PARTTIME,
     "zkrátený úväzok": EmploymentTypes.PARTTIME,

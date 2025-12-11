@@ -40,6 +40,7 @@ from jg.coop.sync.jobs_scraped.pipelines.employment_types_cleaner import (
         ("trainee programy", "internship"),
         ("unpaid internship", "internship"),
         ("volunteering", "volunteering"),
+        ("volunteer", "volunteering"),
     ],
 )
 def test_clean_employment_type(employment_type, expected):
