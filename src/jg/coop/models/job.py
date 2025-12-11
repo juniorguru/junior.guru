@@ -304,14 +304,12 @@ class ListedJob(BaseModel):
     def company_logo_source_urls(self) -> list[str]:
         return self.company_logo_urls + ([self.company_url] if self.company_url else [])
 
-    def get_logo_source_type(self, logo_source_url: str) -> LogoSourceType:
+    def get_logo_source_type(self, logo_source_url: str) -> LogoSourceType | None:
         if logo_source_url in self.company_logo_urls:
             return LogoSourceType.LOGO
         if logo_source_url == self.company_url:
             return LogoSourceType.ICON
-        raise ValueError(
-            f"Logo source URL {logo_source_url} not found in job's logo sources"
-        )
+        return None
 
     @property
     def tags(self) -> list[Tag]:
