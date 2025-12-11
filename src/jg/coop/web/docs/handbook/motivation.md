@@ -663,4 +663,20 @@ Dělali jste si někdo IT fitness test? Znáte? https://aavit.cz/it-fitness-test
 https://zpravy.aktualne.cz/domaci/diskriminace-starsich-na-trhu-prace-ctyricetiletym-ajtakum-u/r~09ae8f2ca50411f0a065ac1f6b220ee8/
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1432766876953350315
+https://zpravy.aktualne.cz/domaci/diskriminace-starsich-na-trhu-prace-ctyricetiletym-ajtakum-u/r~09ae8f2ca50411f0a065ac1f6b220ee8/?utm_source=www.seznam.cz&utm_medium=sekce-z-internetu#dop_ab_variant=1553311&dop_source_zone_name=hpfeed.sznhp.box
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1433382843504922685
+I když se o Pythonu říká, že je jednoduchý pro začátečníky, já to tvrzení nemám moc rád, protože mám dojem, že to má fakt každý dost jinak. A taky je rozdíl naučit se základy programování (přemýšlení v algoritmech, cykly, podmínky, proměnné…) a naučit se jazyk a jeho ekosystém a používat ho.
+
+Když se učím to první, tak je skoro jedno, v čem to dělám, a podstatné je, jestli u toho vydržím. Takže je podle mě důležité mít za cíl něco vytvořit a programováním se přibližovat tomu vytvoření.
+
+Ve chvíli, kdy umím základy programování, tak už se naučím skoro jakýkoliv jazyk a postupně i jeho ekosystém - bude to drhnout hlavně v závislosti na kvalitě návodů, komunitě, apod.
+
+Tohle nebude platit, když budu chtít přeskočit z `for` cyklů v Pythonu na VHDL nebo na Haskell, ale většinou to platit bude.
+---
+
+
 #} -->

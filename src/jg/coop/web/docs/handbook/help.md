@@ -330,4 +330,12 @@ A pokud je nějaký příspěvěk, kde je toho moc, prostě ho vykopíruj a nech
 https://blog.pragmaticengineer.com/stack-overflow-is-almost-dead/
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1434810985289351189
+toto je pekne https://overreacted.io/how-to-fix-any-bug/ .. tolko trpezlivosti by som v sebe asi nenasiel, vyslovene umelecke dielo ako Dan pretvoril debugovaciu session na prilezitost nieco vysvetlit a ucit principy ako vytvorit minimal repro steps napriek vsetkym tendenciam na sabotaz
+
+> At this point, it’s worth trying to change the code a few times in either direction (comment it in, comment it out) to verify that each edit predicts the new repro result. (It’s also worth doing other edits to rule out that every second edit works.)
+uff, kiezby toto bola len prehnana paranoja <:lemon_sweat:754441881718620281>
+---
+
+
 #} -->

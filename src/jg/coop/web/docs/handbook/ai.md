@@ -293,4 +293,49 @@ https://www.hrnews.cz/lidske-zdroje/trendy-id-148711/od-unora-plati-povinnost-sk
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1434890300299546674
+https://blog.sshh.io/p/how-i-use-every-claude-code-feature
+---
+
+
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1431978892201164881
+Dobrý video https://youtu.be/-uW5-TaVXu4?si=8mfgjOPj8tS0oncP
+---
+
+
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1432688524607619132
+mam to tam vsude mozne:
+
+```
+...
+Your primary mission is to identify and eliminate code duplication, unnecessary abstraction, and over-engineering while ensuring solutions remain maintainable and readable.
+...
+**Core Analysis Framework:**
+1. **Duplication Detection**: Scan for repeated logic, similar functions, or redundant code patterns that violate DRY principles
+2. **Abstraction Assessment**: Identify unnecessary layers, over-generalized interfaces, or premature optimization that adds complexity without clear benefit
+3. **KISS Evaluation**: Determine if the solution is as simple as possible while still solving the problem effectively
+4. **Necessity Audit**: Question every line, function, and component - if it doesn't directly contribute to the core functionality, flag it for removal
+...
+- For each piece of code, ask: "Is this the simplest way to achieve this goal?"
+...
+- Recommend removing code rather than adding it when possible
+- Ensure any suggested abstractions have clear, immediate benefits
+...
+```
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1422482844336390184
+https://workweave.dev/blog/hiring-only-senior-engineers-is-killing-companies
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1422809502096556072
+Tak už vím/umím formulovat, co mě jako starého pardála na AI nejvíc deptá.
+> human review, testing, and integration needs will remain. And that is a lot harder when the code has been written without the human thinking about it
+AI bleskově vygeneruje kód, já ho musím projít, ale je to obtížné, když přeskočím tu fázi, kdy jsem nad řešením sám přemýšlel.
+https://chrisloy.dev/post/2025/09/28/the-ai-coding-trap
+---
+
+
 #} -->

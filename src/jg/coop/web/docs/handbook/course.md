@@ -1111,4 +1111,11 @@ Pěkný článek https://www.macchiato.cz/rekvalifikace-do-it-nikdy-to-nebylo-je
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1438945117078552809
+Fakt nevím, ale jednu věc zmíním. EU teď přišla s věcí, která ještě není moc známá (nebo přijde mi to tak), což jsou mikrocertifikáty. Vysoké školy mohou nabízet tzv. mikrocertifikáty, kdy to prostě odpovídá hrubě něčemu jako vystudování jednoho předmětu na té škole (možná zjednodušuju až příliš, ale pro přiblížení). Prostě zapíšeš si nějaké téma, nějak to asi zaplatíš (tady si nejsem jistej, jak u veřejnejch škol, ale čekal bych, že asi i tam), pak to studuješ, nějak Tě z toho přezkoušej (ta zkouška může bejt i jenom nějakej test, podmínky přesně neznám) a pak prostě dostaneš glejt, že jsi na škole X vystudoval mikrocertifikát Y.
+
+Jak moc se to chytí na trhu (ono se to pochopitelně netýká zdaleka jenom IT, je to prostě obecná věc), to si myslím, že aktuálně ještě nikdo neví. Ale některé školy to už začínají nabízet. Může to být cesta, jak nějaké vybrané téma slyšet nějak uceleněji (protože ta škola to furt musí mít trochu promyšleno; typicky asi lépe než náhodný indický blogger). Ale pro jistotu: opět to nijak nepropaguju, protože jediné, co o tom vím, je to, že to existuje. Sám žádný mikrocertifikát nemám.
+---
+
+
 #} -->

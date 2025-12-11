@@ -1169,4 +1169,15 @@ https://forum.root.cz/index.php?topic=27496.0
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1439778860638933052
+Ode dneška je k dispozici tabulka pro rok 2026 na https://bit.ly/osvc-v-zamestnanec-2026
+nevím jak moc správně, ale asi sem opravil chyby v tabulkách 2024 a 2025 <:lolpain:859017227515854879>
+---
+
+
+--- https://discord.com/channels/769966886598737931/1431582006067855433/1431582006067855433
+Ahoj lidi a ostatní! 🌞 Ráda bych se s Vámi podělila o svou přípravu na pohovor, která mi pomohla získat moji první pracovní nabídku. Vytvářela jsem ji pomocí ChatGPT, ověřila odpovědi a nechala si ji schválit od profesionálů v oboru. Obsahuje tři modelové technické pohovory a workbook na trénink odpovědí. Snad Vám taky někomu pomůže! 🤞 Použití pro Junior Data Analyst nebo i Software Engineer!  Ke stažení: https://drive.google.com/drive/folders/1r2xusdBWXtW7KZ7hLK4-82yqwwzyafF-?usp=sharing
+---
+
+
 #} -->

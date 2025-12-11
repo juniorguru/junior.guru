@@ -1506,4 +1506,15 @@ Seznam přednášejících nemají, tam je to podobný trik (každý pro někoho
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1443671446202220586
+https://www.linkedin.com/posts/mikomartin_workify-hrghosting-ugcPost-7399817408535998464-LwbO?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAWV6MEBhDedvZT9lRhWi3Woz4OTpEvJ8r0
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1439778860638933052
+Ode dneška je k dispozici tabulka pro rok 2026 na https://bit.ly/osvc-v-zamestnanec-2026
+nevím jak moc správně, ale asi sem opravil chyby v tabulkách 2024 a 2025 <:lolpain:859017227515854879>
+---
+
+
 #} -->

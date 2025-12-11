@@ -337,4 +337,9 @@ https://denikn.cz/1715495/nedostatecni-mozna-nejsme-my-ale-system-podivejme-se-k
 ---
 
 
+--- https://discord.com/channels/769966886598737931/864434067968360459/1440967489088520192
+komu to vcera nevyslo na Pyvo <:pyvo:935796907127754812> , ale tiez sa chce nieco spytat ako som to mal s tym burnoutom, intro k talku mam na https://peter.hozak.info/burnout/
+---
+
+
 #} -->

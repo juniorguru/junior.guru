@@ -670,4 +670,12 @@ Jak to máte u svých veřejných projektů vy? Stačí upozornění, nebo to ra
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788832177135026197/1420395940052729968
+Kdo by hledal nápady na projekty 👀 
+
+- https://roadmap.sh/backend/projects
+- https://roadmap.sh/frontend/projects
+---
+
+
 #} -->

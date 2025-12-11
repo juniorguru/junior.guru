@@ -36,4 +36,42 @@ https://overcast.fm/+xIxfkwLfk
 
 karierko
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1438945117078552809
+Fakt nevím, ale jednu věc zmíním. EU teď přišla s věcí, která ještě není moc známá (nebo přijde mi to tak), což jsou mikrocertifikáty. Vysoké školy mohou nabízet tzv. mikrocertifikáty, kdy to prostě odpovídá hrubě něčemu jako vystudování jednoho předmětu na té škole (možná zjednodušuju až příliš, ale pro přiblížení). Prostě zapíšeš si nějaké téma, nějak to asi zaplatíš (tady si nejsem jistej, jak u veřejnejch škol, ale čekal bych, že asi i tam), pak to studuješ, nějak Tě z toho přezkoušej (ta zkouška může bejt i jenom nějakej test, podmínky přesně neznám) a pak prostě dostaneš glejt, že jsi na škole X vystudoval mikrocertifikát Y.
+
+Jak moc se to chytí na trhu (ono se to pochopitelně netýká zdaleka jenom IT, je to prostě obecná věc), to si myslím, že aktuálně ještě nikdo neví. Ale některé školy to už začínají nabízet. Může to být cesta, jak nějaké vybrané téma slyšet nějak uceleněji (protože ta škola to furt musí mít trochu promyšleno; typicky asi lépe než náhodný indický blogger). Ale pro jistotu: opět to nijak nepropaguju, protože jediné, co o tom vím, je to, že to existuje. Sám žádný mikrocertifikát nemám.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1438988718332711083
+Tak ty mikrocertifikáty nabízí FI MU: https://www.fi.muni.cz/admission/lifelong/thematic-learning/index.html.cs
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1438981420985880728
+Třeba na FITu ČVUT je studijní plán kombinovaného studia postaven tak, že musíš absolvovat stejné předměty jako na prezenčním, takže ten objem znalostí by měl být obdobný. Ale samozřejmě tam je pak výrazně větší podíl samostudia. Samozřejmě v detailech jsou rozdíly a některé zkoušky na kombi jsou nepatrně jednodušší, nebo jsou tam třeba více flexibilní deadliny.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1438982239483465769
+A jako alternativu pak můžeš zvolit celoživotní studium, kdy si můžeš zapsat a studovat (za peníze) pouze jednotlivé předměty, které by Tě zajímaly.  Takto jsem s FITem začal já. Dal jsem si pár předmětů v rámci celoživotního studia, zjistil jsem, že mě to baví a že jsem schopen zkoušky udělat. Až pak jsem se zapsal do normálního studia a navíc mi ty absolvované předměty uznali, takže teď toho mám v semestru o něco méně. Viz zde: https://fit.cvut.cz/cs/studijni-programy/celozivotni-vzdelavani
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1438954439435354285
+Jo, ale stejne bych pripomnel, co psal sveter vyse: https://discord.com/channels/769966886598737931/769966887055392768/1438860361817391217
+Nekdo se proste k tomu uceni sam nedokope a ta skola mu v tom vyrazne pomuze. A nekdo to ma naopak a ta skola mu to zprotivi.
+
+Proste si myslim, ze na otazku "mam nebo nemam zkusit VS" nemuze odpovedet nikdo jiny, nez ten, kdo se pta, protoze kazdy to mame jinak. 
+Kdyz nevim, jestli je to pro me nebo ne, tak proc to nezkusit? A pokud me odradi uz jen priprava na prijimacky, tak je asi jasny, ze to studium bych stejne nedal. Ale budu mit odpoved a uz mi to nemusi vrtat v hlave.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1439212417652363404
+Nedávno jsem natočila rozhovor s tvůrcem nejpopulárnějšího Python frameworku, FastAPI, a zrovna jsem se ho ptala na jeho názor na vysokou školu - je totiž samouk. 🙂
+
+Celý rozhovor je tady https://www.youtube.com/watch?v=iaDRYUQ0OMM, a mám i vystřiženou verzi jen s touto otázkou: https://www.youtube.com/watch?v=pKWWw-N2NZ8
+---
+
+
 #} -->

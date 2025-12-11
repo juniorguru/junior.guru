@@ -666,4 +666,9 @@ V kazdom pripade by to ale malo znamenat viac ako "ChatGPT - pokročilý". Keď 
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1429692356705386506/1434645133218807981
+A fakt se neboj použít <:chatgpt:1119028488784068649> ne si to nechat úplně vymyslet, ale dávám mu zadání, aby mi dal 10 variant různým stylem apod. a vybírám si z nich části, co mi sedí.
+---
+
+
 #} -->

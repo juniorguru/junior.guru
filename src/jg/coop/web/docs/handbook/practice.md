@@ -1040,4 +1040,9 @@ Vysvětlení „big O notation“ https://samwho.dev/big-o/
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1436083142934007889
+pěkný článek o URL https://alfy.blog/2025/10/31/your-url-is-your-state.html
+---
+
+
 #} -->

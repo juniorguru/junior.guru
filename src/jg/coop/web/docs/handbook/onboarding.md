@@ -790,4 +790,9 @@ https://witter.cz/@mjd@mathstodon.xyz/115096720350911609
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1422482844336390184
+https://workweave.dev/blog/hiring-only-senior-engineers-is-killing-companies
+---
+
+
 #} -->
