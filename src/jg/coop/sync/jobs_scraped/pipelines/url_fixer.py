@@ -18,6 +18,7 @@ async def process(item: dict) -> dict:
 def fix_url(url: str) -> str:
     if not url:
         return None
+    url = url.strip()
     if not url.startswith("http"):
         return f"https://{url}"
     return url

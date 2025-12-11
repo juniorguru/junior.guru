@@ -29,7 +29,12 @@ async def test_url_fixer():
 
 @pytest.mark.parametrize(
     "url, expected",
-    [("example.com", "https://example.com"), ("", None), (None, None)],
+    [
+        ("example.com", "https://example.com"),
+        ("  https://www.samsung.com/cz/", "https://www.samsung.com/cz/"),
+        ("", None),
+        (None, None),
+    ],
 )
 def test_fix_url(url, expected):
     assert fix_url(url) == expected
