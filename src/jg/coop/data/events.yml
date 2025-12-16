@@ -77,6 +77,7 @@ registry:
       - https://www.diversight.ai
     club_speaker_ids:
       - 1429928596113195248
+    club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1450419189381857394
 
   - id: 56
     title: "Z diplomacie do jednorožce: Jak jsem se ocitl v IT bez řádku kódu"
