@@ -58,4 +58,68 @@
 
 .mainnav-buttons {
   @extend .order-md-last;
+  display: inline-flex;
+  gap: map-get($spacers, 2);
+  align-items: center;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: map-get($spacers, 4);
+  height: map-get($spacers, 4);
+  padding: 0;
+  color: $jg-dark;
+  background: none;
+  border: none;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus {
+  color: $jg-blue;
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid $jg-blue;
+  outline-offset: 2px;
+}
+
+.theme-toggle-icon {
+  display: none;
+  line-height: 1;
+}
+
+.theme-toggle-glyph {
+  font-size: map-get($spacers, 3);
+}
+
+.theme-toggle-icon--moon {
+  display: inline-flex;
+}
+
+:root[data-theme="dark"] .theme-toggle-icon--sun {
+  display: inline-flex;
+}
+
+:root[data-theme="dark"] .theme-toggle-icon--moon {
+  display: none;
+}
+
+:root[data-theme="light"] .theme-toggle-icon--sun {
+  display: none;
+}
+
+:root[data-theme="light"] .theme-toggle-icon--moon {
+  display: inline-flex;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .theme-toggle-icon--sun {
+    display: inline-flex;
+  }
+
+  :root:not([data-theme]) .theme-toggle-icon--moon {
+    display: none;
+  }
 }
