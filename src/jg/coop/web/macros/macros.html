@@ -3,11 +3,34 @@
 {% endmacro %}
 
 
-{% macro img(filename, alt, width, height, class=none, lazy=True) %}
+{% macro img(filename, alt, width, height, class=none, lazy=True, dark=False) %}
+{% if dark %}
+  {# Compute dark filename: example.svg -> example.dark.svg #}
+  {% set parts = filename.rsplit('.', 1) %}
+  {% set dark_filename = parts[0] + '.dark.' + parts[1] %}
+  {% if dark_filename|file_exists and not filename|files_same(dark_filename) %}
+    {# Dark variant exists and is different - output two images with show/hide classes #}
+<img src="{{ filename|url }}" alt="{{ alt }}" width="{{ width }}" height="{{ height }}"
+  {%- if lazy %} loading="lazy"{% endif %} class="img-light-only{% if class %} {{ class }}{% endif %}">
+<img src="{{ dark_filename|url }}" alt="{{ alt }}" width="{{ width }}" height="{{ height }}"
+  {%- if lazy %} loading="lazy"{% endif %} class="img-dark-only{% if class %} {{ class }}{% endif %}">
+  {% elif dark_filename|file_exists %}
+    {# Dark variant exists but is identical - use single image #}
 <img src="{{ filename|url }}" alt="{{ alt }}" width="{{ width }}" height="{{ height }}"
   {%- if lazy %} loading="lazy"{% endif -%}
   {%- if class %} class="{{ class }}"{% endif -%}
 >
+  {% else %}
+    {# No dark variant - apply filter fallback #}
+<img src="{{ filename|url }}" alt="{{ alt }}" width="{{ width }}" height="{{ height }}"
+  {%- if lazy %} loading="lazy"{% endif %} class="img-dark-filter{% if class %} {{ class }}{% endif %}">
+  {% endif %}
+{% else %}
+<img src="{{ filename|url }}" alt="{{ alt }}" width="{{ width }}" height="{{ height }}"
+  {%- if lazy %} loading="lazy"{% endif -%}
+  {%- if class %} class="{{ class }}"{% endif -%}
+>
+{% endif %}
 {% endmacro %}
 
 
@@ -302,7 +325,7 @@
 {%- endmacro %}
 
 
-{% macro logo(name, path, url=none, lazy=False, class_prefix='logos', utm_campaign=none) %}
+{% macro logo(name, path, url=none, lazy=False, class_prefix='logos', utm_campaign=none, dark=False) %}
   <li class="{{ class_prefix }}-item" title="{{ name }}">
     {% if url %}
     <a class="{{ class_prefix }}-link" href="{{ url }}" target="_blank" rel="noopener"
@@ -311,7 +334,7 @@
       {%- endif %}>
     {% endif %}
 
-    {{ img('static/' + path, name, 130, 60, class=class_prefix + '-image', lazy=lazy) }}
+    {{ img('static/' + path, name, 130, 60, class=class_prefix + '-image', lazy=lazy, dark=dark) }}
 
     {% if url %}
     </a>
@@ -320,18 +343,18 @@
 {% endmacro %}
 
 
-{% macro logos_list(organizations, class=none) %}
+{% macro logos_list(organizations, class=none, dark=False) %}
   <ul class="logos{% if class %} {{ class }}{% endif %}">
     {% for org in organizations %}
-      {{ logo(org.name, org.logo_path, org.url, utm_campaign=org.utm_campaign) }}
+      {{ logo(org.name, org.logo_path, org.url, utm_campaign=org.utm_campaign, dark=dark) }}
     {% endfor %}
   </ul>
 {% endmacro %}
 
 
-{% macro logos_sponsors_by_tier(sponsors_by_tier) %}
+{% macro logos_sponsors_by_tier(sponsors_by_tier, dark=False) %}
   {% for tier, sponsors in sponsors_by_tier %}
-    {{ logos_list(sponsors, class="logos-tier-" + tier.priority|string) }}
+    {{ logos_list(sponsors, class="logos-tier-" + tier.priority|string, dark=dark) }}
   {% endfor %}
 {% endmacro %}
 

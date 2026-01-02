@@ -109,3 +109,29 @@
 .logos.muted {
   opacity: .5;
 }
+
+/*
+  DARK MODE IMAGE SWITCHING
+*/
+
+.img-light-only {
+  display: inline;
+}
+
+.img-dark-only {
+  display: none;
+}
+
+[data-bs-theme="dark"] {
+  .img-light-only {
+    display: none;
+  }
+
+  .img-dark-only {
+    display: inline;
+  }
+
+  .img-dark-filter {
+    filter: brightness(0) invert(1);
+  }
+}

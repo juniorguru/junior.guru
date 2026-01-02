@@ -4,6 +4,7 @@ import re
 from datetime import UTC, timedelta
 from numbers import Number
 from operator import itemgetter
+from pathlib import Path
 from typing import Generator, Iterable, Literal
 from urllib.parse import unquote, urljoin, urlparse, urlunparse
 from zoneinfo import ZoneInfo
@@ -16,6 +17,39 @@ from slugify import slugify
 
 from jg.coop.lib.md import md as md_
 from jg.coop.lib.utm_params import strip_utm_params
+
+
+def _find_project_root():
+    """Find project root by looking for pyproject.toml"""
+    path = Path(__file__).resolve()
+    for parent in path.parents:
+        if (parent / "pyproject.toml").exists():
+            return parent
+    raise RuntimeError("Could not find project root")
+
+
+IMAGES_DIR = _find_project_root() / "src" / "jg" / "coop" / "images"
+
+
+def _resolve_static_path(path):
+    """Map 'static/...' to source images directory"""
+    if path.startswith("static/"):
+        path = path[7:]  # remove 'static/' prefix
+    return IMAGES_DIR / path
+
+
+def file_exists(path):
+    """Check if a static file exists. Path should be like 'static/logos/foo.png'"""
+    return _resolve_static_path(path).is_file()
+
+
+def files_same(path1, path2):
+    """Check if two static files have identical contents"""
+    file1 = _resolve_static_path(path1)
+    file2 = _resolve_static_path(path2)
+    if not file1.is_file() or not file2.is_file():
+        return False
+    return file1.read_bytes() == file2.read_bytes()
 
 
 def email_link(email: str) -> Markup:

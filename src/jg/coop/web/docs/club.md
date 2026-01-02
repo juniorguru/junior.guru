@@ -134,8 +134,8 @@ O klub se stará **Honza Javorek, autor junior.guru**. Okolo se však „poflak
 
 Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý s jiným životním příběhem, ale s velmi podobnými dotazy a problémy.
 {% endcall %}
-<div class="standout-bottom">{{ logos_sponsors_by_tier(sponsors_by_tier) }}</div>
-{{ logos_list(partners, class="mb-0") }}
+<div class="standout-bottom">{{ logos_sponsors_by_tier(sponsors_by_tier, dark=True) }}</div>
+{{ logos_list(partners, class="mb-0", dark=True) }}
 </section>
 
 

@@ -19,6 +19,8 @@ TEMPLATE_FILTERS = [
     "docs_url",
     "duration",
     "email_link",
+    "file_exists",
+    "files_same",
     "github_url",
     "hours",
     "icon",
