@@ -11,7 +11,6 @@ await esbuild.build({
   entryPoints: [
     "src/jg/coop/js/index.js",
     "src/jg/coop/css/index.scss",
-    "src/jg/coop/css_legacy/index.scss",
   ],
   bundle: true,
   minify: true,
