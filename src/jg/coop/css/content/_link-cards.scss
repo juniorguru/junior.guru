@@ -24,6 +24,7 @@
   overflow: hidden;
   background: $jg-blue-light;
   border: 1px solid $jg-blue-light;
+  position: relative;
 }
 
 .link-card.highlighted {
@@ -51,10 +52,6 @@
 
 .link-cards.wide .link-card-badge {
   @extend .card-badge, .lg;
-}
-
-.link-card-header {
-  position: relative;
 }
 
 .link-card-title {
