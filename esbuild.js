@@ -1,5 +1,7 @@
 import * as esbuild from "esbuild";
 import { sassPlugin } from "esbuild-sass-plugin";
+import postcss from "postcss";
+import autoprefixer from "autoprefixer";
 
 const outdir = process.argv[2];
 if (!outdir) {
@@ -28,6 +30,10 @@ await esbuild.build({
   plugins: [
     sassPlugin({
       silenceDeprecations: ['import', 'global-builtin', 'color-functions', 'if-function'],
+      async transform(source) {
+        const { css } = await postcss([autoprefixer]).process(source, { from: undefined });
+        return css;
+      },
     }),
   ],
   outdir,
