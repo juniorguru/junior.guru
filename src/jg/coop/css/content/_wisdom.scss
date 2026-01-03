@@ -1,11 +1,11 @@
 .wisdom-list {
   @include media-breakpoint-up(md) {
     columns: 2;
-    margin-bottom: $main-spacer;
+    margin-bottom: $jg-main-spacer;
   }
 }
 
 .wisdom-item {
-  margin-bottom: $main-spacer;
+  margin-bottom: $jg-main-spacer;
   break-inside: avoid;
 }

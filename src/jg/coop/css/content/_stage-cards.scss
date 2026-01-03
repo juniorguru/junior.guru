@@ -1,24 +1,24 @@
-$stage-icon-size: $spacer * 3.5;
-$stage-icon-space-x: 1.5 * $spacer;
-$stage-icon-space-y: $spacer;
-$stage-line-width: .1rem;
-$stage-line-color: $jg-black;
-$stage-arrow-width: .7rem;
+$jg-stage-icon-size: $spacer * 3.5;
+$jg-stage-icon-space-x: 1.5 * $spacer;
+$jg-stage-icon-space-y: $spacer;
+$jg-stage-line-width: .1rem;
+$jg-stage-line-color: $jg-black;
+$jg-stage-arrow-width: .7rem;
 
-$stage-line-position: $stage-icon-space-x + ($stage-icon-size * .5);
-$stage-illustration-size: $stage-icon-size + (2 * $stage-icon-space-x);
-$stage-arrow-height: $stage-arrow-width * .5;
+$jg-stage-line-position: $jg-stage-icon-space-x + ($jg-stage-icon-size * .5);
+$jg-stage-illustration-size: $jg-stage-icon-size + (2 * $jg-stage-icon-space-x);
+$jg-stage-arrow-height: $jg-stage-arrow-width * .5;
 
 .stage-cards,
 .stage-card {
-  background-image: linear-gradient($stage-line-color, $stage-line-color);
+  background-image: linear-gradient($jg-stage-line-color, $jg-stage-line-color);
   background-repeat: no-repeat;
-  background-size: $stage-line-width 100%;
+  background-size: $jg-stage-line-width 100%;
 }
 
 .stage-cards {
   margin-top: map-get($spacers, 4);
-  background-position: $stage-line-position center;
+  background-position: $jg-stage-line-position center;
 }
 
 .stage-illustration {
@@ -29,20 +29,20 @@ $stage-arrow-height: $stage-arrow-width * .5;
 
 .stage-illustration img {
   display: block;
-  width: $stage-illustration-size;
-  height: $stage-illustration-size;
+  width: $jg-stage-illustration-size;
+  height: $jg-stage-illustration-size;
 }
 
 .stage-card {
   @extend .card;
   margin: 0 0 map-get($spacers, 4);
   background-color: $jg-blue-light;
-  background-position: $stage-line-position center;
+  background-position: $jg-stage-line-position center;
   border: none;
 }
 
 .stage-card:first-child {
-  background-position: $stage-line-position $spacer;
+  background-position: $jg-stage-line-position $spacer;
 }
 
 .stage-card-row {
@@ -58,17 +58,17 @@ $stage-arrow-height: $stage-arrow-width * .5;
   align-items: center;
   justify-content: start;
   padding:
-    $stage-icon-space-y ($stage-icon-space-x - $spacer)
-    $stage-icon-space-y $stage-icon-space-x;
+    $jg-stage-icon-space-y ($jg-stage-icon-space-x - $spacer)
+    $jg-stage-icon-space-y $jg-stage-icon-space-x;
 }
 
 .stage-card-media::before {
   display: block;
-  width: $stage-arrow-width;
-  height: $stage-arrow-height;
+  width: $jg-stage-arrow-width;
+  height: $jg-stage-arrow-height;
   content: "";
-  border: $stage-arrow-height solid transparent;
-  border-top: $stage-arrow-height solid $stage-line-color;
+  border: $jg-stage-arrow-height solid transparent;
+  border-top: $jg-stage-arrow-height solid $jg-stage-line-color;
   border-bottom: 0 none;
 }
 
@@ -81,11 +81,11 @@ $stage-arrow-height: $stage-arrow-width * .5;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: $stage-icon-size;
-  height: $stage-icon-size;
-  font-size: $stage-icon-size * .45;
+  width: $jg-stage-icon-size;
+  height: $jg-stage-icon-size;
+  font-size: $jg-stage-icon-size * .45;
   background-color: $jg-blue-light;
-  border: $stage-line-width solid $jg-black;
+  border: $jg-stage-line-width solid $jg-black;
   border-radius: 100%;
 }
 

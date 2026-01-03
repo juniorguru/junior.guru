@@ -3,7 +3,7 @@
   justify-content: space-between;
   padding-top: map-get($spacers, 4);
   padding-bottom: $spacer;
-  margin-top: $main-spacer;
+  margin-top: $jg-main-spacer;
   border-top: map-get($border-widths, 2) solid $body-color;
 }
 

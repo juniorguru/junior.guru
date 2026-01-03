@@ -4,7 +4,7 @@
 
 .comments-container {
   @extend .container-lg;
-  max-width: $main-document-width;
-  padding-top: $main-spacer;
-  padding-bottom: $main-spacer;
+  max-width: $jg-main-document-width;
+  padding-top: $jg-main-spacer;
+  padding-bottom: $jg-main-spacer;
 }

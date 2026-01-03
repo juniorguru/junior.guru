@@ -1,4 +1,4 @@
-$team-photo-width: map-get($spacers, 5) * 1.5;
+$jg-team-photo-width: map-get($spacers, 5) * 1.5;
 
 .team {
   display: flex;
@@ -11,8 +11,8 @@ $team-photo-width: map-get($spacers, 5) * 1.5;
 }
 
 .team-member-photo {
-  width: $team-photo-width;
-  height: $team-photo-width;
+  width: $jg-team-photo-width;
+  height: $jg-team-photo-width;
   border-radius: 100%;
 }
 

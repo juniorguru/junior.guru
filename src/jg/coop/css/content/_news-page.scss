@@ -2,12 +2,12 @@
 // It should be revamped and possibly deleted.
 // The detail pages of events and podcast episodes rely on it now.
 
-$news-page-image-width: map-get($spacers, 5) * 1.5;
+$jg-news-page-image-width: map-get($spacers, 5) * 1.5;
 
 .news-page-image {
   float: right;
-  width: $news-page-image-width;
-  height: $news-page-image-width;
+  width: $jg-news-page-image-width;
+  height: $jg-news-page-image-width;
   margin: 0 0 $spacer map-get($spacers, 2);
   border-radius: 100%;
 }

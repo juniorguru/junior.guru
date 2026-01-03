@@ -2,7 +2,7 @@
   @extend .list-unstyled;
   display: flex;
   align-items: center;
-  margin: (-1 * $spacer) 0 $main-spacer;
+  margin: (-1 * $spacer) 0 $jg-main-spacer;
   font-size: $small-font-size;
   color: $body-secondary-color;
   text-transform: uppercase;
@@ -55,7 +55,7 @@
 
 .article-lead {
   display: flow-root;
-  margin-bottom: $main-spacer;
+  margin-bottom: $jg-main-spacer;
 }
 
 .article-lead p {

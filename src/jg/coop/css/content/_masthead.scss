@@ -1,9 +1,9 @@
-$masthead-eggshell-height: map-get($spacers, 5);
-$masthead-content-spacer: $spacer;
+$jg-masthead-eggshell-height: map-get($spacers, 5);
+$jg-masthead-content-spacer: $spacer;
 
 .masthead {
   position: relative;
-  padding: map-get($spacers, 5) 0 (2 * $masthead-eggshell-height);
+  padding: map-get($spacers, 5) 0 (2 * $jg-masthead-eggshell-height);
   margin-bottom: $spacer;
   overflow: hidden;
   background-color: $jg-yellow;
@@ -16,20 +16,20 @@ $masthead-content-spacer: $spacer;
   bottom: 0;
   display: block;
   width: 100%;
-  height: $masthead-eggshell-height;
+  height: $jg-masthead-eggshell-height;
   content: "";
   background-color: var(--bs-body-bg);
   mask-image: url("../images/eggshell-i.svg");
   mask-repeat: repeat-x;
   mask-position: bottom center;
-  mask-size: auto $masthead-eggshell-height;
+  mask-size: auto $jg-masthead-eggshell-height;
 }
 
 .masthead-container {
   @extend .container-lg;
   display: grid;
   grid-template-columns: 1fr;
-  gap: $masthead-content-spacer;
+  gap: $jg-masthead-content-spacer;
 
   @include media-breakpoint-up(lg) {
     grid-template-columns: 1fr 1fr;
@@ -45,7 +45,7 @@ $masthead-content-spacer: $spacer;
 .masthead-body {
   display: flex;
   flex-direction: column;
-  gap: $masthead-content-spacer;
+  gap: $jg-masthead-content-spacer;
 }
 
 .masthead-body .lead p,

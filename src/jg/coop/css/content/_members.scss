@@ -1,10 +1,10 @@
-$member-size: 3rem;
-$member-shift: $member-size - ($member-size * .8);
+$jg-member-size: 3rem;
+$jg-member-shift: $jg-member-size - ($jg-member-size * .8);
 
 .members {
   display: inline-flex;
   flex-wrap: wrap;
-  padding-left: $member-shift;
+  padding-left: $jg-member-shift;
   margin-bottom: $spacer;
   overflow: hidden;
   vertical-align: middle;
@@ -12,9 +12,9 @@ $member-shift: $member-size - ($member-size * .8);
 
 .members img {
   display: inline-block;
-  width: $member-size;
-  height: $member-size;
-  margin-left: -1 * $member-shift;
+  width: $jg-member-size;
+  height: $jg-member-size;
+  margin-left: -1 * $jg-member-shift;
   background: $white;
   border-radius: 100%;
 }

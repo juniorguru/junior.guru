@@ -1,6 +1,6 @@
-$subnav-link-padding-y: ($nav-link-padding-y * .5);
-$subnav-border-color: $border-color;
-$subnav-hover-border-color: $border-color;
+$jg-subnav-link-padding-y: ($nav-link-padding-y * .5);
+$jg-subnav-border-color: $border-color;
+$jg-subnav-hover-border-color: $border-color;
 
 .subnav {
   @extend .navbar;
@@ -9,13 +9,13 @@ $subnav-hover-border-color: $border-color;
 
   @include media-breakpoint-up(sm) {
     padding-bottom: 0;
-    border-bottom: $nav-tabs-border-width solid $subnav-border-color;
+    border-bottom: $nav-tabs-border-width solid $jg-subnav-border-color;
   }
 }
 
 .subnav-container {
   @extend .container;
-  max-width: $main-document-width;
+  max-width: $jg-main-document-width;
 }
 
 .subnav-items {
@@ -36,7 +36,7 @@ $subnav-hover-border-color: $border-color;
 
 .subnav-link {
   @extend .nav-link;
-  padding: $subnav-link-padding-y $nav-link-padding-x;
+  padding: $jg-subnav-link-padding-y $nav-link-padding-x;
   border: $nav-tabs-border-width solid transparent;
   transition: none;
 
@@ -48,7 +48,7 @@ $subnav-hover-border-color: $border-color;
 }
 
 .subnav-link:hover {
-  border-color: $subnav-hover-border-color;
+  border-color: $jg-subnav-hover-border-color;
   border-radius: $nav-pills-border-radius;
 
   @include media-breakpoint-up(sm) {
@@ -61,14 +61,14 @@ $subnav-hover-border-color: $border-color;
 .subnav-link.active {
   font-weight: 700;
   background-color: $jg-white;
-  border-color: $subnav-border-color;
+  border-color: $jg-subnav-border-color;
   border-radius: $nav-pills-border-radius;
 
   @include media-breakpoint-up(sm) {
-    padding-top: $subnav-link-padding-y + .1rem;
-    padding-bottom: $subnav-link-padding-y - .1rem;
+    padding-top: $jg-subnav-link-padding-y + .1rem;
+    padding-bottom: $jg-subnav-link-padding-y - .1rem;
     background-color: $nav-tabs-link-active-bg;
-    border-color: $subnav-border-color;
+    border-color: $jg-subnav-border-color;
     border-bottom: $nav-tabs-border-width solid $jg-white;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;

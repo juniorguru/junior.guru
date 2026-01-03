@@ -1,4 +1,4 @@
-$sponsor-avatar-size: 2.5rem;
+$jg-sponsor-avatar-size: 2.5rem;
 
 .sponsor-avatars {
   @extend .list-unstyled;
@@ -29,8 +29,8 @@ $sponsor-avatar-size: 2.5rem;
 }
 
 .sponsor-avatars img {
-  width: $sponsor-avatar-size;
-  height: $sponsor-avatar-size;
+  width: $jg-sponsor-avatar-size;
+  height: $jg-sponsor-avatar-size;
   background: $white;
   border-radius: 100%;
 }

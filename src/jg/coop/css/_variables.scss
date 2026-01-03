@@ -1,8 +1,8 @@
-$font-size-xs: $font-size-base * .75;
+$jg-font-size-xs: $font-size-base * .75;
 
-$main-spacer: map-get($spacers, 5);
+$jg-main-spacer: map-get($spacers, 5);
 
-$main-toc-width: 25%;
-$main-document-width: 50rem;
+$jg-main-toc-width: 25%;
+$jg-main-document-width: 50rem;
 
-$document-spacer: map-get($spacers, 4);
+$jg-document-spacer: map-get($spacers, 4);

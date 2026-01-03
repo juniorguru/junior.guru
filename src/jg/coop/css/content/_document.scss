@@ -21,20 +21,20 @@
 
 .document > h1 {
   padding-bottom: map-get($spacers, 1);
-  margin-bottom: $main-spacer;
+  margin-bottom: $jg-main-spacer;
   border-bottom: map-get($border-widths, 3) solid $body-color;
 }
 
 .document > .lead {
-  margin-bottom: $main-spacer;
+  margin-bottom: $jg-main-spacer;
 }
 
 .document > h2 {
-  margin-top: $main-spacer;
+  margin-top: $jg-main-spacer;
 }
 
 .document > h3 {
-  margin-top: $document-spacer;
+  margin-top: $jg-document-spacer;
 }
 
 .document > p a[role=""]:visited {
@@ -103,14 +103,14 @@
 
 .blockquote-container,
 .jobs-inline {
-  margin-top: $document-spacer;
-  margin-bottom: $document-spacer;
+  margin-top: $jg-document-spacer;
+  margin-bottom: $jg-document-spacer;
 }
 
 .link-cards,
 .stories {
-  margin-top: $document-spacer;
-  margin-bottom: $document-spacer - $spacer;
+  margin-top: $jg-document-spacer;
+  margin-bottom: $jg-document-spacer - $spacer;
 }
 
 [popover] {

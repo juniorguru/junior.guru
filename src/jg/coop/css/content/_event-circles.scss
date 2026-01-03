@@ -1,5 +1,5 @@
-$event-circle-width-sm: map-get($spacers, 5);
-$event-circle-width-md: map-get($spacers, 5) * 1.5;
+$jg-event-circle-width-sm: map-get($spacers, 5);
+$jg-event-circle-width-md: map-get($spacers, 5) * 1.5;
 
 .event-circles {
   @extend .list-unstyled;
@@ -35,13 +35,13 @@ $event-circle-width-md: map-get($spacers, 5) * 1.5;
 .event-circles-item img,
 .event-circles-link::before {
   display: block;
-  width: $event-circle-width-sm;
-  height: $event-circle-width-sm;
+  width: $jg-event-circle-width-sm;
+  height: $jg-event-circle-width-sm;
   border-radius: 100%;
 
   @include media-breakpoint-up(md) {
-    width: $event-circle-width-md;
-    height: $event-circle-width-md;
+    width: $jg-event-circle-width-md;
+    height: $jg-event-circle-width-md;
   }
 }
 

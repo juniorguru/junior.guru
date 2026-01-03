@@ -1,6 +1,6 @@
-$blockquote-border-width: map-get($border-widths, 5) * 1.5;
-$blockquote-image-width: map-get($spacers, 5);
-$blockquote-toxic-color: $danger;
+$jg-blockquote-border-width: map-get($border-widths, 5) * 1.5;
+$jg-blockquote-image-width: map-get($spacers, 5);
+$jg-blockquote-toxic-color: $danger;
 
 .blockquote-container {
   margin: 0;
@@ -9,12 +9,12 @@ $blockquote-toxic-color: $danger;
 
 .blockquote-content {
   padding: map-get($spacers, 1) $spacer;
-  border-left: $blockquote-border-width solid $primary;
+  border-left: $jg-blockquote-border-width solid $primary;
   border-radius: $border-radius;
 }
 
 .toxic .blockquote-content {
-  border-color: $blockquote-toxic-color;
+  border-color: $jg-blockquote-toxic-color;
 }
 
 .blockquote {
@@ -24,7 +24,7 @@ $blockquote-toxic-color: $danger;
 }
 
 .toxic .blockquote {
-  color: $blockquote-toxic-color;
+  color: $jg-blockquote-toxic-color;
 }
 
 .blockquote p:first-child::before {
@@ -51,7 +51,7 @@ $blockquote-toxic-color: $danger;
 .blockquote-avatar {
   display: block;
   float: left;
-  width: $blockquote-image-width;
+  width: $jg-blockquote-image-width;
   height: auto;
   filter: contrast(1.1);
   border-radius: 100%;
@@ -59,23 +59,23 @@ $blockquote-toxic-color: $danger;
 
 .blockquote-container.avatar .blockquote,
 .blockquote-container.avatar .blockquote-footer {
-  padding-left: $blockquote-image-width + $spacer;
+  padding-left: $jg-blockquote-image-width + $spacer;
 }
 
 .blockquote-icon {
   display: block;
   float: left;
-  font-size: $blockquote-image-width;
+  font-size: $jg-blockquote-image-width;
   line-height: 100%;
 }
 
 .toxic .blockquote-icon {
-  color: $blockquote-toxic-color;
+  color: $jg-blockquote-toxic-color;
 }
 
 .blockquote-container.icon .blockquote,
 .blockquote-container.icon .blockquote-footer {
-  padding-left: $blockquote-image-width + $spacer;
+  padding-left: $jg-blockquote-image-width + $spacer;
 }
 
 .blockquotes-2 {

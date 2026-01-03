@@ -40,7 +40,7 @@
   display: flex;
   justify-content: center;
   width: 50%;
-  margin-bottom: $main-spacer;
+  margin-bottom: $jg-main-spacer;
 
   @include media-breakpoint-up(md) {
     width: 33.33%;

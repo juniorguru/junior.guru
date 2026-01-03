@@ -23,12 +23,12 @@
   @include media-breakpoint-up(lg) {
     flex-grow: 1;
     flex-shrink: 0;
-    min-width: $main-toc-width;
+    min-width: $jg-main-toc-width;
   }
 
   @include media-breakpoint-up(xxl) {
     flex-grow: 0;
-    width: $main-toc-width;
+    width: $jg-main-toc-width;
   }
 }
 
@@ -37,7 +37,7 @@
   flex-wrap: nowrap;
   justify-content: space-evenly;
   width: 100%;
-  max-width: $main-document-width;
+  max-width: $jg-main-document-width;
   padding: 0 $spacer;
   margin-bottom: 0;
   background: $white;
