@@ -2,7 +2,13 @@
 
 Various logos of companies and communities used throughout the project (HTML images, website…). Ideally SVGs. 
 
-Workflow for adding SVGs
+## Workflow for adding SVGs
+
+1. Open in Inkscape.
+2. Ctrl+Shift+R (crop to fit)
+
+## Alternative workflow for adding SVGs that are minified and easier to work with later
+
 1. Open in Inkscape.
 2. Ctrl+Shift+D (document properties)
 3. Check if: 
@@ -25,5 +31,6 @@ Workflow for adding SVGs
    - Features all on except for:
      - remove xmlns
      - Remove viewBox
+     - Prefer viewBox to width/height
      - Replace duplicate elements with links
      - Replace xlink with native SVG
