@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .news-cards {
   display: flex;
   flex-wrap: wrap;
@@ -40,7 +42,7 @@
 }
 
 .news-card:hover {
-  background: lighten($jg-blue-light, 1%);
+  background: color.adjust($jg-blue-light, $lightness: 1%);
   border-color: $jg-blue-light;
   transition: $transition-base;
 }

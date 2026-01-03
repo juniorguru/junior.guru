@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .tiers-cards {
   display: flex;
   flex-wrap: wrap;
@@ -8,7 +10,7 @@
   @extend .card;
   margin: 0 0 map-get($spacers, 4);
   overflow: hidden;
-  background: lighten($jg-blue-light, 1%);
+  background: color.adjust($jg-blue-light, $lightness: 1%);
   border: 1px solid $jg-blue-light;
 }
 
@@ -37,7 +39,7 @@
   @extend .card-header;
   @extend .fs-5;
   background: $jg-blue-light;
-  border-color: darken($jg-blue-light, 2%);
+  border-color: color.adjust($jg-blue-light, $lightness: -2%);
 }
 
 .tiers-card.soldout {
@@ -52,7 +54,7 @@
   justify-content: space-between;
   margin-bottom: 0;
   background-color: $jg-blue-light;
-  border-color: darken($jg-blue-light, 2%);
+  border-color: color.adjust($jg-blue-light, $lightness: -2%);
 }
 
 .tier-card-footer small {

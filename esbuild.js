@@ -27,10 +27,7 @@ await esbuild.build({
   assetNames: "assets/[name]",
   plugins: [
     sassPlugin({
-      // async transform(source) {
-      //     const { css } = await postcss([autoprefixer]).process(source);
-      //     return css;
-      // },
+      silenceDeprecations: ['import', 'global-builtin', 'color-functions', 'if-function'],
     }),
   ],
   outdir,

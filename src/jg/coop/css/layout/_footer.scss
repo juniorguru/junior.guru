@@ -1,4 +1,6 @@
-$footer-gray-text: darken($white, 30%);
+@use "sass:color";
+
+$footer-gray-text: color.adjust($white, $lightness: -30%);
 $footer-spacer-sm: map-get($spacers, 2);
 $footer-spacer: $spacer;
 $footer-spacer-md: $spacer * 2;
@@ -210,7 +212,7 @@ $footer-spacer-md: $spacer * 2;
 */
 
 .footer-nav-container {
-  background-color: lighten($jg-dark, 5%);
+  background-color: color.adjust($jg-dark, $lightness: 5%);
 
   p,
   a {

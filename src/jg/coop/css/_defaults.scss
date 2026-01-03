@@ -1,3 +1,5 @@
+@use "sass:color";
+
 /*
   JUNIOR.GURU BRAND
 
@@ -7,18 +9,18 @@
 
 $jg-yellow: #fffa72;
 $jg-yellow-dark: #e5df67;
-$jg-yellow-light: lighten($jg-yellow, 22.2%);
+$jg-yellow-light: color.adjust($jg-yellow, $lightness: 22.2%);
 $jg-blue: #1755d1;
-$jg-blue-light: lighten($jg-blue, 52.2%);
-$jg-blue-white: lighten($jg-blue, 53.2%);
+$jg-blue-light: color.adjust($jg-blue, $lightness: 52.2%);
+$jg-blue-white: color.adjust($jg-blue, $lightness: 53.2%);
 $jg-white: #fff;
 $jg-black: #000;
 $jg-dark: #343434;
-$jg-gray: lighten($jg-dark, 25%);
-$jg-gray-light: lighten($jg-gray, 45%);
-$jg-gray-white: lighten($jg-gray, 50%);
+$jg-gray: color.adjust($jg-dark, $lightness: 25%);
+$jg-gray-light: color.adjust($jg-gray, $lightness: 45%);
+$jg-gray-white: color.adjust($jg-gray, $lightness: 50%);
 $jg-pink: #db61a2;
-$jg-pink-dark: darken($jg-pink, 5%);
+$jg-pink-dark: color.adjust($jg-pink, $lightness: -5%);
 $jg-red: #dc3545;
 $jg-green: #198754;
 
