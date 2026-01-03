@@ -3,7 +3,7 @@ $jg-masthead-content-spacer: $spacer;
 
 .masthead {
   position: relative;
-  padding: map-get($spacers, 5) 0 (2 * $jg-masthead-eggshell-height);
+  padding: $jg-main-spacer 0 (2 * $jg-masthead-eggshell-height);
   margin-bottom: $spacer;
   overflow: hidden;
   background-color: $jg-yellow;
@@ -100,7 +100,7 @@ $jg-masthead-content-spacer: $spacer;
     flex-direction: column;
 
     @include media-breakpoint-up(sm) {
-      margin-right: map-get($spacers, 5);
+      margin-right: $jg-main-spacer;
     }
   }
 

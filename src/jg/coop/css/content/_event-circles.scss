@@ -13,7 +13,7 @@ $jg-event-circle-width-md: map-get($spacers, 5) * 1.5;
   width: 50%;
   padding-right: calc(#{$spacer} / 2);
   padding-left: calc(#{$spacer} / 2);
-  margin-bottom: map-get($spacers, 5);
+  margin-bottom: $jg-main-spacer;
   font-size: $font-size-sm;
   text-align: center;
 
