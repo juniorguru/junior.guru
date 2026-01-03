@@ -2,5 +2,9 @@
   display: block;
   width: 100%;
   height: auto;
-  margin: $spacer 0;
+  margin-block: $spacer;
+
+  [data-bs-theme="dark"] & {
+    filter: invert(0.5);
+  }
 }
