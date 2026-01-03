@@ -98,21 +98,42 @@ def build_mkdocs(context, config_path: Path, output_path: Path, warn: bool):
 
 @main.command()
 @click.argument("output_path", default="public", type=click.Path(path_type=Path))
+@click.option("--purge/--no-purge", default=True)
 @click.pass_context
 @building("everything")
-def build(context, output_path: Path):
+def build(context, output_path: Path, purge: bool):
     shutil.rmtree(output_path, ignore_errors=True)
     output_path.mkdir(parents=True, exist_ok=True)
     context.invoke(build_mkdocs, output_path=output_path)
     context.invoke(build_static, output_path=output_path)
+    if purge:
+        purge_css(output_path)
+
+
+def purge_css(output_path: Path):
+    """Remove unused CSS rules by scanning generated HTML."""
+    logger.info("Purging unused CSS")
+    css_file = output_path / "static" / "css" / "index.css"
+    subprocess.run(
+        [
+            "npx",
+            "purgecss",
+            "--css", str(css_file),
+            "--content", str(output_path / "**/*.html"),
+            "--output", str(css_file.parent),
+            "--safelist", "active", "matching", "open", "noscript",
+        ],
+        check=True,
+    )
 
 
 @main.command()
 @click.argument("output_path", default="public", type=click.Path(path_type=Path))
 @click.option("--open/--no-open", default=False)
+@click.option("--css-purge", is_flag=True, default=False)
 @click.pass_context
-def serve(context, output_path: Path, open: bool):
-    context.invoke(build, output_path=output_path)
+def serve(context, output_path: Path, open: bool, css_purge: bool):
+    context.invoke(build, output_path=output_path, purge=css_purge)
 
     def ignore_data(path) -> bool:
         return Path(path).suffix in [".db-shm", ".db-wal", ".log"]
