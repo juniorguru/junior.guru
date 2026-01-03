@@ -69,12 +69,7 @@
 
 .logobar-image {
   @extend .logos-image;
-  width: 100%;
   max-height: map-get($spacers, 3);
-
-  @include media-breakpoint-up(sm) {
-    width: auto;
-  }
 
   @include media-breakpoint-up(md) {
     max-height: map-get($spacers, 4);
