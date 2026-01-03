@@ -1,0 +1,19 @@
+// Theme toggle button
+.theme-toggle {
+  @extend .btn;
+  transition: transform .15s ease;
+
+  &,
+  i,
+  &::before {
+    color: var(--jg-text-on-highlight) !important;
+  }
+
+  &:hover {
+    transform: scale(1.15);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--jg-border-primary);
+  }
+}
