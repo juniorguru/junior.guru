@@ -4,7 +4,7 @@
   font-weight: $font-weight-medium;
   color: $jg-dark;
   user-select: none;
-  background: $jg-blue-light;
+  background-color: $jg-blue-light;
 }
 
 .jobs-tag-link {
@@ -53,7 +53,7 @@
   font-size: $font-size-lg;
   color: $jg-blue;
   content: "Filtry";
-  background: $jg-white;
+  background-color: $jg-white;
 }
 
 .jobs-tags.noscript::before {
@@ -77,7 +77,7 @@
 
 .jobs-tags .jobs-tag.active {
   color: $jg-white;
-  background: $jg-blue;
+  background-color: $jg-blue;
 }
 
 .jobs-tags .jobs-tag.disabled {
@@ -122,7 +122,7 @@
   flex-shrink: 0;
   padding: .25rem;
   margin-right: $spacer;
-  background: $jg-white;
+  background-color: $jg-white;
   border: 1px solid $border-color;
   border-radius: $border-radius;
 }
@@ -170,7 +170,7 @@
   padding: 0;
   color: $jg-blue;
   cursor: pointer;
-  background: none;
+  background-color: transparent;
   border: none;
 }
 
@@ -243,7 +243,7 @@
   width: 100%;
   padding: $spacer;
   overflow: hidden;
-  background: $jg-white;
+  background-color: $jg-white;
   border-radius: 0 0 $border-radius $border-radius;
 
   @include media-breakpoint-up(sm) {
@@ -315,7 +315,7 @@
   justify-content: center;
   width: 100%;
   padding: map-get($spacers, 2) $spacer;
-  background: $jg-yellow;
+  background-color: $jg-yellow;
 }
 
 .jobs-subscribe-text {

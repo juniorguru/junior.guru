@@ -1,10 +1,10 @@
 .logobar {
   width: 100%;
-  background: $white;
+  background-color: $white;
   border-bottom: 1px solid $jg-gray-light;
 
   @include media-breakpoint-up(lg) {
-    background: linear-gradient(90deg, $jg-blue-light 50%, $white 50%);
+    background-image: linear-gradient(90deg, $jg-blue-light 50%, $white 50%);
   }
 }
 
@@ -40,7 +40,7 @@
   max-width: $jg-main-document-width;
   padding: 0 $spacer;
   margin-bottom: 0;
-  background: $white;
+  background-color: $white;
 
   @include media-breakpoint-up(lg) {
     justify-content: space-evenly;

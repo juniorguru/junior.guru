@@ -22,13 +22,13 @@
   @extend .card;
   width: 100%;
   overflow: hidden;
-  background: $jg-blue-light;
+  background-color: $jg-blue-light;
   border: 1px solid $jg-blue-light;
   position: relative;
 }
 
 .link-card.highlighted {
-  background: $jg-yellow;
+  background-color: $jg-yellow;
   border-color: $jg-yellow;
 }
 

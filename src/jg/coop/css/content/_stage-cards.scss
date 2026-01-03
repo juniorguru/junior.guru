@@ -24,7 +24,7 @@ $jg-stage-arrow-height: $jg-stage-arrow-width * .5;
 .stage-illustration {
   padding: $spacer 0;
   margin: map-get($spacers, 4) 0;
-  background: $jg-white;
+  background-color: $jg-white;
 }
 
 .stage-illustration img {

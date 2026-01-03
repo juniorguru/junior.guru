@@ -11,7 +11,7 @@ body {
   margin: 0;
   font-family: var(--font-family);
   color: var(--color-dark);
-  background: var(--color-yellow);
+  background-color: var(--color-yellow);
 }
 
 main {
@@ -30,7 +30,7 @@ main div {
 }
 
 main div:first-child {
-  background: var(--color-white);
+  background-color: var(--color-white);
 }
 
 main img {
@@ -59,7 +59,7 @@ aside div {
   line-height: 1.5;
   color: var(--color-white);
   text-align: center;
-  background: var(--color-blue);
+  background-color: var(--color-blue);
   border-radius: .3rem;
   box-shadow: rgba(149, 157, 165, .2) 0 8px 24px;
 }

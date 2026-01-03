@@ -10,7 +10,7 @@
   @extend .card;
   margin: 0 0 map-get($spacers, 4);
   overflow: hidden;
-  background: color.adjust($jg-blue-light, $lightness: 1%);
+  background-color: color.adjust($jg-blue-light, $lightness: 1%);
   border: 1px solid $jg-blue-light;
 }
 
@@ -38,7 +38,7 @@
 .tiers-card-header {
   @extend .card-header;
   @extend .fs-5;
-  background: $jg-blue-light;
+  background-color: $jg-blue-light;
   border-color: color.adjust($jg-blue-light, $lightness: -2%);
 }
 

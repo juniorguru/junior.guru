@@ -15,7 +15,7 @@ $jg-member-shift: $jg-member-size - ($jg-member-size * .8);
   width: $jg-member-size;
   height: $jg-member-size;
   margin-left: -1 * $jg-member-shift;
-  background: $white;
+  background-color: $white;
   border-radius: 100%;
 }
 

@@ -21,7 +21,7 @@
   margin-bottom: $spacer;
   text-align: center;
   white-space: nowrap;
-  background: $white;
+  background-color: $white;
   border-radius: $border-radius-lg;
 
   @include media-breakpoint-up(md) {

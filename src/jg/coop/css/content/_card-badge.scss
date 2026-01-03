@@ -6,7 +6,7 @@
   z-index: 1;
   font-weight: $font-weight-normal;
   color: $white;
-  background: $jg-dark;
+  background-color: $jg-dark;
   box-shadow: rgba($jg-dark, .24) 0 map-get($spacers, 1) map-get($spacers, 1);
 }
 

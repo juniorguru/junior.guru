@@ -6,7 +6,7 @@
   max-width: 60ch;
   margin: 0 auto $spacer;
   overflow: hidden;
-  background: $jg-blue-light;
+  background-color: $jg-blue-light;
   border: 1px solid $jg-blue-light;
 }
 
@@ -66,13 +66,13 @@
   padding: ($badge-padding-y * 2) ($badge-padding-x * 1.5);
   font-weight: $font-weight-normal;
   color: $white;
-  background: $link-color;
+  background-color: $link-color;
   box-shadow: rgba($jg-dark, .24) 0 map-get($spacers, 1) map-get($spacers, 1);
   transform: translate(-50%, -50%);
 }
 
 .media-card:hover .media-card-button {
-  background: $link-hover-color;
+  background-color: $link-hover-color;
 }
 
 .media-card-play {

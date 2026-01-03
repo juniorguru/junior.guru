@@ -10,12 +10,12 @@
   @extend .card;
   margin: 0 0 map-get($spacers, 4);
   overflow: hidden;
-  background: $jg-blue-light;
+  background-color: $jg-blue-light;
   border: 1px solid transparent;
 }
 
 .news-card.muted {
-  background: transparent;
+  background-color: transparent;
 }
 
 .news-cards .news-card {
@@ -42,13 +42,13 @@
 }
 
 .news-card:hover {
-  background: color.adjust($jg-blue-light, $lightness: 1%);
+  background-color: color.adjust($jg-blue-light, $lightness: 1%);
   border-color: $jg-blue-light;
   transition: $transition-base;
 }
 
 .news-card.muted:hover {
-  background: transparent;
+  background-color: transparent;
   border-color: transparent;
 }
 
@@ -78,7 +78,7 @@
   font-family: $font-family-monospace;
   color: $body-secondary-color;
   text-transform: uppercase;
-  background: $jg-white;
+  background-color: $jg-white;
   border-color: $jg-blue-light;
 }
 
