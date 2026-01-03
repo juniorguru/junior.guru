@@ -144,8 +144,10 @@ $bootstrap-icons-font-dir: "../../../../node_modules/bootstrap-icons/font/fonts"
 @import "./layout/main-simple";
 @import "./layout/mainnav";
 @import "./layout/subnav";
+@import "./layout/theme-toggle";
 
 /*
   CUSTOM: UTILITIES AND EXTRAS
 */
 @import "./standout";
+

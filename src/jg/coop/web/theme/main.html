@@ -24,6 +24,15 @@
 
       <link rel="dns-prefetch" href="https://sa.junior.guru">
 
+      <script>
+      (function() {
+        var s = localStorage.getItem('jg-theme')
+        var p = window.matchMedia('(prefers-color-scheme: dark)').matches
+        document.documentElement.setAttribute('data-bs-theme',
+          s === 'light' || s === 'dark' ? s : (p ? 'dark' : 'light'))
+      })()
+      </script>
+
       <link rel="stylesheet" href="{{ 'static/css/index.css'|url }}">
       <link rel="preload" href="{{ ('static/assets/bootstrap-icons.woff2')|url }}" as="font" type="font/woff2" crossorigin="anonymous">
       <script defer src="{{ 'static/js/index.js'|url }}"></script>
@@ -69,6 +78,9 @@
           {{ 'heart-fill'|icon }}
         </a>
         {% endif %}
+        <button type="button" class="theme-toggle" aria-label="Motiv: automaticky" title="Motiv: automaticky">
+          {{ 'circle-half'|icon }}
+        </button>
       </div>
       {% if nav %}
       <ul class="mainnav-items">

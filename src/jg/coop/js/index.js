@@ -7,6 +7,7 @@ import "./github-profile";
 import "./jobs";
 import "./membership";
 import "./metrics";
+import "./theme-toggle";
 
 import "instant.page";
 import "lite-youtube-embed";
