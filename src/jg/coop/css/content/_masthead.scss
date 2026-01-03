@@ -6,8 +6,9 @@ $masthead-content-spacer: $spacer;
   padding: map-get($spacers, 5) 0 (2 * $masthead-eggshell-height);
   margin-bottom: $spacer;
   overflow: hidden;
-  background: $jg-yellow;
+  background-color: $jg-yellow;
   border-top: 1px solid $jg-yellow-dark;
+
 }
 
 .masthead::after {
@@ -17,10 +18,11 @@ $masthead-content-spacer: $spacer;
   width: 100%;
   height: $masthead-eggshell-height;
   content: "";
-  background-image: url("../images/eggshell-i.svg");
-  background-repeat: repeat-x;
-  background-position: bottom center;
-  background-size: auto $masthead-eggshell-height;
+  background-color: var(--bs-body-bg);
+  mask-image: url("../images/eggshell-i.svg");
+  mask-repeat: repeat-x;
+  mask-position: bottom center;
+  mask-size: auto $masthead-eggshell-height;
 }
 
 .masthead-container {
