@@ -57,7 +57,7 @@ def main(channel_id: int, today: date):
     except IndexError:
         logger.warning("No previous weekly plans found")
     else:
-        thread_monday = parse_week(last_thread_message.channel_name, today.year)
+        thread_monday = parse_week(last_thread_message.channel_name, today)
         if thread_monday == monday:
             logger.info("Weekly plans already exist")
             return
@@ -113,12 +113,17 @@ async def kickoff_weekly_plans(
             await add_members_with_role(proxy, role_id)
 
 
-def parse_week(thread_name: str, year: int) -> date:
-    year = year or date.today().year
+def parse_week(thread_name: str, today: date) -> date:
+    year = today.year
     if match := WEEK_RE.match(thread_name):
         start_day = int(match.group("start_day"))
         month = int(match.group("start_month") or match.group("end_month"))
-        year = int(match.group("year") or year)
+        explicit_year = match.group("year")
+        if explicit_year:
+            year = int(explicit_year)
+        elif month == 12 and today.month == 1:
+            # We're in January looking at a December thread - it's from last year
+            year = year - 1
         start_date = date(year, month, start_day)
         start_monday = start_date - timedelta(days=start_date.weekday())
         return start_monday
