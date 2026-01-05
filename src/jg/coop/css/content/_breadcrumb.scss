@@ -1,6 +1,6 @@
 .breadcrumb {
   --bs-breadcrumb-divider: "›";
-  --bs-breadcrumb-divider-color: $breadcrumb-divider-color;
+  --bs-breadcrumb-divider-color: #{$breadcrumb-divider-color};
 }
 
 .breadcrumb,
