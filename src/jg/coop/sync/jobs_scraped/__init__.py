@@ -31,7 +31,7 @@ PIPELINES = [
     "jg.coop.sync.jobs_scraped.pipelines.employment_types_cleaner",
 ]
 
-LINKEDIN_ACTOR_NAME = "curious_coder/linkedin-jobs-scraper"
+LI_ACTOR_NAME = "curious_coder/linkedin-jobs-scraper"
 
 
 logger = loggers.from_path(__file__)
@@ -56,10 +56,15 @@ async def main():
         for actor_name in jobs_actor_names
     )
 
-    if LINKEDIN_ACTOR_NAME in scheduled_actor_names:
-        logger.info(f"LinkedIn Actor: {LINKEDIN_ACTOR_NAME}")
-        linkedin_items = apify.fetch_data(LINKEDIN_ACTOR_NAME, raise_if_missing=False)
-        items = itertools.chain(items, map(transform_linkedin_item, linkedin_items))
+    if LI_ACTOR_NAME in scheduled_actor_names:
+        logger.info(f"LinkedIn Actor: {LI_ACTOR_NAME}")
+        raw_li_items = apify.fetch_data(LI_ACTOR_NAME, raise_if_missing=False)
+        try:
+            li_items = list(map(transform_linkedin_item, raw_li_items))
+            items = itertools.chain(items, li_items)
+        except Exception as e:
+            logger.error("Failed to scrape LinkedIn!")
+            logger.exception(e)
 
     logger.info(f"Pipelines:\n{pformat(PIPELINES)}")
     pipelines = [
@@ -103,6 +108,8 @@ def transform_linkedin_item(item: dict) -> dict:
             source_urls=[item["inputUrl"]],
         )
     except Exception as e:
+        if error := item.get("error"):
+            raise RuntimeError(error)
         raise RuntimeError(f"Couldn't transform LinkedIn item:\n{pformat(item)}") from e
 
 
