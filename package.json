@@ -15,9 +15,8 @@
     "rough-notation": "0.5.1"
   },
   "devDependencies": {
-    "@343dev/optimizt": "12.1.0",
-    "@biomejs/biome": "2.3.10",
-    "autoprefixer": "10.4.23",
+    "@343dev/optimizt": "12.1.1",
+    "@biomejs/biome": "2.3.11",
     "bootstrap": "5.3.8",
     "esbuild": "0.27.2",
     "esbuild-sass-plugin": "3.3.1",
