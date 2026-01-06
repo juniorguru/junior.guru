@@ -40,46 +40,6 @@ def test_source_of_truth_variables_exist(source_of_truth):
     assert source_of_truth
 
 
-VARS_LEGACY_WEB = [
-    (match.group(1), match.group(2))
-    for match in parse(
-        (PACKAGE_DIR / "css_legacy/spaghetti/variables.scss").read_text(),
-        SCSS_VARIABLE_RE,
-    )
-    if match.group(1).startswith("$jg-")
-]
-
-
-def test_legacy_web_variables_exist():
-    assert VARS_LEGACY_WEB
-
-
-@pytest.mark.parametrize("name, value", VARS_LEGACY_WEB)
-def test_legacy_web(name, value, source_of_truth):
-    assert source_of_truth[name] == value
-
-
-VARS_LEGACY_WEB_DOTS = [
-    (match.group(1), match.group(2))
-    for match in parse(
-        (PACKAGE_DIR / "css_legacy/spaghetti/variables.scss").read_text(),
-        SCSS_VARIABLE_RE,
-    )
-    if match.group(1).startswith("$dots-")
-]
-
-
-def test_legacy_web_dots_variables_exist():
-    assert VARS_LEGACY_WEB_DOTS
-
-
-@pytest.mark.parametrize("name, value", VARS_LEGACY_WEB_DOTS)
-def test_legacy_web_dots(name, value, source_of_truth):
-    color = source_of_truth[name.replace("$dots-", "$jg-")].replace("#", "%23")
-
-    assert f"fill='{color}'" in value
-
-
 VARS_IMAGE_TEMPLATES = [
     (match.group(1), match.group(2))
     for match in parse(

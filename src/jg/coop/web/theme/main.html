@@ -1,12 +1,56 @@
-{% extends 'main_legacy.html' %}
+<!DOCTYPE html>
+<!--
+
+  Ahoj! Zajima te, jak je junior.guru udelane? Mrkni na https://github.com/juniorguru/junior.guru/
+  Diky sve zvedavosti navic ziskavas 5% slevu na objednavku clenstvi v klubu https://junior.guru/club/ :)
+  Staci pri registraci zadat kupon „ZVEDAVOST“
+
+-->
+<html lang="cs" data-updated-at="{{ now }}">
+  <head prefix="og: https://ogp.me/ns# website: https://ogp.me/ns/website#">
+    <meta charset="utf-8">
+    {% block canonical %}<link rel="canonical" href="{{ page.canonical_url }}">{% endblock canonical %}
+
+    {% if page %}
+      <title>{{ page.meta.title }}</title>
+    {% else %}
+      <title>Stránka neexistuje</title>
+    {% endif %}
+
+    {% block meta %}
+      {% if page and page.meta.noindex %}<meta name="robots" content="noindex">{% endif %}
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="Accept-CH" content="DPR,Viewport-Width,Width,Save-Data">
+
+      <link rel="dns-prefetch" href="https://sa.junior.guru">
+
+      <link rel="stylesheet" href="{{ 'static/css/index.css'|url }}">
+      <link rel="preload" href="{{ ('static/assets/bootstrap-icons.woff2')|url }}" as="font" type="font/woff2" crossorigin="anonymous">
+      <script defer src="{{ 'static/js/index.js'|url }}"></script>
+
+      {% if page %}
+        <meta property="og:title" content="{{ page.meta.title }}">
+        <meta property="og:url" content="{{ page.canonical_url }}">
+      {% endif %}
+      <meta property="og:type" content="website">
+      <meta property="og:locale" content="cs_CZ">
+
+      <link href="https://mastodonczech.cz/@honzajavorek" rel="me">
+      <meta name="fediverse:creator" content="@honzajavorek@mastodonczech.cz">
+      <meta name="twitter:creator" content="@honzajavorek">
+
+      {% if thumbnail_url %}
+      <meta property="og:image" content="{{ thumbnail_url }}">
+      <meta property="og:image:width" content="1200">
+      <meta property="og:image:height" content="630">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image" content="{{ thumbnail_url }}">
+      {% endif %}
+
+      {% if page and page.meta.description %}<meta name="description" content="{{ page.meta.description }}">{% endif %}
+    {% endblock meta %}
+  </head>
 {% from 'macros.html' import img with context %}
-
-
-{% block stylesheet %}
-<link rel="stylesheet" href="{{ 'static/css/index.css'|url }}">{% endblock %}
-
-
-{% block body %}
 <body>
   {#
   <a href="https://ep2025.europython.eu/beginners-day-unconference/" class="announcement" target="_blank" rel="noopener">
@@ -248,4 +292,4 @@
     </a>
   </dialog>
 </body>
-{% endblock %}
+</html>
