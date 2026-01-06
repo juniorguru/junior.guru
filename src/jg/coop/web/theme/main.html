@@ -3,6 +3,16 @@
 
 
 {% block stylesheet %}
+<script>
+  (function() {
+    try {
+      var storedTheme = localStorage.getItem("theme");
+      if (storedTheme) {
+        document.documentElement.setAttribute("data-theme", storedTheme);
+      }
+    } catch (e) {}
+  })();
+</script>
 <link rel="stylesheet" href="{{ 'static/css/index.css'|url }}">{% endblock %}
 
 
@@ -25,6 +35,17 @@
           {{ 'heart-fill'|icon }}
         </a>
         {% endif %}
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false"
+          aria-label="Přepnout na tmavý režim" title="Přepnout režim"
+          data-theme-label-dark="Přepnout na tmavý režim"
+          data-theme-label-light="Přepnout na světlý režim">
+          <span class="theme-toggle-icon theme-toggle-icon--sun">
+            {{ 'sun'|icon(classes='theme-toggle-glyph', alt='Světlý režim') }}
+          </span>
+          <span class="theme-toggle-icon theme-toggle-icon--moon">
+            {{ 'moon-stars'|icon(classes='theme-toggle-glyph', alt='Tmavý režim') }}
+          </span>
+        </button>
       </div>
       {% if nav %}
       <ul class="mainnav-items">

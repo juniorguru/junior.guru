@@ -1,3 +1,4 @@
+import "./theme";
 import "./annotations";
 import "./candidates";
 import "./charts";
