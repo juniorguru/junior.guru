@@ -1180,4 +1180,9 @@ Ahoj lidi a ostatní! 🌞 Ráda bych se s Vámi podělila o svou přípravu na 
 ---
 
 
+--- https://discord.com/channels/769966886598737931/789107031939481641/1457682983371804714
+dlouhé čtení, kde je všechno o vyjednávání o penězích 💰 https://www.careerdesigner.cz/penize
+---
+
+
 #} -->

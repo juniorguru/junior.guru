@@ -1045,4 +1045,10 @@ pěkný článek o URL https://alfy.blog/2025/10/31/your-url-is-your-state.html
 ---
 
 
+--- https://discord.com/channels/769966886598737931/806621830383271937/1452960357462315138
+Frozen narazil při děbatě o hrách programovacích na tohle - mě to nedalo a koupil jsem - tak tohle je fakt pecka jak superně přiblížit logiku programování s kódem - celé vás to provede má to dobře udělané info a dokonce lze propojit s vaším VSCODE a psát si kód v prostředí které znáte dobře. Doporučuji pro pokročilejší děti druhý stupeň ZŠ co umí dostatečně anglicky. Syntaxe je jednoduchá. Procvičování pro dospělé taky super. Aktuálně sleva 8,- EUR
+https://store.steampowered.com/app/2060160/The_Farmer_Was_Replaced/
+---
+
+
 #} -->
