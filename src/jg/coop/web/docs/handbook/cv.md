@@ -671,4 +671,9 @@ A fakt se neboj použít <:chatgpt:1119028488784068649> ne si to nechat úplně 
 ---
 
 
+--- https://discord.com/channels/769966886598737931/789107031939481641/1449356124771061881
+https://www.linkedin.com/posts/vernovotna_jak-na-cv-kter%C3%A9-p%C5%99e%C4%8Dte-ats-ugcPost-7403547331322617856-OdJ-?utm_source=share&utm_medium=member_desktop&rcm=ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA
+---
+
+
 #} -->

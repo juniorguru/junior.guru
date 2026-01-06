@@ -338,4 +338,33 @@ https://chrisloy.dev/post/2025/09/28/the-ai-coding-trap
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1457232037697290407
+teda na konci je promo na další jeho video ale jinak celkem make sence :)) 😄 https://www.youtube.com/watch?v=MjSUCg2NN4g
+---
+
+
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1450997661145501798
+> I’ve been watching junior developers use AI coding assistants well. Not vibe coding—not accepting whatever the AI spits out. Augmented coding: using AI to accelerate learning while maintaining quality. [...]
+> 
+> The juniors working this way compress their ramp dramatically. Tasks that used to take days take hours. Not because the AI does the work, but because the AI collapses the search space. Instead of spending three hours figuring out which API to use, they spend twenty minutes evaluating options the AI surfaced. The time freed this way isn’t invested in another unprofitable feature, though, it’s invested in learning. [...]
+> 
+> If you’re an engineering manager thinking about hiring: The junior bet has gotten better. Not because juniors have changed, but because the genie, used well, accelerates learning.
+— [Kent Beck](https://en.wikipedia.org/wiki/Kent_Beck), [The Bet On Juniors Just Got Better](https://tidyfirst.substack.com/p/the-bet-on-juniors-just-got-better)
+---
+
+
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1450999030669901865
+A tohle mi přijde taky dobrý (stejně jako předchozí i tenhle citát jsem našel na blogu Simona Willisona). Mrk na <@558352510914658335> a <@788486062430355497> 
+> If the part of programming you enjoy most is the physical act of writing code, then agents will feel beside the point. You’re already where you want to be, even just with some Copilot or Cursor-style intelligent code auto completion, which makes you faster while still leaving you fully in the driver’s seat about the code that gets written.
+> 
+> But if the part you care about is the decision-making around the code, agents feel like they clear space. They take care of the mechanical expression and leave you with judgment, tradeoffs, and intent. Because truly, for someone at my experience level, that is my core value offering anyway. When I spend time actually typing code these days with my own fingers, it feels like a waste of my time.
+— [Obie Fernandez, What happens when the coding becomes the least interesting part of the work](https://obie.medium.com/what-happens-when-the-coding-becomes-the-least-interesting-part-of-the-work-ab10c213c660)
+---
+
+
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1449836454237835389
+tohle je zajímavý článek o tom, jak někdo využil agenty a vytvořil s nimi knihovnu, která má bezkonkurenční parametry a lidem by zabralo neskutečné množství času a úsilí ji vytvořit. ale zároveň to nebylo že by si něco „upromptnul“ a bylo by to. navrhnul, jak to má fungovat a jakou to má mít architekturu a dal těm agentům hromady testů, kterými se řídili a díky kterým věděli, jestli je výsledek správně nebo špatně. vytvoření knihovny mu trvalo měsíce a využil u toho hromadu klasických programátorských znalostí https://simonwillison.net/2025/Dec/14/justhtml/
+---
+
+
 #} -->
