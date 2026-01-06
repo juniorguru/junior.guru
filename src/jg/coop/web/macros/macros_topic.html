@@ -3,7 +3,7 @@
     <h1 class="mb-5 text-center">{{ title }}</h1>
     <p>
         {% if lead %} {{ lead }} {% else %} {{ caller() }} {% endif %}
-        <br /><br />
+        <br><br>
         Jsme klub pro úplné začátečníky v programování, kde se přesně takové
         věci probírají. Dostaneš informace, motivaci, rady. Kromě toho ale i
         parťáky, podporu, kontakty a pracovní nabídky.
@@ -11,16 +11,16 @@
 </header>
 {% endmacro %} {% macro mentions(topic, topic_name) %}
 <p class="lead fw-bold text-center">
-    {% if topic.mentions_count %} V&nbsp;klubu máme {% if topic.mentions_count
+    {% if topic.mentions_count %} V klubu máme {% if topic.mentions_count
     == 1 %} zatím jen jednu zmínku {% elif topic.mentions_count < 5 %} už {{
     topic.mentions_count }} zmínky {% else %} už {{ topic.mentions_count }}
-    zmínek {% endif %} o&nbsp;{{ topic_name }}. {% if
-    topic.topic_channels_messages_count %} Dokonce máme na&nbsp;toto téma
-    i&nbsp;celou místnost, kam jsme napsali {{
-    topic.topic_channels_messages_count }}&nbsp;zpráv. {% endif %} {% if
-    topic.mentions_count > 1 %} Poradíme&nbsp;ti! {% else %} Pojďme to probrat!
-    {% endif %} {% else %} V klubu máme o&nbsp;{{ topic_name }} celou místnost,
-    kam jsme už napsali {{ topic.topic_channels_messages_count }}&nbsp;zpráv.
-    Poradíme&nbsp;ti! {% endif %}
+    zmínek {% endif %} o {{ topic_name }}. {% if
+    topic.topic_channels_messages_count %} Dokonce máme na toto téma
+    i celou místnost, kam jsme napsali {{
+    topic.topic_channels_messages_count }} zpráv. {% endif %} {% if
+    topic.mentions_count > 1 %} Poradíme ti! {% else %} Pojďme to probrat!
+    {% endif %} {% else %} V klubu máme o {{ topic_name }} celou místnost,
+    kam jsme už napsali {{ topic.topic_channels_messages_count }} zpráv.
+    Poradíme ti! {% endif %}
 </p>
 {% endmacro %}
