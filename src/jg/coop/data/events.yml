@@ -64,15 +64,15 @@ registry:
     title: "Proč nikdo netestuje?"
     date: "2026-01-27"
     description: |
-      Všichni víme, že testy jsou důležité. Ale jak se to stalo, že nikdo ty testy nepíše? Jsou opravdu tak těžké anebo je k tomu uplně jiný důvod? Přijďte na přednášku, kde probereme nejčastější příčiny, které stojí mezi vámi a kvalitním testováním: od strachů a mylných představ až do technické ználosti i knihoven.  
+      Všichni víme, že testy jsou důležité. Ale jak se to stalo, že nikdo ty testy nepíše? Jsou opravdu tak těžké anebo je k tomu úplně jiný důvod? Přijďte na přednášku, kde probereme nejčastější příčiny, které stojí mezi vámi a kvalitním testováním: od strachů a mylných představ až do technické znalosti i knihoven.
     avatar_path: avatars-participants/artem-zakharchenko.jpg
     bio_name: Artem Zakharchenko
     bio_title: "Open source vývojář"
     bio: |
-      Artem je open source vývojář, autor knihovny Mock Service Worker a instruktor testování na Epic Web.
+      Artem je open source vývojář, autor knihovny [Mock Service Worker](https://mswjs.io/) a instruktor testování na Epic Web.
     bio_links:
       - https://kettanaito.com/
-      - https://twitter.com/kettanaito
+      - https://x.com/kettanaito
       - https://bsky.app/profile/kettanaito.com
     club_speaker_ids:
       - 283714112452821002
