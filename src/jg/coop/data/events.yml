@@ -58,7 +58,24 @@
 #
 # - https://tinywow.com/image/upscale
 # - https://www.fotor.com/photo-editor-app/editor/beauty
+
 registry:
+  - id: 58
+    title: "Proč programátoři kašlou na testy"
+    date: "2026-01-27"
+    description: |
+      Všichni víme, že testy jsou při programování důležité. Ale jak se stalo, že je nikdo nepíše? Je to opravdu tak těžké, nebo to má jiný důvod? Na přednášce probereme nejčastější příčiny, které nám brání kvalitně testovat: od strachů a mylných představ až po technické znalosti a konkrétní knihovny.
+    avatar_path: avatars-participants/artem-zakharchenko.jpg
+    bio_name: Artem Zakharchenko
+    bio_title: "Open source vývojář"
+    bio: |
+      Artem je open source vývojář, autor knihovny [Mock Service Worker](https://mswjs.io/) a instruktor testování na Epic Web.
+    bio_links:
+      - https://kettanaito.com/
+      - https://x.com/kettanaito
+      - https://bsky.app/profile/kettanaito.com
+    club_speaker_ids:
+      - 283714112452821002
   - id: 57
     title: "Jak vytěžit z IT eventů maximum: Strategie pro introverty (i extroverty)"
     date: "2025-12-10"
