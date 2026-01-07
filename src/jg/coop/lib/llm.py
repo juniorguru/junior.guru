@@ -124,6 +124,7 @@ async def ask_llm(
                             model=str(model),
                             input=llm_input,
                             text_format=schema,
+                            prompt_cache_retention="24h",
                         )
                     ).output_parsed
                     break
@@ -136,6 +137,7 @@ async def ask_llm(
                 await client.responses.create(
                     model=str(model),
                     input=llm_input,
+                    prompt_cache_retention="24h",
                 )
             ).output_text
     return result
