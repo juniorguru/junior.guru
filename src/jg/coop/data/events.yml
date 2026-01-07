@@ -1061,16 +1061,16 @@ registry:
     date: "2021-04-13"
     description: |
       Jak se z lektorky angličtiny stane frontendistka? První část přednášky je o těžkých rozhodnutích, motivaci, překážkách a pomoci na cestě k vysněné práci. V druhé se podíváme na související obory s vývojem webů a aplikací, včetně user experience.
-    avatar_path: avatars-participants/adina-foxova.jpg
-    bio_name: Adina Foxová
+    avatar_path: avatars-participants/adina-fox.jpg
+    bio_name: Adina Fox
     bio_title: Tlumočnice mezi designem a frontendem na volné noze, UXD tým v Leveris
     bio: |
-      Adina Foxová je tlumočnice mezi designem a frontendem. Na volné noze vylepšuje staré a designuje nové weby a aplikace, v kódu se pak hlavně stará o architekturu stylů v React aplikacích. Má vášeň pro design systémy, zajímavé problémy a dinosaury. Už čtvrtým rokem staví s firmou Leveris kompletní bankovní platformu. Ve volném čase moderuje události v IT a její nejoblíbenější místo je Lucerna, když se koná WebExpo.
+      Adina Fox je tlumočnice mezi designem a frontendem. Na volné noze vylepšuje staré a designuje nové weby a aplikace, v kódu se pak hlavně stará o architekturu stylů v React aplikacích. Má vášeň pro design systémy, zajímavé problémy a dinosaury. Už čtvrtým rokem staví s firmou Leveris kompletní bankovní platformu. Ve volném čase moderuje události v IT a její nejoblíbenější místo je Lucerna, když se koná WebExpo.
     bio_links:
-      - https://adinafoxova.cz/
+      - https://adinafox.com/
       - https://twitter.com/adinafxv
       - https://github.com/adinafxv
-      - https://www.linkedin.com/in/adina-foxova/
+      - https://www.linkedin.com/in/adina-fox/
       - https://www.instagram.com/adinafxv/
     club_speaker_ids:
       - 658628731337965586
