@@ -76,6 +76,7 @@ registry:
       - https://bsky.app/profile/kettanaito.com
     club_speaker_ids:
       - 283714112452821002
+
   - id: 57
     title: "Jak vytěžit z IT eventů maximum: Strategie pro introverty (i extroverty)"
     date: "2025-12-10"
