@@ -7,6 +7,9 @@ query fetch($cursor: String!) {
     edges {
       node {
         email
+        subscriptions {
+          createdAt
+        }
       }
     }
   }
