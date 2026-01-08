@@ -79,6 +79,7 @@ def on_docs_context(context):
 
     # club.md, handbook/cv.md, handbook/mental-health.md
     context["events"] = Event.listing()
+    context["events_recordings_count"] = len(Event.archive_listing(has_recording=True))
 
     # club.md
     context["messages_count"] = ClubMessage.count()

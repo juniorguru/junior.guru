@@ -56,7 +56,7 @@ Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme
 <div class="standout"><div class="topics">
 {% call markdown() %}
 - {{ 'play-btn'|icon }} Online klubové akce
-- {{ 'clock-history'|icon }} Archiv záznamů akcí
+- {{ 'clock-history'|icon }} {{ events_recordings_count }} video záznamů akcí
 - {{ 'list-check'|icon }} Pracovní nabídky
 - {{ 'compass'|icon }} Kariérní konzultace
 - {{ 'person-check'|icon }} Zpětná vazba na CV
@@ -108,7 +108,7 @@ Chceš mít jistotu, že v klubu najdeš lidi, které zajímá totéž co tebe? 
 <div class="section-background blue-light"><section class="section">
 <h2>Užívej si přednášky pro začátečníky</h2>
 {% call lead() %}
-Jednou za čas máme na Discordu večerní akci. Je to **online a zhruba na hodinku**, takže můžeš zůstat v bačkorách a stihneš potom díl seriálu, uspat děti, nebo oboje. Můžeš pokládat dotazy, nebo si to jen pustit do uší při vaření večeře. **Záznamy minulých akcí** máš na YouTube. A to nejlepší nakonec: Téma i pojetí je vždy **vyloženě pro začátečníky**! Žádná záplava odborných „termitů“, které ti nikdo nevysvětlil.
+Jednou za čas máme na Discordu večerní akci. Je to **online, zhruba na hodinku a půl**, takže můžeš zůstat v bačkorách a stihneš potom díl seriálu, uspat děti, nebo oboje. Můžeš pokládat dotazy, nebo si to jen pustit do uší při vaření večeře. Máš k dispozici **archiv {{ events_recordings_count }} záznamů proběhlých akcí**. A to nejlepší nakonec: Téma i pojetí je vždy **vyloženě pro začátečníky**! Žádná záplava odborných „termitů“, které ti nikdo nevysvětlil.
 {% endcall %}
 
 <ul class="event-circles standout">
@@ -130,12 +130,12 @@ Jednou za čas máme na Discordu večerní akci. Je to **online a zhruba na hodi
 <section class="section">
 <h2>Propoj se s lidmi z oboru</h2>
 {% call lead() %}
-O klub se stará **Honza Javorek, autor junior.guru**. Okolo se však „poflakuje“ i řada dalších **profíků s chutí pomáhat**. S **firmami**, které klub podporují, podnikáme různé aktivity, například mentoring nebo propojování juniorů s jejich recruitery. Partnerství s **programátorskými komunitami** ti zase rozšíří možnosti zapojit se i jinde, dovědět se o zajímavých akcích, případně na ně získat slevu. S lidmi ze všech těchto organizací se můžeš v klubu potkat a propojit.
+O klub se stará **Honza Javorek, autor junior.guru**. Okolo se však „poflakuje“ i řada dalších **profíků s chutí pomáhat**. Partnerství klubu s **programátorskými komunitami** ti rozšíří možnosti zapojit se i jinde, dovědět se o zajímavých akcích, případně na ně získat slevu.
 
-Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý s jiným životním příběhem, ale s velmi podobnými dotazy a problémy.
+{{ logos_list(partners, class="standout") }}
+
+Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý s jiným životním příběhem, ale s velmi podobnými dotazy a problémy. Mnozí si v klubu píšou **deníčky o cestě do IT**, které ti mohou sloužit jako zdroj inspirace a motivace.
 {% endcall %}
-<div class="standout-bottom">{{ logos_sponsors_by_tier(sponsors_by_tier) }}</div>
-{{ logos_list(partners, class="mb-0") }}
 </section>
 
 
