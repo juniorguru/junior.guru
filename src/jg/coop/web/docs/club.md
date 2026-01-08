@@ -250,7 +250,7 @@ Zaregistruj se a nakoukni, jak to u nás vypadá. Kartu nezadáváš. Klidně si
 Vrtá ti hlavou, jak přesně to celé funguje? Máš nějaké problémy s registrací nebo s Discordem? Zajímají tě veškeré detaily ohledně placení? Vypršela ti platnost karty? Prolétni si **otázky a odpovědi**.
 {% endcall %}
 
-<div class="standout-top"><div class="topics topics-grid">
+<div class="standout"><div class="topics topics-grid">
 {% call markdown() %}
 - [{{ 'person-plus'|icon }} Členství v klubu](faq.md#jak-funguje-clenstvi)
 - [{{ 'person-check'|icon }} Pro koho je klub](faq.md#je-to-jen-pro-zacatecniky)

@@ -12,7 +12,7 @@ template: main_about.html
 Čísla a grafy jsou pro provoz junior.guru stejně potřeba, takže proč je v rámci transparentnosti nemít rovnou na webu, že?
 {% endcall %}
 
-<div class="standout-top"><div class="topics topics-grid">
+<div class="standout"><div class="topics topics-grid">
 {% call markdown() %}
 - [{{ 'person-circle'|icon }} Kdo tvoří junior.guru](./contact.md)
 - [{{ 'currency-exchange'|icon }} Finanční výsledky](./finances.md)
