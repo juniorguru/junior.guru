@@ -56,7 +56,7 @@ Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme
 <div class="standout"><div class="topics">
 {% call markdown() %}
 - {{ 'play-btn'|icon }} Online klubové akce
-- {{ 'clock-history'|icon }} {{ events_recordings_count }} video záznamů akcí
+- {{ 'clock-history'|icon }} {{ events_recordings_count }} videozáznamů akcí
 - {{ 'list-check'|icon }} Pracovní nabídky
 - {{ 'compass'|icon }} Kariérní konzultace
 - {{ 'person-check'|icon }} Zpětná vazba na CV
@@ -130,11 +130,18 @@ Jednou za čas máme na Discordu večerní akci. Je to **online, zhruba na hodin
 <section class="section">
 <h2>Propoj se s lidmi z oboru</h2>
 {% call lead() %}
-O klub se stará **Honza Javorek, autor junior.guru**. Okolo se však „poflakuje“ i řada dalších **profíků s chutí pomáhat**. Partnerství klubu s **programátorskými komunitami** ti rozšíří možnosti zapojit se i jinde, dovědět se o zajímavých akcích, případně na ně získat slevu.
+O klub se stará **Honza Javorek, autor junior.guru**. Okolo se však „poflakuje“ i řada dalších **profíků s chutí pomáhat**. Partnerství klubu s **firmami a programátorskými komunitami** ti rozšíří možnosti zapojit se i jinde, propojit se s potenciálními zaměstnavateli a dovědět se o zajímavých akcích, případně na ně získat slevu.
 
+{{ logos_sponsors_by_tier(sponsors_by_tier) }}
 {{ logos_list(partners, class="standout") }}
 
 Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý s jiným životním příběhem, ale s velmi podobnými dotazy a problémy. Mnozí si v klubu píšou **deníčky o cestě do IT**, které ti mohou sloužit jako zdroj inspirace a motivace.
+
+<ul class="diaries standout-top">
+{% for diary in club_diaries %}
+  <li class="diaries-item">{{ 'journal-bookmark-fill'|icon }} {{ diary.name }}</li>
+{% endfor %}
+</ul>
 {% endcall %}
 </section>
 

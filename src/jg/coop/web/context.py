@@ -2,12 +2,14 @@ from datetime import UTC, date, datetime, timedelta
 from operator import attrgetter
 
 from jg.coop.lib import loggers
-from jg.coop.lib.discord_club import CLUB_GUILD_ID
+from jg.coop.lib import months
+from jg.coop.lib.discord_club import CLUB_GUILD_ID, ClubChannelID
+from jg.coop.lib.months import prev_month
 from jg.coop.models.base import db
 from jg.coop.models.blog import BlogArticle
 from jg.coop.models.candidate import Candidate
 from jg.coop.models.chart import Chart
-from jg.coop.models.club import ClubMessage, ClubUser
+from jg.coop.models.club import ClubChannel, ClubMessage, ClubUser
 from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.event import Event
 from jg.coop.models.exchange_rate import ExchangeRate
@@ -80,6 +82,20 @@ def on_docs_context(context):
     # club.md, handbook/cv.md, handbook/mental-health.md
     context["events"] = Event.listing()
     context["events_recordings_count"] = len(Event.archive_listing(has_recording=True))
+    club_diaries_threads = list(
+        ClubMessage.forum_top_listing(
+            ClubChannelID.DIARIES, months.prev_month(datetime.now(UTC).date())
+        )
+    )
+    club_diaries = [
+        {
+            "name": message.channel_name,
+            "url": message.url,
+            "author": ClubChannel.get_by_id(message.channel_id).author.display_name,
+        }
+        for message in club_diaries_threads
+    ]
+    context["club_diaries"] = club_diaries
 
     # club.md
     context["messages_count"] = ClubMessage.count()

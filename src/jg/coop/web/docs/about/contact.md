@@ -72,7 +72,7 @@ Je pouhou iluzí, že by šlo celé junior.guru dělat v jednom člověku. Tady 
   </tr>
   <tr>
     <td><a href="https://www.linkedin.com/in/patrik-brnusak-cz/">Patrik Brnušák</a></td>
-    <td>produkce video záznamů</td>
+    <td>produkce videozáznamů</td>
   </tr>
   <tr>
     <td><a href="https://www.linkedin.com/in/pavlinafronkova/">Pavlína Froňková</a></td>

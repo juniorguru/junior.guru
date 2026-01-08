@@ -1,0 +1,19 @@
+.diaries {
+  @extend .list-unstyled;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacer;
+  justify-content: center;
+}
+
+.diaries-item {
+  padding: ($spacer * .5) $spacer;
+  font-size: $font-size-sm;
+  background: $jg-blue-white;
+  border: 1px solid $jg-blue-light;
+  border-radius: $border-radius;
+}
+
+.diaries-item .bi {
+  margin-right: .3rem;
+}

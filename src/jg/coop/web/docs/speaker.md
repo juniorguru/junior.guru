@@ -40,7 +40,7 @@ Tady ještě časová osa večera, zdokumentovaná v bodech:
 1.  Přednáší se na Discordu.
     Pokud Discord neznáš, projdi si tento návod do konce.
 2.  Sraz je 30 min před začátkem v kanálu <kbd>⭐️ přednášky</kbd>.
-    Buď tam bude Honza, nebo jeho pomocník na video záznamy.
+    Buď tam bude Honza, nebo jeho pomocník na videozáznamy.
     Odladíme techniku.
 3.  Zhruba v čase začátku Honza svolá lidi do přednáškového kanálu a pár minut budete jen tak tlachat, než se přicourá obecenstvo.
 4.  Honza tě krátce uvítá, představí, a předá ti slovo.
