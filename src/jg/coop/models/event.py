@@ -1,9 +1,8 @@
-import itertools
 import json
 import math
-from datetime import UTC, datetime
 import random
-from typing import Iterable, Self
+from datetime import UTC, datetime
+from typing import Self
 from zoneinfo import ZoneInfo
 
 from peewee import (

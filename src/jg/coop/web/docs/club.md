@@ -4,7 +4,7 @@ template: main_club.html
 description: Přidej se na junior.guru Discord! Jsme tvoje online programovací parta, skupina, fórum. Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáhat. Svoje programování nebo hledání práce posuneš o 1 % každý den.
 ---
 
-{% from 'macros.html' import img, markdown, blockquote_avatar, link_card, blockquote_toxic, lead, logos_sponsors_by_tier, logos_list, event_circle with context %}
+{% from 'macros.html' import blockquote_avatar, blockquote_toxic, img, lead, link_card, logos_list, markdown with context %}
 
 
 <header class="masthead"><div class="masthead-container">
