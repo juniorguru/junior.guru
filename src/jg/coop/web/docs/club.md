@@ -132,13 +132,13 @@ Jednou za čas máme na Discordu večerní akci. Je to **online, zhruba na hodin
 {% call lead() %}
 O klub se stará **Honza Javorek, autor junior.guru**. Okolo se však „poflakuje“ i řada dalších **profíků s chutí pomáhat**. Partnerství klubu s **firmami a programátorskými komunitami** ti rozšíří možnosti zapojit se i jinde, propojit se s potenciálními zaměstnavateli a dovědět se o zajímavých akcích, případně na ně získat slevu.
 
-{{ logos_sponsors_by_tier(sponsors_by_tier) }}
+{{ logos_list(sponsors, class="standout") }}
 {{ logos_list(partners, class="standout") }}
 
 Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý s jiným životním příběhem, ale s velmi podobnými dotazy a problémy. Mnozí si v klubu píšou **deníčky o cestě do IT**, které ti mohou sloužit jako zdroj inspirace a motivace.
 
 <ul class="diaries standout-top">
-{% for diary in club_diaries %}
+{% for diary in club_diaries|sample(8) %}
   <li class="diaries-item">{{ 'journal-bookmark-fill'|icon }} {{ diary.name }}</li>
 {% endfor %}
 </ul>
@@ -206,7 +206,7 @@ Vycházíme z [postupu](handbook/index.md), který je založen na reálných zku
 </div></div>
 
 {% call lead() %}
-Rady kolemjdoucích ve veřejných skupinách jsou náchylné k fanouškovství, opakují [nejrůznější mýty](handbook/myths.md), doporučují staré postupy. Vycházejí z toho, že když něco vyhovovalo jednomu, zákonitě musí i druhému. Na jednoduchou otázku běžně dostaneš **desítky rozcházejících se odpovědí**, mnohdy zcela nevhodných.
+Rady kolemjdoucích ve veřejných skupinách jsou náchylné k fanouškovství, opakují nejrůznější mýty, doporučují staré postupy. Vycházejí z toho, že když něco vyhovovalo jednomu, zákonitě musí i druhému. Na jednoduchou otázku běžně dostaneš **desítky rozcházejících se odpovědí**, mnohdy zcela nevhodných.
 {% endcall %}
 </section>
 

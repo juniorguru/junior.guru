@@ -2,7 +2,7 @@ from datetime import UTC, date, datetime, timedelta
 from operator import attrgetter
 
 from jg.coop.lib import loggers, months
-from jg.coop.lib.discord_club import CLUB_GUILD_ID, ClubChannelID
+from jg.coop.lib.discord_club import CLUB_GUILD_ID, ClubChannelID, ClubMemberID
 from jg.coop.models.base import db
 from jg.coop.models.blog import BlogArticle
 from jg.coop.models.candidate import Candidate
@@ -92,6 +92,7 @@ def on_docs_context(context):
             "author": ClubChannel.get_by_id(message.channel_id).author.display_name,
         }
         for message in club_diaries_threads
+        if ClubChannel.get_by_id(message.channel_id).author.id != ClubMemberID.HONZA
     ]
     context["club_diaries"] = club_diaries
 
