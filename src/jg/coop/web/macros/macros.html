@@ -85,25 +85,6 @@
 {% endmacro %}
 
 
-{% macro event_circle(event) %}
-  <li class="event-circles-item">
-    {% if event.public_recording_url %}
-      <a href="{{ event.public_recording_url }}" target="_blank" rel="noopener" class="event-circles-link">
-    {% endif %}
-
-    {{ img('static/' + event.avatar_path, event.bio_name, 100, 100) }}
-
-    <h3>{{ event.bio_name }}</h3>
-
-    {% if event.public_recording_url %}</a>{% endif %}
-
-    <p>
-      {{ event.title }}
-    </p>
-  </li>
-{% endmacro %}
-
-
 {% macro link_card(
   title,
   url,

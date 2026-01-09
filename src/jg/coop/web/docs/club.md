@@ -4,7 +4,7 @@ template: main_club.html
 description: Přidej se na junior.guru Discord! Jsme tvoje online programovací parta, skupina, fórum. Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáhat. Svoje programování nebo hledání práce posuneš o 1 % každý den.
 ---
 
-{% from 'macros.html' import img, markdown, blockquote_avatar, blockquote_toxic, lead, logos_sponsors_by_tier, logos_list, event_circle with context %}
+{% from 'macros.html' import img, markdown, blockquote_avatar, link_card, blockquote_toxic, lead, logos_sponsors_by_tier, logos_list, event_circle with context %}
 
 
 <header class="masthead"><div class="masthead-container">
@@ -113,14 +113,30 @@ Jednou za měsíc máme na Discordu **živou online akci**. Bývají večer a tr
 Pokud akci nestihneš, můžeš se podívat na záznam. V archivu máme už **{{ events_recordings_count }} videí** a všechny jsou členům kdykoliv k dispozici.
 {% endcall %}
 
-<ul class="event-circles standout">
-{% for event in events_promo|selectattr('public_recording_url')|sample(1) %}
-  {{ event_circle(event) }}
-{% endfor %}
-{% for event in events_promo|rejectattr('public_recording_url')|sample(5) %}
-  {{ event_circle(event) }}
-{% endfor %}
-</ul>
+<div class="link-cards avatars standout-top">
+  {% for event in events_planned[:1] %}
+    {{ link_card(
+      event.title,
+      pages|docs_url(event.page_url)|url,
+      caption=event.bio_name,
+      thumbnail_url="static/" + event.avatar_path,
+      badge_icon='bell-fill',
+      badge_text='{:%-d.%-m.}'.format(event.start_at),
+    ) }}
+  {% endfor %}
+
+  {% set listing_size = 7 if events_planned|length else 8 %}
+  {% for event in events_promo[:listing_size] %}
+    {{ link_card(
+      event.title,
+      pages|docs_url(event.page_url)|url,
+      caption=event.bio_name,
+      thumbnail_url="static/" + event.avatar_path,
+      badge_icon='unlock-fill' if event.public_recording_url else none,
+      badge_text='Veřejný záznam' if event.public_recording_url else none,
+    ) }}
+  {% endfor %}
+</div>
 <div class="text-center">
   <a class="btn btn-lg btn-outline-primary" href="{{ pages|docs_url('events.md')|url }}">
     Všechny akce

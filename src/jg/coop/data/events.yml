@@ -152,29 +152,29 @@ registry:
       - 806429279268241419
     club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1407682777851105401
 
-  - id: 53
-    title: "Beginners’ Day Unconference"
-    date: "2025-07-19"
-    time: "09:00"
-    expected_duration_h: 8
-    description: |
-      Celodenní událost, která se koná **živě v Praze** pod záštitou celoevropské konference EuroPython, ale kam můžeš přijít i bez lístku na tu konferenci. **Vstup je 5€ a bude to anglicky.**
+  # - id: 53
+  #   title: "Beginners’ Day Unconference"
+  #   date: "2025-07-19"
+  #   time: "09:00"
+  #   expected_duration_h: 8
+  #   description: |
+  #     Celodenní událost, která se koná **živě v Praze** pod záštitou celoevropské konference EuroPython, ale kam můžeš přijít i bez lístku na tu konferenci. **Vstup je 5€ a bude to anglicky.**
 
-      Akce je **pro všechny, kdo začínají kariéru v IT, bez ohledu na programovací jazyk**. Můžeš se těšit na panelové diskuze (s juniory, recruitery, manažery, seniory), workshop, diskuzní kroužek „junior vs. senior“ a Q&A o růstu z juniora na seniora. Bude i prostor přihlásit se a během 5min něco říct na téma „moje cesta do IT“. Přečti si [celý program](https://ep2025.europython.eu/beginners-day-unconference/).
+  #     Akce je **pro všechny, kdo začínají kariéru v IT, bez ohledu na programovací jazyk**. Můžeš se těšit na panelové diskuze (s juniory, recruitery, manažery, seniory), workshop, diskuzní kroužek „junior vs. senior“ a Q&A o růstu z juniora na seniora. Bude i prostor přihlásit se a během 5min něco říct na téma „moje cesta do IT“. Přečti si [celý program](https://ep2025.europython.eu/beginners-day-unconference/).
 
-      Tentýž den se mimochodem konají i Django Girls a Humble Data, dva worskhopy pro začátečníky.
-    avatar_path: europython2025.png
-    bio_name: Daria Linhart Grudzien, Honza Javorek a další
-    bio_title: Dobrovolníci
-    bio: |
-      EuroPython organizují dobrovolníci. Daria a Honza připravili den přímo pro juniory. Vymysleli formát a program, sehnali lidi a budou to moderovat. Daria je dlouholetá spoluorganizátorka akcí v Python komunitě, především PyCon CZ. Honza se kolem Pythonu motal spíš dřív, dnes pomáhá začátečníkům do IT.
-    bio_links:
-      - https://ep2025.europython.eu/
-      - https://www.linkedin.com/in/dariagru/
-      - https://www.linkedin.com/in/honzajavorek/
-    club_speaker_ids: []
-    venue: WPP Prague, Ogilvy+ Geometry Business Centre, Bubenská 1, 170 00 Praha 7-Holešovice
-    registration_url: https://forms.gle/6mGPPEFMrLsxqHJx5
+  #     Tentýž den se mimochodem konají i Django Girls a Humble Data, dva worskhopy pro začátečníky.
+  #   avatar_path: europython2025.png
+  #   bio_name: Daria Linhart Grudzien, Honza Javorek a další
+  #   bio_title: Dobrovolníci
+  #   bio: |
+  #     EuroPython organizují dobrovolníci. Daria a Honza připravili den přímo pro juniory. Vymysleli formát a program, sehnali lidi a budou to moderovat. Daria je dlouholetá spoluorganizátorka akcí v Python komunitě, především PyCon CZ. Honza se kolem Pythonu motal spíš dřív, dnes pomáhá začátečníkům do IT.
+  #   bio_links:
+  #     - https://ep2025.europython.eu/
+  #     - https://www.linkedin.com/in/dariagru/
+  #     - https://www.linkedin.com/in/honzajavorek/
+  #   club_speaker_ids: []
+  #   venue: WPP Prague, Ogilvy+ Geometry Business Centre, Bubenská 1, 170 00 Praha 7-Holešovice
+  #   registration_url: https://forms.gle/6mGPPEFMrLsxqHJx5
 
   - id: 52
     title: "Jak rozjet svou IT kariéru ve státní správě"

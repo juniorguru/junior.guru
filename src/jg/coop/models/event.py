@@ -1,6 +1,9 @@
+import itertools
 import json
 import math
 from datetime import UTC, datetime
+import random
+from typing import Iterable, Self
 from zoneinfo import ZoneInfo
 
 from peewee import (
@@ -207,10 +210,40 @@ class Event(BaseModel):
         return cls.select().where(cls.start_at >= now).order_by(cls.start_at)
 
     @classmethod
-    def promo_listing(cls, now=None):
-        return cls.archive_listing(now=now).where(
-            cls.avatar_path != cls.avatar_path.default
+    def promo_listing(
+        cls, now=None, latest_count=4, public_count=2, rest_count=5
+    ) -> list[Self]:
+        events = []
+        events.extend(
+            cls.archive_listing(now=now)
+            .where(cls.avatar_path != cls.avatar_path.default)
+            .limit(latest_count)
         )
+        events.extend(
+            cls.archive_listing(now=now, has_recording=True)
+            .where(
+                cls.avatar_path != cls.avatar_path.default,
+                cls.id.not_in([e.id for e in events]),
+            )
+            .order_by(cls.view_count.desc())
+            .limit(public_count)
+        )
+        events.extend(
+            random.sample(
+                list(
+                    cls.archive_listing(now=now)
+                    .where(
+                        cls.public_recording_url.is_null(True),
+                        cls.avatar_path != cls.avatar_path.default,
+                        cls.id.not_in([e.id for e in events]),
+                    )
+                    .order_by(cls.view_count.desc())
+                    .limit(rest_count)
+                ),
+                k=rest_count,
+            )
+        )
+        return events
 
     @classmethod
     def count_by_month(cls, date):

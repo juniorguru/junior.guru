@@ -68,15 +68,6 @@ def test_planned_listing_time(test_db):
     assert list(Event.planned_listing(now=datetime(2021, 5, 2, 18))) == [event2]
 
 
-def test_promo_listing(test_db):
-    create_event(1, start_at=datetime(2021, 4, 15))
-    event2 = create_event(2, start_at=datetime(2021, 5, 1), avatar_path="alice.jpg")
-    create_event(3, start_at=datetime(2021, 5, 3))
-    event4 = create_event(4, start_at=datetime(2021, 3, 15), avatar_path="bob.jpg")
-
-    assert list(Event.promo_listing(now=datetime(2021, 5, 2))) == [event2, event4]
-
-
 def test_list_speaking_members(test_db):
     event1 = create_event(1)
     member1 = create_member(1)

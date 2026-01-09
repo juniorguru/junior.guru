@@ -16,6 +16,14 @@
       grid-template-columns: repeat(2, 1fr);
     }
   }
+
+  &.avatars {
+    grid-template-columns: repeat(2, 1fr);
+
+    @include media-breakpoint-up(md) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
 }
 
 .link-card {
@@ -24,6 +32,10 @@
   overflow: hidden;
   background: $jg-blue-light;
   border: 1px solid $jg-blue-light;
+}
+
+.avatars .link-card {
+  text-align: center;
 }
 
 .link-card.highlighted {
@@ -39,6 +51,13 @@
   opacity: .5;
 }
 
+.avatars .link-card-image {
+  width: 50%;
+  filter: none;
+  border-radius: 50%;
+  opacity: 1;
+}
+
 .link-card:hover .link-card-image {
   filter: grayscale(0%);
   opacity: 1;
@@ -51,6 +70,10 @@
 
 .link-cards.wide .link-card-badge {
   @extend .card-badge, .lg;
+}
+
+.avatars .link-card-badge {
+  background-color: $jg-blue;
 }
 
 .link-card-header {
