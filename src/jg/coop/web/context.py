@@ -1,10 +1,8 @@
 from datetime import UTC, date, datetime, timedelta
 from operator import attrgetter
 
-from jg.coop.lib import loggers
-from jg.coop.lib import months
+from jg.coop.lib import loggers, months
 from jg.coop.lib.discord_club import CLUB_GUILD_ID, ClubChannelID
-from jg.coop.lib.months import prev_month
 from jg.coop.models.base import db
 from jg.coop.models.blog import BlogArticle
 from jg.coop.models.candidate import Candidate
