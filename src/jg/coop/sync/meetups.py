@@ -108,11 +108,12 @@ class MeetupsConfig(YAMLConfig):
     "actor_names",
     multiple=True,
     default=[
-        "honzajavorek/meetups-meetupcom",
-        "honzajavorek/meetups-pyvo",
         "honzajavorek/meetups-ctvrtkon",
         "honzajavorek/meetups-czjug",
+        "honzajavorek/meetups-makerfaire",
+        "honzajavorek/meetups-meetupcom",
         "honzajavorek/meetups-pehapkari",
+        "honzajavorek/meetups-pyvo",
     ],
 )
 @click.option(
