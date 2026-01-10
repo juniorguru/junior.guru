@@ -21,16 +21,7 @@
     "replies": 0,
     "comments": 0,
     "social_mentions": 0,
-    "temporary_failure_breakdown": [
-      {
-        "code": "out_of_storage",
-        "count": 3
-      },
-      {
-        "code": "access_denied",
-        "count": 1
-      }
-    ],
+    "temporary_failure_breakdown": [],
     "permanent_failure_breakdown": []
   },
   "attachments": [],
