@@ -41,6 +41,9 @@ exclude = [
     # Specifications
     "^https://ogp\\.me/ns/website",
 
+    # Internet Archive – assume it works, don't strain their servers
+    "^https://web\\.archive\\.org/web/.*",
+
     # Infrastructure
     "^https://juniorguru\\.memberful\\.com",
     "^https://js\\.memberful\\.com",
