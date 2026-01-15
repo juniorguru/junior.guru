@@ -1232,3 +1232,5 @@
 {"_id": "27430060684", "amount": -43, "category": "miscellaneous", "happened_on": "2026-01-08"}
 {"_id": "27433622777", "amount": 3596, "category": "memberships", "happened_on": "2026-01-12"}
 {"_id": "27438107469", "amount": 6, "category": "donations", "happened_on": "2026-01-14"}
+{"_id": "27439566537", "amount": -6190, "category": "tax", "happened_on": "2026-01-15"}
+{"_id": "27439566538", "amount": -3306, "category": "tax", "happened_on": "2026-01-15"}
