@@ -180,7 +180,7 @@ Zrovna v inzerátech nabízejících první práci v IT nebo částečný úvaz
 
 Pro firmu je zaměstnání juniora velký výdaj. I když je to zdánlivě výhodné z hlediska mzdy, firma tě musí všechno učit a věnovat se ti, což ji stojí dost peněz. Byť se dají najít nabídky i od středních či malých firem, **obecně jsou do juniorů ochotny investovat spíše [větší firmy](#prace-pro-velkou-firmu), které na to mají jak finance, tak zázemí**.
 
-Dalším prostředím, kam se probojuješ snadněji, je **státní správa**. Firmy se předbíhají v tom, jaké finanční podmínky nebo benefity nabídnou zkušeným lidem, takže pro většinu z nich není atraktivní pro veřejné instituce pracovat (to si raději vezmou velkou mzdu jinde a pak [dobrovolničí](https://cesko.digital/) ve volném čase). Pro tebe ale může být toto prostředí i mzdové ohodnocení dobrým startem.
+Dalším prostředím, kam se probojuješ snadněji, je **státní správa**. Firmy se předbíhají v tom, jaké finanční podmínky nebo benefity nabídnou zkušeným lidem, takže pro většinu z nich není atraktivní pro veřejné instituce pracovat (to si raději vezmou velkou mzdu jinde a pak [dobrovolničí](https://www.cesko.digital/) ve volném čase). Pro tebe ale může být toto prostředí i mzdové ohodnocení dobrým startem.
 
 ### Kolik si vydělám?    <span id="salary"></span>
 
@@ -275,7 +275,7 @@ Při hledání zaměstnání si během [zjišťování informací o nabídkách]
 
 Jeden ze způsobů, jak přijít k první praxi, je **pomoci nějakému neziskovému projektu**. Nemusí to být zrovna [Člověk v tísni](https://www.clovekvtisni.cz/). Třeba přímo ve svém okolí najdeš něco, kde je potřeba programování, ale nejsou prostředky na profesionální programátory a příliš to nespěchá.
 
-Nemáš-li nápady, mrkni na [Pyvec](https://pyvec.org/), [Česko.Digital](https://cesko.digital/), [Hlídač státu](https://www.hlidacstatu.cz/), [Um sem um tam](https://umsemumtam.cz/), nebo si **projdi projekty na [Darujme.cz](https://www.darujme.cz/) a napiš tomu, kterému by se ti líbilo pomoci**. Ideální je, pokud je za projektem nějaké „IT oddělení“ (možná spíš skupinka nadšenců), kde tě budou zaučovat za to, že jim pomůžeš.
+Nemáš-li nápady, mrkni na [Pyvec](https://pyvec.org/), [Česko.Digital](https://www.cesko.digital/), [Hlídač státu](https://www.hlidacstatu.cz/), [Um sem um tam](https://umsemumtam.cz/), nebo si **projdi projekty na [Darujme.cz](https://www.darujme.cz/) a napiš tomu, kterému by se ti líbilo pomoci**. Ideální je, pokud je za projektem nějaké „IT oddělení“ (možná spíš skupinka nadšenců), kde tě budou zaučovat za to, že jim pomůžeš.
 
 {% call blockquote_avatar(
   'GameCon naplňoval ideální simulaci firemních podmínek. Neziskový projekt má své výhody – pracujete na něčem, co se reálně použije, projekt můžete řídit, máte k ruce tým kolegů.',

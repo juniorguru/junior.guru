@@ -92,7 +92,7 @@ Začátky s open source nejsou přímočaré. Většinou na něm lidé pracují 
 
   {{ link_card(
     'Česko.Digital',
-    'https://cesko.digital/',
+    'https://www.cesko.digital/',
     'Přidej se do sdružení dobrovolníků okolo OSS projektů s pozitivním dopadem na Česko.'
   ) }}
 

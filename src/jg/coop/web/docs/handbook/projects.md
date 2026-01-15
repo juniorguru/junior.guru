@@ -165,7 +165,7 @@ Kdyz delam povor ja, beru projekt jako odrazovy mustek pro dalsi diskuzi. Kdyz t
 Z mých poznámek, kde se dají sehnat projekty na rozjezd:
 
 - https://junior.guru/practice/#projects
-- dobrovolničení pro https://cesko.digital/
+- dobrovolničení pro https://www.cesko.digital/
 - okopírovat existující věc (viz co píše <@!419662350874837003> nebo yablko tu https://www.linkedin.com/feed/update/urn:li:activity:6796762431776403456/, nebo úplně pecka je toto https://github.com/danistefanovic/build-your-own-x )
 - zpracování dat o jménech https://www.theguardian.com/news/datablog/2012/apr/25/baby-names-data, o velikostech oblečení https://www.theguardian.com/news/datablog/2012/feb/14/highstreet-clothes-size-chart
 - nějaká další inspirace tady https://www.codementor.io/projects
