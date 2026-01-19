@@ -239,14 +239,14 @@ Zaregistruj se a nakoukni, jak to u nás vypadá. Kartu nezadáváš. Klidně si
 <div class="pricing standout">
   <div class="pricing-block pulse-hover">
     <h3 class="pricing-heading">Zdarma na 14 dní</h3>
-    <p class="pricing-subheading">Potom <strong>199 Kč</strong> měsíčně<sup>*</sup></p>
+    <p class="pricing-subheading">Potom <strong>299 Kč</strong> měsíčně<sup>*</sup></p>
     <ul class="pricing-benefits">
       {# <li class="pricing-benefits-item price"><strong>Zdarma na 14 dní</strong></li> #}
       <li class="pricing-benefits-item">{{ 'check-circle-fill'|icon }} Bez zadávání karty, bez placení</li>
       <li class="pricing-benefits-item">{{ 'check-circle-fill'|icon }} Po 2 týdnech se rozhodneš</li>
       <li class="pricing-benefits-item">{{ 'check-circle-fill'|icon }} I potom to jde kdykoliv zrušit</li>
     </ul>
-    <a class="pricing-button" href="https://juniorguru.memberful.com/checkout?plan=89511">Bezplatně vyzkoušet</a>
+    <a class="pricing-button" href="https://juniorguru.memberful.com/checkout?plan=143775">Bezplatně vyzkoušet</a>
   </div>
 </div>
 
@@ -256,7 +256,7 @@ Zaregistruj se a nakoukni, jak to u nás vypadá. Kartu nezadáváš. Klidně si
 
 <p class="pricing-note">
   <small>
-    <sup>*</sup> Žádný háček, ani skrytá podmínka. Tohle je jen poznámka na okraj, že pokud by se ti v klubu líbilo, ale 199 Kč měsíčně je na tebe moc, můžeš <a href="{{ pages|docs_url('finaid.md')|url }}">požádat o roční stipendium</a>.
+    <sup>*</sup> Žádný háček, ani skrytá podmínka. Tohle je jen poznámka na okraj, že pokud by se ti v klubu líbilo, ale 299 Kč měsíčně je na tebe moc, můžeš <a href="{{ pages|docs_url('finaid.md')|url }}">požádat o roční stipendium</a>.
   </small>
 </p>
 </section></div>

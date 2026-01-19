@@ -88,7 +88,7 @@ def test_classify_marketing_survey_answer(text, expected):
                 "Name": "Aleš Novák",
                 "Email": "alesnovak@example.com",
                 "Plan": "Členství v klubu",
-                "Price (CZK)": "199.00",
+                "Price (CZK)": "299.00",
                 "Expiration Date": "2025-02-23",
                 "Reason": "Other",
                 "Feedback": "",
