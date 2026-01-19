@@ -22,7 +22,7 @@
     "esbuild-sass-plugin": "3.6.0",
     "jsdom": "27.4.0",
     "sass": "1.77.6",
-    "stylelint": "16.26.1",
+    "stylelint": "17.0.0",
     "stylelint-config-twbs-bootstrap": "16.1.0",
     "stylelint-order": "7.0.1",
     "vitest": "4.0.17"
