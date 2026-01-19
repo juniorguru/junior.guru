@@ -1,7 +1,7 @@
 import json
 import math
 import random
-from datetime import UTC, datetime
+from datetime import UTC, date, datetime, timedelta
 from typing import Self
 from zoneinfo import ZoneInfo
 
@@ -101,6 +101,11 @@ class Event(BaseModel):
     @property
     def page_url(self) -> str:
         return f"events/{self.id}.md"
+
+    def is_within_trial(self, today: None | date = None) -> bool:
+        today = today or date.today()
+        trial_ends_on = today + timedelta(days=14 - 1)  # better be safe, remove one day
+        return self.start_at.date() <= trial_ends_on
 
     def to_card(self) -> dict:
         return dict(
