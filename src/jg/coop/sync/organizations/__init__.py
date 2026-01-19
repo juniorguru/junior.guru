@@ -18,8 +18,8 @@ from jg.coop.lib.images import PostersCache, render_image_file
 from jg.coop.lib.memberful import (
     MemberfulAPI,
     from_cents,
-    is_group_plan,
     is_public_plan,
+    is_sponsor_plan,
     parse_tier_name,
 )
 from jg.coop.lib.yaml import YAMLConfig
@@ -337,7 +337,7 @@ def prepare_tiers(
         [
             get_tier_data(plan)
             for plan in plans
-            if is_group_plan(plan) and is_public_plan(plan)
+            if is_sponsor_plan(plan) and is_public_plan(plan)
         ],
         key=itemgetter("price"),
     )

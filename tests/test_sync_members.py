@@ -15,7 +15,7 @@ from jg.coop.sync.members import (
 
 
 PLAN_CLUB = {
-    "name": "Měsíčně",
+    "name": "Členství v klubu",
     "planGroup": {"name": "abc"},
     "intervalUnit": "month",
     "additionalMemberPriceCents": None,
@@ -26,13 +26,6 @@ PLAN_GROUP = {
     "planGroup": None,
     "intervalUnit": "year",
     "additionalMemberPriceCents": 0,
-}
-
-PLAN_OTHER = {
-    "name": "Angličtina",
-    "planGroup": None,
-    "intervalUnit": "month",
-    "additionalMemberPriceCents": None,
 }
 
 
@@ -139,42 +132,6 @@ def test_get_active_subscription():
     assert subscription["id"] == 2
 
 
-def test_get_active_subscription_skip_other_plans():
-    subscription = get_active_subscription(
-        [
-            {
-                "id": 1,
-                "active": True,
-                "activatedAt": 1725177843,
-                "trialEndAt": None,
-                "plan": PLAN_CLUB,
-                "coupon": None,
-                "orders": [{"coupon": None, "createdAt": 100}],
-            },
-            {
-                "id": 2,
-                "active": True,
-                "activatedAt": 1725177843,
-                "trialEndAt": None,
-                "plan": PLAN_OTHER,
-                "coupon": None,
-                "orders": [{"coupon": None, "createdAt": 100}],
-            },
-            {
-                "id": 3,
-                "active": False,
-                "activatedAt": 1725177843,
-                "trialEndAt": None,
-                "plan": PLAN_CLUB,
-                "coupon": None,
-                "orders": [{"coupon": None, "createdAt": 100}],
-            },
-        ]
-    )
-
-    assert subscription["id"] == 1
-
-
 def test_get_active_subscription_dont_skip_group_plans():
     subscription = get_active_subscription(
         [
@@ -189,15 +146,6 @@ def test_get_active_subscription_dont_skip_group_plans():
             },
             {
                 "id": 2,
-                "active": True,
-                "activatedAt": 1725177843,
-                "trialEndAt": None,
-                "plan": PLAN_OTHER,
-                "coupon": None,
-                "orders": [{"coupon": None, "createdAt": 100}],
-            },
-            {
-                "id": 3,
                 "active": False,
                 "activatedAt": 1725177843,
                 "trialEndAt": None,

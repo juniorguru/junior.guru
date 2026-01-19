@@ -149,3 +149,11 @@ registry:
     start_on: 2025-04
     note: |
       Zdarma poskytují přístup k datům o firmách, aby se jimi dal obohatit katalog poskytovatelů kurzů.
+
+  - name: Apify
+    slug: apify
+    url: https://apify.com/
+    cz_business_id: 4788290
+    start_on: 2025-04
+    note: |
+      Zdarma poskytují platformu pro sběr dat, kde může junior.guru provozovat programy stahující data o pracovních nabídkách, programátorských srazech, a mnohé další.

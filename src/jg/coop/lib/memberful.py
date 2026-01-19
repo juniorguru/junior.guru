@@ -255,13 +255,7 @@ def is_public_plan(plan: dict) -> bool:
     return plan["forSale"]
 
 
-def is_group_plan(plan: dict) -> bool:
-    return plan["additionalMemberPriceCents"] is not None
-
-
 def is_sponsor_plan(plan: dict) -> bool:
-    if not is_group_plan(plan):
-        return False
     try:
         parse_tier_name(plan["name"])
     except ValueError:
@@ -270,11 +264,11 @@ def is_sponsor_plan(plan: dict) -> bool:
 
 
 def is_partner_plan(plan: dict) -> bool:
-    return is_group_plan(plan) and not is_sponsor_plan(plan)
+    return not (is_individual_plan(plan) or is_sponsor_plan(plan))
 
 
 def is_individual_plan(plan: dict) -> bool:
-    return not is_group_plan(plan) and plan["planGroup"]
+    return re.search(r"\bčlenství\sv\sklubu\b", plan["name"], re.I) is not None
 
 
 def timestamp_to_datetime(timestamp: int) -> datetime:
