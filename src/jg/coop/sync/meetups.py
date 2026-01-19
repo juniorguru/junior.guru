@@ -218,7 +218,8 @@ async def sync_meetups(client: ClubClient, instructions: list[PostingInstruction
                 description=(
                     "Pojď ven a spolu s lidmi z klubu objevuj další komunity! "
                     f"Tuto akci pořádá **{meetup.series_org}**. "
-                    "Kdo chcete jít, dejte 🙋 na tento příspěvek."
+                    "Pokud zvažuješ dorazit, dej 🙋 na tento příspěvek, "
+                    "ať jde vidět, kdo všechno by možná šel."
                 ),
                 url=meetup.url,
             )
