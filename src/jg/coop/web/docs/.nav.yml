@@ -2,7 +2,6 @@ nav:
   - Klub:
       - Klub: club.md
       - Rozcestník pro členy: membership.jinja
-      - Klubové lekce angličtiny: membership-english.jinja
   - Příručka:
       - Cesta juniora: handbook/index.md
       - Proč programovat: handbook/motivation.md
