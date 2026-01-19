@@ -154,6 +154,6 @@ registry:
     slug: apify
     url: https://apify.com/
     cz_business_id: 4788290
-    start_on: 2025-04
+    start_on: 2025-02
     note: |
       Zdarma poskytují platformu pro sběr dat, kde může junior.guru provozovat programy stahující data o pracovních nabídkách, programátorských srazech, a mnohé další.
