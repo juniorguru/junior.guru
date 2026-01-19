@@ -1,8 +1,6 @@
 import csv
-import gzip
 import json
 from datetime import UTC, datetime, timedelta
-from pathlib import Path
 from zoneinfo import ZoneInfo
 
 import ics
@@ -98,25 +96,6 @@ def build_czechitas_csv(api_dir, config):
             writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
             writer.writeheader()
             writer.writerows(rows)
-
-
-@db.connection_context()
-def build_navigara_api(api_dir, config):
-    api_subdir = api_dir / "navigara"
-    api_subdir.mkdir(parents=True, exist_ok=True)
-
-    src_dir = Path("src/jg/coop/data/jobs")
-    src_jobs_path = src_dir / "jobs.jsonl"
-
-    api_jobs_path = api_subdir / "jobs.jsonl.gz"
-    with gzip.GzipFile(api_jobs_path, mode="wb") as gzip_f:
-        with src_jobs_path.open("r") as f:
-            for line in f:
-                gzip_f.write(line.encode("utf-8"))
-
-    src_schema_path = src_dir / "schema-apify.json"
-    api_schema_path = api_subdir / "schema-apify.json"
-    api_schema_path.write_bytes(src_schema_path.read_bytes())
 
 
 @db.connection_context()
