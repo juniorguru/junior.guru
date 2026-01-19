@@ -1,17 +1,21 @@
 import csv
 import json
 from datetime import UTC, datetime, timedelta
+from pathlib import Path
 from zoneinfo import ZoneInfo
 
 import ics
+import yaml
 from pod2gen import Category, Episode, Funding, Media, Person, Podcast
 
+from jg.coop.lib.discord_club import parse_discord_link
 from jg.coop.lib.md import md
 from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.event import Event
 from jg.coop.models.job import ListedJob
 from jg.coop.models.podcast import PodcastEpisode
+from jg.coop.sync.interests import InterestsConfig
 
 
 @db.connection_context()
@@ -30,6 +34,24 @@ def build_course_providers_api(api_dir, config):
     api_file = api_dir / "course-providers.json"
     with api_file.open("w", encoding="utf-8") as f:
         json.dump(course_providers, f, ensure_ascii=False, indent=2)
+
+
+@db.connection_context()
+def build_interests_api(
+    api_dir, config, yaml_path: str | Path = "src/jg/coop/data/interests.yml"
+) -> None:
+    yaml_data = yaml.safe_load(Path(yaml_path).read_text())
+    config = InterestsConfig(**yaml_data)
+
+    interests = []
+    for role in config.roles:
+        for thread_url in role.threads:
+            discord_link_ids = parse_discord_link(str(thread_url))
+            interests.append({"role_id": role.id, **discord_link_ids})
+
+    api_file = api_dir / "interests.json"
+    with api_file.open("w", encoding="utf-8") as f:
+        json.dump(interests, f, ensure_ascii=False, indent=2)
 
 
 @db.connection_context()

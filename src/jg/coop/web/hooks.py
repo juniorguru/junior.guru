@@ -73,8 +73,8 @@ def on_post_build(config):
     api_dir.mkdir(parents=True, exist_ok=True)
 
     api.build_course_providers_api(api_dir, config)
+    api.build_interests_api(api_dir, config)
     api.build_events_ics(api_dir, config)
     api.build_events_honza_ics(api_dir, config)
     api.build_podcast_xml(api_dir, config)
     api.build_czechitas_csv(api_dir, config)
-    api.build_navigara_api(api_dir, config)
