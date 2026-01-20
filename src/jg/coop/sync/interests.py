@@ -1,7 +1,5 @@
-from itertools import groupby
-from operator import attrgetter
 from pathlib import Path
-from typing import Generator, Literal
+from typing import Literal
 
 import click
 import httpx
@@ -42,10 +40,10 @@ ICON_URLS = {
 }
 
 
-class InterestInfo(BaseModel):
+class MemberInterests(BaseModel):
     member_id: int
     dm_channel_id: int
-    thread_id: int
+    thread_ids: list[int]
 
 
 class IconConfig(YAMLConfig):
@@ -142,7 +140,7 @@ async def main(config_path: Path, tag: str, debug_user: int | None):
         members = ClubUser.members_listing()
 
     # Check what needs to be done
-    infos = []
+    members_interests: list[MemberInterests] = []
     for member in members:
         member_roles_ids = set(member.initial_roles) & set(config_roles)
 
@@ -166,6 +164,7 @@ async def main(config_path: Path, tag: str, debug_user: int | None):
         member_threads = [
             interest_threads[thread_id] for thread_id in member_threads_ids
         ]
+        member_threads.sort(key=lambda thread: thread.name.lower())
         logger.debug(
             f"Member #{member.id} threads: {[thread.name for thread in member_threads]}"
         )
@@ -186,55 +185,49 @@ async def main(config_path: Path, tag: str, debug_user: int | None):
             f"Member #{member.id} with interests {[role.interest_name for role in member_roles]} "
             f"will receive info about threads {[thread.name for thread in member_threads]}"
         )
-        for member_thread in member_threads:
-            infos.append(
-                InterestInfo(
-                    member_id=member.id,
-                    dm_channel_id=member.dm_channel_id,
-                    thread_id=member_thread.id,
-                )
+        members_interests.append(
+            MemberInterests(
+                member_id=member.id,
+                dm_channel_id=member.dm_channel_id,
+                thread_ids=[thread.id for thread in member_threads],
             )
-    if infos:
-        discord_task.run(sync_interests, infos)
-
-
-async def sync_interests(client: ClubClient, infos: list[InterestInfo]):
-    threads = {
-        id: (
-            client.club_guild.get_thread(id)
-            or await client.club_guild.fetch_channel(id)
         )
-        for id in {info.thread_id for info in infos}
+    if members_interests:
+        discord_task.run(sync_interests, members_interests)
+
+
+async def sync_interests(client: ClubClient, members_interests: list[MemberInterests]):
+    thread_ids = {
+        thread_id
+        for member_interests in members_interests
+        for thread_id in member_interests.thread_ids
+    }
+    threads = {
+        thread_id: (
+            client.club_guild.get_thread(thread_id)
+            or await client.club_guild.fetch_channel(thread_id)
+        )
+        for thread_id in thread_ids
     }
     dm_channels = {
         id: client.get_partial_messageable(id, type=ChannelType.private)
-        for id in {info.dm_channel_id for info in infos}
+        for id in {
+            member_interests.dm_channel_id for member_interests in members_interests
+        }
     }
-    for member_id, dm_channel_id, member_infos in group_by_member(infos):
-        logger.debug(f"Processing member #{member_id}: {len(member_infos)} infos")
-        dm_channel = dm_channels[dm_channel_id]
-        member_threads = [threads[info.thread_id] for info in member_infos]
+    for member_interests in members_interests:
+        logger.debug(
+            f"Processing member #{member_interests.member_id}: {len(member_interests.thread_ids)} threads"
+        )
+        dm_channel = dm_channels[member_interests.dm_channel_id]
+        member_threads = [
+            threads[thread_id] for thread_id in member_interests.thread_ids
+        ]
         logger.info(
-            f"Informing member #{member_id} about {len(member_threads)} threads"
+            f"Informing member #{member_interests.member_id} about {len(member_threads)} threads"
         )
         with mutating_discord(dm_channel) as proxy:
             await proxy.send(create_message(member_threads))
-
-
-def group_by_member(
-    infos: list[InterestInfo],
-) -> Generator[tuple[int, int, list[InterestInfo]], None, None]:
-    for member_id, member_infos in groupby(
-        sorted(infos, key=attrgetter("member_id")),
-        key=attrgetter("member_id"),
-    ):
-        member_infos = list(member_infos)
-        dm_channel_ids = {info.dm_channel_id for info in member_infos}
-        if len(dm_channel_ids) != 1:
-            raise ValueError(
-                f"Multiple DM channels for member #{member_id}: {dm_channel_ids}"
-            )
-        yield member_id, dm_channel_ids.pop(), list(member_infos)
 
 
 def create_message(threads: list[Thread]) -> str:
