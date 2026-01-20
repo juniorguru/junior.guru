@@ -233,7 +233,6 @@ async def main(config_path: Path, tag: str, debug_user: int | None):
                     )
                 )
     if instructions:
-        return  # TEMPORARY DISABLE, https://discord.com/channels/769966886598737931/806215364379148348/1439631865605787811
         discord_task.run(sync_interests, instructions)
 
 
@@ -261,16 +260,7 @@ async def sync_interests(client: ClubClient, instructions: list[MembershipInstru
             op_threads = [
                 threads[instruction.thread_id] for instruction in op_instructions
             ]
-            if op == MembershipOperation.ADD:
-                for op_thread in op_threads:
-                    logger.info(
-                        f"Adding member #{member_id} to thread: {op_thread.name}"
-                    )
-                    with mutating_discord(op_thread) as proxy:
-                        await proxy.add_user(discord.Object(id=member_id))
-                with mutating_discord(dm_channel) as proxy:
-                    await proxy.send(create_adding_message(op_threads))
-            elif op == MembershipOperation.INFO:
+            if op == MembershipOperation.INFO:
                 logger.info(
                     f"Informing member #{member_id} about {len(op_threads)} threads"
                 )
@@ -308,31 +298,22 @@ def group_by_operation(
         yield op, list(op_instructions)
 
 
-def create_adding_message(threads: list[Thread]) -> str:
+def create_info_message(threads: list[Thread]) -> str:
     return (
-        f"{EMOJI_NAMESPACE} {EMOJI_ADD} Podle tvých zájmů jsem tě přidalo do těchto vláken:"
+        f"{EMOJI_NAMESPACE} {EMOJI_ADD} Podle tvých zájmů to vypadá, že by tě mohly bavit tyto vlákna:"
         f"\n\n{format_threads(threads)}\n\n"
         f"Jsou to „zájmové skupinky”. Sdílí se v nich "
         "novinky, drby, tipy, filozofické úvahy, vysvětlují obecnější koncepty, "
         "nebo řeší společné úlohy."
         "\n\n"
+        "Jakmile do nich někdo přispěje, automaticky tě přidám. "
+        "Kdykoli se ale můžeš odhlásit přes tlačítko _Sledující/Sledovat_ v záhlaví každého vlákna. "
+        "A svoje zájmy můžeš upravovat v sekci **Kanály a role**, kterou najdeš úplně nahoře v seznamu kanálů."
+        "\n\n"
         "Pokud něco vyloženě debuguješ, je lepší tím skupinky nespamovat. "
         "Založ vlákno v poradně "
         f"https://discord.com/channels/{CLUB_GUILD_ID}/{ClubChannelID.QA} "
         "a do vhodné skupinky pak na něho dej pouze odkaz."
-    )
-
-
-def create_info_message(threads: list[Thread]) -> str:
-    return (
-        f"{EMOJI_NAMESPACE} {EMOJI_INFO} Podle tvých zájmů by tě mělo bavit sledování těchto vláken:"
-        f"\n\n{format_threads(threads)}\n\n"
-        f"Ale nejsi v nich! Pokud tě tyhle „zájmové skupinky” už nebavily a přes tlačítko "
-        "_Sledující/Sledovat_ jsi z nich záměrně zmizel(a), je to v pořádku. "
-        "Já už tě přidávat nebudu. "
-        "Ale třeba to byl jen nějaký omyl, tak aspoň píšu."
-        "\n\n"
-        "Svoje zájmy můžeš upravovat v sekci **Kanály a role**, kterou najdeš úplně nahoře v seznamu kanálů."
     )
 
 
