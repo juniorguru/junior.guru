@@ -170,42 +170,30 @@ async def main(config_path: Path, tag: str, debug_user: int | None):
             f"Member #{member.id} threads: {[thread.name for thread in member_threads]}"
         )
 
-        # Figure out in which threads the member is missing
-        member_threads_missing = [
-            member_thread
-            for member_thread in member_threads
-            if member.id not in member_thread.members_ids
-        ]
-        if not member_threads_missing:
-            continue
-        logger.info(
-            f"Member #{member.id} with interests {[role.interest_name for role in member_roles]} "
-            f"is missing threads {[thread.name for thread in member_threads_missing]}"
-        )
-
         # Figure out what relevant messages the member has in their DM channel
         messages = ClubMessage.channel_listing(
             member.dm_channel_id, starting_emoji=EMOJI, by_bot=True
         )
         logger.debug(f"Member #{member.id} has relevant DM messages: {len(messages)}")
 
-        # Decide what to do with each thread the member is missing
-        for member_thread in member_threads_missing:
-            if contains_message(messages, member_thread.url):
-                logger.info(
-                    f"Member #{member.id} already informed about thread {member_thread.name} #{member_thread.id}, skipping"
+        if has_info_message(messages):
+            logger.info(
+                f"Member #{member.id} already informed about interest threads, skipping"
+            )
+            continue
+
+        logger.info(
+            f"Member #{member.id} with interests {[role.interest_name for role in member_roles]} "
+            f"will receive info about threads {[thread.name for thread in member_threads]}"
+        )
+        for member_thread in member_threads:
+            infos.append(
+                InterestInfo(
+                    member_id=member.id,
+                    dm_channel_id=member.dm_channel_id,
+                    thread_id=member_thread.id,
                 )
-            else:
-                logger.info(
-                    f"Member #{member.id} will be informed about {member_thread.name}"
-                )
-                infos.append(
-                    InterestInfo(
-                        member_id=member.id,
-                        dm_channel_id=member.dm_channel_id,
-                        thread_id=member_thread.id,
-                    )
-                )
+            )
     if infos:
         discord_task.run(sync_interests, infos)
 
@@ -274,8 +262,5 @@ def format_threads(threads: list[Thread]) -> str:
     )
 
 
-def contains_message(messages: list[ClubMessage], thread_url: str) -> bool:
-    for message in messages:
-        if message.content.startswith(EMOJI) and thread_url in message.content:
-            return True
-    return False
+def has_info_message(messages: list[ClubMessage]) -> bool:
+    return any(message.content.startswith(EMOJI) for message in messages)
