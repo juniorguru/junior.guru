@@ -42,13 +42,14 @@ def build_interests_api(
 ) -> None:
     yaml_data = yaml.safe_load(Path(yaml_path).read_text())
     config = InterestsConfig(**yaml_data)
-
-    interests = []
-    for role in config.roles:
-        for thread_url in role.threads:
-            discord_link_ids = parse_discord_link(str(thread_url))
-            interests.append({"role_id": role.id, **discord_link_ids})
-
+    interests = [
+        {
+            "thread_id": parse_discord_link(str(thread_url))["channel_id"],
+            "role_id": role.id,
+        }
+        for role in config.roles
+        for thread_url in role.threads
+    ]
     api_file = api_dir / "interests.json"
     with api_file.open("w", encoding="utf-8") as f:
         json.dump(interests, f, ensure_ascii=False, indent=2)
