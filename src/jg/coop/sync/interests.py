@@ -1,11 +1,9 @@
-from enum import StrEnum
 from itertools import groupby
 from operator import attrgetter
 from pathlib import Path
 from typing import Generator, Literal
 
 import click
-import discord
 import httpx
 import yaml
 from discord import ChannelType, Thread
@@ -36,11 +34,7 @@ IMAGES_DIR = Path("src/jg/coop/images")
 
 ICONS_DIR = IMAGES_DIR / "interests"
 
-EMOJI_NAMESPACE = "🛹"
-
-EMOJI_ADD = "👋"
-
-EMOJI_INFO = "<a:awkward:985064290044223488>"
+EMOJI = "🛹"
 
 ICON_URLS = {
     "devicon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/{slug}/{slug}-plain.svg",
@@ -48,15 +42,9 @@ ICON_URLS = {
 }
 
 
-class MembershipOperation(StrEnum):
-    ADD = "add"
-    INFO = "info"
-
-
-class MembershipInstruction(BaseModel):
+class InterestInfo(BaseModel):
     member_id: int
     dm_channel_id: int
-    operation: MembershipOperation
     thread_id: int
 
 
@@ -154,7 +142,7 @@ async def main(config_path: Path, tag: str, debug_user: int | None):
         members = ClubUser.members_listing()
 
     # Check what needs to be done
-    instructions = []
+    infos = []
     for member in members:
         member_roles_ids = set(member.initial_roles) & set(config_roles)
 
@@ -197,110 +185,73 @@ async def main(config_path: Path, tag: str, debug_user: int | None):
 
         # Figure out what relevant messages the member has in their DM channel
         messages = ClubMessage.channel_listing(
-            member.dm_channel_id, starting_emoji=EMOJI_NAMESPACE, by_bot=True
+            member.dm_channel_id, starting_emoji=EMOJI, by_bot=True
         )
         logger.debug(f"Member #{member.id} has relevant DM messages: {len(messages)}")
 
         # Decide what to do with each thread the member is missing
         for member_thread in member_threads_missing:
-            if contains_adding_message(messages, member_thread.url):
-                if contains_info_message(messages, member_thread.url):
-                    logger.info(
-                        f"Member #{member.id} already informed about thread {member_thread.name} #{member_thread.id}, skipping"
-                    )
-                else:
-                    logger.info(
-                        f"Member #{member.id} will be only informed about {member_thread.name}"
-                    )
-                    instructions.append(
-                        MembershipInstruction(
-                            member_id=member.id,
-                            dm_channel_id=member.dm_channel_id,
-                            operation=MembershipOperation.INFO,
-                            thread_id=member_thread.id,
-                        )
-                    )
+            if contains_message(messages, member_thread.url):
+                logger.info(
+                    f"Member #{member.id} already informed about thread {member_thread.name} #{member_thread.id}, skipping"
+                )
             else:
                 logger.info(
-                    f"Member #{member.id} will be added to {member_thread.name}"
+                    f"Member #{member.id} will be informed about {member_thread.name}"
                 )
-                instructions.append(
-                    MembershipInstruction(
+                infos.append(
+                    InterestInfo(
                         member_id=member.id,
                         dm_channel_id=member.dm_channel_id,
-                        operation=MembershipOperation.ADD,
                         thread_id=member_thread.id,
                     )
                 )
-    if instructions:
-        discord_task.run(sync_interests, instructions)
+    if infos:
+        discord_task.run(sync_interests, infos)
 
 
-async def sync_interests(client: ClubClient, instructions: list[MembershipInstruction]):
+async def sync_interests(client: ClubClient, infos: list[InterestInfo]):
     threads = {
         id: (
             client.club_guild.get_thread(id)
             or await client.club_guild.fetch_channel(id)
         )
-        for id in {instruction.thread_id for instruction in instructions}
+        for id in {info.thread_id for info in infos}
     }
     dm_channels = {
         id: client.get_partial_messageable(id, type=ChannelType.private)
-        for id in {instruction.dm_channel_id for instruction in instructions}
+        for id in {info.dm_channel_id for info in infos}
     }
-
-    for member_id, dm_channel_id, member_instructions in group_by_member(instructions):
-        logger.info(
-            f"Processing member #{member_id}: {len(member_instructions)} instructions"
-        )
+    for member_id, dm_channel_id, member_infos in group_by_member(infos):
+        logger.debug(f"Processing member #{member_id}: {len(member_infos)} infos")
         dm_channel = dm_channels[dm_channel_id]
-
-        for op, op_instructions in group_by_operation(member_instructions):
-            logger.info(f"Operation {op.value}: {len(op_instructions)} instructions")
-            op_threads = [
-                threads[instruction.thread_id] for instruction in op_instructions
-            ]
-            if op == MembershipOperation.INFO:
-                logger.info(
-                    f"Informing member #{member_id} about {len(op_threads)} threads"
-                )
-                with mutating_discord(dm_channel) as proxy:
-                    await proxy.send(create_info_message(op_threads))
-            else:
-                raise ValueError(f"Unknown operation: {op}")
+        member_threads = [threads[info.thread_id] for info in member_infos]
+        logger.info(
+            f"Informing member #{member_id} about {len(member_threads)} threads"
+        )
+        with mutating_discord(dm_channel) as proxy:
+            await proxy.send(create_message(member_threads))
 
 
 def group_by_member(
-    instructions: list[MembershipInstruction],
-) -> Generator[tuple[int, int, list[MembershipInstruction]], None, None]:
-    for member_id, member_instructions in groupby(
-        sorted(instructions, key=attrgetter("member_id")),
+    infos: list[InterestInfo],
+) -> Generator[tuple[int, int, list[InterestInfo]], None, None]:
+    for member_id, member_infos in groupby(
+        sorted(infos, key=attrgetter("member_id")),
         key=attrgetter("member_id"),
     ):
-        member_instructions = list(member_instructions)
-        dm_channel_ids = {
-            instruction.dm_channel_id for instruction in member_instructions
-        }
+        member_infos = list(member_infos)
+        dm_channel_ids = {info.dm_channel_id for info in member_infos}
         if len(dm_channel_ids) != 1:
             raise ValueError(
                 f"Multiple DM channels for member #{member_id}: {dm_channel_ids}"
             )
-        yield member_id, dm_channel_ids.pop(), list(member_instructions)
+        yield member_id, dm_channel_ids.pop(), list(member_infos)
 
 
-def group_by_operation(
-    instructions: list[MembershipInstruction],
-) -> Generator[tuple[MembershipOperation, list[MembershipInstruction]], None, None]:
-    for op, op_instructions in groupby(
-        sorted(instructions, key=attrgetter("operation")),
-        key=attrgetter("operation"),
-    ):
-        yield op, list(op_instructions)
-
-
-def create_info_message(threads: list[Thread]) -> str:
+def create_message(threads: list[Thread]) -> str:
     return (
-        f"{EMOJI_NAMESPACE} {EMOJI_ADD} Podle tvých zájmů to vypadá, že by tě mohly bavit tyto vlákna:"
+        f"{EMOJI} Podle tvých zájmů to vypadá, že by tě mohly bavit tyto vlákna:"
         f"\n\n{format_threads(threads)}\n\n"
         f"Jsou to „zájmové skupinky”. Sdílí se v nich "
         "novinky, drby, tipy, filozofické úvahy, vysvětlují obecnější koncepty, "
@@ -323,20 +274,8 @@ def format_threads(threads: list[Thread]) -> str:
     )
 
 
-def contains_adding_message(messages: list[ClubMessage], thread_url: str) -> bool:
-    return contains_message(
-        messages, f"{EMOJI_NAMESPACE} {EMOJI_ADD}", thread_url.rstrip("/")
-    )
-
-
-def contains_info_message(messages: list[ClubMessage], thread_url: str) -> bool:
-    return contains_message(
-        messages, f"{EMOJI_NAMESPACE} {EMOJI_INFO}", thread_url.rstrip("/")
-    )
-
-
-def contains_message(messages: list[ClubMessage], prefix: str, text: str) -> bool:
+def contains_message(messages: list[ClubMessage], thread_url: str) -> bool:
     for message in messages:
-        if message.content.startswith(prefix) and text in message.content:
+        if message.content.startswith(EMOJI) and thread_url in message.content:
             return True
     return False
