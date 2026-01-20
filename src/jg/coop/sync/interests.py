@@ -168,6 +168,11 @@ async def main(config_path: Path, tag: str, debug_user: int | None):
         logger.debug(
             f"Member #{member.id} threads: {[thread.name for thread in member_threads]}"
         )
+        if not member_threads:
+            logger.info(
+                f"Member #{member.id} interests {[role.interest_name for role in member_roles]} have no configured threads, skipping"
+            )
+            continue
 
         # Figure out what relevant messages the member has in their DM channel
         messages = ClubMessage.channel_listing(
