@@ -5,6 +5,7 @@ import click
 import httpx
 import yaml
 from discord import ChannelType, Thread
+from discord.errors import Forbidden
 from pydantic import BaseModel, HttpUrl, computed_field, field_validator
 
 from jg.coop.cli.sync import main as cli
@@ -234,9 +235,14 @@ async def sync_interests(client: ClubClient, members_interests: list[MemberInter
             f"{len(member_threads)} threads"
         )
         with mutating_discord(dm_channel) as proxy:
-            await proxy.send(
-                create_message(member_interests.role_names, member_threads)
-            )
+            try:
+                await proxy.send(
+                    create_message(member_interests.role_names, member_threads)
+                )
+            except Forbidden as e:
+                logger.error(
+                    f"Cannot send DM to member #{member_interests.member_id}: {e}"
+                )
 
 
 def create_message(role_names: list[str], threads: list[Thread], limit=5) -> str:
