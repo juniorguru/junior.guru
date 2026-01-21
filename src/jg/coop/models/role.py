@@ -3,7 +3,7 @@ from typing import Iterable, Self
 
 from peewee import CharField, IntegerField, TextField
 
-from jg.coop.models.base import BaseModel
+from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubUser
 
 
@@ -12,6 +12,7 @@ class InterestRole(BaseModel):
     name = CharField(unique=True)
     interest_name = CharField(unique=True)
     icon_path = CharField(null=True)
+    threads_ids = JSONField(default=list)
 
     @classmethod
     def count(self) -> int:

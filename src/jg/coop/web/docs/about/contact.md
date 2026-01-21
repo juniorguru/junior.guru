@@ -50,8 +50,8 @@ Je pouhou iluzí, že by šlo celé junior.guru dělat v jednom člověku. Tady 
     <td>moderování klubu a rady kolem CVček</td>
   </tr>
   <tr>
-    <td><a href="https://www.linkedin.com/in/miloslav-jezek/">Miloslav Ježek</a></td>
-    <td>moderování klubu a hybná síla za klubovými aktivitami</td>
+    <td><a href="https://www.linkedin.com/in/veronika-%C4%8Damborov%C3%A1/">Veronika Čamborová</a></td>
+    <td>moderování klubu</td>
   </tr>
   <tr>
     <td><a href="https://www.linkedin.com/in/berankova-pavla/">Pavla Beránková</a></td>
@@ -63,12 +63,16 @@ Je pouhou iluzí, že by šlo celé junior.guru dělat v jednom člověku. Tady 
     <td>moderování klubu a klubová psycholožka</td>
   </tr>
   <tr>
-    <td><a href="https://www.linkedin.com/in/madrvojtech/">Vojta Mádr</a></td>
-    <td>moderování klubu</td>
+    <td><a href="https://www.linkedin.com/in/fusatytata/">Šimon Kořený</a></td>
+    <td>moderování klubu a vítání klubových nováčků</td>
   </tr>
   <tr>
     <td><a href="https://www.linkedin.com/in/t%C3%A1%C5%88a-v%C3%A1chov%C3%A1-512981330/">Táňa Váchová</a></td>
-    <td>produkce online akcí</td>
+    <td>virtuální asistentka – produkce online akcí, rozhovorů, aj.</td>
+  </tr>
+  <tr>
+    <td>Tinuki</td>
+    <td>produkce videozáznamů</td>
   </tr>
   <tr>
     <td><a href="https://www.linkedin.com/in/patrik-brnusak-cz/">Patrik Brnušák</a></td>
@@ -83,10 +87,6 @@ Je pouhou iluzí, že by šlo celé junior.guru dělat v jednom člověku. Tady 
     <td>vítání klubových nováčků</td>
   </tr>
   <tr>
-    <td><a href="https://www.linkedin.com/in/fusatytata/">Šimon Kořený</a></td>
-    <td>vítání klubových nováčků</td>
-  </tr>
-  <tr>
     <td><a href="https://www.linkedin.com/in/tom%C3%A1%C5%A1-k%C3%A1ra-81b2111a1/">Tomáš Kára</a></td>
     <td>vítání klubových nováčků</td>
   </tr>
@@ -94,10 +94,6 @@ Je pouhou iluzí, že by šlo celé junior.guru dělat v jednom člověku. Tady 
     <td><a href="https://geekpower.cz/">Veronika Rychlá</a>
     </td>
     <td>výuka angličtiny v klubu</td>
-  </tr>
-  <tr>
-    <td><a href="https://www.linkedin.com/in/lonikroman/">Roman Loník</a></td>
-    <td>hybná síla za klubovými aktivitami kolem projektového učení</td>
   </tr>
   <tr>
     <td>Vítězslav Irein</td>
@@ -113,10 +109,6 @@ Je pouhou iluzí, že by šlo celé junior.guru dělat v jednom člověku. Tady 
   </tr>
   <tr>
     <td><a href="https://www.linkedin.com/in/adelapavlun/">Adéla Pavlun</a></td>
-    <td>produkce rozhovorů</td>
-  </tr>
-  <tr>
-    <td><a href="https://www.linkedin.com/in/adamkral1/">Adam Král</a></td>
     <td>produkce rozhovorů</td>
   </tr>
   <tr>
