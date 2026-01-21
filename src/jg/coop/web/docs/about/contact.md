@@ -116,10 +116,6 @@ Je pouhou iluzí, že by šlo celé junior.guru dělat v jednom člověku. Tady 
     <td>produkce rozhovorů</td>
   </tr>
   <tr>
-    <td><a href="https://www.linkedin.com/in/adamkral1/">Adam Král</a></td>
-    <td>produkce rozhovorů</td>
-  </tr>
-  <tr>
     <td><a href="https://www.obrjen.net/">Anna Obrjen</a>
     </td>
     <td>právní služby</td>
