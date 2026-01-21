@@ -43,6 +43,7 @@ ICON_URLS = {
 class MemberInterests(BaseModel):
     member_id: int
     dm_channel_id: int
+    role_names: list[str]
     thread_ids: list[int]
 
 
@@ -153,9 +154,8 @@ async def main(config_path: Path, tag: str, debug_user: int | None):
         # Figure out member roles
         member_config_roles = [config_roles[role_id] for role_id in member_roles_ids]
         member_roles = [interest_roles[role_id] for role_id in member_roles_ids]
-        logger.debug(
-            f"Member #{member.id} interests: {[role.interest_name for role in member_roles]}"
-        )
+        member_role_names = [role.interest_name for role in member_roles]
+        logger.debug(f"Member #{member.id} interests: {member_role_names}")
 
         # Figure out member threads
         member_threads_ids = {
@@ -172,7 +172,7 @@ async def main(config_path: Path, tag: str, debug_user: int | None):
         )
         if not member_threads:
             logger.info(
-                f"Member #{member.id} interests {[role.interest_name for role in member_roles]} have no configured threads, skipping"
+                f"Member #{member.id} interests {member_role_names} have no configured threads, skipping"
             )
             continue
 
@@ -189,13 +189,14 @@ async def main(config_path: Path, tag: str, debug_user: int | None):
             continue
 
         logger.info(
-            f"Member #{member.id} with interests {[role.interest_name for role in member_roles]} "
+            f"Member #{member.id} with interests {member_role_names} "
             f"will receive info about threads {[thread.name for thread in member_threads]}"
         )
         members_interests.append(
             MemberInterests(
                 member_id=member.id,
                 dm_channel_id=member.dm_channel_id,
+                role_names=member_role_names,
                 thread_ids=[thread.id for thread in member_threads],
             )
         )
@@ -223,35 +224,41 @@ async def sync_interests(client: ClubClient, members_interests: list[MemberInter
         }
     }
     for member_interests in members_interests:
-        logger.debug(
-            f"Processing member #{member_interests.member_id}: {len(member_interests.thread_ids)} threads"
-        )
         dm_channel = dm_channels[member_interests.dm_channel_id]
         member_threads = [
             threads[thread_id] for thread_id in member_interests.thread_ids
         ]
         logger.info(
-            f"Informing member #{member_interests.member_id} about {len(member_threads)} threads"
+            f"Informing member #{member_interests.member_id} about "
+            f"{len(member_interests.role_names)} roles and "
+            f"{len(member_threads)} threads"
         )
         with mutating_discord(dm_channel) as proxy:
-            await proxy.send(create_message(member_threads))
+            await proxy.send(
+                create_message(member_interests.role_names, member_threads)
+            )
 
 
-def create_message(threads: list[Thread]) -> str:
+def create_message(role_names: list[str], threads: list[Thread], limit=5) -> str:
+    threads_count = len(threads)
+    if threads_count > limit:
+        threads = threads[:limit]
+        threads_text = f"{format_threads(threads)}\n\n(a další, celkem {threads_count})"
+    else:
+        threads_text = format_threads(threads)
     return (
-        f"{EMOJI} Podle tvých zájmů to vypadá, že by tě mohly bavit tyto vlákna:"
-        f"\n\n{format_threads(threads)}\n\n"
-        f"Jsou to „zájmové skupinky”. Sdílí se v nich "
-        "novinky, drby, tipy, filozofické úvahy, vysvětlují obecnější koncepty, "
-        "nebo řeší společné úlohy."
+        f"{EMOJI} Podle tvých zájmů to vypadá, že by tě mohly bavit tyhle vlákna:"
+        f"\n\n{threads_text}\n\n"
+        f"Jak jsem na to přišlo? Máš tyto zájmové role: {', '.join(role_names)}. "
+        "Můžeš si je změnit v sekci **Kanály a role**, která je v klubu úplně nahoře v seznamu kanálů."
         "\n\n"
-        "Jakmile do nich někdo přispěje, automaticky tě přidám. "
-        "Kdykoli se ale můžeš odhlásit přes tlačítko _Sledující/Sledovat_ v záhlaví každého vlákna. "
-        "A svoje zájmy můžeš upravovat v sekci **Kanály a role**, kterou najdeš úplně nahoře v seznamu kanálů."
+        "Teď zpět k těm vláknům. Jsou to „zájmové skupinky”. "
+        "Jakmile do nich někdo přispěje, **automaticky tě přidám**. "
+        "Každé vlákno má ale v záhlaví tlačítko _Sledující_ (_Following_), kterým se můžeš kdykoliv odhlásit."
         "\n\n"
+        "Sdílí se v nich novinky, drby, tipy, filozofické úvahy, vysvětlují obecnější koncepty, nebo řeší společné úlohy."
         "Pokud něco vyloženě debuguješ, je lepší tím skupinky nespamovat. "
-        "Založ vlákno v poradně "
-        f"https://discord.com/channels/{CLUB_GUILD_ID}/{ClubChannelID.QA} "
+        f"Založ si to v poradně https://discord.com/channels/{CLUB_GUILD_ID}/{ClubChannelID.QA} "
         "a do vhodné skupinky pak na něho dej pouze odkaz."
     )
 
