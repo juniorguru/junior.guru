@@ -5,17 +5,15 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 import ics
-import yaml
 from pod2gen import Category, Episode, Funding, Media, Person, Podcast
 
-from jg.coop.lib.discord_club import parse_discord_link
 from jg.coop.lib.md import md
 from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.event import Event
 from jg.coop.models.job import ListedJob
 from jg.coop.models.podcast import PodcastEpisode
-from jg.coop.sync.interests import InterestsConfig
+from jg.coop.models.role import InterestRole
 
 
 @db.connection_context()
@@ -37,18 +35,11 @@ def build_course_providers_api(api_dir, config):
 
 
 @db.connection_context()
-def build_interests_api(
-    api_dir, config, yaml_path: str | Path = "src/jg/coop/data/interests.yml"
-) -> None:
-    yaml_data = yaml.safe_load(Path(yaml_path).read_text())
-    config = InterestsConfig(**yaml_data)
+def build_interests_api(api_dir, config) -> None:
     interests = [
-        {
-            "thread_id": parse_discord_link(str(thread_url))["channel_id"],
-            "role_id": role.id,
-        }
-        for role in config.roles
-        for thread_url in role.threads
+        {"thread_id": thread_id, "role_id": role.club_id}
+        for role in InterestRole.listing()
+        for thread_id in role.threads_ids
     ]
     api_file = api_dir / "interests.json"
     with api_file.open("w", encoding="utf-8") as f:

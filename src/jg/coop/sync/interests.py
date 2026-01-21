@@ -90,11 +90,13 @@ async def main(config_path: Path, tag: str, debug_user: int | None):
     config = InterestsConfig(**yaml_data)
     logger.info(f"Loaded {len(config.roles)} interest role configs")
 
-    # Validate roles configuration against database
+    # Validate roles configuration against database and save thread IDs
     config_roles = {role.id: role for role in config.roles}
     interest_roles: dict[int, InterestRole] = {}
     for role in InterestRole.listing():
         if role.club_id in config_roles:
+            role.threads_ids = config_roles[role.club_id].threads_ids
+            role.save()
             logger.info(f"Role configured: {role.interest_name}")
             interest_roles[role.club_id] = role
         else:
