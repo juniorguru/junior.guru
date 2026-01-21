@@ -25,8 +25,8 @@ async def process(item: dict) -> dict:
 
                 - Involves at least some coding in a mainstream programming language
                 - Mentions it's for juniors, offers mentoring or onboarding, or otherwise seems beginner-friendly
-                - Requires at most 1 year, 1.5 years or 1+ years of experience
-                - DOES NOT involve responsibility for designing or architecting systems
+                - Requires maximum 2 years of experience
+                - DOES NOT involve responsibility for designing or architecting systems (participating is ok, responsibility not ok)
 
                 User provides the job posting and you reply with a valid JSON object containing
                 the following keys:
