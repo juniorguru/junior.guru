@@ -5,10 +5,10 @@ import discord
 from discord import MessageType, TextChannel
 from jg.chick.lib import intro
 from jg.chick.lib.threads import (
-    add_members_with_role,
     ensure_thread_name,
     is_thread_created,
     name_thread,
+    ping_members_with_role,
 )
 
 from jg.coop.cli.sync import main as cli
@@ -131,7 +131,7 @@ async def welcome(discord_channel: TextChannel, message: ClubMessage):
     )
     thread_members = thread.members or await thread.fetch_members()
     if len(thread_members) < GREETERS_LIMIT:
-        await add_members_with_role(thread, intro.GREETER_ROLE_ID)
+        await ping_members_with_role(thread, intro.GREETER_ROLE_ID)
 
 
 async def welcome_back(discord_channel: TextChannel, message: ClubMessage):

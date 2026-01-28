@@ -4,7 +4,7 @@ from datetime import date, timedelta
 
 import click
 from discord import Color, Embed
-from jg.chick.lib.threads import add_members_with_role
+from jg.chick.lib.threads import ping_members_with_role
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
@@ -110,7 +110,7 @@ async def kickoff_weekly_plans(
     if thread:
         logger.info("Adding members with the week planner role to the thread")
         with mutating_discord(thread) as proxy:
-            await add_members_with_role(proxy, role_id)
+            await ping_members_with_role(proxy, role_id)
 
 
 def parse_week(thread_name: str, today: date) -> date:
