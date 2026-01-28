@@ -13,7 +13,10 @@ def category_rule(rule: Callable):
 
 @category_rule
 def video_outsourcing(transaction: dict, secrets: dict) -> TransactionsCategory:
-    if transaction["account_number_full"] == "670100-2210965651/6210":
+    if transaction["account_number_full"] in [
+        "670100-2210965651/6210",
+        "334772289/0300",
+    ]:
         return TransactionsCategory.PRODUCTION
     token = secrets.get("video_outsourcing_token")
     if token and token in transaction["message"]:
