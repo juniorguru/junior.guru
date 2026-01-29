@@ -20,13 +20,13 @@ async def process(item: dict) -> dict:
     try:
         llm_opinion = await ask_llm(
             """
-                You're helping someone who has just learned programming to find their first job.
+                You're helping someone who has just learned coding or software testing to find their first job.
                 Decide if given job is relevant based on the following criteria:
 
-                - Involves at least some coding in a mainstream programming language
+                - Involves at least some coding in a mainstream programming language, alternatively software testing
                 - Mentions it's for juniors, offers mentoring or onboarding, or otherwise seems beginner-friendly
                 - Requires maximum 2 years of experience
-                - DOES NOT involve responsibility for designing or architecting systems (participating is ok, responsibility not ok)
+                - DOES NOT involve RESPONSIBILITY for designing or architecting systems (participating is OK)
 
                 User provides the job posting and you reply with a valid JSON object containing
                 the following keys:

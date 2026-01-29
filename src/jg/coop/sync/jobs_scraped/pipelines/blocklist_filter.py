@@ -5,7 +5,7 @@ from jg.coop.sync.jobs_scraped import DropItem
 
 BLOCKLIST = [
     ("title", re.compile(r"^(?!.*\bjunior).*\bsenior.*$", re.I)),
-    ("title", re.compile(r"\b(plc|cnc|cad|cam)\s+programátor", re.I)),
+    ("title", re.compile(r"\b(plc|cnc|cad|cam)\s+program", re.I)),
     ("title", re.compile(r"\bprogramátor.+", re.I)),
     ("title", re.compile(r"\belektr", re.I)),
     ("title", re.compile(r"\břidič", re.I)),
