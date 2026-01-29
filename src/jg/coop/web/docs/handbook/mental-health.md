@@ -151,7 +151,7 @@ Existují situace, které nesnesou odkladu. Pokud tě zaplaví velmi silné emoc
 
   {{ link_card(
     'Krizová centra',
-    'https://nepanikar.eu/mapa-pomoci-krizova-centra/',
+    'https://www.mapotic.com/mapa-psychicke-pomoci',
     'Mapa míst, kam můžeš zajít, když už si nevíš rady.',
   ) }}
 </div>
