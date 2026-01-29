@@ -139,6 +139,9 @@ HIDDEN_ELEMENTS = [
     "rpl-modal-card",  # reddit.com
     '[class*="truste_"]',
     "[data-backdrop]",  # welcometothejungle.com
+    "#uc-overlay",  # mapotic.com
+    "#uc-cross-domain-consent-sharing-bridge",  # mapotic.com
+    "#usercentrics-cmp-ui",  # mapotic.com
 ]
 
 BLOCKED_ROUTES = [
