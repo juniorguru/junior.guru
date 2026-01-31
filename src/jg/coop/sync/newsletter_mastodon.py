@@ -14,14 +14,14 @@ from jg.coop.models.newsletter import NewsletterIssue
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=["club-content", "pages"])
+@cli.sync_command(dependencies=["pages"])
 @click.option(
     "--today",
     default=lambda: date.today().isoformat(),
     type=date.fromisoformat,
 )
 @click.option("--server-url", default="https://mastodonczech.cz")
-@click.option("--history-limit", default=500, type=int)
+@click.option("--history-limit", default=300, type=int)
 @click.option("--client-id", default=default_from_env("MASTODON_CLIENT_ID"))
 @click.option("--client-secret", default=default_from_env("MASTODON_CLIENT_SECRET"))
 @click.option("--access-token", default=default_from_env("MASTODON_ACCESS_TOKEN"))
@@ -54,15 +54,18 @@ def main(
                 access_token=access_token,
             )
             account_id = mastodon.me()["id"]
-            for status in mastodon.account_statuses(
-                account_id,
-                limit=history_limit,
-                exclude_replies=True,
-                exclude_reblogs=True,
+            for status in mastodon.pagination_iterator(
+                mastodon.account_statuses(
+                    account_id,
+                    limit=history_limit,
+                    exclude_replies=True,
+                    exclude_reblogs=True,
+                )
             ):
                 if newsletter.absolute_url in status["content"]:
                     logger.info("Newsletter already announced on Mastodon, skipping")
                     return
+                logger.debug(f"Checked status {status['url']} ({status['created_at']})")
             logger.info("Announcing newsletter on Mastodon")
             with mutating_mastodon(mastodon) as proxy:
                 proxy.status_post(
