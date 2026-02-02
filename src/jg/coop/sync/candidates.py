@@ -6,7 +6,7 @@ from pathlib import Path
 
 import click
 import httpx
-from PIL import Image
+from PIL import Image, UnidentifiedImageError
 from playwright.async_api import async_playwright
 
 from jg.coop.cli.sync import main as cli
@@ -139,25 +139,38 @@ async def main(
                 logger.debug(f"{project.name}: Created {len(tasks)} tasks")
             for project, tasks in images:
                 logger.debug(f"{project.name}: Processing {len(tasks)} tasks")
-                for i, task in enumerate(as_completed(tasks)):
-                    logger.info(f"{project.name}: Task #{i + 1}/{len(tasks)}")
-                    if image_bytes := task.result():
+                for i, task in enumerate(as_completed(tasks), start=1):
+                    logger.info(f"{project.name}: Task #{i}/{len(tasks)}")
+                    if result := await task:
+                        image_url, content_type, image_bytes = result
                         image_path = project_images_path / f"{project.slug}.webp"
-                        with Image.open(BytesIO(image_bytes)) as img:
-                            img.save(image_path, **IMAGE_SAVE_OPTIONS)
-                        project.image_path = str(image_path.relative_to(images_dir))
-                        project.save()
-                        logger.info(f"Saved project image: {image_path}")
-                        break
+                        try:
+                            with Image.open(BytesIO(image_bytes)) as img:
+                                img.save(image_path, **IMAGE_SAVE_OPTIONS)
+                        except UnidentifiedImageError as e:
+                            preview = image_bytes[:64]
+                            logger.warning(
+                                "Downloaded bytes are not a valid image. "
+                                f"url={image_url!r} content_type={content_type!r} "
+                                f"size={len(image_bytes)} preview={preview!r}"
+                            )
+                        else:
+                            project.image_path = str(image_path.relative_to(images_dir))
+                            project.save()
+                            logger.info(f"Saved project image: {image_path}")
+                            break
                 for task in tasks:
                     task.cancel()
 
 
-async def download_image(client: httpx.AsyncClient, url: str) -> bytes | None:
+async def download_image(
+    client: httpx.AsyncClient, url: str
+) -> tuple[str, str | None, bytes] | None:
     try:
         response = await client.get(url)
         response.raise_for_status()
-        return response.content
+        content_type = response.headers.get("content-type")
+        return (str(response.url), content_type, response.content)
     except Exception as e:
         logger.warning(f"Failed to download image from {url!r}: {e}")
         return None
