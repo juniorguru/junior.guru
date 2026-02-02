@@ -1,9 +1,13 @@
+from asyncio import TaskGroup, as_completed
+import asyncio
+from collections import defaultdict
 from io import BytesIO
 from pathlib import Path
 
 import click
 import httpx
 from PIL import Image
+from playwright.async_api import async_playwright
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
@@ -15,7 +19,13 @@ from jg.coop.models.candidate import Candidate, CandidateProject
 from jg.coop.models.club import ClubUser
 
 
-IMAGE_SAVE_OPTIONS = {"format": "WEBP", "optimize": True}
+IMAGE_SAVE_OPTIONS = {
+    "format": "WEBP",
+    "optimize": True,
+    "quality": 80,
+    "method": 6,
+    "lossless": False,
+}
 
 
 logger = loggers.from_path(__file__)
@@ -30,15 +40,26 @@ logger = loggers.from_path(__file__)
 )
 @click.option("--avatars-dirname", default="avatars-candidates", type=str)
 @click.option("--avatar-size", "avatar_size_px", default=460, type=int)
+@click.option("--project-images-dirname", default="projects", type=str)
 @db.connection_context()
 @async_command
 async def main(
-    api_url: str, images_dir: Path, avatars_dirname: str, avatar_size_px: int
+    api_url: str,
+    images_dir: Path,
+    avatars_dirname: str,
+    avatar_size_px: int,
+    project_images_dirname: str,
 ):
     logger.debug("Setting up avatars directory")
     avatars_path = images_dir / avatars_dirname
     avatars_path.mkdir(exist_ok=True, parents=True)
     for path in avatars_path.glob("*.webp"):
+        path.unlink()
+
+    logger.debug("Setting up project images directory")
+    project_images_path = images_dir / project_images_dirname
+    project_images_path.mkdir(exist_ok=True, parents=True)
+    for path in project_images_path.glob("*.webp"):
         path.unlink()
 
     logger.debug("Setting up database")
@@ -102,3 +123,59 @@ async def main(
             for project_item in projects_items:
                 CandidateProject.create(candidate=candidate, **project_item)
             logger.info(f"Saved {len(projects_items)} projects for {candidate!r}")
+
+            logger.info("Downloading project images and making screenshots of demos")
+            images = [(project, []) for project in CandidateProject.listing()]
+            # async with async_playwright() as playwright:
+            for project, tasks in images:
+                tasks.extend(
+                    asyncio.create_task(download_image(client, image_url))
+                    for image_url in project.readme_image_urls
+                )
+                # if demo_url := project.demo_url:
+                #     tasks.append(
+                #         asyncio.create_task(make_screenshot(client, demo_url))
+                #     )
+                logger.debug(f"{project.name}: Created {len(tasks)} tasks")
+            for project, tasks in images:
+                logger.debug(f"{project.name}: Processing {len(tasks)} tasks")
+                for i, task in enumerate(as_completed(tasks)):
+                    logger.info(f"{project.name}: Task #{i + 1}/{len(tasks)}")
+                    if image_bytes := task.result():
+                        image_path = project_images_path / f"{project.slug}.webp"
+                        with Image.open(BytesIO(image_bytes)) as img:
+                            img.save(image_path, **IMAGE_SAVE_OPTIONS)
+                        project.image_path = str(image_path.relative_to(images_dir))
+                        project.save()
+                        logger.info(f"Saved project image: {image_path}")
+                        break
+                for task in tasks:
+                    task.cancel()
+
+
+async def download_image(client: httpx.AsyncClient, url: str) -> bytes | None:
+    try:
+        response = await client.get(url)
+        response.raise_for_status()
+        return response.content
+    except Exception as e:
+        logger.warning(f"Failed to download image from {url!r}: {e}")
+        return None
+
+
+async def make_screenshot(client: httpx.AsyncClient, url: str) -> bytes | None:
+    pass
+    # try:
+    #     screenshot_api_url = "https://api.screenshotmachine.com"
+    #     params = {
+    #         "key": "YOUR_API_KEY",
+    #         "url": url,
+    #         "dimension": "1024x768",
+    #         "format": "png",
+    #     }
+    #     response = await client.get(screenshot_api_url, params=params)
+    #     response.raise_for_status()
+    #     return (url, response.content)
+    # except Exception as e:
+    #     logger.warning(f"Failed to make screenshot of {url!r}: {e}")
+    #     return None
