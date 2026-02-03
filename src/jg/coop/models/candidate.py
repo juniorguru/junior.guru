@@ -6,6 +6,7 @@ from typing import Iterable, Self
 
 from peewee import BooleanField, CharField, DateField, ForeignKeyField, IntegerField, fn
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
+from slugify import slugify
 
 from jg.coop.lib.discord_club import ClubChannelID
 from jg.coop.lib.location import REGIONS, FuzzyLocation, Location, repr_locations
@@ -189,7 +190,7 @@ class Candidate(BaseModel):
 
     @property
     def projects(self) -> Iterable["CandidateProject"]:
-        return self.list_projects.order_by(CandidateProject.priority.desc())
+        return self.list_projects.order_by(CandidateProject.priority)
 
     @property
     def locations(self) -> list[Location]:
@@ -276,6 +277,11 @@ class CandidateProject(BaseModel):
     start_on = DateField()
     end_on = DateField()
     topics = JSONField(default=list)
+    thumbnail_path = CharField(null=True)
+
+    @property
+    def slug(self) -> str:
+        return slugify(self.name)
 
     @property
     def name_repo(self) -> str:
@@ -284,3 +290,7 @@ class CandidateProject(BaseModel):
     @property
     def duration(self) -> timedelta:
         return self.end_on - self.start_on
+
+    @classmethod
+    def listing(cls) -> Iterable[Self]:
+        return cls.select()

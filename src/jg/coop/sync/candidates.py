@@ -15,7 +15,15 @@ from jg.coop.models.candidate import Candidate, CandidateProject
 from jg.coop.models.club import ClubUser
 
 
-IMAGE_SAVE_OPTIONS = {"format": "WEBP", "optimize": True}
+IMAGE_SAVE_OPTIONS = {
+    "format": "WEBP",
+    "optimize": True,
+    "quality": 80,
+    "method": 6,
+    "lossless": False,
+}
+
+DEFAULT_PROJECT_IMAGE_FILENAME = "default.webp"
 
 
 logger = loggers.from_path(__file__)
@@ -30,16 +38,30 @@ logger = loggers.from_path(__file__)
 )
 @click.option("--avatars-dirname", default="avatars-candidates", type=str)
 @click.option("--avatar-size", "avatar_size_px", default=460, type=int)
+@click.option("--project-images-dirname", default="projects", type=str)
 @db.connection_context()
 @async_command
 async def main(
-    api_url: str, images_dir: Path, avatars_dirname: str, avatar_size_px: int
+    api_url: str,
+    images_dir: Path,
+    avatars_dirname: str,
+    avatar_size_px: int,
+    project_images_dirname: str,
 ):
     logger.debug("Setting up avatars directory")
     avatars_path = images_dir / avatars_dirname
     avatars_path.mkdir(exist_ok=True, parents=True)
     for path in avatars_path.glob("*.webp"):
         path.unlink()
+
+    logger.debug("Setting up project images directory")
+    project_images_path = images_dir / project_images_dirname
+    project_images_path.mkdir(exist_ok=True, parents=True)
+    for path in project_images_path.glob("*.webp"):
+        if path.name != DEFAULT_PROJECT_IMAGE_FILENAME:
+            path.unlink()
+    default_thumbnail_path = project_images_path / DEFAULT_PROJECT_IMAGE_FILENAME
+    default_thumbnail_path = str(default_thumbnail_path.relative_to(images_dir))
 
     logger.debug("Setting up database")
     db.drop_tables([Candidate, CandidateProject])
@@ -100,5 +122,19 @@ async def main(
             logger.info(f"Saved avatar: {avatar_path}")
 
             for project_item in projects_items:
-                CandidateProject.create(candidate=candidate, **project_item)
+                if thumbnail_url := project_item.pop("thumbnail_url", None):
+                    logger.debug(f"Downloading project image: {thumbnail_url}")
+                    response = await client.get(thumbnail_url)
+                    response.raise_for_status()
+                    image_path = project_images_path / Path(thumbnail_url).name
+                    image_path.write_bytes(response.content)
+                    thumbnail_path = str(image_path.relative_to(images_dir))
+                    logger.info(f"Saved project image: {image_path}")
+                else:
+                    thumbnail_path = default_thumbnail_path
+                CandidateProject.create(
+                    candidate=candidate,
+                    thumbnail_path=thumbnail_path,
+                    **project_item,
+                )
             logger.info(f"Saved {len(projects_items)} projects for {candidate!r}")

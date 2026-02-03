@@ -150,31 +150,42 @@ template: main_subnav.html
               </span>
             {% endfor %}
           </p>
-          {# TODO
-          <div>
-            {% for project in candidate.projects %}
-              <h4 class="candidates-project-heading">
-                {{ project.name_repo }}
-              </h4>
-              <p>{{ project.description }}</p>
-              <p><small>{{ project.duration|duration }} práce, hotovo {{ project.end_on.year }}</small></p>
-              <a
-                href="{{ project.source_url }}"
-                rel="nofollow noopener"
-                target="_blank"
-                class="{% if not project.demo_url %} primary{% endif %}"
-              >Zdrojový kód</a>
-              {% if project.demo_url %}
-                <a
-                  href="{{ project.demo_url }}"
-                  rel="nofollow noopener"
-                  target="_blank"
-                  class="primary"
-                >Ukázka</a>
-              {% endif %}
+          <div class="candidates-projects" hidden>
+            {% for project in candidate.projects[:2] %}
+              <div class="candidates-project">
+                {% if project.thumbnail_path %}
+                  {{ img('static/' + project.thumbnail_path, project.name_repo, 400, 250, class="candidates-project-image") }}
+                {% endif %}
+                <div class="candidates-project-body">
+                  <h4 class="candidates-project-heading">
+                    {{ project.name_repo }}
+                  </h4>
+                  <p class="candidates-project-text">
+                    {% if project.description %}
+                      {{ project.description }}<br>
+                    {% endif %}
+                    <small>{{ project.duration|duration }} práce, hotovo {{ project.end_on.year }}</small>
+                  </p>
+                  <div class="candidates-project-links">
+                    {% if project.demo_url %}
+                      <a
+                        href="{{ project.demo_url }}"
+                        rel="nofollow noopener"
+                        target="_blank"
+                        class="candidates-project-link primary"
+                      >Ukázka</a>
+                    {% endif %}
+                    <a
+                      href="{{ project.source_url }}"
+                      rel="nofollow noopener"
+                      target="_blank"
+                      class="candidates-project-link{% if not project.demo_url %} primary{% endif %}"
+                    >Zdrojový kód</a>
+                  </div>
+                </div>
+              </div>
             {% endfor %}
           </div>
-          #}
           {% if candidate.experience_text %}
           <div class="candidates-details" hidden>
             <h4 class="candidates-details-heading">Praxe</h4>

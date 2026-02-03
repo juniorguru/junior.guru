@@ -218,7 +218,9 @@
   color: $jg-dark;
   user-select: none;
   background-color: transparent;
-  border: 1px solid $jg-dark;
+  border-color: $jg-dark;
+  border-style: solid;
+  border-width: 1px 2px 2px 1px;
 }
 
 .candidates-badge[title],
@@ -231,14 +233,62 @@
   font-size: $font-size-xs;
 }
 
-// .candidates-badge.primary {
-//   @extend .text-bg-primary;
-// }
+.candidates-projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacer;
+  border-radius: $border-radius;
 
-// .candidates-badge.secondary {
-//   @extend .text-bg-secondary;
-//   background-color: $jg-gray;
-// }
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.candidates-project {
+  @extend .card;
+  border: none;
+  border-color: $jg-dark;
+  border-style: solid;
+  border-width: 1px 2px 2px 1px;
+}
+
+.candidates-project-image {
+  @extend .card-img-top;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 1px solid $jg-gray-light;
+  border-radius: 0;
+}
+
+.candidates-project-body {
+  @extend .card-body;
+  display: flex;
+  flex-direction: column;
+}
+
+.candidates-project-text {
+  @extend .card-text;
+  font-size: $font-size-sm;
+}
+
+.candidates-project-heading {
+  @extend .card-title;
+  @extend .h5;
+}
+
+.candidates-project-links {
+  margin-top: auto;
+}
+
+.candidates-project-link {
+  @extend .btn;
+  @extend .btn-sm;
+  @extend .btn-outline-dark;
+}
+
+.candidates-project-link.primary {
+  @extend .btn-dark;
+}
 
 .candidates-details {
   @include media-breakpoint-up(sm) {
