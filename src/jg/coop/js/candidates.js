@@ -38,7 +38,7 @@ function setupCandidates() {
       const inside = [close].concat(
         Array.from(
           candidate.querySelectorAll(
-            ".candidates-title-text, .candidates-actions, .candidates-details, .candidates-action-email",
+            ".candidates-title-text, .candidates-actions, .candidates-details, .candidates-action-email, .candidates-projects",
           ),
         ),
       );

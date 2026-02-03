@@ -174,7 +174,7 @@ async def locate_fuzzy(location_raw: str) -> Location:
         logger.warning("Generating random fuzzy location")
         return FuzzyLocation(
             locations=[await locate(location_raw)],
-            is_universal=random.choice([True, False]),
+            is_universal=random.choice([True, False, False, False, False]),
         )
 
 

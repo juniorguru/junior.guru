@@ -1,13 +1,9 @@
-from asyncio import TaskGroup, as_completed
-import asyncio
-from collections import defaultdict
 from io import BytesIO
 from pathlib import Path
 
 import click
 import httpx
-from PIL import Image, UnidentifiedImageError
-from playwright.async_api import async_playwright
+from PIL import Image
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
@@ -26,6 +22,8 @@ IMAGE_SAVE_OPTIONS = {
     "method": 6,
     "lossless": False,
 }
+
+DEFAULT_PROJECT_IMAGE_FILENAME = "default.webp"
 
 
 logger = loggers.from_path(__file__)
@@ -60,7 +58,10 @@ async def main(
     project_images_path = images_dir / project_images_dirname
     project_images_path.mkdir(exist_ok=True, parents=True)
     for path in project_images_path.glob("*.webp"):
-        path.unlink()
+        if path.name != DEFAULT_PROJECT_IMAGE_FILENAME:
+            path.unlink()
+    default_thumbnail_path = project_images_path / DEFAULT_PROJECT_IMAGE_FILENAME
+    default_thumbnail_path = default_thumbnail_path.relative_to(images_dir)
 
     logger.debug("Setting up database")
     db.drop_tables([Candidate, CandidateProject])
@@ -121,74 +122,19 @@ async def main(
             logger.info(f"Saved avatar: {avatar_path}")
 
             for project_item in projects_items:
-                CandidateProject.create(candidate=candidate, **project_item)
-            logger.info(f"Saved {len(projects_items)} projects for {candidate!r}")
-
-            logger.info("Downloading project images and making screenshots of demos")
-            images = [(project, []) for project in CandidateProject.listing()]
-            # async with async_playwright() as playwright:
-            for project, tasks in images:
-                tasks.extend(
-                    asyncio.create_task(download_image(client, image_url))
-                    for image_url in project.readme_image_urls
+                if thumbnail_url := project_item.pop("thumbnail_url", None):
+                    logger.debug(f"Downloading project image: {thumbnail_url}")
+                    response = await client.get(thumbnail_url)
+                    response.raise_for_status()
+                    image_path = project_images_path / Path(thumbnail_url).name
+                    image_path.write_bytes(response.content)
+                    thumbnail_path = str(image_path.relative_to(images_dir))
+                    logger.info(f"Saved project image: {image_path}")
+                else:
+                    thumbnail_path = default_thumbnail_path
+                CandidateProject.create(
+                    candidate=candidate,
+                    thumbnail_path=thumbnail_path,
+                    **project_item,
                 )
-                # if demo_url := project.demo_url:
-                #     tasks.append(
-                #         asyncio.create_task(make_screenshot(client, demo_url))
-                #     )
-                logger.debug(f"{project.name}: Created {len(tasks)} tasks")
-            for project, tasks in images:
-                logger.debug(f"{project.name}: Processing {len(tasks)} tasks")
-                for i, task in enumerate(as_completed(tasks), start=1):
-                    logger.info(f"{project.name}: Task #{i}/{len(tasks)}")
-                    if result := await task:
-                        image_url, content_type, image_bytes = result
-                        image_path = project_images_path / f"{project.slug}.webp"
-                        try:
-                            with Image.open(BytesIO(image_bytes)) as img:
-                                img.save(image_path, **IMAGE_SAVE_OPTIONS)
-                        except UnidentifiedImageError as e:
-                            preview = image_bytes[:64]
-                            logger.warning(
-                                "Downloaded bytes are not a valid image. "
-                                f"url={image_url!r} content_type={content_type!r} "
-                                f"size={len(image_bytes)} preview={preview!r}"
-                            )
-                        else:
-                            project.image_path = str(image_path.relative_to(images_dir))
-                            project.save()
-                            logger.info(f"Saved project image: {image_path}")
-                            break
-                for task in tasks:
-                    task.cancel()
-
-
-async def download_image(
-    client: httpx.AsyncClient, url: str
-) -> tuple[str, str | None, bytes] | None:
-    try:
-        response = await client.get(url)
-        response.raise_for_status()
-        content_type = response.headers.get("content-type")
-        return (str(response.url), content_type, response.content)
-    except Exception as e:
-        logger.warning(f"Failed to download image from {url!r}: {e}")
-        return None
-
-
-async def make_screenshot(client: httpx.AsyncClient, url: str) -> bytes | None:
-    pass
-    # try:
-    #     screenshot_api_url = "https://api.screenshotmachine.com"
-    #     params = {
-    #         "key": "YOUR_API_KEY",
-    #         "url": url,
-    #         "dimension": "1024x768",
-    #         "format": "png",
-    #     }
-    #     response = await client.get(screenshot_api_url, params=params)
-    #     response.raise_for_status()
-    #     return (url, response.content)
-    # except Exception as e:
-    #     logger.warning(f"Failed to make screenshot of {url!r}: {e}")
-    #     return None
+            logger.info(f"Saved {len(projects_items)} projects for {candidate!r}")
