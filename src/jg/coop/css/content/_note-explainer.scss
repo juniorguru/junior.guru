@@ -11,7 +11,7 @@
 .note-explainer-item {
   display: flex;
   gap: $spacer;
-  align-items: flex-start;
+  align-items: first baseline;
 }
 
 .note-explainer-item .bi {
