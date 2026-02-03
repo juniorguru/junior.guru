@@ -131,8 +131,8 @@ async def main(
                         image_path.write_bytes(response.content)
                         thumbnail_path = str(image_path.relative_to(images_dir))
                         logger.info(f"Saved project image: {image_path}")
-                    except Exception as e:
-                        logger.warning(f"Failed to download project image from {thumbnail_url!r}: {e}")
+                    except (httpx.HTTPError, OSError) as e:
+                        logger.warning(f"Failed to download project image from {thumbnail_url!r}: {type(e).__name__}: {e}")
                         logger.info(f"Using default image for project")
                 CandidateProject.create(
                     candidate=candidate,
