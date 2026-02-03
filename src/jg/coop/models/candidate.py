@@ -190,7 +190,7 @@ class Candidate(BaseModel):
 
     @property
     def projects(self) -> Iterable["CandidateProject"]:
-        return self.list_projects.order_by(CandidateProject.priority.desc())
+        return self.list_projects.order_by(CandidateProject.priority)
 
     @property
     def locations(self) -> list[Location]:
@@ -278,7 +278,7 @@ class CandidateProject(BaseModel):
     start_on = DateField()
     end_on = DateField()
     topics = JSONField(default=list)
-    image_path = CharField(null=True)
+    thumbnail_path = CharField(null=True)
 
     @property
     def slug(self) -> str:
