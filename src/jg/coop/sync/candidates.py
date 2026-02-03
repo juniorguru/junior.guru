@@ -61,7 +61,7 @@ async def main(
         if path.name != DEFAULT_PROJECT_IMAGE_FILENAME:
             path.unlink()
     default_thumbnail_path = project_images_path / DEFAULT_PROJECT_IMAGE_FILENAME
-    default_thumbnail_path = default_thumbnail_path.relative_to(images_dir)
+    default_thumbnail_path = str(default_thumbnail_path.relative_to(images_dir))
 
     logger.debug("Setting up database")
     db.drop_tables([Candidate, CandidateProject])

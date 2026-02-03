@@ -161,7 +161,9 @@ template: main_subnav.html
                     {{ project.name_repo }}
                   </h4>
                   <p class="candidates-project-text">
-                    {{ project.description }}<br>
+                    {% if project.description %}
+                      {{ project.description }}<br>
+                    {% endif %}
                     <small>{{ project.duration|duration }} práce, hotovo {{ project.end_on.year }}</small>
                   </p>
                   <div class="candidates-project-links">

@@ -273,7 +273,6 @@ class CandidateProject(BaseModel):
     source_url = CharField()
     demo_url = CharField(null=True)
     description = CharField(null=True)
-    readme_image_urls = JSONField(default=list)
     priority = IntegerField()
     start_on = DateField()
     end_on = DateField()
