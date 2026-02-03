@@ -60,8 +60,7 @@ async def main(
     for path in project_images_path.glob("*.webp"):
         if path.name != DEFAULT_PROJECT_IMAGE_FILENAME:
             path.unlink()
-    default_thumbnail_path = project_images_path / DEFAULT_PROJECT_IMAGE_FILENAME
-    default_thumbnail_path = default_thumbnail_path.relative_to(images_dir)
+    default_thumbnail_path = str((project_images_path / DEFAULT_PROJECT_IMAGE_FILENAME).relative_to(images_dir))
 
     logger.debug("Setting up database")
     db.drop_tables([Candidate, CandidateProject])
@@ -122,16 +121,19 @@ async def main(
             logger.info(f"Saved avatar: {avatar_path}")
 
             for project_item in projects_items:
+                thumbnail_path = default_thumbnail_path
                 if thumbnail_url := project_item.pop("thumbnail_url", None):
-                    logger.debug(f"Downloading project image: {thumbnail_url}")
-                    response = await client.get(thumbnail_url)
-                    response.raise_for_status()
-                    image_path = project_images_path / Path(thumbnail_url).name
-                    image_path.write_bytes(response.content)
-                    thumbnail_path = str(image_path.relative_to(images_dir))
-                    logger.info(f"Saved project image: {image_path}")
-                else:
-                    thumbnail_path = default_thumbnail_path
+                    try:
+                        logger.debug(f"Downloading project image: {thumbnail_url}")
+                        response = await client.get(thumbnail_url)
+                        response.raise_for_status()
+                        image_path = project_images_path / Path(thumbnail_url).name
+                        image_path.write_bytes(response.content)
+                        thumbnail_path = str(image_path.relative_to(images_dir))
+                        logger.info(f"Saved project image: {image_path}")
+                    except Exception as e:
+                        logger.warning(f"Failed to download project image from {thumbnail_url!r}: {e}")
+                        logger.info(f"Using default image for project")
                 CandidateProject.create(
                     candidate=candidate,
                     thumbnail_path=thumbnail_path,
