@@ -10,7 +10,7 @@ from slugify import slugify
 
 from jg.coop.lib.discord_club import ClubChannelID
 from jg.coop.lib.location import REGIONS, FuzzyLocation, Location, repr_locations
-from jg.coop.lib.text import get_tag_slug
+from jg.coop.lib.text import get_tag_slug, remove_emoji
 from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubChannel, ClubMessage, ClubUser
 
@@ -288,6 +288,10 @@ class CandidateProject(BaseModel):
     @property
     def name_repo(self) -> str:
         return self.source_url.rstrip("/").split("/")[-1]
+
+    @property
+    def title_pretty(self) -> str:
+        return remove_emoji(self.title if self.title else self.name_repo)
 
     @property
     def duration(self) -> timedelta:
