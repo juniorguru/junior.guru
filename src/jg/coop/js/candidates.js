@@ -2,7 +2,7 @@ import * as popperjs from "@popperjs/core";
 import * as bootstrap from "bootstrap";
 
 function setupCandidatesTags() {
-  const container = document.querySelector(".candidates-tags");
+  const container = document.querySelector(".candidates-filters");
   if (container) {
     container
       .querySelectorAll(".candidates-tag:not(.disabled)")
@@ -70,7 +70,7 @@ function setupCandidates() {
 
 function filterCandidates() {
   const activeTags = Array.from(
-    document.querySelectorAll(".candidates-tags .candidates-tag.active"),
+    document.querySelectorAll(".candidates-filters .candidates-tag.active"),
   );
   const activeTagsByType = activeTags.reduce((mapping, tag) => {
     mapping[tag.dataset.candidatesTagType] ||= [];
@@ -153,7 +153,7 @@ function updateCandidatesTagsUI() {
     },
     { location: [] },
   );
-  const container = document.querySelector(".candidates-tags");
+  const container = document.querySelector(".candidates-filters");
   container.querySelectorAll(".candidates-tag").forEach((tag) => {
     const activeSlugs = activeSlugsByType[tag.dataset.candidatesTagType] || [];
     const isActive = activeSlugs.includes(tag.dataset.candidatesTag);

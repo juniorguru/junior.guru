@@ -23,7 +23,7 @@
   text-decoration: underline;
 }
 
-.candidates-tags {
+.candidates-filters {
   @extend .list-unstyled;
   position: relative;
   display: grid;
@@ -36,15 +36,15 @@
   border-radius: $border-radius;
 }
 
-.candidates-tags dd {
+.candidates-filters dd {
   vertical-align: middle;
 }
 
-.candidates-tags.noscript {
+.candidates-filters.noscript {
   border-color: $jg-red;
 }
 
-.candidates-tags::before {
+.candidates-filters::before {
   position: absolute;
   top: -$spacer;
   left: $spacer;
@@ -56,31 +56,31 @@
   background: $jg-white;
 }
 
-.candidates-tags.noscript::before {
+.candidates-filters.noscript::before {
   color: $jg-red;
 }
 
-.candidates-tags-heading {
+.candidates-filters-heading {
   margin-right: $spacer;
   font-weight: $font-weight-normal;
   color: $jg-gray;
   white-space: nowrap;
 }
 
-.candidates-tags .candidates-tag {
+.candidates-filters .candidates-tag {
   cursor: pointer;
 }
 
-.candidates-tags .candidates-tag:hover {
+.candidates-filters .candidates-tag:hover {
   color: $jg-blue;
 }
 
-.candidates-tags .candidates-tag.active {
+.candidates-filters .candidates-tag.active {
   color: $jg-white;
   background: $jg-blue;
 }
 
-.candidates-tags .candidates-tag.disabled {
+.candidates-filters .candidates-tag.disabled {
   cursor: default;
 }
 
@@ -233,6 +233,12 @@
   font-size: $font-size-xs;
 }
 
+.candidates-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: map-get($spacers, 1);
+}
+
 .candidates-projects {
   display: grid;
   grid-template-columns: 1fr;
@@ -256,8 +262,9 @@
   @extend .card-img-top;
   height: 150px;
   object-fit: cover;
+  background-color: $jg-dark;
   border-bottom: 1px solid $jg-gray-light;
-  border-radius: 0;
+  border-radius: $border-radius $border-radius 0 0;
 }
 
 .candidates-project-body {

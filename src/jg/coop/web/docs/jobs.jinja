@@ -30,9 +30,9 @@ template: main_subnav.html
   {{ 'plus-circle'|icon }} Chceš přidat inzerát? Napiš na {{ "honza@junior.guru"|email_link }}
 {%- endcall %}
 
-<dl class="jobs-tags standout noscript">
-  <dt class="jobs-tags-heading">{{ "geo-alt"|icon }} Místo:</dt>
-  <dd>
+<dl class="jobs-filters standout noscript">
+  <dt class="jobs-filters-heading">{{ "geo-alt"|icon }} Místo:</dt>
+  <dd class="jobs-tags">
     {% if is_region_listing %}
       {% if not is_remote_listing %}
         <span
@@ -71,8 +71,8 @@ template: main_subnav.html
       <span class="jobs-noscript">Stala se chyba a filtrování nefunguje</span>
     {% endif %}
   </dd>
-  <dt class="jobs-tags-heading">{{ "hourglass-split"|icon }} Úvazek:</dt>
-  <dd>
+  <dt class="jobs-filters-heading">{{ "hourglass-split"|icon }} Úvazek:</dt>
+  <dd class="jobs-tags">
     {% for tag in jobs_tags.employment %}
       <span
         class="jobs-tag"
@@ -85,8 +85,8 @@ template: main_subnav.html
     {% endfor %}
     <span class="jobs-noscript">Stala se chyba a filtrování nefunguje</span>
   </dd>
-  <dt class="jobs-tags-heading">{{ "tools"|icon }} Nářadí:</dt>
-  <dd>
+  <dt class="jobs-filters-heading">{{ "tools"|icon }} Nářadí:</dt>
+  <dd class="jobs-tags">
     {% for tag in jobs_tags.technology %}
       <span
         class="jobs-tag"
@@ -99,8 +99,8 @@ template: main_subnav.html
     {% endfor %}
     <span class="jobs-noscript">Stala se chyba a filtrování nefunguje</span>
   </dd>
-  <dt class="jobs-tags-heading">{{ "box-arrow-down"|icon }} Zdroj:</dt>
-  <dd>
+  <dt class="jobs-filters-heading">{{ "box-arrow-down"|icon }} Zdroj:</dt>
+  <dd class="jobs-tags">
     {% for tag in jobs_tags.source %}
       <span
         class="jobs-tag"
@@ -159,7 +159,7 @@ template: main_subnav.html
               <span class="jobs-info-item">{{ "geo-alt"|icon }} {{ job.location_text }}</span>
             {% endif %}
           </p>
-          <p>
+          <p class="jobs-tags">
             {% for tag in job.tags %}
               <span
                 class="jobs-tag"
