@@ -40,11 +40,11 @@ Byl jsem z toho na začátku úplně v jeteli. Přišlo mi, že rekvalifikační
 
 **Za jak dlouho sis našel práci?**  
 
-Po šesti až sedmi měsících jsem začal hledat. Docházely prachy i trpělivost. Během měsíce se mi podařilo navázat kontakty, a to mě uklidnilo. Po dvou měsících jsem souhrou okolností dostal nabídku od firmy, kde jsem teď. Jedna z pohnutek, která vyvstala z klubu junior.guru, byla chodit mezi lidi a na konference. Díky tomu, že jsem na jednom setkání vyhrál nějakou cenu, se o mně dozvěděla současná firma BranchIS, ve které pracuji. Nebylo to jen o štěstí, bylo za tím velké úsilí.
+Po šesti až sedmi měsících jsem začal hledat. Docházely prachy i trpělivost. Během měsíce se mi podařilo navázat kontakty, a to mě uklidnilo. Po dvou měsících jsem souhrou okolností dostal nabídku od firmy, kde jsem teď. Jedna z pohnutek, která vyvstala z klubu junior.guru, byla chodit mezi lidi a na konference. Díky tomu, že jsem na jednom setkání vyhrál nějakou cenu, se o mně dozvěděla současná firma [ELINK X](https://elinkx.cz/), ve které pracuji. Nebylo to jen o štěstí, bylo za tím velké úsilí.
 
 **Čím se zabývá vaše firma?**  
 
-Máme řadu produktů se zaměřením na větší firmy s fotovoltaikou či skladovými systémy, kterým vyvíjíme aplikace na míru. Prokopáváme také cestu, jak plánovat práci za pomoci AI. Třeba jak vytvořit online prostředí, kde se potkávají lidé a roboti a dotahují firemní úkoly.
+Máme řadu produktů pro firmy různých velikostí i zaměření, kterým vyvíjíme aplikace na míru, např. skladové systémy. Prokopáváme také cestu, jak plánovat práci za pomoci AI. Třeba jak vytvořit online prostředí, kde se potkávají lidé a roboti a dotahují firemní úkoly.
 
 **Jsi vystudovaný muzikolog, pak ses naučil kodéřinu, ale ani to nakonec neděláš. Čím se živíš?**  
 
