@@ -27,13 +27,19 @@
   @extend .list-unstyled;
   position: relative;
   display: grid;
-  grid-template-columns: min-content 1fr;
+  grid-template-columns: 1fr;
+  row-gap: map-get($spacers, 2);
   padding: map-get($spacers, 4);
   padding-top: map-get($spacers, 4) + .3rem;
   margin-bottom: $main-spacer;
   vertical-align: middle;
   border: 2px solid $jg-blue;
   border-radius: $border-radius;
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: min-content 1fr;
+    row-gap: 0;
+  }
 }
 
 .candidates-filters dd {
@@ -61,10 +67,17 @@
 }
 
 .candidates-filters-heading {
-  margin-right: $spacer;
+  margin-right: 0;
+  margin-bottom: map-get($spacers, 2);
   font-weight: $font-weight-normal;
   color: $jg-gray;
-  white-space: nowrap;
+  white-space: normal;
+
+  @include media-breakpoint-up(sm) {
+    margin-right: $spacer;
+    margin-bottom: 0;
+    white-space: nowrap;
+  }
 }
 
 .candidates-filters .candidates-tag {
