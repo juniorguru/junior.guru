@@ -56,9 +56,9 @@ template: main_subnav.html
 {%- endcall %}
 #}
 
-<dl class="candidates-tags standout noscript">
-  <dt class="candidates-tags-heading">{{ "geo-alt"|icon }} Místo:</dt>
-  <dd>
+<dl class="candidates-filters standout noscript">
+  <dt class="candidates-filters-heading">{{ "geo-alt"|icon }} Místo:</dt>
+  <dd class="candidates-tags">
       {% for tag in candidates_region_tags %}
         <span
           class="candidates-tag"
@@ -71,8 +71,8 @@ template: main_subnav.html
       {% endfor %}
       <span class="candidates-noscript">Stala se chyba a filtrování nefunguje</span>
   </dd>
-  <dt class="candidates-tags-heading">{{ "tools"|icon }} Zaměření:</dt>
-  <dd>
+  <dt class="candidates-filters-heading">{{ "tools"|icon }} Zaměření:</dt>
+  <dd class="candidates-tags">
     {% for tag in candidates_tags.skill %}
       <span
         class="candidates-tag"
@@ -85,8 +85,8 @@ template: main_subnav.html
     {% endfor %}
     <span class="candidates-noscript">Stala se chyba a filtrování nefunguje</span>
   </dd>
-  <dt class="candidates-tags-heading">{{ "chat-dots"|icon }} Jazyky:</dt>
-  <dd>
+  <dt class="candidates-filters-heading">{{ "chat-dots"|icon }} Jazyky:</dt>
+  <dd class="candidates-tags">
     {% for tag in candidates_tags.language %}
       <span
         class="candidates-tag"
@@ -139,7 +139,7 @@ template: main_subnav.html
               </{{ badge_tag }}>
             {% endfor %}
           </p>
-          <p>
+          <p class="candidates-tags">
             {% for tag in candidate.tags %}
               <span
                 class="candidates-tag"

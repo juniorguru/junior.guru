@@ -23,7 +23,7 @@
   text-decoration: underline;
 }
 
-.jobs-tags {
+.jobs-filters {
   @extend .list-unstyled;
   position: relative;
   display: grid;
@@ -36,15 +36,15 @@
   border-radius: $border-radius;
 }
 
-.jobs-tags dd {
+.jobs-filters dd {
   vertical-align: middle;
 }
 
-.jobs-tags.noscript {
+.jobs-filters.noscript {
   border-color: $jg-red;
 }
 
-.jobs-tags::before {
+.jobs-filters::before {
   position: absolute;
   top: -$spacer;
   left: $spacer;
@@ -56,31 +56,31 @@
   background: $jg-white;
 }
 
-.jobs-tags.noscript::before {
+.jobs-filters.noscript::before {
   color: $jg-red;
 }
 
-.jobs-tags-heading {
+.jobs-filters-heading {
   margin-right: $spacer;
   font-weight: $font-weight-normal;
   color: $jg-gray;
   white-space: nowrap;
 }
 
-.jobs-tags .jobs-tag {
+.jobs-filters .jobs-tag {
   cursor: pointer;
 }
 
-.jobs-tags .jobs-tag:hover {
+.jobs-filters .jobs-tag:hover {
   color: $jg-blue;
 }
 
-.jobs-tags .jobs-tag.active {
+.jobs-filters .jobs-tag.active {
   color: $jg-white;
   background: $jg-blue;
 }
 
-.jobs-tags .jobs-tag.disabled {
+.jobs-filters .jobs-tag.disabled {
   cursor: default;
 }
 
@@ -235,6 +235,12 @@
   gap: $spacer;
   align-items: center;
   white-space: nowrap;
+}
+
+.jobs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: map-get($spacers, 1);
 }
 
 .jobs-actions {

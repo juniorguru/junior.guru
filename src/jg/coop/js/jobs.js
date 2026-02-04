@@ -1,5 +1,5 @@
 function setupJobsTags() {
-  const container = document.querySelector(".jobs-tags");
+  const container = document.querySelector(".jobs-filters");
   if (container) {
     container
       .querySelectorAll(".jobs-tag:not(.disabled)")
@@ -58,7 +58,7 @@ function setupJobs() {
 
 function filterJobs() {
   const activeTags = Array.from(
-    document.querySelectorAll(".jobs-tags .jobs-tag.active"),
+    document.querySelectorAll(".jobs-filters .jobs-tag.active"),
   );
   const activeTagsByType = activeTags.reduce((mapping, tag) => {
     mapping[tag.dataset.jobsTagType] ||= [];
@@ -144,7 +144,7 @@ function updateJobsTagsUI() {
   if (locationSlug) {
     activeSlugsByType["location"].push(locationSlug);
   }
-  const container = document.querySelector(".jobs-tags");
+  const container = document.querySelector(".jobs-filters");
   container.querySelectorAll(".jobs-tag").forEach((tag) => {
     const activeSlugs = activeSlugsByType[tag.dataset.jobsTagType] || [];
     const isActive = activeSlugs.includes(tag.dataset.jobsTag);
