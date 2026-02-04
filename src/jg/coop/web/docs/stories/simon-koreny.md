@@ -36,7 +36,7 @@ Pětatřicetiletý Šimon Kořený se živil v gastru až do pandemie, která de
 
 **Rekvalifikace do IT je náročná věc, tobě se to podařilo. Kde ses naučil základy?**
 
-Byl jsem z toho na začátku úplně v jeteli. Přišlo mi, že rekvalifikačních kurzů je hromada a že se v tom moři marketingového plevele nedokážu zorientovat. Všude jsem dal e-mail, odevšad volali, všichni byli velmi příjemní a já jsem po měsíci intenzivní rešerše byl ještě zmatenější než na začátku. Výzkum mezi kamarády mě pak poslal na web junior.guru. Díky funkci _Ahoj, představ se a řekni, proč jsi tady_ jsem si musel tyhle věci zformulovat, na což hned zareagoval Dan Srb, který mi nabídl program pro juniory. Tak jsem se mu na pár měsíců upsal k intenzivnímu mentoringu.
+Byl jsem z toho na začátku úplně v jeteli. Přišlo mi, že rekvalifikačních kurzů je hromada, a že se v tom moři marketingového plevele nedokážu zorientovat. Všude jsem dal e-mail, odevšad volali, všichni byli velmi příjemní a já jsem po měsíci intenzivní rešerše byl ještě zmatenější než na začátku. Výzkum mezi kamarády mě pak poslal na web junior.guru. Díky funkci _Ahoj, představ se a řekni, proč jsi tady_ jsem si musel tyhle věci zformulovat, na což hned zareagoval Dan Srb, který mi nabídl program pro juniory. Tak jsem se mu na pár měsíců upsal k intenzivnímu mentoringu.
 
 **Za jak dlouho sis našel práci?**  
 
