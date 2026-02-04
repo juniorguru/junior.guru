@@ -1,5 +1,5 @@
 ---
-title: Z barmana IT manažer. Teď mířím k roli firemního šamana, říká Šimon Kořený
+title: Z barmana IT manažer. Teď mířím k roli firemního šamana, říká Šimon
 date: 2026-02-04
 interviewee: Šimon Kořený
 interviewee_avatar_path: avatars-participants/simon-koreny.jpg
@@ -62,7 +62,7 @@ Kódování potřebuji, abych rozuměl vývojářům a abych si navrhoval protot
 
 V IT se toho děje tolik, že každý je v něčem začátečník. Pořád jsem začátečník, jen když se na člověka valí úkoly stále dokola, má tendenci otupět. I proto mi přijde užitečné být v kontaktu s takovým mindsetem, jako když jsem začínal, nenosit nos nahoru a makat. Uvědomuji si, že mám kolem sebe pořád spoustu věcí, které se musím učit.
 
-**Můžeš být konkrétní, v čem se třeba posouváš díky diskusím seniorních lidí s nováčky?**  
+**Můžeš být konkrétní, v čem se třeba posouváš díky diskuzím seniorních lidí s nováčky?**  
 
 V poslední době mi to pomáhá pochopit a říkat nahlas některé věci v procesu adopce AI, což je oblast, která mě zajímá. Ne každý se má v začátcích odvahu ozvat. V klubu jsou informace z praxe, které mi pomáhají se zorientovat. Když je pak potřeba něco rozseknout ve firmě, tak i když s tématem nemám přímé zkušenosti, mám ho zpracované a načtené z klubu. Daří se mi to rychle přenášet do praxe.
 
@@ -80,5 +80,5 @@ Vyhoření má setrvačnost. A to jsem si neuvědomoval, když už jsem naběhl 
 
 **Máš nějaký vzkaz, který bys chtěl vzkázat těm, kdo dočetli až sem?**  
 
-Opatrujte se a buďte na sebe hodní. V naší společnosti ani ve výchově není zakódované, abychom se na sebe nezlobili, když něco nejde. Mou misí je to dokázat sdílet a přispět k tomu, aby to umělo co nejvíce lidí v mém okolí.
+Opatrujte se a buďte na sebe hodní. V naší společnosti, ani ve výchově, není zakódované, abychom se na sebe nezlobili, když něco nejde. Mou misí je to dokázat sdílet a přispět k tomu, aby to umělo co nejvíce lidí v mém okolí.
 
