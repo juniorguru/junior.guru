@@ -18,6 +18,11 @@ updates:
     groups:
       js:
         patterns: ["*"]
+    # Pin stylelint to version 16.x due to incompatibility with stylelint-config-twbs-bootstrap
+    # See: https://github.com/juniorguru/junior.guru/issues/1621
+    ignore:
+      - dependency-name: "stylelint"
+        update-types: ["version-update:semver-major"]
     labels:
       - dependencies
   - package-ecosystem: github-actions
