@@ -77,8 +77,10 @@ retry_defaults = dict(
     retry=(
         retry_if_exception_type(RateLimitError)
         & retry_if_exception(
-            lambda exception: exception.type == "requests"
-            and "requests per day" not in exception.message
+            lambda exception: (
+                exception.type == "requests"
+                and "requests per day" not in exception.message
+            )
         )
     ),
     wait=wait_random_exponential(min=1, max=60),
