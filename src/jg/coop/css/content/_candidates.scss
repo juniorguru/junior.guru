@@ -221,6 +221,9 @@
 }
 
 .candidates-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: map-get($spacers, 1);
   line-height: 2;
 }
 
