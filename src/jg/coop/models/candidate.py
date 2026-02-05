@@ -99,6 +99,21 @@ class Candidate(BaseModel):
                 )
             )
 
+        university_badges = {
+            "it": Badge(
+                icon="mortarboard-fill",
+                label="IT VŠ",
+                help_text="Má vystudovanou IT VŠ",
+            ),
+            "math": Badge(
+                icon="mortarboard-fill",
+                label="matematická VŠ",
+                help_text="Má vystudovanou matematickou VŠ",
+            ),
+        }
+        if university_badge := university_badges.get(self.university):
+            badges.append(university_badge)
+
         knows_ai = (
             ClubMessage.select()
             .where(
