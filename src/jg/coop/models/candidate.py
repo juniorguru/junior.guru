@@ -16,9 +16,6 @@ from jg.coop.models.club import ClubChannel, ClubMessage, ClubUser
 
 
 ANYWHERE_TAG_SLUG = "kdekoliv"
-PROFILE_YAML_URL_TEMPLATE = (
-    "https://github.com/juniorguru/eggtray/blob/main/profiles/{username}.yml"
-)
 
 
 class TagType(StrEnum):
@@ -70,8 +67,12 @@ class Candidate(BaseModel):
     report_url = CharField(null=True)
 
     @property
-    def profile_url(self) -> str:
-        return PROFILE_YAML_URL_TEMPLATE.format(username=self.github_username)
+    def yaml_url(self) -> str:
+        return f"https://github.com/juniorguru/eggtray/blob/main/profiles/{self.github_username}.yml"
+
+    @property
+    def yaml_delete_url(self) -> str:
+        return f"https://github.com/juniorguru/eggtray/delete/main/profiles/{self.github_username}.yml"
 
     @property
     def tags(self) -> list[Tag]:

@@ -41,24 +41,32 @@ async def sync_candidates_dms(client: ClubClient, cooldown_days: int, emoji: str
         logger.info("No candidates to notify")
         return
     for candidate in candidates:
-        logger.info(f"Notifying {candidate.github_username}")
+        logger.info(
+            f"Notifying @{candidate.github_username} about {candidate.report_url}"
+        )
         member = await client.club_guild.fetch_member(candidate.user.id)
         if dm_channel := await get_or_create_dm_channel(member):
-            content = create_message(candidate, emoji)
             try:
                 with mutating_discord(dm_channel) as proxy:
-                    await proxy.send(content)
+                    await proxy.send(**create_message(candidate, emoji))
             except Forbidden:
-                logger.warning(f"Could not send DM to {candidate.github_username}, skipping")
+                logger.warning(
+                    f"Could not send DM to {candidate.github_username}, skipping"
+                )
         else:
-            logger.warning(f"Could not open DM for {candidate.github_username}, skipping")
+            logger.warning(
+                f"Could not open DM for {candidate.github_username}, skipping"
+            )
 
 
 def create_message(candidate: Candidate, emoji: str) -> str:
-    name = candidate.name or candidate.github_username
-    return (
-        f"{emoji} Ahoj {name}, "
-        "robot u tebe nasel veci, ktere je potreba doladit."
-        f"\n\nReport: {candidate.report_url}"
-        f"\nProfil: {candidate.profile_url}"
+    return dict(
+        content=(
+            f"{emoji} Ahoj! "
+            "Tvůj profil na [junior.guru/candidates](https://junior.guru/candidates) "
+            f"[má nedostatky]({candidate.report_url}), takže je v seznamu kandidátů upozaděný.\n\n"
+            "Lidi občas nesledují notifikace z GitHubu, takže ti to raději posílám i takhle. "
+            "Stačí, když si opravíš 🔴 červené věci a zobrazíš se opět naplno. "
+            "Pokud už profil nepotřebuješ, pošli Pull Request, kde svůj YAML soubor mažeš."
+        )
     )
