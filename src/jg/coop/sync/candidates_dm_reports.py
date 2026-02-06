@@ -73,7 +73,7 @@ async def sync_candidates_dms(
                 await proxy.send(**create_message(candidate, emoji))
 
 
-def create_message(candidate: Candidate, emoji: str) -> str:
+def create_message(candidate: Candidate, emoji: str) -> dict:
     return dict(
         content=(
             f"{emoji} Ahoj! "
