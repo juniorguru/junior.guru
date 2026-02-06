@@ -67,6 +67,10 @@ class Candidate(BaseModel):
     report_url = CharField(null=True)
 
     @property
+    def yaml_url(self) -> str:
+        return f"https://github.com/juniorguru/eggtray/blob/main/profiles/{self.github_username}.yml"
+
+    @property
     def tags(self) -> list[Tag]:
         tags = []
         for skill in self.skills:
@@ -259,6 +263,19 @@ class Candidate(BaseModel):
     def listing(cls) -> Iterable[Self]:
         return cls.select().order_by(
             cls.is_ready.desc(), cls.is_member.desc(), fn.random()
+        )
+
+    @classmethod
+    def dm_reports_listing(cls) -> Iterable[Self]:
+        return (
+            cls.listing()
+            .join(ClubUser)
+            .where(
+                cls.is_member == True,  # noqa: E712
+                cls.is_ready == False,  # noqa: E712
+                cls.report_url.is_null(False),
+                ClubUser.dm_channel_id.is_null(False),
+            )
         )
 
     @classmethod
