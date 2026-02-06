@@ -61,18 +61,16 @@ async def sync_candidates_dms(
         logger.info(
             f"Notifying @{candidate.github_username} about {candidate.report_url}"
         )
-        if forced_channel is None:
+        if forced_channel:
+            channel = forced_channel
+        else:
             member = await client.club_guild.fetch_member(candidate.user.id)
             channel = await get_or_create_dm_channel(member)
+        if channel is None:
+            logger.warning(f"Could not DM user #{member.id}, skipping")
         else:
-            channel = forced_channel
-        try:
             with mutating_discord(channel) as proxy:
                 await proxy.send(**create_message(candidate, emoji))
-        except Forbidden:
-            logger.warning(
-                f"Could not send message for {candidate.github_username}, skipping"
-            )
 
 
 def create_message(candidate: Candidate, emoji: str) -> str:
