@@ -269,6 +269,19 @@ class Candidate(BaseModel):
         )
 
     @classmethod
+    def dm_reports_listing(cls) -> Iterable[Self]:
+        return (
+            cls.listing()
+            .join(ClubUser)
+            .where(
+                cls.is_member == True,  # noqa: E712
+                cls.is_ready == False,  # noqa: E712
+                cls.report_url.is_null(False),
+                ClubUser.dm_channel_id.is_null(False),
+            )
+        )
+
+    @classmethod
     def region_tags(cls) -> list[Tag]:
         return [Tag(slug=ANYWHERE_TAG_SLUG, type=TagType.LOCATION)] + [
             Tag(slug=get_tag_slug(region), type=TagType.LOCATION) for region in REGIONS
