@@ -1,6 +1,7 @@
 from datetime import timedelta
 
 import click
+from discord import ui
 from discord.errors import Forbidden
 
 from jg.coop.cli.sync import main as cli
@@ -79,9 +80,19 @@ def create_message(candidate: Candidate, emoji: str) -> str:
         content=(
             f"{emoji} Ahoj! "
             "Tvůj profil na [junior.guru/candidates](https://junior.guru/candidates) "
-            f"[má nedostatky]({candidate.report_url}), takže je v seznamu kandidátů upozaděný.\n\n"
+            f"má **nedostatky**, takže je v seznamu kandidátů upozaděný. "
             "Lidi občas nesledují notifikace z GitHubu, takže ti to raději posílám i takhle. "
-            "Stačí, když si opravíš 🔴 červené věci a zobrazíš se opět naplno. "
-            "Pokud už profil nepotřebuješ, pošli Pull Request, kde svůj YAML soubor mažeš."
-        )
+            "\n\n"
+            "Tlačítkem pod touto zprávou si otevři report. Stačí, když si opravíš **červené věci**, "
+            "a objevíš se v seznamu zase naplno (může to trvat 24h)."
+            "\n\n"
+            "Pokud už profil nepotřebuješ, pošli Pull Request, ve kterém smažeš svůj YAML soubor. "
+            "Tlačíkem pod touto zprávou přejdi na soubor, pak tři tečky vpravo nahoře, "
+            "v menu najdi _Delete file_ a pak to potvrď zeleným _Commit changes_."
+        ),
+        view=ui.View(
+            ui.Button(label="⚠️ Co mám opravit?", url=candidate.report_url),
+            ui.Button(label="❌ Smazat profil", url=candidate.yaml_url),
+        ),
+        suppress=True,
     )

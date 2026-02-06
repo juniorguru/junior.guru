@@ -71,10 +71,6 @@ class Candidate(BaseModel):
         return f"https://github.com/juniorguru/eggtray/blob/main/profiles/{self.github_username}.yml"
 
     @property
-    def yaml_delete_url(self) -> str:
-        return f"https://github.com/juniorguru/eggtray/delete/main/profiles/{self.github_username}.yml"
-
-    @property
     def tags(self) -> list[Tag]:
         tags = []
         for skill in self.skills:
