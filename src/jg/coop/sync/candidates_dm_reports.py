@@ -2,7 +2,6 @@ from datetime import timedelta
 
 import click
 from discord import ui
-from discord.errors import Forbidden
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
