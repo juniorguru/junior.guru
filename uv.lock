@@ -1027,7 +1027,7 @@ dev = [
 [[package]]
 name = "jg-eggtray"
 version = "0.0"
-source = { git = "https://github.com/juniorguru/eggtray.git#9d813fcc26ee112e328b089075886bc3784295fa" }
+source = { git = "https://github.com/juniorguru/eggtray.git#94ab43ac215909a64ff784736496b54d15b02fa2" }
 dependencies = [
     { name = "click" },
     { name = "diskcache" },
@@ -1592,8 +1592,8 @@ wheels = [
 
 [[package]]
 name = "py-cord"
-version = "2.7.1.dev32+g6683c681d"
-source = { git = "https://github.com/Pycord-Development/pycord.git#6683c681dbac9a5af12649d91b8dfa69527c671d" }
+version = "2.7.1.dev33+g5c8790e63"
+source = { git = "https://github.com/Pycord-Development/pycord.git#5c8790e6356f4d72c0d3e1f2b7a0eaad0b1c82f3" }
 dependencies = [
     { name = "aiohttp" },
     { name = "typing-extensions" },
