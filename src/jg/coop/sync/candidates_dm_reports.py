@@ -85,7 +85,7 @@ def create_message(candidate: Candidate, emoji: str) -> dict:
             "a objevíš se v seznamu zase naplno (může to trvat 24h)."
             "\n\n"
             "Pokud už profil nepotřebuješ, pošli Pull Request, ve kterém smažeš svůj YAML soubor. "
-            "Tlačíkem pod touto zprávou přejdi na soubor, pak tři tečky vpravo nahoře, "
+            "Tlačítkem pod touto zprávou přejdi na soubor, pak tři tečky vpravo nahoře, "
             "v menu najdi _Delete file_ a pak to potvrď zeleným _Commit changes_."
         ),
         view=ui.View(
