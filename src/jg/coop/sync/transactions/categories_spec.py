@@ -31,6 +31,8 @@ def membership_by_invoice(transaction: dict, secrets: dict) -> TransactionsCateg
 
 @category_rule
 def pavlun(transaction: dict, secrets: dict) -> TransactionsCategory:
+    if "pavlun" in transaction["message"] and transaction["amount"] < 0:
+        return TransactionsCategory.PRODUCTION
     if "doniocz" in transaction["message"] and transaction["amount"] == 6180:
         return TransactionsCategory.PRODUCTION
 
