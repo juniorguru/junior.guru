@@ -99,7 +99,7 @@ known-third-party = ["jg.chick", "jg.hen", "jg.beak"]
 known-local-folder = ["testing_utils"]
 
 [build-system]
-requires = ["uv_build>=0.8.11,<0.10.0"]
+requires = ["uv_build>=0.8.11,<0.11.0"]
 build-backend = "uv_build"
 
 [tool.uv.build-backend]
