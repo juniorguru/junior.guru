@@ -236,5 +236,5 @@
 {"month": "2026-02", "name": "subscription_types_trial", "count": 15}
 {"month": "2026-02", "name": "subscription_types_yearly", "count": 26}
 {"month": "2026-02", "name": "subscriptions_quits", "count": 8}
-{"month": "2026-02", "name": "subscriptions_signups", "count": 3}
+{"month": "2026-02", "name": "subscriptions_signups", "count": 4}
 {"month": "2026-02", "name": "subscriptions_trials", "count": 36}
