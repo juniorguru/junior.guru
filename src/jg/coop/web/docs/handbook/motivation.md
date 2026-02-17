@@ -679,4 +679,14 @@ Tohle nebude platit, když budu chtít přeskočit z `for` cyklů v Pythonu na V
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1472690519166681329
+Tohle jsem ještě nečetl, ale podobné téma 🙂 Od Lucie L. https://www.lucielenertova.cz/p/84-vyvojaru-uz-pouziva-ai-ma-smysl
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1472248917017231611
+Co si myslíte o tomto? https://engeto.cz/blog/kariera/it-trh-2026-komplexni-pruvodce-pro-juniory/
+---
+
+
 #} -->

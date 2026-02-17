@@ -1051,4 +1051,25 @@ https://store.steampowered.com/app/2060160/The_Farmer_Was_Replaced/
 ---
 
 
+--- https://discord.com/channels/769966886598737931/789107031939481641/1472981770591801507
+> I na pohovorech jsem zaznamenala spíše tendence k oveřování znalostí matematiky než operačních systémů. 
+
+Je to podle mně slepá skvrna. Pohovorující to považují za automatické a ani je to nenapadne. Přitom to automatické není.
+
+A na kurzech se tomu snaží vyhnout, protože je to voser, a navíc má každý jiný operační systém, takže se jen vymyslí co nejvíc instantně funkční prostředí a v něm se spouští věci a všichni se modlí, aby se nic nerozbilo. A když, tak se to vyřeší ad hoc individuálně.
+
+Myslím, že dřív jsem vnímal určité levely práce s počítačem, které by šlo popsat nějak takto:
+
+- **user** - kliká na ikony a ty mu spouštějí programy (moji rodiče)
+- **power user** - nebojí se otevřít ikonu s Nastavením, ví kde co najít, kam sáhnout, a když se něco pokazí, tak se v tom počítači dobrovolně šťourá, aby to pochopil (ale nic neprogramuje)
+- **sys admin** - šťoural tak dlouho, až se došťoural do míry znalostí operačního systému, že mu nabídli na místní střední škole brigádu správy počítačů a školní sítě, a potom klikal na věci tak dlouho, až si je začal trochu automatizovat, a potom automatizoval tak dlouho, až...
+
+Ideální cesta do IT je podle mě aspoň trochu se projít po těchto schodech. Programátor de facto dělá něco ještě kvalifikovanějšího než sys admin, protože by měl tušit, jak ten systém funguje, a pak jde pro něj něco stavět.
+
+Stejně jako stavař musí znát vlastnosti půdy a počasí, prostě prostředí, aby postavil funkční dům, tak backendista by měl znát operační systém a frontendista by měl znát browser a webovou platormu (protože tam jeho aplikace žije).
+
+Já osobně jsem byl po SŠ zhruba power user na cestě k adminovi, ale operační systémy jsem pořádně pochopil až když jsem několikrát na VŠ propadl z předmětu „operační systémy“ <:lolpain:859017227515854879>
+---
+
+
 #} -->

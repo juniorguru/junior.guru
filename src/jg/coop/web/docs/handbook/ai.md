@@ -367,4 +367,21 @@ tohle je zajímavý článek o tom, jak někdo využil agenty a vytvořil s nimi
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1472690519166681329
+Tohle jsem ještě nečetl, ale podobné téma 🙂 Od Lucie L. https://www.lucielenertova.cz/p/84-vyvojaru-uz-pouziva-ai-ma-smysl
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1472248917017231611
+Co si myslíte o tomto? https://engeto.cz/blog/kariera/it-trh-2026-komplexni-pruvodce-pro-juniory/
+---
+
+
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1460229003444228254
+> Yes, maybe you think that you worked so hard to learn coding, and now machines are doing it for you. But what was the fire inside you, when you coded till night to see your project working? It was building. And now you can build more and better, if you find your way to use AI effectively. The fun is still there, untouched.
+
+https://antirez.com/news/158
+---
+
+
 #} -->
