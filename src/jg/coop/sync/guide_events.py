@@ -82,7 +82,6 @@ def build_header_args() -> dict:
     return dict(
         content=HEADER_MESSAGE,
         embeds=[],
-        attachments=[],
         view=None,
         suppress=True,
     )
@@ -109,7 +108,6 @@ def build_event_args(event: Event) -> dict:
 
     return dict(
         embed=embed,
-        attachments=[],
         files=[File(IMAGES_DIR / event.avatar_path)],
         view=view,
     )
