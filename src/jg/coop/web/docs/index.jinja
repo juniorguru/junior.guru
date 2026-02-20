@@ -141,24 +141,3 @@ thumbnail_subheading: junior.guru
   {% endfor %}
   </ul>
 </section></div>
-
-<div class="section-background yellow"><section class="section">
-<h2>Novinky pravidelně v mailu</h2>
-<form class="newsletter-container" id="email-form" method="post" action="https://buttondown.com/api/emails/embed-subscribe/juniorguru">
-  <p>
-    Zadej e-mail a přidej se k <strong>{{ newsletter_subscribers_count }} lidem</strong>, kteří sledují newsletter z junior.guru:
-  </p>
-  <fieldset class="newsletter-fieldset">
-    <div class="newsletter-email">
-      <input class="newsletter-email-control" type="email" id="newsletter-email" name="email">
-    </div>
-    <div class="newsletter-submit">
-      <input class="newsletter-submit-control" type="submit" value="Odebírat">
-    </div>
-  </fieldset>
-  <p class="newsletter-note">
-    {{ 'info-circle'|icon }} Tvůj e-mail se použije jen a pouze na zasílání novinek, které si můžeš kdykoliv zase odhlásit.
-    <a href="{{ pages|docs_url('privacy.md')|url }}"> Zásady ochrany osobních údajů</a> popisují, jaká data o tobě junior.guru má a jak s nimi zachází.
-  </p>
-</form>
-</section></div>

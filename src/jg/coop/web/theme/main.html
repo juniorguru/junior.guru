@@ -100,6 +100,34 @@
   <hr class="visually-hidden">
 
   <footer class="footer">
+    <div class="footer-section footer-promo">
+      <div class="footer-promo-item wide">
+        <h3 class="footer-heading">Novinky pravidelně v mailu</h3>
+        <form class="newsletter-container" id="email-form" method="post" action="https://buttondown.com/api/emails/embed-subscribe/juniorguru">
+          <p>
+            Zadej e-mail a přidej se k <strong>{{ newsletter_subscribers_count }} lidem</strong>, kteří sledují newsletter z junior.guru:
+          </p>
+          <fieldset class="newsletter-fieldset">
+            <div class="newsletter-email">
+              <input class="newsletter-email-control" type="email" id="newsletter-email" name="email">
+            </div>
+            <div class="newsletter-submit">
+              <input class="newsletter-submit-control" type="submit" value="Odebírat">
+            </div>
+          </fieldset>
+          <p class="newsletter-note">
+            {{ 'info-circle'|icon }} Tvůj e-mail se použije jen a pouze na zasílání novinek, které si můžeš kdykoliv zase odhlásit.
+            <a href="{{ pages|docs_url('privacy.md')|url }}"> Zásady ochrany osobních údajů</a> popisují, jaká data o tobě junior.guru má a jak s nimi zachází.
+          </p>
+        </form>
+      </div>
+      <div class="footer-promo-item">
+        <h3 class="footer-heading">Příběhy juniorů</h3>
+      </div>
+      <div class="footer-promo-item">
+        <h3 class="footer-heading">Klubové akce</h3>
+      </div>
+    </div>
     <address class="footer-section footer-address">
       <ul class="footer-address-list">
         <li class="footer-address-item">

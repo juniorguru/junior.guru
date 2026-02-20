@@ -27,7 +27,14 @@
 
 .newsletter-email-control {
   @extend .form-control;
-  @extend .form-control-lg;
+
+  @include media-breakpoint-up(sm) {
+    // can't @extend .form-control-lg here because Sass forbids cross-media extends
+    min-height: $input-height-lg;
+    padding: $input-padding-y-lg $input-padding-x-lg;
+    font-size: $input-font-size-lg;
+    border-radius: $input-border-radius-lg;
+  }
 }
 
 .newsletter-submit {
@@ -39,7 +46,13 @@
 .newsletter-submit-control {
   @extend .btn;
   @extend .btn-primary;
-  @extend .btn-lg;
+
+  @include media-breakpoint-up(sm) {
+    // can't @extend .btn-lg here because Sass forbids cross-media extends
+    padding: $btn-padding-y-lg $btn-padding-x-lg;
+    font-size: $btn-font-size-lg;
+    border-radius: $btn-border-radius-lg;
+  }
 }
 
 .newsletter-note {
