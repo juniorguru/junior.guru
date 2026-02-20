@@ -43,43 +43,22 @@ $footer-spacer-md: $spacer * 2;
 
 .footer-address-list {
   @extend .list-unstyled;
-  @extend .row;
-  @extend .g-0;
+  display: grid;
+  gap: $footer-spacer;
   margin-bottom: 0;
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+  }
 }
 
 .footer-address-item {
-  @extend .col-sm-6;
-  @extend .col-lg-3;
-  padding-top: $footer-spacer;
-  padding-bottom: $footer-spacer;
-
-  @include media-breakpoint-up(lg) {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-}
-
-.footer-address-item:first-child {
-  padding-top: 0;
-}
-
-.footer-address-item:last-child {
-  padding-bottom: 0;
-}
-
-.footer-address-item:nth-child(1),
-.footer-address-item:nth-child(2) {
-  @include media-breakpoint-up(sm) {
-    padding-top: 0;
-  }
-}
-
-.footer-address-item:nth-child(3),
-.footer-address-item:nth-child(4) {
-  @include media-breakpoint-up(sm) {
-    padding-bottom: 0;
-  }
+  padding: 0;
 }
 
 .footer-address-logo {
