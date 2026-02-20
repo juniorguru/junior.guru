@@ -100,61 +100,59 @@
   <hr class="visually-hidden">
 
   <footer class="footer">
-    <div class="footer-address-container">
-      <address class="footer-section footer-address">
-        <ul class="footer-address-list">
-          <li class="footer-address-item">
-            {{ img('static/logo-i.svg', 'Logo junior.guru', 90, 40, class='footer-address-logo') }}
-          </li>
-          <li class="footer-address-item">
-            <h3 class="footer-subheading">Projekt</h3>
-            Junior Guru<br>
-            stylizovaně „junior.guru“<br>
-            <a href="https://logo.junior.guru/" target="_blank" rel="noopener">logo a barvy</a>
-          </li>
-          <li class="footer-address-item">
-            <h3 class="footer-subheading">Provozovatel</h3>
-            Jan Javorek<br>
-            OSVČ, neplátce DPH<br>
-            IČO: <a href="https://ares.gov.cz/ekonomicke-subjekty?ico=74279858" target="_blank"
-              rel="noopener">74279858</a><br>
-            Lupáčova 375/24<br>
-            130 00 Praha
-          </li>
-          <li class="footer-address-item footer-links">
-            <h3 class="footer-subheading">Kontakt a sociální sítě</h3>
-            <p class="footer-links-email">{{ 'honza@junior.guru'|email_link }}</p>
-            <ul class="footer-links-icons footer-icons-list">
-              <li class="footer-icons-item">
-                <a href="https://www.youtube.com/@juniordotguru" target="_blank" rel="noopener">
-                  {{ 'youtube'|icon(alt='YouTube') }}
-                </a>
-              </li>
-              <li class="footer-icons-item">
-                <a href="https://www.linkedin.com/in/honzajavorek/" target="_blank" rel="noopener">
-                  {{ 'linkedin'|icon(alt='LinkedIn') }}
-                </a>
-              </li>
-              <li class="footer-icons-item">
-                <a href="{{ pages|docs_url('club.md')|url }}">
-                  {{ 'discord'|icon(alt='Discord') }}
-                </a>
-              </li>
-              <li class="footer-icons-item">
-                <a href="https://mastodonczech.cz/@honzajavorek/tagged/juniorguru" target="_blank" rel="noopener">
-                  {{ 'mastodon'|icon(alt='Mastodon') }}
-                </a>
-              </li>
-              <li class="footer-icons-item">
-                <a href="https://github.com/juniorguru/" target="_blank" rel="noopener">
-                  {{ 'github'|icon(alt='GitHub') }}
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </address>
-    </div>
+    <address class="footer-section footer-address">
+      <ul class="footer-address-list">
+        <li class="footer-address-item">
+          {{ img('static/logo-i.svg', 'Logo junior.guru', 90, 40, class='footer-address-logo') }}
+        </li>
+        <li class="footer-address-item">
+          <h3 class="footer-subheading">Projekt</h3>
+          Junior Guru<br>
+          stylizovaně „junior.guru“<br>
+          <a href="https://logo.junior.guru/" target="_blank" rel="noopener">logo a barvy</a>
+        </li>
+        <li class="footer-address-item">
+          <h3 class="footer-subheading">Provozovatel</h3>
+          Jan Javorek<br>
+          OSVČ, neplátce DPH<br>
+          IČO: <a href="https://ares.gov.cz/ekonomicke-subjekty?ico=74279858" target="_blank"
+            rel="noopener">74279858</a><br>
+          Lupáčova 375/24<br>
+          130 00 Praha
+        </li>
+        <li class="footer-address-item footer-links">
+          <h3 class="footer-subheading">Kontakt a sociální sítě</h3>
+          <p class="footer-links-email">{{ 'honza@junior.guru'|email_link }}</p>
+          <ul class="footer-links-icons footer-icons-list">
+            <li class="footer-icons-item">
+              <a href="https://www.youtube.com/@juniordotguru" target="_blank" rel="noopener">
+                {{ 'youtube'|icon(alt='YouTube') }}
+              </a>
+            </li>
+            <li class="footer-icons-item">
+              <a href="https://www.linkedin.com/in/honzajavorek/" target="_blank" rel="noopener">
+                {{ 'linkedin'|icon(alt='LinkedIn') }}
+              </a>
+            </li>
+            <li class="footer-icons-item">
+              <a href="{{ pages|docs_url('club.md')|url }}">
+                {{ 'discord'|icon(alt='Discord') }}
+              </a>
+            </li>
+            <li class="footer-icons-item">
+              <a href="https://mastodonczech.cz/@honzajavorek/tagged/juniorguru" target="_blank" rel="noopener">
+                {{ 'mastodon'|icon(alt='Mastodon') }}
+              </a>
+            </li>
+            <li class="footer-icons-item">
+              <a href="https://github.com/juniorguru/" target="_blank" rel="noopener">
+                {{ 'github'|icon(alt='GitHub') }}
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </address>
     <div id="honza" class="footer-section footer-about">
       <h3 class="footer-heading">Kdo to provozuje? Na čem vydělává?</h3>
       <div class="footer-about-content">

@@ -33,15 +33,12 @@ $footer-spacer-md: $spacer * 2;
   FOOTER: ADDRESS
 */
 
-.footer-address-container {
-  border-bottom: map-get($border-widths, 1) solid rgba($white, .2);
-}
-
 .footer-address {
   @extend .container-fluid;
   padding-top: $footer-spacer-md;
   padding-bottom: $footer-spacer-md;
   margin-bottom: 0;
+  border-bottom: map-get($border-widths, 1) solid rgba($white, .2);
 }
 
 .footer-address-list {
