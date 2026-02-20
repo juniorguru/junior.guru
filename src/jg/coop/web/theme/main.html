@@ -122,10 +122,24 @@
         </form>
       </div>
       <div class="footer-promo-item">
-        <h3 class="footer-heading">Příběhy juniorů</h3>
+        <h3 class="footer-subheading">Příběhy juniorů</h3>
+        <div class="footer-featured">
+          {% set story_card = promo_story.to_card() %}
+          {{ img('static/' + story_card.image_path, image_alt, 100, 100, class='footer-featured-image') }}
+          <div class="footer-featured-body">
+            <a class="footer-featured-link" href="{{ story_card.url }}">{{ story_card.title }}</a>
+          </div>
+        </div>
       </div>
       <div class="footer-promo-item">
-        <h3 class="footer-heading">Klubové akce</h3>
+        <h3 class="footer-subheading">Klubové akce</h3>
+        <div class="footer-featured">
+          {% set event_card = promo_event.to_card() %}
+          {{ img('static/' + event_card.image_path, image_alt, 100, 100, class='footer-featured-image') }}
+          <div class="footer-featured-body">
+            <a class="footer-featured-link" href="{{ event_card.url }}">{{ event_card.title }}</a>
+          </div>
+        </div>
       </div>
     </div>
     <address class="footer-section footer-address">

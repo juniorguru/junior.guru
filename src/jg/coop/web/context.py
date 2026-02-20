@@ -149,13 +149,8 @@ def on_docs_context(context):
     context["events_archive"] = Event.archive_listing()
 
     # index.jinja, stories.md, news.jinja
-    stories_links = list(Story.listing())
-    stories_pages = list(Page.stories_listing())
-    context["stories_links"] = stories_links
-    context["stories_pages"] = stories_pages
-    context["stories"] = sorted(
-        stories_links + stories_pages, key=attrgetter("date"), reverse=True
-    )
+    context["stories_links"] = Story.listing()
+    context["stories_pages"] = Page.stories_listing()
 
     # wisdom.jinja, news.jinja
     context["wisdoms"] = Wisdom.listing()
@@ -192,6 +187,8 @@ def on_docs_page_context(context, page, config, files):
 @db.connection_context()
 def on_theme_context(context):
     context["course_providers"] = CourseProvider.listing()
+    context["promo_story"] = Page.get_latest_story()
+    context["promo_event"] = Event.get_featured()
 
 
 @db.connection_context()

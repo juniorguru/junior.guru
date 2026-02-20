@@ -123,3 +123,7 @@ class Page(BaseModel):
             .where(cls.src_uri.startswith("stories/"))
             .order_by(cls.date.desc())
         )
+
+    @classmethod
+    def get_latest_story(cls) -> Self:
+        return cls.stories_listing().get()

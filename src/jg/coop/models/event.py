@@ -274,6 +274,12 @@ class Event(BaseModel):
             / 12.0
         )
 
+    @classmethod
+    def get_featured(cls, now: datetime = None) -> Self | None:
+        if event := cls.planned_listing(now=now).first():
+            return event
+        return cls.archive_listing(now=now, has_recording=True, has_avatar=True).first()
+
 
 class EventSpeaking(BaseModel):
     speaker = ForeignKeyField(ClubUser, backref="list_speaking")
