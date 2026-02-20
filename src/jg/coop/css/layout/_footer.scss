@@ -60,11 +60,15 @@ $footer-spacer-md: $spacer * 2;
 .footer-featured {
   @extend .card;
   position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   border: none;
 }
 
 .footer-featured-body {
   @extend .card-body;
+  flex: 1;
 }
 
 .footer-featured-link {
@@ -81,7 +85,9 @@ $footer-spacer-md: $spacer * 2;
 .footer-featured-image {
   @extend .card-img-top;
   width: 100%;
-  height: 8rem;
+  height: 16rem;
+  object-fit: cover;
+  object-position: center;
 }
 
 .footer-promo a {
@@ -97,6 +103,11 @@ $footer-spacer-md: $spacer * 2;
   @include media-breakpoint-up(sm) {
     grid-column: span 2;
   }
+}
+
+.footer-promo-item {
+  display: flex;
+  flex-direction: column;
 }
 
 /*
@@ -121,7 +132,6 @@ $footer-spacer-md: $spacer * 2;
 
   @include media-breakpoint-up(lg) {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0;
   }
 }
 

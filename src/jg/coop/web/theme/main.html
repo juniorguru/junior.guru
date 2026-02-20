@@ -127,7 +127,7 @@
           {% set story_card = promo_story.to_card() %}
           {{ img('static/' + story_card.image_path, image_alt, 100, 100, class='footer-featured-image') }}
           <div class="footer-featured-body">
-            <a class="footer-featured-link" href="{{ story_card.url }}">{{ story_card.title }}</a>
+            <a class="footer-featured-link" href="{{ pages|docs_url(story_card.url)|url }}">{{ story_card.title }}</a>
           </div>
         </div>
       </div>
@@ -137,7 +137,7 @@
           {% set event_card = promo_event.to_card() %}
           {{ img('static/' + event_card.image_path, image_alt, 100, 100, class='footer-featured-image') }}
           <div class="footer-featured-body">
-            <a class="footer-featured-link" href="{{ event_card.url }}">{{ event_card.title }}</a>
+            <a class="footer-featured-link" href="{{ pages|docs_url(event_card.url)|url }}">{{ event_card.title }}</a>
           </div>
         </div>
       </div>

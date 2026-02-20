@@ -1,5 +1,4 @@
 from datetime import UTC, date, datetime, timedelta
-from operator import attrgetter
 
 from jg.coop.lib import loggers, months
 from jg.coop.lib.discord_club import CLUB_GUILD_ID, ClubChannelID, ClubMemberID
