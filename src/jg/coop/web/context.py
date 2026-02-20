@@ -186,8 +186,8 @@ def on_docs_page_context(context, page, config, files):
 @db.connection_context()
 def on_theme_context(context):
     context["course_providers"] = CourseProvider.listing()
-    context["promo_story"] = Page.get_latest_story()
-    context["promo_event"] = Event.get_featured()
+    context["promo_stories"] = Page.stories_listing()
+    context["promo_events"] = Event.featured_listing()
 
 
 @db.connection_context()

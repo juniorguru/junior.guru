@@ -102,7 +102,7 @@
   <footer class="footer">
     <div class="footer-section footer-promo">
       <div class="footer-promo-item wide">
-        <h3 class="footer-heading">Novinky pravidelně v mailu</h3>
+        <h3 class="footer-heading">{{ 'envelope-paper-fill'|icon }} Novinky pravidelně v mailu</h3>
         <form class="newsletter-container" id="email-form" method="post" action="https://buttondown.com/api/emails/embed-subscribe/juniorguru">
           <p>
             Zadej e-mail a přidej se k <strong>{{ newsletter_subscribers_count }} lidem</strong>, kteří sledují newsletter z junior.guru:
@@ -122,24 +122,28 @@
         </form>
       </div>
       <div class="footer-promo-item">
-        <h3 class="footer-subheading">Příběhy juniorů</h3>
+        <h3 class="footer-subheading">{{ 'person-circle'|icon }} Příběhy juniorů</h3>
+        {% for story in (promo_stories|list)[:2] %}
         <div class="footer-featured">
-          {% set story_card = promo_story.to_card() %}
+          {% set story_card = story.to_card() %}
           {{ img('static/' + story_card.image_path, image_alt, 100, 100, class='footer-featured-image') }}
           <div class="footer-featured-body">
             <a class="footer-featured-link" href="{{ pages|docs_url(story_card.url)|url }}">{{ story_card.title }}</a>
           </div>
         </div>
+        {% endfor %}
       </div>
       <div class="footer-promo-item">
-        <h3 class="footer-subheading">Klubové akce</h3>
+        <h3 class="footer-subheading">{{ 'play-circle-fill'|icon }} Klubové akce</h3>
+        {% for event in (promo_events|list)[:2] %}
         <div class="footer-featured">
-          {% set event_card = promo_event.to_card() %}
+          {% set event_card = event.to_card() %}
           {{ img('static/' + event_card.image_path, image_alt, 100, 100, class='footer-featured-image') }}
           <div class="footer-featured-body">
             <a class="footer-featured-link" href="{{ pages|docs_url(event_card.url)|url }}">{{ event_card.title }}</a>
           </div>
         </div>
+        {% endfor %}
       </div>
     </div>
     <address class="footer-section footer-address">

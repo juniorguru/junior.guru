@@ -1,3 +1,4 @@
+import itertools
 import json
 import math
 import random
@@ -275,10 +276,13 @@ class Event(BaseModel):
         )
 
     @classmethod
-    def get_featured(cls, now: datetime = None) -> Self | None:
-        if event := cls.planned_listing(now=now).first():
-            return event
-        return cls.archive_listing(now=now, has_recording=True, has_avatar=True).first()
+    def featured_listing(cls, now: datetime = None) -> list[Self]:
+        return list(
+            itertools.chain(
+                cls.planned_listing(now=now).limit(1),
+                cls.archive_listing(now=now, has_recording=True, has_avatar=True),
+            )
+        )
 
 
 class EventSpeaking(BaseModel):
