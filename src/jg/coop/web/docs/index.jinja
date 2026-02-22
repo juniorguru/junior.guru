@@ -92,32 +92,6 @@ thumbnail_subheading: junior.guru
     screenshot=false,
   ) }}
 </div>
-<div class="news-cards">
-  {% set podcast_episode = podcast_episodes|list|first %}
-  {{
-    news_card(
-      category='Podcast',
-      class='muted',
-      **podcast_episode.to_card(),
-    )
-  }}
-  {% set story = stories_pages|list|first %}
-  {{
-    news_card(
-      category='Příběh',
-      class='muted',
-      **story.to_card(),
-    )
-  }}
-  {% set event = events_archive|list|first %}
-  {{
-    news_card(
-      category='Klubová akce',
-      class='muted',
-      **event.to_card(),
-    )
-  }}
-</div>
 </section>
 
 

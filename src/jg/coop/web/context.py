@@ -140,14 +140,14 @@ def on_docs_context(context):
     # about/*.md, love.jinja, club.md
     context["charts"] = Chart.as_dict()
 
-    # index.jinja, podcast.md, handbook/cv.md, news.jinja
+    # podcast.md, handbook/cv.md, news.jinja
     context["podcast_episodes"] = PodcastEpisode.listing()
 
-    # index.jinja, events.md, news.jinja
+    # events.md, news.jinja
     context["events_planned"] = Event.planned_listing()
     context["events_archive"] = Event.archive_listing()
 
-    # index.jinja, stories.md, news.jinja
+    # stories.md, news.jinja
     context["stories_links"] = Story.listing()
     context["stories_pages"] = Page.stories_listing()
 

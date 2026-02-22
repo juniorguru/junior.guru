@@ -167,26 +167,6 @@ Pokud už máš do klubového Discordu přístup, jdi **{{ '{:%-d.%-m.%Y v %-H:%
 
 {% endif %}
 
-## Mohlo by tě zajímat
-
-<div class="link-cards wide">
-{% set events_planned_sample = events_planned|rejectattr("id", "equalto", event.id)|sample(1) %}
-{% set events_archive_sample = events_archive|rejectattr("id", "equalto", event.id)|sample(2) %}
-{% set events_sample = [
-  events_planned_sample.0 or events_archive_sample.0,
-  events_archive_sample.1,
-] %}
-
-{% for event in events_sample %}
-{{ link_card(
-  event.title,
-  pages|docs_url(event.page_url)|url,
-  caption=event.bio_name,
-  thumbnail_url="static/" + event.plain_poster_path,
-) }}
-{% endfor %}
-</div>
-
 <div class="pagination">
   <div class="pagination-control">
     <a href="{{ (page|parent_page).url|url }}" class="pagination-button">
