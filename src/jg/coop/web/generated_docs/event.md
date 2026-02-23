@@ -1,4 +1,4 @@
-{% from 'macros.html' import img, lead, club_teaser, note, video_card, link_card, figure with context %}
+{% from 'macros.html' import club_teaser, figure, img, lead, note, video_card with context %}
 
 # {{ event.get_full_title() }}
 
