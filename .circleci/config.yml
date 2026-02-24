@@ -60,7 +60,9 @@ jobs:
             uv cache prune --ci
       - run:
           name: Install browser
-          command: uv run playwright install firefox
+          command: |
+            find .venv -type f \( -path '*/site-packages/playwright/driver/node' -o -path '*/site-packages/playwright/driver/playwright.sh' \) -exec chmod +x {} +
+            uv run playwright install --with-deps firefox
       - run:
           name: Install JavaScript dependencies
           command: npm ci
