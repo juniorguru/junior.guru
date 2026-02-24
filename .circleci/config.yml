@@ -61,6 +61,10 @@ jobs:
       - run:
           name: Install browser
           command: |
+            # For no obvious reason, the installation above doesn't set
+            # the executable bit on the browser driver files in CircleCI,
+            # which causes permission error when Playwright tries to launch
+            # the browser. Manually setting the executable bit as a workaround.
             find .venv -type f \( -path '*/site-packages/playwright/driver/node' -o -path '*/site-packages/playwright/driver/playwright.sh' \) -exec chmod +x {} +
             uv run playwright install --with-deps firefox
       - run:
