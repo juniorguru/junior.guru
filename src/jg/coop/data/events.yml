@@ -64,7 +64,7 @@ registry:
     title: "Jak se dělá Infrastructure as Code"
     date: "2026-03-18"
     description: |
-      Infrastructure as Code (IaC) je způsob, jak spravovat IT infrastrukturu pomocí kódu místo ručního nastavování konzole či klikání v portálu. V praxi to znamená, že vývojář nebo administrátor přesně popíše, jak má prostředí v vypadat – například „vytvoř virtuální síť, nastav podsíť, spusť dva servery a připoj databázi“ – a tento popis se pak automatizovaně provede. Imperativní přístup k IaC funguje podobně jako recept: krok za krokem říká systému, co má udělat, aby vznikla požadovaná infrastruktura.
+      Infrastructure as Code (IaC) je způsob, jak spravovat IT infrastrukturu pomocí kódu místo ručního nastavování klikáním. V praxi to znamená, že vývojář nebo administrátor přesně popíše, jak má prostředí vypadat – například „vytvoř virtuální síť, nastav podsíť, spusť dva servery a připoj databázi“ – a tento popis se pak automatizovaně provede. Imperativní přístup k IaC funguje podobně jako recept: krok za krokem říká systému, co má udělat, aby vznikla požadovaná infrastruktura.
     avatar_path: avatars-participants/stepan-bechynsky.jpg
     bio_name: Štěpán Bechynský
     bio_title: "Microsoft, konzultant pro veřejnou sféru"
