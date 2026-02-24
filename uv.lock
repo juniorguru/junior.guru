@@ -1027,7 +1027,7 @@ dev = [
 [[package]]
 name = "jg-eggtray"
 version = "0.0"
-source = { git = "https://github.com/juniorguru/eggtray.git#6efb17d98929917130a70014bdd0ccc6a1e68d35" }
+source = { git = "https://github.com/juniorguru/eggtray.git#9e49ee4e3ee86501775bbfd77fd8db58537dd18c" }
 dependencies = [
     { name = "click" },
     { name = "diskcache" },
