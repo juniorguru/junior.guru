@@ -60,6 +60,21 @@
 # - https://www.fotor.com/photo-editor-app/editor/beauty
 
 registry:
+  - id: 60
+    title: "Jak se dělá Infrastructure as Code"
+    date: "2026-03-18"
+    description: |
+      Infrastructure as Code (IaC) je způsob, jak spravovat IT infrastrukturu pomocí kódu místo ručního nastavování klikáním. V praxi to znamená, že vývojář nebo administrátor přesně popíše, jak má prostředí vypadat – například „vytvoř virtuální síť, nastav podsíť, spusť dva servery a připoj databázi“ – a tento popis se pak automatizovaně provede. Imperativní přístup k IaC funguje podobně jako recept: krok za krokem říká systému, co má udělat, aby vznikla požadovaná infrastruktura.
+    avatar_path: avatars-participants/stepan-bechynsky.jpg
+    bio_name: Štěpán Bechynský
+    bio_title: "Microsoft, konzultant pro veřejnou sféru"
+    bio: |
+      První kód napsal v roce 1986 na IQ151 v jazyce Basic. Více než dvacet let se věnuje vzdělávání dospělých v oboru IT. Začínal s technologiemi jako MS DOS a Windows 3.1. Láska k vaření ho dohnala až tak daleko, že se před pár lety dálkově vyučil kuchařem. Kromě rodiny vaří i na komunitních IT akcích, kde také přednáší.
+    bio_links:
+      - https://www.linkedin.com/in/stepanbechynsky/
+    club_speaker_ids:
+      - 1169254844385743049
+
   - id: 59
     title: "Jak se vzdělává a přemýšlí product-oriented vývojář v roce 2026"
     date: "2026-02-18"
