@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@343dev/optimizt": "12.1.1",
-    "@biomejs/biome": "2.4.2",
+    "@biomejs/biome": "2.4.4",
     "bootstrap": "5.3.8",
     "esbuild": "0.27.3",
     "esbuild-sass-plugin": "3.6.0",
