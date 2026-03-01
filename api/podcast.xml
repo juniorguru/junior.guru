@@ -1,0 +1,469 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:podcast="https://podcastindex.org/namespace/1.0" version="2.0">
+  <channel>
+    <title>Junior Guru: programování a kariéra v IT</title>
+    <link>https://junior.guru/podcast/</link>
+    <description>Jsme tu pro všechny juniory v IT! Jak začít s programováním? Jak najít práci v IT? Přinášíme odpovědi, inspiraci, motivaci.</description>
+    <itunes:explicit>no</itunes:explicit>
+    <copyright>© 2024 Pavlína Froňková, Jan Javorek</copyright>
+    <docs>http://www.rssboard.org/rss-specification</docs>
+    <generator>JuniorGuruBot (+https://junior.guru)</generator>
+    <language>cs</language>
+    <lastBuildDate>Sun, 01 Mar 2026 04:51:56 +0000</lastBuildDate>
+    <itunes:author>Pája Froňková and Honza Javorek</itunes:author>
+    <dc:creator>Pája Froňková</dc:creator>
+    <dc:creator>Honza Javorek &lt;honza@junior.guru&gt;</dc:creator>
+    <pubDate>Thu, 01 Feb 2024 01:42:42 +0100</pubDate>
+    <webMaster>honza@junior.guru (Honza Javorek)</webMaster>
+    <itunes:category text="Technology"/>
+    <itunes:image href="https://junior.guru/static/podcast-v1.png"/>
+    <itunes:owner>
+      <itunes:name>Honza Javorek</itunes:name>
+      <itunes:email>honza@junior.guru</itunes:email>
+    </itunes:owner>
+    <atom:link href="https://junior.guru/api/podcast.xml" rel="self" type="application/rss+xml"/>
+    <podcast:funding url="https://junior.guru/club/">Přidej se do klubu junior.guru</podcast:funding>
+    <podcast:funding url="https://junior.guru/love/">Přispěj junior.guru</podcast:funding>
+    <item>
+      <title>#0 Startujeme!</title>
+      <link>https://junior.guru/podcast/0/</link>
+      <description><![CDATA[<p>Jak začít s programováním? Jak najít práci v IT? Přinášíme odpovědi, inspiraci, motivaci. Pája Froňková uvádí podcast pro všechny juniory v IT. V krátkém úvodním dílu je spolu s Honzou Javorkem, autorem projektu junior.guru, kde tento podcast našel svůj domov.</p>
+<hr>
+<p>Jsou věci, se kterými ti kurz programování nepomůže. A proto je tady junior.guru. Průvodce na cestě do IT, který s tebou bude od začátku až do konce.</p>
+<ul>
+<li><strong><a href="https://junior.guru/club/">Klub</a>:</strong> Komunita na Discordu pro začátečníky a všechny, kdo jim chtějí pomáhat</li>
+<li><strong><a href="https://junior.guru/handbook/">Příručka</a>:</strong> Rady, které ti pomůžou se základní orientací a se sháněním práce v oboru</li>
+<li><strong><a href="https://junior.guru/courses/">Kurzy</a>:</strong> Katalog kurzů, ať si můžeš vybrat podle parametrů a recenzí, ne podle reklamy</li>
+<li><strong><a href="https://junior.guru/jobs/">Práce</a>:</strong> Pracovní inzeráty vyloženě pro juniory, ať to nemusíš složitě hledat a třídit jinde</li>
+<li><strong><a href="https://junior.guru/news/">Inspirace</a>:</strong> Podcasty, přednášky, články a další zdroje, které tě posunou a namotivují</li>
+</ul>]]></description>
+      <guid isPermaLink="false">podcast.junior.guru#0000</guid>
+      <enclosure url="https://podcast.junior.guru/episodes/0000.mp3" length="2635792" type="audio/mpeg"/>
+      <itunes:duration>03:08</itunes:duration>
+      <pubDate>Sat, 01 Jan 2022 01:42:42 +0100</pubDate>
+      <itunes:image href="https://junior.guru/static/avatars-participants/honza-javorek.jpg"/>
+      <itunes:episode>1</itunes:episode>
+      <podcast:episode display="#0">1</podcast:episode>
+    </item>
+    <item>
+      <title>#1 Jiří Psotka (Red Hat) o hledání první práce v IT</title>
+      <link>https://junior.guru/podcast/1/</link>
+      <description><![CDATA[<p>V prvním díle uslyšíš Jirku Psotku, seniorního recruitera v Red Hatu. Dozvíš se, jak se jako junior připravit na výběrové řízení – od bezchybného CV, až po samotný pohovor. Hledáš první uplatnění v IT světě a hodilo by se ti pár tipů do začátku? Tak tohle je díl pro tebe!</p>
+<hr>
+<p>Jsou věci, se kterými ti kurz programování nepomůže. A proto je tady junior.guru. Průvodce na cestě do IT, který s tebou bude od začátku až do konce.</p>
+<ul>
+<li><strong><a href="https://junior.guru/club/">Klub</a>:</strong> Komunita na Discordu pro začátečníky a všechny, kdo jim chtějí pomáhat</li>
+<li><strong><a href="https://junior.guru/handbook/">Příručka</a>:</strong> Rady, které ti pomůžou se základní orientací a se sháněním práce v oboru</li>
+<li><strong><a href="https://junior.guru/courses/">Kurzy</a>:</strong> Katalog kurzů, ať si můžeš vybrat podle parametrů a recenzí, ne podle reklamy</li>
+<li><strong><a href="https://junior.guru/jobs/">Práce</a>:</strong> Pracovní inzeráty vyloženě pro juniory, ať to nemusíš složitě hledat a třídit jinde</li>
+<li><strong><a href="https://junior.guru/news/">Inspirace</a>:</strong> Podcasty, přednášky, články a další zdroje, které tě posunou a namotivují</li>
+</ul>]]></description>
+      <guid isPermaLink="false">podcast.junior.guru#0001</guid>
+      <enclosure url="https://podcast.junior.guru/episodes/0001.mp3" length="46558026" type="audio/mpeg"/>
+      <itunes:duration>55:26</itunes:duration>
+      <pubDate>Sat, 15 Jan 2022 01:42:42 +0100</pubDate>
+      <itunes:image href="https://junior.guru/static/avatars-participants/jiri-psotka.jpg"/>
+      <itunes:episode>2</itunes:episode>
+      <podcast:episode display="#1">2</podcast:episode>
+    </item>
+    <item>
+      <title>#2 Roman Hraška (yablko) o kurzech webového vývoje</title>
+      <link>https://junior.guru/podcast/2/</link>
+      <description><![CDATA[<p>Ve druhém díle si Pája povídá s Romanem Hraškou, známým jako yablko, programátorem, youtuberem a tvůrcem kurzů programování. Jak by doporučil začít s programováním těm, kteří ještě tápou? V tomhle díle si přijdou na své hlavně ti, kteří se zajímají o web, ale Roman má spoustu tipů i pro ostatní!</p>
+<hr>
+<p>Jsou věci, se kterými ti kurz programování nepomůže. A proto je tady junior.guru. Průvodce na cestě do IT, který s tebou bude od začátku až do konce.</p>
+<ul>
+<li><strong><a href="https://junior.guru/club/">Klub</a>:</strong> Komunita na Discordu pro začátečníky a všechny, kdo jim chtějí pomáhat</li>
+<li><strong><a href="https://junior.guru/handbook/">Příručka</a>:</strong> Rady, které ti pomůžou se základní orientací a se sháněním práce v oboru</li>
+<li><strong><a href="https://junior.guru/courses/">Kurzy</a>:</strong> Katalog kurzů, ať si můžeš vybrat podle parametrů a recenzí, ne podle reklamy</li>
+<li><strong><a href="https://junior.guru/jobs/">Práce</a>:</strong> Pracovní inzeráty vyloženě pro juniory, ať to nemusíš složitě hledat a třídit jinde</li>
+<li><strong><a href="https://junior.guru/news/">Inspirace</a>:</strong> Podcasty, přednášky, články a další zdroje, které tě posunou a namotivují</li>
+</ul>]]></description>
+      <guid isPermaLink="false">podcast.junior.guru#0002</guid>
+      <enclosure url="https://podcast.junior.guru/episodes/0002.mp3" length="44598119" type="audio/mpeg"/>
+      <itunes:duration>53:06</itunes:duration>
+      <pubDate>Tue, 15 Feb 2022 01:42:42 +0100</pubDate>
+      <itunes:image href="https://junior.guru/static/avatars-participants/roman-hraska.jpg"/>
+      <itunes:episode>3</itunes:episode>
+      <podcast:episode display="#2">3</podcast:episode>
+    </item>
+    <item>
+      <title>#3 Filip Kirschner (Applifting) o firemním přístupu k juniorům a nejen tom</title>
+      <link>https://junior.guru/podcast/3/</link>
+      <description><![CDATA[<p>Ve třetím díle si poslechneš Filipa Kirschnera, spoluzakladatele firmy Applifting. Pája si s ním povídá o jejich firemní kultuře a přístupu k juniorním developerům, ale ptá se ho i na to, jaký programovací jazyk by si vybral, kdyby se znovu učil programovat, nebo co by poradil těm, kteří se chtějí z nuly dostat na první placenou IT pozici.</p>
+<hr>
+<p>Jsou věci, se kterými ti kurz programování nepomůže. A proto je tady junior.guru. Průvodce na cestě do IT, který s tebou bude od začátku až do konce.</p>
+<ul>
+<li><strong><a href="https://junior.guru/club/">Klub</a>:</strong> Komunita na Discordu pro začátečníky a všechny, kdo jim chtějí pomáhat</li>
+<li><strong><a href="https://junior.guru/handbook/">Příručka</a>:</strong> Rady, které ti pomůžou se základní orientací a se sháněním práce v oboru</li>
+<li><strong><a href="https://junior.guru/courses/">Kurzy</a>:</strong> Katalog kurzů, ať si můžeš vybrat podle parametrů a recenzí, ne podle reklamy</li>
+<li><strong><a href="https://junior.guru/jobs/">Práce</a>:</strong> Pracovní inzeráty vyloženě pro juniory, ať to nemusíš složitě hledat a třídit jinde</li>
+<li><strong><a href="https://junior.guru/news/">Inspirace</a>:</strong> Podcasty, přednášky, články a další zdroje, které tě posunou a namotivují</li>
+</ul>]]></description>
+      <guid isPermaLink="false">podcast.junior.guru#0003</guid>
+      <enclosure url="https://podcast.junior.guru/episodes/0003.mp3" length="42512450" type="audio/mpeg"/>
+      <itunes:duration>50:37</itunes:duration>
+      <pubDate>Tue, 15 Mar 2022 01:42:42 +0100</pubDate>
+      <itunes:image href="https://junior.guru/static/avatars-participants/filip-kirschner.jpg"/>
+      <itunes:episode>4</itunes:episode>
+      <podcast:episode display="#3">4</podcast:episode>
+    </item>
+    <item>
+      <title>#4 Tereza Vaňková (Deepnote) o její cestě k programování a komunitě ReactGirls</title>
+      <link>https://junior.guru/podcast/4/</link>
+      <description><![CDATA[<p>Ve čtvrtém díle si Pája povídá s Terkou Vaňkovou, software developerkou ve startupu Deepnote a zakladatelkou české komunity ReactGirls. Dozvíš se, jaké byly pro Terku začátky v IT, jakými kurzy prošla a jak získala nejen první práci jako software developerka. Dostane se také na české IT komunity a povídání o ReactGirls.</p>
+<hr>
+<p>Jsou věci, se kterými ti kurz programování nepomůže. A proto je tady junior.guru. Průvodce na cestě do IT, který s tebou bude od začátku až do konce.</p>
+<ul>
+<li><strong><a href="https://junior.guru/club/">Klub</a>:</strong> Komunita na Discordu pro začátečníky a všechny, kdo jim chtějí pomáhat</li>
+<li><strong><a href="https://junior.guru/handbook/">Příručka</a>:</strong> Rady, které ti pomůžou se základní orientací a se sháněním práce v oboru</li>
+<li><strong><a href="https://junior.guru/courses/">Kurzy</a>:</strong> Katalog kurzů, ať si můžeš vybrat podle parametrů a recenzí, ne podle reklamy</li>
+<li><strong><a href="https://junior.guru/jobs/">Práce</a>:</strong> Pracovní inzeráty vyloženě pro juniory, ať to nemusíš složitě hledat a třídit jinde</li>
+<li><strong><a href="https://junior.guru/news/">Inspirace</a>:</strong> Podcasty, přednášky, články a další zdroje, které tě posunou a namotivují</li>
+</ul>]]></description>
+      <guid isPermaLink="false">podcast.junior.guru#0004</guid>
+      <enclosure url="https://podcast.junior.guru/episodes/0004.mp3" length="28322005" type="audio/mpeg"/>
+      <itunes:duration>33:43</itunes:duration>
+      <pubDate>Fri, 15 Apr 2022 01:42:42 +0200</pubDate>
+      <itunes:image href="https://junior.guru/static/avatars-participants/tereza-vankova.jpg"/>
+      <itunes:episode>5</itunes:episode>
+      <podcast:episode display="#4">5</podcast:episode>
+    </item>
+    <item>
+      <title>#5 Petr Přibil (Tatanka) o změně kariéry od lesníka až k Python developerovi</title>
+      <link>https://junior.guru/podcast/5/</link>
+      <description><![CDATA[<p>V pátém díle se s Pájou podělil o svoji zkušenost Petr Přibil alias Tatanka. Pracuje čerstvě jako juniorní Python vývojář, přitom ještě nedávno byl obchodník a předtím dělal v lesnictví. Co mu na začátku nejvíce pomohlo a co by udělal jinak? Co by poradil těm, kdo chtějí odejít z rozjeté kariéry na juniorní místo v IT?</p>
+<hr>
+<p>Jsou věci, se kterými ti kurz programování nepomůže. A proto je tady junior.guru. Průvodce na cestě do IT, který s tebou bude od začátku až do konce.</p>
+<ul>
+<li><strong><a href="https://junior.guru/club/">Klub</a>:</strong> Komunita na Discordu pro začátečníky a všechny, kdo jim chtějí pomáhat</li>
+<li><strong><a href="https://junior.guru/handbook/">Příručka</a>:</strong> Rady, které ti pomůžou se základní orientací a se sháněním práce v oboru</li>
+<li><strong><a href="https://junior.guru/courses/">Kurzy</a>:</strong> Katalog kurzů, ať si můžeš vybrat podle parametrů a recenzí, ne podle reklamy</li>
+<li><strong><a href="https://junior.guru/jobs/">Práce</a>:</strong> Pracovní inzeráty vyloženě pro juniory, ať to nemusíš složitě hledat a třídit jinde</li>
+<li><strong><a href="https://junior.guru/news/">Inspirace</a>:</strong> Podcasty, přednášky, články a další zdroje, které tě posunou a namotivují</li>
+</ul>]]></description>
+      <guid isPermaLink="false">podcast.junior.guru#0005</guid>
+      <enclosure url="https://podcast.junior.guru/episodes/0005.mp3" length="26516824" type="audio/mpeg"/>
+      <itunes:duration>31:34</itunes:duration>
+      <pubDate>Mon, 16 May 2022 01:42:42 +0200</pubDate>
+      <itunes:image href="https://junior.guru/static/avatars-participants/petr-pribil.jpg"/>
+      <itunes:episode>6</itunes:episode>
+      <podcast:episode display="#5">6</podcast:episode>
+    </item>
+    <item>
+      <title>#6 Markéta Willis (Applifting) o její cestě k IT a učení (se) programování</title>
+      <link>https://junior.guru/podcast/6/</link>
+      <description><![CDATA[<p>Do šestého dílu si Pája pozvala Markétu Willis. Ačkoliv Markéta vystudovala pedagogickou fakultu, teď se živí jako frontend developerka ve společnosti Applifting. Kromě toho ještě stíhá lektorovat pro Czechitas. Dozvíš se, jaká byla její cesta k programování a uslyšíš i o jejích zkušenostech z lektorování.</p>
+<hr>
+<p>Jsou věci, se kterými ti kurz programování nepomůže. A proto je tady junior.guru. Průvodce na cestě do IT, který s tebou bude od začátku až do konce.</p>
+<ul>
+<li><strong><a href="https://junior.guru/club/">Klub</a>:</strong> Komunita na Discordu pro začátečníky a všechny, kdo jim chtějí pomáhat</li>
+<li><strong><a href="https://junior.guru/handbook/">Příručka</a>:</strong> Rady, které ti pomůžou se základní orientací a se sháněním práce v oboru</li>
+<li><strong><a href="https://junior.guru/courses/">Kurzy</a>:</strong> Katalog kurzů, ať si můžeš vybrat podle parametrů a recenzí, ne podle reklamy</li>
+<li><strong><a href="https://junior.guru/jobs/">Práce</a>:</strong> Pracovní inzeráty vyloženě pro juniory, ať to nemusíš složitě hledat a třídit jinde</li>
+<li><strong><a href="https://junior.guru/news/">Inspirace</a>:</strong> Podcasty, přednášky, články a další zdroje, které tě posunou a namotivují</li>
+</ul>]]></description>
+      <guid isPermaLink="false">podcast.junior.guru#0006</guid>
+      <enclosure url="https://podcast.junior.guru/episodes/0006.mp3" length="25206470" type="audio/mpeg"/>
+      <itunes:duration>30:00</itunes:duration>
+      <pubDate>Wed, 15 Jun 2022 01:42:42 +0200</pubDate>
+      <itunes:image href="https://junior.guru/static/avatars-participants/marketa-willis.jpg"/>
+      <itunes:episode>7</itunes:episode>
+      <podcast:episode display="#6">7</podcast:episode>
+    </item>
+    <item>
+      <title>#7 Mia Bajić (Seznam) o cestě z Bosny do českého Seznamu</title>
+      <link>https://junior.guru/podcast/7/</link>
+      <description><![CDATA[<p>V sedmém díle podcastu si Pája povídá s Miou Bajić, Python developerkou v Seznamu. Mia prozradí, jak se vůbec dostala z Bosny do České republiky a jakou cestu zvolila, aby získala práci v IT. Poslechni si, co říká na studium programování na vysoké škole a co jí pomohlo v její kariéře.</p>
+<hr>
+<p>Jsou věci, se kterými ti kurz programování nepomůže. A proto je tady junior.guru. Průvodce na cestě do IT, který s tebou bude od začátku až do konce.</p>
+<ul>
+<li><strong><a href="https://junior.guru/club/">Klub</a>:</strong> Komunita na Discordu pro začátečníky a všechny, kdo jim chtějí pomáhat</li>
+<li><strong><a href="https://junior.guru/handbook/">Příručka</a>:</strong> Rady, které ti pomůžou se základní orientací a se sháněním práce v oboru</li>
+<li><strong><a href="https://junior.guru/courses/">Kurzy</a>:</strong> Katalog kurzů, ať si můžeš vybrat podle parametrů a recenzí, ne podle reklamy</li>
+<li><strong><a href="https://junior.guru/jobs/">Práce</a>:</strong> Pracovní inzeráty vyloženě pro juniory, ať to nemusíš složitě hledat a třídit jinde</li>
+<li><strong><a href="https://junior.guru/news/">Inspirace</a>:</strong> Podcasty, přednášky, články a další zdroje, které tě posunou a namotivují</li>
+</ul>]]></description>
+      <guid isPermaLink="false">podcast.junior.guru#0007</guid>
+      <enclosure url="https://podcast.junior.guru/episodes/0007.mp3" length="21636733" type="audio/mpeg"/>
+      <itunes:duration>25:45</itunes:duration>
+      <pubDate>Sun, 17 Jul 2022 01:42:42 +0200</pubDate>
+      <itunes:image href="https://junior.guru/static/avatars-participants/mia-bajic.jpg"/>
+      <itunes:episode>8</itunes:episode>
+      <podcast:episode display="#7">8</podcast:episode>
+    </item>
+    <item>
+      <title>#8 Michal Matuška (SUPERKODERS) o leadershipu a juniorech</title>
+      <link>https://junior.guru/podcast/8/</link>
+      <description><![CDATA[<p>Osmý díl podcastu patří Michalu Matuškovi, frontend developerovi a spoluzakladateli firmy SUPERKODERS. S Pájou si povídá o tom, jak se on sám dostal k programování, co by poradil někomu, kdo začíná dnes, nebo o tom, co hledá na pohovorech u juniorů.</p>
+<hr>
+<p>Jsou věci, se kterými ti kurz programování nepomůže. A proto je tady junior.guru. Průvodce na cestě do IT, který s tebou bude od začátku až do konce.</p>
+<ul>
+<li><strong><a href="https://junior.guru/club/">Klub</a>:</strong> Komunita na Discordu pro začátečníky a všechny, kdo jim chtějí pomáhat</li>
+<li><strong><a href="https://junior.guru/handbook/">Příručka</a>:</strong> Rady, které ti pomůžou se základní orientací a se sháněním práce v oboru</li>
+<li><strong><a href="https://junior.guru/courses/">Kurzy</a>:</strong> Katalog kurzů, ať si můžeš vybrat podle parametrů a recenzí, ne podle reklamy</li>
+<li><strong><a href="https://junior.guru/jobs/">Práce</a>:</strong> Pracovní inzeráty vyloženě pro juniory, ať to nemusíš složitě hledat a třídit jinde</li>
+<li><strong><a href="https://junior.guru/news/">Inspirace</a>:</strong> Podcasty, přednášky, články a další zdroje, které tě posunou a namotivují</li>
+</ul>]]></description>
+      <guid isPermaLink="false">podcast.junior.guru#0008</guid>
+      <enclosure url="https://podcast.junior.guru/episodes/0008.mp3" length="26471110" type="audio/mpeg"/>
+      <itunes:duration>31:31</itunes:duration>
+      <pubDate>Thu, 15 Sep 2022 01:42:42 +0200</pubDate>
+      <itunes:image href="https://junior.guru/static/avatars-participants/michal-matuska.jpg"/>
+      <itunes:episode>9</itunes:episode>
+      <podcast:episode display="#8">9</podcast:episode>
+    </item>
+    <item>
+      <title>#9 Markéta Lourenco (Mews) o cestě od lingvistiky k datové analýze</title>
+      <link>https://junior.guru/podcast/9/</link>
+      <description><![CDATA[<p>Do devátého dílu si Pája pozvala Markétu Lourenco, původně vystudovanou lingvistku a v současnosti datovou analytičku ve firmě Mews. Vypráví o tom, co ji přimělo vyzkoušet svět IT, jak hladce se jí podařilo získat první datovou pozici a co její práce obnáší.</p>
+<hr>
+<p>Jsou věci, se kterými ti kurz programování nepomůže. A proto je tady junior.guru. Průvodce na cestě do IT, který s tebou bude od začátku až do konce.</p>
+<ul>
+<li><strong><a href="https://junior.guru/club/">Klub</a>:</strong> Komunita na Discordu pro začátečníky a všechny, kdo jim chtějí pomáhat</li>
+<li><strong><a href="https://junior.guru/handbook/">Příručka</a>:</strong> Rady, které ti pomůžou se základní orientací a se sháněním práce v oboru</li>
+<li><strong><a href="https://junior.guru/courses/">Kurzy</a>:</strong> Katalog kurzů, ať si můžeš vybrat podle parametrů a recenzí, ne podle reklamy</li>
+<li><strong><a href="https://junior.guru/jobs/">Práce</a>:</strong> Pracovní inzeráty vyloženě pro juniory, ať to nemusíš složitě hledat a třídit jinde</li>
+<li><strong><a href="https://junior.guru/news/">Inspirace</a>:</strong> Podcasty, přednášky, články a další zdroje, které tě posunou a namotivují</li>
+</ul>]]></description>
+      <guid isPermaLink="false">podcast.junior.guru#0009</guid>
+      <enclosure url="https://podcast.junior.guru/episodes/0009.mp3" length="26262287" type="audio/mpeg"/>
+      <itunes:duration>31:16</itunes:duration>
+      <pubDate>Sat, 15 Oct 2022 01:42:42 +0200</pubDate>
+      <itunes:image href="https://junior.guru/static/avatars-participants/marketa-lourenco.jpg"/>
+      <itunes:episode>10</itunes:episode>
+      <podcast:episode display="#9">10</podcast:episode>
+    </item>
+    <item>
+      <title>#10 Klára Šťouračová (Productboard) o úspěšném startu kariéry v IT</title>
+      <link>https://junior.guru/podcast/10/</link>
+      <description><![CDATA[<p>V desátém díle si můžeš poslechnout Kláru Šťouračovou, která se už 7 let pohybuje na různých HR a People pozicích v technologických firmách. Kromě toho spoluzaložila makeITtoday, úspěšné kurzy programovaní pro děti. Jakých si za svoji kariéru všimla trendů v IT odvětví? Jak podle ní správně nastartovat kariéru? A proč si myslí, že je důležité děti vést k počítačové gramotnosti?</p>
+<hr>
+<p>Jsou věci, se kterými ti kurz programování nepomůže. A proto je tady junior.guru. Průvodce na cestě do IT, který s tebou bude od začátku až do konce.</p>
+<ul>
+<li><strong><a href="https://junior.guru/club/">Klub</a>:</strong> Komunita na Discordu pro začátečníky a všechny, kdo jim chtějí pomáhat</li>
+<li><strong><a href="https://junior.guru/handbook/">Příručka</a>:</strong> Rady, které ti pomůžou se základní orientací a se sháněním práce v oboru</li>
+<li><strong><a href="https://junior.guru/courses/">Kurzy</a>:</strong> Katalog kurzů, ať si můžeš vybrat podle parametrů a recenzí, ne podle reklamy</li>
+<li><strong><a href="https://junior.guru/jobs/">Práce</a>:</strong> Pracovní inzeráty vyloženě pro juniory, ať to nemusíš složitě hledat a třídit jinde</li>
+<li><strong><a href="https://junior.guru/news/">Inspirace</a>:</strong> Podcasty, přednášky, články a další zdroje, které tě posunou a namotivují</li>
+</ul>]]></description>
+      <guid isPermaLink="false">podcast.junior.guru#0010</guid>
+      <enclosure url="https://podcast.junior.guru/episodes/0010.mp3" length="30451178" type="audio/mpeg"/>
+      <itunes:duration>36:15</itunes:duration>
+      <pubDate>Tue, 15 Nov 2022 01:42:42 +0100</pubDate>
+      <itunes:image href="https://junior.guru/static/avatars-participants/klara-stouracova.jpg"/>
+      <itunes:episode>11</itunes:episode>
+      <podcast:episode display="#10">11</podcast:episode>
+    </item>
+    <item>
+      <title>#11 Lukáš Konarovský (Fakturoid) o podnikání, třeba i v IT</title>
+      <link>https://junior.guru/podcast/11/</link>
+      <description><![CDATA[<p>V tomto díle si Pája povídá s Lukášem Konarovským, podnikatelem a spoluzakladatelem firmy Fakturoid. Jak se Lukáš dostal k IT a k podnikání? Co je podle něj na podnikání nejtěžší? Co naopak možná vnímáme jako větší problém, než ve skutečnosti je? Pokud přemýšlíš nad podnikáním (třeba zrovna v IT) je tento díl přesně pro tebe!</p>
+<hr>
+<p>Jsou věci, se kterými ti kurz programování nepomůže. A proto je tady junior.guru. Průvodce na cestě do IT, který s tebou bude od začátku až do konce.</p>
+<ul>
+<li><strong><a href="https://junior.guru/club/">Klub</a>:</strong> Komunita na Discordu pro začátečníky a všechny, kdo jim chtějí pomáhat</li>
+<li><strong><a href="https://junior.guru/handbook/">Příručka</a>:</strong> Rady, které ti pomůžou se základní orientací a se sháněním práce v oboru</li>
+<li><strong><a href="https://junior.guru/courses/">Kurzy</a>:</strong> Katalog kurzů, ať si můžeš vybrat podle parametrů a recenzí, ne podle reklamy</li>
+<li><strong><a href="https://junior.guru/jobs/">Práce</a>:</strong> Pracovní inzeráty vyloženě pro juniory, ať to nemusíš složitě hledat a třídit jinde</li>
+<li><strong><a href="https://junior.guru/news/">Inspirace</a>:</strong> Podcasty, přednášky, články a další zdroje, které tě posunou a namotivují</li>
+</ul>]]></description>
+      <guid isPermaLink="false">podcast.junior.guru#0011</guid>
+      <enclosure url="https://podcast.junior.guru/episodes/0011.mp3" length="23825167" type="audio/mpeg"/>
+      <itunes:duration>28:22</itunes:duration>
+      <pubDate>Thu, 15 Dec 2022 01:42:42 +0100</pubDate>
+      <itunes:image href="https://junior.guru/static/avatars-participants/lukas-konarovsky.jpg"/>
+      <itunes:episode>12</itunes:episode>
+      <podcast:episode display="#11">12</podcast:episode>
+    </item>
+    <item>
+      <title>#12 Veronika Gabrielová (Aimful) o efektivním kariérním růstu</title>
+      <link>https://junior.guru/podcast/12/</link>
+      <description><![CDATA[<p>Do prvního dílu v novém roce si Pája pozvala Verču Gabrielovou. Ačkoliv IT na škole nikdy nestudovala, má dnes za sebou už sedmiletou kariéru vývojářky. Jak se dostala k první práci v oboru? Jak by radila zpracovávat zpětnou vazbu? Jak na zákeřný impostor syndrom? Proč je dobré chodit na pohovory, i když práci zrovna nehledáte? Co by udělala jinak při vyjednávání o mzdě?</p>
+<hr>
+<p>Jsou věci, se kterými ti kurz programování nepomůže. A proto je tady junior.guru. Průvodce na cestě do IT, který s tebou bude od začátku až do konce.</p>
+<ul>
+<li><strong><a href="https://junior.guru/club/">Klub</a>:</strong> Komunita na Discordu pro začátečníky a všechny, kdo jim chtějí pomáhat</li>
+<li><strong><a href="https://junior.guru/handbook/">Příručka</a>:</strong> Rady, které ti pomůžou se základní orientací a se sháněním práce v oboru</li>
+<li><strong><a href="https://junior.guru/courses/">Kurzy</a>:</strong> Katalog kurzů, ať si můžeš vybrat podle parametrů a recenzí, ne podle reklamy</li>
+<li><strong><a href="https://junior.guru/jobs/">Práce</a>:</strong> Pracovní inzeráty vyloženě pro juniory, ať to nemusíš složitě hledat a třídit jinde</li>
+<li><strong><a href="https://junior.guru/news/">Inspirace</a>:</strong> Podcasty, přednášky, články a další zdroje, které tě posunou a namotivují</li>
+</ul>]]></description>
+      <guid isPermaLink="false">podcast.junior.guru#0012</guid>
+      <enclosure url="https://podcast.junior.guru/episodes/0012.mp3" length="30450081" type="audio/mpeg"/>
+      <itunes:duration>36:15</itunes:duration>
+      <pubDate>Sun, 15 Jan 2023 01:42:42 +0100</pubDate>
+      <itunes:image href="https://junior.guru/static/avatars-participants/veronika-gabrielova.jpg"/>
+      <itunes:episode>13</itunes:episode>
+      <podcast:episode display="#12">13</podcast:episode>
+    </item>
+    <item>
+      <title>#13 Tomáš Ervín Dombrovský (LMC) o IT sektoru v Česku</title>
+      <link>https://junior.guru/podcast/13/</link>
+      <description><![CDATA[<p>Pája si tentokrát pozvala Tomáše Ervína Dombrovského, hlavního analytika firmy LMC (jobs.cz, prace.cz, seduo.cz). Proč je u nás pořád problém sehnat dostatek programátorů? Jak si udržet přehled o své ceně na trhu práce? Sebere umělá inteligence programátorům práci?</p>
+<hr>
+<p>Jsou věci, se kterými ti kurz programování nepomůže. A proto je tady junior.guru. Průvodce na cestě do IT, který s tebou bude od začátku až do konce.</p>
+<ul>
+<li><strong><a href="https://junior.guru/club/">Klub</a>:</strong> Komunita na Discordu pro začátečníky a všechny, kdo jim chtějí pomáhat</li>
+<li><strong><a href="https://junior.guru/handbook/">Příručka</a>:</strong> Rady, které ti pomůžou se základní orientací a se sháněním práce v oboru</li>
+<li><strong><a href="https://junior.guru/courses/">Kurzy</a>:</strong> Katalog kurzů, ať si můžeš vybrat podle parametrů a recenzí, ne podle reklamy</li>
+<li><strong><a href="https://junior.guru/jobs/">Práce</a>:</strong> Pracovní inzeráty vyloženě pro juniory, ať to nemusíš složitě hledat a třídit jinde</li>
+<li><strong><a href="https://junior.guru/news/">Inspirace</a>:</strong> Podcasty, přednášky, články a další zdroje, které tě posunou a namotivují</li>
+</ul>]]></description>
+      <guid isPermaLink="false">podcast.junior.guru#0013</guid>
+      <enclosure url="https://podcast.junior.guru/episodes/0013.mp3" length="23300367" type="audio/mpeg"/>
+      <itunes:duration>27:44</itunes:duration>
+      <pubDate>Thu, 16 Feb 2023 01:42:42 +0100</pubDate>
+      <itunes:image href="https://junior.guru/static/avatars-participants/tomas-ervin-dombrovsky.jpg"/>
+      <itunes:episode>14</itunes:episode>
+      <podcast:episode display="#13">14</podcast:episode>
+    </item>
+    <item>
+      <title>#14 Lukáš Kubec (Green Fox Academy) o cestě z KFC na software developera a mentora programování</title>
+      <link>https://junior.guru/podcast/14/</link>
+      <description><![CDATA[<p>Od Lukáše se v novém díle podcastu dozvíte, jaká byla jeho cesta od zaměstnance KFC až k pozici software developera ve společnosti MIBCON. Proč si pro svoji rekvalifikaci zvolil bootcamp od Green Fox Academy? Proč se později rozhodl pokračovat jako mentor? Co by v obecné rovině doporučil lidem, kteří uvažují o kariérní změně?</p>
+<hr>
+<p>Jsou věci, se kterými ti kurz programování nepomůže. A proto je tady junior.guru. Průvodce na cestě do IT, který s tebou bude od začátku až do konce.</p>
+<ul>
+<li><strong><a href="https://junior.guru/club/">Klub</a>:</strong> Komunita na Discordu pro začátečníky a všechny, kdo jim chtějí pomáhat</li>
+<li><strong><a href="https://junior.guru/handbook/">Příručka</a>:</strong> Rady, které ti pomůžou se základní orientací a se sháněním práce v oboru</li>
+<li><strong><a href="https://junior.guru/courses/">Kurzy</a>:</strong> Katalog kurzů, ať si můžeš vybrat podle parametrů a recenzí, ne podle reklamy</li>
+<li><strong><a href="https://junior.guru/jobs/">Práce</a>:</strong> Pracovní inzeráty vyloženě pro juniory, ať to nemusíš složitě hledat a třídit jinde</li>
+<li><strong><a href="https://junior.guru/news/">Inspirace</a>:</strong> Podcasty, přednášky, články a další zdroje, které tě posunou a namotivují</li>
+</ul>]]></description>
+      <guid isPermaLink="false">podcast.junior.guru#0014</guid>
+      <enclosure url="https://podcast.junior.guru/episodes/0014.mp3" length="26681395" type="audio/mpeg"/>
+      <itunes:duration>31:46</itunes:duration>
+      <pubDate>Thu, 16 Mar 2023 01:42:42 +0100</pubDate>
+      <itunes:image href="https://junior.guru/static/avatars-participants/lukas-kubec.jpg"/>
+      <itunes:episode>15</itunes:episode>
+      <podcast:episode display="#14">15</podcast:episode>
+    </item>
+    <item>
+      <title>#15 Marián Kameništák (kamenistak.com) o pohovorech a kariéře v IT</title>
+      <link>https://junior.guru/podcast/15/</link>
+      <description><![CDATA[<p>Poslechněte si Mariána, který byl možná u tisícovky pohovorů. Proč ho spíš zaujme uchazeč, který působí sebevědomě a stojí si za svým názorem? Co si myslí o perfekcionismu? Proč je důležité si v nové práci nejdříve vybudovat vztahy? A jaké další triky by do začátku doporučil?</p>
+<hr>
+<p>Jsou věci, se kterými ti kurz programování nepomůže. A proto je tady junior.guru. Průvodce na cestě do IT, který s tebou bude od začátku až do konce.</p>
+<ul>
+<li><strong><a href="https://junior.guru/club/">Klub</a>:</strong> Komunita na Discordu pro začátečníky a všechny, kdo jim chtějí pomáhat</li>
+<li><strong><a href="https://junior.guru/handbook/">Příručka</a>:</strong> Rady, které ti pomůžou se základní orientací a se sháněním práce v oboru</li>
+<li><strong><a href="https://junior.guru/courses/">Kurzy</a>:</strong> Katalog kurzů, ať si můžeš vybrat podle parametrů a recenzí, ne podle reklamy</li>
+<li><strong><a href="https://junior.guru/jobs/">Práce</a>:</strong> Pracovní inzeráty vyloženě pro juniory, ať to nemusíš složitě hledat a třídit jinde</li>
+<li><strong><a href="https://junior.guru/news/">Inspirace</a>:</strong> Podcasty, přednášky, články a další zdroje, které tě posunou a namotivují</li>
+</ul>]]></description>
+      <guid isPermaLink="false">podcast.junior.guru#0015</guid>
+      <enclosure url="https://podcast.junior.guru/episodes/0015.mp3" length="25215247" type="audio/mpeg"/>
+      <itunes:duration>30:01</itunes:duration>
+      <pubDate>Sat, 15 Apr 2023 01:42:42 +0200</pubDate>
+      <itunes:image href="https://junior.guru/static/avatars-participants/marian-kamenistak.jpg"/>
+      <itunes:episode>16</itunes:episode>
+      <podcast:episode display="#15">16</podcast:episode>
+    </item>
+    <item>
+      <title>#16 Kateřina Lesch (Deloitte) o umělé inteligenci</title>
+      <link>https://junior.guru/podcast/16/</link>
+      <description><![CDATA[<p>Trénovala NLP (natural language processing) modely, ještě než to bylo cool. Teď je Katka senior manager AI and Data v Deloitte. Jak se dívá na vývoj umělé inteligence? Do jaké míry je dobré rozumět principům AI modelů, pokud je chcete používat? A potřebujete formální vzdělání, abyste se na poli AI prosadili?</p>
+<hr>
+<p>Jsou věci, se kterými ti kurz programování nepomůže. A proto je tady junior.guru. Průvodce na cestě do IT, který s tebou bude od začátku až do konce.</p>
+<ul>
+<li><strong><a href="https://junior.guru/club/">Klub</a>:</strong> Komunita na Discordu pro začátečníky a všechny, kdo jim chtějí pomáhat</li>
+<li><strong><a href="https://junior.guru/handbook/">Příručka</a>:</strong> Rady, které ti pomůžou se základní orientací a se sháněním práce v oboru</li>
+<li><strong><a href="https://junior.guru/courses/">Kurzy</a>:</strong> Katalog kurzů, ať si můžeš vybrat podle parametrů a recenzí, ne podle reklamy</li>
+<li><strong><a href="https://junior.guru/jobs/">Práce</a>:</strong> Pracovní inzeráty vyloženě pro juniory, ať to nemusíš složitě hledat a třídit jinde</li>
+<li><strong><a href="https://junior.guru/news/">Inspirace</a>:</strong> Podcasty, přednášky, články a další zdroje, které tě posunou a namotivují</li>
+</ul>]]></description>
+      <guid isPermaLink="false">podcast.junior.guru#0016</guid>
+      <enclosure url="https://podcast.junior.guru/episodes/0016.mp3" length="20931270" type="audio/mpeg"/>
+      <itunes:duration>24:55</itunes:duration>
+      <pubDate>Thu, 01 Jun 2023 01:42:42 +0200</pubDate>
+      <itunes:image href="https://junior.guru/static/avatars-participants/katerina-lesch.jpg"/>
+      <itunes:episode>17</itunes:episode>
+      <podcast:episode display="#16">17</podcast:episode>
+    </item>
+    <item>
+      <title>#17 Matěj Kotrba (Fuckupy v IT, Očima ajťáka) o tom, jak se recruiterům dostat do hledáčku</title>
+      <link>https://junior.guru/podcast/17/</link>
+      <description><![CDATA[<p>Matěj Kotrba je IT headhunter, tvůrce podcastu Fuckupy v IT a projektu Očima ajťáka. Jak se i jako junior dostat do hledáčku IT recruitera? Jak si najít první práci? Proč být nejen při hledání práce proaktivní? Jak se na pohovoru postavit k otázce peněz a o kolik je rozumné si říct?</p>
+<hr>
+<p>Jsou věci, se kterými ti kurz programování nepomůže. A proto je tady junior.guru. Průvodce na cestě do IT, který s tebou bude od začátku až do konce.</p>
+<ul>
+<li><strong><a href="https://junior.guru/club/">Klub</a>:</strong> Komunita na Discordu pro začátečníky a všechny, kdo jim chtějí pomáhat</li>
+<li><strong><a href="https://junior.guru/handbook/">Příručka</a>:</strong> Rady, které ti pomůžou se základní orientací a se sháněním práce v oboru</li>
+<li><strong><a href="https://junior.guru/courses/">Kurzy</a>:</strong> Katalog kurzů, ať si můžeš vybrat podle parametrů a recenzí, ne podle reklamy</li>
+<li><strong><a href="https://junior.guru/jobs/">Práce</a>:</strong> Pracovní inzeráty vyloženě pro juniory, ať to nemusíš složitě hledat a třídit jinde</li>
+<li><strong><a href="https://junior.guru/news/">Inspirace</a>:</strong> Podcasty, přednášky, články a další zdroje, které tě posunou a namotivují</li>
+</ul>]]></description>
+      <guid isPermaLink="false">podcast.junior.guru#0017</guid>
+      <enclosure url="https://podcast.junior.guru/episodes/0017.mp3" length="22929167" type="audio/mpeg"/>
+      <itunes:duration>27:18</itunes:duration>
+      <pubDate>Sat, 01 Jul 2023 01:42:42 +0200</pubDate>
+      <itunes:image href="https://junior.guru/static/avatars-participants/matej-kotrba.jpg"/>
+      <itunes:episode>18</itunes:episode>
+      <podcast:episode display="#17">18</podcast:episode>
+    </item>
+    <item>
+      <title>#18 Anastázie Sedláková (DNAnexus) nejen o mateřství a kariéře v IT</title>
+      <link>https://junior.guru/podcast/18/</link>
+      <description><![CDATA[<p>Nasťa Sedláková je bioinformatička, data analytička a lektorka programování. Mimo to je i maminkou třech malých dětí. Jak skloubit rodičovství a kariéru? Jak si říct o částečný úvazek? Co všechno se dá udělat, aby se vám žilo a pracovalo líp s vašimi dětmi? Proč se nemá začátečník bát udělat chybu? A do kterých IT komunit se vyplatí zapojit?</p>
+<hr>
+<p>Jsou věci, se kterými ti kurz programování nepomůže. A proto je tady junior.guru. Průvodce na cestě do IT, který s tebou bude od začátku až do konce.</p>
+<ul>
+<li><strong><a href="https://junior.guru/club/">Klub</a>:</strong> Komunita na Discordu pro začátečníky a všechny, kdo jim chtějí pomáhat</li>
+<li><strong><a href="https://junior.guru/handbook/">Příručka</a>:</strong> Rady, které ti pomůžou se základní orientací a se sháněním práce v oboru</li>
+<li><strong><a href="https://junior.guru/courses/">Kurzy</a>:</strong> Katalog kurzů, ať si můžeš vybrat podle parametrů a recenzí, ne podle reklamy</li>
+<li><strong><a href="https://junior.guru/jobs/">Práce</a>:</strong> Pracovní inzeráty vyloženě pro juniory, ať to nemusíš složitě hledat a třídit jinde</li>
+<li><strong><a href="https://junior.guru/news/">Inspirace</a>:</strong> Podcasty, přednášky, články a další zdroje, které tě posunou a namotivují</li>
+</ul>]]></description>
+      <guid isPermaLink="false">podcast.junior.guru#0018</guid>
+      <enclosure url="https://podcast.junior.guru/episodes/0018.mp3" length="27467315" type="audio/mpeg"/>
+      <itunes:duration>32:42</itunes:duration>
+      <pubDate>Tue, 01 Aug 2023 01:42:42 +0200</pubDate>
+      <itunes:image href="https://junior.guru/static/avatars-participants/anastazie-sedlakova.jpg"/>
+      <itunes:episode>19</itunes:episode>
+      <podcast:episode display="#18">19</podcast:episode>
+    </item>
+    <item>
+      <title>#19 Vilibald Wanča (Oracle, YBYR podcast) o tom, co se vám může hodit kromě programování</title>
+      <link>https://junior.guru/podcast/19/</link>
+      <description><![CDATA[<p>Vilda Wanča je ostřílený IT profesionál, aktuálně software architect v Oracle a spolutvůrce podcastu YBYR. Měli byste řešit, jaký máte operační systém, nebo jak výkonný je váš procesor? Můžete být dobří programátoři, i když vám nešla matika? K čemu se hodí teoretická informatika a jak s ní začít?</p>
+<hr>
+<p>Jsou věci, se kterými ti kurz programování nepomůže. A proto je tady junior.guru. Průvodce na cestě do IT, který s tebou bude od začátku až do konce.</p>
+<ul>
+<li><strong><a href="https://junior.guru/club/">Klub</a>:</strong> Komunita na Discordu pro začátečníky a všechny, kdo jim chtějí pomáhat</li>
+<li><strong><a href="https://junior.guru/handbook/">Příručka</a>:</strong> Rady, které ti pomůžou se základní orientací a se sháněním práce v oboru</li>
+<li><strong><a href="https://junior.guru/courses/">Kurzy</a>:</strong> Katalog kurzů, ať si můžeš vybrat podle parametrů a recenzí, ne podle reklamy</li>
+<li><strong><a href="https://junior.guru/jobs/">Práce</a>:</strong> Pracovní inzeráty vyloženě pro juniory, ať to nemusíš složitě hledat a třídit jinde</li>
+<li><strong><a href="https://junior.guru/news/">Inspirace</a>:</strong> Podcasty, přednášky, články a další zdroje, které tě posunou a namotivují</li>
+</ul>]]></description>
+      <guid isPermaLink="false">podcast.junior.guru#0019</guid>
+      <enclosure url="https://podcast.junior.guru/episodes/0019.mp3" length="27461830" type="audio/mpeg"/>
+      <itunes:duration>32:42</itunes:duration>
+      <pubDate>Wed, 01 Nov 2023 01:42:42 +0100</pubDate>
+      <itunes:image href="https://junior.guru/static/avatars-participants/vilibald-wanca.jpg"/>
+      <itunes:episode>20</itunes:episode>
+      <podcast:episode display="#19">20</podcast:episode>
+    </item>
+    <item>
+      <title>#20 Karolina Surma a Petr Viktorin (Red Hat) o tom, jaké jsou začátky ve firmě z pohledu juniora a seniora</title>
+      <link>https://junior.guru/podcast/20/</link>
+      <description><![CDATA[<p>Juniorka Kája a senior Petr společně pracovali v Red Hatu. Poznali se díky komunitě PyLadies. Jak každý z nich vnímal Kájin začátek v práci? Jak se staví k impostor syndromu? Jak zvládají skloubit pracovní život, osobní, a ještě se aktivně zapojovat v Python komunitě?</p>
+<hr>
+<p>Jsou věci, se kterými ti kurz programování nepomůže. A proto je tady junior.guru. Průvodce na cestě do IT, který s tebou bude od začátku až do konce.</p>
+<ul>
+<li><strong><a href="https://junior.guru/club/">Klub</a>:</strong> Komunita na Discordu pro začátečníky a všechny, kdo jim chtějí pomáhat</li>
+<li><strong><a href="https://junior.guru/handbook/">Příručka</a>:</strong> Rady, které ti pomůžou se základní orientací a se sháněním práce v oboru</li>
+<li><strong><a href="https://junior.guru/courses/">Kurzy</a>:</strong> Katalog kurzů, ať si můžeš vybrat podle parametrů a recenzí, ne podle reklamy</li>
+<li><strong><a href="https://junior.guru/jobs/">Práce</a>:</strong> Pracovní inzeráty vyloženě pro juniory, ať to nemusíš složitě hledat a třídit jinde</li>
+<li><strong><a href="https://junior.guru/news/">Inspirace</a>:</strong> Podcasty, přednášky, články a další zdroje, které tě posunou a namotivují</li>
+</ul>]]></description>
+      <guid isPermaLink="false">podcast.junior.guru#0020</guid>
+      <enclosure url="https://podcast.junior.guru/episodes/0020.mp3" length="32315224" type="audio/mpeg"/>
+      <itunes:duration>38:28</itunes:duration>
+      <pubDate>Thu, 01 Feb 2024 01:42:42 +0100</pubDate>
+      <itunes:image href="https://junior.guru/static/avatars-participants/redhat.jpg"/>
+      <itunes:episode>21</itunes:episode>
+      <podcast:episode display="#20">21</podcast:episode>
+    </item>
+  </channel>
+</rss>

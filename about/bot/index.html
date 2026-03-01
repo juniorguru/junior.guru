@@ -1,0 +1,734 @@
+<html lang="cs" data-updated-at="2026-03-01 04:51:46.440851+00:00">
+  <head prefix="og: https://ogp.me/ns# website: https://ogp.me/ns/website#">
+    <meta charset="utf-8">
+    <link rel="canonical" href="https://junior.guru/about/bot/">
+
+    
+      <title>Co umí kuře, klubový Discord bot</title>
+    
+
+    
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="Accept-CH" content="DPR,Viewport-Width,Width,Save-Data">
+
+      <link rel="dns-prefetch" href="https://sa.junior.guru">
+
+      <link rel="stylesheet" href="../../static/css/index.css?hash=ffadbe8df279b635d171c7dc67f58c62">
+      <link rel="preload" href="../../static/assets/bootstrap-icons.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+      <script defer src="../../static/js/index.js?hash=c3b96dc57a2ce60e5b6434a40a4b9e3d"></script>
+
+      
+        <meta property="og:title" content="Co umí kuře, klubový Discord bot">
+        <meta property="og:url" content="https://junior.guru/about/bot/">
+      
+      <meta property="og:type" content="website">
+      <meta property="og:locale" content="cs_CZ">
+
+      <link href="https://mastodonczech.cz/@honzajavorek" rel="me">
+      <meta name="fediverse:creator" content="@honzajavorek@mastodonczech.cz">
+      <meta name="twitter:creator" content="@honzajavorek">
+
+      
+      <meta property="og:image" content="https://junior.guru/static/thumbnails/c872c1be2434d1be392c0b65b09f7b9038e20efaee6ae1faca1fccc529e320a8.png">
+      <meta property="og:image:width" content="1200">
+      <meta property="og:image:height" content="630">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image" content="https://junior.guru/static/thumbnails/c872c1be2434d1be392c0b65b09f7b9038e20efaee6ae1faca1fccc529e320a8.png">
+      
+
+      
+    
+  </head>
+
+<body>
+  
+  <header id="header" class="mainnav">
+    <nav class="mainnav-container">
+      <a class="mainnav-brand" href="../../">
+        
+<img src="../../static/logo.svg" alt="logo junior.guru" width="90" height="40">
+
+      </a>
+      <div class="mainnav-buttons">
+        
+        <a href="../../love/" class="love-heart" title="Klikni!">
+          <i class="bi bi-heart-fill"></i>
+        </a>
+        
+      </div>
+      
+      <ul class="mainnav-items">
+        
+        <li class="mainnav-item">
+          <a class="mainnav-link" href="../../club/">
+            Klub
+          </a>
+        </li>
+        
+        <li class="mainnav-item">
+          <a class="mainnav-link" href="../../handbook/">
+            Příručka
+          </a>
+        </li>
+        
+        <li class="mainnav-item">
+          <a class="mainnav-link" href="../../courses/">
+            Kurzy
+          </a>
+        </li>
+        
+        <li class="mainnav-item">
+          <a class="mainnav-link" href="../../candidates/">
+            Práce
+          </a>
+        </li>
+        
+        <li class="mainnav-item">
+          <a class="mainnav-link" href="../../news/">
+            Inspirace
+          </a>
+        </li>
+        
+      </ul>
+      
+    </nav>
+  </header>
+
+  
+
+  <hr class="visually-hidden">
+
+  
+<div class="main main-sidebar">
+  <div class="content-container">
+    <main class="content document">
+      
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="#toc">
+                Info
+              </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Klubový Discord bot
+            </li>
+          </ol>
+        </nav>
+
+        <h1 id="kure-klubovy-discord-bot">Kuře, klubový Discord bot<a class="headerlink" href="#kure-klubovy-discord-bot" title="Odkaz na tuto sekci">#</a></h1>
+<div class="lead">
+    <p>Spoustu věcí v <a href="../../club/">klubu pro juniory</a> dělá Discord bot, který se jmenuje kuře. Jo, prostě kuře. Tohle je jeho dokumentace.</p>
+  </div>
+
+<div class="document-toc">
+<ul>
+<li><a href="#co-umi-rychle-kure">Co umí rychlé kuře</a></li>
+<li><a href="#co-umi-pomale-kure">Co umí pomalé kuře</a></li>
+<li><a href="#infrastruktura-kurete">Infrastruktura kuřete</a></li>
+<li><a href="#proc-jsou-rychle-a-pomale-kure-zvlast">Proč jsou rychlé a pomalé kuře zvlášť</a></li>
+<li><a href="#co-jeste-se-tvari-jako-kure">Co ještě se tváří jako kuře</a></li>
+</ul>
+</div>
+<h2 id="co-umi-rychle-kure">Co umí rychlé kuře<a class="headerlink" href="#co-umi-rychle-kure" title="Odkaz na tuto sekci">#</a></h2>
+<p>Je schopno reagovat okamžitě:</p>
+<ul>
+<li><strong>Vytváří vlákna</strong> - Když někdo napíše zprávu do kanálů #ahoj, #past-vedle-pasti, nebo #můj-dnešní-objev, kuře pod to okamžitě vytvoří vlákno k diskuzi.</li>
+<li><strong>Vítá</strong> - V kanálu #ahoj do vlákna ještě hned přidává každému uvítání v klubu se základními informacemi. Do vlákna přidá lidi, kteří se dobrovolně přihlásili k vítání nováčků.</li>
+<li><strong>Reaguje</strong> - Když někdo vloží ručně inzerát do #práce-inzeráty, kuře reaguje „ĎK“. Když někdo napíše do #práce-hledám, kuře reaguje 👍</li>
+<li><strong>Dává zpětnou vazbu na GitHub profil</strong> - Když někdo v #cv-github-linkedin vytvoří nové vlákno, tak se kuře podívá, co v něm je. Když tam najde CVčko nebo LinkedIn profil, napíše k tomu zprávu se základními informacemi a poprosí ostatní členy, aby se na to podívali. Pokud tam najde odkaz na GitHub profil, spustí <a href="https://github.com/juniorguru/hen">nástroj</a>, který to umí projít a poskytnout zpětnou vazbu. Tu do Discord vlákna přepošle barevně naformátovanou.</li>
+</ul>
+<h2 id="co-umi-pomale-kure">Co umí pomalé kuře<a class="headerlink" href="#co-umi-pomale-kure" title="Odkaz na tuto sekci">#</a></h2>
+<p>Spouští se zhruba jednou denně. Kód „pomalého kuřete“ se prolíná se vším ostatním, co je kolem junior.guru automatizováno. Věci, které nějak souvisí s Discordem jsou tyto:</p>
+<ul>
+<li><strong>Vytváří týdenní souhrny</strong> - Každý týden do #oznámení pošle zprávu, která se snaží upozornit na nejzajímavější věci, které se v klubu řešily.</li>
+<li><strong>Vytváří nápovědu a pomáhá se zaučením nováčků</strong> - Podle předpřipravených souborů vytváří a udržuje kanál #klub-tipy, kde je nápověda na používání klubu. Nováčci v klubu mají tajný kanál, do kterého kuře jednou denně postupně posílá jednotlivé tipy, aby si je přečetli.</li>
+<li><strong>Upozorňuje na přednášky</strong> - Když je naplánována klubová akce, do #oznámení kuře na akci posílá pozvánku. Nejdřív týden před akcí, pak den před akcí, pak v den akce.</li>
+<li><strong>Spravuje průvodce serverem</strong> - V Discordovém průvodci je několik kanálů, které kuře spravuje. Do jednoho vypisuje základní informace a rozcestník, do dalšího seznam odkazů na záznamy klubových akcí, do dalšího seznam sponzorů junior.guru, do dalšího nápovědu k rolím.</li>
+<li><strong>Vytváří vlákna pro týdenní plány</strong> - Každé pondělí založí nové vlákno do #týdenní-plány s označením aktuálního týdne, aby tam členové mohli psát svoje plány.</li>
+<li><strong>Spravuje některé role</strong> - Kuře automaticky přiděluje hromadu rolí, ať už podle toho, jaké mají předplatné, nebo jestli jsou v klubu dlouho, nebo jestli hodně pomáhají (přepočítává, kolik člověk v poslední době dostal pozitivních reakcí na svoje příspěvky).</li>
+<li><strong>Spravuje zájmové skupinky</strong> - Když si někdo v <em>Kanály a role</em> navolí, že ho baví třeba JavaScript, dostane od Discordu odpovídající roli, např. „Zajímá mě: JavaScript“. Kuře pak projde #skupinky a lidi podle jejich zájmů přidá do vláken, které by je mohly zajímat. Pokud se následně sami odeberou, už je nepřidává.</li>
+<li><strong>Informuje v místních skupinkách o srazech</strong> - Kuře si ze <a href="https://github.com/juniorguru/plucker">scraperů</a>, které běží na <a href="https://apify.com/">Apify</a>, stahuje informace o plánovaných programátorských srazech a jiných živých akcích. Ty pak třídí podle místa a dává o nich hezky naformátovanou správou vědět do místních skupinek. Každá skupinka si rozhoduje o tom, jaká místa odebírá, např. Pardubice odebírají akce i z Hradce.</li>
+<li><strong>Třídí pracovní inzeráty a posílá je do klubu</strong> - Kuře si ze <a href="https://github.com/juniorguru/plucker">scraperů</a>, které běží na <a href="https://apify.com/">Apify</a>, stáhne pracovní inzeráty, pročistí data a přes LLM je vytřídí, aby zbyly ty vhodné pouze pro juniory. Co zbude nechá zobrazit na webu a naposílá to hezky naformátované na Discord do #práce-inzeráty. Protože Discord má omezený počet štítků, přepočítává je (slučuje podobné technologie pod jeden štítek). Sbírá počty reakcí a komentářů pod inzeráty, aby šly zobrazit na webu. Do tajného kanálu Honzovi dává náhodný vzorek vyřazených inzerátů, aby to mohl kontrolovat.</li>
+<li><strong>Eviduje ručně vložené inzeráty</strong> - Pokud někdo ručně vložil pracovní inzerát do #práce-inzeráty, kuře je vede v patrnosti a upravuje připnutý příspěvek tak, aby na všechny aktuální odkazoval. Díky tomu (snad) nezapadnou v záplavě automaticky stahovaných inzerátů.</li>
+<li><strong>Seskládává newsletter a dává o něm vědět v klubu</strong> - Pomocí LLM kuře dělá shrnutí toho, co se za poslední měsíc probíralo v klubu. Pak vezme spoustu dalších věcí a připraví z toho v <a href="https://buttondown.com/">Buttondown</a> jednou za měsíc newsletter. Honza si přečte výsledek, udělá úpravy a odkline odeslání. Odeslaný newsletter kuře archivuje a dává o něm vědět do #oznámení na Discordu.</li>
+<li><strong>Seskládává podcast a dává o něm vědět v klubu</strong> - Kuře eviduje vydané epizody podcastu. Když vyjde nová, dává o ní vědět do #oznámení na Discordu.</li>
+<li><strong>Upozorňuje na Pondělní povídání</strong> - Každé pondělí píše zprávu do #oznámení, kde lidi upzorňuje na Pondělní povídání.</li>
+<li><strong>Spravuje špendlíky</strong> - Pokud někdo dá na nějaký příspěvek reakci 📌, pomalé kuře mu tento příspěvek uloží do soukromé zprávy.</li>
+<li><strong>Vítá</strong> - Když někdo napíše zprávu do kanálu #ahoj a ještě pod tím není vítací vlákno, pomalé kuře jej vytvoří a člověka uvítá zprávou se základními informacemi. Do vlákna přidá lidi, kteří se dobrovolně přihlásili k vítání nováčků. Když kuře vidí, že do klubu přišel člověk, který už v něm předtím byl, dá na zprávu o jeho příchodu reakce, aby na to upozornilo.</li>
+<li><strong>Upravuje trvanlivost vláken v klubu</strong> - U všech fór v klubu automaticky prodlužuje tzv. <em>auto archive duration</em> na co nejdelší, aby se jednotlivá vlákna archivovala až za týden a ne třeba za den, což je výchozí chování Discordu.</li>
+<li><strong>Reportuje Honzovi</strong> - Do tajného kanálu kuře Honzovi píše, že někdo přišel do klubu a co napsal do políčka „odkud přicházíš“. Nebo že někdo ruší předplatné a co uvedl jako důvod.</li>
+</ul>
+<h2 id="infrastruktura-kurete">Infrastruktura kuřete<a class="headerlink" href="#infrastruktura-kurete" title="Odkaz na tuto sekci">#</a></h2>
+<p>Backend našeho Discord bota je dvojí:</p>
+<ul>
+<li><strong>Rychlé kuře</strong> - Mrňavá appka s <a href="https://github.com/juniorguru/chick/">vlastním repozitářem</a>, která <a href="https://juniorguru-chick.fly.dev/">neustále běží</a> na <a href="https://fly.io/">Fly</a> a má na starosti pár věcí, kde je potřeba okamžitá odezva. Je to skutečný bot, který se jako kuře připojí na Discord a reaguje na věci, které se tam napíšou. Tento kód ale nic nepřepočitává, nic nikam neukládá a neeviduje si žádný stav čehokoliv. Prostě jen reaguje na skutečnosti: zakládá vlákna, rozdává emoji…</li>
+<li><strong>Pomalé kuře</strong> - Minimálně jednou denně v noci, nebo pokaždé, když Honza udělá <code>git push</code> do <a href="https://github.com/juniorguru/junior.guru">hlavního repozitáře s kódem</a>, se spustí <a href="https://app.circleci.com/pipelines/github/juniorguru/junior.guru?branch=main">build na CircleCI</a>. V rámci něj proběhnou desítky skriptů, které něco stahují, synchronizují, přepočítávají, vše uloží do SQLite a nakonec z těch dat vybuildí celou junior.guru MkDocs webovku, kterou si právě čteš. Skripty, které něco dělají na Discordu, se tam připojují a navenek tváří jako kuře.</li>
+</ul>
+<h2 id="proc-jsou-rychle-a-pomale-kure-zvlast">Proč jsou rychlé a pomalé kuře zvlášť<a class="headerlink" href="#proc-jsou-rychle-a-pomale-kure-zvlast" title="Odkaz na tuto sekci">#</a></h2>
+<p>Celé junior.guru je navrženo tak, aby jej Honza mohl provozovat v jednom člověku. Jenže každou aplikaci, která má běžící <em>runtime</em>, je potřeba monitorovat, a když spadne, je potřeba řešit, proč spadla, a nahodit ji, aby služby a funkce, které na ní závisí, fungovaly.</p>
+<p>V tomto směru je z hlediska <em>work-life balance</em> lepší noční přepočet. Buď se vše povede, nebo to spadne, ale pak má člověk spoustu času to opravit. Webovka je statická a běží, i když třeba v mírně neaktualizované verzi. Fungování klubu není krátkodobě závislé na tom, jestli někde spadl nějaký složitý skript. Když začně <em>nightly build</em> o víkendu padat, Honza to opraví v pondělí, pohoda.</p>
+<p>Dříve ani rychlé kuře neexistovalo, klub si vystačil s pomalým. Časem ale Honza uznal, že UX by v některých věcech byla o dost lepší, kdyby se odehrály okamžitě. A tak vzniklo rychlé kuře, které sice jede pořád a může kdykoliv spadnout, ale zase je dost jednoduché na to, aby nebylo obtížné jej restartovat, nebo rychle opravit. A když na pár dní spadne pomalé kuře, základní UX v klubu tím není zasaženo.</p>
+<h2 id="co-jeste-se-tvari-jako-kure">Co ještě se tváří jako kuře<a class="headerlink" href="#co-jeste-se-tvari-jako-kure" title="Odkaz na tuto sekci">#</a></h2>
+<p>Robotickou identitu kuřete si propůjčují i jiné systémy, které komunikují s členy klubu. Například pro správu uživatelských účtu a placení se používá systém <a href="https://memberful.com/">Memberful</a>. Ten posílá různé e-maily, např. že vyprší členství, nebo že se nepovedlo strhnout platbu z karty. Tyto jsou psány jako „Ahoj, tady kuře“, aby se rozlišilo, že jsou automatické a nepíše je přímo Honza, ale s kódem Discord bota nemají vlastně nic společného.</p>
+
+        <div class="pagination">
+          <div class="pagination-control">
+          
+          
+            <a href="../club/" class="pagination-button" title="Předchozí téma">
+              <i class="bi bi-arrow-left"></i>
+              Vše o klubu
+            </a>
+          
+          </div>
+          <div class="pagination-control">
+          
+          
+            <a href="../handbook/" class="pagination-button" title="Další téma">
+              Vše o příručce
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          
+          </div>
+        </div>
+      
+    </main>
+
+    <nav id="toc" class="toc">
+      <div class="toc-container">
+        <h3 class="toc-heading">
+          <i class="bi bi-info-circle"></i> Info
+        </h3>
+        <ul class="toc-list">
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../">
+                Vše o projektu
+              </a>
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../contact/">
+                Provozovatel
+              </a>
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../mission/">
+                Mise a hodnoty
+              </a>
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../club/">
+                Vše o klubu
+              </a>
+            </li>
+          
+            <li class="toc-item active">
+              <a class="toc-link" href="./">
+                Klubový Discord bot
+              </a>
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../handbook/">
+                Vše o příručce
+              </a>
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../finances/">
+                Finanční výsledky
+              </a>
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../sponsors-partners/">
+                Sponzoři a partneři
+              </a>
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../web-usage/">
+                Návštěvnost webu
+              </a>
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../marketing/">
+                Marketing
+              </a>
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../women/">
+                Podpora žen v IT
+              </a>
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../code/">
+                Zdrojový kód
+              </a>
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../../coc/">
+                Pravidla chování
+              </a>
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../../tos/">
+                Obchodní podmínky
+              </a>
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../../privacy/">
+                Ochrana osobních údajů
+              </a>
+            </li>
+          
+            <li class="toc-item">
+              <a class="toc-link" href="../../faq/">
+                Klub: Otázky a odpovědi
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+  <hr class="visually-hidden">
+
+  <footer class="footer">
+    <div class="footer-section footer-promo">
+      <div class="footer-promo-item wide">
+        <h3 class="footer-heading"><i class="bi bi-envelope-paper-fill"></i> Novinky pravidelně v mailu</h3>
+        <form class="newsletter-container" id="email-form" method="post" action="https://buttondown.com/api/emails/embed-subscribe/juniorguru">
+          <p>
+            Zadej e-mail a přidej se k <strong>735 lidem</strong>, kteří sledují newsletter z junior.guru:
+          </p>
+          <fieldset class="newsletter-fieldset">
+            <div class="newsletter-email">
+              <input class="newsletter-email-control" type="email" id="newsletter-email" name="email">
+            </div>
+            <div class="newsletter-submit">
+              <input class="newsletter-submit-control" type="submit" value="Odebírat">
+            </div>
+          </fieldset>
+          <p class="newsletter-note">
+            <i class="bi bi-info-circle"></i> Tvůj e-mail se použije jen a pouze na zasílání novinek, které si můžeš kdykoliv zase odhlásit.
+            <a href="../../privacy/"> Zásady ochrany osobních údajů</a> popisují, jaká data o tobě junior.guru má a jak s nimi zachází.
+          </p>
+        </form>
+      </div>
+      <div class="footer-promo-item">
+        <h3 class="footer-subheading"><i class="bi bi-person-circle"></i> Příběhy juniorů</h3>
+        
+        <div class="footer-featured">
+          
+          
+<img src="../../static/avatars-participants/simon-koreny.jpg" alt="" width="100" height="100" loading="lazy" class="footer-featured-image">
+
+          <div class="footer-featured-body">
+            <a class="footer-featured-link" href="../../stories/simon-koreny/">Z barmana IT manažer. Teď mířím k roli firemního šamana, říká Šimon</a>
+          </div>
+        </div>
+        
+        <div class="footer-featured">
+          
+          
+<img src="../../static/avatars-participants/nina-brichackova.jpg" alt="" width="100" height="100" loading="lazy" class="footer-featured-image">
+
+          <div class="footer-featured-body">
+            <a class="footer-featured-link" href="../../stories/nina-brichackova/">Mnohdy ani sama firma nemá jasno v tom, koho chce nabrat, říká vývojářka Nina</a>
+          </div>
+        </div>
+        
+      </div>
+      <div class="footer-promo-item">
+        <h3 class="footer-subheading"><i class="bi bi-play-circle-fill"></i> Klubové akce</h3>
+        
+        <div class="footer-featured">
+          
+          
+<img src="../../static/avatars-participants/stepan-bechynsky.jpg" alt="" width="100" height="100" loading="lazy" class="footer-featured-image">
+
+          <div class="footer-featured-body">
+            <a class="footer-featured-link" href="../../events/60/">Jak se dělá Infrastructure as Code</a>
+          </div>
+        </div>
+        
+        <div class="footer-featured">
+          
+          
+<img src="../../static/avatars-participants/adam-vesecky.jpg" alt="" width="100" height="100" loading="lazy" class="footer-featured-image">
+
+          <div class="footer-featured-body">
+            <a class="footer-featured-link" href="../../events/59/">Jak se vzdělává a přemýšlí product-oriented vývojář v roce 2026</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="footer-section footer-address">
+      <ul class="footer-address-list">
+        <li class="footer-address-item">
+          
+<img src="../../static/logo-i.svg" alt="Logo junior.guru" width="90" height="40" loading="lazy" class="footer-address-logo">
+
+        </li>
+        <li class="footer-address-item">
+          <h3 class="footer-subheading">Projekt</h3>
+          Junior Guru<br>
+          stylizovaně „junior.guru“<br>
+          <a href="https://logo.junior.guru/" target="_blank" rel="noopener">logo a barvy</a>
+        </li>
+        <li class="footer-address-item">
+          <h3 class="footer-subheading">Provozovatel</h3>
+          Jan Javorek<br>
+          OSVČ, neplátce DPH<br>
+          IČO: <a href="https://ares.gov.cz/ekonomicke-subjekty?ico=74279858" target="_blank" rel="noopener">74279858</a><br>
+          Lupáčova 375/24<br>
+          130 00 Praha
+        </li>
+        <li class="footer-address-item footer-links">
+          <h3 class="footer-subheading">Kontakt a sociální sítě</h3>
+          <p class="footer-links-email"><a href="mailto:honza@junior.guru">honza@<!---->junior.guru</a></p>
+          <ul class="footer-links-icons footer-icons-list">
+            <li class="footer-icons-item">
+              <a href="https://www.youtube.com/@juniordotguru" target="_blank" rel="noopener">
+                <i class="bi bi-youtube" role="img" aria-label="YouTube"></i>
+              </a>
+            </li>
+            <li class="footer-icons-item">
+              <a href="https://www.linkedin.com/in/honzajavorek/" target="_blank" rel="noopener">
+                <i class="bi bi-linkedin" role="img" aria-label="LinkedIn"></i>
+              </a>
+            </li>
+            <li class="footer-icons-item">
+              <a href="../../club/">
+                <i class="bi bi-discord" role="img" aria-label="Discord"></i>
+              </a>
+            </li>
+            <li class="footer-icons-item">
+              <a href="https://mastodonczech.cz/@honzajavorek/tagged/juniorguru" target="_blank" rel="noopener">
+                <i class="bi bi-mastodon" role="img" aria-label="Mastodon"></i>
+              </a>
+            </li>
+            <li class="footer-icons-item">
+              <a href="https://github.com/juniorguru/" target="_blank" rel="noopener">
+                <i class="bi bi-github" role="img" aria-label="GitHub"></i>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div id="honza" class="footer-section footer-about">
+      <h3 class="footer-heading">Kdo to provozuje? Na čem vydělává?</h3>
+      <div class="footer-about-content">
+        <div class="footer-about-text">
+          
+<img src="../../static/avatars-participants/honza-javorek.jpg" alt="Honza Javorek" width="100" height="100" loading="lazy" class="footer-about-avatar">
+
+          <p>
+            Jmenuji se Honza Javorek a býval jsem obyčejný programátor. Díky dobrovolným aktivitám jsem se dostal k
+            pomáhání začátečníkům, a to mě hodně bavilo. Časem mi přišlo, že chybí jedno místo, kde by byly všechny
+            pracovní nabídky pro juniory, nezávislé informace a základní praktické rady. Proto jsem odešel z korporátu a
+            založil tento projekt.
+          </p>
+          <p>
+            Chci začátečníkům zpříjemnit cestu k jejich první práci v IT a dodat jim kultivovanou podpůrnou komunitu,
+            kde budou vítáni a mezi svými. Chci nezávisle informovat o vzdělávacích agenturách a propojovat juniory s
+            firmami, kam by mohli nastoupit. Chci, aby každý Luďan z Mostu, každá puberťačka, každý vědec nebo každá
+            máma na rodičovské měli po ruce návod, jak začít s programováním.
+          </p>
+          <p>
+            Tento web má <a href="../">veřejná čísla</a>, <a href="https://github.com/juniorguru/">otevřený zdrojový kód</a> a obsah je pod <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs">CC licencí</a>. Ilustrace si kreslím sám.
+            Projekt tvořím jako podnikatel na volné noze, jenž nemá ambice rozjíždět firmu. Své úspěchy a selhání
+            otevřeně popisuji v každotýdenních poznámkách na <a href="https://honzajavorek.cz/blog/">osobním blogu</a>.
+            Cílem je vydělat si tak akorát, aby se žilo dobře mojí rodině.
+          </p>
+        </div>
+        <div class="footer-about-finances">
+          <h4 class="footer-subheading">Můj aktuální čistý zisk</h4>
+          <p class="footer-finances-number">34.199 Kč měsíčně</p>
+
+          <h4 class="footer-subheading">Zdroje příjmů, zaokrouhleno</h4>
+          <ul class="footer-finances-list">
+            
+            <li>
+              <strong class="footer-finances-value">63 %</strong>
+              členství v klubu
+            </li>
+            
+            <li>
+              <strong class="footer-finances-value">32 %</strong>
+              příspěvky sponzorů
+            </li>
+            
+            <li>
+              <strong class="footer-finances-value">6 %</strong>
+              dobrovolné příspěvky
+            </li>
+            
+          </ul>
+          <p class="footer-finances-actions">
+            <span class="footer-finances-button">
+              <a class="btn btn-lg btn-primary" href="../">Čísla a grafy</a>
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-nav-container">
+      <nav class="footer-section footer-nav">
+        <h3 class="footer-heading">Buď v obraze</h3>
+        <p>
+          <a href="../../news/">Novinky</a>, 
+          <a href="../../podcast/">Podcast</a>, 
+          <a href="../../events/">Klubové akce</a>, 
+          <a href="../../stories/">Příběhy</a>, 
+          <a href="../../wisdom/">Moudra</a>
+          
+        </p>
+
+        <h3 class="footer-heading">Příručka</h3>
+        <p>
+          
+          <a href="../../handbook/">Cesta juniora</a>, 
+          
+          <a href="../../handbook/motivation/">Proč programovat</a>, 
+          
+          <a href="../../handbook/myths/">Mýty</a>, 
+          
+          <a href="../../handbook/women/">Ženy v IT</a>, 
+          
+          <a href="../../handbook/parents/">Rodiče v IT</a>, 
+          
+          <a href="../../handbook/learn/">Základy</a>, 
+          
+          <a href="../../handbook/nocode/">Bez kódu</a>, 
+          
+          <a href="../../handbook/english/">Angličtina</a>, 
+          
+          <a href="../../handbook/course/">Vybírání kurzu</a>, 
+          
+          <a href="../../handbook/practice/">Procvičování</a>, 
+          
+          <a href="../../handbook/community/">Komunity</a>, 
+          
+          <a href="../../handbook/help/">Řešení problémů</a>, 
+          
+          <a href="../../handbook/certification/">Certifikace</a>, 
+          
+          <a href="../../handbook/mentoring/">Mentoring</a>, 
+          
+          <a href="../../handbook/projects/">Projekty</a>, 
+          
+          <a href="../../handbook/git/">Git a GitHub</a>, 
+          
+          <a href="../../handbook/collaboration/">Spolupráce</a>, 
+          
+          <a href="../../handbook/mental-health/">Psychika</a>, 
+          
+          <a href="../../handbook/candidate/">Hledání práce</a>, 
+          
+          <a href="../../handbook/cv/">Životopis</a>, 
+          
+          <a href="../../handbook/github-profile/">GitHub profil</a>, 
+          
+          <a href="../../handbook/linkedin/">LinkedIn</a>, 
+          
+          <a href="../../handbook/interview/">Pohovor</a>
+          
+        </p>
+
+        <h3 class="footer-heading">Kurzy</h3>
+        <p>
+          
+          <a href="../../courses/ajtyvit/">Aj Ty v IT</a>, 
+          
+          <a href="../../courses/beeit/">BeeIT</a>, 
+          
+          <a href="../../courses/codecademy/">Codecademy</a>, 
+          
+          <a href="../../courses/coderslab/">Coders Lab</a>, 
+          
+          <a href="../../courses/codewars/">Codewars</a>, 
+          
+          <a href="../../courses/codingbootcamppraha/">Coding Bootcamp Praha</a>, 
+          
+          <a href="../../courses/coreskill/">CoreSkill</a>, 
+          
+          <a href="../../courses/coursera/">Coursera</a>, 
+          
+          <a href="../../courses/cs50/">CS50</a>, 
+          
+          <a href="../../courses/czechitas/">Czechitas</a>, 
+          
+          <a href="../../courses/datacamp/">DataCamp</a>, 
+          
+          <a href="../../courses/djangogirls/">Django Girls</a>, 
+          
+          <a href="../../courses/dokazesprogramovat/">Dokážeš programovat</a>, 
+          
+          <a href="../../courses/edx/">edX</a>, 
+          
+          <a href="../../courses/egghead/">egghead.io</a>, 
+          
+          <a href="../../courses/engeto/">ENGETO</a>, 
+          
+          <a href="../../courses/freecodecamp/">freeCodeCamp</a>, 
+          
+          <a href="../../courses/greenfox/">Green Fox Academy</a>, 
+          
+          <a href="../../courses/hacknisvoubudoucnost/">Hackni svou budoucnost (David Šetek)</a>, 
+          
+          <a href="../../courses/itacademy/">IT Academy</a>, 
+          
+          <a href="../../courses/itvkurze/">IT v kurze</a>, 
+          
+          <a href="../../courses/itabsolvent/">IT-absolvent</a>, 
+          
+          <a href="../../courses/itnetwork/">ITnetwork</a>, 
+          
+          <a href="../../courses/jetbrains/">JetBrains Academy</a>, 
+          
+          <a href="../../courses/lovelydata/">Lovely Data</a>, 
+          
+          <a href="../../courses/lucietvrdikova/">Lucie Tvrdíková</a>, 
+          
+          <a href="../../courses/naucmeit/">Nauč mě IT</a>, 
+          
+          <a href="../../courses/naucsepython/">Nauč se Python</a>, 
+          
+          <a href="../../courses/okskoleni/">OKškolení</a>, 
+          
+          <a href="../../courses/pluralsight/">Pluralsight</a>, 
+          
+          <a href="../../courses/prahacodingschool/">Praha Coding School</a>, 
+          
+          <a href="../../courses/primakurzy/">PrimaKurzy</a>, 
+          
+          <a href="../../courses/programkonet/">Programko.NET (Petr Voborník)</a>, 
+          
+          <a href="../../courses/pyladies/">PyLadies</a>, 
+          
+          <a href="../../courses/radekkitner/">Radek Kitner</a>, 
+          
+          <a href="../../courses/railsgirls/">Rails Girls</a>, 
+          
+          <a href="../../courses/reactgirls/">ReactGirls</a>, 
+          
+          <a href="../../courses/kurzyvsb/">Rekvalifikační kurzy VŠB-TU</a>, 
+          
+          <a href="../../courses/robweb/">ROB WEB (yablko)</a>, 
+          
+          <a href="../../courses/robotdreams/">robot_dreams</a>, 
+          
+          <a href="../../courses/scrimba/">Scrimba</a>, 
+          
+          <a href="../../courses/scripteo/">Scripteo (Vladimír Macek)</a>, 
+          
+          <a href="../../courses/seduo/">Seduo</a>, 
+          
+          <a href="../../courses/sharpprogrammer/">Sharp Programmer (Andrew Sharp)</a>, 
+          
+          <a href="../../courses/schoolofcode/">School of Code</a>, 
+          
+          <a href="../../courses/skillmea/">Skillmea</a>, 
+          
+          <a href="../../courses/sdacademy/">Software Development Academy</a>, 
+          
+          <a href="../../courses/step/">STEP</a>, 
+          
+          <a href="../../courses/streetofcode/">Street of Code</a>, 
+          
+          <a href="../../courses/udacity/">Udacity</a>, 
+          
+          <a href="../../courses/udemy/">Udemy</a>, 
+          
+          <a href="../../courses/umimpython/">UmimPython.cz</a>, 
+          
+          <a href="../../courses/unicornhatchery/">Unicorn Hatchery</a>, 
+          
+          <a href="../../courses/vita/">VITA Academy</a>, 
+          
+          <a href="../../courses/webykvalitne/">Webařce pod rukou (Magdaléna Boušková)</a>, 
+          
+          <a href="../../courses/webrebel/">Webrebel</a>, 
+          
+          <a href="../../courses/42prague/">42 Prague</a>
+          
+        </p>
+
+        <h3 class="footer-heading">Pracovní nabídky</h3>
+        <p>
+          <a href="../../jobs/remote/">Junior programátor na dálku</a>,
+          <a href="../../jobs/region/praha/">Junior programátor Praha</a>,
+          <a href="../../jobs/region/brno/">Junior programátor Brno</a>,
+          <a href="../../jobs/region/ostrava/">Junior programátor Ostrava</a>
+        </p>
+
+        <h3 class="footer-heading">Témata, která řešíme v klubu</h3>
+        <p>
+          
+          <a href="../../topics/adventofcode/">Advent of Code</a>, 
+          
+          <a href="../../topics/javascript/">JavaScript</a>, 
+          
+          <a href="../../topics/python/">Python</a>
+          
+        </p>
+      </nav>
+    </div>
+    <nav class="footer-section footer-rules">
+      <h3 class="visually-hidden">Pravidla</h3>
+      <ul class="footer-rules-list">
+        <li class="footer-rules-item">
+          <a href="../">Čísla a grafy</a>
+        </li>
+        <li class="footer-rules-item">
+          <a href="../../coc/">Pravidla chování</a>
+        </li>
+        <li class="footer-rules-item">
+          <a href="../../tos/">Obchodní podmínky</a>
+        </li>
+        <li class="footer-rules-item">
+          <a href="../../privacy/">Ochrana osobních údajů</a>
+        </li>
+        <li class="footer-rules-item">
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs" target="_blank" rel="noopener">Licence obsahu
+            (CC BY-SA)</a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+
+  <script async src="https://sa.junior.guru/latest.js"></script>
+  <noscript><img src="https://sa.junior.guru/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+
+  <dialog class="discord-dialog">
+    <p>
+      Odkaz vede do <strong>klubu</strong> na sociální síti <strong>Discord</strong>, kam mají přístup jen členové.
+      Pokud v klubu nejsi, neotevře se ti to správně.
+    </p>
+    <a class="discord-dialog-continue">
+      Otevřít
+    </a>
+    <a class="discord-dialog-club" href="../../club/">
+      Co je klub?
+    </a>
+  </dialog>
+</body>
+</html>
