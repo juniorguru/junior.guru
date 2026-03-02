@@ -18,7 +18,7 @@
 }
 
 .main-sidebar .toc {
-  padding: ($spacer * 2) $spacer;
+  padding: (2 * $spacer);
   background: $jg-blue-light;
 
   @include media-breakpoint-up(lg) {
@@ -53,121 +53,102 @@
   }
 }
 
+
 .toc-list {
   @extend .nav;
   @extend .list-unstyled;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: map-get($spacers, 1);
+  display: block;
+  column-count: 2;
+  column-gap: (2 * $spacer);
+  column-fill: balance;
   margin: 0;
   @include font-size($font-size-sm);
 
   @include media-breakpoint-up(md) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-count: 3;
     @include font-size($font-size-base);
   }
 
   @include media-breakpoint-up(lg) {
     display: block;
+    column-count: 1;
     font-size: inherit;
   }
 }
+
 
 .toc-item {
   @extend .nav-item;
-  margin-right: 0;
+  max-width: 15rem;
+  margin-top: map-get($spacers, 3);
 }
+
+.toc-item:first-child {
+  margin-top: 0;
+}
+
 
 .toc-link {
   @extend .nav-link;
-  display: inline-flex;
-  align-items: center;
+  display: block;
+  padding: 0;
   margin: 0;
-  color: $nav-link-color;
-  border: $nav-tabs-border-width solid transparent;
-  border-radius: $nav-pills-border-radius;
+  font-size: inherit;
+  font-weight: inherit;
+  color: $body-color;
+  text-align: left;
+  text-decoration: none;
+  white-space: normal;
+  background-color: transparent;
+  background-image: linear-gradient(to right, $border-color, rgba($border-color, 0));
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 100% map-get($border-widths, 1);
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 0 map-get($border-widths, 1);
+  border-radius: 0;
   transition: none;
-
-  @include media-breakpoint-up(lg) {
-    display: block;
-    padding: 0;
-    margin: 0;
-    margin-top: map-get($spacers, 3);
-    font-size: inherit;
-    font-weight: inherit;
-    color: $body-color;
-    text-align: left;
-    white-space: normal;
-    background-color: transparent;
-    background-image: linear-gradient(to right, $border-color, rgba($border-color, 0));
-    background-repeat: no-repeat;
-    background-position: left bottom;
-    background-size: 100% map-get($border-widths, 1);
-    border-color: transparent;
-    border-style: solid;
-    border-width: 0 0 map-get($border-widths, 1);
-    border-radius: 0;
-  }
 }
+
 
 .toc-link:hover {
-  color: $nav-link-hover-color;
-  border-color: $border-color;
-  border-radius: $nav-pills-border-radius;
-
-  @include media-breakpoint-up(lg) {
-    color: $jg-dark;
-    background-image: linear-gradient(to right, $jg-dark, rgba($jg-dark, 0));
-    border-color: transparent;
-    border-radius: 0;
-  }
+  color: $jg-dark;
+  background-image: linear-gradient(to right, $jg-dark, rgba($jg-dark, 0));
+  border-color: transparent;
+  border-radius: 0;
 }
+
 
 .toc-item.active .toc-link {
-  font-weight: 700;
-  color: $nav-link-color;
-  background-color: $jg-white;
-  border-color: $border-color;
-  border-radius: $nav-pills-border-radius;
-
-  @include media-breakpoint-up(lg) {
-    font-weight: $headings-font-weight;
-    color: $jg-dark;
-    background: transparent;
-    background-image: none;
-    border-color: $jg-dark;
-    border-width: 0 0 map-get($border-widths, 2);
-    border-radius: 0;
-  }
+  font-weight: $headings-font-weight;
+  color: $jg-dark;
+  background: transparent;
+  background-image: none;
+  border-color: $jg-dark;
+  border-width: 0 0 map-get($border-widths, 2);
+  border-radius: 0;
 }
 
-.toc-item.active .toc-link:hover {
-  color: $nav-link-color;
-  border-color: $border-color;
 
-  @include media-breakpoint-up(lg) {
-    color: $jg-dark;
-    border-color: $jg-dark;
-    border-radius: 0;
-  }
+.toc-item.active .toc-link:hover {
+  color: $jg-dark;
+  border-color: $jg-dark;
+  border-radius: 0;
 }
 
 .toc-number {
   $toc-number-size: $font-size-sm * 1.5;
 
+  position: relative;
+  top: -.1rem;
   display: inline-block;
-  margin-right: .6rem;
+  width: $toc-number-size;
+  height: $toc-number-size;
+  margin-right: .3rem;
   font-size: $font-size-sm * .75;
-
-  @include media-breakpoint-up(lg) {
-    position: relative;
-    top: -.1rem;
-    width: $toc-number-size;
-    height: $toc-number-size;
-    margin-right: .3rem;
-    line-height: $toc-number-size;
-    text-align: center;
-  }
+  line-height: $toc-number-size;
+  text-align: center;
 }
 
 .main-sidebar .content {
