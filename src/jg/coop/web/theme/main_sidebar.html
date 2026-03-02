@@ -53,6 +53,7 @@
           {% for toc_item in page|toc %}
             <li class="toc-item{% if toc_item.is_active %} active{% endif %}">
               <a class="toc-link" href="{{ toc_item.url|url }}">
+                {% block toc_number scoped %}{% endblock %}
                 {{ toc_item.title }}
               </a>
             </li>
