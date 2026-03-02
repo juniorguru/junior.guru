@@ -133,8 +133,8 @@
 
   .toc-link:hover {
     color: $jg-dark;
-    background-image: none;
-    border-color: $jg-dark;
+    background-image: linear-gradient(to right, $jg-dark, rgba($jg-dark, 0));
+    border-color: transparent;
     border-radius: 0;
   }
 
