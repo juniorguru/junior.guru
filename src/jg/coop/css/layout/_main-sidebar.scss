@@ -132,25 +132,25 @@
   }
 
   .toc-link:hover {
-    color: $link-hover-color;
+    color: $jg-dark;
     background-image: none;
-    border-color: $link-hover-color;
+    border-color: $jg-dark;
     border-radius: 0;
   }
 
   .toc-item.active .toc-link {
     font-weight: $headings-font-weight;
-    color: $link-color;
+    color: $jg-dark;
     background: transparent;
     background-image: none;
-    border-color: $link-color;
+    border-color: $jg-dark;
     border-width: 0 0 map-get($border-widths, 2);
     border-radius: 0;
   }
 
   .toc-item.active .toc-link:hover {
-    color: $link-hover-color;
-    border-color: $link-hover-color;
+    color: $jg-dark;
+    border-color: $jg-dark;
     border-radius: 0;
   }
 }
