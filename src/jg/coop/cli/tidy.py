@@ -46,14 +46,17 @@ logger = loggers.from_path(__file__)
 
 
 @click.group(invoke_without_command=True)
+@click.option("--code", is_flag=True, default=False)
 @click.pass_context
-def main(context):
+def main(context, code: bool):
     if context.invoked_subcommand:
         return
     context.invoke(format_python)
     context.invoke(format_jinja)
     context.invoke(format_web)
     context.invoke(fix_scss)
+    if code:
+        return
     context.invoke(optimize_avatars)
     context.invoke(optimize_svg)
 
