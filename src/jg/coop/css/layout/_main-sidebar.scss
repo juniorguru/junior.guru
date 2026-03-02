@@ -45,6 +45,8 @@
   @extend .fs-4;
   @extend .font-monospace;
   @extend .text-uppercase;
+  margin-top: 0;
+  margin-bottom: $spacer * 2;
 
   @include media-breakpoint-up(lg) {
     margin-bottom: $main-spacer;
@@ -79,7 +81,7 @@
 .toc-link {
   @extend .nav-link;
   padding: ($nav-link-padding-y * .5) $nav-link-padding-x;
-  margin: .2rem .1rem;
+  margin: 0 .1rem .2rem;
   color: $nav-link-color;
   text-decoration: none;
   background: rgba($jg-white, .8);
@@ -118,8 +120,12 @@
     color: $body-color;
     text-align: left;
     white-space: normal;
-    background: transparent;
-    border-color: $border-color;
+    background-color: transparent;
+    background-image: linear-gradient(to right, $border-color, rgba($border-color, 0));
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 100% map-get($border-widths, 1);
+    border-color: transparent;
     border-style: solid;
     border-width: 0 0 map-get($border-widths, 1);
     border-radius: 0;
@@ -127,6 +133,7 @@
 
   .toc-link:hover {
     color: $link-hover-color;
+    background-image: none;
     border-color: $link-hover-color;
     border-radius: 0;
   }
@@ -135,6 +142,7 @@
     font-weight: $headings-font-weight;
     color: $link-color;
     background: transparent;
+    background-image: none;
     border-color: $link-color;
     border-width: 0 0 map-get($border-widths, 2);
     border-radius: 0;
