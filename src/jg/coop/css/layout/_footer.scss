@@ -265,29 +265,6 @@ $footer-spacer-md: $spacer * 2;
 }
 
 /*
-  FOOTER: NAVIGATION
-*/
-
-.footer-nav-container {
-  background-color: lighten($jg-dark, 5%);
-
-  p,
-  a {
-    color: $footer-gray-text;
-  }
-}
-
-.footer-nav {
-  p {
-    margin-bottom: $footer-spacer-md;
-  }
-}
-
-.footer-nav > *:last-child {
-  margin-bottom: 0;
-}
-
-/*
   FOOTER: RULES
 */
 
