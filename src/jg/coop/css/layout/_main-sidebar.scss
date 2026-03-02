@@ -52,36 +52,99 @@
 }
 
 .toc-list {
+  @extend .nav;
   @extend .list-unstyled;
   margin: 0;
+  @include font-size($font-size-sm);
+
+  @include media-breakpoint-up(md) {
+    @include font-size($font-size-base);
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+    font-size: inherit;
+  }
+}
+
+.toc-item {
+  @extend .nav-item;
+  margin-right: map-get($spacers, 1);
+
+  @include media-breakpoint-up(lg) {
+    margin-right: 0;
+  }
 }
 
 .toc-link {
-  display: block;
-  margin-top: map-get($spacers, 3);
-  line-height: $line-height-sm;
-  color: $body-color;
+  @extend .nav-link;
+  padding: ($nav-link-padding-y * .5) $nav-link-padding-x;
+  margin: .2rem .1rem;
+  color: $nav-link-color;
   text-decoration: none;
-  border-color: $body-color;
-  border-style: solid;
-  border-width: 0 0 map-get($border-widths, 1);
+  background: rgba($jg-white, .8);
+  border: $nav-tabs-border-width solid transparent;
+  border-radius: $nav-pills-border-radius;
+  transition: none;
 }
 
 .toc-link:hover {
-  color: $link-hover-color;
-  border-color: $link-hover-color;
+  color: $nav-link-hover-color;
+  border-color: $border-color;
+  border-radius: $nav-pills-border-radius;
 }
 
 .toc-item.active .toc-link {
-  font-weight: $headings-font-weight;
-  color: $link-color;
-  border-color: $link-color;
-  border-width: 0 0 map-get($border-widths, 2);
+  font-weight: 700;
+  color: $nav-link-color;
+  background-color: $jg-white;
+  border-color: $border-color;
+  border-radius: $nav-pills-border-radius;
 }
 
 .toc-item.active .toc-link:hover {
-  color: $link-hover-color;
-  border-color: $link-hover-color;
+  color: $nav-link-color;
+  border-color: $border-color;
+}
+
+@include media-breakpoint-up(lg) {
+  .toc-link {
+    display: block;
+    padding: 0;
+    margin: 0;
+    margin-top: map-get($spacers, 3);
+    font-size: inherit;
+    font-weight: inherit;
+    color: $body-color;
+    text-align: left;
+    white-space: normal;
+    background: transparent;
+    border-color: $border-color;
+    border-style: solid;
+    border-width: 0 0 map-get($border-widths, 1);
+    border-radius: 0;
+  }
+
+  .toc-link:hover {
+    color: $link-hover-color;
+    border-color: $link-hover-color;
+    border-radius: 0;
+  }
+
+  .toc-item.active .toc-link {
+    font-weight: $headings-font-weight;
+    color: $link-color;
+    background: transparent;
+    border-color: $link-color;
+    border-width: 0 0 map-get($border-widths, 2);
+    border-radius: 0;
+  }
+
+  .toc-item.active .toc-link:hover {
+    color: $link-hover-color;
+    border-color: $link-hover-color;
+    border-radius: 0;
+  }
 }
 
 .main-sidebar .content {
