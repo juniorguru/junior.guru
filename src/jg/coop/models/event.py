@@ -132,7 +132,7 @@ class Event(BaseModel):
             return {
                 "card_url": self.club_recording_url,
                 "button_text": f"Pusť si {hours(self.private_recording_duration_s)} záznam",
-                "badge_icon": "discord",
+                "badge_icon": "lock-fill",
                 "badge_text": "Pouze pro členy",
             }
 
