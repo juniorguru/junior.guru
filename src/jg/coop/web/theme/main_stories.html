@@ -4,19 +4,7 @@
 {% block main %}
   <div class="main main-simple">
     <main class="content document">
-      {% block content %}
-
-      {{ page.content }}
-
-      <div class="pagination">
-        <div class="pagination-control">
-          <a href="{{ (page|parent_page).url|url }}" class="pagination-button">
-            {{ 'arrow-left'|icon }}
-            Všechny příběhy
-          </a>
-        </div>
-      </div>
-      {% endblock %}
+      {% block content %}{{ page.content }}{% endblock %}
     </main>
   </div>
 
