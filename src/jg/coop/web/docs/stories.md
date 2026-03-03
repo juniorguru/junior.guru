@@ -91,7 +91,16 @@ Co by poradili ostatním?
 Nejen že se nebojíme o nepříjemnostech psát, my se na ně přímo ptáme!
 
 {% for story_page in stories_pages %}
-  {{ news_card(**story_page.to_card()) }}
+  {{
+    news_card(
+      title=story_page.title,
+      url=story_page.src_uri,
+      image_path=story_page.meta['interviewee_avatar_path'],
+      image_alt=story_page.meta['interviewee'],
+      subtitle=story_page.meta['interviewee'],
+      date=story_page.date,
+    )
+  }}
 {% endfor %}
 
 ## Z horníka programátorem

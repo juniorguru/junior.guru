@@ -108,16 +108,6 @@ class Event(BaseModel):
         trial_ends_on = today + timedelta(days=14 - 1)  # better be safe, remove one day
         return self.start_at.date() <= trial_ends_on
 
-    def to_card(self) -> dict:
-        return dict(
-            title=self.title,
-            url=self.page_url,
-            image_path=self.avatar_path,
-            image_alt=self.bio_name,
-            subtitle=self.bio_name,
-            date=self.start_at,
-        )
-
     def to_media_card(self, now: datetime = None) -> dict:
         now = (now or datetime.now(UTC)).replace(tzinfo=None)
         if self.start_at >= now:

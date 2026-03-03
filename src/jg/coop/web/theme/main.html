@@ -126,10 +126,9 @@
           <h3 class="footer-subheading">{{ 'person-circle'|icon }} Příběhy juniorů</h3>
           {% for story in (promo_stories|list)[:2] %}
           <div class="footer-featured">
-            {% set story_card = story.to_card() %}
-            {{ img('static/' + story_card.image_path, image_alt, 100, 100, class='footer-featured-image') }}
+            {{ img('static/' + story.meta.interviewee_avatar_path, story.meta.interviewee, 100, 100, class='footer-featured-image') }}
             <div class="footer-featured-body">
-              <a class="footer-featured-link" href="{{ pages|docs_url(story_card.url)|url }}">{{ story_card.title }}</a>
+              <a class="footer-featured-link" href="{{ pages|docs_url(story.src_uri)|url }}">{{ story.title }}</a>
             </div>
           </div>
           {% endfor %}
@@ -138,10 +137,9 @@
           <h3 class="footer-subheading">{{ 'play-circle-fill'|icon }} Klubové akce</h3>
           {% for event in (promo_events|list)[:2] %}
           <div class="footer-featured">
-            {% set event_card = event.to_card() %}
-            {{ img('static/' + event_card.image_path, image_alt, 100, 100, class='footer-featured-image') }}
+            {{ img('static/' + event.avatar_path, image_alt, 100, 100, class='footer-featured-image') }}
             <div class="footer-featured-body">
-              <a class="footer-featured-link" href="{{ pages|docs_url(event_card.url)|url }}">{{ event_card.title }}</a>
+              <a class="footer-featured-link" href="{{ pages|docs_url(event.page_url)|url }}">{{ event.title }}</a>
             </div>
           </div>
           {% endfor %}

@@ -49,18 +49,6 @@ class Page(BaseModel):
             return f"https://junior.guru/static/{self.thumbnail_path}"
         return None
 
-    def to_card(self) -> dict:
-        if self.src_uri.startswith("stories/"):
-            return dict(
-                title=self.title,
-                url=self.src_uri,
-                image_path=self.meta["interviewee_avatar_path"],
-                image_alt=self.meta["interviewee"],
-                subtitle=self.meta["interviewee"],
-                date=self.date,
-            )
-        raise ValueError(f"Unsupported page type: {self.src_uri}")
-
     @classmethod
     def get_by_src_uri(cls, src_uri) -> Self:
         return cls.get(cls.src_uri == src_uri)
