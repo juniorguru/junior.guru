@@ -188,21 +188,21 @@
 {% macro event_video_card(event) %}
 {% set media_card = event.to_media_card(now=now) %}
 
-<div class="media-card media-card-featured{% if not media_card.has_recording %} media-card-featured-unavailable{% endif %}">
+<div class="media-card media-card-featured{% if not event.has_recording %} media-card-featured-unavailable{% endif %}">
   {% if media_card.card_url %}
   <a href="{{ media_card.card_url }}" class="media-card-featured-link" target="_blank" rel="noopener">
   {% else %}
   <div class="media-card-featured-static">
   {% endif %}
     <div class="media-card-image-cover">
-      {{ img(media_card.thumbnail_url, media_card.image_alt, 1280, 720, class='media-card-image') }}
+      {{ img("static/" + event.plain_poster_path, event.get_full_title(), 1280, 720, class='media-card-image') }}
       {% if media_card.badge_icon %}
         <div class="media-card-badge">
           {{ media_card.badge_icon|icon }}{% if media_card.badge_text %} {{ media_card.badge_text }}{% endif %}
         </div>
       {% endif %}
       {% if media_card.button_text %}
-      <div class="media-card-button{% if not media_card.has_recording %} media-card-button-disabled{% endif %}">
+      <div class="media-card-button{% if not event.has_recording %} media-card-button-disabled{% endif %}">
         <span class="media-card-play">{{ 'play-circle-fill'|icon }}</span>
         <span class="media-card-duration">{{ media_card.button_text }}</span>
       </div>
@@ -213,22 +213,22 @@
   {% else %}
   </div>
   {% endif %}
-  {% if media_card.speaker_name or media_card.speaker_title or media_card.speaker_bio or media_card.speaker_links %}
+  {% if event.bio_name or event.bio_title or event.bio or event.bio_links %}
     <div class="media-card-body media-card-featured-body">
-      {% if media_card.speaker_name %}
-        <h5 class="media-card-featured-heading">{{ media_card.speaker_name }}</h5>
+      {% if event.bio_name %}
+        <h5 class="media-card-featured-heading">{{ event.bio_name }}</h5>
       {% endif %}
-      {% if media_card.speaker_title %}
-        <div class="media-card-featured-meta">{{ media_card.speaker_title }}</div>
+      {% if event.bio_title %}
+        <div class="media-card-featured-meta">{{ event.bio_title }}</div>
       {% endif %}
-      {% if media_card.speaker_bio or media_card.speaker_links %}
+      {% if event.bio or event.bio_links %}
         <div class="media-card-featured-text">
-          {% if media_card.speaker_bio %}
-            {{ media_card.speaker_bio|md }}
+          {% if event.bio %}
+            {{ event.bio|md }}
           {% endif %}
-          {% if media_card.speaker_links %}
+          {% if event.bio_links %}
             <ul class="icon-links">
-              {% for bio_url in media_card.speaker_links %}
+              {% for bio_url in event.bio_links %}
                 <li>{{ bio_url|bio_link }}</li>
               {% endfor %}
             </ul>

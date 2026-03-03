@@ -120,40 +120,8 @@ class Event(BaseModel):
 
     def to_media_card(self, now: datetime = None) -> dict:
         now = (now or datetime.now(UTC)).replace(tzinfo=None)
-        is_past_event = self.start_at < now
-        media_card = {
-            "event_title": self.get_full_title(),
-            "thumbnail_url": "static/" + self.plain_poster_path,
-            "image_alt": self.get_full_title(),
-            "speaker_name": self.bio_name,
-            "speaker_title": self.bio_title,
-            "speaker_bio": self.bio,
-            "speaker_links": self.bio_links,
-            "has_recording": self.has_recording,
-        }
-        if is_past_event:
-            if self.public_recording_url:
-                media_card |= {
-                    "card_url": self.public_recording_url,
-                    "button_text": f"Pusť si {hours(self.public_recording_duration_s)} záznam",
-                    "badge_icon": "unlock-fill",
-                    "badge_text": "Veřejný záznam",
-                }
-            elif self.club_recording_url:
-                media_card |= {
-                    "card_url": self.club_recording_url,
-                    "button_text": f"Pusť si {hours(self.private_recording_duration_s)} záznam",
-                    "badge_icon": "discord",
-                    "badge_text": "Pouze pro členy",
-                }
-            else:
-                media_card |= {
-                    "card_url": None,
-                    "badge_icon": "ban",
-                    "badge_text": "Záznam není dostupný",
-                }
-        else:
-            media_card |= {
+        if self.start_at >= now:
+            return {
                 "card_url": CLUB_EVENTS_CHANNEL_URL,
                 "button_text": "Připoj se",
                 "badge_icon": "youtube" if self.public_recording_url else "discord",
@@ -161,7 +129,28 @@ class Event(BaseModel):
                     "Veřejný stream" if self.public_recording_url else "Pouze pro členy"
                 ),
             }
-        return media_card
+
+        if self.public_recording_url:
+            return {
+                "card_url": self.public_recording_url,
+                "button_text": f"Pusť si {hours(self.public_recording_duration_s)} záznam",
+                "badge_icon": "unlock-fill",
+                "badge_text": "Veřejný záznam",
+            }
+
+        if self.club_recording_url:
+            return {
+                "card_url": self.club_recording_url,
+                "button_text": f"Pusť si {hours(self.private_recording_duration_s)} záznam",
+                "badge_icon": "discord",
+                "badge_text": "Pouze pro členy",
+            }
+
+        return {
+            "card_url": None,
+            "badge_icon": "ban",
+            "badge_text": "Záznam není dostupný",
+        }
 
     def to_json_ld(self) -> str:
         return json.dumps(

@@ -142,12 +142,6 @@ def test_to_media_card_past_club_uses_discord_badge():
     assert event.to_media_card(now=datetime(2021, 5, 2, 10))["badge_icon"] == "discord"
 
 
-def test_to_media_card_past_without_recording_is_unavailable():
-    event = create_event_instance(start_at=datetime(2021, 5, 1, 10))
-
-    assert event.to_media_card(now=datetime(2021, 5, 2, 10))["has_recording"] is False
-
-
 def test_to_media_card_past_without_recording_has_no_button_text():
     event = create_event_instance(start_at=datetime(2021, 5, 1, 10))
 
