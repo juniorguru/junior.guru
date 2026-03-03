@@ -262,39 +262,6 @@
 {% endmacro %}
 
 
-{% macro news_card(title, url, image_path, image_alt, category, subtitle=none, date=none, external=false, class=none) %}
-<div class="news-card{% if class %} {{ class }}{% endif %}">
-  <div class="news-card-row">
-    <div class="news-card-media">
-      {{ img('static/' + image_path, image_alt, 100, 100, class='news-card-image') }}
-    </div>
-    <div class="news-card-body">
-      <h4 class="news-card-title">
-        <a{% if external %}
-            target="_blank"
-            rel="noopener"
-            data-metrics-utm
-            data-metrics-utm-medium="news"
-            href="{{ url }}"
-          {% else %}
-            href="{{ pages|docs_url(url)|url }}"
-          {% endif %}
-          class="news-card-link">{{ title }}</a>
-      </h4>
-      {% if subtitle %}<h5 class="news-card-subtitle">{{ subtitle }}</h5>{% endif %}
-      {% if category or date %}
-        <p class="news-card-details">
-          {% if category %}<strong>{{ category }}</strong>{% endif %}
-          {% if category and date %}<small>&ndash;</small>{% endif %}
-          {% if date %}<small>{{ '{:%-d.%-m.%Y}'.format(date) }}</small>{% endif %}
-        </p>
-      {% endif %}
-    </div>
-  </div>
-</div>
-{% endmacro %}
-
-
 {% macro engeto_video_card(title, duration, url, caption=none) %}
   {% if caller %}
     {% set caption = caller()|md|remove_p %}
