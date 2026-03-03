@@ -2,6 +2,9 @@ registry:
   - from_url: "/candidate-handbook/"
     to_doc: "handbook/candidate.md"
 
+  - from_url: "/events/53/"
+    to_doc: "events.md"
+
   - from_url: "/donate/"
     to_doc: "love.jinja"
 

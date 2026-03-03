@@ -127,20 +127,12 @@ def generate_job_pages() -> Generator[GeneratedDocument, None, None]:
 def generate_event_pages() -> Generator[GeneratedDocument, None, None]:
     archive_size = Event.count_recording()
     for event in Event.listing():
-        if event.venue:
-            title_suffix = "junior.guru akce"
-            description = (
-                "Klub junior.guru pořádá vzdělávací akce. "
-                "Mohou to být přednášky, workshopy, konference… "
-                "Toto je stránka o jedné z nich."
-            )
-        else:
-            title_suffix = "online akce na Discordu junior.guru"
-            description = (
-                "Klub junior.guru pořádá vzdělávací akce, online na svém Discordu. "
-                "Mohou to být přednášky, stream, Q&A, AMA, webináře… "
-                "Toto je stránka o jedné z nich."
-            )
+        title_suffix = "online akce na Discordu junior.guru"
+        description = (
+            "Klub junior.guru pořádá vzdělávací akce, online na svém Discordu. "
+            "Mohou to být přednášky, stream, Q&A, AMA, webináře… "
+            "Toto je stránka o jedné z nich."
+        )
         yield GeneratedDocument(
             path=f"events/{event.id}.md",
             meta=dict(
