@@ -90,7 +90,7 @@ Jak to nakonec překonali?
 Co by poradili ostatním?
 Nejen že se nebojíme o nepříjemnostech psát, my se na ně přímo ptáme!
 
-<div class="link-cards">
+<div class="link-cards compact">
 {% for story_page in stories_pages %}
   {{
     link_card(
@@ -152,7 +152,7 @@ Záměrem tohoto seznamu je vytvářet nezávislou protiváhu a ukazovat, že:
     Zkouší různé způsoby studia, různé kurzy, různé materiály.
 -   Programování je obecná, užitečná dovednost, která se hodí i pokud se člověk neplánuje rekvalifikovat do IT.
 
-<div class="link-cards">
+<div class="link-cards compact">
 {% for story in stories_links %}
   {{
     link_card(

@@ -58,14 +58,16 @@ Podcast pro juniory v IT! Jak začít s programováním? Jak najít práci v 
 
 Poučky praví, že podcast se stává kvalitním a slavným, až když se autoři zajedou a vymluví, což trvá přibližně 100 epizod. Chceme vydávat zhruba **jednu epizodu měsíčně**, takže špičkové kvality a věčné slávy plánujeme dosáhnout kolem roku 2030. Znělku nám na míru složil [Patrik Veltruský](https://veltrusky.net/), děkujeme!
 
-<div class="link-cards">
+<div class="link-cards compact">
 {% for podcast_episode in podcast_episodes %}
   {{
     link_card(
       podcast_episode.format_title(number=False, affiliation=False),
       pages|docs_url(podcast_episode.page_url)|url,
-      caption="Epizoda " ~ podcast_episode.number,
+      caption='{:%-d.%-m.%Y}'.format(podcast_episode.publish_on),
       thumbnail_url='static/' + podcast_episode.image_path,
+      badge_icon="hash",
+      badge_text=podcast_episode.number|string,
     )
   }}
 {% endfor %}

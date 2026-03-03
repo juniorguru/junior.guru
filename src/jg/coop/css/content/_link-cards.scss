@@ -88,6 +88,10 @@
   margin: 0;
 }
 
+.link-cards.compact .link-card-title {
+  @extend .fs-6;
+}
+
 .link-card-title a:visited {
   color: $link-color;
 }
