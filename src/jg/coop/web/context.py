@@ -1,7 +1,12 @@
 from datetime import UTC, date, datetime, timedelta
 
 from jg.coop.lib import loggers, months
-from jg.coop.lib.discord_club import CLUB_GUILD_ID, ClubChannelID, ClubMemberID
+from jg.coop.lib.discord_club import (
+    CLUB_EVENTS_CHANNEL_URL,
+    CLUB_GUILD_ID,
+    ClubChannelID,
+    ClubMemberID,
+)
 from jg.coop.models.base import db
 from jg.coop.models.blog import BlogArticle
 from jg.coop.models.candidate import Candidate
@@ -39,9 +44,7 @@ def on_shared_context(context):
     today = now.date()
     context["now"] = now
     context["today"] = today
-    context["club_events_channel_url"] = (
-        f"https://discord.com/channels/{CLUB_GUILD_ID}/{ClubChannelID.EVENTS}"
-    )
+    context["club_events_channel_url"] = CLUB_EVENTS_CHANNEL_URL
 
     # main.html, about/*.md
     profit_ttm = Transaction.profit_ttm(today)

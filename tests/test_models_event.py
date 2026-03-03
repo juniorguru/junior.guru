@@ -2,6 +2,8 @@ from datetime import datetime, timedelta
 
 import pytest
 
+from jg.coop.lib.discord_club import CLUB_EVENTS_CHANNEL_URL
+from jg.coop.lib.template_filters import hours
 from jg.coop.models.club import ClubUser
 from jg.coop.models.event import Event, EventSpeaking
 
@@ -88,3 +90,68 @@ def test_url(test_db):
     event = create_event(1)
 
     assert event.url == "https://junior.guru/events/1/"
+
+
+def create_event_instance(**kwargs):
+    defaults = {
+        "id": 1,
+        "title": "Event #1",
+        "description": "Markdown **description** of the _event_.",
+        "bio_name": "Jane Doe",
+        "bio": "Jane Doe is so anonymous that we do not really know anything about her.",
+        "start_at": datetime(2021, 5, 1, 10),
+        "end_at": datetime(2021, 5, 1, 11),
+        "plain_poster_path": "events/1-plain.webp",
+    }
+    return Event(**(defaults | kwargs))
+
+
+def test_to_media_card_past_public_uses_public_url():
+    event = create_event_instance(
+        start_at=datetime(2021, 5, 1, 10),
+        public_recording_url="https://youtube.com/watch?v=abc",
+        public_recording_duration_s=3600,
+    )
+
+    assert (
+        event.to_media_card(now=datetime(2021, 5, 2, 10))["card_url"]
+        == event.public_recording_url
+    )
+
+
+def test_to_media_card_past_public_uses_recording_button_text():
+    event = create_event_instance(
+        start_at=datetime(2021, 5, 1, 10),
+        public_recording_url="https://youtube.com/watch?v=abc",
+        public_recording_duration_s=3600,
+    )
+
+    assert (
+        event.to_media_card(now=datetime(2021, 5, 2, 10))["button_text"]
+        == f"Pusť si záznam ({hours(3600)})"
+    )
+
+
+def test_to_media_card_past_club_uses_discord_badge():
+    event = create_event_instance(
+        start_at=datetime(2021, 5, 1, 10),
+        club_recording_url="https://discord.com/channels/1/2/3",
+        private_recording_duration_s=1800,
+    )
+
+    assert event.to_media_card(now=datetime(2021, 5, 2, 10))["badge_icon"] == "discord"
+
+
+def test_to_media_card_past_without_recording_is_unavailable():
+    event = create_event_instance(start_at=datetime(2021, 5, 1, 10))
+
+    assert event.to_media_card(now=datetime(2021, 5, 2, 10))["is_unavailable"] is True
+
+
+def test_to_media_card_future_uses_club_events_channel_url():
+    event = create_event_instance(start_at=datetime(2021, 5, 3, 10))
+
+    assert (
+        event.to_media_card(now=datetime(2021, 5, 2, 10))["card_url"]
+        == CLUB_EVENTS_CHANNEL_URL
+    )

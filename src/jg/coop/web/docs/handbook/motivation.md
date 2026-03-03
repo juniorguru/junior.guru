@@ -6,7 +6,7 @@ description: Úvod do programování. K čemu se hodí? Pomáhá vědcům, úře
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote, blockquote_avatar, blockquote_toxic, lead, stories_list, video_card_engeto with context %}
+{% from 'macros.html' import blockquote, blockquote_avatar, blockquote_toxic, lead, stories_list, engeto_video_card with context %}
 
 # Proč se učit programování
 
@@ -40,7 +40,7 @@ Je důležité pochopit, že **programování je jen nástroj, stejně jako klad
 
 Stejně jako u vrtání ale není vůbec od věci, pokud se naučí programovat i amatér. Dnes už běžně základní znalost programování pomáhá vědcům, úředníkům nebo novinářům. Základy se totiž dají naučit za několik týdnů, a i když ti nebudou stačit na zaměstnání v IT, k řešení spousty úkolů stačí perfektně.
 
-{{ video_card_engeto(
+{{ engeto_video_card(
   'IT dovednosti se hodí i v „neIT“ oboru',
   '6min',
   'https://www.youtube.com/watch?v=Vt-riPe4dMs&list=PLrsbT5TVJXZa2daxo8_3NagDzPqHjBEpI',

@@ -16,8 +16,12 @@ from peewee import (
 )
 
 from jg.coop.lib.charts import month_range, ttm_range
-from jg.coop.lib.discord_club import CLUB_GUILD_ID, ClubChannelID, parse_discord_link
+from jg.coop.lib.discord_club import (
+    CLUB_EVENTS_CHANNEL_URL,
+    parse_discord_link,
+)
 from jg.coop.lib.md import strip_links
+from jg.coop.lib.template_filters import hours
 from jg.coop.lib.youtube import get_youtube_url, parse_youtube_id
 from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubMessage, ClubUser
@@ -114,6 +118,53 @@ class Event(BaseModel):
             date=self.start_at,
         )
 
+    def to_media_card(self, now: datetime = None) -> dict:
+        now = (now or datetime.now(UTC)).replace(tzinfo=None)
+        is_past_event = self.start_at < now
+        media_card = {
+            "event_title": self.get_full_title(),
+            "thumbnail_url": "static/" + self.plain_poster_path,
+            "image_alt": self.get_full_title(),
+            "speaker_name": self.bio_name,
+            "speaker_title": self.bio_title,
+            "speaker_bio": self.bio,
+            "speaker_links": self.bio_links,
+            "is_unavailable": False,
+        }
+        if is_past_event:
+            if self.public_recording_url:
+                media_card |= {
+                    "card_url": self.public_recording_url,
+                    "button_text": f"Pusť si {hours(self.public_recording_duration_s)} záznam",
+                    "badge_icon": "unlock-fill",
+                    "badge_text": "Veřejný záznam",
+                }
+            elif self.club_recording_url:
+                media_card |= {
+                    "card_url": self.club_recording_url,
+                    "button_text": f"Pusť si {hours(self.private_recording_duration_s)} záznam",
+                    "badge_icon": "discord",
+                    "badge_text": "Pouze pro členy",
+                }
+            else:
+                media_card |= {
+                    "card_url": None,
+                    "button_text": "Záznam není dostupný",
+                    "badge_icon": "ban",
+                    "badge_text": "Záznam není dostupný",
+                    "is_unavailable": True,
+                }
+        else:
+            media_card |= {
+                "card_url": CLUB_EVENTS_CHANNEL_URL,
+                "button_text": "Připoj se",
+                "badge_icon": "youtube" if self.public_recording_url else "discord",
+                "badge_text": (
+                    "Veřejný stream" if self.public_recording_url else "Pouze pro členy"
+                ),
+            }
+        return media_card
+
     def to_json_ld(self) -> str:
         return json.dumps(
             {
@@ -128,7 +179,7 @@ class Event(BaseModel):
                     "url": (
                         self.public_recording_url
                         or self.club_recording_url
-                        or f"https://discord.com/channels/{CLUB_GUILD_ID}/{ClubChannelID.EVENTS}"
+                        or CLUB_EVENTS_CHANNEL_URL
                     ),
                 },
                 "name": self.get_full_title(),
