@@ -17,7 +17,12 @@ Klub junior.guru pořádá vzdělávací akce, online na svém Discordu.
 {{- ' ' -}}Pojetí akcí je vždy vyloženě pro začátečníky. Žádná záplava odborných „termitů“, které ti nikdo nevysvětlil!
 {% endcall %}
 
-<div class="c2a">
+<div class="figure-container">
+  {{ figure('static/' + event.plain_poster_path, 1280, 720, event.get_full_title()) }}
+  <a class="figure-button" href="{{ ("static/" + event.poster_path)|url }}" target="_blank" rel="noopener" download>{{ 'download'|icon }} Stáhni plakát</a>
+</div>
+
+<div class="c2a standout">
   {% if is_past_event %}
   <p class="c2a-text display">
     Akce proběhla <strong>{{ '{:%-d.%-m.%Y}'.format(event.start_at_prg) }}</strong>
@@ -35,11 +40,6 @@ Klub junior.guru pořádá vzdělávací akce, online na svém Discordu.
     <a class="c2a-button pulse" href="#jak-se-pripojit">{{ 'person-plus-fill'|icon }} Připoj se</a>
   </p>
   {% endif %}
-</div>
-
-<div class="figure-container">
-  {{ figure('static/' + event.plain_poster_path, 1280, 720, event.get_full_title(), class="standout-top") }}
-  <a class="figure-button" href="{{ ("static/" + event.poster_path)|url }}" target="_blank" rel="noopener" download>{{ 'download'|icon }} Stáhni plakát</a>
 </div>
 
 ## O čem to {% if is_past_event %} bylo{% else %}bude{% endif %}
