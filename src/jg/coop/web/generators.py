@@ -114,7 +114,10 @@ def generate_job_pages() -> Generator[GeneratedDocument, None, None]:
                     f"{job.title} – {job.company_name}, {job.location_text or '?'}"
                 ),
                 job_id=job.submitted_job.id,
-                template="main_subnav.html",
+                job_company_name=job.company_name,
+                job_apply_url=job.apply_url or "",
+                job_apply_email=job.apply_email or "",
+                template="main_job.html",
             ),
             content=(DOCS_DIR / "job.jinja").read_text(),
         )
