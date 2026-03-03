@@ -187,8 +187,9 @@
 
 {% macro event_video_card(event) %}
 {% set media_card = event.to_media_card(now=now) %}
+{% set is_unavailable = not media_card.card_url %}
 
-<div class="media-card media-card-featured{% if not event.has_recording %} media-card-featured-unavailable{% endif %}">
+<div class="media-card media-card-featured{% if is_unavailable %} media-card-featured-unavailable{% endif %}">
   {% if media_card.card_url %}
   <a href="{{ media_card.card_url }}" class="media-card-featured-link" target="_blank" rel="noopener">
   {% else %}
@@ -202,7 +203,7 @@
         </div>
       {% endif %}
       {% if media_card.button_text %}
-      <div class="media-card-button{% if not event.has_recording %} media-card-button-disabled{% endif %}">
+      <div class="media-card-button{% if is_unavailable %} media-card-button-disabled{% endif %}">
         <span class="media-card-play">{{ 'play-circle-fill'|icon }}</span>
         <span class="media-card-duration">{{ media_card.button_text }}</span>
       </div>
