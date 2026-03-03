@@ -100,50 +100,52 @@
   <hr class="visually-hidden">
 
   <footer class="footer">
-    <div class="footer-section footer-promo">
-      <div class="footer-promo-item wide">
-        <h3 class="footer-heading">{{ 'envelope-paper-fill'|icon }} Novinky pravidelně v mailu</h3>
-        <form class="newsletter-container" id="email-form" method="post" action="https://buttondown.com/api/emails/embed-subscribe/juniorguru">
-          <p>
-            Zadej e-mail a přidej se k <strong>{{ newsletter_subscribers_count }} lidem</strong>, kteří sledují newsletter z junior.guru:
-          </p>
-          <fieldset class="newsletter-fieldset">
-            <div class="newsletter-email">
-              <input class="newsletter-email-control" type="email" id="newsletter-email" name="email">
-            </div>
-            <div class="newsletter-submit">
-              <input class="newsletter-submit-control" type="submit" value="Odebírat">
-            </div>
-          </fieldset>
-          <p class="newsletter-note">
-            {{ 'info-circle'|icon }} Tvůj e-mail se použije jen a pouze na zasílání novinek, které si můžeš kdykoliv zase odhlásit.
-            <a href="{{ pages|docs_url('privacy.md')|url }}"> Zásady ochrany osobních údajů</a> popisují, jaká data o tobě junior.guru má a jak s nimi zachází.
-          </p>
-        </form>
-      </div>
-      <div class="footer-promo-item">
-        <h3 class="footer-subheading">{{ 'person-circle'|icon }} Příběhy juniorů</h3>
-        {% for story in (promo_stories|list)[:2] %}
-        <div class="footer-featured">
-          {% set story_card = story.to_card() %}
-          {{ img('static/' + story_card.image_path, image_alt, 100, 100, class='footer-featured-image') }}
-          <div class="footer-featured-body">
-            <a class="footer-featured-link" href="{{ pages|docs_url(story_card.url)|url }}">{{ story_card.title }}</a>
-          </div>
+    <div class="footer-promo-belt">
+      <div class="footer-section footer-promo">
+        <div class="footer-promo-item wide">
+          <h3 class="footer-heading">{{ 'envelope-paper-fill'|icon }} Novinky pravidelně v mailu</h3>
+          <form class="newsletter-container" id="email-form" method="post" action="https://buttondown.com/api/emails/embed-subscribe/juniorguru">
+            <p>
+              Zadej e-mail a přidej se k <strong>{{ newsletter_subscribers_count }} lidem</strong>, kteří sledují newsletter z junior.guru:
+            </p>
+            <fieldset class="newsletter-fieldset">
+              <div class="newsletter-email">
+                <input class="newsletter-email-control" type="email" id="newsletter-email" name="email">
+              </div>
+              <div class="newsletter-submit">
+                <input class="newsletter-submit-control" type="submit" value="Odebírat">
+              </div>
+            </fieldset>
+            <p class="newsletter-note">
+              {{ 'info-circle'|icon }} Tvůj e-mail se použije jen a pouze na zasílání novinek, které si můžeš kdykoliv zase odhlásit.
+              <a href="{{ pages|docs_url('privacy.md')|url }}"> Zásady ochrany osobních údajů</a> popisují, jaká data o tobě junior.guru má a jak s nimi zachází.
+            </p>
+          </form>
         </div>
-        {% endfor %}
-      </div>
-      <div class="footer-promo-item">
-        <h3 class="footer-subheading">{{ 'play-circle-fill'|icon }} Klubové akce</h3>
-        {% for event in (promo_events|list)[:2] %}
-        <div class="footer-featured">
-          {% set event_card = event.to_card() %}
-          {{ img('static/' + event_card.image_path, image_alt, 100, 100, class='footer-featured-image') }}
-          <div class="footer-featured-body">
-            <a class="footer-featured-link" href="{{ pages|docs_url(event_card.url)|url }}">{{ event_card.title }}</a>
+        <div class="footer-promo-item">
+          <h3 class="footer-subheading">{{ 'person-circle'|icon }} Příběhy juniorů</h3>
+          {% for story in (promo_stories|list)[:2] %}
+          <div class="footer-featured">
+            {% set story_card = story.to_card() %}
+            {{ img('static/' + story_card.image_path, image_alt, 100, 100, class='footer-featured-image') }}
+            <div class="footer-featured-body">
+              <a class="footer-featured-link" href="{{ pages|docs_url(story_card.url)|url }}">{{ story_card.title }}</a>
+            </div>
           </div>
+          {% endfor %}
         </div>
-        {% endfor %}
+        <div class="footer-promo-item">
+          <h3 class="footer-subheading">{{ 'play-circle-fill'|icon }} Klubové akce</h3>
+          {% for event in (promo_events|list)[:2] %}
+          <div class="footer-featured">
+            {% set event_card = event.to_card() %}
+            {{ img('static/' + event_card.image_path, image_alt, 100, 100, class='footer-featured-image') }}
+            <div class="footer-featured-body">
+              <a class="footer-featured-link" href="{{ pages|docs_url(event_card.url)|url }}">{{ event_card.title }}</a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
     <div class="footer-section footer-address">

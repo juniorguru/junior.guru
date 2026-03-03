@@ -40,7 +40,6 @@ $footer-spacer-md: $spacer * 2;
   grid-template-columns: minmax(0, 1fr);
   gap: $footer-spacer;
   color: $jg-dark;
-  background-color: $jg-yellow;
   // border-top: 1px solid #e5df67;
 
   @include media-breakpoint-up(sm) {
@@ -50,6 +49,10 @@ $footer-spacer-md: $spacer * 2;
   @include media-breakpoint-up(lg) {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
+}
+
+.footer-promo-belt {
+  background-color: $jg-yellow;
 }
 
 .footer-promo .footer-heading,
