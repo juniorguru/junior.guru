@@ -173,6 +173,7 @@ def generate_podcast_episode_pages() -> Generator[GeneratedDocument, None, None]
                 thumbnail_button_heading="Poslouchej na",
                 thumbnail_button_link="junior.guru/podcast",
                 thumbnail_platforms=["youtube", "spotify", "apple"],
+                comments_heading="Máš otázky? Chceš probrat podobná témata?",
                 template="main_content_detail.html",
             ),
             content=(DOCS_DIR / "podcast_episode.jinja").read_text(),

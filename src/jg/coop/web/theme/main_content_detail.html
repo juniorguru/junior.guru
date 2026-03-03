@@ -24,13 +24,15 @@
 
   <div class="comments">
     <div class="comments-container">
-      <h2>Chceš se taky na něco zeptat?</h2>
+      <h2>{{ page.meta.comments_heading }}</h2>
       <p>
-        Na našem klubovém Discordu je {{ members_total_count }} lidí, které zajímá svět IT juniorů.
+         Na junior.guru Discordu si pomáhá <strong>{{ members_total_count }} lidí</strong>, které zajímá svět IT juniorů.
+         Začátečníci, kteří hledají komunitu a podporu. Senioři s chutí sdílet své zkušenosti.
+         K tomu pravidelné online akce a mnoho dalšího.
       </p>
       <div class="mt-4">
         <a class="btn btn-lg btn-primary mb-4" href="{{ pages|docs_url('club.md')|url }}">
-          Přidej se&nbsp;do klubu
+          {{ 'discord'|icon }} Mrkni&nbsp;do klubu
         </a>
         <div>
           <span class="members mb-0">
