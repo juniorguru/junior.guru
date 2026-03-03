@@ -108,36 +108,34 @@ class Event(BaseModel):
         trial_ends_on = today + timedelta(days=14 - 1)  # better be safe, remove one day
         return self.start_at.date() <= trial_ends_on
 
-    def to_media_card(self, now: datetime = None) -> dict:
+    def to_video(self, now: datetime | None = None) -> dict:
         now = (now or datetime.now(UTC)).replace(tzinfo=None)
         if self.start_at >= now:
             return {
-                "card_url": CLUB_EVENTS_CHANNEL_URL,
+                "url": CLUB_EVENTS_CHANNEL_URL,
                 "button_text": "Připoj se",
                 "badge_icon": "youtube" if self.public_recording_url else "discord",
                 "badge_text": (
                     "Veřejný stream" if self.public_recording_url else "Pouze pro členy"
                 ),
             }
-
         if self.public_recording_url:
             return {
-                "card_url": self.public_recording_url,
+                "url": self.public_recording_url,
                 "button_text": f"Pusť si {hours(self.public_recording_duration_s)} záznam",
                 "badge_icon": "unlock-fill",
                 "badge_text": "Veřejný záznam",
             }
-
         if self.club_recording_url:
             return {
-                "card_url": self.club_recording_url,
+                "url": self.club_recording_url,
                 "button_text": f"Pusť si {hours(self.private_recording_duration_s)} záznam",
-                "badge_icon": "lock-fill",
+                "badge_icon": "discord",
                 "badge_text": "Pouze pro členy",
             }
-
         return {
-            "card_url": None,
+            "url": None,
+            "button_text": None,
             "badge_icon": "ban",
             "badge_text": "Záznam není dostupný",
         }

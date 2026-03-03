@@ -186,44 +186,44 @@
 
 
 {% macro event_video_card(event) %}
-{% set media_card = event.to_media_card(now=now) %}
-{% set is_unavailable = not media_card.card_url %}
+{% set video = event.to_video(now=now) %}
+{% set is_unavailable = not video.url %}
 
-<div class="media-card media-card-featured{% if is_unavailable %} media-card-featured-unavailable{% endif %}">
-  {% if media_card.card_url %}
-  <a href="{{ media_card.card_url }}" class="media-card-featured-link" target="_blank" rel="noopener">
+<div class="media-card media-card-featured{% if is_unavailable %} video-unavailable{% endif %}">
+  {% if video.url %}
+  <a href="{{ video.url }}" class="media-card-link-wrapper" target="_blank" rel="noopener">
   {% else %}
-  <div class="media-card-featured-static">
+  <div class="media-card-link-wrapper">
   {% endif %}
     <div class="media-card-image-cover">
       {{ img("static/" + event.plain_poster_path, event.get_full_title(), 1280, 720, class='media-card-image') }}
-      {% if media_card.badge_icon %}
+      {% if video.badge_icon %}
         <div class="media-card-badge">
-          {{ media_card.badge_icon|icon }}{% if media_card.badge_text %} {{ media_card.badge_text }}{% endif %}
+          {{ video.badge_icon|icon }}{% if video.badge_text %} {{ video.badge_text }}{% endif %}
         </div>
       {% endif %}
-      {% if media_card.button_text %}
+      {% if video.button_text %}
       <div class="media-card-button{% if is_unavailable %} media-card-button-disabled{% endif %}">
         <span class="media-card-play">{{ 'play-circle-fill'|icon }}</span>
-        <span class="media-card-duration">{{ media_card.button_text }}</span>
+        <span class="media-card-duration">{{ video.button_text }}</span>
       </div>
       {% endif %}
     </div>
-  {% if media_card.card_url %}
+  {% if video.url %}
   </a>
   {% else %}
   </div>
   {% endif %}
   {% if event.bio_name or event.bio_title or event.bio or event.bio_links %}
-    <div class="media-card-body media-card-featured-body">
+    <div class="media-card-body">
       {% if event.bio_name %}
-        <h5 class="media-card-featured-heading">{{ event.bio_name }}</h5>
+        <h5 class="media-card-heading">{{ event.bio_name }}</h5>
       {% endif %}
       {% if event.bio_title %}
-        <div class="media-card-featured-meta">{{ event.bio_title }}</div>
+        <div class="media-card-meta">{{ event.bio_title }}</div>
       {% endif %}
       {% if event.bio or event.bio_links %}
-        <div class="media-card-featured-text">
+        <div class="media-card-richtext">
           {% if event.bio %}
             {{ event.bio|md }}
           {% endif %}

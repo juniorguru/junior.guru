@@ -106,61 +106,60 @@ def create_event_instance(**kwargs):
     return Event(**(defaults | kwargs))
 
 
-def test_to_media_card_past_public_uses_public_url():
+def test_to_video_upcoming():
+    now = datetime(2021, 5, 2, 10)
+    event = create_event_instance(
+        start_at=datetime(2021, 5, 3, 10),
+        public_recording_url="https://youtube.com/watch?v=abc",
+    )
+
+    assert event.to_video(now=now) == {
+        "url": CLUB_EVENTS_CHANNEL_URL,
+        "button_text": "Připoj se",
+        "badge_icon": "youtube",
+        "badge_text": "Veřejný stream",
+    }
+
+
+def test_to_video_past_public():
+    now = datetime(2021, 5, 2, 10)
     event = create_event_instance(
         start_at=datetime(2021, 5, 1, 10),
         public_recording_url="https://youtube.com/watch?v=abc",
         public_recording_duration_s=3600,
     )
 
-    assert (
-        event.to_media_card(now=datetime(2021, 5, 2, 10))["card_url"]
-        == event.public_recording_url
-    )
+    assert event.to_video(now=now) == {
+        "url": event.public_recording_url,
+        "button_text": f"Pusť si {hours(3600)} záznam",
+        "badge_icon": "unlock-fill",
+        "badge_text": "Veřejný záznam",
+    }
 
 
-def test_to_media_card_past_public_uses_recording_button_text():
-    event = create_event_instance(
-        start_at=datetime(2021, 5, 1, 10),
-        public_recording_url="https://youtube.com/watch?v=abc",
-        public_recording_duration_s=3600,
-    )
-
-    assert (
-        event.to_media_card(now=datetime(2021, 5, 2, 10))["button_text"]
-        == f"Pusť si {hours(3600)} záznam"
-    )
-
-
-def test_to_media_card_past_club_uses_discord_badge():
+def test_to_video_past_private():
+    now = datetime(2021, 5, 2, 10)
     event = create_event_instance(
         start_at=datetime(2021, 5, 1, 10),
         club_recording_url="https://discord.com/channels/1/2/3",
         private_recording_duration_s=1800,
     )
 
-    assert event.to_media_card(now=datetime(2021, 5, 2, 10))["badge_icon"] == "discord"
+    assert event.to_video(now=now) == {
+        "url": event.club_recording_url,
+        "button_text": f"Pusť si {hours(1800)} záznam",
+        "badge_icon": "lock-fill",
+        "badge_text": "Pouze pro členy",
+    }
 
 
-def test_to_media_card_past_without_recording_has_no_button_text():
+def test_to_video_past_without_recording():
+    now = datetime(2021, 5, 2, 10)
     event = create_event_instance(start_at=datetime(2021, 5, 1, 10))
 
-    assert event.to_media_card(now=datetime(2021, 5, 2, 10)).get("button_text") is None
-
-
-def test_to_media_card_past_without_recording_has_unavailable_badge_text():
-    event = create_event_instance(start_at=datetime(2021, 5, 1, 10))
-
-    assert (
-        event.to_media_card(now=datetime(2021, 5, 2, 10))["badge_text"]
-        == "Záznam není dostupný"
-    )
-
-
-def test_to_media_card_future_uses_club_events_channel_url():
-    event = create_event_instance(start_at=datetime(2021, 5, 3, 10))
-
-    assert (
-        event.to_media_card(now=datetime(2021, 5, 2, 10))["card_url"]
-        == CLUB_EVENTS_CHANNEL_URL
-    )
+    assert event.to_video(now=now) == {
+        "url": None,
+        "button_text": None,
+        "badge_icon": "ban",
+        "badge_text": "Záznam není dostupný",
+    }
