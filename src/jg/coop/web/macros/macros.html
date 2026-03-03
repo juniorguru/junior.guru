@@ -185,36 +185,92 @@
 {% endmacro %}
 
 
-{% macro featured_video_card(
-  button_text,
-  url,
-  badge_icon=none,
-  badge_text=none,
-  thumbnail_url=none,
-  screenshot_source_url=none,
-  image_alt=none
-) %}
-<div class="media-card media-card-featured"
-  {% if not thumbnail_url %}
-    {% set screenshot_source_url = screenshot_source_url or url %}
-    {% set thumbnail_url = screenshot_source_url|screenshot_url %}
-    data-screenshot-source-url="{{ screenshot_source_url }}"
-    data-screenshot-image-url="{{ thumbnail_url }}"
-  {% endif %}>
-  <a href="{{ url }}" class="media-card-featured-link" target="_blank" rel="noopener">
+{% macro event_video_card(event) %}
+{% set is_past_event = event.start_at < now.replace(tzinfo=none) %}
+{% set event_title = event.get_full_title() %}
+{% set thumbnail_url = "static/" + event.plain_poster_path %}
+{% set image_alt = event_title %}
+
+{% if is_past_event %}
+  {% if event.public_recording_url %}
+    {% set card_url = event.public_recording_url %}
+    {% set button_text = "Pusť si záznam (" + event.public_recording_duration_s|hours + ")" %}
+    {% set badge_icon = 'unlock-fill' %}
+    {% set badge_text = 'Veřejný záznam' %}
+    {% set is_unavailable = false %}
+  {% elif event.club_recording_url %}
+    {% set card_url = event.club_recording_url %}
+    {% set button_text = "Pusť si záznam (" + event.private_recording_duration_s|hours + ")" %}
+    {% set badge_icon = 'discord' %}
+    {% set badge_text = 'Pouze pro členy' %}
+    {% set is_unavailable = false %}
+  {% else %}
+    {% set card_url = none %}
+    {% set button_text = 'Záznam není dostupný' %}
+    {% set badge_icon = 'ban' %}
+    {% set badge_text = 'Záznam není dostupný' %}
+    {% set is_unavailable = true %}
+  {% endif %}
+{% else %}
+  {% set card_url = club_events_channel_url %}
+  {% set button_text = 'Připoj se' %}
+  {% if event.public_recording_url %}
+    {% set badge_icon = 'youtube' %}
+    {% set badge_text = 'Veřejný stream' %}
+  {% else %}
+    {% set badge_icon = 'discord' %}
+    {% set badge_text = 'Pouze pro členy' %}
+  {% endif %}
+  {% set is_unavailable = false %}
+{% endif %}
+
+<div class="media-card media-card-featured{% if is_unavailable %} media-card-featured-unavailable{% endif %}">
+  {% if card_url %}
+  <a href="{{ card_url }}" class="media-card-featured-link" target="_blank" rel="noopener">
+  {% else %}
+  <div class="media-card-featured-static">
+  {% endif %}
     <div class="media-card-image-cover">
-      {{ img(thumbnail_url, image_alt or button_text, 1280, 720, class='media-card-image') }}
+      {{ img(thumbnail_url, image_alt, 1280, 720, class='media-card-image') }}
       {% if badge_icon and badge_text %}
         <div class="media-card-badge">
           {{ badge_icon|icon }} {{ badge_text }}
         </div>
       {% endif %}
-      <div class="media-card-button">
+      <div class="media-card-button{% if is_unavailable %} media-card-button-disabled{% endif %}">
         <span class="media-card-play">{{ 'play-circle-fill'|icon }}</span>
         <span class="media-card-duration">{{ button_text }}</span>
       </div>
     </div>
+  {% if card_url %}
   </a>
+  {% else %}
+  </div>
+  {% endif %}
+  {% if event.bio_name or event.bio_title or event.bio or event.bio_links %}
+    <div class="media-card-body media-card-featured-body">
+      {% if event.bio_name %}
+        <h5 class="media-card-featured-heading">{{ event.bio_name }}</h5>
+      {% endif %}
+      {% if event.bio_title %}
+        <div class="media-card-featured-meta">{{ event.bio_title }}</div>
+      {% endif %}
+      {% if event.bio or event.bio_links %}
+        <div class="media-card-featured-text">
+          {% if event.bio %}
+            {{ event.bio|md }}
+          {% endif %}
+          {% if event.bio_links %}
+            <ul class="icon-links">
+              {% for bio_url in event.bio_links %}
+                <li>{{ bio_url|bio_link }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
 </div>
 {% endmacro %}
 

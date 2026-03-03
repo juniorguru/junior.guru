@@ -39,6 +39,9 @@ def on_shared_context(context):
     today = now.date()
     context["now"] = now
     context["today"] = today
+    context["club_events_channel_url"] = (
+        f"https://discord.com/channels/{CLUB_GUILD_ID}/{ClubChannelID.EVENTS}"
+    )
 
     # main.html, about/*.md
     profit_ttm = Transaction.profit_ttm(today)
