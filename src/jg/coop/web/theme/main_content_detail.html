@@ -8,11 +8,11 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <a href="{{ (page|parent_page).url|url }}">
-              Podcast
+              {{ page.meta.breadcrumb_parent }}
             </a>
           </li>
           <li class="breadcrumb-item active" aria-current="page">
-            {{ page.meta.podcast_episode_name }}
+            {{ page.meta.breadcrumb_item }}
           </li>
         </ol>
       </nav>
@@ -26,13 +26,7 @@
     <div class="comments-container">
       <h2>Chceš se taky na něco zeptat?</h2>
       <p>
-        Můžeš!
-        {% if page.meta.podcast_episode_guest %}
-          Na našem klubovém Discordu je nejen <strong>{{ page.meta.podcast_episode_guest }}</strong>,
-          ale i&nbsp;{{ members_total_count - 1 }} dalších lidí, které zajímá svět IT juniorů.
-        {% else %}
-          Na našem klubovém Discordu je {{ members_total_count }} lidí, které zajímá svět IT juniorů.
-        {% endif %}
+        Na našem klubovém Discordu je {{ members_total_count }} lidí, které zajímá svět IT juniorů.
       </p>
       <div class="mt-4">
         <a class="btn btn-lg btn-primary mb-4" href="{{ pages|docs_url('club.md')|url }}">

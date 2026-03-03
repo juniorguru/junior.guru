@@ -49,10 +49,10 @@ def on_shared_context(context):
     context["profit_ttm_usd"] = ExchangeRate.in_currency(profit_ttm, "USD")
     context["profit_ttm_eur"] = ExchangeRate.in_currency(profit_ttm, "EUR")
 
-    # club.md, courses/*.md, main_stories.html, love.jinja
+    # club.md, courses/*.md, main_content_detail.html, love.jinja
     context["members"] = ClubUser.avatars_listing()
 
-    # club.md, about/*.md, main_stories.html, love.jinja
+    # club.md, about/*.md, main_content_detail.html, love.jinja
     context["members_total_count"] = ClubUser.members_count()
 
     # about/handbook.md, main_handbook.html
