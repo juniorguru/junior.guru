@@ -1,0 +1,20 @@
+.job-subtitle {
+  @extend .fs-5;
+  @extend .font-monospace;
+  @extend .text-uppercase;
+  margin-bottom: $main-spacer;
+  color: $jg-gray;
+  text-align: center;
+}
+
+.job-apply {
+  background: $jg-blue-light;
+}
+
+.job-apply-container {
+  @extend .container-lg;
+  max-width: $main-document-width;
+  padding-top: $main-spacer;
+  padding-bottom: $main-spacer;
+  text-align: center;
+}

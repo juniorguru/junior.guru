@@ -2,22 +2,11 @@
 
 <h1>{{ job.title }}</h1>
 
-<p>
-  <strong>
+<p class="job-subtitle">
   <a href="{{ job.company_url }}">{{ job.company_name }}</a>
   {% if job.locations %}
     – {{ job.location_text|default("?", true) }}
   {% endif %}
-  </strong>
 </p>
 
 {{ job.submitted_job.description_html|safe }}
-
-<div class="pagination">
-  <div class="pagination-control">
-    <a href="{{ (page|parent_page).url|url }}" class="pagination-button">
-      {{ 'arrow-left'|icon }}
-      Všechny inzeráty
-    </a>
-  </div>
-</div>
