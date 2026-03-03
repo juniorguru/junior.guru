@@ -419,6 +419,11 @@ def test_hours(seconds: int, expected: str):
             "twitter-x",
             "@banterCZ",
         ),
+        (
+            "https://bsky.app/profile/izatlouk.cz",
+            "bluesky",
+            "@izatlouk.cz",
+        ),
     ],
 )
 def test_bio_link(url: str, expected_icon: str, expected_text: str):
