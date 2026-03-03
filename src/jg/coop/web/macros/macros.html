@@ -185,6 +185,40 @@
 {% endmacro %}
 
 
+{% macro featured_video_card(
+  button_text,
+  url,
+  badge_icon=none,
+  badge_text=none,
+  thumbnail_url=none,
+  screenshot_source_url=none,
+  image_alt=none
+) %}
+<div class="media-card media-card-featured"
+  {% if not thumbnail_url %}
+    {% set screenshot_source_url = screenshot_source_url or url %}
+    {% set thumbnail_url = screenshot_source_url|screenshot_url %}
+    data-screenshot-source-url="{{ screenshot_source_url }}"
+    data-screenshot-image-url="{{ thumbnail_url }}"
+  {% endif %}>
+  <a href="{{ url }}" class="media-card-featured-link" target="_blank" rel="noopener">
+    <div class="media-card-image-cover">
+      {{ img(thumbnail_url, image_alt or button_text, 1280, 720, class='media-card-image') }}
+      {% if badge_icon and badge_text %}
+        <div class="media-card-badge">
+          {{ badge_icon|icon }} {{ badge_text }}
+        </div>
+      {% endif %}
+      <div class="media-card-button">
+        <span class="media-card-play">{{ 'play-circle-fill'|icon }}</span>
+        <span class="media-card-duration">{{ button_text }}</span>
+      </div>
+    </div>
+  </a>
+</div>
+{% endmacro %}
+
+
 {% macro podcast_card(podcast_episode, caption=none) %}
 <div class="media-card">
   <div class="media-card-link-section">

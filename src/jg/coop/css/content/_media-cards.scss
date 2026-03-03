@@ -10,6 +10,16 @@
   border: 1px solid $jg-blue-light;
 }
 
+.media-card-featured {
+  max-width: none;
+}
+
+.media-card-featured-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
 .media-cards {
   display: flex;
   flex-wrap: wrap;

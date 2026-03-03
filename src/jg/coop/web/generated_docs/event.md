@@ -1,4 +1,4 @@
-{% from 'macros.html' import club_teaser, figure, img, lead, note, video_card with context %}
+{% from 'macros.html' import club_teaser, featured_video_card, figure, img, lead, note with context %}
 
 # {{ event.get_full_title() }}
 
@@ -7,6 +7,119 @@
 <script type="application/ld+json">{{ event.to_json_ld() }}</script>
 
 {% call lead() %}
+{{ event.description|md }}
+{% endcall %}
+
+{% if is_past_event %}
+
+<!-- ## Záznam -->
+
+{% if event.public_recording_url %}
+
+<!-- Záznamy klubových akcí **bývají dostupné jen pro členy**, ale tento jsme **zveřejnili**, ať pomáhá všem.
+Budeme rádi, když video olajkuješ, nebo dokonce okomentuješ!
+
+Členové junior.guru klubu mohou akce sledovat živě a **pokládat hostům dotazy**. Taky mají k dispozici **všechny záznamy proběhlých akcí**. -->
+
+{{ featured_video_card(
+  "Pusť si záznam (" + event.public_recording_duration_s|hours + ")",
+  event.public_recording_url,
+  badge_icon='unlock-fill',
+  badge_text='Veřejný záznam',
+  thumbnail_url="static/" + event.plain_poster_path,
+  image_alt=event.get_full_title(),
+) }}
+
+<!-- {% if event.club_recording_url and event.public_recording_duration_s != event.private_recording_duration_s %}{% call note() %}
+  {{ 'lightbulb'|icon }} Tato akce má **dva záznamy**. Kromě veřejného sestřihu, který má {{ event.public_recording_duration_s|hours }}, existuje ještě i verze pro členy s délkou {{ event.private_recording_duration_s|hours }}. Pokud máš přístup do klubu, můžeš si <a href="{{ event.club_recording_url }}" target="_blank" rel="noopener">pustit i členskou verzi</a>.
+{% endcall %}{% endif %} -->
+
+{% elif event.club_recording_url %}
+
+<!-- Záznam této klubové akce **je dostupný jen pro členy**. Ti mohou záznamy sdílet se svými kamarády, takže pokud nějaké členy znáš, popros je o odkaz na video.
+
+Nebo se můžeš **zdarma registrovat do klubu**. Nemusíš nic platit, ani nic hlídat. Každý nový člen má totiž **14 dní na zkoušku**. Když do dvou týdnů nezadáš kartu, automaticky ti vyprší přístup. -->
+
+{{ featured_video_card(
+  "Pusť si záznam (" + event.private_recording_duration_s|hours + ")",
+  event.club_recording_url,
+  badge_icon='discord',
+  badge_text='Pouze pro členy',
+  thumbnail_url="static/" + event.plain_poster_path,
+  image_alt=event.get_full_title(),
+) }}
+
+{% else %}
+
+Záznam není dostupný.
+
+{% endif %}
+
+{% else %}
+
+<!-- ## Jak se připojit -->
+
+{% if event.public_recording_url %}
+
+<!-- Klubové akce běžně bývají jen pro členy, ale tato je **veřejná**, ať pomáhá všem.
+Jdi **{{ '{:%-d.%-m.%Y v %-H:%M}'.format(event.start_at_prg) }}** na <a href="{{ event.public_recording_url }}" target="_blank" rel="noopener">adresu streamu</a> a čekej, až to začne. -->
+
+{{ featured_video_card(
+  'Připoj se',
+  event.public_recording_url,
+  badge_icon='youtube',
+  badge_text='Veřejný stream',
+  thumbnail_url="static/" + event.plain_poster_path,
+  image_alt=event.get_full_title(),
+) }}
+
+{% else %}
+
+<!-- Na tuto akci se mohou živě připojit a pokládat hostům dotazy **jen členové junior.guru klubu**. Můžeš se do něj **registrovat zdarma**. Nemusíš nic platit, ani nic hlídat. Každý nový člen má totiž **14 dní na zkoušku**.
+
+Když do dvou týdnů nezadáš kartu, automaticky ti vyprší přístup. {% if not event.is_within_trial() %}(Ale pozor, tahle akce je hodně v budoucnu, takže pokud si členství koupíš už dnes, nevyjdou ti dny zdarma.){% endif %}
+
+Pokud už máš do klubového Discordu přístup, jdi **{{ '{:%-d.%-m.%Y v %-H:%M}'.format(event.start_at_prg) }}** do kanálu <a href="https://discord.com/channels/769966886598737931/1075814161138860135" target="_blank" rel="noopener">#přednášky</a> a čekej, až to začne. -->
+
+{{ featured_video_card(
+  'Připoj se',
+  'https://discord.com/channels/769966886598737931/1075814161138860135',
+  badge_icon='discord',
+  badge_text='Pouze pro členy',
+  thumbnail_url="static/" + event.plain_poster_path,
+  image_alt=event.get_full_title(),
+) }}
+
+<!-- {{ club_teaser("Připoj se") }} -->
+
+{% endif %}
+
+{% endif %}
+
+<div class="standout details">
+  <div class="details-info"> <!-- avatar -->
+    <!-- <div class="details-image">
+      {{ img("static/" + event.avatar_path, event.get_full_title(), 400, 400, class='details-thumbnail', lazy=False) }}
+    </div> -->
+    <div class="details-body" style="width: 100%">
+      <h5 class="details-heading">{{ event.bio_name }}</h5>
+      {% if event.bio_title %}
+        <div class="details-text compact">{{ event.bio_title }}</div>
+      {% endif %}
+      <div class="details-text">
+        {{ event.bio|md }}
+        <ul class="icon-links">
+          {% for url in event.bio_links %}
+            <li>{{ url|bio_link }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ## O akci
+
 Klub junior.guru pořádá vzdělávací akce, online na svém Discordu.
 {%- if is_past_event %}
   Toto je jeda z nich. Už proběhla, ale najdeš tady o ní všechny informace
@@ -14,14 +127,14 @@ Klub junior.guru pořádá vzdělávací akce, online na svém Discordu.
 {% else %}
   Toto je upoutávka na jednu z nich, která teprve proběhne. Přečti si, jak se k nám můžeš připojit!
 {% endif %}
-{{- ' ' -}}Pojetí akcí je vždy vyloženě pro začátečníky. Žádná záplava odborných „termitů“, které ti nikdo nevysvětlil!
-{% endcall %}
+{{- ' ' -}}Pojetí akcí je vždy vyloženě pro začátečníky. Žádná záplava odborných „termitů“, které ti nikdo nevysvětlil! -->
 
-<div class="figure-container">
+<!-- <div class="figure-container">
   {{ figure('static/' + event.plain_poster_path, 1280, 720, event.get_full_title()) }}
   <a class="figure-button" href="{{ ("static/" + event.poster_path)|url }}" target="_blank" rel="noopener" download>{{ 'download'|icon }} Stáhni plakát</a>
-</div>
+</div> -->
 
+<!--
 <div class="c2a standout">
   {% if is_past_event %}
   <p class="c2a-text display">
@@ -40,108 +153,4 @@ Klub junior.guru pořádá vzdělávací akce, online na svém Discordu.
     <a class="c2a-button pulse" href="#jak-se-pripojit">{{ 'person-plus-fill'|icon }} Připoj se</a>
   </p>
   {% endif %}
-</div>
-
-## O čem to {% if is_past_event %} bylo{% else %}bude{% endif %}
-
-{{ event.description|md }}
-
-<div class="standout details">
-  <div class="details-info avatar">
-    <div class="details-image">
-      {{ img("static/" + event.avatar_path, event.get_full_title(), 400, 400, class='details-thumbnail', lazy=False) }}
-    </div>
-    <div class="details-body">
-      <h5 class="details-heading">{{ event.bio_name }}</h5>
-      {% if event.bio_title %}
-        <div class="details-text compact">{{ event.bio_title }}</div>
-      {% endif %}
-      <div class="details-text">
-        {{ event.bio|md }}
-        <ul class="icon-links">
-          {% for url in event.bio_links %}
-            <li>{{ url|bio_link }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-{% if is_past_event %}
-
-## Záznam
-
-{% if event.public_recording_url %}
-
-Záznamy klubových akcí **bývají dostupné jen pro členy**, ale tento jsme **zveřejnili**, ať pomáhá všem.
-Budeme rádi, když video olajkuješ, nebo dokonce okomentuješ!
-
-Členové junior.guru klubu mohou akce sledovat živě a **pokládat hostům dotazy**. Taky mají k dispozici **všechny záznamy proběhlých akcí**.
-
-{{ video_card(
-  event.get_full_title(),
-  event.public_recording_duration_s|hours,
-  event.public_recording_url,
-  badge_icon='unlock-fill',
-  badge_text='Veřejný záznam',
-  thumbnail_url="static/" + event.plain_poster_path,
-) }}
-
-{% if event.club_recording_url and event.public_recording_duration_s != event.private_recording_duration_s %}{% call note() %}
-  {{ 'lightbulb'|icon }} Tato akce má **dva záznamy**. Kromě veřejného sestřihu, který má {{ event.public_recording_duration_s|hours }}, existuje ještě i verze pro členy s délkou {{ event.private_recording_duration_s|hours }}. Pokud máš přístup do klubu, můžeš si <a href="{{ event.club_recording_url }}" target="_blank" rel="noopener">pustit i členskou verzi</a>.
-{% endcall %}{% endif %}
-
-{% elif event.club_recording_url %}
-
-Záznam této klubové akce **je dostupný jen pro členy**. Ti mohou záznamy sdílet se svými kamarády, takže pokud nějaké členy znáš, popros je o odkaz na video.
-
-Nebo se můžeš **zdarma registrovat do klubu**. Nemusíš nic platit, ani nic hlídat. Každý nový člen má totiž **14 dní na zkoušku**. Když do dvou týdnů nezadáš kartu, automaticky ti vyprší přístup.
-
-{{ video_card(
-  event.get_full_title(),
-  event.private_recording_duration_s|hours,
-  event.club_recording_url,
-  badge_icon='discord',
-  badge_text='Pouze pro členy',
-  thumbnail_url="static/" + event.plain_poster_path,
-) }}
-
-{% else %}
-
-Záznam není dostupný.
-
-{% endif %}
-
-{% else %}
-
-## Jak se připojit
-
-{% if event.public_recording_url %}
-
-Klubové akce běžně bývají jen pro členy, ale tato je **veřejná**, ať pomáhá všem.
-Jdi **{{ '{:%-d.%-m.%Y v %-H:%M}'.format(event.start_at_prg) }}** na <a href="{{ event.public_recording_url }}" target="_blank" rel="noopener">adresu streamu</a> a čekej, až to začne.
-
-<div class="c2a compact">
-  <a class="c2a-button brand-button youtube" href="{{ event.public_recording_url }}" target="_blank" rel="noopener">
-    {{ 'youtube'|icon }}
-    Připoj se
-  </a>
-  <p class="c2a-text">
-    <small>Odebírej na YouTube <a href="https://www.youtube.com/@juniordotguru/" target="_blank" rel="noopener">@juniordotguru</a></small>
-  </p>
-</div>
-
-{% else %}
-
-Na tuto akci se mohou živě připojit a pokládat hostům dotazy **jen členové junior.guru klubu**. Můžeš se do něj **registrovat zdarma**. Nemusíš nic platit, ani nic hlídat. Každý nový člen má totiž **14 dní na zkoušku**.
-
-Když do dvou týdnů nezadáš kartu, automaticky ti vyprší přístup. {% if not event.is_within_trial() %}(Ale pozor, tahle akce je hodně v budoucnu, takže pokud si členství koupíš už dnes, nevyjdou ti dny zdarma.){% endif %}
-
-Pokud už máš do klubového Discordu přístup, jdi **{{ '{:%-d.%-m.%Y v %-H:%M}'.format(event.start_at_prg) }}** do kanálu <a href="https://discord.com/channels/769966886598737931/1075814161138860135" target="_blank" rel="noopener">#přednášky</a> a čekej, až to začne.
-
-{{ club_teaser("Připoj se") }}
-
-{% endif %}
-
-{% endif %}
+</div> -->
