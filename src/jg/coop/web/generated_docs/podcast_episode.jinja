@@ -2,23 +2,21 @@
 
 <h1>{{ podcast_episode.format_title(affiliation=false) }}</h1>
 
-{#
-{% call lead() %}
-  ...
-{% endcall %}
-#}
-
-{{ img('static/' + podcast_episode.image_path, podcast_episode.format_title(), 100, 100, class='news-page-image') }}
-<p>
-  <strong>{{ '{:%-d.%-m.%Y}'.format(podcast_episode.publish_on) }}</strong> — {{ podcast_episode.description|md }}
-</p>
-{{ podcast_player(podcast_episode, class='news-page-player') }}
-
-<div class="pagination">
-  <div class="pagination-control">
-    <a href="{{ (page|parent_page).url|url }}" class="pagination-button">
-      {{ 'arrow-left'|icon }}
-      Všechny epizody
+<ul class="article-details">
+  <li class="article-details-item">
+    <a class="article-details-author" href="https://www.linkedin.com/in/pavlinafronkova/" target="_blank" rel="noopener">
+      {{ img('static/avatars-participants/pavlina-fronkova.jpg', 'Pavlína Froňková, profilovka', 50, 50, lazy=False, class='article-details-avatar') }}
+      <strong>Pavlína Froňková</strong>
     </a>
-  </div>
+  </li>
+  <li class="article-details-item">{{ '{:%-d.%-m.%Y}'.format(podcast_episode.publish_on) }}</li>
+</ul>
+
+<div class="article-lead">
+{{ img('static/' + podcast_episode.image_path, podcast_episode.format_title() + ', foto', 100, 100, lazy=False, class='article-image') }}
+{% call lead() %}
+{{ podcast_episode.description }}
+{% endcall %}
 </div>
+
+{{ podcast_player(podcast_episode, class='news-page-player') }}

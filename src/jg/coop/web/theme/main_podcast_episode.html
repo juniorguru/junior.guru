@@ -8,11 +8,11 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <a href="{{ (page|parent_page).url|url }}">
-              Příběhy
+              Podcast
             </a>
           </li>
           <li class="breadcrumb-item active" aria-current="page">
-            {{ page.meta.interviewee }}
+            {{ page.meta.podcast_episode_name }}
           </li>
         </ol>
       </nav>
@@ -27,12 +27,16 @@
       <h2>Chceš se taky na něco zeptat?</h2>
       <p>
         Můžeš!
-        Na našem klubovém Discordu je nejen <strong>{{ page.meta.interviewee }}</strong>,
-        ale i {{ members_total_count - 1 }} dalších lidí, které příběhy juniorů zajímají.
+        {% if page.meta.podcast_episode_guest %}
+          Na našem klubovém Discordu je nejen <strong>{{ page.meta.podcast_episode_guest }}</strong>,
+          ale i&nbsp;{{ members_total_count - 1 }} dalších lidí, které zajímá svět IT juniorů.
+        {% else %}
+          Na našem klubovém Discordu je {{ members_total_count }} lidí, které zajímá svět IT juniorů.
+        {% endif %}
       </p>
       <div class="mt-4">
         <a class="btn btn-lg btn-primary mb-4" href="{{ pages|docs_url('club.md')|url }}">
-          Přidej se do klubu
+          Přidej se&nbsp;do klubu
         </a>
         <div>
           <span class="members mb-0">
@@ -45,4 +49,4 @@
 
     </div>
   </div>
-  {% endblock %}
+{% endblock %}

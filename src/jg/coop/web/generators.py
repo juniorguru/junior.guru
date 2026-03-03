@@ -162,13 +162,17 @@ def generate_podcast_episode_pages() -> Generator[GeneratedDocument, None, None]
                 title=f"Podcast – {podcast_episode.format_title()}",
                 description=f"Poslechni si {podcast_episode.number}. díl Junior Guru podcastu.",
                 podcast_episode_number=podcast_episode.number,
+                podcast_episode_name=(
+                    podcast_episode.guest_name or f"Epizoda {podcast_episode.number}"
+                ),
+                podcast_episode_guest=podcast_episode.guest_name or "",
                 thumbnail_title=podcast_episode.format_title(affiliation=False),
                 thumbnail_subheading=f"Epizoda {podcast_episode.number}",
                 thumbnail_image_path=podcast_episode.image_path,
                 thumbnail_button_heading="Poslouchej na",
                 thumbnail_button_link="junior.guru/podcast",
                 thumbnail_platforms=["youtube", "spotify", "apple"],
-                template="main_subnav.html",
+                template="main_podcast_episode.html",
             ),
             content=(DOCS_DIR / "podcast_episode.jinja").read_text(),
         )
