@@ -79,6 +79,7 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
     {%- endcall %}
   </div>
 </div>
+{#
 <div class="team-member">
   {{ img('static/avatars-participants/patrik-brnusak.jpg', 'Patrik Brnušák', 100, 100, lazy=False, class='team-member-photo') }}
   <div class="team-member-body">
@@ -94,6 +95,7 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
     {%- endcall %}
   </div>
 </div>
+#}
 </div>
 
 {% call note(standout=True) %}
