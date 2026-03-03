@@ -251,6 +251,17 @@ class Event(BaseModel):
         return events
 
     @classmethod
+    def count_recording(cls):
+        return (
+            cls.select()
+            .where(
+                (cls.club_recording_url.is_null(False))
+                | (cls.public_recording_url.is_null(False))  # noqa: E712
+            )
+            .count()
+        )
+
+    @classmethod
     def count_by_month(cls, date):
         from_date, to_date = month_range(date)
         return (

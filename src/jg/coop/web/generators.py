@@ -125,6 +125,7 @@ def generate_job_pages() -> Generator[GeneratedDocument, None, None]:
 
 @db.connection_context()
 def generate_event_pages() -> Generator[GeneratedDocument, None, None]:
+    archive_size = Event.count_recording()
     for event in Event.listing():
         if event.venue:
             title_suffix = "junior.guru akce"
@@ -145,9 +146,14 @@ def generate_event_pages() -> Generator[GeneratedDocument, None, None]:
             meta=dict(
                 title=f"{event.get_full_title(separator='–')} – {title_suffix}",
                 description=description,
-                template="main_event.html",
+                template="main_content_detail.html",
                 event_id=event.id,
-                event_breadcrumb_title=event.bio_name,
+                breadcrumb_parent="Klubové akce",
+                breadcrumb_item=event.bio_name,
+                comments_heading=(
+                    f"Chceš pokládat hostům vlastní dotazy? "
+                    f"Využiješ video archiv s {archive_size} záznamy?"
+                ),
                 **event.to_thumbnail_meta(),
             ),
             content=(DOCS_DIR / "event.md").read_text(),
