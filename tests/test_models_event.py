@@ -106,7 +106,7 @@ def create_event_instance(**kwargs):
     return Event(**(defaults | kwargs))
 
 
-def test_to_video_upcoming():
+def test_to_video_upcoming_youtube():
     now = datetime(2021, 5, 2, 10)
     event = create_event_instance(
         start_at=datetime(2021, 5, 3, 10),
@@ -115,9 +115,24 @@ def test_to_video_upcoming():
 
     assert event.to_video(now=now) == {
         "url": CLUB_EVENTS_CHANNEL_URL,
-        "button_text": "Připoj se",
+        "button_text": "Připoj se 3.5. v 11:00",
         "badge_icon": "youtube",
         "badge_text": "Veřejný stream",
+    }
+
+
+def test_to_video_upcoming_discord():
+    now = datetime(2021, 5, 2, 10)
+    event = create_event_instance(
+        start_at=datetime(2021, 5, 4, 9, 30),
+        public_recording_url=None,
+    )
+
+    assert event.to_video(now=now) == {
+        "url": CLUB_EVENTS_CHANNEL_URL,
+        "button_text": "Připoj se 4.5. v 10:30",
+        "badge_icon": "discord",
+        "badge_text": "Pouze pro členy",
     }
 
 

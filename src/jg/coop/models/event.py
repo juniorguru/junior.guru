@@ -113,7 +113,7 @@ class Event(BaseModel):
         if self.start_at >= now:
             return {
                 "url": CLUB_EVENTS_CHANNEL_URL,
-                "button_text": "Připoj se",
+                "button_text": f"Připoj se {self.start_at_prg:%-d.%-m. v %-H:%M}",
                 "badge_icon": "youtube" if self.public_recording_url else "discord",
                 "badge_text": (
                     "Veřejný stream" if self.public_recording_url else "Pouze pro členy"
@@ -130,7 +130,7 @@ class Event(BaseModel):
             return {
                 "url": self.club_recording_url,
                 "button_text": f"Pusť si {hours(self.private_recording_duration_s)} záznam",
-                "badge_icon": "discord",
+                "badge_icon": "lock-fill",
                 "badge_text": "Pouze pro členy",
             }
         return {

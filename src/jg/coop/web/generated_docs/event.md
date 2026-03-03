@@ -2,8 +2,14 @@
 
 # {{ event.get_full_title() }}
 
-
 <script type="application/ld+json">{{ event.to_json_ld() }}</script>
+
+<ul class="article-details">
+  <li class="article-details-item">{{ '{:%-d.%-m.%Y, %-H:%M}'.format(event.start_at_prg) }}</li>
+  <li class="article-details-item">
+    <a class="article-details-link" href="{{ ("static/" + event.poster_path)|url }}" target="_blank" rel="noopener" download>Stáhni plakát</a>
+  </li>
+</ul>
 
 {% call lead() %}{{ event.description|md }}{% endcall %}
 {{ event_video_card(event) }}
@@ -19,11 +25,6 @@ Klub junior.guru pořádá vzdělávací akce, online na svém Discordu.
   Toto je upoutávka na jednu z nich, která teprve proběhne. Přečti si, jak se k nám můžeš připojit!
 {% endif %}
 {{- ' ' -}}Pojetí akcí je vždy vyloženě pro začátečníky. Žádná záplava odborných „termitů“, které ti nikdo nevysvětlil! -->
-
-<!-- <div class="figure-container">
-  {{ figure('static/' + event.plain_poster_path, 1280, 720, event.get_full_title()) }}
-  <a class="figure-button" href="{{ ("static/" + event.poster_path)|url }}" target="_blank" rel="noopener" download>{{ 'download'|icon }} Stáhni plakát</a>
-</div> -->
 
 <!--
 <div class="c2a standout">
