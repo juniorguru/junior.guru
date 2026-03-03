@@ -129,7 +129,7 @@ class Event(BaseModel):
             "speaker_title": self.bio_title,
             "speaker_bio": self.bio,
             "speaker_links": self.bio_links,
-            "is_unavailable": False,
+            "has_recording": self.has_recording,
         }
         if is_past_event:
             if self.public_recording_url:
@@ -149,10 +149,8 @@ class Event(BaseModel):
             else:
                 media_card |= {
                     "card_url": None,
-                    "button_text": "Záznam není dostupný",
                     "badge_icon": "ban",
                     "badge_text": "Záznam není dostupný",
-                    "is_unavailable": True,
                 }
         else:
             media_card |= {
