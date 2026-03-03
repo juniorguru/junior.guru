@@ -77,6 +77,8 @@ Klub junior.guru pořádá vzdělávací akce, online na svém Discordu.
 Záznamy klubových akcí **bývají dostupné jen pro členy**, ale tento jsme **zveřejnili**, ať pomáhá všem.
 Budeme rádi, když video olajkuješ, nebo dokonce okomentuješ!
 
+Členové junior.guru klubu mohou akce sledovat živě a **pokládat hostům dotazy**. Taky mají k dispozici **všechny záznamy proběhlých akcí**.
+
 {{ video_card(
   event.get_full_title(),
   event.public_recording_duration_s|hours,
@@ -85,6 +87,10 @@ Budeme rádi, když video olajkuješ, nebo dokonce okomentuješ!
   badge_text='Veřejný záznam',
   thumbnail_url="static/" + event.plain_poster_path,
 ) }}
+
+{% if event.club_recording_url and event.public_recording_duration_s != event.private_recording_duration_s %}{% call note() %}
+  {{ 'lightbulb'|icon }} Tato akce má **dva záznamy**. Kromě veřejného sestřihu, který má {{ event.public_recording_duration_s|hours }}, existuje ještě i verze pro členy s délkou {{ event.private_recording_duration_s|hours }}. Pokud máš přístup do klubu, můžeš si <a href="{{ event.club_recording_url }}" target="_blank" rel="noopener">pustit i členskou verzi</a>.
+{% endcall %}{% endif %}
 
 {% elif event.club_recording_url %}
 
@@ -101,15 +107,11 @@ Nebo se můžeš **zdarma registrovat do klubu**. Nemusíš nic platit, ani nic 
   thumbnail_url="static/" + event.plain_poster_path,
 ) }}
 
+{% else %}
+
+Záznam není dostupný.
+
 {% endif %}
-
-Členové junior.guru klubu mohou akce sledovat živě a **pokládat hostům dotazy**. Taky mají k dispozici **záznamy všech proběhlých akcí**.
-
-{% if event.public_recording_url and event.club_recording_url and event.public_recording_duration_s != event.private_recording_duration_s %}{% call note() %}
-  {{ 'lightbulb'|icon }} Tato akce má **dva záznamy**. Kromě veřejného sestřihu, který má {{ event.public_recording_duration_s|hours }}, existuje ještě i verze pro členy s délkou {{ event.private_recording_duration_s|hours }}. Pokud máš přístup do klubu, můžeš si <a href="{{ event.club_recording_url }}" target="_blank" rel="noopener">pustit i členskou verzi</a>.
-{% endcall %}{% endif %}
-
-{{ club_teaser("Mrkni do klubu") }}
 
 {% else %}
 
@@ -132,7 +134,9 @@ Jdi **{{ '{:%-d.%-m.%Y v %-H:%M}'.format(event.start_at_prg) }}** na <a href="{{
 
 {% else %}
 
-Na tuto akci se mohou živě připojit a pokládat hostům dotazy **jen členové junior.guru klubu**. Můžeš se do něj **registrovat zdarma**. Nemusíš nic platit, ani nic hlídat. Každý nový člen má totiž **14 dní na zkoušku**. Když do dvou týdnů nezadáš kartu, automaticky ti vyprší přístup. {% if not event.is_within_trial() %}(Ale pozor, tahle akce je hodně v budoucnu, takže pokud si členství koupíš už dnes, nevyjdou ti dny zdarma.){% endif %}
+Na tuto akci se mohou živě připojit a pokládat hostům dotazy **jen členové junior.guru klubu**. Můžeš se do něj **registrovat zdarma**. Nemusíš nic platit, ani nic hlídat. Každý nový člen má totiž **14 dní na zkoušku**.
+
+Když do dvou týdnů nezadáš kartu, automaticky ti vyprší přístup. {% if not event.is_within_trial() %}(Ale pozor, tahle akce je hodně v budoucnu, takže pokud si členství koupíš už dnes, nevyjdou ti dny zdarma.){% endif %}
 
 Pokud už máš do klubového Discordu přístup, jdi **{{ '{:%-d.%-m.%Y v %-H:%M}'.format(event.start_at_prg) }}** do kanálu <a href="https://discord.com/channels/769966886598737931/1075814161138860135" target="_blank" rel="noopener">#přednášky</a> a čekej, až to začne.
 
