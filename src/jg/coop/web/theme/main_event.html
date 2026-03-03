@@ -1,0 +1,22 @@
+{% extends 'main_subnav.html' %}
+
+
+{% block main %}
+  <div class="main main-simple">
+    <main class="content document">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="{{ (page|parent_page).url|url }}">
+              Akce
+            </a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            {{ page.meta.event_breadcrumb_title }}
+          </li>
+        </ol>
+      </nav>
+      {% block content %}{{ page.content }}{% endblock %}
+    </main>
+  </div>
+{% endblock %}

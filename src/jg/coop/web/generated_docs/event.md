@@ -166,12 +166,3 @@ Pokud už máš do klubového Discordu přístup, jdi **{{ '{:%-d.%-m.%Y v %-H:%
 {% endif %}
 
 {% endif %}
-
-<div class="pagination">
-  <div class="pagination-control">
-    <a href="{{ (page|parent_page).url|url }}" class="pagination-button">
-      {{ 'arrow-left'|icon }}
-      Všechny akce
-    </a>
-  </div>
-</div>

@@ -145,8 +145,9 @@ def generate_event_pages() -> Generator[GeneratedDocument, None, None]:
             meta=dict(
                 title=f"{event.get_full_title(separator='–')} – {title_suffix}",
                 description=description,
-                template="main_subnav.html",
+                template="main_event.html",
                 event_id=event.id,
+                event_breadcrumb_title=event.bio_name,
                 **event.to_thumbnail_meta(),
             ),
             content=(DOCS_DIR / "event.md").read_text(),
