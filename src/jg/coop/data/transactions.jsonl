@@ -1267,3 +1267,6 @@
 {"_id": "27506724913", "amount": -2000, "category": "office", "happened_on": "2026-02-27"}
 {"_id": "27513898555", "amount": 7838, "category": "memberships", "happened_on": "2026-03-02"}
 {"_id": "27518094201", "amount": 6, "category": "donations", "happened_on": "2026-03-04"}
+{"_id": "27520649715", "amount": -324, "category": "miscellaneous", "happened_on": "2026-03-05"}
+{"_id": "27520649752", "amount": -433, "category": "miscellaneous", "happened_on": "2026-03-05"}
+{"_id": "27520649772", "amount": -216, "category": "miscellaneous", "happened_on": "2026-03-05"}
