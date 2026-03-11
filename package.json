@@ -16,15 +16,15 @@
   },
   "devDependencies": {
     "@343dev/optimizt": "12.1.1",
-    "@biomejs/biome": "2.4.5",
+    "@biomejs/biome": "2.4.6",
     "bootstrap": "5.3.8",
     "esbuild": "0.27.3",
-    "esbuild-sass-plugin": "3.6.0",
+    "esbuild-sass-plugin": "3.7.0",
     "jsdom": "28.1.0",
     "sass": "1.77.6",
     "stylelint": "16.26.1",
     "stylelint-config-twbs-bootstrap": "16.1.0",
-    "stylelint-order": "7.0.1",
+    "stylelint-order": "8.0.0",
     "vitest": "4.0.18"
   }
 }
