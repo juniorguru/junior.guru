@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+from datetime import UTC, datetime, timedelta, timezone
 
 import pytest
 
@@ -178,3 +178,31 @@ def test_to_video_past_without_recording():
         "badge_icon": "ban",
         "badge_text": "Záznam není dostupný",
     }
+
+
+def test_is_past_with_naive_datetime():
+    event = create_event_instance(start_at=datetime(2021, 5, 1, 10))
+
+    assert event.is_past(now=datetime(2021, 5, 2, 10)) is True
+
+
+def test_is_past_with_utc_datetime():
+    event = create_event_instance(start_at=datetime(2021, 5, 1, 10))
+
+    assert event.is_past(now=datetime(2021, 5, 2, 10, tzinfo=UTC)) is True
+
+
+def test_is_past_with_non_utc_datetime_raises_value_error():
+    event = create_event_instance(start_at=datetime(2021, 5, 1, 10))
+
+    with pytest.raises(ValueError, match="UTC"):
+        event.is_past(now=datetime(2021, 5, 2, 12, tzinfo=timezone(timedelta(hours=2))))
+
+
+def test_to_video_with_non_utc_datetime_raises_value_error():
+    event = create_event_instance(start_at=datetime(2021, 5, 1, 10))
+
+    with pytest.raises(ValueError, match="UTC"):
+        event.to_video(
+            now=datetime(2021, 5, 2, 12, tzinfo=timezone(timedelta(hours=2)))
+        )

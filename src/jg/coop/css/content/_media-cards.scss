@@ -103,8 +103,8 @@
   background: $link-hover-color;
 }
 
-.video-unavailable .media-card-button,
-.video-unavailable:hover .media-card-button {
+.media-card-button.disabled,
+.media-card:hover .media-card-button.disabled {
   color: $jg-dark;
   cursor: not-allowed;
   background: $jg-gray-light;

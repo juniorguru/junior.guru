@@ -203,7 +203,7 @@
         </div>
       {% endif %}
       {% if video.button_text %}
-      <div class="media-card-button{% if is_unavailable %} media-card-button-disabled{% endif %}">
+      <div class="media-card-button{% if is_unavailable %} disabled{% endif %}">
         <span class="media-card-play">{{ 'play-circle-fill'|icon }}</span>
         <span class="media-card-duration">{{ video.button_text }}</span>
       </div>

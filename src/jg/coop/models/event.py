@@ -103,14 +103,22 @@ class Event(BaseModel):
     def page_url(self) -> str:
         return f"events/{self.id}.md"
 
+    def is_past(self, now: None | datetime = None) -> bool:
+        now = now or datetime.now(UTC)
+        if now.tzinfo is not None:
+            if now.utcoffset() != timedelta(0) or now.tzname() != "UTC":
+                raise ValueError("Expected UTC datetime when timezone is provided")
+            now = now.replace(tzinfo=None)
+        return self.start_at < now
+
     def is_within_trial(self, today: None | date = None) -> bool:
         today = today or date.today()
         trial_ends_on = today + timedelta(days=14 - 1)  # better be safe, remove one day
         return self.start_at.date() <= trial_ends_on
 
     def to_video(self, now: datetime | None = None) -> dict:
-        now = (now or datetime.now(UTC)).replace(tzinfo=None)
-        if self.start_at >= now:
+        now = now or datetime.now(UTC)
+        if not self.is_past(now=now):
             return {
                 "url": CLUB_EVENTS_CHANNEL_URL,
                 "button_text": f"Připoj se {self.start_at_prg:%-d.%-m. v %-H:%M}",
@@ -136,7 +144,7 @@ class Event(BaseModel):
         return {
             "url": None,
             "button_text": None,
-            "badge_icon": "ban",
+            "badge_icon": "camera-video-off",
             "badge_text": "Záznam není dostupný",
         }
 
