@@ -29,7 +29,20 @@
       {% endif %}
     </span>
   </li>
-  {% if is_past_event and not event.has_recording %}
+  {% if event.public_recording_url %}
+  <li class="note-explainer-item">
+    {{ 'play-circle-fill'|icon }}
+    <span>
+      {% if is_past_event %}
+        Záznamy klubových akcí <strong>bývají dostupné jen pro členy</strong>, ale tento jsme <strong>zveřejnili</strong>, ať pomáhá všem.
+        <small>Budeme rádi, když video olajkuješ, nebo dokonce okomentuješ!</small>
+      {% else %}
+        Klubové akce běžně bývají jen pro členy, ale tato je <strong>veřejná</strong>, ať pomáhá všem.
+        Jdi <strong>{{ '{:%-d.%-m.%Y v %-H:%M}'.format(event.start_at_prg) }}</strong> na <a href="{{ event.public_recording_url }}" target="_blank" rel="noopener">adresu streamu</a> a čekej, až to začne.
+      {% endif %}
+    </span>
+  </li>
+  {% elif is_past_event and not event.has_recording %}
   <li class="note-explainer-item">
     {{ 'camera-video-off-fill'|icon }}
     <span>
@@ -52,13 +65,13 @@
       {% endif %}
     </span>
   </li>
-  {% if not (is_past_event and not event.has_recording) %}
+  {% if not event.public_recording_url and not (is_past_event and not event.has_recording) %}
   <li class="note-explainer-item">
     {{ 'play-circle-fill'|icon }}
     <span>
       Pokud už máš přístup do klubového Discordu,
       {% if event.club_recording_url %}
-        otevři si <a href="{{ event.club_recording_url }}" target="_blank" rel="noopener">příspěvek v kanálu #oznámení s odkazem na záznam</a>. <small>Členové klubu mohou odkazy na přednášky sdílet se svými kamarády, takže pokud nějaké členy znáš, popros je o odkaz na video.</small>
+        otevři si <a href="{{ event.club_recording_url }}" target="_blank" rel="noopener">odkaz na záznam</a> a <strong>sleduj</strong>!
       {% else %}
         jdi <strong>{{ '{:%-d.%-m.%Y v %-H:%M}'.format(event.start_at_prg) }}</strong> do kanálu <a href="https://discord.com/channels/769966886598737931/1075814161138860135" target="_blank" rel="noopener">#přednášky</a> a čekej, až to začne.
       {% endif %}
@@ -72,47 +85,3 @@
     </span>
   </li>
 </ul>
-
-
-{#
-<!--
-<div class="c2a standout">
-  {% if is_past_event %}
-  <p class="c2a-text display">
-    Akce proběhla <strong>{{ '{:%-d.%-m.%Y}'.format(event.start_at_prg) }}</strong>
-    a trvala <strong>{{ event.duration_s|hours }}</strong>
-  </p>
-  <p>
-    <a class="c2a-button" href="#zaznam">{{ 'play-circle-fill'|icon }} Pusť si záznam</a>
-  </p>
-  {% else %}
-  <p class="c2a-text display blue">
-
-  </p>
-  <p>
-    <a class="c2a-button pulse" href="#jak-se-pripojit">{{ 'person-plus-fill'|icon }} Připoj se</a>
-  </p>
-  {% endif %}
-</div> -->
-<!-- ## Záznam -->
-
-<!-- Záznamy klubových akcí **bývají dostupné jen pro členy**, ale tento jsme **zveřejnili**, ať pomáhá všem.
-Budeme rádi, když video olajkuješ, nebo dokonce okomentuješ!
-
-Členové junior.guru klubu mohou akce sledovat živě a **pokládat hostům dotazy**. Taky mají k dispozici **všechny záznamy proběhlých akcí**. -->
-
-<!-- {% if event.club_recording_url and event.public_recording_duration_s != event.private_recording_duration_s %}{% call note() %}
-  {{ 'lightbulb'|icon }} Tato akce má **dva záznamy**. Kromě veřejného sestřihu, který má {{ event.public_recording_duration_s|hours }}, existuje ještě i verze pro členy s délkou {{ event.private_recording_duration_s|hours }}. Pokud máš přístup do klubu, můžeš si <a href="{{ event.club_recording_url }}" target="_blank" rel="noopener">pustit i členskou verzi</a>.
-{% endcall %}{% endif %} -->
-
-<!-- Záznam této klubové akce **je dostupný jen pro členy**. Ti mohou záznamy sdílet se svými kamarády, takže pokud nějaké členy znáš, popros je o odkaz na video.
-
-Nebo se můžeš **zdarma registrovat do klubu**. Nemusíš nic platit, ani nic hlídat. Každý nový člen má totiž **14 dní na zkoušku**. Když do dvou týdnů nezadáš kartu, automaticky ti vyprší přístup. -->
-
-<!-- ## Jak se připojit -->
-
-<!-- Klubové akce běžně bývají jen pro členy, ale tato je **veřejná**, ať pomáhá všem.
-Jdi **{{ '{:%-d.%-m.%Y v %-H:%M}'.format(event.start_at_prg) }}** na <a href="{{ event.public_recording_url }}" target="_blank" rel="noopener">adresu streamu</a> a čekej, až to začne. -->
-
-#}
-
