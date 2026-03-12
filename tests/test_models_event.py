@@ -115,7 +115,7 @@ def test_to_video_upcoming_youtube():
 
     assert event.to_video(now=now) == {
         "url": CLUB_EVENTS_CHANNEL_URL,
-        "button_text": "Připoj se 3.5. v 11:00",
+        "button_text": "Připoj se 3.5. v 12:00",
         "badge_icon": "youtube",
         "badge_text": "Veřejný stream",
     }
@@ -130,7 +130,7 @@ def test_to_video_upcoming_discord():
 
     assert event.to_video(now=now) == {
         "url": CLUB_EVENTS_CHANNEL_URL,
-        "button_text": "Připoj se 4.5. v 10:30",
+        "button_text": "Připoj se 4.5. v 11:30",
         "badge_icon": "discord",
         "badge_text": "Pouze pro členy",
     }
@@ -175,7 +175,7 @@ def test_to_video_past_without_recording():
     assert event.to_video(now=now) == {
         "url": None,
         "button_text": None,
-        "badge_icon": "ban",
+        "badge_icon": "camera-video-off",
         "badge_text": "Záznam není dostupný",
     }
 
