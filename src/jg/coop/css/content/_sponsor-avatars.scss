@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $sponsor-avatar-size: 2.5rem;
 
 .sponsor-avatars {
@@ -11,10 +13,10 @@ $sponsor-avatar-size: 2.5rem;
 .sponsor-avatars-item {
   display: flex;
   align-items: center;
-  margin: 0 map-get($spacers, 1) $spacer;
+  margin: 0 map.get($spacers, 1) $spacer;
 
   @include media-breakpoint-up(sm) {
-    margin: 0 map-get($spacers, 2) $spacer;
+    margin: 0 map.get($spacers, 2) $spacer;
   }
 }
 

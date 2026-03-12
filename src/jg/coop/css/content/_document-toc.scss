@@ -1,7 +1,9 @@
+@use "sass:map";
+
 .document-toc {
   position: relative;
-  padding: map-get($spacers, 4);
-  padding-top: map-get($spacers, 4) + .3rem;
+  padding: map.get($spacers, 4);
+  padding-top: map.get($spacers, 4) + .3rem;
   margin-bottom: $main-spacer;
   border: 2px solid $jg-blue;
   border-radius: $border-radius;
@@ -12,7 +14,7 @@
   top: -$spacer;
   left: $spacer;
   display: block;
-  padding: 0 map-get($spacers, 2);
+  padding: 0 map.get($spacers, 2);
   font-size: $font-size-lg;
   color: $jg-blue;
   content: "Obsah";
@@ -26,7 +28,7 @@
 }
 
 .document-toc li {
-  margin-bottom: map-get($spacers, 2);
+  margin-bottom: map.get($spacers, 2);
 }
 
 .document-toc a {

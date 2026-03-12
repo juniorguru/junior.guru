@@ -1,3 +1,5 @@
+@use "sass:map";
+
 .media-card {
   @extend .card;
   flex-grow: 0;
@@ -26,7 +28,7 @@
 }
 
 .media-card-meta {
-  margin-top: map-get($spacers, 2);
+  margin-top: map.get($spacers, 2);
   font-size: $font-size-sm;
 }
 
@@ -52,6 +54,14 @@
     min-width: $w;
     max-width: $w;
     margin-right: $spacer;
+  }
+}
+
+.media-cards .media-card.media-card-featured {
+  @include media-breakpoint-up(sm) {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
   }
 }
 
@@ -95,7 +105,7 @@
   font-weight: $font-weight-normal;
   color: $white;
   background: $link-color;
-  box-shadow: rgba($jg-dark, .24) 0 map-get($spacers, 1) map-get($spacers, 1);
+  box-shadow: rgba($jg-dark, .24) 0 map.get($spacers, 1) map.get($spacers, 1);
   transform: translate(-50%, -50%);
 }
 
@@ -137,7 +147,7 @@
 }
 
 .media-card-title:not(.standalone) {
-  padding-bottom: map-get($spacers, 2);
+  padding-bottom: map.get($spacers, 2);
 }
 
 .media-card-title a {

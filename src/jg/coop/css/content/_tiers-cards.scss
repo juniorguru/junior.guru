@@ -1,3 +1,5 @@
+@use "sass:map";
+
 .tiers-cards {
   display: flex;
   flex-wrap: wrap;
@@ -6,7 +8,7 @@
 
 .tiers-card {
   @extend .card;
-  margin: 0 0 map-get($spacers, 4);
+  margin: 0 0 map.get($spacers, 4);
   overflow: hidden;
   background: lighten($jg-blue-light, 1%);
   border: 1px solid $jg-blue-light;
@@ -56,5 +58,5 @@
 }
 
 .tier-card-footer small {
-  margin-top: map-get($spacers, 2);
+  margin-top: map.get($spacers, 2);
 }

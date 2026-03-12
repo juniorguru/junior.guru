@@ -1,3 +1,5 @@
+@use "sass:map";
+
 .article-details {
   @extend .list-unstyled;
   display: flex;
@@ -80,7 +82,7 @@
   width: 10rem;
   max-width: 40%;
   height: auto;
-  margin-bottom: map-get($spacers, 1);
+  margin-bottom: map.get($spacers, 1);
   margin-left: $spacer;
   filter: contrast(1.1);
   border-radius: $border-radius;

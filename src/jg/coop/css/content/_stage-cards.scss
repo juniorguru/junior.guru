@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $stage-icon-size: $spacer * 3.5;
 $stage-icon-space-x: 1.5 * $spacer;
 $stage-icon-space-y: $spacer;
@@ -17,13 +19,13 @@ $stage-arrow-height: $stage-arrow-width * .5;
 }
 
 .stage-cards {
-  margin-top: map-get($spacers, 4);
+  margin-top: map.get($spacers, 4);
   background-position: $stage-line-position center;
 }
 
 .stage-illustration {
   padding: $spacer 0;
-  margin: map-get($spacers, 4) 0;
+  margin: map.get($spacers, 4) 0;
   background: $jg-white;
 }
 
@@ -35,7 +37,7 @@ $stage-arrow-height: $stage-arrow-width * .5;
 
 .stage-card {
   @extend .card;
-  margin: 0 0 map-get($spacers, 4);
+  margin: 0 0 map.get($spacers, 4);
   background-color: $jg-blue-light;
   background-position: $stage-line-position center;
   border: none;

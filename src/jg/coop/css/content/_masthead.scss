@@ -1,9 +1,11 @@
-$masthead-eggshell-height: map-get($spacers, 5);
+@use "sass:map";
+
+$masthead-eggshell-height: map.get($spacers, 5);
 $masthead-content-spacer: $spacer;
 
 .masthead {
   position: relative;
-  padding: map-get($spacers, 5) 0 (2 * $masthead-eggshell-height);
+  padding: map.get($spacers, 5) 0 (2 * $masthead-eggshell-height);
   margin-bottom: $spacer;
   overflow: hidden;
   background: $jg-yellow;
@@ -98,7 +100,7 @@ $masthead-content-spacer: $spacer;
     flex-direction: column;
 
     @include media-breakpoint-up(sm) {
-      margin-right: map-get($spacers, 5);
+      margin-right: map.get($spacers, 5);
     }
   }
 

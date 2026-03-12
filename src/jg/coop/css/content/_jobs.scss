@@ -1,3 +1,5 @@
+@use "sass:map";
+
 .jobs-tag {
   @extend .badge;
   font-size: $font-size-base;
@@ -28,9 +30,9 @@
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: map-get($spacers, 2);
-  padding: map-get($spacers, 4);
-  padding-top: map-get($spacers, 4) + .3rem;
+  row-gap: map.get($spacers, 2);
+  padding: map.get($spacers, 4);
+  padding-top: map.get($spacers, 4) + .3rem;
   margin-bottom: $main-spacer;
   vertical-align: middle;
   border: 2px solid $jg-blue;
@@ -55,7 +57,7 @@
   top: -$spacer;
   left: $spacer;
   display: block;
-  padding: 0 map-get($spacers, 2);
+  padding: 0 map.get($spacers, 2);
   font-size: $font-size-lg;
   color: $jg-blue;
   content: "Filtry";
@@ -68,7 +70,7 @@
 
 .jobs-filters-heading {
   margin-right: 0;
-  margin-bottom: map-get($spacers, 2);
+  margin-bottom: map.get($spacers, 2);
   font-weight: $font-weight-normal;
   color: $jg-gray;
   white-space: normal;
@@ -142,8 +144,8 @@
 
 .jobs-image {
   display: block;
-  width: map-get($spacers, 5);
-  height: map-get($spacers, 5);
+  width: map.get($spacers, 5);
+  height: map.get($spacers, 5);
 }
 
 .jobs-body {
@@ -253,7 +255,7 @@
 .jobs-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: map-get($spacers, 1);
+  gap: map.get($spacers, 1);
 }
 
 .jobs-actions {
@@ -333,7 +335,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: map-get($spacers, 2) $spacer;
+  padding: map.get($spacers, 2) $spacer;
   background: $jg-yellow;
 }
 

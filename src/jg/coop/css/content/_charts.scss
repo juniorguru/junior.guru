@@ -1,3 +1,5 @@
+@use "sass:map";
+
 .chart-scroll {
   width: 100%;
   overflow-x: scroll;
@@ -58,7 +60,7 @@
 }
 
 .table-goals .progress {
-  height: map-get($spacers, 4);
+  height: map.get($spacers, 4);
 }
 
 .table-goals td,

@@ -1,3 +1,5 @@
+@use "sass:map";
+
 /* stylelint-disable selector-no-qualifying-type */
 
 @keyframes headerlink-highlight {
@@ -20,9 +22,9 @@
 }
 
 .document > h1 {
-  padding-bottom: map-get($spacers, 1);
+  padding-bottom: map.get($spacers, 1);
   margin-bottom: $main-spacer;
-  border-bottom: map-get($border-widths, 3) solid $body-color;
+  border-bottom: map.get($border-widths, 3) solid $body-color;
 }
 
 .document > .lead {
@@ -44,7 +46,7 @@
 
 .document > h2 .bi {
   @extend .fs-3;
-  margin-right: map-get($spacers, 1);
+  margin-right: map.get($spacers, 1);
   line-height: $headings-line-height;
   color: $primary;
 }

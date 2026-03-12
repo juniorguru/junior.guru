@@ -1,3 +1,5 @@
+@use "sass:map";
+
 .main-sidebar {
   @include media-breakpoint-up(lg) {
     background: linear-gradient(90deg, $jg-blue-light 50%, $white 50%);
@@ -6,7 +8,7 @@
 
 .main-sidebar .content-container {
   @extend .container-lg;
-  max-width: map-get($container-max-widths, lg);
+  max-width: map.get($container-max-widths, lg);
   padding-right: 0;
   padding-left: 0;
 
@@ -37,7 +39,7 @@
   padding-right: $container-padding-x * .5;
 
   @include media-breakpoint-up(lg) {
-    padding-top: map-get($spacers, 2);
+    padding-top: map.get($spacers, 2);
   }
 }
 
@@ -80,7 +82,7 @@
 .toc-item {
   @extend .nav-item;
   max-width: 15rem;
-  margin-top: map-get($spacers, 3);
+  margin-top: map.get($spacers, 3);
 }
 
 .toc-item:first-child {
@@ -103,10 +105,10 @@
   background-image: linear-gradient(to right, $border-color, rgba($border-color, 0));
   background-repeat: no-repeat;
   background-position: left bottom;
-  background-size: 100% map-get($border-widths, 1);
+  background-size: 100% map.get($border-widths, 1);
   border-color: transparent;
   border-style: solid;
-  border-width: 0 0 map-get($border-widths, 1);
+  border-width: 0 0 map.get($border-widths, 1);
   border-radius: 0;
   transition: none;
 }
@@ -126,7 +128,7 @@
   background: transparent;
   background-image: none;
   border-color: $jg-dark;
-  border-width: 0 0 map-get($border-widths, 2);
+  border-width: 0 0 map.get($border-widths, 2);
   border-radius: 0;
 }
 

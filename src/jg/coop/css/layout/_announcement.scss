@@ -1,7 +1,9 @@
+@use "sass:map";
+
 .announcement {
   @extend .small;
   display: block;
-  padding: map-get($spacers, 1);
+  padding: map.get($spacers, 1);
   text-align: center;
   text-decoration: none;
   background: $link-color;

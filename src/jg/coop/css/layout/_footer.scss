@@ -1,5 +1,7 @@
+@use "sass:map";
+
 $footer-gray-text: darken($white, 30%);
-$footer-spacer-sm: map-get($spacers, 2);
+$footer-spacer-sm: map.get($spacers, 2);
 $footer-spacer: $spacer;
 $footer-spacer-md: $spacer * 2;
 
@@ -70,7 +72,7 @@ $footer-spacer-md: $spacer * 2;
   grid-template-columns: 4rem minmax(0, 1fr);
   gap: $footer-spacer-sm;
   align-items: center;
-  margin-bottom: map-get($spacers, 4);
+  margin-bottom: map.get($spacers, 4);
 }
 
 .footer-featured:last-child {
@@ -134,7 +136,7 @@ $footer-spacer-md: $spacer * 2;
 .footer-address {
   @extend .container-fluid;
   margin-bottom: 0;
-  border-bottom: map-get($border-widths, 1) solid rgba($white, .2);
+  border-bottom: map.get($border-widths, 1) solid rgba($white, .2);
 }
 
 .footer-address-list {
@@ -229,7 +231,7 @@ $footer-spacer-md: $spacer * 2;
   }
 
   @include media-breakpoint-up(lg) {
-    margin-left: map-get($spacers, 4);
+    margin-left: map.get($spacers, 4);
   }
 }
 

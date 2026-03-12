@@ -1,3 +1,5 @@
+@use "sass:map";
+
 .c2a {
   display: flex;
   flex-direction: column;
@@ -14,7 +16,7 @@
 }
 
 .c2a.airy {
-  gap: map-get($spacers, 4);
+  gap: map.get($spacers, 4);
 }
 
 .c2a-button {

@@ -1,3 +1,5 @@
+@use "sass:map";
+
 .link-cards {
   display: grid;
   grid-template-columns: 1fr;
@@ -84,7 +86,7 @@
   @extend .card-title;
   @extend .card-body;
   @extend .fs-5;
-  padding-bottom: map-get($spacers, 2);
+  padding-bottom: map.get($spacers, 2);
   margin: 0;
 }
 
