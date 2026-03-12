@@ -137,7 +137,7 @@
           <h3 class="footer-subheading">{{ 'play-circle-fill'|icon }} Klubové akce</h3>
           {% for event in (promo_events|list)[:2] %}
           <div class="footer-featured">
-            {{ img('static/' + event.avatar_path, image_alt, 100, 100, class='footer-featured-image') }}
+            {{ img('static/' + event.avatar_path, '', 100, 100, class='footer-featured-image') }}
             <div class="footer-featured-body">
               <a class="footer-featured-link" href="{{ pages|docs_url(event.page_url)|url }}">{{ event.title }}</a>
             </div>
