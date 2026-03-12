@@ -3,5 +3,5 @@
 - In pytest `@pytest.mark.parametrize`, always include spaces after commas in the argument list, e.g. "secondary_school, university, expected".
 - After changes to code or images, always run `uv run jg tidy --code` before finishing the work.
 - Run `uv run jg test` only if you made substantial changes to Python or JavaScript code.
-- After major SCSS or JavaScript edits, consider running `jg web build-static` to catch asset build issues.
-- After changes to templates, `context.py`, or related web rendering logic, consider running `jg web build` to verify site generation.
+- After major SCSS or JavaScript edits, consider running `uv run jg web build-static` to catch asset build issues.
+- After changes to templates, `context.py`, or related web rendering logic, consider running `uv run jg web build` to verify site generation.

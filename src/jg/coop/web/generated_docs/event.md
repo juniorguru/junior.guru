@@ -73,7 +73,7 @@
       {% if event.club_recording_url %}
         otevři si <a href="{{ event.club_recording_url }}" target="_blank" rel="noopener">odkaz na záznam</a> a <strong>sleduj</strong>!
       {% else %}
-        jdi <strong>{{ '{:%-d.%-m.%Y v %-H:%M}'.format(event.start_at_prg) }}</strong> do kanálu <a href="https://discord.com/channels/769966886598737931/1075814161138860135" target="_blank" rel="noopener">#přednášky</a> a čekej, až to začne.
+        jdi <strong>{{ '{:%-d.%-m.%Y v %-H:%M}'.format(event.start_at_prg) }}</strong> do kanálu <a href="{{ club_events_channel_url }}" target="_blank" rel="noopener">#přednášky</a> a čekej, až to začne.
       {% endif %}
     </span>
   </li>
