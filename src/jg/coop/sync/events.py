@@ -131,8 +131,6 @@ class EventConfig(YAMLConfig):
         ]
         | None
     ) = None
-    venue: str | None = None
-    registration_url: Annotated[HttpUrl, PlainSerializer(str)] | None = None
 
 
 class EventsConfig(YAMLConfig):
@@ -268,7 +266,7 @@ async def sync_scheduled_events(client: ClubClient):
                         description=event.discord_description,
                         start_time=event.start_at,
                         end_time=event.end_at,
-                        location=event.venue if event.venue else channel,
+                        location=channel,
                     )
         except MutationsNotAllowedError:
             pass

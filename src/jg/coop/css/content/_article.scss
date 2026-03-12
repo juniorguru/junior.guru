@@ -1,3 +1,5 @@
+@use "sass:map";
+
 .article-details {
   @extend .list-unstyled;
   display: flex;
@@ -22,14 +24,26 @@
   content: "";
 }
 
+.article-details-link {
+  color: inherit;
+  text-decoration: none;
+}
+
 .article-details-author {
   display: flex;
   align-items: center;
   font-weight: $font-weight-medium;
   color: $body-color;
+}
+
+.article-details-link,
+.article-details-author {
   text-decoration: none;
 }
 
+.article-details-link:hover,
+.article-details-link:focus,
+.article-details-link:active,
 .article-details-author:hover,
 .article-details-author:focus,
 .article-details-author:active {
@@ -68,7 +82,7 @@
   width: 10rem;
   max-width: 40%;
   height: auto;
-  margin-bottom: map-get($spacers, 1);
+  margin-bottom: map.get($spacers, 1);
   margin-left: $spacer;
   filter: contrast(1.1);
   border-radius: $border-radius;

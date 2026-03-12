@@ -1,5 +1,7 @@
-$blockquote-border-width: map-get($border-widths, 5) * 1.5;
-$blockquote-image-width: map-get($spacers, 5);
+@use "sass:map";
+
+$blockquote-border-width: map.get($border-widths, 5) * 1.5;
+$blockquote-image-width: map.get($spacers, 5);
 $blockquote-toxic-color: $danger;
 
 .blockquote-container {
@@ -8,7 +10,7 @@ $blockquote-toxic-color: $danger;
 }
 
 .blockquote-content {
-  padding: map-get($spacers, 1) $spacer;
+  padding: map.get($spacers, 1) $spacer;
   border-left: $blockquote-border-width solid $primary;
   border-radius: $border-radius;
 }
@@ -19,7 +21,7 @@ $blockquote-toxic-color: $danger;
 
 .blockquote {
   @extend .font-monospace;
-  font-size: map-get($font-sizes, 6);
+  font-size: map.get($font-sizes, 6);
   color: $primary;
 }
 
@@ -99,5 +101,5 @@ $blockquote-toxic-color: $danger;
 }
 
 .blockquotes-2 .blockquote {
-  font-size: map-get($font-sizes, 6);
+  font-size: map.get($font-sizes, 6);
 }

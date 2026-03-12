@@ -1,7 +1,12 @@
 from datetime import UTC, date, datetime, timedelta
 
 from jg.coop.lib import loggers, months
-from jg.coop.lib.discord_club import CLUB_GUILD_ID, ClubChannelID, ClubMemberID
+from jg.coop.lib.discord_club import (
+    CLUB_EVENTS_CHANNEL_URL,
+    CLUB_GUILD_ID,
+    ClubChannelID,
+    ClubMemberID,
+)
 from jg.coop.models.base import db
 from jg.coop.models.blog import BlogArticle
 from jg.coop.models.candidate import Candidate
@@ -39,6 +44,7 @@ def on_shared_context(context):
     today = now.date()
     context["now"] = now
     context["today"] = today
+    context["club_events_channel_url"] = CLUB_EVENTS_CHANNEL_URL
 
     # main.html, about/*.md
     profit_ttm = Transaction.profit_ttm(today)
@@ -49,10 +55,10 @@ def on_shared_context(context):
     context["profit_ttm_usd"] = ExchangeRate.in_currency(profit_ttm, "USD")
     context["profit_ttm_eur"] = ExchangeRate.in_currency(profit_ttm, "EUR")
 
-    # club.md, courses/*.md, main_stories.html, love.jinja
+    # club.md, courses/*.md, main_content_detail.html, love.jinja
     context["members"] = ClubUser.avatars_listing()
 
-    # club.md, about/*.md, main_stories.html, love.jinja
+    # club.md, about/*.md, main_content_detail.html, love.jinja
     context["members_total_count"] = ClubUser.members_count()
 
     # about/handbook.md, main_handbook.html
@@ -185,7 +191,6 @@ def on_docs_page_context(context, page, config, files):
 
 @db.connection_context()
 def on_theme_context(context):
-    context["course_providers"] = CourseProvider.listing()
     context["promo_stories"] = Page.stories_listing()
     context["promo_events"] = Event.featured_listing()
     context["newsletter_subscribers_count"] = Followers.get_latest("newsletter").count

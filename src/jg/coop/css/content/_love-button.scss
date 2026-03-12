@@ -1,14 +1,16 @@
+@use "sass:map";
+
 @keyframes heartbeat {
   0% {
-    font-size: map-get($spacers, 3);
+    font-size: map.get($spacers, 3);
     color: $jg-pink;
   }
   50% {
-    font-size: map-get($spacers, 4);
+    font-size: map.get($spacers, 4);
     color: $jg-pink-dark;
   }
   100% {
-    font-size: map-get($spacers, 3);
+    font-size: map.get($spacers, 3);
     color: $jg-pink;
   }
 }

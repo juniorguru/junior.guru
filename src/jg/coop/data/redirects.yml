@@ -2,6 +2,9 @@ registry:
   - from_url: "/candidate-handbook/"
     to_doc: "handbook/candidate.md"
 
+  - from_url: "/events/53/"
+    to_doc: "events.md"
+
   - from_url: "/donate/"
     to_doc: "love.jinja"
 
@@ -89,6 +92,9 @@ registry:
   - from_url: "/sponsorship/"
     to_doc: "love.jinja"
 
+  - from_url: "/topics/adventofcode/"
+    to_doc: "handbook/practice.md"
+
   - from_url: "/topics/codingbootcamppraha/"
     to_doc: "courses/codingbootcamppraha.md"
 
@@ -116,11 +122,17 @@ registry:
   - from_url: "/topics/itnetwork/"
     to_doc: "courses/itnetwork.md"
 
+  - from_url: "/topics/javascript/"
+    to_doc: "handbook/practice.md"
+
   - from_url: "/topics/learn2code/"
     to_doc: "courses/skillmea.md"
 
   - from_url: "/topics/primakurzy/"
     to_doc: "courses/primakurzy.md"
+
+  - from_url: "/topics/python/"
+    to_doc: "handbook/practice.md"
 
   - from_url: "/topics/pyladies/"
     to_doc: "courses/pyladies.md"

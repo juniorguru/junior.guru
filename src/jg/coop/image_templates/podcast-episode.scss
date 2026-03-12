@@ -1,3 +1,5 @@
+@use "sass:map";
+
 @import "../../../../node_modules/@fontsource/inter";
 @import "../css/index";
 
@@ -10,7 +12,7 @@ main {
   flex-direction: column;
   justify-content: space-evenly;
   height: 80vh;
-  padding: map-get($spacers, 3);
+  padding: map.get($spacers, 3);
   background-color: $jg-yellow;
 }
 
@@ -18,7 +20,7 @@ main {
   @extend .rounded-circle;
   display: inline-block;
   width: 25vw;
-  margin: 0 map-get($spacers, 3);
+  margin: 0 map.get($spacers, 3);
 }
 
 h1 {

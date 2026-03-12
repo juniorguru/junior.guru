@@ -123,6 +123,11 @@ class ClubChannelID(IntEnum):
     WEEKLY_PLANS = 1123554774147670046
 
 
+CLUB_EVENTS_CHANNEL_URL = (
+    f"https://discord.com/channels/{CLUB_GUILD_ID}/{int(ClubChannelID.EVENTS)}"
+)
+
+
 class ClubEmoji(StrEnum):
     PIN = "📌"
     SPONSOR_INTRO = "👋"

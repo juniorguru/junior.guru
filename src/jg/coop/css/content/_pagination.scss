@@ -1,10 +1,12 @@
+@use "sass:map";
+
 .pagination {
   display: flex;
   justify-content: space-between;
-  padding-top: map-get($spacers, 4);
+  padding-top: map.get($spacers, 4);
   padding-bottom: $spacer;
   margin-top: $main-spacer;
-  border-top: map-get($border-widths, 2) solid $body-color;
+  border-top: map.get($border-widths, 2) solid $body-color;
 }
 
 .pagination-button {

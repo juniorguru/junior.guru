@@ -69,14 +69,13 @@ nav:
       - Obchodní podmínky: tos.md
       - Ochrana osobních údajů: privacy.md
       - "Klub: Otázky a odpovědi": faq.md
-  - Témata:
-      - "topics/**/*.md"
   - Připravované:
       - "handbook/*.md"
   - Přesměrování:
       - "bd.md"
       - "candidate-handbook/index.md"
       - "donate/index.md"
+      - "events/53/index.md"
       - "finaid.md"
       - "hire-juniors/index.md"
       - "jobs/region/**/index.md"
@@ -87,3 +86,4 @@ nav:
       - "press/**/index.md"
       - "pricing/index.md"
       - "sponsorship/index.md"
+      - "topics/**/index.md"

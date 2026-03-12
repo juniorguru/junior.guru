@@ -185,6 +185,63 @@
 {% endmacro %}
 
 
+{% macro event_video_card(event) %}
+{% set video = event.to_video(now=now) %}
+{% set is_unavailable = not video.url %}
+
+<div class="media-card media-card-featured{% if is_unavailable %} video-unavailable{% endif %}">
+  {% if video.url %}
+  <a href="{{ video.url }}" class="media-card-link-wrapper" target="_blank" rel="noopener">
+  {% else %}
+  <div class="media-card-link-wrapper">
+  {% endif %}
+    <div class="media-card-image-cover">
+      {{ img("static/" + event.plain_poster_path, event.get_full_title(), 1280, 720, class='media-card-image') }}
+      {% if video.badge_icon %}
+        <div class="media-card-badge">
+          {{ video.badge_icon|icon }}{% if video.badge_text %} {{ video.badge_text }}{% endif %}
+        </div>
+      {% endif %}
+      {% if video.button_text %}
+      <div class="media-card-button{% if is_unavailable %} disabled{% endif %}">
+        <span class="media-card-play">{{ 'play-circle-fill'|icon }}</span>
+        <span class="media-card-duration">{{ video.button_text }}</span>
+      </div>
+      {% endif %}
+    </div>
+  {% if video.url %}
+  </a>
+  {% else %}
+  </div>
+  {% endif %}
+  {% if event.bio_name or event.bio_title or event.bio or event.bio_links %}
+    <div class="media-card-body">
+      {% if event.bio_name %}
+        <h5 class="media-card-heading">{{ event.bio_name }}</h5>
+      {% endif %}
+      {% if event.bio_title %}
+        <div class="media-card-meta">{{ event.bio_title }}</div>
+      {% endif %}
+      {% if event.bio or event.bio_links %}
+        <div class="media-card-richtext">
+          {% if event.bio %}
+            {{ event.bio|md }}
+          {% endif %}
+          {% if event.bio_links %}
+            <ul class="icon-links">
+              {% for bio_url in event.bio_links %}
+                <li>{{ bio_url|bio_link }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>
+{% endmacro %}
+
+
 {% macro podcast_card(podcast_episode, caption=none) %}
 <div class="media-card">
   <div class="media-card-link-section">
@@ -206,40 +263,7 @@
 {% endmacro %}
 
 
-{% macro news_card(title, url, image_path, image_alt, category, subtitle=none, date=none, external=false, class=none) %}
-<div class="news-card{% if class %} {{ class }}{% endif %}">
-  <div class="news-card-row">
-    <div class="news-card-media">
-      {{ img('static/' + image_path, image_alt, 100, 100, class='news-card-image') }}
-    </div>
-    <div class="news-card-body">
-      <h4 class="news-card-title">
-        <a{% if external %}
-            target="_blank"
-            rel="noopener"
-            data-metrics-utm
-            data-metrics-utm-medium="news"
-            href="{{ url }}"
-          {% else %}
-            href="{{ pages|docs_url(url)|url }}"
-          {% endif %}
-          class="news-card-link">{{ title }}</a>
-      </h4>
-      {% if subtitle %}<h5 class="news-card-subtitle">{{ subtitle }}</h5>{% endif %}
-      {% if category or date %}
-        <p class="news-card-details">
-          {% if category %}<strong>{{ category }}</strong>{% endif %}
-          {% if category and date %}<small>&ndash;</small>{% endif %}
-          {% if date %}<small>{{ '{:%-d.%-m.%Y}'.format(date) }}</small>{% endif %}
-        </p>
-      {% endif %}
-    </div>
-  </div>
-</div>
-{% endmacro %}
-
-
-{% macro video_card_engeto(title, duration, url, caption=none) %}
+{% macro engeto_video_card(title, duration, url, caption=none) %}
   {% if caller %}
     {% set caption = caller()|md|remove_p %}
   {% endif %}
@@ -248,7 +272,7 @@
     duration,
     url,
     caption=caption,
-    note='Video je součástí série [Průvodce nováčka v IT](https://www.youtube.com/playlist?list=PLrsbT5TVJXZa2daxo8_3NagDzPqHjBEpI), kterou natočilo [Engeto](https://engeto.cz/) ve spolupráci s [Honzou](#honza) z junior.guru.',
+    note='Video je součástí série [Průvodce nováčka v IT](https://www.youtube.com/playlist?list=PLrsbT5TVJXZa2daxo8_3NagDzPqHjBEpI), kterou natočilo [ENGETO](https://engeto.cz/) ve spolupráci s [Honzou](#honza) z junior.guru.',
   ) }}
 {% endmacro %}
 
@@ -428,7 +452,7 @@
     {{ 'discord'|icon }} {{ button_text }}
   </a>
   <div class="club-teaser-members">
-    <span class="members">
+    <span class="members" aria-hidden="true">
     {% for member in members|sample(10) %}
       {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50, lazy=False) }}
     {% endfor %}

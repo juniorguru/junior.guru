@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $subnav-link-padding-y: ($nav-link-padding-y * .5);
 $subnav-border-color: $border-color;
 $subnav-hover-border-color: $border-color;
@@ -31,12 +33,13 @@ $subnav-hover-border-color: $border-color;
 
 .subnav-item {
   @extend .nav-item;
-  margin-right: map-get($spacers, 1);
+  margin-right: map.get($spacers, 1);
 }
 
 .subnav-link {
   @extend .nav-link;
   padding: $subnav-link-padding-y $nav-link-padding-x;
+  margin: .2rem .1rem;
   border: $nav-tabs-border-width solid transparent;
   transition: none;
 

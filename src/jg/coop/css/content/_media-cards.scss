@@ -1,3 +1,5 @@
+@use "sass:map";
+
 .media-card {
   @extend .card;
   flex-grow: 0;
@@ -8,6 +10,34 @@
   overflow: hidden;
   background: $jg-blue-light;
   border: 1px solid $jg-blue-light;
+}
+
+.media-card-featured {
+  max-width: none;
+}
+
+.media-card-link-wrapper {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.media-card-heading {
+  @extend .fs-4;
+  margin: 0;
+}
+
+.media-card-meta {
+  margin-top: map.get($spacers, 2);
+  font-size: $font-size-sm;
+}
+
+.media-card-richtext {
+  margin-top: $spacer;
+}
+
+.media-card-richtext > *:last-child {
+  margin-bottom: 0;
 }
 
 .media-cards {
@@ -24,6 +54,14 @@
     min-width: $w;
     max-width: $w;
     margin-right: $spacer;
+  }
+}
+
+.media-cards .media-card.media-card-featured {
+  @include media-breakpoint-up(sm) {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
   }
 }
 
@@ -67,12 +105,25 @@
   font-weight: $font-weight-normal;
   color: $white;
   background: $link-color;
-  box-shadow: rgba($jg-dark, .24) 0 map-get($spacers, 1) map-get($spacers, 1);
+  box-shadow: rgba($jg-dark, .24) 0 map.get($spacers, 1) map.get($spacers, 1);
   transform: translate(-50%, -50%);
 }
 
 .media-card:hover .media-card-button {
   background: $link-hover-color;
+}
+
+.media-card-button.disabled,
+.media-card:hover .media-card-button.disabled {
+  color: $jg-dark;
+  cursor: not-allowed;
+  background: $jg-gray-light;
+  box-shadow: none;
+}
+
+.video-unavailable:hover .media-card-image {
+  filter: grayscale(100%);
+  opacity: .5;
 }
 
 .media-card-play {
@@ -96,7 +147,7 @@
 }
 
 .media-card-title:not(.standalone) {
-  padding-bottom: map-get($spacers, 2);
+  padding-bottom: map.get($spacers, 2);
 }
 
 .media-card-title a {
@@ -121,6 +172,10 @@
 .media-card-body {
   @extend .card-body;
   padding-top: 0;
+}
+
+.media-card-featured .media-card-body {
+  padding-top: $spacer;
 }
 
 .media-card-text {

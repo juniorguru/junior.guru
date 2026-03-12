@@ -1,7 +1,9 @@
+@use "sass:map";
+
 .github-profile {
   position: relative;
-  padding: map-get($spacers, 4);
-  padding-top: map-get($spacers, 4) + .3rem;
+  padding: map.get($spacers, 4);
+  padding-top: map.get($spacers, 4) + .3rem;
   margin-bottom: $main-spacer;
   border: 2px solid $jg-black;
   border-radius: $border-radius;
@@ -16,7 +18,7 @@
 }
 
 .github-profile-background {
-  padding: 0 map-get($spacers, 2);
+  padding: 0 map.get($spacers, 2);
   color: $jg-black;
   background: $jg-white;
 }
@@ -35,7 +37,7 @@
 
 .github-profile-input {
   flex: 1;
-  margin-right: map-get($spacers, 2);
+  margin-right: map.get($spacers, 2);
 }
 
 .github-profile-button {

@@ -157,7 +157,7 @@ Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý
 
 <ul class="diaries standout-top">
 {% for diary in club_diaries|sample(8) %}
-  <li class="diaries-item">{{ 'journal-bookmark-fill'|icon }} {{ diary.name }}</li>
+  <li class="diaries-item" title="{{ diary.name }}">{{ 'journal-bookmark-fill'|icon }} {{ diary.name|truncate(50, True, '…') }}</li>
 {% endfor %}
 </ul>
 {% endcall %}

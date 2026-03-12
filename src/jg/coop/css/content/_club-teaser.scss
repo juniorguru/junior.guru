@@ -1,5 +1,7 @@
+@use "sass:map";
+
 .club-teaser {
-  padding: map-get($spacers, 4) $spacer;
+  padding: map.get($spacers, 4) $spacer;
   margin: 0;
   text-align: center;
   background: $jg-blue-light;

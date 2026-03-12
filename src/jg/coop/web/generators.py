@@ -114,7 +114,10 @@ def generate_job_pages() -> Generator[GeneratedDocument, None, None]:
                     f"{job.title} – {job.company_name}, {job.location_text or '?'}"
                 ),
                 job_id=job.submitted_job.id,
-                template="main_subnav.html",
+                job_company_name=job.company_name,
+                job_apply_url=job.apply_url or "",
+                job_apply_email=job.apply_email or "",
+                template="main_job.html",
             ),
             content=(DOCS_DIR / "job.jinja").read_text(),
         )
@@ -122,28 +125,27 @@ def generate_job_pages() -> Generator[GeneratedDocument, None, None]:
 
 @db.connection_context()
 def generate_event_pages() -> Generator[GeneratedDocument, None, None]:
+    archive_size = Event.count_recording()
     for event in Event.listing():
-        if event.venue:
-            title_suffix = "junior.guru akce"
-            description = (
-                "Klub junior.guru pořádá vzdělávací akce. "
-                "Mohou to být přednášky, workshopy, konference… "
-                "Toto je stránka o jedné z nich."
-            )
-        else:
-            title_suffix = "online akce na Discordu junior.guru"
-            description = (
-                "Klub junior.guru pořádá vzdělávací akce, online na svém Discordu. "
-                "Mohou to být přednášky, stream, Q&A, AMA, webináře… "
-                "Toto je stránka o jedné z nich."
-            )
+        title_suffix = "online akce na Discordu junior.guru"
+        description = (
+            "Klub junior.guru pořádá vzdělávací akce, online na svém Discordu. "
+            "Mohou to být přednášky, stream, Q&A, AMA, webináře… "
+            "Toto je stránka o jedné z nich."
+        )
         yield GeneratedDocument(
             path=f"events/{event.id}.md",
             meta=dict(
                 title=f"{event.get_full_title(separator='–')} – {title_suffix}",
                 description=description,
-                template="main_subnav.html",
+                template="main_content_detail.html",
                 event_id=event.id,
+                breadcrumb_parent="Klubové akce",
+                breadcrumb_item=event.bio_name,
+                comments_heading=(
+                    f"Chceš pokládat hostům vlastní dotazy? "
+                    f"Využiješ video archiv s {archive_size} záznamy?"
+                ),
                 **event.to_thumbnail_meta(),
             ),
             content=(DOCS_DIR / "event.md").read_text(),
@@ -159,13 +161,18 @@ def generate_podcast_episode_pages() -> Generator[GeneratedDocument, None, None]
                 title=f"Podcast – {podcast_episode.format_title()}",
                 description=f"Poslechni si {podcast_episode.number}. díl Junior Guru podcastu.",
                 podcast_episode_number=podcast_episode.number,
+                breadcrumb_parent="Podcast",
+                breadcrumb_item=(
+                    podcast_episode.guest_name or f"Epizoda {podcast_episode.number}"
+                ),
                 thumbnail_title=podcast_episode.format_title(affiliation=False),
                 thumbnail_subheading=f"Epizoda {podcast_episode.number}",
                 thumbnail_image_path=podcast_episode.image_path,
                 thumbnail_button_heading="Poslouchej na",
                 thumbnail_button_link="junior.guru/podcast",
                 thumbnail_platforms=["youtube", "spotify", "apple"],
-                template="main_subnav.html",
+                comments_heading="Máš otázky? Chceš probrat podobná témata?",
+                template="main_content_detail.html",
             ),
             content=(DOCS_DIR / "podcast_episode.jinja").read_text(),
         )

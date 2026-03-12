@@ -20,3 +20,8 @@
 {% block toc_heading -%}
 {{ 'journals'|icon }} Příručka
 {%- endblock %}
+
+
+{% block toc_number -%}
+  <span class="toc-number">{{ loop.index }}.</span>
+{%- endblock %}

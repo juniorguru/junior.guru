@@ -1,0 +1,38 @@
+{% extends 'main_subnav.html' %}
+
+
+{% block main %}
+  <div class="main main-simple">
+    <main class="content document">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="{{ pages|docs_url('jobs.jinja')|url }}">
+              Pracovní inzeráty
+            </a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            {{ page.meta.job_company_name }}
+          </li>
+        </ol>
+      </nav>
+      {% block content %}{{ page.content }}{% endblock %}
+    </main>
+  </div>
+
+  <hr class="visually-hidden">
+
+  <div class="job-apply">
+    <div class="job-apply-container">
+      {% if page.meta.job_apply_url %}
+        <a id="apply" class="c2a-button pulse" href="{{ page.meta.job_apply_url }}">
+          Mám zájem!
+        </a>
+      {% else %}
+        <p id="apply" class="c2a-text">
+          Máš zájem? Napiš na {{ page.meta.job_apply_email|email_link }}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

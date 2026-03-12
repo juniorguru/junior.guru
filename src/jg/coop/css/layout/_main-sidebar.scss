@@ -1,3 +1,5 @@
+@use "sass:map";
+
 .main-sidebar {
   @include media-breakpoint-up(lg) {
     background: linear-gradient(90deg, $jg-blue-light 50%, $white 50%);
@@ -6,7 +8,7 @@
 
 .main-sidebar .content-container {
   @extend .container-lg;
-  max-width: map-get($container-max-widths, lg);
+  max-width: map.get($container-max-widths, lg);
   padding-right: 0;
   padding-left: 0;
 
@@ -18,7 +20,7 @@
 }
 
 .main-sidebar .toc {
-  padding: ($spacer * 2) $spacer;
+  padding: (2 * $spacer);
   background: $jg-blue-light;
 
   @include media-breakpoint-up(lg) {
@@ -37,7 +39,7 @@
   padding-right: $container-padding-x * .5;
 
   @include media-breakpoint-up(lg) {
-    padding-top: map-get($spacers, 2);
+    padding-top: map.get($spacers, 2);
   }
 }
 
@@ -45,43 +47,110 @@
   @extend .fs-4;
   @extend .font-monospace;
   @extend .text-uppercase;
+  margin-top: 0;
+  margin-bottom: $spacer * 2;
 
   @include media-breakpoint-up(lg) {
     margin-bottom: $main-spacer;
   }
 }
 
+
 .toc-list {
+  @extend .nav;
   @extend .list-unstyled;
+  display: block;
+  column-count: 2;
+  column-gap: (2 * $spacer);
+  column-fill: balance;
   margin: 0;
+  @include font-size($font-size-sm);
+
+  @include media-breakpoint-up(md) {
+    column-count: 3;
+    @include font-size($font-size-base);
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+    column-count: 1;
+    font-size: inherit;
+  }
 }
+
+
+.toc-item {
+  @extend .nav-item;
+  max-width: 15rem;
+  margin-top: map.get($spacers, 3);
+}
+
+.toc-item:first-child {
+  margin-top: 0;
+}
+
 
 .toc-link {
+  @extend .nav-link;
   display: block;
-  margin-top: map-get($spacers, 3);
-  line-height: $line-height-sm;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
   color: $body-color;
+  text-align: left;
   text-decoration: none;
-  border-color: $body-color;
+  white-space: normal;
+  background-color: transparent;
+  background-image: linear-gradient(to right, $border-color, rgba($border-color, 0));
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 100% map.get($border-widths, 1);
+  border-color: transparent;
   border-style: solid;
-  border-width: 0 0 map-get($border-widths, 1);
+  border-width: 0 0 map.get($border-widths, 1);
+  border-radius: 0;
+  transition: none;
 }
 
+
 .toc-link:hover {
-  color: $link-hover-color;
-  border-color: $link-hover-color;
+  color: $jg-dark;
+  background-image: linear-gradient(to right, $jg-dark, rgba($jg-dark, 0));
+  border-color: transparent;
+  border-radius: 0;
 }
+
 
 .toc-item.active .toc-link {
   font-weight: $headings-font-weight;
-  color: $link-color;
-  border-color: $link-color;
-  border-width: 0 0 map-get($border-widths, 2);
+  color: $jg-dark;
+  background: transparent;
+  background-image: none;
+  border-color: $jg-dark;
+  border-width: 0 0 map.get($border-widths, 2);
+  border-radius: 0;
 }
 
+
 .toc-item.active .toc-link:hover {
-  color: $link-hover-color;
-  border-color: $link-hover-color;
+  color: $jg-dark;
+  border-color: $jg-dark;
+  border-radius: 0;
+}
+
+.toc-number {
+  $toc-number-size: $font-size-sm * 1.5;
+
+  position: relative;
+  top: -.1rem;
+  display: inline-block;
+  width: $toc-number-size;
+  height: $toc-number-size;
+  margin-right: .3rem;
+  font-size: $font-size-sm * .75;
+  line-height: $toc-number-size;
+  text-align: center;
 }
 
 .main-sidebar .content {

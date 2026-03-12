@@ -1,3 +1,5 @@
+@use "sass:map";
+
 @keyframes heartbeat-double {
   0%,
   30%,
@@ -14,9 +16,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: map-get($spacers, 4);
-  height: map-get($spacers, 4);
-  font-size: map-get($spacers, 3);
+  width: map.get($spacers, 4);
+  height: map.get($spacers, 4);
+  font-size: map.get($spacers, 3);
   color: $jg-pink;
   transform-origin: center;
   animation: heartbeat-double 1.5s ease-in-out infinite alternate;

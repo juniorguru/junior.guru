@@ -1,7 +1,9 @@
-from datetime import datetime, timedelta
+from datetime import UTC, datetime, timedelta, timezone
 
 import pytest
 
+from jg.coop.lib.discord_club import CLUB_EVENTS_CHANNEL_URL
+from jg.coop.lib.template_filters import hours
 from jg.coop.models.club import ClubUser
 from jg.coop.models.event import Event, EventSpeaking
 
@@ -88,3 +90,119 @@ def test_url(test_db):
     event = create_event(1)
 
     assert event.url == "https://junior.guru/events/1/"
+
+
+def create_event_instance(**kwargs):
+    defaults = {
+        "id": 1,
+        "title": "Event #1",
+        "description": "Markdown **description** of the _event_.",
+        "bio_name": "Jane Doe",
+        "bio": "Jane Doe is so anonymous that we do not really know anything about her.",
+        "start_at": datetime(2021, 5, 1, 10),
+        "end_at": datetime(2021, 5, 1, 11),
+        "plain_poster_path": "events/1-plain.webp",
+    }
+    return Event(**(defaults | kwargs))
+
+
+def test_to_video_upcoming_youtube():
+    now = datetime(2021, 5, 2, 10)
+    event = create_event_instance(
+        start_at=datetime(2021, 5, 3, 10),
+        public_recording_url="https://youtube.com/watch?v=abc",
+    )
+
+    assert event.to_video(now=now) == {
+        "url": CLUB_EVENTS_CHANNEL_URL,
+        "button_text": "Připoj se 3.5. v 12:00",
+        "badge_icon": "youtube",
+        "badge_text": "Veřejný stream",
+    }
+
+
+def test_to_video_upcoming_discord():
+    now = datetime(2021, 5, 2, 10)
+    event = create_event_instance(
+        start_at=datetime(2021, 5, 4, 9, 30),
+        public_recording_url=None,
+    )
+
+    assert event.to_video(now=now) == {
+        "url": CLUB_EVENTS_CHANNEL_URL,
+        "button_text": "Připoj se 4.5. v 11:30",
+        "badge_icon": "discord",
+        "badge_text": "Pouze pro členy",
+    }
+
+
+def test_to_video_past_public():
+    now = datetime(2021, 5, 2, 10)
+    event = create_event_instance(
+        start_at=datetime(2021, 5, 1, 10),
+        public_recording_url="https://youtube.com/watch?v=abc",
+        public_recording_duration_s=3600,
+    )
+
+    assert event.to_video(now=now) == {
+        "url": event.public_recording_url,
+        "button_text": f"Pusť si {hours(3600)} záznam",
+        "badge_icon": "unlock-fill",
+        "badge_text": "Veřejný záznam",
+    }
+
+
+def test_to_video_past_private():
+    now = datetime(2021, 5, 2, 10)
+    event = create_event_instance(
+        start_at=datetime(2021, 5, 1, 10),
+        club_recording_url="https://discord.com/channels/1/2/3",
+        private_recording_duration_s=1800,
+    )
+
+    assert event.to_video(now=now) == {
+        "url": event.club_recording_url,
+        "button_text": f"Pusť si {hours(1800)} záznam",
+        "badge_icon": "lock-fill",
+        "badge_text": "Pouze pro členy",
+    }
+
+
+def test_to_video_past_without_recording():
+    now = datetime(2021, 5, 2, 10)
+    event = create_event_instance(start_at=datetime(2021, 5, 1, 10))
+
+    assert event.to_video(now=now) == {
+        "url": None,
+        "button_text": None,
+        "badge_icon": "camera-video-off",
+        "badge_text": "Záznam není dostupný",
+    }
+
+
+def test_is_past_with_naive_datetime():
+    event = create_event_instance(start_at=datetime(2021, 5, 1, 10))
+
+    assert event.is_past(now=datetime(2021, 5, 2, 10)) is True
+
+
+def test_is_past_with_utc_datetime():
+    event = create_event_instance(start_at=datetime(2021, 5, 1, 10))
+
+    assert event.is_past(now=datetime(2021, 5, 2, 10, tzinfo=UTC)) is True
+
+
+def test_is_past_with_non_utc_datetime_raises_value_error():
+    event = create_event_instance(start_at=datetime(2021, 5, 1, 10))
+
+    with pytest.raises(ValueError, match="UTC"):
+        event.is_past(now=datetime(2021, 5, 2, 12, tzinfo=timezone(timedelta(hours=2))))
+
+
+def test_to_video_with_non_utc_datetime_raises_value_error():
+    event = create_event_instance(start_at=datetime(2021, 5, 1, 10))
+
+    with pytest.raises(ValueError, match="UTC"):
+        event.to_video(
+            now=datetime(2021, 5, 2, 12, tzinfo=timezone(timedelta(hours=2)))
+        )

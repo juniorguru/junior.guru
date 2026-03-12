@@ -1,3 +1,5 @@
+@use "sass:map";
+
 .logobar {
   width: 100%;
   background: $white;
@@ -12,7 +14,7 @@
   @extend .container-md;
   display: flex;
   justify-content: center;
-  max-width: map-get($container-max-widths, lg);
+  max-width: map.get($container-max-widths, lg);
   padding-right: 0;
   padding-left: 0;
 }
@@ -70,13 +72,13 @@
 .logobar-image {
   @extend .logos-image;
   width: 100%;
-  max-height: map-get($spacers, 3);
+  max-height: map.get($spacers, 3);
 
   @include media-breakpoint-up(sm) {
     width: auto;
   }
 
   @include media-breakpoint-up(md) {
-    max-height: map-get($spacers, 4);
+    max-height: map.get($spacers, 4);
   }
 }

@@ -6,7 +6,7 @@ description: Všelijakých mýtů a nesmyslů o kariéře v IT koluje spousta. 
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import lead, blockquote_avatar, stories_list, video_card_engeto with context %}
+{% from 'macros.html' import lead, blockquote_avatar, stories_list, engeto_video_card with context %}
 
 # Mýty o programování
 
@@ -22,7 +22,7 @@ Všelijakých mýtů o kariéře v IT koluje spousta. Takže jak to je?
 
 Některé představy o programování a programátorské profesi nemají moc společného s realitou, ačkoliv je lidé stále opakují. Následující odstavce se snaží věci uvést na pravou míru a zabránit různým falešným obavám nebo naopak nereálným očekáváním. Můžeš si to pustit i jako video.
 
-{{ video_card_engeto(
+{{ engeto_video_card(
   'Nejčastější mýty o práci v IT',
   '5min',
   'https://www.youtube.com/watch?v=2Km3orTYFrM&list=PLrsbT5TVJXZa2daxo8_3NagDzPqHjBEpI',

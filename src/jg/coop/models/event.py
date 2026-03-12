@@ -16,8 +16,12 @@ from peewee import (
 )
 
 from jg.coop.lib.charts import month_range, ttm_range
-from jg.coop.lib.discord_club import CLUB_GUILD_ID, ClubChannelID, parse_discord_link
+from jg.coop.lib.discord_club import (
+    CLUB_EVENTS_CHANNEL_URL,
+    parse_discord_link,
+)
 from jg.coop.lib.md import strip_links
+from jg.coop.lib.template_filters import hours
 from jg.coop.lib.youtube import get_youtube_url, parse_youtube_id
 from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubMessage, ClubUser
@@ -43,8 +47,6 @@ class Event(BaseModel):
     view_count = IntegerField(default=0)
     poster_path = CharField(null=True)
     plain_poster_path = CharField(null=True)
-    venue = CharField(null=True)
-    registration_url = CharField(null=True)
 
     @property
     def duration_s(self) -> int:
@@ -63,8 +65,6 @@ class Event(BaseModel):
         return bool(self.public_recording_url)
 
     def get_full_title(self, separator: str = ":") -> str:
-        if self.venue:
-            return self.title
         return f"{self.bio_name}{separator} {self.title}"
 
     @property
@@ -91,7 +91,7 @@ class Event(BaseModel):
             [
                 strip_links(self.short_description or self.description).strip(),
                 strip_links(self.bio).strip(),
-                self.registration_url if self.registration_url else self.url,
+                self.url,
             ]
         )
 
@@ -103,20 +103,50 @@ class Event(BaseModel):
     def page_url(self) -> str:
         return f"events/{self.id}.md"
 
+    def is_past(self, now: None | datetime = None) -> bool:
+        now = now or datetime.now(UTC)
+        if now.tzinfo is not None:
+            if now.utcoffset() != timedelta(0) or now.tzname() != "UTC":
+                raise ValueError("Expected UTC datetime when timezone is provided")
+            now = now.replace(tzinfo=None)
+        return self.start_at < now
+
     def is_within_trial(self, today: None | date = None) -> bool:
         today = today or date.today()
         trial_ends_on = today + timedelta(days=14 - 1)  # better be safe, remove one day
         return self.start_at.date() <= trial_ends_on
 
-    def to_card(self) -> dict:
-        return dict(
-            title=self.title,
-            url=self.page_url,
-            image_path=self.avatar_path,
-            image_alt=self.bio_name,
-            subtitle=self.bio_name,
-            date=self.start_at,
-        )
+    def to_video(self, now: datetime | None = None) -> dict:
+        now = now or datetime.now(UTC)
+        if not self.is_past(now=now):
+            return {
+                "url": CLUB_EVENTS_CHANNEL_URL,
+                "button_text": f"Připoj se {self.start_at_prg:%-d.%-m. v %-H:%M}",
+                "badge_icon": "youtube" if self.public_recording_url else "discord",
+                "badge_text": (
+                    "Veřejný stream" if self.public_recording_url else "Pouze pro členy"
+                ),
+            }
+        if self.public_recording_url:
+            return {
+                "url": self.public_recording_url,
+                "button_text": f"Pusť si {hours(self.public_recording_duration_s)} záznam",
+                "badge_icon": "unlock-fill",
+                "badge_text": "Veřejný záznam",
+            }
+        if self.club_recording_url:
+            return {
+                "url": self.club_recording_url,
+                "button_text": f"Pusť si {hours(self.private_recording_duration_s)} záznam",
+                "badge_icon": "lock-fill",
+                "badge_text": "Pouze pro členy",
+            }
+        return {
+            "url": None,
+            "button_text": None,
+            "badge_icon": "camera-video-off",
+            "badge_text": "Záznam není dostupný",
+        }
 
     def to_json_ld(self) -> str:
         return json.dumps(
@@ -132,7 +162,7 @@ class Event(BaseModel):
                     "url": (
                         self.public_recording_url
                         or self.club_recording_url
-                        or f"https://discord.com/channels/{CLUB_GUILD_ID}/{ClubChannelID.EVENTS}"
+                        or CLUB_EVENTS_CHANNEL_URL
                     ),
                 },
                 "name": self.get_full_title(),
@@ -151,23 +181,17 @@ class Event(BaseModel):
             "date": self.start_at,
         }
         if not plain:
-            if self.venue:
-                context |= {
-                    "button_heading": "Více info na",
-                    "button_link": "junior.guru/events",
-                }
-            else:
-                context |= {
-                    "button_heading": "Sleduj na",
-                    "button_link": (
-                        "youtube.com/@juniordotguru"
-                        if self.is_public
-                        else "junior.guru/events"
-                    ),
-                    "platforms": (
-                        ["discord", "youtube"] if self.is_public else ["discord"]
-                    ),
-                }
+            context |= {
+                "button_heading": "Sleduj na",
+                "button_link": (
+                    "youtube.com/@juniordotguru"
+                    if self.is_public
+                    else "junior.guru/events"
+                ),
+                "platforms": (
+                    ["discord", "youtube"] if self.is_public else ["discord"]
+                ),
+            }
         return context
 
     def to_thumbnail_meta(self) -> dict:
@@ -249,6 +273,17 @@ class Event(BaseModel):
             )
         )
         return events
+
+    @classmethod
+    def count_recording(cls):
+        return (
+            cls.select()
+            .where(
+                (cls.club_recording_url.is_null(False))
+                | (cls.public_recording_url.is_null(False))  # noqa: E712
+            )
+            .count()
+        )
 
     @classmethod
     def count_by_month(cls, date):

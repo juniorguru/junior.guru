@@ -1,3 +1,5 @@
+@use "sass:map";
+
 .details {
   @extend .card;
   background: $jg-blue-light;
@@ -11,7 +13,7 @@
 
 .details-header {
   padding: $spacer;
-  padding-bottom: map-get($spacers, 4);
+  padding-bottom: map.get($spacers, 4);
   text-align: center;
   border-radius: $border-radius $border-radius 0 0;
 }
@@ -43,24 +45,6 @@
   }
 }
 
-.details-info.avatar {
-  @include media-breakpoint-up(sm) {
-    flex-direction: row-reverse;
-  }
-}
-
-.details-info.avatar .details-image {
-  @include media-breakpoint-up(sm) {
-    width: 35%;
-  }
-}
-
-.details-info.avatar .details-body {
-  @include media-breakpoint-up(sm) {
-    width: 65%;
-  }
-}
-
 .details-image {
   padding: $spacer;
 }
@@ -72,20 +56,10 @@
   border-radius: $border-radius;
 }
 
-.details-info.avatar .details-thumbnail {
-  filter: grayscale(100%);
-  border-radius: 100%;
-  opacity: 80%;
-}
-
 .details-heading {
   @extend .fs-4;
   padding: $list-group-item-padding-y $list-group-item-padding-x;
   margin: $spacer 0 0 0;
-}
-
-.details-info.avatar .details-heading {
-  padding-top: 0;
 }
 
 .details-note {
@@ -104,10 +78,6 @@
 
 .details-items:first-child {
   margin-top: $list-group-item-padding-y;
-}
-
-.details-info.avatar:last-child {
-  margin-bottom: $spacer;
 }
 
 .details-item {

@@ -283,6 +283,7 @@ def hours(seconds: int) -> str:
 def bio_link(url: str) -> Markup:
     parts = urlparse(url)
     domain = parts.netloc.removeprefix("www.")
+    path_parts = parts.path.strip("/").split("/")
     icon_name = {
         "github.com": "github",
         "youtube.com": "youtube",
@@ -290,19 +291,23 @@ def bio_link(url: str) -> Markup:
         "linkedin.com": "linkedin",
         "twitter.com": "twitter-x",
         "x.com": "twitter-x",
+        "bsky.app": "bluesky",
         "witter.cz": "mastodon",
         "instagram.com": "instagram",
     }.get(domain, "link-45deg")
     username = {
-        "github.com": "@" + parts.path.strip("/").split("/")[0],
-        "twitter.com": "@" + parts.path.strip("/").split("/")[0],
-        "x.com": "@" + parts.path.strip("/").split("/")[0],
-        "witter.cz": parts.path.strip("/").split("/")[0] + "@" + domain,
-        "instagram.com": "@" + parts.path.strip("/").split("/")[0],
-        "linkedin.com": unquote(parts.path.strip("/")),
-        "youtube.com": (
-            parts.path.strip("/").split("/")[0] if "@" in parts.path else None
+        "github.com": "@" + path_parts[0],
+        "twitter.com": "@" + path_parts[0],
+        "x.com": "@" + path_parts[0],
+        "bsky.app": (
+            "@" + path_parts[1]
+            if len(path_parts) > 1 and path_parts[0] == "profile"
+            else None
         ),
+        "witter.cz": path_parts[0] + "@" + domain,
+        "instagram.com": "@" + path_parts[0],
+        "linkedin.com": unquote(parts.path.strip("/")),
+        "youtube.com": (path_parts[0] if "@" in parts.path else None),
     }.get(domain)
     if username:
         text = username

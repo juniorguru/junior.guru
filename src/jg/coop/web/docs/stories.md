@@ -4,7 +4,7 @@ description: Příběhy těch, kdo se rekvalifikovali do IT, nebo jim nějak pr
 template: main_subnav.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, lead, link_card, news_card with context %}
+{% from 'macros.html' import blockquote_avatar, lead, link_card with context %}
 
 # Příběhy
 
@@ -90,9 +90,18 @@ Jak to nakonec překonali?
 Co by poradili ostatním?
 Nejen že se nebojíme o nepříjemnostech psát, my se na ně přímo ptáme!
 
+<div class="link-cards compact">
 {% for story_page in stories_pages %}
-  {{ news_card(**story_page.to_card()) }}
+  {{
+    link_card(
+      story_page.title,
+      pages|docs_url(story_page.src_uri)|url,
+      caption=story_page.meta['interviewee'],
+      thumbnail_url='static/' + story_page.meta['interviewee_avatar_path'],
+    )
+  }}
 {% endfor %}
+</div>
 
 ## Z horníka programátorem
 
@@ -143,11 +152,17 @@ Záměrem tohoto seznamu je vytvářet nezávislou protiváhu a ukazovat, že:
     Zkouší různé způsoby studia, různé kurzy, různé materiály.
 -   Programování je obecná, užitečná dovednost, která se hodí i pokud se člověk neplánuje rekvalifikovat do IT.
 
+<div class="link-cards compact">
 {% for story in stories_links %}
   {{
-    news_card(
-      category=story.publisher,
-      **story.to_card(),
+    link_card(
+      story.title,
+      story.url,
+      caption=story.name,
+      thumbnail_url='static/' + story.image_path,
+      badge_icon='globe2',
+      badge_text=story.publisher,
     )
   }}
 {% endfor %}
+</div>

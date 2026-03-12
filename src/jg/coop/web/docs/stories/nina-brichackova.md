@@ -10,7 +10,10 @@ thumbnail_subheading: Nina Břicháčková
 thumbnail_image_path: avatars-participants/nina-brichackova.jpg
 thumbnail_button_heading: Čti na
 thumbnail_button_link: junior.guru/stories
-template: main_stories.html
+breadcrumb_parent: Příběhy
+breadcrumb_item: Nina Břicháčková
+comments_heading: Máš otázky? Chceš probrat kariérní změnu do IT?
+template: main_content_detail.html
 ---
 
 {% from 'macros.html' import img, lead with context %}

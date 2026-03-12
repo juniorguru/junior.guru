@@ -1,6 +1,8 @@
+@use "sass:map";
+
 .brand-button {
   @extend .btn;
-  margin-bottom: map-get($spacers, 1);
+  margin-bottom: map.get($spacers, 1);
 
   &.circle {
     align-content: center;

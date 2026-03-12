@@ -6,7 +6,7 @@ description: Jak začít hledat svou první práci v IT? Jak se připravit na po
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, blockquote_toxic, jobs_inline, link_card, note, video_card, video_card_engeto with context %}
+{% from 'macros.html' import blockquote_avatar, blockquote_toxic, jobs_inline, link_card, note, video_card, engeto_video_card with context %}
 
 
 # Hledání první práce v IT
@@ -78,7 +78,7 @@ Jak dlouho je potřeba se učit programování, než je člověk připraven si z
 
 Raději neplánuj s ohledem na čas. **Jeď si tempo, které můžeš skloubit se zbytkem svého života, a soustřeď se na to, ať umíš [základní minimum](#zakladni-minimum).** Potom si začni hledat práci.
 
-{{ video_card_engeto(
+{{ engeto_video_card(
   'Jak dlouho trvá, než se naučím programovat a získám práci?',
   '4min',
   'https://www.youtube.com/watch?v=iSXqU9C3zMI&list=PLrsbT5TVJXZa2daxo8_3NagDzPqHjBEpI',
