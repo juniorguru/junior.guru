@@ -3,9 +3,12 @@
   display: flex;
   flex-direction: column;
   gap: $spacer;
-  padding: $spacer;
-  background: $jg-blue-light;
-  border-radius: $border-radius;
+
+  &.blue {
+    padding: $spacer;
+    background: $jg-blue-light;
+    border-radius: $border-radius;
+  }
 }
 
 .note-explainer-item {
@@ -16,4 +19,8 @@
 
 .note-explainer-item .bi {
   color: $jg-blue;
+}
+
+.note-explainer-heading {
+  margin-bottom: $spacer;
 }

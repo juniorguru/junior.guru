@@ -1,4 +1,4 @@
-{% from 'macros.html' import event_video_card, figure, lead with context %}
+{% from 'macros.html' import club_teaser, event_video_card, lead, note with context %}
 
 # {{ event.get_full_title() }}
 
@@ -13,6 +13,38 @@
 
 {% call lead() %}{{ event.description|md }}{% endcall %}
 {{ event_video_card(event) }}
+
+<h2 class="note-explainer-heading">Jak to funguje</h2>
+<ul class="note-explainer">
+  <li class="note-explainer-item">
+    {{ 'github'|icon }}
+    <span>
+      Junioři musí <strong>prokázat iniciativu a základní technickou zdatnost</strong>, aby se v seznamu vůbec objevili.
+      <small>Sami se musí dokázat přidat přes <a href="https://github.com/juniorguru/eggtray/">github.com/juniorguru/eggtray</a>.</small>
+    </span>
+  </li>
+  <li class="note-explainer-item">
+    {{ 'check-circle-fill'|icon }}
+    <span>
+      Robot každý den vyhodnocuje, které profily <strong>splňují naše standardy</strong>. Ty ostatní se zobrazí poloprůhledně.
+      <small>Klidně si <a href="{{ pages|docs_url('handbook/github-profile.md')|url }}">zpětnou vazbu od robota</a> vyzkoušej.</small>
+    </span>
+  </li>
+  <li class="note-explainer-item">
+    {{ 'star-fill'|icon }}
+    <span>
+      Pokud junior vše splňuje a navíc <strong>se rozvíjí v našem klubu</strong>, zobrazí se žlutě.
+      <small>Naše <a href="{{ pages|docs_url('club.md')|url }}">online komunita</a> dává juniorům kontakt s realitou, seniorní dohled a ověřuje jejich komunikační schopnosti.</small>
+    </span>
+  </li>
+  <li class="note-explainer-item">
+    {{ 'piggy-bank-fill'|icon }}
+    <span>
+      Když si někoho vybereš, <strong>opravdu nic neplatíš</strong>. Oslovuješ napřímo.
+      <small>Pokud chceš projevit vděčnost, podpoř junior.guru <a href="{{ pages|docs_url('love.jinja')|url }}">dobrovolným příspěvkem nebo sponzorstvím</a>.</small>
+    </span>
+  </li>
+</ul>
 
 <!-- ## O akci
 {% set is_past_event = event.start_at < now.replace(tzinfo=none) %}
