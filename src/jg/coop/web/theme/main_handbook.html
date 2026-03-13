@@ -28,10 +28,14 @@
   <div class="comments sidebar">
     <div class="comments-container">
       <div class="comments-content">
+        {% if related_pages %}
         <h2>Kam dál?</h2>
         <ul>
-          <li><a href="">smrad</a></li>
+          {% for related_page in related_pages %}
+          <li><a href="{{ pages|docs_url(related_page.src_uri)|url }}">{{ related_page.nav_name }}</a></li>
+          {% endfor %}
         </ul>
+        {% endif %}
 
         <h2>Máš otázky? Chceš probrat svou situaci?</h2>
         <p>
