@@ -28,7 +28,7 @@
   }
 }
 
-.comments.sidebar .comments-container > div {
+.comments.sidebar .comments-content {
   background: $white;
 
   @include media-breakpoint-up(lg) {
