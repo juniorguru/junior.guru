@@ -1,5 +1,45 @@
+@use "sass:map";
+
 .comments {
   background: $jg-blue-light;
+}
+
+.comments.sidebar {
+  background: $white;
+  border-top: 0 none;
+
+  @include media-breakpoint-up(lg) {
+    background: linear-gradient(90deg, $jg-blue-light 50%, $white 50%);
+    border-top: 1px solid $jg-gray-light;
+  }
+}
+
+.comments.sidebar .comments-container {
+  max-width: $main-document-width;
+
+  @include media-breakpoint-up(lg) {
+    display: grid;
+    grid-template-columns: $main-toc-width minmax(0, $main-document-width);
+    max-width: map.get($container-max-widths, lg);
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+  }
+}
+
+.comments.sidebar .comments-content {
+  background: $white;
+
+  @include media-breakpoint-up(lg) {
+    grid-column: 2;
+    max-width: $main-document-width;
+    padding-top: $main-spacer;
+    padding-right: $container-padding-x;
+    padding-bottom: $main-spacer;
+    padding-left: $main-spacer;
+    margin: 0;
+  }
 }
 
 .comments-container {
@@ -7,4 +47,20 @@
   max-width: $main-document-width;
   padding-top: $main-spacer;
   padding-bottom: $main-spacer;
+}
+
+.comments-actions {
+  margin-top: map.get($spacers, 4);
+}
+
+.comments-button {
+  @extend .btn;
+  @extend .btn-lg;
+  @extend .btn-primary;
+  margin-bottom: map.get($spacers, 4);
+}
+
+.comments-members {
+  display: flex;
+  margin-bottom: 0;
 }

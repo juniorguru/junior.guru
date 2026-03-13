@@ -34,7 +34,7 @@ Taky v přednášce představuje svou **[šablonu na CV](https://coreskill.tech/
   '3,5h',
   event.public_recording_url,
   thumbnail_url="static/" + event.plain_poster_path,
-  note='Záznamy [klubových přednášek](../events.md) bývají dostupné jen pro členy, ale tato byla v rámci [Týdne pro Digitální Česko](https://budoucnostjedigitalni.gov.cz/) veřejně, aby pomáhala všem.'
+  note='Záznamy [klubových přednášek](../events.md) bývají dostupné jen pro členy, ale tato byla v rámci Týdne pro Digitální Česko veřejně, aby pomáhala všem.'
 ) }}
 
 ## Chceš přehlednost, ne krásu
@@ -102,7 +102,7 @@ Nech si ale CV někým aspoň jednou přečíst, ať **odchytáš největší hr
 Části CV seřaď **od nejpodstatnějších po méně důležité, od nejnovějších po nejstarší**. Co přesně je důležité, se liší pro různé obory, profese, zkušenosti a dokonce i jednotlivé pozice. Pro juniory, kteří zatím nemají pracovní zkušenosti v oboru, je velmi důležitý **souhrn a projekty**, v druhé řadě pak vzdělání.
 
 {% call podcast_card(podcast_episodes|selectattr('number', 'equalto', 1)|first) %}
-  Poslechni si [podcast junior.guru](../podcast.md), kde spolu Pavlína a Jirka mluví o tom, jak vyrobit skvělé juniorní CV. Probírají také nejčastější chyby, které při své prezentaci junioři dělají.
+  Poslechni si podcast junior.guru, kde spolu Pavlína a Jirka mluví o tom, jak vyrobit skvělé juniorní CV. Probírají také nejčastější chyby, které při své prezentaci junioři dělají.
 {% endcall %}
 
 Následující kapitoly jsou v pořadí, v jakém by se měly dané části na životopisu vyskytovat.
@@ -658,7 +658,7 @@ https://discord.com/channels/769966886598737931/1355246864206926066/136015235286
 
 
 --- https://discord.com/channels/769966886598737931/1375466381801291918/1383123429494100110
-<@1324778740797935628> Presne tak, tiez mi pride najlepsie co najkonkretnejsie vypisat ake s tym mas skusenosti. Jednak trebars ake nastroje pouzivas a jednak co s nimi konkretne robis. 
+<@1324778740797935628> Presne tak, tiez mi pride najlepsie co najkonkretnejsie vypisat ake s tym mas skusenosti. Jednak trebars ake nastroje pouzivas a jednak co s nimi konkretne robis.
 
 Otazka potom je, v akom mnozstve to v zivotpise ma byt. Na trhu mas dnes firmy na celej skale od "ludi co nepracuju s AI a nechytaju vsetky nove trendy ani nechceme" az po "ai je blockchain a za rok to zomrie". V tom prvom pripade by som sa nebal pridat aj komentare k projektom ako si to tam vyuzila atd., v tom druhom pripade ich to skor odradi.
 

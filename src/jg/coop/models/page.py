@@ -111,3 +111,21 @@ class Page(BaseModel):
             .where(cls.src_uri.startswith("stories/"))
             .order_by(cls.date.desc())
         )
+
+    def list_related(self) -> list[Self]:
+        # unique
+        pages_by_uri = {}
+        for stage_slug in self.stages or []:
+            for related_page in self.stage_listing(stage_slug):
+                pages_by_uri[related_page.src_uri] = related_page
+
+        # don't include the page itself in the related listing
+        pages_by_uri.pop(self.src_uri, None)
+
+        return sorted(
+            pages_by_uri.values(),
+            key=lambda related_page: (
+                related_page.nav_sort_key is None,
+                related_page.nav_sort_key,
+            ),
+        )

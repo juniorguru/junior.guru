@@ -1,5 +1,18 @@
 {% from 'macros.html' import lead with context %}
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="{{ (page|parent_page).url|url }}">
+        {{ (page|parent_page).title }}
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      {{ newsletter_issue.subject }}
+    </li>
+  </ol>
+</nav>
+
 # {{ newsletter_issue.subject }}
 
 {% call lead() %}

@@ -79,14 +79,6 @@
   @extend .card-img-top;
   width: 100%;
   height: auto;
-  filter: grayscale(100%);
-  opacity: .5;
-}
-
-.media-card:hover .media-card-image {
-  filter: grayscale(0%);
-  opacity: 1;
-  transition: $transition-base;
 }
 
 .media-card-badge {
@@ -119,11 +111,6 @@
   cursor: not-allowed;
   background: $jg-gray-light;
   box-shadow: none;
-}
-
-.video-unavailable:hover .media-card-image {
-  filter: grayscale(100%);
-  opacity: .5;
 }
 
 .media-card-play {
@@ -163,10 +150,6 @@
 }
 .media-card-title a:visited:hover {
   color: $link-hover-color;
-}
-
-.media-card-link {
-  @extend .stretched-link;
 }
 
 .media-card-body {

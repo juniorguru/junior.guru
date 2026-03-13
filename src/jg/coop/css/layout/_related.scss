@@ -1,0 +1,26 @@
+@use "sass:map";
+
+.related {
+  padding-top: $main-spacer;
+  margin-top: $main-spacer;
+  margin-bottom: map.get($spacers, 4);
+  border-top: 1px dotted $jg-gray-light;
+}
+
+.related-pages {
+  @extend .list-unstyled;
+  @extend .column-gap-3;
+  @extend .row-gap-2;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+
+.related-pages-title {
+  font-weight: $font-weight-semibold;
+
+  &::after {
+    font-weight: $font-weight-semibold;
+    content: ":";
+  }
+}

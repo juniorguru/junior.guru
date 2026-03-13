@@ -164,7 +164,7 @@
       </div>
     </div>
     <h4 class="media-card-title{% if not (caption or caller is defined or note) %} standalone{% endif %}">
-      <a href="{{ url }}" class="media-card-link" target="_blank" rel="noopener">{{ title }}</a>
+      <a href="{{ url }}" target="_blank" rel="noopener">{{ title }}</a>
     </h4>
   </div>
   {% if caption or caller is defined or note %}
@@ -245,18 +245,22 @@
 {% macro podcast_card(podcast_episode, caption=none) %}
 <div class="media-card">
   <div class="media-card-link-section">
-    <h4 class="media-card-title">{{ podcast_episode.format_title() }}</h4>
+    <h4 class="media-card-title">
+      <a href="{{ pages|docs_url(podcast_episode.page_url)|url }}" class="media-card-title-link">{{ podcast_episode.format_title() }}</a>
+    </h4>
+    {% if caption or caller %}
+      <div class="media-card-body">
+        <p class="media-card-text">
+          {% if caption %}
+            {{ caption|md|remove_p }}
+          {% else %}
+            {{ caller()|md|remove_p }}
+          {% endif %}
+        </p>
+      </div>
+    {% endif %}
   </div>
   <div class="media-card-body">
-    {% if caption or caller %}
-      <p class="media-card-text">
-        {% if caption %}
-          {{ caption|md|remove_p }}
-        {% else %}
-          {{ caller()|md|remove_p }}
-        {% endif %}
-      </p>
-    {% endif %}
     {{ podcast_player(podcast_episode) }}
   </div>
 </div>
