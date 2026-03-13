@@ -246,19 +246,21 @@
 <div class="media-card">
   <div class="media-card-link-section">
     <h4 class="media-card-title">
-      <a href="{{ pages|docs_url(podcast_episode.page_url)|url }}" class="media-card-title-link">{{ podcast_episode.format_title() }}</a>
+      <a href="{{ pages|docs_url(podcast_episode.page_url)|url }}" class="media-card-link media-card-title-link">{{ podcast_episode.format_title() }}</a>
     </h4>
+    {% if caption or caller %}
+      <div class="media-card-body">
+        <p class="media-card-text">
+          {% if caption %}
+            {{ caption|md|remove_p }}
+          {% else %}
+            {{ caller()|md|remove_p }}
+          {% endif %}
+        </p>
+      </div>
+    {% endif %}
   </div>
   <div class="media-card-body">
-    {% if caption or caller %}
-      <p class="media-card-text">
-        {% if caption %}
-          {{ caption|md|remove_p }}
-        {% else %}
-          {{ caller()|md|remove_p }}
-        {% endif %}
-      </p>
-    {% endif %}
     {{ podcast_player(podcast_episode) }}
   </div>
 </div>
