@@ -21,17 +21,13 @@
   {{ super() }}
   {% set related_pages_sample = related_pages|sample(5)|sort(attribute='nav_sort_key') %}
   {% if related_pages_sample %}
-  <div class="related sidebar">
-    <div class="related-container">
-      <div class="related-content">
-        <ul class="related-pages">
-          <li class="related-pages-title">Kam dál?</li>
-          {% for related_page in related_pages_sample %}
-          <li><a href="{{ pages|docs_url(related_page.src_uri)|url }}">{{ related_page.title }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
+  <div class="related">
+    <ul class="related-pages">
+      <li class="related-pages-title">{{ 'arrow-up-right-circle-fill'|icon }} Kam dál</li>
+      {% for related_page in related_pages_sample %}
+      <li><a href="{{ pages|docs_url(related_page.src_uri)|url }}">{{ related_page.nav_name }}</a></li>
+      {% endfor %}
+    </ul>
   </div>
   {% endif %}
 {% endblock %}
