@@ -34,6 +34,7 @@
   overflow: hidden;
   background: $jg-blue-light;
   border: 1px solid $jg-blue-light;
+  transition: border-color .15s ease-in-out;
 }
 
 .avatars .link-card {
@@ -41,29 +42,23 @@
 }
 
 .link-card.highlighted {
-  background: $jg-yellow;
-  border-color: $jg-yellow;
+  background: $jg-yellow-light;
+  border-color: $jg-yellow-light;
 }
 
 .link-card-image {
   @extend .card-img-top;
   width: 100%;
   height: auto;
-  filter: grayscale(100%);
-  opacity: .5;
 }
 
 .avatars .link-card-image {
   width: 50%;
-  filter: none;
   border-radius: 50%;
-  opacity: 1;
 }
 
-.link-card:hover .link-card-image {
-  filter: grayscale(0%);
-  opacity: 1;
-  transition: $transition-base;
+.link-card:hover {
+  border-color: $link-hover-color;
 }
 
 .link-card-badge {
