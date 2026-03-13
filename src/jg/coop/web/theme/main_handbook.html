@@ -19,25 +19,29 @@
 
 {% block content %}
   {{ super() }}
+  {% set related_pages_sample = related_pages|sample(5)|sort(attribute='nav_sort_key') %}
+  {% if related_pages_sample %}
+  <div class="related sidebar">
+    <div class="related-container">
+      <div class="related-content">
+        <ul class="related-pages">
+          <li class="related-pages-title">Kam dál?</li>
+          {% for related_page in related_pages_sample %}
+          <li><a href="{{ pages|docs_url(related_page.src_uri)|url }}">{{ related_page.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {% endif %}
 {% endblock %}
 
 
 {% block main %}
   {{ super() }}
-
   <div class="comments sidebar">
     <div class="comments-container">
       <div class="comments-content">
-        {% set related_pages_sample = related_pages|sample(5)|sort(attribute='nav_sort_key') %}
-        {% if related_pages_sample %}
-        <h2>Kam dál?</h2>
-        <ul>
-          {% for related_page in related_pages_sample %}
-          <li><a href="{{ pages|docs_url(related_page.src_uri)|url }}">{{ related_page.nav_name }}</a></li>
-          {% endfor %}
-        </ul>
-        {% endif %}
-
         <h2>Máš otázky? Chceš probrat svou situaci?</h2>
         <p>
           Na junior.guru Discordu si pomáhá <strong>{{ members_total_count }} lidí</strong>, které zajímá svět IT juniorů.

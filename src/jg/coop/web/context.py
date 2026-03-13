@@ -66,11 +66,7 @@ def on_shared_context(context):
 
 
 def on_shared_page_context(context, page, config, files):
-    try:
-        current_page = Page.get_by_src_uri(page.file.src_uri)
-        context["related_pages"] = current_page.list_related()
-    except Page.DoesNotExist:
-        logger.debug(f"Page {page.file.src_uri} not tracked in database")
+    pass
 
 
 ####################################################################
@@ -203,9 +199,12 @@ def on_theme_context(context):
 @db.connection_context()
 def on_theme_page_context(context, page, config, files):
     try:
-        if thumbnail_url := Page.get_by_src_uri(page.file.src_uri).thumbnail_url:
+        current_page = Page.get_by_src_uri(page.file.src_uri)
+    except Page.DoesNotExist:
+        logger.debug(f"No data for {page.file.src_uri}, probably redirect")
+    else:
+        if thumbnail_url := current_page.thumbnail_url:
             context["thumbnail_url"] = thumbnail_url
         else:
             logger.warning(f"No thumbnail for {page.file.src_uri}")
-    except Page.DoesNotExist:
-        logger.debug(f"No thumbnail for {page.file.src_uri}, probably redirect")
+        context["related_pages"] = current_page.list_related()

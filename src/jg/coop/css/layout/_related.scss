@@ -1,0 +1,60 @@
+@use "sass:map";
+
+.related {
+  background: $jg-blue-light;
+}
+
+.related.sidebar {
+  background: $white;
+
+  @include media-breakpoint-up(lg) {
+    background: linear-gradient(90deg, $jg-blue-light 50%, $white 50%);
+  }
+}
+
+.related.sidebar .related-container {
+  max-width: $main-document-width;
+
+  @include media-breakpoint-up(lg) {
+    display: grid;
+    grid-template-columns: $main-toc-width minmax(0, $main-document-width);
+    max-width: map.get($container-max-widths, lg);
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+  }
+}
+
+.related.sidebar .related-content {
+  background: $white;
+
+  @include media-breakpoint-up(lg) {
+    grid-column: 2;
+    max-width: $main-document-width;
+    padding-right: $container-padding-x;
+    padding-bottom: $main-spacer;
+    padding-left: $main-spacer;
+    margin: 0;
+  }
+}
+
+.related-container {
+  @extend .container-lg;
+  max-width: $main-document-width;
+  padding-top: $main-spacer;
+  padding-bottom: $main-spacer;
+}
+
+.related-pages {
+  @extend .list-unstyled;
+  @extend .column-gap-3;
+  @extend .row-gap-2;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+
+.related-pages-title {
+  font-weight: $font-weight-semibold;
+}
