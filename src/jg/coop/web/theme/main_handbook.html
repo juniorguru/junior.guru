@@ -17,6 +17,16 @@
 {% endblock %}
 
 
+{% block content %}
+  {{ super() }}
+  <div class="comments">
+    <div class="comments-container">
+      <h2>Něco něco</h2>
+    </div>
+  </div>
+{% endblock %}
+
+
 {% block toc_heading -%}
 {{ 'journals'|icon }} Příručka
 {%- endblock %}

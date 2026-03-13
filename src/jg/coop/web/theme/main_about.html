@@ -1,6 +1,36 @@
 {% extends 'main_sidebar.html' %}
 
 
+{% block extra_header %}
+{{ super() }}
+{% endblock %}
+
+
+{% block content %}
+{{ super() }}
+
+<div class="pagination">
+  <div class="pagination-control">
+  {% set previous_page = page|sibling_page(-1) %}
+  {% if previous_page %}
+    <a href="{{ previous_page.url|url }}" class="pagination-button" title="Předchozí téma">
+      {{ 'arrow-left'|icon }}
+      {{ previous_page.title }}
+    </a>
+  {% endif %}
+  </div>
+  <div class="pagination-control">
+  {% set next_page = page|sibling_page(+1) %}
+  {% if next_page %}
+    <a href="{{ next_page.url|url }}" class="pagination-button" title="Další téma">
+      {{ next_page.title }}
+      {{ 'arrow-right'|icon }}
+    </a>
+  {% endif %}
+</div>
+{% endblock %}
+
+
 {% block toc_heading -%}
 {{ 'info-circle'|icon }} Info
 {%- endblock %}
