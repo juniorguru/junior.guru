@@ -48,3 +48,18 @@
   padding-top: $main-spacer;
   padding-bottom: $main-spacer;
 }
+
+.comments-actions {
+  @extend .mt-4;
+}
+
+.comments-button {
+  @extend .btn;
+  @extend .btn-lg;
+  @extend .btn-primary;
+  @extend .mb-4;
+}
+
+.comments-members {
+  @extend .mb-0;
+}
