@@ -41,6 +41,8 @@ $footer-spacer-md: $spacer * 2;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: $footer-spacer;
+  padding-top: $main-spacer;
+  padding-bottom: $main-spacer;
   color: $jg-dark;
   // border-top: 1px solid #e5df67;
 
