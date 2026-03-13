@@ -81,7 +81,7 @@ template: main_subnav.html
   Můžeš se přesvědčit, že nejde o žádný laciný spam.
 </p>
 
-<div class="link-cards standout-bottom">
+<div class="link-cards wide standout-bottom">
 {% for newsletter_issue in newsletter_issues %}
   {{ link_card(
     newsletter_issue.subject,
@@ -91,6 +91,7 @@ template: main_subnav.html
       newsletter_issue.published_on,
     ),
     screenshot=false,
+    class='has-stretched-link',
   ) }}
 {% endfor %}
 </div>

@@ -76,6 +76,14 @@
   position: relative;
 }
 
+.link-card.has-stretched-link {
+  position: relative;
+}
+
+.link-card.has-stretched-link .link-card-header {
+  position: static;
+}
+
 .link-card-title {
   @extend .card-title;
   @extend .card-body;
