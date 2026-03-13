@@ -53,13 +53,6 @@ registry:
     note: |
       Projekt junior.guru je členem DigiKoalice, české národní koalice pro digitální dovednosti a pracovní místa.
 
-  - name: Týden pro Digitální Česko
-    slug: tdc
-    url: https://budoucnostjedigitalni.gov.cz/
-    start_on: 2023-06
-    note: |
-      Projekt junior.guru je každoročním partnerem Týdne pro Digitální Česko, celostátní vzdělávací akce v oblasti digitalizace.
-
   - name: ReactGirls
     slug: reactgirls
     url: https://reactgirls.com/
