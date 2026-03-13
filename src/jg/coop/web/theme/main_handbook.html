@@ -28,7 +28,24 @@
   <div class="comments sidebar">
     <div class="comments-container">
       <div class="comments-content">
-        <h2>Něco něco</h2>
+        <h2>Máš otázky? Chceš probrat svou situaci?</h2>
+        <p>
+          Na junior.guru Discordu si pomáhá <strong>{{ members_total_count }} lidí</strong>, které zajímá svět IT juniorů.
+          Začátečníci, kteří hledají komunitu a podporu. Senioři s chutí sdílet své zkušenosti.
+          K tomu pravidelné online akce a mnoho dalšího.
+        </p>
+        <div class="mt-4">
+          <a class="btn btn-lg btn-primary mb-4" href="{{ pages|docs_url('club.md')|url }}">
+            {{ 'discord'|icon }} Nakoukni do klubu
+          </a>
+          <div>
+            <span class="members mb-0" aria-hidden="true">
+            {% for member in members|sample(10) %}
+              {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50, lazy=False) }}
+            {% endfor %}
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
