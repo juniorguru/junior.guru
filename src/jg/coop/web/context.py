@@ -66,7 +66,11 @@ def on_shared_context(context):
 
 
 def on_shared_page_context(context, page, config, files):
-    pass
+    try:
+        current_page = Page.get_by_src_uri(page.file.src_uri)
+        context["related_pages"] = current_page.list_related()
+    except Page.DoesNotExist:
+        logger.debug(f"Page {page.file.src_uri} not tracked in database")
 
 
 ####################################################################
@@ -171,12 +175,6 @@ def on_docs_context(context):
 
 @db.connection_context()
 def on_docs_page_context(context, page, config, files):
-    try:
-        current_page = Page.get_by_src_uri(page.file.src_uri)
-        context["related_pages"] = current_page.list_related()
-    except Page.DoesNotExist:
-        logger.debug(f"Page {page.file.src_uri} not tracked in database")
-
     meta_model_getters = (
         ("course_provider_slug", CourseProvider.get_by_slug, "course_provider"),
         ("event_id", Event.get_by_id, "event"),

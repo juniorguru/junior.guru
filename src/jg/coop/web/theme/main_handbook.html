@@ -28,10 +28,11 @@
   <div class="comments sidebar">
     <div class="comments-container">
       <div class="comments-content">
-        {% if related_pages %}
+        {% set related_pages_sample = related_pages|sample(5)|sort(attribute='nav_sort_key') %}
+        {% if related_pages_sample %}
         <h2>Kam dál?</h2>
         <ul>
-          {% for related_page in related_pages %}
+          {% for related_page in related_pages_sample %}
           <li><a href="{{ pages|docs_url(related_page.src_uri)|url }}">{{ related_page.nav_name }}</a></li>
           {% endfor %}
         </ul>
