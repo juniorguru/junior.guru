@@ -102,7 +102,7 @@ Nech si ale CV někým aspoň jednou přečíst, ať **odchytáš největší hr
 Části CV seřaď **od nejpodstatnějších po méně důležité, od nejnovějších po nejstarší**. Co přesně je důležité, se liší pro různé obory, profese, zkušenosti a dokonce i jednotlivé pozice. Pro juniory, kteří zatím nemají pracovní zkušenosti v oboru, je velmi důležitý **souhrn a projekty**, v druhé řadě pak vzdělání.
 
 {% call podcast_card(podcast_episodes|selectattr('number', 'equalto', 1)|first) %}
-  Poslechni si [podcast junior.guru](../podcast.md), kde spolu Pavlína a Jirka mluví o tom, jak vyrobit skvělé juniorní CV. Probírají také nejčastější chyby, které při své prezentaci junioři dělají.
+  Poslechni si podcast junior.guru, kde spolu Pavlína a Jirka mluví o tom, jak vyrobit skvělé juniorní CV. Probírají také nejčastější chyby, které při své prezentaci junioři dělají.
 {% endcall %}
 
 Následující kapitoly jsou v pořadí, v jakém by se měly dané části na životopisu vyskytovat.

@@ -245,7 +245,9 @@
 {% macro podcast_card(podcast_episode, caption=none) %}
 <div class="media-card">
   <div class="media-card-link-section">
-    <h4 class="media-card-title">{{ podcast_episode.format_title() }}</h4>
+    <h4 class="media-card-title">
+      <a href="{{ pages|docs_url(podcast_episode.page_url)|url }}" class="media-card-title-link">{{ podcast_episode.format_title() }}</a>
+    </h4>
   </div>
   <div class="media-card-body">
     {% if caption or caller %}
