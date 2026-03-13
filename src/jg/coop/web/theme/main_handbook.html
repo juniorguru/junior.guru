@@ -19,9 +19,17 @@
 
 {% block content %}
   {{ super() }}
-  <div class="comments">
+{% endblock %}
+
+
+{% block main %}
+  {{ super() }}
+
+  <div class="comments sidebar">
     <div class="comments-container">
-      <h2>Něco něco</h2>
+      <div>
+        <h2>Něco něco</h2>
+      </div>
     </div>
   </div>
 {% endblock %}
