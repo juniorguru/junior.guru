@@ -81,10 +81,6 @@
   height: auto;
 }
 
-.media-card:hover {
-  border-color: $jg-blue;
-}
-
 .media-card-badge {
   @extend .card-badge, .lg;
 }
@@ -154,10 +150,6 @@
 }
 .media-card-title a:visited:hover {
   color: $link-hover-color;
-}
-
-.media-card-link {
-  @extend .stretched-link;
 }
 
 .media-card-body {

@@ -56,10 +56,6 @@
   border-radius: 50%;
 }
 
-.link-card:hover {
-  border-color: $link-hover-color;
-}
-
 .link-card-badge {
   @extend .card-badge;
 }
