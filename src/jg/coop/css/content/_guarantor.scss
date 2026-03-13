@@ -2,7 +2,8 @@
   display: flex;
   padding: $spacer;
   margin: 0 auto $spacer;
-  background: $jg-yellow;
+  background: $jg-yellow-light;
+  border: 1px solid $jg-yellow;
   border-radius: $border-radius-sm;
 }
 
