@@ -236,16 +236,14 @@ async def sync_interests(client: ClubClient, members_interests: list[MemberInter
         )
         with mutating_discord(dm_channel) as proxy:
             try:
-                await proxy.send(
-                    create_message(member_interests.role_names, member_threads)
-                )
+                await proxy.send(create_message(member_threads))
             except Forbidden as e:
                 logger.error(
                     f"Cannot send DM to member #{member_interests.member_id}: {e}"
                 )
 
 
-def create_message(role_names: list[str], threads: list[Thread], limit=5) -> str:
+def create_message(threads: list[Thread], limit=5) -> str:
     threads_count = len(threads)
     if threads_count > limit:
         threads = threads[:limit]
