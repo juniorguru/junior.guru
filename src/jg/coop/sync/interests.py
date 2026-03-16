@@ -253,19 +253,17 @@ def create_message(role_names: list[str], threads: list[Thread], limit=5) -> str
     else:
         threads_text = format_threads(threads)
     return (
-        f"{EMOJI} Podle tvých zájmů to vypadá, že by tě mohly bavit tyhle vlákna:"
+        f"{EMOJI} Podle tvých zájmů to vypadá, že by tě mohla bavit tahle vlákna:"
         f"\n\n{threads_text}\n\n"
-        f"Jak jsem na to přišlo? Máš tyto zájmové role: {', '.join(role_names)}. "
-        "Můžeš si je změnit v sekci **Kanály a role**, která je v klubu úplně nahoře v seznamu kanálů."
+        "Jakmile do nich někdo něčím přispěje, **automaticky tě přidám**. "
+        "Svoje zájmy můžeš upravovat v sekci **Kanály a role**, která je úplně nahoře v klubovém seznamu kanálů. "
+        "Pokud tě nějaké téma přestane bavit, použij můj příkaz `/unfollow`. "
         "\n\n"
-        "Teď zpět k těm vláknům. Jsou to „zájmové skupinky”. "
-        "Jakmile do nich někdo přispěje, **automaticky tě přidám**. "
-        "Každé vlákno má ale v záhlaví tlačítko _Sledující_ (_Following_), kterým se můžeš kdykoliv odhlásit."
-        "\n\n"
-        "Sdílí se v nich novinky, drby, tipy, filozofické úvahy, vysvětlují obecnější koncepty, nebo řeší společné úlohy."
-        "Pokud něco vyloženě debuguješ, je lepší tím skupinky nespamovat. "
-        f"Založ si to v poradně https://discord.com/channels/{CLUB_GUILD_ID}/{ClubChannelID.QA} "
-        "a do vhodné skupinky pak na něho dej pouze odkaz."
+        "V „zájmových skupinkách”, jak těmhle vláknům říkáme, "
+        "se sdílí novinky, drby, tipy, filozofické úvahy, vysvětlují obecnější koncepty, nebo řeší společné úlohy."
+        "Pokud ale něco vyloženě debuguješ, je lepší tím skupinky nespamovat. "
+        f"Založ si to v https://discord.com/channels/{CLUB_GUILD_ID}/{ClubChannelID.QA} "
+        "a do vhodné skupinky pak na to dej pouze odkaz."
     )
 
 
