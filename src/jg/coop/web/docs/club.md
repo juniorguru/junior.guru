@@ -69,7 +69,7 @@ Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme
 - {{ 'hand-thumbs-up'|icon }} Podporuješ junior.guru
 {% endcall %}
 </div></div>
-<div class="blockquotes-2">
+<div class="blockquotes-roll">
 {{ blockquote_avatar(
   'Jemně popostrkující a nějakou činnost vyvolávající a podněcující síla, kterou jsem potřebovala. Nacpat se sem byl moc dobrej napád.',
   'radka.jpg',
@@ -82,8 +82,6 @@ Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme
   'Lukáš',
   'Lukáš'
 ) }}
-</div>
-<div class="blockquotes-2">
 {{ blockquote_avatar(
   'Na webech, které jsem vytvořil, jsem nasekal tolik chyb. Nebýt junior.guru a skvělých lidí, kteří tam pomáhají, nepřišel bych na ně.',
   'sebastian.jpg',
@@ -96,8 +94,6 @@ Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme
   'Barbora L.',
   'Barbora L.'
 ) }}
-</div>
-<div class="blockquotes-2">
 {{ blockquote_avatar(
   'Nakoukla jsem kvůli recenzím, ale našla jsem i mnoho jiného. Hodně mě to nakoplo k učení. Od kurzů prozatím upouštím, raději se učím vlastním tempem a v čase, který mi vyhovuje. Jsem tu jen pár dní a hodně jste mi pomohli se zorientovat.',
   'mouw.jpg',
@@ -197,7 +193,7 @@ Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý
 {% call lead() %}
 Respektujeme se, pomáháme si, jsme k sobě laskaví a profesionální. **Hloupé otázky neexistují,** nemáme potřebu někoho stírat. **Uslintané vtipy nikoho nezajímají,** mezi členy jsou ženy, muži, staří, mladí.
 {% endcall %}
-<div class="blockquotes-2 standout-top">
+<div class="blockquotes-roll standout">
 {{ blockquote_avatar(
   'Ty diskuze jsou úžasné. Když to lidi zaplatí, tak je to úplně jiné. Extrémně kultivované, srozumitelné, každý příspěvek dává smysl.',
   'jakub-mrozek.jpg',
@@ -210,8 +206,6 @@ Respektujeme se, pomáháme si, jsme k sobě laskaví a profesionální. **Hloup
   'Hanka',
   'Hanka'
 ) }}
-</div>
-<div class="blockquotes-2">
 {{ blockquote_avatar(
   'Sociálne siete som už úplne vymenila za junior.guru, miesto pálenia času na kravinách sa dostávam k užitočným informáciám, yes! 💪',
   'trogarka.jpg',
@@ -228,7 +222,7 @@ Respektujeme se, pomáháme si, jsme k sobě laskaví a profesionální. **Hloup
 {% call lead() %}
 Šetři čas a energii. Posouvej se vpřed bez zakopávání o nezralé názory, hulváty, sexisty a přebujelá ega. Případné úlety se u nás řídí [pravidly chování](coc.md).
 {% endcall %}
-<div class="blockquotes-2 standout-top">
+<div class="blockquotes-roll standout-top">
 {{ blockquote_toxic(
   'Asistentky? Nene, my máme asistenty, na tuhle pozici se holka nemůže dostat. Neuměla by otvírat pivo a zahřívat playstation',
   'Vojtěch P., skupina Programátoři začátečníci na FB',
@@ -268,7 +262,7 @@ Vycházíme z [postupu](handbook/index.md), který je založen na reálných zku
 {% call lead() %}
 Rady kolemjdoucích ve veřejných skupinách jsou náchylné k fanouškovství, opakují nejrůznější mýty, doporučují staré postupy. Vycházejí z toho, že když něco vyhovovalo jednomu, zákonitě musí i druhému. Na jednoduchou otázku běžně dostaneš **desítky rozcházejících se odpovědí**, mnohdy zcela nevhodných.
 {% endcall %}
-<div class="blockquotes-2 standout-top">
+<div class="blockquotes-roll standout-top">
 {{ blockquote_avatar(
   'Jsem rád za junior.guru. Už minulý rok nám to doporučovali na kurzu, ale tehdy jsem to ještě nedokázal docenit. Získal jsem svou vysněnou práci a skvělí lidi z klubu na tom mají svůj podíl.',
   'josef-b.jpg',
@@ -281,8 +275,6 @@ Rady kolemjdoucích ve veřejných skupinách jsou náchylné k fanouškovství,
   'Barbora L.',
   'Barbora L.'
 ) }}
-</div>
-<div class="blockquotes-2">
 {{ blockquote_avatar(
   'Jakožto career switcher jsem také bojoval s hledáním práce v IT oboru. Klub měl určitě nemalý podíl na mém úspěšném nalezení práce.',
   'petr-k.jpg',
@@ -296,8 +288,6 @@ Rady kolemjdoucích ve veřejných skupinách jsou náchylné k fanouškovství,
   'Šimon Kořený',
   'Šimon Kořený'
 ) }}
-</div>
-<div class="blockquotes-2">
 {{ blockquote_avatar(
   'Klub je boží. Kolikrát mi být součástí pomohlo udržet nervy na uzdě a věřit že to dopadne! 😊',
   'tomas-n.jpg',

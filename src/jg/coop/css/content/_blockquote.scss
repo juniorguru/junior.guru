@@ -80,26 +80,26 @@ $blockquote-toxic-color: $danger;
   padding-left: $blockquote-image-width + $spacer;
 }
 
-.blockquotes-2 {
-  @extend .row;
-  margin-right: 0;
-  margin-bottom: $spacer;
-  margin-left: 0;
+.blockquotes-roll {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacer;
 }
 
-.blockquotes-2 .blockquote-container {
-  @extend .col-md-6;
-  margin-top: 0;
-
-  @include media-breakpoint-up(md) {
-    margin-bottom: 0;
-  }
-}
-
-.blockquotes-2 .blockquote-container figure {
+.blockquotes-roll .blockquote-container {
   margin-bottom: 0;
 }
 
-.blockquotes-2 .blockquote {
+.blockquotes-roll .blockquote-container figure {
+  margin-bottom: 0;
+}
+
+.blockquotes-roll .blockquote {
   font-size: map.get($font-sizes, 6);
+}
+
+@include media-breakpoint-up(md) {
+  .blockquotes-roll {
+    grid-template-columns: 1fr 1fr;
+  }
 }
