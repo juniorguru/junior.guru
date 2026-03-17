@@ -73,14 +73,42 @@ Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme
 {{ blockquote_avatar(
   'Jemně popostrkující a nějakou činnost vyvolávající a podněcující síla, kterou jsem potřebovala. Nacpat se sem byl moc dobrej napád.',
   'radka.jpg',
-  'Radka',
-  'Radka'
+  'Radka S.',
+  'Radka S.'
 ) }}
 {{ blockquote_avatar(
   'Jako kluka z vesnice mě na programování vždy štvalo, že jsem na to byl hrozně moc sám. Jsem opravdu vděčný za tuto komunitu.',
   'lukas.jpg',
   'Lukáš',
   'Lukáš'
+) }}
+</div>
+<div class="blockquotes-2">
+{{ blockquote_avatar(
+  'Na webech, které jsem vytvořil, jsem nasekal tolik chyb. Nebýt junior.guru a skvělých lidí, kteří tam pomáhají, nepřišel bych na ně.',
+  'sebastian.jpg',
+  'Sebastian',
+  'Sebastian'
+) }}
+{{ blockquote_avatar(
+  'Môj obľúbený kanál na junior.guru je #práce-inzeráty, kde sú na jednom mieste všetky IT pozície vhodné pre juniorov a naviac aj ručne vložené od členov komunity. „Single Source of Truth“, ktorý junior potrebuje, keď si hľadá prácu 👍',
+  'barbora-l.jpg',
+  'Barbora L.',
+  'Barbora L.'
+) }}
+</div>
+<div class="blockquotes-2">
+{{ blockquote_avatar(
+  'Nakoukla jsem kvůli recenzím, ale našla jsem i mnoho jiného. Hodně mě to nakoplo k učení. Od kurzů prozatím upouštím, raději se učím vlastním tempem a v čase, který mi vyhovuje. Jsem tu jen pár dní a hodně jste mi pomohli se zorientovat.',
+  'mouw.jpg',
+  'Mouw',
+  'Mouw'
+) }}
+{{ blockquote_avatar(
+  'Hromada materiálů 👍 Zbloudilá duše se může zeptat na cestu, tipy a triky 👍 Může se pochlubit, postěžovat si, zafňukat 😅 Naprosto super!',
+  'andrea-k.jpg',
+  'Andrea K.',
+  'Andrea K.'
 ) }}
 </div>
 </section>
@@ -169,18 +197,32 @@ Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý
 {% call lead() %}
 Respektujeme se, pomáháme si, jsme k sobě laskaví a profesionální. **Hloupé otázky neexistují,** nemáme potřebu někoho stírat. **Uslintané vtipy nikoho nezajímají,** mezi členy jsou ženy, muži, staří, mladí.
 {% endcall %}
-<div class="blockquotes-2 standout">
+<div class="blockquotes-2 standout-top">
 {{ blockquote_avatar(
   'Ty diskuze jsou úžasné. Když to lidi zaplatí, tak je to úplně jiné. Extrémně kultivované, srozumitelné, každý příspěvek dává smysl.',
   'jakub-mrozek.jpg',
-  'Jakub',
-  'Jakub'
+  'Jakub Mrozek',
+  'Jakub Mrozek'
 ) }}
 {{ blockquote_avatar(
   'Je problém najít komunitu, která je o vzájemný pomoci a výměně informací, ne o honění ega. Tady je to krásná výjimka. Jsem ráda, že toho můžu být součástí.',
   'hanka.jpg',
   'Hanka',
   'Hanka'
+) }}
+</div>
+<div class="blockquotes-2">
+{{ blockquote_avatar(
+  'Sociálne siete som už úplne vymenila za junior.guru, miesto pálenia času na kravinách sa dostávam k užitočným informáciám, yes! 💪',
+  'trogarka.jpg',
+  'Trogárka',
+  'Trogárka'
+) }}
+{{ blockquote_avatar(
+  'Díky za rady a tipy. Jsem upřímně překvapen, že jsou v klubu tak strašně fajn lidi, co se snaží pomoct. Dlouho jsem nic takového nezažil a proto ještě jednou děkuji všem, co mi radíte. Fakt super.',
+  'ampercz.jpg',
+  'Ampercz',
+  'Ampercz'
 ) }}
 </div>
 {% call lead() %}
@@ -226,6 +268,49 @@ Vycházíme z [postupu](handbook/index.md), který je založen na reálných zku
 {% call lead() %}
 Rady kolemjdoucích ve veřejných skupinách jsou náchylné k fanouškovství, opakují nejrůznější mýty, doporučují staré postupy. Vycházejí z toho, že když něco vyhovovalo jednomu, zákonitě musí i druhému. Na jednoduchou otázku běžně dostaneš **desítky rozcházejících se odpovědí**, mnohdy zcela nevhodných.
 {% endcall %}
+<div class="blockquotes-2 standout-top">
+{{ blockquote_avatar(
+  'Jsem rád za junior.guru. Už minulý rok nám to doporučovali na kurzu, ale tehdy jsem to ještě nedokázal docenit. Získal jsem svou vysněnou práci a skvělí lidi z klubu na tom mají svůj podíl.',
+  'josef-b.jpg',
+  'Josef B.',
+  'Josef B.'
+) }}
+{{ blockquote_avatar(
+  'Komunite Junior Guru patrí veľké ďakujem ❤️ Za podporu pri projektoch, za cenné rady a aj za povzbudenie v momentoch, keď som ho najviac potrebovala. Niekedy tam človek nenájde len riešenie problému, ale aj svojho budúceho šéfa 😉',
+  'barbora-l.jpg',
+  'Barbora L.',
+  'Barbora L.'
+) }}
+</div>
+<div class="blockquotes-2">
+{{ blockquote_avatar(
+  'Jakožto career switcher jsem také bojoval s hledáním práce v IT oboru. Klub měl určitě nemalý podíl na mém úspěšném nalezení práce.',
+  'petr-k.jpg',
+  'Petr K.',
+  'Petr K.'
+) }}
+{{ blockquote_avatar(
+  'Nebýt klubu, tak čert ví, jak by to se mnou bylo. Člověk si změnu zaměstnání nějak maluje, reklamy ho mastí zleva zprava medovou budoucností a najednou je to jak na horské dráze. Až díky lidem z klubu jsem obdržel pořádný reality-check, který po medu vůbec nechutnal. Poprvé jsem ale v tom širém moři možností a bájných představ získal pocit, že stojím nohama na zemi – a že to i přes to všechno stojí za to.
+',
+  'simon-koreny.jpg',
+  'Šimon Kořený',
+  'Šimon Kořený'
+) }}
+</div>
+<div class="blockquotes-2">
+{{ blockquote_avatar(
+  'Klub je boží. Kolikrát mi být součástí pomohlo udržet nervy na uzdě a věřit že to dopadne! 😊',
+  'tomas-n.jpg',
+  'Tomáš N.',
+  'Tomáš N.'
+) }}
+{{ blockquote_avatar(
+  'V podstatě asi není lepší předplatné pro juniory v ČR a to jsem toho už viděl dost 👍',
+  'vojtech-madr.jpg',
+  'Vojta Mádr',
+  'Vojta Mádr'
+) }}
+</div>
 </section>
 
 
