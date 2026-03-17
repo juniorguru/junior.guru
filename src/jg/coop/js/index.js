@@ -1,4 +1,5 @@
 import "./annotations";
+import "./blockquotes";
 import "./candidates";
 import "./charts";
 import "./discord";

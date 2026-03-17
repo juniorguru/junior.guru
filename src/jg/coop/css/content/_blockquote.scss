@@ -10,7 +10,8 @@ $blockquote-toxic-color: $danger;
 }
 
 .blockquote-content {
-  padding: map.get($spacers, 1) $spacer;
+  padding: map.get($spacers, 2) $spacer;
+  background-color: $jg-white;
   border-left: $blockquote-border-width solid $primary;
   border-radius: $border-radius;
 }
@@ -84,6 +85,9 @@ $blockquote-toxic-color: $danger;
   display: grid;
   grid-template-columns: 1fr;
   gap: $spacer;
+  padding: $spacer;
+  background: $jg-blue-light;
+  border-radius: $border-radius;
 }
 
 .blockquotes-roll .blockquote-container {
@@ -98,8 +102,84 @@ $blockquote-toxic-color: $danger;
   font-size: map.get($font-sizes, 6);
 }
 
+.blockquotes-roll.animated {
+  --blockquotes-roll-step-duration: 6s;
+  --blockquotes-roll-swipe-duration: 500ms;
+  --blockquotes-roll-stage-height: auto;
+  grid-template-areas:
+    "stage"
+    "dots";
+  grid-template-columns: 1fr;
+  row-gap: $spacer;
+  column-gap: 0;
+}
+
+.blockquotes-roll.animated .blockquotes-roll-stage {
+  position: relative;
+  grid-area: stage;
+  min-height: var(--blockquotes-roll-stage-height);
+  overflow: hidden;
+}
+
+.blockquotes-roll.animated .blockquotes-roll-track {
+  display: flex;
+  gap: $spacer;
+  will-change: transform;
+}
+
+.blockquotes-roll.animated .blockquotes-roll-track.is-animating {
+  transition: transform var(--blockquotes-roll-swipe-duration) ease-in-out;
+}
+
+.blockquotes-roll.animated .blockquotes-roll-track > .blockquote-container {
+  flex: 0 0 100%;
+}
+
+.blockquotes-roll.animated .blockquotes-roll-dots {
+  display: flex;
+  grid-area: dots;
+  gap: map.get($spacers, 2);
+  justify-content: center;
+}
+
+.blockquotes-roll-dot {
+  width: map.get($spacers, 2);
+  height: map.get($spacers, 2);
+  padding: 0;
+  cursor: pointer;
+  background-color: $gray-400;
+  border: 0;
+  border-radius: 50%;
+  transition: transform 160ms ease-in-out, background-color 160ms ease-in-out;
+}
+
+.blockquotes-roll-dot:hover,
+.blockquotes-roll-dot.active {
+  background-color: $primary;
+  transform: scale(1.2);
+}
+
+.blockquotes-roll-dot:focus-visible {
+  outline: 2px solid $primary;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blockquotes-roll.animated .blockquotes-roll-track.is-animating {
+    transition: none;
+  }
+}
+
 @include media-breakpoint-up(md) {
   .blockquotes-roll {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .blockquotes-roll.animated {
+    row-gap: $spacer;
+  }
+
+  .blockquotes-roll.animated .blockquotes-roll-track > .blockquote-container {
+    flex-basis: calc((100% - #{$spacer}) / 2);
   }
 }
