@@ -1,17 +1,25 @@
 import re
 from collections import Counter
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
+from pathlib import Path
 
 import click
+import yaml
+from pydantic import HttpUrl, computed_field, field_validator
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
+from jg.coop.lib.discord_club import parse_channel_link
+from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
-from jg.coop.models.topic import Topic
+from jg.coop.models.topic import Topic, TopicChannel
 
 
 logger = loggers.from_path(__file__)
+
+
+YAML_PATH = Path("src/jg/coop/data/topics.yml")
 
 
 KEYWORDS = {
@@ -104,12 +112,26 @@ KEYWORDS = {
     }.items()
 }
 
-TOPIC_CHANNELS = {
-    re.compile(key): value
-    for key, value in {
-        r"^adventofcode$": "adventofcode",
-    }.items()
-}
+
+class TopicConfig(YAMLConfig):
+    name: str
+    icon: str
+    channels: list[HttpUrl]
+
+    @computed_field
+    def channel_ids(self) -> list[int]:
+        return [parse_channel_link(str(channel_url)) for channel_url in self.channels]
+
+    @field_validator("channels")
+    @classmethod
+    def validate_channels(cls, value: list[HttpUrl]) -> list[HttpUrl]:
+        for url in value:
+            parse_channel_link(str(url))
+        return value
+
+
+class TopicsConfig(YAMLConfig):
+    definitions: list[TopicConfig]
 
 
 @cli.sync_command(dependencies=["club-content"])
@@ -121,18 +143,50 @@ TOPIC_CHANNELS = {
 @db.connection_context()
 def main(today: date):
     prev_month = (today.replace(day=1) - timedelta(days=1)).replace(day=1)
+    since_at = datetime.combine(today - timedelta(days=182), datetime.min.time())
+    topics_config = TopicsConfig(**yaml.safe_load(YAML_PATH.read_text()))
 
     Topic.drop_table()
     Topic.create_table()
+    TopicChannel.drop_table()
+    TopicChannel.create_table()
 
     topics = {keyword: Counter() for keyword in KEYWORDS.values()}
+    topic_channels_content_sizes = {
+        topic.name: 0 for topic in topics_config.definitions
+    }
+
+    for topic_config in topics_config.definitions:
+        for channel_id in topic_config.channel_ids:
+            parent_content_size = sum(
+                message.content_size
+                for message in ClubMessage.channel_listing(
+                    channel_id,
+                    parent=True,
+                    since_at=since_at,
+                )
+            )
+            channel_content_size = sum(
+                message.content_size
+                for message in ClubMessage.channel_listing(
+                    channel_id,
+                    parent=False,
+                    since_at=since_at,
+                )
+            )
+            topic_channels_content_sizes[topic_config.name] += (
+                parent_content_size + channel_content_size
+            )
+
+    for topic_config in topics_config.definitions:
+        TopicChannel.create(
+            name=topic_config.name,
+            icon=topic_config.icon,
+            content_size=topic_channels_content_sizes[topic_config.name],
+        )
+
     messages = ClubMessage.listing()
     for message in messages:
-        topic_channel_keyword = get_topic_channel_keyword(message.channel_name)
-        if topic_channel_keyword:
-            topics.setdefault(topic_channel_keyword, Counter())
-            topics[topic_channel_keyword]["topic_channels_messages_count"] += 1
-
         for keyword_re, keyword in KEYWORDS.items():
             if keyword_re.search(message.content):
                 topics[keyword]["mentions_count"] += 1
@@ -144,10 +198,3 @@ def main(today: date):
     for name, data in topics.items():
         logger.info(f"{name} {dict(data)}")
         Topic.create(**{"name": name, **data})
-
-
-def get_topic_channel_keyword(channel_name):
-    for keyword_re, keyword in TOPIC_CHANNELS.items():
-        if keyword_re.search(channel_name):
-            return keyword
-    return None

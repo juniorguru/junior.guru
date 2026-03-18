@@ -7,4 +7,9 @@ class Topic(BaseModel):
     name = CharField(primary_key=True)
     mentions_count = IntegerField(default=0)
     mentions_last_month_count = IntegerField(default=0)
-    topic_channels_messages_count = IntegerField(default=0)
+
+
+class TopicChannel(BaseModel):
+    name = CharField(primary_key=True)
+    icon = CharField()
+    content_size = IntegerField(default=0)
