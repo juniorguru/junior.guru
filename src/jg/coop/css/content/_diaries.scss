@@ -1,19 +1,29 @@
 .diaries {
   @extend .list-unstyled;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: $spacer;
-  justify-content: center;
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 .diaries-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: $spacer;
+  align-items: center;
   padding: ($spacer * .5) $spacer;
   font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  overflow-wrap: anywhere;
   background: $jg-blue-white;
   border: 1px solid $jg-blue-light;
   border-radius: $border-radius;
 }
 
 .diaries-item .bi {
-  margin-right: .3rem;
+  font-size: 2rem;
+  line-height: 1;
 }
