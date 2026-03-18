@@ -1,32 +1,44 @@
 definitions:
-  - name: "Používání AI v IT"
+  - name: "AI v IT"
     icon: "stars"
     channels:
       - https://discord.com/channels/769966886598737931/1401948283361955940
 
-  - name: "Mámy v IT"
-    icon: "person-heart"
+  - name: "mámy v IT"
+    icon: "heart-fill"
     channels:
       - https://discord.com/channels/769966886598737931/1473726753511051478
+      - https://discord.com/channels/769966886598737931/963857545544470558
 
-  - name: "Psychické a tělesné zdraví"
+  - name: "zdraví mysli i těla"
     icon: "battery-half"
     channels:
       - https://discord.com/channels/769966886598737931/864434067968360459
 
-  - name: "Kariéra a pohovory"
+  - name: "kariéra a pohovory"
     icon: "compass"
     channels:
       - https://discord.com/channels/769966886598737931/788826407412170752
       - https://discord.com/channels/769966886598737931/789107031939481641
 
-  - name: "Kurzy a recenze"
-    icon: "compass"
+  - name: "kurzy a recenze"
+    icon: "star-half"
     channels:
       - https://discord.com/channels/769966886598737931/788826407412170752
       - https://discord.com/channels/769966886598737931/789107031939481641
 
-  - name: "Advent of Code"
+  - name: "Advent of Code"
     icon: "tree-fill"
     channels:
       - https://discord.com/channels/769966886598737931/1168858202415304724
+
+  - name: "zaučování"
+    icon: "person-check-fill"
+    channels:
+      - https://discord.com/channels/769966886598737931/991010207280807986
+
+  - name: "nástroje a materiály"
+    icon: "tools"
+    channels:
+      - https://discord.com/channels/769966886598737931/788832177135026197
+      - https://discord.com/channels/769966886598737931/789087476072710174
