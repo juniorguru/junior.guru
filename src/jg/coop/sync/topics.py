@@ -154,15 +154,12 @@ def main(today: date, history_months: int):
 
     topics = {keyword: Counter() for keyword in KEYWORDS.values()}
     topic_channels_content_sizes = {
-        topic.name: 0 for topic in topics_config.definitions
+        topic_config.name: sum(
+            ClubMessage.channel_size(channel_id, since_at=since_at)
+            for channel_id in topic_config.channel_ids
+        )
+        for topic_config in topics_config.definitions
     }
-
-    for topic_config in topics_config.definitions:
-        for channel_id in topic_config.channel_ids:
-            topic_channels_content_sizes[topic_config.name] += ClubMessage.channel_size(
-                channel_id,
-                since_at=since_at,
-            )
 
     for topic_config in topics_config.definitions:
         TopicChannel.create(
