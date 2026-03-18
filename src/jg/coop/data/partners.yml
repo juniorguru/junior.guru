@@ -21,15 +21,6 @@ registry:
 
   # CURRENT PARTNERS
 
-  - name: Skoumal
-    slug: skoumal
-    url: https://www.skoumal.com/
-    cz_business_id: 3529151
-    start_on: 2021-02
-    subscription: https://juniorguru.memberful.com/admin/subscriptions/3699637
-    note: |
-      Historicky o první klubové sponzorství. Když Skoumal díky junior.guru získá zajímavé benefity (např. nové zaměstnance), může mít chuť přihodit i finanční podporu.
-
   - name: Creatiweb
     slug: creatiweb
     url: https://creatiweb.cz/
@@ -124,16 +115,6 @@ registry:
     subscription: https://juniorguru.memberful.com/admin/subscriptions/3699681
     note: |
       Využívají klub pro komunikaci se svými klienty (studenty). Dan Srb v klubu moderuje a radí s frontendem.
-
-  - name: Dokážeš programovat
-    slug: dokazesprogramovat
-    url: https://www.dokazesprogramovat.cz/
-    cz_business_id: 14389762
-    start_on: 2024-07
-    subscription: https://juniorguru.memberful.com/admin/subscriptions/3680582
-    is_free: false
-    note: |
-      Využívají klub jako komunitu pro své studenty. Lucie Lenértová v klubu pořádá různé online akce.
 
   - name: Imper
     slug: imper
