@@ -1,0 +1,32 @@
+definitions:
+  - name: "Používání AI v IT"
+    icon: "stars"
+    channels:
+      - https://discord.com/channels/769966886598737931/1401948283361955940
+
+  - name: "Mámy v IT"
+    icon: "person-heart"
+    channels:
+      - https://discord.com/channels/769966886598737931/1473726753511051478
+
+  - name: "Psychické a tělesné zdraví"
+    icon: "battery-half"
+    channels:
+      - https://discord.com/channels/769966886598737931/864434067968360459
+
+  - name: "Kariéra a pohovory"
+    icon: "compass"
+    channels:
+      - https://discord.com/channels/769966886598737931/788826407412170752
+      - https://discord.com/channels/769966886598737931/789107031939481641
+
+  - name: "Kurzy a recenze"
+    icon: "compass"
+    channels:
+      - https://discord.com/channels/769966886598737931/788826407412170752
+      - https://discord.com/channels/769966886598737931/789107031939481641
+
+  - name: "Advent of Code"
+    icon: "tree-fill"
+    channels:
+      - https://discord.com/channels/769966886598737931/1168858202415304724
