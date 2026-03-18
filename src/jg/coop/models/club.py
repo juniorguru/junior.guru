@@ -384,6 +384,26 @@ class ClubMessage(BaseModel):
         return query.order_by(cls.created_at)
 
     @classmethod
+    def channel_size(cls, channel_id: int, since_at: datetime | None = None) -> int:
+        parent_content_size = sum(
+            message.content_size
+            for message in cls.channel_listing(
+                channel_id,
+                parent=True,
+                since_at=since_at,
+            )
+        )
+        channel_content_size = sum(
+            message.content_size
+            for message in cls.channel_listing(
+                channel_id,
+                parent=False,
+                since_at=since_at,
+            )
+        )
+        return parent_content_size + channel_content_size
+
+    @classmethod
     def forum_listing(cls, channel_id: int, skip_guide: bool = True) -> Iterable[Self]:
         query = (
             cls.select()

@@ -140,16 +140,17 @@ class TopicsConfig(YAMLConfig):
     default=lambda: date.today().isoformat(),
     type=date.fromisoformat,
 )
+@click.option("--history-months", default=6, type=click.IntRange(min=1))
 @db.connection_context()
-def main(today: date):
+def main(today: date, history_months: int):
     prev_month = (today.replace(day=1) - timedelta(days=1)).replace(day=1)
-    since_at = datetime.combine(today - timedelta(days=182), datetime.min.time())
+    since_at = datetime.combine(
+        today - timedelta(days=history_months * 30), datetime.min.time()
+    )
     topics_config = TopicsConfig(**yaml.safe_load(YAML_PATH.read_text()))
 
-    Topic.drop_table()
-    Topic.create_table()
-    TopicChannel.drop_table()
-    TopicChannel.create_table()
+    db.drop_tables([Topic, TopicChannel])
+    db.create_tables([Topic, TopicChannel])
 
     topics = {keyword: Counter() for keyword in KEYWORDS.values()}
     topic_channels_content_sizes = {
@@ -158,24 +159,9 @@ def main(today: date):
 
     for topic_config in topics_config.definitions:
         for channel_id in topic_config.channel_ids:
-            parent_content_size = sum(
-                message.content_size
-                for message in ClubMessage.channel_listing(
-                    channel_id,
-                    parent=True,
-                    since_at=since_at,
-                )
-            )
-            channel_content_size = sum(
-                message.content_size
-                for message in ClubMessage.channel_listing(
-                    channel_id,
-                    parent=False,
-                    since_at=since_at,
-                )
-            )
-            topic_channels_content_sizes[topic_config.name] += (
-                parent_content_size + channel_content_size
+            topic_channels_content_sizes[topic_config.name] += ClubMessage.channel_size(
+                channel_id,
+                since_at=since_at,
             )
 
     for topic_config in topics_config.definitions:
