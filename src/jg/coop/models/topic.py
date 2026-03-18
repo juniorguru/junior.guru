@@ -12,4 +12,12 @@ class Topic(BaseModel):
 class TopicChannel(BaseModel):
     name = CharField(primary_key=True)
     icon = CharField()
-    content_size = IntegerField(default=0)
+    monthly_letters_count = IntegerField(default=0)
+
+    @property
+    def is_hot(self) -> bool:
+        return self.monthly_letters_count > 50000
+
+    @classmethod
+    def listing(cls):
+        return cls.select().order_by(cls.monthly_letters_count.desc())

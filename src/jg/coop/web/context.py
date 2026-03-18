@@ -25,7 +25,7 @@ from jg.coop.models.role import InterestRole
 from jg.coop.models.sponsor import GitHubSponsor, PastSponsor, Sponsor, SponsorTier
 from jg.coop.models.stage import Stage
 from jg.coop.models.story import Story
-from jg.coop.models.topic import Topic
+from jg.coop.models.topic import Topic, TopicChannel
 from jg.coop.models.transaction import Transaction
 from jg.coop.models.wisdom import Wisdom
 
@@ -105,6 +105,7 @@ def on_docs_context(context):
     context["messages_count"] = ClubMessage.count()
     context["events_promo"] = Event.promo_listing()
     context["interests"] = InterestRole.interests()
+    context["topic_channels"] = TopicChannel.listing()
 
     # club.md, about/*.md
     context["sponsors"] = Sponsor.listing()

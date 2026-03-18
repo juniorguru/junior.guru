@@ -114,7 +114,7 @@ Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme
 {% call lead() %}
 Chceš mít jistotu, že v klubu najdeš lidi, které zajímá totéž co tebe? Že najdeš publikum pro svůj dotaz nebo parťáky pro svůj projekt? Podívej se, co o svých zájmech prozradili sami členové.
 {% endcall %}
-<ul class="interests standout-top">
+<ul class="interests yellow standout">
 {% set max_members_count = interests|map(attribute=1)|max %}
 {% for role, members_count in interests[:12] %}
   {% set shade_index = 7 - ((members_count / max_members_count) * 6)|round(0, 'floor')|int %}
@@ -123,10 +123,29 @@ Chceš mít jistotu, že v klubu najdeš lidi, které zajímá totéž co tebe? 
       {{ img('static/' + role.icon_path, 'Logo: ' + role.interest_name, 50, 50, lazy=False, class="interests-icon") }}
     </span>
     <strong class="interests-name">{{ role.interest_name|replace(' a ', ' a ') }}</strong>
-    <span class="interests-badge">{{ members_count }} členů</span>
+    <span class="interests-note">{{ members_count }} členů</span>
   </li>
 {% endfor %}
 </ul>
+{% call lead() %}
+V klubu se ale diskutuje o všem, co souvisí co se světem juniorů. Tady máš seřazený seznam toho, co lidi v klubu za poslední půlrok nejvíc řeší.
+{% endcall %}
+{% set top_topic_channels = topic_channels[:6] %}
+{% if top_topic_channels %}
+<ul class="interests blue standout-top">
+{% for topic_channel in top_topic_channels %}
+  <li class="interests-item">
+    <span class="interests-icon-container">
+      {{ topic_channel.icon|icon('interests-icon', alt='Ikona tématu: ' + topic_channel.name) }}
+    </span>
+    <strong class="interests-name">{{ topic_channel.name }}</strong>
+    {% if topic_channel.is_hot %}
+      <span class="interests-badge">horké téma</span>
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>
+{% endif %}
 </section>
 
 <div class="section-background blue-light"><section class="section">

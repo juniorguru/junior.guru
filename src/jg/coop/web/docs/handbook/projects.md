@@ -10,6 +10,16 @@ template: main_handbook.html
 
 # Projekty jako první praxe
 
+<!--
+DOPLNIT: jak udelat MOAT v dobe kdy je AI
+
+To je super pro rok 2021. Teď je 2026. Senior takový projekt vygeneruje s pomocí AI za 2 dny. Ukaž, že to umíš taky. (Nepotřebuješ know-how nebo skill, je to AI minset a Cursor AI, co potřebuješ.) Ukaž, že jsi zabiják 🏴‍☠️, "team-of-one" 💀, a že píšeš jeden projekt za druhým 😵😵😵 když zrovna v noci nespíš. Firmy mají dnes těžké se uživit a pokud nejdeš do korporátu, potřebují, abys jim vygeneroval větší zisk, než je stojíš.
+
+Nakonec prezentace. Na kód nikdo koukat nebude - stejně je to AI. (Ano, je to pro všechny okolo AI, i kdyby jsi to psal ručně a strávil nad tím měsíc.). Udělej super krátké 50s video, kde odprezentuješ, co aplikace umí. Moje zkušenost - někteří HR si ta videa pouští a pak zpětně chválí. 🥳
+
+https://www.linkedin.com/posts/lukasbednarik_jak-dostat-pr%C3%A1ci-jako-junior-developer-v-activity-7427646943742414848-I8TX/
+-->
+
 <!-- Bez projektů jde dnes tvoje CVčko přímo do koše. 200 lidí na jeden inzerát. jak vynikneš? -->
 
 {% call note(standout=True) %}

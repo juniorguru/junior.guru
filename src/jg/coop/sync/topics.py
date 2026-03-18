@@ -147,27 +147,42 @@ def main(today: date, history_months: int):
     since_at = datetime.combine(
         today - timedelta(days=history_months * 30), datetime.min.time()
     )
+    logger.info(
+        f"Loading topics config from {YAML_PATH} (history={history_months} months, since={since_at:%Y-%m-%d})"
+    )
     topics_config = TopicsConfig(**yaml.safe_load(YAML_PATH.read_text()))
+    logger.info(f"Loaded {len(topics_config.definitions)} topic channel definitions")
 
+    logger.info("Recreating topic tables")
     db.drop_tables([Topic, TopicChannel])
     db.create_tables([Topic, TopicChannel])
 
     topics = {keyword: Counter() for keyword in KEYWORDS.values()}
-    topic_channels_content_sizes = {
-        topic_config.name: sum(
-            ClubMessage.channel_size(channel_id, since_at=since_at)
-            for channel_id in topic_config.channel_ids
+    topic_channels_monthly_letters_counts = {
+        topic_config.name: round(
+            sum(
+                ClubMessage.channel_size(channel_id, since_at=since_at)
+                for channel_id in topic_config.channel_ids
+            )
+            / history_months
         )
         for topic_config in topics_config.definitions
     }
+    logger.info("Computed topic channel monthly letters counts")
 
     for topic_config in topics_config.definitions:
+        logger.info(
+            f"Saving topic channel {topic_config.name!r} (channels={len(topic_config.channel_ids)}, monthly_letters_count={topic_channels_monthly_letters_counts[topic_config.name]})"
+        )
         TopicChannel.create(
             name=topic_config.name,
             icon=topic_config.icon,
-            content_size=topic_channels_content_sizes[topic_config.name],
+            monthly_letters_count=topic_channels_monthly_letters_counts[
+                topic_config.name
+            ],
         )
 
+    logger.info("Computing keyword mention stats")
     messages = ClubMessage.listing()
     for message in messages:
         for keyword_re, keyword in KEYWORDS.items():
@@ -179,5 +194,7 @@ def main(today: date, history_months: int):
                 if keyword_re.search(message.content):
                     topics[keyword]["mentions_last_month_count"] += 1
     for name, data in topics.items():
-        logger.info(f"{name} {dict(data)}")
+        logger.info(
+            f"Saving topic {name!r} (mentions={data['mentions_count']}, mentions_last_month={data['mentions_last_month_count']})"
+        )
         Topic.create(**{"name": name, **data})

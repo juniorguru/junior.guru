@@ -676,4 +676,9 @@ https://www.linkedin.com/posts/vernovotna_jak-na-cv-kter%C3%A9-p%C5%99e%C4%8Dte-
 ---
 
 
+
+První kontakt - CV: Já chci vidět, že kandidát ví, kam se hlásí a věnoval té aplikaci péči ve smyslu, že tam nejsou hovadiny, které nejsou vůči pozici relevantní. Tím myslím třeba to (když to přeženu), že kandidát pošle šesti stránkové CV, kde má celou historii od základní školy, přes brigády a přes role, které nejsou vůči té naší relevantní. A k těm relevantním zkušenostem tam má zlomek popisu. Pokud junior nemá zkušenosti, tak čekám, že napíše, jak se projevuje jeho zájem o obor ve volném čase / škole, připojí školní projekty, jak na nich využil skilly, které jsou předpokladem pro to být v té roli dobrý - a hlavní obsah se bude točit kolem toho. Ale vždycky je to nějaká kombinace toho, co mě na tom CV zaujme a naopak.
+https://www.linkedin.com/feed/update/urn:li:activity:7427646943742414848?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7427646943742414848%2C7427675019050143745%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287427675019050143745%2Curn%3Ali%3Aactivity%3A7427646943742414848%29
+
+
 #} -->

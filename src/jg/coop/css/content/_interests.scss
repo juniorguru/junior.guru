@@ -16,12 +16,12 @@ $interests-shades: 7;
   width: 10em;
   padding: $spacer;
   text-align: center;
-  border: 1px solid $jg-yellow;
+  border: 1px solid;
   border-radius: $border-radius;
 }
 
 @for $i from 1 through $interests-shades {
-  .interests-item.shade-#{$i} {
+  .interests.yellow .interests-item.shade-#{$i} {
     background-color:
       mix(
         $jg-white,
@@ -29,6 +29,20 @@ $interests-shades: 7;
         math.div($i, $interests-shades) * 100%
       );
   }
+}
+
+.interests.yellow .interests-item,
+.interests.yellow .interests-icon-container {
+  border-color: $jg-yellow;
+}
+
+.interests.blue .interests-item {
+  background-color: $jg-blue-white;
+}
+
+.interests.blue .interests-item,
+.interests.blue .interests-icon-container {
+  border-color: $jg-blue-light;
 }
 
 .interests-icon-container {
@@ -48,17 +62,39 @@ $interests-shades: 7;
   width: 2rem;
   height: 2rem;
   filter: brightness(0) saturate(100%);
-  opacity: .8;
+  opacity: 1;
+}
+
+.interests-icon.bi {
+  width: auto;
+  height: auto;
+  font-size: 2rem;
+  line-height: 1;
+  color: $jg-dark;
+  filter: none;
 }
 
 .interests-name {
   @extend .fs-5;
   padding: 0;
-  margin: 0;
+  margin: 0 0 $spacer;
   font-weight: $font-weight-medium;
   line-height: 1.2;
 }
 
-.interests-badge {
+.interests-note {
+  margin-top: auto;
   line-height: 2;
+}
+
+.interests-badge {
+  @extend .badge;
+  align-self: center;
+  margin-top: auto;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  color: $white;
+  user-select: none;
+  background: $jg-blue;
+  border: 0;
 }
