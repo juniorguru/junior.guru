@@ -11,6 +11,14 @@ definitions:
       - https://discord.com/channels/769966886598737931/963857545544470558
     pages:
       - handbook/parents.md
+      - handbook/women.md
+
+  - name: děti
+    icon: emoji-laughing-fill
+    channels:
+      - https://discord.com/channels/769966886598737931/1075419658800332830
+    pages:
+      - handbook/parents.md
 
   - name: zdraví mysli i těla
     icon: battery-half
@@ -32,6 +40,8 @@ definitions:
     icon: star-half
     channels:
       - https://discord.com/channels/769966886598737931/1075052469303906335
+    pages:
+      - handbook/course.md
 
   - name: Advent of Code
     icon: tree-fill
@@ -57,3 +67,27 @@ definitions:
       - https://discord.com/channels/769966886598737931/1240990415533113354
     pages:
       - handbook/mentoring.md
+
+  - name: CV, GitHub, LinkedIn
+    icon: file-person-fill
+    channels:
+      - https://discord.com/channels/769966886598737931/1123527619716055040
+    pages:
+      - handbook/cv.md
+      - handbook/github-profile.md
+      - handbook/linkedin.md
+
+  - name: projekty
+    icon: github
+    channels:
+      - https://discord.com/channels/769966886598737931/1123525345635733504
+    pages:
+      - handbook/projects.md
+
+  - name: Git a GitHub
+    icon: git
+    channels:
+      - https://discord.com/channels/769966886598737931/1437374270740365353
+    pages:
+      - handbook/git.md
+      - handbook/github-profile.md
