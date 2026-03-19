@@ -5,7 +5,7 @@ from pathlib import Path
 
 import click
 import yaml
-from pydantic import HttpUrl, computed_field, field_validator
+from pydantic import Field, HttpUrl, computed_field, field_validator
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
@@ -13,7 +13,7 @@ from jg.coop.lib.discord_club import parse_channel_link
 from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
-from jg.coop.models.topic import Topic, TopicChannel
+from jg.coop.models.topic import TopicDiscussion, TopicMention
 
 
 logger = loggers.from_path(__file__)
@@ -116,7 +116,7 @@ KEYWORDS = {
 class TopicConfig(YAMLConfig):
     name: str
     icon: str
-    channels: list[HttpUrl]
+    channels: list[HttpUrl] = Field(min_length=1)
 
     @computed_field
     def channel_ids(self) -> list[int]:
@@ -154,8 +154,8 @@ def main(today: date, history_months: int):
     logger.info(f"Loaded {len(topics_config.definitions)} topic channel definitions")
 
     logger.info("Recreating topic tables")
-    db.drop_tables([Topic, TopicChannel])
-    db.create_tables([Topic, TopicChannel])
+    db.drop_tables([TopicMention, TopicDiscussion])
+    db.create_tables([TopicMention, TopicDiscussion])
 
     topics = {keyword: Counter() for keyword in KEYWORDS.values()}
     topic_channels_monthly_letters_counts = {
@@ -174,8 +174,9 @@ def main(today: date, history_months: int):
         logger.info(
             f"Saving topic channel {topic_config.name!r} (channels={len(topic_config.channel_ids)}, monthly_letters_count={topic_channels_monthly_letters_counts[topic_config.name]})"
         )
-        TopicChannel.create(
+        TopicDiscussion.create(
             name=topic_config.name,
+            channels=topic_config.channel_ids[0],
             icon=topic_config.icon,
             monthly_letters_count=topic_channels_monthly_letters_counts[
                 topic_config.name
@@ -197,4 +198,4 @@ def main(today: date, history_months: int):
         logger.info(
             f"Saving topic {name!r} (mentions={data['mentions_count']}, mentions_last_month={data['mentions_last_month_count']})"
         )
-        Topic.create(**{"name": name, **data})
+        TopicMention.create(**{"name": name, **data})

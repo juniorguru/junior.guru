@@ -25,7 +25,7 @@ from jg.coop.models.role import InterestRole
 from jg.coop.models.sponsor import GitHubSponsor, PastSponsor, Sponsor, SponsorTier
 from jg.coop.models.stage import Stage
 from jg.coop.models.story import Story
-from jg.coop.models.topic import Topic, TopicChannel
+from jg.coop.models.topic import TopicDiscussion, TopicMention
 from jg.coop.models.transaction import Transaction
 from jg.coop.models.wisdom import Wisdom
 
@@ -105,7 +105,7 @@ def on_docs_context(context):
     context["messages_count"] = ClubMessage.count()
     context["events_promo"] = Event.promo_listing()
     context["interests"] = InterestRole.interests()
-    context["topic_channels"] = TopicChannel.listing()
+    context["topic_discussions"] = TopicDiscussion.listing()
 
     # club.md, about/*.md
     context["sponsors"] = Sponsor.listing()
@@ -178,7 +178,7 @@ def on_docs_page_context(context, page, config, files):
         ("job_id", ListedJob.get_by_submitted_id, "job"),
         ("newsletter_issue_id", NewsletterIssue.get_by_id, "newsletter_issue"),
         ("podcast_episode_number", PodcastEpisode.get_by_number, "podcast_episode"),
-        ("topic_name", Topic.get_by_id, "topic"),
+        ("topic_mention_id", TopicMention.get_by_id, "topic_mention"),
     )
     for meta_key, model_getter, model_var in meta_model_getters:
         if meta_key in page.meta:

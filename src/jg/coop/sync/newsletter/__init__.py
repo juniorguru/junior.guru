@@ -132,7 +132,7 @@ async def main(
     ]
     course_providers = cps_sponsors + cps_most_viewed
     course_providers_by_mentions = list(
-        CourseProvider.mentions_listing("mentions_last_month_count")
+        CourseProvider.topic_mentions_listing("mentions_last_month_count")
     )
 
     logger.debug("Preparing club groups")

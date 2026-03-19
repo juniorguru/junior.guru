@@ -10,7 +10,7 @@ from peewee import BooleanField, CharField, IntegerField, TextField, fn
 from jg.coop.models.base import BaseModel
 from jg.coop.models.partner import Partner
 from jg.coop.models.sponsor import Sponsor, SponsorTier
-from jg.coop.models.topic import Topic
+from jg.coop.models.topic import TopicMention
 
 
 class CourseProviderGroup(StrEnum):
@@ -67,8 +67,8 @@ class CourseProvider(BaseModel):
     usp_description = TextField(null=True)  # unique selling proposition
 
     @property
-    def topic(self) -> Topic:
-        return Topic.get_by_id(self.slug)
+    def topic_mention(self) -> TopicMention:
+        return TopicMention.get_by_id(self.slug)
 
     @property
     def catalogue_url(self) -> str:
@@ -130,11 +130,13 @@ class CourseProvider(BaseModel):
         )
 
     @classmethod
-    def mentions_listing(cls, metric_name: str, min_value: int = 3) -> Iterable[Self]:
-        metric_field = getattr(Topic, metric_name)
+    def topic_mentions_listing(
+        cls, metric_name: str, min_value: int = 3
+    ) -> Iterable[Self]:
+        metric_field = getattr(TopicMention, metric_name)
         return (
             cls.select()
-            .join(Topic, on=(cls.slug == Topic.name))
+            .join(TopicMention, on=(cls.slug == TopicMention.name))
             .where(metric_field >= min_value)
             .order_by(metric_field.desc())
         )

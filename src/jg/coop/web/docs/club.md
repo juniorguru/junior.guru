@@ -130,16 +130,16 @@ Chceš mít jistotu, že v klubu najdeš lidi, které zajímá totéž co tebe? 
 {% call lead() %}
 V klubu se ale diskutuje o všem, co souvisí co se světem juniorů. Tady máš seřazený seznam toho, co lidi v klubu za poslední půlrok nejvíc řeší.
 {% endcall %}
-{% set top_topic_channels = topic_channels[:6] %}
-{% if top_topic_channels %}
+{% set top_topic_discussions = topic_discussions[:6] %}
+{% if top_topic_discussions %}
 <ul class="interests blue standout-top">
-{% for topic_channel in top_topic_channels %}
+{% for topic_discussion in top_topic_discussions %}
   <li class="interests-item">
     <span class="interests-icon-container">
-      {{ topic_channel.icon|icon('interests-icon', alt='Ikona tématu: ' + topic_channel.name) }}
+      {{ topic_discussion.icon|icon('interests-icon', alt='Ikona tématu: ' + topic_discussion.name) }}
     </span>
-    <strong class="interests-name">{{ topic_channel.name }}</strong>
-    {% if topic_channel.is_hot %}
+    <strong class="interests-name">{{ topic_discussion.name }}</strong>
+    {% if topic_discussion.is_hot %}
       <span class="interests-badge">horké téma</span>
     {% endif %}
   </li>

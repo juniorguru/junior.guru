@@ -187,7 +187,7 @@ def generate_course_provider_pages() -> Generator[GeneratedDocument, None, None]
                 title=course_provider.page_title,
                 description=course_provider.page_description,
                 course_provider_slug=course_provider.slug,
-                topic_name=course_provider.slug,
+                topic_mention_id=course_provider.slug,
             ),
             content=(DOCS_DIR / "course_provider.md").read_text(),
         )

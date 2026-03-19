@@ -1,16 +1,18 @@
-from peewee import CharField, IntegerField
+from peewee import CharField, ForeignKeyField, IntegerField
 
 from jg.coop.models.base import BaseModel
+from jg.coop.models.club import ClubChannel
 
 
-class Topic(BaseModel):
+class TopicMention(BaseModel):
     name = CharField(primary_key=True)
     mentions_count = IntegerField(default=0)
     mentions_last_month_count = IntegerField(default=0)
 
 
-class TopicChannel(BaseModel):
+class TopicDiscussion(BaseModel):
     name = CharField(primary_key=True)
+    channels = ForeignKeyField(ClubChannel)
     icon = CharField()
     monthly_letters_count = IntegerField(default=0)
 
