@@ -135,8 +135,8 @@ Umíš s GitHubem? [Pošli Pull Request]({{ course_provider.edit_url }})!
 
 {% if course_provider.is_gone %}
 Recenze kurzů najdeš na místním Discordu.
-{% if topic.mentions_count > 5 -%}
-  I když už neexistuje, o {{ course_provider.name }} tam je **{{ topic.mentions_count|thousands }} zmínek**.
+{% if topic_mention.mentions_count > 5 -%}
+  I když už neexistuje, o {{ course_provider.name }} tam je **{{ topic_mention.mentions_count|thousands }} zmínek**.
 {%- endif %}
 Nevíš si rady s výběrem kurzů?
 Vždy záleží v jaké jsi konkrétní situaci a co zrovna potřebuješ.
@@ -144,8 +144,8 @@ A přesně takové věci se na tom našem Discordu taky probírají.
 Poradíme!
 {% else %}
 Nějaké recenze najdeš na místním Discordu.
-{% if topic.mentions_count > 5 -%}
-  Vyloženě o {{ course_provider.name }} tam je **{{ topic.mentions_count|thousands }} zmínek**.
+{% if topic_mention.mentions_count > 5 -%}
+  Vyloženě o {{ course_provider.name }} tam je **{{ topic_mention.mentions_count|thousands }} zmínek**.
 {%- endif %}
 Dojmy absolventů ti mohou pomoci poodhalit celkovou kvalitu, ale čti je s rezervou.
 Nevíš, s jakými očekáváními si kurz vybrali.
