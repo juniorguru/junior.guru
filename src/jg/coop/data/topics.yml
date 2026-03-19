@@ -1,43 +1,59 @@
 definitions:
-  - name: "AI v IT"
-    icon: "stars"
+  - name: AI v IT
+    icon: stars
     channels:
       - https://discord.com/channels/769966886598737931/1401948283361955940
 
-  - name: "mámy v IT"
-    icon: "heart-fill"
+  - name: mámy v IT
+    icon: heart-fill
     channels:
       - https://discord.com/channels/769966886598737931/1473726753511051478
       - https://discord.com/channels/769966886598737931/963857545544470558
+    handbook:
+      - parents
 
-  - name: "zdraví mysli i těla"
-    icon: "battery-half"
+  - name: zdraví mysli i těla
+    icon: battery-half
     channels:
       - https://discord.com/channels/769966886598737931/864434067968360459
+    handbook:
+      - mental-health
 
-  - name: "kariéra a pohovory"
-    icon: "compass"
+  - name: kariéra a pohovory
+    icon: compass
     channels:
       - https://discord.com/channels/769966886598737931/788826407412170752
       - https://discord.com/channels/769966886598737931/789107031939481641
+    handbook:
+      - interview
+      - candidate
 
-  - name: "kurzy a recenze"
-    icon: "star-half"
+  - name: kurzy a recenze
+    icon: star-half
     channels:
       - https://discord.com/channels/769966886598737931/1075052469303906335
 
-  - name: "Advent of Code"
-    icon: "tree-fill"
+  - name: Advent of Code
+    icon: tree-fill
     channels:
       - https://discord.com/channels/769966886598737931/1168858202415304724
+    handbook:
+      - practice
 
-  - name: "zaučování"
-    icon: "person-check-fill"
+  - name: zaučování
+    icon: person-check-fill
     channels:
       - https://discord.com/channels/769966886598737931/991010207280807986
 
-  - name: "nástroje a materiály"
-    icon: "tools"
+  - name: nástroje a materiály
+    icon: tools
     channels:
       - https://discord.com/channels/769966886598737931/788832177135026197
       - https://discord.com/channels/769966886598737931/789087476072710174
+
+  - name: mentoring
+    icon: chat-heart-fill
+    channels:
+      - https://discord.com/channels/769966886598737931/1240990415533113354
+    handbook:
+      - mentoring
