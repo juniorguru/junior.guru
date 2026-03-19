@@ -24,8 +24,7 @@ definitions:
   - name: "kurzy a recenze"
     icon: "star-half"
     channels:
-      - https://discord.com/channels/769966886598737931/788826407412170752
-      - https://discord.com/channels/769966886598737931/789107031939481641
+      - https://discord.com/channels/769966886598737931/1075052469303906335
 
   - name: "Advent of Code"
     icon: "tree-fill"
