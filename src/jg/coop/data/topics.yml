@@ -9,24 +9,24 @@ definitions:
     channels:
       - https://discord.com/channels/769966886598737931/1473726753511051478
       - https://discord.com/channels/769966886598737931/963857545544470558
-    handbook:
-      - parents
+    pages:
+      - handbook/parents.md
 
   - name: zdraví mysli i těla
     icon: battery-half
     channels:
       - https://discord.com/channels/769966886598737931/864434067968360459
-    handbook:
-      - mental-health
+    pages:
+      - handbook/mental-health.md
 
   - name: kariéra a pohovory
     icon: compass
     channels:
       - https://discord.com/channels/769966886598737931/788826407412170752
       - https://discord.com/channels/769966886598737931/789107031939481641
-    handbook:
-      - interview
-      - candidate
+    pages:
+      - handbook/interview.md
+      - handbook/candidate.md
 
   - name: kurzy a recenze
     icon: star-half
@@ -37,8 +37,8 @@ definitions:
     icon: tree-fill
     channels:
       - https://discord.com/channels/769966886598737931/1168858202415304724
-    handbook:
-      - practice
+    pages:
+      - handbook/practice.md
 
   - name: zaučování
     icon: person-check-fill
@@ -55,5 +55,5 @@ definitions:
     icon: chat-heart-fill
     channels:
       - https://discord.com/channels/769966886598737931/1240990415533113354
-    handbook:
-      - mentoring
+    pages:
+      - handbook/mentoring.md
