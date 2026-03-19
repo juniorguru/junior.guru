@@ -117,6 +117,7 @@ class TopicConfig(YAMLConfig):
     name: str
     icon: str
     channels: list[HttpUrl] = Field(min_length=1)
+    pages: list[str] = []
 
     @computed_field
     def channel_ids(self) -> list[int]:
@@ -181,6 +182,7 @@ def main(today: date, history_months: int):
             monthly_letters_count=topic_channels_monthly_letters_counts[
                 topic_config.name
             ],
+            page_src_uris=topic_config.pages,
         )
 
     logger.info("Computing keyword mention stats")

@@ -1,6 +1,6 @@
 from peewee import CharField, ForeignKeyField, IntegerField
 
-from jg.coop.models.base import BaseModel
+from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubChannel
 
 
@@ -15,6 +15,7 @@ class TopicDiscussion(BaseModel):
     channels = ForeignKeyField(ClubChannel)
     icon = CharField()
     monthly_letters_count = IntegerField(default=0)
+    page_src_uris = JSONField(default=list)
 
     @property
     def is_hot(self) -> bool:

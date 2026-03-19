@@ -3,6 +3,7 @@ from typing import Iterable, Self
 from peewee import BooleanField, CharField, DateField, IntegerField
 
 from jg.coop.models.base import BaseModel, JSONField
+from jg.coop.models.topic import TopicDiscussion
 
 
 class Page(BaseModel):
@@ -110,6 +111,15 @@ class Page(BaseModel):
             cls.select()
             .where(cls.src_uri.startswith("stories/"))
             .order_by(cls.date.desc())
+        )
+
+    def list_topic_discussions(self) -> Iterable[TopicDiscussion]:
+        page_src_uris = TopicDiscussion.page_src_uris.children().alias("page_src_uris")
+        return (
+            TopicDiscussion.select()
+            .from_(TopicDiscussion, page_src_uris)
+            .where(page_src_uris.c.value == self.src_uri)
+            .order_by(TopicDiscussion.monthly_letters_count.desc())
         )
 
     def list_related(self) -> list[Self]:
