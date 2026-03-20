@@ -44,17 +44,25 @@
           Začátečníci, kteří hledají komunitu a podporu. Senioři s chutí sdílet své zkušenosti.
           K tomu pravidelné online akce a mnoho dalšího.
         </p>
-        {% if topic_discussions %}
-          <ul class="comments-topics">
-          {% for topic_discussion in topic_discussions %}
-            <li class="comments-topic">
-              <span class="comments-topic-icon-container">
-                {{ topic_discussion.icon|icon('comments-topic-icon', alt='Ikona tématu: ' + topic_discussion.name) }}
-              </span>
-              <strong class="comments-topic-name">{{ topic_discussion.name }}</strong>
-            </li>
-          {% endfor %}
-          </ul>
+        {% if related_channels %}
+          <p class="lead">
+            {% if related_channels|length == 1 %}
+              Konkrétně v kanálu
+            {% else %}
+              Konkrétně v kanálech
+            {% endif %}
+            {% for related_channel in related_channels %}
+              {% if not loop.first %}
+                {% if loop.last %}
+                  a
+                {% else %}
+                  ,
+                {% endif %}
+              {% endif %}
+              <a href="{{ related_channel.url }}">#{{ related_channel.name }}</a>
+            {% endfor %}
+            se v poslední době napsalo <strong>{{ related_channels_monthly_size|thousands }} písmenek</strong> měsíčně.
+          </p>
         {% endif %}
         <div class="comments-actions">
           <a class="comments-button" href="{{ pages|docs_url('club.md')|url }}">

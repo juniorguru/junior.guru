@@ -1,7 +1,6 @@
-from peewee import CharField, ForeignKeyField, IntegerField
+from peewee import CharField, IntegerField
 
 from jg.coop.models.base import BaseModel, JSONField
-from jg.coop.models.club import ClubChannel
 
 
 class TopicMention(BaseModel):
@@ -12,7 +11,7 @@ class TopicMention(BaseModel):
 
 class TopicDiscussion(BaseModel):
     name = CharField(primary_key=True)
-    channels = ForeignKeyField(ClubChannel)
+    channel_ids = JSONField(default=list)
     icon = CharField()
     monthly_letters_count = IntegerField(default=0)
     page_src_uris = JSONField(default=list)

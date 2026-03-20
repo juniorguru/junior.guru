@@ -177,7 +177,7 @@ def main(today: date, history_months: int):
         )
         TopicDiscussion.create(
             name=topic_config.name,
-            channels=topic_config.channel_ids[0],
+            channel_ids=topic_config.channel_ids,
             icon=topic_config.icon,
             monthly_letters_count=topic_channels_monthly_letters_counts[
                 topic_config.name

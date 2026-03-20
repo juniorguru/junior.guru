@@ -91,3 +91,10 @@ definitions:
     pages:
       - handbook/git.md
       - handbook/github-profile.md
+
+  - name: otázky a odpovědi
+    icon: question-square-fill
+    channels:
+      - https://discord.com/channels/769966886598737931/1067439203983568986
+    pages:
+      - handbook/help.md
