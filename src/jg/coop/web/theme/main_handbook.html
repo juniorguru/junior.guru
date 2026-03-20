@@ -44,6 +44,21 @@
           Začátečníci, kteří hledají komunitu a podporu. Senioři s chutí sdílet své zkušenosti.
           K tomu pravidelné online akce a mnoho dalšího.
         </p>
+        {% if topic_discussions %}
+          <ul class="interests blue standout-top">
+          {% for topic_discussion in topic_discussions %}
+            <li class="interests-item">
+              <span class="interests-icon-container">
+                {{ topic_discussion.icon|icon('interests-icon', alt='Ikona tématu: ' + topic_discussion.name) }}
+              </span>
+              <strong class="interests-name">{{ topic_discussion.name }}</strong>
+              {% if topic_discussion.is_hot %}
+                <span class="interests-badge">horké téma</span>
+              {% endif %}
+            </li>
+          {% endfor %}
+          </ul>
+        {% endif %}
         <div class="comments-actions">
           <a class="comments-button" href="{{ pages|docs_url('club.md')|url }}">
             {{ 'discord'|icon }} Nakoukni do klubu

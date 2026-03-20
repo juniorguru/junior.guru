@@ -209,3 +209,4 @@ def on_theme_page_context(context, page, config, files):
         else:
             logger.warning(f"No thumbnail for {page.file.src_uri}")
         context["related_pages"] = current_page.list_related()
+        context["topic_discussions"] = current_page.list_topic_discussions()
