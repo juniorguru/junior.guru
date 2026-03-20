@@ -1617,8 +1617,8 @@ wheels = [
 
 [[package]]
 name = "py-cord"
-version = "2.7.1.dev91+g5f3c4e2dd"
-source = { git = "https://github.com/Pycord-Development/pycord.git#5f3c4e2dd3d3dfa2bc8f2ae388616a7314465b5b" }
+version = "2.7.1.dev93+g323d09e69"
+source = { git = "https://github.com/Pycord-Development/pycord.git#323d09e690a6835171e65489334581a123cf7c8b" }
 dependencies = [
     { name = "aiohttp" },
     { name = "typing-extensions" },
