@@ -2,10 +2,11 @@ import re
 from collections import Counter
 from datetime import date, datetime, timedelta
 from pathlib import Path
+from typing import Self
 
 import click
 import yaml
-from pydantic import Field, HttpUrl, computed_field, field_validator
+from pydantic import Field, HttpUrl, computed_field, field_validator, model_validator
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
@@ -114,8 +115,8 @@ KEYWORDS = {
 
 
 class TopicConfig(YAMLConfig):
-    name: str
-    icon: str
+    name: str | None = None
+    icon: str | None = None
     channels: list[HttpUrl] = Field(min_length=1)
     pages: list[str] = []
 
@@ -129,6 +130,12 @@ class TopicConfig(YAMLConfig):
         for url in value:
             parse_channel_link(str(url))
         return value
+
+    @model_validator(mode="after")
+    def validate_name_and_icon(self) -> Self:
+        if self.name and not self.icon:
+            raise ValueError("Topic with a name must also define an icon")
+        return self
 
 
 class TopicsConfig(YAMLConfig):
@@ -159,8 +166,8 @@ def main(today: date, history_months: int):
     db.create_tables([TopicMention, TopicDiscussion])
 
     topics = {keyword: Counter() for keyword in KEYWORDS.values()}
-    topic_channels_monthly_letters_counts = {
-        topic_config.name: round(
+    topic_channels_monthly_letters_counts = [
+        round(
             sum(
                 ClubMessage.channel_size(channel_id, since_at=since_at)
                 for channel_id in topic_config.channel_ids
@@ -168,20 +175,23 @@ def main(today: date, history_months: int):
             / history_months
         )
         for topic_config in topics_config.definitions
-    }
+    ]
     logger.info("Computed topic channel monthly letters counts")
 
-    for topic_config in topics_config.definitions:
+    for i, topic_config in enumerate(topics_config.definitions):
         logger.info(
-            f"Saving topic channel {topic_config.name!r} (channels={len(topic_config.channel_ids)}, monthly_letters_count={topic_channels_monthly_letters_counts[topic_config.name]})"
+            f"Saving topic channel "
+            f"{repr(topic_config.name) if topic_config.name else 'with no name'} "
+            f"(channels={len(topic_config.channel_ids)}, "
+            f"monthly_letters_count={topic_channels_monthly_letters_counts[i]})"
         )
+        if not topic_config.name:
+            logger.warning("Topic has no name! It won't be listed on the club page!")
         TopicDiscussion.create(
             name=topic_config.name,
             channel_ids=topic_config.channel_ids,
             icon=topic_config.icon,
-            monthly_letters_count=topic_channels_monthly_letters_counts[
-                topic_config.name
-            ],
+            monthly_letters_count=topic_channels_monthly_letters_counts[i],
             page_src_uris=topic_config.pages,
         )
 
