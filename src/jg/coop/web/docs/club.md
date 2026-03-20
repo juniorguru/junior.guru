@@ -89,7 +89,7 @@ Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme
   'Sebastian'
 ) }}
 {{ blockquote_avatar(
-  'Môj obľúbený kanál na junior.guru je #práce-inzeráty, kde sú na jednom mieste všetky IT pozície vhodné pre juniorov a naviac aj ručne vložené od členov komunity. „Single Source of Truth“, ktorý junior potrebuje, keď si hľadá prácu 👍',
+  'Môj obľúbený kanál na junior.guru je #práce-inzeráty, kde sú na jednom mieste všetky IT pozície vhodné pre juniorov a naviac aj ručne vložené od členov komunity. ‚Single Source of Truth‘, ktorý junior potrebuje, keď si hľadá prácu 👍',
   'barbora-l.jpg',
   'Barbora L.',
   'Barbora L.'
