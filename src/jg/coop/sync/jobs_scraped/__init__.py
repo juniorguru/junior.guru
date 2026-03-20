@@ -95,7 +95,7 @@ def transform_linkedin_item(item: dict) -> dict:
     try:
         return dict(
             title=item["title"],
-            posted_on=item["postedAt"],
+            posted_on=item["postedAt"][:10],
             url=item["link"],
             apply_url=item.get("applyUrl") or None,
             company_name=item["companyName"],
