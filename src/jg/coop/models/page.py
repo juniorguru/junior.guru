@@ -3,7 +3,7 @@ from typing import Iterable, Self
 from peewee import BooleanField, CharField, DateField, IntegerField, fn
 
 from jg.coop.models.base import BaseModel, JSONField
-from jg.coop.models.club import ClubChannel, ClubMessage, ClubPin
+from jg.coop.models.club import ClubChannel, ClubMessage
 from jg.coop.models.topic import TopicDiscussion
 
 
@@ -138,7 +138,10 @@ class Page(BaseModel):
         )
 
     def list_related_messages(
-        self, max_content_size: int = 100
+        self,
+        min_content_size: int = 50,
+        max_content_size: int = 200,
+        chars_blocklist: str = "@",
     ) -> Iterable[ClubMessage]:
         channel_ids = [
             channel_id
@@ -147,17 +150,20 @@ class Page(BaseModel):
         ]
         if not channel_ids:
             return []
-        return list(
-            ClubMessage.select()
-            .join(ClubPin, on=(ClubPin.pinned_message == ClubMessage.id))
-            .where(
-                ClubMessage.parent_channel_id.in_(channel_ids)
-                | ClubMessage.channel_id.in_(channel_ids)
-            )
-            .where(ClubMessage.content_size <= max_content_size)
-            .distinct()
-            .order_by(ClubMessage.created_at.desc())
-        )
+        raise NotImplementedError()
+        # query = (
+        #     ClubMessage.select()
+        #     .where(
+        #         ClubMessage.parent_channel_id.in_(channel_ids)
+        #         | ClubMessage.channel_id.in_(channel_ids)
+        #     )
+        #     .where(ClubMessage.content_size >= min_content_size)
+        #     .where(ClubMessage.content_size <= max_content_size)
+        #     .order_by(ClubMessage.upvotes_count.desc(), ClubMessage.created_at.desc())
+        # )
+        # for char in chars_blocklist:
+        #     query = query.where(~ClubMessage.content.contains(char))
+        # return query
 
     @property
     def related_channels_monthly_size(self) -> int:
