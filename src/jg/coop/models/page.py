@@ -3,7 +3,7 @@ from typing import Iterable, Self
 from peewee import BooleanField, CharField, DateField, IntegerField, fn
 
 from jg.coop.models.base import BaseModel, JSONField
-from jg.coop.models.club import ClubChannel
+from jg.coop.models.club import ClubChannel, ClubMessage, ClubPin
 from jg.coop.models.topic import TopicDiscussion
 
 
@@ -123,16 +123,40 @@ class Page(BaseModel):
             .order_by(TopicDiscussion.monthly_letters_count.desc())
         )
 
-    def list_related_channels(self) -> list[ClubChannel]:
+    def list_related_channels(self) -> Iterable[ClubChannel]:
         channel_ids = [
             channel_id
             for topic_discussion in self.list_topic_discussions()
             for channel_id in topic_discussion.channel_ids
         ]
+        if not channel_ids:
+            return []
         return (
             ClubChannel.select()
             .where(ClubChannel.id.in_(channel_ids))
             .order_by(fn.czech_sort(ClubChannel.name))
+        )
+
+    def list_related_pinned_massages(
+        self, max_content_size: int = 100
+    ) -> Iterable[ClubMessage]:
+        channel_ids = [
+            channel_id
+            for topic_discussion in self.list_topic_discussions()
+            for channel_id in topic_discussion.channel_ids
+        ]
+        if not channel_ids:
+            return []
+        return list(
+            ClubMessage.select()
+            .join(ClubPin, on=(ClubPin.pinned_message == ClubMessage.id))
+            .where(
+                ClubMessage.parent_channel_id.in_(channel_ids)
+                | ClubMessage.channel_id.in_(channel_ids)
+            )
+            .where(ClubMessage.content_size <= max_content_size)
+            .distinct()
+            .order_by(ClubMessage.created_at.desc())
         )
 
     @property
