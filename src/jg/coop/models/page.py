@@ -137,7 +137,7 @@ class Page(BaseModel):
             .order_by(fn.czech_sort(ClubChannel.name))
         )
 
-    def list_related_pinned_massages(
+    def list_related_messages(
         self, max_content_size: int = 100
     ) -> Iterable[ClubMessage]:
         channel_ids = [

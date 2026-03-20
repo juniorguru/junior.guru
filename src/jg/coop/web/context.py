@@ -213,4 +213,4 @@ def on_theme_page_context(context, page, config, files):
         context["related_channels_monthly_size"] = (
             current_page.related_channels_monthly_size
         )
-        context["related_pinned_massages"] = current_page.list_related_pinned_massages()
+        context["related_messages"] = current_page.list_related_messages()

@@ -64,6 +64,16 @@
             se v poslední době napsalo <strong>{{ related_channels_monthly_size|thousands }} písmenek</strong> měsíčně.
           </p>
         {% endif %}
+        <div class="comments-bubbles">
+          {% for message in related_messages %}
+            <div class="comments-bubble">
+              <p class="comments-bubble-text">
+                {{ message.content }}
+                <a href="{{ message.url }}">Zobrazit zprávu</a>
+              </p>
+            </div>
+          {% endfor %}
+        </div>
         <div class="comments-actions">
           <a class="comments-button" href="{{ pages|docs_url('club.md')|url }}">
             {{ 'discord'|icon }} Nakoukni do klubu
