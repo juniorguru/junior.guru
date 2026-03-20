@@ -45,16 +45,13 @@
           K tomu pravidelné online akce a mnoho dalšího.
         </p>
         {% if topic_discussions %}
-          <ul class="interests blue standout-top">
+          <ul class="comments-topics">
           {% for topic_discussion in topic_discussions %}
-            <li class="interests-item">
-              <span class="interests-icon-container">
-                {{ topic_discussion.icon|icon('interests-icon', alt='Ikona tématu: ' + topic_discussion.name) }}
+            <li class="comments-topic">
+              <span class="comments-topic-icon-container">
+                {{ topic_discussion.icon|icon('comments-topic-icon', alt='Ikona tématu: ' + topic_discussion.name) }}
               </span>
-              <strong class="interests-name">{{ topic_discussion.name }}</strong>
-              {% if topic_discussion.is_hot %}
-                <span class="interests-badge">horké téma</span>
-              {% endif %}
+              <strong class="comments-topic-name">{{ topic_discussion.name }}</strong>
             </li>
           {% endfor %}
           </ul>
