@@ -141,6 +141,7 @@ Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_marketin
             'courses': 'doporučení z kurzu',
             'search': 'vyhledávání',
             'internet': '„internet“',
+            'llm': 'AI asistenti',
             'friend': 'doporučení známého',
             'facebook': 'Facebook',
             'podcasts': 'podcasty',
