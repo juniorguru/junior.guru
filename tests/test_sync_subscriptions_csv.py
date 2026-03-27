@@ -62,6 +62,18 @@ def test_classify_referrer(url, expected):
         ("tip od sestry", "friend"),
         ("Nauč mě IT", "courses"),
         ("známý poslal odkaz", "friend"),
+        ("z prieskumu cez AI", "llm"),
+        ("od tebe", "friend"),
+        ("gemini", "llm"),
+        ("AI", "llm"),
+        ("AI gemini", "llm"),
+        ("Chat gpt", "llm"),
+        ("Perplexity", "llm"),
+        ("Chat GPT", "llm"),
+        ("od Lucie Tvrdíkové", "friend"),
+        ("Dotaz na Claude (Sonnet 4.5)", "llm"),
+        ("Pres perplexity", "llm"),
+        ("ChatGPT mi doporučil junior.guru", "llm"),
     ],
 )
 def test_classify_marketing_survey_answer(text, expected):

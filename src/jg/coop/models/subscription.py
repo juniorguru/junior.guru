@@ -54,6 +54,7 @@ class SubscriptionMarketingSurveyAnswer(StrEnum):
     COURSES_SEARCH = "courses_search"
     SEARCH = "search"
     INTERNET = "internet"
+    LLM = "llm"
     OTHER = "other"
 
 
