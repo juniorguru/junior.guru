@@ -35,9 +35,22 @@ PRODUCTS = {
         "/jobs/",
         "/jobs/*",
     ],
-    "podcast": [
+    "candidates": [
+        "/candidates",
+        "/candidates/",
+    ],
+    "inspiration": [
+        "/news",
+        "/news/",
         "/podcast",
         "/podcast/",
+        "/events",
+        "/events/",
+        "/stories",
+        "/stories/",
+        "/stories/*",
+        "/wisdom",
+        "/wisdom/",
     ],
 }
 

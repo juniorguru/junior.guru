@@ -75,7 +75,7 @@ Například klub nebo podcast mají „to hlavní“ jinde než na webu.
                 'label': 'prodejní stránka klubu',
                 'data': charts.web_usage_breakdown.pop('club'),
                 'borderColor': '#dc3545',
-                'borderWidth': 1,
+                'borderWidth': 2,
             },
             {
                 'label': 'příručka',
@@ -96,8 +96,14 @@ Například klub nebo podcast mají „to hlavní“ jinde než na webu.
                 'borderWidth': 1,
             },
             {
-                'label': 'stránka s podcastem',
-                'data': charts.web_usage_breakdown.pop('podcast'),
+                'label': 'kandidáti',
+                'data': charts.web_usage_breakdown.pop('candidates'),
+                'borderColor': '#343434',
+                'borderWidth': 2,
+            },
+            {
+                'label': 'inspirace',
+                'data': charts.web_usage_breakdown.pop('inspiration'),
                 'borderColor': '#872ec4',
                 'borderWidth': 1,
             },
