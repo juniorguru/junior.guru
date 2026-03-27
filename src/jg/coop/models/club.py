@@ -180,6 +180,10 @@ class ClubUser(BaseModel):
         return cls.members_listing().where(cls.id == id).get()
 
     @classmethod
+    def find_by_id(cls, id: int) -> Self:
+        return cls.listing().where(cls.id == id).get_or_none()
+
+    @classmethod
     def count(cls) -> int:
         return cls.listing().count()
 

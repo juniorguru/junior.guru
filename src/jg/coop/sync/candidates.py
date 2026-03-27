@@ -1,5 +1,6 @@
 from io import BytesIO
 from pathlib import Path
+from pprint import pformat
 
 import click
 import httpx
@@ -74,7 +75,7 @@ async def main(
         data = response.json()
 
         for candidate_item in data["items"]:
-            logger.debug(f"Candidate {candidate_item!r}")
+            logger.debug(f"Candidate {pformat(candidate_item)}")
             candidate_item["avatar_is_default"] = any(
                 issue
                 for issue in candidate_item["issues"]
@@ -85,7 +86,8 @@ async def main(
             location_raw = candidate_item.pop("location", None)
 
             candidate = Candidate.create(is_member=False, **candidate_item)
-            if discord_id and (user := ClubUser.get_or_none(discord_id)):
+            if discord_id and (user := ClubUser.find_by_id(discord_id)):
+                logger.debug(f"Found {user!r}, member: {user.is_member}")
                 candidate.user = user
                 candidate.is_member = user.is_member
                 candidate.save()
