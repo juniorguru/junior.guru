@@ -56,8 +56,7 @@ Nemá rád poskakování podle toho, jak algoritmus píská, takže nedbá obecn
 Dříve existoval newsletter junior.guru, kde se rozesílaly aktuální nabídky práce, postupně i zajímavé tipy.
 Ten byl zrušen pro nedostatek sil se mu věnovat a také jako zbytečná duplicita vedle [klubu](../club.md).
 
-Newsletter na obnovení stále čeká, ale alespoň se na web už vrátil [sběrný formulář pro zadávání e-mailové adresy](../news.jinja).
-Restart rozesílání je v plánu, ale zatím bohužel pouze v plánu a nic se neposílá.
+Newsletter byl [v jiné podobě obnoven](../news.jinja) během podzimu 2025. Přes [Buttondown](https://buttondown.com/) se posílá shrnutí různých novinek a probíraných témat v klubu.
 
 ## Veřejná vystoupení a publikace
 
