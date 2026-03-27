@@ -221,6 +221,8 @@ def classify_marketing_survey_answer(text: str) -> str:
         return "facebook"
     if re.search(r"\blinkedin\w*\b", text, re.I) or re.search(r"\bLI\b", text):
         return "linkedin"
+    if re.search(r"\b(ai|chat\s*gpt|claude|gemini|perplexity)\b", text, re.I):
+        return "llm"
     if re.search(r"\b(goo?gl\w*|vyhled[aá]v\w+)\b", text, re.I):
         return "search"
     if re.search(
