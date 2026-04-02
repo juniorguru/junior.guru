@@ -173,8 +173,14 @@ async def locate_fuzzy(location_raw: str) -> Location:
         )
     except MutationsNotAllowedError:
         logger.warning("Generating random fuzzy location")
+        try:
+            location = await locate(location_raw)
+        except ValueError:
+            location = random.choice(
+                ["Praha", "Brno", "Ostrava", "Bratislava", "Košice"]
+            )
         return FuzzyLocation(
-            locations=[await locate(location_raw)],
+            locations=[location],
             is_universal=random.choice([True, False, False, False, False]),
         )
 
