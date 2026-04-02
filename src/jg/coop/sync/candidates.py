@@ -1,3 +1,5 @@
+import logging
+from datetime import timedelta
 from io import BytesIO
 from pathlib import Path
 from pprint import pformat
@@ -5,9 +7,17 @@ from pprint import pformat
 import click
 import httpx
 from PIL import Image
+from tenacity import (
+    before_sleep_log,
+    retry,
+    retry_if_exception_type,
+    stop_after_attempt,
+    wait_random_exponential,
+)
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
+from jg.coop.lib.cache import cache
 from jg.coop.lib.cli import async_command
 from jg.coop.lib.images import create_fallback_image
 from jg.coop.lib.location import locate_fuzzy
@@ -114,9 +124,8 @@ async def main(
                 )
             else:
                 logger.debug(f"Downloading avatar: {candidate.avatar_url}")
-                response = await client.get(candidate.avatar_url)
-                response.raise_for_status()
-                image = Image.open(BytesIO(response.content))
+                image_bytes = await download_image(client, candidate.avatar_url)
+                image = Image.open(BytesIO(image_bytes))
                 image = image.resize((avatar_size_px, avatar_size_px))
                 image.save(avatar_path, **IMAGE_SAVE_OPTIONS)
             candidate.avatar_path = str(avatar_path.relative_to(images_dir))
@@ -126,10 +135,9 @@ async def main(
             for project_item in projects_items:
                 if thumbnail_url := project_item.pop("thumbnail_url", None):
                     logger.debug(f"Downloading project image: {thumbnail_url}")
-                    response = await client.get(thumbnail_url)
-                    response.raise_for_status()
+                    image_bytes = await download_image(client, thumbnail_url)
                     image_path = project_images_path / Path(thumbnail_url).name
-                    image_path.write_bytes(response.content)
+                    image_path.write_bytes(image_bytes)
                     thumbnail_path = str(image_path.relative_to(images_dir))
                     logger.info(f"Saved project image: {image_path}")
                 else:
@@ -140,3 +148,18 @@ async def main(
                     **project_item,
                 )
             logger.info(f"Saved {len(projects_items)} projects for {candidate!r}")
+
+
+@cache(expire=timedelta(hours=1), ignore=(0,), tag="candidates-images")
+@retry(
+    retry=retry_if_exception_type(httpx.RequestError),
+    wait=wait_random_exponential(max=60),
+    stop=stop_after_attempt(3),
+    reraise=True,
+    before_sleep=before_sleep_log(logger, logging.WARNING),
+)
+async def download_image(client: httpx.AsyncClient, url: str) -> bytes:
+    logger.debug(f"Downloading image: {url}")
+    response = await client.get(url)
+    response.raise_for_status()
+    return response.content
