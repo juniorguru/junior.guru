@@ -1,0 +1,26 @@
+# Handbook Guidelines
+
+- Write in Czech.
+- Address the reader in the informal second person singular: `ty`, `tebe`, `tvoje`, imperative verbs. Do not switch to formal address unless it is inside a quote or source material.
+- Assume the reader is smart, but new to the topic. Explain context and jargon, do not write as if insider knowledge were obvious.
+- The tone should be warm, human, and practical. Friendly is good; fluffy cheerleading is not. The text should feel like an experienced guide helping someone orient themselves.
+- Be serious about facts, risks, tradeoffs, and market reality. The handbook regularly debunks myths, names red flags, and says unpleasant truths directly.
+- Avoid absolute claims and universal prescriptions. Prefer context-aware wording such as “často”, “většinou”, “může”, “záleží”, “pro tebe”. Explain why a recommendation makes sense.
+- Advice should be independent, not salesy. The goal is to reduce confusion and decision paralysis, not to push a course, product, or one “correct” life path.
+- Curate rather than exhaust. Prefer a few good recommendations with explanation over giant link dumps.
+- Prefer concrete, actionable writing. Explain what to do, why to do it, what to expect, and what can go wrong.
+- Use examples from real life, vivid comparisons, and the occasional light joke or colloquial phrase when it helps readability. Do not let humor undermine the usefulness of the advice.
+- Keep the text empathetic without being patronizing. Validate that beginnings are hard, but do not infantilize the reader.
+- Do not gatekeep. The handbook repeatedly pushes back against elitism, sexism, ageism, and other myths about who “belongs” in IT.
+- Prefer inclusive wording and avoid unnecessary generic masculine forms. When practical, use direct second person, neutral plurals, or paired forms such as “vývojářka nebo vývojář”.
+- Do not assume the reader's gender, age, family situation, education, health, or background unless the page is explicitly about that group.
+- If gendered wording is unavoidable, use it deliberately and sparingly. Do not default mechanically to masculine-only phrasing.
+- Sentence style is usually clear and direct, mostly short to medium length. Important claims often stand in their own sentence.
+- Strong takeaways are often highlighted with bold. Use bold for emphasis on key points, not for decoration.
+- Structure pages with a clear promise at the top, then practical sections under descriptive headings. Many pages open with a short lead made of punchy sentences or questions.
+- Use lists when giving steps, options, requirements, myths, pros/cons, or checklists. Keep them concrete and scannable.
+- Link to other relevant handbook chapters instead of repeating everything. The handbook is interconnected and often guides the reader to the next useful page.
+- When using English IT terms, either make them obvious from context or explain them in Czech.
+- Rewrite rough community wisdom into polished prose. Source notes may be messy, but the published text should have correct grammar, spelling, and punctuation.
+- Keep the style closer to edited magazine/service writing than to academic prose or corporate marketing copy.
+- Use brand spelling exactly as `junior.guru` in running text. Prefer forms such as “klub junior.guru” and “podcast junior.guru”. Avoid `Junior Guru` or `junior guru` unless preserving an external quote or text where the dot cannot be used.
