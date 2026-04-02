@@ -176,9 +176,8 @@ async def locate_fuzzy(location_raw: str) -> Location:
         try:
             location = await locate(location_raw)
         except ValueError:
-            location = random.choice(
-                ["Praha", "Brno", "Ostrava", "Bratislava", "Košice"]
-            )
+            location_raw = random.choice(["Praha", "Brno", "Bratislava", "Košice"])
+            location = await locate(location_raw)
         return FuzzyLocation(
             locations=[location],
             is_universal=random.choice([True, False, False, False, False]),

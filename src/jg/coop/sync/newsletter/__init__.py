@@ -16,6 +16,7 @@ from jg.coop.lib.buttondown import ButtondownAPI
 from jg.coop.lib.cli import async_command
 from jg.coop.lib.discord_club import ClubChannelID
 from jg.coop.lib.md import md
+from jg.coop.lib.mutations import MutationsNotAllowedError
 from jg.coop.lib.template_filters import thousands
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubChannel, ClubMessage, ClubSummaryTopic, ClubUser
@@ -220,7 +221,11 @@ async def main(
             )
 
     logger.debug("Preparing club topics")
-    await create_club_summary_topics(today, summary_correction_attempts)
+    try:
+        await create_club_summary_topics(today, summary_correction_attempts)
+    except MutationsNotAllowedError:
+        logger.error("Unable to summarize club! Skipping newsletter draft creation")
+        return
     topics = list(ClubSummaryTopic.listing())
 
     logger.debug("Rendering email body")

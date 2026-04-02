@@ -1,9 +1,17 @@
+import logging
 import os
 from datetime import date
 from enum import StrEnum
 from typing import AsyncGenerator, Self, TypeVar
 
 import httpx
+from tenacity import (
+    before_sleep_log,
+    retry,
+    retry_if_exception_type,
+    stop_after_attempt,
+    wait_random_exponential,
+)
 
 from jg.coop.lib import loggers, mutations
 
@@ -67,6 +75,13 @@ class ButtondownAPI:
         if self._client:
             await self._client.aclose()
 
+    @retry(
+        retry=retry_if_exception_type(httpx.RequestError),
+        wait=wait_random_exponential(max=60),
+        stop=stop_after_attempt(3),
+        reraise=True,
+        before_sleep=before_sleep_log(logger, logging.WARNING),
+    )
     async def _request(self, method: str, url: str, **kwargs) -> dict:
         try:
             response = await self._client.request(method.lower(), url, **kwargs)
