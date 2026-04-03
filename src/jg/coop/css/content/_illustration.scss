@@ -1,4 +1,7 @@
+$illustration-line-thickness: .16rem;
+
 .illustration {
+  position: relative;
   display: flex;
   gap: -1 * $spacer;
   align-items: flex-end;
@@ -6,16 +9,48 @@
   margin: $spacer 0;
 }
 
+.illustration::before,
+.illustration::after {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  content: "";
+  background: $white;
+  border: $illustration-line-thickness solid $jg-dark;
+}
+
+.illustration::before {
+  right: 20%;
+  bottom: 45%;
+  width: clamp(1rem, 2.2vw, 1.6rem);
+  height: clamp(.75rem, 1.7vw, 1.2rem);
+  border-radius: 61% 39% 54% 46% / 39% 63% 37% 61%;
+  transform: rotate(-18deg);
+}
+
+.illustration::after {
+  right: 18.5%;
+  bottom: 40%;
+  width: clamp(.6rem, 1.4vw, 1rem);
+  height: clamp(.45rem, 1vw, .75rem);
+  border-radius: 42% 58% 36% 64% / 66% 34% 62% 38%;
+  transform: rotate(24deg);
+}
+
 .illustration-main {
   display: block;
   width: 75%;
   height: auto;
-  opacity: .8;
+  background: $white;
+  border: $illustration-line-thickness solid $jg-dark;
+  border-radius: 42% 58% 36% 64% / 36% 34% 62% 38%;
+  transform: rotate(1.8deg);
 }
 
 .illustration-chick {
   $chick-crop-bottom: 35%;
 
+  z-index: 1;
   display: block;
   flex: 0 0 auto;
   width: 25%;
