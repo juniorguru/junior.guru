@@ -1,4 +1,4 @@
-$illustration-line-thickness: .16rem;
+$illustration-line-thickness: clamp(.12rem, .24vw, .18rem);
 
 .illustration {
   position: relative;
