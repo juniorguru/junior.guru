@@ -61,10 +61,14 @@
   @extend .list-unstyled;
   display: block;
   column-count: 2;
-  column-gap: (2 * $spacer);
+  column-gap: $spacer;
   column-fill: balance;
   margin: 0;
   @include font-size($font-size-sm);
+
+  @include media-breakpoint-up(sm) {
+    column-gap: (2 * $spacer);
+  }
 
   @include media-breakpoint-up(md) {
     column-count: 3;
@@ -83,6 +87,7 @@
   @extend .nav-item;
   max-width: 15rem;
   margin-top: map.get($spacers, 3);
+  break-inside: avoid;
 }
 
 .toc-item:first-child {
@@ -147,10 +152,14 @@
   display: inline-block;
   width: $toc-number-size;
   height: $toc-number-size;
-  margin-right: .3rem;
+  margin-right: .1rem;
   font-size: $font-size-sm * .75;
   line-height: $toc-number-size;
   text-align: center;
+
+  @include media-breakpoint-up(sm) {
+    margin-right: .3rem;
+  }
 }
 
 .main-sidebar .content {
