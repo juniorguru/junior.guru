@@ -6,7 +6,7 @@ description: Cesta do IT může být náročná životní změna. Vysoké náro
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import guarantor, lead, link_card, video_card, blockquote with context %}
+{% from 'macros.html' import guarantor, lead, illustration, link_card, video_card, blockquote with context %}
 
 # Psychika na cestě do IT
 
@@ -15,6 +15,8 @@ template: main_handbook.html
 {% endcall %}
 
 [TOC]
+
+{{ illustration('static/illustrations/mental-health.webp') }}
 
 {% call guarantor('Nela Slezáková', 'avatars-participants/nela-slezakova.jpg', url='https://www.nelaprovazi.cz/', standout=True) %}
   Jak psycholožka, tak programátorka. Rozumí tomu, jak funguje lidská psychika a sama si zažila, co obnáší dostat se do IT po vlastní ose. Ve vlastní praxi pomáhá lidem v IT anebo do IT. S otázkami kolem duševního zdraví juniorům pomáhá i ve [zdejším klubu](../club.md).

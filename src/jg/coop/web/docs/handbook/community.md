@@ -6,7 +6,7 @@ description: Programátorské komunity tě dokážou posunout jako nic jiného. 
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, lead, link_card with context %}
+{% from 'macros.html' import blockquote_avatar, illustration, lead, link_card with context %}
 
 
 # Jak na programátorské komunity
@@ -15,6 +15,8 @@ template: main_handbook.html
   Srazy u piva, konference, online přednášky, firemní akce, jednorázové workshopy, tematické večery.
   Programátorské komunity tě dokážou posunout jako nic jiného. Jak do nich vplout a co od toho čekat?
 {% endcall %}
+
+{{ illustration('static/illustrations/community.webp') }}
 
 Je velmi těžké se učit zcela samostatně, bez kontaktu s dalšími samouky nebo lidmi z nového oboru. Důvodů, proč polevit, může nastat hodně. Proto je dobré pravidelně se setkávat s komunitou začínajících i pokročilých programátorů a nabíjet se tak novou energií a inspirací. Dříve existovaly hlavně dva druhy setkání: místní srazy a celostátní konference. Během covidu-19 bylo mnoho akcí zrušeno, nebo přešlo do online podoby.
 

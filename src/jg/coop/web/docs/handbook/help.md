@@ -6,7 +6,7 @@ description: Jak se ptát? Jak debugovat? Při programování tě i drobný zád
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import lead, link_card, note with context %}
+{% from 'macros.html' import lead, link_card, illustration, note with context %}
 
 
 # Řešení problémů během programování
@@ -18,6 +18,8 @@ template: main_handbook.html
 {% call lead() %}
   Je velmi těžké se učit zcela bez cizí pomoci. I drobný zádrhel tě může zaseknout na týdny a úplně ti zkazit radost z učení. Neboj se ptát online, radit se s lidmi na [akcích](community.md), nebo si najít [mentora](mentoring.md).
 {% endcall %}
+
+{{ illustration('static/illustrations/help.webp') }}
 
 ## Kde a jak se ptát
 

@@ -6,7 +6,7 @@ description: Je IT pro ženy? Existují vůbec nějaké programátorky? Jak do 
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import lead, blockquote_avatar, link_card, note with context %}
+{% from 'macros.html' import lead, illustration, blockquote_avatar, link_card, note with context %}
 
 # Ženy a kariéra v IT
 
@@ -17,6 +17,8 @@ Jak do oboru prorazit jako žena?
 Co očekávat?
 A co ti může na cestě pomoci?
 {% endcall %}
+
+{{ illustration('static/illustrations/women.webp') }}
 
 {% call note(standout=True) %}
   {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
@@ -107,7 +109,7 @@ https://mas.to/@SmudgeTheInsultCat/112225723796627574
 
 
 --- https://discord.com/channels/769966886598737931/769966887055392768/1296409124849848340
-Další rozhovor do ouška 👂tentokrát s <@1275834407470497985> 
+Další rozhovor do ouška 👂tentokrát s <@1275834407470497985>
 👉 https://www.youtube.com/watch?v=5J1SgIo0KBY
 ---
 

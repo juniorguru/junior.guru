@@ -6,9 +6,15 @@ description: Pokud se učíš programovat, práce na vlastních projektech je ne
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, note with context %}
+{% from 'macros.html' import blockquote_avatar, illustration, note with context %}
 
 # Projekty jako první praxe
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
+{% endcall %}
+
+{{ illustration('static/illustrations/projects.webp') }}
 
 <!--
 DOPLNIT: jak udelat MOAT v dobe kdy je AI
@@ -21,10 +27,6 @@ https://www.linkedin.com/posts/lukasbednarik_jak-dostat-pr%C3%A1ci-jako-junior-d
 -->
 
 <!-- Bez projektů jde dnes tvoje CVčko přímo do koše. 200 lidí na jeden inzerát. jak vynikneš? -->
-
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
-{% endcall %}
 
 <!-- ## Projektové učení -->
 

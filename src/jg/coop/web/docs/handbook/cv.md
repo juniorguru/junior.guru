@@ -6,7 +6,7 @@ description: Co dát do životopisu, když nemáš praxi? Když jsi student? Jak
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import lead, figure, note, blockquote_avatar, video_card, podcast_card, club_teaser with context %}
+{% from 'macros.html' import lead, figure, note, blockquote_avatar, video_card, podcast_card, club_teaser, illustration with context %}
 
 # Životopis
 
@@ -15,6 +15,8 @@ template: main_handbook.html
 {% endcall %}
 
 [TOC]
+
+{{ illustration('static/illustrations/cv.webp') }}
 
 ## Začni s naší přednáškou a šablonou
 

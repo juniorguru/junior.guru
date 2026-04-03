@@ -6,7 +6,7 @@ description: Programátoři pracují v týmech. Zkus si to ještě předtím, ne
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, lead, link_card with context %}
+{% from 'macros.html' import blockquote_avatar, illustration, lead, link_card with context %}
 
 
 # Jak se naučit pracovat v týmu
@@ -18,6 +18,8 @@ template: main_handbook.html
 {% endcall %}
 
 [TOC]
+
+{{ illustration('static/illustrations/collaboration.webp') }}
 
 ## Zkus „hackathon“
 

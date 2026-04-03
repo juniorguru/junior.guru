@@ -6,7 +6,7 @@ description: Co znamená low-code a no-code? Jak je použít? A proč se učit p
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import lead, link_card with context %}
+{% from 'macros.html' import lead, illustration, link_card with context %}
 
 # Programování „bez kódu“
 
@@ -17,6 +17,8 @@ A má vlastně smysl učit se programovat, když se dá dnes leccos vytvořit po
 {% endcall %}
 
 [TOC]
+
+{{ illustration('static/illustrations/nocode.webp') }}
 
 ## Co je „low-code“ nebo „no-code“
 

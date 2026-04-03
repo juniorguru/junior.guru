@@ -1,6 +1,26 @@
 .illustration {
-  display: block;
+  display: flex;
+  gap: -1 * $spacer;
+  align-items: flex-end;
   width: 100%;
-  height: auto;
   margin: $spacer 0;
+}
+
+.illustration-main {
+  display: block;
+  width: 75%;
+  height: auto;
+  opacity: .8;
+}
+
+.illustration-chick {
+  $chick-crop-bottom: 35%;
+
+  display: block;
+  flex: 0 0 auto;
+  width: 25%;
+  height: auto;
+  margin-left: auto;
+  clip-path: inset(0 0 $chick-crop-bottom 0);
+  transform: translateY($chick-crop-bottom);
 }

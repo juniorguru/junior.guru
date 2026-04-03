@@ -6,13 +6,15 @@ description: Co je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a Gi
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, link_card, note with context %}
+{% from 'macros.html' import blockquote_avatar, illustration, link_card, note with context %}
 
 # Git a GitHub
 
 {% call note(standout=True) %}
   {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
+
+{{ illustration('static/illustrations/git.webp') }}
 
 Git je **nástroj, který ti umožňuje sledovat historii změn v kódu a sdílet kód s dalšími lidmi**. Je to program, který nainstaluješ do svého počítače a pracuješ s ním v příkazové řádce, nebo jej ovládáš např. prostřednictvím svého editoru. Git se dnes používá skoro v každé firmě. I když jeho výhody nejvíc oceníš při práci ve dvou a více lidech, může ti pomoci i jako jednotlivci: Zálohovat kód svých projektů jinam, synchronizovat jej mezi vlastním počítačem a internetem, na dálku jej někomu ukázat.
 

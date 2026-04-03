@@ -6,7 +6,7 @@ description: Jaké otázky ti nejspíš položí u pohovoru na pozici programát
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote, blockquote_avatar, link_card, note with context %}
+{% from 'macros.html' import blockquote, illustration, blockquote_avatar, link_card, note with context %}
 
 # Pohovor
 
@@ -15,6 +15,8 @@ template: main_handbook.html
 {% endcall %}
 
 [TOC]
+
+{{ illustration('static/illustrations/interview.webp') }}
 
 ## Otázky na tebe
 

@@ -6,13 +6,15 @@ description: Proč by měl programátor umět anglicky? Jak dobrá angličtina s
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import lead, link_card with context %}
+{% from 'macros.html' import lead, link_card, illustration with context %}
 
 # Angličtina pro programátory
 
 {% call lead() %}
   Mnohem více než matematika je při programování potřeba angličtina. Materiály pro začačínající programátory občas existují i v češtině, ale potom už se bez schopnosti alespoň rozumět anglicky obejít nelze.
 {% endcall %}
+
+{{ illustration('static/illustrations/english.webp') }}
 
 ## Jak si zlepšit angličtinu
 

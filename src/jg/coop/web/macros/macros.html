@@ -11,6 +11,14 @@
 {% endmacro %}
 
 
+{% macro illustration(path) %}
+<div class="illustration">
+  {{ img(path, 'ilustrace', 710, 500, class='illustration-main', lazy=False) }}
+  {{ img('static/chick2.svg', '', 2068, 2754, class='illustration-chick', lazy=False) }}
+</div>
+{% endmacro %}
+
+
 {% macro figure(path, alt, width, height, lazy=True, caption=none, class=none) %}
 <figure class="figure{% if class %} {{ class }}{% endif %}">
   {{ img(path, alt, width, height, class='figure-img', lazy=lazy) }}

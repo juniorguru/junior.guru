@@ -6,7 +6,7 @@ description: Jaké v IT existují certifikace? Jaký mají význam? Přihlíží
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import img, lead, link_card, club_teaser with context %}
+{% from 'macros.html' import illustration, lead, link_card, club_teaser with context %}
 
 # Certifikace a certifikáty
 
@@ -16,7 +16,7 @@ template: main_handbook.html
 
 [TOC]
 
-{{ img('static/illustrations/certification.svg', 'srandovní ilustrace', 710, 500, class='illustration', lazy=False) }}
+{{ illustration('static/illustrations/certification.webp') }}
 
 ## Co zajímá firmy
 

@@ -6,7 +6,7 @@ description: Kde najít mentory, jak s nimi komunikovat, a proč se toho nebát?
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import note, lead, link_card with context %}
+{% from 'macros.html' import note, lead, illustration, link_card with context %}
 
 # Mentoring při programování
 
@@ -15,6 +15,8 @@ template: main_handbook.html
   Kde takové lidi najít, jak s nimi komunikovat, a proč se toho nebát?
   Může ti s mentorováním pomoci AI?
 {% endcall %}
+
+{{ illustration('static/illustrations/mentoring.webp') }}
 
 {% call note(standout=True) %}
   {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
