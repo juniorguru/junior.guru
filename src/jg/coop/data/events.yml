@@ -65,7 +65,7 @@ registry:
     date: "2026-04-15"
     description: |
        Programovací jazyk Rust se poslední dobou dostává čím dál tím více do povědomí programátorů i velkých technologických firem, ale na první pohled vlastně nemusí být jasné proč. Ukážeme si, čím se odlišuje od ostatních běžně používaných jazyků, v jakých oblastech a typech aplikací se dají nejlépe využít jeho přednosti, a pokusíme se pochopit, a proč je spoustou programátorů oblíbený. Pobavíme se také o české Rust komunitě, jak je to s hledáním práce v Rustu, a jak si Rust rozumí s AI.
-    avatar_path: avatars-participants/jakub_beranek.jpg
+    avatar_path: avatars-participants/kuba-beranek.jpg
     bio_name: Jakub Beránek
     bio_title: "Open-source vývojář"
     bio: |
