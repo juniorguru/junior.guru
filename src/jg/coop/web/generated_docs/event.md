@@ -23,7 +23,7 @@
     <span>
       Klub junior.guru pořádá <strong>vzdělávací akce, online na svém Discordu</strong>.
       {% if is_past_event %}
-        Tato akce proběhla <strong>{{ '{:%-d.%-m.%Y}'.format(event.start_at_prg) }}</strong> a trvala <strong>{{ event.duration_s|hours }}</strong>.
+        Tato akce proběhla <strong>{{ '{:%-d.%-m.%Y}'.format(event.start_at_prg) }}</strong> a trvala <strong>{{ event.duration_s|hours }}</strong>. {% if event.view_count %}Záznam si pustilo <strong>{{ event.view_count }} {% if event.public_recording_url %}lidí{% else %}členů{% endif %}</strong>.{% endif %}
       {% else %}
         Tato akce začne <strong>{{ '{:%-d.%-m.%Y v %-H:%M}'.format(event.start_at_prg) }}</strong> a trvat by měla zhruba <strong>{{ event.duration_s|hours }}</strong>. Vždy se snažíme pořídit i záznam.
       {% endif %}
