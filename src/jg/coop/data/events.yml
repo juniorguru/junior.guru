@@ -60,7 +60,7 @@
 # - https://www.fotor.com/photo-editor-app/editor/beauty
 
 registry:
- - id: 61
+  - id: 61
     title: "Co nám může nabídnout Rust?"
     date: "2026-04-15"
     description: |
