@@ -60,6 +60,21 @@
 # - https://www.fotor.com/photo-editor-app/editor/beauty
 
 registry:
+ - id: 61
+    title: "Co nám může nabídnout Rust?"
+    date: "2026-04-15"
+    description: |
+       Programovací jazyk Rust se poslední dobou dostává čím dál tím více do povědomí programátorů i velkých technologických firem, ale na první pohled vlastně nemusí být jasné proč. Ukážeme si, čím se odlišuje od ostatních běžně používaných jazyků, v jakých oblastech a typech aplikací se dají nejlépe využít jeho přednosti, a pokusíme se pochopit, a proč je spoustou programátorů oblíbený. Pobavíme se také o české Rust komunitě, jak je to s hledáním práce v Rustu, a jak si Rust rozumí s AI.
+    avatar_path: avatars-participants/jakub_beranek.jpg
+    bio_name: Jakub Beránek
+    bio_title: "Open-source vývojář"
+    bio: |
+       Kuba Beránek se v současnosti živí přispíváním do open-source softwaru, primárně do toolchainu Rustu. Je členem několika týmů, které vyvíjí překladač Rustu a infrastrukturu, na které Rust běží, a je také členem Rust Leadership Councilu. Kromě toho se věnuje výuce programování na vysoké škole.
+    bio_links:
+      - https://github.com/kobzol
+      - https://www.linkedin.com/in/jakub-beranek
+      - https://kobzol.github.io
+
   - id: 60
     title: "Jak se dělá Infrastructure as Code"
     date: "2026-03-18"
