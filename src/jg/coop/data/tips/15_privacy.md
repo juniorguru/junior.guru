@@ -5,10 +5,10 @@ Klub je nastavený tak, aby fungoval jako bezpečné místo i přesto, že kdoko
 Je na tobě, jestli chceš být v klubu pod přezdívkou, nebo skutečným jménem. Účet na junior.guru máš na své jméno a e-mail, ale k těm má přístup jen <@HONZA>. Ostatní vidí pouze to, co máš na Discordu.
 
 ## Kdo si může klub číst 🔓
-V klubu se snažíme budovat bezpečné prostředí i když nejsme uzavřená komunita. Díky 14 dnům na zkoušku vede do klubu něco jako „korálkový závěs“. Kdokoli jde kolem a má odvahu nakouknout, může si obsah klubu číst.
+V klubu se snažíme budovat bezpečné prostředí, i když nejsme uzavřená komunita. Díky 14 dnům na zkoušku vede do klubu něco jako „korálkový závěs“. Kdokoli jde kolem a má odvahu nakouknout, může si obsah klubu číst.
 
 ## Bezpečné sdílení 🤗
-Dlouholeté zkušenosti s provozem nám ukazují, že kdo má odvahu nakouknout do placené komunity přes „korálkový závěs“, tak už mívá charakter, který v klubu chceme. Je to dostatečný filtr.
+Dlouholeté zkušenosti s provozem ukazují, že kdo má odvahu nakouknout do placené komunity přes „korálkový závěs“, tak už mívá charakter, který v klubu chceme. Je to dostatečný filtr.
 
 Členové v klubu běžně otevřeně sdílí své pocity, strasti, nebo detaily ze života. Dostává se jim pochopení a podpory. Pokud by to někdo narušoval, <@HONZA> s ním zatočí.
 
