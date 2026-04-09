@@ -1,6 +1,6 @@
 ---
 title: Do IT bez titulu a praxe. Pro personalisty jsem byla černá skříňka, říká Elvíra
-date: 2024-04-09
+date: 2026-04-09
 interviewee: Elvíra Krieger
 interviewee_avatar_path: avatars-participants/elvira-krieger.jpg
 author: Adéla Pavlun
