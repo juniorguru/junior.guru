@@ -58,6 +58,7 @@ exclude = [
 
     # Anti-scraping protections
     "^https://(www\\.)?(linkedin|facebook|reddit)\\.com",
+    "^https://(www\\.)?(beeit|glancemedia)\\.cz",
     "^https://([^\\.]+\\.)?discord\\.com",
 
     # "^https://(www\\.)?(linkedin|facebook|reddit|glassdoor|toptal|upwork|make|fiverr|datacamp|udacity|udemy|economist|stackoverflow|guru)\\.com",
