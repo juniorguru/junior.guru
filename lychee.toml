@@ -5,24 +5,30 @@ cache = true
 max_cache_age = "10m"
 
 # Stealth
-user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:128.0) Gecko/20100101 Firefox/128.0"
+user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:136.0) Gecko/20100101 Firefox/136.0"
+
+# Stealth
+[header]
+Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8"
+Accept-Language = "en-US,en;q=0.5"
+Accept-Encoding = "gzip, deflate, br"
 
 # Prevent 'Too Many Open Files'
-max_concurrency = 32
+max_concurrency = 16
+
+# Slower retries give rate-limited servers time to cool down
+retry_wait_time = 5
 
 # Check links inside `<code>` and `<pre>` blocks and Markdown code blocks
 include_verbatim = true
 
-# Check fragments in links
-# https://github.com/lycheeverse/lychee/issues/1709
-# https://github.com/lycheeverse/lychee/pull/1675
-#include_fragments = true
-
 # Don't check emails, it's problematic
 include_mail = false
 
-# Add 'Too many requests'
-accept = ["100..=103", "200..=299", "429"]
+# Accept 429 (Too Many Requests) and also 403 (Forbidden) as "not broken"
+# 403 is the most common false positive from anti-bot systems
+# 999 is LinkedIn's custom anti-bot rejection code
+accept = ["100..=103", "200..=299", "403", "429", "999"]
 
 # Be benevolent
 max_retries = 5
@@ -55,24 +61,21 @@ exclude = [
     # Webcal
     "^webcal://",
 
-    # Unable to decide if it wants to exist or not
-    "^https://(www\\.)?sdacademy\\.cz",
-
     # Anti-scraping protections
-    "^https://(www\\.)?(linkedin|facebook|reddit|glassdoor|toptal|upwork|make|fiverr|datacamp|udacity|udemy|economist|stackoverflow|guru)\\.com",
-    "^https://(www\\.)?(keyguru|podnikatel|root|robotdreams|lucietvrdikova|zdrojak|clovekvtisni|irozhlas|glancemedia)\\.cz",
-    "^https://([^\\.]+\\.)?discord\\.com",
-    "^https://([^\\.]+\\.)?medium\\.com",
-    "^https://mv\\.gov\\.cz",
-    "^https://robime\\.it",
-    "^https://www\\.techinterviewhandbook\\.org",
-    "^https://www\\.vilniuscoding\\.lt",
-    "^https://creativecommons\\.org/licenses/",
-    "^https://simonwillison\\.net",
+    # "^https://(www\\.)?(linkedin|facebook|reddit|glassdoor|toptal|upwork|make|fiverr|datacamp|udacity|udemy|economist|stackoverflow|guru)\\.com",
+    # "^https://(www\\.)?(keyguru|podnikatel|root|robotdreams|lucietvrdikova|zdrojak|clovekvtisni|irozhlas|glancemedia)\\.cz",
+    # "^https://([^\\.]+\\.)?discord\\.com",
+    # "^https://([^\\.]+\\.)?medium\\.com",
+    # "^https://mv\\.gov\\.cz",
+    # "^https://robime\\.it",
+    # "^https://www\\.techinterviewhandbook\\.org",
+    # "^https://www\\.vilniuscoding\\.lt",
+    # "^https://creativecommons\\.org/licenses/",
+    # "^https://simonwillison\\.net",
 
     # Read the Docs anti-scraping protections
-    "^https://docs\\.pyvec\\.org",
-    "^https://www\\.writethedocs\\.org",
+    # "^https://docs\\.pyvec\\.org",
+    # "^https://www\\.writethedocs\\.org",
 
     # Not yet deployed avatars of club members or company logos
     "^https://junior\\.guru/static/avatars-club/[^\\.]+\\.png",
