@@ -61,20 +61,6 @@ exclude = [
     "^https://(www\\.)?(beeit|glancemedia)\\.cz",
     "^https://([^\\.]+\\.)?discord\\.com",
 
-    # "^https://(www\\.)?(linkedin|facebook|reddit|glassdoor|toptal|upwork|make|fiverr|datacamp|udacity|udemy|economist|stackoverflow|guru)\\.com",
-    # "^https://(www\\.)?(keyguru|podnikatel|root|robotdreams|lucietvrdikova|zdrojak|clovekvtisni|irozhlas|glancemedia)\\.cz",
-    # "^https://([^\\.]+\\.)?medium\\.com",
-    # "^https://mv\\.gov\\.cz",
-    # "^https://robime\\.it",
-    # "^https://www\\.techinterviewhandbook\\.org",
-    # "^https://www\\.vilniuscoding\\.lt",
-    # "^https://creativecommons\\.org/licenses/",
-    # "^https://simonwillison\\.net",
-
-    # Read the Docs anti-scraping protections
-    # "^https://docs\\.pyvec\\.org",
-    # "^https://www\\.writethedocs\\.org",
-
     # Not yet deployed avatars of club members or company logos
     "^https://junior\\.guru/static/avatars-club/[^\\.]+\\.png",
     "^https://junior\\.guru/static/logos-jobs/[^\\.]+\\.webp",
