@@ -6,12 +6,7 @@ max_cache_age = "10m"
 
 # Stealth
 user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:136.0) Gecko/20100101 Firefox/136.0"
-
-# Stealth
-[header]
-Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8"
-Accept-Language = "en-US,en;q=0.5"
-Accept-Encoding = "gzip, deflate, br"
+header = { "Accept" = "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", "Accept-Language" = "en-US,en;q=0.5", "Accept-Encoding" = "gzip, deflate, br" }
 
 # Prevent 'Too Many Open Files'
 max_concurrency = 16
@@ -62,9 +57,11 @@ exclude = [
     "^webcal://",
 
     # Anti-scraping protections
+    "^https://(www\\.)?(linkedin|facebook|reddit)\\.com",
+    "^https://([^\\.]+\\.)?discord\\.com",
+
     # "^https://(www\\.)?(linkedin|facebook|reddit|glassdoor|toptal|upwork|make|fiverr|datacamp|udacity|udemy|economist|stackoverflow|guru)\\.com",
     # "^https://(www\\.)?(keyguru|podnikatel|root|robotdreams|lucietvrdikova|zdrojak|clovekvtisni|irozhlas|glancemedia)\\.cz",
-    # "^https://([^\\.]+\\.)?discord\\.com",
     # "^https://([^\\.]+\\.)?medium\\.com",
     # "^https://mv\\.gov\\.cz",
     # "^https://robime\\.it",

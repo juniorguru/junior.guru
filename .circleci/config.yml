@@ -294,6 +294,13 @@ jobs:
       - attach_workspace:
           at: "~"
       - run:
+          name: Skip if lychee.toml unchanged
+          command: |
+            if [ "$CIRCLE_WORKFLOW_NAME" = "push" ]; then
+              git fetch origin main --depth=1
+              git diff --name-only origin/main...HEAD | grep -q "lychee.toml" || circleci-agent step halt
+            fi
+      - run:
           name: Download Lychee
           command: wget https://github.com/lycheeverse/lychee/releases/download/lychee-v0.23.0/lychee-x86_64-unknown-linux-musl.tar.gz -O lychee.tar.gz
       - run:
@@ -345,6 +352,9 @@ workflows:
           requires:
             - data-2
       - check-docs:
+          requires:
+            - web
+      - check-links:
           requires:
             - web
       - deploy-web:
