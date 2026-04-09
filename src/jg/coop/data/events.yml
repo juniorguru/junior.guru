@@ -74,6 +74,8 @@ registry:
       - https://github.com/kobzol
       - https://www.linkedin.com/in/jakub-beranek
       - https://kobzol.github.io
+    club_speaker_ids:
+      - 179726935553736705
 
   - id: 60
     title: "Jak se dělá Infrastructure as Code"
