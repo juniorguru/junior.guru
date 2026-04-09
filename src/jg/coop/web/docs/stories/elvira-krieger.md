@@ -51,8 +51,6 @@ Tehdy jsem čerstvě chodila se současným partnerem, který pracuje jako senio
 **Co na junior.guru nejvíce využíváš?**
 Asi nejsem člověk který by zvládl využít vše, co junior.guru nabízí. Ráda chodím na jejich přednášky, ty jsou super. Účastním se taky akcí, které pořádají nejen pro Pythonisty. Taky jsem si tam pravidelně ukládala, co mě každý týden  čeká, co jsem zvládla minulý týden a co mi teď nejde. Teď už na to není čas a kapacita, ale bylo to motivační. Když už jsem to tam napsala, tak jsem se tomu věnovala. Je super vědět, že existuje velká komunita lidí, kteří řeší úplně to stejné. Nejsem na to sama. Když budu potřebovat, podporu tam najdu.
 
-## Na začátku potřebuješ lidi se zkušeností
-
 **Dnes je snadné sáhnout po AI pomocníkovi. Dokáže nahradit živého mentora?**
 AI je nástroj, který předvídá odpovědi, ale nemá vlastní zkušenost. Reálný člověk má praxi, ví, co funguje, a dokáže to zasadit do kontextu, proto bych důležité věci raději konzultovala s lidmi. AI beru jako pomocníka, ale její výstupy je potřeba ověřovat a zpochybňovat. Na začátku je lepší opřít se o zkušenější lidi, než si člověk vytvoří vlastní úsudek — to přichází hlavně s praxí. I v tom je rozdíl mezi juniorem a seniorem: junior často nepozná zbytečnou složitost, zatímco senior ji díky zkušenosti vidí mnohem dřív.
 
