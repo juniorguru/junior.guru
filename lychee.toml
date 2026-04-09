@@ -28,7 +28,7 @@ include_mail = false
 # Accept 429 (Too Many Requests) and also 403 (Forbidden) as "not broken"
 # 403 is the most common false positive from anti-bot systems
 # 999 is LinkedIn's custom anti-bot rejection code
-accept = "100..=103, 200..=299, 403, 429, 999"
+accept = ["100..=103", "200..=299", "403", "429", "999"]
 
 # Be benevolent
 max_retries = 5
