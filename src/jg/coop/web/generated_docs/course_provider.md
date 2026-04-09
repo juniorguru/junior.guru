@@ -162,7 +162,7 @@ Poradíme!
 
 {% set courses_up = course_provider.list_courses_up|list %}
 
-Úřad práce ČR přispívá na kurzy, které má ve svém katalogu [Jsem v kurzu](https://www.mpsv.cz/jsem-v-kurzu).
+Úřad práce ČR přispívá na kurzy, které má ve svém katalogu [Jsem v kurzu](https://mpsv.gov.cz/jsem-v-kurzu).
 {%- if courses_up %}
 Provozovatel {{ course_provider.name }} tam nabízí tyto kurzy:
 <table class="table">
