@@ -228,7 +228,7 @@ Psychiatr tě vyslechne, proberete tvůj stav, a pak ti nabídne pomoc. Může t
 
   {{ link_card(
     'Návštěva psychiatra',
-    'https://www.ulekare.cz/clanek/psychiatricke-vysetreni-1176',
+    'https://web.archive.org/web/20250418232938/https://www.ulekare.cz/clanek/psychiatricke-vysetreni-1176',
     'Co čekat od konzultace s psychiatrem.',
   ) }}
 
