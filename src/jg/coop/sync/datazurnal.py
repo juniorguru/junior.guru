@@ -18,7 +18,9 @@ EMOJI = "📰"
 
 
 @cli.sync_command(dependencies=["club-content"])
-@click.option("--channel", "channel_id", default="1421171257164038231", type=parse_channel)
+@click.option(
+    "--channel", "channel_id", default="1421171257164038231", type=parse_channel
+)
 @click.option("--rss-url", default="https://samizdat.cz/rss.xml")
 @db.connection_context()
 def main(channel_id: int, rss_url: str):
