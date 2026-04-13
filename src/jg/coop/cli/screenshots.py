@@ -276,9 +276,12 @@ def download_fb_cover_image(screenshot):
         page.goto(url, wait_until="networkidle")
         image_url = page.evaluate(
             """
-                () => document.querySelector('img[data-imgperflogname="profileCoverPhoto"]').src
+                () => document.querySelector('img[data-imgperflogname="profileCoverPhoto"]')?.src
             """
         )
+        if not image_url:
+            browser.close()
+            raise RuntimeError(f"Cover photo not found on Facebook page: {url}")
         browser.close()
     resp = requests.get(image_url)
     resp.raise_for_status()
