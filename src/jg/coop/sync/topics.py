@@ -74,7 +74,8 @@ KEYWORDS = {
         r"soc": "streetofcode",
         r"inventi": "inventi",
         r"it[.\s]?absolvent": "itabsolvent",
-        r"nau[čc][.\s]?m[ěe][.\s]?it": "naucmeit",
+        r"nau[čc][.\s]?m[ěe][.\s]?it": "entership",
+        r"entership": "entership",
         r"nau[čc][.\s]?se[.\s]?python": "naucsepython",
         r"it\s*v\s*kurze": "itvkurze",
         r"pluralsight": "pluralsight",
@@ -110,6 +111,9 @@ KEYWORDS = {
         r"vita\s?academy": "vita",
         r"scripteo": "scripteo",
         r"(vláďa|vladimír|vlada|vladimir)\s+macek": "scripteo",
+        r"cesta\s*do\s*it": "cestadoit",
+        r"petr\s*fiala": "cestadoit",
+        r"mark[ée]ta\s*willis": "marketawillis",
     }.items()
 }
 

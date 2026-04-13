@@ -92,6 +92,9 @@ registry:
   - from_url: "/sponsorship/"
     to_doc: "love.jinja"
 
+  - from_url: "/courses/naucmeit/"
+    to_doc: "courses/entership.md"
+
   - from_url: "/topics/adventofcode/"
     to_doc: "handbook/practice.md"
 
