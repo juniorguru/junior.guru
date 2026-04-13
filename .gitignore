@@ -51,6 +51,7 @@ docs/_build/
 # Editors
 /.idea/
 /.vscode/
+/.claude/
 
 # pyenv
 .python-version
