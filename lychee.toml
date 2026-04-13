@@ -58,7 +58,7 @@ exclude = [
 
     # Anti-scraping protections
     "^https://(www\\.)?(linkedin|facebook|reddit)\\.com",
-    "^https://(www\\.)?(beeit|glancemedia)\\.cz",
+    "^https://(www\\.)?(beeit|glancemedia|prace\\.rovnou|keyguru)\\.cz",
     "^https://([^\\.]+\\.)?discord\\.com",
 
     # Not yet deployed avatars of club members or company logos
