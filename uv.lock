@@ -878,7 +878,7 @@ dependencies = [
 [[package]]
 name = "jg-chick"
 version = "0.0.1"
-source = { git = "https://github.com/juniorguru/chick.git#08541cf6b79573973b854d76915f05e9f97da0e4" }
+source = { git = "https://github.com/juniorguru/chick.git#054ce366548077b269a49ef11a0128136b0910ff" }
 dependencies = [
     { name = "aiohttp" },
     { name = "click" },
@@ -1606,8 +1606,8 @@ wheels = [
 
 [[package]]
 name = "py-cord"
-version = "2.8.0rc2.dev31+g28b4682a7"
-source = { git = "https://github.com/Pycord-Development/pycord.git#28b4682a7f053b9584ee6fa9904a693b4e51aabb" }
+version = "2.8.0rc2.dev33+gfc25e1b96"
+source = { git = "https://github.com/Pycord-Development/pycord.git#fc25e1b96292a4471c5ed0c023863c11968c0b46" }
 dependencies = [
     { name = "aiohttp" },
     { name = "typing-extensions" },
