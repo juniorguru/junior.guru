@@ -19,7 +19,7 @@ template: main_handbook.html
 {{ illustration('static/illustrations/mental-health.webp') }}
 
 {% call guarantor('Nela Slezáková', 'avatars-participants/nela-slezakova.jpg', url='https://www.nelaprovazi.cz/', standout=True) %}
-  Jak psycholožka, tak programátorka. Rozumí tomu, jak funguje lidská psychika a sama si zažila, co obnáší dostat se do IT po vlastní ose. Ve vlastní praxi pomáhá lidem v IT anebo do IT. S otázkami kolem duševního zdraví juniorům pomáhá i ve [zdejším klubu](../club.md).
+  Jak psycholožka, tak programátorka. Rozumí tomu, jak funguje lidská psychika a sama si zažila, co obnáší dostat se do IT po vlastní ose. Ve vlastní praxi pomáhá i lidem v IT anebo do IT. S otázkami kolem duševního zdraví juniorům pomáhá i ve [zdejším klubu](../club.md).
 {% endcall %}
 
 ## Správné načasování
@@ -188,7 +188,7 @@ Existuje řada adresářů psychoterapeutů. Největší je asi ten od [České 
 
 Výcviky mají určité **specializace** a různý styl práce, takže i typ výcviku může být vodítkem při výběru. V základu jsou ovšem pro výkon psychoterapie všechny stejně dobré. Každý terapeut by měl mít na webu napsáno, jaký má výcvik.
 
-Hodina sezení tě zpravidla vyjde na 1000-1200 Kč, ale mnozí poskytují **slevy pro studenty, nebo znevýhodněné skupiny**. Od pandemie covidu-19 začaly navíc na terapii přispívat skoro všechny **zdravotní pojišťovny**. Většinou mají na webu postup, jak příspěvek získat, a seznam terapeutů, u kterých jej můžeš čerpat.
+Hodina sezení tě zpravidla vyjde na 1200-1500 Kč, ale mnozí poskytují **slevy pro studenty, nebo znevýhodněné skupiny**. Od pandemie covidu-19 začaly navíc na terapii přispívat skoro všechny **zdravotní pojišťovny**. Většinou mají na webu postup, jak příspěvek získat, a seznam terapeutů, u kterých jej můžeš čerpat.
 
 <div class="link-cards">
   {{ link_card(
@@ -227,12 +227,6 @@ Psychiatr tě vyslechne, proberete tvůj stav, a pak ti nabídne pomoc. Může t
   ) }}
 
   {{ link_card(
-    'Návštěva psychiatra',
-    'https://web.archive.org/web/20250418232938/https://www.ulekare.cz/clanek/psychiatricke-vysetreni-1176',
-    'Co čekat od konzultace s psychiatrem.',
-  ) }}
-
-  {{ link_card(
     'Mapa zdravotní péče',
     'https://www.nzip.cz/vyhledavaci-mapy',
     'Najdi psychiatra ve svém okolí.',
@@ -262,14 +256,7 @@ Kouč je někdo, kdo absolvoval dlouhodobý a ideálně i akreditovaný koučova
     'Specifika nejrozšířenější koučovací metody.',
   ) }}
 
-  {{ link_card(
-    'Nela provází',
-    'https://www.nelaprovazi.cz/',
-    'Akreditovaná koučka, zaměřuje se na IT.',
-    badge_icon='star',
-    badge_text='Autorka této kapitoly',
-    class='highlighted',
-  ) }}
+
 </div>
 
 
