@@ -5,9 +5,35 @@ from jg.coop.lib.location import (
     ResponseCountry,
     ResponseRegion,
     ResponseRegionType,
+    generate_queries,
     get_region_name,
     repr_locations,
 )
+
+
+@pytest.mark.parametrize(
+    "location_raw, expected",
+    [
+        (
+            "Pikrtova 1737/1A (4. patro), Praha 4",
+            ("Pikrtova 1737/1A, Praha 4", ResponseRegionType.address),
+        ),
+        (
+            "Bratislava III",
+            ("Bratislava", ResponseRegionType.municipality),
+        ),
+        (
+            "Hostinec Pod Schody\nHrnčířská 813/23\n602 00 Brno-střed-Veveří ((alias Pivovar Fénix))",
+            (
+                "Hostinec Pod Schody, Hrnčířská 813/23, 602 00 Brno-Veveří",
+                ResponseRegionType.address,
+            ),
+        ),
+    ],
+)
+def test_generate_queries_rewrite(location_raw, expected):
+    result = next(generate_queries(location_raw))
+    assert result == expected
 
 
 @pytest.mark.parametrize(

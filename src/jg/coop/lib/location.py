@@ -34,9 +34,11 @@ BOUNDING_BOX = (
 )
 
 REWRITES_RE = {
-    re.compile(r"\(\d+\. patro\)", re.I): "",
+    re.compile(r"[\n\r]+"): ", ",
+    re.compile(r"\s+"): " ",
+    re.compile(r"\(+[^\)]+\)+", re.I): "",
     re.compile(r"\bBratislava\W+[IV]{1,3}\b", re.I): "Bratislava",
-    re.compile(r"\bBrno\W+Staré Brno\b", re.I): "Brno",
+    re.compile(r"\bBrno\W+(Staré Brno|Střed)\b", re.I): "Brno",
     re.compile(r"\bCentral Bohemia\b", re.I): "Středočeský kraj",
     re.compile(r"\bMetropolitan Area\b", re.I): "",
     re.compile(r"\bMoravia-Silesia\b", re.I): "Moravskoslezský kraj",
@@ -231,8 +233,7 @@ def generate_queries(
         location_raw = rewrite_re.sub(rewrite_value, location_raw)
     location_raw = ", ".join(filter(None, map(str.strip, location_raw.split(","))))
 
-    # if contains a comma and number
-    if "," in location_raw and re.search(r"\d", location_raw):
+    if contains_comma_and_number(location_raw) or contains_house_number(location_raw):
         yield location_raw, ResponseRegionType.address
 
     yield location_raw, ResponseRegionType.municipality
@@ -253,6 +254,14 @@ def generate_queries(
     if "," in location_raw:
         _, location_raw = location_raw.split(",", 1)
         yield from generate_queries(location_raw)
+
+
+def contains_comma_and_number(location_raw: str) -> bool:
+    return "," in location_raw and re.search(r"\d", location_raw) is not None
+
+
+def contains_house_number(location_raw: str) -> bool:
+    return re.search(r"\s+\d+/\d+\b", location_raw) is not None
 
 
 def get_location(location_raw: str, item: ResponseItem) -> Location:
