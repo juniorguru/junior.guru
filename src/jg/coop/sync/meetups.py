@@ -114,6 +114,7 @@ class MeetupsConfig(YAMLConfig):
         "honzajavorek/meetups-meetupcom",
         "honzajavorek/meetups-pehapkari",
         "honzajavorek/meetups-pyvo",
+        "honzajavorek/meetups-nepyvo",
     ],
 )
 @click.option(
