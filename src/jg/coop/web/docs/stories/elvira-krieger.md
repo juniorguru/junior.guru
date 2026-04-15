@@ -6,7 +6,7 @@ interviewee_avatar_path: avatars-participants/elvira-krieger.jpg
 author: Adéla Pavlun
 author_avatar_path: avatars-participants/adela-pavlun.jpg
 author_url: https://www.linkedin.com/in/adelapavlun/
-thumbnail_subheading: Elvíra
+thumbnail_subheading: Elvíra Krieger
 thumbnail_image_path: avatars-participants/elvira-krieger.jpg
 thumbnail_button_heading: Čti na
 thumbnail_button_link: junior.guru/stories
