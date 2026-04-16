@@ -37,6 +37,7 @@ REWRITES_RE = {
     re.compile(r"[\n\r]+"): ", ",
     re.compile(r"\s+"): " ",
     re.compile(r"\(+[^\)]+\)+", re.I): "",
+    re.compile(r"\bGreater\s+(.+?)\s+Area\b", re.I): r"\1",
     re.compile(r"\bBratislava\W+[IV]{1,3}\b", re.I): "Bratislava",
     re.compile(r"\bBrno\W+(Staré Brno|Střed)\b", re.I): "Brno",
     re.compile(r"\bCentral Bohemia\b", re.I): "Středočeský kraj",

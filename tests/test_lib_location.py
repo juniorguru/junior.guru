@@ -29,6 +29,7 @@ from jg.coop.lib.location import (
                 ResponseRegionType.address,
             ),
         ),
+        ("Greater Hyderabad Area", ("Hyderabad", ResponseRegionType.municipality)),
     ],
 )
 def test_generate_queries_rewrite(location_raw, expected):
