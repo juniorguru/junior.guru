@@ -21,7 +21,8 @@ template: main_handbook.html
 <form id="github-profile-form" action="https://github.com/juniorguru/eggtray/issues/new" target="_blank">
   <fieldset class="github-profile">
     <legend class="github-profile-title">
-      Otestuj si GitHub profil {{ "check-circle-fill"|icon }}
+      {{ "check-circle-fill"|icon }}
+      <h4>Otestuj si GitHub profil</h4>
     </legend>
     <label for="github-profile-input" class="github-profile-label">Adresa tvého GitHub profilu:</label>
     <div class="github-profile-row">
