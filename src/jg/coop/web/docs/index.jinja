@@ -27,8 +27,9 @@ thumbnail_subheading: junior.guru
 <form id="github-profile-form" action="https://github.com/juniorguru/eggtray/issues/new" target="_blank">
   <fieldset class="github-profile homepage">
     <legend class="github-profile-title">
-      {{ "check-circle-fill"|icon }}
+      {# {{ "check-circle-fill"|icon }} #}
       <h4>Můžeš si už hledat práci? Otestuj si GitHub profil</h4>
+      {{ img('static/chick-icon.svg', '', 207, 165, class='github-profile-chick', lazy=False) }}
     </legend>
     <label for="github-profile-input" class="github-profile-label">Adresa tvého GitHub profilu:</label>
     <div class="github-profile-row">

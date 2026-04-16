@@ -5,6 +5,7 @@
   padding: $spacer;
   margin-bottom: $main-spacer;
   background: $jg-yellow-light;
+  isolation: isolate;
   border: 1px solid $jg-yellow;
   border-radius: $border-radius;
 }
@@ -12,12 +13,13 @@
 .github-profile-title {
   display: flex;
   gap: map.get($spacers, 2);
-  align-items: top;
-  margin: 0 0 $spacer;
+  margin-bottom: $spacer;
 }
 
 .github-profile-title .bi {
   @extend .h4;
+  flex-grow: 0;
+  flex-shrink: 0;
   color: $jg-blue;
 }
 
@@ -47,11 +49,57 @@
 }
 
 .github-profile.homepage {
+  --chick-size: 23%;
+
   padding: map-get($spacers, 4);
   margin: 0;
   background: $jg-white;
 
   @include media-breakpoint-up(lg) {
     animation: pulse 3s infinite;  // cannot @extend in media query
+  }
+}
+
+.github-profile.homepage .github-profile-title {
+  align-items: flex-start;
+}
+
+.github-profile.homepage .github-profile-title h4 {
+  min-width: 0;
+  margin: 0;
+}
+
+.github-profile.homepage .github-profile-chick {
+  position: static;
+  z-index: auto;
+  align-self: flex-start;
+  width: auto;
+  max-width: var(--chick-size);
+  height: auto;
+  max-height: 3lh;
+  max-height: 4.2em;
+  margin-left: auto;
+  transform: rotate(-1deg);
+}
+
+.github-profile-chick {
+  display: block;
+}
+
+// Side layout: md only (reserve right column for chick across whole form)
+@include media-breakpoint-only(md) {
+  .github-profile.homepage {
+    --chick-size: 20%;
+    padding-right: calc(var(--chick-size) + #{$spacer});
+  }
+
+  .github-profile.homepage .github-profile-chick {
+    position: absolute;
+    top: map.get($spacers, 4);
+    right: $spacer;
+    z-index: 1;
+    width: var(--chick-size);
+    max-height: calc(var(--chick-size) * 2);
+    transform: rotate(0deg);
   }
 }
