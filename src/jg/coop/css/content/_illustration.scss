@@ -48,14 +48,10 @@ $illustration-line-thickness: clamp(.12rem, .24vw, .18rem);
 }
 
 .illustration-chick {
-  $chick-crop-bottom: 35%;
-
   z-index: 1;
   display: block;
   flex: 0 0 auto;
   width: 25%;
   height: auto;
   margin-left: auto;
-  clip-path: inset(0 0 $chick-crop-bottom 0);
-  transform: translateY($chick-crop-bottom);
 }
