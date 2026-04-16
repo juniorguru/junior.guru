@@ -75,9 +75,10 @@ $bootstrap-icons-font-dir: "../../../../node_modules/bootstrap-icons/font/fonts"
 @import "../../../../node_modules/lite-youtube-embed/src/lite-yt-embed";
 
 /*
-  CUSTOM: CONTENT AS A DOCUMENT
+  CUSTOM: SHARED CONTENT COMPONENTS
 */
 @import "./content/document";
+@import "./content/pulse";
 
 /*
   CUSTOM: CONTENT COMPONENTS
@@ -121,7 +122,6 @@ $bootstrap-icons-font-dir: "../../../../node_modules/bootstrap-icons/font/fonts"
 @import "./content/note";
 @import "./content/pagination";
 @import "./content/pricing";
-@import "./content/pulse";
 @import "./content/see-also";
 @import "./content/sponsor-avatars";
 @import "./content/stage-cards";

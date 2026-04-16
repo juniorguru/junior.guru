@@ -1,7 +1,6 @@
 @use "sass:map";
 
 $masthead-eggshell-height: map.get($spacers, 5);
-$masthead-content-spacer: $spacer;
 
 .masthead {
   position: relative;
@@ -29,10 +28,11 @@ $masthead-content-spacer: $spacer;
   @extend .container-lg;
   display: grid;
   grid-template-columns: 1fr;
-  gap: $masthead-content-spacer;
+  gap: $main-spacer;
 
   @include media-breakpoint-up(lg) {
     grid-template-columns: 1fr 1fr;
+    gap: $spacer;
     align-items: stretch;
   }
 }
@@ -45,7 +45,7 @@ $masthead-content-spacer: $spacer;
 .masthead-body {
   display: flex;
   flex-direction: column;
-  gap: $masthead-content-spacer;
+  gap: $spacer;
 }
 
 .masthead-body .lead p,
@@ -111,7 +111,7 @@ $masthead-content-spacer: $spacer;
   }
 }
 
-.masthead-video-container {
+.masthead-object-container {
   display: flex;
   flex-direction: column;
   align-items: center;

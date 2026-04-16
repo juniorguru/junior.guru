@@ -21,16 +21,16 @@ template: main_handbook.html
 <form id="github-profile-form" action="https://github.com/juniorguru/eggtray/issues/new" target="_blank">
   <fieldset class="github-profile">
     <legend class="github-profile-title">
-      <span class="github-profile-background">Zpětná vazba od robota</span>
+      Otestuj si GitHub profil {{ "check-circle-fill"|icon }}
     </legend>
-    <label for="github-profile-input" class="github-profile-label">Tvůj GitHub profil:</label>
+    <label for="github-profile-input" class="github-profile-label">Adresa tvého GitHub profilu:</label>
     <div class="github-profile-row">
       <input id="github-profile-input" class="github-profile-input" required placeholder="https://github.com/username">
-      <input type="submit" value="Zkontrolovat" class="github-profile-button">
+      <input type="submit" value="Otestovat" class="github-profile-button">
     </div>
     <p class="github-profile-help">
-      Po odeslání se ti otevře předvyplněné GitHub issue. Když jej vytvoříš, spustíš tím bota,
-      který ti dá zpětnou vazbu v komentáři.
+      Po odeslání se ti otevře předvyplněné GitHub issue. Když jej vytvoříš, tak spustíš bota,
+      který ti dá v komentáři zdarma zpětnou vazbu.
     </p>
     <input type="hidden" name="template" value="check.md">
     <input type="hidden" name="title" value="Zpětná vazba na profil">
