@@ -29,6 +29,7 @@ $masthead-eggshell-height: map.get($spacers, 5);
   display: grid;
   grid-template-columns: 1fr;
   gap: $main-spacer;
+  margin-bottom: $main-spacer;
 
   @include media-breakpoint-up(lg) {
     grid-template-columns: 1fr 1fr;

@@ -1,8 +1,8 @@
 @mixin logos-tier($size-base) {
   $sm-width: $size-base;
   $sm-height: $size-base * .4;
-  $width: $size-base * 1.8;
-  $height: $size-base * .7;
+  $width: $size-base * 1.5;
+  $height: $size-base * .6;
 
   .logos-item {
     min-height: $sm-height;
@@ -108,4 +108,14 @@
 
 .logos.muted {
   opacity: .5;
+}
+
+/*
+  HOMEPAGE
+*/
+
+.logos.homepage {
+  @extend .container-lg;
+  @extend .muted;
+  @include logos-tier(3.5rem);
 }
