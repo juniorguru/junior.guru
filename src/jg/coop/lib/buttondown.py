@@ -130,7 +130,9 @@ class ButtondownAPI:
         return data["count"]
 
     @mutations.mutates_buttondown()
-    async def add_subscriber(self, email: str, tags=set[SubscriberSource]) -> dict:
+    async def add_subscriber(
+        self, email: str, tags=set[SubscriberSource]
+    ) -> dict | None:
         logger.debug(f"Adding subscriber {email} with tags {tags}")
         subscriber_type = get_subscriber_type(tags)
         try:
@@ -139,15 +141,24 @@ class ButtondownAPI:
             if e.http_code == 404:
                 logger.debug(f"Creating subscriber {email}")
                 logger.debug(f"Subscriber {email} classified as {subscriber_type!r}")
-                return await self._request(
-                    "POST",
-                    "subscribers",
-                    json={
-                        "email_address": email,
-                        "tags": list(tags),
-                        "type": subscriber_type,
-                    },
-                )
+                try:
+                    return await self._request(
+                        "POST",
+                        "subscribers",
+                        json={
+                            "email_address": email,
+                            "tags": list(tags),
+                            "type": subscriber_type,
+                        },
+                    )
+                except ButtondownError as error:
+                    if subscriber_already_exists(error):
+                        logger.info(
+                            f"Subscriber {email} already exists in Buttondown "
+                            f"(possibly unconfirmed), skipping create"
+                        )
+                        return None
+                    raise
             raise
 
         if subscriber_type == "regular" and subscriber["type"] != "regular":
@@ -169,3 +180,12 @@ class ButtondownAPI:
 
 def get_subscriber_type(tags: set[SubscriberSource]) -> str:
     return "unactivated" if tags == {SubscriberSource.MEMBERFUL} else "regular"
+
+
+def subscriber_already_exists(error: ButtondownError) -> bool:
+    """Buttondown can return 404 on GET-by-email for unconfirmed
+    subscribers and then reject POST as "already exists"."""
+    return error.http_code == 400 and error.code in {
+        SubscriberErrorCode.SUBSCRIBER_ALREADY_EXISTS.value,
+        SubscriberErrorCode.EMAIL_ALREADY_EXISTS.value,
+    }
