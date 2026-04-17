@@ -78,6 +78,7 @@ def on_shared_page_context(context, page, config, files):
 def on_docs_context(context):
     # index.jinja
     context["handbook_pages_count"] = Page.handbook_count()
+    context["jobs_listed_count"] = ListedJob.count()
 
     # index.jinja, about/*.md, love.jinja
     context["sponsors_github"] = GitHubSponsor.listing()
