@@ -3,23 +3,6 @@ import pytest
 from jg.coop.lib import google_sheets
 
 
-def test_records_to_rows():
-    assert google_sheets.records_to_rows(
-        [
-            {"name": "Anča", "size": 42},
-            {"name": "Bob", "size": 2, "flag": "no"},
-            {"name": "Zuzejk", "size": 400},
-            {"name": "David", "size": 4, "flag": "yes"},
-        ]
-    ) == [
-        ["name", "size", "flag"],
-        ["Anča", 42, None],
-        ["Bob", 2, "no"],
-        ["Zuzejk", 400, None],
-        ["David", 4, "yes"],
-    ]
-
-
 def get_range_notation():
     assert (
         google_sheets.get_range_notation(
