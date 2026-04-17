@@ -51,6 +51,7 @@ $masthead-eggshell-height: map.get($spacers, 5);
 
 .masthead-body .lead p,
 .masthead-body .masthead-numbers,
+.masthead-body .masthead-numbers2,
 .masthead-body .masthead-members {
   margin-bottom: 0;
 }
@@ -107,6 +108,35 @@ $masthead-eggshell-height: map.get($spacers, 5);
 
   strong {
     @extend .fs-1;
+    font-weight: 400;
+    line-height: 1;
+  }
+}
+
+.masthead-numbers2 {
+  ul {
+    @extend .list-unstyled;
+    display: flex;
+    gap: map-get($spacers, 2);
+    justify-content: space-between;
+    padding: $spacer;
+    margin: 0;
+    margin-top: map-get($spacers, 4);
+    border: 1px solid $jg-yellow-dark;
+    border-radius: $border-radius;
+  }
+
+  li {
+    @extend .small;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  strong {
+    @extend .fs-1;
+    @extend .font-monospace;
     font-weight: 400;
     line-height: 1;
   }
