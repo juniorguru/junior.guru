@@ -58,7 +58,6 @@ $masthead-eggshell-height: map.get($spacers, 5);
 
 .masthead-body .lead p,
 .masthead-body .masthead-numbers,
-.masthead-body .masthead-numbers2,
 .masthead-body .masthead-members {
   margin-bottom: 0;
 }
@@ -95,41 +94,12 @@ $masthead-eggshell-height: map.get($spacers, 5);
   ul {
     @extend .list-unstyled;
     display: flex;
-    justify-content: space-between;
-    margin: 0;
-
-    @include media-breakpoint-up(sm) {
-      justify-content: flex-start;
-    }
-  }
-
-  li {
-    @extend .small;
-    display: flex;
-    flex-direction: column;
-
-    @include media-breakpoint-up(sm) {
-      margin-right: map.get($spacers, 5);
-    }
-  }
-
-  strong {
-    @extend .fs-1;
-    font-weight: 400;
-    line-height: 1;
-  }
-}
-
-.masthead-numbers2 {
-  ul {
-    @extend .list-unstyled;
-    display: flex;
     gap: map-get($spacers, 2);
-    justify-content: space-between;
+    justify-content: space-around;
     padding: $spacer;
     margin: 0;
     margin-top: map-get($spacers, 4);
-    border: 1px solid $jg-yellow-dark;
+    border: 2px solid $jg-yellow-dark;
     border-radius: $border-radius;
   }
 
