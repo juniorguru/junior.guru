@@ -9,6 +9,13 @@ $masthead-eggshell-height: map.get($spacers, 5);
   overflow: hidden;
   background: $jg-yellow;
   border-top: 1px solid $jg-yellow-dark;
+
+  @include media-breakpoint-up(lg) {
+    background-image: linear-gradient(rgba($jg-yellow, .9), rgba($jg-yellow, .9)), linear-gradient(to right, $jg-yellow 0%, rgba($jg-yellow, 0) 35%), linear-gradient(to top, $jg-yellow 0%, rgba($jg-yellow, 0) 35%), url("../images/shapes.svg");
+    background-repeat: no-repeat, no-repeat, no-repeat, repeat-y;
+    background-position: right top;
+    background-size: 50%, 50%, 50%, 50%;
+  }
 }
 
 .masthead::after {
@@ -146,7 +153,9 @@ $masthead-eggshell-height: map.get($spacers, 5);
   display: flex;
   flex-direction: column;
   align-items: center;
+}
 
+.masthead-object-container > :first-child {
   @include media-breakpoint-up(lg) {
     margin-left: $main-spacer;
     transform: rotate(2deg);
