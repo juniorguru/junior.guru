@@ -26,6 +26,10 @@ thumbnail_subheading: junior.guru
 {% set years = today.year - 2019 %}
 <ul>
   <li>
+    <strong>{{ years }}</strong>
+    {{ years|nplurals("rok", "roky", "let") }} s juniory
+  </li>
+  <li>
     <strong>{{ handbook_pages_count }}</strong>
     kapitol příručky
   </li>
@@ -36,10 +40,6 @@ thumbnail_subheading: junior.guru
   <li>
     <strong>{{ jobs_listed_count }}</strong>
     nabídek práce
-  </li>
-  <li>
-    <strong>{{ years }}</strong>
-    {{ years|nplurals("rok", "roky", "let") }} s juniory
   </li>
 </ul>
 </div>
