@@ -23,10 +23,9 @@ thumbnail_subheading: junior.guru
 <div class="masthead-numbers">
 {% set years = today.year - 2019 %}
 {% call markdown() %}
+- **{{ handbook_pages_count }}** kapitol příručky
 - **{{ members_total_count }}** členů klubu
-- **{{ charts.members_women_today|round|int }} %** žen
-- **{{ events|length }}** online akcí
-- **{{ years }} {{ years|nplurals("rok", "roky", "let") }}** na trhu
+- **{{ years }}** {{ years|nplurals("rok", "roky", "let") }} na scéně
 {% endcall %}
 </div>
 

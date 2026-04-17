@@ -103,6 +103,10 @@ class Page(BaseModel):
         )
 
     @classmethod
+    def handbook_count(cls) -> int:
+        return cls.handbook_listing().where(cls.mainnav_name == "Příručka").count()
+
+    @classmethod
     def handbook_total_size(cls) -> int:
         return sum([page.size for page in cls.handbook_listing()])
 
