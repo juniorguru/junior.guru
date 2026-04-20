@@ -242,19 +242,35 @@ $footer-spacer-md: $spacer * 2;
 */
 
 .footer-finances-number {
-  @extend .h3;
-  @extend .lh-1;
   margin-bottom: $footer-spacer-md;
+}
+
+.footer-finances-number > .progress {
+  height: 1.5rem;
+  background-color: darken($jg-blue, 15%);
 }
 
 .footer-finances-list {
   @extend .list-unstyled;
-  margin-bottom: $footer-spacer-md;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  row-gap: $footer-spacer-sm;
+  column-gap: $footer-spacer-md;
+  margin-bottom: $footer-spacer;
+}
+
+.footer-finances-list li {
+  display: contents;
 }
 
 .footer-finances-value {
-  display: inline-block;
-  min-width: 3em;
+  display: block;
+  grid-column: 1;
+  min-width: 0;
+}
+
+.footer-finances-label {
+  grid-column: 2;
 }
 
 .footer-finances-actions {
