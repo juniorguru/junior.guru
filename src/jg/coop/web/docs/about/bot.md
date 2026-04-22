@@ -61,4 +61,7 @@ Dříve ani rychlé kuře neexistovalo, klub si vystačil s pomalým. Časem ale
 
 ## Co ještě se tváří jako kuře
 
-Robotickou identitu kuřete si propůjčují i jiné systémy, které komunikují s členy klubu. Například pro správu uživatelských účtu a placení se používá systém [Memberful](https://memberful.com/). Ten posílá různé e-maily, např. že vyprší členství, nebo že se nepovedlo strhnout platbu z karty. Tyto jsou psány jako „Ahoj, tady kuře“, aby se rozlišilo, že jsou automatické a nepíše je přímo Honza, ale s kódem Discord bota nemají vlastně nic společného.
+Robotickou identitu kuřete si propůjčují i jiné systémy, které komunikují s členy klubu. Vše, co je automatické a nepíše to přímo Honza, se podepisuje jako „kuře“, ačkoliv to nemá po technické stránce s kódem Discord bota nic společného.
+
+- Pro správu uživatelských účtu a placení se používá systém [Memberful](https://memberful.com/). Ten posílá různé e-maily, např. že vyprší členství, nebo že se nepovedlo strhnout platbu z karty. Tyto jsou psány jako „Ahoj, tady kuře“.
+- Na repozitáři [eggtray](https://github.com/juniorguru/eggtray), kde je kód seznamu juniorních kandidátů, probíhají nejrůznější kontroly a automatizované akce, které se hlásí jako [@roboticke-kure](https://github.com/apps/roboticke-kure).
