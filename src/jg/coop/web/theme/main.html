@@ -100,200 +100,199 @@
 
   <hr class="visually-hidden">
 
-  <footer class="footer">
-    <div class="footer-promo-bg">
-      <div class="footer-section footer-promo">
-        <div class="footer-promo-item wide">
-          <h3 class="footer-heading">{{ 'envelope-paper-fill'|icon }} Novinky pravidelně v mailu</h3>
-          <form class="newsletter-container" id="email-form" method="post" action="https://buttondown.com/api/emails/embed-subscribe/juniorguru">
-            <label class="newsletter-label" for="newsletter-email">
-              Zadej e-mail a přidej se k <strong>{{ newsletter_subscribers_count }} lidem</strong>, kteří sledují newsletter z junior.guru:
-            </label>
-            <fieldset class="newsletter-fieldset">
-              <div class="newsletter-email">
-                <input class="newsletter-email-control" type="email" id="newsletter-email" name="email">
-              </div>
-              <div class="newsletter-submit">
-                <input class="newsletter-submit-control" type="submit" value="Odebírat">
-              </div>
-            </fieldset>
-            <p class="newsletter-note">
-              {{ 'info-circle'|icon }} Tvůj e-mail se použije jen a pouze na zasílání novinek, které si můžeš kdykoliv zase odhlásit.
-              <a href="{{ pages|docs_url('privacy.md')|url }}"> Zásady ochrany osobních údajů</a> popisují, jaká data o tobě junior.guru má a jak s nimi zachází.
-            </p>
-          </form>
-        </div>
-        <div class="footer-promo-item">
-          <h3 class="footer-subheading">{{ 'person-circle'|icon }} Příběhy juniorů</h3>
-          {% for story in (promo_stories|list)[:2] %}
-          <div class="footer-featured">
-            {{ img('static/' + story.meta.interviewee_avatar_path, story.meta.interviewee, 100, 100, class='footer-featured-image') }}
-            <div class="footer-featured-body">
-              <a class="footer-featured-link" href="{{ pages|docs_url(story.src_uri)|url }}">{{ story.title }}</a>
+  <div class="footer-yellow-bg">
+    <footer class="footer-section promo footer-columns">
+      <div class="footer-column wide">
+        <h3 class="footer-heading">{{ 'envelope-paper-fill'|icon }} Novinky pravidelně v mailu</h3>
+        <form class="newsletter-container" id="email-form" method="post" action="https://buttondown.com/api/emails/embed-subscribe/juniorguru">
+          <label class="newsletter-label" for="newsletter-email">
+            Zadej e-mail a přidej se k <strong>{{ newsletter_subscribers_count }} lidem</strong>, kteří sledují newsletter z junior.guru:
+          </label>
+          <fieldset class="newsletter-fieldset">
+            <div class="newsletter-email">
+              <input class="newsletter-email-control" type="email" id="newsletter-email" name="email">
             </div>
-          </div>
-          {% endfor %}
-        </div>
-        <div class="footer-promo-item">
-          <h3 class="footer-subheading">{{ 'play-circle-fill'|icon }} Klubové akce</h3>
-          {% for event in (promo_events|list)[:2] %}
-          <div class="footer-featured">
-            {{ img('static/' + event.avatar_path, '', 100, 100, class='footer-featured-image') }}
-            <div class="footer-featured-body">
-              <a class="footer-featured-link" href="{{ pages|docs_url(event.page_url)|url }}">{{ event.title }}</a>
+            <div class="newsletter-submit">
+              <input class="newsletter-submit-control" type="submit" value="Odebírat">
             </div>
-          </div>
-          {% endfor %}
-        </div>
+          </fieldset>
+          <p class="newsletter-note">
+            {{ 'info-circle'|icon }} Tvůj e-mail se použije jen a pouze na zasílání novinek, které si můžeš kdykoliv zase odhlásit.
+            <a href="{{ pages|docs_url('privacy.md')|url }}"> Zásady ochrany osobních údajů</a> popisují, jaká data o tobě junior.guru má a jak s nimi zachází.
+          </p>
+        </form>
       </div>
-    </div>
+      <div class="footer-column">
+        <h3 class="footer-subheading">{{ 'person-circle'|icon }} Příběhy juniorů</h3>
+        {% for story in (promo_stories|list)[:2] %}
+        <div class="footer-featured">
+          {{ img('static/' + story.meta.interviewee_avatar_path, story.meta.interviewee, 100, 100, class='footer-featured-image') }}
+          <div class="footer-featured-body">
+            <a class="footer-featured-link" href="{{ pages|docs_url(story.src_uri)|url }}">{{ story.title }}</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="footer-column">
+        <h3 class="footer-subheading">{{ 'play-circle-fill'|icon }} Klubové akce</h3>
+        {% for event in (promo_events|list)[:2] %}
+        <div class="footer-featured">
+          {{ img('static/' + event.avatar_path, '', 100, 100, class='footer-featured-image') }}
+          <div class="footer-featured-body">
+            <a class="footer-featured-link" href="{{ pages|docs_url(event.page_url)|url }}">{{ event.title }}</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </footer>
+  </div>
 
-    <div class="footer-section footer-items footer-hr">
-      <div class="footer-item">
+  <!-- <footer class="footer-section footer-columns">
+    <div class="footer-column">
+      <h3 class="footer-subheading">Ukázková sekce 1</h3>
+    </div>
+    <div class="footer-column">
+      <h3 class="footer-subheading">Ukázková sekce 2</h3>
+    </div>
+    <div class="footer-column">
+      <h3 class="footer-subheading">Ukázková sekce 3</h3>
+    </div>
+    <div class="footer-column">
+      <h3 class="footer-subheading">Ukázková sekce 4</h3>
+    </div>
+  </footer> -->
+
+  <div class="footer-dark-bg">
+    <footer class="footer-section footer-columns footer-hr">
+      <div class="footer-column">
         {{ img('static/logo-i.svg', 'Logo junior.guru', 90, 40, class='footer-logo') }}
 
-        <!-- <div class="footer-item-section">
+        <!-- <div class="footer-subsection">
           <p>
             Najít první práci v IT je těžší, než ti slibovali
           </p>
         </div> -->
 
-        <div class="footer-item-section">
-          <h3 class="footer-subheading">{{ 'play-circle-fill'|icon }} Sociální sítě</h3>
-          <ul class="footer-icons">
-            <li>
-              <a href="https://www.youtube.com/@juniordotguru" target="_blank" rel="noopener">
-                {{ 'youtube'|icon(alt='YouTube') }}
-              </a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/honzajavorek/" target="_blank" rel="noopener">
-                {{ 'linkedin'|icon(alt='LinkedIn') }}
-              </a>
-            </li>
-            <li>
-              <a href="{{ pages|docs_url('club.md')|url }}">
-                {{ 'discord'|icon(alt='Discord') }}
-              </a>
-            </li>
-            <li>
-              <a href="https://mastodonczech.cz/@honzajavorek/tagged/juniorguru" target="_blank" rel="noopener">
-                {{ 'mastodon'|icon(alt='Mastodon') }}
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/juniorguru/" target="_blank" rel="noopener">
-                {{ 'github'|icon(alt='GitHub') }}
-              </a>
-            </li>
-          </ul>
-        </div>
+        <h3 class="footer-subheading">{{ 'play-circle-fill'|icon }} Sociální sítě</h3>
+        <ul class="footer-icons">
+          <li>
+            <a href="https://www.youtube.com/@juniordotguru" target="_blank" rel="noopener">
+              {{ 'youtube'|icon(alt='YouTube') }}
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/honzajavorek/" target="_blank" rel="noopener">
+              {{ 'linkedin'|icon(alt='LinkedIn') }}
+            </a>
+          </li>
+          <li>
+            <a href="{{ pages|docs_url('club.md')|url }}">
+              {{ 'discord'|icon(alt='Discord') }}
+            </a>
+          </li>
+          <li>
+            <a href="https://mastodonczech.cz/@honzajavorek/tagged/juniorguru" target="_blank" rel="noopener">
+              {{ 'mastodon'|icon(alt='Mastodon') }}
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/juniorguru/" target="_blank" rel="noopener">
+              {{ 'github'|icon(alt='GitHub') }}
+            </a>
+          </li>
+        </ul>
       </div>
 
-      <div class="footer-item">
-        <div class="footer-item-section">
-          <h3 class="footer-subheading">{{ 'pie-chart-fill'|icon }} Zdroje příjmů projektu</h3>
-          <ul class="footer-list">
-            {% for name, value_pct in revenue_ttm_breakdown|money_breakdown_ptc|revenue_categories %}
-            <li>
-              <strong class="footer-list-heading">{{ value_pct }} %</strong>
-              <span class="footer-list-data">{{ name }}</span>
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
+      <div class="footer-column">
+        <h3 class="footer-subheading">{{ 'pie-chart-fill'|icon }} Zdroje příjmů projektu</h3>
+        <ul class="footer-list">
+          {% for name, value_pct in revenue_ttm_breakdown|money_breakdown_ptc|revenue_categories %}
+          <li>
+            <strong class="footer-list-heading">{{ value_pct }} %</strong>
+            <span class="footer-list-data">{{ name }}</span>
+          </li>
+          {% endfor %}
+        </ul>
 
-        <div class="footer-item-section">
-          <h3 class="footer-subheading">{{ 'heart-pulse-fill'|icon }} Čistý zisk projektu</h3>
-          {% set profit_goal_pct = (profit_ttm / 80000) * 100 %}
-          {% set profit_goal_pct_clamped = [profit_goal_pct, 100]|min %}
-          <div class="footer-progress" role="progressbar" aria-label="Aktuální čistý zisk projektu"
-            aria-valuenow="{{ profit_goal_pct|round(1) }}" aria-valuemin="0" aria-valuemax="100">
-            <div class="footer-progress-bar" style="width: {{ profit_goal_pct_clamped|round(1) }}%;">
-              {{ profit_goal_pct|round|int }} %
-            </div>
+        <h3 class="footer-subheading">{{ 'heart-pulse-fill'|icon }} Čistý zisk projektu</h3>
+        {% set profit_goal_pct = (profit_ttm / 80000) * 100 %}
+        {% set profit_goal_pct_clamped = [profit_goal_pct, 100]|min %}
+        <div class="footer-progress" role="progressbar" aria-label="Aktuální čistý zisk projektu"
+          aria-valuenow="{{ profit_goal_pct|round(1) }}" aria-valuemin="0" aria-valuemax="100">
+          <div class="footer-progress-bar" style="width: {{ profit_goal_pct_clamped|round(1) }}%;">
+            {{ profit_goal_pct|round|int }} %
           </div>
-          <ul class="footer-progress-label">
-            <li class="footer-progress-label-item">
-              <small>Teď</small>
-              <strong>{{ profit_ttm|thousands }} Kč/měs</strong>
-            </li>
-            <li class="footer-progress-label-item">
-              <small>Cíl</small>
-              <strong>80.000 Kč/měs</strong>
-            </li>
-          </ul>
         </div>
+        <ul class="footer-progress-label">
+          <li class="footer-progress-label-item">
+            <small>Teď</small>
+            <strong>{{ profit_ttm|thousands }} Kč/měs</strong>
+          </li>
+          <li class="footer-progress-label-item">
+            <small>Cíl</small>
+            <strong>80.000 Kč/měs</strong>
+          </li>
+        </ul>
 
         <!-- {% if page.url not in ['love/', 'club/'] %}
-        <div class="footer-item-section">
           <a href="{{ pages|docs_url("love.jinja")|url }}" class="love-button">
             {{ 'heart-fill'|icon }}
             Pošli LOVE
           </a>
-        </div>
         {% endif %} -->
       </div>
 
-      <div class="footer-item">
-        <div class="footer-item-section">
-          <h3 class="footer-subheading">{{ 'person-circle'|icon }} Provozovatel</h3>
-          {% set years = today.year - 2015 %}
-          <p>
-            Honza Javorek pomáhá začátečníkům v IT už {{ years }} {{ years|nplurals("rok", "roky", "let") }}.
-          </p>
-          {{ img('static/avatars-participants/honza-javorek.jpg', 'Honza Javorek', 100, 100, class='footer-avatar') }}
-          <p class="small">
-            Začal dobrovolnicky v PyLadies.
-            Praktické rady a pracovní nabídky dal na jedno místo,
-            a tak vzniklo junior.guru.
-            Z party nadšenců okolo projektu se pak zrodila komunita.
-            Všechna čísla jsou veřejná, licence obsahu i kódu je otevřená.
-          </p>
-          <p class="small">
-            Honza to táhne na volné noze a na většinu věcí je sám.
-            Úspěchy i selhání upřímně každý týden popisuje na svém blogu.
-            Záměrem je pomáhat a mít na živobytí, ne zbohatnout.
-          </p>
-        </div>
+      <div class="footer-column">
+        <h3 class="footer-subheading">{{ 'person-circle'|icon }} Provozovatel</h3>
+        {% set years = today.year - 2015 %}
+        <p>
+          Honza Javorek pomáhá začátečníkům v IT už {{ years }} {{ years|nplurals("rok", "roky", "let") }}.
+        </p>
+        {{ img('static/avatars-participants/honza-javorek.jpg', 'Honza Javorek', 100, 100, class='footer-avatar') }}
+        <p class="small">
+          Začal dobrovolnicky v PyLadies.
+          Praktické rady a pracovní nabídky dal na jedno místo,
+          a tak vzniklo junior.guru.
+          Z party nadšenců okolo projektu se pak zrodila komunita.
+          Všechna čísla jsou veřejná, licence obsahu i kódu je otevřená.
+        </p>
+        <p class="small">
+          Honza to táhne na volné noze a na většinu věcí je sám.
+          Úspěchy i selhání upřímně každý týden popisuje na svém blogu.
+          Záměrem je pomáhat a mít na živobytí, ne zbohatnout.
+        </p>
       </div>
 
-      <div class="footer-item">
-        <div class="footer-item-section">
-          <h3 class="footer-subheading">{{ 'envelope-fill'|icon }} Kontakt</h3>
-          <ul class="footer-list">
-            <li>
-              <strong class="footer-list-heading">E-mail</strong>
-              <span class="footer-list-data">{{ 'honza@junior.guru'|email_link }}</span>
-            </li>
-            <li>
-              <strong class="footer-list-heading">IČO</strong>
-              <span class="footer-list-data"><a href="https://ares.gov.cz/ekonomicke-subjekty?ico=74279858" target="_blank" rel="noopener">74279858</a></span>
-            </li>
-          </ul>
-        </div>
+      <div class="footer-column">
+        <h3 class="footer-subheading">{{ 'envelope-fill'|icon }} Kontakt</h3>
+        <ul class="footer-list">
+          <li>
+            <strong class="footer-list-heading">E-mail</strong>
+            <span class="footer-list-data">{{ 'honza@junior.guru'|email_link }}</span>
+          </li>
+          <li>
+            <strong class="footer-list-heading">IČO</strong>
+            <span class="footer-list-data"><a href="https://ares.gov.cz/ekonomicke-subjekty?ico=74279858" target="_blank" rel="noopener">74279858</a></span>
+          </li>
+        </ul>
 
-        <div class="footer-item-section">
-          <h3 class="footer-subheading">{{ 'info-circle-fill'|icon }} Další info</h3>
-          <ul class="footer-links">
-            <li>
-              <a href="{{ pages|docs_url('coc.md')|url }}">Pravidla chování</a>
-            </li>
-            <li>
-              <a href="{{ pages|docs_url('tos.md')|url }}">Obchodní podmínky</a>
-            </li>
-            <li>
-              <a href="{{ pages|docs_url('privacy.md')|url }}">Ochrana osobních údajů</a>
-            </li>
-          </ul>
-        </div>
+        <h3 class="footer-subheading">{{ 'info-circle-fill'|icon }} Další info</h3>
+        <ul class="footer-links">
+          <li>
+            <a href="{{ pages|docs_url('coc.md')|url }}">Pravidla chování</a>
+          </li>
+          <li>
+            <a href="{{ pages|docs_url('tos.md')|url }}">Obchodní podmínky</a>
+          </li>
+          <li>
+            <a href="{{ pages|docs_url('privacy.md')|url }}">Ochrana osobních údajů</a>
+          </li>
+        </ul>
 
-        <div class="footer-item-section">
-          <a href="{{ pages|docs_url('about/index.md')|url }}" class="btn btn-primary">Vše o projektu</a>
-        </div>
+        <a href="{{ pages|docs_url('about/index.md')|url }}" class="btn btn-primary">Vše o projektu</a>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <script async src="https://sa.junior.guru/latest.js"></script>
   <noscript><img src="https://sa.junior.guru/noscript.gif" alt=""

@@ -10,12 +10,24 @@ html {
   background-color: $jg-dark;
 }
 
-.footer {
+.footer-dark-bg {
   color: $white;
   background-color: $jg-dark;
 
   a {
     color: $white;
+  }
+
+  .footer-subheading {
+    color: $footer-gray-text;
+  }
+}
+
+.footer-yellow-bg {
+  background-color: $jg-yellow;
+
+  a {
+    color: $jg-dark;
   }
 }
 
@@ -34,7 +46,7 @@ html {
   @extend .small;
   @extend .font-monospace;
   @extend .text-uppercase;
-  color: $footer-gray-text;
+  margin-bottom: $spacer;
 }
 
 .footer-list {
@@ -64,11 +76,10 @@ html {
   border-bottom: map.get($border-widths, 1) solid rgba($white, .2);
 }
 
-.footer-items {
+.footer-columns {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  column-gap: $footer-spacer-md;
-  padding-bottom: $main-spacer - $footer-spacer-md;
+  gap: $footer-spacer-md;
 
   @include media-breakpoint-up(sm) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -79,7 +90,29 @@ html {
   }
 }
 
-.footer-item-section {
+.footer-column .footer-subheading {
+  margin-top: $footer-spacer-md;
+}
+
+.footer-column .footer-subheading:first-of-type {
+  margin-top: 0;
+}
+
+.footer-column *:last-child {
+  margin-bottom: 0;
+}
+
+.footer-column.wide {
+  @include media-breakpoint-up(sm) {
+    grid-column: span 2;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-right: $footer-spacer-md - $spacer;
+  }
+}
+
+.footer-subsection {
   margin-bottom: $footer-spacer-md;
 }
 
@@ -142,39 +175,6 @@ html {
   flex-direction: column;
 }
 
-
-/*
-  FOOTER: PROMO
-*/
-
-.footer-promo {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: $footer-spacer-md;
-  color: $jg-dark;
-
-  @include media-breakpoint-up(sm) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  @include media-breakpoint-up(lg) {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
-.footer-promo-bg {
-  background-color: $jg-yellow;
-}
-
-.footer-promo .footer-heading,
-.footer-promo .footer-subheading {
-  color: $jg-dark;
-}
-
-.footer-promo .footer-subheading {
-  margin-bottom: $spacer;
-}
-
 .footer-featured {
   position: relative;
   display: grid;
@@ -207,22 +207,4 @@ html {
   object-fit: cover;
   object-position: center;
   border-radius: 100%;
-}
-
-.footer-promo a {
-  color: $jg-dark;
-}
-
-.footer-promo a:hover {
-  text-decoration: underline;
-}
-
-.footer-promo-item.wide {
-  @include media-breakpoint-up(sm) {
-    grid-column: span 2;
-  }
-
-  @include media-breakpoint-up(lg) {
-    padding-right: $footer-spacer-md - $spacer;
-  }
 }
