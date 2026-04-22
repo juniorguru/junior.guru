@@ -18,6 +18,7 @@ template: main_handbook.html
 
 <!--
 DOPLNIT: jak udelat MOAT v dobe kdy je AI
+DOPLNIT: jak udělat demo konzolové aplikace, vyloženě návod na animovaný obrázek z terminálu - třeba https://github.com/AdriansRepos/VyukaNasobilky
 
 To je super pro rok 2021. Teď je 2026. Senior takový projekt vygeneruje s pomocí AI za 2 dny. Ukaž, že to umíš taky. (Nepotřebuješ know-how nebo skill, je to AI minset a Cursor AI, co potřebuješ.) Ukaž, že jsi zabiják 🏴‍☠️, "team-of-one" 💀, a že píšeš jeden projekt za druhým 😵😵😵 když zrovna v noci nespíš. Firmy mají dnes těžké se uživit a pokud nejdeš do korporátu, potřebují, abys jim vygeneroval větší zisk, než je stojíš.
 
