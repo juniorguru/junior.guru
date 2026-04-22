@@ -23,21 +23,19 @@ template: main_subnav.html
 <div class="newsletter">
   <form class="newsletter-container" id="email-form" method="post" action="https://buttondown.com/api/emails/embed-subscribe/juniorguru">
     <h2 class="newsletter-heading">Novinky pravidelně v mailu</h2>
-    <label class="newsletter-label" for="newsletter-email">
-      Zadej e-mail a přidej se k <strong>{{ newsletter_subscribers_count }} lidem</strong>, kteří sledují newsletter z junior.guru:
-    </label>
-    <fieldset class="newsletter-fieldset">
-      <div class="newsletter-email">
+    <fieldset>
+      <label class="newsletter-label" for="newsletter-email">
+        Zadej e-mail a přidej se k <strong>{{ newsletter_subscribers_count }} lidem</strong>, kteří sledují newsletter z junior.guru:
+      </label>
+      <div class="newsletter-controls">
         <input class="newsletter-email-control" type="email" id="newsletter-email" name="email">
-      </div>
-      <div class="newsletter-submit">
         <input class="newsletter-submit-control" type="submit" value="Odebírat">
       </div>
+      <p class="newsletter-note">
+        {{ 'info-circle'|icon }} Tvůj e-mail se použije jen a pouze na zasílání novinek, které si můžeš kdykoliv zase odhlásit.
+        <a href="{{ pages|docs_url('privacy.md')|url }}"> Zásady ochrany osobních údajů</a> popisují, jaká data o tobě junior.guru má a jak s nimi zachází.
+      </p>
     </fieldset>
-    <p class="newsletter-note">
-      {{ 'info-circle'|icon }} Tvůj e-mail se použije jen a pouze na zasílání novinek, které si můžeš kdykoliv zase odhlásit.
-      <a href="{{ pages|docs_url('privacy.md')|url }}"> Zásady ochrany osobních údajů</a> popisují, jaká data o tobě junior.guru má a jak s nimi zachází.
-    </p>
   </form>
   <div class="newsletter-container" id="email-subscribed" hidden>
     <h2 class="newsletter-heading">Novinky pravidelně v mailu: Ještě potvrdit</h2>

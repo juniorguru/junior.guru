@@ -90,6 +90,14 @@ html {
   }
 }
 
+.footer-column .footer-heading {
+  margin-top: $footer-spacer-md;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 0;
+  }
+}
+
 .footer-column .footer-subheading {
   margin-top: $footer-spacer-md;
 }
