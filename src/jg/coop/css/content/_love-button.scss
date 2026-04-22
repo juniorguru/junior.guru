@@ -17,7 +17,6 @@
 
 .love-button {
   @extend .btn;
-  @extend .btn-lg;
   @include button-variant(
     $jg-pink,
     $jg-pink,

@@ -5,6 +5,11 @@ $footer-spacer-sm: map.get($spacers, 2);
 $footer-spacer: $spacer;
 $footer-spacer-md: $spacer * 2;
 
+html {
+  background: linear-gradient(to bottom, $jg-dark 0%, $jg-dark 50%, $jg-yellow 50%, $jg-yellow 100%);
+  background-color: $jg-dark;
+}
+
 .footer {
   color: $white;
   background-color: $jg-dark;
@@ -16,7 +21,7 @@ $footer-spacer-md: $spacer * 2;
 
 .footer-section {
   @extend .container-xxl;
-  padding: $footer-spacer-md;
+  padding: $main-spacer $footer-spacer-md;
 }
 
 .footer-heading {
@@ -32,19 +37,38 @@ $footer-spacer-md: $spacer * 2;
   color: $footer-gray-text;
 }
 
-/*
-  FOOTER: PROMO
-*/
+.footer-list {
+  @extend .list-unstyled;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  row-gap: $footer-spacer-sm;
+  column-gap: $footer-spacer-md;
+  margin-bottom: $footer-spacer;
+}
 
-.footer-promo {
-  // padding: $main-spacer $footer-spacer-md;
+.footer-list li {
+  display: contents;
+}
+
+.footer-list-heading {
+  display: block;
+  grid-column: 1;
+  min-width: 0;
+}
+
+.footer-list-data {
+  grid-column: 2;
+}
+
+.footer-hr {
+  border-bottom: map.get($border-widths, 1) solid rgba($white, .2);
+}
+
+.footer-items {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: $footer-spacer;
-  padding-top: $main-spacer;
-  padding-bottom: $main-spacer;
-  color: $jg-dark;
-  // border-top: 1px solid #e5df67;
+  column-gap: $footer-spacer-md;
+  padding-bottom: $main-spacer - $footer-spacer-md;
 
   @include media-breakpoint-up(sm) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -55,7 +79,90 @@ $footer-spacer-md: $spacer * 2;
   }
 }
 
-.footer-promo-belt {
+.footer-item-section {
+  margin-bottom: $footer-spacer-md;
+}
+
+.footer-logo {
+  width: 100%;
+  max-width: 10rem;
+  height: auto;
+  margin-bottom: $footer-spacer-md;
+}
+
+.footer-icons {
+  @extend .list-unstyled;
+  @extend .h3;
+  display: flex;
+  gap: $footer-spacer-sm;
+}
+
+.footer-links {
+  @extend .list-unstyled;
+  @extend .small;
+  display: flex;
+  flex-direction: column;
+  gap: $footer-spacer-sm;
+}
+
+.footer-avatar {
+  float: right;
+  width: 4rem;
+  height: 4rem;
+  margin-top: .3rem;
+  margin-bottom: .1rem;
+  margin-left: 1rem;
+  clip-path: circle(50%);
+  shape-outside: circle(50%);
+  border-radius: 100%;
+}
+
+.footer-progress {
+  @extend .progress;
+  height: 1.8rem;
+  margin: $footer-spacer 0;
+  background-color: darken($jg-blue, 15%);
+}
+
+.footer-progress-bar {
+  @extend .progress-bar;
+}
+
+.footer-progress-label {
+  @extend .list-unstyled;
+
+  display: flex;
+  gap: $footer-spacer-sm;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-progress-label-item {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/*
+  FOOTER: PROMO
+*/
+
+.footer-promo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: $footer-spacer-md;
+  color: $jg-dark;
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.footer-promo-bg {
   background-color: $jg-yellow;
 }
 
@@ -107,211 +214,15 @@ $footer-spacer-md: $spacer * 2;
 }
 
 .footer-promo a:hover {
-  // color: darken($jg-blue, 10%);
   text-decoration: underline;
-}
-
-.footer-promo-item {
-  margin-bottom: $footer-spacer-md;
-
-  @include media-breakpoint-up(sm) {
-    margin-bottom: 0;
-  }
 }
 
 .footer-promo-item.wide {
   @include media-breakpoint-up(sm) {
     grid-column: span 2;
-    margin-bottom: $footer-spacer-md;
   }
 
   @include media-breakpoint-up(lg) {
     padding-right: $footer-spacer-md - $spacer;
-    margin-bottom: 0;
   }
-}
-
-/*
-  FOOTER: ADDRESS
-*/
-
-.footer-address {
-  @extend .container-fluid;
-  margin-bottom: 0;
-  border-bottom: map.get($border-widths, 1) solid rgba($white, .2);
-}
-
-.footer-address-list {
-  @extend .list-unstyled;
-  display: grid;
-  gap: $footer-spacer;
-  margin-bottom: 0;
-
-  @include media-breakpoint-up(sm) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  @include media-breakpoint-up(lg) {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
-.footer-address-logo {
-  width: 100%;
-  max-width: 10rem;
-  height: auto;
-}
-
-.footer-links {
-  display: flex;
-  flex-direction: column;
-}
-
-.footer-links-email,
-.footer-links-icons {
-  @extend .fs-4;
-  margin-bottom: 0;
-}
-
-.footer-icons-list {
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 0;
-  list-style-type: none;
-}
-
-.footer-icons-item {
-  margin-right: $footer-spacer-sm;
-}
-
-/*
-  FOOTER: ABOUT
-*/
-
-.footer-about-content {
-  @extend .row;
-  @extend .g-0;
-}
-
-.footer-about-text {
-  @extend .col-lg-9;
-  padding-bottom: $footer-spacer-md;
-
-  @include media-breakpoint-up(lg) {
-    padding-right: $footer-spacer-md;
-    padding-bottom: 0;
-    margin-bottom: 0;
-  }
-}
-
-.footer-about-text p:last-child {
-  margin-bottom: 0;
-}
-
-.footer-about-finances {
-  @extend .col-lg-3;
-}
-
-.footer-about-avatar {
-  float: right;
-  width: 100%;
-  max-width: 6rem;
-  height: auto;
-  margin-top: $footer-spacer-sm;
-  margin-bottom: $footer-spacer-sm;
-  margin-left: $footer-spacer-sm;
-  shape-outside: circle(50%);
-  clip-path: circle(50%);
-  border-radius: 100%;
-
-  @include media-breakpoint-up(md) {
-    max-width: 8rem;
-  }
-
-  @include media-breakpoint-up(md) {
-    max-width: 10rem;
-  }
-
-  @include media-breakpoint-up(lg) {
-    margin-left: map.get($spacers, 4);
-  }
-}
-
-/*
-  FOOTER: FINANCES
-*/
-
-.footer-finances-number {
-  margin-bottom: $footer-spacer-md;
-}
-
-.footer-finances-number > .progress {
-  height: 1.5rem;
-  background-color: darken($jg-blue, 15%);
-}
-
-.footer-finances-list {
-  @extend .list-unstyled;
-  display: grid;
-  grid-template-columns: max-content minmax(0, 1fr);
-  row-gap: $footer-spacer-sm;
-  column-gap: $footer-spacer-md;
-  margin-bottom: $footer-spacer;
-}
-
-.footer-finances-list li {
-  display: contents;
-}
-
-.footer-finances-value {
-  display: block;
-  grid-column: 1;
-  min-width: 0;
-}
-
-.footer-finances-label {
-  grid-column: 2;
-}
-
-.footer-finances-actions {
-  display: inline-block;
-  margin-bottom: 0;
-}
-
-.footer-finances-button {
-  display: block;
-  margin-bottom: $footer-spacer-sm;
-}
-
-.footer-finances-link a {
-  color: $footer-gray-text;
-}
-
-/*
-  FOOTER: RULES
-*/
-
-.footer-rules {
-  padding-top: $footer-spacer;
-  padding-bottom: $footer-spacer;
-}
-
-.footer-rules a {
-  @extend .small;
-  color: $footer-gray-text;
-}
-
-.footer-rules-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-
-.footer-rules-item {
-  padding-right: $footer-spacer-sm;
-  padding-left: $footer-spacer-sm;
-  white-space: nowrap;
 }

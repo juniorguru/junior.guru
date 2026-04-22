@@ -711,7 +711,7 @@ Kde se bere vášeň? Do začátku stačí, když ti programování přijde jako
 
 **P.S.** Nezapomeň, že jsi na „živé stránce“, na které stále probíhají úpravy. Kdykoliv tady může přibýt něco nového, takže není od věci se sem občas vrátit. Všechny změny [najdeš na GitHubu](https://github.com/juniorguru/junior.guru/commits/main/src/jg/coop/web/docs/handbook/), o těch důležitých se můžeš dovědět na sociálních sítích junior.guru nebo prostřednictvím [klubu](../club.md).
 
-A věci mohou přibývat i díky tobě! Pokud máš připomínku, vlastní zkušenost, nebo nápad na novou kapitolu, napiš na {{ 'honza@junior.guru'|email_link }}. Jestli se ti díky junior.guru povede sehnat práci, ozvi se! Můžeš [motivovat ostatní svým příběhem](../stories.md), nebo tím prostě jen udělat [Honzovi](#honza) radost.
+A věci mohou přibývat i díky tobě! Pokud máš připomínku, vlastní zkušenost, nebo nápad na novou kapitolu, napiš na {{ 'honza@junior.guru'|email_link }}. Jestli se ti díky junior.guru povede sehnat práci, ozvi se! Můžeš [motivovat ostatní svým příběhem](../stories.md), nebo tím prostě jen udělat Honzovi, autorovi junior.guru, radost.
 
 
 <!-- {#

@@ -56,7 +56,7 @@ Online skupina nikdy nebude mít úroveň srovnatelnou s profesionálním indivi
 
 ## Jak se klub liší od skupin na Facebooku?
 
-V klubu se koncentrují lidé, kteří „to myslí vážně“, ať už jde o pomoc druhým, nebo vlastní rozvoj. Je to komornější, kultivované místo s [pravidly chování](coc.md), kde nehrozí, že se někdo bude vysmívat tvému dotazu. Na rozdíl od dobrovolníků spravujících facebookové skupiny, klub má správce na plný úvazek, autora junior.guru [Honzu Javorka](#honza). Ten moderuje, odpovídá, zve přednášející, vítá nové členy, otevírá nová témata a vylepšuje možnosti klubu.
+V klubu se koncentrují lidé, kteří „to myslí vážně“, ať už jde o pomoc druhým, nebo vlastní rozvoj. Je to komornější, kultivované místo s [pravidly chování](coc.md), kde nehrozí, že se někdo bude vysmívat tvému dotazu. Na rozdíl od dobrovolníků spravujících facebookové skupiny, klub má správce na plný úvazek, autora junior.guru Honzu Javorka. Ten moderuje, odpovídá, zve přednášející, vítá nové členy, otevírá nová témata a vylepšuje možnosti klubu.
 
 ## Proč zrovna Discord?
 
@@ -72,7 +72,7 @@ Jestli už Discord používáš a máš tam účet, stačí jej propojit s junio
 
 ## Proč je klub placený?
 
-Klub neprovozuje firma, ale jednotlivec, [Honza Javorek](#honza). Jedna osoba, rodina, nájem, jídlo, a tak dále. Chci na plný úvazek pracovat pro juniory, být jejich ambasadorem, průvodcem po nelehké cestě. Stejně jako třeba doktor, nejraději bych pomohl všem, ale musím z něčeho žít. Kdybych nabízel profesionální placené konzultace, mohl by si je dovolit jen málokdo. Díky klubu si ale může kousek toho, co dělám, předplatit skoro každý. Kromě toho, čím větší podíl mají individuální členství na mých příjmech, tím nezávislejší můžu být v informacích, které poskytuji. Klient je ten, kdo posílá peníze. Když to nejsou zaměstnavatelé juniorů nebo vzdělávací agentury, ale samotní junioři, mám rozvázané ruce v tom, co si můžu dovolit. Klidně se na moje příjmy mrkni, [čísla jsou veřejná](#honza).
+Klub neprovozuje firma, ale jednotlivec, Honza Javorek. Jedna osoba, rodina, nájem, jídlo, a tak dále. Chci na plný úvazek pracovat pro juniory, být jejich ambasadorem, průvodcem po nelehké cestě. Stejně jako třeba doktor, nejraději bych pomohl všem, ale musím z něčeho žít. Kdybych nabízel profesionální placené konzultace, mohl by si je dovolit jen málokdo. Díky klubu si ale může kousek toho, co dělám, předplatit skoro každý. Kromě toho, čím větší podíl mají individuální členství na mých příjmech, tím nezávislejší můžu být v informacích, které poskytuji. Klient je ten, kdo posílá peníze. Když to nejsou zaměstnavatelé juniorů nebo vzdělávací agentury, ale samotní junioři, mám rozvázané ruce v tom, co si můžu dovolit. Klidně se na moje příjmy mrkni, [čísla jsou veřejná](./about/finances.md).
 
 ## Jak být v klubu zdarma?
 
@@ -96,7 +96,7 @@ S největší pravděpodobností tě vyhodil proto, že nemáš vyplněny údaje
 
 ## Co když se mi nelíbí, co se strhlo z karty?
 
-Sice se to nikdy nestane, ale kdyby se to náhodou stalo, podívej se nejdříve do [nastavení](https://juniorguru.memberful.com/account), kde by měl být aktuální stav tvého předplatného. Jestliže vidíš nějaký nesoulad, neváhej napsat na {{ 'honza@junior.guru'|email_link }}, společně to objasníme. [Honza Javorek](#honza), provozovatel klubu, má možnost v případě jakéhokoliv problému strhnutou částku ručně vrátit zpět. Další detaily najdeš v [obchodních podmínkách](tos.md).
+Sice se to nikdy nestane, ale kdyby se to náhodou stalo, podívej se nejdříve do [nastavení](https://juniorguru.memberful.com/account), kde by měl být aktuální stav tvého předplatného. Jestliže vidíš nějaký nesoulad, neváhej napsat na {{ 'honza@junior.guru'|email_link }}, společně to objasníme. Honza Javorek, provozovatel klubu, má možnost v případě jakéhokoliv problému strhnutou částku ručně vrátit zpět. Další detaily najdeš v [obchodních podmínkách](tos.md).
 
 ## Jak zjistím stav svého předplatného?
 

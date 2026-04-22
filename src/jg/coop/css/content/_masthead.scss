@@ -97,7 +97,7 @@ $masthead-eggshell-height: map.get($spacers, 5);
     gap: map-get($spacers, 2);
     justify-content: space-around;
     padding: $spacer;
-    margin: 0;
+    margin: 0 $spacer;
     margin-top: map-get($spacers, 4);
     border: 2px solid $jg-yellow-dark;
     border-radius: $border-radius;
