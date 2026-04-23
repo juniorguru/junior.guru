@@ -198,7 +198,7 @@ def test_revenue_categories():
     ) == [
         ("inzerce nabídek práce", 20),
         ("dobrovolné příspěvky", 10),
-        ("příspěvky sponzorů", 4),
+        ("sponzoři", 4),
         ("členství v klubu", 1),
     ]
 
@@ -211,7 +211,7 @@ def test_revenue_categories_less():
         }
     ) == [
         ("inzerce nabídek práce", 20),
-        ("příspěvky sponzorů", 4),
+        ("sponzoři", 4),
     ]
 
 
