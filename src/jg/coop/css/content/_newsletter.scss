@@ -33,12 +33,12 @@
 
 .newsletter-note {
   @extend .form-text;
-  @extend .text-body-secondary;
   margin-top: $spacer;
+  color: var(--bs-secondary-color);
 }
 
 .newsletter-note a {
-  @extend .text-body-secondary;
+  color: var(--bs-secondary-color);
 }
 
 .newsletter-button {

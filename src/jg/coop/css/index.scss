@@ -18,6 +18,11 @@
 @import "../../../../node_modules/bootstrap/scss/utilities";
 
 /*
+  CUSTOM: GLOBALS
+*/
+@import "./globals";
+
+/*
   BOOTSTRAP: LAYOUT AND COMPONENTS
 */
 @import "../../../../node_modules/bootstrap/scss/accordion";
@@ -123,7 +128,7 @@ $bootstrap-icons-font-dir: "../../../../node_modules/bootstrap-icons/font/fonts"
 @import "./content/pagination";
 @import "./content/pricing";
 @import "./content/see-also";
-@import "./content/sponsor-avatars";
+@import "./content/sponsors";
 @import "./content/stage-cards";
 @import "./content/stories";
 @import "./content/table";

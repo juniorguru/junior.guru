@@ -1,33 +1,48 @@
 @use "sass:map";
+@use 'sass:color';
 
-$footer-gray-text: darken($white, 30%);
+@keyframes footer-progress-breathe {
+  0%,
+  68% {
+    transform: scaleX(1);
+  }
+
+  88% {
+    transform: scaleX(1.06);
+  }
+
+  91% {
+    transform: scaleX(1.08);
+  }
+
+  93% {
+    transform: scaleX(.98);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
 $footer-spacer-sm: map.get($spacers, 2);
 $footer-spacer: $spacer;
 $footer-spacer-md: $spacer * 2;
 
-html {
-  background: linear-gradient(to bottom, $jg-dark 0%, $jg-dark 50%, $jg-yellow 50%, $jg-yellow 100%);
-  background-color: $jg-dark;
-}
-
 .footer-dark-bg {
-  color: $white;
+  --bs-secondary-color: #{darken($jg-white, 20%)};
+  color: $jg-white;
   background-color: $jg-dark;
-
-  a {
-    color: $white;
-  }
-
-  .footer-subheading {
-    color: $footer-gray-text;
-  }
 }
 
 .footer-yellow-bg {
+  --bs-secondary-color: #{lighten($jg-dark, 20%)};
   background-color: $jg-yellow;
+}
 
+.footer-dark-bg,
+.footer-yellow-bg {
   a {
-    color: $jg-dark;
+    color: inherit;
   }
 }
 
@@ -73,13 +88,14 @@ html {
 }
 
 .footer-hr {
-  border-bottom: map.get($border-widths, 1) solid rgba($white, .2);
+  border-bottom: 1px solid rgba($white, .2);
 }
 
 .footer-columns {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: $footer-spacer-md;
+  row-gap: 2 * $footer-spacer-md;
+  column-gap: $footer-spacer-md;
 
   @include media-breakpoint-up(sm) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -87,14 +103,6 @@ html {
 
   @include media-breakpoint-up(lg) {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
-.footer-column .footer-heading {
-  margin-top: $footer-spacer-md;
-
-  @include media-breakpoint-up(lg) {
-    margin-top: 0;
   }
 }
 
@@ -136,6 +144,7 @@ html {
   @extend .h3;
   display: flex;
   gap: $footer-spacer-sm;
+  margin: $footer-spacer-md 0;
 }
 
 .footer-links {
@@ -162,25 +171,23 @@ html {
   @extend .progress;
   height: 1.8rem;
   margin: $footer-spacer 0;
-  background-color: darken($jg-blue, 15%);
+  background-color: color.mix($jg-pink, $jg-dark, 50%);
 }
 
 .footer-progress-bar {
   @extend .progress-bar;
+  font-weight: 600;
+  color: $jg-white;
+  background-color: $jg-pink;
+  transform-origin: left center;
+  animation: footer-progress-breathe 5s ease-in-out infinite;
 }
 
-.footer-progress-label {
-  @extend .list-unstyled;
-
+.footer-goal {
   display: flex;
   gap: $footer-spacer-sm;
+  align-items: center;
   justify-content: space-between;
-  width: 100%;
-}
-
-.footer-progress-label-item {
-  display: flex;
-  flex-direction: column;
 }
 
 .footer-featured {
@@ -215,4 +222,37 @@ html {
   object-fit: cover;
   object-position: center;
   border-radius: 100%;
+}
+
+.footer-sponsors {
+  display: flex;
+  flex-direction: column;
+  gap: $footer-spacer;
+  align-items: center;
+  padding: $footer-spacer;
+  color: $jg-dark;
+  background-color: $jg-white;
+  border-radius: $border-radius;
+
+  @include media-breakpoint-up(sm) {
+    padding: $footer-spacer-md;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: $footer-spacer;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: $footer-spacer-md;
+  }
+}
+
+.footer-love {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // gap: $footer-spacer-sm;
+  // font-size: map.get($spacers, 3);
+  // color: $jg-pink;
+  // animation: heartbeat 1s infinite;
 }

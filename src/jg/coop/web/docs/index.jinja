@@ -134,25 +134,3 @@ thumbnail_subheading: junior.guru
   ) }}
 </div>
 </section>
-
-
-<div class="section-background blue-light"><section class="section">
-<h2>Zdarma?</h2>
-  {% call lead() -%}
-    Cílem junior.guru je, aby co nejvíc lidí v Česku a na Slovensku mělo příležitost naučit se programovat.
-    Takže **všechno kromě klubu je zdarma**.
-    Provoz projektu financují členové [klubu](club.md) svým předplatným a firemní či individuální [sponzoři](love.jinja).
-  {%- endcall %}
-  <div class="mb-3">
-    {{ logos_sponsors_by_tier(sponsors_by_tier) }}
-  </div>
-  <ul class="sponsor-avatars">
-  {% for sponsor in sponsors_github|shuffle %}
-    <li class="sponsor-avatars-item">
-      <a href="{{ sponsor.url }}" target="_blank" rel="noopener">
-        {{ img('static/' + sponsor.avatar_path, sponsor.name, 50, 50) }}
-      </a>
-    </li>
-  {% endfor %}
-  </ul>
-</section></div>

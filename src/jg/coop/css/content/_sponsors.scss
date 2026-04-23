@@ -1,0 +1,45 @@
+@use "sass:map";
+
+.sponsors-logos,
+.sponsors-avatars {
+  @extend .list-unstyled;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.sponsors-logos {
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  gap: $spacer;
+}
+
+.sponsors-logos-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sponsors-avatars {
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  gap: .5rem;
+}
+
+.sponsors-avatars-item {
+  display: flex;
+  justify-content: center;
+}
+
+.sponsors-avatars-item img {
+  width: 100%;
+  height: auto;
+  background: $white;
+  border-radius: 100%;
+}
+
+.sponsors-note {
+  @extend .small;
+  margin: $spacer 0;
+  color: var(--bs-secondary-color);
+}

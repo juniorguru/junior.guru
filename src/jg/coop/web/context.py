@@ -46,6 +46,9 @@ def on_shared_context(context):
     context["today"] = today
     context["club_events_channel_url"] = CLUB_EVENTS_CHANNEL_URL
 
+    # main.html, index.jinja, about/*.md, love.jinja
+    context["sponsors_github"] = GitHubSponsor.listing()
+
     # main.html, about/*.md
     profit_ttm = Transaction.profit_ttm(today)
     context["profit_ttm"] = profit_ttm
@@ -80,10 +83,7 @@ def on_docs_context(context):
     context["handbook_pages_count"] = Page.handbook_count()
     context["jobs_listed_count"] = ListedJob.count()
 
-    # index.jinja, about/*.md, love.jinja
-    context["sponsors_github"] = GitHubSponsor.listing()
-
-    # index.jinja, club.md, about/*.md
+    # club.md, about/*.md
     context["sponsors_by_tier"] = Sponsor.tier_grouping()
 
     # club.md, handbook/cv.md, handbook/mental-health.md
@@ -199,6 +199,7 @@ def on_theme_context(context):
     context["promo_stories"] = Page.stories_listing()
     context["promo_events"] = Event.featured_listing()
     context["newsletter_subscribers_count"] = Followers.get_latest("newsletter").count
+    context["sponsors"] = Sponsor.listing()
 
 
 @db.connection_context()

@@ -1,3 +1,5 @@
+{% from 'macros.html' import img, logo with context -%}
+
 <!DOCTYPE html>
 <!--
 
@@ -7,51 +9,50 @@
 
 -->
 <html lang="cs" data-updated-at="{{ now }}">
-  <head prefix="og: https://ogp.me/ns# website: https://ogp.me/ns/website#">
-    <meta charset="utf-8">
-    {% block canonical %}<link rel="canonical" href="{{ page.canonical_url }}">{% endblock canonical %}
+<head prefix="og: https://ogp.me/ns# website: https://ogp.me/ns/website#">
+  <meta charset="utf-8">
+  {% block canonical %}<link rel="canonical" href="{{ page.canonical_url }}">{% endblock canonical %}
+
+  {% if page %}
+    <title>{{ page.meta.title }}</title>
+  {% else %}
+    <title>Stránka neexistuje</title>
+  {% endif %}
+
+  {% block meta %}
+    {% if page and page.meta.noindex %}<meta name="robots" content="noindex">{% endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Accept-CH" content="DPR,Viewport-Width,Width,Save-Data">
+
+    <link rel="dns-prefetch" href="https://sa.junior.guru">
+
+    <meta name="theme-color" content="#343434">
+    <link rel="stylesheet" href="{{ 'static/css/index.css'|url }}">
+    <link rel="preload" href="{{ ('static/assets/bootstrap-icons.woff2')|url }}" as="font" type="font/woff2" crossorigin="anonymous">
+    <script defer src="{{ 'static/js/index.js'|url }}"></script>
 
     {% if page %}
-      <title>{{ page.meta.title }}</title>
-    {% else %}
-      <title>Stránka neexistuje</title>
+      <meta property="og:title" content="{{ page.meta.title }}">
+      <meta property="og:url" content="{{ page.canonical_url }}">
+    {% endif %}
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="cs_CZ">
+
+    <link href="https://mastodonczech.cz/@honzajavorek" rel="me">
+    <meta name="fediverse:creator" content="@honzajavorek@mastodonczech.cz">
+    <meta name="twitter:creator" content="@honzajavorek">
+
+    {% if thumbnail_url %}
+    <meta property="og:image" content="{{ thumbnail_url }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="{{ thumbnail_url }}">
     {% endif %}
 
-    {% block meta %}
-      {% if page and page.meta.noindex %}<meta name="robots" content="noindex">{% endif %}
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta http-equiv="Accept-CH" content="DPR,Viewport-Width,Width,Save-Data">
-
-      <link rel="dns-prefetch" href="https://sa.junior.guru">
-
-      <meta name="theme-color" content="#343434">
-      <link rel="stylesheet" href="{{ 'static/css/index.css'|url }}">
-      <link rel="preload" href="{{ ('static/assets/bootstrap-icons.woff2')|url }}" as="font" type="font/woff2" crossorigin="anonymous">
-      <script defer src="{{ 'static/js/index.js'|url }}"></script>
-
-      {% if page %}
-        <meta property="og:title" content="{{ page.meta.title }}">
-        <meta property="og:url" content="{{ page.canonical_url }}">
-      {% endif %}
-      <meta property="og:type" content="website">
-      <meta property="og:locale" content="cs_CZ">
-
-      <link href="https://mastodonczech.cz/@honzajavorek" rel="me">
-      <meta name="fediverse:creator" content="@honzajavorek@mastodonczech.cz">
-      <meta name="twitter:creator" content="@honzajavorek">
-
-      {% if thumbnail_url %}
-      <meta property="og:image" content="{{ thumbnail_url }}">
-      <meta property="og:image:width" content="1200">
-      <meta property="og:image:height" content="630">
-      <meta name="twitter:card" content="summary_large_image">
-      <meta name="twitter:image" content="{{ thumbnail_url }}">
-      {% endif %}
-
-      {% if page and page.meta.description %}<meta name="description" content="{{ page.meta.description }}">{% endif %}
-    {% endblock meta %}
-  </head>
-{% from 'macros.html' import img with context %}
+    {% if page and page.meta.description %}<meta name="description" content="{{ page.meta.description }}">{% endif %}
+  {% endblock meta %}
+</head>
 <body>
   {#
   <a href="https://ep2025.europython.eu/beginners-day-unconference/" class="announcement" target="_blank" rel="noopener">
@@ -145,33 +146,87 @@
     </footer>
   </div>
 
-  <!-- <footer class="footer-section footer-columns">
-    <div class="footer-column">
-      <h3 class="footer-subheading">Ukázková sekce 1</h3>
-    </div>
-    <div class="footer-column">
-      <h3 class="footer-subheading">Ukázková sekce 2</h3>
-    </div>
-    <div class="footer-column">
-      <h3 class="footer-subheading">Ukázková sekce 3</h3>
-    </div>
-    <div class="footer-column">
-      <h3 class="footer-subheading">Ukázková sekce 4</h3>
-    </div>
-  </footer> -->
-
   <div class="footer-dark-bg">
+    {% if page.url not in ['love/', 'club/'] %}
     <footer class="footer-section footer-columns footer-hr">
+      <div class="footer-column wide">
+        <p>
+          Na junior.guru je kromě klubu všechno <strong>zdarma</strong>.
+          Bez paywallu, reklamy, affiliate odkazů, bez cookies.
+          Provoz financuje {{ members_total_count }} členů klubu a tito sponzoři:
+        </p>
+
+        <div class="footer-sponsors">
+          <ul class="sponsors-logos">
+          {% for sponsor in sponsors %}
+            {{ logo(sponsor.name, sponsor.logo_path, sponsor.url, class_prefix="sponsors-logos") }}
+          {% endfor %}
+          </ul>
+          <ul class="sponsors-avatars">
+          {% for sponsor in sponsors_github|shuffle %}
+            <li class="sponsors-avatars-item">
+              <a href="{{ sponsor.url }}" target="_blank" rel="noopener">
+                {{ img('static/' + sponsor.avatar_path, sponsor.name, 50, 50) }}
+              </a>
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3 class="footer-heading">{{ 'heart-pulse-fill'|icon }} Čistý zisk</h3>
+        {% set profit_goal_pct = (profit_ttm / 80000) * 100 %}
+        {% set profit_goal_pct_clamped = [profit_goal_pct, 100]|min %}
+        <div class="footer-progress" role="progressbar" aria-label="Aktuální čistý zisk projektu"
+          aria-valuenow="{{ profit_goal_pct|round(1) }}" aria-valuemin="0" aria-valuemax="100">
+          <div class="footer-progress-bar" style="width: {{ profit_goal_pct_clamped|round(1) }}%;">
+            {{ profit_goal_pct|round|int }} %
+          </div>
+        </div>
+        <p class="footer-goal">
+          <span>Teď</span>
+          <strong class="h4">{{ profit_ttm|thousands }} Kč/měs</strong>
+        </p>
+        <p class="footer-goal">
+          <span>Cíl</span>
+          <span>80.000 Kč/měs</span>
+        </p>
+        <p class="sponsors-note">
+          Zdroje příjmů:
+          {% for name, value_pct in revenue_ttm_breakdown|money_breakdown_ptc|revenue_categories %}
+            {{ value_pct }} % {{ name }}
+            {%- if not loop.last %}, {% endif %}
+          {% endfor %}
+        </p>
+      </div>
+
+      <div class="footer-column footer-love">
+        <!-- <a href="{{ pages|docs_url("about/finances.md")|url }}" class="btn btn-outline-light float-end">
+          {{ 'graph-up'|icon }} Další čísla a grafy
+        </a> -->
+        <a href="{{ pages|docs_url("love.jinja")|url }}" class="love-button btn-lg">
+          {{ 'heart-fill'|icon }} Pošli LOVE
+        </a>
+      </div>
+    </footer>
+    {% endif %}
+
+    <footer class="footer-section footer-columns">
       <div class="footer-column">
         {{ img('static/logo-i.svg', 'Logo junior.guru', 90, 40, class='footer-logo') }}
 
-        <!-- <div class="footer-subsection">
-          <p>
-            Najít první práci v IT je těžší, než ti slibovali
-          </p>
-        </div> -->
+        <ul class="footer-list">
+          <li>
+            <strong class="footer-list-heading">E-mail</strong>
+            <span class="footer-list-data">{{ 'honza@junior.guru'|email_link }}</span>
+          </li>
+          <li>
+            <strong class="footer-list-heading">IČO</strong>
+            <span class="footer-list-data"><a href="https://ares.gov.cz/ekonomicke-subjekty?ico=74279858" target="_blank" rel="noopener">74279858</a></span>
+          </li>
+        </ul>
 
-        <h3 class="footer-subheading">{{ 'play-circle-fill'|icon }} Sociální sítě</h3>
         <ul class="footer-icons">
           <li>
             <a href="https://www.youtube.com/@juniordotguru" target="_blank" rel="noopener">
@@ -202,50 +257,33 @@
       </div>
 
       <div class="footer-column">
-        <h3 class="footer-subheading">{{ 'pie-chart-fill'|icon }} Zdroje příjmů projektu</h3>
-        <ul class="footer-list">
-          {% for name, value_pct in revenue_ttm_breakdown|money_breakdown_ptc|revenue_categories %}
+        <ul class="footer-links">
           <li>
-            <strong class="footer-list-heading">{{ value_pct }} %</strong>
-            <span class="footer-list-data">{{ name }}</span>
+            <a href="{{ pages|docs_url('about/contact.md')|url }}">Kontakt</a>
           </li>
-          {% endfor %}
-        </ul>
-
-        <h3 class="footer-subheading">{{ 'heart-pulse-fill'|icon }} Čistý zisk projektu</h3>
-        {% set profit_goal_pct = (profit_ttm / 80000) * 100 %}
-        {% set profit_goal_pct_clamped = [profit_goal_pct, 100]|min %}
-        <div class="footer-progress" role="progressbar" aria-label="Aktuální čistý zisk projektu"
-          aria-valuenow="{{ profit_goal_pct|round(1) }}" aria-valuemin="0" aria-valuemax="100">
-          <div class="footer-progress-bar" style="width: {{ profit_goal_pct_clamped|round(1) }}%;">
-            {{ profit_goal_pct|round|int }} %
-          </div>
-        </div>
-        <ul class="footer-progress-label">
-          <li class="footer-progress-label-item">
-            <small>Teď</small>
-            <strong>{{ profit_ttm|thousands }} Kč/měs</strong>
+          <li>
+            <a href="{{ pages|docs_url('about/mission.md')|url }}">Mise a hodnoty</a>
           </li>
-          <li class="footer-progress-label-item">
-            <small>Cíl</small>
-            <strong>80.000 Kč/měs</strong>
+          <li>
+            <a href="{{ pages|docs_url('coc.md')|url }}">Pravidla chování</a>
+          </li>
+          <li>
+            <a href="{{ pages|docs_url('tos.md')|url }}">Obchodní podmínky</a>
+          </li>
+          <li>
+            <a href="{{ pages|docs_url('privacy.md')|url }}">Ochrana osobních údajů</a>
           </li>
         </ul>
-
-        <!-- {% if page.url not in ['love/', 'club/'] %}
-          <a href="{{ pages|docs_url("love.jinja")|url }}" class="love-button">
-            {{ 'heart-fill'|icon }}
-            Pošli LOVE
-          </a>
-        {% endif %} -->
+        <p class="small">
+          Licence obsahu: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.cs" target="_blank" rel="noopener">CC BY-SA 4.0</a>
+        </p>
       </div>
 
-      <div class="footer-column">
-        <h3 class="footer-subheading">{{ 'person-circle'|icon }} Provozovatel</h3>
+      <div class="footer-column wide">
         {% set years = today.year - 2015 %}
-        <p>
-          Honza Javorek pomáhá začátečníkům v IT už {{ years }} {{ years|nplurals("rok", "roky", "let") }}.
-        </p>
+        <h4 class="footer-heading mb-3">
+          Honza Javorek pomáhá juniorům už {{ years }} {{ years|nplurals("rok", "roky", "let") }}
+        </h4>
         {{ img('static/avatars-participants/honza-javorek.jpg', 'Honza Javorek', 100, 100, class='footer-avatar') }}
         <p class="small">
           Začal dobrovolnicky v PyLadies.
@@ -259,35 +297,6 @@
           Úspěchy i selhání upřímně každý týden popisuje na svém blogu.
           Záměrem je pomáhat a mít na živobytí, ne zbohatnout.
         </p>
-      </div>
-
-      <div class="footer-column">
-        <h3 class="footer-subheading">{{ 'envelope-fill'|icon }} Kontakt</h3>
-        <ul class="footer-list">
-          <li>
-            <strong class="footer-list-heading">E-mail</strong>
-            <span class="footer-list-data">{{ 'honza@junior.guru'|email_link }}</span>
-          </li>
-          <li>
-            <strong class="footer-list-heading">IČO</strong>
-            <span class="footer-list-data"><a href="https://ares.gov.cz/ekonomicke-subjekty?ico=74279858" target="_blank" rel="noopener">74279858</a></span>
-          </li>
-        </ul>
-
-        <h3 class="footer-subheading">{{ 'info-circle-fill'|icon }} Další info</h3>
-        <ul class="footer-links">
-          <li>
-            <a href="{{ pages|docs_url('coc.md')|url }}">Pravidla chování</a>
-          </li>
-          <li>
-            <a href="{{ pages|docs_url('tos.md')|url }}">Obchodní podmínky</a>
-          </li>
-          <li>
-            <a href="{{ pages|docs_url('privacy.md')|url }}">Ochrana osobních údajů</a>
-          </li>
-        </ul>
-
-        <a href="{{ pages|docs_url('about/index.md')|url }}" class="btn btn-primary">Vše o projektu</a>
       </div>
     </footer>
   </div>
