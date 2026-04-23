@@ -1302,3 +1302,4 @@
 {"_id": "27587239817", "amount": -2000, "category": "production", "happened_on": "2026-04-16"}
 {"_id": "27592009061", "amount": 5637, "category": "memberships", "happened_on": "2026-04-20"}
 {"_id": "27595707169", "amount": 3662, "category": "donations", "happened_on": "2026-04-22"}
+{"_id": "27596194988", "amount": 6, "category": "donations", "happened_on": "2026-04-22"}
