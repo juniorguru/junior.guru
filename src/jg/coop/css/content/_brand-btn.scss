@@ -1,6 +1,6 @@
 @use "sass:map";
 
-.brand-button {
+.brand-btn {
   @extend .btn;
   margin-bottom: map.get($spacers, 1);
 
@@ -15,7 +15,7 @@
   }
 }
 
-.brand-button.spotify {
+.brand-btn.spotify {
   @include button-variant(
     #1db954,
     #1db954,
@@ -26,7 +26,7 @@
   );
 }
 
-.brand-button.google {
+.brand-btn.google {
   @include button-variant(
     #4285f4,
     #4285f4,
@@ -37,7 +37,7 @@
   );
 }
 
-.brand-button.microsoft {
+.brand-btn.microsoft {
   @include button-variant(
     #0083bf,
     #0083bf,
@@ -48,7 +48,7 @@
   );
 }
 
-.brand-button.apple-podcasts {
+.brand-btn.apple-podcasts {
   @include button-variant(
     #872ec4,
     #872ec4,
@@ -59,7 +59,7 @@
   );
 }
 
-.brand-button.apple {
+.brand-btn.apple {
   @include button-variant(
     #000,
     #000,
@@ -70,7 +70,7 @@
   );
 }
 
-.brand-button.youtube {
+.brand-btn.youtube {
   @include button-variant(
     #f00,
     #f00,
@@ -81,7 +81,7 @@
   );
 }
 
-.brand-button.rss {
+.brand-btn.rss {
   @include button-variant(
     #f26522,
     #f26522,
@@ -92,7 +92,7 @@
   );
 }
 
-.brand-button.discord {
+.brand-btn.discord {
   @include button-variant(
     #5865f2,
     #5865f2,
@@ -103,7 +103,7 @@
   );
 }
 
-.brand-button.buttondown {
+.brand-btn.buttondown {
   @include button-variant(
     #046afe,
     #046afe,
@@ -114,7 +114,7 @@
   );
 }
 
-.brand-button.email {
+.brand-btn.email {
   @include button-variant(
     $jg-dark,
     $jg-dark,
@@ -125,7 +125,7 @@
   );
 }
 
-.brand-button.calendar {
+.brand-btn.calendar {
   @include button-variant(
     #4285f4,
     #4285f4,

@@ -55,6 +55,8 @@ $footer-spacer-md: $spacer * 2;
   @extend .fs-4;
   @extend .font-monospace;
   @extend .text-uppercase;
+  display: flex;
+  gap: 1rem;
 }
 
 .footer-subheading {
@@ -122,10 +124,6 @@ $footer-spacer-md: $spacer * 2;
   @include media-breakpoint-up(sm) {
     grid-column: span 2;
   }
-
-  @include media-breakpoint-up(lg) {
-    padding-right: $footer-spacer-md - $spacer;
-  }
 }
 
 .footer-subsection {
@@ -153,18 +151,6 @@ $footer-spacer-md: $spacer * 2;
   display: flex;
   flex-direction: column;
   gap: $footer-spacer-sm;
-}
-
-.footer-avatar {
-  float: right;
-  width: 4rem;
-  height: 4rem;
-  margin-top: .3rem;
-  margin-bottom: .1rem;
-  margin-left: 1rem;
-  clip-path: circle(50%);
-  shape-outside: circle(50%);
-  border-radius: 100%;
 }
 
 .footer-progress {
@@ -247,12 +233,47 @@ $footer-spacer-md: $spacer * 2;
   }
 }
 
+.footer-subcolumns {
+  display: flex;
+  gap: $footer-spacer-md;
+}
+
+.footer-subcolumn-wide {
+  flex: 1 1 auto;
+  min-width: 50%;
+}
+
 .footer-love {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-love img {
+  width: 8rem;
+  height: auto;
+  margin-top: -2 * $spacer;
+  margin-bottom: map-get($spacers, 4);
+
+  @include media-breakpoint-up(sm) {
+    margin-top: 0;
+  }
+}
+
+.footer-love a {
+  @extend .stretched-link;
+}
+
+.footer-avatar {
   display: flex;
   align-items: center;
   justify-content: center;
-  // gap: $footer-spacer-sm;
-  // font-size: map.get($spacers, 3);
-  // color: $jg-pink;
-  // animation: heartbeat 1s infinite;
+}
+
+.footer-avatar img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 100%;
 }

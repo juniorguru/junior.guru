@@ -24,6 +24,7 @@
 
 .newsletter-email-control {
   @extend .form-control;
+  border-color: $jg-blue;
 }
 
 .newsletter-submit-control {

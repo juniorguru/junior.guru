@@ -174,40 +174,41 @@
         </div>
       </div>
 
-      <div class="footer-column">
-        <h3 class="footer-heading">{{ 'heart-pulse-fill'|icon }} Čistý zisk</h3>
-        {% set profit_goal_pct = (profit_ttm / 80000) * 100 %}
-        {% set profit_goal_pct_clamped = [profit_goal_pct, 100]|min %}
-        <div class="footer-progress" role="progressbar" aria-label="Aktuální čistý zisk projektu"
-          aria-valuenow="{{ profit_goal_pct|round(1) }}" aria-valuemin="0" aria-valuemax="100">
-          <div class="footer-progress-bar" style="width: {{ profit_goal_pct_clamped|round(1) }}%;">
-            {{ profit_goal_pct|round|int }} %
+      <div class="footer-column wide footer-subcolumns">
+        <div class="footer-subcolumn-wide">
+          <h3 class="footer-heading">{{ 'heart-pulse-fill'|icon }} Čistý zisk</h3>
+          {% set profit_goal_pct = (profit_ttm / 80000) * 100 %}
+          {% set profit_goal_pct_clamped = [profit_goal_pct, 100]|min %}
+          <div class="footer-progress" role="progressbar" aria-label="Aktuální čistý zisk projektu"
+            aria-valuenow="{{ profit_goal_pct|round(1) }}" aria-valuemin="0" aria-valuemax="100">
+            <div class="footer-progress-bar" style="width: {{ profit_goal_pct_clamped|round(1) }}%;">
+              {{ profit_goal_pct|round|int }} %
+            </div>
           </div>
+          <p class="footer-goal">
+            <span>Teď</span>
+            <strong class="h4">{{ profit_ttm|thousands }} Kč/měs</strong>
+          </p>
+          <p class="footer-goal">
+            <span>Cíl</span>
+            <span>80.000 Kč/měs</span>
+          </p>
+          <p class="sponsors-note">
+            Zdroje příjmů:
+            {% for name, value_pct in revenue_ttm_breakdown|money_breakdown_ptc|revenue_categories %}
+              {{ value_pct }} % {{ name }}
+              {%- if not loop.last %}, {% endif %}
+            {%- endfor %}.
+            <a href="{{ pages|docs_url('about/finances.md')|url }}">Všechna čísla a grafy</a>
+          </p>
         </div>
-        <p class="footer-goal">
-          <span>Teď</span>
-          <strong class="h4">{{ profit_ttm|thousands }} Kč/měs</strong>
-        </p>
-        <p class="footer-goal">
-          <span>Cíl</span>
-          <span>80.000 Kč/měs</span>
-        </p>
-        <p class="sponsors-note">
-          Zdroje příjmů:
-          {% for name, value_pct in revenue_ttm_breakdown|money_breakdown_ptc|revenue_categories %}
-            {{ value_pct }} % {{ name }}
-            {%- if not loop.last %}, {% endif %}
-          {% endfor %}
-        </p>
-      </div>
-
-      <div class="footer-column footer-love">
-        <!-- <a href="{{ pages|docs_url("about/finances.md")|url }}" class="btn btn-outline-light float-end">
-          {{ 'graph-up'|icon }} Další čísla a grafy
-        </a> -->
-        <a href="{{ pages|docs_url("love.jinja")|url }}" class="love-button btn-lg">
-          {{ 'heart-fill'|icon }} Pošli LOVE
-        </a>
+        <div class="footer-subcolumn-narrow footer-love">
+          {{ img('static/heart-i.svg', 'srdíčko', 80, 80, lazy=False, class="heartbeat-shrink") }}
+          <a href="{{ pages|docs_url("love.jinja")|url }}" class="love-btn btn-lg">
+            <!-- {{ 'heart-fill'|icon }} -->
+            Pošli LOVE
+          </a>
+        </div>
       </div>
     </footer>
     {% endif %}
@@ -262,6 +263,9 @@
             <a href="{{ pages|docs_url('about/contact.md')|url }}">Kontakt</a>
           </li>
           <li>
+            <a href="{{ pages|docs_url('about/finances.md')|url }}">Finanční výsledky</a>
+          </li>
+          <li>
             <a href="{{ pages|docs_url('about/mission.md')|url }}">Mise a hodnoty</a>
           </li>
           <li>
@@ -282,22 +286,28 @@
       <div class="footer-column wide">
         {% set years = today.year - 2015 %}
         <h4 class="footer-heading mb-3">
-          Honza Javorek pomáhá juniorům už {{ years }} {{ years|nplurals("rok", "roky", "let") }}
+          <!-- {{ 'person-circle'|icon }} -->
+          Honza Javorek pomáhá juniorům už {{ years }} {{ years|nplurals("rok", "roky", "let") }}
         </h4>
-        {{ img('static/avatars-participants/honza-javorek.jpg', 'Honza Javorek', 100, 100, class='footer-avatar') }}
-        <p class="small">
-          Začal dobrovolnicky v PyLadies.
-          Praktické rady a pracovní nabídky dal na jedno místo,
-          a tak vzniklo junior.guru.
-          Z party nadšenců okolo projektu se pak zrodila komunita.
-          Všechna čísla jsou veřejná, licence obsahu i kódu je otevřená.
-        </p>
-        <p class="small">
-          Honza to táhne na volné noze a na většinu věcí je sám.
-          Úspěchy i selhání upřímně každý týden popisuje na svém blogu.
-          Záměrem je pomáhat a mít na živobytí, ne zbohatnout.
-        </p>
-      </div>
+        <div class="footer-subcolumns">
+          <div class="footer-subcolumn-wide">
+            <p class="small">
+              Začal dobrovolnicky v PyLadies.
+              Praktické rady a pracovní nabídky dal na jedno místo,
+              a tak vzniklo junior.guru.
+              Z party nadšenců okolo projektu se pak zrodila komunita.
+              Všechna čísla jsou veřejná, licence obsahu i kódu je otevřená.
+            </p>
+            <p class="small">
+              Honza to táhne na volné noze a na většinu věcí je sám.
+              Úspěchy i selhání upřímně každý týden popisuje na svém blogu.
+              Záměrem je pomáhat a mít na živobytí, ne zbohatnout.
+            </p>
+          </div>
+          <div class="footer-subcolumn-narrow footer-avatar">
+            {{ img('static/avatars-participants/honza-javorek.jpg', 'Honza Javorek', 100, 100) }}
+          </div>
+        </div>
     </footer>
   </div>
 

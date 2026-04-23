@@ -25,7 +25,7 @@ Honza se ale nakonec vždy **snaží mít na prvním místě dobro samotných ju
 Ačkoliv dělá obchody s firmami, zachovává si nezávislost a nenechává se ovlivnit ve prospěch konkrétního produktu.
 
 <p class="text-center">
-  <a href="{{ pages|docs_url("love.jinja")|url }}" class="love-button btn-lg pulse">{{ 'heart-fill'|icon }} Pošli LOVE</a>
+  <a href="{{ pages|docs_url("love.jinja")|url }}" class="love-btn btn-lg pulse">{{ 'heart-fill'|icon }} Pošli LOVE</a>
 </p>
 
 {% for tier, sponsors in sponsors_by_tier %}

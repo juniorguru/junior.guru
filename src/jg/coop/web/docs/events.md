@@ -17,31 +17,31 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
 
 <div class="standout">
   <a
-    class="brand-button google"
+    class="brand-btn google"
     target="_blank"
     rel="noopener" href="https://calendar.google.com/calendar/u/0/r?cid=cc8h31glt4bj55c8arf8jvqivf5q6vkd%40import.calendar.google.com">
     {{ 'google'|icon }} Google Kalendář
   </a>
   <a
-    class="brand-button microsoft"
+    class="brand-btn microsoft"
     target="_blank"
     rel="noopener" href="https://outlook.live.com/calendar/0/addcalendar?url=webcal%3A%2F%2Fjunior.guru%2Fapi%2Fevents.ics">
     {{ 'microsoft'|icon }} Outlook Kalendář
   </a>
   <a
-    class="brand-button apple"
+    class="brand-btn apple"
     target="_blank"
     rel="noopener" href="webcal://junior.guru/api/events.ics">
     {{ 'apple'|icon }} Apple Kalendář
   </a>
   <a
-    class="brand-button youtube"
+    class="brand-btn youtube"
     target="_blank"
     rel="noopener" href="https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA">
     {{ 'youtube'|icon }} YouTube
   </a>
   <a
-    class="brand-button email"
+    class="brand-btn email"
     href="{{ pages|docs_url('news.jinja')|url }}">
     {{ 'envelope-paper-fill'|icon }} Newsletter
   </a>

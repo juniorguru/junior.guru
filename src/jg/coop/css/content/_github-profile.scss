@@ -36,6 +36,8 @@
 
 .github-profile-input {
   @extend .form-control;
+  border-color: $jg-blue;
+  border-width: 2px;
 }
 
 .github-profile-button {
