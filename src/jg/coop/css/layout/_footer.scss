@@ -1,5 +1,5 @@
 @use "sass:map";
-@use 'sass:color';
+@use "sass:color";
 
 @keyframes footer-progress-breathe {
   0%,
@@ -29,13 +29,13 @@ $footer-spacer: $spacer;
 $footer-spacer-md: $spacer * 2;
 
 .footer-dark-bg {
-  --bs-secondary-color: #{darken($jg-white, 20%)};
+  --bs-secondary-color: #{color.adjust($jg-white, $lightness: -20%)};
   color: $jg-white;
   background-color: $jg-dark;
 }
 
 .footer-yellow-bg {
-  --bs-secondary-color: #{lighten($jg-dark, 20%)};
+  --bs-secondary-color: #{color.adjust($jg-dark, $lightness: 20%)};
   background-color: $jg-yellow;
 }
 
@@ -212,7 +212,7 @@ $footer-spacer-md: $spacer * 2;
 }
 
 .footer-featured-link:hover {
-  color: darken($jg-dark, 10%);
+  color: color.adjust($jg-dark, $lightness: -10%);
   text-decoration: underline;
 }
 
