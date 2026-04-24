@@ -179,12 +179,12 @@ V ideálním případě by stačilo individuální členství lidí v klubu, pro
                 'backgroundColor': '#1755d1',
             },
             {
-                'label': 'příspěvky sponzorů',
+                'label': 'sponzoři',
                 'data': charts.revenue_breakdown.pop('sponsorships'),
                 'backgroundColor': '#638cdd',
             },
             {
-                'label': 'inzerce nabídek práce',
+                'label': 'inzerce práce',
                 'data': charts.revenue_breakdown.pop('jobs'),
                 'backgroundColor': '#421bd4',
             },
