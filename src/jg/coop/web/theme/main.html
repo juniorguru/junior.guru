@@ -62,25 +62,35 @@
   #}
   <header id="header" class="mainnav">
     <nav class="mainnav-container">
+      {% set main_nav_items = nav|mainnav|list %}
+
       <a class="mainnav-brand" href="{{ pages|docs_url('index.jinja')|url }}">
         {{ img('static/logo.svg', 'logo junior.guru', 90, 40, lazy=False) }}
       </a>
+
       <div class="mainnav-buttons">
-        {% if page.url not in ['love/', 'club/'] %}
-        <a href="{{ pages|docs_url('love.jinja')|url }}" class="love-heart" title="Klikni!">
-          {{ 'heart-fill'|icon }}
+        <a href="https://juniorguru.memberful.com/" target="_blank" rel="noopener" class="mainnav-btn account">
+          {{ 'gear-fill'|icon }} Účet
         </a>
+        {% set club_nav_item = main_nav_items|selectattr("url", "equalto", "club/")|first %}
+        {% if not club_nav_item.is_active %}
+          <a class="mainnav-btn club" href="{{ club_nav_item.url|url }}">
+            {{ 'plus-circle-fill'|icon }} Přidej se
+          </a>
         {% endif %}
       </div>
+
       {% if nav %}
       <ul class="mainnav-items">
-        {% for nav_item in nav|mainnav %}
+        {% for nav_item in main_nav_items %}
+        {% if nav_item != club_nav_item %}
         <li class="mainnav-item">
           <a {% if nav_item.is_active %}class="mainnav-link active" aria-current="page" {% else %}class="mainnav-link" {% endif
             %} href="{{ nav_item.url|url }}">
             {{ nav_item.title }}
           </a>
         </li>
+        {% endif %}
         {% endfor %}
       </ul>
       {% endif %}

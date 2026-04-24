@@ -58,4 +58,35 @@
 
 .mainnav-buttons {
   @extend .order-md-last;
+  display: flex;
+  gap: $spacer;
+}
+
+.mainnav-btn {
+  @extend .btn;
+  @extend .btn-sm;
+}
+
+.mainnav-btn.account {
+  @include button-outline-variant($jg-yellow-dark);
+
+  --#{$prefix}btn-color: #{$jg-dark};
+  --#{$prefix}btn-disabled-color: #{$jg-dark};
+}
+
+.mainnav-btn.club {
+  @extend .btn-dark;
+
+  --#{$prefix}btn-color: #{$jg-yellow};
+  --#{$prefix}btn-hover-bg: #{mix($jg-yellow, $jg-dark, $btn-hover-bg-tint-amount)};
+  --#{$prefix}btn-hover-border-color: #{mix($jg-yellow, $jg-dark, $btn-hover-border-tint-amount)};
+  --#{$prefix}btn-hover-color: #{$jg-yellow};
+  --#{$prefix}btn-active-bg: #{mix($jg-yellow, $jg-dark, $btn-active-bg-tint-amount)};
+  --#{$prefix}btn-active-border-color: #{mix($jg-yellow, $jg-dark, $btn-active-border-tint-amount)};
+  --#{$prefix}btn-active-color: #{$jg-yellow};
+  --#{$prefix}btn-disabled-color: #{$jg-yellow};
+}
+
+.mainnav-buttons .bi {
+  margin-right: map-get($spacers, 1);
 }
