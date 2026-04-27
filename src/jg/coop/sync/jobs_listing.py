@@ -1,6 +1,13 @@
+import logging
 from datetime import date, timedelta
 
 import click
+from tenacity import (
+    before_sleep_log,
+    retry,
+    retry_if_exception_type,
+    stop_after_attempt,
+)
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import apify, loggers
@@ -60,5 +67,11 @@ def main(actor_name: str):
 
 
 @cache(expire=timedelta(hours=6), tag="job-checks")
+@retry(
+    retry=retry_if_exception_type(RuntimeError),
+    stop=stop_after_attempt(2),
+    reraise=True,
+    before_sleep=before_sleep_log(logger, logging.WARNING),
+)
 def check_jobs(actor_name: str, urls: list[str]) -> list[dict]:
     return apify.run(actor_name, {"links": [{"url": url} for url in urls]})
