@@ -1,17 +1,5 @@
 @use "sass:map";
 
-@keyframes heartbeat-grow {
-  0%,
-  30%,
-  100% {
-    scale: 1;
-  }
-  15% {
-    color: $jg-pink-dark;
-    scale: 1.4;
-  }
-}
-
 @keyframes heartbeat-shrink {
   0%,
   30%,
