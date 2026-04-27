@@ -21,6 +21,10 @@ def raw_info():
         ("https://www.youtube.com/watch?v=0v5K4GvK4Gs", "0v5K4GvK4Gs"),
         ("https://youtu.be/0v5K4GvK4Gs", "0v5K4GvK4Gs"),
         (
+            "https://www.youtube.com/embed/0v5K4GvK4Gs?&wmode=opaque&rel=0",
+            "0v5K4GvK4Gs",
+        ),
+        (
             "https://www.youtube.com/watch?v=3-wsqhCK-wU&list=PLhB6F20C-jTPITEXEHus6fVZDfNxzRbv_&index=5",
             "3-wsqhCK-wU",
         ),

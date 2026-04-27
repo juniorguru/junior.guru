@@ -4,21 +4,13 @@
 
 https://www.youtube.com/watch?v=vaxHbhk2fL8
 
-Do týmu hledáme nadšeného či nadšenou Front-end Developera/ku pro práci
-na úspěšných a smysluplných interních produktech. Přidáš se k nám?
+Do týmu hledáme nadšeného či nadšenou Front-end Developera/ku pro práci na úspěšných a smysluplných interních produktech. Přidáš se k nám?
 
 **Kdo jsme?**
 
-Jsme norsko-česká společnost Papirfly (dříve BrandMaster). Spolu s více
-jak 200 zaměstnanci po celém světě vyvíjíme inovativní nástroje pro
-digitalizaci marketingu a pomáháme s efektivní správou značky firmám
-jako BMW, Helly Hansen, PepsiCo a více než 1.500 dalším. Každý den
-používá naše nástroje přes milion marketérů a designérů.
+Jsme norsko-česká společnost Papirfly (dříve BrandMaster). Spolu s více jak 200 zaměstnanci po celém světě vyvíjíme inovativní nástroje pro digitalizaci marketingu a pomáháme s efektivní správou značky firmám jako BMW, Helly Hansen, PepsiCo a více než 1.500 dalším. Každý den používá naše nástroje přes milion marketérů a designérů.
 
-Od roku 2022 je majoritním vlastníkem Papirfly největší evropský
-technologický fond Verdane, který ze své pozice dále podporuje globální
-růst společnosti. Stále tak potřebujeme další chytré a kreativní hlavy,
-které nám pomůžou dobýt svět. 😊
+Od roku 2022 je majoritním vlastníkem Papirfly největší evropský technologický fond Verdane, který ze své pozice dále podporuje globální růst společnosti. Stále tak potřebujeme další chytré a kreativní hlavy, které nám pomůžou dobýt svět. 😊
 
 **Jak poznáš, že je Papirfly pro tebe to pravé?**
 
@@ -28,7 +20,7 @@ které nám pomůžou dobýt svět. 😊
 - Přicházíš s vlastními nápady, dokážeš prezentovat své názory a nad věcmi přemýšlíš v souvislostech.
 - Když uděláš chybu, dokážeš to přiznat a poučit se z ní. Umíš nést zodpovědnost.
 - Nebojíš se ozvat, když si s něčím nevíš rady, a rád pomůžeš, když druzí nevědí jak dále.
-- Zvládáš plynule komunikovat nejen v češtině, ale i v angličtině.
+- Zvládáš plynule komunikovat nejen v češtině, ale i v angličtině.
 
 **Tohle je náš stack, se kterým budeš pracovat (není podmínkou znát všechno):**
 
@@ -49,5 +41,4 @@ které nám pomůžou dobýt svět. 😊
 
 **Líbí? To máme radost! Co dál?**
 
-Dej nám o sobě vědět! Pošli nám prosím svoje CV / odkaz na LinkedIn
-profil. Budeme se těšit na naše první společné kafe či čaj. 😊
+Dej nám o sobě vědět! Pošli nám prosím svoje CV / odkaz na LinkedIn profil. Budeme se těšit na naše první společné kafe či čaj. 😊

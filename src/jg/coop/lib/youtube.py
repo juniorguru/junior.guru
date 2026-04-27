@@ -10,7 +10,16 @@ from jg.coop.lib.cache import cache
 
 
 YOUTUBE_URL_RE = re.compile(
-    r"(youtube\.com.+watch\?.*v=|youtube\.com/live/|youtu\.be/)([\w\-\_]+)"
+    r"""
+        (
+            youtube\.com.+watch\?.*v=   # standard watch URL with v=...
+            | youtube\.com/live/        # live URL
+            | youtube\.com/embed/       # embedded URL
+            | youtu\.be/                # short URL
+        )
+        ([\w\-_]+)                      # video ID
+    """,
+    re.VERBOSE,
 )
 
 
