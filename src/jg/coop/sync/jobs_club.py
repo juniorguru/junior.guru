@@ -2,6 +2,7 @@ import asyncio
 from datetime import date, timedelta
 from enum import StrEnum
 from pathlib import Path
+from textwrap import shorten
 
 import click
 import requests
@@ -21,6 +22,8 @@ from jg.coop.models.job import DiscordJob, ListedJob
 JOBS_REPEATING_PERIOD_DAYS = 30
 
 MAX_FORUM_TAGS = 5
+
+JOB_DESCRIPTION_MAX_LENGTH = 1500
 
 IMAGES_DIR = Path("src/jg/coop/images")
 
@@ -296,6 +299,10 @@ async def prepare_thread_params(job: ListedJob) -> dict:
     if job.tech_tags:
         content += "\n\n"
         content += " ".join(f"`#{tag}`" for tag in sorted(job.tech_tags))
+        content += "\n\n"
+        content += shorten(
+            job.description_discord, width=JOB_DESCRIPTION_MAX_LENGTH, placeholder="…"
+        )
 
     files = []
     embeds = []

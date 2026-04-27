@@ -20,6 +20,7 @@ from peewee import (
 from playhouse.shortcuts import model_to_dict
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
 
+from jg.coop.lib.discord_markdown import to_discord_markdown
 from jg.coop.lib.job_urls import url_to_id
 from jg.coop.lib.location import REGIONS, Location, repr_locations
 from jg.coop.lib.text import get_tag_slug
@@ -94,7 +95,7 @@ class SubmittedJob(BaseModel):
     def date_listing(cls, date_):
         return cls.select().where((cls.posted_on <= date_) & (cls.expires_on >= date_))
 
-    def to_listed(self):
+    def to_listed(self) -> "ListedJob":
         data = {
             field_name: getattr(self, field_name, None)
             for field_name in ListedJob._meta.fields.keys()
@@ -103,7 +104,12 @@ class SubmittedJob(BaseModel):
                 and field_name not in ["id", "submitted_job"]
             )
         }
-        return ListedJob(submitted_job=self, reason=None, **data)
+        return ListedJob(
+            submitted_job=self,
+            description_discord=to_discord_markdown(self.description_html),
+            reason=None,
+            **data,
+        )
 
 
 class ScrapedJob(BaseModel):
@@ -200,7 +206,11 @@ class ScrapedJob(BaseModel):
                 and field_name not in ["id", "submitted_job"]
             )
         }
-        return ListedJob(reason=self.llm_opinion["reason"], **data)
+        return ListedJob(
+            description_discord=to_discord_markdown(self.description_html),
+            reason=self.llm_opinion["reason"],
+            **data,
+        )
 
 
 class DroppedJob(BaseModel):
@@ -245,6 +255,7 @@ class ListedJob(BaseModel):
     lang = CharField()
     description_html = TextField()
     description_text = TextField()
+    description_discord = TextField()
 
     url = CharField()
     apply_email = CharField(null=True)
