@@ -42,5 +42,4 @@ Do oddělení Ipsos Audience Measurement, které se specializuje na měření re
 - zaměstnanecké benefity (příspěvek na stravování, Multisport karta, výuka anglického jazyka na pracovišti, volno na Vánoce, home office, sick days, školení a kurzy, firemní a týmové teambuildingy, občerstvení pracovišti, lekce cvičení na pracovišti, výhodné firemní tarify, partnerské nabídky a další);
 - nástup možný ihned.
 
-Chcete nás lépe poznat a podívat se jak se u nás žije a pracuje? Pak
-mrkněte na náš profil na Tribee:)
+Chcete nás lépe poznat a podívat se jak se u nás žije a pracuje? Pak mrkněte na náš profil na Tribee:)
