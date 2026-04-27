@@ -23,7 +23,8 @@ async def process(item: dict) -> dict:
                 You're helping someone who has just learned coding or software testing to find their first job.
                 Decide if given job is relevant based on the following criteria:
 
-                - Involves at least some coding in a mainstream programming language, alternatively software testing
+                - Involves at least some coding in a mainstream programming language, alternatively software testing (web/mobile/desktop/backend/API, automated or manual QA)
+                - Coding or working with code is a significant part of the role, e.g. software development, software testing, data wrangling, etc.
                 - Mentions it's for juniors, offers mentoring or onboarding, or otherwise seems beginner-friendly
                 - Requires maximum 2 years of experience
                 - DOES NOT involve RESPONSIBILITY for designing or architecting systems (participating is OK)
