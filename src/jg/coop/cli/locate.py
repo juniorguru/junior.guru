@@ -4,7 +4,7 @@ from pprint import pp
 import click
 
 from jg.coop.lib import loggers, mutations
-from jg.coop.lib.location import locate, locate_fuzzy
+from jg.coop.lib.location import is_universal_location, locate, locate_fuzzy
 
 
 logger = loggers.from_path(__file__)
@@ -18,4 +18,7 @@ def main(location_raw: str, fuzzy: bool):
         mutations.allow("openai")
         pp(asyncio.run(locate_fuzzy(location_raw)))
     else:
-        pp(asyncio.run(locate(location_raw)))
+        if is_universal_location(location_raw):
+            print("(universal location)")
+        else:
+            pp(asyncio.run(locate(location_raw)))

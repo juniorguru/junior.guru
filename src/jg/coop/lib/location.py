@@ -33,6 +33,8 @@ BOUNDING_BOX = (
     Decimal("51.16150072295437"),
 )
 
+UNIVERSAL_LOCATIONS = {"czechia", "slovakia", "remote"}
+
 REWRITES_RE = {
     re.compile(r"[\n\r]+"): ", ",
     re.compile(r"\s+"): " ",
@@ -320,6 +322,10 @@ def get_region_name(country: ResponseCountry, regions: list[ResponseRegion]) -> 
         return REGIONS_MAPPING_SK[region_name_official]
 
     return country.name
+
+
+def is_universal_location(location_raw: str) -> bool:
+    return location_raw.strip().lower() in UNIVERSAL_LOCATIONS
 
 
 def repr_locations(locations: list[Location], remote: bool = False) -> str | None:
