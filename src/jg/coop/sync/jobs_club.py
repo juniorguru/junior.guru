@@ -11,7 +11,6 @@ from discord import Embed, File, ForumChannel, ForumTag, Message, Thread, ui
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers, mutations
 from jg.coop.lib.discord_club import ClubChannelID, ClubClient, parse_channel
-from jg.coop.lib.md import md
 from jg.coop.lib.mutations import MutationsNotAllowedError, mutating_discord
 from jg.coop.lib.text import emoji_url
 from jg.coop.models.base import db
@@ -142,7 +141,7 @@ async def sync_jobs(client: ClubClient, channel_id: int):
                     title=message.channel_name,
                     author=message.author,
                     posted_on=message.created_at.date(),
-                    description_html=md(message.content),
+                    description_discord=message.content,
                     url=message.url,
                     upvotes_count=message.upvotes_count,
                     comments_count=comments_count,

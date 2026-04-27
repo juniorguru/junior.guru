@@ -504,7 +504,7 @@ class DiscordJob(BaseModel):
     title = CharField()
     author = ForeignKeyField(ClubUser, backref="list_jobs")
     posted_on = DateField(index=True)
-    description_html = TextField()
+    description_discord = TextField()
     url = CharField(unique=True)
     upvotes_count = IntegerField()
     comments_count = IntegerField()
