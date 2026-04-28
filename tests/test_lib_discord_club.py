@@ -86,6 +86,18 @@ def test_emoji_name(emoji, expected):
             "<:discordthread:993580255287705681>",
             id="custom emoji with spaces",
         ),
+        pytest.param("-# 😀", "😀", id="emoji after subtext markup"),
+        pytest.param("-#      😀", "😀", id="emoji after subtext markup and spaces"),
+        pytest.param(
+            "-# <:discordthread:993580255287705681>",
+            "<:discordthread:993580255287705681>",
+            id="custom emoji after subtext markup",
+        ),
+        pytest.param(
+            "-#      <:discordthread:993580255287705681>",
+            "<:discordthread:993580255287705681>",
+            id="custom emoji after subtext markup and spaces",
+        ),
     ],
 )
 def test_get_starting_emoji(text, expected):

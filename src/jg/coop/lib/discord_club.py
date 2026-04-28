@@ -117,6 +117,7 @@ class ClubChannelID(IntEnum):
     NEWCOMERS = 1159474100226510888
     PROMO = 1187770159595794472
     QA = 1067439203983568986
+    RESOURCES = 788832177135026197
     TIL = 806621830383271937
     TIPS = 1158695711865577533
     VENTING = 815906954534191117
@@ -177,6 +178,7 @@ def emoji_name(reaction_emoji: discord.GuildEmoji | discord.PartialEmoji | str) 
 
 def get_starting_emoji(text: str) -> str | None:
     text = text.lstrip()
+    text = re.sub(r"^-#\s*", "", text)
     try:
         first_char = text[0]
     except IndexError:

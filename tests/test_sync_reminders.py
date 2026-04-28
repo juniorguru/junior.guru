@@ -11,4 +11,4 @@ def test_build_reminder_content():
     )
     content = build_reminder_content(reminder, {"👋": "https://example.test"})
 
-    assert content == "💡 Precti si https://example.test"
+    assert content == "-# 💡 Precti si https://example.test"

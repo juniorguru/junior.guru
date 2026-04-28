@@ -51,12 +51,13 @@ def build_reminder_content(
     reminder: ReminderConfig, tip_urls_by_emoji: dict[str, str]
 ) -> str:
     return (
+        f"-# "
         f"{reminder.control_emoji} "
         f"{reminder.content_template.format(**tip_urls_by_emoji)}"
     )
 
 
-@cli.sync_command(dependencies=["tips"])
+@cli.sync_command(dependencies=["tips", "club-content", "roles"])
 @click.option(
     "--path",
     "reminders_path",
@@ -102,7 +103,7 @@ async def ensure_reminders(
 
         logger.info(f"Sending: {content!r}")
         with mutating_discord(channel) as proxy:
-            await proxy.send(content)
+            await proxy.send(content, silent=True)
         if last_message:
             logger.info(f"Deleting previous reminder: {last_message.url}")
             try:
