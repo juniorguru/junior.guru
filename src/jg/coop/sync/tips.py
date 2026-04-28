@@ -260,5 +260,7 @@ async def dose_tips(client: ClubClient, tips: list[dict], force: bool):
                 )
             ),
         )
+
+
 def threads_by_emoji(threads: list[Thread]) -> dict[str, Thread]:
     return {get_starting_emoji(thread.name): thread for thread in threads}
