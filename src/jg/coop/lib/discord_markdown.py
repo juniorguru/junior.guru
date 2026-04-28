@@ -6,7 +6,7 @@ from jg.coop.lib.text import normalize_space
 from jg.coop.lib.youtube import parse_youtube_id
 
 
-def truncate_discord_text(text: str, max_length: int, placeholder: str = "…") -> str:
+def truncate_discord_markdown(text: str, max_length: int, placeholder: str = "…") -> str:
     if len(text) <= max_length:
         return text
 
