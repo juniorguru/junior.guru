@@ -24,8 +24,6 @@ class ReminderSpec(BaseModel):
     period_days: int
 
 
-# - if multiple reminders with the same periodicity go to the same channel, they should be rotated by random
-# - dose tips to chat monthly?!?
 REMINDERS: list[ReminderSpec] = [
     ReminderSpec(
         control_emoji="👋",
