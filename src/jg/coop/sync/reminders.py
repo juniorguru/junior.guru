@@ -1,8 +1,10 @@
 from datetime import timedelta
+from pathlib import Path
 
 import click
+import yaml
 from discord import NotFound
-from pydantic import BaseModel
+from pydantic import BaseModel, field_validator
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
@@ -11,52 +13,42 @@ from jg.coop.lib.discord_club import (
     ClubClient,
     get_starting_emoji,
     is_message_over_period_ago,
+    parse_channel,
+    resolve_references,
 )
 from jg.coop.lib.mutations import mutating_discord
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
 
 
-class ReminderSpec(BaseModel):
+class ReminderConfig(BaseModel):
     control_emoji: str
     channel_id: ClubChannelID
     content_template: str
     period_days: int
 
+    @field_validator("channel_id", mode="before")
+    @classmethod
+    def parse_channel_id(cls, value: int | str) -> int | str:
+        if isinstance(value, str):
+            return parse_channel(value)
+        return value
 
-REMINDERS: list[ReminderSpec] = [
-    ReminderSpec(
-        control_emoji="👋",
-        channel_id=ClubChannelID.NEWCOMERS,
-        content_template=(
-            "Ahoj! Toto je speciální kanál, který vidí jen **nově příchozí** jako ty a **moderátoři**. "
-            "Pokud není jasné, jak něco funguje, neboj se tady zeptat. "
-            "Rádi poradíme, nasměrujeme. Žádná otázka není blbá.\n\n"
-            "Každý den sem posílám jeden tip, který by měl pomoci s orientací v klubu. "
-            f"Všechny najdeš tady: <#{ClubChannelID.TIPS}>"
-        ),
-        period_days=7,
-    ),
-    ReminderSpec(
-        control_emoji="💡",
-        channel_id=ClubChannelID.INTRO,
-        content_template="Proč je dobré se představit ostatním a co vůbec napsat? Přečti si klubový tip {👋}",
-        period_days=30,
-    ),
-    # ReminderSpec(
-    #     control_emoji="💡",
-    #     channel_id=ClubChannelID.CHAT,
-    #     content_template="Chceš se družit a potkávat s lidmi v místě, kde žiješ? Přečti si klubový tip {👭}",
-    #     period_days=30,
-    # ),
-]
+    @field_validator("content_template", mode="before")
+    @classmethod
+    def parse_content_template(cls, value: str) -> str:
+        return resolve_references(value)
+
+
+class RemindersConfig(BaseModel):
+    reminders: list[ReminderConfig]
 
 
 logger = loggers.from_path(__file__)
 
 
 def build_reminder_content(
-    reminder: ReminderSpec, tip_urls_by_emoji: dict[str, str]
+    reminder: ReminderConfig, tip_urls_by_emoji: dict[str, str]
 ) -> str:
     return (
         f"{reminder.control_emoji} "
@@ -65,15 +57,22 @@ def build_reminder_content(
 
 
 @cli.sync_command(dependencies=["tips"])
+@click.option(
+    "--path",
+    "reminders_path",
+    default=Path("src/jg/coop/data/reminders.yml"),
+    type=click.Path(exists=True, dir_okay=False, path_type=Path),
+)
 @click.option("--force", is_flag=True)
-def main(force: bool) -> None:
-    discord_task.run(ensure_reminders, REMINDERS, force)
+def main(reminders_path: Path, force: bool) -> None:
+    reminders_config = RemindersConfig(**yaml.safe_load(reminders_path.read_text()))
+    discord_task.run(ensure_reminders, reminders_config.reminders, force)
 
 
 @db.connection_context()
 async def ensure_reminders(
     client: ClubClient,
-    reminders: list[ReminderSpec],
+    reminders: list[ReminderConfig],
     force: bool,
 ) -> None:
     logger.info("Ensuring reminders")

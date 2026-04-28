@@ -1,0 +1,18 @@
+reminders:
+  - control_emoji: "👋"
+    channel_id: NEWCOMERS
+    content_template: >-
+      Ahoj! Toto je speciální kanál, který vidí jen **nově příchozí** jako ty a **moderátoři**. Pokud není jasné, jak něco funguje, neboj se tady zeptat. Rádi poradíme, nasměrujeme. Žádná otázka není blbá.
+
+      Každý den sem posílám jeden tip, který by měl pomoci s orientací v klubu. Všechny najdeš tady: <#TIPS>
+    period_days: 7
+
+  - control_emoji: "💡"
+    channel_id: INTRO
+    content_template: Proč je dobré se představit ostatním a co vůbec napsat? Přečti si klubový tip {👋}
+    period_days: 30
+
+  # - control_emoji: "💡"
+  #   channel_id: CHAT
+  #   content_template: Chceš se družit a potkávat s lidmi v místě, kde žiješ? Přečti si klubový tip {👭}
+  #   period_days: 30
