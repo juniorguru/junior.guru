@@ -1020,7 +1020,7 @@ dev = [
 [[package]]
 name = "jg-eggtray"
 version = "0.0"
-source = { git = "https://github.com/juniorguru/eggtray.git#4ade0b8ff998dab0d8ab01ffaab53b961a5a6a6c" }
+source = { git = "https://github.com/juniorguru/eggtray.git#4ba088f156484abef2716769439aff4416fb9751" }
 dependencies = [
     { name = "click" },
     { name = "diskcache" },
@@ -1038,7 +1038,7 @@ dependencies = [
 [[package]]
 name = "jg-hen"
 version = "0.0"
-source = { git = "https://github.com/juniorguru/hen.git#32b6cdd1b785aa0bc81df66567736d2574f8ee8a" }
+source = { git = "https://github.com/juniorguru/hen.git#4e1c3cd0af2b700259f9aeae871e7fa99cada5e1" }
 dependencies = [
     { name = "beautifulsoup4" },
     { name = "blinker" },
