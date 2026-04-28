@@ -6,6 +6,17 @@ from jg.coop.lib.text import normalize_space
 from jg.coop.lib.youtube import parse_youtube_id
 
 
+def truncate_discord_text(text: str, max_length: int, placeholder: str = "…") -> str:
+    if len(text) <= max_length:
+        return text
+
+    if len(placeholder) >= max_length:
+        return placeholder[:max_length]
+
+    trimmed = text[: max_length - len(placeholder)].rstrip()
+    return f"{trimmed}{placeholder}"
+
+
 def _fix_whitespace(text: str, marker: str) -> str:
     """
     If the inline element's text ends with white space,

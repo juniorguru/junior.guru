@@ -2,7 +2,6 @@ import asyncio
 from datetime import date, timedelta
 from enum import StrEnum
 from pathlib import Path
-from textwrap import shorten
 
 import click
 import requests
@@ -11,6 +10,7 @@ from discord import Embed, File, ForumChannel, ForumTag, Message, Thread, ui
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers, mutations
 from jg.coop.lib.discord_club import ClubChannelID, ClubClient, parse_channel
+from jg.coop.lib.discord_markdown import truncate_discord_markdown
 from jg.coop.lib.mutations import MutationsNotAllowedError, mutating_discord
 from jg.coop.lib.text import emoji_url
 from jg.coop.models.base import db
@@ -299,8 +299,10 @@ async def prepare_thread_params(job: ListedJob) -> dict:
         content += "\n\n"
         content += " ".join(f"`#{tag}`" for tag in sorted(job.tech_tags))
         content += "\n\n"
-        content += shorten(
-            job.description_discord, width=JOB_DESCRIPTION_MAX_LENGTH, placeholder="…"
+        content += truncate_discord_markdown(
+            job.description_discord,
+            max_length=JOB_DESCRIPTION_MAX_LENGTH,
+            placeholder="…",
         )
 
     files = []
