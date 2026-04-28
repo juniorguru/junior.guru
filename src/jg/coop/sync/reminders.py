@@ -18,7 +18,6 @@ from jg.coop.models.club import ClubMessage
 
 # TODO
 # - create reminders.yml
-# - the periodicity of reminders should be just days, integer
 # - if multiple reminders with the same periodicity go to the same channel, they should be rotated by random
 # - maybe its just newcomers, intro, and then we should dose tips to chat monthly?!?
 REMINDERS = [
@@ -32,19 +31,19 @@ REMINDERS = [
             "Každý den sem posílám jeden tip, který by měl pomoci s orientací v klubu. "
             f"Všechny najdeš tady: <#{ClubChannelID.TIPS}>"
         ),
-        timedelta(days=7),
+        7,
     ),
     (
         "💡",
         ClubChannelID.INTRO,
         "Proč je dobré se představit ostatním a co vůbec napsat? Přečti si klubový tip {👋}",
-        timedelta(days=30),
+        30,
     ),
     # (
     #     "💡",
     #     ClubChannelID.CHAT,
     #     "Chceš se družit a potkávat s lidmi v místě, kde žiješ? Přečti si klubový tip {👭}",
-    #     timedelta(days=30),
+    #     30,
     # ),
 ]
 
@@ -61,7 +60,7 @@ def main(force: bool):
 @db.connection_context()
 async def ensure_reminders(
     client: ClubClient,
-    reminders: list[tuple[str, ClubChannelID, str, timedelta]],
+    reminders: list[tuple[str, ClubChannelID, str, int]],
     force: bool,
 ):
     logger.info("Ensuring reminders")
@@ -70,12 +69,12 @@ async def ensure_reminders(
         get_starting_emoji(thread.name): thread.jump_url
         for thread in channel_tips.threads
     }
-    for control_emoji, channel_id, content_template, period in reminders:
+    for control_emoji, channel_id, content_template, period_days in reminders:
         last_message = ClubMessage.last_bot_message(channel_id, control_emoji)
         if force:
             logger.warning("Forcing reminder!")
-        elif is_message_over_period_ago(last_message, period):
-            logger.warning(f"Last reminder is more than {period.days} old!")
+        elif is_message_over_period_ago(last_message, timedelta(days=period_days)):
+            logger.warning(f"Last reminder is more than {period_days} old!")
         else:
             logger.info("Reminder is still fresh, skipping")
             return
