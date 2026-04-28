@@ -41,7 +41,7 @@ logger = loggers.from_path(__file__)
     default="src/jg/coop/data/tips",
     type=click.Path(exists=True, dir_okay=True, file_okay=False, path_type=Path),
 )
-@click.option("--force-dose", is_flag=True)
+@click.option("--force", is_flag=True)
 def main(tips_path: Path, force: bool):
     with db.connection_context():
         roles = {
