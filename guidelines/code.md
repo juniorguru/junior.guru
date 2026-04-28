@@ -1,6 +1,7 @@
 # Code Guidelines
 
 - Use `@pytest.mark.parametrize` if applicable, and always include spaces after commas in the argument list, e.g. "secondary_school, university, expected".
+- In `key=` situations (e.g., `sorted()`, `max()`, `min()`), prefer `attrgetter`/`itemgetter` over lambda when applicable.
 - Do not use `if TYPE_CHECKING:` blocks. Prefer straightforward imports/annotations without this pattern.
 - Do not use inline imports inside functions or methods. Keep imports at module level.
 - After changes to code or images, always run `uv run jg tidy --code` before finishing the work.
