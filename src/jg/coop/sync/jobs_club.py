@@ -2,6 +2,7 @@ import asyncio
 from datetime import date, timedelta
 from enum import StrEnum
 from pathlib import Path
+from urllib.parse import urlparse
 
 import click
 import requests
@@ -273,12 +274,17 @@ async def create_thread(
 
                 logger.debug("Verifying that images got uploaded correctly")
                 message: Message = await thread.fetch_message(thread.id)
-                thumbnail_url = message.embeds[0].thumbnail.url
-                response = requests.head(thumbnail_url)
-                thumbnail_bytes_count = int(response.headers.get("Content-Length", 0))
-                if thumbnail_bytes_count == 0:
+                if message.attachments:
+                    logo_url = message.attachments[0].url
+                    response = requests.head(logo_url)
+                    logo_bytes_count = int(response.headers.get("Content-Length", 0))
+                else:
+                    logo_url = None
+                    logo_bytes_count = 1
+
+                if logo_bytes_count == 0:
                     logger.warning(
-                        f"Thumbnail is empty (attempt #{attempt_no}): {thumbnail_url}"
+                        f"Logo attachment is empty (attempt #{attempt_no}): {logo_url}"
                         f" ({thread.name}: {thread.jump_url})"
                     )
                     await thread.delete()
@@ -291,6 +297,11 @@ async def create_thread(
         return None
 
 
+def get_company_web_name(company_url: str) -> str:
+    parsed_url = urlparse(company_url)
+    return parsed_url.netloc.replace("www.", "") or company_url
+
+
 async def prepare_thread_params(job: ListedJob) -> dict:
     content = f"{job.location_text or '?'} — {job.company_name}"
 
@@ -298,33 +309,61 @@ async def prepare_thread_params(job: ListedJob) -> dict:
     if job.tech_tags:
         content += "\n\n"
         content += " ".join(f"`#{tag}`" for tag in sorted(job.tech_tags))
-        content += "\n\n"
-        content += truncate_discord_markdown(
-            job.description_discord,
-            max_length=JOB_DESCRIPTION_MAX_LENGTH,
-            placeholder="…",
-        )
 
     files = []
     embeds = []
-
-    # company
-    company_links = [
-        f"<:linkedin:915267970752712734> [LinkedIn]({job.company_linkedin_url})",
-        f"🔬 [Atmoskop]({job.company_atmoskop_url})",
-        f"💌 [Jaký byl pohovor?]({job.company_jakybylpohovor_url})",
-        f"<:google:976200950886826084> [Google]({job.company_search_url})",
-    ]
-    if job.company_url:
-        company_links.insert(0, f"🏠 [Web]({job.company_url})")
-    company_embed = Embed(
-        title=job.company_name,
-        description="\n".join(company_links),
-    )
+    logo_attachment_url = None
     if job.company_logo_path:
         files.append(File(IMAGES_DIR.absolute() / job.company_logo_path))
-        company_embed.set_thumbnail(
-            url=f"attachment://{Path(job.company_logo_path).name}"
+        logo_attachment_url = f"attachment://{Path(job.company_logo_path).name}"
+
+    description = truncate_discord_markdown(
+        job.description_discord,
+        max_length=JOB_DESCRIPTION_MAX_LENGTH,
+        placeholder="…",
+    )
+    if description != job.description_discord:
+        description += "\n\n-# (zkráceno, pro celý inzerát klikni na tlačítko dole)"
+
+    # job
+    job_embed = Embed(title=job.title, url=job.url, description=description)
+    author_params = {"name": job.company_name}
+    if job.company_url:
+        author_params["url"] = job.company_url
+    if logo_attachment_url:
+        author_params["icon_url"] = logo_attachment_url
+    job_embed.set_author(**author_params)
+    embeds.append(job_embed)
+
+    # company
+    company_embed = Embed(title=job.company_name, description="")
+    if logo_attachment_url:
+        company_embed.set_image(url=logo_attachment_url)
+    if job.company_url:
+        web_name = get_company_web_name(job.company_url)
+        company_embed.add_field(
+            name="web",
+            value=f"[{web_name}]({job.company_url})",
+        )
+    if job.company_linkedin_url:
+        company_embed.add_field(
+            name="LinkedIn",
+            value=f"[Hledat „{job.company_name}“]({job.company_linkedin_url})",
+        )
+    if job.company_atmoskop_url:
+        company_embed.add_field(
+            name="Atmoskop",
+            value=f"[Hledat „{job.company_name}“]({job.company_atmoskop_url})",
+        )
+    if job.company_jakybylpohovor_url:
+        company_embed.add_field(
+            name="Jaký byl pohovor?",
+            value=f"[Hledat „{job.company_name}“]({job.company_jakybylpohovor_url})",
+        )
+    if job.company_search_url:
+        company_embed.add_field(
+            name="Google",
+            value=f"[Hledat „{job.company_name}“]({job.company_search_url})",
         )
     embeds.append(company_embed)
 
@@ -337,7 +376,6 @@ async def prepare_thread_params(job: ListedJob) -> dict:
         )
         embeds.append(reason_embed)
 
-    # job
     return dict(
         name=job.title_short,
         content=content,

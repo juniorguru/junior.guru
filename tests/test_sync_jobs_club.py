@@ -2,10 +2,22 @@ from collections import namedtuple
 
 import pytest
 
-from jg.coop.sync.jobs_club import ForumTagName, get_forum_tags
+from jg.coop.sync.jobs_club import ForumTagName, get_company_web_name, get_forum_tags
 
 
 StubForumTag = namedtuple("ForumTag", ["name"])
+
+
+@pytest.mark.parametrize(
+    "company_url, expected",
+    [
+        ("https://www.descartes.com/", "descartes.com"),
+        ("https://junior.guru", "junior.guru"),
+        ("junior.guru", "junior.guru"),
+    ],
+)
+def test_get_company_web_name(company_url: str, expected: str) -> None:
+    assert get_company_web_name(company_url) == expected
 
 
 def test_get_forum_tags():
