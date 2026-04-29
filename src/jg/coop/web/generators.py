@@ -7,7 +7,6 @@ import yaml
 from mkdocs.utils.meta import get_data as parse_document
 from pydantic import BaseModel, ConfigDict
 from slugify import slugify
-from strictyaml import as_document
 
 from jg.coop.lib import loggers
 from jg.coop.lib.location import REGIONS
@@ -37,8 +36,12 @@ class GeneratedDocument(BaseModel):
     content: str
 
     def __str__(self) -> str:
-        yaml = as_document(self.meta).as_yaml()
-        return f"---\n{yaml}\n---\n{self.content}"
+        meta_yaml = yaml.safe_dump(
+            self.meta,
+            allow_unicode=True,
+            sort_keys=False,
+        )
+        return f"---\n{meta_yaml.strip()}\n---\n{self.content}"
 
 
 class RedirectConfig(YAMLConfig):

@@ -1,4 +1,3 @@
-import json
 import random
 from datetime import date, datetime, timedelta
 from pathlib import Path
@@ -6,7 +5,6 @@ from typing import Any, Generator
 
 import pytest
 from peewee import SqliteDatabase
-from strictyaml import load
 
 from jg.coop.models.base import BaseModel, db as production_db
 
@@ -23,14 +21,6 @@ def prepare_test_db(models: list[BaseModel]) -> Generator[SqliteDatabase, None, 
         db.create_tables(models)
         yield db
         db.drop_tables(models)
-
-
-def load_yaml(s, schema):
-    """
-    Uses json.loads/json.dumps to recursively convert all ordered dicts
-    to dicts, which significantly improves readability of the pytest diff
-    """
-    return json.loads(json.dumps(load(s, schema).data))
 
 
 def startswith_skip(path):
