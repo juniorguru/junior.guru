@@ -35,7 +35,10 @@ def create_candidate(**kwargs):
         (None, "it", "IT vysoká"),
         (None, "math", "matematická vysoká"),
         ("it", "math", "IT střední, matematická vysoká"),
+        ("it", "electro", "IT střední, elektro vysoká"),
         ("non_it", "it", "IT vysoká"),
+        ("math", "it", "IT vysoká"),
+        ("electro", "it", "IT vysoká"),
     ),
 )
 def test_school_text(test_db, secondary_school, university, expected):

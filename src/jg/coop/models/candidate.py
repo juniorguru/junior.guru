@@ -228,11 +228,14 @@ class Candidate(BaseModel):
         prefixes = {
             "it": "IT ",
             "math": "matematická ",
+            "electro": "elektro ",
             "non_it": "",
         }
         schools = []
-        if self.secondary_school and (
-            self.secondary_school != "non_it" or not self.university
+        if (
+            self.secondary_school
+            and (self.secondary_school != "non_it" or not self.university)
+            and not (self.university == "it" and self.secondary_school != "it")
         ):
             schools.append(prefixes[self.secondary_school] + "střední")
         if self.university:
