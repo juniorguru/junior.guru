@@ -60,13 +60,12 @@ def build_reminder_content(
 @cli.sync_command(dependencies=["tips", "club-content", "roles"])
 @click.option(
     "--path",
-    "reminders_path",
     default=Path("src/jg/coop/data/reminders.yml"),
     type=click.Path(exists=True, dir_okay=False, path_type=Path),
 )
 @click.option("--force", is_flag=True)
-def main(reminders_path: Path, force: bool) -> None:
-    reminders_config = RemindersConfig(**yaml.safe_load(reminders_path.read_text()))
+def main(path: Path, force: bool) -> None:
+    reminders_config = RemindersConfig(**yaml.safe_load(path.read_text()))
     discord_task.run(ensure_reminders, reminders_config.reminders, force)
 
 
