@@ -116,14 +116,12 @@ async def sync_jobs(client: ClubClient, channel_id: int):
             thread: Thread = await client.fetch_channel(message.id)
             comments_count = len(ClubMessage.channel_listing(message.channel_id)) - 1
             if message.author_is_bot:
-                if not message.ui_urls:
+                if not (ui_urls := set(message.ui_urls)):
                     raise ValueError(f"No URL: {message.url}")
-                if len(message.ui_urls) > 1:
-                    raise ValueError(
-                        f"Multiple URLs: {message.url} {message.ui_urls!r}"
-                    )
+                if len(ui_urls) > 1:
+                    raise ValueError(f"Multiple URLs: {message.url} {ui_urls!r}")
                 try:
-                    url = message.ui_urls[0]
+                    url = ui_urls[0]
                     logger.debug(f"Looking up: {url}")
                     job = ListedJob.get_by_url(url)
                 except ListedJob.DoesNotExist:
