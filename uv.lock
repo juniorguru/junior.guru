@@ -936,7 +936,6 @@ dependencies = [
     { name = "python-slugify" },
     { name = "pyyaml" },
     { name = "requests" },
-    { name = "strictyaml" },
     { name = "stripe" },
     { name = "tenacity" },
     { name = "tiktoken" },
@@ -999,7 +998,6 @@ requires-dist = [
     { name = "python-slugify", specifier = ">=8.0.4" },
     { name = "pyyaml", specifier = ">=6.0.3" },
     { name = "requests", specifier = ">=2.32.5" },
-    { name = "strictyaml", specifier = ">=1.7.3" },
     { name = "stripe", specifier = ">=13.0.1" },
     { name = "tenacity", specifier = ">=9.1.2" },
     { name = "tiktoken", specifier = ">=0.11.0" },
@@ -2079,18 +2077,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/b3/e3/6b1106349e2576c18409b27bd3b16f193b1cf38220d98ad22aa454c5e075/sqlite_utils-3.39.tar.gz", hash = "sha256:bfa2eac29b3e3eb5c9647283797527febcf4efd4a9bbb31d979a14a11ef9dbcd", size = 215324, upload-time = "2025-11-24T18:45:49.91Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/51/33/7e01d2f6b8c778529dfae9045c4f46b33ba145c3d401fa95b07f599e7403/sqlite_utils-3.39-py3-none-any.whl", hash = "sha256:349c099c0cd60d4ee9139a24d5c9cb64af3906c3e90832fcbbd74da49333374d", size = 68451, upload-time = "2025-11-24T18:45:48.366Z" },
-]
-
-[[package]]
-name = "strictyaml"
-version = "1.7.3"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "python-dateutil" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/b3/08/efd28d49162ce89c2ad61a88bd80e11fb77bc9f6c145402589112d38f8af/strictyaml-1.7.3.tar.gz", hash = "sha256:22f854a5fcab42b5ddba8030a0e4be51ca89af0267961c8d6cfa86395586c407", size = 115206, upload-time = "2023-03-10T12:50:27.062Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/96/7c/a81ef5ef10978dd073a854e0fa93b5d8021d0594b639cc8f6453c3c78a1d/strictyaml-1.7.3-py3-none-any.whl", hash = "sha256:fb5c8a4edb43bebb765959e420f9b3978d7f1af88c80606c03fb420888f5d1c7", size = 123917, upload-time = "2023-03-10T12:50:17.242Z" },
 ]
 
 [[package]]
