@@ -4,10 +4,11 @@ from pathlib import Path
 
 import click
 import requests
+import yaml
 from discord import Color, Embed, File, ui
 from pod2gen import Media
+from pydantic import BaseModel
 from requests.exceptions import HTTPError
-from strictyaml import Int, Map, Optional, Seq, Str, load
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
@@ -15,7 +16,6 @@ from jg.coop.lib.discord_club import ClubChannelID, ClubClient, ClubMemberID
 from jg.coop.lib.images import PostersCache, is_image, render_image_file, validate_image
 from jg.coop.lib.mutations import mutating_discord
 from jg.coop.lib.template_filters import icon
-from jg.coop.lib.yaml import Date
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
 from jg.coop.models.feminine_name import FeminineName
@@ -24,24 +24,6 @@ from jg.coop.models.podcast import PodcastEpisode
 
 logger = loggers.from_path(__file__)
 
-
-YAML_PATH = Path("src/jg/coop/data/podcast.yml")
-
-YAML_SCHEMA = Seq(
-    Map(
-        {
-            "number": Int(),
-            "title": Str(),
-            Optional("guest_name"): Str(),
-            Optional("guest_affiliation"): Str(),
-            "publish_on": Date(),
-            "description": Str(),
-            "image_path": Str(),
-            Optional("media_size"): Int(),
-            Optional("media_duration_s"): Int(),
-        }
-    )
-)
 
 WORKERS = 4
 
@@ -60,24 +42,42 @@ TODAY = date.today()
 MESSAGE_EMOJI = "🎙"
 
 
+class PodcastEpisodeConfig(BaseModel):
+    number: int
+    title: str
+    guest_name: str | None = None
+    guest_affiliation: str | None = None
+    publish_on: date
+    description: str
+    image_path: str
+    media_size: int | None = None
+    media_duration_s: int | None = None
+
+
 @cli.sync_command(dependencies=["club-content", "feminine-names"])
 @click.option("--clear-posters/--keep-posters", default=False)
+@click.option(
+    "--path",
+    default=Path("src/jg/coop/data/podcast.yml"),
+    type=click.Path(exists=True, dir_okay=False, path_type=Path),
+)
 @db.connection_context()
-def main(clear_posters):
+def main(clear_posters: bool, path: Path):
     posters = PostersCache(POSTERS_DIR)
     posters.init(clear=clear_posters)
 
     logger.info("Validating avatar images")
-    for path in filter(is_image, AVATARS_DIR.glob("*.*")):
-        logger.debug(f"Validating {path}")
-        validate_image(path)
+    for avatar_path in filter(is_image, AVATARS_DIR.glob("*.*")):
+        logger.debug(f"Validating {avatar_path}")
+        validate_image(avatar_path)
 
     logger.info("Setting up podcast episodes db table")
     PodcastEpisode.drop_table()
     PodcastEpisode.create_table()
 
     logger.info("Reading YAML with episodes")
-    yaml_records = (record.data for record in load(YAML_PATH.read_text(), YAML_SCHEMA))
+    yaml_data = yaml.safe_load(path.read_text())
+    yaml_records = [PodcastEpisodeConfig(**record).model_dump() for record in yaml_data]
 
     logger.info(
         "Preparing data: downloading and analyzing the mp3 files, creating posters"
@@ -126,7 +126,7 @@ def process_episode(yaml_record):
             media_type = media.type
             media_duration_s = media.duration.seconds
             logger_ep.warning(
-                f"Add the following to {YAML_PATH}:\n  media_size: {media_size}\n  media_duration_s: {media_duration_s}"
+                f"Add the following to podcast YAML config:\n  media_size: {media_size}\n  media_duration_s: {media_duration_s}"
             )
         else:
             logger_ep.info(
