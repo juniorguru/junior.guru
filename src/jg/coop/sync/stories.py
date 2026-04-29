@@ -1,39 +1,42 @@
+from datetime import date
 from pathlib import Path
+from typing import Annotated
 
-from strictyaml import Map, Seq, Str, Url, load
+import click
+import yaml
+from pydantic import HttpUrl, PlainSerializer
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
-from jg.coop.lib.yaml import Date
+from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
 from jg.coop.models.story import Story
-
-
-YAML_PATH = Path("src/jg/coop/data/stories.yml")
-
-YAML_SCHEMA = Seq(
-    Map(
-        {
-            "url": Url(),
-            "date": Date(),
-            "title": Str(),
-            "name": Str(),
-            "image_path": Str(),
-            "tags": Seq(Str()),
-        }
-    )
-)
 
 
 logger = loggers.from_path(__file__)
 
 
+class StoryConfig(YAMLConfig):
+    url: Annotated[HttpUrl, PlainSerializer(str)]
+    date: date
+    title: str
+    name: str
+    image_path: str
+    tags: list[str]
+
+
 @cli.sync_command()
+@click.option(
+    "--path",
+    default=Path("src/jg/coop/data/stories.yml"),
+    type=click.Path(exists=True, dir_okay=False, path_type=Path),
+)
 @db.connection_context()
-def main():
+def main(path: Path):
     Story.drop_table()
     Story.create_table()
-    for yaml_record in load(YAML_PATH.read_text(), YAML_SCHEMA):
-        record = yaml_record.data
+    yaml_data = yaml.safe_load(path.read_text())
+    for config in [StoryConfig(**yaml_record) for yaml_record in yaml_data]:
+        record = config.model_dump()
         logger.info(record["title"])
         Story.create(**record)
