@@ -6,7 +6,7 @@ from urllib.parse import urlparse
 
 import click
 import requests
-from discord import Embed, File, ForumChannel, ForumTag, Message, Thread, ui
+from discord import Colour, Embed, File, ForumChannel, ForumTag, Message, Thread, ui
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers, mutations
@@ -304,11 +304,10 @@ def get_company_web_name(company_url: str) -> str:
 
 async def prepare_thread_params(job: ListedJob) -> dict:
     content = f"{job.location_text or '?'} — {job.company_name}"
-
-    # tech tags
     if job.tech_tags:
-        content += "\n\n"
         content += " ".join(f"`#{tag}`" for tag in sorted(job.tech_tags))
+    content += f"-# Zdroj: {', '.join(job.sources)}"
+    content += "\n\n"
 
     files = []
     embeds = []
@@ -333,10 +332,11 @@ async def prepare_thread_params(job: ListedJob) -> dict:
     if logo_attachment_url:
         author_params["icon_url"] = logo_attachment_url
     job_embed.set_author(**author_params)
+    job_embed.set_footer(text="Inzerát z junior.guru")
     embeds.append(job_embed)
 
     # company
-    company_embed = Embed(title=job.company_name, description="")
+    company_embed = Embed(title=job.company_name, description="", colour=Colour.blue())
     if logo_attachment_url:
         company_embed.set_image(url=logo_attachment_url)
     if job.company_url:
@@ -344,26 +344,31 @@ async def prepare_thread_params(job: ListedJob) -> dict:
         company_embed.add_field(
             name="web",
             value=f"[{web_name}]({job.company_url})",
+            inline=False,
         )
     if job.company_linkedin_url:
         company_embed.add_field(
             name="LinkedIn",
             value=f"[Hledat „{job.company_name}“]({job.company_linkedin_url})",
+            inline=False,
         )
     if job.company_atmoskop_url:
         company_embed.add_field(
             name="Atmoskop",
             value=f"[Hledat „{job.company_name}“]({job.company_atmoskop_url})",
+            inline=False,
         )
     if job.company_jakybylpohovor_url:
         company_embed.add_field(
             name="Jaký byl pohovor?",
             value=f"[Hledat „{job.company_name}“]({job.company_jakybylpohovor_url})",
+            inline=False,
         )
     if job.company_search_url:
         company_embed.add_field(
             name="Google",
             value=f"[Hledat „{job.company_name}“]({job.company_search_url})",
+            inline=False,
         )
     embeds.append(company_embed)
 
