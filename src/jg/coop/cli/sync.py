@@ -108,7 +108,7 @@ class Group(click.Group):
         return sync.command_end(name, perf_counter_ns())
 
     def list_commands(self, context):
-        return sorted(super().list_commands(context) + list(self.sync_commands))
+        return sorted(set(super().list_commands(context)) | set(self.sync_commands))
 
     def get_command(self, context, name):
         return super().get_command(context, name) or self.sync_commands.get(name)
