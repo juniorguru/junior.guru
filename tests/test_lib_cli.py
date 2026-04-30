@@ -7,7 +7,7 @@ from jg.coop.lib.cli import command_name
     "module, expected_name",
     [
         ("stories", "stories"),
-        ("jg.coop.sync.stories", "stories"),
+        ("jg.coop.sync.stages", "stages"),
         ("jg.coop.sync.club_content", "club-content"),
     ],
 )

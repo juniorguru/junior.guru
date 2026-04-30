@@ -153,15 +153,15 @@ Záměrem tohoto seznamu je vytvářet nezávislou protiváhu a ukazovat, že:
 -   Programování je obecná, užitečná dovednost, která se hodí i pokud se člověk neplánuje rekvalifikovat do IT.
 
 <div class="link-cards compact">
-{% for story in stories_links %}
+{% for external_story in external_stories_links %}
   {{
     link_card(
-      story.title,
-      story.url,
-      caption=story.name,
-      thumbnail_url='static/' + story.image_path,
+      external_story.title,
+      external_story.url,
+      caption=external_story.name,
+      thumbnail_url='static/' + external_story.image_path,
       badge_icon='globe2',
-      badge_text=story.publisher,
+      badge_text=external_story.publisher,
     )
   }}
 {% endfor %}

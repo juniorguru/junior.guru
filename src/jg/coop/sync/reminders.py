@@ -21,6 +21,7 @@ from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
 from jg.coop.models.role import DocumentedRole
 
+
 class ReminderConfig(BaseModel):
     control_emoji: str
     channel_id: ClubChannelID

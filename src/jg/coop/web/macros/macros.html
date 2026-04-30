@@ -353,16 +353,16 @@
 {% endmacro %}
 
 
-{% macro stories_list(stories) %}
-  <div class="stories">
+{% macro external_stories_list(stories) %}
+  <div class="external-stories">
     {% for story in stories %}
-      <div class="stories-item">
-        {{ img('static/' + story.image_path, 'Doprovodná fotka k příběhu', 100, 100, class='stories-image') }}
-        <div class="stories-body">
-          <h4 class="stories-title">
-            <a href="{{ story.url }}" class="stories-link">{{ story.title }}</a>
+      <div class="external-stories-item">
+        {{ img('static/' + story.image_path, 'Doprovodná fotka k příběhu', 100, 100, class='external-stories-image') }}
+        <div class="external-stories-body">
+          <h4 class="external-stories-title">
+            <a href="{{ story.url }}" class="external-stories-link">{{ story.title }}</a>
           </h4>
-          <p class="stories-details">
+          <p class="external-stories-details">
             {{ story.publisher }} &mdash; {{ '{:%-m/%Y}'.format(story.date) }}
           </p>
         </div>

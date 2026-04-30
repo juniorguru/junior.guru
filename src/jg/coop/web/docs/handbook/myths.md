@@ -6,7 +6,7 @@ description: Všelijakých mýtů a nesmyslů o kariéře v IT koluje spousta. 
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import lead, blockquote_avatar, stories_list, engeto_video_card with context %}
+{% from 'macros.html' import blockquote_avatar, engeto_video_card, external_stories_list, lead with context %}
 
 # Mýty o programování
 
@@ -44,7 +44,7 @@ Programování není balet ani hokej, začít se dá opravdu v jakémkoliv věku
 
 Že na věku nezáleží dokazují i následující příběhy reálných lidí, kteří dokázali v pozdějším věku změnit kariéru a dnes se programováním živí.
 
-{{ stories_list(stories_by_tags.age|sample(4)) }}
+{{ external_stories_list(external_stories_by_tags.age|sample(4)) }}
 
 ## Nemáš na to matematický mozek, chybí ti talent    <span id="math"></span>
 
@@ -81,7 +81,7 @@ Někoho to možná překvapí, ale k programování není potřeba penis. Neexis
 
 Podle ČSÚ je v Česku zatím žen v IT stále méně než v Turecku, ale na zlepšení se intenzivně pracuje. Aktivity jako [PyLadies nebo Czechitas](women.md) se snaží programování mezi ženami popularizovat a přichystat jim bezpečné prostředí, v němž si z nich nikdo nebude dělat legraci za to, že položily hloupou otázku, nebo je šovinisticky posílat zpátky k plotně. I kultura IT firem se postupně mění a stává se k ženám příjemnější, a to dokonce i v českém rybníčku, kde se lidé běžně děsí slov jako feminismus nebo diverzita.
 
-{{ stories_list(stories_by_tags.women|sample(4)) }}
+{{ external_stories_list(external_stories_by_tags.women|sample(4)) }}
 
 ## IT je pouze pro geniální asociály    <span id="genius"></span>
 
@@ -119,7 +119,7 @@ Nemysli si ale, že když nepotřebuješ titul z VŠ, nebudeš se muset učit. I
 
 Zajímavou variantou je zkusit VŠ studovat, vybírat si zajímavé obory a předměty, ale ve chvíli, kdy už ti to přestane dávat smysl, bez pocitu viny odejít. Také se můžeš učit programovat po vlastní ose a studovat při tom úplně jiný obor, který tě zajímá. Svou budoucí kariéru můžeš pak založit na tom, že budeš rozumět např. sociologii nebo školství a dokážeš je propojit s moderními technologiemi.
 
-{{ stories_list(stories_by_tags.student|sample(4)) }}
+{{ external_stories_list(external_stories_by_tags.student|sample(4)) }}
 
 ## Firmy se o tebe porvou    <span id="jobs"></span>
 

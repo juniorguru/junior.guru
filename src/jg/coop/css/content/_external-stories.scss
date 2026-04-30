@@ -1,8 +1,8 @@
 // This is a remnant of the old stories design.
 // It should be revamped.
-// The {{ stories_list() }} macro relies on it.
+// The {{ external_stories_list() }} macro relies on it.
 
-.stories-item {
+.external-stories-item {
   position: relative;
   display: flex;
   max-width: 60ch;
@@ -10,7 +10,7 @@
   border-radius: $border-radius-sm;
 }
 
-.stories-image {
+.external-stories-image {
   flex-grow: 0;
   flex-shrink: 0;
   width: 4rem;
@@ -19,27 +19,27 @@
   border-radius: 100%;
 }
 
-.stories-body {
+.external-stories-body {
   padding: 0 0 0 $spacer;
 }
 
-.stories-title {
+.external-stories-title {
   @extend .fs-5;
 }
 
-.stories-link {
+.external-stories-link {
   @extend .stretched-link;
 }
 
-.stories-title a:visited {
+.external-stories-title a:visited {
   color: $link-color;
 }
 
-.stories-title a:visited:hover {
+.external-stories-title a:visited:hover {
   color: $link-hover-color;
 }
 
-.stories-details {
+.external-stories-details {
   @extend .small;
   @extend .text-body-secondary;
   margin: 0;

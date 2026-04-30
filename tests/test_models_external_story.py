@@ -2,18 +2,18 @@ from datetime import date
 
 import pytest
 
-from jg.coop.models.story import Story
+from jg.coop.models.external_story import ExternalStory
 
 from testing_utils import prepare_test_db
 
 
 @pytest.fixture
 def test_db():
-    yield from prepare_test_db([Story])
+    yield from prepare_test_db([ExternalStory])
 
 
-def create_story(**kwargs):
-    return Story.create(
+def create_external_story(**kwargs):
+    return ExternalStory.create(
         url=kwargs.get("url", "https://blog.example.com/how-i-learned-to-code/"),
         date=kwargs.get("date", date(2019, 12, 19)),
         title=kwargs.get("title", "How I Learned to Code"),
@@ -24,26 +24,28 @@ def create_story(**kwargs):
 
 
 def test_listing_sorts_by_date_desc(test_db):
-    story1 = create_story(date=date(2010, 7, 6))
-    story2 = create_story(date=date(2019, 7, 6))
-    story3 = create_story(date=date(2014, 7, 6))
+    story1 = create_external_story(date=date(2010, 7, 6))
+    story2 = create_external_story(date=date(2019, 7, 6))
+    story3 = create_external_story(date=date(2014, 7, 6))
 
-    assert list(Story.listing()) == [story2, story3, story1]
+    assert list(ExternalStory.listing()) == [story2, story3, story1]
 
 
 def test_tag_listing(test_db):
-    story1 = create_story(tags=["science", "age"])
-    create_story(tags=["science", "careerswitch"])
-    story3 = create_story(tags=["age", "careerswitch"])
+    story1 = create_external_story(tags=["science", "age"])
+    create_external_story(tags=["science", "careerswitch"])
+    story3 = create_external_story(tags=["age", "careerswitch"])
 
-    assert set(Story.tag_listing("age")) == {story1, story3}
+    assert set(ExternalStory.tag_listing("age")) == {story1, story3}
 
 
 def test_tags_mapping(test_db):
-    story1 = create_story(date=date(2010, 7, 6), tags=["science", "age"])
-    story2 = create_story(date=date(2019, 7, 6), tags=["science", "careerswitch"])
-    story3 = create_story(date=date(2014, 7, 6), tags=["age", "careerswitch"])
-    mapping = Story.tags_mapping()
+    story1 = create_external_story(date=date(2010, 7, 6), tags=["science", "age"])
+    story2 = create_external_story(
+        date=date(2019, 7, 6), tags=["science", "careerswitch"]
+    )
+    story3 = create_external_story(date=date(2014, 7, 6), tags=["age", "careerswitch"])
+    mapping = ExternalStory.tags_mapping()
 
     assert set(mapping.keys()) == {"age", "science", "careerswitch"}
     assert mapping["age"] == [story3, story1]
@@ -64,4 +66,4 @@ def test_tags_mapping(test_db):
     ),
 )
 def test_publisher(test_db, url, expected):
-    assert create_story(url=url).publisher == expected
+    assert create_external_story(url=url).publisher == expected

@@ -15,6 +15,7 @@ from jg.coop.models.club import ClubChannel, ClubMessage, ClubUser
 from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.event import Event
 from jg.coop.models.exchange_rate import ExchangeRate
+from jg.coop.models.external_story import ExternalStory
 from jg.coop.models.followers import Followers
 from jg.coop.models.job import DiscordJob, ListedJob
 from jg.coop.models.newsletter import NewsletterIssue
@@ -24,7 +25,6 @@ from jg.coop.models.podcast import PodcastEpisode
 from jg.coop.models.role import InterestRole
 from jg.coop.models.sponsor import GitHubSponsor, PastSponsor, Sponsor, SponsorTier
 from jg.coop.models.stage import Stage
-from jg.coop.models.story import Story
 from jg.coop.models.topic import TopicDiscussion, TopicMention
 from jg.coop.models.transaction import Transaction
 from jg.coop.models.wisdom import Wisdom
@@ -131,7 +131,7 @@ def on_docs_context(context):
     context["stages"] = Stage.listing()
 
     # handbook/motivation.md
-    context["stories_by_tags"] = Story.tags_mapping()
+    context["external_stories_by_tags"] = ExternalStory.tags_mapping()
 
     # jobs.jinja, handbook/candidate.md
     context["jobs"] = ListedJob.listing()
@@ -159,7 +159,7 @@ def on_docs_context(context):
     context["events_archive"] = Event.archive_listing()
 
     # stories.md, news.jinja
-    context["stories_links"] = Story.listing()
+    context["external_stories_links"] = ExternalStory.listing()
     context["stories_pages"] = Page.stories_listing()
 
     # wisdom.jinja, news.jinja

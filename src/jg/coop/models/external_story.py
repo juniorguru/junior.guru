@@ -6,7 +6,7 @@ from peewee import CharField, DateField
 from jg.coop.models.base import BaseModel, JSONField
 
 
-class Story(BaseModel):
+class ExternalStory(BaseModel):
     url = CharField()
     date = DateField(index=True)
     title = CharField()
@@ -45,8 +45,8 @@ class Story(BaseModel):
     @classmethod
     def tags_mapping(cls) -> dict:
         mapping = {}
-        for story in cls.listing():
-            for tag in story.tags:
+        for external_story in cls.listing():
+            for tag in external_story.tags:
                 mapping.setdefault(tag, [])
-                mapping[tag].append(story)
+                mapping[tag].append(external_story)
         return mapping

@@ -6,7 +6,7 @@ description: Úvod do programování. K čemu se hodí? Pomáhá vědcům, úře
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote, blockquote_avatar, blockquote_toxic, lead, stories_list, engeto_video_card with context %}
+{% from 'macros.html' import blockquote, blockquote_avatar, blockquote_toxic, engeto_video_card, external_stories_list, lead with context %}
 
 # Proč se učit programování
 
@@ -77,7 +77,7 @@ Doktoři a vědci přicházejí na to, že když výpočty naprogramují, mohou 
 
 Pokud chceš mít programování jako pomocníka, tento web ti na dalších stránkách ukáže, [kde se můžeš naučit základy](learn.md) nebo [jak si lze programování procvičovat a dále prohlubovat znalosti](practice.md).
 
-{{ stories_list(stories_by_tags.careerswitch|sample(4)) }}
+{{ external_stories_list(external_stories_by_tags.careerswitch|sample(4)) }}
 
 ### Programování jako kariéra    <span id="coding-career"></span>
 
@@ -109,7 +109,7 @@ Je ovšem důležité počítat s tím, že **příprava ti může zabrat i dva 
 
 Pokud se chceš programováním živit, tento web ti na dalších stránkách ukáže, [kde se můžeš naučit základy](learn.md), [jak získat potřebnou praxi](practice.md) nebo [jak si hledat svou první práci](candidate.md). Kromě toho je tady i [stránka s nabídkami práce](../jobs.jinja).
 
-{{ stories_list(stories_by_tags.synergy|sample(4)) }}
+{{ external_stories_list(external_stories_by_tags.synergy|sample(4)) }}
 
 ## Programování CNC strojů    <span id="cnc"></span>
 
