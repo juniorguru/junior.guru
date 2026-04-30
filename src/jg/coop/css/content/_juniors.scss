@@ -1,0 +1,120 @@
+$juniors-gap: 2rem + (4 * $spacer);
+$juniors-arrow-icon-size: 2rem;
+$juniors-avatars-size: $juniors-arrow-icon-size + 1rem;
+
+.juniors {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $juniors-gap;
+}
+
+.juniors-column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: $spacer;
+}
+
+.juniors-column:first-child::after {
+  position: absolute;
+  top: calc(100% + #{($juniors-gap - $juniors-arrow-icon-size) * .5});
+  left: 50%;
+  font-family: bootstrap-icons, sans-serif;
+  font-size: $juniors-arrow-icon-size;
+  line-height: 1;
+  color: $jg-dark;
+  content: "\f125";  // https://icons.getbootstrap.com/icons/arrow-down-square-fill/
+  transform: translateX(-50%);
+}
+
+@include media-breakpoint-up(md) {
+  .juniors {
+    grid-template-columns: 1fr 1fr;
+    gap: $juniors-gap;
+  }
+
+  .juniors-column:first-child::after {
+    top: 50%;
+    left: calc(100% + #{($juniors-gap - $juniors-arrow-icon-size) * .5});
+    content: "\f136";  // https://icons.getbootstrap.com/icons/arrow-right-square-fill/
+    transform: translateY(-50%);
+  }
+}
+
+.juniors-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: $juniors-avatars-size minmax(0, 1fr);
+  column-gap: $spacer;
+  align-items: start;
+  padding: $spacer;
+  background-color: $jg-blue-light;
+  border: 1px solid $jg-blue-light;
+  border-radius: $border-radius;
+}
+
+.juniors-column.yellow .juniors-item {
+  background-color: $jg-yellow-light;
+  border-color: $jg-yellow;
+}
+
+.juniors-avatar {
+  width: $juniors-avatars-size;
+  height: $juniors-avatars-size;
+  border-radius: 100%;
+}
+
+.juniors-name {
+  @extend .fs-5;
+  margin: 0;
+}
+
+.juniors-name-link {
+  @extend .stretched-link;
+  text-decoration: none;
+}
+
+.juniors-item:hover .juniors-name-link {
+  text-decoration: underline;
+}
+
+.juniors-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: .25rem;
+  min-width: 0;
+}
+
+.juniors-text {
+  margin: 0;
+}
+
+.juniors-details {
+  @extend .text-muted;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.juniors-details-item {
+  margin-right: 1rem;
+}
+
+.juniors-details-item:last-child {
+  margin-right: 0;
+}
+
+.juniors-tags {
+  font-weight: $font-weight-medium;
+}
+
+.juniors-listing-link {
+  @extend .small;
+  @extend .text-muted;
+  margin: 0;
+  text-align: center;
+}
+
+.juniors-listing-link a {
+  color: inherit;
+}

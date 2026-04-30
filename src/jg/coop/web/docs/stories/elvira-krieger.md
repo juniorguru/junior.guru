@@ -31,6 +31,7 @@ template: main_content_detail.html
 </ul>
 
 <div class="article-lead">
+{{ img('static/' + page.meta.interviewee_avatar_path, page.title + ', foto', 100, 100, lazy=False, class='article-image') }}
 {% call lead() %}
 Do rekvalifikace v IT skočila devětadvacetiletá Elvíra Krieger netradičně. Mezi hovory v call-centru se nudila a tak začala programovat. Když ji něco nadchne, učí se tak dlouho, než si dovednost osvojí. Háčkování, pájení, navrhování pro 3D tisk, nebo právě programování. Trpělivost využila i při hledání první práce v IT. „Byla to bolest,“ říká Elvíra, která dnes vyvíjí aplikaci v Národní technické knihovně a učí další ženy IT.
 {% endcall %}

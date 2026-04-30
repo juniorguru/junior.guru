@@ -24,6 +24,7 @@ from jg.coop.lib.location import locate_fuzzy
 from jg.coop.models.base import db
 from jg.coop.models.candidate import Candidate, CandidateProject
 from jg.coop.models.club import ClubUser
+from jg.coop.models.feminine_name import FeminineName
 
 
 IMAGE_SAVE_OPTIONS = {
@@ -95,7 +96,11 @@ async def main(
             projects_items = candidate_item.pop("projects", [])
             location_raw = candidate_item.pop("location", None)
 
-            candidate = Candidate.create(is_member=False, **candidate_item)
+            candidate = Candidate.create(
+                is_member=False,
+                has_feminine_name=FeminineName.is_feminine(candidate_item["name"]),
+                **candidate_item,
+            )
             if discord_id and (user := ClubUser.find_by_id(discord_id)):
                 logger.debug(f"Found {user!r}, member: {user.is_member}")
                 candidate.user = user

@@ -41,6 +41,7 @@ class Badge(PydanticBaseModel):
     icon: str
     label: str
     help_text: str
+    promo: bool = False
 
 
 class Candidate(BaseModel):
@@ -64,6 +65,7 @@ class Candidate(BaseModel):
     languages = JSONField(default=list)
     is_ready = BooleanField()
     is_member = BooleanField()
+    has_feminine_name = BooleanField()
     report_url = CharField(null=True)
 
     @property
@@ -100,6 +102,7 @@ class Candidate(BaseModel):
                     icon="tools",
                     label=label,
                     help_text="Počet připnutých projektů na GitHubu",
+                    promo=True,
                 )
             )
 
@@ -108,11 +111,19 @@ class Candidate(BaseModel):
                 icon="mortarboard-fill",
                 label="IT VŠ",
                 help_text="Má vystudovanou IT VŠ",
+                promo=True,
             ),
             "math": Badge(
                 icon="mortarboard-fill",
                 label="matematická VŠ",
                 help_text="Má vystudovanou matematickou VŠ",
+                promo=True,
+            ),
+            "ele": Badge(
+                icon="mortarboard-fill",
+                label="elektro VŠ",
+                help_text="Má vystudovanou elektrotechnickou VŠ",
+                promo=True,
             ),
         }
         if university_badge := university_badges.get(self.university):
@@ -136,19 +147,6 @@ class Candidate(BaseModel):
                 )
             )
 
-        communicates_online = (
-            ClubMessage.select().where(ClubMessage.author_id == self.user_id).count()
-            > 50
-        )
-        if communicates_online:
-            badges.append(
-                Badge(
-                    icon="chat",
-                    label="dobře komunikuje na dálku",
-                    help_text="Aktivně píše na klubovém Discordu",
-                )
-            )
-
         is_organized = (
             ClubMessage.select()
             .where(
@@ -164,6 +162,19 @@ class Candidate(BaseModel):
                     icon="calendar-check",
                     label="systematický přístup",
                     help_text="Pravidelně plánuje svůj týden na klubovém Discordu",
+                )
+            )
+
+        communicates_online = (
+            ClubMessage.select().where(ClubMessage.author_id == self.user_id).count()
+            > 50
+        )
+        if communicates_online:
+            badges.append(
+                Badge(
+                    icon="chat",
+                    label="dobře komunikuje na dálku",
+                    help_text="Aktivně píše na klubovém Discordu",
                 )
             )
 
@@ -263,9 +274,27 @@ class Candidate(BaseModel):
         return self.is_ready and self.is_member
 
     @classmethod
+    def count(cls) -> int:
+        return cls.select().count()
+
+    @classmethod
     def listing(cls) -> Iterable[Self]:
         return cls.select().order_by(
             cls.is_ready.desc(), cls.is_member.desc(), fn.random()
+        )
+
+    @classmethod
+    def promo_listing(cls, limit: int = 4) -> Iterable[Self]:
+        first_half = limit // 2
+        yield from (
+            cls.listing()
+            .where(cls.has_feminine_name == True)  # noqa: E712
+            .limit(first_half)
+        )
+        yield from (
+            cls.listing()
+            .where(cls.has_feminine_name == False)  # noqa: E712
+            .limit(limit - first_half)
         )
 
     @classmethod

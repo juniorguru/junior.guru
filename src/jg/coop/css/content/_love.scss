@@ -1,6 +1,6 @@
 @use "sass:map";
 
-@keyframes heartbeat-shrink {
+@keyframes heartbeat {
   0%,
   30%,
   100% {
@@ -23,6 +23,6 @@
   );
 }
 
-.heartbeat-shrink {
-  animation: heartbeat-shrink 5s ease-in-out infinite;
+.heartbeat {
+  animation: heartbeat 5s ease-in-out infinite;
 }

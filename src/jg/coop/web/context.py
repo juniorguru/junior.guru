@@ -82,6 +82,8 @@ def on_docs_context(context):
     # index.jinja
     context["handbook_pages_count"] = Page.handbook_count()
     context["jobs_listed_count"] = ListedJob.count()
+    context["candidates_promo"] = list(Candidate.promo_listing())
+    context["candidates_count"] = Candidate.count()
 
     # club.md, about/*.md
     context["sponsors_by_tier"] = Sponsor.tier_grouping()

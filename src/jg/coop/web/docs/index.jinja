@@ -100,7 +100,7 @@ thumbnail_subheading: junior.guru
   A dostaneš podporu, díky které to celé ustojíš.
 {% endcall %}
 #}
-<div class="link-cards standout-bottom">
+<div class="link-cards">
   {{ link_card(
     'Klub',
     pages|docs_url('club.md')|url,
@@ -136,6 +136,79 @@ thumbnail_subheading: junior.guru
 </section>
 
 
-{# <section class="section">
-  <h2>Něco</h2>
-</section> #}
+<section class="section">
+  <div class="juniors">
+    <div class="juniors-column">
+      <h2>Právě hledají práci</h2>
+      {% for candidate in candidates_promo %}
+        <div class="juniors-item">
+          {{ img('static/' + candidate.avatar_path, '', 100, 100, class='juniors-avatar') }}
+          <div class="juniors-content">
+            <h3 class="juniors-name">
+              <a class="juniors-name-link" href="{{ pages|docs_url('candidates.jinja')|url }}">
+                {{ candidate.name }}
+              </a>
+            </h3>
+            <p class="juniors-text small juniors-details">
+              <span class="juniors-details-item">
+                {{ "geo-alt"|icon }} {{ candidate.location_text|default("všudezdejší", true) }}
+              </span>
+              {% for badge in candidate.badges if badge.promo %}
+                <span class="juniors-details-item">
+                  {{ badge.icon|icon }} {{ badge.label }}
+                </span>
+              {% endfor %}
+            </p>
+            <p class="juniors-text small juniors-tags">
+              {% for tag in candidate.tags %}
+                <span class="juniors-tag">{{- tag.name -}}</span>
+              {% endfor %}
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+      <p class="juniors-listing-link">
+        <a href="{{ pages|docs_url('candidates.jinja')|url }}">
+          {% set remaining_candidates_count = candidates_count - candidates_promo|length %}
+          {{ remaining_candidates_count|nplurals("Další", "Další", "Dalších") }}
+          {{ remaining_candidates_count }}
+          {{ remaining_candidates_count|nplurals("kandidát", "kandidáti", "kandidátů") }}
+        </a>
+      </p>
+    </div>
+    <div class="juniors-column yellow">
+      <h2>Už práci našli</h2>
+      {% set listing_size = 4 %}
+      {% for story_page in stories_pages[:listing_size] %}
+        <div class="juniors-item">
+          {{ img('static/' + story_page.meta.interviewee_avatar_path, '', 100, 100, class='juniors-avatar') }}
+          <div class="juniors-content">
+            <h3 class="juniors-name">
+              <a class="juniors-name-link" href="{{ pages|docs_url(story_page.src_uri)|url }}">
+                {{ story_page.meta.interviewee }}
+              </a>
+            </h3>
+            {# <p class="juniors-text small juniors-details">
+              <span class="juniors-details-item">
+                {{ "calendar-event"|icon }} {{ '{:%-d.%-m.%Y}'.format(story_page.date) }}
+              </span>
+            </p> #}
+            <p class="juniors-text">
+              „{{ story_page.title }}“
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+      <p class="juniors-listing-link">
+        <a href="{{ pages|docs_url('stories.md')|url }}#pribehy-z-juniorguru">
+          {% set remaining_stories_count = stories_pages|length - listing_size %}
+          {% if remaining_stories_count < 10 %}
+            Další příběhy
+          {% else %}
+            Dalších {{ remaining_stories_count }} příběhů
+          {% endif %}
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
