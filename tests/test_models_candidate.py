@@ -18,6 +18,7 @@ def create_candidate(**kwargs):
         name=kwargs.get("name", "Alice"),
         avatar_url=kwargs.get("avatar_url", "https://avatars.example.com/alice.png"),
         avatar_is_default=kwargs.get("avatar_is_default", False),
+        has_feminine_name=kwargs.get("has_feminine_name", False),
         is_ready=kwargs.get("is_ready", True),
         is_member=kwargs.get("is_member", False),
         secondary_school=kwargs.get("secondary_school"),
