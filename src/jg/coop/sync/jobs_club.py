@@ -302,8 +302,10 @@ def get_company_web_name(company_url: str) -> str:
 
 async def prepare_thread_params(job: ListedJob) -> dict:
     content = f"{job.location_text or '?'} — {job.company_name}"
+    content += "\n"
     if job.tech_tags:
         content += " ".join(f"`#{tag}`" for tag in sorted(job.tech_tags))
+        content += "\n"
     content += f"-# Zdroj: {', '.join(job.sources)}"
     content += "\n\n"
 
