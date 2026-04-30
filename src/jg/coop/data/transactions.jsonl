@@ -1307,3 +1307,5 @@
 {"_id": "27602054677", "amount": 8111, "category": "memberships", "happened_on": "2026-04-27"}
 {"_id": "27603118716", "amount": -2000, "category": "office", "happened_on": "2026-04-27"}
 {"_id": "27605640404", "amount": 6, "category": "donations", "happened_on": "2026-04-29"}
+{"_id": "27608156389", "amount": -321, "category": "miscellaneous", "happened_on": "2026-04-30"}
+{"_id": "27608156435", "amount": -240, "category": "miscellaneous", "happened_on": "2026-04-30"}
