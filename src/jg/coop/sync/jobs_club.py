@@ -121,7 +121,7 @@ async def sync_jobs(client: ClubClient, channel_id: int):
                 if len(ui_urls) > 1:
                     raise ValueError(f"Multiple URLs: {message.url} {ui_urls!r}")
                 try:
-                    url = ui_urls[0]
+                    url = ui_urls.pop()
                     logger.debug(f"Looking up: {url}")
                     job = ListedJob.get_by_url(url)
                 except ListedJob.DoesNotExist:
