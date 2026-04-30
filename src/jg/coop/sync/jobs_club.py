@@ -332,7 +332,6 @@ async def prepare_thread_params(job: ListedJob) -> dict:
     if logo_attachment_url:
         author_params["icon_url"] = logo_attachment_url
     job_embed.set_author(**author_params)
-    job_embed.set_footer(text="Inzerát z junior.guru")
     embeds.append(job_embed)
 
     # company
