@@ -19,7 +19,7 @@ from jg.coop.lib.discord_club import (
 from jg.coop.lib.mutations import mutating_discord
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
-
+from jg.coop.models.role import DocumentedRole
 
 class ReminderConfig(BaseModel):
     control_emoji: str
@@ -34,11 +34,6 @@ class ReminderConfig(BaseModel):
             return parse_channel(value)
         return value
 
-    @field_validator("content_template", mode="before")
-    @classmethod
-    def parse_content_template(cls, value: str) -> str:
-        return resolve_references(value)
-
 
 class RemindersConfig(BaseModel):
     reminders: list[ReminderConfig]
@@ -48,13 +43,12 @@ logger = loggers.from_path(__file__)
 
 
 def build_reminder_content(
-    reminder: ReminderConfig, tip_urls_by_emoji: dict[str, str]
+    reminder: ReminderConfig,
+    tip_urls_by_emoji: dict[str, str],
+    roles: dict[str, int] | None = None,
 ) -> str:
-    return (
-        f"-# "
-        f"{reminder.control_emoji} "
-        f"{reminder.content_template.format(**tip_urls_by_emoji)}"
-    )
+    content_template = resolve_references(reminder.content_template, roles=roles or {})
+    return f"-# {reminder.control_emoji} {content_template.format(**tip_urls_by_emoji)}"
 
 
 @cli.sync_command(dependencies=["tips", "club-content", "roles"])
@@ -77,6 +71,7 @@ async def ensure_reminders(
 ) -> None:
     logger.info("Ensuring reminders")
     channel_tips = await client.fetch_channel(ClubChannelID.TIPS)
+    roles = {role.slug: role.club_id for role in DocumentedRole.listing()}
     tip_urls_by_emoji = {
         get_starting_emoji(thread.name): thread.jump_url
         for thread in channel_tips.threads
@@ -98,7 +93,7 @@ async def ensure_reminders(
             return
 
         channel = await client.fetch_channel(reminder.channel_id)
-        content = build_reminder_content(reminder, tip_urls_by_emoji)
+        content = build_reminder_content(reminder, tip_urls_by_emoji, roles)
 
         logger.info(f"Sending: {content!r}")
         with mutating_discord(channel) as proxy:
