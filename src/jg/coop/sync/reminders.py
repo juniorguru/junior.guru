@@ -79,6 +79,7 @@ async def ensure_reminders(
     }
 
     for reminder in reminders:
+        logger.info(f"Ensuring {reminder.control_emoji} at {reminder.channel_id}")
         last_message = ClubMessage.last_bot_message(
             reminder.channel_id, reminder.control_emoji
         )
@@ -90,7 +91,7 @@ async def ensure_reminders(
         ):
             logger.warning(f"Last reminder is more than {reminder.period_days} old!")
         else:
-            logger.info("Reminder is still fresh, skipping")
+            logger.info(f"Reminder is still fresh, skipping: {last_message.url}")
             return
 
         channel = await client.fetch_channel(reminder.channel_id)
