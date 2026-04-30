@@ -1,5 +1,6 @@
 import asyncio
 
+import click
 from pydantic import BaseModel
 
 from jg.coop.cli.sync import main as cli
@@ -18,9 +19,25 @@ class LocationsList(BaseModel):
     is_universal: bool = False
 
 
+def parse_country_codes(
+    context: click.Context, param: click.Parameter, value: str
+) -> set[str]:
+    country_codes = {code.strip().upper() for code in value.split(",")}
+    country_codes.discard("")
+    if not country_codes:
+        raise click.BadParameter("Provide at least one country code")
+    return country_codes
+
+
 @cli.sync_command(dependencies=["jobs-listing"])
 @async_command
-async def main():
+@click.option(
+    "--country-codes",
+    default="CZ,SK",
+    callback=parse_country_codes,
+    show_default=True,
+)
+async def main(country_codes: set[str]):
     with db.connection_context():
         jobs = list(ListedJob.listing())
 
@@ -30,12 +47,17 @@ async def main():
 
     with db.connection_context():
         for job, value in zip(jobs, values):
+            logger.info(f"Processing {job.url}")
             logger.info(
                 f"Locations normalized: {job.locations_raw} → {value.locations} (universal: {value.is_universal})"
             )
-            job.locations = [location.model_dump() for location in value.locations]
-            job.remote = job.remote or value.is_universal
-            job.save()
+            if is_relevant_country(value, country_codes):
+                job.locations = [location.model_dump() for location in value.locations]
+                job.remote = job.remote or value.is_universal
+                job.save()
+            else:
+                logger.warning("Deleting the job as not relevant!")
+                job.delete_instance()
 
 
 async def locate_list(locations_raw: list[str]) -> LocationsList:
@@ -47,3 +69,11 @@ async def locate_list(locations_raw: list[str]) -> LocationsList:
         )
         return LocationsList(locations=locations, is_universal=is_universal)
     return LocationsList()
+
+
+def is_relevant_country(locations_list: LocationsList, country_codes: set[str]) -> bool:
+    if locations_list.is_universal:
+        return True
+    return any(
+        location.country_code in country_codes for location in locations_list.locations
+    )

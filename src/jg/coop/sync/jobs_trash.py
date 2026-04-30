@@ -11,7 +11,7 @@ from jg.coop.models.job import DroppedJob, ListedJob
 logger = loggers.from_path(__file__)
 
 
-@cli.sync_command(dependencies=["jobs-listing"])
+@cli.sync_command(dependencies=["jobs-locations"])
 @click.option("--channel", "channel_id", default="jobs_trash", type=parse_channel)
 @click.option("--sample-size", default=10, type=int)
 @db.connection_context()
