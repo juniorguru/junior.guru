@@ -33,7 +33,15 @@ BOUNDING_BOX = (
     Decimal("51.16150072295437"),
 )
 
-UNIVERSAL_LOCATIONS = {"czechia", "slovakia", "remote"}
+UNIVERSAL_LOCATIONS = {
+    "czechia",
+    "slovakia",
+    "remote",
+    "emea",
+    "europe",
+    "anywhere",
+    "worldwide",
+}
 
 REWRITES_RE = {
     re.compile(r"[\n\r]+"): ", ",
