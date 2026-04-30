@@ -92,7 +92,7 @@ async def ensure_reminders(
             logger.warning(f"Last reminder is more than {reminder.period_days} old!")
         else:
             logger.info(f"Reminder is still fresh, skipping: {last_message.url}")
-            return
+            continue
 
         channel = await client.fetch_channel(reminder.channel_id)
         content = build_reminder_content(reminder, tip_urls_by_emoji, roles)
