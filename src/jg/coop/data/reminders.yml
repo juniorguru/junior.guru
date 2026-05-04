@@ -20,5 +20,5 @@ reminders:
   - control_emoji: "<:youtube:976200175490060299>"
     channel_id: RESOURCES
     content_template: >-
-      Nezapomeň, že v <#RESOURCES> najdeš všechny videozáznamy klubových akcí. Mrkni i na starší věci. Třeba narazíš na něco, co se ti zrovna bude hodit!
+      Nezapomeň, že v <#GUIDE_EVENTS> najdeš všechny videozáznamy klubových akcí. Mrkni i na starší věci. Třeba narazíš na něco, co se ti zrovna bude hodit!
     period_days: 30
