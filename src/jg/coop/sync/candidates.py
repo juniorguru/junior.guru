@@ -6,6 +6,7 @@ from pprint import pformat
 
 import click
 import httpx
+from githubkit import GitHub
 from PIL import Image
 from tenacity import (
     before_sleep_log,
@@ -15,7 +16,7 @@ from tenacity import (
     wait_random_exponential,
 )
 
-from jg.coop.cli.sync import main as cli
+from jg.coop.cli.sync import default_from_env, main as cli
 from jg.coop.lib import loggers
 from jg.coop.lib.cache import cache
 from jg.coop.lib.cli import async_command
@@ -49,6 +50,9 @@ logger = loggers.from_path(__file__)
 @cli.sync_command(dependencies=["club-content"])
 @click.option("--api-url", default="https://juniorguru.github.io/eggtray/profiles.json")
 @click.option(
+    "--github-api-key", default=default_from_env("GITHUB_API_KEY"), required=True
+)
+@click.option(
     "--history-path",
     default="src/jg/coop/data/candidates.jsonl",
     type=click.Path(path_type=Path),
@@ -70,6 +74,7 @@ logger = loggers.from_path(__file__)
 @async_command
 async def main(
     api_url: str,
+    github_api_key: str,
     history_path: Path,
     today: date,
     images_dir: Path,
@@ -179,6 +184,15 @@ async def main(
                 )
             logger.info(f"Saved {len(projects_items)} projects for {candidate!r}")
 
+    logger.info("Getting checks data from GitHub")
+    checks_by_month = scrape_github_checks(github_api_key)
+    for checks_month, checks_count in checks_by_month.items():
+        CandidateStats.add(
+            month=checks_month,
+            name=CandidateStatsName.CHECKS,
+            count=checks_count,
+        )
+
     logger.info("Calculating stats")
     CandidateStats.add(
         month=month,
@@ -220,3 +234,31 @@ async def download_image(client: httpx.AsyncClient, url: str) -> bytes:
     response = await client.get(url)
     response.raise_for_status()
     return response.content
+
+
+def scrape_github_checks(api_key: str) -> dict[str, int]:
+    checks_by_month = {}
+    page = 1
+    with GitHub(api_key) as github:
+        while True:
+            response = github.rest.issues.list_for_repo(
+                owner="juniorguru",
+                repo="eggtray",
+                state="all",
+                labels="check",
+                per_page=100,
+                page=page,
+            )
+            issues = response.parsed_data
+            if not issues:
+                break
+            for issue in issues:
+                if getattr(issue, "pull_request", None):
+                    continue
+                checks_month = f"{issue.created_at:%Y-%m}"
+                checks_by_month.setdefault(checks_month, 0)
+                checks_by_month[checks_month] += 1
+            if len(issues) < 100:
+                break
+            page += 1
+    return checks_by_month

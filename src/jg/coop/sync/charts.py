@@ -37,6 +37,8 @@ SURVEYS_BEGIN_ON = date(2023, 1, 1)
 
 MEMBERS_DATA_BEGIN_ON = date(2024, 7, 1)
 
+GITHUB_CHECKS_BEGIN_ON = date(2025, 3, 1)
+
 CANDIDATES_BEGIN_ON = date(2025, 11, 14)
 
 MILESTONES = [
@@ -47,6 +49,7 @@ MILESTONES = [
     (date(2023, 5, 1), "Vznik kurzů"),
     (date(2025, 10, 1), "Restart newsletteru"),
     (CANDIDATES_BEGIN_ON, "Vznik kandidátů"),
+    (GITHUB_CHECKS_BEGIN_ON, "Vznik kontrol GitHubů"),
     (date(2026, 5, 1), "Nová homepage"),
 ]
 
