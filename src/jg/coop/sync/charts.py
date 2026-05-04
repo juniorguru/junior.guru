@@ -511,6 +511,13 @@ def candidates_listed_breakdown_ptc(today: date) -> FloatBreakdownChartDict:
     return dict(data=data, months=months)
 
 
+@chart
+def candidates_github_checks(today: date) -> IntChartDict:
+    months = charts.months(GITHUB_CHECKS_BEGIN_ON, today)
+    data = charts.per_month(CandidateStats.checks_count, months)
+    return dict(data=data, months=months)
+
+
 def position(names: list[str], name: str) -> int:
     try:
         return names.index(name)

@@ -426,6 +426,20 @@ class CandidateStats(BaseModel):
         return cls.select().order_by(cls.month, cls.name)
 
     @classmethod
+    def checks_count(cls, month: date) -> int | None:
+        stats = (
+            cls.select(cls.count)
+            .where(
+                cls.month == f"{month:%Y-%m}",
+                cls.name == CandidateStatsName.CHECKS,
+            )
+            .first()
+        )
+        if not stats:
+            return None
+        return stats.count
+
+    @classmethod
     def listed_breakdown(cls, month: date) -> dict[CandidateStatsName, int | None]:
         breakdown = {
             name: None for name in CandidateStatsName if name.startswith("listed_")

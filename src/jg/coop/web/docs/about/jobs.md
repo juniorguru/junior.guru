@@ -227,4 +227,28 @@ Spojnicový graf ukazuje, kolik kandidátů se na portálu prezentovalo v jednot
 
 Graf ukazuje počet zpětných vazeb na GitHub profily v jednotlivých měsících.
 
-TODO
+{% if charts.candidates_github_checks_labels -%}
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts.candidates_github_checks_labels,
+        'datasets': [
+            {
+                'label': 'checks',
+                'data': charts.candidates_github_checks,
+                'borderColor': '#1755d1',
+                'borderWidth': 2,
+            },
+        ],
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}},
+        'plugins': {'annotation': charts.candidates_github_checks_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+{% else %}
+  {% call note() -%}
+    {{ 'cloud-rain'|icon }} Graf je momentálně rozbitý.
+  {%- endcall %}
+{% endif %}
