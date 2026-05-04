@@ -54,6 +54,40 @@ Graf zobrazuje procentuální podíl žen na počtu členů [klubu](../club.md).
     }|tojson|forceescape }}"
     data-chart-milestones-offset-ptc="0"></canvas></div></div>
 
+## Počet žen mezi kandidáty
+
+Graf zobrazuje počet žen v [seznamu kandidátů](../candidates.jinja) v jednotlivých měsících.
+
+{% call note() %}
+  {{ 'trash'|icon }} V prvním půlroce provozu seznamu kandidátů se nesbírala data o jejich počtu, takže v grafu chybí.
+{% endcall %}
+
+{% if charts.candidates_women_labels -%}
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts.candidates_women_labels,
+        'datasets': [
+                {
+                    'label': '% žen mezi kandidáty',
+                    'data': charts.candidates_women,
+                    'borderColor': '#dc3545',
+                    'borderWidth': 2,
+                },
+        ],
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'min': 0, 'suggestedMax': 100}},
+        'plugins': {'annotation': charts.candidates_women_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+{% else %}
+    {% call note() -%}
+        {{ 'cloud-rain'|icon }} Graf je momentálně rozbitý.
+    {%- endcall %}
+{% endif %}
+
 ## Podíl žen mezi přednášejícími
 
 Graf zobrazuje procentuální podíl žen na počtu [přednášejících](../events.md) za posledních 12 měsíců (TTM, _trailing twelve months_).
