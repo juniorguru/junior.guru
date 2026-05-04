@@ -47,9 +47,9 @@ MILESTONES = [
     (CLUB_BEGIN_ON, "Vznik klubu"),
     (PODCAST_BEGIN_ON, "Vznik podcastu"),
     (date(2023, 5, 1), "Vznik kurzů"),
+    (GITHUB_CHECKS_BEGIN_ON, "Vznik kontrol GitHubů"),
     (date(2025, 10, 1), "Restart newsletteru"),
     (CANDIDATES_BEGIN_ON, "Vznik kandidátů"),
-    (GITHUB_CHECKS_BEGIN_ON, "Vznik kontrol GitHubů"),
     (date(2026, 4, 17), "Nová homepage"),
 ]
 
