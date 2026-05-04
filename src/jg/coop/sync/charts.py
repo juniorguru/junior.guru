@@ -41,6 +41,8 @@ MILESTONES = [
     (PODCAST_BEGIN_ON, "Vznik podcastu"),
     (date(2023, 5, 1), "Vznik kurzů"),
     (date(2025, 10, 1), "Restart newsletteru"),
+    (date(2025, 11, 14), "Vznik kandidátů"),
+    (date(2026, 5, 1), "Nová homepage"),
 ]
 
 CHARTS = {}
