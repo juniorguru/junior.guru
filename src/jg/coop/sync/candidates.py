@@ -1,4 +1,5 @@
 import logging
+from collections import defaultdict
 from datetime import date, timedelta
 from io import BytesIO
 from pathlib import Path
@@ -184,8 +185,8 @@ async def main(
                 )
             logger.info(f"Saved {len(projects_items)} projects for {candidate!r}")
 
-    logger.info("Getting checks data from GitHub")
-    checks_by_month = scrape_github_checks(github_api_key)
+    logger.info("Getting checks stats from GitHub")
+    checks_by_month = fetch_github_checks(github_api_key)
     for checks_month, checks_count in checks_by_month.items():
         CandidateStats.add(
             month=checks_month,
@@ -193,7 +194,7 @@ async def main(
             count=checks_count,
         )
 
-    logger.info("Calculating stats")
+    logger.info("Calculating stats about listed candidates")
     CandidateStats.add(
         month=month,
         name=CandidateStatsName.LISTED_TOTAL,
@@ -236,17 +237,21 @@ async def download_image(client: httpx.AsyncClient, url: str) -> bytes:
     return response.content
 
 
-def scrape_github_checks(api_key: str) -> dict[str, int]:
-    checks_by_month = {}
+def fetch_github_checks(
+    api_key: str, *, pages_limit: int = 3, per_page: int = 100
+) -> dict[str, int]:
+    checks_by_month = defaultdict(int)
     page = 1
     with GitHub(api_key) as github:
-        while True:
+        while page <= pages_limit:
             response = github.rest.issues.list_for_repo(
                 owner="juniorguru",
                 repo="eggtray",
                 state="all",
                 labels="check",
-                per_page=100,
+                sort="created",
+                direction="desc",
+                per_page=per_page,
                 page=page,
             )
             issues = response.parsed_data
@@ -256,9 +261,8 @@ def scrape_github_checks(api_key: str) -> dict[str, int]:
                 if getattr(issue, "pull_request", None):
                     continue
                 checks_month = f"{issue.created_at:%Y-%m}"
-                checks_by_month.setdefault(checks_month, 0)
                 checks_by_month[checks_month] += 1
-            if len(issues) < 100:
+            if len(issues) < per_page:
                 break
             page += 1
-    return checks_by_month
+    return dict(checks_by_month)
