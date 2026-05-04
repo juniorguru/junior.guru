@@ -56,10 +56,11 @@ nav:
       - Vše o projektu: about/index.md
       - Provozovatel: about/contact.md
       - Mise a hodnoty: about/mission.md
-      - Vše o klubu: about/club.md
-      - Klubový Discord bot: about/bot.md
-      - Vše o příručce: about/handbook.md
       - Finanční výsledky: about/finances.md
+      - Vše o příručce: about/handbook.md
+      - Vše o klubu: about/club.md
+      - Vše o pracovním portálu: about/jobs.md
+      - Klubový Discord bot: about/bot.md
       - Sponzoři a partneři: about/sponsors-partners.md
       - Návštěvnost webu: about/web-usage.md
       - Marketing: about/marketing.md
