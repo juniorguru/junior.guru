@@ -1,3 +1,4 @@
+from collections import defaultdict
 from datetime import date
 from typing import Any, Callable, NotRequired, TypedDict
 
@@ -10,6 +11,7 @@ from jg.coop.models.club import ClubMessage
 from jg.coop.models.event import Event, EventSpeaking
 from jg.coop.models.exchange_rate import ExchangeRate
 from jg.coop.models.followers import Followers
+from jg.coop.models.job import JobStats
 from jg.coop.models.members import Members
 from jg.coop.models.page import Page
 from jg.coop.models.podcast import PodcastEpisode
@@ -80,6 +82,7 @@ class FloatBreakdownChartDict(ChartDict):
         "events",
         "exchange-rates",
         "followers",
+        "jobs-stats",
         "members",
         "pages",
         "podcast",
@@ -427,6 +430,80 @@ def logo_impressions_breakdown(today: date) -> IntBreakdownChartDict:
         if product_name in product_names
     }
     return dict(data=impressions_breakdown)
+
+
+@chart
+def jobs_count_listed_discord(today: date) -> IntBreakdownChartDict:
+    stats = list(JobStats.history())
+    months, data = jobs_stats_monthly_data(stats)
+    data = dict(listed=data["listed"], discord=data["discord"])
+    return dict(data=data, months=months)
+
+
+@chart
+def jobs_count_listed_dropped(today: date) -> IntBreakdownChartDict:
+    stats = list(JobStats.history())
+    months, data = jobs_stats_monthly_data(stats)
+    data = dict(listed=data["listed"], dropped=data["dropped"])
+    return dict(data=data, months=months)
+
+
+@chart
+def jobs_listed_ptc(today: date) -> FloatChartDict:
+    stats = list(JobStats.history())
+    months, breakdown = jobs_stats_monthly_data(stats)
+    listed_counts = breakdown["listed"]
+    dropped_counts = breakdown["dropped"]
+    data = [
+        (
+            ((listed_count * 100) / total_count)
+            if (listed_count is not None and dropped_count is not None and total_count)
+            else None
+        )
+        for listed_count, dropped_count in zip(listed_counts, dropped_counts)
+        for total_count in [listed_count + dropped_count]
+    ]
+    return dict(data=data, months=months)
+
+
+def jobs_stats_monthly_data(
+    stats: list[JobStats],
+) -> tuple[list[date], dict[str, list[int]]]:
+    if not stats:
+        return [], dict(listed=[], dropped=[], discord=[])
+
+    records_by_month = defaultdict(list)
+    for record in stats:
+        month_end = charts.month_range(record.day)[1]
+        records_by_month[month_end].append(record)
+
+    months = charts.months(stats[0].day, stats[-1].day)
+
+    data = dict(listed=[], dropped=[], discord=[])
+    for month in months:
+        month_records = records_by_month[month]
+        month_records_count = len(month_records)
+
+        data["listed"].append(
+            round(
+                sum(record.listed_count for record in month_records)
+                / month_records_count
+            )
+        )
+        data["dropped"].append(
+            round(
+                sum(record.dropped_count for record in month_records)
+                / month_records_count
+            )
+        )
+        data["discord"].append(
+            round(
+                sum(record.discord_count for record in month_records)
+                / month_records_count
+            )
+        )
+
+    return months, data
 
 
 def position(names: list[str], name: str):
