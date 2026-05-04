@@ -50,7 +50,7 @@ MILESTONES = [
     (date(2025, 10, 1), "Restart newsletteru"),
     (CANDIDATES_BEGIN_ON, "Vznik kandidátů"),
     (GITHUB_CHECKS_BEGIN_ON, "Vznik kontrol GitHubů"),
-    (date(2026, 5, 1), "Nová homepage"),
+    (date(2026, 4, 17), "Nová homepage"),
 ]
 
 CHARTS = {}
