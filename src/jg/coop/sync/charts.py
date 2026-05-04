@@ -1,5 +1,5 @@
-from collections import defaultdict
 from datetime import date
+from operator import attrgetter
 from typing import Any, Callable, NotRequired, TypedDict
 
 from jg.coop.cli.sync import main as cli
@@ -435,7 +435,15 @@ def logo_impressions_breakdown(today: date) -> IntBreakdownChartDict:
 @chart
 def jobs_count_listed_discord(today: date) -> IntBreakdownChartDict:
     stats = list(JobStats.history())
-    months, data = jobs_stats_monthly_data(stats)
+    months, data = charts.per_month_aggregate_breakdown(
+        stats,
+        day_fn=attrgetter("day"),
+        value_fns=dict(
+            listed=attrgetter("listed_count"),
+            discord=attrgetter("discord_count"),
+        ),
+        aggregate_fn=charts.average_round,
+    )
     data = dict(listed=data["listed"], discord=data["discord"])
     return dict(data=data, months=months)
 
@@ -443,7 +451,15 @@ def jobs_count_listed_discord(today: date) -> IntBreakdownChartDict:
 @chart
 def jobs_count_listed_dropped(today: date) -> IntBreakdownChartDict:
     stats = list(JobStats.history())
-    months, data = jobs_stats_monthly_data(stats)
+    months, data = charts.per_month_aggregate_breakdown(
+        stats,
+        day_fn=attrgetter("day"),
+        value_fns=dict(
+            listed=attrgetter("listed_count"),
+            dropped=attrgetter("dropped_count"),
+        ),
+        aggregate_fn=charts.average_round,
+    )
     data = dict(listed=data["listed"], dropped=data["dropped"])
     return dict(data=data, months=months)
 
@@ -451,7 +467,15 @@ def jobs_count_listed_dropped(today: date) -> IntBreakdownChartDict:
 @chart
 def jobs_listed_ptc(today: date) -> FloatChartDict:
     stats = list(JobStats.history())
-    months, breakdown = jobs_stats_monthly_data(stats)
+    months, breakdown = charts.per_month_aggregate_breakdown(
+        stats,
+        day_fn=attrgetter("day"),
+        value_fns=dict(
+            listed=attrgetter("listed_count"),
+            dropped=attrgetter("dropped_count"),
+        ),
+        aggregate_fn=charts.average_round,
+    )
     listed_counts = breakdown["listed"]
     dropped_counts = breakdown["dropped"]
     data = [
@@ -464,46 +488,6 @@ def jobs_listed_ptc(today: date) -> FloatChartDict:
         for total_count in [listed_count + dropped_count]
     ]
     return dict(data=data, months=months)
-
-
-def jobs_stats_monthly_data(
-    stats: list[JobStats],
-) -> tuple[list[date], dict[str, list[int]]]:
-    if not stats:
-        return [], dict(listed=[], dropped=[], discord=[])
-
-    records_by_month = defaultdict(list)
-    for record in stats:
-        month_end = charts.month_range(record.day)[1]
-        records_by_month[month_end].append(record)
-
-    months = charts.months(stats[0].day, stats[-1].day)
-
-    data = dict(listed=[], dropped=[], discord=[])
-    for month in months:
-        month_records = records_by_month[month]
-        month_records_count = len(month_records)
-
-        data["listed"].append(
-            round(
-                sum(record.listed_count for record in month_records)
-                / month_records_count
-            )
-        )
-        data["dropped"].append(
-            round(
-                sum(record.dropped_count for record in month_records)
-                / month_records_count
-            )
-        )
-        data["discord"].append(
-            round(
-                sum(record.discord_count for record in month_records)
-                / month_records_count
-            )
-        )
-
-    return months, data
 
 
 def position(names: list[str], name: str):

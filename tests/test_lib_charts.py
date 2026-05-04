@@ -1,8 +1,17 @@
+from dataclasses import dataclass
 from datetime import date
+from operator import attrgetter
 
 import pytest
 
 from jg.coop.lib import charts
+
+
+@dataclass
+class DailyItem:
+    day: date
+    listed: int
+    dropped: int
 
 
 def test_months():
@@ -149,3 +158,88 @@ def test_milestones_label_respects_nbsp():
     annotation = result["annotations"]["velikonocni-pondeli-label"]
 
     assert annotation["content"] == ["Velikonoční pondělí"]
+
+
+@pytest.mark.parametrize(
+    "day, expected",
+    [
+        pytest.param(
+            date(2026, 5, 4),
+            date(2026, 5, 31),
+            id="regular month",
+        ),
+        pytest.param(
+            date(2021, 2, 10),
+            date(2021, 2, 28),
+            id="short February",
+        ),
+        pytest.param(
+            date(2020, 2, 10),
+            date(2020, 2, 29),
+            id="long February",
+        ),
+    ],
+)
+def test_month_end(day, expected):
+    assert charts.month_end(day) == expected
+
+
+def test_group_by_month_end():
+    items = [
+        DailyItem(day=date(2026, 5, 4), listed=11, dropped=21),
+        DailyItem(day=date(2026, 5, 11), listed=13, dropped=23),
+        DailyItem(day=date(2026, 6, 1), listed=15, dropped=25),
+    ]
+
+    mapping = charts.group_by_month_end(items, attrgetter("day"))
+
+    assert set(mapping.keys()) == {date(2026, 5, 31), date(2026, 6, 30)}
+    assert [item.listed for item in mapping[date(2026, 5, 31)]] == [11, 13]
+    assert [item.listed for item in mapping[date(2026, 6, 30)]] == [15]
+
+
+@pytest.mark.parametrize(
+    "values, expected",
+    [
+        pytest.param([10, 11, 12], 11, id="three values"),
+        pytest.param([10, 11], 10, id="bankers rounding"),
+    ],
+)
+def test_average_round(values, expected):
+    assert charts.average_round(values) == expected
+
+
+def test_per_month_aggregate_breakdown():
+    items = [
+        DailyItem(day=date(2026, 5, 4), listed=10, dropped=20),
+        DailyItem(day=date(2026, 5, 11), listed=12, dropped=24),
+        DailyItem(day=date(2026, 6, 1), listed=20, dropped=40),
+    ]
+
+    months, data = charts.per_month_aggregate_breakdown(
+        items,
+        day_fn=attrgetter("day"),
+        value_fns={
+            "listed": attrgetter("listed"),
+            "dropped": attrgetter("dropped"),
+        },
+        aggregate_fn=charts.average_round,
+    )
+
+    assert months == [date(2026, 5, 31), date(2026, 6, 30)]
+    assert data == {"listed": [11, 20], "dropped": [22, 40]}
+
+
+def test_per_month_aggregate_breakdown_empty_input():
+    months, data = charts.per_month_aggregate_breakdown(
+        [],
+        day_fn=attrgetter("day"),
+        value_fns={
+            "listed": attrgetter("listed"),
+            "dropped": attrgetter("dropped"),
+        },
+        aggregate_fn=charts.average_round,
+    )
+
+    assert months == []
+    assert data == {"listed": [], "dropped": []}

@@ -1,11 +1,15 @@
 import calendar
 import itertools
+from collections import defaultdict
 from datetime import date, timedelta
 from functools import cache
 from numbers import Number
-from typing import Callable, Generator, Iterable
+from typing import Callable, Generator, Iterable, TypeVar
 
 from slugify import slugify
+
+
+T = TypeVar("T")
 
 
 ANNOTATION_LABEL_OPTIONS = {
@@ -68,6 +72,42 @@ def per_month_breakdown(
         category: [breakdown.get(category) for breakdown in breakdowns]
         for category in categories
     }
+
+
+def month_end(day: date) -> date:
+    return month_range(day)[1]
+
+
+def group_by_month_end(
+    items: Iterable[T], day_fn: Callable[[T], date]
+) -> dict[date, list[T]]:
+    grouped = defaultdict(list)
+    for item in items:
+        grouped[month_end(day_fn(item))].append(item)
+    return dict(grouped)
+
+
+def average_round(values: list[Number]) -> int:
+    return round(sum(values) / len(values))
+
+
+def per_month_aggregate_breakdown(
+    items: Iterable[T],
+    day_fn: Callable[[T], date],
+    value_fns: dict[str, Callable[[T], Number]],
+    aggregate_fn: Callable[[list[Number]], Number],
+) -> tuple[list[date], dict[str, list[Number]]]:
+    grouped = group_by_month_end(items, day_fn)
+    months = sorted(grouped.keys())
+
+    data = {name: [] for name in value_fns}
+    for month in months:
+        month_items = grouped[month]
+        for name, value_fn in value_fns.items():
+            values = [value_fn(item) for item in month_items]
+            data[name].append(aggregate_fn(values))
+
+    return months, data
 
 
 @cache
