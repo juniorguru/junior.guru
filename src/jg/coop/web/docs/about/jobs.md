@@ -37,32 +37,32 @@ Grafy ukazují, kolik inzerátů bylo na portálu v jednotlivých měsících, a
 
 {% if charts.jobs_count_listed_discord_labels -%}
 <div class="chart-scroll"><div class="chart-container"><canvas
-	class="chart" width="400" height="300"
-	data-chart-type="bar"
-	data-chart="{{ {
-		'labels': charts.jobs_count_listed_discord_labels,
-		'datasets': [
-			{
-				'label': 'uveřejněné na portálu',
-				'data': charts.jobs_count_listed_discord.pop('listed'),
-				'backgroundColor': '#1755d1',
-			},
-			{
-				'label': 'ručně přidané na Discord',
-				'data': charts.jobs_count_listed_discord.pop('discord'),
-				'backgroundColor': '#638cdd',
-			},
-		],
-	}|tojson|forceescape }}"
-	{{ charts.jobs_count_listed_discord.keys()|list|assert_empty }}
-	data-chart-options="{{ {
-		'interaction': {'mode': 'index'},
-		'scales': {'x': {'stacked': True}, 'y': {'stacked': True, 'beginAtZero': true}},
-		'plugins': {'annotation': charts.jobs_count_listed_discord_annotations},
-	}|tojson|forceescape }}"></canvas></div></div>
+    class="chart" width="400" height="300"
+    data-chart-type="bar"
+    data-chart="{{ {
+        'labels': charts.jobs_count_listed_discord_labels,
+        'datasets': [
+            {
+                'label': 'uveřejněné na portálu',
+                'data': charts.jobs_count_listed_discord.pop('listed'),
+                'backgroundColor': '#1755d1',
+            },
+            {
+                'label': 'ručně přidané na Discord',
+                'data': charts.jobs_count_listed_discord.pop('discord'),
+                'backgroundColor': '#638cdd',
+            },
+        ],
+    }|tojson|forceescape }}"
+    {{ charts.jobs_count_listed_discord.keys()|list|assert_empty }}
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'x': {'stacked': True}, 'y': {'stacked': True, 'beginAtZero': true}},
+        'plugins': {'annotation': charts.jobs_count_listed_discord_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
 {% else %}
   {% call note() -%}
-	{{ 'cloud-rain'|icon }} Graf je momentálně rozbitý.
+    {{ 'cloud-rain'|icon }} Graf je momentálně rozbitý.
   {%- endcall %}
 {% endif %}
 
@@ -70,32 +70,32 @@ Grafy ukazují, kolik inzerátů bylo na portálu v jednotlivých měsících, a
 
 {% if charts.jobs_count_listed_dropped_labels -%}
 <div class="chart-scroll"><div class="chart-container"><canvas
-	class="chart" width="400" height="300"
-	data-chart-type="bar"
-	data-chart="{{ {
-		'labels': charts.jobs_count_listed_dropped_labels,
-		'datasets': [
-			{
-				'label': 'uveřejněné na portálu',
-				'data': charts.jobs_count_listed_dropped.pop('listed'),
-				'backgroundColor': '#1755d1',
-			},
-			{
-				'label': 'zahozené inzeráty',
-				'data': charts.jobs_count_listed_dropped.pop('dropped'),
-				'backgroundColor': '#a9a9a9',
-			},
-		],
-	}|tojson|forceescape }}"
-	{{ charts.jobs_count_listed_dropped.keys()|list|assert_empty }}
-	data-chart-options="{{ {
-		'interaction': {'mode': 'index'},
-		'scales': {'x': {'stacked': True}, 'y': {'stacked': True, 'beginAtZero': true}},
-		'plugins': {'annotation': charts.jobs_count_listed_dropped_annotations},
-	}|tojson|forceescape }}"></canvas></div></div>
+    class="chart" width="400" height="300"
+    data-chart-type="bar"
+    data-chart="{{ {
+        'labels': charts.jobs_count_listed_dropped_labels,
+        'datasets': [
+            {
+                'label': 'uveřejněné na portálu',
+                'data': charts.jobs_count_listed_dropped.pop('listed'),
+                'backgroundColor': '#1755d1',
+            },
+            {
+                'label': 'zahozené inzeráty',
+                'data': charts.jobs_count_listed_dropped.pop('dropped'),
+                'backgroundColor': '#a9a9a9',
+            },
+        ],
+    }|tojson|forceescape }}"
+    {{ charts.jobs_count_listed_dropped.keys()|list|assert_empty }}
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'x': {'stacked': True}, 'y': {'stacked': True, 'beginAtZero': true}},
+        'plugins': {'annotation': charts.jobs_count_listed_dropped_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
 {% else %}
   {% call note() -%}
-	{{ 'cloud-rain'|icon }} Graf je momentálně rozbitý.
+    {{ 'cloud-rain'|icon }} Graf je momentálně rozbitý.
   {%- endcall %}
 {% endif %}
 
@@ -105,27 +105,27 @@ Graf ukazuje, kolik procent ze všech nabídek skončilo mezi uveřejněnými. C
 
 {% if charts.jobs_listed_ptc_labels -%}
 <div class="chart-scroll"><div class="chart-container"><canvas
-	class="chart" width="400" height="230"
-	data-chart-type="line"
-	data-chart="{{ {
-		'labels': charts.jobs_listed_ptc_labels,
-		'datasets': [
-			{
-				'label': '% uveřejněných inzerátů',
-				'data': charts.jobs_listed_ptc,
-				'borderColor': '#1755d1',
-				'borderWidth': 2,
-			},
-		]
-	}|tojson|forceescape }}"
-	data-chart-options="{{ {
-		'interaction': {'mode': 'index'},
-		'scales': {'y': {'min': 0}},
-		'plugins': {'annotation': charts.jobs_listed_ptc_annotations},
-	}|tojson|forceescape }}"></canvas></div></div>
+    class="chart" width="400" height="230"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts.jobs_listed_ptc_labels,
+        'datasets': [
+            {
+                'label': '% uveřejněných inzerátů',
+                'data': charts.jobs_listed_ptc,
+                'borderColor': '#1755d1',
+                'borderWidth': 2,
+            },
+        ]
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'min': 0}},
+        'plugins': {'annotation': charts.jobs_listed_ptc_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
 {% else %}
   {% call note() -%}
-	{{ 'cloud-rain'|icon }} Graf je momentálně rozbitý.
+    {{ 'cloud-rain'|icon }} Graf je momentálně rozbitý.
   {%- endcall %}
 {% endif %}
 
