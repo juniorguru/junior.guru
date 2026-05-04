@@ -1,5 +1,5 @@
 import logging
-from datetime import timedelta
+from datetime import date, timedelta
 from io import BytesIO
 from pathlib import Path
 from pprint import pformat
@@ -22,7 +22,11 @@ from jg.coop.lib.cli import async_command
 from jg.coop.lib.images import create_fallback_image
 from jg.coop.lib.location import locate_fuzzy
 from jg.coop.models.base import db
-from jg.coop.models.candidate import Candidate, CandidateProject
+from jg.coop.models.candidate import (
+    Candidate,
+    CandidateProject,
+    CandidateStats,
+)
 from jg.coop.models.club import ClubUser
 from jg.coop.models.feminine_name import FeminineName
 
@@ -44,6 +48,16 @@ logger = loggers.from_path(__file__)
 @cli.sync_command(dependencies=["club-content"])
 @click.option("--api-url", default="https://juniorguru.github.io/eggtray/profiles.json")
 @click.option(
+    "--history-path",
+    default="src/jg/coop/data/candidates.jsonl",
+    type=click.Path(path_type=Path),
+)
+@click.option(
+    "--today",
+    default=lambda: date.today().isoformat(),
+    type=date.fromisoformat,
+)
+@click.option(
     "--images-dir",
     default="src/jg/coop/images",
     type=click.Path(path_type=Path, exists=True, file_okay=False),
@@ -55,6 +69,8 @@ logger = loggers.from_path(__file__)
 @async_command
 async def main(
     api_url: str,
+    history_path: Path,
+    today: date,
     images_dir: Path,
     avatars_dirname: str,
     avatar_size_px: int,
@@ -76,8 +92,16 @@ async def main(
     default_thumbnail_path = str(default_thumbnail_path.relative_to(images_dir))
 
     logger.debug("Setting up database")
-    db.drop_tables([Candidate, CandidateProject])
-    db.create_tables([Candidate, CandidateProject])
+    db.drop_tables([Candidate, CandidateProject, CandidateStats])
+    db.create_tables([Candidate, CandidateProject, CandidateStats])
+
+    month = f"{today:%Y-%m}"
+    logger.info(f"Reading stats history, current month: {month}")
+    history_path.parent.mkdir(parents=True, exist_ok=True)
+    history_path.touch(exist_ok=True)
+    with history_path.open() as f:
+        for line in f:
+            CandidateStats.deserialize(line)
 
     logger.info("Reading API")
     async with httpx.AsyncClient() as client:
@@ -153,6 +177,17 @@ async def main(
                     **project_item,
                 )
             logger.info(f"Saved {len(projects_items)} projects for {candidate!r}")
+
+    logger.info("Calculating stats")
+    CandidateStats.add(month=month, name="total", count=Candidate.count())
+    CandidateStats.add(month=month, name="ready", count=Candidate.count_ready())
+    CandidateStats.add(month=month, name="members", count=Candidate.count_members())
+    CandidateStats.add(month=month, name="feminine", count=Candidate.count_feminine())
+
+    logger.info("Updating stats")
+    with history_path.open("w") as f:
+        for db_object in CandidateStats.history():
+            f.write(db_object.serialize())
 
 
 @cache(expire=timedelta(hours=1), ignore=(0,), tag="candidates-images")

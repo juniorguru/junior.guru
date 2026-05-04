@@ -1,17 +1,26 @@
 import itertools
-from datetime import timedelta
+import json
+from datetime import date, timedelta
 from enum import StrEnum, auto
 from operator import attrgetter
 from typing import Iterable, Self
 
-from peewee import BooleanField, CharField, DateField, ForeignKeyField, IntegerField, fn
+from peewee import (
+    BooleanField,
+    CharField,
+    DateField,
+    ForeignKeyField,
+    IntegerField,
+    fn,
+)
+from playhouse.shortcuts import model_to_dict
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
 from slugify import slugify
 
 from jg.coop.lib.discord_club import ClubChannelID
 from jg.coop.lib.location import REGIONS, FuzzyLocation, Location, repr_locations
 from jg.coop.lib.text import get_tag_slug, remove_emoji
-from jg.coop.models.base import BaseModel, JSONField
+from jg.coop.models.base import BaseModel, JSONField, check_enum
 from jg.coop.models.club import ClubChannel, ClubMessage, ClubUser
 
 
@@ -22,6 +31,13 @@ class TagType(StrEnum):
     LOCATION = auto()
     SKILL = auto()
     LANGUAGE = auto()
+
+
+class CandidateStatsName(StrEnum):
+    TOTAL = "total"
+    READY = "ready"
+    MEMBERS = "members"
+    FEMININE = "feminine"
 
 
 class Tag(PydanticBaseModel):
@@ -278,6 +294,18 @@ class Candidate(BaseModel):
         return cls.select().count()
 
     @classmethod
+    def count_ready(cls) -> int:
+        return cls.select().where(cls.is_ready == True).count()  # noqa: E712
+
+    @classmethod
+    def count_members(cls) -> int:
+        return cls.select().where(cls.is_member == True).count()  # noqa: E712
+
+    @classmethod
+    def count_feminine(cls) -> int:
+        return cls.select().where(cls.has_feminine_name == True).count()  # noqa: E712
+
+    @classmethod
     def listing(cls) -> Iterable[Self]:
         return cls.select().order_by(
             cls.is_ready.desc(), cls.is_member.desc(), fn.random()
@@ -364,3 +392,60 @@ class CandidateProject(BaseModel):
     @classmethod
     def listing(cls) -> Iterable[Self]:
         return cls.select()
+
+
+class CandidateStats(BaseModel):
+    class Meta:
+        indexes = ((("month", "name"), True),)
+
+    month = CharField(index=True)
+    name = CharField(constraints=[check_enum("name", CandidateStatsName)])
+    count = IntegerField()
+
+    @classmethod
+    def deserialize(cls, line: str) -> Self | None:
+        data = json.loads(line)
+        return cls.add(**data)
+
+    def serialize(self) -> str:
+        data = model_to_dict(self, exclude=[self.__class__.id])
+        return json.dumps(data, ensure_ascii=False) + "\n"
+
+    @classmethod
+    def add(cls, **kwargs) -> None:
+        insert = cls.insert(**kwargs).on_conflict(
+            action="update",
+            update={cls.count: kwargs["count"]},
+            conflict_target=[cls.month, cls.name],
+        )
+        insert.execute()
+
+    @classmethod
+    def history(cls) -> Iterable[Self]:
+        return cls.select().order_by(cls.month, cls.name)
+
+    @classmethod
+    def breakdown(cls, month: date) -> dict[str, int | None]:
+        breakdown = {name: None for name in CandidateStatsName}
+        month_key = f"{month:%Y-%m}"
+        for stats in cls.select().where(cls.month == month_key):
+            breakdown[CandidateStatsName(stats.name)] = stats.count
+        return breakdown
+
+    @classmethod
+    def breakdown_ptc(cls, month: date) -> dict[str, float | None]:
+        breakdown = cls.breakdown(month)
+        total_count = breakdown["total"]
+        return {
+            "ready": calc_ptc(breakdown["ready"], total_count),
+            "members": calc_ptc(breakdown["members"], total_count),
+            "feminine": calc_ptc(breakdown["feminine"], total_count),
+        }
+
+
+def calc_ptc(count: int | None, total_count: int | None) -> float | None:
+    if count is None:
+        return None
+    if not total_count:
+        return None
+    return (count * 100) / total_count

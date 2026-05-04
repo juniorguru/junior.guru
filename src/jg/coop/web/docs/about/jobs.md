@@ -131,9 +131,97 @@ Graf ukazuje, kolik procent ze všech nabídek skončilo mezi uveřejněnými. C
 
 ## Počet kandidátů
 
-Sloupcový graf ukazuje, kolik kandidátů se na portálu prezentovalo v jednotlivých měsících. Barevně jsou rozděleni kandidáti z klubu, ostatní kandidáti, a kandidáti nesplňující „minimální laťku“.
+Spojnicový graf ukazuje, kolik kandidátů se na portálu prezentovalo v jednotlivých měsících, včetně rozdělení podle typu.
 
-TODO
+{% call note() %}
+  {{ 'trash'|icon }} V prvních měsících provozu seznamu kandidátů se nesbírala data o jejich počtu, takže v grafu chybí.
+{% endcall %}
+
+{% if charts.candidates_count_labels -%}
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts.candidates_count_labels,
+        'datasets': [
+            {
+                'label': 'kandidáti celkem',
+                'data': charts.candidates_count.pop('total'),
+                'borderColor': '#1755d1',
+                'borderWidth': 2,
+            },
+            {
+                'label': 'ready',
+                'data': charts.candidates_count.pop('ready'),
+                'borderColor': '#4c73bf',
+                'borderWidth': 2,
+            },
+            {
+                'label': 'members',
+                'data': charts.candidates_count.pop('members'),
+                'borderColor': '#02cabb',
+                'borderWidth': 2,
+            },
+            {
+                'label': 'feminine',
+                'data': charts.candidates_count.pop('feminine'),
+                'borderColor': '#dc3545',
+                'borderWidth': 2,
+            },
+        ],
+    }|tojson|forceescape }}"
+    {{ charts.candidates_count.keys()|list|assert_empty }}
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}},
+        'plugins': {'annotation': charts.candidates_count_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+{% else %}
+  {% call note() -%}
+    {{ 'cloud-rain'|icon }} Graf je momentálně rozbitý.
+  {%- endcall %}
+{% endif %}
+
+### Typy kandidátů (% z celku)
+
+{% if charts.candidates_types_ptc_labels -%}
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts.candidates_types_ptc_labels,
+        'datasets': [
+            {
+                'label': '% ready',
+                'data': charts.candidates_types_ptc.pop('ready'),
+                'borderColor': '#1755d1',
+                'borderWidth': 2,
+            },
+            {
+                'label': '% members',
+                'data': charts.candidates_types_ptc.pop('members'),
+                'borderColor': '#02cabb',
+                'borderWidth': 2,
+            },
+            {
+                'label': '% feminine',
+                'data': charts.candidates_types_ptc.pop('feminine'),
+                'borderColor': '#dc3545',
+                'borderWidth': 2,
+            },
+        ],
+    }|tojson|forceescape }}"
+    {{ charts.candidates_types_ptc.keys()|list|assert_empty }}
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'min': 0}},
+        'plugins': {'annotation': charts.candidates_types_ptc_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+{% else %}
+  {% call note() -%}
+    {{ 'cloud-rain'|icon }} Graf je momentálně rozbitý.
+  {%- endcall %}
+{% endif %}
 
 ## Počet zpětných vazeb na profily
 

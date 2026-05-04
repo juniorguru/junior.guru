@@ -6,6 +6,7 @@ from jg.coop.cli.sync import main as cli
 from jg.coop.lib import charts, loggers
 from jg.coop.lib.discord_club import DEFAULT_CHANNELS_HISTORY_SINCE
 from jg.coop.models.base import db
+from jg.coop.models.candidate import CandidateStats
 from jg.coop.models.chart import Chart
 from jg.coop.models.club import ClubMessage
 from jg.coop.models.event import Event, EventSpeaking
@@ -36,6 +37,8 @@ SURVEYS_BEGIN_ON = date(2023, 1, 1)
 
 MEMBERS_DATA_BEGIN_ON = date(2024, 7, 1)
 
+CANDIDATES_BEGIN_ON = date(2025, 11, 14)
+
 MILESTONES = [
     (BUSINESS_BEGIN_ON, "Začátek podnikání"),
     (date(2020, 9, 1), "Vznik příručky"),
@@ -43,7 +46,7 @@ MILESTONES = [
     (PODCAST_BEGIN_ON, "Vznik podcastu"),
     (date(2023, 5, 1), "Vznik kurzů"),
     (date(2025, 10, 1), "Restart newsletteru"),
-    (date(2025, 11, 14), "Vznik kandidátů"),
+    (CANDIDATES_BEGIN_ON, "Vznik kandidátů"),
     (date(2026, 5, 1), "Nová homepage"),
 ]
 
@@ -79,6 +82,7 @@ class FloatBreakdownChartDict(ChartDict):
 @cli.sync_command(
     dependencies=[
         "club-content",
+        "candidates",
         "events",
         "exchange-rates",
         "followers",
@@ -490,7 +494,21 @@ def jobs_listed_ptc(today: date) -> FloatChartDict:
     return dict(data=data, months=months)
 
 
-def position(names: list[str], name: str):
+@chart
+def candidates_count(today: date) -> IntBreakdownChartDict:
+    months = charts.months(CANDIDATES_BEGIN_ON, today)
+    data = charts.per_month_breakdown(CandidateStats.breakdown, months)
+    return dict(data=data, months=months)
+
+
+@chart
+def candidates_types_ptc(today: date) -> FloatBreakdownChartDict:
+    months = charts.months(CANDIDATES_BEGIN_ON, today)
+    data = charts.per_month_breakdown(CandidateStats.breakdown_ptc, months)
+    return dict(data=data, months=months)
+
+
+def position(names: list[str], name: str) -> int:
     try:
         return names.index(name)
     except ValueError:
