@@ -8,7 +8,7 @@ template: main_about.html
 # Vše o pracovním portálu
 
 {% call lead() %}
-Informace o [seznamu juniorních kandidátů](../candidates.jinja) a o [inzerátech pro juniory](../jobs.md). Záměr a hodnoty, se kterými je to provozováno. K tomu ještě pár zajímavých statistik.
+Informace o [seznamu juniorních kandidátů](../candidates.jinja) a o [inzerátech pro juniory](../jobs.jinja). Záměr a hodnoty, se kterými je to provozováno. K tomu ještě pár zajímavých statistik.
 {% endcall %}
 
 [TOC]
