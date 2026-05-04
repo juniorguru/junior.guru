@@ -31,9 +31,11 @@ Junioři si mohou z úvodní stránky junior.guru kdykoliv sami a zdarma spustit
 
 ## Počet inzerátů
 
-Grafy ukazují, kolik inzerátů bylo na portálu v jednotlivých měsících, a jaký podíl z nich se dostal mezi uveřejněné. Data vycházejí z týdenních záznamů agregovaných po měsících.
+Kolik inzerátů bylo v jednotlivých měsících uveřejněno na portálu a kolik inzerátů k tomu přidali ručně členové klubu na Discordu. Data vycházejí z týdenních záznamů agregovaných po měsících.
 
-### Uveřejněné na portálu a ručně přidané na Discord
+{% call note() %}
+  {{ 'trash'|icon }} I když inzeráty na junior.guru existují od roku 2019, před červnem 2025 se o nich neukládala žádná dlouhodobá data.
+{% endcall %}
 
 {% if charts.jobs_count_listed_discord_labels -%}
 <div class="chart-scroll"><div class="chart-container"><canvas
@@ -43,12 +45,12 @@ Grafy ukazují, kolik inzerátů bylo na portálu v jednotlivých měsících, a
         'labels': charts.jobs_count_listed_discord_labels,
         'datasets': [
             {
-                'label': 'uveřejněné na portálu',
+                'label': 'stažené odjunud',
                 'data': charts.jobs_count_listed_discord.pop('listed'),
                 'backgroundColor': '#1755d1',
             },
             {
-                'label': 'ručně přidané na Discord',
+                'label': 'ručně přidané',
                 'data': charts.jobs_count_listed_discord.pop('discord'),
                 'backgroundColor': '#638cdd',
             },
@@ -66,7 +68,15 @@ Grafy ukazují, kolik inzerátů bylo na portálu v jednotlivých měsících, a
   {%- endcall %}
 {% endif %}
 
-### Uveřejněné vs zahozené (absolutní počty)
+## Stažené a uveřejněné inzeráty
+
+Každý den robot stáhne stovky inzerátů z několika jiných pracovních portálů a potom je třídí pomocí AI, aby zbyly pouze ty opravdu juniorní. Na grafu je vidět poměr uveřejněných a zahozených inzerátů.
+
+Nelze jej ovšem vykládat jako podíl juniorních inzerátů na trhu, protože počet všech stažených inzerátů není o ničem vypovídající. Řídí technickými možnostmi a omezeními samotného stahování. Někdy např. lze už před stahováním pracovní nabídky vhodně předfiltrovat, jindy to nejde jinak, než stáhnout spoustu „smetí“ a filtrovat to dodatečně.
+
+{% call note() %}
+  {{ 'trash'|icon }} I když inzeráty na junior.guru existují od roku 2019, před červnem 2025 se o nich neukládala žádná dlouhodobá data.
+{% endcall %}
 
 {% if charts.jobs_count_listed_dropped_labels -%}
 <div class="chart-scroll"><div class="chart-container"><canvas
@@ -76,12 +86,12 @@ Grafy ukazují, kolik inzerátů bylo na portálu v jednotlivých měsících, a
         'labels': charts.jobs_count_listed_dropped_labels,
         'datasets': [
             {
-                'label': 'uveřejněné na portálu',
+                'label': 'uveřejněné',
                 'data': charts.jobs_count_listed_dropped.pop('listed'),
                 'backgroundColor': '#1755d1',
             },
             {
-                'label': 'zahozené inzeráty',
+                'label': 'zahozené',
                 'data': charts.jobs_count_listed_dropped.pop('dropped'),
                 'backgroundColor': '#a9a9a9',
             },
@@ -99,9 +109,13 @@ Grafy ukazují, kolik inzerátů bylo na portálu v jednotlivých měsících, a
   {%- endcall %}
 {% endif %}
 
-### Podíl uveřejněných inzerátů
+## Uveřejněné inzeráty (% ze všech stažených)
 
-Graf ukazuje, kolik procent ze všech nabídek skončilo mezi uveřejněnými. Celek je zde vždy součet uveřejněných a zahozených inzerátů.
+V podstatě totéž co předchozí graf, akorát ne jako absolutní čísla, ale jako procenta. Opět platí, že graf nelze vykládat jako podíl juniorních inzerátů na trhu, protože počet všech stažených inzerátů není o ničem vypovídající.
+
+{% call note() %}
+  {{ 'trash'|icon }} I když inzeráty na junior.guru existují od roku 2019, před červnem 2025 se o nich neukládala žádná dlouhodobá data.
+{% endcall %}
 
 {% if charts.jobs_listed_ptc_labels -%}
 <div class="chart-scroll"><div class="chart-container"><canvas
@@ -131,10 +145,10 @@ Graf ukazuje, kolik procent ze všech nabídek skončilo mezi uveřejněnými. C
 
 ## Počet kandidátů
 
-Spojnicový graf ukazuje, kolik kandidátů se na portálu prezentovalo v jednotlivých měsících, včetně rozdělení podle typu.
+Tlustá čára ukazuje, kolik kandidátů se na portálu prezentovalo v jednotlivých měsících. Tenké čáry ještě zvlášť vypichují určité zajímavé skupiny, které se ale prolínají.
 
 {% call note() %}
-  {{ 'trash'|icon }} V prvních měsících provozu seznamu kandidátů se nesbírala data o jejich počtu, takže v grafu chybí.
+  {{ 'trash'|icon }} V prvním půlroce provozu seznamu kandidátů se nesbírala data o jejich počtu, takže v grafu chybí.
 {% endcall %}
 
 {% if charts.candidates_listed_breakdown_labels -%}
@@ -145,28 +159,28 @@ Spojnicový graf ukazuje, kolik kandidátů se na portálu prezentovalo v jednot
         'labels': charts.candidates_listed_breakdown_labels,
         'datasets': [
             {
-                'label': 'kandidáti celkem',
+                'label': 'všichni',
                 'data': charts.candidates_listed_breakdown.pop('listed_total'),
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
             {
-                'label': 'ready',
+                'label': 'dostatečně připravení',
                 'data': charts.candidates_listed_breakdown.pop('listed_ready'),
                 'borderColor': '#4c73bf',
-                'borderWidth': 2,
+                'borderWidth': 1,
             },
             {
-                'label': 'members',
+                'label': 'členové klubu',
                 'data': charts.candidates_listed_breakdown.pop('listed_members'),
                 'borderColor': '#02cabb',
-                'borderWidth': 2,
+                'borderWidth': 1,
             },
             {
-                'label': 'feminine',
+                'label': 'ženy',
                 'data': charts.candidates_listed_breakdown.pop('listed_feminine'),
                 'borderColor': '#dc3545',
-                'borderWidth': 2,
+                'borderWidth': 1,
             },
         ],
     }|tojson|forceescape }}"
@@ -182,7 +196,9 @@ Spojnicový graf ukazuje, kolik kandidátů se na portálu prezentovalo v jednot
   {%- endcall %}
 {% endif %}
 
-### Typy kandidátů (% z celku)
+## Typy kandidátů (% z celku)
+
+Vývoj určitých zajímavých skupin kandidátů, podobně jako v předchozím grafu, akorát jako procento z celku.
 
 {% if charts.candidates_listed_breakdown_ptc_labels -%}
 <div class="chart-scroll"><div class="chart-container"><canvas
@@ -192,19 +208,19 @@ Spojnicový graf ukazuje, kolik kandidátů se na portálu prezentovalo v jednot
         'labels': charts.candidates_listed_breakdown_ptc_labels,
         'datasets': [
             {
-                'label': '% ready',
+                'label': '% dostatečně připravení',
                 'data': charts.candidates_listed_breakdown_ptc.pop('listed_ready'),
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
             {
-                'label': '% members',
+                'label': '% členové klubu',
                 'data': charts.candidates_listed_breakdown_ptc.pop('listed_members'),
                 'borderColor': '#02cabb',
                 'borderWidth': 2,
             },
             {
-                'label': '% feminine',
+                'label': '% ženy',
                 'data': charts.candidates_listed_breakdown_ptc.pop('listed_feminine'),
                 'borderColor': '#dc3545',
                 'borderWidth': 2,
@@ -223,9 +239,9 @@ Spojnicový graf ukazuje, kolik kandidátů se na portálu prezentovalo v jednot
   {%- endcall %}
 {% endif %}
 
-## Počet zpětných vazeb na profily
+## Počet kontrol GitHub profilů
 
-Graf ukazuje počet zpětných vazeb na GitHub profily v jednotlivých měsících.
+Počet spuštěných zpětných vazeb na GitHub profily v jednotlivých měsících. V podstatě je to [tenhle filtr](https://github.com/juniorguru/eggtray/issues?q=is%3Aissue%20label%3Acheck) převedený do grafu. V samém počátku existence kontrol jich bylo skoro 50 za měsíc, protože se hodně testovalo, jestli to vůbec funguje 😀 Ty další měsíce jsou už reálný provoz.
 
 {% if charts.candidates_github_checks_labels -%}
 <div class="chart-scroll"><div class="chart-container"><canvas
@@ -235,7 +251,7 @@ Graf ukazuje počet zpětných vazeb na GitHub profily v jednotlivých měsící
         'labels': charts.candidates_github_checks_labels,
         'datasets': [
             {
-                'label': 'checks',
+                'label': 'kontroly',
                 'data': charts.candidates_github_checks,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
