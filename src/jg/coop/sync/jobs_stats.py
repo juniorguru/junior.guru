@@ -45,7 +45,7 @@ def main(history_path: Path, today: date):
             tech[tag] += 1
     JobStats.add(
         day=monday,
-        scraped_count=ListedJob.count(),
+        listed_count=ListedJob.count(),
         discord_count=DiscordJob.count(),
         dropped_count=DroppedJob.count(),
         tech=dict(tech),

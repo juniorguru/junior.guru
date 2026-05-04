@@ -528,7 +528,7 @@ class DiscordJob(BaseModel):
 
 class JobStats(BaseModel):
     day = DateField(unique=True)
-    scraped_count = IntegerField()
+    listed_count = IntegerField()
     discord_count = IntegerField()
     dropped_count = IntegerField()
     tech = JSONField(default=dict)
