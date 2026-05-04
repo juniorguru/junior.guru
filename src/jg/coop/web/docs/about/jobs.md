@@ -137,44 +137,44 @@ Spojnicový graf ukazuje, kolik kandidátů se na portálu prezentovalo v jednot
   {{ 'trash'|icon }} V prvních měsících provozu seznamu kandidátů se nesbírala data o jejich počtu, takže v grafu chybí.
 {% endcall %}
 
-{% if charts.candidates_count_labels -%}
+{% if charts.candidates_listed_breakdown_labels -%}
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.candidates_count_labels,
+        'labels': charts.candidates_listed_breakdown_labels,
         'datasets': [
             {
                 'label': 'kandidáti celkem',
-                'data': charts.candidates_count.pop('total'),
+                'data': charts.candidates_listed_breakdown.pop('listed_total'),
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
             {
                 'label': 'ready',
-                'data': charts.candidates_count.pop('ready'),
+                'data': charts.candidates_listed_breakdown.pop('listed_ready'),
                 'borderColor': '#4c73bf',
                 'borderWidth': 2,
             },
             {
                 'label': 'members',
-                'data': charts.candidates_count.pop('members'),
+                'data': charts.candidates_listed_breakdown.pop('listed_members'),
                 'borderColor': '#02cabb',
                 'borderWidth': 2,
             },
             {
                 'label': 'feminine',
-                'data': charts.candidates_count.pop('feminine'),
+                'data': charts.candidates_listed_breakdown.pop('listed_feminine'),
                 'borderColor': '#dc3545',
                 'borderWidth': 2,
             },
         ],
     }|tojson|forceescape }}"
-    {{ charts.candidates_count.keys()|list|assert_empty }}
+    {{ charts.candidates_listed_breakdown.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
-        'plugins': {'annotation': charts.candidates_count_annotations},
+        'plugins': {'annotation': charts.candidates_listed_breakdown_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 {% else %}
   {% call note() -%}
@@ -184,38 +184,38 @@ Spojnicový graf ukazuje, kolik kandidátů se na portálu prezentovalo v jednot
 
 ### Typy kandidátů (% z celku)
 
-{% if charts.candidates_types_ptc_labels -%}
+{% if charts.candidates_listed_breakdown_ptc_labels -%}
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
     data-chart-type="line"
     data-chart="{{ {
-        'labels': charts.candidates_types_ptc_labels,
+        'labels': charts.candidates_listed_breakdown_ptc_labels,
         'datasets': [
             {
                 'label': '% ready',
-                'data': charts.candidates_types_ptc.pop('ready'),
+                'data': charts.candidates_listed_breakdown_ptc.pop('listed_ready'),
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
             {
                 'label': '% members',
-                'data': charts.candidates_types_ptc.pop('members'),
+                'data': charts.candidates_listed_breakdown_ptc.pop('listed_members'),
                 'borderColor': '#02cabb',
                 'borderWidth': 2,
             },
             {
                 'label': '% feminine',
-                'data': charts.candidates_types_ptc.pop('feminine'),
+                'data': charts.candidates_listed_breakdown_ptc.pop('listed_feminine'),
                 'borderColor': '#dc3545',
                 'borderWidth': 2,
             },
         ],
     }|tojson|forceescape }}"
-    {{ charts.candidates_types_ptc.keys()|list|assert_empty }}
+    {{ charts.candidates_listed_breakdown_ptc.keys()|list|assert_empty }}
     data-chart-options="{{ {
         'interaction': {'mode': 'index'},
         'scales': {'y': {'min': 0}},
-        'plugins': {'annotation': charts.candidates_types_ptc_annotations},
+        'plugins': {'annotation': charts.candidates_listed_breakdown_ptc_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 {% else %}
   {% call note() -%}

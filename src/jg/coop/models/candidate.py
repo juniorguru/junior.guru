@@ -34,10 +34,11 @@ class TagType(StrEnum):
 
 
 class CandidateStatsName(StrEnum):
-    TOTAL = "total"
-    READY = "ready"
-    MEMBERS = "members"
-    FEMININE = "feminine"
+    LISTED_TOTAL = "listed_total"
+    LISTED_READY = "listed_ready"
+    LISTED_MEMBERS = "listed_members"
+    LISTED_FEMININE = "listed_feminine"
+    CHECKS = "checks"
 
 
 class Tag(PydanticBaseModel):
@@ -425,22 +426,24 @@ class CandidateStats(BaseModel):
         return cls.select().order_by(cls.month, cls.name)
 
     @classmethod
-    def breakdown(cls, month: date) -> dict[str, int | None]:
-        breakdown = {name: None for name in CandidateStatsName}
-        month_key = f"{month:%Y-%m}"
-        for stats in cls.select().where(cls.month == month_key):
-            breakdown[CandidateStatsName(stats.name)] = stats.count
+    def listed_breakdown(cls, month: date) -> dict[CandidateStatsName, int | None]:
+        breakdown = {
+            name: None for name in CandidateStatsName if name.startswith("listed_")
+        }
+        query = cls.select().where(
+            cls.month == f"{month:%Y-%m}", cls.name.startswith("listed_")
+        )
+        for stats in query:
+            breakdown[stats.name] = stats.count
         return breakdown
 
     @classmethod
-    def breakdown_ptc(cls, month: date) -> dict[str, float | None]:
-        breakdown = cls.breakdown(month)
-        total_count = breakdown["total"]
-        return {
-            "ready": calc_ptc(breakdown["ready"], total_count),
-            "members": calc_ptc(breakdown["members"], total_count),
-            "feminine": calc_ptc(breakdown["feminine"], total_count),
-        }
+    def listed_breakdown_ptc(
+        cls, month: date
+    ) -> dict[CandidateStatsName, float | None]:
+        breakdown = cls.listed_breakdown(month)
+        total_count = breakdown.pop("listed_total")
+        return {name: calc_ptc(count, total_count) for name, count in breakdown.items()}
 
 
 def calc_ptc(count: int | None, total_count: int | None) -> float | None:

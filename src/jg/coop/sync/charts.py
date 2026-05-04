@@ -495,16 +495,16 @@ def jobs_listed_ptc(today: date) -> FloatChartDict:
 
 
 @chart
-def candidates_count(today: date) -> IntBreakdownChartDict:
+def candidates_listed_breakdown(today: date) -> IntBreakdownChartDict:
     months = charts.months(CANDIDATES_BEGIN_ON, today)
-    data = charts.per_month_breakdown(CandidateStats.breakdown, months)
+    data = charts.per_month_breakdown(CandidateStats.listed_breakdown, months)
     return dict(data=data, months=months)
 
 
 @chart
-def candidates_types_ptc(today: date) -> FloatBreakdownChartDict:
+def candidates_listed_breakdown_ptc(today: date) -> FloatBreakdownChartDict:
     months = charts.months(CANDIDATES_BEGIN_ON, today)
-    data = charts.per_month_breakdown(CandidateStats.breakdown_ptc, months)
+    data = charts.per_month_breakdown(CandidateStats.listed_breakdown_ptc, months)
     return dict(data=data, months=months)
 
 

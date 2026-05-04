@@ -26,6 +26,7 @@ from jg.coop.models.candidate import (
     Candidate,
     CandidateProject,
     CandidateStats,
+    CandidateStatsName,
 )
 from jg.coop.models.club import ClubUser
 from jg.coop.models.feminine_name import FeminineName
@@ -179,10 +180,26 @@ async def main(
             logger.info(f"Saved {len(projects_items)} projects for {candidate!r}")
 
     logger.info("Calculating stats")
-    CandidateStats.add(month=month, name="total", count=Candidate.count())
-    CandidateStats.add(month=month, name="ready", count=Candidate.count_ready())
-    CandidateStats.add(month=month, name="members", count=Candidate.count_members())
-    CandidateStats.add(month=month, name="feminine", count=Candidate.count_feminine())
+    CandidateStats.add(
+        month=month,
+        name=CandidateStatsName.LISTED_TOTAL,
+        count=Candidate.count(),
+    )
+    CandidateStats.add(
+        month=month,
+        name=CandidateStatsName.LISTED_READY,
+        count=Candidate.count_ready(),
+    )
+    CandidateStats.add(
+        month=month,
+        name=CandidateStatsName.LISTED_MEMBERS,
+        count=Candidate.count_members(),
+    )
+    CandidateStats.add(
+        month=month,
+        name=CandidateStatsName.LISTED_FEMININE,
+        count=Candidate.count_feminine(),
+    )
 
     logger.info("Updating stats")
     with history_path.open("w") as f:
