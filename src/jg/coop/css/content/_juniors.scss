@@ -23,7 +23,7 @@ $juniors-avatars-size: $juniors-arrow-icon-size + 1rem;
   font-size: $juniors-arrow-icon-size;
   line-height: 1;
   color: $jg-dark;
-  content: "\f125";  // https://icons.getbootstrap.com/icons/arrow-down-square-fill/
+  content: "\F229";  // https://icons.getbootstrap.com/icons/caret-down-fill/
   transform: translateX(-50%);
 }
 
@@ -36,7 +36,7 @@ $juniors-avatars-size: $juniors-arrow-icon-size + 1rem;
   .juniors-column:first-child::after {
     top: 50%;
     left: calc(100% + #{($juniors-gap - $juniors-arrow-icon-size) * .5});
-    content: "\f136";  // https://icons.getbootstrap.com/icons/arrow-right-square-fill/
+    content: "\F231";  // https://icons.getbootstrap.com/icons/caret-right-fill/
     transform: translateY(-50%);
   }
 }
