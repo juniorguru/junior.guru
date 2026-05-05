@@ -22,7 +22,7 @@ Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáha
 - **{{ years }}** {{ years|nplurals("rok", "roky", "let") }} komunity
 - **{{ members_total_count }}** členů klubu
 - **{{ charts.members_women_today|round|int }}%** jsou ženy
-- **{{ events|length }}** online akcí
+- **{{ events_recordings_count }}** záznamů přednášek
 {% endcall %}
 </div>
 
@@ -55,7 +55,7 @@ Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme
 
 <div class="standout"><div class="topics">
 {% call markdown() %}
-- {{ 'play-btn'|icon }} Online klubové akce
+- {{ 'play-btn'|icon }} Každý měsíc přednáška
 - {{ 'clock-history'|icon }} {{ events_recordings_count }} videozáznamů akcí
 - {{ 'list-check'|icon }} Pracovní nabídky
 - {{ 'compass'|icon }} Kariérní konzultace
