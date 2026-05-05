@@ -112,6 +112,7 @@ $juniors-avatars-size: $juniors-arrow-icon-size + 1rem;
   @extend .small;
   @extend .text-muted;
   margin: 0;
+  margin-top: auto;
   text-align: center;
 }
 
