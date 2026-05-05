@@ -34,9 +34,16 @@ $explainer-card-icon-size: 2.5rem;
 }
 
 .explainer-card-icon .bi {
+  display: block;
+  width: 1em;
+  height: 1em;
   font-size: $explainer-card-icon-size;
   line-height: 1;
   color: $jg-blue;
+}
+
+.explainer-card-icon .bi::before {
+  vertical-align: 0;
 }
 
 .explainer-card-content {
