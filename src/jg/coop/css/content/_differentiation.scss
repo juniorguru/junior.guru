@@ -1,0 +1,53 @@
+.differentiation {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacer;
+}
+
+@include media-breakpoint-up(md) {
+  .differentiation {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.differentiation-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: $spacer;
+  align-items: start;
+  padding: $spacer;
+  margin: 0;
+  background-color: $jg-blue-light;
+  border: 0;
+  border-radius: $border-radius;
+}
+
+.differentiation-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  background: $jg-white;
+  border: 1px solid $jg-blue-light;
+  border-radius: 50%;
+}
+
+.differentiation-icon {
+  font-size: 2rem;
+  line-height: 1;
+  color: $jg-blue;
+}
+
+.differentiation-content {
+  min-width: 0;
+}
+
+.differentiation-title {
+  @extend .fs-4;
+  margin: 0 0 .5rem;
+}
+
+.differentiation-text {
+  margin: 0;
+}
