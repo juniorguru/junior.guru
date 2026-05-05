@@ -16,7 +16,7 @@ description: Přidej se na junior.guru Discord! Jsme tvoje online programovací 
 Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáhat. V klubu svoje programování nebo hledání práce posuneš o **1 % každý den**.
 {% endcall %}
 
-<div class="masthead-numbers">
+<div class="numbers">
 {% set years = today.year - 2021 %}
 {% call markdown() %}
 - **{{ years }}** {{ years|nplurals("rok", "roky", "let") }} komunity

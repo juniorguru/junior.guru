@@ -1,0 +1,95 @@
+@use "sass:map";
+
+.club-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2 * $spacer;
+}
+
+.club-section-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2 * $spacer;
+  column-gap: $spacer;
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+.club-section-column {
+  min-width: 0;
+}
+
+.club-section-column-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.club-section .lead {
+  margin: 0;
+}
+
+.club-section .numbers ul,
+.club-section .topics ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  row-gap: $spacer;
+  column-gap: $spacer;
+  padding-top: 0;
+  padding-right: $spacer;
+  padding-bottom: 0;
+  padding-left: $spacer;
+  margin: 0;
+}
+
+.club-section .numbers ul {
+  justify-items: center;
+  margin-top: 0;
+  margin-bottom: $spacer;
+}
+
+.club-section .numbers li {
+  gap: map.get($spacers, 1);
+}
+
+.club-section .topics li {
+  width: auto;
+}
+
+.club-section .blockquote-container:last-child,
+.club-section .blockquote-container:last-child .blockquote-content {
+  margin-bottom: 0;
+}
+
+.club-section .blockquotes-roll {
+  padding: map.get($spacers, 2);
+  background: rgba($jg-white, .4);
+  border: 1px solid rgba($primary, .2);
+}
+
+.club-section .blockquote-content {
+  background-color: rgba($jg-white, .85);
+}
+
+.club-section-badge {
+  @extend .badge;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  color: $white;
+  vertical-align: text-top;
+  background: $jg-dark;
+}
+
+.club-section-cta {
+  margin: 0;
+  text-align: center;
+}
+
+.club-section-cta .text-muted {
+  display: block;
+  margin-top: map.get($spacers, 2);
+}
+

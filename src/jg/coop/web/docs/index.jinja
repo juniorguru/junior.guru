@@ -22,7 +22,7 @@ thumbnail_subheading: junior.guru
     Potkej seniory, kteří rádi poradí, a juniory, kteří přesně vědí, jak se cítíš.
   </p>
 </div>
-<div class="masthead-numbers">
+<div class="numbers">
 {% set years = today.year - 2019 %}
 <ul>
   <li>
@@ -88,13 +88,6 @@ thumbnail_subheading: junior.guru
   {{ logo('Zdroják', 'logos/zdrojak.svg') }}
 </ul>
 </header>
-
-
-<!--
-  pridat sekci o tom proc se ucit programovat
-  a proc jit do it i presto ze je to ted tezke
-  a ze existuje AI
--->
 
 
 <section class="section">
@@ -163,18 +156,31 @@ thumbnail_subheading: junior.guru
 </section>
 
 
+<!--
+  pridat sekci o tom proc se ucit programovat
+  a proc jit do it i presto ze je to ted tezke
+  a ze existuje AI
+-->
+
+
 <div class="section-background blue-light"><section class="section">
 <h2>
   Přidej se do klubu
-  <small class="text-muted font-monospace text-uppercase fs-6">Komunita na Discordu</small>
+  <small class="club-section-badge">
+    {{ "discord"|icon }}
+    Discord komunita
+  </small>
 </h2>
+<div class="club-section">
 <p class="lead">
   Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáhat.
   Živá komunita, kde se ptáš, sdílíš, nebo si postěžuješ.
   Bezpečné místo, které vítá každého a kde žádná otázka není hloupá.
   Pestrá komunita, kde získáš kontakty v oboru a posuneš se.
 </p>
-<div class="masthead-numbers"><ul>
+<div class="club-section-columns">
+<div class="club-section-column club-section-column-left">
+<div class="numbers"><ul>
   {% set club_years = today.year - 2021 %}
   <li><strong>{{ members_total_count }}</strong> členů klubu</li>
   <li><strong>{{ charts.members_women_today|round|int }}%</strong> jsou ženy</li>
@@ -199,7 +205,8 @@ thumbnail_subheading: junior.guru
     {{ 'arrow-counterclockwise'|icon }} Zpětná vazba na kód nebo CV
   </li>
 </ul></div>
-<div class="blockquotes-roll">
+</div>
+<div class="club-section-column club-section-column-right">
 {{ blockquote_avatar(
   'Díky za rady a tipy. Jsem upřímně překvapen, že jsou v klubu tak strašně fajn lidi, co se snaží pomoct. Dlouho jsem nic takového nezažil a proto ještě jednou děkuji všem, co mi radíte. Fakt super.',
   'ampercz.jpg',
@@ -213,10 +220,12 @@ thumbnail_subheading: junior.guru
   'Andrea K.'
 ) }}
 </div>
-<p>
-  <a href="{{ pages|docs_url('club.md')|url }}" class="btn btn-primary">Zjistit víc o klubu {{ "arrow-right"|icon }}</a>
+</div>
+<p class="club-section-cta">
+  <a href="{{ pages|docs_url('club.md')|url }}" class="btn btn-lg btn-primary">Zjistit víc o klubu {{ "arrow-right"|icon }}</a>
   <small class="text-muted">14 dní zdarma, bez zadávání karty</small>
 </p>
+</div>
 </section></div>
 
 
@@ -272,11 +281,6 @@ thumbnail_subheading: junior.guru
                 {{ story_page.meta.interviewee }}
               </a>
             </h3>
-            {# <p class="juniors-text small juniors-details">
-              <span class="juniors-details-item">
-                {{ "calendar-event"|icon }} {{ '{:%-d.%-m.%Y}'.format(story_page.date) }}
-              </span>
-            </p> #}
             <p class="juniors-text">
               „{{ story_page.title }}“
             </p>
