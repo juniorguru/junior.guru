@@ -1,16 +1,16 @@
-.differentiation {
+.explainer-cards {
   display: grid;
   grid-template-columns: 1fr;
   gap: $spacer;
 }
 
 @include media-breakpoint-up(md) {
-  .differentiation {
+  .explainer-cards {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-.differentiation-item {
+.explainer-card {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   column-gap: $spacer;
@@ -22,7 +22,7 @@
   border-radius: $border-radius;
 }
 
-.differentiation-icon-container {
+.explainer-card-icon-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,21 +33,21 @@
   border-radius: 50%;
 }
 
-.differentiation-icon {
+.explainer-card-icon {
   font-size: 2rem;
   line-height: 1;
   color: $jg-blue;
 }
 
-.differentiation-content {
+.explainer-card-content {
   min-width: 0;
 }
 
-.differentiation-title {
+.explainer-card-title {
   @extend .fs-4;
   margin: 0 0 .5rem;
 }
 
-.differentiation-text {
+.explainer-card-text {
   margin: 0;
 }
