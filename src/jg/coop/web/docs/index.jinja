@@ -164,16 +164,18 @@ thumbnail_subheading: junior.guru
 
 
 <div class="section-background blue-light"><section class="section">
-<h2>Klub na Discordu</h2>
+<h2>
+  Přidej se do klubu
+  <small class="text-muted font-monospace text-uppercase fs-6">Komunita na Discordu</small>
+</h2>
 <p class="lead">
   Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáhat.
-  Živá komunita, kde vítáme každého a kde žádná otázka není hloupá.
-  Sdílíme si zkušenosti, rady, zdroje, kontakty, obavy.
-  Dej tomu šanci – za nakouknutí nic nedáš!
+  Živá komunita, kde se ptáš, sdílíš, nebo si postěžuješ.
+  Bezpečné místo, které vítá každého a kde žádná otázka není hloupá.
+  Pestrá komunita, kde získáš kontakty v oboru a posuneš se.
 </p>
 <div class="masthead-numbers"><ul>
   {% set club_years = today.year - 2021 %}
-  <li><strong>{{ club_years }}</strong> {{ club_years|nplurals("rok", "roky", "let") }} komunity</li>
   <li><strong>{{ members_total_count }}</strong> členů klubu</li>
   <li><strong>{{ charts.members_women_today|round|int }}%</strong> jsou ženy</li>
   <li><strong>{{ events_recordings_count }}</strong> záznamů přednášek</li>
@@ -183,7 +185,7 @@ thumbnail_subheading: junior.guru
     {{ "people"|icon }} Senioři i junioři
   </li>
   <li>
-    {{ "heart"|icon }} Opravdu bezpečné prostředí
+    {{ "heart"|icon }} Důraz na bezpečné prostředí
   </li>
   <li>
     {{ 'play-btn'|icon }} Každý měsíc přednáška
