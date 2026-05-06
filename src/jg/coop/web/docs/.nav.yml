@@ -29,11 +29,11 @@ nav:
   - Kurzy:
       - Kurzy programování: courses.md
       - "courses/*.md"
-  - Práce:
+  - Kandidáti:
       - Kandidáti: candidates.jinja
-      - Inzeráty:
-          - Inzeráty: jobs.jinja
-          - "jobs/*.jinja"
+  - Nabídky práce:
+      - Inzeráty: jobs.jinja
+      - "jobs/*.jinja"
   - Inspirace:
       - Novinky:
           - Novinky: news.jinja
