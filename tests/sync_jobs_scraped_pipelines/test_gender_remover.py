@@ -117,3 +117,16 @@ async def test_gender_remover_czech(title, expected):
     item = await process(dict(title=title))
 
     assert item["title"] == expected
+
+
+@pytest.mark.parametrize(
+    "title",
+    [
+        "Mast-Jaegermeister CZ - CRM/Data Specialist",
+    ],
+)
+@pytest.mark.asyncio
+async def test_gender_remover_false_positives(title):
+    item = await process(dict(title=title))
+
+    assert item["title"] == title
