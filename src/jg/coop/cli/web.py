@@ -1,4 +1,5 @@
 import hashlib
+import re
 import shutil
 import subprocess
 import warnings
@@ -7,15 +8,39 @@ from pathlib import Path
 from time import perf_counter
 
 import click
-from bs4 import BeautifulSoup
 from livereload import Server
 from mkdocs.__main__ import build_command as _build_mkdocs
 
 from jg.coop.lib import loggers
-from jg.coop.lib.text import regenerate_html
 
 
 logger = loggers.from_path(__file__)
+
+CSS_LINK_RE = re.compile(
+    r"""
+    (
+        <link\b
+        [^>]*              # any attributes before href
+        \bhref\s*=\s*["']  # href= with opening quote
+    )
+    ([^"']+\.css)          # CSS URL value (without surrounding quotes)
+    (["'])                 # closing quote
+    """,
+    re.IGNORECASE | re.VERBOSE,
+)
+
+JS_SCRIPT_RE = re.compile(
+    r"""
+    (
+        <script\b
+        [^>]*              # any attributes before src
+        \bsrc\s*=\s*["']   # src= with opening quote
+    )
+    ([^"']+\.js)           # JS URL value (without surrounding quotes)
+    (["'])                 # closing quote
+    """,
+    re.IGNORECASE | re.VERBOSE,
+)
 
 
 @click.group()
@@ -148,14 +173,11 @@ def post_process(output_path: Path):
     for html_path in output_path.glob("**/*.html"):
         logger["postprocess"].info(f"Post-processing {html_path}")
         html_text = html_path.read_text()
-        html_gen = regenerate_html(html_text)
-        soup = next(html_gen)
-        _cache_bust_urls(soup, output_path, html_path)
-        html_path.write_text(html_gen.send(soup))
+        html_path.write_text(_cache_bust_urls(html_text, output_path, html_path))
 
 
-def _cache_bust_urls(soup: BeautifulSoup, output_path: Path, html_path: Path):
-    def bust(url: str) -> str:
+def _cache_bust_urls(html_text: str, output_path: Path, html_path: Path) -> str:
+    def bust_url(url: str) -> str:
         try:
             file_path = resolve_path(output_path, html_path, url)
         except ValueError as e:
@@ -166,19 +188,13 @@ def _cache_bust_urls(soup: BeautifulSoup, output_path: Path, html_path: Path):
         separator = "&" if "?" in url else "?"
         return f"{url}{separator}hash={hash_file(file_path)}"
 
-    # Cache busting CSS
-    # https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching#cache_busting
-    for link in soup.find_all("link", href=True):
-        href = link["href"]
-        if href.endswith(".css"):
-            link["href"] = bust(href)
+    def replace_url(match: re.Match[str]) -> str:
+        return f"{match.group(1)}{bust_url(match.group(2))}{match.group(3)}"
 
-    # Cache busting JS
+    # Cache busting CSS and JS by rewriting matching URLs in-place.
     # https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching#cache_busting
-    for script in soup.find_all("script", src=True):
-        src = script["src"]
-        if src.endswith(".js"):
-            script["src"] = bust(src)
+    html_text = CSS_LINK_RE.sub(replace_url, html_text)
+    return JS_SCRIPT_RE.sub(replace_url, html_text)
 
 
 def resolve_path(output_path: Path, html_path: Path, url: str):

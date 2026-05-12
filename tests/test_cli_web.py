@@ -2,7 +2,6 @@ from pathlib import Path
 from textwrap import dedent
 
 import pytest
-from bs4 import BeautifulSoup
 
 from jg.coop.cli.web import _cache_bust_urls, hash_file, resolve_path
 
@@ -60,9 +59,7 @@ def test_cache_bust_urls_adds_hashes(tmp_path: Path):
         """
     )
 
-    soup = BeautifulSoup(html_text, "html.parser")
-    _cache_bust_urls(soup, output_path, html_path)
-    result = str(soup)
+    result = _cache_bust_urls(html_text, output_path, html_path)
 
     assert f"../static/css/index.css?hash={hash_file(css_path)}" in result
     assert f"../static/js/index.js?hash={hash_file(js_path)}" in result

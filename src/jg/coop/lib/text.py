@@ -1,9 +1,7 @@
 import re
 import unicodedata
-from collections.abc import Generator
 
 import emoji
-from bs4 import BeautifulSoup
 from lxml import etree, html
 from lxml.html import soupparser as html_soup
 from slugify import slugify
@@ -90,6 +88,7 @@ def extract_text(html_text: str, newline="\n") -> str:
     - have all visual line breaks normalized as a single new line character,
     - have all other white space normalized as a single space character.
     """
+
     try:
         el = html.fragment_fromstring(html_text, create_parent="div")
     except etree.ParserError:
@@ -163,9 +162,3 @@ def emoji_url(text: str) -> str:
 
 def get_tag_slug(text: str) -> str:
     return slugify(text, separator="")
-
-
-def regenerate_html(html_text: str) -> Generator[BeautifulSoup, BeautifulSoup, None]:
-    soup = BeautifulSoup(html_text, "html.parser")
-    updated_soup = yield soup
-    yield updated_soup.prettify()
