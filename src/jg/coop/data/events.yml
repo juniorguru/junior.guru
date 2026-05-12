@@ -60,6 +60,14 @@
 # - https://www.fotor.com/photo-editor-app/editor/beauty
 
 registry:
+- id: 62
+    title: "Scrapování webu"
+    date: "2026-05-28"
+    bio_name: Kateřina Hroníková
+    bio_title: "Full-stack vývojářka se silným finančním backgroundem, ambasadorka v Apify, mentorka v Czechitas, milovnice (ultra)trailů"
+    bio_links:
+      - https://www.linkedin.com/in/katerina-hronikova/
+
   - id: 61
     title: "Co nám může nabídnout Rust?"
     date: "2026-04-15"
