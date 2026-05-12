@@ -20,7 +20,7 @@ KNOWN_SERVICES = [
     "openai",
 ]
 
-CACHE_KEY = "mutations:allowed"
+CACHE_KEY = "__mutations__"
 _CACHE_MISSING = object()
 
 
