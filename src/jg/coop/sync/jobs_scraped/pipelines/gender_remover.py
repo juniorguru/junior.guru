@@ -22,6 +22,7 @@ GENDER_RES = [
     # no parentheses, e.g. f/m/x
     re.compile(
         r"""
+            (?<!\w)         # do not match inside words
             (\-\s*)?        # optional leading dash
             [mfwžhd]\s*     # woman/man letter (with spaces)
             [/\|]           # slash or pipe
@@ -30,6 +31,7 @@ GENDER_RES = [
                 [/\|]       # slash or pipe
                 \s*\w+      # anything but space or end
             )?
+            (?!\w)          # do not match inside words
         """,
         re.VERBOSE | re.IGNORECASE,
     ),
