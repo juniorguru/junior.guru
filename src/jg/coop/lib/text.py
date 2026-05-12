@@ -1,7 +1,9 @@
 import re
 import unicodedata
+from collections.abc import Generator
 
 import emoji
+from bs4 import BeautifulSoup
 from lxml import etree, html
 from lxml.html import soupparser as html_soup
 from slugify import slugify
@@ -161,3 +163,9 @@ def emoji_url(text: str) -> str:
 
 def get_tag_slug(text: str) -> str:
     return slugify(text, separator="")
+
+
+def regenerate_html(html_text: str) -> Generator[BeautifulSoup, BeautifulSoup, None]:
+    soup = BeautifulSoup(html_text, "html.parser")
+    updated_soup = yield soup
+    yield updated_soup.prettify()
