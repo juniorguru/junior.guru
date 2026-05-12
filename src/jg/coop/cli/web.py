@@ -7,11 +7,12 @@ from pathlib import Path
 from time import perf_counter
 
 import click
+from bs4 import BeautifulSoup
 from livereload import Server
-from lxml import html
 from mkdocs.__main__ import build_command as _build_mkdocs
 
 from jg.coop.lib import loggers
+from jg.coop.lib.text import regenerate_html
 
 
 logger = loggers.from_path(__file__)
@@ -146,35 +147,38 @@ def serve(context, output_path: Path, open: bool):
 def post_process(output_path: Path):
     for html_path in output_path.glob("**/*.html"):
         logger["postprocess"].info(f"Post-processing {html_path}")
-        html_tree = html.fromstring(html_path.read_text())
+        html_text = html_path.read_text()
+        html_gen = regenerate_html(html_text)
+        soup = next(html_gen)
+        _cache_bust_urls(soup, output_path, html_path)
+        html_path.write_text(html_gen.send(soup))
 
-        # Cache busting CSS
-        # https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching#cache_busting
-        for link in html_tree.cssselect('link[href$=".css"]'):
-            href = link.get("href")
-            try:
-                css_path = resolve_path(output_path, html_path, href)
-            except ValueError as e:
-                logger["postprocess"].debug(str(e))
-            else:
-                logger["postprocess"].debug(f"Cache busting {href} ({css_path})")
-                href = f"{href}?hash={hash_file(css_path)}"
-                link.set("href", href)
 
-        # Cache busting JS
-        # https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching#cache_busting
-        for script in html_tree.cssselect('script[src$=".js"]'):
-            src = script.get("src")
-            try:
-                js_path = resolve_path(output_path, html_path, src)
-            except ValueError as e:
-                logger["postprocess"].debug(str(e))
-            else:
-                logger["postprocess"].debug(f"Cache busting {src} ({js_path})")
-                src = f"{src}?hash={hash_file(js_path)}"
-                script.set("src", src)
+def _cache_bust_urls(soup: BeautifulSoup, output_path: Path, html_path: Path):
+    def bust(url: str) -> str:
+        try:
+            file_path = resolve_path(output_path, html_path, url)
+        except ValueError as e:
+            logger["postprocess"].debug(str(e))
+            return url
 
-        html_path.write_text(html.tostring(html_tree, encoding="unicode"))
+        logger["postprocess"].debug(f"Cache busting {url} ({file_path})")
+        separator = "&" if "?" in url else "?"
+        return f"{url}{separator}hash={hash_file(file_path)}"
+
+    # Cache busting CSS
+    # https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching#cache_busting
+    for link in soup.find_all("link", href=True):
+        href = link["href"]
+        if href.endswith(".css"):
+            link["href"] = bust(href)
+
+    # Cache busting JS
+    # https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching#cache_busting
+    for script in soup.find_all("script", src=True):
+        src = script["src"]
+        if src.endswith(".js"):
+            script["src"] = bust(src)
 
 
 def resolve_path(output_path: Path, html_path: Path, url: str):
