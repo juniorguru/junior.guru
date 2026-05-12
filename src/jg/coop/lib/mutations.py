@@ -41,7 +41,7 @@ def _set_allowed(allowed: Iterable) -> None:
         cache.delete(CACHE_KEY)
 
 
-def allow(*services: str, _under_test: bool = False) -> set[str]:
+def allow(*services: str) -> set[str]:
     services = set(map(str.lower, services))
     if not services:
         raise ValueError("At least one service must be allowed")
@@ -52,10 +52,7 @@ def allow(*services: str, _under_test: bool = False) -> set[str]:
 
     cache = get_cache()
     with cache.transact(retry=True):
-        if (
-            not _under_test
-            and cache.get(CACHE_KEY, default=_CACHE_MISSING) is not _CACHE_MISSING
-        ):
+        if cache.get(CACHE_KEY, default=_CACHE_MISSING) is not _CACHE_MISSING:
             raise RuntimeError("Mutations are already configured")
         cache.set(CACHE_KEY, services)
 

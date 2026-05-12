@@ -1,13 +1,13 @@
 import asyncio
 
 import pytest
+from diskcache import Cache
 
+import jg.coop.lib.mutations as mutations_module
 from jg.coop.lib.mutations import (
     MutationsNotAllowedError,
-    _get_allowed,
     _set_allowed,
     allow,
-    allow_all,
     allow_none,
     is_allowed,
     mutates,
@@ -16,13 +16,16 @@ from jg.coop.lib.mutations import (
 
 
 @pytest.fixture
-def nothing_allowed():
-    dump = _get_allowed()
+def nothing_allowed(monkeypatch, tmp_path):
+    cache = Cache(str(tmp_path / "mutations-cache"))
+    monkeypatch.setattr(mutations_module, "get_cache", lambda: cache)
+
     _set_allowed([])
     try:
         yield
     finally:
-        _set_allowed(dump)
+        _set_allowed([])
+        cache.close()
 
 
 class Something:
@@ -95,27 +98,8 @@ def test_allow_multiple(nothing_allowed):
     assert value_d == 2
 
 
-def test_allow_all(nothing_allowed):
-    allow_all()
-
-    @mutates("fakturoid")
-    def fakturoid():
-        return 1
-
-    value_f = fakturoid()
-
-    @mutates("discord")
-    def discord():
-        return 2
-
-    value_d = discord()
-
-    assert value_f == 1
-    assert value_d == 2
-
-
 def test_allow_none(nothing_allowed):
-    allow_all()
+    allow("fakturoid", "discord")
 
     @mutates("fakturoid")
     def fakturoid():
@@ -239,3 +223,31 @@ def test_mutations_not_allowed_works_as_boolean(nothing_allowed):
 
     assert isinstance(result, MutationsNotAllowedError)
     assert not result
+
+
+def test_allow_blocks_reconfiguration(nothing_allowed):
+    allow("discord")
+
+    assert is_allowed("discord") is True
+
+    with pytest.raises(RuntimeError, match="already configured"):
+        allow("fakturoid")
+
+    allow_none()
+
+    assert is_allowed("discord") is False
+
+
+def test_allow_none_is_permissive_while_configured(nothing_allowed):
+    allow("discord")
+    allow_none()
+
+    assert is_allowed("discord") is False
+
+
+def test_allow_none_is_idempotent(nothing_allowed):
+    allow("discord")
+    allow_none()
+    allow_none()
+
+    assert is_allowed("discord") is False
