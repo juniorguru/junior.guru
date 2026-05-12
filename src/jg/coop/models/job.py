@@ -1,6 +1,7 @@
 import itertools
 import json
 import textwrap
+from collections import Counter
 from datetime import date, datetime, time, timedelta
 from enum import StrEnum, auto
 from operator import attrgetter
@@ -20,6 +21,7 @@ from peewee import (
 from playhouse.shortcuts import model_to_dict
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
 
+from jg.coop.lib import charts
 from jg.coop.lib.discord_markdown import to_discord_markdown
 from jg.coop.lib.job_urls import url_to_id
 from jg.coop.lib.location import REGIONS, Location, repr_locations
@@ -554,6 +556,40 @@ class JobStats(BaseModel):
     @classmethod
     def history(cls) -> Iterable[Self]:
         return cls.select().order_by(cls.day)
+
+    @classmethod
+    def listing(cls, since: date | None = None) -> Iterable[Self]:
+        query = cls.select()
+        if since:
+            query = query.where(cls.day > since)
+        return query.order_by(cls.day)
+
+    @classmethod
+    def weekly_avg_count(cls, since: date) -> int:
+        return charts.average_round(
+            [week.listed_count + week.discord_count for week in cls.listing(since)]
+        )
+
+    @classmethod
+    def weekly_avg_tech_breakdown(
+        cls, since: date, limit: int | None = None
+    ) -> list[tuple[str, int]]:
+        weeks = list(cls.listing(since))
+        weeks_count = len(weeks)
+
+        counter = Counter()
+        for week in weeks:
+            counter.update(week.tech)
+
+        breakdown = []
+        for tag, count in counter.most_common():
+            avg_count = round(count / weeks_count)
+            if avg_count > 0:
+                breakdown.append((tag, avg_count))
+
+        if limit is not None:
+            return breakdown[:limit]
+        return breakdown
 
 
 def columns(values, columns_count):

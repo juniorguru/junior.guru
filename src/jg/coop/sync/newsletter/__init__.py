@@ -1,6 +1,5 @@
 import random
 import time
-from collections import Counter
 from datetime import date
 from pathlib import Path
 from pprint import pformat
@@ -8,14 +7,12 @@ from typing import Generator, Literal
 
 import click
 from jinja2 import Template
-from lxml import html
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers, months
 from jg.coop.lib.buttondown import ButtondownAPI
 from jg.coop.lib.cli import async_command
 from jg.coop.lib.discord_club import ClubChannelID
-from jg.coop.lib.md import md
 from jg.coop.lib.mutations import MutationsNotAllowedError
 from jg.coop.lib.template_filters import thousands
 from jg.coop.models.base import db
@@ -23,6 +20,7 @@ from jg.coop.models.club import ClubChannel, ClubMessage, ClubSummaryTopic, Club
 from jg.coop.models.course_provider import CourseProvider, CourseProviderGroup
 from jg.coop.models.event import Event
 from jg.coop.models.followers import Followers
+from jg.coop.models.job import JobStats
 from jg.coop.models.meetup import Meetup
 from jg.coop.models.page import Page
 from jg.coop.models.podcast import PodcastEpisode
@@ -53,6 +51,7 @@ logger = loggers.from_path(__file__)
         "club-content",
         "course-providers",
         "events",
+        "jobs-stats",
         "meetups",
         "newsletter-subscribers",
         "pages",
@@ -115,13 +114,8 @@ async def main(
     )
 
     logger.debug("Preparing jobs")
-    jobs_count = 0
-    jobs_tags_stats = Counter()
-    for message in ClubMessage.forum_listing(ClubChannelID.JOBS):
-        if message.created_at.date() >= prev_month:
-            jobs_count += 1
-            jobs_tags_stats.update(get_job_tags(message))
-    jobs_tags_stats = jobs_tags_stats.most_common(20)
+    jobs_count = JobStats.weekly_avg_count(prev_month)
+    jobs_tags_stats = JobStats.weekly_avg_tech_breakdown(prev_month, limit=20)
 
     logger.debug("Preparing courses")
     cps_group, cps_items = CourseProvider.grouping()[0]
@@ -275,16 +269,6 @@ async def main(
             if open_browser:
                 time.sleep(1)
                 click.launch(data["absolute_url"])
-
-
-def get_job_tags(message: ClubMessage) -> set[str]:
-    html_tree = html.fromstring(md(message.content))
-    tags = set()
-    for code in html_tree.xpath("//code"):
-        text = code.text_content().strip()
-        if text.startswith("#"):
-            tags.add(text)
-    return tags
 
 
 def get_cv_review_types(
