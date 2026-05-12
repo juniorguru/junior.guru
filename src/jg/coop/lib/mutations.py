@@ -15,9 +15,9 @@ KNOWN_SERVICES = [
     "buttondown",
     "discord",
     "fakturoid",
+    "mastodon",
     "memberful",
     "openai",
-    "mastodon",
 ]
 
 CACHE_KEY = "mutations:allowed"
