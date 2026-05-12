@@ -129,7 +129,13 @@ class Command(click.Command):
     "deps",
     default=True,
 )
-@click.option("--allow", "--mutate", "allow", multiple=True)
+@click.option(
+    "--allow",
+    "--mutate",
+    "allow",
+    multiple=True,
+    type=click.Choice(mutations.KNOWN_SERVICES),
+)
 @click.option("--allow-mutations", is_flag=True, default=False)
 @click.pass_context
 def main(
@@ -138,13 +144,14 @@ def main(
     deps,
     allow,
     allow_mutations,
-):
+) -> None:
     if allow_mutations:
-        mutations.allow_all()
+        mutations.allow(*mutations.KNOWN_SERVICES)
     elif allow:
         mutations.allow(*allow)
     else:
         mutations.allow_none()
+
     images.init_templates_cache()
     with db.connection_context():
         sync = Sync.start(id)

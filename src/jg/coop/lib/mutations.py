@@ -21,6 +21,7 @@ KNOWN_SERVICES = [
 ]
 
 CACHE_KEY = "mutations:allowed"
+_CACHE_MISSING = object()
 
 
 class MutationsNotAllowedError(Exception):
@@ -33,21 +34,33 @@ def _get_allowed() -> set:
 
 
 def _set_allowed(allowed: Iterable) -> None:
-    get_cache().set(CACHE_KEY, set(allowed))
+    cache = get_cache()
+    if allowed_set := set(allowed):
+        cache.set(CACHE_KEY, allowed_set)
+    else:
+        cache.delete(CACHE_KEY)
 
 
-def allow(*services: str) -> None:
-    allowed = _get_allowed()
-    for service in map(str.lower, services):
-        if service not in KNOWN_SERVICES:
-            raise ValueError(f"Unknown service: {service!r} not in {KNOWN_SERVICES!r}")
-        allowed.add(service)
-    _set_allowed(allowed)
-    logger.info(f"Allowed: {list(allowed)!r}")
+def allow(*services: str, _under_test: bool = False) -> set[str]:
+    services = set(map(str.lower, services))
+    if not services:
+        raise ValueError("At least one service must be allowed")
+    if unknown_services := (services - set(KNOWN_SERVICES)):
+        raise ValueError(
+            f"Unknown services: {unknown_services!r} not in {KNOWN_SERVICES!r}"
+        )
 
+    cache = get_cache()
+    with cache.transact(retry=True):
+        if (
+            not _under_test
+            and cache.get(CACHE_KEY, default=_CACHE_MISSING) is not _CACHE_MISSING
+        ):
+            raise RuntimeError("Mutations are already configured")
+        cache.set(CACHE_KEY, services)
 
-def allow_all() -> None:
-    allow(*KNOWN_SERVICES)
+    logger.info(f"Allowed: {list(services)!r}")
+    return services
 
 
 def allow_none() -> None:
