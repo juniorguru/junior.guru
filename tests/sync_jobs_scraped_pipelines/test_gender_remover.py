@@ -6,7 +6,6 @@ from jg.coop.sync.jobs_scraped.pipelines.gender_remover import process
 @pytest.mark.parametrize(
     "title, expected",
     [
-        # German
         (
             "Full Stack Software Engineer: Ruby on Rails (m/f/d)",
             "Full Stack Software Engineer: Ruby on Rails",
@@ -71,12 +70,34 @@ from jg.coop.sync.jobs_scraped.pipelines.gender_remover import process
             "Tech Trainee Programme (Java-JavaScript-iOS-Android) (d/f/m)",
             "Tech Trainee Programme (Java-JavaScript-iOS-Android)",
         ),
-        # French
+    ],
+)
+@pytest.mark.asyncio
+async def test_gender_remover_german(title, expected):
+    item = await process(dict(title=title))
+
+    assert item["title"] == expected
+
+
+@pytest.mark.parametrize(
+    "title, expected",
+    [
         (
             "Internship: JAVA DEVELOPER - H/F",
             "Internship: JAVA DEVELOPER",
         ),
-        # Czech
+    ],
+)
+@pytest.mark.asyncio
+async def test_gender_remover_french(title, expected):
+    item = await process(dict(title=title))
+
+    assert item["title"] == expected
+
+
+@pytest.mark.parametrize(
+    "title, expected",
+    [
         (
             "GOlang / PHP backend programátor cloudových služeb (m/ž)",
             "GOlang / PHP backend programátor cloudových služeb",
@@ -92,7 +113,7 @@ from jg.coop.sync.jobs_scraped.pipelines.gender_remover import process
     ],
 )
 @pytest.mark.asyncio
-async def test_gender_remover(title, expected):
+async def test_gender_remover_czech(title, expected):
     item = await process(dict(title=title))
 
     assert item["title"] == expected
