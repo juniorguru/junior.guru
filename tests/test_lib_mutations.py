@@ -248,6 +248,19 @@ def test_allowing(nothing_allowed):
     assert is_allowed("discord") is False
     assert is_allowed("fakturoid") is True
 
+
+def test_allowing_restores_state_on_exception(nothing_allowed):
+    allow("fakturoid")
+
+    with pytest.raises(RuntimeError, match="boom"):
+        with allowing("discord"):
+            assert is_allowed("discord") is True
+            assert is_allowed("fakturoid") is False
+            raise RuntimeError("boom")
+
+    assert is_allowed("discord") is False
+    assert is_allowed("fakturoid") is True
+
     with allowing("discord"):
         assert is_allowed("discord") is True
         assert is_allowed("fakturoid") is False
