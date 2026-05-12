@@ -9,7 +9,6 @@ from jg.coop.lib.mutations import (
     allow,
     allow_all,
     allow_none,
-    allowing,
     is_allowed,
     mutates,
     mutating,
@@ -240,30 +239,3 @@ def test_mutations_not_allowed_works_as_boolean(nothing_allowed):
 
     assert isinstance(result, MutationsNotAllowedError)
     assert not result
-
-
-def test_allowing(nothing_allowed):
-    allow("fakturoid")
-
-    assert is_allowed("discord") is False
-    assert is_allowed("fakturoid") is True
-
-
-def test_allowing_restores_state_on_exception(nothing_allowed):
-    allow("fakturoid")
-
-    with pytest.raises(RuntimeError, match="boom"):
-        with allowing("discord"):
-            assert is_allowed("discord") is True
-            assert is_allowed("fakturoid") is False
-            raise RuntimeError("boom")
-
-    assert is_allowed("discord") is False
-    assert is_allowed("fakturoid") is True
-
-    with allowing("discord"):
-        assert is_allowed("discord") is True
-        assert is_allowed("fakturoid") is False
-
-    assert is_allowed("discord") is False
-    assert is_allowed("fakturoid") is True

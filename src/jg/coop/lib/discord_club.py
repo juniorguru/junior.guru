@@ -135,12 +135,15 @@ class ClubEmoji(StrEnum):
 
 
 def _check_mutations(request):
+    def is_dm_channel_creation(route) -> bool:
+        return route.method == "POST" and route.path == "/users/@me/channels"
+
     @wraps(request)
     async def wrapper(route, *args, **kwargs):
-        if mutations.is_allowed("discord") or route.method in (
-            "GET",
-            "HEAD",
-            "OPTIONS",
+        if (
+            mutations.is_allowed("discord")
+            or route.method in ("GET", "HEAD", "OPTIONS")
+            or is_dm_channel_creation(route)
         ):
             return await request(route, *args, **kwargs)
         raise mutations.MutationsNotAllowedError(
@@ -316,8 +319,7 @@ async def get_or_create_dm_channel(member: discord.Member) -> None | discord.DMC
     if member.dm_channel:
         return member.dm_channel
     try:
-        with mutations.allowing_discord():
-            return await member.create_dm()
+        return await member.create_dm()
     except discord.HTTPException as e:
         if e.code == 50007:  # cannot send messages to this user
             logger["users"][member.id].warning(e)

@@ -297,6 +297,20 @@ async def test_check_mutations_doesnt_raise_if_discord_allowed(nothing_allowed, 
     )
 
 
+@pytest.mark.asyncio
+async def test_check_mutations_allows_dm_channel_creation(nothing_allowed):
+    @discord_club._check_mutations
+    async def request(*args, **kwargs):
+        return args, kwargs
+
+    route = Route("POST", "/users/@me/channels")
+
+    assert await request(route, 1, 2, kwarg1=3, kwarg2=4) == (
+        (route, 1, 2),
+        {"kwarg1": 3, "kwarg2": 4},
+    )
+
+
 def test_get_missing_reactions():
     StubReaction = namedtuple("Reaction", ["emoji", "me"])
     reactions = [StubReaction("👍", True), StubReaction("👎", True)]

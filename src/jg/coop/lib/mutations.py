@@ -129,32 +129,7 @@ mutating_memberful = partial(mutating, "memberful")
 mutating_openai = partial(mutating, "openai")
 
 
-@contextmanager
-def allowing(service) -> Generator[None, None, None]:
-    service = service.lower()
-    assert service in KNOWN_SERVICES
-
-    dump = _get_allowed()
-    try:
-        _set_allowed([service])
-        logger["allowing"].debug(f"Force-allowed: {service!r}")
-        yield
-    finally:
-        _set_allowed(dump)
-        logger["allowing"].debug(f"Back to: {dump!r}")
-
-
-allowing_apify = partial(allowing, "apify")
-allowing_buttondown = partial(allowing, "buttondown")
-allowing_discord = partial(allowing, "discord")
-allowing_fakturoid = partial(allowing, "fakturoid")
-allowing_mastodon = partial(allowing, "mastodon")
-allowing_memberful = partial(allowing, "memberful")
-allowing_openai = partial(allowing, "openai")
-
-
 _globals = globals()
 for service in KNOWN_SERVICES:
     assert f"mutates_{service}" in _globals
     assert f"mutating_{service}" in _globals
-    assert f"allowing_{service}" in _globals
