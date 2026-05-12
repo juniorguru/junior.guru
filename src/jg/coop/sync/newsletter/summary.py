@@ -125,7 +125,8 @@ async def summarize_club(today: date, correction_attempts: int) -> Summary:
             Důležité:
             - Nevymýšlej si ID zpráv.
             - Vše česky.
-            - Témata se nesmí opakovat.
+            - Ať je to pestré z různých částí klubu, ne všechno z jednoho kanálu.
+            - Témata se nesmí opakovat. Povolena jsou maximálně 3 témata, která se týkají AI.
             - Přemýšlej nad tím krok za krokem.
         """,
         feed,
