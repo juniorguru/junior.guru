@@ -1317,3 +1317,5 @@
 {"_id": "27628339105", "amount": -330, "category": "miscellaneous", "happened_on": "2026-05-11"}
 {"_id": "27629347924", "amount": -208, "category": "tax", "happened_on": "2026-05-12"}
 {"_id": "27630976031", "amount": 6, "category": "donations", "happened_on": "2026-05-13"}
+{"_id": "27634590729", "amount": -5720, "category": "tax", "happened_on": "2026-05-15"}
+{"_id": "27634590730", "amount": -3306, "category": "tax", "happened_on": "2026-05-15"}
