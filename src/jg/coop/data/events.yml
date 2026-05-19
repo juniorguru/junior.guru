@@ -61,15 +61,15 @@
 
 registry:
   - id: 62
-    title: "Scrapování webu"
+    title: "Web scraping: Nechte internet pracovat za vás"
     date: "2026-05-28"
     description: |
-      (bude upřesněno)
+      Každý den ručně prolustrovat pět pracovních portálů? Sledovat, jestli zase klesla cena toho laptopu? Na tohle přece máme počítače! Ukážeme si, co je web scraping, k čemu se hodí a jak začít - bez předchozích zkušeností. Vysvětlím, jak weby fungují "zevnitř", jak najít data, která nás zajímají, a proč je scraping užitečný nástroj do výbavy každého vývojáře. Živě si postavíme scraper v Typescriptu, který umí sám procházet pracovní nabídky na StartupJobs.cz a ukládat výsledky do přehledné tabulky. Pracovat budeme s platformou Apify, která spouštění scraperů v cloudu dělá přístupné i pro začátečníky - žádný vlastní server, žádné složité nastavování.
     avatar_path: avatars-participants/katerina-hronikova.jpg
     bio_name: Kateřina Hroníková
     bio_title: "Full-stack vývojářka, Apify"
     bio: |
-      Full-stack vývojářka se silným finančním backgroundem, ambasadorka v Apify, mentorka v Czechitas, milovnice (ultra)trailů.
+      Full-stack vývojářka se silným finančním backgroundem, ambasadorka 'Apify doing good' iniciativy, mentorka v Czechitas, milovnice (ultra)trailů.
     bio_links:
       - https://www.linkedin.com/in/katerina-hronikova/
 
