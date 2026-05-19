@@ -436,6 +436,8 @@ class ListedJob(BaseModel):
         return cls.select().order_by(cls.posted_on.desc())
 
     def to_json_ld(self) -> str:
+        description_parts = [self.title, self.company_name, self.location_text]
+        description = " — ".join(filter(None, description_parts))
         return json.dumps(
             {
                 "@context": "https://schema.org",
@@ -443,8 +445,8 @@ class ListedJob(BaseModel):
                 "title": self.title,
                 "url": self.url,
                 "description": (
-                    "Pracovní nabídka pro začínající programátory nebo testery: "
-                    + " — ".join([self.title, self.company_name, self.location_text])
+                    f"Pracovní nabídka "
+                    f"pro začínající programátory nebo testery: {description}"
                 ),
                 "datePosted": self.posted_on.isoformat(),
                 "industry": "Informační technologie",
