@@ -1,5 +1,6 @@
 # Contributing to junior.guru
 
+- Always run the `jg` project CLI as `uv run jg`. Always prefer `uv` over custom Python binary and virtual environment management.
 - Follow linked task-specific guidelines based on what you are editing, and record detailed rules in those documents.
 - Mandatory workflow before editing:
 	1. Identify what files you will edit.
