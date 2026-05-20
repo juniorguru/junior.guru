@@ -111,5 +111,5 @@ S mobilizací jsem počítal od prvních dnů od vstupu do armády. Branná povi
 
 **Tak snad to nebude potřeba. Máš nějaký cíl, který leží před tebou?**
 
-Spoustu — nejen profesních, ale i osobních. Jedním z cílů je dostávat za svou práci lépe zaplaceno, to mě žene k dalšímu vzdělávání. Práce by mě nebavila, kdybych dělal pořád to samé dokola. Potřebuji progres. Mám dlouhý seznam věcí, které se chci naučit a už teď vím, že se na všechny za život nedostanu.
+Spoustu — nejen profesních, ale i osobních. Jedním z cílů je dostávat za svou práci lépe zaplaceno, to mě žene k dalšímu vzdělávání. Práce by mě nebavila, kdybych dělal pořád to samé dokola. Potřebuji progres. Mám dlouhý seznam věcí, které se chci naučit a už teď vím, že se ani ke všem za život nedostanu.
 
