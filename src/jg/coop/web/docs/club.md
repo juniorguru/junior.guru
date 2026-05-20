@@ -296,9 +296,9 @@ Rady kolemjdoucích ve veřejných skupinách jsou náchylné k fanouškovství,
 ) }}
 {{ blockquote_avatar(
   'Jakožto career switcher jsem také bojoval s hledáním práce v IT oboru. Klub měl určitě nemalý podíl na mém úspěšném nalezení práce.',
-  'petr-k.jpg',
-  'Petr K.',
-  'Petr K.'
+  'petr-kasicka.jpg',
+  'Petr Kašička',
+  'Petr Kašička'
 ) }}
 {{ blockquote_avatar(
   'Nebýt klubu, tak čert ví, jak by to se mnou bylo. Člověk si změnu zaměstnání nějak maluje, reklamy ho mastí zleva zprava medovou budoucností a najednou je to jak na horské dráze. Až díky lidem z klubu jsem obdržel pořádný reality-check, který po medu vůbec nechutnal. Poprvé jsem ale v tom širém moři možností a bájných představ získal pocit, že stojím nohama na zemi – a že to i přes to všechno stojí za to.
