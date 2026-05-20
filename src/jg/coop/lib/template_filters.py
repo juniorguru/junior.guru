@@ -173,7 +173,7 @@ def mapping(mapping: dict, keys: Iterable) -> list:
 
 
 def mainnav(nav: Navigation) -> Generator[dict, None, None]:
-    for item in list(nav)[:5]:
+    for item in list(nav)[:6]:
         first_child = _get_first_child(item)
         yield dict(title=item.title, url=first_child.url, is_active=item.active)
 

@@ -42,6 +42,11 @@
 
 .mainnav-link {
   @extend .nav-link;
+  padding: var(--bs-nav-link-padding-y) calc(var(--bs-nav-link-padding-x) * .75);
+
+  @include media-breakpoint-up(sm) {
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+  }
 }
 
 .mainnav-link:hover,
