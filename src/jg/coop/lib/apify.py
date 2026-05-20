@@ -76,19 +76,18 @@ def fetch_data(
 def fetch_scheduled_actors(token: str | None = None) -> list[str]:
     client = create_client(token=token)
     schedules = [
-        schedule
-        for schedule in client.schedules().list().items
-        if schedule["isEnabled"]
+        schedule for schedule in client.schedules().list().items if schedule.is_enabled
     ]
     actor_ids = set()
     for schedule in schedules:
         schedule_actor_ids = [
-            action["actorId"]
-            for action in schedule["actions"]
-            if action["type"] == "RUN_ACTOR"
+            action.actor_id for action in schedule.actions if action.type == "RUN_ACTOR"
         ]
         actor_ids.update(schedule_actor_ids)
-    return [
-        f"{actor_info['username']}/{actor_info['name']}"
-        for actor_info in (client.actor(actor_id).get() for actor_id in actor_ids)
-    ]
+    actor_names = []
+    for actor_id in actor_ids:
+        if actor_info := client.actor(actor_id).get():
+            actor_names.append(f"{actor_info.username}/{actor_info.name}")
+        else:
+            raise RuntimeError(f"Unable to load actor details for {actor_id}")
+    return actor_names
