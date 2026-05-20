@@ -3,7 +3,6 @@ from datetime import timedelta
 from functools import lru_cache
 
 from apify_client import ApifyClient
-from apify_shared.consts import ActorJobStatus
 
 from jg.coop.lib import loggers
 from jg.coop.lib.cache import cache
@@ -30,13 +29,15 @@ def run(
 
     logger.debug(f"Starting {actor_name}")
     run_info = actor.start(run_input=run_input)
-    run = client.run(run_info["id"])
+    run = client.run(run_info.id)
 
     logger.debug(f"Waiting for {actor_name}")
     run_info = run.wait_for_finish()
+    if run_info is None:
+        raise RuntimeError(f"Run of {actor_name} did not finish in time")
 
     logger.debug(f"Finished! {run_info!r}")
-    if run_info["status"] != ActorJobStatus.SUCCEEDED:
+    if run_info.status != "SUCCEEDED":
         raise RuntimeError(f"Run of {actor_name} failed: {run_info!r}")
 
     return list(run.dataset().iterate_items())
@@ -52,7 +53,7 @@ def fetch_data(
 
     logger.debug(f"Getting last successful run of {actor_name}")
     actor = client.actor(actor_name)
-    last_run = actor.last_run(status=ActorJobStatus.SUCCEEDED)
+    last_run = actor.last_run(status="SUCCEEDED")
     run_info = last_run.get()
     if run_info is None:
         if raise_if_missing:
@@ -60,13 +61,11 @@ def fetch_data(
         logger.error(f"No successful runs of {actor_name!r} found")
         return []
 
-    run_url = (
-        f"https://console.apify.com/actors/{run_info['actId']}/runs/{run_info['id']}"
-    )
-    duration_s = (run_info["finishedAt"] - run_info["startedAt"]).total_seconds()
+    run_url = f"https://console.apify.com/actors/{run_info.act_id}/runs/{run_info.id}"
+    duration_s = (run_info.finished_at - run_info.started_at).total_seconds()
     logger.debug(
         f"Last successful run of {actor_name}: {run_url}, "
-        f"finished {run_info['finishedAt']}, "
+        f"finished {run_info.finished_at}, "
         f"took {duration_s}s"
     )
     dataset = last_run.dataset()

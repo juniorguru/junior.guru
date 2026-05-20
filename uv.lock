@@ -126,15 +126,6 @@ wheels = [
 ]
 
 [[package]]
-name = "apify-shared"
-version = "2.2.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/ec/88/8833a8bba9044ce134bb2e57fbb626f1ddbeecac964bc2e2b652a50fadd1/apify_shared-2.2.0.tar.gz", hash = "sha256:ad48a96084e3c38faa1bac723a47929a1bb2c771544da2f0cb503eabdecfc79a", size = 45534, upload-time = "2026-01-15T10:17:14.592Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/75/7c/9607852e2bb324fa40a5b967e162dea1b3c76b429cf90b602e4a202c101a/apify_shared-2.2.0-py3-none-any.whl", hash = "sha256:667d4d00ac3cf8091702640547387ac5c72a1df402bbb3923f7a401bc25d9d50", size = 16408, upload-time = "2026-01-15T10:17:13.103Z" },
-]
-
-[[package]]
 name = "attrs"
 version = "26.1.0"
 source = { registry = "https://pypi.org/simple" }
@@ -904,7 +895,6 @@ version = "0.0"
 source = { editable = "." }
 dependencies = [
     { name = "apify-client" },
-    { name = "apify-shared" },
     { name = "beautifulsoup4" },
     { name = "click" },
     { name = "cssselect" },
@@ -966,7 +956,6 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "apify-client", specifier = ">=2.1.0" },
-    { name = "apify-shared", specifier = ">=2.1.0" },
     { name = "beautifulsoup4", specifier = ">=4.14.2" },
     { name = "click", specifier = ">=8.3.0" },
     { name = "cssselect", specifier = ">=1.3.0" },
