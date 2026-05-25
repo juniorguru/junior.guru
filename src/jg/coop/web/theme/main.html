@@ -75,7 +75,7 @@
         {% set club_nav_item = main_nav_items|selectattr("url", "equalto", "club/")|first %}
         {% if not club_nav_item.is_active %}
           <a class="mainnav-btn club" href="{{ club_nav_item.url|url }}">
-            {{ 'plus-circle-fill'|icon }} Přidej se
+            {{ 'plus-circle-fill'|icon }} Zkus klub
           </a>
         {% endif %}
       </div>

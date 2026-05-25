@@ -26,14 +26,14 @@ nav:
       - GitHub profil: handbook/github-profile.md
       - LinkedIn: handbook/linkedin.md
       - Pohovor: handbook/interview.md
-  - Kurzy:
-      - Kurzy programování: courses.md
-      - "courses/*.md"
   - Kandidáti:
       - candidates.jinja
   - Práce:
       - Práce: jobs.jinja
       - "jobs/*.jinja"
+  - Kurzy:
+      - Kurzy programování: courses.md
+      - "courses/*.md"
   - Inspirace:
       - Novinky:
           - Novinky: news.jinja

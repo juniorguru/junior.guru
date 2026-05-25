@@ -22,6 +22,20 @@ $explainer-card-icon-size: 2.5rem;
   border-radius: $border-radius;
 }
 
+.explainer-card.link {
+  position: relative;
+  border: 1px solid transparent;
+}
+
+.explainer-card.link a {
+  @extend .stretched-link;
+  text-decoration: none;
+}
+
+.explainer-card.link a:hover {
+  text-decoration: underline;
+}
+
 .explainer-card-icon {
   display: flex;
   align-items: center;

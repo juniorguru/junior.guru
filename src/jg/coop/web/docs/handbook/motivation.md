@@ -143,6 +143,9 @@ Tento web se zabývá vytvářením softwaru, tedy programů pro počítače neb
   </li>
 </ul>
 
+https://www.youtube.com/watch?v=rEmhE9WtSOQ
+https://lucietvrdikova.cz/navod-na-ziskani-dotace-na-kurz/
+
 --- https://discord.com/channels/769966886598737931/788832177135026197/1061972910488703036
 Spíše motivační četba, ale pěkný článek. Něco jako příručka junior.guru ale od freeCodeCamp 🙂
 https://www.freecodecamp.org/news/learn-to-code-book/#500-word-executive-summary
