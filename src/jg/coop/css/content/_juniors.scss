@@ -1,5 +1,5 @@
 $juniors-gap: 2rem + (4 * $spacer);
-$juniors-arrow-icon-size: 2rem;
+$juniors-arrow-icon-size: 3rem;
 $juniors-avatars-size: $juniors-arrow-icon-size + 1rem;
 
 .juniors {
@@ -22,7 +22,7 @@ $juniors-avatars-size: $juniors-arrow-icon-size + 1rem;
   font-family: bootstrap-icons, sans-serif;
   font-size: $juniors-arrow-icon-size;
   line-height: 1;
-  color: $jg-dark;
+  color: $jg-gray-light;
   content: "\F229";  // https://icons.getbootstrap.com/icons/caret-down-fill/
   transform: translateX(-50%);
 }
