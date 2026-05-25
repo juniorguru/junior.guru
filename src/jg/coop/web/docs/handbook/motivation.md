@@ -128,6 +128,21 @@ Tento web se zabývá vytvářením softwaru, tedy programů pro počítače neb
 
 <!-- {#
 
+<ul>
+  <li>
+    <strong>Ekonomika:</strong>
+    Na vině je především celosvětová ekonomická situace v současném geopolitickém napětí po covidové pandemii. Firmy jsou v nejistých dobách při najímání lidí opatrnější a dávají přednost zkušenějším. Junioři potřebují zaučování a podporu, což je teď pro firmy nákladné. Hledání první práce tedy není tak snadné jako dřív, ale jde to, pokud víš, na co se zaměřit.
+  </li>
+  <li>
+    <strong>Víra v AI:</strong>
+    Někde si myslí, že díky AI nepotřebují juniory, ale to je krátkozraké. Práce juniorů nemizí, jen se proměňuje. Ano, psaní rutinního kódu přebírá AI. Jenže aby to drželo pohromadě, je potřeba člověk, který kódu rozumí a pozná, kde AI selhává. Funkční appku si dneska vytvoříš za hodinu u lattéčka, ale na provoz důležitých a velkých systémů je stále potřeba týmy IT odborníků. AI nenahrazuje tvoje IT schopnosti, násobí je. Čím víc rozumíš IT, tím víc toho s AI zvládneš.
+  </li>
+  <li>
+    <strong>Dotace na kurzy:</strong>
+    V letech 2023–2025 nabízelo MPSV z evropských peněz až 50.000 Kč příspěvek na libovolné kurzy, aby si lidé mohli doplnit dovednosti, nebo třeba i změnili kariéru. Poskytovatelé kurzů se na dotace vrhli a zaplavili internet reklamami slibujícími vysoké mzdy a nekonečnou uplatnitelnost na trhu. Spousta lidí se do IT vrhla bez přípravy a bez jasného cíle. Narazili potom na realitu shánění práce a především v manuálním testování je kvůli tomu nyní velký přetlak.
+  </li>
+</ul>
+
 --- https://discord.com/channels/769966886598737931/788832177135026197/1061972910488703036
 Spíše motivační četba, ale pěkný článek. Něco jako příručka junior.guru ale od freeCodeCamp 🙂
 https://www.freecodecamp.org/news/learn-to-code-book/#500-word-executive-summary
