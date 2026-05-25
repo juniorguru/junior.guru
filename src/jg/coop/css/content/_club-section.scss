@@ -74,15 +74,6 @@
   background-color: rgba($jg-white, .85);
 }
 
-.club-section-badge {
-  @extend .badge;
-  font-size: $font-size-base;
-  font-weight: $font-weight-normal;
-  color: $white;
-  vertical-align: text-top;
-  background: $jg-dark;
-}
-
 .club-section-cta {
   margin: 0;
   text-align: center;
