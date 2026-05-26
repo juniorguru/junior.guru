@@ -1,0 +1,426 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/D4E22AQHjLECN4UX-7g/feedshare-image-high-res/B4EZ5FTQomJ0AU-/0/1779279138446?e=1781136000&v=beta&t=QKSBluGoU5ltn4B1rcHPwGOLm_ltKLexKO7n0b4iwJo"
+  ],
+  "isActivity": true,
+  "activityDescription": "Honza Javorek reposted this",
+  "activityOfUser": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "JArHU/SBSwSFb6fWeG3a7Q==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "urn": "urn:li:activity:7463170155309756416",
+  "url": "https://www.linkedin.com/posts/zuzana-vlachovska_zdrav%C3%ADm-linkedine-obrac%C3%ADm-se-na-v%C3%A1s-activity-7462837610210705408-NZDK?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAACsCPOIBnXpLOpII5iWkM_r6vhhwgyoT3aM",
+  "timeSincePosted": "5d",
+  "shareUrn": "urn:li:share:7462837608977481729",
+  "text": "Zdravím LinkedIne! 👋 \n\nObracím se na vás trochu mimo běžná témata, tentokrát jako studentka Univerzita Karlova. 👩‍🎓 Píšu diplomovou práci na téma Role softwarových komunit v podpoře reskillingu žen do oboru informačních technologií. 💻 \n\nNechci po vás vyplnění dotazníku, nebojte se. 😅 Rozhodla jsem se pro kvalitativní šetření, kde si potřebuju „popovídat“ online s alespoň 12 informantkami o tom, jakým způsobem jim zapojení do softwarových komunit pomohlo v procesu reskillingu do IT. Otázky se týkají opravdu jen způsobů podpory, nebudu se ptát na recenze nebo zkušenosti s jednotlivými komunitami nebo na rozdíly mezi nimi. Vše bude anonymní, žádná příprava není potřeba, rozhovor bude trvat přibližně hodinku. 🕛 \n\nByly byste samy ochotné, nebo znáte ženy, které splňují následující požadavky a byly by ochotné mi tu hodinku věnovat? Ráda to samozřejmě oplatím, pokud vás napadne čím. 😊 \n\nHledám informantky:\n📍 Ženy s českým občanstvím a češtinou jako rodným jazykem\n📍 V současnosti pracující alespoň půl roku na pozici software developerky\n📍 Které v roce 2019 nebo později (tzn. 2020, 21, 22...) ještě pracovaly v jiném oboru než IT (případně byly na MD/RD)\n📍 Během období kariérního přechodu do IT se více než polovinu tohoto období aktivně účastnily/zapojovaly do jedné nebo více softwarových komunit (ReactGirls, Czechitas, PyLadies, Frontendisti, junior.guru apod.)\n\nPokud máte chuť mi pomoct, budu moc ráda, když mi napíšete buď sem, nebo klidně na email zvlachovska@email.cz. Jestli se chcete šetření účastnit, ale nevíte jistě, jestli zapadáte do kritérií, napište prosím taky a domluvíme se individuálně. Budu moc ráda, pokud vás napadnou i další ženy, které do kritérií zapadají. Předem moc děkuji za pomoc! 🙏 💙 \n\nP.S.: Takhle hezky se budu usmívat na každého, kdo mi se sháněním informantek pomůže. 👩‍🎓 😄",
+  "attributes": [
+    {
+      "start": 92,
+      "length": 18,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Charles University",
+        "universalName": "univerzita-karlova",
+        "trackingId": "8bShGRjuRn63yCNf5a66kw==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:3496049",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQEkJ7rr_sk_ng/company-logo_400_400/B4DZ19F3usJgAY-/0/1775920185799?e=1781136000&v=beta&t=WqYEy-YUu_RQW7niBFEN2xyn1bBWWWC0tKcmKqcQDVM"
+      }
+    },
+    {
+      "start": 1309,
+      "length": 10,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "ReactGirls",
+        "universalName": "reactgirlsprague",
+        "trackingId": "X5h0ZYT9S+aJBgv1ehwJYQ==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:34588565",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQF13Hz_6HWeBg/company-logo_400_400/B4DZuX1zHUKAAY-/0/1767779021705/reactgirlsprague_logo?e=1781136000&v=beta&t=CVsLw_09bkLLVfLxKCDOryGlSvWSCSPyzsYUaPJTe9s"
+      }
+    },
+    {
+      "start": 1321,
+      "length": 9,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Czechitas",
+        "universalName": "czechitas",
+        "trackingId": "PXWsuSWET72Wy8gs+lSHTw==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:5319681",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQGUtbq_Ku9-Pw/company-logo_400_400/company-logo_400_400/0/1704439912456/czechitas_logo?e=1781136000&v=beta&t=molJnkCH_gTyGvasG9h09UcPKtk52yLyXtBM8hhPM5Q"
+      }
+    },
+    {
+      "start": 1332,
+      "length": 8,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "PyLadies",
+        "universalName": "pyladies-global",
+        "trackingId": "YHyy92tjQIOlaV6LSbasyg==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:65670385",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQF5PdRAbQFM1w/company-logo_400_400/company-logo_400_400/0/1630618850706/pyladies_global_logo?e=1781136000&v=beta&t=zAC8OUF9bXQiN5SHKy9VlefjGFHXM3f0MV3TiUFDQTI"
+      }
+    },
+    {
+      "start": 1342,
+      "length": 12,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Frontendisti",
+        "universalName": "frontendisti",
+        "trackingId": "otK79cWXQjmJwATcYkyVPQ==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:26270417",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHfPYqav3sN1w/company-logo_400_400/B4EZpJsmiXKgAY-/0/1762173020690/frontendisti_logo?e=1781136000&v=beta&t=8UwVjElEbfqWVbac3iNkc1HS0lwMBI-P-zII7vKwsfw"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1779782759068,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7462837610210705408?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7462837610210705408%2C7464949945490595840%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287464949945490595840%2Curn%3Ali%3Aactivity%3A7462837610210705408%29",
+      "text": "Hezky den, ja zatim nesplnuji kriterium delky prace v IT, drzim palce, at sezenete dostatek respondentek :)",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Jana",
+        "lastName": "Zmijková",
+        "occupation": "Software Developer",
+        "id": "450096743",
+        "publicId": "zmijkova",
+        "trackingId": "ngEMgt5pSO6aCIa+OD3d3g==",
+        "profileId": "ACoAABrT7mcBs7ie4r1nA4McNBK2tV0qfujA2v4",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFwmJejccKJYw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1604515688256?e=1781136000&v=beta&t=_OsPmbqF1GUuRnM81Ym5BJrwABb9dZxzXqQgibkJR-U",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1779447561117,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7462837610210705408?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7462837610210705408%2C7463544023379505153%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287463544023379505153%2Curn%3Ali%3Aactivity%3A7462837610210705408%29",
+      "text": "Fandím, poslal jsem dál a výsledky si rád přečtu já i třeba Jana Benešová :)",
+      "entities": [
+        {
+          "start": 60,
+          "length": 13,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Jana",
+            "lastName": "Benešová",
+            "occupation": "Vedu péči o dobrovolníky v Czechitas🩷",
+            "id": "1036178862",
+            "publicId": "jana-benešová-66602024b",
+            "trackingId": "L8YvXQjyQyWEWh9NzSnJBQ==",
+            "profileId": "ACoAAD3C1a4Bwb3HrDCRzQTyWV3hn1tRhr72LlU",
+            "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFBKEpDBkvjUQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1675342915025?e=1781136000&v=beta&t=PeKVJsvihkTgHTPpfK6UZxHvGe5F4W-W_awks2i38SI",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFEhVmnAgij5Q/profile-displaybackgroundimage-shrink_350_1400/B4EZpfK1KiHEAY-/0/1762533267330?e=1781136000&v=beta&t=r0tiqY0KHJQ-X9uTGjIb8Zgn0DFu0-s86MshrXgX_7U"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Radek",
+        "lastName": "Novák",
+        "occupation": "Product Owner of CyberSecurity education at Czechitas",
+        "id": "536342854",
+        "publicId": "radek-in-cybersec",
+        "trackingId": "M2u+yg8DS/enhHZ7WNUM4w==",
+        "profileId": "ACoAAB_38UYBxzrVlVnDZB45Rlg9B-MMD_leZjY",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQElfZkeiEYQMg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1600814031727?e=1781136000&v=beta&t=bSz5wPUuf7AOXN0dqQHThApJbz7RmqilYwcvWQsdLNg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH7igKRAID02g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1721224012760?e=1781136000&v=beta&t=L4GO9llhbAaHDCvDY0s1hVpV6b-ydYcu8xGYAStdwPQ",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1779370448746,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7462837610210705408?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7462837610210705408%2C7463220590653616129%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287463220590653616129%2Curn%3Ali%3Aactivity%3A7462837610210705408%29",
+      "text": "Pani reditelko preji hodne stesti",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Slovenian",
+      "author": {
+        "firstName": "Lukas",
+        "lastName": "Cizek",
+        "occupation": "Senior Full-stack Developer | React, Node.js, TypeScript | Team leader",
+        "id": "420594570",
+        "publicId": "lukascizek",
+        "trackingId": "BzSGVj/IR6aEIINQa2t31A==",
+        "profileId": "ACoAABkRw4oB55umyBLKrtCymi3ZAc087xVYy34",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEw9YX5KXeZcw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1604056164879?e=1781136000&v=beta&t=Vd3AlV2K5tdWK0J_UvRsJAzK4MaSE7hIR5h_3lL5Qys",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGszOqxGebvrA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516879649794?e=1781136000&v=beta&t=AUCkJndyKj4M7zVkR_ooAVdKuf-mXOH0eBSAZQgjbm0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1779349047012,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7462837610210705408?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7462837610210705408%2C7463130825274961920%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287463130825274961920%2Curn%3Ali%3Aactivity%3A7462837610210705408%29",
+      "text": "Zuzana držíme pěsti! A výsledky by nás samozřejmě zajímaly. 💗 ",
+      "entities": [
+        {
+          "start": 0,
+          "length": 6,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Zuzana",
+            "lastName": "Vlachovská",
+            "occupation": "CEO @ReactGirls, Adult Education and Personnel Management Student",
+            "id": "930332013",
+            "publicId": "zuzana-vlachovska",
+            "trackingId": "U0vxotEfT++LwZZJDo9m5Q==",
+            "profileId": "ACoAADdzvW0BMlX8bbn5rBF19jX-JjopP8qNdaw",
+            "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHCyGGfv9hZPA/profile-displayphoto-crop_800_800/B4EZnZ4w_gHIAI-/0/1760297162924?e=1781136000&v=beta&t=pFhVOrUHCE-FRetcvCd1qmwkxkPOjEJFtfaa0JdfJ1Y",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEW314oasBxwg/profile-displaybackgroundimage-shrink_350_1400/B4EZoMPZ_BGUAY-/0/1761141985735?e=1781136000&v=beta&t=b5dSJcX5_a-JciGg1ZMg8B4Nx1hHozgeYnJi08rEznk"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "Czech"
+    },
+    {
+      "time": 1779304222474,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7462837610210705408?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7462837610210705408%2C7462942817535848448%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287462942817535848448%2Curn%3Ali%3Aactivity%3A7462837610210705408%29",
+      "text": "Komentuji pro dosah! 🚀🦸‍♀️",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Václav",
+        "lastName": "Kotyk",
+        "occupation": "Talent Sourcer @ SentinelOne.ai | The Future of CyberSec will be determined by You - let’s Secure Tomorrow™ together! 🛡️👾 | In 💜 with s1.ai/PurpleAI | 🕵️‍♂️ CyBeer security meetups organizer",
+        "id": "322518163",
+        "publicId": "vaclavkotyk",
+        "trackingId": "fV432oA6SnCDUdbd8Gl61w==",
+        "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHSFfNAAQ3ojA/profile-framedphoto-shrink_800_800/B4EZb.aDPLHAAs-/0/1748024964389?e=1780398000&v=beta&t=SRa6gFlA4a37b8KQN2K_8lE8Pc34Q1YLTqnpIuivFFA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG_GZHPXo_drQ/profile-displaybackgroundimage-shrink_350_1400/B4EZhWDO5THEAY-/0/1753790347174?e=1781136000&v=beta&t=TTJXtHJi0vF694Nao68XfleeSQJvzU06We8EI4GVwQI",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1779303724931,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7462837610210705408?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7462837610210705408%2C7462940730689261568%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287462940730689261568%2Curn%3Ali%3Aactivity%3A7462837610210705408%29",
+      "text": "Komentuji pro dosah 😌",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Katerina",
+        "lastName": "Berankova",
+        "occupation": "Trainee People & Culture | Andragogy and HRM Student",
+        "id": "727652877",
+        "publicId": "katerina-berankova-student",
+        "trackingId": "ODh+n4y4T/6f0Jv6k/JE8w==",
+        "profileId": "ACoAACtfGg0B4cYkw4L9l5_OxY3sXMmKF0P1gVo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGXBbU3J7ASRg/profile-displayphoto-crop_800_800/B4EZnjw0DYKcAI-/0/1760462850339?e=1781136000&v=beta&t=64pkh84pp7vhkfuPqjbnCmJUPnnX7kn6ZGYCarwyWiQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFClwENLVYmWw/profile-displaybackgroundimage-shrink_350_1400/B4EZmVMbfSIIAY-/0/1759144688627?e=1781136000&v=beta&t=apQcWbi8x-jI6mGvTa4_MpRXMp1w9z-GrX0xHnGmYwU",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1779290877378,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7462837610210705408?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7462837610210705408%2C7462886844146515969%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287462886844146515969%2Curn%3Ali%3Aactivity%3A7462837610210705408%29",
+      "text": "Ty nemáš dost respondentek? :O \nNevěřím!\nMoc ráda Tě zas uvidím a popovídám.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Eliška",
+        "lastName": "Novotná",
+        "occupation": "Software Developer @TeskaLabs",
+        "id": "814185299",
+        "publicId": "enovotna",
+        "trackingId": "9LxwasC5SGKj1EPlHqtpRQ==",
+        "profileId": "ACoAADCHe1MBqCmPBVtBJgxUdvnCf2-PnNDgigQ",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHbersNQVbU_w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1654707099313?e=1781136000&v=beta&t=9D9JBFGPLPgtwn7xWI0m9p9BmtPnx6gJTwp-JpX_c9A",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Zmijková",
+        "occupation": "Software Developer",
+        "id": "450096743",
+        "publicId": "zmijkova",
+        "trackingId": "xRBLYOyVTWScVcI9hRg/qg==",
+        "profileId": "ACoAABrT7mcBs7ie4r1nA4McNBK2tV0qfujA2v4",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFwmJejccKJYw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1604515688256?e=1781136000&v=beta&t=_OsPmbqF1GUuRnM81Ym5BJrwABb9dZxzXqQgibkJR-U"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Polák",
+        "occupation": "Unity Developer | C#/.NET & Web & Game Enthusiast",
+        "id": "1050425749",
+        "publicId": "petr-polák",
+        "trackingId": "xTRkq/8aTDSCIME133GLRg==",
+        "profileId": "ACoAAD6cOZUBJOFEDYm9EGaOfjxUVWbsYBOCBdA",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQErNL8C1QYkSA/profile-displayphoto-crop_800_800/B4DZetTvnrHMAI-/0/1750959325254?e=1781136000&v=beta&t=j8R713JNlvra_3GgUWXRVFrBC4wdZZhcKrep9eSV-3I"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Eva",
+        "lastName": "Hermanová",
+        "occupation": "Lektor (Office, M365, AI v kanceláři), týmový hráč a entuziasta - nejen pro technologie Microsoftu.",
+        "id": "54795500",
+        "publicId": "evahermanova",
+        "trackingId": "ayt0bHp6TPaHRNMZKRt/FQ==",
+        "profileId": "ACoAAANEHOwBF4WNUPBZdSI_Cpu5nPDyEacesTw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQFPO-B07gIqWA/profile-framedphoto-shrink_800_800/B4DZyviwrqJkAk-/0/1772471651367?e=1780398000&v=beta&t=Kk2jSpCNywVtLCxRg9yHA4_gvhdjDImYprWSmdjhipA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGuSwbBAxZgXA/profile-displaybackgroundimage-shrink_350_1400/B4DZ5GexmSKEAY-/0/1779298933593?e=1781136000&v=beta&t=yxaQWO_yWClETRjqbP-UYkEDcICzwP1g_NQwQaWKDhw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ota",
+        "lastName": "Svatek",
+        "occupation": "Student of Adult Education and Personnel Management",
+        "id": "1178989172",
+        "publicId": "ota-svátek-498a1128a",
+        "trackingId": "i/RIwN4wS06IBTpP2ymVEg==",
+        "profileId": "ACoAAEZF8nQBJ0oa-JuaNVc4arHJx0vrLBqaXQc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHtlFr6uZgoVQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693317315161?e=1781136000&v=beta&t=ehn0WEzbOyN5yFXModt8K679ookmUjDsl4HoFic9Fgw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGxOlj7y6nD_w/profile-displaybackgroundimage-shrink_350_1400/B4EZexTXS.HYAY-/0/1751026334378?e=1781136000&v=beta&t=GY9-NPPzwAvjsg69CBzKJGp3ldeLu5vhPxvpsceV6fE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Benešová",
+        "occupation": "Vedu péči o dobrovolníky v Czechitas🩷",
+        "id": "1036178862",
+        "publicId": "jana-benešová-66602024b",
+        "trackingId": "L8YvXQjyQyWEWh9NzSnJBQ==",
+        "profileId": "ACoAAD3C1a4Bwb3HrDCRzQTyWV3hn1tRhr72LlU",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFBKEpDBkvjUQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1675342915025?e=1781136000&v=beta&t=PeKVJsvihkTgHTPpfK6UZxHvGe5F4W-W_awks2i38SI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFEhVmnAgij5Q/profile-displaybackgroundimage-shrink_350_1400/B4EZpfK1KiHEAY-/0/1762533267330?e=1781136000&v=beta&t=r0tiqY0KHJQ-X9uTGjIb8Zgn0DFu0-s86MshrXgX_7U"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Radek",
+        "lastName": "Novák",
+        "occupation": "Product Owner of CyberSecurity education at Czechitas",
+        "id": "536342854",
+        "publicId": "radek-in-cybersec",
+        "trackingId": "sMBWe4rtSoemmD8fxRXGiw==",
+        "profileId": "ACoAAB_38UYBxzrVlVnDZB45Rlg9B-MMD_leZjY",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQElfZkeiEYQMg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1600814031727?e=1781136000&v=beta&t=bSz5wPUuf7AOXN0dqQHThApJbz7RmqilYwcvWQsdLNg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH7igKRAID02g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1721224012760?e=1781136000&v=beta&t=L4GO9llhbAaHDCvDY0s1hVpV6b-ydYcu8xGYAStdwPQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Eliška",
+        "lastName": "Janovcová",
+        "occupation": "IT student • UX design a výzkum • Front-end",
+        "id": "1039765305",
+        "publicId": "eliška-janovcová-27111999x",
+        "trackingId": "oRAkXZwGT16dzxFDXUdCJg==",
+        "profileId": "ACoAAD35jzkBvk4kfp0t9EliY_loOiBDlWLlFWA",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHBT3_t-2MJ7Q/profile-framedphoto-shrink_800_800/B4EZyiIQdIGgAs-/0/1772246599884?e=1780398000&v=beta&t=rB8z2mVum6fzmJftfDJQFOwuM-g3qjjC1ipMbCRHvZA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF7bz4sDTQ3dQ/profile-displaybackgroundimage-shrink_350_1400/B4EZyiI1DqIEAY-/0/1772246752944?e=1781136000&v=beta&t=PMa5eSkoEvH0_uwZTZ0_GInl0WM0gXbYmja7YWurhQA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lukas",
+        "lastName": "Cizek",
+        "occupation": "Senior Full-stack Developer | React, Node.js, TypeScript | Team leader",
+        "id": "420594570",
+        "publicId": "lukascizek",
+        "trackingId": "RESbeSrMSvCVe262C3pt6g==",
+        "profileId": "ACoAABkRw4oB55umyBLKrtCymi3ZAc087xVYy34",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEw9YX5KXeZcw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1604056164879?e=1781136000&v=beta&t=Vd3AlV2K5tdWK0J_UvRsJAzK4MaSE7hIR5h_3lL5Qys",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGszOqxGebvrA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516879649794?e=1781136000&v=beta&t=AUCkJndyKj4M7zVkR_ooAVdKuf-mXOH0eBSAZQgjbm0"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Marcela",
+        "lastName": "Kovalská ",
+        "occupation": "Non programming IT lady. Experienced in Busines Analysis and Test Analysis & Test Management, Technical Documentation or Training. ISTQB Certified. Currently open to a new project. If anyone knows about, let me know.",
+        "id": "6185820",
+        "publicId": "marcelakovalska",
+        "trackingId": "sA6rVpgGSSaWhuxuwz6CHw==",
+        "profileId": "ACoAAABeY1wBMH8kgyLkTytpbcy7ToEc-cIbE34",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHYZhdSgyBj1Q/profile-framedphoto-shrink_800_800/B4DZ5KP3sWKMAY-/0/1779362135273?e=1780398000&v=beta&t=s7o3jgK8YoPg9jGmfkiV8JhRp8c_n_ZlRxS8ygeMtE0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Vančák",
+        "occupation": "IT Expert at RB",
+        "id": "12321851",
+        "publicId": "vancakpavel",
+        "trackingId": "klygu4KMTXeLRjjzclueAg==",
+        "profileId": "ACoAAAC8BDsBfo5KqnbvMyoLW0dtqdZAGfdY3wM",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGAN8j549ZJ1A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517672804373?e=1781136000&v=beta&t=UiHnk10bKsIFls_zrzYc8uPLBWw0HhSatpofknQNy_0"
+      }
+    }
+  ],
+  "numShares": 4,
+  "numLikes": 40,
+  "numComments": 11,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Zuzana",
+    "lastName": "Vlachovská",
+    "occupation": "CEO @ReactGirls, Adult Education and Personnel Management Student",
+    "id": "930332013",
+    "publicId": "zuzana-vlachovska",
+    "trackingId": "nBG3njb6QO2xrMLQgfLsmA==",
+    "profileId": "ACoAADdzvW0BMlX8bbn5rBF19jX-JjopP8qNdaw",
+    "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHCyGGfv9hZPA/profile-displayphoto-crop_800_800/B4EZnZ4w_gHIAI-/0/1760297162924?e=1781136000&v=beta&t=pFhVOrUHCE-FRetcvCd1qmwkxkPOjEJFtfaa0JdfJ1Y",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEW314oasBxwg/profile-displaybackgroundimage-shrink_350_1400/B4EZoMPZ_BGUAY-/0/1761141985735?e=1781136000&v=beta&t=b5dSJcX5_a-JciGg1ZMg8B4Nx1hHozgeYnJi08rEznk"
+  },
+  "authorProfileId": "zuzana-vlachovska",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4E03AQHCyGGfv9hZPA/profile-displayphoto-crop_800_800/B4EZnZ4w_gHIAI-/0/1760297162924?e=1781136000&v=beta&t=pFhVOrUHCE-FRetcvCd1qmwkxkPOjEJFtfaa0JdfJ1Y",
+  "authorType": "Person",
+  "authorName": "Zuzana Vlachovská",
+  "authorProfileUrl": "https://www.linkedin.com/in/zuzana-vlachovska?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADdzvW0BMlX8bbn5rBF19jX-JjopP8qNdaw",
+  "authorUrn": "urn:li:member:930332013",
+  "postedAtTimestamp": 1779358424022,
+  "postedAtISO": "2026-05-21T10:13:44.022Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

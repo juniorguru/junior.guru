@@ -1,0 +1,106 @@
+{
+  "type": "article",
+  "article": {
+    "type": "FIRST_PARTY",
+    "urn": "urn:li:linkedInArticle:7453439741313822720",
+    "url": "https://www.linkedin.com/pulse/t%25C3%25BDdenn%25C3%25AD-pozn%25C3%25A1mky-bude%25C4%258D-oko%25C5%2599-nov%25C3%25A1-pati%25C4%258Dka-na-webu-honza-javorek-6unwf?trackingId=zddjulqxQy22oi1jn%2Bb8Cw%3D%3D",
+    "title": "Týdenní poznámky: Budeč, Okoř a nová patička na webu",
+    "description": "Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Od posledních poznámek už utekl nějaký ten týden (17. 4. až 24. 4.), tak nastal čas",
+    "largeImage": "https://media.licdn.com/dms/image/v2/D4D12AQGxT_9ybN-T2Q/article-cover_image-shrink_720_1280/B4DZ2_wC27HUAI-/0/1777038537744?e=1781136000&v=beta&t=myww5AHYsNE98lVZ_x7E5FIf6qMRhhV31T3DC1hw7Ts"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7453439961833541632",
+  "url": "https://www.linkedin.com/posts/honzajavorek_t%C3%BDdenn%C3%AD-pozn%C3%A1mky-jak-se-mi-da%C5%99%C3%AD-v-jednom-activity-7453439961833541632-uocD?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAACsCPOIBnXpLOpII5iWkM_r6vhhwgyoT3aM",
+  "timeSincePosted": "1mo",
+  "shareUrn": "urn:li:ugcPost:7453439961455804417",
+  "text": "Týdenní poznámky! Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Tentokrát je to na 7 min čtení 🧐",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Ivan",
+        "lastName": "Kvasnica",
+        "occupation": "TypeScript Engineer | Backend-First | Clean Architecture, Product Mindset, AI-Enhanced Workflow",
+        "id": "26597578",
+        "publicId": "ikvasnica",
+        "trackingId": "MKBtrFvmSOWyvr1U3q7sQA==",
+        "profileId": "ACoAAAGV2MoBN8JZ2pQK395RLRvyRx1Tw4GdAYg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE32ky23E1THg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704494771219?e=1781136000&v=beta&t=HKRe4t30-sW1VQsgGNQ38EldfRp-cECFg0Ib73ZfxuQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Kašička",
+        "occupation": "SW tester se zkušenostmi z oblasti military a bezpečnosti.",
+        "id": "1110545599",
+        "publicId": "p-kasicka",
+        "trackingId": "7uzzMi83TdGuIFESLrbqfg==",
+        "profileId": "ACoAAEIxlL8Bfkq3CiEwFXvTQla3a5z_FUgQD3w",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQFnUdw13JqOOg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729680922063?e=1781136000&v=beta&t=V6EpW5uK2z_A05na34HSIkRA_flHcR1fEPMFkktJXMY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEVv4HZeo57og/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1696773792284?e=1781136000&v=beta&t=KPZvymukIfd-2EeFmUkI_rSdsZTHG-24gBs79Vw6Xvg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Sanka",
+        "occupation": "HR extensive experience | Leadership | Talent development | Creating environments where employees thrive and deliver their best.",
+        "id": "1248198738",
+        "publicId": "pavelsanka",
+        "trackingId": "q4XYyjMIQY2ZiC0m6vCXEg==",
+        "profileId": "ACoAAEpmAFIBs1dbjA9a2V3nQHxsW5NlkIxFH08",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGsES2W3uk0bQ/profile-displayphoto-crop_800_800/B4EZoXnbfjKkAI-/0/1761332805100?e=1781136000&v=beta&t=XqGVcl90brirh31WpzOYTZQnmbkVVQiJm6VEGtvNYbE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFetI_JdxEo5Q/profile-displaybackgroundimage-shrink_350_1400/B4DZ4b.Xk4HgAU-/0/1778585795132?e=1781136000&v=beta&t=ibx60kdrReDGGiSOhJvr-mGdPHfCQ2A16ZB77GpKV_g"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vojtěch",
+        "lastName": "Mádr",
+        "occupation": "🎙 Pomáhám tvořit lepší podcasty | Spolu-moderátor Mileniálové & Jak na podcasty | 💻 Voicebot engineer",
+        "id": "205073291",
+        "publicId": "madrvojtech",
+        "trackingId": "U1O9FQgkR5uMFWqzkrdP+g==",
+        "profileId": "ACoAAAw5K4sBA8nVYoHPe91603FIAQM8Afcl3AQ",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQG-5m6_kiUCLw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1640351690167?e=1781136000&v=beta&t=P0XlPJMkia6IYO5QAPO5phO59ToKi83zvfyVGTTL0zk",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEiI6dmbVAZ-g/profile-displaybackgroundimage-shrink_350_1400/B4EZpVejb9IUAc-/0/1762370665436?e=1781136000&v=beta&t=iUrGuEbjzZUCmquyBnn-85zPgbBTAAWrH23N2Bzt5i4"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 4,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "JArHU/SBSwSFb6fWeG3a7Q==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1777038565119,
+  "postedAtISO": "2026-04-24T13:49:25.119Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}
