@@ -1,0 +1,360 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/D4E22AQFhUcN-vcJp_Q/feedshare-shrink_800/B4EZUZ31.AGgAg-/0/1739895824870?e=1781136000&v=beta&t=0Cydmx39rMOBJJ-G3z13Bs6GqbjxQmX4hIXygYGpna0"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:7297652024525942784",
+  "url": "https://www.linkedin.com/posts/honzajavorek_juniorguru-zdravaed-psychickaezzdravaed-activity-7297652024525942784-xAhK?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAACSOA1EBK5asDAYE37V0awxMqaBPS1qK_vg",
+  "timeSincePosted": "1yr",
+  "shareUrn": "urn:li:share:7297652022554578944",
+  "text": "Věnujte 5 minut a 32 sekund lidem, kteří to mohou mít na trhu těžké kvůli zdraví 🙏\n\nPřesně tolik času mi zabralo vyplnění dotazníku na téma zdravotního znevýhodnění při hledání práce nebo výkonu práce v IT. Vytvořila jej členka junior.guru komunity. Pokud se točíte kolem náboru, bude vaše odpověď obzvlášť hodnotná!\n\nOdkaz dám do komentáře.\n\nZa dobu, co dělám junior.guru, za mnou mnohokrát chodili lidi, kteří měli různá omezení, přičemž v IT hledali spásu, přijetí, částečné úvazky, volnější režim, práci na dálku, apod. Bylo by fajn zjistit, jak to vlastně reálně je s jejich příležitostmi a různými předsudky.\n\nV dotazníku se díky vysvětlivkám leccos i přiučíte, například jaký je rozdíl mezi psychickým a mentálním zdravím.\n\nBudu moc rád, pokud to vyplní, nebo to pomohou zviditelnit třeba ve Smitio , které je známé podobnými dotazníky, nebo Matěj Kotrba ◾️ meaningful IT hiring či Petra Kubita Nulíčková, kteří máte hojně sledované profily.\n\nTereza Pluskalová mi zrovna včera poslala témata na letošní Týden pro Digitální Česko, a jedno z nich bude „Digitální svět pro každého“, takže jsem autorce dotazníku doporučil i toto propojení.\n\nPotěší mě, když označíte další lidi, kteří se přímo tímto tématem zabývají. Vím, že mi takoví na LinkedIn jednu dobu vyskakovali ve feedu, ale teď už ne a vypadl mi název spolku / neziskovky. Nepovedlo se mi to dohledat. Napadá vás, kdo by k tomu měl co říci?\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.\n\n#juniorguru #zdraví #psychickézdraví #mentálnízdraví #hledánípráce #recruitment #nábor #předsudky #dotazník #ozp",
+  "attributes": [
+    {
+      "start": 799,
+      "length": 7,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Smitio",
+        "universalName": "smitio",
+        "trackingId": "DvmF9omhR66taDqfAdIS4w==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:11739201",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQEu4hTS9ifiAg/company-logo_400_400/company-logo_400_400/0/1673537934894/smitio_logo?e=1781136000&v=beta&t=8BY9bu1-41pVt0EU_2nVirc2TDU1amGh9ZldtWXWe6Q"
+      }
+    },
+    {
+      "start": 849,
+      "length": 36,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Matěj",
+        "lastName": "Kotrba ◾️ meaningful IT hiring",
+        "occupation": "Founder & CEO @KAIZEMA 💻 We help companies find new IT colleagues. 💻 We help IT professionals find meaningful projects. 💻 20% of our profit goes back into people and the world around us.",
+        "id": "523443440",
+        "publicId": "matějkotrba",
+        "trackingId": "D+LovXDXTGye/zgR2fwuIw==",
+        "profileId": "ACoAAB8zHPABem2_fubm5gP7Y3veULhBps4sC40",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHxSGyL5T4r9A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718624738421?e=1781136000&v=beta&t=DszO3doJzwC1sJhjXQuDmiVUkmNNXySI2J92LKjXtks",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHRqV1o6ZRaxw/profile-displaybackgroundimage-shrink_350_1400/B4DZxr6kDvHAAY-/0/1771337040717?e=1781136000&v=beta&t=NmoYCj1lzd84ztla5qd5-B6NgSVzoZjfL4Y8YA2Tjr8"
+      }
+    },
+    {
+      "start": 889,
+      "length": 22,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Petra",
+        "lastName": "Kubita Nulíčková",
+        "occupation": "HR Manager v Pale Fire Capital | Head of HR v Aukro | HR consultant and mentor | #sharingiscaring",
+        "id": "473833031",
+        "publicId": "petranulickova",
+        "trackingId": "JkE/+hyDQW65V1zCK3hdQw==",
+        "profileId": "ACoAABw-HkcBifENxX8nxAs2YjwxbI6b2XtAF98",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHnKx1150QjzQ/profile-framedphoto-shrink_400_400/B4DZ5EYkX3J4Ac-/0/1779263751874?e=1780430400&v=beta&t=pWJ51Ntw0jR9QQT0pS0cVga8Y5H1PX6eMgBC8eZYwyo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQExwjEQhQ99TA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1676378924015?e=1781136000&v=beta&t=rpomntKe5fPHScYScrE5n1-ok01d_UuxKpUPUaPI93g"
+      }
+    },
+    {
+      "start": 950,
+      "length": 17,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Tereza",
+        "lastName": "Pluskalová",
+        "occupation": "Vždy si můžeme vybrat svůj úhel pohledu",
+        "id": "995485101",
+        "publicId": "tereza-pluskalová-ab9476239",
+        "trackingId": "Wd3ikcixRKuukTaKF+T9uw==",
+        "profileId": "ACoAADtV5a0BOsd_U3xqXRAao7THnq972p5NTCU",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFRuJFg1TycEQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720081038917?e=1781136000&v=beta&t=lcEx3WsiEdub16poVDayXIvZtRX75uguLDZ37pP0Pqs",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFyY4alSrSi_g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1700823256024?e=1781136000&v=beta&t=ytqqK9MFWJ2Du_yHXreZAe0cJUtohG451aoGRjjmcHw"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1740564641813,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7297652024525942784?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7297652024525942784%2C7300457239415324672%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287300457239415324672%2Curn%3Ali%3Aactivity%3A7297652024525942784%29",
+      "text": "Juu, druhý pokus, ať je tu víc lidí... ⬆️ top ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Lucie",
+        "lastName": "B.",
+        "occupation": "Java developer",
+        "id": "676009075",
+        "publicId": "lucie-bazantova",
+        "trackingId": "Ph7q4VSaSWexNuY3Vil2Jw==",
+        "profileId": "ACoAAChLFHMBLTUfznOstW4m9izh5f6LiLiPA74",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGSrYowf5ucdg/profile-displayphoto-shrink_800_800/B4EZQOobZNGcAk-/0/1735412267182?e=1781136000&v=beta&t=LR4cPyUm9GJ2hcvj1QYEtmJVoeDntgZjWbvBJWnq6jg",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1739955885263,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7297652024525942784?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7297652024525942784%2C7297903929382653952%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287297903929382653952%2Curn%3Ali%3Aactivity%3A7297652024525942784%29",
+      "text": "Výborná iniciativa, Honzo! Letošní ročník Týdne pro Digitální Česko bude zaměřen také na digitální inkluzi, kde budeme zdůrazňovat témata různě hendikepovaných skupin. Rádi s kolegyní vymyslíme zajímavé zapojení.",
+      "entities": [
+        {
+          "start": 52,
+          "length": 15,
+          "type": "COMPANY_NAME",
+          "company": {
+            "name": "Digitální Česko",
+            "universalName": "digitalnicesko",
+            "trackingId": "r/1we9zfQeC/e7zFVrKb/w==",
+            "active": true,
+            "showcase": false,
+            "entityUrn": "urn:li:fs_miniCompany:104701463",
+            "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQGaScH4OZgjUg/company-logo_400_400/B4EZlb.gakK0AY-/0/1758184737290/digitalnicesko_logo?e=1781136000&v=beta&t=u-SyMcDHLkaw1_XYb2Si5nYC5_q0RojMGA1ntO5YAgY"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Tereza",
+        "lastName": "Pluskalová",
+        "occupation": "Vždy si můžeme vybrat svůj úhel pohledu",
+        "id": "995485101",
+        "publicId": "tereza-pluskalová-ab9476239",
+        "trackingId": "qVrzzYzKTMu4j/d6nt5krg==",
+        "profileId": "ACoAADtV5a0BOsd_U3xqXRAao7THnq972p5NTCU",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFRuJFg1TycEQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720081038917?e=1781136000&v=beta&t=lcEx3WsiEdub16poVDayXIvZtRX75uguLDZ37pP0Pqs",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFyY4alSrSi_g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1700823256024?e=1781136000&v=beta&t=ytqqK9MFWJ2Du_yHXreZAe0cJUtohG451aoGRjjmcHw",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1739896658234,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7297652024525942784?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7297652024525942784%2C7297655513213800448%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287297655513213800448%2Curn%3Ali%3Aactivity%3A7297652024525942784%29",
+      "text": "Vyplněno, jen příště bych raději odkaz hned v textu. Musela jsem na komentář čekat. 😀😀😀",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Petra",
+        "lastName": "Kubita Nulíčková",
+        "occupation": "HR Manager v Pale Fire Capital | Head of HR v Aukro | HR consultant and mentor | #sharingiscaring",
+        "id": "473833031",
+        "publicId": "petranulickova",
+        "trackingId": "V1/f11CwRGWBYgffuww4gw==",
+        "profileId": "ACoAABw-HkcBifENxX8nxAs2YjwxbI6b2XtAF98",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHnKx1150QjzQ/profile-framedphoto-shrink_400_400/B4DZ5EYkX3J4Ac-/0/1779263751874?e=1780430400&v=beta&t=pWJ51Ntw0jR9QQT0pS0cVga8Y5H1PX6eMgBC8eZYwyo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQExwjEQhQ99TA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1676378924015?e=1781136000&v=beta&t=rpomntKe5fPHScYScrE5n1-ok01d_UuxKpUPUaPI93g",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1739896283991,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7297652024525942784?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7297652024525942784%2C7297653943529058305%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287297653943529058305%2Curn%3Ali%3Aactivity%3A7297652024525942784%29",
+      "text": "Dal jsem repost :) snad pomůže!",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Vojtěch",
+        "lastName": "Mádr",
+        "occupation": "🎙 Pomáhám tvořit lepší podcasty | Spolu-moderátor Mileniálové & Jak na podcasty | 💻 Voicebot engineer",
+        "id": "205073291",
+        "publicId": "madrvojtech",
+        "trackingId": "sGURRD5HQsKOZEYp1eUx4w==",
+        "profileId": "ACoAAAw5K4sBA8nVYoHPe91603FIAQM8Afcl3AQ",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQG-5m6_kiUCLw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1640351690167?e=1781136000&v=beta&t=P0XlPJMkia6IYO5QAPO5phO59ToKi83zvfyVGTTL0zk",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEiI6dmbVAZ-g/profile-displaybackgroundimage-shrink_350_1400/B4EZpVejb9IUAc-/0/1762370665436?e=1781136000&v=beta&t=iUrGuEbjzZUCmquyBnn-85zPgbBTAAWrH23N2Bzt5i4",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1739895860248,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7297652024525942784?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7297652024525942784%2C7297652166222045184%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287297652166222045184%2Curn%3Ali%3Aactivity%3A7297652024525942784%29",
+      "text": "Dotazník: https://forms.gle/uhaXfHKgDDRisu7Z8",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "4lEs1RMcRh6DJjR4U7aQrw==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Andrea",
+        "lastName": "Kálaziová",
+        "occupation": "the wind of change",
+        "id": "391006447",
+        "publicId": "kalaziova-andrea",
+        "trackingId": "l72RsPSdQ9yR+Waczf7Lrw==",
+        "profileId": "ACoAABdOSO8BWoVRCh1GX7OqcpehKGvreLWufJo",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQHDLqpKOtp2uw/profile-displayphoto-shrink_800_800/B56ZaRlEg.HgAw-/0/1746199137550?e=1781136000&v=beta&t=2pymIU4EJct8-jWJ3GuXYAB6BeS0-RohwicPZqhkyBw"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Adéla",
+        "lastName": "Kohoutková",
+        "occupation": "#teamlidl",
+        "id": "1115075627",
+        "publicId": "adela-crateris-kohoutkova",
+        "trackingId": "hzqREIn7TtSuRsJAadSXRQ==",
+        "profileId": "ACoAAEJ2tCsB1OCyU7znoeU10cQrL60tuf7mdAA",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHu5LUoZOJrXg/profile-displayphoto-shrink_800_800/B4EZU4fecVHMAg-/0/1740409530660?e=1781136000&v=beta&t=Z8sUr2EoOUuCVibhfpX4vxWaiqcsZmNxGiNitxQ0E1g",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQG6vA6Aa901MA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1698089744373?e=1781136000&v=beta&t=aKxJKpH0_xKueTH1pbzx_XellAmbZZzuix8-V0LzeJk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavla",
+        "lastName": "Beránková",
+        "occupation": "PHP programátorka",
+        "id": "549611439",
+        "publicId": "berankova-pavla",
+        "trackingId": "ogQ/l+P2TmyxtVzh2yXnEg==",
+        "profileId": "ACoAACDCZ68BhDuYokjdegYmFm0rxSx_6Mlwh9c",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHdB_M5mbgLvQ/profile-displayphoto-shrink_800_800/B4EZWlkkyYGwAc-/0/1742239584099?e=1781136000&v=beta&t=4E-d3A5ZIGW5_uD8RTZEaal3lx_qCwWr-Y_k2yTOVVw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHFjlgP9iU-Fw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0B6o8_KUAc-/0/1773853643504?e=1781136000&v=beta&t=s18xkVLJd-f21PM-R-ZSZaCgq-ojo7xkrzQ5x6cYHoE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petra",
+        "lastName": "Krištof",
+        "occupation": "Co-Founder at Pomáháme.Digital | Head of Marketing MECH | Ex-Googler | Den pro školu proud volunteer",
+        "id": "179958219",
+        "publicId": "petrakristof",
+        "trackingId": "1BM3IEhQRmaEmZ+HKh2pgA==",
+        "profileId": "ACoAAAq58csBg4koF4yRzBG0rxMV1qlZ-0Bob4c",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQEOnLV0kvSJ4w/profile-displayphoto-crop_800_800/B56Zi_WLsiHQAM-/0/1755556920976?e=1781136000&v=beta&t=ZVr8s4yMEtWdmMYS4KvHUS6AkuJR7XLfLes4t-I7yCk",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEBPVDoY3jUqQ/profile-displaybackgroundimage-shrink_350_1400/B56ZXRVWMEGoAY-/0/1742973790388?e=1781136000&v=beta&t=pthiQhtXnJJLyh3N-pIeFMVAl0Xfk-FZDbaC5HU3iRo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Rostislav",
+        "lastName": "Pavelka",
+        "occupation": "Svoboda je to nej co máme, nenechme si ji brát 🍀👌 Zbožňuji hory, les, vodu, lidi, víno🍷 🍀🌲🌳 Vrtám se v počítačích, bezpečnosti (CSO), ochraně utaj. informací ale taky ve financích.",
+        "id": "1436347312",
+        "publicId": "rostislav-pavelka-614043341",
+        "trackingId": "kF0SbxkUR4OVaCHCfxl1Cg==",
+        "profileId": "ACoAAFWc67ABu2A16ZxZAFPIrbl_WaUEzTe8ZFg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHuGhX-S2W99A/profile-displayphoto-shrink_800_800/B4EZUlofH_GgAg-/0/1740093126287?e=1781136000&v=beta&t=J8Rn6ulxySt1_HFuM2MlnmCP1oUb3O2wHyS3RbWZpjU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF4gWOkLVpWOA/profile-displaybackgroundimage-shrink_350_1400/B4EZUloKmdGgAc-/0/1740093042269?e=1781136000&v=beta&t=bWrmBDzOiPW_O05I3quXf0B4zIQLM0Z2Bq7nMIG_TeE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Šuraba",
+        "occupation": "Linux lover ;-)",
+        "id": "148282826",
+        "publicId": "martin-šuraba",
+        "trackingId": "NZvkN4cAS+O+gvfAd3MbDw==",
+        "profileId": "ACoAAAjWncoBV1fLUSxy4LPyYcesKobjlSQHznQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG3Gb4BlgCVZQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693900488039?e=1781136000&v=beta&t=x-DN7fUTWuQkA6F4_rWi05mTohNdCH-S2Vj0RulkMM0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGGkAbiGDIeww/profile-displaybackgroundimage-shrink_350_1400/B4DZ2w5FFRHwAY-/0/1776789247703?e=1781136000&v=beta&t=KaejtkxyR8ERrXhjNGP_KW3lGT8Nz8IVYzQy0BShSP4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "company": {
+        "name": "Digitální Česko",
+        "universalName": "digitalnicesko",
+        "trackingId": "TBObHAL7RveBRzr6E2nBDA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:104701463",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQGaScH4OZgjUg/company-logo_400_400/B4EZlb.gakK0AY-/0/1758184737290/digitalnicesko_logo?e=1781136000&v=beta&t=u-SyMcDHLkaw1_XYb2Si5nYC5_q0RojMGA1ntO5YAgY"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Lucie",
+        "lastName": "B.",
+        "occupation": "Java developer",
+        "id": "676009075",
+        "publicId": "lucie-bazantova",
+        "trackingId": "CgJqfgFgRZOPBMD2lJRfsA==",
+        "profileId": "ACoAAChLFHMBLTUfznOstW4m9izh5f6LiLiPA74",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGSrYowf5ucdg/profile-displayphoto-shrink_800_800/B4EZQOobZNGcAk-/0/1735412267182?e=1781136000&v=beta&t=LR4cPyUm9GJ2hcvj1QYEtmJVoeDntgZjWbvBJWnq6jg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Kateřina",
+        "lastName": "Králová",
+        "occupation": "HR",
+        "id": "1059557894",
+        "publicId": "kateřina-králová",
+        "trackingId": "7+uugwVQT3mnmEbNIRSxZw==",
+        "profileId": "ACoAAD8nkgYBpg76AK2CazJQX_9M5bJFv-ZmO7E",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE1wQ_NPCzU2Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1699303605928?e=1781136000&v=beta&t=VOJDawDsQuhLbCJz7O5C0uWQp1LqQzQ7c3KWBH5J2R4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGX_jvMOaLXQg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1709035546860?e=1781136000&v=beta&t=Wf4IzdOQTe96lcfUCqQQSnt-49Gctk_p8BS__dsV4aY"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Lucie",
+        "lastName": "Hroudová",
+        "occupation": "PHP developer | Developing with aim of helping others grow to reach their dreams",
+        "id": "869658456",
+        "publicId": "lucie-hroudova",
+        "trackingId": "x/7TvvINTD+T3qNy2hZK/g==",
+        "profileId": "ACoAADPV71gBke21h185Y1VzqghpRmSX15awgro",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE9arF-W5r03w/profile-displayphoto-shrink_800_800/B4EZScaP5wG0Ac-/0/1737790914683?e=1781136000&v=beta&t=qH42fAHTbzdM4SihvuzCHTSKqFmxE97lFfM9rT6nZvs",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE51qyRMkA8wA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1730545392469?e=1781136000&v=beta&t=-7AEVKzlW-5EVkqb75W0lWLVQsVPj2Np-g7l0JWHcWk"
+      }
+    }
+  ],
+  "numShares": 7,
+  "numLikes": 20,
+  "numComments": 7,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "4lEs1RMcRh6DJjR4U7aQrw==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1739895826465,
+  "postedAtISO": "2025-02-18T16:23:46.465Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

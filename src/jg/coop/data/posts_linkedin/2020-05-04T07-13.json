@@ -1,0 +1,184 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4D22AQFPKy0xS8LXBw/feedshare-shrink_1280/feedshare-shrink_1280/0/1588576382991?e=1781136000&v=beta&t=nOCEduq6T0ZFsGfZ_VrH1E3FCeV1hNI78wQKYGe35MY"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6662972279565099008",
+  "url": "https://www.linkedin.com/posts/honzajavorek_xkcd-activity-6662972279565099008-ek_M?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAADAEIjUB6-0Ki4Mn4tqi3dc1q7EgfDhzXsM",
+  "timeSincePosted": "6yr",
+  "shareUrn": "urn:li:share:6662972278818512896",
+  "text": "Tento #XKCD jsem neznal. Nazval bych ho příručkou číslo jedna pro programátora, který se snaží o one-man show business :) V týmu se automatizace vyplatí víc, ale v jednom je to přesně takto. https://xkcd.com/1205/",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1588619156210,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6662972279565099008?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6662972279565099008%2C6663151681355812864%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286663151681355812864%2Curn%3Ali%3Aactivity%3A6662972279565099008%29",
+      "text": "Já bych ještě přidal do rovnice, jak moc mě ta repetitivní úloha subjektivně vadí. 🙂 Někdy automatizuju nerentabilně prostě proto, že je to větší zábava než ta rutinní činnost. A potom jsou věci, které rutinně po nějaké době nevykonávám v plné kvalitě, jako je testování.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Pavel Grumpy",
+        "lastName": "Šimerda",
+        "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
+        "id": "551084893",
+        "publicId": "grumpyprogrammer",
+        "trackingId": "jJCICCcYRzGHHKejwc+UxA==",
+        "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFnQ8ypdjjyvg/profile-displayphoto-crop_800_800/B4DZxZUZFlHkAI-/0/1771025047361?e=1781136000&v=beta&t=fFiIDptOBoMzbUkj1Lvpd8USzHMX1nkcCCOr19Su_4c",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Richard",
+        "lastName": "Kellner",
+        "occupation": "TIBER Test Manager - TIBER Cyber Team Slovakia - NBS",
+        "id": "81794193",
+        "publicId": "richardkellner",
+        "trackingId": "YhPxN8WlQHiKHRiP693BXw==",
+        "profileId": "ACoAAATgFJEBxeTYkaNlaVfFGEZoa--qoFqMTE0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Svetlana",
+        "lastName": "Margetová",
+        "occupation": "I help factories digitise maintenance. With or without AI. Always with people first.",
+        "id": "178006447",
+        "publicId": "msvetlana",
+        "trackingId": "dFtD+k90Styr6c/9j3F9/w==",
+        "profileId": "ACoAAAqcKa8Bousd5uBo-bZZ9dq6qVlYKqtHvSc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF2d-GcOsk4Bg/profile-displayphoto-crop_800_800/B4DZ35j9rdHwAM-/0/1778008453433?e=1781136000&v=beta&t=drmOX7xsDyMGZaown-MFYSZXwtE2FSNpuvIxF5sa-CA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEafK1Y8bDUqw/profile-displaybackgroundimage-shrink_350_1400/B4DZWwQJBHHIAc-/0/1742418779616?e=1781136000&v=beta&t=0a47VNFLf1nQKjTg2JnpC3ODNNzCN24RoEDT7btdLtM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vojtěch",
+        "lastName": "Kusý",
+        "occupation": "Engineering Manager at Custom Ink",
+        "id": "45719350",
+        "publicId": "vojtechkusy",
+        "trackingId": "gTuLXYViShS0zFIaHK1IrA==",
+        "profileId": "ACoAAAK5nzYBdJHa9Xc4oV94hf_t-gPdaO7oEhw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGE_7KFXLW7fw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1696408719066?e=1781136000&v=beta&t=lPSCodHBVLRrfkeZy56yrI19DuIboQFTBy5-Uk9F0L4"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Pavel Grumpy",
+        "lastName": "Šimerda",
+        "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
+        "id": "551084893",
+        "publicId": "grumpyprogrammer",
+        "trackingId": "VUr905Z8T0aqu23sIrY0xQ==",
+        "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFnQ8ypdjjyvg/profile-displayphoto-crop_800_800/B4DZxZUZFlHkAI-/0/1771025047361?e=1781136000&v=beta&t=fFiIDptOBoMzbUkj1Lvpd8USzHMX1nkcCCOr19Su_4c"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Suchomel",
+        "occupation": "Senior Product Owner - ERP Business Analyst ve společnosti Jacquet Metals",
+        "id": "398877489",
+        "publicId": "tomáš-suchomel-a696bbb1",
+        "trackingId": "Uxs7OIi/R0qftRk06zGY0Q==",
+        "profileId": "ACoAABfGYzEBi5Clm0FpkiJf-G1unxTWyZNI5yk",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEY-yYAKhfFgA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1534835837970?e=1781136000&v=beta&t=Pj7zbjN6zgjQvTi_Ar0bI3EPq2tIe_xkxslBFS03yxo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michal Miky",
+        "lastName": "Jankovský",
+        "occupation": "Freelance Software Engineer",
+        "id": "187276510",
+        "publicId": "mjankovsky",
+        "trackingId": "f4RsgrYoSkWQwtxaXHEWuw==",
+        "profileId": "ACoAAAspnN4BFNNIVdTodq4MMnLcH_uiQ6lTLF4",
+        "picture": "https://media.licdn.com/dms/image/v2/C5103AQHBNrk8ULEnnA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516622462374?e=1781136000&v=beta&t=d28cyYMO04nFh5Vxdrm1n5Uo-eO1lDNDR1uVjPverXs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavlin",
+        "lastName": "Zahariev",
+        "occupation": "Business development, IT services",
+        "id": "3685314",
+        "publicId": "pavlin-zahariev",
+        "trackingId": "DlACocOuTtefZG0pPF6wIw==",
+        "profileId": "ACoAAAA4O8IB2imMgvV8SPyY_RYmVYwJtuehz8c",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQElMcRaopOtEA/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1727858111989?e=1780430400&v=beta&t=I9DYZ0CKDckkm6_20kbKbXQH0fUfluUIWbGrQxaETHk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Leoš",
+        "lastName": "Literák",
+        "occupation": "Solution architect",
+        "id": "16122",
+        "publicId": "literak",
+        "trackingId": "B+LmunXTR7eDY01jAbGH+w==",
+        "profileId": "ACoAAAAAPvoBRH0Cu_rYb30N7nutu0KGcSSDX7I",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFQpjYlfQ0zmg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516157392659?e=1781136000&v=beta&t=v4AqAg_-lL11r6VQWEDl-sN-Vm4I8UlTe2QnUIQxFjE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Richard",
+        "lastName": "Fridrich",
+        "occupation": "I write Javascript",
+        "id": "3622309",
+        "publicId": "fczbkk",
+        "trackingId": "YUD80JN7SHWdA+GdDd7FeQ==",
+        "profileId": "ACoAAAA3RaUBkLK5zgI4nhqFBnOslbg1cmFgIDs",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHtF6ZOb4Zi2A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1636627534682?e=1781136000&v=beta&t=TmhiRV-keoSa_3fEOIIgORRuyBu3_aOEPwzw_jNo5DE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5116AQFAcBZsXAJRUg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516243263587?e=1781136000&v=beta&t=5QK1TAcxPjYzZWxFh10Sv5LxS9_Aa4ry5bDDCIS_qCc"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 9,
+  "numComments": 3,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "2WW52qLQQn6mpxY4295oSA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1588576383487,
+  "postedAtISO": "2020-05-04T07:13:03.487Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

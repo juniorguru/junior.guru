@@ -1,0 +1,93 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C5622AQF4eiR95N2HXQ/feedshare-shrink_1280/feedshare-shrink_1280/0/1631081583151?e=1781136000&v=beta&t=VU6Y3N6lmui-OtqNqnKE6yTIoLvV-i7J5ial_xjN4Eo"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6841252011334356992",
+  "url": "https://www.linkedin.com/posts/honzajavorek_jak%C3%A9-bylo-nejdel%C5%A1%C3%AD-v%C3%BDb%C4%9Brov%C3%A9-%C5%99%C3%ADzen%C3%AD-kter%C3%A9-activity-6841252011334356992-oPgc?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAE8FJtsBl5yCKIjoQSn3mMf6imalt9bjTls",
+  "timeSincePosted": "4yr",
+  "shareUrn": "urn:li:share:6841252010801659904",
+  "text": "Jaké bylo nejdelší výběrové řízení, které jste absolvovali, z hlediska kol? Na BBC vyšel zajímavý článek na toto téma 🧑‍💼 🔄 🧑‍💼 🔄 🤝 https://lnkd.in/gESHy9QM",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1631091301672,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6841252011334356992?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6841252011334356992%2C6841292770963931136%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286841292770963931136%2Curn%3Ali%3Aactivity%3A6841252011334356992%29",
+      "text": "8 kol🤯",
+      "entities": [],
+      "pinned": false,
+      "author": {
+        "firstName": "Petr",
+        "lastName": "Přibil",
+        "occupation": "Global Sales Manager | Specialty Lubricants",
+        "id": "132002824",
+        "publicId": "petr-pribil",
+        "trackingId": "8IB9dTSHT7+u+npU48J/2g==",
+        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEGdgqIgIpkzg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712250006297?e=1781136000&v=beta&t=UB9wEJule0NhB0lR0De_FtfePuW1Di0Vm80cYt1MqZU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFuvlBRuJNbjw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712250566915?e=1781136000&v=beta&t=8sCRHio1dDSnAp_oiaygmw7_1g4W1ce4YJV-kaJIK3M",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Přibil",
+        "occupation": "Global Sales Manager | Specialty Lubricants",
+        "id": "132002824",
+        "publicId": "petr-pribil",
+        "trackingId": "tjTnpXqfTOCZvbaRYAJCTQ==",
+        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEGdgqIgIpkzg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712250006297?e=1781136000&v=beta&t=UB9wEJule0NhB0lR0De_FtfePuW1Di0Vm80cYt1MqZU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFuvlBRuJNbjw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712250566915?e=1781136000&v=beta&t=8sCRHio1dDSnAp_oiaygmw7_1g4W1ce4YJV-kaJIK3M"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Roman",
+        "lastName": "Ripa",
+        "occupation": "Data Analyst, Idea Farmer, Process Librarian, Customer Journey Builder, SCRUM Master at RomanRipa.com",
+        "id": "6432515",
+        "publicId": "romanripa",
+        "trackingId": "xcUXBrkMTDSeqxr0EQEplA==",
+        "profileId": "ACoAAABiJwMBd25oc32q6eAIQJFTQPxjAf5qSBY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEJG4vsvLjUaQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1685108480804?e=1781136000&v=beta&t=8phf-iA59ichmpLozE1vQuo39zSJ4VOMamTwOxyuy1o"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 2,
+  "numComments": 2,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "MdwaR6cfSJGAkgqMdse/gQ==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1631081583818,
+  "postedAtISO": "2021-09-08T06:13:03.818Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

@@ -1,0 +1,568 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "type": "text",
+    "isActivity": false,
+    "urn": "urn:li:activity:6828206447063564288",
+    "url": "https://www.linkedin.com/posts/jan2rezac_nejhor%C5%A1%C3%AD-n%C3%A1pad-pro-juniorn%C3%ADho-je-activity-6828206447063564288-f7cz?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAGEG_KQBv7J1sq3GMEnlpcPmY0omjvlA50I",
+    "timeSincePosted": "4yr",
+    "shareUrn": "urn:li:share:6828206446673502209",
+    "text": "Nejhorší nápad pro juniorního _______ je jít do týmu, kde bude ve své roli sám.\n\nJunior UXák jde do IT firmy, která zatím řeší jen UI.\nJunior marketér jde do B2B firmy bez mkt oddělení.\nJunior copywriter jde do týmu obchodníků.\nJunior freelancer...\n\nAbsence každodenního kontaktu se zkušenějšími kolegy, kteří mají na juniora plánovaně čas, má nepříjemné důsledky.\n\nObjevování kola.\nPomalý profesní růst.\nZbytečné chyby a přešlapy.\nOpakované chyby a přešlapy.\nŠpatné návyky.\nNerelevatní či žádná zpětná vazba.\nZtráta spousty času.\n...\n\nOsamocený junior musí komunikovat s dalšími lidmi v organizaci a zasloužit si místo na slunci, takže je to pro něj určitý osobnostní růst, ale alespoň za mě nevýhody převažují.\n\nVím to, protože jsem přesně tohle zažíval před 15 lety.\n\nTakže v House of Řezáč vytváříme systémy, které pomáhají juniorním designerům rychle vyrůst.\n\nA to mě fakt baví.",
+    "attributes": [
+      {
+        "start": 779,
+        "length": 14,
+        "type": "COMPANY_NAME",
+        "company": {
+          "name": "House of Řezáč",
+          "universalName": "house-of-rezac",
+          "trackingId": "p1CwsLzUR42fj87Wci8JBA==",
+          "active": true,
+          "showcase": false,
+          "entityUrn": "urn:li:fs_miniCompany:17913011",
+          "logoUrl": "https://media.licdn.com/dms/image/v2/C560BAQECfqaQJmkTKA/company-logo_400_400/company-logo_400_400/0/1630595054047/house_of_ez_logo?e=1781136000&v=beta&t=PSYgrxTBpVk72GaVrTmoRJavEhK3V2Ydk265ZjQaEGk"
+        }
+      }
+    ],
+    "comments": [
+      {
+        "time": 1629103114730,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:6828206447063564288?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6828206447063564288%2C6832953710520344576%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286832953710520344576%2Curn%3Ali%3Aactivity%3A6828206447063564288%29",
+        "text": "Souhlas. Moje největší životní chyba, byla bez zkušeností založit agenturu... Nikomu bych to nedoporučil, byla to hrozně trnitá cesta :D a zbytečně složitá",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "David",
+          "lastName": "Dvořáček",
+          "occupation": "Co-founder v Creepy studio",
+          "id": "325108957",
+          "publicId": "dafid-dvoracek",
+          "trackingId": "4pAHE8cRQ9ufxaawxmnR0w==",
+          "profileId": "ACoAABNgxN0B9VSmDXiFTXafSNjf9h62LwmcJfg",
+          "picture": "https://media.licdn.com/dms/image/v2/D5603AQHqqM_WY6plBA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1706171138229?e=1781136000&v=beta&t=IYqjNsBRy96Z7LaiaMagi36_B7ZI2JvcxPuNpsO7B8M",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1628617100124,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:6828206447063564288?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6828206447063564288%2C6830915217518538752%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286830915217518538752%2Curn%3Ali%3Aactivity%3A6828206447063564288%29",
+        "text": "Tím systémem vytvoříte senior designéra. Přesný kus do soukolí namazaného stroje.\n\nTo je určitě dobře pro firmu a krátkodobě i toho dotyčného. \n\nProbojovat se nesnázemi, organizaci navzdory, s tím vybojováním si místa na slunci vás později připraví na pozici majitele firmy / managing directora - koneckonců jako ve Vašem případě. Za mne tedy hodit do vody a nechat plavat, sem tam vytáhnout a nasměrovat. Výhody převažují nad nevýhodami.",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Leo",
+          "lastName": "S.",
+          "occupation": "Tech YouTuber for execs who prefer insight over buzzwords. And can handle a bit of sarcasm.",
+          "id": "639497484",
+          "publicId": "skeptikaltechie",
+          "trackingId": "MblF5Vo8QiCVCXq7yIgFng==",
+          "profileId": "ACoAACYd9QwBwbq10DTB1Wwj1OWhnCHNsRPpwHo",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHslMIsUJ0Sxg/profile-displayphoto-shrink_800_800/B4DZc8OHO5GgAc-/0/1749062022945?e=1781136000&v=beta&t=OUKjgq0YhQio9Xz-v29eCnJyx2EER03b1ISPtV-6Sr8",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFwXG77044GUw/profile-displaybackgroundimage-shrink_350_1400/B4DZeFBavrGYAY-/0/1750283431768?e=1781136000&v=beta&t=X9WF37518ZowUClQDeWYBlUxj5ElDJb7V5IBe7upyCA",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1628278605673,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:6828206447063564288?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6828206447063564288%2C6829495468888743936%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286829495468888743936%2Curn%3Ali%3Aactivity%3A6828206447063564288%29",
+        "text": "Tak toto mohu jen podepsat, a podtrhnout!... :-D",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Ivana",
+          "lastName": "Rykrová",
+          "occupation": "Vzdělávání a Technologie - které mění svět!",
+          "id": "792806126",
+          "publicId": "ivana-rykrova",
+          "trackingId": "lSwF0LhzTSCa8EE0zUkOhA==",
+          "profileId": "ACoAAC9BQu4B_swKgd57STC3olwbid6F3q8Iwp8",
+          "picture": "https://media.licdn.com/dms/image/v2/C4D03AQErAz6OIgDBBg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1633024687369?e=1781136000&v=beta&t=b862QIE_4p1p-WgM3pb3msalaszPQUvrvCPnK9Ou3lI",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHIGOnS3C4sJg/profile-displaybackgroundimage-shrink_350_1400/B4EZWVJqhbGYAY-/0/1741964094638?e=1781136000&v=beta&t=CY-e87lUgJtYXh3zE30kOMyE0sqOYO1faiw3Prqzc1U",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1628262776224,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:6828206447063564288?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6828206447063564288%2C6829429075363340290%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286829429075363340290%2Curn%3Ali%3Aactivity%3A6828206447063564288%29",
+        "text": "Naprosty souhlas. Jako se jazyk nenaučíte z 0 koukáním na televizi, tak mistrem se malokdo stane tak, že vše se naučí sám. Profík vás posune vpřed mnohem rychleji.",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Josef",
+          "lastName": "Hajkr",
+          "occupation": "☀️ Projects simply, quickly and successfully ⇡ Lecturer, consultant and leader of SHINE consulting ⇡ 25 years of experience ⇡ Pioneer of online education in the Czech Republic",
+          "id": "29087450",
+          "publicId": "josefhajkr",
+          "trackingId": "QuH4XLqoRyCmy6PpBdjgXA==",
+          "profileId": "ACoAAAG71toBZ1kGk8GxwQqJ1A0fqcjFwM23nFg",
+          "picture": "https://media.licdn.com/dms/image/v2/C5603AQEf6VZJjbDUwg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1577122318738?e=1781136000&v=beta&t=x1Xq0GQddb94SaVk-VtUPl0jFGMMFp6F20_xet7deOQ",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFuOu3owgTjSw/profile-displaybackgroundimage-shrink_350_1400/B4DZ4knu7iK4AY-/0/1778730856430?e=1781136000&v=beta&t=i0cVMQBq4lyCc6j5FNG2Bn1rgWOaNS0-R-45pwaNW2Y",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1628149151534,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:6828206447063564288?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6828206447063564288%2C6828952498871562240%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286828952498871562240%2Curn%3Ali%3Aactivity%3A6828206447063564288%29",
+        "text": "Naprosto souhlasím!\nTěší mě, že se nad tímto problémem někdo pozastavuje.",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Barbora",
+          "lastName": "Březíková",
+          "occupation": "Experiential Brand Manager v Mast-Jaegermeister CZ",
+          "id": "847031348",
+          "publicId": "barbora-březíková",
+          "trackingId": "xJ6eAmCoQDaMZEmqvIUHug==",
+          "profileId": "ACoAADJ8rDQBrWkg_leQBp7rldGtqBC-tAzVdpI",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGjCIgNFq9Bow/profile-displayphoto-crop_800_800/B4DZfLec2OGsAI-/0/1751465447428?e=1781136000&v=beta&t=qwpEVNDCcYWIbXFAHPgHbjlQ9-LwMPOxaVlRzfmtD3w",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHvf8SKyTLEZw/profile-displaybackgroundimage-shrink_350_1400/B4DZcgw__MHMAk-/0/1748601407981?e=1781136000&v=beta&t=1wpWPEXQREQZXSp0mg-ZRJkKBGhnDxEfC2qRPoWRPmI",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1628094429798,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:6828206447063564288?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6828206447063564288%2C6828722979279540224%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286828722979279540224%2Curn%3Ali%3Aactivity%3A6828206447063564288%29",
+        "text": "Hm...velká pravda, koušu se do rtu, jak se mě to týká a znám takových víc. Ono je někdy super mít volnou ruku a moct si to celé dělat po svém, aniž by do toho někdo příliš mluvil, ale někdy je taky potřeba vědět, jestli to dělám vůbec dobře, moct s někým dalším máknout na konkrétním úkolu, dostávat pravidelnou posouvací zpětnou vazbu. To je pak úplně jiná energie a jiný pocit z práce. Z mé zkušenosti způsobuje absence zkušenějších kolegů, kteří mají prostor, časté záseky, stagnaci a následnou ztrátu motivace. A to je škoda.",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Hana",
+          "lastName": "Houšková",
+          "occupation": "marketing & office & nonprofits",
+          "id": "388663160",
+          "publicId": "hana-houšková-9881b4aa",
+          "trackingId": "gUwyuvgERuGK7dsxRr39bA==",
+          "profileId": "ACoAABcqh3gBlVa4TJWmtvfAZZQu2rdys7i4qBI",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D35AQEf_P8Nyd5BlA/profile-framedphoto-shrink_800_800/B4DZZNL_XpH4Ag-/0/1745051711240?e=1780430400&v=beta&t=IkCywfrbWHK3oSk1KQqX7kewLPFRxvNgqap4t6MDyuQ",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHHUMXQoVbYCA/profile-displaybackgroundimage-shrink_350_1400/B4DZnechlmKoAY-/0/1760373644222?e=1781136000&v=beta&t=MQbeN-N3S9bW0nu_36CaG3K0L0Hp33bR9ixhF7NlhrQ",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1628090457212,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:6828206447063564288?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6828206447063564288%2C6828706317046222848%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286828706317046222848%2Curn%3Ali%3Aactivity%3A6828206447063564288%29",
+        "text": "Zial v niektorych firmach by mali radsej zobrat juniorov co sa len ucia a obcas motyka vystreli nez si tam drzat stabilne nekvalitnych seniorov :D",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Slovak",
+        "author": {
+          "firstName": "Peter",
+          "lastName": "Stanek",
+          "occupation": "IT Remeselník - Kompletne od A po Z Firmám Automatizujem Procesy, Integrujem AI a Tvorím Systémy 🤓",
+          "id": "820312554",
+          "publicId": "peterstanekcom",
+          "trackingId": "sNw62z7CSJmsNHYuP3GSNQ==",
+          "profileId": "ACoAADDk-eoBOQq2M--CA5L1yqImTzYQS6B-lzU",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHdM0xgqIRTZw/profile-displayphoto-shrink_800_800/B4EZbo5D9vHAAc-/0/1747663995989?e=1781136000&v=beta&t=_vh6TkpeXv0eSek2NhgYoB6zMwxgmkI2Dp4k2FdDH88",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEcU7BfJj6XCQ/profile-displaybackgroundimage-shrink_350_1400/B4DZwh54pGJQAc-/0/1770095349065?e=1781136000&v=beta&t=9Eh1pcQeP90sYQz9qPBdvfVL-XEdAd9zhUtCo4xpEGg",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1628083702301,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:6828206447063564288?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6828206447063564288%2C6828677984895950848%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286828677984895950848%2Curn%3Ali%3Aactivity%3A6828206447063564288%29",
+        "text": "Podobná zkušenost i když z jiného prostředí,hoděj tě do vody a plav 😁",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Erika",
+          "lastName": "Langerová",
+          "occupation": "Head of Energy Systems Dept, Head of Strategic Infrastructure Security Team",
+          "id": "831616044",
+          "publicId": "erika-langerová-35060b1b2",
+          "trackingId": "ZzRAxp9rR6OgGzNpCllIJg==",
+          "profileId": "ACoAADGRdCwB-WTWAB6IVSh8_p_3fPmqXQpoZw4",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE2Gilp3c_OWA/profile-displayphoto-crop_800_800/B4EZ4OJUq6G8AI-/0/1778353787134?e=1781136000&v=beta&t=xbSmwPBMKj6SbihwvCm_SzAFn6wU5NXSCTlYv9hXY8c",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHYKSO6VXUlqA/profile-displaybackgroundimage-shrink_350_1400/B4EZ4OJJGtKIAU-/0/1778353738511?e=1781136000&v=beta&t=frRHrRBF4yVfGqwFVk0WDfEmWas9EMUWPYe6wOnb8mw",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1628080495957,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:6828206447063564288?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6828206447063564288%2C6828664536510283776%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286828664536510283776%2Curn%3Ali%3Aactivity%3A6828206447063564288%29",
+        "text": "Asi to není ideální a určitě je to bolestivé. Ovšem Junior, který si tohle projde, tak už to nikdy nezapomene. \n\nTaké dokáže úplně jinak ocenit prostředí, které vytváříte, a vytěží z něho násobně víc (a bude si této příležitosti násobně více vážit) než kolega, který rovnou naskočí takto do \"peřin\" (bude mu chybět to srovnání, bude to považovat za samozřejmé a zdaleka si toho nebude tak vážit). \n\nTj. vytvořte prostředí, které dává větší smysl, ale zvažte jestli před tou \"pohodou\" není vhodné okusit trochu hořkosti (nebo brát lidi, kteří ji již zakusili).",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Kamil",
+          "lastName": "Tomas",
+          "occupation": "Front-End Dev | Problem solver | Balance seeker",
+          "id": "46127602",
+          "publicId": "kamil-tomas-26a54613",
+          "trackingId": "+dESD7z6R0OTBIMvG83bjg==",
+          "profileId": "ACoAAAK_2fIB-hdskjmWRXjkUSdWe2UBW2jwwhk",
+          "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGF_hoL5k3xJg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516504468683?e=1781136000&v=beta&t=PgTYCfIOonF8C8BoCfQcR5RYsEq2DrPwU_f2dHgmi7A",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1628075294096,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:6828206447063564288?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6828206447063564288%2C6828642718323879936%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286828642718323879936%2Curn%3Ali%3Aactivity%3A6828206447063564288%29",
+        "text": "Zase na druhou stranu se ten junior má větší snahu prosadit. Já se třeba před 3 lety snažil v prvním ročníku na vejšce najít v práci v nějaký mkt. agošce.. po několika odmítnutích jsem přešel na volnou nohu a po počátečních bojích, kdy jsem nevěděl odkud kam, jsem se dostal do fáze, že to začíná fungovat, tak že klienty odmítám nebo deleguji. \n\nTakže za mě není vždycky chyba vyjít tou pracnější cestou..",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Filip",
+          "lastName": "Janás",
+          "occupation": "Marketing cestovního ruchu | Zakladatel Skoglar.cz | Affiliate & Obsah | Cestovatelské komunity 750k+ členů",
+          "id": "700238403",
+          "publicId": "filip-janas",
+          "trackingId": "zfMKcgM2SE6+3mPMeK6Viw==",
+          "profileId": "ACoAACm8ykMBQsFfwzCSvm0gAhZX21j5nrrhAzE",
+          "picture": "https://media.licdn.com/dms/image/v2/D5603AQGZKmDPe6nlUw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1670280742446?e=1781136000&v=beta&t=ntyBwI0YXuebIHoSalp-tLGcLUt0hA-DA8TxDhaH0WY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHRMB_o6B0iWQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1670957635000?e=1781136000&v=beta&t=ntJlX2JSZduj_2esJjJhSRwZD2iPF7Yfeku31dpB9Oo",
+          "distance": "OUT_OF_NETWORK"
+        }
+      }
+    ],
+    "reactions": [
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Adam",
+          "lastName": "Hemzal",
+          "occupation": "Full Stack Developer | Software Engineer | Analyst | Consultant",
+          "id": "493936427",
+          "publicId": "adam-hemzal",
+          "trackingId": "gs1sFdiSS06AzxJ85iZU5Q==",
+          "profileId": "ACoAAB1w3ysBIoyRwO2EQD5QF7jo5jTmZNbxodc",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGCbKbUqgsG0Q/profile-displayphoto-shrink_800_800/B4EZUOR3PCHgAc-/0/1739701319245?e=1781136000&v=beta&t=AepvxoSQL3LwEpioS8dxnBF_fdX8Rm-pTH7mVUyRUzk",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQETXuGDtcg2vA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1647986951264?e=1781136000&v=beta&t=fai3aDPXSHzIQ8hQpp_9N-dD_v3JqxXyx0N8TTvUqrM"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Irina",
+          "lastName": "Krutekova",
+          "occupation": "UX Researcher with Design Background · Mixed Methods · B2B & B2C Digital Products",
+          "id": "520175905",
+          "publicId": "irina-krutekova-881257126",
+          "trackingId": "CzwS1kM8TaadCvg3NECsIA==",
+          "profileId": "ACoAAB8BQSEBQ8KlTLQvcXBGM5xdRUMc6qDCU3Y",
+          "picture": "https://media.licdn.com/dms/image/v2/C5603AQG0d1skU_weEw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1590789511327?e=1781136000&v=beta&t=hld1gNT56eQV0GR1ISkmK0Ur1bvWeQULFyVgLm00Buw"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Vit",
+          "lastName": "Mach",
+          "occupation": "\"Probouzíme energii a radost ve firemní komunikaci\"",
+          "id": "73700698",
+          "publicId": "vitmach",
+          "trackingId": "ERZyhm+NTEGHbAZiJMDpsw==",
+          "profileId": "ACoAAARklVoBm0Cu8wp4PNROySIUItJ3zAJEDjY",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG2lCl9v_xFxw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693475379741?e=1781136000&v=beta&t=eUi_YzfKl3cgkS5S_WzF1aNS_vy3qKg8mHU4TAfBGFQ",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQHGG-tf5hH32g/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1539869166564?e=1781136000&v=beta&t=fW6JgCtiYGLS-XTT2YPLrbeVRp5uFzcHVcKCW-M4BKw"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Gabriela",
+          "lastName": "Pekárková",
+          "occupation": "Co-Founder & Designer | UX/UI Designer",
+          "id": "766025649",
+          "publicId": "gabriela-pekarkova",
+          "trackingId": "pCkzqWqlT2a6jJf5/fV5LA==",
+          "profileId": "ACoAAC2on7EBG_cuIwxZM8Jo0I5cGYkSLKTa0DE",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D35AQEfjqkewCqRew/profile-framedphoto-shrink_800_800/B4DZ5kI4ycJwAg-/0/1779796512207?e=1780430400&v=beta&t=6_9PdHT0cEURdP3oghkrrqvCjWcpXMkWmhjQgWujdzE",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHC3PAmPYTLHw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1727273060670?e=1781136000&v=beta&t=aIpl9btsa6ivaOq6JTu42CrY5GVHpurAutSFwjCHc2s"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Jakub",
+          "lastName": "Franta",
+          "occupation": "Brand & UX/UI Designer",
+          "id": "549824973",
+          "publicId": "jakub-franta",
+          "trackingId": "7YADjpOOQSqspkUPoNRXpA==",
+          "profileId": "ACoAACDFqc0BPNIYsuH5T0_XDUub6cCZcKgV2aM",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D35AQGa8PXmWG9AIA/profile-framedphoto-shrink_800_800/B4DZ5kKZoEKAAk-/0/1779796908864?e=1780430400&v=beta&t=DWxBzBMwQI--kKj08m9LKiH5GiVuVQQDGeskJRwU0mg",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG5bztRmVJX5A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1727273071403?e=1781136000&v=beta&t=M3vLPjP4PNtYklOPPkAm3QVeZkpJe1FLPV84Kg9597Q"
+        }
+      },
+      {
+        "type": "EMPATHY",
+        "profile": {
+          "firstName": "Kristína",
+          "lastName": "S.",
+          "occupation": "UX Designer at Kentico software",
+          "id": "567567468",
+          "publicId": "kristína-s-4900b113a",
+          "trackingId": "+EDCbsLcRWOZcYU8oxZMpA==",
+          "profileId": "ACoAACHUZGwB8ZMPqhi7R6zjYl-09EjwXIvhQD0"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Ondrej",
+          "lastName": "Trajer",
+          "occupation": "Main goal of project manager is to deliver value",
+          "id": "45552008",
+          "publicId": "ondrej-trajer",
+          "trackingId": "WGxkHDd2TTqsdA/0pAvqmg==",
+          "profileId": "ACoAAAK3EYgB56gN8h6GczNhrZhxzuNmgXLMq5o",
+          "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEs_ze10A_7PQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516498662304?e=1781136000&v=beta&t=6blUBHJ8PKrArsmKbWuYNNaTAwulpm9iy_eQaoQ02bI"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Michal",
+          "lastName": "Brádler",
+          "occupation": "𝐖𝐞𝐛 & 𝐌𝐚𝐫𝐤𝐞𝐭𝐢𝐧𝐠 𝐎𝐩𝐞𝐫𝐚𝐭𝐢𝐨𝐧𝐬 𝐒𝐩𝐞𝐜𝐢𝐚𝐥𝐢𝐬𝐭 | SEO, GA4 & Frontend | Ex-FEG | 𝐒𝐩𝐞𝐜𝐢𝐚𝐥𝐢𝐬𝐭 𝐢𝐧 𝐂𝐌𝐒 & 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐌𝐚𝐫𝐤𝐞𝐭𝐢𝐧𝐠",
+          "id": "700734210",
+          "publicId": "michal-bradler",
+          "trackingId": "1u16tTKRRg62CNtu6Z8Qxw==",
+          "profileId": "ACoAACnEWwIBme75V_f213bXPkkD3xqCVdXsJH4",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHY4p--s1BVmQ/profile-framedphoto-shrink_800_800/B4DZ3ugqXdGcAg-/0/1777823033112?e=1780430400&v=beta&t=DVbabX-FHyW-nr2BIRQtpKlMbx4m7n9rLTfuIAhDX3Q",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHQuTaz7HyFQg/profile-displaybackgroundimage-shrink_350_1400/B4DZ3u52wwJsAY-/0/1777829639076?e=1781136000&v=beta&t=8XMtWl8RSGpR8fLUNnMbFnHK87_mHiPvcy56sbvXlg4"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Peter",
+          "lastName": "Nemček",
+          "occupation": "Konzultant internetového marketingu ✔SEO ✔PPC ✔UX ⇨ Rád vám poradím - neváhajte ma kontaktovať ✉",
+          "id": "327002620",
+          "publicId": "peternemcek1",
+          "trackingId": "mlTEEr5lTc6Z1Vv4rLrGRg==",
+          "profileId": "ACoAABN9qfwBgNJzlc17TL3MdWN5_CQnwkdbWqs",
+          "picture": "https://media.licdn.com/dms/image/v2/C5603AQGuwkufiShPcQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1561362561535?e=1781136000&v=beta&t=alokOjJ1Naa11ydFDqDxL61yq4ipibn60yOWUY-sl7k"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Jaroslav",
+          "lastName": "Gazda",
+          "occupation": "Executive Assistant to CEO",
+          "id": "206587614",
+          "publicId": "jaroslav-gazda",
+          "trackingId": "trOgj+/hQ9OPvNGqonptmQ==",
+          "profileId": "ACoAAAxQRt4B90kXeuVt1nuVV9qwR_ARFi2t2AE",
+          "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGRlwsADz8RMg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1590334310683?e=1781136000&v=beta&t=uxLAZVEEoOusyroMtkANct6cpyOoc40kMLkyo9zU-ek",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFH6DNKTrpTrw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1707813629417?e=1781136000&v=beta&t=d0_75Z6ibEQWOMNpZet4Nc7XIWVhLtXiB9R8KmsYBz4"
+        }
+      }
+    ],
+    "numShares": 3,
+    "numLikes": 304,
+    "numComments": 57,
+    "canReact": true,
+    "canPostComments": true,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "ALL",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "firstName": "Jan",
+      "lastName": "Řezáč",
+      "occupation": "CEO · autor 📖 Web ostrý jako břitva",
+      "id": "16677247",
+      "publicId": "jan2rezac",
+      "trackingId": "bx6IaYsNShuw2s4JEEKeEw==",
+      "profileId": "ACoAAAD-eX8BGeM_SaDxrD9QhHdovva-_z0sxH4",
+      "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGZyP1SuQkbzg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715071731709?e=1781136000&v=beta&t=DohpNMMTG_Fickyh-W-b442_U3uJYXfUPjMjfVwDAcM",
+      "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGR9u8DQCo8_g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1689174054212?e=1781136000&v=beta&t=b8Q_nRDbZH32WGjjBsk1GEjNSN6CkPrwR5ODXdQH7W4"
+    },
+    "authorProfileId": "jan2rezac",
+    "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4E03AQGZyP1SuQkbzg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715071731709?e=1781136000&v=beta&t=DohpNMMTG_Fickyh-W-b442_U3uJYXfUPjMjfVwDAcM",
+    "authorType": "Person",
+    "authorName": "Jan Řezáč",
+    "authorProfileUrl": "https://www.linkedin.com/in/jan2rezac?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAD-eX8BGeM_SaDxrD9QhHdovva-_z0sxH4",
+    "authorUrn": "urn:li:member:16677247",
+    "postedAtTimestamp": 1627971278921,
+    "postedAtISO": "2021-08-03T06:14:38.921Z"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6829530690174926848",
+  "url": "https://www.linkedin.com/posts/honzajavorek_nejhor%C5%A1%C3%AD-n%C3%A1pad-pro-juniorn%C3%ADho-je-activity-6829530690174926848-kb-i?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAGEG_KQBv7J1sq3GMEnlpcPmY0omjvlA50I",
+  "timeSincePosted": "4yr",
+  "shareUrn": "urn:li:share:6829530689646452736",
+  "text": "Souhlas! Přesně proto radím v příručce juniorům, že jedna z nejdůležitějších otázek, které mají na pohovoru položit druhé straně, je:\n\n„Budu mít ve firmě přidělené lidi, kteří se mi budou věnovat a za kterými budu moci chodit pro rady bez pocitu, že je zdržuji od důležité práce?“\n\nPokud s tím firma nepočítá, nebude na tebe mít nikdo čas a tvůj pracovní den se brzy promění v peklo. Být juniorem a zároveň jediným zástupcem určité profese ve firmě nebo týmu, to je potom ještě o celý level horší. Víc tady: https://lnkd.in/eCZuFt3K",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vojtěch",
+        "lastName": "Janeček",
+        "occupation": "Programátor & Vývojář SW ve společnosti Solar Global a.s.",
+        "id": "865651161",
+        "publicId": "vojta-janecek",
+        "trackingId": "hsozRoucQvqVsaNBBIPFzw==",
+        "profileId": "ACoAADOYydkBZYKUxX6X1T3-5ByCzoKO-XNKfKo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGOsVgS-s_mPg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1692340482277?e=1781136000&v=beta&t=mWy_d-wj3Rug_Ag95LEg66lpTvsHNBGcwmDHllF45uw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHIS-kz-apWJw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1725884504969?e=1781136000&v=beta&t=nSujnJ6enIZB0czcv1kFSrPxVR77zATG5k_rKQlsO_s"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Nowak",
+        "occupation": "Senior Software Engineer | Team Builder & Engineering Leader | Driving quality, timely delivery and trust-based team culture | Founder at Veritas Dev",
+        "id": "16893430",
+        "publicId": "nowaja",
+        "trackingId": "qnGJGDB/TzSvXpP2jYJufg==",
+        "profileId": "ACoAAAEBxfYBVYrri33NdhoMSs5DohrgctITu4o",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEafw0chkvcvg/profile-displayphoto-crop_800_800/B4DZ3dcQNYJYAI-/0/1777536671279?e=1781136000&v=beta&t=3NGDh8MfgdYU6QtTxt9a6eAe1pyYG6u6-Cg5KoyNc0g"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavla",
+        "lastName": "Hrabcová",
+        "occupation": "BI Data Engineer & Project Manager at intecs",
+        "id": "544928143",
+        "publicId": "pavla-hrabcova",
+        "trackingId": "ly7I503USHqBmG1HsnfN3w==",
+        "profileId": "ACoAACB68Y8B8NR7wsI-WrFnSM0gYEJnzAoEC4g",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHvtVJUGsyPGg/profile-displayphoto-crop_800_800/B4DZxxp2RtJwAI-/0/1771433321946?e=1781136000&v=beta&t=s1js0UdbvEczI2MfKw5j0Lit1dsPSJqhm1wZk_6N1ok"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiří",
+        "lastName": "Chlebus",
+        "occupation": "Founder of Visualbook",
+        "id": "300088740",
+        "publicId": "jirichlebus",
+        "trackingId": "UxN3UwSFSWiGrFdGu5h3YQ==",
+        "profileId": "ACoAABHi_aQBiiyuBzq5txrPDAL_9RDcBMkLEjU",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQELdhSbrr2STA/profile-displayphoto-crop_800_800/B4EZrfa71BHMAI-/0/1764684982671?e=1781136000&v=beta&t=hn0nFfRHqXK1hVO-O-FyUq8p-zJSEAfwEMNxERL5xz8",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGv8YR9qq3BEg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1732029614994?e=1781136000&v=beta&t=1CNEML1Kcul2zuJH487liDVzsZyyh_7jhmBcMtASch8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Žížek",
+        "occupation": "Průvodce cykly bohatství 📈",
+        "id": "229451762",
+        "publicId": "petr-žížek-702a1464",
+        "trackingId": "UKDO5ZQmRTOGuogkZSXb2Q==",
+        "profileId": "ACoAAA2tJ_IB7sP5S6LHxlMS2UfNxfoAbaFpW4w",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHUBwC6SZkdSw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1702842635402?e=1781136000&v=beta&t=Nn-Ja4mEx7wOuvPRkTfvzoNSL_3WrZlRdNEyG0MMmiU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGiOS-4mMQwvg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1716065509937?e=1781136000&v=beta&t=8xukP7Xc-rRH89wzF3n_2mU5tdQY0SvANJvUgIaq62M"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lukáš",
+        "lastName": "Král",
+        "occupation": "PLACEMENT.cz | ONLAJNOV.cz | KRALOVSTVIZDRAVI.cz",
+        "id": "250691402",
+        "publicId": "kralllukas",
+        "trackingId": "qURYSavxQR6JnoS+auzs9A==",
+        "profileId": "ACoAAA7xP0oBMgK10uo59lfvhv3t687Gcj-IRNc",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEqeKTCKRlLFQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1597358185320?e=1781136000&v=beta&t=GT7HG30tWPpw5xMyicBEqu8z-2dmwPxu4xcPJ1RXqdQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEAVPncsEhdPQ/profile-displaybackgroundimage-shrink_350_1400/B4EZpZa4SIGoAc-/0/1762436810407?e=1781136000&v=beta&t=g7pydj4n_ZBp0Eo9p5ZM5AxcrznpoA5pk-BUA6l4l64"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Timko",
+        "occupation": "Data Scientist & PhD Candidate",
+        "id": "289500066",
+        "publicId": "jan-timko-916b5280",
+        "trackingId": "g7tI0uzjSeGTgo9LhWyo9A==",
+        "profileId": "ACoAABFBa6IBfP7hhXPQXzBTqVsVVMCj1Wqeykk",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQE8q2O4VZ8a0Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516837422067?e=1781136000&v=beta&t=6ozXo-1Etr1A7K8haNT3lW84QDr9q2m5kx-41hCGnwQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Zuzana",
+        "lastName": "Hlinkova",
+        "occupation": "Business Intelligence Developer | MS Fabric | Power BI | Qlik Sense",
+        "id": "310065595",
+        "publicId": "zhlinkova",
+        "trackingId": "trq8x9HSTAWJngG6AI8GtQ==",
+        "profileId": "ACoAABJ7ObsB__PBufAniFA1PgxmTYn0Am51HL8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHJNvM1dvvEzQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1671050493363?e=1781136000&v=beta&t=suxTKFK4EGPNEoTWlMwbMYkgNAiN3OA2jrVFs7MaEkk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavlina",
+        "lastName": "F.",
+        "occupation": "Host @ Junior Guru podcast.",
+        "id": "190849253",
+        "publicId": "pavlinafronkova",
+        "trackingId": "hCN2V1BfSq+v5JParCKNow==",
+        "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Alexandra",
+        "lastName": "Mesarčíková",
+        "occupation": "Aplikační manažer | ČSOB Pojišťovna",
+        "id": "766480529",
+        "publicId": "alexandra-mesarčíková-155839194",
+        "trackingId": "aQ0DsRwlQ1yP+dYrUiztkw==",
+        "profileId": "ACoAAC2vkJEBfUdR84f_nt0vj1Km7fZlo-bp6kY",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQF4ISa_jOagbQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1628201763885?e=1781136000&v=beta&t=oJ6DqiOAAEwVKmlCRgz4oKraosxeiRtkdEhW67gKErA"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 14,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "y06U4KwiSKeYOdTpsePY/Q==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1628287003082,
+  "postedAtISO": "2021-08-06T21:56:43.082Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

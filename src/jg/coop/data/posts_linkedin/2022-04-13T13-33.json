@@ -1,0 +1,198 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4D22AQFRZUYsZSJ2dg/feedshare-image-high-res/feedshare-image-high-res/0/1649856831854?e=1781136000&v=beta&t=083ogtck_2waiCk6TFS66gRXM8eBcideRF3GF_6tXJ0"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6920001112917831680",
+  "url": "https://www.linkedin.com/posts/honzajavorek_nextjs-javascript-react-activity-6920001112917831680-Wl_d?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFLoK0wBYoYaibnOct4cy5iL6dq4jzvciT8",
+  "timeSincePosted": "4yr",
+  "shareUrn": "urn:li:share:6920001111592439808",
+  "text": "VŠECHNO O NEXT.JS ⚙️ #NextJS je stále populárnější #JavaScript framework na tvorbu webů a čím dál víc juniorů si k němu nachází cestu. Jak a proč přejít z #React na #NextJS? Přijďte do klubu junior.guru na přednášku, kterou bude mít Sveťa v úterý 19.4. v 18h!\n\nSvetlana Margetová má 10leté zkušenosti s návrhem a vývojem systémů, od backendu, přes analýzu, až k mobilním appkám. Studovala školy, točila se kolem #Python komunity, #PyLadies, #DjangoGirls, #Czechitas, #ReactGirls… ať už jako účastnice nebo lektorka. Založila vývojářskou firmu Kompilátor, kterou řídí jako CEO. Ve volném čase chytá Pokémony, nebo si hraje s Arduinem.\n\nV klubu měla svou první přednášku v únoru a poprvé v historii se stane, že se nám zopakuje speaker. Plánoval jsem už dřív, že si některé lidi pozvu znova, ale odsouval jsem to. Sveťa se aktivně přihlásila a svou přednášku vyloženě navrhla na základě toho, co junioři v klubu zrovna řeší, a něčemu takovému rozhodně nemělo smysl odolávat ❤️",
+  "attributes": [
+    {
+      "start": 261,
+      "length": 18,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Svetlana",
+        "lastName": "Margetová",
+        "occupation": "I help factories digitise maintenance. With or without AI. Always with people first.",
+        "id": "178006447",
+        "publicId": "msvetlana",
+        "trackingId": "dYlBr6NCQ3WRpcX8uGXJ8w==",
+        "profileId": "ACoAAAqcKa8Bousd5uBo-bZZ9dq6qVlYKqtHvSc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF2d-GcOsk4Bg/profile-displayphoto-crop_800_800/B4DZ35j9rdHwAM-/0/1778008453433?e=1781136000&v=beta&t=drmOX7xsDyMGZaown-MFYSZXwtE2FSNpuvIxF5sa-CA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEafK1Y8bDUqw/profile-displaybackgroundimage-shrink_350_1400/B4DZWwQJBHHIAc-/0/1742418779616?e=1781136000&v=beta&t=0a47VNFLf1nQKjTg2JnpC3ODNNzCN24RoEDT7btdLtM"
+      }
+    },
+    {
+      "start": 543,
+      "length": 10,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Kompilátor",
+        "universalName": "nanooqit",
+        "trackingId": "u63A2bG+QUGXeMM2Y2LhFQ==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:18034650",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C560BAQHuRqnSHjqzeQ/company-logo_400_400/company-logo_400_400/0/1630648383941/nanooqit_logo?e=1781136000&v=beta&t=E7DUtxue7H6JQwCcEyu_DGIrUaM3Shqqplg-uDwoEj4"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Veronika ",
+        "lastName": "Vacatová",
+        "occupation": "Analytik IT auditu ve společnosti KPMG Czech Republic",
+        "id": "823217745",
+        "publicId": "veronika-kopicova",
+        "trackingId": "BEN0zgXOQci5cpxRrhtvoQ==",
+        "profileId": "ACoAADERTlEBR16jtxiyB4-QHxs8Dr_dt-KxLNA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGUgibbZF6RJQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1591121262459?e=1781136000&v=beta&t=bAo87k-gfV2r-3xOMS4NCvOsTD39FYkssISm4exLpt0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Katerina",
+        "lastName": "Slezakova",
+        "occupation": "“The journey is the destination”",
+        "id": "823193341",
+        "publicId": "kslezakova",
+        "trackingId": "H/m6EizpRiKIt2lueL08Qw==",
+        "profileId": "ACoAADEQ7v0BQzs8aNXWgRYo4kPIBpO990Op2q4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHLgcpsZhZv9g/profile-displayphoto-crop_800_800/B4EZsBxARBKcAQ-/0/1765261185170?e=1781136000&v=beta&t=qKC3O2DbG5vdz8lEXUE0bvS9d9YoBa5o4AjKMeOZDiY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH9FcmHhMx99Q/profile-displaybackgroundimage-shrink_350_1400/B4EZsCPEx4KoAc-/0/1765269067659?e=1781136000&v=beta&t=W3_PhqFJZ--KwlSMbSIRQo-vEzVHoPKOa5KXSlErZvc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daniel",
+        "lastName": "Rozehnal",
+        "occupation": "Software engineering student at FI MUNI.",
+        "id": "731425708",
+        "publicId": "daniel-rozehnal-924b52184",
+        "trackingId": "vpRfDaICT/a2RRH+5aK4Xw==",
+        "profileId": "ACoAACuYq6wBw_NUyA50V0fvku83SMXkgexoGa8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH6BzN9AcUCqw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1687462673185?e=1781136000&v=beta&t=CcZtGbxzcjtE3ICu9xz1ywNt_uzrOhlHHeL4p4nax_k"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Iva",
+        "lastName": "Hrdina Pazderková",
+        "occupation": "Freelance Product & Ops | CX & Systems Thinking | Neuroleadership Coach | Volunteer @ Česko.Digital | Mentor @ Femme Palette",
+        "id": "109919206",
+        "publicId": "ivafingerova",
+        "trackingId": "qkSMuzf5QZiopFMTLrwYcQ==",
+        "profileId": "ACoAAAaNO-YB_qQBMliqSDeBayGzCWDVLaMv24w",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEU5LtzZ8xFpg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1647941658383?e=1781136000&v=beta&t=kC-CVuKqpfT6AEhHWHW1Qlvyx2-8Sss3WAJbrA8hVoA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Svetlana",
+        "lastName": "Margetová",
+        "occupation": "I help factories digitise maintenance. With or without AI. Always with people first.",
+        "id": "178006447",
+        "publicId": "msvetlana",
+        "trackingId": "dYlBr6NCQ3WRpcX8uGXJ8w==",
+        "profileId": "ACoAAAqcKa8Bousd5uBo-bZZ9dq6qVlYKqtHvSc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF2d-GcOsk4Bg/profile-displayphoto-crop_800_800/B4DZ35j9rdHwAM-/0/1778008453433?e=1781136000&v=beta&t=drmOX7xsDyMGZaown-MFYSZXwtE2FSNpuvIxF5sa-CA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEafK1Y8bDUqw/profile-displaybackgroundimage-shrink_350_1400/B4DZWwQJBHHIAc-/0/1742418779616?e=1781136000&v=beta&t=0a47VNFLf1nQKjTg2JnpC3ODNNzCN24RoEDT7btdLtM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Filip",
+        "occupation": "Začátečním bodem všech úspěchů je zaměření na cíl.",
+        "id": "942714715",
+        "publicId": "pavel-filip-5b7868223",
+        "trackingId": "CIgqKizvQY6kHyef4t7KhA==",
+        "profileId": "ACoAADgwr1sBjcqNqmu1jWyiy2WMLTxFqYTlUc4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFIvx7NuP0D1Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1706871775478?e=1781136000&v=beta&t=MDBO72F3FLkKgqBy3hJd-eLySv5odZRwnKhNeHTHEww"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomas",
+        "lastName": "Manhal",
+        "occupation": "SEO/UX Specialist at Webmium ✅ Aspiring Backend Developer at Home ✅",
+        "id": "356811200",
+        "publicId": "tomasmanhal",
+        "trackingId": "Al+v1oboRw600g5+AVVfzg==",
+        "profileId": "ACoAABVEgcABhXssunqzWgZ32PhPvDuM7pOY7Sw",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGInNVdLygaYA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1643616498455?e=1781136000&v=beta&t=ZuyL6gCtMjtS2Bp5JitUt78VFkpsCsQXNtHO9yl9H4g",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGzLIim8zGACA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516975456614?e=1781136000&v=beta&t=6VFaoiFNvKKxzcGRnW_GTyGLSluSP2AQ71SpObNaKLo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Katerina",
+        "lastName": "Mackovikova",
+        "occupation": "Data analyst passionate about systems integration",
+        "id": "262585845",
+        "publicId": "katerina-mackovikova-499b3373",
+        "trackingId": "Rjz9/hIYSFu2zuMvqjeKAQ==",
+        "profileId": "ACoAAA-mvfUBi9EOGyMJGQ2V5sq1pa_91Q3yqB4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH2cRv9plwRWg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723922714065?e=1781136000&v=beta&t=Ss6jpRWXSXGnUamkYVdDcbGXZ-Bph_qdyh7EaU1zXbk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marek",
+        "lastName": "Dlouhý",
+        "occupation": "Cyber Security Analyst ve společnosti Komerční banka",
+        "id": "515386046",
+        "publicId": "mrkdlh",
+        "trackingId": "UytWJJS+RRGiiFrRU8deMA==",
+        "profileId": "ACoAAB64Kr4BlUrhXfCZ7ies_ukVFzkuUR6Y_5U",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHwsMGQ6i8TZA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1677691746960?e=1781136000&v=beta&t=dj3FUnszOVVtuNg3eAEa_mC9ebkEOVp3dFWxOTBSDdA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH6AyMjZ-pNqQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694630431163?e=1781136000&v=beta&t=N7xIYYWicEOZ9FlgFw9j3yGtjqGIKmUESftC4E-KOT0"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 9,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "WMeMYPsbQrCU0UYHCmGuiA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1649856832723,
+  "postedAtISO": "2022-04-13T13:33:52.723Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

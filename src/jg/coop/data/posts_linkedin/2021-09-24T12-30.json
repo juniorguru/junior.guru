@@ -1,0 +1,175 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4E22AQF517S7OpfAWg/feedshare-shrink_1280/feedshare-shrink_1280/0/1632486637463?e=1781136000&v=beta&t=pMBVxc2BNfc_pTeXDSc7DaMXPuE4ZDIpd7-XfiHBiUA"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6847145234342719488",
+  "url": "https://www.linkedin.com/posts/honzajavorek_ama-frontend-activity-6847145234342719488-ehLS?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAE8FJtsBl5yCKIjoQSn3mMf6imalt9bjTls",
+  "timeSincePosted": "4yr",
+  "shareUrn": "urn:li:share:6847145233839403008",
+  "text": "Ve středu 29.9. bude v klubu https://junior.guru/club/ v 18h AMA s Kate Miháliková a Daniel Srb. #AMA znamená „ask me anything“. Zeptej se na cokoliv, co tě zajímá! Dan a Kate pod značkou CoreSkill pomáhají budoucím frontendistům a frontendistkám se vším, co potřebují k tomu, aby se jimi co nejdřív stali. Ptejte se na cokoliv kolem HTML, CSS i JavaScriptu, ale i na to, co to #frontend vůbec je, co frontendisti vlastně všechno dělají a co je minimum pro nalezení první práce. https://lnkd.in/ezHk6pM",
+  "attributes": [
+    {
+      "start": 67,
+      "length": 15,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Kate",
+        "lastName": "Miháliková",
+        "occupation": "Senior frontend programmer ▪ i18n expert ▪ mentor",
+        "id": "327737590",
+        "publicId": "katemihalikova",
+        "trackingId": "7/53UeIwSPGIGNyecSEFYQ==",
+        "profileId": "ACoAABOI4PYBNuWUpQi-FaZXZsALnM8YjvFRA8M",
+        "picture": "https://media.licdn.com/dms/image/v2/D5635AQHLOi290tICWg/profile-framedphoto-shrink_800_800/B56ZX2K_.LGoAk-/0/1743591833835?e=1780430400&v=beta&t=asprvuRmVzrmBTZW-rnRefkJJDPj1KnVoKM6RS9O7AM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEG_Ene69R_Hw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1642693036050?e=1781136000&v=beta&t=gSjA9hCSmDOKEvUQOm4Fdanrwc0BboU6NgT4kgaa5gA"
+      }
+    },
+    {
+      "start": 85,
+      "length": 10,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Daniel",
+        "lastName": "Srb",
+        "occupation": "Helping people to become junior frontend developers",
+        "id": "15446232",
+        "publicId": "danielsrb",
+        "trackingId": "QQoyMoXqQfCJSmF51JcBvw==",
+        "profileId": "ACoAAADrsNgBFfAixAgw_mCw8WtR9SeNIvEEI8Q",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFL6A1muu1_iQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1664815242443?e=1781136000&v=beta&t=gZsiQuDXYR8uuO_-68JdcJFp1nRVo6I7-iaOUDh1GRk",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEojxUy1Cz5oQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1623442956553?e=1781136000&v=beta&t=hWIAatMfNTIgw4JUStqCUqVs88aKCIf5jtDxqtS-BHg"
+      }
+    },
+    {
+      "start": 188,
+      "length": 9,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "CoreSkill",
+        "universalName": "coreskilltech",
+        "trackingId": "X45zNpVtSJ6H9EqrKfcyWg==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:20120552",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQH1snR7iYjgUA/company-logo_400_400/company-logo_400_400/0/1630510773518?e=1781136000&v=beta&t=63ta5SGR8m_cT7SIxkfz64mVBffD2UR44HYtgbjEnZg"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daria",
+        "lastName": "Linhart Grudzien",
+        "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
+        "id": "183293578",
+        "publicId": "dariagru",
+        "trackingId": "V4LffTjQSoO/5agdr9JdAg==",
+        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Silná",
+        "occupation": "Software QA Engineer | Test Automation | AI-Driven Testing | Frontend | UX/UI | ex-Graphic Designer",
+        "id": "456103352",
+        "publicId": "lenka-silna",
+        "trackingId": "KAUXmlVURcaUHSSVIDxnHw==",
+        "profileId": "ACoAABsvlbgB_YE9kjICFRS1b_hrU6yzTRKEHKo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFf0_YqRz5aMw/profile-displayphoto-crop_800_800/B4DZyeRfyKI8AI-/0/1772181913275?e=1781136000&v=beta&t=djOSOQB0NajL7vAnGP1Vbttp8e1WcRdpEKG8ziyxtzg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQECZhvzl5X7cg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1624343280736?e=1781136000&v=beta&t=g_BHz9nP1AHkEtQK2JeFVM4SR5-XuZaLlWHS_Ygq60g"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Marek",
+        "lastName": "Čevelíček",
+        "occupation": "🎯Product Designer | UX | CRO | 20Y experience in digital design. My mission is to make users LOVE your app, BOOSTing your salary 🤘",
+        "id": "519116816",
+        "publicId": "marek-cevelicek",
+        "trackingId": "sckZBfbjRnqAFNxx479Y5g==",
+        "profileId": "ACoAAB7xGBABAQvEmmdLF3e3K_lYN0qzxBtqOCw",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH6o6tr0i8wWw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1626204457422?e=1781136000&v=beta&t=jf4KXLa8LO84AD_wkbB5NX-z-RfFUgU1vJPRSaOQoj4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFXuPEY9LLnzg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1692948098996?e=1781136000&v=beta&t=VRRAUOEoPxAwFCTQWRAQ2iK9dHDFQbml-xaoSpO14pM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Natália",
+        "lastName": "Rydzá",
+        "occupation": "Solution Developer at Jigx",
+        "id": "368513805",
+        "publicId": "natália-rydzá",
+        "trackingId": "wXmQHgrrTJik+a/TXi85Lg==",
+        "profileId": "ACoAABX3Ew0BUHQbxGZpVNCtTpps5YdBDGUZhas",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHR_o0tloJxmA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1645438239518?e=1781136000&v=beta&t=ni2nTc7HDt1tXOjslE2kohLbGZx6ku1NF4tBt6UCD4Q",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHVNnoOlVU47Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1594664026995?e=1781136000&v=beta&t=zzGY7L1hKZWxBoIzImUY-24mYjgSH9jvJlOGCcRoUfA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Anna",
+        "lastName": "Valouchová",
+        "occupation": "People Analyst at SITA; Freelance Interpreter, Translator & Language Tutor (Norwegian, English, Czech)",
+        "id": "350092867",
+        "publicId": "annavalouchova",
+        "trackingId": "VbFWwMdhQvOyqBhNkwGhwg==",
+        "profileId": "ACoAABTd_kMBzgEAV--A6C1GTztfR7N_dRkpXnI",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQEBmMWLOQ9Prw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1585559267313?e=1781136000&v=beta&t=3jYroHwbYzVSELct3uaqbuR6ljWY2Vr0wGenxFu8Dq0"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Tereza",
+        "lastName": "Machackova",
+        "occupation": "tech talent partner (Lovable, Verified, Attio)",
+        "id": "354416659",
+        "publicId": "terkins",
+        "trackingId": "5XuAcKGbTDya8qec9L2S8Q==",
+        "profileId": "ACoAABUf-BMBlxzn1lFEhRmLF2yzFf41AOuOmT0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQH14hM4IH2IbQ/profile-displayphoto-crop_800_800/B4DZxsEe99HwAM-/0/1771339642206?e=1781136000&v=beta&t=ep0ILYwjDXBbS-gvEoQ6Ys0WZIXo2Fmy9lUXtRz-7lY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFLKlJH74qo6Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1696428898365?e=1781136000&v=beta&t=UCGewaxbJXbTqLNfc-lzeJramn4OxEj0cbuKKVO-8LI"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 6,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "MdwaR6cfSJGAkgqMdse/gQ==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1632486637674,
+  "postedAtISO": "2021-09-24T12:30:37.674Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

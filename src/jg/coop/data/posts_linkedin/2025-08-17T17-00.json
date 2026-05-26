@@ -1,0 +1,377 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/D4E22AQG22dkYQeiqfw/feedshare-shrink_1280/B4EZi3ir.9GYAk-/0/1755425981319?e=1781136000&v=beta&t=UHrf1_rE3PpeUne2hzLrT3vVpJvRx6Cj8b5mG0Y-5tU"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:7362890984927420417",
+  "url": "https://www.linkedin.com/posts/honzajavorek_devops-sre-operations-activity-7362890984927420417-Ldlb?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAACdwRloBsvQMFO5Hq4nZQD88Dn5VCuqcvz4",
+  "timeSincePosted": "9mo",
+  "shareUrn": "urn:li:share:7362790221798670336",
+  "text": "DevOps nebo SRE. Co to vlastně je a chcete to vůbec vědět?\n\nNa srpen jsme připravili výživné povídání (nejen) pro juniory o tom, jak se nasazují aplikace na servery:\n\n👉 Jaké existují přístupy a postupy\n👉 Co funguje, co ne\n👉 Jak začít, pokud vás tohle láká a teprve hledáte první práci v oboru\n\nDo klubu dorazí dva moji bývalí kolegové z Apiary – Nada Jašíková (Microsoft) a Vilibald W. (Pure Storage). Oba mají dlouhé roky zkušeností a já se na tuhle přednášku moc těším, protože to bude fakt pecka.\n\n👩‍💻 Naďa je site reliability engineer v MS a byla to ona, díky níž jsem kdysi poprvé napsal do terminálu „docker“. Dneska se svým týmem spravuje Kubernetes platformu pro všechny produkty MS Defender.\n\n👨‍💻 Vilda je senior architekt v Pure Storage. Baví ho vymýšlet, jak dělat věci jednoduše, ale robustně, efektivně a výkonně. A vaše uši možná už dávno znají jeho hlas: Na ČRo Wave moderoval Dubové okénko Prince Wilibalda a s Ladislav Prskavec nahrává YBYR Podcast.\n\nYBYR, tedy „You Build It You Run It“, se ostatně jmenovala i panelová diskuze na PyCon CZ 2023, kde taky oba byli. Jsou v tomhle tématu pěkně namočení, takže nikoho lepšího jsem si pozvat prostě nemoh.\n\nNaše přednášky nejsou jen nalejvárna, bývá hodně dotazů a v téhle interakci s publikem je často jejich největší hodnota. Takže nečekejte na záznam a připojte se k nám živě.\n\nBude to teď v úterý 19.8. v 18:00, online u nás na klubovém Discordu. Návod jak se připojit najdeš na junior.guru/events\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.\n\n#devops #sre #operations #ybyr #juniorguru #online #event #discord #docker #kubernetes",
+  "attributes": [
+    {
+      "start": 346,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Nada",
+        "lastName": "Jašíková",
+        "occupation": "Site Reliability Engineer",
+        "id": "60770662",
+        "publicId": "nadajasikova",
+        "trackingId": "XMu5h/jEQ3+JQsdJLS6E+w==",
+        "profileId": "ACoAAAOfSWYBClmqdbDWrbT3ojkF4NmFKLcmFB0"
+      }
+    },
+    {
+      "start": 361,
+      "length": 9,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Microsoft",
+        "universalName": "microsoft",
+        "trackingId": "6rbiMg+ATOyPdqmIOuIeuw==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:1035",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D560BAQH32RJQCl3dDQ/company-logo_400_400/B56ZYQ0mrGGoAc-/0/1744038948046/microsoft_logo?e=1781136000&v=beta&t=nRKXRanRFdAJ9BUKZZ5lGA0UcHZBS-xpwHCV_vjntgU"
+      }
+    },
+    {
+      "start": 374,
+      "length": 11,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Vilibald",
+        "lastName": "W.",
+        "occupation": "Software Engineer",
+        "id": "119214723",
+        "publicId": "wvi",
+        "trackingId": "f0oh5b/YSZWdN2XS6MHebw==",
+        "profileId": "ACoAAAcbEoMBRsgrcYfzb2OvSrY6xg1KL-bz-2w"
+      }
+    },
+    {
+      "start": 387,
+      "length": 12,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Pure Storage",
+        "universalName": "purestorage",
+        "trackingId": "NfNa0zwgTtyhYgL//mHBzA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:1632202",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D560BAQHY8dBMsvlbUw/company-logo_400_400/B56ZyKlQsMGoAY-/0/1771851549770/purestorage_logo?e=1781136000&v=beta&t=EkJI4XRlCrqSQtNYxFLiharth4o5mEVw2HqxbJUagQs"
+      }
+    },
+    {
+      "start": 927,
+      "length": 17,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Ladislav",
+        "lastName": "Prskavec",
+        "occupation": "Staff Engineer at Everpure (formerly Pure Storage, Inc.)",
+        "id": "6413396",
+        "publicId": "ladislavprskavec",
+        "trackingId": "Zw7OYJVoR0KMA7ot44hNTQ==",
+        "profileId": "ACoAAABh3FQBjDcRIsKdGUqUWVVxs45nmvivIO4",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQH74zpN5N3LhQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516250709565?e=1781136000&v=beta&t=4858H9zBGZBF9O86nNt-xKvWRcvX0_fxZw1SXlZ1pFI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEcA07Jof8U1g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1614695743264?e=1781136000&v=beta&t=4Vqk30uOrg7FpjokcbA7vXMhQG5LWLueu6rpGGxkufE"
+      }
+    },
+    {
+      "start": 1049,
+      "length": 8,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "PyCon CZ",
+        "universalName": "pycon-cz",
+        "trackingId": "OuHzP8p7QJuwGqCBbv5LbQ==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:96200896",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHOklGyDI6P0g/company-logo_400_400/B4EZpTnC98KkAY-/0/1762339336466/pycon_cz_logo?e=1781136000&v=beta&t=uOUrW56BC-gxbGVtVb0f_sD-Hb2TrKD2pG9ViL3MTy8"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1756719798797,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7362890984927420417?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7362890984927420417%2C7368216878973894656%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287368216878973894656%2Curn%3Ali%3Aactivity%3A7362890984927420417%29",
+      "text": "ja uz bych to ani vedet nechtel :-D je daleko horsi konfigurovat vsechny ty systemy a obchazet jejich chyby nez stavet nove system a delat nove chyby 😅 ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Jan",
+        "lastName": "Gazda",
+        "occupation": "Learn, apply and share knowledge!",
+        "id": "252085087",
+        "publicId": "jangazda",
+        "trackingId": "WXdL5UaZRaSRXfDPhT9P4g==",
+        "profileId": "ACoAAA8Gg18BFmVgg-IXGx-bZKirzahGSvqZ_js",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQEr66wsXQ3vaw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517500649020?e=1781136000&v=beta&t=ftrY-r84KsnzblcernzTT18astC-Ol7ClDdBzYdRAQQ",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1755622810741,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7362890984927420417?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7362890984927420417%2C7363615777578459136%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287363615777578459136%2Curn%3Ali%3Aactivity%3A7362890984927420417%29",
+      "text": "Přednáška v plném proudu 😎 ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "tA/LfCQESs+9O4bFg8MWRw==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1755523817609,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7362890984927420417?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7362890984927420417%2C7363200570288939008%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287363200570288939008%2Curn%3Ali%3Aactivity%3A7362890984927420417%29",
+      "text": "Jsem to poplet! Vilibald W. už nějakou dobu pracuje v Pure Storage, ale už dřív u nás byl na přednáškách a v podcastu, takže jak jsem si kopíroval info z minula, zůstala mi tam jeho předešlá práce 🙈 Teď už je to správně!",
+      "entities": [
+        {
+          "start": 16,
+          "length": 11,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Vilibald",
+            "lastName": "W.",
+            "occupation": "Software Engineer",
+            "id": "119214723",
+            "publicId": "wvi",
+            "trackingId": "f0oh5b/YSZWdN2XS6MHebw==",
+            "profileId": "ACoAAAcbEoMBRsgrcYfzb2OvSrY6xg1KL-bz-2w"
+          }
+        },
+        {
+          "start": 54,
+          "length": 12,
+          "type": "COMPANY_NAME",
+          "company": {
+            "name": "Pure Storage",
+            "universalName": "purestorage",
+            "trackingId": "uerz8RPGQxe0BW8duT9nng==",
+            "active": true,
+            "showcase": false,
+            "entityUrn": "urn:li:fs_miniCompany:1632202",
+            "logoUrl": "https://media.licdn.com/dms/image/v2/D560BAQHY8dBMsvlbUw/company-logo_400_400/B56ZyKlQsMGoAY-/0/1771851549770/purestorage_logo?e=1781136000&v=beta&t=EkJI4XRlCrqSQtNYxFLiharth4o5mEVw2HqxbJUagQs"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "tA/LfCQESs+9O4bFg8MWRw==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1755460751114,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7362890984927420417?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7362890984927420417%2C7362936050240888832%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287362936050240888832%2Curn%3Ali%3Aactivity%3A7362890984927420417%29",
+      "text": "Bude i záznam? Bohužel v úterý nemůžu a téma mě zajímá byť už v DevOps sama jsem :D ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Dr. Alice",
+        "lastName": "Reznickova",
+        "occupation": "Cloud & DevOps Engineer | Former Physicist",
+        "id": "715244766",
+        "publicId": "alicerez",
+        "trackingId": "joApFZvSQGigZLIj4rom+g==",
+        "profileId": "ACoAACqhxN4BidLqSDiAhAFk-qaLAt_uKMIjE0k",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFcsnPyicuVpg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1732633942785?e=1781136000&v=beta&t=Eal-bDcU8QUDULsDaTSbwScPPaubCs3xqhMlReteowE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHfgOPzWd_8sQ/profile-displaybackgroundimage-shrink_350_1400/B4EZqs2NG5HoAY-/0/1763836482881?e=1781136000&v=beta&t=a8sDxshgVy8vXuGKv9Nl-iugOtGCzZHmVBPcMmu4gZw",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "trackingId": "vnwDase0RB6R9YAEQyB03A==",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGjycZdsqX9ww/profile-displayphoto-crop_800_800/B4DZjBYhBpGQAQ-/0/1755591087410?e=1781136000&v=beta&t=wVIgd5mwqIYPXpFj5d6Nr2x8-VHHyAZ4o1qWAcv4nhQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Novotny",
+        "occupation": "Senior application developer at FG Forrest",
+        "id": "14469633",
+        "publicId": "jannovotny",
+        "trackingId": "5QpnZtKgSDWsj5DOlbEXiQ==",
+        "profileId": "ACoAAADcygEBaDkdQEYrE-PQjpfc4WUy8Nsryn4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG_JibGR6YArQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1665662096989?e=1781136000&v=beta&t=KCbkxnZNzI7jbuRZCvjKJ2FOFyjoWRIeaUVt5Fm2-7w",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGv_4yy23Dnqg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1665662498759?e=1781136000&v=beta&t=36xI53b_xO-dSAOjc15kWVajlO_GahAQkPcPSfpAdYk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Tupec",
+        "occupation": "Zajímám se o vývoj softwaru | Java, Spring Boot, React | Hledám entry-level pozici",
+        "id": "1309666339",
+        "publicId": "petrtupec",
+        "trackingId": "NqeJQ48vQSWPO1xxbxQriQ==",
+        "profileId": "ACoAAE4P7CMBV0Sx29ndWUs9lf0npthmGIpd1dc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEqJquBbjz5OA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1714139108903?e=1781136000&v=beta&t=XwbgoSeR6jgENZrLgFPkFrmOYKAkBV4QzFIiV8KYW7s",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGZGWfDKtHw-w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1718221633651?e=1781136000&v=beta&t=wg7YMXV8Anst9a0SDK3M-a8bLhumJgE6ggSkfFRpdFg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Matějová",
+        "occupation": "...",
+        "id": "212362653",
+        "publicId": "lenka-matějová-0791535b",
+        "trackingId": "TyiO6OklRxSCIJ/whFwxyA==",
+        "profileId": "ACoAAAyoZZ0BOS1B_PZN1qbkv-R_Pd20LKcx4w4",
+        "picture": "https://media.licdn.com/dms/image/v2/C5103AQFOCy_BRleS6A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517430105432?e=1781136000&v=beta&t=cW-s_NvEb7Oa4gcUe92cWuJWFr1XXFBsLUAp2-ky2Do",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGskrvizzVniQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1666725183894?e=1781136000&v=beta&t=I9BuoGxX9wpAVVH75UYGdMoTfKUSsrdUB-iv5455Rvo"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Jiří",
+        "lastName": "Psotka",
+        "occupation": "Senior AI-first tech recruiter // Python meetup organiser// mentoring junior talent",
+        "id": "122809391",
+        "publicId": "jiripsotka",
+        "trackingId": "NncUj/PUQo+oZy2lFxduzg==",
+        "profileId": "ACoAAAdR7C8BbyccNUVvG6bQpjG82_Ou5lZBRO4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGW_GhhvqUUpA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1694077297719?e=1781136000&v=beta&t=bAPklj0uEUHetydy6ow0mF7NfGJR3utW4IlghbK264I",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQERsNhsApdjUw/profile-displaybackgroundimage-shrink_350_1400/B4DZujaaTWJ8AY-/0/1767973169340?e=1781136000&v=beta&t=vTvNbxgMP2VIb2dhWdYmIzQ07O20vU5ucAtYDYHE-TQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daniela",
+        "lastName": "Schalldach",
+        "occupation": "UX/UI & textile conservator",
+        "id": "721195540",
+        "publicId": "daniela-schalldach",
+        "trackingId": "EO8sWOGaQQq3O9YEhQOIUw==",
+        "profileId": "ACoAACr8khQB-Kl-ynem6Qm6MTZQLggjifY44g4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHyEJTUch1goA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1686937404872?e=1781136000&v=beta&t=NOswmZmzqx31---PVPjo-KGxHQ3jGIVqBngxIunL-F8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Juraj",
+        "lastName": "Michálek",
+        "occupation": "Senior solution architect in Grafana labs | Otel contributor | Observability",
+        "id": "768592104",
+        "publicId": "jurajmichalek",
+        "trackingId": "UQnu8ZzzSwuqFAfMdEH00g==",
+        "profileId": "ACoAAC3PyOgBb4HFM5lyN5iAQL5sb1cUPQKrBzY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGrfTDMzvIDZw/profile-displayphoto-shrink_800_800/B4DZU4SgmAG8Ac-/0/1740406131431?e=1781136000&v=beta&t=WgS4YyfEXB1t3Uw6IlRBoc57tzdkSOd3MHwJsCJpk3M",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGOL_nfGL5Skw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1573900341816?e=1781136000&v=beta&t=TxOv7jt7pubotbIc9fgYfGqGoH6jK17tA2PQyrL6RGY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Josef",
+        "lastName": "Ďuriš",
+        "occupation": "Embedded Systems Engineer | From Advanced System Analysis to Low-Level Development | C/C++ | Linux | HW/SW Integration",
+        "id": "304898445",
+        "publicId": "josef-ďuriš-a3913986",
+        "trackingId": "S7UCqU8LRdaFhyZNpYx6cg==",
+        "profileId": "ACoAABIsYY0ByKzpglEMZ3CjzvZoYSp9yKeTxvs",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQFRK5jTNezExA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1706686783773?e=1780430400&v=beta&t=tomsj7bRlAfdNSOt5qtba3KUT8l2wBnMoEpNNa-kGkw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Dobiáš",
+        "occupation": "Software Developer | Infra & Security Enthusiast",
+        "id": "255572425",
+        "publicId": "dobiasjakub",
+        "trackingId": "ynzPUsccRPK16JRikGlKzQ==",
+        "profileId": "ACoAAA87uckBQGY9sz-xKsydQH-Yyg21IokWUCI",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEnpuc8TZDELg/profile-displayphoto-crop_800_800/B4DZ4nJuoIIMAI-/0/1778773325347?e=1781136000&v=beta&t=Zu4HmWm23OqZEjslPeqZ3HnCfcxYL1BifaJP1BWaxW0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Radka",
+        "lastName": "Filipová",
+        "occupation": "Web • React • Graphic Design • Vibecode • Shoptet",
+        "id": "280828944",
+        "publicId": "radka-filipova",
+        "trackingId": "pInMmXJJTR28L45sYzvMlQ==",
+        "profileId": "ACoAABC9HBABpeuqbNvS8hsjDqpatuNnUChhn3s",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFv6St6EphXWg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1634928492460?e=1781136000&v=beta&t=3B6qAuCDm4mR2xEsP6cwkX8cCapYfRGtEebf_LAWv-c"
+      }
+    }
+  ],
+  "numShares": 4,
+  "numLikes": 24,
+  "numComments": 5,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "tA/LfCQESs+9O4bFg8MWRw==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1755450006706,
+  "postedAtISO": "2025-08-17T17:00:06.706Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

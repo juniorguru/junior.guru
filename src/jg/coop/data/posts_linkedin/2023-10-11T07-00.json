@@ -1,0 +1,363 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "type": "article",
+    "article": {
+      "type": "EXTERNAL_FULL",
+      "urn": "urn:li:article:7756762319338092488",
+      "url": "https://youtu.be/FIijszEVQHY",
+      "title": "Nela Slezáková: Jak se jako ajťák/čka zbavit pochyb a pocitu, že nejsem dost (záznam pro veřejnost)"
+    },
+    "isActivity": false,
+    "urn": "urn:li:activity:7079549929072779264",
+    "url": "https://www.linkedin.com/posts/nela-slezakova_nela-slez%C3%A1kov%C3%A1-jak-se-jako-aj%C5%A5%C3%A1k%C4%8Dka-zbavit-activity-7079549929072779264-vFrD?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFgzka0BiNONQEez3CYZvIxpM_Au6YEO6r0",
+    "timeSincePosted": "2yr",
+    "shareUrn": "urn:li:share:7079549928351391744",
+    "text": "Co nejvíc narušuje psychickou pohodu juniorů v IT? A co se s tím dá dělat? 😱 Minulý týden jsem měla přednášku, kterou můžete nyní zkouknout i ze záznamu 😉\n\nDozvíte se:\n✔ jak prožívají junioři svoji cestu do IT a první roky v zaměstnání\n✔ odkud pramení nejistota a pochybností v IT\n✔ 11 tipů jak tyhle pocity zvládat",
+    "attributes": [],
+    "comments": [
+      {
+        "time": 1688078992087,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7079549929072779264?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7079549929072779264%2C7080316468826886144%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287080316468826886144%2Curn%3Ali%3Aactivity%3A7079549929072779264%29",
+        "text": "Hádám že JIRA správná odpověď nebyla😁 Ale vážně, tohle je důležité téma, musím dohnat a podívat se na záznam...",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Pavel",
+          "lastName": "Polcr",
+          "occupation": "Software Engineer | Storyteller | LinkedIn Enthusiast and Mentor | I help other techies build a personal brand on LinkedIn | Fuelling growth of software engineers through Software Engineering Tales Podcast",
+          "id": "266067406",
+          "publicId": "pavel-polcr",
+          "trackingId": "yI03PBgJT8i8RerwdRvFvg==",
+          "profileId": "ACoAAA_b3c4BTAcvcf2VyIBHi_X2WWOWGNyt1ZI",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEu9ha6Y8Sixg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1669321063367?e=1781136000&v=beta&t=raEuoKrOSY-Tk_kZywRCzdqirDaq1Gn2VevDmPGUjF4",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFw1u4Fq3Nd8w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1729078028424?e=1781136000&v=beta&t=5tSeGbCLtj6zBZL9AjSaNC8kr84Qqb_0LxXwU47LgOk",
+          "distance": "OUT_OF_NETWORK"
+        }
+      }
+    ],
+    "reactions": [
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Inna",
+          "lastName": "Červenková",
+          "occupation": "Frontend Developer (React/Angular | TS/JS)🔹 Webmaster (Webflow) 🔹 Exploring AI assistants",
+          "id": "1126475613",
+          "publicId": "inna-cervenkova",
+          "trackingId": "bRsifAExRBGl78Z6rJXbTA==",
+          "profileId": "ACoAAEMkp10BNLeB-A4Pe0XmpGme-TLi62C3yiY",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D35AQEH61egNVLMBA/profile-framedphoto-shrink_800_800/B4DZ257TVYJAAg-/0/1776940824185?e=1780430400&v=beta&t=00jfc8vzqwiaXzYNWa5Hl4uKVK-se9x64Ifux6VrZRU"
+        }
+      },
+      {
+        "type": "PRAISE",
+        "profile": {
+          "firstName": "Jitka",
+          "lastName": "Kitner",
+          "occupation": "🖋️#Copywriterka z Brna. Brousím texty v diamanty. Nejen na webech",
+          "id": "330368769",
+          "publicId": "jitkakitner-copywriterka-z-brna",
+          "trackingId": "FM9H4NILSDOGyMIiyhDDUQ==",
+          "profileId": "ACoAABOxBwEBqlcJy2F67iYDCBAn7qscZRUurw0",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQF57yzYtv6qDg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1586518380626?e=1781136000&v=beta&t=1hgDHQEYlI2Xqde5MXsSUUg_d1hyDuvIfUMHAZElJwI"
+        }
+      },
+      {
+        "type": "EMPATHY",
+        "profile": {
+          "firstName": "Nathalie",
+          "lastName": "Vecten",
+          "occupation": "\"It is a capital mistake to theorize before one has data.\" *cleaned data",
+          "id": "775508820",
+          "publicId": "nathalie-vecten",
+          "trackingId": "TuiDCHQ4RpeDlZ4qp5Stqw==",
+          "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM",
+          "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH5sSEbnQ2Tcg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1611936430673?e=1781136000&v=beta&t=wAQsj8dSBDe6L3xt1MwxMahW3aP-D6LcuvT-utzij6s",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHDKxhi18V0lw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1599638080880?e=1781136000&v=beta&t=5JiWefMiJff9VXnKXxoAOOrnUYNFE4fW7AQAgJac6VA"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Petr",
+          "lastName": "Huták",
+          "occupation": "Agile coach & Scrum Master @ Direct Technologies",
+          "id": "190152416",
+          "publicId": "petr-hutak",
+          "trackingId": "5AU419bZTQSpbI80lKj4pg==",
+          "profileId": "ACoAAAtVfuAB9cftPKPcGAGDSk41SY0524-p_JA",
+          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQG6BU5pKmphZQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1660566015535?e=1781136000&v=beta&t=alSfvoDIfwHcg_2XIzfNPueV5N-fz9hHLuPqT0fYiXw",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQESgj_EWGsIQQ/profile-displaybackgroundimage-shrink_350_1400/B4EZf56WPSGwAY-/0/1752244512295?e=1781136000&v=beta&t=2DgMbWvYLb8U7n_UwDYlpvMSsD0D6fmmm2siW19I-o0"
+        }
+      },
+      {
+        "type": "EMPATHY",
+        "profile": {
+          "firstName": "Šarlota",
+          "lastName": "Urbanová",
+          "occupation": "Kdo opravdu chce něčeho dosáhnout, ten může.",
+          "id": "499408714",
+          "publicId": "šarlota-urbanová-80a30111b",
+          "trackingId": "B1rtbxppQoyNWTR7tHSMDA==",
+          "profileId": "ACoAAB3EX0oBwTiY_w2N7kuMBnh3qR96HKzMBzs",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D35AQEMHdunyZfh4w/profile-framedphoto-shrink_800_800/B4DZ0CSQY3KgAg-/0/1773859833679?e=1780430400&v=beta&t=WHtevB2JlL5Vc1ziWqF2l16hkXK1AKzcsOEHP8L-GX0",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGv20UI7qBmdA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1685974442310?e=1781136000&v=beta&t=QROk7UxrjudIYuioJGsAd0t59h5eONbnVqANeS9hOo8"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Filip",
+          "lastName": "Průdek",
+          "occupation": "Nefunguje mi to → Super, už to jede | Feed specialista & Customer Success @Mergado",
+          "id": "904009499",
+          "publicId": "filip-prudek",
+          "trackingId": "J3enkhIUQd6oEife+yfE1Q==",
+          "profileId": "ACoAADXiFxsBDrfvLqXfc46dYlgCQklCaExwUMY",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFupO9P-a5bFw/profile-displayphoto-crop_800_800/B4DZ5JiGdVJYAM-/0/1779350139114?e=1781136000&v=beta&t=Iw5Hw9pEtYfXe0-wPQXIOnKKUFZqdaHEFcw06ySiAyI",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFct0esxDP2iw/profile-displaybackgroundimage-shrink_350_1400/B4DZ5JhtJBKAAU-/0/1779350033262?e=1781136000&v=beta&t=JkmSvMYWwXWWoFjbhRDQTIId6IpLExcH82QOIBlmb28"
+        }
+      },
+      {
+        "type": "PRAISE",
+        "profile": {
+          "firstName": "Pavel",
+          "lastName": "Polcr",
+          "occupation": "Software Engineer | Storyteller | LinkedIn Enthusiast and Mentor | I help other techies build a personal brand on LinkedIn | Fuelling growth of software engineers through Software Engineering Tales Podcast",
+          "id": "266067406",
+          "publicId": "pavel-polcr",
+          "trackingId": "MHVu3T35QLSEGOQqNWsFog==",
+          "profileId": "ACoAAA_b3c4BTAcvcf2VyIBHi_X2WWOWGNyt1ZI",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEu9ha6Y8Sixg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1669321063367?e=1781136000&v=beta&t=raEuoKrOSY-Tk_kZywRCzdqirDaq1Gn2VevDmPGUjF4",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFw1u4Fq3Nd8w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1729078028424?e=1781136000&v=beta&t=5tSeGbCLtj6zBZL9AjSaNC8kr84Qqb_0LxXwU47LgOk"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Daniel",
+          "lastName": "Srb",
+          "occupation": "Helping people to become junior frontend developers",
+          "id": "15446232",
+          "publicId": "danielsrb",
+          "trackingId": "ZFEDMXKURcids01vfg6opQ==",
+          "profileId": "ACoAAADrsNgBFfAixAgw_mCw8WtR9SeNIvEEI8Q",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFL6A1muu1_iQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1664815242443?e=1781136000&v=beta&t=gZsiQuDXYR8uuO_-68JdcJFp1nRVo6I7-iaOUDh1GRk",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEojxUy1Cz5oQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1623442956553?e=1781136000&v=beta&t=hWIAatMfNTIgw4JUStqCUqVs88aKCIf5jtDxqtS-BHg"
+        }
+      },
+      {
+        "type": "EMPATHY",
+        "profile": {
+          "firstName": "Kamila",
+          "lastName": "Semotánová",
+          "occupation": "Frontend Developer (ReactJS, TypeScript)",
+          "id": "849426886",
+          "publicId": "kamila-semotánová",
+          "trackingId": "/rnqCHrAT/Wijy2J36hc7g==",
+          "profileId": "ACoAADKhOcYBoBf8tPMPuhRc6j0dGUOOWRpXbBY",
+          "picture": "https://media.licdn.com/dms/image/v2/D5603AQETcomdgoHOMA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1705441715810?e=1781136000&v=beta&t=vx_B90leTLdrBuuKMjrHJlvx5G6siItQA-zkb_C26W8",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQFe8QFQtoTC_g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1699568747460?e=1781136000&v=beta&t=CYplZKp2Dx27ViUYnnxmdLOzIKbi9XORtGbV6QaavRs"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Susanne",
+          "lastName": "Krkoška",
+          "occupation": "Junior Frontend Developer (ReactJS)",
+          "id": "1072687805",
+          "publicId": "susanne-krkoska",
+          "trackingId": "NofQ9uXES9yd3jBH4pMRDw==",
+          "profileId": "ACoAAD_v6r0Btr8Z051mzvKyrr5wCqhvybWd7kI",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E35AQH1_DfKIoXvvA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1686954926620?e=1780430400&v=beta&t=mWUefM7h9HBlkm3O96Efv_WBjGOjl0K66pigAAjzu-s"
+        }
+      }
+    ],
+    "numShares": 2,
+    "numLikes": 22,
+    "numComments": 2,
+    "canReact": true,
+    "canPostComments": true,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "ALL",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "firstName": "Nela",
+      "lastName": "Slezáková",
+      "occupation": "Psycholožka & programátorka",
+      "id": "480212921",
+      "publicId": "nela-slezakova",
+      "trackingId": "jy3xxk3oQW+rdILi0SUasw==",
+      "profileId": "ACoAAByfd7kBTrRNPdPbFJVO_tDUL0T4wKurjsE",
+      "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGHIISb698PEw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1682691059414?e=1781136000&v=beta&t=9cFsIaEIvL-qcKCcsBGJU4Fk7gT41mOPNDgRDzTJjuo",
+      "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQENHWJuh8GvxA/profile-displaybackgroundimage-shrink_350_1400/B4DZXs0pSvG4Ac-/0/1743434981675?e=1781136000&v=beta&t=VjhVIEGV-wcRsv244fTjhWO4grFCQyW4XgWgVLH-KRY"
+    },
+    "authorProfileId": "nela-slezakova",
+    "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4E03AQGHIISb698PEw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1682691059414?e=1781136000&v=beta&t=9cFsIaEIvL-qcKCcsBGJU4Fk7gT41mOPNDgRDzTJjuo",
+    "authorType": "Person",
+    "authorName": "Nela Slezáková",
+    "authorProfileUrl": "https://www.linkedin.com/in/nela-slezakova?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAByfd7kBTrRNPdPbFJVO_tDUL0T4wKurjsE",
+    "authorUrn": "urn:li:member:480212921",
+    "postedAtTimestamp": 1687896234768,
+    "postedAtISO": "2023-06-27T20:03:54.768Z"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7117765789054590976",
+  "url": "https://www.linkedin.com/posts/honzajavorek_nela-slez%C3%A1kov%C3%A1-jak-se-jako-aj%C5%A5%C3%A1k%C4%8Dka-zbavit-activity-7117765789054590976-8yHs?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFgzka0BiNONQEez3CYZvIxpM_Au6YEO6r0",
+  "timeSincePosted": "2yr",
+  "shareUrn": "urn:li:share:7116058041325641728",
+  "text": "Nedávno jsme s Nela Slezáková dělali dotazník (nejen) mezi juniory a zkoumali jsme, co nejvíc narušuje jejich psychickou pohodu 💆‍♀️\n\nVýsledky v podobě nějaké infografiky nebo grafů zatím nemáme, ale máme přednášku! Nela se pokusila hrubým vyhodnocením dotazníku zjistit, co IT juniory trápí nejčastěji, a připravila návod, co s tím jde dělat.\n\nJak prožívají junioři svou cestu do IT a první roky v zaměstnání? Odkud pramení nejistota a pochybnosti v IT? Jak tyhle pocity zvládat?\n\nPřednáška se odehrála pro členy klubu junior.guru/club, ale záznam jsme dali výjimečně k dispozici veřejně.",
+  "attributes": [
+    {
+      "start": 15,
+      "length": 14,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Nela",
+        "lastName": "Slezáková",
+        "occupation": "Psycholožka & programátorka",
+        "id": "480212921",
+        "publicId": "nela-slezakova",
+        "trackingId": "RZigy7HNRd61sFU9RD8TpQ==",
+        "profileId": "ACoAAByfd7kBTrRNPdPbFJVO_tDUL0T4wKurjsE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGHIISb698PEw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1682691059414?e=1781136000&v=beta&t=9cFsIaEIvL-qcKCcsBGJU4Fk7gT41mOPNDgRDzTJjuo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQENHWJuh8GvxA/profile-displaybackgroundimage-shrink_350_1400/B4DZXs0pSvG4Ac-/0/1743434981675?e=1781136000&v=beta&t=VjhVIEGV-wcRsv244fTjhWO4grFCQyW4XgWgVLH-KRY"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Eva",
+        "lastName": "Janoskova",
+        "occupation": "IT enthusiast interested in JavaScript (React)",
+        "id": "496938341",
+        "publicId": "eva-janoskova",
+        "trackingId": "nK4haq0sQ2WeHettGf67Mg==",
+        "profileId": "ACoAAB2erWUBZf39xOIL66v5tzt1X9aQkMyoLyE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGd11e3Vuj_5g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1632302153265?e=1781136000&v=beta&t=lQdCsYUmMOJQ3pEVa9xM9FHhNC8p0oc0AMOstQJ9wvc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Kamila",
+        "lastName": "M.",
+        "occupation": "Kotlin Developer",
+        "id": "1037499442",
+        "publicId": "kamila-machova",
+        "trackingId": "hD9q6EdZTjuI+Hv753mQDg==",
+        "profileId": "ACoAAD3W_DIB5C7b4550JcY6lynjZWoFenqPu28",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHcuZwJmuxFCg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1664433039809?e=1781136000&v=beta&t=soBIv3QKEzH_0kCWv6TlUz5A-pGtuYpwIomqj4mjalo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHd_tAtiyCG2Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1664293799420?e=1781136000&v=beta&t=ytZ1n4SgpD-YG1j0GQ2M4nt4-ZBhn9_0HcsGJ116mdw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Zuzana",
+        "lastName": "Gamba",
+        "occupation": "Development Chemist | Cosmetics",
+        "id": "930325345",
+        "publicId": "krizova-zuzana",
+        "trackingId": "4CmnZUBZQqKRSKUF12tt1w==",
+        "profileId": "ACoAADdzo2EB4HLocqe52Anr9U1rxmoWPV7ppTc",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQHhznfHbvWszQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1630320869123?e=1781136000&v=beta&t=cvY-3CAshuzMPGKhC2-wa5g7C5y--hQuprKtRV2MJqs",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQH1C9grCpqVzA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1668157669090?e=1781136000&v=beta&t=CAlri5qVGqGrZTTbnolkWg2agbirqF2jVoAr7Pex0C4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Markéta",
+        "lastName": "Polakovič",
+        "occupation": "Veterinární sestra ve společnosti Mika s.r.o",
+        "id": "1155968928",
+        "publicId": "markéta-polakovič-60016b283",
+        "trackingId": "z0GucRw/RP+oA7edqql+Rg==",
+        "profileId": "ACoAAETmr6ABB4eOcNhnMbbguezzPGT0J1iMdTs",
+        "picture": "https://media.licdn.com/dms/image/v2/D5635AQFNzBd1sSvQgA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1690662627029?e=1780430400&v=beta&t=HZJV0dM2OjN3zK0BsaajkVVge0ihB3tNgs4I90u-4g8",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEfo1ADaYinUw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1689105662775?e=1781136000&v=beta&t=ufGOBvreZm-DmL6aCvskjLR-hHUbvDrWFo3Seu2KKOQ"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Nela",
+        "lastName": "Slezáková",
+        "occupation": "Psycholožka & programátorka",
+        "id": "480212921",
+        "publicId": "nela-slezakova",
+        "trackingId": "RZigy7HNRd61sFU9RD8TpQ==",
+        "profileId": "ACoAAByfd7kBTrRNPdPbFJVO_tDUL0T4wKurjsE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGHIISb698PEw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1682691059414?e=1781136000&v=beta&t=9cFsIaEIvL-qcKCcsBGJU4Fk7gT41mOPNDgRDzTJjuo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQENHWJuh8GvxA/profile-displaybackgroundimage-shrink_350_1400/B4DZXs0pSvG4Ac-/0/1743434981675?e=1781136000&v=beta&t=VjhVIEGV-wcRsv244fTjhWO4grFCQyW4XgWgVLH-KRY"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Blanka",
+        "lastName": "Semanová",
+        "occupation": "Frontend Developer - React and Next",
+        "id": "740316381",
+        "publicId": "blanka-semanová",
+        "trackingId": "tLR0rs2GRpO2VJDrOMbKsQ==",
+        "profileId": "ACoAACwgVN0BXjPO356is1a7HECdYY6oGuzTouY",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQHt31UB9Dnr_g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1705586552175?e=1781136000&v=beta&t=VnaoT0wlgyuQQGLJMI1wvCsS4oGHAmClyqm-JikLvgE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGmd9O2TBL9PA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1705586497192?e=1781136000&v=beta&t=JlZHwSEMta7stFHe1LeFKFVGgbpKpeFbQUUDebs_rnc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lucie",
+        "lastName": "Fridrichová",
+        "occupation": "školím, jak využít ServiceDesk naplno | testování a návody pro každého | UX a grafik amatér | multižánrová duše v IT firmě | tipy na práci s počitačem | #luckytipy",
+        "id": "715793470",
+        "publicId": "lucie-fridrichova",
+        "trackingId": "RgjK9cH2SH67bYfEdNUMwA==",
+        "profileId": "ACoAACqqJD4BsaiP44ztSnrO4cpCmQQIygFHscY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEFH_hMt8HJXA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1732979720076?e=1781136000&v=beta&t=4bVWriI-8N5FkDxtQsLzqOGo1OiLAlrJkGdLFl94zIs",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFnprpAyyLJ8g/profile-displaybackgroundimage-shrink_350_1400/B4EZYVOymJHcAc-/0/1744112921602?e=1781136000&v=beta&t=rAmFU2_6Eo8YctZfYYWcp04u4WkZuHw6DDKaGPsXrkw"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 7,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "a67iGzN0RnWqzbImm7BkOA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1697007605804,
+  "postedAtISO": "2023-10-11T07:00:05.804Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

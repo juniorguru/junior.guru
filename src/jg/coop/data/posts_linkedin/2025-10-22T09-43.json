@@ -1,0 +1,258 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:7160856817099453769",
+    "url": "http://www.podvocasem.cz/live",
+    "title": "PodVocasem LIVE!!!"
+  },
+  "isActivity": true,
+  "activityDescription": "Honza Javorek reposted this",
+  "activityOfUser": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "oPSAUbhCRcqBGA+4N5CDhw==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "urn": "urn:li:activity:7386698789245460480",
+  "url": "https://www.linkedin.com/posts/kate%C5%99ina-charv%C3%A1tov%C3%A1_podvocasem-live-activity-7386666118762934274-7sVx?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAABfSxfABLibPg5uCR2Pw5qM0SDQ4aKbyuTg",
+  "timeSincePosted": "7mo",
+  "shareUrn": "urn:li:share:7386666117785882624",
+  "text": "🎙️ Building a Platform That Helps 60 Teams Work Better — Live Tonight!\n\nTonight at 6 PM, I’ll be joining Petr Polak and Roman Provazník on PodVocasem LIVE to talk about what it takes to build a process and application platform in a large organization, how to improve the work of 60 teams at once, and about DevOps and software development along the way.\n\nYou’ll also hear from Michal Benatsky and Honza Javorek, who will bring fresh perspectives on junior developers, Python, AI, and even game engines — so there’s plenty to look forward to!\n\n📌Join us in person at Bistro-B (Budějovická)\n👉 Register here: www.podvocasem.cz/live",
+  "attributes": [
+    {
+      "start": 105,
+      "length": 10,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Polak",
+        "occupation": "Data enthusiast | Podcaster | Data Leader | Česká Spořitelna | PodVocasem | IT Talks Moderator",
+        "id": "171978419",
+        "publicId": "87petrpolak",
+        "trackingId": "bM1Jz3wDQT+JWlq90Sn1zg==",
+        "profileId": "ACoAAApALrMBTyZXvJhHW-FoCFHKJ-Zo7SioOh0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFuigZ7miExrA/profile-displayphoto-crop_800_800/B4DZ5LVhPyHAAI-/0/1779380393639?e=1781136000&v=beta&t=lMN84ln4iws8ysm8uGMbgKia2yBB-DvTdwKKJ01GMg0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFq3W_AjqhDJg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1734679806160?e=1781136000&v=beta&t=3p9fkcD_cV3js--bdJ9RJrwQodlLlRs1deYdaeRxpbc"
+      }
+    },
+    {
+      "start": 120,
+      "length": 15,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Roman",
+        "lastName": "Provazník",
+        "occupation": "Head of Product Engineering at Garwan",
+        "id": "26676625",
+        "publicId": "dzoukr",
+        "trackingId": "8VwWr7amT0C4wceOfuo+tw==",
+        "profileId": "ACoAAAGXDZEB5ZOLeSukQpiq3ebQu1cAK6aXqbc",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHa3WOjPfv7Jw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1648116147250?e=1781136000&v=beta&t=cFLcE236I29jaKQniqD5y18M7T2Mkk7LsOwI0XVJtf8",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEd4_IqOM06Ew/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1697188846796?e=1781136000&v=beta&t=ccaOM3PxHw63GP6wqPlISm-TR3L2S31VJCFWJD9xZDc"
+      }
+    },
+    {
+      "start": 377,
+      "length": 15,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Michal",
+        "lastName": "Benatsky",
+        "occupation": "Principal Software Engineer | Graphics & Engine at Roblox",
+        "id": "70380079",
+        "publicId": "michalbenatsky",
+        "trackingId": "ee3s66m4Rui0Xl+6Y1XQQg==",
+        "profileId": "ACoAAAQx6i8BWAmHS0LBhJHSZH5XMB9SLr-NKxM",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHKJ6PqTwLEQw/profile-displayphoto-crop_800_800/B4EZlssVZCKgAI-/0/1758465186987?e=1781136000&v=beta&t=umKZubv9Rl7D-okH-OV9TaX5RzkbydS7Z25KQWgXLgw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEXeV8P00r6Dg/profile-displaybackgroundimage-shrink_350_1400/B4EZWY3dv3HgAY-/0/1742026439462?e=1781136000&v=beta&t=fwU3dQOW-t-m9HW9l1AuvAT-6KJ4UwB2vlKQCs91RbQ"
+      }
+    },
+    {
+      "start": 397,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "1snWRj7YToumPgXVhbMExA==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martina",
+        "lastName": "Hanovská",
+        "occupation": "Product owner ve společnosti Česká spořitelna",
+        "id": "649180903",
+        "publicId": "martina-hanovská-4874ab161",
+        "trackingId": "KDZ0e26ORICLqXL1vYFaGA==",
+        "profileId": "ACoAACaxtucB_HW6Xdsf2VGJDSp6vJMECkQ79nA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHWma-6CHIxHQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1523624611846?e=1781136000&v=beta&t=3r7dPfc1b-QJ4UA5i6Bw134EQjjcnEIiSsUu5XQdppY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Fialka",
+        "occupation": "Web developer at eppTec",
+        "id": "356881905",
+        "publicId": "martin-fialka-a696289b",
+        "trackingId": "3opgjy8CQgOIB2VEUK4ukw==",
+        "profileId": "ACoAABVFlfEBVtqZ1Lcf1SPkFvYP9Kk-zB8kklE",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHOXfRXIXZN7A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582724462272?e=1781136000&v=beta&t=l67LZNjmljCEhGsAU-38dyY1Se5GSkNTCwLPa5TNSII"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Podestát",
+        "occupation": "Attended Prague University of Economics and Business",
+        "id": "1022236544",
+        "publicId": "jan-podestát-0a8418246",
+        "trackingId": "Wbygrp+nR5WeRUq1aEuPBA==",
+        "profileId": "ACoAADzuF4ABR3k-R0u93tiDoe8yE_7mlq_wRYY",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQGOJyFuKnyC_A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1668491698662?e=1781136000&v=beta&t=trWcRgcGy7n7LU2bocln1TfshsTOPmRmqnhz-dIQdKM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daniel",
+        "lastName": "Rada",
+        "occupation": "Software Engineer @ Česká Spořitelna",
+        "id": "225059961",
+        "publicId": "daniel-rada-04945763",
+        "trackingId": "aaLv47T5RRatC28/v5S0Xw==",
+        "profileId": "ACoAAA1qJHkBDB50Hn2Kw7ef9py_aRsGGd1gZF8",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEM8WsjexpreQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1518188580315?e=1781136000&v=beta&t=9tfdIKHjweC616dMlceOS0TBwX6yGs0HRQiUP31QLLI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Dinh",
+        "occupation": "🧋",
+        "id": "93710529",
+        "publicId": "tomasdinh",
+        "trackingId": "+1sJ+oa9QCCtDCp993yiTQ==",
+        "profileId": "ACoAAAWV6MEBhDedvZT9lRhWi3Woz4OTpEvJ8r0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHATUp0V3TeQg/profile-displayphoto-shrink_800_800/B4EZZI61YjHUAc-/0/1744980105262?e=1781136000&v=beta&t=CknHS-CDM0W4oZbWJd0sjgVJ_br22jnnvCceRSUIMhI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGa7Pk0FpowPA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517451972817?e=1781136000&v=beta&t=PCOu9N2SEJzayucz68X9KrJ1GjGrmYPlrIloNOzZN7I"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Labík",
+        "occupation": "Product owner",
+        "id": "156589680",
+        "publicId": "jan-labik-04053744",
+        "trackingId": "kYo1EIVGR5eR7P0S6DDlaw==",
+        "profileId": "ACoAAAlVXnABsAWnTkuhn38Yl728p0RL7QfYF_U",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQEskbiUhqTRHA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517365824931?e=1781136000&v=beta&t=YQ58EGA-TmnWr43blYjzEGoCtxYGfS_OdMLVUX5Qs9A"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiří",
+        "lastName": "Teplický",
+        "occupation": "Tech. team lead",
+        "id": "711790942",
+        "publicId": "jiří-teplický-07a46417a",
+        "trackingId": "oXiRtkT4RPanuCBZCuzvDw==",
+        "profileId": "ACoAACptEV4BmKhDCBvoofqhW1ojBWFAVHTRIQI",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFamgdrJDLBnQ/profile-displayphoto-crop_800_800/B4EZmW.wz3IwAM-/0/1759174661451?e=1781136000&v=beta&t=j7QaIq_yfxk8JIUaCuu7Gl_TVBc1nVGs2qmJfhtDU1g"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Prokop",
+        "lastName": "Simek",
+        "occupation": "Enterprise AI | AI adoption | Engineering | Business Process Automation | CEO @ DX Heroes | Applifting Group",
+        "id": "304858610",
+        "publicId": "prokopsimek",
+        "trackingId": "XQu+4uILTUiVLSo2Qd4U3A==",
+        "profileId": "ACoAABIrxfIBEZNPfaut-ISXdI4rj-uwVrBICfM",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFQp1Ors3yt8g/profile-displayphoto-shrink_800_800/B4EZRAH5qTHsAc-/0/1736242601117?e=1781136000&v=beta&t=UNkFXrK5B8spUDGktd7g9PkXp8NOVE5lPyc6o9tk9yU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGkRMC3ygKCYQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1726556415464?e=1781136000&v=beta&t=NNz9GaK1YEZIo_s-bdVweXfk6rDJP0Keiu1YCFB7lfA"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Anna",
+        "lastName": "Čačková",
+        "occupation": "IT/Business Analyst (freelancer)",
+        "id": "533455713",
+        "publicId": "anna-čačková-9697a012a",
+        "trackingId": "VaTDdHvCSBWPcDuzxmmHZg==",
+        "profileId": "ACoAAB_L42EB-q4vG8jaqFG5ggfPG5SSadNHUsw",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQHd-57QG5D7hA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517280034666?e=1781136000&v=beta&t=KeWFrAcpGV7NF79d9sm_AFnKEc30Ra4CTMVPbBRG6AQ"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Jozef",
+        "lastName": "Hanek",
+        "occupation": "DevOps Service Owner at Česká spořitelna",
+        "id": "821604495",
+        "publicId": "jozef-hanek-6931a11ab",
+        "trackingId": "2ONFFSWwSCunwqrWaM959g==",
+        "profileId": "ACoAADD4sI8BF3nRU1q5FrtMXdB3ojyVz80MZWE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFWgG8qIC8ksA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1713629977220?e=1781136000&v=beta&t=GBFibOMNlJnZZGxCTPGli1DbV1XYt2IiqFrXUeeZMK4"
+      }
+    }
+  ],
+  "numShares": 2,
+  "numLikes": 24,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Kateřina",
+    "lastName": "Charvátová",
+    "occupation": "Platform Engineering Lead | Software Architect | Building an internal platform for Česká spořitelna from scratch",
+    "id": "429944381",
+    "publicId": "kateřina-charvátová",
+    "trackingId": "nRvQH8fTQuGXt89bpn6nCg==",
+    "profileId": "ACoAABmgbj0By26PuPYOsRoIDGMXlopMepEPMvM",
+    "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEgasMRXXpzHA/profile-displayphoto-crop_800_800/B4EZgX9X1NGUAI-/0/1752748621646?e=1781136000&v=beta&t=uFeBhkGckzjALWSlA8kZdKpI1Da8nX8s7zUYog9ql1Q",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGm4dQzjd4WZw/profile-displaybackgroundimage-shrink_350_1400/B4DZeCRK8vGYAc-/0/1750237229920?e=1781136000&v=beta&t=MYnm8qS5IBbTua5f1joiYJWdcQbuEvB-FzJmwwjDzxA"
+  },
+  "authorProfileId": "kateřina-charvátová",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4E03AQEgasMRXXpzHA/profile-displayphoto-crop_800_800/B4EZgX9X1NGUAI-/0/1752748621646?e=1781136000&v=beta&t=uFeBhkGckzjALWSlA8kZdKpI1Da8nX8s7zUYog9ql1Q",
+  "authorType": "Person",
+  "authorName": "Kateřina Charvátová",
+  "authorProfileUrl": "https://www.linkedin.com/in/kate%C5%99ina-charv%C3%A1tov%C3%A1?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAABmgbj0By26PuPYOsRoIDGMXlopMepEPMvM",
+  "authorUrn": "urn:li:member:429944381",
+  "postedAtTimestamp": 1761126229583,
+  "postedAtISO": "2025-10-22T09:43:49.583Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

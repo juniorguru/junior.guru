@@ -11,13 +11,13 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "trackingId": "JArHU/SBSwSFb6fWeG3a7Q==",
+    "trackingId": "cn/xk2ygTj62dA8DW1PerQ==",
     "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
     "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
     "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
   },
   "urn": "urn:li:activity:7450143835697061888",
-  "url": "https://www.linkedin.com/posts/ondrejvlcek_breaking-on-the-back-of-our-jagged-frontier-activity-7449846611876405248-wbrR?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAACsCPOIBnXpLOpII5iWkM_r6vhhwgyoT3aM",
+  "url": "https://www.linkedin.com/posts/ondrejvlcek_breaking-on-the-back-of-our-jagged-frontier-activity-7449846611876405248-wbrR?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAABdgyzYBWbhfVlO7iuAaaC503ZxbB2BG6yI",
   "timeSincePosted": "1mo",
   "shareUrn": "urn:li:share:7449846609171111936",
   "text": "🔥 BREAKING: On the back of our \"Jagged Frontier\" blog post last week, we built \"nano-analyzer\" - a simple zero-day scanner (one Python file, one dependency, no agentic loop beyond simple grep) - and ran it on FreeBSD, OpenBSD, and OpenSSL, with some of the cheapest models available. \n\nThis time, no hints - the models received entire source files with no guidance on where to look. \n\nIt surfaced the same FreeBSD vulnerability (CVE-2026-4747) that Anthropic highlighted as a flagship Mythos result, multiple kernel bug candidates across FreeBSD and OpenBSD including a new bug now confirmed by the maintainer, and several additional findings under active investigation. A responsibly disclosed FreeBSD networking issue (AISLE-2026-E445) appears to have been in the codebase for over 20 years. \n\nPerhaps most striking: an open-weights model with just 5.1B active parameters independently surfaced the Mythos flagship vulnerability and multiple additional bug candidates - at 600x lower cost per token. \n\n💥 We're open-sourcing the entire analyzer codebase today.💥\n\nModels happily provided by our friends at Hugging Face (cheers Clem Delangue 🤗, Thomas Wolf, Julien Chaumond 👋)\n\nExcited to be building this with Stanislav Fort and Jaya Baloo\n\nMore details in the first comment.\n\nLET'S GO AISLE™! 🚀",
@@ -29,7 +29,7 @@
       "company": {
         "name": "Hugging Face",
         "universalName": "huggingface",
-        "trackingId": "Z2lhg3UOSFe/Hi2gMjLZOg==",
+        "trackingId": "oMDtJCMFTFWDhTG36av0hA==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:11193683",
@@ -46,7 +46,7 @@
         "occupation": "Co-founder & CEO at Hugging Face",
         "id": "34810046",
         "publicId": "clementdelangue",
-        "trackingId": "rF81PVNWSqqjfk7MsShnUg==",
+        "trackingId": "6X41o2N/TruwEVIjjM3b0A==",
         "profileId": "ACoAAAITKL4B5dyhNTXLdGTE-0Vq4LnTZjHanpU",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHB49jGc59tLw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1639655041698?e=1781136000&v=beta&t=ZHXx5RskdSDmyeOU1W3E32UWHwkedsyx5TYcDcmpxGY",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE7lRgRjRvHEQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1731528749786?e=1781136000&v=beta&t=Nc0nfIlzVeLvDSqHiKkF6aFp_Hl78pCCO_9jmAZdZs8"
@@ -62,7 +62,7 @@
         "occupation": "Co-founder at 🤗 Hugging Face – Angel",
         "id": "22570853",
         "publicId": "thom-wolf",
-        "trackingId": "Feqeim/bRPqgd3vXNX67gA==",
+        "trackingId": "0wuSJVFQQUeWSHKdSGbcDQ==",
         "profileId": "ACoAAAFYZ2UBzPnShY0OkuyWzB3BaoJCf5FRgCk",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEQyzKPw56VIg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712322355430?e=1781136000&v=beta&t=g5trr8OXQYrrGcZ6Mdxml9XHfD7B1SUN15sCI3Ma3PY",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGlN1ZdNKOwXA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1692891128619?e=1781136000&v=beta&t=SOrjufRQVSVkCKUgX_ZO8QVudKmCUnirt2eS_JakGxI"
@@ -78,7 +78,7 @@
         "occupation": "CTO at Hugging Face",
         "id": "8782516",
         "publicId": "julienchaumond",
-        "trackingId": "GnVXNMIVSkqNi3PlymYinw==",
+        "trackingId": "JNv6pP7kTy6xKiTMpluiew==",
         "profileId": "ACoAAACGArQBeIsShtJCKN3fD399YabWHlFXTLc",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGewM4n-hRq2w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1551194736724?e=1781136000&v=beta&t=IFr_OLOqnW7aOSrlsC3LlWAXpyx3Keoku0mU1y7LuAM",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQH6-IK6pVXrYA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516279628132?e=1781136000&v=beta&t=uPvQSTwoLRaFjBJiC9vMNp__rOPqT3oqa4UumjI0M2c"
@@ -94,7 +94,7 @@
         "occupation": "Founder/Chief Scientist at AISLE | ex-Anthropic & DeepMind | Stanford AI/ML PhD | Forbes 30 under 30",
         "id": "205490833",
         "publicId": "stanislav-fort",
-        "trackingId": "b1HK5P5jTDWdI4oONh9r9Q==",
+        "trackingId": "b1SJwpK9SPybSnoZ/Keclw==",
         "profileId": "ACoAAAw_ipEBDEN3Oi3IjLIHdrWguJOBr3eNgEw",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHQaQw9gLmt5A/profile-displayphoto-crop_800_800/B4EZntLpYaIIAI-/0/1760620880756?e=1781136000&v=beta&t=_OWuJ_4OSdiYlYKGstc0CMtNS7PQL62al4W_NSattxA",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFnESz6_wbQ4w/profile-displaybackgroundimage-shrink_350_1400/B4EZntJW7BIIAY-/0/1760620279617?e=1781136000&v=beta&t=B38kuq1RBhv07Q_3YjjzHHZRY7JlRiMt4iraAqfvCP4"
@@ -110,7 +110,7 @@
         "occupation": "COO & CISO / Founder @ AISLE™ | Information Security & AI",
         "id": "1186196",
         "publicId": "jaya-baloo-558492",
-        "trackingId": "gix0KZKpTrSsxwcf60MygQ==",
+        "trackingId": "oM7IaYCFT/i863mh2+KPFA==",
         "profileId": "ACoAAAASGZQBVaLoOt49zN7a0zkAo2bqJucZigI",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGlfW0zIs6Fkg/profile-displayphoto-crop_800_800/B4EZntn1p6HgAM-/0/1760628268224?e=1781136000&v=beta&t=FWNeIXb4agAqE6M9p_LyzW3QV5n0j_cjAR9J0eGN_iM",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGgCxitwli8gQ/profile-displaybackgroundimage-shrink_350_1400/B4EZntPyOmJ0AY-/0/1760621963503?e=1781136000&v=beta&t=ystBUe8_VMdUKFa8QV6LH4ofTnP25DXv_D_16x2iGoQ"
@@ -123,7 +123,7 @@
       "company": {
         "name": "AISLE™",
         "universalName": "aisleinc",
-        "trackingId": "JuGcyDZnTayjkbEX2J5qow==",
+        "trackingId": "3idRmTmhSViGQYvdYCGubA==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:104743927",
@@ -145,7 +145,7 @@
         "occupation": "Principal Solution Architect EMEA Author of the Illumio MCP server - control microsegmentation using your favourite LLM github.com/alexgoller/illumio-mcp-server",
         "id": "165600071",
         "publicId": "alexander-goller-45b56147",
-        "trackingId": "iO90IJRqRp25xlxgZYogTw==",
+        "trackingId": "7uPpFbS/QrCopU09I0HOow==",
         "profileId": "ACoAAAne20cBePO_2GIWFYcIstcadpsYWngMH-E",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQF0TvR8wVUf8Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1525692556333?e=1781136000&v=beta&t=K1o-mJqWdi2ONglykRcLmCOnYr3Kv638g9sFrLm_noQ",
         "distance": "OUT_OF_NETWORK"
@@ -164,11 +164,11 @@
         "occupation": "Co-Founder, Engineer & CEO @ hushh 🤫, ex-Google Director of Product - Core Developer & ML, GPU TPU AI/ML Infra, Board Member, Tech Advisor & Investor, ex-Microsoft AI, Splunk AI/ML, E&Y / Capgemini, UBS, ING, Adobe, Sun",
         "id": "3436493",
         "publicId": "manishsainani",
-        "trackingId": "Pvn/IFYyStWmeppY77xZ/w==",
+        "trackingId": "0A0/cy1BSp62EfeCt0SUSA==",
         "profileId": "ACoAAAA0b80B9vF2lKjAiVu5MF5tVMFxA0WopDc",
         "picture": "https://media.licdn.com/dms/image/v2/D5603AQHxrOWBDK0c9w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1687383019286?e=1781136000&v=beta&t=bZBDYiCaEU45IOyi9ezwQrDDtk7bx-l4-Sm6RwHa-n0",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQEZt_X1VS1WyQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1659750284871?e=1781136000&v=beta&t=LY7fOMMiRecjKkHi3GYgJ_a4c6NzIuQ_2qWy1nvpVNE",
-        "distance": "DISTANCE_2"
+        "distance": "OUT_OF_NETWORK"
       }
     },
     {
@@ -184,7 +184,7 @@
         "occupation": "ISC3 - Let's transform chemistry",
         "id": "515212240",
         "publicId": "astrid-ewaz-294663124",
-        "trackingId": "d54tPQG+TviAsYDOmyZuZA==",
+        "trackingId": "BrzH5aHsQIKAuwqpEgmYnw==",
         "profileId": "ACoAAB61g9ABUKkmvgOJquZdQYUZigKPe0ijFbc",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmKtI1VTL9EQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1623618563107?e=1781136000&v=beta&t=gAG-KWUTB08NqtKUZgBKyS17zjSGhMm6gGnUse8_U00",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFLkGNUh8V10w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1685023572729?e=1781136000&v=beta&t=jWuCepgBlpGb6EqOzQGgL-J9wsvGy1ru3Axd89_rGyE",
@@ -204,7 +204,7 @@
         "occupation": "Senior Cyber Security Analyst, (ISC)² CC Certified @UVN Praha (Military University Hospital Prague), Security Enthusiast-Thinking Differently about Security, ISMS/ISO27000, DFE, EHE.",
         "id": "8292241",
         "publicId": "public-miroslavsucik",
-        "trackingId": "CCmh1uDvQbGwREK25es9Gw==",
+        "trackingId": "S0EAGnSpSyuqjk6EwfAAnw==",
         "profileId": "ACoAAAB-h5EBrju6mJj4-MB6d3I0kO-EtTk_6Pk",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGejiuvFqNgwg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1516268833991?e=1781136000&v=beta&t=acM0E5LJ6misAfHuM6-QuLl0T4Q74fzlny08MSDY3Y4",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQFM6QWwHNsYKQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516268834982?e=1781136000&v=beta&t=JzkWM_HV7fH1kPCFz3YmIy3hYkvpoPjA2z3-okZYWqM",
@@ -224,7 +224,7 @@
         "occupation": "Security Researcher at undisclosed",
         "id": "297132729",
         "publicId": "robertzacek",
-        "trackingId": "nTdMmwsRTCeDxQlay53jpg==",
+        "trackingId": "k7wjcc5eQIKoPTQkTL8qng==",
         "profileId": "ACoAABG14rkBbNWEtXTszXSJqMQigmICH6ahz4E",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEIsRBuExS9sw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1604043406441?e=1781136000&v=beta&t=YHqcaaLv1ylXs7bJoySlHqjUVqy0ydS81EXn3Ti5rsM",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQERJ28hI2yioQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1604043442023?e=1781136000&v=beta&t=_aAcMLOnK_eoH7ws0554Q3kkNOIRwbYLB28Qc2xU7_I",
@@ -244,7 +244,7 @@
         "occupation": "Co-Founder at SkillSafe.AI",
         "id": "1711396025",
         "publicId": "jmstrand",
-        "trackingId": "HqT2iTLfRsyyFbg84ElSZw==",
+        "trackingId": "of5kDpX5QSWwRhwdYp3gMA==",
         "profileId": "ACoAAGYB1LkBXPvV4wDlS_lnGg5R685bruPiaxs",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG62qIdOd2rfA/profile-displayphoto-crop_800_800/B4EZ0a.f6ZHsAM-/0/1774274088446?e=1781136000&v=beta&t=1TXgfTR495svwU4MfCowS2p-IWlDP0uZQayKy6ajca8",
         "distance": "OUT_OF_NETWORK"
@@ -263,7 +263,7 @@
         "occupation": "Enterprise AI Adoption in Saudi Arabia | Sovereign AI Infrastructure | Helping Organizations Use AI Without Data Risk | Aliph Solutions",
         "id": "687395626",
         "publicId": "anuverma-ai",
-        "trackingId": "agucgRZuTKC3qMB2+/GPWw==",
+        "trackingId": "TVTJKeUwTOCLZc0vLH2PLg==",
         "profileId": "ACoAACj40yoBJ2aLryLCqmOH1lZINt_1KkUU4II",
         "picture": "https://media.licdn.com/dms/image/v2/D5603AQHV-hDQpgDWNQ/profile-displayphoto-shrink_800_800/B56ZPZGUqjG4Ac-/0/1734514140680?e=1781136000&v=beta&t=zqe7Jt_Bsx8vNKg0nrXAkVRomlM8EQUSBsTy1p0qtLE",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEC3EyBgcrXkg/profile-displaybackgroundimage-shrink_350_1400/B56Z29vdkdKIAY-/0/1777004830079?e=1781136000&v=beta&t=zs9zGTwfFtqJ6yQMZjYwaHlMSWv820ySIb24dhuHvSs",
@@ -283,7 +283,7 @@
         "occupation": "Building Sovereign AI Infrastructure for Enterprise | Co-Founder & CTO, Aliph Solutions | Your employees use AI daily. Does your data stay within your walls?",
         "id": "218879354",
         "publicId": "desrajchauhan",
-        "trackingId": "WZmV2nirTbqhKPGcfJxC5A==",
+        "trackingId": "QkpEOo1lQkG1g88MijxrPQ==",
         "profileId": "ACoAAA0L1XoBMibPYLQoKGJyXxwshP7lU5Ji2cw",
         "picture": "https://media.licdn.com/dms/image/v2/D5603AQFyoDEdrSGkBg/profile-displayphoto-crop_800_800/B56Zt9krx4JYAI-/0/1767338328109?e=1781136000&v=beta&t=BZnHyqEzeJ89bALyljZm74oi0lVbePOXSYUxTK0U2FE",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQFpdUSsO84eZg/profile-displaybackgroundimage-shrink_350_1400/B56Z26mJcbKkAc-/0/1776952056136?e=1781136000&v=beta&t=vptLbOPnVeGWKYm_utBkGmqTRxJwOAbhwiicsPlUbLg",
@@ -303,7 +303,7 @@
         "occupation": "In a state of Flux",
         "id": "25271549",
         "publicId": "daoud-abdelmonem-faleh",
-        "trackingId": "235SCLhxRaOvtqVPsNtYFQ==",
+        "trackingId": "nFHEkfYATlazXsvE8MZTDw==",
         "profileId": "ACoAAAGBnP0BRYDTJrysKH5zkr4UgZOs6mj8gYk",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHxiZWW3153Qw/profile-displayphoto-crop_800_800/B4DZ0sV4SkIoAI-/0/1774565428672?e=1781136000&v=beta&t=KSRUdxpsR5WVyz3OAY4VhaPFRtdVtH3n4UUbpp4c5-U",
         "distance": "OUT_OF_NETWORK"
@@ -322,7 +322,7 @@
         "occupation": "Director @ Classic Group of Companies | CEO @ Classic Jewels & Diamonds | Trusted Advisor in Gold & Diamonds | On a Mission to Make Luxury Gold & Diamond Jewellery Affordable to Every Home",
         "id": "61790245",
         "publicId": "fazil-rahman-classic",
-        "trackingId": "ro8fXfaERqmzvKYFlXtWzQ==",
+        "trackingId": "qeE9rG6SRYaYqikDQHEKVQ==",
         "profileId": "ACoAAAOu2CUBJVcK-RCAtGW0AnZvigqC9fHFCJw",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGMe-6wcAViWQ/profile-displayphoto-crop_800_800/B4DZu7UyboIEAI-/0/1768374347918?e=1781136000&v=beta&t=HpHj80ShVm2kKbYBp5m9PVGfYKbU1UjKYT83aF3B_0k",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHl6tZ3YoTpQg/profile-displaybackgroundimage-shrink_350_1400/B4DZ139TkuHUAc-/0/1775834056001?e=1781136000&v=beta&t=FyT9lU-mBjonrfn2dFr2sc0FrpGJ329ntXNKc5PkHLI",
@@ -339,7 +339,7 @@
         "occupation": "Senior Security Consultant @ PWC | Cyber Security Former Faculty | Founder BSides Kolkata | Ex Google MLCC Facilitator | Ex FBDC Moderator | CRTP | Blockchain Evangelist | freeCodeCamp CU Lead | AWS Security",
         "id": "530522003",
         "publicId": "sayantan",
-        "trackingId": "IE9K3toiRRSIxBNCbNL9NA==",
+        "trackingId": "J8fgzvelQlORKGuTbUva6w==",
         "profileId": "ACoAAB-fH5MBeSjjGdEug0dQH9Za8vuNAR_abz8",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFtBhVkCpr_Tg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1652292430986?e=1781136000&v=beta&t=nv-91K38Nftp8OEnGsDpnbUxGeWxtvHrwJcIpGIbV9c",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEL2SFgKQM1YA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1689940609827?e=1781136000&v=beta&t=sfwiCSK9l4XdyNVD0g3wKRpxRhu4J3MwrjsX57_2qtw"
@@ -353,7 +353,7 @@
         "occupation": "AI Builder | AI Engineering & System Design | Roadmaps from experiments to production-ready systems | Learning in public",
         "id": "20367576",
         "publicId": "genai-guru-pankaj",
-        "trackingId": "BEAXneXxTbysePqlQIZPgg==",
+        "trackingId": "uIk91N0xRsiOG/TdooAgdQ==",
         "profileId": "ACoAAAE2yNgBjDG_qc_EmAjcaAV5jtEK9k33EcA",
         "picture": "https://media.licdn.com/dms/image/v2/D5603AQEC2bGXQWqRrg/profile-displayphoto-crop_800_800/B56Z3Rj_VaIIAI-/0/1777337366927?e=1781136000&v=beta&t=WuO6DKuB4ZOjXR5-G7_AlWbzQ3AZqNREw8jSvMu9s9A",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQG1gP5spvifxw/profile-displaybackgroundimage-shrink_350_1400/B56Z1D7gBIG8AY-/0/1774961166373?e=1781136000&v=beta&t=auam0ksI1z3QZBM9SPA5FomtQ5mQ0wWOAhc4ZMCLyFk"
@@ -367,7 +367,7 @@
         "occupation": "Making M&A deals faster with AI | CTO & Co-founder @ Plomo, Building agents & LLM stuff",
         "id": "704156705",
         "publicId": "brebera",
-        "trackingId": "8geiz/DHSYu/AUmeSD9bhQ==",
+        "trackingId": "O2f+HotgTXigulGKzybC0w==",
         "profileId": "ACoAACn4lCEBNrZfjfyTKjH8u841SGUMu1zoTPw",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFxU-cSQYPPKA/profile-displayphoto-crop_800_800/B4DZ2bPFKeJgAI-/0/1776425917475?e=1781136000&v=beta&t=W_Y7l8PpkNm2N4DffwIo_nS_fZUQZl2umy-8YMqQ4S4",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFHZ-z9rKIPkQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ2TnvpwHIAY-/0/1776298163681?e=1781136000&v=beta&t=yrX_P6KCcWTSTUry4Tq2aWX9x8YmSIyjUFA9QSwr7Ic"
@@ -381,7 +381,7 @@
         "occupation": "AI & Data Management Consulting",
         "id": "25829723",
         "publicId": "ondrejmichalak",
-        "trackingId": "CbIz9YLuTYmAS8fAHeISHg==",
+        "trackingId": "Wy5Y7sJER0y5eVQubGJd/w==",
         "profileId": "ACoAAAGKIVsBXNLj8Dk7bd-MGE9A49IczSVYZbg",
         "picture": "https://media.licdn.com/dms/image/v2/D5603AQECKi1BSC95tw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1669978102303?e=1781136000&v=beta&t=8fLnf_EFnFtq3a0s-ChPa6YqPkAa4T4ssvAAcc4QHcY",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGlxOlT_BSyVg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1669978049565?e=1781136000&v=beta&t=zL8j4iPMP1xxCQJR2neImSV8GX8vZZdxj8HNsdDxHio"
@@ -395,7 +395,7 @@
         "occupation": "Systems, Networks, Security",
         "id": "3142221",
         "publicId": "daniel-kubec-4b90761",
-        "trackingId": "M5cMXhvcRAOfZBZNgZZkyQ==",
+        "trackingId": "d/7CyG/WTNGmpa0Foiernw==",
         "profileId": "ACoAAAAv8k0Bt6aJ2NYyK5myk7MzSAmNauRHBts",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH2UPxsAwnRrw/profile-displayphoto-crop_800_800/B4EZpO5QoBGUAM-/0/1762260225211?e=1781136000&v=beta&t=e6JVjpOYwYBJhkkXJOSqCGGa5Oqz6eENBQwcz5dK9dE"
       }
@@ -408,7 +408,7 @@
         "occupation": "Senior AI Product Engineer at duvo.ai | Former Workday Engineer | YC ’19",
         "id": "148384779",
         "publicId": "viliamelischer",
-        "trackingId": "syZHKuX1RNGX64nqg1kQ4w==",
+        "trackingId": "A/HNHhVyT/6Ri3tQwHpHXA==",
         "profileId": "ACoAAAjYLAsBZkQRmXLBhQWUNzZ813jftKTlk64",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFVR95T5C0yaw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1644438340281?e=1781136000&v=beta&t=Gn5kfKq1uiPkg4dSWLSCOwDct5e9z58rM79TfiP54S0"
       }
@@ -421,9 +421,8 @@
         "occupation": "Founder of minfx.ai | Optimize ML pipelines",
         "id": "105148651",
         "publicId": "michalsustr",
-        "trackingId": "oEv6CgdSTdy1rjnJOfISrA==",
-        "profileId": "ACoAAAZEcOsB_nnryGz1z-PVWnkg3Yn4Tng0bgY",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQHPGhXz6IoMrQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517614338952?e=1781136000&v=beta&t=aoUqR7AUpM8weQ4nKJVbxyg7nR-3sCkUf_2US7c8yrk"
+        "trackingId": "x8VJDRciSj+vg5XCYwfRLw==",
+        "profileId": "ACoAAAZEcOsB_nnryGz1z-PVWnkg3Yn4Tng0bgY"
       }
     },
     {
@@ -434,7 +433,7 @@
         "occupation": "AI Engineer @ GenDigital (S&P 500 | Ex. Norton) | Building reliable AI Agents for enterprise — Frontend + AI Systems",
         "id": "858307337",
         "publicId": "alanxurox",
-        "trackingId": "Mx1bjar/SKmh0ze6iHeNUQ==",
+        "trackingId": "MTN3shgvQDO/hn5tPjvbsA==",
         "profileId": "ACoAADMouwkBOUsnh9EMMYIx2wgfT3a_LCMasnE",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHIX1DhlsYAOA/profile-displayphoto-shrink_800_800/B4EZW3V1SGGYAc-/0/1742537709413?e=1781136000&v=beta&t=hhcvQjD8S67VineBm4bGZVBp5iEbJAg0F4iTH4bf-74",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEhvFqMULEgow/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1676146524598?e=1781136000&v=beta&t=afuA9FLeluLl_7Xco5U2kUd5S8_WS5to4BMSiA7G0Bg"
@@ -448,7 +447,7 @@
         "occupation": "Harnessing Offensive AI to Protect Critical Infrastructure | Cybersecurity & SaaS Platforms | Accounts & New Logo | Public Speaker & Host | DEIB & ESG Champion",
         "id": "2613190",
         "publicId": "alisubhan",
-        "trackingId": "QRNEnab9RKyvJHfrMPyn4A==",
+        "trackingId": "Boem9zikRUmKS6jqtGzVZg==",
         "profileId": "ACoAAAAn38YBWAdgMitziddCAiTeNarpG8imbD4",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE1xBwgtM4Nrw/profile-displayphoto-crop_800_800/B4EZwpJxuUIMAI-/0/1770216956202?e=1781136000&v=beta&t=O_zDjZH6LdzNA1bE_oZl8-VzKvB4degziWU2in1Mdbc",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQF85LzdPjsCxA/profile-displaybackgroundimage-shrink_350_1400/B56Z3AmI36IQAc-/0/1777052718229?e=1781136000&v=beta&t=NW8auJoBKit2awEdg1H5YB8Ww4SgJajNyr7Lx5FfHMY"
@@ -462,7 +461,7 @@
         "occupation": "Developer Advocate | Senior Software Engineer | Helping 300,000+ developers ship reliable, high-quality software faster @ Better Stack",
         "id": "163698739",
         "publicId": "andrisgauracs",
-        "trackingId": "bzRbL6k2RyK/bikIz/UVwg==",
+        "trackingId": "HXX4/4wHRTWRVOBkQBMB+g==",
         "profileId": "ACoAAAnB2DMBfMt0MFluSyGq2VaPJ5JIAKF3ofA",
         "picture": "https://media.licdn.com/dms/image/v2/D5603AQFM8QuvnrCm4w/profile-displayphoto-shrink_800_800/B56ZO8rKePG4Ac-/0/1734037252578?e=1781136000&v=beta&t=HKuEWmJONya_PsYaFkTCBweoR1BkJDua9OOvtduGeaI",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEoywmCmPmQqA/profile-displaybackgroundimage-shrink_350_1400/B56ZmbaSftJwAY-/0/1759248985356?e=1781136000&v=beta&t=AflNLtLpRCWlW2V9wstigYN5QsR8C708V_AyI_ctQYI"
@@ -485,7 +484,7 @@
     "occupation": "Founder/CEO at AISLE",
     "id": "4068625",
     "publicId": "ondrejvlcek",
-    "trackingId": "t4WRnOejTNe5tEg6BgIJ2A==",
+    "trackingId": "EGt3MJX4TRCpfA9rizUSYg==",
     "profileId": "ACoAAAA-FREBGFaqviOCVCI6-wqm7UGvAW_nkak",
     "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEOzqY4o5_shw/profile-displayphoto-crop_800_800/B4EZrLZgKhIwAM-/0/1764349052319?e=1781136000&v=beta&t=HYRX7AjwnMkKZNlH0s4Aa2HFoTNZ1rsP1r21t41Yk5s",
     "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGP1OnSfoXvAw/profile-displaybackgroundimage-shrink_350_1400/B4EZntIC2_HoAY-/0/1760619934266?e=1781136000&v=beta&t=JT0WLkl7jrDDJqzteZh6ZLIvNLW7q7fN8DfnXDQSghk"

@@ -1,0 +1,254 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/D4E22AQFDdKez0ayXGw/feedshare-shrink_1280/B4EZqmq3XdHEAs-/0/1763732847248?e=1781136000&v=beta&t=TOM8vWnUsZh5pW30xkV5FV6sPnISFg21gyJFF1SYoaE"
+  ],
+  "isActivity": true,
+  "activityDescription": "Honza Javorek reposted this",
+  "activityOfUser": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "W/hJghUjRieAQ5z28yU9ZQ==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "urn": "urn:li:activity:7397679028184436736",
+  "url": "https://www.linkedin.com/posts/jan-meissner_za-t%C4%9Bch-10-let-co-pracuju-v-technologick%C3%A9-activity-7397631743161438208-mDdI?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC_ljigBFvhn56YoZGdxoUnN9NKI3l-Akak",
+  "timeSincePosted": "6mo",
+  "shareUrn": "urn:li:share:7397631741982842880",
+  "text": "Za těch 10 let, co pracuju v technologické firmě obklopený především vývojáři, jsem si několikrát připadal jako Travolta v tom gifu...\n\nCo tu dělám? Člověk, který si na střední vybral latinu místo programování?\n\nPak si ale řeknu, že (přestože si hodně lidí myslí opak) i ti vývojáři jsou lidi. A navíc lidi, co jsou často extrémně zapálení do něčeho, čemu sice úplně nerozumím, ale rozumím jejich zaujetí. To se pozná i tím, že nadávají na svůj (něčí) kód nebo tím, že řeší \"tabs vs spaces\". Já zas prožívám když najdu předka v matrice nebo když Shohei Ohtani předvede něco, co tu od Babe Rutha nebylo... ⚾ \n\nDík Honza Javorek za pozvání. Ještě přesně nevím, co a jak řeknu. Ale o tom, jak jsem se dostal do IT, jak se v něm zorientovat a jak využít znalosti a schopnosti, které se netočí jen kolem programování, mluvím hodně a rád. Takže teď to schytá každý, kdo se příští středu připojí.",
+  "attributes": [
+    {
+      "start": 613,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "VMpinpx7Rwm9rgliY7vVww==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1763735590718,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7397631743161438208?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7397631743161438208%2C7397643243087147009%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287397643243087147009%2Curn%3Ali%3Aactivity%3A7397631743161438208%29",
+      "text": "\"i ti vývojáři jsou lidi\" - konečně to někdo řek 😍",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Jan",
+        "lastName": "Marek",
+        "occupation": "Senior Software Engineer at Mews",
+        "id": "99694616",
+        "publicId": "j4n-marek",
+        "trackingId": "CxG4vvItSOqekPjwseCT/Q==",
+        "profileId": "ACoAAAXxOBgBovM14X1j6moZmHzmOXDR3AxfiMw",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQG7qTTbebUGZA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517550343717?e=1781136000&v=beta&t=Q8db2xmpsRfNsvlpUdw-mxRFBowJDDJLYHvPS2jXTBs",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQE0-dpjx2R_Nw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1568405127258?e=1781136000&v=beta&t=eDBHtU4lI8xZHB9DFz1CdvGXoqaVXlcU2czYrQazRn8",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1763733159109,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7397631743161438208?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7397631743161438208%2C7397633044184014848%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287397633044184014848%2Curn%3Ali%3Aactivity%3A7397631743161438208%29",
+      "text": "https://junior.guru/events/56/",
+      "entities": [],
+      "pinned": false,
+      "author": {
+        "firstName": "Jan",
+        "lastName": "Meissner",
+        "occupation": "Product & Tech Community Lead at Mews",
+        "id": "677292059",
+        "publicId": "jan-meissner",
+        "trackingId": "bw4dU61FQXSt91YZLHo3AQ==",
+        "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEEoMbY9urW6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728030316222?e=1781136000&v=beta&t=qIshYYWgkzBRoJGlT6oqlmeH3jlRiX8J_luFzaICydQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGei_PMH8ghyw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728030258130?e=1781136000&v=beta&t=GS9HgAFTdCMh-1xFx2xIDoLH91oMpSioaV6pV2ayQSY",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Gabriela",
+        "lastName": "Řehoutová",
+        "occupation": "R&D Community Manager at Mews | Driving tech employer branding through developer advocacy and internal programs",
+        "id": "375918312",
+        "publicId": "gabriela-rehoutova",
+        "trackingId": "Xk5kbJ/uQp6YY8zftL+nyw==",
+        "profileId": "ACoAABZoDugBZPP_pwsGohCcNSueNWnDv2TrXLA",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHxeSq-aQXADA/profile-displayphoto-crop_800_800/B4DZyKZZmIJoAM-/0/1771848442537?e=1781136000&v=beta&t=1Yyb9MnnBlanozl3ZFem4jHbwrV99w2FfMmvv9FvIu0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHp_vL6BWFTNw/profile-displaybackgroundimage-shrink_350_1400/B4DZyKYhihG8AY-/0/1771848210948?e=1781136000&v=beta&t=21UIB68ZMBkqepzOKX5D9kdQcghG2ZeQ58J0kSI1tQc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Mira",
+        "lastName": "Grebovic",
+        "occupation": "Talent Acquisition Manager at Sky Czech Republic",
+        "id": "212855869",
+        "publicId": "miragrebovic",
+        "trackingId": "NG0Nvw4NTPmYdVu7ug2xLA==",
+        "profileId": "ACoAAAyv7D0BGB9gnYandS3lMcUAGJ5_lljinpY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHgHY--EeZQrg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731433255182?e=1781136000&v=beta&t=1XDNis4rADWfIfmT0gbJIsqIsvB54eM_rpbr67raGX4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEJD-KEGlgZLA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712130739505?e=1781136000&v=beta&t=bbFm9ws9cVJ1HHCPcjsEeVJb6arJ97yM6y8WB_ZID_Q"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lukáš",
+        "lastName": "Názer",
+        "occupation": "Security Management | 16 Years in Public Safety | Operations & Administration",
+        "id": "1490386548",
+        "publicId": "lukáš-názer-270164357",
+        "trackingId": "wyC3z0oUTbe6FtbiwZ/xaA==",
+        "profileId": "ACoAAFjVfnQBRiWDVYgeRaVNR9CkNSlnACEsxsY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHXiTp76wTrAA/profile-framedphoto-shrink_800_800/B4DZ3BlJh2G4Ag-/0/1777069234603?e=1780430400&v=beta&t=8Tb6p9FTg2cUQNp6Qt9BY4bFRPxPxDwzlMaM_a_e4dM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGRmdKcLOO4mQ/profile-displaybackgroundimage-shrink_350_1400/B4DZuduYc0KoAc-/0/1767877741572?e=1781136000&v=beta&t=-r1YEOtb84pQij6od76GCRY8-7ltn8jMw_JGF8sYxdA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomas",
+        "lastName": "Manhal",
+        "occupation": "SEO/UX Specialist at Webmium ✅ Aspiring Backend Developer at Home ✅",
+        "id": "356811200",
+        "publicId": "tomasmanhal",
+        "trackingId": "/vElKXEcRMefmukwJ0xn7A==",
+        "profileId": "ACoAABVEgcABhXssunqzWgZ32PhPvDuM7pOY7Sw",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGInNVdLygaYA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1643616498455?e=1781136000&v=beta&t=ZuyL6gCtMjtS2Bp5JitUt78VFkpsCsQXNtHO9yl9H4g",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGzLIim8zGACA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516975456614?e=1781136000&v=beta&t=6VFaoiFNvKKxzcGRnW_GTyGLSluSP2AQ71SpObNaKLo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Roger",
+        "lastName": "Laing",
+        "occupation": "Wiz ✨ Secure AI at Machine Speed ⚡",
+        "id": "397522739",
+        "publicId": "roger-laing-a6b167b1",
+        "trackingId": "0KXvfFaMQhqq2/hSstKxVw==",
+        "profileId": "ACoAABextzMBPSYhxp30uyFGyAGTweAxIuJA_WY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH8ANTOY_VL0Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1699556522013?e=1781136000&v=beta&t=WNGrdyVz7FSZfWCmU31_sl5lSLl5NCBT4f3HbWWiR1E",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF-qyqZk8dy2A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728292020753?e=1781136000&v=beta&t=edgIu91x0KpEbUOWBVWlawf6cYz74zuXMWdxthkxE3k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Eva",
+        "lastName": "Peterkova",
+        "occupation": "Business Development in startups",
+        "id": "113138480",
+        "publicId": "evapeterkova",
+        "trackingId": "wHrNRGl7QBuSjysH7QnA/Q==",
+        "profileId": "ACoAAAa-WzABr0AavuXkwAkbUasXuxQ0EilZUtM",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQGNn0yx_i845g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1548002459133?e=1781136000&v=beta&t=Mr8iVD4ilZjD7a6lfN11Qe7QVMLdwIbsOE8L7BnuvOg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGG0fcHG0lFdg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1548231717707?e=1781136000&v=beta&t=isnzhBuOF3v44OYcVxlHpd7vnpSz7LMZJK6JlzahFgw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Markéta",
+        "lastName": "Oupická",
+        "occupation": "Founder @ European Escapes | Event Manager | Community builder",
+        "id": "425803285",
+        "publicId": "marketa-oupicka",
+        "trackingId": "GMiji+jRSxC7BupGjjtEmA==",
+        "profileId": "ACoAABlhPhUB7RyXtZUn6D9Nlj2UyRBb31Nm07Y",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHdC6bg3rC6AA/profile-displayphoto-shrink_800_800/B4EZT.o5kXHMAc-/0/1739438922644?e=1781136000&v=beta&t=FbhPN8ZeLXDBSYzGCqlKjFw3n9-zR2LS5BP8LtZNbis",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFaMU4_K_BjWw/profile-displaybackgroundimage-shrink_350_1400/B4EZcxde9LH0AY-/0/1748881502872?e=1781136000&v=beta&t=gxUxTqK2WtozM5UeZIStgScWj_nsoeqc0XUhilO83GQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Šimon",
+        "lastName": "Pinkas",
+        "occupation": "IT Security Specialist",
+        "id": "623726830",
+        "publicId": "simonpinkas",
+        "trackingId": "egEXQDQoQ2aFZGtIImsDVg==",
+        "profileId": "ACoAACUtUO4BBqryMkC0ZEimOzeTyhi_hM-bjig",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQGDuFMjHiwbNw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1647528664125?e=1781136000&v=beta&t=oj0E0fo0ZGfosoiwA-nvVtz03p1lbiEYkIu69GVB0Fo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Kateřina",
+        "lastName": "Raszka",
+        "occupation": "I talk a lot :)",
+        "id": "309133853",
+        "publicId": "taluranit",
+        "trackingId": "nfzK4/hxR6ep8u5fwll3XA==",
+        "profileId": "ACoAABJtAh0BEWIcOSBGH4HhCuOtYQZY3hTF6y0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHKaAjtIiGFmQ/profile-displayphoto-crop_800_800/B4DZ398bXLKgAI-/0/1778081971206?e=1781136000&v=beta&t=VzDa6wPI8PKqtTSbhgtcDY6wNH7LsYdu4GPvuaJWM8Q",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEvP9mI1YpvmA/profile-displaybackgroundimage-shrink_350_1400/B4DZ2rW5J.K4AY-/0/1776696399257?e=1781136000&v=beta&t=m0gYskBy7_dO_QJKck64kbQ-N3XxbswbWz0WaN7s65M"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Kulich",
+        "occupation": "Lead Cloud Engineer | Kubernetes & Cloud-Native Infrastructure | Tech Lead @ Whalebone | AWS & GCP | 10+ yrs DevOps",
+        "id": "247876336",
+        "publicId": "martin-kulich",
+        "trackingId": "Yb5yaJymQVWJrBRorq9QKw==",
+        "profileId": "ACoAAA7GSvABMeDGxHg581ZY7f_uP-4VLHRUmQQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQH_9anUfUXWcg/profile-displayphoto-crop_800_800/B4DZxW2CfLHcAQ-/0/1770983533595?e=1781136000&v=beta&t=L9FrmOts0-kSveyo7ZZTmXePmOIXDBaEWTm54oRvtNE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQF3tUsmb5bY8w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1727867805720?e=1781136000&v=beta&t=FtDc96sfuSXn6kiQiHXxPvIbKUqfUYxwB2aLjmuQJ1Y"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 78,
+  "numComments": 5,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Jan",
+    "lastName": "Meissner",
+    "occupation": "Product & Tech Community Lead at Mews",
+    "id": "677292059",
+    "publicId": "jan-meissner",
+    "trackingId": "bw4dU61FQXSt91YZLHo3AQ==",
+    "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw",
+    "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEEoMbY9urW6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728030316222?e=1781136000&v=beta&t=qIshYYWgkzBRoJGlT6oqlmeH3jlRiX8J_luFzaICydQ",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGei_PMH8ghyw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728030258130?e=1781136000&v=beta&t=GS9HgAFTdCMh-1xFx2xIDoLH91oMpSioaV6pV2ayQSY"
+  },
+  "authorProfileId": "jan-meissner",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4E03AQEEoMbY9urW6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728030316222?e=1781136000&v=beta&t=qIshYYWgkzBRoJGlT6oqlmeH3jlRiX8J_luFzaICydQ",
+  "authorType": "Person",
+  "authorName": "Jan Meissner",
+  "authorProfileUrl": "https://www.linkedin.com/in/jan-meissner?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw",
+  "authorUrn": "urn:li:member:677292059",
+  "postedAtTimestamp": 1763744122549,
+  "postedAtISO": "2025-11-21T16:55:22.549Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

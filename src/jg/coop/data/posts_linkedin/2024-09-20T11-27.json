@@ -1,0 +1,237 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/D4E22AQEZ2Lhq1OORUQ/feedshare-image-high-res/feedshare-image-high-res/0/1726831634603?e=1781136000&v=beta&t=xel2mOBydQ6QyhqT7BwsUdkYL75MyZbg3IkrDOi6wTA"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:7242856835391569920",
+  "url": "https://www.linkedin.com/posts/honzajavorek_inzer%C3%A1ty-na-junior-guru-maj%C3%AD-nov%C4%9B-i-filtrov%C3%A1n%C3%AD-activity-7242856835391569920-iIVV?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC5xzM4BJP0fU1EipQeXhz-Llr0DjJ4Q1_I",
+  "timeSincePosted": "1yr",
+  "shareUrn": "urn:li:share:7242856834343010306",
+  "text": "Inzeráty na Junior Guru mají nově i filtrování. Ve výpisu jsou navíc i ty, které někdo ručně přidal v naší komunitě na Discordu.\n\nPokud hledáš práci jako junior, tak už žádné „požadujeme 4 roky zkušeností“. Pracovní portál, který tvořím na junior.guru/jobs, je na tvé straně.\n\nRobot každý den stahuje inzeráty z celého internetu a pomocí umělé inteligence vybírá jen ty, které jsou vhodné pro začátečníky.\n\nTeď každý den pracuju na tom, abych tohle celé ještě propojil i s komunitou, kterou provozuju, a kde si (nejen) junioři pomáhají.",
+  "attributes": [
+    {
+      "start": 12,
+      "length": 11,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Junior Guru",
+        "universalName": "juniorguru",
+        "trackingId": "HslfIvTuTKidQU0OvA5eGQ==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:26218444",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQE89NmYF-XT4g/company-logo_400_400/company-logo_400_400/0/1638266899010/juniorguru_logo?e=1781136000&v=beta&t=ad516CNUThMN8eXeVboC5S9U_y2Dnn1UhQn70wIGlxE"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1727032503760,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7242856835391569920?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7242856835391569920%2C7243699338646851585%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287243699338646851585%2Curn%3Ali%3Aactivity%3A7242856835391569920%29",
+      "text": "Bez možnosti filtrování dle technologií? Je to jako hledat překladatele, ale neuvést z/do jakého jazyka. A opravdu si myslíte, že “full-stack developer” je pozice vhodná pro juniory? Nebo označení junior v dnešní době naznačuje jen přibližné platové ohodnocení zaměstnavatele / jeho budget (a šílená očekávání)? 😁\n\nPS: Dokud nebudou u inzerátů uvedena platová ohodnocení (která mohou být v tomto oboru extrémně rozdílná u podobných pozic), žádné zjednodušení to nepřinese - chápu, to není ve vaší režii. Je to ale podobné, jako bych měl autobazar, ale u vozidel bych neuvedl ceny. Na kafe a čaj vám ****, to mi hypotéku nezaplatí.\n\nNemyslím to zle, ale já v tom prozatím přidanou hodnotu nevidím.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Patrik",
+        "lastName": "Kulíšek",
+        "occupation": "Za každou jedničkou a nulou stojí člověk. Je proto důležité, abychom si sedli",
+        "id": "520276094",
+        "publicId": "patrik-kulíšek-8522a5126",
+        "trackingId": "7dPBbldlSLqWPzqxKY9lGg==",
+        "profileId": "ACoAAB8CyH4Bd8Zju7YmWk5uiAPBZbYIPoHHDhk",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQG-FYnyb4zZgQ/profile-displayphoto-crop_800_800/B4DZrus1B4HwBQ-/0/1764941320873?e=1781136000&v=beta&t=kYGd8F7uKxhfwqNsw06Rfv3txf0luEFIDr75z60ZemA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFo4DwvU5v_Sw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1722771230765?e=1781136000&v=beta&t=cb9JHgTYkNVP01rywG6jj6CmK0Ys18EBQxf74NtibSE",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1726835853402,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7242856835391569920?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7242856835391569920%2C7242874527263637506%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287242874527263637506%2Curn%3Ali%3Aactivity%3A7242856835391569920%29",
+      "text": "Boží! :)",
+      "entities": [],
+      "pinned": false,
+      "author": {
+        "firstName": "Tamara",
+        "lastName": "Ksandrová",
+        "occupation": "Recruitment Lead at Aricoma | Recruiter of the Year 2022 | HRLove Meetup Ostrava | May the Force Be with You",
+        "id": "97224438",
+        "publicId": "tamaraksandrova",
+        "trackingId": "2RWizEJARUqeNBgRysb0qQ==",
+        "profileId": "ACoAAAXLhvYB0EzEIZDOgq4UbmzA-lx3BNvKKjA",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFsIB98UggKug/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1701765126598?e=1781136000&v=beta&t=XyIS4VuOsGCVrLSoXeXIegAJexCmRcT7WMQFiNl04bk",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQF91JMlpnfTpQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1518558960497?e=1781136000&v=beta&t=utEttQA_3QMIPg-oa2hwMQ24AsSy4qsR3NU2KJD5MG8",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Nespěšná",
+        "occupation": "Data Analysis | Data Modelling | SQL | Python | Visualisation | Team Work | Project Management",
+        "id": "105402088",
+        "publicId": "lenka-nespesna",
+        "trackingId": "U8nl747tQq2K6wPhmPt1Fg==",
+        "profileId": "ACoAAAZITugBdMDLPtRuWgbZzFu0YkxsjR37kTE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG4KJPYW0N0YQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718215445950?e=1781136000&v=beta&t=wErxxps3EUktNcxkd41wVLeSRqBib7ygg5HNLBQ7FXI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFiwzNhHAn0SA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1719354353286?e=1781136000&v=beta&t=Gg0TnxUAPL10NWyBy9-Ih4nPwVHlZ1soXBvCjljKKtk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "František",
+        "lastName": "Német",
+        "occupation": "Front-end developer | React, Nextjs, Supabase, Postgresql",
+        "id": "760487175",
+        "publicId": "frantiseknemet",
+        "trackingId": "taHnEb/sS3CeFew8492ZzQ==",
+        "profileId": "ACoAAC1UHQcBrfZj1YGWY7VOPgz0-woiNE44ngY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE0pwIcjgld3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725955697712?e=1781136000&v=beta&t=uks2ViGnzfHLtyIZgX1GiWXlzmG102u_ltefHH1m5qo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Anna",
+        "lastName": "Procházková",
+        "occupation": "I trnitá cesta může být ta, která Tě dovede k cíli.",
+        "id": "1009361610",
+        "publicId": "anna-procházková-376049242",
+        "trackingId": "IFAexDFHSnGtUTxTEMcVBw==",
+        "profileId": "ACoAADwposoBVDQdpB7Q_K0CIrc3vQ_7557qStw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHc8f2KjKAkpA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1683728424363?e=1781136000&v=beta&t=pqlNsV-usHDz0wqVpuxgIENSDbXC2FhbDH9nzlJCc3U"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ondřej",
+        "lastName": "Bakan",
+        "occupation": "junior back-end developer",
+        "id": "118965041",
+        "publicId": "ondrejbakan",
+        "trackingId": "PE/so/KzQUqCpFIhvlGV/A==",
+        "profileId": "ACoAAAcXQzEBMw3jF-_93FT4ZFo-8ZGtUGiAHYU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ella Michaela",
+        "lastName": "Malečková",
+        "occupation": "Data Engineer ☆ Data analyst",
+        "id": "689768652",
+        "publicId": "michaela-ella-maleckova",
+        "trackingId": "ldmZe4fCTWqouSDeuvuVuQ==",
+        "profileId": "ACoAACkdCMwB3ZHqe7uP9J5zQIm7UsUq0AZq_fU",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQEkMuOntxhIIQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1559736204862?e=1781136000&v=beta&t=gEOlkxcsE-rOWHXjJITwrVFqhta5lVnJ2zxQjFV_UDo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEW42JBTqgEIQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1646894880959?e=1781136000&v=beta&t=Tu9hXulHTsHpzhdNhoRvdFR0akTHqDW_Pjf-k5z6gbs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Simon",
+        "lastName": "Gric",
+        "occupation": "ICT Linux Engineer",
+        "id": "1113749520",
+        "publicId": "sgric",
+        "trackingId": "IKLWpyo+SbS9vjIMteTXYw==",
+        "profileId": "ACoAAEJieBABul8Zw5CjSNOE9HYYG-h8FIcFppA",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHFCFMvO5c-vw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1694635467323?e=1781136000&v=beta&t=wlS_asWKVmAvTzki71vRgfUi8mT4yS1_0j5xfTaqDOk",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHh0xtDOBwGGQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1719351079790?e=1781136000&v=beta&t=rPuEzwhyYYS98I1EzTNe-24Ua8KIHrIe2iquqvv46IM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Nathalie",
+        "lastName": "Vecten",
+        "occupation": "\"It is a capital mistake to theorize before one has data.\" *cleaned data",
+        "id": "775508820",
+        "publicId": "nathalie-vecten",
+        "trackingId": "8BY+V+WLS9+V+r2eIeOO5w==",
+        "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH5sSEbnQ2Tcg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1611936430673?e=1781136000&v=beta&t=wAQsj8dSBDe6L3xt1MwxMahW3aP-D6LcuvT-utzij6s",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHDKxhi18V0lw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1599638080880?e=1781136000&v=beta&t=5JiWefMiJff9VXnKXxoAOOrnUYNFE4fW7AQAgJac6VA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martina",
+        "lastName": "Zátopková, PhD",
+        "occupation": "Senior Bioinformatics Scientist | Genomics, NGS data analysis, Precision medicine",
+        "id": "722443405",
+        "publicId": "martina-zátopková-phd-811b40181",
+        "trackingId": "QwJxLohXTKWn6Jkin2+NdQ==",
+        "profileId": "ACoAACsPnI0BB3OkkGhDENMlJdeckoL3FHPc_nw",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQEFYZMAJevEzQ/profile-displayphoto-crop_800_800/B56Z0K3HamJgAI-/0/1774003714367?e=1781136000&v=beta&t=gh63X9VdVifNoWwBd7Nc2WIAxdepm_UXlhNv1dwQJ40",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQErLtl3_SaPPA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1627904628440?e=1781136000&v=beta&t=tbaxgKpbKe5De1CHb6WJ95gcxLOHjYlnXD7fbd_XJ5I"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Barbora",
+        "lastName": "Profantová",
+        "occupation": "Data • Python • PyLadies • Community 🧗‍♀️🌄🥽",
+        "id": "500082573",
+        "publicId": "profantova",
+        "trackingId": "IUrjUZc7RS2o8nDNK3NQxg==",
+        "profileId": "ACoAAB3Op40BezEaqbB9vgUJupTUksuxIhZtA1E",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHLY1-XuQRejQ/profile-displayphoto-shrink_800_800/B4EZZtgja8HcAg-/0/1745593973290?e=1781136000&v=beta&t=97Qd6tWqLDzvoy3gg04-M2N9ittS1V7dQ4WnFiYT518",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEE9K4LB2eaaQ/profile-displaybackgroundimage-shrink_350_1400/B4EZZtfBjmHYAc-/0/1745593572445?e=1781136000&v=beta&t=xtqYmTMUDNlMHwv45DT-zqCkJSb5ri_lsJHq6CvaxGk"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Irena",
+        "lastName": "Zatloukalova",
+        "occupation": "empowering #autisticTalent in Tech 🚀 | Guiding your communication for change | Systemic coaching",
+        "id": "99891449",
+        "publicId": "izatlouk",
+        "trackingId": "SZ+WveDLSe+RnWyXJJBJ4w==",
+        "profileId": "ACoAAAX0OPkBzZjVvVi08LqhaKA5UMdVz4M5inM",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEVWm1ZMLfpRA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517553298027?e=1781136000&v=beta&t=KIB-Drwj0DNP7oRILnXk3ypM5n5POftQdnAEV5S7Gf4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEX7QmSSoFSMg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1635789075087?e=1781136000&v=beta&t=gNSbihMMlaQdd_0sP2m4nmd_njYG4j06DobLSgnjIEM"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 53,
+  "numComments": 7,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "40q31q08TdShynYingKIvg==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1726831635330,
+  "postedAtISO": "2024-09-20T11:27:15.330Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

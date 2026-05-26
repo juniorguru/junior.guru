@@ -1,0 +1,231 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/D4E10AQE8sFI3dRH37w/image-shrink_1280/B4EZf47j8vGwAM-/0/1752228053911?e=1780430400&v=beta&t=QFkVQ2EzEeWpS0kR-JEJLjAeTzPdk3wVRfLoBRf1D-U"
+  ],
+  "isActivity": true,
+  "activityDescription": "Honza Javorek reposted this",
+  "activityOfUser": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "TVfbWSlkSeO58w75HppQUQ==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "urn": "urn:li:activity:7352022864880959489",
+  "url": "https://www.linkedin.com/posts/europython_a-warm-thank-you-to-junior-guru-for-supporting-activity-7349377222643777537-3FFB?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC-rMb8By3b5E9QBFVG6yxHBZI1S-rsmubE",
+  "timeSincePosted": "10mo",
+  "shareUrn": "urn:li:share:7349377221867851776",
+  "text": "🎉✨ A warm thank you to Junior Guru for supporting EuroPython 2025! We're proud to be a space where communities come together, and we value the opportunity to collaborate with other communities and open-source projects. 🙌  https://junior.guru/",
+  "attributes": [
+    {
+      "start": 23,
+      "length": 11,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Junior Guru",
+        "universalName": "juniorguru",
+        "trackingId": "6bbPhMhyQPyhT06vQ38I1Q==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:26218444",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQE89NmYF-XT4g/company-logo_400_400/company-logo_400_400/0/1638266899010/juniorguru_logo?e=1781136000&v=beta&t=ad516CNUThMN8eXeVboC5S9U_y2Dnn1UhQn70wIGlxE"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1752858840805,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7349377222643777537?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7349377222643777537%2C7352022847420043264%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287352022847420043264%2Curn%3Ali%3Aactivity%3A7349377222643777537%29",
+      "text": "I only noticed this now 😆 Oh these feed algorithms! Thanks for the shout out! Happy to help with EuroPython 🐍 ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "English",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "TVfbWSlkSeO58w75HppQUQ==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Archana",
+        "lastName": "Alva",
+        "occupation": "Lead Software Engineer | Agentic AI | AI Native Applications | Python",
+        "id": "144455594",
+        "publicId": "archana-alva-m",
+        "trackingId": "soA2/pPXT0esb7H17BnjnA==",
+        "profileId": "ACoAAAicN6oBFgvfFAtYKj3Ihr66J3cQ3oSEUnw",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFJAIvpzpiC1A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1626344133496?e=1781136000&v=beta&t=56wdkwPU4YmasTFrbIsKciPh0sSm6XK1ujUHV9Rixt4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGv-IheeLRqzw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1655110594172?e=1781136000&v=beta&t=hzvQm1C0aLBiWxS5z6ZxONOz0Gllb_he4EDLpu76a1k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Matěj",
+        "lastName": "Kahún",
+        "occupation": "Komuniťák v Czechitas 🏄‍♂️",
+        "id": "726742558",
+        "publicId": "matejkahun",
+        "trackingId": "TAzNgO3MQbKCBIHqlD21FA==",
+        "profileId": "ACoAACtRNh4Bgs49PDAKRTrJ0zQclHv-UqoqjOs",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEFdqnLrw3tqA/profile-displayphoto-shrink_800_800/B4EZVGmAK_GYAg-/0/1740646122793?e=1781136000&v=beta&t=kXs1stUYIteew7uBR7C0b1NfoOSP9z9D7Wl_jTtZgU4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHHulpwLgpD-g/profile-displaybackgroundimage-shrink_350_1400/B4DZzXhX0NH4Ac-/0/1773142376451?e=1781136000&v=beta&t=JhX7zrUGEPQ6CMtCimmgq0aYfeZ6PJRvlkNsVohIwkU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "George",
+        "lastName": "Zisopoulos",
+        "occupation": "Software Engineer",
+        "id": "640918799",
+        "publicId": "georgioszisopoulos",
+        "trackingId": "cSaphoMfS/WE1+ROZkcn2Q==",
+        "profileId": "ACoAACYzpQ8BhyoG6YvX76n-rfXhvIHMiqRjj1g",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEeoEEZQZMpxw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712060472016?e=1781136000&v=beta&t=Wck3-qTf95rYqIXnTT5kgrjQ0EYoDoeyM4-5_bDyKeM"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Zpěváková",
+        "occupation": "Moderátor ve společnosti DATA mesh",
+        "id": "637440646",
+        "publicId": "py-veronika-zpevakova",
+        "trackingId": "1DliOtrXQiePfmnfVUBD+g==",
+        "profileId": "ACoAACX-koYBZCeuCb06SzAT8F955fJvI0OEIAc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG1ZWtWd7gYPA/profile-displayphoto-crop_800_800/B4EZf8w5aYH4AI-/0/1752292366705?e=1781136000&v=beta&t=U6HWTwf03AjW7HUEmYBNf3bJUPuiUzWy7Erk0Q6kAbw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGprRlAotow1Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1519121908586?e=1781136000&v=beta&t=XpMvIj6AwaxV4O3LsHEORi7O8FcmUA6h5NM_51qe9xg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Rapavý",
+        "occupation": "AI Specialist at Raiffeisenbank a.s.",
+        "id": "475183572",
+        "publicId": "martin-rapavy",
+        "trackingId": "Rn82H7D2R7CEOx33weojWQ==",
+        "profileId": "ACoAABxSudQBHuhA8cJ5OL9XXk9jIvrhocisM3w",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG-uEYWYQCi4w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1691341533471?e=1781136000&v=beta&t=TPnx6_RUaVTc-zVJyopipcS6x0aME46dvKqyIHnqifE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFwzvr2gYb0EA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1716196276872?e=1781136000&v=beta&t=WHgrvkrw78fRS0FNPdG84I2uf_O9Aj4XkZP7HZ0Jbo8"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Nikodymova",
+        "occupation": "⚛️ FE developer - Application SW Engineer",
+        "id": "416963620",
+        "publicId": "nikolen",
+        "trackingId": "5mgkTp5pQ5WbAYH89AY+Dg==",
+        "profileId": "ACoAABjaXCQBlHaQQzH6IcpkDvnQBKdNnyXC-IY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFsYpwgZIoFrg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693683002257?e=1781136000&v=beta&t=QR0B0WWPAMoMM7t8iEMA6hRR_dVUeXPf2BIAipk5H2A",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFi7q3Cb9nHTg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1732203022293?e=1781136000&v=beta&t=72AuWy2PRv8_o0F3yuZOB4WJwneTfC5GspdNvmkT5LY"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Katerina",
+        "lastName": "Mackovikova",
+        "occupation": "Data analyst passionate about systems integration",
+        "id": "262585845",
+        "publicId": "katerina-mackovikova-499b3373",
+        "trackingId": "BLOMUsqiT6uQuAjHJjhZUw==",
+        "profileId": "ACoAAA-mvfUBi9EOGyMJGQ2V5sq1pa_91Q3yqB4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH2cRv9plwRWg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723922714065?e=1781136000&v=beta&t=Ss6jpRWXSXGnUamkYVdDcbGXZ-Bph_qdyh7EaU1zXbk"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Šimon",
+        "lastName": "Kořený",
+        "occupation": "Product Owner & Dad | Building great products, raising great humans",
+        "id": "283596586",
+        "publicId": "fusatytata",
+        "trackingId": "4bjntMrOQu2JnHyYP6X6hA==",
+        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEP3Q4BtiThDA/profile-displayphoto-shrink_800_800/B4EZc_c90wHIAc-/0/1749116247942?e=1781136000&v=beta&t=_QtTBgXEBbo6wLgAeAyA_Vwe266kRM2rafjtUTqdQ18",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFllW8t92LUXg/profile-displaybackgroundimage-shrink_350_1400/B4EZkO0XOcHEAY-/0/1756890233024?e=1781136000&v=beta&t=BcgfXCQP09cdXXYAi_lrlRlt4F-p0U2rPgEazsl9SeQ"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "R4SVoM0SSa6tbMap5odopA==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Anezka",
+        "lastName": "Muller",
+        "occupation": "🧑‍🤝‍🧑 Working with and for communities, organizing events, studying service design, having fun in all that. ✏️",
+        "id": "58610470",
+        "publicId": "anezkamll",
+        "trackingId": "m2yTjP2cSW2vO5OeHEKFzw==",
+        "profileId": "ACoAAAN-UyYBW_5FlwBOtClk7WVpl3JlZMHMVn4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEdF62o6gzpHQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731942194763?e=1781136000&v=beta&t=3Pf8QBLlGpzI8zRBBfihj0pgDvCgOUoUJyTfMptX81Y",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHKgfW_KDXR1Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1620408094586?e=1781136000&v=beta&t=qk_LRa-WT8rOvas9-jwGjCle3e76MkO7wIKYYCWCZag"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 12,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "name": "EuroPython",
+    "universalName": "europython",
+    "trackingId": "VSY3xPZVR++xFplyBQKLoQ==",
+    "active": true,
+    "showcase": false,
+    "entityUrn": "urn:li:fs_miniCompany:41130723",
+    "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQGz6u5D6KYABg/company-logo_400_400/B4DZxWmNTUJwAY-/0/1770979382977/europython_logo?e=1781136000&v=beta&t=pwjOEJznkhOEXcURlj3q2Nvk3DG-RH4f9owboCBcCU0"
+  },
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4D0BAQGz6u5D6KYABg/company-logo_400_400/B4DZxWmNTUJwAY-/0/1770979382977/europython_logo?e=1781136000&v=beta&t=pwjOEJznkhOEXcURlj3q2Nvk3DG-RH4f9owboCBcCU0",
+  "authorType": "Company",
+  "authorProfileId": "company",
+  "authorFollowersCount": "7,209",
+  "authorName": "EuroPython",
+  "authorProfileUrl": "https://www.linkedin.com/company/europython/posts",
+  "authorUrn": "urn:li:company:41130723",
+  "postedAtTimestamp": 1752858844967,
+  "postedAtISO": "2025-07-18T17:14:04.967Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

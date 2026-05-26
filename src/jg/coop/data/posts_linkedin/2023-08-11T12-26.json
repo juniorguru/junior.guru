@@ -1,0 +1,568 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "type": "image",
+    "images": [
+      "https://media.licdn.com/dms/image/v2/D4E22AQHyIR_3JQNyNg/feedshare-shrink_800/feedshare-shrink_800/0/1691483892409?e=1781136000&v=beta&t=1PTlPdc1qLrERvAk8oFQxEsTD_9j4fL4CLQNiX3py-4"
+    ],
+    "isActivity": false,
+    "urn": "urn:li:activity:7094597661684547584",
+    "url": "https://www.linkedin.com/posts/activity-7094597661684547584-d8sK?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC7GnRMBMhdlttE134OhzG7Qpm095a9yeJ4",
+    "timeSincePosted": "2yr",
+    "shareUrn": "urn:li:share:7094597660694691840",
+    "text": "Tento díl vznikl díky Predrag Kulić, který nás spojil s Lucií. Lucie Tvrdíková má za sebou spoustu zkušeností na velkých projektech jako Java Engineer. Od roku 2017 začala pomáhat lidem přecházet do IT z jiných oborů. Téma pro podcast se vykrystalizovalo samo. Jak to vlastně v dnešní době s juniory vypadá? Z jakých oborů se hlásí, jak vybrat správný kurz, jelikož jich existuje spousta, jestli firmy stále nabírají koho a jak? A tak mě napadlo, že by u tohoto tématu měl být i Honza Javorek, který mé pozvání do podcastu přijal. Honza má za sebou kariéru Software Engineera, kde mimo jiné působil delší dobu v Oracle. Od roku 2019 se věnuje projektu junior.guru. Je to česká a slovenská komunita, která se zaměřuje na učení programování a také na pomoc s nalezením první práce v IT. Pokud chcete získat představu o situaci s juniory na trhu, včetně temných zákoutí, o kterých se obvykle nemluví, tak si udělejte pohodlí a pusťte si tento podcast.\n\nLink v komentu :)",
+    "attributes": [
+      {
+        "start": 22,
+        "length": 13,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Predrag",
+          "lastName": "Kulić",
+          "occupation": "Senior Talent Acquisition Specialist @Accion Labs Europe",
+          "id": "207126323",
+          "publicId": "predragkulic",
+          "trackingId": "KbHG20IAQPaTM4Lu/1kaZQ==",
+          "profileId": "ACoAAAxYfzMBGNMxsffAm8Q9PUgoynuDt2C6jBY",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG4q9ij4TLp_A/profile-displayphoto-crop_800_800/B4EZqgT2bSIUAI-/0/1763626152878?e=1781136000&v=beta&t=NJgqnTctJH65gA1tlBVuNePduTR8ZAmvco3Bkat0CuA",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQE0g_0R8Uep_Q/profile-displaybackgroundimage-shrink_200_800/B4DZu2dKSdJcBk-/0/1768292656884?e=1781136000&v=beta&t=t8nvXpdq-xn6x3pZTuVeexdvMPjls0gFbDIEaje7gBE"
+        }
+      },
+      {
+        "start": 63,
+        "length": 15,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Lucie",
+          "lastName": "Tvrdíková",
+          "occupation": "AI & IT lektorka a konzultantka pro firmy i veřejnost | Už 9 let tvořím vlastní kurzy | Bez nereálných slibů a marketingového bullshitu",
+          "id": "66547908",
+          "publicId": "lucietvrdikova",
+          "trackingId": "/er3Yv8sSOWqgJb2dGLEOA==",
+          "profileId": "ACoAAAP3cMQB6Z0KS11itMTIOss5Q1J0OCTXkaQ",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFbJu-rT_LRUg/profile-displayphoto-crop_800_800/B4EZp9X4XMKYAI-/0/1763040008398?e=1781136000&v=beta&t=zA3XisQSO_OitXZqlG1KkJFxQH5PuRiKWMSggJ7ktOM",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGI8vLXYP6i0A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1683185081860?e=1781136000&v=beta&t=KztYZQz80jSf6UR1GJtsf64Wo7jUpJ1KewboqIa3MDw"
+        }
+      },
+      {
+        "start": 479,
+        "length": 13,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "trackingId": "30M27z7rSfmMmGQG2XVa5w==",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+        }
+      }
+    ],
+    "comments": [
+      {
+        "time": 1691567313653,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7094597661684547584?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7094597661684547584%2C7094947549924474880%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287094947549924474880%2Curn%3Ali%3Aactivity%3A7094597661684547584%29",
+        "text": "ne všechny kurzy na udemy jsou nekvalitní :D",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Jitka",
+          "lastName": "Marešová",
+          "occupation": "Cybersecurity Specialist | Penetration Tester | Full-Stack Developer",
+          "id": "227066345",
+          "publicId": "jitka-marešová",
+          "trackingId": "jD8RTpnIQIKlHyYnKML5hw==",
+          "profileId": "ACoAAA2IwekByahlnQAtuKNt4Xlww1xrII0Li34",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHyvD8vOsr7iA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726332903485?e=1781136000&v=beta&t=LheHhJ9pQItJiov0SYtvh6Fpc-21oT3eduhhIKF1dsM",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFQhyZAecoedw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1692743292333?e=1781136000&v=beta&t=1f3YD_GsZKNR5JN8n8non-DYg6MZLRZB2hUEJEjcmzk",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1691527192040,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7094597661684547584?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7094597661684547584%2C7094779267682574336%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287094779267682574336%2Curn%3Ali%3Aactivity%3A7094597661684547584%29",
+        "text": "Myslím, že jsem poprvé natáčel takhle ve více lidech a bylo to výživné. Hned po natáčení mi to přišlo jako jeden velký zamotaný chaos, všelijaké nedokončené myšlenky mi dělaly v hlavě ping pong ještě týden 😀 Ale výsledek je myslím moc pěkný! Díky za pozvání. Probrali jsme důležitá témata 💪",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "trackingId": "xOS43aCERLayqcm25srDBg==",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1691503715317,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7094597661684547584?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7094597661684547584%2C7094680799165181954%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287094680799165181954%2Curn%3Ali%3Aactivity%3A7094597661684547584%29",
+        "text": "Dnes jsem doposlouchal tento díl a díky za spoustu informací, které jsem se dozvěděl o českém IT trhu! 👍 Jurij Starynec má schopnost \"vypáčit\" různé cenné informace.\n\nCo se týče juniorů a finanční motivace, tak to není zrovna ideální motivace proč chtít \"do IT\" a dlouhodobě nebude stačit k úspěchu.\nSám jsem věděl, že se IT chci věnovat už od 5 let, programovat jsem začal od 10 let (QBasic, TurboPascal) a na střední v období prázdnin jsem věnoval IT až 16 hodin denně. 🤣 Takže vzhledem k celkovému času to zase až tak \"luxusně\" placené není, pokud člověk pracuje na cizím projektu a neudělá si vlastní. Respektive kdyby lidé věnovali stejný čas čemukoliv jinému, tak by v tom taky byli hodně dobří a dobře placení. Proto když zkušení programátoři radí známým jak jsou v programování peníze, měli by se první zamyslet nad tím kolik IT věnovali opravdu CELKEM času za celý život a kdy s IT začali.\n\nKdyž už někdo je zapálený, tak řeknu asi \"kacířskou\" myšlenku: Ale nepotřebuje žádnou firmu, její souhlas či uznání. K vývoji stačí běžný počítač, běžné připojení, nutné softwarové nástroje jsou zdarma nebo cenově snadno dostupné - není to jako mise na Mars nebo práce s urychlovačem částic v CERN.🤣\n\nStačí jen programovat, učit se a nepřestat! 👍",
+        "entities": [
+          {
+            "start": 105,
+            "length": 14,
+            "type": "PROFILE_MENTION",
+            "profile": {
+              "firstName": "Jurij",
+              "lastName": "Starynec",
+              "occupation": "Manager, Software Engineering at Rapid7 || Skillsetup founder",
+              "id": "480527016",
+              "publicId": "jurij-starynec",
+              "trackingId": "XcXemXz6SLyqYbUyS54roA==",
+              "profileId": "ACoAABykQqgBNrjoMmA-J2Y-yrDV4_n_I5ww4tA",
+              "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFB6D0FdWJVCg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1704971192156?e=1781136000&v=beta&t=ozlSsgCtRb_uqY7_uQbZEuF1d9Zkfq0R_IBxN2nJ0qA"
+            }
+          }
+        ],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Jan",
+          "lastName": "Holík",
+          "occupation": "Front-end Developer (8+ years) | React, TypeScript, Next.js, Qwik | AI-friendly & high-performance web apps | Remote-first | Mindful & present",
+          "id": "566574130",
+          "publicId": "jan-holik",
+          "trackingId": "I+8luZvjQVyCbfj/eGoKIg==",
+          "profileId": "ACoAACHFPDIBoCV8gLc6gFBU0K7CFbnur1eZQOs",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEH6wUFBZxMyg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1710681095094?e=1781136000&v=beta&t=9mI7xp70Fm1bTyMPDLDHIVGCs8m1xfND72rqCrE8va0",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFDPtAY7tpGog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1695652193902?e=1781136000&v=beta&t=UvDkJ7X1HxGvqY1PpJzYRBpf-z9GGYyGKF0dDGbW1Yw",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1691502012327,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7094597661684547584?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7094597661684547584%2C7094673656311619585%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287094673656311619585%2Curn%3Ali%3Aactivity%3A7094597661684547584%29",
+        "text": "Děkuji za pozvání 😉",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Lucie",
+          "lastName": "Tvrdíková",
+          "occupation": "AI & IT lektorka a konzultantka pro firmy i veřejnost | Už 9 let tvořím vlastní kurzy | Bez nereálných slibů a marketingového bullshitu",
+          "id": "66547908",
+          "publicId": "lucietvrdikova",
+          "trackingId": "mOa52V15Q+CkBf9vhyiiuQ==",
+          "profileId": "ACoAAAP3cMQB6Z0KS11itMTIOss5Q1J0OCTXkaQ",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFbJu-rT_LRUg/profile-displayphoto-crop_800_800/B4EZp9X4XMKYAI-/0/1763040008398?e=1781136000&v=beta&t=zA3XisQSO_OitXZqlG1KkJFxQH5PuRiKWMSggJ7ktOM",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGI8vLXYP6i0A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1683185081860?e=1781136000&v=beta&t=KztYZQz80jSf6UR1GJtsf64Wo7jUpJ1KewboqIa3MDw",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1691483949918,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7094597661684547584?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7094597661684547584%2C7094597897073111040%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287094597897073111040%2Curn%3Ali%3Aactivity%3A7094597661684547584%29",
+        "text": "Podcast: https://www.starynec.cz/\nBonusová část: https://www.pickey.cz/p/4412fd1077d597e59e3e248435e11d8e",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Jurij",
+          "lastName": "Starynec",
+          "occupation": "Manager, Software Engineering at Rapid7 || Skillsetup founder",
+          "id": "480527016",
+          "publicId": "jurij-starynec",
+          "trackingId": "/KfaFl3TRN+tG+DNjj1OBQ==",
+          "profileId": "ACoAABykQqgBNrjoMmA-J2Y-yrDV4_n_I5ww4tA",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFB6D0FdWJVCg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1704971192156?e=1781136000&v=beta&t=ozlSsgCtRb_uqY7_uQbZEuF1d9Zkfq0R_IBxN2nJ0qA",
+          "distance": "OUT_OF_NETWORK"
+        }
+      }
+    ],
+    "reactions": [
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Zuzana",
+          "lastName": "Lomozníková",
+          "occupation": "QA Engineer",
+          "id": "242796237",
+          "publicId": "zuzana-lomoznikova",
+          "trackingId": "t0+ZV940REyjVQEgQeRfXg==",
+          "profileId": "ACoAAA54xs0BeJNn6vJqsytwWwX0qS_g3RYC3ac",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQErTDn9uKAKfA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1687971857884?e=1781136000&v=beta&t=7pQS9iwcTzMxohrKy4akU17TMtlgRPHt0nQo4KbtjgU",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGl9AZ32noREA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1687972203926?e=1781136000&v=beta&t=T19zezei3R43CJK-9IjD33EOQufs3N5hmY-tdsvId2E"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Yumzhana",
+          "lastName": "Tsyrendorzhieva",
+          "occupation": "42Cadet | IT Enthusiast | Adventurous Explorer | Professional QA Engineer | Lifelong Learner |",
+          "id": "581165920",
+          "publicId": "yumzhana-tsyrendorzhieva-a5476a142",
+          "trackingId": "enMS4NDjRWyD3Uf7XZJZsg==",
+          "profileId": "ACoAACKj42ABtUBfMdnVDe4hv27N8PEPV0SAuBg",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHk2PW_7pnXGg/profile-framedphoto-shrink_800_800/B4DZ2vQ91aHwAk-/0/1776761954013?e=1780430400&v=beta&t=ij57aNbfO3HQZYY4G9U6D9IdjSscT1rU_ZmIpCSHY1o",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHazW_FkCCTpg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1737837769984?e=1781136000&v=beta&t=UJZ9czv5JjreKNaysC_LC2i_No7BOT1XWXzz3WB0DKA"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Pavel",
+          "lastName": "Matulík",
+          "occupation": "QA team leader ve společnosti Liftago",
+          "id": "279569422",
+          "publicId": "pavel-matulík-a3a76379",
+          "trackingId": "OtQ8zUeKTweatydbb79caA==",
+          "profileId": "ACoAABCp5A4BrDAGhCFUu1HkpGg5Wl6MwuKxTAA",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEt1YtxwfpsxA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1672320274791?e=1781136000&v=beta&t=2FoF3jEL_3DbwFvDEiW71R_mtaD2tStlzDRvCJ2LdDc"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Martin",
+          "lastName": "Zamastil",
+          "occupation": "Solution Architect | Etnetera Core",
+          "id": "30449735",
+          "publicId": "martin-zamastil-45b245a",
+          "trackingId": "QqaOecTQRKWM/bCorfMNPg==",
+          "profileId": "ACoAAAHQoEcBfM87CUjX1Z-kDmycssFkPPkvIVs",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHzXGkVarm6BA/profile-displayphoto-shrink_800_800/B4DZahlRVHG0Ac-/0/1746467624922?e=1781136000&v=beta&t=LZE5gvZ31YyFrH5e26WkQe-y9lvWnEwVaZdfhvWVvfI",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEAa2XIt1F9FA/profile-displaybackgroundimage-shrink_350_1400/B56ZcYNeAzGQAY-/0/1748457874223?e=1781136000&v=beta&t=hnd5zTP0K7My_tZr2ZsgmBH7rX3zBb98Nc6H4tq_7BM"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Alina",
+          "lastName": "Antonova",
+          "occupation": "Data Protection Officer, Cybersecurity Risk Analyst at Betsys",
+          "id": "880386527",
+          "publicId": "alina-antonova-b3ba0a206",
+          "trackingId": "oiuZvQIFQOCyteA4PJXX7g==",
+          "profileId": "ACoAADR5od8BoaXgou6MncfNw9T8qEIIwapQWCA",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFPr0S5ohnqUg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1702407460563?e=1781136000&v=beta&t=9RjzK83az6mG3po_BsLQyCPsyOt3M162NWXyo5TKyUc",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHvhbK7lq5GIA/profile-displaybackgroundimage-shrink_200_800/B4EZcsJMVtG4AU-/0/1748792297736?e=1781136000&v=beta&t=WW6tTZJHSRAN9zQWRT-xdTqlfEAX2f76C1PIQ4zIOmc"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Pavel Grumpy",
+          "lastName": "Šimerda",
+          "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
+          "id": "551084893",
+          "publicId": "grumpyprogrammer",
+          "trackingId": "XqadNsPIQKC5FoMOcMWViA==",
+          "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFnQ8ypdjjyvg/profile-displayphoto-crop_800_800/B4DZxZUZFlHkAI-/0/1771025047361?e=1781136000&v=beta&t=fFiIDptOBoMzbUkj1Lvpd8USzHMX1nkcCCOr19Su_4c"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Vojtěch",
+          "lastName": "Sládeček",
+          "occupation": "Talent acquisition manager @Dateio 💚 💳 Tech & Startup fan 💻 🚀 Outdoor activity lover 🏔🏃🏻🧗",
+          "id": "207428287",
+          "publicId": "vojtechsladecek",
+          "trackingId": "JeLPbcKaSw2YGib5OcFclA==",
+          "profileId": "ACoAAAxdGr8Bsk_1A2AbAhHNlwuPT6jE0UeYPBY",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHRb8rK1nc2LQ/profile-framedphoto-shrink_800_800/B4DZ4l0m67I4Ag-/0/1778751008815?e=1780430400&v=beta&t=CCmX_5HP6zE8g6flIOjR5WZcOjU8nBZ3EUjmm5NoyNs",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHXgk5u8QrDKQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ0k2LzyGsAY-/0/1774439677866?e=1781136000&v=beta&t=OB0MWlhwSUSHCdHOk18AUIVoonPgrBnRqNR1rvw5-wo"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Pavel",
+          "lastName": "Brožek",
+          "occupation": "Senior Recruiter & Psychologist | Solving Client Problems | AI / automation enthusiast | Vibe-coding fan",
+          "id": "213472357",
+          "publicId": "brozekp",
+          "trackingId": "E9T7G625S2WerCsaM9lo4w==",
+          "profileId": "ACoAAAy5VGUB5CxvF4yTf8e2Iwdn6vZy95xNujc",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFd2QyDDh61vw/profile-displayphoto-crop_800_800/B4EZj2IbvnIIAI-/0/1756476063178?e=1781136000&v=beta&t=PbpPqI5DxeOVBc62pxRcJeRVLAgTF5KSL_pxuqASM_U"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Daniel",
+          "lastName": "Vašek",
+          "occupation": "DevOps ⬝ SRE ⬝ IaC ⬝ k8s ⬝ o11y",
+          "id": "578321821",
+          "publicId": "daniel-vasek",
+          "trackingId": "vg7T0D1gSjaIurAFef7Ejg==",
+          "profileId": "ACoAACJ4fZ0Bt9HmK1LjeVmmCJJm_NgvxIhPgH4"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Jiří",
+          "lastName": "Najman",
+          "occupation": "Founder at Betsys #budvkurzu",
+          "id": "116111613",
+          "publicId": "jnajman",
+          "trackingId": "rOBUT84qRlC1RcGrPVM4tw==",
+          "profileId": "ACoAAAbruP0BiK-He8wj3gFHuxN7oyd0rKiwgYs",
+          "picture": "https://media.licdn.com/dms/image/v2/C4D03AQENS5jGDZ1Tkw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1615384815411?e=1781136000&v=beta&t=EYM8HYh4KElQgKK1UR5O8CANYLcWcMdlV7hKngP6EVk",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQF7Tky42Ey3tg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1656407760664?e=1781136000&v=beta&t=bbPvC8myuho-n5TSxslFE99aYo7RrfyjlhkSItt9X_Y"
+        }
+      }
+    ],
+    "numShares": 3,
+    "numLikes": 24,
+    "numComments": 12,
+    "canReact": true,
+    "canPostComments": true,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "ALL",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "firstName": "Jurij",
+      "lastName": "Starynec",
+      "occupation": "Manager, Software Engineering at Rapid7 || Skillsetup founder",
+      "id": "480527016",
+      "publicId": "jurij-starynec",
+      "trackingId": "/KfaFl3TRN+tG+DNjj1OBQ==",
+      "profileId": "ACoAABykQqgBNrjoMmA-J2Y-yrDV4_n_I5ww4tA",
+      "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFB6D0FdWJVCg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1704971192156?e=1781136000&v=beta&t=ozlSsgCtRb_uqY7_uQbZEuF1d9Zkfq0R_IBxN2nJ0qA"
+    },
+    "authorProfileId": "jurij-starynec",
+    "authorType": "Person",
+    "authorName": "Jurij Starynec",
+    "authorProfileUrl": "https://www.linkedin.com/in/jurij-starynec?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAABykQqgBNrjoMmA-J2Y-yrDV4_n_I5ww4tA",
+    "authorUrn": "urn:li:member:480527016",
+    "postedAtTimestamp": 1691483893796,
+    "postedAtISO": "2023-08-08T08:38:13.796Z"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7095742342325772291",
+  "url": "https://www.linkedin.com/posts/honzajavorek_tento-d%C3%ADl-vznikl-d%C3%ADky-predrag-kuli%C4%87-kter%C3%BD-activity-7095742342325772291-W_PD?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC7GnRMBMhdlttE134OhzG7Qpm095a9yeJ4",
+  "timeSincePosted": "2yr",
+  "shareUrn": "urn:li:share:7095742341675659264",
+  "text": "Tohle bylo výživné! Pusťte si epizodu podcastu od Jurij Starynec, kam si pozval Lucie Tvrdíková jako zástupkyni začínajících testerů, a mně, jako zástupce začínajících programátorů. Probrali jsme toho hodně:\n\n👋 Jak jsem se dostal k Junior Guru? Jak se Lucie dostala ke kurzům?\n\n🧐 Kdo jsou to ti junioři? Jak vznikají? Co umí samouk nebo absolvent kurzu? Kdo a proč se rekvalifikuje do IT? Co od toho čekají? Může do IT každý?\n\n🏭 Proč teď firmy chtějí méně juniorů? Proč junioři ve firmách nevydrží? Kolik firmu junior stojí? Je junior zdroj levné práce?\n\n🧑‍🏫 Jaká je cesta začínajícího testera nebo programátora? Jakou váhu mají v CVčku nejrůznější IT akademie? Jak poznat kvalitní kurz? Kde se dá o kurzech něco zjistit?\n\n🎁 BONUS: K čemu je dobrá komunita pro začátečníky? Proč kámoši z IT radí ty nejhorší věci? Proč je fakt dobré vyladit si CVčko? Mají to holky v IT jednodušší? Proč se firmy nemají bát zvát si juniory na pohovor? Proč měnit kariéru pouze ve chvíli, kdy je stabilní rodinný rozpočet? A co znamená heslo „NIC NEŽ NÁVOD“?!",
+  "attributes": [
+    {
+      "start": 50,
+      "length": 14,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Jurij",
+        "lastName": "Starynec",
+        "occupation": "Manager, Software Engineering at Rapid7 || Skillsetup founder",
+        "id": "480527016",
+        "publicId": "jurij-starynec",
+        "trackingId": "XcXemXz6SLyqYbUyS54roA==",
+        "profileId": "ACoAABykQqgBNrjoMmA-J2Y-yrDV4_n_I5ww4tA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFB6D0FdWJVCg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1704971192156?e=1781136000&v=beta&t=ozlSsgCtRb_uqY7_uQbZEuF1d9Zkfq0R_IBxN2nJ0qA"
+      }
+    },
+    {
+      "start": 80,
+      "length": 15,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Lucie",
+        "lastName": "Tvrdíková",
+        "occupation": "AI & IT lektorka a konzultantka pro firmy i veřejnost | Už 9 let tvořím vlastní kurzy | Bez nereálných slibů a marketingového bullshitu",
+        "id": "66547908",
+        "publicId": "lucietvrdikova",
+        "trackingId": "/er3Yv8sSOWqgJb2dGLEOA==",
+        "profileId": "ACoAAAP3cMQB6Z0KS11itMTIOss5Q1J0OCTXkaQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFbJu-rT_LRUg/profile-displayphoto-crop_800_800/B4EZp9X4XMKYAI-/0/1763040008398?e=1781136000&v=beta&t=zA3XisQSO_OitXZqlG1KkJFxQH5PuRiKWMSggJ7ktOM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGI8vLXYP6i0A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1683185081860?e=1781136000&v=beta&t=KztYZQz80jSf6UR1GJtsf64Wo7jUpJ1KewboqIa3MDw"
+      }
+    },
+    {
+      "start": 232,
+      "length": 11,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Junior Guru",
+        "universalName": "juniorguru",
+        "trackingId": "eeSI/rWwTo6YEzw1cTev4A==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:26218444",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQE89NmYF-XT4g/company-logo_400_400/company-logo_400_400/0/1638266899010/juniorguru_logo?e=1781136000&v=beta&t=ad516CNUThMN8eXeVboC5S9U_y2Dnn1UhQn70wIGlxE"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Zuzana",
+        "lastName": "Lomozníková",
+        "occupation": "QA Engineer",
+        "id": "242796237",
+        "publicId": "zuzana-lomoznikova",
+        "trackingId": "t0+ZV940REyjVQEgQeRfXg==",
+        "profileId": "ACoAAA54xs0BeJNn6vJqsytwWwX0qS_g3RYC3ac",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQErTDn9uKAKfA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1687971857884?e=1781136000&v=beta&t=7pQS9iwcTzMxohrKy4akU17TMtlgRPHt0nQo4KbtjgU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGl9AZ32noREA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1687972203926?e=1781136000&v=beta&t=T19zezei3R43CJK-9IjD33EOQufs3N5hmY-tdsvId2E"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Alena",
+        "lastName": "Hafenrichterová",
+        "occupation": "💻 ISTQB® Certified Tester| 💬 Nehledám výmluvy, hledám řešení",
+        "id": "207775863",
+        "publicId": "alena-hafenrichterová-7b370059",
+        "trackingId": "YPUU7AqqRf+BbTXdgyMo/g==",
+        "profileId": "ACoAAAxiaHcBXEJdn3TgODAW-YZKPHQkdPfvQ9Y",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQFxdbV2ECvZJQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1680810009569?e=1781136000&v=beta&t=jFthJo0p3xvaN5Oev6mzWUZB_7FVFbGdH4u5yisFcWs",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHJwsxe172tvQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1683393713418?e=1781136000&v=beta&t=TnnaN2EcSWEgk9bhfjQo63ZihmottEHxQk0JkY5yVEU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Patrik",
+        "lastName": "Tomek",
+        "occupation": "Frontend Developer | PatrikTomek.cz",
+        "id": "367330049",
+        "publicId": "patriktomek",
+        "trackingId": "Vv86z1kkSJmQonLxS60svg==",
+        "profileId": "ACoAABXlAwEB1g3WL1oSWzl-dIOt8EXZW9ybkOE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHMJ_cE6Wp0Mw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1694213228047?e=1781136000&v=beta&t=Q-BZ25rEq-DG2vmVyvDElOkI15lwwgkGkHZ7jqFit7s",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQH1GuhunV_DXg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1639390008484?e=1781136000&v=beta&t=N6svk1-WH4d771_ExzOwNBYyRoQB-IXE9wxYtafiCfg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Mikulas",
+        "lastName": "Zimak",
+        "occupation": "--",
+        "id": "248624450",
+        "publicId": "mikulas-zimak-a8231b6b",
+        "trackingId": "6hMTPnpVT4yW4MfNx7LJ0w==",
+        "profileId": "ACoAAA7RtUIBkbXIaLcGeJ4C9iKmR9zjfKYbxKw",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQFnEWAFwCSV7Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1683560748963?e=1781136000&v=beta&t=R97PWEureocMo7d8AKc0eftjNKri8HaV9rOqgmspIJc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lukáš",
+        "lastName": "K.",
+        "occupation": "JavaScript (fullstack) dev. TypeScript, Java, ReactJS / NextJS, Spring, NodeJS. Former restaurant / retail / e-commerce professional. \"Fancy text files editor\" aka software developer.",
+        "id": "348808886",
+        "publicId": "lukas-kubec",
+        "trackingId": "1uXPYy0TQ2StTxv9PZe2BA==",
+        "profileId": "ACoAABTKZrYBVpBnYvwYK-h53fOrYdlAiS6B9-M"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Alica",
+        "lastName": "Freund",
+        "occupation": "Software Engineer | .NET/C#, Azure, Angular, Kubernetes | Podcaster at (re)štarty v IT",
+        "id": "453021482",
+        "publicId": "alica-freund",
+        "trackingId": "YIQcDNhcTEKhQQUOulYMHg==",
+        "profileId": "ACoAABsAjyoBsewDRig_krBaqEqpchstt-rlnVU",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGnCpzRqeIaJQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695207185518?e=1781136000&v=beta&t=QxeA55T1FP3F9Fyh9P8NJUvahPT6F_fGYT0c9qjdvaE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Johana",
+        "lastName": "Ulrychová",
+        "occupation": "QA tester",
+        "id": "728761261",
+        "publicId": "johana-ulrychova",
+        "trackingId": "Y4KhleW9TlymIAbCH0waOg==",
+        "profileId": "ACoAACtwA60BgTqh405P3W41O2HSc7I7SuU2NBo",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQFaDhFb5NNF7g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1673473890102?e=1781136000&v=beta&t=clvr7QXp06b2vAFyTlc-2BOcES1b-_taFRVlkzINmaI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG_3IzA1fgGCg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1699005455671?e=1781136000&v=beta&t=OJXLZDyD-W3TFaF6tOwk_UmtXJDHUDH5acrwII1uPp4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Linda",
+        "lastName": "A.",
+        "occupation": "Software Tester",
+        "id": "1019369824",
+        "publicId": "linda-adamkova",
+        "trackingId": "ieolaRoXTF6FQBH+Qn7B9Q==",
+        "profileId": "ACoAADzCWWABzURrYgAmGGAeFM-hNIE5flA7xss",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHa8pAPzh6gxA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1684322861481?e=1781136000&v=beta&t=_KoHfZoAaVsAYlg3boUsczDsV8TlxqcJvaE0WBMg_KU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE0f5P2prsZvA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1682673665280?e=1781136000&v=beta&t=Fi-LCHnk2XZA9Ba-CKzd_PwdhnwS4saECVTQ1JUMdus"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Jahič",
+        "occupation": "Co-Creator & Lecturer at Street of Code | Creating programming courses | Podcast on Spotify and YouTube | Software Engineer",
+        "id": "231695045",
+        "publicId": "jakub-jahič-94571665",
+        "trackingId": "JiZl+5dVR1mhCR0FuGkSiA==",
+        "profileId": "ACoAAA3PYsUB046kt-dH90sKs3OncOpikMt7Ze4",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEoJBLvoky4mw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1596965472162?e=1781136000&v=beta&t=sX4_sdcqWgeZnVTW6ZzqMcPrb2OvNMX5nvYLLmUmNYY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH_4UREC8JI3w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1724347935419?e=1781136000&v=beta&t=HpWKHsp27S1mH8qnzAsNHDIw8LqxNq7vLq6UOIEWdHQ"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Lucie",
+        "lastName": "Tvrdíková",
+        "occupation": "AI & IT lektorka a konzultantka pro firmy i veřejnost | Už 9 let tvořím vlastní kurzy | Bez nereálných slibů a marketingového bullshitu",
+        "id": "66547908",
+        "publicId": "lucietvrdikova",
+        "trackingId": "/er3Yv8sSOWqgJb2dGLEOA==",
+        "profileId": "ACoAAAP3cMQB6Z0KS11itMTIOss5Q1J0OCTXkaQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFbJu-rT_LRUg/profile-displayphoto-crop_800_800/B4EZp9X4XMKYAI-/0/1763040008398?e=1781136000&v=beta&t=zA3XisQSO_OitXZqlG1KkJFxQH5PuRiKWMSggJ7ktOM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGI8vLXYP6i0A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1683185081860?e=1781136000&v=beta&t=KztYZQz80jSf6UR1GJtsf64Wo7jUpJ1KewboqIa3MDw"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 11,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "xOS43aCERLayqcm25srDBg==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1691756806928,
+  "postedAtISO": "2023-08-11T12:26:46.928Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

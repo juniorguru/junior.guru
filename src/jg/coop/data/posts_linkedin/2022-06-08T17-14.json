@@ -1,0 +1,457 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4E22AQF2NLIHx6Qjng/feedshare-image-high-res/feedshare-image-high-res/0/1654708469637?e=1781136000&v=beta&t=5NmED9KwK2qsRGmQR-oTaAaPtIAozEPOdkmgMe6hTRQ"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6940350359580102656",
+  "url": "https://www.linkedin.com/posts/honzajavorek_community-gug-pyconcz-activity-6940350359580102656-4uKO?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFO533UB8DB_-rdYybN70u0U_dNKjqbKYjY",
+  "timeSincePosted": "3yr",
+  "shareUrn": "urn:li:share:6940350358397325312",
+  "text": "#COMMUNITY BUILDERS' WORLD 🎪 Už za týden v pátek 17.6. se koná konference pro všechny komunitní manažery a organizátory. Budou tam top přednášky a top lidi z oboru. Třeba já s krátkým příspěvkem o tom, jak mi s komunitou pomáhá robot v Pythonu.\n\nLístky jsou na cbw2022.com stále v prodeji, přijďte! Konference bude hybridní, což znamená, že se bude konat jak online, tak v Praze na Žižkově v Prostor39 (pro přespolní: v pěší vzdálenosti od hlavního nádraží). Těšit se můžete na lidi z #GUG, #HolkyzMarketingu#HolkyzMarketingu#HolkyzMarketingu, Femme Palette, Česko.Digital, People in Need a také z firem, ve kterých to s komunitami myslí vážně.\n\nChtěl bych ještě na závěr pozvánky poděkovat týmu z Czech Community of Community Builders a hlavně Ladislav Vasek a Jiri Necas, kteří vložili do této komunitní a dobrovolně organizované konference ohromné úsilí a velké množství času. Sám jsem se dřív podílel na komunitních přípravách #PyConCZ a vím, že uspořádat takovouhle pecka konferenci není vůbec jednoduché!",
+  "attributes": [
+    {
+      "start": 491,
+      "length": 17,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "#HolkyzMarketingu",
+        "universalName": "holkyzmarketingu",
+        "trackingId": "5hlLHg2ISGug6/rsAwpSvw==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:40732570",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQGX7M7mPnnWfQ/company-logo_400_400/company-logo_400_400/0/1638373535162/holkyzmarketingu_logo?e=1781136000&v=beta&t=BiHUlsdwJy9Sgnw0Cp0ypzE3GpzsqMwO8S-vSVH7pQc"
+      }
+    },
+    {
+      "start": 544,
+      "length": 13,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Femme Palette",
+        "universalName": "femme-palette",
+        "trackingId": "Yncug2afR3CCMmWNjSyvYQ==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:10137789",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C560BAQG5o4kwf2AJ_Q/company-logo_400_400/company-logo_400_400/0/1630654224175/femme_palette_logo?e=1781136000&v=beta&t=SYSGTrG9FHZTL3k1zHEzGkgOxh6y1NUYX47dL4XGe6o"
+      }
+    },
+    {
+      "start": 559,
+      "length": 13,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Česko.Digital",
+        "universalName": "cesko-digital",
+        "trackingId": "J6Rlq3y1S/6tgQjle0887Q==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:14803595",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQF_timuUHwllg/company-logo_400_400/company-logo_400_400/0/1630501620053/cesko_digital_logo?e=1781136000&v=beta&t=1gQ5GhFuxgcm3RZJGTEzlEsvtGSZRY-MUlW2urd6KDo"
+      }
+    },
+    {
+      "start": 574,
+      "length": 14,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "People in Need",
+        "universalName": "people-in-need",
+        "trackingId": "1XZbjJUsR/mmGUYTZ+c2Og==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:337762",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQHW3jwcH_eDyw/company-logo_400_400/company-logo_400_400/0/1653469071618/people_in_need_logo?e=1781136000&v=beta&t=gXBsRCoVi-DHRFy7xouEHhxaaMIp_S9MNdwJiZSX5kQ"
+      }
+    },
+    {
+      "start": 698,
+      "length": 37,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Community Builders",
+        "universalName": "czech-community-of-community-builders",
+        "trackingId": "XGZNG2jjRnyZwWqN2Zwgmg==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:82375595",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQHp-sNHTdji7Q/company-logo_400_400/company-logo_400_400/0/1644224515201?e=1781136000&v=beta&t=6-3uxvaXiYH3ItnzbU8jpubC8T7bL9Zp-LefxgZhrDA"
+      }
+    },
+    {
+      "start": 745,
+      "length": 14,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Ladislav ",
+        "lastName": "Vasek",
+        "occupation": "🚀 Communities, events & media that actually work | 🎪 Space Dog | ⚙️ Tech Execs",
+        "id": "414485697",
+        "publicId": "ladislav-vasek",
+        "trackingId": "LBmGnzq+TpOPTL7Hsy9JMw==",
+        "profileId": "ACoAABi0jMEB-HfKmmHkAOkWmPuT_0O0SZYQeiI",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGqeZwljsXiIA/profile-displayphoto-crop_800_800/B4DZ12lFE8G0AM-/0/1775810926834?e=1781136000&v=beta&t=1-WlEa5CWIkBXkox5pOlSc_Pg3qFXwBax9Qu28ggcNY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEsMG2EZxu5iw/profile-displaybackgroundimage-shrink_350_1400/B4DZ12kVyWJoAc-/0/1775810734035?e=1781136000&v=beta&t=0M_w8ICTD7NCH6LWYgfOuupCpmfN0pbqLNCjma4GzAw"
+      }
+    },
+    {
+      "start": 762,
+      "length": 10,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Necas",
+        "occupation": "People Programs Manager (Talent Acquisition & Employer Branding & Business Partnering + PR & Communications & Tech Community) | Founder of Hiring On Ramp",
+        "id": "452845690",
+        "publicId": "necasjiri",
+        "trackingId": "A+Mhv3QXQwKu/uQ80IOTUg==",
+        "profileId": "ACoAABr94HoBk8rcjyVSHInie0pg-zn_xnWiXiM",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQF5bJQ-Dn0fwQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1562156245803?e=1781136000&v=beta&t=6HPTJxNYoO-sTv6yavLyPvjBKu53wbUBGjU0x6aLbL0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGN6IAfzYGEXQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ0pbwbZHEAc-/0/1774516636684?e=1781136000&v=beta&t=-O9uaBR68HidkRLJ6H1QZOlSxHsQCiv1P7QdBdsPPCE"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1655571499020,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6940350359580102656?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6940350359580102656%2C6943970160617644033%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286943970160617644033%2Curn%3Ali%3Aactivity%3A6940350359580102656%29",
+      "text": "Moc me Vase prezentace bavila a dost jsem si odnesla. Diky za sdileni.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Míša",
+        "lastName": "Valášková",
+        "occupation": "Koordinátorka dobro-aktivit",
+        "id": "539749797",
+        "publicId": "valaskova",
+        "trackingId": "lUQPYESGRw+RT4qPDolRrQ==",
+        "profileId": "ACoAACAr7aUBHboZNIbWKUNbShE4odiyq55cj4k",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGGVvb8H8lQJQ/profile-displayphoto-crop_800_800/B4EZg0OpJtHIAI-/0/1753222914237?e=1781136000&v=beta&t=CLChTa_aGNblQzNPkW4vhQnqM-wXvde_4U71tMo3Ouw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF3IXvEfM_5-A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1735433060136?e=1781136000&v=beta&t=K4LM7jbGUI49A3UkY_hwj_6fjVYuj9v77IYbwVOapIE",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1654717804786,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6940350359580102656?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6940350359580102656%2C6940389507481399296%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286940389507481399296%2Curn%3Ali%3Aactivity%3A6940350359580102656%29",
+      "text": "Díky Honza Javorek, že ses k nám připojil. Moc si toho vážím! :)  Dáváme do toho s Ladislav Vasek hodně, ale není to jen o nás. Velkou mírou přispívají i Erika Boucharechas, Filip Goszler, Jan Meissner, Václav Kotyk a mnoho dalších z Czech Community of Community Builders a bez nich by to nešlo. 🙏",
+      "entities": [
+        {
+          "start": 5,
+          "length": 13,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Honza",
+            "lastName": "Javorek",
+            "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+            "id": "8517488",
+            "publicId": "honzajavorek",
+            "trackingId": "jSbrzXBjTVu9PFZKZoKYrg==",
+            "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+            "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+          }
+        },
+        {
+          "start": 83,
+          "length": 14,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Ladislav ",
+            "lastName": "Vasek",
+            "occupation": "🚀 Communities, events & media that actually work | 🎪 Space Dog | ⚙️ Tech Execs",
+            "id": "414485697",
+            "publicId": "ladislav-vasek",
+            "trackingId": "LBmGnzq+TpOPTL7Hsy9JMw==",
+            "profileId": "ACoAABi0jMEB-HfKmmHkAOkWmPuT_0O0SZYQeiI",
+            "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGqeZwljsXiIA/profile-displayphoto-crop_800_800/B4DZ12lFE8G0AM-/0/1775810926834?e=1781136000&v=beta&t=1-WlEa5CWIkBXkox5pOlSc_Pg3qFXwBax9Qu28ggcNY",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEsMG2EZxu5iw/profile-displaybackgroundimage-shrink_350_1400/B4DZ12kVyWJoAc-/0/1775810734035?e=1781136000&v=beta&t=0M_w8ICTD7NCH6LWYgfOuupCpmfN0pbqLNCjma4GzAw"
+          }
+        },
+        {
+          "start": 154,
+          "length": 18,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Erika",
+            "lastName": "Boucharechas",
+            "occupation": "Head of Operations & Community @Inspire&Impact Network",
+            "id": "433817107",
+            "publicId": "erika-boucharechas",
+            "trackingId": "s0IH1HFxQ7iotB1JyuYL4w==",
+            "profileId": "ACoAABnbhhMBlrXeNjT1AVAVNprGSLjcv7cY-lU",
+            "picture": "https://media.licdn.com/dms/image/v2/D5603AQEBWhVAwt5Lpg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1713281849708?e=1781136000&v=beta&t=AOeMI7zOcb4FUXsY2QvJnHp5hcjCQI3o3R4_1oTVGTo",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFrEksxnbAqYw/profile-displaybackgroundimage-shrink_350_1400/B4DZy5ER5zI4AY-/0/1772631435495?e=1781136000&v=beta&t=VzbBtIzwt9yL5DlOCMC8NCq3KHi3d3A9FK6BhIMFiyY"
+          }
+        },
+        {
+          "start": 174,
+          "length": 13,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Filip",
+            "lastName": "Goszler",
+            "occupation": "Community builder. Technology evangelist. Never ending optimist. Positivity | Woo | Communication | Futuristic | Arranger",
+            "id": "200957448",
+            "publicId": "filipgoszler",
+            "trackingId": "tiU2VpkETR+nbQtAzMC0Cw==",
+            "profileId": "ACoAAAv6XggBrFfgLzqx0GMqha6ZkqXdNmVRnVs",
+            "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFfThepGlH28Q/profile-displayphoto-shrink_800_800/B4EZc1p7olHcAg-/0/1748951874570?e=1781136000&v=beta&t=MrtJifKdarekwKK1nD3C91ygY_Feqn_8oBEKCkwttLw",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHeuV90PRSbtg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1614428481915?e=1781136000&v=beta&t=2Av-_ac6_-J5Y-FR4Bmu4W9gyKRnseLHRuYA5zWG9Yc"
+          }
+        },
+        {
+          "start": 189,
+          "length": 12,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Jan",
+            "lastName": "Meissner",
+            "occupation": "Product & Tech Community Lead at Mews",
+            "id": "677292059",
+            "publicId": "jan-meissner",
+            "trackingId": "CRTcUArsRCyJovoDwiuidQ==",
+            "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw",
+            "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEEoMbY9urW6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728030316222?e=1781136000&v=beta&t=qIshYYWgkzBRoJGlT6oqlmeH3jlRiX8J_luFzaICydQ",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGei_PMH8ghyw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728030258130?e=1781136000&v=beta&t=GS9HgAFTdCMh-1xFx2xIDoLH91oMpSioaV6pV2ayQSY"
+          }
+        },
+        {
+          "start": 203,
+          "length": 12,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Václav",
+            "lastName": "Kotyk",
+            "occupation": "Talent Sourcer @ SentinelOne.ai | The Future of CyberSec will be determined by You - let’s Secure Tomorrow™ together! 🛡️👾 | In 💜 with s1.ai/PurpleAI | 🕵️‍♂️ CyBeer security meetups organizer",
+            "id": "322518163",
+            "publicId": "vaclavkotyk",
+            "trackingId": "PQqIbOBpTPqrom+eXTd7+A==",
+            "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0",
+            "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHSFfNAAQ3ojA/profile-framedphoto-shrink_800_800/B4EZb.aDPLHAAs-/0/1748024964389?e=1780430400&v=beta&t=IvlxsfQQdb8KqO1QvRvDLxo7b9-V1Qrgz29nKWhJehw",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG_GZHPXo_drQ/profile-displaybackgroundimage-shrink_350_1400/B4EZhWDO5THEAY-/0/1753790347174?e=1781136000&v=beta&t=TTJXtHJi0vF694Nao68XfleeSQJvzU06We8EI4GVwQI"
+          }
+        },
+        {
+          "start": 234,
+          "length": 37,
+          "type": "COMPANY_NAME",
+          "company": {
+            "name": "Community Builders",
+            "universalName": "czech-community-of-community-builders",
+            "trackingId": "OwK+L6jVSdy0uhWAc9F9Gw==",
+            "active": true,
+            "showcase": false,
+            "entityUrn": "urn:li:fs_miniCompany:82375595",
+            "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQHp-sNHTdji7Q/company-logo_400_400/company-logo_400_400/0/1644224515201?e=1781136000&v=beta&t=6-3uxvaXiYH3ItnzbU8jpubC8T7bL9Zp-LefxgZhrDA"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Jiri",
+        "lastName": "Necas",
+        "occupation": "People Programs Manager (Talent Acquisition & Employer Branding & Business Partnering + PR & Communications & Tech Community) | Founder of Hiring On Ramp",
+        "id": "452845690",
+        "publicId": "necasjiri",
+        "trackingId": "BR5a86c6SL2FSi2HTYZczw==",
+        "profileId": "ACoAABr94HoBk8rcjyVSHInie0pg-zn_xnWiXiM",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQF5bJQ-Dn0fwQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1562156245803?e=1781136000&v=beta&t=6HPTJxNYoO-sTv6yavLyPvjBKu53wbUBGjU0x6aLbL0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGN6IAfzYGEXQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ0pbwbZHEAc-/0/1774516636684?e=1781136000&v=beta&t=-O9uaBR68HidkRLJ6H1QZOlSxHsQCiv1P7QdBdsPPCE",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1654710165398,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6940350359580102656?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6940350359580102656%2C6940357465565749248%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286940357465565749248%2Curn%3Ali%3Aactivity%3A6940350359580102656%29",
+      "text": "This conference looks amazing!",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "English",
+      "author": {
+        "firstName": "Juha-Matti",
+        "lastName": "Santala",
+        "occupation": "Community builder.",
+        "id": "219800428",
+        "publicId": "juhamattisantala",
+        "trackingId": "iI4KIoZsSQC2eBIGl22mCQ==",
+        "profileId": "ACoAAA0Z42wBi4jFVXgmVVVw5b55iGMyZwS2M8E",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQE51--wmhhIyw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1654685450528?e=1781136000&v=beta&t=o82unJxnHGLS4SGI810e7BB4_KLtwc0I_LIiI6Qqsgw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFL4cdHxblHGA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1559577388585?e=1781136000&v=beta&t=X41DSW0C9Zw-elcSoQ-4qOYFv070TrGVJZLTIYKRt6E",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Smutek",
+        "occupation": ".",
+        "id": "874130625",
+        "publicId": "heysmtk",
+        "trackingId": "TxZ0vc0OTwadQjEN7XxK/w==",
+        "profileId": "ACoAADQaLMEBIrh9ltBwzA5W3yIdE7GUyrZZDDI",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE7lm3Hp-Ow7A/profile-displayphoto-crop_800_800/B4EZetqacbHwAI-/0/1750965271998?e=1781136000&v=beta&t=HHNUqhvPKVUbzaQ8oqY61vz9BqbE1Zql5vuCSotuzCs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Míša",
+        "lastName": "Valášková",
+        "occupation": "Koordinátorka dobro-aktivit",
+        "id": "539749797",
+        "publicId": "valaskova",
+        "trackingId": "czVyLXMiSH+7zYTjwm8HGQ==",
+        "profileId": "ACoAACAr7aUBHboZNIbWKUNbShE4odiyq55cj4k",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGGVvb8H8lQJQ/profile-displayphoto-crop_800_800/B4EZg0OpJtHIAI-/0/1753222914237?e=1781136000&v=beta&t=CLChTa_aGNblQzNPkW4vhQnqM-wXvde_4U71tMo3Ouw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF3IXvEfM_5-A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1735433060136?e=1781136000&v=beta&t=K4LM7jbGUI49A3UkY_hwj_6fjVYuj9v77IYbwVOapIE"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Ivana",
+        "lastName": "Štefková",
+        "occupation": "🌾 objevuju téma resilience 🕸️ splétám sítě ✍️ píšu postřehy 💗 fandím dobrým věcem 🎓 mám kázeň dvojnásobné artistky (FFUP psychologie, FFUK pedagogika) 🪄 vnímám neviditelné ❤️ naslouchám srdcem 🚶‍♀️ dělám fieldwork",
+        "id": "364234493",
+        "publicId": "ivanastefkova",
+        "trackingId": "HoQ38mtdRlac5hXzwiWZfg==",
+        "profileId": "ACoAABW1xv0BoZldwP-EAT-h6yCSjPXIKfPXjus",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQH9DGScNB_fKA/profile-displayphoto-crop_800_800/B4DZ3OuS4QIEAI-/0/1777289741742?e=1781136000&v=beta&t=Bo25Q4KbC-5lql8R1fj9IvnoL-HSzE-s2Qskbh-rAww",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGC0hrge8rLFQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ22NorHKMAY-/0/1776878522848?e=1781136000&v=beta&t=ezi_2RF2W9rQIzjLHpvc9zTgovFnryKFoQnoMl6vjcc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Anna-Marie",
+        "lastName": "Bogiš",
+        "occupation": "On maternity leave, enjoying time with my baby 🍼 | Community, recruitment, talent & events.",
+        "id": "458109709",
+        "publicId": "annamariebogis",
+        "trackingId": "YFtzoR1MSnC+HlDM6HRITg==",
+        "profileId": "ACoAABtOMw0BzGYhldKMn2_xKxc7aXBp_QTYFnE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFhnH0JuOfn4A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1676927382922?e=1781136000&v=beta&t=Id0EmWcrEUIwiOyWQYl_uIkuned4X9I5wo7_uLM-eek",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGiJ55Ql-gw5w/profile-displaybackgroundimage-shrink_350_1400/B4DZUTKgfxGcAY-/0/1739783276910?e=1781136000&v=beta&t=GYivxA78Nal-OLMZuCf_lI-K0OuOuFhYOXs69oBn-Hg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Süssová",
+        "occupation": "Growth Marketer @ CleverMaps 🌎 | Content | Communications | Community | HR Marketing | Employer Branding | You Name It",
+        "id": "117736589",
+        "publicId": "veronikasussova",
+        "trackingId": "x/TjidZ8SzuFYvaIGulHhg==",
+        "profileId": "ACoAAAcEhI0B0DCDRZK6zNqOn9JAlvoM-qGjrT4",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHUAEx2NABMlA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1659966397260?e=1781136000&v=beta&t=NL50hhX1fzpIF-1DWxg79geO8ihS64d3RdN7R4G8Uy0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGbjLwvUzKiUQ/profile-displaybackgroundimage-shrink_350_1400/B4EZpJS6bpGcAY-/0/1762166287334?e=1781136000&v=beta&t=DeE4eikqTSDL7WLEAu0eBC_JiQxiZ3r0vXV5Nj7HgUs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Sonja",
+        "lastName": "M.",
+        "occupation": "Tourism & Hospitality Enthusiast | Adventure & Experience Driven | Open for Opportunities",
+        "id": "806991622",
+        "publicId": "sonja-cv",
+        "trackingId": "fd0DglD2R/yMuXoeFaAvHg==",
+        "profileId": "ACoAADAZtwYB7zh-fGkQnhuX8Ek0fAWpm-e4i6k",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHLBsSHbSdzXQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718296702076?e=1781136000&v=beta&t=Lp6mLc_qEyqQgmlsB3oF1zJa18e2CLAK5L0bixzySGM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQE7OLWN9rKfpA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1719349015848?e=1781136000&v=beta&t=HDuUSeWeOwNbZo_guemBJPmOsWySpAaVEzkRbbjyz7A"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Aneta",
+        "lastName": "Martinek",
+        "occupation": "Buduji vzdělávací platformy, které otevírají dveře k lepší budoucnosti, ať už v marketingu nebo v podnikání. Lektoruji pro veřejnost i pro firmy témata jako osobní produktivita, slaďování kariéry a rodičovství.",
+        "id": "215807618",
+        "publicId": "anetamartinek",
+        "trackingId": "nsMQPB87RAC3Zr7rHfD9oQ==",
+        "profileId": "ACoAAAzc9oIBF7XleGA9FWnscohsI0LHMDXZES0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEdiK-VN9LRFg/profile-displayphoto-crop_800_800/B4EZgxW8mqHgAI-/0/1753174756202?e=1781136000&v=beta&t=JP7oMv6VfnhKjzAGyNX1nfirjxGpIn7KCJFStbxEF_A",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGlUyqciDqcEA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1708328124294?e=1781136000&v=beta&t=RQ2Ogmb2slP0n_VC9eypdbSShmNPbjRlOwk88W2pyn0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "company": {
+        "name": "Community Builders",
+        "universalName": "czech-community-of-community-builders",
+        "trackingId": "ig9Rq+2RTR2UssRfmuruSg==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:82375595",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQHp-sNHTdji7Q/company-logo_400_400/company-logo_400_400/0/1644224515201?e=1781136000&v=beta&t=6-3uxvaXiYH3ItnzbU8jpubC8T7bL9Zp-LefxgZhrDA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Adriana",
+        "lastName": "Lejskova",
+        "occupation": "Head of Operations at Day1 | Brand & Business Consultant for personal brands | Ex-CzechCrunch",
+        "id": "822914000",
+        "publicId": "adriana-lejskova",
+        "trackingId": "0N3U8o+3SFS5UqkeUg/arQ==",
+        "profileId": "ACoAADEMq9ABE5MQONl4p-z6chEIvV7BwnJzH2M",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF_d6yf-K1A3A/profile-displayphoto-crop_800_800/B4DZ1NqijiIoAI-/0/1775124503803?e=1781136000&v=beta&t=6ZKpiLra3yAVKPfALwfWzC2_Gos5-FmBQfnvEPK49FQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEWqbbQ-8y38Q/profile-displaybackgroundimage-shrink_350_1400/B4EZoNeDdMIMAg-/0/1761162574960?e=1781136000&v=beta&t=4pl3Oy4VDqWYccCrMOZPLM1_2qKOFvTzD-46wAdTRKg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Klara",
+        "lastName": "Holikova",
+        "occupation": "Co-founder & COO at Femme Palette | Musician",
+        "id": "411834732",
+        "publicId": "klaraholikova",
+        "trackingId": "WldmaaJXSE6imwC+xl5UHg==",
+        "profileId": "ACoAABiMGWwBl3NWubGkjxA8HCeckvbRFvhhj7Q",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF-4rOY-oMVyg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1666035048442?e=1781136000&v=beta&t=_d31p2UXktfSY4hmrw7OmtPmHnyknxP6_xN3UM7ySAs"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 34,
+  "numComments": 5,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "Gq10tRQlSEak9x5Bi6MwlA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1654708471198,
+  "postedAtISO": "2022-06-08T17:14:31.198Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

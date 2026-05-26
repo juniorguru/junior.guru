@@ -1,0 +1,359 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/D4E22AQGW1ke0pRwQuQ/feedshare-image-high-res/B4EZY1ECdmGYAs-/0/1744646979403?e=1781136000&v=beta&t=GVlJmb1ZgRCL6iK76qHVpOEaR-h9DalWvrCbcpWmCNA"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:7317807686027259906",
+  "url": "https://www.linkedin.com/posts/honzajavorek_certifikace-certifik%C3%A1ty-osv%C4%9Bd%C4%8Den%C3%AD-vysv%C4%9Bd%C4%8Den%C3%AD-activity-7317807686027259906-iwHj?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAADmbg6cBYOPU8CPv9ZUe8oI_f7tbNXybZ54",
+  "timeSincePosted": "1yr",
+  "shareUrn": "urn:li:share:7317579806961774593",
+  "text": "Certifikace, certifikáty, osvědčení, vysvědčení, diplomy. Které mají na pracovním trhu nějakou váhu a které jsou jen do rámečku?\n\nVšichni víme, že diplom není nutně jen vysokoškolský diplom, ale může mi ho namalovat i kamarádka za nejrychlejší snězení pytlíku chipsů.\n\nSlovo certifikát to má podobně. Jde o libovolný papír, který dostanu po absolvování libovolného vzdělávání.\n\nPokud kurz programování dává nějaký „certifikát“ nebo „diplom“, je to pro většinu zaměstnavatelů v IT jako diplom z plavání na základce. Je to milé, ale přihlížet budou spíš k tomu, co ukážu v bazénu.\n\nKurzy rády uvádějí, že po absolvování od nich dostanu ozdobný papír, protože to jednak dobře zní, jednak si je lidi rádi odnášejí domů. Je to ale pouze na památku.\n\nPak tady máme certifikáty, které člověk dostane, když projde „certifikací“. Ty opravdu mohou na trhu něco znamenat, jenže pouze v oborech, kde je to zvykem: Kybernetická bezpečnost, cloud a infrastruktura, sítě a administrace systémů…\n\nNa programování v Pythonu nebo JavaScriptu však žádné respektované certifikace neexistují.\n\nBěžné kurzy si proto vždy vybírejte podle náplně a recenzí, nikdy podle ozdobného papíru, který dostanete na konci.\n\nJak se v tom všem vyznat? Mrkněte do junior.guru/handbook na novou kapitolu o certifikacích. Kde najdete recenze? V katalogu na junior.guru/courses\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1745097826747,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7317807686027259906?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7317807686027259906%2C7319470795112538112%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287319470795112538112%2Curn%3Ali%3Aactivity%3A7317807686027259906%29",
+      "text": "Vzhledem k tomu, že na vysoké škole jsme Python neměli, cítila jsem potřebu samostudiem nabyté znalosti nějak stvrdit- spíše sama pro sebe, než pro pracovní trh. (typický impostor syndrom 😄) \nNakonec jsem našla nezávislý Python institut, který nabízí možnost dozorovaných online zkoušek i u nás. \nJejich PCAP zkouška, kterou jsem absolvovala já, byla už dost akademická a pro začátečníky nevhodná. Nabízí ale různé úrovně a k nim existující CISCO kurz.\nOvšem pravdou je, že na českém pracovním trhu se tyto zkoušky nevyžadují 😀",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Lenka",
+        "lastName": "Kargerová",
+        "occupation": "DevOps & IT Architect | Councilor | Founder of Popelario s.r.o.",
+        "id": "748484941",
+        "publicId": "lenka-kargerova",
+        "trackingId": "MJ99vatpSNmbY18bJcOZ8Q==",
+        "profileId": "ACoAACyc-U0BvsSP9PFT1_UxpFnAvTTaoTQrJvw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG_0k23RDg7Bg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1714044179271?e=1781136000&v=beta&t=Cse01GQYongm48_ymY9qjIUQ_r3z28Dqrd_S9xGQaoI",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1744830930665,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7317807686027259906?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7317807686027259906%2C7318351351808229379%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287318351351808229379%2Curn%3Ali%3Aactivity%3A7317807686027259906%29",
+      "text": "Dobrý den Honza Javorek,\nco si myslíte o kurzech na Cousera jako je například:\nhttps://www.coursera.org/professional-certificates/meta-front-end-developer\n\nMirek.",
+      "entities": [
+        {
+          "start": 10,
+          "length": 13,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Honza",
+            "lastName": "Javorek",
+            "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+            "id": "8517488",
+            "publicId": "honzajavorek",
+            "trackingId": "9Id6L727QC2uQ59jfzxxZA==",
+            "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+            "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Miroslav",
+        "lastName": "Stránský",
+        "occupation": "Senior Software Tester ve společnosti - GENERALI ČESKÁ POJIŠTOVNA",
+        "id": "527496482",
+        "publicId": "miroslav-stransky",
+        "trackingId": "VbOIQOUxTe2aNiOX19C8uA==",
+        "profileId": "ACoAAB9w9SIBGVG3yv9_-OrcUHnsZLpWWuXqgg8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQESTyDZHSjQbA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712651893110?e=1781136000&v=beta&t=XCHnQx1BN_cnsKh_YDORMsO8ZMuAfTfaSKrcWIqckCA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1744713046855,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7317807686027259906?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7317807686027259906%2C7317856911272407044%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287317856911272407044%2Curn%3Ali%3Aactivity%3A7317807686027259906%29",
+      "text": "Honza, přesně, náplň kurzu a spokojenost studentů s kurzem je mnohem významnější než certifikát. 💯 A děkujeme za novou kapitolu v příručce. 🤩 ",
+      "entities": [
+        {
+          "start": 0,
+          "length": 5,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Honza",
+            "lastName": "Javorek",
+            "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+            "id": "8517488",
+            "publicId": "honzajavorek",
+            "trackingId": "9Id6L727QC2uQ59jfzxxZA==",
+            "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+            "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "Czech"
+    },
+    {
+      "time": 1744712216514,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7317807686027259906?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7317807686027259906%2C7317853428569759745%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287317853428569759745%2Curn%3Ali%3Aactivity%3A7317807686027259906%29",
+      "text": "Díky za osvětlení certifikátů a \"certifikátů\", které jsou jen za účast. \n\nPokud mohu doplnit, některé typy certifikátů lze skládat i fyzicky v testovacích centrech. Např. u testovací autority Pearson VUE lze složit namátkou zkoušky ISTQB, EC-Council, Microsoft, Cisco, AWS a další.\n\nJe to naprosto srovnatelné s online zkouškou, ale pro některé kandidáty třeba z korporátního světa je poměrně obtížný požadavek na instalaci software pro složení zkoušky. Testovací centra také zajistí klidné prostředí splňující všechny požadavky, doklady se překládají fyzicky.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Jitka",
+        "lastName": "Sotonová",
+        "occupation": "Education Centre Manager",
+        "id": "120581807",
+        "publicId": "jitka-sotonova",
+        "trackingId": "gPlRzn2wQ4+7b1GtR2Vg5Q==",
+        "profileId": "ACoAAAcv7q8BozxXNVfDmTy0UtU824OuAFurjQ0",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQFN68xm9kO-pA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516559720234?e=1781136000&v=beta&t=5hiTCs0QtUYGHwSfz4KrGCXlNuuoaczaEjY33ZkIMVI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE14VVEj53L0Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1676451418831?e=1781136000&v=beta&t=oBPN-34rAxgT4rW1oqUXxKYjV3bsuyfpWqTx4tk4FUE",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1744703727990,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7317807686027259906?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7317807686027259906%2C7317817825123840000%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287317817825123840000%2Curn%3Ali%3Aactivity%3A7317807686027259906%29",
+      "text": "Nová kapitola v příručce pro juniory o certifikacích a certifikátech: https://junior.guru/handbook/certification/\n\nDík Štěpán Bechynský za nápad a prvotní vykopnutí! Trvalo mi to dotáhnout pouhé 4 roky 😅 ",
+      "entities": [
+        {
+          "start": 119,
+          "length": 16,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Štěpán",
+            "lastName": "Bechynský",
+            "occupation": "Account Technology Strategist",
+            "id": "103505120",
+            "publicId": "stepanbechynsky",
+            "trackingId": "5wVLCkVvTwu11JOV763keA==",
+            "profileId": "ACoAAAYrXOABkIRTSLNDYbaZAeldcsTKFuxTueU",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFpJetlj5F-Bg/profile-displaybackgroundimage-shrink_350_1400/B4EZXxHL19HgAY-/0/1743506949472?e=1781136000&v=beta&t=FRToPLLWfNn8N4rlq5ImJfEX80I2gYlFr2fqnn73M5s"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "zU1g9ORqTJS2easB6Tu2aA==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1744702949976,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7317807686027259906?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7317807686027259906%2C7317814561892433920%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287317814561892433920%2Curn%3Ali%3Aactivity%3A7317807686027259906%29",
+      "text": "Je to tak, no... 💯 Tenhle krásný \"certifikát\" jsem dával svým stážistům, když dokončili stážistický kurz - velmi rychle pochopili, jak to s těmi certifikáty funguje... :D",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Miroslav",
+        "lastName": "Zeman",
+        "occupation": "Lead React developer 💻 / Full-stack Typescript 🚀 / Teacher and mentor 📚 / heyy.dev 👋 / klers.cz 👩🏼 / [Object Object] 🦄",
+        "id": "662424426",
+        "publicId": "miroslavzeman",
+        "trackingId": "g0CZZ4rFRDaQOmCDqIfGYQ==",
+        "profileId": "ACoAACd7y2oB-PaNQEZA-O1wJ5JRWoZTTqgUwQw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFVPYbLLCpSng/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1687704965913?e=1781136000&v=beta&t=VFH-HmXLcZgRSz4K2XTiGgstWmVWXamlJ064WgX2Pco",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH3FPnKWBLPyg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1738943055904?e=1781136000&v=beta&t=2m-VkuaHh6ZqL-YW0WiXbm_xNw-zD1fwVzjucanm1nM",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1744702946303,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7317807686027259906?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7317807686027259906%2C7317814546486759424%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287317814546486759424%2Curn%3Ali%3Aactivity%3A7317807686027259906%29",
+      "text": "Já aktuálně dělám kurz + certifikaci na \"Kubernetes for Developers Course + Certified Kubernetes Application Developer (CKAD)\". V tvém seznamu jsem to neviděl, tak jen sdílím pokud by někdo chtěl mrknout. Přijde mi to kvalitní a mám i pozitivní zpětnou vazbu od jiných. 🙂 \n\nhttps://training.linuxfoundation.org/client-course-cert-bundle/. ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Patrik",
+        "lastName": "Braborec",
+        "occupation": "Product Management | Developer Experience @ Apify",
+        "id": "481904475",
+        "publicId": "patrikbraborec",
+        "trackingId": "Ntm8ri69REOL2dr+PpDXnA==",
+        "profileId": "ACoAABy5R1sBbwWxjwNnjnmA3AmB1bMfxCY6O9I",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEJb07simmfXQ/profile-displayphoto-crop_800_800/B4DZ3tCnBZIEAI-/0/1777798378038?e=1781136000&v=beta&t=Carw2mV4nKrSsy9bxzg58BZqthuIPLvQaLgJNjQap-k",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF8nYD78b964w/profile-displaybackgroundimage-shrink_350_1400/B4EZqz5qFiKMAY-/0/1763954830149?e=1781136000&v=beta&t=qVSU7in8l5O3dDWDbhEVRN17ZQSanIUpDyaqMDmKpBg",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Zuzana",
+        "lastName": "Muchnová",
+        "occupation": "Frontend developer ve společnosti Trask",
+        "id": "590737846",
+        "publicId": "zuzana-muchnova",
+        "trackingId": "wroKT7YfTNSGeuKc9Mb2lQ==",
+        "profileId": "ACoAACM18bYB4J7Bqc_zHp89UY4AKVWundIuoyU",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEuXetl5YzzeQ/profile-displayphoto-crop_800_800/B4EZj0oy3fGwAI-/0/1756450992273?e=1781136000&v=beta&t=DK3QYt5u0hxmLcotfNH4hZrZZugCI5pIAhl-TaHNFo4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHOXk0ez9qyiw/profile-displaybackgroundimage-shrink_350_1400/B4EZa2cjKiHIAY-/0/1746817665576?e=1781136000&v=beta&t=TyeErEyKZhTryM40ex9ZE9lv7AbNsGWCZVkxtX1rVxw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Dominika",
+        "lastName": "Grambličková",
+        "occupation": "IT Tester at Monet+",
+        "id": "968735644",
+        "publicId": "domi-gramb",
+        "trackingId": "pPseEo72RM2PdLAWaLRg0g==",
+        "profileId": "ACoAADm9u5wBalO9E9Xeuvs0mhDT6k7NAsur9mo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFqYe2wrFpe6Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704259295137?e=1781136000&v=beta&t=kArivlCv0qjrNDtuFvX9GSAXR2EYkJwiNyy4K4c0VKA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGfq6FFx5nvNw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1704717359541?e=1781136000&v=beta&t=7LKSigGoNr4JpYf97H6tawFMs88h36nvbQKCFlixjjU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "David",
+        "lastName": "Gamba",
+        "occupation": "Controlling and data",
+        "id": "597245462",
+        "publicId": "david-gamba",
+        "trackingId": "NJe+WDJdQCm1xloSkgDk5w==",
+        "profileId": "ACoAACOZPhYBiQ8HGsaK8jSvy5RoM926ZnrYmag"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ladislav",
+        "lastName": "Olejník",
+        "occupation": "IT Manager @ MOL CZ",
+        "id": "66118677",
+        "publicId": "ladislavolejnik",
+        "trackingId": "mu2lqWwrSISs/O7ZWoDq2A==",
+        "profileId": "ACoAAAPw5BUBCAVOrch9Kd34GJ-ciZgooaj6en0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQECD0PYspPqww/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1680881131924?e=1781136000&v=beta&t=m-MWRTXISVKXOC2ETqXoW8UF6ZJuTtBgxtsfMDew93s",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH-Kal5yxbT6g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1710396650323?e=1781136000&v=beta&t=H3V7FV2RGP5vjI6wdmeMxoPUmELCV6Bgy_srkc-b008"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Lampart",
+        "occupation": "„Myšlenky proměněné v kód mění svět.“",
+        "id": "1509504836",
+        "publicId": "martin-lampart-058644361",
+        "trackingId": "7grQb4RRQA+kFeYuksy1Lw==",
+        "profileId": "ACoAAFn5N0QB5nOyl8UUjUl-WSWNfSfjfGCwc1k",
+        "picture": "https://media.licdn.com/dms/image/v2/D5635AQHCuQL3pMHxjQ/profile-framedphoto-shrink_800_800/B56ZZdUMrcHgAk-/0/1745322298477?e=1780430400&v=beta&t=o6AFAlU9UmK9NOVYfGK7Y_7bfQaDt7rmJefgJkTDGyk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marketa",
+        "lastName": "Mizova",
+        "occupation": "_",
+        "id": "816240861",
+        "publicId": "m-mizova",
+        "trackingId": "HMWlaXcJSm+8spGtnHm9mQ==",
+        "profileId": "ACoAADCm2N0B79TKOzWlcBcqKxmSyXU4skAOMuQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEuqaqU6RSkhQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1689241087850?e=1781136000&v=beta&t=qb3LMacpCRSgoyehksmxaLP4zAMxPa8ZhXu3ICb2bv4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE-4g1_N8iaWg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1689247350756?e=1781136000&v=beta&t=KtXfZq-e7dXcP2yt11PnUU_sBjxMzOqcCULj8OXddNo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Šotnar",
+        "occupation": "Frontend Developer Trainee | JavaScript, TypeScript, React",
+        "id": "1332351529",
+        "publicId": "sotnar",
+        "trackingId": "s9RWJydiRi+CDclHDxE8iQ==",
+        "profileId": "ACoAAE9qEikBy98vuvk8guHa2u80sek2g2OsTAg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQG3qBSJlgIxPg/profile-displayphoto-shrink_800_800/B4DZZuc6SJGsAg-/0/1745609795119?e=1781136000&v=beta&t=5ZFMG5FUW-5kixb_Pv4IUuIg9xopBonE30IK3X2vlcw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFo0eIBRa-g5g/profile-displaybackgroundimage-shrink_350_1400/B4EZgYSXwvGwAo-/0/1752754127031?e=1781136000&v=beta&t=Q5Ucp8jzqpgYHx39qITWv0VhmXm7VyEoXpgMsAlqizw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Kargerová",
+        "occupation": "DevOps & IT Architect | Councilor | Founder of Popelario s.r.o.",
+        "id": "748484941",
+        "publicId": "lenka-kargerova",
+        "trackingId": "1kADxVIpQR2h24Ix+MM6Eg==",
+        "profileId": "ACoAACyc-U0BvsSP9PFT1_UxpFnAvTTaoTQrJvw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG_0k23RDg7Bg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1714044179271?e=1781136000&v=beta&t=Cse01GQYongm48_ymY9qjIUQ_r3z28Dqrd_S9xGQaoI"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Tereza",
+        "lastName": "Smolová",
+        "occupation": "UX designer | Frontend developer | coder",
+        "id": "1058305342",
+        "publicId": "tereza-smolovaa",
+        "trackingId": "9fECv04rTXyh/1oIt0Jucw==",
+        "profileId": "ACoAAD8UdT4BaRn8Isd2lC4AEbKofErZCkXvv-k",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHHami6cusYmw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1680899091472?e=1781136000&v=beta&t=kcnsYl27D767PL0KOKMxatZtoRBIh_47AlOOB4bMu5k",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE4HKbvzh8w-A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1703173265758?e=1781136000&v=beta&t=JLf6jm1fSrDz12CmrvPrxBc7TSifykS-ney15LHhlRA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Nina",
+        "lastName": "Břicháčková",
+        "occupation": "Test Automation Developer @Profinit | Robot Framework | Python",
+        "id": "145905744",
+        "publicId": "ninabrichackova",
+        "trackingId": "X2aI0gk9RhWgYdBET1htxg==",
+        "profileId": "ACoAAAiyWFABztHznk6PN6pmluOcTu78B_C44BE",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFXKDbCIspzUw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1627510622377?e=1781136000&v=beta&t=jVO1pIoLPeKE_ekgaMoXHjmYN-IhxPZe67wC3igJf3I",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGz1AZOWAZguA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1626785869729?e=1781136000&v=beta&t=LsZ1TJY5kvdP6_6koPqVm7bIqD2eE6kDbbsUZFIFOT4"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 45,
+  "numComments": 16,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "zU1g9ORqTJS2easB6Tu2aA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1744701310641,
+  "postedAtISO": "2025-04-15T07:15:10.641Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

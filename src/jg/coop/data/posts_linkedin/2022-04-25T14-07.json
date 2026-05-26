@@ -1,0 +1,307 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4D22AQHw7zPDxI4VmA/feedshare-shrink_800/feedshare-shrink_800/0/1650895637556?e=1781136000&v=beta&t=ipf5QJeB6EeI274I29AO2cOjjPzS_FvrxglWjFnzVEw"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6924358179468247040",
+  "url": "https://www.linkedin.com/posts/honzajavorek_python-javascript-react-activity-6924358179468247040-bnkE?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFLoK0wBYoYaibnOct4cy5iL6dq4jzvciT8",
+  "timeSincePosted": "4yr",
+  "shareUrn": "urn:li:share:6924358178562265088",
+  "text": "NOVÝ DÍL JUNIOR GURU PODCASTU ⚛️ Ve čtvrtém díle si Pavlina F. povídá s Tereza Vaňková, vývojářkou v Deepnote a zakladatelkou české komunity ReactGirls. Jaké byly pro Terku začátky v IT? Jak získala první práci? Jak důležitá je IT komunita pro rozvoj?\n\nK té poslední otázce asi jen tolik, že nebýt programátorských komunit, neexistuje ani junior.guru, ani tento podcast. S Pavlínou i Terezou se známe díky #Python komunitě, konkrétně díky kurzům pro začátečnice, které dobrovolnicky pořádají PyLadies CZ 😀 Je fajn, že tyto kurzy mohly posloužit jako inspirace pro vznik další prima komunity pro ženy kolem jazyka #JavaScript a konkrétně knihovny #React.\n\nZrovna jsem psal článek pro heroine.cz/zeny-it o tom, jak důležité je najít si nějakou svou partu kamarádů, se kterou se člověk prodírá učením a kariérou. Vyjde to ale až ve středu. A stejně si myslím, že se mi to nepovede vystihnout líp, než jak to popsala Terka v tomto díle!\n\nP.S.: V podcastu má shout out i Tereza Machackova z Credo Ventures, čímž ji na dálku taky zdravím 👋 Má velký podíl na tom, že Credo spolupracuje s junior.guru/club ❤️",
+  "attributes": [
+    {
+      "start": 52,
+      "length": 10,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Pavlina",
+        "lastName": "F.",
+        "occupation": "Host @ Junior Guru podcast.",
+        "id": "190849253",
+        "publicId": "pavlinafronkova",
+        "trackingId": "ziJQ/BldQGyRtzTz0aevkg==",
+        "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk"
+      }
+    },
+    {
+      "start": 72,
+      "length": 14,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Tereza",
+        "lastName": "Černá",
+        "occupation": "Founder @ReactGirls, Community @Mews, Software Engineer",
+        "id": "662278178",
+        "publicId": "tereza-vankova",
+        "trackingId": "2EhkjOjgTamqTufdJzupwQ==",
+        "profileId": "ACoAACd5kCIBkil_yiYqyksAU2xUhl_An8PtzTQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEy0HfAmjLbqg/profile-displayphoto-shrink_800_800/B4EZX_nPVTHcAg-/0/1743750231941?e=1781136000&v=beta&t=3xMSJvI9jbvmPY1089B4Sv5rCKpCRK_6ZehkCncWp1A",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEJ-9AKv9CATQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1683450743882?e=1781136000&v=beta&t=k0zgybeam9x0oi2JGYWbFlWS7LPVhuznxm1Zja26iDo"
+      }
+    },
+    {
+      "start": 101,
+      "length": 8,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Deepnote",
+        "universalName": "deepnote",
+        "trackingId": "OPrh/XPuR/asEvm/rljT7g==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:14780233",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C560BAQGQZWYILo1AFw/company-logo_400_400/company-logo_400_400/0/1674572587502/deepnote_logo?e=1781136000&v=beta&t=OdpDxtzoVxraEshK2ATtlSLC-so2V0x4rtwf0Srxmg0"
+      }
+    },
+    {
+      "start": 141,
+      "length": 10,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "ReactGirls",
+        "universalName": "reactgirlsprague",
+        "trackingId": "YiiZkU0VR0Ci5GTRRNMtZw==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:34588565",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQF13Hz_6HWeBg/company-logo_400_400/B4DZuX1zHUKAAY-/0/1767779021705/reactgirlsprague_logo?e=1781136000&v=beta&t=CVsLw_09bkLLVfLxKCDOryGlSvWSCSPyzsYUaPJTe9s"
+      }
+    },
+    {
+      "start": 492,
+      "length": 11,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "PyLadies CZ",
+        "universalName": "pyladies-cz",
+        "trackingId": "wwlo64YyQP22si6EXegvRA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:30644381",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C560BAQEaibY9_28N2A/company-logo_400_400/company-logo_400_400/0/1630614425519/pyladies_cz_logo?e=1781136000&v=beta&t=zfNm6R5gYxxDnRcaaj7iVB54AorS6Y83LjCuRsjXd0g"
+      }
+    },
+    {
+      "start": 966,
+      "length": 17,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Tereza",
+        "lastName": "Machackova",
+        "occupation": "tech talent partner (Lovable, Verified, Attio)",
+        "id": "354416659",
+        "publicId": "terkins",
+        "trackingId": "JP1CCLLUR+6HRX3NhWgLsQ==",
+        "profileId": "ACoAABUf-BMBlxzn1lFEhRmLF2yzFf41AOuOmT0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQH14hM4IH2IbQ/profile-displayphoto-crop_800_800/B4DZxsEe99HwAM-/0/1771339642206?e=1781136000&v=beta&t=ep0ILYwjDXBbS-gvEoQ6Ys0WZIXo2Fmy9lUXtRz-7lY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFLKlJH74qo6Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1696428898365?e=1781136000&v=beta&t=UCGewaxbJXbTqLNfc-lzeJramn4OxEj0cbuKKVO-8LI"
+      }
+    },
+    {
+      "start": 986,
+      "length": 14,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Credo Ventures",
+        "universalName": "credo-ventures",
+        "trackingId": "MqmaNyquStq0eqpfU3Gxyg==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:1099444",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQFyebFbuhR5WA/company-logo_400_400/B4DZ0a.5pkIAAY-/0/1774274191276/credo_ventures_logo?e=1781136000&v=beta&t=V_G0008WJB6y3rvjQ7vVJZR2X7x301G8nqpjT1Zzivc"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1650895814310,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6924358179468247040?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6924358179468247040%2C6924358917539909632%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286924358917539909632%2Curn%3Ali%3Aactivity%3A6924358179468247040%29",
+      "text": "Podcast tady https://junior.guru/podcast/",
+      "entities": [],
+      "pinned": false,
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "WMeMYPsbQrCU0UYHCmGuiA==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Glaser 🤖",
+        "occupation": "Building Agentic Engineering Platform for production-ready apps. Generated, reviewed, managed, deployed by AI Agents.",
+        "id": "653562608",
+        "publicId": "bleedingdev",
+        "trackingId": "CAMw4mj/QlOc6ENRJR0WjA==",
+        "profileId": "ACoAACb0kvABzEvpATXhOiWBbEuq4yfGI43iXrc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHNZ_n7usiMwg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1707307700521?e=1781136000&v=beta&t=s9M6CBtI9xCgMRzy9aH4Zm6vuRjYQFKYSrl_QlfPTvA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEjlZvszJMk8g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1704724910587?e=1781136000&v=beta&t=3ATL2lQYqY066bQ-K-77LV1388hPiLUDuz3f2WEXABk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Holomek",
+        "occupation": "Breaking things safely so production doesn’t have to.",
+        "id": "950609242",
+        "publicId": "martin-holomek-10a435226",
+        "trackingId": "Ch/W8HS0R4CoNNGKTdVw0A==",
+        "profileId": "ACoAADipJVoBUKy1-ggmu1NEjjtKbSmjY5ujyrk",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE8DGgJxIO86w/profile-displayphoto-crop_800_800/B4DZkWMFqEGQAM-/0/1757013893676?e=1781136000&v=beta&t=6aeHSGO6Pm_GFNY9QwdmTRNT4SQSlaFVL_weIrmOILQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGKK5WWTenbag/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1729703770841?e=1781136000&v=beta&t=qa8WqiyiYAhYzw0W5gwedtWFQnMBIXkxDdSnf-CGbKg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Katerina",
+        "lastName": "Slezakova",
+        "occupation": "“The journey is the destination”",
+        "id": "823193341",
+        "publicId": "kslezakova",
+        "trackingId": "H/m6EizpRiKIt2lueL08Qw==",
+        "profileId": "ACoAADEQ7v0BQzs8aNXWgRYo4kPIBpO990Op2q4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHLgcpsZhZv9g/profile-displayphoto-crop_800_800/B4EZsBxARBKcAQ-/0/1765261185170?e=1781136000&v=beta&t=qKC3O2DbG5vdz8lEXUE0bvS9d9YoBa5o4AjKMeOZDiY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH9FcmHhMx99Q/profile-displaybackgroundimage-shrink_350_1400/B4EZsCPEx4KoAc-/0/1765269067659?e=1781136000&v=beta&t=W3_PhqFJZ--KwlSMbSIRQo-vEzVHoPKOa5KXSlErZvc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Simona",
+        "lastName": "Janků",
+        "occupation": "Professional Education Specialist - Orthopedics, Central CEE",
+        "id": "54224601",
+        "publicId": "simonajanků",
+        "trackingId": "tPKhYL2QQSOi7ZY+QezaQQ==",
+        "profileId": "ACoAAAM7ZtkB5PlfB9T2wNt0Godho63h4YHCogk",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHeo8Xn5NW63w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1722519424572?e=1781136000&v=beta&t=78nue6CoMSWKig6wpn4SkYJ8E6btH_WnhEkCWdc706A",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQFivIt5WGm0Tg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1648733615214?e=1781136000&v=beta&t=mW7s6rnPVyanrQdmmK7lfP1cSs2qe2rWkW426_gPmlg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jaroslav",
+        "lastName": "Lupták",
+        "occupation": "IT Application Business Support | Responsible for troubleshooting company software applications.",
+        "id": "377981034",
+        "publicId": "jaroslavluptak",
+        "trackingId": "cseIvOjZQM2OWSLTGs1CxQ==",
+        "profileId": "ACoAABaHiGoBJSNkTUPIvO_zeJYCW-RpFY9qRV4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQEFlveo42VTFw/profile-framedphoto-shrink_800_800/B4DZ3gtAfwGwAg-/0/1777591388410?e=1780430400&v=beta&t=G948urLzfnJbil7BEmZB3rfxZMSgzLEPDd2Iaf177QM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHGQpmzoZFzkg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1693842332797?e=1781136000&v=beta&t=L0ffuUzwp2SKI-mBDBTD1JuujIlh6dJhdnosOrcUi4M"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Natálie",
+        "lastName": "Čermáková",
+        "occupation": "Digital Marketing Specialist",
+        "id": "900384861",
+        "publicId": "nataliecermakova",
+        "trackingId": "ig1Nyq4tQZ6RgqdYJvH5dQ==",
+        "profileId": "ACoAADWqyF0Bbrud1TWHMfxvJS5guGyT2hZdXLs",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHvoBijaiquwg/profile-displayphoto-crop_800_800/B4EZ4YNHVNHYAQ-/0/1778522557611?e=1781136000&v=beta&t=xmTTs_fPaL1zDtxthbp8iShryqKtaJnp-bYNCtDCs04",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHXPAQiLsUfQQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1700139447258?e=1781136000&v=beta&t=7qA1JgINWcYwi1Y48NHDYVP4D1F8z1LBuEoZDqY1new"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Kyselý",
+        "occupation": "--",
+        "id": "910137159",
+        "publicId": "kysely",
+        "trackingId": "OEDSCG6GQKuE0uAJdUEVVg==",
+        "profileId": "ACoAADY_l0cBZTXz13-CLUpyhjszsvIK-5_jllc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHPN2JOGrWGjA/profile-displayphoto-shrink_800_800/B4EZRPtl51HsAk-/0/1736504139788?e=1781136000&v=beta&t=nH47VqQ4h0UUA8yQoNbCvZEgby5Nx5Qr5vccpHwKdAU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Bolek",
+        "occupation": "People and Community Leader | Startups Advisor for HR, Community and Marketing | Seasoned HR, TA, and Community professional | TOP 20 Biggest CZ Linkedin profiles",
+        "id": "242323201",
+        "publicId": "martinbolek",
+        "trackingId": "wf/3TbRuTUGtbC9jV1yvEg==",
+        "profileId": "ACoAAA5xjwEB-5I0z2Ur7gyCn2MoA1wU5jE2R8I",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHodacSr4AwBA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1605926868322?e=1781136000&v=beta&t=_ej1IW2q0XLnOwQn5311vABlkD25kz9iKVTcKjixgfI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Dominika",
+        "lastName": "Vykydalová",
+        "occupation": "Content specialist & strategist | Bitcoin | Fintech",
+        "id": "320925517",
+        "publicId": "dominikavykydalova",
+        "trackingId": "pn49iQHTTGK54mZChS4AwQ==",
+        "profileId": "ACoAABMg700BFHeNeaArW6j8e2CJC0ViRIMCnmo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFQuzch_U5rOg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1713526160401?e=1781136000&v=beta&t=Gs3maXJyG8jjsKSLW59cpyczx26Xnxqtv9NuKOZqpjE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFwYCyGxSUsuw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1702999292444?e=1781136000&v=beta&t=yHwPrQ8FQ0CaG7MWUEDVdcEPNjptWKW96qGi6yYOcqE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Markéta",
+        "lastName": "Veselá",
+        "occupation": "Data Engineer",
+        "id": "301654104",
+        "publicId": "marketavesela123",
+        "trackingId": "6sYZfH/BQ4OMaD3Ns1NtWA==",
+        "profileId": "ACoAABH64FgBIajZSdnlFFLSM2EZypC9noYPeno",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGTJQygwbD47A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1634045517592?e=1781136000&v=beta&t=mXqBPovS1jyyRRgbsvX8KrmZB84K_wauyuYhOXHNI0M"
+      }
+    }
+  ],
+  "numShares": 3,
+  "numLikes": 28,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "WMeMYPsbQrCU0UYHCmGuiA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1650895638339,
+  "postedAtISO": "2022-04-25T14:07:18.339Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

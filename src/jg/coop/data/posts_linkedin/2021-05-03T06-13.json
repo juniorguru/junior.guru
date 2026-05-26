@@ -1,0 +1,181 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4E22AQFfe_c5A1GOiw/feedshare-shrink_1280/feedshare-shrink_1280/0/1620022382578?e=1781136000&v=beta&t=Pu7V-9BvxR2hMOWfxqfrIiVqPGX5Llnr32i_4Ggf6b4"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6794866360456417280",
+  "url": "https://www.linkedin.com/posts/honzajavorek_na-kari%C3%A9rku-vy%C5%A1el-%C4%8Dl%C3%A1nek-o-tom-%C5%BEe-programov%C3%A1n%C3%AD-activity-6794866360456417280-Fyrs?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAABmUPy4Bvq2yamQUO7_QopTa754Qgqdz_T8",
+  "timeSincePosted": "5yr",
+  "shareUrn": "urn:li:share:6794866359600758784",
+  "text": "Na Kariérku vyšel článek o tom, že programování se může hodit nejen programátorům 🐣 Kariérko.cz je web, který studentům pomáhá najít směr a zorientovat se na trhu práce 🎓 https://lnkd.in/ehCiJSj",
+  "attributes": [
+    {
+      "start": 84,
+      "length": 11,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Kariérko.cz",
+        "universalName": "kariérko-cz",
+        "trackingId": "QE3mnwIZQJi9qDboIA0HHg==",
+        "active": false,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:28939179",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQFwYbte2XweCg/company-logo_400_400/company-logo_400_400/0/1630552549921/karirko_cz_logo?e=1781136000&v=beta&t=Wt9hTH2gPTN_SuuaZ6-YKSjgKaqOTp7cBiBTDElkgTQ"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Nathalie",
+        "lastName": "Vecten",
+        "occupation": "\"It is a capital mistake to theorize before one has data.\" *cleaned data",
+        "id": "775508820",
+        "publicId": "nathalie-vecten",
+        "trackingId": "DJskAZqrQiGGaWLAntPoeQ==",
+        "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH5sSEbnQ2Tcg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1611936430673?e=1781136000&v=beta&t=wAQsj8dSBDe6L3xt1MwxMahW3aP-D6LcuvT-utzij6s",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHDKxhi18V0lw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1599638080880?e=1781136000&v=beta&t=5JiWefMiJff9VXnKXxoAOOrnUYNFE4fW7AQAgJac6VA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Mikeska",
+        "occupation": "❄️ Senior ServiceNow Consultant | CIS-IRM | CIS-HAM | CIS-SAM | CIS-DF | CIS-ITSM | CIS-SPM | CIS-PA | CIS-EM | CIS-APM | CAD | CSA | ITIL 4 | 8x Micro-Certification 🏆",
+        "id": "412311702",
+        "publicId": "pavel-mikeska",
+        "trackingId": "4H9pzEO7RNuwIh2UK2G6/Q==",
+        "profileId": "ACoAABiTYJYBitGWsqClPxDaOSBTFT2JGTIDft4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG5o6RJjNqH0Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1707951490734?e=1781136000&v=beta&t=ZNgddDtqMKl6tOh1tV47Lm9rI_wKgSEioRgK2QmSVk4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Filip",
+        "lastName": "Hron",
+        "occupation": "Senior Python Engineer | Flask & DB expert | Systems & Infrastructure | ex-Prusa Research",
+        "id": "781867914",
+        "publicId": "filip-hron-a36a19199",
+        "trackingId": "kmjqBGhmRBCFBE44AJIyqQ==",
+        "profileId": "ACoAAC6aW4oBQs227Vm4QA1KbZ1diLBdHzDwUyg",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGmSxqaTQ2-qQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1605629927965?e=1781136000&v=beta&t=LjHwr3nEm-TzGj_M9d9vXGA4D0h1gHWvkn99uVXfL9s"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Maria",
+        "lastName": "Gorbatova",
+        "occupation": "Analyst and project coordinator focused on Russia, EaP, and disinfo",
+        "id": "796528825",
+        "publicId": "maria-gorbatova",
+        "trackingId": "hxCzKEXUSPKNzsF3l4F+uw==",
+        "profileId": "ACoAAC96ELkBaedryrJtUsvsVsv1G3ySTcKX40M",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQGrzlPyZWWHlw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1630574886260?e=1781136000&v=beta&t=g4zUT5UaTRZbm7rahQTftwGVgW51JOwEYnje-31-duY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQG3u7BimLdWgw/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1620723752672?e=1781136000&v=beta&t=msEsGuxRyecCFufOcrzlPqaCTqRKL1mRqB2FsVD4Wg4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Zmijková",
+        "occupation": "Software Developer",
+        "id": "450096743",
+        "publicId": "zmijkova",
+        "trackingId": "yH2GXKmgSlyZp+45ovwFrw==",
+        "profileId": "ACoAABrT7mcBs7ie4r1nA4McNBK2tV0qfujA2v4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel Grumpy",
+        "lastName": "Šimerda",
+        "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
+        "id": "551084893",
+        "publicId": "grumpyprogrammer",
+        "trackingId": "QMemF8+yTomkoNjyQ0W+mQ==",
+        "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFnQ8ypdjjyvg/profile-displayphoto-crop_800_800/B4DZxZUZFlHkAI-/0/1771025047361?e=1781136000&v=beta&t=fFiIDptOBoMzbUkj1Lvpd8USzHMX1nkcCCOr19Su_4c"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michaela",
+        "lastName": "Vavrinova",
+        "occupation": "Enterprise SaaS Specialist | Complex Deal Negotiation | 20+ Years in IT & Application Business",
+        "id": "117747267",
+        "publicId": "michaela-vavrinova-94352433",
+        "trackingId": "pF9fsjr7RnKHvGokY47O7A==",
+        "profileId": "ACoAAAcErkMBxIoqAn7vjC3q8_JdzfNFSzwMZ3A",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFSkx1w4cwtDg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1702848335851?e=1781136000&v=beta&t=g1bI-Umv6oFzjXFm1GJ2DNHZuLz9UmU4a51rDbvhH2c"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Miloš",
+        "lastName": "Šiška 🦻",
+        "occupation": "Konzultant @ Euroguidance | Študent dizajnu služieb @ MUNI",
+        "id": "839955889",
+        "publicId": "milos-siska",
+        "trackingId": "SIZLN9htQhu7zfbc2Q+wLQ==",
+        "profileId": "ACoAADIQtbEBmiHumPW145T7OBoGBKsSgfIVdbU",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF-faqv8zDfkA/profile-displayphoto-crop_800_800/B4DZ0AfRwiIEAQ-/0/1773829694359?e=1781136000&v=beta&t=PvxbjqnG-v82wUoVY44mi5cehbQ0HV6bqDCdLQczMJA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHTBQgGh_ygtg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1683838543679?e=1781136000&v=beta&t=GE1V16dOs11fnPRCdYSge16Usa3N7IqQyOictztC3X8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petra",
+        "lastName": "Kubita Nulíčková",
+        "occupation": "HR Manager v Pale Fire Capital | Head of HR v Aukro | HR consultant and mentor | #sharingiscaring",
+        "id": "473833031",
+        "publicId": "petranulickova",
+        "trackingId": "mv27FfqNScihDB/h5gYfcA==",
+        "profileId": "ACoAABw-HkcBifENxX8nxAs2YjwxbI6b2XtAF98",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHnKx1150QjzQ/profile-framedphoto-shrink_400_400/B4DZ5EYkX3J4Ac-/0/1779263751874?e=1780430400&v=beta&t=pWJ51Ntw0jR9QQT0pS0cVga8Y5H1PX6eMgBC8eZYwyo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQExwjEQhQ99TA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1676378924015?e=1781136000&v=beta&t=rpomntKe5fPHScYScrE5n1-ok01d_UuxKpUPUaPI93g"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 9,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "Hblq6M4cTlGPOfolypUtvw==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1620022382845,
+  "postedAtISO": "2021-05-03T06:13:02.845Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

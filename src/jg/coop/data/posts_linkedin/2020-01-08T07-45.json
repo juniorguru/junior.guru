@@ -1,0 +1,103 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:7424018186773212686",
+    "url": "https://www.zdrojak.cz/clanky/jak-jsem-se-nestal-front-end-vyvojarem/",
+    "title": "Jak jsem se (ne)stal front-end vývojářem - Zdroják"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6620580944187273216",
+  "url": "https://www.linkedin.com/posts/honzajavorek_jak-jsem-se-nestal-front-end-v%C3%BDvoj%C3%A1%C5%99em-activity-6620580944187273216-KjA2?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFgzka0BiNONQEez3CYZvIxpM_Au6YEO6r0",
+  "timeSincePosted": "6yr",
+  "shareUrn": "urn:li:share:6620580943847534593",
+  "text": "Michal se rozhodl stát se frontend vývojářem. Na Zdroják sepsal svou strastiplnou cestu.",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Korál",
+        "occupation": "Node.js Software Developer @ Golemio",
+        "id": "56291616",
+        "publicId": "koraljakub",
+        "trackingId": "pu2VGFByQ7O3cAahrnpsig==",
+        "profileId": "ACoAAANa8SABgoSoYveOEUwct7fgbPyAgzMRVQQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEVnRPRgRg3YA/profile-displayphoto-shrink_800_800/B4EZZrf0JiHMAc-/0/1745560224922?e=1781136000&v=beta&t=KTZjn1suLaESFORZdaVNHItWSIma-i1NFBHjn7sZPio",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQG9omzYe3DVSQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516613418449?e=1781136000&v=beta&t=lU06c5O7jORu8lQI-4594j6q67Cz0H_YUH_oYkao_dY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavla",
+        "lastName": "Pilchová",
+        "occupation": "Komunikační specialistka ~ copywriting & copyediting ~ tvorba & úprava textu ~ PR komunikace ~ event specialistka ~ produkce",
+        "id": "228599758",
+        "publicId": "pavlapilchova",
+        "trackingId": "+mDUS0bhSa2fkgMDpYJD1A==",
+        "profileId": "ACoAAA2gJ84BUO4TQAQEEIu0swowkiEljEIjXAk",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHgGTQtpTT2Yw/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1738567938902?e=1780430400&v=beta&t=nyS85c_4JuLcRiPCYS-0cd3LMxtEDSwUwU1-BBeFZlI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQE73otPPtSUNw/profile-displaybackgroundimage-shrink_350_1400/B4DZyt2lTmH4Ag-/0/1772443293722?e=1781136000&v=beta&t=Yr-yL6kSdM1d378XMnE1RrrEpNiQWGS8vhM22lQGPBA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Onderka",
+        "occupation": "Security Analyst at National Cyber and Information Security Agency",
+        "id": "105102147",
+        "publicId": "jakubonderka",
+        "trackingId": "6h4IA0nMTWKUDb7Po6TZjw==",
+        "profileId": "ACoAAAZDu0MBC247aWUdnZTLlSRoRytVLhmNETc",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQG7Bpy1ECkXbQ/profile-displayphoto-crop_800_800/B56Zsm49p.HsAI-/0/1765884037967?e=1781136000&v=beta&t=tzSoclf7zbffPCUoipX_eVdCZ06o-hxlq24zM2wE11Q"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavlina",
+        "lastName": "F.",
+        "occupation": "Host @ Junior Guru podcast.",
+        "id": "190849253",
+        "publicId": "pavlinafronkova",
+        "trackingId": "Mq7NxNTcRFajHk+Awq/LgA==",
+        "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 4,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "7xoDwwTgSqumOdJ2ljR49w==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1578469501540,
+  "postedAtISO": "2020-01-08T07:45:01.540Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

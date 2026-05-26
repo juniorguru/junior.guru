@@ -1,0 +1,252 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:7507939086910632330",
+    "url": "https://honzajavorek.cz/blog/i-bought-apple-silicon/",
+    "title": "I bought Apple Silicon — Javorové lístky"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6746736401947127809",
+  "url": "https://www.linkedin.com/posts/honzajavorek_i-bought-apple-silicon-javorov%C3%A9-l%C3%ADstky-activity-6746736401947127809-UVNz?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAADrb3CgBz_ZBH1dSZX4-YHPPyAXTMtzm_bs",
+  "timeSincePosted": "5yr",
+  "shareUrn": "urn:li:share:6746736401389277184",
+  "text": "Koupil jsem jeden z těch nových počítačů od Applu. Na svém blogu jsem popsal proč a jaké jsou moje první dojmy. Za víkend to nasbíralo 12 000 přečtení.",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1609629948759,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6746736401947127809?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6746736401947127809%2C6751277332599738368%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286751277332599738368%2Curn%3Ali%3Aactivity%3A6746736401947127809%29",
+      "text": "Taky jsem se zajímal, ale zjistil jsem, že ten hardware nemůžu efektivně využívat pro své běžné účely.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Pavel Grumpy",
+        "lastName": "Šimerda",
+        "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
+        "id": "551084893",
+        "publicId": "grumpyprogrammer",
+        "trackingId": "DOVV+BT7S1SfibJ6ujRKfQ==",
+        "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFnQ8ypdjjyvg/profile-displayphoto-crop_800_800/B4DZxZUZFlHkAI-/0/1771025047361?e=1781136000&v=beta&t=fFiIDptOBoMzbUkj1Lvpd8USzHMX1nkcCCOr19Su_4c",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1608615678701,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6746736401947127809?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6746736401947127809%2C6747023175634313216%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286747023175634313216%2Curn%3Ali%3Aactivity%3A6746736401947127809%29",
+      "text": "I had to share it wide and far across Australia 🇦🇺 👍",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "English",
+      "author": {
+        "firstName": "Iva",
+        "lastName": "Stencel",
+        "occupation": "CSV Lead/ Senior Business Analyst",
+        "id": "587257188",
+        "publicId": "iva-stencel-ab0807144",
+        "trackingId": "yrlp4uAJS1OtDRsqKscRkA==",
+        "profileId": "ACoAACMA1WQBgV8EKd7FupQXOjpsAgya9rL3QLA",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQEZ_qnZxg-xyA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1705973948718?e=1781136000&v=beta&t=LBoVag1NlDf5ffk5wVzEgEsJv9D6X_E410sbmWhdZPU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGvMtuTNHdICw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1705975360344?e=1781136000&v=beta&t=73kz1RRrV0DsO9n0na0p3ZfYiSkUe3yLRv-LT49dYxE",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1608576083436,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6746736401947127809?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6746736401947127809%2C6746857101055795200%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286746857101055795200%2Curn%3Ali%3Aactivity%3A6746736401947127809%29",
+      "text": "Jsem už docela pamětník, za roky jsem vystřídal Motoroly 68k, PowerPC 603, G3, G4, G5, Intely a teď mě čeká ARM... To znamená už čtvrtá procesorová architektura, pokud opomenu tu \"pátou\", kdy nám Apple nedávno zaříznul 32bitové aplikace, což hodilo do popelnice další software, který jsem si kdysi koupil... :-/\n\nPokud mě na Apple něco těší i štve zároveň, tak je to jeho ochota něco tak zásadního změnit. Poslední změna CPU na Intel byla proto, že G5 měla výkon, ale kvůli spotřebě a teplu byla nevhodná do notebooků a byl nucen tam stále dávat G4. \nNa druhou stranu tyto veletoče pak znamenají mizernou zpětnou kompatibilitu, prakticky si několik let starý software na aktuálním HW nespustíte. Rosetta (PowerPC->Intel) a Rosseta 2 (Intel->ARM) je jen šalamounským řešením o slepici a vejci, neříkám že špatným, jen že v tomto někdy závidím Windowsářům, kteří spustí i leckterý letitý SW na aktuálních Windows.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Radek",
+        "lastName": "Sip",
+        "occupation": "SDET, QA, iOS dev, DevOps",
+        "id": "183738125",
+        "publicId": "radeksip",
+        "trackingId": "ju4thednTuS6Dt8oVls6ZA==",
+        "profileId": "ACoAAArznw0BLDUWPnT4E01h5RO6CUuQThhB0SQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFlwMrLoixvUw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1716270304979?e=1781136000&v=beta&t=ZqrwWLOHbP25_jZX3e6xyyY6ziGs2gdan-S_tqr9Ico",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH4s1tHG5jpVA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1716271418304?e=1781136000&v=beta&t=o7MZAER--2F8oqZa41hM4XyALIvYUHHnrKwvXWOAwKE",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1608567653559,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6746736401947127809?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6746736401947127809%2C6746821743593189376%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286746821743593189376%2Curn%3Ali%3Aactivity%3A6746736401947127809%29",
+      "text": "Hezký dovětek... jsem si jistý, že vývojáři nebudou zahálet dlouho a postarají se o to, aby aplikace adekvátním způsobem zpomalili :D.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Vojta",
+        "lastName": "Hordějčuk",
+        "occupation": "The Father of Software",
+        "id": "62423424",
+        "publicId": "vohocz",
+        "trackingId": "/vmlDBdORLurU22L96nTHA==",
+        "profileId": "ACoAAAO4gYABioFXsmShW_uvboNoTFqWF4XYFBk",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHo0ZRiD4GDeg/profile-displayphoto-crop_800_800/B4DZwvgfVHHMAI-/0/1770323585689?e=1781136000&v=beta&t=t1MsUAZ8gXG98xUKpjjEk0DIgPLX7HD78MsDm4ROBN8",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGyZO7p_PZOow/profile-displaybackgroundimage-shrink_350_1400/B4EZULolK8HUAY-/0/1739656955266?e=1781136000&v=beta&t=K2A9gQC74a0GOohzxCEN4rCTfeWL40iJrFbCrdQGGdc",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "František",
+        "lastName": "V.",
+        "occupation": "• Business - Marketer •",
+        "id": "134340385",
+        "publicId": "frantisekvacha",
+        "trackingId": "7mUmg1DbTh6mdcEQmnZZdg==",
+        "profileId": "ACoAAAgB3yEBCp4bV1hj_v-0xxobi5FvPWGBAws"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Robert",
+        "lastName": "Š.",
+        "occupation": "Senior Data Scientist | AI & Digital Innovation Strategist | PhD Student | VSB - Technical University of Ostrava",
+        "id": "255272676",
+        "publicId": "robert-s-2b05a771",
+        "trackingId": "5k7k21AnSMuTVQhtlG/4bg==",
+        "profileId": "ACoAAA83JuQBIi82v-Ambqv2iiOGMA3iOJNluDY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGiwUvjw5ivug/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1689840862135?e=1781136000&v=beta&t=-4jNXqEDKb5LOnOcVN6yrsLc-Mx8zOBmmGDuy9P51NU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEPjR-q-30r2A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1554402312474?e=1781136000&v=beta&t=AlfaXrpX-JKRy7YTf8XOjM0ekc1Tr7RGNbqVsTM_SyI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiří",
+        "lastName": "Kratochvíl",
+        "occupation": "Senior Full Stack Engineer at Code Gaia",
+        "id": "593838785",
+        "publicId": "kratochviljiri",
+        "trackingId": "XIZ504ciSJmK0NIdAKe6yg==",
+        "profileId": "ACoAACNlQsEByvCDxm_bL50YNKjjMsyOqYKNBk0",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQEz4E0t6KB5qw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1592222808982?e=1781136000&v=beta&t=o-pinxrvCzNgJ6mPTTC_Uj0KF2VQ_oE_5TzvOXzTbB4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGYUj7RqrsKFw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1696599295608?e=1781136000&v=beta&t=NCxj7kWdiKM4rpvYQ_5H1CceQhDNux7Cj6QesmG3BCA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Slavos",
+        "occupation": "Cybersecurity | Fintech | Product Ownership",
+        "id": "348832984",
+        "publicId": "jakubslavos",
+        "trackingId": "aEZfkvSdSZev1ygRJUHPlA==",
+        "profileId": "ACoAABTKxNgBb3EHMW3u1W4eY7Ehazzxaz_MLAk",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEeZ0ULvf95BA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1687856789957?e=1781136000&v=beta&t=l78Q3xKENm2kMq6jmeolrx1O0NTlvGNCUjYfRpNuNj0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQECvkRcnd70gA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1687507830403?e=1781136000&v=beta&t=YBHACBlXb48Pukrx9LjlFSpg73TAoQ7wXRgYs1U-0hA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jaroslav",
+        "lastName": "Stuller",
+        "occupation": "AI-Powered Tech Talent Advisory | Business Development & Technical Consultant @Splendit",
+        "id": "172287628",
+        "publicId": "jaroslavstuller",
+        "trackingId": "ez+n5YvEQbaVPEeyRqiENw==",
+        "profileId": "ACoAAApE5owBWLnnbJ1tIVpyL7cZF8Gi0xEHctk",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQEDParn1wpswg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1581946822590?e=1781136000&v=beta&t=I5OGJXmTS2L95CHIvjuu9SOAMNinxlAwMqTe5jG1jQw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEhqV7lBRpa5g/profile-displaybackgroundimage-shrink_350_1400/B4EZoHH82mHEAY-/0/1761056116866?e=1781136000&v=beta&t=Fcvys8W98Bx2myUFIFpKDwIhKamWV6_7lGuw7FtmoFs"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Iva",
+        "lastName": "Stencel",
+        "occupation": "CSV Lead/ Senior Business Analyst",
+        "id": "587257188",
+        "publicId": "iva-stencel-ab0807144",
+        "trackingId": "kIQ0zH2DR5izrPMJLh9/IA==",
+        "profileId": "ACoAACMA1WQBgV8EKd7FupQXOjpsAgya9rL3QLA",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQEZ_qnZxg-xyA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1705973948718?e=1781136000&v=beta&t=LBoVag1NlDf5ffk5wVzEgEsJv9D6X_E410sbmWhdZPU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGvMtuTNHdICw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1705975360344?e=1781136000&v=beta&t=73kz1RRrV0DsO9n0na0p3ZfYiSkUe3yLRv-LT49dYxE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vladimír",
+        "lastName": "Gorej",
+        "occupation": "Full-Stack Software Engineer & Problem Solver | Open Source maintainer & contributor | Alumni GitHub Star | AsyncAPI maintainer | PSD I / PSM I / GCP / LFCA",
+        "id": "58899881",
+        "publicId": "vladimirgorej",
+        "trackingId": "saJ5kkDyQr+K7y6yp4Vzyw==",
+        "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHP1QsKaZTw5Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1720878191370?e=1781136000&v=beta&t=nxFAGloZTLLj4IfsdUrAgIWdCPqihUdH6GbjDvQ02KI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQG1bGQIi0eN-g/profile-displaybackgroundimage-shrink_350_1400/B56ZsnGMs8JUAY-/0/1765887496970?e=1781136000&v=beta&t=c-tUr6BmtfsWTUqP39ZWtDB-NjxB_hfH72HKcJ-t7iA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Radek",
+        "lastName": "Sip",
+        "occupation": "SDET, QA, iOS dev, DevOps",
+        "id": "183738125",
+        "publicId": "radeksip",
+        "trackingId": "ehOk4YbGS/6P+YJH6fbtAQ==",
+        "profileId": "ACoAAArznw0BLDUWPnT4E01h5RO6CUuQThhB0SQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFlwMrLoixvUw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1716270304979?e=1781136000&v=beta&t=ZqrwWLOHbP25_jZX3e6xyyY6ziGs2gdan-S_tqr9Ico",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH4s1tHG5jpVA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1716271418304?e=1781136000&v=beta&t=o7MZAER--2F8oqZa41hM4XyALIvYUHHnrKwvXWOAwKE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel Grumpy",
+        "lastName": "Šimerda",
+        "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
+        "id": "551084893",
+        "publicId": "grumpyprogrammer",
+        "trackingId": "17C49z9kQCifmaTzGgspLg==",
+        "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFnQ8ypdjjyvg/profile-displayphoto-crop_800_800/B4DZxZUZFlHkAI-/0/1771025047361?e=1781136000&v=beta&t=fFiIDptOBoMzbUkj1Lvpd8USzHMX1nkcCCOr19Su_4c"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 13,
+  "numComments": 7,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "DOrH4mDaRlagqUIalsaJSg==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1608547306525,
+  "postedAtISO": "2020-12-21T10:41:46.525Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

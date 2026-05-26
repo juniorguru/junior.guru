@@ -1,0 +1,416 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/D4E22AQFAouucxcSi5g/feedshare-image-high-res/B4EZWgV_uSGwA0-/0/1742151877770?e=1781136000&v=beta&t=UotLlmBBBxT_edFYQqFxdE0g5VzEp1jPvhWu1Hn1zTY"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:7307114592642478080",
+  "url": "https://www.linkedin.com/posts/honzajavorek_to-vypad%C3%A1-jako-moje-kari%C3%A9rn%C3%AD-cesta-%C5%99ekl-activity-7307114592642478080-WvTA?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAADmbg6cBYOPU8CPv9ZUe8oI_f7tbNXybZ54",
+  "timeSincePosted": "1yr",
+  "shareUrn": "urn:li:share:7307114591208026112",
+  "text": "„To vypadá jako moje kariérní cesta“, řekl mi kámoš, když viděl trasu mojí návštěvy zoo 😀 Taky byla vaše cesta do IT takhle klikatá?\n\nSmitio pravidelně dělá nejrůznější průzkumy o trhu IT práce a pak výsledky publikuje na svůj blog. A tentokrát mají anketu o osobních zkušenostech s cestou do IT 🗺️ 🧭 \n\nProtože se to dost týká juniorů, hlavně career switchers, na přípravě jsme se podíleli i Petr Glaser 🤖 za Nauč mě IT a já za Junior Guru.\n\nJe to ale i pro seniory! Dotazník se větví podle toho, co odpovíte. Já sám jsem ho vyplnil taky, a to už jsem v IT začínal hodně dávno. Zabralo mi to 6min a 16s.\n\nPřispějte do průzkumu svým příběhem, ať máme představu, jak klikaté to může být. Odkaz dám do komentáře.\n\nA vy sem do komentáře můžete napsat zkrácenou verzi své cesty. Například „IT VŠ → IT“, nebo „pokladní → kosmetička → knihovnice → programátorka“. Jsem zvědavý, co všechno se tu najde 👀 \n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 134,
+      "length": 7,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Smitio",
+        "universalName": "smitio",
+        "trackingId": "41WD4krwQUOG6SrfvdS1AQ==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:11739201",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQEu4hTS9ifiAg/company-logo_400_400/company-logo_400_400/0/1673537934894/smitio_logo?e=1781136000&v=beta&t=8BY9bu1-41pVt0EU_2nVirc2TDU1amGh9ZldtWXWe6Q"
+      }
+    },
+    {
+      "start": 392,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Glaser 🤖",
+        "occupation": "Building Agentic Engineering Platform for production-ready apps. Generated, reviewed, managed, deployed by AI Agents.",
+        "id": "653562608",
+        "publicId": "bleedingdev",
+        "trackingId": "p9NRaJWiTYaFcHZ4XmOEQw==",
+        "profileId": "ACoAACb0kvABzEvpATXhOiWBbEuq4yfGI43iXrc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHNZ_n7usiMwg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1707307700521?e=1781136000&v=beta&t=s9M6CBtI9xCgMRzy9aH4Zm6vuRjYQFKYSrl_QlfPTvA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEjlZvszJMk8g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1704724910587?e=1781136000&v=beta&t=3ATL2lQYqY066bQ-K-77LV1388hPiLUDuz3f2WEXABk"
+      }
+    },
+    {
+      "start": 409,
+      "length": 10,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Entership",
+        "universalName": "entership-cz",
+        "trackingId": "pUZSmt4STZ6c0xJ5/Xq5cQ==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:76099659",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQESOOgiXtm6qg/img-crop_100/B4EZrK8cXlHcAM-/0/1764341435016?e=1781136000&v=beta&t=gFp2rZa8r_hYK2VenOoRiG-8U83KwYKBZfXLbVLIEAo"
+      }
+    },
+    {
+      "start": 428,
+      "length": 11,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Junior Guru",
+        "universalName": "juniorguru",
+        "trackingId": "48VePwM/RiyrVFG4H3KTnA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:26218444",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQE89NmYF-XT4g/company-logo_400_400/company-logo_400_400/0/1638266899010/juniorguru_logo?e=1781136000&v=beta&t=ad516CNUThMN8eXeVboC5S9U_y2Dnn1UhQn70wIGlxE"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1743231775724,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7307114592642478080?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7307114592642478080%2C7311644009842561024%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287311644009842561024%2Curn%3Ali%3Aactivity%3A7307114592642478080%29",
+      "text": "Na mojej ceste do IT som pracovala aj v ZOO Lešná 😂 Síce ako stážistka, ale bola som tam rok, tak sa to počíta 😁 Potom marketing a teraz tester",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Slovak",
+      "author": {
+        "firstName": "Michaela",
+        "lastName": "Očkovská",
+        "occupation": "Test Automation | Cypress & JavaScript | Continuous Improvement in QA",
+        "id": "793140799",
+        "publicId": "michaela-ockovska",
+        "trackingId": "N/FXU372Ri2b5R8+21wC1w==",
+        "profileId": "ACoAAC9GXj8BJuu12EXzaAeLuwKB-3Af9Hs5IYU",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGSWZxhfOuyrA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1692045154557?e=1781136000&v=beta&t=QmCD93BIOfdbPJhmRy3ULyR_LsvOTAawdcNUiv7rlFo",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1742200237095,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7307114592642478080?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7307114592642478080%2C7307317423244730368%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287307317423244730368%2Curn%3Ali%3Aactivity%3A7307114592642478080%29",
+      "text": "Servírka na oceanske lodi 🛳 -> zákaznický servis námořní 🚢a později letecke✈️ přepravy -> modelátořka v Legu🧱 -> správce webu 🌐-> programátorka (hledám první job)👩‍💻",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Andrea",
+        "lastName": "Kálaziová",
+        "occupation": "the wind of change",
+        "id": "391006447",
+        "publicId": "kalaziova-andrea",
+        "trackingId": "eL4RsKfcRKecyAFjfJmC+Q==",
+        "profileId": "ACoAABdOSO8BWoVRCh1GX7OqcpehKGvreLWufJo",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQHDLqpKOtp2uw/profile-displayphoto-shrink_800_800/B56ZaRlEg.HgAw-/0/1746199137550?e=1781136000&v=beta&t=2pymIU4EJct8-jWJ3GuXYAB6BeS0-RohwicPZqhkyBw",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1742195644551,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7307114592642478080?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7307114592642478080%2C7307298160719093761%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287307298160719093761%2Curn%3Ali%3Aactivity%3A7307114592642478080%29",
+      "text": "Chemická průmyslovka -> antropologie, farmacie -> PR -> digitální marketing -> digital transformation a business excelence manager -> software QA s focusem na test automation 😁",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "English",
+      "author": {
+        "firstName": "Kristýna",
+        "lastName": "K.",
+        "occupation": "QA & Test Automation Consultant at AUTOMATORS | Test Automation with Tricentis TOSCA | ISTQB Certified Tester",
+        "id": "190353478",
+        "publicId": "kristynakounkova",
+        "trackingId": "bTr0W0fuQASNCYbfSslNVA==",
+        "profileId": "ACoAAAtYkEYB3wz1UhyitsKyGUiDBJwKiK8P4qA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEFKvxoQkpLNw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1651151593416?e=1781136000&v=beta&t=FIvmvK7NSwTRuOBUvTGL_yVTCK7Ka8mbp36zs109WiI",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1742193633938,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7307114592642478080?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7307114592642478080%2C7307289727596904449%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287307289727596904449%2Curn%3Ali%3Aactivity%3A7307114592642478080%29",
+      "text": "Studium Imunologie -> imunologická laboratoř -> laboratoř IVF -> IT konzultant (automatizované testování) :) ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Karolína",
+        "lastName": "L.",
+        "occupation": "Senior Consultant at Automators | Test automation with Tricentis TOSCA | ISTQB Certified Tester with background in Molecular Biology",
+        "id": "564143429",
+        "publicId": "karolína-l-a85b1b138",
+        "trackingId": "gLFrHb53TrShh0RSVnlVKQ==",
+        "profileId": "ACoAACGgJUUBL2pQgqT33MWsYy0Wh6LcmleiCs0",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEg7kQdXr1pzA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1567964220945?e=1781136000&v=beta&t=hfdnrmlZT64Bgojaa32AXZ1JjYmo9PkAmD62Y1l_Omg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGIpH3xkhW-qQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1680763470614?e=1781136000&v=beta&t=m04rxo57kpd0M0EYdFXwtf4yIjKlNr_IFQdE02cM7iU",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1742193229747,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7307114592642478080?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7307114592642478080%2C7307288032297021440%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287307288032297021440%2Curn%3Ali%3Aactivity%3A7307114592642478080%29",
+      "text": "základka -> PC kroužek od 6. tř. -> otcův PC a herní období -> VŠ - wowko a wotko (pozn.: warcraft a tanky) -> řidič dodávky -> finanční poradce -> sanitář v nemocnici -> kvaliťák na výrobní hale -> programátor a specialista měření -> dnešek...",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Tomáš",
+        "lastName": "Cibulec",
+        "occupation": "Python vývojář s přesahem. 🐍",
+        "id": "399499541",
+        "publicId": "ypsilonxpython",
+        "trackingId": "km8H7Q/xTUmCgxMF6kSZbA==",
+        "profileId": "ACoAABfP4RUBhhqww_PQuiFQs580Isbr6ZqrqOg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHxzColABuq3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1671205705078?e=1781136000&v=beta&t=YynyLwKnmF1yQVnk5INWHcB96M_Btdr9aeqx1LwcgsI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHuts72Jn_yMQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1634794908162?e=1781136000&v=beta&t=S9UL0wy6v08ZrAb29xjudA5ltkEDpmZSh3rAld7B-jo",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1742193061871,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7307114592642478080?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7307114592642478080%2C7307287328169816065%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287307287328169816065%2Curn%3Ali%3Aactivity%3A7307114592642478080%29",
+      "text": "Teším sa na výsledky ankety a som zvedavá ako to majú iný. Inak cca 2km od ZOO Lešnej som zakotvila na mojej IT kariérnej ceste. 😄 ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Slovak",
+      "author": {
+        "firstName": "Dominika",
+        "lastName": "Grambličková",
+        "occupation": "IT Tester at Monet+",
+        "id": "968735644",
+        "publicId": "domi-gramb",
+        "trackingId": "k5+5J5O7Rgq9tNpHdFFviQ==",
+        "profileId": "ACoAADm9u5wBalO9E9Xeuvs0mhDT6k7NAsur9mo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFqYe2wrFpe6Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704259295137?e=1781136000&v=beta&t=kArivlCv0qjrNDtuFvX9GSAXR2EYkJwiNyy4K4c0VKA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGfq6FFx5nvNw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1704717359541?e=1781136000&v=beta&t=7LKSigGoNr4JpYf97H6tawFMs88h36nvbQKCFlixjjU",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1742185853809,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7307114592642478080?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7307114592642478080%2C7307257095374995456%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287307257095374995456%2Curn%3Ali%3Aactivity%3A7307114592642478080%29",
+      "text": "Školka, čtyři roky základky, kroužek výpočetní techniky, Elektronické počítačové systémy na SPŠ, Počítačové systémy na FEL, Atlas.cz... Nejklikatějších bylo těch prvních 10 let. :)",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Aleš",
+        "lastName": "Roubíček",
+        "occupation": "Problem Solver, DevOps&FinOps consultant, Web developer, Technowokeist, AI atheist, DJ",
+        "id": "1312080177",
+        "publicId": "rarous",
+        "trackingId": "2xHke6ifT7mvdDIgZVPRxg==",
+        "profileId": "ACoAAE40wTEBTRjKUEs1SOsiocsjxAj8jDMc7Nk",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHwiCrkUBmN0A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723217139377?e=1781136000&v=beta&t=DEgZnaL8IEKi_tAiDII3bSAVsVceFm5QqRa-6YGvJy8",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGFCBaAuL9XXA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1715966462440?e=1781136000&v=beta&t=9sMciXi8AAdwHSkl-tAEXyA4W1WMSq4Wd3DVyWlwUCM",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1742169745316,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7307114592642478080?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7307114592642478080%2C7307189531454128129%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287307189531454128129%2Curn%3Ali%3Aactivity%3A7307114592642478080%29",
+      "text": "Socha -> grafika -> popri škole: trénerka, lektorka, reštaurovanie, voľná tvorba -> popri MD: lektorka, dizajn, voľná tvorba, montessori sprievodca -> vlastná firma/studio, kurzy -> veľa učenia -> frontend vývojarka + kreslím, učím a sama sa ďalej učím (najlepšia vec) 😀.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Slovak",
+      "author": {
+        "firstName": "Veronika",
+        "lastName": "Čamborová",
+        "occupation": "Frontend developer",
+        "id": "1082522617",
+        "publicId": "veronika-čamborová",
+        "trackingId": "BiWhY4BIQV+LzBRhm74dHA==",
+        "profileId": "ACoAAECF-_kB69byXoaMHs_qzffiv1hqdN_aZ0U",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFUjZU0TnIoDA/profile-displayphoto-crop_800_800/B4EZjiUS3QIQAI-/0/1756143629052?e=1781136000&v=beta&t=Vgp7eKeI7po7f5wp-stiue0AiSNunEMeSGoT97xMD6E",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFxWpb5YjUyXg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1719347690741?e=1781136000&v=beta&t=4W3hjSrkexs3xxWQhO40-vgepTrcUhV01AfgDioP2t4",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1742162706744,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7307114592642478080?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7307114592642478080%2C7307160009543503872%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287307160009543503872%2Curn%3Ali%3Aactivity%3A7307114592642478080%29",
+      "text": "Lékárnice -> matka -> ? :)",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Jana",
+        "lastName": "Zmijková",
+        "occupation": "Software Developer",
+        "id": "450096743",
+        "publicId": "zmijkova",
+        "trackingId": "CUtdQE3BSSiFajilkHn3TQ==",
+        "profileId": "ACoAABrT7mcBs7ie4r1nA4McNBK2tV0qfujA2v4",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Ekaterina",
+        "lastName": "Kuranova",
+        "occupation": "Founder @HERITECH | Software Engineer & Coding Mentor | Bridging Tech & Social Impact | Advocate for Gender Equity, Women’s Voices & Responsible AI",
+        "id": "1234375694",
+        "publicId": "ekaterina-kuranova-9524812a5",
+        "trackingId": "m6MQn2k8QviKvn0Rncp6xQ==",
+        "profileId": "ACoAAEmTFA4BGSKJdN-1JgZB_Ki0OsHEErHF1KY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGrKCSUquFqKQ/profile-displayphoto-crop_800_800/B4DZ2xE5p5GcAI-/0/1776792349601?e=1781136000&v=beta&t=D3MvHLhIQVgLyAlvPCpQAladHtiry3VdkRbwywp5gMg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEGAHNTrPs5Jw/profile-displaybackgroundimage-shrink_350_1400/B4DZwyoMkeGQAY-/0/1770375924765?e=1781136000&v=beta&t=dHfCyNaGkLTjO21u-KPKU9Gl0vntFM9CEzrQhqtpmiA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Štěpán",
+        "lastName": "Peroutka",
+        "occupation": "Nothing Is Faster Than Software.",
+        "id": "664644824",
+        "publicId": "peroutkastepan",
+        "trackingId": "ftuFiVpsQoSFsD+YRuf/Ow==",
+        "profileId": "ACoAACedrNgB2LeyunYHQo1_jdEGy8le4alZI7A",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFpvdCDMNzD4w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1659200775128?e=1781136000&v=beta&t=oOofBodQ_xo37AtYuKpsJVqpeaAChoXQITleh9KmZZ0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Roman",
+        "lastName": "Váňa",
+        "occupation": "IT & Security Manager ve společnosti GASTON, s.r.o.",
+        "id": "270940992",
+        "publicId": "roman-váňa-6808a276",
+        "trackingId": "TTNtvphyT/CE6XP5MsXgGA==",
+        "profileId": "ACoAABAmO0ABfVBqb_fqgFOXfVeYz3zVubkTVvY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQETxEwVDH96dw/profile-displaybackgroundimage-shrink_350_1400/B4DZg3lQHaHAAY-/0/1753279169467?e=1781136000&v=beta&t=WT7jVqjSUacYGMc99R2Cvq0SKwMNV9HUnCPZ7xEYMrY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marcel",
+        "lastName": "Mravec",
+        "occupation": "iOS/ KMP developer / C/C++ developer / 42Prague.com student",
+        "id": "960822563",
+        "publicId": "mravec",
+        "trackingId": "HFV8u08WQQu0ptxeKkZdOQ==",
+        "profileId": "ACoAADlE_SMBMQ93eU8DFPPPG8mDrrPsd7fIxQ8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQF4170d7m-fJQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1671712471398?e=1781136000&v=beta&t=uaStzb_PgWdlsuQKrRK8ktXcgF5FGADy3yooMDgzFFU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEwy5x1sO-aVg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1682438303352?e=1781136000&v=beta&t=jDyTT_kodAc5c9s8iC8eDljCryG7LhLFsFlsnMwKIl8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Natália",
+        "lastName": "Rydzá",
+        "occupation": "Solution Developer at Jigx",
+        "id": "368513805",
+        "publicId": "natália-rydzá",
+        "trackingId": "AnP8g2pdQv+X6b/yeP+loQ==",
+        "profileId": "ACoAABX3Ew0BUHQbxGZpVNCtTpps5YdBDGUZhas",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHR_o0tloJxmA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1645438239518?e=1781136000&v=beta&t=ni2nTc7HDt1tXOjslE2kohLbGZx6ku1NF4tBt6UCD4Q",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHVNnoOlVU47Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1594664026995?e=1781136000&v=beta&t=zzGY7L1hKZWxBoIzImUY-24mYjgSH9jvJlOGCcRoUfA"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Michaela",
+        "lastName": "Mičková",
+        "occupation": "Software Tester @ ITAPS | ISTQB® Foundation Level",
+        "id": "1213428357",
+        "publicId": "michaela-mičková-59945b29a",
+        "trackingId": "V3RTiKENTzanyT08ksCy3g==",
+        "profileId": "ACoAAEhTcoUBwbIjkz1flA58PMNqYZoQ7VyE0K8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQG0QE443YKfVA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729792018292?e=1781136000&v=beta&t=uuXZ7Ok9HOyxZxjq-8jrRh7-_fVEsRzW-szqLwtTUmM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEas4yzV3HAcg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1729792411815?e=1781136000&v=beta&t=lpWN6Uz1cDLlZ8ShJ_6-865XJQOL3HQ_3sY9bDa8UAg"
+      }
+    },
+    {
+      "type": "ENTERTAINMENT",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Jánoška",
+        "occupation": "Tester at Legito",
+        "id": "335137909",
+        "publicId": "jakubjanoska",
+        "trackingId": "nsoGOIAmQK+2jw8+OZxJfg==",
+        "profileId": "ACoAABP5zHUBV6u-VAJOchWF_zADq3N-mR9bKtg",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFvIRw10KJxyQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1652635856931?e=1781136000&v=beta&t=O-WoLmwix_ytmEA5Yq9ONuKqdFW0QF88GsIqZiMr5uw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Nathalie",
+        "lastName": "Vecten",
+        "occupation": "\"It is a capital mistake to theorize before one has data.\" *cleaned data",
+        "id": "775508820",
+        "publicId": "nathalie-vecten",
+        "trackingId": "EvmSdqIjQ7y+7oO35+SmDA==",
+        "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH5sSEbnQ2Tcg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1611936430673?e=1781136000&v=beta&t=wAQsj8dSBDe6L3xt1MwxMahW3aP-D6LcuvT-utzij6s",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHDKxhi18V0lw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1599638080880?e=1781136000&v=beta&t=5JiWefMiJff9VXnKXxoAOOrnUYNFE4fW7AQAgJac6VA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jarka",
+        "lastName": "Pastyrikova",
+        "occupation": "Na problémy aplikuji zákon paní Murphyové: “Všechno se dá sníst, stačí to nakrájet na malé kousky.”",
+        "id": "1081582957",
+        "publicId": "jarka-pastyrikova-091278262",
+        "trackingId": "XC0jFVe6TYe2UfYtgxELMg==",
+        "profileId": "ACoAAEB3pW0BoryP9Nk9O0QM2zbUm4VlS0U6VBs",
+        "picture": "https://media.licdn.com/dms/image/v2/D5635AQGXW0U7XhrOLA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1660002772504?e=1780430400&v=beta&t=v22RqlMgRS7YScN5sBsUHO0Ww5TuKTAYClQDy0LF03w"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daniela",
+        "lastName": "Schalldach",
+        "occupation": "UX/UI & textile conservator",
+        "id": "721195540",
+        "publicId": "daniela-schalldach",
+        "trackingId": "oklO0GznT/OH8WfmwJ1Ukg==",
+        "profileId": "ACoAACr8khQB-Kl-ynem6Qm6MTZQLggjifY44g4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHyEJTUch1goA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1686937404872?e=1781136000&v=beta&t=NOswmZmzqx31---PVPjo-KGxHQ3jGIVqBngxIunL-F8"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 47,
+  "numComments": 32,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "zU1g9ORqTJS2easB6Tu2aA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1742151878510,
+  "postedAtISO": "2025-03-16T19:04:38.510Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

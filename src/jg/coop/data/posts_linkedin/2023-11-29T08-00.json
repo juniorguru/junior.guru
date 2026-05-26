@@ -1,0 +1,307 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/D4D22AQFmzU5XyQjyOA/feedshare-shrink_800/feedshare-shrink_800/0/1701099513522?e=1781136000&v=beta&t=1oD2mOFw3PMPQhKhZ5vgE06w5KRIBosJ0YDo3eUjKik"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:7135537916214206464",
+  "url": "https://www.linkedin.com/posts/honzajavorek_vilibald-w-je-ost%C5%99%C3%ADlen%C3%BD-it-prof%C3%ADk-m%C5%AFj-activity-7135537916214206464-Ll3O?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC29INoBu4UxIfyNnC3051th8thkLppPT1Y",
+  "timeSincePosted": "2yr",
+  "shareUrn": "urn:li:share:7134928495859675136",
+  "text": "Vilibald W. je ostří­le­ný IT profík, můj bývalý kolega z Apiary a spo­lu­tvůr­ce Podcast You Build It, You Run It.\n\nMělo tu být napsáno, že je software architekt v Oracle, a v době nahrávání opravdu byl, ale události nečekají, než se něco sestříhá, vydá a než se dostanu k propagaci epizody, takže Vilda už je mezitím technical staff v Pure Storage 😅\n\nAle ať už Vilda zrovna architektuje tam či jinde, myslím, že jsme s ním nahráli moc pěkný díl, kde padají moudra, která jsou platná dlouhodobě. Na co se ho Pavlina F. ptala?\n\nMěli bys­te při programování nějak ře­šit, jaký máte ope­rač­ní systém, nebo jak vý­kon­ný je váš pro­ce­sor? Mů­že­te být dobří pro­gra­má­to­ři, i když vám ne­š­la ma­ti­ka? K čemu se hodí te­o­re­tic­ká in­for­ma­ti­ka a jak s ní za­čít?\n\nA já epizodu trochu i doplním. Když byl Vilda členem junior.guru/club komunity, doporučil tam někomu knihu Grokking Algorithms. A bylo to moc dobré doporučení! Tip na tuhle knihu se tam od té doby hodně opakuje a kdo o ni zavadil, ten si ji pochvaluje. V podcastu sice nezazní, ale tady vám ji přihazuju jako bonus 😉 \n\nEpizoda má 33 minut a najdete ji jak u nás na junior.guru/podcast, tak i ve všech běžných podcastových aplikacích. Líbí se vám Junior Guru podcast? Dejte mu hvězdičky a platformy ho nabídnou víc lidem ⭐",
+  "attributes": [
+    {
+      "start": 0,
+      "length": 11,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Vilibald",
+        "lastName": "W.",
+        "occupation": "Software Engineer",
+        "id": "119214723",
+        "publicId": "wvi",
+        "trackingId": "YiYT2F2bRn6Uq+pratSo4g==",
+        "profileId": "ACoAAAcbEoMBRsgrcYfzb2OvSrY6xg1KL-bz-2w",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEXitGXZ8NBqg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1670951991175?e=1781136000&v=beta&t=H0FULVFTL21HcgxaU5UXvEaVGknd6mD-qz9MTrWwiFU"
+      }
+    },
+    {
+      "start": 58,
+      "length": 6,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Apiary",
+        "universalName": "apiary-io",
+        "trackingId": "AJw8NXYLRgq1rfoUKQrvyg==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:2222917",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C510BAQFI21EUA7GJ6A/company-logo_400_400/company-logo_400_400/0/1631366971638?e=1781136000&v=beta&t=yIIP1Slw8ERtDiri0JTTm_jSo59XixRW7-jL2Z3SpSQ"
+      }
+    },
+    {
+      "start": 82,
+      "length": 32,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Podcast You Build It, You Run It",
+        "universalName": "podcast-ybyr",
+        "trackingId": "WGDmxSQtRjS/qjgCDqDm6g==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:94250449",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQGK_lxiCA-0rQ/company-logo_400_400/company-logo_400_400/0/1684135318559?e=1781136000&v=beta&t=b2BwxF04oJq8ahmEi8l6WfMBlgbHTyTNx0K06Iq6AC0"
+      }
+    },
+    {
+      "start": 165,
+      "length": 6,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Oracle",
+        "universalName": "oracle",
+        "trackingId": "cmnybWHLREe6tWr6X7zAaA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:1028",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHYCgYovUuPtQ/company-logo_400_400/company-logo_400_400/0/1665755678957/oracle_logo?e=1781136000&v=beta&t=4wnWwKz_J8m2_FjPsY7FWQWDZxC19ni_zqbCGQ318To"
+      }
+    },
+    {
+      "start": 337,
+      "length": 12,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Pure Storage",
+        "universalName": "purestorage",
+        "trackingId": "4Khx1W08TyWSbnP4rt2B+A==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:1632202",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D560BAQHY8dBMsvlbUw/company-logo_400_400/B56ZyKlQsMGoAY-/0/1771851549770/purestorage_logo?e=1781136000&v=beta&t=EkJI4XRlCrqSQtNYxFLiharth4o5mEVw2HqxbJUagQs"
+      }
+    },
+    {
+      "start": 509,
+      "length": 10,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Pavlina",
+        "lastName": "F.",
+        "occupation": "Host @ Junior Guru podcast.",
+        "id": "190849253",
+        "publicId": "pavlinafronkova",
+        "trackingId": "Gs61H5HkQMyZ2WJBYJAFcQ==",
+        "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1701331069811,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7135537916214206464?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7135537916214206464%2C7135899711432982530%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287135899711432982530%2Curn%3Ali%3Aactivity%3A7135537916214206464%29",
+      "text": "👏Tesat do kamene: „Nejtěžší je najít prví džob.“\n\nO svém štěstí jsem psal: „Zásadní pro mě ovšem bylo, že jsem na strahovských newsech našel inzerát firmy Simpleway Global, kde už jsem v roce 2006 čuchnul ke Springu 2.0, Hibernate a extrémnímu programování, což mi přineslo skvělý náskok.“ (dneska ještě dodávám, že klíčové bylo, že jsem tam dostal velkou autonomii)\n\nhttps://blog.zvestov.cz/software%20development/2014/05/30/stesti-nebo-osobni-zasluhy.html?utm_source=linkedin",
+      "entities": [
+        {
+          "start": 155,
+          "length": 16,
+          "type": "COMPANY_NAME",
+          "company": {
+            "name": "Simpleway Global",
+            "universalName": "simplewayinc",
+            "trackingId": "dhs6Ub+uThGk2pzF2FN8Mw==",
+            "active": true,
+            "showcase": false,
+            "entityUrn": "urn:li:fs_miniCompany:202202",
+            "logoUrl": "https://media.licdn.com/dms/image/v2/C510BAQHefcSorJ6Qyw/company-logo_400_400/company-logo_400_400/0/1631381770838?e=1781136000&v=beta&t=AUhNb-X1qmoMNjboyKC4DlsMQ8N5gOT_FEP96YGNKxQ"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Luboš",
+        "lastName": "Račanský",
+        "occupation": "Certified Java & Spring Programmer, Code Club Lector, Scout Leader",
+        "id": "20334410",
+        "publicId": "lubosracansky",
+        "trackingId": "+a6LjKtXQu+NEXi87cQs2w==",
+        "profileId": "ACoAAAE2R0oBGXvR6LHbw738r7LTmMdhWnyymsU",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGAKqeF_cVJoA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1684758724981?e=1781136000&v=beta&t=UULINccTo51CdEZyus_aXI4scNPpOR_xkWAJLYmJNJ4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG5fpDeDsBaDA/profile-displaybackgroundimage-shrink_350_1400/B4EZkOdYN3IQAY-/0/1756884209852?e=1781136000&v=beta&t=LB4bSuSgN0Kc-dyNmh4Zen74TJK4k4h0TkkNwGiAzZQ",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Kopecký",
+        "occupation": "Snižuji Vaše náklady a zlepšuji produktivitu👍",
+        "id": "566178474",
+        "publicId": "petr-kopecky-solution",
+        "trackingId": "YcFGm/48SiO2Dk7jGROyCg==",
+        "profileId": "ACoAACG_MqoBzmsa7I68oapcxzlwsH7BiIjT5I8",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH8ZrHgnQ5JRA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1623739159920?e=1781136000&v=beta&t=M6D9jtlG9XGIsjidb0vEHJ-2ru2PSUshA_ZIVjbnBrw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEf0ZVKO8d0CQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1724945706532?e=1781136000&v=beta&t=L2C4Vh6ucP8eykV39Lm5ooF8lHGMN9T6GRDGSi_IhH8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Juraj",
+        "lastName": "Krc-Turba",
+        "occupation": "Des réseaux aux serveurs, rien ne m'échappe. Technicien informatique polyvalent, toujours prêt à relever tous les défis. Cofondateur du premier fablab à Chambéry.",
+        "id": "592263015",
+        "publicId": "juraj-krc-turba-973420146",
+        "trackingId": "3V3KUjktSTelE1JOzmvHQQ==",
+        "profileId": "ACoAACNNN2cBLpwqU4yuSOu603yho5Ro1RLH5JA",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG1tm10KobJJA/profile-displayphoto-shrink_800_800/B4EZVmFeA7HMAc-/0/1741174465136?e=1781136000&v=beta&t=flp9rm8mUB364pm-jADsOD3ipaWTcp8lGmgNOowvNAU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFp_H9bjErXgw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736716641788?e=1781136000&v=beta&t=mX2uRfkm7Gn4LEu-uj-RnO-vqqHq9e8llJo8CO4_U9s"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Andrea",
+        "lastName": "Zemanová",
+        "occupation": "To improve oneself one must not be afraid to start",
+        "id": "549559944",
+        "publicId": "andrea-zemanová",
+        "trackingId": "ME/ThL2oT6StvAIQ6ddcoA==",
+        "profileId": "ACoAACDBnogBaAe--loTRFFTawFYAA9m1cEeyv4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEfyG-BDUbhMw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1681884630326?e=1781136000&v=beta&t=nowhA_9j1EsYhDH15EwduHA5HhusaJ1jxnVeHvuVunw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEgqtBc1s6TTg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1682510964862?e=1781136000&v=beta&t=LMv7Qlav7d8ipXgJWDRvxZjm2b2Db1CscMgAjETkGOY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tereza",
+        "lastName": "L.",
+        "occupation": "Senior HR Manager | Country HR | Operations & People Strategy",
+        "id": "23136032",
+        "publicId": "terezale",
+        "trackingId": "cQ7Ui68CSSWTrIBWearK9A==",
+        "profileId": "ACoAAAFhByABrpRT78Zgx4U3mRVpJJB3aLBukew",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQElmEv5ocCQiw/profile-displayphoto-shrink_800_800/B4EZV5vE_fHMAc-/0/1741504139641?e=1781136000&v=beta&t=hFMmhWM1_piCTIGSqk6p0liDt0-qaO46KHefN77FctY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHlFiHBZjQuyQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736964866391?e=1781136000&v=beta&t=n2ixTACTuZmKzVoCw_Nl_3BP51u0eCOZ5SZKLEwEpOs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Holčapek",
+        "occupation": "Dev, infra, cloud and stuff",
+        "id": "9195811",
+        "publicId": "holcapek",
+        "trackingId": "yZxAS2k2TT6yk4M4GLW1pA==",
+        "profileId": "ACoAAACMUSMBzhfUGNcmmXk-MFkzrCM2pwaAHwA",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQFbfxu9206-iQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695051901898?e=1781136000&v=beta&t=yBgmWK7sLJCW8TWF7uSXlgt9_o2xK12mP7MzGFx-zFo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Monika",
+        "lastName": "Andruchová",
+        "occupation": "Tech Recruiter ve společnosti Everpure",
+        "id": "536191609",
+        "publicId": "monikaandruchova",
+        "trackingId": "y6A9DMcNSsOk0qO5rCR9Dw==",
+        "profileId": "ACoAAB_1onkB2MDEUbbyoekcLtoZuDMQDDhJj08",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFqVgAI6XSMbA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1665349280075?e=1781136000&v=beta&t=xM0jUKlh9Aj1Tc3V_2VbOkwy-dtH5GM1FmJLMpNLE_w",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFe9OSUaWUZsg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1611329086742?e=1781136000&v=beta&t=XyQV5PFzBfllTPYq6-DhpTNSpN0WeIkstzHLbmfWtKo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "David",
+        "lastName": "Hecht",
+        "occupation": "Principal - Talent Sourcing for IT roles to Barclays Prague ❗Hiring❗ | Java | SDET | DevOps | and more!",
+        "id": "909120160",
+        "publicId": "hechtd",
+        "trackingId": "SPisUDzmQziyFWIuyoR8vg==",
+        "profileId": "ACoAADYwEqABNoYrKoc1l1s4-Xods-qDGHIWsa0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGDuqRYBCzbNA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1672757771403?e=1781136000&v=beta&t=dq5U2QDy3CKEBOE93CxW_K-r_kGVfXubTY--0uTjgdw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHBS6hRcfTCuA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686907364692?e=1781136000&v=beta&t=T7eaHGXBcfd45kOaXhZ6mzifjzTcqK-aI3vzmcETtKw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Filip",
+        "lastName": "Průdek",
+        "occupation": "Nefunguje mi to → Super, už to jede | Feed specialista & Customer Success @Mergado",
+        "id": "904009499",
+        "publicId": "filip-prudek",
+        "trackingId": "kxMmz2JjTq+4jcy//8Jftw==",
+        "profileId": "ACoAADXiFxsBDrfvLqXfc46dYlgCQklCaExwUMY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFupO9P-a5bFw/profile-displayphoto-crop_800_800/B4DZ5JiGdVJYAM-/0/1779350139114?e=1781136000&v=beta&t=Iw5Hw9pEtYfXe0-wPQXIOnKKUFZqdaHEFcw06ySiAyI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFct0esxDP2iw/profile-displaybackgroundimage-shrink_350_1400/B4DZ5JhtJBKAAU-/0/1779350033262?e=1781136000&v=beta&t=JkmSvMYWwXWWoFjbhRDQTIId6IpLExcH82QOIBlmb28"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Luboš",
+        "lastName": "Račanský",
+        "occupation": "Certified Java & Spring Programmer, Code Club Lector, Scout Leader",
+        "id": "20334410",
+        "publicId": "lubosracansky",
+        "trackingId": "wafJVZ8FS26OJu+O0rZ/bw==",
+        "profileId": "ACoAAAE2R0oBGXvR6LHbw738r7LTmMdhWnyymsU",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGAKqeF_cVJoA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1684758724981?e=1781136000&v=beta&t=UULINccTo51CdEZyus_aXI4scNPpOR_xkWAJLYmJNJ4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG5fpDeDsBaDA/profile-displaybackgroundimage-shrink_350_1400/B4EZkOdYN3IQAY-/0/1756884209852?e=1781136000&v=beta&t=LB4bSuSgN0Kc-dyNmh4Zen74TJK4k4h0TkkNwGiAzZQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Katerina",
+        "lastName": "Mackovikova",
+        "occupation": "Data analyst passionate about systems integration",
+        "id": "262585845",
+        "publicId": "katerina-mackovikova-499b3373",
+        "trackingId": "HxumG6WeTm+CFxvIykMQng==",
+        "profileId": "ACoAAA-mvfUBi9EOGyMJGQ2V5sq1pa_91Q3yqB4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH2cRv9plwRWg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723922714065?e=1781136000&v=beta&t=Ss6jpRWXSXGnUamkYVdDcbGXZ-Bph_qdyh7EaU1zXbk"
+      }
+    }
+  ],
+  "numShares": 2,
+  "numLikes": 16,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "tOic8QjRQWuFLsNWMn81+Q==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1701244811109,
+  "postedAtISO": "2023-11-29T08:00:11.109Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

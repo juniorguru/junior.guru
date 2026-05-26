@@ -1,0 +1,278 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4E22AQEexZqflcudfA/feedshare-shrink_1280/feedshare-shrink_1280/0/1622441582126?e=1781136000&v=beta&t=omgjoTCfQqkCfjcHovGao7q4qq2MIZLhLdwYuprMnk8"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6805013218185007104",
+  "url": "https://www.linkedin.com/posts/honzajavorek_careerswitchers-activity-6805013218185007104-dJIN?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAACuI5A8BX1v8g9AOaMsa2Q3tgSu26oVR9wA",
+  "timeSincePosted": "4yr",
+  "shareUrn": "urn:li:share:6805013217769791488",
+  "text": "Na blogu Mews jsem objevil hned tři příběhy #careerswitchers: Daria Doronina, Michael Diaz, Marketa Lourenco. Přidávám na web do motivačních příběhů! https://lnkd.in/emtd6Jc",
+  "attributes": [
+    {
+      "start": 9,
+      "length": 4,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Mews",
+        "universalName": "mewssystems",
+        "trackingId": "M+LLOlq2RlefnfPXWvHXlQ==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:2574959",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQG9VtyX26envQ/company-logo_400_400/B4EZyKEXeEH0AY-/0/1771842926937/mewssystems_logo?e=1781136000&v=beta&t=UIV6bGS_gnn1FvSP7zSjwts_zMyZHE6t4vu9n9Nz5KE"
+      }
+    },
+    {
+      "start": 62,
+      "length": 14,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Daria",
+        "lastName": "Doronina",
+        "occupation": "Senior Software Engineer at Mews",
+        "id": "487907514",
+        "publicId": "dariadoronina",
+        "trackingId": "z4yNq1QVQFijzjyatypQLA==",
+        "profileId": "ACoAAB0U4LoBSrokMcWy_UZjpaKHY_kfCLZLMt8",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQFO-59ihiKOoA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1709739986511?e=1781136000&v=beta&t=zm_iR2wISP5QiY6mzTA8RgQBtyV4-6UZvaSOk13Dw_s"
+      }
+    },
+    {
+      "start": 78,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Michael",
+        "lastName": "Diaz",
+        "occupation": "Senior Test Automation Engineer. I am not just a coder, I am a problem-solver, a collaborator, and a passionate advocate for innovation, AI and automation testing.",
+        "id": "757417951",
+        "publicId": "michael-diazs",
+        "trackingId": "XhTcICAfTxOj0M0Ln9L/xg==",
+        "profileId": "ACoAAC0lR98Bqsj_TYRz8KeWGsXJrf4wnAI9YZw",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHCcQdrQKefYw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1596625281757?e=1781136000&v=beta&t=itidBesMhFzy6t914aXvK6AC_eXmWw925KByO6EL798",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFbjHml_LBzGQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1596625250323?e=1781136000&v=beta&t=-AmhcafDWKpeTqenPl9NLii9EdFaqNb73WR3Ba5Wf3s"
+      }
+    },
+    {
+      "start": 92,
+      "length": 16,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Marketa",
+        "lastName": "Lourenco",
+        "occupation": "Senior Data Analyst at Mews",
+        "id": "100649752",
+        "publicId": "marketa-lourenco",
+        "trackingId": "5kXx0a+YTiyZKgY9fYLv0Q==",
+        "profileId": "ACoAAAX_yxgBI2oslXsIJO8gmesUHbHK-vGnGTo",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHNh9Y3DYWOkQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1639590611475?e=1781136000&v=beta&t=jfKOcatSeYz64BGX1k5utnrEdZsIUq_EMiKusXH9LYg"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1622447469007,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6805013218185007104?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6805013218185007104%2C6805037909037596672%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286805037909037596672%2Curn%3Ali%3Aactivity%3A6805013218185007104%29",
+      "text": "Jan Meissner",
+      "entities": [
+        {
+          "start": 0,
+          "length": 12,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Jan",
+            "lastName": "Meissner",
+            "occupation": "Product & Tech Community Lead at Mews",
+            "id": "677292059",
+            "publicId": "jan-meissner",
+            "trackingId": "RfZEA1V2RQyA3QlXzqKWKA==",
+            "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw",
+            "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEEoMbY9urW6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728030316222?e=1781136000&v=beta&t=qIshYYWgkzBRoJGlT6oqlmeH3jlRiX8J_luFzaICydQ",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGei_PMH8ghyw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728030258130?e=1781136000&v=beta&t=GS9HgAFTdCMh-1xFx2xIDoLH91oMpSioaV6pV2ayQSY"
+          }
+        }
+      ],
+      "pinned": false,
+      "author": {
+        "firstName": "Ondřej",
+        "lastName": "Illek",
+        "occupation": "Co-founder at Finlay | Humans and AI Recruitment Agents working together.",
+        "id": "244006979",
+        "publicId": "ondrejillek",
+        "trackingId": "Gzs/nAw2Qx6hXVme+sKhVQ==",
+        "profileId": "ACoAAA6LQEMBdXH_oDCuYjNDS0W8-YQzfcpn4Yo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFK2fHAeLp8XA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1735817571962?e=1781136000&v=beta&t=Dq6AqekbcwILRYck4mzwm2Do5p763YlQE1Ytdgb_75E",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Otakar",
+        "lastName": "Veleba",
+        "occupation": "Senior Analytics Engineer at Mews",
+        "id": "232631398",
+        "publicId": "otakar-veleba",
+        "trackingId": "7fbQKwoARrGjo/+Coot/7w==",
+        "profileId": "ACoAAA3drGYBqkSarfyjg6J0-SOm25UCtsUwt20",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQFFDq7LlC-3qw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1576606626766?e=1781136000&v=beta&t=EN7vln-BXDbDPh1KdBOYCd6885oB9dyiYkr3ah0n95k",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEl08fwwV1HLw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1701333600135?e=1781136000&v=beta&t=9VPT4-FrerodQ_k4VyHAhmbOcBpHJEASe13Uu7YFtSw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Kout",
+        "occupation": "Externí spolupracovník pro Lentiamo s.r.o., moderátor srazů Frontendisti.cz, frontendový kódér na volné noze, nadšený amatérský divadelník a vyučený číšník",
+        "id": "745086721",
+        "publicId": "tomáš-kout",
+        "trackingId": "dMYLiU9/RwyaFGNioVDjgg==",
+        "profileId": "ACoAACxpHwEB_RwLQyNFH47eaRYq_nPGz1uUvBs",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG3T6FJna4NWg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718255994424?e=1781136000&v=beta&t=BgZJsEgRGJZ1ChCl-3YKElI5-kiQhhj43bA6ZkyazKg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marketa",
+        "lastName": "Lourenco",
+        "occupation": "Senior Data Analyst at Mews",
+        "id": "100649752",
+        "publicId": "marketa-lourenco",
+        "trackingId": "5kXx0a+YTiyZKgY9fYLv0Q==",
+        "profileId": "ACoAAAX_yxgBI2oslXsIJO8gmesUHbHK-vGnGTo",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHNh9Y3DYWOkQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1639590611475?e=1781136000&v=beta&t=jfKOcatSeYz64BGX1k5utnrEdZsIUq_EMiKusXH9LYg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Kristyna",
+        "lastName": "Kaucka",
+        "occupation": "product and growth",
+        "id": "258026352",
+        "publicId": "kristyna-kaucka",
+        "trackingId": "4Z9elVEhQ1KSh96h6TPyVg==",
+        "profileId": "ACoAAA9hK3ABcVe2ts1vi1srKuVnxpADjLW07hY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEVT1FlU4wDPA/profile-displayphoto-crop_800_800/B4DZzjGA_9I4AI-/0/1773336531679?e=1781136000&v=beta&t=gjKSevLfV0O6D1pSk8sJgN0phyhmiCMqa43HBO6Bmm8"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Klara",
+        "lastName": "Stouracova",
+        "occupation": "People&Culture @Outreach I 🫧 Play Specialist in training @Vlaštovka I 💛 Co-founder of makeITtoday",
+        "id": "114548551",
+        "publicId": "klara-stouracova-80744132",
+        "trackingId": "yC++YI9/Szam/Y2KW5gfIQ==",
+        "profileId": "ACoAAAbT30cBmwqMBtHutWvNY3yY0hhYOrqjfzk",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGiyfNNKtWOoQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1635980409143?e=1781136000&v=beta&t=JQpXzE1HcDJKgZhXzNTeAJSh2wZ9uSzuLhaa-wJ0-1g",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGhHwQrz5kyIw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1603223989176?e=1781136000&v=beta&t=SzN1GPzbOIugIOHjQVsZlogNlGun1Sv8MNKJOPyXVgY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Necas",
+        "occupation": "People Programs Manager (Talent Acquisition & Employer Branding & Business Partnering + PR & Communications & Tech Community) | Founder of Hiring On Ramp",
+        "id": "452845690",
+        "publicId": "necasjiri",
+        "trackingId": "PzK+tnRfQwWsxQpE6zWjWg==",
+        "profileId": "ACoAABr94HoBk8rcjyVSHInie0pg-zn_xnWiXiM",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQF5bJQ-Dn0fwQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1562156245803?e=1781136000&v=beta&t=6HPTJxNYoO-sTv6yavLyPvjBKu53wbUBGjU0x6aLbL0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGN6IAfzYGEXQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ0pbwbZHEAc-/0/1774516636684?e=1781136000&v=beta&t=-O9uaBR68HidkRLJ6H1QZOlSxHsQCiv1P7QdBdsPPCE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Žaneta",
+        "lastName": "Dvořáčková",
+        "occupation": "📊 Digital Data Analysis",
+        "id": "497569606",
+        "publicId": "zaneta-dvorackova",
+        "trackingId": "CyCpN8uzTFGLWATyAXKQ7A==",
+        "profileId": "ACoAAB2oT0YBRTIYQcJzOL_gEbUKl0BlKIeQoyI",
+        "picture": "https://media.licdn.com/dms/image/v2/C5103AQGAIAFe88z8DQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517622427871?e=1781136000&v=beta&t=pvJfCzOibJG8RvVScdULcl7QNNAuho7YPTaohics_mE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ondřej",
+        "lastName": "Illek",
+        "occupation": "Co-founder at Finlay | Humans and AI Recruitment Agents working together.",
+        "id": "244006979",
+        "publicId": "ondrejillek",
+        "trackingId": "JxGM9fsnTH+XwYsuW7katg==",
+        "profileId": "ACoAAA6LQEMBdXH_oDCuYjNDS0W8-YQzfcpn4Yo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFK2fHAeLp8XA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1735817571962?e=1781136000&v=beta&t=Dq6AqekbcwILRYck4mzwm2Do5p763YlQE1Ytdgb_75E"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Süssová",
+        "occupation": "Growth Marketer @ CleverMaps 🌎 | Content | Communications | Community | HR Marketing | Employer Branding | You Name It",
+        "id": "117736589",
+        "publicId": "veronikasussova",
+        "trackingId": "tL0qTaW0TgG4jj4KB1PwQQ==",
+        "profileId": "ACoAAAcEhI0B0DCDRZK6zNqOn9JAlvoM-qGjrT4",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHUAEx2NABMlA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1659966397260?e=1781136000&v=beta&t=NL50hhX1fzpIF-1DWxg79geO8ihS64d3RdN7R4G8Uy0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGbjLwvUzKiUQ/profile-displaybackgroundimage-shrink_350_1400/B4EZpJS6bpGcAY-/0/1762166287334?e=1781136000&v=beta&t=DeE4eikqTSDL7WLEAu0eBC_JiQxiZ3r0vXV5Nj7HgUs"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Meissner",
+        "occupation": "Product & Tech Community Lead at Mews",
+        "id": "677292059",
+        "publicId": "jan-meissner",
+        "trackingId": "RfZEA1V2RQyA3QlXzqKWKA==",
+        "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEEoMbY9urW6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728030316222?e=1781136000&v=beta&t=qIshYYWgkzBRoJGlT6oqlmeH3jlRiX8J_luFzaICydQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGei_PMH8ghyw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728030258130?e=1781136000&v=beta&t=GS9HgAFTdCMh-1xFx2xIDoLH91oMpSioaV6pV2ayQSY"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 11,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "2kfbKlTnQgi25ohAdZC2nA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1622441582247,
+  "postedAtISO": "2021-05-31T06:13:02.247Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

@@ -1,0 +1,398 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/D4D22AQESQHBe1HzDKQ/feedshare-shrink_1280/feedshare-shrink_1280/0/1714658847060?e=1781136000&v=beta&t=ptNouhz1ngcqCSMjErahRguIR9x-BxI63rrUsi1jqbE"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:7191800465058082817",
+  "url": "https://www.linkedin.com/posts/honzajavorek_strangeplanet-webexpo-activity-7191800465058082817-0xbb?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFsquNIBL-Bah7UT0aAl0gV3gz4HeyE43g0",
+  "timeSincePosted": "2yr",
+  "shareUrn": "urn:li:share:7191800463749505024",
+  "text": "Lepší fotku jsem nenašel, ale na tričku mám napsáno \"I AM NOT TRAINED FOR THIS\". Beru si ho, když potřebuju posílit sebevědomí.\n\nJe to úryvek z komixů #StrangePlanet od Nathan W Pyle, které úplně žeru. Těch triček mám víc.\n\nA teď jsem zjistil, že Nathan bude na letošním #WebExpo! Nemůžu uvěřit, že můj komixový idol bude tady v Praze na konferenci. Na koho se ještě těším?\n\n👉 \"Inclusive design patterns\" od Vitaly Friedman vypadají fakt dobře.\n👉 Po dlouhé době bych mohl vidět Michal Špaček!\n👉 Právo a AI mě zajímá, takže Petra Dolejšová je jasná volba.\n👉 LLM už používám, ale do bota jsem se neodvážil to dát, takže \"Building a LLM chatbot with confidence\" od Petr Brzek zní jako něco, co potřebuju.\n👉 Čím dál víc času trávím na Mastodonu a propojil jsem ho i se svým blogem, takže jsem zvědav, co k tomu řekne Jan Vlnas.\n👉 Jako čerstvá posila Apify mrknu i na Jan Čurn.\n\nA vidím spoustu sympatických známých tváří v mentoringu, a ty minimálně moc rád pozdravím.\n\nS kým ještě se na WebExpu uvidím? Kupón Javorek24 vám dá 15% slevu na lístek 🎁",
+  "attributes": [
+    {
+      "start": 169,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Nathan W",
+        "lastName": "Pyle",
+        "occupation": "Author/ Illustrator",
+        "id": "662427566",
+        "publicId": "nathan-w-pyle-352a19165",
+        "trackingId": "4JI18+siQ+editO8sBvxfg==",
+        "profileId": "ACoAACd7164BStT7MBfVUDe1JkDdCPpyYiX5JeE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEH2Lsa9OAxdA/profile-displayphoto-shrink_800_800/B4DZgV4U.XHsAk-/0/1752713744587?e=1781136000&v=beta&t=zPJSw1UW6y8_KiAHEJu1T8tylXET4ogcb5NibPZYwvo"
+      }
+    },
+    {
+      "start": 408,
+      "length": 15,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Vitaly",
+        "lastName": "Friedman",
+        "occupation": "Practical insights for better UX • Running “Measure UX” and “Design Patterns For AI” • Founder of SmashingMag • Speaker • Loves writing, checklists and running workshops on UX. 🍣",
+        "id": "8614404",
+        "publicId": "vitalyfriedman",
+        "trackingId": "Z85s3OvWT86B9Sg7CHPcvQ==",
+        "profileId": "ACoAAACDcgQBa_vsk5breYKwZAgyIhsHtJaFbL8",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGcaIGsIO3SBg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1575521386832?e=1781136000&v=beta&t=XXOECJWbrFlmr39vioIRNcIJzr9zVnbDiOWaZreZt3c",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFa2zQuVwRhuA/profile-displaybackgroundimage-shrink_350_1400/B4EZg2RfB9GYAY-/0/1753257210551?e=1781136000&v=beta&t=G0Sn0QppRLdBhXt8LW-baYEYuEROJb1ZSV2NkeTCCO4"
+      }
+    },
+    {
+      "start": 478,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Michal",
+        "lastName": "Špaček",
+        "occupation": "Security engineer & hacker, web developer, speaker and consultant",
+        "id": "13617064",
+        "publicId": "spaze",
+        "trackingId": "awy3JOz5S6WLbbq+Rc5HeA==",
+        "profileId": "ACoAAADPx6gBVpJP4TUKXzNrRVbr-J6gbJ72J2Q",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEgi-ejL6TShg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517698138412?e=1781136000&v=beta&t=Wtvu0iuLCw4RbrMgn0D38oI8lxBNn-DjI4HUGVlo8qI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHSwy0z4cc_Ug/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1664203309807?e=1781136000&v=beta&t=s-aEeW9plCcz7xTNMCZ8R1A8fscbMeQognmWKJ8PeHI"
+      }
+    },
+    {
+      "start": 523,
+      "length": 15,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Petra",
+        "lastName": "Dolejšová",
+        "occupation": "I bust myths about the boredom of law. Marketing Law 🍿 | AI Law 🎨 | E-commerce Law 💰 Bez paragrafů.",
+        "id": "177479562",
+        "publicId": "petradolejsova",
+        "trackingId": "DsaNpJVfRjSedIMM+W+thg==",
+        "profileId": "ACoAAAqUH4oBsd_HLZqwCb1bSYXdSH01InTvpUg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFLaFLbCXTssQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1700996188231?e=1781136000&v=beta&t=cp4B5g5B8LHkZNx2nAFrPYRjgXXOQFtCNo5QnEX2sG0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF1QteqRrfeoQ/profile-displaybackgroundimage-shrink_350_1400/B4EZeN0rsaG4Ag-/0/1750431088652?e=1781136000&v=beta&t=xt_JqEno9yX3iSS2AG3V05ZOdxWh4FIy0kLOcsN2WUo"
+      }
+    },
+    {
+      "start": 662,
+      "length": 10,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Brzek",
+        "occupation": "CEO at Macaly",
+        "id": "58172475",
+        "publicId": "petrbrzek",
+        "trackingId": "wYLUO3DYQQqMKJFECq6icg==",
+        "profileId": "ACoAAAN3pDsBxIqyP2PK2IQnnxiuyhJu8tb7Fsk",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHMfeiefAm9Sw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1593695356641?e=1781136000&v=beta&t=If9aeqDrVbph9fQG8rmrmjxH_Pk1ECXuJUGys45ourI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEqiW6NVUdHEw/profile-displaybackgroundimage-shrink_350_1400/B4DZsNeq6zLQAc-/0/1765457703207?e=1781136000&v=beta&t=hidNMq6GiSmeqVUNaOLwxn3-47iVyDfzO47t7is5ij8"
+      }
+    },
+    {
+      "start": 813,
+      "length": 9,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Vlnas",
+        "occupation": "Senior Software Engineer for Open API at Mews",
+        "id": "47732077",
+        "publicId": "janvlnas",
+        "trackingId": "4u4HgAtzSImmoRvaFjCczQ==",
+        "profileId": "ACoAAALYVW0BDqoHy4lGYgYXvwuLwoZ8CBa5LGI",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQGYBJgfR9Jpdg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1543923794627?e=1781136000&v=beta&t=gc-zoTCNp2niexDbWgfXuMVQU8ShdtV-h0wLMGm-ERg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHQeE3W1akdzw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1649965681363?e=1781136000&v=beta&t=oMuhAUDwf_6Zvy808w1yuWmaCwV0kUN2-cL-iIZL4eo"
+      }
+    },
+    {
+      "start": 863,
+      "length": 8,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Čurn",
+        "occupation": "CEO at Apify | Let’s put the web to work",
+        "id": "10290267",
+        "publicId": "jancurn",
+        "trackingId": "mRxBveHSSKKUbJvl4/Gypw==",
+        "profileId": "ACoAAACdBFsBHaXfIWODyX0ELY4hhyX1nTAG_gc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGVYzvGHp9zhw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1688982177437?e=1781136000&v=beta&t=zz3moQe9J1ObEyIYjDgIrrVP1MMVpJw5KGRhS866MLg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQE1LR2s8fdcbA/profile-displaybackgroundimage-shrink_350_1400/B4DZ1FyrDxKAAY-/0/1774992421661?e=1781136000&v=beta&t=zQZNrkbxjEvVoIjNdG4N5neJo7q35FyU7IzWQuc-I8I"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1715337871180,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7191800465058082817?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7191800465058082817%2C7194648494438043648%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287194648494438043648%2Curn%3Ali%3Aactivity%3A7191800465058082817%29",
+      "text": "Gratitude, Honza ❤ Ještě větší radost ti jistě udělá, že design letošních WebExpo dárečků má na starosti také Nathan! Vyhraje u tebe lev nebo pivo? https://www.linkedin.com/feed/update/urn:li:activity:7181926298049536001",
+      "entities": [
+        {
+          "start": 11,
+          "length": 5,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Honza",
+            "lastName": "Javorek",
+            "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+            "id": "8517488",
+            "publicId": "honzajavorek",
+            "trackingId": "A49vPRYyTWm6TJsPS9M2Cg==",
+            "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+            "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "Czech"
+    },
+    {
+      "time": 1714679819554,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7191800465058082817?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7191800465058082817%2C7191888425870852097%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287191888425870852097%2Curn%3Ali%3Aactivity%3A7191800465058082817%29",
+      "text": "Ja uz roky tvrdim, ze pozor na to, co mam na tricku, lebo sa to moze splnit. :D Na strednej som si zo srandy kupila tricko s napisom \"I'm too pretty to do math\" a potom som si ho neprezieravo obliekla na niekolko pisomiek z matiky, ktore dopadli teda hodne podpriemerne (vzhladom na moju dovtedajsiu historiu), odvtedy ho pre istotu nosim len na cvicenie.\nUzite si WebExpo!",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Slovak",
+      "author": {
+        "firstName": "Kristina",
+        "lastName": "Kasalova",
+        "occupation": "Bloomreach Engagement Consultant at ACOMWARE | Seasoned online marketing manager | On a web development journey",
+        "id": "65295363",
+        "publicId": "kristinakasalova",
+        "trackingId": "A97vrLFLQDaAdU3ntRlWiQ==",
+        "profileId": "ACoAAAPkVAMBCkmYwh31YknWYkaJ7aiJ658qFmI",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQF3P-OjJaDOvA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516822641412?e=1781136000&v=beta&t=ISU72UCveagMzhtyZqckPbOGWd1ZzKxXZVdjDuznmxQ",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1714668563424,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7191800465058082817?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7191800465058082817%2C7191841214243979264%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287191841214243979264%2Curn%3Ali%3Aactivity%3A7191800465058082817%29",
+      "text": "",
+      "entities": [],
+      "pinned": false,
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "n6hg3F6JQo6qQw95WaJoWA==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1714664443429,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7191800465058082817?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7191800465058082817%2C7191823933732519936%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287191823933732519936%2Curn%3Ali%3Aactivity%3A7191800465058082817%29",
+      "text": "Triko ti dává křídla! ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Šimon",
+        "lastName": "Kořený",
+        "occupation": "Product Owner & Dad | Building great products, raising great humans",
+        "id": "283596586",
+        "publicId": "fusatytata",
+        "trackingId": "zFV+/gOWQMWxlA5YM9KG8w==",
+        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEP3Q4BtiThDA/profile-displayphoto-shrink_800_800/B4EZc_c90wHIAc-/0/1749116247942?e=1781136000&v=beta&t=_QtTBgXEBbo6wLgAeAyA_Vwe266kRM2rafjtUTqdQ18",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFllW8t92LUXg/profile-displaybackgroundimage-shrink_350_1400/B4EZkO0XOcHEAY-/0/1756890233024?e=1781136000&v=beta&t=BcgfXCQP09cdXXYAi_lrlRlt4F-p0U2rPgEazsl9SeQ",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1714659393154,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7191800465058082817?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7191800465058082817%2C7191802751339655170%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287191802751339655170%2Curn%3Ali%3Aactivity%3A7191800465058082817%29",
+      "text": "Každý ráno (ať je to kdykoliv) si vzpomenu na komixová okýnka \"Illuminating your rest chamber\"/\"Creating a smaller chamber\" ☀️🛌",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Slovak",
+      "author": {
+        "firstName": "Michal",
+        "lastName": "Špaček",
+        "occupation": "Security engineer & hacker, web developer, speaker and consultant",
+        "id": "13617064",
+        "publicId": "spaze",
+        "trackingId": "4V2Lwwk/S2G0qAcd0zAvaQ==",
+        "profileId": "ACoAAADPx6gBVpJP4TUKXzNrRVbr-J6gbJ72J2Q",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEgi-ejL6TShg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517698138412?e=1781136000&v=beta&t=Wtvu0iuLCw4RbrMgn0D38oI8lxBNn-DjI4HUGVlo8qI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHSwy0z4cc_Ug/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1664203309807?e=1781136000&v=beta&t=s-aEeW9plCcz7xTNMCZ8R1A8fscbMeQognmWKJ8PeHI",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Irena",
+        "lastName": "Zatloukalova",
+        "occupation": "empowering #autisticTalent in Tech 🚀 | Guiding your communication for change | Systemic coaching",
+        "id": "99891449",
+        "publicId": "izatlouk",
+        "trackingId": "k0i6CEIATSevH7AnwfmNZg==",
+        "profileId": "ACoAAAX0OPkBzZjVvVi08LqhaKA5UMdVz4M5inM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEX7QmSSoFSMg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1635789075087?e=1781136000&v=beta&t=gNSbihMMlaQdd_0sP2m4nmd_njYG4j06DobLSgnjIEM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Domitil",
+        "lastName": "Katemo",
+        "occupation": "Business Administrator | 3+ years in administration, marketing & customer service | Skilled in project coordination & process improvement",
+        "id": "525351228",
+        "publicId": "domitil-katemo-850b32127",
+        "trackingId": "9bLJlORoR52N9gDMG3fEOA==",
+        "profileId": "ACoAAB9QOTwBjYo-pyQWuo9wx4mjFG9_olxX9_w",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQF2thtGX-TWJw/profile-framedphoto-shrink_800_800/B4DZyG41szJkAg-/0/1771789573559?e=1780430400&v=beta&t=edCNW0Xp2QsHGzEq5tuKBIrFtTAiO9pKuO8MdPuo_Lk",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGvlgCVKL_gfA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1690930951851?e=1781136000&v=beta&t=egWwtJU0YVsPFZdf3v1spQIdxEjONh7RDDObx3aSJlw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Kavka",
+        "occupation": "Pište co nejlépe. A posílejte dobré newslettery → Newslettery.cz",
+        "id": "8564238",
+        "publicId": "newsletterista",
+        "trackingId": "ZuZsSEQdT4GWMm2akqKEKQ==",
+        "profileId": "ACoAAACCrg4BcE6RgPGHGgkMUX-AiPQMeU9H1rA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGyoY9jftCjXg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1622497751277?e=1781136000&v=beta&t=1lZqNoE3zgwrPcHnv7qxWmRMjVFXQhytoEy3QLBsWrU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFCj8Iv6nua5A/profile-displaybackgroundimage-shrink_350_1400/B4DZoWusKlJUAY-/0/1761317930554?e=1781136000&v=beta&t=2wVbL_9yqwFfI2rRDacHK1IWqYgSg9EqV7EaDHfEIc8"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "company": {
+        "name": "WebExpo Conference",
+        "universalName": "webexpo",
+        "trackingId": "+4cucx6SRRKU6wqBG2gZ9g==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:923725",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQFgeeC2PPWXyw/company-logo_400_400/company-logo_400_400/0/1698662675471/webexpo_logo?e=1781136000&v=beta&t=2lhXicOOdUe_Ko_lla2WVqy8KZbZhLZiyQk6DH0mCt4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Roman",
+        "lastName": "Schejbal",
+        "occupation": "Rust Engineer",
+        "id": "167037061",
+        "publicId": "roman-schejbal-b71b3447",
+        "trackingId": "p+gZNQhQRTi2DRRzsve70g==",
+        "profileId": "ACoAAAn0yIUBjyEk1cmLwF6_s9kWhDu4mbBt-6Y",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHeSzIIdkbyZw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1692858234676?e=1781136000&v=beta&t=96dl3l1F2hiXvOARAb5vG0eSMcPs9BADAI9Kskfj0pg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF3enSRRgSLWQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1685202919591?e=1781136000&v=beta&t=ZujEugVwfDsSFWB3uQyav7RW9FA0XAxcuOnNUCf9Wzw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "František",
+        "lastName": "Dvořáček",
+        "occupation": "“Clean code always looks like it was written by someone who cares.” Michael Feathers",
+        "id": "274275355",
+        "publicId": "fdvoracek",
+        "trackingId": "zDTLK2tCTfy6xTz2p0j8Ww==",
+        "profileId": "ACoAABBZHBsBDTPmgDppcRCNqNg5_3XdbvajuOY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQH6bF8lLUtcpA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720952929742?e=1781136000&v=beta&t=fuLJW9EcrKOCqhj7cJHf5CsqN13dpERg8bqP5nSw0yw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ondra",
+        "lastName": "Urban",
+        "occupation": "COO & GTM at Apify, the marketplace of tools for AI",
+        "id": "506831532",
+        "publicId": "ondra-urban",
+        "trackingId": "2X4HyL1vT0uIuVMCJdNpPg==",
+        "profileId": "ACoAAB41oqwBL2jB4--59vsVSBSsMXdxKTDRe5g",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGUtgKY_PfO6Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1633972161241?e=1781136000&v=beta&t=0XscNyXr9yvkrZk1lt-vJ6GoP0FwsqC927eDJPjvddk",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQH7Cm2uEIF5yg/profile-displaybackgroundimage-shrink_350_1400/B56Z4WGvp.GUAU-/0/1778487327651?e=1781136000&v=beta&t=w7DqAUbm0l0sCcUB6wjyk4099orV8blVl9mi01Ed4J8"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Šárka",
+        "lastName": "Štrossová",
+        "occupation": "Director at WebExpo",
+        "id": "48615076",
+        "publicId": "sarkastrossova",
+        "trackingId": "9VlYxd5fRrmEY3pccWIWZA==",
+        "profileId": "ACoAAALlzqQB09j823QJG6Boc_hfwM5VA2nQhUg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGm_XJeeio3jg/profile-displayphoto-crop_800_800/B4DZluBBa0IYAI-/0/1758487387751?e=1781136000&v=beta&t=pEtEMxVkzwjEIxUwvFhbScH9qUBWgnYvHECEpghxYxQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQG16nWd1LwMMA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1624434728364?e=1781136000&v=beta&t=PoRtDdTiZHVOYzavoEbhyOJlBOMyPUprwuV8dFjJErs"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Beneš",
+        "occupation": "IC Leadership • Management • Internal Platform Teams • Playing full out",
+        "id": "385206635",
+        "publicId": "jukben",
+        "trackingId": "HZNEQsqwR0GLwzfFZKkK4A==",
+        "profileId": "ACoAABb1yWsBoQCg5XNZe2mG_MXrfvNzrXHh6UQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHMQOzwvw7XHA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1705399784998?e=1781136000&v=beta&t=xWf06iw2CTNDnV0jathMVN5pg77lzdE9UMbz7FKEKuU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQF-yDVVDCEETg/profile-displaybackgroundimage-shrink_350_1400/B4DZzjlpDTH4AY-/0/1773344821895?e=1781136000&v=beta&t=LmjVQr4LLQEY_oigvFN1alN7_MUR40bwDMtsnoqSgR4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lukáš",
+        "lastName": "Tomek",
+        "occupation": "👨‍💻 Full-stack Software Developer 💻 | Mendix, OutSystems, Frappe/ERPNext, Java, Python | Graphic design & UX/UI, copywriting, tech writing | Digital transformation, low-code, AI agents orchestration 🚀",
+        "id": "1228002198",
+        "publicId": "ltomek",
+        "trackingId": "cEpEnW1+QJOHqT2yoJdx8Q==",
+        "profileId": "ACoAAEkx05YBTXEGtjoahMB8bFvtL1UiUaE9neo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG2WZxvl76Q7g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1702133825688?e=1781136000&v=beta&t=aMLAOAjd-QEA8z0j2HNhKDcIy00RLiB2Jm7vNFnmY_o",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFY74j1FDc8Ug/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1702149149703?e=1781136000&v=beta&t=SSv1hFif9ZhVYXQVd6hQCrHcIqAz2Nc7FOEDf7QeVQ8"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 46,
+  "numComments": 6,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "n6hg3F6JQo6qQw95WaJoWA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1714658848061,
+  "postedAtISO": "2024-05-02T14:07:28.061Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

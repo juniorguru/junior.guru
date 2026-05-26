@@ -1,0 +1,143 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/D4D22AQEFvT7zDEuSFQ/feedshare-shrink_1280/B4DZ1yPA63HwAM-/0/1775738032125?e=1781136000&v=beta&t=-Np6g_4XS0iHQXspq9nB_mgRovK1fCu32QzF0n5B-jc"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:7447985137218437120",
+  "url": "https://www.linkedin.com/posts/honzajavorek_tak-na-tohle-se-mrt%C4%9B-t%C4%9B%C5%A1%C3%ADm-jj-honza-activity-7447985137218437120-s3Ma?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAABoBKrsBx3ozlVCrBn34fGmjwCmWu7INH6k",
+  "timeSincePosted": "1mo",
+  "shareUrn": "urn:li:share:7447985135729364994",
+  "text": "„Tak na tohle se mrtě těším 😉“\n„jj, Honza domluvil dobrý překvápko 😄“\n\nTakové jsou první reakce na to, že u nás v klubu bude příští týden přednášet Jakub Beránek, vývojář překladače Rustu a infrastruktury, na které Rust běží, a člen Rust Leadership Councilu.\n\nJe Rust juniorní téma, nebo není? Myslel jsem si, že jazyky, které mají blíž k „zeleným destičkám s obvody“ než k běžným uživatelům v prohlížečích, nebudou se všemi svými nástrahami příliš populární mezi career switchery.\n\nAle je to trochu jinak. Někdo přechází do IT z průmyslu a k low-level věcem má blízko odjakživa, někdo k tomu dojde oklikou a prostě ho to chytne. V klubu se díky tomu vytvořila skupinka nadšenců „C/C++ a Zig/Rust\" a k mému překvapení to tam docela žije.\n\nA určitá zvědavost přichází i přes Python a JavaScript. Junioři narazí na uv nebo Rolldown a ptají se: „A co je vlastně ten Rust?\"\n\nAsi není nikdo povolanější než Kuba, kdo by mohl na podobné otázky odpovídat, Rust představit, a motivovat začátečníky, aby si jej zkusili. Mám velkou radost, že mi na přednášku kývl!\n\nJestli chceš dorazit živě a pokládat Kubovi vlastní otázky, mrkni na junior.guru/events a připoj se k nám na Discord. Budu se těšit!\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 148,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Beránek",
+        "occupation": "Programmer",
+        "id": "163008066",
+        "publicId": "jakub-beranek",
+        "trackingId": "9ZXpKre+RkiiU+AfCvWzYg==",
+        "profileId": "ACoAAAm3TkIBMAGmX-tikAmVz9Q3WEHBv-jb7Pg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGnjDU9TADP0g/profile-displayphoto-crop_800_800/B4DZkjm.amIEAI-/0/1757239045840?e=1781136000&v=beta&t=BqAwO2lt3znCma2LvvMN37crF4Z4Lci7TJC4Ky345bU"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Táňa",
+        "lastName": "Váchová",
+        "occupation": "📌 administrativa ⊃ podpora ⊃ empatie",
+        "id": "1399848350",
+        "publicId": "tanavachova",
+        "trackingId": "mRVWcnuSS3CfWQgD1tygwA==",
+        "profileId": "ACoAAFNv_Z4BxskkxA5XZSQetiT0HKCBk4rbPGE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEz0Qt_OrK3hw/profile-displaybackgroundimage-shrink_350_1400/B56ZYgY6umGsAY-/0/1744300126333?e=1781136000&v=beta&t=YPGk-qT3cabItnu7JC4qXQNR753dEMOdF4a3L8478w8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Kuklínek",
+        "occupation": "Sitting kills.",
+        "id": "340239742",
+        "publicId": "jan-kuklínek-bbab4195",
+        "trackingId": "VRwz3ZtZTKmvoS55vHIs5g==",
+        "profileId": "ACoAABRHpX4BrOHNYEbhnCcJ5L0cp3eSUM5rdhs",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQEL3hhHyXfqmA/profile-framedphoto-shrink_400_400/B4EZd4CX2_HcAc-/0/1750065577684?e=1780430400&v=beta&t=tc7CKyeXxx2KROK26KVrx4DfSuBRtj4V4QCCWSnSfbA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Cibulec",
+        "occupation": "Python vývojář s přesahem. 🐍",
+        "id": "399499541",
+        "publicId": "ypsilonxpython",
+        "trackingId": "dca1Yo2rSLWoZ6ic9sJ19g==",
+        "profileId": "ACoAABfP4RUBhhqww_PQuiFQs580Isbr6ZqrqOg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHxzColABuq3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1671205705078?e=1781136000&v=beta&t=YynyLwKnmF1yQVnk5INWHcB96M_Btdr9aeqx1LwcgsI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHuts72Jn_yMQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1634794908162?e=1781136000&v=beta&t=S9UL0wy6v08ZrAb29xjudA5ltkEDpmZSh3rAld7B-jo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Lampart",
+        "occupation": "„Myšlenky proměněné v kód mění svět.“",
+        "id": "1509504836",
+        "publicId": "martin-lampart-058644361",
+        "trackingId": "GT5jSwJhTfqQDx0VRqS7hA==",
+        "profileId": "ACoAAFn5N0QB5nOyl8UUjUl-WSWNfSfjfGCwc1k",
+        "picture": "https://media.licdn.com/dms/image/v2/D5635AQHCuQL3pMHxjQ/profile-framedphoto-shrink_800_800/B56ZZdUMrcHgAk-/0/1745322298477?e=1780430400&v=beta&t=o6AFAlU9UmK9NOVYfGK7Y_7bfQaDt7rmJefgJkTDGyk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Václav",
+        "lastName": "Kotyk",
+        "occupation": "Talent Sourcer @ SentinelOne.ai | The Future of CyberSec will be determined by You - let’s Secure Tomorrow™ together! 🛡️👾 | In 💜 with s1.ai/PurpleAI | 🕵️‍♂️ CyBeer security meetups organizer",
+        "id": "322518163",
+        "publicId": "vaclavkotyk",
+        "trackingId": "WkHpPbjuQROvN7IqFvwxIQ==",
+        "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHSFfNAAQ3ojA/profile-framedphoto-shrink_800_800/B4EZb.aDPLHAAs-/0/1748024964389?e=1780430400&v=beta&t=IvlxsfQQdb8KqO1QvRvDLxo7b9-V1Qrgz29nKWhJehw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG_GZHPXo_drQ/profile-displaybackgroundimage-shrink_350_1400/B4EZhWDO5THEAY-/0/1753790347174?e=1781136000&v=beta&t=TTJXtHJi0vF694Nao68XfleeSQJvzU06We8EI4GVwQI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Petr",
+        "occupation": "AI Engineer & Data Science Ambassador @dolphin consulting | We develop AI agent systems for businesses | Rebel on LinkedIn",
+        "id": "562669400",
+        "publicId": "jan-petr-ambasador",
+        "trackingId": "z6i+HjhtQLSo9iWk/OaVsw==",
+        "profileId": "ACoAACGJp1gB1X27PoOZvPbWt8UotjiNzSjfIbk",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHMvHBDLMSc3A/profile-displayphoto-crop_800_800/B4EZrHaj0fIoAQ-/0/1764282229189?e=1781136000&v=beta&t=lj-euPYEO1bOYquOrK_qRzoYCRp9rIylYah5jJ6yDvQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEOY_A3MSdj-g/profile-displaybackgroundimage-shrink_350_1400/B4DZzmtMbwIMAY-/0/1773397134378?e=1781136000&v=beta&t=sB5EDgsWlAxGXMkWM_DZS1D5F84EUwN6WNRLl4zPFSQ"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 6,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "UUiYHLYITOqe2pEkB3kLqw==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1775738033585,
+  "postedAtISO": "2026-04-09T12:33:53.585Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

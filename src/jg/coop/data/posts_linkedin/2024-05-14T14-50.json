@@ -1,0 +1,419 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "type": "image",
+    "images": [
+      "https://media.licdn.com/dms/image/v2/D4D22AQELmCNmOLkthg/feedshare-image-high-res/feedshare-image-high-res/0/1715678424311?e=1781136000&v=beta&t=vjIN8dc2LtHybXI2Vpbrg3lgzj43zqPTeqV8rRjYxkE"
+    ],
+    "isActivity": false,
+    "urn": "urn:li:activity:7196076885578002432",
+    "url": "https://www.linkedin.com/posts/izatlouk_podcast-peopleops-junior-activity-7196076885578002432-Yk7G?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFsquNIBL-Bah7UT0aAl0gV3gz4HeyE43g0",
+    "timeSincePosted": "2yr",
+    "shareUrn": "urn:li:share:7196076882138689538",
+    "text": "Byl pro mě jednou z prvních českých twitter celebrit, které jsem nesledovala jen na Seznam účtu, ale dala mu follow i na svém soukromém twitter účtu. Pár let jsme dokonce bydleli v jednom domě, ale to jsem se bála víc, než ho jen pozdravit, celebrita, no… 🤷‍♀️ Ale pozvání do #podcast #PeopleOps Honza Javorek přijal! Uff… \n(A rovnou jsem mu tykala, i když jsem se předtím fakt potkávali jen na akcích a bavili se spolu jen v různých skupinkách s jinými lidmi!) \nMáme totiž společnou vášeň a radost! Vytváření prostoru pro juniory (a nejen pro ně vlastně), aby mohli růst!\n\nPřes hodinu jsme mluvili o tom, jak jako firma můžete vnímat a přistupovat k juniorům… třeba o tom, \n🚀 proč jsou junioři rakety\n👶 jakou podporu od firmy potřebují \n📈 jaké výhody firmám přináší\n🎯 proč nejspíš juniory pro vaši budoucnost fakt potřebujete.\n\n🎧 Free verze do vašich uší tady: \nhttps://lnkd.in/dCSM6P2v\n\nJen v plné verzi rozhovoru na Forendors se dozvíte:\n💰Jestli je #junior pro firmu drahý. \n🪴Co o firmě vypovídá, když z ní junioři (jako junioři) sami odchází brzy. \n😱Jestli se máte bát si do firmy vzít #career switchera? Tedy někoho, kdo se k programování dostal až jako ke své druhé či třetí kariéře relativně nedávno, prostě někoho, kdo se dřív věnoval jinému oboru.\n\n👛 Plná verze v rámci předplatného “Chci inspiraci” za pár kaček here: https://lnkd.in/dBm7m8w5\n\n🙋‍♂️ 🙋‍♀️ Jo a, pokud vás PeopleOps baví, proč ho nepodpořit, aniž byste museli sahat do kapsy pro peněženku? Co takhle nám dát hlas v anketě #Podcast roku :) Kategorie Vzdělávání je pro #PeopleOps jako dělaná. Více infa a hlasování je tady: https://lnkd.in/d33T_Acc",
+    "attributes": [
+      {
+        "start": 296,
+        "length": 13,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "trackingId": "A49vPRYyTWm6TJsPS9M2Cg==",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+        }
+      },
+      {
+        "start": 919,
+        "length": 9,
+        "type": "COMPANY_NAME",
+        "company": {
+          "name": "Forendors",
+          "universalName": "forendors",
+          "trackingId": "4Azm0/oVQ/uiyLQCXxnMqw==",
+          "active": true,
+          "showcase": false,
+          "entityUrn": "urn:li:fs_miniCompany:75052445",
+          "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHRsYdJh3xRlA/company-logo_400_400/company-logo_400_400/0/1695372355411/pickeycz_logo?e=1781136000&v=beta&t=2exlgyMgyWAG39G9lAT0yciURoNrY1FeRSTbhDk_a8M"
+        }
+      }
+    ],
+    "comments": [
+      {
+        "time": 1715695497591,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7196076885578002432?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7196076885578002432%2C7196148488324214785%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287196148488324214785%2Curn%3Ali%3Aactivity%3A7196076885578002432%29",
+        "text": "Super povídání, dost mi změnilo pohled na benefity toho mít juniory v týmech! Dlouhodobost FTW!!!",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Jiří",
+          "lastName": "Vicherek",
+          "occupation": "Předseda České startupové asociace",
+          "id": "74476785",
+          "publicId": "vicherek",
+          "trackingId": "go5ACgk0TJaNems4rZcuFg==",
+          "profileId": "ACoAAARwbPEBJ-4PcqhyrjMq_qci_GH59b-vNUc",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHxwMNeoaemqw/profile-displayphoto-crop_800_800/B4DZyZ.ZI4JIAI-/0/1772109801070?e=1781136000&v=beta&t=3FPbSEodTi10Tfy15yZF5yB2fqPYb4XhZ9MXX1w83fQ",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH9N-WoPqh01w/profile-displaybackgroundimage-shrink_350_1400/B4DZwPRCRuKQAY-/0/1769782650400?e=1781136000&v=beta&t=BGOWxfUo5tYEWUVzIOEIRdJQnp0Jxrwe5Itwv37yrnA",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1715693178614,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7196076885578002432?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7196076885578002432%2C7196138761829646336%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287196138761829646336%2Curn%3Ali%3Aactivity%3A7196076885578002432%29",
+        "text": "Twitter celebrita 😱 Díky za pozvání, bylo to super a jsem rád, že jsem se na juniory mohl podívat zase jinou perspektivou než obvykle, z pohledu firem. Tak snad obměkčím srdce aspoň pár hiring manažerům a juniorům to trochu pomůže 🤞\n\nA to bydlení ve stejném domě je fakt vtipné, protože tebe jsem znal a potkával (WebExpo, Heureka akce...), věděl kdo jsi a na akcích tě zdravil, ale vůbec jsem si nespojil, že ta sousedka a ty jste jedna a tatáž osoba 😂\n\nPodobnou historku se stejným člověkem v jiných kontextech jsem zažil snad jen u pána, který točil pivo na pražském Pyvu, a kterého jsem pak potkal v kancelářích Apiary, když se tam procházel po chodbách hlouček odborníků na vzduchotechniku. Pozdravili jsme se, ale fakt dlouho mi trvalo uvědomit si, odkud ho znám 😀 ",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "trackingId": "n6hg3F6JQo6qQw95WaJoWA==",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+          "distance": "OUT_OF_NETWORK"
+        }
+      }
+    ],
+    "reactions": [
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Michal",
+          "lastName": "Vodak",
+          "occupation": "Brand & Growth Advisor | Marketing Leader | Brand, Media & Marketing Strategy",
+          "id": "8795237",
+          "publicId": "michalvodak",
+          "trackingId": "1v4sHVJvSwqfcvJZIRtFOA==",
+          "profileId": "ACoAAACGNGUBbVolY9F7SJFpZK01caMCHheczAs",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFjt31KZ2EdVQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1666035506176?e=1781136000&v=beta&t=rIo790ZvaRyJNN_j1kfTtuUhafAB7VDeBvg_z6Ev-5w",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEle-3UQRZ2Cg/profile-displaybackgroundimage-shrink_200_800/B4EZh5UUMbGwAg-/0/1754382026040?e=1781136000&v=beta&t=u2xXJuWvnBls3-rLIJ4MlUcsnI8FxAF4jhihaYaQof8"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Martin",
+          "lastName": "Kopta",
+          "occupation": "UX Researcher, Design Strategist and Book Author",
+          "id": "228433",
+          "publicId": "kopta",
+          "trackingId": "lygLU6OpTpipmeYCXwFBlw==",
+          "profileId": "ACoAAAADfFEBmE0BmeNxAll6ADKlVer2S8N-LX8",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE3f-Jl-YOK-w/profile-displayphoto-crop_800_800/B4DZuTIVbfKQAI-/0/1767699995149?e=1781136000&v=beta&t=sIVC67dbfPrDLfEv4NnYb5XbNNuVcFwCyUt-7PfnSIs",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHnWuDKzhCJqg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1727225700605?e=1781136000&v=beta&t=E7eDVfF9rbNjOjZ_It7v5pUe2N-TzH_b5aVphI65aLA"
+        }
+      },
+      {
+        "type": "LIKE",
+        "company": {
+          "name": "Forendors",
+          "universalName": "forendors",
+          "trackingId": "F2bTjG+RTAS4wtRUFTbRFA==",
+          "active": true,
+          "showcase": false,
+          "entityUrn": "urn:li:fs_miniCompany:75052445",
+          "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHRsYdJh3xRlA/company-logo_400_400/company-logo_400_400/0/1695372355411/pickeycz_logo?e=1781136000&v=beta&t=2exlgyMgyWAG39G9lAT0yciURoNrY1FeRSTbhDk_a8M"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Martin",
+          "lastName": "Bolek",
+          "occupation": "People and Community Leader | Startups Advisor for HR, Community and Marketing | Seasoned HR, TA, and Community professional | TOP 20 Biggest CZ Linkedin profiles",
+          "id": "242323201",
+          "publicId": "martinbolek",
+          "trackingId": "5DWlc0uBSW6mEyTbwk/n2Q==",
+          "profileId": "ACoAAA5xjwEB-5I0z2Ur7gyCn2MoA1wU5jE2R8I",
+          "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHodacSr4AwBA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1605926868322?e=1781136000&v=beta&t=_ej1IW2q0XLnOwQn5311vABlkD25kz9iKVTcKjixgfI"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Martin",
+          "lastName": "Kudera",
+          "occupation": "Multidisciplinary entrepreneur strong in strategy, marketing and product",
+          "id": "85814865",
+          "publicId": "martin-kudera-4698a524",
+          "trackingId": "BGGwYvHGQFq8uupdRvqwOw==",
+          "profileId": "ACoAAAUdblEBHRxjrfwRV8C34zFtu1hwn4cgNos",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFAexm5mFCvTg/profile-displayphoto-crop_800_800/B4EZmA8xT8KQAI-/0/1758805041483?e=1781136000&v=beta&t=zRCbCDhYT2CG7d99cO26UWkLmE4-pGWILIZCHBLg_XI",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQF5s1CDGpVMcA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1704450040371?e=1781136000&v=beta&t=MZ5bh2x-r25YCRnP_CXrnVCmxSwK8hj8D7UgPlzmFio"
+        }
+      },
+      {
+        "type": "EMPATHY",
+        "profile": {
+          "firstName": "Břetislav",
+          "lastName": "Proft",
+          "occupation": "Engineering Manager @ Make.com 💼 | Community & conference builder 🚀 | Founder of FrontKon, Frontendisti.cz & OSS.institute",
+          "id": "200585873",
+          "publicId": "bretislav-proft",
+          "trackingId": "GB2152dfT4S0JGjXQBz8PA==",
+          "profileId": "ACoAAAv0spEBWEdhrJRATL81C8AmgMXNciBBThI",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGEm4Aa3c-9Ug/profile-displayphoto-crop_800_800/B4DZxhDTTTIwAI-/0/1771154781890?e=1781136000&v=beta&t=aWowe34tI-ThE48q714a_32URvQAQd4tfYcR0VpyxAE",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEaGRewJTx9_g/profile-displaybackgroundimage-shrink_350_1400/B4DZxhDFexGQAY-/0/1771154725770?e=1781136000&v=beta&t=ukOMq8aPY8vAZLJtUHrnfwnJN7hBS1939GLiRoog_WU"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Kateřina",
+          "lastName": "N. Voláková",
+          "occupation": "Frontend Developer @Gen (ex Avast), marketing @Frontendisti.cz",
+          "id": "575779663",
+          "publicId": "katerinavolakova",
+          "trackingId": "woZC9QEWSB+WylSNm2T1FA==",
+          "profileId": "ACoAACJRs08B-86s_BZ86Z726PUlHKgOgK35-NI",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGSt7uhutX8Mg/profile-displayphoto-crop_800_800/B4DZwdwM.fJQAI-/0/1770025703581?e=1781136000&v=beta&t=Kd3EcXR1LZnTPF8LnVLkFaUbe2nbB-ipV-n13JQmLuE",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGRTRyOCwJt-w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1698744449766?e=1781136000&v=beta&t=dX5KrLd5FruV5IQZvlXkjpJ4x_SwydXFptFn3U6zj_g"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Vendula",
+          "lastName": "Krajíčková",
+          "occupation": "Frontend vývojářka 🚀 | React, TypeScript, Next.js | Modrý duch kódu @BlueGhost 👻💙",
+          "id": "1145616814",
+          "publicId": "vendula-krajickova",
+          "trackingId": "V40740+4QZKhWNuRgGeObw==",
+          "profileId": "ACoAAERIua4Bk44zfiGE6PT1BmSNoKdqiNkFOYc",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQF9v05_95vyIw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1696069970972?e=1781136000&v=beta&t=2GE5kG6hI-F_D-GWuJZ1hUeuomhWaPfXSNvdMDDV-bY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEbmPU9yPivLA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1687407209461?e=1781136000&v=beta&t=NoCy2Xx-Zc2-_WzGhO9ETCyqzzAvmczh02wGrTi73vc"
+        }
+      },
+      {
+        "type": "EMPATHY",
+        "profile": {
+          "firstName": "Jiří",
+          "lastName": "Vicherek",
+          "occupation": "Předseda České startupové asociace",
+          "id": "74476785",
+          "publicId": "vicherek",
+          "trackingId": "21GRnMffTkK0IMxSugaXCA==",
+          "profileId": "ACoAAARwbPEBJ-4PcqhyrjMq_qci_GH59b-vNUc",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHxwMNeoaemqw/profile-displayphoto-crop_800_800/B4DZyZ.ZI4JIAI-/0/1772109801070?e=1781136000&v=beta&t=3FPbSEodTi10Tfy15yZF5yB2fqPYb4XhZ9MXX1w83fQ",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH9N-WoPqh01w/profile-displaybackgroundimage-shrink_350_1400/B4DZwPRCRuKQAY-/0/1769782650400?e=1781136000&v=beta&t=BGOWxfUo5tYEWUVzIOEIRdJQnp0Jxrwe5Itwv37yrnA"
+        }
+      }
+    ],
+    "numShares": 1,
+    "numLikes": 16,
+    "numComments": 2,
+    "canReact": true,
+    "canPostComments": true,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "ALL",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "firstName": "Irena",
+      "lastName": "Zatloukalova",
+      "occupation": "empowering #autisticTalent in Tech 🚀 | Guiding your communication for change | Systemic coaching",
+      "id": "99891449",
+      "publicId": "izatlouk",
+      "trackingId": "FvZGEzhbRmeJKhSz5megBg==",
+      "profileId": "ACoAAAX0OPkBzZjVvVi08LqhaKA5UMdVz4M5inM",
+      "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEX7QmSSoFSMg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1635789075087?e=1781136000&v=beta&t=gNSbihMMlaQdd_0sP2m4nmd_njYG4j06DobLSgnjIEM"
+    },
+    "authorProfileId": "izatlouk",
+    "authorType": "Person",
+    "authorName": "Irena Zatloukalova",
+    "authorProfileUrl": "https://www.linkedin.com/in/izatlouk?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAX0OPkBzZjVvVi08LqhaKA5UMdVz4M5inM",
+    "authorUrn": "urn:li:member:99891449",
+    "postedAtTimestamp": 1715678426165,
+    "postedAtISO": "2024-05-14T09:20:26.165Z"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7196159964824961024",
+  "url": "https://www.linkedin.com/posts/honzajavorek_podcast-peopleops-junior-activity-7196159964824961024-1sjl?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFsquNIBL-Bah7UT0aAl0gV3gz4HeyE43g0",
+  "timeSincePosted": "2yr",
+  "shareUrn": "urn:li:share:7196159964329951232",
+  "text": "Proč mít v týmu juniory? Jaké výhody přináší? Jak s nimi pracovat?\n\nJsem rád, že jsem se díky pozvání do #PeopleOps podcastu mohl na juniory podívat zase jinou perspektivou než obvykle, a to z pohledu firem.\n\nTak snad obměkčím srdce aspoň pár hiring manažerům a juniorům tohle moje vystoupení trochu pomůže 🤞",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Cibulec",
+        "occupation": "Python vývojář s přesahem. 🐍",
+        "id": "399499541",
+        "publicId": "ypsilonxpython",
+        "trackingId": "Y/QdRkEcSxekQBlmxXK/JQ==",
+        "profileId": "ACoAABfP4RUBhhqww_PQuiFQs580Isbr6ZqrqOg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHxzColABuq3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1671205705078?e=1781136000&v=beta&t=YynyLwKnmF1yQVnk5INWHcB96M_Btdr9aeqx1LwcgsI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHuts72Jn_yMQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1634794908162?e=1781136000&v=beta&t=S9UL0wy6v08ZrAb29xjudA5ltkEDpmZSh3rAld7B-jo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vojtěch",
+        "lastName": "Červený",
+        "occupation": "C#, Java developer. I'm looking for a job as Junior programmer.",
+        "id": "1073176530",
+        "publicId": "vojtechcerveny",
+        "trackingId": "IpeVMYb1QziwgFLT/N3Vqw==",
+        "profileId": "ACoAAD_3X9IB5WUsNL-XahLee7oPCrXZwVjA-do",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQFzDz7yQLoh8g/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1705954351015?e=1780430400&v=beta&t=EXfd6s-XyKNiDFe47F0gm5OvOBWHf50aHJyuQtMRJgo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHea9bKiuElTQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1737661122236?e=1781136000&v=beta&t=2I7T6y1XusQn8lUfEki8CrNEsLxJF2BPqPdzEUucz1g"
+      }
+    },
+    {
+      "type": "INTEREST",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Polcr",
+        "occupation": "Software Engineer | Storyteller | LinkedIn Enthusiast and Mentor | I help other techies build a personal brand on LinkedIn | Fuelling growth of software engineers through Software Engineering Tales Podcast",
+        "id": "266067406",
+        "publicId": "pavel-polcr",
+        "trackingId": "OMFMvNFkQsqVF6aHaQNYBQ==",
+        "profileId": "ACoAAA_b3c4BTAcvcf2VyIBHi_X2WWOWGNyt1ZI",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEu9ha6Y8Sixg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1669321063367?e=1781136000&v=beta&t=raEuoKrOSY-Tk_kZywRCzdqirDaq1Gn2VevDmPGUjF4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFw1u4Fq3Nd8w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1729078028424?e=1781136000&v=beta&t=5tSeGbCLtj6zBZL9AjSaNC8kr84Qqb_0LxXwU47LgOk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Kavka",
+        "occupation": "Pište co nejlépe. A posílejte dobré newslettery → Newslettery.cz",
+        "id": "8564238",
+        "publicId": "newsletterista",
+        "trackingId": "ZuZsSEQdT4GWMm2akqKEKQ==",
+        "profileId": "ACoAAACCrg4BcE6RgPGHGgkMUX-AiPQMeU9H1rA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGyoY9jftCjXg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1622497751277?e=1781136000&v=beta&t=1lZqNoE3zgwrPcHnv7qxWmRMjVFXQhytoEy3QLBsWrU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFCj8Iv6nua5A/profile-displaybackgroundimage-shrink_350_1400/B4DZoWusKlJUAY-/0/1761317930554?e=1781136000&v=beta&t=2wVbL_9yqwFfI2rRDacHK1IWqYgSg9EqV7EaDHfEIc8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Vácha",
+        "occupation": "Head of Engineering",
+        "id": "76115329",
+        "publicId": "vachapetr",
+        "trackingId": "3obu1D5YTteYmgbhCpu1Yw==",
+        "profileId": "ACoAAASJbYEBMeOmhTR-EWaXg0q9HUTng5HCt9E",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGCiZVCJ_C1OA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1557674174077?e=1781136000&v=beta&t=BhlxGr50WWidcbX2Ie9bGUVi2zrduoaH7ODcwifpQcA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Juraj",
+        "lastName": "Solár",
+        "occupation": "#OpenToWork | Junior Frontend Developer | TPP",
+        "id": "251923843",
+        "publicId": "juraj-solarml",
+        "trackingId": "e66oD2l1RvOZBi52XexaCA==",
+        "profileId": "ACoAAA8EDYMBLxIGFkvtfI1Vro-yXMPpfVNdT9s",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQEAmJI339Vvmg/profile-framedphoto-shrink_800_800/B4DZx78YZzGQAg-/0/1771605952455?e=1780430400&v=beta&t=lY8G_gK3n7YjM5kRzkz-MV87VTPRrjuvO4_cROBLdfs",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHj4A2nngY-ag/profile-displaybackgroundimage-shrink_350_1400/B4EZch4U_UHsAY-/0/1748620104532?e=1781136000&v=beta&t=EivcfHIkHGo-jruKICbLZIQ3a-uMjiHBKUKN8r0Hn5k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Hillebrand",
+        "occupation": "Stavím weby. Laravel, Filament, vue.js",
+        "id": "606129492",
+        "publicId": "martin-hillebrand39",
+        "trackingId": "j+T34VNyRcCFkIeDV2IKCQ==",
+        "profileId": "ACoAACQgzVQBhtqyw8jRsy_p7_rldyATyJiGins",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQGFIe4uTeCjMQ/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1689007579977?e=1780430400&v=beta&t=2zwqsc9LT-WaOHQmb89Bq1R-WnKNNMyzmrl2uqPIX2Q"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "František",
+        "lastName": "Belay",
+        "occupation": "Jobless - I am looking for new offers in Olomouc district",
+        "id": "305518024",
+        "publicId": "frantisek-belay",
+        "trackingId": "pEhZJVNzT2mA3DQGe/NDzw==",
+        "profileId": "ACoAABI11cgBiYUd5mdHjm10AnORRF8MlxAfPMs",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQG0ny2PbhUBWQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1585997827011?e=1781136000&v=beta&t=ftuKGYJI0pUgHOiUEiGIOgWqbMQUWkIA-Yf35zySi9Q",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEBNzyTWN_2PA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1697663240754?e=1781136000&v=beta&t=rrWUsBx88c9AA8sIETyhMcQ2oB6dKG7jg84ovJj09_o"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Blanka",
+        "lastName": "Semanová",
+        "occupation": "Frontend Developer - React and Next",
+        "id": "740316381",
+        "publicId": "blanka-semanová",
+        "trackingId": "V4o0oFT/QF6YpMcI8pNMeg==",
+        "profileId": "ACoAACwgVN0BXjPO356is1a7HECdYY6oGuzTouY",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQHt31UB9Dnr_g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1705586552175?e=1781136000&v=beta&t=VnaoT0wlgyuQQGLJMI1wvCsS4oGHAmClyqm-JikLvgE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGmd9O2TBL9PA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1705586497192?e=1781136000&v=beta&t=JlZHwSEMta7stFHe1LeFKFVGgbpKpeFbQUUDebs_rnc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Glaser 🤖",
+        "occupation": "Building Agentic Engineering Platform for production-ready apps. Generated, reviewed, managed, deployed by AI Agents.",
+        "id": "653562608",
+        "publicId": "bleedingdev",
+        "trackingId": "uyWz35HTTxOLckzSX6aBYg==",
+        "profileId": "ACoAACb0kvABzEvpATXhOiWBbEuq4yfGI43iXrc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHNZ_n7usiMwg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1707307700521?e=1781136000&v=beta&t=s9M6CBtI9xCgMRzy9aH4Zm6vuRjYQFKYSrl_QlfPTvA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEjlZvszJMk8g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1704724910587?e=1781136000&v=beta&t=3ATL2lQYqY066bQ-K-77LV1388hPiLUDuz3f2WEXABk"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 17,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "n6hg3F6JQo6qQw95WaJoWA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1715698233801,
+  "postedAtISO": "2024-05-14T14:50:33.801Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

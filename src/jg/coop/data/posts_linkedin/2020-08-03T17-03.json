@@ -1,0 +1,247 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:8406541376888113227",
+    "url": "https://africa.pycon.org/",
+    "title": "PyCon Africa is the gathering of the Pan African Python Community."
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6696098209414078464",
+  "url": "https://www.linkedin.com/posts/honzajavorek_pycon-africa-is-the-gathering-of-the-pan-activity-6696098209414078464-tiuh?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAACV_bv4Bk5ERfS1sLjiBOKctm-e1auj5DDg",
+  "timeSincePosted": "5yr",
+  "shareUrn": "urn:li:share:6696098208487145473",
+  "text": "Zítra začíná PyCon Africa, celoafrická konference o Pythonu. Letos je zadarmo a online, takže se můžete účastnit na jeden klik. Přednáší tam i můj kámoš Vuyisile Ndlovu (je to freelancer, kterýho si můžete najmout, tak mu udělám reklamu: https://vuyisile.com/) nebo Miroslav Šedivý, kterého znáte z českých PyConů. Omrkněte to! https://africa.pycon.org/",
+  "attributes": [
+    {
+      "start": 153,
+      "length": 15,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Vuyisile",
+        "lastName": "Ndlovu",
+        "occupation": "Technologist focused on Cloud-Native technologies, DevOps, CI/CD and automation. | AWS | Azure | Kubernetes | Terraform |",
+        "id": "328285536",
+        "publicId": "vuyisile-ndlovu-080b3891",
+        "trackingId": "26hFa1lZQ+easea9KBH5HA==",
+        "profileId": "ACoAABORPWABu-EQgksb-xNyBYO-sRsWWuYd2cc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGqv3Kru_XHAw/profile-displayphoto-shrink_800_800/B4DZYkQAMEHAAc-/0/1744364898040?e=1781136000&v=beta&t=CfUUp2rZIc9mTttzkJTpLQPCPM8bhfb4aHNqcpwvIvg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGCGoFCsON6VA/profile-displaybackgroundimage-shrink_350_1400/B4EZh.XbhGGYAY-/0/1754466730063?e=1781136000&v=beta&t=omFnwxquH9OWqjSt_Wo4UI8r4MzHiWfV3kvHtNTz6Vk"
+      }
+    },
+    {
+      "start": 266,
+      "length": 15,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Miroslav",
+        "lastName": "Šedivý",
+        "occupation": "Using Python to make the sun shine and the wind blow.",
+        "id": "438772737",
+        "publicId": "eumiro",
+        "trackingId": "uHY5BjBdT5iM5IU+r8Ax5g==",
+        "profileId": "ACoAABonJAEBww9RQvS3_-GCMPNHv72JZ18l_QM",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE9gKOxKfLcsQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1689768995803?e=1781136000&v=beta&t=_1GWp4hxZlDTCYzTArDfuwxO0MCq8-NWxSLBDPYI0aA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHAKjMsNO0RTA/profile-displaybackgroundimage-shrink_350_1400/B4DZVf4uCzG8AY-/0/1741070460057?e=1781136000&v=beta&t=zpAUKjikp-WxXa1XCH7J99e_Eg0h5wGggDpNKnA-NjE"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1596487086779,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6696098209414078464?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6696098209414078464%2C6696152174025601024%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286696152174025601024%2Curn%3Ali%3Aactivity%3A6696098209414078464%29",
+      "text": "Thank you for the mention Honza Javorek!",
+      "entities": [
+        {
+          "start": 26,
+          "length": 13,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Honza",
+            "lastName": "Javorek",
+            "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+            "id": "8517488",
+            "publicId": "honzajavorek",
+            "trackingId": "jJ5xXtW1QWqcfSmdSyK9+g==",
+            "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+            "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "English",
+      "author": {
+        "firstName": "Vuyisile",
+        "lastName": "Ndlovu",
+        "occupation": "Technologist focused on Cloud-Native technologies, DevOps, CI/CD and automation. | AWS | Azure | Kubernetes | Terraform |",
+        "id": "328285536",
+        "publicId": "vuyisile-ndlovu-080b3891",
+        "trackingId": "tGsskScQRZybdPpHm5FECQ==",
+        "profileId": "ACoAABORPWABu-EQgksb-xNyBYO-sRsWWuYd2cc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGqv3Kru_XHAw/profile-displayphoto-shrink_800_800/B4DZYkQAMEHAAc-/0/1744364898040?e=1781136000&v=beta&t=CfUUp2rZIc9mTttzkJTpLQPCPM8bhfb4aHNqcpwvIvg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGCGoFCsON6VA/profile-displaybackgroundimage-shrink_350_1400/B4EZh.XbhGGYAY-/0/1754466730063?e=1781136000&v=beta&t=omFnwxquH9OWqjSt_Wo4UI8r4MzHiWfV3kvHtNTz6Vk",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1596474534713,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6696098209414078464?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6696098209414078464%2C6696099526844968960%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286696099526844968960%2Curn%3Ali%3Aactivity%3A6696098209414078464%29",
+      "text": "Jo a vypadá to že lístky (i když jsou zdarma) si musíte rezervovat, a to ještě dnes. Takže neváhejte a rezervujte!",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "8zs/krHOQ46pAZAEkISTNQ==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Zuzana",
+        "lastName": "Vorosova",
+        "occupation": "Project Manager | F. X. Meiller | PMI Member",
+        "id": "265700699",
+        "publicId": "global-po-pm",
+        "trackingId": "QSs434ILQfKP6CGctnlxxQ==",
+        "profileId": "ACoAAA_WRVsBilg4CLnnMoW_qvMWIrKCgsHqTuY",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQFhyjmqzPG80w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1580742029784?e=1781136000&v=beta&t=AxvFb696sNLaFYSfAPHq9tSgSF83XTmatCowYCF6tMA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQEsWYUxRPOjjQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1576575871885?e=1781136000&v=beta&t=sFS0lCRdHpZEUIWReywJpJeEO5xcI6lFHAO3gX2f_ek"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Natalie",
+        "lastName": "Mikešová",
+        "occupation": "Softwarový inženýr ve společnosti Security Scorecard",
+        "id": "199634401",
+        "publicId": "nataliemikesova",
+        "trackingId": "yRjBkHddQumqYaajy01Y6w==",
+        "profileId": "ACoAAAvmLeEBB2iZ_vXMYhR3WoUsSC-k3iPuG4Y",
+        "picture": "https://media.licdn.com/dms/image/v2/D5635AQGXW0U7XhrOLA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1660002772504?e=1780430400&v=beta&t=v22RqlMgRS7YScN5sBsUHO0Ww5TuKTAYClQDy0LF03w",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5116AQEPyNrN9dTZ2A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516945761838?e=1781136000&v=beta&t=HFBHan_vfdVCLQsS4inP5_dlCg6o4SaQz4GhEGNiWEw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel Grumpy",
+        "lastName": "Šimerda",
+        "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
+        "id": "551084893",
+        "publicId": "grumpyprogrammer",
+        "trackingId": "IdPS9R8NQKSJxyBMFqUkjA==",
+        "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFnQ8ypdjjyvg/profile-displayphoto-crop_800_800/B4DZxZUZFlHkAI-/0/1771025047361?e=1781136000&v=beta&t=fFiIDptOBoMzbUkj1Lvpd8USzHMX1nkcCCOr19Su_4c"
+      }
+    },
+    {
+      "type": "MAYBE",
+      "profile": {
+        "firstName": "Kamil",
+        "lastName": "Tomas",
+        "occupation": "Front-End Dev | Problem solver | Balance seeker",
+        "id": "46127602",
+        "publicId": "kamil-tomas-26a54613",
+        "trackingId": "hi4OIVbPSBOlIbPA4t5AtQ==",
+        "profileId": "ACoAAAK_2fIB-hdskjmWRXjkUSdWe2UBW2jwwhk",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGF_hoL5k3xJg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516504468683?e=1781136000&v=beta&t=PgTYCfIOonF8C8BoCfQcR5RYsEq2DrPwU_f2dHgmi7A"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Katerina",
+        "lastName": "Mackovikova",
+        "occupation": "Data analyst passionate about systems integration",
+        "id": "262585845",
+        "publicId": "katerina-mackovikova-499b3373",
+        "trackingId": "dsRjkIVoSPuGFZwDNZa+Xw==",
+        "profileId": "ACoAAA-mvfUBi9EOGyMJGQ2V5sq1pa_91Q3yqB4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH2cRv9plwRWg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723922714065?e=1781136000&v=beta&t=Ss6jpRWXSXGnUamkYVdDcbGXZ-Bph_qdyh7EaU1zXbk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Erbenova",
+        "occupation": "Application Developer at Barclays",
+        "id": "361531956",
+        "publicId": "lenkaerbenova",
+        "trackingId": "DOa+waKhTYqE4j/mxZXb4A==",
+        "profileId": "ACoAABWMijQBlQzoTAse2JjfcJmbjz4dAQnIsQs",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGi_aPN1DxU3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517030344782?e=1781136000&v=beta&t=boP6IJareKgeZZHEHLF-RgBjxI_GQmpxMacm_Mm8k9c"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ellie",
+        "lastName": "T.",
+        "occupation": "Implementation specialist - FinTech & Banking, Configuration Manager - FinTech & Banking, Change Control Manager- Research & Science",
+        "id": "400348093",
+        "publicId": "ellietomasova",
+        "trackingId": "P9M6Q8ubS5i02oxotvlx3A==",
+        "profileId": "ACoAABfc070BhqDEHocQJPrha3hZv5cLky5xk5o",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFl87DfovJqcQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1573640563237?e=1781136000&v=beta&t=WEW0M_ZsIFJLNd-PI5E-WIA4hs9Pb28KQoRJFYiJZPA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Robert",
+        "lastName": "Š.",
+        "occupation": "Senior Data Scientist | AI & Digital Innovation Strategist | PhD Student | VSB - Technical University of Ostrava",
+        "id": "255272676",
+        "publicId": "robert-s-2b05a771",
+        "trackingId": "WvsRm8UdTtme3TF1zCTg2A==",
+        "profileId": "ACoAAA83JuQBIi82v-Ambqv2iiOGMA3iOJNluDY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGiwUvjw5ivug/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1689840862135?e=1781136000&v=beta&t=-4jNXqEDKb5LOnOcVN6yrsLc-Mx8zOBmmGDuy9P51NU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEPjR-q-30r2A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1554402312474?e=1781136000&v=beta&t=AlfaXrpX-JKRy7YTf8XOjM0ekc1Tr7RGNbqVsTM_SyI"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 8,
+  "numComments": 4,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "8zs/krHOQ46pAZAEkISTNQ==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1596474220613,
+  "postedAtISO": "2020-08-03T17:03:40.613Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

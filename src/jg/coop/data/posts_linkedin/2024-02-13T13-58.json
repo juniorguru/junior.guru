@@ -1,0 +1,276 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/D4E22AQHj8Qy-8eu1jg/feedshare-shrink_800/feedshare-shrink_800/0/1707832726741?e=1781136000&v=beta&t=eYPtm2__eaJ1Z76lvgrwMMehQ_H60nQZ33nTE_CPi9M"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:7163169639848493057",
+  "url": "https://www.linkedin.com/posts/honzajavorek_python-activity-7163169639848493057-bV2R?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAEJbeasBvg61J8tSaW-6NvttfmVYZSJEt4Q",
+  "timeSincePosted": "2yr",
+  "shareUrn": "urn:li:share:7163169638732804096",
+  "text": "Juniorka Karolina Surma a senior Petr Viktorin. Poznali se díky komunitě PyLadies CZ, pak společně pracovali v Red Hatu.\n\nJak každý z nich vnímal Karolinin začátek v práci? Jak se staví k impostor syndromu? Kam Petr z Red Hatu odchází, na čem bude pracovat?\n\nA jak vůbec tyto dvě výrazné osobnosti brněnské #Python komunity zvládají skloubit pracovní život, osobní, a ještě se aktivně zapojovat při přípravě dobrovolnických kurzů nebo srazů?\n\nPavlina F. ve volném čase sestříhala a vydala další epizodu podcastu, tak šup s ní do ouška!\n\nEpizoda má 38 minut a najdete ji jak u nás na junior.guru/podcast, tak i ve všech běžných podcastových aplikacích. Líbí se vám Junior Guru podcast? Dejte mu hvězdičky a platformy ho nabídnou víc lidem ⭐",
+  "attributes": [
+    {
+      "start": 33,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Viktorin",
+        "occupation": "A Pythonista",
+        "id": "48852060",
+        "publicId": "petr-viktorin-a5043a14",
+        "trackingId": "E6n8FZYPSAuYglhmXqc0hw==",
+        "profileId": "ACoAAALpbFwBrUWlkhM3d1JrBK4RInLbNquxnEE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFShtpWJw8phQ/profile-displayphoto-crop_800_800/B4EZkPUQNMIUAI-/0/1756898592117?e=1781136000&v=beta&t=NN2cRsF0LmiFDgrWNz_IDYlU_FkB9YUiWCSx9lMzISs"
+      }
+    },
+    {
+      "start": 73,
+      "length": 11,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "PyLadies CZ",
+        "universalName": "pyladies-cz",
+        "trackingId": "sfNT11uwQNSGZPvwLPJQ3g==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:30644381",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C560BAQEaibY9_28N2A/company-logo_400_400/company-logo_400_400/0/1630614425519/pyladies_cz_logo?e=1781136000&v=beta&t=zfNm6R5gYxxDnRcaaj7iVB54AorS6Y83LjCuRsjXd0g"
+      }
+    },
+    {
+      "start": 111,
+      "length": 7,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Red Hat",
+        "universalName": "red-hat",
+        "trackingId": "62yhs/WQTIqcDi6c3yi6Tg==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:3545",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQEto-TydTTIfQ/company-logo_400_400/company-logo_400_400/0/1630583759577/red_hat_logo?e=1781136000&v=beta&t=pz-ZVls43PnEc3AaLENZp2yy3p0tbH6UgDxfJUL2tDA"
+      }
+    },
+    {
+      "start": 443,
+      "length": 10,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Pavlina",
+        "lastName": "F.",
+        "occupation": "Host @ Junior Guru podcast.",
+        "id": "190849253",
+        "publicId": "pavlinafronkova",
+        "trackingId": "ikyjxzS2Qg6O2SgBBknPVg==",
+        "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1707848689954,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7163169639848493057?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7163169639848493057%2C7163236591665070080%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287163236591665070080%2Curn%3Ali%3Aactivity%3A7163169639848493057%29",
+      "text": "Keby nie PyLadies CZ a junior.guru doteraz možno neviem čo je print 😅🤦‍♀️— Dik obom!",
+      "entities": [
+        {
+          "start": 9,
+          "length": 11,
+          "type": "COMPANY_NAME",
+          "company": {
+            "name": "PyLadies CZ",
+            "universalName": "pyladies-cz",
+            "trackingId": "AC+0g/y3REObM2Ru8TbOqw==",
+            "active": true,
+            "showcase": false,
+            "entityUrn": "urn:li:fs_miniCompany:30644381",
+            "logoUrl": "https://media.licdn.com/dms/image/v2/C560BAQEaibY9_28N2A/company-logo_400_400/company-logo_400_400/0/1630614425519/pyladies_cz_logo?e=1781136000&v=beta&t=zfNm6R5gYxxDnRcaaj7iVB54AorS6Y83LjCuRsjXd0g"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "Slovak",
+      "author": {
+        "firstName": "Norbert",
+        "lastName": "Červený",
+        "occupation": "I help great brands grow @STRV",
+        "id": "337285701",
+        "publicId": "strv-norbert-cerveny",
+        "trackingId": "UTayGOB7TkSUs1wYmnuK5Q==",
+        "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGKIAaUJPtlmA/profile-displayphoto-crop_800_800/B4DZ0jT_lBIEAI-/0/1774413941709?e=1781136000&v=beta&t=ioRFNZY53XZXWk1BvKTQdIygU-xxLKoyNysEAYklp0I",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG0ekEnNy2Hcw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0jTiNeGsAk-/0/1774413817026?e=1781136000&v=beta&t=_KMbjLzzfd2pO9gizTz2iWgDOkq5RQ3NpzDT5fOljNI",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Nouza",
+        "occupation": "Junior Backend Developer | IT Student",
+        "id": "1119190738",
+        "publicId": "nouzaj",
+        "trackingId": "xdgBjle/QVSjfuDfNGbPaw==",
+        "profileId": "ACoAAEK1ftIBdLKh-sNjbUuOEn7uM6gP2bX_OJ4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGHwmkq_06SmA/profile-displayphoto-crop_800_800/B4EZnkHGOKGYAM-/0/1760468691119?e=1781136000&v=beta&t=4HBmXcZiNqEe5YlQ3h5CiHGOc-g7fkUp8dFJ_p9SUNw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Barbora",
+        "lastName": "Čepová",
+        "occupation": "PHP Developer · Application Security · DevSecOps",
+        "id": "411555870",
+        "publicId": "barbora-čepová-aa69b4b5",
+        "trackingId": "JNL2npZPSz6LkLq0Um2Y6w==",
+        "profileId": "ACoAABiH2B4Bn_M5Ag9YDj0OsiP6ZEehMoi2eD4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHm-QMn2Yojbg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729427524736?e=1781136000&v=beta&t=OeZu-ha5cTb3JsaDi5YNpSCMATYJkZBUylrID_Rzmkg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH4WPJzT43RUQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1698250028211?e=1781136000&v=beta&t=bcRfr351LtJzgafrxyU-c29czuJGDYYqFc51oSm2oow"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Daria",
+        "lastName": "Linhart Grudzien",
+        "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
+        "id": "183293578",
+        "publicId": "dariagru",
+        "trackingId": "xsYszDf2SbKjFv+Q+YON1g==",
+        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Boris",
+        "lastName": "Kolda",
+        "occupation": "Trader, junior Linux administrator, junior Python developer",
+        "id": "183482672",
+        "publicId": "boris-kolda-12854651",
+        "trackingId": "gemOlvDzSheuUEG5P7WNPg==",
+        "profileId": "ACoAAArvuTABkMeLGdTJ-GueF6THUCXa57Ap7zk",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHz9R5J4bZlaA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1667821529600?e=1780430400&v=beta&t=ShNIYWfNvK2iAebCeoxYCjg_pyb_dYdAMbfeK9fw7Lk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Kateřina",
+        "lastName": "Loučková",
+        "occupation": "Backend Software Engineer | Python & Java Developer | REST APIs | Spring",
+        "id": "279627507",
+        "publicId": "katerina-louckova",
+        "trackingId": "ClH7k41sRaGcGQURKm0/fQ==",
+        "profileId": "ACoAABCqxvMBszK8CFRg8ni6LY3xc1YjJU7dMYs",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHpeNOphBg9tg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1547551176194?e=1781136000&v=beta&t=plbfWHK7J8j-d9KbmKwrkTsJK2VxaVpBCHWS2NKRHt8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Filip",
+        "lastName": "Průdek",
+        "occupation": "Nefunguje mi to → Super, už to jede | Feed specialista & Customer Success @Mergado",
+        "id": "904009499",
+        "publicId": "filip-prudek",
+        "trackingId": "1CIuHAn2RkWaNV4GG1NsnA==",
+        "profileId": "ACoAADXiFxsBDrfvLqXfc46dYlgCQklCaExwUMY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFupO9P-a5bFw/profile-displayphoto-crop_800_800/B4DZ5JiGdVJYAM-/0/1779350139114?e=1781136000&v=beta&t=Iw5Hw9pEtYfXe0-wPQXIOnKKUFZqdaHEFcw06ySiAyI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFct0esxDP2iw/profile-displaybackgroundimage-shrink_350_1400/B4DZ5JhtJBKAAU-/0/1779350033262?e=1781136000&v=beta&t=JkmSvMYWwXWWoFjbhRDQTIId6IpLExcH82QOIBlmb28"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Katerina",
+        "lastName": "Chmelarova",
+        "occupation": "Software Engineer | International Defense @ Honeywell Aerospace",
+        "id": "381120294",
+        "publicId": "katerinachmelarova",
+        "trackingId": "u6Zys7x7RXS4VSwqkwwH/g==",
+        "profileId": "ACoAABa3byYBG8PeurwMNw0dzc_fZjdHt8aQf-Y",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGttHbKD9vGmQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718229656912?e=1781136000&v=beta&t=1-73C2f8PW1GpuG2xfRjb7iaRwOiveUKi0weNZVLiJA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHqgUVIYS92ug/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1719356029055?e=1781136000&v=beta&t=qZj96WsohbZ3QEJGRK_r2DwZO2YklVztgx1LYhv9RAk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Kouřil",
+        "occupation": "Web Developer",
+        "id": "596894599",
+        "publicId": "jan-kouřil-147a95147",
+        "trackingId": "QCALjLT5RA2KuyK3Wlx+VA==",
+        "profileId": "ACoAACOT44cBHNz0T5WGfTwS5JWrtkAV0m_OH_U",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHyFfMkI770pA/profile-framedphoto-shrink_800_800/B4EZnwgqMEJAAg-/0/1760676717576?e=1780430400&v=beta&t=ywMx-gfBl5CCwtuggddCN4Q8m13ZSa3XlSKCh2kzM6c",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFZQLj4OJlW7g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1697560208248?e=1781136000&v=beta&t=uTofa07mX7eioqZfF461L1rnPyESEgLW-6D-IUQzHaI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Kristýna",
+        "lastName": "Papežová",
+        "occupation": "-",
+        "id": "358808770",
+        "publicId": "kristyna-papezova",
+        "trackingId": "B9GmomwgTbi/hZDRQ4oS+Q==",
+        "profileId": "ACoAABVi_MIBAoxl-AzrHqCKW8pRLKky_eMKeqM",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGEgD06l-uekA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517001843202?e=1781136000&v=beta&t=pT_t6tTfRgcVmvucg6K30nE9yPhIGvuSRCjgK1o8rWE"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Anezka",
+        "lastName": "Muller",
+        "occupation": "🧑‍🤝‍🧑 Working with and for communities, organizing events, studying service design, having fun in all that. ✏️",
+        "id": "58610470",
+        "publicId": "anezkamll",
+        "trackingId": "JFZCpnBcRne4mIH0KgpoBA==",
+        "profileId": "ACoAAAN-UyYBW_5FlwBOtClk7WVpl3JlZMHMVn4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEdF62o6gzpHQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731942194763?e=1781136000&v=beta&t=3Pf8QBLlGpzI8zRBBfihj0pgDvCgOUoUJyTfMptX81Y",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHKgfW_KDXR1Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1620408094586?e=1781136000&v=beta&t=qk_LRa-WT8rOvas9-jwGjCle3e76MkO7wIKYYCWCZag"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 37,
+  "numComments": 3,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "xuMHe8oLSNKuSPUohhcTyQ==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1707832727396,
+  "postedAtISO": "2024-02-13T13:58:47.396Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

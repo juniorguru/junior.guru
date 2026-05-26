@@ -1,0 +1,235 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:8361661445192014526",
+    "url": "https://www.lupa.cz/clanky/honza-javorek-junior-guru-jenom-clovek-vam-rekne-co-chatgpt-poradil-spatne/",
+    "title": "Honza Javorek (Junior Guru): Jenom člověk vám řekne, co ChatGPT poradil špatně - Lupa.cz"
+  },
+  "isActivity": true,
+  "activityDescription": "Honza Javorek reposted this",
+  "activityOfUser": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "zU1g9ORqTJS2easB6Tu2aA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "urn": "urn:li:activity:7319095211018620928",
+  "url": "https://www.linkedin.com/posts/david-slizek-175699_honza-javorek-junior-guru-jenom-%C4%8Dlov%C4%9Bk-activity-7312390759716929536-pxxx?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAADmbg6cBYOPU8CPv9ZUe8oI_f7tbNXybZ54",
+  "timeSincePosted": "1yr",
+  "shareUrn": "urn:li:share:7312390758697742339",
+  "text": "\"Nemyslím si, že by existence AI asistentů úplně nahradila programátorskou práci, která spočívá v překládání zadání pro lidi do zdrojového kódu nebo do programu, který má nějak fungovat. Myslím, že AI asistenti způsobili především to, že lidé se můžou rychleji učit, možná se některé věci už ani učit nemusí. A v době, ve které žijeme, způsobili to, že si lidé můžou myslet, že AI nahradí kdo ví co, takže na trhu vzniká předsudek, který je potřeba překonávat.\" Pomáhá AI juniorním vývojářům, nebo je nahrazuje? Je možné naučit se programovat jen s pomocí AI chatbota? A proč už dnes neplatí, že přeškolit se na programátora znamená jistotu dobrého živobytí? Hostem podcastu Lupa.cz byl Honza Javorek z Junior Guru. Nabízíme k poslechu a část podcastu i přepsanou do textu (podporovatelé Lupy mají k dispozici kompletní přepis):\n\nhttps://lnkd.in/efwqZE-9",
+  "attributes": [
+    {
+      "start": 675,
+      "length": 7,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Lupa.cz",
+        "universalName": "lupa-cz",
+        "trackingId": "2ATXq511RUSSdYuN9mRFDA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:92940248",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQEXRvGxLhRuxw/company-logo_400_400/company-logo_400_400/0/1676013274262?e=1781136000&v=beta&t=HuJln5PMC3Jeq_PYtZWwqQeAtdQwGsaG7MnOKXixSng"
+      }
+    },
+    {
+      "start": 687,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "9Id6L727QC2uQ59jfzxxZA==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+      }
+    },
+    {
+      "start": 703,
+      "length": 11,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Junior Guru",
+        "universalName": "juniorguru",
+        "trackingId": "io4r5eAcQpu1eERhN9CZqQ==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:26218444",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQE89NmYF-XT4g/company-logo_400_400/company-logo_400_400/0/1638266899010/juniorguru_logo?e=1781136000&v=beta&t=ad516CNUThMN8eXeVboC5S9U_y2Dnn1UhQn70wIGlxE"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ján",
+        "lastName": "Kisty",
+        "occupation": "LinkedIn: Top 1% of members | 500K+ impressions & 1500+ New Connections Y25 | Experienced Channel Sales Manager | Marketing Specialist | Tech, Crypto & Finance Enthusiast 🚀 Let’s connect — scaling sales & GTM growth",
+        "id": "515327142",
+        "publicId": "jan-kisty",
+        "trackingId": "vdXmVNK9QP+cu8i5GjJU2A==",
+        "profileId": "ACoAAB63RKYBGvK_NjCqqqdLk28Ex6T1bRt2nfs",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG8nTgz-Rmiaw/profile-displaybackgroundimage-shrink_350_1400/B4DZdRuyO0HMAc-/0/1749422909271?e=1781136000&v=beta&t=v1vXbwHc_XH3wGtZ7Sa7VAtThskJDm3vV_KhyPfxfpQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Šimon",
+        "lastName": "Podhajský",
+        "occupation": "Head of AI @ Waypoint | Builder | Evals.cz",
+        "id": "141048940",
+        "publicId": "simonpodhajsky",
+        "trackingId": "7xu/7GGeQyqZzUOUz00DKw==",
+        "profileId": "ACoAAAhoPGwB_kogfL_Yxl704HnL5RCo2fKQZO4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE-EE6jTtsO5g/profile-displayphoto-crop_800_800/B4DZ1IM2zrGgAI-/0/1775032838991?e=1781136000&v=beta&t=3RQSb_tnDeD3tNi6ZFKkUrgsC9QeVsc8qA9urs_f14w",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHRO8i8HK73fg/profile-displaybackgroundimage-shrink_350_1400/B4EZmeeJ7aKQAY-/0/1759300332172?e=1781136000&v=beta&t=ZhcF9vur2hnEmua6vB-K24BPKLn_vxwuJd5NqdugUm8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "David",
+        "lastName": "Voracek",
+        "occupation": "Digital & Business & Product development manager ▪ Transformation ▪ Strategy▪ BI ▪ Due diligence ▪ Acquisition ▪ IT Technology, Education",
+        "id": "37841573",
+        "publicId": "voracekdavid",
+        "trackingId": "CBUdjwS5QNq6Q7pDsp/5Yw==",
+        "profileId": "ACoAAAJBaqUBZYOGYQWyfLumB0siAQ9AbiwDe6M",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGYBu2W10qOEg/profile-displayphoto-shrink_800_800/B4DZO2G.zFHQAg-/0/1733927104129?e=1781136000&v=beta&t=wUx6ktVmFyY8sUR3Lr3APB8fK8GtKkyZqs15_CoGj28"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Ekaterina",
+        "lastName": "Kuranova",
+        "occupation": "Founder @HERITECH | Software Engineer & Coding Mentor | Bridging Tech & Social Impact | Advocate for Gender Equity, Women’s Voices & Responsible AI",
+        "id": "1234375694",
+        "publicId": "ekaterina-kuranova-9524812a5",
+        "trackingId": "m6MQn2k8QviKvn0Rncp6xQ==",
+        "profileId": "ACoAAEmTFA4BGSKJdN-1JgZB_Ki0OsHEErHF1KY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGrKCSUquFqKQ/profile-displayphoto-crop_800_800/B4DZ2xE5p5GcAI-/0/1776792349601?e=1781136000&v=beta&t=D3MvHLhIQVgLyAlvPCpQAladHtiry3VdkRbwywp5gMg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEGAHNTrPs5Jw/profile-displaybackgroundimage-shrink_350_1400/B4DZwyoMkeGQAY-/0/1770375924765?e=1781136000&v=beta&t=dHfCyNaGkLTjO21u-KPKU9Gl0vntFM9CEzrQhqtpmiA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ivan",
+        "lastName": "B.",
+        "occupation": "Freelance Web Designer ve společnosti Freelencer",
+        "id": "1309000964",
+        "publicId": "ivan-b-85846b306",
+        "trackingId": "LOFB8iImTvunmF+meIgO/w==",
+        "profileId": "ACoAAE4FxQQB8Cm_7tr_XijeKsHQlqix8YJgVno"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Radek",
+        "lastName": "Holý",
+        "occupation": "QA Engineer & IT Administrator | Open to work | Senior Developer Background | 20+ years in IT",
+        "id": "56523553",
+        "publicId": "jmenemradek",
+        "trackingId": "X1tv8SVCTLySyEq+pZhiGA==",
+        "profileId": "ACoAAANeeyEB64ERPMylSJEByw6iLTk9SWwioOE",
+        "picture": "https://media.licdn.com/dms/image/v2/D5635AQH1VVUtBxv3Ag/profile-framedphoto-shrink_800_800/B56Z5G87eDGYAk-/0/1779306838160?e=1780430400&v=beta&t=JpnfAAV94oWjR3NS4LDSZe1c8Eenx5wzfxV-EOQ44k0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFT9pxgxHoTxQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1627121226991?e=1781136000&v=beta&t=f1vuxVYcu77a5Yy_fpigtUs9qDEjptMeesjkRy_WiF4"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Valenta",
+        "occupation": "Senior QA Engineer at Warhorse Studios ⚔",
+        "id": "303039169",
+        "publicId": "valentapetr",
+        "trackingId": "eQ6B1LkbQKq5jzrrgdxY8Q==",
+        "profileId": "ACoAABIQAsEB7lBkZDyMY2IyH8DV-Em47jKaECM",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEGh_9U-DN84A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1597911967248?e=1781136000&v=beta&t=OnhGS_BuvlxuvHZlnksAt0ZH6zVGGgbEzmx9ak6vwBg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFuYq__sCNlaA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1713506563296?e=1781136000&v=beta&t=HHtMT1YeoBJpmoS4EcMcjdBeE9Ku_bEF5kBDeq5nJ68"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Kateřina",
+        "lastName": "Vašků",
+        "occupation": "Data for Strategy at Česká spořitelna | Linguist at Charles Uni",
+        "id": "873039537",
+        "publicId": "katerinavasku",
+        "trackingId": "Pk4MbByOSH2lDR9s6dQlvg==",
+        "profileId": "ACoAADQJhrEBRRV1tRzEyb7oya7gvdURtxn8UK0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHAumPruf3-cQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718236363812?e=1781136000&v=beta&t=SKPqUSwOpgNT7klNC5ZpygzjF2VRCzDgwYLRvPLInak"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marek",
+        "lastName": "Ziaja",
+        "occupation": "CNC Programming & Design Leader | Work hard, be happy",
+        "id": "1402399288",
+        "publicId": "marek-ziaja",
+        "trackingId": "gN+zTnz1R7ulF8xcZrZ2Mg==",
+        "profileId": "ACoAAFOW6jgBgvSwUK3o8hppZUE8JX7ndsXaQoM",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFMtbVpGwk4kQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728282678825?e=1781136000&v=beta&t=HX2cjrrknxgCxG6qtMO8B21aU8WE5CZqVqIANm_UYRM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "David",
+        "lastName": "Slizek",
+        "occupation": "editor in chief Lupa.cz ve společnosti Internet Info",
+        "id": "1695401",
+        "publicId": "david-slizek-175699",
+        "trackingId": "5Lpnkn5hSDeXXgC5guyTuw==",
+        "profileId": "ACoAAAAZ3qkBFRojHDN7KNvZbumybN_Jje916j8"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 17,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "David",
+    "lastName": "Slizek",
+    "occupation": "editor in chief Lupa.cz ve společnosti Internet Info",
+    "id": "1695401",
+    "publicId": "david-slizek-175699",
+    "trackingId": "YdgwpB7DTXKB4CDEibk9lA==",
+    "profileId": "ACoAAAAZ3qkBFRojHDN7KNvZbumybN_Jje916j8"
+  },
+  "authorProfileId": "david-slizek-175699",
+  "authorType": "Person",
+  "authorName": "David Slizek",
+  "authorProfileUrl": "https://www.linkedin.com/in/david-slizek-175699?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAAZ3qkBFRojHDN7KNvZbumybN_Jje916j8",
+  "authorUrn": "urn:li:member:1695401",
+  "postedAtTimestamp": 1745008280520,
+  "postedAtISO": "2025-04-18T20:31:20.520Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

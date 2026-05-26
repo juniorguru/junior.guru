@@ -1,0 +1,165 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:-1",
+    "url": "https://engeto.com/cs/katalog/python-1-uvod-do-programovani",
+    "title": "Python #1: Úvod do programování | Engeto online portal"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6651368814426550272",
+  "url": "https://www.linkedin.com/posts/honzajavorek_python-1-%C3%BAvod-do-programov%C3%A1n%C3%AD-engeto-activity-6651368814426550272-vcvq?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAD83cM8BveTBQe8d728MIe5rgAE_6phyUq0",
+  "timeSincePosted": "6yr",
+  "shareUrn": "urn:li:share:6651368813889679360",
+  "text": "Online kurz Python #1 od Engeto je nyní zdarma!  #python #kurz #zdarma",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1585811406242,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6651368814426550272?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6651368814426550272%2C6651375124442292225%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286651375124442292225%2Curn%3Ali%3Aactivity%3A6651368814426550272%29",
+      "text": "K tomu jsem před časem dělal prezenční kurz, to bylo docela dobře použitelné.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Pavel Grumpy",
+        "lastName": "Šimerda",
+        "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
+        "id": "551084893",
+        "publicId": "grumpyprogrammer",
+        "trackingId": "0zyXl7W9RVurkZp10Ig7YQ==",
+        "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFnQ8ypdjjyvg/profile-displayphoto-crop_800_800/B4DZxZUZFlHkAI-/0/1771025047361?e=1781136000&v=beta&t=fFiIDptOBoMzbUkj1Lvpd8USzHMX1nkcCCOr19Su_4c",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Cerovský",
+        "occupation": "Freelancer (Senior packaging artworker ∙ Prepress specialist ∙ Graphic designer)",
+        "id": "417309337",
+        "publicId": "pavel-cerovský-56190ab7",
+        "trackingId": "nXo+GpShRAyF4hI3P4d2nQ==",
+        "profileId": "ACoAABjfopkBsQzMxR0_3EEzY06FnPT2Fu2zN9k",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQHyzLlwMCQZuA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516851789992?e=1781136000&v=beta&t=-_BsUeubT2Q8_h93a8fxQgBBW1Py8q0seeYBw3NBzFo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEe6I4DbR2WYg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1695136809683?e=1781136000&v=beta&t=lPwmUQVpX7vihBMqinifrz07LFnfBewDYJjrzP_A_Ng"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomas",
+        "lastName": "Mentlik",
+        "occupation": "Strategic Execution Leader | Project & Portfolio Management | Digital & Business Transformation",
+        "id": "201198834",
+        "publicId": "tomas-mentlik",
+        "trackingId": "/6enzV7TTqOgBoa4HemTOw==",
+        "profileId": "ACoAAAv-DPIBgwWOM2ULc0FMiJjALmvFZQ5BEhc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFzT9MHwT4zRg/profile-displayphoto-crop_800_800/B4DZ07lunXI0AI-/0/1774821246786?e=1781136000&v=beta&t=hzCeCsUZibVxhiJoOBsOzxZCfhNAyFAjQoJS_sO83d8",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEV6sx5Bg9y0Q/profile-displaybackgroundimage-shrink_200_800/B4EZg7lAyPGUAg-/0/1753346216074?e=1781136000&v=beta&t=4ltyJUjVL5ckX-gVWDk0u5LwSTL1DWxvTeBriyix0n4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Kamila",
+        "lastName": "Vávrová",
+        "occupation": "Chief of Operations | Customer experience, process & project management | Certified Scrum Master®| MAAPPI GOES GLOBAL Ambassador",
+        "id": "33028509",
+        "publicId": "kamilavavrova",
+        "trackingId": "KKA6VaXnS+a2Yqhq//OdOA==",
+        "profileId": "ACoAAAH3-Z0BnnZ71ckG-0Qj2yWYt4eiNUqBjcU",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGzPiGCVBAUWg/profile-displayphoto-crop_800_800/B4EZqjnH61KoAI-/0/1763681534262?e=1781136000&v=beta&t=qeooUXKPv1_3eELxNLP1l5asWjzYf1foLK_13d-mei0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHPiBiaOX6taw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1581974339994?e=1781136000&v=beta&t=KuVTO_kccccwBFfocfjsjhH_4TM-rTjMNyJMp7j0YCI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Iva",
+        "lastName": "Stencel",
+        "occupation": "CSV Lead/ Senior Business Analyst",
+        "id": "587257188",
+        "publicId": "iva-stencel-ab0807144",
+        "trackingId": "KuChyrM9RKqy/wJcCjko0Q==",
+        "profileId": "ACoAACMA1WQBgV8EKd7FupQXOjpsAgya9rL3QLA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGvMtuTNHdICw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1705975360344?e=1781136000&v=beta&t=73kz1RRrV0DsO9n0na0p3ZfYiSkUe3yLRv-LT49dYxE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Zuzana",
+        "lastName": "Vorosova",
+        "occupation": "Project Manager | F. X. Meiller | PMI Member",
+        "id": "265700699",
+        "publicId": "global-po-pm",
+        "trackingId": "4mVHc6CNS+yEziMIuZc++w==",
+        "profileId": "ACoAAA_WRVsBilg4CLnnMoW_qvMWIrKCgsHqTuY",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQFhyjmqzPG80w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1580742029784?e=1781136000&v=beta&t=AxvFb696sNLaFYSfAPHq9tSgSF83XTmatCowYCF6tMA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQEsWYUxRPOjjQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1576575871885?e=1781136000&v=beta&t=sFS0lCRdHpZEUIWReywJpJeEO5xcI6lFHAO3gX2f_ek"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel Grumpy",
+        "lastName": "Šimerda",
+        "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
+        "id": "551084893",
+        "publicId": "grumpyprogrammer",
+        "trackingId": "GcXZi4QXT2iOec1Ho10ODQ==",
+        "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFnQ8ypdjjyvg/profile-displayphoto-crop_800_800/B4DZxZUZFlHkAI-/0/1771025047361?e=1781136000&v=beta&t=fFiIDptOBoMzbUkj1Lvpd8USzHMX1nkcCCOr19Su_4c"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Sarka",
+        "lastName": "Cerovska",
+        "occupation": "Talent Acquisition Partner",
+        "id": "63177727",
+        "publicId": "sarkacerovska",
+        "trackingId": "WhCkHwCKQ4yrQX9hUTN13w==",
+        "profileId": "ACoAAAPEA_8BzksvksVzbz6sHs05xKjV3asYqd4",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQFv2hG5F1QSQQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582896370930?e=1781136000&v=beta&t=-iugVHL7N247z6z6R6ClXQWQlxBGxTfprW0faQuRBjM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQEO-izDtDao3w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517521846375?e=1781136000&v=beta&t=G0fKuA6QPaVD5Mp36vETDRjcWcOVJRtMqVHDICl2s_o"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 7,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "+XTfzyXXQCeKrDYj4vXtQw==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1585809901816,
+  "postedAtISO": "2020-04-02T06:45:01.816Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

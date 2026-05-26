@@ -1,0 +1,257 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4E22AQE9kQHxpjhifQ/feedshare-image-high-res/feedshare-image-high-res/0/1654929315780?e=1781136000&v=beta&t=q_KaX769wYV_XDXoOqliVeOqic2s6xwP5aauV162c3I"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6941276655432708096",
+  "url": "https://www.linkedin.com/posts/honzajavorek_webexpo-activity-6941276655432708096-xBpG?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFO533UB8DB_-rdYybN70u0U_dNKjqbKYjY",
+  "timeSincePosted": "3yr",
+  "shareUrn": "urn:li:share:6941276654648352768",
+  "text": "WEBEXPO ⭐️ I dnes budu na WebExpo s juniory z junior.guru/club Pomáhám jim networkovat a rozdávám samolepky. Nebojte se k nám přidat! #webexpo\n\nZ fotky to tak nevypadá, ale budu mít na rozdíl od včerejška víc samolepek i pro seniory, např. s textem „fandím juniorům“. Kupodivu bylo během pátku oblíbené taky „nauč se programovat“, byť to má mezi zkušenými vývojáři… trochu pasivně agresivní vyznění 😀",
+  "attributes": [
+    {
+      "start": 26,
+      "length": 7,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "WebExpo Conference",
+        "universalName": "webexpo",
+        "trackingId": "DbGse5xYRweJiE2PD5t/4g==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:923725",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQFgeeC2PPWXyw/company-logo_400_400/company-logo_400_400/0/1698662675471/webexpo_logo?e=1781136000&v=beta&t=2lhXicOOdUe_Ko_lla2WVqy8KZbZhLZiyQk6DH0mCt4"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1654936761022,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6941276655432708096?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6941276655432708096%2C6941307876502089728%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286941307876502089728%2Curn%3Ali%3Aactivity%3A6941276655432708096%29",
+      "text": "Velká paráda!",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Lukáš",
+        "lastName": "Tuček",
+        "occupation": "🔎 QA Automation Engineer | Web & Mobile Testing (Playwright, Maestro) | 🚘 Majitel ve společnosti LT Detailing",
+        "id": "567367047",
+        "publicId": "lukastucek7",
+        "trackingId": "tlW59B4zQ3GlYs/GLg/7UQ==",
+        "profileId": "ACoAACHRVYcBZjOpRsnCmT-1OV2S9E1GcTqhk1s",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEDwl5mqRPZ6g/profile-displayphoto-crop_800_800/B4EZolaisKGYAI-/0/1761564306965?e=1781136000&v=beta&t=NiyqeVqxbAy8yfIwG5OKlT4ZiTtWC0h1Yv-ga98_LOQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH2-auh8-cNSA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1684934197584?e=1781136000&v=beta&t=lFJFD4CoHs39NSADEl_ElA90WlOiVOJS_RFZhmSCSUI",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1654932572880,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6941276655432708096?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6941276655432708096%2C6941290310161346560%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286941290310161346560%2Curn%3Ali%3Aactivity%3A6941276655432708096%29",
+      "text": "To je super, Honzo! 🤩",
+      "entities": [],
+      "pinned": false,
+      "author": {
+        "firstName": "Gabriela",
+        "lastName": "Řehoutová",
+        "occupation": "R&D Community Manager at Mews | Driving tech employer branding through developer advocacy and internal programs",
+        "id": "375918312",
+        "publicId": "gabriela-rehoutova",
+        "trackingId": "xIYq7F/dSAefC0wHph0V7w==",
+        "profileId": "ACoAABZoDugBZPP_pwsGohCcNSueNWnDv2TrXLA",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHxeSq-aQXADA/profile-displayphoto-crop_800_800/B4DZyKZZmIJoAM-/0/1771848442537?e=1781136000&v=beta&t=1Yyb9MnnBlanozl3ZFem4jHbwrV99w2FfMmvv9FvIu0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHp_vL6BWFTNw/profile-displaybackgroundimage-shrink_350_1400/B4DZyKYhihG8AY-/0/1771848210948?e=1781136000&v=beta&t=21UIB68ZMBkqepzOKX5D9kdQcghG2ZeQ58J0kSI1tQc",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1654930426704,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6941276655432708096?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6941276655432708096%2C6941281308446765056%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286941281308446765056%2Curn%3Ali%3Aactivity%3A6941276655432708096%29",
+      "text": "Vidime se!",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Albanian",
+      "author": {
+        "firstName": "Eva Debora",
+        "lastName": "Pavlikova",
+        "occupation": "Hope-based Leader | Moving from ‘No, because’ to ‘Yes, if’ Culture in Government",
+        "id": "12118109",
+        "publicId": "evapavlikova",
+        "trackingId": "Bn5p4m+RRXerNRPwlQ6WDA==",
+        "profileId": "ACoAAAC46F0BJQLhw3nCC7aaTcpYSs6RqWaP1Vw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHlt2AxwqFdVQ/profile-displayphoto-crop_800_800/B4EZfG.16hHYAM-/0/1751390052552?e=1781136000&v=beta&t=TSZH6NhRKWHzP95IkFkyLySMnb8lruC28HEH-ZHv0QM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEVGUA5BaYCyQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1587825486562?e=1781136000&v=beta&t=f3cNmgwZ45sDrj1GeTLkYKSB8BVy6WkqFDBfMvwRQsA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Peter",
+        "lastName": "S.",
+        "occupation": "IT/Ba analyst, technical analyst, product analyst, product owner",
+        "id": "319605036",
+        "publicId": "peter-s-7500508b",
+        "trackingId": "yNp1dN7fTYGsAQmsSdMWzA==",
+        "profileId": "ACoAABMMySwBtsOsvzGHQnjurWpFm1vqLLcMx64",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQFDLyQtdxOU4A/profile-framedphoto-shrink_800_800/B4DZtk9D6iKoAg-/0/1766925287370?e=1780430400&v=beta&t=yx4Y-TmgwUo8gCjPzFj1Jz8LT3td_c6iA54v2rU2Jtc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Smutek",
+        "occupation": ".",
+        "id": "874130625",
+        "publicId": "heysmtk",
+        "trackingId": "TxZ0vc0OTwadQjEN7XxK/w==",
+        "profileId": "ACoAADQaLMEBIrh9ltBwzA5W3yIdE7GUyrZZDDI",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE7lm3Hp-Ow7A/profile-displayphoto-crop_800_800/B4EZetqacbHwAI-/0/1750965271998?e=1781136000&v=beta&t=HHNUqhvPKVUbzaQ8oqY61vz9BqbE1Zql5vuCSotuzCs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ivana",
+        "lastName": "Štefková",
+        "occupation": "🌾 objevuju téma resilience 🕸️ splétám sítě ✍️ píšu postřehy 💗 fandím dobrým věcem 🎓 mám kázeň dvojnásobné artistky (FFUP psychologie, FFUK pedagogika) 🪄 vnímám neviditelné ❤️ naslouchám srdcem 🚶‍♀️ dělám fieldwork",
+        "id": "364234493",
+        "publicId": "ivanastefkova",
+        "trackingId": "HoQ38mtdRlac5hXzwiWZfg==",
+        "profileId": "ACoAABW1xv0BoZldwP-EAT-h6yCSjPXIKfPXjus",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQH9DGScNB_fKA/profile-displayphoto-crop_800_800/B4DZ3OuS4QIEAI-/0/1777289741742?e=1781136000&v=beta&t=Bo25Q4KbC-5lql8R1fj9IvnoL-HSzE-s2Qskbh-rAww",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGC0hrge8rLFQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ22NorHKMAY-/0/1776878522848?e=1781136000&v=beta&t=ezi_2RF2W9rQIzjLHpvc9zTgovFnryKFoQnoMl6vjcc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Andrea",
+        "lastName": "Soumarová",
+        "occupation": "Tech World & Recruitment",
+        "id": "431679531",
+        "publicId": "andreasoumarova",
+        "trackingId": "NsxkfY6ERXu/qcm+Zg2hbw==",
+        "profileId": "ACoAABm66CsBfCNFW-eGyflKiIfldGwBxw2T7xA",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFk1mfv_-1YHQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726583755868?e=1781136000&v=beta&t=KoMq_DnR3UjqXFUycqLz9R62U9WPPOScLVqQsK6qku0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF6uaHG1MU2OQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1730726943459?e=1781136000&v=beta&t=FuM873Na1ORY4aqKimxFlKlI6pjyADmAmjtit0FIjZ4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Alisa",
+        "lastName": "Mazepina",
+        "occupation": "🇨🇿 Czech Founders Community Lead ▪️🤝 Connecting Communities, IT and Business ▪️🩷🖤 DIGIFEMME Founder ▪️Femme Palette Ambassador ▪️ IT Project Management ▪️ No-Code a Low-Code Digitalizace",
+        "id": "780330999",
+        "publicId": "alisa-mazepina",
+        "trackingId": "zIxOS2C0SFmoEDDVsXXj0A==",
+        "profileId": "ACoAAC6C5_cBuwlzuw1kk4L-6e9nwm3bUZCqeDA",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQFfITu9_pxR9A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1711447886125?e=1781136000&v=beta&t=rpdAVUJ4gVp3DtywwS1QOPpYAEh3v6dzdL0ogckNFmc",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFneU1R3TkEdA/profile-displaybackgroundimage-shrink_350_1400/B4EZneuSj_HcAY-/0/1760378304308?e=1781136000&v=beta&t=Wea3aMykGlQ56POgLQI5uieKLqIjoVsm4FRY7ZHUhss"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michaela",
+        "lastName": "Koudelkova",
+        "occupation": "Test Analyst at Cyber Fox and mentor at Czechitas",
+        "id": "292145216",
+        "publicId": "michaelakoudelkova",
+        "trackingId": "iI4i/n/5Rnyu8xwwud0gYA==",
+        "profileId": "ACoAABFpyEABFqmYqR_GlrpP2lafZoQLPBrf-tI",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFKsp97t6P-wQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516353290735?e=1781136000&v=beta&t=FVddPXnC0UmGq-57tY5dBNm37AB140yiPqqF0xLVJKo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQH5wEaq6ly9VA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1557083059573?e=1781136000&v=beta&t=X3PZ1VnvPc4Jw3cuQyoWmCeEbc0rQ_ap7Y79XPInj7Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michal",
+        "lastName": "Tesař",
+        "occupation": "Medior PHP Developer | Symfony, PHP, MySQL | HTML, CSS, Sass | Web Development",
+        "id": "601982435",
+        "publicId": "michal-tesař-56b729149",
+        "trackingId": "i/lFPeOeTaCMUhBEgfcqbw==",
+        "profileId": "ACoAACPhheMBhFal24vE5SWmau1Q9GJgrPCBQPo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vaclav",
+        "lastName": "Tunka",
+        "occupation": "Engineering Lead at Red Hat | K8s & CNCF ecosystem | Serverless | AI plumbing & model serving",
+        "id": "32227892",
+        "publicId": "vtunka",
+        "trackingId": "a/qvU7zuQ9Oi6IgbedIdkw==",
+        "profileId": "ACoAAAHrwjQBhK0mOv6R-iHe-_JOzmuKxUhriQs",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEeATQG_rd4bg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1634193131439?e=1781136000&v=beta&t=Ck5RUHMum4yQ9LZJ_pZaHyWN82Xtl9LN-VL94rqk1V4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQE6KLN67Z_xRw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1634371070944?e=1781136000&v=beta&t=fL5JFJCemz96yI3pwkk0JxjFR4DYRP7euBlI_QdM-lw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Eva",
+        "lastName": "Valenová",
+        "occupation": "IT Recruiter for Green:Code - Powered by Škoda Auto & Etnetera",
+        "id": "690634751",
+        "publicId": "eva-valenova",
+        "trackingId": "yBCJqPzcSUOJ/9+XoJ8+Lg==",
+        "profileId": "ACoAACkqP_8BVHBJ8mHEx3skVYHAjPSFAfq4WyQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQGPGndfSf_TLw/profile-framedphoto-shrink_800_800/B4DZ5PwiKpJYAg-/0/1779454583841?e=1780430400&v=beta&t=fF55FdalGlhGixLzzwRcu1NcoWkELZP9ocKSkK9B5fI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGlNGlcm5-VFg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1573905063639?e=1781136000&v=beta&t=INONISq3fq_arnHPqYTDcnYRfEWTqsz0dRR9SWH296E"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Zdeňka",
+        "lastName": "Krejčíková",
+        "occupation": "Talent Manager | Mentor | Recruiterka roku 2018 | @ Taste 👩‍🍳 | Agentura roku 2025 🏆 WebTop100 | Máme recept na značky, pod které se budete chtít podepsat ✍️",
+        "id": "86715169",
+        "publicId": "zdenka-krejcikova",
+        "trackingId": "jlmHZj84RDijBhdnnLjwpQ==",
+        "profileId": "ACoAAAUrKyEBkRbuq3IllAO7gynSpw-WYHjz2K8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQEF79reKAUz7A/profile-framedphoto-shrink_800_800/B4DZ3yJ4YlH0Ag-/0/1777884170002?e=1780430400&v=beta&t=r5bElD5CvDxqLmeWsAHYzQXH2z5Y9kScDGleMGZtnoI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEaLY5E0r9EPQ/profile-displaybackgroundimage-shrink_350_1400/B4EZYZbniQGgAY-/0/1744183392778?e=1781136000&v=beta&t=N9JDhItjVvXW80ogmkm1aWwRypNGyfDcbtoQCxTJPeU"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 38,
+  "numComments": 3,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "Gq10tRQlSEak9x5Bi6MwlA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1654929317339,
+  "postedAtISO": "2022-06-11T06:35:17.339Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

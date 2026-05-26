@@ -1,0 +1,75 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:7783822792310667409",
+    "url": "https://www.flowee.cz/floweecity/smart-cities/7077-vyplati-se-z-vestibulu-bezet-na-metro-reknou-vam-to-tabule-i-stavajici-aplikace",
+    "title": "Vyplatí se z vestibulu běžet na metro? Řeknou vám to tabule i stávající aplikace"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6617319451224223744",
+  "url": "https://www.linkedin.com/posts/honzajavorek_vyplat%C3%AD-se-z-vestibulu-b%C4%9B%C5%BEet-na-metro-%C5%99eknou-activity-6617319451224223744-gLT9?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFgzka0BiNONQEez3CYZvIxpM_Au6YEO6r0",
+  "timeSincePosted": "6yr",
+  "shareUrn": "urn:li:share:6617319450750263296",
+  "text": "Naučte se programovat a vytvořte si svou vlastní appku na mobil. Jako třeba student práv Ondřej, který svou aplikací pomáhá lidem stihnout metro. #juniorguru",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Roman",
+        "lastName": "Ripa",
+        "occupation": "Data Analyst, Idea Farmer, Process Librarian, Customer Journey Builder, SCRUM Master at RomanRipa.com",
+        "id": "6432515",
+        "publicId": "romanripa",
+        "trackingId": "iGTWrN/QQB6X6Hs+qtl+rg==",
+        "profileId": "ACoAAABiJwMBd25oc32q6eAIQJFTQPxjAf5qSBY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEJG4vsvLjUaQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1685108480804?e=1781136000&v=beta&t=8phf-iA59ichmpLozE1vQuo39zSJ4VOMamTwOxyuy1o"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Iva",
+        "lastName": "Stencel",
+        "occupation": "CSV Lead/ Senior Business Analyst",
+        "id": "587257188",
+        "publicId": "iva-stencel-ab0807144",
+        "trackingId": "csRLwtCERiGls7JRBBBQBw==",
+        "profileId": "ACoAACMA1WQBgV8EKd7FupQXOjpsAgya9rL3QLA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGvMtuTNHdICw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1705975360344?e=1781136000&v=beta&t=73kz1RRrV0DsO9n0na0p3ZfYiSkUe3yLRv-LT49dYxE"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 2,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "7xoDwwTgSqumOdJ2ljR49w==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1577691901022,
+  "postedAtISO": "2019-12-30T07:45:01.022Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

@@ -1,0 +1,270 @@
+{
+  "type": "linkedinVideo",
+  "linkedinVideo": {
+    "videoPlayMetadata": {
+      "duration": 24800,
+      "thumbnail": {
+        "artifacts": [
+          {
+            "width": 1002,
+            "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:C4D05AQFjNAAFZbCqhA",
+            "fileIdentifyingUrlPathSegment": "high/videocover-high/0/1643882882214?e=1780430400&v=beta&t=hWRJDbpgW6Bsn0-uKRgHI9512iCMVWIetvLoxwDvSQQ",
+            "expiresAt": 1780430400000,
+            "height": 720
+          },
+          {
+            "width": 500,
+            "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:C4D05AQFjNAAFZbCqhA",
+            "fileIdentifyingUrlPathSegment": "low/videocover-low/0/1643882884141?e=1780430400&v=beta&t=iLgFfB3GPQDuzoL30D2HE1Nw91sKjWa3t89Mg1dTKlg",
+            "expiresAt": 1780430400000,
+            "height": 360
+          }
+        ],
+        "rootUrl": "https://media.licdn.com/dms/image/v2/C4D05AQFjNAAFZbCqhA/videocover-"
+      },
+      "progressiveStreams": [
+        {
+          "streamingLocations": [
+            {
+              "url": "https://dms.licdn.com/playlist/vid/v2/C4D05AQFjNAAFZbCqhA/mp4-720p-30fp-crf28/mp4-720p-30fp-crf28/0/1643882897135?e=1780430400&v=beta&t=Yp-FUcAo3Dnw2ZzWSkVTNeoame0UUX-odrHG1sPnoBQ",
+              "expiresAt": 1780430400000
+            }
+          ],
+          "size": 0,
+          "bitRate": 286477,
+          "width": 1002,
+          "mediaType": "video/mp4",
+          "height": 720
+        },
+        {
+          "streamingLocations": [
+            {
+              "url": "https://dms.licdn.com/playlist/vid/v2/C4D05AQFjNAAFZbCqhA/mp4-640p-30fp-crf28/mp4-640p-30fp-crf28/0/1643882900039?e=1780430400&v=beta&t=Q4a7JNnKizMtxkh54jv0hWXBOM8ebcfU77VjP2dmgWs",
+              "expiresAt": 1780430400000
+            }
+          ],
+          "size": 0,
+          "bitRate": 242763,
+          "width": 892,
+          "mediaType": "video/mp4",
+          "height": 640
+        }
+      ],
+      "transcripts": [],
+      "entityUrn": "urn:li:digitalmediaAsset:C4D05AQFjNAAFZbCqhA",
+      "provider": "UGC",
+      "aspectRatio": 1.39375,
+      "media": "urn:li:digitalmediaAsset:C4D05AQFjNAAFZbCqhA",
+      "adaptiveStreams": [
+        {
+          "initialBitRate": 1596000,
+          "protocol": "HLS",
+          "mediaType": "application/vnd.apple.mpegURL",
+          "masterPlaylists": [
+            {
+              "url": "https://dms.licdn.com/playlist/vid/dynamic/C4D05AQFjNAAFZbCqhA/BAQ3Yjo5w?e=1780430400&v=beta&t=dNfvE1QVbxEIiqIrc_1bu8mT3BCNoqSYxK8_GvapoE8",
+              "expiresAt": 1780430400000
+            }
+          ]
+        }
+      ],
+      "trackingId": "C1YVKXcSQhKdShUC1vrJGg=="
+    }
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6894944623312388096",
+  "url": "https://www.linkedin.com/posts/honzajavorek_juniorguruvyrobky-django-api-activity-6894944623312388096-cvx0?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAD81P2gB8COKVZLp6EQQjDG5lu3X4UjKxEQ",
+  "timeSincePosted": "4yr",
+  "shareUrn": "urn:li:ugcPost:6894944517494292480",
+  "text": "PROJEKTY ČLENŮ KLUBU 💪 Rozhodl jsem se postupně sdílet projekty, které vytvořili členové klubu junior.guru. Máme v klubu kanál „výrobky“, kde se občas někdo pochlubí, tak tomu budu říkat #juniorguruvyrobky.\n\nRoman Viktor Dvořák si vytvořil WeatherBoard, webovku s předpovědí počasí. Nasazené to má na jakbude.herokuapp.com. Naučil se na tom #Django, #API, #Bootstrap. Pohrál si tam hodně s Chart.js, které mi následně v junior.guru klubu doporučil a já je použil taky. Tolik asi k tomu, kdo v klubu pomáhá komu 😀 Kód projektu dal na #GitHub, má k tomu vymazlené #README.\n\nPraktické projekty jsou podle mě zásadním krokem k tomu, aby si junior programátoři bez předchozích zkušeností mohli najít práci. Je to způsob, jak mohou dokázat, že se něco naučili a dokážou to aplikovat. Že zvládnou něco vytvořit. Předchozí vzdělání nemusí být vždy adekvátně popisovat, co kandidáti umí, ale pěkný projekt, ideálně ještě s otevřeným kódem na GitHubu, to je jiná.\n\nA nejde o to, aby byl projekt dokonalý. Jak se říká, softwarový projekt nikdy není hotový. Firmě kandidáti projektem ukazují nejen co všechno umí, ale také že mají chuť tvořit, zkoušet, překonávat překážky. Ukáže se i nějaká kreativita a zápal pro věc. Firmě to zároveň realisticky ukazuje, co všechno musí kandidáty ještě doučit a nastavit si díky tomu správná očekávání. Dá se pak lépe plánovat zaučování.",
+  "attributes": [
+    {
+      "start": 208,
+      "length": 19,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Roman Viktor",
+        "lastName": "Dvořák",
+        "occupation": "Python Backend Developer | IoT & Embedded Systems | REST APIs · PostgreSQL · Docker · AWS · Raspberry Pi",
+        "id": "915717151",
+        "publicId": "romanviktor",
+        "trackingId": "S886R5lDSt25JYbJEmBxKQ==",
+        "profileId": "ACoAADaUvB8B9l6wphhyhnpLoAOKG5H1Eb1LO4E",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQEToepY6NmI7Q/profile-framedphoto-shrink_800_800/B4DZxg1e4NHkAg-/0/1771151159073?e=1780430400&v=beta&t=RRFtoT0d0o1-1XLtBZZk6xOMUdgQ7Ykvrin4fb0lYPs",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGzIOan1Hv0ww/profile-displaybackgroundimage-shrink_350_1400/B4EZqXQBHHKoAY-/0/1763474152542?e=1781136000&v=beta&t=U_ZQxStc-2ImY2ynGpjlLsCwnBQspNz3EcaXqidn25k"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vendula",
+        "lastName": "Bezáková",
+        "occupation": "My goal is to keep our websites functional, intuitive, useful and easy to use.",
+        "id": "363617763",
+        "publicId": "vendula-bezakova",
+        "trackingId": "ZaZaXYSTTCmVB4OhKtHZ7w==",
+        "profileId": "ACoAABWsXeMBCfUCiCSwRq3MOOBE88rbUR4AYRY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFVn6CJzSmjTA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1674664856065?e=1781136000&v=beta&t=vvAyf-QbCGuGq29xbQ89AOntefoci5ldbwCSuwWEQp0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEGTTmmkYF4RQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1681283988920?e=1781136000&v=beta&t=yUI6jolGwvlVdXMIbszDjtG5D15X0B2cwesFnZbtGH4"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Katerina",
+        "lastName": "Slezakova",
+        "occupation": "“The journey is the destination”",
+        "id": "823193341",
+        "publicId": "kslezakova",
+        "trackingId": "ngxdKVOCQa2DjK+NGRHwlg==",
+        "profileId": "ACoAADEQ7v0BQzs8aNXWgRYo4kPIBpO990Op2q4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHLgcpsZhZv9g/profile-displayphoto-crop_800_800/B4EZsBxARBKcAQ-/0/1765261185170?e=1781136000&v=beta&t=qKC3O2DbG5vdz8lEXUE0bvS9d9YoBa5o4AjKMeOZDiY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH9FcmHhMx99Q/profile-displaybackgroundimage-shrink_350_1400/B4EZsCPEx4KoAc-/0/1765269067659?e=1781136000&v=beta&t=W3_PhqFJZ--KwlSMbSIRQo-vEzVHoPKOa5KXSlErZvc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pravar",
+        "lastName": "Sharma",
+        "occupation": "Senior Backend Engineer | Python, Django, FastAPI | AWS, Docker | GenAI & RAG Systems",
+        "id": "349569697",
+        "publicId": "pravar-sharma-3410a199",
+        "trackingId": "syoigf9lTG+0mng/dUidQQ==",
+        "profileId": "ACoAABTWAqEBvb8HXNjxQZMUkP4EVqcxWvqq3_Y",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQHK2oBWISj-Nw/profile-displayphoto-crop_800_800/B56Z3elGfCKUAI-/0/1777555763233?e=1781136000&v=beta&t=j-BqTGV25HXQaUgQZh5IPRq3WRwMmRqWYulunZYggZU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHTZoDHDNaUfg/profile-displaybackgroundimage-shrink_350_1400/B56Zv5VOIUKIAc-/0/1769414651422?e=1781136000&v=beta&t=uJ6odjx2ngOytLfjoiy7n8us9YAWwlUnHXlSdhw2qk8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Erik",
+        "lastName": "Demolli",
+        "occupation": "Marketing Consultant | Brand & Performance Strategy | Growth through Creativity, Data & Story",
+        "id": "562291579",
+        "publicId": "erikdemolli",
+        "trackingId": "HdEY0opOSNC6JhSNJldyGg==",
+        "profileId": "ACoAACGD43sBdPHwkcITxbdF8D_ag3r5OZqWa3U",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEktezDP8ymCg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1669236191434?e=1781136000&v=beta&t=0gDYYr6FiMyj0BaQhFlSLps-9i30BC3Wx-3YcITpXBY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFSkMZ-41CyNg/profile-displaybackgroundimage-shrink_350_1400/B4EZm99NzqKcAY-/0/1759828566633?e=1781136000&v=beta&t=Gpus2hktkUeIYQxx8f_qafuX6RJXSK1HQqFuxawEgCs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "D.",
+        "occupation": "Data analytics | Energy transition",
+        "id": "114102236",
+        "publicId": "janfdolezal",
+        "trackingId": "5RPUnCdlTMWilKjKQHvKWw==",
+        "profileId": "ACoAAAbND9wBTGfUvBkG8--t6nWYBJcRm6qj8LI",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFU_FSO2m536w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1631959600380?e=1781136000&v=beta&t=MRLE6jANhqhGvXrd-AOueZURaMVOZTc9p-S2iiWQ2k8",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGDiD2lCktv4Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1616743956066?e=1781136000&v=beta&t=9Q1PGraRSzb__h4cp2O1EwOE1gaZWHh89nk0FhoGeic"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ján",
+        "lastName": "Andrejko",
+        "occupation": "Frontend developer",
+        "id": "835896750",
+        "publicId": "ján-andrejko-666b341b3",
+        "trackingId": "4rYcbSTJTHmMRaQRIgno5g==",
+        "profileId": "ACoAADHSxa4B2I9_HtCckrXDBgjgIgF2NUoC248",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFTWin9wWe1fw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1616605476747?e=1781136000&v=beta&t=llgN3mXTjsg6_rUBTSxvTH7l2pdwM4HHHW76hQuOYiE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Kamil",
+        "lastName": "Kakáček",
+        "occupation": "Senior Software QA Engineer ve společnosti Packeta Group",
+        "id": "626376672",
+        "publicId": "kamil-kakáček-600932155",
+        "trackingId": "FVk85AE+SbyPPP7m/LE8EA==",
+        "profileId": "ACoAACVVv-ABBPpXhbqckg-PcY0JWFS7mETb9TE",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHKu2ZXuCENBQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1608228563766?e=1781136000&v=beta&t=LrVJY-PSJwoXr5xEYiDxfd0rSoQlJvGYJVhWg35IcnM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF0wKB4rBTaQA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1734626725998?e=1781136000&v=beta&t=A-Un3p957TBub26rH6a0CV9c4MkcX1s-yUnHCyFeCM8"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Kolář",
+        "occupation": "Začínající pythonista hledajíc pozici testera",
+        "id": "769085975",
+        "publicId": "jakub-kolář-a9b694195",
+        "trackingId": "ssA6FPVVRY+B+xRIzugG8Q==",
+        "profileId": "ACoAAC3XUhcBE9w6SJDFPqzTssjeyje_9WnsHjU",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGTuUl_ymLfsQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1643603981224?e=1781136000&v=beta&t=6AI8zMUERgkv7tYY0oCXSO9VEVgmQxkcMBUm4cLyOis",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQH4qG0X9EOsWw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1643785461911?e=1781136000&v=beta&t=MoCanN0Hg7c0JNTIQWUH8vEhMBlAUAM85YULcxSWIkY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Zdeňka",
+        "lastName": "Krejčíková",
+        "occupation": "Talent Manager | Mentor | Recruiterka roku 2018 | @ Taste 👩‍🍳 | Agentura roku 2025 🏆 WebTop100 | Máme recept na značky, pod které se budete chtít podepsat ✍️",
+        "id": "86715169",
+        "publicId": "zdenka-krejcikova",
+        "trackingId": "5umkoAgpRS2MqlGu2us14g==",
+        "profileId": "ACoAAAUrKyEBkRbuq3IllAO7gynSpw-WYHjz2K8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQEF79reKAUz7A/profile-framedphoto-shrink_800_800/B4DZ3yJ4YlH0Ag-/0/1777884170002?e=1780430400&v=beta&t=r5bElD5CvDxqLmeWsAHYzQXH2z5Y9kScDGleMGZtnoI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEaLY5E0r9EPQ/profile-displaybackgroundimage-shrink_350_1400/B4EZYZbniQGgAY-/0/1744183392778?e=1781136000&v=beta&t=N9JDhItjVvXW80ogmkm1aWwRypNGyfDcbtoQCxTJPeU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Holomek",
+        "occupation": "Breaking things safely so production doesn’t have to.",
+        "id": "950609242",
+        "publicId": "martin-holomek-10a435226",
+        "trackingId": "Kx912d2oR5WaFbQzUurdAw==",
+        "profileId": "ACoAADipJVoBUKy1-ggmu1NEjjtKbSmjY5ujyrk",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE8DGgJxIO86w/profile-displayphoto-crop_800_800/B4DZkWMFqEGQAM-/0/1757013893676?e=1781136000&v=beta&t=6aeHSGO6Pm_GFNY9QwdmTRNT4SQSlaFVL_weIrmOILQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGKK5WWTenbag/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1729703770841?e=1781136000&v=beta&t=qa8WqiyiYAhYzw0W5gwedtWFQnMBIXkxDdSnf-CGbKg"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 31,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "s4oDkGE8TVuBhpCIrkzNfQ==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1643882900074,
+  "postedAtISO": "2022-02-03T10:08:20.074Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

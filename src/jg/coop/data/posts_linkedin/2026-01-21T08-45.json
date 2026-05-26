@@ -1,0 +1,295 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/D4D22AQGf-74ISj21TA/feedshare-image-high-res/B4DZvfu0wbJwAU-/0/1768985152810?e=1781136000&v=beta&t=8_fY1SkZQHw8M6X2-64aJ5TLON4hpnnMyqoGubT6AiE"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:7419661507560554497",
+  "url": "https://www.linkedin.com/posts/honzajavorek_pro%C4%8D-program%C3%A1to%C5%99i-ka%C5%A1lou-na-testy-kdybych-activity-7419661507560554497-vn7H?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAER_BBABGhA9dGZybaazDxY9GE7jgGPFMtc",
+  "timeSincePosted": "4mo",
+  "shareUrn": "urn:li:share:7419661506268733440",
+  "text": "Proč programátoři kašlou na testy?\n\nKdybych měl na tu otázku odpovědět já, tak se profesorsky zamyslím, jak jde vůbec kašlat na testy v době, kdy jsou skoro tím jediným, co má smysl psát?\n\nHezky ručně a exaktně vyspecifikuju, co má program dělat, a implementaci pak snadno doplní AI coding agent.\n\nAle asi všichni víme, jak to je, že 🙃\n\nÚplně vás teď slyším: „Hezky dolů na zem, Honzo, snes se z obláčků čisté teorie k nám, běžným smrtelníkům!”\n\nNo jo, no jo! Však i v mojem kódu je hromada chybějících testů, a zrovna včera jsem AI agentovi psal „add unit tests for function parse_interests()” 😅\n\nTakže mlčím a počkám si, s čím přijde příští týden v úterý 27.1. Artem Zakharchenko, a jestli mou morálku přiblíží těm zářným ideálům 🌤️\n\nA hlavně co naučí juniory, protože ti by se to s pomocí téhle přednášky mohli naučit rovnou správně, což?\n\nPrý probereme nejčastější příčiny, které lidem brání kvalitně testovat: od strachů a mylných představ, až po technické znalosti a konkrétní knihovny.\n\nS Artemem jsme se kdysi potkali jako kolegové v Oracle (v ex-Apiary týmu), kde jsme společně pracovali právě na nástrojích pro testování API. Od té doby jenom čumím, jak jeho hvězda stoupá:\n\n👉 Jeho open source nástroj Mock Service Worker je průmyslovým standardem na mockování APIček v JavaScriptu a používají jej i v největších technologických firmách (Microsoft, Google, AWS, Netflix, Vercel, Uber, Spotify…)\n \n👉 Jeho naming-cheatsheet má na GitHubu 14.2 tisíc hvězdiček od lidí z celého světa\n\n👉 Napsal a pod pseudonymem Zak Archer vydal svou vlastní knihu Loggerheads\n\nArtema jste mohli vidět vloni na konferenci FrontKon, kam jej pro Frontendisti do programu ulovil Libor Vanek. Jeho přednáška tam měla super ohlasy.\n\nNo a v úterý v 18:00 jej můžete vidět na našem klubovém Discordu 🤩 Všechno o našich akcích a návod, jak se na ně dostat, najdete na junior.guru/events Budu se těšit!\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 663,
+      "length": 18,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Artem",
+        "lastName": "Zakharchenko",
+        "occupation": "Software engineer & Educator",
+        "id": "479400907",
+        "publicId": "artem-zakharchenko",
+        "trackingId": "7Wwl3cRBSTub8ar1wlyXog==",
+        "profileId": "ACoAAByTE8sBD2jc0LWL1WTudVD1bG_e2hh-aG0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF-hSQj-qsA5w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728499335925?e=1781136000&v=beta&t=DnxNdGCcFNNgl0J9uKxfWq1s6WkzWp96anGK_QIKHz8"
+      }
+    },
+    {
+      "start": 1042,
+      "length": 6,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Oracle",
+        "universalName": "oracle",
+        "trackingId": "tKBYUL63RfOCRVvRiva6Lg==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:1028",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHYCgYovUuPtQ/company-logo_400_400/company-logo_400_400/0/1665755678957/oracle_logo?e=1781136000&v=beta&t=4wnWwKz_J8m2_FjPsY7FWQWDZxC19ni_zqbCGQ318To"
+      }
+    },
+    {
+      "start": 1055,
+      "length": 6,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Apiary",
+        "universalName": "apiary-io",
+        "trackingId": "MUm56/G/QNqZyZtqUfGynw==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:2222917",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C510BAQFI21EUA7GJ6A/company-logo_400_400/company-logo_400_400/0/1631366971638?e=1781136000&v=beta&t=yIIP1Slw8ERtDiri0JTTm_jSo59XixRW7-jL2Z3SpSQ"
+      }
+    },
+    {
+      "start": 1633,
+      "length": 12,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Frontendisti",
+        "universalName": "frontendisti",
+        "trackingId": "9Vmshg4aRDOpHpQHsObAcA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:26270417",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHfPYqav3sN1w/company-logo_400_400/B4EZpJsmiXKgAY-/0/1762173020690/frontendisti_logo?e=1781136000&v=beta&t=8UwVjElEbfqWVbac3iNkc1HS0lwMBI-P-zII7vKwsfw"
+      }
+    },
+    {
+      "start": 1665,
+      "length": 11,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Libor",
+        "lastName": "Vanek",
+        "occupation": "The World Wide Web fan. VP of Product Development at CDN77",
+        "id": "104835993",
+        "publicId": "liborvanekcz",
+        "trackingId": "7wmuP5X7SxaW9snw2pG3xA==",
+        "profileId": "ACoAAAY_q5kBQdAJDN6Xu2XxpQJesfuiElysKTQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHZ-8agj_w7aQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1732277487681?e=1781136000&v=beta&t=BYTPk1mgKlzo-ylUNTIlrkFVq_8Yl-oOw8tDwtzGlEI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQG0nWlxR-W87w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1528449639174?e=1781136000&v=beta&t=aBo-cwvgXeE20ciGhm21tl9_wpa3sLadk4M_pMRxrUA"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1769011835082,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7419661507560554497?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7419661507560554497%2C7419773415928254464%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287419773415928254464%2Curn%3Ali%3Aactivity%3A7419661507560554497%29",
+      "text": "Protože asi ještě nikdy nerefaktorovali kód po kolegovi, kterej už není ve firmě... :)))",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Radek",
+        "lastName": "Holý",
+        "occupation": "QA Engineer & IT Administrator | Open to work | Senior Developer Background | 20+ years in IT",
+        "id": "56523553",
+        "publicId": "jmenemradek",
+        "trackingId": "5w+Pw+AMT8uf6i0NXsJkmA==",
+        "profileId": "ACoAAANeeyEB64ERPMylSJEByw6iLTk9SWwioOE",
+        "picture": "https://media.licdn.com/dms/image/v2/D5635AQH1VVUtBxv3Ag/profile-framedphoto-shrink_800_800/B56Z5G87eDGYAk-/0/1779306838160?e=1780430400&v=beta&t=JpnfAAV94oWjR3NS4LDSZe1c8Eenx5wzfxV-EOQ44k0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFT9pxgxHoTxQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1627121226991?e=1781136000&v=beta&t=f1vuxVYcu77a5Yy_fpigtUs9qDEjptMeesjkRy_WiF4",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1769001004035,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7419661507560554497?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7419661507560554497%2C7419727987224481793%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287419727987224481793%2Curn%3Ali%3Aactivity%3A7419661507560554497%29",
+      "text": "Neřekl bych úplně, že vývojáři kašlou na testy. Ale chápu tu nadsázku a stoprocentně souhlasím, že naučit se psát testy správně je fakt těžké. A na tomhle poli dělá Artem spoustu důležité práce. Ať už jde o MSW, nebo kurzy testování na Epic dev. A málokdo tomu tak dobře rozumí, jako on – zkuste se ho zeptat na quirks v API Playwrightu a uvidíte. Skvělá volba.\n",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Libor",
+        "lastName": "Vanek",
+        "occupation": "The World Wide Web fan. VP of Product Development at CDN77",
+        "id": "104835993",
+        "publicId": "liborvanekcz",
+        "trackingId": "PnxbqTWxROexpnk42oMEIw==",
+        "profileId": "ACoAAAY_q5kBQdAJDN6Xu2XxpQJesfuiElysKTQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHZ-8agj_w7aQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1732277487681?e=1781136000&v=beta&t=BYTPk1mgKlzo-ylUNTIlrkFVq_8Yl-oOw8tDwtzGlEI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQG0nWlxR-W87w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1528449639174?e=1781136000&v=beta&t=aBo-cwvgXeE20ciGhm21tl9_wpa3sLadk4M_pMRxrUA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jaroslav",
+        "lastName": "Veselý",
+        "occupation": "Test Engineer at Tesena. Co neumím, to se rád doučím. Fotograf, kuchař, šermíř, zdravotník, pivovarník. Cogito, ergo armatus sum.",
+        "id": "1279583682",
+        "publicId": "jarovesel",
+        "trackingId": "PfsVVKYDRFWEYPe5zarXIg==",
+        "profileId": "ACoAAExE5cIBl3lcy4FDfslnw7_G9LNTX4sAsUI",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEn8kq4j3-ZVw/profile-displayphoto-crop_800_800/B4DZlMPGGUIEAI-/0/1757920650281?e=1781136000&v=beta&t=YHud3IBM9ScHHrdKjvzRBd3UJZFZis2sk86l0IQHnO4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH5EXS_28-G9g/profile-displaybackgroundimage-shrink_350_1400/B4DZVH7tnyHYAc-/0/1740668590934?e=1781136000&v=beta&t=Yd3uCZW8Ud1gNLIphTn-A2eTZcNXZ1QmtBmwjv2PcSc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Kodada",
+        "occupation": "Tech Writer | Team Lead | Developer",
+        "id": "571830630",
+        "publicId": "martin-kodada",
+        "trackingId": "uM5zdq4QRBuybTI8aeyzTQ==",
+        "profileId": "ACoAACIVcWYBadjcDjWNopXivbMeb-KzmafZb5U",
+        "picture": "https://media.licdn.com/dms/image/v2/D5635AQGXW0U7XhrOLA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1660002772504?e=1780430400&v=beta&t=v22RqlMgRS7YScN5sBsUHO0Ww5TuKTAYClQDy0LF03w"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Radek",
+        "lastName": "Žilka",
+        "occupation": "--",
+        "id": "950233530",
+        "publicId": "radek-žilka-7b6293226",
+        "trackingId": "JglXz2H1SlO2xUmP7pfZdQ==",
+        "profileId": "ACoAADijaboB9UPOK3vwYAPXZlbZTTvT6lJqX80",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQFNzo_WMkId3w/profile-framedphoto-shrink_800_800/B4DZv5kSKgJ0Ak-/0/1769418597408?e=1780430400&v=beta&t=HNEaLFypjIIIONly0Q29dWY29_DFqpoTUisRWPYpisw"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Šotnar",
+        "occupation": "Frontend Developer Trainee | JavaScript, TypeScript, React",
+        "id": "1332351529",
+        "publicId": "sotnar",
+        "trackingId": "+lZSnx2ASwCSGmvoQ4YQEQ==",
+        "profileId": "ACoAAE9qEikBy98vuvk8guHa2u80sek2g2OsTAg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQG3qBSJlgIxPg/profile-displayphoto-shrink_800_800/B4DZZuc6SJGsAg-/0/1745609795119?e=1781136000&v=beta&t=5ZFMG5FUW-5kixb_Pv4IUuIg9xopBonE30IK3X2vlcw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFo0eIBRa-g5g/profile-displaybackgroundimage-shrink_350_1400/B4EZgYSXwvGwAo-/0/1752754127031?e=1781136000&v=beta&t=Q5Ucp8jzqpgYHx39qITWv0VhmXm7VyEoXpgMsAlqizw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Čamborová",
+        "occupation": "Frontend developer",
+        "id": "1082522617",
+        "publicId": "veronika-čamborová",
+        "trackingId": "tviZwpCETO607L3lNqThcg==",
+        "profileId": "ACoAAECF-_kB69byXoaMHs_qzffiv1hqdN_aZ0U",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFUjZU0TnIoDA/profile-displayphoto-crop_800_800/B4EZjiUS3QIQAI-/0/1756143629052?e=1781136000&v=beta&t=Vgp7eKeI7po7f5wp-stiue0AiSNunEMeSGoT97xMD6E",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFxWpb5YjUyXg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1719347690741?e=1781136000&v=beta&t=4W3hjSrkexs3xxWQhO40-vgepTrcUhV01AfgDioP2t4"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Irena",
+        "lastName": "Zatloukalova",
+        "occupation": "empowering #autisticTalent in Tech 🚀 | Guiding your communication for change | Systemic coaching",
+        "id": "99891449",
+        "publicId": "izatlouk",
+        "trackingId": "w2lgzuehTfaa0lX31c4+KA==",
+        "profileId": "ACoAAAX0OPkBzZjVvVi08LqhaKA5UMdVz4M5inM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEX7QmSSoFSMg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1635789075087?e=1781136000&v=beta&t=gNSbihMMlaQdd_0sP2m4nmd_njYG4j06DobLSgnjIEM"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "company": {
+        "name": "Frontendisti",
+        "universalName": "frontendisti",
+        "trackingId": "8Wf4gXq9RJG5AX38x75lRw==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:26270417",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHfPYqav3sN1w/company-logo_400_400/B4EZpJsmiXKgAY-/0/1762173020690/frontendisti_logo?e=1781136000&v=beta&t=8UwVjElEbfqWVbac3iNkc1HS0lwMBI-P-zII7vKwsfw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Vokounova",
+        "occupation": "QA Engineer | Manual & Automation Testing | Junior Web Developer",
+        "id": "907111856",
+        "publicId": "veronika-vokounova",
+        "trackingId": "x/6qtIaeS9Kq6EPQT9A+ew==",
+        "profileId": "ACoAADYRbbABUuFMe_f5HfSLdlU5D5-s5Novojs",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGtcLoHtYqXzg/profile-displayphoto-crop_800_800/B4EZj7AZD9GYAI-/0/1756557843086?e=1781136000&v=beta&t=x8sSioAepZXuafhD_DEdsSx10ldRcN2m4aDtVFOagqs",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQF8PWomC7J2SQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1644270133191?e=1781136000&v=beta&t=don6hNYGb5KYlBdoKdnekODfJ6v8UIfw-vg9Nmib7Qo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daniel",
+        "lastName": "Rozehnal",
+        "occupation": "Software engineering student at FI MUNI.",
+        "id": "731425708",
+        "publicId": "daniel-rozehnal-924b52184",
+        "trackingId": "NJ21WmvaS/+TmBL86eskUQ==",
+        "profileId": "ACoAACuYq6wBw_NUyA50V0fvku83SMXkgexoGa8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH6BzN9AcUCqw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1687462673185?e=1781136000&v=beta&t=CcZtGbxzcjtE3ICu9xz1ywNt_uzrOhlHHeL4p4nax_k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Mika",
+        "occupation": "Svelte / SvelteKit programmer",
+        "id": "201993138",
+        "publicId": "mikajiri",
+        "trackingId": "feAsLE1TRmCTYtqx9zgIgg==",
+        "profileId": "ACoAAAwKK7IB9HsR-JZfUUICoMdrEtH9baNJ79k",
+        "picture": "https://media.licdn.com/dms/image/v2/C5103AQHwQ5xZEiRlkQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516987900142?e=1781136000&v=beta&t=aO6xEibtb721WENKRY3vyMaGBCwQj_0dYyHWg2CtsGc",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5116AQH_kWWzIwHcqw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516987900390?e=1781136000&v=beta&t=aXyqGbCnY4dLBauEB81oImoOQH6ylM5BbwkG70zCwLQ"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 21,
+  "numComments": 4,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "ev6iCo4+RxG/mk/FcONH4w==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1768985154047,
+  "postedAtISO": "2026-01-21T08:45:54.047Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

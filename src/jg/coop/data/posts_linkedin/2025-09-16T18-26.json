@@ -1,0 +1,311 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/D5622AQFH5Vni2rbZTQ/feedshare-image-high-res/B56ZlS8lmiKMAo-/0/1758033239573?e=1781136000&v=beta&t=vV9cYU41fe9448Wt_85cOhxnyi5-NlDoPZYZFNZWudg"
+  ],
+  "isActivity": true,
+  "activityDescription": "Honza Javorek reposted this",
+  "activityOfUser": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "lVUVf/O6TGCGllozx+Jl8w==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "urn": "urn:li:activity:7373784266603646976",
+  "url": "https://www.linkedin.com/posts/citizenmani_europython-europython2025-beginner-activity-7373725856571121664-e1eI?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAADVqL6ABuhGEisVhkg1t_SbJfTWFU5e0hQE",
+  "timeSincePosted": "8mo",
+  "shareUrn": "urn:li:share:7373725853844717568",
+  "text": "A little late to post this 😊. I was part of the EuroPython Beginners' Day Unconference held at Prague. I joined the panel discussion on “From Junior to Senior.”\nThanks to Daria Linhart Grudzien and Honza Javorek for the invitation and for organizing a wonderful event.\nIt was great to share the stage with Gábor Ambrózy who is Tech leader and a pro in public speaking / panel discussions. Thanks again to Daria Linhart Grudzien for moderating and steering the discussion.\nWe spoke about real world scenarios of climbing the ladder from Junior to Senior and shared honest thoughts. The audience was amazing. Many of them were self-taught and about to start their programming journey.\nI believe more such events like this should happen. They inspire and guide beginners, juniors 🚀. I wish I had such events when I was a beginner !\n\n#europython #europython2025 #beginner #developer #programmer",
+  "attributes": [
+    {
+      "start": 48,
+      "length": 10,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "EuroPython",
+        "universalName": "europython",
+        "trackingId": "ws3WoYa5RnO9ezKuYGksaA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:41130723",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQGz6u5D6KYABg/company-logo_400_400/B4DZxWmNTUJwAY-/0/1770979382977/europython_logo?e=1781136000&v=beta&t=pwjOEJznkhOEXcURlj3q2Nvk3DG-RH4f9owboCBcCU0"
+      }
+    },
+    {
+      "start": 171,
+      "length": 22,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Daria",
+        "lastName": "Linhart Grudzien",
+        "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
+        "id": "183293578",
+        "publicId": "dariagru",
+        "trackingId": "7rAO5uEQQSybNxPXw7EtnQ==",
+        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+      }
+    },
+    {
+      "start": 198,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "sYLf0vkNQtCy2NOxYT3EsQ==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+      }
+    },
+    {
+      "start": 306,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Gábor",
+        "lastName": "Ambrózy",
+        "occupation": "EMEA Support Manager & Site Leader Hungary at Liferay",
+        "id": "11412051",
+        "publicId": "gaborambrozy",
+        "trackingId": "XWFWaVsYRsmDjdOuiDVIAg==",
+        "profileId": "ACoAAACuIlMB6V91E2LszGw_-IeVnuFmwG5Y9Ig",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQG0WMvWy5DqIQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1670317906661?e=1781136000&v=beta&t=HvY0ID4OrasadbAzI8U9XPWOXcToE3jZLgya-HFZ9ow"
+      }
+    },
+    {
+      "start": 405,
+      "length": 22,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Daria",
+        "lastName": "Linhart Grudzien",
+        "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
+        "id": "183293578",
+        "publicId": "dariagru",
+        "trackingId": "7rAO5uEQQSybNxPXw7EtnQ==",
+        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1758047263492,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7373725856571121664?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7373725856571121664%2C7373784669450039296%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287373784669450039296%2Curn%3Ali%3Aactivity%3A7373725856571121664%29",
+      "text": "Thank you for sharing the word and for participating! I really liked what you had to say. The day wouldn't be the same without you and your insights.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "English",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "lVUVf/O6TGCGllozx+Jl8w==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1758041453758,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7373725856571121664?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7373725856571121664%2C7373760301659459584%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287373760301659459584%2Curn%3Ali%3Aactivity%3A7373725856571121664%29",
+      "text": "Awesome Mani! Brings me joy to see you to continue to spread your knowledge 🙏",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "English",
+      "author": {
+        "firstName": "Jason",
+        "lastName": "Riedel",
+        "occupation": "Platform Architecture & Cloud @ PayPal",
+        "id": "3027538",
+        "publicId": "jasonariedel",
+        "trackingId": "GbPfN5trQxe1JGU5H4kEaQ==",
+        "profileId": "ACoAAAAuMlIBW1DqyjdGopKhJmTKDMGWK9CXQQQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQF_ZB3lib5ThQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1730753262912?e=1781136000&v=beta&t=1WI8Rw55MrplWskHEoFqqs6oTFV0SbGskH3MbhToaVU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQFVvA2yJTnJgg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1685000035201?e=1781136000&v=beta&t=ESweQ76_XxNreyu1vJVbmRVkCVqoArwRojUsChXMY1c",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Jürgen",
+        "lastName": "Gmach",
+        "occupation": "Python expert - Maintainer of critical Open Source Projects - Regular Conference Speaker - Fellow of the Python Software Foundation - Engineering Manager at Canonical",
+        "id": "950420620",
+        "publicId": "jürgen-gmach-b24363226",
+        "trackingId": "kThgi20gTc+vUdWS5ty1Ug==",
+        "profileId": "ACoAADimRIwByFj38S9OhwrNXmDglCgUUKuXk5E",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEfbJlT2ssU9g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1653935555494?e=1781136000&v=beta&t=oQROfOtuFqggoBjeU5owM-YnX6Dnj5yfNglsYvxFKZY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF_ZKA1rg45nA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1683700212736?e=1781136000&v=beta&t=2uU3Wottbdvh43lrxgjiwBnILpjoCRBidueidHFScx4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Domitil",
+        "lastName": "Katemo",
+        "occupation": "Business Administrator | 3+ years in administration, marketing & customer service | Skilled in project coordination & process improvement",
+        "id": "525351228",
+        "publicId": "domitil-katemo-850b32127",
+        "trackingId": "nlZmDeZ6QPmoVlhqxVkZ/w==",
+        "profileId": "ACoAAB9QOTwBjYo-pyQWuo9wx4mjFG9_olxX9_w",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQF2thtGX-TWJw/profile-framedphoto-shrink_800_800/B4DZyG41szJkAg-/0/1771789573559?e=1780430400&v=beta&t=edCNW0Xp2QsHGzEq5tuKBIrFtTAiO9pKuO8MdPuo_Lk",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGvlgCVKL_gfA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1690930951851?e=1781136000&v=beta&t=egWwtJU0YVsPFZdf3v1spQIdxEjONh7RDDObx3aSJlw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Arshitha",
+        "lastName": "Karthikeyan",
+        "occupation": "Communication Specialist | SSM - Certified SAFe 6.0 Scrum Master",
+        "id": "880614825",
+        "publicId": "arshitha-karthikeyan-089abb206",
+        "trackingId": "IX1K1Kj6RGOWDaOBO4/mcQ==",
+        "profileId": "ACoAADR9HakB5fvgJkd93u4c8N5Rj8tG72HwB6o",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQGYE6EeWUAtcw/profile-displayphoto-crop_800_800/B56Zev99HuHQAM-/0/1751003944459?e=1781136000&v=beta&t=2dSzkl0hE6LHMBB-UfvgO-hes1V6Ri4pmF2jESefIRg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQESWxP3TNAGxA/profile-displaybackgroundimage-shrink_350_1400/B56Zev8a9RHEAY-/0/1751003542298?e=1781136000&v=beta&t=1awm3iOWGLIXTeC_lenmtt3Q8nHlZ0SeOd2u2yZuV5g"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "sathishkumar",
+        "lastName": "nagarajan",
+        "occupation": "Technology Specialist @ UST | Oracle Service Bus | Oracle SOA| Oracle Business Rules| Oracle BPM | ServiceNow Certified CSA",
+        "id": "232141180",
+        "publicId": "sathishkumar-nagarajan-b648b065",
+        "trackingId": "JolML6AVRhKy9sOZhucCqg==",
+        "profileId": "ACoAAA3WMXwB861uRGZ1IOm2ar41_hV7ofxLW9I"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Alena",
+        "lastName": "Ulrichova",
+        "occupation": "Business Analyst | EU-Funded Projects (Interreg, Erasmus+) & IT Delivery | Finance, Compliance, Agile",
+        "id": "603952437",
+        "publicId": "alena-ulrichova-61931914a",
+        "trackingId": "YG6lZa4zS1WsFTc4H3NUoQ==",
+        "profileId": "ACoAACP_lTUBzPoSMxsiO9fl1aC-lmUSRGDB77c",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEgnseS5zYgDA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1535582388740?e=1781136000&v=beta&t=NfyYwssyR4jIiW2IhtsuIfTa3s2myKPTDmXQ-ZbR8l8",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQHhKqu3DdvKzQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1527203152341?e=1781136000&v=beta&t=oqcxnMcMJGfdHyebphEEcbqsItcA08a0S7uOCOkg4h4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Hitendra",
+        "lastName": "Shukla",
+        "occupation": "Senior Software Engineer @ Uber | Ex-Nvidia, PayPal",
+        "id": "283581572",
+        "publicId": "hitendra-shukla-858b797a",
+        "trackingId": "ztEeE6MORH6LP5VFf51RXQ==",
+        "profileId": "ACoAABDnHIQBbYwJfzR7TLg5ME245jFpNfiuXiE",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQH39ni9sFyMUg/profile-displayphoto-shrink_800_800/B56ZSOgrGyGsAc-/0/1737557733598?e=1781136000&v=beta&t=x49W3O7zgr_pFZ3PGD7uuuRalqvdau5QIlPezYKeUT8",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGecaBaNdwzVQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1642035753737?e=1781136000&v=beta&t=3c6Sx3FN_gAGk_FTWXEsefFZY_Ln411KjFTcg5FrHX8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jayachandran",
+        "lastName": "Natarajan",
+        "occupation": "Engineering Manager at PayPal",
+        "id": "42178192",
+        "publicId": "njayachandran",
+        "trackingId": "drAPWEbcTVWkI1iuVXm3Bg==",
+        "profileId": "ACoAAAKDlpABW4uThfmewk7esfvfyc2FJoGoiY4",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQGbOO2jVbG64w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1681456377643?e=1781136000&v=beta&t=trtZEp9myjkcoQBd0jLrSTVK81a11om93LPU_jZJhT0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Praveen",
+        "lastName": "Ponnuswamy  ",
+        "occupation": "Supply Chain Specialist at Mevotech LP",
+        "id": "305734039",
+        "publicId": "praveen-ponnuswamy-50748186",
+        "trackingId": "qVcT3s53TBS2POHVoYOxRA==",
+        "profileId": "ACoAABI5IZcB6TaEzKt16eMMOAt0Pi0EjEoVRis",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHS_-dI7U5vZg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1625014928482?e=1781136000&v=beta&t=QIIjbGx6bYA1bgvVpeobQUJlHsmWm3nk66aGrAzoku0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQHGgZFkkVLJlQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1582207148837?e=1781136000&v=beta&t=JVCFmfv22oUDK3i5tvdPrFunTC1areTIU0NhQcWozUs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Sriganesh",
+        "lastName": "N.",
+        "occupation": "Growth",
+        "id": "230792435",
+        "publicId": "sriganeshnk",
+        "trackingId": "t2w1mrM0Qdm79Gf8s1RCpA==",
+        "profileId": "ACoAAA3BnPMBGWmHNxiqC6JnCbuSpIm-zzFnG2I",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQELAxsKy0dWPQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1579497499140?e=1781136000&v=beta&t=WJkoxOa2pECuV-aeEVMJb1fHPxBd4pC6Wr5OlYVME3M",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQFfGvq1rKBsDw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517619129579?e=1781136000&v=beta&t=kGXTt8-o3e0-R_HONkiVIRbDrtCr_vPg2jPoG7Wlx-Y"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Gábor",
+        "lastName": "Ambrózy",
+        "occupation": "EMEA Support Manager & Site Leader Hungary at Liferay",
+        "id": "11412051",
+        "publicId": "gaborambrozy",
+        "trackingId": "XWFWaVsYRsmDjdOuiDVIAg==",
+        "profileId": "ACoAAACuIlMB6V91E2LszGw_-IeVnuFmwG5Y9Ig",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQG0WMvWy5DqIQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1670317906661?e=1781136000&v=beta&t=HvY0ID4OrasadbAzI8U9XPWOXcToE3jZLgya-HFZ9ow"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 30,
+  "numComments": 5,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Manivannan",
+    "lastName": "Selvaraj",
+    "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
+    "id": "13167565",
+    "publicId": "citizenmani",
+    "trackingId": "xde+GRwkQ6eGKaEy1D2RtQ==",
+    "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ",
+    "picture": "https://media.licdn.com/dms/image/v2/D5603AQEqC5x0akFu1Q/profile-displayphoto-crop_800_800/B56ZlSvDmfIAAM-/0/1758029692620?e=1781136000&v=beta&t=2MjEAUEFd1OccqmtlnzcSzG2gHUquLzw5MI-3XUUfOM",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHZC49bFZ8ZTQ/profile-displaybackgroundimage-shrink_350_1400/B56ZxDZv79KIAY-/0/1770657351768?e=1781136000&v=beta&t=kVGPoYvqmMzYICMmu_0FODKNvqUNjsGRcvULLqy01EA"
+  },
+  "authorProfileId": "citizenmani",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D5603AQEqC5x0akFu1Q/profile-displayphoto-crop_800_800/B56ZlSvDmfIAAM-/0/1758029692620?e=1781136000&v=beta&t=2MjEAUEFd1OccqmtlnzcSzG2gHUquLzw5MI-3XUUfOM",
+  "authorType": "Person",
+  "authorName": "Manivannan Selvaraj",
+  "authorProfileUrl": "https://www.linkedin.com/in/citizenmani?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ",
+  "authorUrn": "urn:li:member:13167565",
+  "postedAtTimestamp": 1758047167445,
+  "postedAtISO": "2025-09-16T18:26:07.445Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

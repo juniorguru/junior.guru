@@ -1,0 +1,189 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "type": "article",
+    "article": {
+      "type": "EXTERNAL_FULL",
+      "urn": "urn:li:article:7208959774482488619",
+      "url": "https://blog.zvestov.cz/software%20development/2020/09/21/prirucka-o-hledani-prvni-prace-v-it.html?utm_source=linkedin",
+      "title": "Příručka o hledání první práce v IT"
+    },
+    "isActivity": false,
+    "urn": "urn:li:activity:6714055671505055744",
+    "url": "https://www.linkedin.com/posts/lubosracansky_p%C5%99%C3%ADru%C4%8Dka-o-hled%C3%A1n%C3%AD-prvn%C3%AD-pr%C3%A1ce-v-it-activity-6714055671505055744-Go1R?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAACV_bv4Bk5ERfS1sLjiBOKctm-e1auj5DDg",
+    "timeSincePosted": "5yr",
+    "shareUrn": "urn:li:share:6714055670859141120",
+    "text": "Spíš než recenzi skvělé Příručky o hledání první práce v IT od Honza Javorek jsem si sepsal myšlenky, které mě při četbě napadaly.",
+    "attributes": [
+      {
+        "start": 63,
+        "length": 13,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "trackingId": "jJ5xXtW1QWqcfSmdSyK9+g==",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+        }
+      }
+    ],
+    "comments": [],
+    "reactions": [
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Šárka",
+          "lastName": "Tauerová",
+          "occupation": "SW Test Engineer",
+          "id": "395772069",
+          "publicId": "sarka-tauerova",
+          "trackingId": "aiNPr2AQSrWC8M6cBw+6Gg==",
+          "profileId": "ACoAABeXAKUB7BlQTF3tWtqheTWljNpbWaP5ikw",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFU7HiHu8oDLw/profile-displayphoto-crop_800_800/B4EZgOcjbWGcAI-/0/1752589023505?e=1781136000&v=beta&t=Ha4fQujefDTp4IQfN_gdTgA4h_4bNb2Wd1i3Vf_4W54"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Jan",
+          "lastName": "Hlincik",
+          "occupation": "Managing Director @ Freelance .NET Developer | .NET Enthusiast",
+          "id": "126179173",
+          "publicId": "janhlincik",
+          "trackingId": "wc4ZISKISFKMROnN2nonwQ==",
+          "profileId": "ACoAAAeFV2UBHpoBLyDCs_-oHily1LSHX75-3FU",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFz0yE0sQ33Zg/profile-displayphoto-shrink_800_800/B4EZcamXmgH0Ac-/0/1748497956208?e=1781136000&v=beta&t=8KWHYHvL-6cXEU_vZZuajRo9z2nCCi2l7IZr4IGpTJg",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQEReGOCsqcDyg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1556609640405?e=1781136000&v=beta&t=yNG9odPHRp4Ad200rg4BABVj1eJnkgfGmtPiUjI0ilA"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "trackingId": "jJ5xXtW1QWqcfSmdSyK9+g==",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+        }
+      }
+    ],
+    "numShares": 1,
+    "numLikes": 3,
+    "numComments": 0,
+    "canReact": true,
+    "canPostComments": true,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "ALL",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "firstName": "Luboš",
+      "lastName": "Račanský",
+      "occupation": "Certified Java & Spring Programmer, Code Club Lector, Scout Leader",
+      "id": "20334410",
+      "publicId": "lubosracansky",
+      "trackingId": "UdP4pAfdRRKuzRCgTu+72Q==",
+      "profileId": "ACoAAAE2R0oBGXvR6LHbw738r7LTmMdhWnyymsU",
+      "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGAKqeF_cVJoA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1684758724981?e=1781136000&v=beta&t=UULINccTo51CdEZyus_aXI4scNPpOR_xkWAJLYmJNJ4",
+      "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG5fpDeDsBaDA/profile-displaybackgroundimage-shrink_350_1400/B4EZkOdYN3IQAY-/0/1756884209852?e=1781136000&v=beta&t=LB4bSuSgN0Kc-dyNmh4Zen74TJK4k4h0TkkNwGiAzZQ"
+    },
+    "authorProfileId": "lubosracansky",
+    "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4E03AQGAKqeF_cVJoA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1684758724981?e=1781136000&v=beta&t=UULINccTo51CdEZyus_aXI4scNPpOR_xkWAJLYmJNJ4",
+    "authorType": "Person",
+    "authorName": "Luboš Račanský",
+    "authorProfileUrl": "https://www.linkedin.com/in/lubosracansky?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAE2R0oBGXvR6LHbw738r7LTmMdhWnyymsU",
+    "authorUrn": "urn:li:member:20334410",
+    "postedAtTimestamp": 1600755613209,
+    "postedAtISO": "2020-09-22T06:20:13.209Z"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6714070290151878656",
+  "url": "https://www.linkedin.com/posts/honzajavorek_p%C5%99%C3%ADru%C4%8Dka-o-hled%C3%A1n%C3%AD-prvn%C3%AD-pr%C3%A1ce-v-it-activity-6714070290151878656-rJVZ?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAACV_bv4Bk5ERfS1sLjiBOKctm-e1auj5DDg",
+  "timeSincePosted": "5yr",
+  "shareUrn": "urn:li:share:6714070289338171392",
+  "text": "Této recenze s komentářem si vážím, díky!",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel Grumpy",
+        "lastName": "Šimerda",
+        "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
+        "id": "551084893",
+        "publicId": "grumpyprogrammer",
+        "trackingId": "IdPS9R8NQKSJxyBMFqUkjA==",
+        "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFnQ8ypdjjyvg/profile-displayphoto-crop_800_800/B4DZxZUZFlHkAI-/0/1771025047361?e=1781136000&v=beta&t=fFiIDptOBoMzbUkj1Lvpd8USzHMX1nkcCCOr19Su_4c"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Erbenova",
+        "occupation": "Application Developer at Barclays",
+        "id": "361531956",
+        "publicId": "lenkaerbenova",
+        "trackingId": "DOa+waKhTYqE4j/mxZXb4A==",
+        "profileId": "ACoAABWMijQBlQzoTAse2JjfcJmbjz4dAQnIsQs",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGi_aPN1DxU3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517030344782?e=1781136000&v=beta&t=boP6IJareKgeZZHEHLF-RgBjxI_GQmpxMacm_Mm8k9c"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petra",
+        "lastName": "Kubita Nulíčková",
+        "occupation": "HR Manager v Pale Fire Capital | Head of HR v Aukro | HR consultant and mentor | #sharingiscaring",
+        "id": "473833031",
+        "publicId": "petranulickova",
+        "trackingId": "utnKNHKrSTOUcOkoPisLRg==",
+        "profileId": "ACoAABw-HkcBifENxX8nxAs2YjwxbI6b2XtAF98",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHnKx1150QjzQ/profile-framedphoto-shrink_400_400/B4DZ5EYkX3J4Ac-/0/1779263751874?e=1780430400&v=beta&t=pWJ51Ntw0jR9QQT0pS0cVga8Y5H1PX6eMgBC8eZYwyo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQExwjEQhQ99TA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1676378924015?e=1781136000&v=beta&t=rpomntKe5fPHScYScrE5n1-ok01d_UuxKpUPUaPI93g"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 3,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "8zs/krHOQ46pAZAEkISTNQ==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1600759098566,
+  "postedAtISO": "2020-09-22T07:18:18.566Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

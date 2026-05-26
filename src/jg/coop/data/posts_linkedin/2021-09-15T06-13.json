@@ -1,0 +1,289 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4E22AQFHQW231whakw/feedshare-shrink_800/feedshare-shrink_800/0/1631686382163?e=1781136000&v=beta&t=WlENPZaVygLF5QJBs13kUr1LxNihmzKlPE1eUnYtxV4"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6843788721234477056",
+  "url": "https://www.linkedin.com/posts/honzajavorek_mezi-firmami-kter%C3%A9-podporuj%C3%AD-klub-https-activity-6843788721234477056-6Iqy?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAE8FJtsBl5yCKIjoQSn3mMf6imalt9bjTls",
+  "timeSincePosted": "4yr",
+  "shareUrn": "urn:li:share:6843788720764710912",
+  "text": "Mezi firmami, které podporují klub https://junior.guru/club/ vítám Credo Ventures! 💰 V klubu můžete už nějakou chvíli potkat Tereza Machackova, která pokukuje po šikovných juniorech a bude jim pomáhat s hledáním práce ve více než 50 startupech, jež má Credo v portfoliu 💁‍♀️",
+  "attributes": [
+    {
+      "start": 67,
+      "length": 14,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Credo Ventures",
+        "universalName": "credo-ventures",
+        "trackingId": "o//+CmGEQt627f+RQxHBqA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:1099444",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQFyebFbuhR5WA/company-logo_400_400/B4DZ0a.5pkIAAY-/0/1774274191276/credo_ventures_logo?e=1781136000&v=beta&t=V_G0008WJB6y3rvjQ7vVJZR2X7x301G8nqpjT1Zzivc"
+      }
+    },
+    {
+      "start": 125,
+      "length": 17,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Tereza",
+        "lastName": "Machackova",
+        "occupation": "tech talent partner (Lovable, Verified, Attio)",
+        "id": "354416659",
+        "publicId": "terkins",
+        "trackingId": "5XuAcKGbTDya8qec9L2S8Q==",
+        "profileId": "ACoAABUf-BMBlxzn1lFEhRmLF2yzFf41AOuOmT0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQH14hM4IH2IbQ/profile-displayphoto-crop_800_800/B4DZxsEe99HwAM-/0/1771339642206?e=1781136000&v=beta&t=ep0ILYwjDXBbS-gvEoQ6Ys0WZIXo2Fmy9lUXtRz-7lY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFLKlJH74qo6Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1696428898365?e=1781136000&v=beta&t=UCGewaxbJXbTqLNfc-lzeJramn4OxEj0cbuKKVO-8LI"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1632859542404,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6843788721234477056?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6843788721234477056%2C6848709310139138048%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286848709310139138048%2Curn%3Ali%3Aactivity%3A6843788721234477056%29",
+      "text": "Krásný! Gratulace 🙌",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Iva",
+        "lastName": "Hrdina Pazderková",
+        "occupation": "Freelance Product & Ops | CX & Systems Thinking | Neuroleadership Coach | Volunteer @ Česko.Digital | Mentor @ Femme Palette",
+        "id": "109919206",
+        "publicId": "ivafingerova",
+        "trackingId": "Ef2L5VzPQAmKEZ8Zug2g+w==",
+        "profileId": "ACoAAAaNO-YB_qQBMliqSDeBayGzCWDVLaMv24w",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEU5LtzZ8xFpg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1647941658383?e=1781136000&v=beta&t=kC-CVuKqpfT6AEhHWHW1Qlvyx2-8Sss3WAJbrA8hVoA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1631691356696,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6843788721234477056?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6843788721234477056%2C6843809584151322625%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286843809584151322625%2Curn%3Ali%3Aactivity%3A6843788721234477056%29",
+      "text": "Máme ze spolupráce obrovskou radost ❤️",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Tereza",
+        "lastName": "Machackova",
+        "occupation": "tech talent partner (Lovable, Verified, Attio)",
+        "id": "354416659",
+        "publicId": "terkins",
+        "trackingId": "2gsWeLMPTti9uENLSuvQfA==",
+        "profileId": "ACoAABUf-BMBlxzn1lFEhRmLF2yzFf41AOuOmT0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQH14hM4IH2IbQ/profile-displayphoto-crop_800_800/B4DZxsEe99HwAM-/0/1771339642206?e=1781136000&v=beta&t=ep0ILYwjDXBbS-gvEoQ6Ys0WZIXo2Fmy9lUXtRz-7lY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFLKlJH74qo6Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1696428898365?e=1781136000&v=beta&t=UCGewaxbJXbTqLNfc-lzeJramn4OxEj0cbuKKVO-8LI",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1631689679534,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6843788721234477056?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6843788721234477056%2C6843802549628227584%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286843802549628227584%2Curn%3Ali%3Aactivity%3A6843788721234477056%29",
+      "text": "Honza Javorek gratuluji!",
+      "entities": [
+        {
+          "start": 0,
+          "length": 13,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Honza",
+            "lastName": "Javorek",
+            "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+            "id": "8517488",
+            "publicId": "honzajavorek",
+            "trackingId": "vGYGmtYESf2VEScguBuimg==",
+            "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+            "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+          }
+        }
+      ],
+      "pinned": false,
+      "author": {
+        "firstName": "Ellie",
+        "lastName": "T.",
+        "occupation": "Implementation specialist - FinTech & Banking, Configuration Manager - FinTech & Banking, Change Control Manager- Research & Science",
+        "id": "400348093",
+        "publicId": "ellietomasova",
+        "trackingId": "vh/rMdIaTuqQM+jhNI7ljw==",
+        "profileId": "ACoAABfc070BhqDEHocQJPrha3hZv5cLky5xk5o",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFl87DfovJqcQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1573640563237?e=1781136000&v=beta&t=WEW0M_ZsIFJLNd-PI5E-WIA4hs9Pb28KQoRJFYiJZPA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Iva",
+        "lastName": "Hrdina Pazderková",
+        "occupation": "Freelance Product & Ops | CX & Systems Thinking | Neuroleadership Coach | Volunteer @ Česko.Digital | Mentor @ Femme Palette",
+        "id": "109919206",
+        "publicId": "ivafingerova",
+        "trackingId": "LISbs6vhQv2ZQR21g+izuQ==",
+        "profileId": "ACoAAAaNO-YB_qQBMliqSDeBayGzCWDVLaMv24w",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEU5LtzZ8xFpg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1647941658383?e=1781136000&v=beta&t=kC-CVuKqpfT6AEhHWHW1Qlvyx2-8Sss3WAJbrA8hVoA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marcela",
+        "lastName": "Kolářová",
+        "occupation": "always looking towards the sky.",
+        "id": "533066414",
+        "publicId": "marcela-kolarova",
+        "trackingId": "lKASvvtMSSWz2A9iLLVPJQ==",
+        "profileId": "ACoAAB_F8q4B0ujb_pcSsF1ggXNuLydPhvSd_so",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFqbWVV1-SvkA/profile-displayphoto-shrink_800_800/B4EZgnfrKDHgAg-/0/1753009272735?e=1781136000&v=beta&t=bnSgqjneqrrzankDj6ca4Z9DyvabGDMFFNvrJ9c67fY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGWORM26pM9dA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1709323928133?e=1781136000&v=beta&t=ipDPzoOxleX7LTU8cxzHxy8In-IAvzhNHATujLt--Y0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Horna",
+        "occupation": "Non-serial technology entrepreneur. Web and mobile development with focus on UI, UX and business metrics.",
+        "id": "3275683",
+        "publicId": "janhorna",
+        "trackingId": "z6YXIGCdRnqfp39WA+pUhA==",
+        "profileId": "ACoAAAAx-6MBn3P8fhgF1qzF0WHEokXeLELdVnk",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFtL6V167W90g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516283496836?e=1781136000&v=beta&t=4fpctiKeApXxaqHP73tXzbfWiccK3d0wUIOGhhTxulM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGxQgFdQElinA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516283502337?e=1781136000&v=beta&t=yrZOLKVofVNIKjBz6Bm1R3noqIqSWl1W8fFQxwlrB_g"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daniel",
+        "lastName": "Rozehnal",
+        "occupation": "Software engineering student at FI MUNI.",
+        "id": "731425708",
+        "publicId": "daniel-rozehnal-924b52184",
+        "trackingId": "aW1XPgJrTt6+iiW/pIvYGg==",
+        "profileId": "ACoAACuYq6wBw_NUyA50V0fvku83SMXkgexoGa8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH6BzN9AcUCqw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1687462673185?e=1781136000&v=beta&t=CcZtGbxzcjtE3ICu9xz1ywNt_uzrOhlHHeL4p4nax_k"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Nikol",
+        "lastName": "Szépe",
+        "occupation": "HR & Talent Consultant | Career Coach & Mentor",
+        "id": "212900139",
+        "publicId": "nikolszepe",
+        "trackingId": "LMaCx2s0QAKr/w07xhzE0Q==",
+        "profileId": "ACoAAAywmSsBIO1uctIpSZw3bxBFp64DTGtwkDo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGWOpK5N4a5CQ/profile-displayphoto-shrink_800_800/B4EZX7VBhlGgAo-/0/1743678348118?e=1781136000&v=beta&t=8r9Cp9znJhjKu0LSANMatf4vvdRgoTPHNKGUp2w7AlY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF4KwDfK9K5Uw/profile-displaybackgroundimage-shrink_350_1400/B4EZXDmlSZHUAY-/0/1742743427936?e=1781136000&v=beta&t=Xh8guYptLlFSxb5obBhGJkXcfkqpsZNwmWQpf3SbYhc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "David",
+        "lastName": "Šabata",
+        "occupation": "CTO at ROI Hunter | Builder 👨‍💻",
+        "id": "248797871",
+        "publicId": "davidsabata",
+        "trackingId": "jtiaBdGDSuOopmlETqj9ow==",
+        "profileId": "ACoAAA7UWq8Btoc0vFwzEX1pZCu-itdn_cNtEcQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQH_HhSNWtWbyQ/profile-displayphoto-crop_800_800/B4DZyu72zaJkAI-/0/1772461458787?e=1781136000&v=beta&t=4RjNUAAkC-nbNQrfWk5MNsxAdvp-Og3EDQhfcQQEMAQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEEl-mxS7ub7A/profile-displaybackgroundimage-shrink_350_1400/B4EZroTjybKkAg-/0/1764834035263?e=1781136000&v=beta&t=vgwLQ0CILq3PpxUb0CFhhFv67Xc2XsY_kFXMMxwZAFk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavla",
+        "lastName": "Bobosikova",
+        "occupation": "Investor, Head of Programs & Community @ Neo",
+        "id": "56216577",
+        "publicId": "pavla-bobosikova",
+        "trackingId": "QQLUD1r8SNSAf6OiXsbA8w==",
+        "profileId": "ACoAAANZzAEBSfoNSL9cdStSoyeGSYjo1ul4MAc",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFbzU6_Nm_ceA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1560952177119?e=1781136000&v=beta&t=wkQGfS6XiBxZd84pDGGiFH1vXv7B-4e0yuLZbRD65M0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQH9nrxdsHqDuA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1540324488170?e=1781136000&v=beta&t=Y7NJX2Ejv44y8Mc4Hxsl-vPPwtNkvDQnWN80JQsEGgg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Kristyna",
+        "lastName": "Jira",
+        "occupation": "Shaping Future of Work at Wrike | Empowering Founders at Google for Startups",
+        "id": "208203363",
+        "publicId": "kristynajira",
+        "trackingId": "2+EwLFo/Sp+gBRdts0AOjg==",
+        "profileId": "ACoAAAxo7mMBhRGmxJvzYsn822Z_aFHdi1eH2mw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGzZvbTvJV7Xw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712828358009?e=1781136000&v=beta&t=uUp22GVglKeMUk0vWUozxwTkr_RZuzW7Q5mXSw8c_kg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHljx5o8-72JQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1713700135283?e=1781136000&v=beta&t=MUd1CHWUcnXl7fLD_77cm7b8u5W49AGCqyRsF0o_ifs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tereza",
+        "lastName": "Ondraskova",
+        "occupation": "Internal Comms & Events at FTMO 🤜🏼🤛🏼 | Employer Brand | HR | Community | Coffee @teri_tastes",
+        "id": "748159340",
+        "publicId": "tereza-ondraskova",
+        "trackingId": "fVM4cV0nSVahyhQzCzJwEw==",
+        "profileId": "ACoAACyYAWwB9ZADGu__PDG1NLB6tlzaDuMqfqM",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF6cf2ZM5YlQA/profile-displayphoto-shrink_800_800/B4DZYWD6mlHwAc-/0/1744126847817?e=1781136000&v=beta&t=u0Azi4iJoNYF_dCmthct9T0P649AfdxlcJT1Bp513RY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGRN_AVR_S2tA/profile-displaybackgroundimage-shrink_350_1400/B4DZvgGExMKEAc-/0/1768991248404?e=1781136000&v=beta&t=6ITKZBeYroOi3jls9eKXTsTzjqU2DSUtkQgwM9isiAo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Victoria",
+        "lastName": "Umanska",
+        "occupation": "Founder at Servive / Mama Vdoma",
+        "id": "250201575",
+        "publicId": "victoria-umanska",
+        "trackingId": "7Bv0tjl9RU2ENRH4ZbP4Iw==",
+        "profileId": "ACoAAA7pxecBudgrN3I_UwV4ziZR4PlRlX_bNV8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQH8JM-ezf7SOg/profile-displayphoto-crop_800_800/B4DZmSMgN_IEAI-/0/1759094375726?e=1781136000&v=beta&t=bu3s4hqqj5OZZgcqsUYvc9kWo7kSSgWpsQcqUndUvx8"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 54,
+  "numComments": 5,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "MdwaR6cfSJGAkgqMdse/gQ==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1631686382588,
+  "postedAtISO": "2021-09-15T06:13:02.588Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

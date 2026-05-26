@@ -1,0 +1,202 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4D22AQHcAEij5EOFIw/feedshare-shrink_1280/feedshare-shrink_1280/0/1639391344878?e=1781136000&v=beta&t=olXM5UG1njwAC3IaXHlnbDae3FOicefysXG0ts1zIus"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6876105681036963840",
+  "url": "https://www.linkedin.com/posts/honzajavorek_adventofcode-activity-6876105681036963840-Q9Fa?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAEIWbD0BJKrG7iRdUpFYZAC3-9q6QhxhwOY",
+  "timeSincePosted": "4yr",
+  "shareUrn": "urn:li:share:6876105680202285056",
+  "text": "ADVENT OF CODE 🎄 Dvaadvacet statečných! Tolik lidí se v klubu junior.guru zapojilo do každoročního adventního kalendáře pro programátory na adventofcode.com. Každý den nová výzva, většinou těžší a těžší.\n\nKanál na našem Discordu byl v průběhu roku poloprázdný, ale to, co se tam děje teď v prosinci, to nemá obdoby. Vlastně bych řekl, že je to úplně krásná ukázka toho, jak klub funguje a k čemu slouží. I když úkoly neřeší ve stejných jazycích, lidi se tam podporují, hecují, radí si, inspirují se od sebe, posílají si memy, sdílí své strasti. Zapojili se jak zkušení, tak úplní nováčci. Někdo ani neuvažoval, že by AoC řešil, ale energie v klubu jej nakonec strhla a přidal se.\n\nNa AoC jsem vyrobil privátní „leaderboard“, díky kterému můžeme sledovat vzájemné skóre jen mezi členy klubu. Vytvořili jsme speciální Discord roli pro řešitele, díky které se řešitelům u jména objevují vánoční stromečky. Nemám bohužel čas se sám velice zapojovat, ale o to víc mě baví pozorovat, jaká úžasná „vánoční“ atmosféra se v klubu kolem #adventofcode vytvořila ❤️",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1639482836076,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6876105681036963840?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6876105681036963840%2C6876489417280823296%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286876489417280823296%2Curn%3Ali%3Aactivity%3A6876105681036963840%29",
+      "text": "I love Advent of Code and especially exactly this kind of community approach of learning from each other, sharing solutions and becoming better developers while having a lot of fun.\n\nPretty much every dev community I'm in is buzzing in their Advent of Code channel, happy to see same is happening at junior.guru community as well!",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "English",
+      "author": {
+        "firstName": "Juha-Matti",
+        "lastName": "Santala",
+        "occupation": "Community builder.",
+        "id": "219800428",
+        "publicId": "juhamattisantala",
+        "trackingId": "8dp6TkekSXW8ln0meLj++A==",
+        "profileId": "ACoAAA0Z42wBi4jFVXgmVVVw5b55iGMyZwS2M8E",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQE51--wmhhIyw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1654685450528?e=1781136000&v=beta&t=o82unJxnHGLS4SGI810e7BB4_KLtwc0I_LIiI6Qqsgw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFL4cdHxblHGA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1559577388585?e=1781136000&v=beta&t=X41DSW0C9Zw-elcSoQ-4qOYFv070TrGVJZLTIYKRt6E",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Kolář",
+        "occupation": "Začínající pythonista hledajíc pozici testera",
+        "id": "769085975",
+        "publicId": "jakub-kolář-a9b694195",
+        "trackingId": "lHN8IHQIQPuX0N2L+ssN8g==",
+        "profileId": "ACoAAC3XUhcBE9w6SJDFPqzTssjeyje_9WnsHjU",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGTuUl_ymLfsQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1643603981224?e=1781136000&v=beta&t=6AI8zMUERgkv7tYY0oCXSO9VEVgmQxkcMBUm4cLyOis",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQH4qG0X9EOsWw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1643785461911?e=1781136000&v=beta&t=MoCanN0Hg7c0JNTIQWUH8vEhMBlAUAM85YULcxSWIkY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Brožek",
+        "occupation": "Senior Recruiter & Psychologist | Solving Client Problems | AI / automation enthusiast | Vibe-coding fan",
+        "id": "213472357",
+        "publicId": "brozekp",
+        "trackingId": "6ofvrfkbThWsyYzEW927Mg==",
+        "profileId": "ACoAAAy5VGUB5CxvF4yTf8e2Iwdn6vZy95xNujc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFd2QyDDh61vw/profile-displayphoto-crop_800_800/B4EZj2IbvnIIAI-/0/1756476063178?e=1781136000&v=beta&t=PbpPqI5DxeOVBc62pxRcJeRVLAgTF5KSL_pxuqASM_U"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Bolek",
+        "occupation": "People and Community Leader | Startups Advisor for HR, Community and Marketing | Seasoned HR, TA, and Community professional | TOP 20 Biggest CZ Linkedin profiles",
+        "id": "242323201",
+        "publicId": "martinbolek",
+        "trackingId": "AeaC5S8uRLSgWcIV9B7JJQ==",
+        "profileId": "ACoAAA5xjwEB-5I0z2Ur7gyCn2MoA1wU5jE2R8I",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHodacSr4AwBA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1605926868322?e=1781136000&v=beta&t=_ej1IW2q0XLnOwQn5311vABlkD25kz9iKVTcKjixgfI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Nela",
+        "lastName": "Slezáková",
+        "occupation": "Psycholožka & programátorka",
+        "id": "480212921",
+        "publicId": "nela-slezakova",
+        "trackingId": "J6tj0LAtSNmUBG0uhQhfuA==",
+        "profileId": "ACoAAByfd7kBTrRNPdPbFJVO_tDUL0T4wKurjsE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGHIISb698PEw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1682691059414?e=1781136000&v=beta&t=9cFsIaEIvL-qcKCcsBGJU4Fk7gT41mOPNDgRDzTJjuo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQENHWJuh8GvxA/profile-displaybackgroundimage-shrink_350_1400/B4DZXs0pSvG4Ac-/0/1743434981675?e=1781136000&v=beta&t=VjhVIEGV-wcRsv244fTjhWO4grFCQyW4XgWgVLH-KRY"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Erbenova",
+        "occupation": "Application Developer at Barclays",
+        "id": "361531956",
+        "publicId": "lenkaerbenova",
+        "trackingId": "NL3zdBEzTXeSjxFq/BjW8g==",
+        "profileId": "ACoAABWMijQBlQzoTAse2JjfcJmbjz4dAQnIsQs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Kristyna",
+        "lastName": "Klepackova",
+        "occupation": "Operations | Leadership & Management | Innovation",
+        "id": "277833641",
+        "publicId": "kristyna-klepackova",
+        "trackingId": "jFbgc9T+TJi0E1DuuE0Tiw==",
+        "profileId": "ACoAABCPZ6kBRlSotDuhXglrz7qs928krwFvruc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFeGh6YGCRzog/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1673865652644?e=1781136000&v=beta&t=8OjPrMtUk-Yok6oChp7oQPnnMDmu8F1p5ssfqSvGV8w",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF3y7AfmWqbIA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1682867508823?e=1781136000&v=beta&t=GRfEv9CMyX0jJY47hcg7-NC7HsMYq3kXHnvI_mM-0pw"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Norbert",
+        "lastName": "Červený",
+        "occupation": "I help great brands grow @STRV",
+        "id": "337285701",
+        "publicId": "strv-norbert-cerveny",
+        "trackingId": "66Fi31DuR7yHecr0uIHrYg==",
+        "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGKIAaUJPtlmA/profile-displayphoto-crop_800_800/B4DZ0jT_lBIEAI-/0/1774413941709?e=1781136000&v=beta&t=ioRFNZY53XZXWk1BvKTQdIygU-xxLKoyNysEAYklp0I",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG0ekEnNy2Hcw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0jTiNeGsAk-/0/1774413817026?e=1781136000&v=beta&t=_KMbjLzzfd2pO9gizTz2iWgDOkq5RQ3NpzDT5fOljNI"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Martina",
+        "lastName": "Očenášková",
+        "occupation": "Business Analyst",
+        "id": "957217886",
+        "publicId": "martina-ocenaskova",
+        "trackingId": "txzu86OMTa+388TAYqXn1g==",
+        "profileId": "ACoAADkN_F4B5ackOFX5NqnnPrTl1JexuUmXaPo",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFWDfJQ0CvfHQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1639517016684?e=1781136000&v=beta&t=I5OcmUD9a54lXtt_CHrOcpttU--gPCgn5FQxlKE0Akw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGgHDfMP9v-Jw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1639518727012?e=1781136000&v=beta&t=48fCYsAJbTSfRB1vxEhQHD7wsSEWNtIGVLzyor_aYjU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Eliška",
+        "lastName": "Novotná",
+        "occupation": "Software Developer @TeskaLabs",
+        "id": "814185299",
+        "publicId": "enovotna",
+        "trackingId": "B3MIuWXsTai0LBr6kktUYA==",
+        "profileId": "ACoAADCHe1MBqCmPBVtBJgxUdvnCf2-PnNDgigQ",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHbersNQVbU_w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1654707099313?e=1781136000&v=beta&t=9D9JBFGPLPgtwn7xWI0m9p9BmtPnx6gJTwp-JpX_c9A"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Dvořák",
+        "occupation": "Dvořák & Zedník Wealth Management | Rozbité prasátko | Book Author | Podcast Host | ex-Data scientist",
+        "id": "446728226",
+        "publicId": "dvoorajak",
+        "trackingId": "WreEJHCGTmmgmi84H7b0aA==",
+        "profileId": "ACoAABqgiCIBGae91KbE1yHZSbzOLo87v5ifelI",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHFymIxlTnEsQ/profile-displayphoto-crop_800_800/B4EZpULbkhHgAI-/0/1762348874730?e=1781136000&v=beta&t=yR6cdtoSWHHtzNyPIZpPZsrrA4juFB5AiIQ6qNjaJSM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHQF2j4rhco6w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1666640098888?e=1781136000&v=beta&t=fuo_gPjUOCdidQ8r-umsHaF8sKCHtA_TVIanFZCXEz4"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 33,
+  "numComments": 2,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "oj2zx8G7Q8yvsjNtVK0w7Q==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1639391346225,
+  "postedAtISO": "2021-12-13T10:29:06.225Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

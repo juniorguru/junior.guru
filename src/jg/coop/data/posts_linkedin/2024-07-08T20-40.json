@@ -1,0 +1,371 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/D4E22AQEsLNtE2goV5g/feedshare-image-high-res/feedshare-image-high-res/0/1720471215776?e=1781136000&v=beta&t=TdY3YX-6QScwyZt5Yp9nL5WtCXvID1i5B0-kQ-izNR4"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:7216179306069159938",
+  "url": "https://www.linkedin.com/posts/honzajavorek_europython-djangogirls-activity-7216179306069159938-mmE4?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC9IwucBOlZAtkMcXzxvWRMowT5oiXMZAvE",
+  "timeSincePosted": "1yr",
+  "shareUrn": "urn:li:share:7216179305217748992",
+  "text": "Nedokázal jsem ukončit Vim.\n\nByl jsem dneska v rámci konference #EuroPython koučovat na #DjangoGirls workshopu.\n\nÚčastnice měla problém něco commitnout. Po peripetiích s větvemi v Gitu, kdy půlka nástrojů předpokládala, že hlavní větev se jmenuje master, a druhá půlka že main, jsme se dostali k samotnému commitu.\n\nProtože neumím s PyCharmem, dělali jsme to přes terminál. Ale když už účastnice ten PyCharm měla, tak přes terminál v nějakém okýnku uvnitř PyCharmu, samozřejmě.\n\nPříkaz `git commit -m 'Second commit'` skončil s chybou, kterou jsem nepochopil. Tak jsem navrhl, že zkusíme jen `git commit`. To otevřelo Vim. Po dvou dekádách v oboru umím ve Vimu akorát něco napsat, uložit to a ukončit ho, ale vždy to stačilo.\n\nAbychom se dostali do příkazového módu, takového toho s dvojtečkou, potřebovali jsme po napsání commit message udělat Esc. Jenže Esc nás vždy akorát vyhodilo z okýnka do jiného okýnka 😀 \n\nNakonec jsme celé okýnko museli zavřít „křížkem“ a otevřít znova. Pro jednoduchost jsme zkusili commit pomocí `git commit -m Second`. To prošlo.\n\nAž v tu chvíli mi došlo, že Windows možná nemají rády apostrofy v terminálu, a že dvě slova v commit message by nám možná prošly s dvojitýma uvozovkama, jako `git commit -m \"Second commit\"`.\n\nV těchto situacích si vždycky říkám: „Proč to všechno musí být tak složité?“ Je úplně šílené, jak to programování umí někdy být pro začátečníky fakt past vedle pasti.\n\nVůbec nechápu, jak se to někdo dokáže naučit bez nějakého mentora nebo nápomocné komunity (třeba jako ta na junior.guru/club, mrk mrk). Dnes možná pomůže ChatGPT, ale dřív?\n\nPokud jste prošli všemi takovými nástrahami a programování vás neodradilo, tak máte můj obdiv, protože sám nevím, jestli bych se v tom neutopil a nevykašlal se na to, kdybych začínal dnes.\n\nZa mých mladých let člověk dvojklikem nainstaloval WAMP, splácal něco do index.php a na internet to nahrál přetažením myší v nějakém FTP klientovi. Velmi pravěké, nicméně developer experience pro začátečníky to mělo excelentní a marně přemýšlím, jaká technologie má dnes stejně dobrý TTHW (Time to hello world).",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1722777974458,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7216179306069159938?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7216179306069159938%2C7225854549377384448%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287225854549377384448%2Curn%3Ali%3Aactivity%3A7216179306069159938%29",
+      "text": "Ano, je to tak. To jsou takové ty \"věci kolem\", ale pro mě jako začátečníka je to velmi náročné, když nevím, proč něco přestane z ničeho nic fungovat... Začal jsem se učit v PyCharmu a teď jsem raději přešel na VSC 😉  ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Petr",
+        "lastName": "Kavan",
+        "occupation": "SQL, Python, znalost výrobních procesů a obchodu",
+        "id": "1363548796",
+        "publicId": "petr-kavan-8a4796320",
+        "trackingId": "V2PmdAgwRwOKC+WGyMCccQ==",
+        "profileId": "ACoAAFFGGnwBe9zciQjUMMaVoK1nC9SIjVqF_OE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF6W0rjaBywvA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1731787708871?e=1781136000&v=beta&t=1csOzuLLB2HblC307f9iOZo4jB7iJNqkApPOF7Lmf4o",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1721072433462,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7216179306069159938?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7216179306069159938%2C7218700991955615744%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287218700991955615744%2Curn%3Ali%3Aactivity%3A7216179306069159938%29",
+      "text": "Učení PHP mělo podle mě doteď nepřekonanou křivku. \n\nNaučim se HTML -> naučim se HTML aby vypadalo hezky (CSS) -> <?php hele to se renderuje ?> -> naučim se že šablony a logiku neni dobrý míchat, a naučim se jak to oddělovat. A jako bonus to mělo runtime \"lambda before it was cool\", takže člověk příliš nemusil řešit vlákna a procesy a sdílený paměti a race conditiony.\n\nJojo, ta možnost tu furt je jak říká Pavel Grumpy Šimerda, jenže je před začátečníky poctivě schovaná a místo toho je každý z těchhlech kroků díra na samostatnou kariéru. Nejsem andragog, možná se to učí líp \"načisto\", ale rozhodně jsem rád že jsem se to učil když jsem se to učil protože jsem rozhodně ten typ že mít iterativní výhry pro mě bylo důležitý (navíc když k těm iteracim máš uživatele).",
+      "entities": [
+        {
+          "start": 409,
+          "length": 20,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Pavel Grumpy",
+            "lastName": "Šimerda",
+            "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
+            "id": "551084893",
+            "publicId": "grumpyprogrammer",
+            "trackingId": "5ORAPNGFQIOJRIPmxxVwLg==",
+            "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Lukas",
+        "lastName": "Linhart",
+        "occupation": "Staff Engineer",
+        "id": "17244345",
+        "publicId": "almad",
+        "trackingId": "THzNlCnfRuGdex2OK3X+hA==",
+        "profileId": "ACoAAAEHILkB4Bzt2NxVHr_Jl8lpknbM03XMQv4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQFsL3VOIdKJGQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1608388490859?e=1781136000&v=beta&t=kLCXtr98Lel1hrQWEX7bQrQmap4SccyNS7Q_B61aFCQ",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1720806770993,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7216179306069159938?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7216179306069159938%2C7217586722799300608%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287217586722799300608%2Curn%3Ali%3Aactivity%3A7216179306069159938%29",
+      "text": "Ono je třeba se hlavně naučit prostředí ve kterém dělám dříve než začnu něco dělat … odtud by měla začít výuka",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Lukas",
+        "lastName": "Franek",
+        "occupation": "Software Developer",
+        "id": "81127321",
+        "publicId": "lukas-franek-82120423",
+        "trackingId": "OP/i9oC4Q6mUWdVFWDv0+A==",
+        "profileId": "ACoAAATV55kBg5RKyIO1WuHYTLEUYifG_qiNSHI",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1720770897518,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7216179306069159938?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7216179306069159938%2C7217436258539630592%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287217436258539630592%2Curn%3Ali%3Aactivity%3A7216179306069159938%29",
+      "text": "Ještě k editorům - s FTP to bylo celkém snadné - co bylo v systému. Protože většina Čechů měla Windows, tak to byl zpravidla Notepad/Poznámkový Blok. Osobně jsem v tu dobu našel Notepad2 což bylo celkem poživatelné vylepšení (existuje i Notepad++, ten mi ale tolik nesedl). Pak FileZilla nebo WinCommander na FTP na ostrý, často WebZdarma. Pokud někdo potkal něco jiného, tak buď věděl jak ovládat, měl za sebou gurua, co ho to naučil, nebo byl v háji. Včetně tehdejšími *nixáři tak opěvovaného a ostatními nenáviděného Vimu.\n\nJinak editovat z Windows na Linuxu je bolest i dneska. Windows některé příkazy papá a Linux je nevidí. Platí to i obráceně. Moje nejoblíbenější ukázka je MidnightCommander, kterému v některých případech nejde poslat klávesa Fx (zhusta F10), protože jí požere terminál venku. Plus CR-LF. Taky straší i dneska. Obzvlášť v kombinaci s Gitem, kdy ten má zpravidla ten blbý nápad, že přepíše všechny koncové znaky v textovém souboru podle prostředí, kde běží. Na čistém Windows by to nevadilo, ale v kombinaci s Dockerem a že to přepisuje i spouštěcí soubory s unixovým # bangem je to na přeshubu.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Petr",
+        "lastName": "Plšek",
+        "occupation": "Developer PHP",
+        "id": "353018290",
+        "publicId": "petr-plšek-baa2849a",
+        "trackingId": "f5mxOiteTSiuoFE40Tj0TA==",
+        "profileId": "ACoAABUKobIBK7-QQpyQbcQ1SMDmj6FFpI2MrgQ",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1720769891751,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7216179306069159938?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7216179306069159938%2C7217432040047079424%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287217432040047079424%2Curn%3Ali%3Aactivity%3A7216179306069159938%29",
+      "text": "Instalace dvojklikem? Cože? Co to bylo za novoty? To se muselo hezky nainstalovat na lokálu všechno zvlášť! Apache 1, harcovníci IIS, vedle v lepším případě PHP 5.2, MySQL 5.3... A pak to všechno pospojovat s ne úplně uchopitelnou dokumentací! Hlavně MySQL je dodnes v tomhle katastrofa. Pokud to měl jeden na Windows, tak si užil ještě víc.\n\nA samotná tvorba? Frontend hezky napřímo, třeba žádné kulaté rohy bez fakt šílených hacků, tabulkový layout, minimální responsivita, stále strašící IE6, často dokonce IE5, průhlednost, překryvy - si můžete nechat jen zdát. Backend byla include špageta s hromadou děr, SQL injection prakticky norma.\n\nAle ono to nakonec fungovalo. A fungovalo to tak dobře, že PHP webu vládne i dneska. Svého času byl na Wordpressu i Bílý Dům, dneska je na Drupalu třeba Česká Televize.\n\nProblém dalších jazyků byl děsně jednoduchý - vysoký vstupní práh, z velké části potřeba netriviální kompilace a myšlenka, že server je součástí jazyka a webové servery jako Apache tam nemají co dělat. Kolik free web serverů má PHP a kolik další jazyky?",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Petr",
+        "lastName": "Plšek",
+        "occupation": "Developer PHP",
+        "id": "353018290",
+        "publicId": "petr-plšek-baa2849a",
+        "trackingId": "f5mxOiteTSiuoFE40Tj0TA==",
+        "profileId": "ACoAABUKobIBK7-QQpyQbcQ1SMDmj6FFpI2MrgQ",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1720623821846,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7216179306069159938?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7216179306069159938%2C7216819378460229633%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287216819378460229633%2Curn%3Ali%3Aactivity%3A7216179306069159938%29",
+      "text": "On ten index PHP nebyl zdaleka taková idylka, takže dnešní webové aplikace, co pustím rovnou z Pythonu lokálně, otestuju a udělám amatérský deploy v zásadě stejně, dává na konci dne mnohem lepší hodnotu než to PHP.\n\nKdyby ne, člověk může používat PHP a FTP s úpravou přímo produkci i dneska. Pár takových lidí jsem potkal. Na seriózní projekty bych je nechtěl, ale ta možnost tu stále je.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Pavel Grumpy",
+        "lastName": "Šimerda",
+        "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
+        "id": "551084893",
+        "publicId": "grumpyprogrammer",
+        "trackingId": "jT4fost9Rb2vbkq4Iall+Q==",
+        "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1720617858920,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7216179306069159938?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7216179306069159938%2C7216794368135823361%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287216794368135823361%2Curn%3Ali%3Aactivity%3A7216179306069159938%29",
+      "text": "Vim asi ne, ale když člověk otevře Neovim, tak ani nemá chuť ho zavírat, protože tam je plugin na všechno :D",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Miloslav",
+        "lastName": "Nosek",
+        "occupation": "Software Developer / Linux Enthusiast",
+        "id": "738337065",
+        "publicId": "miloslav-nosek",
+        "trackingId": "tMBfZUHQQX2ON6CBS1OhmQ==",
+        "profileId": "ACoAACwCISkBRiQskBlq8lk-Z7642HxAUaOY__U",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHLK01XyleBRw/profile-displaybackgroundimage-shrink_350_1400/B4EZ2F3_n6GcAY-/0/1776067543064?e=1781136000&v=beta&t=DGvjiAoL_P-A3IOosr3jFZQ-6akE_5Iw14qZ-zEYYu8",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1720612536240,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7216179306069159938?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7216179306069159938%2C7216772043202056192%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287216772043202056192%2Curn%3Ali%3Aactivity%3A7216179306069159938%29",
+      "text": "Driv jsme googlili a pred tak deseti lety kdyz bylo v IT jeste strasne penez existovala velka spousta indie webu ktere verejne a zadarmo shromazdovaly chytre veci pro *nix…plus tenkrat se jeste male noname weby objevovaly na prvni strance google. Dneska je potreba pouzivat to AI protoze vyhledavace uz jsou spis placena inzerce. Cele prostredi bylo jine.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Jana",
+        "lastName": "Mathauser",
+        "occupation": "Business development at TheoryHoldings. Marketing technology for real estate, import/export, publishing. IPF powerlifter -63kg on team Hatadani in São Paulo, Brazil.",
+        "id": "1286450689",
+        "publicId": "jana-mathauser-br",
+        "trackingId": "DjtCGBxeRHCqaMUoiTE39Q==",
+        "profileId": "ACoAAEytrgEBLTP0EfhcKoyAWkeruUCjEWAZXX8",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFDz-F-jqQNMQ/profile-displaybackgroundimage-shrink_350_1400/B4EZlXghoRGYAY-/0/1758109768828?e=1781136000&v=beta&t=R4SieUQ7NVJMmKp8LFou8dluriuQnW9649teF2rNy2c",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1720587427866,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7216179306069159938?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7216179306069159938%2C7216666731044352001%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287216666731044352001%2Curn%3Ali%3Aactivity%3A7216179306069159938%29",
+      "text": "Jedna z nich vždycky zabere: \nhttps://github.com/hakluke/how-to-exit-vim",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Jakub",
+        "lastName": "Červinka",
+        "occupation": "Python developer and lecturer",
+        "id": "355842259",
+        "publicId": "jakub-červinka",
+        "trackingId": "R+87Gf8CTPmkA0bM0aO7BQ==",
+        "profileId": "ACoAABU1uNMBxEkN7xMohKuhfytB97ZjK-tfEKo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFo1b8_EZuWVQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728056593822?e=1781136000&v=beta&t=NEwZVdMdQqj1rM46MtdnZQjC4bxHXipuncawNthkvSU",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1720579444795,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7216179306069159938?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7216179306069159938%2C7216633247617720321%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287216633247617720321%2Curn%3Ali%3Aactivity%3A7216179306069159938%29",
+      "text": "RTFM (https://git-scm.com/book/en/v2), nezdá se mi, že by PS/CMD měl problém s uvozovkamy jednoduchými či dvojitými; pak bych si dovolil podotknout, že konfigurace IDE a jiných omalovánek není programování.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Jan",
+        "lastName": "Švehlák",
+        "occupation": "SDET",
+        "id": "40625426",
+        "publicId": "jansvehlakqa",
+        "trackingId": "Yqszy1tNSi6939p0cWBRrA==",
+        "profileId": "ACoAAAJr5RIBxBfr3rSyigb0hSG2YFOQdh7vYaE",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Kavan",
+        "occupation": "SQL, Python, znalost výrobních procesů a obchodu",
+        "id": "1363548796",
+        "publicId": "petr-kavan-8a4796320",
+        "trackingId": "B0W5h4lhR2KfeTjcAyptOg==",
+        "profileId": "ACoAAFFGGnwBe9zciQjUMMaVoK1nC9SIjVqF_OE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF6W0rjaBywvA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1731787708871?e=1781136000&v=beta&t=1csOzuLLB2HblC307f9iOZo4jB7iJNqkApPOF7Lmf4o"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Anna",
+        "lastName": "Vernerová 🔸",
+        "occupation": "Deep thinker",
+        "id": "706676441",
+        "publicId": "anna-vernerova",
+        "trackingId": "fgwmcaSWS6KVEZmNwDhhZg==",
+        "profileId": "ACoAACofBtkBJLgxZaJGNahekLWWqdSj7t7gNt4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lada",
+        "lastName": "Peksova, Dr.",
+        "occupation": "Quantitative analyst",
+        "id": "904296595",
+        "publicId": "lada-peksova",
+        "trackingId": "e9WQTTMhT7CWyg4PUXLGpQ==",
+        "profileId": "ACoAADXmeJMBRSkuE3e4U75HCqO3eWE0ctTkX-8",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFyY55i9BpgsQ/profile-displaybackgroundimage-shrink_350_1400/B4EZcdV.FpHYAg-/0/1748543988662?e=1781136000&v=beta&t=liaLbTYgIU8Kr6TUao_xODDnQ3VGGu-r2Kn6yZLYc3o"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "trackingId": "2/aEfo82QXKLzq25rhs58g==",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Březina",
+        "occupation": "Software Developer",
+        "id": "114919573",
+        "publicId": "brezinapetr",
+        "trackingId": "2PQ096jgRvy5zfvXqCMMyA==",
+        "profileId": "ACoAAAbZiJUB1D8E6PwVTfcGm54ViNdW54H-I2k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martina",
+        "lastName": "Habartová",
+        "occupation": "Site Reliability Engineer & Python Lover",
+        "id": "347812870",
+        "publicId": "martina-habartova-dev-ops",
+        "trackingId": "xscIspjBRs2il9SdBgjPww==",
+        "profileId": "ACoAABS7NAYBntNQG1z2SZ5wy6bIgOhC9Wb17z8",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGNtSfksXDC9A/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1637270060172?e=1781136000&v=beta&t=Gjz7YoKWBC5Es1x5HQSEq76TlC4I56G_XY4t4UI0iqQ"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Dvořáček",
+        "occupation": "IT Specialist | Digital technology enthusiast | Part time Sports Coach since 2012",
+        "id": "823178169",
+        "publicId": "dvoracek-jan",
+        "trackingId": "6RR0CmrTR1ekIJqCvmJdFw==",
+        "profileId": "ACoAADEQs7kBLa6ATjYmi_RHWnqBmTD1t2kHET4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGttIxg1Ms99A/profile-displaybackgroundimage-shrink_200_800/B4EZrm.EdWIQAY-/0/1764811622965?e=1781136000&v=beta&t=4l-9hGdAzhXma1wnkBONEQJar1prFVnSxe6cUwZ7s0Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vladlena",
+        "lastName": "Benesova",
+        "occupation": "Growth & Product Marketing Leader | AI, Automation & Data-Driven Marketing | Paid Media & GTM",
+        "id": "280864674",
+        "publicId": "vladibenesova",
+        "trackingId": "FCyZE5t0RQO6s/E4FtWimg==",
+        "profileId": "ACoAABC9p6IB2n8cANaMjMHChQu8OV-biwFYMv4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFvAIWCyM_68g/profile-displaybackgroundimage-shrink_350_1400/B4EZp3fLobGcAc-/0/1762941256351?e=1781136000&v=beta&t=2UN24QYUzv_HebNPnlLJL1qIRtvW-2KR9F5fcV4NwRA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Monika",
+        "lastName": "Matějková",
+        "occupation": "Referent zaměstnanosti na Generálním ředitelství Úřadu práce ČR",
+        "id": "292268144",
+        "publicId": "monika-matějková-7a8a6881",
+        "trackingId": "6mSoSiHFQ0i9ao+cMJgL2w==",
+        "profileId": "ACoAABFrqHABPBTSJ5-JkuVGLz2eqh8VOSct-LM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHlq641XSoOOQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516851410961?e=1781136000&v=beta&t=bOPZyWrW5TxEmfC8dv7irxwOkK723f_jw-ZeBjoyZc0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Veronika ",
+        "lastName": "Vacatová",
+        "occupation": "Analytik IT auditu ve společnosti KPMG Czech Republic",
+        "id": "823217745",
+        "publicId": "veronika-kopicova",
+        "trackingId": "AOSi4KfiT8SRYGh50yAtNw==",
+        "profileId": "ACoAADERTlEBR16jtxiyB4-QHxs8Dr_dt-KxLNA"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 133,
+  "numComments": 40,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "kEB+UnBJQ4iyZiLqKBA7zg==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1720471216695,
+  "postedAtISO": "2024-07-08T20:40:16.695Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

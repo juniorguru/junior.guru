@@ -1,0 +1,350 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:9146650731950135172",
+    "url": "https://cz.pycon.org/2023/program/panels/87/",
+    "title": "PyCon CZ – Panelová diskuze: mýty a stereotypy o IT – a panel by Mia Bajić & Honza Javorek & Lucie Tvrdíková & Šárka Melicharová & Roman Hraška"
+  },
+  "isActivity": true,
+  "activityDescription": "Honza Javorek reposted this",
+  "activityOfUser": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "xOS43aCERLayqcm25srDBg==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "urn": "urn:li:activity:7103129311687102464",
+  "url": "https://www.linkedin.com/posts/pycon-cz_pycon-cz-panelov%C3%A1-diskuze-m%C3%BDty-astereotypy-share-7103027838923984896-PFbh?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC7GnRMBMhdlttE134OhzG7Qpm095a9yeJ4",
+  "timeSincePosted": "2yr",
+  "shareUrn": "urn:li:share:7103027838923984896",
+  "text": "🎤 Get ready for an engaging panel discussion about Myths & Stereotypes in IT with Mia Bajić, Honza Javorek, Lucie Tvrdíková, Sarka Melicharova & Roman Hraška at PyCon CZ. 👩‍💻 👨‍💻 \n\n\nhttps://lnkd.in/egqt3HhV",
+  "attributes": [
+    {
+      "start": 82,
+      "length": 9,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Mia",
+        "lastName": "Bajić",
+        "occupation": "Software Engineer",
+        "id": "530925455",
+        "publicId": "mia-bajic",
+        "trackingId": "+fECF9XJTzacw8wUOhsE2w==",
+        "profileId": "ACoAAB-lR48BFvPhQ6doZNGTRVftkLrzcnIv-Ss",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEFktnPzIQA3g/profile-displayphoto-shrink_400_400/B4EZdfBBQAHYAs-/0/1749645792668?e=1781136000&v=beta&t=H-XclkbtaMI2HfxaPAIvGsaIuvs_3HunEbU_zF5R2XQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGmHzyPBT7q2g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1738012168138?e=1781136000&v=beta&t=bGVRTPD07nQuQcDx_7F1m2z7h-P_vw_6AF5KkU2lLp4"
+      }
+    },
+    {
+      "start": 93,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "30M27z7rSfmMmGQG2XVa5w==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+      }
+    },
+    {
+      "start": 108,
+      "length": 15,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Lucie",
+        "lastName": "Tvrdíková",
+        "occupation": "AI & IT lektorka a konzultantka pro firmy i veřejnost | Už 9 let tvořím vlastní kurzy | Bez nereálných slibů a marketingového bullshitu",
+        "id": "66547908",
+        "publicId": "lucietvrdikova",
+        "trackingId": "/er3Yv8sSOWqgJb2dGLEOA==",
+        "profileId": "ACoAAAP3cMQB6Z0KS11itMTIOss5Q1J0OCTXkaQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFbJu-rT_LRUg/profile-displayphoto-crop_800_800/B4EZp9X4XMKYAI-/0/1763040008398?e=1781136000&v=beta&t=zA3XisQSO_OitXZqlG1KkJFxQH5PuRiKWMSggJ7ktOM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGI8vLXYP6i0A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1683185081860?e=1781136000&v=beta&t=KztYZQz80jSf6UR1GJtsf64Wo7jUpJ1KewboqIa3MDw"
+      }
+    },
+    {
+      "start": 125,
+      "length": 17,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Sarka",
+        "lastName": "Melicharova",
+        "occupation": "Czech language teacher for foreigners | Czech for life & Czech for exams (A2, B1, ...) | Czech Buddy",
+        "id": "648814916",
+        "publicId": "melicharova",
+        "trackingId": "oMp5bx1xSLuaRkR2qjZ51A==",
+        "profileId": "ACoAACasIUQBi0zapOVDWOPcCXCviPxBdRa-Lgo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFdFEjr9dzhTg/profile-displayphoto-crop_800_800/B4DZtujN6RK0AI-/0/1767086285695?e=1781136000&v=beta&t=llZBrsGlYxqcSHVp17BRNDZxA3DQFo0aACSAGSbcA8s",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFt01OcuaR-Gg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1731358478511?e=1781136000&v=beta&t=NPRT3jGZ88lxHFNyQ18GE9W1sYDVr_H8bLSEqqG8hf8"
+      }
+    },
+    {
+      "start": 145,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Roman",
+        "lastName": "Hraška",
+        "occupation": "Motyka. Patizón. Sokol.",
+        "id": "411597295",
+        "publicId": "yablko",
+        "trackingId": "QUmkmtwTTAeNY0M/rQsr/Q==",
+        "profileId": "ACoAABiIee8B6T3SlOCiJjbS1KHkr9Bf6DyyXws",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFspL7654LSQg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517626819296?e=1781136000&v=beta&t=MU22LFNWVDD74Hp2uLZvOeNRukADo87inbhIv4Es8oU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHesE3bZDHt7g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517626819771?e=1781136000&v=beta&t=k7TwqX_nTlLNrXEprdAlSId_X0i7kMR4bteDVDimkBU"
+      }
+    },
+    {
+      "start": 161,
+      "length": 8,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "PyCon CZ",
+        "universalName": "pycon-cz",
+        "trackingId": "g9DJ2IRkSgyBuVRi0Hn3Dw==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:96200896",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHOklGyDI6P0g/company-logo_400_400/B4EZpTnC98KkAY-/0/1762339336466/pycon_cz_logo?e=1781136000&v=beta&t=uOUrW56BC-gxbGVtVb0f_sD-Hb2TrKD2pG9ViL3MTy8"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1693818192547,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7103027839729328128?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7103027839729328128%2C7104388420268896256%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287104388420268896256%2Curn%3Ali%3Aactivity%3A7103027839729328128%29",
+      "text": "Uvidíme se tam, těším se! 💪 😊 ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Lucie",
+        "lastName": "B.",
+        "occupation": "Java developer",
+        "id": "676009075",
+        "publicId": "lucie-bazantova",
+        "trackingId": "01+4mXYiTuaW7GMzmw833w==",
+        "profileId": "ACoAAChLFHMBLTUfznOstW4m9izh5f6LiLiPA74",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGSrYowf5ucdg/profile-displayphoto-shrink_800_800/B4EZQOobZNGcAk-/0/1735412267182?e=1781136000&v=beta&t=LR4cPyUm9GJ2hcvj1QYEtmJVoeDntgZjWbvBJWnq6jg",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1693761165152,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7103027839729328128?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7103027839729328128%2C7104149230042107904%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287104149230042107904%2Curn%3Ali%3Aactivity%3A7103027839729328128%29",
+      "text": "Jsem stále v šoku, že je mé jméno mezi těmito jmény! Doufám, že se mi podaří do diskuze vnést za juniory v IT patřičné a časté vjemy, názory a pocity. Nemůžu se dočkat & jsem nervózní už nyní! 😎",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Sarka",
+        "lastName": "Melicharova",
+        "occupation": "Czech language teacher for foreigners | Czech for life & Czech for exams (A2, B1, ...) | Czech Buddy",
+        "id": "648814916",
+        "publicId": "melicharova",
+        "trackingId": "ftw4Rsu2QQCV+eixcZyHfQ==",
+        "profileId": "ACoAACasIUQBi0zapOVDWOPcCXCviPxBdRa-Lgo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFdFEjr9dzhTg/profile-displayphoto-crop_800_800/B4DZtujN6RK0AI-/0/1767086285695?e=1781136000&v=beta&t=llZBrsGlYxqcSHVp17BRNDZxA3DQFo0aACSAGSbcA8s",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFt01OcuaR-Gg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1731358478511?e=1781136000&v=beta&t=NPRT3jGZ88lxHFNyQ18GE9W1sYDVr_H8bLSEqqG8hf8",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1693518037436,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7103027839729328128?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7103027839729328128%2C7103129478486220800%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287103129478486220800%2Curn%3Ali%3Aactivity%3A7103027839729328128%29",
+      "text": "Nej sestava! Nemůžu se dočkat 😎",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "xOS43aCERLayqcm25srDBg==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Dana",
+        "lastName": "Janoskova",
+        "occupation": "Senior Full-stack Engineer",
+        "id": "657762326",
+        "publicId": "dana-janoskova",
+        "trackingId": "4VtzxDriSBim8Q415D0oFQ==",
+        "profileId": "ACoAACc0qBYBhVQF9m7VkcSfO9HhxqW7hMN786o",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGuDseEfA1cUg/profile-displayphoto-shrink_800_800/B4EZOoLxYkGYAc-/0/1733693479960?e=1781136000&v=beta&t=Syqv7Y9pcKplddIK2J4dPnTNjprOc-XXn_gAivQdzWE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Magdaléna",
+        "lastName": "Grassi Morong",
+        "occupation": "Software Developer | Python&Django",
+        "id": "510493266",
+        "publicId": "magdalena-grassi-morong",
+        "trackingId": "BQe1jqzBRlqBFGcCB3nsWQ==",
+        "profileId": "ACoAAB5tglIBzk_dT7VG40y8WEo8JGAq93-eVE4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEsXZ22cMrzvg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1665153548476?e=1781136000&v=beta&t=5HJTrvHapHQwtQ4nnnNSGJu0yWxbfUVMeZ905PTiu8k",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQG9KIFfLuID3g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1643118793896?e=1781136000&v=beta&t=hSLScjYXwJPH-u4lzqQMxkDcFmvkx5x-9n04X0TvQ90"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Vysoky",
+        "occupation": "Founder & CTO at Roomstorm",
+        "id": "15425730",
+        "publicId": "jakubvysoky",
+        "trackingId": "a73hA7VSSvy7DNkNyChJTw==",
+        "profileId": "ACoAAADrYMIB-G1Ga_9z6wmfEDMsav3918zrFVs",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQH3Wi6MZasEvA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517731848163?e=1781136000&v=beta&t=bOdkXNIs9C-O_1U7JCtnxcSt9x-PN3yKIuAiyEd3G7c"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Radka",
+        "lastName": "Campbell",
+        "occupation": "#czechforforeigners",
+        "id": "590383715",
+        "publicId": "radka-campbell-2ab875145",
+        "trackingId": "4gvNSxncTy2jgalBF6XeUg==",
+        "profileId": "ACoAACMwimMBTFmnZDBxJEY_2ZIwWfxseyukEhE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQH13GJs3C91yQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1674068929840?e=1781136000&v=beta&t=LyMD8hw_OKOMBGIHJWhXaKh1mBV1A-FCRKHmdto6eHA"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Sarka",
+        "lastName": "Melicharova",
+        "occupation": "Czech language teacher for foreigners | Czech for life & Czech for exams (A2, B1, ...) | Czech Buddy",
+        "id": "648814916",
+        "publicId": "melicharova",
+        "trackingId": "oMp5bx1xSLuaRkR2qjZ51A==",
+        "profileId": "ACoAACasIUQBi0zapOVDWOPcCXCviPxBdRa-Lgo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFdFEjr9dzhTg/profile-displayphoto-crop_800_800/B4DZtujN6RK0AI-/0/1767086285695?e=1781136000&v=beta&t=llZBrsGlYxqcSHVp17BRNDZxA3DQFo0aACSAGSbcA8s",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFt01OcuaR-Gg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1731358478511?e=1781136000&v=beta&t=NPRT3jGZ88lxHFNyQ18GE9W1sYDVr_H8bLSEqqG8hf8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lucie",
+        "lastName": "Tvrdíková",
+        "occupation": "AI & IT lektorka a konzultantka pro firmy i veřejnost | Už 9 let tvořím vlastní kurzy | Bez nereálných slibů a marketingového bullshitu",
+        "id": "66547908",
+        "publicId": "lucietvrdikova",
+        "trackingId": "/er3Yv8sSOWqgJb2dGLEOA==",
+        "profileId": "ACoAAAP3cMQB6Z0KS11itMTIOss5Q1J0OCTXkaQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFbJu-rT_LRUg/profile-displayphoto-crop_800_800/B4EZp9X4XMKYAI-/0/1763040008398?e=1781136000&v=beta&t=zA3XisQSO_OitXZqlG1KkJFxQH5PuRiKWMSggJ7ktOM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGI8vLXYP6i0A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1683185081860?e=1781136000&v=beta&t=KztYZQz80jSf6UR1GJtsf64Wo7jUpJ1KewboqIa3MDw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Manivannan",
+        "lastName": "Selvaraj",
+        "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
+        "id": "13167565",
+        "publicId": "citizenmani",
+        "trackingId": "fPmlszKQTbO8PjE6GdJNuA==",
+        "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQEqC5x0akFu1Q/profile-displayphoto-crop_800_800/B56ZlSvDmfIAAM-/0/1758029692620?e=1781136000&v=beta&t=2MjEAUEFd1OccqmtlnzcSzG2gHUquLzw5MI-3XUUfOM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHZC49bFZ8ZTQ/profile-displaybackgroundimage-shrink_350_1400/B56ZxDZv79KIAY-/0/1770657351768?e=1781136000&v=beta&t=kVGPoYvqmMzYICMmu_0FODKNvqUNjsGRcvULLqy01EA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Šárka",
+        "lastName": "M.",
+        "occupation": "Security🔥",
+        "id": "390209713",
+        "publicId": "šárka-m-98181baa",
+        "trackingId": "1wcccGpLTZWAksagWzgGLQ==",
+        "profileId": "ACoAABdCILEB07y3oARo2gRV3h5igas9WXxER4k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jürgen",
+        "lastName": "Gmach",
+        "occupation": "Python expert - Maintainer of critical Open Source Projects - Regular Conference Speaker - Fellow of the Python Software Foundation - Engineering Manager at Canonical",
+        "id": "950420620",
+        "publicId": "jürgen-gmach-b24363226",
+        "trackingId": "T15QMmhzQ2WhBiIlRdl7eg==",
+        "profileId": "ACoAADimRIwByFj38S9OhwrNXmDglCgUUKuXk5E",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEfbJlT2ssU9g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1653935555494?e=1781136000&v=beta&t=oQROfOtuFqggoBjeU5owM-YnX6Dnj5yfNglsYvxFKZY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF_ZKA1rg45nA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1683700212736?e=1781136000&v=beta&t=2uU3Wottbdvh43lrxgjiwBnILpjoCRBidueidHFScx4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomas",
+        "lastName": "Adamek",
+        "occupation": "ATM Application Engineer",
+        "id": "24705853",
+        "publicId": "tomadamek",
+        "trackingId": "0EcC9WDpRFmt2sTlEN6sew==",
+        "profileId": "ACoAAAF4-z0BQy0TvrTemhhBv1IcWqdA0-Ti6kk",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGJOM5m8xhv3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1669468460413?e=1781136000&v=beta&t=pd6uQxxsfz2GZ8OGyYYrS9ZwpUbVhAoWBVEh2aSSAF8",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEORUcJD6g2LA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1669468741595?e=1781136000&v=beta&t=FSeVLcMRhiegVY30QnLcICDD3xCM8MBYMpzNiLr1OxE"
+      }
+    }
+  ],
+  "numShares": 6,
+  "numLikes": 20,
+  "numComments": 3,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "name": "PyCon CZ",
+    "universalName": "pycon-cz",
+    "trackingId": "VU6ZIPFsReqd+2LqguO01w==",
+    "active": true,
+    "showcase": false,
+    "entityUrn": "urn:li:fs_miniCompany:96200896",
+    "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHOklGyDI6P0g/company-logo_400_400/B4EZpTnC98KkAY-/0/1762339336466/pycon_cz_logo?e=1781136000&v=beta&t=uOUrW56BC-gxbGVtVb0f_sD-Hb2TrKD2pG9ViL3MTy8"
+  },
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4E0BAQHOklGyDI6P0g/company-logo_400_400/B4EZpTnC98KkAY-/0/1762339336466/pycon_cz_logo?e=1781136000&v=beta&t=uOUrW56BC-gxbGVtVb0f_sD-Hb2TrKD2pG9ViL3MTy8",
+  "authorType": "Company",
+  "authorProfileId": "company",
+  "authorFollowersCount": "482",
+  "authorName": "PyCon CZ",
+  "authorProfileUrl": "https://www.linkedin.com/company/pycon-cz/posts",
+  "authorUrn": "urn:li:company:96200896",
+  "postedAtTimestamp": 1693517997667,
+  "postedAtISO": "2023-08-31T21:39:57.667Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

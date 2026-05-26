@@ -1,0 +1,242 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4D22AQFOAfYM1vqY9A/feedshare-shrink_800/feedshare-shrink_800/0/1651156772834?e=1781136000&v=beta&t=KcXIQJrMr_FRWBGNC2RWn1dE5NCvEwHHyiHkd2UjXQs"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6925453460544856064",
+  "url": "https://www.linkedin.com/posts/honzajavorek_afjtvrtkon-wordcamp-wordpress-activity-6925453460544856064-5Dqu?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFLoK0wBYoYaibnOct4cy5iL6dq4jzvciT8",
+  "timeSincePosted": "4yr",
+  "shareUrn": "urn:li:share:6925453459500457984",
+  "text": "LYNT PODPORUJE JUNIOR.GURU ❤️ Jan Smitka a Vladimír Smitka jsou velkými fanoušky klubu a rozhodli se jej podpořit na další rok jak svou přítomností a radami, tak finančně. Děkujeme!\n\nFirma Lynt services s.r.o. je známá podporou různých programátorských komunit: Czechitas, #Čtvrtkon, #Wordcamp a #WordPress srazy, #PyConCZ, a další. Jsem rád, že se rozhodli dlouhodobě podporovat i junior.guru/club, hlavně protože jde jejich slovy o „výborný projekt“. Jan Smitka měl v klubu prima přednášku o relačních databázích, Vláďa zve členy klubu na #WordPress akce, které spoluorganizuje, oba navíc dokážou skvěle poradit v mnoha oblastech.\n\nPokud hledáte skvělý marketingový a technologický tým, určitě na ně mrkněte, o jejich expertíze jsem z jejich působení v klubu dost přesvědčen 👍",
+  "attributes": [
+    {
+      "start": 30,
+      "length": 10,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Smitka",
+        "occupation": "Jednatel a hlavní vývojář ve společnosti Lynt services s.r.o.",
+        "id": "168895566",
+        "publicId": "jansmitka",
+        "trackingId": "d5yVkK3MRFiOP7InZfosmg==",
+        "profileId": "ACoAAAoRJE4Bjmma9aS7-73aC8rDSnolGABplHI",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFcn03WF1N0SQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1530110218068?e=1781136000&v=beta&t=gf3PGX86o9bnADGKw7fI1ZhuHC7DCxvFg8ZUaaMdoY8",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEKX9Xz9v4WQw/profile-displaybackgroundimage-shrink_350_1400/B4DZXsY9l.HIAc-/0/1743427722121?e=1781136000&v=beta&t=Ln5sVsGt_yhLk5f3KRKKBSQnDj441BpLVf_wayNJFdA"
+      }
+    },
+    {
+      "start": 43,
+      "length": 15,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Vladimir",
+        "lastName": "Smitka",
+        "occupation": "Co-founder & Head of Technology at LYNT, a Google Premier Partner certified PPC agency. Web security expert and ethical hacker. WordPress specialist. Conference speaker. Maker at heart.",
+        "id": "87935038",
+        "publicId": "vsmitka",
+        "trackingId": "hv5kKt8KTmWoH4VDzWGinQ==",
+        "profileId": "ACoAAAU9yD4B_7moGyjeLSGeKGx-NJOkIC3kYcc",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHjGS32QfXgSg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517270881255?e=1781136000&v=beta&t=mwpvzoFVUUt7FTBR8V363GqG3r7YCTe3jFAlvzdhX7k",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEtVA-RLxc2zw/profile-displaybackgroundimage-shrink_350_1400/B4EZXsQVgkHUAk-/0/1743425461096?e=1781136000&v=beta&t=dutvgF5RCLqtTuF4wbRphH6Twz-W1_E3GIMeSW9f61I"
+      }
+    },
+    {
+      "start": 189,
+      "length": 20,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "LYNT services s.r.o.",
+        "universalName": "lynt-services-s-r-o-",
+        "trackingId": "vvVVPmeoSUekJ5vcoMvn2Q==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:2732557",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQErE9TGrTBzvQ/company-logo_400_400/B4EZXr6I2IHgAY-/0/1743419641855/lynt_services_s_r_o__logo?e=1781136000&v=beta&t=y4YWS8QONqKge3e_ed7s0Uwn6Ri34I9cCP8-6rv14mY"
+      }
+    },
+    {
+      "start": 262,
+      "length": 9,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Czechitas",
+        "universalName": "czechitas",
+        "trackingId": "2LoSkvHjT+6Cq1JwyILpQw==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:5319681",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQGUtbq_Ku9-Pw/company-logo_400_400/company-logo_400_400/0/1704439912456/czechitas_logo?e=1781136000&v=beta&t=molJnkCH_gTyGvasG9h09UcPKtk52yLyXtBM8hhPM5Q"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Andrea",
+        "lastName": "Hakenová",
+        "occupation": "public relations & copywriting 🖋",
+        "id": "1027079375",
+        "publicId": "andrea-hakenová",
+        "trackingId": "J2bQTeKuQAiYqtLaeGDCnw==",
+        "profileId": "ACoAAD03_M8B9CGggcl5pOzLnzV71Yw-EWu9qxE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHj5MD7ct0v5A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719599915399?e=1781136000&v=beta&t=H-7PvoWmZUHqcz31i6F0OpSSNZuq0nDRdth7mQggbio",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFzNq79lPNn7A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1730377969066?e=1781136000&v=beta&t=wC7MGXntmdHIq3KTeWZhxuHpzBiHH8RhX1U8doIqdFQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martina",
+        "lastName": "Habartová",
+        "occupation": "Site Reliability Engineer & Python Lover",
+        "id": "347812870",
+        "publicId": "martina-habartova-dev-ops",
+        "trackingId": "7ajqOpNXQEG1ZSaXdLlvWw==",
+        "profileId": "ACoAABS7NAYBntNQG1z2SZ5wy6bIgOhC9Wb17z8",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQG4MjM0V7Y4TA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1637269866744?e=1781136000&v=beta&t=LqBrD71PdEEidr0loXWogbmKLyqGOdiizhWpZswV2HE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGNtSfksXDC9A/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1637270060172?e=1781136000&v=beta&t=Gjz7YoKWBC5Es1x5HQSEq76TlC4I56G_XY4t4UI0iqQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petra",
+        "lastName": "Kubita Nulíčková",
+        "occupation": "HR Manager v Pale Fire Capital | Head of HR v Aukro | HR consultant and mentor | #sharingiscaring",
+        "id": "473833031",
+        "publicId": "petranulickova",
+        "trackingId": "YYmaviLTQU6n+2yG907new==",
+        "profileId": "ACoAABw-HkcBifENxX8nxAs2YjwxbI6b2XtAF98",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHnKx1150QjzQ/profile-framedphoto-shrink_400_400/B4DZ5EYkX3J4Ac-/0/1779263751874?e=1780430400&v=beta&t=pWJ51Ntw0jR9QQT0pS0cVga8Y5H1PX6eMgBC8eZYwyo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQExwjEQhQ99TA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1676378924015?e=1781136000&v=beta&t=rpomntKe5fPHScYScrE5n1-ok01d_UuxKpUPUaPI93g"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daniel",
+        "lastName": "Rozehnal",
+        "occupation": "Software engineering student at FI MUNI.",
+        "id": "731425708",
+        "publicId": "daniel-rozehnal-924b52184",
+        "trackingId": "vpRfDaICT/a2RRH+5aK4Xw==",
+        "profileId": "ACoAACuYq6wBw_NUyA50V0fvku83SMXkgexoGa8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH6BzN9AcUCqw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1687462673185?e=1781136000&v=beta&t=CcZtGbxzcjtE3ICu9xz1ywNt_uzrOhlHHeL4p4nax_k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Katerina",
+        "lastName": "Slezakova",
+        "occupation": "“The journey is the destination”",
+        "id": "823193341",
+        "publicId": "kslezakova",
+        "trackingId": "H/m6EizpRiKIt2lueL08Qw==",
+        "profileId": "ACoAADEQ7v0BQzs8aNXWgRYo4kPIBpO990Op2q4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHLgcpsZhZv9g/profile-displayphoto-crop_800_800/B4EZsBxARBKcAQ-/0/1765261185170?e=1781136000&v=beta&t=qKC3O2DbG5vdz8lEXUE0bvS9d9YoBa5o4AjKMeOZDiY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH9FcmHhMx99Q/profile-displaybackgroundimage-shrink_350_1400/B4EZsCPEx4KoAc-/0/1765269067659?e=1781136000&v=beta&t=W3_PhqFJZ--KwlSMbSIRQo-vEzVHoPKOa5KXSlErZvc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Sonja",
+        "lastName": "M.",
+        "occupation": "Tourism & Hospitality Enthusiast | Adventure & Experience Driven | Open for Opportunities",
+        "id": "806991622",
+        "publicId": "sonja-cv",
+        "trackingId": "8ypnjcD4QIKqWDHHpH6Jww==",
+        "profileId": "ACoAADAZtwYB7zh-fGkQnhuX8Ek0fAWpm-e4i6k",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHLBsSHbSdzXQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718296702076?e=1781136000&v=beta&t=Lp6mLc_qEyqQgmlsB3oF1zJa18e2CLAK5L0bixzySGM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQE7OLWN9rKfpA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1719349015848?e=1781136000&v=beta&t=HDuUSeWeOwNbZo_guemBJPmOsWySpAaVEzkRbbjyz7A"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Veronika ",
+        "lastName": "Vacatová",
+        "occupation": "Analytik IT auditu ve společnosti KPMG Czech Republic",
+        "id": "823217745",
+        "publicId": "veronika-kopicova",
+        "trackingId": "BEN0zgXOQci5cpxRrhtvoQ==",
+        "profileId": "ACoAADERTlEBR16jtxiyB4-QHxs8Dr_dt-KxLNA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGUgibbZF6RJQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1591121262459?e=1781136000&v=beta&t=bAo87k-gfV2r-3xOMS4NCvOsTD39FYkssISm4exLpt0"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Ondrej",
+        "lastName": "Cejka",
+        "occupation": "☮️ Values-Driven Change Agent | Agile Coach | Life Coach | ex-CEO Czechitas | Consultant | Mentor | Social Impact Advisor | Board Member | Lecturer | Visionary 🔮 AYLP and Leaders of Tomorrow Alumni",
+        "id": "87280750",
+        "publicId": "ondcej",
+        "trackingId": "Ruf/ES59T42zjePUPtoFGQ==",
+        "profileId": "ACoAAAUzzG4BLoHWLVFE4_dAWsnhPhXpaXU4Vbg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFCa2h1OvIDAw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1698863108972?e=1781136000&v=beta&t=bHFmAbnpBq3DMJ1Lcrk6z6lO1GhrTK3nQECYgvpSb_M",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE8IsEeTc5LVQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1690885177156?e=1781136000&v=beta&t=2mROWGtu_20GwjT860KwfH5lPt-FGCwxNIVwdAOR0do"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Iva",
+        "lastName": "Stencel",
+        "occupation": "CSV Lead/ Senior Business Analyst",
+        "id": "587257188",
+        "publicId": "iva-stencel-ab0807144",
+        "trackingId": "T7nD9GNASUCP7Rt9ey9lcg==",
+        "profileId": "ACoAACMA1WQBgV8EKd7FupQXOjpsAgya9rL3QLA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGvMtuTNHdICw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1705975360344?e=1781136000&v=beta&t=73kz1RRrV0DsO9n0na0p3ZfYiSkUe3yLRv-LT49dYxE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Gabriela",
+        "lastName": "Chladilová",
+        "occupation": "Experienced Business Process Analyst and IT Consultant | Dedicated to empower organizations with suitable IT technologies and data driven culture for better societal impact | Passionate about community building.",
+        "id": "188054374",
+        "publicId": "gabriela-chladilová-91ab8b52",
+        "trackingId": "RYbyw141QAG8JNUixqv8SQ==",
+        "profileId": "ACoAAAs1e2YBhBgU8N-Tl1oA8BdVzIkVoMlreuA"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 19,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "WMeMYPsbQrCU0UYHCmGuiA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1651156773697,
+  "postedAtISO": "2022-04-28T14:39:33.697Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

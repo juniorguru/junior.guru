@@ -1,0 +1,502 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "type": "text",
+    "isActivity": false,
+    "urn": "urn:li:activity:7090261521397612549",
+    "url": "https://www.linkedin.com/posts/jan-meissner_i-do-many-calls-with-juniors-and-people-considering-activity-7090261521397612549-zNU2?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAE0Wae8Bdw49TBBX9odwCVUCDyBMCOF71rc",
+    "timeSincePosted": "2yr",
+    "shareUrn": "urn:li:share:7090261518532980738",
+    "text": "I do many calls with juniors and people considering a career switch into IT and tech, mainly thanks to Junior Guru & Honza Javorek. 🐣\n\nI wouldn't call it mentoring because it's usually not a long-term relationship. After all, I am more of a traffic light at the crossroad, helping to navigate whom to meet next and what should be the next steps.\n\nWhat do we usually talk about?\n\n💻 Getting to know each other. Thanks to such organizations as Junior Guru, everyone involved gets to meet people from different social circles and backgrounds. And it is truly eye-opening. Often those people are with some rough experiences, and it makes you appreciate their efforts even more.\n\n💻 I always try to find out whether their expectations of life in IT match the reality. And I like to be the reality check because (and it's no shame) it's not for everyone. And during such conversations, we can find out that a different role or path may be more suitable.\n\n💻 We look at the portfolio, Linkedin and previous efforts, and I try to point out everything I learned over the years in the business. 👨‍🦲\n\n💻 And the most essential thing, already mentioned above, I suggest either colleagues or people in other companies I know to get in further touch. \n\nWhy am I saying this? \n\nI want to encourage everyone to find a way to open themselves up to juniors and career switchers. Show them what it is to work in a tech company, what the office looks like, how you work and help them with your network. Contacts are the most valuable assets we have when used right. You can change someone's life, and there is something for you too. It is gratifying! And hey, we all want our companies to be here for a long time. Creating a new generation of engineers, analysts, and other skilled people is in everyone's interest. ✌",
+    "attributes": [
+      {
+        "start": 103,
+        "length": 11,
+        "type": "COMPANY_NAME",
+        "company": {
+          "name": "Junior Guru",
+          "universalName": "juniorguru",
+          "trackingId": "KQ1IlojIQhqIAfRTnfah3Q==",
+          "active": true,
+          "showcase": false,
+          "entityUrn": "urn:li:fs_miniCompany:26218444",
+          "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQE89NmYF-XT4g/company-logo_400_400/company-logo_400_400/0/1638266899010/juniorguru_logo?e=1781136000&v=beta&t=ad516CNUThMN8eXeVboC5S9U_y2Dnn1UhQn70wIGlxE"
+        }
+      },
+      {
+        "start": 117,
+        "length": 13,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "trackingId": "AeMRaLlUTPab6fD6El3QpQ==",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+        }
+      }
+    ],
+    "comments": [
+      {
+        "time": 1690549658385,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7090261521397612549?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7090261521397612549%2C7090679194354896898%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287090679194354896898%2Curn%3Ali%3Aactivity%3A7090261521397612549%29",
+        "text": "Aww, such kind words! It's been pleasure to collaborate on finaids and mentorships with you and Mews! I'm so happy we found this model where I take care of identifying those who need further help and can send them your way, where you can support them through the crossroads 🙏",
+        "entities": [
+          {
+            "start": 96,
+            "length": 4,
+            "type": "COMPANY_NAME",
+            "company": {
+              "name": "Mews",
+              "universalName": "mewssystems",
+              "trackingId": "U/EkQ53/RXutTISFNhnAaA==",
+              "active": true,
+              "showcase": false,
+              "entityUrn": "urn:li:fs_miniCompany:2574959",
+              "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQG9VtyX26envQ/company-logo_400_400/B4EZyKEXeEH0AY-/0/1771842926937/mewssystems_logo?e=1781136000&v=beta&t=UIV6bGS_gnn1FvSP7zSjwts_zMyZHE6t4vu9n9Nz5KE"
+            }
+          }
+        ],
+        "pinned": false,
+        "originalLanguage": "English",
+        "author": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "trackingId": "RineQfPjQde5DmzUVnJpgw==",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1690452685955,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7090261521397612549?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7090261521397612549%2C7090272462512287744%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287090272462512287744%2Curn%3Ali%3Aactivity%3A7090261521397612549%29",
+        "text": "So much love for this post Jan Meissner and what you are doing to help juniors and career switchers! This type of support is sorely needed. ",
+        "entities": [
+          {
+            "start": 27,
+            "length": 12,
+            "type": "PROFILE_MENTION",
+            "profile": {
+              "firstName": "Jan",
+              "lastName": "Meissner",
+              "occupation": "Product & Tech Community Lead at Mews",
+              "id": "677292059",
+              "publicId": "jan-meissner",
+              "trackingId": "HwKV/wjpRq61pcycymNfSA==",
+              "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw",
+              "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEEoMbY9urW6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728030316222?e=1781136000&v=beta&t=qIshYYWgkzBRoJGlT6oqlmeH3jlRiX8J_luFzaICydQ",
+              "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGei_PMH8ghyw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728030258130?e=1781136000&v=beta&t=GS9HgAFTdCMh-1xFx2xIDoLH91oMpSioaV6pV2ayQSY"
+            }
+          }
+        ],
+        "pinned": false,
+        "originalLanguage": "English",
+        "author": {
+          "firstName": "Lauren",
+          "lastName": "Oliver",
+          "occupation": "Strategic Partnerships | Writer | Consultant",
+          "id": "272107486",
+          "publicId": "laurenlondon",
+          "trackingId": "1SVY/7uuTmOBXmuIoAihqw==",
+          "profileId": "ACoAABA4B94Bi7RD4OoTM3yOknRI2St__bEzq5c",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFVvO_NY4ONkA/profile-displayphoto-shrink_800_800/B4EZdeA2RdGcAc-/0/1749628970490?e=1781136000&v=beta&t=iRw4sGGwJUGQb2HiNKB8yafpECYScLUw6V1Lxhu6ZcY",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1690450223607,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7090261521397612549?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7090261521397612549%2C7090262134672023552%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287090262134672023552%2Curn%3Ali%3Aactivity%3A7090261521397612549%29",
+        "text": "There's one specific person I'd like to point out. With Tereza Smolová, we met a couple of months ago. I am always in awe seeing how much progress she makes and how much she's working on her dream - becoming a front-end engineer. We keep ad-hoc contact, and I am eager to see her future. Check out her new website, connect with and reach out to her! ✉\nhttps://denik-studentky-frontendu.cz/",
+        "entities": [
+          {
+            "start": 56,
+            "length": 14,
+            "type": "PROFILE_MENTION",
+            "profile": {
+              "firstName": "Tereza",
+              "lastName": "Smolová",
+              "occupation": "UX designer | Frontend developer | coder",
+              "id": "1058305342",
+              "publicId": "tereza-smolovaa",
+              "trackingId": "RRZqXjaNTKepopjet8yyyg==",
+              "profileId": "ACoAAD8UdT4BaRn8Isd2lC4AEbKofErZCkXvv-k",
+              "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHHami6cusYmw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1680899091472?e=1781136000&v=beta&t=kcnsYl27D767PL0KOKMxatZtoRBIh_47AlOOB4bMu5k",
+              "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE4HKbvzh8w-A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1703173265758?e=1781136000&v=beta&t=JLf6jm1fSrDz12CmrvPrxBc7TSifykS-ney15LHhlRA"
+            }
+          }
+        ],
+        "pinned": false,
+        "originalLanguage": "English",
+        "author": {
+          "firstName": "Jan",
+          "lastName": "Meissner",
+          "occupation": "Product & Tech Community Lead at Mews",
+          "id": "677292059",
+          "publicId": "jan-meissner",
+          "trackingId": "ZUkEJQu0R5aPKeO88gKVzQ==",
+          "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEEoMbY9urW6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728030316222?e=1781136000&v=beta&t=qIshYYWgkzBRoJGlT6oqlmeH3jlRiX8J_luFzaICydQ",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGei_PMH8ghyw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728030258130?e=1781136000&v=beta&t=GS9HgAFTdCMh-1xFx2xIDoLH91oMpSioaV6pV2ayQSY",
+          "distance": "OUT_OF_NETWORK"
+        }
+      }
+    ],
+    "reactions": [
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Radovan",
+          "lastName": "Kacin",
+          "occupation": "Instructor at University of Chemistry and Technology in Prague (UCT Prague)",
+          "id": "519803290",
+          "publicId": "radovan-kacin",
+          "trackingId": "JtmQllnCTRe1SUaCf1PgMw==",
+          "profileId": "ACoAAB77kZoBXPSY1tjwKa_vwNh_FZYxZjkL53Y"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Milena",
+          "lastName": "Bošková",
+          "occupation": "Data Engineering/ Product Manager with Medical (Addictology) and IT background/ Ph.D. Researcher in Medical Data and AI in medicine/HzM member/alumni 👩‍💻Enthusiastic Community Builder 🦸‍♀️ AI&Health Tech Evangelist 🦾",
+          "id": "527492906",
+          "publicId": "milena-bošková",
+          "trackingId": "5Howd9dTRRmAbl0OtsWGUg==",
+          "profileId": "ACoAAB9w5yoBYf1wT1tNlQ82Qq1wZ_zIuHExi_k",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFYa0NYItZ1Xg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725548168392?e=1781136000&v=beta&t=-yXHOGkpVH6mCs1-b1rxQ7eBR_rQXKXNUw42zZLVoOs"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Radek",
+          "lastName": "Kubíček",
+          "occupation": "Ph.D. Student/Technical Engineer at Institute of Physics of Materials Academy of Sciences of the Czech Republic, v. v. i.",
+          "id": "691822805",
+          "publicId": "radek-kubicek",
+          "trackingId": "HgmGf0LxTU2/2O8m5nJbDQ==",
+          "profileId": "ACoAACk8YNUBm1VkZ7qweTXMXQ67q2_CF7nSYqU",
+          "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHKmZluNyWcaA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1581881608813?e=1781136000&v=beta&t=FkZaDL-y7sHGGqUeBkc3jaNIZcqPHKuApnH6LjUgpYw",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEAr-GfHDgdDw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1737925844604?e=1781136000&v=beta&t=KOOUbBL_slic3nwBHF5JyX0iWB2v4Az_0MsQvbW1yO8"
+        }
+      },
+      {
+        "type": "PRAISE",
+        "profile": {
+          "firstName": "Otakar",
+          "lastName": "Veleba",
+          "occupation": "Senior Analytics Engineer at Mews",
+          "id": "232631398",
+          "publicId": "otakar-veleba",
+          "trackingId": "AURC8EALSAi6ZKGvb4c2PA==",
+          "profileId": "ACoAAA3drGYBqkSarfyjg6J0-SOm25UCtsUwt20",
+          "picture": "https://media.licdn.com/dms/image/v2/C5603AQFFDq7LlC-3qw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1576606626766?e=1781136000&v=beta&t=EN7vln-BXDbDPh1KdBOYCd6885oB9dyiYkr3ah0n95k",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEl08fwwV1HLw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1701333600135?e=1781136000&v=beta&t=9VPT4-FrerodQ_k4VyHAhmbOcBpHJEASe13Uu7YFtSw"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Barbora",
+          "lastName": "Tobolova",
+          "occupation": "Second Foundation",
+          "id": "331292772",
+          "publicId": "barbora-tobolova-430b4892",
+          "trackingId": "EHD7RXnQQ0mqMUEnpAdaLA==",
+          "profileId": "ACoAABO_IGQB2LqIHveoKeeu88nTi-puJGmaM-A",
+          "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGIm1nmVcNmTw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1557996486361?e=1781136000&v=beta&t=qcpIXSrfuG2QfQahlY39u0icnplGtA9RoZZhkMpwoTM",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFxqkB0wSxIlw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728905355375?e=1781136000&v=beta&t=8YikspzuJZ4BKJXggpMurrev4AcZSmUKw8R9d1fAAak"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Anna",
+          "lastName": "Mai",
+          "occupation": "🤝Partnership specialist @Czechitas 💡interested in Communities, Startup world, Women in Tech, Diversity & Inclusion, Data, Marketing ❤️‍🔥#proudgeneralist",
+          "id": "374533599",
+          "publicId": "anna--mai",
+          "trackingId": "g2jvpAfKTMSDyTE5aph6tg==",
+          "profileId": "ACoAABZS7d8B1bxT8QzatArHTJOqmlVbmlYx2TY",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFEc-aFeotoww/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1714050207252?e=1781136000&v=beta&t=NGPMaUaTiuP_hBUlPbz187srGsBzJiNNVDQAauuEYSg",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHBFWCJ0njKBA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1722350175199?e=1781136000&v=beta&t=h_MkcnJFnUFqFvEJDGaBqnDCqGKhtjfttOsaqaDiRUM"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Pavla",
+          "lastName": "Zaoralová",
+          "occupation": "Product Compliance Manager in Apaleo. Specializing in the intersection of tax technology and legal compliance, focusing on e-invoicing, fiscal reporting, and data strategy to drive roadmap prioritization.",
+          "id": "232449523",
+          "publicId": "pavla-zaoralová-497a1b65",
+          "trackingId": "6K+ZdAE1SWyyIsYsJI2dZQ==",
+          "profileId": "ACoAAA3a5fMB0H0xZOyv41cQaCf52ESiOqliI5E",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQE3FtRQxoShZQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ33GtXvKsAU-/0/1777967224567?e=1781136000&v=beta&t=rE6sy5KKMxUicmPDqbBmQwW0QQQBhoL47xvea1yS6CA"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Toms",
+          "lastName": "Knostenbergs",
+          "occupation": "Co-Founder of Master Packager",
+          "id": "358495341",
+          "publicId": "tomsknostenbergs",
+          "trackingId": "toiNgUSVT8ypVoWtQoPGng==",
+          "profileId": "ACoAABVeNG0BoUvw4O3GHsVUT-xQ45JUQuDGfGg",
+          "picture": "https://media.licdn.com/dms/image/v2/C5603AQGxrNb_jSRveA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1566672674570?e=1781136000&v=beta&t=LBsqOi-eYIF_izeaSom0tmG4-jJHttDBYvELFN_qVz4",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQF3JBJgHi7wrg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1677619318376?e=1781136000&v=beta&t=LqHnIHgvI9nk1lMXzQpbf6gDbUFWoYzrogn7BcM4jOg"
+        }
+      },
+      {
+        "type": "EMPATHY",
+        "profile": {
+          "firstName": "Michael",
+          "lastName": "Ruml",
+          "occupation": "Director of Product Engineering @ Mews",
+          "id": "71844499",
+          "publicId": "michaelruml",
+          "trackingId": "OLY+06VjSD2MiGpEkXqE2g==",
+          "profileId": "ACoAAARIQpMBMdmY5LGLvqat1HGdm_qwVM0okvg",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHSQ3DIcV_f1g/profile-displayphoto-shrink_800_800/B4DZSJwBTTGkAw-/0/1737477854894?e=1781136000&v=beta&t=OtoWwwDS_K_GiP6XvFeKgriLGE4Me2sHrFoBg0aDojY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGho2MCa7nhJg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1665776842078?e=1781136000&v=beta&t=jhElVoNS3Mwz2gbR7VKoM_UN_D6-t41k8PWjxAQEcho"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Daniel",
+          "lastName": "Sochor",
+          "occupation": "Corporate Performance Management with focus on planning",
+          "id": "1040508481",
+          "publicId": "daniel-sochor",
+          "trackingId": "3I26jPAZTZmAigSFdR3vSg==",
+          "profileId": "ACoAAD4E5kEBLCHsDKLT1OEFHWgrps9u9uU2q28",
+          "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHBknVVikZ2eg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1663180049851?e=1781136000&v=beta&t=PBOkmAKLPdR0bFBr7k5dPM4uhu_JoUdQrlTWzMjJfTI",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEejJCzZWuZsQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1685560777271?e=1781136000&v=beta&t=RNbnuQoSoW1ssprXUZMs6PQgKnYwbuJmq8xSRRfIk4E"
+        }
+      }
+    ],
+    "numShares": 3,
+    "numLikes": 65,
+    "numComments": 4,
+    "canReact": true,
+    "canPostComments": true,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "ALL",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "firstName": "Jan",
+      "lastName": "Meissner",
+      "occupation": "Product & Tech Community Lead at Mews",
+      "id": "677292059",
+      "publicId": "jan-meissner",
+      "trackingId": "ZUkEJQu0R5aPKeO88gKVzQ==",
+      "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw",
+      "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEEoMbY9urW6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728030316222?e=1781136000&v=beta&t=qIshYYWgkzBRoJGlT6oqlmeH3jlRiX8J_luFzaICydQ",
+      "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGei_PMH8ghyw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728030258130?e=1781136000&v=beta&t=GS9HgAFTdCMh-1xFx2xIDoLH91oMpSioaV6pV2ayQSY"
+    },
+    "authorProfileId": "jan-meissner",
+    "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4E03AQEEoMbY9urW6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728030316222?e=1781136000&v=beta&t=qIshYYWgkzBRoJGlT6oqlmeH3jlRiX8J_luFzaICydQ",
+    "authorType": "Person",
+    "authorName": "Jan Meissner",
+    "authorProfileUrl": "https://www.linkedin.com/in/jan-meissner?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw",
+    "authorUrn": "urn:li:member:677292059",
+    "postedAtTimestamp": 1690450077390,
+    "postedAtISO": "2023-07-27T09:27:57.390Z"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7090679860548755456",
+  "url": "https://www.linkedin.com/posts/honzajavorek_i-do-many-calls-with-juniors-and-people-considering-activity-7090679860548755456-bFRg?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAE0Wae8Bdw49TBBX9odwCVUCDyBMCOF71rc",
+  "timeSincePosted": "2yr",
+  "shareUrn": "urn:li:share:7090679859894464512",
+  "text": "„Thanks to such organizations as Junior Guru, everyone involved gets to meet people from different social circles and backgrounds. And it is truly eye-opening. Often those people are with some rough experiences, and it makes you appreciate their efforts even more.“\n\n„I want to encourage everyone to find a way to open themselves up to juniors and career switchers… we all want our companies to be here for a long time. Creating a new generation of engineers, analysts, and other skilled people is in everyone's interest.“\n\nKind words from Jan Meissner, thank you so much! ❤️",
+  "attributes": [
+    {
+      "start": 33,
+      "length": 11,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Junior Guru",
+        "universalName": "juniorguru",
+        "trackingId": "CbnoShvRQS6pneTMyIzh/Q==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:26218444",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQE89NmYF-XT4g/company-logo_400_400/company-logo_400_400/0/1638266899010/juniorguru_logo?e=1781136000&v=beta&t=ad516CNUThMN8eXeVboC5S9U_y2Dnn1UhQn70wIGlxE"
+      }
+    },
+    {
+      "start": 540,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Meissner",
+        "occupation": "Product & Tech Community Lead at Mews",
+        "id": "677292059",
+        "publicId": "jan-meissner",
+        "trackingId": "HwKV/wjpRq61pcycymNfSA==",
+        "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEEoMbY9urW6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728030316222?e=1781136000&v=beta&t=qIshYYWgkzBRoJGlT6oqlmeH3jlRiX8J_luFzaICydQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGei_PMH8ghyw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728030258130?e=1781136000&v=beta&t=GS9HgAFTdCMh-1xFx2xIDoLH91oMpSioaV6pV2ayQSY"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Nela",
+        "lastName": "Slezáková",
+        "occupation": "Psycholožka & programátorka",
+        "id": "480212921",
+        "publicId": "nela-slezakova",
+        "trackingId": "JVntu40cSnijMShhOG1Frw==",
+        "profileId": "ACoAAByfd7kBTrRNPdPbFJVO_tDUL0T4wKurjsE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGHIISb698PEw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1682691059414?e=1781136000&v=beta&t=9cFsIaEIvL-qcKCcsBGJU4Fk7gT41mOPNDgRDzTJjuo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQENHWJuh8GvxA/profile-displaybackgroundimage-shrink_350_1400/B4DZXs0pSvG4Ac-/0/1743434981675?e=1781136000&v=beta&t=VjhVIEGV-wcRsv244fTjhWO4grFCQyW4XgWgVLH-KRY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Peter",
+        "lastName": "S.",
+        "occupation": "IT/Ba analyst, technical analyst, product analyst, product owner",
+        "id": "319605036",
+        "publicId": "peter-s-7500508b",
+        "trackingId": "DwyFheAqR0GCea6EZA99LA==",
+        "profileId": "ACoAABMMySwBtsOsvzGHQnjurWpFm1vqLLcMx64",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQFDLyQtdxOU4A/profile-framedphoto-shrink_800_800/B4DZtk9D6iKoAg-/0/1766925287370?e=1780430400&v=beta&t=yx4Y-TmgwUo8gCjPzFj1Jz8LT3td_c6iA54v2rU2Jtc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Valenta",
+        "occupation": "Senior QA Engineer at Warhorse Studios ⚔",
+        "id": "303039169",
+        "publicId": "valentapetr",
+        "trackingId": "ILVe4955TT2Vi92b9Gc42A==",
+        "profileId": "ACoAABIQAsEB7lBkZDyMY2IyH8DV-Em47jKaECM",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEGh_9U-DN84A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1597911967248?e=1781136000&v=beta&t=OnhGS_BuvlxuvHZlnksAt0ZH6zVGGgbEzmx9ak6vwBg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFuYq__sCNlaA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1713506563296?e=1781136000&v=beta&t=HHtMT1YeoBJpmoS4EcMcjdBeE9Ku_bEF5kBDeq5nJ68"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Vít",
+        "lastName": "Heřt",
+        "occupation": "Software Developer",
+        "id": "1070605131",
+        "publicId": "vit-hert",
+        "trackingId": "pfs2k9PdRb6VulE0bd7Uyw==",
+        "profileId": "ACoAAD_QI0sBQomuX9ouYR3Nrow9FtAqRqDFF-8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH6AN95QjNusw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1688059286549?e=1781136000&v=beta&t=TfhJcPa71139kp1qOWmEE6iAuLAJl2cDn4XQZHr33js",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG4Fvb8FVdlsQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1688061771890?e=1781136000&v=beta&t=QK1RP3716Yz4u27qJfYm8EQCZnnMb8qt8ZZMX5UtXDM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Zajíc",
+        "occupation": "Webdesigner na volné noze| Key Internal Manager v oddělení Prodej segmentu Key Account",
+        "id": "226593773",
+        "publicId": "tomáš-zajíc",
+        "trackingId": "VvdnMVArSDSjHaBmYMw0/g==",
+        "profileId": "ACoAAA2Bi-0BVtrR4Cq0h8sI1Sf8H4DTP_IHDx8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHtE8d4VX1mxg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1667825615414?e=1781136000&v=beta&t=RD1JkW5FTXYY5Xqfp3K2VpUFPAWFQJTzezx9zqf5Z9M"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Juha-Matti",
+        "lastName": "Santala",
+        "occupation": "Community builder.",
+        "id": "219800428",
+        "publicId": "juhamattisantala",
+        "trackingId": "5acZ61CSRXSEXsMJgiyrEQ==",
+        "profileId": "ACoAAA0Z42wBi4jFVXgmVVVw5b55iGMyZwS2M8E",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQE51--wmhhIyw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1654685450528?e=1781136000&v=beta&t=o82unJxnHGLS4SGI810e7BB4_KLtwc0I_LIiI6Qqsgw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFL4cdHxblHGA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1559577388585?e=1781136000&v=beta&t=X41DSW0C9Zw-elcSoQ-4qOYFv070TrGVJZLTIYKRt6E"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Patrik",
+        "lastName": "Šubjak",
+        "occupation": "💻 Tvorba webov, e-shopov, SEO, PPC | 🌐 Web Developer & E-commerce Specialist | 🤝 Freelancer",
+        "id": "1056288463",
+        "publicId": "patriksubjak",
+        "trackingId": "gMhWy+SbQv23S6T19nsLKA==",
+        "profileId": "ACoAAD71rs8BBDyOD-1eADFTHCsmoaPGaUmTYnM",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQERilKayijybA/profile-displayphoto-crop_800_800/B4EZqdh_KbIwAI-/0/1763579524294?e=1781136000&v=beta&t=Hcvcz2SyWC86KNA_LUfcVjS3ltKrP_bzQ5st7iz0deQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFkPj_E-Z6X7w/profile-displaybackgroundimage-shrink_350_1400/B4EZqdh1rxKoAY-/0/1763579485740?e=1781136000&v=beta&t=GhAzv-4bs_hgpVfNpmk4AsVJRqamYgGj3FsjwdOUJJk"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Meissner",
+        "occupation": "Product & Tech Community Lead at Mews",
+        "id": "677292059",
+        "publicId": "jan-meissner",
+        "trackingId": "HwKV/wjpRq61pcycymNfSA==",
+        "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEEoMbY9urW6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728030316222?e=1781136000&v=beta&t=qIshYYWgkzBRoJGlT6oqlmeH3jlRiX8J_luFzaICydQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGei_PMH8ghyw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728030258130?e=1781136000&v=beta&t=GS9HgAFTdCMh-1xFx2xIDoLH91oMpSioaV6pV2ayQSY"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 8,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "RineQfPjQde5DmzUVnJpgw==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1690549817216,
+  "postedAtISO": "2023-07-28T13:10:17.216Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

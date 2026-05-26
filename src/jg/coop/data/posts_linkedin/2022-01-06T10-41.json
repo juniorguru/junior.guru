@@ -1,0 +1,264 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4D22AQExIeVa-IW0mA/feedshare-shrink_1280/feedshare-shrink_1280/0/1641465699250?e=1781136000&v=beta&t=j_IwjNH7HQSI1YVO-jyoB62pIzRMJHRV4MCZmyUj3Is"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6884806152513699840",
+  "url": "https://www.linkedin.com/posts/honzajavorek_datovaeranalaetza-datovaetvafxdec-osobnaedfinance-activity-6884806152513699840-adMC?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAEIWbD0BJKrG7iRdUpFYZAC3-9q6QhxhwOY",
+  "timeSincePosted": "4yr",
+  "shareUrn": "urn:li:share:6884806151867789313",
+  "text": "PRASÁTKO V KLUBU 🐷 „Dnes jsem dělal interview s 8 kandidáty na pozici datového analytika. Nechci si hrát na HR experta, ale poznatků o tom, jak znáknout pohovor, už mám celkem dost.“ Tohoto Jakubova tweetu si všiml můj kamarád Petr Vácha a propojil nás. Asi sám netušil, co všechno z toho vznikne!\n\nJakub Dvořák je datový vědec, který zároveň provozuje projekt rozbiteprasatko.cz o tom, jak si udělat pořádek ve svých financích. Nejenže to vypadá na partnerství klubu junior.guru s firmou Processand, kde Jakub pracuje, ale také jsme:\n\n🎙 Společně natočili během Vánoc epizodu podcastu Rozbité prasátko o tom, jak může být změna kariéry způsobem k lepší životní úrovni a větší finanční nezávislosti, který mnoho lidí opomíjí.\n\n👨‍🏫 Naplánovali přednášku v klubu junior.guru, která bude trochu o datových vědcích, ale hlavně o penězích a vším, co s nimi souvisí. Práce v IT přináší příležitosti, ale pokud je nevyužíváte naplno, je to škoda. O jakou mzdu si říct? Jak si o ni vůbec říct? Jak požádat o navýšení mzdy?\n\nEpizoda podcastu vyjde v následujících měsících, ale na přednášku se můžete těšit už příští týden v úterý 11.1. Členové budou mít k dispozici záznam.\n\n#datováanalýza #datovývědec #osobnífinance #rozbitéprasátko #juniorguru #podcast #přednáška #finančnínezávislost",
+  "attributes": [
+    {
+      "start": 227,
+      "length": 10,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Vácha",
+        "occupation": "Head of Engineering",
+        "id": "76115329",
+        "publicId": "vachapetr",
+        "trackingId": "N9rLpm9wTtKLTd+W4MjtjQ==",
+        "profileId": "ACoAAASJbYEBMeOmhTR-EWaXg0q9HUTng5HCt9E",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGCiZVCJ_C1OA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1557674174077?e=1781136000&v=beta&t=BhlxGr50WWidcbX2Ie9bGUVi2zrduoaH7ODcwifpQcA"
+      }
+    },
+    {
+      "start": 299,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Dvořák",
+        "occupation": "Dvořák & Zedník Wealth Management | Rozbité prasátko | Book Author | Podcast Host | ex-Data scientist",
+        "id": "446728226",
+        "publicId": "dvoorajak",
+        "trackingId": "WreEJHCGTmmgmi84H7b0aA==",
+        "profileId": "ACoAABqgiCIBGae91KbE1yHZSbzOLo87v5ifelI",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHFymIxlTnEsQ/profile-displayphoto-crop_800_800/B4EZpULbkhHgAI-/0/1762348874730?e=1781136000&v=beta&t=yR6cdtoSWHHtzNyPIZpPZsrrA4juFB5AiIQ6qNjaJSM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHQF2j4rhco6w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1666640098888?e=1781136000&v=beta&t=fuo_gPjUOCdidQ8r-umsHaF8sKCHtA_TVIanFZCXEz4"
+      }
+    },
+    {
+      "start": 489,
+      "length": 10,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Processand",
+        "universalName": "processand",
+        "trackingId": "WggicHUoRjqJIVtWV4aWIw==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:18212507",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQF5dl99jIeYYA/company-logo_400_400/company-logo_400_400/0/1659005336513/processand_logo?e=1781136000&v=beta&t=-ZXmSOJBHTQQCAXmKhP0D7VG7qLhrkBYlsYNrGDnmkg"
+      }
+    },
+    {
+      "start": 585,
+      "length": 16,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Rozbité prasátko",
+        "universalName": "rozbiteprasatko",
+        "trackingId": "JH0qgWUdR9addywpCRQDPA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:20562484",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHYMkPyTAVXJg/company-logo_400_400/company-logo_400_400/0/1666198565844/rozbiteprasatko_logo?e=1781136000&v=beta&t=khgMyi5qcZdol5g3T5hECaNFZkhE9cU-bkcmglVR1xg"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1641465737150,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6884806152513699840?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6884806152513699840%2C6884806307191238656%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286884806307191238656%2Curn%3Ali%3Aactivity%3A6884806152513699840%29",
+      "text": "Detaily přednášky tady: https://junior.guru/events/#2022-01-11T18-00-00",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "oj2zx8G7Q8yvsjNtVK0w7Q==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Václav",
+        "lastName": "Lorenc",
+        "occupation": "Principal Information Security Engineer at HERE",
+        "id": "3719671",
+        "publicId": "valor",
+        "trackingId": "AhcAFd8JQUSE7YkK3I9lRQ==",
+        "profileId": "ACoAAAA4wfcB-6wfVwYbMy69XKSeovQjgDHJSW0",
+        "picture": "https://media.licdn.com/dms/image/v2/C5103AQGjRfNSS1JcmQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516248813297?e=1781136000&v=beta&t=XxoOkJZ46kteyvJ_k3o4tT_5zhbc8s9Fbbe0RIcB4FA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQG3RlrCKlLZzg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1640715665619?e=1781136000&v=beta&t=e5iMMadAmgsuSQrkcopHNu9MuJrqHJ6KjBAgQjzYmEg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Katerina",
+        "lastName": "Maresova Ali",
+        "occupation": "Employer Branding v IT | Moderátorka smitio komunity 🎤 | Pomáhám firmám budovat značku a oslovit talenty skrze autentický obsah.",
+        "id": "21030863",
+        "publicId": "katerina-maresova-smitio",
+        "trackingId": "PSpFtACsRgqD0cg53nyTTw==",
+        "profileId": "ACoAAAFA588Br07-uohoO-ZxDwmW5hiuFHo-v7s",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE92rmwWMO47w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1708608435719?e=1781136000&v=beta&t=8mj-K_QW63LhK249Q0ZUvQTIIarXyNaWzGYM8bqQ2-k",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFJC_hBgCaHGw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1674723396837?e=1781136000&v=beta&t=aOSC8cM77IGbDRVJHbWyuVbF-GCZ_fqU-nILTCWO1_Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Charamza",
+        "occupation": "Operations at Deutsche Börse",
+        "id": "964302756",
+        "publicId": "chrmzio",
+        "trackingId": "gQDZNUGuQh6ZgithQF1iJw==",
+        "profileId": "ACoAADl6F6QBE6fNUi80lVl0ieS-jVdRiXvXg70",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEzQbFP6ipzgA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1642508638000?e=1781136000&v=beta&t=_eZ5Y4p8SfjUh5ly8ypfrt8BetI5OU4BCU0xXLpVMp0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEI8hMnu5JyiA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1674412735539?e=1781136000&v=beta&t=LQa4li_ZqG55Mq1ScHipmVoXwHL35JxjZazOs-ifQ-k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Andrea",
+        "lastName": "Řezníčková",
+        "occupation": "Ráda pronikám do nových oblastí, s touhou po informacích a potřebou se učit a poznávat svět.",
+        "id": "950470422",
+        "publicId": "andrea-řezníčková-906388226",
+        "trackingId": "HGh0ZHIBQni8gGxaugIQCw==",
+        "profileId": "ACoAADinBxYBqlq7XW4njJ7fDx1QH8ev08Hh8no",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGF4LOmHG5neg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1640976136919?e=1781136000&v=beta&t=NQP2fTLe8fMMMYXIyFJZ1dOVmI0h2IKvakIJKXodp7w",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQFlpmFcRharVQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1640919255741?e=1781136000&v=beta&t=vyQUt9odFSa5FHH10PwVIzn4Ca2ZxqURwXtGIJzCrzs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Darina",
+        "lastName": "Galavska",
+        "occupation": "After years of project management in market research, I retrained as a data analyst specializing in telecommunications. In the telco sector, I combine technical skills with business focus and efficient data-driven work.",
+        "id": "25092574",
+        "publicId": "darina-galavska",
+        "trackingId": "MLvAwOkVRyyeRFIuA/JLPw==",
+        "profileId": "ACoAAAF-4d4BkaGCAgowGWwkHLvbac1BJyReoTo",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEHJQwerYDXhQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517720420768?e=1781136000&v=beta&t=8xS4Q8J8X6lt12Hkj1uQefJFWTXml_uMjz40Erqxj48"
+      }
+    },
+    {
+      "type": "LIKE",
+      "company": {
+        "name": "Processand",
+        "universalName": "processand",
+        "trackingId": "+eCWkTLGRq6eX0IcdG3Izg==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:18212507",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQF5dl99jIeYYA/company-logo_400_400/company-logo_400_400/0/1659005336513/processand_logo?e=1781136000&v=beta&t=-ZXmSOJBHTQQCAXmKhP0D7VG7qLhrkBYlsYNrGDnmkg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Eva",
+        "lastName": "Valenová",
+        "occupation": "IT Recruiter for Green:Code - Powered by Škoda Auto & Etnetera",
+        "id": "690634751",
+        "publicId": "eva-valenova",
+        "trackingId": "ojuBBfYMSiCZ8u8ZBOTxcg==",
+        "profileId": "ACoAACkqP_8BVHBJ8mHEx3skVYHAjPSFAfq4WyQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQGPGndfSf_TLw/profile-framedphoto-shrink_800_800/B4DZ5PwiKpJYAg-/0/1779454583841?e=1780430400&v=beta&t=fF55FdalGlhGixLzzwRcu1NcoWkELZP9ocKSkK9B5fI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGlNGlcm5-VFg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1573905063639?e=1781136000&v=beta&t=INONISq3fq_arnHPqYTDcnYRfEWTqsz0dRR9SWH296E"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Zuzka",
+        "lastName": "Pešková",
+        "occupation": "Head of People & Senior HRBP 🤝 Org Design & Change Management 👷🏻‍♀️ Helping organisations and their people grow 🚀 From strategy to execution 🏁",
+        "id": "372617580",
+        "publicId": "zuzka-peskova",
+        "trackingId": "AM0vji0fSiWJjzVyqwi2QA==",
+        "profileId": "ACoAABY1sWwB4t11FnuAB0kZKnWKzYGFsr-BnW4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEBTNC5HjmZwA/profile-displayphoto-crop_800_800/B4EZqdc3M9IUAM-/0/1763578181096?e=1781136000&v=beta&t=96_ZgIZQnV0KOXKFQEPPVNAmGS7Nd7a_i-r6SAdDxh0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGOsvFZTyUNow/profile-displaybackgroundimage-shrink_350_1400/B4EZne5YaCHgAc-/0/1760381210675?e=1781136000&v=beta&t=6g8P8LQihHH3TRY2z2x2TxC_4Y4n3SBZcvWDjOlndHM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michaela",
+        "lastName": "Koudelkova",
+        "occupation": "Test Analyst at Cyber Fox and mentor at Czechitas",
+        "id": "292145216",
+        "publicId": "michaelakoudelkova",
+        "trackingId": "yJv51tNDTn2vVGkRGA2eVw==",
+        "profileId": "ACoAABFpyEABFqmYqR_GlrpP2lafZoQLPBrf-tI",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFKsp97t6P-wQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516353290735?e=1781136000&v=beta&t=FVddPXnC0UmGq-57tY5dBNm37AB140yiPqqF0xLVJKo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQH5wEaq6ly9VA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1557083059573?e=1781136000&v=beta&t=X3PZ1VnvPc4Jw3cuQyoWmCeEbc0rQ_ap7Y79XPInj7Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Blanka",
+        "lastName": "Semanová",
+        "occupation": "Frontend Developer - React and Next",
+        "id": "740316381",
+        "publicId": "blanka-semanová",
+        "trackingId": "6zlBf135QueevEqMPgNCfQ==",
+        "profileId": "ACoAACwgVN0BXjPO356is1a7HECdYY6oGuzTouY",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQHt31UB9Dnr_g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1705586552175?e=1781136000&v=beta&t=VnaoT0wlgyuQQGLJMI1wvCsS4oGHAmClyqm-JikLvgE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGmd9O2TBL9PA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1705586497192?e=1781136000&v=beta&t=JlZHwSEMta7stFHe1LeFKFVGgbpKpeFbQUUDebs_rnc"
+      }
+    }
+  ],
+  "numShares": 3,
+  "numLikes": 22,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "oj2zx8G7Q8yvsjNtVK0w7Q==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1641465700272,
+  "postedAtISO": "2022-01-06T10:41:40.272Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

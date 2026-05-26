@@ -1,0 +1,247 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:8006738169333551947",
+    "url": "https://junior.guru/candidate-handbook/",
+    "title": "Přesměrování"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6706500069002141696",
+  "url": "https://www.linkedin.com/posts/honzajavorek_p%C5%99esm%C4%9Brov%C3%A1n%C3%AD-activity-6706500069002141696-SOuR?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAACV_bv4Bk5ERfS1sLjiBOKctm-e1auj5DDg",
+  "timeSincePosted": "5yr",
+  "shareUrn": "urn:li:share:6706500068310093824",
+  "text": "Tak je to konečně venku! Na mém webu pro začátečníky v programování dnes vyšla velká příručka s hromadou tipů, jak si najít svou první práci v IT 📖 \n\nCelý web mám rozdělený na tři fáze, 1. učení, 2. získání praxe a třetí je hledání práce, kam spadá i tahle příručka.\n\nPříručka je Open Source a přístupná všem, jednotlivci za ni platí láskou (zkuste na stránce vyhledat slovo LOVE ❤️). Chci tvořit obsah přístupný pro všechny, za který zaplatí ti, kdo si to mohou dovolit. Firmy mohou moji činnost podpořit logem na příručce nebo inzercí nabídek práce pro juniory.\n\nTímto vřele děkuji společnostem Red Hat, OpenGeoLabs s.r.o. a Fakturoid, které neváhaly a příručku podpořily hned při jejím vzniku!",
+  "attributes": [
+    {
+      "start": 597,
+      "length": 7,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Red Hat",
+        "universalName": "red-hat",
+        "trackingId": "J0WxWywPQcWJoQur0XGBjQ==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:3545",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQEto-TydTTIfQ/company-logo_400_400/company-logo_400_400/0/1630583759577/red_hat_logo?e=1781136000&v=beta&t=pz-ZVls43PnEc3AaLENZp2yy3p0tbH6UgDxfJUL2tDA"
+      }
+    },
+    {
+      "start": 606,
+      "length": 18,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "OpenGeoLabs s.r.o.",
+        "universalName": "opengeolabs",
+        "trackingId": "ys8TpvuYSpaFGcfvDch+AA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:18047298",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQFSsOtdFuEPyQ/company-logo_400_400/company-logo_400_400/0/1630596618507/opengeolabs_logo?e=1781136000&v=beta&t=ZcBLN2PK0Ij_94p0Omrxd_MAEFsjJZ3Gui-SpLuXcq0"
+      }
+    },
+    {
+      "start": 627,
+      "length": 9,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Fakturoid",
+        "universalName": "fakturoid",
+        "trackingId": "N7IzJwcLS8W+wsVBChkVjA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:612241",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQG2OSsUNJ24Dw/company-logo_400_400/company-logo_400_400/0/1630627492772/fakturoid_logo?e=1781136000&v=beta&t=Jg8Cl7fCiJFhhrOQmCX6Z4ELvleKfM0iBgYUN0g2sow"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1599461326620,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6706500069002141696?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6706500069002141696%2C6708627040087633920%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286708627040087633920%2Curn%3Ali%3Aactivity%3A6706500069002141696%29",
+      "text": "super prirucka! Dakujem, v mnohom ma poucila a vdaka aj za skvele odkazy :-) \n",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Slovak",
+      "author": {
+        "firstName": "Martin",
+        "lastName": "Šuraba",
+        "occupation": "Linux lover ;-)",
+        "id": "148282826",
+        "publicId": "martin-šuraba",
+        "trackingId": "B+BrvYfaSwaeZ+zNGYm+Lw==",
+        "profileId": "ACoAAAjWncoBV1fLUSxy4LPyYcesKobjlSQHznQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG3Gb4BlgCVZQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693900488039?e=1781136000&v=beta&t=x-DN7fUTWuQkA6F4_rWi05mTohNdCH-S2Vj0RulkMM0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGGkAbiGDIeww/profile-displaybackgroundimage-shrink_350_1400/B4DZ2w5FFRHwAY-/0/1776789247703?e=1781136000&v=beta&t=KaejtkxyR8ERrXhjNGP_KW3lGT8Nz8IVYzQy0BShSP4",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Roman",
+        "lastName": "Zajic",
+        "occupation": "Software Engineer",
+        "id": "60395980",
+        "publicId": "roman-zajic",
+        "trackingId": "ftV1jGkAQ2mxk0cEwqTQ5g==",
+        "profileId": "ACoAAAOZkcwBDzwL79Nb5iI4GNBM3X7CC7G__cc",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQHyjbwCNQ7S0w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1620023919208?e=1781136000&v=beta&t=RmzSaks3I5LM1lytv8w1udkb2vQfAx7MmjZDFeCc7hY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marie",
+        "lastName": "Cackova",
+        "occupation": "Software Engineer",
+        "id": "320613044",
+        "publicId": "marie-cackova",
+        "trackingId": "VUjY4W+7RDC9R1rtvtrApw==",
+        "profileId": "ACoAABMcKrQBr4I933x-qCy_40BjW9k44WAVdb4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Zdeněk",
+        "lastName": "Softić",
+        "occupation": ".",
+        "id": "28300571",
+        "publicId": "zdeneksoftic",
+        "trackingId": "2qGyaQBjRMGH6b15DcGbKA==",
+        "profileId": "ACoAAAGv1RsBH1XpcYLeBQ6gSonPflQJ4ReAQLQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHSODL9zx6nTw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1690822720966?e=1781136000&v=beta&t=OtPT2pZ9JhuKiT9054trFc2C4kDYOM01E5I5xBXcg74",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGnXyBaxOEjbQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1678649012972?e=1781136000&v=beta&t=UTJV6j0G5PfUCxZfBnPHx_h7RN5MY7jYry7tt0Rk-aU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Zmijková",
+        "occupation": "Software Developer",
+        "id": "450096743",
+        "publicId": "zmijkova",
+        "trackingId": "Q1bDptc6QgOxbxl99+NWag==",
+        "profileId": "ACoAABrT7mcBs7ie4r1nA4McNBK2tV0qfujA2v4",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFwmJejccKJYw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1604515688256?e=1781136000&v=beta&t=_OsPmbqF1GUuRnM81Ym5BJrwABb9dZxzXqQgibkJR-U"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daria",
+        "lastName": "Linhart Grudzien",
+        "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
+        "id": "183293578",
+        "publicId": "dariagru",
+        "trackingId": "jkD3SJnsRCy6zrIrcB4tqg==",
+        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ladislav ",
+        "lastName": "Vasek",
+        "occupation": "🚀 Communities, events & media that actually work | 🎪 Space Dog | ⚙️ Tech Execs",
+        "id": "414485697",
+        "publicId": "ladislav-vasek",
+        "trackingId": "FrPrcwmIRbm8FswMSWvYFQ==",
+        "profileId": "ACoAABi0jMEB-HfKmmHkAOkWmPuT_0O0SZYQeiI",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGqeZwljsXiIA/profile-displayphoto-crop_800_800/B4DZ12lFE8G0AM-/0/1775810926834?e=1781136000&v=beta&t=1-WlEa5CWIkBXkox5pOlSc_Pg3qFXwBax9Qu28ggcNY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEsMG2EZxu5iw/profile-displaybackgroundimage-shrink_350_1400/B4DZ12kVyWJoAc-/0/1775810734035?e=1781136000&v=beta&t=0M_w8ICTD7NCH6LWYgfOuupCpmfN0pbqLNCjma4GzAw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Sarka",
+        "lastName": "Cerovska",
+        "occupation": "Talent Acquisition Partner",
+        "id": "63177727",
+        "publicId": "sarkacerovska",
+        "trackingId": "HrRGFyT8T669A7k1e196iQ==",
+        "profileId": "ACoAAAPEA_8BzksvksVzbz6sHs05xKjV3asYqd4",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQFv2hG5F1QSQQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582896370930?e=1781136000&v=beta&t=-iugVHL7N247z6z6R6ClXQWQlxBGxTfprW0faQuRBjM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQEO-izDtDao3w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517521846375?e=1781136000&v=beta&t=G0fKuA6QPaVD5Mp36vETDRjcWcOVJRtMqVHDICl2s_o"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Šuraba",
+        "occupation": "Linux lover ;-)",
+        "id": "148282826",
+        "publicId": "martin-šuraba",
+        "trackingId": "GkSyR0emQR6AJz9IKQ4lqw==",
+        "profileId": "ACoAAAjWncoBV1fLUSxy4LPyYcesKobjlSQHznQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG3Gb4BlgCVZQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693900488039?e=1781136000&v=beta&t=x-DN7fUTWuQkA6F4_rWi05mTohNdCH-S2Vj0RulkMM0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGGkAbiGDIeww/profile-displaybackgroundimage-shrink_350_1400/B4DZ2w5FFRHwAY-/0/1776789247703?e=1781136000&v=beta&t=KaejtkxyR8ERrXhjNGP_KW3lGT8Nz8IVYzQy0BShSP4"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Kateřina",
+        "lastName": "P.",
+        "occupation": "Currently on maternity leave",
+        "id": "498811395",
+        "publicId": "katerinapaulinova",
+        "trackingId": "AqbRLfHPRSqH3IALlcA0tQ==",
+        "profileId": "ACoAAB27QgMB-LtkvlGwxNcB-N_aZb3iLmTAnn0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFaWnsM2HQv2g/profile-displayphoto-crop_800_800/B4DZvf7qupJwAM-/0/1768988524216?e=1781136000&v=beta&t=4da7fmH3bVYAkZcSC2ZbEtUYvTh1vvc9wC4KyJ7tQWE"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Olga",
+        "lastName": "Fomicheva",
+        "occupation": "Senior Software Quality Assurance Engineer",
+        "id": "416625414",
+        "publicId": "olga-fomi4eva",
+        "trackingId": "X+WBi2Q6RRqX1rZvWfEffg==",
+        "profileId": "ACoAABjVMwYBl1mQk-yqt94ksBaZXhvi_yqjzLc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFozOZ-gEz2Kg/profile-displayphoto-crop_800_800/B4DZp_IbT6JcAI-/0/1763069507594?e=1781136000&v=beta&t=ItlkKOFyqTzUBSLARPt07jogC35NpoSmpTHbN_91tiw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFK7R6zdR54NQ/profile-displaybackgroundimage-shrink_350_1400/B4DZsKMaKGLkAY-/0/1765402584476?e=1781136000&v=beta&t=xpT3-OCA4qpI28lvGMNaYny7mLWb3LSwffFTCC8e4Rg"
+      }
+    }
+  ],
+  "numShares": 5,
+  "numLikes": 20,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "8zs/krHOQ46pAZAEkISTNQ==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1598954217196,
+  "postedAtISO": "2020-09-01T09:56:57.196Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

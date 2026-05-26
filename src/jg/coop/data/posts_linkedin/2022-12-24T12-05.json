@@ -1,0 +1,307 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4E22AQHfWCKQB82W7w/feedshare-image-high-res/feedshare-image-high-res/0/1671883557223?e=1781136000&v=beta&t=gmg0OTk8_A-CtZqTR6oMytKC2P9TCF7L1yrcXIpnt9A"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:7012387898507296768",
+  "url": "https://www.linkedin.com/posts/honzajavorek_a-few-days-ago-ive-got-this-gift-from-strv-activity-7012387898507296768-7EhA?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAE2PLXsBuFiD1nAi3PAY2nbRbRYGC5K4OKI",
+  "timeSincePosted": "3yr",
+  "shareUrn": "urn:li:share:7012387897592926208",
+  "text": "A few days ago I’ve got this gift from STRV’s awesome Norbert 🎁\n\nWhen I started my little business approx 3 years ago, I wouldn’t even believe that one day such successful houses like STRV would be my clients. Now they’re my fans and root for me like this!\n\nFor me, this is quite touching. It reminds me how my impostor syndrome blurs my vision. It reminds me that, at least from time to time, I should stop hustling, have a pause, and look back at what I’ve already built. And I should be content and happy. Thank you so much for this reminder, Noro! ❤️\n\nI wish you all to have such lovely customers, who are also your fans. Who will remind you that despite all your insecurities, you are actually awesome. And who will, perhaps even accidentally, remind you about it when you need it the most. Merry Christmas 🎄",
+  "attributes": [
+    {
+      "start": 39,
+      "length": 4,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "STRV",
+        "universalName": "strvcom",
+        "trackingId": "/eI39NoTSSmoradxU1PCQg==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:638464",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQGRe0mQQS4uQQ/company-logo_400_400/company-logo_400_400/0/1642697941481/strvcom_logo?e=1781136000&v=beta&t=ecnZue0KPSgLpYyZjiqBHfmdsywUsgkRDua3AKt3Mds"
+      }
+    },
+    {
+      "start": 54,
+      "length": 7,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Norbert",
+        "lastName": "Červený",
+        "occupation": "I help great brands grow @STRV",
+        "id": "337285701",
+        "publicId": "strv-norbert-cerveny",
+        "trackingId": "XRgUFEgmQP28QIYWPmYNtg==",
+        "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGKIAaUJPtlmA/profile-displayphoto-crop_800_800/B4DZ0jT_lBIEAI-/0/1774413941709?e=1781136000&v=beta&t=ioRFNZY53XZXWk1BvKTQdIygU-xxLKoyNysEAYklp0I",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG0ekEnNy2Hcw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0jTiNeGsAk-/0/1774413817026?e=1781136000&v=beta&t=_KMbjLzzfd2pO9gizTz2iWgDOkq5RQ3NpzDT5fOljNI"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1672240360250,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7012387898507296768?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7012387898507296768%2C7013884431954231296%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287013884431954231296%2Curn%3Ali%3Aactivity%3A7012387898507296768%29",
+      "text": "And I wish everyone a partner for doing IT good like Honza Javorek. 🤝 You rock!",
+      "entities": [
+        {
+          "start": 53,
+          "length": 13,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Honza",
+            "lastName": "Javorek",
+            "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+            "id": "8517488",
+            "publicId": "honzajavorek",
+            "trackingId": "n3Qsl13yR3mAY1AhEHe1TA==",
+            "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+            "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "English",
+      "author": {
+        "firstName": "Jan",
+        "lastName": "Meissner",
+        "occupation": "Product & Tech Community Lead at Mews",
+        "id": "677292059",
+        "publicId": "jan-meissner",
+        "trackingId": "ISS6diB6QAyYGRiZPJVb3w==",
+        "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEEoMbY9urW6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728030316222?e=1781136000&v=beta&t=qIshYYWgkzBRoJGlT6oqlmeH3jlRiX8J_luFzaICydQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGei_PMH8ghyw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728030258130?e=1781136000&v=beta&t=GS9HgAFTdCMh-1xFx2xIDoLH91oMpSioaV6pV2ayQSY",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1672155595090,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7012387898507296768?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7012387898507296768%2C7013528901108826112%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287013528901108826112%2Curn%3Ali%3Aactivity%3A7012387898507296768%29",
+      "text": "You should definitely take a moment for this to sink in. You're doing awesome stuff.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "English",
+      "author": {
+        "firstName": "Daria",
+        "lastName": "Linhart Grudzien",
+        "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
+        "id": "183293578",
+        "publicId": "dariagru",
+        "trackingId": "m+/KdowCQzOLvf0un2xsfg==",
+        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1671887060179,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7012387898507296768?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7012387898507296768%2C7012402584053235712%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287012402584053235712%2Curn%3Ali%3Aactivity%3A7012387898507296768%29",
+      "text": "Honza, what can I say, I’m a huge fan of yours 😅😊 happy holidays!",
+      "entities": [
+        {
+          "start": 0,
+          "length": 5,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Honza",
+            "lastName": "Javorek",
+            "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+            "id": "8517488",
+            "publicId": "honzajavorek",
+            "trackingId": "n3Qsl13yR3mAY1AhEHe1TA==",
+            "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+            "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "English",
+      "author": {
+        "firstName": "Norbert",
+        "lastName": "Červený",
+        "occupation": "I help great brands grow @STRV",
+        "id": "337285701",
+        "publicId": "strv-norbert-cerveny",
+        "trackingId": "cX0cfQ22Sl6GKvkxW9BUjQ==",
+        "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGKIAaUJPtlmA/profile-displayphoto-crop_800_800/B4DZ0jT_lBIEAI-/0/1774413941709?e=1781136000&v=beta&t=ioRFNZY53XZXWk1BvKTQdIygU-xxLKoyNysEAYklp0I",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG0ekEnNy2Hcw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0jTiNeGsAk-/0/1774413817026?e=1781136000&v=beta&t=_KMbjLzzfd2pO9gizTz2iWgDOkq5RQ3NpzDT5fOljNI",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Artem",
+        "lastName": "Bosniak",
+        "occupation": "Software Engineer",
+        "id": "814668635",
+        "publicId": "artem-bosniak",
+        "trackingId": "yMBGXFI/SJaoKnswpraspQ==",
+        "profileId": "ACoAADCO21sBT_e4vhDHMXjjGlmsfQrGVf9LXRE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGFUi3VKS50TA/profile-displayphoto-crop_800_800/B4DZxy0AMsJcAI-/0/1771452762115?e=1781136000&v=beta&t=OTbBF_3Wn0zaNh9aR1OKPtzc62ZcG4qqV4bk755uXtA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHrY4lVf2MRGg/profile-displaybackgroundimage-shrink_350_1400/B4DZyMdf6eHEAc-/0/1771883070407?e=1781136000&v=beta&t=AAyCoUvU8hwa-OKbBy5lx5FpZBpaOR63GA5NI57ZIpw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Charamza",
+        "occupation": "Operations at Deutsche Börse",
+        "id": "964302756",
+        "publicId": "chrmzio",
+        "trackingId": "ijDSu7I3Q4eG3uz8qzko7w==",
+        "profileId": "ACoAADl6F6QBE6fNUi80lVl0ieS-jVdRiXvXg70",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEzQbFP6ipzgA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1642508638000?e=1781136000&v=beta&t=_eZ5Y4p8SfjUh5ly8ypfrt8BetI5OU4BCU0xXLpVMp0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEI8hMnu5JyiA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1674412735539?e=1781136000&v=beta&t=LQa4li_ZqG55Mq1ScHipmVoXwHL35JxjZazOs-ifQ-k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Bojan",
+        "lastName": "Jovanovic",
+        "occupation": "Python Software Developer | Helping Companies Build High-Performance Remote Teams",
+        "id": "94458396",
+        "publicId": "bojovanovic",
+        "trackingId": "phzaufXjRHaWiiZuAuc6Eg==",
+        "profileId": "ACoAAAWhUhwBqJRTQqxuC7DddplqLvj1odHp4rw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG-zNiJFRBqLQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1722584611821?e=1781136000&v=beta&t=JUF2QQaK0BX2ohYxMnhwe3yC7ll8Wn6orU4ZNRytCSs",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFEcnAkj3Hp_Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1561561698886?e=1781136000&v=beta&t=SqlV3mb14qZtCNHZxJOpnu1UrwnkdxivX15ckeQcvfM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "company": {
+        "name": "STRV",
+        "universalName": "strvcom",
+        "trackingId": "Y5/qnCaCTRm6yKSSCZI4dQ==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:638464",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQGRe0mQQS4uQQ/company-logo_400_400/company-logo_400_400/0/1642697941481/strvcom_logo?e=1781136000&v=beta&t=ecnZue0KPSgLpYyZjiqBHfmdsywUsgkRDua3AKt3Mds"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Natalie",
+        "lastName": "Mikešová",
+        "occupation": "Softwarový inženýr ve společnosti Security Scorecard",
+        "id": "199634401",
+        "publicId": "nataliemikesova",
+        "trackingId": "2GUvmHQ5QbCNwDx92BOr/w==",
+        "profileId": "ACoAAAvmLeEBB2iZ_vXMYhR3WoUsSC-k3iPuG4Y",
+        "picture": "https://media.licdn.com/dms/image/v2/D5635AQGXW0U7XhrOLA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1660002772504?e=1780430400&v=beta&t=v22RqlMgRS7YScN5sBsUHO0Ww5TuKTAYClQDy0LF03w",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5116AQEPyNrN9dTZ2A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516945761838?e=1781136000&v=beta&t=HFBHan_vfdVCLQsS4inP5_dlCg6o4SaQz4GhEGNiWEw"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Nathalie",
+        "lastName": "Vecten",
+        "occupation": "\"It is a capital mistake to theorize before one has data.\" *cleaned data",
+        "id": "775508820",
+        "publicId": "nathalie-vecten",
+        "trackingId": "eOXcbA4UQluc/SE7/NPKPg==",
+        "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH5sSEbnQ2Tcg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1611936430673?e=1781136000&v=beta&t=wAQsj8dSBDe6L3xt1MwxMahW3aP-D6LcuvT-utzij6s",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHDKxhi18V0lw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1599638080880?e=1781136000&v=beta&t=5JiWefMiJff9VXnKXxoAOOrnUYNFE4fW7AQAgJac6VA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Přibil",
+        "occupation": "Global Sales Manager | Specialty Lubricants",
+        "id": "132002824",
+        "publicId": "petr-pribil",
+        "trackingId": "QkT59sVvR+WXbCCwVtiU9Q==",
+        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEGdgqIgIpkzg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712250006297?e=1781136000&v=beta&t=UB9wEJule0NhB0lR0De_FtfePuW1Di0Vm80cYt1MqZU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFuvlBRuJNbjw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712250566915?e=1781136000&v=beta&t=8sCRHio1dDSnAp_oiaygmw7_1g4W1ce4YJV-kaJIK3M"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Hodánek",
+        "occupation": "Backend Engineer (Java/Kotlin) | Distributed Systems & Integrations",
+        "id": "757873888",
+        "publicId": "jan-hodánek-514988191",
+        "trackingId": "Jox5pesFQsWbinFYj1doJg==",
+        "profileId": "ACoAAC0sPOABpN0wLSpqIjR8S3hmffIlRMbsO9Q",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGytf39XhJDbg/profile-displayphoto-shrink_800_800/B4EZQc.X5FHkAg-/0/1735652900927?e=1781136000&v=beta&t=3cQVaO4ywx1RJHbdYFjTX9GgJ1ewsCVNeSrm_zRnjNo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Šmerkl",
+        "occupation": "Associate at White & Case LLP",
+        "id": "181766756",
+        "publicId": "psmerkl",
+        "trackingId": "ZmZBCY6ZSE+8SWVH0la22w==",
+        "profileId": "ACoAAArVimQBOtHJgcAWlOgsepVAL8b0oagL0gc",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQE790pYm8a3_g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1624470351318?e=1781136000&v=beta&t=vfjCwSS5_OQ-cKEhPjM24d7_Ia7eoX7O7eOeXDFSsfQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5116AQEM5i6-_sawaQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516474471360?e=1781136000&v=beta&t=HJSM0KoVHv_FKFNR1UrLsXR2jk0lsbH3JexjagGH7W4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Thu Thuy",
+        "lastName": "Mai",
+        "occupation": "IT Roles | Programming & Web Background",
+        "id": "113305173",
+        "publicId": "tthuymai",
+        "trackingId": "AHbcobquQzWhtpXdUJTz7g==",
+        "profileId": "ACoAAAbA5lUBiWfC1CDOrzRQzkgA-5YVgXkgCiM",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQGy7vR8tfZmmw/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1654596789933?e=1780430400&v=beta&t=Xc3_fwK3Di8X_5NQXFNqnKxG-WrXajqcrZT3Ds2vz4g"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 43,
+  "numComments": 3,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "njUDBvseQPmYSowUTSkVfg==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1671883558871,
+  "postedAtISO": "2022-12-24T12:05:58.871Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

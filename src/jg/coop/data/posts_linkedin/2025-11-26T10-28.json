@@ -1,0 +1,298 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/D4D22AQEqHnlpaMJvMQ/feedshare-image-high-res/B4DZq_qBMUJMAs-/0/1764152057729?e=1781136000&v=beta&t=hMGsWEhb4pAocHM49Zak89cjsfOBav-G_E3u7rtaj44"
+  ],
+  "isActivity": true,
+  "activityDescription": "Honza Javorek reposted this",
+  "activityOfUser": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "W/hJghUjRieAQ5z28yU9ZQ==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "urn": "urn:li:activity:7399393583138500609",
+  "url": "https://www.linkedin.com/posts/dzoukr_podvocasemlive-activity-7399390035659341824-ULyM?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC_ljigBFvhn56YoZGdxoUnN9NKI3l-Akak",
+  "timeSincePosted": "6mo",
+  "shareUrn": "urn:li:share:7399390034279407616",
+  "text": "Tak už ho máme! Dorazil nám dvouhodinový záznam #PodVocasemLIVE s fantastickými Honza Javorek, Kateřina Charvátová a Michal Benatsky a vypadá to perfektně! No a co s tím dál? 🤔 To teď s Petr Polak intenzivně řešíme, ale určitě najdeme nějaký způsob, jak vám tuhle exkluzivitku naservírovat. Stéj tjůnt!",
+  "attributes": [
+    {
+      "start": 80,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "VMpinpx7Rwm9rgliY7vVww==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+      }
+    },
+    {
+      "start": 95,
+      "length": 19,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Kateřina",
+        "lastName": "Charvátová",
+        "occupation": "Platform Engineering Lead | Software Architect | Building an internal platform for Česká spořitelna from scratch",
+        "id": "429944381",
+        "publicId": "kateřina-charvátová",
+        "trackingId": "8LPIeVGfSEaA9gz8GYJqBQ==",
+        "profileId": "ACoAABmgbj0By26PuPYOsRoIDGMXlopMepEPMvM",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEgasMRXXpzHA/profile-displayphoto-crop_800_800/B4EZgX9X1NGUAI-/0/1752748621646?e=1781136000&v=beta&t=uFeBhkGckzjALWSlA8kZdKpI1Da8nX8s7zUYog9ql1Q",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGm4dQzjd4WZw/profile-displaybackgroundimage-shrink_350_1400/B4DZeCRK8vGYAc-/0/1750237229920?e=1781136000&v=beta&t=MYnm8qS5IBbTua5f1joiYJWdcQbuEvB-FzJmwwjDzxA"
+      }
+    },
+    {
+      "start": 117,
+      "length": 15,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Michal",
+        "lastName": "Benatsky",
+        "occupation": "Principal Software Engineer | Graphics & Engine at Roblox",
+        "id": "70380079",
+        "publicId": "michalbenatsky",
+        "trackingId": "eSa+lenRRuaeYVfPorwOTA==",
+        "profileId": "ACoAAAQx6i8BWAmHS0LBhJHSZH5XMB9SLr-NKxM",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHKJ6PqTwLEQw/profile-displayphoto-crop_800_800/B4EZlssVZCKgAI-/0/1758465186987?e=1781136000&v=beta&t=umKZubv9Rl7D-okH-OV9TaX5RzkbydS7Z25KQWgXLgw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEXeV8P00r6Dg/profile-displaybackgroundimage-shrink_350_1400/B4EZWY3dv3HgAY-/0/1742026439462?e=1781136000&v=beta&t=fwU3dQOW-t-m9HW9l1AuvAT-6KJ4UwB2vlKQCs91RbQ"
+      }
+    },
+    {
+      "start": 186,
+      "length": 10,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Polak",
+        "occupation": "Data enthusiast | Podcaster | Data Leader | Česká Spořitelna | PodVocasem | IT Talks Moderator",
+        "id": "171978419",
+        "publicId": "87petrpolak",
+        "trackingId": "f9L/WujfQES0xuI3YyZCnA==",
+        "profileId": "ACoAAApALrMBTyZXvJhHW-FoCFHKJ-Zo7SioOh0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFuigZ7miExrA/profile-displayphoto-crop_800_800/B4DZ5LVhPyHAAI-/0/1779380393639?e=1781136000&v=beta&t=lMN84ln4iws8ysm8uGMbgKia2yBB-DvTdwKKJ01GMg0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFq3W_AjqhDJg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1734679806160?e=1781136000&v=beta&t=3p9fkcD_cV3js--bdJ9RJrwQodlLlRs1deYdaeRxpbc"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1764152928192,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7399390035659341824?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7399390035659341824%2C7399393683323789312%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287399393683323789312%2Curn%3Ali%3Aactivity%3A7399390035659341824%29",
+      "text": "dobře tam rapuješ, Michal Benatsky",
+      "entities": [
+        {
+          "start": 19,
+          "length": 15,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Michal",
+            "lastName": "Benatsky",
+            "occupation": "Principal Software Engineer | Graphics & Engine at Roblox",
+            "id": "70380079",
+            "publicId": "michalbenatsky",
+            "trackingId": "eSa+lenRRuaeYVfPorwOTA==",
+            "profileId": "ACoAAAQx6i8BWAmHS0LBhJHSZH5XMB9SLr-NKxM",
+            "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHKJ6PqTwLEQw/profile-displayphoto-crop_800_800/B4EZlssVZCKgAI-/0/1758465186987?e=1781136000&v=beta&t=umKZubv9Rl7D-okH-OV9TaX5RzkbydS7Z25KQWgXLgw",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEXeV8P00r6Dg/profile-displaybackgroundimage-shrink_350_1400/B4EZWY3dv3HgAY-/0/1742026439462?e=1781136000&v=beta&t=fwU3dQOW-t-m9HW9l1AuvAT-6KJ4UwB2vlKQCs91RbQ"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "W/hJghUjRieAQ5z28yU9ZQ==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Černý",
+        "occupation": "CEO at Applifting",
+        "id": "151757785",
+        "publicId": "jancernyhk",
+        "trackingId": "OvMwrZxSSXWqBifJV4xxew==",
+        "profileId": "ACoAAAkLo9kBPYPXWyXeWecPzeQ4ZcNWDwDcYHQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEFJcjdRwYGSw/profile-displayphoto-crop_800_800/B4DZ1m.2kMHEAQ-/0/1775549249356?e=1781136000&v=beta&t=YMg6OnLlmiCYj4CMtQctXauSk6NorfsibSU5BGJ_j_8",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHl0d_L7PvFEA/profile-displaybackgroundimage-shrink_350_1400/B4DZyfWpPaJwAY-/0/1772200039828?e=1781136000&v=beta&t=yXOK2P2opIExVaTN--vWp0SKaAPCd-aydRbLiKXzg8c"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michal",
+        "lastName": "Sirica 🇪🇺",
+        "occupation": "Boutique Nearshoring | Managing Partner at Garwan",
+        "id": "54627147",
+        "publicId": "michal-sirica-🇪🇺-b2336416",
+        "trackingId": "HTN3oQCOR6CGadwXCqkbdA==",
+        "profileId": "ACoAAANBi0sBn3aSRxEWt_yR9t4ilQEdCy-BZCQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF2IQozZM5BaQ/profile-displayphoto-crop_800_800/B4DZu34fFiJsAI-/0/1768316598816?e=1781136000&v=beta&t=qJXoUSp2_ZYhZNFUqZCKdeKicP7KZHjCw17SRo7oLKU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEjqy4WGSRGIg/profile-displaybackgroundimage-shrink_350_1400/B4DZu44GaLHwAc-/0/1768333278778?e=1781136000&v=beta&t=PA87BdioC3c6ZQ8S4V4E23hQi_0qE6sKOdW5AVYcBB8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Srb",
+        "occupation": "Technology transformation and AI adoption partner for CEOs",
+        "id": "152506172",
+        "publicId": "martin-srb",
+        "trackingId": "Exe/XdGmRzWy5qEM/nvjTA==",
+        "profileId": "ACoAAAkXDzwBgg2D-qCwifyYmAGMsUW38nULxDM",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEO1MJMZNbaEA/profile-displayphoto-crop_800_800/B4DZ4bBX.uI0AI-/0/1778569807490?e=1781136000&v=beta&t=VP45enuFmTZciH1tUhO-3X4n3RoodmHHaA7vnrLzi2o",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFyDH233larVQ/profile-displaybackgroundimage-shrink_350_1400/B4DZxqmfRIG8Ac-/0/1771315001155?e=1781136000&v=beta&t=zEduElXMd4kx2QA7WKLm0VQ07z4oYQBM1U4JqHwcUzk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Monika",
+        "lastName": "Schlixbierová",
+        "occupation": "HR Specialist",
+        "id": "87645498",
+        "publicId": "monikaschlixbierova",
+        "trackingId": "33CJXboVRM+kPMATjQFymg==",
+        "profileId": "ACoAAAU5XToB2EGrXbb_w81KH35hfAfvNsSFb64",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGlkDJqu_hEUw/profile-displayphoto-crop_800_800/B4EZhWLzE4HIAQ-/0/1753792590804?e=1781136000&v=beta&t=pwZ0k1awSkOQh7ov3d0X2POuEWKkceSI5KQcGWOX518",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFvBGE4w-Ucng/profile-displaybackgroundimage-shrink_350_1400/B4EZmQIRZYIoAY-/0/1759059714158?e=1781136000&v=beta&t=DKmc9ZpLEFzObw-lnPN3UPbcHTqAEGccz3Fav3R0508"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lukáš",
+        "lastName": "Názer",
+        "occupation": "Security Management | 16 Years in Public Safety | Operations & Administration",
+        "id": "1490386548",
+        "publicId": "lukáš-názer-270164357",
+        "trackingId": "wyC3z0oUTbe6FtbiwZ/xaA==",
+        "profileId": "ACoAAFjVfnQBRiWDVYgeRaVNR9CkNSlnACEsxsY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHXiTp76wTrAA/profile-framedphoto-shrink_800_800/B4DZ3BlJh2G4Ag-/0/1777069234603?e=1780430400&v=beta&t=8Tb6p9FTg2cUQNp6Qt9BY4bFRPxPxDwzlMaM_a_e4dM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGRmdKcLOO4mQ/profile-displaybackgroundimage-shrink_350_1400/B4DZuduYc0KoAc-/0/1767877741572?e=1781136000&v=beta&t=-r1YEOtb84pQij6od76GCRY8-7ltn8jMw_JGF8sYxdA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Nadymáček",
+        "occupation": "Head of Delivery at Garwan",
+        "id": "7707828",
+        "publicId": "nadymacek",
+        "trackingId": "DHP2RWRNRgO8QiGH6YcCfg==",
+        "profileId": "ACoAAAB1nLQByqVXma5G89ja8KnN2-VAhl0kOOI",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHMi0on1yO-ow/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1659882059949?e=1781136000&v=beta&t=hAKxpI5ad8Mn_K67-mZj0FEwmGcqmVlDEQP_EX7HYeM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Radek",
+        "lastName": "Novotný",
+        "occupation": "Molecular simulations @ Charles University | C & C++ @ 42 Prague | .NET & AI @ Ciklum Czech Republic & Slovakia",
+        "id": "599071864",
+        "publicId": "novotnyradekcz",
+        "trackingId": "MCUrOio7SS+mtBA0RPx67g==",
+        "profileId": "ACoAACO1HHgBy2EjqERpuUHHu8Al8unLTgpkJJw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH0mkrTcWVAxg/profile-displayphoto-crop_800_800/B4EZf6L9jKHwAM-/0/1752249130093?e=1781136000&v=beta&t=JRMMyhZJCpfjGqX7pWLb-MoQLQRVGUkCeeS9K5GE6Oo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGWhQ7NakVpjg/profile-displaybackgroundimage-shrink_350_1400/B4EZhWpO53HEAc-/0/1753800306957?e=1781136000&v=beta&t=DgtiptUemM-N9rhhOGh_gD5e2k6jtMVsLXW1j72d3sI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Hana",
+        "lastName": "Chundelova Sulcova",
+        "occupation": "VP Business Development @ Avenga | Globally responsible for HiTech, SportTech, Retail, Security and Utilities | Industry changing IT Solutions | Partnerships & Innovations & Agility",
+        "id": "8567919",
+        "publicId": "hana-chundelova-sulcova",
+        "trackingId": "61dOHNWBSYWJEfjB7euH+g==",
+        "profileId": "ACoAAACCvG8BV6ct6zG8qrk71J5wEqeiHQxKrUE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE_M_5lQRN6_w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718563811807?e=1781136000&v=beta&t=pWtWpob_vSn-R0UqHusOV-SpO5HbuAweqP51e8vIKj8",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHrqxhDJCVLpg/profile-displaybackgroundimage-shrink_350_1400/B4EZbxxAirGUAY-/0/1747812879326?e=1781136000&v=beta&t=BR9TvKiBfEDpH8mJjTKeDCv83ZwlNSEsIpA-eyXu5Rg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Erbenova",
+        "occupation": "Application Developer at Barclays",
+        "id": "361531956",
+        "publicId": "lenkaerbenova",
+        "trackingId": "3jtD8wC3TLCS9uQOPrbnmw==",
+        "profileId": "ACoAABWMijQBlQzoTAse2JjfcJmbjz4dAQnIsQs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Barbora",
+        "lastName": "Lendacká",
+        "occupation": "junior react developer | lifelong hands-on learner 📚",
+        "id": "244185326",
+        "publicId": "barbora-lendacka",
+        "trackingId": "xVYmNmv5Rcqu+fuNV3go4A==",
+        "profileId": "ACoAAA6N-O4BkRvPPyIgRFUKOlr5LSE8hcrD3UQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQE5OKdwPiArDg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729857457613?e=1781136000&v=beta&t=5W6LFdsF3fy5yAqp6Pi7el03yHSW3TDXJpJlDXVXhLI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEVz3fJnY0J5g/profile-displaybackgroundimage-shrink_350_1400/B56ZcmxjDMGQAc-/0/1748702213960?e=1781136000&v=beta&t=B1meT8DW8qkAtlXBAsRhra3Tps9dznwKLiHIxUQRtJs"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 48,
+  "numComments": 3,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Roman",
+    "lastName": "Provazník",
+    "occupation": "Head of Product Engineering at Garwan",
+    "id": "26676625",
+    "publicId": "dzoukr",
+    "trackingId": "2Vzz22IFSIy25glbs1HUOQ==",
+    "profileId": "ACoAAAGXDZEB5ZOLeSukQpiq3ebQu1cAK6aXqbc",
+    "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHa3WOjPfv7Jw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1648116147250?e=1781136000&v=beta&t=cFLcE236I29jaKQniqD5y18M7T2Mkk7LsOwI0XVJtf8",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEd4_IqOM06Ew/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1697188846796?e=1781136000&v=beta&t=ccaOM3PxHw63GP6wqPlISm-TR3L2S31VJCFWJD9xZDc"
+  },
+  "authorProfileId": "dzoukr",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4D03AQHa3WOjPfv7Jw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1648116147250?e=1781136000&v=beta&t=cFLcE236I29jaKQniqD5y18M7T2Mkk7LsOwI0XVJtf8",
+  "authorType": "Person",
+  "authorName": "Roman Provazník",
+  "authorProfileUrl": "https://www.linkedin.com/in/dzoukr?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAGXDZEB5ZOLeSukQpiq3ebQu1cAK6aXqbc",
+  "authorUrn": "urn:li:member:26676625",
+  "postedAtTimestamp": 1764152904305,
+  "postedAtISO": "2025-11-26T10:28:24.305Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

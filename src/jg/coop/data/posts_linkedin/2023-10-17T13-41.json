@@ -1,0 +1,640 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "type": "image",
+    "images": [
+      "https://media.licdn.com/dms/image/v2/D4E22AQGQR-DBpV6ZaQ/feedshare-image-high-res/feedshare-image-high-res/0/1697529871995?e=1781136000&v=beta&t=ZBMtw6NM7IMgOVlResAJ5xqkZkf2VyPXD41MyavzQ7E"
+    ],
+    "isActivity": false,
+    "urn": "urn:li:activity:7119956337949556736",
+    "url": "https://www.linkedin.com/posts/ivan-bartos-pirates_a%C5%BE-se-v%C3%A1s-rok-2030-zept%C3%A1-jakou-m%C3%A1te-pr%C3%A1ci-activity-7119956337949556736-QlZ-?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFgzka0BiNONQEez3CYZvIxpM_Au6YEO6r0",
+    "timeSincePosted": "2yr",
+    "shareUrn": "urn:li:share:7119956337228148736",
+    "text": "Až se vás rok 2030 zeptá, jakou máte práci, co odpovíte? \n \nDle studie Budoucnost českého pracovního trhu od BCG nás totiž do roku 2030 čekají zásadní změny na trhu práce. Spousta současných pozic vlivem automatizace a digitalizace zanikne, budou vznikat nové pozice a přes 90 % pozic bude vyžadovat alespoň základní digitální dovednosti.\n  \nPokud v souvislosti s blížícími se změnami na pracovním trhu přemýšlíte o kariéře v IT a nevíte kde začít, přihlaste se na některou z akcí Týdne pro Digitální Česko věnující se tématu kariéra v IT. \n \nMůžete online po chatu vyzpovídat Honzu Javorka, zakladatele junior.guru a zjistit například jak dlouho probíhá rekvalifikace, jaký kurz či jazyk vybrat či co dělat po kurzu. \n \nOnline rozhovor na podobné téma pořádá i nezisková organizace O děti postaráno z.s.. Během rozhovoru se bude její ředitelka bavit s HR expertkou Alžbětou Axman a zjišťovat jak mohou ženy překonávat bariéry při vstupu do IT odvětví. \n \nNauč mě IT si připravilo webinář na téma Jak si vybrat zaměření v IT. \n \nData4you organizuje kurz pro začátečníky, kde vás seznámí se základy jazyků HTML a CSS a jejich propojením s jazykem JavaScript při tvorbě webových stránek.  \n \nPro ty z vás, kdo to myslí se studiem opravdu vážně, uspořádá 42 Prague Dny otevřených dveří, kdy si můžete prohlídnout jejich moderní kampus a dozvědět se více informací o studiu. \n \nVíce informací k jednotlivým akcím najdete na webu https://lnkd.in/eUUGYc-J",
+    "attributes": [
+      {
+        "start": 783,
+        "length": 21,
+        "type": "COMPANY_NAME",
+        "company": {
+          "name": "O děti postaráno z.s.",
+          "universalName": "o-deti-postarano",
+          "trackingId": "AgZw06LCSdOZGK1W8Z+MIw==",
+          "active": true,
+          "showcase": false,
+          "entityUrn": "urn:li:fs_miniCompany:91158448",
+          "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQE3PfPcV3uNKA/company-logo_400_400/company-logo_400_400/0/1684573791675/o_deti_postarano_logo?e=1781136000&v=beta&t=7meZ2Q6KYXW3rDdO9ivv8JnAR2VQelBP9JMtKSmBhhQ"
+        }
+      },
+      {
+        "start": 956,
+        "length": 10,
+        "type": "COMPANY_NAME",
+        "company": {
+          "name": "Entership",
+          "universalName": "entership-cz",
+          "trackingId": "jKNS9U8LQ+6aDgPhnRNznA==",
+          "active": true,
+          "showcase": false,
+          "entityUrn": "urn:li:fs_miniCompany:76099659",
+          "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQESOOgiXtm6qg/img-crop_100/B4EZrK8cXlHcAM-/0/1764341435016?e=1781136000&v=beta&t=gFp2rZa8r_hYK2VenOoRiG-8U83KwYKBZfXLbVLIEAo"
+        }
+      },
+      {
+        "start": 1029,
+        "length": 8,
+        "type": "COMPANY_NAME",
+        "company": {
+          "name": "Data4you",
+          "universalName": "data4yo",
+          "trackingId": "x5TDn2B0QZq2zRj0zZgY8Q==",
+          "active": true,
+          "showcase": false,
+          "entityUrn": "urn:li:fs_miniCompany:79053991",
+          "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQGV8f-MzFs01w/company-logo_400_400/company-logo_400_400/0/1644669565138?e=1781136000&v=beta&t=rm-DV_Cq78XzPODBIPKismHkCVZVu05feh4rUR8HlTs"
+        }
+      },
+      {
+        "start": 1252,
+        "length": 9,
+        "type": "COMPANY_NAME",
+        "company": {
+          "name": "42 Prague",
+          "universalName": "42prague",
+          "trackingId": "XkfsN9P4TuKrosxrFABKFw==",
+          "active": true,
+          "showcase": false,
+          "entityUrn": "urn:li:fs_miniCompany:79402255",
+          "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQFpFYKWDO_3kg/company-logo_400_400/company-logo_400_400/0/1719933088772/42_prague_logo?e=1781136000&v=beta&t=sHzly-n5Fgq9tMfg_7sdLm_EWhXjp5dQNGpTSzo4tRs"
+        }
+      }
+    ],
+    "comments": [
+      {
+        "time": 1697534884025,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7119956337949556736?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7119956337949556736%2C7119977354206044160%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287119977354206044160%2Curn%3Ali%3Aactivity%3A7119956337949556736%29",
+        "text": "\"Strach je zloděj snů.\" Takže všem co přemýšlí o zmeně posílám podporu. Neohlížejte se na věk, pohlaví či dosavadní zkušenosti, nebojte se ptát a jděte si za tím. Bariéry jsou jen v našem mozku, v profesním světě se dají bořit nebo obcházet😉. Jsem ráda, ze se na CZ trhu už nabízí možnosti pro všechny a díky za to. ",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Marketa",
+          "lastName": "Klegerova",
+          "occupation": "Work hard, dream big, never give up.",
+          "id": "257976329",
+          "publicId": "marketaklegerova",
+          "trackingId": "Z4C5DaKoRVa37a8IcXdYRw==",
+          "profileId": "ACoAAA9gaAkBDg7OFDfKUgywGm5GNd1I9-mEHcg",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQE65pX9qT4mEw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1659430779271?e=1781136000&v=beta&t=JmT8KcWfcDbNCZdDZKHEoROQH_5ufZA7NueHiGRzUwY",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1697541739098,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7119956337949556736?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7119956337949556736%2C7120006106470334464%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287120006106470334464%2Curn%3Ali%3Aactivity%3A7119956337949556736%29",
+        "text": "Je mi ctí být součástí takové akce a věřím, že nás čeká zářná budoucnost s tím, jak se teď tlačí na digitalizaci a posun do 21. století! ❤️‍🔥",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Petr",
+          "lastName": "Glaser 🤖",
+          "occupation": "Building Agentic Engineering Platform for production-ready apps. Generated, reviewed, managed, deployed by AI Agents.",
+          "id": "653562608",
+          "publicId": "bleedingdev",
+          "trackingId": "DhFPqVpWTA2KGY9ytW2/eQ==",
+          "profileId": "ACoAACb0kvABzEvpATXhOiWBbEuq4yfGI43iXrc",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHNZ_n7usiMwg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1707307700521?e=1781136000&v=beta&t=s9M6CBtI9xCgMRzy9aH4Zm6vuRjYQFKYSrl_QlfPTvA",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEjlZvszJMk8g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1704724910587?e=1781136000&v=beta&t=3ATL2lQYqY066bQ-K-77LV1388hPiLUDuz3f2WEXABk",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1697541867430,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7119956337949556736?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7119956337949556736%2C7120006644725391361%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287120006644725391361%2Curn%3Ali%3Aactivity%3A7119956337949556736%29",
+        "text": "Zrovna jsme dokončili poradu k této akci a nezůstane jen u webináře! 😊\n\nChystáme i networkingovou akci v Brně se zaměřením na začátky v IT. Detaily už brzy dáme ven. 🧠",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech"
+      },
+      {
+        "time": 1697534600818,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7119956337949556736?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7119956337949556736%2C7119976166345596930%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287119976166345596930%2Curn%3Ali%3Aactivity%3A7119956337949556736%29",
+        "text": "Ještě ladíme přesný termín 😅 Ale moc se na to těším! Plánujeme to jako stream na YouTube, kde půjde pokládat otázky v chatu. Jsem zvědavý, na co se budou účastníci ptát 🤩 Všechny detaily pak budou tady: https://budoucnostjedigitalni.gov.cz/#programovani-jako-kariera-ptej-se-qa",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "trackingId": "a67iGzN0RnWqzbImm7BkOA==",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1697543738605,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7119956337949556736?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7119956337949556736%2C7120014493006319616%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287120014493006319616%2Curn%3Ali%3Aactivity%3A7119956337949556736%29",
+        "text": "já doufám, že náš obor bude vždycky ve finále ty oči, uši a ruce stejně potřebovat :-). Ale jinak ano, prosím, digitalizace je třeba!",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Michaela",
+          "lastName": "Píšková",
+          "occupation": "Physiotherapist",
+          "id": "875106317",
+          "publicId": "michaela-píšková-3250a3205",
+          "trackingId": "0q48lXjFTFSclNgexVb35Q==",
+          "profileId": "ACoAADQpEA0B9v9_U8Y4i1sUa4Zt2Scprq2vyaI",
+          "picture": "https://media.licdn.com/dms/image/v2/C5603AQGcgnGGKOHn-A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1611400418113?e=1781136000&v=beta&t=J-3Q1fcBscAR39bYkHPfh1hPEaR8QNeAqfPQUEsNTb4",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGd8TwTJOzGDg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1673713450180?e=1781136000&v=beta&t=wpzc24KwV4G9fqwQtzjuae-2-ohrTPCi_afEN_2pSK8",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1697538768074,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7119956337949556736?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7119956337949556736%2C7119993645084106752%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287119993645084106752%2Curn%3Ali%3Aactivity%3A7119956337949556736%29",
+        "text": "Těšíme se ze spolupráci s Ivan Bartos a děkujeme za příležitost prezentovat náš inovativní přístup ke studiu programování a moderní kampus širší veřejnosti.\n\nNáš unikátní přístup k vzdělávání, který klade důraz na praktickou zkušenost, tvorbu a spolupráci, dává našim studentům nezbytné dovednosti, které je připraví na rychle se měnící trh IT. Jsme hrdí na to, že 42 Prague je partnerem pro budoucí vývoj IT profesionálů a nabízíme firmám inovativní způsoby, jak spolupracovat a posilovat své týmy.\n\nJiž 21. listopadu se rádi setkáme s návštěvníky kampusu, kterým budeme moci představit naše prostředí a ukázat, jak 42 Prague určuje trendy v IT vzdělávání a jak pomáháme českému IT trhu dodávat nové talenty. V případě zájmu se zaregistrujte přes tento formulář: https://forms.gle/dLvoXLUkVFXRpZkj9\n",
+        "entities": [
+          {
+            "start": 26,
+            "length": 11,
+            "type": "PROFILE_MENTION",
+            "profile": {
+              "firstName": "Ivan",
+              "lastName": "Bartoš",
+              "occupation": "Former Deputy Prime Minister for Digitalization, Head of Government Council for the Information Society and Minister of Regional Development (2021-2024) * Member of the Parliament of the CR * Czech Pirate party member",
+              "id": "34158372",
+              "publicId": "ivan-bartos-pirates",
+              "trackingId": "e4gGdBxAQda50ERyEkIQfg==",
+              "profileId": "ACoAAAIJNyQBao1hgiSVX1LnjMbcMkaAF6cWv8A",
+              "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHYwncWxV3tFQ/profile-displayphoto-shrink_800_800/B4EZcM6YqbHQAc-/0/1748268322874?e=1781136000&v=beta&t=vMW-zNtu3UTAVGuWcq9PpxcnOyBNVRwkjlRcf7v2Wyg",
+              "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE-12D0QqqaTQ/profile-displaybackgroundimage-shrink_350_1400/B4EZcM6S7OH0Ag-/0/1748268299060?e=1781136000&v=beta&t=aNzkEZgTXKZ9cO4kRFcXuEJqM8Z4BEOKm3KQP5P3H6o"
+            }
+          }
+        ],
+        "pinned": false,
+        "originalLanguage": "Czech"
+      },
+      {
+        "time": 1697547236749,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7119956337949556736?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7119956337949556736%2C7120029165285691392%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287120029165285691392%2Curn%3Ali%3Aactivity%3A7119956337949556736%29",
+        "text": "Až se mě rok 2030 zeptá, co mám za práci, tak mu řeknu, že šlechtím plané jabloně, furt se hrabu v záhoně. Doufám, že se do té doby IT zbavím. Zablokuji datové schránky, odhlásím internet a vypnu mobil. Reagovat budu jen na dopisy tištěné na papíře. Psát budu zeleným inkoustem na ručně dělaný papír. ",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Jaroslav",
+          "lastName": "Tachovsky",
+          "occupation": "Freelancer Oracle Consultant",
+          "id": "40344494",
+          "publicId": "jaroslavtachovsky",
+          "trackingId": "FhQYqb3wR6il8PJ6Xu15MA==",
+          "profileId": "ACoAAAJnm64BDgdH8EsOHBpEQPFlQotoYq2jXNo",
+          "picture": "https://media.licdn.com/dms/image/v2/C5603AQGW4ohKKL1ieA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1517760451505?e=1781136000&v=beta&t=lgrMLgw9_QZa-p4ecNPXEZQ69vTmejr1giWDKcI4bn0",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1697555615956,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7119956337949556736?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7119956337949556736%2C7120064310222966785%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287120064310222966785%2Curn%3Ali%3Aactivity%3A7119956337949556736%29",
+        "text": "Skvělá iniciativa!!! 💪  Kdokoliv se na to cítí může nyní skočit do IT. V Coders Lab CZ & SK pomáháme talentovaným lidem nastartovat kariéru v IT. Jdeme na to pěkně zpříma. Vyberete si pozici a náš intenzivní kurz vás na ní připraví. Více o našich kurzech: https://coderslab.cz/cz/kurzy",
+        "entities": [
+          {
+            "start": 73,
+            "length": 18,
+            "type": "COMPANY_NAME",
+            "company": {
+              "name": "Coders Lab CZ & SK",
+              "universalName": "coders-lab-cz-sk",
+              "trackingId": "a1vXShcjQ0KU0ki9GThiVg==",
+              "active": true,
+              "showcase": false,
+              "entityUrn": "urn:li:fs_miniCompany:92942771",
+              "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQFy9hz3i5w2sg/company-logo_400_400/company-logo_400_400/0/1676102910767?e=1781136000&v=beta&t=X8hUgQX-j53hc9jIIyUBF5Fz5EpdKOIlDOPPoClGNLA"
+            }
+          }
+        ],
+        "pinned": false,
+        "originalLanguage": "Czech"
+      }
+    ],
+    "reactions": [
+      {
+        "type": "EMPATHY",
+        "profile": {
+          "firstName": "Vojtěch",
+          "lastName": "Flídr",
+          "occupation": "AWS Certified Data Engineer | SQL • Python • Power BI | Preparing for Databricks Certified Data Engineer (Q2-2026)",
+          "id": "721404906",
+          "publicId": "vojtěch-flídr-83671b181",
+          "trackingId": "H5+QBdPxT0uYa/2PqSgFEg==",
+          "profileId": "ACoAACr_w-oBVqnqw6ck7V_EB2ecPGGl9ZDMtVw",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHP8buxPdWI9A/profile-displayphoto-shrink_800_800/B4EZTHtPJbGwAg-/0/1738517312704?e=1781136000&v=beta&t=Y88hYyzpNlIknhCH1azjWCYDJXCMsLZIHVZghEZvTAU",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQEQJuT-2uySoQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1635954262118?e=1781136000&v=beta&t=y86WJUIN22Vz5uYcPZ0Y0tD74ya9nUBQitO88LO3Ri8"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Pavla",
+          "lastName": "Beránková",
+          "occupation": "PHP programátorka",
+          "id": "549611439",
+          "publicId": "berankova-pavla",
+          "trackingId": "YM43Czi8SXaHCiNXqUCD8g==",
+          "profileId": "ACoAACDCZ68BhDuYokjdegYmFm0rxSx_6Mlwh9c",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHdB_M5mbgLvQ/profile-displayphoto-shrink_800_800/B4EZWlkkyYGwAc-/0/1742239584099?e=1781136000&v=beta&t=4E-d3A5ZIGW5_uD8RTZEaal3lx_qCwWr-Y_k2yTOVVw",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHFjlgP9iU-Fw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0B6o8_KUAc-/0/1773853643504?e=1781136000&v=beta&t=s18xkVLJd-f21PM-R-ZSZaCgq-ojo7xkrzQ5x6cYHoE"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Lucie",
+          "lastName": "Brudíkova",
+          "occupation": "Ivančice | Týmová podpora | Koordinátorka digitalizace | Organizace Kulatých stolů | Administrativa | Faktury | Vyúčtování dotací |",
+          "id": "874966506",
+          "publicId": "lucie-brudikova",
+          "trackingId": "mxz6HmOrTvyVvbBzHtp6rg==",
+          "profileId": "ACoAADQm7eoBX43gofH5DMI6AIJyWqOOdUsRAd4",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGNiWLhUV8A7w/profile-displayphoto-crop_800_800/B4DZyUl4cFI8AI-/0/1772019486650?e=1781136000&v=beta&t=EktQbt3OtbhTxELSMdz2A0GRpyRBoEM_c73lr1ZizGw",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHB_8GuR3iRng/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1685094411859?e=1781136000&v=beta&t=mbB3Fq8y4Khfh9Ep9FVma6LOEct1waODMufiisyCq-U"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Pavel",
+          "lastName": "Prachman",
+          "occupation": "IT Delivery Manager | IT Project Manager",
+          "id": "313241397",
+          "publicId": "pavelprachman",
+          "trackingId": "ogvJ321hTn637Udur90K0g==",
+          "profileId": "ACoAABKrrzUBLc2UXZp9KqDMIIa02NHBj2VsO1g",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH9U1unTupyaQ/profile-displayphoto-shrink_800_800/B4EZONWwcbHAAc-/0/1733243375339?e=1781136000&v=beta&t=M9y2FlGFS1dN5nc0P_Xg5boT2ZbMSeRpdPEeQB_ei4A",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGZZwQhADIM5A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1718262377070?e=1781136000&v=beta&t=LX5bY-DQCdhRrK30Jvrmv9OQ1AU2x_qlz2LiPFQAp50"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Markéta",
+          "lastName": "Kubišta",
+          "occupation": "Senior konzultant a projektový manažer ICT",
+          "id": "1209384712",
+          "publicId": "markéta-kubišta-4b402b299",
+          "trackingId": "XvxXZaywR0u8BOfMdWvpng==",
+          "profileId": "ACoAAEgVvwgBN-5WTsPDgpem3_YctxvWTbyrsoM",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG5zKS2bBHwVw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1730838356970?e=1781136000&v=beta&t=3oLiJX6ztyZOLBQns9LArcr3xAcUEQE50Bxg6xliWRs",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEBEiNla-el8A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1698871789716?e=1781136000&v=beta&t=zcOG3rNdqla9_KtJhZc4NmqGbGyg4JsBKZOC9y2-RFI"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Jiří",
+          "lastName": "Kalista",
+          "occupation": "--",
+          "id": "1126395348",
+          "publicId": "jiří-kalista-1b0289275",
+          "trackingId": "QnjblvBUSY+ZMPHZFpJ3Ow==",
+          "profileId": "ACoAAEMjbdQBmGEzfqNNxVhvIdkarVPq-EflFME"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Adriana",
+          "lastName": "Sojková",
+          "occupation": "Armáda České republiky",
+          "id": "1026799339",
+          "publicId": "adriana-sojková-6b7a58247",
+          "trackingId": "H/qgZw0VTe+qMhT5DSyVNQ==",
+          "profileId": "ACoAAD0ztusBWPg29ui_zODDUzM1hKLHY3jT7GQ"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Jana",
+          "lastName": "Kadlusová",
+          "occupation": "Provozní ředitelka | Operations Director | Zdravotnictví a sociální služby | Řízení provozu, finance, HR",
+          "id": "925967881",
+          "publicId": "jana-kadlusová-06113121a",
+          "trackingId": "/E59OnQ+RHmrMmR4OpQrfg==",
+          "profileId": "ACoAADcxJgkBLGaMUdbkGqzOarFS1RE79t_60kM",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEikDNY-2TniA/profile-displayphoto-crop_800_800/B4DZw4DINgH4AI-/0/1770466872323?e=1781136000&v=beta&t=8oM4ck-oNkOIRfeVMazOtYX7kigBZ74947P0nPpyehg"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Hana",
+          "lastName": "Oliva",
+          "occupation": "\"Má se za to, že každá svéprávná osoba má rozum průměrného člověka i schopnost užívat jej s běžnou péčí a opatrností a že to každý od ní může (v právním styku) důvodně očekávat.\" □zdravotnictví □veřejná správa",
+          "id": "217254043",
+          "publicId": "hana-oliva-87791160",
+          "trackingId": "NkPQhFibSDWAtuBaZEPO4Q==",
+          "profileId": "ACoAAAzzCJsBqDMhAevIZwFqg1VXaNCnPVDmyyQ",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFKg6eN_TzoSw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1698916630435?e=1781136000&v=beta&t=41bDoBNr2xQpjOt_zVPuprR3tf4vMdlZ2Px_1ZHasBE",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHNzaO03Bul3Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1674124042001?e=1781136000&v=beta&t=qmdLr4YtCsd7EnDG98PRY_qB1aBPYCRzzkpubdplc9A"
+        }
+      },
+      {
+        "type": "APPRECIATION",
+        "profile": {
+          "firstName": "Helena ",
+          "lastName": "Chuda",
+          "occupation": "Enterprise Architect ŠKODA AUTO a.s.",
+          "id": "665145173",
+          "publicId": "helena-chuda",
+          "trackingId": "gEeJ1yrASdOfZrUSB9S5pw==",
+          "profileId": "ACoAACelT1UBP5ilcCFH2EwFGAhUyW3kCSi__uI",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFfb90LnEFIcQ/profile-displaybackgroundimage-shrink_350_1400/B4DZh78baCGQAY-/0/1754426095737?e=1781136000&v=beta&t=xmAhi4SgcIk77pzO2x_cMReBzYK3hTIrxd8VPpXi9LM"
+        }
+      }
+    ],
+    "numShares": 21,
+    "numLikes": 106,
+    "numComments": 14,
+    "canReact": true,
+    "canPostComments": true,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "ALL",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "firstName": "Ivan",
+      "lastName": "Bartoš",
+      "occupation": "Former Deputy Prime Minister for Digitalization, Head of Government Council for the Information Society and Minister of Regional Development (2021-2024) * Member of the Parliament of the CR * Czech Pirate party member",
+      "id": "34158372",
+      "publicId": "ivan-bartos-pirates",
+      "trackingId": "MZzU8TbbR3Kmf9eJO5m9UA==",
+      "profileId": "ACoAAAIJNyQBao1hgiSVX1LnjMbcMkaAF6cWv8A",
+      "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHYwncWxV3tFQ/profile-displayphoto-shrink_800_800/B4EZcM6YqbHQAc-/0/1748268322874?e=1781136000&v=beta&t=vMW-zNtu3UTAVGuWcq9PpxcnOyBNVRwkjlRcf7v2Wyg",
+      "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE-12D0QqqaTQ/profile-displaybackgroundimage-shrink_350_1400/B4EZcM6S7OH0Ag-/0/1748268299060?e=1781136000&v=beta&t=aNzkEZgTXKZ9cO4kRFcXuEJqM8Z4BEOKm3KQP5P3H6o"
+    },
+    "authorProfileId": "ivan-bartos-pirates",
+    "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4E03AQHYwncWxV3tFQ/profile-displayphoto-shrink_800_800/B4EZcM6YqbHQAc-/0/1748268322874?e=1781136000&v=beta&t=vMW-zNtu3UTAVGuWcq9PpxcnOyBNVRwkjlRcf7v2Wyg",
+    "authorType": "Person",
+    "authorName": "Ivan Bartoš",
+    "authorProfileUrl": "https://www.linkedin.com/in/ivan-bartos-pirates?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAIJNyQBao1hgiSVX1LnjMbcMkaAF6cWv8A",
+    "authorUrn": "urn:li:member:34158372",
+    "postedAtTimestamp": 1697529873359,
+    "postedAtISO": "2023-10-17T08:04:33.359Z"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7120041146130554880",
+  "url": "https://www.linkedin.com/posts/honzajavorek_a%C5%BE-se-v%C3%A1s-rok-2030-zept%C3%A1-jakou-m%C3%A1te-pr%C3%A1ci-activity-7120041146130554880-VDwT?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFgzka0BiNONQEez3CYZvIxpM_Au6YEO6r0",
+  "timeSincePosted": "2yr",
+  "shareUrn": "urn:li:share:7120041145518153728",
+  "text": "To se tak probudím a zjistím, že Ivan Bartos sdílí na svém LinkedIn profilu příspěvek s logem Junior Guru 😀\n\n20.-24. listopad si dejte do kalendářů! „Týden pro Digitální Česko” se blíží 🗓️\n\nBudu v panelovce na zahajovací akci a plánuju „Programování jako kariéra? Ptej se!“, což bude online Q&A pro širokou veřejnost. Na YouTube streamu budu odpovídat na otázky z chatu. Pokud o to nechcete přijít, odebírejte youtube.com/@juniordotguru\n\nTo zahájení má být neformální akce, ale na úvod je v programu prezident, tak váhám, jestli vzít spíš vtipný tričko, nebo oblek, nebo to mám navrstvit a v průběhu dne odhazovat podle potřeby jako Superman.\n\n#tydenprodigitalnicesko #budoucnostjedigitalni #digitalnidovednosti",
+  "attributes": [
+    {
+      "start": 33,
+      "length": 11,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Ivan",
+        "lastName": "Bartoš",
+        "occupation": "Former Deputy Prime Minister for Digitalization, Head of Government Council for the Information Society and Minister of Regional Development (2021-2024) * Member of the Parliament of the CR * Czech Pirate party member",
+        "id": "34158372",
+        "publicId": "ivan-bartos-pirates",
+        "trackingId": "e4gGdBxAQda50ERyEkIQfg==",
+        "profileId": "ACoAAAIJNyQBao1hgiSVX1LnjMbcMkaAF6cWv8A",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHYwncWxV3tFQ/profile-displayphoto-shrink_800_800/B4EZcM6YqbHQAc-/0/1748268322874?e=1781136000&v=beta&t=vMW-zNtu3UTAVGuWcq9PpxcnOyBNVRwkjlRcf7v2Wyg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE-12D0QqqaTQ/profile-displaybackgroundimage-shrink_350_1400/B4EZcM6S7OH0Ag-/0/1748268299060?e=1781136000&v=beta&t=aNzkEZgTXKZ9cO4kRFcXuEJqM8Z4BEOKm3KQP5P3H6o"
+      }
+    },
+    {
+      "start": 94,
+      "length": 11,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Junior Guru",
+        "universalName": "juniorguru",
+        "trackingId": "fPoomJiEQeOf4cUHWmKlpw==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:26218444",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQE89NmYF-XT4g/company-logo_400_400/company-logo_400_400/0/1638266899010/juniorguru_logo?e=1781136000&v=beta&t=ad516CNUThMN8eXeVboC5S9U_y2Dnn1UhQn70wIGlxE"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1697636894913,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7120041146130554880?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7120041146130554880%2C7120405218881671168%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287120405218881671168%2Curn%3Ali%3Aactivity%3A7120041146130554880%29",
+      "text": "Nice! Velký úspěch, gratuluji!",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Vladimír",
+        "lastName": "Gorej",
+        "occupation": "Full-Stack Software Engineer & Problem Solver | Open Source maintainer & contributor | Alumni GitHub Star | AsyncAPI maintainer | PSD I / PSM I / GCP / LFCA",
+        "id": "58899881",
+        "publicId": "vladimirgorej",
+        "trackingId": "P5A//TMdTwSf6HxgsQADCw==",
+        "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHP1QsKaZTw5Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1720878191370?e=1781136000&v=beta&t=nxFAGloZTLLj4IfsdUrAgIWdCPqihUdH6GbjDvQ02KI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQG1bGQIi0eN-g/profile-displaybackgroundimage-shrink_350_1400/B56ZsnGMs8JUAY-/0/1765887496970?e=1781136000&v=beta&t=c-tUr6BmtfsWTUqP39ZWtDB-NjxB_hfH72HKcJ-t7iA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1697569611717,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7120041146130554880?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7120041146130554880%2C7120123012699320320%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287120123012699320320%2Curn%3Ali%3Aactivity%3A7120041146130554880%29",
+      "text": "To je ten z té strany, co má 4 poslance?",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Jarda",
+        "lastName": "Z.",
+        "occupation": "founder@metagym",
+        "id": "110092052",
+        "publicId": "zapadlo",
+        "trackingId": "RoFyPihvSs6ewHO3d6Yjhw==",
+        "profileId": "ACoAAAaP3xQB9OmVR_H_rXxr57aIJAftAOFahUs",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEC6JZP0jAE5A/profile-displayphoto-crop_800_800/B4EZiACje6GwAI-/0/1754494810986?e=1781136000&v=beta&t=69zGDVDEsUr5PukYrdlxmWbuF7bmV_Rk_OZloYqmv4Y",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHL7rOg96wbpw/profile-displaybackgroundimage-shrink_350_1400/B4DZ5J79pbJYAU-/0/1779356916618?e=1781136000&v=beta&t=buaM98C3-LroCzT-M5lGeVcn964WC7cuUW91BRlUDmQ",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Kášová",
+        "occupation": "Life is constant learning. I love to learn, I love to live.",
+        "id": "205470496",
+        "publicId": "lenkakasova",
+        "trackingId": "DVpD9olhSb6EudPEp4OPLw==",
+        "profileId": "ACoAAAw_OyABe8YQoil3Fwg8JuRqMRonGMie6wk"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Nathalie",
+        "lastName": "Vecten",
+        "occupation": "\"It is a capital mistake to theorize before one has data.\" *cleaned data",
+        "id": "775508820",
+        "publicId": "nathalie-vecten",
+        "trackingId": "TuiDCHQ4RpeDlZ4qp5Stqw==",
+        "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH5sSEbnQ2Tcg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1611936430673?e=1781136000&v=beta&t=wAQsj8dSBDe6L3xt1MwxMahW3aP-D6LcuvT-utzij6s",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHDKxhi18V0lw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1599638080880?e=1781136000&v=beta&t=5JiWefMiJff9VXnKXxoAOOrnUYNFE4fW7AQAgJac6VA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Javurkova",
+        "occupation": "Project Manager at Siemens",
+        "id": "1146097404",
+        "publicId": "lenka-javurkova",
+        "trackingId": "f+WdrcUvR1eG32viAHzLEg==",
+        "profileId": "ACoAAERQDvwBGdRu_GG9KhZZE2cf-NLfdwFzTE4",
+        "picture": "https://media.licdn.com/dms/image/v2/D5635AQG8S2R509tLLg/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1687200518793?e=1780430400&v=beta&t=ldVtgxV6ZdeTuOzXBFOGocWg1aapDTzo_GcmD33FahI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Smid",
+        "occupation": "AI Research at @Rossum",
+        "id": "394361151",
+        "publicId": "jakubsmid",
+        "trackingId": "UzDXdm+JRjucoQOnH05YQw==",
+        "profileId": "ACoAABeBeT8Bmg-hFYsVLkWWsPrIP4gHYaNi89s",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHG8bPLxvlR7A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1658045189130?e=1781136000&v=beta&t=O5k-xYdU-Xl18txnhVyOC-orcE9blXQqt2aWGWBNVBc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Adam",
+        "lastName": "Bajnar",
+        "occupation": "Front-end developer",
+        "id": "456103694",
+        "publicId": "adam-bajnar-a928b8108",
+        "trackingId": "ZB7EPF70SjS/SDyEI/k1Nw==",
+        "profileId": "ACoAABsvlw4BFvrdNO9AI2eYzOS78tlHlEwWoIA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Kavka",
+        "occupation": "Pište co nejlépe. A posílejte dobré newslettery → Newslettery.cz",
+        "id": "8564238",
+        "publicId": "newsletterista",
+        "trackingId": "/IULYFPqRiW65nyVhWEOiA==",
+        "profileId": "ACoAAACCrg4BcE6RgPGHGgkMUX-AiPQMeU9H1rA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGyoY9jftCjXg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1622497751277?e=1781136000&v=beta&t=1lZqNoE3zgwrPcHnv7qxWmRMjVFXQhytoEy3QLBsWrU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFCj8Iv6nua5A/profile-displaybackgroundimage-shrink_350_1400/B4DZoWusKlJUAY-/0/1761317930554?e=1781136000&v=beta&t=2wVbL_9yqwFfI2rRDacHK1IWqYgSg9EqV7EaDHfEIc8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Václav",
+        "lastName": "Lorenc",
+        "occupation": "Principal Information Security Engineer at HERE",
+        "id": "3719671",
+        "publicId": "valor",
+        "trackingId": "+EaLEnOFTHiYOu9Y0vl3Nw==",
+        "profileId": "ACoAAAA4wfcB-6wfVwYbMy69XKSeovQjgDHJSW0",
+        "picture": "https://media.licdn.com/dms/image/v2/C5103AQGjRfNSS1JcmQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516248813297?e=1781136000&v=beta&t=XxoOkJZ46kteyvJ_k3o4tT_5zhbc8s9Fbbe0RIcB4FA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQG3RlrCKlLZzg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1640715665619?e=1781136000&v=beta&t=e5iMMadAmgsuSQrkcopHNu9MuJrqHJ6KjBAgQjzYmEg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marie",
+        "lastName": "B.",
+        "occupation": "Programming and enjoying life",
+        "id": "8228748",
+        "publicId": "mariebezdekova",
+        "trackingId": "FLwA8gCyQTmel+cCmJneUw==",
+        "profileId": "ACoAAAB9j4wBDIeIfATcp9eisEy12ZHr2-zh1sk",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG9r0ynkrjOdA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1682923063091?e=1781136000&v=beta&t=SzqQRRQaCCwLbinVA0Pm5zCsiOagDJsz_wIBsvHWldI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQE2lXTbvtk-pA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516267458787?e=1781136000&v=beta&t=LUXhB-B01oGOUAU2pKK1WpqYh1WVpxxIRpxE4yi1V2M"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Filip",
+        "lastName": "Průdek",
+        "occupation": "Nefunguje mi to → Super, už to jede | Feed specialista & Customer Success @Mergado",
+        "id": "904009499",
+        "publicId": "filip-prudek",
+        "trackingId": "J3enkhIUQd6oEife+yfE1Q==",
+        "profileId": "ACoAADXiFxsBDrfvLqXfc46dYlgCQklCaExwUMY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFupO9P-a5bFw/profile-displayphoto-crop_800_800/B4DZ5JiGdVJYAM-/0/1779350139114?e=1781136000&v=beta&t=Iw5Hw9pEtYfXe0-wPQXIOnKKUFZqdaHEFcw06ySiAyI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFct0esxDP2iw/profile-displaybackgroundimage-shrink_350_1400/B4DZ5JhtJBKAAU-/0/1779350033262?e=1781136000&v=beta&t=JkmSvMYWwXWWoFjbhRDQTIId6IpLExcH82QOIBlmb28"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petra",
+        "lastName": "Cihalova",
+        "occupation": "Software Engineer at IDC ✔ PyLadies coach ✔ Lifelong learner",
+        "id": "663079185",
+        "publicId": "petra-cihalova",
+        "trackingId": "J34tRZ7QQkiC2tPKlIyhVw==",
+        "profileId": "ACoAACeFyREBiLqN1XSYg6PFUKkrNqIVP2iB3nM",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFe_ou8ySlipg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1699219129354?e=1781136000&v=beta&t=ow55pDza3EKahACyvxTBVvW8DKBxXN_BtPlnhA7-iug",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEvMfVR6CER2Q/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1667938074043?e=1781136000&v=beta&t=05t4nnqWlTlvqan-fTfcJeT7f-Hpl1pzKE_C3jxXfIw"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 65,
+  "numComments": 4,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "a67iGzN0RnWqzbImm7BkOA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1697550093205,
+  "postedAtISO": "2023-10-17T13:41:33.205Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

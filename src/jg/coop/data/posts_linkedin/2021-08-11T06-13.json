@@ -1,0 +1,216 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4E22AQGsHLrpHpLBkg/feedshare-shrink_1280/feedshare-shrink_1280/0/1628662382021?e=1781136000&v=beta&t=XvNbUgEYTPlHZu-aAOo7XtFFk6mIgoJ8FmCYimiemHo"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6831105145074458624",
+  "url": "https://www.linkedin.com/posts/honzajavorek_v-%C3%BAter%C3%BD-17-8-v-klubu-httpsjuniorguru-activity-6831105145074458624-sbQh?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAGEG_KQBv7J1sq3GMEnlpcPmY0omjvlA50I",
+  "timeSincePosted": "4yr",
+  "shareUrn": "urn:li:share:6831105144642420736",
+  "text": "V úterý 17. 8. v klubu https://junior.guru/club/ přivítáme Ivana Huckova s přednáškou o tom, jak se od recruitingu v Bratislavě 🇸🇰 dostala přes Lambda School 👩‍🎓 až do Grafana Labs, globálního startupu s posledním investičním kolem v hodnotě $50M 🚀 https://lnkd.in/ezHk6pM",
+  "attributes": [
+    {
+      "start": 59,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Ivana",
+        "lastName": "Huckova",
+        "occupation": "Building Grafana Assistant | Actually useful AI | Grafana Labs",
+        "id": "124641625",
+        "publicId": "ivana-huckova",
+        "trackingId": "LoznBk+XTMaJgaWvBDADCg==",
+        "profileId": "ACoAAAdt4VkBgVrL5xrYRCqQd3Ohuk692X90oHU",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGoK3K1UqMhRg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1636368034486?e=1781136000&v=beta&t=-qB9y5NO2yketS9U0uE4lAY86ZdVAk3NsvM6nuKge1Q",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQEO9xwo74SQvg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1586781770072?e=1781136000&v=beta&t=d89ZXalAurA-oO4cljAopHOhwc1lSSUALQAuWgiWrDw"
+      }
+    },
+    {
+      "start": 144,
+      "length": 13,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Lambda School",
+        "universalName": "bloominsituteoftechnology2",
+        "trackingId": "kKGJr8etQK6Jfs2EPLBNOA==",
+        "active": false,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:17968067",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C560BAQEE5_LzDwQIBA/company-logo_400_400/company-logo_400_400/0/1647452758032/bloominsituteoftechnology2_logo?e=1781136000&v=beta&t=fRwVdyY5OhcF3A4gcu_5uNep8azwpR6HD_InOAXyHJw"
+      }
+    },
+    {
+      "start": 168,
+      "length": 12,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Grafana Labs",
+        "universalName": "grafana-labs",
+        "trackingId": "iQCu3aPLQwqR/7TAFO5pIA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:11062162",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D560BAQGPd_hES_AEJg/company-logo_400_400/company-logo_400_400/0/1689008396294/grafana_labs_logo?e=1781136000&v=beta&t=Cg4Q1sHZZVdwaw6oikeEhMrANmwGUriMQ8bDQwA5E4s"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Sonja",
+        "lastName": "M.",
+        "occupation": "Tourism & Hospitality Enthusiast | Adventure & Experience Driven | Open for Opportunities",
+        "id": "806991622",
+        "publicId": "sonja-cv",
+        "trackingId": "w8agkWvqRO2PbbXjyekOOg==",
+        "profileId": "ACoAADAZtwYB7zh-fGkQnhuX8Ek0fAWpm-e4i6k",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHLBsSHbSdzXQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718296702076?e=1781136000&v=beta&t=Lp6mLc_qEyqQgmlsB3oF1zJa18e2CLAK5L0bixzySGM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQE7OLWN9rKfpA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1719349015848?e=1781136000&v=beta&t=HDuUSeWeOwNbZo_guemBJPmOsWySpAaVEzkRbbjyz7A"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Stanko",
+        "lastName": "Radivojac",
+        "occupation": "IT L2 Engineer at Inventec (Czech), s.r.o.",
+        "id": "423885164",
+        "publicId": "stankoradivojac",
+        "trackingId": "nkNVQh5UTE6JMrBcVIAbrA==",
+        "profileId": "ACoAABlD-WwBz0o0_IMre-WKYI7tIeD8tDGgkCg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHG9J5rCNZQEQ/profile-displaybackgroundimage-shrink_350_1400/B4EZlT6FMWK0AY-/0/1758049360034?e=1781136000&v=beta&t=0vxJD13ygnLseAH65dSGAq2J1pVVuZS5MQoaL_6lRd4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Nathalie",
+        "lastName": "Vecten",
+        "occupation": "\"It is a capital mistake to theorize before one has data.\" *cleaned data",
+        "id": "775508820",
+        "publicId": "nathalie-vecten",
+        "trackingId": "7zqtjMHMRIGuARms+6tG4w==",
+        "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH5sSEbnQ2Tcg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1611936430673?e=1781136000&v=beta&t=wAQsj8dSBDe6L3xt1MwxMahW3aP-D6LcuvT-utzij6s",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHDKxhi18V0lw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1599638080880?e=1781136000&v=beta&t=5JiWefMiJff9VXnKXxoAOOrnUYNFE4fW7AQAgJac6VA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Juraj",
+        "lastName": "Michálek",
+        "occupation": "Senior solution architect in Grafana labs | Otel contributor | Observability",
+        "id": "768592104",
+        "publicId": "jurajmichalek",
+        "trackingId": "9ZA8BEP9TjO/QUZzicpWaA==",
+        "profileId": "ACoAAC3PyOgBb4HFM5lyN5iAQL5sb1cUPQKrBzY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGrfTDMzvIDZw/profile-displayphoto-shrink_800_800/B4DZU4SgmAG8Ac-/0/1740406131431?e=1781136000&v=beta&t=WgS4YyfEXB1t3Uw6IlRBoc57tzdkSOd3MHwJsCJpk3M",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGOL_nfGL5Skw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1573900341816?e=1781136000&v=beta&t=TxOv7jt7pubotbIc9fgYfGqGoH6jK17tA2PQyrL6RGY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Václav",
+        "lastName": "Kotyk",
+        "occupation": "Talent Sourcer @ SentinelOne.ai | The Future of CyberSec will be determined by You - let’s Secure Tomorrow™ together! 🛡️👾 | In 💜 with s1.ai/PurpleAI | 🕵️‍♂️ CyBeer security meetups organizer",
+        "id": "322518163",
+        "publicId": "vaclavkotyk",
+        "trackingId": "dhtXNYX5Q3GGVDxdut4f4w==",
+        "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHSFfNAAQ3ojA/profile-framedphoto-shrink_800_800/B4EZb.aDPLHAAs-/0/1748024964389?e=1780430400&v=beta&t=IvlxsfQQdb8KqO1QvRvDLxo7b9-V1Qrgz29nKWhJehw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG_GZHPXo_drQ/profile-displaybackgroundimage-shrink_350_1400/B4EZhWDO5THEAY-/0/1753790347174?e=1781136000&v=beta&t=TTJXtHJi0vF694Nao68XfleeSQJvzU06We8EI4GVwQI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Fekiač",
+        "occupation": "Head of Recruitment",
+        "id": "555068048",
+        "publicId": "martinfekiac2",
+        "trackingId": "6P0eBwG6RyC0o5YpoEOarw==",
+        "profileId": "ACoAACEVqpABqqMMM9z_2Gdgkj765bXddYO7Ing",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEEfg0i9QWTUg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1700050418406?e=1781136000&v=beta&t=_uYsxVhaGBgojL4shDf4QUb_gULTt7OAVBZIw9GGdyw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEiAy2-k24sPQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1696314973857?e=1781136000&v=beta&t=lIT9gNcckakvyByoF75_zkzvsYZQ4MMzu4JxSp1W6H8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vítek",
+        "lastName": "Urbanec",
+        "occupation": "I help tech teams build sustainable & automated operations | Production Readiness • Governance • FinOps",
+        "id": "98336834",
+        "publicId": "urbanecvit",
+        "trackingId": "wQbzbtUoR/OLHsespVOLdQ==",
+        "profileId": "ACoAAAXcgEIBI3EXrhIEiW0W-bSF1dNPyzGLsR0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFbnqBeD53qbA/profile-displayphoto-crop_800_800/B4DZ0_B8AfIoAI-/0/1774878969770?e=1781136000&v=beta&t=QXbU9k_52PkoKOslJ6hKgMpex4OlM4sD7Tlaf-uTDCQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQEjQsts3sHN1A/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1641386846463?e=1781136000&v=beta&t=9ZRZQDeV5TFAlq1V065KmoFFp_9V6U9_FM5a2cH3fuk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marek",
+        "lastName": "Bartík",
+        "occupation": "Founder at pipetail.io | Ask me about AWS & Kubernetes",
+        "id": "331020625",
+        "publicId": "marekbartik",
+        "trackingId": "R837KKctQ3+NxrKrW27eBg==",
+        "profileId": "ACoAABO6-VEBqxz6wP4SfgiRnSS7k45WP5RUqZ0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGnJNhwDeop_w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1690190482833?e=1781136000&v=beta&t=urdEiJmIlZRt-yPpdB0ogxJE722zVg11M9XER1fG8FM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQFhONrEjkJxOA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1579760656013?e=1781136000&v=beta&t=9PDJbj7J82vmiGtccLpkX0YoO-eRFPjY6DqmTMsXres"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Stepan",
+        "lastName": "V.",
+        "occupation": "Engineering Leader | Infrastructure, DevOps & Automation | Pragmatic, result-driven",
+        "id": "169434349",
+        "publicId": "stepanvrany",
+        "trackingId": "v3FF8T3PTlCVQOT/p67Xnw==",
+        "profileId": "ACoAAAoZXO0Bh1fFpWr6HveQGnC_8OJh9w19kRw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGR6xXksE__Rw/profile-displayphoto-crop_800_800/B4DZhxOtvpGQAI-/0/1754246341067?e=1781136000&v=beta&t=pTgFzKaczj8vICyunpn0sI90kV_KXDCV3RR-h-vdH50",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGqQKezSENgaw/profile-displaybackgroundimage-shrink_350_1400/B4DZdHH4NMG8Ac-/0/1749244938109?e=1781136000&v=beta&t=nvBKw8Vif30ZWU08MF69HAKjp-CbNSLKu3IsAlOPl4o"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 9,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "y06U4KwiSKeYOdTpsePY/Q==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1628662382382,
+  "postedAtISO": "2021-08-11T06:13:02.382Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

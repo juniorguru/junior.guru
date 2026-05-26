@@ -1,0 +1,250 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "type": "article",
+    "article": {
+      "type": "EXTERNAL_FULL",
+      "urn": "urn:li:article:9046307700908291965",
+      "url": "https://ostrava.python.pizza",
+      "title": "Python Pizza Ostrava"
+    },
+    "isActivity": false,
+    "urn": "urn:li:activity:7414770454630035457",
+    "url": "https://www.linkedin.com/posts/zmijkova_python-pizza-ostrava-activity-7414770454630035457-8s_S?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAER_BBABGhA9dGZybaazDxY9GE7jgGPFMtc",
+    "timeSincePosted": "4mo",
+    "shareUrn": "urn:li:share:7414770453841571840",
+    "text": "Na Python pizze v Ostravě je ještě možnost přihlásit se s krátkým 10-ti minutovým talkem. \n\nMáte něco, co jste se nedávno naučili?\nMalý projekt, fail, tip, knihovnu, aha-moment, … ?\n\nKoho by to zaujalo, ozvěte se organizátorům :)",
+    "attributes": [],
+    "comments": [],
+    "reactions": [
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Jan",
+          "lastName": "Kuklínek",
+          "occupation": "Sitting kills.",
+          "id": "340239742",
+          "publicId": "jan-kuklínek-bbab4195",
+          "trackingId": "tcDWwliNT1eUKMd9wsrq0w==",
+          "profileId": "ACoAABRHpX4BrOHNYEbhnCcJ5L0cp3eSUM5rdhs",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E35AQEL3hhHyXfqmA/profile-framedphoto-shrink_400_400/B4EZd4CX2_HcAc-/0/1750065577684?e=1780430400&v=beta&t=tc7CKyeXxx2KROK26KVrx4DfSuBRtj4V4QCCWSnSfbA"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Šimon",
+          "lastName": "Kořený",
+          "occupation": "Product Owner & Dad | Building great products, raising great humans",
+          "id": "283596586",
+          "publicId": "fusatytata",
+          "trackingId": "01HOI7byTo6EjYx1GI4xfA==",
+          "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEP3Q4BtiThDA/profile-displayphoto-shrink_800_800/B4EZc_c90wHIAc-/0/1749116247942?e=1781136000&v=beta&t=_QtTBgXEBbo6wLgAeAyA_Vwe266kRM2rafjtUTqdQ18",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFllW8t92LUXg/profile-displaybackgroundimage-shrink_350_1400/B4EZkO0XOcHEAY-/0/1756890233024?e=1781136000&v=beta&t=BcgfXCQP09cdXXYAi_lrlRlt4F-p0U2rPgEazsl9SeQ"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Martin",
+          "lastName": "Zmijka",
+          "occupation": "Embedded Software Engineer",
+          "id": "310084643",
+          "publicId": "martin-zmijka-16ba1b87",
+          "trackingId": "Om2Oex3WSXO0h3B4RUF5SA==",
+          "profileId": "ACoAABJ7hCMBqOqZ5C56x3J30fORokP1ESLFDkI",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGANQLay2kINA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725365493629?e=1781136000&v=beta&t=Z7kMGz2_y51GA7U3BbMxkSyxNIImmZZ-Uuqfw-Qkxms"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "trackingId": "8kK7Lz+IT/+Y3kIdmGHMTQ==",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Martina",
+          "lastName": "Zátopková, PhD",
+          "occupation": "Senior Bioinformatics Scientist | Genomics, NGS data analysis, Precision medicine",
+          "id": "722443405",
+          "publicId": "martina-zátopková-phd-811b40181",
+          "trackingId": "xJMFyyx9QhikvYVEGv6sYw==",
+          "profileId": "ACoAACsPnI0BB3OkkGhDENMlJdeckoL3FHPc_nw",
+          "picture": "https://media.licdn.com/dms/image/v2/D5603AQEFYZMAJevEzQ/profile-displayphoto-crop_800_800/B56Z0K3HamJgAI-/0/1774003714367?e=1781136000&v=beta&t=gh63X9VdVifNoWwBd7Nc2WIAxdepm_UXlhNv1dwQJ40",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQErLtl3_SaPPA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1627904628440?e=1781136000&v=beta&t=tbaxgKpbKe5De1CHb6WJ95gcxLOHjYlnXD7fbd_XJ5I"
+        }
+      }
+    ],
+    "numShares": 1,
+    "numLikes": 5,
+    "numComments": 0,
+    "canReact": true,
+    "canPostComments": true,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "ALL",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "firstName": "Jana",
+      "lastName": "Zmijková",
+      "occupation": "Software Developer",
+      "id": "450096743",
+      "publicId": "zmijkova",
+      "trackingId": "xEH9YI5SQEeY9c1gLuQ9QQ==",
+      "profileId": "ACoAABrT7mcBs7ie4r1nA4McNBK2tV0qfujA2v4"
+    },
+    "authorProfileId": "zmijkova",
+    "authorType": "Person",
+    "authorName": "Jana Zmijková",
+    "authorProfileUrl": "https://www.linkedin.com/in/zmijkova?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAABrT7mcBs7ie4r1nA4McNBK2tV0qfujA2v4",
+    "authorUrn": "urn:li:member:450096743",
+    "postedAtTimestamp": 1767819036157,
+    "postedAtISO": "2026-01-07T20:50:36.157Z"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7414775796646526976",
+  "url": "https://www.linkedin.com/posts/honzajavorek_python-pizza-ostrava-activity-7414775796646526976-rvFW?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAER_BBABGhA9dGZybaazDxY9GE7jgGPFMtc",
+  "timeSincePosted": "4mo",
+  "shareUrn": "urn:li:share:7414775796113874944",
+  "text": "Poslední možnost přihlásit si přednášku na Python Pizza v Ostravě!",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Artur",
+        "lastName": "Czepiel",
+        "occupation": "Senior Software Developer",
+        "id": "53544825",
+        "publicId": "arturczepiel",
+        "trackingId": "2+5R17UiR7aWBZJPaiiMmA==",
+        "profileId": "ACoAAAMxB3kBq42ivkWQ70yUH8Ipe_ycJbZw9gg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lukáš",
+        "lastName": "Názer",
+        "occupation": "Security Management | 16 Years in Public Safety | Operations & Administration",
+        "id": "1490386548",
+        "publicId": "lukáš-názer-270164357",
+        "trackingId": "87rdfVyxRqiOK8c26VRBhg==",
+        "profileId": "ACoAAFjVfnQBRiWDVYgeRaVNR9CkNSlnACEsxsY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHXiTp76wTrAA/profile-framedphoto-shrink_800_800/B4DZ3BlJh2G4Ag-/0/1777069234603?e=1780430400&v=beta&t=8Tb6p9FTg2cUQNp6Qt9BY4bFRPxPxDwzlMaM_a_e4dM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGRmdKcLOO4mQ/profile-displaybackgroundimage-shrink_350_1400/B4DZuduYc0KoAc-/0/1767877741572?e=1781136000&v=beta&t=-r1YEOtb84pQij6od76GCRY8-7ltn8jMw_JGF8sYxdA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Šimon",
+        "lastName": "Kořený",
+        "occupation": "Product Owner & Dad | Building great products, raising great humans",
+        "id": "283596586",
+        "publicId": "fusatytata",
+        "trackingId": "01HOI7byTo6EjYx1GI4xfA==",
+        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEP3Q4BtiThDA/profile-displayphoto-shrink_800_800/B4EZc_c90wHIAc-/0/1749116247942?e=1781136000&v=beta&t=_QtTBgXEBbo6wLgAeAyA_Vwe266kRM2rafjtUTqdQ18",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFllW8t92LUXg/profile-displaybackgroundimage-shrink_350_1400/B4EZkO0XOcHEAY-/0/1756890233024?e=1781136000&v=beta&t=BcgfXCQP09cdXXYAi_lrlRlt4F-p0U2rPgEazsl9SeQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Soukup",
+        "occupation": "Copywriter pro technologické firmy, vědecké organizace a další „složité“ obory 👉 tomassoukup.cz",
+        "id": "305561966",
+        "publicId": "tomas-soukup",
+        "trackingId": "XWrbUiy/SWKyZyFzVH1Qgw==",
+        "profileId": "ACoAABI2gW4BgZGgFR7Mosk1ebIoWD75Wf9XaQM",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEy_s3x6PeEDw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1537297906779?e=1781136000&v=beta&t=qwLRVfSQe5zXIPFdrxrwffYzNtDe0IywklIv93BZRAs",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFv_5SG4Wr7OA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686099891477?e=1781136000&v=beta&t=gNpLjSee7dukOw_4lXL6jEeo95czXukXqc3H2VC_T6E"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Zmijková",
+        "occupation": "Software Developer",
+        "id": "450096743",
+        "publicId": "zmijkova",
+        "trackingId": "N5TlFB7+RW+InGFALxdOdA==",
+        "profileId": "ACoAABrT7mcBs7ie4r1nA4McNBK2tV0qfujA2v4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Mohamad",
+        "lastName": "Shahkhajeh",
+        "occupation": "Lead Backend Engineer | Helping Tech Talent & Employers Find Each Other",
+        "id": "834445375",
+        "publicId": "mohamad-shahkhajeh-7675541b3",
+        "trackingId": "2PAIjpwYQ5yhDdI3wfe2nQ==",
+        "profileId": "ACoAADG8oD8BU4tTj6kx3ujMHxnayAEY05kxejE",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQHlI0t4gIMWmQ/profile-displayphoto-crop_800_800/B56Zs8HaEyHYAM-/0/1766240136346?e=1781136000&v=beta&t=x6KlcrS7e1QgWLti60lq5q88l6CpSinQnhkjs-Dj4zo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHHJNPdkAKNKg/profile-displaybackgroundimage-shrink_350_1400/B4EZw2hgayKgAY-/0/1770441280367?e=1781136000&v=beta&t=S5g3QSiYajs1D_yxjMg7FRZTave69Uvj0fTLcEmKdDQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Juraj",
+        "lastName": "Michálek",
+        "occupation": "Senior solution architect in Grafana labs | Otel contributor | Observability",
+        "id": "768592104",
+        "publicId": "jurajmichalek",
+        "trackingId": "DlhFLT9yR8GwpDcCsDD/iw==",
+        "profileId": "ACoAAC3PyOgBb4HFM5lyN5iAQL5sb1cUPQKrBzY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGrfTDMzvIDZw/profile-displayphoto-shrink_800_800/B4DZU4SgmAG8Ac-/0/1740406131431?e=1781136000&v=beta&t=WgS4YyfEXB1t3Uw6IlRBoc57tzdkSOd3MHwJsCJpk3M",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGOL_nfGL5Skw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1573900341816?e=1781136000&v=beta&t=TxOv7jt7pubotbIc9fgYfGqGoH6jK17tA2PQyrL6RGY"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 7,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "ev6iCo4+RxG/mk/FcONH4w==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1767820309793,
+  "postedAtISO": "2026-01-07T21:11:49.793Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

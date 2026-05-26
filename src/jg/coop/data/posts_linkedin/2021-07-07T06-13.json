@@ -1,0 +1,129 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4E22AQE9srYCz39ohw/feedshare-shrink_1280/feedshare-shrink_1280/0/1625638381808?e=1781136000&v=beta&t=dzNnuKqfZjzfGBerXIcYIvDM3lhGnF30GCBMpoHahCA"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6818421568272691200",
+  "url": "https://www.linkedin.com/posts/honzajavorek_codebase-activity-6818421568272691200-47QL?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAGDMViMBG9gX-SKmC140_FYQmXeoiXG6C2k",
+  "timeSincePosted": "4yr",
+  "shareUrn": "urn:li:share:6818421567853268992",
+  "text": "Umí vaše firma zaučit juniory? Je to problém? Možná proto, že máte „juniorní kód“. V článku Tomas Votruba popisuje, jak se všem, včetně juniorů, bude pracovat, zaučovat a vzdělávat lépe, pokud je k tomu povede vyspělá, udržovaná a dokumentovaná #codebase: https://lnkd.in/enaTgqF",
+  "attributes": [
+    {
+      "start": 92,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Tomas",
+        "lastName": "Votruba",
+        "occupation": "Hands-on Legacy Cleaner",
+        "id": "768515172",
+        "publicId": "tomas-votruba",
+        "trackingId": "SGGscABCQJuBuzZxpX8bNA==",
+        "profileId": "ACoAAC3OnGQBSTXo3yuoRBtMs9woV1UbEk7ALEc",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFxuNKsWkVu1Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1570265612042?e=1781136000&v=beta&t=M0KWTGV9SnT5YqJktjWM0hszbfQllVE99O6y16E-Snw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFUg7pFBD2zGg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1570366304090?e=1781136000&v=beta&t=SWq5im9r4d_it6xP-IJZlA7Atidr43c19uYvliRZoYE"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Maxim",
+        "lastName": "Kačmar",
+        "occupation": "Deputy director",
+        "id": "609809164",
+        "publicId": "maxim-kačmar-9a4282150",
+        "trackingId": "ytKsQXbWRE6EBQDLvSlgSw==",
+        "profileId": "ACoAACRY8wwBEopksmCEX6ZknsYDyaupgLUVr4k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel Grumpy",
+        "lastName": "Šimerda",
+        "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
+        "id": "551084893",
+        "publicId": "grumpyprogrammer",
+        "trackingId": "2i/C3nWuTraMVlMC7CROAA==",
+        "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFnQ8ypdjjyvg/profile-displayphoto-crop_800_800/B4DZxZUZFlHkAI-/0/1771025047361?e=1781136000&v=beta&t=fFiIDptOBoMzbUkj1Lvpd8USzHMX1nkcCCOr19Su_4c"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Kateřina",
+        "lastName": "P.",
+        "occupation": "Currently on maternity leave",
+        "id": "498811395",
+        "publicId": "katerinapaulinova",
+        "trackingId": "oixek2e4QzOhhTs4f3NMDQ==",
+        "profileId": "ACoAAB27QgMB-LtkvlGwxNcB-N_aZb3iLmTAnn0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFaWnsM2HQv2g/profile-displayphoto-crop_800_800/B4DZvf7qupJwAM-/0/1768988524216?e=1781136000&v=beta&t=4da7fmH3bVYAkZcSC2ZbEtUYvTh1vvc9wC4KyJ7tQWE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Radek",
+        "lastName": "Kitner",
+        "occupation": "Teacher & Software Testing Consultant",
+        "id": "381101197",
+        "publicId": "radek4k",
+        "trackingId": "DM3hHJ8+QP6sbKz8OOjN2w==",
+        "profileId": "ACoAABa3JI0BX5xxM2r4OdST7lv3F0k2L9ZRRhg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEQMzrKB6yYFQ/profile-displayphoto-crop_800_800/B4EZlXluYjKQAQ-/0/1758111131805?e=1781136000&v=beta&t=fGgQdoBKupNlbRyYc9pQ8MYSWH55wJ_Gl1Iu7EJxWM4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHeSes3OrqGYw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1624455708146?e=1781136000&v=beta&t=kAJLHFarzTMa_HOjRbqJyvM9JR1FwjNZ1bSun9BMGns"
+      }
+    },
+    {
+      "type": "INTEREST",
+      "profile": {
+        "firstName": "Daniel",
+        "lastName": "Srb",
+        "occupation": "Helping people to become junior frontend developers",
+        "id": "15446232",
+        "publicId": "danielsrb",
+        "trackingId": "Ge/fqKK1RAWWSh+C7l7kZA==",
+        "profileId": "ACoAAADrsNgBFfAixAgw_mCw8WtR9SeNIvEEI8Q",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFL6A1muu1_iQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1664815242443?e=1781136000&v=beta&t=gZsiQuDXYR8uuO_-68JdcJFp1nRVo6I7-iaOUDh1GRk",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEojxUy1Cz5oQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1623442956553?e=1781136000&v=beta&t=hWIAatMfNTIgw4JUStqCUqVs88aKCIf5jtDxqtS-BHg"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 5,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "cTJximJ/TH611vU8iEET/Q==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1625638382023,
+  "postedAtISO": "2021-07-07T06:13:02.023Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

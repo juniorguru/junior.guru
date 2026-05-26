@@ -1,0 +1,460 @@
+{
+  "type": "linkedinVideo",
+  "linkedinVideo": {
+    "videoPlayMetadata": {
+      "duration": 429133,
+      "thumbnail": {
+        "artifacts": [
+          {
+            "width": 1280,
+            "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4E05AQGcfJuq5GLPvw",
+            "fileIdentifyingUrlPathSegment": "high/B4EZiJZCjRGUCI-/0/1754651974307?e=1780430400&v=beta&t=DbsP5XuP3wjX87OJtCWClgmgzLVT7dtH33u9E6ZxZGk",
+            "expiresAt": 1780430400000,
+            "height": 720
+          },
+          {
+            "width": 640,
+            "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4E05AQGcfJuq5GLPvw",
+            "fileIdentifyingUrlPathSegment": "low/B4EZiJZCjRGUCE-/0/1754651976467?e=1780430400&v=beta&t=kHygFo4iiDkGXRbLCpBDqpARHDa5r5NQFhnyPsv_Twg",
+            "expiresAt": 1780430400000,
+            "height": 360
+          }
+        ],
+        "rootUrl": "https://media.licdn.com/dms/image/v2/D4E05AQGcfJuq5GLPvw/videocover-"
+      },
+      "progressiveStreams": [
+        {
+          "streamingLocations": [
+            {
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4E05AQGcfJuq5GLPvw/mp4-720p-30fp-crf28/B4EZiJZCjRGUBw-/0/1754652027252?e=1780430400&v=beta&t=QQu0qYcDbS0_LSUmh3MqstusmjvDN052LE1gKp4bN1I",
+              "expiresAt": 1780430400000
+            }
+          ],
+          "size": 0,
+          "bitRate": 560916,
+          "width": 1280,
+          "mediaType": "video/mp4",
+          "height": 720
+        },
+        {
+          "streamingLocations": [
+            {
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4E05AQGcfJuq5GLPvw/mp4-640p-30fp-crf28/B4EZiJZCjRGUBs-/0/1754652008128?e=1780430400&v=beta&t=33PDM-PC8paDuGe_X5WpiGs22l3F1MV59BtMlyMsLMY",
+              "expiresAt": 1780430400000
+            }
+          ],
+          "size": 0,
+          "bitRate": 439289,
+          "width": 1138,
+          "mediaType": "video/mp4",
+          "height": 640
+        }
+      ],
+      "transcripts": [],
+      "entityUrn": "urn:li:digitalmediaAsset:D4E05AQGcfJuq5GLPvw",
+      "provider": "UGC",
+      "aspectRatio": 1.7777778,
+      "media": "urn:li:digitalmediaAsset:D4E05AQGcfJuq5GLPvw",
+      "adaptiveStreams": [
+        {
+          "initialBitRate": 1702440,
+          "protocol": "HLS",
+          "mediaType": "application/vnd.apple.mpegURL",
+          "masterPlaylists": [
+            {
+              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4E05AQGcfJuq5GLPvw/BAgrO4h6WNCQF0H0w?e=1780430400&v=beta&t=P91metNESB8KKZm59ptn4paUd4qi8KAbaWXbNtPHohQ",
+              "expiresAt": 1780430400000
+            }
+          ]
+        },
+        {
+          "initialBitRate": 1702440,
+          "protocol": "DASH",
+          "mediaType": "application/dash+xml",
+          "masterPlaylists": [
+            {
+              "url": "https://dms.licdn.com/playlist/vid/dash/D4E05AQGcfJuq5GLPvw/BAgrO4h6WNCQF0H0w?e=1780430400&v=beta&t=l73gZmvZ6sY7oPHIcHaH2Wi0Ouil9vn354xRr9vfNMA",
+              "expiresAt": 1780430400000
+            }
+          ]
+        }
+      ],
+      "trackingId": "FdQNCpu1RzWzFSW/ekZgUQ=="
+    }
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7359546457420402694",
+  "url": "https://www.linkedin.com/posts/honzajavorek_je%C5%A1t%C4%9B-p%C5%99ed-p%C3%A1r-m%C4%9Bs%C3%ADci-jsem-s-videem-neum%C4%9Bl-activity-7359546457420402694-BzUq?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAACdwRloBsvQMFO5Hq4nZQD88Dn5VCuqcvz4",
+  "timeSincePosted": "9mo",
+  "shareUrn": "urn:li:ugcPost:7359542643413946368",
+  "text": "Ještě před pár měsíci jsem s videem neuměl nic. Teď jsem, po týdnech práce, dokázal dokončit tohle 💪\n\nNebylo to v plánu. K videu jsem neměl žádný vztah. Přišlo mi, že tíhnu spíš k psaní, programování, mluvení, focení… Prostě ke všemu ostatnímu. Navíc video vyžaduje hodně přípravy a času – a s malým dítětem nemám ani jedno.\n\nZkoušel jsem do toho proniknout cíleně, ale dřelo to. Vloni jsem vytvořil krátkou upoutávku na soutěž o knihy. Dokopával jsem se k tomu měsíce. Snažil jsem se mít laťku na minimu, ale ani to nepomohlo, abych tvořil další videa.\n\nTrochu mě nakopl kurz od David Spacil. Byl o AI ve videu, ale hlavně mi to ukázalo tvorbu videa jako takovou. Jak nad tím přemýšlet, rozložit to na jednotlivé kroky, čím si pomoct. Najednou už to nebylo tak nedosažitelné, i když jsem pořád nic neuměl.\n\nA nakonec náhoda. Mám na disku velké soubory, např. záznamy přednášek nebo koncertů. Kdyby náhodou zmizely z internetu – což se pravidelně děje. Jenže někdy skladuju 500MB video kvůli zajímavým 5min, tak mě napadlo, že si ten kousek v DaVinci Resolve vystřihnu.\n\nZačal jsem s tímhle a pak mi došlo, že si můžu zahrát na boha. Změnit pořadí scén, hudbu, prostě všechno. A protože je to jen pro osobní potřebu a pro zábavu, nemusím nic řešit.\n\nNeměl jsem na sebe žádné požadavky na termíny, kvalitu, nic jsem nikomu neslíbil, nemusel jsem řešit práva k hudbě. Čirá kreativní svoboda a nulový tlak. Hraní. Jen tak pro radost.\n\nNašel jsem na YouTube lidi, kteří si třeba stáhnou film a sestříhají si k němu vlastní trailer. To mi přišlo strašně cool.\n\nA takhle jsem si po večerech hrál a hrál. Bavilo mě to skoro stejně nebo dokonce stejně jako programování, a to je co říct.\n\nAž jsem na těchto kravinách nabral takový skill, že mě samotného napadlo, že bych mohl propagovat naši EuroPython Beginners' Day Unconference pomocí videa.\n\nNepřišlo mi to už složité, naopak, těšil jsem se, co si tam nového vyzkouším, nebo s čím si pohraju. Dal jsem tomu 4h a vytvořil něco, co má sice velké rezervy, ale účel to splnilo.\n\nLidi to nalákalo a akci jsme vyprodali. Na EuroPythonu jsem ze srandy říkal, že dělám career switch do video editingu 😆 \n\nNo a nakonec toto. Odhodlal jsem se splnit konečně velký úkol, který mám na Junior Guru už roky. Propagační video, které bych dal na prodejní stránku.\n\nÚčelem bylo vysvětlit, o čem klub je, a jak vypadá vevnitř, aby jeho hodnotu hned pochopili i lidi, co se do něj nepodívají.\n\nPůvodní myšlenka byla natočit jen screencast jak chodím po Discordu, k tomu voiceover, možná k tomu přidat svou hlavu někde dole v kolečku.\n\nNo, můžete si pustit, jak to dopadlo 😆 Dělal jsem to týdny a týdny. Jsem si vědom hromady nedostatků, ale myslím, že takhle by to mohlo být dostatečně dobré a splnit účel.\n\nBudu rád, když mi napíšete, co si o tom myslíte. Drobnosti před vydáním ještě rád upravím!\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 580,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "David",
+        "lastName": "Spacil",
+        "occupation": "AI-Driven Content Creator | AI Creativity Lecturer & Consultant | Digital Storyteller | Awarded as Czech AI Personality of 2024",
+        "id": "15732471",
+        "publicId": "davidspacil",
+        "trackingId": "cYB3YfS0RemkKJRgdGsuYQ==",
+        "profileId": "ACoAAADwDvcBWnZYfOXF29HqCHOb_q0j3dpoylA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEWd0ilJHhpDA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1601374239965?e=1781136000&v=beta&t=qELY5fsf8vGw_hQFYTGkQ_yggZrpcVBey9n6sxmQnD4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFmJUmjPGlo8A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1705423997096?e=1781136000&v=beta&t=JQl8ncKUT3cHyyzEkWIhvL6OkFIzrk9Ref4VLA44H6Q"
+      }
+    },
+    {
+      "start": 1784,
+      "length": 10,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "EuroPython",
+        "universalName": "europython",
+        "trackingId": "A0Ze7i69TzOrVh9/ezea9Q==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:41130723",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQGz6u5D6KYABg/company-logo_400_400/B4DZxWmNTUJwAY-/0/1770979382977/europython_logo?e=1781136000&v=beta&t=pwjOEJznkhOEXcURlj3q2Nvk3DG-RH4f9owboCBcCU0"
+      }
+    },
+    {
+      "start": 2219,
+      "length": 11,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Junior Guru",
+        "universalName": "juniorguru",
+        "trackingId": "EcfYRFbVTp6i/wCmjIaxgA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:26218444",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQE89NmYF-XT4g/company-logo_400_400/company-logo_400_400/0/1638266899010/juniorguru_logo?e=1781136000&v=beta&t=ad516CNUThMN8eXeVboC5S9U_y2Dnn1UhQn70wIGlxE"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1755102126837,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7359542643413946368?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7359542643413946368%2C7361431870997262340%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287361431870997262340%2Curn%3Ali%3AugcPost%3A7359542643413946368%29",
+      "text": "Tohle je skvělé Honzo 👏👏👏",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Marek",
+        "lastName": "Řezáč",
+        "occupation": "🪢 Ředitel pražské centrály GORDIC | Digitalizujeme veřejnou správu a rozvíjíme eGovernment | ERP GINIS | Spisová služba | Ekonomické agendy | AI transformace",
+        "id": "270966353",
+        "publicId": "marek-rezac",
+        "trackingId": "APWCGKmoTTaDK2DWDRCIZA==",
+        "profileId": "ACoAABAmnlEBfO8umnLtCtxgpF3RTpd4X9djFs4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFjdWk-QtmsYg/profile-displayphoto-shrink_800_800/B4EZZC1BKAHYAc-/0/1744877917758?e=1781136000&v=beta&t=Isk99nh1fVqIzhZCcx-YlTYL2yiC3jisAwEnSC4C6TM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG6YGx7Ogp7ZQ/profile-displaybackgroundimage-shrink_350_1400/B4EZrcmosJKkAY-/0/1764637708321?e=1781136000&v=beta&t=DoubTaenFy-uSU_c1MOHMOQChqA5vvEn8w_V9Kd6CgY",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1754931372916,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7359542643413946368?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7359542643413946368%2C7360715677143375872%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287360715677143375872%2Curn%3Ali%3AugcPost%3A7359542643413946368%29",
+      "text": "Milujem to! ❤ Si hrozne šikovný, asi si ťa najmem na video pre moju komunitu. 😂",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Slovak",
+      "author": {
+        "firstName": "Terézia",
+        "lastName": "Palaščáková",
+        "occupation": "🧡 Chief Excitement Officer komunity ContentParty – sme parta CZ&SK copywriterov, contenťákov a freelancerov, ktorá ti poradí a podrží ťa | ❤️ Content Manager Santia | 💜 Moderátorka komunity Gamerky.cz",
+        "id": "384702958",
+        "publicId": "terezia-palascakova",
+        "trackingId": "xJz0cXP8RK2Uxb/uKqf3pw==",
+        "profileId": "ACoAABbuGe4B_LPxrpFoYfsgMsohoLZipEu0ew0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGnwzqWel2dLA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729197398951?e=1781136000&v=beta&t=Q7DfBjlFS9Hm8mv_5dFmOqAVCtxD36WCSsM4dZ-Sm9Q",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGJko95qUT9gw/profile-displaybackgroundimage-shrink_350_1400/B4EZVWK.VYGwAY-/0/1740907473408?e=1781136000&v=beta&t=42HkPcqh4tb5RzS8kmymZXcEjA3bINRbiK1xmbd5aGc",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1754922638175,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7359542643413946368?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7359542643413946368%2C7360679040984203264%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287360679040984203264%2Curn%3Ali%3AugcPost%3A7359542643413946368%29",
+      "text": "Hotovo! Ode dneška už je to i na YouTube: https://youtu.be/zHt4z5lp2e0",
+      "entities": [],
+      "pinned": false,
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "tA/LfCQESs+9O4bFg8MWRw==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1754900313045,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7359542643413946368?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7359542643413946368%2C7360585402602123268%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287360585402602123268%2Curn%3Ali%3AugcPost%3A7359542643413946368%29",
+      "text": "Krásná práce Honzo! Božsky zpracované. :)",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Patrik",
+        "lastName": "Brnušák",
+        "occupation": "Otevřen novým příležitostem",
+        "id": "666440295",
+        "publicId": "patrik-brnusak-cz",
+        "trackingId": "T4b+ynIxQMS+6X66P8WJnw==",
+        "profileId": "ACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQF0EuGEMDwlUg/profile-framedphoto-shrink_400_400/B4EZgIpEXYHEAc-/0/1752491640554?e=1780430400&v=beta&t=HTUsGAYmOaJQrIYvqehEEjmDH7Xc9mxLPWanNlRdkyQ",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1754688077222,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7359542643413946368?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7359542643413946368%2C7359695221040865281%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287359695221040865281%2Curn%3Ali%3AugcPost%3A7359542643413946368%29",
+      "text": "Good job, bro! 👍🏾 Jediný, co mě k tomu napadá, je, že by se to dalo rozstříhat i na víc dílů a mít z toho seriál, respektive několikadílnou variantu pro lidi, pro který je 6 minut moc a radši by si to dávkovali postupně.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "David",
+        "lastName": "Věžník",
+        "occupation": "Markeťák pro Kulturu Jih ⦿ Víno, muži, zpěv (píšu o alkoholu, queer tématech a muzice) ⦿ Opravuju texty, které napsali jiní lidi ⦿ Jsem nejmenší copywriter ⦿ Jaguár mezi korektory ⦿ A miluju všecko, co je „kringe“",
+        "id": "25537485",
+        "publicId": "davidveznik",
+        "trackingId": "E9nbzueoSEylr7ilH+l1dg==",
+        "profileId": "ACoAAAGFq80BOn7iHQKSekuZMbUiQrW4zzp75DQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQE_CyAVOn87xw/profile-framedphoto-shrink_800_800/B4DZxQTSmNKMAk-/0/1770873760392?e=1780430400&v=beta&t=UDziBTlDRRdJtbsjmPLzYwVybcvHd7tQITZ6R9QQl2U",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQERNKDKf-BifA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1733438117758?e=1781136000&v=beta&t=IyOMliPr4fVj-6Qz764kxHfaH-h8AokpJ6Dg3KUCU04",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1754671230936,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7359542643413946368?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7359542643413946368%2C7359624562596057089%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287359624562596057089%2Curn%3Ali%3AugcPost%3A7359542643413946368%29",
+      "text": "Naprosto vymazlené video, super :)",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Slovak",
+      "author": {
+        "firstName": "Vojtěch",
+        "lastName": "Oram",
+        "occupation": "Senior Full Stack Engineer at Leadspicker.com",
+        "id": "210301792",
+        "publicId": "vojtechoram",
+        "trackingId": "d1ckQUaEQuyVlEwOGB9dFQ==",
+        "profileId": "ACoAAAyI82ABkjPc2jb-1bKnJT4hep8nNkbq2zU",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQGNETJdMgEqMw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1537887862720?e=1781136000&v=beta&t=FVo6SEzCwmL_yeTxkhyOt5bbB5ZpZlDV_-GT_QJaSh0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGHG1tErVNsLw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736327440915?e=1781136000&v=beta&t=OJ-qcMlXZQ10k0OD9WsSEE_kOujFbiNyIdxFk5kZf9M",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1754652961221,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7359542643413946368?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7359542643413946368%2C7359547933861548033%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287359547933861548033%2Curn%3Ali%3AugcPost%3A7359542643413946368%29",
+      "text": "To je supeeer, z fleku bysme tě vzali do 60seconds.cz ;-)",
+      "entities": [
+        {
+          "start": 41,
+          "length": 12,
+          "type": "COMPANY_NAME",
+          "company": {
+            "name": "60seconds.cz",
+            "universalName": "60seconds.cz",
+            "trackingId": "EbNwH2iERX+pEjmc4S2Bhw==",
+            "active": true,
+            "showcase": false,
+            "entityUrn": "urn:li:fs_miniCompany:18041157",
+            "logoUrl": "https://media.licdn.com/dms/image/v2/C560BAQFg1XkpwOuGQQ/company-logo_400_400/company-logo_400_400/0/1631309312402?e=1781136000&v=beta&t=PemTB8SFyHj7sDoNWjQNjgxsOhXJbtjmk3g_oRvoBZA"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "David",
+        "lastName": "Spacil",
+        "occupation": "AI-Driven Content Creator | AI Creativity Lecturer & Consultant | Digital Storyteller | Awarded as Czech AI Personality of 2024",
+        "id": "15732471",
+        "publicId": "davidspacil",
+        "trackingId": "3UrgXzuySZCVsskGPzha/A==",
+        "profileId": "ACoAAADwDvcBWnZYfOXF29HqCHOb_q0j3dpoylA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEWd0ilJHhpDA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1601374239965?e=1781136000&v=beta&t=qELY5fsf8vGw_hQFYTGkQ_yggZrpcVBey9n6sxmQnD4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFmJUmjPGlo8A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1705423997096?e=1781136000&v=beta&t=JQl8ncKUT3cHyyzEkWIhvL6OkFIzrk9Ref4VLA44H6Q",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michal",
+        "lastName": "Franěk",
+        "occupation": "Think and care...",
+        "id": "12275544",
+        "publicId": "michalfranek",
+        "trackingId": "bQJ24jCjTxCFYA0U2Z+XTg==",
+        "profileId": "ACoAAAC7T1gB4nT4-hTlPZ6rbViC6yBGFGbto54"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lukáš",
+        "lastName": "Konarovský",
+        "occupation": "🤖 Creating useful software",
+        "id": "16958557",
+        "publicId": "lukaskonarovsky",
+        "trackingId": "vq107g8TQ96NBDP3oZuC/A==",
+        "profileId": "ACoAAAECxF0Bn8L1if6aBIgIt7NKsx9XZPpdHJY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFfGn8m8PA6kg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1690914305341?e=1781136000&v=beta&t=apEZCpPL8sFVvyLcBGfK51wHzE38sP40PfOkOHpeqSo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEp5DAM7GcSRg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1614354721389?e=1781136000&v=beta&t=nBV6Bn_cQ5PPT-IqTWptEo7FN7MxHA1m_VxDJMTe8uQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Matějová",
+        "occupation": "...",
+        "id": "212362653",
+        "publicId": "lenka-matějová-0791535b",
+        "trackingId": "TyiO6OklRxSCIJ/whFwxyA==",
+        "profileId": "ACoAAAyoZZ0BOS1B_PZN1qbkv-R_Pd20LKcx4w4",
+        "picture": "https://media.licdn.com/dms/image/v2/C5103AQFOCy_BRleS6A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517430105432?e=1781136000&v=beta&t=cW-s_NvEb7Oa4gcUe92cWuJWFr1XXFBsLUAp2-ky2Do",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGskrvizzVniQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1666725183894?e=1781136000&v=beta&t=I9BuoGxX9wpAVVH75UYGdMoTfKUSsrdUB-iv5455Rvo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "trackingId": "vnwDase0RB6R9YAEQyB03A==",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGjycZdsqX9ww/profile-displayphoto-crop_800_800/B4DZjBYhBpGQAQ-/0/1755591087410?e=1781136000&v=beta&t=wVIgd5mwqIYPXpFj5d6Nr2x8-VHHyAZ4o1qWAcv4nhQ"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Matěj",
+        "lastName": "Kahún",
+        "occupation": "Komuniťák v Czechitas 🏄‍♂️",
+        "id": "726742558",
+        "publicId": "matejkahun",
+        "trackingId": "nxkE56s2QXeESN5a6ETQYg==",
+        "profileId": "ACoAACtRNh4Bgs49PDAKRTrJ0zQclHv-UqoqjOs",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEFdqnLrw3tqA/profile-displayphoto-shrink_800_800/B4EZVGmAK_GYAg-/0/1740646122793?e=1781136000&v=beta&t=kXs1stUYIteew7uBR7C0b1NfoOSP9z9D7Wl_jTtZgU4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHHulpwLgpD-g/profile-displaybackgroundimage-shrink_350_1400/B4DZzXhX0NH4Ac-/0/1773142376451?e=1781136000&v=beta&t=JhX7zrUGEPQ6CMtCimmgq0aYfeZ6PJRvlkNsVohIwkU"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Miroslav",
+        "lastName": "Zeman",
+        "occupation": "Lead React developer 💻 / Full-stack Typescript 🚀 / Teacher and mentor 📚 / heyy.dev 👋 / klers.cz 👩🏼 / [Object Object] 🦄",
+        "id": "662424426",
+        "publicId": "miroslavzeman",
+        "trackingId": "5LIBqNoETfOlYDNQDwGCxg==",
+        "profileId": "ACoAACd7y2oB-PaNQEZA-O1wJ5JRWoZTTqgUwQw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFVPYbLLCpSng/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1687704965913?e=1781136000&v=beta&t=VFH-HmXLcZgRSz4K2XTiGgstWmVWXamlJ064WgX2Pco",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH3FPnKWBLPyg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1738943055904?e=1781136000&v=beta&t=2m-VkuaHh6ZqL-YW0WiXbm_xNw-zD1fwVzjucanm1nM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vítek",
+        "lastName": "Pliska",
+        "occupation": "Software Developer, IT Consultant",
+        "id": "45707044",
+        "publicId": "vitekpliska",
+        "trackingId": "tAwweuFASGClgGezn1AZsQ==",
+        "profileId": "ACoAAAK5byQBQY41eE7WSJf5oGS2wKBPx_XAJOQ",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQE6ezVGKfs21w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516500227588?e=1781136000&v=beta&t=V5LZSyQKEeYYwHGD1iNlU0qAc_P3_VKxh-hcrqFDxVs",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEDrQ9oKOgd-Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1609370475732?e=1781136000&v=beta&t=oxQ8JzrnWGanOD17HZOeYed3Q6V7lUSc8KRjrjYSc6w"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Pašková ",
+        "occupation": "Metodika a administrativa | Rozvoj a vzdělávání (L&D) se zaměřením na data a AI | Strukturování informací a procesů",
+        "id": "269689511",
+        "publicId": "lenkapaskova-metodik",
+        "trackingId": "7jSmnOwaR4CuS4PNFCeWPQ==",
+        "profileId": "ACoAABATIqcBv-bWUdGimyh55-GEYFZ0FQKG7j8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQEr_wSHCL52Lg/profile-framedphoto-shrink_800_800/B4DZwI_tZRG4Ak-/0/1769677445023?e=1780430400&v=beta&t=ZRjBTJ_hqBtArEnl2xlsN5eivshugqkb5oFX1lzuFSc",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHTn9op8igf2g/profile-displaybackgroundimage-shrink_350_1400/B4DZwOW6A4GUAY-/0/1769767412919?e=1781136000&v=beta&t=0jxaQlgsrwG9T8WoOFELcCcs33p5HuvIFPFz4f7KHIo"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Natasa",
+        "lastName": "Spelicova",
+        "occupation": "QA Lead | iOS + Android + IoT | Building Reliable Products I am not looking for a new project currently",
+        "id": "480830349",
+        "publicId": "natasa-spelicova-379042115",
+        "trackingId": "IVNwUcoLReKOyfyhHjynPQ==",
+        "profileId": "ACoAAByo440Bfr9Wj1rFyBgpsFjHJBBFSTOI2rw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFb6uNl-55X5g/profile-displayphoto-shrink_800_800/B4EZdFssioGcAc-/0/1749221034971?e=1781136000&v=beta&t=-YXoyu072sTumqeCLQYWCrQZ54PzQjJE2q-e-snUlzs",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQESA86WGL3cRw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1690350377794?e=1781136000&v=beta&t=d6kVzZKUQ7ALU1Eoeq4Zq4E17aybYDaHhtg_nwSrbzY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Radka",
+        "lastName": "Filipová",
+        "occupation": "Web • React • Graphic Design • Vibecode • Shoptet",
+        "id": "280828944",
+        "publicId": "radka-filipova",
+        "trackingId": "pInMmXJJTR28L45sYzvMlQ==",
+        "profileId": "ACoAABC9HBABpeuqbNvS8hsjDqpatuNnUChhn3s",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFv6St6EphXWg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1634928492460?e=1781136000&v=beta&t=3B6qAuCDm4mR2xEsP6cwkX8cCapYfRGtEebf_LAWv-c"
+      }
+    }
+  ],
+  "numShares": 2,
+  "numLikes": 75,
+  "numComments": 14,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "tA/LfCQESs+9O4bFg8MWRw==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1754652609210,
+  "postedAtISO": "2025-08-08T11:30:09.210Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

@@ -1,0 +1,213 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4E22AQHOSNVkiP_K6w/feedshare-shrink_800/feedshare-shrink_800/0/1666692415059?e=1781136000&v=beta&t=vwPjwo_tTdTM3_usb8znW4huFaGRoGjGwKMMRAphxlU"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6990614670495621120",
+  "url": "https://www.linkedin.com/posts/honzajavorek_od-lingvistiky-k-datov%C3%A9-anal%C3%BDze-s-marketa-activity-6990614670495621120-gUoV?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAACrk6mABRsYhz0r8LYjdDsgcuChdy2JFZfY",
+  "timeSincePosted": "3yr",
+  "shareUrn": "urn:li:share:6990614669082161152",
+  "text": "Od lingvistiky k datové analýze, s Marketa Lourenco z Mews. Devátá epizoda podcastu! 🎙\n\nMarkéta vypráví o tom, co ji přimělo vyzkoušet svět IT, jak hladce se jí podařilo získat první datovou pozici a co její práce obnáší. Jak bylo těžké práci datové analytičky sehnat? Jak dnes vypadá její den? A to nejdůležitější: Co si myslí o koláčových grafech!?\n\nEpizodu najdeš na https://lnkd.in/ejF6UmjR a na všech běžných podcastových platformách, včetně YouTube.",
+  "attributes": [
+    {
+      "start": 35,
+      "length": 16,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Marketa",
+        "lastName": "Lourenco",
+        "occupation": "Senior Data Analyst at Mews",
+        "id": "100649752",
+        "publicId": "marketa-lourenco",
+        "trackingId": "FkFsB9i1RvqgdMX126pTJQ==",
+        "profileId": "ACoAAAX_yxgBI2oslXsIJO8gmesUHbHK-vGnGTo",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHNh9Y3DYWOkQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1639590611475?e=1781136000&v=beta&t=jfKOcatSeYz64BGX1k5utnrEdZsIUq_EMiKusXH9LYg"
+      }
+    },
+    {
+      "start": 54,
+      "length": 4,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Mews",
+        "universalName": "mewssystems",
+        "trackingId": "XOH3ZxQWSbu7mgMBE/qeMg==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:2574959",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQG9VtyX26envQ/company-logo_400_400/B4EZyKEXeEH0AY-/0/1771842926937/mewssystems_logo?e=1781136000&v=beta&t=UIV6bGS_gnn1FvSP7zSjwts_zMyZHE6t4vu9n9Nz5KE"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lucie",
+        "lastName": "Olmrová",
+        "occupation": "QA Engineer at Gen",
+        "id": "425440730",
+        "publicId": "lucie-olmrova",
+        "trackingId": "OIrC7xj6TbKgHcdtdan93g==",
+        "profileId": "ACoAABlbtdoB5ODliaVBZPBZ_fDDKJSvYm9tamc"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Norbert",
+        "lastName": "Červený",
+        "occupation": "I help great brands grow @STRV",
+        "id": "337285701",
+        "publicId": "strv-norbert-cerveny",
+        "trackingId": "yklnzwkZSDuEiHJJZexP/w==",
+        "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGKIAaUJPtlmA/profile-displayphoto-crop_800_800/B4DZ0jT_lBIEAI-/0/1774413941709?e=1781136000&v=beta&t=ioRFNZY53XZXWk1BvKTQdIygU-xxLKoyNysEAYklp0I",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG0ekEnNy2Hcw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0jTiNeGsAk-/0/1774413817026?e=1781136000&v=beta&t=_KMbjLzzfd2pO9gizTz2iWgDOkq5RQ3NpzDT5fOljNI"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Hana",
+        "lastName": "Špačková",
+        "occupation": "Software Development Engineer in Test in Mews Fintech",
+        "id": "268385986",
+        "publicId": "hana-spackova",
+        "trackingId": "uK4vW6vaSiy4fvxdI0+oUA==",
+        "profileId": "ACoAAA__PsIB5Mg2vdtquroOxuEXFY9aeWEiQwk",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQGFfJaFwF9qMg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1730970791267?e=1781136000&v=beta&t=kSL4K64G-WMb6jMp_tX2boJeXec6nPc4e-CQJFyqwus",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGzI7BFbKXICw/profile-displaybackgroundimage-shrink_350_1400/B4DZiYG9KxG8AY-/0/1754898619600?e=1781136000&v=beta&t=ye08-LeqDcR4_aY0Mb3HyD0wgpjuuccEdMv9t0aBKC8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Monika",
+        "lastName": "Hyblova",
+        "occupation": "Data Science, Data Analysis, Revenue Management System, Czechitas Mentor, Ensuring data and models deliver real business impact",
+        "id": "148036470",
+        "publicId": "monika-hyblova",
+        "trackingId": "8bEHBBLxT36yPeCNBXalCQ==",
+        "profileId": "ACoAAAjS23YB7j_H4ryBzs1cYX3wh1VYcbECftg",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQHKKfug15uXeg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516949554789?e=1781136000&v=beta&t=S6e3fNOvCqBqTb5emqUJCjT4FtJAeqKEOc_PHJYBW30",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEO2IIi4PmT2w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1680694241023?e=1781136000&v=beta&t=Lsipr1TMI7kwzRt_Rm1yogg-G8x1BRMXwC7dxFDGWMs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ella",
+        "lastName": "S.",
+        "occupation": "-",
+        "id": "954345023",
+        "publicId": "ella-senovska",
+        "trackingId": "9z4qM9OfS5KA9FlGeSVm9g==",
+        "profileId": "ACoAADjiJj8BFd5OQwWP4pY71u0DyMawGkM8Xk8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQE61ascbiBnzw/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1730967321835?e=1780430400&v=beta&t=iO0k83QfTean_OyKdfzDHlg5-WhLJU_oWDBJ5_drwys",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG0KrH5Co0mCQ/profile-displaybackgroundimage-shrink_350_1400/B4EZr5tPiHIQAY-/0/1765125979597?e=1781136000&v=beta&t=CYoij_pByAy_OmryQJUks8BHm9BOnimJS677duIgWRo"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Kristýna",
+        "lastName": "Doupalová",
+        "occupation": "Frontend Developer at Heureka",
+        "id": "976624587",
+        "publicId": "kristyna-doupalova",
+        "trackingId": "lPSn9eCfRRKrlDfPtO7G6A==",
+        "profileId": "ACoAADo2G8sBXBTFw0ULcWRomonw9Y78z-7V854",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQF-0Imlum44fA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1651250495712?e=1781136000&v=beta&t=rOMqz50Jx31__jdo5XkJ02dSZr0WVzzsaDu0ki4XrQc",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGaXxrvrM1n2g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1651250746756?e=1781136000&v=beta&t=qzdjYy4wrSf37EiotfjjhrjhcEDf9YBaqEsTy5lBbKM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Katarina",
+        "lastName": "Žúborová",
+        "occupation": "Parental leave and part-time",
+        "id": "342438693",
+        "publicId": "katarina-zuborova",
+        "trackingId": "lU7+X2QPTrSfFCWBEWrkVQ==",
+        "profileId": "ACoAABRpMyUBfltaXb6WdG2hjsbqwRssQLOIKr0",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGaBXYRjjP0ug/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1606468817071?e=1781136000&v=beta&t=ZxlzRYEcrDDDs79YaH4tkI2TfulP4xhtF6I-b0tCJs0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGbe_M99XBLfQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1668083151429?e=1781136000&v=beta&t=_iiE8GcOa7-91LSc9UWTWa-RkJhUSj9oFxeMVH3wg50"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Barbora",
+        "lastName": "Navrátilová",
+        "occupation": "First Work and Holiday visa in Australia",
+        "id": "478368813",
+        "publicId": "barboranavratilova",
+        "trackingId": "asLRoYUyQVuo8EnEhePlKw==",
+        "profileId": "ACoAAByDVC0B6TEt9zMPht1ibEAJYuKDJBqMWJc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGOOBh2yGVM-Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1663674672735?e=1781136000&v=beta&t=7TxkASx6LEthzVFNANkEvHZNzG-c-CgRrCyNfB3kQsI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEUKQTZhoQl0A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694674321777?e=1781136000&v=beta&t=yXE4EGvnEbhrwiTQPhG-ynH1hq4i4AJJwZ6tn6TtBSs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ondřej",
+        "lastName": "Illek",
+        "occupation": "Co-founder at Finlay | Humans and AI Recruitment Agents working together.",
+        "id": "244006979",
+        "publicId": "ondrejillek",
+        "trackingId": "X2Dhw408RS+4YOqsIbbKKQ==",
+        "profileId": "ACoAAA6LQEMBdXH_oDCuYjNDS0W8-YQzfcpn4Yo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGwUmNQcZAaNQ/profile-displayphoto-shrink_800_800/B4EZQmqCSiHsAc-/0/1735815341657?e=1781136000&v=beta&t=XJKNecL6jcWbXtNFr0QlcinzsfZVrjQ5R7t67AyPSb0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFK2fHAeLp8XA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1735817571962?e=1781136000&v=beta&t=Dq6AqekbcwILRYck4mzwm2Do5p763YlQE1Ytdgb_75E"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Yevhenii",
+        "lastName": "Chyzhykov",
+        "occupation": "Director of Engineering @ Emplifi | Driving AI Transformation & Organizational Excellence at Scale",
+        "id": "484183187",
+        "publicId": "yevheniichyzhykov",
+        "trackingId": "58DTyvNATMmjrReYxYareg==",
+        "profileId": "ACoAABzcDJMBa1o9p0EbrIJX5bUJiX65wnYbNlU",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFi3Zgv-MQuug/profile-displayphoto-crop_800_800/B4EZoIrU1BKkAQ-/0/1761082167268?e=1781136000&v=beta&t=9U8jMpSOesX2Pz_-gZrNIuEwcRe5VuBJyL0ci-grj1A"
+      }
+    }
+  ],
+  "numShares": 2,
+  "numLikes": 39,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "BKwshpDRQmSn49+qPm2arQ==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1666692416786,
+  "postedAtISO": "2022-10-25T10:06:56.786Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

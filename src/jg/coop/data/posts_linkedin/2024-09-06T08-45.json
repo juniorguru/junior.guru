@@ -1,0 +1,408 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "type": "article",
+    "article": {
+      "type": "EXTERNAL_FULL",
+      "urn": "urn:li:article:7752393468651567583",
+      "url": "https://forms.gle/UnSPgbwB6bSt1EHa7",
+      "title": "Přihláška na „Hadí workshop“ 14. 9. 2024"
+    },
+    "isActivity": false,
+    "urn": "urn:li:activity:7237332052222636034",
+    "url": "https://www.linkedin.com/posts/anezkamll_p%C5%99ihl%C3%A1%C5%A1ka-na-had%C3%AD-workshop-14-9-2024-activity-7237332052222636034-QJa5?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC9IwucBOlZAtkMcXzxvWRMowT5oiXMZAvE",
+    "timeSincePosted": "1yr",
+    "shareUrn": "urn:li:share:7237332051203395585",
+    "text": "🐍  Brněnské PyLadies CZ tevírají semestr již tradičně Hadím workshopem! Opět pod vedením Petr Viktorin a to už 14. 9., tak s přihlašováním neváhejte!\n\nNejste si jistí, jestli je programování pro vás to pravé? Přemýšlíte, jestli začít s nějakým dlouhodobějším kurzem, protože nevíte, jestli vás to vůbec bude bavit? Tenhle workshop vám může výrazně pomoci s rozhodováním!\nBěhem jednodenního workshopu si vyzkoušíte, jak se píše kód, jaké jsou základní programovací koncepty, a jaké to je, když počítač přestane trucovat a začne poslouchat vaše příkazy. To všechno při programování klasické videohry Had, kterou možná ještě někteří znáte z Nokia telefonů. 😊 \n\nVíce informací ve formuláři!",
+    "attributes": [
+      {
+        "start": 12,
+        "length": 11,
+        "type": "COMPANY_NAME",
+        "company": {
+          "name": "PyLadies CZ",
+          "universalName": "pyladies-cz",
+          "trackingId": "Z1vB+xHNTjmFzYufy0nznA==",
+          "active": true,
+          "showcase": false,
+          "entityUrn": "urn:li:fs_miniCompany:30644381",
+          "logoUrl": "https://media.licdn.com/dms/image/v2/C560BAQEaibY9_28N2A/company-logo_400_400/company-logo_400_400/0/1630614425519/pyladies_cz_logo?e=1781136000&v=beta&t=zfNm6R5gYxxDnRcaaj7iVB54AorS6Y83LjCuRsjXd0g"
+        }
+      },
+      {
+        "start": 89,
+        "length": 13,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Petr",
+          "lastName": "Viktorin",
+          "occupation": "A Pythonista",
+          "id": "48852060",
+          "publicId": "petr-viktorin-a5043a14",
+          "trackingId": "C77uL5eeSzSURWC8sHGHZA==",
+          "profileId": "ACoAAALpbFwBrUWlkhM3d1JrBK4RInLbNquxnEE"
+        }
+      }
+    ],
+    "comments": [
+      {
+        "time": 1725614769620,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7237332052222636034?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7237332052222636034%2C7237752930672488450%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287237752930672488450%2Curn%3Ali%3Aactivity%3A7237332052222636034%29",
+        "text": "Jen dodám, že Hadí workshop není jen pro ladies, konec konců třeba Boris Kolda je příkladem toho, že do našich aktivit rády přijmeme i gents. 😊 Ženy a dívky jsou ale naše primární cílovka, tak pokud se někdo z můžů nebojí toho být na našich kurzech v menšině, klidně se může přihlásit! 👨‍💻 👩‍💻 ",
+        "entities": [
+          {
+            "start": 67,
+            "length": 11,
+            "type": "PROFILE_MENTION",
+            "profile": {
+              "firstName": "Boris",
+              "lastName": "Kolda",
+              "occupation": "Trader, junior Linux administrator, junior Python developer",
+              "id": "183482672",
+              "publicId": "boris-kolda-12854651",
+              "trackingId": "y+kTMp4ASduTG35K2IXjHQ==",
+              "profileId": "ACoAAArvuTABkMeLGdTJ-GueF6THUCXa57Ap7zk"
+            }
+          }
+        ],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Anezka",
+          "lastName": "Muller",
+          "occupation": "🧑‍🤝‍🧑 Working with and for communities, organizing events, studying service design, having fun in all that. ✏️",
+          "id": "58610470",
+          "publicId": "anezkamll",
+          "trackingId": "Zctf9TGnQgSKhb86OO9Jwg==",
+          "profileId": "ACoAAAN-UyYBW_5FlwBOtClk7WVpl3JlZMHMVn4",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHKgfW_KDXR1Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1620408094586?e=1781136000&v=beta&t=qk_LRa-WT8rOvas9-jwGjCle3e76MkO7wIKYYCWCZag",
+          "distance": "OUT_OF_NETWORK"
+        }
+      }
+    ],
+    "reactions": [
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Zuzana",
+          "lastName": "Ujhelyiová",
+          "occupation": "Školicí a vzdělávací platforma eGovernmentu",
+          "id": "654339832",
+          "publicId": "zuzana-ujhelyiová-a74178163",
+          "trackingId": "OoUYnSqLRKix+/pZjMrQ3Q==",
+          "profileId": "ACoAACcAbvgBPiOtOPgK8LddXJoDljWH-Hzl6SE",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQFjq2qhY5F8Aw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1668060017477?e=1781136000&v=beta&t=zwc4h5pdeAqV8f3CHmTIvp4x80azJjPB1_u7huyXbIg"
+        }
+      },
+      {
+        "type": "APPRECIATION",
+        "profile": {
+          "firstName": "marta",
+          "lastName": "machova",
+          "occupation": "sbírám 🧩 sepisuji ✍️ strukturuji 🗂️ informace. Pro pochopení 🧠 pro změnu 🔄 pro vývoj 🚀 Aby vše ladilo 🎶",
+          "id": "314544836",
+          "publicId": "marta-machova",
+          "trackingId": "eIHP/I4dRuOIzil3i3ieWg==",
+          "profileId": "ACoAABK_ksQB1VsrnF-0oTEeZq94HvUuXWHH9YY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEHPho-WKgevg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1715866704294?e=1781136000&v=beta&t=m5hwgNm2uNGgy6X72pdL_43xq0yjHmcezWE9vKBShsw"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Peter",
+          "lastName": "Tlučhoř",
+          "occupation": "Obchod není práce. Obchod je poslání.",
+          "id": "1294198542",
+          "publicId": "peter-tluchor",
+          "trackingId": "9WKlG/N5QMWDCcPNGvpXXA==",
+          "profileId": "ACoAAE0j5w4Bsa0e1CmICx2Kf5HbWJdBoQ0HyLg",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEUnJpVCgW34g/profile-displaybackgroundimage-shrink_350_1400/B4DZmlQbF_G8AY-/0/1759414170759?e=1781136000&v=beta&t=dzlnipED_ZtRfx4C4idu3g8Iu-2zS-evm3fhCtYNHeA"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Martin",
+          "lastName": "Hassman",
+          "occupation": "🎯 Product Manager, 👑 Product Owner, 👨🏼‍💻 Technology Enthusiast, 🗣️ English, Czech, Spanish, 👷Open to work",
+          "id": "357018",
+          "publicId": "hassman",
+          "trackingId": "SnJq3VY6Tt+JbHsQsk812Q==",
+          "profileId": "ACoAAAAFcpoBmteS--laK_PQYfP-f5of-I9xOqA",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHjp-RqdLvWHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1705470330549?e=1781136000&v=beta&t=4e2xvjtsbxbg3IrQoHdS-6oc4af_r0K_MCGOdnLDVd8"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Eva",
+          "lastName": "Helešicová",
+          "occupation": "🔎 Testerka softwaru | 🏉 Scrum Masterka |💡 Píditelka",
+          "id": "172385729",
+          "publicId": "evahele",
+          "trackingId": "nkGMGDSZTrSXvCe5hTFy7g==",
+          "profileId": "ACoAAApGZcEB5jEl0UtMJE0cecnntYc7m0a7yho",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFs7deSxfZLmQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1705077411824?e=1781136000&v=beta&t=lEuMsOwJ6u2fKHgRPQydZAHurBmBA8qNonVqPmKj65o"
+        }
+      },
+      {
+        "type": "APPRECIATION",
+        "profile": {
+          "firstName": "Šárka",
+          "lastName": "Rauchová",
+          "occupation": "CMO @ Kogi | Senior Consultant – Communication, Marketing & CX",
+          "id": "41578917",
+          "publicId": "sarkarauchova",
+          "trackingId": "9DYYA53TTpmQ+mDXGtj8pw==",
+          "profileId": "ACoAAAJ6caUBx5wb-vjcz582qXs2Lne-ugK-Rng",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGQoYRxh63bSQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ2cJRmXJYAY-/0/1776441171349?e=1781136000&v=beta&t=1usCdR9cBVmoqWMzhSblPComBiX4N6hpJEFmXzijHZE"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Terezie",
+          "lastName": "Viktorinová",
+          "occupation": "Tester ve společnosti IPEX, a.s.",
+          "id": "398084770",
+          "publicId": "terezie-vahalova",
+          "trackingId": "SYSEORUjTj+a0FPVKMRjLw==",
+          "profileId": "ACoAABe6SqIBmfyPJQT4r6ZXP152uF0iYh3yeHg"
+        }
+      },
+      {
+        "type": "EMPATHY",
+        "profile": {
+          "firstName": "Iva",
+          "lastName": "Hrdina Pazderková",
+          "occupation": "Freelance Product & Ops | CX & Systems Thinking | Neuroleadership Coach | Volunteer @ Česko.Digital | Mentor @ Femme Palette",
+          "id": "109919206",
+          "publicId": "ivafingerova",
+          "trackingId": "Ldu7ocqeTeCAl20ZEDkXlQ==",
+          "profileId": "ACoAAAaNO-YB_qQBMliqSDeBayGzCWDVLaMv24w"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Marian",
+          "lastName": "M.",
+          "occupation": "QA Tester",
+          "id": "211922396",
+          "publicId": "maier-marian",
+          "trackingId": "jLJ0imXNS1SpewVl0uDJ6Q==",
+          "profileId": "ACoAAAyhrdwBJrYY4denHAuigiNfrG3zMizOAx8",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFwWF3POGgY3w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1708167593098?e=1781136000&v=beta&t=Z0iE8r4NhIzp9uqmEtyoq2PVyXo7cqTqqykwOAozYdk"
+        }
+      },
+      {
+        "type": "APPRECIATION",
+        "profile": {
+          "firstName": "Boris",
+          "lastName": "Kolda",
+          "occupation": "Trader, junior Linux administrator, junior Python developer",
+          "id": "183482672",
+          "publicId": "boris-kolda-12854651",
+          "trackingId": "y+kTMp4ASduTG35K2IXjHQ==",
+          "profileId": "ACoAAArvuTABkMeLGdTJ-GueF6THUCXa57Ap7zk"
+        }
+      }
+    ],
+    "numShares": 2,
+    "numLikes": 13,
+    "numComments": 3,
+    "canReact": true,
+    "canPostComments": true,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "ALL",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "firstName": "Anezka",
+      "lastName": "Muller",
+      "occupation": "🧑‍🤝‍🧑 Working with and for communities, organizing events, studying service design, having fun in all that. ✏️",
+      "id": "58610470",
+      "publicId": "anezkamll",
+      "trackingId": "Zctf9TGnQgSKhb86OO9Jwg==",
+      "profileId": "ACoAAAN-UyYBW_5FlwBOtClk7WVpl3JlZMHMVn4",
+      "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHKgfW_KDXR1Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1620408094586?e=1781136000&v=beta&t=qk_LRa-WT8rOvas9-jwGjCle3e76MkO7wIKYYCWCZag"
+    },
+    "authorProfileId": "anezkamll",
+    "authorType": "Person",
+    "authorName": "Anezka Muller",
+    "authorProfileUrl": "https://www.linkedin.com/in/anezkamll?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAN-UyYBW_5FlwBOtClk7WVpl3JlZMHMVn4",
+    "authorUrn": "urn:li:member:58610470",
+    "postedAtTimestamp": 1725514424377,
+    "postedAtISO": "2024-09-05T05:33:44.377Z"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7237742578199134209",
+  "url": "https://www.linkedin.com/posts/honzajavorek_p%C5%99ihl%C3%A1%C5%A1ka-na-had%C3%AD-workshop-14-9-2024-activity-7237742578199134209-ACC4?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC9IwucBOlZAtkMcXzxvWRMowT5oiXMZAvE",
+  "timeSincePosted": "1yr",
+  "shareUrn": "urn:li:share:7237742577649688576",
+  "text": "Všechny ladies z Brna, které by si chtěly vyzkoušet programování od úplných základů, mohou tak učinit na tomto jednodenním workshopu 14.9. (už za týden)! 🙌 Během jednoho dne vytvoříte vlastní hru „had” 🐍",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Katarína",
+        "lastName": "Hlaváčová",
+        "occupation": "Potkáme se na Rozhraní - 4. 6. 2026, Brno.",
+        "id": "191522286",
+        "publicId": "katarina-hlavacova",
+        "trackingId": "1QUPRRFMSu+QQWbSrHE/+A==",
+        "profileId": "ACoAAAtqZe4BrDphaet_czyDFUeHtN8Mmia32yQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFIGl-OELIVTQ/profile-displaybackgroundimage-shrink_350_1400/B4DZpJoFLfGsAY-/0/1762171835693?e=1781136000&v=beta&t=5CafLf5IwXRfXRCgLXVqDoC1p7tvNG6ytlMeUggnI2Q"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marian",
+        "lastName": "M.",
+        "occupation": "QA Tester",
+        "id": "211922396",
+        "publicId": "maier-marian",
+        "trackingId": "jLJ0imXNS1SpewVl0uDJ6Q==",
+        "profileId": "ACoAAAyhrdwBJrYY4denHAuigiNfrG3zMizOAx8",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFwWF3POGgY3w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1708167593098?e=1781136000&v=beta&t=Z0iE8r4NhIzp9uqmEtyoq2PVyXo7cqTqqykwOAozYdk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiří",
+        "lastName": "Psotka",
+        "occupation": "Senior AI-first tech recruiter // Python meetup organiser// mentoring junior talent",
+        "id": "122809391",
+        "publicId": "jiripsotka",
+        "trackingId": "F1ZaLdXCRKKl2wUJtmaS9A==",
+        "profileId": "ACoAAAdR7C8BbyccNUVvG6bQpjG82_Ou5lZBRO4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGW_GhhvqUUpA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1694077297719?e=1781136000&v=beta&t=bAPklj0uEUHetydy6ow0mF7NfGJR3utW4IlghbK264I",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQERsNhsApdjUw/profile-displaybackgroundimage-shrink_350_1400/B4DZujaaTWJ8AY-/0/1767973169340?e=1781136000&v=beta&t=vTvNbxgMP2VIb2dhWdYmIzQ07O20vU5ucAtYDYHE-TQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "trackingId": "2/aEfo82QXKLzq25rhs58g==",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Norbert",
+        "lastName": "Červený",
+        "occupation": "I help great brands grow @STRV",
+        "id": "337285701",
+        "publicId": "strv-norbert-cerveny",
+        "trackingId": "CVUoVspyR1+4+gGpjOoymQ==",
+        "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG0ekEnNy2Hcw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0jTiNeGsAk-/0/1774413817026?e=1781136000&v=beta&t=_KMbjLzzfd2pO9gizTz2iWgDOkq5RQ3NpzDT5fOljNI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Václav",
+        "lastName": "Lorenc",
+        "occupation": "Principal Information Security Engineer at HERE",
+        "id": "3719671",
+        "publicId": "valor",
+        "trackingId": "gG5HbnFMQky47FMP3MoHzg==",
+        "profileId": "ACoAAAA4wfcB-6wfVwYbMy69XKSeovQjgDHJSW0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQG3RlrCKlLZzg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1640715665619?e=1781136000&v=beta&t=e5iMMadAmgsuSQrkcopHNu9MuJrqHJ6KjBAgQjzYmEg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petra",
+        "lastName": "Kubita Nulíčková",
+        "occupation": "HR Manager v Pale Fire Capital | Head of HR v Aukro | HR consultant and mentor | #sharingiscaring",
+        "id": "473833031",
+        "publicId": "petranulickova",
+        "trackingId": "nY/a/Q8XRD2uHapcKGptmQ==",
+        "profileId": "ACoAABw-HkcBifENxX8nxAs2YjwxbI6b2XtAF98",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQExwjEQhQ99TA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1676378924015?e=1781136000&v=beta&t=rpomntKe5fPHScYScrE5n1-ok01d_UuxKpUPUaPI93g"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "marta",
+        "lastName": "machova",
+        "occupation": "sbírám 🧩 sepisuji ✍️ strukturuji 🗂️ informace. Pro pochopení 🧠 pro změnu 🔄 pro vývoj 🚀 Aby vše ladilo 🎶",
+        "id": "314544836",
+        "publicId": "marta-machova",
+        "trackingId": "eIHP/I4dRuOIzil3i3ieWg==",
+        "profileId": "ACoAABK_ksQB1VsrnF-0oTEeZq94HvUuXWHH9YY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEHPho-WKgevg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1715866704294?e=1781136000&v=beta&t=m5hwgNm2uNGgy6X72pdL_43xq0yjHmcezWE9vKBShsw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Dominika",
+        "lastName": "Vykydalová",
+        "occupation": "Content specialist & strategist | Bitcoin | Fintech",
+        "id": "320925517",
+        "publicId": "dominikavykydalova",
+        "trackingId": "ml20Tq6BSBuBEjIWTwon9Q==",
+        "profileId": "ACoAABMg700BFHeNeaArW6j8e2CJC0ViRIMCnmo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFwYCyGxSUsuw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1702999292444?e=1781136000&v=beta&t=yHwPrQ8FQ0CaG7MWUEDVdcEPNjptWKW96qGi6yYOcqE"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Anezka",
+        "lastName": "Muller",
+        "occupation": "🧑‍🤝‍🧑 Working with and for communities, organizing events, studying service design, having fun in all that. ✏️",
+        "id": "58610470",
+        "publicId": "anezkamll",
+        "trackingId": "K1m65J73Somh13Yf2NiFPA==",
+        "profileId": "ACoAAAN-UyYBW_5FlwBOtClk7WVpl3JlZMHMVn4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHKgfW_KDXR1Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1620408094586?e=1781136000&v=beta&t=qk_LRa-WT8rOvas9-jwGjCle3e76MkO7wIKYYCWCZag"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 13,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "kEB+UnBJQ4iyZiLqKBA7zg==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1725612301397,
+  "postedAtISO": "2024-09-06T08:45:01.397Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

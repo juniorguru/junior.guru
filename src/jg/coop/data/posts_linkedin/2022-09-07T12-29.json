@@ -1,0 +1,283 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:8622749135300346199",
+    "url": "https://bit.ly/3QwBMvu",
+    "title": "Pohovor nanečisto"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6973255839239274498",
+  "url": "https://www.linkedin.com/posts/honzajavorek_pohovor-nane%C4%8Disto-activity-6973255839239274498-2aob?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAACrk6mABRsYhz0r8LYjdDsgcuChdy2JFZfY",
+  "timeSincePosted": "3yr",
+  "shareUrn": "urn:li:share:6973255837993586688",
+  "text": "Jsi juniorní vývojářka nebo vývojář? Vyplň prosím 5min dotazník, který nám pomůže uspořádat pro tebe lepší akci: https://bit.ly/3QwBMvu\n\n🗓 Klub na junior.guru začal spolupracovat s Ataccama. Chtěli bychom společnými silami teď na podzim uspořádat akci, kde by si účastníci mohli vyzkoušet pohovor nanečisto a dostat bez jakéhokoliv rizika reálný feedback, včetně třeba CVčka. Z mého popudu bude akce (stejně jako klub a vše co v něm děláme) co nejvíce přístupná i lidem, kteří se nemohou osobně dostavit do žádného z velkých měst.\n\n🎙️ Protože Sarka Kousalova, která je z Ataccama a celé to organizuje, společně s Vojtěch Mádr produkuje podcast ProgramHRování, je tam i možnost účastnit se natáčení nové epizody.\n\n🙋 Máme samozřejmě nějaký odhad, co by se mohlo juniorům líbit, nebo co by se jim mohlo hodit, ale aby to nebylo založeno na dojmech a reagovalo na reálné potřeby, udělala Šárka dotazník, kde se ptá na konkrétní věci a výsledky reálně ovlivní podobu akce.",
+  "attributes": [
+    {
+      "start": 181,
+      "length": 8,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Ataccama",
+        "universalName": "ataccama",
+        "trackingId": "JmfVY9BBQ9WlgSqRb/Za4A==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:250453",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQFu_2rrRoxI9g/company-logo_400_400/B4EZfKY.ipHIAc-/0/1751447235100/ataccama_logo?e=1781136000&v=beta&t=GFWlBPqBVv37lZ3d2Av_uNjcI64DiisDk2bNYIPELqk"
+      }
+    },
+    {
+      "start": 543,
+      "length": 15,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Sarka",
+        "lastName": "Kousalova",
+        "occupation": "Workplace Experience & Employer Branding Manager ve společnosti Pricefx | Co-host @ ProgramHRování | Social Media Strategist | Event Management | Freelance Translator",
+        "id": "618467773",
+        "publicId": "šárka-kousalová",
+        "trackingId": "mlhTwyzeQQ+bGZIXArnVZw==",
+        "profileId": "ACoAACTdEb0BJh79Lnb5E3QQregmW3SioQxe0_M",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFwMDsGJJLuGg/profile-displayphoto-crop_800_800/B4DZvRixGQJkAI-/0/1768747112321?e=1781136000&v=beta&t=Mqv44mQ_c9hSFLdmrQ58hhEjo0pDCNXcOSnNBAcI-WY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHPZ6Mc28dXEA/profile-displaybackgroundimage-shrink_350_1400/B4EZlRlwUHIwAY-/0/1758010477652?e=1781136000&v=beta&t=abEWpQ21P3uA6PQu2mqppwQ9AHau457n37m8Hz0LLmE"
+      }
+    },
+    {
+      "start": 571,
+      "length": 8,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Ataccama",
+        "universalName": "ataccama",
+        "trackingId": "+jeOZIPJRvWsh5pO1mq7zg==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:250453",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQFu_2rrRoxI9g/company-logo_400_400/B4EZfKY.ipHIAc-/0/1751447235100/ataccama_logo?e=1781136000&v=beta&t=GFWlBPqBVv37lZ3d2Av_uNjcI64DiisDk2bNYIPELqk"
+      }
+    },
+    {
+      "start": 613,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Vojtěch",
+        "lastName": "Mádr",
+        "occupation": "🎙 Pomáhám tvořit lepší podcasty | Spolu-moderátor Mileniálové & Jak na podcasty | 💻 Voicebot engineer",
+        "id": "205073291",
+        "publicId": "madrvojtech",
+        "trackingId": "V0osJ8bxTNKq2iglYoU+2g==",
+        "profileId": "ACoAAAw5K4sBA8nVYoHPe91603FIAQM8Afcl3AQ",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQG-5m6_kiUCLw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1640351690167?e=1781136000&v=beta&t=P0XlPJMkia6IYO5QAPO5phO59ToKi83zvfyVGTTL0zk",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEiI6dmbVAZ-g/profile-displaybackgroundimage-shrink_350_1400/B4EZpVejb9IUAc-/0/1762370665436?e=1781136000&v=beta&t=iUrGuEbjzZUCmquyBnn-85zPgbBTAAWrH23N2Bzt5i4"
+      }
+    },
+    {
+      "start": 644,
+      "length": 14,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "ProgramHRování",
+        "universalName": "programhrovani",
+        "trackingId": "wc9dyHpbQPqqTh/O68tFvg==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:76564291",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQFOyBtfsCCMew/company-logo_400_400/company-logo_400_400/0/1714162197209/programhrovani_logo?e=1781136000&v=beta&t=DXlA3Rag_ZygIhgzoHKLUFuVkcqgKxNq4TsvhzKhJCM"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1662553947284,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6973255839239274498?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6973255839239274498%2C6973256671309524992%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286973256671309524992%2Curn%3Ali%3Aactivity%3A6973255839239274498%29",
+      "text": "Děkujeme Honzi za sdílení :)",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Sarka",
+        "lastName": "Kousalova",
+        "occupation": "Workplace Experience & Employer Branding Manager ve společnosti Pricefx | Co-host @ ProgramHRování | Social Media Strategist | Event Management | Freelance Translator",
+        "id": "618467773",
+        "publicId": "šárka-kousalová",
+        "trackingId": "UU2x8T4TSh+DX27kREFo8g==",
+        "profileId": "ACoAACTdEb0BJh79Lnb5E3QQregmW3SioQxe0_M",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFwMDsGJJLuGg/profile-displayphoto-crop_800_800/B4DZvRixGQJkAI-/0/1768747112321?e=1781136000&v=beta&t=Mqv44mQ_c9hSFLdmrQ58hhEjo0pDCNXcOSnNBAcI-WY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHPZ6Mc28dXEA/profile-displaybackgroundimage-shrink_350_1400/B4EZlRlwUHIwAY-/0/1758010477652?e=1781136000&v=beta&t=abEWpQ21P3uA6PQu2mqppwQ9AHau457n37m8Hz0LLmE",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ing. Jaroslav",
+        "lastName": "Marčák",
+        "occupation": "Kreatívny finančník | Pomáham tým, ktorí chcú v živote nadobudnúť istotu a za pár rokov si vybudovať finančnú slobodu prostredníctvom pravidelného odkladania časti z ich príjmu | 1,1mil.€ pod osobnou správou",
+        "id": "566708303",
+        "publicId": "jaroslav-marčák",
+        "trackingId": "ImeZGQdATmaVuE6CDFQvYA==",
+        "profileId": "ACoAACHHSE8Bcp7HH4m9W957mGkrRTIZNbz6g-I",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFyk2oW5EdnYA/profile-displayphoto-crop_800_800/B4DZ2alnhiIkAM-/0/1776415049468?e=1781136000&v=beta&t=ogS46W6SHBp6wDTbEX_-pkUL554G_vrMaK-XjPODiLM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHlOwuBYFJlFA/profile-displaybackgroundimage-shrink_350_1400/B4DZ2amgnJG8AY-/0/1776415280681?e=1781136000&v=beta&t=2oS1vYdBN9dsgbP6azvF82WwtRUZsqkn6pDA55ehT4I"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Magdalena",
+        "lastName": "Jelínková",
+        "occupation": "Baví mě hledat řešení, která dávají smysl. Pro uživatele i pro business.",
+        "id": "1021135732",
+        "publicId": "magdalena-jelínková",
+        "trackingId": "3ljBYJJXQ7SgKIcQCsM+Ng==",
+        "profileId": "ACoAADzdS3QB9Tgj-FLPX9UYjncXS1B-khU5Vso",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQF2qRJbLgj1FQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1713888575373?e=1781136000&v=beta&t=2201GP9zMr2abugH-auz6yA5m9zLDGFUbN89ZU5xCxA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFC9YsJtYrNSg/profile-displaybackgroundimage-shrink_350_1400/B4DZ2.iU8JGwAY-/0/1777018163835?e=1781136000&v=beta&t=VayVZ0xdATDivVFhKQ8MOoYSz9--EwAIZFgp0EEM1fw"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Kamila",
+        "lastName": "M.",
+        "occupation": "Kotlin Developer",
+        "id": "1037499442",
+        "publicId": "kamila-machova",
+        "trackingId": "f1Bq5FkMQgKBTudXEu+9pg==",
+        "profileId": "ACoAAD3W_DIB5C7b4550JcY6lynjZWoFenqPu28",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHcuZwJmuxFCg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1664433039809?e=1781136000&v=beta&t=soBIv3QKEzH_0kCWv6TlUz5A-pGtuYpwIomqj4mjalo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHd_tAtiyCG2Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1664293799420?e=1781136000&v=beta&t=ytZ1n4SgpD-YG1j0GQ2M4nt4-ZBhn9_0HcsGJ116mdw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marketa",
+        "lastName": "Willis",
+        "occupation": "Frontend developer | React | Typescript | Mentor",
+        "id": "690320871",
+        "publicId": "marketa-willis",
+        "trackingId": "gb1okMlIQ1md1rqWqQkSrg==",
+        "profileId": "ACoAACkldecB7E9DWErMM56bPMpJ3V49koGflx0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG3JXouajtk3A/profile-displayphoto-crop_800_800/B4EZniD2GgIIAI-/0/1760434283625?e=1781136000&v=beta&t=jVTJ2DGVJj9_jUUmT-E7zLWHbH879vJP2kKfgNc8Nn8",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFCy4ekYHZ1aA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712246548670?e=1781136000&v=beta&t=QA3NpbJpEYHAFdBZwvhyaoukjEU7F6XWO0K5Mx2B41E"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petra",
+        "lastName": "Kubita Nulíčková",
+        "occupation": "HR Manager v Pale Fire Capital | Head of HR v Aukro | HR consultant and mentor | #sharingiscaring",
+        "id": "473833031",
+        "publicId": "petranulickova",
+        "trackingId": "FUIpOTJvRUW/R3wheZOh9g==",
+        "profileId": "ACoAABw-HkcBifENxX8nxAs2YjwxbI6b2XtAF98",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHnKx1150QjzQ/profile-framedphoto-shrink_400_400/B4DZ5EYkX3J4Ac-/0/1779263751874?e=1780430400&v=beta&t=pWJ51Ntw0jR9QQT0pS0cVga8Y5H1PX6eMgBC8eZYwyo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQExwjEQhQ99TA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1676378924015?e=1781136000&v=beta&t=rpomntKe5fPHScYScrE5n1-ok01d_UuxKpUPUaPI93g"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Hovancik",
+        "occupation": "Open-source enthusiast, connecting the dots in Product teams.",
+        "id": "104476307",
+        "publicId": "janhovancik",
+        "trackingId": "/MUrRJRmRaWV2vJY4gHogA==",
+        "profileId": "ACoAAAY6LpMBnDDraQ-laCszWxz9ppHK1QE1PwI",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQF_FFLlAKcJWA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517623716747?e=1781136000&v=beta&t=s99zSKF4yMpKH45sh1rzA2t1YIsYBAotFWd23bo0hG0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marta",
+        "lastName": "Palesova",
+        "occupation": "LinkedIn™ STRATEGY for Managers - CEOs - C-level - Companies - Corporations ✨ | Host of @CEO Talks with Marta 🎙 | TOP 20 Most Influential Creator on Slovak LinkedIn™ | 37th STRONGEST BRAND on Slovak LinkedIn™🏆",
+        "id": "20359300",
+        "publicId": "martapalesova",
+        "trackingId": "XGqgLPmQRzKLqLTJJWDWcw==",
+        "profileId": "ACoAAAE2qIQBasgjdVXK2qTn6C9OFsZTF3oAo2Y",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEjURjVuKpdpA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1662986755839?e=1781136000&v=beta&t=WNG-ZF43JleDS40HgIRTQlxuXARdLbZyBVh8jqWA1W0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQERN5qre09uww/profile-displaybackgroundimage-shrink_350_1400/B4DZ5OsCptJQAU-/0/1779436628818?e=1781136000&v=beta&t=OBp2gbhSJYMq_eoUReKdzMhLlsYDlaUKwobrUqScJ2M"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Jahič",
+        "occupation": "Co-Creator & Lecturer at Street of Code | Creating programming courses | Podcast on Spotify and YouTube | Software Engineer",
+        "id": "231695045",
+        "publicId": "jakub-jahič-94571665",
+        "trackingId": "OIU/nZtvSUe96C3lnWdVrg==",
+        "profileId": "ACoAAA3PYsUB046kt-dH90sKs3OncOpikMt7Ze4",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEoJBLvoky4mw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1596965472162?e=1781136000&v=beta&t=sX4_sdcqWgeZnVTW6ZzqMcPrb2OvNMX5nvYLLmUmNYY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH_4UREC8JI3w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1724347935419?e=1781136000&v=beta&t=HpWKHsp27S1mH8qnzAsNHDIw8LqxNq7vLq6UOIEWdHQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ivan",
+        "lastName": "Kvasnica",
+        "occupation": "TypeScript Engineer | Backend-First | Clean Architecture, Product Mindset, AI-Enhanced Workflow",
+        "id": "26597578",
+        "publicId": "ikvasnica",
+        "trackingId": "Wcs0T5vFRjixglTHo6w0aA==",
+        "profileId": "ACoAAAGV2MoBN8JZ2pQK395RLRvyRx1Tw4GdAYg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE32ky23E1THg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704494771219?e=1781136000&v=beta&t=HKRe4t30-sW1VQsgGNQ38EldfRp-cECFg0Ib73ZfxuQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Barbora",
+        "lastName": "Duhan",
+        "occupation": "Community Builder, Brand Developer, D&I Advocate, Events Organizer",
+        "id": "797797726",
+        "publicId": "barbora-duhan-5ba2201a3",
+        "trackingId": "aEkpTfq/Sqmkbz5YYvwAeA==",
+        "profileId": "ACoAAC-NbV4B-Dz0gNy3IlJn6IAsukHpp7qrdCE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFCw7eI0gzamg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1686043963611?e=1781136000&v=beta&t=FlH8LGWMa_Prh7LlypDSJk1ZrV7n89FtQPp-xRbMaTU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFrLcER4yf2Mg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1701104099882?e=1781136000&v=beta&t=FHQssF60aMOxAv8idOhrbaU3a9P8JRdyxtagoJa1xfQ"
+      }
+    }
+  ],
+  "numShares": 8,
+  "numLikes": 37,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "BKwshpDRQmSn49+qPm2arQ==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1662553748903,
+  "postedAtISO": "2022-09-07T12:29:08.903Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

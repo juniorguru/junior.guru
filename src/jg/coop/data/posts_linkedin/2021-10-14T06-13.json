@@ -1,0 +1,158 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4E22AQGSUTc0CiTPHQ/feedshare-shrink_1280/feedshare-shrink_1280/0/1634191982304?e=1781136000&v=beta&t=DnL4AvC2xyWhWD5F-QlPDUEaXNIaGwlHLGBDjo6zwlU"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6854297971043966976",
+  "url": "https://www.linkedin.com/posts/honzajavorek_ama-activity-6854297971043966976-mhmb?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAEL3bxwBwKYzZjrt26wx6rOJd1c-I03NZVc",
+  "timeSincePosted": "4yr",
+  "shareUrn": "urn:li:share:6854297970498686976",
+  "text": "V úterý 19.10. bude v klubu v 18h AMA s Honza Král, CTO v Aimful (dříve Elastic). #AMA znamená „ask me anything“. Honza se dlouhá léta zabývá provozem a architekturou složitých systémů. Jak lze navrhovat kód, aby toho zvládl hodně v krátkém čase? Jaké triky má využít webová stránka, pokud chce obsloužit miliony uživatelů? Jak navrhnout a provozovat databáze, aby se popraly s náporem? Zeptej se na cokoliv, co tě zajímá! https://lnkd.in/ezHk6pM",
+  "attributes": [
+    {
+      "start": 40,
+      "length": 10,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Honza",
+        "lastName": "Král",
+        "occupation": "Principal/Staff Engineer and Consultant",
+        "id": "15417913",
+        "publicId": "honzakral",
+        "trackingId": "Uojdw3dcT7G0S/r0ZTzTbA==",
+        "profileId": "ACoAAADrQjkBMdyjVQZIdZEP_111Ovr9-Xie6mA",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGRo9jq_y3kEA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1705343563145?e=1781136000&v=beta&t=IFUVR7PyPY-U76iHWGCxttZU5zaEy_pNlzlwKchfDik"
+      }
+    },
+    {
+      "start": 58,
+      "length": 6,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Aimful",
+        "universalName": "aimful",
+        "trackingId": "wOnsj3noSzm0SZ6pFY+Ysw==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:65894852",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQEQzJ27inJYAg/company-logo_400_400/company-logo_400_400/0/1630643204371/aimful_logo?e=1781136000&v=beta&t=NnosmpL2_zm3ySMpHiOyw7I0Yntn4dYeyQerKgDNZ-s"
+      }
+    },
+    {
+      "start": 72,
+      "length": 7,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Elastic",
+        "universalName": "elastic-co",
+        "trackingId": "kiu0OMvySYS+TD5IlyQUbw==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:814025",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D560BAQFcGg7KRaS8Uw/company-logo_400_400/company-logo_400_400/0/1690905620357/elastic_co_logo?e=1781136000&v=beta&t=Wjc9qJNsN7r0yfsrdgJDRKGrVNaUb7-RjqeuJVGvXm8"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marie",
+        "lastName": "B.",
+        "occupation": "Programming and enjoying life",
+        "id": "8228748",
+        "publicId": "mariebezdekova",
+        "trackingId": "i3Dg0Rq/Tku0NNQXQgLXgA==",
+        "profileId": "ACoAAAB9j4wBDIeIfATcp9eisEy12ZHr2-zh1sk",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG9r0ynkrjOdA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1682923063091?e=1781136000&v=beta&t=SzqQRRQaCCwLbinVA0Pm5zCsiOagDJsz_wIBsvHWldI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQE2lXTbvtk-pA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516267458787?e=1781136000&v=beta&t=LUXhB-B01oGOUAU2pKK1WpqYh1WVpxxIRpxE4yi1V2M"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Iva",
+        "lastName": "Hrdina Pazderková",
+        "occupation": "Freelance Product & Ops | CX & Systems Thinking | Neuroleadership Coach | Volunteer @ Česko.Digital | Mentor @ Femme Palette",
+        "id": "109919206",
+        "publicId": "ivafingerova",
+        "trackingId": "Qunw6BmzScmLyKGm0EtopQ==",
+        "profileId": "ACoAAAaNO-YB_qQBMliqSDeBayGzCWDVLaMv24w",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEU5LtzZ8xFpg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1647941658383?e=1781136000&v=beta&t=kC-CVuKqpfT6AEhHWHW1Qlvyx2-8Sss3WAJbrA8hVoA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Katerina",
+        "lastName": "Mackovikova",
+        "occupation": "Data analyst passionate about systems integration",
+        "id": "262585845",
+        "publicId": "katerina-mackovikova-499b3373",
+        "trackingId": "5kz1yn7bTvm2a+fR720rsw==",
+        "profileId": "ACoAAA-mvfUBi9EOGyMJGQ2V5sq1pa_91Q3yqB4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH2cRv9plwRWg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723922714065?e=1781136000&v=beta&t=Ss6jpRWXSXGnUamkYVdDcbGXZ-Bph_qdyh7EaU1zXbk"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Jiří",
+        "lastName": "Vicherek",
+        "occupation": "Předseda České startupové asociace",
+        "id": "74476785",
+        "publicId": "vicherek",
+        "trackingId": "ic8t1drLTai/Cj/zSQ31Rw==",
+        "profileId": "ACoAAARwbPEBJ-4PcqhyrjMq_qci_GH59b-vNUc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHxwMNeoaemqw/profile-displayphoto-crop_800_800/B4DZyZ.ZI4JIAI-/0/1772109801070?e=1781136000&v=beta&t=3FPbSEodTi10Tfy15yZF5yB2fqPYb4XhZ9MXX1w83fQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH9N-WoPqh01w/profile-displaybackgroundimage-shrink_350_1400/B4DZwPRCRuKQAY-/0/1769782650400?e=1781136000&v=beta&t=BGOWxfUo5tYEWUVzIOEIRdJQnp0Jxrwe5Itwv37yrnA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jaroslav",
+        "lastName": "Stuller",
+        "occupation": "AI-Powered Tech Talent Advisory | Business Development & Technical Consultant @Splendit",
+        "id": "172287628",
+        "publicId": "jaroslavstuller",
+        "trackingId": "4KAN6LukQVGm2ouR/PUWFQ==",
+        "profileId": "ACoAAApE5owBWLnnbJ1tIVpyL7cZF8Gi0xEHctk",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQEDParn1wpswg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1581946822590?e=1781136000&v=beta&t=I5OGJXmTS2L95CHIvjuu9SOAMNinxlAwMqTe5jG1jQw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEhqV7lBRpa5g/profile-displaybackgroundimage-shrink_350_1400/B4EZoHH82mHEAY-/0/1761056116866?e=1781136000&v=beta&t=Fcvys8W98Bx2myUFIFpKDwIhKamWV6_7lGuw7FtmoFs"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 5,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "oCPJDpEES0qBW9S/8v4mYg==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1634191982995,
+  "postedAtISO": "2021-10-14T06:13:02.995Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

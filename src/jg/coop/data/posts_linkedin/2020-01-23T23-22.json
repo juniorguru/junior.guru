@@ -1,0 +1,103 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:7025738201463805003",
+    "url": "https://honzajavorek.cz/blog/how-i-deploy",
+    "title": "How I deploy — Honza Javorek"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6626252714009477120",
+  "url": "https://www.linkedin.com/posts/honzajavorek_how-i-deploy-honza-javorek-activity-6626252714009477120-kggR?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAEEwhR8BmoWSRVBrwSVy1xrDQ-w28beKGSw",
+  "timeSincePosted": "6yr",
+  "shareUrn": "urn:li:share:6626252713309020160",
+  "text": "How I send my creations to the world without having to pay too much attention to operations 🚀 https://lnkd.in/dwE6Hrb #operations #devops #serverless #staticgen #zeit",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ivan",
+        "lastName": "Kvasnica",
+        "occupation": "TypeScript Engineer | Backend-First | Clean Architecture, Product Mindset, AI-Enhanced Workflow",
+        "id": "26597578",
+        "publicId": "ikvasnica",
+        "trackingId": "GiLBXrX9SHivNqikjmr+pA==",
+        "profileId": "ACoAAAGV2MoBN8JZ2pQK395RLRvyRx1Tw4GdAYg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE32ky23E1THg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704494771219?e=1781136000&v=beta&t=HKRe4t30-sW1VQsgGNQ38EldfRp-cECFg0Ib73ZfxuQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Artem",
+        "lastName": "Zakharchenko",
+        "occupation": "Software engineer & Educator",
+        "id": "479400907",
+        "publicId": "artem-zakharchenko",
+        "trackingId": "9GpZTzlPTGiHgqptI0wrkg==",
+        "profileId": "ACoAAByTE8sBD2jc0LWL1WTudVD1bG_e2hh-aG0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQF7J__v-f1rFg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728499282127?e=1781136000&v=beta&t=jX5B0jn-UEICwKy7FRwPan0kkJgm9v2Cuhh14M8mNx0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF-hSQj-qsA5w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728499335925?e=1781136000&v=beta&t=DnxNdGCcFNNgl0J9uKxfWq1s6WkzWp96anGK_QIKHz8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vladimír",
+        "lastName": "Gorej",
+        "occupation": "Full-Stack Software Engineer & Problem Solver | Open Source maintainer & contributor | Alumni GitHub Star | AsyncAPI maintainer | PSD I / PSM I / GCP / LFCA",
+        "id": "58899881",
+        "publicId": "vladimirgorej",
+        "trackingId": "b1Jm0t0BQ2iA/EOLSVtK4g==",
+        "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHP1QsKaZTw5Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1720878191370?e=1781136000&v=beta&t=nxFAGloZTLLj4IfsdUrAgIWdCPqihUdH6GbjDvQ02KI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQG1bGQIi0eN-g/profile-displaybackgroundimage-shrink_350_1400/B56ZsnGMs8JUAY-/0/1765887496970?e=1781136000&v=beta&t=c-tUr6BmtfsWTUqP39ZWtDB-NjxB_hfH72HKcJ-t7iA"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Nora",
+        "lastName": "Kořánová",
+        "occupation": "Technical Writer at SUSE",
+        "id": "508052457",
+        "publicId": "nkoranova",
+        "trackingId": "RZ348gVxRdabmkxoHmF0jw==",
+        "profileId": "ACoAAB5IQ-kBW4PRexbBNd-Zk4iJtNiwBro2uLY",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH8ZhHcz3FRvw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1581365556950?e=1781136000&v=beta&t=hfriVUHDVcFBT5Eu7fq-ZFQ3eq4kKeM8aF5IVPMVhcg"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 4,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "dGdN+6RGSn66w3v3Q8V3/g==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1579821756842,
+  "postedAtISO": "2020-01-23T23:22:36.842Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

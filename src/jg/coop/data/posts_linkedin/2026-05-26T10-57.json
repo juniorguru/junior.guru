@@ -1,0 +1,213 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/D4D22AQE2kJ4aVjjZmw/feedshare-shrink_1280/B4DZ5j7x0YH4AU-/0/1779793075785?e=1781136000&v=beta&t=WwcKCGEj0ljxqH-AAwUFPNLMi_6Rp7vIT8bXXznuBH8"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:7464993220163264512",
+  "url": "https://www.linkedin.com/posts/honzajavorek_ka%C5%BEd%C3%BD-den-ru%C4%8Dn%C4%9B-prolustrovat-p%C4%9Bt-pracovn%C3%ADch-activity-7464993220163264512-rhJE?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAABdgyzYBWbhfVlO7iuAaaC503ZxbB2BG6yI",
+  "timeSincePosted": "8h",
+  "shareUrn": "urn:li:share:7464993218812604419",
+  "text": "Každý den ručně prolustrovat pět pracovních portálů? Sledovat, jestli zase klesla cena toho laptopu? Na tohle přece máme počítače!\n\nUž tento čtvrtek 28.5. bude u nás na Discordu Kateřina Hroníková z Apify ukazovat, jak si člověk může v životě pomoci tím, že vytvoří scraper – tedy program, který za tebe umí chodit po webu.\n\nUkáže, co web scraping je, k čemu se hodí a jak bez předchozích zkušeností začít. Vysvětlí, jak weby fungují „zevnitř“, jak najít data, která nás zajímají, a proč je scraping užitečný nástroj do výbavy každého vývojáře.\n\nA přímo během akce prý v TypeScriptu vyrobí jeden scraper, který umí sám procházet pracovní nabídky a ukládat výsledky do přehledné tabulky 😱\n\n(Což je teda jeden z pilířů junior.guru/jobs, kdybyste si to nechtěli tvořit sami 😆)\n\nJá provozuji hromadu scraperů pro pracovní i osobní potřeby, a myslím, že pro juniory je tahle oblast skvělé hřiště.\n\nMám třeba věc, která mi hází promítání filmů v nejbližších kinech do Google Kalendáře a přidává mi k tomu délku filmu a hodnocení z ČSFD.\n\nA přesně takové projekty jsou podle mě pro juniory ideální na rozjezd. Malá věc, která ale řeší reálný problém a je to zábava tvořit.\n\nTaky mi scrapery přijdou jako ideální trénink pro ty, kdo se chtějí naučit nebo zlepšit v automatizovaném testování webovek: Playwright, CSS selektory, API…\n\nJestli chceš dorazit živě a pokládat Katce vlastní otázky, mrkni na junior.guru/events a připoj se k nám na Discord!\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 178,
+      "length": 18,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Kateřina",
+        "lastName": "Hroníková",
+        "occupation": "Full-stack engineer with a strong background in finances 👩‍💻 Apify doing good Ambassador ❤️ Czechitas mentor 💃 (Ultra)trails lover 🍀",
+        "id": "327394424",
+        "publicId": "katerina-hronikova",
+        "trackingId": "nM3LzdsDRFyB5L7cjNkUQg==",
+        "profileId": "ACoAABODpHgB8Z8XT0Q-xfLGZMGuJSS6-npRT08",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGHnXfWQkOJkg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1725301861147?e=1781136000&v=beta&t=xnTK0Wuq5apSBfLD2z7FaY3OVV5dHR1pnCpz07ejkaE"
+      }
+    },
+    {
+      "start": 199,
+      "length": 5,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Apify",
+        "universalName": "apify",
+        "trackingId": "S3O85WtgTnmiTSEJ5QYWFA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:10608457",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQF7OnC-r1njIA/company-logo_400_400/B4DZwd3LFrHEAY-/0/1770027528966/apify_logo?e=1781136000&v=beta&t=M-jcjwlCTsCXW-n8EjZ8f7bwRgEoBb_KKlaWDA0c30Q"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Zuzka",
+        "lastName": "Pelechova",
+        "occupation": "Head of Apify Store",
+        "id": "321232684",
+        "publicId": "zpelechova",
+        "trackingId": "oOCODB66TsiHLfsBi93JUw==",
+        "profileId": "ACoAABMlnywBEZARVqFK-dRWgvXMJeOqP5dRtrc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHT6gQneqG4ow/profile-displayphoto-crop_800_800/B4EZg9h3bhGoAI-/0/1753378947100?e=1781136000&v=beta&t=waN6VnujxUKXfVe5Vl3pxS2Hfr_5ZiaHu5buuwozXZQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEF0tHN3GoanQ/profile-displaybackgroundimage-shrink_350_1400/B4EZpTc7qQIIAY-/0/1762336690639?e=1781136000&v=beta&t=S5LGl2IMBuYduylwzzdy8mJd1hWoWUE2vYP6ELPmnIY"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Irena",
+        "lastName": "Zatloukalova",
+        "occupation": "empowering #autisticTalent in Tech 🚀 | Guiding your communication for change | Systemic coaching",
+        "id": "99891449",
+        "publicId": "izatlouk",
+        "trackingId": "uXz0yKngSJq5JLmvMuxvJg==",
+        "profileId": "ACoAAAX0OPkBzZjVvVi08LqhaKA5UMdVz4M5inM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEX7QmSSoFSMg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1635789075087?e=1781136000&v=beta&t=gNSbihMMlaQdd_0sP2m4nmd_njYG4j06DobLSgnjIEM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiří",
+        "lastName": "Moravčík",
+        "occupation": "Senior Engineer @ Apify | MSc in AI",
+        "id": "680273048",
+        "publicId": "jirimoravcik",
+        "trackingId": "Mpwik/GxTH6H3Jltk2rFEQ==",
+        "profileId": "ACoAACiMJJgBH8bo7U3aDK6O3hdMuCqRA2cRLeM",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFFZueyObdHOQ/profile-displayphoto-shrink_800_800/B4EZaDFIQtIAAc-/0/1745955882636?e=1781136000&v=beta&t=woAQd9KvggnyXRjmGNoqZ4qQU5xSRAD4fMouw4gJjPw"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Jiří",
+        "lastName": "Vicherek",
+        "occupation": "Předseda České startupové asociace",
+        "id": "74476785",
+        "publicId": "vicherek",
+        "trackingId": "pTCRx91jQBS2jpaEXLoIiQ==",
+        "profileId": "ACoAAARwbPEBJ-4PcqhyrjMq_qci_GH59b-vNUc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHxwMNeoaemqw/profile-displayphoto-crop_800_800/B4DZyZ.ZI4JIAI-/0/1772109801070?e=1781136000&v=beta&t=3FPbSEodTi10Tfy15yZF5yB2fqPYb4XhZ9MXX1w83fQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH9N-WoPqh01w/profile-displaybackgroundimage-shrink_350_1400/B4DZwPRCRuKQAY-/0/1769782650400?e=1781136000&v=beta&t=BGOWxfUo5tYEWUVzIOEIRdJQnp0Jxrwe5Itwv37yrnA"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Hana",
+        "lastName": "Halamová",
+        "occupation": "Technical Consultant & Customer Success | Project Management | SaaS, APIs, Automation | ex-Apify, Verizon | Open to Opportunities",
+        "id": "415421893",
+        "publicId": "hana-halamová-23115ab7",
+        "trackingId": "PkHQDoaHRP+b3JxJ5KHTEA==",
+        "profileId": "ACoAABjC1cUBchzk-bYyjxeFKdsCsUkQbEGa2Ok",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGIoHV3FLydxA/profile-displayphoto-crop_800_800/B4EZnDrHFfHcAI-/0/1759924482988?e=1781136000&v=beta&t=x8-zKKumo54LG6lxge894_-oyFXuH02al7tXNrmooMs",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQErBNXTh1coqw/profile-displaybackgroundimage-shrink_350_1400/B4DZzCkiymJoAY-/0/1772790886152?e=1781136000&v=beta&t=jFgBf4gYEaU7em5s0sV_PzdnkWcXzUHR8MMvwMhHuLo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Chovančák",
+        "occupation": "CNC obráběč kovů ⚙️ Stále je co zlepšovat a učení se novinkám nemá konce 📚 Přeskoč, přelez, nepodlez 🏃",
+        "id": "345720045",
+        "publicId": "jakub-chovančák-57994597",
+        "trackingId": "BT7mA0A4RDWYTaEaS3GrkQ==",
+        "profileId": "ACoAABSbRO0B7tQlleLlRpEfGoxYSvDM9qNmH0k",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGKplxwuVhVug/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1551890890206?e=1781136000&v=beta&t=3fA8YRCNt0tevzpuHKn9ndMl8pM9tV6YgKyM7fkHJWQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEN1viGumjIhQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ02FFxPKQAY-/0/1774728798734?e=1781136000&v=beta&t=KD1uHR_AbqrSNtCIYk4bnbzYmKqf7DPJb1fybpSJ-aw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Milan",
+        "lastName": "Chvojka",
+        "occupation": ".NET na volné noze",
+        "id": "1297961898",
+        "publicId": "chvojka",
+        "trackingId": "IiHn0yNcSROwSI81AwP9bw==",
+        "profileId": "ACoAAE1dU6oBZ91nGNDreOPzewb8Y2gJemtWCLA",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQEo8IXY3ZGt5A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1729067785084?e=1781136000&v=beta&t=HKUwxK7OQk98im3kWo9wCKYmRNnK9_k8H2P6zu-no0o"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "N.",
+        "occupation": "Naděje je ta věc s peřím, co hnízdí ve tvé duši.",
+        "id": "322913139",
+        "publicId": "janagabrielova",
+        "trackingId": "wq/y27VFQuClQhzDO87J5A==",
+        "profileId": "ACoAABM_Q3MB0deNLr6Z3qLWrAqsKvlVXpPUXnk",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEpQfxQxkvVUQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1694453367531?e=1781136000&v=beta&t=DozoSUnIMg3tV9-rWOaBtHMgnkbHFifldsB-_FQsPBU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG08VNp2U1G8A/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1694472734238?e=1781136000&v=beta&t=A1SKS6qtUj2_gM2CiWMv9DDL77s9mTAB-iuIInDsPGk"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Barbora",
+        "lastName": "F.",
+        "occupation": "Technical Consultant | FinTech Systems | .NET & SQL | Business–Technology Bridge",
+        "id": "311525805",
+        "publicId": "barbraflegel",
+        "trackingId": "UVqyQ03kTPmKKVf6GK6ftA==",
+        "profileId": "ACoAABKRga0BXm651eikOVK4V4p7rMAbADWRtCE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHbQSQlLOmr3A/profile-displayphoto-crop_800_800/B4EZpyzfJ5J0AI-/0/1762862697956?e=1781136000&v=beta&t=SiR2TbjOnqwkxgZNn6Q7rjzcBxdDdYkPUYBxoRnrwlw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQExZKGNtjQxdw/profile-displaybackgroundimage-shrink_350_1400/B4EZpy0yMyIoAY-/0/1762863033397?e=1781136000&v=beta&t=_pu50l6HxLqziVWwqzEA5D-rT5I5RABxLZGGfXzBFuM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Alena",
+        "lastName": "Mašková",
+        "occupation": "Software Engineer | AI Orchestration | Python & FastAPI",
+        "id": "601033770",
+        "publicId": "alena-maskova",
+        "trackingId": "2dFqtzrMSd6sxMO4lI8mHA==",
+        "profileId": "ACoAACPTDCoBiGew1za7JByyUlNWZHU5NjF76wc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE1x3efGrtzGA/profile-displayphoto-crop_800_800/B4DZlTvMGeHYAI-/0/1758046503995?e=1781136000&v=beta&t=K0GqYRp9z2wQFNu5L7DSjOMGb8tax_xzi6okQXZ--Rg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGq1Fm8C5PRVQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1734642423866?e=1781136000&v=beta&t=-dYM2woY4-A3PuUxB3dImr1I_PfEsE1B9NzCEFr0Sns"
+      }
+    }
+  ],
+  "numShares": 3,
+  "numLikes": 17,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "cn/xk2ygTj62dA8DW1PerQ==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1779793076554,
+  "postedAtISO": "2026-05-26T10:57:56.554Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

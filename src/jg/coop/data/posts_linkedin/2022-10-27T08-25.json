@@ -1,0 +1,235 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4E22AQEKnXYcizizcg/feedshare-image-high-res/feedshare-image-high-res/0/1666859136428?e=1781136000&v=beta&t=55Uz7_FJnLzEOOJRDhffa_bk1zS_Rm07MKqSNd30VYI"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6991313957399470082",
+  "url": "https://www.linkedin.com/posts/honzajavorek_techdebt-discord-activity-6991313957399470082-StUm?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAACrk6mABRsYhz0r8LYjdDsgcuChdy2JFZfY",
+  "timeSincePosted": "3yr",
+  "shareUrn": "urn:li:share:6991313956082438144",
+  "text": "Technologický dluh – zabiják inovace! 👨‍🏫 Už v úterý 1.11.! Michal Simon 🤖 z Codeac.io - Code Quality CI Tool na příkladech (CSS, JavaScript a Python) ukáže, jak #techdebt nepříznivě ovlivňuje vývoj z dlouhodobého hlediska, a jak dopady eliminovat za použití automatizace.\n\nKlub junior.guru/club je placený, ale první 2 týdny jsou zdarma. Klidně si zřiď členství jen kvůli akci, nám to neva. Akce probíhá online přes #Discord a pořizuje se z ní záznam. Členové mají přístup k záznamům všech proběhlých akcí, které najdeš na junior.guru/events",
+  "attributes": [
+    {
+      "start": 60,
+      "length": 14,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Michal",
+        "lastName": "Simon 🤖",
+        "occupation": "Fixing broken apps & infrastructures | Cloud & Code Rescue for Startups | AWS Community Builder",
+        "id": "95322605",
+        "publicId": "michal-simon",
+        "trackingId": "+wA9ZUU4TtSrxZZX1lXMfQ==",
+        "profileId": "ACoAAAWuge0Btz3-udG6BkUDMmw_0CGjkFEVjWY",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHALX81AW-jsw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1560162483553?e=1781136000&v=beta&t=J4p9IS0Favs886XXBPM3ruu9teOOIviOq_tdAfu3wuQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFq4rSUnaa4SA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1633025168915?e=1781136000&v=beta&t=UwWgNoYJX_XaXZ5PziwjkBJpFYXvS4CGJOjDCwQMNyM"
+      }
+    },
+    {
+      "start": 77,
+      "length": 32,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Codeac.io - Code Quality CI Tool",
+        "universalName": "codeacio",
+        "trackingId": "pGbkaz2gSfGoK0i6whJyZg==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:33215697",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQHmv_hA8ZdIfg/company-logo_400_400/company-logo_400_400/0/1630568273511/codeacio_logo?e=1781136000&v=beta&t=RTGkkm45-MYcELWLZt3_f-LKdjkvU0jThbzmt3kvMJM"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1666895116886,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6991313957399470082?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6991313957399470082%2C6991464856331681792%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286991464856331681792%2Curn%3Ali%3Aactivity%3A6991313957399470082%29",
+      "text": "To téma teď na LinkedIn nějak frčí, ne? 🙂\n\nhttps://www.linkedin.com/posts/grumpyprogrammer_programovaernaed-activity-6991166575110201344-8tdn",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Pavel Grumpy",
+        "lastName": "Šimerda",
+        "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
+        "id": "551084893",
+        "publicId": "grumpyprogrammer",
+        "trackingId": "Uq/r2KsoRPWbCS2JuEhA1A==",
+        "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFnQ8ypdjjyvg/profile-displayphoto-crop_800_800/B4DZxZUZFlHkAI-/0/1771025047361?e=1781136000&v=beta&t=fFiIDptOBoMzbUkj1Lvpd8USzHMX1nkcCCOr19Su_4c",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Josef",
+        "lastName": "Krčmář",
+        "occupation": "Python Developer Student/ Python - the basics and intermediate/ Software testing and TDD/ SQL Databases/ Seeking Entry Level Opportunity",
+        "id": "1048243979",
+        "publicId": "josefkrcmar",
+        "trackingId": "/YX30UjSSSmVI12YOG5GIQ==",
+        "profileId": "ACoAAD567wsBGF-yFTRdJyRQuWoz05mw9Z0kwwM",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHB6gYoq2VXag/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1668952195756?e=1781136000&v=beta&t=7c-H0ot0JHghvvEMr4Q8s2O2Y8vr8WpB4GhiM4-axg0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGyuLMDtMKtRw/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1665241718617?e=1781136000&v=beta&t=b6rYvuJ2Rc_sPhhCVsKGkzIw5Y_j5lBHE1UNZ5fOagQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Hui",
+        "lastName": "Zhou",
+        "occupation": "DevX | DevOps | Cloud",
+        "id": "378149654",
+        "publicId": "tinazhouhui",
+        "trackingId": "Y+FvRJ1aRFebVHjwgIDczg==",
+        "profileId": "ACoAABaKGxYBC9LPdsAHIhhF_AudiiRME2PX5Ic",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEQv872OQuLwQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1702924061214?e=1781136000&v=beta&t=fCorOAcCpy9WVzg2lCw6jpdYdcklpvollz2VQ3g-ibU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavla",
+        "lastName": "Beránková",
+        "occupation": "PHP programátorka",
+        "id": "549611439",
+        "publicId": "berankova-pavla",
+        "trackingId": "guyeQ2sBRXeM5tu4E1OVaw==",
+        "profileId": "ACoAACDCZ68BhDuYokjdegYmFm0rxSx_6Mlwh9c",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHdB_M5mbgLvQ/profile-displayphoto-shrink_800_800/B4EZWlkkyYGwAc-/0/1742239584099?e=1781136000&v=beta&t=4E-d3A5ZIGW5_uD8RTZEaal3lx_qCwWr-Y_k2yTOVVw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHFjlgP9iU-Fw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0B6o8_KUAc-/0/1773853643504?e=1781136000&v=beta&t=s18xkVLJd-f21PM-R-ZSZaCgq-ojo7xkrzQ5x6cYHoE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Bela",
+        "occupation": "🫆 Pluribus AI | 🅩 Zealous.app | Techstars Boulder ’22 & ’18",
+        "id": "22625020",
+        "publicId": "petrbela",
+        "trackingId": "1wXK7X4VS7yfEpnSp1WFUA==",
+        "profileId": "ACoAAAFZOvwBFxFZKwMFlm9gzYXo3XU25yDyQdM",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQGlFkMUWXjzLg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1525123286046?e=1781136000&v=beta&t=xRikRUqfTe-UeDrP66uNXhnc56rKj2xbX-AHgDDswzM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQHs5ok-eFwMwA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516327247863?e=1781136000&v=beta&t=DEBZlUX5Nzz_3lvDw35YIg3SFwIbLA_4AIcRJUVW8oM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lukáš",
+        "lastName": "Caha",
+        "occupation": "Head of Vibe | Youklid | Cleaning Baron",
+        "id": "518755786",
+        "publicId": "lukascaha",
+        "trackingId": "EpZsmdeKTcKr///tuVA3Jw==",
+        "profileId": "ACoAAB7rlcoBeF7r9KHjJpdwhEbtw6g_FMRCTFY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQF4o8UGx3echQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1670926070721?e=1781136000&v=beta&t=9Orzo8P6axDq1sDCbTfl-PTZBtk1OwtBwu74ibHgp-k",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHr0uN8y1YvSA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1701963144736?e=1781136000&v=beta&t=LfeEKJbwzHZvDAfOEdKXZbOGlf_kvd_MkbBZ1EWUlAM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Tichy ☕",
+        "occupation": "👨‍💻 Technology Evangelist | Codeac.io fights technical debt and guards code quality!🥊🐻",
+        "id": "371006774",
+        "publicId": "jiri--tichy",
+        "trackingId": "URoZHHgbRpKDmeLZE+yoKw==",
+        "profileId": "ACoAABYdHTYBI54n9kYjWdOO9PL5e9qWYXCR6_E",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQFtQKVJoquRwA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1558005003594?e=1781136000&v=beta&t=ELC-xvX_dbVo3NyvYP1pusVbNpd_BUGmkHOQHhQaTQ8",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEyEceJ2cD1uw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1633075583424?e=1781136000&v=beta&t=SuVTbVwYT2_ylwNikb4zJ1dO_dxlulYlxiWyoXnEbT8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Hula",
+        "occupation": ".NET/web developer",
+        "id": "820636271",
+        "publicId": "petr-hula-2bb9b51aa",
+        "trackingId": "hL2S06CQS9+GwCsTX1miTQ==",
+        "profileId": "ACoAADDp6m8B-f5p7fBaUI3ih9q4Q69M-Kraa6o",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH2rHRj1J-DRQ/profile-displayphoto-crop_800_800/B4EZoQyQOcIQAM-/0/1761218201453?e=1781136000&v=beta&t=HUQPT8fRhLvHrRDISzSJh0oDKY2geqwj1avBuO1JmVE"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Eva Debora",
+        "lastName": "Pavlikova",
+        "occupation": "Hope-based Leader | Moving from ‘No, because’ to ‘Yes, if’ Culture in Government",
+        "id": "12118109",
+        "publicId": "evapavlikova",
+        "trackingId": "E1XUZG13RSGaoYQjAzviog==",
+        "profileId": "ACoAAAC46F0BJQLhw3nCC7aaTcpYSs6RqWaP1Vw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHlt2AxwqFdVQ/profile-displayphoto-crop_800_800/B4EZfG.16hHYAM-/0/1751390052552?e=1781136000&v=beta&t=TSZH6NhRKWHzP95IkFkyLySMnb8lruC28HEH-ZHv0QM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEVGUA5BaYCyQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1587825486562?e=1781136000&v=beta&t=f3cNmgwZ45sDrj1GeTLkYKSB8BVy6WkqFDBfMvwRQsA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Svetlana",
+        "lastName": "Margetová",
+        "occupation": "I help factories digitise maintenance. With or without AI. Always with people first.",
+        "id": "178006447",
+        "publicId": "msvetlana",
+        "trackingId": "jTKydQLISZqeTmrHVZ67Og==",
+        "profileId": "ACoAAAqcKa8Bousd5uBo-bZZ9dq6qVlYKqtHvSc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF2d-GcOsk4Bg/profile-displayphoto-crop_800_800/B4DZ35j9rdHwAM-/0/1778008453433?e=1781136000&v=beta&t=drmOX7xsDyMGZaown-MFYSZXwtE2FSNpuvIxF5sa-CA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEafK1Y8bDUqw/profile-displaybackgroundimage-shrink_350_1400/B4DZWwQJBHHIAc-/0/1742418779616?e=1781136000&v=beta&t=0a47VNFLf1nQKjTg2JnpC3ODNNzCN24RoEDT7btdLtM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daniel",
+        "lastName": "Sochor",
+        "occupation": "Corporate Performance Management with focus on planning",
+        "id": "1040508481",
+        "publicId": "daniel-sochor",
+        "trackingId": "YqGUbzLZSDyq4AAQF7LcXw==",
+        "profileId": "ACoAAD4E5kEBLCHsDKLT1OEFHWgrps9u9uU2q28",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHBknVVikZ2eg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1663180049851?e=1781136000&v=beta&t=PBOkmAKLPdR0bFBr7k5dPM4uhu_JoUdQrlTWzMjJfTI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEejJCzZWuZsQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1685560777271?e=1781136000&v=beta&t=RNbnuQoSoW1ssprXUZMs6PQgKnYwbuJmq8xSRRfIk4E"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 16,
+  "numComments": 3,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "BKwshpDRQmSn49+qPm2arQ==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1666859139776,
+  "postedAtISO": "2022-10-27T08:25:39.776Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

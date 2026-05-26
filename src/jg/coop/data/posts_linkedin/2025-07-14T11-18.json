@@ -1,0 +1,561 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "type": "image",
+    "images": [
+      "https://media.licdn.com/dms/image/v2/D4D22AQG-vRuGw41W6g/feedshare-shrink_1280/B4DZflkkNSGUAs-/0/1751903260761?e=1781136000&v=beta&t=gEv0oNqJeR2R4TVGFvvYAE8SZALnURaJHUhC7HaTEdE"
+    ],
+    "isActivity": false,
+    "urn": "urn:li:activity:7348270896458969088",
+    "url": "https://www.linkedin.com/posts/dariagru_it-is-particularly-meaningful-to-me-to-be-activity-7348270896458969088-5gFW?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC-rMb8By3b5E9QBFVG6yxHBZI1S-rsmubE",
+    "timeSincePosted": "10mo",
+    "shareUrn": "urn:li:share:7348014860061806593",
+    "text": "It is particularly meaningful to me to be co-organizing an event focused on helping beginners in tech with Honza Javorek (aka Javor), because he was one of my mentors when I was starting out in the industry.\n\nWhen I joined Apiary in 2017 I was—to quote one of my colleagues—a complete “greenhorn”. My wonderful manager Ladislav Prskavec was gradually exposing me to all areas related to site reliability engineering and web development. This inevitably led to testing and I was pointed towards “Javor” to get solid fundamentals and practice with Mocha and Sinon (yup, those were the days). What followed went far beyond just learning about mocking, stubbing and injecting dependencies—I got to observe our Chief Community Gardener at work. From working with volunteers, to writing educational & respectful code reviews (with best memes, of course), creating documentation to improve teams and organizations, I’ve tried to learn all I could from Honza. It was also incidentally thanks to Javor that I got to help out with PyConCZ in 2018, learn new skills and make new friends in the community. \n\nWorking in the same company turned to volunteering in the same community, and with time turned into friendship as I watched one of my favorite mentors leave the corporate world and follow his passion for helping other greenhorns in tech by creating Junior Guru. It was quite an experience watching as he threw himself into the new adventure, testing various business models, bootstrapping revenue and never losing sight of the main goal—helping juniors find meaningful new careers in IT.\n\nWith Honza’s support PyConCZ 2023 introduced the Beginners’ Track for the first time and it was a massive success. So it wasn’t exactly a surprise when Mia Bajić mentioned to me that EuroPython 2025 is considering adding a program focused on beginners and has approached Honza regarding a possible cooperation. If you’ve ever met Mia then you know she’s very effective at recruiting people—she let me simmer on the idea of working with Honza again a bit, and ultimately I took her up on the offer of joining the wonderful community of EuroPython volunteers.\n\nTogether with Honza we’ve been cooking the Beginners’ Day Unconference for you all for a while. With the expertise of our international guest panelists Barbora Němcová, Gábor Ambrózy, Jana Moudrá, Manivannan Selvaraj, Michaela Trčková, Miloslav Ježek and Šimon Kořený we’ll be discussing a wide range of topics related to early-stage careers in tech. Landing the job, getting over the initial challenges, and ultimately thriving and growing, we’ll cover it all.\n\nWith Honza we’re looking forward to meeting you all at the EuroPython Beginners’ Day Unconference in Prague in just a few days.\n\nhttps://lnkd.in/dmikMywF",
+    "attributes": [
+      {
+        "start": 107,
+        "length": 13,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "trackingId": "R4SVoM0SSa6tbMap5odopA==",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+        }
+      },
+      {
+        "start": 319,
+        "length": 17,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Ladislav",
+          "lastName": "Prskavec",
+          "occupation": "Staff Engineer at Everpure (formerly Pure Storage, Inc.)",
+          "id": "6413396",
+          "publicId": "ladislavprskavec",
+          "trackingId": "UdIjWmhKSbWEq+8Jng2zdw==",
+          "profileId": "ACoAAABh3FQBjDcRIsKdGUqUWVVxs45nmvivIO4",
+          "picture": "https://media.licdn.com/dms/image/v2/C5603AQH74zpN5N3LhQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516250709565?e=1781136000&v=beta&t=4858H9zBGZBF9O86nNt-xKvWRcvX0_fxZw1SXlZ1pFI",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEcA07Jof8U1g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1614695743264?e=1781136000&v=beta&t=4Vqk30uOrg7FpjokcbA7vXMhQG5LWLueu6rpGGxkufE"
+        }
+      },
+      {
+        "start": 1345,
+        "length": 11,
+        "type": "COMPANY_NAME",
+        "company": {
+          "name": "Junior Guru",
+          "universalName": "juniorguru",
+          "trackingId": "TcDTjbHuQL6J2YboaOpbhQ==",
+          "active": true,
+          "showcase": false,
+          "entityUrn": "urn:li:fs_miniCompany:26218444",
+          "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQE89NmYF-XT4g/company-logo_400_400/company-logo_400_400/0/1638266899010/juniorguru_logo?e=1781136000&v=beta&t=ad516CNUThMN8eXeVboC5S9U_y2Dnn1UhQn70wIGlxE"
+        }
+      },
+      {
+        "start": 1737,
+        "length": 9,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Mia",
+          "lastName": "Bajić",
+          "occupation": "Software Engineer",
+          "id": "530925455",
+          "publicId": "mia-bajic",
+          "trackingId": "t5KDZqM1TAitgwIuJWhySA==",
+          "profileId": "ACoAAB-lR48BFvPhQ6doZNGTRVftkLrzcnIv-Ss",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEFktnPzIQA3g/profile-displayphoto-shrink_400_400/B4EZdfBBQAHYAs-/0/1749645792668?e=1781136000&v=beta&t=H-XclkbtaMI2HfxaPAIvGsaIuvs_3HunEbU_zF5R2XQ",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGmHzyPBT7q2g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1738012168138?e=1781136000&v=beta&t=bGVRTPD07nQuQcDx_7F1m2z7h-P_vw_6AF5KkU2lLp4"
+        }
+      },
+      {
+        "start": 1768,
+        "length": 10,
+        "type": "COMPANY_NAME",
+        "company": {
+          "name": "EuroPython",
+          "universalName": "europython",
+          "trackingId": "j8E67aMuSqi/26imyAjjPw==",
+          "active": true,
+          "showcase": false,
+          "entityUrn": "urn:li:fs_miniCompany:41130723",
+          "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQGz6u5D6KYABg/company-logo_400_400/B4DZxWmNTUJwAY-/0/1770979382977/europython_logo?e=1781136000&v=beta&t=pwjOEJznkhOEXcURlj3q2Nvk3DG-RH4f9owboCBcCU0"
+        }
+      },
+      {
+        "start": 2296,
+        "length": 15,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Barbora",
+          "lastName": "Němcová",
+          "occupation": "Head of HR @ itrinity | @ Pale Fire Capital | SaaS |",
+          "id": "917178697",
+          "publicId": "barbora-nemcova",
+          "trackingId": "Dg7BXDVNTn+AS56G5q17+g==",
+          "profileId": "ACoAADarCUkBO88PuaDmc66Gdt2reOG68AK464g",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHK6JR66S7HSQ/profile-displayphoto-crop_800_800/B4DZzDbdhFHIAM-/0/1772805282471?e=1781136000&v=beta&t=8LkKLHRL8etYpwF55GagAJ6XN1BHgAHUKQr8W56ub0c",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFJ3FC_9XIz4Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1721908356461?e=1781136000&v=beta&t=4EfPknAQRFNczM3BoE_-n6EwCvlSVv8mM2Gpj7vNta0"
+        }
+      },
+      {
+        "start": 2313,
+        "length": 13,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Gábor",
+          "lastName": "Ambrózy",
+          "occupation": "EMEA Support Manager & Site Leader Hungary at Liferay",
+          "id": "11412051",
+          "publicId": "gaborambrozy",
+          "trackingId": "mva158HiTse8RaDUsFMVcA==",
+          "profileId": "ACoAAACuIlMB6V91E2LszGw_-IeVnuFmwG5Y9Ig",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQG0WMvWy5DqIQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1670317906661?e=1781136000&v=beta&t=HvY0ID4OrasadbAzI8U9XPWOXcToE3jZLgya-HFZ9ow"
+        }
+      },
+      {
+        "start": 2328,
+        "length": 11,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Jana",
+          "lastName": "Moudrá",
+          "occupation": "CEO at Juicymo ■ Software Development ■ Mobile and Web Apps ■ Information Systems ■ Process Optimization and Digitalization",
+          "id": "127386166",
+          "publicId": "janamoudra",
+          "trackingId": "Qt17PMnRTqmu45JAv3BtDg==",
+          "profileId": "ACoAAAeXwjYBqZ0jKVz8yca44CiteKwVoGM7-3w",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGCNHkgjilAqg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720254510601?e=1781136000&v=beta&t=ABfmTWnHZdBoAlk7Q1IbRLnEGbe6j55uuIZ_-tPSTGY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGwHodURvwOxg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1710408027613?e=1781136000&v=beta&t=rUOl7EiHRO6B7tfbrLnjN7i6Y1Y3qQOCrPMFpcXSrGg"
+        }
+      },
+      {
+        "start": 2341,
+        "length": 19,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Manivannan",
+          "lastName": "Selvaraj",
+          "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
+          "id": "13167565",
+          "publicId": "citizenmani",
+          "trackingId": "2Qt+P/cYR+Ceisp2O1hmzQ==",
+          "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ",
+          "picture": "https://media.licdn.com/dms/image/v2/D5603AQEqC5x0akFu1Q/profile-displayphoto-crop_800_800/B56ZlSvDmfIAAM-/0/1758029692620?e=1781136000&v=beta&t=2MjEAUEFd1OccqmtlnzcSzG2gHUquLzw5MI-3XUUfOM",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHZC49bFZ8ZTQ/profile-displaybackgroundimage-shrink_350_1400/B56ZxDZv79KIAY-/0/1770657351768?e=1781136000&v=beta&t=kVGPoYvqmMzYICMmu_0FODKNvqUNjsGRcvULLqy01EA"
+        }
+      },
+      {
+        "start": 2362,
+        "length": 16,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Michaela",
+          "lastName": "Trčková",
+          "occupation": "Software Engineer (React, TypeScript) | making scalable and efficient software && open mind, curious spirit, adventurous heart",
+          "id": "996152950",
+          "publicId": "michaela-trckova",
+          "trackingId": "hmaIywHORe2IIoeljfbZkg==",
+          "profileId": "ACoAADtgFnYBmYEyWRy15V_gJ4FmfA16vqg7j0I",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFBd1HSidF0CQ/profile-displayphoto-crop_800_800/B4DZ3OCp2nI8AI-/0/1777278297769?e=1781136000&v=beta&t=h6kbje1FtoYFVmhdGMwTMQGQWGYTO-e5hYfPj-0tUDA",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGjt-yXV21GLA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1677663075139?e=1781136000&v=beta&t=FWU3ro4NT8xs40Oa3v3RNh75Vhh1AXNOaRfNy6UvWqs"
+        }
+      },
+      {
+        "start": 2380,
+        "length": 14,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Miloslav",
+          "lastName": "Ježek",
+          "occupation": "Full Stack Developer | Node.js • React • Azure",
+          "id": "762997811",
+          "publicId": "miloslav-jezek",
+          "trackingId": "nv0mU719SLm5bSozVoVfrg==",
+          "profileId": "ACoAAC16bDMBDX69DVpckffdp3s7WQFJkN9ZQPE",
+          "picture": "https://media.licdn.com/dms/image/v2/D5603AQGIaim7FGwUJA/profile-displayphoto-shrink_800_800/B56Zdkuyu7G0Ac-/0/1749741678525?e=1781136000&v=beta&t=KQKd_q5so7d1ouew_efpkZxAIdS6aSgktGBupgxMjVI",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGnePf9ZiYoeQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ12v8ppKIAY-/0/1775813774467?e=1781136000&v=beta&t=ZMWvvJcgxN49hDEp-ojj2oIgKRgbrKfKywk0xtPf6_s"
+        }
+      },
+      {
+        "start": 2399,
+        "length": 12,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Šimon",
+          "lastName": "Kořený",
+          "occupation": "Product Owner & Dad | Building great products, raising great humans",
+          "id": "283596586",
+          "publicId": "fusatytata",
+          "trackingId": "4bjntMrOQu2JnHyYP6X6hA==",
+          "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEP3Q4BtiThDA/profile-displayphoto-shrink_800_800/B4EZc_c90wHIAc-/0/1749116247942?e=1781136000&v=beta&t=_QtTBgXEBbo6wLgAeAyA_Vwe266kRM2rafjtUTqdQ18",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFllW8t92LUXg/profile-displaybackgroundimage-shrink_350_1400/B4EZkO0XOcHEAY-/0/1756890233024?e=1781136000&v=beta&t=BcgfXCQP09cdXXYAi_lrlRlt4F-p0U2rPgEazsl9SeQ"
+        }
+      }
+    ],
+    "comments": [
+      {
+        "time": 1751966384314,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7348270896458969088?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7348270896458969088%2C7348279613594226688%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287348279613594226688%2Curn%3Ali%3Aactivity%3A7348270896458969088%29",
+        "text": "So excited to be part of this incredible journey with you and Honza! Can’t wait to meet everyone at the Beginners’ Day Unconference in Prague 🙌 🚀",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "English",
+        "author": {
+          "firstName": "Manivannan",
+          "lastName": "Selvaraj",
+          "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
+          "id": "13167565",
+          "publicId": "citizenmani",
+          "trackingId": "BW/Tvy6ZRvm3Y1ZGDkwiMQ==",
+          "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ",
+          "picture": "https://media.licdn.com/dms/image/v2/D5603AQEqC5x0akFu1Q/profile-displayphoto-crop_800_800/B56ZlSvDmfIAAM-/0/1758029692620?e=1781136000&v=beta&t=2MjEAUEFd1OccqmtlnzcSzG2gHUquLzw5MI-3XUUfOM",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHZC49bFZ8ZTQ/profile-displaybackgroundimage-shrink_350_1400/B56ZxDZv79KIAY-/0/1770657351768?e=1781136000&v=beta&t=kVGPoYvqmMzYICMmu_0FODKNvqUNjsGRcvULLqy01EA",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1751967092826,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7348270896458969088?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7348270896458969088%2C7348282585304776706%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287348282585304776706%2Curn%3Ali%3Aactivity%3A7348270896458969088%29",
+        "text": "I don't know what to say! This is so lovely.\n\nI'll just add that the learning goes both ways and you were always among the people I found inspiring, be it because your dedication and drive or communication and organization skills. You showed me that being a greenhorn doesn't have to mean being lost, and that even a greenhorn can add extreme amounts of collateral value.\n\nI'm looking forward to hosting the Beginners' Day Unconference with you!",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "English",
+        "author": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "trackingId": "TVfbWSlkSeO58w75HppQUQ==",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+          "distance": "OUT_OF_NETWORK"
+        }
+      }
+    ],
+    "reactions": [
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Tereza",
+          "lastName": "Machackova",
+          "occupation": "tech talent partner (Lovable, Verified, Attio)",
+          "id": "354416659",
+          "publicId": "terkins",
+          "trackingId": "+1imto4EQv6TvIg9rkunEA==",
+          "profileId": "ACoAABUf-BMBlxzn1lFEhRmLF2yzFf41AOuOmT0",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQH14hM4IH2IbQ/profile-displayphoto-crop_800_800/B4DZxsEe99HwAM-/0/1771339642206?e=1781136000&v=beta&t=ep0ILYwjDXBbS-gvEoQ6Ys0WZIXo2Fmy9lUXtRz-7lY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFLKlJH74qo6Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1696428898365?e=1781136000&v=beta&t=UCGewaxbJXbTqLNfc-lzeJramn4OxEj0cbuKKVO-8LI"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Francesco",
+          "lastName": "Pironato",
+          "occupation": "IoT Solution Architect",
+          "id": "119922302",
+          "publicId": "pironatofrancesco",
+          "trackingId": "qbXcOJXCRgm+obp8a1o6Ww==",
+          "profileId": "ACoAAAcl3n4BjP5zPGxGHvK4tetK3xGdmcImWDg",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGQbf4-FAqnow/profile-displayphoto-crop_800_800/B4DZzSMtrjJIAI-/0/1773053077033?e=1781136000&v=beta&t=fHz_uR0b95kTIu9YczO1hr2PByaQBtEAbUmATzuOz6o",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGVGlX6H4QdLg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1648485023662?e=1781136000&v=beta&t=_xowF7OHa2MeYgW3WeLct1d63BSbvTZzNJ4afzA6aqM"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Atahan",
+          "lastName": "C.",
+          "occupation": "Software Developer",
+          "id": "45021211",
+          "publicId": "atahanceylan",
+          "trackingId": "R8Eo+xVwTlOXQChsCRscKw==",
+          "profileId": "ACoAAAKu-BsBQ_a3wv-XZaNUD8eAlKup9XocXD4",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQF1i7AZFg2idw/profile-displaybackgroundimage-shrink_350_1400/B4DZfzWktQHMAg-/0/1752134472254?e=1781136000&v=beta&t=XoZSFXInn8x7rBhrWx17uk-FfGk1j4QEa6LqqtNOkg8"
+        }
+      },
+      {
+        "type": "PRAISE",
+        "profile": {
+          "firstName": "Aleksandra",
+          "lastName": "G.",
+          "occupation": "Junior Business Systems Analyst",
+          "id": "1048641950",
+          "publicId": "aleksandra-golofaeva",
+          "trackingId": "VcATOC+zS1uJmkjzNeu7Ew==",
+          "profileId": "ACoAAD6BAZ4Bf4HqCY3OekeV1KrvJvgN5Xa-u2I",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGmk7o4HMwOYg/profile-displayphoto-shrink_800_800/B4EZbphO7vGUAg-/0/1747674526183?e=1781136000&v=beta&t=M4iFyHi5Cu_ZxK0FAOXZ92B9BrYy0zhDh_vD2W5OKFE",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG-Pn6gvmFbAw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1689200506492?e=1781136000&v=beta&t=N2-eJBsZwWSt6_sasro-gkxvmthhHI3pzXA9TmkZNxU"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Thomas",
+          "lastName": "Mitzka",
+          "occupation": "Bringing clarity and coordination to IT requirements and testing.",
+          "id": "539478789",
+          "publicId": "thomasmitzka",
+          "trackingId": "Q8zGNZa5RGSRitegPg4X3g==",
+          "profileId": "ACoAACAnywUBj1ZG3Cw-T4vLOY_N8ZZlspD4Amc",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEiY2OCn-vV2g/profile-displaybackgroundimage-shrink_350_1400/B4DZgj757xHYAY-/0/1752949563805?e=1781136000&v=beta&t=GB9SJ9ToxwaUcTgbYPqVOkzo4N8pbb5vPHBU0YrT0mg"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Talal",
+          "lastName": "Ahmed Khan",
+          "occupation": "DevRel Engineer @ Grayhat | Developer Advocate | AI, Games, and Web | Beta MLSA | xGDSC Lead",
+          "id": "1004509063",
+          "publicId": "talal-ahmed-khan-1474a9240",
+          "trackingId": "wHO4ykViTHe6B4tiAQHV6g==",
+          "profileId": "ACoAADvfl4cBCuyCzgC7EHM9Km-aV-G-VCP94dE",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQER_wPvpTMdYg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1676135503560?e=1781136000&v=beta&t=FCLmdBiLVmjdTW3s7NGpomfCP1Il36x0_Q25m6NGLvQ"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Lenka",
+          "lastName": "Erbenova",
+          "occupation": "Application Developer at Barclays",
+          "id": "361531956",
+          "publicId": "lenkaerbenova",
+          "trackingId": "xm/NPjwRRg+OFf8HGwpRJw==",
+          "profileId": "ACoAABWMijQBlQzoTAse2JjfcJmbjz4dAQnIsQs",
+          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGi_aPN1DxU3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517030344782?e=1781136000&v=beta&t=boP6IJareKgeZZHEHLF-RgBjxI_GQmpxMacm_Mm8k9c"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Gábor",
+          "lastName": "Ambrózy",
+          "occupation": "EMEA Support Manager & Site Leader Hungary at Liferay",
+          "id": "11412051",
+          "publicId": "gaborambrozy",
+          "trackingId": "mva158HiTse8RaDUsFMVcA==",
+          "profileId": "ACoAAACuIlMB6V91E2LszGw_-IeVnuFmwG5Y9Ig",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQG0WMvWy5DqIQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1670317906661?e=1781136000&v=beta&t=HvY0ID4OrasadbAzI8U9XPWOXcToE3jZLgya-HFZ9ow"
+        }
+      },
+      {
+        "type": "EMPATHY",
+        "profile": {
+          "firstName": "Tucker",
+          "lastName": "D.",
+          "occupation": "Dad | Farmer | Startup Aficionado",
+          "id": "5608895",
+          "publicId": "tdew",
+          "trackingId": "ObuRDx/lS3eYnnHgnJ00hA==",
+          "profileId": "ACoAAABVlb8BwZNJav7I8g1bD886293Po9U-5D8",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEsrfMadTREoQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1721566739279?e=1781136000&v=beta&t=F4gtDLlkpwx84YKkG4kY2aofomnGZPugNxY2RRUuLrs"
+        }
+      },
+      {
+        "type": "EMPATHY",
+        "profile": {
+          "firstName": "Šimon",
+          "lastName": "Kořený",
+          "occupation": "Product Owner & Dad | Building great products, raising great humans",
+          "id": "283596586",
+          "publicId": "fusatytata",
+          "trackingId": "4bjntMrOQu2JnHyYP6X6hA==",
+          "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEP3Q4BtiThDA/profile-displayphoto-shrink_800_800/B4EZc_c90wHIAc-/0/1749116247942?e=1781136000&v=beta&t=_QtTBgXEBbo6wLgAeAyA_Vwe266kRM2rafjtUTqdQ18",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFllW8t92LUXg/profile-displaybackgroundimage-shrink_350_1400/B4EZkO0XOcHEAY-/0/1756890233024?e=1781136000&v=beta&t=BcgfXCQP09cdXXYAi_lrlRlt4F-p0U2rPgEazsl9SeQ"
+        }
+      }
+    ],
+    "numShares": 5,
+    "numLikes": 47,
+    "numComments": 4,
+    "canReact": true,
+    "canPostComments": true,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "ALL",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "firstName": "Daria",
+      "lastName": "Linhart Grudzien",
+      "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
+      "id": "183293578",
+      "publicId": "dariagru",
+      "trackingId": "H/HfNEtaQIGwkr5rcTGCnA==",
+      "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
+      "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+    },
+    "authorProfileId": "dariagru",
+    "authorType": "Person",
+    "authorName": "Daria Linhart Grudzien",
+    "authorProfileUrl": "https://www.linkedin.com/in/dariagru?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
+    "authorUrn": "urn:li:member:183293578",
+    "postedAtTimestamp": 1751964305987,
+    "postedAtISO": "2025-07-08T08:45:05.987Z"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7350483818362855424",
+  "url": "https://www.linkedin.com/posts/honzajavorek_it-is-particularly-meaningful-to-me-to-be-activity-7350483818362855424-dRju?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC-rMb8By3b5E9QBFVG6yxHBZI1S-rsmubE",
+  "timeSincePosted": "10mo",
+  "shareUrn": "urn:li:share:7350483817620508672",
+  "text": "I don't know what to say! This is so lovely ❤️ Come to see us both in action this Saturday, there are still a few seats!",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Aleksandra",
+        "lastName": "G.",
+        "occupation": "Junior Business Systems Analyst",
+        "id": "1048641950",
+        "publicId": "aleksandra-golofaeva",
+        "trackingId": "VcATOC+zS1uJmkjzNeu7Ew==",
+        "profileId": "ACoAAD6BAZ4Bf4HqCY3OekeV1KrvJvgN5Xa-u2I",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGmk7o4HMwOYg/profile-displayphoto-shrink_800_800/B4EZbphO7vGUAg-/0/1747674526183?e=1781136000&v=beta&t=M4iFyHi5Cu_ZxK0FAOXZ92B9BrYy0zhDh_vD2W5OKFE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG-Pn6gvmFbAw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1689200506492?e=1781136000&v=beta&t=N2-eJBsZwWSt6_sasro-gkxvmthhHI3pzXA9TmkZNxU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Václav",
+        "lastName": "Kotyk",
+        "occupation": "Talent Sourcer @ SentinelOne.ai | The Future of CyberSec will be determined by You - let’s Secure Tomorrow™ together! 🛡️👾 | In 💜 with s1.ai/PurpleAI | 🕵️‍♂️ CyBeer security meetups organizer",
+        "id": "322518163",
+        "publicId": "vaclavkotyk",
+        "trackingId": "lDHsE67rS4GKihDTJ69zcw==",
+        "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHSFfNAAQ3ojA/profile-framedphoto-shrink_800_800/B4EZb.aDPLHAAs-/0/1748024964389?e=1780430400&v=beta&t=IvlxsfQQdb8KqO1QvRvDLxo7b9-V1Qrgz29nKWhJehw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG_GZHPXo_drQ/profile-displaybackgroundimage-shrink_350_1400/B4EZhWDO5THEAY-/0/1753790347174?e=1781136000&v=beta&t=TTJXtHJi0vF694Nao68XfleeSQJvzU06We8EI4GVwQI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Mika",
+        "occupation": "Svelte / SvelteKit programmer",
+        "id": "201993138",
+        "publicId": "mikajiri",
+        "trackingId": "V919P2EEQbCT9e2fso9xGQ==",
+        "profileId": "ACoAAAwKK7IB9HsR-JZfUUICoMdrEtH9baNJ79k",
+        "picture": "https://media.licdn.com/dms/image/v2/C5103AQHwQ5xZEiRlkQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516987900142?e=1781136000&v=beta&t=aO6xEibtb721WENKRY3vyMaGBCwQj_0dYyHWg2CtsGc",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5116AQH_kWWzIwHcqw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516987900390?e=1781136000&v=beta&t=aXyqGbCnY4dLBauEB81oImoOQH6ylM5BbwkG70zCwLQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ondřej",
+        "lastName": "Auer",
+        "occupation": "Instructor at BNM",
+        "id": "20228136",
+        "publicId": "ondřej-auer-1209366",
+        "trackingId": "zfQ5OT/OR6WkmJW2jn0vsQ==",
+        "profileId": "ACoAAAE0qCgByGXT9Jv8YH9ijl_mYrMvJs-9KBU",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEdNphJ_GbfNg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1601269005293?e=1781136000&v=beta&t=ArntwYrOWjKfVdXnB_Bt5Wq4aRYm3DxoG0K6ICfSH0U",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQFnarUhcL_A9w/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1519045997327?e=1781136000&v=beta&t=58mpRuHknWXfWSfcAdEkmzGMKCY_1rkWUgRRL3TnVVc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Norbert",
+        "lastName": "Červený",
+        "occupation": "I help great brands grow @STRV",
+        "id": "337285701",
+        "publicId": "strv-norbert-cerveny",
+        "trackingId": "nh9xkbqXT0yEdFkfL58ksw==",
+        "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGKIAaUJPtlmA/profile-displayphoto-crop_800_800/B4DZ0jT_lBIEAI-/0/1774413941709?e=1781136000&v=beta&t=ioRFNZY53XZXWk1BvKTQdIygU-xxLKoyNysEAYklp0I",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG0ekEnNy2Hcw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0jTiNeGsAk-/0/1774413817026?e=1781136000&v=beta&t=_KMbjLzzfd2pO9gizTz2iWgDOkq5RQ3NpzDT5fOljNI"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Šimon",
+        "lastName": "Kořený",
+        "occupation": "Product Owner & Dad | Building great products, raising great humans",
+        "id": "283596586",
+        "publicId": "fusatytata",
+        "trackingId": "4bjntMrOQu2JnHyYP6X6hA==",
+        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEP3Q4BtiThDA/profile-displayphoto-shrink_800_800/B4EZc_c90wHIAc-/0/1749116247942?e=1781136000&v=beta&t=_QtTBgXEBbo6wLgAeAyA_Vwe266kRM2rafjtUTqdQ18",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFllW8t92LUXg/profile-displaybackgroundimage-shrink_350_1400/B4EZkO0XOcHEAY-/0/1756890233024?e=1781136000&v=beta&t=BcgfXCQP09cdXXYAi_lrlRlt4F-p0U2rPgEazsl9SeQ"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Jeanne",
+        "lastName": "Trojan ",
+        "occupation": "Helping leaders become unforgettable speakers.",
+        "id": "18081253",
+        "publicId": "jeannetrojan",
+        "trackingId": "YG5W3RtaScmYYvLlODR+Og==",
+        "profileId": "ACoAAAET5eUB7egbn105dr-5yQQgxL9_rmBO17k",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFaAeKIw-iCSw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517667638144?e=1781136000&v=beta&t=dQHY4qFV-V4au27rbQYHFOtNMz4JwvJgjjW0TlYBO_I",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQFjfp6-b3gISQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1589531613660?e=1781136000&v=beta&t=OrRSzDtUdValdrasq6CBnmJ9smlVE0R-SVa5jI0Xb5Y"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Vladimír",
+        "lastName": "Gorej",
+        "occupation": "Full-Stack Software Engineer & Problem Solver | Open Source maintainer & contributor | Alumni GitHub Star | AsyncAPI maintainer | PSD I / PSM I / GCP / LFCA",
+        "id": "58899881",
+        "publicId": "vladimirgorej",
+        "trackingId": "8i/Rye9SS96JnK+dxg27Hw==",
+        "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHP1QsKaZTw5Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1720878191370?e=1781136000&v=beta&t=nxFAGloZTLLj4IfsdUrAgIWdCPqihUdH6GbjDvQ02KI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQG1bGQIi0eN-g/profile-displaybackgroundimage-shrink_350_1400/B56ZsnGMs8JUAY-/0/1765887496970?e=1781136000&v=beta&t=c-tUr6BmtfsWTUqP39ZWtDB-NjxB_hfH72HKcJ-t7iA"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 8,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "TVfbWSlkSeO58w75HppQUQ==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1752491907683,
+  "postedAtISO": "2025-07-14T11:18:27.683Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

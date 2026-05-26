@@ -1,0 +1,210 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4E22AQH7B8yRPdcwJA/feedshare-shrink_1280/feedshare-shrink_1280/0/1626847981373?e=1781136000&v=beta&t=-SazrdyZvc54Z4B0ghiNA-vTGapby-zLcWSbL5ZUiL8"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6823494997287997440",
+  "url": "https://www.linkedin.com/posts/honzajavorek_technicalwriting-activity-6823494997287997440-Kcry?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAGDMViMBG9gX-SKmC140_FYQmXeoiXG6C2k",
+  "timeSincePosted": "4yr",
+  "shareUrn": "urn:li:share:6823494996868567040",
+  "text": "V úterý 27.7. bude v klubu Nora Kořánová ze SUSE 👩‍🏫 Představí #technicalwriting jako možnou kariérní cestu, popíše jak se k tomu sama dostala a poskytne tipy, díky kterým se budeš moci tech writerkou nebo tech writerem stát i ty ✍️ 📖 https://lnkd.in/ezHk6pM",
+  "attributes": [
+    {
+      "start": 27,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Nora",
+        "lastName": "Kořánová",
+        "occupation": "Technical Writer at SUSE",
+        "id": "508052457",
+        "publicId": "nkoranova",
+        "trackingId": "SS0HY2NVRsGH5ChxQMJHxw==",
+        "profileId": "ACoAAB5IQ-kBW4PRexbBNd-Zk4iJtNiwBro2uLY"
+      }
+    },
+    {
+      "start": 44,
+      "length": 4,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "SUSE",
+        "universalName": "suse",
+        "trackingId": "2gXUBvbcTu2wtj1tzVqd8g==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:1455",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQFIv6v06z2GIA/company-logo_400_400/B4EZkBQkqdHEAg-/0/1756662746488/suse_logo?e=1781136000&v=beta&t=K4lh7SaroED6ke0CcqwHd0305QbuHj7oijOmo-jtGiY"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Nathalie",
+        "lastName": "Vecten",
+        "occupation": "\"It is a capital mistake to theorize before one has data.\" *cleaned data",
+        "id": "775508820",
+        "publicId": "nathalie-vecten",
+        "trackingId": "AZehad4dTmSog4uDf8zuzg==",
+        "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH5sSEbnQ2Tcg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1611936430673?e=1781136000&v=beta&t=wAQsj8dSBDe6L3xt1MwxMahW3aP-D6LcuvT-utzij6s",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHDKxhi18V0lw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1599638080880?e=1781136000&v=beta&t=5JiWefMiJff9VXnKXxoAOOrnUYNFE4fW7AQAgJac6VA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Silná",
+        "occupation": "Software QA Engineer | Test Automation | AI-Driven Testing | Frontend | UX/UI | ex-Graphic Designer",
+        "id": "456103352",
+        "publicId": "lenka-silna",
+        "trackingId": "udfCniyiRbONqKxiV0r1zg==",
+        "profileId": "ACoAABsvlbgB_YE9kjICFRS1b_hrU6yzTRKEHKo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFf0_YqRz5aMw/profile-displayphoto-crop_800_800/B4DZyeRfyKI8AI-/0/1772181913275?e=1781136000&v=beta&t=djOSOQB0NajL7vAnGP1Vbttp8e1WcRdpEKG8ziyxtzg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQECZhvzl5X7cg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1624343280736?e=1781136000&v=beta&t=g_BHz9nP1AHkEtQK2JeFVM4SR5-XuZaLlWHS_Ygq60g"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Dušek Pražáková",
+        "occupation": "Promoting academic excellence through strategic communication",
+        "id": "437625894",
+        "publicId": "jana-dušek-pražáková-886687102",
+        "trackingId": "JTD/WI4lTN23TVUx/Qo3Vw==",
+        "profileId": "ACoAABoVpCYB9KFSzOFiAxTlVNMUhma21vcVAmo",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEBI0Sjp97vyw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1572110112174?e=1781136000&v=beta&t=j62csDvUnk6gRA3v0tu47S_L3LdxJPZOHWtGG2t2q40"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Miroslav",
+        "lastName": "Preiss",
+        "occupation": "Regional Facilities Manager at Broadcom Inc.",
+        "id": "70822031",
+        "publicId": "miroslav-preiss-b7b8741b",
+        "trackingId": "/9tQprwOQ8Ojhcqf2/LFyQ==",
+        "profileId": "ACoAAAQ4qI8Bs431XtLrEktlpJ0095zDuiwXH8A",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQF9t97JtFSY9g/profile-displayphoto-shrink_800_800/B4EZV2Cu27G0Ac-/0/1741442183310?e=1781136000&v=beta&t=BogFdXb6L7QvEZD31H4iuP9e2V7gtreQNQw-kEQdamQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFnJa-y2nQK2w/profile-displaybackgroundimage-shrink_350_1400/B4DZx03G9yJEAY-/0/1771487130521?e=1781136000&v=beta&t=gN0TwlaCf3HcfzZv_U5EnvDISTPLkXtXo7ojhBbIzLY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daria",
+        "lastName": "Linhart Grudzien",
+        "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
+        "id": "183293578",
+        "publicId": "dariagru",
+        "trackingId": "G/eBQK2sTraJlILAX5HxKQ==",
+        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Pavlina",
+        "lastName": "F.",
+        "occupation": "Host @ Junior Guru podcast.",
+        "id": "190849253",
+        "publicId": "pavlinafronkova",
+        "trackingId": "Y0f+GxZsTxGr03vH8X6IiA==",
+        "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petra",
+        "lastName": "Kubita Nulíčková",
+        "occupation": "HR Manager v Pale Fire Capital | Head of HR v Aukro | HR consultant and mentor | #sharingiscaring",
+        "id": "473833031",
+        "publicId": "petranulickova",
+        "trackingId": "JwjrpAjtRCmlG6k2jVxp2w==",
+        "profileId": "ACoAABw-HkcBifENxX8nxAs2YjwxbI6b2XtAF98",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHnKx1150QjzQ/profile-framedphoto-shrink_400_400/B4DZ5EYkX3J4Ac-/0/1779263751874?e=1780430400&v=beta&t=pWJ51Ntw0jR9QQT0pS0cVga8Y5H1PX6eMgBC8eZYwyo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQExwjEQhQ99TA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1676378924015?e=1781136000&v=beta&t=rpomntKe5fPHScYScrE5n1-ok01d_UuxKpUPUaPI93g"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Anezka",
+        "lastName": "Muller",
+        "occupation": "🧑‍🤝‍🧑 Working with and for communities, organizing events, studying service design, having fun in all that. ✏️",
+        "id": "58610470",
+        "publicId": "anezkamll",
+        "trackingId": "vrMoxQrQSziVcvkCD0zkxg==",
+        "profileId": "ACoAAAN-UyYBW_5FlwBOtClk7WVpl3JlZMHMVn4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEdF62o6gzpHQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731942194763?e=1781136000&v=beta&t=3Pf8QBLlGpzI8zRBBfihj0pgDvCgOUoUJyTfMptX81Y",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHKgfW_KDXR1Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1620408094586?e=1781136000&v=beta&t=qk_LRa-WT8rOvas9-jwGjCle3e76MkO7wIKYYCWCZag"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Süssová",
+        "occupation": "Growth Marketer @ CleverMaps 🌎 | Content | Communications | Community | HR Marketing | Employer Branding | You Name It",
+        "id": "117736589",
+        "publicId": "veronikasussova",
+        "trackingId": "74GOsVlqRjaYw+qU0ktNlw==",
+        "profileId": "ACoAAAcEhI0B0DCDRZK6zNqOn9JAlvoM-qGjrT4",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHUAEx2NABMlA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1659966397260?e=1781136000&v=beta&t=NL50hhX1fzpIF-1DWxg79geO8ihS64d3RdN7R4G8Uy0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGbjLwvUzKiUQ/profile-displaybackgroundimage-shrink_350_1400/B4EZpJS6bpGcAY-/0/1762166287334?e=1781136000&v=beta&t=DeE4eikqTSDL7WLEAu0eBC_JiQxiZ3r0vXV5Nj7HgUs"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Nora",
+        "lastName": "Kořánová",
+        "occupation": "Technical Writer at SUSE",
+        "id": "508052457",
+        "publicId": "nkoranova",
+        "trackingId": "SS0HY2NVRsGH5ChxQMJHxw==",
+        "profileId": "ACoAAB5IQ-kBW4PRexbBNd-Zk4iJtNiwBro2uLY"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 10,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "cTJximJ/TH611vU8iEET/Q==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1626847981760,
+  "postedAtISO": "2021-07-21T06:13:01.760Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

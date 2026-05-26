@@ -1,0 +1,286 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4E22AQG8jG-nM8vr9Q/feedshare-image-high-res/feedshare-image-high-res/0/1675349547611?e=1781136000&v=beta&t=bpGW_FhdRWdvleHG1V2lC0XFsLNAs1OjeeQaq4jBnkA"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:7026925311933968385",
+  "url": "https://www.linkedin.com/posts/honzajavorek_jak-chr%C3%A1nit-sebe-svoji-pr%C3%A1ci-a-na-co-myslet-activity-7026925311933968385-VaDR?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAABsRci0Bys2i3dGvj01b19crqhDpGozYwSA",
+  "timeSincePosted": "3yr",
+  "shareUrn": "urn:li:share:7026925310931562496",
+  "text": "Jak chránit sebe, svoji práci a na co myslet, když chci psát bezpečný kód? 🔐\n\nSe Zuzana Pechová se podíváme na bezpečné používání vlastního počítače, ukládání nebo publikování svojí práce, a na pár zásad, které je dobré dodržovat u libovolného programovacího jazyka.\n\nZuzana je profesionálka v kybernetické bezpečnosti. Soustředí se na technické prostředky ochrany společností - prevence útoků, monitorování systémů, řešení bezpečnostních incidentů. Aktuálně v Rossum 🦸‍♀️\n\nPřed časem jsme se setkali při psaní článků pro IT sekci Heroine.cz (děkujeme, Anna Urbanová & Eva Dragulová!) a hned jsme začali plánovat, že by jednou udělala přednášku pro juniory ❤️\n\nMoc se mi líbí její článek o impostor syndromu a dodnes ho s lidmi sdílím: https://lnkd.in/eS-CUPhg Slyšet jste ji také mohli v jedné z epizod Podcast Fuckupy v IT.\n\nNa sociálních sítích je jako Kayla Eilhart a píše tam nejen o bezpečnosti, ale i o sci-fi, feminismu, fantasy, LGBT, kočkách a hrách.",
+  "attributes": [
+    {
+      "start": 81,
+      "length": 14,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Zuzana",
+        "lastName": "Pechová (She/Her)",
+        "occupation": "Jill of all trades in cybersecurity, directress of CyberLadies, open source enthusiast, coffee addict, easily nerd sniped. Likes to lead small teams, create down-to-earth strategies and build sensible infrastructure.",
+        "id": "56287650",
+        "publicId": "zuzanapechova",
+        "trackingId": "xBG6aZWiSnu1JT4dEmeIKg==",
+        "profileId": "ACoAAANa4aIBHk1CCKmRv1zZXqfXpIWkfbwQD5M",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEqXnSOPtL0lQ/profile-displayphoto-shrink_800_800/B4EZTRhBq2HMAc-/0/1738681884093?e=1781136000&v=beta&t=JHs-1yZcxo2bHe7I0Jk4RkOr31-UHUZfBr8-s_X3sqc",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHLv7IKk-pBAQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1709907835087?e=1781136000&v=beta&t=IvybzR2CRHWdgxadAD5nSJue7mDZ4WCPPivXx9f5FrA"
+      }
+    },
+    {
+      "start": 461,
+      "length": 6,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Rossum",
+        "universalName": "rossum",
+        "trackingId": "Ak0GH/zPStqfYHgJUTTD6A==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:17912335",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQFeviv3T72mUw/company-logo_400_400/company-logo_400_400/0/1695990117391/rossum_logo?e=1781136000&v=beta&t=shr_dQVEOAr33zopyKFBmW8xh9drFgcsu740CtdaJik"
+      }
+    },
+    {
+      "start": 553,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Anna",
+        "lastName": "Urbanová",
+        "occupation": "Experienced Communications Expert | Public Relations and Media Strategist | Transforming Messages into Impactful Narratives",
+        "id": "139041893",
+        "publicId": "anna-urbanová-0856943a",
+        "trackingId": "ifp//syJS06FZ6H2c1OwKw==",
+        "profileId": "ACoAAAhJnGUBbbdYkW0D67ffedvt6ofQm6yywSM",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE0XaPmlFfDKw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712750344311?e=1781136000&v=beta&t=b2dveYCgvtrln13-F3pct8nOFiRBWohAlx8K9xUtBRI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGxJDX51i70kQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1710864380439?e=1781136000&v=beta&t=3xslgAKon7OnBc15L00HfKCvwu_ztPFLEQYfeiikGPs"
+      }
+    },
+    {
+      "start": 569,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Eva",
+        "lastName": "Dragulová",
+        "occupation": "Senior Brand Manager | Marketing Blesk Group | Ex-CMO",
+        "id": "59572518",
+        "publicId": "evadragulova",
+        "trackingId": "yP3TaguLTHy/AMsi1PTaVQ==",
+        "profileId": "ACoAAAONASYBt9rw4n0psIYcL4hVqfqq5HAOIZo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHTArh_2Dz2jA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1669843174232?e=1781136000&v=beta&t=XOvTBkwoN4jPiwM3Jbte9N6a81eHaJR_TU-JI7ORWQk",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH1cexzvbxBQg/profile-displaybackgroundimage-shrink_350_1400/B4DZ33a1OAHoAY-/0/1777972500235?e=1781136000&v=beta&t=1lB87wNqvKjgj49fbRPDcnKgGoIyQ_9vnBgUsi6RD8I"
+      }
+    },
+    {
+      "start": 804,
+      "length": 20,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Podcast Fuckupy v IT",
+        "universalName": "fuckupy-v-it",
+        "trackingId": "/p8faA6OQ6i5nqrwTrZTbQ==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:43216256",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQG2gMnwADTG_Q/company-logo_400_400/B4EZY0L.NOGYAg-/0/1744632279128/fuckupy_v_it_logo?e=1781136000&v=beta&t=YYa1GVKWC2ISZxCxcJ-QJ9mQe-_YrEXBDTVESONm5Ko"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1675371924979,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7026925311933968385?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7026925311933968385%2C7027019166423375872%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287027019166423375872%2Curn%3Ali%3Aactivity%3A7026925311933968385%29",
+      "text": "Zuzana Pechová je skvela! Mate se na co tesit🚀🚀🚀",
+      "entities": [
+        {
+          "start": 0,
+          "length": 14,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Zuzana",
+            "lastName": "Pechová (She/Her)",
+            "occupation": "Jill of all trades in cybersecurity, directress of CyberLadies, open source enthusiast, coffee addict, easily nerd sniped. Likes to lead small teams, create down-to-earth strategies and build sensible infrastructure.",
+            "id": "56287650",
+            "publicId": "zuzanapechova",
+            "trackingId": "xBG6aZWiSnu1JT4dEmeIKg==",
+            "profileId": "ACoAAANa4aIBHk1CCKmRv1zZXqfXpIWkfbwQD5M",
+            "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEqXnSOPtL0lQ/profile-displayphoto-shrink_800_800/B4EZTRhBq2HMAc-/0/1738681884093?e=1781136000&v=beta&t=JHs-1yZcxo2bHe7I0Jk4RkOr31-UHUZfBr8-s_X3sqc",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHLv7IKk-pBAQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1709907835087?e=1781136000&v=beta&t=IvybzR2CRHWdgxadAD5nSJue7mDZ4WCPPivXx9f5FrA"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "Slovenian"
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marcel",
+        "lastName": "Mravec",
+        "occupation": "iOS/ KMP developer / C/C++ developer / 42Prague.com student",
+        "id": "960822563",
+        "publicId": "mravec",
+        "trackingId": "WwZffjbWSZKZ2KD+meaJ5Q==",
+        "profileId": "ACoAADlE_SMBMQ93eU8DFPPPG8mDrrPsd7fIxQ8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQF4170d7m-fJQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1671712471398?e=1781136000&v=beta&t=uaStzb_PgWdlsuQKrRK8ktXcgF5FGADy3yooMDgzFFU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEwy5x1sO-aVg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1682438303352?e=1781136000&v=beta&t=jDyTT_kodAc5c9s8iC8eDljCryG7LhLFsFlsnMwKIl8"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Maršíček",
+        "occupation": "Frontend Developer at Rossum",
+        "id": "55469244",
+        "publicId": "janmarsicek",
+        "trackingId": "OaduiP8PQwWo6d8vYLnBQA==",
+        "profileId": "ACoAAANOZLwB_DXJ6mDM__PgM7Me3whW61fEvhI",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQExuiIAvJLmWA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516605629748?e=1781136000&v=beta&t=vCaUhAMu1twqEpy2afQz289HnFTDoP6lBaJkKi14IEA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Kudělová",
+        "occupation": "Senior Business Analyst",
+        "id": "164689523",
+        "publicId": "jana-kudelova",
+        "trackingId": "1WgLOGLCSXqmtYh+X09PxA==",
+        "profileId": "ACoAAAnQ9nMBDuIcZOzVfYHMjJ7PL752F_L474Q",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFoMrJkKQNTng/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1709557765233?e=1781136000&v=beta&t=AHHsDg4oxBaZTSAoY-9Ymzv4hNVT2KAmRdSUZ6C68F0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Prokop",
+        "lastName": "Simek",
+        "occupation": "Enterprise AI | AI adoption | Engineering | Business Process Automation | CEO @ DX Heroes | Applifting Group",
+        "id": "304858610",
+        "publicId": "prokopsimek",
+        "trackingId": "gpGXidsZQ7mPz2DpMPy8Dw==",
+        "profileId": "ACoAABIrxfIBEZNPfaut-ISXdI4rj-uwVrBICfM",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFQp1Ors3yt8g/profile-displayphoto-shrink_800_800/B4EZRAH5qTHsAc-/0/1736242601117?e=1781136000&v=beta&t=UNkFXrK5B8spUDGktd7g9PkXp8NOVE5lPyc6o9tk9yU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGkRMC3ygKCYQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1726556415464?e=1781136000&v=beta&t=NNz9GaK1YEZIo_s-bdVweXfk6rDJP0Keiu1YCFB7lfA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Krystof",
+        "lastName": "Pilnacek",
+        "occupation": "Senior software engineer at Pure Storage",
+        "id": "207891051",
+        "publicId": "kryštof-pilnáček-3a375759",
+        "trackingId": "sgeZcFWPTmCEDLJbYTP7vA==",
+        "profileId": "ACoAAAxkKmsBi7b7RfohUvadD4TPGXvaVAkFfB4",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQENXckl8eRbsA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1626274176428?e=1781136000&v=beta&t=-ebphfwrba0o0zI6UBjRWvzGqKysx6_gprKsnS0MYZA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGkfqNe-ZPyJg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1626274050850?e=1781136000&v=beta&t=g6zqqaKaEGBOutjo3wLNr81TD4wiU0CzqPcfkzNUnV8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavla",
+        "lastName": "Zimmermannová",
+        "occupation": "AI & automatizace📊🤖 Vibe coding | SEO, obsah, data✏️",
+        "id": "391437996",
+        "publicId": "pavla-zimmermannová-750112ab",
+        "trackingId": "3a4Q2xpxSCOm8w/adZf3MA==",
+        "profileId": "ACoAABdU3qwBrZWjQdpDnDvfkdqP5alqykUkg6Y",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEeeZ_wDIYkuQ/profile-displayphoto-shrink_800_800/B4EZOWGsGMGYAc-/0/1733390156832?e=1781136000&v=beta&t=7yIc9dR7BXO8c82U2FHeI3bOf1ABzLDodHeRkwOvodU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFuENwv6XjqWw/profile-displaybackgroundimage-shrink_350_1400/B4EZXXrKTlHMAc-/0/1743080171531?e=1781136000&v=beta&t=9uTAO4xBBCVBOQMzr6ZyxgwSddtUuVZN37a-IYl1zGI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ella",
+        "lastName": "S.",
+        "occupation": "-",
+        "id": "954345023",
+        "publicId": "ella-senovska",
+        "trackingId": "JOdPW8MKTBmVpgMFEGyusw==",
+        "profileId": "ACoAADjiJj8BFd5OQwWP4pY71u0DyMawGkM8Xk8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQE61ascbiBnzw/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1730967321835?e=1780430400&v=beta&t=iO0k83QfTean_OyKdfzDHlg5-WhLJU_oWDBJ5_drwys",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG0KrH5Co0mCQ/profile-displaybackgroundimage-shrink_350_1400/B4EZr5tPiHIQAY-/0/1765125979597?e=1781136000&v=beta&t=CYoij_pByAy_OmryQJUks8BHm9BOnimJS677duIgWRo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "David",
+        "lastName": "Jamieson",
+        "occupation": "AI & Engineering Performance Intelligence | Pensero",
+        "id": "432422294",
+        "publicId": "david-jamieson21",
+        "trackingId": "Foeznx4yRAWIkQTSLUNleA==",
+        "profileId": "ACoAABnGPZYBqQOGAbamfX-nqJVJJd6h9Cywq7M",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFa7OLv3s8IWQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695302894856?e=1781136000&v=beta&t=wM323kmOpavWsehz_JGJnq_aE9X5-oPVxQF98oPlonY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG1ZuwL4V2c5Q/profile-displaybackgroundimage-shrink_350_1400/B4EZy5lteMJEAY-/0/1772640198599?e=1781136000&v=beta&t=_YmsC52-yXqpXjS5ZM2QKl3RRoTs1hcocz7QqE1bNyQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Anna",
+        "lastName": "Paterson (Gorączko)",
+        "occupation": "Cyber Logging | Service Lead | Global NIS",
+        "id": "320192295",
+        "publicId": "anna-paterson-gorączko-5732948b",
+        "trackingId": "D0BHBh9KQNagWOjWQ8aUzQ==",
+        "profileId": "ACoAABMVvycBHessJP9jFxkmTjWfWOKHy1-wwps",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGGyvv-EJo7MA/profile-displayphoto-crop_800_800/B4EZoXXNuFKMAI-/0/1761328553614?e=1781136000&v=beta&t=ab0N2lkZu8rAhuXDz_6K0MPdxS5mxBlLaz57Ia8LxX0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Baudis",
+        "occupation": "Founder, CTO, Chief AI Architect at Rossum",
+        "id": "11490774",
+        "publicId": "petr-baudis-906a213",
+        "trackingId": "LEAZKuMxSZalXTUcC+GleQ==",
+        "profileId": "ACoAAACvVdYBp3kGs8fJXXiShSCGLaF5Xu-lrAM",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E35AQFb5qDCPvsARg/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1613410160020?e=1780430400&v=beta&t=CKOKHl3sk5RYYLP-vfJ4B3Qhwe8WoTsXONbKPKDpUrM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQFi9Wv50p7g-w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1615994844280?e=1781136000&v=beta&t=nsDvOfOwVWRdN38A6wQdQb5CwllONjcy1YR0TpXWTcs"
+      }
+    }
+  ],
+  "numShares": 2,
+  "numLikes": 45,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "d1e5tiiYQ4CGz5unFsgZqg==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1675349548324,
+  "postedAtISO": "2023-02-02T14:52:28.324Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

@@ -1,0 +1,218 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4D22AQGp7Nu72awBag/feedshare-image-high-res/feedshare-image-high-res/0/1650379648917?e=1781136000&v=beta&t=Q1olUTtlkrQftv710XFvCR47QoobQ6UnSzANGeBBKng"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6922193965144227840",
+  "url": "https://www.linkedin.com/posts/honzajavorek_python-pyvo-activity-6922193965144227840-1PPT?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFLoK0wBYoYaibnOct4cy5iL6dq4jzvciT8",
+  "timeSincePosted": "4yr",
+  "shareUrn": "urn:li:share:6922193964229877760",
+  "text": "BUDEME V PRAZE NA SRAZU PYTHONISTŮ 🧑‍🏫 Ve středu 20.4. se bude v pražském Liberálu (nedaleko metra Vltavská) konat večerní sraz fanoušků programovacího jazyka #Python s názvem #Pyvo. Já tam budu mít přednášku o juniorech a junior.guru, Pája si dá lightning talk o svém podcastu. Přijďte!\n\nKdo jsou to ti začátečníci a proč pro ně dělám speciální komunitu? Jak celý projekt vytvářím tak, aby šel spravovat i v jednom člověku? O tom všem vám na Pyvu povím! Teda aspoň doufám, protože je úterý večer a zatím nemám připravenou ani čárku 😬😅\n\nKromě mě se můžete těšit, jak už jsem zmiňoval, i na Pavlina F. z junior.guru/podcast nebo na přednášku o 3D tiskárnách od Vládi Matěny z Prusa Research. A samozřejmě taky na spoustu milých lidí, z nichž mnozí nejsou ani pythonisti, ani nepijí pivo, takže se nebojte, že nezapadnete. Víc info je na pyvo.cz/praha 🍻",
+  "attributes": [
+    {
+      "start": 590,
+      "length": 10,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Pavlina",
+        "lastName": "F.",
+        "occupation": "Host @ Junior Guru podcast.",
+        "id": "190849253",
+        "publicId": "pavlinafronkova",
+        "trackingId": "ziJQ/BldQGyRtzTz0aevkg==",
+        "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk"
+      }
+    },
+    {
+      "start": 675,
+      "length": 14,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Prusa Research",
+        "universalName": "prusa3d",
+        "trackingId": "OdWhBWfDS/edabeu0LiOkw==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:18216356",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQE4jYbajdsFww/company-logo_400_400/company-logo_400_400/0/1719256207982/prusa3d_logo?e=1781136000&v=beta&t=-jP3trizoNgIPhbUaXjDUXSa6xh_yFRmE98fSh0Kvvc"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1650442310306,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6922193965144227840?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6922193965144227840%2C6922456783886110720%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286922456783886110720%2Curn%3Ali%3Aactivity%3A6922193965144227840%29",
+      "text": "Dondite vsici, aj ja dovalim🙂",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Slovak",
+      "author": {
+        "firstName": "Petr",
+        "lastName": "Přibil",
+        "occupation": "Global Sales Manager | Specialty Lubricants",
+        "id": "132002824",
+        "publicId": "petr-pribil",
+        "trackingId": "2FbHL5cETk2BgpXBcFFbKg==",
+        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEGdgqIgIpkzg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712250006297?e=1781136000&v=beta&t=UB9wEJule0NhB0lR0De_FtfePuW1Di0Vm80cYt1MqZU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFuvlBRuJNbjw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712250566915?e=1781136000&v=beta&t=8sCRHio1dDSnAp_oiaygmw7_1g4W1ce4YJV-kaJIK3M",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petra",
+        "lastName": "Kubita Nulíčková",
+        "occupation": "HR Manager v Pale Fire Capital | Head of HR v Aukro | HR consultant and mentor | #sharingiscaring",
+        "id": "473833031",
+        "publicId": "petranulickova",
+        "trackingId": "YYmaviLTQU6n+2yG907new==",
+        "profileId": "ACoAABw-HkcBifENxX8nxAs2YjwxbI6b2XtAF98",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHnKx1150QjzQ/profile-framedphoto-shrink_400_400/B4DZ5EYkX3J4Ac-/0/1779263751874?e=1780430400&v=beta&t=pWJ51Ntw0jR9QQT0pS0cVga8Y5H1PX6eMgBC8eZYwyo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQExwjEQhQ99TA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1676378924015?e=1781136000&v=beta&t=rpomntKe5fPHScYScrE5n1-ok01d_UuxKpUPUaPI93g"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jaroslav",
+        "lastName": "Zbíral",
+        "occupation": "Jsme mladí a blázniví ve světě, kde slušní lidé vyrábějí atomové bomby.",
+        "id": "949674346",
+        "publicId": "jaroslav-zbíral-08a064226",
+        "trackingId": "iQuD+AJLTYCk+WP0yceLsg==",
+        "profileId": "ACoAADia4WoBXp97YFXOlMrM6Ra3DeZTXLKtBbc",
+        "picture": "https://media.licdn.com/dms/image/v2/D5635AQHWnkC3QHJDcA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1636820977205?e=1780430400&v=beta&t=CnESiLrSFT4T83Yu1lRFgTxzHhJOG79hJWiXH1BYnJQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGcFypvdCHhBg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1636572502359?e=1781136000&v=beta&t=YPRayJOnDhynhumNNvbTcf6RdamnUrzo_3f6-p3BLno"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marcela",
+        "lastName": "Karafizievová",
+        "occupation": "Frontend Developer | React & TypeScript",
+        "id": "227688624",
+        "publicId": "marcela-karafizievova",
+        "trackingId": "HdX8B1bCSJGU251UHPXwgQ==",
+        "profileId": "ACoAAA2SQLABI6v_b51EJ_JdoI9I2kJ8Fmb-kTA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQH8Vw_TXlEpOg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1618512563812?e=1781136000&v=beta&t=l1GI2NbUsfkd3UuzERHk_7QV0jUX9u-AnuNd9FZSDwU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michaela",
+        "lastName": "Krouzkova",
+        "occupation": "Business Transformation Consultant at IBM",
+        "id": "395511310",
+        "publicId": "michaela-kroužková-a3a557b0",
+        "trackingId": "avVihpSkQraFS6VxNi+fLA==",
+        "profileId": "ACoAABeTBg4BFl6V5DqtFoLLHFSBqc-ztD_MRV8",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGYoeAt8z-rtA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1622533929547?e=1781136000&v=beta&t=8myR9RbYY35lDsKlBPCkvk5Ui0hm9-24LXfXKk7S4Bg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEeHGHCTur_MA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1625163469449?e=1781136000&v=beta&t=B0aR5rsmNYXrQKOAQB46sEmCeIzRWVgFlAi5-WG2bdc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "D.",
+        "occupation": "Data analytics | Energy transition",
+        "id": "114102236",
+        "publicId": "janfdolezal",
+        "trackingId": "LKdB3vDvQMWmCmwrabbSJw==",
+        "profileId": "ACoAAAbND9wBTGfUvBkG8--t6nWYBJcRm6qj8LI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGDiD2lCktv4Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1616743956066?e=1781136000&v=beta&t=9Q1PGraRSzb__h4cp2O1EwOE1gaZWHh89nk0FhoGeic"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Erbenova",
+        "occupation": "Application Developer at Barclays",
+        "id": "361531956",
+        "publicId": "lenkaerbenova",
+        "trackingId": "MqdqE7yRT0Wtr5Xr/Gy6qA==",
+        "profileId": "ACoAABWMijQBlQzoTAse2JjfcJmbjz4dAQnIsQs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Přibil",
+        "occupation": "Global Sales Manager | Specialty Lubricants",
+        "id": "132002824",
+        "publicId": "petr-pribil",
+        "trackingId": "T3xvA2z+QWSgERdUakk65Q==",
+        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEGdgqIgIpkzg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712250006297?e=1781136000&v=beta&t=UB9wEJule0NhB0lR0De_FtfePuW1Di0Vm80cYt1MqZU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFuvlBRuJNbjw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712250566915?e=1781136000&v=beta&t=8sCRHio1dDSnAp_oiaygmw7_1g4W1ce4YJV-kaJIK3M"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Šuraba",
+        "occupation": "Linux lover ;-)",
+        "id": "148282826",
+        "publicId": "martin-šuraba",
+        "trackingId": "3jAgamaOQVeLnE1HPZExMQ==",
+        "profileId": "ACoAAAjWncoBV1fLUSxy4LPyYcesKobjlSQHznQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG3Gb4BlgCVZQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693900488039?e=1781136000&v=beta&t=x-DN7fUTWuQkA6F4_rWi05mTohNdCH-S2Vj0RulkMM0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGGkAbiGDIeww/profile-displaybackgroundimage-shrink_350_1400/B4DZ2w5FFRHwAY-/0/1776789247703?e=1781136000&v=beta&t=KaejtkxyR8ERrXhjNGP_KW3lGT8Nz8IVYzQy0BShSP4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lucie",
+        "lastName": "Kotmelová",
+        "occupation": "Data Analyst ve společnosti Emplifi",
+        "id": "657654973",
+        "publicId": "lucie-kotmelova",
+        "trackingId": "BVfD/FTBSMqTIAzf05T7PA==",
+        "profileId": "ACoAACczBL0Brjp_3tto4AXvZ-RTQlD0q9nFaL0",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQF46QeNFPhImg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1560704824737?e=1781136000&v=beta&t=hImdzC7Eb5f44mJ6MhawSV9Vk12u_5ZQsjtCKOXzStg"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 26,
+  "numComments": 5,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "WMeMYPsbQrCU0UYHCmGuiA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1650379649435,
+  "postedAtISO": "2022-04-19T14:47:29.435Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

@@ -1,0 +1,317 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/D4E22AQF-V9r08KwLmA/feedshare-image-high-res/B4EZkjPphHKUAo-/0/1757232932745?e=1781136000&v=beta&t=xHTxTG_OfDJKplIeW3joZ6pgSpSQJkgTvhkD3IyjRoE",
+    "https://media.licdn.com/dms/image/v2/D4E22AQEWRhYnNGVhYw/feedshare-image-high-res/B4EZkjPphgHEAo-/0/1757232931776?e=1781136000&v=beta&t=mOmodOAiBfre82NbMS6ywFpPrzubFYICkkzPrtuWIxw",
+    "https://media.licdn.com/dms/image/v2/D4E22AQEU9pCPIVTnyg/feedshare-image-high-res/B4EZkjPpgcKgAw-/0/1757232929407?e=1781136000&v=beta&t=kX_TKHElnB02oF0ZKpwnATPIflIXW5S32pkSx0byGS4"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:7370369122368655360",
+  "url": "https://www.linkedin.com/posts/honzajavorek_budoucnostjedigitalni-tydenprodigitalnicesko-activity-7370369122368655360-CKv7?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAADVqL6ABuhGEisVhkg1t_SbJfTWFU5e0hQE",
+  "timeSincePosted": "8mo",
+  "shareUrn": "urn:li:ugcPost:7370369121085186048",
+  "text": "Když mi přijde mail z @vlada.gov.cz, tak se teda i do saka voháknu. V pátek jsem byl na zahájení Týdne pro Digitální Česko.\n\nMoc se mi líbila ukázka nízkolatenčního přenosu od CESNETu, kde několik skladeb zahráli pán přímo před námi v Praze (pozoun) spolu s paní v Brně (klavír).\n\nTaky mi přišla podnětná panelová diskuze o tom, jak umožnit používat digitální technologie opravdu každému, a to i lidem ve velmi znevýhodněné situaci, kteří typicky nemají běžně přístup ani k počítači.\n\nPopovídal jsem si, koukl na program, snědl oběd, vdechl zákusky, no bylo to fajn, co vám budu povídat! 😀 Ale co z toho máte vy?\n\nVy máte prima středeční akci, na kterou můžete díky partnerství Junior Guru s vládním Týdnem pro Digitální Česko a firmou Mews (díky, Karolina Kramkova!) dorazit.\n\nJmenuje se to „AI a junioři: pomocník, nebo riziko?” a odkaz se všemi detaily dám do komentáře.\n\nAkce, na kterých se podílím, jsou shodou okolností zpětně účastníky často považovány za milé, podnětné, nebo přímo legendární, ale v rámci české skromnosti už nebudu nic dalšího naznačovat.\n\nTěm, kdo váhají, akorát vzkazuju, že už máme jen pár posledních míst (kapacita je 50–60 lidí).\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.\n\n#budoucnostjedigitalni #tydenprodigitalnicesko #juniorguru #mews",
+  "attributes": [
+    {
+      "start": 107,
+      "length": 15,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Digitální Česko",
+        "universalName": "digitalnicesko",
+        "trackingId": "yeDusZulTaO+Yyh1Y/qxZA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:104701463",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQGaScH4OZgjUg/company-logo_400_400/B4EZlb.gakK0AY-/0/1758184737290/digitalnicesko_logo?e=1781136000&v=beta&t=u-SyMcDHLkaw1_XYb2Si5nYC5_q0RojMGA1ntO5YAgY"
+      }
+    },
+    {
+      "start": 176,
+      "length": 6,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "CESNET",
+        "universalName": "cesnet",
+        "trackingId": "UwT3kUJcQraCTLeXxLu+lA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:563015",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQELs8ADZ_LKQw/company-logo_400_400/company-logo_400_400/0/1726429412174/cesnet_zspo_logo?e=1781136000&v=beta&t=uiKfxKaNmSvSAs2ToVyOCN2Jj8_Q6CTqoMQJI6lHqmA"
+      }
+    },
+    {
+      "start": 678,
+      "length": 11,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Junior Guru",
+        "universalName": "juniorguru",
+        "trackingId": "oSpQA8wxTPGPLmLBaku4aQ==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:26218444",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQE89NmYF-XT4g/company-logo_400_400/company-logo_400_400/0/1638266899010/juniorguru_logo?e=1781136000&v=beta&t=ad516CNUThMN8eXeVboC5S9U_y2Dnn1UhQn70wIGlxE"
+      }
+    },
+    {
+      "start": 711,
+      "length": 15,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Digitální Česko",
+        "universalName": "digitalnicesko",
+        "trackingId": "XAnyeBBmT5GQgZcI7azOrA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:104701463",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQGaScH4OZgjUg/company-logo_400_400/B4EZlb.gakK0AY-/0/1758184737290/digitalnicesko_logo?e=1781136000&v=beta&t=u-SyMcDHLkaw1_XYb2Si5nYC5_q0RojMGA1ntO5YAgY"
+      }
+    },
+    {
+      "start": 736,
+      "length": 4,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Mews",
+        "universalName": "mewssystems",
+        "trackingId": "ZACqtusnT5KXZrV0TPPpeQ==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:2574959",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQG9VtyX26envQ/company-logo_400_400/B4EZyKEXeEH0AY-/0/1771842926937/mewssystems_logo?e=1781136000&v=beta&t=UIV6bGS_gnn1FvSP7zSjwts_zMyZHE6t4vu9n9Nz5KE"
+      }
+    },
+    {
+      "start": 748,
+      "length": 17,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Karolina",
+        "lastName": "Kramkova",
+        "occupation": "Be not afraid to step out of your comfort zone and face unknown challenges, it is usual the best thing to do!",
+        "id": "537474680",
+        "publicId": "karolina-kramkova",
+        "trackingId": "SXCs9hueRZiu8CrM2C6IlQ==",
+        "profileId": "ACoAACAJNngB4ybl2bJ9KL4XIvIBiZoPcrRLgyI",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGq3NCyU5lIaQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695050175192?e=1781136000&v=beta&t=pVaEOXvNZzjFW_cIcdcZREY5j059uGHY7SuX-Vj8VaA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGK9rJLbWQOsg/profile-displaybackgroundimage-shrink_350_1400/B56Zf0ImRaHYAc-/0/1752147585079?e=1781136000&v=beta&t=ywcVvNfcPLqvPCLzSvw_o_lXGbX2_jstrscjL0sZYhE"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1757488360716,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7370369121085186048?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7370369121085186048%2C7371440461300903936%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287371440461300903936%2Curn%3Ali%3AugcPost%3A7370369121085186048%29",
+      "text": "Mno já čekal triko a tepláky :) ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Jan",
+        "lastName": "Gazda",
+        "occupation": "Learn, apply and share knowledge!",
+        "id": "252085087",
+        "publicId": "jangazda",
+        "trackingId": "Asfb9Ca/SSOH4C78fvq5HA==",
+        "profileId": "ACoAAA8Gg18BFmVgg-IXGx-bZKirzahGSvqZ_js",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQEr66wsXQ3vaw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517500649020?e=1781136000&v=beta&t=ftrY-r84KsnzblcernzTT18astC-Ol7ClDdBzYdRAQQ",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1757317207053,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7370369121085186048?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7370369121085186048%2C7370722590807531520%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287370722590807531520%2Curn%3Ali%3AugcPost%3A7370369121085186048%29",
+      "text": "Těšíme se! 🤩 ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech"
+    },
+    {
+      "time": 1757233045984,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7370369121085186048?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7370369121085186048%2C7370369593699115008%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287370369593699115008%2Curn%3Ali%3AugcPost%3A7370369121085186048%29",
+      "text": "Všechno o té naší eňo ňůňo akci je tu: https://luma.com/eckxgfwc?tk=s7ko8T Dorazit může kdokoliv a zadáčo, ale musíte se předem registrovat na tom odkazu.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "lVUVf/O6TGCGllozx+Jl8w==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jindřich",
+        "lastName": "Slunečko",
+        "occupation": "42 Prague, Non-profit Development Lead",
+        "id": "645778326",
+        "publicId": "jindrichslunecko",
+        "trackingId": "EOX2YRN0T2m54Y2iMKCBow==",
+        "profileId": "ACoAACZ9y5YBWEMNQKrkeaqRxljD1KpkQBdr3Ag",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGsJ4AcOkCi8w/profile-displayphoto-crop_800_800/B4DZ2V5IWYJgAQ-/0/1776336278666?e=1781136000&v=beta&t=CKRXOg_y2HwjF-k8e1J3eTCvlmcR1QVJ6FxFPMu7QgA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGHuETvTM4xxg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1618858015477?e=1781136000&v=beta&t=GiL9cwK_-xIDu-RaWwsFe8ZgxWFD4uSLbJi2I8B7Yl0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Šárka",
+        "lastName": "M.",
+        "occupation": "Security🔥",
+        "id": "390209713",
+        "publicId": "šárka-m-98181baa",
+        "trackingId": "xlgd1S/NQM+MRovV4dkI6Q==",
+        "profileId": "ACoAABdCILEB07y3oARo2gRV3h5igas9WXxER4k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vladylena",
+        "lastName": "Halchuk",
+        "occupation": "Data Analyst/Engineer at Cisco",
+        "id": "1037509647",
+        "publicId": "vladylena-halchuk",
+        "trackingId": "2vmPoTQ2TiiZR6en4Ea21Q==",
+        "profileId": "ACoAAD3XJA8BPOTOyLAzhh2pbxqwOMLV-ayrl7c",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGt4AxBTteK5A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731266542692?e=1781136000&v=beta&t=C2ZQ3RBkgu-5zPrJbVqor7YQ6J6TNoVs2Oo3EKknDkQ"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Zpěváková",
+        "occupation": "Moderátor ve společnosti DATA mesh",
+        "id": "637440646",
+        "publicId": "py-veronika-zpevakova",
+        "trackingId": "TRpPFNutS3GBe6LhQV5lyQ==",
+        "profileId": "ACoAACX-koYBZCeuCb06SzAT8F955fJvI0OEIAc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG1ZWtWd7gYPA/profile-displayphoto-crop_800_800/B4EZf8w5aYH4AI-/0/1752292366705?e=1781136000&v=beta&t=U6HWTwf03AjW7HUEmYBNf3bJUPuiUzWy7Erk0Q6kAbw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGprRlAotow1Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1519121908586?e=1781136000&v=beta&t=XpMvIj6AwaxV4O3LsHEORi7O8FcmUA6h5NM_51qe9xg"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Matěj",
+        "lastName": "Kahún",
+        "occupation": "Komuniťák v Czechitas 🏄‍♂️",
+        "id": "726742558",
+        "publicId": "matejkahun",
+        "trackingId": "EpxKB0yaQm+dqUn5M8OO0A==",
+        "profileId": "ACoAACtRNh4Bgs49PDAKRTrJ0zQclHv-UqoqjOs",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEFdqnLrw3tqA/profile-displayphoto-shrink_800_800/B4EZVGmAK_GYAg-/0/1740646122793?e=1781136000&v=beta&t=kXs1stUYIteew7uBR7C0b1NfoOSP9z9D7Wl_jTtZgU4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHHulpwLgpD-g/profile-displaybackgroundimage-shrink_350_1400/B4DZzXhX0NH4Ac-/0/1773142376451?e=1781136000&v=beta&t=JhX7zrUGEPQ6CMtCimmgq0aYfeZ6PJRvlkNsVohIwkU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Víťa",
+        "lastName": "Plšek",
+        "occupation": "Software Engineer at MoroSystems",
+        "id": "25853384",
+        "publicId": "vitaplsek",
+        "trackingId": "/WvndBuDQLKPTba6JjybZw==",
+        "profileId": "ACoAAAGKfcgBbsIpDIhTT3pYc5oN92ADHHGEmg8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGEdUbUEZ2rnA/profile-displayphoto-shrink_800_800/B4EZO_nmWtH0Ac-/0/1734086650020?e=1781136000&v=beta&t=WuVWCYhHsBauQNfxZDhbTmt5rCiFUgv8Br9nHL_UzNc",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFxSOpu3pT3rw/profile-displaybackgroundimage-shrink_350_1400/B4EZo0ZY1CHEAc-/0/1761815662674?e=1781136000&v=beta&t=kOSwGioGHLjoB1o_oPkuO74vYEyfKccBB11JybK8hJE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daniela",
+        "lastName": "Schalldach",
+        "occupation": "UX/UI & textile conservator",
+        "id": "721195540",
+        "publicId": "daniela-schalldach",
+        "trackingId": "Wb3/QvrzSyu2NQ0AOWJZcg==",
+        "profileId": "ACoAACr8khQB-Kl-ynem6Qm6MTZQLggjifY44g4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHyEJTUch1goA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1686937404872?e=1781136000&v=beta&t=NOswmZmzqx31---PVPjo-KGxHQ3jGIVqBngxIunL-F8"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Manivannan",
+        "lastName": "Selvaraj",
+        "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
+        "id": "13167565",
+        "publicId": "citizenmani",
+        "trackingId": "w10PmoGERpmUKWxApV1fkw==",
+        "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQEqC5x0akFu1Q/profile-displayphoto-crop_800_800/B56ZlSvDmfIAAM-/0/1758029692620?e=1781136000&v=beta&t=2MjEAUEFd1OccqmtlnzcSzG2gHUquLzw5MI-3XUUfOM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHZC49bFZ8ZTQ/profile-displaybackgroundimage-shrink_350_1400/B56ZxDZv79KIAY-/0/1770657351768?e=1781136000&v=beta&t=kVGPoYvqmMzYICMmu_0FODKNvqUNjsGRcvULLqy01EA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Kateřina",
+        "lastName": "P.",
+        "occupation": "Currently on maternity leave",
+        "id": "498811395",
+        "publicId": "katerinapaulinova",
+        "trackingId": "Z/Gs6CYuQBa57DHa23vDQw==",
+        "profileId": "ACoAAB27QgMB-LtkvlGwxNcB-N_aZb3iLmTAnn0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFaWnsM2HQv2g/profile-displayphoto-crop_800_800/B4DZvf7qupJwAM-/0/1768988524216?e=1781136000&v=beta&t=4da7fmH3bVYAkZcSC2ZbEtUYvTh1vvc9wC4KyJ7tQWE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tereza",
+        "lastName": "Baštářová",
+        "occupation": "--",
+        "id": "388660440",
+        "publicId": "tereza-bastarova-2a01b3aa",
+        "trackingId": "881BxKA0S8+jSBgvLMg6KA==",
+        "profileId": "ACoAABcqfNgB87WKDmnbb2rNRYuYJHeRwlfDPdI",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEvzZeKSL7VSg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1683916160785?e=1781136000&v=beta&t=jr-J7IsaLBl42dijlUiQbpVxo9V3W8e0VT0h4ObSU6M"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 83,
+  "numComments": 4,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "lVUVf/O6TGCGllozx+Jl8w==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1757232933609,
+  "postedAtISO": "2025-09-07T08:15:33.609Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

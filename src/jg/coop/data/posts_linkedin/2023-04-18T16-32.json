@@ -1,0 +1,262 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:7498317420918020775",
+    "url": "https://honzajavorek.cz/blog/empowered-by-ai-why-junior-devs-have-the-winning-edge/",
+    "title": "Empowered by AI: Why junior devs have the winning edge — Javorové lístky"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7054129577920487425",
+  "url": "https://www.linkedin.com/posts/honzajavorek_empowered-by-ai-why-junior-devs-have-the-activity-7054129577920487425-Mpms?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAF_J15MBzS12u6VE16sLLHw4FYwCsunT-QI",
+  "timeSincePosted": "3yr",
+  "shareUrn": "urn:li:share:7054129577094213632",
+  "text": "Is the rise of AI a threat or an opportunity for junior devs?\n\nMany fear that AI will replace human software engineers or make it harder for junior programmers to break into the field. But what if the truth is quite the opposite? As someone in the business of helping people switch careers and learn coding, I believe that in the age of AI, junior developers may actually hold the winning edge.\n\nIt took me three days to finish this article, and it contains all my current thoughts on the topic. Enjoy!\n\nhttps://lnkd.in/e6ntxetd\n\n#ai #developers #juniors #coding #software #careers #engineers",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1682669328877,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7054129577920487425?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7054129577920487425%2C7057626696778174465%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287057626696778174465%2Curn%3Ali%3Aactivity%3A7054129577920487425%29",
+      "text": "Partly agree. Issue would arise when there will be AGI within 2 years, \"employer\" would \"command\" it to ACT as senior DEV, it would pick all knowledge from web, and thousands of those models would run to perform some task. It would pick knowledge from living devs, already dead devs who left some digital trace, etc. So 80% of developers would become obsolete. And this scenario would highly likely happen.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "English",
+      "author": {
+        "firstName": "Pavel",
+        "lastName": "Zlatnik",
+        "occupation": "Senior Software Engineer at Broadcom Inc, R&D for Modern Software Factory projekt",
+        "id": "103565751",
+        "publicId": "pavel-zlatnik-a738252a",
+        "trackingId": "f4eqtNczSomM+ClJJjBZJA==",
+        "profileId": "ACoAAAYsSbcBZr4hOOGBsO_5dx7iM5I-n8y4vlo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFJbI72kEJj6g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517609998321?e=1781136000&v=beta&t=eqS9xL4jWJfK16k-wgGqmCkgciDBBu94P47kwpXHxFw",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1681849134410,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7054129577920487425?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7054129577920487425%2C7054186551848652800%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287054186551848652800%2Curn%3Ali%3Aactivity%3A7054129577920487425%29",
+      "text": "Great read and refreshing with all the dooms day software bros out there. Just recently I've watched Primagean reading an article about a step by step process in which chat \"gipidy\" takes over all programming.\n\nThe AI effect is also a thing that puts this into perspective.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "English",
+      "author": {
+        "firstName": "Jakub",
+        "lastName": "Stibůrek",
+        "occupation": "Senior Software Engineer at CloudTalk | AI team",
+        "id": "799116335",
+        "publicId": "jakubstiburekdev",
+        "trackingId": "JvoWWVF7S9a6t7en/yz6lQ==",
+        "profileId": "ACoAAC-hjC8BFJ3wRQGWLe79n-JcRRuP2sqpPvM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH1azrOSAhFBw/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1724762904533?e=1781136000&v=beta&t=iSj56xQ0ddMkOCKWROHMSlp_jeijq8EQCrQtbMdrSpA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1681842986879,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7054129577920487425?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7054129577920487425%2C7054160767238983680%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287054160767238983680%2Curn%3Ali%3Aactivity%3A7054129577920487425%29",
+      "text": "ChatGPT is my new fantastic mentoring guru in programming. Here's why:\n\n- it is everytime positive, helpful and encouraging\n- is ready to help 24/7\n- is never tired\n- is never angry, even if I ask the same question 100 times\n- shows me how the correct code should look like without any hesitation\n- has no problem returning back to our previous conversations\n- is never pissed off when I ask the same question another senior developer\n- is never jealous that I learned the stuff much easier than it had to do\n- never complains on social platforms how difficult is it to work with those damned juniors\n\nThe only problem I have is that, although still in polite and thankful way, it keeps rejecting my invitations for a beer.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "English",
+      "author": {
+        "firstName": "Petr",
+        "lastName": "Přibil",
+        "occupation": "Global Sales Manager | Specialty Lubricants",
+        "id": "132002824",
+        "publicId": "petr-pribil",
+        "trackingId": "q/q+zIEPTJ+4Vr0nHjCCHQ==",
+        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEGdgqIgIpkzg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712250006297?e=1781136000&v=beta&t=UB9wEJule0NhB0lR0De_FtfePuW1Di0Vm80cYt1MqZU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFuvlBRuJNbjw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712250566915?e=1781136000&v=beta&t=8sCRHio1dDSnAp_oiaygmw7_1g4W1ce4YJV-kaJIK3M",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1681837157436,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7054129577920487425?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7054129577920487425%2C7054136316774510593%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287054136316774510593%2Curn%3Ali%3Aactivity%3A7054129577920487425%29",
+      "text": "I have to read it, because I am still unsure whether it is positive or negative, but didn't have enough time to elaborate on it. :)",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "English",
+      "author": {
+        "firstName": "Petr",
+        "lastName": "Glaser 🤖",
+        "occupation": "Building Agentic Engineering Platform for production-ready apps. Generated, reviewed, managed, deployed by AI Agents.",
+        "id": "653562608",
+        "publicId": "bleedingdev",
+        "trackingId": "UcpqWK06TTWnrv+oXId96A==",
+        "profileId": "ACoAACb0kvABzEvpATXhOiWBbEuq4yfGI43iXrc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHNZ_n7usiMwg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1707307700521?e=1781136000&v=beta&t=s9M6CBtI9xCgMRzy9aH4Zm6vuRjYQFKYSrl_QlfPTvA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEjlZvszJMk8g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1704724910587?e=1781136000&v=beta&t=3ATL2lQYqY066bQ-K-77LV1388hPiLUDuz3f2WEXABk",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lukáš",
+        "lastName": "Mazuch",
+        "occupation": "Process specialist at Alza.cz",
+        "id": "410275988",
+        "publicId": "lukas-mazuch",
+        "trackingId": "NztLsTU6QSGKl8PJ7Y9Qyw==",
+        "profileId": "ACoAABh0UJQBioNsrJrb3Ou0dM85e8JhtOpjsxg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEeKuSS1DxYkw/profile-displayphoto-shrink_800_800/B4EZRnYhD_GwAc-/0/1736901268768?e=1781136000&v=beta&t=hJlseG0NrJWX8icujorkBqjfk-NibVWPHWxqgkeyf8g",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEBbrFY-9lpHw/profile-displaybackgroundimage-shrink_350_1400/B4EZjvXvOIHgAY-/0/1756362634721?e=1781136000&v=beta&t=dfsNrXMNU5y-CbRrLdF4h7SqVnEQXMOxmOfaj-IrS8E"
+      }
+    },
+    {
+      "type": "INTEREST",
+      "profile": {
+        "firstName": "Nathalie",
+        "lastName": "Vecten",
+        "occupation": "\"It is a capital mistake to theorize before one has data.\" *cleaned data",
+        "id": "775508820",
+        "publicId": "nathalie-vecten",
+        "trackingId": "K6jLlZCBSd+CDtckBH8PcQ==",
+        "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH5sSEbnQ2Tcg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1611936430673?e=1781136000&v=beta&t=wAQsj8dSBDe6L3xt1MwxMahW3aP-D6LcuvT-utzij6s",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHDKxhi18V0lw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1599638080880?e=1781136000&v=beta&t=5JiWefMiJff9VXnKXxoAOOrnUYNFE4fW7AQAgJac6VA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "D.",
+        "occupation": "Data analytics | Energy transition",
+        "id": "114102236",
+        "publicId": "janfdolezal",
+        "trackingId": "YqYK7lj+T/+rqIWfcfZVIA==",
+        "profileId": "ACoAAAbND9wBTGfUvBkG8--t6nWYBJcRm6qj8LI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGDiD2lCktv4Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1616743956066?e=1781136000&v=beta&t=9Q1PGraRSzb__h4cp2O1EwOE1gaZWHh89nk0FhoGeic"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Matěj",
+        "lastName": "Schmalz",
+        "occupation": "Founder @Elredo & ElredoVoice | Building the next unicorn in publishing with AI-powered audiobook production & distribution",
+        "id": "818556730",
+        "publicId": "matej-schmalz",
+        "trackingId": "nPz+4dJqScids2hJ6BkfAg==",
+        "profileId": "ACoAADDKLzoBk-rAOZtKG278l4YK__B7SDtoeYE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGHRj8nu4b_xw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1683652100184?e=1781136000&v=beta&t=HdgOcfUoGEwtnkqNHbv0QQGtFEUPCr4LqaARRoKR1Kw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFNgPw1AC3O4A/profile-displaybackgroundimage-shrink_350_1400/B4DZk9JzROGkAY-/0/1757667604097?e=1781136000&v=beta&t=WB_gF5vqhB-cS-_FU_qTx6V85CwFPOa1TiLYnCMmrws"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Filip",
+        "lastName": "Maceček",
+        "occupation": "Senior Software Engineer at Mews",
+        "id": "881407907",
+        "publicId": "filip-macecek",
+        "trackingId": "l/0DzD1gT6mLTG4mM68hYQ==",
+        "profileId": "ACoAADSJN6MBK7HN8tIz3OV6Z4uIZ4Vv4DHIzXU",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQHeElM-5hDD_g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1613503712276?e=1781136000&v=beta&t=WbY-9rIWIuMGilPgHbJ4Y_8k_TAaZUkoFMlPfQfTd5s"
+      }
+    },
+    {
+      "type": "INTEREST",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Valenta",
+        "occupation": "Senior QA Engineer at Warhorse Studios ⚔",
+        "id": "303039169",
+        "publicId": "valentapetr",
+        "trackingId": "xtNwDEVkS4qFBK/yMurA+w==",
+        "profileId": "ACoAABIQAsEB7lBkZDyMY2IyH8DV-Em47jKaECM",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEGh_9U-DN84A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1597911967248?e=1781136000&v=beta&t=OnhGS_BuvlxuvHZlnksAt0ZH6zVGGgbEzmx9ak6vwBg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFuYq__sCNlaA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1713506563296?e=1781136000&v=beta&t=HHtMT1YeoBJpmoS4EcMcjdBeE9Ku_bEF5kBDeq5nJ68"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Svetlana",
+        "lastName": "Margetová",
+        "occupation": "I help factories digitise maintenance. With or without AI. Always with people first.",
+        "id": "178006447",
+        "publicId": "msvetlana",
+        "trackingId": "pI9eduIMQGmWxThljcE3hw==",
+        "profileId": "ACoAAAqcKa8Bousd5uBo-bZZ9dq6qVlYKqtHvSc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF2d-GcOsk4Bg/profile-displayphoto-crop_800_800/B4DZ35j9rdHwAM-/0/1778008453433?e=1781136000&v=beta&t=drmOX7xsDyMGZaown-MFYSZXwtE2FSNpuvIxF5sa-CA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEafK1Y8bDUqw/profile-displaybackgroundimage-shrink_350_1400/B4DZWwQJBHHIAc-/0/1742418779616?e=1781136000&v=beta&t=0a47VNFLf1nQKjTg2JnpC3ODNNzCN24RoEDT7btdLtM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Erbenova",
+        "occupation": "Application Developer at Barclays",
+        "id": "361531956",
+        "publicId": "lenkaerbenova",
+        "trackingId": "nqlH9tdpRFqgZWlNM3g87Q==",
+        "profileId": "ACoAABWMijQBlQzoTAse2JjfcJmbjz4dAQnIsQs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "trackingId": "J0hf7g9nQy+Xl7slPgmNFQ==",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGjycZdsqX9ww/profile-displayphoto-crop_800_800/B4DZjBYhBpGQAQ-/0/1755591087410?e=1781136000&v=beta&t=wVIgd5mwqIYPXpFj5d6Nr2x8-VHHyAZ4o1qWAcv4nhQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Kratochvíl",
+        "occupation": "so called IT guy",
+        "id": "841954419",
+        "publicId": "tomáš-kratochvíl-183b761b5",
+        "trackingId": "H2/HDvjjQvuO09Pa9NAyLw==",
+        "profileId": "ACoAADIvNHMBtcKZ1jflF8WisqwSfCz5XOVcU74",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQESmprBItiA0A/profile-displayphoto-crop_800_800/B4DZ3fmX1_G8AI-/0/1777572872515?e=1781136000&v=beta&t=iZzMd1aUXsmIbFRbQWNVZrHfIjB6jsJoXgt0nXgEgbs"
+      }
+    }
+  ],
+  "numShares": 2,
+  "numLikes": 22,
+  "numComments": 8,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "8vFVDakvS4qSc1EJocixUg==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1681835550766,
+  "postedAtISO": "2023-04-18T16:32:30.766Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

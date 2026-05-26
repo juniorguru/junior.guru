@@ -1,0 +1,590 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "type": "text",
+    "isActivity": false,
+    "urn": "urn:li:activity:7124677459861528576",
+    "url": "https://www.linkedin.com/posts/lenka-kurov%C3%A1-29875469_doba-je-zl%C3%A1-pro-juniorn%C3%AD-aj%C5%A5%C3%A1ky-ur%C4%8Dit%C4%9B-activity-7124677459861528576-Hj-v?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC29INoBu4UxIfyNnC3051th8thkLppPT1Y",
+    "timeSincePosted": "2yr",
+    "shareUrn": "urn:li:share:7124677459400085504",
+    "text": "☢ Doba je zlá...\n🖥 Pro juniorní ajťáky určitě.\n\n🕸 V síti mám spoustu šikovných juniorů - ať už testerů, vývojářů, analytiků. Ráda bych je nasměrovala do firem, kde jsou juniorům otevření - ať už na zaměstnanecký poměr, tak na placené i neplacené stáže.\n\n❓Pracujete v takové firmě nebo víte o nějaké?\nProsím do komentáře 👇 nebo soukromé zprávy 📩",
+    "attributes": [],
+    "comments": [
+      {
+        "time": 1698656062506,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7124677459861528576?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7124677459861528576%2C7124679917593669632%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287124679917593669632%2Curn%3Ali%3Aactivity%3A7124677459861528576%29",
+        "text": "U nás v coalsoft jednoznačně..!",
+        "entities": [
+          {
+            "start": 8,
+            "length": 8,
+            "type": "COMPANY_NAME",
+            "company": {
+              "name": "coalsoft",
+              "universalName": "coalsoft",
+              "trackingId": "62mL+456TQGST8Fn0Vs9NA==",
+              "active": true,
+              "showcase": false,
+              "entityUrn": "urn:li:fs_miniCompany:11807896",
+              "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQF-DU2XbLjw2A/company-logo_400_400/company-logo_400_400/0/1661768338411/coalsoft_logo?e=1781136000&v=beta&t=bWg0Uu287IrJ2HV7yJGUZfL1B2kThYhK518lmSnO-5s"
+            }
+          }
+        ],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Michal",
+          "lastName": "Uhlir",
+          "occupation": "★ CEO @coalfamily | Expert na SAP Cloud a integrace. Se svým týmem pomáhám firmám přejít na nejmodernější SAPí řešení a osvojit si AI technologie. ★",
+          "id": "315130725",
+          "publicId": "michaluhlir",
+          "trackingId": "1VpA6et1RjaiAKoBfggZWQ==",
+          "profileId": "ACoAABLIg2UBgwycWWbhEKV3KHXgkDbs_oMUKnE",
+          "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEpp014DO9f6g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1547208440712?e=1781136000&v=beta&t=5NHt3Any26xazPaSbO_H_XXgtH_c_9Ch3tdwP_l1p6A",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGJaIRHZP6MXQ/profile-displaybackgroundimage-shrink_350_1400/B4EZh7rjyPGwAY-/0/1754421675078?e=1781136000&v=beta&t=_3CZVbiZAE8UjOE9NnEbBNqU51UAelvosvDeicbqxCE",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1698657986768,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7124677459861528576?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7124677459861528576%2C7124687988529278976%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287124687988529278976%2Curn%3Ali%3Aactivity%3A7124677459861528576%29",
+        "text": "To je zajímavé. Čekal bych, že o šikovné IT juniory se firmy poperou. :)",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Martin",
+          "lastName": "Schwarz",
+          "occupation": "LinkedIn specialista & web copywriter pro IT a fintech | Pomáhám firmám získat klienty na LinkedIn | Vyřeším za vás tuto síť od A do Z | Správa, konzultace i školení 🏆 Krajský finalista Živnostníka roku ⭐ 60+ referencí",
+          "id": "694617362",
+          "publicId": "martin-schwarz5",
+          "trackingId": "48aoRhXdSHubcKtLBB3QRg==",
+          "profileId": "ACoAAClnBRIBEVzNXYpVvhHsC0Y3lrzf-9WBkpQ",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEdL3veTSyuSw/profile-displayphoto-crop_800_800/B4EZjMq3mrHIAU-/0/1755780447230?e=1781136000&v=beta&t=U-99C3aYGA6SXtomQJGDiBpa6-cyxayeHl0yGqrtnT4",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEwJJFNf5MxOw/profile-displaybackgroundimage-shrink_350_1400/B4DZ5lANNOJwAU-/0/1779811013826?e=1781136000&v=beta&t=DI-uLRW8D36d9bQbvQN8cEqqGchqOlALj2_lfvmD-e0",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1698871436159,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7124677459861528576?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7124677459861528576%2C7125583260167942144%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287125583260167942144%2Curn%3Ali%3Aactivity%3A7124677459861528576%29",
+        "text": "Asi nejsem na seznamu uchazečů co?...",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Tomáš",
+          "lastName": "Cibulec",
+          "occupation": "Python vývojář s přesahem. 🐍",
+          "id": "399499541",
+          "publicId": "ypsilonxpython",
+          "trackingId": "+XbctFXmRd+V6tv6YiV68w==",
+          "profileId": "ACoAABfP4RUBhhqww_PQuiFQs580Isbr6ZqrqOg",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHxzColABuq3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1671205705078?e=1781136000&v=beta&t=YynyLwKnmF1yQVnk5INWHcB96M_Btdr9aeqx1LwcgsI",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHuts72Jn_yMQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1634794908162?e=1781136000&v=beta&t=S9UL0wy6v08ZrAb29xjudA5ltkEDpmZSh3rAld7B-jo",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1698657119822,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7124677459861528576?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7124677459861528576%2C7124684352294113280%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287124684352294113280%2Curn%3Ali%3Aactivity%3A7124677459861528576%29",
+        "text": "Firmy si po posledních pár letech (kdy byl v IT obří trend \"vychovej si svého juniora\") uvědomily, že když vezmou juniora, aniž by mu někdo zkušený dobrovolně věnoval dost času a energie, firmě to moc nepřinese a junior z toho dost možná bude tak akorát naštvaný a frustrovaný. Nedávno jsem o tom psala - https://www.linkedin.com/posts/knezkova_nem%C5%AF%C5%BEete-naj%C3%ADt-zku%C5%A1en%C3%A9-odborn%C3%ADky-vychovejte-activity-7095329301683650560-iV8j?utm_source=share&utm_medium=member_desktop\nBohužel nikdo teď moc neví, co se všemi nadšenými a často i schopnými juniory, co se teď věnovali vlastní rekvalifikaci.\nJe super, že se tomu věnujete a snažíte se pomoct! 😍 ",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Viktorie",
+          "lastName": "Knezkova",
+          "occupation": "🎶 🎶 🎶 HR in Tech",
+          "id": "131195870",
+          "publicId": "knezkova",
+          "trackingId": "/Egcrg0ZR4GHUOusnVzc8Q==",
+          "profileId": "ACoAAAfR494BeWJxoB2KfgN1ovIGqKg5DCy2lOQ",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D35AQFFx4dvFyre1g/profile-framedphoto-shrink_800_800/B4DZ38QOtrIEAg-/0/1778053606584?e=1780430400&v=beta&t=j0OtZ8GKubSNz2lu0RjzfdRFI4jp4yybf0SOfW8hcWg",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGSSL8BQuqy8Q/profile-displaybackgroundimage-shrink_350_1400/B4DZ2QTVoOJ0AY-/0/1776242482675?e=1781136000&v=beta&t=0DvaavU6T8kg9jJjnzPvjiJjrtHzk92XLYemxtFKzPI",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1698661127556,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7124677459861528576?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7124677459861528576%2C7124701161948872704%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287124701161948872704%2Curn%3Ali%3Aactivity%3A7124677459861528576%29",
+        "text": "My bychom mohli uplatnit nějakého šikovného studenta cca na 1/2 úvazku :-)",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Anna",
+          "lastName": "Cahová",
+          "occupation": "HR Business Partner with strong psychological background. I focus primarily on diagnostic and competency models, mainly in the fields of IT and online marketing.",
+          "id": "515478184",
+          "publicId": "annacahová",
+          "trackingId": "P1V1shbLQFyd2T2O7tLnHA==",
+          "profileId": "ACoAAB65kqgBFR97g5NvbU3olQ6YzGoI84FNe10",
+          "picture": "https://media.licdn.com/dms/image/v2/C4D03AQETohT2wO222w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1633408185705?e=1781136000&v=beta&t=MIir6NMFFNpskwNkXdWLf8b6InZ6yaMf6NHoSu59v1w",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHW4LzOj0hJ6w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1708800295896?e=1781136000&v=beta&t=GKh0CMLYPiBdd52SuPlTFUMUV0CdX6hrPpECQwUQFus",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1698869078369,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7124677459861528576?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7124677459861528576%2C7125573370875682819%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287125573370875682819%2Curn%3Ali%3Aactivity%3A7124677459861528576%29",
+        "text": "Fakt? 🤔",
+        "entities": [],
+        "pinned": false,
+        "author": {
+          "firstName": "David",
+          "lastName": "Petrla",
+          "occupation": "Entrepreneur",
+          "id": "193094146",
+          "publicId": "david-petrla-36a80054",
+          "trackingId": "t44O/EMzQQiMpcdmD8t2RQ==",
+          "profileId": "ACoAAAuCYgIBVAIva14i5bCwNfZkpbZBaTiI_b0",
+          "picture": "https://media.licdn.com/dms/image/v2/C5103AQFs-OXWZucovA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516765356307?e=1781136000&v=beta&t=yN1c4xGT_8J8Jrf933pApl5nliDmh3FFeJ3B7R3Mh4Q",
+          "distance": "OUT_OF_NETWORK"
+        }
+      }
+    ],
+    "reactions": [
+      {
+        "type": "APPRECIATION",
+        "profile": {
+          "firstName": "Ing. Dagmar",
+          "lastName": "Věčorková, EFA",
+          "occupation": "🤝 Pomáhám podnikatelským rodinám mluvit o budoucnosti | Rodinný tajemník podnikatele®",
+          "id": "441813580",
+          "publicId": "vecorkova",
+          "trackingId": "K7TDBwPKQ66o1Yz4eVhEIg==",
+          "profileId": "ACoAABpVikwB9KfqfIDMZ34afWY7Od40iXs5CWw",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEqyXSaDp8vXA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712058686355?e=1781136000&v=beta&t=APNSDEXqVReTX51UFipnVnhYSVRsyP7afy3Km5hQn3M",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHNZfYGMvusvQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712058528628?e=1781136000&v=beta&t=quZxsKnQeF7oac6eCWI-CO4lTLQCV9w0VLWnEmqWHbc"
+        }
+      },
+      {
+        "type": "APPRECIATION",
+        "profile": {
+          "firstName": "Renáta",
+          "lastName": "Novotná",
+          "occupation": "Marketingová specialistka | Projektová manažerka | PPC, Analytika, weby, sítě | Zakladatelka Surikata Surfcamp",
+          "id": "289776290",
+          "publicId": "novotnarenata",
+          "trackingId": "cLD+wXpkQgO+QUI88WiKtg==",
+          "profileId": "ACoAABFFoqIBSUwrpc60tR-iO1S6j399mJwNb7E",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E35AQE9u-E-rGjZzQ/profile-framedphoto-shrink_800_800/B4EZovgJnOKMAg-/0/1761733548824?e=1780430400&v=beta&t=SQSEcx9yRLrMg_yToZTnCSZOvjicouVX9laHANkYnNs",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGVcQb0LD9ERg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517905031536?e=1781136000&v=beta&t=_3SD7zX3kv6fTrGBiNK04waaDJh2kty2_E4NcTK2CGw"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Markéta",
+          "lastName": "L.",
+          "occupation": "Release coordinator",
+          "id": "1110958807",
+          "publicId": "markéta-l-b87083270",
+          "trackingId": "1SEhiVDnQJ2HGqfkSij0kA==",
+          "profileId": "ACoAAEI34tcBurYuw1MTQ30mRktmsdFW6W_xZdU",
+          "picture": "https://media.licdn.com/dms/image/v2/D5603AQGAkYIdJ5iuNw/profile-displayphoto-crop_800_800/B56Z0AGB5FHIAI-/0/1773823074835?e=1781136000&v=beta&t=9QroZjueYkDGzoli0vpGE-gBTHBWytpqPX7mX7M3rvU",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEF5IRBb4X4JA/profile-displaybackgroundimage-shrink_350_1400/B4DZx6TM75H4Ac-/0/1771578383362?e=1781136000&v=beta&t=PpGwFeUNk46EdVer5N0MI8-_5DOocT6pObbAXdKReT8"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Marek",
+          "lastName": "Srutka",
+          "occupation": "Retail Generali Česká pojištovna",
+          "id": "505296152",
+          "publicId": "marek-šrůtka-908280121",
+          "trackingId": "6neCn6pGTVyA6S3z3pHXNA==",
+          "profileId": "ACoAAB4eNRgBjNCzL7VNjHgDza3Du2gqrf5PXvo",
+          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGEIH-mM0ctew/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1600929980125?e=1781136000&v=beta&t=4BwZu4hH6s8PgCWkf_q312bFjcpkeCfC6Uuzi_OGw5o"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Petr",
+          "lastName": "Navrátil",
+          "occupation": "🎥🎬Videomaker | navolnenoze.cz/prezentace/petr-navratil",
+          "id": "731951598",
+          "publicId": "peetnavratil",
+          "trackingId": "DDOBnMSiQamE0bIXrsyjwA==",
+          "profileId": "ACoAACugse4BAjpuoanA93mPSTX6iELdhMdKFCo",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE3JVQUxRZ54Q/profile-displayphoto-crop_800_800/B4DZsDFfBYJ4AI-/0/1765283328882?e=1781136000&v=beta&t=hEObVH5RtKUdwfUbnS8cz6AhXbf3IfxVyRrsbhtA2jw",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEZaqdcpcLaig/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1727259878936?e=1781136000&v=beta&t=PST6HpRNO7Fi4LogbMkF862rfSqonyxuNEZLe968GcQ"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Filip",
+          "lastName": "Průdek",
+          "occupation": "Nefunguje mi to → Super, už to jede | Feed specialista & Customer Success @Mergado",
+          "id": "904009499",
+          "publicId": "filip-prudek",
+          "trackingId": "kxMmz2JjTq+4jcy//8Jftw==",
+          "profileId": "ACoAADXiFxsBDrfvLqXfc46dYlgCQklCaExwUMY",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFupO9P-a5bFw/profile-displayphoto-crop_800_800/B4DZ5JiGdVJYAM-/0/1779350139114?e=1781136000&v=beta&t=Iw5Hw9pEtYfXe0-wPQXIOnKKUFZqdaHEFcw06ySiAyI",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFct0esxDP2iw/profile-displaybackgroundimage-shrink_350_1400/B4DZ5JhtJBKAAU-/0/1779350033262?e=1781136000&v=beta&t=JkmSvMYWwXWWoFjbhRDQTIId6IpLExcH82QOIBlmb28"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Sandra",
+          "lastName": "Heinzová",
+          "occupation": "Junior Python Developer who is looking for first IT job opportunity. Not from Prague, but I can take a train :-)",
+          "id": "1057345779",
+          "publicId": "sandra-heinzova",
+          "trackingId": "jO0SHOy1TKOF8ZnT6kniZw==",
+          "profileId": "ACoAAD8F0PMB3ls8oo2W-xuzIAVJuEfCRdY-hRA",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E35AQG1buFj3WhkeA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1694802245870?e=1780430400&v=beta&t=fusEgUt_11yt7zzmpsMQKPa5dZEUZi_K8mSnnn9W3MU",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEzfOWccavLaw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1668792881502?e=1781136000&v=beta&t=sowza4P_dhmD_Xv-E7CUJWWQY6FwcDWUKBu1zvP9DNY"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Viet Duy",
+          "lastName": "Nguyen",
+          "occupation": "🚀 Marketing, Social Media, Project management, Creative 🚀",
+          "id": "769170107",
+          "publicId": "viet-duy-nguyen",
+          "trackingId": "i7gr5F/PT7urSkkeuIKECg==",
+          "profileId": "ACoAAC3YmrsBp9QZ4ut1JAliBFoNokwp2EDw3oQ",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGRFMGFVUg7mw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1691994023561?e=1781136000&v=beta&t=vWHG48hugEnyxZWL2vckmx9NSX9C_jrh4ViYsigHn4Q",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHMO_TEfputvw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1692203715746?e=1781136000&v=beta&t=TO7Fk5ilyil6_uAJ1zTNZlmRB6yWzogNqVWoFhiFaDE"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Tomáš",
+          "lastName": "Rejhon",
+          "occupation": "Pracuju na rozvoji Anety v Air Bank 💚 |AI, LLM, NLP, Automatiace & tech",
+          "id": "747019398",
+          "publicId": "rejhontomas",
+          "trackingId": "8tAxDS8oSSKJPtLMRLYwcg==",
+          "profileId": "ACoAACyGnIYBKujbIUDR3fH3kBHGPDAlv7v1LiI",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D35AQGug6KGMLHQ-w/profile-framedphoto-shrink_800_800/B4DZ0Gtb9IIoAg-/0/1773934067832?e=1780430400&v=beta&t=lA2kOBurJWtczK0riYqKVNlrxrpPkc1Ru_RjqpLFDBg"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Natalja",
+          "lastName": "Savčuk",
+          "occupation": "Junior Engineer",
+          "id": "1100985090",
+          "publicId": "natalja-savčuk",
+          "trackingId": "X0RAZYZ0TlmcNR0a20RgkQ==",
+          "profileId": "ACoAAEGfswIBxiM3YmZ6k_aAacOj7NucIudGuVQ",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEWqCMwWD0EFg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1677847888555?e=1781136000&v=beta&t=4hsanuOLCW9nMHMGtstg8dic1vXhJirV9gYBJinvU1c",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFoH-YqpZZOkw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1683796115800?e=1781136000&v=beta&t=_UWKy_u4XdN4UUz2KETxjgTFPqup2F8Legbv3A2JXVY"
+        }
+      }
+    ],
+    "numShares": 2,
+    "numLikes": 22,
+    "numComments": 20,
+    "canReact": true,
+    "canPostComments": false,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "CONNECTIONS_ONLY",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "firstName": "Lenka",
+      "lastName": "Kurová",
+      "occupation": "🧠Psychoterapeut a školní psycholog |✨Rozvíjím vaše talenty a naučím vás s nimi pracovat |🎓Průvodce na cestě k vaší vysněné kariéře |💃Umeniterapie.cz + Umenirozvoje.cz",
+      "id": "243717524",
+      "publicId": "lenka-kurová-29875469",
+      "trackingId": "zoEGsNj8T4ifjqmDjZ8bdg==",
+      "profileId": "ACoAAA6G1ZQByFc9zjTaQeNJADl240bKTxSzsNk",
+      "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHbqsGqEtGP8w/profile-displayphoto-crop_800_800/B4EZpsQGZAHMAI-/0/1762752753106?e=1781136000&v=beta&t=-SVxkf-tlC-57595TnyIPepxn8idC8qPGV_IC8g-BhM",
+      "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH-DtW1UbTUsA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1702414161291?e=1781136000&v=beta&t=T7adMhEN2h-Q74ghZyko8yAN0LjZ0Qrag1Kkx-wvZlk"
+    },
+    "authorProfileId": "lenka-kurová-29875469",
+    "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4E03AQHbqsGqEtGP8w/profile-displayphoto-crop_800_800/B4EZpsQGZAHMAI-/0/1762752753106?e=1781136000&v=beta&t=-SVxkf-tlC-57595TnyIPepxn8idC8qPGV_IC8g-BhM",
+    "authorType": "Person",
+    "authorName": "Lenka Kurová",
+    "authorProfileUrl": "https://www.linkedin.com/in/lenka-kurov%C3%A1-29875469?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAA6G1ZQByFc9zjTaQeNJADl240bKTxSzsNk",
+    "authorUrn": "urn:li:member:243717524",
+    "postedAtTimestamp": 1698655476537,
+    "postedAtISO": "2023-10-30T08:44:36.537Z"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7125133399010291712",
+  "url": "https://www.linkedin.com/posts/honzajavorek_doba-je-zl%C3%A1-pro-juniorn%C3%AD-aj%C5%A5%C3%A1ky-ur%C4%8Dit%C4%9B-activity-7125133399010291712-kgRm?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC29INoBu4UxIfyNnC3051th8thkLppPT1Y",
+  "timeSincePosted": "2yr",
+  "shareUrn": "urn:li:share:7125133396334288896",
+  "text": "Kdo aktuálně hledáte juniorní vývojáře nebo testery? Budu taky rád za tipy 🙂",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1698871488900,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7125133399010291712?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7125133399010291712%2C7125583481375457280%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287125583481375457280%2Curn%3Ali%3Aactivity%3A7125133399010291712%29",
+      "text": "A budou to firmy ochotné akceptovat i remote juniora?\n",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Slovak",
+      "author": {
+        "firstName": "Tomáš",
+        "lastName": "Cibulec",
+        "occupation": "Python vývojář s přesahem. 🐍",
+        "id": "399499541",
+        "publicId": "ypsilonxpython",
+        "trackingId": "+XbctFXmRd+V6tv6YiV68w==",
+        "profileId": "ACoAABfP4RUBhhqww_PQuiFQs580Isbr6ZqrqOg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHxzColABuq3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1671205705078?e=1781136000&v=beta&t=YynyLwKnmF1yQVnk5INWHcB96M_Btdr9aeqx1LwcgsI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHuts72Jn_yMQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1634794908162?e=1781136000&v=beta&t=S9UL0wy6v08ZrAb29xjudA5ltkEDpmZSh3rAld7B-jo",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1698846011601,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7125133399010291712?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7125133399010291712%2C7125476621842563073%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287125476621842563073%2Curn%3Ali%3Aactivity%3A7125133399010291712%29",
+      "text": "V GuideVision - ServiceNow Elite Partner, an Infosys company nabíráme také juniory. Ideálně pokud umí alespoň základy programování (ideálně JavaScript) a výhodou je práce s platformou ServiceNow. Pokud by tedy někdo měl zájem o práci v GuideVision tak mi dejte vědět a rád Vás/jej doporučím, případně přidám další info.",
+      "entities": [
+        {
+          "start": 2,
+          "length": 58,
+          "type": "COMPANY_NAME",
+          "company": {
+            "name": "GuideVision",
+            "universalName": "guidevision-servicenow-global-elite-partner-an-infosys-company",
+            "trackingId": "MzJSINQ3T/ShyYhcLz7hlg==",
+            "active": true,
+            "showcase": false,
+            "entityUrn": "urn:li:fs_miniCompany:4861506",
+            "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQHpxVmgLq13aw/company-logo_400_400/company-logo_400_400/0/1673086937766/guidevision___servicenow_elite_partner_an_infosys_company_logo?e=1781136000&v=beta&t=sKJ9a-RXbi6hw31bE9ZKIhEIbhZ5h7V4V18aQe2N1RE"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Pavel",
+        "lastName": "Mikeska",
+        "occupation": "❄️ Senior ServiceNow Consultant | CIS-IRM | CIS-HAM | CIS-SAM | CIS-DF | CIS-ITSM | CIS-SPM | CIS-PA | CIS-EM | CIS-APM | CAD | CSA | ITIL 4 | 8x Micro-Certification 🏆",
+        "id": "412311702",
+        "publicId": "pavel-mikeska",
+        "trackingId": "2KuJw9cASM6jltpjDzB0fA==",
+        "profileId": "ACoAABiTYJYBitGWsqClPxDaOSBTFT2JGTIDft4",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFvOy8Dq8Fseg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1607084457497?e=1781136000&v=beta&t=bQk5A6hWT3Bdt-WPMZcTeddgt-AvjP0_qJPh2DkLjKU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG5o6RJjNqH0Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1707951490734?e=1781136000&v=beta&t=ZNgddDtqMKl6tOh1tV47Lm9rI_wKgSEioRgK2QmSVk4",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1698824554662,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7125133399010291712?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7125133399010291712%2C7125386624917516289%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287125386624917516289%2Curn%3Ali%3Aactivity%3A7125133399010291712%29",
+      "text": "Dovolil bych si pohled trochu z jine stranky... doba je naopak idealni. Je cas na pripravu. Neco jako kdyz aerolinky prestaly brat druhe piloty, prestali logicky pribyvat kapitani. Ta potreba kvalifikovanych lidi nezmizela, jenom se odsunula do budoucna s vetsi nalehavosti. Ktery kandidat na pravou sedacku tehdy zatnul zuby a vydrzel (jak s pripravou, tak s hledanim), pozdeji se mu to vyplatilo",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Petr",
+        "lastName": "Přibil",
+        "occupation": "Global Sales Manager | Specialty Lubricants",
+        "id": "132002824",
+        "publicId": "petr-pribil",
+        "trackingId": "xU1lsr+hSxWkgmAUC/DKag==",
+        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEGdgqIgIpkzg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712250006297?e=1781136000&v=beta&t=UB9wEJule0NhB0lR0De_FtfePuW1Di0Vm80cYt1MqZU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFuvlBRuJNbjw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712250566915?e=1781136000&v=beta&t=8sCRHio1dDSnAp_oiaygmw7_1g4W1ce4YJV-kaJIK3M",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1698785380355,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7125133399010291712?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7125133399010291712%2C7125222315964981248%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287125222315964981248%2Curn%3Ali%3Aactivity%3A7125133399010291712%29",
+      "text": "https://agrp.dev\n\nkaždý rok otevíráme stáž pro minimálně 2 studenty / junior vývojáře\njunior dev na plný úvazek momentálně máme otevřenu java pozici. veškeré info na webu ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Jan",
+        "lastName": "Řehák",
+        "occupation": "HRM @ ATLAS GROUP | IT, Sales & Law",
+        "id": "536925710",
+        "publicId": "jan-rehak",
+        "trackingId": "3yNpus1tTUyNg+L5dtllhA==",
+        "profileId": "ACoAACAA1g4B1dt5zpkV3v57pxmke91sx_j2owI",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFRwaLQm0BfPQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1679923396806?e=1781136000&v=beta&t=JbSy0HFahKOE5U9cooR03ctmwCj5NyyNo_R7j4WPT8M",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHYlNQZGRtSLg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694689724495?e=1781136000&v=beta&t=tSsHFw-bcqJ1NhtPAVaU_ll6PEQ7PkPCaKsxbE0muTg",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Smutek",
+        "occupation": ".",
+        "id": "874130625",
+        "publicId": "heysmtk",
+        "trackingId": "jFnkY+gwTX2cmlZeUBdH/A==",
+        "profileId": "ACoAADQaLMEBIrh9ltBwzA5W3yIdE7GUyrZZDDI",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE7lm3Hp-Ow7A/profile-displayphoto-crop_800_800/B4EZetqacbHwAI-/0/1750965271998?e=1781136000&v=beta&t=HHNUqhvPKVUbzaQ8oqY61vz9BqbE1Zql5vuCSotuzCs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Filip",
+        "lastName": "Hrbček",
+        "occupation": "Junior Python Developer",
+        "id": "1146305547",
+        "publicId": "filip-hrbček-323a8b27b",
+        "trackingId": "1zWk3yTHRGqO7GwfkIr4Ww==",
+        "profileId": "ACoAAERTPAsBt_0oLu5LJHuAGfojigifHtfDhbo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQExNhksPQbIYA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1703885949443?e=1780430400&v=beta&t=0VXuKDh65nJRbb2jEcvbVaAmjTw80LiLmzH99t-LlfY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEUsERqMnwpKg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1703886161048?e=1781136000&v=beta&t=hA7XtLIUZMQvq8zZALIA7tXnQXcm9pnc6HADs5nVydI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Adam",
+        "lastName": "Bartůšek",
+        "occupation": "Software Engineer",
+        "id": "1164795037",
+        "publicId": "adam-bartůšek-251107286",
+        "trackingId": "/vHUTfSETROUEbjr1KutTA==",
+        "profileId": "ACoAAEVtXJ0BGpkzO7sIWGuqORW_oKv6mJeCokM",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG4ZyRlf4-Y6g/profile-displayphoto-shrink_800_800/B4EZUKooAbHcAg-/0/1739640177071?e=1781136000&v=beta&t=RT1-ahOq1grVaYSkerUQc41083jiG0q2rLZnBADqK14"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Mariana",
+        "lastName": "Štrajtová",
+        "occupation": "\"If you don't like the path you're on, start paving another one\" Dolly Parton",
+        "id": "595680921",
+        "publicId": "minamala93",
+        "trackingId": "iU795FTnR/imm1LTWz2AvA==",
+        "profileId": "ACoAACOBXpkB0P7IMwpCzAH6RgR-qhgieB5qFLI",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQEWYzf0DnSbEA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1738518165642?e=1780430400&v=beta&t=GeqBKqozI_oDEgeKQLZ1_W8zlIbY_qjS0JL2F_Cg8xU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGXKPcy826JCw/profile-displaybackgroundimage-shrink_350_1400/B4EZVa0y_gHgAY-/0/1740985545542?e=1781136000&v=beta&t=DHPojf2GWFTpSYjxwRiGXBZiE1vzJeknUdQXsf_OCHg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Heřmánková",
+        "occupation": "Attorney at Law & Software Tester",
+        "id": "334249431",
+        "publicId": "lenkahermankova",
+        "trackingId": "CuF/4JxVQDC4ds4X2TnM4g==",
+        "profileId": "ACoAABPsPdcB4LbjsreljuV2UthBDlw5jqIEoZY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFpQLdvFvQZRA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1702422127869?e=1781136000&v=beta&t=GmaXXpLyOPk38_4_RmbcoSV739xUz1ZVs0fM1W6BLy8",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQELW4crmqqMGg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1702422653506?e=1781136000&v=beta&t=4T3wBM-8fXFHUAKlN0KjIwrAI2oknkWWT2yBkhSoq4M"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lucie",
+        "lastName": "Tvrdíková",
+        "occupation": "AI & IT lektorka a konzultantka pro firmy i veřejnost | Už 9 let tvořím vlastní kurzy | Bez nereálných slibů a marketingového bullshitu",
+        "id": "66547908",
+        "publicId": "lucietvrdikova",
+        "trackingId": "OUy+cbaTTpmSWkkfX0IIjQ==",
+        "profileId": "ACoAAAP3cMQB6Z0KS11itMTIOss5Q1J0OCTXkaQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFbJu-rT_LRUg/profile-displayphoto-crop_800_800/B4EZp9X4XMKYAI-/0/1763040008398?e=1781136000&v=beta&t=zA3XisQSO_OitXZqlG1KkJFxQH5PuRiKWMSggJ7ktOM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGI8vLXYP6i0A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1683185081860?e=1781136000&v=beta&t=KztYZQz80jSf6UR1GJtsf64Wo7jUpJ1KewboqIa3MDw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marie",
+        "lastName": "Fardová",
+        "occupation": "QA / IT Operations / Application Support (L2/L3) | Incident & Problem coordination",
+        "id": "984876474",
+        "publicId": "marie-fardova",
+        "trackingId": "PHUCzZtVRHywPgJDmJmzig==",
+        "profileId": "ACoAADq0BboBQ_KRV4mEctJhGCkj367mI-MHLFY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGpqy3eY8Wbbg/profile-displayphoto-shrink_800_800/B4EZWaxg9FHMAc-/0/1742058427167?e=1781136000&v=beta&t=025Z9rtKzosbIpagcaUeEB5knCTBzLHHT9T05QhQT0g",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHotrNYEzxIQA/profile-displaybackgroundimage-shrink_350_1400/B4DZx3Ffj5IYAc-/0/1771524465350?e=1781136000&v=beta&t=f5frvT20llSmGDDZ1m40cp0BGRuLfBQeklJttekZLVo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michaela",
+        "lastName": "Ptáčková",
+        "occupation": "Absolventka Digitální akademie: Testování 2022 | Junior software tester | QA Engineer",
+        "id": "999903967",
+        "publicId": "mptackova",
+        "trackingId": "JcfDIyxETgaVkUVctcdd1w==",
+        "profileId": "ACoAADuZUt8BzIgzLHg815Y9MFU9-IYjnMmzrb0",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEMRC6NI8GiNQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1662881938054?e=1781136000&v=beta&t=BxgRPVabsV4vnNoiadYVfoB7_Yn2M4q2U8o1JNc7k44",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHQoN0mnpq3UA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1676615841994?e=1781136000&v=beta&t=8aNJE1gdtppFwv5y9daPDftIO8TkOtQ7OZiqfRRNW-I"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Šušolová",
+        "occupation": "Junior SW Tester / Nadšená objevovatelka softwarového testování. V minulosti pečlivá kurátorka muzejních sbírek a trpělivá lektorka dětských skupin se zaměřením na přírodu. Chuť a radost z učení se novým věcem.",
+        "id": "1085425560",
+        "publicId": "jana-šušolová-96060b263",
+        "trackingId": "FfNPfmpZQWeTnZbu9hz0GQ==",
+        "profileId": "ACoAAECyR5gBuwMHtirl4_LMyN2Qf0sYzpsrvGE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGXTAI4pzvdXg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1698043846522?e=1781136000&v=beta&t=Z4IQwBcdFzoTcUkHz09fW0_UQP3SrHOv-HzhFZ6fSVs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Cibulec",
+        "occupation": "Python vývojář s přesahem. 🐍",
+        "id": "399499541",
+        "publicId": "ypsilonxpython",
+        "trackingId": "8z9/uMDuS3elrKmNqV+IEQ==",
+        "profileId": "ACoAABfP4RUBhhqww_PQuiFQs580Isbr6ZqrqOg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHxzColABuq3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1671205705078?e=1781136000&v=beta&t=YynyLwKnmF1yQVnk5INWHcB96M_Btdr9aeqx1LwcgsI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHuts72Jn_yMQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1634794908162?e=1781136000&v=beta&t=S9UL0wy6v08ZrAb29xjudA5ltkEDpmZSh3rAld7B-jo"
+      }
+    }
+  ],
+  "numShares": 3,
+  "numLikes": 20,
+  "numComments": 4,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "tOic8QjRQWuFLsNWMn81+Q==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1698764180901,
+  "postedAtISO": "2023-10-31T14:56:20.901Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

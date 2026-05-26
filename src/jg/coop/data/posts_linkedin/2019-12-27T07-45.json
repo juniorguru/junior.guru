@@ -1,0 +1,63 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:8525471427224079023",
+    "url": "https://artalk.cz/2019/04/30/andreas-gajdosik-casto-slychavam-otazku-co-je-na-tom-za-umeni/",
+    "title": "Andreas Gajdošík: Často slýchávám otázku „Co je na tom za umění?“ - Artalk.cz"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6616232289028317184",
+  "url": "https://www.linkedin.com/posts/honzajavorek_andreas-gajdo%C5%A1%C3%ADk-%C4%8Dasto-sl%C3%BDch%C3%A1v%C3%A1m-ot%C3%A1zku-activity-6616232289028317184-Nkt5?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFgzka0BiNONQEez3CYZvIxpM_Au6YEO6r0",
+  "timeSincePosted": "6yr",
+  "shareUrn": "urn:li:share:6616232288508235777",
+  "text": "Je umění programovat? Jak kdy! Andreas je umělec, aktivista, experimentální hudebník a amatérský pedagog na brněnské FaVU. Nově i držitel Ceny Jindřicha Chaloupeckého za jeho umělecké projekty, které vytvořil programováním. #juniorguru",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ladislav",
+        "lastName": "Prskavec",
+        "occupation": "Staff Engineer at Everpure (formerly Pure Storage, Inc.)",
+        "id": "6413396",
+        "publicId": "ladislavprskavec",
+        "trackingId": "XXcO8lwRRMKvy1K3sYPY8w==",
+        "profileId": "ACoAAABh3FQBjDcRIsKdGUqUWVVxs45nmvivIO4",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQH74zpN5N3LhQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516250709565?e=1781136000&v=beta&t=4858H9zBGZBF9O86nNt-xKvWRcvX0_fxZw1SXlZ1pFI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEcA07Jof8U1g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1614695743264?e=1781136000&v=beta&t=4Vqk30uOrg7FpjokcbA7vXMhQG5LWLueu6rpGGxkufE"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 1,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "7xoDwwTgSqumOdJ2ljR49w==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1577432701356,
+  "postedAtISO": "2019-12-27T07:45:01.356Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

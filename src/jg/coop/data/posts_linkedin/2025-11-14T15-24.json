@@ -1,0 +1,103 @@
+{
+  "type": "article",
+  "article": {
+    "type": "FIRST_PARTY",
+    "urn": "urn:li:linkedInArticle:7395119312031883264",
+    "url": "https://www.linkedin.com/pulse/t%25C3%25BDdenn%25C3%25AD-pozn%25C3%25A1mky-prototyp-seznamu-kandid%25C3%25A1t%25C5%25AF-honza-javorek-2e1le?trackingId=nWhD3GMfSze5df0syznHdw%3D%3D",
+    "title": "Týdenní poznámky: Prototyp seznamu kandidátů",
+    "description": "Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Od posledních poznámek už utekl nějaký ten týden (7. 11. až 14. 11.), tak nastal ča",
+    "largeImage": "https://media.licdn.com/dms/image/v2/D4E12AQGXYAiqm99AIA/article-cover_image-shrink_600_2000/B4EZqC97RuKkAQ-/0/1763133864148?e=1781136000&v=beta&t=QSIsjMCTMhYPsWycSvQj5VBdeknFNAEkuNmpYVVBy08"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7395119465916477440",
+  "url": "https://www.linkedin.com/posts/honzajavorek_t%C3%BDdenn%C3%AD-pozn%C3%A1mky-jak-se-mi-da%C5%99%C3%AD-v-jednom-activity-7395119465916477440-7Tfv?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAABL5MR4BbvNVQaUg3aNaYUnv4mANMSmfvjM",
+  "timeSincePosted": "6mo",
+  "shareUrn": "urn:li:ugcPost:7395119465325142016",
+  "text": "Týdenní poznámky! Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Tentokrát je to na 9 min čtení 🧐",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Erbenova",
+        "occupation": "Application Developer at Barclays",
+        "id": "361531956",
+        "publicId": "lenkaerbenova",
+        "trackingId": "kuA2yjMcTRSfcXW3phK5Pw==",
+        "profileId": "ACoAABWMijQBlQzoTAse2JjfcJmbjz4dAQnIsQs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Táňa",
+        "lastName": "Váchová",
+        "occupation": "📌 administrativa ⊃ podpora ⊃ empatie",
+        "id": "1399848350",
+        "publicId": "tanavachova",
+        "trackingId": "bMznljztRx2DRU6cd2J1rQ==",
+        "profileId": "ACoAAFNv_Z4BxskkxA5XZSQetiT0HKCBk4rbPGE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEz0Qt_OrK3hw/profile-displaybackgroundimage-shrink_350_1400/B56ZYgY6umGsAY-/0/1744300126333?e=1781136000&v=beta&t=YPGk-qT3cabItnu7JC4qXQNR753dEMOdF4a3L8478w8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marina",
+        "lastName": "Pavolová",
+        "occupation": "Junior Software Developer | Salesforce / LWC | JavaScript | OOP",
+        "id": "653714353",
+        "publicId": "marina-pavolova",
+        "trackingId": "pm0/xLF6QRCM4dJoZEvoNQ==",
+        "profileId": "ACoAACb247EBG6_msKvf0COjMAyxTnEGHvQvKos",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQH3i8IHKfG8QA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1725100113554?e=1780430400&v=beta&t=28ny8za1HfalMS_xsVRYvykbgaM9QOdIwAlcVxaCEko"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Čamborová",
+        "occupation": "Frontend developer",
+        "id": "1082522617",
+        "publicId": "veronika-čamborová",
+        "trackingId": "lKPPAIKmQhyBGswoyddx8A==",
+        "profileId": "ACoAAECF-_kB69byXoaMHs_qzffiv1hqdN_aZ0U",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFUjZU0TnIoDA/profile-displayphoto-crop_800_800/B4EZjiUS3QIQAI-/0/1756143629052?e=1781136000&v=beta&t=Vgp7eKeI7po7f5wp-stiue0AiSNunEMeSGoT97xMD6E",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFxWpb5YjUyXg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1719347690741?e=1781136000&v=beta&t=4W3hjSrkexs3xxWQhO40-vgepTrcUhV01AfgDioP2t4"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 4,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "SACIvmwcQGOPuxPtRkv3Lg==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1763133875350,
+  "postedAtISO": "2025-11-14T15:24:35.350Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

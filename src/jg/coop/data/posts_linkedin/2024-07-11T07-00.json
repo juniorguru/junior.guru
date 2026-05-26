@@ -1,0 +1,335 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/D4E22AQGsY5vsULQewQ/feedshare-image-high-res/feedshare-image-high-res/0/1720513432224?e=1781136000&v=beta&t=UIJPErZNQvQjBEFlXaPemNp77aWTS9o7myLABCky-6A"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:7217060115537870848",
+  "url": "https://www.linkedin.com/posts/honzajavorek_react-recruitment-activity-7217060115537870848-I-Gw?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC9IwucBOlZAtkMcXzxvWRMowT5oiXMZAvE",
+  "timeSincePosted": "1yr",
+  "shareUrn": "urn:li:share:7216356375851905024",
+  "text": "Tak tohle vidím v požadavcích inzerátu poprvé: „Aktivní členství v klubu junior.guru“ 🤯\n\nTo vypadá, že ten můj projekt začíná mít nějaké jméno. Lidi, kteří na sebe během změny kariéry nechávají působit klub, jsou zjevně vnímaní jako kvalitní juniorní kandidáti 💪\n\nJe to v téhle nabídce práce od Martin Wenisch. Nabízí i mentoring nebo minimální důstojnou mzdu. Pokud umíte #React, mrkněte na to! ⚛️\n\nA pokud děláte #recruitment, mrkněte na to taky a inspirujte se: https://lnkd.in/e2Fi4qq5",
+  "attributes": [
+    {
+      "start": 295,
+      "length": 14,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Wenisch",
+        "occupation": "Senior Software Engineer",
+        "id": "140017332",
+        "publicId": "mwenisch",
+        "trackingId": "C5EUIB2dRNeXPt7NTzfTYQ==",
+        "profileId": "ACoAAAhYfrQB_PfnP77TNy12rVIgZaSg4ntxNQI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQExa7PgQIUDdA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1699636955431?e=1781136000&v=beta&t=FQxvHhXoo_oA5O9GTjlk1LPmxQyTQ3RjD2K7hZw908Y"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1721219637263,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7217060115537870848?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7217060115537870848%2C7219318409447051265%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287219318409447051265%2Curn%3Ali%3Aactivity%3A7217060115537870848%29",
+      "text": "Ja bych to uvedl spis jako moznou vyhodu, nez jako pozadavek, ale pokud si mohou vybirat... o projektu to samozrejme vypovida pozitivne, ale zbytecne bych nezaviral dvere tem ostatnim. Aby se k vam pak lidi nehlasili jen kvuli tomu \"razitku\".",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Vojta",
+        "lastName": "Hordějčuk",
+        "occupation": "The Father of Software",
+        "id": "62423424",
+        "publicId": "vohocz",
+        "trackingId": "wKpgTcufROaLIJheK58V7g==",
+        "profileId": "ACoAAAO4gYABioFXsmShW_uvboNoTFqWF4XYFBk",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGyZO7p_PZOow/profile-displaybackgroundimage-shrink_350_1400/B4EZULolK8HUAY-/0/1739656955266?e=1781136000&v=beta&t=K2A9gQC74a0GOohzxCEN4rCTfeWL40iJrFbCrdQGGdc",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1721216008421,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7217060115537870848?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7217060115537870848%2C7219303188980473856%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287219303188980473856%2Curn%3Ali%3Aactivity%3A7217060115537870848%29",
+      "text": "Tbh, hrozně projektu fandím, ale ten inzerát je mi docela nepříjemný. I přes známost projektu bude spousta juniorů kteří se realizovali jinde, třeba v zahraničních skupinách.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Kateřina",
+        "lastName": "Churanová",
+        "occupation": "Senior Rust developer at Microsoft",
+        "id": "576548350",
+        "publicId": "kate-shine",
+        "trackingId": "DZpCuGihQ8uhq/XGk7LbGg==",
+        "profileId": "ACoAACJdbf4BaTxTKQN6S0dVGMYWxsSK-kLvlfk",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1721215220715,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7217060115537870848?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7217060115537870848%2C7219299885102092289%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287219299885102092289%2Curn%3Ali%3Aactivity%3A7217060115537870848%29",
+      "text": "To působí, že se z edukativního a komunitního projektu stává sekta, když už začíná být členství podmínkou pro přístup k některým pracovním pozicím.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Pavel Grumpy",
+        "lastName": "Šimerda",
+        "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
+        "id": "551084893",
+        "publicId": "grumpyprogrammer",
+        "trackingId": "jT4fost9Rb2vbkq4Iall+Q==",
+        "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1720710750578,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7217060115537870848?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7217060115537870848%2C7217183983992762368%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287217183983992762368%2Curn%3Ali%3Aactivity%3A7217060115537870848%29",
+      "text": "To vypadá na vážně super nabídku. Doslova šitá na míru juniorovi bez zkušeností. :))\n",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Patrik",
+        "lastName": "Brnušák",
+        "occupation": "Otevřen novým příležitostem",
+        "id": "666440295",
+        "publicId": "patrik-brnusak-cz",
+        "trackingId": "H5FFtJZxTz6XF3WDPsyHkA==",
+        "profileId": "ACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1720690018631,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7217060115537870848?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7217060115537870848%2C7217097027900362753%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287217097027900362753%2Curn%3Ali%3Aactivity%3A7217060115537870848%29",
+      "text": "\"Co mám z člen­ství v klubu jako pro­fe­si­o­nál(ka) na vol­né noze?#\nKro­mě ko­ná­ní dob­ra mů­žeš klub na­pl­no...\" a pak jsem přestal číst.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Jan",
+        "lastName": "Švehlák",
+        "occupation": "SDET",
+        "id": "40625426",
+        "publicId": "jansvehlakqa",
+        "trackingId": "Yqszy1tNSi6939p0cWBRrA==",
+        "profileId": "ACoAAAJr5RIBxBfr3rSyigb0hSG2YFOQdh7vYaE",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1720687379601,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7217060115537870848?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7217060115537870848%2C7217085959006216194%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287217085959006216194%2Curn%3Ali%3Aactivity%3A7217060115537870848%29",
+      "text": "\"Začíná mít jméno\"? Já myslel, že bez junior.guru se už žádný nový aspirující ajťák neobejde.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Jakub",
+        "lastName": "Dvořák",
+        "occupation": "Dvořák & Zedník Wealth Management | Rozbité prasátko | Book Author | Podcast Host | ex-Data scientist",
+        "id": "446728226",
+        "publicId": "dvoorajak",
+        "trackingId": "6DNdmcZsT3KGAyOB8ERlZA==",
+        "profileId": "ACoAABqgiCIBGae91KbE1yHZSbzOLo87v5ifelI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHQF2j4rhco6w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1666640098888?e=1781136000&v=beta&t=fuo_gPjUOCdidQ8r-umsHaF8sKCHtA_TVIanFZCXEz4",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1720685020711,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7217060115537870848?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7217060115537870848%2C7217076065108643841%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287217076065108643841%2Curn%3Ali%3Aactivity%3A7217060115537870848%29",
+      "text": "Za tohle tleskám, inzerát jak má být 😀 Sen každého juniora/switchera. Řekla bych, že splňuju všechno, až na tu nejzásadnější věc - React + TypeScript. 😀",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Pavla",
+        "lastName": "Beránková",
+        "occupation": "PHP programátorka",
+        "id": "549611439",
+        "publicId": "berankova-pavla",
+        "trackingId": "AcW++O7+TqW1XoAbTJdf7g==",
+        "profileId": "ACoAACDCZ68BhDuYokjdegYmFm0rxSx_6Mlwh9c",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHFjlgP9iU-Fw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0B6o8_KUAc-/0/1773853643504?e=1781136000&v=beta&t=s18xkVLJd-f21PM-R-ZSZaCgq-ojo7xkrzQ5x6cYHoE",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1720682718245,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7217060115537870848?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7217060115537870848%2C7217066407862157313%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287217066407862157313%2Curn%3Ali%3Aactivity%3A7217060115537870848%29",
+      "text": "mě tam mimo jiné oslovila zmínka o \"aktivním učení se angličtiny\", nic co by hned zavíralo dveře 🚪 kandidátům bez pokročilejších znalostí 🙂. Tak i tuto zmínku vidím 👀 poprvé.\nSamozřejmě, pokud by šlo o nabídku v mezinárodním týmu/projektu, kde je AJ na denním pořádku, to je věc jiná.\nAle mě jako aktivně učící se AJ 🇬🇧 tohle zahřálo u srdíčka ❤️.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Vendula",
+        "lastName": "Krajíčková",
+        "occupation": "Frontend vývojářka 🚀 | React, TypeScript, Next.js | Modrý duch kódu @BlueGhost 👻💙",
+        "id": "1145616814",
+        "publicId": "vendula-krajickova",
+        "trackingId": "BXL+3RH6QYKV1uLCVyphMw==",
+        "profileId": "ACoAAERIua4Bk44zfiGE6PT1BmSNoKdqiNkFOYc",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEbmPU9yPivLA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1687407209461?e=1781136000&v=beta&t=NoCy2Xx-Zc2-_WzGhO9ETCyqzzAvmczh02wGrTi73vc",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petra",
+        "lastName": "Sedlackova",
+        "occupation": "Project & Data Strategy Leader | Connecting Public Sector + Tech | Driving Impactful Digital Transformation || ((ale především pracující máma, žena v politice a IT, a stále trochu šokovaná chovatelka dvou koček ;) )",
+        "id": "106539772",
+        "publicId": "petra-sedlackova-",
+        "trackingId": "jMS46/G4Rg+O0MrJYzlZoQ==",
+        "profileId": "ACoAAAZZqvwBP60epsGOOXDwoA7ZiwwZsJYLQr0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFmyaQaDXZP3g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1639585284652?e=1781136000&v=beta&t=8zKEY76LRNfqGd3K-luLq4rS6ZQ_EtIshBje0AS5r2E"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Barbora",
+        "lastName": "S.",
+        "occupation": "exploring what’s next",
+        "id": "305348259",
+        "publicId": "barborastrihova",
+        "trackingId": "HF2RQm7tTlqnYz/FSLcvDA==",
+        "profileId": "ACoAABIzPqMBs2d9upcz_z9_XombRLHaCjfppAM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQFxq6gvgDSk9A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1563859475354?e=1781136000&v=beta&t=lu6z5YDvZGqtPFfpY_QfDj-Nv3meUk9utE2NG80vHOA"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Iva",
+        "lastName": "Fischerova",
+        "occupation": "QA Engineer @ Direct Fidoo",
+        "id": "489292654",
+        "publicId": "iva-fischerova",
+        "trackingId": "iqjW0EBST2Kl6XBKUY6J7A==",
+        "profileId": "ACoAAB0qA24BEF9ibeAjR_9z_gQpBQVBYZDB4fU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Smutek",
+        "occupation": ".",
+        "id": "874130625",
+        "publicId": "heysmtk",
+        "trackingId": "HQ4aBmiDRHKoKOO+Xe7fHA==",
+        "profileId": "ACoAADQaLMEBIrh9ltBwzA5W3yIdE7GUyrZZDDI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Klečanský",
+        "occupation": "Programátor ve společnosti Systemist/KP-SYS",
+        "id": "681892347",
+        "publicId": "pavelklecansky",
+        "trackingId": "IRe6qX7vS2m63YFJUYvoJQ==",
+        "profileId": "ACoAACik2fsB17TAA7Z5SodX6iV8wp3y2hYO8Kc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Červinka",
+        "occupation": "Python developer and lecturer",
+        "id": "355842259",
+        "publicId": "jakub-červinka",
+        "trackingId": "x9fpZxH7SkK5S66ThfgHuQ==",
+        "profileId": "ACoAABU1uNMBxEkN7xMohKuhfytB97ZjK-tfEKo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFo1b8_EZuWVQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728056593822?e=1781136000&v=beta&t=NEwZVdMdQqj1rM46MtdnZQjC4bxHXipuncawNthkvSU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "trackingId": "2/aEfo82QXKLzq25rhs58g==",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Bouchner",
+        "occupation": "Senior Software Engineer | CTO - Zenamu",
+        "id": "145678886",
+        "publicId": "janbouchner",
+        "trackingId": "IXWpeMBLRYSNFRcJBNIoOQ==",
+        "profileId": "ACoAAAiu4iYBKrPdapJp0qHAnH70fC4-BPyj0y0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFGSr3vvWAoUQ/profile-displaybackgroundimage-shrink_350_1400/B4EZY2G96jHgAY-/0/1744664522736?e=1781136000&v=beta&t=PUTsuAisGJ-JH1fDqRWcX_thJd5_-n6mR-QEqgikwdQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Patrik",
+        "lastName": "Šubjak",
+        "occupation": "💻 Tvorba webov, e-shopov, SEO, PPC | 🌐 Web Developer & E-commerce Specialist | 🤝 Freelancer",
+        "id": "1056288463",
+        "publicId": "patriksubjak",
+        "trackingId": "IpxQcNpcQ0yjH8CINS/j1g==",
+        "profileId": "ACoAAD71rs8BBDyOD-1eADFTHCsmoaPGaUmTYnM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFkPj_E-Z6X7w/profile-displaybackgroundimage-shrink_350_1400/B4EZqdh1rxKoAY-/0/1763579485740?e=1781136000&v=beta&t=GhAzv-4bs_hgpVfNpmk4AsVJRqamYgGj3FsjwdOUJJk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Markéta",
+        "lastName": "Vyskočilová",
+        "occupation": "Vybuduji vaší firmě udržitelný systém vzdělávání 🟡 HR konzultant a lektor @ICT Pro 🟡Navrhnu a zorganizuji vám soft skills program na míru 🟡Psychodiagnostika Thomas International 🟡Koučink & Mentoring",
+        "id": "438512099",
+        "publicId": "marketavyskocilova",
+        "trackingId": "wx9yHIY1THy55JWrIeZ4lA==",
+        "profileId": "ACoAABojKeMBBI6D_5s02oW1Zs7u2v4l5ifhuFg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFyNEZITugQvA/profile-displaybackgroundimage-shrink_350_1400/B4DZhaKSBFHAAY-/0/1753859302029?e=1781136000&v=beta&t=2idyFiTyFQvx4eUdYHELvbwA7mowSYYDcPggH_UkRjs"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 96,
+  "numComments": 15,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "kEB+UnBJQ4iyZiLqKBA7zg==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1720681218037,
+  "postedAtISO": "2024-07-11T07:00:18.037Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

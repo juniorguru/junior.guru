@@ -1,0 +1,470 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "type": "document",
+    "document": {
+      "coverPages": [
+        "https://media.licdn.com/dms/image/v2/D4E1FAQFXiloPUx7Amw/feedshare-document-cover-images_1920/feedshare-document-cover-images_1920/0/1693221362070?e=1780430400&v=beta&t=Q-nci708lU1kQDgtmwpls7iHCy_FbG5OWPDqjwC1yAA",
+        "https://media.licdn.com/dms/image/v2/D4E1FAQFXiloPUx7Amw/feedshare-document-cover-images_1920/feedshare-document-cover-images_1920/1/1693221362070?e=1780430400&v=beta&t=Iwlns0pmCvIErT-2Y33dP8J4lNFIqAlmINSpX5RsTZQ"
+      ],
+      "title": "Honza Javorek",
+      "totalPageCount": 2
+    },
+    "isActivity": false,
+    "urn": "urn:li:activity:7101888196623355905",
+    "url": "https://www.linkedin.com/posts/frontendisti_honza-javorek-activity-7101888196623355905-LsGW?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFgzka0BiNONQEez3CYZvIxpM_Au6YEO6r0",
+    "timeSincePosted": "2yr",
+    "shareUrn": "urn:li:ugcPost:7101888195809656832",
+    "text": "❓ Jak najít juniory, kteří mají potenciál rychle růst?\n❓ Jaké jsou konkrétní benefity juniorů pro tým programátorů a pro firmu jako takovou?\n❓ A co dělat, nebo čeho se naopak vyvarovat, aby naše investice nevyšla vniveč?\n\n𝗝𝘂𝗻𝗶𝗼𝗿̌𝗶 v týmu jsou investice, která bude něco stát, ale v dlouhodobém horizontu se může vyplatit. 𝗛𝗼𝗻𝘇𝗮 nám ve své přednášce poradí, jak na to. 💡\n\n🎤 Původně programátor, dnes už spíš podnikatel. Honza Javorek je tvůrcem Junior Guru, projektu pro začátečníky v programování, a dlouhodobý dobrovolník v české #Python komunitě. Byl u začátků projektů jako 𝗠𝗲𝗿𝗴𝗮𝗱𝗼, 𝗞𝗶𝘄𝗶.𝗰𝗼𝗺, nebo 𝗣𝗲𝘅, krásné chvíle prožil v 𝗔𝗽𝗶𝗮𝗿𝘆.\n\nPotkej Honzu na #FrontKon - už za pár týdnů!",
+    "attributes": [
+      {
+        "start": 419,
+        "length": 13,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "trackingId": "nsbodhT5Tsas3fymTKwaiw==",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+        }
+      },
+      {
+        "start": 444,
+        "length": 11,
+        "type": "COMPANY_NAME",
+        "company": {
+          "name": "Junior Guru",
+          "universalName": "juniorguru",
+          "trackingId": "wNOJPM+hRNebeZlZYKxabg==",
+          "active": true,
+          "showcase": false,
+          "entityUrn": "urn:li:fs_miniCompany:26218444",
+          "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQE89NmYF-XT4g/company-logo_400_400/company-logo_400_400/0/1638266899010/juniorguru_logo?e=1781136000&v=beta&t=ad516CNUThMN8eXeVboC5S9U_y2Dnn1UhQn70wIGlxE"
+        }
+      }
+    ],
+    "comments": [
+      {
+        "time": 1693225492154,
+        "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7101888195809656832?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7101888195809656832%2C7101902454639718400%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287101902454639718400%2Curn%3Ali%3AugcPost%3A7101888195809656832%29",
+        "text": "Tak na toto se hodne tesim! 👏👏👏",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Slovak",
+        "author": {
+          "firstName": "Jan",
+          "lastName": "Meissner",
+          "occupation": "Product & Tech Community Lead at Mews",
+          "id": "677292059",
+          "publicId": "jan-meissner",
+          "trackingId": "gPk5tIzzTL6LjYFP6ywJFw==",
+          "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEEoMbY9urW6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728030316222?e=1781136000&v=beta&t=qIshYYWgkzBRoJGlT6oqlmeH3jlRiX8J_luFzaICydQ",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGei_PMH8ghyw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728030258130?e=1781136000&v=beta&t=GS9HgAFTdCMh-1xFx2xIDoLH91oMpSioaV6pV2ayQSY",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1693223874502,
+        "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7101888195809656832?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7101888195809656832%2C7101895669715492864%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287101895669715492864%2Curn%3Ali%3AugcPost%3A7101888195809656832%29",
+        "text": "www.frontkon.cz",
+        "entities": [],
+        "pinned": false
+      }
+    ],
+    "reactions": [
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Nikola",
+          "lastName": "Kujundžič",
+          "occupation": "Founder & CEO @Nezapadni",
+          "id": "1043613050",
+          "publicId": "nikola-kujundžič-8a2606251",
+          "trackingId": "uPJNgD00T5KjYWvtEfROJQ==",
+          "profileId": "ACoAAD40RXoBeWnEU2AULR3Wr8wtheznwDq0TQ4",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGFC9LUyxlJmA/profile-displayphoto-crop_800_800/B4EZoWqUGuHEAM-/0/1761316783195?e=1781136000&v=beta&t=HVA2cd3WbWmzCKqJ-EvuMbOM-TEfYoyP6uwVRMX-oBE"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Stanislav",
+          "lastName": "Novák",
+          "occupation": "Vývojář softwaru ve společnosti 1. PF",
+          "id": "206641094",
+          "publicId": "stanislav-novak-cz",
+          "trackingId": "zXxBus0PS/CO1Cxd27Uq9A==",
+          "profileId": "ACoAAAxRF8YBKD7C2X-4dcDsMKc3spP-NUAqt6Y",
+          "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGT5D-ZJa7MKg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1521487188497?e=1781136000&v=beta&t=vui-E7eKXqhnj4B1S6N537XaRce-WE9saJOTk7zyZ5o"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Denisa",
+          "lastName": "Adamcová",
+          "occupation": "Test Automation Engineer | Playwright | Coach at Czechitas",
+          "id": "663230550",
+          "publicId": "denisa-adamcova",
+          "trackingId": "y+WtWLzvStGDwhK2+Cv+4A==",
+          "profileId": "ACoAACeIGFYBWteXbpyiOkw1l0_zZZ5IUyzF-y0",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHQeyVJrVhDTg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1676995709226?e=1781136000&v=beta&t=BPCL0XmCnKu9mOinNujdkdf53-2SkBMFD8hPcytHb70",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEDSoMRvWhICQ/profile-displaybackgroundimage-shrink_350_1400/B4EZr4tqcuHUAY-/0/1765109312003?e=1781136000&v=beta&t=JcVG-68vDhcmMZB7j8uj2z_vJAKskN076maJDFHk0ok"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Michaela",
+          "lastName": "Trčková",
+          "occupation": "Software Engineer (React, TypeScript) | making scalable and efficient software && open mind, curious spirit, adventurous heart",
+          "id": "996152950",
+          "publicId": "michaela-trckova",
+          "trackingId": "w0/2cImjSNCibbTY3+RojA==",
+          "profileId": "ACoAADtgFnYBmYEyWRy15V_gJ4FmfA16vqg7j0I",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFBd1HSidF0CQ/profile-displayphoto-crop_800_800/B4DZ3OCp2nI8AI-/0/1777278297769?e=1781136000&v=beta&t=h6kbje1FtoYFVmhdGMwTMQGQWGYTO-e5hYfPj-0tUDA",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGjt-yXV21GLA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1677663075139?e=1781136000&v=beta&t=FWU3ro4NT8xs40Oa3v3RNh75Vhh1AXNOaRfNy6UvWqs"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Thu Thuy",
+          "lastName": "Mai",
+          "occupation": "IT Roles | Programming & Web Background",
+          "id": "113305173",
+          "publicId": "tthuymai",
+          "trackingId": "dgPSHh1mQgCGVUVWKibg0Q==",
+          "profileId": "ACoAAAbA5lUBiWfC1CDOrzRQzkgA-5YVgXkgCiM",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E35AQGy7vR8tfZmmw/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1654596789933?e=1780430400&v=beta&t=Xc3_fwK3Di8X_5NQXFNqnKxG-WrXajqcrZT3Ds2vz4g"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Veronika",
+          "lastName": "Machackova",
+          "occupation": "Full Stack developer at Zuuvi",
+          "id": "455983471",
+          "publicId": "vermach",
+          "trackingId": "QEU2S5+CQMW5NUNdZZTCsA==",
+          "profileId": "ACoAABstwW8BquaV7G2dgMiCPjBwvsffEzY342g",
+          "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEuv70XOKESNA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638910506508?e=1781136000&v=beta&t=K5ZxYcWAnHEK1sScAjuFBsjYWv0uYZZp_BrDc6GvM48",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF3HGMhHtSQwg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728551734586?e=1781136000&v=beta&t=layciqGRwg6XAn7ZE-qKNuUhK5tgdM6pdsPehzC0rJ0"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Michal",
+          "lastName": "Blažek",
+          "occupation": "C#, Java, .NET, Spring, React",
+          "id": "1029021418",
+          "publicId": "michal-blažek",
+          "trackingId": "L1SEnx/BR6WPUGxWLZhLKw==",
+          "profileId": "ACoAAD1VnuoBAf1kiCswYJAOYNtpxUnSLnW32PU",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHevqOQriKEmA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1691867551913?e=1781136000&v=beta&t=nUQK410TJ4hq9eEbM5cGm1HrV2JCSXDaCgKSDViI9SA"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Martin",
+          "lastName": "Michálek",
+          "occupation": "PageSpeed.ONE. Konference FrontKon. Podcast FrontKec.",
+          "id": "35134614",
+          "publicId": "martinmichalek",
+          "trackingId": "RNQqhtmWRnOj8UOtja6j1g==",
+          "profileId": "ACoAAAIYHJYBZSP9siKk6AdjAqLpr14snue9t7g",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFT0q-CDjtMrA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1698214375801?e=1781136000&v=beta&t=zDtXasXelMmCoI59vKy7zY_j5-kYHxbS3cxg4gOscnk",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF2ftrr9HEEFQ/profile-displaybackgroundimage-shrink_350_1400/B4EZXhJq8ZGgAY-/0/1743239164921?e=1781136000&v=beta&t=rnu5cLJ1CEi9_PNdEZJ5N98YqQvEgfG0LYj9Gt13N6E"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Daniel",
+          "lastName": "Sochor",
+          "occupation": "Corporate Performance Management with focus on planning",
+          "id": "1040508481",
+          "publicId": "daniel-sochor",
+          "trackingId": "tEw319Z2RC+BUObjVpNICA==",
+          "profileId": "ACoAAD4E5kEBLCHsDKLT1OEFHWgrps9u9uU2q28",
+          "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHBknVVikZ2eg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1663180049851?e=1781136000&v=beta&t=PBOkmAKLPdR0bFBr7k5dPM4uhu_JoUdQrlTWzMjJfTI",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEejJCzZWuZsQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1685560777271?e=1781136000&v=beta&t=RNbnuQoSoW1ssprXUZMs6PQgKnYwbuJmq8xSRRfIk4E"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Jana",
+          "lastName": "Nečasová",
+          "occupation": "People&Community Superkoders 🩵 Frontendisti.cz Brno 💛",
+          "id": "600428192",
+          "publicId": "jananecas",
+          "trackingId": "sY6Mfs+kRsSEpdy8l0w45w==",
+          "profileId": "ACoAACPJzqABtEhQZaPa2y7niKJdfPDfAdzm3OM",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFfH0AbAr9vpA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1691756462294?e=1781136000&v=beta&t=eBTxkQwlz0LWakZ8HL4eA_LeQeeKpoP73YQW91ZgjxU",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHoY9XnA1Uwdw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1665752656622?e=1781136000&v=beta&t=yV1A79amx5BHf66-ofqJQqz_9fdHxfYB82RP-2sxvbU"
+        }
+      }
+    ],
+    "numShares": 2,
+    "numLikes": 16,
+    "numComments": 4,
+    "canReact": true,
+    "canPostComments": true,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "ALL",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "name": "Frontendisti",
+      "universalName": "frontendisti",
+      "trackingId": "Pq69vEnuR1Wx67C2GseMgg==",
+      "active": true,
+      "showcase": false,
+      "entityUrn": "urn:li:fs_miniCompany:26270417",
+      "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHfPYqav3sN1w/company-logo_400_400/B4EZpJsmiXKgAY-/0/1762173020690/frontendisti_logo?e=1781136000&v=beta&t=8UwVjElEbfqWVbac3iNkc1HS0lwMBI-P-zII7vKwsfw"
+    },
+    "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4E0BAQHfPYqav3sN1w/company-logo_400_400/B4EZpJsmiXKgAY-/0/1762173020690/frontendisti_logo?e=1781136000&v=beta&t=8UwVjElEbfqWVbac3iNkc1HS0lwMBI-P-zII7vKwsfw",
+    "authorType": "Company",
+    "authorProfileId": "company",
+    "authorFollowersCount": "2,119",
+    "authorName": "Frontendisti",
+    "authorProfileUrl": "https://www.linkedin.com/company/frontendisti/posts",
+    "authorUrn": "urn:li:company:26270417",
+    "postedAtTimestamp": 1693222092777,
+    "postedAtISO": "2023-08-28T11:28:12.777Z"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7114504374940229632",
+  "url": "https://www.linkedin.com/posts/honzajavorek_honza-javorek-activity-7114504374940229632-20P1?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFgzka0BiNONQEez3CYZvIxpM_Au6YEO6r0",
+  "timeSincePosted": "2yr",
+  "shareUrn": "urn:li:ugcPost:7112717264692359168",
+  "text": "👉 Marta K.: „Dev Fiction: Junioři a realita vývojářského týmu“\n👉 Roman Hraška aka yablko: „Ako získať prvý job v IT?“\n👉 Já: „Junior jako investice: Proč je mít v týmu a jak je zaučovat“\n\nTo vypadá, že #Frontkon má podobně jako PyCon CZ taky svůj track pro začátečníky. Jo! 🐣\n\nA aby toho nebylo málo, posadíme se pak ještě na židličky a Jana Nečasová s námi udělá panelovku „Junioři ve světě frontendu“. Jaké jsou největší problémy juniorů a firem nabírajících juniory? Jak svět juniorů ovlivňuje generativní AI? Jak získat první práci?\n\nHurá do Brna 🚆",
+  "attributes": [
+    {
+      "start": 2,
+      "length": 8,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Marta",
+        "lastName": "K.",
+        "occupation": "Frontend developer & Cybersecurity",
+        "id": "1012518966",
+        "publicId": "marta-k-586110243",
+        "trackingId": "oO68HF5wRE2CmqiNPUEhug==",
+        "profileId": "ACoAADxZ0DYBhgRxdaOMklaYfOCWKlHCxgpVXYI"
+      }
+    },
+    {
+      "start": 65,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Roman",
+        "lastName": "Hraška",
+        "occupation": "Motyka. Patizón. Sokol.",
+        "id": "411597295",
+        "publicId": "yablko",
+        "trackingId": "tAXMnu5hQBmOKz8MGUDcQA==",
+        "profileId": "ACoAABiIee8B6T3SlOCiJjbS1KHkr9Bf6DyyXws",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFspL7654LSQg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517626819296?e=1781136000&v=beta&t=MU22LFNWVDD74Hp2uLZvOeNRukADo87inbhIv4Es8oU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHesE3bZDHt7g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517626819771?e=1781136000&v=beta&t=k7TwqX_nTlLNrXEprdAlSId_X0i7kMR4bteDVDimkBU"
+      }
+    },
+    {
+      "start": 227,
+      "length": 8,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "PyCon CZ",
+        "universalName": "pycon-cz",
+        "trackingId": "6l163NFeRmq8LuJMJ0pNcA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:96200896",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHOklGyDI6P0g/company-logo_400_400/B4EZpTnC98KkAY-/0/1762339336466/pycon_cz_logo?e=1781136000&v=beta&t=uOUrW56BC-gxbGVtVb0f_sD-Hb2TrKD2pG9ViL3MTy8"
+      }
+    },
+    {
+      "start": 336,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Nečasová",
+        "occupation": "People&Community Superkoders 🩵 Frontendisti.cz Brno 💛",
+        "id": "600428192",
+        "publicId": "jananecas",
+        "trackingId": "sY6Mfs+kRsSEpdy8l0w45w==",
+        "profileId": "ACoAACPJzqABtEhQZaPa2y7niKJdfPDfAdzm3OM",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFfH0AbAr9vpA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1691756462294?e=1781136000&v=beta&t=eBTxkQwlz0LWakZ8HL4eA_LeQeeKpoP73YQW91ZgjxU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHoY9XnA1Uwdw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1665752656622?e=1781136000&v=beta&t=yV1A79amx5BHf66-ofqJQqz_9fdHxfYB82RP-2sxvbU"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Patrik",
+        "lastName": "Brnušák",
+        "occupation": "Otevřen novým příležitostem",
+        "id": "666440295",
+        "publicId": "patrik-brnusak-cz",
+        "trackingId": "w1LOYvGYRLORepdcnCFcOA==",
+        "profileId": "ACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQF0EuGEMDwlUg/profile-framedphoto-shrink_400_400/B4EZgIpEXYHEAc-/0/1752491640554?e=1780430400&v=beta&t=HTUsGAYmOaJQrIYvqehEEjmDH7Xc9mxLPWanNlRdkyQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Alžbeta",
+        "lastName": "Lautschamová",
+        "occupation": "Test Manager | QA Engineer | Manual & Automated Tester",
+        "id": "1110282301",
+        "publicId": "alzbeta-lau",
+        "trackingId": "MmqjIGnAT1Cdrk7m4kKhpQ==",
+        "profileId": "ACoAAEItkD0Byzq-6GwQfXNXv0Wo7QwewGD0KAo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHN1wBfunjcPw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1692033926553?e=1781136000&v=beta&t=fujcttijYk90xh9t6Dd5-tR4kdPyqsZdHSWrxVOH1CM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG3qfvepkMlEA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1692036576347?e=1781136000&v=beta&t=UoY90UprO-ZzoHw1jJH-M8CfmnsGH4vSVD0qHSLZC_s"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Nada",
+        "lastName": "Papakova",
+        "occupation": "QA Tester",
+        "id": "1143986492",
+        "publicId": "nada-papakova",
+        "trackingId": "xl4z59wLQliDZWPSAvJ/rA==",
+        "profileId": "ACoAAEQv2TwBj1NH9x8XjF2D83RV-_x2hgzonu8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHPqgYJ4WID_A/profile-displayphoto-crop_800_800/B4EZi9DiWHGYAI-/0/1755518478602?e=1781136000&v=beta&t=mwCsW2s9q5Y46TqLlymmDtiJ9fzGdvzw9M03WDRUuRA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHn4uymPeoIVg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1696591531028?e=1781136000&v=beta&t=eeczG11zviIX2G-OesHAVBiB0cOyOKnsoVrSi82iO5E"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Hana",
+        "lastName": "Maruškevičová",
+        "occupation": "junior ServiceNow developer",
+        "id": "1145769566",
+        "publicId": "hana-maruskevicova",
+        "trackingId": "XZohD1VyT5Oku4UEfoR8UQ==",
+        "profileId": "ACoAAERLDl4BC7nFv9k5_r5G0yjoAe8OxJXCQcI",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEiVPnnGiNm2A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715849641922?e=1781136000&v=beta&t=D9EQ3K10-HyTow3GyzCfKQdOh-q4uEpb0GK0zwts_hU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGbcpz8eJX9FQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1721303643512?e=1781136000&v=beta&t=XDCTZurtFvCHkCsQuW1g4mKyMj3A2O9PTKjBQJAwdC8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Thu Thuy",
+        "lastName": "Mai",
+        "occupation": "IT Roles | Programming & Web Background",
+        "id": "113305173",
+        "publicId": "tthuymai",
+        "trackingId": "dgPSHh1mQgCGVUVWKibg0Q==",
+        "profileId": "ACoAAAbA5lUBiWfC1CDOrzRQzkgA-5YVgXkgCiM",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQGy7vR8tfZmmw/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1654596789933?e=1780430400&v=beta&t=Xc3_fwK3Di8X_5NQXFNqnKxG-WrXajqcrZT3Ds2vz4g"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marcel",
+        "lastName": "Hess",
+        "occupation": "Front-End Developer at Trask solutions a.s",
+        "id": "1060192438",
+        "publicId": "hess-marcel",
+        "trackingId": "Qe8yfxFmToKmPeDfkx8tYQ==",
+        "profileId": "ACoAAD8xQLYBS2lrbgZu3a2t_t-9e00Fff-b9Q8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFtAKcn2LhK6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695486012555?e=1781136000&v=beta&t=uWSzjcA4STSsJS1j24hFsaLAyfPC_0fDBvfXO6cglFM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHEqtsjJiEpAA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1737570159876?e=1781136000&v=beta&t=YFOjRF5OBHU4yjM2pvGZWp73f667oZsg6eVLF7FQKxE"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Michala Ema",
+        "lastName": "Šturmová",
+        "occupation": "Creative teacher of Spanish and Czech for foreigners",
+        "id": "789227424",
+        "publicId": "michala-ema-šturmová-a003881a0",
+        "trackingId": "FLM/EC1oRgaksYFjjw2MZg==",
+        "profileId": "ACoAAC8Kp6ABdM2g4P97J16QLhXl7O1WI-4hDQ8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQFbOQP6R8S33g/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1695100464662?e=1780430400&v=beta&t=g6GcdV0t3caByo2CM7muuQZNI92wMKYvkKcSC1uOa2k",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEav7gP5IvTPA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1695901550357?e=1781136000&v=beta&t=xo4UdZ1Qbe6FLAyDlYQibmFcXq-eLAtityHvHL-Lko0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Eduard",
+        "lastName": "Šimek",
+        "occupation": "--",
+        "id": "721158113",
+        "publicId": "eduard-šimek-a55620181",
+        "trackingId": "yRpWFDuOR8mfA4EHHSQ9rA==",
+        "profileId": "ACoAACr7_-EB12HJVoRMrBAcWPfjJQ1BqzvfYy0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Matěj",
+        "lastName": "Staněk",
+        "occupation": "BIM Manager | workflows, data management & automation | Revit, VBA, C#",
+        "id": "740256000",
+        "publicId": "matejstanek1",
+        "trackingId": "rujexD5cQESbeh3QD6KsDg==",
+        "profileId": "ACoAACwfaQABurEKMZLTAAPnrpN5FfN9RP2cqTE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF0XJ2AY6kvrA/profile-displayphoto-crop_800_800/B4DZs5QTqiKcAI-/0/1766192135681?e=1781136000&v=beta&t=CyrQCcqBgosBK5qlJWXHR3PEuSx_xkFnpssF843ir40",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFMs8Q-kEjywQ/profile-displaybackgroundimage-shrink_350_1400/B4DZs5U1WiHQAY-/0/1766193322336?e=1781136000&v=beta&t=OhRsTBsFTP08MorFXZU5D9hZ7bhsUrg1yKLroAaTeiI"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 42,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "a67iGzN0RnWqzbImm7BkOA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1696230024085,
+  "postedAtISO": "2023-10-02T07:00:24.085Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

@@ -1,0 +1,309 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "type": "article",
+    "article": {
+      "type": "EXTERNAL_FULL",
+      "urn": "urn:li:article:7972668689504214033",
+      "url": "https://engeto.cz/blog/novinky/dopady-pandemie-covid-19-s-honzou-javorkem/?utm_source=social&utm_medium=social&utm_campaign=blog",
+      "title": "Dopady pandemie COVID-19 s Honzou Javorkem | ENGETO Academy"
+    },
+    "isActivity": false,
+    "urn": "urn:li:activity:6669162125044260864",
+    "url": "https://www.linkedin.com/posts/engeto_dopady-pandemie-covid-19-s-honzou-javorkem-activity-6669162125044260864-EzWn?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAADAEIjUB6-0Ki4Mn4tqi3dc1q7EgfDhzXsM",
+    "timeSincePosted": "6yr",
+    "shareUrn": "urn:li:share:6669162124318674944",
+    "text": "Pandemie nepřináší jen zkázu, ale i nové příležitosti.  Budeme žít ve světě, ve kterém bude široká veřejnost vědět že existuje 3D tiskárna, jak navázat videohovor a sdílet dokumenty. Většina činností se přesouvá do online světa a vzdělávání není výjimka.\n\n Ideální příležitost na změnu kariéry a vstup do IT světa je právě teď. Hodnota lidí, kteří zvládnou s technologiemi pracovat, totiž bude stoupat.\n\n Přečti si článek, ve kterém jsme vyzpovídali Honza Javorek, tvůrce projektu junior.guru. #it #education #elearning #programovani",
+    "attributes": [
+      {
+        "start": 450,
+        "length": 13,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "trackingId": "Aj60vohxR/OtANYCG4a9oA==",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+        }
+      },
+      {
+        "start": 481,
+        "length": 11,
+        "type": "COMPANY_NAME",
+        "company": {
+          "name": "Junior Guru",
+          "universalName": "juniorguru",
+          "trackingId": "zkj3/5TJSWmdaI4Qtt6hZA==",
+          "active": true,
+          "showcase": false,
+          "entityUrn": "urn:li:fs_miniCompany:26218444",
+          "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQE89NmYF-XT4g/company-logo_400_400/company-logo_400_400/0/1638266899010/juniorguru_logo?e=1781136000&v=beta&t=ad516CNUThMN8eXeVboC5S9U_y2Dnn1UhQn70wIGlxE"
+        }
+      }
+    ],
+    "comments": [],
+    "reactions": [
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Pavel",
+          "lastName": "Matějka",
+          "occupation": "Performance marketing a automatizace",
+          "id": "402074697",
+          "publicId": "pavel-matějka",
+          "trackingId": "x6Y93m6AS3iazoEF9IB2Aw==",
+          "profileId": "ACoAABf3LEkBFrk87qikiiyHsdUmOFkEp7JWXYo",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFNVNuUbuI7Yg/profile-displayphoto-crop_800_800/B4DZ1HVoBQKAAI-/0/1775018348757?e=1781136000&v=beta&t=ZyjwsvEVD0ffkRE73AGPwQsro9cwxUq_6yTSzmDjodw",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFixzXMWpUheA/profile-displaybackgroundimage-shrink_350_1400/B4EZlRXVY4IMAg-/0/1758006697899?e=1781136000&v=beta&t=x7Df3EJqJYLY7ObrEP2QKwKsXBuGdEhU5s1NZDueGZw"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Daria",
+          "lastName": "Linhart Grudzien",
+          "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
+          "id": "183293578",
+          "publicId": "dariagru",
+          "trackingId": "JGBtTjcuRxmdeomEzePReg==",
+          "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "trackingId": "Aj60vohxR/OtANYCG4a9oA==",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Klára",
+          "lastName": "Minaříková",
+          "occupation": "Business Development Director | ENGETO & Nuomy | AI in Education | Ex-IT Recruitment",
+          "id": "35499176",
+          "publicId": "klaraholasova",
+          "trackingId": "XWCF5w4bR6qHQDdQ7qD2qg==",
+          "profileId": "ACoAAAIdrKgBCoWTLT4lrWagHq17B15EjLOyVWM",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHNtsJ1gQszzg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1721285940228?e=1781136000&v=beta&t=Lc1cQt68dVmNxDXfPvTEop4r8ASzKtV_JjKncCYd4vA",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFUHgNahkQIKw/profile-displaybackgroundimage-shrink_350_1400/B4EZpYfm2PHEAc-/0/1762421273376?e=1781136000&v=beta&t=5WZE4xnZQaiQc7QOvDkhf1vmc1b8HS77_BpHJMbgubQ"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Marian",
+          "lastName": "Hurta",
+          "occupation": "2x Founder | building Nuomy - AI skill diagnostics for dev teams | prev: ENGETO ($2M ARR, Deloitte Fast 50)",
+          "id": "205713707",
+          "publicId": "marianhurta",
+          "trackingId": "0DX56unMT5mUOMcLYh4YQg==",
+          "profileId": "ACoAAAxC8SsBz7Zwxph3WZGhb6QhNwEYH1BaqQU",
+          "picture": "https://media.licdn.com/dms/image/v2/D5603AQEs6gUMN3Ovuw/profile-displayphoto-crop_800_800/B56Z3kqv3LKYAM-/0/1777657907014?e=1781136000&v=beta&t=29XLs5lhJ4JI6zYwl5LtjbuauDhX2FX6QG-VaN8TNUo",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFNK91Wltv6EQ/profile-displaybackgroundimage-shrink_350_1400/B4EZpzS5ziHUAc-/0/1762870928335?e=1781136000&v=beta&t=aZWUs2q5S0PgKY-cufgwP4BWNjVt6V4FHKr85NoefuA"
+        }
+      }
+    ],
+    "numShares": 1,
+    "numLikes": 5,
+    "numComments": 0,
+    "canReact": true,
+    "canPostComments": true,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "ALL",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "name": "ENGETO",
+      "universalName": "engeto",
+      "trackingId": "ynoh+utwTG69NTHBRILaiw==",
+      "active": true,
+      "showcase": false,
+      "entityUrn": "urn:li:fs_miniCompany:10511835",
+      "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQF2fcTIG7LJVg/company-logo_400_400/B4EZX16r6kHcAY-/0/1743587557375/engeto_logo?e=1781136000&v=beta&t=7oMjKPDFQfOVlmxx-Gvhl16wPntdd5bgKemvV0RVG7M"
+    },
+    "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4E0BAQF2fcTIG7LJVg/company-logo_400_400/B4EZX16r6kHcAY-/0/1743587557375/engeto_logo?e=1781136000&v=beta&t=7oMjKPDFQfOVlmxx-Gvhl16wPntdd5bgKemvV0RVG7M",
+    "authorType": "Company",
+    "authorProfileId": "company",
+    "authorFollowersCount": "1,592",
+    "authorName": "ENGETO",
+    "authorProfileUrl": "https://www.linkedin.com/company/engeto/posts",
+    "authorUrn": "urn:li:company:10511835",
+    "postedAtTimestamp": 1590052157651,
+    "postedAtISO": "2020-05-21T09:09:17.651Z"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6669609233060777984",
+  "url": "https://www.linkedin.com/posts/honzajavorek_dopady-pandemie-covid-19-s-honzou-javorkem-activity-6669609233060777984-4HVy?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAADAEIjUB6-0Ki4Mn4tqi3dc1q7EgfDhzXsM",
+  "timeSincePosted": "6yr",
+  "shareUrn": "urn:li:share:6669609232322584576",
+  "text": "S ENGETO jsme udělali rozhovor o tom, jakou zkázu a jaké příležitosti představují současná opatření pro IT. Více u nich na blogu ✨",
+  "attributes": [
+    {
+      "start": 2,
+      "length": 6,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "ENGETO",
+        "universalName": "engeto",
+        "trackingId": "CnSbF/mcTrygsK0YVwTobQ==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:10511835",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQF2fcTIG7LJVg/company-logo_400_400/B4EZX16r6kHcAY-/0/1743587557375/engeto_logo?e=1781136000&v=beta&t=7oMjKPDFQfOVlmxx-Gvhl16wPntdd5bgKemvV0RVG7M"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1594735562497,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6669609233060777984?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6669609233060777984%2C6688805748719280128%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286688805748719280128%2Curn%3Ali%3Aactivity%3A6669609233060777984%29",
+      "text": "Honza Javorek děkujeme za skvělý rozhovor! ",
+      "entities": [
+        {
+          "start": 0,
+          "length": 13,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Honza",
+            "lastName": "Javorek",
+            "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+            "id": "8517488",
+            "publicId": "honzajavorek",
+            "trackingId": "Aj60vohxR/OtANYCG4a9oA==",
+            "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+            "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "Czech"
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "company": {
+        "name": "ENGETO",
+        "universalName": "engeto",
+        "trackingId": "las/F7j7TC+y81L06LEvvQ==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:10511835",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQF2fcTIG7LJVg/company-logo_400_400/B4EZX16r6kHcAY-/0/1743587557375/engeto_logo?e=1781136000&v=beta&t=7oMjKPDFQfOVlmxx-Gvhl16wPntdd5bgKemvV0RVG7M"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavlina",
+        "lastName": "F.",
+        "occupation": "Host @ Junior Guru podcast.",
+        "id": "190849253",
+        "publicId": "pavlinafronkova",
+        "trackingId": "LJQk2rsxQiS506WkIoJQ6Q==",
+        "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Iva",
+        "lastName": "Stencel",
+        "occupation": "CSV Lead/ Senior Business Analyst",
+        "id": "587257188",
+        "publicId": "iva-stencel-ab0807144",
+        "trackingId": "Z/DTmYZWTRGtX4abcPg7MQ==",
+        "profileId": "ACoAACMA1WQBgV8EKd7FupQXOjpsAgya9rL3QLA",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQEZ_qnZxg-xyA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1705973948718?e=1781136000&v=beta&t=LBoVag1NlDf5ffk5wVzEgEsJv9D6X_E410sbmWhdZPU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGvMtuTNHdICw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1705975360344?e=1781136000&v=beta&t=73kz1RRrV0DsO9n0na0p3ZfYiSkUe3yLRv-LT49dYxE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daria",
+        "lastName": "Linhart Grudzien",
+        "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
+        "id": "183293578",
+        "publicId": "dariagru",
+        "trackingId": "JGBtTjcuRxmdeomEzePReg==",
+        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel Grumpy",
+        "lastName": "Šimerda",
+        "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
+        "id": "551084893",
+        "publicId": "grumpyprogrammer",
+        "trackingId": "VUr905Z8T0aqu23sIrY0xQ==",
+        "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFnQ8ypdjjyvg/profile-displayphoto-crop_800_800/B4DZxZUZFlHkAI-/0/1771025047361?e=1781136000&v=beta&t=fFiIDptOBoMzbUkj1Lvpd8USzHMX1nkcCCOr19Su_4c"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "trackingId": "P0+gZ9pPSMSlyHELM1TVew==",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGjycZdsqX9ww/profile-displayphoto-crop_800_800/B4DZjBYhBpGQAQ-/0/1755591087410?e=1781136000&v=beta&t=wVIgd5mwqIYPXpFj5d6Nr2x8-VHHyAZ4o1qWAcv4nhQ"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 6,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "2WW52qLQQn6mpxY4295oSA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1590158756509,
+  "postedAtISO": "2020-05-22T14:45:56.509Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

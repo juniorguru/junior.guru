@@ -1,0 +1,235 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4E22AQFshQFAKUP0gg/feedshare-image-high-res/feedshare-image-high-res/0/1665150794416?e=1781136000&v=beta&t=Knb-hChG70rasp1ftgJ9rHVXpJFkJ0CeNXhARye2PNQ"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6984148641053605888",
+  "url": "https://www.linkedin.com/posts/honzajavorek_discord-activity-6984148641053605888-2Z73?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAACrk6mABRsYhz0r8LYjdDsgcuChdy2JFZfY",
+  "timeSincePosted": "3yr",
+  "shareUrn": "urn:li:share:6984148639648522240",
+  "text": "Jak se stát webovým analytikem? 📊 Už ve středu 12. října!\n\nPo letní pauze opět startují přednášky v junior.guru/club. První bude s Pavel Šabatka z House of Řezáč o tom, co to znamená být webovým analytikem, jaká data zpracovává, co k tomu potřebuje, jak vypadá jeho den. A jak vlastně v oboru začít, pokud by vás zaujal?\n\nKlub je sice placený, ale první dva týdny jsou zdarma. Klidně si zřiď členství jen kvůli akci, nám to nevadí. Akce probíhá online přes #Discord a pořizuje se z ní záznam. Členové klubu mají přístup k záznamům všech proběhlých akcí, které najdeš na junior.guru/events",
+  "attributes": [
+    {
+      "start": 131,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Šabatka",
+        "occupation": "Freelance web analyst",
+        "id": "74151945",
+        "publicId": "pavel-sabatka",
+        "trackingId": "yYdoaVPyQy+2486I5chJjw==",
+        "profileId": "ACoAAARreAkBoRAuqVxxq1dBRcbqZdWkDKfAaCw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHtXH2rTN31Zw/profile-displayphoto-crop_800_800/B4DZvAvKLCHgAI-/0/1768465147006?e=1781136000&v=beta&t=lX1hXm2RfLHiO2ddl_oYRHdjJOYOMHnD73xd2YBqgTs",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEtPLYA4QkYnA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1519468136687?e=1781136000&v=beta&t=t2Gr1_q6zUdMwGXYytz2AGGC8eVtJKNYTjZ-MS6xvMg"
+      }
+    },
+    {
+      "start": 147,
+      "length": 14,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "House of Řezáč",
+        "universalName": "house-of-rezac",
+        "trackingId": "VKulx5QaRwawS45jUiv0cA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:17913011",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C560BAQECfqaQJmkTKA/company-logo_400_400/company-logo_400_400/0/1630595054047/house_of_ez_logo?e=1781136000&v=beta&t=PSYgrxTBpVk72GaVrTmoRJavEhK3V2Ydk265ZjQaEGk"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1665170186361,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6984148641053605888?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6984148641053605888%2C6984229973335101440%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286984229973335101440%2Curn%3Ali%3Aactivity%3A6984148641053605888%29",
+      "text": "Budu zrovna v praci, bude se dat poslechnout nejak zpetne ?",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Martin",
+        "lastName": "Holomek",
+        "occupation": "Breaking things safely so production doesn’t have to.",
+        "id": "950609242",
+        "publicId": "martin-holomek-10a435226",
+        "trackingId": "rDJSQlwmRNOL6/KEFSQw4g==",
+        "profileId": "ACoAADipJVoBUKy1-ggmu1NEjjtKbSmjY5ujyrk",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE8DGgJxIO86w/profile-displayphoto-crop_800_800/B4DZkWMFqEGQAM-/0/1757013893676?e=1781136000&v=beta&t=6aeHSGO6Pm_GFNY9QwdmTRNT4SQSlaFVL_weIrmOILQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGKK5WWTenbag/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1729703770841?e=1781136000&v=beta&t=qa8WqiyiYAhYzw0W5gwedtWFQnMBIXkxDdSnf-CGbKg",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Šabatka",
+        "occupation": "Freelance web analyst",
+        "id": "74151945",
+        "publicId": "pavel-sabatka",
+        "trackingId": "yYdoaVPyQy+2486I5chJjw==",
+        "profileId": "ACoAAARreAkBoRAuqVxxq1dBRcbqZdWkDKfAaCw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHtXH2rTN31Zw/profile-displayphoto-crop_800_800/B4DZvAvKLCHgAI-/0/1768465147006?e=1781136000&v=beta&t=lX1hXm2RfLHiO2ddl_oYRHdjJOYOMHnD73xd2YBqgTs",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEtPLYA4QkYnA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1519468136687?e=1781136000&v=beta&t=t2Gr1_q6zUdMwGXYytz2AGGC8eVtJKNYTjZ-MS6xvMg"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Norbert",
+        "lastName": "Červený",
+        "occupation": "I help great brands grow @STRV",
+        "id": "337285701",
+        "publicId": "strv-norbert-cerveny",
+        "trackingId": "yklnzwkZSDuEiHJJZexP/w==",
+        "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGKIAaUJPtlmA/profile-displayphoto-crop_800_800/B4DZ0jT_lBIEAI-/0/1774413941709?e=1781136000&v=beta&t=ioRFNZY53XZXWk1BvKTQdIygU-xxLKoyNysEAYklp0I",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG0ekEnNy2Hcw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0jTiNeGsAk-/0/1774413817026?e=1781136000&v=beta&t=_KMbjLzzfd2pO9gizTz2iWgDOkq5RQ3NpzDT5fOljNI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petra",
+        "lastName": "Psotová",
+        "occupation": "Automaiton Tester and Analyst",
+        "id": "162270925",
+        "publicId": "petra-psotová-95141646",
+        "trackingId": "Q+Oyeu4yQayhmtqwX7+eFQ==",
+        "profileId": "ACoAAAmsDs0BdlCSL2OUCvhCPXuTKVY4Tg0dwzM",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQF2cKKxd-yiFg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1668104760263?e=1781136000&v=beta&t=p5cXGPBWEkCBvUV0HOwgaipD_OeV40MV3ZOWcYjid68",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHMjVikjWIjjw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1666252608242?e=1781136000&v=beta&t=Fhy0mP_Lz26lwhNWhdB4Ah8sBqK5vqPjH5SmwUYvdes"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petra",
+        "lastName": "Divišová",
+        "occupation": "Empatie jako základ efektivní úřední komunikace.",
+        "id": "672249285",
+        "publicId": "petradivisova",
+        "trackingId": "VH7bfKw2Qve3iqOUWMVxxg==",
+        "profileId": "ACoAACgRtcUBsxHVL6bbMDCgAcaAb8Lt_oHCHjE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGhNXrXGPcRVA/profile-displayphoto-crop_800_800/B4EZpGcz.eGUAI-/0/1762118551243?e=1781136000&v=beta&t=Pjq-WrMmhw7kolkvOiKXgh_n0ZRTqjcM8viTEtBEWKg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Zajíček",
+        "occupation": "Treasury & Payments | Business Analysis & Automations",
+        "id": "559209264",
+        "publicId": "tomaszajicekzvyskova",
+        "trackingId": "24qNX+lkSv+xNSnMLmlB+w==",
+        "profileId": "ACoAACFU2zABuNt37ndZtVz8EtScs26PHKiHOU4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQG1u1wfL3e19Q/profile-displayphoto-crop_800_800/B4DZwEW8JjHwAM-/0/1769599650821?e=1781136000&v=beta&t=jPz2ORzCGjF5pxzNYasa4LJqMQQy1ALYEEoQiCCek4U",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFE9Dzjyg_2jQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1729628675140?e=1781136000&v=beta&t=5REsgohR5VwVy6-W0JtRm-kTuyjXVuz3zR83EofgQjw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daniel",
+        "lastName": "Sochor",
+        "occupation": "Corporate Performance Management with focus on planning",
+        "id": "1040508481",
+        "publicId": "daniel-sochor",
+        "trackingId": "YqGUbzLZSDyq4AAQF7LcXw==",
+        "profileId": "ACoAAD4E5kEBLCHsDKLT1OEFHWgrps9u9uU2q28",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHBknVVikZ2eg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1663180049851?e=1781136000&v=beta&t=PBOkmAKLPdR0bFBr7k5dPM4uhu_JoUdQrlTWzMjJfTI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEejJCzZWuZsQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1685560777271?e=1781136000&v=beta&t=RNbnuQoSoW1ssprXUZMs6PQgKnYwbuJmq8xSRRfIk4E"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daniel",
+        "lastName": "Rozehnal",
+        "occupation": "Software engineering student at FI MUNI.",
+        "id": "731425708",
+        "publicId": "daniel-rozehnal-924b52184",
+        "trackingId": "gOTiyyKpQ8iYnHyEHizoZA==",
+        "profileId": "ACoAACuYq6wBw_NUyA50V0fvku83SMXkgexoGa8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH6BzN9AcUCqw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1687462673185?e=1781136000&v=beta&t=CcZtGbxzcjtE3ICu9xz1ywNt_uzrOhlHHeL4p4nax_k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Gergő",
+        "lastName": "Viskievič",
+        "occupation": "Web analyst in House of Řezáč",
+        "id": "804678007",
+        "publicId": "gergo-viskievic",
+        "trackingId": "fKvLTahCRJ+AIhJGMfE86A==",
+        "profileId": "ACoAAC_2aXcBqrLgBkJTfkQLPPfWQRnoeGBwEik",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFibjEJWY5MDg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638713165569?e=1781136000&v=beta&t=qk6-XgQC1hC0KPERISWML6qDB-lF1juPSOtT9E82aVA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEx4TFur409cQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1724345928582?e=1781136000&v=beta&t=2yF6WvWltrkGUec8gN8z--aq65xdynSMzv-JpPgsyDI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michaela",
+        "lastName": "Koudelkova",
+        "occupation": "Test Analyst at Cyber Fox and mentor at Czechitas",
+        "id": "292145216",
+        "publicId": "michaelakoudelkova",
+        "trackingId": "EM/mmcXUQdWyAkG7ujYLMQ==",
+        "profileId": "ACoAABFpyEABFqmYqR_GlrpP2lafZoQLPBrf-tI",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFKsp97t6P-wQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516353290735?e=1781136000&v=beta&t=FVddPXnC0UmGq-57tY5dBNm37AB140yiPqqF0xLVJKo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQH5wEaq6ly9VA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1557083059573?e=1781136000&v=beta&t=X3PZ1VnvPc4Jw3cuQyoWmCeEbc0rQ_ap7Y79XPInj7Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petra",
+        "lastName": "Kejmarová",
+        "occupation": "Enthusiastic about learning new things | Front-end | Cybersecurity",
+        "id": "223736665",
+        "publicId": "petra-kejmarová",
+        "trackingId": "pUkIcEHDSkWWJ8dBym10SA==",
+        "profileId": "ACoAAA1V81kBbEUMHhpp7TMal1v30C0Yvlxrr4A",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQG4Hwnsl1QSaA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517582569971?e=1781136000&v=beta&t=pKMH2ObLc2iv7RajHFYuCMO6dALBpR9Q66RIa7r3UbM"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 18,
+  "numComments": 2,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "BKwshpDRQmSn49+qPm2arQ==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1665150795234,
+  "postedAtISO": "2022-10-07T13:53:15.234Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

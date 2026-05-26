@@ -1,0 +1,283 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4D22AQEIx2OdmQpLPQ/feedshare-shrink_1280/feedshare-shrink_1280/0/1648720349158?e=1781136000&v=beta&t=6e-f2zOnQJ50w1HfESWMg4pjoyqQ-oRh-DHZ916BITA"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6915234360853950464",
+  "url": "https://www.linkedin.com/posts/honzajavorek_junior-hr-activity-6915234360853950464-nKkO?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFLoK0wBYoYaibnOct4cy5iL6dq4jzvciT8",
+  "timeSincePosted": "4yr",
+  "shareUrn": "urn:li:share:6915234360078012417",
+  "text": "HOSTEM V PODCASTU 🎙 Kdo je #junior a jaké typy juniorů můžeme rozlišovat? Co má junior očekávat od zaměstnavatele a co zaměstnavatel od juniora? Jak by mělo probíhat vyhodnocení po prvních týdnech a měsících?\n\nPozvali mě do podcastu ProgramHRování, abych odpověděl na tři otázky výše. Všechno jsme to probrali a výsledek má 25 minut, což je celkem přístupná stopáž i pro ty, co si nelibují v hodinových rozhovorech. Tak šup šup s tím do ucha 😉\n\nSarka Kousalova s Vojtěch Mádr nahrávají v Holešovicích, takže to neprobíhalo online, ale zvládl jsem dojet tramvají a máme z toho i pěknou fotku. Díky za pozvání, bylo to moc fajn! Jsem rád, že jsem dostal po delší době příležitost podívat se na juniory víc z pohledu #HR a firem. Bylo to zajímavé i proto, že Vojta je členem klubu junior.guru a nějaké tamní juniory dokonce zaměstnal ve své firmě Motionlab.",
+  "attributes": [
+    {
+      "start": 233,
+      "length": 14,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "ProgramHRování",
+        "universalName": "programhrovani",
+        "trackingId": "4X6FW3i/SJSnLY6ylmgVJw==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:76564291",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQFOyBtfsCCMew/company-logo_400_400/company-logo_400_400/0/1714162197209/programhrovani_logo?e=1781136000&v=beta&t=DXlA3Rag_ZygIhgzoHKLUFuVkcqgKxNq4TsvhzKhJCM"
+      }
+    },
+    {
+      "start": 445,
+      "length": 15,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Sarka",
+        "lastName": "Kousalova",
+        "occupation": "Workplace Experience & Employer Branding Manager ve společnosti Pricefx | Co-host @ ProgramHRování | Social Media Strategist | Event Management | Freelance Translator",
+        "id": "618467773",
+        "publicId": "šárka-kousalová",
+        "trackingId": "AGXx1N70R2enf/ezf+7hSA==",
+        "profileId": "ACoAACTdEb0BJh79Lnb5E3QQregmW3SioQxe0_M",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFwMDsGJJLuGg/profile-displayphoto-crop_800_800/B4DZvRixGQJkAI-/0/1768747112321?e=1781136000&v=beta&t=Mqv44mQ_c9hSFLdmrQ58hhEjo0pDCNXcOSnNBAcI-WY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHPZ6Mc28dXEA/profile-displaybackgroundimage-shrink_350_1400/B4EZlRlwUHIwAY-/0/1758010477652?e=1781136000&v=beta&t=abEWpQ21P3uA6PQu2mqppwQ9AHau457n37m8Hz0LLmE"
+      }
+    },
+    {
+      "start": 463,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Vojtěch",
+        "lastName": "Mádr",
+        "occupation": "🎙 Pomáhám tvořit lepší podcasty | Spolu-moderátor Mileniálové & Jak na podcasty | 💻 Voicebot engineer",
+        "id": "205073291",
+        "publicId": "madrvojtech",
+        "trackingId": "4yCaThmDSGW9J1WMDOZVBQ==",
+        "profileId": "ACoAAAw5K4sBA8nVYoHPe91603FIAQM8Afcl3AQ",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQG-5m6_kiUCLw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1640351690167?e=1781136000&v=beta&t=P0XlPJMkia6IYO5QAPO5phO59ToKi83zvfyVGTTL0zk",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEiI6dmbVAZ-g/profile-displaybackgroundimage-shrink_350_1400/B4EZpVejb9IUAc-/0/1762370665436?e=1781136000&v=beta&t=iUrGuEbjzZUCmquyBnn-85zPgbBTAAWrH23N2Bzt5i4"
+      }
+    },
+    {
+      "start": 844,
+      "length": 9,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Motionlab",
+        "universalName": "motionlabio",
+        "trackingId": "Xy9pOxMqQLuGzIccrtWQfA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:18821424",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQEarp_m2N5WOw/company-logo_400_400/company-logo_400_400/0/1630509363488/motionlabcz_logo?e=1781136000&v=beta&t=RnQ2_9p6EnUb8IzcClrMBBgLd7GjdMTO39BdpZKrsec"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1648723852696,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6915234360853950464?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6915234360853950464%2C6915249050254548992%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286915249050254548992%2Curn%3Ali%3Aactivity%3A6915234360853950464%29",
+      "text": "Honzo díky moc za supr rozhovor :-)",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Sarka",
+        "lastName": "Kousalova",
+        "occupation": "Workplace Experience & Employer Branding Manager ve společnosti Pricefx | Co-host @ ProgramHRování | Social Media Strategist | Event Management | Freelance Translator",
+        "id": "618467773",
+        "publicId": "šárka-kousalová",
+        "trackingId": "5yt19r35Rj2dT7CR66QKVQ==",
+        "profileId": "ACoAACTdEb0BJh79Lnb5E3QQregmW3SioQxe0_M",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFwMDsGJJLuGg/profile-displayphoto-crop_800_800/B4DZvRixGQJkAI-/0/1768747112321?e=1781136000&v=beta&t=Mqv44mQ_c9hSFLdmrQ58hhEjo0pDCNXcOSnNBAcI-WY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHPZ6Mc28dXEA/profile-displaybackgroundimage-shrink_350_1400/B4EZlRlwUHIwAY-/0/1758010477652?e=1781136000&v=beta&t=abEWpQ21P3uA6PQu2mqppwQ9AHau457n37m8Hz0LLmE",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1648720510042,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6915234360853950464?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6915234360853950464%2C6915235030147420160%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286915235030147420160%2Curn%3Ali%3Aactivity%3A6915234360853950464%29",
+      "text": "Detaily k dílu jsou tady: https://www.programhrovani.cz/1843229/10212890-o-prvni-praci-v-it-s-honzou-javorkem",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "WMeMYPsbQrCU0UYHCmGuiA==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Viera",
+        "lastName": "Rajnáková",
+        "occupation": "Tech Support a IT Tester",
+        "id": "18917796",
+        "publicId": "vierarajnakova",
+        "trackingId": "a/H5raHlQH61xVbedUl3BA==",
+        "profileId": "ACoAAAEgqaQBz2Qtbz2QP3y4gqQkMQx11UU3ivc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQH8c575_W77eA/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1731162970516?e=1780430400&v=beta&t=hvM5lOJ_lEofmGCRRF0ebIzCwTZj5g1ODg93tfur-ik",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEFaI9EPRD3Ng/profile-displaybackgroundimage-shrink_350_1400/B4DZVDreCWGcAY-/0/1740597226956?e=1781136000&v=beta&t=CZMIZYve5Wxg0_dlZCXy5oeTSPSXSG4VcRnl_ZYPzQ4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "John",
+        "lastName": "Mrazek",
+        "occupation": "Revenue Operations at Adastra North America",
+        "id": "963169059",
+        "publicId": "john-mrazek-60369122a",
+        "trackingId": "r4g+0XMSSL2OrYaKitYwxg==",
+        "profileId": "ACoAADloyyMBgVOfVJtKFtfFsV6G3AsyTqQ470Q",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQEBNoXeIGn_TA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1647013112884?e=1781136000&v=beta&t=lDZkd4OE46fJh1Om7_PpzD4kyeSuxuHW7XWGX77R53A",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFNZeUGoxxtVQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1722935362109?e=1781136000&v=beta&t=lyjVq3V9jUcdcyCvDtk9aEvHoQHjLrf2x7hLIH1-_b4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jaroslav",
+        "lastName": "Lupták",
+        "occupation": "IT Application Business Support | Responsible for troubleshooting company software applications.",
+        "id": "377981034",
+        "publicId": "jaroslavluptak",
+        "trackingId": "cseIvOjZQM2OWSLTGs1CxQ==",
+        "profileId": "ACoAABaHiGoBJSNkTUPIvO_zeJYCW-RpFY9qRV4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQEFlveo42VTFw/profile-framedphoto-shrink_800_800/B4DZ3gtAfwGwAg-/0/1777591388410?e=1780430400&v=beta&t=G948urLzfnJbil7BEmZB3rfxZMSgzLEPDd2Iaf177QM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHGQpmzoZFzkg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1693842332797?e=1781136000&v=beta&t=L0ffuUzwp2SKI-mBDBTD1JuujIlh6dJhdnosOrcUi4M"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Zdenka",
+        "lastName": "K.",
+        "occupation": "economist - analyst",
+        "id": "519386930",
+        "publicId": "zdenkakynychova",
+        "trackingId": "mWucfhfqQoOJz+HnNRQZXQ==",
+        "profileId": "ACoAAB71NzIBxagak31QEICakR46hWZXN8rxjI0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQGjT0w_A10P1w/profile-framedphoto-shrink_800_800/B4EZwdzvXQI0Ag-/0/1770026628849?e=1780430400&v=beta&t=cjYdPJM7I1ABCSvvejkAldoNnlUHnL4cHDP6KOVFvSc",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQF8vdmEeOQitw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1623662318582?e=1781136000&v=beta&t=IoYUhyrmGaHmnHf6tWBd3WCx8RCqIA96g-VFaPf4BUE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Radka",
+        "lastName": "Kataniková",
+        "occupation": "ComAp Group - “💖 The Heart of Smart Control.”",
+        "id": "684222071",
+        "publicId": "radka-kataniková-a1b189171",
+        "trackingId": "pZzEVSahSgKVoMJOQfVpkw==",
+        "profileId": "ACoAACjIZncBZLCkfAgS7tN987AeW4yTKY0MT8o",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFdzzUyTnd1wA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726559270784?e=1781136000&v=beta&t=9GYO5U7VTGLqA_GkfFDXws0DCNeMKSJaBnXg_dCB4Fo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavlína",
+        "lastName": "Kašparová",
+        "occupation": "Exploring the IT world.",
+        "id": "412116370",
+        "publicId": "pavlinakasparova",
+        "trackingId": "kGYGo9qmSKO3xPerg1ifQA==",
+        "profileId": "ACoAABiQZZIBi0I7MywdHSTVqyancuhZjWKKdaY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Diana",
+        "lastName": "Nemčeková",
+        "occupation": "Frontend Developer at SAP Signavio",
+        "id": "340727197",
+        "publicId": "diana-nemcekova",
+        "trackingId": "MHTuCE+VQdyeKdKVEVgQ1Q==",
+        "profileId": "ACoAABRPFZ0B0af2F8_icLbBOQpvX7jszeotbI4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ondrej",
+        "lastName": "Cejka",
+        "occupation": "☮️ Values-Driven Change Agent | Agile Coach | Life Coach | ex-CEO Czechitas | Consultant | Mentor | Social Impact Advisor | Board Member | Lecturer | Visionary 🔮 AYLP and Leaders of Tomorrow Alumni",
+        "id": "87280750",
+        "publicId": "ondcej",
+        "trackingId": "Ruf/ES59T42zjePUPtoFGQ==",
+        "profileId": "ACoAAAUzzG4BLoHWLVFE4_dAWsnhPhXpaXU4Vbg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFCa2h1OvIDAw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1698863108972?e=1781136000&v=beta&t=bHFmAbnpBq3DMJ1Lcrk6z6lO1GhrTK3nQECYgvpSb_M",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE8IsEeTc5LVQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1690885177156?e=1781136000&v=beta&t=2mROWGtu_20GwjT860KwfH5lPt-FGCwxNIVwdAOR0do"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Silná",
+        "occupation": "Software QA Engineer | Test Automation | AI-Driven Testing | Frontend | UX/UI | ex-Graphic Designer",
+        "id": "456103352",
+        "publicId": "lenka-silna",
+        "trackingId": "hvDnE9PAS9Cab0APmIAimw==",
+        "profileId": "ACoAABsvlbgB_YE9kjICFRS1b_hrU6yzTRKEHKo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFf0_YqRz5aMw/profile-displayphoto-crop_800_800/B4DZyeRfyKI8AI-/0/1772181913275?e=1781136000&v=beta&t=djOSOQB0NajL7vAnGP1Vbttp8e1WcRdpEKG8ziyxtzg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQECZhvzl5X7cg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1624343280736?e=1781136000&v=beta&t=g_BHz9nP1AHkEtQK2JeFVM4SR5-XuZaLlWHS_Ygq60g"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Meissner",
+        "occupation": "Product & Tech Community Lead at Mews",
+        "id": "677292059",
+        "publicId": "jan-meissner",
+        "trackingId": "Lojdrm13TzGHVjHCWwxYVA==",
+        "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEEoMbY9urW6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728030316222?e=1781136000&v=beta&t=qIshYYWgkzBRoJGlT6oqlmeH3jlRiX8J_luFzaICydQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGei_PMH8ghyw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728030258130?e=1781136000&v=beta&t=GS9HgAFTdCMh-1xFx2xIDoLH91oMpSioaV6pV2ayQSY"
+      }
+    }
+  ],
+  "numShares": 2,
+  "numLikes": 24,
+  "numComments": 2,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "WMeMYPsbQrCU0UYHCmGuiA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1648720350469,
+  "postedAtISO": "2022-03-31T09:52:30.469Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

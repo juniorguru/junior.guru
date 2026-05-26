@@ -1,0 +1,184 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:8497343059754502365",
+    "url": "https://www.youtube.com/watch?v=3nYkKF66OIc",
+    "title": "Vysvětluju kód Python skriptu na slosování vítězů. Kdo vyhraje knihu Grokking Algorithms?"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7262362315428184064",
+  "url": "https://www.linkedin.com/posts/honzajavorek_vysv%C4%9Btluju-k%C3%B3d-python-skriptu-na-slosov%C3%A1n%C3%AD-activity-7262362315428184064-Kpu9?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAABZ7-HEBruCM6sZQ3V5BFFp4L-sCzx01HEI",
+  "timeSincePosted": "1yr",
+  "shareUrn": "urn:li:share:7262049362195668995",
+  "text": "Useknutý začátek s pozdravem, zmatené vysvětlování kódu, siréna od projíždějící sanitky, zvonící upomínka na telefonu 😂 \n\nMakám pro začátečníky v programování a sám jsem začátečník s videem. Ale zkusil jsem to, a to se počítá! Poprvé jsem udělal něco jako screencast.\n\nKdo vyhraje knihu Grokking Algorithms? Popisuju kód Python skriptu, který používám na losování výherců, a pak ho pustím a koukám, kdo to vyhrál.\n\nDíky všem, kdo hlasovali v obou dotaznících. Moc mi to pomůže v tom, abych mohl udělat junior.guru lepší. Pokud jste knihu nevyhráli, nesmutněte, je zdarma ke stažení jako e-book. Odkazy jsem dal do popisku videa.\n\nhttps://lnkd.in/eKwwX5hz",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michaela",
+        "lastName": "Kostelníková",
+        "occupation": "do I even know what I’m doin’? | data analytik 🫰🏼 v Ovečkárně",
+        "id": "1036787021",
+        "publicId": "mkostelnikova",
+        "trackingId": "950gPBhlSQ6nr8j2BhNxqQ==",
+        "profileId": "ACoAAD3MHU0BAstIcZ8jEsBqEDqnSeZwviKz9Z8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHy49Q4niWTpw/profile-displayphoto-crop_800_800/B4DZv0xImLG8AI-/0/1769338082539?e=1781136000&v=beta&t=Zt26_aP6Lt4LI2n6kEq_jaH6W-OvCoKq0yoCbkj1deo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFu7_OX7FJRWQ/profile-displaybackgroundimage-shrink_350_1400/B4EZWVKcVLHgAg-/0/1741964299275?e=1781136000&v=beta&t=x9m2GIEuqIja0y2lhDgDwoMxRA78YY35nUqkqx4KeTs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiří",
+        "lastName": "Bervid",
+        "occupation": "„Nezáleží na tom, jak pomalu jdeš, dokud se nezastavíš.“ — Konfucius",
+        "id": "946831588",
+        "publicId": "jiří-bervid",
+        "trackingId": "0oWhO4+0QBu5inWvOKEQaA==",
+        "profileId": "ACoAADhvgOQBDlcH4sJusqf9E57Havxyx9g0eMg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHyOzNZz5j_og/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720947983866?e=1781136000&v=beta&t=l5orH5DWXVxZtvHSR54mrHUdO040hvFGTc-s9vXhyc0"
+      }
+    },
+    {
+      "type": "ENTERTAINMENT",
+      "profile": {
+        "firstName": "Linda",
+        "lastName": "Hrdinová",
+        "occupation": "Junior Front-end developer | JavaScript, React, SQL",
+        "id": "969269007",
+        "publicId": "linda-hrdinova",
+        "trackingId": "Ego/BBNZTZyV9W381SFMhQ==",
+        "profileId": "ACoAADnF3w8BVSPLBKPqM3WonpxXuVf1c-Wf5GM",
+        "picture": "https://media.licdn.com/dms/image/v2/D5635AQGRwjtWZMUlkQ/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1697310883052?e=1780430400&v=beta&t=rYSiG8c7b-Pb1xbN_EHlliFRfAJHMKnVO9f49IuKHQ0"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Tereza",
+        "lastName": "Smolová",
+        "occupation": "UX designer | Frontend developer | coder",
+        "id": "1058305342",
+        "publicId": "tereza-smolovaa",
+        "trackingId": "3tcls7KmSSiyW3+ly3mFRg==",
+        "profileId": "ACoAAD8UdT4BaRn8Isd2lC4AEbKofErZCkXvv-k",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHHami6cusYmw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1680899091472?e=1781136000&v=beta&t=kcnsYl27D767PL0KOKMxatZtoRBIh_47AlOOB4bMu5k",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE4HKbvzh8w-A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1703173265758?e=1781136000&v=beta&t=JLf6jm1fSrDz12CmrvPrxBc7TSifykS-ney15LHhlRA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Zdeňka",
+        "lastName": "Kafedžič",
+        "occupation": "Internationalization & Faculty of Arts, Masaryk Uni",
+        "id": "485059939",
+        "publicId": "zdenkakafedzic",
+        "trackingId": "BLVaQrFYR9CR7gHCE/6kJQ==",
+        "profileId": "ACoAABzpbWMBDrQFRZLYxYh3IBFdjTOLMn37vKw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Monika",
+        "lastName": "Matějková",
+        "occupation": "Referent zaměstnanosti na Generálním ředitelství Úřadu práce ČR",
+        "id": "292268144",
+        "publicId": "monika-matějková-7a8a6881",
+        "trackingId": "1W3Gwr4qQ1+YK5HmC2eqVQ==",
+        "profileId": "ACoAABFrqHABPBTSJ5-JkuVGLz2eqh8VOSct-LM",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGbMEYPQf28mQ/profile-displayphoto-crop_800_800/B4DZwfCDG2G4AM-/0/1770047159904?e=1781136000&v=beta&t=hboxEzjUGy81Q_PoGaYVh9a8pLRFiTmiB-vptTFJstU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHlq641XSoOOQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516851410961?e=1781136000&v=beta&t=bOPZyWrW5TxEmfC8dv7irxwOkK723f_jw-ZeBjoyZc0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lucie",
+        "lastName": "Hroudová",
+        "occupation": "PHP developer | Developing with aim of helping others grow to reach their dreams",
+        "id": "869658456",
+        "publicId": "lucie-hroudova",
+        "trackingId": "abR2MmN6RA6jZUoMivuoxQ==",
+        "profileId": "ACoAADPV71gBke21h185Y1VzqghpRmSX15awgro",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE9arF-W5r03w/profile-displayphoto-shrink_800_800/B4EZScaP5wG0Ac-/0/1737790914683?e=1781136000&v=beta&t=qH42fAHTbzdM4SihvuzCHTSKqFmxE97lFfM9rT6nZvs",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE51qyRMkA8wA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1730545392469?e=1781136000&v=beta&t=-7AEVKzlW-5EVkqb75W0lWLVQsVPj2Np-g7l0JWHcWk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Musiol",
+        "occupation": "Tvůrce webových projektů na volné noze, Wordpress CMS, Statamic, Laravel PHP.",
+        "id": "26830818",
+        "publicId": "tomasmusiol",
+        "trackingId": "qyAAmbolTHOwuW/ZGPj6Dw==",
+        "profileId": "ACoAAAGZZ-IBNu928ufLMleJzGg3P-u84PLvQ_w",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHpeME9WIKE6g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517749528024?e=1781136000&v=beta&t=mJgBiIudbFUwsM38V9_V-QJgDyDLmGuRCOfpZMOqHRY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEQj3TK4OULkw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517749529016?e=1781136000&v=beta&t=mghJVW4ahXE025_q3peZ4tu5xFK9zlbzNA94u0HHiMc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Anna",
+        "lastName": "Jasková",
+        "occupation": "Junior IT operátor",
+        "id": "506999271",
+        "publicId": "anna-jaskova",
+        "trackingId": "TUMxCvnZRDu1QNLEcN5/Mg==",
+        "profileId": "ACoAAB44MecBnJDpqbGDUwegHry0MDxYxIjpGzE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE7GqqxF3SapA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1685191464837?e=1781136000&v=beta&t=AwUqYd1UZIeIOw_ZLhYiD8Qe02Q8q_S765sWUpZzVK0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGDtOyzU65NFg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1685190133751?e=1781136000&v=beta&t=VYxKNGNVoZe8oD3h7gtXywYday6ELy45EwpoEtwbE_I"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Jánoška",
+        "occupation": "Tester at Legito",
+        "id": "335137909",
+        "publicId": "jakubjanoska",
+        "trackingId": "0Y4NYZVVTLGCKAxGljVB+A==",
+        "profileId": "ACoAABP5zHUBV6u-VAJOchWF_zADq3N-mR9bKtg",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFvIRw10KJxyQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1652635856931?e=1781136000&v=beta&t=O-WoLmwix_ytmEA5Yq9ONuKqdFW0QF88GsIqZiMr5uw"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 17,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "hJC+7XL4STaFXs+T5tnnUQ==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1731482104165,
+  "postedAtISO": "2024-11-13T07:15:04.165Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

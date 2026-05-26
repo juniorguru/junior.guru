@@ -1,0 +1,463 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "type": "text",
+    "isActivity": false,
+    "urn": "urn:li:activity:7364289514426564610",
+    "url": "https://www.linkedin.com/posts/patrik-brnusak-cz_zdrav%C3%AD%C4%8Dko-honza-javorek-se-mnou-m%C4%9Bl-activity-7364289514426564610-gP0d?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAACdwRloBsvQMFO5Hq4nZQD88Dn5VCuqcvz4",
+    "timeSincePosted": "9mo",
+    "shareUrn": "urn:li:share:7364289513478651905",
+    "text": "Zdravíčko!\n\n🐤 Honza Javorek se mnou měl diskuzi o komunitách na Discordu. Mám toto téma rád.\n\nJe super, že lidé hledají radu a správný recept právě u Honzi. Za mě opodstatněná důvěra - Junior Guru je skvělým příkladem, jak by to mělo vypadat v praxi.\n\nAle JG nefunguje samo od sebe - žádná komunita není stroj, který jednou za čas promažete a tím celá údržba skončila. Chce to mnohem více.\n\nMyslím, že není nutné se snažit o neprůstřelný plán, ale zase úplně bez strategie se neobejdete. Musíte vědět PROČ komunitu zakládáte. Jestli však jedinou vaší motivací je zdvojnásobit vaše příjmy, tak komunita není pro vás. Nevytvářejte prosím další mrtvý a zbytečný server.\n\nJestli je vaší motivací aktivní komunita s hodnotou nebo chcete vdechnout život do již umírající, tak si o tom s vám rád popovídám. Nabízím vám konzultaci s libovolnou finanční odměnou, podle toho, jak budete se mnou spokojeni. Ocením i doporučení. 😊 \n\nNa komunitě mi přijde zajímavý její příběh. Jak vznikla, kolik životů ovlivnila a kde chce být za dalších X let. Pokud se z vašeho příběhu něco nového naučím, abych to nejlepší mohl sdílet dál, tak do toho jdu!\n-\nNejsem byznysmen, ale jen člověk s láskou pro komunity.\nPatrik B.",
+    "attributes": [
+      {
+        "start": 14,
+        "length": 13,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "trackingId": "Mz/Be4TyQuWLAK3uyZjOBg==",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+        }
+      },
+      {
+        "start": 185,
+        "length": 11,
+        "type": "COMPANY_NAME",
+        "company": {
+          "name": "Junior Guru",
+          "universalName": "juniorguru",
+          "trackingId": "bZqX6eCKRCujdSdLrdPtqw==",
+          "active": true,
+          "showcase": false,
+          "entityUrn": "urn:li:fs_miniCompany:26218444",
+          "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQE89NmYF-XT4g/company-logo_400_400/company-logo_400_400/0/1638266899010/juniorguru_logo?e=1781136000&v=beta&t=ad516CNUThMN8eXeVboC5S9U_y2Dnn1UhQn70wIGlxE"
+        }
+      }
+    ],
+    "comments": [],
+    "reactions": [
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Petr",
+          "lastName": "Glaser 🤖",
+          "occupation": "Building Agentic Engineering Platform for production-ready apps. Generated, reviewed, managed, deployed by AI Agents.",
+          "id": "653562608",
+          "publicId": "bleedingdev",
+          "trackingId": "Qh+Y++5ETxGgfCOnrWxmdA==",
+          "profileId": "ACoAACb0kvABzEvpATXhOiWBbEuq4yfGI43iXrc",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHNZ_n7usiMwg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1707307700521?e=1781136000&v=beta&t=s9M6CBtI9xCgMRzy9aH4Zm6vuRjYQFKYSrl_QlfPTvA",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEjlZvszJMk8g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1704724910587?e=1781136000&v=beta&t=3ATL2lQYqY066bQ-K-77LV1388hPiLUDuz3f2WEXABk"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Vendula",
+          "lastName": "Štajgerová",
+          "occupation": "Carpe diem",
+          "id": "1059307183",
+          "publicId": "vendula-štajgerová-ba7914256",
+          "trackingId": "iTxbfXqNSyi+qNROTY1GaA==",
+          "profileId": "ACoAAD8jvq8B0E5lj5uZhQuq9HccBZqZ5_8Fix4",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFR6S0reCGU-A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1668287032126?e=1781136000&v=beta&t=qb7ojswJeKkNG2QwbadY2D5ARQEhPe7RtHCwFnqdHI0",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQF7mnCZrg4r4w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1668177781952?e=1781136000&v=beta&t=4JAe6XyBEO1iu87ooOXVenl-tpo3-adnTL3enL81XJU"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Tomáš",
+          "lastName": "Cibulec",
+          "occupation": "Python vývojář s přesahem. 🐍",
+          "id": "399499541",
+          "publicId": "ypsilonxpython",
+          "trackingId": "KLxin7JlTDS7/9n1k1/bXw==",
+          "profileId": "ACoAABfP4RUBhhqww_PQuiFQs580Isbr6ZqrqOg",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHxzColABuq3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1671205705078?e=1781136000&v=beta&t=YynyLwKnmF1yQVnk5INWHcB96M_Btdr9aeqx1LwcgsI",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHuts72Jn_yMQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1634794908162?e=1781136000&v=beta&t=S9UL0wy6v08ZrAb29xjudA5ltkEDpmZSh3rAld7B-jo"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Terézia",
+          "lastName": "Palaščáková",
+          "occupation": "🧡 Chief Excitement Officer komunity ContentParty – sme parta CZ&SK copywriterov, contenťákov a freelancerov, ktorá ti poradí a podrží ťa | ❤️ Content Manager Santia | 💜 Moderátorka komunity Gamerky.cz",
+          "id": "384702958",
+          "publicId": "terezia-palascakova",
+          "trackingId": "bYzS63rFSomxgtkDC6NRvw==",
+          "profileId": "ACoAABbuGe4B_LPxrpFoYfsgMsohoLZipEu0ew0",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGnwzqWel2dLA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729197398951?e=1781136000&v=beta&t=Q7DfBjlFS9Hm8mv_5dFmOqAVCtxD36WCSsM4dZ-Sm9Q",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGJko95qUT9gw/profile-displaybackgroundimage-shrink_350_1400/B4EZVWK.VYGwAY-/0/1740907473408?e=1781136000&v=beta&t=42HkPcqh4tb5RzS8kmymZXcEjA3bINRbiK1xmbd5aGc"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Martin",
+          "lastName": "Rapavý",
+          "occupation": "AI Specialist at Raiffeisenbank a.s.",
+          "id": "475183572",
+          "publicId": "martin-rapavy",
+          "trackingId": "iVIllMcAR4W3YHbtuatk1w==",
+          "profileId": "ACoAABxSudQBHuhA8cJ5OL9XXk9jIvrhocisM3w",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG-uEYWYQCi4w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1691341533471?e=1781136000&v=beta&t=TPnx6_RUaVTc-zVJyopipcS6x0aME46dvKqyIHnqifE",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFwzvr2gYb0EA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1716196276872?e=1781136000&v=beta&t=WHgrvkrw78fRS0FNPdG84I2uf_O9Aj4XkZP7HZ0Jbo8"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "trackingId": "Mz/Be4TyQuWLAK3uyZjOBg==",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+        }
+      }
+    ],
+    "numShares": 1,
+    "numLikes": 6,
+    "numComments": 0,
+    "canReact": true,
+    "canPostComments": true,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "ALL",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "firstName": "Patrik",
+      "lastName": "Brnušák",
+      "occupation": "Otevřen novým příležitostem",
+      "id": "666440295",
+      "publicId": "patrik-brnusak-cz",
+      "trackingId": "T4b+ynIxQMS+6X66P8WJnw==",
+      "profileId": "ACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU",
+      "picture": "https://media.licdn.com/dms/image/v2/D4E35AQF0EuGEMDwlUg/profile-framedphoto-shrink_400_400/B4EZgIpEXYHEAc-/0/1752491640554?e=1780430400&v=beta&t=HTUsGAYmOaJQrIYvqehEEjmDH7Xc9mxLPWanNlRdkyQ"
+    },
+    "authorProfileId": "patrik-brnusak-cz",
+    "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4E35AQF0EuGEMDwlUg/profile-framedphoto-shrink_400_400/B4EZgIpEXYHEAc-/0/1752491640554?e=1780430400&v=beta&t=HTUsGAYmOaJQrIYvqehEEjmDH7Xc9mxLPWanNlRdkyQ",
+    "authorType": "Person",
+    "authorName": "Patrik Brnušák",
+    "authorProfileUrl": "https://www.linkedin.com/in/patrik-brnusak-cz?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU",
+    "authorUrn": "urn:li:member:666440295",
+    "postedAtTimestamp": 1755783442122,
+    "postedAtISO": "2025-08-21T13:37:22.122Z"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7364348675818463233",
+  "url": "https://www.linkedin.com/posts/honzajavorek_zdrav%C3%AD%C4%8Dko-honza-javorek-se-mnou-m%C4%9Bl-activity-7364348675818463233-qMjM?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAACdwRloBsvQMFO5Hq4nZQD88Dn5VCuqcvz4",
+  "timeSincePosted": "9mo",
+  "shareUrn": "urn:li:share:7364348674828558336",
+  "text": "Provozujete Discord komunitu? Plánujete nějakou založit? Už nějakou máte, ale nefunguje a umírá?\n\nZkuste konzultaci s Patrikem, za libovolnou odměnu – podle toho, jak potom budete spokojeni.\n\nPatrik je už dlouhou dobu součástí týmu kolem junior.guru/club a spolupracoval na provozu i u jiných komunit. Myslím si, že bude umět dobře zhodnotit vaši situaci a poradit.\n\nZkuste, uvidíte! 😉",
+  "attributes": [
+    {
+      "start": 118,
+      "length": 6,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Patrik",
+        "lastName": "Brnušák",
+        "occupation": "Otevřen novým příležitostem",
+        "id": "666440295",
+        "publicId": "patrik-brnusak-cz",
+        "trackingId": "jjsjmSTNSHaaQCTFces5ow==",
+        "profileId": "ACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQF0EuGEMDwlUg/profile-framedphoto-shrink_400_400/B4EZgIpEXYHEAc-/0/1752491640554?e=1780430400&v=beta&t=HTUsGAYmOaJQrIYvqehEEjmDH7Xc9mxLPWanNlRdkyQ"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1755813515434,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7364348675818463233?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7364348675818463233%2C7364415651035181056%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287364415651035181056%2Curn%3Ali%3Aactivity%3A7364348675818463233%29",
+      "text": "Pavel Chocholous, neriešil si to náhodou nedávno? 🤔 ",
+      "entities": [
+        {
+          "start": 0,
+          "length": 16,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Pavel",
+            "lastName": "Chocholous",
+            "occupation": "The universe is written in the language of mathematics, and data is the ink.",
+            "id": "26173387",
+            "publicId": "pavel-chocholous",
+            "trackingId": "T2mnPpV7QXKUB/NOk5hhHg==",
+            "profileId": "ACoAAAGPX8sB16Ozd5ESObr0xsATyQhbxH1aOjQ",
+            "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFE5iFHFLjI8g/profile-displayphoto-shrink_800_800/B4EZRAknHbGcAc-/0/1736250127465?e=1781136000&v=beta&t=gFeXsnfN9nvGNYbO0RGAHqXEkgxiYiPc6ZRlg1uSxqQ",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGNtNz4Jfnryg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1620329415140?e=1781136000&v=beta&t=qTLXeCVMoANI59e7r23HwVnAc54m1DeTwkXYylf0v7A"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "Slovak",
+      "author": {
+        "firstName": "Barbora",
+        "lastName": "Lendacká",
+        "occupation": "junior react developer | lifelong hands-on learner 📚",
+        "id": "244185326",
+        "publicId": "barbora-lendacka",
+        "trackingId": "XZ0zbSHnSLS3NPdLNxbyMw==",
+        "profileId": "ACoAAA6N-O4BkRvPPyIgRFUKOlr5LSE8hcrD3UQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQE5OKdwPiArDg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729857457613?e=1781136000&v=beta&t=5W6LFdsF3fy5yAqp6Pi7el03yHSW3TDXJpJlDXVXhLI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEVz3fJnY0J5g/profile-displaybackgroundimage-shrink_350_1400/B56ZcmxjDMGQAc-/0/1748702213960?e=1781136000&v=beta&t=B1meT8DW8qkAtlXBAsRhra3Tps9dznwKLiHIxUQRtJs",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1755808878946,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7364348675818463233?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7364348675818463233%2C7364396204195028992%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287364396204195028992%2Curn%3Ali%3Aactivity%3A7364348675818463233%29",
+      "text": "Děkuji za sdílení a doporučení! 😊 ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Patrik",
+        "lastName": "Brnušák",
+        "occupation": "Otevřen novým příležitostem",
+        "id": "666440295",
+        "publicId": "patrik-brnusak-cz",
+        "trackingId": "T4b+ynIxQMS+6X66P8WJnw==",
+        "profileId": "ACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQF0EuGEMDwlUg/profile-framedphoto-shrink_400_400/B4EZgIpEXYHEAc-/0/1752491640554?e=1780430400&v=beta&t=HTUsGAYmOaJQrIYvqehEEjmDH7Xc9mxLPWanNlRdkyQ",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1755797754995,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7364348675818463233?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7364348675818463233%2C7364349546962817025%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287364349546962817025%2Curn%3Ali%3Aactivity%3A7364348675818463233%29",
+      "text": "Může se (někdy) hodit Terézia Palaščáková & friends, Martin Kavka & friends… 🧐\n\nMožná někdo znáte i můj dřívější článek https://honzajavorek.cz/blog/dalsi-komunita-na-discordu/ – pokud se v něm vidíte, řekl bych, že takovou konzultaci asi přímo i potřebujete 😅 ",
+      "entities": [
+        {
+          "start": 22,
+          "length": 19,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Terézia",
+            "lastName": "Palaščáková",
+            "occupation": "🧡 Chief Excitement Officer komunity ContentParty – sme parta CZ&SK copywriterov, contenťákov a freelancerov, ktorá ti poradí a podrží ťa | ❤️ Content Manager Santia | 💜 Moderátorka komunity Gamerky.cz",
+            "id": "384702958",
+            "publicId": "terezia-palascakova",
+            "trackingId": "bYzS63rFSomxgtkDC6NRvw==",
+            "profileId": "ACoAABbuGe4B_LPxrpFoYfsgMsohoLZipEu0ew0",
+            "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGnwzqWel2dLA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729197398951?e=1781136000&v=beta&t=Q7DfBjlFS9Hm8mv_5dFmOqAVCtxD36WCSsM4dZ-Sm9Q",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGJko95qUT9gw/profile-displaybackgroundimage-shrink_350_1400/B4EZVWK.VYGwAY-/0/1740907473408?e=1781136000&v=beta&t=42HkPcqh4tb5RzS8kmymZXcEjA3bINRbiK1xmbd5aGc"
+          }
+        },
+        {
+          "start": 53,
+          "length": 12,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Martin",
+            "lastName": "Kavka",
+            "occupation": "Pište co nejlépe. A posílejte dobré newslettery → Newslettery.cz",
+            "id": "8564238",
+            "publicId": "newsletterista",
+            "trackingId": "MJr/VMyTQB6Ce+APF+4waA==",
+            "profileId": "ACoAAACCrg4BcE6RgPGHGgkMUX-AiPQMeU9H1rA",
+            "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGyoY9jftCjXg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1622497751277?e=1781136000&v=beta&t=1lZqNoE3zgwrPcHnv7qxWmRMjVFXQhytoEy3QLBsWrU",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFCj8Iv6nua5A/profile-displaybackgroundimage-shrink_350_1400/B4DZoWusKlJUAY-/0/1761317930554?e=1781136000&v=beta&t=2wVbL_9yqwFfI2rRDacHK1IWqYgSg9EqV7EaDHfEIc8"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "tA/LfCQESs+9O4bFg8MWRw==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Norbert",
+        "lastName": "Červený",
+        "occupation": "I help great brands grow @STRV",
+        "id": "337285701",
+        "publicId": "strv-norbert-cerveny",
+        "trackingId": "FqriuqSNTtmETtrWFtMSlw==",
+        "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGKIAaUJPtlmA/profile-displayphoto-crop_800_800/B4DZ0jT_lBIEAI-/0/1774413941709?e=1781136000&v=beta&t=ioRFNZY53XZXWk1BvKTQdIygU-xxLKoyNysEAYklp0I",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG0ekEnNy2Hcw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0jTiNeGsAk-/0/1774413817026?e=1781136000&v=beta&t=_KMbjLzzfd2pO9gizTz2iWgDOkq5RQ3NpzDT5fOljNI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Manivannan",
+        "lastName": "Selvaraj",
+        "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
+        "id": "13167565",
+        "publicId": "citizenmani",
+        "trackingId": "uSi51F+wTuCz6maSUFT0zg==",
+        "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQEqC5x0akFu1Q/profile-displayphoto-crop_800_800/B56ZlSvDmfIAAM-/0/1758029692620?e=1781136000&v=beta&t=2MjEAUEFd1OccqmtlnzcSzG2gHUquLzw5MI-3XUUfOM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHZC49bFZ8ZTQ/profile-displaybackgroundimage-shrink_350_1400/B56ZxDZv79KIAY-/0/1770657351768?e=1781136000&v=beta&t=kVGPoYvqmMzYICMmu_0FODKNvqUNjsGRcvULLqy01EA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Blanka",
+        "lastName": "Semanová",
+        "occupation": "Frontend Developer - React and Next",
+        "id": "740316381",
+        "publicId": "blanka-semanová",
+        "trackingId": "+/hUULPoR72OGpkStMOu5A==",
+        "profileId": "ACoAACwgVN0BXjPO356is1a7HECdYY6oGuzTouY",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQHt31UB9Dnr_g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1705586552175?e=1781136000&v=beta&t=VnaoT0wlgyuQQGLJMI1wvCsS4oGHAmClyqm-JikLvgE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGmd9O2TBL9PA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1705586497192?e=1781136000&v=beta&t=JlZHwSEMta7stFHe1LeFKFVGgbpKpeFbQUUDebs_rnc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Glaser 🤖",
+        "occupation": "Building Agentic Engineering Platform for production-ready apps. Generated, reviewed, managed, deployed by AI Agents.",
+        "id": "653562608",
+        "publicId": "bleedingdev",
+        "trackingId": "Qh+Y++5ETxGgfCOnrWxmdA==",
+        "profileId": "ACoAACb0kvABzEvpATXhOiWBbEuq4yfGI43iXrc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHNZ_n7usiMwg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1707307700521?e=1781136000&v=beta&t=s9M6CBtI9xCgMRzy9aH4Zm6vuRjYQFKYSrl_QlfPTvA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEjlZvszJMk8g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1704724910587?e=1781136000&v=beta&t=3ATL2lQYqY066bQ-K-77LV1388hPiLUDuz3f2WEXABk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Jiranek",
+        "occupation": "Team Lead | 18+ yrs in software dev | Software Engineer | Creator of The Hybrid Leader",
+        "id": "23201612",
+        "publicId": "pavel-jiranek-tech",
+        "trackingId": "JHM8iAlOQymoItszDSA4eQ==",
+        "profileId": "ACoAAAFiB0wBtwk-UuXs628PvH1ppb1RIPbmtxw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEP9Jq7Un_XlA/profile-displayphoto-crop_800_800/B4DZ3GwuGWHIAM-/0/1777156157923?e=1781136000&v=beta&t=wTNoptqN-GZPoZO7s970HoKmgDMHYiVO_GWF_loDfGA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG5E4BoGNKXFA/profile-displaybackgroundimage-shrink_350_1400/B4DZ4xZGOpJUAU-/0/1778945123564?e=1781136000&v=beta&t=cyL5hx6Ih5tWa9qteP1kKG0wuey3BS599UjwwNA8Lxg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "trackingId": "vnwDase0RB6R9YAEQyB03A==",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGjycZdsqX9ww/profile-displayphoto-crop_800_800/B4DZjBYhBpGQAQ-/0/1755591087410?e=1781136000&v=beta&t=wVIgd5mwqIYPXpFj5d6Nr2x8-VHHyAZ4o1qWAcv4nhQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Dominika",
+        "lastName": "Vykydalová",
+        "occupation": "Content specialist & strategist | Bitcoin | Fintech",
+        "id": "320925517",
+        "publicId": "dominikavykydalova",
+        "trackingId": "PuRlNzohS/S0WdzcBkp2tA==",
+        "profileId": "ACoAABMg700BFHeNeaArW6j8e2CJC0ViRIMCnmo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFQuzch_U5rOg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1713526160401?e=1781136000&v=beta&t=Gs3maXJyG8jjsKSLW59cpyczx26Xnxqtv9NuKOZqpjE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFwYCyGxSUsuw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1702999292444?e=1781136000&v=beta&t=yHwPrQ8FQ0CaG7MWUEDVdcEPNjptWKW96qGi6yYOcqE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Terézia",
+        "lastName": "Palaščáková",
+        "occupation": "🧡 Chief Excitement Officer komunity ContentParty – sme parta CZ&SK copywriterov, contenťákov a freelancerov, ktorá ti poradí a podrží ťa | ❤️ Content Manager Santia | 💜 Moderátorka komunity Gamerky.cz",
+        "id": "384702958",
+        "publicId": "terezia-palascakova",
+        "trackingId": "bYzS63rFSomxgtkDC6NRvw==",
+        "profileId": "ACoAABbuGe4B_LPxrpFoYfsgMsohoLZipEu0ew0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGnwzqWel2dLA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729197398951?e=1781136000&v=beta&t=Q7DfBjlFS9Hm8mv_5dFmOqAVCtxD36WCSsM4dZ-Sm9Q",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGJko95qUT9gw/profile-displaybackgroundimage-shrink_350_1400/B4EZVWK.VYGwAY-/0/1740907473408?e=1781136000&v=beta&t=42HkPcqh4tb5RzS8kmymZXcEjA3bINRbiK1xmbd5aGc"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Patrik",
+        "lastName": "Brnušák",
+        "occupation": "Otevřen novým příležitostem",
+        "id": "666440295",
+        "publicId": "patrik-brnusak-cz",
+        "trackingId": "jjsjmSTNSHaaQCTFces5ow==",
+        "profileId": "ACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQF0EuGEMDwlUg/profile-framedphoto-shrink_400_400/B4EZgIpEXYHEAc-/0/1752491640554?e=1780430400&v=beta&t=HTUsGAYmOaJQrIYvqehEEjmDH7Xc9mxLPWanNlRdkyQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Seidler",
+        "occupation": "GeoData Engineer 🛰️ DPZ nadšenec 🌍 Vstříc zdravější planetě díky datům",
+        "id": "249586440",
+        "publicId": "tom-seidler",
+        "trackingId": "wez3vJQqQv63lsYfTCXJmQ==",
+        "profileId": "ACoAAA7gYwgB2MoKETGmLtnL2hvh9UxwLxxdE7o",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHW8LuuyZj5Pg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1521363633104?e=1781136000&v=beta&t=6ptrOyW5IRJ_80JWvpAnoJUb-gLmEVGoUX-D2Qd5A9Y",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFHb-GaDXywBA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1707660103211?e=1781136000&v=beta&t=cpoANNnMsJalmkkJ5z5ekgkDIEcL3G9VaeJ1ys_rf4c"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 11,
+  "numComments": 11,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "tA/LfCQESs+9O4bFg8MWRw==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1755797547297,
+  "postedAtISO": "2025-08-21T17:32:27.297Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

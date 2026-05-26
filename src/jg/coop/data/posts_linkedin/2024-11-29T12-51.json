@@ -1,0 +1,256 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/D4E22AQE_fG4S8yxrGg/feedshare-image-high-res/feedshare-image-high-res/0/1732884700636?e=1781136000&v=beta&t=8RlCBFTsONzlDNbDZscAmTkFD2chqlV85QC285Qafe8"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:7268245234898112512",
+  "url": "https://www.linkedin.com/posts/honzajavorek_obsidian-je-program-na-organizaci-osobn%C3%ADch-activity-7268245234898112512-n3PO?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAABZ7-HEBruCM6sZQ3V5BFFp4L-sCzx01HEI",
+  "timeSincePosted": "1yr",
+  "shareUrn": "urn:li:share:7268245233488822272",
+  "text": "Obsidian je program na organizaci osobních poznámek. Na počítači, na mobilu. A pracuje s obyčejnými textovými soubory na disku, žádné uzavřené cloudy, data jsou vaše.\n\nZítra (v sobotu 30.11.) v 9:30 ráno bude na našem klubovém Discordu workshop právě na tento program. Povede jej skvělá Lucie Lenertova, youtuberka a lektorka Pythonu, která už má na toto téma několik videí na svém kanále.\n\nVedení a organizace poznámek jsou zásadní dovednost pro efektivní učení, takže je to krásné doplňkové téma pro všechny, kdo se snaží naučit se programovat nebo testovat 🚀\n\nDo našeho klubu se přihlásíte přes junior.guru/club a nemusíte nic platit, na prvních 14 dní je to zdarma a pak buď zadáte kartu, nebo vás to automaticky vyhodí.",
+  "attributes": [
+    {
+      "start": 0,
+      "length": 8,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Obsidian",
+        "universalName": "obsidianmd",
+        "trackingId": "FaxXARmHTAusmJPFyGQW0A==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:81876095",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D560BAQFOJku1ne5iTA/company-logo_400_400/company-logo_400_400/0/1685632489520/obsidianmd_logo?e=1781136000&v=beta&t=xBHc3FU-lckp0tYNoz7SnOtzgtcKXEwPBnJLI5lOqsQ"
+      }
+    },
+    {
+      "start": 287,
+      "length": 15,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Lucie",
+        "lastName": "Lénertová",
+        "occupation": "Lektorka Pythonu pro (věčné) začátečníky | dokazesprogramovat.cz",
+        "id": "383494486",
+        "publicId": "lucielenertova",
+        "trackingId": "TNNZPr0NSjmU3ULINhEXYw==",
+        "profileId": "ACoAABbbqVYBvZZo-2WzDrGq-dhQmYHspDOKu0U",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH6noeBGdX4Hg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1694706426989?e=1781136000&v=beta&t=N7bFYrYARXWVVzBr8EMuROny58avmnFrDJnoohLwT8U",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEJKcbZtgWCRA/profile-displaybackgroundimage-shrink_350_1400/B4DZuUQ2piIEAY-/0/1767719005354?e=1781136000&v=beta&t=yX5HaEBe4MVy8Js-xrx65UZb-wo8q_qp1vtBYALq4Lk"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1732905762390,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7268245234898112512?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7268245234898112512%2C7268333570811744256%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287268333570811744256%2Curn%3Ali%3Aactivity%3A7268245234898112512%29",
+      "text": "Ahoj. Prosím bude záznam? Bych si potřebovala zítra přispat 😄 ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Milada",
+        "lastName": "Borrow",
+        "occupation": "Junior Data Analyst, AP Accounting, Reporting, Controlling",
+        "id": "1136414018",
+        "publicId": "milada-borrow",
+        "trackingId": "9x7rgO5uQYSZkuLmYTsw+w==",
+        "profileId": "ACoAAEO8TUIBAcDwMiytj9V95pkvE0KMj3HLGwM",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHtPYHyqKZqFg/profile-displayphoto-shrink_800_800/B4EZQ31swqGYAc-/0/1736103612242?e=1781136000&v=beta&t=tsnHFjjs4_eG1g2Bl0nBBP_S54jZZ-mT-0uRn82zJpE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFo5GGOUYKtpQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1736105327386?e=1781136000&v=beta&t=HDY2bH_hjWCCCI9B6BhH5jXm9CCinTcnWcpt0iiEyuE",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1732884746087,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7268245234898112512?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7268245234898112512%2C7268245422048002048%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287268245422048002048%2Curn%3Ali%3Aactivity%3A7268245234898112512%29",
+      "text": "Tady je Luciino úvodní video o Obsidianu, které je dobré vidět ještě před workshopem. Díky tomuto videu jsem začal Obsidian používat i já sám 😀 https://www.youtube.com/watch?v=JyyweqNkdZ0",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "hJC+7XL4STaFXs+T5tnnUQ==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michal",
+        "lastName": "J.",
+        "occupation": "Helping marketing specialists | Company process designer | Profitak group CEO",
+        "id": "16839442",
+        "publicId": "michaljanikcz",
+        "trackingId": "5Rp8OuHKRCKRHBmuSDrIbA==",
+        "profileId": "ACoAAAEA8xIBEWga1gffF30jhB8NukDM1vjtSMo",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGwoLMdy5e0RA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517757831874?e=1781136000&v=beta&t=4h3xUsWKhPMfw0YtZuyVVtjRRy-2MuSlDSUDmMZ23kU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQF-BBU5Of0vQw/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1699608511981?e=1781136000&v=beta&t=jakcILU7NX4zwDAMT8OQm5DVL8hagR8N_H9SgdQKteY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Červinka",
+        "occupation": "Python developer and lecturer",
+        "id": "355842259",
+        "publicId": "jakub-červinka",
+        "trackingId": "jkQkkffCSNen19forsePPw==",
+        "profileId": "ACoAABU1uNMBxEkN7xMohKuhfytB97ZjK-tfEKo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGNchKKmRxASA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728627722442?e=1781136000&v=beta&t=wCbTK52orQpi98p3D_tIyem3VP3BJlXJ525dcexRAhg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFo1b8_EZuWVQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728056593822?e=1781136000&v=beta&t=NEwZVdMdQqj1rM46MtdnZQjC4bxHXipuncawNthkvSU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiří",
+        "lastName": "Bervid",
+        "occupation": "„Nezáleží na tom, jak pomalu jdeš, dokud se nezastavíš.“ — Konfucius",
+        "id": "946831588",
+        "publicId": "jiří-bervid",
+        "trackingId": "0oWhO4+0QBu5inWvOKEQaA==",
+        "profileId": "ACoAADhvgOQBDlcH4sJusqf9E57Havxyx9g0eMg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHyOzNZz5j_og/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720947983866?e=1781136000&v=beta&t=l5orH5DWXVxZtvHSR54mrHUdO040hvFGTc-s9vXhyc0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Simon",
+        "lastName": "Barak",
+        "occupation": "Software Developer",
+        "id": "792277328",
+        "publicId": "simon-barak",
+        "trackingId": "RsYQoopLTAujLSRhbtL+xQ==",
+        "profileId": "ACoAAC85MVAB4dGF6AeVRmK1oTUokgLc8QVCejU",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGrEi2_Zu5FVg/profile-displayphoto-crop_800_800/B4EZsmgBZkHMAI-/0/1765877488260?e=1781136000&v=beta&t=IJNcbZvu9DX0u4MkKLpP91RI3IlAQC4_idsMKqw9koo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHHfkTm-5cgcw/profile-displaybackgroundimage-shrink_350_1400/B4EZsmaQb5GcAY-/0/1765875981742?e=1781136000&v=beta&t=6zb94O2q0ySDFI0O6gTab-NiTq8QN2x9Jewzw0r_LzQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Patrik",
+        "lastName": "Brnušák",
+        "occupation": "Otevřen novým příležitostem",
+        "id": "666440295",
+        "publicId": "patrik-brnusak-cz",
+        "trackingId": "tlJFyfuLTUCXodvmUi3U4w==",
+        "profileId": "ACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQF0EuGEMDwlUg/profile-framedphoto-shrink_400_400/B4EZgIpEXYHEAc-/0/1752491640554?e=1780430400&v=beta&t=HTUsGAYmOaJQrIYvqehEEjmDH7Xc9mxLPWanNlRdkyQ"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Milada",
+        "lastName": "Borrow",
+        "occupation": "Junior Data Analyst, AP Accounting, Reporting, Controlling",
+        "id": "1136414018",
+        "publicId": "milada-borrow",
+        "trackingId": "8IyKCyFpRlGvcjxxJcnXig==",
+        "profileId": "ACoAAEO8TUIBAcDwMiytj9V95pkvE0KMj3HLGwM",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHtPYHyqKZqFg/profile-displayphoto-shrink_800_800/B4EZQ31swqGYAc-/0/1736103612242?e=1781136000&v=beta&t=tsnHFjjs4_eG1g2Bl0nBBP_S54jZZ-mT-0uRn82zJpE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFo5GGOUYKtpQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1736105327386?e=1781136000&v=beta&t=HDY2bH_hjWCCCI9B6BhH5jXm9CCinTcnWcpt0iiEyuE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Obendraufová",
+        "occupation": "Works in H2O s.r.o. and NETTO Electronics s.r.o.",
+        "id": "31635977",
+        "publicId": "jana-obendraufová-a35717a",
+        "trackingId": "74ahbIr7TeSGBp2yOcVwRg==",
+        "profileId": "ACoAAAHiugkBJ0q5ZMXKKZuYMwq618ZTY4nUmkc",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEQ1nDISSmM7Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1600932043756?e=1781136000&v=beta&t=6UeOFKEtn29m4264teEzWPPBou--HNzasWdv_4HlAjY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE94l-XqyVhQw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1683550656771?e=1781136000&v=beta&t=XFG9gHK_jkEGTq9dB0r_qXdpQw131m3N-CQB0JSX1FI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Sergiu",
+        "lastName": "Nica",
+        "occupation": "AI Engineer | Building Agentic Systems & LLM-Powered Apps | Specializing in RAG, Python & Enterprise AI Automation",
+        "id": "893788823",
+        "publicId": "sergiu-nica-2025-ai-dev",
+        "trackingId": "vc0gpZqTSp26eRajiIV0Vg==",
+        "profileId": "ACoAADVGIpcBVKcy2A9itdpU8rRZq4VsKfhZzYE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHi4P5OAaLgwg/profile-displayphoto-crop_800_800/B4EZld_4g9GoAQ-/0/1758218662284?e=1781136000&v=beta&t=XrZtHHN4kaSrbyU09Qei8EbJegXuNFCC9m4fkY7izX4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEFe4yvOBTy7w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1719347106885?e=1781136000&v=beta&t=xLayS-OmmVkgptfjscw8RdlWnqnYpjNOUc-DCo5IObs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Juraj",
+        "lastName": "Solár",
+        "occupation": "#OpenToWork | Junior Frontend Developer | TPP",
+        "id": "251923843",
+        "publicId": "juraj-solarml",
+        "trackingId": "rolwbX7+RJW3EVMbPZYgxg==",
+        "profileId": "ACoAAA8EDYMBLxIGFkvtfI1Vro-yXMPpfVNdT9s",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQEAmJI339Vvmg/profile-framedphoto-shrink_800_800/B4DZx78YZzGQAg-/0/1771605952455?e=1780430400&v=beta&t=lY8G_gK3n7YjM5kRzkz-MV87VTPRrjuvO4_cROBLdfs",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHj4A2nngY-ag/profile-displaybackgroundimage-shrink_350_1400/B4EZch4U_UHsAY-/0/1748620104532?e=1781136000&v=beta&t=EivcfHIkHGo-jruKICbLZIQ3a-uMjiHBKUKN8r0Hn5k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Šimon",
+        "lastName": "Kořený",
+        "occupation": "Product Owner & Dad | Building great products, raising great humans",
+        "id": "283596586",
+        "publicId": "fusatytata",
+        "trackingId": "rpH5dY2aTF2kE8hyOI7T4w==",
+        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEP3Q4BtiThDA/profile-displayphoto-shrink_800_800/B4EZc_c90wHIAc-/0/1749116247942?e=1781136000&v=beta&t=_QtTBgXEBbo6wLgAeAyA_Vwe266kRM2rafjtUTqdQ18",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFllW8t92LUXg/profile-displaybackgroundimage-shrink_350_1400/B4EZkO0XOcHEAY-/0/1756890233024?e=1781136000&v=beta&t=BcgfXCQP09cdXXYAi_lrlRlt4F-p0U2rPgEazsl9SeQ"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 15,
+  "numComments": 3,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "hJC+7XL4STaFXs+T5tnnUQ==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1732884701466,
+  "postedAtISO": "2024-11-29T12:51:41.466Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

@@ -1,0 +1,211 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C5622AQGGvKWGHlGhxg/feedshare-image-high-res/feedshare-image-high-res/0/1670520196998?e=1781136000&v=beta&t=7dLld84GztI0aoJbAn_VyXkIsOINrCn0YIP5lVSZmno"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:7006669547650899968",
+  "url": "https://www.linkedin.com/posts/honzajavorek_marketing-emailing-newsletter-activity-7006669547650899968-D-1R?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAE2PLXsBuFiD1nAi3PAY2nbRbRYGC5K4OKI",
+  "timeSincePosted": "3yr",
+  "shareUrn": "urn:li:share:7006669546816245761",
+  "text": "Marketingoví experti! Prosím o radu. Neznáte někdo službu, která by byla schopna vzít RSS z mého blogu a umožnit lidem, aby to odebírali přes email? Když bych publikoval článek, služba by to prostě lidem při nejbližší příležitosti (třeba do druhého dne) poslala emailem. Lidem, kteří by se k tomu mohli přes formulář přihlásit na mém webu.\n\nNašel jsem https://lnkd.in/gm-f-vFv, ale nejsem schopen to v Mailchimpu naklikat. Všechny návody zřejmě předpokládají nějakou starší verzi Mailchimpu. Bylo by super mít tam „audience“ a všechny „GDPR vychytávky“ - tak jak se má správně emailing dělat. Líbilo by se mi to mít v Mailchimpu. Ale jak tam napojit to RSS, na to jsem teda nepřišel. #marketing #emailing #newsletter #rss",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1670702199770,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7006669547650899968?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7006669547650899968%2C7007432919300329472%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287007432919300329472%2Curn%3Ali%3Aactivity%3A7006669547650899968%29",
+      "text": "Osobně dělám blogy pomocí hugo a deploynu přes github actions. Pokud děláš podobně, můžeš přidat do workflow tohle https://github.com/robinsloan/mailchimp-cli a vytvořit či updatenout campaign při git push. Pote bys to ručně zaslal jedným kliknutím.\n",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Timothy",
+        "lastName": "Hobbs",
+        "occupation": "Automating your business processes",
+        "id": "961155918",
+        "publicId": "timothy-hobbs-5a6a80229",
+        "trackingId": "+UeNJxI0TnW8aRBDbtQlkw==",
+        "profileId": "ACoAADlKE04Bxq2wlmaK3PahjO_16IaawrPRW3s",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE4xIZTmQIt7g/profile-displayphoto-crop_800_800/B4EZgpi9aCGwAM-/0/1753043688020?e=1781136000&v=beta&t=QR4rcu00PyLR7xJhzVcQfgEWAIqCa1eTSrW_CQdv2X0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEGFJlIx3EvDA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1692554125867?e=1781136000&v=beta&t=wLauGIxOqqIsrkA-mSZHXVdrSJFujjckze7K1V9Dpr8",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1670533101581,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7006669547650899968?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7006669547650899968%2C7006723670089826304%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287006723670089826304%2Curn%3Ali%3Aactivity%3A7006669547650899968%29",
+      "text": "Hodne lidi v mem okoli na tohle pouziva substack.com, pokud ti nevadi menit technologii blogu. Vnimam na to pozitivni feedback.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Martin",
+        "lastName": "Wenisch",
+        "occupation": "Senior Software Engineer",
+        "id": "140017332",
+        "publicId": "mwenisch",
+        "trackingId": "6RWPhMrvQwOSANZu+Gu5LA==",
+        "profileId": "ACoAAAhYfrQB_PfnP77TNy12rVIgZaSg4ntxNQI",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFDcQx7q740RQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1601422705043?e=1781136000&v=beta&t=ShcZuGo9FBS5mI91ucltUbtKK6GqMqtjo6u82XRBK6M",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQExa7PgQIUDdA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1699636955431?e=1781136000&v=beta&t=FQxvHhXoo_oA5O9GTjlk1LPmxQyTQ3RjD2K7hZw908Y",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1670523018391,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7006669547650899968?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7006669547650899968%2C7006681378125713408%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287006681378125713408%2Curn%3Ali%3Aactivity%3A7006669547650899968%29",
+      "text": "Pokud chcete propojit službu MailChimp se svým blogem a umožnit odběr jeho obsahu přes e-mail, můžete postupovat následovně:\n\n1. Nejprve se přihlaste do svého účtu MailChimp a vytvořte novou skupinu odběratelů pro svůj blog. Můžete to udělat v sekci Publikování > Skupiny odběratelů.\n\n2. Poté přejděte na stránku Nastavení > Integrace a vyhledejte položku RSS-to-Email. Klikněte na tlačítko Přidat integraci a vyplňte požadované informace, jako je URL vašeho blogu a interval, ve kterém budou e-maily s obsahem z vašeho blogu odesílány.\n\n3. Následně vytvořte novou kampaň typu RSS-to-Email. Můžete to udělat v sekci Kampaně > Vytvořit kampaň. Vyberte si šablonu e-mailu, kterou chcete použít, a nakonfigurujte další nastavení kampaně, jako jsou předmět e-mailu a odesílatel.\n\n4. Nakonec stačí spustit kampaň a vaši odběratelé budou dostávat e-maily s obsahem z vašeho blogu podle nastaveného intervalu.\n\nJe důležité si uvědomit, že integrace s MailChimpem může chvíli trvat, než se plně spustí, takže počítejte s tím, že první e-maily s obsahem z vašeho blogu mohou přijít až po několika hodinách nebo dokonce dnech.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Jarda",
+        "lastName": "Z.",
+        "occupation": "founder@metagym",
+        "id": "110092052",
+        "publicId": "zapadlo",
+        "trackingId": "0B8EIKvDT/WDJ/5h6toGmg==",
+        "profileId": "ACoAAAaP3xQB9OmVR_H_rXxr57aIJAftAOFahUs",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEC6JZP0jAE5A/profile-displayphoto-crop_800_800/B4EZiACje6GwAI-/0/1754494810986?e=1781136000&v=beta&t=69zGDVDEsUr5PukYrdlxmWbuF7bmV_Rk_OZloYqmv4Y",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHL7rOg96wbpw/profile-displaybackgroundimage-shrink_350_1400/B4DZ5J79pbJYAU-/0/1779356916618?e=1781136000&v=beta&t=buaM98C3-LroCzT-M5lGeVcn964WC7cuUW91BRlUDmQ",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1670522976005,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7006669547650899968?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7006669547650899968%2C7006681200345919488%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287006681200345919488%2Curn%3Ali%3Aactivity%3A7006669547650899968%29",
+      "text": "Ano, existuje několik služeb, které umožňují odebírat RSS z vašeho blogu přes e-mail. Některé z těchto služeb jsou zdarma a snadno se používají. Například služba FeedBurner od Googlu umožňuje odebírat RSS z vašeho blogu přes e-mail a poskytuje širokou škálu dalších funkcí, jako je sledování návštěvnosti a analýza odběratelů. Další službou, kterou byste mohli zvážit, je MailChimp, který nabízí funkci odběru RSS z vašeho blogu přes e-mail v rámci svého e-mailového marketingového nástroje. Obě tyto služby jsou populární a mají dobrou reputaci. Doporučuji si je prohlédnout a zvolit tu, která vám nejlépe vyhovuje.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Jarda",
+        "lastName": "Z.",
+        "occupation": "founder@metagym",
+        "id": "110092052",
+        "publicId": "zapadlo",
+        "trackingId": "0B8EIKvDT/WDJ/5h6toGmg==",
+        "profileId": "ACoAAAaP3xQB9OmVR_H_rXxr57aIJAftAOFahUs",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEC6JZP0jAE5A/profile-displayphoto-crop_800_800/B4EZiACje6GwAI-/0/1754494810986?e=1781136000&v=beta&t=69zGDVDEsUr5PukYrdlxmWbuF7bmV_Rk_OZloYqmv4Y",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHL7rOg96wbpw/profile-displaybackgroundimage-shrink_350_1400/B4DZ5J79pbJYAU-/0/1779356916618?e=1781136000&v=beta&t=buaM98C3-LroCzT-M5lGeVcn964WC7cuUW91BRlUDmQ",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "INTEREST",
+      "profile": {
+        "firstName": "Norbert",
+        "lastName": "Červený",
+        "occupation": "I help great brands grow @STRV",
+        "id": "337285701",
+        "publicId": "strv-norbert-cerveny",
+        "trackingId": "XRgUFEgmQP28QIYWPmYNtg==",
+        "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGKIAaUJPtlmA/profile-displayphoto-crop_800_800/B4DZ0jT_lBIEAI-/0/1774413941709?e=1781136000&v=beta&t=ioRFNZY53XZXWk1BvKTQdIygU-xxLKoyNysEAYklp0I",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG0ekEnNy2Hcw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0jTiNeGsAk-/0/1774413817026?e=1781136000&v=beta&t=_KMbjLzzfd2pO9gizTz2iWgDOkq5RQ3NpzDT5fOljNI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ondřej",
+        "lastName": "Beránek",
+        "occupation": "Expert in digitalization and automation - I design and build tools that make life easier and improve business ✅ I use n8n, Make, Airtable and others - I will also connect your systems using API🔌",
+        "id": "361379826",
+        "publicId": "beranekondrej",
+        "trackingId": "RXJ1XjF/RTGoRgQTlXMlpw==",
+        "profileId": "ACoAABWKN_IBkaNltRPOCmxSsntH5lcxyV5iIDE",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEC7ai_QT-zlw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1624970591124?e=1781136000&v=beta&t=DXMkrFBwR8EaKJ05JXvtNWEFfZRegZvafSgegQU2S4I",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHCWsfnyXMViA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1733484307182?e=1781136000&v=beta&t=qCwlmCXBu2ReDTQY_v_Mgv5FSi6e-H00Bz283k5sBeU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Mia",
+        "lastName": "Bajić",
+        "occupation": "Software Engineer",
+        "id": "530925455",
+        "publicId": "mia-bajic",
+        "trackingId": "pkglC3EgSkWq6gYkaM4QLw==",
+        "profileId": "ACoAAB-lR48BFvPhQ6doZNGTRVftkLrzcnIv-Ss",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEFktnPzIQA3g/profile-displayphoto-shrink_400_400/B4EZdfBBQAHYAs-/0/1749645792668?e=1781136000&v=beta&t=H-XclkbtaMI2HfxaPAIvGsaIuvs_3HunEbU_zF5R2XQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGmHzyPBT7q2g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1738012168138?e=1781136000&v=beta&t=bGVRTPD07nQuQcDx_7F1m2z7h-P_vw_6AF5KkU2lLp4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Barbora",
+        "lastName": "Malinovská",
+        "occupation": "AI Consultant & Keynote Speaker | Helping DACH & CZ businesses implement AI that actually works | Oxford AI Governance | AI Personality 2024 (CZ) | 🇩🇪🇬🇧🇨🇿",
+        "id": "215237613",
+        "publicId": "barbora-malinovska",
+        "trackingId": "sX+f7nNUTRat8/jFKw4/bg==",
+        "profileId": "ACoAAAzUQ-0BK3LDuw8LHKRwscGJ5Ocl8zWnoNo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEX-Y34RV6EfQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1708345592725?e=1781136000&v=beta&t=c7yBWqBiwRkYPEpTvWnSY9WfvtAJ2o8W_biJ7AEzJzU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQG3QXx6ekCtZw/profile-displaybackgroundimage-shrink_350_1400/B56ZzcR38lGgAY-/0/1773222200046?e=1781136000&v=beta&t=fBvGhH5FJyReqvcAcA8Cli9WfI6d6qosHk3G9Gf4xY8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petra",
+        "lastName": "Kubita Nulíčková",
+        "occupation": "HR Manager v Pale Fire Capital | Head of HR v Aukro | HR consultant and mentor | #sharingiscaring",
+        "id": "473833031",
+        "publicId": "petranulickova",
+        "trackingId": "MMcspgG3TFWKexYcgbaqCw==",
+        "profileId": "ACoAABw-HkcBifENxX8nxAs2YjwxbI6b2XtAF98",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHnKx1150QjzQ/profile-framedphoto-shrink_400_400/B4DZ5EYkX3J4Ac-/0/1779263751874?e=1780430400&v=beta&t=pWJ51Ntw0jR9QQT0pS0cVga8Y5H1PX6eMgBC8eZYwyo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQExwjEQhQ99TA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1676378924015?e=1781136000&v=beta&t=rpomntKe5fPHScYScrE5n1-ok01d_UuxKpUPUaPI93g"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Filip",
+        "lastName": "Průdek",
+        "occupation": "Nefunguje mi to → Super, už to jede | Feed specialista & Customer Success @Mergado",
+        "id": "904009499",
+        "publicId": "filip-prudek",
+        "trackingId": "uLI2D2EmTDaEe8y0HqKfWQ==",
+        "profileId": "ACoAADXiFxsBDrfvLqXfc46dYlgCQklCaExwUMY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFupO9P-a5bFw/profile-displayphoto-crop_800_800/B4DZ5JiGdVJYAM-/0/1779350139114?e=1781136000&v=beta&t=Iw5Hw9pEtYfXe0-wPQXIOnKKUFZqdaHEFcw06ySiAyI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFct0esxDP2iw/profile-displaybackgroundimage-shrink_350_1400/B4DZ5JhtJBKAAU-/0/1779350033262?e=1781136000&v=beta&t=JkmSvMYWwXWWoFjbhRDQTIId6IpLExcH82QOIBlmb28"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 6,
+  "numComments": 17,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "njUDBvseQPmYSowUTSkVfg==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1670520197785,
+  "postedAtISO": "2022-12-08T17:23:17.785Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

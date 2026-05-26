@@ -1,0 +1,214 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4E22AQHdrES1bELORQ/feedshare-shrink_1280/feedshare-shrink_1280/0/1630908782449?e=1781136000&v=beta&t=bCJOdSnCwG9zr_YNplBJ8mSp81GLtD-z5ljaXmZUcKs"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6840527231454887936",
+  "url": "https://www.linkedin.com/posts/honzajavorek_hlavn%C4%9B-se-toho-neb%C3%A1t-ale-po%C4%8D%C3%ADtat-taky-s-activity-6840527231454887936-Qvj7?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAE8FJtsBl5yCKIjoQSn3mMf6imalt9bjTls",
+  "timeSincePosted": "4yr",
+  "shareUrn": "urn:li:share:6840527230909640704",
+  "text": "„Hlavně se toho nebát, ale počítat taky s tím, že najít si svou první vysněnou práci může trvat i rok. Člověk u toho sedí po večerech a učení vlastně nepřestává nikdy.“ Petr má práci v ApiTree 🌲, jeho cestu popsali v pěkném článku. Reactí školka? Zajímavý koncept! https://lnkd.in/e2GvwKKB",
+  "attributes": [
+    {
+      "start": 185,
+      "length": 7,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "ApiTree",
+        "universalName": "apitreecz",
+        "trackingId": "CR6xPaI1Ro6ZE9LHX42vkQ==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:18178882",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQFXAyHP9w_Kug/company-logo_400_400/company-logo_400_400/0/1630527738423/apitreecz_logo?e=1781136000&v=beta&t=9JQmRKDZR5BAfAzHHQXyj5_yVH89biLLrZsewDXhR6A"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1630925585222,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6840527231454887936?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6840527231454887936%2C6840597705794842625%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286840597705794842625%2Curn%3Ali%3Aactivity%3A6840527231454887936%29",
+      "text": "Muze to trvat klidne cely zivot ;]",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Vladimír",
+        "lastName": "Gorej",
+        "occupation": "Full-Stack Software Engineer & Problem Solver | Open Source maintainer & contributor | Alumni GitHub Star | AsyncAPI maintainer | PSD I / PSM I / GCP / LFCA",
+        "id": "58899881",
+        "publicId": "vladimirgorej",
+        "trackingId": "HfjoYDFyTqGJpfyf8ExDQQ==",
+        "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHP1QsKaZTw5Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1720878191370?e=1781136000&v=beta&t=nxFAGloZTLLj4IfsdUrAgIWdCPqihUdH6GbjDvQ02KI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQG1bGQIi0eN-g/profile-displaybackgroundimage-shrink_350_1400/B56ZsnGMs8JUAY-/0/1765887496970?e=1781136000&v=beta&t=c-tUr6BmtfsWTUqP39ZWtDB-NjxB_hfH72HKcJ-t7iA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lukas",
+        "lastName": "Riha",
+        "occupation": "Fullstack Developer",
+        "id": "665565699",
+        "publicId": "lukas-riha-403a91166",
+        "trackingId": "XD2xPoc/TuWvHbDX4eSwDw==",
+        "profileId": "ACoAACerugMBpmybxxll3qBungqkcvS39pQoEKY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGZmLH2jl619g/profile-displayphoto-shrink_400_400/B4DZcmqnD9GgAg-/0/1748700394099?e=1781136000&v=beta&t=9xF-UAQfUgCYwpKtqWFys1iYb8FHa55sgNILvaMrhW8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Aneta",
+        "lastName": "Faltusová",
+        "occupation": "Business analytik junior ve společnosti J&T BANKA",
+        "id": "631679288",
+        "publicId": "aneta-faltusová-18866b157",
+        "trackingId": "uba9XKMQTV6yNIZD/o4AIQ==",
+        "profileId": "ACoAACWmqTgByDOY0mzJiUUihRW5RPgkgMmAufw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQET9dllNNW11A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693549969372?e=1781136000&v=beta&t=dLyhMQUSXuQBQtMhZk_FV_NRgfOkcvnslO2eJnWAq4M"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "👽 Jan",
+        "lastName": "Kárník",
+        "occupation": "Software developer - React (Native), Typescript, Node",
+        "id": "769411064",
+        "publicId": "karnik-jan",
+        "trackingId": "E6QH0kbnROSBBdrSv0AB+A==",
+        "profileId": "ACoAAC3cR_gBt3A0SdHO3277X-UwkXuXuP-9MRg",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQFNC1A_ETXS7w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1724878482046?e=1781136000&v=beta&t=C0v0dH6KZaJkPj9eDMra7_wXZLs1A2XGfl4-4RU0cfE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQETC3kA-zOxrQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1682272044683?e=1781136000&v=beta&t=EYJ4jcENq7cObVkQC2DtxcUzudjzIpoH1pZ7lHrALns"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Adam",
+        "lastName": "Fojtik",
+        "occupation": "Planning Leader | ICE Industrial Services | Brand Ambassador | Innovator in WS",
+        "id": "572925532",
+        "publicId": "adam-fojtik",
+        "trackingId": "osWulccBSjWuw4hDAEIk6g==",
+        "profileId": "ACoAACImJlwB3rZTgCpwXyphYlrM3uG7Zucr7f4",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEpI-j-DEd0Ug/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1633781207595?e=1781136000&v=beta&t=BgxYuvv1m1RD9P4buGdgTYbnpQoERsSCCbxWeIvtAns",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHxg0-t3dRb2g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1655115252166?e=1781136000&v=beta&t=2Unprpjd4NCssEOReq3Ewy9qrKXrxq9X7ygvpleTG3c"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Borkovec",
+        "occupation": "Analýza je zcela klíčovou fází pro vznik kvalitního a úspěšného SW.",
+        "id": "555873799",
+        "publicId": "tomáš-borkovec-2871b2136",
+        "trackingId": "z+EVXXlxQ6qNklUSbsedwQ==",
+        "profileId": "ACoAACEh9gcBvMZHSKgMJnYGJSchwfJYzEvSXj0",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEVkpEwYwQ_hQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1630413599794?e=1781136000&v=beta&t=1MC93XHxdxFRkaGK0tveCb1j5XuEdPXEmN39QIpR1ao"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Erbenova",
+        "occupation": "Application Developer at Barclays",
+        "id": "361531956",
+        "publicId": "lenkaerbenova",
+        "trackingId": "pd+1nw8aTFivCHWk9SgvlQ==",
+        "profileId": "ACoAABWMijQBlQzoTAse2JjfcJmbjz4dAQnIsQs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Bělecký",
+        "occupation": "Application Developer @ Livesport | Backend Development",
+        "id": "306419591",
+        "publicId": "belecky",
+        "trackingId": "AyUSid+LTqO2626R40ymcA==",
+        "profileId": "ACoAABJDl4cBvfdurRrP5zb0tia_YgN085FyW48",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFTX3AMJMNOig/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1581524282493?e=1781136000&v=beta&t=RGqNjaZzek0C6QNOtv5L7dS-biUPzX_xqi7a6kJXUj0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEkT0uAe21Diw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1643810605723?e=1781136000&v=beta&t=aVjiGxSAlJ4TrESdIwieWwaATYoQPavGcQT1ZmmyFGc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daniel",
+        "lastName": "Rozehnal",
+        "occupation": "Software engineering student at FI MUNI.",
+        "id": "731425708",
+        "publicId": "daniel-rozehnal-924b52184",
+        "trackingId": "aW1XPgJrTt6+iiW/pIvYGg==",
+        "profileId": "ACoAACuYq6wBw_NUyA50V0fvku83SMXkgexoGa8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH6BzN9AcUCqw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1687462673185?e=1781136000&v=beta&t=CcZtGbxzcjtE3ICu9xz1ywNt_uzrOhlHHeL4p4nax_k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tereza",
+        "lastName": "Machackova",
+        "occupation": "tech talent partner (Lovable, Verified, Attio)",
+        "id": "354416659",
+        "publicId": "terkins",
+        "trackingId": "5XuAcKGbTDya8qec9L2S8Q==",
+        "profileId": "ACoAABUf-BMBlxzn1lFEhRmLF2yzFf41AOuOmT0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQH14hM4IH2IbQ/profile-displayphoto-crop_800_800/B4DZxsEe99HwAM-/0/1771339642206?e=1781136000&v=beta&t=ep0ILYwjDXBbS-gvEoQ6Ys0WZIXo2Fmy9lUXtRz-7lY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFLKlJH74qo6Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1696428898365?e=1781136000&v=beta&t=UCGewaxbJXbTqLNfc-lzeJramn4OxEj0cbuKKVO-8LI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Bejvl",
+        "occupation": "JavaScript & React developer ve společnosti ApiTree",
+        "id": "350309429",
+        "publicId": "jan-bejvl-44539999",
+        "trackingId": "ZhvPkiKlT0qxKfwKrurUAg==",
+        "profileId": "ACoAABThTDUBWp0znpMPwtBQT8MkooE7jQ4J-88"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 27,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "MdwaR6cfSJGAkgqMdse/gQ==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1630908782829,
+  "postedAtISO": "2021-09-06T06:13:02.829Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

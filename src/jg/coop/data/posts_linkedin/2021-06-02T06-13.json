@@ -1,0 +1,250 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4E22AQF5j1cOUprbSA/feedshare-shrink_1280/feedshare-shrink_1280/0/1622614381270?e=1781136000&v=beta&t=Xcy_YJi8o6xN_36dTrPM_jKYUyljJljZ2wKPPzHaN0o"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6805737991298977792",
+  "url": "https://www.linkedin.com/posts/honzajavorek_opensource-activity-6805737991298977792-vZ6u?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAACuI5A8BX1v8g9AOaMsa2Q3tgSu26oVR9wA",
+  "timeSincePosted": "4yr",
+  "shareUrn": "urn:li:share:6805737990678200320",
+  "text": "Kde sehnat praktické zkušenosti jako junior? Třeba přes dobrovolnictví a #opensource. Martina Hytychová se podívala, s čím by pomohla v Česko.Digital a šlo to i bez předchozí praxe. Na Show & Tell ukazuje React komponentu, na které se podílela https://lnkd.in/ejvkA7c",
+  "attributes": [
+    {
+      "start": 86,
+      "length": 17,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Martina",
+        "lastName": "P.",
+        "occupation": "Sr. Software Engineer at Avast/Gen Digital",
+        "id": "644428962",
+        "publicId": "martina~piekna",
+        "trackingId": "MhyGk/zBTMCgKQn1yFFfcg==",
+        "profileId": "ACoAACZpNKIBBTBmY7jrDsP7_cDyBppYerfQd5Q",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFqbD1nn8HTFg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1565442892067?e=1781136000&v=beta&t=-v8xfBrX3M8xx7UKrqoWYOv0-cZqKh5a19AsV0T7Kao",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHfd2obvL9OxA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1602315324365?e=1781136000&v=beta&t=tHrlZwB9GXdYbpPzDcnLcNmIuHV6aMCXdPLcfMG57MQ"
+      }
+    },
+    {
+      "start": 136,
+      "length": 13,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Česko.Digital",
+        "universalName": "cesko-digital",
+        "trackingId": "3UI96I2rT3OM8T+zqTStSQ==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:14803595",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQF_timuUHwllg/company-logo_400_400/company-logo_400_400/0/1630501620053/cesko_digital_logo?e=1781136000&v=beta&t=1gQ5GhFuxgcm3RZJGTEzlEsvtGSZRY-MUlW2urd6KDo"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1622654729011,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6805737991298977792?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6805737991298977792%2C6805907220505649152%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286805907220505649152%2Curn%3Ali%3Aactivity%3A6805737991298977792%29",
+      "text": "Moc díky Honza za sdílení a podporu. Važíme si toho.",
+      "entities": [
+        {
+          "start": 9,
+          "length": 5,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Honza",
+            "lastName": "Javorek",
+            "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+            "id": "8517488",
+            "publicId": "honzajavorek",
+            "trackingId": "QQf0MtipRhqS3X+d2Kyp0Q==",
+            "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+            "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Eva Debora",
+        "lastName": "Pavlikova",
+        "occupation": "Hope-based Leader | Moving from ‘No, because’ to ‘Yes, if’ Culture in Government",
+        "id": "12118109",
+        "publicId": "evapavlikova",
+        "trackingId": "C1cDgXPqRQm/zRGbRFdpOg==",
+        "profileId": "ACoAAAC46F0BJQLhw3nCC7aaTcpYSs6RqWaP1Vw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHlt2AxwqFdVQ/profile-displayphoto-crop_800_800/B4EZfG.16hHYAM-/0/1751390052552?e=1781136000&v=beta&t=TSZH6NhRKWHzP95IkFkyLySMnb8lruC28HEH-ZHv0QM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEVGUA5BaYCyQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1587825486562?e=1781136000&v=beta&t=f3cNmgwZ45sDrj1GeTLkYKSB8BVy6WkqFDBfMvwRQsA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "PRAISE",
+      "company": {
+        "name": "Česko.Digital",
+        "universalName": "cesko-digital",
+        "trackingId": "0pbswbUmTVWiK3+Ggkn+qA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:14803595",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQF_timuUHwllg/company-logo_400_400/company-logo_400_400/0/1630501620053/cesko_digital_logo?e=1781136000&v=beta&t=1gQ5GhFuxgcm3RZJGTEzlEsvtGSZRY-MUlW2urd6KDo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "trackingId": "KUDVkWmwQi+S2Is3O5zGaw==",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGjycZdsqX9ww/profile-displayphoto-crop_800_800/B4DZjBYhBpGQAQ-/0/1755591087410?e=1781136000&v=beta&t=wVIgd5mwqIYPXpFj5d6Nr2x8-VHHyAZ4o1qWAcv4nhQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Zuzana",
+        "lastName": "Vorosova",
+        "occupation": "Project Manager | F. X. Meiller | PMI Member",
+        "id": "265700699",
+        "publicId": "global-po-pm",
+        "trackingId": "CoxStwqJSd6qztCUseAKIQ==",
+        "profileId": "ACoAAA_WRVsBilg4CLnnMoW_qvMWIrKCgsHqTuY",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQFhyjmqzPG80w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1580742029784?e=1781136000&v=beta&t=AxvFb696sNLaFYSfAPHq9tSgSF83XTmatCowYCF6tMA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQEsWYUxRPOjjQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1576575871885?e=1781136000&v=beta&t=sFS0lCRdHpZEUIWReywJpJeEO5xcI6lFHAO3gX2f_ek"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Zuzana",
+        "lastName": "K.",
+        "occupation": "Maternity leave",
+        "id": "452208801",
+        "publicId": "zuzanaklimova",
+        "trackingId": "UCyxElsVQKegSBt2XkB+VQ==",
+        "profileId": "ACoAABr0KKEBYQ5Ko23IHbviPyFnV5yVquSY3kA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGTTEPFR51vfg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1613130170235?e=1781136000&v=beta&t=LlEuxHlKu8UBCxssl8rhA8Ez49Bq1gRnEILtIpa0DwI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGuneOAWJnoVw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1622550935512?e=1781136000&v=beta&t=mMLXuj2sFCmPOnqBKD4wmh0QFpSXzKcAduPlKgiXzBs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tereza",
+        "lastName": "Nováková",
+        "occupation": "Teaching students about entrepreneurship, mentoring start-ups and helping growing companies with processes and transformation. Mentor, interim/crisis manager, with a passion for IT and people. Ex Packeta Group.",
+        "id": "324193229",
+        "publicId": "terezathesnovakova",
+        "trackingId": "KTLaNH6aRouAT+e0lKSGSg==",
+        "profileId": "ACoAABNSy80BTJN_ziIc6pRLOB4i4z2Lx79MVnc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEuLPD-WdM1hA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1713202814427?e=1781136000&v=beta&t=so08iYX5YyUL5S9yvUE3_W8SD6JPa85KEybf8LFv0-8",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH2Mmt6xH4NGQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1713202648127?e=1781136000&v=beta&t=oI6sIJSxFK43aHgBtPZJNXvqui77fCtlLbrhh8OYh40"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Eva Debora",
+        "lastName": "Pavlikova",
+        "occupation": "Hope-based Leader | Moving from ‘No, because’ to ‘Yes, if’ Culture in Government",
+        "id": "12118109",
+        "publicId": "evapavlikova",
+        "trackingId": "e+AWkTmbRbKR4sGWzVIDNg==",
+        "profileId": "ACoAAAC46F0BJQLhw3nCC7aaTcpYSs6RqWaP1Vw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHlt2AxwqFdVQ/profile-displayphoto-crop_800_800/B4EZfG.16hHYAM-/0/1751390052552?e=1781136000&v=beta&t=TSZH6NhRKWHzP95IkFkyLySMnb8lruC28HEH-ZHv0QM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEVGUA5BaYCyQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1587825486562?e=1781136000&v=beta&t=f3cNmgwZ45sDrj1GeTLkYKSB8BVy6WkqFDBfMvwRQsA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Zmijková",
+        "occupation": "Software Developer",
+        "id": "450096743",
+        "publicId": "zmijkova",
+        "trackingId": "JWRycevGR8CK+DhLgWwOBw==",
+        "profileId": "ACoAABrT7mcBs7ie4r1nA4McNBK2tV0qfujA2v4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michaela",
+        "lastName": "Krouzkova",
+        "occupation": "Business Transformation Consultant at IBM",
+        "id": "395511310",
+        "publicId": "michaela-kroužková-a3a557b0",
+        "trackingId": "iHBcHVgGR8G9mPGhT+8aBw==",
+        "profileId": "ACoAABeTBg4BFl6V5DqtFoLLHFSBqc-ztD_MRV8",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGYoeAt8z-rtA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1622533929547?e=1781136000&v=beta&t=8myR9RbYY35lDsKlBPCkvk5Ui0hm9-24LXfXKk7S4Bg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEeHGHCTur_MA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1625163469449?e=1781136000&v=beta&t=B0aR5rsmNYXrQKOAQB46sEmCeIzRWVgFlAi5-WG2bdc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Míla",
+        "lastName": "Votradovec",
+        "occupation": "Software Engineer with a great passion for problem solving and puzzle hunting.",
+        "id": "73110366",
+        "publicId": "míla-votradovec-2a659920",
+        "trackingId": "EBQMHLqpQ7il8Iqh0vgATA==",
+        "profileId": "ACoAAARbk14B87XGyuyJbBEoP0N4KMJloM-Hpt4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE2cBApuO59Ww/profile-displayphoto-crop_800_800/B4EZns.EdbIwAI-/0/1760617332377?e=1781136000&v=beta&t=bd67QIBRL2DwAPxlG3BMa0aC2T4A3uXPCBVVul9O2zY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG32Wz2uz9RQQ/profile-displaybackgroundimage-shrink_350_1400/B4EZntHNLxIQAY-/0/1760619715759?e=1781136000&v=beta&t=n2MbdVRhSzo3uzYd1hgkuc_1BOuwnQ1LmYp9-XZ3q9g"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Blanka",
+        "lastName": "Semanová",
+        "occupation": "Frontend Developer - React and Next",
+        "id": "740316381",
+        "publicId": "blanka-semanová",
+        "trackingId": "XjhLc6YLRamF5QKjGPkmJg==",
+        "profileId": "ACoAACwgVN0BXjPO356is1a7HECdYY6oGuzTouY",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQHt31UB9Dnr_g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1705586552175?e=1781136000&v=beta&t=VnaoT0wlgyuQQGLJMI1wvCsS4oGHAmClyqm-JikLvgE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGmd9O2TBL9PA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1705586497192?e=1781136000&v=beta&t=JlZHwSEMta7stFHe1LeFKFVGgbpKpeFbQUUDebs_rnc"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 10,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "2kfbKlTnQgi25ohAdZC2nA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1622614381623,
+  "postedAtISO": "2021-06-02T06:13:01.623Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

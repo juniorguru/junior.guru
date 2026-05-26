@@ -1,0 +1,338 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/D4E22AQGr7o7YUXo6Cg/feedshare-image-high-res/B4EZky6KQdGwAs-/0/1757495732268?e=1781136000&v=beta&t=JSOpRjQIFYrj974-g_mq6FcrjFfTO4wsOjHn4OgciI8"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:7371471383370821632",
+  "url": "https://www.linkedin.com/posts/honzajavorek_frontkon-activity-7371471383370821632-2KJD?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAADVqL6ABuhGEisVhkg1t_SbJfTWFU5e0hQE",
+  "timeSincePosted": "8mo",
+  "shareUrn": "urn:li:share:7371471382125371393",
+  "text": "Brno, 1. října! Bude #FrontKon! 🎪 A mě moc těší, když vidím mezi speakery i svého bývalého parťáka z dvoučlenného týmu, Artem Zakharchenko 🙌\n\nKdysi jsme spolu v Apiary pracovali na open source projektech, především kolem nástroje Dredd, jestli si jej ještě někdo pamatujete.\n\nArtem je super. Původně zubař, dneska top programátor 👨‍⚕️ \n\nAle ono to není zas tak moc daleko od sebe. Já jednou u večeře poslouchal, jak se baví zubaři, a přišlo mi, že je to taky samý tooling, cizí slova, postupy, neukáznění uživatelé, spousta technického dluhu… a skoro pořád nějaký refactoring.\n\nKaždopádně na Artema si určitě zajděte, jeho open source aktivity a publikační činnost jsou jiný level.\n\nA málokdo ví, že tenhle slavný týpek, autor msw nebo naming-cheatsheetu, žije v Praze. Paradoxně bude mít na české konferenci premiéru v Brně 😀\n\nNo, chtěl jsem sepsat reklamu na FrontKon, ale nakonec je z toho reklama na Artema 😂\n\nJak to teď spravit… No, celý ten lineup vypadá libově! A kdo jste ještě nikdy na FrontKonu nebyli, tak věřte, že to je parádní komunitně organizovaná konference, která vás chytne za srdíčko. Vůbec neváhejte a jeďte!\n\nDokonce z Prahy brzo ráno organizují frontenďácký vagon směr Brno!\n\nTák, hotovo, teď už jste všichni přesvědčení a vidím, že otevíráte jízdní řády a vytahujete peněženky, takže já jdu dělat zas něco jiného. Konkrétně vylosovat dva lidi z junior.guru/club komunity, kteří ten lístek dostanou zdarma 🎰 \n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 120,
+      "length": 18,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Artem",
+        "lastName": "Zakharchenko",
+        "occupation": "Software engineer & Educator",
+        "id": "479400907",
+        "publicId": "artem-zakharchenko",
+        "trackingId": "MOa0AjEATVyyuy4FrBKhwg==",
+        "profileId": "ACoAAByTE8sBD2jc0LWL1WTudVD1bG_e2hh-aG0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF-hSQj-qsA5w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728499335925?e=1781136000&v=beta&t=DnxNdGCcFNNgl0J9uKxfWq1s6WkzWp96anGK_QIKHz8"
+      }
+    },
+    {
+      "start": 161,
+      "length": 6,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Apiary",
+        "universalName": "apiary-io",
+        "trackingId": "EW3dvcHIQn+C376k+Q791Q==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:2222917",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C510BAQFI21EUA7GJ6A/company-logo_400_400/company-logo_400_400/0/1631366971638?e=1781136000&v=beta&t=yIIP1Slw8ERtDiri0JTTm_jSo59XixRW7-jL2Z3SpSQ"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1759129069854,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7371471383370821632?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7371471383370821632%2C7378322094205411328%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287378322094205411328%2Curn%3Ali%3Aactivity%3A7371471383370821632%29",
+      "text": "Hodně děkuji, Honzo! ☺️ Je mi ctí být mezi tolika úžasnými speakerami. Těším se na FrontKon příští týden. ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Artem",
+        "lastName": "Zakharchenko",
+        "occupation": "Software engineer & Educator",
+        "id": "479400907",
+        "publicId": "artem-zakharchenko",
+        "trackingId": "XPnjk4KNTtGkeJWPR1nyrg==",
+        "profileId": "ACoAAByTE8sBD2jc0LWL1WTudVD1bG_e2hh-aG0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF-hSQj-qsA5w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728499335925?e=1781136000&v=beta&t=DnxNdGCcFNNgl0J9uKxfWq1s6WkzWp96anGK_QIKHz8",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1757528335958,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7371471383370821632?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7371471383370821632%2C7371608129622663169%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287371608129622663169%2Curn%3Ali%3Aactivity%3A7371471383370821632%29",
+      "text": "Těším se až se uvidíme i s výherci! 😊",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Jana",
+        "lastName": "Nečasová",
+        "occupation": "People&Community Superkoders 🩵 Frontendisti.cz Brno 💛",
+        "id": "600428192",
+        "publicId": "jananecas",
+        "trackingId": "Yk8y5U3FT2GoT1xCPtqYQw==",
+        "profileId": "ACoAACPJzqABtEhQZaPa2y7niKJdfPDfAdzm3OM",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFfH0AbAr9vpA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1691756462294?e=1781136000&v=beta&t=eBTxkQwlz0LWakZ8HL4eA_LeQeeKpoP73YQW91ZgjxU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHoY9XnA1Uwdw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1665752656622?e=1781136000&v=beta&t=yV1A79amx5BHf66-ofqJQqz_9fdHxfYB82RP-2sxvbU",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1757509712746,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7371471383370821632?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7371471383370821632%2C7371530018205646848%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287371530018205646848%2Curn%3Ali%3Aactivity%3A7371471383370821632%29",
+      "text": "Ty temata jsou skvely, ale jit v roce 2025 na 93.3% muzskou konferenci (kde system identifikuje i tech 6.7% jako muze a dokonce jeden z tech 6.7% se v popisku identifikuje jako muz - nemuze si to AI prelozene bio aspon nekdo precist?) je riziko. By me tam nekdo moh vyfotit a vycanclovali by me ve firme.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Martin",
+        "lastName": "Wenisch",
+        "occupation": "Senior Software Engineer",
+        "id": "140017332",
+        "publicId": "mwenisch",
+        "trackingId": "cN5elEpBTkC337wkmr+YFQ==",
+        "profileId": "ACoAAAhYfrQB_PfnP77TNy12rVIgZaSg4ntxNQI",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFDcQx7q740RQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1601422705043?e=1781136000&v=beta&t=ShcZuGo9FBS5mI91ucltUbtKK6GqMqtjo6u82XRBK6M",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQExa7PgQIUDdA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1699636955431?e=1781136000&v=beta&t=FQxvHhXoo_oA5O9GTjlk1LPmxQyTQ3RjD2K7hZw908Y",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1757506199141,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7371471383370821632?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7371471383370821632%2C7371515281078161408%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287371515281078161408%2Curn%3Ali%3Aactivity%3A7371471383370821632%29",
+      "text": "Díky za skvělou pozvánku a těším se na viděnou 👋",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Tomáš",
+        "lastName": "Hejč",
+        "occupation": "CEO & Co-Founder of SUPERKODERS",
+        "id": "174243790",
+        "publicId": "tomashejc",
+        "trackingId": "HlAPatWnQS2PCEpLvgpwuQ==",
+        "profileId": "ACoAAApiv84BTuYd1S00fF-Ksakrh9eN63zdmNQ",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGOt5p_STv-ZQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1647535387017?e=1781136000&v=beta&t=JLQTlJAFbAvCC6a3jcfyKVaABYc3Zm-LxTCWakoObWk",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGwadPaWmLQAA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1647536358866?e=1781136000&v=beta&t=jHDY6FcdHXczuq98oWOtILOiObzebhcJgwGuckXAj40",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1757497122925,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7371471383370821632?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7371471383370821632%2C7371477212669296641%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287371477212669296641%2Curn%3Ali%3Aactivity%3A7371471383370821632%29",
+      "text": "Díky za příspěvek, Honzo a přejem šťastnou ruku při losování. 🤓 ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech"
+    },
+    {
+      "time": 1757496340789,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7371471383370821632?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7371471383370821632%2C7371473932152971264%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287371473932152971264%2Curn%3Ali%3Aactivity%3A7371471383370821632%29",
+      "text": "Artem: https://github.com/kettanaito ",
+      "entities": [],
+      "pinned": false,
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "lVUVf/O6TGCGllozx+Jl8w==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1757496324213,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7371471383370821632?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7371471383370821632%2C7371473862632570880%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287371473862632570880%2Curn%3Ali%3Aactivity%3A7371471383370821632%29",
+      "text": "Web konference: https://www.frontkon.cz/",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "English",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "lVUVf/O6TGCGllozx+Jl8w==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Miroslav",
+        "lastName": "Zeman",
+        "occupation": "Lead React developer 💻 / Full-stack Typescript 🚀 / Teacher and mentor 📚 / heyy.dev 👋 / klers.cz 👩🏼 / [Object Object] 🦄",
+        "id": "662424426",
+        "publicId": "miroslavzeman",
+        "trackingId": "DNMiIOB/Rgy0KkiaA11SDA==",
+        "profileId": "ACoAACd7y2oB-PaNQEZA-O1wJ5JRWoZTTqgUwQw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFVPYbLLCpSng/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1687704965913?e=1781136000&v=beta&t=VFH-HmXLcZgRSz4K2XTiGgstWmVWXamlJ064WgX2Pco",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH3FPnKWBLPyg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1738943055904?e=1781136000&v=beta&t=2m-VkuaHh6ZqL-YW0WiXbm_xNw-zD1fwVzjucanm1nM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Gluchman",
+        "occupation": "Lead UX Engineer ✦ exploring innovative HMI prototyping & tooling",
+        "id": "12148997",
+        "publicId": "tomasgluchman",
+        "trackingId": "/h5PfjfQSGmL+aInAOXRcg==",
+        "profileId": "ACoAAAC5YQUByNMOvK5tsngW-Qt4B3quBLovMxo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFNQI24bumSTQ/profile-displayphoto-crop_800_800/B4DZnIPxH7JUAM-/0/1760001201215?e=1781136000&v=beta&t=1ML5dC89TLAAaNvMhTa6usy3bov31UB5Nsl9IzQT1VE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHGoEof7EQnZQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1726340621678?e=1781136000&v=beta&t=zNZ_argnDzn3am6-gfGCtbWhVz5pejy8mTP1kQk4iUw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Artem",
+        "lastName": "Zakharchenko",
+        "occupation": "Software engineer & Educator",
+        "id": "479400907",
+        "publicId": "artem-zakharchenko",
+        "trackingId": "MOa0AjEATVyyuy4FrBKhwg==",
+        "profileId": "ACoAAByTE8sBD2jc0LWL1WTudVD1bG_e2hh-aG0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF-hSQj-qsA5w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728499335925?e=1781136000&v=beta&t=DnxNdGCcFNNgl0J9uKxfWq1s6WkzWp96anGK_QIKHz8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michal",
+        "lastName": "Franěk",
+        "occupation": "Think and care...",
+        "id": "12275544",
+        "publicId": "michalfranek",
+        "trackingId": "JzuVqSdVQ7uCxftMS06x+Q==",
+        "profileId": "ACoAAAC7T1gB4nT4-hTlPZ6rbViC6yBGFGbto54"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Zpěváková",
+        "occupation": "Moderátor ve společnosti DATA mesh",
+        "id": "637440646",
+        "publicId": "py-veronika-zpevakova",
+        "trackingId": "TRpPFNutS3GBe6LhQV5lyQ==",
+        "profileId": "ACoAACX-koYBZCeuCb06SzAT8F955fJvI0OEIAc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG1ZWtWd7gYPA/profile-displayphoto-crop_800_800/B4EZf8w5aYH4AI-/0/1752292366705?e=1781136000&v=beta&t=U6HWTwf03AjW7HUEmYBNf3bJUPuiUzWy7Erk0Q6kAbw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGprRlAotow1Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1519121908586?e=1781136000&v=beta&t=XpMvIj6AwaxV4O3LsHEORi7O8FcmUA6h5NM_51qe9xg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Kalužová",
+        "occupation": "Frontend Developer | React | Typescript",
+        "id": "227844205",
+        "publicId": "jana-kalužová-35137a64",
+        "trackingId": "qbh/JyqiSzSWEMF4xCotTA==",
+        "profileId": "ACoAAA2UoG0BPxLVabkcecOWmQmPQt-2v1OyhQY",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFLwR3wAbnbNg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1658516851717?e=1781136000&v=beta&t=3eTRy_oWVX2etrw3s3F5GWO6Z0k8quEqk1EYc9VmxXo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Václav",
+        "lastName": "Kotyk",
+        "occupation": "Talent Sourcer @ SentinelOne.ai | The Future of CyberSec will be determined by You - let’s Secure Tomorrow™ together! 🛡️👾 | In 💜 with s1.ai/PurpleAI | 🕵️‍♂️ CyBeer security meetups organizer",
+        "id": "322518163",
+        "publicId": "vaclavkotyk",
+        "trackingId": "hhs7MkO0S+Kd5h9IdtUb7Q==",
+        "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHSFfNAAQ3ojA/profile-framedphoto-shrink_800_800/B4EZb.aDPLHAAs-/0/1748024964389?e=1780430400&v=beta&t=IvlxsfQQdb8KqO1QvRvDLxo7b9-V1Qrgz29nKWhJehw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG_GZHPXo_drQ/profile-displaybackgroundimage-shrink_350_1400/B4EZhWDO5THEAY-/0/1753790347174?e=1781136000&v=beta&t=TTJXtHJi0vF694Nao68XfleeSQJvzU06We8EI4GVwQI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Kateřina",
+        "lastName": "Kratochvílová",
+        "occupation": "Junior front-end developer",
+        "id": "974534894",
+        "publicId": "kateřina-kratochvílová",
+        "trackingId": "AO1EOxuoRv6xu3sCtINWSA==",
+        "profileId": "ACoAADoWOO4Bkb2hiojtwgBrzR3BhJujC9S6w_A",
+        "picture": "https://media.licdn.com/dms/image/v2/D5635AQFmCBC-0vFKuQ/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1711406297149?e=1780430400&v=beta&t=seiSK3IdJpZL_HmiAh-lwReTtXcLnQlOl3cxWpNAL9k"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Dominika",
+        "lastName": "P.",
+        "occupation": "Account Manager at AWS | Passionate About Driving Customer Success🚀",
+        "id": "615020269",
+        "publicId": "prazakova",
+        "trackingId": "L/MKqme2SXK3SZpMclAJmA==",
+        "profileId": "ACoAACSodu0BueYjJcSaVYnA_aid8Qz6X8NrpSk",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFn-9TrO_LNVw/profile-displayphoto-crop_800_800/B4EZo7sLYTKMAI-/0/1761938030139?e=1781136000&v=beta&t=Nr6NbfQAh-nptPZK3-7E4LtaDkG143JD2v_MqG9tV-Y",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHj5ZeDvxXkAw/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1702126395903?e=1781136000&v=beta&t=I-1Tcl6mZeBNOnI1ZTDl6yNQpJsl3RkfQD6YB4wOl7Q"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Norbert",
+        "lastName": "Červený",
+        "occupation": "I help great brands grow @STRV",
+        "id": "337285701",
+        "publicId": "strv-norbert-cerveny",
+        "trackingId": "N/H6Vm96TDWSD6Ly6/3UVA==",
+        "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGKIAaUJPtlmA/profile-displayphoto-crop_800_800/B4DZ0jT_lBIEAI-/0/1774413941709?e=1781136000&v=beta&t=ioRFNZY53XZXWk1BvKTQdIygU-xxLKoyNysEAYklp0I",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG0ekEnNy2Hcw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0jTiNeGsAk-/0/1774413817026?e=1781136000&v=beta&t=_KMbjLzzfd2pO9gizTz2iWgDOkq5RQ3NpzDT5fOljNI"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 34,
+  "numComments": 10,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "lVUVf/O6TGCGllozx+Jl8w==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1757495733111,
+  "postedAtISO": "2025-09-10T09:15:33.111Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

@@ -1,0 +1,305 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:8250965227341331029",
+    "url": "https://www.sdilny.cz/",
+    "title": "Sdílny.cz — Sdílené dílny pro tvůrce"
+  },
+  "isActivity": true,
+  "activityDescription": "Honza Javorek reposted this",
+  "activityOfUser": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "UUiYHLYITOqe2pEkB3kLqw==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "urn": "urn:li:activity:7446305740291497984",
+  "url": "https://www.linkedin.com/posts/pavlinafronkova_sd%C3%ADlnycz-sd%C3%ADlen%C3%A9-d%C3%ADlny-pro-tv%C5%AFrce-activity-7446206140402671616-KsWC?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAABoBKrsBx3ozlVCrBn34fGmjwCmWu7INH6k",
+  "timeSincePosted": "1mo",
+  "shareUrn": "urn:li:share:7446206139467251712",
+  "text": "Ahoj!\n\nS Jakub Beneš jsme dali dohromady platformu pro sdílení (zatím) keramických pecí a 3D tiskáren. Pokud je někdo doma má a třeba nevyužívá na 100%, může je zaregistrovat na https://www.sdilny.cz/ a sdílet s někým, kdo by vybavení občas využil, ale nevyplatí se mu kupovat domů.\n\nPokud pec nebo 3D tiskárnu máte, můžete je nabídnout ostatním.\nA pokud je naopak nemáte, ale občas by se vám hodily, můžete si je najít ve svém okolí.\n\n💡 Cílem je zpřístupnit drahé vybavení, které by si jinak člověk třeba ani nemohl dovolit – a zároveň ho lépe využít.\n\nProjekt právě spouštíme, takže budeme moc rádi za:\n• registrace\n• sdílení \n• jakýkoliv feedback 🙏\n\nDíky moc všem, kdo se zapojí! :)",
+  "attributes": [
+    {
+      "start": 9,
+      "length": 11,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Beneš",
+        "occupation": "IC Leadership • Management • Internal Platform Teams • Playing full out",
+        "id": "385206635",
+        "publicId": "jukben",
+        "trackingId": "YNWelem0R0+o7HUeNo9o9w==",
+        "profileId": "ACoAABb1yWsBoQCg5XNZe2mG_MXrfvNzrXHh6UQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHMQOzwvw7XHA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1705399784998?e=1781136000&v=beta&t=xWf06iw2CTNDnV0jathMVN5pg77lzdE9UMbz7FKEKuU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQF-yDVVDCEETg/profile-displaybackgroundimage-shrink_350_1400/B4DZzjlpDTH4AY-/0/1773344821895?e=1781136000&v=beta&t=LmjVQr4LLQEY_oigvFN1alN7_MUR40bwDMtsnoqSgR4"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1775671794815,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7446206140402671616?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7446206140402671616%2C7447707311680389121%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287447707311680389121%2Curn%3Ali%3Aactivity%3A7446206140402671616%29",
+      "text": "Jsem in jako Martin's 3D Garage ",
+      "entities": [
+        {
+          "start": 13,
+          "length": 18,
+          "type": "COMPANY_NAME",
+          "company": {
+            "name": "Martin's 3D Garage",
+            "universalName": "martins-3d-garage",
+            "trackingId": "5RQcW1hWTae0Vx0OBKo8og==",
+            "active": true,
+            "showcase": false,
+            "entityUrn": "urn:li:fs_miniCompany:105992017",
+            "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQEeWD8zMpMKNQ/company-logo_400_400/company-logo_400_400/0/1735824291445?e=1781136000&v=beta&t=D-5IZG8CIX8uXwK6G0cbhlzJRuwEo0itTLxhnwMZ9kU"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Martin",
+        "lastName": "Pohl",
+        "occupation": "👋🏻 Systems Engineer | Cloud & Infrastructure | Apple Ecosystem | AI Enthusiast 9+ years across Windows, Linux, virtualization & cloud (AWS/Azure/GCP). Building at the intersection of AI, tech & 3D printing.",
+        "id": "91978707",
+        "publicId": "martinp0",
+        "trackingId": "xnBwoAF+T4a+PROJitgqbQ==",
+        "profileId": "ACoAAAV7e9MBFtGH5maIeSHpnJTRWcXT7M2Xajw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE29OoVhv8W8A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729713929255?e=1781136000&v=beta&t=YJIW5aZZ_zAAtKll6p9yTuyetjYeZmWehQUojKJeGQY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEkCo0pp_DGgg/profile-displaybackgroundimage-shrink_350_1400/B4DZ0ZAJDqJQAc-/0/1774240962915?e=1781136000&v=beta&t=Fi6c7G2JkcOX2b7ABQRlWgtB-ExRYWwDzzB_TQnltrc",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1775453737065,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7446206140402671616?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7446206140402671616%2C7446792711187259392%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287446792711187259392%2Curn%3Ali%3Aactivity%3A7446206140402671616%29",
+      "text": "💪💪💪",
+      "entities": [],
+      "pinned": false,
+      "author": {
+        "firstName": "Martin",
+        "lastName": "Podval",
+        "occupation": "CTO @ Oddin.gg | gen AI | 10y in CTO/DoE role | 10y hands-on in SaaS",
+        "id": "18875141",
+        "publicId": "martinpodval",
+        "trackingId": "0t6b34p5SWemCOGWE+XTnA==",
+        "profileId": "ACoAAAEgAwUB_9A3NVEmklhfP_6QSf3ufy0uk2Q",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFuGNXecEMtNw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1539719573050?e=1781136000&v=beta&t=h_iutBRChMWkC2e2s80HkdoIkE3s20CY8HOMq7xN6Cs",
+        "distance": "DISTANCE_2"
+      }
+    },
+    {
+      "time": 1775368378547,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7446206140402671616?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7446206140402671616%2C7446434691613671424%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287446434691613671424%2Curn%3Ali%3Aactivity%3A7446206140402671616%29",
+      "text": "Paráda, tohle je super! 🤩👏🍀",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Ondřej",
+        "lastName": "Mojžiš",
+        "occupation": "...",
+        "id": "914745736",
+        "publicId": "ondrej-mojzis",
+        "trackingId": "FOdHk6fmR2C8cnzLdOzv1A==",
+        "profileId": "ACoAADaF6YgBVkWQpLYL1bH9uK8FM8FpXUtjeYI",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1775337383487,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7446206140402671616?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7446206140402671616%2C7446304688905474048%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287446304688905474048%2Curn%3Ali%3Aactivity%3A7446206140402671616%29",
+      "text": "Tak to vypadá peckovně! 👍🔥 (Z pohledu zástupce cílovky 'nárazově by se hodilo')",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Václav",
+        "lastName": "Kotyk",
+        "occupation": "Talent Sourcer @ SentinelOne.ai | The Future of CyberSec will be determined by You - let’s Secure Tomorrow™ together! 🛡️👾 | In 💜 with s1.ai/PurpleAI | 🕵️‍♂️ CyBeer security meetups organizer",
+        "id": "322518163",
+        "publicId": "vaclavkotyk",
+        "trackingId": "kJ/znhz9Tcio1UzazvBTlg==",
+        "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHSFfNAAQ3ojA/profile-framedphoto-shrink_800_800/B4EZb.aDPLHAAs-/0/1748024964389?e=1780430400&v=beta&t=IvlxsfQQdb8KqO1QvRvDLxo7b9-V1Qrgz29nKWhJehw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG_GZHPXo_drQ/profile-displaybackgroundimage-shrink_350_1400/B4EZhWDO5THEAY-/0/1753790347174?e=1781136000&v=beta&t=TTJXtHJi0vF694Nao68XfleeSQJvzU06We8EI4GVwQI",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vít",
+        "lastName": "Volšička",
+        "occupation": "Data Vault 2.0 in EDWH | GCP | dbt",
+        "id": "173526252",
+        "publicId": "vit-volsicka",
+        "trackingId": "UcuObDbvTHe3MCDefKzSnw==",
+        "profileId": "ACoAAApXzOwBdxk4w1AQp4MwRSGm0_1coWYu-9k",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQHbQuiz0-RiCA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1537511155689?e=1781136000&v=beta&t=9uN6t-gGM6vuMoyy1sbuM8gZ-sMdTonfVrFz277IkGo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Igor",
+        "lastName": "Kulka",
+        "occupation": "Founding engineer @Omnim | ex-Productboard | ex-Momence",
+        "id": "453699676",
+        "publicId": "igor-kulka-824b39107",
+        "trackingId": "0OhZpSoTQ8+MtvRZetTX9Q==",
+        "profileId": "ACoAABsK6FwBzl9ePn8HqBzUaNYddZTUjhaviQ8",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQEmBku1EKWwtQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517403905982?e=1781136000&v=beta&t=EZlEr5Y6gXnUMkM6iPud9D9ngMOix2CJ4nTwptjbvYw"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Julie",
+        "lastName": "Rakovcová",
+        "occupation": "Software Engineer in Salted, ex-Productboard",
+        "id": "666870794",
+        "publicId": "julie-rakovcova",
+        "trackingId": "V3I2cXL1RaSL/3zfg371wA==",
+        "profileId": "ACoAACe_pAoBl8J8abHVdSZhYHv_FP7udlhcFAE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEv7jF308Y0NQ/profile-displayphoto-crop_800_800/B4EZnD4wpqKcAI-/0/1759928061627?e=1781136000&v=beta&t=jMGY9qB58hPsD0Ghl5aDzcd0Ce3oQd_XQISOj7F8qHw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Panek",
+        "occupation": "EU & NGO Professional | Research, Coordination & Policy Support | English & German",
+        "id": "20712459",
+        "publicId": "mmister",
+        "trackingId": "8SBOAtxnS2GHSV+FoeXIKw==",
+        "profileId": "ACoAAAE8DAsBB2V6CnCaywm9MSX6gyx8oRKbFAk",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGZ9du7sCTvaA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1591528420672?e=1781136000&v=beta&t=B0hO9ADfu3tidmKUkSKm_lBEuMRivEZiD7hCbI4HlHQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHIR3zZzdm8dw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1591528446328?e=1781136000&v=beta&t=oFAmVGiIQKGxT3Mfjy4XY2RZhjpEC9WfweEiZV_AnV4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Rosenberg",
+        "occupation": "Staff Engineer",
+        "id": "205076090",
+        "publicId": "martin-rosenberg-36281a58",
+        "trackingId": "bsgxCP0jSC6youjcoybjaQ==",
+        "profileId": "ACoAAAw5NnoBnW2L8waWejkr_M2ifnlKSYQ8EWw",
+        "picture": "https://media.licdn.com/dms/image/v2/C5103AQH9ol3PpgugoA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517062201183?e=1781136000&v=beta&t=OlDCSx8DgvWDtU2AHkEflN2Ti_0eX5NlDeEIPFuSCWU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Nohavica",
+        "occupation": "Associate Technical Director",
+        "id": "167239381",
+        "publicId": "jan-nohavica-07101248",
+        "trackingId": "8PeDiXd8T5+XXSYjuXgItg==",
+        "profileId": "ACoAAAn33tUBJFOvI__KTBg7bViRFaifSfDqcf4",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHKiOqKire3nw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1633411646895?e=1781136000&v=beta&t=cIzXA9pZOmIPEpevsRPRI-m5hTKqw1n2D0fhYlmy5cY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHReAstoK67NA/profile-displaybackgroundimage-shrink_350_1400/B4EZii2yM.GcAY-/0/1755078928077?e=1781136000&v=beta&t=kjKrMpQ3J926U72Gv99cWGWiTDbskY4PtmQWUqs41JM"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Markéta",
+        "lastName": "Veselá",
+        "occupation": "Data Engineer",
+        "id": "301654104",
+        "publicId": "marketavesela123",
+        "trackingId": "AN+jC26fRsehq4CY4zgYGg==",
+        "profileId": "ACoAABH64FgBIajZSdnlFFLSM2EZypC9noYPeno",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFMchFW9bwELg/profile-displayphoto-shrink_800_800/B4EZO2TiI2H0Ac-/0/1733930394661?e=1781136000&v=beta&t=0QLfGRY4Fey6UZMFkf3jX-0YL4slO6Br0BlBZt9rI8o",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGTJQygwbD47A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1634045517592?e=1781136000&v=beta&t=mXqBPovS1jyyRRgbsvX8KrmZB84K_wauyuYhOXHNI0M"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Monika",
+        "lastName": "Tesaříkova",
+        "occupation": "Data Analyst at Pierre Fabre",
+        "id": "556646044",
+        "publicId": "monika-tesarikova-164505136",
+        "trackingId": "q0u+owH3Ta2xl9KvAnk5dA==",
+        "profileId": "ACoAACEtvpwBgWjKssYm04Ds6X4Fa1YCPUqLxLk",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQGXZlS28_x8-w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1730752661076?e=1781136000&v=beta&t=N5-vYnmSAbwFtOnoopTRTYyUnC5OS3PquIkvJa58Dqo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFV9L1XsPc9DA/profile-displaybackgroundimage-shrink_350_1400/B4EZaWkEq2HkAY-/0/1746282767141?e=1781136000&v=beta&t=49A-X-I_o4ltZ5LO2uIQChCANj44dFxSqUWL3goMzPk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Pohl",
+        "occupation": "👋🏻 Systems Engineer | Cloud & Infrastructure | Apple Ecosystem | AI Enthusiast 9+ years across Windows, Linux, virtualization & cloud (AWS/Azure/GCP). Building at the intersection of AI, tech & 3D printing.",
+        "id": "91978707",
+        "publicId": "martinp0",
+        "trackingId": "z9v4lmE3TF6HbKjJKT6Tmw==",
+        "profileId": "ACoAAAV7e9MBFtGH5maIeSHpnJTRWcXT7M2Xajw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE29OoVhv8W8A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729713929255?e=1781136000&v=beta&t=YJIW5aZZ_zAAtKll6p9yTuyetjYeZmWehQUojKJeGQY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEkCo0pp_DGgg/profile-displaybackgroundimage-shrink_350_1400/B4DZ0ZAJDqJQAc-/0/1774240962915?e=1781136000&v=beta&t=Fi6c7G2JkcOX2b7ABQRlWgtB-ExRYWwDzzB_TQnltrc"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Rejchrt",
+        "occupation": "Product management | Identity and access management | Data analytics products | Customers engagement",
+        "id": "243547060",
+        "publicId": "martin-rejchrt",
+        "trackingId": "7vMZrleQS3yUeSWg0OmNeA==",
+        "profileId": "ACoAAA6EO7QBxSYKPlqQR1kaKBkVyyQdLUUE0KQ",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFIiJh2unH6Vg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1625042709617?e=1781136000&v=beta&t=oofHoRXNIRrWY6uJyA0FYXpJ0zGCSlp6czKLCR__wmU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGFCspoyGr7DQ/profile-displaybackgroundimage-shrink_350_1400/B4DZlMXFmAHwAY-/0/1757922746363?e=1781136000&v=beta&t=dvMV7sN_hLwJlUIwoTILiUuLuzRGkyvn0haMTKgy_DM"
+      }
+    }
+  ],
+  "numShares": 5,
+  "numLikes": 66,
+  "numComments": 4,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Pavlina",
+    "lastName": "F.",
+    "occupation": "Host @ Junior Guru podcast.",
+    "id": "190849253",
+    "publicId": "pavlinafronkova",
+    "trackingId": "yCtsv0gsQqqB2i2/3IqnVQ==",
+    "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk"
+  },
+  "authorProfileId": "pavlinafronkova",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk",
+  "authorType": "Person",
+  "authorName": "Pavlina F.",
+  "authorProfileUrl": "https://www.linkedin.com/in/pavlinafronkova?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
+  "authorUrn": "urn:li:member:190849253",
+  "postedAtTimestamp": 1775337634156,
+  "postedAtISO": "2026-04-04T21:20:34.156Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

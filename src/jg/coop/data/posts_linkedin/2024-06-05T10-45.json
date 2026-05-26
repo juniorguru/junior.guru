@@ -1,0 +1,226 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:7863943212025290910",
+    "url": "https://forms.gle/TJbV5ANrUWZbE6L78",
+    "title": "Dotazník pro začínající programátory"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7204070832661299200",
+  "url": "https://www.linkedin.com/posts/honzajavorek_dotazn%C3%ADk-pro-za%C4%8D%C3%ADnaj%C3%ADc%C3%AD-program%C3%A1tory-activity-7204070832661299200-AVVZ?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFsquNIBL-Bah7UT0aAl0gV3gz4HeyE43g0",
+  "timeSincePosted": "1yr",
+  "shareUrn": "urn:li:share:7204070832111767552",
+  "text": "Začínáš s programováním? Vyplň mi dotazník a můžeš vyhrát knihu Grokking Algorithms, bestseller v hodnotě 1.500 Kč 📕\n\nVýhru vylosuju z odpovědí Python skriptem (import random; random.choice). Pošlu Zásilkovnou (ČR/SR) 🎁\n\nUž 5 let existuje junior.guru, rozcestník a příručka pro začínající programátory. A už 3 roky tam funguje klub pro juniory.\n\nOd té doby se leccos změnilo a možná by neuškodila nová fazóna a průzkum, co by šlo zlepšit. Vyplněním tohoto dotazníku s tím můžeš pomoct!\n\n👉 TADY https://lnkd.in/eiPZmZ44\n\nTvých 15 minut přispěje k tomu, aby se junior.guru mohlo stát lepším místem pro všechny začínající programátory.",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1717585507758,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7204070832661299200?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7204070832661299200%2C7204075765527695360%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287204075765527695360%2Curn%3Ali%3Aactivity%3A7204070832661299200%29",
+      "text": "Na danou stránku jsem narazil před rokem a ocenil jsem obrovské množství zdrojů. Pokud někdo vstupuje do oboru, tak by měl jít jako první věc přesně na dané místo. Na začátku své cesty jsem hodně sledoval americký YT a právě mi chybělo pohled na české prostředí. Věřím, že zakoupením členství získám přístup k užitečným informacím.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Sergiu",
+        "lastName": "Nica",
+        "occupation": "AI Engineer | Building Agentic Systems & LLM-Powered Apps | Specializing in RAG, Python & Enterprise AI Automation",
+        "id": "893788823",
+        "publicId": "sergiu-nica-2025-ai-dev",
+        "trackingId": "t+FA0vAMSQiuMndBsXSpuQ==",
+        "profileId": "ACoAADVGIpcBVKcy2A9itdpU8rRZq4VsKfhZzYE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHi4P5OAaLgwg/profile-displayphoto-crop_800_800/B4EZld_4g9GoAQ-/0/1758218662284?e=1781136000&v=beta&t=XrZtHHN4kaSrbyU09Qei8EbJegXuNFCC9m4fkY7izX4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEFe4yvOBTy7w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1719347106885?e=1781136000&v=beta&t=xLayS-OmmVkgptfjscw8RdlWnqnYpjNOUc-DCo5IObs",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1717585285427,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7204070832661299200?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7204070832661299200%2C7204074833003868160%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287204074833003868160%2Curn%3Ali%3Aactivity%3A7204070832661299200%29",
+      "text": "Víc o knížce tady https://www.manning.com/books/grokking-algorithms-second-edition Je to ilustrovaný průvodce základními algoritmy, který hodně lidí doporučuje jako jeden z nejstravitelnějších zdrojů, jak se tohle téma naučit. Pokud hledáte něco v češtině, prý je dobrý Průvodce labyrintem algoritmů https://knihy.nic.cz/cs/detail/30/, ale to píšu jen jako tip. Jako výhru nabízím ty Grokking Algorithms.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "n6hg3F6JQo6qQw95WaJoWA==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Čopák",
+        "occupation": "CEO and owner: Agama point | octopusEngine | tethys.cz",
+        "id": "187166094",
+        "publicId": "jan-čopák-86682152",
+        "trackingId": "TLiPr6qNTJemOkBwunulVA==",
+        "profileId": "ACoAAAsn7Y4BTYFMLzYJ02OeYd2DpT75jwvKEGY",
+        "picture": "https://media.licdn.com/dms/image/v2/C5103AQFV_5-6KISbEQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516619773634?e=1781136000&v=beta&t=b4mUMZm2twDPpBqiLyEHN2d9mejh3f1IRSJz3YrEWvw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5116AQEjZ-mY06xQMA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1519465108225?e=1781136000&v=beta&t=ftNxNRxg2Hrui0hcg3u6qdZ4a8-J_Gx2zCIONG_1r7A"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Aleš",
+        "lastName": "Máca",
+        "occupation": "Power Platform Specialist ve společnosti Atlas Copco",
+        "id": "587216221",
+        "publicId": "aleš-máca-2517a8144",
+        "trackingId": "45WedHt8RZmEMQPzLWUUmQ==",
+        "profileId": "ACoAACMANV0BjVjP0o654tPHQTVjPCYUB5Jqaqc",
+        "picture": "https://media.licdn.com/dms/image/v2/C5103AQEOsVExWoghxw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516938986716?e=1781136000&v=beta&t=s7f1xjBWqlb4SHr8RlhzGNHGCeoM9WkfOy2YIAMSJb8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Aleš",
+        "lastName": "Haška",
+        "occupation": "Social Media Manager at EUSPA - EU Agency for the Space Programme",
+        "id": "932701260",
+        "publicId": "ales-haska",
+        "trackingId": "vFJuRNXvTHC/vRK98YBwmg==",
+        "profileId": "ACoAADeX5EwBCrlk0ITXwz9jH_nD9YzmRQR7gG4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFnIRWtqd6Q7A/profile-displayphoto-crop_800_800/B4DZz4jHCiKEAI-/0/1773696481230?e=1781136000&v=beta&t=C2NfnfA3SX88WkKlv8dgtPvyT-0ICK7jK_ehqoFcgOM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFM4QSTJr7hqA/profile-displaybackgroundimage-shrink_350_1400/B4DZ47IT0SHgAU-/0/1779108495196?e=1781136000&v=beta&t=EfAZsgG_jTRob2AGdC9dzltv0xsbCSDSu9ayMzWSpuI"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Irena",
+        "lastName": "Zatloukalova",
+        "occupation": "empowering #autisticTalent in Tech 🚀 | Guiding your communication for change | Systemic coaching",
+        "id": "99891449",
+        "publicId": "izatlouk",
+        "trackingId": "k0i6CEIATSevH7AnwfmNZg==",
+        "profileId": "ACoAAAX0OPkBzZjVvVi08LqhaKA5UMdVz4M5inM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEX7QmSSoFSMg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1635789075087?e=1781136000&v=beta&t=gNSbihMMlaQdd_0sP2m4nmd_njYG4j06DobLSgnjIEM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Cibulec",
+        "occupation": "Python vývojář s přesahem. 🐍",
+        "id": "399499541",
+        "publicId": "ypsilonxpython",
+        "trackingId": "Y/QdRkEcSxekQBlmxXK/JQ==",
+        "profileId": "ACoAABfP4RUBhhqww_PQuiFQs580Isbr6ZqrqOg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHxzColABuq3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1671205705078?e=1781136000&v=beta&t=YynyLwKnmF1yQVnk5INWHcB96M_Btdr9aeqx1LwcgsI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHuts72Jn_yMQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1634794908162?e=1781136000&v=beta&t=S9UL0wy6v08ZrAb29xjudA5ltkEDpmZSh3rAld7B-jo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martina",
+        "lastName": "Polášková",
+        "occupation": "Front-end developer | React | JavaScript | TypeScript",
+        "id": "955156348",
+        "publicId": "martina-polášková-624a68227",
+        "trackingId": "6Q1qHAFNQXurUBx3OqD0Rw==",
+        "profileId": "ACoAADjuh3wB174CJRK52CCIITxS0mLpxgLuYds",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQF-VoyWiZq29A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725954353789?e=1781136000&v=beta&t=Aj3wHam1qjTSWwdNEm_XqCePjM7DsR6_Sp61JftNBsI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHri9x_5Qg2_A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1665524567982?e=1781136000&v=beta&t=PTRdPIiFZO6L60PvSNPbkENVxH_2Iq3Mc60BSY9SpYo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Andrea",
+        "lastName": "Kvapilová",
+        "occupation": "--",
+        "id": "1230479209",
+        "publicId": "andrea-kvapilová",
+        "trackingId": "qo6LcqVpQryJj2vNcqPjjQ==",
+        "profileId": "ACoAAElXn2kBUwWghKVe4modzps9jFNK6WSdHvo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE7b_VQU4TCbw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1707926909265?e=1781136000&v=beta&t=vjT7bu2Kjo48kTpXZs8jeG2bKGa2HLdaQ44Xyh9yrVU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vladylena",
+        "lastName": "Halchuk",
+        "occupation": "Data Analyst/Engineer at Cisco",
+        "id": "1037509647",
+        "publicId": "vladylena-halchuk",
+        "trackingId": "Uqkwdoo5RVmQniM5PFAKiw==",
+        "profileId": "ACoAAD3XJA8BPOTOyLAzhh2pbxqwOMLV-ayrl7c",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGt4AxBTteK5A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731266542692?e=1781136000&v=beta&t=C2ZQ3RBkgu-5zPrJbVqor7YQ6J6TNoVs2Oo3EKknDkQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Juraj",
+        "lastName": "Krc-Turba",
+        "occupation": "Des réseaux aux serveurs, rien ne m'échappe. Technicien informatique polyvalent, toujours prêt à relever tous les défis. Cofondateur du premier fablab à Chambéry.",
+        "id": "592263015",
+        "publicId": "juraj-krc-turba-973420146",
+        "trackingId": "rVMKhRw/RKujFgnxmkDIFw==",
+        "profileId": "ACoAACNNN2cBLpwqU4yuSOu603yho5Ro1RLH5JA",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG1tm10KobJJA/profile-displayphoto-shrink_800_800/B4EZVmFeA7HMAc-/0/1741174465136?e=1781136000&v=beta&t=flp9rm8mUB364pm-jADsOD3ipaWTcp8lGmgNOowvNAU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFp_H9bjErXgw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736716641788?e=1781136000&v=beta&t=mX2uRfkm7Gn4LEu-uj-RnO-vqqHq9e8llJo8CO4_U9s"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Sergiu",
+        "lastName": "Nica",
+        "occupation": "AI Engineer | Building Agentic Systems & LLM-Powered Apps | Specializing in RAG, Python & Enterprise AI Automation",
+        "id": "893788823",
+        "publicId": "sergiu-nica-2025-ai-dev",
+        "trackingId": "50iL3hrTQlafbI8rsU9EdQ==",
+        "profileId": "ACoAADVGIpcBVKcy2A9itdpU8rRZq4VsKfhZzYE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHi4P5OAaLgwg/profile-displayphoto-crop_800_800/B4EZld_4g9GoAQ-/0/1758218662284?e=1781136000&v=beta&t=XrZtHHN4kaSrbyU09Qei8EbJegXuNFCC9m4fkY7izX4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEFe4yvOBTy7w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1719347106885?e=1781136000&v=beta&t=xLayS-OmmVkgptfjscw8RdlWnqnYpjNOUc-DCo5IObs"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 10,
+  "numComments": 3,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "n6hg3F6JQo6qQw95WaJoWA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1717584331670,
+  "postedAtISO": "2024-06-05T10:45:31.670Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

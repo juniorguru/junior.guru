@@ -1,0 +1,197 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4E22AQHxMxm9_yRKzQ/feedshare-shrink_1280/feedshare-shrink_1280/0/1635229562134?e=1781136000&v=beta&t=5ZqlZtVaAufaOJkSzGvJ9tthfruEdVyhQYpVLsI7A9o"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6858649895054716929",
+  "url": "https://www.linkedin.com/posts/honzajavorek_offlinefirst-progressivewebapp-activity-6858649895054716929-DLx3?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAEL3bxwBwKYzZjrt26wx6rOJd1c-I03NZVc",
+  "timeSincePosted": "4yr",
+  "shareUrn": "urn:li:share:6858649894517841920",
+  "text": "V úterý 2.11. bude v klubu v 18h přednáška s Libor Vaněk z CDN77. Libor nedávno vytvořil web pro novináře David Klimeš jako #offlinefirst #progressivewebapp. A protože to byla důležitá práce, dal si hodně záležet. Rád by na jejím příkladu ukázal, jak se staví moderní prezentační web – jak vybírat technologie, co optimalizovat, na co si dát pozor. Určitě zmíní přístupnost a stihneme-li to, snad si i povíme, k čemu jsou dobré service workery 🔬 https://lnkd.in/ezHk6pM",
+  "attributes": [
+    {
+      "start": 45,
+      "length": 11,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Libor",
+        "lastName": "Vanek",
+        "occupation": "The World Wide Web fan. VP of Product Development at CDN77",
+        "id": "104835993",
+        "publicId": "liborvanekcz",
+        "trackingId": "SI8VIGu2SxOyCORHIz1XLQ==",
+        "profileId": "ACoAAAY_q5kBQdAJDN6Xu2XxpQJesfuiElysKTQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHZ-8agj_w7aQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1732277487681?e=1781136000&v=beta&t=BYTPk1mgKlzo-ylUNTIlrkFVq_8Yl-oOw8tDwtzGlEI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQG0nWlxR-W87w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1528449639174?e=1781136000&v=beta&t=aBo-cwvgXeE20ciGhm21tl9_wpa3sLadk4M_pMRxrUA"
+      }
+    },
+    {
+      "start": 59,
+      "length": 5,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "CDN77",
+        "universalName": "cdn77",
+        "trackingId": "0785faZQQFiOf/8uy/f/vw==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:2792727",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHl1wDtwapIqg/company-logo_400_400/company-logo_400_400/0/1723558798372/cdn77_logo?e=1781136000&v=beta&t=SgK7qDSjZaFYXPyGoCeoHNRA4tRwi_Fwbc1Bq9oWsDs"
+      }
+    },
+    {
+      "start": 106,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "David",
+        "lastName": "Klimeš",
+        "occupation": "Novinář, pedagog, ekonom",
+        "id": "35196324",
+        "publicId": "davidklimes",
+        "trackingId": "Y6zg5I/xTyaPhv/BJVTQ+Q==",
+        "profileId": "ACoAAAIZDaQB82mL3hh2Wg3VaXZakUqYAuoJaAo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGUqmZ42-mlGQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1694258171453?e=1781136000&v=beta&t=7u0qNtKpe_b2clCWdRQ3OlJ8p6fv-PGlbU98Z1eTUTk"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1635253459417,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6858649895054716929?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6858649895054716929%2C6858750125846614016%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286858750125846614016%2Curn%3Ali%3Aactivity%3A6858649895054716929%29",
+      "text": "Libor 👏👏👏",
+      "entities": [
+        {
+          "start": 0,
+          "length": 5,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Libor",
+            "lastName": "Vanek",
+            "occupation": "The World Wide Web fan. VP of Product Development at CDN77",
+            "id": "104835993",
+            "publicId": "liborvanekcz",
+            "trackingId": "SI8VIGu2SxOyCORHIz1XLQ==",
+            "profileId": "ACoAAAY_q5kBQdAJDN6Xu2XxpQJesfuiElysKTQ",
+            "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHZ-8agj_w7aQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1732277487681?e=1781136000&v=beta&t=BYTPk1mgKlzo-ylUNTIlrkFVq_8Yl-oOw8tDwtzGlEI",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQG0nWlxR-W87w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1528449639174?e=1781136000&v=beta&t=aBo-cwvgXeE20ciGhm21tl9_wpa3sLadk4M_pMRxrUA"
+          }
+        }
+      ],
+      "pinned": false,
+      "author": {
+        "firstName": "Marek",
+        "lastName": "VELAS",
+        "occupation": "Founder @EDUpunk | Learning design @Reactgirls.com | AI & Health Content Strategist | TALENT Mentor & MEME Therapist",
+        "id": "201927716",
+        "publicId": "marek-velas",
+        "trackingId": "l7LWCQ/+S4eRLND1tYwUdw==",
+        "profileId": "ACoAAAwJLCQB-ePqkhYoO0olYYFCoOJGgdydJEs",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQHj3KqlSVtI9A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1540025534374?e=1781136000&v=beta&t=CPzxTFoq5FwZ2NTvk1phzV1eKiS-9ILQHVR9fBpJD2I",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGXOBXZ2lQyaw/profile-displaybackgroundimage-shrink_350_1400/B4EZl9YDUNKYAY-/0/1758745081852?e=1781136000&v=beta&t=WtHueBkAwczoFilZWgkI-IVFDO89umDpdBCjoy1NOto",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Naske",
+        "occupation": "freelancer and consultant - digital education",
+        "id": "13671180",
+        "publicId": "naskep",
+        "trackingId": "+0lz+5tkTJqGIeNLug/MNw==",
+        "profileId": "ACoAAADQmwwB1EuDW0z_d2nZkfqUm6kvZkoqTCI",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHd20Mk1RjpyQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1616672269712?e=1781136000&v=beta&t=KX7hrg0BfMg3th_piTcPqmY3ndJxW6ZMX_sjpoJf34w"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Simon",
+        "lastName": "Barak",
+        "occupation": "Software Developer",
+        "id": "792277328",
+        "publicId": "simon-barak",
+        "trackingId": "zrevOa0RRRimjzR/QLzysg==",
+        "profileId": "ACoAAC85MVAB4dGF6AeVRmK1oTUokgLc8QVCejU",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGrEi2_Zu5FVg/profile-displayphoto-crop_800_800/B4EZsmgBZkHMAI-/0/1765877488260?e=1781136000&v=beta&t=IJNcbZvu9DX0u4MkKLpP91RI3IlAQC4_idsMKqw9koo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHHfkTm-5cgcw/profile-displaybackgroundimage-shrink_350_1400/B4EZsmaQb5GcAY-/0/1765875981742?e=1781136000&v=beta&t=6zb94O2q0ySDFI0O6gTab-NiTq8QN2x9Jewzw0r_LzQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Vácha",
+        "occupation": "Head of Engineering",
+        "id": "76115329",
+        "publicId": "vachapetr",
+        "trackingId": "YCiYjzhDRNmdf3nFcbVfQg==",
+        "profileId": "ACoAAASJbYEBMeOmhTR-EWaXg0q9HUTng5HCt9E",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGCiZVCJ_C1OA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1557674174077?e=1781136000&v=beta&t=BhlxGr50WWidcbX2Ie9bGUVi2zrduoaH7ODcwifpQcA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Andra",
+        "lastName": "Nistor",
+        "occupation": "Frontend Developer | React | TypeScript | JavaScript",
+        "id": "669545448",
+        "publicId": "andra-nistor",
+        "trackingId": "8fpLkAjQSnuZfnyXceQbpw==",
+        "profileId": "ACoAACfoc-gB4WXWUEatPnWMtiaY-XUJ4EyiiME",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQGAVqATFuxFmA/profile-framedphoto-shrink_800_800/B4DZ20KLR7K4Ag-/0/1776844060094?e=1780430400&v=beta&t=iuEAY30VIzrT307WxfVyhr5AcwEToEiKaGAc0Eq4VSI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEJdNZPBysm9Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1593868285165?e=1781136000&v=beta&t=uunXxi-sSkeKzxDHW9ODLim-u3Gf73VR1i7Y9LnLqBs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Anna",
+        "lastName": "Rejdová",
+        "occupation": "Adventurer 🇫🇷 | SUHR Community & Events",
+        "id": "384392098",
+        "publicId": "annarejdova",
+        "trackingId": "URP940JxQWeqZqp6w7ZVjA==",
+        "profileId": "ACoAABbpW6IBMa0D8zwWhmh69Hr7krVsRMGuHFA",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGbTdP1ZDrzXA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718239072930?e=1781136000&v=beta&t=g4WIJ-B2vxNXHg0iAInRynU4RHh-vV2RcM1ql_BnlFo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFtjW9NbQDN7Q/profile-displaybackgroundimage-shrink_350_1400/B4DZ14NtFDI4AY-/0/1775838352643?e=1781136000&v=beta&t=ephNbUbB1g4GOHbH1yvtLD2gFZ2MSNWNs-Ahz5VA8Gg"
+      }
+    }
+  ],
+  "numShares": 3,
+  "numLikes": 5,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "oCPJDpEES0qBW9S/8v4mYg==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1635229562534,
+  "postedAtISO": "2021-10-26T06:26:02.534Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

@@ -1,0 +1,413 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "type": "image",
+    "images": [
+      "https://media.licdn.com/dms/image/v2/D4D22AQHh_GYKE0pFiQ/feedshare-shrink_1280/B4DZZoF12XGcAw-/0/1745503084412?e=1781136000&v=beta&t=Z9q5G1fa7of8haDtDnPpx5eWqWR0TyEUCiV7rut5rn4"
+    ],
+    "isActivity": false,
+    "urn": "urn:li:activity:7321170573693202433",
+    "url": "https://www.linkedin.com/posts/dariagru_europython-careerchange-techcareers-activity-7321170573693202433-Tcu8?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAADmbg6cBYOPU8CPv9ZUe8oI_f7tbNXybZ54",
+    "timeSincePosted": "1yr",
+    "shareUrn": "urn:li:share:7321170572313260034",
+    "text": "🐍 Join me at EuroPython Beginners' Day Unconference! 🚀\n\nI'm excited to be co-organizing the EuroPython Beginners' Day Unconference with Honza Javorek on July 19th in Prague! This event is perfect for juniors and career changers looking to break into tech. It's a part of EuroPython and its Sprints weekend.\n\nWhat to expect:\n- Panel discussions with junior devs and hiring managers\n- An interactive workshop for your first tech job\n- Discussion circles connecting beginners with pros\n- Lightning talks from recent career changers\n\nOnly 40 spots available! Applications close May 11th.\nFree for EuroPython ticket holders, €5 otherwise.\nKnow someone who could benefit? Please share! Sign up through the form (link in comments).\n\n#EuroPython #CareerChange #TechCareers #PythonCommunity #BeginnerFriendly",
+    "attributes": [
+      {
+        "start": 136,
+        "length": 13,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "trackingId": "9Id6L727QC2uQ59jfzxxZA==",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+        }
+      },
+      {
+        "start": 271,
+        "length": 10,
+        "type": "COMPANY_NAME",
+        "company": {
+          "name": "EuroPython",
+          "universalName": "europython",
+          "trackingId": "5vg8E5SDTo2Stw6v9IxyAw==",
+          "active": true,
+          "showcase": false,
+          "entityUrn": "urn:li:fs_miniCompany:41130723",
+          "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQGz6u5D6KYABg/company-logo_400_400/B4DZxWmNTUJwAY-/0/1770979382977/europython_logo?e=1781136000&v=beta&t=pwjOEJznkhOEXcURlj3q2Nvk3DG-RH4f9owboCBcCU0"
+        }
+      }
+    ],
+    "comments": [
+      {
+        "time": 1745503093192,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7321170573693202433?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7321170573693202433%2C7321170605783826432%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287321170605783826432%2Curn%3Ali%3Aactivity%3A7321170573693202433%29",
+        "text": "https://ep2025.europython.eu/beginners-day/",
+        "entities": [],
+        "pinned": false,
+        "author": {
+          "firstName": "Daria",
+          "lastName": "Linhart Grudzien",
+          "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
+          "id": "183293578",
+          "publicId": "dariagru",
+          "trackingId": "PsNwt9bfRIGWY3/zBqhdTQ==",
+          "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8",
+          "distance": "OUT_OF_NETWORK"
+        }
+      }
+    ],
+    "reactions": [
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Ladislav",
+          "lastName": "Prskavec",
+          "occupation": "Staff Engineer at Everpure (formerly Pure Storage, Inc.)",
+          "id": "6413396",
+          "publicId": "ladislavprskavec",
+          "trackingId": "LSMfow/7Rk+vKPWbVnI3rw==",
+          "profileId": "ACoAAABh3FQBjDcRIsKdGUqUWVVxs45nmvivIO4",
+          "picture": "https://media.licdn.com/dms/image/v2/C5603AQH74zpN5N3LhQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516250709565?e=1781136000&v=beta&t=4858H9zBGZBF9O86nNt-xKvWRcvX0_fxZw1SXlZ1pFI",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEcA07Jof8U1g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1614695743264?e=1781136000&v=beta&t=4Vqk30uOrg7FpjokcbA7vXMhQG5LWLueu6rpGGxkufE"
+        }
+      },
+      {
+        "type": "APPRECIATION",
+        "profile": {
+          "firstName": "Standa",
+          "lastName": "Opichal",
+          "occupation": "Member of Technical Staff at Pure Storage",
+          "id": "3578160",
+          "publicId": "opichals",
+          "trackingId": "ISCwnunrSDuwAWFMzSjF3g==",
+          "profileId": "ACoAAAA2mTAB0vQRaBG0Lt6G3F13S-8hPYhR3UU"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Marek",
+          "lastName": "Feliks",
+          "occupation": "Technicien IT, passioned by VoIP & IP PBX",
+          "id": "902222665",
+          "publicId": "marekfeliks",
+          "trackingId": "j52jZNf1R0ikWKN3SOkWUg==",
+          "profileId": "ACoAADXG00kBfzlHbIgZO4TOQpY_mvTVNMIc5QY",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEOz5_S4gEISg/profile-displayphoto-crop_800_800/B4EZt.eX26IwAI-/0/1767353451058?e=1781136000&v=beta&t=d8K4mBOlcwAA-iH2LGh8V-sfLAiMlllrDUKNzp6_jlw",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQErWUGZXT4YxA/profile-displaybackgroundimage-shrink_350_1400/B4EZt.ehgBJQAY-/0/1767353491161?e=1781136000&v=beta&t=ir-1_I9o2IXm1i7YZQxCaCdluh40xJl0eCMlbp7bo04"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Domitil",
+          "lastName": "Katemo",
+          "occupation": "Business Administrator | 3+ years in administration, marketing & customer service | Skilled in project coordination & process improvement",
+          "id": "525351228",
+          "publicId": "domitil-katemo-850b32127",
+          "trackingId": "yQzoE4TBQbWxbbKGNQcUKQ==",
+          "profileId": "ACoAAB9QOTwBjYo-pyQWuo9wx4mjFG9_olxX9_w",
+          "picture": "https://media.licdn.com/dms/image/v2/D4D35AQF2thtGX-TWJw/profile-framedphoto-shrink_800_800/B4DZyG41szJkAg-/0/1771789573559?e=1780430400&v=beta&t=edCNW0Xp2QsHGzEq5tuKBIrFtTAiO9pKuO8MdPuo_Lk",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGvlgCVKL_gfA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1690930951851?e=1781136000&v=beta&t=egWwtJU0YVsPFZdf3v1spQIdxEjONh7RDDObx3aSJlw"
+        }
+      },
+      {
+        "type": "EMPATHY",
+        "profile": {
+          "firstName": "Manivannan",
+          "lastName": "Selvaraj",
+          "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
+          "id": "13167565",
+          "publicId": "citizenmani",
+          "trackingId": "TWtJNshbSyCoIZFpPER3NQ==",
+          "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ",
+          "picture": "https://media.licdn.com/dms/image/v2/D5603AQEqC5x0akFu1Q/profile-displayphoto-crop_800_800/B56ZlSvDmfIAAM-/0/1758029692620?e=1781136000&v=beta&t=2MjEAUEFd1OccqmtlnzcSzG2gHUquLzw5MI-3XUUfOM",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHZC49bFZ8ZTQ/profile-displaybackgroundimage-shrink_350_1400/B56ZxDZv79KIAY-/0/1770657351768?e=1781136000&v=beta&t=kVGPoYvqmMzYICMmu_0FODKNvqUNjsGRcvULLqy01EA"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "🐳",
+          "lastName": "Janusz Kamieński",
+          "occupation": "Seniority is not about knowledge but wisdom --- I code, give tech talks, mentor, organize DevOps events, and run TTRPG games",
+          "id": "53592588",
+          "publicId": "jakamienski",
+          "trackingId": "4l/SpKLVTFqSVbjZxi+2Bg==",
+          "profileId": "ACoAAAMxwgwBPN38CSWMFM0pznmDpLQS_SwENrI",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHNgHcofkm3Zw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516576574983?e=1781136000&v=beta&t=ChQpV21HlvopZFePm6AgmJNoAlzud37Ud7iTq7sk-lo"
+        }
+      },
+      {
+        "type": "PRAISE",
+        "profile": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "trackingId": "9Id6L727QC2uQ59jfzxxZA==",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Robert",
+          "lastName": "Wunderlich",
+          "occupation": "AI Strategy & Enterprise Integration | Ex-Oracle Product Leader (OCI, APIs, Messaging) | Deep-diving into agentic AI & real-world applications | Open to selective conversations",
+          "id": "5242292",
+          "publicId": "wunderlich",
+          "trackingId": "lpRGYhscQgmKFrgFd3kOog==",
+          "profileId": "ACoAAABP_bQBKO5DXZ8Vh_Qlsjvqa0SbX21tA1k",
+          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQF9ghfeJquHcQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1685384719864?e=1781136000&v=beta&t=62Ym5sq_MszITKrTNcmxXe9VqVBYG0WmbI3JNW2m6PE",
+          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGLZ6OxOmeZRw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1670987599845?e=1781136000&v=beta&t=kogOsJsyPkutLTVZ_XbwU_zPY5D7W9JPQOQ0WVcq84A"
+        }
+      }
+    ],
+    "numShares": 2,
+    "numLikes": 8,
+    "numComments": 1,
+    "canReact": true,
+    "canPostComments": true,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "ALL",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "firstName": "Daria",
+      "lastName": "Linhart Grudzien",
+      "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
+      "id": "183293578",
+      "publicId": "dariagru",
+      "trackingId": "PsNwt9bfRIGWY3/zBqhdTQ==",
+      "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
+      "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+    },
+    "authorProfileId": "dariagru",
+    "authorType": "Person",
+    "authorName": "Daria Linhart Grudzien",
+    "authorProfileUrl": "https://www.linkedin.com/in/dariagru?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
+    "authorUrn": "urn:li:member:183293578",
+    "postedAtTimestamp": 1745503085540,
+    "postedAtISO": "2025-04-24T13:58:05.540Z"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7321199901499920384",
+  "url": "https://www.linkedin.com/posts/honzajavorek_europython-careerchange-techcareers-activity-7321199901499920384-GHR3?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAADmbg6cBYOPU8CPv9ZUe8oI_f7tbNXybZ54",
+  "timeSincePosted": "1yr",
+  "shareUrn": "urn:li:share:7321199900631699468",
+  "text": "It's actually happening! Together with Daria Linhart Grudzien we're doing a Beginners’ Day at EuroPython this year. Lightweight formats: Discussions, lightning talks, circles, Q&As, etc.\n\nEntry is free for EuroPython ticket holders (any ticket type), and €5 otherwise. Only 40 spots! Apply by May 11th.",
+  "attributes": [
+    {
+      "start": 39,
+      "length": 22,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Daria",
+        "lastName": "Linhart Grudzien",
+        "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
+        "id": "183293578",
+        "publicId": "dariagru",
+        "trackingId": "c0mJXTEARqmOaeupSoqN5A==",
+        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+      }
+    },
+    {
+      "start": 94,
+      "length": 10,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "EuroPython",
+        "universalName": "europython",
+        "trackingId": "sJKEa3SQRriQ3ZLVw7DffA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:41130723",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQGz6u5D6KYABg/company-logo_400_400/B4DZxWmNTUJwAY-/0/1770979382977/europython_logo?e=1781136000&v=beta&t=pwjOEJznkhOEXcURlj3q2Nvk3DG-RH4f9owboCBcCU0"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Norbert",
+        "lastName": "Červený",
+        "occupation": "I help great brands grow @STRV",
+        "id": "337285701",
+        "publicId": "strv-norbert-cerveny",
+        "trackingId": "gsVaXDFJQAe+kPE6HiK6/A==",
+        "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGKIAaUJPtlmA/profile-displayphoto-crop_800_800/B4DZ0jT_lBIEAI-/0/1774413941709?e=1781136000&v=beta&t=ioRFNZY53XZXWk1BvKTQdIygU-xxLKoyNysEAYklp0I",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG0ekEnNy2Hcw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0jTiNeGsAk-/0/1774413817026?e=1781136000&v=beta&t=_KMbjLzzfd2pO9gizTz2iWgDOkq5RQ3NpzDT5fOljNI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jaroslav",
+        "lastName": "Veselý",
+        "occupation": "Test Engineer at Tesena. Co neumím, to se rád doučím. Fotograf, kuchař, šermíř, zdravotník, pivovarník. Cogito, ergo armatus sum.",
+        "id": "1279583682",
+        "publicId": "jarovesel",
+        "trackingId": "+Y6YfHEJTXCfIJ2J6VFecA==",
+        "profileId": "ACoAAExE5cIBl3lcy4FDfslnw7_G9LNTX4sAsUI",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEn8kq4j3-ZVw/profile-displayphoto-crop_800_800/B4DZlMPGGUIEAI-/0/1757920650281?e=1781136000&v=beta&t=YHud3IBM9ScHHrdKjvzRBd3UJZFZis2sk86l0IQHnO4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH5EXS_28-G9g/profile-displaybackgroundimage-shrink_350_1400/B4DZVH7tnyHYAc-/0/1740668590934?e=1781136000&v=beta&t=Yd3uCZW8Ud1gNLIphTn-A2eTZcNXZ1QmtBmwjv2PcSc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Radek",
+        "lastName": "Holý",
+        "occupation": "QA Engineer & IT Administrator | Open to work | Senior Developer Background | 20+ years in IT",
+        "id": "56523553",
+        "publicId": "jmenemradek",
+        "trackingId": "X1tv8SVCTLySyEq+pZhiGA==",
+        "profileId": "ACoAAANeeyEB64ERPMylSJEByw6iLTk9SWwioOE",
+        "picture": "https://media.licdn.com/dms/image/v2/D5635AQH1VVUtBxv3Ag/profile-framedphoto-shrink_800_800/B56Z5G87eDGYAk-/0/1779306838160?e=1780430400&v=beta&t=JpnfAAV94oWjR3NS4LDSZe1c8Eenx5wzfxV-EOQ44k0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFT9pxgxHoTxQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1627121226991?e=1781136000&v=beta&t=f1vuxVYcu77a5Yy_fpigtUs9qDEjptMeesjkRy_WiF4"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Edita",
+        "lastName": "Siler",
+        "occupation": "Senior HR Consultant at Oracle",
+        "id": "83524426",
+        "publicId": "editavesela",
+        "trackingId": "ikAGwXkPS0KvVjvgrh4ICA==",
+        "profileId": "ACoAAAT6e0oBVxqy8TDqP4ucx5hsYsDSI8yXwK8",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQE0KtqzXsQNoA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1555338518670?e=1781136000&v=beta&t=P_tYBnR-PoBfjlIjpo4FRgOjKaMYq5z-5YxDShCvFNY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Šimon",
+        "lastName": "Podhajský",
+        "occupation": "Head of AI @ Waypoint | Builder | Evals.cz",
+        "id": "141048940",
+        "publicId": "simonpodhajsky",
+        "trackingId": "7xu/7GGeQyqZzUOUz00DKw==",
+        "profileId": "ACoAAAhoPGwB_kogfL_Yxl704HnL5RCo2fKQZO4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE-EE6jTtsO5g/profile-displayphoto-crop_800_800/B4DZ1IM2zrGgAI-/0/1775032838991?e=1781136000&v=beta&t=3RQSb_tnDeD3tNi6ZFKkUrgsC9QeVsc8qA9urs_f14w",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHRO8i8HK73fg/profile-displaybackgroundimage-shrink_350_1400/B4EZmeeJ7aKQAY-/0/1759300332172?e=1781136000&v=beta&t=ZhcF9vur2hnEmua6vB-K24BPKLn_vxwuJd5NqdugUm8"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Ekaterina",
+        "lastName": "Kuranova",
+        "occupation": "Founder @HERITECH | Software Engineer & Coding Mentor | Bridging Tech & Social Impact | Advocate for Gender Equity, Women’s Voices & Responsible AI",
+        "id": "1234375694",
+        "publicId": "ekaterina-kuranova-9524812a5",
+        "trackingId": "m6MQn2k8QviKvn0Rncp6xQ==",
+        "profileId": "ACoAAEmTFA4BGSKJdN-1JgZB_Ki0OsHEErHF1KY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGrKCSUquFqKQ/profile-displayphoto-crop_800_800/B4DZ2xE5p5GcAI-/0/1776792349601?e=1781136000&v=beta&t=D3MvHLhIQVgLyAlvPCpQAladHtiry3VdkRbwywp5gMg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEGAHNTrPs5Jw/profile-displaybackgroundimage-shrink_350_1400/B4DZwyoMkeGQAY-/0/1770375924765?e=1781136000&v=beta&t=dHfCyNaGkLTjO21u-KPKU9Gl0vntFM9CEzrQhqtpmiA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Klára",
+        "lastName": "Bek",
+        "occupation": "Data Analyst & Business analysis 🔍| Python 🐍 | Linux 🐧 | Spreadsheets ▦ | Implementation 🔧",
+        "id": "741945809",
+        "publicId": "klarabek",
+        "trackingId": "uCRKSvwFSzKNc6zx9sS7fg==",
+        "profileId": "ACoAACw5MdEBDgOfso0XhvTCdNgsMQCLvcQOmlo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHP-e0ZciDgNQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719029334294?e=1781136000&v=beta&t=3cr7WzfOr-Wm4UL-0_o5s7xTpx64P0aR0JJrbsYkv0Q",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGKo6NwSzqnKA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1735154054751?e=1781136000&v=beta&t=n9xs-YlmbQWJAAm6STFyN_5hscyTMGFA96A_fYOx4-E"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Lampart",
+        "occupation": "„Myšlenky proměněné v kód mění svět.“",
+        "id": "1509504836",
+        "publicId": "martin-lampart-058644361",
+        "trackingId": "7grQb4RRQA+kFeYuksy1Lw==",
+        "profileId": "ACoAAFn5N0QB5nOyl8UUjUl-WSWNfSfjfGCwc1k",
+        "picture": "https://media.licdn.com/dms/image/v2/D5635AQHCuQL3pMHxjQ/profile-framedphoto-shrink_800_800/B56ZZdUMrcHgAk-/0/1745322298477?e=1780430400&v=beta&t=o6AFAlU9UmK9NOVYfGK7Y_7bfQaDt7rmJefgJkTDGyk"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Barbora",
+        "lastName": "Hůlová",
+        "occupation": "Junior SW engineer | The “green” one | Extrovert community cheerleader 🐍👩🏻‍💻 “Head” of volunteers for next PyCon CZ",
+        "id": "924061147",
+        "publicId": "barbora-hůlová",
+        "trackingId": "doaTwg8OQmmTjLhLqp1LAQ==",
+        "profileId": "ACoAADcUDdsB8hutIOCmI8gTlj5Pxa3eof1-z6o",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEFQ5aqDnQm3Q/profile-displayphoto-crop_800_800/B4DZuegRBcI4AI-/0/1767890818572?e=1781136000&v=beta&t=N7u1OstHlJCxSGBZGDUEXmraJERq_9uzOoKtY_7hK6w",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH_QaSarBDLkQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ5L73R_I8AY-/0/1779390444937?e=1781136000&v=beta&t=zfiCvS375xCiZOcQW1TThj9Uq_ef0BQwbIgrbwpirAA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Červinka",
+        "occupation": "Python developer and lecturer",
+        "id": "355842259",
+        "publicId": "jakub-červinka",
+        "trackingId": "oo3yS1BkQOW1CLLeZxQXfQ==",
+        "profileId": "ACoAABU1uNMBxEkN7xMohKuhfytB97ZjK-tfEKo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGNchKKmRxASA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728627722442?e=1781136000&v=beta&t=wCbTK52orQpi98p3D_tIyem3VP3BJlXJ525dcexRAhg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFo1b8_EZuWVQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728056593822?e=1781136000&v=beta&t=NEwZVdMdQqj1rM46MtdnZQjC4bxHXipuncawNthkvSU"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 10,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "zU1g9ORqTJS2easB6Tu2aA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1745510077834,
+  "postedAtISO": "2025-04-24T15:54:37.834Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

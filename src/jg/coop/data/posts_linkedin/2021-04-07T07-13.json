@@ -1,0 +1,235 @@
+{
+  "type": "text",
+  "isActivity": false,
+  "urn": "urn:li:activity:6785459369560604672",
+  "url": "https://www.linkedin.com/posts/honzajavorek_djangogirls-activity-6785459369560604672-HBd6?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAACfBvG0B_xFh-JVlBZgJdzkuiugprlY4ys0",
+  "timeSincePosted": "5yr",
+  "shareUrn": "urn:li:share:6785459369212489728",
+  "text": "Lenka Segura si díky workshopu #DjangoGirls zkusila programování, na kurzech PyLadies CZ se to naučila, přes stáž Outreachy získala reálnou zkušenost s projektem, a to vše při 2 dětech. Dnes programuje aplikaci pro vědce zkoumající rakovinu 🚀 Moc fajn rozhovor od CyberMagnolia 💮 https://lnkd.in/e-c4wDa",
+  "attributes": [
+    {
+      "start": 0,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "S.",
+        "occupation": "Software developer",
+        "id": "74196758",
+        "publicId": "lenka-s-b32a2120",
+        "trackingId": "CEKMb0R+QRmCIVAL9W/iCQ==",
+        "profileId": "ACoAAARsJxYBEFAuceyAehapLxKvmWi85gbKRFU",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQFkiS57CqmB1w/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1556975089425?e=1781136000&v=beta&t=BPFOmBklCH2YNOMr-Kc5Prm1LZa7RKKkrfmDY-Dlv9Y"
+      }
+    },
+    {
+      "start": 77,
+      "length": 11,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "PyLadies CZ",
+        "universalName": "pyladies-cz",
+        "trackingId": "u47VjU2KTGut8KI8O/bRgA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:30644381",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C560BAQEaibY9_28N2A/company-logo_400_400/company-logo_400_400/0/1630614425519/pyladies_cz_logo?e=1781136000&v=beta&t=zfNm6R5gYxxDnRcaaj7iVB54AorS6Y83LjCuRsjXd0g"
+      }
+    },
+    {
+      "start": 114,
+      "length": 9,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Outreachy",
+        "universalName": "outreachy",
+        "trackingId": "ob3A+xYvSmGVkDEYMdcQxg==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:18204091",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQFS-r4wkrNR5g/company-logo_400_400/company-logo_400_400/0/1631318720989?e=1781136000&v=beta&t=i8elyNCNP9q9kiTAv2MEP_2CQ57pMIA8Jp7kkFHpRKU"
+      }
+    },
+    {
+      "start": 264,
+      "length": 13,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "CyberMagnolia",
+        "universalName": "cybermagnolia",
+        "trackingId": "fuew42WGQwiHksP0CEnpQQ==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:68539533",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQFZ_LaXdtsiKg/company-logo_400_400/company-logo_400_400/0/1630501497670/cybermagnolia_logo?e=1781136000&v=beta&t=tGpc67FZ0YIKADMPsOuQtGPVJ3u6Hm4w2AZNnb8WbDA"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Kateřina",
+        "lastName": "S.",
+        "occupation": "Product Manager on maternity leave",
+        "id": "382284543",
+        "publicId": "katerina-severova",
+        "trackingId": "B0Jq8YaFRYGaAugozfNbMA==",
+        "profileId": "ACoAABbJMv8BrQiE8P6oIrNVO4h8aFXVA4-oRBk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Natalia",
+        "lastName": "Vokrouhlecká",
+        "occupation": "Pohybový program přímo u vás ve firmě. Zdravotní cvičení pro lidi, kteří sedí u počítače. Praha.",
+        "id": "170493540",
+        "publicId": "nataliavokrouhlecka",
+        "trackingId": "bgd0DLygT9aBPSEsnmLyFw==",
+        "profileId": "ACoAAAophmQBExOyJqI5fnZ5Qa3PY_o7i1QoYyc",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGKYZh7DZU89A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1568554054332?e=1781136000&v=beta&t=u5DYOGt_0edi2x2DBi70lK0ok-DdChPTPf2SqW9S09U",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHvenncD-thTw/profile-displaybackgroundimage-shrink_350_1400/B4DZ5LIOisHIAU-/0/1779376908738?e=1781136000&v=beta&t=EbayGk3VoyaE9X1yE1BQKLzI3InmCPnNIgWE1jeD-Hk"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Erbenova",
+        "occupation": "Application Developer at Barclays",
+        "id": "361531956",
+        "publicId": "lenkaerbenova",
+        "trackingId": "JHmdPIyoTTm5/obOZUGQUA==",
+        "profileId": "ACoAABWMijQBlQzoTAse2JjfcJmbjz4dAQnIsQs",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGi_aPN1DxU3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517030344782?e=1781136000&v=beta&t=boP6IJareKgeZZHEHLF-RgBjxI_GQmpxMacm_Mm8k9c"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "🤓 Dmitrij",
+        "lastName": "Strelnikov",
+        "occupation": "Principal Software Engineer",
+        "id": "33687444",
+        "publicId": "strelnikov",
+        "trackingId": "kPDSZ4LPQAWZDGNhEFAfdA==",
+        "profileId": "ACoAAAICB5QBN8HB0-uRNb8blluLHICKyx64sTQ",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQE61CWta3XWGg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1658405444090?e=1781136000&v=beta&t=DqwKtigpdlZ_eNU8oMqG9OAhyQWE9BTbLe7OtGBFW1w",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQG9kgjiMRv-cw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1605096434480?e=1781136000&v=beta&t=iALjcdHwirXlty6lgfMQ3vuNBlHflnqu-aLqbTiUzEU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Anezka",
+        "lastName": "Muller",
+        "occupation": "🧑‍🤝‍🧑 Working with and for communities, organizing events, studying service design, having fun in all that. ✏️",
+        "id": "58610470",
+        "publicId": "anezkamll",
+        "trackingId": "Pa9J8/l7QB+MrEkJ4cNJjg==",
+        "profileId": "ACoAAAN-UyYBW_5FlwBOtClk7WVpl3JlZMHMVn4",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEdF62o6gzpHQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731942194763?e=1781136000&v=beta&t=3Pf8QBLlGpzI8zRBBfihj0pgDvCgOUoUJyTfMptX81Y",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHKgfW_KDXR1Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1620408094586?e=1781136000&v=beta&t=qk_LRa-WT8rOvas9-jwGjCle3e76MkO7wIKYYCWCZag"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Šárka",
+        "lastName": "M.",
+        "occupation": "Security🔥",
+        "id": "390209713",
+        "publicId": "šárka-m-98181baa",
+        "trackingId": "x4OCzMDiQTiTtXczqEsMqQ==",
+        "profileId": "ACoAABdCILEB07y3oARo2gRV3h5igas9WXxER4k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Helena",
+        "lastName": "Lorenc",
+        "occupation": "Career Counseling | Learning & Development | Data | HR Administration",
+        "id": "465803442",
+        "publicId": "helena-lorenc",
+        "trackingId": "Nm3PTa8ETq6zdC7czJdhFA==",
+        "profileId": "ACoAABvDmLIBI599JC2ZTdlrqbioIMgP9UeboOI",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQG4vFmvRGIrJA/profile-displayphoto-crop_800_800/B4DZ4d2yMjHoAQ-/0/1778617365510?e=1781136000&v=beta&t=I8ur7QeLSlBqZfbvupPQMbi_ISMA1RZo22mT-UFG-54",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEtO_K-M601OQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ4d2Xx2GcAY-/0/1778617253518?e=1781136000&v=beta&t=i5jD4Xg6t0qQs4KXfU6-qCETDUBmwhRhp0aKuOKtU58"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Svetlana",
+        "lastName": "Margetová",
+        "occupation": "I help factories digitise maintenance. With or without AI. Always with people first.",
+        "id": "178006447",
+        "publicId": "msvetlana",
+        "trackingId": "hzGu40q2QkenwyvOOAa8dw==",
+        "profileId": "ACoAAAqcKa8Bousd5uBo-bZZ9dq6qVlYKqtHvSc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF2d-GcOsk4Bg/profile-displayphoto-crop_800_800/B4DZ35j9rdHwAM-/0/1778008453433?e=1781136000&v=beta&t=drmOX7xsDyMGZaown-MFYSZXwtE2FSNpuvIxF5sa-CA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEafK1Y8bDUqw/profile-displaybackgroundimage-shrink_350_1400/B4DZWwQJBHHIAc-/0/1742418779616?e=1781136000&v=beta&t=0a47VNFLf1nQKjTg2JnpC3ODNNzCN24RoEDT7btdLtM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Cristina",
+        "lastName": "Dobre",
+        "occupation": "iOS Dev",
+        "id": "274227094",
+        "publicId": "cristina-dobre",
+        "trackingId": "uRfnKJP2QBmqsprEfDxsaw==",
+        "profileId": "ACoAABBYX5YBixmZsLqIN3yhUL-gNcD0Xf275lo",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGvMxy92RoBhQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1645698183322?e=1781136000&v=beta&t=gmkOghDLliXAVlh3l5kLVk-G-RFcQaE86M4NTluk_KA"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Lucie",
+        "lastName": "Zajíčková",
+        "occupation": "People Partner in Trezor & SatoshiLabs ~ Founder of Elegree ~ Deathwalker & Funeral Ceremonialist ~ Yoga Teacher",
+        "id": "269692807",
+        "publicId": "zajickovalucie",
+        "trackingId": "jT3v+a5aT7Wqo4pU7lsHGQ==",
+        "profileId": "ACoAABATL4cB-2vXjzUvfwtXSDDAqH3FY5ZiDGs",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEPTpc3t5ypeg/profile-displayphoto-crop_800_800/B4EZondlCJKsAM-/0/1761598658485?e=1781136000&v=beta&t=w4co6W8S8vuQ4NKBQy-SxYwLHjnM645SDMXXARegWnU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEKY0aP7C84HQ/profile-displaybackgroundimage-shrink_350_1400/B4EZlNmwBbKwAY-/0/1757943654875?e=1781136000&v=beta&t=RUomDv9Xjmnaj-QHTIpntsgl0hpkQjGZhA0TlVa1FPc"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 22,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "krdFBFK1R/GzCpIjxs+PwA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1617779581442,
+  "postedAtISO": "2021-04-07T07:13:01.442Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

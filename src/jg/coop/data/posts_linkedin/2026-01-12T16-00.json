@@ -1,0 +1,216 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:7935285517676217965",
+    "url": "https://junior.guru/events/58/",
+    "title": "Artem Zakharchenko– Proč programátoři kašlou na testy – online akce na Discordu junior.guru"
+  },
+  "isActivity": true,
+  "activityDescription": "Honza Javorek reposted this",
+  "activityOfUser": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "ev6iCo4+RxG/mk/FcONH4w==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "urn": "urn:li:activity:7416509473474641920",
+  "url": "https://www.linkedin.com/posts/artem-zakharchenko_artem-zakharchenko-pro%C4%8D-program%C3%A1to%C5%99i-ka%C5%A1lou-activity-7416425408100921344-nDfe?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAER_BBABGhA9dGZybaazDxY9GE7jgGPFMtc",
+  "timeSincePosted": "4mo",
+  "shareUrn": "urn:li:share:7416425407375294464",
+  "text": "Přijďte a poslouchejte mou přednášku o testování a proč ho asi nikdo nedělá. Probereme nejčastější příčiny, které stojí mezi vámi a kvalitním testováním: od strachu a kultury ve firmách až technické znalostí i nástrojů, které máme. \n\n👉 27. ledna, 18:00 👈",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1768232912454,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7416425408100921344?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7416425408100921344%2C7416506377633886208%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287416506377633886208%2Curn%3Ali%3Aactivity%3A7416425408100921344%29",
+      "text": "Moc se těším! Mám radost, že jsme do klubu na přednášku ulovili takovou mezinárodní open source hvězdu 🤩 😉 ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "ev6iCo4+RxG/mk/FcONH4w==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Filip",
+        "lastName": "Mešša",
+        "occupation": "Front-end is still a craft — even with AI in the loop. | Senior Front-End Engineer | Design systems · modular UI · AI-ready codebases | React · TypeScript · GraphQL",
+        "id": "349677591",
+        "publicId": "filipmessa",
+        "trackingId": "21sPDaczS8WuWe0jq+wy/g==",
+        "profileId": "ACoAABTXqBcBJvq3NlUj6X50PLadp918RAJss9s",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGwY7N_KK1AqA/profile-displayphoto-crop_800_800/B4EZs8e0nxHcAI-/0/1766246272833?e=1781136000&v=beta&t=1PZQYN9J2NVJz1jeJEQaNtaEx_ap6z2X6muXX4hE5ow",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFFbD_H26EHYw/profile-displaybackgroundimage-shrink_350_1400/B4EZs6yQSaGQAY-/0/1766217812077?e=1781136000&v=beta&t=FUwurTE529Mz2BVK5Me3vOI_WG6MXbElWlYTQxQ_b4k"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Táňa",
+        "lastName": "Váchová",
+        "occupation": "📌 administrativa ⊃ podpora ⊃ empatie",
+        "id": "1399848350",
+        "publicId": "tanavachova",
+        "trackingId": "HZI8IM/nQY24e/IfS3rgIg==",
+        "profileId": "ACoAAFNv_Z4BxskkxA5XZSQetiT0HKCBk4rbPGE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEz0Qt_OrK3hw/profile-displaybackgroundimage-shrink_350_1400/B56ZYgY6umGsAY-/0/1744300126333?e=1781136000&v=beta&t=YPGk-qT3cabItnu7JC4qXQNR753dEMOdF4a3L8478w8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Karla",
+        "lastName": "Root",
+        "occupation": "Stay calm. Ask AI first, then decide whether to panic. 👣 Data never lie. People do.",
+        "id": "420075610",
+        "publicId": "karlaroot",
+        "trackingId": "9N1K4KkiTN+uMJHZxVLhtQ==",
+        "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEnsBVBNIg4sw/profile-displayphoto-shrink_800_800/B4EZSZhq5JGgAg-/0/1737742528524?e=1781136000&v=beta&t=ArAz8cwKU99rv02-XELDPhMSPcOGe18DQ5B6GHeTDzg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGPw_FfwiMskg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1658486986414?e=1781136000&v=beta&t=5uJ3GN4tvwDZOwusY2_-ldpJqgAl7rlLmPt90NczWEQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Barbora",
+        "lastName": "Lendacká",
+        "occupation": "junior react developer | lifelong hands-on learner 📚",
+        "id": "244185326",
+        "publicId": "barbora-lendacka",
+        "trackingId": "AdqLEyr+RY6rMK7lqCywBg==",
+        "profileId": "ACoAAA6N-O4BkRvPPyIgRFUKOlr5LSE8hcrD3UQ",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQE5OKdwPiArDg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729857457613?e=1781136000&v=beta&t=5W6LFdsF3fy5yAqp6Pi7el03yHSW3TDXJpJlDXVXhLI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEVz3fJnY0J5g/profile-displaybackgroundimage-shrink_350_1400/B56ZcmxjDMGQAc-/0/1748702213960?e=1781136000&v=beta&t=B1meT8DW8qkAtlXBAsRhra3Tps9dznwKLiHIxUQRtJs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Iryna",
+        "lastName": "Lysenko 🇺🇦",
+        "occupation": "Front-End Developer / UI Engineer (React, Vue, TypeScript) | UX-driven | Architecture background, systems thinking",
+        "id": "447354186",
+        "publicId": "iryna-lysenko-webdev",
+        "trackingId": "AKWRKUSXQ4yGnYz+vfvadw==",
+        "profileId": "ACoAABqqFUoBhfJG6RYp8JrfizLGImldLIQ3aVw",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQFocE-M81XTrw/profile-framedphoto-shrink_800_800/B4EZyrP.PiHMAg-/0/1772399617366?e=1780430400&v=beta&t=2Oxl9tSk2-dwJq5HubjbGS6hJFUk8dL8ps5zqjvTe4U",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHu7Coi_d6kcQ/profile-displaybackgroundimage-shrink_350_1400/B4EZsUvOQ7KMAY-/0/1765579483474?e=1781136000&v=beta&t=1wf4V9zv6Dm2XYeNIyPifSTQREnDVric9Iqota1ehng"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Čamborová",
+        "occupation": "Frontend developer",
+        "id": "1082522617",
+        "publicId": "veronika-čamborová",
+        "trackingId": "tviZwpCETO607L3lNqThcg==",
+        "profileId": "ACoAAECF-_kB69byXoaMHs_qzffiv1hqdN_aZ0U",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFUjZU0TnIoDA/profile-displayphoto-crop_800_800/B4EZjiUS3QIQAI-/0/1756143629052?e=1781136000&v=beta&t=Vgp7eKeI7po7f5wp-stiue0AiSNunEMeSGoT97xMD6E",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFxWpb5YjUyXg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1719347690741?e=1781136000&v=beta&t=4W3hjSrkexs3xxWQhO40-vgepTrcUhV01AfgDioP2t4"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Robin",
+        "lastName": "Lassak",
+        "occupation": "Software developer",
+        "id": "1375367666",
+        "publicId": "robin-lassak",
+        "trackingId": "52Wk12n4St+Qva/2KLebRg==",
+        "profileId": "ACoAAFH6cfIBZM9HeYMNE5ZxBVDJLXhSNq4wr4M",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEwBejrnovUog/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725099105252?e=1781136000&v=beta&t=hDTpO0aNr0-i9wj4TzE_XY89AWV_ndNyGDfUQRF5iVk"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "8kK7Lz+IT/+Y3kIdmGHMTQ==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Daria",
+        "lastName": "Linhart Grudzien",
+        "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
+        "id": "183293578",
+        "publicId": "dariagru",
+        "trackingId": "LsqidejRSHKa488nd98jpA==",
+        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Artem",
+        "lastName": "Zakharchenko",
+        "occupation": "Software engineer & Educator",
+        "id": "479400907",
+        "publicId": "artem-zakharchenko",
+        "trackingId": "7Wwl3cRBSTub8ar1wlyXog==",
+        "profileId": "ACoAAByTE8sBD2jc0LWL1WTudVD1bG_e2hh-aG0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF-hSQj-qsA5w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728499335925?e=1781136000&v=beta&t=DnxNdGCcFNNgl0J9uKxfWq1s6WkzWp96anGK_QIKHz8"
+      }
+    }
+  ],
+  "numShares": 2,
+  "numLikes": 10,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Artem",
+    "lastName": "Zakharchenko",
+    "occupation": "Software engineer & Educator",
+    "id": "479400907",
+    "publicId": "artem-zakharchenko",
+    "trackingId": "aICYMEJJT9uBc7SPIvJlCQ==",
+    "profileId": "ACoAAByTE8sBD2jc0LWL1WTudVD1bG_e2hh-aG0",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF-hSQj-qsA5w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728499335925?e=1781136000&v=beta&t=DnxNdGCcFNNgl0J9uKxfWq1s6WkzWp96anGK_QIKHz8"
+  },
+  "authorProfileId": "artem-zakharchenko",
+  "authorType": "Person",
+  "authorName": "Artem Zakharchenko",
+  "authorProfileUrl": "https://www.linkedin.com/in/artem-zakharchenko?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAByTE8sBD2jc0LWL1WTudVD1bG_e2hh-aG0",
+  "authorUrn": "urn:li:member:479400907",
+  "postedAtTimestamp": 1768233650559,
+  "postedAtISO": "2026-01-12T16:00:50.559Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

@@ -1,0 +1,277 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4E22AQHTBzCFKrNEXA/feedshare-shrink_800/feedshare-shrink_800/0/1677503129055?e=1781136000&v=beta&t=ShYo7E5b2gRPN8W7hQq89loHmCa27RNephncMbQEz38"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:7035958087731544064",
+  "url": "https://www.linkedin.com/posts/honzajavorek_deeptalks-data-trh-activity-7035958087731544064-DQze?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAABsRci0Bys2i3dGvj01b19crqhDpGozYwSA",
+  "timeSincePosted": "3yr",
+  "shareUrn": "urn:li:share:7035958086901059585",
+  "text": "Sebere umělá inteligence programátorům práci? Proč je u nás pořád problém sehnat dostatek programátorů? Jak si udržet přehled o své ceně na trhu práce?\n\nProleťte se s námi nad krajinou českého trhu s juniory v IT. Mrkněte na všechno z výšky, s odstupem, ve velkém. Příčiny, důsledky, trendy 📈\n\nDo podcastu si Pavlina tentokrát pozvala Tomáš Ervín Dombrovský, hlavního analytika LMC (jobs.cz, prace.cz, seduo.cz). Výsledkem je perfektní pokec, ze kterého bych mohl do příručky na junior.guru/handbook citovat snad každou druhou větu 😀\n\nA já tušil, že to tak dopadne! Už v listopadu 2020 jsem Tomáše slyšel v #DeepTalks u Petr Ludwig a bylo to fakt dobré. Zjistil jsem, že mi úplně mluví z duše. Ale na rozdíl od mojí duše, která propadá všelijakým sentimentům, má na všechno, o čem mluví, i #data 😅\n\nTakže příjemný poslech přeju! Najdete nás na junior.guru/podcast, nebo ve všech běžných podcastových appkách 🎧\n\n#trh #práce #ai #data #programátoři #junioři",
+  "attributes": [
+    {
+      "start": 309,
+      "length": 7,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Pavlina",
+        "lastName": "F.",
+        "occupation": "Host @ Junior Guru podcast.",
+        "id": "190849253",
+        "publicId": "pavlinafronkova",
+        "trackingId": "ntvqqI55TXOtcP0HnWGfvw==",
+        "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk"
+      }
+    },
+    {
+      "start": 335,
+      "length": 22,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Tomáš Ervín",
+        "lastName": "Dombrovský",
+        "occupation": "data, research and analysis / labour market & education",
+        "id": "177813432",
+        "publicId": "tomas-ervin-dombrovsky",
+        "trackingId": "agi1O6ZzQaWolusxwXceSQ==",
+        "profileId": "ACoAAAqZN7gB-6u8v7m_DA5Hct8DE9-Cr5mGWXg",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQEkR0nNz4_baw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517571369665?e=1781136000&v=beta&t=Q0V_naH8RLh4d_0YNqPGGjtkd9DwOFJLfaoK6uBEQI4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQHELmb1dxBIZQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517571371133?e=1781136000&v=beta&t=U16ZkiY2v_AW1boxYvnAZCqig8tminecYd4BWv903Ng"
+      }
+    },
+    {
+      "start": 378,
+      "length": 3,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "LMC",
+        "universalName": "lmc",
+        "trackingId": "WdmZg76vTI2C8QZ6vosZgg==",
+        "active": false,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:164753",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQEo6Xj7Y5h7zg/company-logo_400_400/company-logo_400_400/0/1631348004404?e=1781136000&v=beta&t=oRMnN0ebWG09pVxW42mzXecvSguDSHbyn9uK173nt00"
+      }
+    },
+    {
+      "start": 620,
+      "length": 11,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Ludwig",
+        "occupation": "Keynote Speaker & Best-Selling Author ■ Turning AI from hype into real productivity ■ Author of “The End of Procrastination,” 500K+ Copies in 20+ Languages ■ CEO at Procrastination.com ■ New York / Prague / Singapore",
+        "id": "26355527",
+        "publicId": "petrludwig",
+        "trackingId": "CNzOeRHGSeW2FOvJcNhZbg==",
+        "profileId": "ACoAAAGSJ0cBb7bqK7aTerIfGg_CKRCbOMKKDtE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGMM_3Dhzt0bw/profile-displayphoto-shrink_800_800/B4EZR80DPuGYAk-/0/1737260823252?e=1781136000&v=beta&t=0pewvVmstJXfnUaiqMd61ojyRsnnqlzx4uMunGLl5Lc",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF-gEBvobOwLg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1707210612440?e=1781136000&v=beta&t=O69esCC8GBfw5MuJY_QEZ_bbkTqRASDxFoCFFXwPk7c"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1677507383482,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7035958087731544064?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7035958087731544064%2C7035975928564305922%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287035975928564305922%2Curn%3Ali%3Aactivity%3A7035958087731544064%29",
+      "text": "Díky za pozvání Honzo a za výborně vedený rozhovor, Pavlíno F., byla to radost - a doufám, že to bude pro ostatní užitečné 💙☺️",
+      "entities": [
+        {
+          "start": 60,
+          "length": 2,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Pavlina",
+            "lastName": "F.",
+            "occupation": "Host @ Junior Guru podcast.",
+            "id": "190849253",
+            "publicId": "pavlinafronkova",
+            "trackingId": "ntvqqI55TXOtcP0HnWGfvw==",
+            "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
+            "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Tomáš Ervín",
+        "lastName": "Dombrovský",
+        "occupation": "data, research and analysis / labour market & education",
+        "id": "177813432",
+        "publicId": "tomas-ervin-dombrovsky",
+        "trackingId": "lI/iOZmvQRyHaFbAsZOmrQ==",
+        "profileId": "ACoAAAqZN7gB-6u8v7m_DA5Hct8DE9-Cr5mGWXg",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQEkR0nNz4_baw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517571369665?e=1781136000&v=beta&t=Q0V_naH8RLh4d_0YNqPGGjtkd9DwOFJLfaoK6uBEQI4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQHELmb1dxBIZQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517571371133?e=1781136000&v=beta&t=U16ZkiY2v_AW1boxYvnAZCqig8tminecYd4BWv903Ng",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Štěpán",
+        "lastName": "Stehlík",
+        "occupation": "--",
+        "id": "1075872471",
+        "publicId": "štěpán-stehlík-473383260",
+        "trackingId": "UIL4HDGySVS0ImxKmi9Vsw==",
+        "profileId": "ACoAAEAggtcBaQKlIK8I6vTLBPWqNNgtLGCUd7M"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Skálová",
+        "occupation": "Tester at Aricoma",
+        "id": "67819612",
+        "publicId": "janastaurovska",
+        "trackingId": "OxyodR9VQUKIhvKQmkH/0Q==",
+        "profileId": "ACoAAAQK2FwBVO_W7Jolyq3t4hfljaH-mrQNovk",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQFIuNB6h0XKqg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1675938756141?e=1781136000&v=beta&t=0F3FRBTk2sL8QWKKRmMThur9cJKaslhexyVzVTJRnDM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "García López de Arenosa",
+        "occupation": "SAP Junior Security Specialist",
+        "id": "536137560",
+        "publicId": "lenkagarcia",
+        "trackingId": "CaKFxuc1ToS8HdlVVXUVYQ==",
+        "profileId": "ACoAAB_0z1gBo3fJjDGe-RFmhT6LlMrW8Fr3Lxs",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHcIP_wg_yVLw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1673301528851?e=1781136000&v=beta&t=1_X3rjwTkYJ12y2OgGkuNkeAB08P6gHwLh4owz5E2Bc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Blanka",
+        "lastName": "Semanová",
+        "occupation": "Frontend Developer - React and Next",
+        "id": "740316381",
+        "publicId": "blanka-semanová",
+        "trackingId": "4zQo2Y5MRZ+38eJ7rNKoRQ==",
+        "profileId": "ACoAACwgVN0BXjPO356is1a7HECdYY6oGuzTouY",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQHt31UB9Dnr_g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1705586552175?e=1781136000&v=beta&t=VnaoT0wlgyuQQGLJMI1wvCsS4oGHAmClyqm-JikLvgE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGmd9O2TBL9PA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1705586497192?e=1781136000&v=beta&t=JlZHwSEMta7stFHe1LeFKFVGgbpKpeFbQUUDebs_rnc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiří ",
+        "lastName": "Matoušek",
+        "occupation": "Material Handler",
+        "id": "834093922",
+        "publicId": "jiřímatoušek",
+        "trackingId": "d5kefzluSLqag2XQL36U1w==",
+        "profileId": "ACoAADG3Q2IB1yrIn-TFH_hlH79y1kuNIMYvAoE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lucie",
+        "lastName": "Mairychová",
+        "occupation": "Former CEO at Czechitas | Strategy, growth, transformation & leadership | Building impactful organisations and strong teams | Currently on a leadership sabbatical",
+        "id": "342535582",
+        "publicId": "luciemairychova",
+        "trackingId": "YQBbtgHvQqqX2/lQuoms3w==",
+        "profileId": "ACoAABRqrZ4BV0yHRJvY3UBVNGNsQrymA0dADl0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEEqWgQwhNoFA/profile-displayphoto-shrink_800_800/B4DZYww7i0HwAk-/0/1744574856555?e=1781136000&v=beta&t=Wn1FuFSxGEym8fvohTF9p8lD4WGgp57VJaE93rSS_-A",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHrWGqBSe2H8Q/profile-displaybackgroundimage-shrink_350_1400/B4DZnm8y9xG8AY-/0/1760516322044?e=1781136000&v=beta&t=fuT79sBMzFVBpUDHcJCRX7VLLN1y-YSmkbF5CjSVadY"
+      }
+    },
+    {
+      "type": "INTEREST",
+      "profile": {
+        "firstName": "Norbert",
+        "lastName": "Červený",
+        "occupation": "I help great brands grow @STRV",
+        "id": "337285701",
+        "publicId": "strv-norbert-cerveny",
+        "trackingId": "pKN4gN+tTMyCBfAJM3BBZQ==",
+        "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGKIAaUJPtlmA/profile-displayphoto-crop_800_800/B4DZ0jT_lBIEAI-/0/1774413941709?e=1781136000&v=beta&t=ioRFNZY53XZXWk1BvKTQdIygU-xxLKoyNysEAYklp0I",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG0ekEnNy2Hcw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0jTiNeGsAk-/0/1774413817026?e=1781136000&v=beta&t=_KMbjLzzfd2pO9gizTz2iWgDOkq5RQ3NpzDT5fOljNI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tereza",
+        "lastName": "Ponikelská ",
+        "occupation": "Executive and Direct Search Professional I Headhunter @ Boyden 💙",
+        "id": "455381038",
+        "publicId": "terezamatonohova",
+        "trackingId": "hI1RiR0gQ7iCI44EOGZNVQ==",
+        "profileId": "ACoAABskkC4BICrnut4iSlMCA9cFccpER-ZmYrs",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEZSJcFPdML-w/profile-displayphoto-shrink_800_800/B4EZQrxdsnGcAc-/0/1735901175946?e=1781136000&v=beta&t=1H75n_W_eQ_JB7Sj_J76r1NxK-tE9h4cFrlTizRF6gY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGhcAST-B4s4w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1660722199953?e=1781136000&v=beta&t=WWX9s2qvGRYL8JOlCb_XRTLQrqq99O-tqAZR47ODKmg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Michl",
+        "occupation": "Employee Relations / HR | Hyundai Motor Manufacturing Czech",
+        "id": "310682162",
+        "publicId": "pmichl",
+        "trackingId": "6uARYvG0TZ2L5NRyvxHfEQ==",
+        "profileId": "ACoAABKEojIBMc5OOITcu4r1rPDw8fIFFo1tG10",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEINk0otvWAVw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517051687938?e=1781136000&v=beta&t=xz_eGrJRn7-VC_UOcdxYyVm7n34zNpl3t15Gpam5GLI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marketa",
+        "lastName": "Lourenco",
+        "occupation": "Senior Data Analyst at Mews",
+        "id": "100649752",
+        "publicId": "marketa-lourenco",
+        "trackingId": "ORjlpMlST5OETW9eJKveiA==",
+        "profileId": "ACoAAAX_yxgBI2oslXsIJO8gmesUHbHK-vGnGTo",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHNh9Y3DYWOkQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1639590611475?e=1781136000&v=beta&t=jfKOcatSeYz64BGX1k5utnrEdZsIUq_EMiKusXH9LYg"
+      }
+    }
+  ],
+  "numShares": 3,
+  "numLikes": 36,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "d1e5tiiYQ4CGz5unFsgZqg==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1677503129895,
+  "postedAtISO": "2023-02-27T13:05:29.895Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

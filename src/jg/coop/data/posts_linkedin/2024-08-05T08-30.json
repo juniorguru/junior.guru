@@ -1,0 +1,202 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/D4E22AQHznSnVpbLOjA/feedshare-image-high-res/feedshare-image-high-res/0/1722846639778?e=1781136000&v=beta&t=StU6LznHKFYgLlkrXYvBClPuw_aRWTCm6XVDdiMi8nc"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:7226142556907065344",
+  "url": "https://www.linkedin.com/posts/honzajavorek_kubernetes-docker-activity-7226142556907065344-TWxN?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC9IwucBOlZAtkMcXzxvWRMowT5oiXMZAvE",
+  "timeSincePosted": "1yr",
+  "shareUrn": "urn:li:share:7226142555904634880",
+  "text": "Seznamte se se základy Dockeru a objevte, jak kontejnery usnadňují vývoj a nasazení aplikací. Praktické ukázky a tipy, začněte rychle a efektivně!\n\nLukáš Pavelka je C#/.NET vývojář. Před lety začínal svou kariéru s pomocí junior.guru klubu, teď v něm už podruhé přednáší 🚀 A sám se s přednáškou nabídl! ❤️ Jsme domluvení, že pokud bude zájem, třeba přidáme ještě přednášku o základech Kubernetes.\n\nZatímco o užitečnosti #Kubernetes se vedou živé debaty, #Docker je jednoznačně něco, s čím se mohou junioři po nástupu do své první práce setkat. Zítřejší přednáška by jim měla pomoci zorientovat se.\n\nKdo byste chtěli v úterý 6.8. dorazit, bude to online v 18:00 u nás na Discordu (a potom díky Patrik Brnušák k dispozici pro členy jako záznam). Do klubu se dostanete přes junior.guru/club, je to na první dva týdny zdarma 🆓",
+  "attributes": [
+    {
+      "start": 148,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Lukáš",
+        "lastName": "Pavelka",
+        "occupation": "Každý je svého štěstí strůjcem.",
+        "id": "875466211",
+        "publicId": "lukaspavelka",
+        "trackingId": "KdeJ6z+RSDSP2fEy8v0UIw==",
+        "profileId": "ACoAADQujeMBsKTvOphWRb09-KC09ABFmV_kfmI",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFyUDgGbCA2YQ/profile-displaybackgroundimage-shrink_350_1400/B4EZiFD8nbGwAk-/0/1754579061881?e=1781136000&v=beta&t=GFIotAyYe1eVjVbBRoODKujNsJqM6J1W4WfJc9vVM7g"
+      }
+    },
+    {
+      "start": 693,
+      "length": 14,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Patrik",
+        "lastName": "Brnušák",
+        "occupation": "Otevřen novým příležitostem",
+        "id": "666440295",
+        "publicId": "patrik-brnusak-cz",
+        "trackingId": "LdL87yIARf+DKvZzupk3Jw==",
+        "profileId": "ACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lars",
+        "lastName": "Kamp",
+        "occupation": "Executive Advisory Boards @ Datadog",
+        "id": "43828",
+        "publicId": "larskamp",
+        "trackingId": "5PHpjstZSuyToev92Z/IVw==",
+        "profileId": "ACoAAAAAqzQBRP3Ti_F8cUKfTZoqyUDjm89Mvw0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQFHDnt9BVC_uA/profile-displaybackgroundimage-shrink_200_800/B56Z273O1JH4AU-/0/1776973311581?e=1781136000&v=beta&t=UWxUDwWhvXCbQ09s5mY36RiIPM4mz2xMLEcvGqn50us"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daniel",
+        "lastName": "Sochor",
+        "occupation": "Corporate Performance Management with focus on planning",
+        "id": "1040508481",
+        "publicId": "daniel-sochor",
+        "trackingId": "pxz6ifT0SOuuuJQnAFPAaA==",
+        "profileId": "ACoAAD4E5kEBLCHsDKLT1OEFHWgrps9u9uU2q28",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEejJCzZWuZsQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1685560777271?e=1781136000&v=beta&t=RNbnuQoSoW1ssprXUZMs6PQgKnYwbuJmq8xSRRfIk4E"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Petra",
+        "lastName": "Cihalova",
+        "occupation": "Software Engineer at IDC ✔ PyLadies coach ✔ Lifelong learner",
+        "id": "663079185",
+        "publicId": "petra-cihalova",
+        "trackingId": "s4SOzir2T3aLjWLKW4mzEg==",
+        "profileId": "ACoAACeFyREBiLqN1XSYg6PFUKkrNqIVP2iB3nM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEvMfVR6CER2Q/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1667938074043?e=1781136000&v=beta&t=05t4nnqWlTlvqan-fTfcJeT7f-Hpl1pzKE_C3jxXfIw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Cibulec",
+        "occupation": "Python vývojář s přesahem. 🐍",
+        "id": "399499541",
+        "publicId": "ypsilonxpython",
+        "trackingId": "U8LKawI4R5a9u0Oih2Gnqg==",
+        "profileId": "ACoAABfP4RUBhhqww_PQuiFQs580Isbr6ZqrqOg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHuts72Jn_yMQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1634794908162?e=1781136000&v=beta&t=S9UL0wy6v08ZrAb29xjudA5ltkEDpmZSh3rAld7B-jo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Iva",
+        "lastName": "Havranová",
+        "occupation": "Junior React Developer",
+        "id": "1074684875",
+        "publicId": "iva-havranova",
+        "trackingId": "83ecJwr0Rx2VWmHKcil4Lg==",
+        "profileId": "ACoAAEAOY8sB8ukyno10fvlytoy05WfwwjTKt9U",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE1AS140WJIDw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1711982545374?e=1781136000&v=beta&t=Ohlfpqbf8RPntDEoiMEYgbnMmlyNwCewTidk8AawgOQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Kouřil",
+        "occupation": "Web Developer",
+        "id": "596894599",
+        "publicId": "jan-kouřil-147a95147",
+        "trackingId": "Vj35xF3hRgWVFIV1mAwYuA==",
+        "profileId": "ACoAACOT44cBHNz0T5WGfTwS5JWrtkAV0m_OH_U",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFZQLj4OJlW7g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1697560208248?e=1781136000&v=beta&t=uTofa07mX7eioqZfF461L1rnPyESEgLW-6D-IUQzHaI"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Lena",
+        "lastName": "Ansorge",
+        "occupation": "Principal Technical Writer ✦ Enterprise & Developer Documentation ✦ Docs-as-Code ✦ Contract Remote",
+        "id": "17641210",
+        "publicId": "lennonka",
+        "trackingId": "CrrLUb9XT0eQ5GXtojf8Yw==",
+        "profileId": "ACoAAAENLvoBlGhs5uX3So3eyzpjGHevnX0pqO0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHQs6TyyeTxEw/profile-displaybackgroundimage-shrink_350_1400/B4DZ5dpb_JIMAc-/0/1779687604441?e=1781136000&v=beta&t=-BLM4Pg-v0ML0-XBnB_qv67Bt4v7K0Wpq5pOSnriWe4"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Patrik",
+        "lastName": "Brnušák",
+        "occupation": "Otevřen novým příležitostem",
+        "id": "666440295",
+        "publicId": "patrik-brnusak-cz",
+        "trackingId": "LdL87yIARf+DKvZzupk3Jw==",
+        "profileId": "ACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marek",
+        "lastName": "V.",
+        "occupation": "Junior Backend Developer | Python | FastAPI | Django",
+        "id": "1233976649",
+        "publicId": "mvace",
+        "trackingId": "2sFXAYOZTlChyNhIbMtNTA==",
+        "profileId": "ACoAAEmM_UkBmgIWe0V9R60M-UkL1bQep1u_buA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Barbora",
+        "lastName": "Maroto Alvarez",
+        "occupation": "Talent Attraction and Employer Branding Manager, MSD Czech Republic Women´s Network Prague Chapter co - lead",
+        "id": "133866697",
+        "publicId": "barbora-maroto-alvarez",
+        "trackingId": "WjP8o88lRCeSXvHIvjFEXw==",
+        "profileId": "ACoAAAf6pMkBotT6xWIj1kcXRVKBNleDN2Vx4Mo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGcPE958P8OhA/profile-displaybackgroundimage-shrink_350_1400/B4EZhkvGB3GoAY-/0/1754036724554?e=1781136000&v=beta&t=zoeek49xaf3Y30j9oN2GXy3X3m_n_xzXScu5PptFOhw"
+      }
+    }
+  ],
+  "numShares": 4,
+  "numLikes": 36,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "kEB+UnBJQ4iyZiLqKBA7zg==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1722846640803,
+  "postedAtISO": "2024-08-05T08:30:40.803Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

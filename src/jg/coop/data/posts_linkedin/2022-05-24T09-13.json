@@ -1,0 +1,267 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C4E22AQHh-O95jNGPhw/feedshare-shrink_800/feedshare-shrink_800/0/1653383634191?e=1781136000&v=beta&t=p74aKrKz0I549V1H9lMkHYmjINVxzaZOE9iB2r-Mqms"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6934793596688592898",
+  "url": "https://www.linkedin.com/posts/honzajavorek_tatanka-pastvedlepasti-podcast-activity-6934793596688592898-y5Xv?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFO533UB8DB_-rdYybN70u0U_dNKjqbKYjY",
+  "timeSincePosted": "4yr",
+  "shareUrn": "urn:li:share:6934793595908444161",
+  "text": "PÁTÝ DÍL PODCASTU JE TOP! 🎙 Petr Přibil z jižní Moravy alias #Tatanka, původně lesník a obchoďák vypráví o své cestě do IT. A že je to parádní vypravěč! Na závěr přihodil i historku o legendární opravě traktoru Lakatoš 🚜\n\nCo Tatankovi na začátku nejvíce pomohlo a co by udělal jinak? Jak se k programování dostal? Co by poradil těm, kdo chtějí odejít z rozjeté kariéry na juniorní místo v IT? Co se stalo, když ve své první práci nenašel potřebné zázemí? #pastvedlepasti\n\nNový díl si můžete pustit na kterékoliv běžné podcastové platformě, nebo i přímo na junior.guru/podcast\n\nLíbí se vám náš #podcast? Chcete, aby měla Pavlina F. radost a točila další díly? Dejte nám v aplikacích pěkné hodnocení. Do 5. června nás taky můžete nominovat do ankety podcastroku.cz ⭐️",
+  "attributes": [
+    {
+      "start": 28,
+      "length": 11,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Přibil",
+        "occupation": "Global Sales Manager | Specialty Lubricants",
+        "id": "132002824",
+        "publicId": "petr-pribil",
+        "trackingId": "oUy1Bt/HRLGuvyQHg4jkHg==",
+        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEGdgqIgIpkzg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712250006297?e=1781136000&v=beta&t=UB9wEJule0NhB0lR0De_FtfePuW1Di0Vm80cYt1MqZU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFuvlBRuJNbjw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712250566915?e=1781136000&v=beta&t=8sCRHio1dDSnAp_oiaygmw7_1g4W1ce4YJV-kaJIK3M"
+      }
+    },
+    {
+      "start": 620,
+      "length": 10,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Pavlina",
+        "lastName": "F.",
+        "occupation": "Host @ Junior Guru podcast.",
+        "id": "190849253",
+        "publicId": "pavlinafronkova",
+        "trackingId": "+zEXqkcATjWf4QtMTh39DQ==",
+        "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1653387026125,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6934793596688592898?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6934793596688592898%2C6934807817220440066%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286934807817220440066%2Curn%3Ali%3Aactivity%3A6934793596688592898%29",
+      "text": "Diky moc Pavlina F. za pozvani a perfektni atmosferu pri nataceni, plus Honza Javorek za veskere to spiskani🙂🤞",
+      "entities": [
+        {
+          "start": 9,
+          "length": 10,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Pavlina",
+            "lastName": "F.",
+            "occupation": "Host @ Junior Guru podcast.",
+            "id": "190849253",
+            "publicId": "pavlinafronkova",
+            "trackingId": "+zEXqkcATjWf4QtMTh39DQ==",
+            "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
+            "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk"
+          }
+        },
+        {
+          "start": 72,
+          "length": 13,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Honza",
+            "lastName": "Javorek",
+            "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+            "id": "8517488",
+            "publicId": "honzajavorek",
+            "trackingId": "jSbrzXBjTVu9PFZKZoKYrg==",
+            "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+            "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "Slovak",
+      "author": {
+        "firstName": "Petr",
+        "lastName": "Přibil",
+        "occupation": "Global Sales Manager | Specialty Lubricants",
+        "id": "132002824",
+        "publicId": "petr-pribil",
+        "trackingId": "jeINkou3REmhV7ULKMBjig==",
+        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEGdgqIgIpkzg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712250006297?e=1781136000&v=beta&t=UB9wEJule0NhB0lR0De_FtfePuW1Di0Vm80cYt1MqZU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFuvlBRuJNbjw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712250566915?e=1781136000&v=beta&t=8sCRHio1dDSnAp_oiaygmw7_1g4W1ce4YJV-kaJIK3M",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Messner",
+        "occupation": "Full-stack software engineer and developer",
+        "id": "21519263",
+        "publicId": "messa",
+        "trackingId": "THOxtJYRRaKAr+mtKbxmDg==",
+        "profileId": "ACoAAAFIW58BHQuf7UmFIL0JxAANFW73V79_YOY",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQGMOQzDT4mqNw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516311373475?e=1781136000&v=beta&t=-3X_HfYUVRUn3iM7sU89Sjl_y4WoTlYEqC7sJY76UF8",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQF_DvNh-P59dQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516311374384?e=1781136000&v=beta&t=7YS8EyQVsGp1AtkD0OHkRUnFwWe8v21G-0HvL1NdOYk"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Marketa",
+        "lastName": "Lieblova",
+        "occupation": "Senior Consultant at Husted | EMA Partners International Czech and Slovak",
+        "id": "14502552",
+        "publicId": "mlie100",
+        "trackingId": "r4iRE6jOQsKV0MPNoffgJQ==",
+        "profileId": "ACoAAADdSpgB2XEd1YsrCL6hDG1f8efGXlBaEGM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEAJ1eZNI67Mg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1628672108465?e=1781136000&v=beta&t=eaiJZQylAU9ir6Vfnrfef9ETx7PXt73SDCnC6eZRmsg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Bolek",
+        "occupation": "People and Community Leader | Startups Advisor for HR, Community and Marketing | Seasoned HR, TA, and Community professional | TOP 20 Biggest CZ Linkedin profiles",
+        "id": "242323201",
+        "publicId": "martinbolek",
+        "trackingId": "EiXlxGf8T/C80G6SFT2pIQ==",
+        "profileId": "ACoAAA5xjwEB-5I0z2Ur7gyCn2MoA1wU5jE2R8I",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHodacSr4AwBA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1605926868322?e=1781136000&v=beta&t=_ej1IW2q0XLnOwQn5311vABlkD25kz9iKVTcKjixgfI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Eva",
+        "lastName": "Kopecká",
+        "occupation": "🚀TAS • Formuji příběhy a propojuji svět. Jsem specialistka na External Communication a Public Relations🌐✨",
+        "id": "945744642",
+        "publicId": "eva-kopecká-b16889224",
+        "trackingId": "zkEC7oSUSaykRijGghuG1g==",
+        "profileId": "ACoAADhe6wIBYb8DALgIyVg1hbdo9xFkslfDic0",
+        "picture": "https://media.licdn.com/dms/image/v2/D5603AQEVxbgvkOID8g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704801725971?e=1781136000&v=beta&t=0vtYzjSBlTX7jUGejQhJNYQHA21yKf1-yuxg9nAFukc",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEDJ0OjJLM-tA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736776695159?e=1781136000&v=beta&t=Im4lUKiCcIHKPxk37VCZUHkl7GOgPymQcmex2U46Ep8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Katerina",
+        "lastName": "Maresova Ali",
+        "occupation": "Employer Branding v IT | Moderátorka smitio komunity 🎤 | Pomáhám firmám budovat značku a oslovit talenty skrze autentický obsah.",
+        "id": "21030863",
+        "publicId": "katerina-maresova-smitio",
+        "trackingId": "Bn10x3/mSgWjNLAvy6Rm6g==",
+        "profileId": "ACoAAAFA588Br07-uohoO-ZxDwmW5hiuFHo-v7s",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE92rmwWMO47w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1708608435719?e=1781136000&v=beta&t=8mj-K_QW63LhK249Q0ZUvQTIIarXyNaWzGYM8bqQ2-k",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFJC_hBgCaHGw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1674723396837?e=1781136000&v=beta&t=aOSC8cM77IGbDRVJHbWyuVbF-GCZ_fqU-nILTCWO1_Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Long",
+        "lastName": "Do",
+        "occupation": "Seize the day!",
+        "id": "767755711",
+        "publicId": "long-do-0a7153195",
+        "trackingId": "jW+fl83TRpCBuDttMwL7eA==",
+        "profileId": "ACoAAC3DBb8Bapv7X_MAj8YCk4a-D5t4wIvwEXA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH-c399epf65A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1575443225359?e=1781136000&v=beta&t=w2AIbBoS0F62rQeoqYW8-XTRtIxg9NJPYW90UOegMz0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marie",
+        "lastName": "Fardová",
+        "occupation": "QA / IT Operations / Application Support (L2/L3) | Incident & Problem coordination",
+        "id": "984876474",
+        "publicId": "marie-fardova",
+        "trackingId": "8pq6u0Q+TxmYJxEcb9UC4w==",
+        "profileId": "ACoAADq0BboBQ_KRV4mEctJhGCkj367mI-MHLFY",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGpqy3eY8Wbbg/profile-displayphoto-shrink_800_800/B4EZWaxg9FHMAc-/0/1742058427167?e=1781136000&v=beta&t=025Z9rtKzosbIpagcaUeEB5knCTBzLHHT9T05QhQT0g",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHotrNYEzxIQA/profile-displaybackgroundimage-shrink_350_1400/B4DZx3Ffj5IYAc-/0/1771524465350?e=1781136000&v=beta&t=f5frvT20llSmGDDZ1m40cp0BGRuLfBQeklJttekZLVo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Holomek",
+        "occupation": "Breaking things safely so production doesn’t have to.",
+        "id": "950609242",
+        "publicId": "martin-holomek-10a435226",
+        "trackingId": "AIrC1BidRoKxqZ4TBClMAg==",
+        "profileId": "ACoAADipJVoBUKy1-ggmu1NEjjtKbSmjY5ujyrk",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE8DGgJxIO86w/profile-displayphoto-crop_800_800/B4DZkWMFqEGQAM-/0/1757013893676?e=1781136000&v=beta&t=6aeHSGO6Pm_GFNY9QwdmTRNT4SQSlaFVL_weIrmOILQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGKK5WWTenbag/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1729703770841?e=1781136000&v=beta&t=qa8WqiyiYAhYzw0W5gwedtWFQnMBIXkxDdSnf-CGbKg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daniel",
+        "lastName": "Rozehnal",
+        "occupation": "Software engineering student at FI MUNI.",
+        "id": "731425708",
+        "publicId": "daniel-rozehnal-924b52184",
+        "trackingId": "jMPN+8hLRiC4PfSCv+BBEg==",
+        "profileId": "ACoAACuYq6wBw_NUyA50V0fvku83SMXkgexoGa8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH6BzN9AcUCqw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1687462673185?e=1781136000&v=beta&t=CcZtGbxzcjtE3ICu9xz1ywNt_uzrOhlHHeL4p4nax_k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lukáš",
+        "lastName": "Tuček",
+        "occupation": "🔎 QA Automation Engineer | Web & Mobile Testing (Playwright, Maestro) | 🚘 Majitel ve společnosti LT Detailing",
+        "id": "567367047",
+        "publicId": "lukastucek7",
+        "trackingId": "ww7muH9oQgerhONIs9t6cA==",
+        "profileId": "ACoAACHRVYcBZjOpRsnCmT-1OV2S9E1GcTqhk1s",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEDwl5mqRPZ6g/profile-displayphoto-crop_800_800/B4EZolaisKGYAI-/0/1761564306965?e=1781136000&v=beta&t=NiyqeVqxbAy8yfIwG5OKlT4ZiTtWC0h1Yv-ga98_LOQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH2-auh8-cNSA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1684934197584?e=1781136000&v=beta&t=lFJFD4CoHs39NSADEl_ElA90WlOiVOJS_RFZhmSCSUI"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 30,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "Gq10tRQlSEak9x5Bi6MwlA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1653383635685,
+  "postedAtISO": "2022-05-24T09:13:55.685Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

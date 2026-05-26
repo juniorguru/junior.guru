@@ -1,0 +1,246 @@
+{
+  "isActivity": true,
+  "activityDescription": "Honza Javorek reposted this",
+  "activityOfUser": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "n6hg3F6JQo6qQw95WaJoWA==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "urn": "urn:li:activity:7192222273506877440",
+  "url": "https://www.linkedin.com/posts/skillmea_skillmea-meetup-itkariera-ugcPost-7192103370583650305-3e8f?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFsquNIBL-Bah7UT0aAl0gV3gz4HeyE43g0",
+  "timeSincePosted": "2yr",
+  "shareUrn": "urn:li:ugcPost:7192103370583650305",
+  "text": "🚀 Chcete odstartovat svoji kariéru v IT? Připojte se k nám na našem Skillmea meetupu, který se zaměří na téma \"Jak rozběhnout kariéru v IT\". \n\nTěšte se na inspirativní setkání s odborníky Roman Hraška a Honza Javorek a získejte užitečné rady a tipy, jak dosáhnout úspěchu ve světě informačních technologií.\n\nNezmeškejte tuto jedinečnou příležitost! 🌟\n\n\n#Skillmea #meetup #ITkariera #kariernirozvoj",
+  "attributes": [
+    {
+      "start": 188,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Roman",
+        "lastName": "Hraška",
+        "occupation": "Motyka. Patizón. Sokol.",
+        "id": "411597295",
+        "publicId": "yablko",
+        "trackingId": "PvU22H8LTymxux0zoxjkdQ==",
+        "profileId": "ACoAABiIee8B6T3SlOCiJjbS1KHkr9Bf6DyyXws",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFspL7654LSQg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517626819296?e=1781136000&v=beta&t=MU22LFNWVDD74Hp2uLZvOeNRukADo87inbhIv4Es8oU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHesE3bZDHt7g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517626819771?e=1781136000&v=beta&t=k7TwqX_nTlLNrXEprdAlSId_X0i7kMR4bteDVDimkBU"
+      }
+    },
+    {
+      "start": 203,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "A49vPRYyTWm6TJsPS9M2Cg==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1715185514057,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7192103370583650305?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7192103370583650305%2C7194009462347591681%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287194009462347591681%2Curn%3Ali%3AugcPost%3A7192103370583650305%29",
+      "text": "Bude prosím někde k dispozici záznam? Bohuže osobní účast není možné a mrzení je proto veliké. Děkuji.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Šimon",
+        "lastName": "Kořený",
+        "occupation": "Product Owner & Dad | Building great products, raising great humans",
+        "id": "283596586",
+        "publicId": "fusatytata",
+        "trackingId": "zFV+/gOWQMWxlA5YM9KG8w==",
+        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEP3Q4BtiThDA/profile-displayphoto-shrink_800_800/B4EZc_c90wHIAc-/0/1749116247942?e=1781136000&v=beta&t=_QtTBgXEBbo6wLgAeAyA_Vwe266kRM2rafjtUTqdQ18",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFllW8t92LUXg/profile-displaybackgroundimage-shrink_350_1400/B4EZkO0XOcHEAY-/0/1756890233024?e=1781136000&v=beta&t=BcgfXCQP09cdXXYAi_lrlRlt4F-p0U2rPgEazsl9SeQ",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Naďa",
+        "lastName": "Svatá",
+        "occupation": "organizační pracovník plánovacího oddělení ve společnosti AČR",
+        "id": "1287839980",
+        "publicId": "naďasvatá",
+        "trackingId": "m4cOTzkfQ760YiV1iDEFiQ==",
+        "profileId": "ACoAAEzC4OwBvGrklPcDILISwWfHncd4ERdwCbU",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEIs6tSep7Uaw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712160124997?e=1781136000&v=beta&t=doF5aKT3gwHTEaNHalW-LeCGCJDLKzatHF-5N7y7D_0",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGNoiQE4rq1Pg/profile-displaybackgroundimage-shrink_350_1400/B4DZ1E7csAJ4AY-/0/1774977928960?e=1781136000&v=beta&t=Tb97XKEJrQX5imjGZszCqC_wBwPdYEpkakRcTiwrJhk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Radoslav",
+        "lastName": "Jerguš",
+        "occupation": "Accountant at Obecné lesy s.r.o. Sása",
+        "id": "1309862220",
+        "publicId": "radoslav-jerguš-150806306",
+        "trackingId": "bXYJU2tEQJGd6eBNVzJ7pA==",
+        "profileId": "ACoAAE4S6UwBg80vJWVd0yTAt0qLvpear0rdu2I",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFAlH8hQ0GJVg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1727730754482?e=1781136000&v=beta&t=YnWL3pKZ8meP0kQ4ILoWmL0x9Eo-oBP-VRMIxbpi1YQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG-Bcj8VRwV8g/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1722945316134?e=1781136000&v=beta&t=9Y6FZjfMCxkHfAlw0Esa9_SrwL7vIAwf2F0yw1Nx2lU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Šimon",
+        "lastName": "Kořený",
+        "occupation": "Product Owner & Dad | Building great products, raising great humans",
+        "id": "283596586",
+        "publicId": "fusatytata",
+        "trackingId": "4G7WBagRQnauI095q7vQmA==",
+        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEP3Q4BtiThDA/profile-displayphoto-shrink_800_800/B4EZc_c90wHIAc-/0/1749116247942?e=1781136000&v=beta&t=_QtTBgXEBbo6wLgAeAyA_Vwe266kRM2rafjtUTqdQ18",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFllW8t92LUXg/profile-displaybackgroundimage-shrink_350_1400/B4EZkO0XOcHEAY-/0/1756890233024?e=1781136000&v=beta&t=BcgfXCQP09cdXXYAi_lrlRlt4F-p0U2rPgEazsl9SeQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Nečasová",
+        "occupation": "People&Community Superkoders 🩵 Frontendisti.cz Brno 💛",
+        "id": "600428192",
+        "publicId": "jananecas",
+        "trackingId": "19UaH47hQnq4cPrx0Whglg==",
+        "profileId": "ACoAACPJzqABtEhQZaPa2y7niKJdfPDfAdzm3OM",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFfH0AbAr9vpA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1691756462294?e=1781136000&v=beta&t=eBTxkQwlz0LWakZ8HL4eA_LeQeeKpoP73YQW91ZgjxU",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHoY9XnA1Uwdw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1665752656622?e=1781136000&v=beta&t=yV1A79amx5BHf66-ofqJQqz_9fdHxfYB82RP-2sxvbU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Peter",
+        "lastName": "Strapko",
+        "occupation": "Technician at Continental",
+        "id": "1243260488",
+        "publicId": "peter-strapko-5484472a8",
+        "trackingId": "t3ADnBbqQIC7xElgYOXgfQ==",
+        "profileId": "ACoAAEoapkgBd0SphtWfhBNzE0tadpzGgQbIix0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQEB5siwCi-gyw/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1713215012469?e=1780430400&v=beta&t=nEh6uKwCDtaVxlKKDJUAvOWcKRQWAfciWOzW53Btk0g"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tereza",
+        "lastName": "Smolová",
+        "occupation": "UX designer | Frontend developer | coder",
+        "id": "1058305342",
+        "publicId": "tereza-smolovaa",
+        "trackingId": "edLGFTIaT3KQ4W7gCUhAvg==",
+        "profileId": "ACoAAD8UdT4BaRn8Isd2lC4AEbKofErZCkXvv-k",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHHami6cusYmw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1680899091472?e=1781136000&v=beta&t=kcnsYl27D767PL0KOKMxatZtoRBIh_47AlOOB4bMu5k",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE4HKbvzh8w-A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1703173265758?e=1781136000&v=beta&t=JLf6jm1fSrDz12CmrvPrxBc7TSifykS-ney15LHhlRA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Kateřina",
+        "lastName": "N. Voláková",
+        "occupation": "Frontend Developer @Gen (ex Avast), marketing @Frontendisti.cz",
+        "id": "575779663",
+        "publicId": "katerinavolakova",
+        "trackingId": "woZC9QEWSB+WylSNm2T1FA==",
+        "profileId": "ACoAACJRs08B-86s_BZ86Z726PUlHKgOgK35-NI",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGSt7uhutX8Mg/profile-displayphoto-crop_800_800/B4DZwdwM.fJQAI-/0/1770025703581?e=1781136000&v=beta&t=Kd3EcXR1LZnTPF8LnVLkFaUbe2nbB-ipV-n13JQmLuE",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGRTRyOCwJt-w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1698744449766?e=1781136000&v=beta&t=dX5KrLd5FruV5IQZvlXkjpJ4x_SwydXFptFn3U6zj_g"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lucia",
+        "lastName": "Lukackova",
+        "occupation": "Digital IT Delivery Leader at Orange Slovensko, a.s.",
+        "id": "199383592",
+        "publicId": "revolucialukackova",
+        "trackingId": "vWRP31tARMy4gv1hfMpWxQ==",
+        "profileId": "ACoAAAviWigBFG1RyDaJwu0gqE5IeD5xqYyYJ00",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGa_lAIE7a-wQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1690360622557?e=1781136000&v=beta&t=KGaKMK34Dd5G5_VkO63uewIbBHc-rps56ZX7mVCGVbQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFnY01c7mDiPg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1557212668762?e=1781136000&v=beta&t=RGaMUFtkrU8sI069qSEe5pYka-TKdrnm0vUVhjH94Us"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Vendula",
+        "lastName": "Krajíčková",
+        "occupation": "Frontend vývojářka 🚀 | React, TypeScript, Next.js | Modrý duch kódu @BlueGhost 👻💙",
+        "id": "1145616814",
+        "publicId": "vendula-krajickova",
+        "trackingId": "V40740+4QZKhWNuRgGeObw==",
+        "profileId": "ACoAAERIua4Bk44zfiGE6PT1BmSNoKdqiNkFOYc",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQF9v05_95vyIw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1696069970972?e=1781136000&v=beta&t=2GE5kG6hI-F_D-GWuJZ1hUeuomhWaPfXSNvdMDDV-bY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEbmPU9yPivLA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1687407209461?e=1781136000&v=beta&t=NoCy2Xx-Zc2-_WzGhO9ETCyqzzAvmczh02wGrTi73vc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Andrea",
+        "lastName": "Selivanov",
+        "occupation": "QA Tester|Test analyst",
+        "id": "1092957419",
+        "publicId": "andrea-selivanov-",
+        "trackingId": "zmecSJlcTJqZNJue75n32g==",
+        "profileId": "ACoAAEElNOsBmr-mRmx12Grz-L0DPLdCODFeXuo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHL4kt9Za4Y7A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1676148960009?e=1781136000&v=beta&t=kpqMt3oUx2umyk_UdoP3pURH4kVz1tFpo1L6RXy6gFA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQF1T45IsIyNqA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1676148361214?e=1781136000&v=beta&t=Qogf5R5sEWFfPwccnmvKuF1DDxzFAVDD4zBllK_1aJ4"
+      }
+    }
+  ],
+  "numShares": 6,
+  "numLikes": 13,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "name": "Skillmea",
+    "universalName": "skillmea",
+    "trackingId": "YsY33hIxQbasKud8mTkXKg==",
+    "active": true,
+    "showcase": false,
+    "entityUrn": "urn:li:fs_miniCompany:2894832",
+    "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQEgvjwG7tI7yA/company-logo_400_400/company-logo_400_400/0/1649308287588/learn2code_logo?e=1781136000&v=beta&t=wegRR78owZayAJrZi05V51S2cPDB0XPXMW3f41K0RZ4"
+  },
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4D0BAQEgvjwG7tI7yA/company-logo_400_400/company-logo_400_400/0/1649308287588/learn2code_logo?e=1781136000&v=beta&t=wegRR78owZayAJrZi05V51S2cPDB0XPXMW3f41K0RZ4",
+  "authorType": "Company",
+  "authorProfileId": "company",
+  "authorFollowersCount": "2,409",
+  "authorName": "Skillmea",
+  "authorProfileUrl": "https://www.linkedin.com/company/skillmea/posts",
+  "authorUrn": "urn:li:company:2894832",
+  "postedAtTimestamp": 1714759415032,
+  "postedAtISO": "2024-05-03T18:03:35.032Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

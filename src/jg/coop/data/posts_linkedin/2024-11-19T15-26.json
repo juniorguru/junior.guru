@@ -1,0 +1,305 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:7604884238430125621",
+    "url": "https://www.youtube.com/watch?v=8_ZUwRKEJ7A",
+    "title": "Daniel Srb: Jak na CV při změně kariéry do IT (přednáška v rámci Týdne pro Digitální Česko)"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7264660359691616256",
+  "url": "https://www.linkedin.com/posts/honzajavorek_daniel-srb-jaknacv-p%C5%99izm%C4%9Bn%C4%9B-kari%C3%A9ry-do-activity-7264660359691616256-GbY8?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAABZ7-HEBruCM6sZQ3V5BFFp4L-sCzx01HEI",
+  "timeSincePosted": "1yr",
+  "shareUrn": "urn:li:share:7264660358856904704",
+  "text": "Hledáš první práci v IT a potřebuješ vyladit CV? Nalaď si dnes v 18:00 stream s Daniel Srb na Junior Guru YouTube kanálu!\n\nV rámci Týdne pro digitální Česko je dnešní klubová přednáška volně dostupná pro všechny, včetně chatu, kam můžete psát dotazy - stačí kliknout sem: https://lnkd.in/eegWMY5D\n\nPřed časem jsme spolu s Ataccama a Sarka Kousalova pořádali pohovory nanečisto. Myslím, že může dosvědčit, že Danova pověst v oblasti přípravy CVček na první pohovory v IT je mezi juniory už docela legendární 😀 \n\nKdo nestihnete, nevadí. Stream zůstane na YouTube i jako záznam. Ale přijdete tím o možnost klást dotazy.\n\n#budoucnostjedigitalni #tydenprodigitalnicesko #cv #kariera #it #juniorguru",
+  "attributes": [
+    {
+      "start": 80,
+      "length": 10,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Daniel",
+        "lastName": "Srb",
+        "occupation": "Helping people to become junior frontend developers",
+        "id": "15446232",
+        "publicId": "danielsrb",
+        "trackingId": "Xnf1e4RLQtq5G54TSbS2Cw==",
+        "profileId": "ACoAAADrsNgBFfAixAgw_mCw8WtR9SeNIvEEI8Q",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFL6A1muu1_iQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1664815242443?e=1781136000&v=beta&t=gZsiQuDXYR8uuO_-68JdcJFp1nRVo6I7-iaOUDh1GRk",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEojxUy1Cz5oQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1623442956553?e=1781136000&v=beta&t=hWIAatMfNTIgw4JUStqCUqVs88aKCIf5jtDxqtS-BHg"
+      }
+    },
+    {
+      "start": 94,
+      "length": 11,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Junior Guru",
+        "universalName": "juniorguru",
+        "trackingId": "FPGaDxDSQIaEESrXcqiiqQ==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:26218444",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQE89NmYF-XT4g/company-logo_400_400/company-logo_400_400/0/1638266899010/juniorguru_logo?e=1781136000&v=beta&t=ad516CNUThMN8eXeVboC5S9U_y2Dnn1UhQn70wIGlxE"
+      }
+    },
+    {
+      "start": 322,
+      "length": 8,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Ataccama",
+        "universalName": "ataccama",
+        "trackingId": "kQd8TUJcRICD6lfuuSoGjA==",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:250453",
+        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQFu_2rrRoxI9g/company-logo_400_400/B4EZfKY.ipHIAc-/0/1751447235100/ataccama_logo?e=1781136000&v=beta&t=GFWlBPqBVv37lZ3d2Av_uNjcI64DiisDk2bNYIPELqk"
+      }
+    },
+    {
+      "start": 333,
+      "length": 15,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Sarka",
+        "lastName": "Kousalova",
+        "occupation": "Workplace Experience & Employer Branding Manager ve společnosti Pricefx | Co-host @ ProgramHRování | Social Media Strategist | Event Management | Freelance Translator",
+        "id": "618467773",
+        "publicId": "šárka-kousalová",
+        "trackingId": "7S6ppUZaSb+GH/O8mu+HVg==",
+        "profileId": "ACoAACTdEb0BJh79Lnb5E3QQregmW3SioQxe0_M",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFwMDsGJJLuGg/profile-displayphoto-crop_800_800/B4DZvRixGQJkAI-/0/1768747112321?e=1781136000&v=beta&t=Mqv44mQ_c9hSFLdmrQ58hhEjo0pDCNXcOSnNBAcI-WY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHPZ6Mc28dXEA/profile-displaybackgroundimage-shrink_350_1400/B4EZlRlwUHIwAY-/0/1758010477652?e=1781136000&v=beta&t=abEWpQ21P3uA6PQu2mqppwQ9AHau457n37m8Hz0LLmE"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1732047931379,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7264660359691616256?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7264660359691616256%2C7264735566770974722%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287264735566770974722%2Curn%3Ali%3Aactivity%3A7264660359691616256%29",
+      "text": "Tak už jedeme třetí hodinu. O tom, jak udělat CVčko! Jedna účastnice: „Ale jako z těch všech přednášek zatím tahle má teda fakt smysl, každá minuta, teda z těch z Týdne pro digitální Česko“ ❤️ ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "hJC+7XL4STaFXs+T5tnnUQ==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1732045599627,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7264660359691616256?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7264660359691616256%2C7264725786694234112%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287264725786694234112%2Curn%3Ali%3Aactivity%3A7264660359691616256%29",
+      "text": "Jeden z výstupů dnešní přednášky… 😅 ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "trackingId": "hJC+7XL4STaFXs+T5tnnUQ==",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1732032937348,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7264660359691616256?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7264660359691616256%2C7264672677250928642%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287264672677250928642%2Curn%3Ali%3Aactivity%3A7264660359691616256%29",
+      "text": "Pohovory nanečisto byla super akce, ráda na to vzpomínám. 🙂❤️\n\nA ano, myslím, že legendární je to správné slovo. 😃",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Sarka",
+        "lastName": "Kousalova",
+        "occupation": "Workplace Experience & Employer Branding Manager ve společnosti Pricefx | Co-host @ ProgramHRování | Social Media Strategist | Event Management | Freelance Translator",
+        "id": "618467773",
+        "publicId": "šárka-kousalová",
+        "trackingId": "DCif/j/WQI646WgVDgeQxQ==",
+        "profileId": "ACoAACTdEb0BJh79Lnb5E3QQregmW3SioQxe0_M",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFwMDsGJJLuGg/profile-displayphoto-crop_800_800/B4DZvRixGQJkAI-/0/1768747112321?e=1781136000&v=beta&t=Mqv44mQ_c9hSFLdmrQ58hhEjo0pDCNXcOSnNBAcI-WY",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHPZ6Mc28dXEA/profile-displaybackgroundimage-shrink_350_1400/B4EZlRlwUHIwAY-/0/1758010477652?e=1781136000&v=beta&t=abEWpQ21P3uA6PQu2mqppwQ9AHau457n37m8Hz0LLmE",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Kárászová",
+        "occupation": "❤ testování softwaru, analýza dat, SQL",
+        "id": "1002244697",
+        "publicId": "lenka-karaszova",
+        "trackingId": "1CDnjZ+KSnOK0nVDYsNCbg==",
+        "profileId": "ACoAADu9ClkBT0jmOvh8YUhVcM4os2xEbsb_OVs",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHzoe1lOiz05w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1673813774471?e=1781136000&v=beta&t=cPWfPHet4s4KdIL3KI-99rJfx83Wl0oS_WRX7YdeHXs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michaela",
+        "lastName": "Kostelníková",
+        "occupation": "do I even know what I’m doin’? | data analytik 🫰🏼 v Ovečkárně",
+        "id": "1036787021",
+        "publicId": "mkostelnikova",
+        "trackingId": "950gPBhlSQ6nr8j2BhNxqQ==",
+        "profileId": "ACoAAD3MHU0BAstIcZ8jEsBqEDqnSeZwviKz9Z8",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHy49Q4niWTpw/profile-displayphoto-crop_800_800/B4DZv0xImLG8AI-/0/1769338082539?e=1781136000&v=beta&t=Zt26_aP6Lt4LI2n6kEq_jaH6W-OvCoKq0yoCbkj1deo",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFu7_OX7FJRWQ/profile-displaybackgroundimage-shrink_350_1400/B4EZWVKcVLHgAg-/0/1741964299275?e=1781136000&v=beta&t=x9m2GIEuqIja0y2lhDgDwoMxRA78YY35nUqkqx4KeTs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomas",
+        "lastName": "Manhal",
+        "occupation": "SEO/UX Specialist at Webmium ✅ Aspiring Backend Developer at Home ✅",
+        "id": "356811200",
+        "publicId": "tomasmanhal",
+        "trackingId": "oSj9GGt/Te+Mrh98G5Y5oQ==",
+        "profileId": "ACoAABVEgcABhXssunqzWgZ32PhPvDuM7pOY7Sw",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGInNVdLygaYA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1643616498455?e=1781136000&v=beta&t=ZuyL6gCtMjtS2Bp5JitUt78VFkpsCsQXNtHO9yl9H4g",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGzLIim8zGACA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516975456614?e=1781136000&v=beta&t=6VFaoiFNvKKxzcGRnW_GTyGLSluSP2AQ71SpObNaKLo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marian",
+        "lastName": "M.",
+        "occupation": "QA Tester",
+        "id": "211922396",
+        "publicId": "maier-marian",
+        "trackingId": "PG+IBLfxRRCz6+G5mg2xPQ==",
+        "profileId": "ACoAAAyhrdwBJrYY4denHAuigiNfrG3zMizOAx8",
+        "picture": "https://media.licdn.com/dms/image/v2/C5103AQExeOdpIjUadQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517422144783?e=1781136000&v=beta&t=3X84PMn2OBvWvj9tBccLmJdKTtt-fVvHTK-O3KMRk-Y",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFwWF3POGgY3w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1708167593098?e=1781136000&v=beta&t=Z0iE8r4NhIzp9uqmEtyoq2PVyXo7cqTqqykwOAozYdk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Natália",
+        "lastName": "Rydzá",
+        "occupation": "Solution Developer at Jigx",
+        "id": "368513805",
+        "publicId": "natália-rydzá",
+        "trackingId": "WAydt5yDSTWu9yoOVGQ7Qw==",
+        "profileId": "ACoAABX3Ew0BUHQbxGZpVNCtTpps5YdBDGUZhas",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHR_o0tloJxmA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1645438239518?e=1781136000&v=beta&t=ni2nTc7HDt1tXOjslE2kohLbGZx6ku1NF4tBt6UCD4Q",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHVNnoOlVU47Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1594664026995?e=1781136000&v=beta&t=zzGY7L1hKZWxBoIzImUY-24mYjgSH9jvJlOGCcRoUfA"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Juraj",
+        "lastName": "Krc-Turba",
+        "occupation": "Des réseaux aux serveurs, rien ne m'échappe. Technicien informatique polyvalent, toujours prêt à relever tous les défis. Cofondateur du premier fablab à Chambéry.",
+        "id": "592263015",
+        "publicId": "juraj-krc-turba-973420146",
+        "trackingId": "vkFmMIoiRV+ZzoLWq02Alg==",
+        "profileId": "ACoAACNNN2cBLpwqU4yuSOu603yho5Ro1RLH5JA",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFp_H9bjErXgw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736716641788?e=1781136000&v=beta&t=mX2uRfkm7Gn4LEu-uj-RnO-vqqHq9e8llJo8CO4_U9s"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Arťom",
+        "lastName": "Černopaščenko",
+        "occupation": "CNC laser Programmer at Christ Car Wash s.r.o. company",
+        "id": "961408877",
+        "publicId": "arťom-černopaščenko-a65b82229",
+        "trackingId": "3Y2l5GSaRuuZm8/49dUs9A==",
+        "profileId": "ACoAADlN720B132fRZ02e3E-DoSjjG6Ni7PkCnE",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEqjXe2sJLh4Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1686671240187?e=1781136000&v=beta&t=jF6dfwnIhHCY2gBpPcMnPFE3XhqtXHt3D_jBwwJYoJc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Štěpán",
+        "lastName": "Stehlík",
+        "occupation": "--",
+        "id": "1075872471",
+        "publicId": "štěpán-stehlík-473383260",
+        "trackingId": "CtfiE29sRui+3vK8yUoBtQ==",
+        "profileId": "ACoAAEAggtcBaQKlIK8I6vTLBPWqNNgtLGCUd7M"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Tereza",
+        "lastName": "Trčálková",
+        "occupation": "Learning & Development | Project coordination | HR coordination & Recruitment support | People & process management",
+        "id": "253496935",
+        "publicId": "tereza-trcalkova",
+        "trackingId": "VeW3IllwQZOapoaQz78tZA==",
+        "profileId": "ACoAAA8cDmcB51f8Y0qMj042bVV7BNpm750zWwo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHeO14T44cKdg/profile-displayphoto-crop_800_800/B4EZhRFki4GUAQ-/0/1753707075901?e=1781136000&v=beta&t=2PAzuaCmPOVZemMi897l0wRReCL1Vo-sGZUsndAbRAM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH3mnfWgHMclQ/profile-displaybackgroundimage-shrink_350_1400/B4DZz_t1ABKEAY-/0/1773816737066?e=1781136000&v=beta&t=YZZVvmLW3MKmifghBDdbs5GeNfgB0___I0OvMVkWslM"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Irena",
+        "lastName": "Zatloukalova",
+        "occupation": "empowering #autisticTalent in Tech 🚀 | Guiding your communication for change | Systemic coaching",
+        "id": "99891449",
+        "publicId": "izatlouk",
+        "trackingId": "24bOjlwrTp+xZl8htkngFA==",
+        "profileId": "ACoAAAX0OPkBzZjVvVi08LqhaKA5UMdVz4M5inM",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEX7QmSSoFSMg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1635789075087?e=1781136000&v=beta&t=gNSbihMMlaQdd_0sP2m4nmd_njYG4j06DobLSgnjIEM"
+      }
+    }
+  ],
+  "numShares": 3,
+  "numLikes": 33,
+  "numComments": 4,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "hJC+7XL4STaFXs+T5tnnUQ==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1732030000613,
+  "postedAtISO": "2024-11-19T15:26:40.613Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

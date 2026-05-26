@@ -1,0 +1,213 @@
+{
+  "type": "image",
+  "images": [
+    "https://media.licdn.com/dms/image/v2/C5622AQHBO-4bYnOUdA/feedshare-shrink_1280/feedshare-shrink_1280/0/1626185070117?e=1781136000&v=beta&t=qTvwzp4rjv11kg44fRSRMMhX9G0236sFW-hbk6MbiCA"
+  ],
+  "isActivity": false,
+  "urn": "urn:li:activity:6820714545158467584",
+  "url": "https://www.linkedin.com/posts/honzajavorek_dotnetcezet-activity-6820714545158467584-WyeG?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAGDMViMBG9gX-SKmC140_FYQmXeoiXG6C2k",
+  "timeSincePosted": "4yr",
+  "shareUrn": "urn:li:share:6820714544730660864",
+  "text": "Příjemný pokec! Vojtěch Mádr a Martin Šimeček mě vzali do #dotnetcezet podcastu a probrali jsme všechno kolem juniorů. Jaký jazyk si má začátečník vybrat? Jak se může firma připravit na juniory? Mohou být dobrými programátory i muži?! Jak vzniklo https://junior.guru/ ? Dejte si to, 55 minut. Díky za pozvání! https://lnkd.in/g9fdzxS",
+  "attributes": [
+    {
+      "start": 16,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Vojtěch",
+        "lastName": "Mádr",
+        "occupation": "🎙 Pomáhám tvořit lepší podcasty | Spolu-moderátor Mileniálové & Jak na podcasty | 💻 Voicebot engineer",
+        "id": "205073291",
+        "publicId": "madrvojtech",
+        "trackingId": "0SWGxAguQkuV7cPSwjSnzQ==",
+        "profileId": "ACoAAAw5K4sBA8nVYoHPe91603FIAQM8Afcl3AQ",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQG-5m6_kiUCLw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1640351690167?e=1781136000&v=beta&t=P0XlPJMkia6IYO5QAPO5phO59ToKi83zvfyVGTTL0zk",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEiI6dmbVAZ-g/profile-displaybackgroundimage-shrink_350_1400/B4EZpVejb9IUAc-/0/1762370665436?e=1781136000&v=beta&t=iUrGuEbjzZUCmquyBnn-85zPgbBTAAWrH23N2Bzt5i4"
+      }
+    },
+    {
+      "start": 31,
+      "length": 14,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Šimeček",
+        "occupation": "Principal Software Engineer and Cloud Architect at Microsoft",
+        "id": "128906201",
+        "publicId": "msimecek",
+        "trackingId": "rX/439C4QcW0vCj0A0TtmA==",
+        "profileId": "ACoAAAeu89kBq8CH3PxxbXCXqfcO3pk-Ti8PHHs"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Šárka",
+        "lastName": "M.",
+        "occupation": "Security🔥",
+        "id": "390209713",
+        "publicId": "šárka-m-98181baa",
+        "trackingId": "q5ds0Hu5RYqbIhwIfbB7NQ==",
+        "profileId": "ACoAABdCILEB07y3oARo2gRV3h5igas9WXxER4k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marta",
+        "lastName": "P.",
+        "occupation": "Web coder",
+        "id": "376228502",
+        "publicId": "marta-perutkova",
+        "trackingId": "8K08P7JKQVCyn/SCs0aNLw==",
+        "profileId": "ACoAABZsypYBvxc3lLS_mONwO33jUZUA0NrGip8",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEveVBMVYZJKg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1615113071941?e=1781136000&v=beta&t=COZI8f2SKs6xcEMcy-D_xG6kecQYO8i7XiXgxacGvZ8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Radek",
+        "lastName": "Kitner",
+        "occupation": "Teacher & Software Testing Consultant",
+        "id": "381101197",
+        "publicId": "radek4k",
+        "trackingId": "DM3hHJ8+QP6sbKz8OOjN2w==",
+        "profileId": "ACoAABa3JI0BX5xxM2r4OdST7lv3F0k2L9ZRRhg",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEQMzrKB6yYFQ/profile-displayphoto-crop_800_800/B4EZlXluYjKQAQ-/0/1758111131805?e=1781136000&v=beta&t=fGgQdoBKupNlbRyYc9pQ8MYSWH55wJ_Gl1Iu7EJxWM4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHeSes3OrqGYw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1624455708146?e=1781136000&v=beta&t=kAJLHFarzTMa_HOjRbqJyvM9JR1FwjNZ1bSun9BMGns"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michal",
+        "lastName": "Šopík",
+        "occupation": "Owner at VESPER HOMES | REALIZUJEME STAVBY, KTERÉ ODRÁŽÍ BEZKOMPROMISNÍ DOKONALOST A VAŠI TOUHU PO VÝJIMEČNÉM ⭐️ | BYDLENÍ | KANCELÁŘI | WELNESS | SENIOR HAUSU | ⭐️",
+        "id": "220555995",
+        "publicId": "michalsopik",
+        "trackingId": "U51i8A+0ReaCbbhbHY4tYg==",
+        "profileId": "ACoAAA0latsBXHmDpyYzwZzJ1qzPAwGRZNhWh_M",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGuprlUCaoAHg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1670272512079?e=1781136000&v=beta&t=FGiAgEmWdCp07k_WRZGAHER-A0CL0cjQ-_ZPgqYHlac",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE694Jsrm0Dpg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1664983727037?e=1781136000&v=beta&t=OCv_7Xy1s88qXXhV7pjx-4BMVUuMaCWOM-OsN-ZxkEU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Václav",
+        "lastName": "Kotyk",
+        "occupation": "Talent Sourcer @ SentinelOne.ai | The Future of CyberSec will be determined by You - let’s Secure Tomorrow™ together! 🛡️👾 | In 💜 with s1.ai/PurpleAI | 🕵️‍♂️ CyBeer security meetups organizer",
+        "id": "322518163",
+        "publicId": "vaclavkotyk",
+        "trackingId": "TcC6IUetRcSnCmuA3+Sn0g==",
+        "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHSFfNAAQ3ojA/profile-framedphoto-shrink_800_800/B4EZb.aDPLHAAs-/0/1748024964389?e=1780430400&v=beta&t=IvlxsfQQdb8KqO1QvRvDLxo7b9-V1Qrgz29nKWhJehw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG_GZHPXo_drQ/profile-displaybackgroundimage-shrink_350_1400/B4EZhWDO5THEAY-/0/1753790347174?e=1781136000&v=beta&t=TTJXtHJi0vF694Nao68XfleeSQJvzU06We8EI4GVwQI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Silná",
+        "occupation": "Software QA Engineer | Test Automation | AI-Driven Testing | Frontend | UX/UI | ex-Graphic Designer",
+        "id": "456103352",
+        "publicId": "lenka-silna",
+        "trackingId": "udfCniyiRbONqKxiV0r1zg==",
+        "profileId": "ACoAABsvlbgB_YE9kjICFRS1b_hrU6yzTRKEHKo",
+        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFf0_YqRz5aMw/profile-displayphoto-crop_800_800/B4DZyeRfyKI8AI-/0/1772181913275?e=1781136000&v=beta&t=djOSOQB0NajL7vAnGP1Vbttp8e1WcRdpEKG8ziyxtzg",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQECZhvzl5X7cg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1624343280736?e=1781136000&v=beta&t=g_BHz9nP1AHkEtQK2JeFVM4SR5-XuZaLlWHS_Ygq60g"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Nathalie",
+        "lastName": "Vecten",
+        "occupation": "\"It is a capital mistake to theorize before one has data.\" *cleaned data",
+        "id": "775508820",
+        "publicId": "nathalie-vecten",
+        "trackingId": "AZehad4dTmSog4uDf8zuzg==",
+        "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH5sSEbnQ2Tcg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1611936430673?e=1781136000&v=beta&t=wAQsj8dSBDe6L3xt1MwxMahW3aP-D6LcuvT-utzij6s",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHDKxhi18V0lw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1599638080880?e=1781136000&v=beta&t=5JiWefMiJff9VXnKXxoAOOrnUYNFE4fW7AQAgJac6VA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michaela",
+        "lastName": "Vavrinova",
+        "occupation": "Enterprise SaaS Specialist | Complex Deal Negotiation | 20+ Years in IT & Application Business",
+        "id": "117747267",
+        "publicId": "michaela-vavrinova-94352433",
+        "trackingId": "xMf3tWDKSMymWPYUCBKw4A==",
+        "profileId": "ACoAAAcErkMBxIoqAn7vjC3q8_JdzfNFSzwMZ3A",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFSkx1w4cwtDg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1702848335851?e=1781136000&v=beta&t=g1bI-Umv6oFzjXFm1GJ2DNHZuLz9UmU4a51rDbvhH2c"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Mia",
+        "lastName": "Bajić",
+        "occupation": "Software Engineer",
+        "id": "530925455",
+        "publicId": "mia-bajic",
+        "trackingId": "4Kwvxd8iQt+ndcKKQP8b4Q==",
+        "profileId": "ACoAAB-lR48BFvPhQ6doZNGTRVftkLrzcnIv-Ss",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEFktnPzIQA3g/profile-displayphoto-shrink_400_400/B4EZdfBBQAHYAs-/0/1749645792668?e=1781136000&v=beta&t=H-XclkbtaMI2HfxaPAIvGsaIuvs_3HunEbU_zF5R2XQ",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGmHzyPBT7q2g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1738012168138?e=1781136000&v=beta&t=bGVRTPD07nQuQcDx_7F1m2z7h-P_vw_6AF5KkU2lLp4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jaroslav",
+        "lastName": "Stuller",
+        "occupation": "AI-Powered Tech Talent Advisory | Business Development & Technical Consultant @Splendit",
+        "id": "172287628",
+        "publicId": "jaroslavstuller",
+        "trackingId": "A5BfDVD8RDaVc6tssIJpig==",
+        "profileId": "ACoAAApE5owBWLnnbJ1tIVpyL7cZF8Gi0xEHctk",
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQEDParn1wpswg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1581946822590?e=1781136000&v=beta&t=I5OGJXmTS2L95CHIvjuu9SOAMNinxlAwMqTe5jG1jQw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEhqV7lBRpa5g/profile-displaybackgroundimage-shrink_350_1400/B4EZoHH82mHEAY-/0/1761056116866?e=1781136000&v=beta&t=Fcvys8W98Bx2myUFIFpKDwIhKamWV6_7lGuw7FtmoFs"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 10,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "cTJximJ/TH611vU8iEET/Q==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1626185070314,
+  "postedAtISO": "2021-07-13T14:04:30.314Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

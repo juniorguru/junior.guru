@@ -1,0 +1,98 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:8638455872146136915",
+    "url": "https://hamatti.org/posts/how-to-ask-help-for-technical-problems/",
+    "title": "How to ask help for technical problems?"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6772790892869804032",
+  "url": "https://www.linkedin.com/posts/honzajavorek_how-to-ask-help-for-technical-problems-activity-6772790892869804032-S0rA?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAABs09r4BuVySre7W6Nsx80Mjly2zKtSu_JM",
+  "timeSincePosted": "5yr",
+  "shareUrn": "urn:li:share:6772790892597174272",
+  "text": "Pěkný článek o tom, jak se lze naučit dobře ptát",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1614763584625,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6772790892869804032?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6772790892869804032%2C6772809362042875904%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286772809362042875904%2Curn%3Ali%3Aactivity%3A6772790892869804032%29",
+      "text": "Thanks for sharing it!",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "English",
+      "author": {
+        "firstName": "Juha-Matti",
+        "lastName": "Santala",
+        "occupation": "Community builder.",
+        "id": "219800428",
+        "publicId": "juhamattisantala",
+        "trackingId": "f8YAmmhmSjKfU+pCPKemAw==",
+        "profileId": "ACoAAA0Z42wBi4jFVXgmVVVw5b55iGMyZwS2M8E",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQE51--wmhhIyw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1654685450528?e=1781136000&v=beta&t=o82unJxnHGLS4SGI810e7BB4_KLtwc0I_LIiI6Qqsgw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFL4cdHxblHGA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1559577388585?e=1781136000&v=beta&t=X41DSW0C9Zw-elcSoQ-4qOYFv070TrGVJZLTIYKRt6E",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Juha-Matti",
+        "lastName": "Santala",
+        "occupation": "Community builder.",
+        "id": "219800428",
+        "publicId": "juhamattisantala",
+        "trackingId": "W9nW+D/TRiqjfdv2JJrvQw==",
+        "profileId": "ACoAAA0Z42wBi4jFVXgmVVVw5b55iGMyZwS2M8E",
+        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQE51--wmhhIyw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1654685450528?e=1781136000&v=beta&t=o82unJxnHGLS4SGI810e7BB4_KLtwc0I_LIiI6Qqsgw",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFL4cdHxblHGA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1559577388585?e=1781136000&v=beta&t=X41DSW0C9Zw-elcSoQ-4qOYFv070TrGVJZLTIYKRt6E"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Polcr",
+        "occupation": "Software Engineer | Storyteller | LinkedIn Enthusiast and Mentor | I help other techies build a personal brand on LinkedIn | Fuelling growth of software engineers through Software Engineering Tales Podcast",
+        "id": "266067406",
+        "publicId": "pavel-polcr",
+        "trackingId": "FpBZupbST8iEJFcy1PGiDA==",
+        "profileId": "ACoAAA_b3c4BTAcvcf2VyIBHi_X2WWOWGNyt1ZI",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEu9ha6Y8Sixg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1669321063367?e=1781136000&v=beta&t=raEuoKrOSY-Tk_kZywRCzdqirDaq1Gn2VevDmPGUjF4",
+        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFw1u4Fq3Nd8w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1729078028424?e=1781136000&v=beta&t=5tSeGbCLtj6zBZL9AjSaNC8kr84Qqb_0LxXwU47LgOk"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 2,
+  "numComments": 2,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "trackingId": "Hj3Y8zShSTSfq4qoqxwTow==",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1614759181230,
+  "postedAtISO": "2021-03-03T08:13:01.230Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}
