@@ -5,7 +5,7 @@
   ],
   "isActivity": false,
   "urn": "urn:li:activity:7143168331666132992",
-  "url": "https://www.linkedin.com/posts/honzajavorek_do-konce-dne%C5%A1n%C3%ADho-dne-2012-m%C5%AF%C5%BEe%C5%A1-p%C5%99ihl%C3%A1sit-activity-7143168331666132992-GEmW?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC29INoBu4UxIfyNnC3051th8thkLppPT1Y",
+  "url": "https://www.linkedin.com/posts/honzajavorek_do-konce-dne%C5%A1n%C3%ADho-dne-2012-m%C5%AF%C5%BEe%C5%A1-p%C5%99ihl%C3%A1sit-activity-7143168331666132992-GEmW",
   "timeSincePosted": "2yr",
   "shareUrn": "urn:li:share:7143168330856628224",
   "text": "Do konce dnešního dne (20.12.) můžeš přihlásit svou přednášku na únorovou pražskou Python Pizzu! 🍕\n\nNení to ani Pyvo (pravidelný městský sraz pythonistů), ani PyCon CZ (každoroční celorepubliková konference). Co to teda je? Je to úplně nový formát, něco mezi. Vše podstatné najdeš na prague.python.pizza a na Prague Python Pizza 🍕\n\nJde o jednodenní mini konferenci plnou zajímavých talků o Pythonu. Už teď víme, že hlavní přednášky (keynote) tam budou mít Kateřina Lesch (znáte z Junior Guru podcastu 😀) a Łukasz Langa. Přidej se k nim, dnes je poslední šance!\n\nAkce bude 24.2. a měla by být dobře přístupná i pro přespolní, akce bude v Apify na Václaváku, což je pár kroků pěšky od Hlavního nádraží 🚆",
@@ -17,7 +17,6 @@
       "company": {
         "name": "PyCon CZ",
         "universalName": "pycon-cz",
-        "trackingId": "juCtSK6WRd2WTVUagdaBMw==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:96200896",
@@ -31,7 +30,6 @@
       "company": {
         "name": "Python Pizza",
         "universalName": "python-pizza",
-        "trackingId": "MRyssgygRpObG7WnZmlahg==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:98334563",
@@ -48,7 +46,6 @@
         "occupation": "Group AI Manager Dr. Max | PhD. Computer Science | TEDx & Conference Speaker | Femme Palette Mentor",
         "id": "215974343",
         "publicId": "katerinalesch",
-        "trackingId": "OBNBCihfSvqcWj6qpPkdcA==",
         "profileId": "ACoAAAzfgccB78msUaXGAWUKVYf9KKkbfafjrsQ",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEes_d6M7cfrg/profile-displayphoto-crop_800_800/B4DZvQuqE8JkAI-/0/1768733453665?e=1781136000&v=beta&t=KUVBU-NsdLRA_62ugjQvUp6HPD6NI3ZbJSh-h27bLnU",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGksOpRURSV5g/profile-displaybackgroundimage-shrink_350_1400/B4DZu.aPCNJYAY-/0/1768426108189?e=1781136000&v=beta&t=kRIQQ93aThFFf6eFZ0otOqHW9O9Y1Rz52JrdnCqNQ14"
@@ -61,7 +58,6 @@
       "company": {
         "name": "Junior Guru",
         "universalName": "juniorguru",
-        "trackingId": "d0+ebDoFRtmFBkTXgxkspQ==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:26218444",
@@ -78,7 +74,6 @@
         "occupation": "Python Language Foundation @ Meta | Enhancing Python Development Efficiency",
         "id": "4612303",
         "publicId": "llanga",
-        "trackingId": "nODQTcotQhSM6/Uu7AAqZA==",
         "profileId": "ACoAAABGYM8B4FMtEF-4Ez8sOsHvT9DGMEcRN6I",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHW94bO_Uz4dw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1697370107269?e=1781136000&v=beta&t=0BmLi0MPab-bPa-_Rrk6E3eOmcifQXcCA7dzjTSKSgM"
       }
@@ -90,7 +85,6 @@
       "company": {
         "name": "Apify",
         "universalName": "apify",
-        "trackingId": "LRe+LTjxSaGDm8iimXTQ5w==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:10608457",
@@ -108,7 +102,6 @@
         "occupation": "🟡 Zakladatel programu JDIDOSEBE | Majitel gymu a mobilní aplikace JDIDOSEBE | Pomáhám vytíženým lidem zhubnout, získat energii a žít zdravěji | Soukromá posilovna na Floře jen pro členy, ideální pro Prahu a okolí.",
         "id": "204035207",
         "publicId": "jakub-mily-jdidosebe",
-        "trackingId": "+q99iXIFT3affP79K33W0A==",
         "profileId": "ACoAAAwpVIcBlm7HSAiuYEH0HNX-OVUwlj0iVjk",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFulESjWla1Ag/profile-displayphoto-shrink_800_800/B4DZSNHB6_HcAc-/0/1737534218453?e=1781136000&v=beta&t=IhT0tAGB5eoq1yy29HSgYhwrN-I7ms-2C3rCSUmwWkQ",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGUQ8TSAf5rcA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1738317741808?e=1781136000&v=beta&t=FVrh93raoXHKeVC9B6LWs8kvnAASRxfCGu0aMQyH47s"
@@ -122,7 +115,6 @@
         "occupation": "Každý konec je zároveň začátek další cesty.",
         "id": "611084655",
         "publicId": "pavla-růžičková-b53798150",
-        "trackingId": "CGVjJJ0PRXWhllJ8bVd6Dw==",
         "profileId": "ACoAACRsaW8BAEjn06ZzzFzNMGo8Z6Ug_7ViAUI",
         "picture": "https://media.licdn.com/dms/image/v2/D4E35AQGLb0XLn9-FQw/profile-framedphoto-shrink_400_400/B4EZdq2.WGGcAc-/0/1749844485804?e=1780430400&v=beta&t=vvJp7KwOPxHEnmZuDKbJKRKYlsCeGw9vtq_grsstus0",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEelCtHfQXXiw/profile-displaybackgroundimage-shrink_350_1400/B4EZeiv0yYHsAY-/0/1750782136117?e=1781136000&v=beta&t=TQytf9TKZUNbXay4B9YFgW6Qu0BC5sw6rgfW2QLIc7Y"
@@ -136,7 +128,6 @@
         "occupation": "I help great brands grow @STRV",
         "id": "337285701",
         "publicId": "strv-norbert-cerveny",
-        "trackingId": "IGOY/5HnTjSR6NygWfrrFw==",
         "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGKIAaUJPtlmA/profile-displayphoto-crop_800_800/B4DZ0jT_lBIEAI-/0/1774413941709?e=1781136000&v=beta&t=ioRFNZY53XZXWk1BvKTQdIygU-xxLKoyNysEAYklp0I",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG0ekEnNy2Hcw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0jTiNeGsAk-/0/1774413817026?e=1781136000&v=beta&t=_KMbjLzzfd2pO9gizTz2iWgDOkq5RQ3NpzDT5fOljNI"
@@ -150,7 +141,6 @@
         "occupation": "🇨🇿 Czech Founders Community Lead ▪️🤝 Connecting Communities, IT and Business ▪️🩷🖤 DIGIFEMME Founder ▪️Femme Palette Ambassador ▪️ IT Project Management ▪️ No-Code a Low-Code Digitalizace",
         "id": "780330999",
         "publicId": "alisa-mazepina",
-        "trackingId": "WVWNKJNWRaCIFT9ExLektg==",
         "profileId": "ACoAAC6C5_cBuwlzuw1kk4L-6e9nwm3bUZCqeDA",
         "picture": "https://media.licdn.com/dms/image/v2/D5603AQFfITu9_pxR9A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1711447886125?e=1781136000&v=beta&t=rpdAVUJ4gVp3DtywwS1QOPpYAEh3v6dzdL0ogckNFmc",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFneU1R3TkEdA/profile-displaybackgroundimage-shrink_350_1400/B4EZneuSj_HcAY-/0/1760378304308?e=1781136000&v=beta&t=Wea3aMykGlQ56POgLQI5uieKLqIjoVsm4FRY7ZHUhss"
@@ -164,7 +154,6 @@
         "occupation": "Senior HR Manager | Country HR | Operations & People Strategy",
         "id": "23136032",
         "publicId": "terezale",
-        "trackingId": "cQ7Ui68CSSWTrIBWearK9A==",
         "profileId": "ACoAAAFhByABrpRT78Zgx4U3mRVpJJB3aLBukew",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQElmEv5ocCQiw/profile-displayphoto-shrink_800_800/B4EZV5vE_fHMAc-/0/1741504139641?e=1781136000&v=beta&t=hFMmhWM1_piCTIGSqk6p0liDt0-qaO46KHefN77FctY",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHlFiHBZjQuyQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736964866391?e=1781136000&v=beta&t=n2ixTACTuZmKzVoCw_Nl_3BP51u0eCOZ5SZKLEwEpOs"
@@ -178,7 +167,6 @@
         "occupation": "Senior Brand manager in Pharmaceutical environment 👩🏻‍💻 SW Tester Junior, QA 🐞🔍",
         "id": "207763792",
         "publicId": "marketa-sybalova",
-        "trackingId": "ff43ARvqQdy8CzAJVciMng==",
         "profileId": "ACoAAAxiOVABbE6vP0QzWo3vqwNarrgL3vxBDDY",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGKWUk3m8kOCg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1614717989419?e=1781136000&v=beta&t=3HgOmFRuEkx7Zp4jhHlPU_G_enptHWrPibPS0EljSzw",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHLYueSmxGG_A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1682625128462?e=1781136000&v=beta&t=8dr0cPQ0w5nkhuMc8LNNnC6LjY1X-NgKn6wgOrIEviw"
@@ -192,7 +180,6 @@
         "occupation": "Je mi jedno, kdo za to může. Zajímá mě, jak to napravit.",
         "id": "549564771",
         "publicId": "lukáš-hakl-20306b134",
-        "trackingId": "neep8hLxQma5GqdXr8ADVQ==",
         "profileId": "ACoAACDBsWMB1C0injPspx2-t2s7o0ifQmypPS4",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFsa_mbEg9oQA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1594837092948?e=1781136000&v=beta&t=IxitfBqNBUTHXBjYYN5wwBX6z9Trvrfn50TjXDdmPCE"
       }
@@ -205,7 +192,6 @@
         "occupation": "Veterinární sestra ve společnosti Mika s.r.o",
         "id": "1155968928",
         "publicId": "markéta-polakovič-60016b283",
-        "trackingId": "9DUw07qPTr+4foWhS/I3Xw==",
         "profileId": "ACoAAETmr6ABB4eOcNhnMbbguezzPGT0J1iMdTs",
         "picture": "https://media.licdn.com/dms/image/v2/D5635AQFNzBd1sSvQgA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1690662627029?e=1780430400&v=beta&t=HZJV0dM2OjN3zK0BsaajkVVge0ihB3tNgs4I90u-4g8",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEfo1ADaYinUw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1689105662775?e=1781136000&v=beta&t=ufGOBvreZm-DmL6aCvskjLR-hHUbvDrWFo3Seu2KKOQ"
@@ -219,7 +205,6 @@
         "occupation": "I Train Students & Professionals in Python | Data Science | AI/ML | Gen AI | 500+ Learners Trained",
         "id": "316734471",
         "publicId": "koshurai",
-        "trackingId": "A+CEngoPSq6fDvcr+y379g==",
         "profileId": "ACoAABLg_AcBpdDhytU6UQevUK3wm_rE4j6bsbk",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHUOx3rbnbEaA/profile-displaybackgroundimage-shrink_350_1400/B56ZinfiGaG0AY-/0/1755156721258?e=1781136000&v=beta&t=iHwP7zVtCA4j6H6gZVkRAeBNfEEwADOgbdY-n2gCVfg"
       }
@@ -232,7 +217,6 @@
         "occupation": "Process & AI Transformation | Finance & ERP expertise | Change Management | Bridging systems and people | Coaching | Tax Advisor",
         "id": "353244516",
         "publicId": "hana-kolaříková",
-        "trackingId": "hRjCs1UoSjOqQfWbscFtLQ==",
         "profileId": "ACoAABUOFWQBR1uZEL1f7sj0PdvXLKIWKJQ7Nno",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHw2RJnjOUkZw/profile-displayphoto-crop_800_800/B4DZ4_uOlqJQAI-/0/1779185546621?e=1781136000&v=beta&t=IsK5hLRmU1F6TgpnT6xFBhMekfEmukJpezCXeTQKVVo",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGwKJMd81OF-w/profile-displaybackgroundimage-shrink_350_1400/B4DZ3VJv94JAAY-/0/1777397596958?e=1781136000&v=beta&t=i9unOt-cv7U5na8ExNATmpwaCaOu4JhYJQ2--AcFfiQ"
@@ -255,7 +239,6 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "trackingId": "tOic8QjRQWuFLsNWMn81+Q==",
     "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
     "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
     "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"

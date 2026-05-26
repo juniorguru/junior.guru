@@ -5,7 +5,7 @@
   ],
   "isActivity": false,
   "urn": "urn:li:activity:7134912960212140034",
-  "url": "https://www.linkedin.com/posts/honzajavorek_adventofcode-aoc-aoc-activity-7134912960212140034-ilyw?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC29INoBu4UxIfyNnC3051th8thkLppPT1Y",
+  "url": "https://www.linkedin.com/posts/honzajavorek_adventofcode-aoc-aoc-activity-7134912960212140034-ilyw",
   "timeSincePosted": "2yr",
   "shareUrn": "urn:li:share:7134912958941343744",
   "text": "Znáte #adventofcode? Je to programátorský adventní kalendář 🎄 \n\nKaždoročně je na adrese adventofcode.com na prosinec nachystaná hra pro programátory. Hrajou to lidi z celého světa.\n\nKaždý den dostanete dva úkoly. Úkol se dá vždy vyřešit použitím libovolného programovacího jazyka. První úkol bývá přímočarý, ten druhý většinou rozšíří to samé zadání tak, že se to celé nepříjemně zkomplikuje. A každý den se zadání většinou ztěžují. Hodně úkolů jde řešit s úplně základními programátorskými znalostmi, takže i jako začátečníci se můžete v pohodě účastnit. Moc se ale netrapte tím, pokud brzo pohoříte, málokdo dojde úplně do konce. A to se týká i seniorů 😀 \n\nV klubu na junior.guru/club každoročně vytváříme skupinku lidí, kteří úkoly řeší a baví se tím. Je to skvělé na procvičení algoritmizace nebo rozkládání problémů na podproblémy. A někdo tam #AoC řeší i během roku, prostě proto, že ho to baví. Máme i společný žebříček.\n\nLetos jsem poprosil Karolina Surma, aby v klubu před začátkem #AoC udělala krátkou přednášku, podobnou jako měla v září na PyCon CZ, a aby to tím odstartovala. Souhlasila, takže zítra (úterý 28.11.) v šest večer to na Discordu hezky odstartujeme pár tipy, jak se dá #AoC řešit. A aby to mělo atmosféru, tak si pak dáme „pokec u kakaa“ ☕️ \n\nKlidně se stavte, klub je sice placený, ale každý tam má první 2 týdny zdarma. Žádná karta se nezadává.",
@@ -17,7 +17,6 @@
       "company": {
         "name": "PyCon CZ",
         "universalName": "pycon-cz",
-        "trackingId": "OsspbtUnQeyt0UdRsiOn0Q==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:96200896",
@@ -35,7 +34,6 @@
         "occupation": "Snižuji Vaše náklady a zlepšuji produktivitu👍",
         "id": "566178474",
         "publicId": "petr-kopecky-solution",
-        "trackingId": "YcFGm/48SiO2Dk7jGROyCg==",
         "profileId": "ACoAACG_MqoBzmsa7I68oapcxzlwsH7BiIjT5I8",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH8ZrHgnQ5JRA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1623739159920?e=1781136000&v=beta&t=M6D9jtlG9XGIsjidb0vEHJ-2ru2PSUshA_ZIVjbnBrw",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEf0ZVKO8d0CQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1724945706532?e=1781136000&v=beta&t=L2C4Vh6ucP8eykV39Lm5ooF8lHGMN9T6GRDGSi_IhH8"
@@ -49,7 +47,6 @@
         "occupation": "Senior Python Engineer | Flask & DB expert | Systems & Infrastructure | ex-Prusa Research",
         "id": "781867914",
         "publicId": "filip-hron-a36a19199",
-        "trackingId": "bOLcpsTKTNWuHzdMQHsyhA==",
         "profileId": "ACoAAC6aW4oBQs227Vm4QA1KbZ1diLBdHzDwUyg",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGmSxqaTQ2-qQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1605629927965?e=1781136000&v=beta&t=LjHwr3nEm-TzGj_M9d9vXGA4D0h1gHWvkn99uVXfL9s"
       }
@@ -62,7 +59,6 @@
         "occupation": "Data • Python • PyLadies • Community 🧗‍♀️🌄🥽",
         "id": "500082573",
         "publicId": "profantova",
-        "trackingId": "X7qIMuA1TnWZ/YUNy/r6rw==",
         "profileId": "ACoAAB3Op40BezEaqbB9vgUJupTUksuxIhZtA1E",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHLY1-XuQRejQ/profile-displayphoto-shrink_800_800/B4EZZtgja8HcAg-/0/1745593973290?e=1781136000&v=beta&t=97Qd6tWqLDzvoy3gg04-M2N9ittS1V7dQ4WnFiYT518",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEE9K4LB2eaaQ/profile-displaybackgroundimage-shrink_350_1400/B4EZZtfBjmHYAc-/0/1745593572445?e=1781136000&v=beta&t=xtqYmTMUDNlMHwv45DT-zqCkJSb5ri_lsJHq6CvaxGk"
@@ -76,7 +72,6 @@
         "occupation": "I help great brands grow @STRV",
         "id": "337285701",
         "publicId": "strv-norbert-cerveny",
-        "trackingId": "IGOY/5HnTjSR6NygWfrrFw==",
         "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGKIAaUJPtlmA/profile-displayphoto-crop_800_800/B4DZ0jT_lBIEAI-/0/1774413941709?e=1781136000&v=beta&t=ioRFNZY53XZXWk1BvKTQdIygU-xxLKoyNysEAYklp0I",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG0ekEnNy2Hcw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0jTiNeGsAk-/0/1774413817026?e=1781136000&v=beta&t=_KMbjLzzfd2pO9gizTz2iWgDOkq5RQ3NpzDT5fOljNI"
@@ -90,7 +85,6 @@
         "occupation": "Junior React Developer",
         "id": "1074684875",
         "publicId": "iva-havranova",
-        "trackingId": "yzbFZOtGQSaJQBpGfJso4Q==",
         "profileId": "ACoAAEAOY8sB8ukyno10fvlytoy05WfwwjTKt9U",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHntxuzn9t9Bg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1678137459904?e=1781136000&v=beta&t=cYTA1rDu34lSP1zye9w2mbB5YCSE08OK0xMsKdnwo-I",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE1AS140WJIDw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1711982545374?e=1781136000&v=beta&t=Ohlfpqbf8RPntDEoiMEYgbnMmlyNwCewTidk8AawgOQ"
@@ -104,7 +98,6 @@
         "occupation": "AI Eng / Data Scientist @SAP | MSc AI @ČVUT",
         "id": "671578881",
         "publicId": "senanursahin",
-        "trackingId": "CN4PU1//RmSiQYKPHF2OVQ==",
         "profileId": "ACoAACgHewEBJXQqOiogGERDxK5NvoppkZOfT6k",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGyHchkKDvwhg/profile-displayphoto-crop_800_800/B4DZ5LMobuK0AI-/0/1779378066710?e=1781136000&v=beta&t=nLLRNM9TokuDDjyLLQKJHH-PbieY7dh2a1iei9we6fc",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHn335pXfW3FA/profile-displaybackgroundimage-shrink_350_1400/B4DZ5QqIEeI4AU-/0/1779469681171?e=1781136000&v=beta&t=n9_6iNw1-yALDMqxw7WIyKDqu6dZGfJetlITm4Ff6ZA"
@@ -118,7 +111,6 @@
         "occupation": "Software Engineer | Storyteller | LinkedIn Enthusiast and Mentor | I help other techies build a personal brand on LinkedIn | Fuelling growth of software engineers through Software Engineering Tales Podcast",
         "id": "266067406",
         "publicId": "pavel-polcr",
-        "trackingId": "Ba89bEblRUa5OVIuAVcBBA==",
         "profileId": "ACoAAA_b3c4BTAcvcf2VyIBHi_X2WWOWGNyt1ZI",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEu9ha6Y8Sixg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1669321063367?e=1781136000&v=beta&t=raEuoKrOSY-Tk_kZywRCzdqirDaq1Gn2VevDmPGUjF4",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFw1u4Fq3Nd8w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1729078028424?e=1781136000&v=beta&t=5tSeGbCLtj6zBZL9AjSaNC8kr84Qqb_0LxXwU47LgOk"
@@ -132,7 +124,6 @@
         "occupation": "-",
         "id": "954345023",
         "publicId": "ella-senovska",
-        "trackingId": "ykAjQe+5R8+0svfQW3EzYQ==",
         "profileId": "ACoAADjiJj8BFd5OQwWP4pY71u0DyMawGkM8Xk8",
         "picture": "https://media.licdn.com/dms/image/v2/D4E35AQE61ascbiBnzw/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1730967321835?e=1780430400&v=beta&t=iO0k83QfTean_OyKdfzDHlg5-WhLJU_oWDBJ5_drwys",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG0KrH5Co0mCQ/profile-displaybackgroundimage-shrink_350_1400/B4EZr5tPiHIQAY-/0/1765125979597?e=1781136000&v=beta&t=CYoij_pByAy_OmryQJUks8BHm9BOnimJS677duIgWRo"
@@ -146,7 +137,6 @@
         "occupation": "SEO/UX Specialist at Webmium ✅ Aspiring Backend Developer at Home ✅",
         "id": "356811200",
         "publicId": "tomasmanhal",
-        "trackingId": "h7qh2KQ/SqC5sLvh60HbrQ==",
         "profileId": "ACoAABVEgcABhXssunqzWgZ32PhPvDuM7pOY7Sw",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGInNVdLygaYA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1643616498455?e=1781136000&v=beta&t=ZuyL6gCtMjtS2Bp5JitUt78VFkpsCsQXNtHO9yl9H4g",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGzLIim8zGACA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516975456614?e=1781136000&v=beta&t=6VFaoiFNvKKxzcGRnW_GTyGLSluSP2AQ71SpObNaKLo"
@@ -160,7 +150,6 @@
         "occupation": "Linux lover ;-)",
         "id": "148282826",
         "publicId": "martin-šuraba",
-        "trackingId": "HX2EG4I0Tbah0x66ldqh+g==",
         "profileId": "ACoAAAjWncoBV1fLUSxy4LPyYcesKobjlSQHznQ",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG3Gb4BlgCVZQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693900488039?e=1781136000&v=beta&t=x-DN7fUTWuQkA6F4_rWi05mTohNdCH-S2Vj0RulkMM0",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGGkAbiGDIeww/profile-displaybackgroundimage-shrink_350_1400/B4DZ2w5FFRHwAY-/0/1776789247703?e=1781136000&v=beta&t=KaejtkxyR8ERrXhjNGP_KW3lGT8Nz8IVYzQy0BShSP4"
@@ -183,7 +172,6 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "trackingId": "tOic8QjRQWuFLsNWMn81+Q==",
     "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
     "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
     "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"

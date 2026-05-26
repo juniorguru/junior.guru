@@ -5,7 +5,7 @@
   ],
   "isActivity": false,
   "urn": "urn:li:activity:7400164253812330496",
-  "url": "https://www.linkedin.com/posts/honzajavorek_dneska-jsem-do-katalogu-poskytovatel%C5%AF-kurz%C5%AF-activity-7400164253812330496-NKIl?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC_ljigBFvhn56YoZGdxoUnN9NKI3l-Akak",
+  "url": "https://www.linkedin.com/posts/honzajavorek_dneska-jsem-do-katalogu-poskytovatel%C5%AF-kurz%C5%AF-activity-7400164253812330496-NKIl",
   "timeSincePosted": "5mo",
   "shareUrn": "urn:li:share:7400164252633739264",
   "text": "Dneska jsem do katalogu poskytovatelů kurzů přidal hřbitov.\n\nK vidění na junior.guru/courses 🪦 Tohle myslím docela dobře ilustruje stav trhu s IT juniory po roce 2023 🥲\n\nPokud jsem něčí (ne)existenci odhadl špatně, tak se omlouvám, dejte vědět. Na každé podstránce najdete povídání o historii subjektu a jakým způsobem skončil.\n\nProč skončili? Myslím si, že tyhle subjekty měly positioning nebo produkt ve stavu, že je ochlazení náboru juniorů zasáhlo nejvíc, případně se trefilo do toho, že majitelé neměli vizi co dál a prostě složili karty.\n\nTřeba ENGETO je ze stejné snůšky (z hlediska období, kdy začínali) a věci jako AI, dotace, nebo ochlazení trhu dokázali brát jako něco, na co se lze adaptovat. Byli prostě v kondici, měli trochu jiný byznys model, měli nějakou vizi a zakladatele, kteří nebyli v burnoutu, apod. 🙂\n\nObecně bych řekl, že „rychlocesta“ do IT se zavřela a každý, kdo na ni měl založený byznys, to už nedává. Taková ta cesta „baví mě to a budu se pomalu ale jistě učit po večerech a na přechod do IT počítám s 1-2 lety konzistentního, ale udržitelného úsilí“ je teď to, co pořád funguje.\n\nAle ne každý se do toho chce takhle pustit, ne každý jde do IT proto, že ho to baví (ne protože jsou to rychlý prachy a teplo v kanclu/z domova), a pokud dělám kurzy, nedá se na tomhle způsobu rekvalifikace vydělat peníze tak jednoduše jako dřív.\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
@@ -17,7 +17,6 @@
       "company": {
         "name": "ENGETO",
         "universalName": "engeto",
-        "trackingId": "UdtW9/M/QzS93NlYCstYJw==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:10511835",
@@ -47,7 +46,6 @@
         "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
         "id": "8517488",
         "publicId": "honzajavorek",
-        "trackingId": "W/hJghUjRieAQ5z28yU9ZQ==",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
@@ -64,7 +62,6 @@
         "occupation": "Security Management | 16 Years in Public Safety | Operations & Administration",
         "id": "1490386548",
         "publicId": "lukáš-názer-270164357",
-        "trackingId": "wyC3z0oUTbe6FtbiwZ/xaA==",
         "profileId": "ACoAAFjVfnQBRiWDVYgeRaVNR9CkNSlnACEsxsY",
         "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHXiTp76wTrAA/profile-framedphoto-shrink_800_800/B4DZ3BlJh2G4Ag-/0/1777069234603?e=1780430400&v=beta&t=8Tb6p9FTg2cUQNp6Qt9BY4bFRPxPxDwzlMaM_a_e4dM",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGRmdKcLOO4mQ/profile-displaybackgroundimage-shrink_350_1400/B4DZuduYc0KoAc-/0/1767877741572?e=1781136000&v=beta&t=-r1YEOtb84pQij6od76GCRY8-7ltn8jMw_JGF8sYxdA"
@@ -78,7 +75,6 @@
         "occupation": "⚛️ FE developer - Application SW Engineer",
         "id": "416963620",
         "publicId": "nikolen",
-        "trackingId": "1Y1cQaacShuFwzXERDCirA==",
         "profileId": "ACoAABjaXCQBlHaQQzH6IcpkDvnQBKdNnyXC-IY",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFsYpwgZIoFrg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693683002257?e=1781136000&v=beta&t=QR0B0WWPAMoMM7t8iEMA6hRR_dVUeXPf2BIAipk5H2A",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFi7q3Cb9nHTg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1732203022293?e=1781136000&v=beta&t=72AuWy2PRv8_o0F3yuZOB4WJwneTfC5GspdNvmkT5LY"
@@ -92,7 +88,6 @@
         "occupation": "Controller, Accounting & Reporting at Crescent Petroleum",
         "id": "164283904",
         "publicId": "mohd-abbas-85402747",
-        "trackingId": "oxZhhCIIS/We1zfEaFR8DA==",
         "profileId": "ACoAAAnKxgABLqmv6qLWb_2DYQ6m4i33qGQ3v0U",
         "picture": "https://media.licdn.com/dms/image/v2/C5603AQFoVVZ8kVdb7w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517447451440?e=1781136000&v=beta&t=M8Hb0NRFEzZYRhrCueT9tN0QVqRVhFb3GhTB1IjqF4A"
       }
@@ -105,7 +100,6 @@
         "occupation": "Copywriter pro technologické firmy, vědecké organizace a další „složité“ obory 👉 tomassoukup.cz",
         "id": "305561966",
         "publicId": "tomas-soukup",
-        "trackingId": "zieZjf0oTPG+ldG6O1V3WQ==",
         "profileId": "ACoAABI2gW4BgZGgFR7Mosk1ebIoWD75Wf9XaQM",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEy_s3x6PeEDw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1537297906779?e=1781136000&v=beta&t=qwLRVfSQe5zXIPFdrxrwffYzNtDe0IywklIv93BZRAs",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFv_5SG4Wr7OA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686099891477?e=1781136000&v=beta&t=gNpLjSee7dukOw_4lXL6jEeo95czXukXqc3H2VC_T6E"
@@ -119,7 +113,6 @@
         "occupation": "Event Coordinator",
         "id": "1086623713",
         "publicId": "lucie-chromková-201aa9263",
-        "trackingId": "KhME93gVReqE8CNuuHavHQ==",
         "profileId": "ACoAAEDEj-EBNTEYionW6EoPi9yg4i_B0yp45n8",
         "picture": "https://media.licdn.com/dms/image/v2/D4D35AQEE4n9PfSIUyw/profile-framedphoto-shrink_800_800/B4DZ0C2IruHcAg-/0/1773869239330?e=1780430400&v=beta&t=_rZeWz681ouzBPrs2jKTjl-EF8i_pTqH2O6DmG6AFzY",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFbWwFYqYNqsA/profile-displaybackgroundimage-shrink_350_1400/B4DZ2rr8TSJYAY-/0/1776701917446?e=1781136000&v=beta&t=afwJIouKtHCBe04vGQOCYVkuO8UBIGj7yMc4Gbr-_lM"
@@ -133,7 +126,6 @@
         "occupation": ".",
         "id": "1214764552",
         "publicId": "vendula-konecna",
-        "trackingId": "4cArxkRbQMuP6DL6cXkLNA==",
         "profileId": "ACoAAEhn1ggBApTFmraO-wqJdiKVc3iYK9xY5VM",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFPu0WzI_VlIw/profile-displayphoto-crop_800_800/B4EZoRLyv3IMAI-/0/1761224896034?e=1781136000&v=beta&t=IG_daMw1jyPwdmwYlwFpVHbyAJrBKHrwNHBEV7aw7TQ",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQElkgnFnxQLlg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1719355862633?e=1781136000&v=beta&t=pIl_ZEgnmFa8tTxKNyp5zViaJ_cAaGNVWIi1_495o-w"
@@ -147,7 +139,6 @@
         "occupation": "Junior Tester v CGI | Baví mě hledat chyby, řešit problémy a dotahovat věci do konce | AI – můj nepostradatelný kolega",
         "id": "848627868",
         "publicId": "josef-bogar",
-        "trackingId": "2QeCAcNAQBiENGviHGNMSg==",
         "profileId": "ACoAADKVCJwBr7giLJM2ay02TZY1GZwNV3muegI",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHqfoJpv84tpQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1705842338381?e=1781136000&v=beta&t=X2BLD4oHFqsFxwsuIXcBv5ixavlDoCUMDb22nCoSPOY",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHE38tcr3BPlA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1728756392711?e=1781136000&v=beta&t=ZSyjE4Y_VloJ-rwykO59eZ5n0_lQ_5C0WlnxeqUMwsA"
@@ -161,7 +152,6 @@
         "occupation": "Site Reliability Engineer & Python Lover",
         "id": "347812870",
         "publicId": "martina-habartova-dev-ops",
-        "trackingId": "CFdiF1FWTlilB1nrFlVy5A==",
         "profileId": "ACoAABS7NAYBntNQG1z2SZ5wy6bIgOhC9Wb17z8",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQG4MjM0V7Y4TA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1637269866744?e=1781136000&v=beta&t=LqBrD71PdEEidr0loXWogbmKLyqGOdiizhWpZswV2HE",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGNtSfksXDC9A/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1637270060172?e=1781136000&v=beta&t=Gjz7YoKWBC5Es1x5HQSEq76TlC4I56G_XY4t4UI0iqQ"
@@ -175,7 +165,6 @@
         "occupation": "Senior Data Engineer at SentinelOne",
         "id": "311018197",
         "publicId": "pavel-prudký-4711ab88",
-        "trackingId": "X+LSzeffSFao52vpbujK4Q==",
         "profileId": "ACoAABKJwtUBBxNHzQX4LEmNIQWc0RrDP8y3U0g",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHqpUKWNnv_3Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517055110130?e=1781136000&v=beta&t=JfrrKC6Q90xeJfZaT9zZV6vn-p7Sg23FsdwH2y3H1qQ",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHXBaArwdjRDA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517055107294?e=1781136000&v=beta&t=WRRBbJw8qyO7qubM8Kjp5AO7bMmsLWdZ5zxkEeToSgE"
@@ -189,7 +178,6 @@
         "occupation": "Data Analyst, Idea Farmer, Process Librarian, Customer Journey Builder, SCRUM Master at RomanRipa.com",
         "id": "6432515",
         "publicId": "romanripa",
-        "trackingId": "VVpJ3WimTme8w3IHv+MBiQ==",
         "profileId": "ACoAAABiJwMBd25oc32q6eAIQJFTQPxjAf5qSBY",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEJG4vsvLjUaQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1685108480804?e=1781136000&v=beta&t=8phf-iA59ichmpLozE1vQuo39zSJ4VOMamTwOxyuy1o"
       }
@@ -211,7 +199,6 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "trackingId": "W/hJghUjRieAQ5z28yU9ZQ==",
     "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
     "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
     "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"

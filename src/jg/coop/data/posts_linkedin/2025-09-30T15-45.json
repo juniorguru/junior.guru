@@ -6,7 +6,7 @@
   ],
   "isActivity": false,
   "urn": "urn:li:activity:7378817344657211392",
-  "url": "https://www.linkedin.com/posts/honzajavorek_zdarma-na-14-dn%C3%AD-bez-zad%C3%A1v%C3%A1n%C3%AD-karty-fakt-activity-7378817344657211392-rvUM?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAABfSxfABLibPg5uCR2Pw5qM0SDQ4aKbyuTg",
+  "url": "https://www.linkedin.com/posts/honzajavorek_zdarma-na-14-dn%C3%AD-bez-zad%C3%A1v%C3%A1n%C3%AD-karty-fakt-activity-7378817344657211392-rvUM",
   "timeSincePosted": "7mo",
   "shareUrn": "urn:li:ugcPost:7378817343751229440",
   "text": "Zdarma na 14 dní. Bez zadávání karty. Fakt bez placení! 🆓\n\nTakhle moje komunita na Discordu funguje už od svého vzniku před 4 lety. Ale stále ladím způsob, jak to odprezentovat na landing page, aby se toho lidi nebáli a opravdu to vyzkoušeli.\n\nChápu, když mi někdo z nejrůznějších důvodů nedůvěřuje, ale všechny moje verze textů, tlačítek a příslibů vždy spíš trpěly tím, že si lidi ani nevšimli, že to je na 14 dní úplně zdarma. Že se ani nezadává karta, a pokud člověku klub nesedne, prostě akorát po dvou týdnech nedoplní platební údaje a systém jej automaticky vyhodí.\n\nTeď se mi stalo, že i člověk, který vyloženě věděl, že na té stránce někde existuje tlačítko na vyzkoušení klubu, to tlačítko prostě nenašel. A to už jsem si řekl, že to už není možné, že tam mám fakt něco zásadního špatně.\n\nČerstvýma očima jsem se podíval, jak ta moje landing page vlastně vypadá, a pak jsem to celé překopal. Následovala i obligátní kontrola přes ChatGPT - jestli by mi ještě něco doporučilo a co by vylepšilo.\n\nTo vlevo je předchozí verze, to vpravo je výsledek mých úprav. Připadá vám to teď jasnější a jednodušší? Udělali byste to ještě jinak?\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
@@ -27,7 +27,6 @@
             "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
             "id": "8517488",
             "publicId": "honzajavorek",
-            "trackingId": "1snWRj7YToumPgXVhbMExA==",
             "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
             "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
             "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
@@ -40,7 +39,6 @@
           "company": {
             "name": "Praha CODING School",
             "universalName": "praha-coding-school",
-            "trackingId": "gVK5T4njRSe7xUFq5SC9BA==",
             "active": true,
             "showcase": false,
             "entityUrn": "urn:li:fs_miniCompany:77580776",
@@ -56,7 +54,6 @@
         "occupation": "Learning & Development | Project coordination | HR coordination & Recruitment support | People & process management",
         "id": "253496935",
         "publicId": "tereza-trcalkova",
-        "trackingId": "Acp3ESOfRcOD3RL0Dbj5Pw==",
         "profileId": "ACoAAA8cDmcB51f8Y0qMj042bVV7BNpm750zWwo",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHeO14T44cKdg/profile-displayphoto-crop_800_800/B4EZhRFki4GUAQ-/0/1753707075901?e=1781136000&v=beta&t=2PAzuaCmPOVZemMi897l0wRReCL1Vo-sGZUsndAbRAM",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH3mnfWgHMclQ/profile-displaybackgroundimage-shrink_350_1400/B4DZz_t1ABKEAY-/0/1773816737066?e=1781136000&v=beta&t=YZZVvmLW3MKmifghBDdbs5GeNfgB0___I0OvMVkWslM",
@@ -76,7 +73,6 @@
         "occupation": "Software Developer",
         "id": "450096743",
         "publicId": "zmijkova",
-        "trackingId": "iBOqA8iZTvW3Nw6ak98u8w==",
         "profileId": "ACoAABrT7mcBs7ie4r1nA4McNBK2tV0qfujA2v4",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFwmJejccKJYw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1604515688256?e=1781136000&v=beta&t=_OsPmbqF1GUuRnM81Ym5BJrwABb9dZxzXqQgibkJR-U",
         "distance": "OUT_OF_NETWORK"
@@ -95,7 +91,6 @@
         "occupation": "Weby, co odráží váš byznys, budí důvěru a přivádí poptávky",
         "id": "238887102",
         "publicId": "lukas-augusta",
-        "trackingId": "B2iSJS8NT1WCxO2Ib2jVkg==",
         "profileId": "ACoAAA49IL4BpJtVYx1BboztvnLcLHfXppO-3s0",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGEVM59ssrlaw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1559054329437?e=1781136000&v=beta&t=BgfNK30gjLTx_PwzzeiJANc8-iYD3V25P0J-Eo361Mg",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQH-WgrkgL9B1w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517154956897?e=1781136000&v=beta&t=6D1BMdPNBnPpNB41BSU0_pheu7QH46EWd2Broj9tsis",
@@ -115,7 +110,6 @@
         "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
         "id": "8517488",
         "publicId": "honzajavorek",
-        "trackingId": "oPSAUbhCRcqBGA+4N5CDhw==",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
@@ -132,7 +126,6 @@
         "occupation": "Head of Engineering",
         "id": "76115329",
         "publicId": "vachapetr",
-        "trackingId": "QhrxNy1lQz6jdwX+6+SI5g==",
         "profileId": "ACoAAASJbYEBMeOmhTR-EWaXg0q9HUTng5HCt9E",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGCiZVCJ_C1OA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1557674174077?e=1781136000&v=beta&t=BhlxGr50WWidcbX2Ie9bGUVi2zrduoaH7ODcwifpQcA"
       }
@@ -145,7 +138,6 @@
         "occupation": "Operations at Deutsche Börse",
         "id": "964302756",
         "publicId": "chrmzio",
-        "trackingId": "ediyCS8LSWiv+i9Q/HJAaA==",
         "profileId": "ACoAADl6F6QBE6fNUi80lVl0ieS-jVdRiXvXg70",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEzQbFP6ipzgA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1642508638000?e=1781136000&v=beta&t=_eZ5Y4p8SfjUh5ly8ypfrt8BetI5OU4BCU0xXLpVMp0",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEI8hMnu5JyiA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1674412735539?e=1781136000&v=beta&t=LQa4li_ZqG55Mq1ScHipmVoXwHL35JxjZazOs-ifQ-k"
@@ -159,7 +151,6 @@
         "occupation": "Content Specialist | SEO and Creative Copywriter s přesahem do UX ✍️ | S vášní ke Conversation Design 🤖 & Canva 🎨",
         "id": "713338970",
         "publicId": "zuzana-pitrikova",
-        "trackingId": "YO+tHvnxQxCVDXZSTvLGXA==",
         "profileId": "ACoAACqEsFoBSTGn1fEelv5QfIzsxuFjtuWGXLg",
         "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHyllKwg3fxiA/profile-framedphoto-shrink_800_800/B4DZwdOVSvIUAg-/0/1770016822832?e=1780430400&v=beta&t=-xAq6Wu9KjlvdZFSlSAU-KLdARnQUaiPO7pCfxaoe8Y",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFrWrMmxCxkag/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1680078894424?e=1781136000&v=beta&t=N_HGz-Mam9nAOgXh1Ra1t4qqDNCe7o9n5sdu3MQNXJ8"
@@ -173,7 +164,6 @@
         "occupation": "SOC L1 at Accenture",
         "id": "108205377",
         "publicId": "veronika-zykova",
-        "trackingId": "GRR0QrM4QVGFkM7UOZLlmg==",
         "profileId": "ACoAAAZzFUEBstg3AiDyWZ-x41PIEZ76czy8G_I",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFa0hRzOO_N4A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1696247750244?e=1781136000&v=beta&t=ggo73FRi0HTkdWMhg-gJX6OmZIxjQGSqGfrHPPqsdE4"
       }
@@ -186,7 +176,6 @@
         "occupation": "Java Developer",
         "id": "226081544",
         "publicId": "matěj-drbohlav-28886a63",
-        "trackingId": "OnTAuLSoQVifPXbV4xZLmw==",
         "profileId": "ACoAAA15uwgB3hEzaiddes3w50AFR1_ImKhpjH8",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQG5Ysa70IAgpA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1722327635241?e=1781136000&v=beta&t=2p5yKJ82VQ48-hmNG1i0v5yz7bJskkWqWD42Brtj65A",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFX8SAnXkxLSQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1618444004205?e=1781136000&v=beta&t=pKUsVypxtZq8XVjC8KIMLD025fwvZp_Xk-oWMQraHgY"
@@ -200,7 +189,6 @@
         "occupation": "Content specialist & strategist | Bitcoin | Fintech",
         "id": "320925517",
         "publicId": "dominikavykydalova",
-        "trackingId": "uIL1ABnYRi6hJtj0nlBohw==",
         "profileId": "ACoAABMg700BFHeNeaArW6j8e2CJC0ViRIMCnmo",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFQuzch_U5rOg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1713526160401?e=1781136000&v=beta&t=Gs3maXJyG8jjsKSLW59cpyczx26Xnxqtv9NuKOZqpjE",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFwYCyGxSUsuw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1702999292444?e=1781136000&v=beta&t=yHwPrQ8FQ0CaG7MWUEDVdcEPNjptWKW96qGi6yYOcqE"
@@ -214,7 +202,6 @@
         "occupation": "cyp",
         "id": "106076066",
         "publicId": "jiri-gunka",
-        "trackingId": "Pbsx4gu+TXOmiSmSlwCcbw==",
         "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGjycZdsqX9ww/profile-displayphoto-crop_800_800/B4DZjBYhBpGQAQ-/0/1755591087410?e=1781136000&v=beta&t=wVIgd5mwqIYPXpFj5d6Nr2x8-VHHyAZ4o1qWAcv4nhQ"
       }
@@ -227,7 +214,6 @@
         "occupation": "HR Manager v Pale Fire Capital | Head of HR v Aukro | HR consultant and mentor | #sharingiscaring",
         "id": "473833031",
         "publicId": "petranulickova",
-        "trackingId": "X3FczuMlRAaqKhmSsiI0jA==",
         "profileId": "ACoAABw-HkcBifENxX8nxAs2YjwxbI6b2XtAF98",
         "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHnKx1150QjzQ/profile-framedphoto-shrink_400_400/B4DZ5EYkX3J4Ac-/0/1779263751874?e=1780430400&v=beta&t=pWJ51Ntw0jR9QQT0pS0cVga8Y5H1PX6eMgBC8eZYwyo",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQExwjEQhQ99TA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1676378924015?e=1781136000&v=beta&t=rpomntKe5fPHScYScrE5n1-ok01d_UuxKpUPUaPI93g"
@@ -241,7 +227,6 @@
         "occupation": "Junior Data Analyst, AP Accounting, Reporting, Controlling",
         "id": "1136414018",
         "publicId": "milada-borrow",
-        "trackingId": "NGGgLGBoTcacI3+yM2jXlA==",
         "profileId": "ACoAAEO8TUIBAcDwMiytj9V95pkvE0KMj3HLGwM",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHtPYHyqKZqFg/profile-displayphoto-shrink_800_800/B4EZQ31swqGYAc-/0/1736103612242?e=1781136000&v=beta&t=tsnHFjjs4_eG1g2Bl0nBBP_S54jZZ-mT-0uRn82zJpE",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFo5GGOUYKtpQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1736105327386?e=1781136000&v=beta&t=HDY2bH_hjWCCCI9B6BhH5jXm9CCinTcnWcpt0iiEyuE"
@@ -255,7 +240,6 @@
         "occupation": "QA & Dev Partner · Testování (Playwright) · Vývoj a R&D · AI-assisted workflows · PHP / TypeScript · Náhradní plnění",
         "id": "704632132",
         "publicId": "vaclavpavek",
-        "trackingId": "OvJJnzZuTAe0c6+WiRgolw==",
         "profileId": "ACoAACn_1UQBnfI3OYdH8lCF4oBxmLa3oz1zD1w",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQG9z1zEF0V0Hg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1663778596225?e=1781136000&v=beta&t=zKcNDLVxpbsRD9VLouqJhsQXU3xtg4ZoXMczSD6soE0"
       }
@@ -277,7 +261,6 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "trackingId": "oPSAUbhCRcqBGA+4N5CDhw==",
     "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
     "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
     "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"

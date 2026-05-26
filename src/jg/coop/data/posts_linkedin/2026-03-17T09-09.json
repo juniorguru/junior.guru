@@ -5,7 +5,7 @@
   ],
   "isActivity": false,
   "urn": "urn:li:activity:7439598808755449856",
-  "url": "https://www.linkedin.com/posts/honzajavorek_p%C5%99ihl%C3%A1s%C3%AD%C5%A1-se-vzd%C3%A1len%C4%9B-na-server-m%C4%9Bn%C3%AD%C5%A1-nastaven%C3%AD-activity-7439598808755449856-wUlZ?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAACrQoogBzcO6PdHYllCLqPsl2uMapGCOPVg",
+  "url": "https://www.linkedin.com/posts/honzajavorek_p%C5%99ihl%C3%A1s%C3%AD%C5%A1-se-vzd%C3%A1len%C4%9B-na-server-m%C4%9Bn%C3%AD%C5%A1-nastaven%C3%AD-activity-7439598808755449856-wUlZ",
   "timeSincePosted": "2mo",
   "shareUrn": "urn:li:share:7439598807643758592",
   "text": "Přihlásíš se vzdáleně na server. Měníš nastavení, spouštíš příkazy. Klikáš. Hrabeš se v souborech. Hotovo, jede to! Nebo ne?\n\nPokud server funguje, ale vdechli jsme mu život „ručně“, čeká nás hned několik problémů:\n\n⌛️ Trvá to ddlloouuhhoo, dělá se to ppoommaalluu.\n🤔 Nikdo neví, jak jsme to udělali. Po týdnu to nevíme už ani my.\n👯 Nedá se to snadno zopakovat, pokud nastavujeme další server.\n🔄 Když se něco pokazí, nedá se to snadno zahodit a znova nahodit.\n🔬 Ruční postup se špatně audituje, nedají se v něm sledovat změny.\n\nŘešení? Infrastructure as Code. Zapíšeš postup do souboru v podobě kódu a chováš se k němu stejně jako ke kódu.\n\nPokud si děláš nějaký domácí projekt, můžeš si ho syslit na Raspberry Pi doma pod stolem a klidně to nastavovat ručně.\n\nPokud však začínáš v IT a chceš umět pracovat s produkčními servery a infrastrukturou, vědět něco o IaC je dnes nezbytnost. Skoro každá vážně míněná appka jede někde v cloudu, na mnoha mašinách.\n\nVe středu 18.3.2026 v 18:00 bude přesně o tomhle v našem online klubu pro juniory přednášet Štěpán Bechynský.\n\nŠtěpána možná znáš jako dlouholetého přednášejícího, ambasadora Microsoftu a nadšence do vzdělávání, odborníka na IoT, nebo jako vyučeného kuchaře, který rád vaří na komunitních IT akcích 👨‍🍳\n\nJestli chceš dorazit živě a pokládat Štěpánovi vlastní otázky, mrkni na junior.guru/events a připoj se zítra večer k nám na Discord. Budu se těšit!\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
@@ -20,7 +20,6 @@
         "occupation": "Account Technology Strategist",
         "id": "103505120",
         "publicId": "stepanbechynsky",
-        "trackingId": "6QvIKF6MQ36mi8sRCnbfSA==",
         "profileId": "ACoAAAYrXOABkIRTSLNDYbaZAeldcsTKFuxTueU",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEBeT0zDGWOgg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517608899027?e=1781136000&v=beta&t=1J3npwaTscbawiG1whXfqQhhUlomhPsJGD7AIYZe4Cw",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFpJetlj5F-Bg/profile-displaybackgroundimage-shrink_350_1400/B4EZXxHL19HgAY-/0/1743506949472?e=1781136000&v=beta&t=FRToPLLWfNn8N4rlq5ImJfEX80I2gYlFr2fqnn73M5s"
@@ -41,7 +40,6 @@
         "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
         "id": "8517488",
         "publicId": "honzajavorek",
-        "trackingId": "2rWXodWoTcyKdJX44a1IXA==",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
@@ -58,7 +56,6 @@
         "occupation": "Data Scientist | RPA & Intelligent Automation Researcher | PhD @ Agentic Automation | With a passion for Tech",
         "id": "407592919",
         "publicId": "petr-prucha",
-        "trackingId": "gQBj6pU2TVOFnEJ6fXQvYQ==",
         "profileId": "ACoAABhLX9cBafxsNLeuIq8JlG63jxNhJwDKpnI",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFjj4Xfwivc5Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517579405161?e=1781136000&v=beta&t=736KOiZh5wFz6syo-639xcXWoPt7RKPMGIfbGrTfLq8",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFfEUydh8vusQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1711110399398?e=1781136000&v=beta&t=OkHPWOL51-PXJZLHuapQ2LEG2Uh_Kb16hAtNIPMFXXw"
@@ -72,7 +69,6 @@
         "occupation": "Lead Cloud Engineer | Kubernetes & Cloud-Native Infrastructure | Tech Lead @ Whalebone | AWS & GCP | 10+ yrs DevOps",
         "id": "247876336",
         "publicId": "martin-kulich",
-        "trackingId": "UKSX1P0CQYqXgs1XG0udbg==",
         "profileId": "ACoAAA7GSvABMeDGxHg581ZY7f_uP-4VLHRUmQQ",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQH_9anUfUXWcg/profile-displayphoto-crop_800_800/B4DZxW2CfLHcAQ-/0/1770983533595?e=1781136000&v=beta&t=L9FrmOts0-kSveyo7ZZTmXePmOIXDBaEWTm54oRvtNE",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQF3tUsmb5bY8w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1727867805720?e=1781136000&v=beta&t=FtDc96sfuSXn6kiQiHXxPvIbKUqfUYxwB2aLjmuQJ1Y"
@@ -86,7 +82,6 @@
         "occupation": "🚀 Innovation | ⚙️ Automation | 💻 SW Dev | 🤖 AI | „Jsem Váš technologický partner.“",
         "id": "513948013",
         "publicId": "tomas-haubert",
-        "trackingId": "pbQv3v7mTaKp1GxrwAJFzg==",
         "profileId": "ACoAAB6iOW0BqcPkqv7x3yI1sylG9aFaHBbjRoc",
         "picture": "https://media.licdn.com/dms/image/v2/D4E35AQE5tHSbgUTUqw/profile-framedphoto-shrink_800_800/B4EZrRwEgyKkAg-/0/1764455631157?e=1780430400&v=beta&t=43EpR81-CmRPVIMJedzQOKYVmW74DnkOSkbAptp_irc",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHdYL7vFTrW4w/profile-displaybackgroundimage-shrink_350_1400/B4EZsCGUzmIIAY-/0/1765266774253?e=1781136000&v=beta&t=ZhieXSOq_ucvJdCT3KjJrlF7eF_PXgXPlu57lt1UEGE"
@@ -100,7 +95,6 @@
         "occupation": "Po téměř 20 letech ve strojírenství jsem objevil svět IT. Bylo to pro mě, jako když poprvé otevřete internet a žasnete, kolik nových informací Vám svět kolem nabízí.",
         "id": "117107557",
         "publicId": "salamanek",
-        "trackingId": "WlqkzUACTAe7sIWUkcxzmQ==",
         "profileId": "ACoAAAb662UB8Fk1x6YnfJ2zd6FiGd1MufWQHX4",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQH79rX-4PFuWw/profile-displayphoto-crop_800_800/B4DZv1YVS3KUAM-/0/1769348355897?e=1781136000&v=beta&t=qz7wJSjt1QpyuDbjjWEXFeAQVYCRHjIZB8WLS-B44Hc",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGpcpvY41hkfQ/profile-displaybackgroundimage-shrink_350_1400/B4DZuSPUYPHQAY-/0/1767685050422?e=1781136000&v=beta&t=na1vfEnFmlQ1ZugoYDPXRbQ29HOSzznNt8fU67vht40"
@@ -114,7 +108,6 @@
         "occupation": "Frontend Developer Trainee | JavaScript, TypeScript, React",
         "id": "1332351529",
         "publicId": "sotnar",
-        "trackingId": "IercBr0ETsqJmm3MgozClw==",
         "profileId": "ACoAAE9qEikBy98vuvk8guHa2u80sek2g2OsTAg",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQG3qBSJlgIxPg/profile-displayphoto-shrink_800_800/B4DZZuc6SJGsAg-/0/1745609795119?e=1781136000&v=beta&t=5ZFMG5FUW-5kixb_Pv4IUuIg9xopBonE30IK3X2vlcw",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFo0eIBRa-g5g/profile-displaybackgroundimage-shrink_350_1400/B4EZgYSXwvGwAo-/0/1752754127031?e=1781136000&v=beta&t=Q5Ucp8jzqpgYHx39qITWv0VhmXm7VyEoXpgMsAlqizw"
@@ -128,7 +121,6 @@
         "occupation": "Web Developer | Agentic Coding Orchestrator | Synthesist",
         "id": "561190816",
         "publicId": "simova-web-developer",
-        "trackingId": "c1Wd34uWSWmkiEHBAwI+1A==",
         "profileId": "ACoAACFzF6ABcKcRgmAClhtiHuhWkASqyvnYAec",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHh8hVWu7bwkw/profile-displaybackgroundimage-shrink_350_1400/B4DZvla8L3IAAY-/0/1769080613870?e=1781136000&v=beta&t=iCzNiT4yWFK6O7k6v1X2Dsism9uJrQQANKZ9PhLRgOQ"
       }
@@ -141,7 +133,6 @@
         "occupation": "Consultant at Adastra group",
         "id": "110804165",
         "publicId": "mareksykora",
-        "trackingId": "5A2zYhE5T4Srjop8jaOviQ==",
         "profileId": "ACoAAAaavMUBByKW0kFke0aUPuN7Luw9TeV8tes",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHRIos1z7hX_g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728631854958?e=1781136000&v=beta&t=LD9oBxSkqT00k0He-iclqUoFiY6Ar2P5tkayrlfb93Q",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH6k721Acv7Xg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1696580638496?e=1781136000&v=beta&t=DB-CQJXaGyHsmWx3sTCocRm0qAuahDa8cvp8laawfZA"
@@ -155,7 +146,6 @@
         "occupation": "Sitting kills.",
         "id": "340239742",
         "publicId": "jan-kuklínek-bbab4195",
-        "trackingId": "eTwtLjC7TJOGQFWJTEZSYw==",
         "profileId": "ACoAABRHpX4BrOHNYEbhnCcJ5L0cp3eSUM5rdhs",
         "picture": "https://media.licdn.com/dms/image/v2/D4E35AQEL3hhHyXfqmA/profile-framedphoto-shrink_400_400/B4EZd4CX2_HcAc-/0/1750065577684?e=1780430400&v=beta&t=tc7CKyeXxx2KROK26KVrx4DfSuBRtj4V4QCCWSnSfbA"
       }
@@ -168,7 +158,6 @@
         "occupation": "Solution Developer at Jigx",
         "id": "368513805",
         "publicId": "natália-rydzá",
-        "trackingId": "Ea+p3UFkTvyTRMpjRfNwcQ==",
         "profileId": "ACoAABX3Ew0BUHQbxGZpVNCtTpps5YdBDGUZhas",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHR_o0tloJxmA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1645438239518?e=1781136000&v=beta&t=ni2nTc7HDt1tXOjslE2kohLbGZx6ku1NF4tBt6UCD4Q",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHVNnoOlVU47Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1594664026995?e=1781136000&v=beta&t=zzGY7L1hKZWxBoIzImUY-24mYjgSH9jvJlOGCcRoUfA"
@@ -182,7 +171,6 @@
         "occupation": "SEO/UX Specialist at Webmium ✅ Aspiring Backend Developer at Home ✅",
         "id": "356811200",
         "publicId": "tomasmanhal",
-        "trackingId": "PW9aqDl4SrurZD7YczAvVQ==",
         "profileId": "ACoAABVEgcABhXssunqzWgZ32PhPvDuM7pOY7Sw",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGInNVdLygaYA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1643616498455?e=1781136000&v=beta&t=ZuyL6gCtMjtS2Bp5JitUt78VFkpsCsQXNtHO9yl9H4g",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGzLIim8zGACA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516975456614?e=1781136000&v=beta&t=6VFaoiFNvKKxzcGRnW_GTyGLSluSP2AQ71SpObNaKLo"
@@ -205,7 +193,6 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "trackingId": "2rWXodWoTcyKdJX44a1IXA==",
     "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
     "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
     "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"

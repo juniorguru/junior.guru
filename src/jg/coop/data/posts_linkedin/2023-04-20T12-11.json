@@ -5,7 +5,7 @@
   ],
   "isActivity": false,
   "urn": "urn:li:activity:7054788713536475136",
-  "url": "https://www.linkedin.com/posts/honzajavorek_a-je-to-doma-m%C3%A1te-podepsanou-smlouvu-na-activity-7054788713536475136-BYyd?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAF_J15MBzS12u6VE16sLLHw4FYwCsunT-QI",
+  "url": "https://www.linkedin.com/posts/honzajavorek_a-je-to-doma-m%C3%A1te-podepsanou-smlouvu-na-activity-7054788713536475136-BYyd",
   "timeSincePosted": "3yr",
   "shareUrn": "urn:li:share:7054788712743755776",
   "text": "A je to doma! Máte podepsanou smlouvu na junior vývojáře. Dostali jste šanci!\n\nCo teď? Jaké nástrahy vás od prvního dne čekají? Jak se dorozumět se seniory, kde číhají možné konflikty při práci v týmu, jak se přes všechen stres systematicky vzdělávat a proč vždycky zrovna vy budete muset měnit filtr v kávovaru?\n\nMartu znám díky skupince juniorek, které jsem měl na minulé konferenci WebExpo. Snažil jsem se je propojovat s co nejvíce lidmi. Kvůli tomu jsem nestihl moc přednášek, takže jsem se jich ptal, na co se mám podívat ze záznamu, co se jim líbilo. A stále se opakovalo jedno jméno, Marta K.! Kdo je tahleta Marta? Tu teda musím poznat!\n\nA je to tady, domluvili jsme teď přednášku i v klubu a moc se na ni těším. Marta je vystudovaná historička, žila několik let v Berlíně a většinu profesního života se věnovala event managementu. Svou cestu do IT začala s Digitální akademií od Czechitas. Na pozici frontendistky pracuje rok a půl, aktuálně v Lundegaard. Má zkušenosti jak s produktovým vývojem, tak s prací na projektech. Pokud se zrovna nehrabe v Reactu, tak miluje jízdu po německé dálnici 🇩🇪 🏎️ 🇩🇪\n\nMarta se v přednášce zaměří se na nejčastější situace, které juniory po nástupu čekají, pak na příkladech a nezdarech z praxe zkusíme společně s juniory v junior.guru/club probrat osvědčená řešení, a pak půjdeme na pivo. Přednáška bude online na našem Discordu, pivo bude v Praze v Karlíně.\n\nChcete být u toho? Klub je na dva týdny zdarma, tak si tam klidně udělejte účet a na přednášku se připojte.",
@@ -17,7 +17,6 @@
       "company": {
         "name": "WebExpo Conference",
         "universalName": "webexpo",
-        "trackingId": "qy5e+BcIQW6VB4vV5P5uXQ==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:923725",
@@ -34,7 +33,6 @@
         "occupation": "Frontend developer & Cybersecurity",
         "id": "1012518966",
         "publicId": "marta-k-586110243",
-        "trackingId": "IEjP74ZuTMyhJQUdwLTQ5g==",
         "profileId": "ACoAADxZ0DYBhgRxdaOMklaYfOCWKlHCxgpVXYI"
       }
     },
@@ -45,7 +43,6 @@
       "company": {
         "name": "Czechitas",
         "universalName": "czechitas",
-        "trackingId": "q5JXl6lRSh+UgW/s9db0KQ==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:5319681",
@@ -59,7 +56,6 @@
       "company": {
         "name": "Lundegaard",
         "universalName": "lundegaard",
-        "trackingId": "+04Wm2jnS1mcwB0JvXW+pA==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:104034",
@@ -83,7 +79,6 @@
             "occupation": "Frontend developer & Cybersecurity",
             "id": "1012518966",
             "publicId": "marta-k-586110243",
-            "trackingId": "IEjP74ZuTMyhJQUdwLTQ5g==",
             "profileId": "ACoAADxZ0DYBhgRxdaOMklaYfOCWKlHCxgpVXYI"
           }
         },
@@ -94,7 +89,6 @@
           "company": {
             "name": "WebExpo Conference",
             "universalName": "webexpo",
-            "trackingId": "Wk51kQJ4QXid5XI3m0LvtQ==",
             "active": true,
             "showcase": false,
             "entityUrn": "urn:li:fs_miniCompany:923725",
@@ -110,7 +104,6 @@
         "occupation": "Advisor - Tech for Leaders | Mentor | Speaker | Tech Community | Runner | Ex (VPE @ Deepnote | CTO @ Livesport)",
         "id": "120570106",
         "publicId": "burian-petr",
-        "trackingId": "ckazBscCTfmbpVsLNN4GZQ==",
         "profileId": "ACoAAAcvwPoBjeZqWYE1T4_f7PA5Z-Jm0TLmEaQ",
         "picture": "https://media.licdn.com/dms/image/v2/D5603AQFy9KHpc5EacQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728050281031?e=1781136000&v=beta&t=MF6t7UtT8oOSSyG7HkRurqWvPZdAp-OLKGNOpdUk9es",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFVhmEowfYyCw/profile-displaybackgroundimage-shrink_350_1400/B4DZoHUTAlJUAY-/0/1761059353505?e=1781136000&v=beta&t=leAKKsgmQ1qkucMibcfDOEIqTNv_pudvJ6A_UFfBNdU",
@@ -130,7 +123,6 @@
         "occupation": "Building Agentic Engineering Platform for production-ready apps. Generated, reviewed, managed, deployed by AI Agents.",
         "id": "653562608",
         "publicId": "bleedingdev",
-        "trackingId": "UcpqWK06TTWnrv+oXId96A==",
         "profileId": "ACoAACb0kvABzEvpATXhOiWBbEuq4yfGI43iXrc",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHNZ_n7usiMwg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1707307700521?e=1781136000&v=beta&t=s9M6CBtI9xCgMRzy9aH4Zm6vuRjYQFKYSrl_QlfPTvA",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEjlZvszJMk8g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1704724910587?e=1781136000&v=beta&t=3ATL2lQYqY066bQ-K-77LV1388hPiLUDuz3f2WEXABk",
@@ -147,7 +139,6 @@
         "occupation": "\"If you're going through hell, keep going\" - Winston Churchill",
         "id": "784772770",
         "publicId": "silvie-bardodej",
-        "trackingId": "BaB353d1Swa8eoUBWJ9aUA==",
         "profileId": "ACoAAC7GrqIBZbQWoo7ZEo1p3nSx4DX649YBP5I",
         "picture": "https://media.licdn.com/dms/image/v2/D4E35AQEmHWyj6NCAQw/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1731978376240?e=1780430400&v=beta&t=E0ptt_XfhJOAPQ-jBjBWdEdy22Ipsob2d8zpwvWPTIU",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF6P_ck-agLng/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1690483951593?e=1781136000&v=beta&t=_MB0-jbUzb7jhHgLjYr3nWBTFOq0WNx4KICSvksBkRk"
@@ -161,7 +152,6 @@
         "occupation": "I trnitá cesta může být ta, která Tě dovede k cíli.",
         "id": "1009361610",
         "publicId": "anna-procházková-376049242",
-        "trackingId": "aD2BW2MNSqSo9/0CQxdVKQ==",
         "profileId": "ACoAADwposoBVDQdpB7Q_K0CIrc3vQ_7557qStw"
       }
     },
@@ -173,7 +163,6 @@
         "occupation": "Asistentka pedagoga | Studentka Speciální pedagogiky | Tvořím vzdělávací materiály pro děti | Digitální dovednosti v podpoře vzdělávání",
         "id": "1078374215",
         "publicId": "veronika-foltýnková-19b18b261",
-        "trackingId": "iztT7iIDQhOsZMHRbJU96Q==",
         "profileId": "ACoAAEBGr0cBk81q9rtE37sUhPc8iBjPYXMJBWY",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGjzsV1-VFpmQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1705164279855?e=1781136000&v=beta&t=NbLHZ6rkyvMgbGnB2kxJdabW-L9KxtVMRWNirxee_Gs",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGXqSjMD10i7A/profile-displaybackgroundimage-shrink_350_1400/B4EZqOMqYFHgAY-/0/1763322277073?e=1781136000&v=beta&t=x6N6HC3-7iR3a_Xx2dFISN4tpED2dnWcL403dCk8O2w"
@@ -187,7 +176,6 @@
         "occupation": "Corporate Performance Management with focus on planning",
         "id": "1040508481",
         "publicId": "daniel-sochor",
-        "trackingId": "qpSk3F97QrWHGqJScx5eLQ==",
         "profileId": "ACoAAD4E5kEBLCHsDKLT1OEFHWgrps9u9uU2q28",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHBknVVikZ2eg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1663180049851?e=1781136000&v=beta&t=PBOkmAKLPdR0bFBr7k5dPM4uhu_JoUdQrlTWzMjJfTI",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEejJCzZWuZsQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1685560777271?e=1781136000&v=beta&t=RNbnuQoSoW1ssprXUZMs6PQgKnYwbuJmq8xSRRfIk4E"
@@ -201,7 +189,6 @@
         "occupation": "| Software Engineer at Volkswagen Group |",
         "id": "845017022",
         "publicId": "jakub-kasal-592bb21b6",
-        "trackingId": "wN1djPFbTcayDShocmrO+w==",
         "profileId": "ACoAADJd774BytLBxp_KEa914gMldSKh_vNswsE",
         "picture": "https://media.licdn.com/dms/image/v2/C5603AQF1fOVRlICfgQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1599641612487?e=1781136000&v=beta&t=_fXOK1EkB2-trFs1gLO-dKMiTdXmD_uV02BHtqd8D7Q",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQE-2hjk5N5hng/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1644318477750?e=1781136000&v=beta&t=A6WoIUI2gREwDgztZt4FOcwNTXcH-Voma0s7TznDQY4"
@@ -215,7 +202,6 @@
         "occupation": "IT & HR Networking",
         "id": "44250873",
         "publicId": "vierabohonkova",
-        "trackingId": "JwDhriJ8RDm+G2AbF3fevQ==",
         "profileId": "ACoAAAKjNvkBmXGpyp4SVHtKGXpOtLfcV1wUeyU",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFznpJJMcLRqA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516482250039?e=1781136000&v=beta&t=45C8z0C9WIwmLAZNSeGKzkppIpJsSYO_29TqKs5QPcg",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFpWYKz4CgP3g/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1735909426975?e=1781136000&v=beta&t=sUIGuZFRJfiDC5JlxxiymiiQLnlwl5X40fNmNpFTugY"
@@ -229,7 +215,6 @@
         "occupation": "Frontend developer | React | Typescript | Mentor",
         "id": "690320871",
         "publicId": "marketa-willis",
-        "trackingId": "EL/kyWQ6RYqUZicotiGGFQ==",
         "profileId": "ACoAACkldecB7E9DWErMM56bPMpJ3V49koGflx0",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG3JXouajtk3A/profile-displayphoto-crop_800_800/B4EZniD2GgIIAI-/0/1760434283625?e=1781136000&v=beta&t=jVTJ2DGVJj9_jUUmT-E7zLWHbH879vJP2kKfgNc8Nn8",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFCy4ekYHZ1aA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712246548670?e=1781136000&v=beta&t=QA3NpbJpEYHAFdBZwvhyaoukjEU7F6XWO0K5Mx2B41E"
@@ -243,7 +228,6 @@
         "occupation": "Head of Product Design at Alma Career",
         "id": "144257109",
         "publicId": "murinjan",
-        "trackingId": "+V7NyCofQKe0zVNMAol/TQ==",
         "profileId": "ACoAAAiZMFUBL4xWd6WdfVV1jYo14kq0dzv9byc",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE-Yh3DB5-8Cw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1685388360493?e=1781136000&v=beta&t=J_XXHibeBueTOPrxmigJQ1bQLuNxa8eR-2JeEFGjDY0",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEAx22c9mOv7w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1685390508775?e=1781136000&v=beta&t=lBrTXQ2890J3eK3oBU13Yy1ccfGc0Z-mYvk5sw4X6lg"
@@ -254,7 +238,6 @@
       "company": {
         "name": "Lundegaard",
         "universalName": "lundegaard",
-        "trackingId": "UbyJCoMXQauwNCVOwQ0HWA==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:104034",
@@ -266,7 +249,6 @@
       "company": {
         "name": "WebExpo Conference",
         "universalName": "webexpo",
-        "trackingId": "fpJ/x5cLQM+jr4ExNWsoNQ==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:923725",
@@ -290,7 +272,6 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "trackingId": "8vFVDakvS4qSc1EJocixUg==",
     "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
     "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
     "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"

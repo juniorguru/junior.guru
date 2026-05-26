@@ -5,7 +5,7 @@
   ],
   "isActivity": false,
   "urn": "urn:li:activity:7184275571894317057",
-  "url": "https://www.linkedin.com/posts/honzajavorek_github-linkedin-ios-activity-7184275571894317057-JaAB?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFsquNIBL-Bah7UT0aAl0gV3gz4HeyE43g0",
+  "url": "https://www.linkedin.com/posts/honzajavorek_github-linkedin-ios-activity-7184275571894317057-JaAB",
   "timeSincePosted": "2yr",
   "shareUrn": "urn:li:share:7184275570866712576",
   "text": "Dneska se mi povedlo v Junior Guru klubu spustit prototyp automatických zpětných vazeb na #GitHub profily. Mám z toho velkou radost!\n\nČlenové mohou na Discordu založit vlákno na zpětnou vazbu ke svému CV, LinkedInu, nebo GitHub profilu.\n\nKdyž si můj robot všimne, že tam je GitHub, projede sadu pravidel a dá člověku v komentářích zpětnou vazbu - pochvaly a doporučení.\n\nNechytí to logicky vše. Nijak to ale nebrání, aby další komentáře napsali živí lidé se svými postřehy.\n\nTohle je samozřejmě jen začátek. Plánuju přidat víc pravidel a do budoucna bych rád, aby šlo totéž udělat i s #LinkedIn profilem.\n\nMimochodem, na screenshotu mi jako modelka posloužila Pavla Beránková, která aktuálně hledá práci jako #iOS #Swift vývojářka 😉",
@@ -17,7 +17,6 @@
       "company": {
         "name": "Junior Guru",
         "universalName": "juniorguru",
-        "trackingId": "ZrauZDUFRt2quMFCg4tjog==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:26218444",
@@ -34,7 +33,6 @@
         "occupation": "PHP programátorka",
         "id": "549611439",
         "publicId": "berankova-pavla",
-        "trackingId": "Ba5Fj2M+RxarkQnKV2Y+gA==",
         "profileId": "ACoAACDCZ68BhDuYokjdegYmFm0rxSx_6Mlwh9c",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHdB_M5mbgLvQ/profile-displayphoto-shrink_800_800/B4EZWlkkyYGwAc-/0/1742239584099?e=1781136000&v=beta&t=4E-d3A5ZIGW5_uD8RTZEaal3lx_qCwWr-Y_k2yTOVVw",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHFjlgP9iU-Fw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0B6o8_KUAc-/0/1773853643504?e=1781136000&v=beta&t=s18xkVLJd-f21PM-R-ZSZaCgq-ojo7xkrzQ5x6cYHoE"
@@ -55,7 +53,6 @@
         "occupation": "Junior Python Developer who is looking for first IT job opportunity. Not from Prague, but I can take a train :-)",
         "id": "1057345779",
         "publicId": "sandra-heinzova",
-        "trackingId": "eLZ7CWDrSdedCniaoZMfMw==",
         "profileId": "ACoAAD8F0PMB3ls8oo2W-xuzIAVJuEfCRdY-hRA",
         "picture": "https://media.licdn.com/dms/image/v2/D4E35AQG1buFj3WhkeA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1694802245870?e=1780430400&v=beta&t=fusEgUt_11yt7zzmpsMQKPa5dZEUZi_K8mSnnn9W3MU",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEzfOWccavLaw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1668792881502?e=1781136000&v=beta&t=sowza4P_dhmD_Xv-E7CUJWWQY6FwcDWUKBu1zvP9DNY",
@@ -75,7 +72,6 @@
         "occupation": "PHP programátorka",
         "id": "549611439",
         "publicId": "berankova-pavla",
-        "trackingId": "nrNi9+cdRdyVgLQNGp0WaA==",
         "profileId": "ACoAACDCZ68BhDuYokjdegYmFm0rxSx_6Mlwh9c",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHdB_M5mbgLvQ/profile-displayphoto-shrink_800_800/B4EZWlkkyYGwAc-/0/1742239584099?e=1781136000&v=beta&t=4E-d3A5ZIGW5_uD8RTZEaal3lx_qCwWr-Y_k2yTOVVw",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHFjlgP9iU-Fw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0B6o8_KUAc-/0/1773853643504?e=1781136000&v=beta&t=s18xkVLJd-f21PM-R-ZSZaCgq-ojo7xkrzQ5x6cYHoE",
@@ -95,7 +91,6 @@
         "occupation": "⚛️ FE developer - Application SW Engineer",
         "id": "416963620",
         "publicId": "nikolen",
-        "trackingId": "OCbOeQ5fSj+DLW1/hTBSQw==",
         "profileId": "ACoAABjaXCQBlHaQQzH6IcpkDvnQBKdNnyXC-IY",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFsYpwgZIoFrg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693683002257?e=1781136000&v=beta&t=QR0B0WWPAMoMM7t8iEMA6hRR_dVUeXPf2BIAipk5H2A",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFi7q3Cb9nHTg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1732203022293?e=1781136000&v=beta&t=72AuWy2PRv8_o0F3yuZOB4WJwneTfC5GspdNvmkT5LY",
@@ -112,7 +107,6 @@
         "occupation": "Product & Tech Community Lead at Mews",
         "id": "677292059",
         "publicId": "jan-meissner",
-        "trackingId": "pWz8bidIQXq7F7JwYW45bg==",
         "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEEoMbY9urW6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728030316222?e=1781136000&v=beta&t=qIshYYWgkzBRoJGlT6oqlmeH3jlRiX8J_luFzaICydQ",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGei_PMH8ghyw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728030258130?e=1781136000&v=beta&t=GS9HgAFTdCMh-1xFx2xIDoLH91oMpSioaV6pV2ayQSY"
@@ -126,7 +120,6 @@
         "occupation": "\"It is a capital mistake to theorize before one has data.\" *cleaned data",
         "id": "775508820",
         "publicId": "nathalie-vecten",
-        "trackingId": "U+fWxzgkSgqRxh8qjQYs6g==",
         "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH5sSEbnQ2Tcg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1611936430673?e=1781136000&v=beta&t=wAQsj8dSBDe6L3xt1MwxMahW3aP-D6LcuvT-utzij6s",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHDKxhi18V0lw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1599638080880?e=1781136000&v=beta&t=5JiWefMiJff9VXnKXxoAOOrnUYNFE4fW7AQAgJac6VA"
@@ -140,7 +133,6 @@
         "occupation": "Full-Stack Developer",
         "id": "938385327",
         "publicId": "dazarian",
-        "trackingId": "6PtMmdlCTkuObkb80+5svw==",
         "profileId": "ACoAADfun68BDarNP202WsOH-qKeExpXZQZc2bw",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE_LdtvMDdQIg/profile-displayphoto-crop_800_800/B4EZe7kEqyG4AI-/0/1751198485741?e=1781136000&v=beta&t=tMPf_sGMqX2QZ1O8ONOgH6tk4ktPsB7LcA88qnSHjvY",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEwOiSoaZDExQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1713611219473?e=1781136000&v=beta&t=-OqIez7iPNG2qT3z2R_gKrdBoO_ndhbc7IqJicCpduU"
@@ -154,7 +146,6 @@
         "occupation": "Java developer",
         "id": "1241635495",
         "publicId": "petra-mičudová",
-        "trackingId": "LRc8HMB8Q1S62vnWqdt3Uw==",
         "profileId": "ACoAAEoB2qcBgMYH6h4Vsqv3jP0HxAMhyEBhYE8"
       }
     },
@@ -166,7 +157,6 @@
         "occupation": "--",
         "id": "319300011",
         "publicId": "cuninka-pavol-123b248a",
-        "trackingId": "Oq4yKNgIRDGD9k9Azy6lSw==",
         "profileId": "ACoAABMIIasBIlN5QGLkdvdEUWoBqcODesJU7Yc",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG92K4nmJY3bQ/profile-displayphoto-crop_800_800/B4EZlskoHYKYAM-/0/1758463165787?e=1781136000&v=beta&t=IfM55MMro3uikZC9dEseLagFg2NztRrvh-dFhiGQcyk"
       }
@@ -179,7 +169,6 @@
         "occupation": "Life is constant learning. I love to learn, I love to live.",
         "id": "205470496",
         "publicId": "lenkakasova",
-        "trackingId": "4TUi95+7R9qFnBg4sPbmTg==",
         "profileId": "ACoAAAw_OyABe8YQoil3Fwg8JuRqMRonGMie6wk"
       }
     },
@@ -191,7 +180,6 @@
         "occupation": "Junior QA Engineer 🔍🐞✅ | Tech optimist & AI enthusiast 🤖",
         "id": "795260687",
         "publicId": "davidoubrecht",
-        "trackingId": "u7AoWYoTTsCyU61zKNYiRg==",
         "profileId": "ACoAAC9mtw8BvQVeNph6BE12XoSe1tCInK04pw4",
         "picture": "https://media.licdn.com/dms/image/v2/D4E35AQGcQryRK-8v1g/profile-framedphoto-shrink_800_800/B4EZWq042kGwAg-/0/1742327746250?e=1780430400&v=beta&t=gxXoC144jDTNKW2kFdqMjMh-ZyST4yOCVRhvrL-9FqA",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEqoXwOkY2VIQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1737746725588?e=1781136000&v=beta&t=qzIaQl-2A_Jau9PoAyR0Gtr-1xpIDDo-oYWP3TppRRI"
@@ -205,7 +193,6 @@
         "occupation": "Senior Web Automation Engineer at Apify",
         "id": "612939285",
         "publicId": "lukáš-křivka-299332151",
-        "trackingId": "hYh/NrXYQUCjB5bBIhsVMg==",
         "profileId": "ACoAACSIthUBQ8RNJOfNbhKsWyyhDgj4NYHHXr8",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGhyvm_rH7UrQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704999263972?e=1781136000&v=beta&t=aBt26P-8qo5wY_KqN7hM-Y75JuoFJ8L7HC5QHLjI4g8",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQH5JoOSfIov9Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1620303067819?e=1781136000&v=beta&t=fRUtckTJ5Jd-ZB4l_baVc0WtiKXDDTiV5oPzAA1ey7c"
@@ -219,7 +206,6 @@
         "occupation": "_",
         "id": "816240861",
         "publicId": "m-mizova",
-        "trackingId": "a3RyC8jASRywQ+YzbpFXYg==",
         "profileId": "ACoAADCm2N0B79TKOzWlcBcqKxmSyXU4skAOMuQ",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEuqaqU6RSkhQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1689241087850?e=1781136000&v=beta&t=qb3LMacpCRSgoyehksmxaLP4zAMxPa8ZhXu3ICb2bv4",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE-4g1_N8iaWg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1689247350756?e=1781136000&v=beta&t=KtXfZq-e7dXcP2yt11PnUU_sBjxMzOqcCULj8OXddNo"
@@ -233,7 +219,6 @@
         "occupation": "Helping people to become junior frontend developers",
         "id": "15446232",
         "publicId": "danielsrb",
-        "trackingId": "dInnA+yWT0m8a51IkAyLXw==",
         "profileId": "ACoAAADrsNgBFfAixAgw_mCw8WtR9SeNIvEEI8Q",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFL6A1muu1_iQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1664815242443?e=1781136000&v=beta&t=gZsiQuDXYR8uuO_-68JdcJFp1nRVo6I7-iaOUDh1GRk",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEojxUy1Cz5oQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1623442956553?e=1781136000&v=beta&t=hWIAatMfNTIgw4JUStqCUqVs88aKCIf5jtDxqtS-BHg"
@@ -256,7 +241,6 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "trackingId": "n6hg3F6JQo6qQw95WaJoWA==",
     "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
     "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
     "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"

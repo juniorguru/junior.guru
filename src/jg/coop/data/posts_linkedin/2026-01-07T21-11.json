@@ -25,7 +25,6 @@
           "occupation": "Sitting kills.",
           "id": "340239742",
           "publicId": "jan-kuklínek-bbab4195",
-          "trackingId": "tcDWwliNT1eUKMd9wsrq0w==",
           "profileId": "ACoAABRHpX4BrOHNYEbhnCcJ5L0cp3eSUM5rdhs",
           "picture": "https://media.licdn.com/dms/image/v2/D4E35AQEL3hhHyXfqmA/profile-framedphoto-shrink_400_400/B4EZd4CX2_HcAc-/0/1750065577684?e=1780430400&v=beta&t=tc7CKyeXxx2KROK26KVrx4DfSuBRtj4V4QCCWSnSfbA"
         }
@@ -38,7 +37,6 @@
           "occupation": "Product Owner & Dad | Building great products, raising great humans",
           "id": "283596586",
           "publicId": "fusatytata",
-          "trackingId": "01HOI7byTo6EjYx1GI4xfA==",
           "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k",
           "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEP3Q4BtiThDA/profile-displayphoto-shrink_800_800/B4EZc_c90wHIAc-/0/1749116247942?e=1781136000&v=beta&t=_QtTBgXEBbo6wLgAeAyA_Vwe266kRM2rafjtUTqdQ18",
           "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFllW8t92LUXg/profile-displaybackgroundimage-shrink_350_1400/B4EZkO0XOcHEAY-/0/1756890233024?e=1781136000&v=beta&t=BcgfXCQP09cdXXYAi_lrlRlt4F-p0U2rPgEazsl9SeQ"
@@ -52,7 +50,6 @@
           "occupation": "Embedded Software Engineer",
           "id": "310084643",
           "publicId": "martin-zmijka-16ba1b87",
-          "trackingId": "Om2Oex3WSXO0h3B4RUF5SA==",
           "profileId": "ACoAABJ7hCMBqOqZ5C56x3J30fORokP1ESLFDkI",
           "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGANQLay2kINA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725365493629?e=1781136000&v=beta&t=Z7kMGz2_y51GA7U3BbMxkSyxNIImmZZ-Uuqfw-Qkxms"
         }
@@ -65,7 +62,6 @@
           "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
           "id": "8517488",
           "publicId": "honzajavorek",
-          "trackingId": "8kK7Lz+IT/+Y3kIdmGHMTQ==",
           "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
           "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
           "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
@@ -79,7 +75,6 @@
           "occupation": "Senior Bioinformatics Scientist | Genomics, NGS data analysis, Precision medicine",
           "id": "722443405",
           "publicId": "martina-zátopková-phd-811b40181",
-          "trackingId": "xJMFyyx9QhikvYVEGv6sYw==",
           "profileId": "ACoAACsPnI0BB3OkkGhDENMlJdeckoL3FHPc_nw",
           "picture": "https://media.licdn.com/dms/image/v2/D5603AQEFYZMAJevEzQ/profile-displayphoto-crop_800_800/B56Z0K3HamJgAI-/0/1774003714367?e=1781136000&v=beta&t=gh63X9VdVifNoWwBd7Nc2WIAxdepm_UXlhNv1dwQJ40",
           "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQErLtl3_SaPPA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1627904628440?e=1781136000&v=beta&t=tbaxgKpbKe5De1CHb6WJ95gcxLOHjYlnXD7fbd_XJ5I"
@@ -102,7 +97,6 @@
       "occupation": "Software Developer",
       "id": "450096743",
       "publicId": "zmijkova",
-      "trackingId": "xEH9YI5SQEeY9c1gLuQ9QQ==",
       "profileId": "ACoAABrT7mcBs7ie4r1nA4McNBK2tV0qfujA2v4"
     },
     "authorProfileId": "zmijkova",
@@ -115,7 +109,7 @@
   },
   "isActivity": false,
   "urn": "urn:li:activity:7414775796646526976",
-  "url": "https://www.linkedin.com/posts/honzajavorek_python-pizza-ostrava-activity-7414775796646526976-rvFW?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAER_BBABGhA9dGZybaazDxY9GE7jgGPFMtc",
+  "url": "https://www.linkedin.com/posts/honzajavorek_python-pizza-ostrava-activity-7414775796646526976-rvFW",
   "timeSincePosted": "4mo",
   "shareUrn": "urn:li:share:7414775796113874944",
   "text": "Poslední možnost přihlásit si přednášku na Python Pizza v Ostravě!",
@@ -130,7 +124,6 @@
         "occupation": "Senior Software Developer",
         "id": "53544825",
         "publicId": "arturczepiel",
-        "trackingId": "2+5R17UiR7aWBZJPaiiMmA==",
         "profileId": "ACoAAAMxB3kBq42ivkWQ70yUH8Ipe_ycJbZw9gg"
       }
     },
@@ -142,7 +135,6 @@
         "occupation": "Security Management | 16 Years in Public Safety | Operations & Administration",
         "id": "1490386548",
         "publicId": "lukáš-názer-270164357",
-        "trackingId": "87rdfVyxRqiOK8c26VRBhg==",
         "profileId": "ACoAAFjVfnQBRiWDVYgeRaVNR9CkNSlnACEsxsY",
         "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHXiTp76wTrAA/profile-framedphoto-shrink_800_800/B4DZ3BlJh2G4Ag-/0/1777069234603?e=1780430400&v=beta&t=8Tb6p9FTg2cUQNp6Qt9BY4bFRPxPxDwzlMaM_a_e4dM",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGRmdKcLOO4mQ/profile-displaybackgroundimage-shrink_350_1400/B4DZuduYc0KoAc-/0/1767877741572?e=1781136000&v=beta&t=-r1YEOtb84pQij6od76GCRY8-7ltn8jMw_JGF8sYxdA"
@@ -156,7 +148,6 @@
         "occupation": "Product Owner & Dad | Building great products, raising great humans",
         "id": "283596586",
         "publicId": "fusatytata",
-        "trackingId": "01HOI7byTo6EjYx1GI4xfA==",
         "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEP3Q4BtiThDA/profile-displayphoto-shrink_800_800/B4EZc_c90wHIAc-/0/1749116247942?e=1781136000&v=beta&t=_QtTBgXEBbo6wLgAeAyA_Vwe266kRM2rafjtUTqdQ18",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFllW8t92LUXg/profile-displaybackgroundimage-shrink_350_1400/B4EZkO0XOcHEAY-/0/1756890233024?e=1781136000&v=beta&t=BcgfXCQP09cdXXYAi_lrlRlt4F-p0U2rPgEazsl9SeQ"
@@ -170,7 +161,6 @@
         "occupation": "Copywriter pro technologické firmy, vědecké organizace a další „složité“ obory 👉 tomassoukup.cz",
         "id": "305561966",
         "publicId": "tomas-soukup",
-        "trackingId": "XWrbUiy/SWKyZyFzVH1Qgw==",
         "profileId": "ACoAABI2gW4BgZGgFR7Mosk1ebIoWD75Wf9XaQM",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEy_s3x6PeEDw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1537297906779?e=1781136000&v=beta&t=qwLRVfSQe5zXIPFdrxrwffYzNtDe0IywklIv93BZRAs",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFv_5SG4Wr7OA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686099891477?e=1781136000&v=beta&t=gNpLjSee7dukOw_4lXL6jEeo95czXukXqc3H2VC_T6E"
@@ -184,7 +174,6 @@
         "occupation": "Software Developer",
         "id": "450096743",
         "publicId": "zmijkova",
-        "trackingId": "N5TlFB7+RW+InGFALxdOdA==",
         "profileId": "ACoAABrT7mcBs7ie4r1nA4McNBK2tV0qfujA2v4"
       }
     },
@@ -196,7 +185,6 @@
         "occupation": "Lead Backend Engineer | Helping Tech Talent & Employers Find Each Other",
         "id": "834445375",
         "publicId": "mohamad-shahkhajeh-7675541b3",
-        "trackingId": "2PAIjpwYQ5yhDdI3wfe2nQ==",
         "profileId": "ACoAADG8oD8BU4tTj6kx3ujMHxnayAEY05kxejE",
         "picture": "https://media.licdn.com/dms/image/v2/D5603AQHlI0t4gIMWmQ/profile-displayphoto-crop_800_800/B56Zs8HaEyHYAM-/0/1766240136346?e=1781136000&v=beta&t=x6KlcrS7e1QgWLti60lq5q88l6CpSinQnhkjs-Dj4zo",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHHJNPdkAKNKg/profile-displaybackgroundimage-shrink_350_1400/B4EZw2hgayKgAY-/0/1770441280367?e=1781136000&v=beta&t=S5g3QSiYajs1D_yxjMg7FRZTave69Uvj0fTLcEmKdDQ"
@@ -210,7 +198,6 @@
         "occupation": "Senior solution architect in Grafana labs | Otel contributor | Observability",
         "id": "768592104",
         "publicId": "jurajmichalek",
-        "trackingId": "DlhFLT9yR8GwpDcCsDD/iw==",
         "profileId": "ACoAAC3PyOgBb4HFM5lyN5iAQL5sb1cUPQKrBzY",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGrfTDMzvIDZw/profile-displayphoto-shrink_800_800/B4DZU4SgmAG8Ac-/0/1740406131431?e=1781136000&v=beta&t=WgS4YyfEXB1t3Uw6IlRBoc57tzdkSOd3MHwJsCJpk3M",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGOL_nfGL5Skw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1573900341816?e=1781136000&v=beta&t=TxOv7jt7pubotbIc9fgYfGqGoH6jK17tA2PQyrL6RGY"
@@ -233,7 +220,6 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "trackingId": "ev6iCo4+RxG/mk/FcONH4w==",
     "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
     "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
     "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"

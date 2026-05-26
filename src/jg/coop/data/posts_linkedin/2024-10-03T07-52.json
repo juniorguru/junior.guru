@@ -5,7 +5,7 @@
   ],
   "isActivity": false,
   "urn": "urn:li:activity:7247513830400913412",
-  "url": "https://www.linkedin.com/posts/honzajavorek_ai-nlp-ai-activity-7247513830400913412-U3_M?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC5xzM4BJP0fU1EipQeXhz-Llr0DjJ4Q1_I",
+  "url": "https://www.linkedin.com/posts/honzajavorek_ai-nlp-ai-activity-7247513830400913412-U3_M",
   "timeSincePosted": "1yr",
   "shareUrn": "urn:li:share:7247513829138477056",
   "text": "Ode dneška umí junior.guru/jobs filtrovat i podle technologií. Konečně! Tohle určitě potěší Patrik Kulíšek, který mi minule psal, že tohle mi tam chybí.\n\nZvažoval jsem tři různé technologie.\n\nBuď #AI, které by to zvládlo, ale za cenu vendor lock-inu, velkého množství spálené elektřiny, a probrnďěných peněz. A dle mých pokusů to ani nefungovalo příliš spolehlivě, byť by šlo samozřejmě asi ještě doladit prompt a tak.\n\nDalší možností bylo #NLP. Kamarádi mi s tím radili a Jan Smitka připravil i proof of concept, jak by to mohlo vypadat pro češtinu. Nakonec jsem však přece jenom usoudil, že i tohle je kanón na vrabce. Nechám si to do budoucna jako možné vylepšení, ale na minimal viable product je to na mě zbytečně složité.\n\nTakže jsem skončil u toho, co vás asi všechny, kdo tomu trochu rozumíte, napadlo jako první: u regulárů. Ty jsem dříve používal na analýzu textu a třídění inzerátů na juniorní. Bylo to peklíčko. Zvlášť když tam mám inzeráty v EN, CS, i SK, a ve dvou z těch tří jazycích se skloňuje. Díky za to, že tohle za mě dnes už dělá ta #AI, tam se její použití fakt vyplatí a úspěšnost i údržbu má určitě lepší.\n\nUvidím, jak to půjde. Identifikace technologií v textu není nakonec zas taková raketová věda, a možná ty reguláry budou v tomto případě stačit, budou relativně udržovatelné, a nezačnou se hned rozpadat. \n\nPokud najdete nějaké špatně zařazené inzeráty, budu rád, pokud mi dáte vědět!",
@@ -20,7 +20,6 @@
         "occupation": "Za každou jedničkou a nulou stojí člověk. Je proto důležité, abychom si sedli",
         "id": "520276094",
         "publicId": "patrik-kulíšek-8522a5126",
-        "trackingId": "aDSI5t2pSFOqOPnQIwbzag==",
         "profileId": "ACoAAB8CyH4Bd8Zju7YmWk5uiAPBZbYIPoHHDhk",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQG-FYnyb4zZgQ/profile-displayphoto-crop_800_800/B4DZrus1B4HwBQ-/0/1764941320873?e=1781136000&v=beta&t=kYGd8F7uKxhfwqNsw06Rfv3txf0luEFIDr75z60ZemA",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFo4DwvU5v_Sw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1722771230765?e=1781136000&v=beta&t=cb9JHgTYkNVP01rywG6jj6CmK0Ys18EBQxf74NtibSE"
@@ -36,7 +35,6 @@
         "occupation": "Jednatel a hlavní vývojář ve společnosti Lynt services s.r.o.",
         "id": "168895566",
         "publicId": "jansmitka",
-        "trackingId": "/aqyNyEASDePwIBAGp89qw==",
         "profileId": "ACoAAAoRJE4Bjmma9aS7-73aC8rDSnolGABplHI",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFcn03WF1N0SQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1530110218068?e=1781136000&v=beta&t=gf3PGX86o9bnADGKw7fI1ZhuHC7DCxvFg8ZUaaMdoY8",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEKX9Xz9v4WQw/profile-displaybackgroundimage-shrink_350_1400/B4DZXsY9l.HIAc-/0/1743427722121?e=1781136000&v=beta&t=Ln5sVsGt_yhLk5f3KRKKBSQnDj441BpLVf_wayNJFdA"
@@ -53,7 +51,6 @@
         "occupation": "Java developer",
         "id": "676009075",
         "publicId": "lucie-bazantova",
-        "trackingId": "avoUfX1kRYaoSkQFBCaAYA==",
         "profileId": "ACoAAChLFHMBLTUfznOstW4m9izh5f6LiLiPA74",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGSrYowf5ucdg/profile-displayphoto-shrink_800_800/B4EZQOobZNGcAk-/0/1735412267182?e=1781136000&v=beta&t=LR4cPyUm9GJ2hcvj1QYEtmJVoeDntgZjWbvBJWnq6jg"
       }
@@ -66,7 +63,6 @@
         "occupation": "Product Owner & Dad | Building great products, raising great humans",
         "id": "283596586",
         "publicId": "fusatytata",
-        "trackingId": "HzoSstchSFKVUY4AAnTX4A==",
         "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEP3Q4BtiThDA/profile-displayphoto-shrink_800_800/B4EZc_c90wHIAc-/0/1749116247942?e=1781136000&v=beta&t=_QtTBgXEBbo6wLgAeAyA_Vwe266kRM2rafjtUTqdQ18",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFllW8t92LUXg/profile-displaybackgroundimage-shrink_350_1400/B4EZkO0XOcHEAY-/0/1756890233024?e=1781136000&v=beta&t=BcgfXCQP09cdXXYAi_lrlRlt4F-p0U2rPgEazsl9SeQ"
@@ -80,7 +76,6 @@
         "occupation": "Des réseaux aux serveurs, rien ne m'échappe. Technicien informatique polyvalent, toujours prêt à relever tous les défis. Cofondateur du premier fablab à Chambéry.",
         "id": "592263015",
         "publicId": "juraj-krc-turba-973420146",
-        "trackingId": "gjaLE5uzQ/6WG7+5UQJooA==",
         "profileId": "ACoAACNNN2cBLpwqU4yuSOu603yho5Ro1RLH5JA",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG1tm10KobJJA/profile-displayphoto-shrink_800_800/B4EZVmFeA7HMAc-/0/1741174465136?e=1781136000&v=beta&t=flp9rm8mUB364pm-jADsOD3ipaWTcp8lGmgNOowvNAU",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFp_H9bjErXgw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736716641788?e=1781136000&v=beta&t=mX2uRfkm7Gn4LEu-uj-RnO-vqqHq9e8llJo8CO4_U9s"
@@ -94,7 +89,6 @@
         "occupation": "#OpenToWork | Junior Frontend Developer | TPP",
         "id": "251923843",
         "publicId": "juraj-solarml",
-        "trackingId": "ImalutyqRjCUnoHqakGOFw==",
         "profileId": "ACoAAA8EDYMBLxIGFkvtfI1Vro-yXMPpfVNdT9s",
         "picture": "https://media.licdn.com/dms/image/v2/D4D35AQEAmJI339Vvmg/profile-framedphoto-shrink_800_800/B4DZx78YZzGQAg-/0/1771605952455?e=1780430400&v=beta&t=lY8G_gK3n7YjM5kRzkz-MV87VTPRrjuvO4_cROBLdfs",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHj4A2nngY-ag/profile-displaybackgroundimage-shrink_350_1400/B4EZch4U_UHsAY-/0/1748620104532?e=1781136000&v=beta&t=EivcfHIkHGo-jruKICbLZIQ3a-uMjiHBKUKN8r0Hn5k"
@@ -108,7 +102,6 @@
         "occupation": "QA Tester",
         "id": "211922396",
         "publicId": "maier-marian",
-        "trackingId": "T5ijexPlSUejdwzEvFSS0Q==",
         "profileId": "ACoAAAyhrdwBJrYY4denHAuigiNfrG3zMizOAx8",
         "picture": "https://media.licdn.com/dms/image/v2/C5103AQExeOdpIjUadQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517422144783?e=1781136000&v=beta&t=3X84PMn2OBvWvj9tBccLmJdKTtt-fVvHTK-O3KMRk-Y",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFwWF3POGgY3w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1708167593098?e=1781136000&v=beta&t=Z0iE8r4NhIzp9uqmEtyoq2PVyXo7cqTqqykwOAozYdk"
@@ -122,7 +115,6 @@
         "occupation": "Talent Sourcer @ SentinelOne.ai | The Future of CyberSec will be determined by You - let’s Secure Tomorrow™ together! 🛡️👾 | In 💜 with s1.ai/PurpleAI | 🕵️‍♂️ CyBeer security meetups organizer",
         "id": "322518163",
         "publicId": "vaclavkotyk",
-        "trackingId": "KDirzVAISpmXppbthGPylg==",
         "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0",
         "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHSFfNAAQ3ojA/profile-framedphoto-shrink_800_800/B4EZb.aDPLHAAs-/0/1748024964389?e=1780430400&v=beta&t=IvlxsfQQdb8KqO1QvRvDLxo7b9-V1Qrgz29nKWhJehw",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG_GZHPXo_drQ/profile-displaybackgroundimage-shrink_350_1400/B4EZhWDO5THEAY-/0/1753790347174?e=1781136000&v=beta&t=TTJXtHJi0vF694Nao68XfleeSQJvzU06We8EI4GVwQI"
@@ -136,7 +128,6 @@
         "occupation": "Technology Specialist ve společnosti Unipetrol Group",
         "id": "847965116",
         "publicId": "jakublansky11",
-        "trackingId": "b57iAVoiS8ixfQx/1F+6uA==",
         "profileId": "ACoAADKK67wBNatsYVzuhMrJMsoTV9FGGSglmmI",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHLaUXjsmeTMw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1602139979601?e=1781136000&v=beta&t=utzA7blmqsRkN-xNfgzBxzDwiYB_IbR-44rDm_pXpbw"
       }
@@ -149,7 +140,6 @@
         "occupation": "sbírám 🧩 sepisuji ✍️ strukturuji 🗂️ informace. Pro pochopení 🧠 pro změnu 🔄 pro vývoj 🚀 Aby vše ladilo 🎶",
         "id": "314544836",
         "publicId": "marta-machova",
-        "trackingId": "WrrK431xTWm5lrvSDG35Hg==",
         "profileId": "ACoAABK_ksQB1VsrnF-0oTEeZq94HvUuXWHH9YY",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFc7r-SYTy92g/profile-displayphoto-crop_800_800/B4DZ0eoWO4J4AI-/0/1774335387774?e=1781136000&v=beta&t=RBS56wKEMHD9-8OCTENXZvbc412JTDEvJKLdF-b6mkQ",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEHPho-WKgevg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1715866704294?e=1781136000&v=beta&t=m5hwgNm2uNGgy6X72pdL_43xq0yjHmcezWE9vKBShsw"
@@ -163,7 +153,6 @@
         "occupation": "CRM Consultant | Microsoft Power Platform | Dynamics 365",
         "id": "1358959389",
         "publicId": "petrhrub",
-        "trackingId": "S6ZPLJgRT3KE+L56Ek5E+Q==",
         "profileId": "ACoAAFEAEx0BvsMs99RfcvuI0UkI_quaCrDJBlI",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHB-pCON-sEag/profile-displayphoto-shrink_800_800/B4EZbJgLsaHMAk-/0/1747137379624?e=1781136000&v=beta&t=OXUiKZYnOTxkv_UE8F1SfQQGs-sCzSJtBGuMED30MEo"
       }
@@ -176,7 +165,6 @@
         "occupation": "Certificated Junior QA, who see bugs all around us.",
         "id": "426277004",
         "publicId": "timotejpap1991",
-        "trackingId": "BsoWKTT4QXCQBNYcKe3pXA==",
         "profileId": "ACoAABloeIwBn68Hwm1OhvQ6DprQgtVrvqqJlkA",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHtRC-4rOJ8Cw/profile-displayphoto-crop_800_800/B4EZjQeExDHgAI-/0/1755844206711?e=1781136000&v=beta&t=OQccJdVdKbeBTDEb13yHFSemPqEBnMtrBqLAebPPSqo",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQFuddm1BxfzRA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1677093659097?e=1781136000&v=beta&t=VL83Ic9oNjPXiZ0lsLTdm_wd3EPt3R47zHCQGYWB7KY"
@@ -199,7 +187,6 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "trackingId": "40q31q08TdShynYingKIvg==",
     "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
     "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
     "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"

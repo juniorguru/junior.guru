@@ -5,7 +5,7 @@
   ],
   "isActivity": false,
   "urn": "urn:li:activity:7105552838948216832",
-  "url": "https://www.linkedin.com/posts/honzajavorek_python-activity-7105552838948216832-F7B0?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC7GnRMBMhdlttE134OhzG7Qpm095a9yeJ4",
+  "url": "https://www.linkedin.com/posts/honzajavorek_python-activity-7105552838948216832-F7B0",
   "timeSincePosted": "2yr",
   "shareUrn": "urn:li:share:7105552837836726273",
   "text": "Tak co, těšíte se na PyCon CZ? Začne to už 15.9., za pár dní! Po letech s covidem konečně pořádný celorepublikový cirkus #Python komunity 🎪 Letos s významnou přítomností juniorů a všech, kdo jim chtějí pomáhat 🐣\n\nK přednášení se nám povedlo motivovat spoustu členů Junior Guru klubu a další budou v publiku, z čehož mám velkou radost. A samozřejmě se nemůžu dočkat, až zase uvidím všechny kamarády z Python komunity. A až se to všechno promíchá a propojí a v noci budem všichni společně brnkat na ukulele 🥹\n\nJedna z věcí, na které se v rámci konference podílím, je tahle panelová diskuze, která je naprosto nabušená! Vymyslela to Mia Bajić, tak si to i hezky odmoderuje, a jako další účastníci se tam nechali přitáhnout\n\n😛 Sarka Melicharova, lingvistka ozbrojená Pythonem a čerstvá juniorka, která si zrovna našla první práci,\n💪 Lucie Tvrdíková, která na LinkedIn popisuje, jak těžko si testeři hledají první práci, \n🍎 a Roman Hraška alias yablko, věhlasný tvůrce kurzů a srandiček na YouTube, který dlouhé roky pomáhá lidem do IT.\n\nJaké jsou nejčastější mýty a stereotypy spojené s IT? Jak se mýty a stereotypy o IT projevují v pracovním prostředí? Jak můžeme přispět ke změně a překonat předsudky? To všechno prý proberem! Tak dojděte, lístky se ještě prodávají 😎",
@@ -17,7 +17,6 @@
       "company": {
         "name": "PyCon CZ",
         "universalName": "pycon-cz",
-        "trackingId": "ozPBGdgaSV+zrBkiEv9+Og==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:96200896",
@@ -31,7 +30,6 @@
       "company": {
         "name": "Junior Guru",
         "universalName": "juniorguru",
-        "trackingId": "yz4Wrat/RVib1/WtvnIi6A==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:26218444",
@@ -48,7 +46,6 @@
         "occupation": "Software Engineer",
         "id": "530925455",
         "publicId": "mia-bajic",
-        "trackingId": "+fECF9XJTzacw8wUOhsE2w==",
         "profileId": "ACoAAB-lR48BFvPhQ6doZNGTRVftkLrzcnIv-Ss",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEFktnPzIQA3g/profile-displayphoto-shrink_400_400/B4EZdfBBQAHYAs-/0/1749645792668?e=1781136000&v=beta&t=H-XclkbtaMI2HfxaPAIvGsaIuvs_3HunEbU_zF5R2XQ",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGmHzyPBT7q2g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1738012168138?e=1781136000&v=beta&t=bGVRTPD07nQuQcDx_7F1m2z7h-P_vw_6AF5KkU2lLp4"
@@ -64,7 +61,6 @@
         "occupation": "Czech language teacher for foreigners | Czech for life & Czech for exams (A2, B1, ...) | Czech Buddy",
         "id": "648814916",
         "publicId": "melicharova",
-        "trackingId": "oMp5bx1xSLuaRkR2qjZ51A==",
         "profileId": "ACoAACasIUQBi0zapOVDWOPcCXCviPxBdRa-Lgo",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFdFEjr9dzhTg/profile-displayphoto-crop_800_800/B4DZtujN6RK0AI-/0/1767086285695?e=1781136000&v=beta&t=llZBrsGlYxqcSHVp17BRNDZxA3DQFo0aACSAGSbcA8s",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFt01OcuaR-Gg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1731358478511?e=1781136000&v=beta&t=NPRT3jGZ88lxHFNyQ18GE9W1sYDVr_H8bLSEqqG8hf8"
@@ -80,7 +76,6 @@
         "occupation": "AI & IT lektorka a konzultantka pro firmy i veřejnost | Už 9 let tvořím vlastní kurzy | Bez nereálných slibů a marketingového bullshitu",
         "id": "66547908",
         "publicId": "lucietvrdikova",
-        "trackingId": "/er3Yv8sSOWqgJb2dGLEOA==",
         "profileId": "ACoAAAP3cMQB6Z0KS11itMTIOss5Q1J0OCTXkaQ",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFbJu-rT_LRUg/profile-displayphoto-crop_800_800/B4EZp9X4XMKYAI-/0/1763040008398?e=1781136000&v=beta&t=zA3XisQSO_OitXZqlG1KkJFxQH5PuRiKWMSggJ7ktOM",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGI8vLXYP6i0A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1683185081860?e=1781136000&v=beta&t=KztYZQz80jSf6UR1GJtsf64Wo7jUpJ1KewboqIa3MDw"
@@ -96,7 +91,6 @@
         "occupation": "Motyka. Patizón. Sokol.",
         "id": "411597295",
         "publicId": "yablko",
-        "trackingId": "QUmkmtwTTAeNY0M/rQsr/Q==",
         "profileId": "ACoAABiIee8B6T3SlOCiJjbS1KHkr9Bf6DyyXws",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFspL7654LSQg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517626819296?e=1781136000&v=beta&t=MU22LFNWVDD74Hp2uLZvOeNRukADo87inbhIv4Es8oU",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHesE3bZDHt7g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517626819771?e=1781136000&v=beta&t=k7TwqX_nTlLNrXEprdAlSId_X0i7kMR4bteDVDimkBU"
@@ -117,7 +111,6 @@
         "occupation": "Nefunguje mi to → Super, už to jede | Feed specialista & Customer Success @Mergado",
         "id": "904009499",
         "publicId": "filip-prudek",
-        "trackingId": "78fytPOSQnWqsk8qLY+YdQ==",
         "profileId": "ACoAADXiFxsBDrfvLqXfc46dYlgCQklCaExwUMY",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFupO9P-a5bFw/profile-displayphoto-crop_800_800/B4DZ5JiGdVJYAM-/0/1779350139114?e=1781136000&v=beta&t=Iw5Hw9pEtYfXe0-wPQXIOnKKUFZqdaHEFcw06ySiAyI",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFct0esxDP2iw/profile-displaybackgroundimage-shrink_350_1400/B4DZ5JhtJBKAAU-/0/1779350033262?e=1781136000&v=beta&t=JkmSvMYWwXWWoFjbhRDQTIId6IpLExcH82QOIBlmb28",
@@ -137,7 +130,6 @@
         "occupation": "Product & Tech Community Lead at Mews",
         "id": "677292059",
         "publicId": "jan-meissner",
-        "trackingId": "othDHRfRQJWtChWMwvAfwQ==",
         "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEEoMbY9urW6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728030316222?e=1781136000&v=beta&t=qIshYYWgkzBRoJGlT6oqlmeH3jlRiX8J_luFzaICydQ",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGei_PMH8ghyw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728030258130?e=1781136000&v=beta&t=GS9HgAFTdCMh-1xFx2xIDoLH91oMpSioaV6pV2ayQSY",
@@ -157,7 +149,6 @@
         "occupation": "Learn, apply and share knowledge!",
         "id": "252085087",
         "publicId": "jangazda",
-        "trackingId": "farj9Eh5S/ON2VQniRcGUw==",
         "profileId": "ACoAAA8Gg18BFmVgg-IXGx-bZKirzahGSvqZ_js",
         "picture": "https://media.licdn.com/dms/image/v2/C5603AQEr66wsXQ3vaw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517500649020?e=1781136000&v=beta&t=ftrY-r84KsnzblcernzTT18astC-Ol7ClDdBzYdRAQQ",
         "distance": "OUT_OF_NETWORK"
@@ -176,7 +167,6 @@
         "occupation": "Application Developer at Barclays",
         "id": "361531956",
         "publicId": "lenkaerbenova",
-        "trackingId": "ZQTWbwk3SIKH7R46+RjGdQ==",
         "profileId": "ACoAABWMijQBlQzoTAse2JjfcJmbjz4dAQnIsQs",
         "distance": "OUT_OF_NETWORK"
       }
@@ -196,7 +186,6 @@
             "occupation": "Czech language teacher for foreigners | Czech for life & Czech for exams (A2, B1, ...) | Czech Buddy",
             "id": "648814916",
             "publicId": "melicharova",
-            "trackingId": "oMp5bx1xSLuaRkR2qjZ51A==",
             "profileId": "ACoAACasIUQBi0zapOVDWOPcCXCviPxBdRa-Lgo",
             "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFdFEjr9dzhTg/profile-displayphoto-crop_800_800/B4DZtujN6RK0AI-/0/1767086285695?e=1781136000&v=beta&t=llZBrsGlYxqcSHVp17BRNDZxA3DQFo0aACSAGSbcA8s",
             "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFt01OcuaR-Gg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1731358478511?e=1781136000&v=beta&t=NPRT3jGZ88lxHFNyQ18GE9W1sYDVr_H8bLSEqqG8hf8"
@@ -211,7 +200,6 @@
         "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
         "id": "8517488",
         "publicId": "honzajavorek",
-        "trackingId": "xOS43aCERLayqcm25srDBg==",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
@@ -231,7 +219,6 @@
         "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
         "id": "8517488",
         "publicId": "honzajavorek",
-        "trackingId": "xOS43aCERLayqcm25srDBg==",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
@@ -248,7 +235,6 @@
         "occupation": "PR Specialist, Alltagsbegleiter, junior CX/EX ...multipotential... “It’s the smallest details that make the biggest difference”",
         "id": "27107196",
         "publicId": "taucova",
-        "trackingId": "H4QrMyaUTIuH4Y9M8aHBBQ==",
         "profileId": "ACoAAAGdn3wBqGlrIwGTdtOmS_QWx_vT0hK-UAY",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH3RNthYlh6TQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1708710028546?e=1781136000&v=beta&t=8yIBw1naGzs-TJO6sf8hpV57Y77hNm3Q7VjOjfWaPZE",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH5ECDErYLJSg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1721635928171?e=1781136000&v=beta&t=7DaS6Pg3QiFt1wOOunw0wTQ3uooc0AtHGxC66tf80fc"
@@ -262,7 +248,6 @@
         "occupation": "Linux lover ;-)",
         "id": "148282826",
         "publicId": "martin-šuraba",
-        "trackingId": "J3+thp+XR/GDFR+2642Ogg==",
         "profileId": "ACoAAAjWncoBV1fLUSxy4LPyYcesKobjlSQHznQ",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG3Gb4BlgCVZQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693900488039?e=1781136000&v=beta&t=x-DN7fUTWuQkA6F4_rWi05mTohNdCH-S2Vj0RulkMM0",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGGkAbiGDIeww/profile-displaybackgroundimage-shrink_350_1400/B4DZ2w5FFRHwAY-/0/1776789247703?e=1781136000&v=beta&t=KaejtkxyR8ERrXhjNGP_KW3lGT8Nz8IVYzQy0BShSP4"
@@ -276,7 +261,6 @@
         "occupation": "Student školy Střední Průmyslová Škola na Proseku",
         "id": "965663850",
         "publicId": "lukáš-kůs-2b649522b",
-        "trackingId": "0fIlwJ1KRk2KpyGPusNhJA==",
         "profileId": "ACoAADmO3GoB-mSUO9-CoRbGAEAOoLTBLD6KQ8Y",
         "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHh1hztG318tQ/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1695465724013?e=1780430400&v=beta&t=kbPSrR0rEMPwg5nZivqQWfzUBRgjraamUZ2SgdOdmCM"
       }
@@ -289,7 +273,6 @@
         "occupation": "Full-stack PHP Developer",
         "id": "937120861",
         "publicId": "beáta-fraibišová-391a0b221",
-        "trackingId": "uRE9ZEyOR7KBUX1Pr2U2nw==",
         "profileId": "ACoAADfbVF0Bp-QjkQ1svtw9t1rj4FCkRIvTDmM",
         "picture": "https://media.licdn.com/dms/image/v2/D5635AQG5MeBTss1ZQQ/profile-framedphoto-shrink_800_800/B56ZszeYNrKAAk-/0/1766095160633?e=1780430400&v=beta&t=q1FqG-diOQuaTxFNwLU_xWBiExzz4VYlEiwtNo3nIsk"
       }
@@ -302,7 +285,6 @@
         "occupation": "Every problem has optimal solution",
         "id": "497768773",
         "publicId": "václav-toth-77185011a",
-        "trackingId": "Nz1hQG6VTiOfN5aihI09Jw==",
         "profileId": "ACoAAB2rWUUBbnJGXV1nMtZPn5vf4UbdiJwF-0A",
         "picture": "https://media.licdn.com/dms/image/v2/C5603AQEr18YcjnnxKA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1630767307214?e=1781136000&v=beta&t=yxUnsYdD1s3V7IwhVFCdl_0jjk4XCJIE3dKYDOoWvvg"
       }
@@ -315,7 +297,6 @@
         "occupation": "Software Developer | Python&Django",
         "id": "510493266",
         "publicId": "magdalena-grassi-morong",
-        "trackingId": "BQe1jqzBRlqBFGcCB3nsWQ==",
         "profileId": "ACoAAB5tglIBzk_dT7VG40y8WEo8JGAq93-eVE4",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEsXZ22cMrzvg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1665153548476?e=1781136000&v=beta&t=5HJTrvHapHQwtQ4nnnNSGJu0yWxbfUVMeZ905PTiu8k",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQG9KIFfLuID3g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1643118793896?e=1781136000&v=beta&t=hSLScjYXwJPH-u4lzqQMxkDcFmvkx5x-9n04X0TvQ90"
@@ -329,7 +310,6 @@
         "occupation": "Data Science junior",
         "id": "754409052",
         "publicId": "trodlermichal",
-        "trackingId": "IrQZ+OleR2K0hcYsD3dg9A==",
         "profileId": "ACoAACz3XlwBub91428-DFMFCyIq3Y0J2NvaLQs",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEIFQXqsxWmDQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1698159659872?e=1781136000&v=beta&t=3mxeLBDbks1-dlqv7qhRJUO53p55lPErwYra0DgSzPY",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG-3ee1dArMKA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1704919777059?e=1781136000&v=beta&t=PoCGA3s1KzoR0l8XdFQVgS5teO3HMUl3VgvFaYl6fbQ"
@@ -343,7 +323,6 @@
         "occupation": "Czech language teacher for foreigners | Czech for life & Czech for exams (A2, B1, ...) | Czech Buddy",
         "id": "648814916",
         "publicId": "melicharova",
-        "trackingId": "oMp5bx1xSLuaRkR2qjZ51A==",
         "profileId": "ACoAACasIUQBi0zapOVDWOPcCXCviPxBdRa-Lgo",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFdFEjr9dzhTg/profile-displayphoto-crop_800_800/B4DZtujN6RK0AI-/0/1767086285695?e=1781136000&v=beta&t=llZBrsGlYxqcSHVp17BRNDZxA3DQFo0aACSAGSbcA8s",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFt01OcuaR-Gg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1731358478511?e=1781136000&v=beta&t=NPRT3jGZ88lxHFNyQ18GE9W1sYDVr_H8bLSEqqG8hf8"
@@ -357,7 +336,6 @@
         "occupation": "Senior AI-first tech recruiter // Python meetup organiser// mentoring junior talent",
         "id": "122809391",
         "publicId": "jiripsotka",
-        "trackingId": "ATqVHaQXSqeqKzeWfB3eWw==",
         "profileId": "ACoAAAdR7C8BbyccNUVvG6bQpjG82_Ou5lZBRO4",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGW_GhhvqUUpA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1694077297719?e=1781136000&v=beta&t=bAPklj0uEUHetydy6ow0mF7NfGJR3utW4IlghbK264I",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQERsNhsApdjUw/profile-displaybackgroundimage-shrink_350_1400/B4DZujaaTWJ8AY-/0/1767973169340?e=1781136000&v=beta&t=vTvNbxgMP2VIb2dhWdYmIzQ07O20vU5ucAtYDYHE-TQ"
@@ -380,7 +358,6 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "trackingId": "xOS43aCERLayqcm25srDBg==",
     "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
     "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
     "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"

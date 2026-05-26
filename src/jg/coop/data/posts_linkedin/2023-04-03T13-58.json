@@ -5,7 +5,7 @@
   ],
   "isActivity": false,
   "urn": "urn:li:activity:7048655097991450624",
-  "url": "https://www.linkedin.com/posts/honzajavorek_kfc-bootcamp-kurzy-activity-7048655097991450624-OIjK?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAF_J15MBzS12u6VE16sLLHw4FYwCsunT-QI",
+  "url": "https://www.linkedin.com/posts/honzajavorek_kfc-bootcamp-kurzy-activity-7048655097991450624-OIjK",
   "timeSincePosted": "3yr",
   "shareUrn": "urn:li:share:7048655096879951873",
   "text": "Původně manažer v #KFC 🍟 dnes softwarový vývojář v MIBCON a.s. 👨‍💻 Nová epizoda podcastu! 🎧\n\nProč si Lukáš Kubec pro svoji rekvalifikaci zvolil #bootcamp od Green Fox Academy? Proč se později rozhodl pokračovat jako mentor? Co by v obecné rovině doporučil lidem, kteří uvažují o kariérní změně?\n\nSnažím se, aby junior.guru byl nezávislý projekt, který nedoporučuje konkrétní #kurzy, takže když jsme měli v rámci placeného partnerství pozvat do podcastu někoho z Green Fox Academy, trochu jsem se bál, jak to dopadne. Nechtěli jsme, aby z toho byla vyloženě reklama.\n\nA myslím, že se to povedlo udělat dobře! Pavla Cervena nám doporučila fakt dobrá jména. Nakonec jsme pozvali Lukáš Kubec, který je dlouhodobým členem na junior.guru/club, kde se vlastnosti různých kurzů běžně diskutují. Díky tomu má přehled o tom, jak může být co vnímáno, nebo jak pestré mohou cesty do IT být. Líbí se mi, že v podcastu neříká „GFA je pro každého“, ale jasně formuluje, pro koho přesně a kdo by zase možná měl jít jinou cestou. A Pavlina F. se nebála zeptat na věci ohledně fungování GFA, které nemusí být na první dojem úplně jasné, nebo mohou vést k pochybám.\n\nDruhá půlka podcastu se nese v duchu obecných rad pro všechny, kdo uvažují o změně kariéry. A z těch by se krásně dalo citovat do příručky na junior.guru/handbook! Moc se mi líbí, jak Lukáš zmiňuje náročnost změny a nutnost mít před tím určitou ekonomickou stabilitu, o kterou se pak dá opřít. V poslední době vidím čím dál víc lidí, kteří se do IT snaží dostat v rámci řešení své špatné životní a ekonomické situace, ale to nebývá zrovna nejlepší chvíle, kdy se pouštět do riskantního podniku změny kariéry. A už vůbec ne jen na základě příslibů z internetových článků.\n\nTakže příjemný poslech přeju! Najdete nás na junior.guru/podcast, nebo ve všech běžných podcastových appkách 🎧",
@@ -17,7 +17,6 @@
       "company": {
         "name": "MIBCON a.s.",
         "universalName": "mibconas",
-        "trackingId": "gt8xiIzKR2uVnp3tcX390Q==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:808352",
@@ -31,7 +30,6 @@
       "company": {
         "name": "Green Fox Academy",
         "universalName": "green-fox-academy",
-        "trackingId": "Ihe0VjFCQymSWjdd0W+lMg==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:10122962",
@@ -45,7 +43,6 @@
       "company": {
         "name": "Green Fox Academy",
         "universalName": "green-fox-academy",
-        "trackingId": "+0zBMbaiQCmpFX++pqd6yA==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:10122962",
@@ -62,7 +59,6 @@
         "occupation": "Helping companies that make great social impact 🌍",
         "id": "229827083",
         "publicId": "pavla-bohmann-94bb7564",
-        "trackingId": "i80KXrA2RgqgI9h6Im3j2w==",
         "profileId": "ACoAAA2y4gsBGEjhC12fMrncS4qWPZxeYGA3-NU",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGW2DSUioWzaA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1655217475194?e=1781136000&v=beta&t=RtoDdl3cQLKtqqyfoZSih3Vp-0tQ-ah0nYmrdUAsrFw",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQECocjmfEMu9g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1655218071263?e=1781136000&v=beta&t=mCymtqXgbOzKhCAFro4f6GgkwU7LOvaCJob3nGbmO8w"
@@ -78,7 +74,6 @@
         "occupation": "Host @ Junior Guru podcast.",
         "id": "190849253",
         "publicId": "pavlinafronkova",
-        "trackingId": "8BHvlspgRmqzyXifS3COCQ==",
         "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk"
       }
@@ -94,7 +89,6 @@
         "occupation": "CRM Specialist | Technology & Communication",
         "id": "216522281",
         "publicId": "jirinapoustecka",
-        "trackingId": "tk8nuYkvToafEdE+1DEFOA==",
         "profileId": "ACoAAAzn3ikBE2Z4YERNqf9rgVP2r_Mi3tBevYQ",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQH_z242v31K4g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1645881798368?e=1781136000&v=beta&t=OwztdB2ZBZXg8riuAjoWE6PgfyrRL2IT_R8RVD5-eDw",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGe0JdOI8yYZg/profile-displaybackgroundimage-shrink_350_1400/B56ZfAco8aHEAg-/0/1751280423358?e=1781136000&v=beta&t=iL4a2TbAnRgMS7GkHNctSjGyoUEtg0_wUuy8uuVR7Q8"
@@ -108,7 +102,6 @@
         "occupation": "Operations | People & culture | Facility ve společnosti Cato Networks",
         "id": "343097323",
         "publicId": "anastasiiaklubochkina",
-        "trackingId": "A7Lc9NXiQZa0u21ck0bxvw==",
         "profileId": "ACoAABRzP-sBZKVVnayhPQoYAR-PbGg75coKpbI",
         "picture": "https://media.licdn.com/dms/image/v2/D5603AQGcnp6UuOt0FQ/profile-displayphoto-crop_800_800/B56Zujg6k4HcAM-/0/1767974875201?e=1781136000&v=beta&t=EuxIZfQqMgjYysoKCFVYfmmytJ7pMT8NHcIm38aen3g",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEshpRnLsJBjw/profile-displaybackgroundimage-shrink_350_1400/B4DZXRxa33HwAc-/0/1742981149117?e=1781136000&v=beta&t=HOBOAo8dxXJ99WimVAVf5P0GjvKa8Xu3-JG1C_bzEa8"
@@ -122,7 +115,6 @@
         "occupation": "Senior Engineering manager at Rohlik Group",
         "id": "435106094",
         "publicId": "jindrich-jehlicka",
-        "trackingId": "MI9KcRjBR+W2ER3z3DFP4g==",
         "profileId": "ACoAABnvMS4BfnkmegC7lm8P0Yw6-IQrRTeit5Y",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHA97JgWgC_mA/profile-displayphoto-shrink_800_800/B4EZchGyKeHcAg-/0/1748607116457?e=1781136000&v=beta&t=QbollsqZlRmUnk-E5_c73QOrf5cCzPMDI01sMQlHPK4"
       }
@@ -135,7 +127,6 @@
         "occupation": "Začátečním bodem všech úspěchů je zaměření na cíl.",
         "id": "942714715",
         "publicId": "pavel-filip-5b7868223",
-        "trackingId": "x97HpOnjQICnGDBfOu54rA==",
         "profileId": "ACoAADgwr1sBjcqNqmu1jWyiy2WMLTxFqYTlUc4",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFIvx7NuP0D1Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1706871775478?e=1781136000&v=beta&t=MDBO72F3FLkKgqBy3hJd-eLySv5odZRwnKhNeHTHEww"
       }
@@ -148,7 +139,6 @@
         "occupation": "Senior QA Engineer at Warhorse Studios ⚔",
         "id": "303039169",
         "publicId": "valentapetr",
-        "trackingId": "xtNwDEVkS4qFBK/yMurA+w==",
         "profileId": "ACoAABIQAsEB7lBkZDyMY2IyH8DV-Em47jKaECM",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEGh_9U-DN84A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1597911967248?e=1781136000&v=beta&t=OnhGS_BuvlxuvHZlnksAt0ZH6zVGGgbEzmx9ak6vwBg",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFuYq__sCNlaA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1713506563296?e=1781136000&v=beta&t=HHtMT1YeoBJpmoS4EcMcjdBeE9Ku_bEF5kBDeq5nJ68"
@@ -162,7 +152,6 @@
         "occupation": "AI & Optimization Engineer | Tech Lead | Claude Code Enthusiast",
         "id": "430681320",
         "publicId": "michal-svab",
-        "trackingId": "uXB/cfHxRv+F6gc1pVxhPA==",
         "profileId": "ACoAABmrrOgBsNEBKVIMQxnICY5Cp5zSViZEtR4",
         "picture": "https://media.licdn.com/dms/image/v2/D5603AQGZmSh3qKw8yw/profile-displayphoto-crop_800_800/B56Z4L6QxgJ0AI-/0/1778316283378?e=1781136000&v=beta&t=TNCp_TzscVfCG7OUhljfzoCspVk_o_dgSI9F5aj5Prw",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFHmUXFjxiTaA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1696670709315?e=1781136000&v=beta&t=-Xu3Id878LZ665DpkcDi_XERdrrhcIzlAOslm6dmah0"
@@ -176,7 +165,6 @@
         "occupation": "Frontend Developer - React and Next",
         "id": "740316381",
         "publicId": "blanka-semanová",
-        "trackingId": "00Ftfqa1RvGn3v+2qS1oTg==",
         "profileId": "ACoAACwgVN0BXjPO356is1a7HECdYY6oGuzTouY",
         "picture": "https://media.licdn.com/dms/image/v2/D5603AQHt31UB9Dnr_g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1705586552175?e=1781136000&v=beta&t=VnaoT0wlgyuQQGLJMI1wvCsS4oGHAmClyqm-JikLvgE",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGmd9O2TBL9PA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1705586497192?e=1781136000&v=beta&t=JlZHwSEMta7stFHe1LeFKFVGgbpKpeFbQUUDebs_rnc"
@@ -190,7 +178,6 @@
         "occupation": "SAP BI Consultant at MIBCON a.s. - Certified SAP Platinum Partner 💎 20+ years on the market 💻 Data Warehouses, Reporting 📈 SAP BW, SAP BW/4HANA, SAP S/4HANA, SAP DSP, SAP Analytics Cloud",
         "id": "466498217",
         "publicId": "adam-vacek-nekola-2b5290110",
-        "trackingId": "GhJKtzjlS6Wa88Xeb+0hSw==",
         "profileId": "ACoAABvOMqkBNKzMk713_FBbN2QBTk62LpgjWWc",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHbWh_dOjyHjA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1654088082493?e=1781136000&v=beta&t=Cqc9l_D_OgVLhHp2nYQCxJvIsSl3GEKXT-3dLxw9AIM",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHFdmJ7Jeu5Eg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1725370629375?e=1781136000&v=beta&t=TMu78UNpZELeEG-l9MNf5W4I5cPR4bY0amdJWL1gT9k"
@@ -204,7 +191,6 @@
         "occupation": "Software Developer",
         "id": "928847603",
         "publicId": "dominik-sebesta",
-        "trackingId": "RVxmH34KTPOCOmObn97dxA==",
         "profileId": "ACoAADddFvMB28jaSv6Q2ts-gWN_EUAbiGIgMF0",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHupOPUU5Tbyw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1706611535106?e=1781136000&v=beta&t=8IPp5bbaMMTOd83xobMhAeK2t_Q0ZVOEpZKPHxBcLkw",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHevgZe7VO1zQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1725369138824?e=1781136000&v=beta&t=R72lx-mMHTeVcAQJKTTpxVkD3sNWHqfDPQdq4jmAbro"
@@ -218,7 +204,6 @@
         "occupation": "🛡️ Security Engineer | 🏗️ Building secure & practical IT systems",
         "id": "1039208019",
         "publicId": "jankrakovsky",
-        "trackingId": "tiAiYI9dT/C5JmqTTcv59A==",
         "profileId": "ACoAAD3xDlMB7hf-kdYAwAh990KMVlGlqtxwvwk",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQECLJFMTwHGhg/profile-displayphoto-shrink_800_800/B4EZSseMlTG0Ag-/0/1738060385153?e=1781136000&v=beta&t=Z1gO9_wpE-kE1TjbTRBhmIxKybQ_zIC95qDOXSmDjSs",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHNadsmp98Rmg/profile-displaybackgroundimage-shrink_350_1400/B4EZkMD63gIUAY-/0/1756843979042?e=1781136000&v=beta&t=PLwBwkNJoEtYwQHi6XbLd9pzjKxGzpNKYvGyE-iBkzE"
@@ -241,7 +226,6 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "trackingId": "8vFVDakvS4qSc1EJocixUg==",
     "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
     "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
     "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"

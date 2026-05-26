@@ -5,7 +5,7 @@
   ],
   "isActivity": false,
   "urn": "urn:li:activity:6945309740977557504",
-  "url": "https://www.linkedin.com/posts/honzajavorek_nov%C3%BD-d%C3%ADl-na%C5%A1eho-podcastu-pavlina-vyzpov%C3%ADdala-activity-6945309740977557504-fKoa?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFO533UB8DB_-rdYybN70u0U_dNKjqbKYjY",
+  "url": "https://www.linkedin.com/posts/honzajavorek_nov%C3%BD-d%C3%ADl-na%C5%A1eho-podcastu-pavlina-vyzpov%C3%ADdala-activity-6945309740977557504-fKoa",
   "timeSincePosted": "3yr",
   "shareUrn": "urn:li:share:6945309739203354624",
   "text": "NOVÝ DÍL NAŠEHO PODCASTU 🎙 Pavlina vyzpovídala frontendistku a lektorku Marketa Willis o její cestě do firmy Applifting a o učení. Má to 30 minut, tak šup do vaší oblíbené podcastové aplikace nebo na junior.guru/podcast a hurá s tím do uší.\n\nDá se při učení programování využít memorování? Pomáhá opisování kódu do notýsku? Protože má Markéta vystudovanou pedagogickou fakultu a v současné době učí v Czechitas, bavily se holky o tom, jak se efektivně učit. Jsem moc rád, že Pavlína toto téma vytáhla, protože ač mám na téma juniorů naposlouchány a načteny spousty věcí, zatím jsem nezaznamenal, že by se toto velmi probíralo. Slepá skvrna! Přitom je to fakt zásadní.\n\nA jako obvykle, nakonec zazní i to, co sám všem dokola opakuji: netočte jeden kurz za druhým, ale udělejte si projekt. Na tom si zkusíte aplikovat své znalosti, ukáže vám kam se dál rozvíjet a ještě se s ním můžete pochlubit na pohovoru.",
@@ -20,7 +20,6 @@
         "occupation": "Host @ Junior Guru podcast.",
         "id": "190849253",
         "publicId": "pavlinafronkova",
-        "trackingId": "+zEXqkcATjWf4QtMTh39DQ==",
         "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk"
       }
@@ -35,7 +34,6 @@
         "occupation": "Frontend developer | React | Typescript | Mentor",
         "id": "690320871",
         "publicId": "marketa-willis",
-        "trackingId": "sTsdqvmURc6jhY0aexUKvg==",
         "profileId": "ACoAACkldecB7E9DWErMM56bPMpJ3V49koGflx0",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG3JXouajtk3A/profile-displayphoto-crop_800_800/B4EZniD2GgIIAI-/0/1760434283625?e=1781136000&v=beta&t=jVTJ2DGVJj9_jUUmT-E7zLWHbH879vJP2kKfgNc8Nn8",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFCy4ekYHZ1aA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712246548670?e=1781136000&v=beta&t=QA3NpbJpEYHAFdBZwvhyaoukjEU7F6XWO0K5Mx2B41E"
@@ -48,7 +46,6 @@
       "company": {
         "name": "Applifting",
         "universalName": "applifting-io",
-        "trackingId": "0dgsuzklRA2QHAgOuF9c+Q==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:3655853",
@@ -62,7 +59,6 @@
       "company": {
         "name": "Czechitas",
         "universalName": "czechitas",
-        "trackingId": "CVPoHwSBSeCtswAHhhv2TQ==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:5319681",
@@ -80,7 +76,6 @@
         "occupation": "Material Handler",
         "id": "834093922",
         "publicId": "jiřímatoušek",
-        "trackingId": "HARYgFwSQUOk1MBiQF85uQ==",
         "profileId": "ACoAADG3Q2IB1yrIn-TFH_hlH79y1kuNIMYvAoE"
       }
     },
@@ -92,7 +87,6 @@
         "occupation": "Full Stack Developer | Node.js • React • Azure",
         "id": "762997811",
         "publicId": "miloslav-jezek",
-        "trackingId": "I0VPFCMmS+yxiUnlGL9p6g==",
         "profileId": "ACoAAC16bDMBDX69DVpckffdp3s7WQFJkN9ZQPE",
         "picture": "https://media.licdn.com/dms/image/v2/D5603AQGIaim7FGwUJA/profile-displayphoto-shrink_800_800/B56Zdkuyu7G0Ac-/0/1749741678525?e=1781136000&v=beta&t=KQKd_q5so7d1ouew_efpkZxAIdS6aSgktGBupgxMjVI",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGnePf9ZiYoeQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ12v8ppKIAY-/0/1775813774467?e=1781136000&v=beta&t=ZMWvvJcgxN49hDEp-ojj2oIgKRgbrKfKywk0xtPf6_s"
@@ -106,7 +100,6 @@
         "occupation": "Developer | Engineer | Petrolhead",
         "id": "69038813",
         "publicId": "tomasmechura",
-        "trackingId": "6ofLkNb2T+u4429/DUjH0Q==",
         "profileId": "ACoAAAQdct0BMOBZFxRceDLGo1q6MjccSbIKkfg",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEPsGLygsy0_g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1641396194115?e=1781136000&v=beta&t=3tC67tiLHW1pbp0QjJQ1PtWoQ2hr2BkxS1OyyQTcleE"
       }
@@ -119,7 +112,6 @@
         "occupation": "Vedoucí pobočky Direct pojišťovny v Plzni",
         "id": "648318047",
         "publicId": "šárka-kocábová-07b154161",
-        "trackingId": "aLuMTwJPSWGFXw6QRt9ZoQ==",
         "profileId": "ACoAACakjF8Bibf9CCqXrhlBNc8wab_rCwtrROw"
       }
     },
@@ -131,7 +123,6 @@
         "occupation": "Staff Engineer at Everpure (formerly Pure Storage, Inc.)",
         "id": "6413396",
         "publicId": "ladislavprskavec",
-        "trackingId": "E11N6s1ZQm+SPPWjLg2XEA==",
         "profileId": "ACoAAABh3FQBjDcRIsKdGUqUWVVxs45nmvivIO4",
         "picture": "https://media.licdn.com/dms/image/v2/C5603AQH74zpN5N3LhQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516250709565?e=1781136000&v=beta&t=4858H9zBGZBF9O86nNt-xKvWRcvX0_fxZw1SXlZ1pFI",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEcA07Jof8U1g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1614695743264?e=1781136000&v=beta&t=4Vqk30uOrg7FpjokcbA7vXMhQG5LWLueu6rpGGxkufE"
@@ -145,7 +136,6 @@
         "occupation": "ERP Team Lead | Westech & iStores | Leading ERP Systems, E-commerce Integrations and Cross-Team Projects",
         "id": "449746001",
         "publicId": "slobodovasmidova",
-        "trackingId": "10fNFp/ATKq1uW6Kf5eA1g==",
         "profileId": "ACoAABrOlFEB51-duZgdFCwmNed2rmZ5BPfOlyg",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQG-slI-k_zXtg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1682399936122?e=1781136000&v=beta&t=_XXVO4U0eIZrbReYlDA-xAV28W3x8C7vqRIhgPtSDZA",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFxb5XlY-46RQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ1KgtoaJ4Ac-/0/1775071584593?e=1781136000&v=beta&t=jxtkkOq8gL_RP1CYo8NiqLnogVYssro2CKP6j4pyg8M"
@@ -159,7 +149,6 @@
         "occupation": "“The journey is the destination”",
         "id": "823193341",
         "publicId": "kslezakova",
-        "trackingId": "pum0M4aZQgOqPWDId3uLIw==",
         "profileId": "ACoAADEQ7v0BQzs8aNXWgRYo4kPIBpO990Op2q4",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHLgcpsZhZv9g/profile-displayphoto-crop_800_800/B4EZsBxARBKcAQ-/0/1765261185170?e=1781136000&v=beta&t=qKC3O2DbG5vdz8lEXUE0bvS9d9YoBa5o4AjKMeOZDiY",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH9FcmHhMx99Q/profile-displaybackgroundimage-shrink_350_1400/B4EZsCPEx4KoAc-/0/1765269067659?e=1781136000&v=beta&t=W3_PhqFJZ--KwlSMbSIRQo-vEzVHoPKOa5KXSlErZvc"
@@ -173,7 +162,6 @@
         "occupation": "IT Recruiter for Green:Code - Powered by Škoda Auto & Etnetera",
         "id": "690634751",
         "publicId": "eva-valenova",
-        "trackingId": "yBCJqPzcSUOJ/9+XoJ8+Lg==",
         "profileId": "ACoAACkqP_8BVHBJ8mHEx3skVYHAjPSFAfq4WyQ",
         "picture": "https://media.licdn.com/dms/image/v2/D4D35AQGPGndfSf_TLw/profile-framedphoto-shrink_800_800/B4DZ5PwiKpJYAg-/0/1779454583841?e=1780430400&v=beta&t=fF55FdalGlhGixLzzwRcu1NcoWkELZP9ocKSkK9B5fI",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGlNGlcm5-VFg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1573905063639?e=1781136000&v=beta&t=INONISq3fq_arnHPqYTDcnYRfEWTqsz0dRR9SWH296E"
@@ -187,7 +175,6 @@
         "occupation": "Tester & Community Support ve Windy.com",
         "id": "780324570",
         "publicId": "ondrejsutera",
-        "trackingId": "6JghEIRiS/2UNboi+ymHfw==",
         "profileId": "ACoAAC6CztoB9guEMKXQSItxsNtm1rK83PJf6jg",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEhtsHVC7x0PQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1575381525311?e=1781136000&v=beta&t=tEleypXN3Mi6iptN19ycVkn1TaTdv_eTtJkzlnkg-_4",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFnuctNaBC20Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1667329428538?e=1781136000&v=beta&t=np4-1eZ3Glv7CeeZwx-L-AFSqGv7LjpCsXJoyGE8gIY"
@@ -210,7 +197,6 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "trackingId": "Gq10tRQlSEak9x5Bi6MwlA==",
     "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
     "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
     "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"

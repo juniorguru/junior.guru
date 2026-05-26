@@ -5,7 +5,7 @@
   ],
   "isActivity": false,
   "urn": "urn:li:activity:7043536893803667456",
-  "url": "https://www.linkedin.com/posts/honzajavorek_daedtafx-djangogirls-python-activity-7043536893803667456-bWYS?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAABsRci0Bys2i3dGvj01b19crqhDpGozYwSA",
+  "url": "https://www.linkedin.com/posts/honzajavorek_daedtafx-djangogirls-python-activity-7043536893803667456-bWYS",
   "timeSincePosted": "3yr",
   "shareUrn": "urn:li:share:7043536892931264513",
   "text": "Práce a #dítě. IT je obor, který lidem umožňuje flexibilnější podmínky, ale jak si to celé nastavit? Jak se z toho nezbláznit?\n\nVelká část z žen, které mám v klubu na junior.guru/club, jsou zároveň matkami. Učí se programovat s dětmi za zády a řeší, jak si vše zorganizovat. Hledal jsem tedy, koho pozvat přednášet na toto téma.\n\nDodnes si pamatuji, jak před lety Anastazie Sedlakova a Filip Sedlák přišli koučovat na #DjangoGirls workshop s malým miminkem 👶 Povolanější osobu než Nasťu bych tedy hledal asi těžko 😀\n\nNasťa pracuje jako datová vědkyně v DNAnexus, má doktorát z genetiky člověka a více než 10 let zkušeností s bioinformatickou analýzou a lektorováním programovacích kurzů (sedlakovi.org). Kdo se motáte kolem české #Python komunity, nejspíš jste ji už potkali na nějakém z PyLadies CZ kurzů a workshopů, nebo na konferenci #PyConCZ.\n\nV klubu junior.guru/club bude mít přednášku, kterou nazvala „Práce a dítě: Jak být k sobě laskavější“ ❤️ Bude povídat o svém příběhu hledání sebe jako rodiče i jako člověka se svými sny a kariérními cíli. Ráda by předala povzbuzení a inspiraci pro hledání rovnováhy mezi rodičovským a pracovním životem.\n\nChcete být u toho? Klub je na dva týdny zdarma, tak si tam klidně udělejte účet a na přednášku se připojte.",
@@ -20,7 +20,6 @@
         "occupation": "Analytics - Data Engineering, Data Science & Bioinformatics",
         "id": "97247728",
         "publicId": "anastazie-sedlakova",
-        "trackingId": "591ZSe4qR721ubkyv6Sc5Q==",
         "profileId": "ACoAAAXL4fAByR2NxBN-qJeNv2u-xrXHNhv0Okw",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGbH53_4-vC-g/profile-displayphoto-shrink_800_800/B4EZP.CBHHGwAc-/0/1735133762954?e=1781136000&v=beta&t=lzhGb7QyACp5Fj0IrYyAU1P5YnXZ4CHGHha-qTDsGmw",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQG5M4cZmF4l3w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1599758548505?e=1781136000&v=beta&t=Ohn0Nss2XRbI7rAYzdIxfDI2FzH-ArKjSjgJ7w0j1Lo"
@@ -36,7 +35,6 @@
         "occupation": "DevOps, Security and Architecture consultant",
         "id": "118279534",
         "publicId": "filip-sedlak",
-        "trackingId": "3W0wH5NFTdSZWAH0QJ8G6g==",
         "profileId": "ACoAAAcMzW4BnqaF7V7RolMKKe7pXiqgNv7sg6Q",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFzmM76deA0cg/profile-displayphoto-crop_800_800/B4EZfPIQHbGcAU-/0/1751526736911?e=1781136000&v=beta&t=HiW-XYc3DksDme4_iDvRkywgLn2811qC6RMr-tfpHOQ"
       }
@@ -48,7 +46,6 @@
       "company": {
         "name": "DNAnexus",
         "universalName": "dnanexus",
-        "trackingId": "fsM8INXbSmS8HYW1CWQLQQ==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:912957",
@@ -62,7 +59,6 @@
       "company": {
         "name": "PyLadies CZ",
         "universalName": "pyladies-cz",
-        "trackingId": "8sSEJubsStyrfmO6puv7sQ==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:30644381",
@@ -84,7 +80,6 @@
         "occupation": "Certified Java & Spring Programmer, Code Club Lector, Scout Leader",
         "id": "20334410",
         "publicId": "lubosracansky",
-        "trackingId": "F/tV5Xf9RmKce0uuf5ovew==",
         "profileId": "ACoAAAE2R0oBGXvR6LHbw738r7LTmMdhWnyymsU",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGAKqeF_cVJoA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1684758724981?e=1781136000&v=beta&t=UULINccTo51CdEZyus_aXI4scNPpOR_xkWAJLYmJNJ4",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG5fpDeDsBaDA/profile-displaybackgroundimage-shrink_350_1400/B4EZkOdYN3IQAY-/0/1756884209852?e=1781136000&v=beta&t=LB4bSuSgN0Kc-dyNmh4Zen74TJK4k4h0TkkNwGiAzZQ",
@@ -101,7 +96,6 @@
         "occupation": "Senior Data Analyst at BizMachine",
         "id": "18116498",
         "publicId": "nada-horka-1020986",
-        "trackingId": "IYZNI6L6QpG8nhWbyIXTLA==",
         "profileId": "ACoAAAEUb5IBcIUbq8EMeq_5tawmuzYISBsUsqA",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQF5ZakLkVV7tA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1620068274500?e=1781136000&v=beta&t=ASso5R57L0InooGCqKHk7CYuFE5z9UH4ReyIRvf3oSE",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHAe82pNT00fg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1568808830229?e=1781136000&v=beta&t=G11nZMMcVzQrkcx7m30G8nPBARgM_u3c0XvpKys69Jg"
@@ -115,7 +109,6 @@
         "occupation": "DevOps, Security and Architecture consultant",
         "id": "118279534",
         "publicId": "filip-sedlak",
-        "trackingId": "3W0wH5NFTdSZWAH0QJ8G6g==",
         "profileId": "ACoAAAcMzW4BnqaF7V7RolMKKe7pXiqgNv7sg6Q",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFzmM76deA0cg/profile-displayphoto-crop_800_800/B4EZfPIQHbGcAU-/0/1751526736911?e=1781136000&v=beta&t=HiW-XYc3DksDme4_iDvRkywgLn2811qC6RMr-tfpHOQ"
       }
@@ -128,7 +121,6 @@
         "occupation": "Application Manager| ISTQB certified| Test Engineer | Software testing |The mayor of a small village |",
         "id": "142959062",
         "publicId": "michaelakosvicova",
-        "trackingId": "yA7o55OrRkCADSj53uACHQ==",
         "profileId": "ACoAAAiFYdYB5h16B9NiM3hVqsIy6-43wSG6QJo",
         "picture": "https://media.licdn.com/dms/image/v2/C5603AQFup0oMkVASMw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516886496305?e=1781136000&v=beta&t=yAih1b1OzTKi5g3nP-8g98l3RGbHhGPxmhVkmGJWCSw",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHVWBHjkXNAzA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1665508385223?e=1781136000&v=beta&t=gpK8MvjCeeF22D4q0_s5q17xzNBpvdaY9asKgd7Nnh4"
@@ -142,7 +134,6 @@
         "occupation": "Tamer of llamas. I write code that gets deployed and papers that get cited. Bridging the gap between ‘it works in theory’ and ‘it works in prod’ one commit at a time.",
         "id": "8338936",
         "publicId": "simecekpetr",
-        "trackingId": "RoxYBEHES3SdDpOZjOMTjw==",
         "profileId": "ACoAAAB_PfgBsL4w8dCi9wIyQLatN_3k_nTllm0",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQG7A4XKJfkVRA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516269887669?e=1781136000&v=beta&t=0JGz0oJZOJL3OPsyV7S3vtwvjPaWNLtNynmULpYy268",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFVdSZ0hDiQkg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1718552626410?e=1781136000&v=beta&t=d2nUKd1k5RpnBFkGGPVwSiIKVXEfJe3sETcg71T3T5A"
@@ -156,7 +147,6 @@
         "occupation": "Sales Director @ Alviso | Driving Growth Through Talent Acquisition | I help technology leaders hire excellent Software Engineers, Engineering Managers, VPs, PMs, CTOs ...",
         "id": "33136903",
         "publicId": "michaela-huláková-ryšavá-547120b",
-        "trackingId": "2z/aN//9SRyy94kf5LEJ6w==",
         "profileId": "ACoAAAH5oQcBtUYGTpTO8aJd7hthweI2wlLLC_k",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHLc0zdIuaaEA/profile-displayphoto-crop_800_800/B4EZqXcS7hHoAQ-/0/1763477369240?e=1781136000&v=beta&t=FL-cDbXhlarLEqcsrsZTM1FAPznMILbjx3T6e4L58Gk",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGyrxRPl7FJTg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1664464822077?e=1781136000&v=beta&t=ReowtPDs0hcDVGDWgUBm65ruS2x6CN5Oia8dW27x0lw"
@@ -170,7 +160,6 @@
         "occupation": "“The journey is the destination”",
         "id": "823193341",
         "publicId": "kslezakova",
-        "trackingId": "0yMxTK6PRqaGmCcoyavcrA==",
         "profileId": "ACoAADEQ7v0BQzs8aNXWgRYo4kPIBpO990Op2q4",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHLgcpsZhZv9g/profile-displayphoto-crop_800_800/B4EZsBxARBKcAQ-/0/1765261185170?e=1781136000&v=beta&t=qKC3O2DbG5vdz8lEXUE0bvS9d9YoBa5o4AjKMeOZDiY",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH9FcmHhMx99Q/profile-displaybackgroundimage-shrink_350_1400/B4EZsCPEx4KoAc-/0/1765269067659?e=1781136000&v=beta&t=W3_PhqFJZ--KwlSMbSIRQo-vEzVHoPKOa5KXSlErZvc"
@@ -184,7 +173,6 @@
         "occupation": "SAP Junior Security Specialist",
         "id": "536137560",
         "publicId": "lenkagarcia",
-        "trackingId": "CaKFxuc1ToS8HdlVVXUVYQ==",
         "profileId": "ACoAAB_0z1gBo3fJjDGe-RFmhT6LlMrW8Fr3Lxs",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHcIP_wg_yVLw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1673301528851?e=1781136000&v=beta&t=1_X3rjwTkYJ12y2OgGkuNkeAB08P6gHwLh4owz5E2Bc"
       }
@@ -197,7 +185,6 @@
         "occupation": "Certified Java & Spring Programmer, Code Club Lector, Scout Leader",
         "id": "20334410",
         "publicId": "lubosracansky",
-        "trackingId": "O+ybtO9bTW+8pPD4WCOihA==",
         "profileId": "ACoAAAE2R0oBGXvR6LHbw738r7LTmMdhWnyymsU",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGAKqeF_cVJoA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1684758724981?e=1781136000&v=beta&t=UULINccTo51CdEZyus_aXI4scNPpOR_xkWAJLYmJNJ4",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG5fpDeDsBaDA/profile-displaybackgroundimage-shrink_350_1400/B4EZkOdYN3IQAY-/0/1756884209852?e=1781136000&v=beta&t=LB4bSuSgN0Kc-dyNmh4Zen74TJK4k4h0TkkNwGiAzZQ"
@@ -211,7 +198,6 @@
         "occupation": "Software Tester",
         "id": "1019369824",
         "publicId": "linda-adamkova",
-        "trackingId": "5vxTiExSSASiEquCmfzbMA==",
         "profileId": "ACoAADzCWWABzURrYgAmGGAeFM-hNIE5flA7xss",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHa8pAPzh6gxA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1684322861481?e=1781136000&v=beta&t=_KoHfZoAaVsAYlg3boUsczDsV8TlxqcJvaE0WBMg_KU",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE0f5P2prsZvA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1682673665280?e=1781136000&v=beta&t=Fi-LCHnk2XZA9Ba-CKzd_PwdhnwS4saECVTQ1JUMdus"
@@ -225,7 +211,6 @@
         "occupation": "Manager at DNAnexus | Expert in Bioinformatics, Cloud Workflows & Genomic Data Science | Proffesional Services",
         "id": "237407681",
         "publicId": "stanedav",
-        "trackingId": "NrEYhcWPS7OPLtez7WKTZA==",
         "profileId": "ACoAAA4mjcEBUERotOfUAQNOYorVUHGw_MEIh5o",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGXrxklEfzyyA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1683038674196?e=1781136000&v=beta&t=NtE6ZsYlVGXgcfRQ4NoxS5cYSI3lITh2qTvDX5x3t4k",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF7ZoVEtoyJAA/profile-displaybackgroundimage-shrink_350_1400/B4EZV8b_YCH0AY-/0/1741549468557?e=1781136000&v=beta&t=FlNRV58fCgTify0E91RiOysz9hkqwY9l9utxHfDbBBc"
@@ -248,7 +233,6 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "trackingId": "d1e5tiiYQ4CGz5unFsgZqg==",
     "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
     "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
     "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"

@@ -7,7 +7,7 @@
   ],
   "isActivity": false,
   "urn": "urn:li:activity:7108706099888828416",
-  "url": "https://www.linkedin.com/posts/honzajavorek_pyconcz-activity-7108706099888828416-nf-6?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC7GnRMBMhdlttE134OhzG7Qpm095a9yeJ4",
+  "url": "https://www.linkedin.com/posts/honzajavorek_pyconcz-activity-7108706099888828416-nf-6",
   "timeSincePosted": "2yr",
   "shareUrn": "urn:li:ugcPost:7108550702397825025",
   "text": "První den PyCon CZ se vyvedl hodně dobře! Na diskuzní kroužek „Junior versus senior“ přišlo trochu víc lidí, než jsem čekal 😅\n\nA stihli jsme probrat jen zlomek toho, co jsem měl v plánu! Hodina utekla jak nic, diskuze byla výživná, a empatie myslím opravdu proudem tekla, přesně jak jsem sliboval. Lidi za mnou pak chodili a říkali, že by si to uměli představit i dvakrát delší. A já se přitom před tím bál, že nikdo nepřijde, nebo že budu lidi muset nějak ponoukat. Myslím, že to vyšlo moc pěkně a rozhodně to byl zajímavý formát. Minimálně pro takhle složené publikum to byla trefa do černého 💪\n\nNo a potom sraz členů klubu Junior Guru na dvorku, no tož to byla srdcovka. Tolik najednou nás asi nikdy nikde nebylo! Konečně jsem poznal některé tváře naživo. A hrozně mě těší, že mnozí z členů na #pyconcz dokonce přednášejí. Celé mě to dost dojímá 🥲 🐣 (Na fotce jsem určitě neoznačil všechny, kdyžtak se mi prosím přihlašte 🙏 )\n\nTěším se, co přinese dnešek! Kdo jste tu s náma, 11:50 přijďte do „__floor__“ na panelovku o mýtech a stereotypech o IT, budu tam sedět na židličce 🎤",
@@ -19,7 +19,6 @@
       "company": {
         "name": "PyCon CZ",
         "universalName": "pycon-cz",
-        "trackingId": "BBrZSnFkSraHbEeJgh0O3Q==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:96200896",
@@ -33,7 +32,6 @@
       "company": {
         "name": "Junior Guru",
         "universalName": "juniorguru",
-        "trackingId": "sfPxrWksQgGDDQasP0MCQw==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:26218444",
@@ -55,7 +53,6 @@
         "occupation": "Technologist focused on Cloud-Native technologies, DevOps, CI/CD and automation. | AWS | Azure | Kubernetes | Terraform |",
         "id": "328285536",
         "publicId": "vuyisile-ndlovu-080b3891",
-        "trackingId": "hE1bcKOvTJyG9cuREtpHLQ==",
         "profileId": "ACoAABORPWABu-EQgksb-xNyBYO-sRsWWuYd2cc",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGqv3Kru_XHAw/profile-displayphoto-shrink_800_800/B4DZYkQAMEHAAc-/0/1744364898040?e=1781136000&v=beta&t=CfUUp2rZIc9mTttzkJTpLQPCPM8bhfb4aHNqcpwvIvg",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGCGoFCsON6VA/profile-displaybackgroundimage-shrink_350_1400/B4EZh.XbhGGYAY-/0/1754466730063?e=1781136000&v=beta&t=omFnwxquH9OWqjSt_Wo4UI8r4MzHiWfV3kvHtNTz6Vk",
@@ -75,7 +72,6 @@
         "occupation": "Application Developer at Barclays",
         "id": "361531956",
         "publicId": "lenkaerbenova",
-        "trackingId": "ZQTWbwk3SIKH7R46+RjGdQ==",
         "profileId": "ACoAABWMijQBlQzoTAse2JjfcJmbjz4dAQnIsQs",
         "distance": "OUT_OF_NETWORK"
       }
@@ -93,7 +89,6 @@
         "occupation": "🧪Pharmacist with experience in Tech and IT I 📈 Passionate about working with people, networking and sales I 💎 Flair for marketing",
         "id": "348404312",
         "publicId": "jindriska-mazurova",
-        "trackingId": "Nz5ubSttRQuOQ/FZCJq4wQ==",
         "profileId": "ACoAABTEOlgBeXtgMBAc3w4tE4gihk5qtVWZKsU",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEMYdMo1Hy8bA/profile-displayphoto-crop_800_800/B4EZgxjZk7GoAI-/0/1753178020744?e=1781136000&v=beta&t=EEBmynWLfRE-XOJIQZLxT0zjBbj4Jjo8y4-9qawJZmk",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH9OYvMSGcBqQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ0uiEE_KAAY-/0/1774602176332?e=1781136000&v=beta&t=5rwBPP4NoEg2Id7L7-t3kaGG5dBbIbz5uHeRVBJiTNs",
@@ -113,7 +108,6 @@
         "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
         "id": "551084893",
         "publicId": "grumpyprogrammer",
-        "trackingId": "dDd5cRLwQWGeCC7MYkbYoQ==",
         "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFnQ8ypdjjyvg/profile-displayphoto-crop_800_800/B4DZxZUZFlHkAI-/0/1771025047361?e=1781136000&v=beta&t=fFiIDptOBoMzbUkj1Lvpd8USzHMX1nkcCCOr19Su_4c",
         "distance": "OUT_OF_NETWORK"
@@ -129,7 +123,6 @@
         "occupation": "Marketing & Website Specialist",
         "id": "368274787",
         "publicId": "veronika-skopalova",
-        "trackingId": "ZWjw0IqBTaeG9c5yWIhNsg==",
         "profileId": "ACoAABXzbWMBGUFfXWUW-U0XItP0Zqjjw_0RN2U",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHekqeMGIvsbA/profile-displayphoto-crop_800_800/B4EZqgIIoaIQAI-/0/1763623082484?e=1781136000&v=beta&t=whgo5mi-u1jLEfEH8qh4QDcfBfMLOg9bIOPF6Fp2qYo"
       }
@@ -142,7 +135,6 @@
         "occupation": "Full-Stack Software Engineer & Problem Solver | Open Source maintainer & contributor | Alumni GitHub Star | AsyncAPI maintainer | PSD I / PSM I / GCP / LFCA",
         "id": "58899881",
         "publicId": "vladimirgorej",
-        "trackingId": "a8A3XZ+TS+KYr3Cc/5NYYg==",
         "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHP1QsKaZTw5Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1720878191370?e=1781136000&v=beta&t=nxFAGloZTLLj4IfsdUrAgIWdCPqihUdH6GbjDvQ02KI",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQG1bGQIi0eN-g/profile-displaybackgroundimage-shrink_350_1400/B56ZsnGMs8JUAY-/0/1765887496970?e=1781136000&v=beta&t=c-tUr6BmtfsWTUqP39ZWtDB-NjxB_hfH72HKcJ-t7iA"
@@ -156,7 +148,6 @@
         "occupation": "Senior Brand manager in Pharmaceutical environment 👩🏻‍💻 SW Tester Junior, QA 🐞🔍",
         "id": "207763792",
         "publicId": "marketa-sybalova",
-        "trackingId": "c4F4LkauT7i067p2T6rW+g==",
         "profileId": "ACoAAAxiOVABbE6vP0QzWo3vqwNarrgL3vxBDDY",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGKWUk3m8kOCg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1614717989419?e=1781136000&v=beta&t=3HgOmFRuEkx7Zp4jhHlPU_G_enptHWrPibPS0EljSzw",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHLYueSmxGG_A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1682625128462?e=1781136000&v=beta&t=8dr0cPQ0w5nkhuMc8LNNnC6LjY1X-NgKn6wgOrIEviw"
@@ -170,7 +161,6 @@
         "occupation": "Glide Certified Expert | Aspiring Software Tester | Analytical mindset • Documentation • Problem‑solving • Attention to detail",
         "id": "734510447",
         "publicId": "veronikalencovamb",
-        "trackingId": "A2dIBTlfRnWICd9mVWAZ6A==",
         "profileId": "ACoAACvHvW8Bbroy8OGWOebqVAkgir0RIjJxSjc",
         "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHoTOOb7H2Cow/profile-framedphoto-shrink_800_800/B4DZz3872hKgAg-/0/1773686472395?e=1780430400&v=beta&t=vTBt-GbAxo_sGv6sZMeKg7W48u7poDsZx1Ok4ITEzAM",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQH28BhoccJHKg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1573574059073?e=1781136000&v=beta&t=RJiAicqS4rdaKDw8Gsa8ZVDtDJ8Bkh3glxdGl-KTGGo"
@@ -184,7 +174,6 @@
         "occupation": "Learning & Development | Leadership | People & Team Growth | Digital Learning & AI in Education | Education & Community Builder",
         "id": "127887588",
         "publicId": "mariafalterova22",
-        "trackingId": "2P5jz3BURVS0XMarUlwIBw==",
         "profileId": "ACoAAAefaOQBjXFsYP5OkNAQF8lCOH9MVLfL8IE",
         "picture": "https://media.licdn.com/dms/image/v2/D4D35AQGZKfQJ8DUe1Q/profile-framedphoto-shrink_800_800/B4DZ1r99lpK4Ak-/0/1775632898806?e=1780430400&v=beta&t=0CZd8muD5-yUui7E_sOmVmrqQ34vNl55HQwgJ2jJIoc",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFSAGDFOuEXIQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ1r7aSNK4AY-/0/1775632231137?e=1781136000&v=beta&t=sq2z1nro38tD_Hgh25pLxZxSTyD0bE8Vn6l5JgHstRI"
@@ -198,7 +187,6 @@
         "occupation": "AI Specialist at Raiffeisenbank a.s.",
         "id": "475183572",
         "publicId": "martin-rapavy",
-        "trackingId": "KWlDAk7oTsqee8qf6Jr4NA==",
         "profileId": "ACoAABxSudQBHuhA8cJ5OL9XXk9jIvrhocisM3w",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG-uEYWYQCi4w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1691341533471?e=1781136000&v=beta&t=TPnx6_RUaVTc-zVJyopipcS6x0aME46dvKqyIHnqifE",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFwzvr2gYb0EA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1716196276872?e=1781136000&v=beta&t=WHgrvkrw78fRS0FNPdG84I2uf_O9Aj4XkZP7HZ0Jbo8"
@@ -212,7 +200,6 @@
         "occupation": "Software Engineer | Python | Django | Django Girls Foundation Trustee | Former President - Django Software Foundation | DjangoCon Africa 2023 Chair | Community Management | SI Scholar 2024",
         "id": "95395851",
         "publicId": "anna-makarudze",
-        "trackingId": "8lyEzqgRQW+stBLQJ/z5Ng==",
         "profileId": "ACoAAAWvoAsB7b45KU1otFobAQ_tXoczF1jQwMQ",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEolQmo4jsdEw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1700466079755?e=1781136000&v=beta&t=X6dEgLstWcspPQto28Z-VYl8LygRCNho8pL5kKKkddc",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGFtWEe_kxKeA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1700478786677?e=1781136000&v=beta&t=nV_KjX37GFxA3-nqPNpDqqQDaxbT7Yeh4fBSQX6xuF0"
@@ -226,7 +213,6 @@
         "occupation": "Vybuduji vaší firmě udržitelný systém vzdělávání 🟡 HR konzultant a lektor @ICT Pro 🟡Navrhnu a zorganizuji vám soft skills program na míru 🟡Psychodiagnostika Thomas International 🟡Koučink & Mentoring",
         "id": "438512099",
         "publicId": "marketavyskocilova",
-        "trackingId": "JEe1w1K6S7e1dgi8cQW7ng==",
         "profileId": "ACoAABojKeMBBI6D_5s02oW1Zs7u2v4l5ifhuFg",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHvYc2qZE1Frw/profile-displayphoto-shrink_800_800/B4DZdzecwOHkAg-/0/1749989053735?e=1781136000&v=beta&t=IkVIVNkw4ajqKMQh6EwKPJ7yhqKpF8MKlo_8CU9xY6s",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFyNEZITugQvA/profile-displaybackgroundimage-shrink_350_1400/B4DZhaKSBFHAAY-/0/1753859302029?e=1781136000&v=beta&t=2idyFiTyFQvx4eUdYHELvbwA7mowSYYDcPggH_UkRjs"
@@ -240,7 +226,6 @@
         "occupation": "IT Specialist | Digital technology enthusiast | Part time Sports Coach since 2012",
         "id": "823178169",
         "publicId": "dvoracek-jan",
-        "trackingId": "wpbuZFxPTXCPhpmrFKxkGw==",
         "profileId": "ACoAADEQs7kBLa6ATjYmi_RHWnqBmTD1t2kHET4",
         "picture": "https://media.licdn.com/dms/image/v2/D4D35AQENid6asPjYGQ/profile-framedphoto-shrink_800_800/B4DZ4DJA0CIUBU-/0/1778169155306?e=1780430400&v=beta&t=sm6npr-fQh1ndRN7pQG5eEwRqSz-msLpqnTYP7-11hA",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGttIxg1Ms99A/profile-displaybackgroundimage-shrink_200_800/B4EZrm.EdWIQAY-/0/1764811622965?e=1781136000&v=beta&t=4l-9hGdAzhXma1wnkBONEQJar1prFVnSxe6cUwZ7s0Y"
@@ -254,7 +239,6 @@
         "occupation": "Software engineer (Elixir/Phoenix, JS/TS)",
         "id": "1032679387",
         "publicId": "ludvík-rubáš-477a13249",
-        "trackingId": "epAboSrPTUGVk6XIPxglXQ==",
         "profileId": "ACoAAD2Nb9sB6oh5ZfqBr8vjdcgEge9wHkPwu6I",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFCnTs_i8Zinw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1663347396846?e=1781136000&v=beta&t=xKlF0IjAx2Ia5p8p8uRPmWbWCb5x5U7_DKsjbode9pU"
       }
@@ -276,7 +260,6 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "trackingId": "xOS43aCERLayqcm25srDBg==",
     "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
     "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
     "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"

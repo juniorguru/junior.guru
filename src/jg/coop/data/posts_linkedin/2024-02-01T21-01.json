@@ -2,7 +2,7 @@
   "type": "text",
   "isActivity": false,
   "urn": "urn:li:activity:7158927258647207936",
-  "url": "https://www.linkedin.com/posts/honzajavorek_ai-activity-7158927258647207936-ms70?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC29INoBu4UxIfyNnC3051th8thkLppPT1Y",
+  "url": "https://www.linkedin.com/posts/honzajavorek_ai-activity-7158927258647207936-ms70",
   "timeSincePosted": "2yr",
   "shareUrn": "urn:li:share:7158927257908994050",
   "text": "Je to tam! 🎉 Nabídky práce na Junior Guru třídím pomocí #AI 🤖\n\n- Díky Apify jsem optimalizoval stahování nabídek,\n- mám přes 1.200 inzerátů hned z několika zdrojů,\n- předhodí se AI a ta vyhodnocuje, zda je inzerát vhodný pro juniory,\n- zbudou desítky (jen pro představu, jak „snadné“ to teď junioři mají),\n- zobrazí se to na webu a pošle do junior.guru Discordu.\n\nDělám na tom od Vánoc a mám hroznou radost, že se to povedlo. Smazal jsem několik tun neudržovatelného kódu s regulárními výrazy, který mi totéž mnoho let řešil „ručně“.\n\nA tohle je jen začátek! Zatímco předtím můj kód zvládal jen angličtinu a češtinu, teď mohu ze dne na den přidat podporu pro slovensky psané inzeráty. Mohu snadno analyzovat text inzerátů a dolovat z nich další užitečné info pro juniory.\n\nJunioři to teď nemají lehké a já jsem tu od toho, abych jim zjednodušoval život. Tak snad aspoň trochu pomůže, když za ně prohledám kupky sena a vytahám jim pod nos jen takové inzeráty, které nevyžadují 2 roky zkušeností v oboru, ačkoliv mají v titulku „junior“.",
@@ -14,7 +14,6 @@
       "company": {
         "name": "Junior Guru",
         "universalName": "juniorguru",
-        "trackingId": "pYMm+r+GQ6yhnVOnHRzvqA==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:26218444",
@@ -28,7 +27,6 @@
       "company": {
         "name": "Apify",
         "universalName": "apify",
-        "trackingId": "iH7+jbZGQDCCMaWWShVHRA==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:10608457",
@@ -50,7 +48,6 @@
         "occupation": "Aspiring Python Developer 🐍 | Every professional was once a beginner.",
         "id": "375361759",
         "publicId": "jiritrnecka",
-        "trackingId": "cXkhQULRTxGr71TIZRd+0Q==",
         "profileId": "ACoAABZfkN8BNu9pdZBNrF7Jqz2TzMfJbZPtPgQ",
         "picture": "https://media.licdn.com/dms/image/v2/D4E35AQFxEG1uwtJdaQ/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1731848451090?e=1780430400&v=beta&t=rLkJU-zVDPmnTcYhFBg8xgqrgYHTYdrT8gtb1YpLorY",
         "distance": "OUT_OF_NETWORK"
@@ -69,7 +66,6 @@
         "occupation": "I help factories digitise maintenance. With or without AI. Always with people first.",
         "id": "178006447",
         "publicId": "msvetlana",
-        "trackingId": "qJfku8yRQ+itmsDC7yOkJQ==",
         "profileId": "ACoAAAqcKa8Bousd5uBo-bZZ9dq6qVlYKqtHvSc",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF2d-GcOsk4Bg/profile-displayphoto-crop_800_800/B4DZ35j9rdHwAM-/0/1778008453433?e=1781136000&v=beta&t=drmOX7xsDyMGZaown-MFYSZXwtE2FSNpuvIxF5sa-CA",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEafK1Y8bDUqw/profile-displaybackgroundimage-shrink_350_1400/B4DZWwQJBHHIAc-/0/1742418779616?e=1781136000&v=beta&t=0a47VNFLf1nQKjTg2JnpC3ODNNzCN24RoEDT7btdLtM",
@@ -86,7 +82,6 @@
         "occupation": "Od návrhu webu k publikaci na veřejný internet",
         "id": "1219674224",
         "publicId": "da-svacek",
-        "trackingId": "WHsTh6akQ5WaH+ICWO/9Lw==",
         "profileId": "ACoAAEiywHAB3zxr8fpdVC17KeG4ULMh9rJfJsU",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG0semaKejvJg/profile-displayphoto-crop_800_800/B4EZpsyZh9J0AI-/0/1762761743137?e=1781136000&v=beta&t=OJgxDHa8q0lBmpb0iQ4KkjR2WNPabmXvrGXB1gW9YlE",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFIfRzItzU_qA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1708291346473?e=1781136000&v=beta&t=QaMY1L3eHXlYEx1CG3TBmt06A7PHpNcG2Z7kIGfJYZI"
@@ -100,7 +95,6 @@
         "occupation": "Python developer and lecturer",
         "id": "355842259",
         "publicId": "jakub-červinka",
-        "trackingId": "rWMQQNmMSzWbZwmFL6xcZA==",
         "profileId": "ACoAABU1uNMBxEkN7xMohKuhfytB97ZjK-tfEKo",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGNchKKmRxASA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728627722442?e=1781136000&v=beta&t=wCbTK52orQpi98p3D_tIyem3VP3BJlXJ525dcexRAhg",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFo1b8_EZuWVQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728056593822?e=1781136000&v=beta&t=NEwZVdMdQqj1rM46MtdnZQjC4bxHXipuncawNthkvSU"
@@ -114,7 +108,6 @@
         "occupation": "Data and languages",
         "id": "250264075",
         "publicId": "kristýna-talafantová",
-        "trackingId": "exc/TxDvRXSZPasXZCsJgw==",
         "profileId": "ACoAAA7qugsB-68dkqbCYO7DR_U7JyIag6_gnjk",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEO9gneZyflVA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1538399046837?e=1781136000&v=beta&t=YyPMIUhL8MbXpMabClSllfIoEv2cwrZ4ySe_l9WW_XE"
       }
@@ -127,7 +120,6 @@
         "occupation": "Engineering Manager at Custom Ink",
         "id": "45719350",
         "publicId": "vojtechkusy",
-        "trackingId": "KmD1i0gITteE6Vn17ZH2ng==",
         "profileId": "ACoAAAK5nzYBdJHa9Xc4oV94hf_t-gPdaO7oEhw",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGE_7KFXLW7fw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1696408719066?e=1781136000&v=beta&t=lPSCodHBVLRrfkeZy56yrI19DuIboQFTBy5-Uk9F0L4"
       }
@@ -140,7 +132,6 @@
         "occupation": "“Constantly learning, evolving, and pushing boundaries.”",
         "id": "411845775",
         "publicId": "andrea-wimberská-813b14b5",
-        "trackingId": "DKNTwmmNSCC9/hA+/+fQ0g==",
         "profileId": "ACoAABiMRI8BiT6O5cY2E6Zod1U7YpgZOxZmPGw",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEeFlrGEDb8wQ/profile-displayphoto-crop_800_800/B4EZplEfSsKsAI-/0/1762632270111?e=1781136000&v=beta&t=xgxEwDsEt_63dFYxY1aXAgCcReSiniVOMjdCWvqYb8M",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQExcrNWRKcAhQ/profile-displaybackgroundimage-shrink_350_1400/B4EZplEwPCHMAY-/0/1762632338037?e=1781136000&v=beta&t=SoTpyryOrfa5OneBnbOanfGBJ_WyZje3UhwMeyh0rPg"
@@ -154,7 +145,6 @@
         "occupation": "Senior Software Engineer @ kiwi.com",
         "id": "580322265",
         "publicId": "tibor-mikita",
-        "trackingId": "UEPQ05btQNqHZEc/2FmN+Q==",
         "profileId": "ACoAACKXA9kBexJlK9pClsmdLCmThrPq8FmPt6s",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQE-KS8d0pDSaA/profile-displayphoto-shrink_800_800-alternative/profile-displayphoto-shrink_800_800-alternative/0/1529529671668?e=1781136000&v=beta&t=gaW4rpbc-v8ZZKqC5oS7xjljDTGBXzaCm26SQbVziDU"
       }
@@ -167,7 +157,6 @@
         "occupation": "Pracuju na rozvoji Anety v Air Bank 💚 |AI, LLM, NLP, Automatiace & tech",
         "id": "747019398",
         "publicId": "rejhontomas",
-        "trackingId": "8tAxDS8oSSKJPtLMRLYwcg==",
         "profileId": "ACoAACyGnIYBKujbIUDR3fH3kBHGPDAlv7v1LiI",
         "picture": "https://media.licdn.com/dms/image/v2/D4D35AQGug6KGMLHQ-w/profile-framedphoto-shrink_800_800/B4DZ0Gtb9IIoAg-/0/1773934067832?e=1780430400&v=beta&t=lA2kOBurJWtczK0riYqKVNlrxrpPkc1Ru_RjqpLFDBg"
       }
@@ -180,7 +169,6 @@
         "occupation": "Bubeník | FE developer",
         "id": "1140304130",
         "publicId": "tomáš-novák-282a76279",
-        "trackingId": "pVqV1eMUT5G6E5t/xc2WGQ==",
         "profileId": "ACoAAEP3qQIBOSmQUU7OefSQ0SraedY57sCw_0g",
         "picture": "https://media.licdn.com/dms/image/v2/D5603AQHUK43ZFDX2rw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1685965809139?e=1781136000&v=beta&t=A0YvGMTXMFBOtIcCQ4odYIy4YFaHxE5_5G9Y93zSAS4",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGwEbJcjX5mVQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1711633299720?e=1781136000&v=beta&t=9tCZwbqUMuGV_GOBc9Sjh6WbfBMHL4hEnI4i9IwaQ68"
@@ -194,7 +182,6 @@
         "occupation": "Frontend developer | React | TypeScript | Next.js ⚛️",
         "id": "559413158",
         "publicId": "dominika-hustinova",
-        "trackingId": "HgkGpFs8QOG10YCpwOv6VQ==",
         "profileId": "ACoAACFX96YBG0GTVAiWnH3CLTYM_BRKX3TOuaY",
         "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHMXmbver-DVg/profile-framedphoto-shrink_800_800/B4DZwPVHj_KcAk-/0/1769783720503?e=1780430400&v=beta&t=3H_0CBrApDYXfVkPfvfFTZ6UbraZK9yrkV0ejqivG6k",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQEI4A_j7jysPw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1552062820894?e=1781136000&v=beta&t=4a19mE6lBgp9KFAi8mGm7JwWx-bVAdZBfeAp2Wvlks8"
@@ -217,7 +204,6 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "trackingId": "tOic8QjRQWuFLsNWMn81+Q==",
     "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
     "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
     "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"

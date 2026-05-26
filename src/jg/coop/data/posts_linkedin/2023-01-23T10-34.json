@@ -5,7 +5,7 @@
   ],
   "isActivity": false,
   "urn": "urn:li:activity:7023236557289488384",
-  "url": "https://www.linkedin.com/posts/honzajavorek_datascience-geospatial-geospatialdata-activity-7023236557289488384-8IQr?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAABsRci0Bys2i3dGvj01b19crqhDpGozYwSA",
+  "url": "https://www.linkedin.com/posts/honzajavorek_datascience-geospatial-geospatialdata-activity-7023236557289488384-8IQr",
   "timeSincePosted": "3yr",
   "shareUrn": "urn:li:share:7023236555993403393",
   "text": "Dřív modelovala ceny nemovitostí, dnes pracuje ve firmě, kde dělá na projektech pro European Space Agency - ESA 🛰️\n\nTak dlouho se dobrovolně angažovala ve vzdělávání IT dovedností v PyLadies Vienna a Women+ in Geospatial, až si na to založila i svůj byznys, Unlock.IT 💁‍♀️\n\nVe středu 25.1. bude Týna Doležalová přednášet pro Junior Guru, v klubu pro začátečníky v programování.\n\nCo jsou prostorová data, čím jsou speciální a jak je využít? Satelity, mapy, pozorování současného stavu, predikce stavů budoucích. Co se s tím vším dá dělat za super věci? Kde prostorová data najít a co umět, abychom s nimi mohli pracovat?\n\nPřijďte se podívat! Náš klub je na Discordu a vstup do něj je na dva týdny zdarma.\n\n#datascience #geospatial #geospatialdata #gis",
@@ -17,7 +17,6 @@
       "company": {
         "name": "European Space Agency - ESA",
         "universalName": "european-space-agency",
-        "trackingId": "L5CBevIkQfW2EVRdBzy5Vw==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:4901",
@@ -31,7 +30,6 @@
       "company": {
         "name": "PyLadies Vienna",
         "universalName": "pyladies-vienna",
-        "trackingId": "x+fWC0r4RyCch/JUDU7UKg==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:85613535",
@@ -45,7 +43,6 @@
       "company": {
         "name": "Women+ in Geospatial",
         "universalName": "women-in-geospatial",
-        "trackingId": "VCQRjf6NQ+yHr9wB8Tp7Ug==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:51724063",
@@ -59,7 +56,6 @@
       "company": {
         "name": "Unlock.IT",
         "universalName": "the-unlock-it",
-        "trackingId": "oexeQ42sREihLHiLwAu2mg==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:89354684",
@@ -76,7 +72,6 @@
         "occupation": "Geospatial Data Scientist | Unlock.IT founder | PyLadies Vienna Organizer",
         "id": "460781626",
         "publicId": "tyna-dolezalova",
-        "trackingId": "xVrIW4JGRqy/6SXb3bH9bg==",
         "profileId": "ACoAABt2-DoBjqrKnFkMlpMDfc2wnJcbfMZEfKA",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEdp87rO6fYzA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1675017824390?e=1781136000&v=beta&t=IBHMwDO3RswVqWMMMRwN_cjR-0N0n451mRIcWAPy89s",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEi3WQke_uwcw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1525375593417?e=1781136000&v=beta&t=r2bfxb0HBdpEzFfLti0g89r07Y_fy-rlQ2TjWgO3e7E"
@@ -89,7 +84,6 @@
       "company": {
         "name": "Junior Guru",
         "universalName": "juniorguru",
-        "trackingId": "4zf8ZR53Tlq2X0pwPw91+w==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:26218444",
@@ -107,7 +101,6 @@
         "occupation": "--",
         "id": "1116898369",
         "publicId": "andrea-bártová-281069272",
-        "trackingId": "XxwtwGyJTtG7NI0SQglbHQ==",
         "profileId": "ACoAAEKShEEBejID2kyDBYphXlJ9LE3i6B3FjEk"
       }
     },
@@ -119,7 +112,6 @@
         "occupation": "--",
         "id": "1075872471",
         "publicId": "štěpán-stehlík-473383260",
-        "trackingId": "UIL4HDGySVS0ImxKmi9Vsw==",
         "profileId": "ACoAAEAggtcBaQKlIK8I6vTLBPWqNNgtLGCUd7M"
       }
     },
@@ -131,7 +123,6 @@
         "occupation": "🐝 🍯 Product developer at BKBN",
         "id": "232669821",
         "publicId": "veronika-gabrielova",
-        "trackingId": "nfpZRCHJQfi//6yMH+V+9A==",
         "profileId": "ACoAAA3eQn0Bt87ZSp0QfT6E-vWP8JjxwWCKbiM",
         "picture": "https://media.licdn.com/dms/image/v2/D4E35AQE_qB2P83ug-g/profile-framedphoto-shrink_800_800/B4EZ2.AIS3JUAg-/0/1777009198775?e=1780430400&v=beta&t=99QIk875bqjmuorivm06835n9BZcueHwLKKDY2W_9MU",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE3oRwd5Dq94g/profile-displaybackgroundimage-shrink_350_1400/B4EZfQUy22G4Ag-/0/1751546805612?e=1781136000&v=beta&t=1tbdObrCtHkYMhwQZrAuUDHLEvKwgSSQBALUgNnTeVA"
@@ -145,7 +136,6 @@
         "occupation": "Senior Infrastructure Engineer @ Make.com",
         "id": "50839827",
         "publicId": "jedelsky",
-        "trackingId": "HjjVpY2DTAOWLbbWEsf90Q==",
         "profileId": "ACoAAAMHwRMB8a9FYRfAj5eIjYr8gx5GQkPvssU",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF-sLHCEEVT6Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715673503403?e=1781136000&v=beta&t=hnAhUeBG13qXh_gs3XYcf62wKwN4C19Rr-ajDVwvAk8",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQH9-Ll6gF0zqg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516551227294?e=1781136000&v=beta&t=tY5dkA3YtinujYyZ7-t_5fAohOTrZ3FZBaJcZsCRzb8"
@@ -159,7 +149,6 @@
         "occupation": "Life is constant learning. I love to learn, I love to live.",
         "id": "205470496",
         "publicId": "lenkakasova",
-        "trackingId": "m6LAKo1ATkejIGK1AVh+Qg==",
         "profileId": "ACoAAAw_OyABe8YQoil3Fwg8JuRqMRonGMie6wk",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGf1G1Fn4Ek9A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726389372537?e=1781136000&v=beta&t=gNs4ZESkJpagZnhH5coPfJcS_89t_2aoldfujkDC45g"
       }
@@ -172,7 +161,6 @@
         "occupation": "QA | Testing",
         "id": "1039598196",
         "publicId": "jitka-lizoňová",
-        "trackingId": "MCW09wZJQ8C33hdQNK7lKw==",
         "profileId": "ACoAAD33AnQBknDjKvTgSlBoKZaoS1XA_VcH1oE",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQExn13u0kylQg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1665058732563?e=1781136000&v=beta&t=JPWGhavUzkDTnQq5rzhCr9RZ4PE1XmjXpq6u_TVnN5s"
       }
@@ -185,7 +173,6 @@
         "occupation": "Global Sales Manager | Specialty Lubricants",
         "id": "132002824",
         "publicId": "petr-pribil",
-        "trackingId": "hQVrpYiLT3yAfddGX+QMjQ==",
         "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEGdgqIgIpkzg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712250006297?e=1781136000&v=beta&t=UB9wEJule0NhB0lR0De_FtfePuW1Di0Vm80cYt1MqZU",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFuvlBRuJNbjw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712250566915?e=1781136000&v=beta&t=8sCRHio1dDSnAp_oiaygmw7_1g4W1ce4YJV-kaJIK3M"
@@ -199,7 +186,6 @@
         "occupation": "Data analytics | Energy transition",
         "id": "114102236",
         "publicId": "janfdolezal",
-        "trackingId": "oaccenAsSLipGkwdZBArbg==",
         "profileId": "ACoAAAbND9wBTGfUvBkG8--t6nWYBJcRm6qj8LI",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGDiD2lCktv4Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1616743956066?e=1781136000&v=beta&t=9Q1PGraRSzb__h4cp2O1EwOE1gaZWHh89nk0FhoGeic"
       }
@@ -212,7 +198,6 @@
         "occupation": "AI-Powered Tech Talent Advisory | Business Development & Technical Consultant @Splendit",
         "id": "172287628",
         "publicId": "jaroslavstuller",
-        "trackingId": "jV/wqycVSWCEaAstDcgDmA==",
         "profileId": "ACoAAApE5owBWLnnbJ1tIVpyL7cZF8Gi0xEHctk",
         "picture": "https://media.licdn.com/dms/image/v2/C5603AQEDParn1wpswg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1581946822590?e=1781136000&v=beta&t=I5OGJXmTS2L95CHIvjuu9SOAMNinxlAwMqTe5jG1jQw",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEhqV7lBRpa5g/profile-displaybackgroundimage-shrink_350_1400/B4EZoHH82mHEAY-/0/1761056116866?e=1781136000&v=beta&t=Fcvys8W98Bx2myUFIFpKDwIhKamWV6_7lGuw7FtmoFs"
@@ -235,7 +220,6 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "trackingId": "d1e5tiiYQ4CGz5unFsgZqg==",
     "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
     "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
     "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"

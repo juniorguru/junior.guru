@@ -5,7 +5,7 @@
   ],
   "isActivity": false,
   "urn": "urn:li:activity:7216179306069159938",
-  "url": "https://www.linkedin.com/posts/honzajavorek_europython-djangogirls-activity-7216179306069159938-mmE4?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC9IwucBOlZAtkMcXzxvWRMowT5oiXMZAvE",
+  "url": "https://www.linkedin.com/posts/honzajavorek_europython-djangogirls-activity-7216179306069159938-mmE4",
   "timeSincePosted": "1yr",
   "shareUrn": "urn:li:share:7216179305217748992",
   "text": "Nedokázal jsem ukončit Vim.\n\nByl jsem dneska v rámci konference #EuroPython koučovat na #DjangoGirls workshopu.\n\nÚčastnice měla problém něco commitnout. Po peripetiích s větvemi v Gitu, kdy půlka nástrojů předpokládala, že hlavní větev se jmenuje master, a druhá půlka že main, jsme se dostali k samotnému commitu.\n\nProtože neumím s PyCharmem, dělali jsme to přes terminál. Ale když už účastnice ten PyCharm měla, tak přes terminál v nějakém okýnku uvnitř PyCharmu, samozřejmě.\n\nPříkaz `git commit -m 'Second commit'` skončil s chybou, kterou jsem nepochopil. Tak jsem navrhl, že zkusíme jen `git commit`. To otevřelo Vim. Po dvou dekádách v oboru umím ve Vimu akorát něco napsat, uložit to a ukončit ho, ale vždy to stačilo.\n\nAbychom se dostali do příkazového módu, takového toho s dvojtečkou, potřebovali jsme po napsání commit message udělat Esc. Jenže Esc nás vždy akorát vyhodilo z okýnka do jiného okýnka 😀 \n\nNakonec jsme celé okýnko museli zavřít „křížkem“ a otevřít znova. Pro jednoduchost jsme zkusili commit pomocí `git commit -m Second`. To prošlo.\n\nAž v tu chvíli mi došlo, že Windows možná nemají rády apostrofy v terminálu, a že dvě slova v commit message by nám možná prošly s dvojitýma uvozovkama, jako `git commit -m \"Second commit\"`.\n\nV těchto situacích si vždycky říkám: „Proč to všechno musí být tak složité?“ Je úplně šílené, jak to programování umí někdy být pro začátečníky fakt past vedle pasti.\n\nVůbec nechápu, jak se to někdo dokáže naučit bez nějakého mentora nebo nápomocné komunity (třeba jako ta na junior.guru/club, mrk mrk). Dnes možná pomůže ChatGPT, ale dřív?\n\nPokud jste prošli všemi takovými nástrahami a programování vás neodradilo, tak máte můj obdiv, protože sám nevím, jestli bych se v tom neutopil a nevykašlal se na to, kdybych začínal dnes.\n\nZa mých mladých let člověk dvojklikem nainstaloval WAMP, splácal něco do index.php a na internet to nahrál přetažením myší v nějakém FTP klientovi. Velmi pravěké, nicméně developer experience pro začátečníky to mělo excelentní a marně přemýšlím, jaká technologie má dnes stejně dobrý TTHW (Time to hello world).",
@@ -24,7 +24,6 @@
         "occupation": "SQL, Python, znalost výrobních procesů a obchodu",
         "id": "1363548796",
         "publicId": "petr-kavan-8a4796320",
-        "trackingId": "V2PmdAgwRwOKC+WGyMCccQ==",
         "profileId": "ACoAAFFGGnwBe9zciQjUMMaVoK1nC9SIjVqF_OE",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF6W0rjaBywvA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1731787708871?e=1781136000&v=beta&t=1csOzuLLB2HblC307f9iOZo4jB7iJNqkApPOF7Lmf4o",
         "distance": "OUT_OF_NETWORK"
@@ -45,7 +44,6 @@
             "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
             "id": "551084893",
             "publicId": "grumpyprogrammer",
-            "trackingId": "5ORAPNGFQIOJRIPmxxVwLg==",
             "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4"
           }
         }
@@ -58,7 +56,6 @@
         "occupation": "Staff Engineer",
         "id": "17244345",
         "publicId": "almad",
-        "trackingId": "THzNlCnfRuGdex2OK3X+hA==",
         "profileId": "ACoAAAEHILkB4Bzt2NxVHr_Jl8lpknbM03XMQv4",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQFsL3VOIdKJGQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1608388490859?e=1781136000&v=beta&t=kLCXtr98Lel1hrQWEX7bQrQmap4SccyNS7Q_B61aFCQ",
         "distance": "OUT_OF_NETWORK"
@@ -77,7 +74,6 @@
         "occupation": "Software Developer",
         "id": "81127321",
         "publicId": "lukas-franek-82120423",
-        "trackingId": "OP/i9oC4Q6mUWdVFWDv0+A==",
         "profileId": "ACoAAATV55kBg5RKyIO1WuHYTLEUYifG_qiNSHI",
         "distance": "OUT_OF_NETWORK"
       }
@@ -95,7 +91,6 @@
         "occupation": "Developer PHP",
         "id": "353018290",
         "publicId": "petr-plšek-baa2849a",
-        "trackingId": "f5mxOiteTSiuoFE40Tj0TA==",
         "profileId": "ACoAABUKobIBK7-QQpyQbcQ1SMDmj6FFpI2MrgQ",
         "distance": "OUT_OF_NETWORK"
       }
@@ -113,7 +108,6 @@
         "occupation": "Developer PHP",
         "id": "353018290",
         "publicId": "petr-plšek-baa2849a",
-        "trackingId": "f5mxOiteTSiuoFE40Tj0TA==",
         "profileId": "ACoAABUKobIBK7-QQpyQbcQ1SMDmj6FFpI2MrgQ",
         "distance": "OUT_OF_NETWORK"
       }
@@ -131,7 +125,6 @@
         "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
         "id": "551084893",
         "publicId": "grumpyprogrammer",
-        "trackingId": "jT4fost9Rb2vbkq4Iall+Q==",
         "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4",
         "distance": "OUT_OF_NETWORK"
       }
@@ -149,7 +142,6 @@
         "occupation": "Software Developer / Linux Enthusiast",
         "id": "738337065",
         "publicId": "miloslav-nosek",
-        "trackingId": "tMBfZUHQQX2ON6CBS1OhmQ==",
         "profileId": "ACoAACwCISkBRiQskBlq8lk-Z7642HxAUaOY__U",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHLK01XyleBRw/profile-displaybackgroundimage-shrink_350_1400/B4EZ2F3_n6GcAY-/0/1776067543064?e=1781136000&v=beta&t=DGvjiAoL_P-A3IOosr3jFZQ-6akE_5Iw14qZ-zEYYu8",
         "distance": "OUT_OF_NETWORK"
@@ -168,7 +160,6 @@
         "occupation": "Business development at TheoryHoldings. Marketing technology for real estate, import/export, publishing. IPF powerlifter -63kg on team Hatadani in São Paulo, Brazil.",
         "id": "1286450689",
         "publicId": "jana-mathauser-br",
-        "trackingId": "DjtCGBxeRHCqaMUoiTE39Q==",
         "profileId": "ACoAAEytrgEBLTP0EfhcKoyAWkeruUCjEWAZXX8",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFDz-F-jqQNMQ/profile-displaybackgroundimage-shrink_350_1400/B4EZlXghoRGYAY-/0/1758109768828?e=1781136000&v=beta&t=R4SieUQ7NVJMmKp8LFou8dluriuQnW9649teF2rNy2c",
         "distance": "OUT_OF_NETWORK"
@@ -187,7 +178,6 @@
         "occupation": "Python developer and lecturer",
         "id": "355842259",
         "publicId": "jakub-červinka",
-        "trackingId": "R+87Gf8CTPmkA0bM0aO7BQ==",
         "profileId": "ACoAABU1uNMBxEkN7xMohKuhfytB97ZjK-tfEKo",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFo1b8_EZuWVQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728056593822?e=1781136000&v=beta&t=NEwZVdMdQqj1rM46MtdnZQjC4bxHXipuncawNthkvSU",
         "distance": "OUT_OF_NETWORK"
@@ -206,7 +196,6 @@
         "occupation": "SDET",
         "id": "40625426",
         "publicId": "jansvehlakqa",
-        "trackingId": "Yqszy1tNSi6939p0cWBRrA==",
         "profileId": "ACoAAAJr5RIBxBfr3rSyigb0hSG2YFOQdh7vYaE",
         "distance": "OUT_OF_NETWORK"
       }
@@ -221,7 +210,6 @@
         "occupation": "SQL, Python, znalost výrobních procesů a obchodu",
         "id": "1363548796",
         "publicId": "petr-kavan-8a4796320",
-        "trackingId": "B0W5h4lhR2KfeTjcAyptOg==",
         "profileId": "ACoAAFFGGnwBe9zciQjUMMaVoK1nC9SIjVqF_OE",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF6W0rjaBywvA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1731787708871?e=1781136000&v=beta&t=1csOzuLLB2HblC307f9iOZo4jB7iJNqkApPOF7Lmf4o"
       }
@@ -234,7 +222,6 @@
         "occupation": "Deep thinker",
         "id": "706676441",
         "publicId": "anna-vernerova",
-        "trackingId": "fgwmcaSWS6KVEZmNwDhhZg==",
         "profileId": "ACoAACofBtkBJLgxZaJGNahekLWWqdSj7t7gNt4"
       }
     },
@@ -246,7 +233,6 @@
         "occupation": "Quantitative analyst",
         "id": "904296595",
         "publicId": "lada-peksova",
-        "trackingId": "e9WQTTMhT7CWyg4PUXLGpQ==",
         "profileId": "ACoAADXmeJMBRSkuE3e4U75HCqO3eWE0ctTkX-8",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFyY55i9BpgsQ/profile-displaybackgroundimage-shrink_350_1400/B4EZcdV.FpHYAg-/0/1748543988662?e=1781136000&v=beta&t=liaLbTYgIU8Kr6TUao_xODDnQ3VGGu-r2Kn6yZLYc3o"
       }
@@ -259,7 +245,6 @@
         "occupation": "cyp",
         "id": "106076066",
         "publicId": "jiri-gunka",
-        "trackingId": "2/aEfo82QXKLzq25rhs58g==",
         "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
       }
     },
@@ -271,7 +256,6 @@
         "occupation": "Software Developer",
         "id": "114919573",
         "publicId": "brezinapetr",
-        "trackingId": "2PQ096jgRvy5zfvXqCMMyA==",
         "profileId": "ACoAAAbZiJUB1D8E6PwVTfcGm54ViNdW54H-I2k"
       }
     },
@@ -283,7 +267,6 @@
         "occupation": "Site Reliability Engineer & Python Lover",
         "id": "347812870",
         "publicId": "martina-habartova-dev-ops",
-        "trackingId": "xscIspjBRs2il9SdBgjPww==",
         "profileId": "ACoAABS7NAYBntNQG1z2SZ5wy6bIgOhC9Wb17z8",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGNtSfksXDC9A/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1637270060172?e=1781136000&v=beta&t=Gjz7YoKWBC5Es1x5HQSEq76TlC4I56G_XY4t4UI0iqQ"
       }
@@ -296,7 +279,6 @@
         "occupation": "IT Specialist | Digital technology enthusiast | Part time Sports Coach since 2012",
         "id": "823178169",
         "publicId": "dvoracek-jan",
-        "trackingId": "6RR0CmrTR1ekIJqCvmJdFw==",
         "profileId": "ACoAADEQs7kBLa6ATjYmi_RHWnqBmTD1t2kHET4",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGttIxg1Ms99A/profile-displaybackgroundimage-shrink_200_800/B4EZrm.EdWIQAY-/0/1764811622965?e=1781136000&v=beta&t=4l-9hGdAzhXma1wnkBONEQJar1prFVnSxe6cUwZ7s0Y"
       }
@@ -309,7 +291,6 @@
         "occupation": "Growth & Product Marketing Leader | AI, Automation & Data-Driven Marketing | Paid Media & GTM",
         "id": "280864674",
         "publicId": "vladibenesova",
-        "trackingId": "FCyZE5t0RQO6s/E4FtWimg==",
         "profileId": "ACoAABC9p6IB2n8cANaMjMHChQu8OV-biwFYMv4",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFvAIWCyM_68g/profile-displaybackgroundimage-shrink_350_1400/B4EZp3fLobGcAc-/0/1762941256351?e=1781136000&v=beta&t=2UN24QYUzv_HebNPnlLJL1qIRtvW-2KR9F5fcV4NwRA"
       }
@@ -322,7 +303,6 @@
         "occupation": "Referent zaměstnanosti na Generálním ředitelství Úřadu práce ČR",
         "id": "292268144",
         "publicId": "monika-matějková-7a8a6881",
-        "trackingId": "6mSoSiHFQ0i9ao+cMJgL2w==",
         "profileId": "ACoAABFrqHABPBTSJ5-JkuVGLz2eqh8VOSct-LM",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHlq641XSoOOQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516851410961?e=1781136000&v=beta&t=bOPZyWrW5TxEmfC8dv7irxwOkK723f_jw-ZeBjoyZc0"
       }
@@ -335,7 +315,6 @@
         "occupation": "Analytik IT auditu ve společnosti KPMG Czech Republic",
         "id": "823217745",
         "publicId": "veronika-kopicova",
-        "trackingId": "AOSi4KfiT8SRYGh50yAtNw==",
         "profileId": "ACoAADERTlEBR16jtxiyB4-QHxs8Dr_dt-KxLNA"
       }
     }
@@ -356,7 +335,6 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "trackingId": "kEB+UnBJQ4iyZiLqKBA7zg==",
     "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
     "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
   },

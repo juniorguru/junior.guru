@@ -5,7 +5,7 @@
   ],
   "isActivity": false,
   "urn": "urn:li:activity:7320755445667688451",
-  "url": "https://www.linkedin.com/posts/honzajavorek_kdo-v-%C4%8Dr-a-sr-provozuje-kurzy-programov%C3%A1n%C3%AD-activity-7320755445667688451-dBgD?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAADmbg6cBYOPU8CPv9ZUe8oI_f7tbNXybZ54",
+  "url": "https://www.linkedin.com/posts/honzajavorek_kdo-v-%C4%8Dr-a-sr-provozuje-kurzy-programov%C3%A1n%C3%AD-activity-7320755445667688451-dBgD",
   "timeSincePosted": "1yr",
   "shareUrn": "urn:li:share:7320755444413566976",
   "text": "Kdo v ČR a SR provozuje kurzy programování nebo testování? O jaké subjekty se přesně jedná? Jak dlouho ty firmy existují?\n\nPřesně tyhle informace dnes díky spolupráci s Imper (Saleskit) přibyly do katalogu poskytovatelů kurzů na junior.guru/courses\n\nProč? Protože to může juniorům pomoci, když se budou rozhodovat, zda poskytovateli důvěřovat.\n\nNajít u těch firem vůbec jenom IČO je občas téměř nadlidský úkol. Kdyby EU nenařizovala, že se má uvést v GDPR prohlášení, tak by to mnohdy ani nešlo 🔬\n\n🔍 Některé subjekty se jmenují jinak, než jak se jmenují kurzy, které nabízí.\n🔍 Některé existují 2 roky, jiné zase 20.\n🔍 Některé jsou firma, jiné zapsaný ústav, za dalšími stojí OSVČ.\n🔍 Některé fungují jen v ČR, jiné jen v SR, ale pár má pobočku dokonce v obou zemích.\n\nA toto je pouze začátek. Do budoucna bych chtěl katalog doplňovat i o další informace, např. zda se jedná o pobočku nějaké mezinárodní sítě, a případně kde se nachází „matka“ 🕵️‍♂️\n\nMockrát děkuju za podporu od Imperu, protože kdybych si měl ta data shánět ručně po rejstřících, asi by mi to trvalo věčnost. Díky Merk API jsem měl prototyp hotový za 1h. Myslím, že stejným způsobem podporují i Hlídač státu, z.ú. \n\nCo myslíte? Je tohle užitečné, nebo je to spíš na nic? A jaké další informace byste o poskytovatelích kurzů v katalogu uvítali? A pokud víte o nějakých dalších poskytovatelích, dejte vědět, přidám je.\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
@@ -17,7 +17,6 @@
       "company": {
         "name": "Saleskit",
         "universalName": "saleskitcom",
-        "trackingId": "WRbkPA8WQ6yivo2jLHc1oQ==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:2344613",
@@ -31,7 +30,6 @@
       "company": {
         "name": "Hlídač státu, z.ú.",
         "universalName": "hlidacstatu",
-        "trackingId": "yYo3XG68TrqtI7Srj6DULg==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:80328355",
@@ -53,7 +51,6 @@
         "occupation": "Manual Tester | ISTQB Certified | GDS | Tourism | Technical Support",
         "id": "314600446",
         "publicId": "michaela-gazakova",
-        "trackingId": "pUW7+zlVRPmQmtSuVfC+OQ==",
         "profileId": "ACoAABLAa_4Bf1MdgJb9bSZuHYJb7uPpON1qAk0",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGDyP-aaElWoA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1737142892097?e=1781136000&v=beta&t=8hoKyoqC72rE70IT7nZl21mnYXzY_uliCa5DsoYY0t4",
         "distance": "OUT_OF_NETWORK"
@@ -72,7 +69,6 @@
         "occupation": "Legal tech",
         "id": "754131851",
         "publicId": "petr-šimeček-a8b682190",
-        "trackingId": "r0AHdpqdQKOuJ4oJ9iqNgw==",
         "profileId": "ACoAACzzI4sBV52gwv5X2H9UXArS-98XtEjWGA8",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHpJURT2xtfsw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1711974939740?e=1781136000&v=beta&t=DWJEITjQPJ7-_KzC5xrhSGUN_Sbrwd7U1OtRfAtikKc",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHVoCDovyI5PQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1711975126772?e=1781136000&v=beta&t=KDRhUzkBYns8TMafEOd1mbDD0uciHwNLneSQk0POnVA",
@@ -92,7 +88,6 @@
         "occupation": "Product Manager at BO! holding",
         "id": "38970131",
         "publicId": "grmela",
-        "trackingId": "kkeCIo2ZTZC7oM90IrY8eQ==",
         "profileId": "ACoAAAJSoxMBLuXSCl35-CBzv-Qi9M8drmUPLU8",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEKvA6vdgB7zA/profile-displayphoto-crop_800_800/B4DZqi3sXoJIAI-/0/1763669104652?e=1781136000&v=beta&t=zMIPHFGMGQtS125NEDo6c0VMRsM5oNJkIkR9Bu6YOTs",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEAjjiIwwlMoA/profile-displaybackgroundimage-shrink_350_1400/B4DZdJeb27GgAY-/0/1749284415662?e=1781136000&v=beta&t=OmjgKzr8kWCZLc7QJCWjTDkuehDFGqqeAVDbDAY7cjA",
@@ -111,7 +106,6 @@
           "company": {
             "name": "ReactGirls",
             "universalName": "reactgirlsprague",
-            "trackingId": "7OzcFNjERYKI3fW0NFPdyA==",
             "active": true,
             "showcase": false,
             "entityUrn": "urn:li:fs_miniCompany:34588565",
@@ -127,7 +121,6 @@
         "occupation": "Founder @ReactGirls, Community @Mews, Software Engineer",
         "id": "662278178",
         "publicId": "tereza-vankova",
-        "trackingId": "/lcHDuJ3Tt+0cvycKcnslQ==",
         "profileId": "ACoAACd5kCIBkil_yiYqyksAU2xUhl_An8PtzTQ",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEy0HfAmjLbqg/profile-displayphoto-shrink_800_800/B4EZX_nPVTHcAg-/0/1743750231941?e=1781136000&v=beta&t=3xMSJvI9jbvmPY1089B4Sv5rCKpCRK_6ZehkCncWp1A",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEJ-9AKv9CATQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1683450743882?e=1781136000&v=beta&t=k0zgybeam9x0oi2JGYWbFlWS7LPVhuznxm1Zja26iDo",
@@ -147,7 +140,6 @@
         "occupation": "IT test analytik | Manual tester se zkušeností z bankovnictví | QA | Testování procesů | SQL | Postman | JIRA | 🩵",
         "id": "1226588575",
         "publicId": "m-cizek",
-        "trackingId": "FEcR6nL+SF+ZxU/Je+jTpQ==",
         "profileId": "ACoAAEkcQZ8BJdRpDYvEMxzgsu7_TE_8sSjKi_Q",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFjsbGcMWrDdg/profile-displayphoto-shrink_800_800/B4EZWQLzFWH0Ak-/0/1741880767815?e=1781136000&v=beta&t=YHYzy7mSkMTCZOxlOTENUMQ2dtSwLAQn0Cyg1Y02uIQ",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGygjwdI2Io8g/profile-displaybackgroundimage-shrink_350_1400/B4EZWL8fW3HcAY-/0/1741809646400?e=1781136000&v=beta&t=l2VlhzJLTFt6NOlMNHuG5aSeAoGfT7gT9h3M_6vxyno",
@@ -167,7 +159,6 @@
         "occupation": "Linux lover ;-)",
         "id": "148282826",
         "publicId": "martin-šuraba",
-        "trackingId": "6SWPYWinQ2yTuh+8bJDMCA==",
         "profileId": "ACoAAAjWncoBV1fLUSxy4LPyYcesKobjlSQHznQ",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG3Gb4BlgCVZQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693900488039?e=1781136000&v=beta&t=x-DN7fUTWuQkA6F4_rWi05mTohNdCH-S2Vj0RulkMM0",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGGkAbiGDIeww/profile-displaybackgroundimage-shrink_350_1400/B4DZ2w5FFRHwAY-/0/1776789247703?e=1781136000&v=beta&t=KaejtkxyR8ERrXhjNGP_KW3lGT8Nz8IVYzQy0BShSP4",
@@ -187,7 +178,6 @@
         "occupation": "At the intersection of tech, people & creativity 👾",
         "id": "1319107235",
         "publicId": "veronika-hasalová-2ab924309",
-        "trackingId": "xH3K9S8dRXGzIAP7L5xh7A==",
         "profileId": "ACoAAE6f-qMBbXSFf6MmHiDEfdqZzZHDJw4qx9A",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQErIg7qlj42Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715692102270?e=1781136000&v=beta&t=qQ5o12T11Vp1dgD1okYjDNSJvVdVxaVvsyAHc87_PoA",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHNC3dyzBXC3w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1734444240859?e=1781136000&v=beta&t=uWomglmMrn0CX3Zdvv1eKEww6VFs86tXHdEYnea1z18",
@@ -207,7 +197,6 @@
         "occupation": "Cloud & DevOps Engineer | Former Physicist",
         "id": "715244766",
         "publicId": "alicerez",
-        "trackingId": "NtenRpWMQKqFXqkjuaye+Q==",
         "profileId": "ACoAACqhxN4BidLqSDiAhAFk-qaLAt_uKMIjE0k",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFcsnPyicuVpg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1732633942785?e=1781136000&v=beta&t=Eal-bDcU8QUDULsDaTSbwScPPaubCs3xqhMlReteowE",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHfgOPzWd_8sQ/profile-displaybackgroundimage-shrink_350_1400/B4EZqs2NG5HoAY-/0/1763836482881?e=1781136000&v=beta&t=a8sDxshgVy8vXuGKv9Nl-iugOtGCzZHmVBPcMmu4gZw",
@@ -227,7 +216,6 @@
         "occupation": "Product Engineer | Troll Master | Meme Lord",
         "id": "747440841",
         "publicId": "adam-vesecky",
-        "trackingId": "vYha429UTj2uHtnCSPf/IA==",
         "profileId": "ACoAACyNCskB7sVinQ5shqVPzyhnvRc9S8xEWk4",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHMOyP7oB6Aag/profile-displayphoto-crop_800_800/B4EZq.uuChKoAI-/0/1764136515593?e=1781136000&v=beta&t=SxhHDr7RkH4Smau2d6r-DZ6SiMrQ9CX4sSGqkEQ3WZ4",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG6MpKRKegYCA/profile-displaybackgroundimage-shrink_350_1400/B4EZq_D.zNIoAc-/0/1764142086412?e=1781136000&v=beta&t=bnSfzS6FTDPIa6sfrvKX2MsBaYPhenrFIkz5WClKxJk",
@@ -244,7 +232,6 @@
         "occupation": "⭐ Social Media Manager ⭐ Copywriter pro web i sociální sítě 🎓 Holky z Marketingu",
         "id": "484295969",
         "publicId": "martina-vybíhalová",
-        "trackingId": "jmp7r0avT5KcqgKUXxhD3g==",
         "profileId": "ACoAABzdxSEBRjdfkv4dSJawHodY5Txn5vEX6hE",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHrXgLlmdmNoQ/profile-displayphoto-crop_800_800/B4EZgdozq6HgAI-/0/1752843893946?e=1781136000&v=beta&t=QuPAH1oegD0NR0P1AogEwIwRZb6WBzKeRTNg_a9qbLM",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFBs8JLaS_blw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1697121401973?e=1781136000&v=beta&t=uvQaCfovnLg3MtF4Jr-_v78yRaRLJdKO5uxoEHqlU-M"
@@ -258,7 +245,6 @@
         "occupation": "Junior Data Analyst, AP Accounting, Reporting, Controlling",
         "id": "1136414018",
         "publicId": "milada-borrow",
-        "trackingId": "nBsORaosR8WfalTLKlkjkQ==",
         "profileId": "ACoAAEO8TUIBAcDwMiytj9V95pkvE0KMj3HLGwM",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHtPYHyqKZqFg/profile-displayphoto-shrink_800_800/B4EZQ31swqGYAc-/0/1736103612242?e=1781136000&v=beta&t=tsnHFjjs4_eG1g2Bl0nBBP_S54jZZ-mT-0uRn82zJpE",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFo5GGOUYKtpQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1736105327386?e=1781136000&v=beta&t=HDY2bH_hjWCCCI9B6BhH5jXm9CCinTcnWcpt0iiEyuE"
@@ -272,7 +258,6 @@
         "occupation": "Moderátor ve společnosti DATA mesh",
         "id": "637440646",
         "publicId": "py-veronika-zpevakova",
-        "trackingId": "ucvuviYaRo62xGtFmR/wAA==",
         "profileId": "ACoAACX-koYBZCeuCb06SzAT8F955fJvI0OEIAc",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG1ZWtWd7gYPA/profile-displayphoto-crop_800_800/B4EZf8w5aYH4AI-/0/1752292366705?e=1781136000&v=beta&t=U6HWTwf03AjW7HUEmYBNf3bJUPuiUzWy7Erk0Q6kAbw",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGprRlAotow1Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1519121908586?e=1781136000&v=beta&t=XpMvIj6AwaxV4O3LsHEORi7O8FcmUA6h5NM_51qe9xg"
@@ -286,7 +271,6 @@
         "occupation": ".",
         "id": "301215511",
         "publicId": "terezavalova",
-        "trackingId": "PKHcf4LUTWiM9dYDP+ezkA==",
         "profileId": "ACoAABH0LxcBLJyLU-fQPzxBnMspTzntWrdWpsY",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGcOcMtazMXOw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1588362171353?e=1781136000&v=beta&t=k4NYWIFrugv86NhuZ400HAPa6-bWzuzPXONmZHyoI_o"
       }
@@ -299,7 +283,6 @@
         "occupation": "Junior BI Analyst | Czechitas Digital Academy: Data | Power BI | Tableau | Snowflake | Databricks | SQL | Python",
         "id": "530174783",
         "publicId": "pavla-jakobsson",
-        "trackingId": "7+W/oS7pS/+bNmrTNZaltQ==",
         "profileId": "ACoAAB-Z0z8BpCnacujjbEaQjMQ6TevoSo0sEHU",
         "picture": "https://media.licdn.com/dms/image/v2/D5603AQErAI2g3TAe-A/profile-displayphoto-crop_800_800/B56ZfQ3UuYGQAM-/0/1751555878010?e=1781136000&v=beta&t=Fc7E3lRIkX_ZvIU3CRTwBBw5MTo7b-P2mV_3pBYfVAE",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEBPyx9GaDEgg/profile-displaybackgroundimage-shrink_350_1400/B56ZomCWN8G4AY-/0/1761574741329?e=1781136000&v=beta&t=GE4QXlD2nMd0T_LgjYa-95S-I8KUPzW9CxZ0oIubwXw"
@@ -313,7 +296,6 @@
         "occupation": "Web analyst",
         "id": "977811496",
         "publicId": "jiří-dofek-174573233",
-        "trackingId": "tFXlgeiBT+yDaZDnZnB/WA==",
         "profileId": "ACoAADpIOCgBtJEjuTRkLwejreuDv-awasx6_tA",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHg9FFGGaqaQA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1713454396391?e=1781136000&v=beta&t=cvzRub4qYanJTrtxJ9ma61NNJ1AsVMJjiiZafEvBSoY"
       }
@@ -326,7 +308,6 @@
         "occupation": "Junior Front-end developer | JavaScript, React, SQL",
         "id": "969269007",
         "publicId": "linda-hrdinova",
-        "trackingId": "NbsC++x7RWevEKEP12ygBw==",
         "profileId": "ACoAADnF3w8BVSPLBKPqM3WonpxXuVf1c-Wf5GM",
         "picture": "https://media.licdn.com/dms/image/v2/D5635AQGRwjtWZMUlkQ/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1697310883052?e=1780430400&v=beta&t=rYSiG8c7b-Pb1xbN_EHlliFRfAJHMKnVO9f49IuKHQ0"
       }
@@ -339,7 +320,6 @@
         "occupation": "SOC Analyst L1 | Security Monitoring | SIEM | ArcSight | Rapid7 | Centreon",
         "id": "1192881564",
         "publicId": "lenka-kalábová",
-        "trackingId": "4zfHONZxS2+tq6Pl8y/Hhw==",
         "profileId": "ACoAAEcZ7ZwBVJnRwDMVZmMQWIP2mkwHYZZq0u0",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFGrfAnxjC74g/profile-displayphoto-shrink_800_800/B4EZaCNiCTHEAc-/0/1745941308113?e=1781136000&v=beta&t=Wj0yQ96GJLTzu-7zLY9swYVaYAKi7ipRxPzDSNNDPX0",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHYfLDtLGZoiQ/profile-displaybackgroundimage-shrink_350_1400/B4EZd.5TINHIAY-/0/1750180640120?e=1781136000&v=beta&t=y6Kpo2FxuHcAPtxSgGqx7ouB0IyRStma3DzQMZhQodw"
@@ -353,7 +333,6 @@
         "occupation": "--",
         "id": "388660440",
         "publicId": "tereza-bastarova-2a01b3aa",
-        "trackingId": "jB8821e9Rwu6pU5F2syxjA==",
         "profileId": "ACoAABcqfNgB87WKDmnbb2rNRYuYJHeRwlfDPdI",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEvzZeKSL7VSg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1683916160785?e=1781136000&v=beta&t=jr-J7IsaLBl42dijlUiQbpVxo9V3W8e0VT0h4ObSU6M"
       }
@@ -366,7 +345,6 @@
         "occupation": "QA Engineer | Build & Release Management | Junior Product Owner & Coach at Czechitas | Exploring Agile & Product Thinking",
         "id": "1434889858",
         "publicId": "slivenska-andrea",
-        "trackingId": "BagAmhEERcaAkllKRjN1sg==",
         "profileId": "ACoAAFWGroIBxex7nY34n4s1LqVRxt9z9kGY9gU",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEviNQ1BxU5vQ/profile-displayphoto-crop_800_800/B4DZpoWKDcJEAI-/0/1762687230957?e=1781136000&v=beta&t=RVJoKfW3iJRroKEPKyaqRH5Dt_BfudxysPo3go48qGw",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFr6U-WOBhoEg/profile-displaybackgroundimage-shrink_350_1400/B4DZbKFLyuHAAc-/0/1747147079632?e=1781136000&v=beta&t=6nDT4O8jfdLR3DcNdN2-_8Tio3wYC5DpqQTF-Xn6WXI"
@@ -389,7 +367,6 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "trackingId": "zU1g9ORqTJS2easB6Tu2aA==",
     "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
     "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
     "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"

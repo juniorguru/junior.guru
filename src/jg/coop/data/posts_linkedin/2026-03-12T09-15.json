@@ -5,7 +5,7 @@
   ],
   "isActivity": false,
   "urn": "urn:li:activity:7437788232131534848",
-  "url": "https://www.linkedin.com/posts/honzajavorek_sleva-50-5000-k%C4%8D-20-a-30-to-se-activity-7437788232131534848-CtNZ?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAACrQoogBzcO6PdHYllCLqPsl2uMapGCOPVg",
+  "url": "https://www.linkedin.com/posts/honzajavorek_sleva-50-5000-k%C4%8D-20-a-30-to-se-activity-7437788232131534848-CtNZ",
   "timeSincePosted": "2mo",
   "shareUrn": "urn:li:share:7437788230604926976",
   "text": "Sleva 50 %, 5.000 Kč, 20 % a 30 %. To se nám to hezky sešlo! A k tomu ještě dvě soutěže.\n\nObčas někdo osloví náš klub pro juniory v IT a poskytne slevu, nebo dá volňásky, třeba na konferenci.\n\nVětšinou se něco objeví 1x za měsíc nebo dva, ale teď se stalo, že máme fakt velkou úrodu 🤩 Aktuální nabídka pro členy junior.guru/club :\n\n🎲 soutěž o lístek na mDevCamp\n🎲 soutěž o knihu Pavla Ponce „Učebnice jazyka Java pro samouky” (čerstvé, třetí vydání)\n\n🎁 sleva na JetBrains Academy\n🎁 sleva na kurz od Bezpečný kód\n🎁 sleva na Gophercamp od Jan Bleha\n🎁 sleva na Prague Crawl od Apify\n\nTolik dárečků! Přitom Vánoce už byly 😀\n\nVše uvedené mohou samozřejmě využít i senioři, kteří v našem klubu jsou. Mají to jako malou odměnu za to, že ve volném čase pomáhají ostatním.\n\nA i z těch šikovných a aktivních juniorů, které v komunitě máme, budou jednoho dne senioři… Když jim svou značku nebo produkt ukážete už dnes, vytvoříte „vhodný“ návyk 😉\n\nDíky partnerstvím se doví o tom, že konference nebo produkt existuje. A budou vědět, že kdo dělá mobilní appky, tak se má ukázat na mDevCampu. Nebo že kdo scrapuje, má se ukázat na Prague Crawl.\n\nFakturoid má zase dlouhodobě logo na příručce pro juniory junior.guru/handbook a věřím, že díky tomu každý junior či medior, který jde poslat svou první fakturu, začne právě u nich. Nebo je minimálně automaticky zvažuje.\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
@@ -17,7 +17,6 @@
       "company": {
         "name": "mDevCamp",
         "universalName": "mdevcamp",
-        "trackingId": "+yl35rOtTBSVKBBDjaszgQ==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:28135155",
@@ -31,7 +30,6 @@
       "company": {
         "name": "JetBrains Academy",
         "universalName": "jetbrains-academy",
-        "trackingId": "+70n+XXcQu+UvYp8UTS/mQ==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:98428983",
@@ -45,7 +43,6 @@
       "company": {
         "name": "Outcybers (dříve Bezpečný kód)",
         "universalName": "outcybers",
-        "trackingId": "5svVXlEZQOy/ZjeSmXyZ9A==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:91609695",
@@ -62,7 +59,6 @@
         "occupation": "Community Manager at Datamole",
         "id": "150941191",
         "publicId": "janbleha",
-        "trackingId": "yETjCHdYTX+QRYzAk5XQDw==",
         "profileId": "ACoAAAj_LgcBZzuSAV2XPW-aQfdbuteb1J1SlLs",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEuVDbWB77xzw/profile-displayphoto-crop_800_800/B4EZoCKXULJ0AM-/0/1760972863956?e=1781136000&v=beta&t=tql6Cz_UQMxpkin2Oyf3yqOIorr6pgmJ375QWCJGkuQ",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFe0E0zyyFD_w/profile-displaybackgroundimage-shrink_350_1400/B4EZoCIGiEKYAY-/0/1760972270395?e=1781136000&v=beta&t=ba6QJSVQwNyLLxL3TeXAJj9VdtFaoAg25FcWGA5rbmA"
@@ -75,7 +71,6 @@
       "company": {
         "name": "Apify",
         "universalName": "apify",
-        "trackingId": "5RSSzhANSE+WlnCbqbsZuA==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:10608457",
@@ -89,7 +84,6 @@
       "company": {
         "name": "Fakturoid",
         "universalName": "fakturoid",
-        "trackingId": "cAITyLlXRMaqiOrMnXSbfA==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:612241",
@@ -107,7 +101,6 @@
         "occupation": "cyp",
         "id": "106076066",
         "publicId": "jiri-gunka",
-        "trackingId": "JOFdQ/s/TJqOgp1Qtt2MYQ==",
         "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGjycZdsqX9ww/profile-displayphoto-crop_800_800/B4DZjBYhBpGQAQ-/0/1755591087410?e=1781136000&v=beta&t=wVIgd5mwqIYPXpFj5d6Nr2x8-VHHyAZ4o1qWAcv4nhQ"
       }
@@ -120,7 +113,6 @@
         "occupation": "„Myšlenky proměněné v kód mění svět.“",
         "id": "1509504836",
         "publicId": "martin-lampart-058644361",
-        "trackingId": "xmX356KFQXO5WIfso8oiOQ==",
         "profileId": "ACoAAFn5N0QB5nOyl8UUjUl-WSWNfSfjfGCwc1k",
         "picture": "https://media.licdn.com/dms/image/v2/D5635AQHCuQL3pMHxjQ/profile-framedphoto-shrink_800_800/B56ZZdUMrcHgAk-/0/1745322298477?e=1780430400&v=beta&t=o6AFAlU9UmK9NOVYfGK7Y_7bfQaDt7rmJefgJkTDGyk"
       }
@@ -133,7 +125,6 @@
         "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
         "id": "13167565",
         "publicId": "citizenmani",
-        "trackingId": "167nNVVVSvG8TDShSidBVg==",
         "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ",
         "picture": "https://media.licdn.com/dms/image/v2/D5603AQEqC5x0akFu1Q/profile-displayphoto-crop_800_800/B56ZlSvDmfIAAM-/0/1758029692620?e=1781136000&v=beta&t=2MjEAUEFd1OccqmtlnzcSzG2gHUquLzw5MI-3XUUfOM",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHZC49bFZ8ZTQ/profile-displaybackgroundimage-shrink_350_1400/B56ZxDZv79KIAY-/0/1770657351768?e=1781136000&v=beta&t=kVGPoYvqmMzYICMmu_0FODKNvqUNjsGRcvULLqy01EA"
@@ -147,7 +138,6 @@
         "occupation": "Business Administrator | 3+ years in administration, marketing & customer service | Skilled in project coordination & process improvement",
         "id": "525351228",
         "publicId": "domitil-katemo-850b32127",
-        "trackingId": "6zlZaAdlTSyDNhRjGR60QQ==",
         "profileId": "ACoAAB9QOTwBjYo-pyQWuo9wx4mjFG9_olxX9_w",
         "picture": "https://media.licdn.com/dms/image/v2/D4D35AQF2thtGX-TWJw/profile-framedphoto-shrink_800_800/B4DZyG41szJkAg-/0/1771789573559?e=1780430400&v=beta&t=edCNW0Xp2QsHGzEq5tuKBIrFtTAiO9pKuO8MdPuo_Lk",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGvlgCVKL_gfA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1690930951851?e=1781136000&v=beta&t=egWwtJU0YVsPFZdf3v1spQIdxEjONh7RDDObx3aSJlw"
@@ -161,7 +151,6 @@
         "occupation": "Product Owner & Dad | Building great products, raising great humans",
         "id": "283596586",
         "publicId": "fusatytata",
-        "trackingId": "ehWxQ0ubQ0a7F+TlS09UPg==",
         "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEP3Q4BtiThDA/profile-displayphoto-shrink_800_800/B4EZc_c90wHIAc-/0/1749116247942?e=1781136000&v=beta&t=_QtTBgXEBbo6wLgAeAyA_Vwe266kRM2rafjtUTqdQ18",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFllW8t92LUXg/profile-displaybackgroundimage-shrink_350_1400/B4EZkO0XOcHEAY-/0/1756890233024?e=1781136000&v=beta&t=BcgfXCQP09cdXXYAi_lrlRlt4F-p0U2rPgEazsl9SeQ"
@@ -175,7 +164,6 @@
         "occupation": "Junior/Medior Javascript & Java developer",
         "id": "1026285388",
         "publicId": "michal-hladík",
-        "trackingId": "aLESIkzfRPe26Cf8mvBT+A==",
         "profileId": "ACoAAD0r30wBa0_QD8ZxhqRkaG7xqix-8UjEhwo",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEyn5ulZmsYLA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1675674201042?e=1781136000&v=beta&t=XOU5kRVBOJDyi_xZCY4kb1CQrp4KUOzcyzshBcAo5a8"
       }
@@ -188,7 +176,6 @@
         "occupation": "Passionate Front-end developer | Javascript, React, Typescript, GSAP, Three.js, Material UI | Testing | Data Analysis | AI | Over 1000 hours of study DA Web Czechitas/ReactGirls/SheCodes/Skillmea/JS Mastery/Udemy",
         "id": "329210025",
         "publicId": "oxanaestok",
-        "trackingId": "7cIIk9ZgTHGX5XCpetPPRQ==",
         "profileId": "ACoAABOfWKkB-3yoZkP_E1QqzYPTzMhi2fd4gtQ",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFSQ6NUJDeGnw/profile-displayphoto-crop_800_800/B4DZyyUeP4HcAI-/0/1772518239263?e=1781136000&v=beta&t=dkY9rlcpiCh-KOPuSxwynuSl3EZY7b6Mu9uJDcb3v8g",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGopRGhw5hJMg/profile-displaybackgroundimage-shrink_350_1400/B4DZuPOUMEIEAY-/0/1767634455429?e=1781136000&v=beta&t=xNwifHPSq5UzZcUXEkzVAmrDmrEVD5RTaVcsq3j_jWE"
@@ -202,7 +189,6 @@
         "occupation": "HR Manager v Pale Fire Capital | Head of HR v Aukro | HR consultant and mentor | #sharingiscaring",
         "id": "473833031",
         "publicId": "petranulickova",
-        "trackingId": "FPbSb08lQBCg9ZsBEyEygg==",
         "profileId": "ACoAABw-HkcBifENxX8nxAs2YjwxbI6b2XtAF98",
         "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHnKx1150QjzQ/profile-framedphoto-shrink_400_400/B4DZ5EYkX3J4Ac-/0/1779263751874?e=1780430400&v=beta&t=pWJ51Ntw0jR9QQT0pS0cVga8Y5H1PX6eMgBC8eZYwyo",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQExwjEQhQ99TA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1676378924015?e=1781136000&v=beta&t=rpomntKe5fPHScYScrE5n1-ok01d_UuxKpUPUaPI93g"
@@ -216,7 +202,6 @@
         "occupation": "CEO · autor 📖 Web ostrý jako břitva",
         "id": "16677247",
         "publicId": "jan2rezac",
-        "trackingId": "ou8xTleoT5WCI88CiqjThw==",
         "profileId": "ACoAAAD-eX8BGeM_SaDxrD9QhHdovva-_z0sxH4",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGZyP1SuQkbzg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715071731709?e=1781136000&v=beta&t=DohpNMMTG_Fickyh-W-b442_U3uJYXfUPjMjfVwDAcM",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGR9u8DQCo8_g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1689174054212?e=1781136000&v=beta&t=b8Q_nRDbZH32WGjjBsk1GEjNSN6CkPrwR5ODXdQH7W4"
@@ -230,7 +215,6 @@
         "occupation": "Komuniťák v Czechitas 🏄‍♂️",
         "id": "726742558",
         "publicId": "matejkahun",
-        "trackingId": "APnnoq/mQ5umwPuxVt44qg==",
         "profileId": "ACoAACtRNh4Bgs49PDAKRTrJ0zQclHv-UqoqjOs",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEFdqnLrw3tqA/profile-displayphoto-shrink_800_800/B4EZVGmAK_GYAg-/0/1740646122793?e=1781136000&v=beta&t=kXs1stUYIteew7uBR7C0b1NfoOSP9z9D7Wl_jTtZgU4",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHHulpwLgpD-g/profile-displaybackgroundimage-shrink_350_1400/B4DZzXhX0NH4Ac-/0/1773142376451?e=1781136000&v=beta&t=JhX7zrUGEPQ6CMtCimmgq0aYfeZ6PJRvlkNsVohIwkU"
@@ -253,7 +237,6 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "trackingId": "2rWXodWoTcyKdJX44a1IXA==",
     "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
     "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
     "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
