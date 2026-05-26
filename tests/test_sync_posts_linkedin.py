@@ -54,3 +54,22 @@ def test_serialize_post_removes_tracking_id_recursively():
     }
 
     assert json.loads(serialize_post(post)) == expected
+
+
+def test_serialize_post_strips_query_from_post_level_url_only():
+    post = {
+        "postedAtISO": "2026-05-21T19:53:23.509Z",
+        "url": "https://www.linkedin.com/posts/honzajavorek_example-activity-1?utm_source=combined_share_message&utm_medium=member_desktop&rcm=foo",
+        "article": {
+            "url": "https://www.linkedin.com/pulse/example-article?trackingId=abc123"
+        },
+    }
+    expected = {
+        "postedAtISO": "2026-05-21T19:53:23.509Z",
+        "url": "https://www.linkedin.com/posts/honzajavorek_example-activity-1",
+        "article": {
+            "url": "https://www.linkedin.com/pulse/example-article?trackingId=abc123"
+        },
+    }
+
+    assert json.loads(serialize_post(post)) == expected

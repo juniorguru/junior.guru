@@ -2,6 +2,7 @@ import json
 from datetime import datetime
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlsplit, urlunsplit
 
 import click
 
@@ -49,8 +50,20 @@ def get_post_filename(post: dict) -> str:
 
 
 def serialize_post(post: dict) -> str:
-    post_without_tracking_id = remove_tracking_id(post)
-    return json.dumps(post_without_tracking_id, ensure_ascii=False, indent=2) + "\n"
+    post = strip_tracking_params(post)
+    post = remove_tracking_id(post)
+    return json.dumps(post, ensure_ascii=False, indent=2) + "\n"
+
+
+def strip_tracking_params(post: dict) -> dict:
+    if not isinstance(post.get("url"), str):
+        return post
+
+    split_url = urlsplit(post["url"])
+    url = urlunsplit(
+        (split_url.scheme, split_url.netloc, split_url.path, "", split_url.fragment)
+    )
+    return {**post, "url": url}
 
 
 def remove_tracking_id(value: Any) -> Any:
