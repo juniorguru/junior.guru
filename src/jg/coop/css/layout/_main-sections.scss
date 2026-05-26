@@ -6,8 +6,8 @@
 
 .section {
   @extend .container-lg;
-  padding-top: $main-spacer - $spacer;
-  padding-bottom: $main-spacer - $spacer;
+  padding-top: $main-spacer;
+  padding-bottom: $main-spacer;
 }
 
 .section.standout {
