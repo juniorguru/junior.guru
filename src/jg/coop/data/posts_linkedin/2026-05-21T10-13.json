@@ -11,7 +11,6 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "trackingId": "JArHU/SBSwSFb6fWeG3a7Q==",
     "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
     "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
     "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
@@ -29,7 +28,6 @@
       "company": {
         "name": "Charles University",
         "universalName": "univerzita-karlova",
-        "trackingId": "8bShGRjuRn63yCNf5a66kw==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:3496049",
@@ -43,7 +41,6 @@
       "company": {
         "name": "ReactGirls",
         "universalName": "reactgirlsprague",
-        "trackingId": "X5h0ZYT9S+aJBgv1ehwJYQ==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:34588565",
@@ -57,7 +54,6 @@
       "company": {
         "name": "Czechitas",
         "universalName": "czechitas",
-        "trackingId": "PXWsuSWET72Wy8gs+lSHTw==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:5319681",
@@ -71,7 +67,6 @@
       "company": {
         "name": "PyLadies",
         "universalName": "pyladies-global",
-        "trackingId": "YHyy92tjQIOlaV6LSbasyg==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:65670385",
@@ -85,7 +80,6 @@
       "company": {
         "name": "Frontendisti",
         "universalName": "frontendisti",
-        "trackingId": "otK79cWXQjmJwATcYkyVPQ==",
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:26270417",
@@ -107,7 +101,6 @@
         "occupation": "Software Developer",
         "id": "450096743",
         "publicId": "zmijkova",
-        "trackingId": "ngEMgt5pSO6aCIa+OD3d3g==",
         "profileId": "ACoAABrT7mcBs7ie4r1nA4McNBK2tV0qfujA2v4",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFwmJejccKJYw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1604515688256?e=1781136000&v=beta&t=_OsPmbqF1GUuRnM81Ym5BJrwABb9dZxzXqQgibkJR-U",
         "distance": "OUT_OF_NETWORK"
@@ -128,7 +121,6 @@
             "occupation": "Vedu péči o dobrovolníky v Czechitas🩷",
             "id": "1036178862",
             "publicId": "jana-benešová-66602024b",
-            "trackingId": "L8YvXQjyQyWEWh9NzSnJBQ==",
             "profileId": "ACoAAD3C1a4Bwb3HrDCRzQTyWV3hn1tRhr72LlU",
             "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFBKEpDBkvjUQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1675342915025?e=1781136000&v=beta&t=PeKVJsvihkTgHTPpfK6UZxHvGe5F4W-W_awks2i38SI",
             "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFEhVmnAgij5Q/profile-displaybackgroundimage-shrink_350_1400/B4EZpfK1KiHEAY-/0/1762533267330?e=1781136000&v=beta&t=r0tiqY0KHJQ-X9uTGjIb8Zgn0DFu0-s86MshrXgX_7U"
@@ -143,7 +135,6 @@
         "occupation": "Product Owner of CyberSecurity education at Czechitas",
         "id": "536342854",
         "publicId": "radek-in-cybersec",
-        "trackingId": "M2u+yg8DS/enhHZ7WNUM4w==",
         "profileId": "ACoAAB_38UYBxzrVlVnDZB45Rlg9B-MMD_leZjY",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQElfZkeiEYQMg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1600814031727?e=1781136000&v=beta&t=bSz5wPUuf7AOXN0dqQHThApJbz7RmqilYwcvWQsdLNg",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH7igKRAID02g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1721224012760?e=1781136000&v=beta&t=L4GO9llhbAaHDCvDY0s1hVpV6b-ydYcu8xGYAStdwPQ",
@@ -163,7 +154,6 @@
         "occupation": "Senior Full-stack Developer | React, Node.js, TypeScript | Team leader",
         "id": "420594570",
         "publicId": "lukascizek",
-        "trackingId": "BzSGVj/IR6aEIINQa2t31A==",
         "profileId": "ACoAABkRw4oB55umyBLKrtCymi3ZAc087xVYy34",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEw9YX5KXeZcw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1604056164879?e=1781136000&v=beta&t=Vd3AlV2K5tdWK0J_UvRsJAzK4MaSE7hIR5h_3lL5Qys",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGszOqxGebvrA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516879649794?e=1781136000&v=beta&t=AUCkJndyKj4M7zVkR_ooAVdKuf-mXOH0eBSAZQgjbm0",
@@ -185,7 +175,6 @@
             "occupation": "CEO @ReactGirls, Adult Education and Personnel Management Student",
             "id": "930332013",
             "publicId": "zuzana-vlachovska",
-            "trackingId": "U0vxotEfT++LwZZJDo9m5Q==",
             "profileId": "ACoAADdzvW0BMlX8bbn5rBF19jX-JjopP8qNdaw",
             "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHCyGGfv9hZPA/profile-displayphoto-crop_800_800/B4EZnZ4w_gHIAI-/0/1760297162924?e=1781136000&v=beta&t=pFhVOrUHCE-FRetcvCd1qmwkxkPOjEJFtfaa0JdfJ1Y",
             "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEW314oasBxwg/profile-displaybackgroundimage-shrink_350_1400/B4EZoMPZ_BGUAY-/0/1761141985735?e=1781136000&v=beta&t=b5dSJcX5_a-JciGg1ZMg8B4Nx1hHozgeYnJi08rEznk"
@@ -208,7 +197,6 @@
         "occupation": "Talent Sourcer @ SentinelOne.ai | The Future of CyberSec will be determined by You - let’s Secure Tomorrow™ together! 🛡️👾 | In 💜 with s1.ai/PurpleAI | 🕵️‍♂️ CyBeer security meetups organizer",
         "id": "322518163",
         "publicId": "vaclavkotyk",
-        "trackingId": "fV432oA6SnCDUdbd8Gl61w==",
         "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0",
         "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHSFfNAAQ3ojA/profile-framedphoto-shrink_800_800/B4EZb.aDPLHAAs-/0/1748024964389?e=1780398000&v=beta&t=SRa6gFlA4a37b8KQN2K_8lE8Pc34Q1YLTqnpIuivFFA",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG_GZHPXo_drQ/profile-displaybackgroundimage-shrink_350_1400/B4EZhWDO5THEAY-/0/1753790347174?e=1781136000&v=beta&t=TTJXtHJi0vF694Nao68XfleeSQJvzU06We8EI4GVwQI",
@@ -228,7 +216,6 @@
         "occupation": "Trainee People & Culture | Andragogy and HRM Student",
         "id": "727652877",
         "publicId": "katerina-berankova-student",
-        "trackingId": "ODh+n4y4T/6f0Jv6k/JE8w==",
         "profileId": "ACoAACtfGg0B4cYkw4L9l5_OxY3sXMmKF0P1gVo",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGXBbU3J7ASRg/profile-displayphoto-crop_800_800/B4EZnjw0DYKcAI-/0/1760462850339?e=1781136000&v=beta&t=64pkh84pp7vhkfuPqjbnCmJUPnnX7kn6ZGYCarwyWiQ",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFClwENLVYmWw/profile-displaybackgroundimage-shrink_350_1400/B4EZmVMbfSIIAY-/0/1759144688627?e=1781136000&v=beta&t=apQcWbi8x-jI6mGvTa4_MpRXMp1w9z-GrX0xHnGmYwU",
@@ -248,7 +235,6 @@
         "occupation": "Software Developer @TeskaLabs",
         "id": "814185299",
         "publicId": "enovotna",
-        "trackingId": "9LxwasC5SGKj1EPlHqtpRQ==",
         "profileId": "ACoAADCHe1MBqCmPBVtBJgxUdvnCf2-PnNDgigQ",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHbersNQVbU_w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1654707099313?e=1781136000&v=beta&t=9D9JBFGPLPgtwn7xWI0m9p9BmtPnx6gJTwp-JpX_c9A",
         "distance": "OUT_OF_NETWORK"
@@ -264,7 +250,6 @@
         "occupation": "Software Developer",
         "id": "450096743",
         "publicId": "zmijkova",
-        "trackingId": "xRBLYOyVTWScVcI9hRg/qg==",
         "profileId": "ACoAABrT7mcBs7ie4r1nA4McNBK2tV0qfujA2v4",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFwmJejccKJYw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1604515688256?e=1781136000&v=beta&t=_OsPmbqF1GUuRnM81Ym5BJrwABb9dZxzXqQgibkJR-U"
       }
@@ -277,7 +262,6 @@
         "occupation": "Unity Developer | C#/.NET & Web & Game Enthusiast",
         "id": "1050425749",
         "publicId": "petr-polák",
-        "trackingId": "xTRkq/8aTDSCIME133GLRg==",
         "profileId": "ACoAAD6cOZUBJOFEDYm9EGaOfjxUVWbsYBOCBdA",
         "picture": "https://media.licdn.com/dms/image/v2/D4D03AQErNL8C1QYkSA/profile-displayphoto-crop_800_800/B4DZetTvnrHMAI-/0/1750959325254?e=1781136000&v=beta&t=j8R713JNlvra_3GgUWXRVFrBC4wdZZhcKrep9eSV-3I"
       }
@@ -290,7 +274,6 @@
         "occupation": "Lektor (Office, M365, AI v kanceláři), týmový hráč a entuziasta - nejen pro technologie Microsoftu.",
         "id": "54795500",
         "publicId": "evahermanova",
-        "trackingId": "ayt0bHp6TPaHRNMZKRt/FQ==",
         "profileId": "ACoAAANEHOwBF4WNUPBZdSI_Cpu5nPDyEacesTw",
         "picture": "https://media.licdn.com/dms/image/v2/D4D35AQFPO-B07gIqWA/profile-framedphoto-shrink_800_800/B4DZyviwrqJkAk-/0/1772471651367?e=1780398000&v=beta&t=Kk2jSpCNywVtLCxRg9yHA4_gvhdjDImYprWSmdjhipA",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGuSwbBAxZgXA/profile-displaybackgroundimage-shrink_350_1400/B4DZ5GexmSKEAY-/0/1779298933593?e=1781136000&v=beta&t=yxaQWO_yWClETRjqbP-UYkEDcICzwP1g_NQwQaWKDhw"
@@ -304,7 +287,6 @@
         "occupation": "Student of Adult Education and Personnel Management",
         "id": "1178989172",
         "publicId": "ota-svátek-498a1128a",
-        "trackingId": "i/RIwN4wS06IBTpP2ymVEg==",
         "profileId": "ACoAAEZF8nQBJ0oa-JuaNVc4arHJx0vrLBqaXQc",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHtlFr6uZgoVQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693317315161?e=1781136000&v=beta&t=ehn0WEzbOyN5yFXModt8K679ookmUjDsl4HoFic9Fgw",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGxOlj7y6nD_w/profile-displaybackgroundimage-shrink_350_1400/B4EZexTXS.HYAY-/0/1751026334378?e=1781136000&v=beta&t=GY9-NPPzwAvjsg69CBzKJGp3ldeLu5vhPxvpsceV6fE"
@@ -318,7 +300,6 @@
         "occupation": "Vedu péči o dobrovolníky v Czechitas🩷",
         "id": "1036178862",
         "publicId": "jana-benešová-66602024b",
-        "trackingId": "L8YvXQjyQyWEWh9NzSnJBQ==",
         "profileId": "ACoAAD3C1a4Bwb3HrDCRzQTyWV3hn1tRhr72LlU",
         "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFBKEpDBkvjUQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1675342915025?e=1781136000&v=beta&t=PeKVJsvihkTgHTPpfK6UZxHvGe5F4W-W_awks2i38SI",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFEhVmnAgij5Q/profile-displaybackgroundimage-shrink_350_1400/B4EZpfK1KiHEAY-/0/1762533267330?e=1781136000&v=beta&t=r0tiqY0KHJQ-X9uTGjIb8Zgn0DFu0-s86MshrXgX_7U"
@@ -332,7 +313,6 @@
         "occupation": "Product Owner of CyberSecurity education at Czechitas",
         "id": "536342854",
         "publicId": "radek-in-cybersec",
-        "trackingId": "sMBWe4rtSoemmD8fxRXGiw==",
         "profileId": "ACoAAB_38UYBxzrVlVnDZB45Rlg9B-MMD_leZjY",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQElfZkeiEYQMg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1600814031727?e=1781136000&v=beta&t=bSz5wPUuf7AOXN0dqQHThApJbz7RmqilYwcvWQsdLNg",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH7igKRAID02g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1721224012760?e=1781136000&v=beta&t=L4GO9llhbAaHDCvDY0s1hVpV6b-ydYcu8xGYAStdwPQ"
@@ -346,7 +326,6 @@
         "occupation": "IT student • UX design a výzkum • Front-end",
         "id": "1039765305",
         "publicId": "eliška-janovcová-27111999x",
-        "trackingId": "oRAkXZwGT16dzxFDXUdCJg==",
         "profileId": "ACoAAD35jzkBvk4kfp0t9EliY_loOiBDlWLlFWA",
         "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHBT3_t-2MJ7Q/profile-framedphoto-shrink_800_800/B4EZyiIQdIGgAs-/0/1772246599884?e=1780398000&v=beta&t=rB8z2mVum6fzmJftfDJQFOwuM-g3qjjC1ipMbCRHvZA",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF7bz4sDTQ3dQ/profile-displaybackgroundimage-shrink_350_1400/B4EZyiI1DqIEAY-/0/1772246752944?e=1781136000&v=beta&t=PMa5eSkoEvH0_uwZTZ0_GInl0WM0gXbYmja7YWurhQA"
@@ -360,7 +339,6 @@
         "occupation": "Senior Full-stack Developer | React, Node.js, TypeScript | Team leader",
         "id": "420594570",
         "publicId": "lukascizek",
-        "trackingId": "RESbeSrMSvCVe262C3pt6g==",
         "profileId": "ACoAABkRw4oB55umyBLKrtCymi3ZAc087xVYy34",
         "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEw9YX5KXeZcw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1604056164879?e=1781136000&v=beta&t=Vd3AlV2K5tdWK0J_UvRsJAzK4MaSE7hIR5h_3lL5Qys",
         "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGszOqxGebvrA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516879649794?e=1781136000&v=beta&t=AUCkJndyKj4M7zVkR_ooAVdKuf-mXOH0eBSAZQgjbm0"
@@ -374,7 +352,6 @@
         "occupation": "Non programming IT lady. Experienced in Busines Analysis and Test Analysis & Test Management, Technical Documentation or Training. ISTQB Certified. Currently open to a new project. If anyone knows about, let me know.",
         "id": "6185820",
         "publicId": "marcelakovalska",
-        "trackingId": "sA6rVpgGSSaWhuxuwz6CHw==",
         "profileId": "ACoAAABeY1wBMH8kgyLkTytpbcy7ToEc-cIbE34",
         "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHYZhdSgyBj1Q/profile-framedphoto-shrink_800_800/B4DZ5KP3sWKMAY-/0/1779362135273?e=1780398000&v=beta&t=s7o3jgK8YoPg9jGmfkiV8JhRp8c_n_ZlRxS8ygeMtE0"
       }
@@ -387,7 +364,6 @@
         "occupation": "IT Expert at RB",
         "id": "12321851",
         "publicId": "vancakpavel",
-        "trackingId": "klygu4KMTXeLRjjzclueAg==",
         "profileId": "ACoAAAC8BDsBfo5KqnbvMyoLW0dtqdZAGfdY3wM",
         "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGAN8j549ZJ1A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517672804373?e=1781136000&v=beta&t=UiHnk10bKsIFls_zrzYc8uPLBWw0HhSatpofknQNy_0"
       }
@@ -409,7 +385,6 @@
     "occupation": "CEO @ReactGirls, Adult Education and Personnel Management Student",
     "id": "930332013",
     "publicId": "zuzana-vlachovska",
-    "trackingId": "nBG3njb6QO2xrMLQgfLsmA==",
     "profileId": "ACoAADdzvW0BMlX8bbn5rBF19jX-JjopP8qNdaw",
     "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHCyGGfv9hZPA/profile-displayphoto-crop_800_800/B4EZnZ4w_gHIAI-/0/1760297162924?e=1781136000&v=beta&t=pFhVOrUHCE-FRetcvCd1qmwkxkPOjEJFtfaa0JdfJ1Y",
     "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEW314oasBxwg/profile-displaybackgroundimage-shrink_350_1400/B4EZoMPZ_BGUAY-/0/1761141985735?e=1781136000&v=beta&t=b5dSJcX5_a-JciGg1ZMg8B4Nx1hHozgeYnJi08rEznk"

@@ -1,6 +1,7 @@
 import json
 from datetime import datetime
 from pathlib import Path
+from typing import Any
 
 import click
 
@@ -48,4 +49,17 @@ def get_post_filename(post: dict) -> str:
 
 
 def serialize_post(post: dict) -> str:
-    return json.dumps(post, ensure_ascii=False, indent=2) + "\n"
+    post_without_tracking_id = remove_tracking_id(post)
+    return json.dumps(post_without_tracking_id, ensure_ascii=False, indent=2) + "\n"
+
+
+def remove_tracking_id(value: Any) -> Any:
+    if isinstance(value, dict):
+        return {
+            key: remove_tracking_id(item)
+            for key, item in value.items()
+            if key != "trackingId"
+        }
+    if isinstance(value, list):
+        return [remove_tracking_id(item) for item in value]
+    return value
