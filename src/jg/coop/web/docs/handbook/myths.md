@@ -6,7 +6,7 @@ description: Všelijakých mýtů a nesmyslů o kariéře v IT koluje spousta. 
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, engeto_video_card, external_stories_list, lead with context %}
+{% from 'macros.html' import illustration, blockquote_avatar, engeto_video_card, external_stories_list, lead with context %}
 
 # Mýty o programování
 
@@ -17,6 +17,8 @@ Všelijakých mýtů o kariéře v IT koluje spousta. Takže jak to je?
 {% endcall %}
 
 [TOC]
+
+{{ illustration('static/illustrations/myths.webp') }}
 
 ## Nejčastější mýty
 

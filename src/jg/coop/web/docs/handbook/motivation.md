@@ -6,7 +6,7 @@ description: Úvod do programování. K čemu se hodí? Pomáhá vědcům, úře
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote, blockquote_avatar, blockquote_toxic, engeto_video_card, external_stories_list, lead with context %}
+{% from 'macros.html' import illustration, blockquote, blockquote_avatar, blockquote_toxic, engeto_video_card, external_stories_list, lead with context %}
 
 # Proč se učit programování
 
@@ -15,6 +15,8 @@ K čemu se hodí programování? Není jen pro ty, kdo chtějí pracovat v IT. 
 {% endcall %}
 
 [TOC]
+
+{{ illustration('static/illustrations/motivation.webp') }}
 
 ## Co je programování    <span id="what"></span>
 

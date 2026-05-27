@@ -6,7 +6,7 @@ description: Znáš základy, ale na větší projekt si ještě netroufáš? Pr
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import lead, link_card with context %}
+{% from 'macros.html' import illustration, lead, link_card with context %}
 
 
 # Jak procvičovat a rozšiřovat si znalosti
@@ -15,6 +15,8 @@ template: main_handbook.html
   Dokážeš napsat pár řádků kódu, ale na větší projekt si ještě netroufáš?
   Pomůže ti procvičování a postupné posouvání znalostí řešením malých úkolů.
 {% endcall %}
+
+{{ illustration('static/illustrations/practice.webp') }}
 
 ## Procvičuj
 
@@ -1052,7 +1054,7 @@ https://store.steampowered.com/app/2060160/The_Farmer_Was_Replaced/
 
 
 --- https://discord.com/channels/769966886598737931/789107031939481641/1472981770591801507
-> I na pohovorech jsem zaznamenala spíše tendence k oveřování znalostí matematiky než operačních systémů. 
+> I na pohovorech jsem zaznamenala spíše tendence k oveřování znalostí matematiky než operačních systémů.
 
 Je to podle mně slepá skvrna. Pohovorující to považují za automatické a ani je to nenapadne. Přitom to automatické není.
 

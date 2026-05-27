@@ -6,7 +6,7 @@ description: Jak začít programovat? Tady máš úvod do programování v podob
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, lead, link_card, engeto_video_card with context %}
+{% from 'macros.html' import illustration, blockquote_avatar, lead, link_card, engeto_video_card with context %}
 
 
 # Nauč se základy programování
@@ -16,6 +16,8 @@ template: main_handbook.html
 {% endcall %}
 
 [TOC]
+
+{{ illustration('static/illustrations/learn.webp') }}
 
 ## Co budeš potřebovat    <span id="requirements"></span>
 

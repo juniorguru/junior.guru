@@ -5,7 +5,7 @@ description: Obsáhlá příručka pro všechny, kdo se chtějí naučit program
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import lead, img, note with context %}
+{% from 'macros.html' import illustration, lead, img, note with context %}
 
 # Cesta juniora
 
@@ -16,6 +16,8 @@ template: main_handbook.html
   Studuješ informatiku a zajímá tě, co dál?
   V téhle příručce se postupně hromadí veškerá moudrost, která na toto téma existuje.
 {% endcall %}
+
+{{ illustration('static/illustrations/index.webp') }}
 
 Na základě reálných zkušeností mnohých začátečníků jsme v [klubu](../club.md) sestavili **osvědčenou cestu juniora**.
 Možná existují i jiné cesty, ale tato **úspěšně zafungovala pro spoustu různých lidí**, a proto ji lze obecně doporučit.

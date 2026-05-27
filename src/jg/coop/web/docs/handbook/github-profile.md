@@ -6,7 +6,7 @@ description: Má být tvůj GitHub profil spíš naleštěným životopisem, neb
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, figure, club_teaser, lead with context %}
+{% from 'macros.html' import illustration, blockquote_avatar, figure, club_teaser, lead with context %}
 
 # GitHub profil
 
@@ -40,6 +40,8 @@ template: main_handbook.html
 </form>
 
 [TOC]
+
+{{ illustration('static/illustrations/github-profile.webp') }}
 
 ## GitHub profil? Cože?
 

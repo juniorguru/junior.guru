@@ -6,7 +6,7 @@ description: Jaký kurz základů programování je vhodný zrovna pro tebe? Kte
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import note with context %}
+{% from 'macros.html' import illustration, note with context %}
 
 # Jak vybírat kurz
 
@@ -16,6 +16,8 @@ template: main_handbook.html
 {% endcall %}
 
 [TOC]
+
+{{ illustration('static/illustrations/course.webp') }}
 
 ## Stačí kurz?
 
