@@ -1,4 +1,5 @@
 import json
+import subprocess
 from datetime import date, datetime
 from pathlib import Path
 
@@ -38,6 +39,12 @@ async def main(archive_dir: Path, today: date):
             path = archive_dir / f"{published_on}.json"
             path.write_text(json.dumps(email_data, ensure_ascii=False, indent=2) + "\n")
             logger.info(f"Archived as {path}")
+
+    logger.info("Tidying up JSON files")
+    subprocess.run(
+        ["npx", "@biomejs/biome", "format", "--write", str(archive_dir)],
+        check=True,
+    )
 
     logger.info("Saving published issues to database")
     NewsletterIssue.drop_table()

@@ -73,3 +73,24 @@ def test_serialize_post_strips_query_from_post_level_url_only():
     }
 
     assert json.loads(serialize_post(post)) == expected
+
+
+def test_serialize_post_strips_t_param_from_image_urls():
+    post = {
+        "postedAtISO": "2026-05-21T19:53:23.509Z",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile.jpg?e=1781136000&v=beta&t=abc123",
+        "nested": {
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/background.jpg?e=1781136000&v=beta&t=def456",
+            "nonImageUrl": "https://example.com/image.jpg?e=1&v=beta&t=keepme",
+        },
+    }
+    expected = {
+        "postedAtISO": "2026-05-21T19:53:23.509Z",
+        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile.jpg?e=1781136000&v=beta",
+        "nested": {
+            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/background.jpg?e=1781136000&v=beta",
+            "nonImageUrl": "https://example.com/image.jpg?e=1&v=beta&t=keepme",
+        },
+    }
+
+    assert json.loads(serialize_post(post)) == expected
