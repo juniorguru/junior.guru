@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQEaECFwroLvVQ/feedshare-shrink_1280/feedshare-shrink_1280/0/1632118382942?e=1781136000&v=beta&t=aNu7HOIqfF2pcgCrUH5pT8ETpH3s9RaRh2DeKl1cwtg"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6845600663146168320",
   "url": "https://www.linkedin.com/posts/honzajavorek_%C5%A1imon-ba%C5%99%C3%A1k-nen%C3%AD-vystudovan%C3%BD-program%C3%A1tor-activity-6845600663146168320--OmQ",
@@ -20,9 +18,7 @@
         "occupation": "Software Developer",
         "id": "792277328",
         "publicId": "simon-barak",
-        "profileId": "ACoAAC85MVAB4dGF6AeVRmK1oTUokgLc8QVCejU",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGrEi2_Zu5FVg/profile-displayphoto-crop_800_800/B4EZsmgBZkHMAI-/0/1765877488260?e=1781136000&v=beta&t=IJNcbZvu9DX0u4MkKLpP91RI3IlAQC4_idsMKqw9koo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHHfkTm-5cgcw/profile-displaybackgroundimage-shrink_350_1400/B4EZsmaQb5GcAY-/0/1765875981742?e=1781136000&v=beta&t=6zb94O2q0ySDFI0O6gTab-NiTq8QN2x9Jewzw0r_LzQ"
+        "profileId": "ACoAAC85MVAB4dGF6AeVRmK1oTUokgLc8QVCejU"
       }
     }
   ],
@@ -36,9 +32,7 @@
         "occupation": "Founder | Chairman of the Board at NFCtron",
         "id": "269135436",
         "publicId": "vaclavjaros",
-        "profileId": "ACoAABAKrkwB3qPGXYLLV666f8KPPw0nIOxG-AI",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFJlXp1F-OtrQ/profile-displayphoto-shrink_800_800/B4EZSI2tpoHgAc-/0/1737462832188?e=1781136000&v=beta&t=UOpEREMr2I-R6m4eCgmYyn5L32BJFDnWcQk5UQGybzY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFbqCnYdOTFCA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1737463276905?e=1781136000&v=beta&t=7UUOeaUjExAdfM8ID6WXLvMTL_Mkn_GFpBFF0aBpGzQ"
+        "profileId": "ACoAABAKrkwB3qPGXYLLV666f8KPPw0nIOxG-AI"
       }
     },
     {
@@ -49,9 +43,7 @@
         "occupation": "#OpenToWork | Junior Frontend Developer | TPP",
         "id": "251923843",
         "publicId": "juraj-solarml",
-        "profileId": "ACoAAA8EDYMBLxIGFkvtfI1Vro-yXMPpfVNdT9s",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQEAmJI339Vvmg/profile-framedphoto-shrink_800_800/B4DZx78YZzGQAg-/0/1771605952455?e=1780430400&v=beta&t=lY8G_gK3n7YjM5kRzkz-MV87VTPRrjuvO4_cROBLdfs",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHj4A2nngY-ag/profile-displaybackgroundimage-shrink_350_1400/B4EZch4U_UHsAY-/0/1748620104532?e=1781136000&v=beta&t=EivcfHIkHGo-jruKICbLZIQ3a-uMjiHBKUKN8r0Hn5k"
+        "profileId": "ACoAAA8EDYMBLxIGFkvtfI1Vro-yXMPpfVNdT9s"
       }
     },
     {
@@ -62,9 +54,7 @@
         "occupation": "#vlny",
         "id": "134465233",
         "publicId": "dominika-rysava-64104739",
-        "profileId": "ACoAAAgDxtEB4esM1o7PE78PA4AQYAHkNdJLE2U",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQEpx2B5U61_5Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1692107908324?e=1781136000&v=beta&t=DISJ1A-GKAyJEGiVNs36gMpbZaJf--TbLW1EfGIhFdU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQFdZozeEYNbqw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1655756309077?e=1781136000&v=beta&t=Jr-ur1MvkeoVV9wQwDQtzitmi1C-DAfQr8L2sCogd3E"
+        "profileId": "ACoAAAgDxtEB4esM1o7PE78PA4AQYAHkNdJLE2U"
       }
     },
     {
@@ -75,9 +65,7 @@
         "occupation": "Python developer",
         "id": "893002773",
         "publicId": "tomas-man",
-        "profileId": "ACoAADU6JBUBIn1WDpXoAoTOaxlXBDX6nXfGBVQ",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFjIzyHKlwdUQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1673299194591?e=1781136000&v=beta&t=Qok3sG_VmO72akyH-Dqt9pc3G5VKSIdBWMEx4OyRTko",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQFDKxGfyewHsw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1622140412270?e=1781136000&v=beta&t=d5RBHcs2L5DQV61s3bAt9f-Gt3fsj_N6KVu1jQ2Eenc"
+        "profileId": "ACoAADU6JBUBIn1WDpXoAoTOaxlXBDX6nXfGBVQ"
       }
     },
     {
@@ -88,9 +76,7 @@
         "occupation": "AI Researcher | PhD Student | Responsible AI | President of Czech Alpha Chapter of UPE | Graduate of prg.ai Minor",
         "id": "436030837",
         "publicId": "martin-krutsky",
-        "profileId": "ACoAABn9TXUB2YI_m-33DSJDtPlCCtj8sjpOJIc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGSPWuampPvjA/profile-displayphoto-crop_800_800/B4EZrAnmRlHMAI-/0/1764168216455?e=1781136000&v=beta&t=ipYfq-4a-D8y4KnXlDPO8jlk1dOtw3JAJ1C4Ul9Fgjo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHSh7zMspa5fw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1629823031604?e=1781136000&v=beta&t=mqbTFq3Z4_BXiqxiJsHx90qcp3JbqO2-Di3z3cwpFzY"
+        "profileId": "ACoAABn9TXUB2YI_m-33DSJDtPlCCtj8sjpOJIc"
       }
     },
     {
@@ -101,9 +87,7 @@
         "occupation": "Software Developer",
         "id": "792277328",
         "publicId": "simon-barak",
-        "profileId": "ACoAAC85MVAB4dGF6AeVRmK1oTUokgLc8QVCejU",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGrEi2_Zu5FVg/profile-displayphoto-crop_800_800/B4EZsmgBZkHMAI-/0/1765877488260?e=1781136000&v=beta&t=IJNcbZvu9DX0u4MkKLpP91RI3IlAQC4_idsMKqw9koo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHHfkTm-5cgcw/profile-displaybackgroundimage-shrink_350_1400/B4EZsmaQb5GcAY-/0/1765875981742?e=1781136000&v=beta&t=6zb94O2q0ySDFI0O6gTab-NiTq8QN2x9Jewzw0r_LzQ"
+        "profileId": "ACoAAC85MVAB4dGF6AeVRmK1oTUokgLc8QVCejU"
       }
     },
     {
@@ -114,9 +98,7 @@
         "occupation": "Full Stack Developer | Node.js • React • Azure",
         "id": "762997811",
         "publicId": "miloslav-jezek",
-        "profileId": "ACoAAC16bDMBDX69DVpckffdp3s7WQFJkN9ZQPE",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQGIaim7FGwUJA/profile-displayphoto-shrink_800_800/B56Zdkuyu7G0Ac-/0/1749741678525?e=1781136000&v=beta&t=KQKd_q5so7d1ouew_efpkZxAIdS6aSgktGBupgxMjVI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGnePf9ZiYoeQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ12v8ppKIAY-/0/1775813774467?e=1781136000&v=beta&t=ZMWvvJcgxN49hDEp-ojj2oIgKRgbrKfKywk0xtPf6_s"
+        "profileId": "ACoAAC16bDMBDX69DVpckffdp3s7WQFJkN9ZQPE"
       }
     },
     {
@@ -127,9 +109,7 @@
         "occupation": "always looking towards the sky.",
         "id": "533066414",
         "publicId": "marcela-kolarova",
-        "profileId": "ACoAAB_F8q4B0ujb_pcSsF1ggXNuLydPhvSd_so",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFqbWVV1-SvkA/profile-displayphoto-shrink_800_800/B4EZgnfrKDHgAg-/0/1753009272735?e=1781136000&v=beta&t=bnSgqjneqrrzankDj6ca4Z9DyvabGDMFFNvrJ9c67fY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGWORM26pM9dA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1709323928133?e=1781136000&v=beta&t=ipDPzoOxleX7LTU8cxzHxy8In-IAvzhNHATujLt--Y0"
+        "profileId": "ACoAAB_F8q4B0ujb_pcSsF1ggXNuLydPhvSd_so"
       }
     },
     {
@@ -140,9 +120,7 @@
         "occupation": "Weby, co odráží váš byznys, budí důvěru a přivádí poptávky",
         "id": "238887102",
         "publicId": "lukas-augusta",
-        "profileId": "ACoAAA49IL4BpJtVYx1BboztvnLcLHfXppO-3s0",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGEVM59ssrlaw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1559054329437?e=1781136000&v=beta&t=BgfNK30gjLTx_PwzzeiJANc8-iYD3V25P0J-Eo361Mg",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQH-WgrkgL9B1w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517154956897?e=1781136000&v=beta&t=6D1BMdPNBnPpNB41BSU0_pheu7QH46EWd2Broj9tsis"
+        "profileId": "ACoAAA49IL4BpJtVYx1BboztvnLcLHfXppO-3s0"
       }
     },
     {
@@ -153,9 +131,7 @@
         "occupation": "Global Sales Manager | Specialty Lubricants",
         "id": "132002824",
         "publicId": "petr-pribil",
-        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEGdgqIgIpkzg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712250006297?e=1781136000&v=beta&t=UB9wEJule0NhB0lR0De_FtfePuW1Di0Vm80cYt1MqZU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFuvlBRuJNbjw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712250566915?e=1781136000&v=beta&t=8sCRHio1dDSnAp_oiaygmw7_1g4W1ce4YJV-kaJIK3M"
+        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck"
       }
     }
   ],
@@ -175,12 +151,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

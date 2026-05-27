@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQE9ue6ihpDklA/feedshare-shrink_1280/feedshare-shrink_1280/0/1618380782506?e=1781136000&v=beta&t=wv_cpgN82mhT0OpTY7DIvgcSkw2VTe4pscjKS-_-lRA"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6787980990506692608",
   "url": "https://www.linkedin.com/posts/honzajavorek_tvo%C5%99it-a-automatizovat-%C4%8Dlov%C4%9Bk-nemus%C3%AD-jen-activity-6787980990506692608--hGS",
@@ -20,8 +18,7 @@
         "occupation": "Data analyst passionate about systems integration",
         "id": "262585845",
         "publicId": "katerina-mackovikova-499b3373",
-        "profileId": "ACoAAA-mvfUBi9EOGyMJGQ2V5sq1pa_91Q3yqB4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH2cRv9plwRWg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723922714065?e=1781136000&v=beta&t=Ss6jpRWXSXGnUamkYVdDcbGXZ-Bph_qdyh7EaU1zXbk"
+        "profileId": "ACoAAA-mvfUBi9EOGyMJGQ2V5sq1pa_91Q3yqB4"
       }
     },
     {
@@ -32,9 +29,7 @@
         "occupation": "Founder @EDUpunk | Learning design @Reactgirls.com | AI & Health Content Strategist | TALENT Mentor & MEME Therapist",
         "id": "201927716",
         "publicId": "marek-velas",
-        "profileId": "ACoAAAwJLCQB-ePqkhYoO0olYYFCoOJGgdydJEs",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQHj3KqlSVtI9A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1540025534374?e=1781136000&v=beta&t=CPzxTFoq5FwZ2NTvk1phzV1eKiS-9ILQHVR9fBpJD2I",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGXOBXZ2lQyaw/profile-displaybackgroundimage-shrink_350_1400/B4EZl9YDUNKYAY-/0/1758745081852?e=1781136000&v=beta&t=WtHueBkAwczoFilZWgkI-IVFDO89umDpdBCjoy1NOto"
+        "profileId": "ACoAAAwJLCQB-ePqkhYoO0olYYFCoOJGgdydJEs"
       }
     },
     {
@@ -45,9 +40,7 @@
         "occupation": "Software Engineer | Storyteller | LinkedIn Enthusiast and Mentor | I help other techies build a personal brand on LinkedIn | Fuelling growth of software engineers through Software Engineering Tales Podcast",
         "id": "266067406",
         "publicId": "pavel-polcr",
-        "profileId": "ACoAAA_b3c4BTAcvcf2VyIBHi_X2WWOWGNyt1ZI",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEu9ha6Y8Sixg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1669321063367?e=1781136000&v=beta&t=raEuoKrOSY-Tk_kZywRCzdqirDaq1Gn2VevDmPGUjF4",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFw1u4Fq3Nd8w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1729078028424?e=1781136000&v=beta&t=5tSeGbCLtj6zBZL9AjSaNC8kr84Qqb_0LxXwU47LgOk"
+        "profileId": "ACoAAA_b3c4BTAcvcf2VyIBHi_X2WWOWGNyt1ZI"
       }
     }
   ],
@@ -67,12 +60,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

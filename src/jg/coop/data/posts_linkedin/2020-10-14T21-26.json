@@ -2,9 +2,7 @@
   "type": "text",
   "resharedPost": {
     "type": "image",
-    "images": [
-      "https://media.licdn.com/dms/image/v2/C4D22AQGHGHxw7svB7A/feedshare-shrink_1280/feedshare-shrink_1280/0/1602692652469?e=1781136000&v=beta&t=nivK9mEz2vkFC8dKu9LEhLhf84ef23dufbbNClBFW-4"
-    ],
+    "images": [],
     "isActivity": false,
     "urn": "urn:li:activity:6722180205571543040",
     "url": "https://www.linkedin.com/posts/baradrb_data-analytics-sql-activity-6722180205571543040-PTDV?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAADVQx30BSKw-4RPuvwIzJnoG8AqJtvBc4vY",
@@ -28,9 +26,7 @@
               "occupation": "Chief Revenue Officer | Leading global GTM teams | Helping Raynet CRM go global🚀| SaaS & Startup Advisor | Endurance Athlete",
               "id": "426388465",
               "publicId": "vojtechboril",
-              "profileId": "ACoAABlqK_EBTwexXYO98HiM0Cil2erou9nLwrM",
-              "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEGTsncvvgk7Q/profile-displayphoto-crop_800_800/B4EZnxqnHzKYAI-/0/1760696104021?e=1781136000&v=beta&t=GIeaSfcWz4irdVGl3RUSdtcUyxFfeXIsmWUMwKVuZ_E",
-              "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHs4dqxYhyyJw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1703059206108?e=1781136000&v=beta&t=n1bkaVAGB6qFoSrPJrR3z1xgVa43RLrHoNE0yYwIu8Q"
+              "profileId": "ACoAABlqK_EBTwexXYO98HiM0Cil2erou9nLwrM"
             }
           },
           {
@@ -42,8 +38,7 @@
               "universalName": "kenticosoftware",
               "active": true,
               "showcase": false,
-              "entityUrn": "urn:li:fs_miniCompany:373060",
-              "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQFZUkYEDd16_g/company-logo_400_400/company-logo_400_400/0/1722893212085/kenticosoftware_logo?e=1781136000&v=beta&t=24w5h1QWggPyOfsaSiX7FHXyOrzLaHNtH3LEnDskLPk"
+              "entityUrn": "urn:li:fs_miniCompany:373060"
             }
           }
         ],
@@ -56,8 +51,6 @@
           "id": "46062906",
           "publicId": "jendaperla",
           "profileId": "ACoAAAK-3ToB3tromda1y-5qYjX__DPlVtRaP5M",
-          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFxLN7t7uzvAg/profile-displayphoto-crop_800_800/B4EZu4LuXlKcAM-/0/1768321662533?e=1781136000&v=beta&t=XyjNdRR-MVHOJvD_8KNw_ndo6tYmjIq7PN6GJ5F_J7w",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEaxDo2VUpOOQ/profile-displaybackgroundimage-shrink_350_1400/B4DZuSLT26KQAY-/0/1767683998074?e=1781136000&v=beta&t=e5qKcTFn0k10E5fDQ6d0r1A4FR_sfeWDaO13ZE1gV9w",
           "distance": "OUT_OF_NETWORK"
         }
       },
@@ -75,7 +68,6 @@
           "id": "837890414",
           "publicId": "pritika-powell-3527361b4",
           "profileId": "ACoAADHxMW4BmWy6BxmrxViGJeAsRzme9q_TRF8",
-          "picture": "https://media.licdn.com/dms/image/v2/C4D03AQG7eorTPnRjDQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1596871205789?e=1781136000&v=beta&t=CstivJ8cb_5xB9AmmUjimdLAYpwXshtQe-ioCOB9E28",
           "distance": "OUT_OF_NETWORK"
         }
       },
@@ -94,9 +86,7 @@
               "occupation": "Group HRBP at Heureka Group | Prosci® Certified Change Expert | Co-Founder Change Management Institute Czech Republic & Slovakia",
               "id": "316743758",
               "publicId": "eliskaprichystalova",
-              "profileId": "ACoAABLhIE4BllGLQ_9s9z4lMMldCrleYk3r_bU",
-              "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFJ5jcuPOlUcw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1699009714444?e=1781136000&v=beta&t=QCdlkSnD_ILcTQ09ezjGGZuF9b_dEbP33m0Ymg8-kGY",
-              "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGOKrCa-Cvsug/profile-displaybackgroundimage-shrink_350_1400/B4EZWPEaqbHgAc-/0/1741862055210?e=1781136000&v=beta&t=ME-ejcBZ9doAiKoP4jZ199y0L5n5fEmmkXE9BszCwK8"
+              "profileId": "ACoAABLhIE4BllGLQ_9s9z4lMMldCrleYk3r_bU"
             }
           }
         ],
@@ -108,8 +98,6 @@
           "id": "72418727",
           "publicId": "barbora-dobrovolna",
           "profileId": "ACoAAARRBacBDqAdPicwbFCEIC7el7pnfcWOq90",
-          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQE16Wqvc7PvdQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1557258622747?e=1781136000&v=beta&t=ixQceILnGzO321rYoevk-oRaj9MZ-yL51PTO1zMXbRo",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGiU-wi9Rsxkg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516891515105?e=1781136000&v=beta&t=pK6_raT88rGel8z-rqJCQsDtEDy9RDOEwTqd_aerBUA",
           "distance": "OUT_OF_NETWORK"
         }
       },
@@ -127,8 +115,6 @@
           "id": "310887763",
           "publicId": "adrianarybarova",
           "profileId": "ACoAABKHxVMB4Pz_9ofcHun4QNYul8ULEOkjlh8",
-          "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGwqKOGfctNZw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1604052392992?e=1781136000&v=beta&t=UukT1uc4HQp47i7BCrckpm9qnz5mhgTmK_CNNSXyanY",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQF4LHo9FDoJUw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1604927449588?e=1781136000&v=beta&t=McO98c_LUhAN51uCgyzRFo5uC5j5EfIzxpqwmQXJoRE",
           "distance": "OUT_OF_NETWORK"
         }
       },
@@ -146,8 +132,7 @@
               "universalName": "productboard",
               "active": true,
               "showcase": false,
-              "entityUrn": "urn:li:fs_miniCompany:5324440",
-              "logoUrl": "https://media.licdn.com/dms/image/v2/D560BAQFwM1hYGhCr4Q/company-logo_400_400/company-logo_400_400/0/1733336417676/productboard_logo?e=1781136000&v=beta&t=NeHd4DCwKPv4f-sr_S8zDL3TlmsACDOefRDdx1Kcjkw"
+              "entityUrn": "urn:li:fs_miniCompany:5324440"
             }
           },
           {
@@ -160,9 +145,7 @@
               "occupation": "Maternity leave 🐱",
               "id": "306198397",
               "publicId": "lucie-peterková-19166686",
-              "profileId": "ACoAABJAN30BJXOUMlTgbG_sswTeC49J6N66zP4",
-              "picture": "https://media.licdn.com/dms/image/v2/D4E35AQFgPfa3PYBb0Q/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1686056087831?e=1780430400&v=beta&t=CaeDqYjEZtOvmKHcgylV_GCUXvn5cu4uaNsKVHpSvRc",
-              "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGa7Ez4CKAolg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1644150115639?e=1781136000&v=beta&t=9KSl5ToDpZ0pIzlcyRBZlUG2XlEoTY39HEXW9FeT-NQ"
+              "profileId": "ACoAABJAN30BJXOUMlTgbG_sswTeC49J6N66zP4"
             }
           }
         ],
@@ -175,8 +158,6 @@
           "id": "310887763",
           "publicId": "adrianarybarova",
           "profileId": "ACoAABKHxVMB4Pz_9ofcHun4QNYul8ULEOkjlh8",
-          "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGwqKOGfctNZw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1604052392992?e=1781136000&v=beta&t=UukT1uc4HQp47i7BCrckpm9qnz5mhgTmK_CNNSXyanY",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQF4LHo9FDoJUw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1604927449588?e=1781136000&v=beta&t=McO98c_LUhAN51uCgyzRFo5uC5j5EfIzxpqwmQXJoRE",
           "distance": "OUT_OF_NETWORK"
         }
       },
@@ -195,9 +176,7 @@
               "occupation": "HR Manager v Pale Fire Capital | Head of HR v Aukro | HR consultant and mentor | #sharingiscaring",
               "id": "473833031",
               "publicId": "petranulickova",
-              "profileId": "ACoAABw-HkcBifENxX8nxAs2YjwxbI6b2XtAF98",
-              "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHnKx1150QjzQ/profile-framedphoto-shrink_400_400/B4DZ5EYkX3J4Ac-/0/1779263751874?e=1780430400&v=beta&t=pWJ51Ntw0jR9QQT0pS0cVga8Y5H1PX6eMgBC8eZYwyo",
-              "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQExwjEQhQ99TA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1676378924015?e=1781136000&v=beta&t=rpomntKe5fPHScYScrE5n1-ok01d_UuxKpUPUaPI93g"
+              "profileId": "ACoAABw-HkcBifENxX8nxAs2YjwxbI6b2XtAF98"
             }
           },
           {
@@ -210,9 +189,7 @@
               "occupation": "Recruiter at Microsoft passionate about personal growth / AI-powered recruitment across EMEA // amateur painter / hobby knitter / wish-to-be-pro tennis player / mentor / talent advisor / angel investor / volunteer",
               "id": "54038146",
               "publicId": "danielacapkova",
-              "profileId": "ACoAAAM4joIBq42qrERagelhZUpdXIKbx4mPVPM",
-              "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEU5G17-tq-dQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1660241233327?e=1781136000&v=beta&t=JEigtyw8T2hUHE2rtjzDCFD_3gwwu_3G8-kQ23Um4i0",
-              "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEEQnA01D7NEw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1696932060392?e=1781136000&v=beta&t=pWfroG-e0WI0M69BADCbhKMDRVXA_TsK-RG_jcFvQ4w"
+              "profileId": "ACoAAAM4joIBq42qrERagelhZUpdXIKbx4mPVPM"
             }
           },
           {
@@ -225,9 +202,7 @@
               "occupation": "Teamleader, Development at innogy Česká republika",
               "id": "366527139",
               "publicId": "annafaklova",
-              "profileId": "ACoAABXYwqMBnUsLJAUEPApZfN952IAoZW_4ZZc",
-              "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEIvHJ1MWmABQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1698176086267?e=1781136000&v=beta&t=bCygOE5vahSH8-VPfNtO-rpWkGFLH-dJtTkRun-oMTg",
-              "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHrAZg2D9l_hw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1724922506588?e=1781136000&v=beta&t=WVc2YLcEzm7yAH8DB5nITDqN1ArDP4XO59IzsqFf-0Y"
+              "profileId": "ACoAABXYwqMBnUsLJAUEPApZfN952IAoZW_4ZZc"
             }
           }
         ],
@@ -240,7 +215,6 @@
           "id": "103565463",
           "publicId": "jarkaturkova",
           "profileId": "ACoAAAYsSJcBGL5ARJ_WE4WbNiM1Ee88HEXj-Es",
-          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGj7j9faeLzZQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1653342038859?e=1781136000&v=beta&t=ci6HAKYHJ8yhc_XuI3QTb-TFHXYxSWOcV_8NeZnbIlg",
           "distance": "OUT_OF_NETWORK"
         }
       },
@@ -258,8 +232,6 @@
           "id": "241100176",
           "publicId": "antoninmarlier",
           "profileId": "ACoAAA5e5ZABcrZVZ8BW-26aa3FbSUNMvbfMDvg",
-          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEANEIXGx3oWA/profile-displayphoto-crop_800_800/B4EZjhZ1TCHgAI-/0/1756128302818?e=1781136000&v=beta&t=uqR_V1j9J9muG4yoDhmFonUkbNINxRO1mpcI7j7pZHk",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH5u2Cw-HRu5g/profile-displaybackgroundimage-shrink_350_1400/B4EZjhe6TxGwAY-/0/1756129634647?e=1781136000&v=beta&t=v6i7_JUHssn2FVMqtIBGwCZ6NhdYXeIQ3HSGiL-LJrU",
           "distance": "OUT_OF_NETWORK"
         }
       },
@@ -277,8 +249,7 @@
               "universalName": "mewssystems",
               "active": true,
               "showcase": false,
-              "entityUrn": "urn:li:fs_miniCompany:2574959",
-              "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQG9VtyX26envQ/company-logo_400_400/B4EZyKEXeEH0AY-/0/1771842926937/mewssystems_logo?e=1781136000&v=beta&t=UIV6bGS_gnn1FvSP7zSjwts_zMyZHE6t4vu9n9Nz5KE"
+              "entityUrn": "urn:li:fs_miniCompany:2574959"
             }
           }
         ],
@@ -291,8 +262,6 @@
           "id": "375918312",
           "publicId": "gabriela-rehoutova",
           "profileId": "ACoAABZoDugBZPP_pwsGohCcNSueNWnDv2TrXLA",
-          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHxeSq-aQXADA/profile-displayphoto-crop_800_800/B4DZyKZZmIJoAM-/0/1771848442537?e=1781136000&v=beta&t=1Yyb9MnnBlanozl3ZFem4jHbwrV99w2FfMmvv9FvIu0",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHp_vL6BWFTNw/profile-displaybackgroundimage-shrink_350_1400/B4DZyKYhihG8AY-/0/1771848210948?e=1781136000&v=beta&t=21UIB68ZMBkqepzOKX5D9kdQcghG2ZeQ58J0kSI1tQc",
           "distance": "OUT_OF_NETWORK"
         }
       },
@@ -311,9 +280,7 @@
               "occupation": "Full Stack Developer | Node.js • React • Azure",
               "id": "762997811",
               "publicId": "miloslav-jezek",
-              "profileId": "ACoAAC16bDMBDX69DVpckffdp3s7WQFJkN9ZQPE",
-              "picture": "https://media.licdn.com/dms/image/v2/D5603AQGIaim7FGwUJA/profile-displayphoto-shrink_800_800/B56Zdkuyu7G0Ac-/0/1749741678525?e=1781136000&v=beta&t=KQKd_q5so7d1ouew_efpkZxAIdS6aSgktGBupgxMjVI",
-              "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGnePf9ZiYoeQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ12v8ppKIAY-/0/1775813774467?e=1781136000&v=beta&t=ZMWvvJcgxN49hDEp-ojj2oIgKRgbrKfKywk0xtPf6_s"
+              "profileId": "ACoAAC16bDMBDX69DVpckffdp3s7WQFJkN9ZQPE"
             }
           },
           {
@@ -326,9 +293,7 @@
               "occupation": "Connecting talents with the right opportunities in CONSTRUCTION field.",
               "id": "208517721",
               "publicId": "andreaptackova",
-              "profileId": "ACoAAAxtulkBQHk4tLs_glQ392DI2Uj7JiZDBQs",
-              "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHoFVvAGs3Zfg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1607505858447?e=1781136000&v=beta&t=w6sAITJzRTvD_RBa9iktsz011LGn39mXkfpSTxmmjzY",
-              "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGiZW5YvPRnNA/profile-displaybackgroundimage-shrink_350_1400/B4DZpTgP9JKIAY-/0/1762337554891?e=1781136000&v=beta&t=1miKO8oFjMNBaZZNqA7b8U6gJaYio33cLD-aXHgy0IE"
+              "profileId": "ACoAAAxtulkBQHk4tLs_glQ392DI2Uj7JiZDBQs"
             }
           },
           {
@@ -341,9 +306,7 @@
               "occupation": "CEO at PrimePool s.r.o.",
               "id": "112527839",
               "publicId": "hfoltynova",
-              "profileId": "ACoAAAa1Cd8BuLl_Pv9nuID0ANihddKaAcdEUWA",
-              "picture": "https://media.licdn.com/dms/image/v2/D5603AQFFMJr4WzngDA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1707754533768?e=1781136000&v=beta&t=OrYN1BOWIGbxVezz2m8wtgWY8gtgGhYKGXuabDHOfq8",
-              "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHMtOpWGk2NIw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1679568339263?e=1781136000&v=beta&t=MSQmMSynslJFD53LfhHHdXKb0itJNz_HL0M79VrW7gY"
+              "profileId": "ACoAAAa1Cd8BuLl_Pv9nuID0ANihddKaAcdEUWA"
             }
           },
           {
@@ -356,9 +319,7 @@
               "occupation": "Shareholder and leader. Challenging the status quo in the Talent Economy. Passionate about life & work with purpose.",
               "id": "765403",
               "publicId": "blakewittman",
-              "profileId": "ACoAAAALrdsBaLZ9ixJfnZTcgnQm3DXx3gBxVHg",
-              "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGliZL2VjlyvQ/profile-displayphoto-shrink_800_800/B4EZRej7ZZGYAc-/0/1736753264766?e=1781136000&v=beta&t=3djwhNjUblUShdRFSmpJrWExqxuVSSDEy1LY0cOKv7k",
-              "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFoDjw4ujfyJA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1703062348535?e=1781136000&v=beta&t=s1Q6CDyWIoulsokqBJT-ql2l_r7znkzMKwztbYyJgYg"
+              "profileId": "ACoAAAALrdsBaLZ9ixJfnZTcgnQm3DXx3gBxVHg"
             }
           }
         ],
@@ -371,8 +332,6 @@
           "id": "173309745",
           "publicId": "eliskasteklikova",
           "profileId": "ACoAAApUfzEB5CFLeWrO-xlkBIoCTit5sP34CCY",
-          "picture": "https://media.licdn.com/dms/image/v2/C5603AQH4o3DqJwIjLg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1591173238131?e=1781136000&v=beta&t=F1haS2kQcPdOp-zE0Emazi3SgxU6BmyJuVYq1zNHfV8",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQErwoTqDfUn9Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1715979865484?e=1781136000&v=beta&t=8AXC0GvMLrwTlW-PzY_FYFh9NMxn4tnUUSzYiBlK3jA",
           "distance": "OUT_OF_NETWORK"
         }
       }
@@ -386,9 +345,7 @@
           "occupation": "🧑‍🤝‍🧑 Working with and for communities, organizing events, studying service design, having fun in all that. ✏️",
           "id": "58610470",
           "publicId": "anezkamll",
-          "profileId": "ACoAAAN-UyYBW_5FlwBOtClk7WVpl3JlZMHMVn4",
-          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEdF62o6gzpHQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731942194763?e=1781136000&v=beta&t=3Pf8QBLlGpzI8zRBBfihj0pgDvCgOUoUJyTfMptX81Y",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHKgfW_KDXR1Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1620408094586?e=1781136000&v=beta&t=qk_LRa-WT8rOvas9-jwGjCle3e76MkO7wIKYYCWCZag"
+          "profileId": "ACoAAAN-UyYBW_5FlwBOtClk7WVpl3JlZMHMVn4"
         }
       },
       {
@@ -399,9 +356,7 @@
           "occupation": "Full Stack Engineer Trainee at TechTalent Academy",
           "id": "566029965",
           "publicId": "kcbnkv",
-          "profileId": "ACoAACG87o0BmZapsT4ufSdd0EDE7L7mKbND_7k",
-          "picture": "https://media.licdn.com/dms/image/v2/D4D35AQE4G74gC4gytA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1638360588892?e=1780430400&v=beta&t=IgzVgBXUmNJsUJAoTxmurRDH2M1QM04ycx89ZP1qoc0",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGG43NVjjSrgg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1630353911393?e=1781136000&v=beta&t=ZkLD4VS97qtGFD9SYNBFPClHDD4QBn0i1e9zyHmlHzI"
+          "profileId": "ACoAACG87o0BmZapsT4ufSdd0EDE7L7mKbND_7k"
         }
       },
       {
@@ -412,9 +367,7 @@
           "occupation": "Pomohu ti najít cestu z temnoty alkoholu a drog do světla úspěchu, radosti a štěstí. / Kouč / Adiktolog / Mentor a učitel praktické spirituality pro moderního člověka.",
           "id": "414990805",
           "publicId": "mgr-jiří-habarta-871b90b6",
-          "profileId": "ACoAABi8QdUBVMuTVTbLAvuPYDu9hT-iuEmJ2kI",
-          "picture": "https://media.licdn.com/dms/image/v2/D4E35AQGzPl71UN6KSA/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1668272982054?e=1780430400&v=beta&t=SDT6rq6i8iYawCoYs8cpxJ3YuObQFxLbpwXhzZVt0Ig",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEZtHZUHt-b9g/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1668283739905?e=1781136000&v=beta&t=Gwu4Y0SWrknZHsjurS2E3Bem1ir8ExFKMd8C_07r0Tk"
+          "profileId": "ACoAABi8QdUBVMuTVTbLAvuPYDu9hT-iuEmJ2kI"
         }
       },
       {
@@ -425,9 +378,7 @@
           "occupation": "Co-Founder & CEO @ Tipli | Cashback & loyalty across 8 CEE markets | AI-powered product & ops",
           "id": "34624864",
           "publicId": "michalhardyn",
-          "profileId": "ACoAAAIQVWABag6Va2eaQC0xYmphWwIHizVPUYI",
-          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQG4HWDNmHBe3w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516372857926?e=1781136000&v=beta&t=sBL595hbU_znQhAf9TTiSl-bsrh28H0OKI_ei5EpiIA",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH_nHy3IOadRw/profile-displaybackgroundimage-shrink_350_1400/B4EZTwQzmVGYAY-/0/1739197727309?e=1781136000&v=beta&t=bnkjPXysI3nFG29bSvC1aYxt94LBgWvANn-oZl4hKaM"
+          "profileId": "ACoAAAIQVWABag6Va2eaQC0xYmphWwIHizVPUYI"
         }
       },
       {
@@ -438,9 +389,7 @@
           "occupation": "Koordinátorka Pacientské rady ÚVN. Koordinátorka klinických studií, Interní klinika 1. LF UK a ÚVN. Všeobecná sestra intenzivní péče.",
           "id": "389755510",
           "publicId": "kateřina-křenková",
-          "profileId": "ACoAABc7MnYB8nR3CVhBtmucVV9jEqGUeAtB3AM",
-          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGZKLKQi1tbgQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704149214722?e=1781136000&v=beta&t=Yjf6OCfNikfwm1l_Jaz-zvuzrm0Wekw2vreQOdRii0M",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEWu3Ad2vf_CA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1605736349590?e=1781136000&v=beta&t=S-XpZlgUKILbRsb_b-HyL3GkmDqIILku0kBbGccLIu0"
+          "profileId": "ACoAABc7MnYB8nR3CVhBtmucVV9jEqGUeAtB3AM"
         }
       },
       {
@@ -451,9 +400,7 @@
           "occupation": "global space industry research, investments and advisory",
           "id": "695593827",
           "publicId": "filipkocian",
-          "profileId": "ACoAACl162MB2L87KwF6sdVGiTl3ZHXGuPm9U4o",
-          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE9oa9bBxujow/profile-displayphoto-shrink_800_800/B4EZN5JZMtGQAc-/0/1732904326426?e=1781136000&v=beta&t=qOkav7wkAYWf-2OrrZ-Ebtp8ps0o8RQjP0Q0wVRLanI",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEO8OX-WOHWTw/profile-displaybackgroundimage-shrink_350_1400/B56Z2hfxI9KgAc-/0/1776530954275?e=1781136000&v=beta&t=ov30fJBv-9PzjWXztCLB3okr_qzcXcTToGq733hxuEE"
+          "profileId": "ACoAACl162MB2L87KwF6sdVGiTl3ZHXGuPm9U4o"
         }
       },
       {
@@ -464,8 +411,7 @@
           "occupation": "Android DEV",
           "id": "186784462",
           "publicId": "patrik-mucha",
-          "profileId": "ACoAAAsiGs4BHFvxHkRtSAQoFX9KHmbNUBTEn4U",
-          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFl_pSlT49vCA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1682444625870?e=1781136000&v=beta&t=P4NeTdYE0dBeZrpq42eoWQy9xbai6nI269DV3xwKoyU"
+          "profileId": "ACoAAAsiGs4BHFvxHkRtSAQoFX9KHmbNUBTEn4U"
         }
       },
       {
@@ -476,9 +422,7 @@
           "occupation": "Product Designer | Fintech & AI-powered experiences | Research-driven UX | 6 years building scalable digital products",
           "id": "296033723",
           "publicId": "denisabrichtova",
-          "profileId": "ACoAABGlHbsBPnhk82NmuEKwVoVSd8rEHf_rPoo",
-          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE6woxbtTdtKw/profile-displayphoto-crop_800_800/B4DZrkGsIFKIAI-/0/1764763550680?e=1781136000&v=beta&t=ox3YxZ2gcdltt9b-XRmDmLGNfXQutsuC_yJoGX1BOuc",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGU_ZmE2mb4gA/profile-displaybackgroundimage-shrink_350_1400/B4EZtXdvSiGcAc-/0/1766698973532?e=1781136000&v=beta&t=ULygKnQDR6fB3UcfJsmPObRojyqE51IClbbkPyFM9UE"
+          "profileId": "ACoAABGlHbsBPnhk82NmuEKwVoVSd8rEHf_rPoo"
         }
       },
       {
@@ -489,8 +433,7 @@
           "occupation": "Akcionář ve společnosti wilio.com",
           "id": "34361050",
           "publicId": "josefmatejka",
-          "profileId": "ACoAAAIMTtoBsCsNitGWR1wpk3nJj3lDjnvBctI",
-          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGiXCGg3sjpaA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516368705852?e=1781136000&v=beta&t=zXiiCFvhtfQzxY1HPweTTBgIfdKMHcNmcnbL473vAyw"
+          "profileId": "ACoAAAIMTtoBsCsNitGWR1wpk3nJj3lDjnvBctI"
         }
       },
       {
@@ -501,8 +444,7 @@
           "occupation": "iOS Architect ve společnosti Jablotron Cloud Services",
           "id": "243074994",
           "publicId": "petrtomicek",
-          "profileId": "ACoAAA59B7IBxK3F6sKkLC_fvKQ_4_oOMBjNUkM",
-          "picture": "https://media.licdn.com/dms/image/v2/C5603AQEEzva33Evpjw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517424473804?e=1781136000&v=beta&t=karGIN3HIx9pqU2dttX3fUptVV1kR15RO1dpBroYbZ0"
+          "profileId": "ACoAAA59B7IBxK3F6sKkLC_fvKQ_4_oOMBjNUkM"
         }
       }
     ],
@@ -522,12 +464,9 @@
       "occupation": "data – events – community",
       "id": "138678453",
       "publicId": "baradrb",
-      "profileId": "ACoAAAhEELUBh00AQMpcqeGwUSsN_Kuc2a0w0G8",
-      "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGphUcJREjOsw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1592866548522?e=1781136000&v=beta&t=-CBV_vWmEa9Tt9hihKKRIYRZbixOPqHWURYtAVLAPWA",
-      "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFYwEy9vtmtRA/profile-displaybackgroundimage-shrink_350_1400/B4EZoxWhbMGUAY-/0/1761764582204?e=1781136000&v=beta&t=BB-3WCaFGq5vreqxcreioFwb9_pfD1Jc68wITvmER4s"
+      "profileId": "ACoAAAhEELUBh00AQMpcqeGwUSsN_Kuc2a0w0G8"
     },
     "authorProfileId": "baradrb",
-    "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4D03AQGphUcJREjOsw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1592866548522?e=1781136000&v=beta&t=-CBV_vWmEa9Tt9hihKKRIYRZbixOPqHWURYtAVLAPWA",
     "authorType": "Person",
     "authorName": "Bára Drbohlavová",
     "authorProfileUrl": "https://www.linkedin.com/in/baradrb?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAhEELUBh00AQMpcqeGwUSsN_Kuc2a0w0G8",
@@ -563,9 +502,7 @@
         "occupation": "Advanced visual communication | 3D, AR, VR, AI | Helping companies communicate with impact end emotion - through powerful visual tools",
         "id": "423821716",
         "publicId": "vaclav-vacek",
-        "profileId": "ACoAABlDAZQB52y6-adffePhr2KtuAn9yvhCL30",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHtXMPOx4YlZg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1625254405050?e=1781136000&v=beta&t=8KXOoha3ueSpk04lo3PtWLw8UkK2i7xqrkGwrXQAHss",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEcsNg-Zfz_Xg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1710515580721?e=1781136000&v=beta&t=AW_lAUXQNj4PaU79TP0uVliGBIKpJPspfWOfe331G1M"
+        "profileId": "ACoAABlDAZQB52y6-adffePhr2KtuAn9yvhCL30"
       }
     },
     {
@@ -576,8 +513,7 @@
         "occupation": "Project Management | 🇨🇿 + 🇦🇲 = ♥️",
         "id": "838877316",
         "publicId": "anihakobjan",
-        "profileId": "ACoAADIAQIQBS6XQgAz2DzKTYTXc1YFTzRpWz_I",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEaZ8WKo_WFaA/profile-displaybackgroundimage-shrink_350_1400/B4EZqOJUXGKcAY-/0/1763321400681?e=1781136000&v=beta&t=YqSnoGWJzPjcg8kuXesg2JPH3jkwImI4caPx8kJCUbI"
+        "profileId": "ACoAADIAQIQBS6XQgAz2DzKTYTXc1YFTzRpWz_I"
       }
     },
     {
@@ -588,8 +524,7 @@
         "occupation": "Implementation specialist - FinTech & Banking, Configuration Manager - FinTech & Banking, Change Control Manager- Research & Science",
         "id": "400348093",
         "publicId": "ellietomasova",
-        "profileId": "ACoAABfc070BhqDEHocQJPrha3hZv5cLky5xk5o",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFl87DfovJqcQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1573640563237?e=1781136000&v=beta&t=WEW0M_ZsIFJLNd-PI5E-WIA4hs9Pb28KQoRJFYiJZPA"
+        "profileId": "ACoAABfc070BhqDEHocQJPrha3hZv5cLky5xk5o"
       }
     },
     {
@@ -600,8 +535,7 @@
         "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
         "id": "551084893",
         "publicId": "grumpyprogrammer",
-        "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFnQ8ypdjjyvg/profile-displayphoto-crop_800_800/B4DZxZUZFlHkAI-/0/1771025047361?e=1781136000&v=beta&t=fFiIDptOBoMzbUkj1Lvpd8USzHMX1nkcCCOr19Su_4c"
+        "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4"
       }
     }
   ],
@@ -621,12 +555,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

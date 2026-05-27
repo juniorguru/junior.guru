@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQEykMWSajqEEA/feedshare-shrink_1280/feedshare-shrink_1280/0/1615463615119?e=1781136000&v=beta&t=pjg_fmTpUis2G1BBaqbF21Pk-BeUmsZg8qZyEq25uFU"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6775745509333229568",
   "url": "https://www.linkedin.com/posts/honzajavorek_talks-juniors-junioring-activity-6775745509333229568-cA42",
@@ -20,8 +18,7 @@
         "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
         "id": "183293578",
         "publicId": "dariagru",
-        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0"
       }
     },
     {
@@ -33,8 +30,7 @@
         "universalName": "cybermagnolia",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:68539533",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQFZ_LaXdtsiKg/company-logo_400_400/company-logo_400_400/0/1630501497670/cybermagnolia_logo?e=1781136000&v=beta&t=tGpc67FZ0YIKADMPsOuQtGPVJ3u6Hm4w2AZNnb8WbDA"
+        "entityUrn": "urn:li:fs_miniCompany:68539533"
       }
     }
   ],
@@ -53,7 +49,6 @@
         "id": "183293578",
         "publicId": "dariagru",
         "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -67,9 +62,7 @@
         "occupation": "Geospatial Data Scientist | Unlock.IT founder | PyLadies Vienna Organizer",
         "id": "460781626",
         "publicId": "tyna-dolezalova",
-        "profileId": "ACoAABt2-DoBjqrKnFkMlpMDfc2wnJcbfMZEfKA",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEdp87rO6fYzA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1675017824390?e=1781136000&v=beta&t=IBHMwDO3RswVqWMMMRwN_cjR-0N0n451mRIcWAPy89s",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEi3WQke_uwcw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1525375593417?e=1781136000&v=beta&t=r2bfxb0HBdpEzFfLti0g89r07Y_fy-rlQ2TjWgO3e7E"
+        "profileId": "ACoAABt2-DoBjqrKnFkMlpMDfc2wnJcbfMZEfKA"
       }
     },
     {
@@ -80,8 +73,7 @@
         "occupation": "Currently on maternity leave",
         "id": "498811395",
         "publicId": "katerinapaulinova",
-        "profileId": "ACoAAB27QgMB-LtkvlGwxNcB-N_aZb3iLmTAnn0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFaWnsM2HQv2g/profile-displayphoto-crop_800_800/B4DZvf7qupJwAM-/0/1768988524216?e=1781136000&v=beta&t=4da7fmH3bVYAkZcSC2ZbEtUYvTh1vvc9wC4KyJ7tQWE"
+        "profileId": "ACoAAB27QgMB-LtkvlGwxNcB-N_aZb3iLmTAnn0"
       }
     },
     {
@@ -103,9 +95,7 @@
         "occupation": "Product Manager @Apify AI team",
         "id": "332070935",
         "publicId": "dusanvystrcil",
-        "profileId": "ACoAABPLABcBEouMcb9x_e74kNetArRUKZ9lhvU",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFoOHv1LLcDMw/profile-displayphoto-crop_800_800/B4EZrMO7JqJ0AI-/0/1764363058807?e=1781136000&v=beta&t=-jvBGp_tJQiTNTCe2UOyWJ1RRfEFlyJBglnhAgjKYxA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH0lfJ2HofG_Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1733157084528?e=1781136000&v=beta&t=kXNh06rAyxWJAAq9HraJQX_D8Op0b0xuXVy-NMGDOBw"
+        "profileId": "ACoAABPLABcBEouMcb9x_e74kNetArRUKZ9lhvU"
       }
     },
     {
@@ -116,9 +106,7 @@
         "occupation": "Helping organizations fix vulnerabilities at scale",
         "id": "11584398",
         "publicId": "ahsanmir",
-        "profileId": "ACoAAACww44BDhWbQcI2b26BHUgTU_Kqitx2LqA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFl1EsfG1J5yQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1593753539344?e=1781136000&v=beta&t=SmcdVwFTWcyHwVdKTXh38L6rC0-FJbJ61KShdMTOXF4",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQFS620tSza90A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1715927272725?e=1781136000&v=beta&t=bKRkMsnSeaGfzQn5XUpZcr__ue7HJLRlvJ78JCgOZi4"
+        "profileId": "ACoAAACww44BDhWbQcI2b26BHUgTU_Kqitx2LqA"
       }
     },
     {
@@ -129,9 +117,7 @@
         "occupation": "Believer of lifelong learning",
         "id": "306437717",
         "publicId": "eva-psz",
-        "profileId": "ACoAABJD3lUBmOo5Yri0gqk8dj9mf74wR4yayfA",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQEEeionggap4g/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1644311412981?e=1780430400&v=beta&t=OIMK3LDN6BcVUe6-Dpf9ZU2M-iTQRQ1Dn8hoGDydI_8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQED2-ohsVZXFA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1517007736608?e=1781136000&v=beta&t=yfNXAz9-YWdTO872EqLApiK4Gob_QgsJy29t9czB5bc"
+        "profileId": "ACoAABJD3lUBmOo5Yri0gqk8dj9mf74wR4yayfA"
       }
     },
     {
@@ -142,8 +128,7 @@
         "occupation": "Application Developer at Barclays",
         "id": "361531956",
         "publicId": "lenkaerbenova",
-        "profileId": "ACoAABWMijQBlQzoTAse2JjfcJmbjz4dAQnIsQs",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGi_aPN1DxU3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517030344782?e=1781136000&v=beta&t=boP6IJareKgeZZHEHLF-RgBjxI_GQmpxMacm_Mm8k9c"
+        "profileId": "ACoAABWMijQBlQzoTAse2JjfcJmbjz4dAQnIsQs"
       }
     },
     {
@@ -154,9 +139,7 @@
         "occupation": "Pohybový program přímo u vás ve firmě. Zdravotní cvičení pro lidi, kteří sedí u počítače. Praha.",
         "id": "170493540",
         "publicId": "nataliavokrouhlecka",
-        "profileId": "ACoAAAophmQBExOyJqI5fnZ5Qa3PY_o7i1QoYyc",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGKYZh7DZU89A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1568554054332?e=1781136000&v=beta&t=u5DYOGt_0edi2x2DBi70lK0ok-DdChPTPf2SqW9S09U",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHvenncD-thTw/profile-displaybackgroundimage-shrink_350_1400/B4DZ5LIOisHIAU-/0/1779376908738?e=1781136000&v=beta&t=EbayGk3VoyaE9X1yE1BQKLzI3InmCPnNIgWE1jeD-Hk"
+        "profileId": "ACoAAAophmQBExOyJqI5fnZ5Qa3PY_o7i1QoYyc"
       }
     },
     {
@@ -167,9 +150,7 @@
         "occupation": "I help tech teams build sustainable & automated operations | Production Readiness • Governance • FinOps",
         "id": "98336834",
         "publicId": "urbanecvit",
-        "profileId": "ACoAAAXcgEIBI3EXrhIEiW0W-bSF1dNPyzGLsR0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFbnqBeD53qbA/profile-displayphoto-crop_800_800/B4DZ0_B8AfIoAI-/0/1774878969770?e=1781136000&v=beta&t=QXbU9k_52PkoKOslJ6hKgMpex4OlM4sD7Tlaf-uTDCQ",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQEjQsts3sHN1A/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1641386846463?e=1781136000&v=beta&t=9ZRZQDeV5TFAlq1V065KmoFFp_9V6U9_FM5a2cH3fuk"
+        "profileId": "ACoAAAXcgEIBI3EXrhIEiW0W-bSF1dNPyzGLsR0"
       }
     },
     {
@@ -180,8 +161,7 @@
         "occupation": "Freelance Product & Ops | CX & Systems Thinking | Neuroleadership Coach | Volunteer @ Česko.Digital | Mentor @ Femme Palette",
         "id": "109919206",
         "publicId": "ivafingerova",
-        "profileId": "ACoAAAaNO-YB_qQBMliqSDeBayGzCWDVLaMv24w",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEU5LtzZ8xFpg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1647941658383?e=1781136000&v=beta&t=kC-CVuKqpfT6AEhHWHW1Qlvyx2-8Sss3WAJbrA8hVoA"
+        "profileId": "ACoAAAaNO-YB_qQBMliqSDeBayGzCWDVLaMv24w"
       }
     }
   ],
@@ -201,12 +181,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

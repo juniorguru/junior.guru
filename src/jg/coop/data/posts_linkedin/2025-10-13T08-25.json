@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/D4D22AQGsmwqVKL1Ckg/feedshare-image-high-res/B4DZnbzx4NH4As-/0/1760329409691?e=1781136000&v=beta&t=HoI5HXpnnaGETIsnnm6FboS7Ufes3dEkmhAy5goPVq0"
-  ],
+  "images": [],
   "isActivity": true,
   "activityDescription": "Honza Javorek reposted this",
   "activityOfUser": {
@@ -11,9 +9,7 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "urn": "urn:li:activity:7383417478015623168",
   "url": "https://www.linkedin.com/posts/pycon-namibia_pyconna26-pyconnamibia-pyconnamibia2026-activity-7383356690114523137-Iow5",
@@ -37,8 +33,7 @@
             "occupation": "Data Engineer | ETL Pipelines | AWS | Python | SQL | dbt | Health Tech",
             "id": "171762852",
             "publicId": "neidy-tunzine",
-            "profileId": "ACoAAAo85KQBhi6VmCDbKAA1OFlKZG0h0C8Jktc",
-            "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHEv3YVhlcoMA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704298046036?e=1781136000&v=beta&t=YYIZWOZccW0qlqNl6RT0ldLg-wo_Z4YR_noQuRMEpks"
+            "profileId": "ACoAAAo85KQBhi6VmCDbKAA1OFlKZG0h0C8Jktc"
           }
         }
       ],
@@ -50,7 +45,6 @@
         "id": "13335089",
         "publicId": "natu-lauchande-0955714",
         "profileId": "ACoAAADLejEBSr1wPPcFTNoIgD0iCxGTAm6dqak",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEBIDunfOSsiw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1560156780082?e=1781136000&v=beta&t=2AX61RRd0V18LIATfV16taf1SxdAr-loo8DVBtKD6a8",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -64,9 +58,7 @@
         "occupation": "Google Summer of Code 2024 @ PSF(FURY) | Open Source Advocate & Contributor | Microsoft Learn Student Ambassador | Co-founder @PythonTogo | PyCon Africa IOC | Chair, PyCon Togo 2025",
         "id": "757212562",
         "publicId": "wasscodeur",
-        "profileId": "ACoAAC0iJZIB9K_HhbTJLe53_sja2knPFXODoXQ",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF7Gz25arWPSQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1732792066514?e=1781136000&v=beta&t=H80AXuPqiAwDdVUYa3Ca0KoJtmUfV53skZ18sarEQbg",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFBbWinpTAY7Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1730282665172?e=1781136000&v=beta&t=g6lli3VnpS6lfgQ2VQnedYYYNHMRtFW3BoNbFmcp4vo"
+        "profileId": "ACoAAC0iJZIB9K_HhbTJLe53_sja2knPFXODoXQ"
       }
     },
     {
@@ -77,9 +69,7 @@
         "occupation": "Shapwa",
         "id": "993287850",
         "publicId": "danson-shapwa-436797238",
-        "profileId": "ACoAADs0XqoBX46Ahi18T6nzNkT5nst8HTloFY8",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQFpNMZvSX_r3w/profile-framedphoto-shrink_800_800/B4DZ2_YA1WI4Ag-/0/1777032236686?e=1780430400&v=beta&t=kIJAw9elMwNsbP8BJ4yd2pYlpr_ffewAp4Pyw9Up4KI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFOywALmNFQGg/profile-displaybackgroundimage-shrink_350_1400/B4DZxvvWt9HcAc-/0/1771401223295?e=1781136000&v=beta&t=FRP4WJ7my-YrzpD18y5aLy78zg3sosZb1xpKfAbuirI"
+        "profileId": "ACoAADs0XqoBX46Ahi18T6nzNkT5nst8HTloFY8"
       }
     },
     {
@@ -90,9 +80,7 @@
         "occupation": "ISTQB Certified| PSF CoC| Quality Assurance Engineer| DevRel | Django REST Framework, PyconKE Organizer",
         "id": "325326780",
         "publicId": "monicaoyugi",
-        "profileId": "ACoAABNkF7wBS-Vb4Luza_fo-bYVEhJc0Xj50i0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE9KkOLLItqNA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1724412933466?e=1781136000&v=beta&t=pvxYVGEVuMxx8x06mOwSOyUdCoUiYe3vbW8o4PwJamU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFssoSmddxngA/profile-displaybackgroundimage-shrink_350_1400/B4DZwnWDVyKwAY-/0/1770186619888?e=1781136000&v=beta&t=6d7PCFajN1SA3Ah7T4h4Ma6xJx50fbxxiLbXE5Z6bHU"
+        "profileId": "ACoAABNkF7wBS-Vb4Luza_fo-bYVEhJc0Xj50i0"
       }
     },
     {
@@ -103,9 +91,7 @@
         "occupation": "Intern Software Developer @Monthos | DevOps Enthusiast | Mentor | WeThinkCode_ Alumnus | AWS CCP",
         "id": "1094757607",
         "publicId": "simangaliso-innocent-phakwe",
-        "profileId": "ACoAAEFArOcB-xpdc84av3Kk_BqBxEBVfnFsqIE",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHfqCzI8FKMqQ/profile-displayphoto-crop_800_800/B4DZxnIzDXHwAI-/0/1771256888026?e=1781136000&v=beta&t=JyfF4VGQ44AffKQdGT3ssu9hoKvXqNgSl7eUEgz5474",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGx2qsIc6Kxmg/profile-displaybackgroundimage-shrink_350_1400/B4DZyMEiKqJoAc-/0/1771876530973?e=1781136000&v=beta&t=d0Mpawo_ks4twGTmTWGeSzPeewkrcV6ciEVKgqqFXrU"
+        "profileId": "ACoAAEFArOcB-xpdc84av3Kk_BqBxEBVfnFsqIE"
       }
     },
     {
@@ -116,8 +102,7 @@
         "occupation": "Full-Stack Developer | AI & ML Engineer | DevOps & Cloud Computing | Data Science & Supply Chain Analytics",
         "id": "1081445274",
         "publicId": "lisa-chikovore-476210262",
-        "profileId": "ACoAAEB1i5oB6pblyzd10xFVgGeie6-1gOij78E",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQF2uz_0nxyH_g/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1673862175324?e=1781136000&v=beta&t=EGZiLtNDXccniIn0Bye0k0unopQhAeAylsDukBZJKgk"
+        "profileId": "ACoAAEB1i5oB6pblyzd10xFVgGeie6-1gOij78E"
       }
     },
     {
@@ -128,8 +113,7 @@
         "occupation": "Student at NUST Namibia",
         "id": "1046180704",
         "publicId": "ludgella-kudumo-794444252",
-        "profileId": "ACoAAD5bc2ABSzBTCb6JrJERkfRA4GuOQeiMzEw",
-        "picture": "https://media.licdn.com/dms/image/v2/D5635AQGXW0U7XhrOLA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1660002772504?e=1780430400&v=beta&t=v22RqlMgRS7YScN5sBsUHO0Ww5TuKTAYClQDy0LF03w"
+        "profileId": "ACoAAD5bc2ABSzBTCb6JrJERkfRA4GuOQeiMzEw"
       }
     },
     {
@@ -140,8 +124,7 @@
         "occupation": "Business Analyst | Software Developer",
         "id": "1079190265",
         "publicId": "jamaine-chika-4a1503261",
-        "profileId": "ACoAAEBTIvkBHobb24aa8rjqyZMSzT_7q8MO1Ck",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQF9chxueJiBdA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1682176374534?e=1781136000&v=beta&t=M6uyjKutVtNuDAvpxaO6rlFufLoe-jA0HUUNutvoPT4"
+        "profileId": "ACoAAEBTIvkBHobb24aa8rjqyZMSzT_7q8MO1Ck"
       }
     },
     {
@@ -152,9 +135,7 @@
         "occupation": "Software Engineer | Developer Success | Developer Relations | Community | Luddite",
         "id": "98331381",
         "publicId": "juanluiscanor",
-        "profileId": "ACoAAAXcavUB6j26_YjUtYinmzmdjTchguHHuG4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQGT-bFk65SCvQ/profile-framedphoto-shrink_800_800/B4EZv_wV5HIIAg-/0/1769522421662?e=1780430400&v=beta&t=k3htdRR49CqARWzoKQ_9HiibtQ-Q-0BjbMAy4Xos3Kw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFCZuYYN_3-xg/profile-displaybackgroundimage-shrink_350_1400/B4DZmaPATUJgAY-/0/1759229249118?e=1781136000&v=beta&t=bS1CBt9En_gDviyqBGgiilrOx-_enZ7S0c0os2ykPYk"
+        "profileId": "ACoAAAXcavUB6j26_YjUtYinmzmdjTchguHHuG4"
       }
     },
     {
@@ -165,9 +146,7 @@
         "occupation": "Senior Developer Community Manager @Apify | Actor Development Advocate | Open Source Evangelist | Public Speaking | Python | Node.js | Web Scraping | AI Agents | Docker Captain",
         "id": "595754452",
         "publicId": "sauain",
-        "profileId": "ACoAACOCfdQBZOz9cPrE5Bii0-mQc8qUA78QOc8",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEBkmA76xTJgQ/profile-displayphoto-crop_800_800/B4DZ3Xp6wgH8AI-/0/1777439584111?e=1781136000&v=beta&t=ja0-T0Qiqwvkth_BCkwPML7V3UOb60ZfvPmJUuVxCMw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGV98RRqjAJig/profile-displaybackgroundimage-shrink_350_1400/B4DZ3XqGm1HYAY-/0/1777439633139?e=1781136000&v=beta&t=JTBLZFUeqTKzTUZi1rjb1L3RFGmsS8Ps14FdjdNRXKw"
+        "profileId": "ACoAACOCfdQBZOz9cPrE5Bii0-mQc8qUA78QOc8"
       }
     },
     {
@@ -178,9 +157,7 @@
         "occupation": "Software Engineer",
         "id": "1013517249",
         "publicId": "dinah-masule",
-        "profileId": "ACoAADxpC8EBkYzaJ6pLGj_gJNWJqP_mbs1S4Cc",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEoaJ_UdQlFQA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1660306041458?e=1781136000&v=beta&t=TwPQ4xjeIyW0lDUpTMv7EWrvEO_jXQ5xq2mv1RGgvFI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHrMa8BJFG9Bw/profile-displaybackgroundimage-shrink_350_1400/B4DZbbM6fSGwAc-/0/1747434321684?e=1781136000&v=beta&t=ZLKgj-qvo2D8REUCkdeiSx7tRlVsj7FecTwCU4yl79U"
+        "profileId": "ACoAADxpC8EBkYzaJ6pLGj_gJNWJqP_mbs1S4Cc"
       }
     }
   ],
@@ -199,10 +176,8 @@
     "universalName": "pycon-namibia",
     "active": true,
     "showcase": false,
-    "entityUrn": "urn:li:fs_miniCompany:91586071",
-    "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQHZK5f684ttLg/company-logo_400_400/company-logo_400_400/0/1671006991211?e=1781136000&v=beta&t=hm9oa8z_9_dwEDlrlh-mRlSu4YNF_KZ1qsBzLfNk3JE"
+    "entityUrn": "urn:li:fs_miniCompany:91586071"
   },
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E0BAQHZK5f684ttLg/company-logo_400_400/company-logo_400_400/0/1671006991211?e=1781136000&v=beta&t=hm9oa8z_9_dwEDlrlh-mRlSu4YNF_KZ1qsBzLfNk3JE",
   "authorType": "Company",
   "authorProfileId": "company",
   "authorFollowersCount": "1,059",

@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQHApL-D8Gpstw/feedshare-shrink_1280/feedshare-shrink_1280/0/1620799982352?e=1781136000&v=beta&t=YSirE0yFqRgVCwWi6jtYjcFe-ghi5I0QX3tdufyzwGc"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6798127850684768256",
   "url": "https://www.linkedin.com/posts/honzajavorek_v-p%C5%99%C3%ADru%C4%8Dce-o-hled%C3%A1n%C3%AD-prvn%C3%AD-pr%C3%A1ce-v-it-v-activity-6798127850684768256-7fHM",
@@ -20,9 +18,7 @@
         "occupation": "🤖 Creating useful software",
         "id": "16958557",
         "publicId": "lukaskonarovsky",
-        "profileId": "ACoAAAECxF0Bn8L1if6aBIgIt7NKsx9XZPpdHJY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFfGn8m8PA6kg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1690914305341?e=1781136000&v=beta&t=apEZCpPL8sFVvyLcBGfK51wHzE38sP40PfOkOHpeqSo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEp5DAM7GcSRg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1614354721389?e=1781136000&v=beta&t=nBV6Bn_cQ5PPT-IqTWptEo7FN7MxHA1m_VxDJMTe8uQ"
+        "profileId": "ACoAAAECxF0Bn8L1if6aBIgIt7NKsx9XZPpdHJY"
       }
     },
     {
@@ -33,9 +29,7 @@
         "occupation": "Full-Stack Software Engineer & Problem Solver | Open Source maintainer & contributor | Alumni GitHub Star | AsyncAPI maintainer | PSD I / PSM I / GCP / LFCA",
         "id": "58899881",
         "publicId": "vladimirgorej",
-        "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHP1QsKaZTw5Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1720878191370?e=1781136000&v=beta&t=nxFAGloZTLLj4IfsdUrAgIWdCPqihUdH6GbjDvQ02KI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQG1bGQIi0eN-g/profile-displaybackgroundimage-shrink_350_1400/B56ZsnGMs8JUAY-/0/1765887496970?e=1781136000&v=beta&t=c-tUr6BmtfsWTUqP39ZWtDB-NjxB_hfH72HKcJ-t7iA"
+        "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
       }
     },
     {
@@ -46,9 +40,7 @@
         "occupation": "Softwarový inženýr ve společnosti Security Scorecard",
         "id": "199634401",
         "publicId": "nataliemikesova",
-        "profileId": "ACoAAAvmLeEBB2iZ_vXMYhR3WoUsSC-k3iPuG4Y",
-        "picture": "https://media.licdn.com/dms/image/v2/D5635AQGXW0U7XhrOLA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1660002772504?e=1780430400&v=beta&t=v22RqlMgRS7YScN5sBsUHO0Ww5TuKTAYClQDy0LF03w",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5116AQEPyNrN9dTZ2A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516945761838?e=1781136000&v=beta&t=HFBHan_vfdVCLQsS4inP5_dlCg6o4SaQz4GhEGNiWEw"
+        "profileId": "ACoAAAvmLeEBB2iZ_vXMYhR3WoUsSC-k3iPuG4Y"
       }
     }
   ],
@@ -68,12 +60,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

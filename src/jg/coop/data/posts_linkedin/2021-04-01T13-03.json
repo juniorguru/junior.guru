@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQGi8fP3hLxe7w/feedshare-shrink_1280/feedshare-shrink_1280/0/1617282232981?e=1781136000&v=beta&t=P-7SdNvyFz-rX0Q3Luz4waRj3Kl9GWaDYJTRdjWN8aY"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6783373340376666112",
   "url": "https://www.linkedin.com/posts/honzajavorek_klub-httpsjuniorguruclub-za%C4%8Dal-spolupracovat-activity-6783373340376666112-FqMN",
@@ -19,8 +17,7 @@
         "universalName": "cybermagnolia",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:68539533",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQFZ_LaXdtsiKg/company-logo_400_400/company-logo_400_400/0/1630501497670/cybermagnolia_logo?e=1781136000&v=beta&t=tGpc67FZ0YIKADMPsOuQtGPVJ3u6Hm4w2AZNnb8WbDA"
+        "entityUrn": "urn:li:fs_miniCompany:68539533"
       }
     },
     {
@@ -33,8 +30,7 @@
         "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
         "id": "183293578",
         "publicId": "dariagru",
-        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0"
       }
     },
     {
@@ -46,8 +42,7 @@
         "universalName": "cybermagnolia",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:68539533",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQFZ_LaXdtsiKg/company-logo_400_400/company-logo_400_400/0/1630501497670/cybermagnolia_logo?e=1781136000&v=beta&t=tGpc67FZ0YIKADMPsOuQtGPVJ3u6Hm4w2AZNnb8WbDA"
+        "entityUrn": "urn:li:fs_miniCompany:68539533"
       }
     }
   ],
@@ -61,8 +56,7 @@
         "occupation": "IT Developer at Rossum, AI Consultant, Open-Source Enthusiast",
         "id": "443019078",
         "publicId": "pavel-grochal",
-        "profileId": "ACoAABpn70YBGPKYyWu-5piVaAWZVSGTzjFKxpA",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEcdpIu0L938g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1721746790648?e=1781136000&v=beta&t=CnDP1OvoE-8B3Bjn3N_lmgAgApZNhUgZoqObl0kaRfg"
+        "profileId": "ACoAABpn70YBGPKYyWu-5piVaAWZVSGTzjFKxpA"
       }
     },
     {
@@ -73,9 +67,7 @@
         "occupation": "Vybuduji vaší firmě udržitelný systém vzdělávání 🟡 HR konzultant a lektor @ICT Pro 🟡Navrhnu a zorganizuji vám soft skills program na míru 🟡Psychodiagnostika Thomas International 🟡Koučink & Mentoring",
         "id": "438512099",
         "publicId": "marketavyskocilova",
-        "profileId": "ACoAABojKeMBBI6D_5s02oW1Zs7u2v4l5ifhuFg",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHvYc2qZE1Frw/profile-displayphoto-shrink_800_800/B4DZdzecwOHkAg-/0/1749989053735?e=1781136000&v=beta&t=IkVIVNkw4ajqKMQh6EwKPJ7yhqKpF8MKlo_8CU9xY6s",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFyNEZITugQvA/profile-displaybackgroundimage-shrink_350_1400/B4DZhaKSBFHAAY-/0/1753859302029?e=1781136000&v=beta&t=2idyFiTyFQvx4eUdYHELvbwA7mowSYYDcPggH_UkRjs"
+        "profileId": "ACoAABojKeMBBI6D_5s02oW1Zs7u2v4l5ifhuFg"
       }
     },
     {
@@ -86,8 +78,7 @@
         "occupation": "Founder & CTO at Roomstorm",
         "id": "15425730",
         "publicId": "jakubvysoky",
-        "profileId": "ACoAAADrYMIB-G1Ga_9z6wmfEDMsav3918zrFVs",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQH3Wi6MZasEvA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517731848163?e=1781136000&v=beta&t=bOdkXNIs9C-O_1U7JCtnxcSt9x-PN3yKIuAiyEd3G7c"
+        "profileId": "ACoAAADrYMIB-G1Ga_9z6wmfEDMsav3918zrFVs"
       }
     },
     {
@@ -98,8 +89,7 @@
         "occupation": "Freelance Product & Ops | CX & Systems Thinking | Neuroleadership Coach | Volunteer @ Česko.Digital | Mentor @ Femme Palette",
         "id": "109919206",
         "publicId": "ivafingerova",
-        "profileId": "ACoAAAaNO-YB_qQBMliqSDeBayGzCWDVLaMv24w",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEU5LtzZ8xFpg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1647941658383?e=1781136000&v=beta&t=kC-CVuKqpfT6AEhHWHW1Qlvyx2-8Sss3WAJbrA8hVoA"
+        "profileId": "ACoAAAaNO-YB_qQBMliqSDeBayGzCWDVLaMv24w"
       }
     },
     {
@@ -110,8 +100,7 @@
         "occupation": "Application Developer at Barclays",
         "id": "361531956",
         "publicId": "lenkaerbenova",
-        "profileId": "ACoAABWMijQBlQzoTAse2JjfcJmbjz4dAQnIsQs",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGi_aPN1DxU3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517030344782?e=1781136000&v=beta&t=boP6IJareKgeZZHEHLF-RgBjxI_GQmpxMacm_Mm8k9c"
+        "profileId": "ACoAABWMijQBlQzoTAse2JjfcJmbjz4dAQnIsQs"
       }
     },
     {
@@ -122,9 +111,7 @@
         "occupation": "\"It is a capital mistake to theorize before one has data.\" *cleaned data",
         "id": "775508820",
         "publicId": "nathalie-vecten",
-        "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH5sSEbnQ2Tcg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1611936430673?e=1781136000&v=beta&t=wAQsj8dSBDe6L3xt1MwxMahW3aP-D6LcuvT-utzij6s",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHDKxhi18V0lw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1599638080880?e=1781136000&v=beta&t=5JiWefMiJff9VXnKXxoAOOrnUYNFE4fW7AQAgJac6VA"
+        "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM"
       }
     },
     {
@@ -135,8 +122,7 @@
         "occupation": "B2B SaaS | GTM",
         "id": "76732398",
         "publicId": "akash-vrma",
-        "profileId": "ACoAAASS1-4B7DI0p_stTSXog1Ge7MGnvVV4vYY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQECjr_tpq7Y8A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1715179917401?e=1781136000&v=beta&t=kYhTc5ttS91q2k2AjzhvQdsSildFea8KWGDOxgjl2Lo"
+        "profileId": "ACoAAASS1-4B7DI0p_stTSXog1Ge7MGnvVV4vYY"
       }
     },
     {
@@ -147,8 +133,7 @@
         "occupation": "Software Developer",
         "id": "450096743",
         "publicId": "zmijkova",
-        "profileId": "ACoAABrT7mcBs7ie4r1nA4McNBK2tV0qfujA2v4",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFwmJejccKJYw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1604515688256?e=1781136000&v=beta&t=_OsPmbqF1GUuRnM81Ym5BJrwABb9dZxzXqQgibkJR-U"
+        "profileId": "ACoAABrT7mcBs7ie4r1nA4McNBK2tV0qfujA2v4"
       }
     },
     {
@@ -159,8 +144,7 @@
         "occupation": "freelancer and consultant - digital education",
         "id": "13671180",
         "publicId": "naskep",
-        "profileId": "ACoAAADQmwwB1EuDW0z_d2nZkfqUm6kvZkoqTCI",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHd20Mk1RjpyQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1616672269712?e=1781136000&v=beta&t=KX7hrg0BfMg3th_piTcPqmY3ndJxW6ZMX_sjpoJf34w"
+        "profileId": "ACoAAADQmwwB1EuDW0z_d2nZkfqUm6kvZkoqTCI"
       }
     },
     {
@@ -171,9 +155,7 @@
         "occupation": "Software Engineer",
         "id": "530925455",
         "publicId": "mia-bajic",
-        "profileId": "ACoAAB-lR48BFvPhQ6doZNGTRVftkLrzcnIv-Ss",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEFktnPzIQA3g/profile-displayphoto-shrink_400_400/B4EZdfBBQAHYAs-/0/1749645792668?e=1781136000&v=beta&t=H-XclkbtaMI2HfxaPAIvGsaIuvs_3HunEbU_zF5R2XQ",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGmHzyPBT7q2g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1738012168138?e=1781136000&v=beta&t=bGVRTPD07nQuQcDx_7F1m2z7h-P_vw_6AF5KkU2lLp4"
+        "profileId": "ACoAAB-lR48BFvPhQ6doZNGTRVftkLrzcnIv-Ss"
       }
     }
   ],
@@ -193,12 +175,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

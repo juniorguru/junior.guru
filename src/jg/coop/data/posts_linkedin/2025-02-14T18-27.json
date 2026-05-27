@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/D4D22AQE5Oypa8h6mgg/feedshare-shrink_1280/B4DZUFGddJG8Ak-/0/1739547336375?e=1781136000&v=beta&t=hoEN0eHvfuSDy3bgSFG_rifR6vV_4RoVBMN8nXcZKtg"
-  ],
+  "images": [],
   "isActivity": true,
   "activityDescription": "Honza Javorek reposted this",
   "activityOfUser": {
@@ -11,9 +9,7 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "urn": "urn:li:activity:7296233518827753473",
   "url": "https://www.linkedin.com/posts/ngazetungue-muheue_sponsortech-pyconnamibia2025-techcommunity-activity-7296190355350151168-pYky",
@@ -30,8 +26,7 @@
         "universalName": "pycon-namibia",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:91586071",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQHZK5f684ttLg/company-logo_400_400/company-logo_400_400/0/1671006991211?e=1781136000&v=beta&t=hm9oa8z_9_dwEDlrlh-mRlSu4YNF_KZ1qsBzLfNk3JE"
+        "entityUrn": "urn:li:fs_miniCompany:91586071"
       }
     }
   ],
@@ -50,8 +45,6 @@
         "id": "15732623",
         "publicId": "erik-mols-63b3285",
         "profileId": "ACoAAADwD48Bt1wudZ_22FoLu26e1Qc-_bQ6BH8",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE0BhuCDbZIJQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1683872742378?e=1781136000&v=beta&t=ZOROVmgh2CPRcSMSRJXKkxMPkr-QlZXN4dQpWgRh8zM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHZDesuZoHkow/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728712674739?e=1781136000&v=beta&t=qxb3PfdZ0a7zI5OkdsrQcTgqec_K4yFGmLKLvkXO5Zo",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -65,8 +58,7 @@
         "occupation": "Experienced non-profit professional and passionate open source community builder",
         "id": "33818397",
         "publicId": "denicholson",
-        "profileId": "ACoAAAIEBx0Bx7rF4XJGb2P8_9iFBVE13YiAPkg",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQH_j6t-d-KkXg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1649356571940?e=1781136000&v=beta&t=-7awo2mYyBFi0Ci6UCLGtodgjTZVeLpn2A2WJnf45i8"
+        "profileId": "ACoAAAIEBx0Bx7rF4XJGb2P8_9iFBVE13YiAPkg"
       }
     },
     {
@@ -77,9 +69,7 @@
         "occupation": "Cybersecurity Analyst | SOC Analyst | Hands-on Experience with Splunk, SIEM, and Threat Detection | Passionate about Building Secure Systems| INE-EJPT | Security+ | BTL1",
         "id": "274717755",
         "publicId": "noble-mutoko",
-        "profileId": "ACoAABBf3DsB1UEtqOgsozx2fKz7NgAWdqNDfp0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQE1POrMV6oriA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1696399536974?e=1780430400&v=beta&t=ypNKF_gfcIoqJbXGWVC5euTdOEvq14cxDRWtrAJ3GNQ",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH6eX10JL2JBA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1676815723665?e=1781136000&v=beta&t=L2GpeHcZ4Kx2KyChMnczLywT1GmdRTOtfb9Uon_zaxM"
+        "profileId": "ACoAABBf3DsB1UEtqOgsozx2fKz7NgAWdqNDfp0"
       }
     },
     {
@@ -90,8 +80,7 @@
         "occupation": "Sre/DevOps cares Services at LINE Corporation, Director of Python Software Foundation",
         "id": "46083895",
         "publicId": "kwonhanbae",
-        "profileId": "ACoAAAK_LzcBJUpg1I2fTv8rEblBzu7Nv-I3b6I",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHoHRQSqz3GgA/profile-framedphoto-shrink_400_400/B4DZaMde3.GsAo-/0/1746113261546?e=1780430400&v=beta&t=cJDGSDdjEDMkYQx3h8jLXCg_ZfYpgio9S-nWnRi7qr8"
+        "profileId": "ACoAAAK_LzcBJUpg1I2fTv8rEblBzu7Nv-I3b6I"
       }
     },
     {
@@ -102,9 +91,7 @@
         "occupation": "Business Analyst",
         "id": "301704088",
         "publicId": "perlagcastillo",
-        "profileId": "ACoAABH7o5gBnc1-yYjkBP2Eu99-pRAc0mazm3k",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQHW0syct-wZHQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729433675938?e=1781136000&v=beta&t=FBxME2eJ0goCGqhik3wnCZb2dTyT5P5o7oXhmsbEw0A",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH-r8UwE620Vw/profile-displaybackgroundimage-shrink_350_1400/B4EZySlQ5jJgAY-/0/1771985768542?e=1781136000&v=beta&t=V0mLG8b5wC741o6bSFyHVn2L41H6yxMMihd8ClgsRNc"
+        "profileId": "ACoAABH7o5gBnc1-yYjkBP2Eu99-pRAc0mazm3k"
       }
     },
     {
@@ -115,8 +102,7 @@
         "occupation": "Creator of the collectors platform & Writer",
         "id": "255798195",
         "publicId": "sarah-haq-4437bb71",
-        "profileId": "ACoAAA8_K7MBXW7v0ClesSXGKZ3RlOfJKzps294",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQF56Rc4oJ71QQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1687260206200?e=1781136000&v=beta&t=8aNq7Z94PfQ9Al8zBq93OamKuJ5ZixvMIa03lOJwWMY"
+        "profileId": "ACoAAA8_K7MBXW7v0ClesSXGKZ3RlOfJKzps294"
       }
     },
     {
@@ -127,8 +113,7 @@
         "occupation": "Vice-Chair, Director & Fellow Member at PSF | Founder @ Galileo’s Paradox | Project Management | Design | Marketing | D&I Advocate | Previously organiser of PyConTH , Bangkok.rb",
         "id": "652343399",
         "publicId": "georgiker",
-        "profileId": "ACoAACbh-GcB-VcgGbAplgu_sujwu6yIiHfauio",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFH-8M9D41PMA/profile-displaybackgroundimage-shrink_350_1400/B4EZ1jS4atGcAY-/0/1775487387816?e=1781136000&v=beta&t=nTR0X4MhUwZ7HZFrrvhNjd47imlQIezISQHY4aBthag"
+        "profileId": "ACoAACbh-GcB-VcgGbAplgu_sujwu6yIiHfauio"
       }
     },
     {
@@ -139,8 +124,7 @@
         "occupation": "Data/ML Engineering |Ex- Amazon, Jumo, Cartrack, CTO|Machine Learning Engineering Book Author|Patent Co-Inventor",
         "id": "13335089",
         "publicId": "natu-lauchande-0955714",
-        "profileId": "ACoAAADLejEBSr1wPPcFTNoIgD0iCxGTAm6dqak",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEBIDunfOSsiw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1560156780082?e=1781136000&v=beta&t=2AX61RRd0V18LIATfV16taf1SxdAr-loo8DVBtKD6a8"
+        "profileId": "ACoAAADLejEBSr1wPPcFTNoIgD0iCxGTAm6dqak"
       }
     },
     {
@@ -151,9 +135,7 @@
         "occupation": "Software Developer | Java | Python | JavaScript",
         "id": "1182424032",
         "publicId": "kelvinquarcoo247",
-        "profileId": "ACoAAEZ6W-ABBdd-hBizCRX7YU1LhWsipDLaYnI",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFIDxtjFYlyKw/profile-displayphoto-crop_800_800/B4DZnbTi9kH0AI-/0/1760320959294?e=1781136000&v=beta&t=ZKQwbXKEPiQQRok3S3xWgWJpsoUwQ0XZiZOxuW7T_Vo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGuZUVPrYsz9Q/profile-displaybackgroundimage-shrink_350_1400/B4DZp3pG1pIkAY-/0/1762943856952?e=1781136000&v=beta&t=F7O2GGsCE3zF05h40wNm4XaEmdxJBEhLuAX7QcHd0sk"
+        "profileId": "ACoAAEZ6W-ABBdd-hBizCRX7YU1LhWsipDLaYnI"
       }
     },
     {
@@ -164,9 +146,7 @@
         "occupation": "Agentic AI Architect",
         "id": "872788443",
         "publicId": "cyprian-aarons",
-        "profileId": "ACoAADQFsdsBfmmeCmVJG8DzqEVUpKVKGZpgNik",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE1YVQWlgH_8A/profile-displayphoto-shrink_800_800/B4DZXcUFx2HIAc-/0/1743158009511?e=1781136000&v=beta&t=auHULIYucoZc12mXnfRvn0H9qLUagVuVyRxEFrtvDeM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFS_mmwY4w79w/profile-displaybackgroundimage-shrink_350_1400/B4DZ2SEGyvJYAY-/0/1776272044247?e=1781136000&v=beta&t=PzM2-O5UL_Y_rPYphJ4QfJCw2Qy3l1mxOlnYWC6k_84"
+        "profileId": "ACoAADQFsdsBfmmeCmVJG8DzqEVUpKVKGZpgNik"
       }
     },
     {
@@ -177,8 +157,7 @@
         "occupation": "CS @UG | AI enthusiast | Aspiring Software Engineer",
         "id": "794216264",
         "publicId": "techycyril15",
-        "profileId": "ACoAAC9Wx0gBYB16lVpnxgzI3qsGL0ys-nbzo70",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHxkqkkHOf_dw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1723408765532?e=1781136000&v=beta&t=Lf6M4YNGMrcZveXvLNAGEiNNcUeStSAMWBTz_BA5HmY"
+        "profileId": "ACoAAC9Wx0gBYB16lVpnxgzI3qsGL0ys-nbzo70"
       }
     }
   ],
@@ -198,12 +177,9 @@
     "occupation": "Software Engineer | Open Source Community Leader | Founder, Ubuntu Namibia | Co-founder, Python & Django Namibia | PyCon Namibia Organizer | Active in Python/Django Communities Worldwide",
     "id": "221253458",
     "publicId": "ngazetungue-muheue",
-    "profileId": "ACoAAA0wD1IBIafco_2nGTY7fIO-l33yumakv88",
-    "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHwlVEQ-DMQpQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1662988914033?e=1781136000&v=beta&t=3Uq5hOO34RycSe5rgBruOZkKCXHuZr9plPDJccz2Sg0",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQE2gF52Hp5ylg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1594458614092?e=1781136000&v=beta&t=I57AmUJhliNUL0-oneL74T7t7vXft14ZbgX8qbCZbgQ"
+    "profileId": "ACoAAA0wD1IBIafco_2nGTY7fIO-l33yumakv88"
   },
   "authorProfileId": "ngazetungue-muheue",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4D03AQHwlVEQ-DMQpQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1662988914033?e=1781136000&v=beta&t=3Uq5hOO34RycSe5rgBruOZkKCXHuZr9plPDJccz2Sg0",
   "authorType": "Person",
   "authorName": "Ngazetungue Muheue",
   "authorProfileUrl": "https://www.linkedin.com/in/ngazetungue-muheue?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAA0wD1IBIafco_2nGTY7fIO-l33yumakv88",

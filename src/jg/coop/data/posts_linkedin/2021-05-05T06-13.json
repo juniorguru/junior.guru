@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQGkmD1o0sqB7Q/feedshare-shrink_1280/feedshare-shrink_1280/0/1620195182263?e=1781136000&v=beta&t=Tp___LfkTBI4RMT4N7GAPiL9Ky5XTWx1GeXOaYLReao"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6795591134715420672",
   "url": "https://www.linkedin.com/posts/honzajavorek_p%C5%99idal-jsem-na-httpsjuniorguru-v-posledn%C3%AD-activity-6795591134715420672-MTen",
@@ -25,8 +23,6 @@
         "id": "662278178",
         "publicId": "tereza-vankova",
         "profileId": "ACoAACd5kCIBkil_yiYqyksAU2xUhl_An8PtzTQ",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEy0HfAmjLbqg/profile-displayphoto-shrink_800_800/B4EZX_nPVTHcAg-/0/1743750231941?e=1781136000&v=beta&t=3xMSJvI9jbvmPY1089B4Sv5rCKpCRK_6ZehkCncWp1A",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEJ-9AKv9CATQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1683450743882?e=1781136000&v=beta&t=k0zgybeam9x0oi2JGYWbFlWS7LPVhuznxm1Zja26iDo",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -45,9 +41,7 @@
             "occupation": "Founder @ReactGirls, Community @Mews, Software Engineer",
             "id": "662278178",
             "publicId": "tereza-vankova",
-            "profileId": "ACoAACd5kCIBkil_yiYqyksAU2xUhl_An8PtzTQ",
-            "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEy0HfAmjLbqg/profile-displayphoto-shrink_800_800/B4EZX_nPVTHcAg-/0/1743750231941?e=1781136000&v=beta&t=3xMSJvI9jbvmPY1089B4Sv5rCKpCRK_6ZehkCncWp1A",
-            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEJ-9AKv9CATQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1683450743882?e=1781136000&v=beta&t=k0zgybeam9x0oi2JGYWbFlWS7LPVhuznxm1Zja26iDo"
+            "profileId": "ACoAACd5kCIBkil_yiYqyksAU2xUhl_An8PtzTQ"
           }
         },
         {
@@ -60,9 +54,7 @@
             "occupation": "🐝 🍯 Product developer at BKBN",
             "id": "232669821",
             "publicId": "veronika-gabrielova",
-            "profileId": "ACoAAA3eQn0Bt87ZSp0QfT6E-vWP8JjxwWCKbiM",
-            "picture": "https://media.licdn.com/dms/image/v2/D4E35AQE_qB2P83ug-g/profile-framedphoto-shrink_800_800/B4EZ2.AIS3JUAg-/0/1777009198775?e=1780430400&v=beta&t=99QIk875bqjmuorivm06835n9BZcueHwLKKDY2W_9MU",
-            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE3oRwd5Dq94g/profile-displaybackgroundimage-shrink_350_1400/B4EZfQUy22G4Ag-/0/1751546805612?e=1781136000&v=beta&t=1tbdObrCtHkYMhwQZrAuUDHLEvKwgSSQBALUgNnTeVA"
+            "profileId": "ACoAAA3eQn0Bt87ZSp0QfT6E-vWP8JjxwWCKbiM"
           }
         }
       ],
@@ -75,8 +67,6 @@
         "id": "473833031",
         "publicId": "petranulickova",
         "profileId": "ACoAABw-HkcBifENxX8nxAs2YjwxbI6b2XtAF98",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHnKx1150QjzQ/profile-framedphoto-shrink_400_400/B4DZ5EYkX3J4Ac-/0/1779263751874?e=1780430400&v=beta&t=pWJ51Ntw0jR9QQT0pS0cVga8Y5H1PX6eMgBC8eZYwyo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQExwjEQhQ99TA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1676378924015?e=1781136000&v=beta&t=rpomntKe5fPHScYScrE5n1-ok01d_UuxKpUPUaPI93g",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -90,8 +80,7 @@
         "occupation": "Softwarový inženýr (GenAI) ve společnosti ABB",
         "id": "634276988",
         "publicId": "petr-bednář-538502158",
-        "profileId": "ACoAACXOTHwBFguu2a14yHcr5d6Zb6YsHoAlMe0",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQFFtjtIxUhgqQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1558798612285?e=1781136000&v=beta&t=hrbR1f5GeGlmypawOOiGIT8C6ZpNGD2gieJhP5TeHak"
+        "profileId": "ACoAACXOTHwBFguu2a14yHcr5d6Zb6YsHoAlMe0"
       }
     },
     {
@@ -102,8 +91,7 @@
         "occupation": "Web coder",
         "id": "376228502",
         "publicId": "marta-perutkova",
-        "profileId": "ACoAABZsypYBvxc3lLS_mONwO33jUZUA0NrGip8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEveVBMVYZJKg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1615113071941?e=1781136000&v=beta&t=COZI8f2SKs6xcEMcy-D_xG6kecQYO8i7XiXgxacGvZ8"
+        "profileId": "ACoAABZsypYBvxc3lLS_mONwO33jUZUA0NrGip8"
       }
     },
     {
@@ -114,9 +102,7 @@
         "occupation": "🤖 Creating useful software",
         "id": "16958557",
         "publicId": "lukaskonarovsky",
-        "profileId": "ACoAAAECxF0Bn8L1if6aBIgIt7NKsx9XZPpdHJY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFfGn8m8PA6kg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1690914305341?e=1781136000&v=beta&t=apEZCpPL8sFVvyLcBGfK51wHzE38sP40PfOkOHpeqSo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEp5DAM7GcSRg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1614354721389?e=1781136000&v=beta&t=nBV6Bn_cQ5PPT-IqTWptEo7FN7MxHA1m_VxDJMTe8uQ"
+        "profileId": "ACoAAAECxF0Bn8L1if6aBIgIt7NKsx9XZPpdHJY"
       }
     },
     {
@@ -127,9 +113,7 @@
         "occupation": "2, 1 🔹CEE Regional Account Manager at Heureka Group 🔹 First Choice E-com Platform 🔹 Retail Media 🔹 Vendor Marketing",
         "id": "298786263",
         "publicId": "tuan-doan",
-        "profileId": "ACoAABHPHdcB1aAxnU9niDD2Ck4p0-MinFpgXlo",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGJeIEZz4BG9A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1673881445529?e=1781136000&v=beta&t=kiYyGEdoGd82xQkrkQtg7WgDrxT7Gp0D1qKvdLjzAnQ",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQFVDq6bToOiYA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1536654912021?e=1781136000&v=beta&t=Gagj7rIl9eGjZ54x_4QQ5-Bo2MeYSAVaa6u-Dlt8MHE"
+        "profileId": "ACoAABHPHdcB1aAxnU9niDD2Ck4p0-MinFpgXlo"
       }
     },
     {
@@ -140,9 +124,7 @@
         "occupation": "Head of QA | Game Marketing | Producer",
         "id": "823539328",
         "publicId": "terezaš",
-        "profileId": "ACoAADEWNoABWkzHNWzfIr522ZGNxv0pCO2umFc",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGmams-w6EfGg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1622392235806?e=1781136000&v=beta&t=723suxl8FJdYQ1GdjJA0sNUL-d1MRkB4OkUZiE5G7Sw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFcBcJ71ysndw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1622395055559?e=1781136000&v=beta&t=r_mJNgTiR-Ec-TzjrKPO6_KK6OssJguPtjnk4Vc4BxE"
+        "profileId": "ACoAADEWNoABWkzHNWzfIr522ZGNxv0pCO2umFc"
       }
     },
     {
@@ -153,9 +135,7 @@
         "occupation": "Co-founder & COO at Femme Palette | Musician",
         "id": "411834732",
         "publicId": "klaraholikova",
-        "profileId": "ACoAABiMGWwBl3NWubGkjxA8HCeckvbRFvhhj7Q",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEtmUZ4ExZdpA/profile-displayphoto-crop_800_800/B4DZmGdO7eIYAI-/0/1758897441526?e=1781136000&v=beta&t=4SvKM2qggIChMBdAgVnSOKq88UN7ZtJZ8e5fNsauESs",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF-4rOY-oMVyg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1666035048442?e=1781136000&v=beta&t=_d31p2UXktfSY4hmrw7OmtPmHnyknxP6_xN3UM7ySAs"
+        "profileId": "ACoAABiMGWwBl3NWubGkjxA8HCeckvbRFvhhj7Q"
       }
     },
     {
@@ -166,8 +146,7 @@
         "occupation": "Software Engineer - Test Automation",
         "id": "37592018",
         "publicId": "jakub-j-78270a21",
-        "profileId": "ACoAAAI9m9IBGuk_k0JtCIKfjVSf0TWALANwnIc",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQH_IC0kqvzGOA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1645077384508?e=1781136000&v=beta&t=batWcfbe11cHFH7Lgxkc4PX5mER-rfuhaKzO5XAz3eE"
+        "profileId": "ACoAAAI9m9IBGuk_k0JtCIKfjVSf0TWALANwnIc"
       }
     },
     {
@@ -178,8 +157,7 @@
         "occupation": "Data Analyst, Idea Farmer, Process Librarian, Customer Journey Builder, SCRUM Master at RomanRipa.com",
         "id": "6432515",
         "publicId": "romanripa",
-        "profileId": "ACoAAABiJwMBd25oc32q6eAIQJFTQPxjAf5qSBY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEJG4vsvLjUaQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1685108480804?e=1781136000&v=beta&t=8phf-iA59ichmpLozE1vQuo39zSJ4VOMamTwOxyuy1o"
+        "profileId": "ACoAAABiJwMBd25oc32q6eAIQJFTQPxjAf5qSBY"
       }
     },
     {
@@ -190,9 +168,7 @@
         "occupation": "Frontend Developer",
         "id": "829668746",
         "publicId": "jordána-prusali-462a301b1",
-        "profileId": "ACoAADFzvYoBj0sq-edtNFpuXzjIc86D6ennXPU",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQGBOeEW-7CBfw/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1689757647863?e=1780430400&v=beta&t=sOBtYoBcIJHfnnkmDW5a4_U8baLRHZpZFSWX8m3r65k",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG_pnEpedcFiw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1690214113633?e=1781136000&v=beta&t=003Z_N5QHmvNZ9L2tNC_8ENqZ7PjfnmGKqIZb7RnaOQ"
+        "profileId": "ACoAADFzvYoBj0sq-edtNFpuXzjIc86D6ennXPU"
       }
     },
     {
@@ -203,9 +179,7 @@
         "occupation": "HR Specialist",
         "id": "19930744",
         "publicId": "petrafucikova",
-        "profileId": "ACoAAAEwHngBY90WqnXn7_TJo8d9gFD4oTVkmcA",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQH_YrKwY5GeDw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1700139574524?e=1781136000&v=beta&t=nxiw7hqSxn6PiYl2TBzx0_7cOK8ITESLIWs9uNiIkaE",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFy8Eq9o0Qpbw/profile-displaybackgroundimage-shrink_350_1400/B4DZ38a84iHkAY-/0/1778056417361?e=1781136000&v=beta&t=NKp0prjip4KFF4TzjXway4FtslCUWMcD0hmJtBs0dXI"
+        "profileId": "ACoAAAEwHngBY90WqnXn7_TJo8d9gFD4oTVkmcA"
       }
     }
   ],
@@ -225,12 +199,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/D4E22AQHj8Qy-8eu1jg/feedshare-shrink_800/feedshare-shrink_800/0/1707832726741?e=1781136000&v=beta&t=eYPtm2__eaJ1Z76lvgrwMMehQ_H60nQZ33nTE_CPi9M"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:7163169639848493057",
   "url": "https://www.linkedin.com/posts/honzajavorek_python-activity-7163169639848493057-bV2R",
@@ -20,8 +18,7 @@
         "occupation": "A Pythonista",
         "id": "48852060",
         "publicId": "petr-viktorin-a5043a14",
-        "profileId": "ACoAAALpbFwBrUWlkhM3d1JrBK4RInLbNquxnEE",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFShtpWJw8phQ/profile-displayphoto-crop_800_800/B4EZkPUQNMIUAI-/0/1756898592117?e=1781136000&v=beta&t=NN2cRsF0LmiFDgrWNz_IDYlU_FkB9YUiWCSx9lMzISs"
+        "profileId": "ACoAAALpbFwBrUWlkhM3d1JrBK4RInLbNquxnEE"
       }
     },
     {
@@ -33,8 +30,7 @@
         "universalName": "pyladies-cz",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:30644381",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C560BAQEaibY9_28N2A/company-logo_400_400/company-logo_400_400/0/1630614425519/pyladies_cz_logo?e=1781136000&v=beta&t=zfNm6R5gYxxDnRcaaj7iVB54AorS6Y83LjCuRsjXd0g"
+        "entityUrn": "urn:li:fs_miniCompany:30644381"
       }
     },
     {
@@ -46,8 +42,7 @@
         "universalName": "red-hat",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:3545",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQEto-TydTTIfQ/company-logo_400_400/company-logo_400_400/0/1630583759577/red_hat_logo?e=1781136000&v=beta&t=pz-ZVls43PnEc3AaLENZp2yy3p0tbH6UgDxfJUL2tDA"
+        "entityUrn": "urn:li:fs_miniCompany:3545"
       }
     },
     {
@@ -60,8 +55,7 @@
         "occupation": "Host @ Junior Guru podcast.",
         "id": "190849253",
         "publicId": "pavlinafronkova",
-        "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk"
+        "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4"
       }
     }
   ],
@@ -80,8 +74,7 @@
             "universalName": "pyladies-cz",
             "active": true,
             "showcase": false,
-            "entityUrn": "urn:li:fs_miniCompany:30644381",
-            "logoUrl": "https://media.licdn.com/dms/image/v2/C560BAQEaibY9_28N2A/company-logo_400_400/company-logo_400_400/0/1630614425519/pyladies_cz_logo?e=1781136000&v=beta&t=zfNm6R5gYxxDnRcaaj7iVB54AorS6Y83LjCuRsjXd0g"
+            "entityUrn": "urn:li:fs_miniCompany:30644381"
           }
         }
       ],
@@ -94,8 +87,6 @@
         "id": "337285701",
         "publicId": "strv-norbert-cerveny",
         "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGKIAaUJPtlmA/profile-displayphoto-crop_800_800/B4DZ0jT_lBIEAI-/0/1774413941709?e=1781136000&v=beta&t=ioRFNZY53XZXWk1BvKTQdIygU-xxLKoyNysEAYklp0I",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG0ekEnNy2Hcw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0jTiNeGsAk-/0/1774413817026?e=1781136000&v=beta&t=_KMbjLzzfd2pO9gizTz2iWgDOkq5RQ3NpzDT5fOljNI",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -109,8 +100,7 @@
         "occupation": "Junior Backend Developer | IT Student",
         "id": "1119190738",
         "publicId": "nouzaj",
-        "profileId": "ACoAAEK1ftIBdLKh-sNjbUuOEn7uM6gP2bX_OJ4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGHwmkq_06SmA/profile-displayphoto-crop_800_800/B4EZnkHGOKGYAM-/0/1760468691119?e=1781136000&v=beta&t=4HBmXcZiNqEe5YlQ3h5CiHGOc-g7fkUp8dFJ_p9SUNw"
+        "profileId": "ACoAAEK1ftIBdLKh-sNjbUuOEn7uM6gP2bX_OJ4"
       }
     },
     {
@@ -121,9 +111,7 @@
         "occupation": "PHP Developer · Application Security · DevSecOps",
         "id": "411555870",
         "publicId": "barbora-čepová-aa69b4b5",
-        "profileId": "ACoAABiH2B4Bn_M5Ag9YDj0OsiP6ZEehMoi2eD4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHm-QMn2Yojbg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729427524736?e=1781136000&v=beta&t=OeZu-ha5cTb3JsaDi5YNpSCMATYJkZBUylrID_Rzmkg",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH4WPJzT43RUQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1698250028211?e=1781136000&v=beta&t=bcRfr351LtJzgafrxyU-c29czuJGDYYqFc51oSm2oow"
+        "profileId": "ACoAABiH2B4Bn_M5Ag9YDj0OsiP6ZEehMoi2eD4"
       }
     },
     {
@@ -134,8 +122,7 @@
         "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
         "id": "183293578",
         "publicId": "dariagru",
-        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0"
       }
     },
     {
@@ -146,8 +133,7 @@
         "occupation": "Trader, junior Linux administrator, junior Python developer",
         "id": "183482672",
         "publicId": "boris-kolda-12854651",
-        "profileId": "ACoAAArvuTABkMeLGdTJ-GueF6THUCXa57Ap7zk",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHz9R5J4bZlaA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1667821529600?e=1780430400&v=beta&t=ShNIYWfNvK2iAebCeoxYCjg_pyb_dYdAMbfeK9fw7Lk"
+        "profileId": "ACoAAArvuTABkMeLGdTJ-GueF6THUCXa57Ap7zk"
       }
     },
     {
@@ -158,8 +144,7 @@
         "occupation": "Backend Software Engineer | Python & Java Developer | REST APIs | Spring",
         "id": "279627507",
         "publicId": "katerina-louckova",
-        "profileId": "ACoAABCqxvMBszK8CFRg8ni6LY3xc1YjJU7dMYs",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHpeNOphBg9tg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1547551176194?e=1781136000&v=beta&t=plbfWHK7J8j-d9KbmKwrkTsJK2VxaVpBCHWS2NKRHt8"
+        "profileId": "ACoAABCqxvMBszK8CFRg8ni6LY3xc1YjJU7dMYs"
       }
     },
     {
@@ -170,9 +155,7 @@
         "occupation": "Nefunguje mi to → Super, už to jede | Feed specialista & Customer Success @Mergado",
         "id": "904009499",
         "publicId": "filip-prudek",
-        "profileId": "ACoAADXiFxsBDrfvLqXfc46dYlgCQklCaExwUMY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFupO9P-a5bFw/profile-displayphoto-crop_800_800/B4DZ5JiGdVJYAM-/0/1779350139114?e=1781136000&v=beta&t=Iw5Hw9pEtYfXe0-wPQXIOnKKUFZqdaHEFcw06ySiAyI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFct0esxDP2iw/profile-displaybackgroundimage-shrink_350_1400/B4DZ5JhtJBKAAU-/0/1779350033262?e=1781136000&v=beta&t=JkmSvMYWwXWWoFjbhRDQTIId6IpLExcH82QOIBlmb28"
+        "profileId": "ACoAADXiFxsBDrfvLqXfc46dYlgCQklCaExwUMY"
       }
     },
     {
@@ -183,9 +166,7 @@
         "occupation": "Software Engineer | International Defense @ Honeywell Aerospace",
         "id": "381120294",
         "publicId": "katerinachmelarova",
-        "profileId": "ACoAABa3byYBG8PeurwMNw0dzc_fZjdHt8aQf-Y",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGttHbKD9vGmQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718229656912?e=1781136000&v=beta&t=1-73C2f8PW1GpuG2xfRjb7iaRwOiveUKi0weNZVLiJA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHqgUVIYS92ug/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1719356029055?e=1781136000&v=beta&t=qZj96WsohbZ3QEJGRK_r2DwZO2YklVztgx1LYhv9RAk"
+        "profileId": "ACoAABa3byYBG8PeurwMNw0dzc_fZjdHt8aQf-Y"
       }
     },
     {
@@ -196,9 +177,7 @@
         "occupation": "Web Developer",
         "id": "596894599",
         "publicId": "jan-kouřil-147a95147",
-        "profileId": "ACoAACOT44cBHNz0T5WGfTwS5JWrtkAV0m_OH_U",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHyFfMkI770pA/profile-framedphoto-shrink_800_800/B4EZnwgqMEJAAg-/0/1760676717576?e=1780430400&v=beta&t=ywMx-gfBl5CCwtuggddCN4Q8m13ZSa3XlSKCh2kzM6c",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFZQLj4OJlW7g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1697560208248?e=1781136000&v=beta&t=uTofa07mX7eioqZfF461L1rnPyESEgLW-6D-IUQzHaI"
+        "profileId": "ACoAACOT44cBHNz0T5WGfTwS5JWrtkAV0m_OH_U"
       }
     },
     {
@@ -209,8 +188,7 @@
         "occupation": "-",
         "id": "358808770",
         "publicId": "kristyna-papezova",
-        "profileId": "ACoAABVi_MIBAoxl-AzrHqCKW8pRLKky_eMKeqM",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGEgD06l-uekA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517001843202?e=1781136000&v=beta&t=pT_t6tTfRgcVmvucg6K30nE9yPhIGvuSRCjgK1o8rWE"
+        "profileId": "ACoAABVi_MIBAoxl-AzrHqCKW8pRLKky_eMKeqM"
       }
     },
     {
@@ -221,9 +199,7 @@
         "occupation": "🧑‍🤝‍🧑 Working with and for communities, organizing events, studying service design, having fun in all that. ✏️",
         "id": "58610470",
         "publicId": "anezkamll",
-        "profileId": "ACoAAAN-UyYBW_5FlwBOtClk7WVpl3JlZMHMVn4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEdF62o6gzpHQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731942194763?e=1781136000&v=beta&t=3Pf8QBLlGpzI8zRBBfihj0pgDvCgOUoUJyTfMptX81Y",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHKgfW_KDXR1Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1620408094586?e=1781136000&v=beta&t=qk_LRa-WT8rOvas9-jwGjCle3e76MkO7wIKYYCWCZag"
+        "profileId": "ACoAAAN-UyYBW_5FlwBOtClk7WVpl3JlZMHMVn4"
       }
     }
   ],
@@ -243,12 +219,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

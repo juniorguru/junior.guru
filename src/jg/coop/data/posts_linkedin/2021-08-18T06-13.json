@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQFbeuTTFfdsEQ/feedshare-shrink_1280/feedshare-shrink_1280/0/1629267182617?e=1781136000&v=beta&t=oBX8t9yZcAMESwiadaKAV8nH2M1Qnd3A7Rx5gE65Dk0"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6833641862977376256",
   "url": "https://www.linkedin.com/posts/honzajavorek_krython-activity-6833641862977376256-2cKr",
@@ -37,8 +35,7 @@
         "occupation": "System Administrator - Linux ve společnosti Synot ICT Services",
         "id": "41296962",
         "publicId": "jiri-oravec-8569b611",
-        "profileId": "ACoAAAJ2JEIBG6NbN6m9e3M-Lqaks_6AcI7p1G4",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQFIgmmkDRyElg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1645350235444?e=1781136000&v=beta&t=_OSXxQCU43afMwNoVh15OryV2iTOtNrL62ixtsnomx8"
+        "profileId": "ACoAAAJ2JEIBG6NbN6m9e3M-Lqaks_6AcI7p1G4"
       }
     },
     {
@@ -49,9 +46,7 @@
         "occupation": "Software architecture & engineering | Community driver | a friend",
         "id": "544084276",
         "publicId": "rko2lar",
-        "profileId": "ACoAACBuETQBbQsu24WVC28XLi7V7IJn99UNXZs",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEmR3HqvAlazg/profile-displayphoto-crop_800_800/B4EZgTZZhbHEAM-/0/1752672082468?e=1781136000&v=beta&t=LWMZNFIa9GKDhrwAzWOd8KeIqgePuV-C8Jo6ogPrOio",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHwjXBtfwFPiA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1676546622543?e=1781136000&v=beta&t=Xjs1RNzZ4U7hC0bcxVdeyeKT8rPascO0PCf3NoLQMgs"
+        "profileId": "ACoAACBuETQBbQsu24WVC28XLi7V7IJn99UNXZs"
       }
     },
     {
@@ -62,9 +57,7 @@
         "occupation": "Staff Cloud Engineer at Gen™️",
         "id": "57050153",
         "publicId": "miroslavhedl",
-        "profileId": "ACoAAANmhCkB__wHYEyyhEauXUtVPDZnvMsWpYE",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFBMnTO-aF9Jg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516620694222?e=1781136000&v=beta&t=HRQ0yDmGzMh6lv-0UE6ELwkmoUI9xs_wYJbNFxSs2lY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQH5W5_2zXRwsg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1634715751966?e=1781136000&v=beta&t=S1a-gMIvqAqCYmXjmMHDBPJhaeW_61zjyEJdeM3AXwk"
+        "profileId": "ACoAAANmhCkB__wHYEyyhEauXUtVPDZnvMsWpYE"
       }
     },
     {
@@ -75,9 +68,7 @@
         "occupation": "❄️ Senior ServiceNow Consultant | CIS-IRM | CIS-HAM | CIS-SAM | CIS-DF | CIS-ITSM | CIS-SPM | CIS-PA | CIS-EM | CIS-APM | CAD | CSA | ITIL 4 | 8x Micro-Certification 🏆",
         "id": "412311702",
         "publicId": "pavel-mikeska",
-        "profileId": "ACoAABiTYJYBitGWsqClPxDaOSBTFT2JGTIDft4",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFvOy8Dq8Fseg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1607084457497?e=1781136000&v=beta&t=bQk5A6hWT3Bdt-WPMZcTeddgt-AvjP0_qJPh2DkLjKU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG5o6RJjNqH0Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1707951490734?e=1781136000&v=beta&t=ZNgddDtqMKl6tOh1tV47Lm9rI_wKgSEioRgK2QmSVk4"
+        "profileId": "ACoAABiTYJYBitGWsqClPxDaOSBTFT2JGTIDft4"
       }
     },
     {
@@ -88,8 +79,7 @@
         "occupation": "Principal Security Architect | Head of Security Architecture | AI Security & Governance",
         "id": "12614726",
         "publicId": "janseda",
-        "profileId": "ACoAAADAfEYBpnG65b-3nUoBR6YeX2Je3qHoiWQ",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQFAQ9rjIrSD5w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1615696429776?e=1781136000&v=beta&t=z2Jk4RQvSU-TqbWSE85LIocdjsHjVfFx4YX50zHk8ZY"
+        "profileId": "ACoAAADAfEYBpnG65b-3nUoBR6YeX2Je3qHoiWQ"
       }
     },
     {
@@ -100,9 +90,7 @@
         "occupation": "AI and People | Humanoids at work",
         "id": "287034055",
         "publicId": "msouckova",
-        "profileId": "ACoAABEbyscBXZn5qcrgL0xHxnDPvxL8jhPdNXU",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHiTE3jYm5IDw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1668426932470?e=1781136000&v=beta&t=2IGpdAVzCvmCCxEDXZ6csa55EmW_5GZ6tPqFcZFKpMk",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGooG3BA4JUqg/profile-displaybackgroundimage-shrink_350_1400/B56Z5Er1qWIEAU-/0/1779268803448?e=1781136000&v=beta&t=sIQ04a7WHaB_Ajb66i6a5whaXGWJxMiY4GZwDqTNWQA"
+        "profileId": "ACoAABEbyscBXZn5qcrgL0xHxnDPvxL8jhPdNXU"
       }
     },
     {
@@ -113,8 +101,7 @@
         "occupation": "Práci nehledám, práce hledá mne",
         "id": "24864794",
         "publicId": "hubertfrey",
-        "profileId": "ACoAAAF7aBoBkWVm4SvKWlnIzDC6XVqHjTiX92c",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQENjM95UizSlA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516358341426?e=1781136000&v=beta&t=j4ZNesQeRkwl1VznjPTi4GqYGUKuQfUkLgZvdwYsuLQ"
+        "profileId": "ACoAAAF7aBoBkWVm4SvKWlnIzDC6XVqHjTiX92c"
       }
     },
     {
@@ -125,9 +112,7 @@
         "occupation": "\"It is a capital mistake to theorize before one has data.\" *cleaned data",
         "id": "775508820",
         "publicId": "nathalie-vecten",
-        "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH5sSEbnQ2Tcg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1611936430673?e=1781136000&v=beta&t=wAQsj8dSBDe6L3xt1MwxMahW3aP-D6LcuvT-utzij6s",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHDKxhi18V0lw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1599638080880?e=1781136000&v=beta&t=5JiWefMiJff9VXnKXxoAOOrnUYNFE4fW7AQAgJac6VA"
+        "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM"
       }
     },
     {
@@ -138,8 +123,7 @@
         "occupation": "Senior vývojář ve společnosti Greyson",
         "id": "560009308",
         "publicId": "severastepan",
-        "profileId": "ACoAACFhEFwBWP9K3eN5rxhoxNQa5pwfb1jsvPU",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQE-8HYmWIrbGw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1601809623608?e=1781136000&v=beta&t=wkLon3GzGkQ-lWaqB-isqSbxDavC9cPSWfCe00ID7RA"
+        "profileId": "ACoAACFhEFwBWP9K3eN5rxhoxNQa5pwfb1jsvPU"
       }
     },
     {
@@ -150,9 +134,7 @@
         "occupation": "The universe is written in the language of mathematics, and data is the ink.",
         "id": "26173387",
         "publicId": "pavel-chocholous",
-        "profileId": "ACoAAAGPX8sB16Ozd5ESObr0xsATyQhbxH1aOjQ",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFE5iFHFLjI8g/profile-displayphoto-shrink_800_800/B4EZRAknHbGcAc-/0/1736250127465?e=1781136000&v=beta&t=gFeXsnfN9nvGNYbO0RGAHqXEkgxiYiPc6ZRlg1uSxqQ",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGNtNz4Jfnryg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1620329415140?e=1781136000&v=beta&t=qTLXeCVMoANI59e7r23HwVnAc54m1DeTwkXYylf0v7A"
+        "profileId": "ACoAAAGPX8sB16Ozd5ESObr0xsATyQhbxH1aOjQ"
       }
     }
   ],
@@ -172,12 +154,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

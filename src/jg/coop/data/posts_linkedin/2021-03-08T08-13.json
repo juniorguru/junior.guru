@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQGMnRBaS9V9BA/feedshare-shrink_800/feedshare-shrink_800/0/1615191181525?e=1781136000&v=beta&t=K45vWcDKTj8z478WY56q313Dx-WA1jJMoKDKEK8THIk"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6774602834961862656",
   "url": "https://www.linkedin.com/posts/honzajavorek_klub-na-httpsjuniorguruclub-je-n%C4%9Bco-activity-6774602834961862656-PCFt",
@@ -20,9 +18,7 @@
         "occupation": "Programming and enjoying life",
         "id": "8228748",
         "publicId": "mariebezdekova",
-        "profileId": "ACoAAAB9j4wBDIeIfATcp9eisEy12ZHr2-zh1sk",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG9r0ynkrjOdA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1682923063091?e=1781136000&v=beta&t=SzqQRRQaCCwLbinVA0Pm5zCsiOagDJsz_wIBsvHWldI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQE2lXTbvtk-pA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516267458787?e=1781136000&v=beta&t=LUXhB-B01oGOUAU2pKK1WpqYh1WVpxxIRpxE4yi1V2M"
+        "profileId": "ACoAAAB9j4wBDIeIfATcp9eisEy12ZHr2-zh1sk"
       }
     },
     {
@@ -33,8 +29,7 @@
         "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
         "id": "183293578",
         "publicId": "dariagru",
-        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0"
       }
     },
     {
@@ -45,9 +40,7 @@
         "occupation": "Product Manager at Whalebone.io",
         "id": "220494688",
         "publicId": "michalcab",
-        "profileId": "ACoAAA0ke2ABi1w1TKvO3ytFnL8v6swxnkyPyYA",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQG4pbZaCI0R8Q/profile-displayphoto-crop_800_800/B4DZxsHV9GHwAI-/0/1771340392794?e=1781136000&v=beta&t=803CsN7SokscHHdna3T_8FYNdkLqeqlLQ4CXSx_BT6I",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEqneIZCIm0bw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728039765096?e=1781136000&v=beta&t=4EponUqbNat-PbBimBWdswFCXaN0ExT24X0Xxpo6bjc"
+        "profileId": "ACoAAA0ke2ABi1w1TKvO3ytFnL8v6swxnkyPyYA"
       }
     },
     {
@@ -58,9 +51,7 @@
         "occupation": "People Partner in Trezor & SatoshiLabs ~ Founder of Elegree ~ Deathwalker & Funeral Ceremonialist ~ Yoga Teacher",
         "id": "269692807",
         "publicId": "zajickovalucie",
-        "profileId": "ACoAABATL4cB-2vXjzUvfwtXSDDAqH3FY5ZiDGs",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEPTpc3t5ypeg/profile-displayphoto-crop_800_800/B4EZondlCJKsAM-/0/1761598658485?e=1781136000&v=beta&t=w4co6W8S8vuQ4NKBQy-SxYwLHjnM645SDMXXARegWnU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEKY0aP7C84HQ/profile-displaybackgroundimage-shrink_350_1400/B4EZlNmwBbKwAY-/0/1757943654875?e=1781136000&v=beta&t=RUomDv9Xjmnaj-QHTIpntsgl0hpkQjGZhA0TlVa1FPc"
+        "profileId": "ACoAABATL4cB-2vXjzUvfwtXSDDAqH3FY5ZiDGs"
       }
     },
     {
@@ -71,9 +62,7 @@
         "occupation": "Předseda České startupové asociace",
         "id": "74476785",
         "publicId": "vicherek",
-        "profileId": "ACoAAARwbPEBJ-4PcqhyrjMq_qci_GH59b-vNUc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHxwMNeoaemqw/profile-displayphoto-crop_800_800/B4DZyZ.ZI4JIAI-/0/1772109801070?e=1781136000&v=beta&t=3FPbSEodTi10Tfy15yZF5yB2fqPYb4XhZ9MXX1w83fQ",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH9N-WoPqh01w/profile-displaybackgroundimage-shrink_350_1400/B4DZwPRCRuKQAY-/0/1769782650400?e=1781136000&v=beta&t=BGOWxfUo5tYEWUVzIOEIRdJQnp0Jxrwe5Itwv37yrnA"
+        "profileId": "ACoAAARwbPEBJ-4PcqhyrjMq_qci_GH59b-vNUc"
       }
     }
   ],
@@ -93,12 +82,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

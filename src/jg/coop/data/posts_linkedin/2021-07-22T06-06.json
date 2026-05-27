@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQGSUYnONuQxoA/feedshare-shrink_1280/feedshare-shrink_1280/0/1626933961639?e=1781136000&v=beta&t=JCKapFhYb2_spS86CjQ91FvDfapFS5yJ0bFExcoouzY"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6823855624820973568",
   "url": "https://www.linkedin.com/posts/honzajavorek_pro%C4%8D-se-neu%C4%8Dit-python-v-roce-2021-rozmohl-activity-6823855624820973568-Sa_S",
@@ -26,9 +24,7 @@
             "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
             "id": "8517488",
             "publicId": "honzajavorek",
-            "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-            "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+            "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
           }
         }
       ],
@@ -41,8 +37,6 @@
         "id": "475322439",
         "publicId": "pavelbranda",
         "profileId": "ACoAABxU2EcByMsjTLhoUWUOsJMdGjaAYEaufbE",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQF9tWNpALyh7Q/profile-displayphoto-shrink_800_800/B4EZbyqMvLHIAc-/0/1747827871369?e=1781136000&v=beta&t=TRL2cOq8Fca86xg9dB2BH1wqE6EPsMI1pPTi5o1cyTc",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGKg5ABW327Yg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1642149748294?e=1781136000&v=beta&t=kB7lKsfzkzfG7JImEwWdCzlAa0Q_bxqssJVgLLovAEc",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -56,9 +50,7 @@
         "occupation": "Solution Architect at Red Hat",
         "id": "23536896",
         "publicId": "jakub-veverka",
-        "profileId": "ACoAAAFnJQABgYeZe4I5Dmp_jVOwWUK9ym1W1-Q",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQH85l2zDauCXA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1607074174553?e=1781136000&v=beta&t=HqwO-h0B45MxvJLDvdwWJoLz1r2ciAyqI97CZsSzd8E",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGSmrXFtPTl0w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1575496492096?e=1781136000&v=beta&t=B-vAiQRExxxLUu-IcczNxg_W1tKtLiY1lFhl_3w1Ofc"
+        "profileId": "ACoAAAFnJQABgYeZe4I5Dmp_jVOwWUK9ym1W1-Q"
       }
     },
     {
@@ -69,8 +61,7 @@
         "occupation": "Physics-Informed ML Researcher | Flow Simulations",
         "id": "721828348",
         "publicId": "veronika-trávníková-8a48a4181",
-        "profileId": "ACoAACsGOfwB16sNk1RMvNowK2zXakWFBgn544c",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHxlkHKjfu2aA/profile-displayphoto-crop_800_800/B4DZxHjg4nHMAI-/0/1770727020250?e=1781136000&v=beta&t=3n54clWVUVV0gg1CmZm-n7pPffTMddY0F9RBKoFWMAw"
+        "profileId": "ACoAACsGOfwB16sNk1RMvNowK2zXakWFBgn544c"
       }
     },
     {
@@ -81,8 +72,7 @@
         "occupation": "Data analytics | Energy transition",
         "id": "114102236",
         "publicId": "janfdolezal",
-        "profileId": "ACoAAAbND9wBTGfUvBkG8--t6nWYBJcRm6qj8LI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGDiD2lCktv4Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1616743956066?e=1781136000&v=beta&t=9Q1PGraRSzb__h4cp2O1EwOE1gaZWHh89nk0FhoGeic"
+        "profileId": "ACoAAAbND9wBTGfUvBkG8--t6nWYBJcRm6qj8LI"
       }
     },
     {
@@ -93,8 +83,7 @@
         "occupation": "SW Engineering manager @YunexTraffic",
         "id": "47694632",
         "publicId": "michal-knazsky",
-        "profileId": "ACoAAALXwygBP88uMnfjxwG64Fht0WZzbe-fuHI",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHd6j8Ds2VTnA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1627545732568?e=1781136000&v=beta&t=wcpx12SJnNnop8wReSKRha5bHLzRA1CW03cZMJ8_ug0"
+        "profileId": "ACoAAALXwygBP88uMnfjxwG64Fht0WZzbe-fuHI"
       }
     },
     {
@@ -105,8 +94,7 @@
         "occupation": "Senior Software Engineer | Team Builder & Engineering Leader | Driving quality, timely delivery and trust-based team culture | Founder at Veritas Dev",
         "id": "16893430",
         "publicId": "nowaja",
-        "profileId": "ACoAAAEBxfYBVYrri33NdhoMSs5DohrgctITu4o",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEafw0chkvcvg/profile-displayphoto-crop_800_800/B4DZ3dcQNYJYAI-/0/1777536671279?e=1781136000&v=beta&t=3NGDh8MfgdYU6QtTxt9a6eAe1pyYG6u6-Cg5KoyNc0g"
+        "profileId": "ACoAAAEBxfYBVYrri33NdhoMSs5DohrgctITu4o"
       }
     },
     {
@@ -117,8 +105,7 @@
         "occupation": "Czechitas digital academy attendee",
         "id": "779325751",
         "publicId": "lenka-zúbková-847bb2198",
-        "profileId": "ACoAAC5zkTcBXAFAlhX-B3org7cXGWFCrruRc2E",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQGkcviQnowGjg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1575383381299?e=1781136000&v=beta&t=gJO9E8kGmhyzhPC6JAuShNsc3MUm53BPvHKuKmgG7JQ"
+        "profileId": "ACoAAC5zkTcBXAFAlhX-B3org7cXGWFCrruRc2E"
       }
     },
     {
@@ -129,9 +116,7 @@
         "occupation": "🐝 🍯 Product developer at BKBN",
         "id": "232669821",
         "publicId": "veronika-gabrielova",
-        "profileId": "ACoAAA3eQn0Bt87ZSp0QfT6E-vWP8JjxwWCKbiM",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQE_qB2P83ug-g/profile-framedphoto-shrink_800_800/B4EZ2.AIS3JUAg-/0/1777009198775?e=1780430400&v=beta&t=99QIk875bqjmuorivm06835n9BZcueHwLKKDY2W_9MU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE3oRwd5Dq94g/profile-displaybackgroundimage-shrink_350_1400/B4EZfQUy22G4Ag-/0/1751546805612?e=1781136000&v=beta&t=1tbdObrCtHkYMhwQZrAuUDHLEvKwgSSQBALUgNnTeVA"
+        "profileId": "ACoAAA3eQn0Bt87ZSp0QfT6E-vWP8JjxwWCKbiM"
       }
     },
     {
@@ -142,9 +127,7 @@
         "occupation": "Psycholožka & programátorka",
         "id": "480212921",
         "publicId": "nela-slezakova",
-        "profileId": "ACoAAByfd7kBTrRNPdPbFJVO_tDUL0T4wKurjsE",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGHIISb698PEw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1682691059414?e=1781136000&v=beta&t=9cFsIaEIvL-qcKCcsBGJU4Fk7gT41mOPNDgRDzTJjuo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQENHWJuh8GvxA/profile-displaybackgroundimage-shrink_350_1400/B4DZXs0pSvG4Ac-/0/1743434981675?e=1781136000&v=beta&t=VjhVIEGV-wcRsv244fTjhWO4grFCQyW4XgWgVLH-KRY"
+        "profileId": "ACoAAByfd7kBTrRNPdPbFJVO_tDUL0T4wKurjsE"
       }
     },
     {
@@ -155,9 +138,7 @@
         "occupation": "Product design teams & systems 🚀",
         "id": "530422661",
         "publicId": "adina-fox",
-        "profileId": "ACoAAB-dm4UBphpPt0M3o_HcoFhUNSFgam6yIyY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFo9U_21z2zFQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725308203416?e=1781136000&v=beta&t=Fd5s_bPfqV9Zum-qkjT2BT8KUdWKCIg9uy1iP3ipCrw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQELga56ku2WNQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1725308323511?e=1781136000&v=beta&t=kl_7bliQ0v3-LukBvPWRe4MSEbzY6Ek4O7jp0QquIkE"
+        "profileId": "ACoAAB-dm4UBphpPt0M3o_HcoFhUNSFgam6yIyY"
       }
     },
     {
@@ -168,8 +149,7 @@
         "occupation": "Cybersecurity risk coordinator in Brno Municipality Office",
         "id": "201162766",
         "publicId": "frantiseksedlacek",
-        "profileId": "ACoAAAv9gA4B2fAG6Edv2GnwEOqN4_T-G_0xQEE",
-        "picture": "https://media.licdn.com/dms/image/v2/C5103AQHVjVJDCAG2wQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516972820819?e=1781136000&v=beta&t=jXeo6BnHuYJvmgQxw8R6seD5JcR-E95JQJWXLyAb-F0"
+        "profileId": "ACoAAAv9gA4B2fAG6Edv2GnwEOqN4_T-G_0xQEE"
       }
     }
   ],
@@ -189,12 +169,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

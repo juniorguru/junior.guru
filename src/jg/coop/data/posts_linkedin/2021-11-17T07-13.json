@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQEbXBfHxkco-g/feedshare-shrink_1280/feedshare-shrink_1280/0/1637133182188?e=1781136000&v=beta&t=ezkQlUp3F7DWa_LbiecnEojQvWKeWQjJyrRA1C7lYPk"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6866634256798539776",
   "url": "https://www.linkedin.com/posts/honzajavorek_informationsecurityofficer-activity-6866634256798539776-vfbc",
@@ -20,9 +18,7 @@
         "occupation": "From startup to academia — often building from scratch · NIS2 · ZoKB · ISO 27001",
         "id": "82644356",
         "publicId": "irenaponcar",
-        "profileId": "ACoAAATtDYQB3W2JFtqSzsV5x8Cgrez_lYxj4hQ",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEMu_cLqoMkmA/profile-displayphoto-crop_800_800/B4DZ0gSjMzGoAI-/0/1774363229345?e=1781136000&v=beta&t=1-Bh-OdKGSqrV_VjNgn4Qpo_zwOZU55rTDj5ORo6_Kw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGctb03lmLkoQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ4di5dXK4Ac-/0/1778612148941?e=1781136000&v=beta&t=Y37yjGHHbPBkXEysWOqQ_-X_Hd_FSCYzIb5OFxtegCU"
+        "profileId": "ACoAAATtDYQB3W2JFtqSzsV5x8Cgrez_lYxj4hQ"
       }
     },
     {
@@ -34,8 +30,7 @@
         "universalName": "ataccama",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:250453",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQFu_2rrRoxI9g/company-logo_400_400/B4EZfKY.ipHIAc-/0/1751447235100/ataccama_logo?e=1781136000&v=beta&t=GFWlBPqBVv37lZ3d2Av_uNjcI64DiisDk2bNYIPELqk"
+        "entityUrn": "urn:li:fs_miniCompany:250453"
       }
     }
   ],
@@ -55,9 +50,7 @@
             "occupation": "From startup to academia — often building from scratch · NIS2 · ZoKB · ISO 27001",
             "id": "82644356",
             "publicId": "irenaponcar",
-            "profileId": "ACoAAATtDYQB3W2JFtqSzsV5x8Cgrez_lYxj4hQ",
-            "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEMu_cLqoMkmA/profile-displayphoto-crop_800_800/B4DZ0gSjMzGoAI-/0/1774363229345?e=1781136000&v=beta&t=1-Bh-OdKGSqrV_VjNgn4Qpo_zwOZU55rTDj5ORo6_Kw",
-            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGctb03lmLkoQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ4di5dXK4Ac-/0/1778612148941?e=1781136000&v=beta&t=Y37yjGHHbPBkXEysWOqQ_-X_Hd_FSCYzIb5OFxtegCU"
+            "profileId": "ACoAAATtDYQB3W2JFtqSzsV5x8Cgrez_lYxj4hQ"
           }
         }
       ],
@@ -69,8 +62,6 @@
         "id": "394361151",
         "publicId": "jakubsmid",
         "profileId": "ACoAABeBeT8Bmg-hFYsVLkWWsPrIP4gHYaNi89s",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQHeCrqmrRgyeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517521289831?e=1781136000&v=beta&t=oue5C_eY8uEp7kHBzrUZ_monYLiG7a2zwU5FeYn768U",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHG8bPLxvlR7A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1658045189130?e=1781136000&v=beta&t=O5k-xYdU-Xl18txnhVyOC-orcE9blXQqt2aWGWBNVBc",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -84,9 +75,7 @@
         "occupation": "(Tech) Employer Branding, Comms, Innovations & Tons of Creativity!",
         "id": "40251073",
         "publicId": "alzbetavackova",
-        "profileId": "ACoAAAJmLsEBinAHS3RldERQhZVdXycyzL7nQh4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHEsyPQprgaGA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718279566641?e=1781136000&v=beta&t=ph1DgkTDJSSfantcmsHEM-NISYMfAzM8EJYRxruPN2g",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEW5ncvY32zGw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728902406724?e=1781136000&v=beta&t=0QslnQxA9TxkE9QQ3vuaoniVRipgUIsnuQ9IJaOqGEo"
+        "profileId": "ACoAAAJmLsEBinAHS3RldERQhZVdXycyzL7nQh4"
       }
     },
     {
@@ -97,9 +86,7 @@
         "occupation": "People & Culture Specialist 🩵| HR Generalist | From onboarding to development - supporting people & processes",
         "id": "149037681",
         "publicId": "petraagler",
-        "profileId": "ACoAAAjiInEBsVja33Um0OP-fRa0YTgdG7p2WeY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEJpE8Jo6Z5Aw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1721023940065?e=1781136000&v=beta&t=toRrbzMpCXyI63XoBlH4a3uddTGRNPQwW8mWVJ6sc4M",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQECV1QxUAAuRA/profile-displaybackgroundimage-shrink_350_1400/B4EZjvrsrHIUAY-/0/1756367867002?e=1781136000&v=beta&t=lpkLU49Afrp5bYRAySraCSH4mb-0zfUxA4LmfUueR7M"
+        "profileId": "ACoAAAjiInEBsVja33Um0OP-fRa0YTgdG7p2WeY"
       }
     },
     {
@@ -121,9 +108,7 @@
         "occupation": "data – events – community",
         "id": "138678453",
         "publicId": "baradrb",
-        "profileId": "ACoAAAhEELUBh00AQMpcqeGwUSsN_Kuc2a0w0G8",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGphUcJREjOsw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1592866548522?e=1781136000&v=beta&t=-CBV_vWmEa9Tt9hihKKRIYRZbixOPqHWURYtAVLAPWA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFYwEy9vtmtRA/profile-displaybackgroundimage-shrink_350_1400/B4EZoxWhbMGUAY-/0/1761764582204?e=1781136000&v=beta&t=BB-3WCaFGq5vreqxcreioFwb9_pfD1Jc68wITvmER4s"
+        "profileId": "ACoAAAhEELUBh00AQMpcqeGwUSsN_Kuc2a0w0G8"
       }
     },
     {
@@ -134,9 +119,7 @@
         "occupation": "...",
         "id": "212362653",
         "publicId": "lenka-matějová-0791535b",
-        "profileId": "ACoAAAyoZZ0BOS1B_PZN1qbkv-R_Pd20LKcx4w4",
-        "picture": "https://media.licdn.com/dms/image/v2/C5103AQFOCy_BRleS6A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517430105432?e=1781136000&v=beta&t=cW-s_NvEb7Oa4gcUe92cWuJWFr1XXFBsLUAp2-ky2Do",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGskrvizzVniQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1666725183894?e=1781136000&v=beta&t=I9BuoGxX9wpAVVH75UYGdMoTfKUSsrdUB-iv5455Rvo"
+        "profileId": "ACoAAAyoZZ0BOS1B_PZN1qbkv-R_Pd20LKcx4w4"
       }
     },
     {
@@ -147,8 +130,7 @@
         "occupation": "Application Developer at Barclays",
         "id": "361531956",
         "publicId": "lenkaerbenova",
-        "profileId": "ACoAABWMijQBlQzoTAse2JjfcJmbjz4dAQnIsQs",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGi_aPN1DxU3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517030344782?e=1781136000&v=beta&t=boP6IJareKgeZZHEHLF-RgBjxI_GQmpxMacm_Mm8k9c"
+        "profileId": "ACoAABWMijQBlQzoTAse2JjfcJmbjz4dAQnIsQs"
       }
     },
     {
@@ -159,9 +141,7 @@
         "occupation": "Frontend developer | React | Typescript | Mentor",
         "id": "690320871",
         "publicId": "marketa-willis",
-        "profileId": "ACoAACkldecB7E9DWErMM56bPMpJ3V49koGflx0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG3JXouajtk3A/profile-displayphoto-crop_800_800/B4EZniD2GgIIAI-/0/1760434283625?e=1781136000&v=beta&t=jVTJ2DGVJj9_jUUmT-E7zLWHbH879vJP2kKfgNc8Nn8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFCy4ekYHZ1aA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712246548670?e=1781136000&v=beta&t=QA3NpbJpEYHAFdBZwvhyaoukjEU7F6XWO0K5Mx2B41E"
+        "profileId": "ACoAACkldecB7E9DWErMM56bPMpJ3V49koGflx0"
       }
     },
     {
@@ -172,9 +152,7 @@
         "occupation": "Product design teams & systems 🚀",
         "id": "530422661",
         "publicId": "adina-fox",
-        "profileId": "ACoAAB-dm4UBphpPt0M3o_HcoFhUNSFgam6yIyY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFo9U_21z2zFQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725308203416?e=1781136000&v=beta&t=Fd5s_bPfqV9Zum-qkjT2BT8KUdWKCIg9uy1iP3ipCrw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQELga56ku2WNQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1725308323511?e=1781136000&v=beta&t=kl_7bliQ0v3-LukBvPWRe4MSEbzY6Ek4O7jp0QquIkE"
+        "profileId": "ACoAAB-dm4UBphpPt0M3o_HcoFhUNSFgam6yIyY"
       }
     },
     {
@@ -185,9 +163,7 @@
         "occupation": "IT Recruitment | Pomáhám najít to pravé spojení mezi IT odborníky a firmami",
         "id": "434541542",
         "publicId": "hanapolakova",
-        "profileId": "ACoAABnmk-YBskJ67MnT7xi-gYhC2uzQFxx2JwQ",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGuL-8RgtINew/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1579719270866?e=1781136000&v=beta&t=9PYDm-Jmt6Rqy2ttmfEzqS4EjdpdNYGcZJbhAk6Os44",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEw1wx7TYFWgg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1641289554759?e=1781136000&v=beta&t=Ilxugf6vyCphQQqFPqLfFjx3A7pEOcvL4SBFAGkRUT8"
+        "profileId": "ACoAABnmk-YBskJ67MnT7xi-gYhC2uzQFxx2JwQ"
       }
     },
     {
@@ -198,9 +174,7 @@
         "occupation": "Global Sales Manager | Specialty Lubricants",
         "id": "132002824",
         "publicId": "petr-pribil",
-        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEGdgqIgIpkzg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712250006297?e=1781136000&v=beta&t=UB9wEJule0NhB0lR0De_FtfePuW1Di0Vm80cYt1MqZU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFuvlBRuJNbjw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712250566915?e=1781136000&v=beta&t=8sCRHio1dDSnAp_oiaygmw7_1g4W1ce4YJV-kaJIK3M"
+        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck"
       }
     }
   ],
@@ -220,12 +194,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

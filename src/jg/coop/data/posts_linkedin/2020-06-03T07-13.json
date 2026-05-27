@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C5622AQGs1yttKdlrtg/feedshare-shrink_1280/feedshare-shrink_1280/0/1591168383519?e=1781136000&v=beta&t=M19s6Wmsqb0Xi5mLsmbqLLhiZjVqxAdOxSzFPVw40qA"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6673843916854448128",
   "url": "https://www.linkedin.com/posts/honzajavorek_od-minul%C3%A9ho-t%C3%BDdne-je-na-httpsjuniorguru-activity-6673843916854448128-F96l",
@@ -19,8 +17,7 @@
         "universalName": "startupjobs-cz",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:2622160",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQHKj3KK_IETBQ/company-logo_400_400/company-logo_400_400/0/1709093734115?e=1781136000&v=beta&t=8uu6CB_qt7puMmKJ2GQDrBlxqLvL7SvQJ2_-TwvLdxk"
+        "entityUrn": "urn:li:fs_miniCompany:2622160"
       }
     }
   ],
@@ -34,8 +31,7 @@
         "occupation": "Business intelligence specialist ve společnosti Kofola ČeskoSlovensko",
         "id": "620092370",
         "publicId": "karolina-benesova",
-        "profileId": "ACoAACT129IBECBOFs0Ad6ThpeLqCSsK5uQ2FiM",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFb6S5lm4Y4zg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1570176975853?e=1781136000&v=beta&t=wNd5NLc6iJ6ND3ZHdrQlgRIhzwYSyCe3XSz5kcERoX0"
+        "profileId": "ACoAACT129IBECBOFs0Ad6ThpeLqCSsK5uQ2FiM"
       }
     },
     {
@@ -46,9 +42,7 @@
         "occupation": "Video Editor at unitedmusicevents.com",
         "id": "745416754",
         "publicId": "mikemefms",
-        "profileId": "ACoAACxuKDIBT0Iugfz4maGfWrXAXluepYouj4E",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHhwGoSYsLCOw/profile-framedphoto-shrink_800_800/B4DZYtyAUWHwAg-/0/1744524805728?e=1780430400&v=beta&t=3V-ASx1fHwjn7jiBg95hmKIeMy0jFCMWykTaqKRmh40",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQG09a0yfD1w3w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1587439344563?e=1781136000&v=beta&t=GHZA9jQDjC458p2xNpjWPRhUgJVdO3vqWXKf-MQM8dU"
+        "profileId": "ACoAACxuKDIBT0Iugfz4maGfWrXAXluepYouj4E"
       }
     },
     {
@@ -59,8 +53,7 @@
         "occupation": "Industrial Risks Insurance Spec. & Underwriter ✈️/ Reporting Spec. 🤖",
         "id": "669032078",
         "publicId": "petra-janku-2902",
-        "profileId": "ACoAACfgno4BvRPryxsoKJzlE5yyawf6MmfTJpg",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGWN-_YB2smzQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1601450896613?e=1781136000&v=beta&t=rtnLCyo_twefL4_qKSREHnPWcsiOEv1IK5JK2k6_f68"
+        "profileId": "ACoAACfgno4BvRPryxsoKJzlE5yyawf6MmfTJpg"
       }
     },
     {
@@ -71,9 +64,7 @@
         "occupation": "Senior Data Scientist | AI & Digital Innovation Strategist | PhD Student | VSB - Technical University of Ostrava",
         "id": "255272676",
         "publicId": "robert-s-2b05a771",
-        "profileId": "ACoAAA83JuQBIi82v-Ambqv2iiOGMA3iOJNluDY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGiwUvjw5ivug/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1689840862135?e=1781136000&v=beta&t=-4jNXqEDKb5LOnOcVN6yrsLc-Mx8zOBmmGDuy9P51NU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEPjR-q-30r2A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1554402312474?e=1781136000&v=beta&t=AlfaXrpX-JKRy7YTf8XOjM0ekc1Tr7RGNbqVsTM_SyI"
+        "profileId": "ACoAAA83JuQBIi82v-Ambqv2iiOGMA3iOJNluDY"
       }
     },
     {
@@ -84,8 +75,7 @@
         "occupation": "Software Engineer, AI Engineering",
         "id": "87984565",
         "publicId": "jakubkoci",
-        "profileId": "ACoAAAU-ibUBg-t00I2MQwyr5aJHjcLMSxpvQpE",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGy1z1w2xdMuw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1730119844800?e=1781136000&v=beta&t=BjW7ooMfr5twJ__KBxpbjUI789C3LIXqTBJWwTXLWLg"
+        "profileId": "ACoAAAU-ibUBg-t00I2MQwyr5aJHjcLMSxpvQpE"
       }
     },
     {
@@ -107,9 +97,7 @@
         "occupation": "Stablecoins, Onchain Finance & Tokenization I Investor, Advisor, Operator I Partnerships, M&A",
         "id": "107747878",
         "publicId": "petr-hluze",
-        "profileId": "ACoAAAZsGiYB93Uog8cH3ML-u04BKroXZSfgtRc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGJbENlmbZofg/profile-displayphoto-crop_800_800/B4EZps3ZwjHcAI-/0/1762763070692?e=1781136000&v=beta&t=uH_V229mNab00gQYcc_XevrQqrQixl_FR_RUKjVNbPA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHCW1ILiZ3RLw/profile-displaybackgroundimage-shrink_350_1400/B4DZ41Hw0GHoAU-/0/1779007688174?e=1781136000&v=beta&t=r9E0cH4cs8gelo-tq_2XxbhHYnAgst-68q0oIQomDSQ"
+        "profileId": "ACoAAAZsGiYB93Uog8cH3ML-u04BKroXZSfgtRc"
       }
     },
     {
@@ -120,8 +108,7 @@
         "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
         "id": "551084893",
         "publicId": "grumpyprogrammer",
-        "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFnQ8ypdjjyvg/profile-displayphoto-crop_800_800/B4DZxZUZFlHkAI-/0/1771025047361?e=1781136000&v=beta&t=fFiIDptOBoMzbUkj1Lvpd8USzHMX1nkcCCOr19Su_4c"
+        "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4"
       }
     },
     {
@@ -152,12 +139,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

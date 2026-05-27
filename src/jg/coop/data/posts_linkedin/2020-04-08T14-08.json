@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4D22AQHLck4eSOhL7A/feedshare-shrink_1280/feedshare-shrink_1280/0/1586354885530?e=1781136000&v=beta&t=LCBqwaYPRn1X6P7UuB-2GMsHsTbKDxVUXDW_WNlV0P0"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6653654641777094656",
   "url": "https://www.linkedin.com/posts/honzajavorek_juniorguru-activity-6653654641777094656-ELD8",
@@ -20,8 +18,7 @@
         "occupation": "cyp",
         "id": "106076066",
         "publicId": "jiri-gunka",
-        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGjycZdsqX9ww/profile-displayphoto-crop_800_800/B4DZjBYhBpGQAQ-/0/1755591087410?e=1781136000&v=beta&t=wVIgd5mwqIYPXpFj5d6Nr2x8-VHHyAZ4o1qWAcv4nhQ"
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
       }
     },
     {
@@ -32,8 +29,7 @@
         "occupation": "Senior Backend Engineer @ GTO Wizard · 13 yrs in Python/Django/PostgreSQL with Elixir/Phoenix in production · Shipped at the #1 poker app + Twisto BNPL (acq. Zip Co) · Open to remote EU",
         "id": "299136660",
         "publicId": "martin-dekastello",
-        "profileId": "ACoAABHUdpQBqfZl53Ks9Q6W0o-zokKuoT-2FmQ",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQG1OUy-GC7V4w/profile-framedphoto-shrink_800_800/B4DZ4Cb.rCKkAk-/0/1778157349879?e=1780430400&v=beta&t=zNphb1pp4La7ZPkj8ZOengsP3GdeEUCoVN5upqQNGdU"
+        "profileId": "ACoAABHUdpQBqfZl53Ks9Q6W0o-zokKuoT-2FmQ"
       }
     },
     {
@@ -44,8 +40,7 @@
         "occupation": "TypeScript Engineer | Backend-First | Clean Architecture, Product Mindset, AI-Enhanced Workflow",
         "id": "26597578",
         "publicId": "ikvasnica",
-        "profileId": "ACoAAAGV2MoBN8JZ2pQK395RLRvyRx1Tw4GdAYg",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE32ky23E1THg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704494771219?e=1781136000&v=beta&t=HKRe4t30-sW1VQsgGNQ38EldfRp-cECFg0Ib73ZfxuQ"
+        "profileId": "ACoAAAGV2MoBN8JZ2pQK395RLRvyRx1Tw4GdAYg"
       }
     },
     {
@@ -56,9 +51,7 @@
         "occupation": "Video Editor at unitedmusicevents.com",
         "id": "745416754",
         "publicId": "mikemefms",
-        "profileId": "ACoAACxuKDIBT0Iugfz4maGfWrXAXluepYouj4E",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHhwGoSYsLCOw/profile-framedphoto-shrink_800_800/B4DZYtyAUWHwAg-/0/1744524805728?e=1780430400&v=beta&t=3V-ASx1fHwjn7jiBg95hmKIeMy0jFCMWykTaqKRmh40",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQG09a0yfD1w3w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1587439344563?e=1781136000&v=beta&t=GHZA9jQDjC458p2xNpjWPRhUgJVdO3vqWXKf-MQM8dU"
+        "profileId": "ACoAACxuKDIBT0Iugfz4maGfWrXAXluepYouj4E"
       }
     },
     {
@@ -69,9 +62,7 @@
         "occupation": "Předseda České startupové asociace",
         "id": "74476785",
         "publicId": "vicherek",
-        "profileId": "ACoAAARwbPEBJ-4PcqhyrjMq_qci_GH59b-vNUc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHxwMNeoaemqw/profile-displayphoto-crop_800_800/B4DZyZ.ZI4JIAI-/0/1772109801070?e=1781136000&v=beta&t=3FPbSEodTi10Tfy15yZF5yB2fqPYb4XhZ9MXX1w83fQ",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH9N-WoPqh01w/profile-displaybackgroundimage-shrink_350_1400/B4DZwPRCRuKQAY-/0/1769782650400?e=1781136000&v=beta&t=BGOWxfUo5tYEWUVzIOEIRdJQnp0Jxrwe5Itwv37yrnA"
+        "profileId": "ACoAAARwbPEBJ-4PcqhyrjMq_qci_GH59b-vNUc"
       }
     },
     {
@@ -82,9 +73,7 @@
         "occupation": "Talent Acquisition Partner",
         "id": "63177727",
         "publicId": "sarkacerovska",
-        "profileId": "ACoAAAPEA_8BzksvksVzbz6sHs05xKjV3asYqd4",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQFv2hG5F1QSQQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582896370930?e=1781136000&v=beta&t=-iugVHL7N247z6z6R6ClXQWQlxBGxTfprW0faQuRBjM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQEO-izDtDao3w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517521846375?e=1781136000&v=beta&t=G0fKuA6QPaVD5Mp36vETDRjcWcOVJRtMqVHDICl2s_o"
+        "profileId": "ACoAAAPEA_8BzksvksVzbz6sHs05xKjV3asYqd4"
       }
     },
     {
@@ -95,8 +84,7 @@
         "occupation": "Quality Engineer at Carrier",
         "id": "221440813",
         "publicId": "martina-nezdarilikova-7511b062",
-        "profileId": "ACoAAA0y6y0BX42acEV0KZNpCYdHbZN4c3zuoNk",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQF_sOOAUlFazA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516803228708?e=1781136000&v=beta&t=un5yGDBoNKdchMn31CpZMb5CGAOaTnEX-JnFeBhc_Wc"
+        "profileId": "ACoAAA0y6y0BX42acEV0KZNpCYdHbZN4c3zuoNk"
       }
     },
     {
@@ -107,9 +95,7 @@
         "occupation": "Managing Director CZ & SK | Rajapack",
         "id": "5231377",
         "publicId": "marekkonecny",
-        "profileId": "ACoAAABP0xEBs85R5PlJ-eSP7SSsd2Olzxrfz6A",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQFQn9ZXAjXYPQ/profile-framedphoto-shrink_800_800/B4DZ0vXwcQGUAg-/0/1774616250395?e=1780430400&v=beta&t=tO1606UWgJbfv6sYhL4HWR0Wu6S1KHUwMLzfrP_TFh0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFv2I6xY-QEeA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1646167617912?e=1781136000&v=beta&t=gei5qyhlLEYbXyiXLD4hi1Pl0vlgwSHUtfOEFKnfhRQ"
+        "profileId": "ACoAAABP0xEBs85R5PlJ-eSP7SSsd2Olzxrfz6A"
       }
     }
   ],
@@ -129,12 +115,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

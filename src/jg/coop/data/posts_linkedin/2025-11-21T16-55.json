@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/D4E22AQFDdKez0ayXGw/feedshare-shrink_1280/B4EZqmq3XdHEAs-/0/1763732847248?e=1781136000&v=beta&t=TOM8vWnUsZh5pW30xkV5FV6sPnISFg21gyJFF1SYoaE"
-  ],
+  "images": [],
   "isActivity": true,
   "activityDescription": "Honza Javorek reposted this",
   "activityOfUser": {
@@ -11,9 +9,7 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "urn": "urn:li:activity:7397679028184436736",
   "url": "https://www.linkedin.com/posts/jan-meissner_za-t%C4%9Bch-10-let-co-pracuju-v-technologick%C3%A9-activity-7397631743161438208-mDdI",
@@ -31,9 +27,7 @@
         "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
         "id": "8517488",
         "publicId": "honzajavorek",
-        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
       }
     }
   ],
@@ -52,8 +46,6 @@
         "id": "99694616",
         "publicId": "j4n-marek",
         "profileId": "ACoAAAXxOBgBovM14X1j6moZmHzmOXDR3AxfiMw",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQG7qTTbebUGZA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517550343717?e=1781136000&v=beta&t=Q8db2xmpsRfNsvlpUdw-mxRFBowJDDJLYHvPS2jXTBs",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQE0-dpjx2R_Nw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1568405127258?e=1781136000&v=beta&t=eDBHtU4lI8xZHB9DFz1CdvGXoqaVXlcU2czYrQazRn8",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -70,8 +62,6 @@
         "id": "677292059",
         "publicId": "jan-meissner",
         "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEEoMbY9urW6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728030316222?e=1781136000&v=beta&t=qIshYYWgkzBRoJGlT6oqlmeH3jlRiX8J_luFzaICydQ",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGei_PMH8ghyw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728030258130?e=1781136000&v=beta&t=GS9HgAFTdCMh-1xFx2xIDoLH91oMpSioaV6pV2ayQSY",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -85,9 +75,7 @@
         "occupation": "R&D Community Manager at Mews | Driving tech employer branding through developer advocacy and internal programs",
         "id": "375918312",
         "publicId": "gabriela-rehoutova",
-        "profileId": "ACoAABZoDugBZPP_pwsGohCcNSueNWnDv2TrXLA",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHxeSq-aQXADA/profile-displayphoto-crop_800_800/B4DZyKZZmIJoAM-/0/1771848442537?e=1781136000&v=beta&t=1Yyb9MnnBlanozl3ZFem4jHbwrV99w2FfMmvv9FvIu0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHp_vL6BWFTNw/profile-displaybackgroundimage-shrink_350_1400/B4DZyKYhihG8AY-/0/1771848210948?e=1781136000&v=beta&t=21UIB68ZMBkqepzOKX5D9kdQcghG2ZeQ58J0kSI1tQc"
+        "profileId": "ACoAABZoDugBZPP_pwsGohCcNSueNWnDv2TrXLA"
       }
     },
     {
@@ -98,9 +86,7 @@
         "occupation": "Talent Acquisition Manager at Sky Czech Republic",
         "id": "212855869",
         "publicId": "miragrebovic",
-        "profileId": "ACoAAAyv7D0BGB9gnYandS3lMcUAGJ5_lljinpY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHgHY--EeZQrg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731433255182?e=1781136000&v=beta&t=1XDNis4rADWfIfmT0gbJIsqIsvB54eM_rpbr67raGX4",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEJD-KEGlgZLA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712130739505?e=1781136000&v=beta&t=bbFm9ws9cVJ1HHCPcjsEeVJb6arJ97yM6y8WB_ZID_Q"
+        "profileId": "ACoAAAyv7D0BGB9gnYandS3lMcUAGJ5_lljinpY"
       }
     },
     {
@@ -111,9 +97,7 @@
         "occupation": "Security Management | 16 Years in Public Safety | Operations & Administration",
         "id": "1490386548",
         "publicId": "lukáš-názer-270164357",
-        "profileId": "ACoAAFjVfnQBRiWDVYgeRaVNR9CkNSlnACEsxsY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHXiTp76wTrAA/profile-framedphoto-shrink_800_800/B4DZ3BlJh2G4Ag-/0/1777069234603?e=1780430400&v=beta&t=8Tb6p9FTg2cUQNp6Qt9BY4bFRPxPxDwzlMaM_a_e4dM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGRmdKcLOO4mQ/profile-displaybackgroundimage-shrink_350_1400/B4DZuduYc0KoAc-/0/1767877741572?e=1781136000&v=beta&t=-r1YEOtb84pQij6od76GCRY8-7ltn8jMw_JGF8sYxdA"
+        "profileId": "ACoAAFjVfnQBRiWDVYgeRaVNR9CkNSlnACEsxsY"
       }
     },
     {
@@ -124,9 +108,7 @@
         "occupation": "SEO/UX Specialist at Webmium ✅ Aspiring Backend Developer at Home ✅",
         "id": "356811200",
         "publicId": "tomasmanhal",
-        "profileId": "ACoAABVEgcABhXssunqzWgZ32PhPvDuM7pOY7Sw",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGInNVdLygaYA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1643616498455?e=1781136000&v=beta&t=ZuyL6gCtMjtS2Bp5JitUt78VFkpsCsQXNtHO9yl9H4g",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGzLIim8zGACA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516975456614?e=1781136000&v=beta&t=6VFaoiFNvKKxzcGRnW_GTyGLSluSP2AQ71SpObNaKLo"
+        "profileId": "ACoAABVEgcABhXssunqzWgZ32PhPvDuM7pOY7Sw"
       }
     },
     {
@@ -137,9 +119,7 @@
         "occupation": "Wiz ✨ Secure AI at Machine Speed ⚡",
         "id": "397522739",
         "publicId": "roger-laing-a6b167b1",
-        "profileId": "ACoAABextzMBPSYhxp30uyFGyAGTweAxIuJA_WY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH8ANTOY_VL0Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1699556522013?e=1781136000&v=beta&t=WNGrdyVz7FSZfWCmU31_sl5lSLl5NCBT4f3HbWWiR1E",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF-qyqZk8dy2A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728292020753?e=1781136000&v=beta&t=edgIu91x0KpEbUOWBVWlawf6cYz74zuXMWdxthkxE3k"
+        "profileId": "ACoAABextzMBPSYhxp30uyFGyAGTweAxIuJA_WY"
       }
     },
     {
@@ -150,9 +130,7 @@
         "occupation": "Business Development in startups",
         "id": "113138480",
         "publicId": "evapeterkova",
-        "profileId": "ACoAAAa-WzABr0AavuXkwAkbUasXuxQ0EilZUtM",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQGNn0yx_i845g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1548002459133?e=1781136000&v=beta&t=Mr8iVD4ilZjD7a6lfN11Qe7QVMLdwIbsOE8L7BnuvOg",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGG0fcHG0lFdg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1548231717707?e=1781136000&v=beta&t=isnzhBuOF3v44OYcVxlHpd7vnpSz7LMZJK6JlzahFgw"
+        "profileId": "ACoAAAa-WzABr0AavuXkwAkbUasXuxQ0EilZUtM"
       }
     },
     {
@@ -163,9 +141,7 @@
         "occupation": "Founder @ European Escapes | Event Manager | Community builder",
         "id": "425803285",
         "publicId": "marketa-oupicka",
-        "profileId": "ACoAABlhPhUB7RyXtZUn6D9Nlj2UyRBb31Nm07Y",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHdC6bg3rC6AA/profile-displayphoto-shrink_800_800/B4EZT.o5kXHMAc-/0/1739438922644?e=1781136000&v=beta&t=FbhPN8ZeLXDBSYzGCqlKjFw3n9-zR2LS5BP8LtZNbis",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFaMU4_K_BjWw/profile-displaybackgroundimage-shrink_350_1400/B4EZcxde9LH0AY-/0/1748881502872?e=1781136000&v=beta&t=gxUxTqK2WtozM5UeZIStgScWj_nsoeqc0XUhilO83GQ"
+        "profileId": "ACoAABlhPhUB7RyXtZUn6D9Nlj2UyRBb31Nm07Y"
       }
     },
     {
@@ -176,8 +152,7 @@
         "occupation": "IT Security Specialist",
         "id": "623726830",
         "publicId": "simonpinkas",
-        "profileId": "ACoAACUtUO4BBqryMkC0ZEimOzeTyhi_hM-bjig",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQGDuFMjHiwbNw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1647528664125?e=1781136000&v=beta&t=oj0E0fo0ZGfosoiwA-nvVtz03p1lbiEYkIu69GVB0Fo"
+        "profileId": "ACoAACUtUO4BBqryMkC0ZEimOzeTyhi_hM-bjig"
       }
     },
     {
@@ -188,9 +163,7 @@
         "occupation": "I talk a lot :)",
         "id": "309133853",
         "publicId": "taluranit",
-        "profileId": "ACoAABJtAh0BEWIcOSBGH4HhCuOtYQZY3hTF6y0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHKaAjtIiGFmQ/profile-displayphoto-crop_800_800/B4DZ398bXLKgAI-/0/1778081971206?e=1781136000&v=beta&t=VzDa6wPI8PKqtTSbhgtcDY6wNH7LsYdu4GPvuaJWM8Q",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEvP9mI1YpvmA/profile-displaybackgroundimage-shrink_350_1400/B4DZ2rW5J.K4AY-/0/1776696399257?e=1781136000&v=beta&t=m0gYskBy7_dO_QJKck64kbQ-N3XxbswbWz0WaN7s65M"
+        "profileId": "ACoAABJtAh0BEWIcOSBGH4HhCuOtYQZY3hTF6y0"
       }
     },
     {
@@ -201,9 +174,7 @@
         "occupation": "Lead Cloud Engineer | Kubernetes & Cloud-Native Infrastructure | Tech Lead @ Whalebone | AWS & GCP | 10+ yrs DevOps",
         "id": "247876336",
         "publicId": "martin-kulich",
-        "profileId": "ACoAAA7GSvABMeDGxHg581ZY7f_uP-4VLHRUmQQ",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQH_9anUfUXWcg/profile-displayphoto-crop_800_800/B4DZxW2CfLHcAQ-/0/1770983533595?e=1781136000&v=beta&t=L9FrmOts0-kSveyo7ZZTmXePmOIXDBaEWTm54oRvtNE",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQF3tUsmb5bY8w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1727867805720?e=1781136000&v=beta&t=FtDc96sfuSXn6kiQiHXxPvIbKUqfUYxwB2aLjmuQJ1Y"
+        "profileId": "ACoAAA7GSvABMeDGxHg581ZY7f_uP-4VLHRUmQQ"
       }
     }
   ],
@@ -223,12 +194,9 @@
     "occupation": "Product & Tech Community Lead at Mews",
     "id": "677292059",
     "publicId": "jan-meissner",
-    "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw",
-    "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEEoMbY9urW6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728030316222?e=1781136000&v=beta&t=qIshYYWgkzBRoJGlT6oqlmeH3jlRiX8J_luFzaICydQ",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGei_PMH8ghyw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728030258130?e=1781136000&v=beta&t=GS9HgAFTdCMh-1xFx2xIDoLH91oMpSioaV6pV2ayQSY"
+    "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw"
   },
   "authorProfileId": "jan-meissner",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4E03AQEEoMbY9urW6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728030316222?e=1781136000&v=beta&t=qIshYYWgkzBRoJGlT6oqlmeH3jlRiX8J_luFzaICydQ",
   "authorType": "Person",
   "authorName": "Jan Meissner",
   "authorProfileUrl": "https://www.linkedin.com/in/jan-meissner?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw",

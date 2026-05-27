@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/D4D22AQEXPrZkR04keQ/feedshare-shrink_1280/B4DZg3PJQnH4As-/0/1753273383755?e=1781136000&v=beta&t=2z6Z-ccwqFpyWEY_7e1uaTHgN_kISsyKag8J4wffbGo"
-  ],
+  "images": [],
   "isActivity": true,
   "activityDescription": "Honza Javorek reposted this",
   "activityOfUser": {
@@ -11,9 +9,7 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "urn": "urn:li:activity:7353764108933943297",
   "url": "https://www.linkedin.com/posts/dariagru_europython-beginnersday-unconference-activity-7353761572009271296-IzV9",
@@ -31,9 +27,7 @@
         "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
         "id": "8517488",
         "publicId": "honzajavorek",
-        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
       }
     },
     {
@@ -45,8 +39,7 @@
         "universalName": "juniorguru",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:26218444",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQE89NmYF-XT4g/company-logo_400_400/company-logo_400_400/0/1638266899010/juniorguru_logo?e=1781136000&v=beta&t=ad516CNUThMN8eXeVboC5S9U_y2Dnn1UhQn70wIGlxE"
+        "entityUrn": "urn:li:fs_miniCompany:26218444"
       }
     },
     {
@@ -58,8 +51,7 @@
         "universalName": "europython",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:41130723",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQGz6u5D6KYABg/company-logo_400_400/B4DZxWmNTUJwAY-/0/1770979382977/europython_logo?e=1781136000&v=beta&t=pwjOEJznkhOEXcURlj3q2Nvk3DG-RH4f9owboCBcCU0"
+        "entityUrn": "urn:li:fs_miniCompany:41130723"
       }
     },
     {
@@ -71,8 +63,7 @@
         "universalName": "europython-society",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:5335675",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQF70pIBwZIdow/company-logo_400_400/company-logo_400_400/0/1630549520372/europython_society_logo?e=1781136000&v=beta&t=inxWR-D-xWNXTDzozWOs_XNFn4tnK4z85f0jBYtaDJI"
+        "entityUrn": "urn:li:fs_miniCompany:5335675"
       }
     },
     {
@@ -85,9 +76,7 @@
         "occupation": "Software Engineer",
         "id": "530925455",
         "publicId": "mia-bajic",
-        "profileId": "ACoAAB-lR48BFvPhQ6doZNGTRVftkLrzcnIv-Ss",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEFktnPzIQA3g/profile-displayphoto-shrink_400_400/B4EZdfBBQAHYAs-/0/1749645792668?e=1781136000&v=beta&t=H-XclkbtaMI2HfxaPAIvGsaIuvs_3HunEbU_zF5R2XQ",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGmHzyPBT7q2g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1738012168138?e=1781136000&v=beta&t=bGVRTPD07nQuQcDx_7F1m2z7h-P_vw_6AF5KkU2lLp4"
+        "profileId": "ACoAAB-lR48BFvPhQ6doZNGTRVftkLrzcnIv-Ss"
       }
     },
     {
@@ -113,9 +102,7 @@
         "occupation": "🧑‍🤝‍🧑 Working with and for communities, organizing events, studying service design, having fun in all that. ✏️",
         "id": "58610470",
         "publicId": "anezkamll",
-        "profileId": "ACoAAAN-UyYBW_5FlwBOtClk7WVpl3JlZMHMVn4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEdF62o6gzpHQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731942194763?e=1781136000&v=beta&t=3Pf8QBLlGpzI8zRBBfihj0pgDvCgOUoUJyTfMptX81Y",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHKgfW_KDXR1Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1620408094586?e=1781136000&v=beta&t=qk_LRa-WT8rOvas9-jwGjCle3e76MkO7wIKYYCWCZag"
+        "profileId": "ACoAAAN-UyYBW_5FlwBOtClk7WVpl3JlZMHMVn4"
       }
     },
     {
@@ -141,8 +128,7 @@
         "occupation": "Wolontariusz w EuroPython",
         "id": "1541784401",
         "publicId": "emilia-stelmasiak-415410370",
-        "profileId": "ACoAAFvlw1EBKQsuxeTkIF-6wnuhvCX1NrG5rpI",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQGyxkQpf_P1FA/profile-displayphoto-crop_800_800/B56ZgFZkhEHcAQ-/0/1752437247030?e=1781136000&v=beta&t=J4TpygYsXE1bccyuv7FXHi6BKDvOSVU2VXnGRsTFTPQ"
+        "profileId": "ACoAAFvlw1EBKQsuxeTkIF-6wnuhvCX1NrG5rpI"
       }
     },
     {
@@ -155,9 +141,7 @@
         "occupation": "CEO at Juicymo ■ Software Development ■ Mobile and Web Apps ■ Information Systems ■ Process Optimization and Digitalization",
         "id": "127386166",
         "publicId": "janamoudra",
-        "profileId": "ACoAAAeXwjYBqZ0jKVz8yca44CiteKwVoGM7-3w",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGCNHkgjilAqg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720254510601?e=1781136000&v=beta&t=ABfmTWnHZdBoAlk7Q1IbRLnEGbe6j55uuIZ_-tPSTGY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGwHodURvwOxg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1710408027613?e=1781136000&v=beta&t=rUOl7EiHRO6B7tfbrLnjN7i6Y1Y3qQOCrPMFpcXSrGg"
+        "profileId": "ACoAAAeXwjYBqZ0jKVz8yca44CiteKwVoGM7-3w"
       }
     },
     {
@@ -170,9 +154,7 @@
         "occupation": "Software Engineer (React, TypeScript) | making scalable and efficient software && open mind, curious spirit, adventurous heart",
         "id": "996152950",
         "publicId": "michaela-trckova",
-        "profileId": "ACoAADtgFnYBmYEyWRy15V_gJ4FmfA16vqg7j0I",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFBd1HSidF0CQ/profile-displayphoto-crop_800_800/B4DZ3OCp2nI8AI-/0/1777278297769?e=1781136000&v=beta&t=h6kbje1FtoYFVmhdGMwTMQGQWGYTO-e5hYfPj-0tUDA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGjt-yXV21GLA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1677663075139?e=1781136000&v=beta&t=FWU3ro4NT8xs40Oa3v3RNh75Vhh1AXNOaRfNy6UvWqs"
+        "profileId": "ACoAADtgFnYBmYEyWRy15V_gJ4FmfA16vqg7j0I"
       }
     },
     {
@@ -185,8 +167,7 @@
         "occupation": "EMEA Support Manager & Site Leader Hungary at Liferay",
         "id": "11412051",
         "publicId": "gaborambrozy",
-        "profileId": "ACoAAACuIlMB6V91E2LszGw_-IeVnuFmwG5Y9Ig",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQG0WMvWy5DqIQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1670317906661?e=1781136000&v=beta&t=HvY0ID4OrasadbAzI8U9XPWOXcToE3jZLgya-HFZ9ow"
+        "profileId": "ACoAAACuIlMB6V91E2LszGw_-IeVnuFmwG5Y9Ig"
       }
     },
     {
@@ -199,9 +180,7 @@
         "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
         "id": "13167565",
         "publicId": "citizenmani",
-        "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQEqC5x0akFu1Q/profile-displayphoto-crop_800_800/B56ZlSvDmfIAAM-/0/1758029692620?e=1781136000&v=beta&t=2MjEAUEFd1OccqmtlnzcSzG2gHUquLzw5MI-3XUUfOM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHZC49bFZ8ZTQ/profile-displaybackgroundimage-shrink_350_1400/B56ZxDZv79KIAY-/0/1770657351768?e=1781136000&v=beta&t=kVGPoYvqmMzYICMmu_0FODKNvqUNjsGRcvULLqy01EA"
+        "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ"
       }
     },
     {
@@ -214,9 +193,7 @@
         "occupation": "Product Owner & Dad | Building great products, raising great humans",
         "id": "283596586",
         "publicId": "fusatytata",
-        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEP3Q4BtiThDA/profile-displayphoto-shrink_800_800/B4EZc_c90wHIAc-/0/1749116247942?e=1781136000&v=beta&t=_QtTBgXEBbo6wLgAeAyA_Vwe266kRM2rafjtUTqdQ18",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFllW8t92LUXg/profile-displaybackgroundimage-shrink_350_1400/B4EZkO0XOcHEAY-/0/1756890233024?e=1781136000&v=beta&t=BcgfXCQP09cdXXYAi_lrlRlt4F-p0U2rPgEazsl9SeQ"
+        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k"
       }
     },
     {
@@ -229,9 +206,7 @@
         "occupation": "Full Stack Developer | Node.js • React • Azure",
         "id": "762997811",
         "publicId": "miloslav-jezek",
-        "profileId": "ACoAAC16bDMBDX69DVpckffdp3s7WQFJkN9ZQPE",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQGIaim7FGwUJA/profile-displayphoto-shrink_800_800/B56Zdkuyu7G0Ac-/0/1749741678525?e=1781136000&v=beta&t=KQKd_q5so7d1ouew_efpkZxAIdS6aSgktGBupgxMjVI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGnePf9ZiYoeQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ12v8ppKIAY-/0/1775813774467?e=1781136000&v=beta&t=ZMWvvJcgxN49hDEp-ojj2oIgKRgbrKfKywk0xtPf6_s"
+        "profileId": "ACoAAC16bDMBDX69DVpckffdp3s7WQFJkN9ZQPE"
       }
     },
     {
@@ -244,9 +219,7 @@
         "occupation": "Talent Sourcer @ SentinelOne.ai | The Future of CyberSec will be determined by You - let’s Secure Tomorrow™ together! 🛡️👾 | In 💜 with s1.ai/PurpleAI | 🕵️‍♂️ CyBeer security meetups organizer",
         "id": "322518163",
         "publicId": "vaclavkotyk",
-        "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHSFfNAAQ3ojA/profile-framedphoto-shrink_800_800/B4EZb.aDPLHAAs-/0/1748024964389?e=1780430400&v=beta&t=IvlxsfQQdb8KqO1QvRvDLxo7b9-V1Qrgz29nKWhJehw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG_GZHPXo_drQ/profile-displaybackgroundimage-shrink_350_1400/B4EZhWDO5THEAY-/0/1753790347174?e=1781136000&v=beta&t=TTJXtHJi0vF694Nao68XfleeSQJvzU06We8EI4GVwQI"
+        "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0"
       }
     },
     {
@@ -259,9 +232,7 @@
         "occupation": "Data Engineer ☆ Data analyst",
         "id": "689768652",
         "publicId": "michaela-ella-maleckova",
-        "profileId": "ACoAACkdCMwB3ZHqe7uP9J5zQIm7UsUq0AZq_fU",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQEkMuOntxhIIQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1559736204862?e=1781136000&v=beta&t=gEOlkxcsE-rOWHXjJITwrVFqhta5lVnJ2zxQjFV_UDo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEW42JBTqgEIQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1646894880959?e=1781136000&v=beta&t=Tu9hXulHTsHpzhdNhoRvdFR0akTHqDW_Pjf-k5z6gbs"
+        "profileId": "ACoAACkdCMwB3ZHqe7uP9J5zQIm7UsUq0AZq_fU"
       }
     }
   ],
@@ -281,8 +252,7 @@
             "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
             "id": "183293578",
             "publicId": "dariagru",
-            "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
-            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+            "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0"
           }
         }
       ],
@@ -295,8 +265,6 @@
         "id": "100207166",
         "publicId": "antonina-berkivska",
         "profileId": "ACoAAAX5Cj4BlCuctXVaPKjpdR3XA1Q8r6mdiT0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHuBXe66ldb_A/profile-displayphoto-shrink_800_800/B4DZd.VAcQHAAc-/0/1750171126297?e=1781136000&v=beta&t=erUXiaymMbQwQUtCJNxRKfLI6wkVvbVP2aVqJead5pk",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGhNi2FzUumRQ/profile-displaybackgroundimage-shrink_350_1400/B4DZd.U7p.HMAY-/0/1750171107433?e=1781136000&v=beta&t=etjuc4YgVzY0R9I_S1iHxk5apjNVqHImp8d9VSbnmPA",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -314,8 +282,6 @@
         "id": "525351228",
         "publicId": "domitil-katemo-850b32127",
         "profileId": "ACoAAB9QOTwBjYo-pyQWuo9wx4mjFG9_olxX9_w",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQF2thtGX-TWJw/profile-framedphoto-shrink_800_800/B4DZyG41szJkAg-/0/1771789573559?e=1780430400&v=beta&t=edCNW0Xp2QsHGzEq5tuKBIrFtTAiO9pKuO8MdPuo_Lk",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGvlgCVKL_gfA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1690930951851?e=1781136000&v=beta&t=egWwtJU0YVsPFZdf3v1spQIdxEjONh7RDDObx3aSJlw",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -334,8 +300,7 @@
             "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
             "id": "183293578",
             "publicId": "dariagru",
-            "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
-            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+            "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0"
           }
         }
       ],
@@ -348,8 +313,6 @@
         "id": "70262427",
         "publicId": "alenahuberova",
         "profileId": "ACoAAAQwHpsBEvf3U3VEUg1VE6vhhOWyYcJNvL4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG15WO3QuHgQg/profile-displayphoto-crop_800_800/B4EZflZCy2HYAM-/0/1751900238455?e=1781136000&v=beta&t=3258vVU95ybNc81v-IXTiETDpFf1E-RGRUcVFpsGnXU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEMrnpNgpAN6g/profile-displaybackgroundimage-shrink_350_1400/B4EZuYqALIHcAc-/0/1767792707330?e=1781136000&v=beta&t=e3ao4dP7q94WehV1AXaSs4dTBJKEwJnFlPMDsDsl2k8",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -367,8 +330,6 @@
         "id": "322518163",
         "publicId": "vaclavkotyk",
         "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHSFfNAAQ3ojA/profile-framedphoto-shrink_800_800/B4EZb.aDPLHAAs-/0/1748024964389?e=1780430400&v=beta&t=IvlxsfQQdb8KqO1QvRvDLxo7b9-V1Qrgz29nKWhJehw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG_GZHPXo_drQ/profile-displaybackgroundimage-shrink_350_1400/B4EZhWDO5THEAY-/0/1753790347174?e=1781136000&v=beta&t=TTJXtHJi0vF694Nao68XfleeSQJvzU06We8EI4GVwQI",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -386,8 +347,6 @@
         "id": "8517488",
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -401,9 +360,7 @@
         "occupation": "Software Engineer @ Redpanda Data",
         "id": "512298893",
         "publicId": "beniaminmalinski",
-        "profileId": "ACoAAB6JD40BS7KH7Rcqdb_6ljKoYwIl60jYBJI",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQHsgcOHxUUmZA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1549405517954?e=1781136000&v=beta&t=ItEvOsmbEJegiO3gyZT_pUxCbHNgRRdL9p6S6V6nXLQ",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGKr8KkiVJQ0g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1647313565925?e=1781136000&v=beta&t=M_Rnsqiw-B5yGvYDH8RTpGECHnMA9Wg16zLn6X_dN8w"
+        "profileId": "ACoAAB6JD40BS7KH7Rcqdb_6ljKoYwIl60jYBJI"
       }
     },
     {
@@ -414,9 +371,7 @@
         "occupation": "Software Engineer | JavaScript, TypeScript, React & Node.js | Web3 & Cloud on AWS | Interested in Software Architecture and AI-assisted coding 🚀",
         "id": "7614604",
         "publicId": "marcofriso",
-        "profileId": "ACoAAAB0MIwBvz-6wL8bknVvqqtBibNVBWZr7Ks",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF8oBDqRcyJ5w/profile-displayphoto-shrink_800_800/B4DZb81wAeGYAg-/0/1747998671544?e=1781136000&v=beta&t=rtFCZsTS5k1SzKiPX6a8aItB3hHR6dBwjrtFPli7DnI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFXG5KdQtlzdg/profile-displaybackgroundimage-shrink_350_1400/B4DZYUwiTqHsAY-/0/1744104991561?e=1781136000&v=beta&t=AY16XBVlSxMTya4bhOdW7iPlO9vQQYnAdse47RlNYUM"
+        "profileId": "ACoAAAB0MIwBvz-6wL8bknVvqqtBibNVBWZr7Ks"
       }
     },
     {
@@ -427,9 +382,7 @@
         "occupation": "Public Interest Technologist",
         "id": "25255566",
         "publicId": "kushal-das-5a655b8",
-        "profileId": "ACoAAAGBXo4B-1IVEMWfoqNyLka5D4Udk8auwM4",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEl8CP-BJ18_w/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1613458706708?e=1781136000&v=beta&t=mAZpp553t8ElWyF3iaGAUkaFQsuO0v2uov6ZUWpSBwQ",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHtKPZTbYTNgw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1625124268428?e=1781136000&v=beta&t=FXlD8f3poBrrNGSpNKIhiD_t-I6CieiV5oN8bhrHwWg"
+        "profileId": "ACoAAAGBXo4B-1IVEMWfoqNyLka5D4Udk8auwM4"
       }
     },
     {
@@ -440,8 +393,7 @@
         "occupation": "Engineering manager at GWI",
         "id": "423469902",
         "publicId": "terezavelka",
-        "profileId": "ACoAABk9o04BALgEjSBNzPfdLS6nlWpkHpmV52M",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEo0axnXQ8fkQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1633605829670?e=1781136000&v=beta&t=N4-BhaZopVKogIKn529nDMJpNXeNk6REkE0DsiQFymI"
+        "profileId": "ACoAABk9o04BALgEjSBNzPfdLS6nlWpkHpmV52M"
       }
     },
     {
@@ -452,9 +404,7 @@
         "occupation": "COO & GTM at Apify, the marketplace of tools for AI",
         "id": "506831532",
         "publicId": "ondra-urban",
-        "profileId": "ACoAAB41oqwBL2jB4--59vsVSBSsMXdxKTDRe5g",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGUtgKY_PfO6Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1633972161241?e=1781136000&v=beta&t=0XscNyXr9yvkrZk1lt-vJ6GoP0FwsqC927eDJPjvddk",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQH7Cm2uEIF5yg/profile-displaybackgroundimage-shrink_350_1400/B56Z4WGvp.GUAU-/0/1778487327651?e=1781136000&v=beta&t=w7DqAUbm0l0sCcUB6wjyk4099orV8blVl9mi01Ed4J8"
+        "profileId": "ACoAAB41oqwBL2jB4--59vsVSBSsMXdxKTDRe5g"
       }
     },
     {
@@ -465,9 +415,7 @@
         "occupation": "Technologist focused on Cloud-Native technologies, DevOps, CI/CD and automation. | AWS | Azure | Kubernetes | Terraform |",
         "id": "328285536",
         "publicId": "vuyisile-ndlovu-080b3891",
-        "profileId": "ACoAABORPWABu-EQgksb-xNyBYO-sRsWWuYd2cc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGqv3Kru_XHAw/profile-displayphoto-shrink_800_800/B4DZYkQAMEHAAc-/0/1744364898040?e=1781136000&v=beta&t=CfUUp2rZIc9mTttzkJTpLQPCPM8bhfb4aHNqcpwvIvg",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGCGoFCsON6VA/profile-displaybackgroundimage-shrink_350_1400/B4EZh.XbhGGYAY-/0/1754466730063?e=1781136000&v=beta&t=omFnwxquH9OWqjSt_Wo4UI8r4MzHiWfV3kvHtNTz6Vk"
+        "profileId": "ACoAABORPWABu-EQgksb-xNyBYO-sRsWWuYd2cc"
       }
     },
     {
@@ -489,8 +437,7 @@
         "occupation": "Sr Software Engineer / Tech lead @ Workday",
         "id": "893188",
         "publicId": "patrickmedina",
-        "profileId": "ACoAAAANoQQBp4QlQSJtgMXfmZ_C-Ttp3d1JT3E",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEIaFpgX__1hA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516241023589?e=1781136000&v=beta&t=1xryIHSsJgqaE2eh4MbTAkoAIW_LjizoWYppnMcMj2M"
+        "profileId": "ACoAAAANoQQBp4QlQSJtgMXfmZ_C-Ttp3d1JT3E"
       }
     },
     {
@@ -501,8 +448,7 @@
         "occupation": "Senior Project Manager at Liferay",
         "id": "192084729",
         "publicId": "nora-szel-1893b454",
-        "profileId": "ACoAAAty-vkBdlh0NzWiLcSEqEDdmDjOKCJ5gnk",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFOmdKovbMqQA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1637504332338?e=1781136000&v=beta&t=cg5IuIFSTbO32J-zOkiTldpDeG8TFCL-Fry-9Hygv0o"
+        "profileId": "ACoAAAty-vkBdlh0NzWiLcSEqEDdmDjOKCJ5gnk"
       }
     },
     {
@@ -513,8 +459,7 @@
         "occupation": "• Working on a quixotic project, please hold...",
         "id": "4026630",
         "publicId": "hugo-van-der-merwe-2864221",
-        "profileId": "ACoAAAA9cQYBB-R7Ucr3ocpDQW4TpT38gj9138M",
-        "picture": "https://media.licdn.com/dms/image/v2/C5103AQEE_SzScqMPFQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516266281093?e=1781136000&v=beta&t=4kbCV9_mmz71mQNGWSXQ47t5VJEuW3UDfHnNCrzWSnw"
+        "profileId": "ACoAAAA9cQYBB-R7Ucr3ocpDQW4TpT38gj9138M"
       }
     }
   ],
@@ -534,8 +479,7 @@
     "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
     "id": "183293578",
     "publicId": "dariagru",
-    "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+    "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0"
   },
   "authorProfileId": "dariagru",
   "authorType": "Person",

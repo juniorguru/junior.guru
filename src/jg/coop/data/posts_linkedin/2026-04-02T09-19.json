@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/D4D22AQHWkFaAF3hoAg/feedshare-image-high-res/B4DZ1M.uhHIwAY-/0/1775113005434?e=1781136000&v=beta&t=OTy5knRQZBTXUoA6qenBN5zHIuUJIz3arCSNdsdgYWA"
-  ],
+  "images": [],
   "isActivity": true,
   "activityDescription": "Honza Javorek reposted this",
   "activityOfUser": {
@@ -11,9 +9,7 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "urn": "urn:li:activity:7445399488778809344",
   "url": "https://www.linkedin.com/posts/nela-slezakova_zdrav%C3%ADm-v%C5%A1echny-n%C4%9Bkte%C5%99%C3%AD-si-mo%C5%BEn%C3%A1-pamatujete-activity-7445363585083588610-9NcJ",
@@ -36,8 +32,6 @@
         "id": "310860473",
         "publicId": "liborkomarek",
         "profileId": "ACoAABKHWrkBicmWZqk8JCyj3fYGi2mWr6oZvCc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHTTOQUyoizEw/profile-displayphoto-crop_800_800/B4DZxB5mEPGgAI-/0/1770632147882?e=1781136000&v=beta&t=E4n9l9BCpI67kuw8wkr95ztJFTUAGQni7yG7a44lenA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQF40s19kAzRcQ/profile-displaybackgroundimage-shrink_350_1400/B4DZxBt5WLIAAg-/0/1770629077195?e=1781136000&v=beta&t=11Fq1GJj4cgfzkTKAhM-aFGtI-YCYnmggh-Vn3clWPg",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -55,8 +49,6 @@
         "id": "1096856048",
         "publicId": "filip-vrba-xi",
         "profileId": "ACoAAEFgsfAB6UEqATnQC5WYAK9CKoqVuKxELV8",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEHTYW7WpylsQ/profile-displayphoto-crop_800_800/B4DZy1Vn8OJoAI-/0/1772568872170?e=1781136000&v=beta&t=FYbhdJSlPhFfzVZ0ROQeaM3MX4lx8GIoy4ONRYEr1TI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGGcinbJCt2AA/profile-displaybackgroundimage-shrink_350_1400/B4DZw8393WH4AY-/0/1770547831711?e=1781136000&v=beta&t=-yNC2EXGEkYL6qecJTBSMr03YX2Ysj9_VuJWXvrPxXE",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -81,9 +73,7 @@
         "occupation": "Talent Sourcer @ SentinelOne.ai | The Future of CyberSec will be determined by You - let’s Secure Tomorrow™ together! 🛡️👾 | In 💜 with s1.ai/PurpleAI | 🕵️‍♂️ CyBeer security meetups organizer",
         "id": "322518163",
         "publicId": "vaclavkotyk",
-        "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHSFfNAAQ3ojA/profile-framedphoto-shrink_800_800/B4EZb.aDPLHAAs-/0/1748024964389?e=1780430400&v=beta&t=IvlxsfQQdb8KqO1QvRvDLxo7b9-V1Qrgz29nKWhJehw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG_GZHPXo_drQ/profile-displaybackgroundimage-shrink_350_1400/B4EZhWDO5THEAY-/0/1753790347174?e=1781136000&v=beta&t=TTJXtHJi0vF694Nao68XfleeSQJvzU06We8EI4GVwQI"
+        "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0"
       }
     },
     {
@@ -94,9 +84,7 @@
         "occupation": "Vi veri universum vivus vici.",
         "id": "250840004",
         "publicId": "martin-kazda-05800a70",
-        "profileId": "ACoAAA7zg8QBW9ug4ZF79qJELHLh2P2-x0BG4wg",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGqaltiFTEQVw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1555509716836?e=1781136000&v=beta&t=LKFuaW9csQ3RIamU-qksmZjwC6osiYSOEqZHWgyv_-I",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGq5aTo7ZT2_Q/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1555573627688?e=1781136000&v=beta&t=2_hewSNJBZ0IoxIxqmGSZAVioKsGvIpZbiTUxsmOEFU"
+        "profileId": "ACoAAA7zg8QBW9ug4ZF79qJELHLh2P2-x0BG4wg"
       }
     },
     {
@@ -107,9 +95,7 @@
         "occupation": "Ψ Organizational Psychologist I Consultant",
         "id": "1003110476",
         "publicId": "adriána-neupauerová",
-        "profileId": "ACoAADvKQEwBKIT5IS694P43Ma5Cm5RSvC3d7og",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEVCVarDrsWCw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1680780928571?e=1781136000&v=beta&t=gOfMKhvpoGeh9ZyW4SlrfeLeX298xJvdYFLvx5qRNhc",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHSJalWr-pWCQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1671710068946?e=1781136000&v=beta&t=tXc-iAo_UG49DLUGqn7JKyxU4n4kWP6lO8uEaBippI8"
+        "profileId": "ACoAADvKQEwBKIT5IS694P43Ma5Cm5RSvC3d7og"
       }
     },
     {
@@ -120,8 +106,7 @@
         "occupation": "Psychologist, Educator // Lover of effective altruism, Non-violent communication & Scout mindset",
         "id": "145144224",
         "publicId": "hana-řádová-60073740",
-        "profileId": "ACoAAAimuaABO8Eko22nvRcRGsGya7OC1iwwQsA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGaNPayTuVr1w/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1662480416726?e=1781136000&v=beta&t=C1SIkrrX6X5ghUTS4jrnfkfufmOFSOXk4wdzOKNc188"
+        "profileId": "ACoAAAimuaABO8Eko22nvRcRGsGya7OC1iwwQsA"
       }
     },
     {
@@ -132,9 +117,7 @@
         "occupation": "Founder hodinové kanceláře v Brně | produkťák v sw",
         "id": "460055279",
         "publicId": "katerina-handrk",
-        "profileId": "ACoAABtr4u8BgW5w-0z7k11Y-p2B7TNNHObpuO4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFRG4uHXcE6Yg/profile-displayphoto-crop_800_800/B4DZx7TZP5HcAM-/0/1771595215946?e=1781136000&v=beta&t=xBGx34cVTuxCG29NJfQWq1ZUUNQ07mdeTi02KWbqFms",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFLjvhQuch1mQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ5LkWMEJQAU-/0/1779384280136?e=1781136000&v=beta&t=8MTZMBzRmqQ5UU75y43Wl24-iyH_hfynA4ToGGjVkSk"
+        "profileId": "ACoAABtr4u8BgW5w-0z7k11Y-p2B7TNNHObpuO4"
       }
     },
     {
@@ -145,8 +128,7 @@
         "occupation": "Scrum Master at AURA, s.r.o.",
         "id": "449413760",
         "publicId": "petra-šišková-4a8611106",
-        "profileId": "ACoAABrJgoAB5AsyWucvMIYOD7VEdydRT2lB54o",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFsmWsVQba9yw/profile-displayphoto-crop_800_800/B4DZrecyc6JMAI-/0/1764668680636?e=1781136000&v=beta&t=TJaXbVHgHtfv96i8gsEGrdle0iAWLCq_3bM4CzEbD-w"
+        "profileId": "ACoAABrJgoAB5AsyWucvMIYOD7VEdydRT2lB54o"
       }
     },
     {
@@ -157,9 +139,7 @@
         "occupation": "Web editor & Coder",
         "id": "598710930",
         "publicId": "tereza-buchtova",
-        "profileId": "ACoAACOvmpIBrfm6QHfVhoAuUKj_DE3y3Ww7Lns",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF-uFxUcGjbzQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1701510354732?e=1781136000&v=beta&t=rSCX1Dn5Fa_80lFn0TUYlfszNpWYW0f8-yEDrz1unYo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQFDzEtGzTSilw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1655839105388?e=1781136000&v=beta&t=cDek_x8niQ1PstGn-lHj1zAouzFJEMhItVjQ2h2X9ZU"
+        "profileId": "ACoAACOvmpIBrfm6QHfVhoAuUKj_DE3y3Ww7Lns"
       }
     },
     {
@@ -170,8 +150,7 @@
         "occupation": "Life is constant learning. I love to learn, I love to live.",
         "id": "205470496",
         "publicId": "lenkakasova",
-        "profileId": "ACoAAAw_OyABe8YQoil3Fwg8JuRqMRonGMie6wk",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGf1G1Fn4Ek9A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726389372537?e=1781136000&v=beta&t=gNs4ZESkJpagZnhH5coPfJcS_89t_2aoldfujkDC45g"
+        "profileId": "ACoAAAw_OyABe8YQoil3Fwg8JuRqMRonGMie6wk"
       }
     },
     {
@@ -182,9 +161,7 @@
         "occupation": "junior ServiceNow developer",
         "id": "1145769566",
         "publicId": "hana-maruskevicova",
-        "profileId": "ACoAAERLDl4BC7nFv9k5_r5G0yjoAe8OxJXCQcI",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEiVPnnGiNm2A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715849641922?e=1781136000&v=beta&t=D9EQ3K10-HyTow3GyzCfKQdOh-q4uEpb0GK0zwts_hU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGbcpz8eJX9FQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1721303643512?e=1781136000&v=beta&t=XDCTZurtFvCHkCsQuW1g4mKyMj3A2O9PTKjBQJAwdC8"
+        "profileId": "ACoAAERLDl4BC7nFv9k5_r5G0yjoAe8OxJXCQcI"
       }
     }
   ],
@@ -204,12 +181,9 @@
     "occupation": "Psycholožka & programátorka",
     "id": "480212921",
     "publicId": "nela-slezakova",
-    "profileId": "ACoAAByfd7kBTrRNPdPbFJVO_tDUL0T4wKurjsE",
-    "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGHIISb698PEw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1682691059414?e=1781136000&v=beta&t=9cFsIaEIvL-qcKCcsBGJU4Fk7gT41mOPNDgRDzTJjuo",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQENHWJuh8GvxA/profile-displaybackgroundimage-shrink_350_1400/B4DZXs0pSvG4Ac-/0/1743434981675?e=1781136000&v=beta&t=VjhVIEGV-wcRsv244fTjhWO4grFCQyW4XgWgVLH-KRY"
+    "profileId": "ACoAAByfd7kBTrRNPdPbFJVO_tDUL0T4wKurjsE"
   },
   "authorProfileId": "nela-slezakova",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4E03AQGHIISb698PEw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1682691059414?e=1781136000&v=beta&t=9cFsIaEIvL-qcKCcsBGJU4Fk7gT41mOPNDgRDzTJjuo",
   "authorType": "Person",
   "authorName": "Nela Slezáková",
   "authorProfileUrl": "https://www.linkedin.com/in/nela-slezakova?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAByfd7kBTrRNPdPbFJVO_tDUL0T4wKurjsE",

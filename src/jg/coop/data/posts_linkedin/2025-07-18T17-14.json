@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/D4E10AQE8sFI3dRH37w/image-shrink_1280/B4EZf47j8vGwAM-/0/1752228053911?e=1780430400&v=beta&t=QFkVQ2EzEeWpS0kR-JEJLjAeTzPdk3wVRfLoBRf1D-U"
-  ],
+  "images": [],
   "isActivity": true,
   "activityDescription": "Honza Javorek reposted this",
   "activityOfUser": {
@@ -11,9 +9,7 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "urn": "urn:li:activity:7352022864880959489",
   "url": "https://www.linkedin.com/posts/europython_a-warm-thank-you-to-junior-guru-for-supporting-activity-7349377222643777537-3FFB",
@@ -30,8 +26,7 @@
         "universalName": "juniorguru",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:26218444",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQE89NmYF-XT4g/company-logo_400_400/company-logo_400_400/0/1638266899010/juniorguru_logo?e=1781136000&v=beta&t=ad516CNUThMN8eXeVboC5S9U_y2Dnn1UhQn70wIGlxE"
+        "entityUrn": "urn:li:fs_miniCompany:26218444"
       }
     }
   ],
@@ -50,8 +45,6 @@
         "id": "8517488",
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -65,9 +58,7 @@
         "occupation": "Lead Software Engineer | Agentic AI | AI Native Applications | Python",
         "id": "144455594",
         "publicId": "archana-alva-m",
-        "profileId": "ACoAAAicN6oBFgvfFAtYKj3Ihr66J3cQ3oSEUnw",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFJAIvpzpiC1A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1626344133496?e=1781136000&v=beta&t=56wdkwPU4YmasTFrbIsKciPh0sSm6XK1ujUHV9Rixt4",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGv-IheeLRqzw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1655110594172?e=1781136000&v=beta&t=hzvQm1C0aLBiWxS5z6ZxONOz0Gllb_he4EDLpu76a1k"
+        "profileId": "ACoAAAicN6oBFgvfFAtYKj3Ihr66J3cQ3oSEUnw"
       }
     },
     {
@@ -78,9 +69,7 @@
         "occupation": "Komuniťák v Czechitas 🏄‍♂️",
         "id": "726742558",
         "publicId": "matejkahun",
-        "profileId": "ACoAACtRNh4Bgs49PDAKRTrJ0zQclHv-UqoqjOs",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEFdqnLrw3tqA/profile-displayphoto-shrink_800_800/B4EZVGmAK_GYAg-/0/1740646122793?e=1781136000&v=beta&t=kXs1stUYIteew7uBR7C0b1NfoOSP9z9D7Wl_jTtZgU4",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHHulpwLgpD-g/profile-displaybackgroundimage-shrink_350_1400/B4DZzXhX0NH4Ac-/0/1773142376451?e=1781136000&v=beta&t=JhX7zrUGEPQ6CMtCimmgq0aYfeZ6PJRvlkNsVohIwkU"
+        "profileId": "ACoAACtRNh4Bgs49PDAKRTrJ0zQclHv-UqoqjOs"
       }
     },
     {
@@ -91,8 +80,7 @@
         "occupation": "Software Engineer",
         "id": "640918799",
         "publicId": "georgioszisopoulos",
-        "profileId": "ACoAACYzpQ8BhyoG6YvX76n-rfXhvIHMiqRjj1g",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEeoEEZQZMpxw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712060472016?e=1781136000&v=beta&t=Wck3-qTf95rYqIXnTT5kgrjQ0EYoDoeyM4-5_bDyKeM"
+        "profileId": "ACoAACYzpQ8BhyoG6YvX76n-rfXhvIHMiqRjj1g"
       }
     },
     {
@@ -103,9 +91,7 @@
         "occupation": "Moderátor ve společnosti DATA mesh",
         "id": "637440646",
         "publicId": "py-veronika-zpevakova",
-        "profileId": "ACoAACX-koYBZCeuCb06SzAT8F955fJvI0OEIAc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG1ZWtWd7gYPA/profile-displayphoto-crop_800_800/B4EZf8w5aYH4AI-/0/1752292366705?e=1781136000&v=beta&t=U6HWTwf03AjW7HUEmYBNf3bJUPuiUzWy7Erk0Q6kAbw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGprRlAotow1Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1519121908586?e=1781136000&v=beta&t=XpMvIj6AwaxV4O3LsHEORi7O8FcmUA6h5NM_51qe9xg"
+        "profileId": "ACoAACX-koYBZCeuCb06SzAT8F955fJvI0OEIAc"
       }
     },
     {
@@ -116,9 +102,7 @@
         "occupation": "AI Specialist at Raiffeisenbank a.s.",
         "id": "475183572",
         "publicId": "martin-rapavy",
-        "profileId": "ACoAABxSudQBHuhA8cJ5OL9XXk9jIvrhocisM3w",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG-uEYWYQCi4w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1691341533471?e=1781136000&v=beta&t=TPnx6_RUaVTc-zVJyopipcS6x0aME46dvKqyIHnqifE",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFwzvr2gYb0EA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1716196276872?e=1781136000&v=beta&t=WHgrvkrw78fRS0FNPdG84I2uf_O9Aj4XkZP7HZ0Jbo8"
+        "profileId": "ACoAABxSudQBHuhA8cJ5OL9XXk9jIvrhocisM3w"
       }
     },
     {
@@ -129,9 +113,7 @@
         "occupation": "⚛️ FE developer - Application SW Engineer",
         "id": "416963620",
         "publicId": "nikolen",
-        "profileId": "ACoAABjaXCQBlHaQQzH6IcpkDvnQBKdNnyXC-IY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFsYpwgZIoFrg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693683002257?e=1781136000&v=beta&t=QR0B0WWPAMoMM7t8iEMA6hRR_dVUeXPf2BIAipk5H2A",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFi7q3Cb9nHTg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1732203022293?e=1781136000&v=beta&t=72AuWy2PRv8_o0F3yuZOB4WJwneTfC5GspdNvmkT5LY"
+        "profileId": "ACoAABjaXCQBlHaQQzH6IcpkDvnQBKdNnyXC-IY"
       }
     },
     {
@@ -142,8 +124,7 @@
         "occupation": "Data analyst passionate about systems integration",
         "id": "262585845",
         "publicId": "katerina-mackovikova-499b3373",
-        "profileId": "ACoAAA-mvfUBi9EOGyMJGQ2V5sq1pa_91Q3yqB4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH2cRv9plwRWg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723922714065?e=1781136000&v=beta&t=Ss6jpRWXSXGnUamkYVdDcbGXZ-Bph_qdyh7EaU1zXbk"
+        "profileId": "ACoAAA-mvfUBi9EOGyMJGQ2V5sq1pa_91Q3yqB4"
       }
     },
     {
@@ -154,9 +135,7 @@
         "occupation": "Product Owner & Dad | Building great products, raising great humans",
         "id": "283596586",
         "publicId": "fusatytata",
-        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEP3Q4BtiThDA/profile-displayphoto-shrink_800_800/B4EZc_c90wHIAc-/0/1749116247942?e=1781136000&v=beta&t=_QtTBgXEBbo6wLgAeAyA_Vwe266kRM2rafjtUTqdQ18",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFllW8t92LUXg/profile-displaybackgroundimage-shrink_350_1400/B4EZkO0XOcHEAY-/0/1756890233024?e=1781136000&v=beta&t=BcgfXCQP09cdXXYAi_lrlRlt4F-p0U2rPgEazsl9SeQ"
+        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k"
       }
     },
     {
@@ -167,9 +146,7 @@
         "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
         "id": "8517488",
         "publicId": "honzajavorek",
-        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
       }
     },
     {
@@ -180,9 +157,7 @@
         "occupation": "🧑‍🤝‍🧑 Working with and for communities, organizing events, studying service design, having fun in all that. ✏️",
         "id": "58610470",
         "publicId": "anezkamll",
-        "profileId": "ACoAAAN-UyYBW_5FlwBOtClk7WVpl3JlZMHMVn4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEdF62o6gzpHQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731942194763?e=1781136000&v=beta&t=3Pf8QBLlGpzI8zRBBfihj0pgDvCgOUoUJyTfMptX81Y",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHKgfW_KDXR1Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1620408094586?e=1781136000&v=beta&t=qk_LRa-WT8rOvas9-jwGjCle3e76MkO7wIKYYCWCZag"
+        "profileId": "ACoAAAN-UyYBW_5FlwBOtClk7WVpl3JlZMHMVn4"
       }
     }
   ],
@@ -201,10 +176,8 @@
     "universalName": "europython",
     "active": true,
     "showcase": false,
-    "entityUrn": "urn:li:fs_miniCompany:41130723",
-    "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQGz6u5D6KYABg/company-logo_400_400/B4DZxWmNTUJwAY-/0/1770979382977/europython_logo?e=1781136000&v=beta&t=pwjOEJznkhOEXcURlj3q2Nvk3DG-RH4f9owboCBcCU0"
+    "entityUrn": "urn:li:fs_miniCompany:41130723"
   },
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4D0BAQGz6u5D6KYABg/company-logo_400_400/B4DZxWmNTUJwAY-/0/1770979382977/europython_logo?e=1781136000&v=beta&t=pwjOEJznkhOEXcURlj3q2Nvk3DG-RH4f9owboCBcCU0",
   "authorType": "Company",
   "authorProfileId": "company",
   "authorFollowersCount": "7,209",

@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQHTBzCFKrNEXA/feedshare-shrink_800/feedshare-shrink_800/0/1677503129055?e=1781136000&v=beta&t=ShYo7E5b2gRPN8W7hQq89loHmCa27RNephncMbQEz38"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:7035958087731544064",
   "url": "https://www.linkedin.com/posts/honzajavorek_deeptalks-data-trh-activity-7035958087731544064-DQze",
@@ -20,8 +18,7 @@
         "occupation": "Host @ Junior Guru podcast.",
         "id": "190849253",
         "publicId": "pavlinafronkova",
-        "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk"
+        "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4"
       }
     },
     {
@@ -34,9 +31,7 @@
         "occupation": "data, research and analysis / labour market & education",
         "id": "177813432",
         "publicId": "tomas-ervin-dombrovsky",
-        "profileId": "ACoAAAqZN7gB-6u8v7m_DA5Hct8DE9-Cr5mGWXg",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQEkR0nNz4_baw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517571369665?e=1781136000&v=beta&t=Q0V_naH8RLh4d_0YNqPGGjtkd9DwOFJLfaoK6uBEQI4",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQHELmb1dxBIZQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517571371133?e=1781136000&v=beta&t=U16ZkiY2v_AW1boxYvnAZCqig8tminecYd4BWv903Ng"
+        "profileId": "ACoAAAqZN7gB-6u8v7m_DA5Hct8DE9-Cr5mGWXg"
       }
     },
     {
@@ -48,8 +43,7 @@
         "universalName": "lmc",
         "active": false,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:164753",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQEo6Xj7Y5h7zg/company-logo_400_400/company-logo_400_400/0/1631348004404?e=1781136000&v=beta&t=oRMnN0ebWG09pVxW42mzXecvSguDSHbyn9uK173nt00"
+        "entityUrn": "urn:li:fs_miniCompany:164753"
       }
     },
     {
@@ -62,9 +56,7 @@
         "occupation": "Keynote Speaker & Best-Selling Author ■ Turning AI from hype into real productivity ■ Author of “The End of Procrastination,” 500K+ Copies in 20+ Languages ■ CEO at Procrastination.com ■ New York / Prague / Singapore",
         "id": "26355527",
         "publicId": "petrludwig",
-        "profileId": "ACoAAAGSJ0cBb7bqK7aTerIfGg_CKRCbOMKKDtE",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGMM_3Dhzt0bw/profile-displayphoto-shrink_800_800/B4EZR80DPuGYAk-/0/1737260823252?e=1781136000&v=beta&t=0pewvVmstJXfnUaiqMd61ojyRsnnqlzx4uMunGLl5Lc",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF-gEBvobOwLg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1707210612440?e=1781136000&v=beta&t=O69esCC8GBfw5MuJY_QEZ_bbkTqRASDxFoCFFXwPk7c"
+        "profileId": "ACoAAAGSJ0cBb7bqK7aTerIfGg_CKRCbOMKKDtE"
       }
     }
   ],
@@ -84,8 +76,7 @@
             "occupation": "Host @ Junior Guru podcast.",
             "id": "190849253",
             "publicId": "pavlinafronkova",
-            "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
-            "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk"
+            "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4"
           }
         }
       ],
@@ -98,8 +89,6 @@
         "id": "177813432",
         "publicId": "tomas-ervin-dombrovsky",
         "profileId": "ACoAAAqZN7gB-6u8v7m_DA5Hct8DE9-Cr5mGWXg",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQEkR0nNz4_baw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517571369665?e=1781136000&v=beta&t=Q0V_naH8RLh4d_0YNqPGGjtkd9DwOFJLfaoK6uBEQI4",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQHELmb1dxBIZQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517571371133?e=1781136000&v=beta&t=U16ZkiY2v_AW1boxYvnAZCqig8tminecYd4BWv903Ng",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -124,8 +113,7 @@
         "occupation": "Tester at Aricoma",
         "id": "67819612",
         "publicId": "janastaurovska",
-        "profileId": "ACoAAAQK2FwBVO_W7Jolyq3t4hfljaH-mrQNovk",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQFIuNB6h0XKqg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1675938756141?e=1781136000&v=beta&t=0F3FRBTk2sL8QWKKRmMThur9cJKaslhexyVzVTJRnDM"
+        "profileId": "ACoAAAQK2FwBVO_W7Jolyq3t4hfljaH-mrQNovk"
       }
     },
     {
@@ -136,8 +124,7 @@
         "occupation": "SAP Junior Security Specialist",
         "id": "536137560",
         "publicId": "lenkagarcia",
-        "profileId": "ACoAAB_0z1gBo3fJjDGe-RFmhT6LlMrW8Fr3Lxs",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHcIP_wg_yVLw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1673301528851?e=1781136000&v=beta&t=1_X3rjwTkYJ12y2OgGkuNkeAB08P6gHwLh4owz5E2Bc"
+        "profileId": "ACoAAB_0z1gBo3fJjDGe-RFmhT6LlMrW8Fr3Lxs"
       }
     },
     {
@@ -148,9 +135,7 @@
         "occupation": "Frontend Developer - React and Next",
         "id": "740316381",
         "publicId": "blanka-semanová",
-        "profileId": "ACoAACwgVN0BXjPO356is1a7HECdYY6oGuzTouY",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQHt31UB9Dnr_g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1705586552175?e=1781136000&v=beta&t=VnaoT0wlgyuQQGLJMI1wvCsS4oGHAmClyqm-JikLvgE",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGmd9O2TBL9PA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1705586497192?e=1781136000&v=beta&t=JlZHwSEMta7stFHe1LeFKFVGgbpKpeFbQUUDebs_rnc"
+        "profileId": "ACoAACwgVN0BXjPO356is1a7HECdYY6oGuzTouY"
       }
     },
     {
@@ -172,9 +157,7 @@
         "occupation": "Former CEO at Czechitas | Strategy, growth, transformation & leadership | Building impactful organisations and strong teams | Currently on a leadership sabbatical",
         "id": "342535582",
         "publicId": "luciemairychova",
-        "profileId": "ACoAABRqrZ4BV0yHRJvY3UBVNGNsQrymA0dADl0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEEqWgQwhNoFA/profile-displayphoto-shrink_800_800/B4DZYww7i0HwAk-/0/1744574856555?e=1781136000&v=beta&t=Wn1FuFSxGEym8fvohTF9p8lD4WGgp57VJaE93rSS_-A",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHrWGqBSe2H8Q/profile-displaybackgroundimage-shrink_350_1400/B4DZnm8y9xG8AY-/0/1760516322044?e=1781136000&v=beta&t=fuT79sBMzFVBpUDHcJCRX7VLLN1y-YSmkbF5CjSVadY"
+        "profileId": "ACoAABRqrZ4BV0yHRJvY3UBVNGNsQrymA0dADl0"
       }
     },
     {
@@ -185,9 +168,7 @@
         "occupation": "I help great brands grow @STRV",
         "id": "337285701",
         "publicId": "strv-norbert-cerveny",
-        "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGKIAaUJPtlmA/profile-displayphoto-crop_800_800/B4DZ0jT_lBIEAI-/0/1774413941709?e=1781136000&v=beta&t=ioRFNZY53XZXWk1BvKTQdIygU-xxLKoyNysEAYklp0I",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG0ekEnNy2Hcw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0jTiNeGsAk-/0/1774413817026?e=1781136000&v=beta&t=_KMbjLzzfd2pO9gizTz2iWgDOkq5RQ3NpzDT5fOljNI"
+        "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg"
       }
     },
     {
@@ -198,9 +179,7 @@
         "occupation": "Executive and Direct Search Professional I Headhunter @ Boyden 💙",
         "id": "455381038",
         "publicId": "terezamatonohova",
-        "profileId": "ACoAABskkC4BICrnut4iSlMCA9cFccpER-ZmYrs",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEZSJcFPdML-w/profile-displayphoto-shrink_800_800/B4EZQrxdsnGcAc-/0/1735901175946?e=1781136000&v=beta&t=1H75n_W_eQ_JB7Sj_J76r1NxK-tE9h4cFrlTizRF6gY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGhcAST-B4s4w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1660722199953?e=1781136000&v=beta&t=WWX9s2qvGRYL8JOlCb_XRTLQrqq99O-tqAZR47ODKmg"
+        "profileId": "ACoAABskkC4BICrnut4iSlMCA9cFccpER-ZmYrs"
       }
     },
     {
@@ -211,8 +190,7 @@
         "occupation": "Employee Relations / HR | Hyundai Motor Manufacturing Czech",
         "id": "310682162",
         "publicId": "pmichl",
-        "profileId": "ACoAABKEojIBMc5OOITcu4r1rPDw8fIFFo1tG10",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEINk0otvWAVw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517051687938?e=1781136000&v=beta&t=xz_eGrJRn7-VC_UOcdxYyVm7n34zNpl3t15Gpam5GLI"
+        "profileId": "ACoAABKEojIBMc5OOITcu4r1rPDw8fIFFo1tG10"
       }
     },
     {
@@ -223,8 +201,7 @@
         "occupation": "Senior Data Analyst at Mews",
         "id": "100649752",
         "publicId": "marketa-lourenco",
-        "profileId": "ACoAAAX_yxgBI2oslXsIJO8gmesUHbHK-vGnGTo",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHNh9Y3DYWOkQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1639590611475?e=1781136000&v=beta&t=jfKOcatSeYz64BGX1k5utnrEdZsIUq_EMiKusXH9LYg"
+        "profileId": "ACoAAAX_yxgBI2oslXsIJO8gmesUHbHK-vGnGTo"
       }
     }
   ],
@@ -244,12 +221,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/D4D22AQGZ4mPB8g8HHw/feedshare-image-high-res/feedshare-image-high-res/0/1716892950358?e=1781136000&v=beta&t=a3lGpq4ExeTU_v--2UKA6FEmaAQTOXZZi0DszhMtdDU"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:7201170972530425858",
   "url": "https://www.linkedin.com/posts/honzajavorek_juniory-tr%C3%A1p%C3%AD-aktu%C3%A1ln%C3%AD-zbr%C5%BEd%C4%9Bn%C3%AD-n%C3%A1boru-activity-7201170972530425858-w1Yr",
@@ -20,9 +18,7 @@
         "occupation": "data, research and analysis / labour market & education",
         "id": "177813432",
         "publicId": "tomas-ervin-dombrovsky",
-        "profileId": "ACoAAAqZN7gB-6u8v7m_DA5Hct8DE9-Cr5mGWXg",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQEkR0nNz4_baw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517571369665?e=1781136000&v=beta&t=Q0V_naH8RLh4d_0YNqPGGjtkd9DwOFJLfaoK6uBEQI4",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQHELmb1dxBIZQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517571371133?e=1781136000&v=beta&t=U16ZkiY2v_AW1boxYvnAZCqig8tminecYd4BWv903Ng"
+        "profileId": "ACoAAAqZN7gB-6u8v7m_DA5Hct8DE9-Cr5mGWXg"
       }
     },
     {
@@ -34,8 +30,7 @@
         "universalName": "alma-career",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:3687265",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQFe2wOXohoVPA/company-logo_400_400/company-logo_400_400/0/1695386781052/alma_career_oy_logo?e=1781136000&v=beta&t=dqhmPadU-H9m_5l271gj8slL1E0yaFj63spAOkTHLgw"
+        "entityUrn": "urn:li:fs_miniCompany:3687265"
       }
     }
   ],
@@ -54,8 +49,6 @@
         "id": "305518024",
         "publicId": "frantisek-belay",
         "profileId": "ACoAABI11cgBiYUd5mdHjm10AnORRF8MlxAfPMs",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQG0ny2PbhUBWQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1585997827011?e=1781136000&v=beta&t=ftuKGYJI0pUgHOiUEiGIOgWqbMQUWkIA-Yf35zySi9Q",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEBNzyTWN_2PA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1697663240754?e=1781136000&v=beta&t=rrWUsBx88c9AA8sIETyhMcQ2oB6dKG7jg84ovJj09_o",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -73,8 +66,6 @@
         "id": "8517488",
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -88,9 +79,7 @@
         "occupation": "data – events – community",
         "id": "138678453",
         "publicId": "baradrb",
-        "profileId": "ACoAAAhEELUBh00AQMpcqeGwUSsN_Kuc2a0w0G8",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGphUcJREjOsw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1592866548522?e=1781136000&v=beta&t=-CBV_vWmEa9Tt9hihKKRIYRZbixOPqHWURYtAVLAPWA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFYwEy9vtmtRA/profile-displaybackgroundimage-shrink_350_1400/B4EZoxWhbMGUAY-/0/1761764582204?e=1781136000&v=beta&t=BB-3WCaFGq5vreqxcreioFwb9_pfD1Jc68wITvmER4s"
+        "profileId": "ACoAAAhEELUBh00AQMpcqeGwUSsN_Kuc2a0w0G8"
       }
     },
     {
@@ -101,9 +90,7 @@
         "occupation": "Learning & Development | Project coordination | HR coordination & Recruitment support | People & process management",
         "id": "253496935",
         "publicId": "tereza-trcalkova",
-        "profileId": "ACoAAA8cDmcB51f8Y0qMj042bVV7BNpm750zWwo",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHeO14T44cKdg/profile-displayphoto-crop_800_800/B4EZhRFki4GUAQ-/0/1753707075901?e=1781136000&v=beta&t=2PAzuaCmPOVZemMi897l0wRReCL1Vo-sGZUsndAbRAM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH3mnfWgHMclQ/profile-displaybackgroundimage-shrink_350_1400/B4DZz_t1ABKEAY-/0/1773816737066?e=1781136000&v=beta&t=YZZVvmLW3MKmifghBDdbs5GeNfgB0___I0OvMVkWslM"
+        "profileId": "ACoAAA8cDmcB51f8Y0qMj042bVV7BNpm750zWwo"
       }
     },
     {
@@ -114,9 +101,7 @@
         "occupation": "Corporate Performance Management with focus on planning",
         "id": "1040508481",
         "publicId": "daniel-sochor",
-        "profileId": "ACoAAD4E5kEBLCHsDKLT1OEFHWgrps9u9uU2q28",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHBknVVikZ2eg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1663180049851?e=1781136000&v=beta&t=PBOkmAKLPdR0bFBr7k5dPM4uhu_JoUdQrlTWzMjJfTI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEejJCzZWuZsQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1685560777271?e=1781136000&v=beta&t=RNbnuQoSoW1ssprXUZMs6PQgKnYwbuJmq8xSRRfIk4E"
+        "profileId": "ACoAAD4E5kEBLCHsDKLT1OEFHWgrps9u9uU2q28"
       }
     },
     {
@@ -127,9 +112,7 @@
         "occupation": "🎙 Pomáhám tvořit lepší podcasty | Spolu-moderátor Mileniálové & Jak na podcasty | 💻 Voicebot engineer",
         "id": "205073291",
         "publicId": "madrvojtech",
-        "profileId": "ACoAAAw5K4sBA8nVYoHPe91603FIAQM8Afcl3AQ",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQG-5m6_kiUCLw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1640351690167?e=1781136000&v=beta&t=P0XlPJMkia6IYO5QAPO5phO59ToKi83zvfyVGTTL0zk",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEiI6dmbVAZ-g/profile-displaybackgroundimage-shrink_350_1400/B4EZpVejb9IUAc-/0/1762370665436?e=1781136000&v=beta&t=iUrGuEbjzZUCmquyBnn-85zPgbBTAAWrH23N2Bzt5i4"
+        "profileId": "ACoAAAw5K4sBA8nVYoHPe91603FIAQM8Afcl3AQ"
       }
     },
     {
@@ -140,9 +123,7 @@
         "occupation": "Referent zaměstnanosti na Generálním ředitelství Úřadu práce ČR",
         "id": "292268144",
         "publicId": "monika-matějková-7a8a6881",
-        "profileId": "ACoAABFrqHABPBTSJ5-JkuVGLz2eqh8VOSct-LM",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGbMEYPQf28mQ/profile-displayphoto-crop_800_800/B4DZwfCDG2G4AM-/0/1770047159904?e=1781136000&v=beta&t=hboxEzjUGy81Q_PoGaYVh9a8pLRFiTmiB-vptTFJstU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHlq641XSoOOQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516851410961?e=1781136000&v=beta&t=bOPZyWrW5TxEmfC8dv7irxwOkK723f_jw-ZeBjoyZc0"
+        "profileId": "ACoAABFrqHABPBTSJ5-JkuVGLz2eqh8VOSct-LM"
       }
     },
     {
@@ -153,9 +134,7 @@
         "occupation": "COO & GTM at Apify, the marketplace of tools for AI",
         "id": "506831532",
         "publicId": "ondra-urban",
-        "profileId": "ACoAAB41oqwBL2jB4--59vsVSBSsMXdxKTDRe5g",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGUtgKY_PfO6Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1633972161241?e=1781136000&v=beta&t=0XscNyXr9yvkrZk1lt-vJ6GoP0FwsqC927eDJPjvddk",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQH7Cm2uEIF5yg/profile-displaybackgroundimage-shrink_350_1400/B56Z4WGvp.GUAU-/0/1778487327651?e=1781136000&v=beta&t=w7DqAUbm0l0sCcUB6wjyk4099orV8blVl9mi01Ed4J8"
+        "profileId": "ACoAAB41oqwBL2jB4--59vsVSBSsMXdxKTDRe5g"
       }
     },
     {
@@ -166,8 +145,7 @@
         "occupation": "Open to work",
         "id": "1249645854",
         "publicId": "dmytro-žhura-8266062aa",
-        "profileId": "ACoAAEp8FR4BksIc7G9DTFcZMobXlSJGJHbny4k",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQEQfWrpYY6UAg/profile-framedphoto-shrink_800_800/B4DZvQ0.32JwAg-/0/1768735108892?e=1780430400&v=beta&t=pdmeRY1LWtNhX-ZBmrWCwTelAx8jC4jzrZvd8i0zVsw"
+        "profileId": "ACoAAEp8FR4BksIc7G9DTFcZMobXlSJGJHbny4k"
       }
     },
     {
@@ -178,9 +156,7 @@
         "occupation": "E-commerce manager ve společnosti Actisport | Fotografka domácích mazlíčků",
         "id": "305559538",
         "publicId": "mrackovakaterina",
-        "profileId": "ACoAABI2d_IB-8nvgDy02m0XVVwyVocfXFJnCBw",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGJqEuRqGkuow/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1648839468539?e=1781136000&v=beta&t=Eqe6EGQMm0ugVsrCokTSiMnsjr_L2q92OxogkQwUYXQ",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQFbChUZ0jxHig/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1648841120050?e=1781136000&v=beta&t=5ITmtObsnXeHB54uhtaBKAD6Xmb-vTUCSDhLN3La56Q"
+        "profileId": "ACoAABI2d_IB-8nvgDy02m0XVVwyVocfXFJnCBw"
       }
     },
     {
@@ -191,9 +167,7 @@
         "occupation": "CEO | PPC specialista | Webdesigner | Seo služby | Online ochrana",
         "id": "945922594",
         "publicId": "martin-mervart-aaa954224",
-        "profileId": "ACoAADhhoiIBlAf7GGHIjBmH7CPIgvUC8XK_PWE",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHMK5JNYPpauw/profile-framedphoto-shrink_800_800/B4DZwzJfv6JkAg-/0/1770384653948?e=1780430400&v=beta&t=YrjrKHrPJyhNPrsprBRiQYyXrTF8UhJwaFMpGH9wIwM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQENlKg4Sflw4Q/profile-displaybackgroundimage-shrink_350_1400/B4DZw08KAOH4AY-/0/1770414712314?e=1781136000&v=beta&t=DiwoBh2cFZLIEmjbKDs5Kfe5oWCKpqIeG25ThIq6Nys"
+        "profileId": "ACoAADhhoiIBlAf7GGHIjBmH7CPIgvUC8XK_PWE"
       }
     },
     {
@@ -204,8 +178,7 @@
         "occupation": "Data analytics | Energy transition",
         "id": "114102236",
         "publicId": "janfdolezal",
-        "profileId": "ACoAAAbND9wBTGfUvBkG8--t6nWYBJcRm6qj8LI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGDiD2lCktv4Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1616743956066?e=1781136000&v=beta&t=9Q1PGraRSzb__h4cp2O1EwOE1gaZWHh89nk0FhoGeic"
+        "profileId": "ACoAAAbND9wBTGfUvBkG8--t6nWYBJcRm6qj8LI"
       }
     }
   ],
@@ -225,12 +198,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

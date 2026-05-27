@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/D4E22AQHW9xrnj0h09Q/feedshare-image-high-res/B4EZ1ETHZnIsAU-/0/1774967356372?e=1781136000&v=beta&t=FdXrpA-zjpYMN65Ns0-2397zlG_cH-We7blzXYdr3k8"
-  ],
+  "images": [],
   "isActivity": true,
   "activityDescription": "Honza Javorek reposted this",
   "activityOfUser": {
@@ -11,9 +9,7 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "urn": "urn:li:activity:7445088944591069184",
   "url": "https://www.linkedin.com/posts/gergelyorosz_this-is-either-brilliant-or-scary-anthropic-activity-7444752687247634432-V7Xg",
@@ -30,8 +26,7 @@
         "universalName": "the-pragmatic-engineer",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:76559651",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQG28xILEBktAQ/company-logo_400_400/company-logo_400_400/0/1635090153654?e=1781136000&v=beta&t=9hZ-Ii5gVB3GW8X1jivwr-PT_tD8RziEWA6wTaaGNro"
+        "entityUrn": "urn:li:fs_miniCompany:76559651"
       }
     },
     {
@@ -44,9 +39,7 @@
         "occupation": "Backend Engineer and Engineering leader",
         "id": "7016011",
         "publicId": "errebepe",
-        "profileId": "ACoAAABrDksBipZ1DOsfLQVfs5nRtl61wAszS2M",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQF9BH6lcj5DvA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516264393381?e=1781136000&v=beta&t=aL8dBS76ecvKQfr6KIWZEmNqUYIb-3f1ays_dmjoJK4",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGdtizZK_k50g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516264394043?e=1781136000&v=beta&t=xB6wpOWsAZQI-Avv5PU1XnPutWv-iaQ3DasMeptMj2Y"
+        "profileId": "ACoAAABrDksBipZ1DOsfLQVfs5nRtl61wAszS2M"
       }
     }
   ],
@@ -65,8 +58,6 @@
         "id": "458700308",
         "publicId": "francisco-j-revoredo-69874b109",
         "profileId": "ACoAABtXNhQBdkbYBI97CITUoB43fL0g-g57ITc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEmh1QnMnOuyg/profile-displayphoto-crop_800_800/B4DZ1QHVgpIkAI-/0/1775165596330?e=1781136000&v=beta&t=XsVV4zeh9xyjddUnQVLhG3G_M8NYdX-S7xPAl47dLfA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFoZH8l9Ot20Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1718752183774?e=1781136000&v=beta&t=7opxJzsCTfzyxmnp5lvoB64iu_K0XfFHeoVgaUsjzvA",
         "distance": "DISTANCE_2"
       }
     },
@@ -92,7 +83,6 @@
         "id": "100740015",
         "publicId": "dan-lo-bianco-7538a229",
         "profileId": "ACoAAAYBK68BkLT3g3HNqi1Js7cDv741qbz9wGs",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQEMHWI6Bapg_Q/profile-framedphoto-shrink_800_800/B4EZlyzEBTKcAg-/0/1758567612711?e=1780430400&v=beta&t=b9__F6rZ4sKHc7-JZwALzz4zsrpzTEWERbOcYpNktCQ",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -110,8 +100,6 @@
         "id": "5434781",
         "publicId": "vikassah",
         "profileId": "ACoAAABS7Z0Ba1HPKqgXVcuzy_exojNdub_Daek",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQF-DWgCoDKyJw/profile-displayphoto-crop_800_800/B4EZ10AoG7GkAI-/0/1775767817638?e=1781136000&v=beta&t=5zmV9oYS31u2Pu3vxKuz1OZbH9VYhgEqePN7U-J4pZM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFcFAtOd0quRw/profile-displaybackgroundimage-shrink_350_1400/B4EZ10C6TVIgAY-/0/1775768413802?e=1781136000&v=beta&t=7yIA6k_EbuZeYOZZUqetK0SBNQI5729JmHn9lyhDhvA",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -129,8 +117,6 @@
         "id": "262654687",
         "publicId": "ignaciodolan",
         "profileId": "ACoAAA-nyt8Bhcn6sAhoh5ft-5n_mUf0biEmFQE",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEOIkp8cO9cGA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1631789847931?e=1781136000&v=beta&t=osLxIzvQCQCrI_o5SpJUjy2HcrlVHPH6tvNb-9FxvPw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHNzj0Jl20Tsg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1729781880220?e=1781136000&v=beta&t=uIf5-3HUtG_rLkve3IfCUIG96bYkvAewAEK-o6j1PlA",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -149,9 +135,7 @@
             "occupation": "Deepdives on software engineering, tech careers and industry trends. Writing The Pragmatic Engineer, the #1 software engineering newsletter on Substack. Author of The Software Engineer’s Guidebook.",
             "id": "35967148",
             "publicId": "gergelyorosz",
-            "profileId": "ACoAAAIk0KwBsmE3oBadWSg2ettxmEyKbqZKG34",
-            "picture": "https://media.licdn.com/dms/image/v2/C5603AQGWBb92j8rCnA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1521407065106?e=1781136000&v=beta&t=_VZUsvtyJmLL6Rpa48v6vWqyzBssETGwy_Dk79LuSX0",
-            "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGadg42-Ar9vQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1541169970308?e=1781136000&v=beta&t=TxfCII3HaIKAw1ovnGTfv_oJS8lSy7foxc25liI6rbc"
+            "profileId": "ACoAAAIk0KwBsmE3oBadWSg2ettxmEyKbqZKG34"
           }
         }
       ],
@@ -164,8 +148,6 @@
         "id": "615457551",
         "publicId": "aviad-feig",
         "profileId": "ACoAACSvIw8BypdIa9-TQ21heA3KeBxEySYwfyI",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFsbKCesksMkw/profile-displayphoto-crop_800_800/B4DZuc2l6EHQAM-/0/1767863116487?e=1781136000&v=beta&t=xaatOd5l6eAMZKvgob13qaBAbG6qftDKUwQT1E3yESo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH6LBLZ0bQAJg/profile-displaybackgroundimage-shrink_350_1400/B4DZWzn6aaGcAY-/0/1742475341224?e=1781136000&v=beta&t=BR8MDU1GnvD6qSPYbsTvzTxme5WvWK-_2pEW_pSWjXI",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -183,8 +165,6 @@
         "id": "444252424",
         "publicId": "abraraltaf92",
         "profileId": "ACoAABp6wQgBqtmDXzJeI_A90KFSt4iR3rpOwfU",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQG0bM8tnJIi4g/profile-framedphoto-shrink_800_800/B4EZxPtvNrIkAg-/0/1770863916113?e=1780430400&v=beta&t=btiX4G3TPgUVJXGun7EhjiqPHnthBxEsadTTLuHRskM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEbUQ9Ja9xl7A/profile-displaybackgroundimage-shrink_350_1400/B56ZVXt8QeHQAY-/0/1740933417027?e=1781136000&v=beta&t=4A8ASNytEDif4FnBUFDL2c_ySbl20FOYmDuxU2zzebA",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -202,7 +182,6 @@
         "id": "2466641",
         "publicId": "iankoenig",
         "profileId": "ACoAAAAlo1EBFwc_oQN_qREerWlZ2I-6mYCbT3E",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHveZ31zQzFbg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516265040206?e=1781136000&v=beta&t=ZAq12sOh25M1nZh6uX6fXVrJJnIRRLjgc6mbt2VLIRo",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -220,8 +199,6 @@
         "id": "45544845",
         "publicId": "jon-dorando",
         "profileId": "ACoAAAK29Y0BP1Qk5GNQjKe4voehuvOF1dfC13Q",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGzF4gvK1GvYA/profile-displayphoto-crop_800_800/B4EZqeMbheGUAI-/0/1763590650321?e=1781136000&v=beta&t=EVc01dZ3Znl2GRLOXRMsqRA1nwRDKtWI_JnvM8zqbDw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGn8bm7PqsXeg/profile-displaybackgroundimage-shrink_350_1400/B4EZqoJMNoHoAY-/0/1763757578801?e=1781136000&v=beta&t=HrrTIuRwyKJdqMnL-6IFaBMM-zi8ZlLDUNz5L7Ar4VM",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -239,8 +216,6 @@
         "id": "631042887",
         "publicId": "maczko-maciej",
         "profileId": "ACoAACWc80cBYzJyu-17Skce3c6DpmGA-zL4QNY",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQGJN_LS265xbg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516829025829?e=1781136000&v=beta&t=GzLM9GsVLsaIvTkqNz1dvChjsh5R98zRrYbiJ1DdkuE",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQF9FQLwStyUig/profile-displaybackgroundimage-shrink_350_1400/B4DZzZMdmpIgAY-/0/1773170450943?e=1781136000&v=beta&t=AN7FG5Nmm2PmZSGvSK44EergqyYqf03NKQcjUXT4GFE",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -253,8 +228,7 @@
         "universalName": "the-it-ink-poet",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:111778018",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D560BAQGf8kA90TfTMg/company-logo_400_400/B56ZwDU6dGI4AY-/0/1769582341171?e=1781136000&v=beta&t=jkPxa3yIct5XsimG_-REJ6BP3t2Q81ezVrf4LrxwPjg"
+        "entityUrn": "urn:li:fs_miniCompany:111778018"
       }
     },
     {
@@ -265,9 +239,7 @@
         "occupation": "Head of Software Quality at Phoenix Technologies AG | Software Testing Leader | Building Trustworthy AI & Cloud Infrastructure",
         "id": "481907147",
         "publicId": "norbert-molnar-qa",
-        "profileId": "ACoAABy5UcsBsMXZfZMfl8yLU4EqxMszvYrlRSo",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHQNFgk4dxRww/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1623666562035?e=1781136000&v=beta&t=TVR7H5-YXLSG8Zz01n18sXgcu6oygqzhGGhJVRso41o",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFpjvim9ZV3JQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ3z.uIjGwAY-/0/1777914800088?e=1781136000&v=beta&t=KBQ-iLy4kN2pgkS_y0wi4J8SvH647MB15I2pJRSrUWc"
+        "profileId": "ACoAABy5UcsBsMXZfZMfl8yLU4EqxMszvYrlRSo"
       }
     },
     {
@@ -278,9 +250,7 @@
         "occupation": "Technical Sourcer | Technical Recruiter | HR Recruiting | IT Recruiter | Talent sourcing | Human Resources Analyst",
         "id": "795416224",
         "publicId": "doraneli-cruz-",
-        "profileId": "ACoAAC9pFqABMdEfkmy-O5nu3TykgHcVqZBv0go",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGN5cFFe89HLg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1682097113690?e=1781136000&v=beta&t=a2E6HB0Am3F16Z_o3jShVO59dEfdqKOfQ4BJxUIa6QI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQExmQiMZ17c7w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1719348013691?e=1781136000&v=beta&t=d9XlSKCMkdCwriBoeSXqf32lSVatRVQTkcnp6cmqIxM"
+        "profileId": "ACoAAC9pFqABMdEfkmy-O5nu3TykgHcVqZBv0go"
       }
     },
     {
@@ -291,9 +261,7 @@
         "occupation": "Building BD AI Automations at Qubit Capital - Building Autonomous Operating System for Business Development | Ex-Collegedunia | Ex-StuddictEd | IIM Udaipur",
         "id": "385897036",
         "publicId": "mridul-s-0642a0a9",
-        "profileId": "ACoAABcAUkwBLxXmQ8U0thkEFoLPI9z_pltDN4E",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQH3Y1X6G71aSg/profile-displayphoto-shrink_800_800/B56ZavoMt1GoAc-/0/1746703273339?e=1781136000&v=beta&t=Hqzn22H8_Gh93zjkFhMWROCE3Qsr0LzNkR5j1Hj3eKk",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGviKKR40fTmw/profile-displaybackgroundimage-shrink_350_1400/B56Zavdk1xGUAY-/0/1746700488731?e=1781136000&v=beta&t=pbEETPjgdDUes3qKBojWtBukIobkYGCVsWpLHl46iTc"
+        "profileId": "ACoAABcAUkwBLxXmQ8U0thkEFoLPI9z_pltDN4E"
       }
     },
     {
@@ -304,9 +272,7 @@
         "occupation": "Helping teams adopt AI without delegating their thinking | .NET & Azure Trainer | TypeScript.fm Co-host 🎙️| Chief Gamer at KTOMG 🎮",
         "id": "13925213",
         "publicId": "kamranayub",
-        "profileId": "ACoAAADUe10BP-eHpEgFznNstEQ5aSzoDYsN90I",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQF-j14vhBkb_g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731103104993?e=1781136000&v=beta&t=ZWkyQXRQbXetYsQO0mF2f7js1UxpIrUEvN1FBpH2VzA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQG-wgg8TcgnIQ/profile-displaybackgroundimage-shrink_350_1400/B56Zrvs4HPJsAY-/0/1764958110588?e=1781136000&v=beta&t=CI_9Al-VT7JDwCKVAa1RI5lDpjzFSOQkVfIL75ZVRpY"
+        "profileId": "ACoAAADUe10BP-eHpEgFznNstEQ5aSzoDYsN90I"
       }
     },
     {
@@ -317,9 +283,7 @@
         "occupation": "Web Developer at Salus Group",
         "id": "10322222",
         "publicId": "lassestilvang",
-        "profileId": "ACoAAACdgS4BV7QnpZur24SHuNDFBw9k_9eX9bI",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFpd-69-awqCg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516309267715?e=1781136000&v=beta&t=gTqwHf4cv1hoH1xzNIrOiaaWWXvoS1iMEYvdWLt7VcM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEdQiXpYq43Zg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516309274620?e=1781136000&v=beta&t=5nZAencFcAS3GNC4l9rIyJMMD8vFvo-8832JkCIF1Ns"
+        "profileId": "ACoAAACdgS4BV7QnpZur24SHuNDFBw9k_9eX9bI"
       }
     },
     {
@@ -330,9 +294,7 @@
         "occupation": "Site Reliability Engineer",
         "id": "15965652",
         "publicId": "victor-observability",
-        "profileId": "ACoAAADzndQBmbbTjqsXwY89zNkjVfcLoX98vKg",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGzHSfYHsnrpQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517741668141?e=1781136000&v=beta&t=gisBjF_wKMLTaauzPJRhoYddiLxTKD-p7CkAVsw1D8I",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQFOEX0RPz-nTQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1523545627003?e=1781136000&v=beta&t=8qIviDJuh6dEj1mwdgICe7yp0DFFAG8LOaIoxY1hT6E"
+        "profileId": "ACoAAADzndQBmbbTjqsXwY89zNkjVfcLoX98vKg"
       }
     },
     {
@@ -343,9 +305,7 @@
         "occupation": "Junior AI Engineer | Agentic AI & RAG Systems | Python · LangChain · FastAPI · PyTorch · MCP | Building Scalable Agentic AI Systems | Open to Relocation (EU)",
         "id": "622694808",
         "publicId": "snehal-python",
-        "profileId": "ACoAACUdkZgBl4w-pe4cjf6TYFVD9hIzZXJjmDY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGM8Vsavu3P3Q/profile-displayphoto-crop_800_800/B4DZ0r_MmPGUAI-/0/1774559496154?e=1781136000&v=beta&t=gNMs3KlZd1HudnadDh0Nn4sNG2ABjHMYgVjMN93ArgU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQExr92boNg04A/profile-displaybackgroundimage-shrink_350_1400/B4DZ28Bj7yI4Ac-/0/1776976021086?e=1781136000&v=beta&t=sLl8m9d9xB3lXFzCdWh-L0scEbf2cr_b3wuyQ9qLHZE"
+        "profileId": "ACoAACUdkZgBl4w-pe4cjf6TYFVD9hIzZXJjmDY"
       }
     },
     {
@@ -356,9 +316,7 @@
         "occupation": "Builder of complex fintech and B2B systems. Advisor on how to make them work.",
         "id": "105201422",
         "publicId": "khaleelrahmaan",
-        "profileId": "ACoAAAZFPw4Bh6PN2r0QnVc8ly1cTraBwR86aas",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQF4tx4diDLzOA/profile-displayphoto-shrink_400_400/B56ZV3e5NbGQAg-/0/1741466342862?e=1781136000&v=beta&t=ObuxvqS8vnuWIloPz49zq5vsAyEm-WfESbDPq-IcqxU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHxiimN0xYjhg/profile-displaybackgroundimage-shrink_350_1400/B56Z1NSdiYKkAY-/0/1775118180462?e=1781136000&v=beta&t=KMQez3gRAaPwhvi3hAI86ad2Nyq9ho07EFe3crCAgWc"
+        "profileId": "ACoAAAZFPw4Bh6PN2r0QnVc8ly1cTraBwR86aas"
       }
     },
     {
@@ -369,9 +327,7 @@
         "occupation": "Senior Python Backend Engineer | High-Load Systems · FastAPI · PostgreSQL · AsyncIO · Microservices | Remote · B2B",
         "id": "874263307",
         "publicId": "ramrak",
-        "profileId": "ACoAADQcMwsBxvwx0slCPhdySzS8gnWVbQF_Zd8",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQE7Li7iNQseqQ/profile-displayphoto-shrink_800_800/B56ZdZO7vNH8Ag-/0/1749548777465?e=1781136000&v=beta&t=NjUqCC9UBXKsf8GkVRokn8NU6V68jwRJOvMqHgfGGeM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHXRG7a-MJE0g/profile-displaybackgroundimage-shrink_350_1400/B4DZdAU_GmGkAY-/0/1749130933763?e=1781136000&v=beta&t=2OozkF64jhehnhGVpFwUZJVAAtZEynItOLYY3f5cxMQ"
+        "profileId": "ACoAADQcMwsBxvwx0slCPhdySzS8gnWVbQF_Zd8"
       }
     }
   ],
@@ -391,12 +347,9 @@
     "occupation": "Deepdives on software engineering, tech careers and industry trends. Writing The Pragmatic Engineer, the #1 software engineering newsletter on Substack. Author of The Software Engineer’s Guidebook.",
     "id": "35967148",
     "publicId": "gergelyorosz",
-    "profileId": "ACoAAAIk0KwBsmE3oBadWSg2ettxmEyKbqZKG34",
-    "picture": "https://media.licdn.com/dms/image/v2/C5603AQGWBb92j8rCnA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1521407065106?e=1781136000&v=beta&t=_VZUsvtyJmLL6Rpa48v6vWqyzBssETGwy_Dk79LuSX0",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGadg42-Ar9vQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1541169970308?e=1781136000&v=beta&t=TxfCII3HaIKAw1ovnGTfv_oJS8lSy7foxc25liI6rbc"
+    "profileId": "ACoAAAIk0KwBsmE3oBadWSg2ettxmEyKbqZKG34"
   },
   "authorProfileId": "gergelyorosz",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C5603AQGWBb92j8rCnA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1521407065106?e=1781136000&v=beta&t=_VZUsvtyJmLL6Rpa48v6vWqyzBssETGwy_Dk79LuSX0",
   "authorType": "Person",
   "authorName": "Gergely Orosz",
   "authorProfileUrl": "https://www.linkedin.com/in/gergelyorosz?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAIk0KwBsmE3oBadWSg2ettxmEyKbqZKG34",

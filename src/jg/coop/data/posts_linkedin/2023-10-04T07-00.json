@@ -22,8 +22,7 @@
         "universalName": "juniorguru",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:26218444",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQE89NmYF-XT4g/company-logo_400_400/company-logo_400_400/0/1638266899010/juniorguru_logo?e=1781136000&v=beta&t=ad516CNUThMN8eXeVboC5S9U_y2Dnn1UhQn70wIGlxE"
+        "entityUrn": "urn:li:fs_miniCompany:26218444"
       }
     }
   ],
@@ -42,8 +41,7 @@
             "universalName": "entership-cz",
             "active": true,
             "showcase": false,
-            "entityUrn": "urn:li:fs_miniCompany:76099659",
-            "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQESOOgiXtm6qg/img-crop_100/B4EZrK8cXlHcAM-/0/1764341435016?e=1781136000&v=beta&t=gFp2rZa8r_hYK2VenOoRiG-8U83KwYKBZfXLbVLIEAo"
+            "entityUrn": "urn:li:fs_miniCompany:76099659"
           }
         }
       ],
@@ -56,8 +54,6 @@
         "id": "653562608",
         "publicId": "bleedingdev",
         "profileId": "ACoAACb0kvABzEvpATXhOiWBbEuq4yfGI43iXrc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHNZ_n7usiMwg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1707307700521?e=1781136000&v=beta&t=s9M6CBtI9xCgMRzy9aH4Zm6vuRjYQFKYSrl_QlfPTvA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEjlZvszJMk8g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1704724910587?e=1781136000&v=beta&t=3ATL2lQYqY066bQ-K-77LV1388hPiLUDuz3f2WEXABk",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -71,9 +67,7 @@
         "occupation": "Kotlin Developer",
         "id": "1037499442",
         "publicId": "kamila-machova",
-        "profileId": "ACoAAD3W_DIB5C7b4550JcY6lynjZWoFenqPu28",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHcuZwJmuxFCg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1664433039809?e=1781136000&v=beta&t=soBIv3QKEzH_0kCWv6TlUz5A-pGtuYpwIomqj4mjalo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHd_tAtiyCG2Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1664293799420?e=1781136000&v=beta&t=ytZ1n4SgpD-YG1j0GQ2M4nt4-ZBhn9_0HcsGJ116mdw"
+        "profileId": "ACoAAD3W_DIB5C7b4550JcY6lynjZWoFenqPu28"
       }
     },
     {
@@ -84,8 +78,7 @@
         "occupation": "empowering #autisticTalent in Tech 🚀 | Guiding your communication for change | Systemic coaching",
         "id": "99891449",
         "publicId": "izatlouk",
-        "profileId": "ACoAAAX0OPkBzZjVvVi08LqhaKA5UMdVz4M5inM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEX7QmSSoFSMg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1635789075087?e=1781136000&v=beta&t=gNSbihMMlaQdd_0sP2m4nmd_njYG4j06DobLSgnjIEM"
+        "profileId": "ACoAAAX0OPkBzZjVvVi08LqhaKA5UMdVz4M5inM"
       }
     },
     {
@@ -96,8 +89,7 @@
         "occupation": "*",
         "id": "468961930",
         "publicId": "monika-cejpek-00a07a111",
-        "profileId": "ACoAABvzyooBwKxnqXRiT6w3ELtZ1-auJju4W3A",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFWibcwIyPDyQ/profile-displayphoto-shrink_800_800/B4EZdKCGGIHIAg-/0/1749293753914?e=1781136000&v=beta&t=nNADl2dVqNNjPjbkWwIksNSsUrJxGspB2Cz6sOr301A"
+        "profileId": "ACoAABvzyooBwKxnqXRiT6w3ELtZ1-auJju4W3A"
       }
     },
     {
@@ -108,8 +100,7 @@
         "occupation": "Czechitas digital academy attendee",
         "id": "779325751",
         "publicId": "lenka-zúbková-847bb2198",
-        "profileId": "ACoAAC5zkTcBXAFAlhX-B3org7cXGWFCrruRc2E",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQGkcviQnowGjg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1575383381299?e=1781136000&v=beta&t=gJO9E8kGmhyzhPC6JAuShNsc3MUm53BPvHKuKmgG7JQ"
+        "profileId": "ACoAAC5zkTcBXAFAlhX-B3org7cXGWFCrruRc2E"
       }
     },
     {
@@ -120,9 +111,7 @@
         "occupation": "Account Manager at AWS | Passionate About Driving Customer Success🚀",
         "id": "615020269",
         "publicId": "prazakova",
-        "profileId": "ACoAACSodu0BueYjJcSaVYnA_aid8Qz6X8NrpSk",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFn-9TrO_LNVw/profile-displayphoto-crop_800_800/B4EZo7sLYTKMAI-/0/1761938030139?e=1781136000&v=beta&t=Nr6NbfQAh-nptPZK3-7E4LtaDkG143JD2v_MqG9tV-Y",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHj5ZeDvxXkAw/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1702126395903?e=1781136000&v=beta&t=I-1Tcl6mZeBNOnI1ZTDl6yNQpJsl3RkfQD6YB4wOl7Q"
+        "profileId": "ACoAACSodu0BueYjJcSaVYnA_aid8Qz6X8NrpSk"
       }
     },
     {
@@ -133,9 +122,7 @@
         "occupation": "Glide Certified Expert | Aspiring Software Tester | Analytical mindset • Documentation • Problem‑solving • Attention to detail",
         "id": "734510447",
         "publicId": "veronikalencovamb",
-        "profileId": "ACoAACvHvW8Bbroy8OGWOebqVAkgir0RIjJxSjc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHoTOOb7H2Cow/profile-framedphoto-shrink_800_800/B4DZz3872hKgAg-/0/1773686472395?e=1780430400&v=beta&t=vTBt-GbAxo_sGv6sZMeKg7W48u7poDsZx1Ok4ITEzAM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQH28BhoccJHKg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1573574059073?e=1781136000&v=beta&t=RJiAicqS4rdaKDw8Gsa8ZVDtDJ8Bkh3glxdGl-KTGGo"
+        "profileId": "ACoAACvHvW8Bbroy8OGWOebqVAkgir0RIjJxSjc"
       }
     },
     {
@@ -146,9 +133,7 @@
         "occupation": "Global Sales Manager | Specialty Lubricants",
         "id": "132002824",
         "publicId": "petr-pribil",
-        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEGdgqIgIpkzg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712250006297?e=1781136000&v=beta&t=UB9wEJule0NhB0lR0De_FtfePuW1Di0Vm80cYt1MqZU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFuvlBRuJNbjw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712250566915?e=1781136000&v=beta&t=8sCRHio1dDSnAp_oiaygmw7_1g4W1ce4YJV-kaJIK3M"
+        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck"
       }
     },
     {
@@ -159,9 +144,7 @@
         "occupation": ".NET Developer",
         "id": "926856373",
         "publicId": "petr-barabáš-27149b21a",
-        "profileId": "ACoAADc-tLUB8bIKcsmwZeEx9xHk1uLzkwmuMjE",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFaY4U75DBrHg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1654374963760?e=1781136000&v=beta&t=u7OXk--mte6YL9Xm1W-6C9nGKYf3IZYxYEYV5G8LQI8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHNDvFSSCL1fw/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1679847479627?e=1781136000&v=beta&t=io4rWqlMVL6_TkX8OjdQkQxtMm97MCNmRr9fR8pPuHk"
+        "profileId": "ACoAADc-tLUB8bIKcsmwZeEx9xHk1uLzkwmuMjE"
       }
     },
     {
@@ -172,9 +155,7 @@
         "occupation": "Creative teacher of Spanish and Czech for foreigners",
         "id": "789227424",
         "publicId": "michala-ema-šturmová-a003881a0",
-        "profileId": "ACoAAC8Kp6ABdM2g4P97J16QLhXl7O1WI-4hDQ8",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQFbOQP6R8S33g/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1695100464662?e=1780430400&v=beta&t=g6GcdV0t3caByo2CM7muuQZNI92wMKYvkKcSC1uOa2k",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEav7gP5IvTPA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1695901550357?e=1781136000&v=beta&t=xo4UdZ1Qbe6FLAyDlYQibmFcXq-eLAtityHvHL-Lko0"
+        "profileId": "ACoAAC8Kp6ABdM2g4P97J16QLhXl7O1WI-4hDQ8"
       }
     },
     {
@@ -185,9 +166,7 @@
         "occupation": "🧑‍🤝‍🧑 Working with and for communities, organizing events, studying service design, having fun in all that. ✏️",
         "id": "58610470",
         "publicId": "anezkamll",
-        "profileId": "ACoAAAN-UyYBW_5FlwBOtClk7WVpl3JlZMHMVn4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEdF62o6gzpHQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731942194763?e=1781136000&v=beta&t=3Pf8QBLlGpzI8zRBBfihj0pgDvCgOUoUJyTfMptX81Y",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHKgfW_KDXR1Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1620408094586?e=1781136000&v=beta&t=qk_LRa-WT8rOvas9-jwGjCle3e76MkO7wIKYYCWCZag"
+        "profileId": "ACoAAAN-UyYBW_5FlwBOtClk7WVpl3JlZMHMVn4"
       }
     }
   ],
@@ -207,12 +186,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

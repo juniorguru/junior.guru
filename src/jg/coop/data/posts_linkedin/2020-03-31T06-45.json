@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQHQazt4o-uiPQ/feedshare-shrink_1280/feedshare-shrink_1280/0/1585637105238?e=1781136000&v=beta&t=_pjY2JDtZq64matmCWPM7jAEmdhZwY0ANNx85xEofVI"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6650644054965051392",
   "url": "https://www.linkedin.com/posts/honzajavorek_b%C5%99eznov%C3%BD-httpsjuniorguru-newsletter-je-activity-6650644054965051392-W6-b",
@@ -25,7 +23,6 @@
         "id": "551084893",
         "publicId": "grumpyprogrammer",
         "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFnQ8ypdjjyvg/profile-displayphoto-crop_800_800/B4DZxZUZFlHkAI-/0/1771025047361?e=1781136000&v=beta&t=fFiIDptOBoMzbUkj1Lvpd8USzHMX1nkcCCOr19Su_4c",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -50,9 +47,7 @@
         "occupation": "Talent Acquisition Partner",
         "id": "63177727",
         "publicId": "sarkacerovska",
-        "profileId": "ACoAAAPEA_8BzksvksVzbz6sHs05xKjV3asYqd4",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQFv2hG5F1QSQQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582896370930?e=1781136000&v=beta&t=-iugVHL7N247z6z6R6ClXQWQlxBGxTfprW0faQuRBjM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQEO-izDtDao3w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517521846375?e=1781136000&v=beta&t=G0fKuA6QPaVD5Mp36vETDRjcWcOVJRtMqVHDICl2s_o"
+        "profileId": "ACoAAAPEA_8BzksvksVzbz6sHs05xKjV3asYqd4"
       }
     }
   ],
@@ -72,12 +67,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

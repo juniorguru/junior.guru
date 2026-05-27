@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQHOozF3yDAWPw/feedshare-shrink_1280/feedshare-shrink_1280/0/1629094382411?e=1781136000&v=beta&t=BRwr6-CSC5LZEuJW9aB8_MQoP1G1vALn9hIAus3nt4k"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6832917085660725248",
   "url": "https://www.linkedin.com/posts/honzajavorek_cefr-activity-6832917085660725248-mL_4",
@@ -25,8 +23,6 @@
         "id": "357018",
         "publicId": "hassman",
         "profileId": "ACoAAAAFcpoBmteS--laK_PQYfP-f5of-I9xOqA",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQEbZPDBuA3jug/profile-framedphoto-shrink_800_800/B4EZlETcMbIIAk-/0/1757787571255?e=1780430400&v=beta&t=KokN679oYOXuJQd_a9kQZ6rVLL-U8KXBaT5N8NjtC5c",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHjp-RqdLvWHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1705470330549?e=1781136000&v=beta&t=4e2xvjtsbxbg3IrQoHdS-6oc4af_r0K_MCGOdnLDVd8",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -44,8 +40,6 @@
         "id": "33718298",
         "publicId": "petrstanicek",
         "profileId": "ACoAAAICgBoBu9jiOw23WJNt_Nw04C8a-w2lPP4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGfrSuLRc3ijQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1691412780342?e=1781136000&v=beta&t=7fID2AsBOk2SC6uVrumiv9fOI4dc260lgsQxTwdbUgU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHb7onuOdWlIw/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1691413017163?e=1781136000&v=beta&t=b5p1cSFRGmaTCbRXHquYW1rd8rjj2cQKmpKwBRCw6M4",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -59,8 +53,7 @@
         "occupation": "Frontend Developer at SAP Signavio",
         "id": "340727197",
         "publicId": "diana-nemcekova",
-        "profileId": "ACoAABRPFZ0B0af2F8_icLbBOQpvX7jszeotbI4",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH45nOVsxFwuA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1651507225762?e=1781136000&v=beta&t=cG4d5Y7dzhH5LfixfHg2cT4bmY8LLCK-aK77Z9AgbMM"
+        "profileId": "ACoAABRPFZ0B0af2F8_icLbBOQpvX7jszeotbI4"
       }
     },
     {
@@ -71,9 +64,7 @@
         "occupation": "Full Stack Developer | Node.js • React • Azure",
         "id": "762997811",
         "publicId": "miloslav-jezek",
-        "profileId": "ACoAAC16bDMBDX69DVpckffdp3s7WQFJkN9ZQPE",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQGIaim7FGwUJA/profile-displayphoto-shrink_800_800/B56Zdkuyu7G0Ac-/0/1749741678525?e=1781136000&v=beta&t=KQKd_q5so7d1ouew_efpkZxAIdS6aSgktGBupgxMjVI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGnePf9ZiYoeQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ12v8ppKIAY-/0/1775813774467?e=1781136000&v=beta&t=ZMWvvJcgxN49hDEp-ojj2oIgKRgbrKfKywk0xtPf6_s"
+        "profileId": "ACoAAC16bDMBDX69DVpckffdp3s7WQFJkN9ZQPE"
       }
     },
     {
@@ -84,9 +75,7 @@
         "occupation": "Software QA Engineer | Test Automation | AI-Driven Testing | Frontend | UX/UI | ex-Graphic Designer",
         "id": "456103352",
         "publicId": "lenka-silna",
-        "profileId": "ACoAABsvlbgB_YE9kjICFRS1b_hrU6yzTRKEHKo",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFf0_YqRz5aMw/profile-displayphoto-crop_800_800/B4DZyeRfyKI8AI-/0/1772181913275?e=1781136000&v=beta&t=djOSOQB0NajL7vAnGP1Vbttp8e1WcRdpEKG8ziyxtzg",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQECZhvzl5X7cg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1624343280736?e=1781136000&v=beta&t=g_BHz9nP1AHkEtQK2JeFVM4SR5-XuZaLlWHS_Ygq60g"
+        "profileId": "ACoAABsvlbgB_YE9kjICFRS1b_hrU6yzTRKEHKo"
       }
     },
     {
@@ -97,9 +86,7 @@
         "occupation": "CEO - AI, Data infrastructure",
         "id": "45344507",
         "publicId": "giuliano-giannetti",
-        "profileId": "ACoAAAKz5vsBDueFaC-CVxfSMzNm7ykXSLA4dak",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGZLLwB_TQoJw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704708205860?e=1781136000&v=beta&t=HC8wGRFPMee7gxu_yPZDxO0jnr9MZbXDyRWw-Ny4ISQ",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGZh1J4uNWoww/profile-displaybackgroundimage-shrink_350_1400/B4EZVHjqCaGYAY-/0/1740662285467?e=1781136000&v=beta&t=mwWeSm8eEykluA0I2mcnZaHLa-VPLVI3sl7_HMOf1KY"
+        "profileId": "ACoAAAKz5vsBDueFaC-CVxfSMzNm7ykXSLA4dak"
       }
     },
     {
@@ -110,9 +97,7 @@
         "occupation": "Founder @EDUpunk | Learning design @Reactgirls.com | AI & Health Content Strategist | TALENT Mentor & MEME Therapist",
         "id": "201927716",
         "publicId": "marek-velas",
-        "profileId": "ACoAAAwJLCQB-ePqkhYoO0olYYFCoOJGgdydJEs",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQHj3KqlSVtI9A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1540025534374?e=1781136000&v=beta&t=CPzxTFoq5FwZ2NTvk1phzV1eKiS-9ILQHVR9fBpJD2I",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGXOBXZ2lQyaw/profile-displaybackgroundimage-shrink_350_1400/B4EZl9YDUNKYAY-/0/1758745081852?e=1781136000&v=beta&t=WtHueBkAwczoFilZWgkI-IVFDO89umDpdBCjoy1NOto"
+        "profileId": "ACoAAAwJLCQB-ePqkhYoO0olYYFCoOJGgdydJEs"
       }
     },
     {
@@ -123,8 +108,7 @@
         "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
         "id": "183293578",
         "publicId": "dariagru",
-        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0"
       }
     },
     {
@@ -135,8 +119,7 @@
         "occupation": "Tech Lead",
         "id": "5863145",
         "publicId": "davidpodhola",
-        "profileId": "ACoAAABZdukB7h_CJcXG0CChUTCax7Q2rkZvW5I",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQEjqphTnUlQgA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516238062182?e=1781136000&v=beta&t=XsggpgM6z0ci7pz0ie19_dI555eyZr3jF4EhcJsd--Y"
+        "profileId": "ACoAAABZdukB7h_CJcXG0CChUTCax7Q2rkZvW5I"
       }
     },
     {
@@ -147,8 +130,7 @@
         "occupation": "techlead at fintech company",
         "id": "208866846",
         "publicId": "yedpodtrzitko",
-        "profileId": "ACoAAAxzDh4BTC4r5aIprT737jnY8wkUi4ECxNM",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQHsccAOMHeaRw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1699851079581?e=1781136000&v=beta&t=0JBMKS7tffdUO1EFNtqiYz6LaYsFTSPA7vlm8uF0GJo"
+        "profileId": "ACoAAAxzDh4BTC4r5aIprT737jnY8wkUi4ECxNM"
       }
     },
     {
@@ -159,8 +141,7 @@
         "occupation": "Data Analyst, Idea Farmer, Process Librarian, Customer Journey Builder, SCRUM Master at RomanRipa.com",
         "id": "6432515",
         "publicId": "romanripa",
-        "profileId": "ACoAAABiJwMBd25oc32q6eAIQJFTQPxjAf5qSBY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEJG4vsvLjUaQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1685108480804?e=1781136000&v=beta&t=8phf-iA59ichmpLozE1vQuo39zSJ4VOMamTwOxyuy1o"
+        "profileId": "ACoAAABiJwMBd25oc32q6eAIQJFTQPxjAf5qSBY"
       }
     },
     {
@@ -171,9 +152,7 @@
         "occupation": "Global Sales Manager | Specialty Lubricants",
         "id": "132002824",
         "publicId": "petr-pribil",
-        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEGdgqIgIpkzg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712250006297?e=1781136000&v=beta&t=UB9wEJule0NhB0lR0De_FtfePuW1Di0Vm80cYt1MqZU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFuvlBRuJNbjw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712250566915?e=1781136000&v=beta&t=8sCRHio1dDSnAp_oiaygmw7_1g4W1ce4YJV-kaJIK3M"
+        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck"
       }
     }
   ],
@@ -193,12 +172,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

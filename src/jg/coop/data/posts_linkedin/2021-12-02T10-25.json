@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQGjyk8-JC-v6w/feedshare-shrink_800/feedshare-shrink_800/0/1638440707436?e=1781136000&v=beta&t=j7UP9NHYdrkuu2dkPjb3mI7Y0ZUujpExhI5jg5b1g1k"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6872118415578976256",
   "url": "https://www.linkedin.com/posts/honzajavorek_heroine-programovaernaed-ahsenyvit-activity-6872118415578976256-6wSR",
@@ -19,8 +17,7 @@
         "universalName": "cesko-digital",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:14803595",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQF_timuUHwllg/company-logo_400_400/company-logo_400_400/0/1630501620053/cesko_digital_logo?e=1781136000&v=beta&t=1gQ5GhFuxgcm3RZJGTEzlEsvtGSZRY-MUlW2urd6KDo"
+        "entityUrn": "urn:li:fs_miniCompany:14803595"
       }
     },
     {
@@ -32,8 +29,7 @@
         "universalName": "pyladies-cz",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:30644381",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C560BAQEaibY9_28N2A/company-logo_400_400/company-logo_400_400/0/1630614425519/pyladies_cz_logo?e=1781136000&v=beta&t=zfNm6R5gYxxDnRcaaj7iVB54AorS6Y83LjCuRsjXd0g"
+        "entityUrn": "urn:li:fs_miniCompany:30644381"
       }
     },
     {
@@ -45,8 +41,7 @@
         "universalName": "reactgirlsprague",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:34588565",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQF13Hz_6HWeBg/company-logo_400_400/B4DZuX1zHUKAAY-/0/1767779021705/reactgirlsprague_logo?e=1781136000&v=beta&t=CVsLw_09bkLLVfLxKCDOryGlSvWSCSPyzsYUaPJTe9s"
+        "entityUrn": "urn:li:fs_miniCompany:34588565"
       }
     },
     {
@@ -58,8 +53,7 @@
         "universalName": "czechitas",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:5319681",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQGUtbq_Ku9-Pw/company-logo_400_400/company-logo_400_400/0/1704439912456/czechitas_logo?e=1781136000&v=beta&t=molJnkCH_gTyGvasG9h09UcPKtk52yLyXtBM8hhPM5Q"
+        "entityUrn": "urn:li:fs_miniCompany:5319681"
       }
     },
     {
@@ -71,8 +65,7 @@
         "universalName": "ajtyvit",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:4848367",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQFH2FTqCC-XjQ/company-logo_400_400/company-logo_400_400/0/1630452071566/ajtyvit_logo?e=1781136000&v=beta&t=QDpEQKeT5Af1L9BTflPIhjm6hDR6zhfCD--7EZTG8zk"
+        "entityUrn": "urn:li:fs_miniCompany:4848367"
       }
     },
     {
@@ -84,8 +77,7 @@
         "universalName": "cybermagnolia",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:68539533",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQFZ_LaXdtsiKg/company-logo_400_400/company-logo_400_400/0/1630501497670/cybermagnolia_logo?e=1781136000&v=beta&t=tGpc67FZ0YIKADMPsOuQtGPVJ3u6Hm4w2AZNnb8WbDA"
+        "entityUrn": "urn:li:fs_miniCompany:68539533"
       }
     },
     {
@@ -97,8 +89,7 @@
         "universalName": "femme-palette",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:10137789",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C560BAQG5o4kwf2AJ_Q/company-logo_400_400/company-logo_400_400/0/1630654224175/femme_palette_logo?e=1781136000&v=beta&t=SYSGTrG9FHZTL3k1zHEzGkgOxh6y1NUYX47dL4XGe6o"
+        "entityUrn": "urn:li:fs_miniCompany:10137789"
       }
     },
     {
@@ -110,8 +101,7 @@
         "universalName": "frontendisti",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:26270417",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHfPYqav3sN1w/company-logo_400_400/B4EZpJsmiXKgAY-/0/1762173020690/frontendisti_logo?e=1781136000&v=beta&t=8UwVjElEbfqWVbac3iNkc1HS0lwMBI-P-zII7vKwsfw"
+        "entityUrn": "urn:li:fs_miniCompany:26270417"
       }
     },
     {
@@ -124,9 +114,7 @@
         "occupation": "Motyka. Patizón. Sokol.",
         "id": "411597295",
         "publicId": "yablko",
-        "profileId": "ACoAABiIee8B6T3SlOCiJjbS1KHkr9Bf6DyyXws",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFspL7654LSQg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517626819296?e=1781136000&v=beta&t=MU22LFNWVDD74Hp2uLZvOeNRukADo87inbhIv4Es8oU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHesE3bZDHt7g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517626819771?e=1781136000&v=beta&t=k7TwqX_nTlLNrXEprdAlSId_X0i7kMR4bteDVDimkBU"
+        "profileId": "ACoAABiIee8B6T3SlOCiJjbS1KHkr9Bf6DyyXws"
       }
     }
   ],
@@ -161,8 +149,6 @@
         "id": "507563016",
         "publicId": "jarka-cardová-placrova",
         "profileId": "ACoAAB5AzAgBKaxPVPkdoPADSqR1rTb8MVv6qGM",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQH5fYu3hCHnVQ/profile-displayphoto-crop_800_800/B4DZyCAALTJkAI-/0/1771707565348?e=1781136000&v=beta&t=4IQRCoETy6THITybeC4Zd7lRFe4ILMeV9l1e6NnUg7A",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHwcJ2AqN_HPw/profile-displaybackgroundimage-shrink_350_1400/B4EZgzQWsmGcAY-/0/1753206582625?e=1781136000&v=beta&t=zmC5PQRuhZS1EdbThK6msUWqUw3PWRB_Ov0Pr0qC7Dw",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -179,8 +165,6 @@
         "id": "231542737",
         "publicId": "lucieneumanova",
         "profileId": "ACoAAA3ND9EBg_BJe6veTJyvop2Y8q2nUCy8JU4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFHLIjklyWk9A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1692024313456?e=1781136000&v=beta&t=RK_0UomgeBOCi_9lCiebp5nJO3zRVLFGWP9HW5Iyuxw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHbeqndsJ_9Qw/profile-displaybackgroundimage-shrink_350_1400/B4DZnIcNMtJAAY-/0/1760004463148?e=1781136000&v=beta&t=xOzsLTDlR39QbnEyfvTbJhKOhBQoPTTl0r7T4kMigTs",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -223,8 +207,6 @@
         "id": "8517488",
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -238,8 +220,7 @@
         "occupation": "DATA ANALYTICS | PYTHON | SQL | MATH | EDUCATION | TEACHER",
         "id": "226842433",
         "publicId": "mariazahoranska",
-        "profileId": "ACoAAA2FV0EBRQNL58-Gos986UjvuMsXXADJN6g",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGJQZSrbNYc7w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1607604268522?e=1781136000&v=beta&t=P9W0R7g5MGvgBfPtHIwF40CxzSzR5TXRc9wwrbbC_Sw"
+        "profileId": "ACoAAA2FV0EBRQNL58-Gos986UjvuMsXXADJN6g"
       }
     },
     {
@@ -250,8 +231,7 @@
         "occupation": "Application Engineer",
         "id": "444042049",
         "publicId": "svetlana-usik",
-        "profileId": "ACoAABp3i0EBuXZfimyP-MvGn-7bSZkLL8xdY0o",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGk4w1qP-YFCA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1658322378318?e=1781136000&v=beta&t=udLjhSe75LhDZlE-4WxRSPZfBsZqI73kkBmQ73wVVNA"
+        "profileId": "ACoAABp3i0EBuXZfimyP-MvGn-7bSZkLL8xdY0o"
       }
     },
     {
@@ -261,8 +241,7 @@
         "universalName": "reactgirlsprague",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:34588565",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQF13Hz_6HWeBg/company-logo_400_400/B4DZuX1zHUKAAY-/0/1767779021705/reactgirlsprague_logo?e=1781136000&v=beta&t=CVsLw_09bkLLVfLxKCDOryGlSvWSCSPyzsYUaPJTe9s"
+        "entityUrn": "urn:li:fs_miniCompany:34588565"
       }
     },
     {
@@ -273,9 +252,7 @@
         "occupation": "🌱 Jr. Data Analyst in progress & Procurement Specialist | Excel • SAP • Power BI • basics SQL & basics Python (Czechitas)",
         "id": "167738367",
         "publicId": "andrea-jiraskova",
-        "profileId": "ACoAAAn_e_8BOfmB8DqQyIFa2PSPGxEDYLbfHjQ",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQH4_vuLNnXKYg/profile-framedphoto-shrink_800_800/B4DZ4rckSWJsAg-/0/1778845369825?e=1780430400&v=beta&t=wSBQ-l4DgThm4l28Emq_dMuNJkDbKTj_kPHPkRACTAw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHYr-lWZPlbEw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1675976885077?e=1781136000&v=beta&t=LZnnuuwm1AZkOu4s4JSshyKCtXUdxRCXl6up_Ae4fZQ"
+        "profileId": "ACoAAAn_e_8BOfmB8DqQyIFa2PSPGxEDYLbfHjQ"
       }
     },
     {
@@ -286,9 +263,7 @@
         "occupation": "Executive Coach | Embodied Leadership & Wellbeing | Expat & Transition Support | Writer & Thought Partner",
         "id": "187953410",
         "publicId": "zuzana-sahin",
-        "profileId": "ACoAAAsz8QIBWB4C_qylIgyglI5GJrojRe2sWG8",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEwwKNwWl-n1g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723577869590?e=1781136000&v=beta&t=YLD4-exluC9NGCRreB-GnWLz_NKa64LVsf4KgptfZ9o",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH25jMVWWTmVg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1730720323850?e=1781136000&v=beta&t=qLel7FKEHx0ovMkh1W04e8sFMYaGzHpflP5qAvmZ5VY"
+        "profileId": "ACoAAAsz8QIBWB4C_qylIgyglI5GJrojRe2sWG8"
       }
     },
     {
@@ -299,8 +274,7 @@
         "occupation": "Učím, tedy jsem.",
         "id": "902826990",
         "publicId": "anna-marešová-3a6431212",
-        "profileId": "ACoAADXQC-4BcCw9ds-jOIGEiNZPYgeLQogWq6o",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQFF1bjHSifPFw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1620838311049?e=1781136000&v=beta&t=v6VPsB7cH8rgL4iuWYYJaO33xX-JlFjsqKdG3274ELg"
+        "profileId": "ACoAADXQC-4BcCw9ds-jOIGEiNZPYgeLQogWq6o"
       }
     },
     {
@@ -311,9 +285,7 @@
         "occupation": "Principal Data Governance Lead | Metadata Architect | Enterprise and Solution Architecture Enthusiast | Collibra Ranger",
         "id": "250556103",
         "publicId": "adela-kamenska",
-        "profileId": "ACoAAA7vLscBMagWV2ehDtARJjjwCz9arqTUJ-0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGiFlSdTkxNRw/profile-displayphoto-crop_800_800/B4DZh7aslfG8AM-/0/1754417253137?e=1781136000&v=beta&t=LOzr-ugc6o5hEXAYj3O0mhP-ajDjhYNZVeVvlOkxEv0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQFDY97Yu8g5Xg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1618497167625?e=1781136000&v=beta&t=r_rkutAvGj48OUesVlRE8yoxIzxIgcEx16RGeWpOXTI"
+        "profileId": "ACoAAA7vLscBMagWV2ehDtARJjjwCz9arqTUJ-0"
       }
     },
     {
@@ -324,8 +296,7 @@
         "occupation": "I´m here to understand.",
         "id": "714403439",
         "publicId": "jarynadudikova",
-        "profileId": "ACoAACqU7m8BRGV2cu50K3ElKCrtRMv9kJnPbN8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGhixLrwYsDSQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1698412410531?e=1781136000&v=beta&t=tUBIsCPNv09eJRfcyEZ3TrFaT2sMGKGZ9zOcggZGgzc"
+        "profileId": "ACoAACqU7m8BRGV2cu50K3ElKCrtRMv9kJnPbN8"
       }
     },
     {
@@ -336,9 +307,7 @@
         "occupation": "👩🏻‍💻",
         "id": "76173988",
         "publicId": "rona-jankovičová-20461621",
-        "profileId": "ACoAAASKUqQBiPDYZmOGp4NaWYtsOf-8TGKosXU",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQFmoP9bNq3jOw/profile-framedphoto-shrink_800_800/B4EZh_wublHEAg-/0/1754490136688?e=1780430400&v=beta&t=KnLOmB8gBuSkt9dWbgCxqKLRUgioEOdZ4-v9kV4iEi4",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHmkGy9TT46sg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1603126515088?e=1781136000&v=beta&t=Q3uS34rR9vqLiCwpALc1qjyN3oSl63YIdZbF-g3k-_Q"
+        "profileId": "ACoAAASKUqQBiPDYZmOGp4NaWYtsOf-8TGKosXU"
       }
     },
     {
@@ -349,9 +318,7 @@
         "occupation": "Test Analyst at Trask",
         "id": "463632800",
         "publicId": "jan-kovář-02832a10b",
-        "profileId": "ACoAABuieaABJMWd2eOS2t9g_fwxEckbAsyCgSU",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEASdCeyR7WHg/profile-displayphoto-shrink_800_800/B4EZNys0ukHkAk-/0/1732796173768?e=1781136000&v=beta&t=f27VTjmsqKcQvXWQH0rUN3wxqguNLG1yCGGXz0QQ-Mc",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHXU54iWVnFIA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1733943466891?e=1781136000&v=beta&t=AC_IObe5KnrvzSiVQ6jH9JeG4cFESQdjP_TzTMlkML0"
+        "profileId": "ACoAABuieaABJMWd2eOS2t9g_fwxEckbAsyCgSU"
       }
     }
   ],
@@ -371,12 +338,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

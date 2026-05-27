@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4D22AQHoLc6bGTCUOA/feedshare-shrink_800/feedshare-shrink_800/0/1651757591618?e=1781136000&v=beta&t=tn-LOiXYTrAwLukgOJtbPWGJ7AeYu0N2xqn_it_aAXg"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6927973476733448193",
   "url": "https://www.linkedin.com/posts/honzajavorek_mentoring-activity-6927973476733448193-GNab",
@@ -19,8 +17,7 @@
         "universalName": "purestorage",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:1632202",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D560BAQHY8dBMsvlbUw/company-logo_400_400/B56ZyKlQsMGoAY-/0/1771851549770/purestorage_logo?e=1781136000&v=beta&t=EkJI4XRlCrqSQtNYxFLiharth4o5mEVw2HqxbJUagQs"
+        "entityUrn": "urn:li:fs_miniCompany:1632202"
       }
     },
     {
@@ -33,8 +30,7 @@
         "occupation": "Software Engineering and all related crafts",
         "id": "80183097",
         "publicId": "jirichadima",
-        "profileId": "ACoAAATHfzkBg-R6kS5prOeDgf9Q4yaK__6Hrcc",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHXfXFMOVGU7Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1651818331235?e=1781136000&v=beta&t=pdmv5g366gCBkLXntmQBDzeXRUHlNuk4oip2QPdgDp0"
+        "profileId": "ACoAAATHfzkBg-R6kS5prOeDgf9Q4yaK__6Hrcc"
       }
     },
     {
@@ -47,8 +43,7 @@
         "occupation": "Tech Recruiter ve společnosti Everpure",
         "id": "536191609",
         "publicId": "monikaandruchova",
-        "profileId": "ACoAAB_1onkB2MDEUbbyoekcLtoZuDMQDDhJj08",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFe9OSUaWUZsg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1611329086742?e=1781136000&v=beta&t=XyQV5PFzBfllTPYq6-DhpTNSpN0WeIkstzHLbmfWtKo"
+        "profileId": "ACoAAB_1onkB2MDEUbbyoekcLtoZuDMQDDhJj08"
       }
     },
     {
@@ -60,8 +55,7 @@
         "universalName": "mewssystems",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:2574959",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQG9VtyX26envQ/company-logo_400_400/B4EZyKEXeEH0AY-/0/1771842926937/mewssystems_logo?e=1781136000&v=beta&t=UIV6bGS_gnn1FvSP7zSjwts_zMyZHE6t4vu9n9Nz5KE"
+        "entityUrn": "urn:li:fs_miniCompany:2574959"
       }
     },
     {
@@ -73,8 +67,7 @@
         "universalName": "purestorage",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:1632202",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D560BAQHY8dBMsvlbUw/company-logo_400_400/B56ZyKlQsMGoAY-/0/1771851549770/purestorage_logo?e=1781136000&v=beta&t=EkJI4XRlCrqSQtNYxFLiharth4o5mEVw2HqxbJUagQs"
+        "entityUrn": "urn:li:fs_miniCompany:1632202"
       }
     },
     {
@@ -87,8 +80,7 @@
         "occupation": "Scaled CS | Community Builder | Developer Relations | Program, Project & Event Manager |",
         "id": "212100196",
         "publicId": "anna-o-2040475b",
-        "profileId": "ACoAAAykZGQBjzU12F7rV0HiOUXmV1U1q6RvDw0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5116AQFTY1BS_Vb4Ow/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517425324078?e=1781136000&v=beta&t=wwWxzhKX2aAeAs6Li5Ga9ijg2pVGT7bhm985CkycBng"
+        "profileId": "ACoAAAykZGQBjzU12F7rV0HiOUXmV1U1q6RvDw0"
       }
     },
     {
@@ -101,8 +93,7 @@
         "occupation": "Geospatial IT Engineer, Earth Observation",
         "id": "653528827",
         "publicId": "lubomir-dolezal",
-        "profileId": "ACoAACb0DvsBb_TYbi8qJIKCJMdSPoQg-xQvb-Y",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQGURrVQ1EviaQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1655237688996?e=1781136000&v=beta&t=gSOkZx3GJyKD15eENbDUsOYzTmXYCvsNutWk6Bm7Vd4"
+        "profileId": "ACoAACb0DvsBb_TYbi8qJIKCJMdSPoQg-xQvb-Y"
       }
     }
   ],
@@ -121,8 +112,6 @@
         "id": "8517488",
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -136,9 +125,7 @@
         "occupation": "Administrátor a správce oddělení kybernetické bezpečnosti ve společnosti Fakultní nemocnice Bulovka",
         "id": "681991460",
         "publicId": "michal-sikora-b98492170",
-        "profileId": "ACoAACimXSQBm4DOkKfXKol52Iw_TsBDn0l1Qgc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFX0fqPKbQBJQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704460872833?e=1781136000&v=beta&t=WHYpM7_AcC7LWNkqcVr-rv2lRU8L1vaxdKvRrbBPYLo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHtHhKnZf6cBA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1624542178676?e=1781136000&v=beta&t=9dsS8MBjkybXiNY0H6AuU-CWkBmyB_SCNUkJ6476xEo"
+        "profileId": "ACoAACimXSQBm4DOkKfXKol52Iw_TsBDn0l1Qgc"
       }
     },
     {
@@ -149,8 +136,7 @@
         "occupation": "ServiceNow Developer",
         "id": "780967517",
         "publicId": "eva-horká-965664199",
-        "profileId": "ACoAAC6Mnl0B_RWsmBSIrDxz5FzwyU43Vlw4_lc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGL9GDLaYBPBg/profile-displayphoto-crop_800_800/B4EZoqKEvgIwAI-/0/1761643876988?e=1781136000&v=beta&t=MpwVyWaT0RywpPeGaIXz89GyZMS6y7Q4YQLxP7HszMY"
+        "profileId": "ACoAAC6Mnl0B_RWsmBSIrDxz5FzwyU43Vlw4_lc"
       }
     },
     {
@@ -161,9 +147,7 @@
         "occupation": "Tourism & Hospitality Enthusiast | Adventure & Experience Driven | Open for Opportunities",
         "id": "806991622",
         "publicId": "sonja-cv",
-        "profileId": "ACoAADAZtwYB7zh-fGkQnhuX8Ek0fAWpm-e4i6k",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHLBsSHbSdzXQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718296702076?e=1781136000&v=beta&t=Lp6mLc_qEyqQgmlsB3oF1zJa18e2CLAK5L0bixzySGM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQE7OLWN9rKfpA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1719349015848?e=1781136000&v=beta&t=HDuUSeWeOwNbZo_guemBJPmOsWySpAaVEzkRbbjyz7A"
+        "profileId": "ACoAADAZtwYB7zh-fGkQnhuX8Ek0fAWpm-e4i6k"
       }
     },
     {
@@ -174,9 +158,7 @@
         "occupation": "Community Builder, Brand Developer, D&I Advocate, Events Organizer",
         "id": "797797726",
         "publicId": "barbora-duhan-5ba2201a3",
-        "profileId": "ACoAAC-NbV4B-Dz0gNy3IlJn6IAsukHpp7qrdCE",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFCw7eI0gzamg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1686043963611?e=1781136000&v=beta&t=FlH8LGWMa_Prh7LlypDSJk1ZrV7n89FtQPp-xRbMaTU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFrLcER4yf2Mg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1701104099882?e=1781136000&v=beta&t=FHQssF60aMOxAv8idOhrbaU3a9P8JRdyxtagoJa1xfQ"
+        "profileId": "ACoAAC-NbV4B-Dz0gNy3IlJn6IAsukHpp7qrdCE"
       }
     },
     {
@@ -187,9 +169,7 @@
         "occupation": "👩🏻‍💻🔍✨ Talent Acquisition | IT & non-IT Recruitment | Project Management |",
         "id": "395532212",
         "publicId": "michaela-lacinová-b58567b0",
-        "profileId": "ACoAABeTV7QBDPZ2FCOo-geuPdYERiQYAPtf4uo",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHtDoZ84UASqQ/profile-displayphoto-crop_800_800/B4DZyXArs2IoAM-/0/1772060066448?e=1781136000&v=beta&t=hqNPdAuOxtOtHFqIxDzFdDhp4jP3XrgyDAoDN6Wr3T0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHjjt26eEP-vg/profile-displaybackgroundimage-shrink_350_1400/B56Zy69OqaIAAY-/0/1772663139977?e=1781136000&v=beta&t=Qavhi-Jmz1zsJ2C4oRtB7Ezi5rGi3Vj-JcdgiOp9FTE"
+        "profileId": "ACoAABeTV7QBDPZ2FCOo-geuPdYERiQYAPtf4uo"
       }
     },
     {
@@ -200,9 +180,7 @@
         "occupation": "Test Automation Engineer | Playwright | Coach at Czechitas",
         "id": "663230550",
         "publicId": "denisa-adamcova",
-        "profileId": "ACoAACeIGFYBWteXbpyiOkw1l0_zZZ5IUyzF-y0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHQeyVJrVhDTg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1676995709226?e=1781136000&v=beta&t=BPCL0XmCnKu9mOinNujdkdf53-2SkBMFD8hPcytHb70",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEDSoMRvWhICQ/profile-displaybackgroundimage-shrink_350_1400/B4EZr4tqcuHUAY-/0/1765109312003?e=1781136000&v=beta&t=JcVG-68vDhcmMZB7j8uj2z_vJAKskN076maJDFHk0ok"
+        "profileId": "ACoAACeIGFYBWteXbpyiOkw1l0_zZZ5IUyzF-y0"
       }
     },
     {
@@ -213,9 +191,7 @@
         "occupation": "Building Agentic Engineering Platform for production-ready apps. Generated, reviewed, managed, deployed by AI Agents.",
         "id": "653562608",
         "publicId": "bleedingdev",
-        "profileId": "ACoAACb0kvABzEvpATXhOiWBbEuq4yfGI43iXrc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHNZ_n7usiMwg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1707307700521?e=1781136000&v=beta&t=s9M6CBtI9xCgMRzy9aH4Zm6vuRjYQFKYSrl_QlfPTvA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEjlZvszJMk8g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1704724910587?e=1781136000&v=beta&t=3ATL2lQYqY066bQ-K-77LV1388hPiLUDuz3f2WEXABk"
+        "profileId": "ACoAACb0kvABzEvpATXhOiWBbEuq4yfGI43iXrc"
       }
     },
     {
@@ -226,9 +202,7 @@
         "occupation": "Software QA Engineer | Test Automation | AI-Driven Testing | Frontend | UX/UI | ex-Graphic Designer",
         "id": "456103352",
         "publicId": "lenka-silna",
-        "profileId": "ACoAABsvlbgB_YE9kjICFRS1b_hrU6yzTRKEHKo",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFf0_YqRz5aMw/profile-displayphoto-crop_800_800/B4DZyeRfyKI8AI-/0/1772181913275?e=1781136000&v=beta&t=djOSOQB0NajL7vAnGP1Vbttp8e1WcRdpEKG8ziyxtzg",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQECZhvzl5X7cg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1624343280736?e=1781136000&v=beta&t=g_BHz9nP1AHkEtQK2JeFVM4SR5-XuZaLlWHS_Ygq60g"
+        "profileId": "ACoAABsvlbgB_YE9kjICFRS1b_hrU6yzTRKEHKo"
       }
     },
     {
@@ -239,9 +213,7 @@
         "occupation": "IT Application Business Support | Responsible for troubleshooting company software applications.",
         "id": "377981034",
         "publicId": "jaroslavluptak",
-        "profileId": "ACoAABaHiGoBJSNkTUPIvO_zeJYCW-RpFY9qRV4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQEFlveo42VTFw/profile-framedphoto-shrink_800_800/B4DZ3gtAfwGwAg-/0/1777591388410?e=1780430400&v=beta&t=G948urLzfnJbil7BEmZB3rfxZMSgzLEPDd2Iaf177QM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHGQpmzoZFzkg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1693842332797?e=1781136000&v=beta&t=L0ffuUzwp2SKI-mBDBTD1JuujIlh6dJhdnosOrcUi4M"
+        "profileId": "ACoAABaHiGoBJSNkTUPIvO_zeJYCW-RpFY9qRV4"
       }
     },
     {
@@ -252,8 +224,7 @@
         "occupation": "Member Of Technical Staff at Everpure (formerly Pure Storage)",
         "id": "32360092",
         "publicId": "vichmartin",
-        "profileId": "ACoAAAHtxpwB58OXeCSOjnsBRdp1bEWi5h4YOQ8",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEiaUGD22bOLg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1561723949547?e=1781136000&v=beta&t=fLEKpH-VPJzynlcS97gWPLdZUwmKYiZCr6yPgcQD6eI"
+        "profileId": "ACoAAAHtxpwB58OXeCSOjnsBRdp1bEWi5h4YOQ8"
       }
     }
   ],
@@ -273,12 +244,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

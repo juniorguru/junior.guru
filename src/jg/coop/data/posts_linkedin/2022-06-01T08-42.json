@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQGzagy9zQrIog/feedshare-image-high-res/feedshare-image-high-res/0/1654072933080?e=1781136000&v=beta&t=Q71Oh-Tnxj9DUaiPdH_XpjDBFUPcscMsmA5eg790eIc"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6937684722470809601",
   "url": "https://www.linkedin.com/posts/honzajavorek_csharp-dotnet-microsoftmvp-activity-6937684722470809601-MzIx",
@@ -20,9 +18,7 @@
         "occupation": "🎙 Pomáhám tvořit lepší podcasty | Spolu-moderátor Mileniálové & Jak na podcasty | 💻 Voicebot engineer",
         "id": "205073291",
         "publicId": "madrvojtech",
-        "profileId": "ACoAAAw5K4sBA8nVYoHPe91603FIAQM8Afcl3AQ",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQG-5m6_kiUCLw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1640351690167?e=1781136000&v=beta&t=P0XlPJMkia6IYO5QAPO5phO59ToKi83zvfyVGTTL0zk",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEiI6dmbVAZ-g/profile-displaybackgroundimage-shrink_350_1400/B4EZpVejb9IUAc-/0/1762370665436?e=1781136000&v=beta&t=iUrGuEbjzZUCmquyBnn-85zPgbBTAAWrH23N2Bzt5i4"
+        "profileId": "ACoAAAw5K4sBA8nVYoHPe91603FIAQM8Afcl3AQ"
       }
     },
     {
@@ -34,8 +30,7 @@
         "universalName": "motionlabio",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:18821424",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQEarp_m2N5WOw/company-logo_400_400/company-logo_400_400/0/1630509363488/motionlabcz_logo?e=1781136000&v=beta&t=RnQ2_9p6EnUb8IzcClrMBBgLd7GjdMTO39BdpZKrsec"
+        "entityUrn": "urn:li:fs_miniCompany:18821424"
       }
     },
     {
@@ -47,8 +42,7 @@
         "universalName": "programhrovani",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:76564291",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQFOyBtfsCCMew/company-logo_400_400/company-logo_400_400/0/1714162197209/programhrovani_logo?e=1781136000&v=beta&t=DXlA3Rag_ZygIhgzoHKLUFuVkcqgKxNq4TsvhzKhJCM"
+        "entityUrn": "urn:li:fs_miniCompany:76564291"
       }
     },
     {
@@ -60,8 +54,7 @@
         "universalName": "net-cz",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:80958364",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQHg3dJa2KhAfA/company-logo_400_400/company-logo_400_400/0/1640279670297?e=1781136000&v=beta&t=0D24kxhwNgPwyaSvN8S_oLgYnm0YpGQwWRdQtWbCGPU"
+        "entityUrn": "urn:li:fs_miniCompany:80958364"
       }
     }
   ],
@@ -80,8 +73,6 @@
         "id": "950609242",
         "publicId": "martin-holomek-10a435226",
         "profileId": "ACoAADipJVoBUKy1-ggmu1NEjjtKbSmjY5ujyrk",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE8DGgJxIO86w/profile-displayphoto-crop_800_800/B4DZkWMFqEGQAM-/0/1757013893676?e=1781136000&v=beta&t=6aeHSGO6Pm_GFNY9QwdmTRNT4SQSlaFVL_weIrmOILQ",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGKK5WWTenbag/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1729703770841?e=1781136000&v=beta&t=qa8WqiyiYAhYzw0W5gwedtWFQnMBIXkxDdSnf-CGbKg",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -95,9 +86,7 @@
         "occupation": "Lead technical consultant | DataBrothers co-founder | Microsoft Fabric & Power BI MVP",
         "id": "615286156",
         "publicId": "stepan-resl",
-        "profileId": "ACoAACSshYwBLf15BPVuln3nt6HFSWRNHs22ais",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHPm5ekV-IAag/profile-displayphoto-crop_800_800/B4EZeNI0nJHgAM-/0/1750419592463?e=1781136000&v=beta&t=1nb98B45lowUz-lR20KZTEj6VU2Rtj58Tw3xCefGqQs",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQFw2ehqUdfwyA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1668085053790?e=1781136000&v=beta&t=o0qeVCTlKr_9IzHYam3Hb7N7yrv6wxcOFzw1_kd9FFU"
+        "profileId": "ACoAACSshYwBLf15BPVuln3nt6HFSWRNHs22ais"
       }
     },
     {
@@ -108,9 +97,7 @@
         "occupation": "Breaking things safely so production doesn’t have to.",
         "id": "950609242",
         "publicId": "martin-holomek-10a435226",
-        "profileId": "ACoAADipJVoBUKy1-ggmu1NEjjtKbSmjY5ujyrk",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE8DGgJxIO86w/profile-displayphoto-crop_800_800/B4DZkWMFqEGQAM-/0/1757013893676?e=1781136000&v=beta&t=6aeHSGO6Pm_GFNY9QwdmTRNT4SQSlaFVL_weIrmOILQ",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGKK5WWTenbag/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1729703770841?e=1781136000&v=beta&t=qa8WqiyiYAhYzw0W5gwedtWFQnMBIXkxDdSnf-CGbKg"
+        "profileId": "ACoAADipJVoBUKy1-ggmu1NEjjtKbSmjY5ujyrk"
       }
     },
     {
@@ -121,9 +108,7 @@
         "occupation": "Python Backend Developer | IoT & Embedded Systems | REST APIs · PostgreSQL · Docker · AWS · Raspberry Pi",
         "id": "915717151",
         "publicId": "romanviktor",
-        "profileId": "ACoAADaUvB8B9l6wphhyhnpLoAOKG5H1Eb1LO4E",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQEToepY6NmI7Q/profile-framedphoto-shrink_800_800/B4DZxg1e4NHkAg-/0/1771151159073?e=1780430400&v=beta&t=RRFtoT0d0o1-1XLtBZZk6xOMUdgQ7Ykvrin4fb0lYPs",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGzIOan1Hv0ww/profile-displaybackgroundimage-shrink_350_1400/B4EZqXQBHHKoAY-/0/1763474152542?e=1781136000&v=beta&t=U_ZQxStc-2ImY2ynGpjlLsCwnBQspNz3EcaXqidn25k"
+        "profileId": "ACoAADaUvB8B9l6wphhyhnpLoAOKG5H1Eb1LO4E"
       }
     },
     {
@@ -134,9 +119,7 @@
         "occupation": "Software QA Engineer | Test Automation | AI-Driven Testing | Frontend | UX/UI | ex-Graphic Designer",
         "id": "456103352",
         "publicId": "lenka-silna",
-        "profileId": "ACoAABsvlbgB_YE9kjICFRS1b_hrU6yzTRKEHKo",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFf0_YqRz5aMw/profile-displayphoto-crop_800_800/B4DZyeRfyKI8AI-/0/1772181913275?e=1781136000&v=beta&t=djOSOQB0NajL7vAnGP1Vbttp8e1WcRdpEKG8ziyxtzg",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQECZhvzl5X7cg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1624343280736?e=1781136000&v=beta&t=g_BHz9nP1AHkEtQK2JeFVM4SR5-XuZaLlWHS_Ygq60g"
+        "profileId": "ACoAABsvlbgB_YE9kjICFRS1b_hrU6yzTRKEHKo"
       }
     },
     {
@@ -147,9 +130,7 @@
         "occupation": "I help factories digitise maintenance. With or without AI. Always with people first.",
         "id": "178006447",
         "publicId": "msvetlana",
-        "profileId": "ACoAAAqcKa8Bousd5uBo-bZZ9dq6qVlYKqtHvSc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF2d-GcOsk4Bg/profile-displayphoto-crop_800_800/B4DZ35j9rdHwAM-/0/1778008453433?e=1781136000&v=beta&t=drmOX7xsDyMGZaown-MFYSZXwtE2FSNpuvIxF5sa-CA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEafK1Y8bDUqw/profile-displaybackgroundimage-shrink_350_1400/B4DZWwQJBHHIAc-/0/1742418779616?e=1781136000&v=beta&t=0a47VNFLf1nQKjTg2JnpC3ODNNzCN24RoEDT7btdLtM"
+        "profileId": "ACoAAAqcKa8Bousd5uBo-bZZ9dq6qVlYKqtHvSc"
       }
     },
     {
@@ -160,8 +141,7 @@
         "occupation": "ServiceNow Developer",
         "id": "780967517",
         "publicId": "eva-horká-965664199",
-        "profileId": "ACoAAC6Mnl0B_RWsmBSIrDxz5FzwyU43Vlw4_lc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGL9GDLaYBPBg/profile-displayphoto-crop_800_800/B4EZoqKEvgIwAI-/0/1761643876988?e=1781136000&v=beta&t=MpwVyWaT0RywpPeGaIXz89GyZMS6y7Q4YQLxP7HszMY"
+        "profileId": "ACoAAC6Mnl0B_RWsmBSIrDxz5FzwyU43Vlw4_lc"
       }
     },
     {
@@ -172,9 +152,7 @@
         "occupation": "Global Sales Manager | Specialty Lubricants",
         "id": "132002824",
         "publicId": "petr-pribil",
-        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEGdgqIgIpkzg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712250006297?e=1781136000&v=beta&t=UB9wEJule0NhB0lR0De_FtfePuW1Di0Vm80cYt1MqZU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFuvlBRuJNbjw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712250566915?e=1781136000&v=beta&t=8sCRHio1dDSnAp_oiaygmw7_1g4W1ce4YJV-kaJIK3M"
+        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck"
       }
     },
     {
@@ -185,9 +163,7 @@
         "occupation": "Founder @EDUpunk | Learning design @Reactgirls.com | AI & Health Content Strategist | TALENT Mentor & MEME Therapist",
         "id": "201927716",
         "publicId": "marek-velas",
-        "profileId": "ACoAAAwJLCQB-ePqkhYoO0olYYFCoOJGgdydJEs",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQHj3KqlSVtI9A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1540025534374?e=1781136000&v=beta&t=CPzxTFoq5FwZ2NTvk1phzV1eKiS-9ILQHVR9fBpJD2I",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGXOBXZ2lQyaw/profile-displaybackgroundimage-shrink_350_1400/B4EZl9YDUNKYAY-/0/1758745081852?e=1781136000&v=beta&t=WtHueBkAwczoFilZWgkI-IVFDO89umDpdBCjoy1NOto"
+        "profileId": "ACoAAAwJLCQB-ePqkhYoO0olYYFCoOJGgdydJEs"
       }
     },
     {
@@ -198,9 +174,7 @@
         "occupation": "Digital Channel Marketing for B2B | Marketing automation | LinkedIn master | PPC | Digital technologies | Digital marketing strategy | SaaS | Lead generation | Analytics | Consultant",
         "id": "143237415",
         "publicId": "tomaspelikan8",
-        "profileId": "ACoAAAiJoScBa_0GbkS4QMz6H8dNbV-58wmPoFQ",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQH1fVW3E_Uvug/profile-displayphoto-shrink_800_800/B4DZPfgSfGHMAg-/0/1734621604627?e=1781136000&v=beta&t=sHLvL3cQpTN49uOVhjcqAomPGKLb3FaMTtsymQyRpb0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHiT4uaISs9tw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1616138338429?e=1781136000&v=beta&t=3aaTUNzHGO2RLFjjWH0KJ0CGIu9JqG0a-1YtpZ5EJ1Y"
+        "profileId": "ACoAAAiJoScBa_0GbkS4QMz6H8dNbV-58wmPoFQ"
       }
     },
     {
@@ -211,9 +185,7 @@
         "occupation": "I help great brands grow @STRV",
         "id": "337285701",
         "publicId": "strv-norbert-cerveny",
-        "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGKIAaUJPtlmA/profile-displayphoto-crop_800_800/B4DZ0jT_lBIEAI-/0/1774413941709?e=1781136000&v=beta&t=ioRFNZY53XZXWk1BvKTQdIygU-xxLKoyNysEAYklp0I",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG0ekEnNy2Hcw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0jTiNeGsAk-/0/1774413817026?e=1781136000&v=beta&t=_KMbjLzzfd2pO9gizTz2iWgDOkq5RQ3NpzDT5fOljNI"
+        "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg"
       }
     }
   ],
@@ -233,12 +205,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

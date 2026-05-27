@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4D22AQExIeVa-IW0mA/feedshare-shrink_1280/feedshare-shrink_1280/0/1641465699250?e=1781136000&v=beta&t=j_IwjNH7HQSI1YVO-jyoB62pIzRMJHRV4MCZmyUj3Is"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6884806152513699840",
   "url": "https://www.linkedin.com/posts/honzajavorek_datovaeranalaetza-datovaetvafxdec-osobnaedfinance-activity-6884806152513699840-adMC",
@@ -20,8 +18,7 @@
         "occupation": "Head of Engineering",
         "id": "76115329",
         "publicId": "vachapetr",
-        "profileId": "ACoAAASJbYEBMeOmhTR-EWaXg0q9HUTng5HCt9E",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGCiZVCJ_C1OA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1557674174077?e=1781136000&v=beta&t=BhlxGr50WWidcbX2Ie9bGUVi2zrduoaH7ODcwifpQcA"
+        "profileId": "ACoAAASJbYEBMeOmhTR-EWaXg0q9HUTng5HCt9E"
       }
     },
     {
@@ -34,9 +31,7 @@
         "occupation": "Dvořák & Zedník Wealth Management | Rozbité prasátko | Book Author | Podcast Host | ex-Data scientist",
         "id": "446728226",
         "publicId": "dvoorajak",
-        "profileId": "ACoAABqgiCIBGae91KbE1yHZSbzOLo87v5ifelI",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHFymIxlTnEsQ/profile-displayphoto-crop_800_800/B4EZpULbkhHgAI-/0/1762348874730?e=1781136000&v=beta&t=yR6cdtoSWHHtzNyPIZpPZsrrA4juFB5AiIQ6qNjaJSM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHQF2j4rhco6w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1666640098888?e=1781136000&v=beta&t=fuo_gPjUOCdidQ8r-umsHaF8sKCHtA_TVIanFZCXEz4"
+        "profileId": "ACoAABqgiCIBGae91KbE1yHZSbzOLo87v5ifelI"
       }
     },
     {
@@ -48,8 +43,7 @@
         "universalName": "processand",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:18212507",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQF5dl99jIeYYA/company-logo_400_400/company-logo_400_400/0/1659005336513/processand_logo?e=1781136000&v=beta&t=-ZXmSOJBHTQQCAXmKhP0D7VG7qLhrkBYlsYNrGDnmkg"
+        "entityUrn": "urn:li:fs_miniCompany:18212507"
       }
     },
     {
@@ -61,8 +55,7 @@
         "universalName": "rozbiteprasatko",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:20562484",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHYMkPyTAVXJg/company-logo_400_400/company-logo_400_400/0/1666198565844/rozbiteprasatko_logo?e=1781136000&v=beta&t=khgMyi5qcZdol5g3T5hECaNFZkhE9cU-bkcmglVR1xg"
+        "entityUrn": "urn:li:fs_miniCompany:20562484"
       }
     }
   ],
@@ -81,8 +74,6 @@
         "id": "8517488",
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -96,9 +87,7 @@
         "occupation": "Principal Information Security Engineer at HERE",
         "id": "3719671",
         "publicId": "valor",
-        "profileId": "ACoAAAA4wfcB-6wfVwYbMy69XKSeovQjgDHJSW0",
-        "picture": "https://media.licdn.com/dms/image/v2/C5103AQGjRfNSS1JcmQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516248813297?e=1781136000&v=beta&t=XxoOkJZ46kteyvJ_k3o4tT_5zhbc8s9Fbbe0RIcB4FA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQG3RlrCKlLZzg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1640715665619?e=1781136000&v=beta&t=e5iMMadAmgsuSQrkcopHNu9MuJrqHJ6KjBAgQjzYmEg"
+        "profileId": "ACoAAAA4wfcB-6wfVwYbMy69XKSeovQjgDHJSW0"
       }
     },
     {
@@ -109,9 +98,7 @@
         "occupation": "Employer Branding v IT | Moderátorka smitio komunity 🎤 | Pomáhám firmám budovat značku a oslovit talenty skrze autentický obsah.",
         "id": "21030863",
         "publicId": "katerina-maresova-smitio",
-        "profileId": "ACoAAAFA588Br07-uohoO-ZxDwmW5hiuFHo-v7s",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE92rmwWMO47w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1708608435719?e=1781136000&v=beta&t=8mj-K_QW63LhK249Q0ZUvQTIIarXyNaWzGYM8bqQ2-k",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFJC_hBgCaHGw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1674723396837?e=1781136000&v=beta&t=aOSC8cM77IGbDRVJHbWyuVbF-GCZ_fqU-nILTCWO1_Y"
+        "profileId": "ACoAAAFA588Br07-uohoO-ZxDwmW5hiuFHo-v7s"
       }
     },
     {
@@ -122,9 +109,7 @@
         "occupation": "Operations at Deutsche Börse",
         "id": "964302756",
         "publicId": "chrmzio",
-        "profileId": "ACoAADl6F6QBE6fNUi80lVl0ieS-jVdRiXvXg70",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEzQbFP6ipzgA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1642508638000?e=1781136000&v=beta&t=_eZ5Y4p8SfjUh5ly8ypfrt8BetI5OU4BCU0xXLpVMp0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEI8hMnu5JyiA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1674412735539?e=1781136000&v=beta&t=LQa4li_ZqG55Mq1ScHipmVoXwHL35JxjZazOs-ifQ-k"
+        "profileId": "ACoAADl6F6QBE6fNUi80lVl0ieS-jVdRiXvXg70"
       }
     },
     {
@@ -135,9 +120,7 @@
         "occupation": "Ráda pronikám do nových oblastí, s touhou po informacích a potřebou se učit a poznávat svět.",
         "id": "950470422",
         "publicId": "andrea-řezníčková-906388226",
-        "profileId": "ACoAADinBxYBqlq7XW4njJ7fDx1QH8ev08Hh8no",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGF4LOmHG5neg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1640976136919?e=1781136000&v=beta&t=NQP2fTLe8fMMMYXIyFJZ1dOVmI0h2IKvakIJKXodp7w",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQFlpmFcRharVQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1640919255741?e=1781136000&v=beta&t=vyQUt9odFSa5FHH10PwVIzn4Ca2ZxqURwXtGIJzCrzs"
+        "profileId": "ACoAADinBxYBqlq7XW4njJ7fDx1QH8ev08Hh8no"
       }
     },
     {
@@ -148,8 +131,7 @@
         "occupation": "After years of project management in market research, I retrained as a data analyst specializing in telecommunications. In the telco sector, I combine technical skills with business focus and efficient data-driven work.",
         "id": "25092574",
         "publicId": "darina-galavska",
-        "profileId": "ACoAAAF-4d4BkaGCAgowGWwkHLvbac1BJyReoTo",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEHJQwerYDXhQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517720420768?e=1781136000&v=beta&t=8xS4Q8J8X6lt12Hkj1uQefJFWTXml_uMjz40Erqxj48"
+        "profileId": "ACoAAAF-4d4BkaGCAgowGWwkHLvbac1BJyReoTo"
       }
     },
     {
@@ -159,8 +141,7 @@
         "universalName": "processand",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:18212507",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQF5dl99jIeYYA/company-logo_400_400/company-logo_400_400/0/1659005336513/processand_logo?e=1781136000&v=beta&t=-ZXmSOJBHTQQCAXmKhP0D7VG7qLhrkBYlsYNrGDnmkg"
+        "entityUrn": "urn:li:fs_miniCompany:18212507"
       }
     },
     {
@@ -171,9 +152,7 @@
         "occupation": "IT Recruiter for Green:Code - Powered by Škoda Auto & Etnetera",
         "id": "690634751",
         "publicId": "eva-valenova",
-        "profileId": "ACoAACkqP_8BVHBJ8mHEx3skVYHAjPSFAfq4WyQ",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQGPGndfSf_TLw/profile-framedphoto-shrink_800_800/B4DZ5PwiKpJYAg-/0/1779454583841?e=1780430400&v=beta&t=fF55FdalGlhGixLzzwRcu1NcoWkELZP9ocKSkK9B5fI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGlNGlcm5-VFg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1573905063639?e=1781136000&v=beta&t=INONISq3fq_arnHPqYTDcnYRfEWTqsz0dRR9SWH296E"
+        "profileId": "ACoAACkqP_8BVHBJ8mHEx3skVYHAjPSFAfq4WyQ"
       }
     },
     {
@@ -184,9 +163,7 @@
         "occupation": "Head of People & Senior HRBP 🤝 Org Design & Change Management 👷🏻‍♀️ Helping organisations and their people grow 🚀 From strategy to execution 🏁",
         "id": "372617580",
         "publicId": "zuzka-peskova",
-        "profileId": "ACoAABY1sWwB4t11FnuAB0kZKnWKzYGFsr-BnW4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEBTNC5HjmZwA/profile-displayphoto-crop_800_800/B4EZqdc3M9IUAM-/0/1763578181096?e=1781136000&v=beta&t=96_ZgIZQnV0KOXKFQEPPVNAmGS7Nd7a_i-r6SAdDxh0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGOsvFZTyUNow/profile-displaybackgroundimage-shrink_350_1400/B4EZne5YaCHgAc-/0/1760381210675?e=1781136000&v=beta&t=6g8P8LQihHH3TRY2z2x2TxC_4Y4n3SBZcvWDjOlndHM"
+        "profileId": "ACoAABY1sWwB4t11FnuAB0kZKnWKzYGFsr-BnW4"
       }
     },
     {
@@ -197,9 +174,7 @@
         "occupation": "Test Analyst at Cyber Fox and mentor at Czechitas",
         "id": "292145216",
         "publicId": "michaelakoudelkova",
-        "profileId": "ACoAABFpyEABFqmYqR_GlrpP2lafZoQLPBrf-tI",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFKsp97t6P-wQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516353290735?e=1781136000&v=beta&t=FVddPXnC0UmGq-57tY5dBNm37AB140yiPqqF0xLVJKo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQH5wEaq6ly9VA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1557083059573?e=1781136000&v=beta&t=X3PZ1VnvPc4Jw3cuQyoWmCeEbc0rQ_ap7Y79XPInj7Y"
+        "profileId": "ACoAABFpyEABFqmYqR_GlrpP2lafZoQLPBrf-tI"
       }
     },
     {
@@ -210,9 +185,7 @@
         "occupation": "Frontend Developer - React and Next",
         "id": "740316381",
         "publicId": "blanka-semanová",
-        "profileId": "ACoAACwgVN0BXjPO356is1a7HECdYY6oGuzTouY",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQHt31UB9Dnr_g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1705586552175?e=1781136000&v=beta&t=VnaoT0wlgyuQQGLJMI1wvCsS4oGHAmClyqm-JikLvgE",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGmd9O2TBL9PA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1705586497192?e=1781136000&v=beta&t=JlZHwSEMta7stFHe1LeFKFVGgbpKpeFbQUUDebs_rnc"
+        "profileId": "ACoAACwgVN0BXjPO356is1a7HECdYY6oGuzTouY"
       }
     }
   ],
@@ -232,12 +205,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQFnC9SyRzNh8w/feedshare-image-high-res/feedshare-image-high-res/0/1653924251677?e=1781136000&v=beta&t=bXI39AQdliWr0jKUMFbGOuM1lfiso4J2IIqe6o_BnAg"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6937061111208816640",
   "url": "https://www.linkedin.com/posts/honzajavorek_z-bankovnictv%C3%AD-do-it-pus%C5%A5te-si-programhrov%C3%A1n%C3%AD-activity-6937061111208816640-HXXa",
@@ -19,8 +17,7 @@
         "universalName": "programhrovani",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:76564291",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQFOyBtfsCCMew/company-logo_400_400/company-logo_400_400/0/1714162197209/programhrovani_logo?e=1781136000&v=beta&t=DXlA3Rag_ZygIhgzoHKLUFuVkcqgKxNq4TsvhzKhJCM"
+        "entityUrn": "urn:li:fs_miniCompany:76564291"
       }
     },
     {
@@ -33,9 +30,7 @@
         "occupation": "Software Engineer | Storyteller | LinkedIn Enthusiast and Mentor | I help other techies build a personal brand on LinkedIn | Fuelling growth of software engineers through Software Engineering Tales Podcast",
         "id": "266067406",
         "publicId": "pavel-polcr",
-        "profileId": "ACoAAA_b3c4BTAcvcf2VyIBHi_X2WWOWGNyt1ZI",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEu9ha6Y8Sixg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1669321063367?e=1781136000&v=beta&t=raEuoKrOSY-Tk_kZywRCzdqirDaq1Gn2VevDmPGUjF4",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFw1u4Fq3Nd8w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1729078028424?e=1781136000&v=beta&t=5tSeGbCLtj6zBZL9AjSaNC8kr84Qqb_0LxXwU47LgOk"
+        "profileId": "ACoAAA_b3c4BTAcvcf2VyIBHi_X2WWOWGNyt1ZI"
       }
     },
     {
@@ -47,8 +42,7 @@
         "universalName": "3pillarglobalczechia",
         "active": false,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:2323778",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQGopTtey3wXtA/company-logo_400_400/company-logo_400_400/0/1633693224203/sdesoftwaresolutions_logo?e=1781136000&v=beta&t=wzF3xNo9H4HMk1r9Q-7ILcn9bPSPgZkJB-b7PMwz_T8"
+        "entityUrn": "urn:li:fs_miniCompany:2323778"
       }
     }
   ],
@@ -66,8 +60,6 @@
         "id": "8517488",
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -92,8 +84,7 @@
         "occupation": "ServiceNow Developer",
         "id": "780967517",
         "publicId": "eva-horká-965664199",
-        "profileId": "ACoAAC6Mnl0B_RWsmBSIrDxz5FzwyU43Vlw4_lc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGL9GDLaYBPBg/profile-displayphoto-crop_800_800/B4EZoqKEvgIwAI-/0/1761643876988?e=1781136000&v=beta&t=MpwVyWaT0RywpPeGaIXz89GyZMS6y7Q4YQLxP7HszMY"
+        "profileId": "ACoAAC6Mnl0B_RWsmBSIrDxz5FzwyU43Vlw4_lc"
       }
     },
     {
@@ -104,9 +95,7 @@
         "occupation": "QA / IT Operations / Application Support (L2/L3) | Incident & Problem coordination",
         "id": "984876474",
         "publicId": "marie-fardova",
-        "profileId": "ACoAADq0BboBQ_KRV4mEctJhGCkj367mI-MHLFY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGpqy3eY8Wbbg/profile-displayphoto-shrink_800_800/B4EZWaxg9FHMAc-/0/1742058427167?e=1781136000&v=beta&t=025Z9rtKzosbIpagcaUeEB5knCTBzLHHT9T05QhQT0g",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHotrNYEzxIQA/profile-displaybackgroundimage-shrink_350_1400/B4DZx3Ffj5IYAc-/0/1771524465350?e=1781136000&v=beta&t=f5frvT20llSmGDDZ1m40cp0BGRuLfBQeklJttekZLVo"
+        "profileId": "ACoAADq0BboBQ_KRV4mEctJhGCkj367mI-MHLFY"
       }
     },
     {
@@ -117,8 +106,7 @@
         "occupation": "Analytik IT auditu ve společnosti KPMG Czech Republic",
         "id": "823217745",
         "publicId": "veronika-kopicova",
-        "profileId": "ACoAADERTlEBR16jtxiyB4-QHxs8Dr_dt-KxLNA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGUgibbZF6RJQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1591121262459?e=1781136000&v=beta&t=bAo87k-gfV2r-3xOMS4NCvOsTD39FYkssISm4exLpt0"
+        "profileId": "ACoAADERTlEBR16jtxiyB4-QHxs8Dr_dt-KxLNA"
       }
     },
     {
@@ -129,9 +117,7 @@
         "occupation": "SEO/UX Specialist at Webmium ✅ Aspiring Backend Developer at Home ✅",
         "id": "356811200",
         "publicId": "tomasmanhal",
-        "profileId": "ACoAABVEgcABhXssunqzWgZ32PhPvDuM7pOY7Sw",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGInNVdLygaYA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1643616498455?e=1781136000&v=beta&t=ZuyL6gCtMjtS2Bp5JitUt78VFkpsCsQXNtHO9yl9H4g",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGzLIim8zGACA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516975456614?e=1781136000&v=beta&t=6VFaoiFNvKKxzcGRnW_GTyGLSluSP2AQ71SpObNaKLo"
+        "profileId": "ACoAABVEgcABhXssunqzWgZ32PhPvDuM7pOY7Sw"
       }
     },
     {
@@ -142,9 +128,7 @@
         "occupation": "Software QA Engineer | Test Automation | AI-Driven Testing | Frontend | UX/UI | ex-Graphic Designer",
         "id": "456103352",
         "publicId": "lenka-silna",
-        "profileId": "ACoAABsvlbgB_YE9kjICFRS1b_hrU6yzTRKEHKo",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFf0_YqRz5aMw/profile-displayphoto-crop_800_800/B4DZyeRfyKI8AI-/0/1772181913275?e=1781136000&v=beta&t=djOSOQB0NajL7vAnGP1Vbttp8e1WcRdpEKG8ziyxtzg",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQECZhvzl5X7cg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1624343280736?e=1781136000&v=beta&t=g_BHz9nP1AHkEtQK2JeFVM4SR5-XuZaLlWHS_Ygq60g"
+        "profileId": "ACoAABsvlbgB_YE9kjICFRS1b_hrU6yzTRKEHKo"
       }
     },
     {
@@ -155,9 +139,7 @@
         "occupation": "🎙 Pomáhám tvořit lepší podcasty | Spolu-moderátor Mileniálové & Jak na podcasty | 💻 Voicebot engineer",
         "id": "205073291",
         "publicId": "madrvojtech",
-        "profileId": "ACoAAAw5K4sBA8nVYoHPe91603FIAQM8Afcl3AQ",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQG-5m6_kiUCLw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1640351690167?e=1781136000&v=beta&t=P0XlPJMkia6IYO5QAPO5phO59ToKi83zvfyVGTTL0zk",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEiI6dmbVAZ-g/profile-displaybackgroundimage-shrink_350_1400/B4EZpVejb9IUAc-/0/1762370665436?e=1781136000&v=beta&t=iUrGuEbjzZUCmquyBnn-85zPgbBTAAWrH23N2Bzt5i4"
+        "profileId": "ACoAAAw5K4sBA8nVYoHPe91603FIAQM8Afcl3AQ"
       }
     },
     {
@@ -168,9 +150,7 @@
         "occupation": "economist - analyst",
         "id": "519386930",
         "publicId": "zdenkakynychova",
-        "profileId": "ACoAAB71NzIBxagak31QEICakR46hWZXN8rxjI0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQGjT0w_A10P1w/profile-framedphoto-shrink_800_800/B4EZwdzvXQI0Ag-/0/1770026628849?e=1780430400&v=beta&t=cjYdPJM7I1ABCSvvejkAldoNnlUHnL4cHDP6KOVFvSc",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQF8vdmEeOQitw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1623662318582?e=1781136000&v=beta&t=IoYUhyrmGaHmnHf6tWBd3WCx8RCqIA96g-VFaPf4BUE"
+        "profileId": "ACoAAB71NzIBxagak31QEICakR46hWZXN8rxjI0"
       }
     },
     {
@@ -181,9 +161,7 @@
         "occupation": "Talent Sourcer @ SentinelOne.ai | The Future of CyberSec will be determined by You - let’s Secure Tomorrow™ together! 🛡️👾 | In 💜 with s1.ai/PurpleAI | 🕵️‍♂️ CyBeer security meetups organizer",
         "id": "322518163",
         "publicId": "vaclavkotyk",
-        "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHSFfNAAQ3ojA/profile-framedphoto-shrink_800_800/B4EZb.aDPLHAAs-/0/1748024964389?e=1780430400&v=beta&t=IvlxsfQQdb8KqO1QvRvDLxo7b9-V1Qrgz29nKWhJehw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG_GZHPXo_drQ/profile-displaybackgroundimage-shrink_350_1400/B4EZhWDO5THEAY-/0/1753790347174?e=1781136000&v=beta&t=TTJXtHJi0vF694Nao68XfleeSQJvzU06We8EI4GVwQI"
+        "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0"
       }
     },
     {
@@ -194,9 +172,7 @@
         "occupation": "Employer Branding v IT | Moderátorka smitio komunity 🎤 | Pomáhám firmám budovat značku a oslovit talenty skrze autentický obsah.",
         "id": "21030863",
         "publicId": "katerina-maresova-smitio",
-        "profileId": "ACoAAAFA588Br07-uohoO-ZxDwmW5hiuFHo-v7s",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE92rmwWMO47w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1708608435719?e=1781136000&v=beta&t=8mj-K_QW63LhK249Q0ZUvQTIIarXyNaWzGYM8bqQ2-k",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFJC_hBgCaHGw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1674723396837?e=1781136000&v=beta&t=aOSC8cM77IGbDRVJHbWyuVbF-GCZ_fqU-nILTCWO1_Y"
+        "profileId": "ACoAAAFA588Br07-uohoO-ZxDwmW5hiuFHo-v7s"
       }
     }
   ],
@@ -216,12 +192,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

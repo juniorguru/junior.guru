@@ -126,17 +126,6 @@
     {
       "type": "LIKE",
       "profile": {
-        "firstName": "Magdalena",
-        "lastName": "Grecová",
-        "occupation": "Aspiring Data Analyst | Czechitas Digitální akademie Data",
-        "id": "1650544248",
-        "publicId": "magdalena-grecova",
-        "profileId": "ACoAAGJhTngBFgAIt3drKZqAK6I_8UL80lMEiOU"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
         "firstName": "Václav",
         "lastName": "Lorenc",
         "occupation": "Principal Information Security Engineer at HERE",
@@ -187,6 +176,17 @@
         "id": "188339170",
         "publicId": "ivo-komarek",
         "profileId": "ACoAAAs50-IBujpmaaf7NQt5dflNvxTz8huNALM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martina",
+        "lastName": "Vyoralová",
+        "occupation": "Junior QA Tester | Absolventka Czechitas Digitální akademie | Zaměřená na kvalitu, detail a spolehlivost",
+        "id": "1427573187",
+        "publicId": "martinavyoralova",
+        "profileId": "ACoAAFUXCcMBlHZ6I3TCwWXfe4Wcib7gzTUnsDc"
       }
     }
   ],

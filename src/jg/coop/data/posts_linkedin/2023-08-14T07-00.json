@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/D4E22AQGBDDVuKJcTQg/feedshare-shrink_800/feedshare-shrink_800/0/1691754527667?e=1781136000&v=beta&t=uEGyXf1K6z7SkUYEptSCEIZWOzN3yKjk9GT1uHaWX_o"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:7096747307651448833",
   "url": "https://www.linkedin.com/posts/honzajavorek_jak-skloubit-rodi%C4%8Dovstv%C3%AD-a-kari%C3%A9ru-jak-si-activity-7096747307651448833-STD1",
@@ -20,8 +18,7 @@
         "occupation": "Host @ Junior Guru podcast.",
         "id": "190849253",
         "publicId": "pavlinafronkova",
-        "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk"
+        "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4"
       }
     },
     {
@@ -34,9 +31,7 @@
         "occupation": "Analytics - Data Engineering, Data Science & Bioinformatics",
         "id": "97247728",
         "publicId": "anastazie-sedlakova",
-        "profileId": "ACoAAAXL4fAByR2NxBN-qJeNv2u-xrXHNhv0Okw",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGbH53_4-vC-g/profile-displayphoto-shrink_800_800/B4EZP.CBHHGwAc-/0/1735133762954?e=1781136000&v=beta&t=lzhGb7QyACp5Fj0IrYyAU1P5YnXZ4CHGHha-qTDsGmw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQG5M4cZmF4l3w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1599758548505?e=1781136000&v=beta&t=Ohn0Nss2XRbI7rAYzdIxfDI2FzH-ArKjSjgJ7w0j1Lo"
+        "profileId": "ACoAAAXL4fAByR2NxBN-qJeNv2u-xrXHNhv0Okw"
       }
     }
   ],
@@ -55,7 +50,6 @@
         "id": "113001597",
         "publicId": "janecka",
         "profileId": "ACoAAAa8RH0BiQWO2tf0t0UtdUkYaLDw9M-BreI",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQELmkiWv2h_9g/profile-displayphoto-crop_800_800/B4DZz1.0o4IkAM-/0/1773653413041?e=1781136000&v=beta&t=H2siuSDcEvDxTGAz7p5EDsr8r46Ja9N6tDOX1GJAVMU",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -69,8 +63,7 @@
         "occupation": "Principal Bioinformatics Scientist at DNAnexus",
         "id": "231549540",
         "publicId": "janka-puterova",
-        "profileId": "ACoAAA3NKmQBnD2YMpGfja2ZjYpVcfyxj4sy8MM",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGqSBKz1l95jA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1587988112075?e=1781136000&v=beta&t=PCqRPJ3wwEXzK3SSvq-Abks9gp1TgbUlTKhQJvPhPTc"
+        "profileId": "ACoAAA3NKmQBnD2YMpGfja2ZjYpVcfyxj4sy8MM"
       }
     },
     {
@@ -81,8 +74,7 @@
         "occupation": "Biomedical Data Scientist",
         "id": "358061025",
         "publicId": "ondřej-klempíř-2a9ab79b",
-        "profileId": "ACoAABVXk-EBcwjCOmHtu28TuEM9SbuKn2Z12M4",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH344cpoHv9vg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1597419668907?e=1781136000&v=beta&t=73XDexbXTdRCBdDPkSGwX3TDWY0JXutuWl_Z49Jlga0"
+        "profileId": "ACoAABVXk-EBcwjCOmHtu28TuEM9SbuKn2Z12M4"
       }
     },
     {
@@ -93,9 +85,7 @@
         "occupation": "Analytics - Data Engineering, Data Science & Bioinformatics",
         "id": "97247728",
         "publicId": "anastazie-sedlakova",
-        "profileId": "ACoAAAXL4fAByR2NxBN-qJeNv2u-xrXHNhv0Okw",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGbH53_4-vC-g/profile-displayphoto-shrink_800_800/B4EZP.CBHHGwAc-/0/1735133762954?e=1781136000&v=beta&t=lzhGb7QyACp5Fj0IrYyAU1P5YnXZ4CHGHha-qTDsGmw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQG5M4cZmF4l3w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1599758548505?e=1781136000&v=beta&t=Ohn0Nss2XRbI7rAYzdIxfDI2FzH-ArKjSjgJ7w0j1Lo"
+        "profileId": "ACoAAAXL4fAByR2NxBN-qJeNv2u-xrXHNhv0Okw"
       }
     },
     {
@@ -106,9 +96,7 @@
         "occupation": "Marketingová specialistka | Projektová manažerka | PPC, Analytika, weby, sítě | Zakladatelka Surikata Surfcamp",
         "id": "289776290",
         "publicId": "novotnarenata",
-        "profileId": "ACoAABFFoqIBSUwrpc60tR-iO1S6j399mJwNb7E",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQE9u-E-rGjZzQ/profile-framedphoto-shrink_800_800/B4EZovgJnOKMAg-/0/1761733548824?e=1780430400&v=beta&t=SQSEcx9yRLrMg_yToZTnCSZOvjicouVX9laHANkYnNs",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGVcQb0LD9ERg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517905031536?e=1781136000&v=beta&t=_3SD7zX3kv6fTrGBiNK04waaDJh2kty2_E4NcTK2CGw"
+        "profileId": "ACoAABFFoqIBSUwrpc60tR-iO1S6j399mJwNb7E"
       }
     },
     {
@@ -130,9 +118,7 @@
         "occupation": "Data & Reporting Specialist",
         "id": "413328845",
         "publicId": "katerina-kubisova",
-        "profileId": "ACoAABii5c0BnQ4fp97-T7WNB3YVsis0dfaHWOA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGb9Z2f7PJbfw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1659986289510?e=1781136000&v=beta&t=tEMWe8pHNNjD_zl6l3hzsdiuQQi1Bo26Fu93RqcvLDI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHVfHodiNuBog/profile-displaybackgroundimage-shrink_350_1400/B4EZeyUIjFHwAg-/0/1751043312824?e=1781136000&v=beta&t=czbdisrP86yM_wTe3MYZTZUNmEZetUZ5lClnBC3IiJg"
+        "profileId": "ACoAABii5c0BnQ4fp97-T7WNB3YVsis0dfaHWOA"
       }
     },
     {
@@ -143,9 +129,7 @@
         "occupation": "HR specialist ve společnosti ŠKODA ELECTRIC a.s. | maminka na mateřské",
         "id": "585522424",
         "publicId": "marketaknizkova",
-        "profileId": "ACoAACLmXPgBfyDtgxOEcZEYQeRFJ2tshAvAOS8",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFN-QUpk72DXg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1591620541897?e=1781136000&v=beta&t=-Nb4RyCkd45kbr8uAC3dWwx8MYfJ4m-qAdQBOOqJ_R8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFWTshNSW51YQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1572967803784?e=1781136000&v=beta&t=-t53dJe9ncmuM4GIgCXxibOTUmdkYupwETWyGUtRNx8"
+        "profileId": "ACoAACLmXPgBfyDtgxOEcZEYQeRFJ2tshAvAOS8"
       }
     },
     {
@@ -156,8 +140,7 @@
         "occupation": "-",
         "id": "358808770",
         "publicId": "kristyna-papezova",
-        "profileId": "ACoAABVi_MIBAoxl-AzrHqCKW8pRLKky_eMKeqM",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGEgD06l-uekA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517001843202?e=1781136000&v=beta&t=pT_t6tTfRgcVmvucg6K30nE9yPhIGvuSRCjgK1o8rWE"
+        "profileId": "ACoAABVi_MIBAoxl-AzrHqCKW8pRLKky_eMKeqM"
       }
     },
     {
@@ -168,8 +151,7 @@
         "occupation": "Mediálně zviditelňuju smysluplné projekty | Head of PR Sto skupin",
         "id": "554644182",
         "publicId": "katerina-svobodova",
-        "profileId": "ACoAACEPMtYBZDGTYoql9q0oaoh9wBiNKXvtVIk",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHsaOhYIk6PTQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1572143316845?e=1781136000&v=beta&t=XdzjqW30zj4KJgmHIX48OCSi6U08qMNGERDM-IGlnVc"
+        "profileId": "ACoAACEPMtYBZDGTYoql9q0oaoh9wBiNKXvtVIk"
       }
     },
     {
@@ -180,9 +162,7 @@
         "occupation": "Software Developer",
         "id": "1070605131",
         "publicId": "vit-hert",
-        "profileId": "ACoAAD_QI0sBQomuX9ouYR3Nrow9FtAqRqDFF-8",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH6AN95QjNusw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1688059286549?e=1781136000&v=beta&t=TfhJcPa71139kp1qOWmEE6iAuLAJl2cDn4XQZHr33js",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG4Fvb8FVdlsQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1688061771890?e=1781136000&v=beta&t=QK1RP3716Yz4u27qJfYm8EQCZnnMb8qt8ZZMX5UtXDM"
+        "profileId": "ACoAAD_QI0sBQomuX9ouYR3Nrow9FtAqRqDFF-8"
       }
     }
   ],
@@ -202,12 +182,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

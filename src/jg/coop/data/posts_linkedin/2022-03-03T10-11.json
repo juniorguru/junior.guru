@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4D22AQFtIivKtFBPzw/feedshare-shrink_1280/feedshare-shrink_1280/0/1646302298589?e=1781136000&v=beta&t=yZqcChgkUwz6DH91A2p7pzAElzqWDW-p9vu1Pr3T4Es"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6905092321936060416",
   "url": "https://www.linkedin.com/posts/honzajavorek_standforukraine-activity-6905092321936060416-E9JM",
@@ -19,8 +17,7 @@
         "universalName": "cesko-digital",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:14803595",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQF_timuUHwllg/company-logo_400_400/company-logo_400_400/0/1630501620053/cesko_digital_logo?e=1781136000&v=beta&t=1gQ5GhFuxgcm3RZJGTEzlEsvtGSZRY-MUlW2urd6KDo"
+        "entityUrn": "urn:li:fs_miniCompany:14803595"
       }
     }
   ],
@@ -39,8 +36,6 @@
         "id": "308919927",
         "publicId": "vit-chalupa",
         "profileId": "ACoAABJpvncBf1G1ESbBQHgNIobsuZQlHwk0r4U",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG2EsCdTO3qSg/profile-displayphoto-shrink_800_800/B4EZZ8I1nXHEAc-/0/1745839414615?e=1781136000&v=beta&t=6L5WdCQg3KXNQ9c7kg0oE0OBms4bcwZtK_v8M6iEzi8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEScAY6cBbEFA/profile-displaybackgroundimage-shrink_350_1400/B4DZ2DalEqKsAc-/0/1776026277827?e=1781136000&v=beta&t=4HwQ08xMTClgitlwILN9DEgOmD5jFydDphNk3zQyKI4",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -59,8 +54,7 @@
             "occupation": "Professional Dreamer",
             "id": "10268760",
             "publicId": "sekera",
-            "profileId": "ACoAAACcsFgBtvxUjS6JYyTtiMnxxZyGunYXcmM",
-            "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHz6_ihVT0QLw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1681287304083?e=1781136000&v=beta&t=xlMYFefCME9-otvlp_QdrfsT-j1CR-4rFZNg7nZb2LI"
+            "profileId": "ACoAAACcsFgBtvxUjS6JYyTtiMnxxZyGunYXcmM"
           }
         },
         {
@@ -73,9 +67,7 @@
             "occupation": "Product design teams & systems 🚀",
             "id": "530422661",
             "publicId": "adina-fox",
-            "profileId": "ACoAAB-dm4UBphpPt0M3o_HcoFhUNSFgam6yIyY",
-            "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFo9U_21z2zFQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725308203416?e=1781136000&v=beta&t=Fd5s_bPfqV9Zum-qkjT2BT8KUdWKCIg9uy1iP3ipCrw",
-            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQELga56ku2WNQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1725308323511?e=1781136000&v=beta&t=kl_7bliQ0v3-LukBvPWRe4MSEbzY6Ek4O7jp0QquIkE"
+            "profileId": "ACoAAB-dm4UBphpPt0M3o_HcoFhUNSFgam6yIyY"
           }
         },
         {
@@ -88,9 +80,7 @@
             "occupation": "Experimenter in the laboratory of life",
             "id": "114630828",
             "publicId": "katkajirinova",
-            "profileId": "ACoAAAbVIKwByxbmWX96JvNb-F7hcda3DVBy8JA",
-            "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGERUZwksWrtQ/profile-displayphoto-shrink_800_800/B4DZd8nS.5HMAk-/0/1750142366381?e=1781136000&v=beta&t=u_Oz6wEAlkL7Ihke7VBvQ6v_bVbDFoP85HtHrxfKt9E",
-            "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQF83LLfZHuGVg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1610306088667?e=1781136000&v=beta&t=sOA4mMgKQS0cKK_Rgr8uDJQyIbI3YFoUHwZoEIfOa5Q"
+            "profileId": "ACoAAAbVIKwByxbmWX96JvNb-F7hcda3DVBy8JA"
           }
         },
         {
@@ -103,9 +93,7 @@
             "occupation": "Co-owner & Head of Growth at solidpixels.",
             "id": "158508687",
             "publicId": "martinhakl",
-            "profileId": "ACoAAAlypo8BHjaRzNPkL33k7ys-eXfgBw3Ru_4",
-            "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGZmzqV4ChHAw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1635230194653?e=1781136000&v=beta&t=T0u318EJZV0wZX_hTLUnLX05_VoNxOvn2YBRctPsetE",
-            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGfXH71JU6rsg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1699688978327?e=1781136000&v=beta&t=XrG9Z5ANYDZdTIq_x0WbF1WX1o4uphVruM1fw3yfp_k"
+            "profileId": "ACoAAAlypo8BHjaRzNPkL33k7ys-eXfgBw3Ru_4"
           }
         },
         {
@@ -117,8 +105,7 @@
             "universalName": "solidpixels",
             "active": true,
             "showcase": false,
-            "entityUrn": "urn:li:fs_miniCompany:18137580",
-            "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQFlirNbrfqI5Q/company-logo_400_400/B4DZi.NnH9H4Ag-/0/1755537896523?e=1781136000&v=beta&t=wVNOgD4HrWWEUpabk8NwIu6n9lJO5LEcRwzk33_qV1o"
+            "entityUrn": "urn:li:fs_miniCompany:18137580"
           }
         },
         {
@@ -131,9 +118,7 @@
             "occupation": "People Partner in Trezor & SatoshiLabs ~ Founder of Elegree ~ Deathwalker & Funeral Ceremonialist ~ Yoga Teacher",
             "id": "269692807",
             "publicId": "zajickovalucie",
-            "profileId": "ACoAABATL4cB-2vXjzUvfwtXSDDAqH3FY5ZiDGs",
-            "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEPTpc3t5ypeg/profile-displayphoto-crop_800_800/B4EZondlCJKsAM-/0/1761598658485?e=1781136000&v=beta&t=w4co6W8S8vuQ4NKBQy-SxYwLHjnM645SDMXXARegWnU",
-            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEKY0aP7C84HQ/profile-displaybackgroundimage-shrink_350_1400/B4EZlNmwBbKwAY-/0/1757943654875?e=1781136000&v=beta&t=RUomDv9Xjmnaj-QHTIpntsgl0hpkQjGZhA0TlVa1FPc"
+            "profileId": "ACoAABATL4cB-2vXjzUvfwtXSDDAqH3FY5ZiDGs"
           }
         },
         {
@@ -146,9 +131,7 @@
             "occupation": "🚨🚒🚑🚓🛻🛣️ Road Safety Solutions | V2X | Fleet & Mobility | Connected Vehicles",
             "id": "14068228",
             "publicId": "terezagag",
-            "profileId": "ACoAAADWqgQBR45W54XlZO55c3423BASGOuoyCk",
-            "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGOUQO9NNd5uw/profile-displayphoto-shrink_800_800/B4DZU4KFwAHIAg-/0/1740403924343?e=1781136000&v=beta&t=C6m17m251v3NWLFHPoe8gF96sRPce-9QRYQRArzk7kU",
-            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEswgFGmRd_rQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ2r_.nAKMAc-/0/1776707174208?e=1781136000&v=beta&t=MuDCOoVvlBuRXkCe10Vr9Fu3GZtAny4jgZKaMIABAZw"
+            "profileId": "ACoAAADWqgQBR45W54XlZO55c3423BASGOuoyCk"
           }
         },
         {
@@ -161,9 +144,7 @@
             "occupation": "🌍 deepdiving into international education management in Barcelona",
             "id": "94821492",
             "publicId": "martinacilkova",
-            "profileId": "ACoAAAWm3HQBFsFsV7u8FD8J0zVb5kfM3yWum0U",
-            "picture": "https://media.licdn.com/dms/image/v2/C5103AQHHa44S7dTDbw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1526449390578?e=1781136000&v=beta&t=rgV0klUZMOLPMM47tqNhmUG4l6KEuUm7BlwEEhvh03c",
-            "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFdrG9_kRe70Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1625153656177?e=1781136000&v=beta&t=VMSk1hUdJVxqVai5O_sHLTZe9fZEFNTCezRgZVwobhc"
+            "profileId": "ACoAAAWm3HQBFsFsV7u8FD8J0zVb5kfM3yWum0U"
           }
         }
       ],
@@ -176,8 +157,6 @@
         "id": "12118109",
         "publicId": "evapavlikova",
         "profileId": "ACoAAAC46F0BJQLhw3nCC7aaTcpYSs6RqWaP1Vw",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHlt2AxwqFdVQ/profile-displayphoto-crop_800_800/B4EZfG.16hHYAM-/0/1751390052552?e=1781136000&v=beta&t=TSZH6NhRKWHzP95IkFkyLySMnb8lruC28HEH-ZHv0QM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEVGUA5BaYCyQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1587825486562?e=1781136000&v=beta&t=f3cNmgwZ45sDrj1GeTLkYKSB8BVy6WkqFDBfMvwRQsA",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -191,9 +170,7 @@
         "occupation": "AI/ML & DS: Turning Data into Measurable Business Impact ▪ Strategic Leader ▪ Mentor for Technical Growth ▪ Coaching DS/AI Teams for Business Impact ▪ Upskilling Business Teams in Data Literacy & Data-Driven Culture",
         "id": "3582210",
         "publicId": "dobis",
-        "profileId": "ACoAAAA2qQIBiZ13nvyYI64vM6qPWM6BR0l9ei0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEVcEKV2TdMkg/profile-displayphoto-crop_800_800/B4DZ4mu_8xI0AM-/0/1778766315875?e=1781136000&v=beta&t=Rx2neYdS6al2SLui3UvYw-hcUXe7jIGmepYjssjF4ko",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHoRYEvet0TbQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ4mxfVTIUAY-/0/1778766969574?e=1781136000&v=beta&t=-ImvWqz9ZqP9dFbe0_vNxEk-aBibvuohAzn0tK9LQo4"
+        "profileId": "ACoAAAA2qQIBiZ13nvyYI64vM6qPWM6BR0l9ei0"
       }
     },
     {
@@ -204,9 +181,7 @@
         "occupation": "Web Administrator UJOP UK, Web & App Administrator Fandi mámám z.s. (result oriented, excentric and extroverted)",
         "id": "527810507",
         "publicId": "kateřina-fořtová-a8b919128",
-        "profileId": "ACoAAB91v8sB8Y7AGvSCQXdStU4xzhiUjyQ7ftU",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFbqVTKzK_xtA/profile-displayphoto-shrink_800_800/B4EZbKrqBdHIAg-/0/1747157164814?e=1781136000&v=beta&t=nuYmYWQsD8s02ZTUXyZDoAeMdWoK7oq_rKFZygs3shA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHxGkoRWFWQcQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1713199429534?e=1781136000&v=beta&t=oDMIffUJEI5zY6AaiZkwTu49_EY_0o8l2Tz1K8hE3DQ"
+        "profileId": "ACoAAB91v8sB8Y7AGvSCQXdStU4xzhiUjyQ7ftU"
       }
     },
     {
@@ -217,9 +192,7 @@
         "occupation": "Team Leader Technical Support | People Leadership • Service Quality • Process Improvement #Leadership #CustomerSupport",
         "id": "308919927",
         "publicId": "vit-chalupa",
-        "profileId": "ACoAABJpvncBf1G1ESbBQHgNIobsuZQlHwk0r4U",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG2EsCdTO3qSg/profile-displayphoto-shrink_800_800/B4EZZ8I1nXHEAc-/0/1745839414615?e=1781136000&v=beta&t=6L5WdCQg3KXNQ9c7kg0oE0OBms4bcwZtK_v8M6iEzi8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEScAY6cBbEFA/profile-displaybackgroundimage-shrink_350_1400/B4DZ2DalEqKsAc-/0/1776026277827?e=1781136000&v=beta&t=4HwQ08xMTClgitlwILN9DEgOmD5jFydDphNk3zQyKI4"
+        "profileId": "ACoAABJpvncBf1G1ESbBQHgNIobsuZQlHwk0r4U"
       }
     },
     {
@@ -230,9 +203,7 @@
         "occupation": "Product design teams & systems 🚀",
         "id": "530422661",
         "publicId": "adina-fox",
-        "profileId": "ACoAAB-dm4UBphpPt0M3o_HcoFhUNSFgam6yIyY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFo9U_21z2zFQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725308203416?e=1781136000&v=beta&t=Fd5s_bPfqV9Zum-qkjT2BT8KUdWKCIg9uy1iP3ipCrw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQELga56ku2WNQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1725308323511?e=1781136000&v=beta&t=kl_7bliQ0v3-LukBvPWRe4MSEbzY6Ek4O7jp0QquIkE"
+        "profileId": "ACoAAB-dm4UBphpPt0M3o_HcoFhUNSFgam6yIyY"
       }
     },
     {
@@ -242,8 +213,7 @@
         "universalName": "solidpixels",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:18137580",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQFlirNbrfqI5Q/company-logo_400_400/B4DZi.NnH9H4Ag-/0/1755537896523?e=1781136000&v=beta&t=wVNOgD4HrWWEUpabk8NwIu6n9lJO5LEcRwzk33_qV1o"
+        "entityUrn": "urn:li:fs_miniCompany:18137580"
       }
     },
     {
@@ -254,9 +224,7 @@
         "occupation": "☮️ Values-Driven Change Agent | Agile Coach | Life Coach | ex-CEO Czechitas | Consultant | Mentor | Social Impact Advisor | Board Member | Lecturer | Visionary 🔮 AYLP and Leaders of Tomorrow Alumni",
         "id": "87280750",
         "publicId": "ondcej",
-        "profileId": "ACoAAAUzzG4BLoHWLVFE4_dAWsnhPhXpaXU4Vbg",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFCa2h1OvIDAw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1698863108972?e=1781136000&v=beta&t=bHFmAbnpBq3DMJ1Lcrk6z6lO1GhrTK3nQECYgvpSb_M",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE8IsEeTc5LVQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1690885177156?e=1781136000&v=beta&t=2mROWGtu_20GwjT860KwfH5lPt-FGCwxNIVwdAOR0do"
+        "profileId": "ACoAAAUzzG4BLoHWLVFE4_dAWsnhPhXpaXU4Vbg"
       }
     },
     {
@@ -267,9 +235,7 @@
         "occupation": "Python Backend Developer | IoT & Embedded Systems | REST APIs · PostgreSQL · Docker · AWS · Raspberry Pi",
         "id": "915717151",
         "publicId": "romanviktor",
-        "profileId": "ACoAADaUvB8B9l6wphhyhnpLoAOKG5H1Eb1LO4E",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQEToepY6NmI7Q/profile-framedphoto-shrink_800_800/B4DZxg1e4NHkAg-/0/1771151159073?e=1780430400&v=beta&t=RRFtoT0d0o1-1XLtBZZk6xOMUdgQ7Ykvrin4fb0lYPs",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGzIOan1Hv0ww/profile-displaybackgroundimage-shrink_350_1400/B4EZqXQBHHKoAY-/0/1763474152542?e=1781136000&v=beta&t=U_ZQxStc-2ImY2ynGpjlLsCwnBQspNz3EcaXqidn25k"
+        "profileId": "ACoAADaUvB8B9l6wphhyhnpLoAOKG5H1Eb1LO4E"
       }
     },
     {
@@ -280,9 +246,7 @@
         "occupation": "Marketing Manager",
         "id": "175576162",
         "publicId": "vit-kobylka-6aa9724a",
-        "profileId": "ACoAAAp3FGIBTrXeGhtvlLeLgNZKQdqlLECFYo8",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQG6KLblRO2PQQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729589262472?e=1781136000&v=beta&t=cXRs7jCaE--2D9RXfkH2I7t3dWZCj8GGQd-l6VFJQXI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEAcazw5idH-A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1729589845754?e=1781136000&v=beta&t=SAS6c9Dhz3y7zDirblC2jA7itc5eOeFoyaUe8V4T_FA"
+        "profileId": "ACoAAAp3FGIBTrXeGhtvlLeLgNZKQdqlLECFYo8"
       }
     },
     {
@@ -293,9 +257,7 @@
         "occupation": "Software Engineer",
         "id": "445845056",
         "publicId": "marharyta-beznytska",
-        "profileId": "ACoAABqTDkABpLJeFJPiAvcSNl6HPcPVB7QOCD4",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGQCRumKhQo3g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1625162600491?e=1781136000&v=beta&t=ac9xIlBNjeE6Bq6ugzkENXPlb5YrKbm22cDn-t0PIas",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGw6pEA5txhsQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1625162496845?e=1781136000&v=beta&t=R4txpugtczeuJ-nE_HJzn_H3xExq0d7QzH0Gx5UB8ek"
+        "profileId": "ACoAABqTDkABpLJeFJPiAvcSNl6HPcPVB7QOCD4"
       }
     },
     {
@@ -306,9 +268,7 @@
         "occupation": "🌍 deepdiving into international education management in Barcelona",
         "id": "94821492",
         "publicId": "martinacilkova",
-        "profileId": "ACoAAAWm3HQBFsFsV7u8FD8J0zVb5kfM3yWum0U",
-        "picture": "https://media.licdn.com/dms/image/v2/C5103AQHHa44S7dTDbw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1526449390578?e=1781136000&v=beta&t=rgV0klUZMOLPMM47tqNhmUG4l6KEuUm7BlwEEhvh03c",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFdrG9_kRe70Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1625153656177?e=1781136000&v=beta&t=VMSk1hUdJVxqVai5O_sHLTZe9fZEFNTCezRgZVwobhc"
+        "profileId": "ACoAAAWm3HQBFsFsV7u8FD8J0zVb5kfM3yWum0U"
       }
     }
   ],
@@ -328,12 +288,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

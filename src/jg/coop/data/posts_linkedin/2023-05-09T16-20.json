@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/D4E22AQHJZcpthXhBVw/feedshare-shrink_800/feedshare-shrink_800/0/1683649209716?e=1781136000&v=beta&t=CQlK_dcZiIn7W5Tr2rEx7Q11xoVT-jMNhjlZlY9T4_g"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:7061736620999221248",
   "url": "https://www.linkedin.com/posts/honzajavorek_engineering-pohovory-interviews-activity-7061736620999221248-6_Rs",
@@ -20,9 +18,7 @@
         "occupation": "🎓 Founder of 2k+ Engineering Leaders Community in Europe | I help CTOs and engineering leaders scale from 6 to 80 teams without losing their sanity | 3000+ mentoring sessions since 2019.",
         "id": "5216415",
         "publicId": "mariankamenistak",
-        "profileId": "ACoAAABPmJ8BfbLR5U4tfSNr8hXSkBBI3ogbs0k",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE0T2VJCnVQFQ/profile-displayphoto-shrink_800_800/B4EZTLCTQyHMAc-/0/1738573166282?e=1781136000&v=beta&t=GbMyfdPFm3vJU6saMX1ypKRPhSvC7U7cMBes-jF2uh8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFC3fihHtIuTA/profile-displaybackgroundimage-shrink_350_1400/B4DZwsQ1_.J8AY-/0/1770269140976?e=1781136000&v=beta&t=AmnBbMSPqBgErycd2fAaMIf2tDa4TDrcCeXtgy22BqE"
+        "profileId": "ACoAAABPmJ8BfbLR5U4tfSNr8hXSkBBI3ogbs0k"
       }
     },
     {
@@ -35,8 +31,7 @@
         "occupation": "Host @ Junior Guru podcast.",
         "id": "190849253",
         "publicId": "pavlinafronkova",
-        "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk"
+        "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4"
       }
     },
     {
@@ -48,8 +43,7 @@
         "universalName": "mewssystems",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:2574959",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQG9VtyX26envQ/company-logo_400_400/B4EZyKEXeEH0AY-/0/1771842926937/mewssystems_logo?e=1781136000&v=beta&t=UIV6bGS_gnn1FvSP7zSjwts_zMyZHE6t4vu9n9Nz5KE"
+        "entityUrn": "urn:li:fs_miniCompany:2574959"
       }
     }
   ],
@@ -69,9 +63,7 @@
             "occupation": "🎓 Founder of 2k+ Engineering Leaders Community in Europe | I help CTOs and engineering leaders scale from 6 to 80 teams without losing their sanity | 3000+ mentoring sessions since 2019.",
             "id": "5216415",
             "publicId": "mariankamenistak",
-            "profileId": "ACoAAABPmJ8BfbLR5U4tfSNr8hXSkBBI3ogbs0k",
-            "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE0T2VJCnVQFQ/profile-displayphoto-shrink_800_800/B4EZTLCTQyHMAc-/0/1738573166282?e=1781136000&v=beta&t=GbMyfdPFm3vJU6saMX1ypKRPhSvC7U7cMBes-jF2uh8",
-            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFC3fihHtIuTA/profile-displaybackgroundimage-shrink_350_1400/B4DZwsQ1_.J8AY-/0/1770269140976?e=1781136000&v=beta&t=AmnBbMSPqBgErycd2fAaMIf2tDa4TDrcCeXtgy22BqE"
+            "profileId": "ACoAAABPmJ8BfbLR5U4tfSNr8hXSkBBI3ogbs0k"
           }
         }
       ],
@@ -84,8 +76,6 @@
         "id": "15116957",
         "publicId": "davidpeknic",
         "profileId": "ACoAAADmqp0B9oH2ArKbN3fG6zZZsQj_WMnSFGQ",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHN0EYSnycslQ/profile-displayphoto-crop_800_800/B4EZnF0lx7KwAI-/0/1759960527442?e=1781136000&v=beta&t=xOxw6UGH3jQKiNl4Nczn6W3c8iCJi6f_aNNPG4fN2X8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFW8faEfq3WXw/profile-displaybackgroundimage-shrink_350_1400/B4DZtbBJc.H4Ac-/0/1766758587534?e=1781136000&v=beta&t=16A_Qila6-xuSPRVoobYpfXNvhMP9-SLG5PNYOzo5xI",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -104,8 +94,7 @@
             "occupation": "Host @ Junior Guru podcast.",
             "id": "190849253",
             "publicId": "pavlinafronkova",
-            "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
-            "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk"
+            "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4"
           }
         },
         {
@@ -118,9 +107,7 @@
             "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
             "id": "8517488",
             "publicId": "honzajavorek",
-            "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-            "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+            "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
           }
         }
       ],
@@ -133,8 +120,6 @@
         "id": "5216415",
         "publicId": "mariankamenistak",
         "profileId": "ACoAAABPmJ8BfbLR5U4tfSNr8hXSkBBI3ogbs0k",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE0T2VJCnVQFQ/profile-displayphoto-shrink_800_800/B4EZTLCTQyHMAc-/0/1738573166282?e=1781136000&v=beta&t=GbMyfdPFm3vJU6saMX1ypKRPhSvC7U7cMBes-jF2uh8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFC3fihHtIuTA/profile-displaybackgroundimage-shrink_350_1400/B4DZwsQ1_.J8AY-/0/1770269140976?e=1781136000&v=beta&t=AmnBbMSPqBgErycd2fAaMIf2tDa4TDrcCeXtgy22BqE",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -152,8 +137,6 @@
         "id": "1040508481",
         "publicId": "daniel-sochor",
         "profileId": "ACoAAD4E5kEBLCHsDKLT1OEFHWgrps9u9uU2q28",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHBknVVikZ2eg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1663180049851?e=1781136000&v=beta&t=PBOkmAKLPdR0bFBr7k5dPM4uhu_JoUdQrlTWzMjJfTI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEejJCzZWuZsQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1685560777271?e=1781136000&v=beta&t=RNbnuQoSoW1ssprXUZMs6PQgKnYwbuJmq8xSRRfIk4E",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -170,8 +153,6 @@
         "id": "110092052",
         "publicId": "zapadlo",
         "profileId": "ACoAAAaP3xQB9OmVR_H_rXxr57aIJAftAOFahUs",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEC6JZP0jAE5A/profile-displayphoto-crop_800_800/B4EZiACje6GwAI-/0/1754494810986?e=1781136000&v=beta&t=69zGDVDEsUr5PukYrdlxmWbuF7bmV_Rk_OZloYqmv4Y",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHL7rOg96wbpw/profile-displaybackgroundimage-shrink_350_1400/B4DZ5J79pbJYAU-/0/1779356916618?e=1781136000&v=beta&t=buaM98C3-LroCzT-M5lGeVcn964WC7cuUW91BRlUDmQ",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -185,9 +166,7 @@
         "occupation": "Senior QA Engineer at Warhorse Studios ⚔",
         "id": "303039169",
         "publicId": "valentapetr",
-        "profileId": "ACoAABIQAsEB7lBkZDyMY2IyH8DV-Em47jKaECM",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEGh_9U-DN84A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1597911967248?e=1781136000&v=beta&t=OnhGS_BuvlxuvHZlnksAt0ZH6zVGGgbEzmx9ak6vwBg",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFuYq__sCNlaA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1713506563296?e=1781136000&v=beta&t=HHtMT1YeoBJpmoS4EcMcjdBeE9Ku_bEF5kBDeq5nJ68"
+        "profileId": "ACoAABIQAsEB7lBkZDyMY2IyH8DV-Em47jKaECM"
       }
     },
     {
@@ -198,9 +177,7 @@
         "occupation": "Tourism & Hospitality Enthusiast | Adventure & Experience Driven | Open for Opportunities",
         "id": "806991622",
         "publicId": "sonja-cv",
-        "profileId": "ACoAADAZtwYB7zh-fGkQnhuX8Ek0fAWpm-e4i6k",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHLBsSHbSdzXQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718296702076?e=1781136000&v=beta&t=Lp6mLc_qEyqQgmlsB3oF1zJa18e2CLAK5L0bixzySGM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQE7OLWN9rKfpA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1719349015848?e=1781136000&v=beta&t=HDuUSeWeOwNbZo_guemBJPmOsWySpAaVEzkRbbjyz7A"
+        "profileId": "ACoAADAZtwYB7zh-fGkQnhuX8Ek0fAWpm-e4i6k"
       }
     },
     {
@@ -211,9 +188,7 @@
         "occupation": "IT Manager @ MOL CZ",
         "id": "66118677",
         "publicId": "ladislavolejnik",
-        "profileId": "ACoAAAPw5BUBCAVOrch9Kd34GJ-ciZgooaj6en0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQECD0PYspPqww/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1680881131924?e=1781136000&v=beta&t=m-MWRTXISVKXOC2ETqXoW8UF6ZJuTtBgxtsfMDew93s",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH-Kal5yxbT6g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1710396650323?e=1781136000&v=beta&t=H3V7FV2RGP5vjI6wdmeMxoPUmELCV6Bgy_srkc-b008"
+        "profileId": "ACoAAAPw5BUBCAVOrch9Kd34GJ-ciZgooaj6en0"
       }
     },
     {
@@ -224,9 +199,7 @@
         "occupation": "\"It is a capital mistake to theorize before one has data.\" *cleaned data",
         "id": "775508820",
         "publicId": "nathalie-vecten",
-        "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH5sSEbnQ2Tcg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1611936430673?e=1781136000&v=beta&t=wAQsj8dSBDe6L3xt1MwxMahW3aP-D6LcuvT-utzij6s",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHDKxhi18V0lw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1599638080880?e=1781136000&v=beta&t=5JiWefMiJff9VXnKXxoAOOrnUYNFE4fW7AQAgJac6VA"
+        "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM"
       }
     },
     {
@@ -237,8 +210,7 @@
         "occupation": "Head of Engineering ve společnosti Košík.cz",
         "id": "946314378",
         "publicId": "miroslav-beneda-776b03224",
-        "profileId": "ACoAADhnnIoBqyDgzDNTso0cYEskwMbekdalySo",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEuERRQZ9rcKw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1640701143438?e=1781136000&v=beta&t=Ookn5VpAL-dTWuQsUFmnS86zB5qpo3_ojn7AmVKInAc"
+        "profileId": "ACoAADhnnIoBqyDgzDNTso0cYEskwMbekdalySo"
       }
     },
     {
@@ -249,9 +221,7 @@
         "occupation": "Tech Executive & founder ⚙️ | Sport Enthusiast 🚴‍♂️ | Transforming Teams and Driving Innovation",
         "id": "15116957",
         "publicId": "davidpeknic",
-        "profileId": "ACoAAADmqp0B9oH2ArKbN3fG6zZZsQj_WMnSFGQ",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHN0EYSnycslQ/profile-displayphoto-crop_800_800/B4EZnF0lx7KwAI-/0/1759960527442?e=1781136000&v=beta&t=xOxw6UGH3jQKiNl4Nczn6W3c8iCJi6f_aNNPG4fN2X8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFW8faEfq3WXw/profile-displaybackgroundimage-shrink_350_1400/B4DZtbBJc.H4Ac-/0/1766758587534?e=1781136000&v=beta&t=16A_Qila6-xuSPRVoobYpfXNvhMP9-SLG5PNYOzo5xI"
+        "profileId": "ACoAAADmqp0B9oH2ArKbN3fG6zZZsQj_WMnSFGQ"
       }
     },
     {
@@ -262,8 +232,7 @@
         "occupation": "Product Compliance Manager in Apaleo. Specializing in the intersection of tax technology and legal compliance, focusing on e-invoicing, fiscal reporting, and data strategy to drive roadmap prioritization.",
         "id": "232449523",
         "publicId": "pavla-zaoralová-497a1b65",
-        "profileId": "ACoAAA3a5fMB0H0xZOyv41cQaCf52ESiOqliI5E",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQE3FtRQxoShZQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ33GtXvKsAU-/0/1777967224567?e=1781136000&v=beta&t=rE6sy5KKMxUicmPDqbBmQwW0QQQBhoL47xvea1yS6CA"
+        "profileId": "ACoAAA3a5fMB0H0xZOyv41cQaCf52ESiOqliI5E"
       }
     },
     {
@@ -274,8 +243,7 @@
         "occupation": "Product Management | Payment solutions, AI/ML sports data, Cybersecurity",
         "id": "88738038",
         "publicId": "ksousek",
-        "profileId": "ACoAAAVKCPYBEjpfmKy7hyH9QItKOUh0LiYdLYs",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFz_HhUGwZDcA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1695296796500?e=1781136000&v=beta&t=L70i4g_7z7mZM2dPg1_hU9Zhzo8-UpxPzXTr_jcQ2nk"
+        "profileId": "ACoAAAVKCPYBEjpfmKy7hyH9QItKOUh0LiYdLYs"
       }
     },
     {
@@ -286,9 +254,7 @@
         "occupation": "Product-focused Engineering | Ambassador @ Engineering Leaders Community | AYLP Alumni",
         "id": "250609182",
         "publicId": "ruzicka-jakub",
-        "profileId": "ACoAAA7v_h4BL26y-BtWPxrVVr46FHnSwaMaDB4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEban5uqi_GhQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712161970794?e=1781136000&v=beta&t=Vrw7w1LobWu_QgW7gADWXIo2dOVf0BpiH1Ma1Kgi5rA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQE9IU5S-gLb_Q/profile-displaybackgroundimage-shrink_350_1400/B4DZwfKgiTGgAc-/0/1770049376187?e=1781136000&v=beta&t=VhVxPYcmhnMGOL0hRP-TZDEciqWM2NjxhRM08Xsrd7Y"
+        "profileId": "ACoAAA7v_h4BL26y-BtWPxrVVr46FHnSwaMaDB4"
       }
     },
     {
@@ -299,9 +265,7 @@
         "occupation": "🎓 Founder of 2k+ Engineering Leaders Community in Europe | I help CTOs and engineering leaders scale from 6 to 80 teams without losing their sanity | 3000+ mentoring sessions since 2019.",
         "id": "5216415",
         "publicId": "mariankamenistak",
-        "profileId": "ACoAAABPmJ8BfbLR5U4tfSNr8hXSkBBI3ogbs0k",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE0T2VJCnVQFQ/profile-displayphoto-shrink_800_800/B4EZTLCTQyHMAc-/0/1738573166282?e=1781136000&v=beta&t=GbMyfdPFm3vJU6saMX1ypKRPhSvC7U7cMBes-jF2uh8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFC3fihHtIuTA/profile-displaybackgroundimage-shrink_350_1400/B4DZwsQ1_.J8AY-/0/1770269140976?e=1781136000&v=beta&t=AmnBbMSPqBgErycd2fAaMIf2tDa4TDrcCeXtgy22BqE"
+        "profileId": "ACoAAABPmJ8BfbLR5U4tfSNr8hXSkBBI3ogbs0k"
       }
     }
   ],
@@ -321,12 +285,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

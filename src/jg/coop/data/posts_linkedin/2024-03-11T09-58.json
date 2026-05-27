@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/D4E22AQGUQwYux-rL_Q/feedshare-image-high-res/feedshare-image-high-res/0/1710151128374?e=1781136000&v=beta&t=T4T3V-iVxvw4GnhpJ3TqeqcxD-R_evGFYeKNm1VxtFY"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:7172893725117915137",
   "url": "https://www.linkedin.com/posts/honzajavorek_cesta-v%C4%9Bt%C5%A1iny-lid%C3%AD-do-it-je-spletit%C3%A1-activity-7172893725117915137-E-Om",
@@ -20,8 +18,7 @@
         "occupation": "Front-end developer | React, Nextjs, Supabase, Postgresql",
         "id": "760487175",
         "publicId": "frantiseknemet",
-        "profileId": "ACoAAC1UHQcBrfZj1YGWY7VOPgz0-woiNE44ngY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE0pwIcjgld3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725955697712?e=1781136000&v=beta&t=uks2ViGnzfHLtyIZgX1GiWXlzmG102u_ltefHH1m5qo"
+        "profileId": "ACoAAC1UHQcBrfZj1YGWY7VOPgz0-woiNE44ngY"
       }
     }
   ],
@@ -40,7 +37,6 @@
         "id": "40625426",
         "publicId": "jansvehlakqa",
         "profileId": "ACoAAAJr5RIBxBfr3rSyigb0hSG2YFOQdh7vYaE",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGXzoQc6r8zRw/profile-displayphoto-crop_800_800/B4DZke2ZG.JEAI-/0/1757159201201?e=1781136000&v=beta&t=LDIwxJi6RCbqKGWSxKUCSprLkKVOez_KDjxS-K16RMQ",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -58,8 +54,6 @@
         "id": "653562608",
         "publicId": "bleedingdev",
         "profileId": "ACoAACb0kvABzEvpATXhOiWBbEuq4yfGI43iXrc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHNZ_n7usiMwg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1707307700521?e=1781136000&v=beta&t=s9M6CBtI9xCgMRzy9aH4Zm6vuRjYQFKYSrl_QlfPTvA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEjlZvszJMk8g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1704724910587?e=1781136000&v=beta&t=3ATL2lQYqY066bQ-K-77LV1388hPiLUDuz3f2WEXABk",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -73,8 +67,7 @@
         "occupation": ".",
         "id": "874130625",
         "publicId": "heysmtk",
-        "profileId": "ACoAADQaLMEBIrh9ltBwzA5W3yIdE7GUyrZZDDI",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE7lm3Hp-Ow7A/profile-displayphoto-crop_800_800/B4EZetqacbHwAI-/0/1750965271998?e=1781136000&v=beta&t=HHNUqhvPKVUbzaQ8oqY61vz9BqbE1Zql5vuCSotuzCs"
+        "profileId": "ACoAADQaLMEBIrh9ltBwzA5W3yIdE7GUyrZZDDI"
       }
     },
     {
@@ -85,8 +78,7 @@
         "occupation": "Zvědavý člověk",
         "id": "474123023",
         "publicId": "tomankovadominika",
-        "profileId": "ACoAABxCiw8B3AxH-PlQVrNIb6d4TV-DpRreh40",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEBCnlGxCujsQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1628177836146?e=1781136000&v=beta&t=wKHlEHCHv_SoG7twk-fXqlvdwOHnNLrRNgCQfZlt2eo"
+        "profileId": "ACoAABxCiw8B3AxH-PlQVrNIb6d4TV-DpRreh40"
       }
     },
     {
@@ -97,9 +89,7 @@
         "occupation": "Front end developer @Ranked.cz",
         "id": "652036607",
         "publicId": "jiri-cechal",
-        "profileId": "ACoAACbdSf8BN18G4GJNWBnm-e60M_ldWxVRWUI",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFY_t8ShK4FGw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1658946448601?e=1781136000&v=beta&t=WBBUHG52b9yQc1jRsnIMtQMCcobCGlw6n4tV_Zv15yA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQHbe5kQSVVwIA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1643659904246?e=1781136000&v=beta&t=yzDvN2eB4EPRTeWFiLIPZ487rG21tcgR2iJc9LIttAk"
+        "profileId": "ACoAACbdSf8BN18G4GJNWBnm-e60M_ldWxVRWUI"
       }
     },
     {
@@ -110,8 +100,7 @@
         "occupation": "Junior IT specialist / IS support",
         "id": "860759872",
         "publicId": "ondrejposmura",
-        "profileId": "ACoAADNOJ0ABtCvlmUa_kWD0chm3Wy9g96rskOk",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEfe5xek13z-Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1663875326758?e=1781136000&v=beta&t=fsrVzATuddGPxiXbnwYnrMqOtgcM-TUYc8HsQwoCcyA"
+        "profileId": "ACoAADNOJ0ABtCvlmUa_kWD0chm3Wy9g96rskOk"
       }
     },
     {
@@ -122,8 +111,7 @@
         "occupation": "SAP Business Analyst",
         "id": "665589175",
         "publicId": "iva-lapková-b07aa2166",
-        "profileId": "ACoAACesFbcB-HuUVZclwbviko1MnvHXpJ6a-88",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQGXU1YB5XZqIQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1701681889592?e=1781136000&v=beta&t=15EFHgrhUQLcAhAPR3ILruzKbhERz9wQapa5lGDv9Bs"
+        "profileId": "ACoAACesFbcB-HuUVZclwbviko1MnvHXpJ6a-88"
       }
     },
     {
@@ -134,9 +122,7 @@
         "occupation": "...",
         "id": "212362653",
         "publicId": "lenka-matějová-0791535b",
-        "profileId": "ACoAAAyoZZ0BOS1B_PZN1qbkv-R_Pd20LKcx4w4",
-        "picture": "https://media.licdn.com/dms/image/v2/C5103AQFOCy_BRleS6A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517430105432?e=1781136000&v=beta&t=cW-s_NvEb7Oa4gcUe92cWuJWFr1XXFBsLUAp2-ky2Do",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGskrvizzVniQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1666725183894?e=1781136000&v=beta&t=I9BuoGxX9wpAVVH75UYGdMoTfKUSsrdUB-iv5455Rvo"
+        "profileId": "ACoAAAyoZZ0BOS1B_PZN1qbkv-R_Pd20LKcx4w4"
       }
     },
     {
@@ -147,8 +133,7 @@
         "occupation": "\"\"",
         "id": "116365589",
         "publicId": "jan-kapar-245b7932",
-        "profileId": "ACoAAAbvmRUB_MrpWfoDRK5Omsx0YYaIjvZn3t4",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQGkDSdqFqCk9w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1516520203866?e=1781136000&v=beta&t=l3d4e7rAl8opdYgt5Swisv9qQOUXtAnh3XRdorCrLBU"
+        "profileId": "ACoAAAbvmRUB_MrpWfoDRK5Omsx0YYaIjvZn3t4"
       }
     },
     {
@@ -159,9 +144,7 @@
         "occupation": "data – events – community",
         "id": "138678453",
         "publicId": "baradrb",
-        "profileId": "ACoAAAhEELUBh00AQMpcqeGwUSsN_Kuc2a0w0G8",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGphUcJREjOsw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1592866548522?e=1781136000&v=beta&t=-CBV_vWmEa9Tt9hihKKRIYRZbixOPqHWURYtAVLAPWA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFYwEy9vtmtRA/profile-displaybackgroundimage-shrink_350_1400/B4EZoxWhbMGUAY-/0/1761764582204?e=1781136000&v=beta&t=BB-3WCaFGq5vreqxcreioFwb9_pfD1Jc68wITvmER4s"
+        "profileId": "ACoAAAhEELUBh00AQMpcqeGwUSsN_Kuc2a0w0G8"
       }
     },
     {
@@ -183,8 +166,7 @@
         "occupation": "Junior Frontend Developer | Coding",
         "id": "1244180948",
         "publicId": "sarka-klauberova",
-        "profileId": "ACoAAEoosdQBzU9QRXJggFvJOYwtQO3T3JenxFk",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEe5VbZo7Ko-Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704484242736?e=1781136000&v=beta&t=YbwGAnlHWIGMUoqawVlTbIzLsxx-pDlayfR6t0PEF5A"
+        "profileId": "ACoAAEoosdQBzU9QRXJggFvJOYwtQO3T3JenxFk"
       }
     }
   ],
@@ -204,12 +186,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

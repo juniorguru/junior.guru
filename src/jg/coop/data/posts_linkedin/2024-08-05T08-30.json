@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/D4E22AQHznSnVpbLOjA/feedshare-image-high-res/feedshare-image-high-res/0/1722846639778?e=1781136000&v=beta&t=StU6LznHKFYgLlkrXYvBClPuw_aRWTCm6XVDdiMi8nc"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:7226142556907065344",
   "url": "https://www.linkedin.com/posts/honzajavorek_kubernetes-docker-activity-7226142556907065344-TWxN",
@@ -20,8 +18,7 @@
         "occupation": "Každý je svého štěstí strůjcem.",
         "id": "875466211",
         "publicId": "lukaspavelka",
-        "profileId": "ACoAADQujeMBsKTvOphWRb09-KC09ABFmV_kfmI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFyUDgGbCA2YQ/profile-displaybackgroundimage-shrink_350_1400/B4EZiFD8nbGwAk-/0/1754579061881?e=1781136000&v=beta&t=GFIotAyYe1eVjVbBRoODKujNsJqM6J1W4WfJc9vVM7g"
+        "profileId": "ACoAADQujeMBsKTvOphWRb09-KC09ABFmV_kfmI"
       }
     },
     {
@@ -48,8 +45,7 @@
         "occupation": "Executive Advisory Boards @ Datadog",
         "id": "43828",
         "publicId": "larskamp",
-        "profileId": "ACoAAAAAqzQBRP3Ti_F8cUKfTZoqyUDjm89Mvw0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQFHDnt9BVC_uA/profile-displaybackgroundimage-shrink_200_800/B56Z273O1JH4AU-/0/1776973311581?e=1781136000&v=beta&t=UWxUDwWhvXCbQ09s5mY36RiIPM4mz2xMLEcvGqn50us"
+        "profileId": "ACoAAAAAqzQBRP3Ti_F8cUKfTZoqyUDjm89Mvw0"
       }
     },
     {
@@ -60,8 +56,7 @@
         "occupation": "Corporate Performance Management with focus on planning",
         "id": "1040508481",
         "publicId": "daniel-sochor",
-        "profileId": "ACoAAD4E5kEBLCHsDKLT1OEFHWgrps9u9uU2q28",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEejJCzZWuZsQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1685560777271?e=1781136000&v=beta&t=RNbnuQoSoW1ssprXUZMs6PQgKnYwbuJmq8xSRRfIk4E"
+        "profileId": "ACoAAD4E5kEBLCHsDKLT1OEFHWgrps9u9uU2q28"
       }
     },
     {
@@ -72,8 +67,7 @@
         "occupation": "Software Engineer at IDC ✔ PyLadies coach ✔ Lifelong learner",
         "id": "663079185",
         "publicId": "petra-cihalova",
-        "profileId": "ACoAACeFyREBiLqN1XSYg6PFUKkrNqIVP2iB3nM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEvMfVR6CER2Q/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1667938074043?e=1781136000&v=beta&t=05t4nnqWlTlvqan-fTfcJeT7f-Hpl1pzKE_C3jxXfIw"
+        "profileId": "ACoAACeFyREBiLqN1XSYg6PFUKkrNqIVP2iB3nM"
       }
     },
     {
@@ -84,8 +78,7 @@
         "occupation": "Python vývojář s přesahem. 🐍",
         "id": "399499541",
         "publicId": "ypsilonxpython",
-        "profileId": "ACoAABfP4RUBhhqww_PQuiFQs580Isbr6ZqrqOg",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHuts72Jn_yMQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1634794908162?e=1781136000&v=beta&t=S9UL0wy6v08ZrAb29xjudA5ltkEDpmZSh3rAld7B-jo"
+        "profileId": "ACoAABfP4RUBhhqww_PQuiFQs580Isbr6ZqrqOg"
       }
     },
     {
@@ -96,8 +89,7 @@
         "occupation": "Junior React Developer",
         "id": "1074684875",
         "publicId": "iva-havranova",
-        "profileId": "ACoAAEAOY8sB8ukyno10fvlytoy05WfwwjTKt9U",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE1AS140WJIDw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1711982545374?e=1781136000&v=beta&t=Ohlfpqbf8RPntDEoiMEYgbnMmlyNwCewTidk8AawgOQ"
+        "profileId": "ACoAAEAOY8sB8ukyno10fvlytoy05WfwwjTKt9U"
       }
     },
     {
@@ -108,8 +100,7 @@
         "occupation": "Web Developer",
         "id": "596894599",
         "publicId": "jan-kouřil-147a95147",
-        "profileId": "ACoAACOT44cBHNz0T5WGfTwS5JWrtkAV0m_OH_U",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFZQLj4OJlW7g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1697560208248?e=1781136000&v=beta&t=uTofa07mX7eioqZfF461L1rnPyESEgLW-6D-IUQzHaI"
+        "profileId": "ACoAACOT44cBHNz0T5WGfTwS5JWrtkAV0m_OH_U"
       }
     },
     {
@@ -120,8 +111,7 @@
         "occupation": "Principal Technical Writer ✦ Enterprise & Developer Documentation ✦ Docs-as-Code ✦ Contract Remote",
         "id": "17641210",
         "publicId": "lennonka",
-        "profileId": "ACoAAAENLvoBlGhs5uX3So3eyzpjGHevnX0pqO0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHQs6TyyeTxEw/profile-displaybackgroundimage-shrink_350_1400/B4DZ5dpb_JIMAc-/0/1779687604441?e=1781136000&v=beta&t=-BLM4Pg-v0ML0-XBnB_qv67Bt4v7K0Wpq5pOSnriWe4"
+        "profileId": "ACoAAAENLvoBlGhs5uX3So3eyzpjGHevnX0pqO0"
       }
     },
     {
@@ -154,8 +144,7 @@
         "occupation": "Talent Attraction and Employer Branding Manager, MSD Czech Republic Women´s Network Prague Chapter co - lead",
         "id": "133866697",
         "publicId": "barbora-maroto-alvarez",
-        "profileId": "ACoAAAf6pMkBotT6xWIj1kcXRVKBNleDN2Vx4Mo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGcPE958P8OhA/profile-displaybackgroundimage-shrink_350_1400/B4EZhkvGB3GoAY-/0/1754036724554?e=1781136000&v=beta&t=zoeek49xaf3Y30j9oN2GXy3X3m_n_xzXScu5PptFOhw"
+        "profileId": "ACoAAAf6pMkBotT6xWIj1kcXRVKBNleDN2Vx4Mo"
       }
     }
   ],
@@ -175,8 +164,7 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
   "authorType": "Person",

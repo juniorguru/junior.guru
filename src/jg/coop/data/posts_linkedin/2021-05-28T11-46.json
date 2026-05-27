@@ -22,8 +22,6 @@
         "id": "21519263",
         "publicId": "messa",
         "profileId": "ACoAAAFIW58BHQuf7UmFIL0JxAANFW73V79_YOY",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQGMOQzDT4mqNw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516311373475?e=1781136000&v=beta&t=-3X_HfYUVRUn3iM7sU89Sjl_y4WoTlYEqC7sJY76UF8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQF_DvNh-P59dQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516311374384?e=1781136000&v=beta&t=7YS8EyQVsGp1AtkD0OHkRUnFwWe8v21G-0HvL1NdOYk",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -37,9 +35,7 @@
         "occupation": "\"It is a capital mistake to theorize before one has data.\" *cleaned data",
         "id": "775508820",
         "publicId": "nathalie-vecten",
-        "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH5sSEbnQ2Tcg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1611936430673?e=1781136000&v=beta&t=wAQsj8dSBDe6L3xt1MwxMahW3aP-D6LcuvT-utzij6s",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHDKxhi18V0lw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1599638080880?e=1781136000&v=beta&t=5JiWefMiJff9VXnKXxoAOOrnUYNFE4fW7AQAgJac6VA"
+        "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM"
       }
     },
     {
@@ -50,8 +46,7 @@
         "occupation": "freelancer and consultant - digital education",
         "id": "13671180",
         "publicId": "naskep",
-        "profileId": "ACoAAADQmwwB1EuDW0z_d2nZkfqUm6kvZkoqTCI",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHd20Mk1RjpyQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1616672269712?e=1781136000&v=beta&t=KX7hrg0BfMg3th_piTcPqmY3ndJxW6ZMX_sjpoJf34w"
+        "profileId": "ACoAAADQmwwB1EuDW0z_d2nZkfqUm6kvZkoqTCI"
       }
     }
   ],
@@ -71,12 +66,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

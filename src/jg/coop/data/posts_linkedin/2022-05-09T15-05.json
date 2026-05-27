@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4D22AQHh_Vo0Rq_24w/feedshare-image-high-res/feedshare-image-high-res/0/1652108728082?e=1781136000&v=beta&t=osa-ZX8bhB15jYp9I0_nTgXI4SRpvCnbCBuiHkjEeLs"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6929446251369226241",
   "url": "https://www.linkedin.com/posts/honzajavorek_podcast-activity-6929446251369226241-5kZK",
@@ -19,8 +17,7 @@
         "universalName": "street-of-code",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:67686653",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQGTyrWUeJWHfw/company-logo_400_400/company-logo_400_400/0/1685114978068/street_of_code_logo?e=1781136000&v=beta&t=Y6PC-O99LlXtVszPK3Bnmd2Jwuc-CGr3MycZXKofQ5I"
+        "entityUrn": "urn:li:fs_miniCompany:67686653"
       }
     },
     {
@@ -33,9 +30,7 @@
         "occupation": "Headhunting / Recruiting | Mentoring | Consulting | SW Development | Agile",
         "id": "2798684",
         "publicId": "slavomirbaca",
-        "profileId": "ACoAAAAqtFwBqsI7A78loAt2QdbdfjRY0djxNdM",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHcB4NXbTOrMA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516273113797?e=1781136000&v=beta&t=P9UybjoRFDl2Z81fv5UFgqAl1kgw9ZOTX07-OgN7ssA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFRKP7SUQFjFg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1699522977317?e=1781136000&v=beta&t=6w0uOg9xHQdhFCvEFTgXjmjNZKaMAijXF0cek15omO0"
+        "profileId": "ACoAAAAqtFwBqsI7A78loAt2QdbdfjRY0djxNdM"
       }
     },
     {
@@ -47,8 +42,7 @@
         "universalName": "mentorpartners",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:2445000",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQEVhXmqg-PRwA/company-logo_400_400/company-logo_400_400/0/1699465048661/mentorpartners_logo?e=1781136000&v=beta&t=LXeLm_NNvcEvLzB1fKWcLaq_efopPfDtbyXXqPMWHaU"
+        "entityUrn": "urn:li:fs_miniCompany:2445000"
       }
     }
   ],
@@ -67,8 +61,7 @@
             "universalName": "street-of-code",
             "active": true,
             "showcase": false,
-            "entityUrn": "urn:li:fs_miniCompany:67686653",
-            "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQGTyrWUeJWHfw/company-logo_400_400/company-logo_400_400/0/1685114978068/street_of_code_logo?e=1781136000&v=beta&t=Y6PC-O99LlXtVszPK3Bnmd2Jwuc-CGr3MycZXKofQ5I"
+            "entityUrn": "urn:li:fs_miniCompany:67686653"
           }
         },
         {
@@ -80,8 +73,7 @@
             "universalName": "mentorpartners",
             "active": true,
             "showcase": false,
-            "entityUrn": "urn:li:fs_miniCompany:2445000",
-            "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQEVhXmqg-PRwA/company-logo_400_400/company-logo_400_400/0/1699465048661/mentorpartners_logo?e=1781136000&v=beta&t=LXeLm_NNvcEvLzB1fKWcLaq_efopPfDtbyXXqPMWHaU"
+            "entityUrn": "urn:li:fs_miniCompany:2445000"
           }
         }
       ],
@@ -94,8 +86,6 @@
         "id": "8517488",
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -109,9 +99,7 @@
         "occupation": "Frontend developer | React | Typescript | Mentor",
         "id": "690320871",
         "publicId": "marketa-willis",
-        "profileId": "ACoAACkldecB7E9DWErMM56bPMpJ3V49koGflx0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG3JXouajtk3A/profile-displayphoto-crop_800_800/B4EZniD2GgIIAI-/0/1760434283625?e=1781136000&v=beta&t=jVTJ2DGVJj9_jUUmT-E7zLWHbH879vJP2kKfgNc8Nn8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFCy4ekYHZ1aA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712246548670?e=1781136000&v=beta&t=QA3NpbJpEYHAFdBZwvhyaoukjEU7F6XWO0K5Mx2B41E"
+        "profileId": "ACoAACkldecB7E9DWErMM56bPMpJ3V49koGflx0"
       }
     },
     {
@@ -122,8 +110,7 @@
         "occupation": "Seize the day!",
         "id": "767755711",
         "publicId": "long-do-0a7153195",
-        "profileId": "ACoAAC3DBb8Bapv7X_MAj8YCk4a-D5t4wIvwEXA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH-c399epf65A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1575443225359?e=1781136000&v=beta&t=w2AIbBoS0F62rQeoqYW8-XTRtIxg9NJPYW90UOegMz0"
+        "profileId": "ACoAAC3DBb8Bapv7X_MAj8YCk4a-D5t4wIvwEXA"
       }
     },
     {
@@ -134,8 +121,7 @@
         "occupation": "ServiceNow Developer",
         "id": "780967517",
         "publicId": "eva-horká-965664199",
-        "profileId": "ACoAAC6Mnl0B_RWsmBSIrDxz5FzwyU43Vlw4_lc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGL9GDLaYBPBg/profile-displayphoto-crop_800_800/B4EZoqKEvgIwAI-/0/1761643876988?e=1781136000&v=beta&t=MpwVyWaT0RywpPeGaIXz89GyZMS6y7Q4YQLxP7HszMY"
+        "profileId": "ACoAAC6Mnl0B_RWsmBSIrDxz5FzwyU43Vlw4_lc"
       }
     },
     {
@@ -146,9 +132,7 @@
         "occupation": "Full Stack Developer | Node.js • React • Azure",
         "id": "762997811",
         "publicId": "miloslav-jezek",
-        "profileId": "ACoAAC16bDMBDX69DVpckffdp3s7WQFJkN9ZQPE",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQGIaim7FGwUJA/profile-displayphoto-shrink_800_800/B56Zdkuyu7G0Ac-/0/1749741678525?e=1781136000&v=beta&t=KQKd_q5so7d1ouew_efpkZxAIdS6aSgktGBupgxMjVI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGnePf9ZiYoeQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ12v8ppKIAY-/0/1775813774467?e=1781136000&v=beta&t=ZMWvvJcgxN49hDEp-ojj2oIgKRgbrKfKywk0xtPf6_s"
+        "profileId": "ACoAAC16bDMBDX69DVpckffdp3s7WQFJkN9ZQPE"
       }
     },
     {
@@ -159,8 +143,7 @@
         "occupation": "Software engineering student at FI MUNI.",
         "id": "731425708",
         "publicId": "daniel-rozehnal-924b52184",
-        "profileId": "ACoAACuYq6wBw_NUyA50V0fvku83SMXkgexoGa8",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH6BzN9AcUCqw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1687462673185?e=1781136000&v=beta&t=CcZtGbxzcjtE3ICu9xz1ywNt_uzrOhlHHeL4p4nax_k"
+        "profileId": "ACoAACuYq6wBw_NUyA50V0fvku83SMXkgexoGa8"
       }
     },
     {
@@ -181,8 +164,7 @@
         "universalName": "mentorpartners",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:2445000",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQEVhXmqg-PRwA/company-logo_400_400/company-logo_400_400/0/1699465048661/mentorpartners_logo?e=1781136000&v=beta&t=LXeLm_NNvcEvLzB1fKWcLaq_efopPfDtbyXXqPMWHaU"
+        "entityUrn": "urn:li:fs_miniCompany:2445000"
       }
     },
     {
@@ -193,9 +175,7 @@
         "occupation": "Consultant",
         "id": "479668741",
         "publicId": "ivana-filova",
-        "profileId": "ACoAAByXKgUBu9n-SySviAPEHtrkOcMzxZ1c7c8",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQEozmoMo0DwCA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1639575912221?e=1781136000&v=beta&t=gQqJxQx2xaz-o32ix-lrIo7fCfJG5VvpFxi5ECSqA6A",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQF6MhO5hjaXsQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1639576705528?e=1781136000&v=beta&t=VwrtV9e6hse2YfcdGlogoQ1MRVZGhVB0wD7YF7Ud5Jo"
+        "profileId": "ACoAAByXKgUBu9n-SySviAPEHtrkOcMzxZ1c7c8"
       }
     },
     {
@@ -206,9 +186,7 @@
         "occupation": "Software engineer at SentinelOne",
         "id": "635157598",
         "publicId": "vendula-fryzlova",
-        "profileId": "ACoAACXbvF4BMYBoSNyPUWfavc6vba7zzNusFQw",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEpZ3QSG3f5lA/profile-displayphoto-crop_800_800/B4EZe6nfD8G4AM-/0/1751182603864?e=1781136000&v=beta&t=DuZWRbIIY3s28W_zdqo9x1rNgBS8hgML40iMBXrk_nI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE4_aVNWzcBKw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1709562870131?e=1781136000&v=beta&t=20xJBTPAo6nfwdV7RyxMATCjcgOLLSptKlWoTMxm6cc"
+        "profileId": "ACoAACXbvF4BMYBoSNyPUWfavc6vba7zzNusFQw"
       }
     },
     {
@@ -219,8 +197,7 @@
         "occupation": "Connecting people, partnerships, and impact",
         "id": "944105270",
         "publicId": "lucie-yarish",
-        "profileId": "ACoAADhF5zYBZAI6CdSQNs0Hz0k0mvNEtp22WQo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQFxJHcfkDmTNQ/profile-displaybackgroundimage-shrink_350_1400/B56ZwwneOrGUAY-/0/1770342181237?e=1781136000&v=beta&t=YCHa7sTCGzmDhicvTLGFmiyYB1QERgIl2cBmHWEyUc8"
+        "profileId": "ACoAADhF5zYBZAI6CdSQNs0Hz0k0mvNEtp22WQo"
       }
     }
   ],
@@ -240,12 +217,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

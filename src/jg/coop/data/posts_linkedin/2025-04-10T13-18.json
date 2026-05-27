@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/D4E22AQE7tnDesxG0CA/feedshare-image-high-res/B4EZYf2YS4GgAw-/0/1744291079949?e=1781136000&v=beta&t=G2m5sBh0zwRLl1bLjq6ojrJHunNSW7WTrlthBBubWQg"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:7316087057309683713",
   "url": "https://www.linkedin.com/posts/honzajavorek_jenom-%C4%8Dlov%C4%9Bk-v%C3%A1m-%C5%99ekne-co-chatgpt-poradil-activity-7316087057309683713-LXpy",
@@ -19,8 +17,7 @@
         "universalName": "lupa-cz",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:92940248",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQEXRvGxLhRuxw/company-logo_400_400/company-logo_400_400/0/1676013274262?e=1781136000&v=beta&t=HuJln5PMC3Jeq_PYtZWwqQeAtdQwGsaG7MnOKXixSng"
+        "entityUrn": "urn:li:fs_miniCompany:92940248"
       }
     },
     {
@@ -52,8 +49,6 @@
         "id": "25537485",
         "publicId": "davidveznik",
         "profileId": "ACoAAAGFq80BOn7iHQKSekuZMbUiQrW4zzp75DQ",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQE_CyAVOn87xw/profile-framedphoto-shrink_800_800/B4DZxQTSmNKMAk-/0/1770873760392?e=1780430400&v=beta&t=UDziBTlDRRdJtbsjmPLzYwVybcvHd7tQITZ6R9QQl2U",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQERNKDKf-BifA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1733438117758?e=1781136000&v=beta&t=IyOMliPr4fVj-6Qz764kxHfaH-h8AokpJ6Dg3KUCU04",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -71,8 +66,6 @@
         "id": "420075610",
         "publicId": "karlaroot",
         "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEnsBVBNIg4sw/profile-displayphoto-shrink_800_800/B4EZSZhq5JGgAg-/0/1737742528524?e=1781136000&v=beta&t=ArAz8cwKU99rv02-XELDPhMSPcOGe18DQ5B6GHeTDzg",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGPw_FfwiMskg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1658486986414?e=1781136000&v=beta&t=5uJ3GN4tvwDZOwusY2_-ldpJqgAl7rlLmPt90NczWEQ",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -90,8 +83,6 @@
         "id": "8517488",
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -105,8 +96,7 @@
         "occupation": "Senior Software Tester ve společnosti - GENERALI ČESKÁ POJIŠTOVNA",
         "id": "527496482",
         "publicId": "miroslav-stransky",
-        "profileId": "ACoAAB9w9SIBGVG3yv9_-OrcUHnsZLpWWuXqgg8",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQESTyDZHSjQbA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712651893110?e=1781136000&v=beta&t=XCHnQx1BN_cnsKh_YDORMsO8ZMuAfTfaSKrcWIqckCA"
+        "profileId": "ACoAAB9w9SIBGVG3yv9_-OrcUHnsZLpWWuXqgg8"
       }
     },
     {
@@ -117,9 +107,7 @@
         "occupation": "Python vývojář s přesahem. 🐍",
         "id": "399499541",
         "publicId": "ypsilonxpython",
-        "profileId": "ACoAABfP4RUBhhqww_PQuiFQs580Isbr6ZqrqOg",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHxzColABuq3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1671205705078?e=1781136000&v=beta&t=YynyLwKnmF1yQVnk5INWHcB96M_Btdr9aeqx1LwcgsI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHuts72Jn_yMQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1634794908162?e=1781136000&v=beta&t=S9UL0wy6v08ZrAb29xjudA5ltkEDpmZSh3rAld7B-jo"
+        "profileId": "ACoAABfP4RUBhhqww_PQuiFQs580Isbr6ZqrqOg"
       }
     },
     {
@@ -130,9 +118,7 @@
         "occupation": "Product Owner & Dad | Building great products, raising great humans",
         "id": "283596586",
         "publicId": "fusatytata",
-        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEP3Q4BtiThDA/profile-displayphoto-shrink_800_800/B4EZc_c90wHIAc-/0/1749116247942?e=1781136000&v=beta&t=_QtTBgXEBbo6wLgAeAyA_Vwe266kRM2rafjtUTqdQ18",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFllW8t92LUXg/profile-displaybackgroundimage-shrink_350_1400/B4EZkO0XOcHEAY-/0/1756890233024?e=1781136000&v=beta&t=BcgfXCQP09cdXXYAi_lrlRlt4F-p0U2rPgEazsl9SeQ"
+        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k"
       }
     },
     {
@@ -143,9 +129,7 @@
         "occupation": "Oblastní ředitel | Řídím výkon 100+ lidí v retailu | Disciplína, čísla, odpovědnost | Pojišťovnictví & finance",
         "id": "833746416",
         "publicId": "jirizak",
-        "profileId": "ACoAADGx9fABHRRphnN-nOze9IlUCsc0SKaaHl8",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEqwpyooNlxqg/profile-displayphoto-crop_800_800/B4DZ0cL0NPGUAI-/0/1774294353818?e=1781136000&v=beta&t=qDV_MPAm9WYvDzYLswadddu9K3AsnMssejsn41nTlp8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGjbDKvyd2KBw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0clGAaIAAY-/0/1774300980273?e=1781136000&v=beta&t=YjcVWMDevGl5b5EDUuZBneUxfItHjZRwpKkmnOhMowI"
+        "profileId": "ACoAADGx9fABHRRphnN-nOze9IlUCsc0SKaaHl8"
       }
     },
     {
@@ -156,8 +140,7 @@
         "occupation": "UX/UI & textile conservator",
         "id": "721195540",
         "publicId": "daniela-schalldach",
-        "profileId": "ACoAACr8khQB-Kl-ynem6Qm6MTZQLggjifY44g4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHyEJTUch1goA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1686937404872?e=1781136000&v=beta&t=NOswmZmzqx31---PVPjo-KGxHQ3jGIVqBngxIunL-F8"
+        "profileId": "ACoAACr8khQB-Kl-ynem6Qm6MTZQLggjifY44g4"
       }
     },
     {
@@ -168,9 +151,7 @@
         "occupation": "Píšu texty | Pomůžu najít slova a správný úhel pohledu na to, čím jste jiní než kolegové z oboru | Můj copywriting ukáže vaši přidanou hodnotu, nejen pro LinkedIn.",
         "id": "404563477",
         "publicId": "eva-lonkova-copywriting",
-        "profileId": "ACoAABgdJhUB1xbeJHBAURBZSPDv05bODoEHTIE",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQFUWyjP54ahtw/profile-framedphoto-shrink_800_800/B4DZ07j4zJJoAg-/0/1774820757071?e=1780430400&v=beta&t=EphiNMdk5nM6uZM8BNGk6QK4CIyIblUByXBn7e2ptxc",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHlAc534SLUzQ/profile-displaybackgroundimage-shrink_350_1400/B4EZVEJ4Z8HgAc-/0/1740605199685?e=1781136000&v=beta&t=U0-v0_Z8vyrSEn1KyIRrsM25Gzs7ELYOy-3WrHqUi4E"
+        "profileId": "ACoAABgdJhUB1xbeJHBAURBZSPDv05bODoEHTIE"
       }
     },
     {
@@ -181,9 +162,7 @@
         "occupation": "Markeťák pro Kulturu Jih ⦿ Víno, muži, zpěv (píšu o alkoholu, queer tématech a muzice) ⦿ Opravuju texty, které napsali jiní lidi ⦿ Jsem nejmenší copywriter ⦿ Jaguár mezi korektory ⦿ A miluju všecko, co je „kringe“",
         "id": "25537485",
         "publicId": "davidveznik",
-        "profileId": "ACoAAAGFq80BOn7iHQKSekuZMbUiQrW4zzp75DQ",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQE_CyAVOn87xw/profile-framedphoto-shrink_800_800/B4DZxQTSmNKMAk-/0/1770873760392?e=1780430400&v=beta&t=UDziBTlDRRdJtbsjmPLzYwVybcvHd7tQITZ6R9QQl2U",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQERNKDKf-BifA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1733438117758?e=1781136000&v=beta&t=IyOMliPr4fVj-6Qz764kxHfaH-h8AokpJ6Dg3KUCU04"
+        "profileId": "ACoAAAGFq80BOn7iHQKSekuZMbUiQrW4zzp75DQ"
       }
     },
     {
@@ -194,8 +173,7 @@
         "occupation": "empowering #autisticTalent in Tech 🚀 | Guiding your communication for change | Systemic coaching",
         "id": "99891449",
         "publicId": "izatlouk",
-        "profileId": "ACoAAAX0OPkBzZjVvVi08LqhaKA5UMdVz4M5inM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEX7QmSSoFSMg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1635789075087?e=1781136000&v=beta&t=gNSbihMMlaQdd_0sP2m4nmd_njYG4j06DobLSgnjIEM"
+        "profileId": "ACoAAAX0OPkBzZjVvVi08LqhaKA5UMdVz4M5inM"
       }
     },
     {
@@ -206,9 +184,7 @@
         "occupation": "CISO | Cyber Security & Governance | IT Security Team Lead",
         "id": "377148201",
         "publicId": "radek-hlasny",
-        "profileId": "ACoAABZ60ykBOZCXwE9nIxAybS3siXAa3oDgjJI",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQE0Dy3bs3Q6rQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1632757267691?e=1781136000&v=beta&t=UTsSdbaxsU4iS9-hMufS-mTXzQOBxyI6I5WgHbthFRs",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEIQUFk8tz0DA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1592282002322?e=1781136000&v=beta&t=1810owxI3tlT5vBBGGWgoS89Pdg01jVIEFJ8kyKjVFQ"
+        "profileId": "ACoAABZ60ykBOZCXwE9nIxAybS3siXAa3oDgjJI"
       }
     },
     {
@@ -219,9 +195,7 @@
         "occupation": "Works in H2O s.r.o. and NETTO Electronics s.r.o.",
         "id": "31635977",
         "publicId": "jana-obendraufová-a35717a",
-        "profileId": "ACoAAAHiugkBJ0q5ZMXKKZuYMwq618ZTY4nUmkc",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEQ1nDISSmM7Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1600932043756?e=1781136000&v=beta&t=6UeOFKEtn29m4264teEzWPPBou--HNzasWdv_4HlAjY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE94l-XqyVhQw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1683550656771?e=1781136000&v=beta&t=XFG9gHK_jkEGTq9dB0r_qXdpQw131m3N-CQB0JSX1FI"
+        "profileId": "ACoAAAHiugkBJ0q5ZMXKKZuYMwq618ZTY4nUmkc"
       }
     }
   ],
@@ -241,12 +215,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

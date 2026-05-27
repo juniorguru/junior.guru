@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/D4E22AQGu5qUYUh3Fuw/feedshare-image-high-res/feedshare-image-high-res/0/1688743724698?e=1781136000&v=beta&t=y64H6qoePjfyE-nlJcHl64YLfbWqK7ffNwKeGe_C9to"
-  ],
+  "images": [],
   "isActivity": true,
   "activityDescription": "Honza Javorek reposted this",
   "activityOfUser": {
@@ -11,9 +9,7 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "urn": "urn:li:activity:7083138565513064448",
   "url": "https://www.linkedin.com/posts/adina-fox_hello-everyone-im-a-ux-designer-with-5-share-7083104561296482304-VIYp",
@@ -36,8 +32,6 @@
         "id": "23583002",
         "publicId": "pikard",
         "profileId": "ACoAAAFn2RoBovoJkHjyVPMv4H6I5eW-MiN7uyA",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHcbVJz-_4I_A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1680526130616?e=1781136000&v=beta&t=5XH_skCqc-7hNpNtqzWoNMiKiCcqQeSEVLNNF8O6YPs",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQHgwdkYoTH-OA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1516340398261?e=1781136000&v=beta&t=imuIQxE5N_M2VlZ0-voybW4dyoE6My1fkDSUow8k6jI",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -55,8 +49,6 @@
         "id": "337285701",
         "publicId": "strv-norbert-cerveny",
         "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGKIAaUJPtlmA/profile-displayphoto-crop_800_800/B4DZ0jT_lBIEAI-/0/1774413941709?e=1781136000&v=beta&t=ioRFNZY53XZXWk1BvKTQdIygU-xxLKoyNysEAYklp0I",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG0ekEnNy2Hcw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0jTiNeGsAk-/0/1774413817026?e=1781136000&v=beta&t=_KMbjLzzfd2pO9gizTz2iWgDOkq5RQ3NpzDT5fOljNI",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -70,8 +62,7 @@
         "occupation": "Senior Java Developer ve společnosti Barclays",
         "id": "21549274",
         "publicId": "jakub-ježek-78a2727",
-        "profileId": "ACoAAAFI0NoBPniyrskfR7ZyX13C5lrRyKYcLIY",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGjBmFXdxGdCQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1540325903324?e=1781136000&v=beta&t=RlahekXeRdjtudlFtC4jBPgXG5Glrk5QSm2EyVZrcgQ"
+        "profileId": "ACoAAAFI0NoBPniyrskfR7ZyX13C5lrRyKYcLIY"
       }
     },
     {
@@ -82,8 +73,7 @@
         "occupation": "Software Engineer",
         "id": "603260959",
         "publicId": "viktordanko",
-        "profileId": "ACoAACP1CB8B5mSaZE5ldJZ-pAOCocDywUFeQKg",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE4Q7Ygv-7mkw/profile-displayphoto-crop_800_800/B4DZwZw0QuKgAI-/0/1769958753753?e=1781136000&v=beta&t=kna5c_Rh5AfAQyQHotXKibC3KnjK7KiwmoMZmj930q0"
+        "profileId": "ACoAACP1CB8B5mSaZE5ldJZ-pAOCocDywUFeQKg"
       }
     },
     {
@@ -94,9 +84,7 @@
         "occupation": "Sales Specialist at Concentrix, Software Development graduate",
         "id": "937440347",
         "publicId": "gavin-mchugh-24bb44221",
-        "profileId": "ACoAADfgNFsBQw_nH1EFXPdACl_e6uI5qpfok2E",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQFn8mMDVds9LA/profile-framedphoto-shrink_800_800/B4EZxY0XSvHsAs-/0/1771016648155?e=1780430400&v=beta&t=yyYzTqQkkWHV-D9S23HZuRB4ZKtfMW8Ireu5XLsmky0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGmL6zbFijsUw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1696269071715?e=1781136000&v=beta&t=NmMEfkD4RIIA67u77G7mLR_kOrx9MRH2dbsc_npF5bE"
+        "profileId": "ACoAADfgNFsBQw_nH1EFXPdACl_e6uI5qpfok2E"
       }
     },
     {
@@ -107,9 +95,7 @@
         "occupation": "Dynamic, Innovative, Driven.",
         "id": "193326579",
         "publicId": "ilja-alexandrov",
-        "profileId": "ACoAAAuF7fMBxvU6GHrClP0jrMFsnB5v0XKlvVQ",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHuHsamy2Rnrw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1583078104659?e=1781136000&v=beta&t=ZuPi2ylqKcEJCEkpVzyrZT_C1EyEQsBZBQHJhDTxNDs",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFROt9EvHkKdQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1676992837860?e=1781136000&v=beta&t=_lwvBYcxc5opVkf-81LxNwQLQtTX0mnm4TGeocOO-kM"
+        "profileId": "ACoAAAuF7fMBxvU6GHrClP0jrMFsnB5v0XKlvVQ"
       }
     },
     {
@@ -120,9 +106,7 @@
         "occupation": "Product Designer * UX/UI Designer * Design Lead * Consultant",
         "id": "17838638",
         "publicId": "matej-pliesovsky",
-        "profileId": "ACoAAAEQMi4Bb_IKluTB5E5ktm4AQQIqCnTOzak",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEI-60FHjvobA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1605726676792?e=1781136000&v=beta&t=B2yQJ38trl656Q-w41cZr1VGCeyf68ZH3g6YQ9Mp28w",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEA-RsXzPLkoQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1705150751340?e=1781136000&v=beta&t=Ps2s-AmDiyjqQccPg_e2Ypi9vA-4KZO68eqX_iIn4As"
+        "profileId": "ACoAAAEQMi4Bb_IKluTB5E5ktm4AQQIqCnTOzak"
       }
     },
     {
@@ -133,8 +117,7 @@
         "occupation": "Externí spolupracovník pro Lentiamo s.r.o., moderátor srazů Frontendisti.cz, frontendový kódér na volné noze, nadšený amatérský divadelník a vyučený číšník",
         "id": "745086721",
         "publicId": "tomáš-kout",
-        "profileId": "ACoAACxpHwEB_RwLQyNFH47eaRYq_nPGz1uUvBs",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG3T6FJna4NWg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718255994424?e=1781136000&v=beta&t=BgZJsEgRGJZ1ChCl-3YKElI5-kiQhhj43bA6ZkyazKg"
+        "profileId": "ACoAACxpHwEB_RwLQyNFH47eaRYq_nPGz1uUvBs"
       }
     },
     {
@@ -145,9 +128,7 @@
         "occupation": "Project Man | Change Catalyst | Advocate of Joy | Driving in style to new horizons.",
         "id": "110289744",
         "publicId": "jiri-lepka",
-        "profileId": "ACoAAAaS41ABBjP_pmAM5uzSbkvFnk18Cos5ld0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQE01BAiTGRZYA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1698229708038?e=1781136000&v=beta&t=9Lgag8cqdXzItdrhkXIgjI-MyanmAX7vIGKjGSSBVnw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHPeOL5xfuSLA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1599468269833?e=1781136000&v=beta&t=_uNJd2N2QX3rT97tNOLxB98m2z3iBZe3ynDVdaMseCg"
+        "profileId": "ACoAAAaS41ABBjP_pmAM5uzSbkvFnk18Cos5ld0"
       }
     },
     {
@@ -158,9 +139,7 @@
         "occupation": "👉 Project and Product Manager / Owner, Consultant with 15+ years of experience. I bring value to you and your customers by making things simple and fancy 🎯",
         "id": "207210282",
         "publicId": "pavelvranka",
-        "profileId": "ACoAAAxZxyoBUDOTLRWP8iS8wJvjoaijT266cho",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFTLQ5fzvhHUQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1713772525911?e=1781136000&v=beta&t=I0BoRtZH-aCB_NPE8vK89zrXlBMUgbUHlV76CIFwF4A",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFTusJ5GhxLqw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1579772561294?e=1781136000&v=beta&t=QVP7xXwxOm6xNe1Zg9sybKGolblVjjdl-ZWTk9j1j-E"
+        "profileId": "ACoAAAxZxyoBUDOTLRWP8iS8wJvjoaijT266cho"
       }
     },
     {
@@ -171,9 +150,7 @@
         "occupation": "🧠 Addiction treatment expert | 💡 Corporate soft skills trainer | 💎 Performance coach",
         "id": "337672063",
         "publicId": "dradamkulhanek",
-        "profileId": "ACoAABQgd38Bd2MXEtHtVcJ_lpNhnxgf0qR72gk",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEkMHm8AGxypA/profile-displayphoto-shrink_800_800/B4DZSD7CUMGUAg-/0/1737380079348?e=1781136000&v=beta&t=Bz-szvdv7RmHhM1Jw8CcRIwFvUmrzDLdnHK26xLYRPY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH2m63Kkkqi-w/profile-displaybackgroundimage-shrink_350_1400/B4DZcl0gHaGkAc-/0/1748686210485?e=1781136000&v=beta&t=83D5fa6jkgtNs19hP1lTJN9827MyhVjg8n1jWAhiGhk"
+        "profileId": "ACoAABQgd38Bd2MXEtHtVcJ_lpNhnxgf0qR72gk"
       }
     },
     {
@@ -184,8 +161,7 @@
         "occupation": "Pl/SQL Developer, Pl/pgSQL Developer, , NodeJS, FrontEnd - React for company ELSO Service Brno",
         "id": "165222708",
         "publicId": "bohdan-vetrák-bb03ba47",
-        "profileId": "ACoAAAnZGTQBDK1LPX36I-s4V5TR48Hb1jUpB14",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQH23LDyTinuQQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517455582635?e=1781136000&v=beta&t=53kNLjTx2IA-AW7T3WxWEB478wWMgZphC14x2JHCglQ"
+        "profileId": "ACoAAAnZGTQBDK1LPX36I-s4V5TR48Hb1jUpB14"
       }
     }
   ],
@@ -205,12 +181,9 @@
     "occupation": "Product design teams & systems 🚀",
     "id": "530422661",
     "publicId": "adina-fox",
-    "profileId": "ACoAAB-dm4UBphpPt0M3o_HcoFhUNSFgam6yIyY",
-    "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFo9U_21z2zFQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725308203416?e=1781136000&v=beta&t=Fd5s_bPfqV9Zum-qkjT2BT8KUdWKCIg9uy1iP3ipCrw",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQELga56ku2WNQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1725308323511?e=1781136000&v=beta&t=kl_7bliQ0v3-LukBvPWRe4MSEbzY6Ek4O7jp0QquIkE"
+    "profileId": "ACoAAB-dm4UBphpPt0M3o_HcoFhUNSFgam6yIyY"
   },
   "authorProfileId": "adina-fox",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4E03AQFo9U_21z2zFQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725308203416?e=1781136000&v=beta&t=Fd5s_bPfqV9Zum-qkjT2BT8KUdWKCIg9uy1iP3ipCrw",
   "authorType": "Person",
   "authorName": "Adina J. Fox",
   "authorProfileUrl": "https://www.linkedin.com/in/adina-fox?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAB-dm4UBphpPt0M3o_HcoFhUNSFgam6yIyY",

@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQFLTn3vE8DnJQ/feedshare-shrink_800/feedshare-shrink_800/0/1665656348313?e=1781136000&v=beta&t=oRYHt5WyJPPGwde_u2fFXJFggXo13oBW0UlUrQaeays"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6986269086892580864",
   "url": "https://www.linkedin.com/posts/honzajavorek_pl%C3%A1nuje%C5%A1-hledat-prvn%C3%AD-pr%C3%A1ci-v-it-zkus-pohovor-activity-6986269086892580864-EwIr",
@@ -19,8 +17,7 @@
         "universalName": "ataccama",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:250453",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQFu_2rrRoxI9g/company-logo_400_400/B4EZfKY.ipHIAc-/0/1751447235100/ataccama_logo?e=1781136000&v=beta&t=GFWlBPqBVv37lZ3d2Av_uNjcI64DiisDk2bNYIPELqk"
+        "entityUrn": "urn:li:fs_miniCompany:250453"
       }
     },
     {
@@ -32,8 +29,7 @@
         "universalName": "juniorguru",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:26218444",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQE89NmYF-XT4g/company-logo_400_400/company-logo_400_400/0/1638266899010/juniorguru_logo?e=1781136000&v=beta&t=ad516CNUThMN8eXeVboC5S9U_y2Dnn1UhQn70wIGlxE"
+        "entityUrn": "urn:li:fs_miniCompany:26218444"
       }
     },
     {
@@ -45,8 +41,7 @@
         "universalName": "programhrovani",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:76564291",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQFOyBtfsCCMew/company-logo_400_400/company-logo_400_400/0/1714162197209/programhrovani_logo?e=1781136000&v=beta&t=DXlA3Rag_ZygIhgzoHKLUFuVkcqgKxNq4TsvhzKhJCM"
+        "entityUrn": "urn:li:fs_miniCompany:76564291"
       }
     },
     {
@@ -59,8 +54,7 @@
         "occupation": "SVP of Cloud at Ataccama",
         "id": "6549181",
         "publicId": "romanpichlik",
-        "profileId": "ACoAAABj7r0BP8NwroXU-o3Ts_dHTwHo7__GVZg",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQEd8iBGcbFcIQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516253839914?e=1781136000&v=beta&t=rJurhn_6PVGArnBzuQzGKU3ZfPIhUpIhEDyA-kXo8OQ"
+        "profileId": "ACoAAABj7r0BP8NwroXU-o3Ts_dHTwHo7__GVZg"
       }
     }
   ],
@@ -79,8 +73,6 @@
         "id": "412311702",
         "publicId": "pavel-mikeska",
         "profileId": "ACoAABiTYJYBitGWsqClPxDaOSBTFT2JGTIDft4",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFvOy8Dq8Fseg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1607084457497?e=1781136000&v=beta&t=bQk5A6hWT3Bdt-WPMZcTeddgt-AvjP0_qJPh2DkLjKU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG5o6RJjNqH0Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1707951490734?e=1781136000&v=beta&t=ZNgddDtqMKl6tOh1tV47Lm9rI_wKgSEioRgK2QmSVk4",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -94,9 +86,7 @@
         "occupation": "Test Engineer. Graduate of Software Testing at Digital Academy by Czechitas.",
         "id": "1050637193",
         "publicId": "michaelazapletalova",
-        "profileId": "ACoAAD6fc4kB7Eh2GfaK4CXReuaqaSIRhjng0pI",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEvCqZhj1t46A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1707418948095?e=1781136000&v=beta&t=PZLOzxCL_4LMgiX8uil5nOXOgiZH7it9VJgv2kFu5r0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGHTCR9gP1E9Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1666170071597?e=1781136000&v=beta&t=bN3p7_eQgu7DfMx38hWuLPWNkSUuRJCqvnG906OYFLA"
+        "profileId": "ACoAAD6fc4kB7Eh2GfaK4CXReuaqaSIRhjng0pI"
       }
     },
     {
@@ -107,9 +97,7 @@
         "occupation": "Senior HR Manager | Country HR | Operations & People Strategy",
         "id": "23136032",
         "publicId": "terezale",
-        "profileId": "ACoAAAFhByABrpRT78Zgx4U3mRVpJJB3aLBukew",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQElmEv5ocCQiw/profile-displayphoto-shrink_800_800/B4EZV5vE_fHMAc-/0/1741504139641?e=1781136000&v=beta&t=hFMmhWM1_piCTIGSqk6p0liDt0-qaO46KHefN77FctY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHlFiHBZjQuyQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736964866391?e=1781136000&v=beta&t=n2ixTACTuZmKzVoCw_Nl_3BP51u0eCOZ5SZKLEwEpOs"
+        "profileId": "ACoAAAFhByABrpRT78Zgx4U3mRVpJJB3aLBukew"
       }
     },
     {
@@ -120,8 +108,7 @@
         "occupation": "Frontend Developer | React | Typescript",
         "id": "227844205",
         "publicId": "jana-kalužová-35137a64",
-        "profileId": "ACoAAA2UoG0BPxLVabkcecOWmQmPQt-2v1OyhQY",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFLwR3wAbnbNg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1658516851717?e=1781136000&v=beta&t=3eTRy_oWVX2etrw3s3F5GWO6Z0k8quEqk1EYc9VmxXo"
+        "profileId": "ACoAAA2UoG0BPxLVabkcecOWmQmPQt-2v1OyhQY"
       }
     },
     {
@@ -132,9 +119,7 @@
         "occupation": "Chief Technology Officer at Ataccama",
         "id": "7333784",
         "publicId": "martin-zahumensky-1085582",
-        "profileId": "ACoAAABv55gBJdaKwB4BJa81bloalujkwCaSGjk",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQELp2Nhfwk6Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1640638221517?e=1781136000&v=beta&t=pPmrIPQEU5V_rsc-x2Shpe1C8R7iCXXQ9xFxBzVOr6Y",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGATybfAt-DPw/profile-displaybackgroundimage-shrink_350_1400/B4DZ3QlUOrG8AY-/0/1777320937046?e=1781136000&v=beta&t=U_rJlFWI9MKtXZv_ntmWfUIYd8u0MPq8ifeQzeVbqTE"
+        "profileId": "ACoAAABv55gBJdaKwB4BJa81bloalujkwCaSGjk"
       }
     },
     {
@@ -145,9 +130,7 @@
         "occupation": "IT Talent Advisor @uniters.io | where adventure meets skills",
         "id": "291781151",
         "publicId": "katarinakojtalova",
-        "profileId": "ACoAABFkOh8BZJG4Cod_C5gWDCj-pRrZ8YyByb4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHTuYvJJP9VNw/profile-displayphoto-crop_800_800/B4DZ3ZTNd3H8AI-/0/1777467187123?e=1781136000&v=beta&t=tfCp1PDgA7yi1HV5l5me_weCoc-uDsJOCvTgvvZzF2k",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHxRDHwT31zsQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ3ZTIdtIEAY-/0/1777467167210?e=1781136000&v=beta&t=rsx9sBaPKncxSCiRYpjPmGHzaT64X4pkKwq9lDQN_ms"
+        "profileId": "ACoAABFkOh8BZJG4Cod_C5gWDCj-pRrZ8YyByb4"
       }
     },
     {
@@ -158,8 +141,7 @@
         "occupation": "HR ❤️Partner for the IT sector | I create an environment for people and business to grow | 9+ years in HR | People Management | HR Business Partnering | Recruitment | Career Coaching | Mentoring | HR Advisory | Labor Law",
         "id": "519631663",
         "publicId": "karolina-vostra",
-        "profileId": "ACoAAB748y8B5lc9c1qwIaMn51hC26w_IsfXLQg",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGxJghREeAGLA/profile-displayphoto-crop_800_800/B4EZpQQkCxKsAI-/0/1762283112010?e=1781136000&v=beta&t=dBIH-xY3xAmpT8sM-pghIqdiPEhGA4tP02X94SdRrVE"
+        "profileId": "ACoAAB748y8B5lc9c1qwIaMn51hC26w_IsfXLQg"
       }
     },
     {
@@ -170,9 +152,7 @@
         "occupation": "I would like to work in an administrative position where I could apply and further develop my skills and experience.",
         "id": "995428964",
         "publicId": "zuzana-benackova",
-        "profileId": "ACoAADtVCmQBGq9A2K7MXWvPmZTc308BwVK8M9k",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQH1Fn5-zNOK7w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1668028938558?e=1781136000&v=beta&t=s6Zn_JYZZ9EtI6pqnbrh5_W3GEUIdc4Mn_8XJ966jFk",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEKn0Uk4rvrlg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1729276494784?e=1781136000&v=beta&t=MsW54L3V7VKLH9aBv9DOtRmt1sgboNDV-pAJAdD04Yk"
+        "profileId": "ACoAADtVCmQBGq9A2K7MXWvPmZTc308BwVK8M9k"
       }
     },
     {
@@ -183,9 +163,7 @@
         "occupation": "HR Professional",
         "id": "129444170",
         "publicId": "ivanavrzukova",
-        "profileId": "ACoAAAe3KUoBimEUPcUkRLLzBUPhCfbWrwV7vhk",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFodQ98gP2XZQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728032404513?e=1781136000&v=beta&t=hRF9UVWGnIT3l2dERmU1ZzSWM0HsKA4M3tybpR-SIH0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGOMG6Sw-PaeQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1726728014391?e=1781136000&v=beta&t=csfJwqoiIpCYB0q8yUSV-bT6MY2kz7er_8YoN7X9T3s"
+        "profileId": "ACoAAAe3KUoBimEUPcUkRLLzBUPhCfbWrwV7vhk"
       }
     },
     {
@@ -196,9 +174,7 @@
         "occupation": "Team Leader & Software Engineer",
         "id": "146205008",
         "publicId": "michael-remis",
-        "profileId": "ACoAAAi26VABUXU_WEBtJeKzTEShG97aGla3XmY",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQEQ3WLUUJq2ww/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638266133027?e=1781136000&v=beta&t=PGazlb3JGYqHSSav1kKI78Mald7VZoG0cju7U1fTJr0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH5IHVqxBM1qQ/profile-displaybackgroundimage-shrink_350_1400/B4DZxCvBlQJcAY-/0/1770646150799?e=1781136000&v=beta&t=61sptOKsKpcl6AhNKE-uit0QShQD9YTcOTvl_EsF76M"
+        "profileId": "ACoAAAi26VABUXU_WEBtJeKzTEShG97aGla3XmY"
       }
     },
     {
@@ -209,9 +185,7 @@
         "occupation": "iOS/ KMP developer / C/C++ developer / 42Prague.com student",
         "id": "960822563",
         "publicId": "mravec",
-        "profileId": "ACoAADlE_SMBMQ93eU8DFPPPG8mDrrPsd7fIxQ8",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQF4170d7m-fJQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1671712471398?e=1781136000&v=beta&t=uaStzb_PgWdlsuQKrRK8ktXcgF5FGADy3yooMDgzFFU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEwy5x1sO-aVg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1682438303352?e=1781136000&v=beta&t=jDyTT_kodAc5c9s8iC8eDljCryG7LhLFsFlsnMwKIl8"
+        "profileId": "ACoAADlE_SMBMQ93eU8DFPPPG8mDrrPsd7fIxQ8"
       }
     }
   ],
@@ -231,12 +205,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

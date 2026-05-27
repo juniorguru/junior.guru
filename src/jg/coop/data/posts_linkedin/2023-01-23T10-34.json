@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQG6CfJ0xRcjvQ/feedshare-image-high-res/feedshare-image-high-res/0/1674470079156?e=1781136000&v=beta&t=A3ySGasTnB4qTiSZmxc9NQHcZHaQFoa6yEXPxMldlKc"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:7023236557289488384",
   "url": "https://www.linkedin.com/posts/honzajavorek_datascience-geospatial-geospatialdata-activity-7023236557289488384-8IQr",
@@ -19,8 +17,7 @@
         "universalName": "european-space-agency",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:4901",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQH3agYKP1Whpg/company-logo_400_400/B4EZ0GNCcEJAAY-/0/1773925574932/european_space_agency_logo?e=1781136000&v=beta&t=VjMTuEp1lud2BRjXiB2iHUF0-L9bRqkXti6uF73p4rY"
+        "entityUrn": "urn:li:fs_miniCompany:4901"
       }
     },
     {
@@ -32,8 +29,7 @@
         "universalName": "pyladies-vienna",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:85613535",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQEyST4T0Fz7bA/company-logo_400_400/company-logo_400_400/0/1663230385151/pyladies_vienna_logo?e=1781136000&v=beta&t=G6aLOLTPOUBUdRzYkyx0UCee9tQx7Nj3y5_5gtRaSiM"
+        "entityUrn": "urn:li:fs_miniCompany:85613535"
       }
     },
     {
@@ -45,8 +41,7 @@
         "universalName": "women-in-geospatial",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:51724063",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQHHCZuxQKBDSQ/company-logo_400_400/company-logo_400_400/0/1652193605637?e=1781136000&v=beta&t=fsht6XNtZwFvscVqiuhcBo96xBAwrQnvKRrqNVFWRFc"
+        "entityUrn": "urn:li:fs_miniCompany:51724063"
       }
     },
     {
@@ -58,8 +53,7 @@
         "universalName": "the-unlock-it",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:89354684",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQFvtVZ310C4Wg/company-logo_400_400/company-logo_400_400/0/1667552610187/the_unlock_it_logo?e=1781136000&v=beta&t=gPdI2S-uQyxXK67tLs2SpsIH4ach-A5QVJhh3DuyjXI"
+        "entityUrn": "urn:li:fs_miniCompany:89354684"
       }
     },
     {
@@ -72,9 +66,7 @@
         "occupation": "Geospatial Data Scientist | Unlock.IT founder | PyLadies Vienna Organizer",
         "id": "460781626",
         "publicId": "tyna-dolezalova",
-        "profileId": "ACoAABt2-DoBjqrKnFkMlpMDfc2wnJcbfMZEfKA",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEdp87rO6fYzA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1675017824390?e=1781136000&v=beta&t=IBHMwDO3RswVqWMMMRwN_cjR-0N0n451mRIcWAPy89s",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEi3WQke_uwcw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1525375593417?e=1781136000&v=beta&t=r2bfxb0HBdpEzFfLti0g89r07Y_fy-rlQ2TjWgO3e7E"
+        "profileId": "ACoAABt2-DoBjqrKnFkMlpMDfc2wnJcbfMZEfKA"
       }
     },
     {
@@ -86,8 +78,7 @@
         "universalName": "juniorguru",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:26218444",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQE89NmYF-XT4g/company-logo_400_400/company-logo_400_400/0/1638266899010/juniorguru_logo?e=1781136000&v=beta&t=ad516CNUThMN8eXeVboC5S9U_y2Dnn1UhQn70wIGlxE"
+        "entityUrn": "urn:li:fs_miniCompany:26218444"
       }
     }
   ],
@@ -123,9 +114,7 @@
         "occupation": "🐝 🍯 Product developer at BKBN",
         "id": "232669821",
         "publicId": "veronika-gabrielova",
-        "profileId": "ACoAAA3eQn0Bt87ZSp0QfT6E-vWP8JjxwWCKbiM",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQE_qB2P83ug-g/profile-framedphoto-shrink_800_800/B4EZ2.AIS3JUAg-/0/1777009198775?e=1780430400&v=beta&t=99QIk875bqjmuorivm06835n9BZcueHwLKKDY2W_9MU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE3oRwd5Dq94g/profile-displaybackgroundimage-shrink_350_1400/B4EZfQUy22G4Ag-/0/1751546805612?e=1781136000&v=beta&t=1tbdObrCtHkYMhwQZrAuUDHLEvKwgSSQBALUgNnTeVA"
+        "profileId": "ACoAAA3eQn0Bt87ZSp0QfT6E-vWP8JjxwWCKbiM"
       }
     },
     {
@@ -136,9 +125,7 @@
         "occupation": "Senior Infrastructure Engineer @ Make.com",
         "id": "50839827",
         "publicId": "jedelsky",
-        "profileId": "ACoAAAMHwRMB8a9FYRfAj5eIjYr8gx5GQkPvssU",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF-sLHCEEVT6Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715673503403?e=1781136000&v=beta&t=hnAhUeBG13qXh_gs3XYcf62wKwN4C19Rr-ajDVwvAk8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQH9-Ll6gF0zqg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516551227294?e=1781136000&v=beta&t=tY5dkA3YtinujYyZ7-t_5fAohOTrZ3FZBaJcZsCRzb8"
+        "profileId": "ACoAAAMHwRMB8a9FYRfAj5eIjYr8gx5GQkPvssU"
       }
     },
     {
@@ -149,8 +136,7 @@
         "occupation": "Life is constant learning. I love to learn, I love to live.",
         "id": "205470496",
         "publicId": "lenkakasova",
-        "profileId": "ACoAAAw_OyABe8YQoil3Fwg8JuRqMRonGMie6wk",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGf1G1Fn4Ek9A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726389372537?e=1781136000&v=beta&t=gNs4ZESkJpagZnhH5coPfJcS_89t_2aoldfujkDC45g"
+        "profileId": "ACoAAAw_OyABe8YQoil3Fwg8JuRqMRonGMie6wk"
       }
     },
     {
@@ -161,8 +147,7 @@
         "occupation": "QA | Testing",
         "id": "1039598196",
         "publicId": "jitka-lizoňová",
-        "profileId": "ACoAAD33AnQBknDjKvTgSlBoKZaoS1XA_VcH1oE",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQExn13u0kylQg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1665058732563?e=1781136000&v=beta&t=JPWGhavUzkDTnQq5rzhCr9RZ4PE1XmjXpq6u_TVnN5s"
+        "profileId": "ACoAAD33AnQBknDjKvTgSlBoKZaoS1XA_VcH1oE"
       }
     },
     {
@@ -173,9 +158,7 @@
         "occupation": "Global Sales Manager | Specialty Lubricants",
         "id": "132002824",
         "publicId": "petr-pribil",
-        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEGdgqIgIpkzg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712250006297?e=1781136000&v=beta&t=UB9wEJule0NhB0lR0De_FtfePuW1Di0Vm80cYt1MqZU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFuvlBRuJNbjw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712250566915?e=1781136000&v=beta&t=8sCRHio1dDSnAp_oiaygmw7_1g4W1ce4YJV-kaJIK3M"
+        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck"
       }
     },
     {
@@ -186,8 +169,7 @@
         "occupation": "Data analytics | Energy transition",
         "id": "114102236",
         "publicId": "janfdolezal",
-        "profileId": "ACoAAAbND9wBTGfUvBkG8--t6nWYBJcRm6qj8LI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGDiD2lCktv4Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1616743956066?e=1781136000&v=beta&t=9Q1PGraRSzb__h4cp2O1EwOE1gaZWHh89nk0FhoGeic"
+        "profileId": "ACoAAAbND9wBTGfUvBkG8--t6nWYBJcRm6qj8LI"
       }
     },
     {
@@ -198,9 +180,7 @@
         "occupation": "AI-Powered Tech Talent Advisory | Business Development & Technical Consultant @Splendit",
         "id": "172287628",
         "publicId": "jaroslavstuller",
-        "profileId": "ACoAAApE5owBWLnnbJ1tIVpyL7cZF8Gi0xEHctk",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQEDParn1wpswg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1581946822590?e=1781136000&v=beta&t=I5OGJXmTS2L95CHIvjuu9SOAMNinxlAwMqTe5jG1jQw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEhqV7lBRpa5g/profile-displaybackgroundimage-shrink_350_1400/B4EZoHH82mHEAY-/0/1761056116866?e=1781136000&v=beta&t=Fcvys8W98Bx2myUFIFpKDwIhKamWV6_7lGuw7FtmoFs"
+        "profileId": "ACoAAApE5owBWLnnbJ1tIVpyL7cZF8Gi0xEHctk"
       }
     }
   ],
@@ -220,12 +200,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQGL5QzJDRPlyg/feedshare-shrink_1280/feedshare-shrink_1280/0/1624428781903?e=1781136000&v=beta&t=rD4GUJWepRuVO-mvY_NFSeNjtvZPeXh7BIZxqkDFzkE"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6813348138754093056",
   "url": "https://www.linkedin.com/posts/honzajavorek_s-radost%C3%AD-v%C3%ADt%C3%A1m-v-klubu-dal%C5%A1%C3%AD-firmu-rozj%C3%AD%C5%BEd%C3%ADme-activity-6813348138754093056-T1YL",
@@ -19,8 +17,7 @@
         "universalName": "mewssystems",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:2574959",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQG9VtyX26envQ/company-logo_400_400/B4EZyKEXeEH0AY-/0/1771842926937/mewssystems_logo?e=1781136000&v=beta&t=UIV6bGS_gnn1FvSP7zSjwts_zMyZHE6t4vu9n9Nz5KE"
+        "entityUrn": "urn:li:fs_miniCompany:2574959"
       }
     }
   ],
@@ -38,8 +35,6 @@
         "id": "530422661",
         "publicId": "adina-fox",
         "profileId": "ACoAAB-dm4UBphpPt0M3o_HcoFhUNSFgam6yIyY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFo9U_21z2zFQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725308203416?e=1781136000&v=beta&t=Fd5s_bPfqV9Zum-qkjT2BT8KUdWKCIg9uy1iP3ipCrw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQELga56ku2WNQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1725308323511?e=1781136000&v=beta&t=kl_7bliQ0v3-LukBvPWRe4MSEbzY6Ek4O7jp0QquIkE",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -57,8 +52,7 @@
             "universalName": "mewssystems",
             "active": true,
             "showcase": false,
-            "entityUrn": "urn:li:fs_miniCompany:2574959",
-            "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQG9VtyX26envQ/company-logo_400_400/B4EZyKEXeEH0AY-/0/1771842926937/mewssystems_logo?e=1781136000&v=beta&t=UIV6bGS_gnn1FvSP7zSjwts_zMyZHE6t4vu9n9Nz5KE"
+            "entityUrn": "urn:li:fs_miniCompany:2574959"
           }
         }
       ],
@@ -71,8 +65,6 @@
         "id": "58795051",
         "publicId": "tomas-hulle",
         "profileId": "ACoAAAOBJCsBubVzbEA5GaLobacAKuYctD82ghA",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQHDv-hm1DLYmQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1722505381351?e=1781136000&v=beta&t=f1hpWlDSJ7ZuNwUZjk56qi0_oAw25kBd_Q_bf4dHsOk",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGkisIyEbaJOA/profile-displaybackgroundimage-shrink_350_1400/B4DZyQTELPKQAc-/0/1771947443694?e=1781136000&v=beta&t=hzi2bJ_xg8zAQuvd3QZtKkkVaJYtvK5__NEbEii0emg",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -86,9 +78,7 @@
         "occupation": "Revolutionizing Vacation Home Ownership | Co-Founder | Entrepreneur | Mentor | #realestate #proptech #startups",
         "id": "60576927",
         "publicId": "doceto",
-        "profileId": "ACoAAAOcVJ8Bk_Rcp37_3xlXYIALwS6kWQYHJVo",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEWF3Z0jUnvcw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693510202737?e=1781136000&v=beta&t=TyRyG-lMFJbYSyyxHEVNo4BO0uunla9ZX2VKwn5Iu_s",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF6zTAk_B2hZw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1690959473571?e=1781136000&v=beta&t=K98EetYiq786qqDynuXCAn_lXyrpi1OA5qF_LOMf1jk"
+        "profileId": "ACoAAAOcVJ8Bk_Rcp37_3xlXYIALwS6kWQYHJVo"
       }
     },
     {
@@ -99,8 +89,7 @@
         "occupation": "AI Product Owner at DataSentics, Co-Founder at ReactGirls",
         "id": "498372935",
         "publicId": "simona-töröková-31baa211a",
-        "profileId": "ACoAAB20kUcBM4jRQZ2LCI-gPeLDt5KdDA_mayU",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQE7UubKPTz70A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1628246378693?e=1781136000&v=beta&t=skb04RAPCuEx09B7qkEAgWTRoccabc1Hul5oyiAzRtI"
+        "profileId": "ACoAAB20kUcBM4jRQZ2LCI-gPeLDt5KdDA_mayU"
       }
     },
     {
@@ -111,9 +100,7 @@
         "occupation": "I help factories digitise maintenance. With or without AI. Always with people first.",
         "id": "178006447",
         "publicId": "msvetlana",
-        "profileId": "ACoAAAqcKa8Bousd5uBo-bZZ9dq6qVlYKqtHvSc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF2d-GcOsk4Bg/profile-displayphoto-crop_800_800/B4DZ35j9rdHwAM-/0/1778008453433?e=1781136000&v=beta&t=drmOX7xsDyMGZaown-MFYSZXwtE2FSNpuvIxF5sa-CA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEafK1Y8bDUqw/profile-displaybackgroundimage-shrink_350_1400/B4DZWwQJBHHIAc-/0/1742418779616?e=1781136000&v=beta&t=0a47VNFLf1nQKjTg2JnpC3ODNNzCN24RoEDT7btdLtM"
+        "profileId": "ACoAAAqcKa8Bousd5uBo-bZZ9dq6qVlYKqtHvSc"
       }
     },
     {
@@ -124,8 +111,7 @@
         "occupation": "HR Project Management | e-commerce & IT",
         "id": "88552818",
         "publicId": "barborastoklasova",
-        "profileId": "ACoAAAVHNXIBmO2oo2z6X6bztZtZOfg0t2tKr1s",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHLCznJi1ckhA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729325087228?e=1781136000&v=beta&t=3sz5sVEw5ugb8ET116mOir1O4dULBnkbssGBcYnP4KM"
+        "profileId": "ACoAAAVHNXIBmO2oo2z6X6bztZtZOfg0t2tKr1s"
       }
     },
     {
@@ -136,9 +122,7 @@
         "occupation": "Agile Coach by day, Speakers @ ScanAgile26🦊 by night | DevFest.cz | GDG Helsinki | GUG.cz | Women Techmakers | Agile Enthusiast | Speaker Coach | Community Soul | Workshopper",
         "id": "218425264",
         "publicId": "eliskacejpova",
-        "profileId": "ACoAAA0E57ABXEjOnGWXi4ykBAzrRSYQ2_2aGg4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHbFOjImavR5w/profile-displayphoto-crop_800_800/B4DZyfI_TiG8AI-/0/1772196466704?e=1781136000&v=beta&t=-KXYV3kViP7UlHAh1a1DoqP6DWSR1OUaEzuamgweJBs",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHlwhemnE6WOg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1684150270204?e=1781136000&v=beta&t=3XCJ7G39oWCo74obBP6tO8lA2ojboOGNgGDsE356sIU"
+        "profileId": "ACoAAA0E57ABXEjOnGWXi4ykBAzrRSYQ2_2aGg4"
       }
     },
     {
@@ -149,9 +133,7 @@
         "occupation": "Talent Acquisition Lead | Back-Office (G&A) Hiring | Psychologist in Psychotherapy Training | Leadership • People Development",
         "id": "308188687",
         "publicId": "monikahrdinova",
-        "profileId": "ACoAABJelg8B8oPXVwO07f6oiHIfErw-Y28imMg",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFcuq_KtmA4OA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1544519929104?e=1781136000&v=beta&t=PUThu2WAz_Yy0_X3mi2lycz3d2kClEDZbI5dgr2cFb8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQESYRjyToHIAg/profile-displaybackgroundimage-shrink_350_1400/B4EZinpvPtHIAY-/0/1755159394267?e=1781136000&v=beta&t=IouoPJ0_sNWEzKO3FZPcAAkkoTQWZQBg4-AXfuEx0kY"
+        "profileId": "ACoAABJelg8B8oPXVwO07f6oiHIfErw-Y28imMg"
       }
     },
     {
@@ -162,9 +144,7 @@
         "occupation": "📈 Odhaľujem, čo potrebujú Vaši užívatelia a ako si byť s nimi bližší",
         "id": "674563567",
         "publicId": "zuzazapapayova",
-        "profileId": "ACoAACg1Be8BZGJLRy__ywPbA_Iql2sA8aywfgk",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH-_tGP27nHmQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1620208206960?e=1781136000&v=beta&t=8X3XXa3xtIIwWBxqu3rf8vykPh1n8w1tD5xm_5y8JQk",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHCRbfc7ertJA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1733408188967?e=1781136000&v=beta&t=j1AE37f5IalQMe-9eps3nrMdGHfJpLDL0y1h1e2SiLs"
+        "profileId": "ACoAACg1Be8BZGJLRy__ywPbA_Iql2sA8aywfgk"
       }
     },
     {
@@ -175,9 +155,7 @@
         "occupation": "#OpenToWork | Junior Frontend Developer | TPP",
         "id": "251923843",
         "publicId": "juraj-solarml",
-        "profileId": "ACoAAA8EDYMBLxIGFkvtfI1Vro-yXMPpfVNdT9s",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQEAmJI339Vvmg/profile-framedphoto-shrink_800_800/B4DZx78YZzGQAg-/0/1771605952455?e=1780430400&v=beta&t=lY8G_gK3n7YjM5kRzkz-MV87VTPRrjuvO4_cROBLdfs",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHj4A2nngY-ag/profile-displaybackgroundimage-shrink_350_1400/B4EZch4U_UHsAY-/0/1748620104532?e=1781136000&v=beta&t=EivcfHIkHGo-jruKICbLZIQ3a-uMjiHBKUKN8r0Hn5k"
+        "profileId": "ACoAAA8EDYMBLxIGFkvtfI1Vro-yXMPpfVNdT9s"
       }
     },
     {
@@ -188,9 +166,7 @@
         "occupation": "Psycholožka & programátorka",
         "id": "480212921",
         "publicId": "nela-slezakova",
-        "profileId": "ACoAAByfd7kBTrRNPdPbFJVO_tDUL0T4wKurjsE",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGHIISb698PEw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1682691059414?e=1781136000&v=beta&t=9cFsIaEIvL-qcKCcsBGJU4Fk7gT41mOPNDgRDzTJjuo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQENHWJuh8GvxA/profile-displaybackgroundimage-shrink_350_1400/B4DZXs0pSvG4Ac-/0/1743434981675?e=1781136000&v=beta&t=VjhVIEGV-wcRsv244fTjhWO4grFCQyW4XgWgVLH-KRY"
+        "profileId": "ACoAAByfd7kBTrRNPdPbFJVO_tDUL0T4wKurjsE"
       }
     },
     {
@@ -201,8 +177,7 @@
         "occupation": "Head of Engineering",
         "id": "76115329",
         "publicId": "vachapetr",
-        "profileId": "ACoAAASJbYEBMeOmhTR-EWaXg0q9HUTng5HCt9E",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGCiZVCJ_C1OA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1557674174077?e=1781136000&v=beta&t=BhlxGr50WWidcbX2Ie9bGUVi2zrduoaH7ODcwifpQcA"
+        "profileId": "ACoAAASJbYEBMeOmhTR-EWaXg0q9HUTng5HCt9E"
       }
     }
   ],
@@ -222,12 +197,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

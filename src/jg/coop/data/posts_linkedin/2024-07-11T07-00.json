@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/D4E22AQGsY5vsULQewQ/feedshare-image-high-res/feedshare-image-high-res/0/1720513432224?e=1781136000&v=beta&t=UIJPErZNQvQjBEFlXaPemNp77aWTS9o7myLABCky-6A"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:7217060115537870848",
   "url": "https://www.linkedin.com/posts/honzajavorek_react-recruitment-activity-7217060115537870848-I-Gw",
@@ -20,8 +18,7 @@
         "occupation": "Senior Software Engineer",
         "id": "140017332",
         "publicId": "mwenisch",
-        "profileId": "ACoAAAhYfrQB_PfnP77TNy12rVIgZaSg4ntxNQI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQExa7PgQIUDdA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1699636955431?e=1781136000&v=beta&t=FQxvHhXoo_oA5O9GTjlk1LPmxQyTQ3RjD2K7hZw908Y"
+        "profileId": "ACoAAAhYfrQB_PfnP77TNy12rVIgZaSg4ntxNQI"
       }
     }
   ],
@@ -40,7 +37,6 @@
         "id": "62423424",
         "publicId": "vohocz",
         "profileId": "ACoAAAO4gYABioFXsmShW_uvboNoTFqWF4XYFBk",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGyZO7p_PZOow/profile-displaybackgroundimage-shrink_350_1400/B4EZULolK8HUAY-/0/1739656955266?e=1781136000&v=beta&t=K2A9gQC74a0GOohzxCEN4rCTfeWL40iJrFbCrdQGGdc",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -126,7 +122,6 @@
         "id": "446728226",
         "publicId": "dvoorajak",
         "profileId": "ACoAABqgiCIBGae91KbE1yHZSbzOLo87v5ifelI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHQF2j4rhco6w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1666640098888?e=1781136000&v=beta&t=fuo_gPjUOCdidQ8r-umsHaF8sKCHtA_TVIanFZCXEz4",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -144,7 +139,6 @@
         "id": "549611439",
         "publicId": "berankova-pavla",
         "profileId": "ACoAACDCZ68BhDuYokjdegYmFm0rxSx_6Mlwh9c",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHFjlgP9iU-Fw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0B6o8_KUAc-/0/1773853643504?e=1781136000&v=beta&t=s18xkVLJd-f21PM-R-ZSZaCgq-ojo7xkrzQ5x6cYHoE",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -162,7 +156,6 @@
         "id": "1145616814",
         "publicId": "vendula-krajickova",
         "profileId": "ACoAAERIua4Bk44zfiGE6PT1BmSNoKdqiNkFOYc",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEbmPU9yPivLA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1687407209461?e=1781136000&v=beta&t=NoCy2Xx-Zc2-_WzGhO9ETCyqzzAvmczh02wGrTi73vc",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -176,8 +169,7 @@
         "occupation": "Project & Data Strategy Leader | Connecting Public Sector + Tech | Driving Impactful Digital Transformation || ((ale především pracující máma, žena v politice a IT, a stále trochu šokovaná chovatelka dvou koček ;) )",
         "id": "106539772",
         "publicId": "petra-sedlackova-",
-        "profileId": "ACoAAAZZqvwBP60epsGOOXDwoA7ZiwwZsJYLQr0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFmyaQaDXZP3g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1639585284652?e=1781136000&v=beta&t=8zKEY76LRNfqGd3K-luLq4rS6ZQ_EtIshBje0AS5r2E"
+        "profileId": "ACoAAAZZqvwBP60epsGOOXDwoA7ZiwwZsJYLQr0"
       }
     },
     {
@@ -188,8 +180,7 @@
         "occupation": "exploring what’s next",
         "id": "305348259",
         "publicId": "barborastrihova",
-        "profileId": "ACoAABIzPqMBs2d9upcz_z9_XombRLHaCjfppAM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQFxq6gvgDSk9A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1563859475354?e=1781136000&v=beta&t=lu6z5YDvZGqtPFfpY_QfDj-Nv3meUk9utE2NG80vHOA"
+        "profileId": "ACoAABIzPqMBs2d9upcz_z9_XombRLHaCjfppAM"
       }
     },
     {
@@ -233,8 +224,7 @@
         "occupation": "Python developer and lecturer",
         "id": "355842259",
         "publicId": "jakub-červinka",
-        "profileId": "ACoAABU1uNMBxEkN7xMohKuhfytB97ZjK-tfEKo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFo1b8_EZuWVQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728056593822?e=1781136000&v=beta&t=NEwZVdMdQqj1rM46MtdnZQjC4bxHXipuncawNthkvSU"
+        "profileId": "ACoAABU1uNMBxEkN7xMohKuhfytB97ZjK-tfEKo"
       }
     },
     {
@@ -256,8 +246,7 @@
         "occupation": "Senior Software Engineer | CTO - Zenamu",
         "id": "145678886",
         "publicId": "janbouchner",
-        "profileId": "ACoAAAiu4iYBKrPdapJp0qHAnH70fC4-BPyj0y0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFGSr3vvWAoUQ/profile-displaybackgroundimage-shrink_350_1400/B4EZY2G96jHgAY-/0/1744664522736?e=1781136000&v=beta&t=PUTsuAisGJ-JH1fDqRWcX_thJd5_-n6mR-QEqgikwdQ"
+        "profileId": "ACoAAAiu4iYBKrPdapJp0qHAnH70fC4-BPyj0y0"
       }
     },
     {
@@ -268,8 +257,7 @@
         "occupation": "💻 Tvorba webov, e-shopov, SEO, PPC | 🌐 Web Developer & E-commerce Specialist | 🤝 Freelancer",
         "id": "1056288463",
         "publicId": "patriksubjak",
-        "profileId": "ACoAAD71rs8BBDyOD-1eADFTHCsmoaPGaUmTYnM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFkPj_E-Z6X7w/profile-displaybackgroundimage-shrink_350_1400/B4EZqdh1rxKoAY-/0/1763579485740?e=1781136000&v=beta&t=GhAzv-4bs_hgpVfNpmk4AsVJRqamYgGj3FsjwdOUJJk"
+        "profileId": "ACoAAD71rs8BBDyOD-1eADFTHCsmoaPGaUmTYnM"
       }
     },
     {
@@ -280,8 +268,7 @@
         "occupation": "Vybuduji vaší firmě udržitelný systém vzdělávání 🟡 HR konzultant a lektor @ICT Pro 🟡Navrhnu a zorganizuji vám soft skills program na míru 🟡Psychodiagnostika Thomas International 🟡Koučink & Mentoring",
         "id": "438512099",
         "publicId": "marketavyskocilova",
-        "profileId": "ACoAABojKeMBBI6D_5s02oW1Zs7u2v4l5ifhuFg",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFyNEZITugQvA/profile-displaybackgroundimage-shrink_350_1400/B4DZhaKSBFHAAY-/0/1753859302029?e=1781136000&v=beta&t=2idyFiTyFQvx4eUdYHELvbwA7mowSYYDcPggH_UkRjs"
+        "profileId": "ACoAABojKeMBBI6D_5s02oW1Zs7u2v4l5ifhuFg"
       }
     }
   ],
@@ -301,8 +288,7 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
   "authorType": "Person",

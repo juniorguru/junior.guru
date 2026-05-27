@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/D4E22AQEjId8a-TPVMA/feedshare-image-high-res/feedshare-image-high-res/0/1722851269280?e=1781136000&v=beta&t=fv4aIdy40vLc-1j_4FAJTaFdi19-cKURhQ-lfZqjL6c"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:7226482201691860993",
   "url": "https://www.linkedin.com/posts/honzajavorek_lovebrand-dei-csr-activity-7226482201691860993-DPHS",
@@ -19,8 +17,7 @@
         "universalName": "fakturoid",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:612241",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQG2OSsUNJ24Dw/company-logo_400_400/company-logo_400_400/0/1630627492772/fakturoid_logo?e=1781136000&v=beta&t=Jg8Cl7fCiJFhhrOQmCX6Z4ELvleKfM0iBgYUN0g2sow"
+        "entityUrn": "urn:li:fs_miniCompany:612241"
       }
     },
     {
@@ -32,8 +29,7 @@
         "universalName": "rectorphp",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:20173424",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQEJEaw3aMSQFw/company-logo_400_400/company-logo_400_400/0/1733781000723/rectorphp_logo?e=1781136000&v=beta&t=jtK7veKOA6vLCFF3i8Kzvbs-HC7E2L8qt-TFhXfi9cQ"
+        "entityUrn": "urn:li:fs_miniCompany:20173424"
       }
     },
     {
@@ -45,8 +41,7 @@
         "universalName": "red-hat",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:3545",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQEto-TydTTIfQ/company-logo_400_400/company-logo_400_400/0/1630583759577/red_hat_logo?e=1781136000&v=beta&t=pz-ZVls43PnEc3AaLENZp2yy3p0tbH6UgDxfJUL2tDA"
+        "entityUrn": "urn:li:fs_miniCompany:3545"
       }
     },
     {
@@ -72,8 +67,7 @@
         "occupation": "Product Owner & Dad | Building great products, raising great humans",
         "id": "283596586",
         "publicId": "fusatytata",
-        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFllW8t92LUXg/profile-displaybackgroundimage-shrink_350_1400/B4EZkO0XOcHEAY-/0/1756890233024?e=1781136000&v=beta&t=BcgfXCQP09cdXXYAi_lrlRlt4F-p0U2rPgEazsl9SeQ"
+        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k"
       }
     },
     {
@@ -86,8 +80,7 @@
         "occupation": "Co-founder & Interim CEO | Mom of ✌️",
         "id": "237708845",
         "publicId": "monikaptacnikova",
-        "profileId": "ACoAAA4rJi0BWMOkxrGwlV1YYVbX9urce9-UAkQ",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH9BR5xE73mXw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1732188786190?e=1781136000&v=beta&t=9GPUlnJcSRuOXNS33nSNUM9xxRdQydzMOlXfxl-_ehM"
+        "profileId": "ACoAAA4rJi0BWMOkxrGwlV1YYVbX9urce9-UAkQ"
       }
     },
     {
@@ -100,8 +93,7 @@
         "occupation": "Security engineer & hacker, web developer, speaker and consultant",
         "id": "13617064",
         "publicId": "spaze",
-        "profileId": "ACoAAADPx6gBVpJP4TUKXzNrRVbr-J6gbJ72J2Q",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHSwy0z4cc_Ug/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1664203309807?e=1781136000&v=beta&t=s-aEeW9plCcz7xTNMCZ8R1A8fscbMeQognmWKJ8PeHI"
+        "profileId": "ACoAAADPx6gBVpJP4TUKXzNrRVbr-J6gbJ72J2Q"
       }
     },
     {
@@ -114,8 +106,7 @@
         "occupation": "Psycholožka & programátorka",
         "id": "480212921",
         "publicId": "nela-slezakova",
-        "profileId": "ACoAAByfd7kBTrRNPdPbFJVO_tDUL0T4wKurjsE",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQENHWJuh8GvxA/profile-displaybackgroundimage-shrink_350_1400/B4DZXs0pSvG4Ac-/0/1743434981675?e=1781136000&v=beta&t=VjhVIEGV-wcRsv244fTjhWO4grFCQyW4XgWgVLH-KRY"
+        "profileId": "ACoAAByfd7kBTrRNPdPbFJVO_tDUL0T4wKurjsE"
       }
     }
   ],
@@ -134,7 +125,6 @@
         "id": "97224438",
         "publicId": "tamaraksandrova",
         "profileId": "ACoAAAXLhvYB0EzEIZDOgq4UbmzA-lx3BNvKKjA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQF91JMlpnfTpQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1518558960497?e=1781136000&v=beta&t=utEttQA_3QMIPg-oa2hwMQ24AsSy4qsR3NU2KJD5MG8",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -152,7 +142,6 @@
         "id": "13617064",
         "publicId": "spaze",
         "profileId": "ACoAAADPx6gBVpJP4TUKXzNrRVbr-J6gbJ72J2Q",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHSwy0z4cc_Ug/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1664203309807?e=1781136000&v=beta&t=s-aEeW9plCcz7xTNMCZ8R1A8fscbMeQognmWKJ8PeHI",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -170,7 +159,6 @@
         "id": "438512099",
         "publicId": "marketavyskocilova",
         "profileId": "ACoAABojKeMBBI6D_5s02oW1Zs7u2v4l5ifhuFg",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFyNEZITugQvA/profile-displaybackgroundimage-shrink_350_1400/B4DZhaKSBFHAAY-/0/1753859302029?e=1781136000&v=beta&t=2idyFiTyFQvx4eUdYHELvbwA7mowSYYDcPggH_UkRjs",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -188,7 +176,6 @@
         "id": "283596586",
         "publicId": "fusatytata",
         "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFllW8t92LUXg/profile-displaybackgroundimage-shrink_350_1400/B4EZkO0XOcHEAY-/0/1756890233024?e=1781136000&v=beta&t=BcgfXCQP09cdXXYAi_lrlRlt4F-p0U2rPgEazsl9SeQ",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -207,8 +194,7 @@
             "occupation": "📚 Senior Technical Recruiter | Talent Acquisition",
             "id": "446096913",
             "publicId": "tereza-mysakova",
-            "profileId": "ACoAABqW5hEBGY96auCPd1nvGm9bjXkxFHmu9SM",
-            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFOczhvDGQ9Xw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1725012806784?e=1781136000&v=beta&t=KYEoGdUyywoXhr-aXklXSuw2IdBaVsR9NCApPbGZlQI"
+            "profileId": "ACoAABqW5hEBGY96auCPd1nvGm9bjXkxFHmu9SM"
           }
         }
       ],
@@ -221,7 +207,6 @@
         "id": "140017332",
         "publicId": "mwenisch",
         "profileId": "ACoAAAhYfrQB_PfnP77TNy12rVIgZaSg4ntxNQI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQExa7PgQIUDdA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1699636955431?e=1781136000&v=beta&t=FQxvHhXoo_oA5O9GTjlk1LPmxQyTQ3RjD2K7hZw908Y",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -246,8 +231,7 @@
         "occupation": "Independent IT Recruitment Partner",
         "id": "245821694",
         "publicId": "libušekašná",
-        "profileId": "ACoAAA6m8P4BYwgrDUq4WuAYM0iJs7s34cK2Qr8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFnCg1gSppr2g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1623255354172?e=1781136000&v=beta&t=nHSo85qy9S7KJUoV6PJcCdqoZrnn5O6Pq3IueIbOjUw"
+        "profileId": "ACoAAA6m8P4BYwgrDUq4WuAYM0iJs7s34cK2Qr8"
       }
     },
     {
@@ -269,8 +253,7 @@
         "occupation": "Software Engineer @ Apify",
         "id": "611777468",
         "publicId": "vdusek",
-        "profileId": "ACoAACR2-7wBvKrKJD3U2p3uoIApJV9Z9uQ3kyA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEC03xCkWoMag/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1590672446859?e=1781136000&v=beta&t=cwjA9HVljt_71gSYogw3T_RRUpro2_eXDDrgPe7ChtE"
+        "profileId": "ACoAACR2-7wBvKrKJD3U2p3uoIApJV9Z9uQ3kyA"
       }
     },
     {
@@ -281,8 +264,7 @@
         "occupation": "Hands-on Legacy Cleaner",
         "id": "768515172",
         "publicId": "tomas-votruba",
-        "profileId": "ACoAAC3OnGQBSTXo3yuoRBtMs9woV1UbEk7ALEc",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFUg7pFBD2zGg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1570366304090?e=1781136000&v=beta&t=SWq5im9r4d_it6xP-IJZlA7Atidr43c19uYvliRZoYE"
+        "profileId": "ACoAAC3OnGQBSTXo3yuoRBtMs9woV1UbEk7ALEc"
       }
     },
     {
@@ -293,8 +275,7 @@
         "occupation": "Recruitment Lead at Aricoma | Recruiter of the Year 2022 | HRLove Meetup Ostrava | May the Force Be with You",
         "id": "97224438",
         "publicId": "tamaraksandrova",
-        "profileId": "ACoAAAXLhvYB0EzEIZDOgq4UbmzA-lx3BNvKKjA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQF91JMlpnfTpQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1518558960497?e=1781136000&v=beta&t=utEttQA_3QMIPg-oa2hwMQ24AsSy4qsR3NU2KJD5MG8"
+        "profileId": "ACoAAAXLhvYB0EzEIZDOgq4UbmzA-lx3BNvKKjA"
       }
     },
     {
@@ -305,8 +286,7 @@
         "occupation": "Speech Scientist",
         "id": "349675917",
         "publicId": "petra-slizkova-8b913299",
-        "profileId": "ACoAABTXoY0B5LBPumaDeUgxTR8CfgJeiDQdo-w",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFQv2doevLbZA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1682359872729?e=1781136000&v=beta&t=2jgaWHwWS9XSWePuP1NtOJ3LW44Q8hOMBWiuiYAkI7o"
+        "profileId": "ACoAABTXoY0B5LBPumaDeUgxTR8CfgJeiDQdo-w"
       }
     },
     {
@@ -328,8 +308,7 @@
         "occupation": "Senior Java & Kotlin backend developer.",
         "id": "177640967",
         "publicId": "ladislav-ksir",
-        "profileId": "ACoAAAqWlgcBFkSQcdNxqmjgxgGuNtr56OsNGDk",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFVa0d3T1N3JA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1651751238960?e=1781136000&v=beta&t=Xqadd1p1O89UI-qKRr11mKwr7e9KPKR2SyOFqq8zNfs"
+        "profileId": "ACoAAAqWlgcBFkSQcdNxqmjgxgGuNtr56OsNGDk"
       }
     },
     {
@@ -340,8 +319,7 @@
         "occupation": "Content Specialist at Hill’s Pet Nutrition 💙 | Copywriter, Proofreader, FR-CS & EN-CS Translator",
         "id": "1011297769",
         "publicId": "lenka-koňaříková-921821242",
-        "profileId": "ACoAADxHLekBzB4Ih3cvBO2pBNMwvvendxDGFHM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFTjXW4ww4LYA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1688810353646?e=1781136000&v=beta&t=sqG8505ezAvn-n9YcY3hUXAqDHfSnlgLkb0chYE9DjE"
+        "profileId": "ACoAADxHLekBzB4Ih3cvBO2pBNMwvvendxDGFHM"
       }
     }
   ],
@@ -361,8 +339,7 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
   "authorType": "Person",

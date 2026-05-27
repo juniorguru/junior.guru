@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQHsO4Fph5w0kA/feedshare-shrink_1280/feedshare-shrink_1280/0/1625465581563?e=1781136000&v=beta&t=XueMzzMsN93p40Zb0sLdRiQQlCfE1vn2ZxoGGBu9nkI"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6817696791581007872",
   "url": "https://www.linkedin.com/posts/honzajavorek_sdacademy-activity-6817696791581007872-FKZf",
@@ -19,8 +17,7 @@
         "universalName": "software-development-academy",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:9433099",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQGGpw91fxmZVA/company-logo_400_400/company-logo_400_400/0/1631192827596/software_development_academy_logo?e=1781136000&v=beta&t=w3WA2L8d5HrEkkMMXFzsh4Q95O_EZEjY-emOMjsg_4Y"
+        "entityUrn": "urn:li:fs_miniCompany:9433099"
       }
     }
   ],
@@ -39,8 +36,7 @@
             "universalName": "software-development-academy",
             "active": true,
             "showcase": false,
-            "entityUrn": "urn:li:fs_miniCompany:9433099",
-            "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQGGpw91fxmZVA/company-logo_400_400/company-logo_400_400/0/1631192827596/software_development_academy_logo?e=1781136000&v=beta&t=w3WA2L8d5HrEkkMMXFzsh4Q95O_EZEjY-emOMjsg_4Y"
+            "entityUrn": "urn:li:fs_miniCompany:9433099"
           }
         }
       ],
@@ -53,7 +49,6 @@
         "id": "117747267",
         "publicId": "michaela-vavrinova-94352433",
         "profileId": "ACoAAAcErkMBxIoqAn7vjC3q8_JdzfNFSzwMZ3A",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFSkx1w4cwtDg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1702848335851?e=1781136000&v=beta&t=g1bI-Umv6oFzjXFm1GJ2DNHZuLz9UmU4a51rDbvhH2c",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -66,8 +61,7 @@
         "universalName": "software-development-academy",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:9433099",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQGGpw91fxmZVA/company-logo_400_400/company-logo_400_400/0/1631192827596/software_development_academy_logo?e=1781136000&v=beta&t=w3WA2L8d5HrEkkMMXFzsh4Q95O_EZEjY-emOMjsg_4Y"
+        "entityUrn": "urn:li:fs_miniCompany:9433099"
       }
     },
     {
@@ -78,8 +72,7 @@
         "occupation": "Software engineering student at FI MUNI.",
         "id": "731425708",
         "publicId": "daniel-rozehnal-924b52184",
-        "profileId": "ACoAACuYq6wBw_NUyA50V0fvku83SMXkgexoGa8",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQH6BzN9AcUCqw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1687462673185?e=1781136000&v=beta&t=CcZtGbxzcjtE3ICu9xz1ywNt_uzrOhlHHeL4p4nax_k"
+        "profileId": "ACoAACuYq6wBw_NUyA50V0fvku83SMXkgexoGa8"
       }
     },
     {
@@ -90,8 +83,7 @@
         "occupation": "SW Test Engineer",
         "id": "395772069",
         "publicId": "sarka-tauerova",
-        "profileId": "ACoAABeXAKUB7BlQTF3tWtqheTWljNpbWaP5ikw",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFU7HiHu8oDLw/profile-displayphoto-crop_800_800/B4EZgOcjbWGcAI-/0/1752589023505?e=1781136000&v=beta&t=Ha4fQujefDTp4IQfN_gdTgA4h_4bNb2Wd1i3Vf_4W54"
+        "profileId": "ACoAABeXAKUB7BlQTF3tWtqheTWljNpbWaP5ikw"
       }
     },
     {
@@ -102,9 +94,7 @@
         "occupation": "Professional Education Specialist - Orthopedics, Central CEE",
         "id": "54224601",
         "publicId": "simonajanků",
-        "profileId": "ACoAAAM7ZtkB5PlfB9T2wNt0Godho63h4YHCogk",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHeo8Xn5NW63w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1722519424572?e=1781136000&v=beta&t=78nue6CoMSWKig6wpn4SkYJ8E6btH_WnhEkCWdc706A",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQFivIt5WGm0Tg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1648733615214?e=1781136000&v=beta&t=mW7s6rnPVyanrQdmmK7lfP1cSs2qe2rWkW426_gPmlg"
+        "profileId": "ACoAAAM7ZtkB5PlfB9T2wNt0Godho63h4YHCogk"
       }
     },
     {
@@ -115,9 +105,7 @@
         "occupation": "Founder of Visualbook",
         "id": "300088740",
         "publicId": "jirichlebus",
-        "profileId": "ACoAABHi_aQBiiyuBzq5txrPDAL_9RDcBMkLEjU",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQELdhSbrr2STA/profile-displayphoto-crop_800_800/B4EZrfa71BHMAI-/0/1764684982671?e=1781136000&v=beta&t=hn0nFfRHqXK1hVO-O-FyUq8p-zJSEAfwEMNxERL5xz8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGv8YR9qq3BEg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1732029614994?e=1781136000&v=beta&t=1CNEML1Kcul2zuJH487liDVzsZyyh_7jhmBcMtASch8"
+        "profileId": "ACoAABHi_aQBiiyuBzq5txrPDAL_9RDcBMkLEjU"
       }
     },
     {
@@ -128,9 +116,7 @@
         "occupation": "\"It is a capital mistake to theorize before one has data.\" *cleaned data",
         "id": "775508820",
         "publicId": "nathalie-vecten",
-        "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH5sSEbnQ2Tcg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1611936430673?e=1781136000&v=beta&t=wAQsj8dSBDe6L3xt1MwxMahW3aP-D6LcuvT-utzij6s",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHDKxhi18V0lw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1599638080880?e=1781136000&v=beta&t=5JiWefMiJff9VXnKXxoAOOrnUYNFE4fW7AQAgJac6VA"
+        "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM"
       }
     },
     {
@@ -141,9 +127,7 @@
         "occupation": "Chief of Operations | Customer experience, process & project management | Certified Scrum Master®| MAAPPI GOES GLOBAL Ambassador",
         "id": "33028509",
         "publicId": "kamilavavrova",
-        "profileId": "ACoAAAH3-Z0BnnZ71ckG-0Qj2yWYt4eiNUqBjcU",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGzPiGCVBAUWg/profile-displayphoto-crop_800_800/B4EZqjnH61KoAI-/0/1763681534262?e=1781136000&v=beta&t=qeooUXKPv1_3eELxNLP1l5asWjzYf1foLK_13d-mei0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHPiBiaOX6taw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1581974339994?e=1781136000&v=beta&t=KuVTO_kccccwBFfocfjsjhH_4TM-rTjMNyJMp7j0YCI"
+        "profileId": "ACoAAAH3-Z0BnnZ71ckG-0Qj2yWYt4eiNUqBjcU"
       }
     },
     {
@@ -154,9 +138,7 @@
         "occupation": "Frontend Developer - React and Next",
         "id": "740316381",
         "publicId": "blanka-semanová",
-        "profileId": "ACoAACwgVN0BXjPO356is1a7HECdYY6oGuzTouY",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQHt31UB9Dnr_g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1705586552175?e=1781136000&v=beta&t=VnaoT0wlgyuQQGLJMI1wvCsS4oGHAmClyqm-JikLvgE",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGmd9O2TBL9PA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1705586497192?e=1781136000&v=beta&t=JlZHwSEMta7stFHe1LeFKFVGgbpKpeFbQUUDebs_rnc"
+        "profileId": "ACoAACwgVN0BXjPO356is1a7HECdYY6oGuzTouY"
       }
     },
     {
@@ -167,9 +149,7 @@
         "occupation": "Hope-based Leader | Moving from ‘No, because’ to ‘Yes, if’ Culture in Government",
         "id": "12118109",
         "publicId": "evapavlikova",
-        "profileId": "ACoAAAC46F0BJQLhw3nCC7aaTcpYSs6RqWaP1Vw",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHlt2AxwqFdVQ/profile-displayphoto-crop_800_800/B4EZfG.16hHYAM-/0/1751390052552?e=1781136000&v=beta&t=TSZH6NhRKWHzP95IkFkyLySMnb8lruC28HEH-ZHv0QM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEVGUA5BaYCyQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1587825486562?e=1781136000&v=beta&t=f3cNmgwZ45sDrj1GeTLkYKSB8BVy6WkqFDBfMvwRQsA"
+        "profileId": "ACoAAAC46F0BJQLhw3nCC7aaTcpYSs6RqWaP1Vw"
       }
     },
     {
@@ -180,9 +160,7 @@
         "occupation": "Teacher & Software Testing Consultant",
         "id": "381101197",
         "publicId": "radek4k",
-        "profileId": "ACoAABa3JI0BX5xxM2r4OdST7lv3F0k2L9ZRRhg",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEQMzrKB6yYFQ/profile-displayphoto-crop_800_800/B4EZlXluYjKQAQ-/0/1758111131805?e=1781136000&v=beta&t=fGgQdoBKupNlbRyYc9pQ8MYSWH55wJ_Gl1Iu7EJxWM4",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHeSes3OrqGYw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1624455708146?e=1781136000&v=beta&t=kAJLHFarzTMa_HOjRbqJyvM9JR1FwjNZ1bSun9BMGns"
+        "profileId": "ACoAABa3JI0BX5xxM2r4OdST7lv3F0k2L9ZRRhg"
       }
     }
   ],
@@ -202,12 +180,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

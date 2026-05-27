@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4D22AQG6R8IVEpGOgA/feedshare-shrink_1280/feedshare-shrink_1280/0/1583645427150?e=1781136000&v=beta&t=Mi3QtFG9-HrmMEbtpTZp2xjONxOMwmOT-kJg7SmMbxE"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6625654404957655040",
   "url": "https://www.linkedin.com/posts/honzajavorek_do-sekce-o-mentorech-na-httpslnkdindudtxgb-activity-6625654404957655040-6Qsi",
@@ -20,9 +18,7 @@
         "occupation": "Komunikační specialistka ~ copywriting & copyediting ~ tvorba & úprava textu ~ PR komunikace ~ event specialistka ~ produkce",
         "id": "228599758",
         "publicId": "pavlapilchova",
-        "profileId": "ACoAAA2gJ84BUO4TQAQEEIu0swowkiEljEIjXAk",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHgGTQtpTT2Yw/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1738567938902?e=1780430400&v=beta&t=nyS85c_4JuLcRiPCYS-0cd3LMxtEDSwUwU1-BBeFZlI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQE73otPPtSUNw/profile-displaybackgroundimage-shrink_350_1400/B4DZyt2lTmH4Ag-/0/1772443293722?e=1781136000&v=beta&t=Yr-yL6kSdM1d378XMnE1RrrEpNiQWGS8vhM22lQGPBA"
+        "profileId": "ACoAAA2gJ84BUO4TQAQEEIu0swowkiEljEIjXAk"
       }
     }
   ],
@@ -42,12 +38,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

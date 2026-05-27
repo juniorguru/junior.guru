@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQH4Mt6GoSgaDg/feedshare-image-high-res/feedshare-image-high-res/0/1653578982019?e=1781136000&v=beta&t=AW_c6V4c9zKIFKcd8tF_2yZojyNgzWmvf9d-ZTm6v-w"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6935612945074683904",
   "url": "https://www.linkedin.com/posts/honzajavorek_backend-frontend-design-activity-6935612945074683904-jpah",
@@ -19,8 +17,7 @@
         "universalName": "webexpo",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:923725",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQFgeeC2PPWXyw/company-logo_400_400/company-logo_400_400/0/1698662675471/webexpo_logo?e=1781136000&v=beta&t=2lhXicOOdUe_Ko_lla2WVqy8KZbZhLZiyQk6DH0mCt4"
+        "entityUrn": "urn:li:fs_miniCompany:923725"
       }
     }
   ],
@@ -38,8 +35,6 @@
         "id": "110092052",
         "publicId": "zapadlo",
         "profileId": "ACoAAAaP3xQB9OmVR_H_rXxr57aIJAftAOFahUs",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEC6JZP0jAE5A/profile-displayphoto-crop_800_800/B4EZiACje6GwAI-/0/1754494810986?e=1781136000&v=beta&t=69zGDVDEsUr5PukYrdlxmWbuF7bmV_Rk_OZloYqmv4Y",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHL7rOg96wbpw/profile-displaybackgroundimage-shrink_350_1400/B4DZ5J79pbJYAU-/0/1779356916618?e=1781136000&v=beta&t=buaM98C3-LroCzT-M5lGeVcn964WC7cuUW91BRlUDmQ",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -53,9 +48,7 @@
         "occupation": "Teaching students about entrepreneurship, mentoring start-ups and helping growing companies with processes and transformation. Mentor, interim/crisis manager, with a passion for IT and people. Ex Packeta Group.",
         "id": "324193229",
         "publicId": "terezathesnovakova",
-        "profileId": "ACoAABNSy80BTJN_ziIc6pRLOB4i4z2Lx79MVnc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEuLPD-WdM1hA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1713202814427?e=1781136000&v=beta&t=so08iYX5YyUL5S9yvUE3_W8SD6JPa85KEybf8LFv0-8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH2Mmt6xH4NGQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1713202648127?e=1781136000&v=beta&t=oI6sIJSxFK43aHgBtPZJNXvqui77fCtlLbrhh8OYh40"
+        "profileId": "ACoAABNSy80BTJN_ziIc6pRLOB4i4z2Lx79MVnc"
       }
     },
     {
@@ -66,9 +59,7 @@
         "occupation": "“The journey is the destination”",
         "id": "823193341",
         "publicId": "kslezakova",
-        "profileId": "ACoAADEQ7v0BQzs8aNXWgRYo4kPIBpO990Op2q4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHLgcpsZhZv9g/profile-displayphoto-crop_800_800/B4EZsBxARBKcAQ-/0/1765261185170?e=1781136000&v=beta&t=qKC3O2DbG5vdz8lEXUE0bvS9d9YoBa5o4AjKMeOZDiY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH9FcmHhMx99Q/profile-displaybackgroundimage-shrink_350_1400/B4EZsCPEx4KoAc-/0/1765269067659?e=1781136000&v=beta&t=W3_PhqFJZ--KwlSMbSIRQo-vEzVHoPKOa5KXSlErZvc"
+        "profileId": "ACoAADEQ7v0BQzs8aNXWgRYo4kPIBpO990Op2q4"
       }
     },
     {
@@ -79,8 +70,7 @@
         "occupation": "People and Community Leader | Startups Advisor for HR, Community and Marketing | Seasoned HR, TA, and Community professional | TOP 20 Biggest CZ Linkedin profiles",
         "id": "242323201",
         "publicId": "martinbolek",
-        "profileId": "ACoAAA5xjwEB-5I0z2Ur7gyCn2MoA1wU5jE2R8I",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHodacSr4AwBA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1605926868322?e=1781136000&v=beta&t=_ej1IW2q0XLnOwQn5311vABlkD25kz9iKVTcKjixgfI"
+        "profileId": "ACoAAA5xjwEB-5I0z2Ur7gyCn2MoA1wU5jE2R8I"
       }
     },
     {
@@ -91,9 +81,7 @@
         "occupation": "Head of People & Senior HRBP 🤝 Org Design & Change Management 👷🏻‍♀️ Helping organisations and their people grow 🚀 From strategy to execution 🏁",
         "id": "372617580",
         "publicId": "zuzka-peskova",
-        "profileId": "ACoAABY1sWwB4t11FnuAB0kZKnWKzYGFsr-BnW4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEBTNC5HjmZwA/profile-displayphoto-crop_800_800/B4EZqdc3M9IUAM-/0/1763578181096?e=1781136000&v=beta&t=96_ZgIZQnV0KOXKFQEPPVNAmGS7Nd7a_i-r6SAdDxh0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGOsvFZTyUNow/profile-displaybackgroundimage-shrink_350_1400/B4EZne5YaCHgAc-/0/1760381210675?e=1781136000&v=beta&t=6g8P8LQihHH3TRY2z2x2TxC_4Y4n3SBZcvWDjOlndHM"
+        "profileId": "ACoAABY1sWwB4t11FnuAB0kZKnWKzYGFsr-BnW4"
       }
     },
     {
@@ -104,8 +92,7 @@
         "occupation": "Data analytics | Energy transition",
         "id": "114102236",
         "publicId": "janfdolezal",
-        "profileId": "ACoAAAbND9wBTGfUvBkG8--t6nWYBJcRm6qj8LI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGDiD2lCktv4Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1616743956066?e=1781136000&v=beta&t=9Q1PGraRSzb__h4cp2O1EwOE1gaZWHh89nk0FhoGeic"
+        "profileId": "ACoAAAbND9wBTGfUvBkG8--t6nWYBJcRm6qj8LI"
       }
     },
     {
@@ -116,9 +103,7 @@
         "occupation": "Director at WebExpo",
         "id": "48615076",
         "publicId": "sarkastrossova",
-        "profileId": "ACoAAALlzqQB09j823QJG6Boc_hfwM5VA2nQhUg",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGm_XJeeio3jg/profile-displayphoto-crop_800_800/B4DZluBBa0IYAI-/0/1758487387751?e=1781136000&v=beta&t=pEtEMxVkzwjEIxUwvFhbScH9qUBWgnYvHECEpghxYxQ",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQG16nWd1LwMMA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1624434728364?e=1781136000&v=beta&t=PoRtDdTiZHVOYzavoEbhyOJlBOMyPUprwuV8dFjJErs"
+        "profileId": "ACoAAALlzqQB09j823QJG6Boc_hfwM5VA2nQhUg"
       }
     },
     {
@@ -129,9 +114,7 @@
         "occupation": "founder@metagym",
         "id": "110092052",
         "publicId": "zapadlo",
-        "profileId": "ACoAAAaP3xQB9OmVR_H_rXxr57aIJAftAOFahUs",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEC6JZP0jAE5A/profile-displayphoto-crop_800_800/B4EZiACje6GwAI-/0/1754494810986?e=1781136000&v=beta&t=69zGDVDEsUr5PukYrdlxmWbuF7bmV_Rk_OZloYqmv4Y",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHL7rOg96wbpw/profile-displaybackgroundimage-shrink_350_1400/B4DZ5J79pbJYAU-/0/1779356916618?e=1781136000&v=beta&t=buaM98C3-LroCzT-M5lGeVcn964WC7cuUW91BRlUDmQ"
+        "profileId": "ACoAAAaP3xQB9OmVR_H_rXxr57aIJAftAOFahUs"
       }
     },
     {
@@ -142,8 +125,7 @@
         "occupation": "Digital Transformation Leader & Mentor",
         "id": "4166655",
         "publicId": "tprokes",
-        "profileId": "ACoAAAA_k_8B2Wq97W8aQmNhFYPHFdLIB33IBcc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE7WLdr114YZA/profile-displayphoto-shrink_800_800/B4EZXojaIoGgAg-/0/1743363351834?e=1781136000&v=beta&t=vsCFPt3wIUf-0svnI0upQfR-OumLAwdvFnkh_RXRE_s"
+        "profileId": "ACoAAAA_k_8B2Wq97W8aQmNhFYPHFdLIB33IBcc"
       }
     },
     {
@@ -154,9 +136,7 @@
         "occupation": "R&D Community Manager at Mews | Driving tech employer branding through developer advocacy and internal programs",
         "id": "375918312",
         "publicId": "gabriela-rehoutova",
-        "profileId": "ACoAABZoDugBZPP_pwsGohCcNSueNWnDv2TrXLA",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHxeSq-aQXADA/profile-displayphoto-crop_800_800/B4DZyKZZmIJoAM-/0/1771848442537?e=1781136000&v=beta&t=1Yyb9MnnBlanozl3ZFem4jHbwrV99w2FfMmvv9FvIu0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHp_vL6BWFTNw/profile-displaybackgroundimage-shrink_350_1400/B4DZyKYhihG8AY-/0/1771848210948?e=1781136000&v=beta&t=21UIB68ZMBkqepzOKX5D9kdQcghG2ZeQ58J0kSI1tQc"
+        "profileId": "ACoAABZoDugBZPP_pwsGohCcNSueNWnDv2TrXLA"
       }
     },
     {
@@ -167,9 +147,7 @@
         "occupation": "Hope-based Leader | Moving from ‘No, because’ to ‘Yes, if’ Culture in Government",
         "id": "12118109",
         "publicId": "evapavlikova",
-        "profileId": "ACoAAAC46F0BJQLhw3nCC7aaTcpYSs6RqWaP1Vw",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHlt2AxwqFdVQ/profile-displayphoto-crop_800_800/B4EZfG.16hHYAM-/0/1751390052552?e=1781136000&v=beta&t=TSZH6NhRKWHzP95IkFkyLySMnb8lruC28HEH-ZHv0QM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEVGUA5BaYCyQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1587825486562?e=1781136000&v=beta&t=f3cNmgwZ45sDrj1GeTLkYKSB8BVy6WkqFDBfMvwRQsA"
+        "profileId": "ACoAAAC46F0BJQLhw3nCC7aaTcpYSs6RqWaP1Vw"
       }
     }
   ],
@@ -189,12 +167,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

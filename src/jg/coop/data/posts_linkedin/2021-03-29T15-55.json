@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQHlprL9YdBCsA/feedshare-shrink_1280/feedshare-shrink_1280/0/1617033335420?e=1781136000&v=beta&t=6mX2v1YmJ4bl_wjcu4-4At5NfADTyE9Bzp4OCfkPDog"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6782329388210933760",
   "url": "https://www.linkedin.com/posts/honzajavorek_jamstack-activity-6782329388210933760-q4cZ",
@@ -20,9 +18,7 @@
         "occupation": "Staff Engineer at Everpure (formerly Pure Storage, Inc.)",
         "id": "6413396",
         "publicId": "ladislavprskavec",
-        "profileId": "ACoAAABh3FQBjDcRIsKdGUqUWVVxs45nmvivIO4",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQH74zpN5N3LhQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516250709565?e=1781136000&v=beta&t=4858H9zBGZBF9O86nNt-xKvWRcvX0_fxZw1SXlZ1pFI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEcA07Jof8U1g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1614695743264?e=1781136000&v=beta&t=4Vqk30uOrg7FpjokcbA7vXMhQG5LWLueu6rpGGxkufE"
+        "profileId": "ACoAAABh3FQBjDcRIsKdGUqUWVVxs45nmvivIO4"
       }
     }
   ],
@@ -36,9 +32,7 @@
         "occupation": "Founder at pipetail.io | Ask me about AWS & Kubernetes",
         "id": "331020625",
         "publicId": "marekbartik",
-        "profileId": "ACoAABO6-VEBqxz6wP4SfgiRnSS7k45WP5RUqZ0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGnJNhwDeop_w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1690190482833?e=1781136000&v=beta&t=urdEiJmIlZRt-yPpdB0ogxJE722zVg11M9XER1fG8FM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQFhONrEjkJxOA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1579760656013?e=1781136000&v=beta&t=9PDJbj7J82vmiGtccLpkX0YoO-eRFPjY6DqmTMsXres"
+        "profileId": "ACoAABO6-VEBqxz6wP4SfgiRnSS7k45WP5RUqZ0"
       }
     },
     {
@@ -49,9 +43,7 @@
         "occupation": "Vybuduji vaší firmě udržitelný systém vzdělávání 🟡 HR konzultant a lektor @ICT Pro 🟡Navrhnu a zorganizuji vám soft skills program na míru 🟡Psychodiagnostika Thomas International 🟡Koučink & Mentoring",
         "id": "438512099",
         "publicId": "marketavyskocilova",
-        "profileId": "ACoAABojKeMBBI6D_5s02oW1Zs7u2v4l5ifhuFg",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHvYc2qZE1Frw/profile-displayphoto-shrink_800_800/B4DZdzecwOHkAg-/0/1749989053735?e=1781136000&v=beta&t=IkVIVNkw4ajqKMQh6EwKPJ7yhqKpF8MKlo_8CU9xY6s",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFyNEZITugQvA/profile-displaybackgroundimage-shrink_350_1400/B4DZhaKSBFHAAY-/0/1753859302029?e=1781136000&v=beta&t=2idyFiTyFQvx4eUdYHELvbwA7mowSYYDcPggH_UkRjs"
+        "profileId": "ACoAABojKeMBBI6D_5s02oW1Zs7u2v4l5ifhuFg"
       }
     },
     {
@@ -62,9 +54,7 @@
         "occupation": "tech talent partner (Lovable, Verified, Attio)",
         "id": "354416659",
         "publicId": "terkins",
-        "profileId": "ACoAABUf-BMBlxzn1lFEhRmLF2yzFf41AOuOmT0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQH14hM4IH2IbQ/profile-displayphoto-crop_800_800/B4DZxsEe99HwAM-/0/1771339642206?e=1781136000&v=beta&t=ep0ILYwjDXBbS-gvEoQ6Ys0WZIXo2Fmy9lUXtRz-7lY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFLKlJH74qo6Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1696428898365?e=1781136000&v=beta&t=UCGewaxbJXbTqLNfc-lzeJramn4OxEj0cbuKKVO-8LI"
+        "profileId": "ACoAABUf-BMBlxzn1lFEhRmLF2yzFf41AOuOmT0"
       }
     },
     {
@@ -75,9 +65,7 @@
         "occupation": "HR Manager v Pale Fire Capital | Head of HR v Aukro | HR consultant and mentor | #sharingiscaring",
         "id": "473833031",
         "publicId": "petranulickova",
-        "profileId": "ACoAABw-HkcBifENxX8nxAs2YjwxbI6b2XtAF98",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHnKx1150QjzQ/profile-framedphoto-shrink_400_400/B4DZ5EYkX3J4Ac-/0/1779263751874?e=1780430400&v=beta&t=pWJ51Ntw0jR9QQT0pS0cVga8Y5H1PX6eMgBC8eZYwyo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQExwjEQhQ99TA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1676378924015?e=1781136000&v=beta&t=rpomntKe5fPHScYScrE5n1-ok01d_UuxKpUPUaPI93g"
+        "profileId": "ACoAABw-HkcBifENxX8nxAs2YjwxbI6b2XtAF98"
       }
     },
     {
@@ -88,9 +76,7 @@
         "occupation": "Talent Sourcer @ SentinelOne.ai | The Future of CyberSec will be determined by You - let’s Secure Tomorrow™ together! 🛡️👾 | In 💜 with s1.ai/PurpleAI | 🕵️‍♂️ CyBeer security meetups organizer",
         "id": "322518163",
         "publicId": "vaclavkotyk",
-        "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHSFfNAAQ3ojA/profile-framedphoto-shrink_800_800/B4EZb.aDPLHAAs-/0/1748024964389?e=1780430400&v=beta&t=IvlxsfQQdb8KqO1QvRvDLxo7b9-V1Qrgz29nKWhJehw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG_GZHPXo_drQ/profile-displaybackgroundimage-shrink_350_1400/B4EZhWDO5THEAY-/0/1753790347174?e=1781136000&v=beta&t=TTJXtHJi0vF694Nao68XfleeSQJvzU06We8EI4GVwQI"
+        "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0"
       }
     },
     {
@@ -101,9 +87,7 @@
         "occupation": "Founder @EDUpunk | Learning design @Reactgirls.com | AI & Health Content Strategist | TALENT Mentor & MEME Therapist",
         "id": "201927716",
         "publicId": "marek-velas",
-        "profileId": "ACoAAAwJLCQB-ePqkhYoO0olYYFCoOJGgdydJEs",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQHj3KqlSVtI9A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1540025534374?e=1781136000&v=beta&t=CPzxTFoq5FwZ2NTvk1phzV1eKiS-9ILQHVR9fBpJD2I",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGXOBXZ2lQyaw/profile-displaybackgroundimage-shrink_350_1400/B4EZl9YDUNKYAY-/0/1758745081852?e=1781136000&v=beta&t=WtHueBkAwczoFilZWgkI-IVFDO89umDpdBCjoy1NOto"
+        "profileId": "ACoAAAwJLCQB-ePqkhYoO0olYYFCoOJGgdydJEs"
       }
     },
     {
@@ -114,9 +98,7 @@
         "occupation": "Helping organizations fix vulnerabilities at scale",
         "id": "11584398",
         "publicId": "ahsanmir",
-        "profileId": "ACoAAACww44BDhWbQcI2b26BHUgTU_Kqitx2LqA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFl1EsfG1J5yQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1593753539344?e=1781136000&v=beta&t=SmcdVwFTWcyHwVdKTXh38L6rC0-FJbJ61KShdMTOXF4",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQFS620tSza90A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1715927272725?e=1781136000&v=beta&t=bKRkMsnSeaGfzQn5XUpZcr__ue7HJLRlvJ78JCgOZi4"
+        "profileId": "ACoAAACww44BDhWbQcI2b26BHUgTU_Kqitx2LqA"
       }
     },
     {
@@ -127,9 +109,7 @@
         "occupation": "Human Resources | People Strategy, Talent Acquisition",
         "id": "26544363",
         "publicId": "vendula-burdova-3a3a818",
-        "profileId": "ACoAAAGVCOsBdhjKf5niQLwnRso7XuJhV_6FA2Y",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGd1ZOFEgn59g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1702577064666?e=1781136000&v=beta&t=f--kEv_WLaTk39ESrB208yc2eEmJQZEaycvIEB_Ouvk",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEgMdnwQ6QLkg/profile-displaybackgroundimage-shrink_350_1400/B4EZk38._5KoAc-/0/1757580363947?e=1781136000&v=beta&t=kXFz4GSZXw2uRLOKarzhhA375YwpTCIpissLA6Jl0hM"
+        "profileId": "ACoAAAGVCOsBdhjKf5niQLwnRso7XuJhV_6FA2Y"
       }
     },
     {
@@ -140,9 +120,7 @@
         "occupation": "Software Engineer",
         "id": "530925455",
         "publicId": "mia-bajic",
-        "profileId": "ACoAAB-lR48BFvPhQ6doZNGTRVftkLrzcnIv-Ss",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEFktnPzIQA3g/profile-displayphoto-shrink_400_400/B4EZdfBBQAHYAs-/0/1749645792668?e=1781136000&v=beta&t=H-XclkbtaMI2HfxaPAIvGsaIuvs_3HunEbU_zF5R2XQ",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGmHzyPBT7q2g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1738012168138?e=1781136000&v=beta&t=bGVRTPD07nQuQcDx_7F1m2z7h-P_vw_6AF5KkU2lLp4"
+        "profileId": "ACoAAB-lR48BFvPhQ6doZNGTRVftkLrzcnIv-Ss"
       }
     },
     {
@@ -153,8 +131,7 @@
         "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
         "id": "183293578",
         "publicId": "dariagru",
-        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0"
       }
     }
   ],
@@ -174,12 +151,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

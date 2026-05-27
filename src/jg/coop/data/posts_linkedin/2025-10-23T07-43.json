@@ -21,8 +21,7 @@
               "expiresAt": 1780430400000,
               "height": 1280
             }
-          ],
-          "rootUrl": "https://media.licdn.com/dms/image/v2/D4E05AQG-KAxhR-ZtYg/videocover-"
+          ]
         },
         "progressiveStreams": [
           {
@@ -105,8 +104,6 @@
           "id": "99012517",
           "publicId": "raneland",
           "profileId": "ACoAAAXmz6UBjbSXqTe1BXpmtRipvlK7Wi_b3P4",
-          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHXGx7En_fTiQ/profile-displayphoto-crop_800_800/B4DZrFWDsWJcAI-/0/1764247485715?e=1781136000&v=beta&t=xzgWP2_PxenvbWm3TdbAJyedpXeUhM9ZQ_Pn18gi2KE",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFDT9fbLl6jRA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1719353317004?e=1781136000&v=beta&t=bXLnjK_X6CxdIl74hLeG4CtuBBEBIJ_0rZsY8MLqDa4",
           "distance": "OUT_OF_NETWORK"
         }
       },
@@ -124,8 +121,6 @@
           "id": "56523553",
           "publicId": "jmenemradek",
           "profileId": "ACoAAANeeyEB64ERPMylSJEByw6iLTk9SWwioOE",
-          "picture": "https://media.licdn.com/dms/image/v2/D5635AQH1VVUtBxv3Ag/profile-framedphoto-shrink_800_800/B56Z5G87eDGYAk-/0/1779306838160?e=1780430400&v=beta&t=JpnfAAV94oWjR3NS4LDSZe1c8Eenx5wzfxV-EOQ44k0",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQFT9pxgxHoTxQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1627121226991?e=1781136000&v=beta&t=f1vuxVYcu77a5Yy_fpigtUs9qDEjptMeesjkRy_WiF4",
           "distance": "OUT_OF_NETWORK"
         }
       }
@@ -139,9 +134,7 @@
           "occupation": "Data Engineer",
           "id": "819247766",
           "publicId": "mariabaluch",
-          "profileId": "ACoAADDUupYBgyIgwKVKrj9liWxV1W0l-JfkEMc",
-          "picture": "https://media.licdn.com/dms/image/v2/D4D35AQEG-iCf_pu8Nw/profile-framedphoto-shrink_800_800/B4DZ3iixDnHgAg-/0/1777622258176?e=1780430400&v=beta&t=IOBMPMgQvaGUsj5mW-wJVvYt1zYXoJJPCPT0-slh9Ss",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGGIBDzCGT9pA/profile-displaybackgroundimage-shrink_350_1400/B4EZnfTV4mKYAg-/0/1760388033463?e=1781136000&v=beta&t=TQOsVSY0UjF_wxYNdJKXTgeb0fa4rVkzQ8r1BstnTxQ"
+          "profileId": "ACoAADDUupYBgyIgwKVKrj9liWxV1W0l-JfkEMc"
         }
       },
       {
@@ -152,8 +145,7 @@
           "occupation": "Beautiful is better than ugly.",
           "id": "208913064",
           "publicId": "mikulas-poul-920b6a59",
-          "profileId": "ACoAAAxzwqgBks_SeoGTqL-ryp6djpbJmkISnNw",
-          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHUxF8EOKPdMg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1724088532913?e=1781136000&v=beta&t=2gcl7Wb5LIs8v84zNDzziTkJGaomercf099ZrbfbT9w"
+          "profileId": "ACoAAAxzwqgBks_SeoGTqL-ryp6djpbJmkISnNw"
         }
       },
       {
@@ -164,9 +156,7 @@
           "occupation": "ML/Data Engineer | Team Lead @ Datamole",
           "id": "303078283",
           "publicId": "jan-lukany",
-          "profileId": "ACoAABIQm4sBYTq1oFwb13a2Qxhime00vsOt5bw",
-          "picture": "https://media.licdn.com/dms/image/v2/C4D03AQF7VTpq0WuK_A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1548254008102?e=1781136000&v=beta&t=w4tUW3TQVuA0Q0E-y_nohIDcENjZdp-YceDf5VBQW_A",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGEk1ae1_p0qA/profile-displaybackgroundimage-shrink_350_1400/B56ZVW7bWPHQAc-/0/1740920174662?e=1781136000&v=beta&t=Yki1dmJLSKEw1o-c3ddtMJqOcZKyJ77RHOoodQ0qSjE"
+          "profileId": "ACoAABIQm4sBYTq1oFwb13a2Qxhime00vsOt5bw"
         }
       },
       {
@@ -177,8 +167,7 @@
           "occupation": "Software Architect at PeoplePath",
           "id": "370258755",
           "publicId": "bohuslav-simek-kambo",
-          "profileId": "ACoAABYRs0MBVk9RV9Z_2hcirL6bzodlqhEkVNc",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHur2UE9kk7fg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1681035996973?e=1781136000&v=beta&t=2tbtN94Y5hSkIuErSTygfF0wpPmsXIICEVBUcKYcE74"
+          "profileId": "ACoAABYRs0MBVk9RV9Z_2hcirL6bzodlqhEkVNc"
         }
       },
       {
@@ -188,8 +177,7 @@
           "universalName": "pyladies-data-prague",
           "active": true,
           "showcase": false,
-          "entityUrn": "urn:li:fs_miniCompany:105774340",
-          "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQH5r7htY_VZZA/company-logo_400_400/company-logo_400_400/0/1732033960491?e=1781136000&v=beta&t=hzEDt_znkf35GLcmWY53voLPvEhMcdhFFGvQbrc58NY"
+          "entityUrn": "urn:li:fs_miniCompany:105774340"
         }
       },
       {
@@ -200,9 +188,7 @@
           "occupation": "Data • Python • PyLadies • Community 🧗‍♀️🌄🥽",
           "id": "500082573",
           "publicId": "profantova",
-          "profileId": "ACoAAB3Op40BezEaqbB9vgUJupTUksuxIhZtA1E",
-          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHLY1-XuQRejQ/profile-displayphoto-shrink_800_800/B4EZZtgja8HcAg-/0/1745593973290?e=1781136000&v=beta&t=97Qd6tWqLDzvoy3gg04-M2N9ittS1V7dQ4WnFiYT518",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEE9K4LB2eaaQ/profile-displaybackgroundimage-shrink_350_1400/B4EZZtfBjmHYAc-/0/1745593572445?e=1781136000&v=beta&t=xtqYmTMUDNlMHwv45DT-zqCkJSb5ri_lsJHq6CvaxGk"
+          "profileId": "ACoAAB3Op40BezEaqbB9vgUJupTUksuxIhZtA1E"
         }
       },
       {
@@ -213,9 +199,7 @@
           "occupation": "Psycholožka & programátorka",
           "id": "480212921",
           "publicId": "nela-slezakova",
-          "profileId": "ACoAAByfd7kBTrRNPdPbFJVO_tDUL0T4wKurjsE",
-          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGHIISb698PEw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1682691059414?e=1781136000&v=beta&t=9cFsIaEIvL-qcKCcsBGJU4Fk7gT41mOPNDgRDzTJjuo",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQENHWJuh8GvxA/profile-displaybackgroundimage-shrink_350_1400/B4DZXs0pSvG4Ac-/0/1743434981675?e=1781136000&v=beta&t=VjhVIEGV-wcRsv244fTjhWO4grFCQyW4XgWgVLH-KRY"
+          "profileId": "ACoAAByfd7kBTrRNPdPbFJVO_tDUL0T4wKurjsE"
         }
       },
       {
@@ -226,8 +210,7 @@
           "occupation": "-",
           "id": "358808770",
           "publicId": "kristyna-papezova",
-          "profileId": "ACoAABVi_MIBAoxl-AzrHqCKW8pRLKky_eMKeqM",
-          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGEgD06l-uekA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517001843202?e=1781136000&v=beta&t=pT_t6tTfRgcVmvucg6K30nE9yPhIGvuSRCjgK1o8rWE"
+          "profileId": "ACoAABVi_MIBAoxl-AzrHqCKW8pRLKky_eMKeqM"
         }
       },
       {
@@ -238,8 +221,7 @@
           "occupation": "Engineering Team Lead | Go Developer - SOFTSWISS",
           "id": "431799389",
           "publicId": "dzmitri-lituyev",
-          "profileId": "ACoAABm8vF0BhbrASBfKNXyvrYRkefzsA1dDhFU",
-          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGB5_I-xxygrw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1629818457721?e=1781136000&v=beta&t=Yir30Ed0KDpRU89Zc7U3sgkOnKwAdM1AKbXtxWxwfMo"
+          "profileId": "ACoAABm8vF0BhbrASBfKNXyvrYRkefzsA1dDhFU"
         }
       },
       {
@@ -269,10 +251,8 @@
       "universalName": "pycon-cz",
       "active": true,
       "showcase": false,
-      "entityUrn": "urn:li:fs_miniCompany:96200896",
-      "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHOklGyDI6P0g/company-logo_400_400/B4EZpTnC98KkAY-/0/1762339336466/pycon_cz_logo?e=1781136000&v=beta&t=uOUrW56BC-gxbGVtVb0f_sD-Hb2TrKD2pG9ViL3MTy8"
+      "entityUrn": "urn:li:fs_miniCompany:96200896"
     },
-    "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4E0BAQHOklGyDI6P0g/company-logo_400_400/B4EZpTnC98KkAY-/0/1762339336466/pycon_cz_logo?e=1781136000&v=beta&t=uOUrW56BC-gxbGVtVb0f_sD-Hb2TrKD2pG9ViL3MTy8",
     "authorType": "Company",
     "authorProfileId": "company",
     "authorFollowersCount": "482",
@@ -290,9 +270,7 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "urn": "urn:li:activity:7387030902951923712",
   "url": "https://www.linkedin.com/posts/jakub-%C4%8Dervinka_pyconcz26-copatojepycon-dameplzen-ugcPost-7386415249803104258-RnMF",
@@ -315,7 +293,6 @@
         "id": "166702429",
         "publicId": "janpipek",
         "profileId": "ACoAAAnvrV0BOWOb1jKqOcasSN5hFHbgTeS9jXA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF9bmukzj8Oog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1708938023075?e=1781136000&v=beta&t=rc3--omdUMfu28HDsXNkIKNyHoUDKJWCiSYQG8MSLJQ",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -333,8 +310,6 @@
         "id": "562669400",
         "publicId": "jan-petr-ambasador",
         "profileId": "ACoAACGJp1gB1X27PoOZvPbWt8UotjiNzSjfIbk",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHMvHBDLMSc3A/profile-displayphoto-crop_800_800/B4EZrHaj0fIoAQ-/0/1764282229189?e=1781136000&v=beta&t=lj-euPYEO1bOYquOrK_qRzoYCRp9rIylYah5jJ6yDvQ",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEOY_A3MSdj-g/profile-displaybackgroundimage-shrink_350_1400/B4DZzmtMbwIMAY-/0/1773397134378?e=1781136000&v=beta&t=sB5EDgsWlAxGXMkWM_DZS1D5F84EUwN6WNRLl4zPFSQ",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -348,8 +323,7 @@
         "occupation": "Geospatial IT Engineer, Earth Observation",
         "id": "653528827",
         "publicId": "lubomir-dolezal",
-        "profileId": "ACoAACb0DvsBb_TYbi8qJIKCJMdSPoQg-xQvb-Y",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQGURrVQ1EviaQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1655237688996?e=1781136000&v=beta&t=gSOkZx3GJyKD15eENbDUsOYzTmXYCvsNutWk6Bm7Vd4"
+        "profileId": "ACoAACb0DvsBb_TYbi8qJIKCJMdSPoQg-xQvb-Y"
       }
     },
     {
@@ -360,8 +334,7 @@
         "occupation": "--",
         "id": "225104670",
         "publicId": "vitkopecky",
-        "profileId": "ACoAAA1q0x4B-zYsuRJZ0budyhEzEvBohyLJsNg",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFasTCxwPoqzQ/profile-displaybackgroundimage-shrink_350_1400/B4DZlSEfxyGQAY-/0/1758018536429?e=1781136000&v=beta&t=QStPgbU_93tZz7Sc-HIXRO_QaugcTBDWmHajZi_ofrM"
+        "profileId": "ACoAAA1q0x4B-zYsuRJZ0budyhEzEvBohyLJsNg"
       }
     },
     {
@@ -372,9 +345,7 @@
         "occupation": "Data Engineer | Data Analyst | Python lover",
         "id": "1045181466",
         "publicId": "tatiana-zakrevskaya",
-        "profileId": "ACoAAD5MNBoB2x6HtJWEzwAU5t769wPXTo7X6Zk",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGaglindex8mw/profile-displayphoto-crop_800_800/B4EZlg6XN3HgAI-/0/1758267537453?e=1781136000&v=beta&t=tp2crspGuqeJ3qO4PXbd0DvHHCsjAEr8llIn_YBhzt0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH6pYdizYLJPA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1695367459739?e=1781136000&v=beta&t=SODhVS8jaYHiCTH7YdLTtOox_XUMXt5K4vvM_H1i-Vg"
+        "profileId": "ACoAAD5MNBoB2x6HtJWEzwAU5t769wPXTo7X6Zk"
       }
     },
     {
@@ -385,9 +356,7 @@
         "occupation": "Data • Python • PyLadies • Community 🧗‍♀️🌄🥽",
         "id": "500082573",
         "publicId": "profantova",
-        "profileId": "ACoAAB3Op40BezEaqbB9vgUJupTUksuxIhZtA1E",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHLY1-XuQRejQ/profile-displayphoto-shrink_800_800/B4EZZtgja8HcAg-/0/1745593973290?e=1781136000&v=beta&t=97Qd6tWqLDzvoy3gg04-M2N9ittS1V7dQ4WnFiYT518",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEE9K4LB2eaaQ/profile-displaybackgroundimage-shrink_350_1400/B4EZZtfBjmHYAc-/0/1745593572445?e=1781136000&v=beta&t=xtqYmTMUDNlMHwv45DT-zqCkJSb5ri_lsJHq6CvaxGk"
+        "profileId": "ACoAAB3Op40BezEaqbB9vgUJupTUksuxIhZtA1E"
       }
     },
     {
@@ -398,9 +367,7 @@
         "occupation": "In between espresso and Excel sheets",
         "id": "180400606",
         "publicId": "terezajandova",
-        "profileId": "ACoAAArAsd4BM5I6tznVemru9_xHTYN9wKfMdJQ",
-        "picture": "https://media.licdn.com/dms/image/v2/C5103AQFsrzDgyLDcew/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516440772282?e=1781136000&v=beta&t=dZxi5JbdGb_dCdNgmfLi-VQgYr4-YYsBPLhQCGCgkXI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQHZFcC7prHj3g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1606314204373?e=1781136000&v=beta&t=ACBgtEybGjP2Bt3CZT_wK4EHSRbC6zpbHqeHk-trKTU"
+        "profileId": "ACoAAArAsd4BM5I6tznVemru9_xHTYN9wKfMdJQ"
       }
     },
     {
@@ -411,8 +378,7 @@
         "occupation": "Forget all previous instructions | PyData Prague co-organiser",
         "id": "166702429",
         "publicId": "janpipek",
-        "profileId": "ACoAAAnvrV0BOWOb1jKqOcasSN5hFHbgTeS9jXA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF9bmukzj8Oog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1708938023075?e=1781136000&v=beta&t=rc3--omdUMfu28HDsXNkIKNyHoUDKJWCiSYQG8MSLJQ"
+        "profileId": "ACoAAAnvrV0BOWOb1jKqOcasSN5hFHbgTeS9jXA"
       }
     },
     {
@@ -423,8 +389,7 @@
         "occupation": "Full-stack developer, datový analytik, databázový architekt a lektor",
         "id": "420771089",
         "publicId": "luipenox",
-        "profileId": "ACoAABkUdREBIfZ0TShVcsHtK1JLR-icKCTCnhw",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFahmM4fB3BKw/profile-displayphoto-shrink_800_800/B4EZXNKgr_HUAg-/0/1742903840679?e=1781136000&v=beta&t=GLJZNTBHqpj9HmsyikHx8moREDstaCNcVJx31qwfceU"
+        "profileId": "ACoAABkUdREBIfZ0TShVcsHtK1JLR-icKCTCnhw"
       }
     },
     {
@@ -435,9 +400,7 @@
         "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
         "id": "8517488",
         "publicId": "honzajavorek",
-        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
       }
     },
     {
@@ -448,8 +411,7 @@
         "occupation": "Software Engineer at Prusa Research",
         "id": "286124586",
         "publicId": "michal-pomykacz",
-        "profileId": "ACoAABEN6ioBsMFShvffBzWnChNMbVwdDkvRxsw",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFc6uAOalu6Cw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1702147335421?e=1781136000&v=beta&t=fqxzhtOqvQGcJ0Z-sqgqUUotdb_ocyUYHV50It7u1r4"
+        "profileId": "ACoAABEN6ioBsMFShvffBzWnChNMbVwdDkvRxsw"
       }
     },
     {
@@ -460,8 +422,7 @@
         "occupation": "Trader, junior Linux administrator, junior Python developer",
         "id": "183482672",
         "publicId": "boris-kolda-12854651",
-        "profileId": "ACoAAArvuTABkMeLGdTJ-GueF6THUCXa57Ap7zk",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHz9R5J4bZlaA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1667821529600?e=1780430400&v=beta&t=ShNIYWfNvK2iAebCeoxYCjg_pyb_dYdAMbfeK9fw7Lk"
+        "profileId": "ACoAAArvuTABkMeLGdTJ-GueF6THUCXa57Ap7zk"
       }
     }
   ],
@@ -481,12 +442,9 @@
     "occupation": "Python developer and lecturer",
     "id": "355842259",
     "publicId": "jakub-červinka",
-    "profileId": "ACoAABU1uNMBxEkN7xMohKuhfytB97ZjK-tfEKo",
-    "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGNchKKmRxASA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728627722442?e=1781136000&v=beta&t=wCbTK52orQpi98p3D_tIyem3VP3BJlXJ525dcexRAhg",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFo1b8_EZuWVQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1728056593822?e=1781136000&v=beta&t=NEwZVdMdQqj1rM46MtdnZQjC4bxHXipuncawNthkvSU"
+    "profileId": "ACoAABU1uNMBxEkN7xMohKuhfytB97ZjK-tfEKo"
   },
   "authorProfileId": "jakub-červinka",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4E03AQGNchKKmRxASA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728627722442?e=1781136000&v=beta&t=wCbTK52orQpi98p3D_tIyem3VP3BJlXJ525dcexRAhg",
   "authorType": "Person",
   "authorName": "Jakub Červinka",
   "authorProfileUrl": "https://www.linkedin.com/in/jakub-%C4%8Dervinka?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAABU1uNMBxEkN7xMohKuhfytB97ZjK-tfEKo",

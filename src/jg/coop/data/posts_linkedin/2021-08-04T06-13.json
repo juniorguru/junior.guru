@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQGcJU_V2ilfeA/feedshare-shrink_1280/feedshare-shrink_1280/0/1628057581211?e=1781136000&v=beta&t=77MmKEihz7w3h7KdHDAkg87Dgc2fJ4kOvDgD4PzLEik"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6828568426982768640",
   "url": "https://www.linkedin.com/posts/honzajavorek_v-%C3%BAter%C3%BD-10-8-chyst%C3%A1me-v-klubu-p%C5%99edn%C3%A1%C5%A1ku-activity-6828568426982768640-kgfK",
@@ -20,8 +18,7 @@
         "occupation": "A Pythonista",
         "id": "48852060",
         "publicId": "petr-viktorin-a5043a14",
-        "profileId": "ACoAAALpbFwBrUWlkhM3d1JrBK4RInLbNquxnEE",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFShtpWJw8phQ/profile-displayphoto-crop_800_800/B4EZkPUQNMIUAI-/0/1756898592117?e=1781136000&v=beta&t=NN2cRsF0LmiFDgrWNz_IDYlU_FkB9YUiWCSx9lMzISs"
+        "profileId": "ACoAAALpbFwBrUWlkhM3d1JrBK4RInLbNquxnEE"
       }
     }
   ],
@@ -35,8 +32,7 @@
         "occupation": "SW Test Engineer",
         "id": "395772069",
         "publicId": "sarka-tauerova",
-        "profileId": "ACoAABeXAKUB7BlQTF3tWtqheTWljNpbWaP5ikw",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFU7HiHu8oDLw/profile-displayphoto-crop_800_800/B4EZgOcjbWGcAI-/0/1752589023505?e=1781136000&v=beta&t=Ha4fQujefDTp4IQfN_gdTgA4h_4bNb2Wd1i3Vf_4W54"
+        "profileId": "ACoAABeXAKUB7BlQTF3tWtqheTWljNpbWaP5ikw"
       }
     },
     {
@@ -47,9 +43,7 @@
         "occupation": "I help factories digitise maintenance. With or without AI. Always with people first.",
         "id": "178006447",
         "publicId": "msvetlana",
-        "profileId": "ACoAAAqcKa8Bousd5uBo-bZZ9dq6qVlYKqtHvSc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF2d-GcOsk4Bg/profile-displayphoto-crop_800_800/B4DZ35j9rdHwAM-/0/1778008453433?e=1781136000&v=beta&t=drmOX7xsDyMGZaown-MFYSZXwtE2FSNpuvIxF5sa-CA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEafK1Y8bDUqw/profile-displaybackgroundimage-shrink_350_1400/B4DZWwQJBHHIAc-/0/1742418779616?e=1781136000&v=beta&t=0a47VNFLf1nQKjTg2JnpC3ODNNzCN24RoEDT7btdLtM"
+        "profileId": "ACoAAAqcKa8Bousd5uBo-bZZ9dq6qVlYKqtHvSc"
       }
     },
     {
@@ -60,9 +54,7 @@
         "occupation": "Helping people to become junior frontend developers",
         "id": "15446232",
         "publicId": "danielsrb",
-        "profileId": "ACoAAADrsNgBFfAixAgw_mCw8WtR9SeNIvEEI8Q",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFL6A1muu1_iQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1664815242443?e=1781136000&v=beta&t=gZsiQuDXYR8uuO_-68JdcJFp1nRVo6I7-iaOUDh1GRk",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEojxUy1Cz5oQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1623442956553?e=1781136000&v=beta&t=hWIAatMfNTIgw4JUStqCUqVs88aKCIf5jtDxqtS-BHg"
+        "profileId": "ACoAAADrsNgBFfAixAgw_mCw8WtR9SeNIvEEI8Q"
       }
     },
     {
@@ -73,8 +65,7 @@
         "occupation": "IT L2 Engineer at Inventec (Czech), s.r.o.",
         "id": "423885164",
         "publicId": "stankoradivojac",
-        "profileId": "ACoAABlD-WwBz0o0_IMre-WKYI7tIeD8tDGgkCg",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHG9J5rCNZQEQ/profile-displaybackgroundimage-shrink_350_1400/B4EZlT6FMWK0AY-/0/1758049360034?e=1781136000&v=beta&t=0vxJD13ygnLseAH65dSGAq2J1pVVuZS5MQoaL_6lRd4"
+        "profileId": "ACoAABlD-WwBz0o0_IMre-WKYI7tIeD8tDGgkCg"
       }
     },
     {
@@ -85,9 +76,7 @@
         "occupation": "🧑‍🤝‍🧑 Working with and for communities, organizing events, studying service design, having fun in all that. ✏️",
         "id": "58610470",
         "publicId": "anezkamll",
-        "profileId": "ACoAAAN-UyYBW_5FlwBOtClk7WVpl3JlZMHMVn4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEdF62o6gzpHQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731942194763?e=1781136000&v=beta&t=3Pf8QBLlGpzI8zRBBfihj0pgDvCgOUoUJyTfMptX81Y",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHKgfW_KDXR1Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1620408094586?e=1781136000&v=beta&t=qk_LRa-WT8rOvas9-jwGjCle3e76MkO7wIKYYCWCZag"
+        "profileId": "ACoAAAN-UyYBW_5FlwBOtClk7WVpl3JlZMHMVn4"
       }
     },
     {
@@ -98,9 +87,7 @@
         "occupation": "\"It is a capital mistake to theorize before one has data.\" *cleaned data",
         "id": "775508820",
         "publicId": "nathalie-vecten",
-        "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH5sSEbnQ2Tcg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1611936430673?e=1781136000&v=beta&t=wAQsj8dSBDe6L3xt1MwxMahW3aP-D6LcuvT-utzij6s",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHDKxhi18V0lw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1599638080880?e=1781136000&v=beta&t=5JiWefMiJff9VXnKXxoAOOrnUYNFE4fW7AQAgJac6VA"
+        "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM"
       }
     },
     {
@@ -111,9 +98,7 @@
         "occupation": "HRM @ ATLAS GROUP | IT, Sales & Law",
         "id": "536925710",
         "publicId": "jan-rehak",
-        "profileId": "ACoAACAA1g4B1dt5zpkV3v57pxmke91sx_j2owI",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFRwaLQm0BfPQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1679923396806?e=1781136000&v=beta&t=JbSy0HFahKOE5U9cooR03ctmwCj5NyyNo_R7j4WPT8M",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHYlNQZGRtSLg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694689724495?e=1781136000&v=beta&t=tSsHFw-bcqJ1NhtPAVaU_ll6PEQ7PkPCaKsxbE0muTg"
+        "profileId": "ACoAACAA1g4B1dt5zpkV3v57pxmke91sx_j2owI"
       }
     },
     {
@@ -124,9 +109,7 @@
         "occupation": "Software Engineer | Storyteller | LinkedIn Enthusiast and Mentor | I help other techies build a personal brand on LinkedIn | Fuelling growth of software engineers through Software Engineering Tales Podcast",
         "id": "266067406",
         "publicId": "pavel-polcr",
-        "profileId": "ACoAAA_b3c4BTAcvcf2VyIBHi_X2WWOWGNyt1ZI",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEu9ha6Y8Sixg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1669321063367?e=1781136000&v=beta&t=raEuoKrOSY-Tk_kZywRCzdqirDaq1Gn2VevDmPGUjF4",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFw1u4Fq3Nd8w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1729078028424?e=1781136000&v=beta&t=5tSeGbCLtj6zBZL9AjSaNC8kr84Qqb_0LxXwU47LgOk"
+        "profileId": "ACoAAA_b3c4BTAcvcf2VyIBHi_X2WWOWGNyt1ZI"
       }
     },
     {
@@ -137,9 +120,7 @@
         "occupation": "Software engineer",
         "id": "795588409",
         "publicId": "jaroslav-kafka-b615351a2",
-        "profileId": "ACoAAC9rtzkBEN4AFeKj0lq1RiBFF8IrA2X0wxI",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGguvC3_6E89A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1598698905622?e=1781136000&v=beta&t=cZ3mOsQV39-nYUB29QYRyUvv60QVAdUVOKPbyLApkVI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEGQguTkSJrJQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1599045522142?e=1781136000&v=beta&t=Tt3HAvC87cPTdPmZ4M32QvDiswiwTcN_TAdBrQathLI"
+        "profileId": "ACoAAC9rtzkBEN4AFeKj0lq1RiBFF8IrA2X0wxI"
       }
     },
     {
@@ -150,9 +131,7 @@
         "occupation": "Senior Project & Delivery Manager | Digital Transformation | International & Cross-Functional Leadership",
         "id": "320511991",
         "publicId": "patriciecizova",
-        "profileId": "ACoAABMan_cBHdHegNPJHnePL0_kK8lQsM_H6ko",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQEM7HgW-8f2CQ/profile-framedphoto-shrink_800_800/B4DZ5kFn0mIUAo-/0/1779795656316?e=1780430400&v=beta&t=5venIcD26ieLOCD93ytc88Abpfc4laIxpW9FC015zbM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGbQ1EgTnOjkA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1671187754891?e=1781136000&v=beta&t=lIbqGzKqlvyNRejQOh4YtD2sDvwkGU4Cq3bclkmDUQo"
+        "profileId": "ACoAABMan_cBHdHegNPJHnePL0_kK8lQsM_H6ko"
       }
     }
   ],
@@ -172,12 +151,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

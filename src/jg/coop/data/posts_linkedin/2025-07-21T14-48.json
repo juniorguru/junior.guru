@@ -1,11 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/D4E22AQGZjFX4gE0GeQ/feedshare-shrink_1280/B4EZgtP.R.GcAk-/0/1753105820984?e=1781136000&v=beta&t=4B839nwnSjEz3XksegWqQJspEf7MpRT5reQ8DAgXN4M",
-    "https://media.licdn.com/dms/image/v2/D4E22AQFZqwcuYN0_Kw/feedshare-shrink_1280/B4EZgtP.R3GwAk-/0/1753105819970?e=1781136000&v=beta&t=HmtWe5E_z7Dj9xmRtmCMoeqUsBCh0D-ZHizx_FYjFPQ",
-    "https://media.licdn.com/dms/image/v2/D4E22AQF56quH8xKIZg/feedshare-image-high-res/B4EZgtP.RrGUAs-/0/1753105820833?e=1781136000&v=beta&t=LMRarrE8V0RoJR64qd56C5tTcjEa79qmfkDn1fGurXo",
-    "https://media.licdn.com/dms/image/v2/D4E22AQFgb28gKGcibw/feedshare-shrink_1280/B4EZgtP.RoH8Ak-/0/1753105820368?e=1781136000&v=beta&t=TzHrr41UXGLTT_ybURpnmepAaeW_NG8iLb9SQ2j8Tq4"
-  ],
+  "images": [],
   "isActivity": true,
   "activityDescription": "Honza Javorek reposted this",
   "activityOfUser": {
@@ -14,9 +9,7 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "urn": "urn:li:activity:7353073320444981248",
   "url": "https://www.linkedin.com/posts/vaclavkotyk_beginnersdayunconference-europython2025-europython-ugcPost-7353058764016476163-nH7g",
@@ -34,9 +27,7 @@
         "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
         "id": "8517488",
         "publicId": "honzajavorek",
-        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
       }
     },
     {
@@ -49,8 +40,7 @@
         "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
         "id": "183293578",
         "publicId": "dariagru",
-        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0"
       }
     },
     {
@@ -63,9 +53,7 @@
         "occupation": "CEO at Juicymo ■ Software Development ■ Mobile and Web Apps ■ Information Systems ■ Process Optimization and Digitalization",
         "id": "127386166",
         "publicId": "janamoudra",
-        "profileId": "ACoAAAeXwjYBqZ0jKVz8yca44CiteKwVoGM7-3w",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGCNHkgjilAqg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720254510601?e=1781136000&v=beta&t=ABfmTWnHZdBoAlk7Q1IbRLnEGbe6j55uuIZ_-tPSTGY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGwHodURvwOxg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1710408027613?e=1781136000&v=beta&t=rUOl7EiHRO6B7tfbrLnjN7i6Y1Y3qQOCrPMFpcXSrGg"
+        "profileId": "ACoAAAeXwjYBqZ0jKVz8yca44CiteKwVoGM7-3w"
       }
     },
     {
@@ -77,8 +65,7 @@
         "universalName": "juicymo",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:2459087",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQGyHIg36ik2lg/company-logo_400_400/company-logo_400_400/0/1701865492427/juicymo_logo?e=1781136000&v=beta&t=6LUxrOkB_LyfsFVykJntfNMJrixO05HSXatZN3kdavI"
+        "entityUrn": "urn:li:fs_miniCompany:2459087"
       }
     },
     {
@@ -90,8 +77,7 @@
         "universalName": "sentinelone",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:2886771",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D560BAQHQDaLDJ31KBA/company-logo_400_400/B56ZYmt.3HH0Ag-/0/1744406310677/sentinelone_logo?e=1781136000&v=beta&t=J5L49pmZD8gQJKwA0o0bjJSk_Hg5qUHVp6aqhQ2FquI"
+        "entityUrn": "urn:li:fs_miniCompany:2886771"
       }
     },
     {
@@ -103,8 +89,7 @@
         "universalName": "europython",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:41130723",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQGz6u5D6KYABg/company-logo_400_400/B4DZxWmNTUJwAY-/0/1770979382977/europython_logo?e=1781136000&v=beta&t=pwjOEJznkhOEXcURlj3q2Nvk3DG-RH4f9owboCBcCU0"
+        "entityUrn": "urn:li:fs_miniCompany:41130723"
       }
     }
   ],
@@ -124,9 +109,7 @@
             "occupation": "Talent Sourcer @ SentinelOne.ai | The Future of CyberSec will be determined by You - let’s Secure Tomorrow™ together! 🛡️👾 | In 💜 with s1.ai/PurpleAI | 🕵️‍♂️ CyBeer security meetups organizer",
             "id": "322518163",
             "publicId": "vaclavkotyk",
-            "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0",
-            "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHSFfNAAQ3ojA/profile-framedphoto-shrink_800_800/B4EZb.aDPLHAAs-/0/1748024964389?e=1780430400&v=beta&t=IvlxsfQQdb8KqO1QvRvDLxo7b9-V1Qrgz29nKWhJehw",
-            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG_GZHPXo_drQ/profile-displaybackgroundimage-shrink_350_1400/B4EZhWDO5THEAY-/0/1753790347174?e=1781136000&v=beta&t=TTJXtHJi0vF694Nao68XfleeSQJvzU06We8EI4GVwQI"
+            "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0"
           }
         }
       ],
@@ -139,8 +122,6 @@
         "id": "207428287",
         "publicId": "vojtechsladecek",
         "profileId": "ACoAAAxdGr8Bsk_1A2AbAhHNlwuPT6jE0UeYPBY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHRb8rK1nc2LQ/profile-framedphoto-shrink_800_800/B4DZ4l0m67I4Ag-/0/1778751008815?e=1780430400&v=beta&t=CCmX_5HP6zE8g6flIOjR5WZcOjU8nBZ3EUjmm5NoyNs",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHXgk5u8QrDKQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ0k2LzyGsAY-/0/1774439677866?e=1781136000&v=beta&t=OB0MWlhwSUSHCdHOk18AUIVoonPgrBnRqNR1rvw5-wo",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -158,8 +139,6 @@
         "id": "8517488",
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -178,9 +157,7 @@
             "occupation": "Talent Sourcer @ SentinelOne.ai | The Future of CyberSec will be determined by You - let’s Secure Tomorrow™ together! 🛡️👾 | In 💜 with s1.ai/PurpleAI | 🕵️‍♂️ CyBeer security meetups organizer",
             "id": "322518163",
             "publicId": "vaclavkotyk",
-            "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0",
-            "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHSFfNAAQ3ojA/profile-framedphoto-shrink_800_800/B4EZb.aDPLHAAs-/0/1748024964389?e=1780430400&v=beta&t=IvlxsfQQdb8KqO1QvRvDLxo7b9-V1Qrgz29nKWhJehw",
-            "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG_GZHPXo_drQ/profile-displaybackgroundimage-shrink_350_1400/B4EZhWDO5THEAY-/0/1753790347174?e=1781136000&v=beta&t=TTJXtHJi0vF694Nao68XfleeSQJvzU06We8EI4GVwQI"
+            "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0"
           }
         }
       ],
@@ -193,8 +170,6 @@
         "id": "127386166",
         "publicId": "janamoudra",
         "profileId": "ACoAAAeXwjYBqZ0jKVz8yca44CiteKwVoGM7-3w",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGCNHkgjilAqg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720254510601?e=1781136000&v=beta&t=ABfmTWnHZdBoAlk7Q1IbRLnEGbe6j55uuIZ_-tPSTGY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGwHodURvwOxg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1710408027613?e=1781136000&v=beta&t=rUOl7EiHRO6B7tfbrLnjN7i6Y1Y3qQOCrPMFpcXSrGg",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -208,9 +183,7 @@
         "occupation": "Head of HR at katz83 & nwcmrs | Mental health advocate",
         "id": "521029262",
         "publicId": "neladorokova",
-        "profileId": "ACoAAB8ORo4B558GyyV7LPLQdGKmGDbSYxRLsDo",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQExl0uxUtYTQg/profile-displayphoto-crop_800_800/B4EZinkTL3HoAI-/0/1755157968029?e=1781136000&v=beta&t=jYKIFDTCXlD6JCYbJ7xIGSsnjCoO2dmY8Zvc6tLmNSA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEiGIoedKrpNQ/profile-displaybackgroundimage-shrink_350_1400/B4EZdEaAhYG4Ac-/0/1749199358841?e=1781136000&v=beta&t=dN45Kaqld97QaG1ZHNMROxaoTOMXBI3RxQDpAjDc0Vk"
+        "profileId": "ACoAAB8ORo4B558GyyV7LPLQdGKmGDbSYxRLsDo"
       }
     },
     {
@@ -221,9 +194,7 @@
         "occupation": "People Enthusiast|| Talent Operations|| Candidate Experience",
         "id": "761328971",
         "publicId": "quarin-fatma-a8bb73192",
-        "profileId": "ACoAAC1g9UsBBUNihYrMLKZKU5RrSt2BrBI6ICM",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQG6-WCBQ9Ip2Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1643719598095?e=1781136000&v=beta&t=elT5-gI_HFnKYO9Nd2nEr_w-PhTMQ2CGAOn1wjTRvU0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHcgCGVI0zimQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686120966293?e=1781136000&v=beta&t=1-zoJ8JaMnCDTuUriK-UKdOvKI-rZv3tz_P5YYeGmCg"
+        "profileId": "ACoAAC1g9UsBBUNihYrMLKZKU5RrSt2BrBI6ICM"
       }
     },
     {
@@ -234,9 +205,7 @@
         "occupation": "Staff IT Engineer | Global EUC Support | JAMF/JumpCloud/Intune Specialist | MAC & Windows Expert | Asset Management | AWS Workspaces and Desktops | Okta Admin | GSuite Admin | IT Operations & Management",
         "id": "79699648",
         "publicId": "chetanya-sharma-59483622",
-        "profileId": "ACoAAATAHsAB-iPfTT7NYyGcuM5F1VcPWNMtn2w",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQGxs9ZW_aCGBw/profile-displayphoto-crop_800_800/B56Zwxhs8VK4AI-/0/1770357445103?e=1781136000&v=beta&t=3hVxPrPIv_FY2mqr74n1fZ9EoY0NDA39Xtnv2a7e6ps",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQFb4UcALIPilA/profile-displaybackgroundimage-shrink_350_1400/B56ZiseBP_HkAk-/0/1755240208727?e=1781136000&v=beta&t=-VmpHd6g0fdafme8bM94Zmxp4ZXsFhWwKqkSSOLN-Wg"
+        "profileId": "ACoAAATAHsAB-iPfTT7NYyGcuM5F1VcPWNMtn2w"
       }
     },
     {
@@ -247,9 +216,7 @@
         "occupation": "Director, Global Executive Recruiting @ MongoDB",
         "id": "103179989",
         "publicId": "rebeccaboersma",
-        "profileId": "ACoAAAYmZtUB98AnjmSBYVjej0L9SWQXtaaJgr4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFq7zUFrfLq9g/profile-displayphoto-crop_800_800/B4EZ0_tWxWIsAI-/0/1774890350916?e=1781136000&v=beta&t=Nw6ghZSthUGtHuBQqMIE3ql78UGWGQGnOmDVAIyfOi8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHrU2-JUzOPMw/profile-displaybackgroundimage-shrink_350_1400/B4EZ0_tShGHgAY-/0/1774890330546?e=1781136000&v=beta&t=L4gzQSE0jFzLSvZi-IK857pNeuD8QztTgXcbiss7rCY"
+        "profileId": "ACoAAAYmZtUB98AnjmSBYVjej0L9SWQXtaaJgr4"
       }
     },
     {
@@ -260,9 +227,7 @@
         "occupation": "Emerging Talent Programs | Workforce Development | Ed.M. Candidate at Harvard",
         "id": "201101847",
         "publicId": "carmelaescarez",
-        "profileId": "ACoAAAv8khcBfdYVEC0B4_i8J-vnNUCg7Q4zcq0",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQGwwNFw0EHDMA/profile-displayphoto-crop_800_800/B56Zhc8szxHcAM-/0/1753906073718?e=1781136000&v=beta&t=SZLNGlC61pDBm_UNWcB3c32NXiZn52wesYXkH7T91h4",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHlfLw1kEoawg/profile-displaybackgroundimage-shrink_350_1400/B56Z4dmFVdH8Ac-/0/1778612983532?e=1781136000&v=beta&t=UDkpEosKiq1o7ujC13KWgZYLmPI_auwMWWwy5JBYrdg"
+        "profileId": "ACoAAAv8khcBfdYVEC0B4_i8J-vnNUCg7Q4zcq0"
       }
     },
     {
@@ -273,9 +238,7 @@
         "occupation": "People Business Partner, Culture Curator, Transformational HR Leader, Change Catalyst, Employee Experience & Engagement, HR operations - Human Powered Magic- SentinelOne - APJ",
         "id": "221492913",
         "publicId": "rajaat-jasujaa-92921662",
-        "profileId": "ACoAAA0ztrEBinXuAZN6u3FCkXroAD8Nvfr7n4I",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQEouYYDrdgFYg/profile-displayphoto-crop_800_800/B56ZyS4xuDHUAI-/0/1771990885067?e=1781136000&v=beta&t=EtEqFDg1mthQ8XPI_jN_Koo-KoPB0jb1jEdv8Q4-7xQ",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQE0UHF2l-JADg/profile-displaybackgroundimage-shrink_350_1400/B56ZyTHELxJUAc-/0/1771994630330?e=1781136000&v=beta&t=bbF-2QlpKryGnGo3H5KeYpIl_FErKU6yuHW5vpzcF2k"
+        "profileId": "ACoAAA0ztrEBinXuAZN6u3FCkXroAD8Nvfr7n4I"
       }
     },
     {
@@ -286,9 +249,7 @@
         "occupation": "Making your product development exceptional",
         "id": "328279094",
         "publicId": "lucie-kovarova",
-        "profileId": "ACoAABORJDYB_ZPLHwkpeoGTpM53kWBiLeTFLSA",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEjJ5xfCJ6LlQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1701636169463?e=1781136000&v=beta&t=Cq735i_f2sztjnrU0monPLp8Qk-vFqTeYLOssLSbE6U",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE9EPX2X3zqXA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1715331678693?e=1781136000&v=beta&t=x3Ma1kCT9aFP5DAxnMkfYn_mcR_d55NPmKxfqVLOihY"
+        "profileId": "ACoAABORJDYB_ZPLHwkpeoGTpM53kWBiLeTFLSA"
       }
     },
     {
@@ -298,8 +259,7 @@
         "universalName": "bootiq",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:18340856",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQHPpCZx3g_xyQ/company-logo_400_400/company-logo_400_400/0/1663012057037/bootiq_logo?e=1781136000&v=beta&t=riH0I8jbSOJetY7mwFtlU5FnvgZdZfYNms9bHNWRff8"
+        "entityUrn": "urn:li:fs_miniCompany:18340856"
       }
     },
     {
@@ -310,9 +270,7 @@
         "occupation": "Graphic Design | UI and UX Design | Marketing and Social Media",
         "id": "524019393",
         "publicId": "petraolivova",
-        "profileId": "ACoAAB875sEByj-PoxNED7zk7lad-jVI3TcqolI",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQGGz1ctOXPVXQ/profile-framedphoto-shrink_800_800/B4DZ5CPJuHKMAg-/0/1779227729123?e=1780430400&v=beta&t=Ehw1zG2OyBANnmm06D_4_5uUvdyWI5Pf1KyimErehNI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGm3KtFgnMtzg/profile-displaybackgroundimage-shrink_350_1400/B4EZk8yT6CKwAY-/0/1757661447082?e=1781136000&v=beta&t=gZtfuR0bahbqi-c1pIHswBTYktzAyRwv24Zelha2mDo"
+        "profileId": "ACoAAB875sEByj-PoxNED7zk7lad-jVI3TcqolI"
       }
     },
     {
@@ -323,9 +281,7 @@
         "occupation": "Senior Software Engineer in Test at SentinelOne",
         "id": "877149423",
         "publicId": "shersyur",
-        "profileId": "ACoAADRIPO8BSQ5CWKapK-_fCsxAFXloI9cncCc",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHtMPzJpiG6mQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1612710996296?e=1781136000&v=beta&t=UWyHF0uCtuDESKUbnhHJHvglwRJnr8E8FYEqVkyvjFY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGCnhCBUKgH4g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1731087452426?e=1781136000&v=beta&t=TIUSWakbfB8HS-pQtjs_AU75JS5o-e3Xga8lKD1bsRs"
+        "profileId": "ACoAADRIPO8BSQ5CWKapK-_fCsxAFXloI9cncCc"
       }
     }
   ],
@@ -345,12 +301,9 @@
     "occupation": "Talent Sourcer @ SentinelOne.ai | The Future of CyberSec will be determined by You - let’s Secure Tomorrow™ together! 🛡️👾 | In 💜 with s1.ai/PurpleAI | 🕵️‍♂️ CyBeer security meetups organizer",
     "id": "322518163",
     "publicId": "vaclavkotyk",
-    "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0",
-    "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHSFfNAAQ3ojA/profile-framedphoto-shrink_800_800/B4EZb.aDPLHAAs-/0/1748024964389?e=1780430400&v=beta&t=IvlxsfQQdb8KqO1QvRvDLxo7b9-V1Qrgz29nKWhJehw",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG_GZHPXo_drQ/profile-displaybackgroundimage-shrink_350_1400/B4EZhWDO5THEAY-/0/1753790347174?e=1781136000&v=beta&t=TTJXtHJi0vF694Nao68XfleeSQJvzU06We8EI4GVwQI"
+    "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0"
   },
   "authorProfileId": "vaclavkotyk",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4E35AQHSFfNAAQ3ojA/profile-framedphoto-shrink_800_800/B4EZb.aDPLHAAs-/0/1748024964389?e=1780430400&v=beta&t=IvlxsfQQdb8KqO1QvRvDLxo7b9-V1Qrgz29nKWhJehw",
   "authorType": "Person",
   "authorName": "Václav Kotyk",
   "authorProfileUrl": "https://www.linkedin.com/in/vaclavkotyk?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0",

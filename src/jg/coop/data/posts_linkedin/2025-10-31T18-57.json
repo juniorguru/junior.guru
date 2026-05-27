@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/D4E22AQGFa5tUJCTH2w/feedshare-image-high-res/B4EZov7ZchGoAo-/0/1761740691987?e=1781136000&v=beta&t=aaAO-VV2Y6yeRUKcv6T-l9CR94dH1ZWt8XkWkAv7zuo"
-  ],
+  "images": [],
   "isActivity": true,
   "activityDescription": "Honza Javorek reposted this",
   "activityOfUser": {
@@ -11,9 +9,7 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "urn": "urn:li:activity:7390099594854105088",
   "url": "https://www.linkedin.com/posts/zuzanapechova_rozhodly-jsme-se-p%C3%A1r-t%C3%BDdn%C5%AF-zp%C3%A1tky-se-cyberladies-activity-7389276037370503168-sbQ6",
@@ -30,8 +26,7 @@
         "universalName": "cyberladies",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:101212687",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQHlGhQrYQnmvA/company-logo_400_400/company-logo_400_400/0/1699818936619?e=1781136000&v=beta&t=jM4Md-k2oZK79lSAF8eXxm8XUb40OnLE-Dhdj1Y_kgE"
+        "entityUrn": "urn:li:fs_miniCompany:101212687"
       }
     },
     {
@@ -43,8 +38,7 @@
         "universalName": "cz.nic-z.s.p.o.",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:424976",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQF8hhq3XJoaOQ/company-logo_400_400/company-logo_400_400/0/1702890412739/cznic_zspo_logo?e=1781136000&v=beta&t=nCUJ_9RniTurPbsVNmcPl3GVXcdmRxEUY_NHEwVxkvE"
+        "entityUrn": "urn:li:fs_miniCompany:424976"
       }
     },
     {
@@ -56,8 +50,7 @@
         "universalName": "akademie-cznic",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:83527148",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQGZlUbHUHyPCA/company-logo_400_400/company-logo_400_400/0/1662041577346?e=1781136000&v=beta&t=AV3dDe5nm_MEPmViXr9033IhZ0NgBHK_hTmg9KFnNHQ"
+        "entityUrn": "urn:li:fs_miniCompany:83527148"
       }
     }
   ],
@@ -76,8 +69,6 @@
         "id": "131613917",
         "publicId": "zuzana-vidlakova",
         "profileId": "ACoAAAfYRN0BZ9L9WoOm6N2u8-eDIgT7KSk4hfg",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFitom-65U0_g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728926997467?e=1781136000&v=beta&t=dJytW-igU27PWnEEdNrciW36ErzejffgS94-L_yT2qM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEFnuIAr8HL_w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1604993447585?e=1781136000&v=beta&t=jo0p3Kf58z2zXGTgtEyQ2IJ6z-ATJRNQMgJ-RxHuMlA",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -94,8 +85,6 @@
         "id": "56287650",
         "publicId": "zuzanapechova",
         "profileId": "ACoAAANa4aIBHk1CCKmRv1zZXqfXpIWkfbwQD5M",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEqXnSOPtL0lQ/profile-displayphoto-shrink_800_800/B4EZTRhBq2HMAc-/0/1738681884093?e=1781136000&v=beta&t=JHs-1yZcxo2bHe7I0Jk4RkOr31-UHUZfBr8-s_X3sqc",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHLv7IKk-pBAQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1709907835087?e=1781136000&v=beta&t=IvybzR2CRHWdgxadAD5nSJue7mDZ4WCPPivXx9f5FrA",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -109,8 +98,7 @@
         "occupation": "Business Development Professional",
         "id": "33405986",
         "publicId": "melhughlett",
-        "profileId": "ACoAAAH9vCIBTLH1U5N56iFl5dWpNQ4GecNHN2A",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQHlouRu4NcYIA/profile-displayphoto-crop_800_800/B56Znekgr7JoAI-/0/1760375737491?e=1781136000&v=beta&t=j8BLDsOEyPGocvGTwByfSFG8CaBFPSJNE3EdaKfdHck"
+        "profileId": "ACoAAAH9vCIBTLH1U5N56iFl5dWpNQ4GecNHN2A"
       }
     },
     {
@@ -132,9 +120,7 @@
         "occupation": "Member of Technical Staff at Aisle | ex-Rossumer | ex-IBMer",
         "id": "44482761",
         "publicId": "michal-bida-cz",
-        "profileId": "ACoAAAKmwMkBEmRn0LI3k52HWbrgMJaGHqQHqW4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE6ZSMmsBSJ7A/profile-displayphoto-crop_800_800/B4EZns_TYTHcAI-/0/1760617646903?e=1781136000&v=beta&t=ZhaEE759ZklkYNvbpvkBFCokddwXwTxFOPTOaxc8GD4",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHN6k7EaNVUQg/profile-displaybackgroundimage-shrink_350_1400/B4EZntG9ViIwAY-/0/1760619650644?e=1781136000&v=beta&t=-MV1AzwFXgdahvVsFYJBqlfBhVEvGqAuBDsNB6-XG4w"
+        "profileId": "ACoAAAKmwMkBEmRn0LI3k52HWbrgMJaGHqQHqW4"
       }
     },
     {
@@ -145,9 +131,7 @@
         "occupation": "IT Analyst | Product Manager | Scrum Master 🌱",
         "id": "8438959",
         "publicId": "hajickova",
-        "profileId": "ACoAAACAxK8BB2XNqLfcha0b_-CuSCLGr9znmJA",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFn1eg-_7CqUw/profile-displayphoto-crop_800_800/B4EZn8Gy9CHEAI-/0/1760871268508?e=1781136000&v=beta&t=tbkGdaQfFBd9kYU9t2WuCUaj67EwGMFGTVM0gzwWejs",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHkfs8NVTIu3g/profile-displaybackgroundimage-shrink_350_1400/B4EZn8a_24K0Ac-/0/1760876561256?e=1781136000&v=beta&t=XjfkanaRUrEfbs3aZfnn94bqP0ZAIoQ3YQHEuB9e4cY"
+        "profileId": "ACoAAACAxK8BB2XNqLfcha0b_-CuSCLGr9znmJA"
       }
     },
     {
@@ -158,9 +142,7 @@
         "occupation": "You can never cross the ocean until you have the courage to lose sight of the shore.",
         "id": "268674704",
         "publicId": "linaherzog",
-        "profileId": "ACoAABADppABTCqMKknLwKK5O9M2qrF_r6Nxh88",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHVii_VrjO1-w/profile-displayphoto-crop_800_800/B4EZ1x2bPaGYAI-/0/1775731597796?e=1781136000&v=beta&t=15ylxthU71y-aoP04YxEtwb2TCtYHoiYgivOLpvENp0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQF-1Rmz1ME-FQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1592997207295?e=1781136000&v=beta&t=lNeVZcDT_9hGCfF152MkUmKkNrmWAecahxxQ0RMNRbM"
+        "profileId": "ACoAABADppABTCqMKknLwKK5O9M2qrF_r6Nxh88"
       }
     },
     {
@@ -171,9 +153,7 @@
         "occupation": "Social geography student, linux user/admin, USCUNI research team, Turris Project",
         "id": "1281896896",
         "publicId": "novotny-marek-image",
-        "profileId": "ACoAAExoMcABl0du7GHp1sMqTQuNvOxFaUkWFJA",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHjAGZ3fDRrTA/profile-displayphoto-shrink_800_800/B4EZQTaOkuHAAc-/0/1735492431029?e=1781136000&v=beta&t=G5IZPFFZ33OmojAsg_O6JViJwzdw7n3dG-6yOWr4u5U",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFMIf2v3kDqRQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1730556110604?e=1781136000&v=beta&t=r9MhlZejFEO7-o9i8Uha7WNyq6VqSQKawmPY_dQisho"
+        "profileId": "ACoAAExoMcABl0du7GHp1sMqTQuNvOxFaUkWFJA"
       }
     },
     {
@@ -184,8 +164,7 @@
         "occupation": "DevOps Engineer at Socialbakers",
         "id": "417126412",
         "publicId": "michal-iřík-724840b7",
-        "profileId": "ACoAABjc2AwBWv3QXDMDb7rxol2AxSSa7bAjOJA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGKCxE5b-pL3Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516850215937?e=1781136000&v=beta&t=BjnydJbOlrmgyXmtKPUfFw8zjSvhvd5tJ-qKU4QFHsk"
+        "profileId": "ACoAABjc2AwBWv3QXDMDb7rxol2AxSSa7bAjOJA"
       }
     },
     {
@@ -196,8 +175,7 @@
         "occupation": "Communication. | Care, community, and sales in Weblate",
         "id": "122303957",
         "publicId": "orangesunny",
-        "profileId": "ACoAAAdKNdUB7UBcoRxPVQFxCcaxO3EV2xCqjZc",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFJoigcWXFYuQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1580054097653?e=1781136000&v=beta&t=aAxedrEZqUaBR1W4t05oDaRCwDxJqiKdCNfYxxLP9WI"
+        "profileId": "ACoAAAdKNdUB7UBcoRxPVQFxCcaxO3EV2xCqjZc"
       }
     },
     {
@@ -208,8 +186,7 @@
         "occupation": "⠀",
         "id": "908760356",
         "publicId": "johanaticha",
-        "profileId": "ACoAADYqlSQBruv3D8aGjjFIk_hn4YCI5X1-tZs",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQF3t2Ulwk-iFQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695979217770?e=1781136000&v=beta&t=DSS6omfOI612SfKvtp8Msqu-gy8zsmv3p5iEc7a2qVk"
+        "profileId": "ACoAADYqlSQBruv3D8aGjjFIk_hn4YCI5X1-tZs"
       }
     },
     {
@@ -220,9 +197,7 @@
         "occupation": "Partner at CLA Czech Republic",
         "id": "301124454",
         "publicId": "martin-brabenec-a06a1984",
-        "profileId": "ACoAABHyy2YBKXnfmqD711dh__R9305_rM1H9io",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQENBbiF7hAvvg/profile-displayphoto-crop_800_800/B4EZgiHvTzHIAI-/0/1752919113343?e=1781136000&v=beta&t=8cAZ4DIm1iII_A_ocpO1aO-XOuRmquZKF3NGNMOIm2U",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHK-gNeJlCe5Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1737534325532?e=1781136000&v=beta&t=Y2lBMMN1ARYrFVXzy5wd9Z6zdqdaTPZU5ErGwl9TZko"
+        "profileId": "ACoAABHyy2YBKXnfmqD711dh__R9305_rM1H9io"
       }
     }
   ],
@@ -242,12 +217,9 @@
     "occupation": "Jill of all trades in cybersecurity, directress of CyberLadies, open source enthusiast, coffee addict, easily nerd sniped. Likes to lead small teams, create down-to-earth strategies and build sensible infrastructure.",
     "id": "56287650",
     "publicId": "zuzanapechova",
-    "profileId": "ACoAAANa4aIBHk1CCKmRv1zZXqfXpIWkfbwQD5M",
-    "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEqXnSOPtL0lQ/profile-displayphoto-shrink_800_800/B4EZTRhBq2HMAc-/0/1738681884093?e=1781136000&v=beta&t=JHs-1yZcxo2bHe7I0Jk4RkOr31-UHUZfBr8-s_X3sqc",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHLv7IKk-pBAQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1709907835087?e=1781136000&v=beta&t=IvybzR2CRHWdgxadAD5nSJue7mDZ4WCPPivXx9f5FrA"
+    "profileId": "ACoAAANa4aIBHk1CCKmRv1zZXqfXpIWkfbwQD5M"
   },
   "authorProfileId": "zuzanapechova",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4E03AQEqXnSOPtL0lQ/profile-displayphoto-shrink_800_800/B4EZTRhBq2HMAc-/0/1738681884093?e=1781136000&v=beta&t=JHs-1yZcxo2bHe7I0Jk4RkOr31-UHUZfBr8-s_X3sqc",
   "authorType": "Person",
   "authorName": "Zuzana Pechová (She/Her)",
   "authorProfileUrl": "https://www.linkedin.com/in/zuzanapechova?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAANa4aIBHk1CCKmRv1zZXqfXpIWkfbwQD5M",

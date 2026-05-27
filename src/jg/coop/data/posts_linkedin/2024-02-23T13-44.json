@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/D4E10AQH71hmLu3MgLg/image-shrink_1280/image-shrink_1280/0/1708695827613?e=1780430400&v=beta&t=E3Rtajg_J_8H8fM_7aiKBmGGHTOQxKwsMR2zR7E4PnY"
-  ],
+  "images": [],
   "isActivity": true,
   "activityDescription": "Honza Javorek reposted this",
   "activityOfUser": {
@@ -11,9 +9,7 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "urn": "urn:li:activity:7166789995792445440",
   "url": "https://www.linkedin.com/posts/python-pizza_pythonistas-we-cant-wait-to-connect-with-activity-7166789765420290048-4axr",
@@ -31,9 +27,7 @@
         "occupation": "Global Sales Manager | Specialty Lubricants",
         "id": "132002824",
         "publicId": "petr-pribil",
-        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEGdgqIgIpkzg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712250006297?e=1781136000&v=beta&t=UB9wEJule0NhB0lR0De_FtfePuW1Di0Vm80cYt1MqZU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFuvlBRuJNbjw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712250566915?e=1781136000&v=beta&t=8sCRHio1dDSnAp_oiaygmw7_1g4W1ce4YJV-kaJIK3M"
+        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck"
       }
     },
     {
@@ -44,9 +38,7 @@
         "occupation": "Software Engineer | Python & Linux",
         "id": "1088813416",
         "publicId": "didiomodi",
-        "profileId": "ACoAAEDl-WgBIwW9AAc-H1_IFEgbH6r0KAM3il8",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEgLo_Z8Dx5fw/profile-displayphoto-crop_800_800/B4DZ5fSSOUKEAM-/0/1779715090475?e=1781136000&v=beta&t=_ElelFqVlphTJseQRjTyV9ibcNgt_QC4a2s9HWzp7eg",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGI10gON4iPiA/profile-displaybackgroundimage-shrink_350_1400/B4DZ5fYrdNKgAY-/0/1779716765845?e=1781136000&v=beta&t=NDEOI052xqyDe3-gIBSR2VIv4GrUgDHVDjOnWHtYwsY"
+        "profileId": "ACoAAEDl-WgBIwW9AAc-H1_IFEgbH6r0KAM3il8"
       }
     },
     {
@@ -57,9 +49,7 @@
         "occupation": "Technology never lies… it just doesn’t always tell the whole truth.",
         "id": "1175181893",
         "publicId": "zdeněk-korvas-145696289",
-        "profileId": "ACoAAEYL2kUBg-W9RvgitKYtD744XwAI6PY3OTk",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHWKV5BY6AepA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1706297608898?e=1781136000&v=beta&t=DqtYFjoPlGMZXhDozLoH8AXjtel5YQefXFt7IKM20Dk",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHQm9wWBcflFw/profile-displaybackgroundimage-shrink_350_1400/B4EZcR0vBuHsAY-/0/1748350726986?e=1781136000&v=beta&t=T9PcTaOyX3iOJhhEHXhzhRJsobx_kRYQOgdLSEbjKe8"
+        "profileId": "ACoAAEYL2kUBg-W9RvgitKYtD744XwAI6PY3OTk"
       }
     },
     {
@@ -70,9 +60,7 @@
         "occupation": "Python vývojář s přesahem. 🐍",
         "id": "399499541",
         "publicId": "ypsilonxpython",
-        "profileId": "ACoAABfP4RUBhhqww_PQuiFQs580Isbr6ZqrqOg",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHxzColABuq3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1671205705078?e=1781136000&v=beta&t=YynyLwKnmF1yQVnk5INWHcB96M_Btdr9aeqx1LwcgsI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHuts72Jn_yMQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1634794908162?e=1781136000&v=beta&t=S9UL0wy6v08ZrAb29xjudA5ltkEDpmZSh3rAld7B-jo"
+        "profileId": "ACoAABfP4RUBhhqww_PQuiFQs580Isbr6ZqrqOg"
       }
     },
     {
@@ -83,9 +71,7 @@
         "occupation": "Senior Data Engineer @ Numberly",
         "id": "415797969",
         "publicId": "scroc",
-        "profileId": "ACoAABjIktEBRFCmZAh3wD8Y4rRD71LAeuG9ics",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQFZ0NgRSZJ-bQ/profile-displayphoto-shrink_800_800/B56ZbXHtLKHUAc-/0/1747365844336?e=1781136000&v=beta&t=jiZHwnqCGGUcOl9kcShAIkaPXAH5BZOmljC2VhlVkgc",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHG4PZLZHngxQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1536264561258?e=1781136000&v=beta&t=wE3zCpcNmYazlyg1EL-ug5nMNPrOwRI4NbfzXdWKoHo"
+        "profileId": "ACoAABjIktEBRFCmZAh3wD8Y4rRD71LAeuG9ics"
       }
     },
     {
@@ -96,8 +82,7 @@
         "occupation": "Data analytics | Energy transition",
         "id": "114102236",
         "publicId": "janfdolezal",
-        "profileId": "ACoAAAbND9wBTGfUvBkG8--t6nWYBJcRm6qj8LI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGDiD2lCktv4Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1616743956066?e=1781136000&v=beta&t=9Q1PGraRSzb__h4cp2O1EwOE1gaZWHh89nk0FhoGeic"
+        "profileId": "ACoAAAbND9wBTGfUvBkG8--t6nWYBJcRm6qj8LI"
       }
     },
     {
@@ -108,8 +93,7 @@
         "occupation": "Software (systems) engineer; not looking for new work :)",
         "id": "783596524",
         "publicId": "matej-volf",
-        "profileId": "ACoAAC60u-wBxPNA7F2ZavEOPOCeIjrMfuDXcio",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHWdAjgccS4mg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1661171234617?e=1781136000&v=beta&t=ubWVU4uFnvaPVdFvCweVS6uV8OKViRp8JqErvmAXomU"
+        "profileId": "ACoAAC60u-wBxPNA7F2ZavEOPOCeIjrMfuDXcio"
       }
     },
     {
@@ -120,9 +104,7 @@
         "occupation": "Senior Account Cloud Engineer at Oracle - Cloud Data Platform",
         "id": "259553363",
         "publicId": "robert-mikolajczyk-5abb1072",
-        "profileId": "ACoAAA94eFMBDGn6_50GJG-scx1q_IdrA9Xeu4U",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE4I4xEX7-POw/profile-displayphoto-crop_800_800/B4EZh4wUzhGcAM-/0/1754372592286?e=1781136000&v=beta&t=1I93ao0p376wKuUq-270rP8i1zfeOiwiOFhprBdVgdY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFfBss24-EcLQ/profile-displaybackgroundimage-shrink_350_1400/B4EZh1xTEEGcAc-/0/1754322515035?e=1781136000&v=beta&t=90ufYjD3OyybCxCITGM5jTfyHnkgD0Rb7j4VJnOkcqk"
+        "profileId": "ACoAAA94eFMBDGn6_50GJG-scx1q_IdrA9Xeu4U"
       }
     },
     {
@@ -133,9 +115,7 @@
         "occupation": "AI Eng / Data Scientist @SAP | MSc AI @ČVUT",
         "id": "671578881",
         "publicId": "senanursahin",
-        "profileId": "ACoAACgHewEBJXQqOiogGERDxK5NvoppkZOfT6k",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGyHchkKDvwhg/profile-displayphoto-crop_800_800/B4DZ5LMobuK0AI-/0/1779378066710?e=1781136000&v=beta&t=nLLRNM9TokuDDjyLLQKJHH-PbieY7dh2a1iei9we6fc",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHn335pXfW3FA/profile-displaybackgroundimage-shrink_350_1400/B4DZ5QqIEeI4AU-/0/1779469681171?e=1781136000&v=beta&t=n9_6iNw1-yALDMqxw7WIyKDqu6dZGfJetlITm4Ff6ZA"
+        "profileId": "ACoAACgHewEBJXQqOiogGERDxK5NvoppkZOfT6k"
       }
     }
   ],
@@ -154,10 +134,8 @@
     "universalName": "python-pizza",
     "active": true,
     "showcase": false,
-    "entityUrn": "urn:li:fs_miniCompany:98334563",
-    "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQHpxCSs0JgOhw/company-logo_400_400/B4DZzCxVQ_J4AY-/0/1772794238828/python_pizza_logo?e=1781136000&v=beta&t=DbpOUMSLCFgKECYVzQV8cszEuwXyR4CrwC3oZmmW5Ak"
+    "entityUrn": "urn:li:fs_miniCompany:98334563"
   },
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4D0BAQHpxCSs0JgOhw/company-logo_400_400/B4DZzCxVQ_J4AY-/0/1772794238828/python_pizza_logo?e=1781136000&v=beta&t=DbpOUMSLCFgKECYVzQV8cszEuwXyR4CrwC3oZmmW5Ak",
   "authorType": "Company",
   "authorProfileId": "company",
   "authorFollowersCount": "743",

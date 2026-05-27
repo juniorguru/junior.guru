@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/D4E22AQGkVMZD6Bu9bg/feedshare-image-high-res/feedshare-image-high-res/0/1732885441955?e=1781136000&v=beta&t=vsqN5eRgOMFMUoOeAs12zp0tLPJaBPVWkLlz9W6VjZo"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:7268549420571320320",
   "url": "https://www.linkedin.com/posts/honzajavorek_adventofcode-activity-7268549420571320320-CTKB",
@@ -19,8 +17,7 @@
         "universalName": "juniorguru",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:26218444",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQE89NmYF-XT4g/company-logo_400_400/company-logo_400_400/0/1638266899010/juniorguru_logo?e=1781136000&v=beta&t=ad516CNUThMN8eXeVboC5S9U_y2Dnn1UhQn70wIGlxE"
+        "entityUrn": "urn:li:fs_miniCompany:26218444"
       }
     }
   ],
@@ -39,8 +36,6 @@
         "id": "960822563",
         "publicId": "mravec",
         "profileId": "ACoAADlE_SMBMQ93eU8DFPPPG8mDrrPsd7fIxQ8",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQF4170d7m-fJQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1671712471398?e=1781136000&v=beta&t=uaStzb_PgWdlsuQKrRK8ktXcgF5FGADy3yooMDgzFFU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEwy5x1sO-aVg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1682438303352?e=1781136000&v=beta&t=jDyTT_kodAc5c9s8iC8eDljCryG7LhLFsFlsnMwKIl8",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -58,8 +53,6 @@
         "id": "28126493",
         "publicId": "ing-michala-marková",
         "profileId": "ACoAAAGtLR0BnXLQF1av5B7xQLStQEy7WXZundw",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEZ554-AC71QQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731708468959?e=1781136000&v=beta&t=ErSqJuZPht958J89X0YTNm3SrC7RTOFL59tgJDf0nAw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQH2-c6AxgcKrw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1727507998652?e=1781136000&v=beta&t=8E1-RROJFnh9nAhJr6Hx26QA3awiXziDkE85JFzg-4E",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -76,8 +69,6 @@
         "id": "178006447",
         "publicId": "msvetlana",
         "profileId": "ACoAAAqcKa8Bousd5uBo-bZZ9dq6qVlYKqtHvSc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF2d-GcOsk4Bg/profile-displayphoto-crop_800_800/B4DZ35j9rdHwAM-/0/1778008453433?e=1781136000&v=beta&t=drmOX7xsDyMGZaown-MFYSZXwtE2FSNpuvIxF5sa-CA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEafK1Y8bDUqw/profile-displaybackgroundimage-shrink_350_1400/B4DZWwQJBHHIAc-/0/1742418779616?e=1781136000&v=beta&t=0a47VNFLf1nQKjTg2JnpC3ODNNzCN24RoEDT7btdLtM",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -91,9 +82,7 @@
         "occupation": "Solution Developer at Jigx",
         "id": "368513805",
         "publicId": "natália-rydzá",
-        "profileId": "ACoAABX3Ew0BUHQbxGZpVNCtTpps5YdBDGUZhas",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHR_o0tloJxmA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1645438239518?e=1781136000&v=beta&t=ni2nTc7HDt1tXOjslE2kohLbGZx6ku1NF4tBt6UCD4Q",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHVNnoOlVU47Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1594664026995?e=1781136000&v=beta&t=zzGY7L1hKZWxBoIzImUY-24mYjgSH9jvJlOGCcRoUfA"
+        "profileId": "ACoAABX3Ew0BUHQbxGZpVNCtTpps5YdBDGUZhas"
       }
     },
     {
@@ -104,9 +93,7 @@
         "occupation": "Software Tester",
         "id": "1019369824",
         "publicId": "linda-adamkova",
-        "profileId": "ACoAADzCWWABzURrYgAmGGAeFM-hNIE5flA7xss",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHa8pAPzh6gxA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1684322861481?e=1781136000&v=beta&t=_KoHfZoAaVsAYlg3boUsczDsV8TlxqcJvaE0WBMg_KU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE0f5P2prsZvA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1682673665280?e=1781136000&v=beta&t=Fi-LCHnk2XZA9Ba-CKzd_PwdhnwS4saECVTQ1JUMdus"
+        "profileId": "ACoAADzCWWABzURrYgAmGGAeFM-hNIE5flA7xss"
       }
     },
     {
@@ -117,9 +104,7 @@
         "occupation": "Python developer",
         "id": "545001267",
         "publicId": "oleksandr-leiko-30362a132",
-        "profileId": "ACoAACB8DzMBM1AO8qLqj9kKOwLN8S3PLDt4BbI",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEwaZAQbSh49A/profile-displayphoto-crop_800_800/B4DZvOkBExJgAI-/0/1768697108245?e=1781136000&v=beta&t=KgoY_OwKD3v9f9bCX1Io4r4GODB6pHL5Nnw44Ybmd1o",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHd_YyCwn5QLw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736078301041?e=1781136000&v=beta&t=AjCzXr4Ygca6amvBB-lh8Pn_sfhTrazsjinYYgQvHPA"
+        "profileId": "ACoAACB8DzMBM1AO8qLqj9kKOwLN8S3PLDt4BbI"
       }
     },
     {
@@ -130,9 +115,7 @@
         "occupation": "Developer @ Mediaboard",
         "id": "323983699",
         "publicId": "tomáš-michna-69760290",
-        "profileId": "ACoAABNPmVMB20kpcn8ERsA6j3I6WgosvuZcSek",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGy1KMpva_UKw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1699305399980?e=1781136000&v=beta&t=hW06dMNG1QV5JwbSCgCldr3fBpfwokmADTkXo3PrURs",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFobSOPgkk7uw/profile-displaybackgroundimage-shrink_350_1400/B4EZdVqs7dHsAY-/0/1749488947479?e=1781136000&v=beta&t=tIABCNdBx5_TD8Xz97CVRK70KifpM50nVIf4F0Jgu_0"
+        "profileId": "ACoAABNPmVMB20kpcn8ERsA6j3I6WgosvuZcSek"
       }
     },
     {
@@ -143,8 +126,7 @@
         "occupation": "Dev i Ops, proc ne. Ale spis ten Ops :)",
         "id": "1308066816",
         "publicId": "petr-malina-14009b306",
-        "profileId": "ACoAAE33hAABWHgqRhfX2FV46HNSodQOSxFpY6g",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGQEreWTH5wVg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1713966804770?e=1781136000&v=beta&t=VCLJxL-YqcUfMEH_4ww0RQ6Z_LQhwj_HA2h1bSWomok"
+        "profileId": "ACoAAE33hAABWHgqRhfX2FV46HNSodQOSxFpY6g"
       }
     },
     {
@@ -155,9 +137,7 @@
         "occupation": "Graphic Designer ✒️ | Illustrator ✏️ | Junior Programmer 💻",
         "id": "1035345649",
         "publicId": "anna-lorencova",
-        "profileId": "ACoAAD22HvEByBUzaODSCw_E9NqAhLF4UzV_HzA",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEMKhhBR1tRmg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1713040461437?e=1781136000&v=beta&t=ae2EJAndWDGevJeGgctCazLq-KjBVdHSL4zow190d9c",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGQl40KIeKT5Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1693413189299?e=1781136000&v=beta&t=9RKfpA2KZNV3duCQa0Ge4wRnJ2nqRjHPYgOEZBWWPKY"
+        "profileId": "ACoAAD22HvEByBUzaODSCw_E9NqAhLF4UzV_HzA"
       }
     },
     {
@@ -168,9 +148,7 @@
         "occupation": "Data • Python • PyLadies • Community 🧗‍♀️🌄🥽",
         "id": "500082573",
         "publicId": "profantova",
-        "profileId": "ACoAAB3Op40BezEaqbB9vgUJupTUksuxIhZtA1E",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHLY1-XuQRejQ/profile-displayphoto-shrink_800_800/B4EZZtgja8HcAg-/0/1745593973290?e=1781136000&v=beta&t=97Qd6tWqLDzvoy3gg04-M2N9ittS1V7dQ4WnFiYT518",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEE9K4LB2eaaQ/profile-displaybackgroundimage-shrink_350_1400/B4EZZtfBjmHYAc-/0/1745593572445?e=1781136000&v=beta&t=xtqYmTMUDNlMHwv45DT-zqCkJSb5ri_lsJHq6CvaxGk"
+        "profileId": "ACoAAB3Op40BezEaqbB9vgUJupTUksuxIhZtA1E"
       }
     },
     {
@@ -181,9 +159,7 @@
         "occupation": "Principal Information Security Engineer at HERE",
         "id": "3719671",
         "publicId": "valor",
-        "profileId": "ACoAAAA4wfcB-6wfVwYbMy69XKSeovQjgDHJSW0",
-        "picture": "https://media.licdn.com/dms/image/v2/C5103AQGjRfNSS1JcmQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516248813297?e=1781136000&v=beta&t=XxoOkJZ46kteyvJ_k3o4tT_5zhbc8s9Fbbe0RIcB4FA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQG3RlrCKlLZzg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1640715665619?e=1781136000&v=beta&t=e5iMMadAmgsuSQrkcopHNu9MuJrqHJ6KjBAgQjzYmEg"
+        "profileId": "ACoAAAA4wfcB-6wfVwYbMy69XKSeovQjgDHJSW0"
       }
     },
     {
@@ -194,9 +170,7 @@
         "occupation": "Kotlin Developer",
         "id": "1037499442",
         "publicId": "kamila-machova",
-        "profileId": "ACoAAD3W_DIB5C7b4550JcY6lynjZWoFenqPu28",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHcuZwJmuxFCg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1664433039809?e=1781136000&v=beta&t=soBIv3QKEzH_0kCWv6TlUz5A-pGtuYpwIomqj4mjalo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHd_tAtiyCG2Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1664293799420?e=1781136000&v=beta&t=ytZ1n4SgpD-YG1j0GQ2M4nt4-ZBhn9_0HcsGJ116mdw"
+        "profileId": "ACoAAD3W_DIB5C7b4550JcY6lynjZWoFenqPu28"
       }
     },
     {
@@ -207,8 +181,7 @@
         "occupation": "Data analyst and scientist",
         "id": "725065473",
         "publicId": "adela-beckova",
-        "profileId": "ACoAACs3nwEB7kEpgHn6gJ5xIRPDE5aXgH5vDUo",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQF0yU7Jf3BB3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1708713743542?e=1781136000&v=beta&t=lpy8EJ0vZUZWeyjos1A7P7ChUFCsqFuz58uS7gGSGfM"
+        "profileId": "ACoAACs3nwEB7kEpgHn6gJ5xIRPDE5aXgH5vDUo"
       }
     }
   ],
@@ -228,12 +201,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

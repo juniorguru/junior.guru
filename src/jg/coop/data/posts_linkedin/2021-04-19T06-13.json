@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQEciaDG0PyiKQ/feedshare-shrink_1280/feedshare-shrink_1280/0/1618812781634?e=1781136000&v=beta&t=y1iIqex6rdhmCS7d9sIJ5Cq3v5j11ebPoMSMgzWA73o"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6789792926516989952",
   "url": "https://www.linkedin.com/posts/honzajavorek_ned%C3%A1vno-jsem-sd%C3%ADlel-rozhovor-s-lenka-segura-activity-6789792926516989952-A834",
@@ -20,8 +18,7 @@
         "occupation": "Software developer",
         "id": "74196758",
         "publicId": "lenka-s-b32a2120",
-        "profileId": "ACoAAARsJxYBEFAuceyAehapLxKvmWi85gbKRFU",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQFkiS57CqmB1w/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1556975089425?e=1781136000&v=beta&t=BPFOmBklCH2YNOMr-Kc5Prm1LZa7RKKkrfmDY-Dlv9Y"
+        "profileId": "ACoAAARsJxYBEFAuceyAehapLxKvmWi85gbKRFU"
       }
     },
     {
@@ -33,8 +30,7 @@
         "universalName": "cybermagnolia",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:68539533",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQFZ_LaXdtsiKg/company-logo_400_400/company-logo_400_400/0/1630501497670/cybermagnolia_logo?e=1781136000&v=beta&t=tGpc67FZ0YIKADMPsOuQtGPVJ3u6Hm4w2AZNnb8WbDA"
+        "entityUrn": "urn:li:fs_miniCompany:68539533"
       }
     },
     {
@@ -46,8 +42,7 @@
         "universalName": "outreachy",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:18204091",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQFS-r4wkrNR5g/company-logo_400_400/company-logo_400_400/0/1631318720989?e=1781136000&v=beta&t=i8elyNCNP9q9kiTAv2MEP_2CQ57pMIA8Jp7kkFHpRKU"
+        "entityUrn": "urn:li:fs_miniCompany:18204091"
       }
     }
   ],
@@ -61,9 +56,7 @@
         "occupation": "Průvodce cykly bohatství 📈",
         "id": "229451762",
         "publicId": "petr-žížek-702a1464",
-        "profileId": "ACoAAA2tJ_IB7sP5S6LHxlMS2UfNxfoAbaFpW4w",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHUBwC6SZkdSw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1702842635402?e=1781136000&v=beta&t=Nn-Ja4mEx7wOuvPRkTfvzoNSL_3WrZlRdNEyG0MMmiU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGiOS-4mMQwvg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1716065509937?e=1781136000&v=beta&t=8xukP7Xc-rRH89wzF3n_2mU5tdQY0SvANJvUgIaq62M"
+        "profileId": "ACoAAA2tJ_IB7sP5S6LHxlMS2UfNxfoAbaFpW4w"
       }
     },
     {
@@ -74,9 +67,7 @@
         "occupation": "Senior IT Project Manager @ Futured | Production manager @ mDevCamp",
         "id": "615064970",
         "publicId": "dominikapostavova",
-        "profileId": "ACoAACSpJYoBoZhET51HdIIvNrW7DY_Wxzo9MOM",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEDXFsctlLwyw/profile-displayphoto-shrink_800_800/B4EZWpGBghHgAc-/0/1742298683884?e=1781136000&v=beta&t=rm3XuAm5v1NVk6w67QXXHC-2V5lFRn6iPL2IEOKemnA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEtNsCXizeglg/profile-displaybackgroundimage-shrink_350_1400/B4DZsiEfL_JMAc-/0/1765803160855?e=1781136000&v=beta&t=7zfUJZWZFuENAV_OTaSwITr92I3QGIYQ0It63RHj9kA"
+        "profileId": "ACoAACSpJYoBoZhET51HdIIvNrW7DY_Wxzo9MOM"
       }
     },
     {
@@ -87,8 +78,7 @@
         "occupation": "cyp",
         "id": "106076066",
         "publicId": "jiri-gunka",
-        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGjycZdsqX9ww/profile-displayphoto-crop_800_800/B4DZjBYhBpGQAQ-/0/1755591087410?e=1781136000&v=beta&t=wVIgd5mwqIYPXpFj5d6Nr2x8-VHHyAZ4o1qWAcv4nhQ"
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
       }
     },
     {
@@ -99,8 +89,7 @@
         "occupation": "Web coder",
         "id": "376228502",
         "publicId": "marta-perutkova",
-        "profileId": "ACoAABZsypYBvxc3lLS_mONwO33jUZUA0NrGip8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEveVBMVYZJKg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1615113071941?e=1781136000&v=beta&t=COZI8f2SKs6xcEMcy-D_xG6kecQYO8i7XiXgxacGvZ8"
+        "profileId": "ACoAABZsypYBvxc3lLS_mONwO33jUZUA0NrGip8"
       }
     }
   ],
@@ -120,12 +109,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

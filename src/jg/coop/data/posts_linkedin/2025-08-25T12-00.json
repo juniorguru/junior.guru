@@ -2,9 +2,7 @@
   "type": "text",
   "resharedPost": {
     "type": "image",
-    "images": [
-      "https://media.licdn.com/dms/image/v2/D4E22AQHxNvNj2UJwuQ/feedshare-image-high-res/B4EZjJFs3LHgAo-/0/1755720372717?e=1781136000&v=beta&t=1A7jO8xTplE7ulYfJ0O5jDUVJvFoHBxoaNmDaoeITdk"
-    ],
+    "images": [],
     "isActivity": false,
     "urn": "urn:li:activity:7365676845045882880",
     "url": "https://www.linkedin.com/posts/mewsrnd_were-teaming-up-with-junior-guru-for-activity-7365676845045882880-6UPP?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAADVqL6ABuhGEisVhkg1t_SbJfTWFU5e0hQE",
@@ -21,8 +19,7 @@
           "universalName": "juniorguru",
           "active": true,
           "showcase": false,
-          "entityUrn": "urn:li:fs_miniCompany:26218444",
-          "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQE89NmYF-XT4g/company-logo_400_400/company-logo_400_400/0/1638266899010/juniorguru_logo?e=1781136000&v=beta&t=ad516CNUThMN8eXeVboC5S9U_y2Dnn1UhQn70wIGlxE"
+          "entityUrn": "urn:li:fs_miniCompany:26218444"
         }
       },
       {
@@ -34,8 +31,7 @@
           "universalName": "digitalnicesko",
           "active": true,
           "showcase": false,
-          "entityUrn": "urn:li:fs_miniCompany:104701463",
-          "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQGaScH4OZgjUg/company-logo_400_400/B4EZlb.gakK0AY-/0/1758184737290/digitalnicesko_logo?e=1781136000&v=beta&t=u-SyMcDHLkaw1_XYb2Si5nYC5_q0RojMGA1ntO5YAgY"
+          "entityUrn": "urn:li:fs_miniCompany:104701463"
         }
       },
       {
@@ -48,9 +44,7 @@
           "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
           "id": "8517488",
           "publicId": "honzajavorek",
-          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
         }
       },
       {
@@ -62,8 +56,7 @@
           "universalName": "mewssystems",
           "active": true,
           "showcase": false,
-          "entityUrn": "urn:li:fs_miniCompany:2574959",
-          "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQG9VtyX26envQ/company-logo_400_400/B4EZyKEXeEH0AY-/0/1771842926937/mewssystems_logo?e=1781136000&v=beta&t=UIV6bGS_gnn1FvSP7zSjwts_zMyZHE6t4vu9n9Nz5KE"
+          "entityUrn": "urn:li:fs_miniCompany:2574959"
         }
       }
     ],
@@ -83,9 +76,7 @@
               "occupation": "Frontend developer",
               "id": "1082522617",
               "publicId": "veronika-čamborová",
-              "profileId": "ACoAAECF-_kB69byXoaMHs_qzffiv1hqdN_aZ0U",
-              "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFUjZU0TnIoDA/profile-displayphoto-crop_800_800/B4EZjiUS3QIQAI-/0/1756143629052?e=1781136000&v=beta&t=Vgp7eKeI7po7f5wp-stiue0AiSNunEMeSGoT97xMD6E",
-              "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFxWpb5YjUyXg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1719347690741?e=1781136000&v=beta&t=4W3hjSrkexs3xxWQhO40-vgepTrcUhV01AfgDioP2t4"
+              "profileId": "ACoAAECF-_kB69byXoaMHs_qzffiv1hqdN_aZ0U"
             }
           },
           {
@@ -98,9 +89,7 @@
               "occupation": "Frontend developer | React | Typescript | Mentor",
               "id": "690320871",
               "publicId": "marketa-willis",
-              "profileId": "ACoAACkldecB7E9DWErMM56bPMpJ3V49koGflx0",
-              "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG3JXouajtk3A/profile-displayphoto-crop_800_800/B4EZniD2GgIIAI-/0/1760434283625?e=1781136000&v=beta&t=jVTJ2DGVJj9_jUUmT-E7zLWHbH879vJP2kKfgNc8Nn8",
-              "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFCy4ekYHZ1aA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1712246548670?e=1781136000&v=beta&t=QA3NpbJpEYHAFdBZwvhyaoukjEU7F6XWO0K5Mx2B41E"
+              "profileId": "ACoAACkldecB7E9DWErMM56bPMpJ3V49koGflx0"
             }
           },
           {
@@ -113,9 +102,7 @@
               "occupation": "Software Engineer | Full stack | React & Javascript | Mentoring in Czechitas and React girls",
               "id": "250363952",
               "publicId": "jakub-smagin",
-              "profileId": "ACoAAA7sQDABKbZihLaqYxI00esk30tUT-ApHrQ",
-              "picture": "https://media.licdn.com/dms/image/v2/D4D03AQG8dfi1mDapVA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1666102102729?e=1781136000&v=beta&t=j1DN34X3RsYv3WBhOyDu0nH-eIpYxz0v7OAiOz-Qy7E",
-              "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQHVCPJA1uyVGQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1643962022921?e=1781136000&v=beta&t=D-Z0FYr14CybQExg928vCNLH8cGI4E2DCuLXuVrdsOM"
+              "profileId": "ACoAAA7sQDABKbZihLaqYxI00esk30tUT-ApHrQ"
             }
           },
           {
@@ -128,9 +115,7 @@
               "occupation": "AI Specialist at Raiffeisenbank a.s.",
               "id": "475183572",
               "publicId": "martin-rapavy",
-              "profileId": "ACoAABxSudQBHuhA8cJ5OL9XXk9jIvrhocisM3w",
-              "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG-uEYWYQCi4w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1691341533471?e=1781136000&v=beta&t=TPnx6_RUaVTc-zVJyopipcS6x0aME46dvKqyIHnqifE",
-              "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFwzvr2gYb0EA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1716196276872?e=1781136000&v=beta&t=WHgrvkrw78fRS0FNPdG84I2uf_O9Aj4XkZP7HZ0Jbo8"
+              "profileId": "ACoAABxSudQBHuhA8cJ5OL9XXk9jIvrhocisM3w"
             }
           }
         ],
@@ -143,8 +128,6 @@
           "id": "537474680",
           "publicId": "karolina-kramkova",
           "profileId": "ACoAACAJNngB4ybl2bJ9KL4XIvIBiZoPcrRLgyI",
-          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGq3NCyU5lIaQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695050175192?e=1781136000&v=beta&t=pVaEOXvNZzjFW_cIcdcZREY5j059uGHY7SuX-Vj8VaA",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGK9rJLbWQOsg/profile-displaybackgroundimage-shrink_350_1400/B56Zf0ImRaHYAc-/0/1752147585079?e=1781136000&v=beta&t=ywcVvNfcPLqvPCLzSvw_o_lXGbX2_jstrscjL0sZYhE",
           "distance": "OUT_OF_NETWORK"
         }
       },
@@ -166,9 +149,7 @@
           "occupation": "Komuniťák v Czechitas 🏄‍♂️",
           "id": "726742558",
           "publicId": "matejkahun",
-          "profileId": "ACoAACtRNh4Bgs49PDAKRTrJ0zQclHv-UqoqjOs",
-          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEFdqnLrw3tqA/profile-displayphoto-shrink_800_800/B4EZVGmAK_GYAg-/0/1740646122793?e=1781136000&v=beta&t=kXs1stUYIteew7uBR7C0b1NfoOSP9z9D7Wl_jTtZgU4",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHHulpwLgpD-g/profile-displaybackgroundimage-shrink_350_1400/B4DZzXhX0NH4Ac-/0/1773142376451?e=1781136000&v=beta&t=JhX7zrUGEPQ6CMtCimmgq0aYfeZ6PJRvlkNsVohIwkU"
+          "profileId": "ACoAACtRNh4Bgs49PDAKRTrJ0zQclHv-UqoqjOs"
         }
       },
       {
@@ -178,8 +159,7 @@
           "universalName": "digitalnicesko",
           "active": true,
           "showcase": false,
-          "entityUrn": "urn:li:fs_miniCompany:104701463",
-          "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQGaScH4OZgjUg/company-logo_400_400/B4EZlb.gakK0AY-/0/1758184737290/digitalnicesko_logo?e=1781136000&v=beta&t=u-SyMcDHLkaw1_XYb2Si5nYC5_q0RojMGA1ntO5YAgY"
+          "entityUrn": "urn:li:fs_miniCompany:104701463"
         }
       },
       {
@@ -190,9 +170,7 @@
           "occupation": "Senior Sales Manager: Group & Catering",
           "id": "557124051",
           "publicId": "caitlogan",
-          "profileId": "ACoAACE1CdMBeQXsceJ_gTyK0mh10DfpKFE06Cg",
-          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGZBfOSv90kbQ/profile-displayphoto-crop_800_800/B4EZm6FbC0KoAI-/0/1759763611897?e=1781136000&v=beta&t=y1dEZ1vDW5ylzIqWcq5tMJTR90i4l74JJoG7BZfTX3E",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQH5a9z35q_ViA/profile-displaybackgroundimage-shrink_200_800/B4EZorJk64HMAU-/0/1761660522812?e=1781136000&v=beta&t=6pCENG9hMuvemrQEXjxwzZ93MZivhFcpc8hYfrBTtDY"
+          "profileId": "ACoAACE1CdMBeQXsceJ_gTyK0mh10DfpKFE06Cg"
         }
       },
       {
@@ -202,8 +180,7 @@
           "universalName": "mewssystems",
           "active": true,
           "showcase": false,
-          "entityUrn": "urn:li:fs_miniCompany:2574959",
-          "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQG9VtyX26envQ/company-logo_400_400/B4EZyKEXeEH0AY-/0/1771842926937/mewssystems_logo?e=1781136000&v=beta&t=UIV6bGS_gnn1FvSP7zSjwts_zMyZHE6t4vu9n9Nz5KE"
+          "entityUrn": "urn:li:fs_miniCompany:2574959"
         }
       },
       {
@@ -214,9 +191,7 @@
           "occupation": "🧋",
           "id": "93710529",
           "publicId": "tomasdinh",
-          "profileId": "ACoAAAWV6MEBhDedvZT9lRhWi3Woz4OTpEvJ8r0",
-          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHATUp0V3TeQg/profile-displayphoto-shrink_800_800/B4EZZI61YjHUAc-/0/1744980105262?e=1781136000&v=beta&t=CknHS-CDM0W4oZbWJd0sjgVJ_br22jnnvCceRSUIMhI",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGa7Pk0FpowPA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517451972817?e=1781136000&v=beta&t=PCOu9N2SEJzayucz68X9KrJ1GjGrmYPlrIloNOzZN7I"
+          "profileId": "ACoAAAWV6MEBhDedvZT9lRhWi3Woz4OTpEvJ8r0"
         }
       },
       {
@@ -227,9 +202,7 @@
           "occupation": "Frontend developer",
           "id": "1082522617",
           "publicId": "veronika-čamborová",
-          "profileId": "ACoAAECF-_kB69byXoaMHs_qzffiv1hqdN_aZ0U",
-          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFUjZU0TnIoDA/profile-displayphoto-crop_800_800/B4EZjiUS3QIQAI-/0/1756143629052?e=1781136000&v=beta&t=Vgp7eKeI7po7f5wp-stiue0AiSNunEMeSGoT97xMD6E",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFxWpb5YjUyXg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1719347690741?e=1781136000&v=beta&t=4W3hjSrkexs3xxWQhO40-vgepTrcUhV01AfgDioP2t4"
+          "profileId": "ACoAAECF-_kB69byXoaMHs_qzffiv1hqdN_aZ0U"
         }
       },
       {
@@ -240,9 +213,7 @@
           "occupation": "Partner Engagement Lead @42 Prague",
           "id": "786614378",
           "publicId": "luciahavrisakova",
-          "profileId": "ACoAAC7iyGoBme0yKTzvu7ZIJCyDHHLMx_znJKM",
-          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHzekB_uF-GRA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1713787328076?e=1781136000&v=beta&t=fEoTvCgpgdhWVMPZq-dEtRT35HYPSa4wNlWyiyD_qe4",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGZmoVDc5cVFQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1725551762222?e=1781136000&v=beta&t=SiiyYrnmJUYUzdyk4_U8dx9cVCbKOaU_KuUbC6bXAWY"
+          "profileId": "ACoAAC7iyGoBme0yKTzvu7ZIJCyDHHLMx_znJKM"
         }
       },
       {
@@ -253,9 +224,7 @@
           "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
           "id": "8517488",
           "publicId": "honzajavorek",
-          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-          "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
         }
       },
       {
@@ -266,9 +235,7 @@
           "occupation": "R&D Community Manager at Mews | Driving tech employer branding through developer advocacy and internal programs",
           "id": "375918312",
           "publicId": "gabriela-rehoutova",
-          "profileId": "ACoAABZoDugBZPP_pwsGohCcNSueNWnDv2TrXLA",
-          "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHxeSq-aQXADA/profile-displayphoto-crop_800_800/B4DZyKZZmIJoAM-/0/1771848442537?e=1781136000&v=beta&t=1Yyb9MnnBlanozl3ZFem4jHbwrV99w2FfMmvv9FvIu0",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHp_vL6BWFTNw/profile-displaybackgroundimage-shrink_350_1400/B4DZyKYhihG8AY-/0/1771848210948?e=1781136000&v=beta&t=21UIB68ZMBkqepzOKX5D9kdQcghG2ZeQ58J0kSI1tQc"
+          "profileId": "ACoAABZoDugBZPP_pwsGohCcNSueNWnDv2TrXLA"
         }
       },
       {
@@ -279,9 +246,7 @@
           "occupation": "Be not afraid to step out of your comfort zone and face unknown challenges, it is usual the best thing to do!",
           "id": "537474680",
           "publicId": "karolina-kramkova",
-          "profileId": "ACoAACAJNngB4ybl2bJ9KL4XIvIBiZoPcrRLgyI",
-          "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGq3NCyU5lIaQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695050175192?e=1781136000&v=beta&t=pVaEOXvNZzjFW_cIcdcZREY5j059uGHY7SuX-Vj8VaA",
-          "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQGK9rJLbWQOsg/profile-displaybackgroundimage-shrink_350_1400/B56Zf0ImRaHYAc-/0/1752147585079?e=1781136000&v=beta&t=ywcVvNfcPLqvPCLzSvw_o_lXGbX2_jstrscjL0sZYhE"
+          "profileId": "ACoAACAJNngB4ybl2bJ9KL4XIvIBiZoPcrRLgyI"
         }
       }
     ],
@@ -300,10 +265,8 @@
       "universalName": "mewsrnd",
       "active": true,
       "showcase": false,
-      "entityUrn": "urn:li:fs_miniCompany:100993516",
-      "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQHlzQRPFyVjiQ/company-logo_400_400/B4DZyKcshoIwAc-/0/1771849304556/mewsrnd_logo?e=1781136000&v=beta&t=up0tIdv6kobMSOKuvnYbiGQtQ3mORt6QaaPnfwnZztI"
+      "entityUrn": "urn:li:fs_miniCompany:100993516"
     },
-    "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4D0BAQHlzQRPFyVjiQ/company-logo_400_400/B4DZyKcshoIwAc-/0/1771849304556/mewsrnd_logo?e=1781136000&v=beta&t=up0tIdv6kobMSOKuvnYbiGQtQ3mORt6QaaPnfwnZztI",
     "authorType": "Company",
     "authorProfileId": "company",
     "authorFollowersCount": "2,163",
@@ -321,9 +284,7 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "urn": "urn:li:activity:7365714793833406465",
   "url": "https://www.linkedin.com/posts/martin-rapavy_were-teaming-up-with-junior-guru-for-activity-7365709477343334401-Vmdq",
@@ -340,8 +301,7 @@
         "universalName": "digitalnicesko",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:104701463",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQGaScH4OZgjUg/company-logo_400_400/B4EZlb.gakK0AY-/0/1758184737290/digitalnicesko_logo?e=1781136000&v=beta&t=u-SyMcDHLkaw1_XYb2Si5nYC5_q0RojMGA1ntO5YAgY"
+        "entityUrn": "urn:li:fs_miniCompany:104701463"
       }
     },
     {
@@ -354,9 +314,7 @@
         "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
         "id": "8517488",
         "publicId": "honzajavorek",
-        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
       }
     },
     {
@@ -368,8 +326,7 @@
         "universalName": "juniorguru",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:26218444",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4E0BAQE89NmYF-XT4g/company-logo_400_400/company-logo_400_400/0/1638266899010/juniorguru_logo?e=1781136000&v=beta&t=ad516CNUThMN8eXeVboC5S9U_y2Dnn1UhQn70wIGlxE"
+        "entityUrn": "urn:li:fs_miniCompany:26218444"
       }
     },
     {
@@ -381,8 +338,7 @@
         "universalName": "raiffeisenbank-cz",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:274735",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQGzhLrmO9EQbg/company-logo_400_400/company-logo_400_400/0/1692791422094?e=1781136000&v=beta&t=0iDRV6D5CNTK5o4d3xigV-iJ3wYfsDX8XB9OjeQKsV8"
+        "entityUrn": "urn:li:fs_miniCompany:274735"
       }
     }
   ],
@@ -401,8 +357,6 @@
         "id": "8517488",
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -416,8 +370,7 @@
         "occupation": "Head of New Media & Communication @Raiffeisenbank ČR",
         "id": "444081294",
         "publicId": "libichdavid",
-        "profileId": "ACoAABp4JI4BrSVX3MtZagfaser5mQt5hti8Wuc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGtNxm9UZT7GA/profile-displayphoto-crop_800_800/B4DZl4DQ2wH4AI-/0/1758655746316?e=1781136000&v=beta&t=Vw4F-rG5CGCcGwtnUNRM26O7_ZhPHh0-sAOSOntDaf8"
+        "profileId": "ACoAABp4JI4BrSVX3MtZagfaser5mQt5hti8Wuc"
       }
     },
     {
@@ -428,9 +381,7 @@
         "occupation": "Corporate Risk Analyst & Developer @ Raiffeisenbank",
         "id": "1269535501",
         "publicId": "nazar-parfenov-a911b82b5",
-        "profileId": "ACoAAEurkw0Bh2V5Ocy6H0qlHj4lcIZmQs8QTOE",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGA1ggF5T7cPw/profile-displayphoto-shrink_800_800/B4DZWKOQ_dHkAc-/0/1741780751907?e=1781136000&v=beta&t=Z_gz9RXMvko9t6rPGPesM8_Z1pR0ahyJd4mHigq61Tc",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG41vgrHuGu-Q/profile-displaybackgroundimage-shrink_350_1400/B4DZuY6xfFIEAY-/0/1767797103648?e=1781136000&v=beta&t=FHBm0pWRYSXqYDtPY58rZZF0LzPxaji3vTsdoAFuWxo"
+        "profileId": "ACoAAEurkw0Bh2V5Ocy6H0qlHj4lcIZmQs8QTOE"
       }
     },
     {
@@ -441,8 +392,7 @@
         "occupation": "Researching Reliable Natural Language Generation",
         "id": "490559973",
         "publicId": "patricia-schmidtova",
-        "profileId": "ACoAAB09WeUBbzLxquSWctyx8UheosNtfFDe5_8",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGv9Cc-em6gdQ/profile-displayphoto-shrink_800_800/B4EZb.XvVaGUA8-/0/1748024359377?e=1781136000&v=beta&t=dpv311MrEAh_gfwvtHJSIdNrNjpfzxKNJwEWmkS7IYs"
+        "profileId": "ACoAAB09WeUBbzLxquSWctyx8UheosNtfFDe5_8"
       }
     },
     {
@@ -453,8 +403,7 @@
         "occupation": "Finance Controller | Přesné a srozumitelné reporty | Analýzy a predikce pro management a head office | Orientace na výsledek a stálé zlepšování",
         "id": "336833691",
         "publicId": "vendula-prochazkova-aa397a94",
-        "profileId": "ACoAABQTrJsBM3md_wr51v1DBeJSrFVH-uCqdY0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHNr6pQJ4ZhVQ/profile-displaybackgroundimage-shrink_350_1400/B4EZUfhRDBHcAY-/0/1739990570187?e=1781136000&v=beta&t=Sb2M2rR8L246x4HwVpDoCRu0swFQyiJecDL8lXdLYO0"
+        "profileId": "ACoAABQTrJsBM3md_wr51v1DBeJSrFVH-uCqdY0"
       }
     },
     {
@@ -476,9 +425,7 @@
         "occupation": "Data Scientist Data Analyst at Danske Bank | Ex-Broadridge | Insurance | Market Front - Middle & Back Office | Risk | Foreign Exchange Fx | Machine Learning | Python | Tableau | OracleSQL-PLSQL | MSSQL | Snowflake |",
         "id": "227012271",
         "publicId": "rishi-ds",
-        "profileId": "ACoAAA2H7q8B6p1eQVx5-0edFYrn9GysKNzS2Pk",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQG184_U3QYSSQ/profile-framedphoto-shrink_800_800/B4EZZslpJoHcAo-/0/1745578529724?e=1780430400&v=beta&t=i_9yvRwfdXLa9R-n8N_ZR8HO4QBQrpbQ4ItwlnWU2L8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQFAB_buDYdqAQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1698034109715?e=1781136000&v=beta&t=SD-QxBYTC1JZ1jlRdt2SHJjnJrd09bpxp7F9-bgmlT4"
+        "profileId": "ACoAAA2H7q8B6p1eQVx5-0edFYrn9GysKNzS2Pk"
       }
     },
     {
@@ -489,9 +436,7 @@
         "occupation": "Content specialist & strategist | Bitcoin | Fintech",
         "id": "320925517",
         "publicId": "dominikavykydalova",
-        "profileId": "ACoAABMg700BFHeNeaArW6j8e2CJC0ViRIMCnmo",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFQuzch_U5rOg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1713526160401?e=1781136000&v=beta&t=Gs3maXJyG8jjsKSLW59cpyczx26Xnxqtv9NuKOZqpjE",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFwYCyGxSUsuw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1702999292444?e=1781136000&v=beta&t=yHwPrQ8FQ0CaG7MWUEDVdcEPNjptWKW96qGi6yYOcqE"
+        "profileId": "ACoAABMg700BFHeNeaArW6j8e2CJC0ViRIMCnmo"
       }
     },
     {
@@ -502,9 +447,7 @@
         "occupation": "Software Tester | AI Ambassador | Automation Enthusiast | IT & Economics Perspective",
         "id": "1277495204",
         "publicId": "oliver-slivka-2589b72b7",
-        "profileId": "ACoAAEwlB6QBhliLbPTjuYgctvTqILGZ0uXR9rg",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFAZJpTuL6LKA/profile-displayphoto-shrink_800_800/B4DZVcV0HjHkAc-/0/1741010977616?e=1781136000&v=beta&t=rKvAKe_2NYqwJWt79CkifUf716ZeKQpagVmZV8gqOLQ",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG_kqG5rFtekA/profile-displaybackgroundimage-shrink_350_1400/B4DZVcafJDHAAY-/0/1741012202796?e=1781136000&v=beta&t=QSucYuVbBQxZwVeHzPPcxd03q-8PldC8rK3_O-ZNKe4"
+        "profileId": "ACoAAEwlB6QBhliLbPTjuYgctvTqILGZ0uXR9rg"
       }
     },
     {
@@ -515,9 +458,7 @@
         "occupation": "junior react developer | lifelong hands-on learner 📚",
         "id": "244185326",
         "publicId": "barbora-lendacka",
-        "profileId": "ACoAAA6N-O4BkRvPPyIgRFUKOlr5LSE8hcrD3UQ",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQE5OKdwPiArDg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729857457613?e=1781136000&v=beta&t=5W6LFdsF3fy5yAqp6Pi7el03yHSW3TDXJpJlDXVXhLI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQEVz3fJnY0J5g/profile-displaybackgroundimage-shrink_350_1400/B56ZcmxjDMGQAc-/0/1748702213960?e=1781136000&v=beta&t=B1meT8DW8qkAtlXBAsRhra3Tps9dznwKLiHIxUQRtJs"
+        "profileId": "ACoAAA6N-O4BkRvPPyIgRFUKOlr5LSE8hcrD3UQ"
       }
     },
     {
@@ -527,8 +468,7 @@
         "universalName": "digitalnicesko",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:104701463",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQGaScH4OZgjUg/company-logo_400_400/B4EZlb.gakK0AY-/0/1758184737290/digitalnicesko_logo?e=1781136000&v=beta&t=u-SyMcDHLkaw1_XYb2Si5nYC5_q0RojMGA1ntO5YAgY"
+        "entityUrn": "urn:li:fs_miniCompany:104701463"
       }
     }
   ],
@@ -548,12 +488,9 @@
     "occupation": "AI Specialist at Raiffeisenbank a.s.",
     "id": "475183572",
     "publicId": "martin-rapavy",
-    "profileId": "ACoAABxSudQBHuhA8cJ5OL9XXk9jIvrhocisM3w",
-    "picture": "https://media.licdn.com/dms/image/v2/D4E03AQG-uEYWYQCi4w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1691341533471?e=1781136000&v=beta&t=TPnx6_RUaVTc-zVJyopipcS6x0aME46dvKqyIHnqifE",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFwzvr2gYb0EA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1716196276872?e=1781136000&v=beta&t=WHgrvkrw78fRS0FNPdG84I2uf_O9Aj4XkZP7HZ0Jbo8"
+    "profileId": "ACoAABxSudQBHuhA8cJ5OL9XXk9jIvrhocisM3w"
   },
   "authorProfileId": "martin-rapavy",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/D4E03AQG-uEYWYQCi4w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1691341533471?e=1781136000&v=beta&t=TPnx6_RUaVTc-zVJyopipcS6x0aME46dvKqyIHnqifE",
   "authorType": "Person",
   "authorName": "Martin Rapavý",
   "authorProfileUrl": "https://www.linkedin.com/in/martin-rapavy?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAABxSudQBHuhA8cJ5OL9XXk9jIvrhocisM3w",

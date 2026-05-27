@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4E22AQE1hZpunAEblw/feedshare-shrink_1280/feedshare-shrink_1280/0/1607328781638?e=1781136000&v=beta&t=jWfDu-XXjY3MOAt63prvj4etQXMDjIxNSc9jy_6CUOY"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6741625539804631040",
   "url": "https://www.linkedin.com/posts/honzajavorek_st%C3%A1le-se-m%C4%9B-pt%C3%A1te-na-mentoring-v-%C4%8Desku-activity-6741625539804631040-udzc",
@@ -24,8 +22,6 @@
         "id": "161000370",
         "publicId": "janastara",
         "profileId": "ACoAAAmYq7IBuzhl4URXOeq6B12fEl9bTL42ouM",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQFjYrW2vimj2Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517417501035?e=1781136000&v=beta&t=jryhAle-GFwVkBnL-RBNylw9zfLMjrt8xRL-6tqwwM4",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQEfCb1CHzJZLw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517417504049?e=1781136000&v=beta&t=CaF1wJxfptzUZ7bu1IAl0DcNvz098Ic6eVcymb5P1rI",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -43,8 +39,7 @@
             "universalName": "femme-palette",
             "active": true,
             "showcase": false,
-            "entityUrn": "urn:li:fs_miniCompany:10137789",
-            "logoUrl": "https://media.licdn.com/dms/image/v2/C560BAQG5o4kwf2AJ_Q/company-logo_400_400/company-logo_400_400/0/1630654224175/femme_palette_logo?e=1781136000&v=beta&t=SYSGTrG9FHZTL3k1zHEzGkgOxh6y1NUYX47dL4XGe6o"
+            "entityUrn": "urn:li:fs_miniCompany:10137789"
           }
         }
       ],
@@ -56,8 +51,6 @@
         "id": "231542737",
         "publicId": "lucieneumanova",
         "profileId": "ACoAAA3ND9EBg_BJe6veTJyvop2Y8q2nUCy8JU4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFHLIjklyWk9A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1692024313456?e=1781136000&v=beta&t=RK_0UomgeBOCi_9lCiebp5nJO3zRVLFGWP9HW5Iyuxw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHbeqndsJ_9Qw/profile-displaybackgroundimage-shrink_350_1400/B4DZnIcNMtJAAY-/0/1760004463148?e=1781136000&v=beta&t=xOzsLTDlR39QbnEyfvTbJhKOhBQoPTTl0r7T4kMigTs",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -71,9 +64,7 @@
         "occupation": "Software developer - React (Native), Typescript, Node",
         "id": "769411064",
         "publicId": "karnik-jan",
-        "profileId": "ACoAAC3cR_gBt3A0SdHO3277X-UwkXuXuP-9MRg",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQFNC1A_ETXS7w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1724878482046?e=1781136000&v=beta&t=C0v0dH6KZaJkPj9eDMra7_wXZLs1A2XGfl4-4RU0cfE",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQETC3kA-zOxrQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1682272044683?e=1781136000&v=beta&t=EYJ4jcENq7cObVkQC2DtxcUzudjzIpoH1pZ7lHrALns"
+        "profileId": "ACoAAC3cR_gBt3A0SdHO3277X-UwkXuXuP-9MRg"
       }
     },
     {
@@ -84,9 +75,7 @@
         "occupation": "Advanced visual communication | 3D, AR, VR, AI | Helping companies communicate with impact end emotion - through powerful visual tools",
         "id": "423821716",
         "publicId": "vaclav-vacek",
-        "profileId": "ACoAABlDAZQB52y6-adffePhr2KtuAn9yvhCL30",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHtXMPOx4YlZg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1625254405050?e=1781136000&v=beta&t=8KXOoha3ueSpk04lo3PtWLw8UkK2i7xqrkGwrXQAHss",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEcsNg-Zfz_Xg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1710515580721?e=1781136000&v=beta&t=AW_lAUXQNj4PaU79TP0uVliGBIKpJPspfWOfe331G1M"
+        "profileId": "ACoAABlDAZQB52y6-adffePhr2KtuAn9yvhCL30"
       }
     },
     {
@@ -97,9 +86,7 @@
         "occupation": "Founder at Czech Wellness Institute",
         "id": "161000370",
         "publicId": "janastara",
-        "profileId": "ACoAAAmYq7IBuzhl4URXOeq6B12fEl9bTL42ouM",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQFjYrW2vimj2Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517417501035?e=1781136000&v=beta&t=jryhAle-GFwVkBnL-RBNylw9zfLMjrt8xRL-6tqwwM4",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQEfCb1CHzJZLw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1517417504049?e=1781136000&v=beta&t=CaF1wJxfptzUZ7bu1IAl0DcNvz098Ic6eVcymb5P1rI"
+        "profileId": "ACoAAAmYq7IBuzhl4URXOeq6B12fEl9bTL42ouM"
       }
     },
     {
@@ -109,8 +96,7 @@
         "universalName": "femme-palette",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:10137789",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C560BAQG5o4kwf2AJ_Q/company-logo_400_400/company-logo_400_400/0/1630654224175/femme_palette_logo?e=1781136000&v=beta&t=SYSGTrG9FHZTL3k1zHEzGkgOxh6y1NUYX47dL4XGe6o"
+        "entityUrn": "urn:li:fs_miniCompany:10137789"
       }
     },
     {
@@ -121,9 +107,7 @@
         "occupation": "Co-founder & CEO at Femme Palette | Mentoring platform & Community",
         "id": "231542737",
         "publicId": "lucieneumanova",
-        "profileId": "ACoAAA3ND9EBg_BJe6veTJyvop2Y8q2nUCy8JU4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFHLIjklyWk9A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1692024313456?e=1781136000&v=beta&t=RK_0UomgeBOCi_9lCiebp5nJO3zRVLFGWP9HW5Iyuxw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHbeqndsJ_9Qw/profile-displaybackgroundimage-shrink_350_1400/B4DZnIcNMtJAAY-/0/1760004463148?e=1781136000&v=beta&t=xOzsLTDlR39QbnEyfvTbJhKOhBQoPTTl0r7T4kMigTs"
+        "profileId": "ACoAAA3ND9EBg_BJe6veTJyvop2Y8q2nUCy8JU4"
       }
     },
     {
@@ -134,9 +118,7 @@
         "occupation": "\"It is a capital mistake to theorize before one has data.\" *cleaned data",
         "id": "775508820",
         "publicId": "nathalie-vecten",
-        "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH5sSEbnQ2Tcg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1611936430673?e=1781136000&v=beta&t=wAQsj8dSBDe6L3xt1MwxMahW3aP-D6LcuvT-utzij6s",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHDKxhi18V0lw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1599638080880?e=1781136000&v=beta&t=5JiWefMiJff9VXnKXxoAOOrnUYNFE4fW7AQAgJac6VA"
+        "profileId": "ACoAAC45U1QBBzqSyZOYlZamdQ7TUzbmXqRPKTM"
       }
     },
     {
@@ -147,8 +129,7 @@
         "occupation": "B2B SaaS | GTM",
         "id": "76732398",
         "publicId": "akash-vrma",
-        "profileId": "ACoAAASS1-4B7DI0p_stTSXog1Ge7MGnvVV4vYY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQECjr_tpq7Y8A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1715179917401?e=1781136000&v=beta&t=kYhTc5ttS91q2k2AjzhvQdsSildFea8KWGDOxgjl2Lo"
+        "profileId": "ACoAAASS1-4B7DI0p_stTSXog1Ge7MGnvVV4vYY"
       }
     },
     {
@@ -170,9 +151,7 @@
         "occupation": "Human Resources | People Strategy, Talent Acquisition",
         "id": "26544363",
         "publicId": "vendula-burdova-3a3a818",
-        "profileId": "ACoAAAGVCOsBdhjKf5niQLwnRso7XuJhV_6FA2Y",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGd1ZOFEgn59g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1702577064666?e=1781136000&v=beta&t=f--kEv_WLaTk39ESrB208yc2eEmJQZEaycvIEB_Ouvk",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEgMdnwQ6QLkg/profile-displaybackgroundimage-shrink_350_1400/B4EZk38._5KoAc-/0/1757580363947?e=1781136000&v=beta&t=kXFz4GSZXw2uRLOKarzhhA375YwpTCIpissLA6Jl0hM"
+        "profileId": "ACoAAAGVCOsBdhjKf5niQLwnRso7XuJhV_6FA2Y"
       }
     },
     {
@@ -203,12 +182,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

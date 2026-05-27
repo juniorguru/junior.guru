@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4D22AQHc0kUt8q9jGg/feedshare-shrink_1280/feedshare-shrink_1280/0/1586243582591?e=1781136000&v=beta&t=4HTuFbhnKa6-_Fi-wzvBM-UBeJLq-tN7EkRmQztu4sk"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6653187804270469120",
   "url": "https://www.linkedin.com/posts/honzajavorek_juniorguru-denikn-activity-6653187804270469120-gj0h",
@@ -20,9 +18,7 @@
         "occupation": "Software Professional (web dev, ...)",
         "id": "30342323",
         "publicId": "hozak",
-        "profileId": "ACoAAAHO_LMB1bXZQC0_3xtLWxgOUCupOG9Q1zY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFmj1OugkeBPQ/profile-displayphoto-crop_800_800/B4DZoQKlCRG8AI-/0/1761207802025?e=1781136000&v=beta&t=mOIhUYok2lhidNblcBSVYuJqwm3MCymxY2-FjF5vZR0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQECJkyhhm3Smg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1519426150922?e=1781136000&v=beta&t=zRlbiNGaneZKU_olWfmF7ktct3QW3IeqSd6yZhPK2Os"
+        "profileId": "ACoAAAHO_LMB1bXZQC0_3xtLWxgOUCupOG9Q1zY"
       }
     },
     {
@@ -33,8 +29,7 @@
         "occupation": "Software engineer",
         "id": "236612584",
         "publicId": "milancermak",
-        "profileId": "ACoAAA4aa-gBLqVwXEiLbML9LZ3yRS3lKPuyws8",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQH6onB3KdH03g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1530119781970?e=1781136000&v=beta&t=bM6nlv2yIpRLbTaEAq3YTZxykrDbgfH3htUtcmJ0lCY"
+        "profileId": "ACoAAA4aa-gBLqVwXEiLbML9LZ3yRS3lKPuyws8"
       }
     },
     {
@@ -45,8 +40,7 @@
         "occupation": "Quality Engineer at Carrier",
         "id": "221440813",
         "publicId": "martina-nezdarilikova-7511b062",
-        "profileId": "ACoAAA0y6y0BX42acEV0KZNpCYdHbZN4c3zuoNk",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQF_sOOAUlFazA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516803228708?e=1781136000&v=beta&t=un5yGDBoNKdchMn31CpZMb5CGAOaTnEX-JnFeBhc_Wc"
+        "profileId": "ACoAAA0y6y0BX42acEV0KZNpCYdHbZN4c3zuoNk"
       }
     },
     {
@@ -57,9 +51,7 @@
         "occupation": "Helping people to become junior frontend developers",
         "id": "15446232",
         "publicId": "danielsrb",
-        "profileId": "ACoAAADrsNgBFfAixAgw_mCw8WtR9SeNIvEEI8Q",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFL6A1muu1_iQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1664815242443?e=1781136000&v=beta&t=gZsiQuDXYR8uuO_-68JdcJFp1nRVo6I7-iaOUDh1GRk",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEojxUy1Cz5oQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1623442956553?e=1781136000&v=beta&t=hWIAatMfNTIgw4JUStqCUqVs88aKCIf5jtDxqtS-BHg"
+        "profileId": "ACoAAADrsNgBFfAixAgw_mCw8WtR9SeNIvEEI8Q"
       }
     },
     {
@@ -70,9 +62,7 @@
         "occupation": "Senior Data Engineer",
         "id": "256928895",
         "publicId": "barbora-kacerovska",
-        "profileId": "ACoAAA9QbH8BULNdxK71_92EwEkYXA77X2Z9O3Q",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQHs6wBSfC_Bhw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1580733851165?e=1781136000&v=beta&t=YgHPtppj59MMHfwPR_LLl9c1mfscLScp-gFtNqMOgco",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQE5WrBhoMGF0w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1586950132823?e=1781136000&v=beta&t=wjTt5FcsTZSshZB4VDejgpZgQTEDsgciMWDUTSZy8oE"
+        "profileId": "ACoAAA9QbH8BULNdxK71_92EwEkYXA77X2Z9O3Q"
       }
     },
     {
@@ -83,9 +73,7 @@
         "occupation": "Student of New Media Studies",
         "id": "254281372",
         "publicId": "hanakalivodova",
-        "profileId": "ACoAAA8oBpwB65u5nWe0nCLRJM8a5P0FLRgRUMw",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEvcMG_nhc3rQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516429983321?e=1781136000&v=beta&t=u9zMBU7eD0uY19DFMJbzxbmv2Z0-pYKan42v02BrDhY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHrMLrb1Lkd4A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1605601812342?e=1781136000&v=beta&t=S4QYM2Sr58MWd_huBiywpStII0Ry_JZzq-HGLEcTfvA"
+        "profileId": "ACoAAA8oBpwB65u5nWe0nCLRJM8a5P0FLRgRUMw"
       }
     },
     {
@@ -96,8 +84,7 @@
         "occupation": "Head of Engineering",
         "id": "76115329",
         "publicId": "vachapetr",
-        "profileId": "ACoAAASJbYEBMeOmhTR-EWaXg0q9HUTng5HCt9E",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGCiZVCJ_C1OA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1557674174077?e=1781136000&v=beta&t=BhlxGr50WWidcbX2Ie9bGUVi2zrduoaH7ODcwifpQcA"
+        "profileId": "ACoAAASJbYEBMeOmhTR-EWaXg0q9HUTng5HCt9E"
       }
     },
     {
@@ -108,9 +95,7 @@
         "occupation": "Project Manager | F. X. Meiller | PMI Member",
         "id": "265700699",
         "publicId": "global-po-pm",
-        "profileId": "ACoAAA_WRVsBilg4CLnnMoW_qvMWIrKCgsHqTuY",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQFhyjmqzPG80w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1580742029784?e=1781136000&v=beta&t=AxvFb696sNLaFYSfAPHq9tSgSF83XTmatCowYCF6tMA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQEsWYUxRPOjjQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1576575871885?e=1781136000&v=beta&t=sFS0lCRdHpZEUIWReywJpJeEO5xcI6lFHAO3gX2f_ek"
+        "profileId": "ACoAAA_WRVsBilg4CLnnMoW_qvMWIrKCgsHqTuY"
       }
     },
     {
@@ -121,9 +106,7 @@
         "occupation": "I write Javascript",
         "id": "3622309",
         "publicId": "fczbkk",
-        "profileId": "ACoAAAA3RaUBkLK5zgI4nhqFBnOslbg1cmFgIDs",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHtF6ZOb4Zi2A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1636627534682?e=1781136000&v=beta&t=TmhiRV-keoSa_3fEOIIgORRuyBu3_aOEPwzw_jNo5DE",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5116AQFAcBZsXAJRUg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516243263587?e=1781136000&v=beta&t=5QK1TAcxPjYzZWxFh10Sv5LxS9_Aa4ry5bDDCIS_qCc"
+        "profileId": "ACoAAAA3RaUBkLK5zgI4nhqFBnOslbg1cmFgIDs"
       }
     },
     {
@@ -134,8 +117,7 @@
         "occupation": "Host @ Junior Guru podcast.",
         "id": "190849253",
         "publicId": "pavlinafronkova",
-        "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk"
+        "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4"
       }
     }
   ],
@@ -155,12 +137,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

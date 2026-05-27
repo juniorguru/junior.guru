@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4D22AQFo6qgF4OhlPw/feedshare-shrink_800/feedshare-shrink_800/0/1647860249199?e=1781136000&v=beta&t=8GaxJXOhnZWnA51ahXGZguTx2FRkT5DcjJ4OKEep5HA"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6911626840260374529",
   "url": "https://www.linkedin.com/posts/honzajavorek_jetveo-low-code-platforma-pro-c-kdo-activity-6911626840260374529-5D2g",
@@ -19,8 +17,7 @@
         "universalName": "jetveo",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:42793739",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQFqC2m5j31_wA/company-logo_400_400/company-logo_400_400/0/1634903202610/jetveo_logo?e=1781136000&v=beta&t=0BsO2yNfcCGJhEYMG_V-Yi8ewJ0JKHYGE6qiCKBAY0o"
+        "entityUrn": "urn:li:fs_miniCompany:42793739"
       }
     },
     {
@@ -33,8 +30,7 @@
         "occupation": "Software Developer at FNZ",
         "id": "893538896",
         "publicId": "jakub-ráček-3282b220b",
-        "profileId": "ACoAADVCUlABzmTUS_fl6YKoRzXruqsrb9shBqA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFdt-Wep8cJHQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1617958157697?e=1781136000&v=beta&t=uuljVxQJcI62ivoURuO6taAP8eKLtGXTpJT8EnaSx-Y"
+        "profileId": "ACoAADVCUlABzmTUS_fl6YKoRzXruqsrb9shBqA"
       }
     },
     {
@@ -47,9 +43,7 @@
         "occupation": "I help mid-sized companies replace Excel, legacy systems & ERP gaps with custom software — working prototype in 10 days, not 6 months | Founder: Alfaveo, Jetveo, Logisio",
         "id": "339264372",
         "publicId": "daliborhoufek",
-        "profileId": "ACoAABQ4w3QBE1Z4jFt6WPBwGwvL7W090hIgi5I",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQER58FG-qukuA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1659456905564?e=1781136000&v=beta&t=P_z_03auYnO2Yt76gB1tzLQvVadG0AdRxepcr1jOHvI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGuyeYA-1Np7A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1723720641572?e=1781136000&v=beta&t=pZP6NmQ6tRoHJJAN-yK1LEhlpCLlCT0Xo9mxTiIoCzM"
+        "profileId": "ACoAABQ4w3QBE1Z4jFt6WPBwGwvL7W090hIgi5I"
       }
     }
   ],
@@ -68,8 +62,6 @@
         "id": "339264372",
         "publicId": "daliborhoufek",
         "profileId": "ACoAABQ4w3QBE1Z4jFt6WPBwGwvL7W090hIgi5I",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQER58FG-qukuA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1659456905564?e=1781136000&v=beta&t=P_z_03auYnO2Yt76gB1tzLQvVadG0AdRxepcr1jOHvI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQGuyeYA-1Np7A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1723720641572?e=1781136000&v=beta&t=pZP6NmQ6tRoHJJAN-yK1LEhlpCLlCT0Xo9mxTiIoCzM",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -87,8 +79,6 @@
         "id": "8517488",
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -102,9 +92,7 @@
         "occupation": "HR Manager v Pale Fire Capital | Head of HR v Aukro | HR consultant and mentor | #sharingiscaring",
         "id": "473833031",
         "publicId": "petranulickova",
-        "profileId": "ACoAABw-HkcBifENxX8nxAs2YjwxbI6b2XtAF98",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHnKx1150QjzQ/profile-framedphoto-shrink_400_400/B4DZ5EYkX3J4Ac-/0/1779263751874?e=1780430400&v=beta&t=pWJ51Ntw0jR9QQT0pS0cVga8Y5H1PX6eMgBC8eZYwyo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQExwjEQhQ99TA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1676378924015?e=1781136000&v=beta&t=rpomntKe5fPHScYScrE5n1-ok01d_UuxKpUPUaPI93g"
+        "profileId": "ACoAABw-HkcBifENxX8nxAs2YjwxbI6b2XtAF98"
       }
     },
     {
@@ -115,8 +103,7 @@
         "occupation": "Open-source enthusiast, connecting the dots in Product teams.",
         "id": "104476307",
         "publicId": "janhovancik",
-        "profileId": "ACoAAAY6LpMBnDDraQ-laCszWxz9ppHK1QE1PwI",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQF_FFLlAKcJWA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517623716747?e=1781136000&v=beta&t=s99zSKF4yMpKH45sh1rzA2t1YIsYBAotFWd23bo0hG0"
+        "profileId": "ACoAAAY6LpMBnDDraQ-laCszWxz9ppHK1QE1PwI"
       }
     },
     {
@@ -127,9 +114,7 @@
         "occupation": "Software Developer",
         "id": "913535117",
         "publicId": "michalkober",
-        "profileId": "ACoAADZzcI0BzrnL2gIaClzkp6gofDiSGHWHYm8",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQGC_G0B0xJblg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1634018621598?e=1781136000&v=beta&t=pmg6wwTUq6U1pg7t-RuK0S3rHU6AX7cBN_iUN-mN2wo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQFvtndids3ICQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1636565319456?e=1781136000&v=beta&t=CBbe7RkvJQ33SNbkTHmwYzN5CgM4HAXB8xEzToWgxmY"
+        "profileId": "ACoAADZzcI0BzrnL2gIaClzkp6gofDiSGHWHYm8"
       }
     },
     {
@@ -139,8 +124,7 @@
         "universalName": "jetveo",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:42793739",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQFqC2m5j31_wA/company-logo_400_400/company-logo_400_400/0/1634903202610/jetveo_logo?e=1781136000&v=beta&t=0BsO2yNfcCGJhEYMG_V-Yi8ewJ0JKHYGE6qiCKBAY0o"
+        "entityUrn": "urn:li:fs_miniCompany:42793739"
       }
     },
     {
@@ -151,9 +135,7 @@
         "occupation": "I help factories digitise maintenance. With or without AI. Always with people first.",
         "id": "178006447",
         "publicId": "msvetlana",
-        "profileId": "ACoAAAqcKa8Bousd5uBo-bZZ9dq6qVlYKqtHvSc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF2d-GcOsk4Bg/profile-displayphoto-crop_800_800/B4DZ35j9rdHwAM-/0/1778008453433?e=1781136000&v=beta&t=drmOX7xsDyMGZaown-MFYSZXwtE2FSNpuvIxF5sa-CA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEafK1Y8bDUqw/profile-displaybackgroundimage-shrink_350_1400/B4DZWwQJBHHIAc-/0/1742418779616?e=1781136000&v=beta&t=0a47VNFLf1nQKjTg2JnpC3ODNNzCN24RoEDT7btdLtM"
+        "profileId": "ACoAAAqcKa8Bousd5uBo-bZZ9dq6qVlYKqtHvSc"
       }
     },
     {
@@ -164,9 +146,7 @@
         "occupation": "Talent Sourcer @ SentinelOne.ai | The Future of CyberSec will be determined by You - let’s Secure Tomorrow™ together! 🛡️👾 | In 💜 with s1.ai/PurpleAI | 🕵️‍♂️ CyBeer security meetups organizer",
         "id": "322518163",
         "publicId": "vaclavkotyk",
-        "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHSFfNAAQ3ojA/profile-framedphoto-shrink_800_800/B4EZb.aDPLHAAs-/0/1748024964389?e=1780430400&v=beta&t=IvlxsfQQdb8KqO1QvRvDLxo7b9-V1Qrgz29nKWhJehw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG_GZHPXo_drQ/profile-displaybackgroundimage-shrink_350_1400/B4EZhWDO5THEAY-/0/1753790347174?e=1781136000&v=beta&t=TTJXtHJi0vF694Nao68XfleeSQJvzU06We8EI4GVwQI"
+        "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0"
       }
     },
     {
@@ -177,8 +157,7 @@
         "occupation": "Software Developer at FNZ",
         "id": "893538896",
         "publicId": "jakub-ráček-3282b220b",
-        "profileId": "ACoAADVCUlABzmTUS_fl6YKoRzXruqsrb9shBqA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFdt-Wep8cJHQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1617958157697?e=1781136000&v=beta&t=uuljVxQJcI62ivoURuO6taAP8eKLtGXTpJT8EnaSx-Y"
+        "profileId": "ACoAADVCUlABzmTUS_fl6YKoRzXruqsrb9shBqA"
       }
     },
     {
@@ -189,9 +168,7 @@
         "occupation": "SEO/UX Specialist at Webmium ✅ Aspiring Backend Developer at Home ✅",
         "id": "356811200",
         "publicId": "tomasmanhal",
-        "profileId": "ACoAABVEgcABhXssunqzWgZ32PhPvDuM7pOY7Sw",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQGInNVdLygaYA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1643616498455?e=1781136000&v=beta&t=ZuyL6gCtMjtS2Bp5JitUt78VFkpsCsQXNtHO9yl9H4g",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQGzLIim8zGACA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516975456614?e=1781136000&v=beta&t=6VFaoiFNvKKxzcGRnW_GTyGLSluSP2AQ71SpObNaKLo"
+        "profileId": "ACoAABVEgcABhXssunqzWgZ32PhPvDuM7pOY7Sw"
       }
     },
     {
@@ -202,9 +179,7 @@
         "occupation": "🚀 Innovation | ⚙️ Automation | 💻 SW Dev | 🤖 AI | „Jsem Váš technologický partner.“",
         "id": "513948013",
         "publicId": "tomas-haubert",
-        "profileId": "ACoAAB6iOW0BqcPkqv7x3yI1sylG9aFaHBbjRoc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQE5tHSbgUTUqw/profile-framedphoto-shrink_800_800/B4EZrRwEgyKkAg-/0/1764455631157?e=1780430400&v=beta&t=43EpR81-CmRPVIMJedzQOKYVmW74DnkOSkbAptp_irc",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHdYL7vFTrW4w/profile-displaybackgroundimage-shrink_350_1400/B4EZsCGUzmIIAY-/0/1765266774253?e=1781136000&v=beta&t=ZhieXSOq_ucvJdCT3KjJrlF7eF_PXgXPlu57lt1UEGE"
+        "profileId": "ACoAAB6iOW0BqcPkqv7x3yI1sylG9aFaHBbjRoc"
       }
     },
     {
@@ -215,9 +190,7 @@
         "occupation": "Product design teams & systems 🚀",
         "id": "530422661",
         "publicId": "adina-fox",
-        "profileId": "ACoAAB-dm4UBphpPt0M3o_HcoFhUNSFgam6yIyY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFo9U_21z2zFQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725308203416?e=1781136000&v=beta&t=Fd5s_bPfqV9Zum-qkjT2BT8KUdWKCIg9uy1iP3ipCrw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQELga56ku2WNQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1725308323511?e=1781136000&v=beta&t=kl_7bliQ0v3-LukBvPWRe4MSEbzY6Ek4O7jp0QquIkE"
+        "profileId": "ACoAAB-dm4UBphpPt0M3o_HcoFhUNSFgam6yIyY"
       }
     }
   ],
@@ -237,12 +210,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

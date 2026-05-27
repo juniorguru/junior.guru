@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C5622AQGGvKWGHlGhxg/feedshare-image-high-res/feedshare-image-high-res/0/1670520196998?e=1781136000&v=beta&t=7dLld84GztI0aoJbAn_VyXkIsOINrCn0YIP5lVSZmno"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:7006669547650899968",
   "url": "https://www.linkedin.com/posts/honzajavorek_marketing-emailing-newsletter-activity-7006669547650899968-D-1R",
@@ -25,8 +23,6 @@
         "id": "961155918",
         "publicId": "timothy-hobbs-5a6a80229",
         "profileId": "ACoAADlKE04Bxq2wlmaK3PahjO_16IaawrPRW3s",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQE4xIZTmQIt7g/profile-displayphoto-crop_800_800/B4EZgpi9aCGwAM-/0/1753043688020?e=1781136000&v=beta&t=QR4rcu00PyLR7xJhzVcQfgEWAIqCa1eTSrW_CQdv2X0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEGFJlIx3EvDA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1692554125867?e=1781136000&v=beta&t=wLauGIxOqqIsrkA-mSZHXVdrSJFujjckze7K1V9Dpr8",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -44,8 +40,6 @@
         "id": "140017332",
         "publicId": "mwenisch",
         "profileId": "ACoAAAhYfrQB_PfnP77TNy12rVIgZaSg4ntxNQI",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFDcQx7q740RQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1601422705043?e=1781136000&v=beta&t=ShcZuGo9FBS5mI91ucltUbtKK6GqMqtjo6u82XRBK6M",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQExa7PgQIUDdA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1699636955431?e=1781136000&v=beta&t=FQxvHhXoo_oA5O9GTjlk1LPmxQyTQ3RjD2K7hZw908Y",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -63,8 +57,6 @@
         "id": "110092052",
         "publicId": "zapadlo",
         "profileId": "ACoAAAaP3xQB9OmVR_H_rXxr57aIJAftAOFahUs",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEC6JZP0jAE5A/profile-displayphoto-crop_800_800/B4EZiACje6GwAI-/0/1754494810986?e=1781136000&v=beta&t=69zGDVDEsUr5PukYrdlxmWbuF7bmV_Rk_OZloYqmv4Y",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHL7rOg96wbpw/profile-displaybackgroundimage-shrink_350_1400/B4DZ5J79pbJYAU-/0/1779356916618?e=1781136000&v=beta&t=buaM98C3-LroCzT-M5lGeVcn964WC7cuUW91BRlUDmQ",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -82,8 +74,6 @@
         "id": "110092052",
         "publicId": "zapadlo",
         "profileId": "ACoAAAaP3xQB9OmVR_H_rXxr57aIJAftAOFahUs",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEC6JZP0jAE5A/profile-displayphoto-crop_800_800/B4EZiACje6GwAI-/0/1754494810986?e=1781136000&v=beta&t=69zGDVDEsUr5PukYrdlxmWbuF7bmV_Rk_OZloYqmv4Y",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHL7rOg96wbpw/profile-displaybackgroundimage-shrink_350_1400/B4DZ5J79pbJYAU-/0/1779356916618?e=1781136000&v=beta&t=buaM98C3-LroCzT-M5lGeVcn964WC7cuUW91BRlUDmQ",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -97,9 +87,7 @@
         "occupation": "I help great brands grow @STRV",
         "id": "337285701",
         "publicId": "strv-norbert-cerveny",
-        "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGKIAaUJPtlmA/profile-displayphoto-crop_800_800/B4DZ0jT_lBIEAI-/0/1774413941709?e=1781136000&v=beta&t=ioRFNZY53XZXWk1BvKTQdIygU-xxLKoyNysEAYklp0I",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG0ekEnNy2Hcw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0jTiNeGsAk-/0/1774413817026?e=1781136000&v=beta&t=_KMbjLzzfd2pO9gizTz2iWgDOkq5RQ3NpzDT5fOljNI"
+        "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg"
       }
     },
     {
@@ -110,9 +98,7 @@
         "occupation": "Expert in digitalization and automation - I design and build tools that make life easier and improve business ✅ I use n8n, Make, Airtable and others - I will also connect your systems using API🔌",
         "id": "361379826",
         "publicId": "beranekondrej",
-        "profileId": "ACoAABWKN_IBkaNltRPOCmxSsntH5lcxyV5iIDE",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQEC7ai_QT-zlw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1624970591124?e=1781136000&v=beta&t=DXMkrFBwR8EaKJ05JXvtNWEFfZRegZvafSgegQU2S4I",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHCWsfnyXMViA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1733484307182?e=1781136000&v=beta&t=qCwlmCXBu2ReDTQY_v_Mgv5FSi6e-H00Bz283k5sBeU"
+        "profileId": "ACoAABWKN_IBkaNltRPOCmxSsntH5lcxyV5iIDE"
       }
     },
     {
@@ -123,9 +109,7 @@
         "occupation": "Software Engineer",
         "id": "530925455",
         "publicId": "mia-bajic",
-        "profileId": "ACoAAB-lR48BFvPhQ6doZNGTRVftkLrzcnIv-Ss",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEFktnPzIQA3g/profile-displayphoto-shrink_400_400/B4EZdfBBQAHYAs-/0/1749645792668?e=1781136000&v=beta&t=H-XclkbtaMI2HfxaPAIvGsaIuvs_3HunEbU_zF5R2XQ",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGmHzyPBT7q2g/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1738012168138?e=1781136000&v=beta&t=bGVRTPD07nQuQcDx_7F1m2z7h-P_vw_6AF5KkU2lLp4"
+        "profileId": "ACoAAB-lR48BFvPhQ6doZNGTRVftkLrzcnIv-Ss"
       }
     },
     {
@@ -136,9 +120,7 @@
         "occupation": "AI Consultant & Keynote Speaker | Helping DACH & CZ businesses implement AI that actually works | Oxford AI Governance | AI Personality 2024 (CZ) | 🇩🇪🇬🇧🇨🇿",
         "id": "215237613",
         "publicId": "barbora-malinovska",
-        "profileId": "ACoAAAzUQ-0BK3LDuw8LHKRwscGJ5Ocl8zWnoNo",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEX-Y34RV6EfQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1708345592725?e=1781136000&v=beta&t=c7yBWqBiwRkYPEpTvWnSY9WfvtAJ2o8W_biJ7AEzJzU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQG3QXx6ekCtZw/profile-displaybackgroundimage-shrink_350_1400/B56ZzcR38lGgAY-/0/1773222200046?e=1781136000&v=beta&t=fBvGhH5FJyReqvcAcA8Cli9WfI6d6qosHk3G9Gf4xY8"
+        "profileId": "ACoAAAzUQ-0BK3LDuw8LHKRwscGJ5Ocl8zWnoNo"
       }
     },
     {
@@ -149,9 +131,7 @@
         "occupation": "HR Manager v Pale Fire Capital | Head of HR v Aukro | HR consultant and mentor | #sharingiscaring",
         "id": "473833031",
         "publicId": "petranulickova",
-        "profileId": "ACoAABw-HkcBifENxX8nxAs2YjwxbI6b2XtAF98",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQHnKx1150QjzQ/profile-framedphoto-shrink_400_400/B4DZ5EYkX3J4Ac-/0/1779263751874?e=1780430400&v=beta&t=pWJ51Ntw0jR9QQT0pS0cVga8Y5H1PX6eMgBC8eZYwyo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQExwjEQhQ99TA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1676378924015?e=1781136000&v=beta&t=rpomntKe5fPHScYScrE5n1-ok01d_UuxKpUPUaPI93g"
+        "profileId": "ACoAABw-HkcBifENxX8nxAs2YjwxbI6b2XtAF98"
       }
     },
     {
@@ -162,9 +142,7 @@
         "occupation": "Nefunguje mi to → Super, už to jede | Feed specialista & Customer Success @Mergado",
         "id": "904009499",
         "publicId": "filip-prudek",
-        "profileId": "ACoAADXiFxsBDrfvLqXfc46dYlgCQklCaExwUMY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFupO9P-a5bFw/profile-displayphoto-crop_800_800/B4DZ5JiGdVJYAM-/0/1779350139114?e=1781136000&v=beta&t=Iw5Hw9pEtYfXe0-wPQXIOnKKUFZqdaHEFcw06ySiAyI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFct0esxDP2iw/profile-displaybackgroundimage-shrink_350_1400/B4DZ5JhtJBKAAU-/0/1779350033262?e=1781136000&v=beta&t=JkmSvMYWwXWWoFjbhRDQTIId6IpLExcH82QOIBlmb28"
+        "profileId": "ACoAADXiFxsBDrfvLqXfc46dYlgCQklCaExwUMY"
       }
     }
   ],
@@ -184,12 +162,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4D22AQGwSwAXmkFVQg/feedshare-shrink_1280/feedshare-shrink_1280/0/1583394303173?e=1781136000&v=beta&t=7pDpALp39YW6VbWGOXo-64M6x67j9ok6IBepuu2dTPI"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6641237061749747712",
   "url": "https://www.linkedin.com/posts/honzajavorek_p%C5%99idal-jsem-ivetin-blog-o-tom-jak-se-na-activity-6641237061749747712-tNUJ",
@@ -20,9 +18,7 @@
         "occupation": "Senior Data Scientist | AI & Digital Innovation Strategist | PhD Student | VSB - Technical University of Ostrava",
         "id": "255272676",
         "publicId": "robert-s-2b05a771",
-        "profileId": "ACoAAA83JuQBIi82v-Ambqv2iiOGMA3iOJNluDY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGiwUvjw5ivug/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1689840862135?e=1781136000&v=beta&t=-4jNXqEDKb5LOnOcVN6yrsLc-Mx8zOBmmGDuy9P51NU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEPjR-q-30r2A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1554402312474?e=1781136000&v=beta&t=AlfaXrpX-JKRy7YTf8XOjM0ekc1Tr7RGNbqVsTM_SyI"
+        "profileId": "ACoAAA83JuQBIi82v-Ambqv2iiOGMA3iOJNluDY"
       }
     },
     {
@@ -33,9 +29,7 @@
         "occupation": "Learning & Development | Leadership | People & Team Growth | Digital Learning & AI in Education | Education & Community Builder",
         "id": "127887588",
         "publicId": "mariafalterova22",
-        "profileId": "ACoAAAefaOQBjXFsYP5OkNAQF8lCOH9MVLfL8IE",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQGZKfQJ8DUe1Q/profile-framedphoto-shrink_800_800/B4DZ1r99lpK4Ak-/0/1775632898806?e=1780430400&v=beta&t=0CZd8muD5-yUui7E_sOmVmrqQ34vNl55HQwgJ2jJIoc",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFSAGDFOuEXIQ/profile-displaybackgroundimage-shrink_350_1400/B4DZ1r7aSNK4AY-/0/1775632231137?e=1781136000&v=beta&t=sq2z1nro38tD_Hgh25pLxZxSTyD0bE8Vn6l5JgHstRI"
+        "profileId": "ACoAAAefaOQBjXFsYP5OkNAQF8lCOH9MVLfL8IE"
       }
     },
     {
@@ -46,9 +40,7 @@
         "occupation": "🧑‍🤝‍🧑 Working with and for communities, organizing events, studying service design, having fun in all that. ✏️",
         "id": "58610470",
         "publicId": "anezkamll",
-        "profileId": "ACoAAAN-UyYBW_5FlwBOtClk7WVpl3JlZMHMVn4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEdF62o6gzpHQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731942194763?e=1781136000&v=beta&t=3Pf8QBLlGpzI8zRBBfihj0pgDvCgOUoUJyTfMptX81Y",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQHKgfW_KDXR1Q/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1620408094586?e=1781136000&v=beta&t=qk_LRa-WT8rOvas9-jwGjCle3e76MkO7wIKYYCWCZag"
+        "profileId": "ACoAAAN-UyYBW_5FlwBOtClk7WVpl3JlZMHMVn4"
       }
     },
     {
@@ -59,9 +51,7 @@
         "occupation": "Software Professional (web dev, ...)",
         "id": "30342323",
         "publicId": "hozak",
-        "profileId": "ACoAAAHO_LMB1bXZQC0_3xtLWxgOUCupOG9Q1zY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFmj1OugkeBPQ/profile-displayphoto-crop_800_800/B4DZoQKlCRG8AI-/0/1761207802025?e=1781136000&v=beta&t=mOIhUYok2lhidNblcBSVYuJqwm3MCymxY2-FjF5vZR0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQECJkyhhm3Smg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1519426150922?e=1781136000&v=beta&t=zRlbiNGaneZKU_olWfmF7ktct3QW3IeqSd6yZhPK2Os"
+        "profileId": "ACoAAAHO_LMB1bXZQC0_3xtLWxgOUCupOG9Q1zY"
       }
     },
     {
@@ -72,8 +62,7 @@
         "occupation": "cyp",
         "id": "106076066",
         "publicId": "jiri-gunka",
-        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGjycZdsqX9ww/profile-displayphoto-crop_800_800/B4DZjBYhBpGQAQ-/0/1755591087410?e=1781136000&v=beta&t=wVIgd5mwqIYPXpFj5d6Nr2x8-VHHyAZ4o1qWAcv4nhQ"
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
       }
     },
     {
@@ -84,8 +73,7 @@
         "occupation": "Senior Software Engineer | Team Builder & Engineering Leader | Driving quality, timely delivery and trust-based team culture | Founder at Veritas Dev",
         "id": "16893430",
         "publicId": "nowaja",
-        "profileId": "ACoAAAEBxfYBVYrri33NdhoMSs5DohrgctITu4o",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQEafw0chkvcvg/profile-displayphoto-crop_800_800/B4DZ3dcQNYJYAI-/0/1777536671279?e=1781136000&v=beta&t=3NGDh8MfgdYU6QtTxt9a6eAe1pyYG6u6-Cg5KoyNc0g"
+        "profileId": "ACoAAAEBxfYBVYrri33NdhoMSs5DohrgctITu4o"
       }
     },
     {
@@ -96,9 +84,7 @@
         "occupation": "Full-Stack Software Engineer & Problem Solver | Open Source maintainer & contributor | Alumni GitHub Star | AsyncAPI maintainer | PSD I / PSM I / GCP / LFCA",
         "id": "58899881",
         "publicId": "vladimirgorej",
-        "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHP1QsKaZTw5Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1720878191370?e=1781136000&v=beta&t=nxFAGloZTLLj4IfsdUrAgIWdCPqihUdH6GbjDvQ02KI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQG1bGQIi0eN-g/profile-displaybackgroundimage-shrink_350_1400/B56ZsnGMs8JUAY-/0/1765887496970?e=1781136000&v=beta&t=c-tUr6BmtfsWTUqP39ZWtDB-NjxB_hfH72HKcJ-t7iA"
+        "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
       }
     },
     {
@@ -129,12 +115,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

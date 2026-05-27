@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C5622AQFFhmDRcS98vg/feedshare-shrink_800/feedshare-shrink_800/0/1592809982703?e=1781136000&v=beta&t=HqF5bhv6e2sv3kjVCMnFrZc0j3PLsuezGvICyvpt3es"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6680729283675205632",
   "url": "https://www.linkedin.com/posts/honzajavorek_uk%C3%A1zka-z-p%C5%99ipravovan%C3%A9-p%C5%99%C3%ADru%C4%8Dky-pro-juniory-activity-6680729283675205632-ccPX",
@@ -25,7 +23,6 @@
         "id": "13393339",
         "publicId": "thanak",
         "profileId": "ACoAAADMXbsBsLV-M4QCbe1wPW1VjI7Zlh3aRUQ",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFi6AEnMN44jQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517693849822?e=1781136000&v=beta&t=jBH3dQHu4cpEQBWCK5Ttm8FgXUhsmpuJbbfxM8nHdm4",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -43,8 +40,6 @@
         "id": "20334410",
         "publicId": "lubosracansky",
         "profileId": "ACoAAAE2R0oBGXvR6LHbw738r7LTmMdhWnyymsU",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQGAKqeF_cVJoA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1684758724981?e=1781136000&v=beta&t=UULINccTo51CdEZyus_aXI4scNPpOR_xkWAJLYmJNJ4",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG5fpDeDsBaDA/profile-displaybackgroundimage-shrink_350_1400/B4EZkOdYN3IQAY-/0/1756884209852?e=1781136000&v=beta&t=LB4bSuSgN0Kc-dyNmh4Zen74TJK4k4h0TkkNwGiAzZQ",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -58,9 +53,7 @@
         "occupation": "Softwarový inženýr ve společnosti Security Scorecard",
         "id": "199634401",
         "publicId": "nataliemikesova",
-        "profileId": "ACoAAAvmLeEBB2iZ_vXMYhR3WoUsSC-k3iPuG4Y",
-        "picture": "https://media.licdn.com/dms/image/v2/D5635AQGXW0U7XhrOLA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1660002772504?e=1780430400&v=beta&t=v22RqlMgRS7YScN5sBsUHO0Ww5TuKTAYClQDy0LF03w",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5116AQEPyNrN9dTZ2A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1516945761838?e=1781136000&v=beta&t=HFBHan_vfdVCLQsS4inP5_dlCg6o4SaQz4GhEGNiWEw"
+        "profileId": "ACoAAAvmLeEBB2iZ_vXMYhR3WoUsSC-k3iPuG4Y"
       }
     },
     {
@@ -82,8 +75,7 @@
         "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
         "id": "183293578",
         "publicId": "dariagru",
-        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0"
       }
     },
     {
@@ -94,8 +86,7 @@
         "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
         "id": "551084893",
         "publicId": "grumpyprogrammer",
-        "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQFnQ8ypdjjyvg/profile-displayphoto-crop_800_800/B4DZxZUZFlHkAI-/0/1771025047361?e=1781136000&v=beta&t=fFiIDptOBoMzbUkj1Lvpd8USzHMX1nkcCCOr19Su_4c"
+        "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4"
       }
     },
     {
@@ -126,12 +117,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

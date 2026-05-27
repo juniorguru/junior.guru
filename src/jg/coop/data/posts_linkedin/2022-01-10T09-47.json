@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/C4D22AQFZQ7p0pPk-qg/feedshare-shrink_1280/feedshare-shrink_1280/0/1641808059004?e=1781136000&v=beta&t=TB965V2S7C39dj1ASYsrVQb-UIV4RW9UU3Ir3tPjltM"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:6886242111524499456",
   "url": "https://www.linkedin.com/posts/honzajavorek_podcast-activity-6886242111524499456-y459",
@@ -20,8 +18,7 @@
         "occupation": "Host @ Junior Guru podcast.",
         "id": "190849253",
         "publicId": "pavlinafronkova",
-        "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEtoblVPwD0Zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1582123353936?e=1781136000&v=beta&t=-x_3TwVVdL_GisSBguih0ZVd0oqEQdQ4aTQIsGLTAKk"
+        "profileId": "ACoAAAtgIOUBXx7J1YrKIrXM8ShTElmmhautDR4"
       }
     }
   ],
@@ -40,8 +37,6 @@
         "id": "806991622",
         "publicId": "sonja-cv",
         "profileId": "ACoAADAZtwYB7zh-fGkQnhuX8Ek0fAWpm-e4i6k",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQHLBsSHbSdzXQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718296702076?e=1781136000&v=beta&t=Lp6mLc_qEyqQgmlsB3oF1zJa18e2CLAK5L0bixzySGM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQE7OLWN9rKfpA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1719349015848?e=1781136000&v=beta&t=HDuUSeWeOwNbZo_guemBJPmOsWySpAaVEzkRbbjyz7A",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -59,8 +54,6 @@
         "id": "292145216",
         "publicId": "michaelakoudelkova",
         "profileId": "ACoAABFpyEABFqmYqR_GlrpP2lafZoQLPBrf-tI",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFKsp97t6P-wQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1516353290735?e=1781136000&v=beta&t=FVddPXnC0UmGq-57tY5dBNm37AB140yiPqqF0xLVJKo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQH5wEaq6ly9VA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1557083059573?e=1781136000&v=beta&t=X3PZ1VnvPc4Jw3cuQyoWmCeEbc0rQ_ap7Y79XPInj7Y",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -78,8 +71,6 @@
         "id": "206520519",
         "publicId": "vaclav-kocum",
         "profileId": "ACoAAAxPQMcBsAw_qRq_t3v6cl8mMdTiMosODRc",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHV1weBZ2Is1g/profile-displayphoto-crop_800_800/B4EZk43_1BGUAI-/0/1757595828157?e=1781136000&v=beta&t=IDXP06frUfu-ZIdIQ0hGyBQwOXcv7C4UmVXTaubhYzM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQHILeksCAmGPw/profile-displaybackgroundimage-shrink_350_1400/B4DZXGooqaHwAY-/0/1742794296864?e=1781136000&v=beta&t=3UnP7-9nUbnCkLfqbntrM7dmKZ7NWUC_Wp4m4UtLsgs",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -97,8 +88,6 @@
         "id": "446728226",
         "publicId": "dvoorajak",
         "profileId": "ACoAABqgiCIBGae91KbE1yHZSbzOLo87v5ifelI",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHFymIxlTnEsQ/profile-displayphoto-crop_800_800/B4EZpULbkhHgAI-/0/1762348874730?e=1781136000&v=beta&t=yR6cdtoSWHHtzNyPIZpPZsrrA4juFB5AiIQ6qNjaJSM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHQF2j4rhco6w/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1666640098888?e=1781136000&v=beta&t=fuo_gPjUOCdidQ8r-umsHaF8sKCHtA_TVIanFZCXEz4",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -116,8 +105,6 @@
         "id": "269692807",
         "publicId": "zajickovalucie",
         "profileId": "ACoAABATL4cB-2vXjzUvfwtXSDDAqH3FY5ZiDGs",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQEPTpc3t5ypeg/profile-displayphoto-crop_800_800/B4EZondlCJKsAM-/0/1761598658485?e=1781136000&v=beta&t=w4co6W8S8vuQ4NKBQy-SxYwLHjnM645SDMXXARegWnU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEKY0aP7C84HQ/profile-displaybackgroundimage-shrink_350_1400/B4EZlNmwBbKwAY-/0/1757943654875?e=1781136000&v=beta&t=RUomDv9Xjmnaj-QHTIpntsgl0hpkQjGZhA0TlVa1FPc",
         "distance": "OUT_OF_NETWORK"
       }
     },
@@ -135,8 +122,6 @@
         "id": "8517488",
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0",
         "distance": "OUT_OF_NETWORK"
       }
     }
@@ -150,9 +135,7 @@
         "occupation": "🤖 Creating useful software",
         "id": "16958557",
         "publicId": "lukaskonarovsky",
-        "profileId": "ACoAAAECxF0Bn8L1if6aBIgIt7NKsx9XZPpdHJY",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQFfGn8m8PA6kg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1690914305341?e=1781136000&v=beta&t=apEZCpPL8sFVvyLcBGfK51wHzE38sP40PfOkOHpeqSo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQEp5DAM7GcSRg/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1614354721389?e=1781136000&v=beta&t=nBV6Bn_cQ5PPT-IqTWptEo7FN7MxHA1m_VxDJMTe8uQ"
+        "profileId": "ACoAAAECxF0Bn8L1if6aBIgIt7NKsx9XZPpdHJY"
       }
     },
     {
@@ -163,8 +146,7 @@
         "occupation": "Certified QA Engineer",
         "id": "819859507",
         "publicId": "olgapavlikova",
-        "profileId": "ACoAADDeEDMB-TTpFXWI0yR2QdYILZVrmf8R9bQ",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFIwwxJpsnrow/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638637004951?e=1781136000&v=beta&t=xOKKWFVjy7wcNtYQ7ZGSeR8AEbU7dzh3yGQmFGlKvmc"
+        "profileId": "ACoAADDeEDMB-TTpFXWI0yR2QdYILZVrmf8R9bQ"
       }
     },
     {
@@ -175,9 +157,7 @@
         "occupation": "Communication & events | Byro | TEDxPrague | podcast Teď a tady | Nekrachni",
         "id": "579508040",
         "publicId": "lukas-navesnik",
-        "profileId": "ACoAACKKl0gB-E3kzhSC8REtZnz1hzwKjEMWQDo",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHbGRhYzQ_M4g/profile-displayphoto-crop_800_800/B4EZfBBWl7HcAM-/0/1751290048134?e=1781136000&v=beta&t=wCJoucWlp0HP-njuxJVhur7D1TTJ1A2C7NMiV-jBVoE",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGYnlV-MUeRDQ/profile-displaybackgroundimage-shrink_350_1400/B4EZXDeYYFGwAc-/0/1742741277549?e=1781136000&v=beta&t=c_AF0X0KXL2aeYxvNtxEBbMDTLSwIXt7XOIOXNMmx1I"
+        "profileId": "ACoAACKKl0gB-E3kzhSC8REtZnz1hzwKjEMWQDo"
       }
     },
     {
@@ -188,9 +168,7 @@
         "occupation": "Principal Information Security Engineer at HERE",
         "id": "3719671",
         "publicId": "valor",
-        "profileId": "ACoAAAA4wfcB-6wfVwYbMy69XKSeovQjgDHJSW0",
-        "picture": "https://media.licdn.com/dms/image/v2/C5103AQGjRfNSS1JcmQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516248813297?e=1781136000&v=beta&t=XxoOkJZ46kteyvJ_k3o4tT_5zhbc8s9Fbbe0RIcB4FA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4E16AQG3RlrCKlLZzg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1640715665619?e=1781136000&v=beta&t=e5iMMadAmgsuSQrkcopHNu9MuJrqHJ6KjBAgQjzYmEg"
+        "profileId": "ACoAAAA4wfcB-6wfVwYbMy69XKSeovQjgDHJSW0"
       }
     },
     {
@@ -201,8 +179,7 @@
         "occupation": "…",
         "id": "918445371",
         "publicId": "jakub-nassvetter-8a3703217",
-        "profileId": "ACoAADa-XTsBlUI4VzCKr_ur5SdX-_3UbIMkfmQ",
-        "picture": "https://media.licdn.com/dms/image/v2/D5635AQGXW0U7XhrOLA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1660002772504?e=1780430400&v=beta&t=v22RqlMgRS7YScN5sBsUHO0Ww5TuKTAYClQDy0LF03w"
+        "profileId": "ACoAADa-XTsBlUI4VzCKr_ur5SdX-_3UbIMkfmQ"
       }
     },
     {
@@ -213,9 +190,7 @@
         "occupation": "Začínající pythonista hledajíc pozici testera",
         "id": "769085975",
         "publicId": "jakub-kolář-a9b694195",
-        "profileId": "ACoAAC3XUhcBE9w6SJDFPqzTssjeyje_9WnsHjU",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGTuUl_ymLfsQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1643603981224?e=1781136000&v=beta&t=6AI8zMUERgkv7tYY0oCXSO9VEVgmQxkcMBUm4cLyOis",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQH4qG0X9EOsWw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1643785461911?e=1781136000&v=beta&t=MoCanN0Hg7c0JNTIQWUH8vEhMBlAUAM85YULcxSWIkY"
+        "profileId": "ACoAAC3XUhcBE9w6SJDFPqzTssjeyje_9WnsHjU"
       }
     },
     {
@@ -226,9 +201,7 @@
         "occupation": "Dobrý kolektiv - polovina spokojenosti v práci.",
         "id": "831634717",
         "publicId": "lucie-bizova",
-        "profileId": "ACoAADGRvR0Bmz6dpuIeGNLxjuTuqXV0VyKLKQw",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQFQVcncQGdPmw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1619865335767?e=1781136000&v=beta&t=yNYvP-Vg3bpcUtoBqT0ZHqhc4x30Ks76HxE5Xyvkgjo",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQEAzNQdeBBEgg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1633218587465?e=1781136000&v=beta&t=6Wehm5n1XdqzLikj-zgj8ImiVxvb2wVHiWFFvqjiY1o"
+        "profileId": "ACoAADGRvR0Bmz6dpuIeGNLxjuTuqXV0VyKLKQw"
       }
     },
     {
@@ -250,8 +223,7 @@
         "occupation": "Looking forward to the new challenge.",
         "id": "459896453",
         "publicId": "anna-malackova",
-        "profileId": "ACoAABtpdoUBH6ozlY-vKm0bjLYlVbyo1YYBG-Y",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C5616AQGcGAPAuueGVw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1639678689416?e=1781136000&v=beta&t=OpRr5dW1a53Sl_pg-1rD92mSr0mRQyA3WpqIHcjqKhQ"
+        "profileId": "ACoAABtpdoUBH6ozlY-vKm0bjLYlVbyo1YYBG-Y"
       }
     },
     {
@@ -262,8 +234,7 @@
         "occupation": "Freelance Product & Ops | CX & Systems Thinking | Neuroleadership Coach | Volunteer @ Česko.Digital | Mentor @ Femme Palette",
         "id": "109919206",
         "publicId": "ivafingerova",
-        "profileId": "ACoAAAaNO-YB_qQBMliqSDeBayGzCWDVLaMv24w",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEU5LtzZ8xFpg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1647941658383?e=1781136000&v=beta&t=kC-CVuKqpfT6AEhHWHW1Qlvyx2-8Sss3WAJbrA8hVoA"
+        "profileId": "ACoAAAaNO-YB_qQBMliqSDeBayGzCWDVLaMv24w"
       }
     }
   ],
@@ -283,12 +254,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

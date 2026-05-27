@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/D4E22AQFR9fTBjo-XEA/feedshare-image-high-res/feedshare-image-high-res/0/1683031207808?e=1781136000&v=beta&t=j8WzeD3OYOwGMPQ3vqKtak9UFieNeUxx1dPRWhCNu-Q"
-  ],
+  "images": [],
   "isActivity": false,
   "urn": "urn:li:activity:7059144532394659841",
   "url": "https://www.linkedin.com/posts/honzajavorek_co-je-pot%C5%99eba-m%C3%ADt-na-pam%C4%9Bti-p%C5%99i-vytv%C3%A1%C5%99en%C3%AD-activity-7059144532394659841-Zasf",
@@ -20,9 +18,7 @@
         "occupation": "Freelance frontend coder for websites and applications.",
         "id": "116482163",
         "publicId": "martinkolareu",
-        "profileId": "ACoAAAbxYHMBd53oWoSXH39VULShQUzrIbA3TK4",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQGqzfLGdk2VFg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1613316309078?e=1781136000&v=beta&t=bPWr4DlaCr7YXZqqQ-fchAg-TDm-r9Ml_PMinyi9c7I",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/C4D16AQGME4bPy74SXQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1613316336103?e=1781136000&v=beta&t=7VXbMAuD06rDoAt9pTuAwOWtPvah6bH_GQh8k5A6zxo"
+        "profileId": "ACoAAAbxYHMBd53oWoSXH39VULShQUzrIbA3TK4"
       }
     },
     {
@@ -34,8 +30,7 @@
         "universalName": "frontendisti",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:26270417",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4E0BAQHfPYqav3sN1w/company-logo_400_400/B4EZpJsmiXKgAY-/0/1762173020690/frontendisti_logo?e=1781136000&v=beta&t=8UwVjElEbfqWVbac3iNkc1HS0lwMBI-P-zII7vKwsfw"
+        "entityUrn": "urn:li:fs_miniCompany:26270417"
       }
     },
     {
@@ -47,8 +42,7 @@
         "universalName": "waze",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:379681",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/C4D0BAQEOOrkPdCAx8A/company-logo_400_400/company-logo_400_400/0/1630524489222/waze_logo?e=1781136000&v=beta&t=q229Rx_ZleGJQdHu8Ur5nosfHJnq8sHIk66u8etMFZo"
+        "entityUrn": "urn:li:fs_miniCompany:379681"
       }
     },
     {
@@ -60,8 +54,7 @@
         "universalName": "webexpo",
         "active": true,
         "showcase": false,
-        "entityUrn": "urn:li:fs_miniCompany:923725",
-        "logoUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQFgeeC2PPWXyw/company-logo_400_400/company-logo_400_400/0/1698662675471/webexpo_logo?e=1781136000&v=beta&t=2lhXicOOdUe_Ko_lla2WVqy8KZbZhLZiyQk6DH0mCt4"
+        "entityUrn": "urn:li:fs_miniCompany:923725"
       }
     }
   ],
@@ -75,8 +68,7 @@
         "occupation": "Frontend developer",
         "id": "745927947",
         "publicId": "jiri-kofron",
-        "profileId": "ACoAACx19QsBUeIVP5QfQ07eavGH_UOE057IlZQ",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFS__EkCbYvTw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1641330543197?e=1781136000&v=beta&t=WyEUW4rJI2J8DfYLUB2n24b6WWcbexi7ODh6DaGKy7Y"
+        "profileId": "ACoAACx19QsBUeIVP5QfQ07eavGH_UOE057IlZQ"
       }
     },
     {
@@ -87,9 +79,7 @@
         "occupation": "I help great brands grow @STRV",
         "id": "337285701",
         "publicId": "strv-norbert-cerveny",
-        "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGKIAaUJPtlmA/profile-displayphoto-crop_800_800/B4DZ0jT_lBIEAI-/0/1774413941709?e=1781136000&v=beta&t=ioRFNZY53XZXWk1BvKTQdIygU-xxLKoyNysEAYklp0I",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG0ekEnNy2Hcw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0jTiNeGsAk-/0/1774413817026?e=1781136000&v=beta&t=_KMbjLzzfd2pO9gizTz2iWgDOkq5RQ3NpzDT5fOljNI"
+        "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg"
       }
     },
     {
@@ -100,8 +90,7 @@
         "occupation": "Junior Web Developer, Java and C# Developer with English, German, Czech and Slovak language skills.",
         "id": "414250285",
         "publicId": "jarmilamajdova",
-        "profileId": "ACoAABiw9S0BulE08sY2xNPy1gdw4Sg2CHsZp-A",
-        "picture": "https://media.licdn.com/dms/image/v2/C4D03AQF5ThgbBR0OQQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1648117665928?e=1781136000&v=beta&t=wQXHOHob2R4tF5BdckLKMWjEX-PhZYl4YAZ0jqqP8lE"
+        "profileId": "ACoAABiw9S0BulE08sY2xNPy1gdw4Sg2CHsZp-A"
       }
     },
     {
@@ -112,9 +101,7 @@
         "occupation": "\"If you're going through hell, keep going\" - Winston Churchill",
         "id": "784772770",
         "publicId": "silvie-bardodej",
-        "profileId": "ACoAAC7GrqIBZbQWoo7ZEo1p3nSx4DX649YBP5I",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQEmHWyj6NCAQw/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1731978376240?e=1780430400&v=beta&t=E0ptt_XfhJOAPQ-jBjBWdEdy22Ipsob2d8zpwvWPTIU",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQF6P_ck-agLng/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1690483951593?e=1781136000&v=beta&t=_MB0-jbUzb7jhHgLjYr3nWBTFOq0WNx4KICSvksBkRk"
+        "profileId": "ACoAAC7GrqIBZbQWoo7ZEo1p3nSx4DX649YBP5I"
       }
     },
     {
@@ -125,8 +112,7 @@
         "occupation": "Des réseaux aux serveurs, rien ne m'échappe. Technicien informatique polyvalent, toujours prêt à relever tous les défis. Cofondateur du premier fablab à Chambéry.",
         "id": "592263015",
         "publicId": "juraj-krc-turba-973420146",
-        "profileId": "ACoAACNNN2cBLpwqU4yuSOu603yho5Ro1RLH5JA",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFp_H9bjErXgw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736716641788?e=1781136000&v=beta&t=mX2uRfkm7Gn4LEu-uj-RnO-vqqHq9e8llJo8CO4_U9s"
+        "profileId": "ACoAACNNN2cBLpwqU4yuSOu603yho5Ro1RLH5JA"
       }
     },
     {
@@ -137,9 +123,7 @@
         "occupation": "UX designer | Frontend developer | coder",
         "id": "1058305342",
         "publicId": "tereza-smolovaa",
-        "profileId": "ACoAAD8UdT4BaRn8Isd2lC4AEbKofErZCkXvv-k",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHHami6cusYmw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1680899091472?e=1781136000&v=beta&t=kcnsYl27D767PL0KOKMxatZtoRBIh_47AlOOB4bMu5k",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQE4HKbvzh8w-A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1703173265758?e=1781136000&v=beta&t=JLf6jm1fSrDz12CmrvPrxBc7TSifykS-ney15LHhlRA"
+        "profileId": "ACoAAD8UdT4BaRn8Isd2lC4AEbKofErZCkXvv-k"
       }
     },
     {
@@ -150,9 +134,7 @@
         "occupation": "BIM Manager | workflows, data management & automation | Revit, VBA, C#",
         "id": "740256000",
         "publicId": "matejstanek1",
-        "profileId": "ACoAACwfaQABurEKMZLTAAPnrpN5FfN9RP2cqTE",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF0XJ2AY6kvrA/profile-displayphoto-crop_800_800/B4DZs5QTqiKcAI-/0/1766192135681?e=1781136000&v=beta&t=CyrQCcqBgosBK5qlJWXHR3PEuSx_xkFnpssF843ir40",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFMs8Q-kEjywQ/profile-displaybackgroundimage-shrink_350_1400/B4DZs5U1WiHQAY-/0/1766193322336?e=1781136000&v=beta&t=OhRsTBsFTP08MorFXZU5D9hZ7bhsUrg1yKLroAaTeiI"
+        "profileId": "ACoAACwfaQABurEKMZLTAAPnrpN5FfN9RP2cqTE"
       }
     },
     {
@@ -163,9 +145,7 @@
         "occupation": "Freelancing entrepreneur, writer, and founder of Freelancing.eu and Navolnenoze.cz — one of the largest national freelance communities in Europe",
         "id": "51503833",
         "publicId": "robertvlach",
-        "profileId": "ACoAAAMR4tkBZhuK95n9YaYUALRv6-E2D4p5phw",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQEGk9CkZ7a2Uw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1656769689141?e=1781136000&v=beta&t=eAfIP1Yw1qDmQrICuVP8JUM33wCjBacGLB-9vbpFzNY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEmV673MYX9aw/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1671726463105?e=1781136000&v=beta&t=Zzk2LObrwAD1huoAX4HYkZ_vdWwC_ZoX5dRN2VMpibQ"
+        "profileId": "ACoAAAMR4tkBZhuK95n9YaYUALRv6-E2D4p5phw"
       }
     },
     {
@@ -176,9 +156,7 @@
         "occupation": "🐍 Aspiring Python Developer | Django | SQL | System Support Specialist at Kyndryl",
         "id": "159529721",
         "publicId": "tomasbalbinder",
-        "profileId": "ACoAAAmCOvkBebG0KEbLM-7CmdUUEXrNNb4r0_g",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQGfo5r6sf0X_A/profile-framedphoto-shrink_800_800/B4EZy.A_FiGgAg-/0/1772714455717?e=1780430400&v=beta&t=PanZVzrBcRPux0f15oVaG_LRvTyEBZsjS1kMTC-OToc",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHLs8K_VIonww/profile-displaybackgroundimage-shrink_350_1400/B4EZy.BfU_GoAY-/0/1772714588657?e=1781136000&v=beta&t=GIaTRHohTPFrOOvIv-JHCOvTO4nW9BZD-NWMnhxaTAc"
+        "profileId": "ACoAAAmCOvkBebG0KEbLM-7CmdUUEXrNNb4r0_g"
       }
     },
     {
@@ -189,9 +167,7 @@
         "occupation": ".NET Developer",
         "id": "926856373",
         "publicId": "petr-barabáš-27149b21a",
-        "profileId": "ACoAADc-tLUB8bIKcsmwZeEx9xHk1uLzkwmuMjE",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQFaY4U75DBrHg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1654374963760?e=1781136000&v=beta&t=u7OXk--mte6YL9Xm1W-6C9nGKYf3IZYxYEYV5G8LQI8",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQHNDvFSSCL1fw/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1679847479627?e=1781136000&v=beta&t=io4rWqlMVL6_TkX8OjdQkQxtMm97MCNmRr9fR8pPuHk"
+        "profileId": "ACoAADc-tLUB8bIKcsmwZeEx9xHk1uLzkwmuMjE"
       }
     }
   ],
@@ -211,12 +187,9 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "authorProfileId": "honzajavorek",
-  "authorProfilePicture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
   "authorType": "Person",
   "authorName": "Honza Javorek",
   "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",

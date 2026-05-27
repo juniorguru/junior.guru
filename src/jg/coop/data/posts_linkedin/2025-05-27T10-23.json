@@ -1,8 +1,6 @@
 {
   "type": "image",
-  "images": [
-    "https://media.licdn.com/dms/image/v2/D4D22AQEldGTgFw1bmw/feedshare-image-high-res/B4DZb.yAL3G8Aw-/0/1748031243539?e=1781136000&v=beta&t=lIwE4EJzioNU_9b9vF34LCScKHlcEKGmozIcSNm_64o"
-  ],
+  "images": [],
   "isActivity": true,
   "activityDescription": "Honza Javorek reposted this",
   "activityOfUser": {
@@ -11,9 +9,7 @@
     "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
     "id": "8517488",
     "publicId": "honzajavorek",
-    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-    "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
   },
   "urn": "urn:li:activity:7333075392108314627",
   "url": "https://www.linkedin.com/posts/dariagru_whos-the-best-manager-youve-ever-had-activity-7332876941311610883-y5js",
@@ -31,9 +27,7 @@
         "occupation": "Software Engineer | JavaScript, TypeScript, React & Node.js | Web3 & Cloud on AWS | Interested in Software Architecture and AI-assisted coding 🚀",
         "id": "7614604",
         "publicId": "marcofriso",
-        "profileId": "ACoAAAB0MIwBvz-6wL8bknVvqqtBibNVBWZr7Ks",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQF8oBDqRcyJ5w/profile-displayphoto-shrink_800_800/B4DZb81wAeGYAg-/0/1747998671544?e=1781136000&v=beta&t=rtFCZsTS5k1SzKiPX6a8aItB3hHR6dBwjrtFPli7DnI",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQFXG5KdQtlzdg/profile-displaybackgroundimage-shrink_350_1400/B4DZYUwiTqHsAY-/0/1744104991561?e=1781136000&v=beta&t=AY16XBVlSxMTya4bhOdW7iPlO9vQQYnAdse47RlNYUM"
+        "profileId": "ACoAAAB0MIwBvz-6wL8bknVvqqtBibNVBWZr7Ks"
       }
     },
     {
@@ -44,9 +38,7 @@
         "occupation": "I help great brands grow @STRV",
         "id": "337285701",
         "publicId": "strv-norbert-cerveny",
-        "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D03AQGKIAaUJPtlmA/profile-displayphoto-crop_800_800/B4DZ0jT_lBIEAI-/0/1774413941709?e=1781136000&v=beta&t=ioRFNZY53XZXWk1BvKTQdIygU-xxLKoyNysEAYklp0I",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQG0ekEnNy2Hcw/profile-displaybackgroundimage-shrink_350_1400/B4DZ0jTiNeGsAk-/0/1774413817026?e=1781136000&v=beta&t=_KMbjLzzfd2pO9gizTz2iWgDOkq5RQ3NpzDT5fOljNI"
+        "profileId": "ACoAABQakkUB9lP-jT5vtWOR9anmvRTbj5KuSjg"
       }
     },
     {
@@ -57,8 +49,7 @@
         "occupation": "Senior Software Engineer at Attention, Go and Typescript developer",
         "id": "232135725",
         "publicId": "andresaristizabalc",
-        "profileId": "ACoAAA3WHC0B6K0QV61EE60Z8J9cQSPDlKgkVcs",
-        "picture": "https://media.licdn.com/dms/image/v2/C5603AQFA7yK-PVp10Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1594161193510?e=1781136000&v=beta&t=v_afa64nzHghza2buMPI8m2EFwbvHKY6hbFt2FCf2wQ"
+        "profileId": "ACoAAA3WHC0B6K0QV61EE60Z8J9cQSPDlKgkVcs"
       }
     },
     {
@@ -69,9 +60,7 @@
         "occupation": "Business Administrator | 3+ years in administration, marketing & customer service | Skilled in project coordination & process improvement",
         "id": "525351228",
         "publicId": "domitil-katemo-850b32127",
-        "profileId": "ACoAAB9QOTwBjYo-pyQWuo9wx4mjFG9_olxX9_w",
-        "picture": "https://media.licdn.com/dms/image/v2/D4D35AQF2thtGX-TWJw/profile-framedphoto-shrink_800_800/B4DZyG41szJkAg-/0/1771789573559?e=1780430400&v=beta&t=edCNW0Xp2QsHGzEq5tuKBIrFtTAiO9pKuO8MdPuo_Lk",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGvlgCVKL_gfA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1690930951851?e=1781136000&v=beta&t=egWwtJU0YVsPFZdf3v1spQIdxEjONh7RDDObx3aSJlw"
+        "profileId": "ACoAAB9QOTwBjYo-pyQWuo9wx4mjFG9_olxX9_w"
       }
     },
     {
@@ -82,9 +71,7 @@
         "occupation": "Senior Software Engineer",
         "id": "250929587",
         "publicId": "castillobgr",
-        "profileId": "ACoAAA704bMBg6eQ53cGqZdvHfEpxZXZkUuWXas",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQED3Cg1omkaKQ/profile-displayphoto-crop_800_800/B56ZmDuucvI8AI-/0/1758851689786?e=1781136000&v=beta&t=LtfrI1UqIKcu8TBHrJwFCVNijQ5cO3IzkrgK6Nxhf08",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQGnRP1llRD64w/profile-displaybackgroundimage-shrink_350_1400/B4EZgQ8sLxGoAY-/0/1752631004928?e=1781136000&v=beta&t=B0iMNKd48FWmi2SfSGjeJhfBROf4UXg9FgclW9DF6hc"
+        "profileId": "ACoAAA704bMBg6eQ53cGqZdvHfEpxZXZkUuWXas"
       }
     },
     {
@@ -95,9 +82,7 @@
         "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
         "id": "8517488",
         "publicId": "honzajavorek",
-        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "picture": "https://media.licdn.com/dms/image/v2/C4E03AQHmtgVOIg7GeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1638120354738?e=1781136000&v=beta&t=nCOdiwcvV7tAg-QXA-X3ORu-h7kBLT-kcXek9CbAHkY",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQFjcB6YDMjwHg/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1694111608899?e=1781136000&v=beta&t=pQXLHe1szTKdOduv9pAmeazr_aifmobDqCb64YhPDo0"
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
       }
     },
     {
@@ -108,9 +93,7 @@
         "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
         "id": "13167565",
         "publicId": "citizenmani",
-        "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQEqC5x0akFu1Q/profile-displayphoto-crop_800_800/B56ZlSvDmfIAAM-/0/1758029692620?e=1781136000&v=beta&t=2MjEAUEFd1OccqmtlnzcSzG2gHUquLzw5MI-3XUUfOM",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D5616AQHZC49bFZ8ZTQ/profile-displaybackgroundimage-shrink_350_1400/B56ZxDZv79KIAY-/0/1770657351768?e=1781136000&v=beta&t=kVGPoYvqmMzYICMmu_0FODKNvqUNjsGRcvULLqy01EA"
+        "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ"
       }
     },
     {
@@ -121,9 +104,7 @@
         "occupation": "Talent Sourcer @ SentinelOne.ai | The Future of CyberSec will be determined by You - let’s Secure Tomorrow™ together! 🛡️👾 | In 💜 with s1.ai/PurpleAI | 🕵️‍♂️ CyBeer security meetups organizer",
         "id": "322518163",
         "publicId": "vaclavkotyk",
-        "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0",
-        "picture": "https://media.licdn.com/dms/image/v2/D4E35AQHSFfNAAQ3ojA/profile-framedphoto-shrink_800_800/B4EZb.aDPLHAAs-/0/1748024964389?e=1780430400&v=beta&t=IvlxsfQQdb8KqO1QvRvDLxo7b9-V1Qrgz29nKWhJehw",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQG_GZHPXo_drQ/profile-displaybackgroundimage-shrink_350_1400/B4EZhWDO5THEAY-/0/1753790347174?e=1781136000&v=beta&t=TTJXtHJi0vF694Nao68XfleeSQJvzU06We8EI4GVwQI"
+        "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0"
       }
     },
     {
@@ -134,9 +115,7 @@
         "occupation": "Python/AWS Engineer | Serverless Architectures | Terraform (IaC) | Community Leader: EuroPython + PyLadies",
         "id": "567930553",
         "publicId": "yuliia-barabash",
-        "profileId": "ACoAACHZ7rkBAgCdDP63PGT6PlEleSiQ-zAY6E4",
-        "picture": "https://media.licdn.com/dms/image/v2/D5603AQH42bdod7yHRw/profile-displayphoto-crop_800_800/B56ZtLfCyKJAAI-/0/1766497989313?e=1781136000&v=beta&t=BBH4Li9Md_AKAn5HVoVZ_BizSypp2qriY_U14vvVmag",
-        "backgroundImage": "https://media.licdn.com/dms/image/v2/D4D16AQEyceGrfBTwuw/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1715286279906?e=1781136000&v=beta&t=AGCbHjuq7P9x3hmHWAb-x4hDtOWK_FneQ8gpUF6qyiw"
+        "profileId": "ACoAACHZ7rkBAgCdDP63PGT6PlEleSiQ-zAY6E4"
       }
     }
   ],
@@ -156,8 +135,7 @@
     "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
     "id": "183293578",
     "publicId": "dariagru",
-    "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
-    "backgroundImage": "https://media.licdn.com/dms/image/v2/D4E16AQEvb_CUOwsbog/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1686142834905?e=1781136000&v=beta&t=DITA6ON-RFEleGbk1Rd0J5K0eGSFU3RHHaQuASAwEt8"
+    "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0"
   },
   "authorProfileId": "dariagru",
   "authorType": "Person",
