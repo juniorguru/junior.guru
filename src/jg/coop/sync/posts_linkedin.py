@@ -3,7 +3,7 @@ import subprocess
 from datetime import datetime
 from pathlib import Path
 from typing import Any
-from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
+from urllib.parse import urlsplit, urlunsplit
 
 import click
 
@@ -57,7 +57,7 @@ def get_post_filename(post: dict) -> str:
 
 def serialize_post(post: dict) -> str:
     post = strip_tracking_params(post)
-    post = strip_image_tracking_params(post)
+    post = drop_volatile_media_urls(post)
     post = remove_tracking_id(post)
     return json.dumps(post, ensure_ascii=False, indent=2) + "\n"
 
@@ -73,30 +73,22 @@ def strip_tracking_params(post: dict) -> dict:
     return {**post, "url": url}
 
 
-def strip_image_tracking_params(value: Any) -> Any:
+def drop_volatile_media_urls(value: Any) -> Any:
     if isinstance(value, dict):
         return {
-            key: strip_image_tracking_params(item) for key, item in value.items()
+            key: cleaned
+            for key, item in value.items()
+            if (cleaned := drop_volatile_media_urls(item)) is not None
         }
     if isinstance(value, list):
-        return [strip_image_tracking_params(item) for item in value]
-    if not isinstance(value, str):
-        return value
-
-    split_url = urlsplit(value)
-    if split_url.netloc != "media.licdn.com" or not split_url.query:
-        return value
-
-    query = [(key, item) for key, item in parse_qsl(split_url.query) if key != "t"]
-    return urlunsplit(
-        (
-            split_url.scheme,
-            split_url.netloc,
-            split_url.path,
-            urlencode(query),
-            split_url.fragment,
-        )
-    )
+        return [
+            cleaned
+            for item in value
+            if (cleaned := drop_volatile_media_urls(item)) is not None
+        ]
+    if isinstance(value, str) and urlsplit(value).netloc == "media.licdn.com":
+        return None
+    return value
 
 
 def remove_tracking_id(value: Any) -> Any:
