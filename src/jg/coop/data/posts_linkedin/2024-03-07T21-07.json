@@ -2,11 +2,17 @@
   "type": "poll",
   "poll": {
     "question": "Chceš sledovat, jak odsýpá práce na junior.guru?",
-    "options": ["Piš to sem", "Nepiš to sem"],
+    "options": [
+      "Piš to sem",
+      "Nepiš to sem"
+    ],
     "results": {
       "closed": true,
       "uniqueVotersCount": 93,
-      "votes": [87, 6]
+      "votes": [
+        87,
+        6
+      ]
     }
   },
   "isActivity": false,
