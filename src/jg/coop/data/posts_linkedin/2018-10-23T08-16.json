@@ -1,0 +1,150 @@
+{
+  "type": "image",
+  "images": [],
+  "isActivity": false,
+  "urn": "urn:li:activity:6460413390572515328",
+  "url": "https://www.linkedin.com/posts/honzajavorek_impacthubbrno-nightofchances-technology-activity-6460413390572515328-oXdb",
+  "timeSincePosted": "7yr",
+  "shareUrn": "urn:li:share:6460413390153089024",
+  "text": "Ve středu se bude v #ImpactHubBrno konat #NightOfChances #Technology #Brno, akce pro studenty, kterou otevírám přednáškou o dvou programátorských povahách. Přijďte! https://lnkd.in/dRaEWeB",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Radka",
+        "lastName": "Svejnohova",
+        "occupation": "✨Building OCI (Oracle Cloud Infrastructure) teams across EMEA region ✨",
+        "id": "83121339",
+        "publicId": "radka-svejnohova-763a0623",
+        "profileId": "ACoAAAT0VLsB017-Z4t3ErDnNVk7oyyjOvcAX7k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "František",
+        "lastName": "V.",
+        "occupation": "• Business - Marketer •",
+        "id": "134340385",
+        "publicId": "frantisekvacha",
+        "profileId": "ACoAAAgB3yEBCp4bV1hj_v-0xxobi5FvPWGBAws"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Emmanuel",
+        "lastName": "Paraskakis",
+        "occupation": "I help you build what agents want: APIs, MCP, CLI, Skills, SDKs | 3x VP Product: Apiary, Swagger, Oracle | 1.3M APIs | Founder & CEO, Level 250",
+        "id": "8443039",
+        "publicId": "emmanuelparaskakis",
+        "profileId": "ACoAAACA1J8BpCKhzzGRkcrLbdNflIPfb_CWVck"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiří",
+        "lastName": "Psotka",
+        "occupation": "Senior AI-first tech recruiter // Python meetup organiser// mentoring junior talent",
+        "id": "122809391",
+        "publicId": "jiripsotka",
+        "profileId": "ACoAAAdR7C8BbyccNUVvG6bQpjG82_Ou5lZBRO4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Menšík",
+        "occupation": "Employer Brand Consultant | Designer | Lecturer - I like to explore new ways, meet the right people and share stories",
+        "id": "16878266",
+        "publicId": "tomasmensik",
+        "profileId": "ACoAAAEBiroBMhDGfg_jTlT9WUkb7VzInw-wi0A"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan Antonín",
+        "lastName": "Kolář",
+        "occupation": "TerraAncestra.com & pzmk.cz & claimly.com",
+        "id": "92328026",
+        "publicId": "jakolar",
+        "profileId": "ACoAAAWA0FoBqWs6z_7igZCAq4mOcTl0oJfZwlQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Radek",
+        "lastName": "Hlavacek",
+        "occupation": "Principal Technical Recruiter @ Oracle/NetSuite | Recruiting, Employee Relations",
+        "id": "12879303",
+        "publicId": "radek-hlavacek-3733914",
+        "profileId": "ACoAAADEhccBeKnOT-pAmV_6ortbpAizglIPtW0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martina",
+        "lastName": "Nezdarilikova",
+        "occupation": "Quality Engineer at Carrier",
+        "id": "221440813",
+        "publicId": "martina-nezdarilikova-7511b062",
+        "profileId": "ACoAAA0y6y0BX42acEV0KZNpCYdHbZN4c3zuoNk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vendula",
+        "lastName": "Burdova",
+        "occupation": "Human Resources | People Strategy, Talent Acquisition",
+        "id": "26544363",
+        "publicId": "vendula-burdova-3a3a818",
+        "profileId": "ACoAAAGVCOsBdhjKf5niQLwnRso7XuJhV_6FA2Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Monika",
+        "lastName": "Mikesova",
+        "occupation": "You can’t scale a business if you’re breaking the people",
+        "id": "151137351",
+        "publicId": "monikamikesova",
+        "profileId": "ACoAAAkCLEcBZjIuplszSXycU8NImLv0qlPYSNo"
+      }
+    }
+  ],
+  "numShares": 4,
+  "numLikes": 12,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1540282580989,
+  "postedAtISO": "2018-10-23T08:16:20.989Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

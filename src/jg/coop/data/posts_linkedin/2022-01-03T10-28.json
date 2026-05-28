@@ -8,15 +8,15 @@
           {
             "width": 740,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:C4D05AQHecq554lVbOA",
-            "fileIdentifyingUrlPathSegment": "high/videocover-high/0/1641205679077?e=1780430400&v=beta&t=KvCwHGNwwsxCrhow2YQb0TbDJsX9tbCmEvsuYF2iqnE",
-            "expiresAt": 1780430400000,
+            "fileIdentifyingUrlPathSegment": "high/videocover-high/0/1641205679077?e=1780434000&v=beta&t=Ed70LBO7BNXJZZAa_wP_WMV3jbmVq-esgpDO9-gvOq8",
+            "expiresAt": 1780434000000,
             "height": 720
           },
           {
             "width": 370,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:C4D05AQHecq554lVbOA",
-            "fileIdentifyingUrlPathSegment": "low/videocover-low/0/1641205678978?e=1780430400&v=beta&t=TqcXG4BdZlmjhy80_NCCxq3X36A2RRdcdrZZ7rx-ewU",
-            "expiresAt": 1780430400000,
+            "fileIdentifyingUrlPathSegment": "low/videocover-low/0/1641205678978?e=1780434000&v=beta&t=jNug-QwxbCwF4QwMeCUh8Ji8aDmfQRoJJBMjp6c0K1c",
+            "expiresAt": 1780434000000,
             "height": 360
           }
         ]
@@ -25,8 +25,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/C4D05AQHecq554lVbOA/mp4-720p-30fp-crf28/mp4-720p-30fp-crf28/0/1641205688103?e=1780430400&v=beta&t=LkVyLX83auZ15Dgr6P3y0OBoY2N4eMEh_GM9RSaDiM8",
-              "expiresAt": 1780430400000
+              "url": "https://dms.licdn.com/playlist/vid/v2/C4D05AQHecq554lVbOA/mp4-720p-30fp-crf28/mp4-720p-30fp-crf28/0/1641205688103?e=1780434000&v=beta&t=USazOuMwENOxj4-4wghRQvvEyQOdbZGPdYtSBf8F3Bc",
+              "expiresAt": 1780434000000
             }
           ],
           "size": 0,
@@ -38,8 +38,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/C4D05AQHecq554lVbOA/mp4-640p-30fp-crf28/mp4-640p-30fp-crf28/0/1641205689149?e=1780430400&v=beta&t=HSMvKFe3W2JYH9SEUa5-5oTXxEResqpSw0aONNZ5Lts",
-              "expiresAt": 1780430400000
+              "url": "https://dms.licdn.com/playlist/vid/v2/C4D05AQHecq554lVbOA/mp4-640p-30fp-crf28/mp4-640p-30fp-crf28/0/1641205689149?e=1780434000&v=beta&t=nhf-6oFxGl2ei0KJFCP5sN26fywpJoFPYiGYq3n8fKk",
+              "expiresAt": 1780434000000
             }
           ],
           "size": 0,
@@ -61,8 +61,8 @@
           "mediaType": "application/vnd.apple.mpegURL",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dynamic/C4D05AQHecq554lVbOA/BAQb6Z7ug?e=1780430400&v=beta&t=xl7F0PauHU8qipqi_b3_iu80GbHwFknhI84nPkGan40",
-              "expiresAt": 1780430400000
+              "url": "https://dms.licdn.com/playlist/vid/dynamic/C4D05AQHecq554lVbOA/BAQb6Z7ug?e=1780434000&v=beta&t=jTHAhyRh0qllcGlzz2zNEMXco1Mx2mgfyM13POfvTbA",
+              "expiresAt": 1780434000000
             }
           ]
         }

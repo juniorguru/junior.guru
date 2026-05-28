@@ -1,0 +1,111 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:8994948794243068564",
+    "url": "https://digikoalice.cz/members/junior-guru-jan-javorek/",
+    "title": "Junior.Guru (Jan Javorek) – Česká národní koalice pro digitální pracovní místa"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6615145126706593792",
+  "url": "https://www.linkedin.com/posts/honzajavorek_juniorguru-jan-javorek-%C4%8Desk%C3%A1-n%C3%A1rodn%C3%AD-activity-6615145126706593792-CFoS",
+  "timeSincePosted": "6yr",
+  "shareUrn": "urn:li:share:6615145125972582400",
+  "text": "https://junior.guru je nyní členem DigiKoalice, české národní koalice pro digitální pracovní místa 🤝",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vendula",
+        "lastName": "Burdova",
+        "occupation": "Human Resources | People Strategy, Talent Acquisition",
+        "id": "26544363",
+        "publicId": "vendula-burdova-3a3a818",
+        "profileId": "ACoAAAGVCOsBdhjKf5niQLwnRso7XuJhV_6FA2Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daria",
+        "lastName": "Linhart Grudzien",
+        "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
+        "id": "183293578",
+        "publicId": "dariagru",
+        "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Hana",
+        "lastName": "Kalivodová",
+        "occupation": "Student of New Media Studies",
+        "id": "254281372",
+        "publicId": "hanakalivodova",
+        "profileId": "ACoAAA8oBpwB65u5nWe0nCLRJM8a5P0FLRgRUMw"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Pavel Grumpy",
+        "lastName": "Šimerda",
+        "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
+        "id": "551084893",
+        "publicId": "grumpyprogrammer",
+        "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Baudis",
+        "occupation": "Founder, CTO, Chief AI Architect at Rossum",
+        "id": "11490774",
+        "publicId": "petr-baudis-906a213",
+        "profileId": "ACoAAACvVdYBp3kGs8fJXXiShSCGLaF5Xu-lrAM"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Iva",
+        "lastName": "Stencel",
+        "occupation": "CSV Lead/ Senior Business Analyst",
+        "id": "587257188",
+        "publicId": "iva-stencel-ab0807144",
+        "profileId": "ACoAACMA1WQBgV8EKd7FupQXOjpsAgya9rL3QLA"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 6,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1577173501660,
+  "postedAtISO": "2019-12-24T07:45:01.660Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

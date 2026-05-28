@@ -1,0 +1,185 @@
+{
+  "type": "image",
+  "images": [],
+  "isActivity": false,
+  "urn": "urn:li:activity:6613442377564598272",
+  "url": "https://www.linkedin.com/posts/honzajavorek_juniorguru-activity-6613442377564598272-VN44",
+  "timeSincePosted": "6yr",
+  "shareUrn": "urn:li:share:6613442377027727360",
+  "text": "Chtěli jste to, máte to mít! Přidal jsem https://lnkd.in/dzpKTmZ, kde budu shromažďovat příběhy o lidech, kteří se naučili programovat a díky tomu dokázali něco zajímavého, nebo kterým se povedlo změnit kariéru. #juniorguru",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1576800788103,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6613442377564598272?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6613442377564598272%2C6613581852739424256%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286613581852739424256%2Curn%3Ali%3Aactivity%3A6613442377564598272%29",
+      "text": "Super, velmi se těším. Bude to mít skvělý dosah i pro ty, kteří z úplně jiného oboru chtějí do IT a společnosti je nechtějí kvůli absenci praxe. Mám tolik juniorů v IT, kteří se stále nemohou dostat tam, kde by rádi byli.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Sabina",
+        "lastName": " Zavřelová",
+        "occupation": "„Spojuji lidi, firmy a byznys – stavím týmy a strategie, které rostou | Full-stack Recruiter & Business Strategist | Nábor, akvizice, leadership a rozvoj týmů“",
+        "id": "585219164",
+        "publicId": "sabina-zavřelová-5b8ba4143",
+        "profileId": "ACoAACLhvFwBkDo9VSvlGqzpJo_Zb_ufJ7JYXPU",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1576787630941,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6613442377564598272?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6613442377564598272%2C6613526667606532096%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286613526667606532096%2Curn%3Ali%3Aactivity%3A6613442377564598272%29",
+      "text": "Tak to si rád počtu. ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Pavel Grumpy",
+        "lastName": "Šimerda",
+        "occupation": "γραμματεὺς μηχανῶν καὶ ἀντιπαιδαγωγός",
+        "id": "551084893",
+        "publicId": "grumpyprogrammer",
+        "profileId": "ACoAACDY410Bj7SIQb_1QO7F2NjfEZ_WxL2DZj4",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Milena",
+        "lastName": "Bošková",
+        "occupation": "Data Engineering/ Product Manager with Medical (Addictology) and IT background/ Ph.D. Researcher in Medical Data and AI in medicine/HzM member/alumni 👩‍💻Enthusiastic Community Builder 🦸‍♀️ AI&Health Tech Evangelist 🦾",
+        "id": "527492906",
+        "publicId": "milena-bošková",
+        "profileId": "ACoAAB9w5yoBYf1wT1tNlQ82Qq1wZ_zIuHExi_k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Hana",
+        "lastName": "Kalivodová",
+        "occupation": "Student of New Media Studies",
+        "id": "254281372",
+        "publicId": "hanakalivodova",
+        "profileId": "ACoAAA8oBpwB65u5nWe0nCLRJM8a5P0FLRgRUMw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Nora",
+        "lastName": "Kořánová",
+        "occupation": "Technical Writer at SUSE",
+        "id": "508052457",
+        "publicId": "nkoranova",
+        "profileId": "ACoAAB5IQ-kBW4PRexbBNd-Zk4iJtNiwBro2uLY"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Radka",
+        "lastName": "Svejnohova",
+        "occupation": "✨Building OCI (Oracle Cloud Infrastructure) teams across EMEA region ✨",
+        "id": "83121339",
+        "publicId": "radka-svejnohova-763a0623",
+        "profileId": "ACoAAAT0VLsB017-Z4t3ErDnNVk7oyyjOvcAX7k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marian",
+        "lastName": "V.",
+        "occupation": "Hyperautomation @Bitpanda | FinTech",
+        "id": "214220595",
+        "publicId": "varga-marian",
+        "profileId": "ACoAAAzEvzMBjqp145lvynqAkW_FwDTfbUWVt_c"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jarmila",
+        "lastName": "Kremlingová",
+        "occupation": "Data & Analytics / BI Developer (Experienced)",
+        "id": "758725748",
+        "publicId": "jarmila-kremlingova",
+        "profileId": "ACoAAC05PHQB7dXhTwNiUnatsB4xpnwg0PJDPC4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vladimír",
+        "lastName": "Kadlec",
+        "occupation": "Principal Data Scientist at Red Hat",
+        "id": "54123140",
+        "publicId": "vladimirkadlec",
+        "profileId": "ACoAAAM52oQBTslytQGxMMQlf0aNqXyFJMUEbyA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Robert",
+        "lastName": "Š.",
+        "occupation": "Senior Data Scientist | AI & Digital Innovation Strategist | PhD Student | VSB - Technical University of Ostrava",
+        "id": "255272676",
+        "publicId": "robert-s-2b05a771",
+        "profileId": "ACoAAA83JuQBIi82v-Ambqv2iiOGMA3iOJNluDY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Monika",
+        "lastName": "Mikesova",
+        "occupation": "You can’t scale a business if you’re breaking the people",
+        "id": "151137351",
+        "publicId": "monikamikesova",
+        "profileId": "ACoAAAkCLEcBZjIuplszSXycU8NImLv0qlPYSNo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Hana",
+        "lastName": "Šváchová",
+        "occupation": "Oncology & Cryo-EM Scientist | Drug Discovery | Biomarkers | R&D | Translational Research | Seeking a regular employment opportunity on-site/hybrid (no contractor/freelancer/B2B)",
+        "id": "637653632",
+        "publicId": "hana-šváchová",
+        "profileId": "ACoAACYB0oAB6_GhVuxHwDvD3S3Va5AVT5awmM4"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 22,
+  "numComments": 3,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1576767534629,
+  "postedAtISO": "2019-12-19T14:58:54.629Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

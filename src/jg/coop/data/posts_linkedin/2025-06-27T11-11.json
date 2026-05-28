@@ -10,15 +10,15 @@
             {
               "width": 202,
               "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4E05AQGr2Qz3RPxOOg",
-              "fileIdentifyingUrlPathSegment": "low/B4EZesb8c1HcCI-/0/1750944734269?e=1780430400&v=beta&t=UEPdB8G_gKD4HJp4tEB_8kGfnVHQRUIPzBhEjFc22xM",
-              "expiresAt": 1780430400000,
+              "fileIdentifyingUrlPathSegment": "low/B4EZesb8c1HcCI-/0/1750944734269?e=1780434000&v=beta&t=FN3wdaKc-000vSsVa9YGnAqw8pIlcn3iqpteO2SWz1w",
+              "expiresAt": 1780434000000,
               "height": 360
             },
             {
               "width": 404,
               "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4E05AQGr2Qz3RPxOOg",
-              "fileIdentifyingUrlPathSegment": "high/B4EZesb8c1HcCM-/0/1750944734161?e=1780430400&v=beta&t=Op9KERevgD_2GnzlB942EYH6harw0YobBalpno3c5jc",
-              "expiresAt": 1780430400000,
+              "fileIdentifyingUrlPathSegment": "high/B4EZesb8c1HcCM-/0/1750944734161?e=1780434000&v=beta&t=txHrhuXSC2BItRYgJbCG0JtL2XwB8Q8_pN0z3-vZ27k",
+              "expiresAt": 1780434000000,
               "height": 720
             }
           ]
@@ -27,8 +27,8 @@
           {
             "streamingLocations": [
               {
-                "url": "https://dms.licdn.com/playlist/vid/v2/D4E05AQGr2Qz3RPxOOg/mp4-720p-30fp-crf28/B4EZesb8c1HcB0-/0/1750944758818?e=1780430400&v=beta&t=-Tov_hNHB3rEKyoEmmlAg2ZVY3gG83EoaRNZx5Jno2g",
-                "expiresAt": 1780430400000
+                "url": "https://dms.licdn.com/playlist/vid/v2/D4E05AQGr2Qz3RPxOOg/mp4-720p-30fp-crf28/B4EZesb8c1HcB0-/0/1750944758818?e=1780434000&v=beta&t=jzp1yl3e-VToT4s64WqgcLOp_pgbN0asQoOOYQaerAU",
+                "expiresAt": 1780434000000
               }
             ],
             "size": 0,
@@ -40,8 +40,8 @@
           {
             "streamingLocations": [
               {
-                "url": "https://dms.licdn.com/playlist/vid/v2/D4E05AQGr2Qz3RPxOOg/mp4-640p-30fp-crf28/B4EZesb8c1HcBw-/0/1750944746874?e=1780430400&v=beta&t=wTHHSdoixrxilY8WN4GsFMOpdRWdcG4xUhgzC4WaTOk",
-                "expiresAt": 1780430400000
+                "url": "https://dms.licdn.com/playlist/vid/v2/D4E05AQGr2Qz3RPxOOg/mp4-640p-30fp-crf28/B4EZesb8c1HcBw-/0/1750944746874?e=1780434000&v=beta&t=sWvzY9tCC18S84ILn2IpnktcuKQIKM4cyaw6Us0KvEY",
+                "expiresAt": 1780434000000
               }
             ],
             "size": 0,
@@ -63,8 +63,8 @@
             "mediaType": "application/vnd.apple.mpegURL",
             "masterPlaylists": [
               {
-                "url": "https://dms.licdn.com/playlist/vid/dynamic/D4E05AQGr2Qz3RPxOOg/BAQAetBeSZm?e=1780430400&v=beta&t=Ynx9E3djPAfwXYqDmtiVnUv18T3fiDQ2jACBcNRsNHQ",
-                "expiresAt": 1780430400000
+                "url": "https://dms.licdn.com/playlist/vid/dynamic/D4E05AQGr2Qz3RPxOOg/BAQAetBeSZm?e=1780434000&v=beta&t=r_k2A8KwS-iyzzTNDjNjkH2Im3JoqqaaKAxlH3PFBUo",
+                "expiresAt": 1780434000000
               }
             ]
           },
@@ -74,8 +74,8 @@
             "mediaType": "application/dash+xml",
             "masterPlaylists": [
               {
-                "url": "https://dms.licdn.com/playlist/vid/dash/D4E05AQGr2Qz3RPxOOg/BAQAetBeSZm?e=1780430400&v=beta&t=SCM1xnQskT45LoAkj6y24d4uXZuxiZGEdJOGwcMVi7A",
-                "expiresAt": 1780430400000
+                "url": "https://dms.licdn.com/playlist/vid/dash/D4E05AQGr2Qz3RPxOOg/BAQAetBeSZm?e=1780434000&v=beta&t=Rc9VAcEL4GDx4gGasCIChNxv5ELHnY5-xNerXL06oWY",
+                "expiresAt": 1780434000000
               }
             ]
           }
@@ -84,7 +84,7 @@
     },
     "isActivity": false,
     "urn": "urn:li:activity:7343994642054475777",
-    "url": "https://www.linkedin.com/posts/honzajavorek_beginnersday-europython-juniorguru-activity-7343994642054475777-oqaC?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAADrb3CgBz_ZBH1dSZX4-YHPPyAXTMtzm_bs",
+    "url": "https://www.linkedin.com/posts/honzajavorek_beginnersday-europython-juniorguru-activity-7343994642054475777-oqaC?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFJlkmABZxfmb_G3HTspSmPohk2_pVAhOqk",
     "timeSincePosted": "11mo",
     "shareUrn": "urn:li:ugcPost:7343994345139695617",
     "text": "Začínáš v IT? Přijď 19.7. na super akci!\n\nSpolu s Daria Linhart Grudzien organizujeme pod záštitou konference EuroPython celodenní veřejně přístupnou akci vyloženě pro juniory.\n\nBude to na kariérní témata, bude to hodně interaktivní a bude to super. Nemusíš mít nic společného s Pythonem, ani EuroPythonem, a vstup je 5€. Počet účastníků omezený, tak neváhej 😎 \n\nMimo jiné tam potkáš: Barbora Němcová, Gábor Ambrózy, Jana Moudrá, Manivannan Selvaraj, Michaela Trčková, Miloslav Ježek, Šimon Kořený a samozřejmě Daria Linhart Grudzien a mně, budeme to celé i moderovat.\n\nPokud si chcete prohlédnout podlahu našeho bytu a chcete mě slyšet, jak zpívám „la la la“, pusťte si propagační video.\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.\n\n#beginnersday #europython #juniorguru #djangogirls #humbledata #programování #kariéra",

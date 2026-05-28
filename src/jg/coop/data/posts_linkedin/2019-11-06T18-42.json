@@ -1,0 +1,141 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "type": "text",
+    "isActivity": false,
+    "urn": "urn:li:activity:6597133461092388864",
+    "url": "https://www.linkedin.com/posts/ikvasnica_php-developer-javascript-activity-6597133461092388864-pZ8O?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFOj8-sBSMUxlveLaiq7tYyYCN_WE7nq9uU",
+    "timeSincePosted": "6yr",
+    "shareUrn": "urn:li:share:6597133460668764162",
+    "text": "Is there any company out there willing to hire a senior #PHP #developer who would like to gradually move to another language (f.e. #JavaScript, C# or maybe even mobile app development)? \n\nI have not met many yet, therefore I am curious. :)",
+    "attributes": [],
+    "comments": [],
+    "reactions": [
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Martin",
+          "lastName": "Vataha",
+          "occupation": "Product Owner · Business Analyst · UX | 10+ years in enterprise delivery across finance, healthcare, and aviation | Fluent in business, tech, and the user everyone forgets to ask.",
+          "id": "39059542",
+          "publicId": "martinvataha",
+          "profileId": "ACoAAAJUAFYB2zNmTr5TWn5vjBMW52TrA2pSRRM"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Martyna",
+          "lastName": "Wolska Buje",
+          "occupation": "Visual Designer and Illustrator",
+          "id": "501309879",
+          "publicId": "martynaszc",
+          "profileId": "ACoAAB3hYbcBWNGf5dkw15HxsHx360y4WlODJZ4"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Jesper Blix",
+          "lastName": "L.",
+          "occupation": "Software developer @ Trifork",
+          "id": "363965910",
+          "publicId": "jwegl23gw",
+          "profileId": "ACoAABWxrdYBc94HzDry1Uh6wpj_trVz6jR2u9Y"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Leanne",
+          "lastName": "Kolpin",
+          "occupation": "Service-oriented Software Designer | Crafting digital products & experiences | 10+ Years in my creative journey",
+          "id": "86194151",
+          "publicId": "leanne-kolpin",
+          "profileId": "ACoAAAUjN-cBHfVZ4051rm2o4z6BNBL_eT7YJDc"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Alistair",
+          "lastName": "Prestidge",
+          "occupation": "CTO at SAMA",
+          "id": "13646395",
+          "publicId": "alistairprestidge",
+          "profileId": "ACoAAADQOjsBRc03s8jSYyprEIrdrHSaYkAbl7c"
+        }
+      }
+    ],
+    "numShares": 1,
+    "numLikes": 6,
+    "numComments": 0,
+    "canReact": true,
+    "canPostComments": true,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "ALL",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "firstName": "Ivan",
+      "lastName": "Kvasnica",
+      "occupation": "TypeScript Engineer | Backend-First | Clean Architecture, Product Mindset, AI-Enhanced Workflow",
+      "id": "26597578",
+      "publicId": "ikvasnica",
+      "profileId": "ACoAAAGV2MoBN8JZ2pQK395RLRvyRx1Tw4GdAYg"
+    },
+    "authorProfileId": "ikvasnica",
+    "authorType": "Person",
+    "authorName": "Ivan Kvasnica",
+    "authorProfileUrl": "https://www.linkedin.com/in/ikvasnica?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAGV2MoBN8JZ2pQK395RLRvyRx1Tw4GdAYg",
+    "authorUrn": "urn:li:member:26597578",
+    "postedAtTimestamp": 1572879185937,
+    "postedAtISO": "2019-11-04T14:53:05.937Z"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6597915967240577024",
+  "url": "https://www.linkedin.com/posts/honzajavorek_php-developer-javascript-activity-6597915967240577024-jE8c",
+  "timeSincePosted": "6yr",
+  "shareUrn": "urn:li:share:6597915966745653249",
+  "attributes": [],
+  "comments": [],
+  "reactions": [],
+  "numShares": 0,
+  "numLikes": 0,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1573065749941,
+  "postedAtISO": "2019-11-06T18:42:29.941Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

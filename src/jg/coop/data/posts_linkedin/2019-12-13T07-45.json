@@ -1,0 +1,105 @@
+{
+  "type": "text",
+  "isActivity": false,
+  "urn": "urn:li:activity:6611158859446792192",
+  "url": "https://www.linkedin.com/posts/honzajavorek_dom%C3%A9nu-httpsjuniorguru-jsem-vym%C3%BD%C5%A1lel-activity-6611158859446792192-nvWP",
+  "timeSincePosted": "6yr",
+  "shareUrn": "urn:li:share:6611158859039948800",
+  "text": "Doménu https://junior.guru jsem vymýšlel dlouho. Není to úžas, ale je top-level, s klíčovým slovem junior a potenciálem provozovat na ní obsah nejen česky - .guru je mezinárodní, na rozdíl např. od .guide. Až teď mi ale došlo, že mám koupit i http://juniorguru.cz! 🤦‍♂️",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Mia",
+        "lastName": "Bajić",
+        "occupation": "Software Engineer",
+        "id": "530925455",
+        "publicId": "mia-bajic",
+        "profileId": "ACoAAB-lR48BFvPhQ6doZNGTRVftkLrzcnIv-Ss"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Nora",
+        "lastName": "Kořánová",
+        "occupation": "Technical Writer at SUSE",
+        "id": "508052457",
+        "publicId": "nkoranova",
+        "profileId": "ACoAAB5IQ-kBW4PRexbBNd-Zk4iJtNiwBro2uLY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Heidi",
+        "lastName": "Ulrich",
+        "occupation": "Job Coach & Scrum Master | The Career Cheat Code",
+        "id": "19215699",
+        "publicId": "heidiulrich",
+        "profileId": "ACoAAAElNVMBMWxujrzm1qof16Xq6pg-0Zyi4BQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Messner",
+        "occupation": "Full-stack software engineer and developer",
+        "id": "21519263",
+        "publicId": "messa",
+        "profileId": "ACoAAAFIW58BHQuf7UmFIL0JxAANFW73V79_YOY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Monika",
+        "lastName": "Mikesova",
+        "occupation": "You can’t scale a business if you’re breaking the people",
+        "id": "151137351",
+        "publicId": "monikamikesova",
+        "profileId": "ACoAAAkCLEcBZjIuplszSXycU8NImLv0qlPYSNo"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Iva",
+        "lastName": "Stencel",
+        "occupation": "CSV Lead/ Senior Business Analyst",
+        "id": "587257188",
+        "publicId": "iva-stencel-ab0807144",
+        "profileId": "ACoAACMA1WQBgV8EKd7FupQXOjpsAgya9rL3QLA"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 6,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1576223101484,
+  "postedAtISO": "2019-12-13T07:45:01.484Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

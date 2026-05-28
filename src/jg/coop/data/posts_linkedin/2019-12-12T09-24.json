@@ -1,0 +1,81 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:8160462059961589481",
+    "url": "https://junior.guru/practice/#mentors",
+    "title": "Jak získat praxi v programování"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6610821552889974784",
+  "url": "https://www.linkedin.com/posts/honzajavorek_jak-z%C3%ADskat-praxi-v-programov%C3%A1n%C3%AD-activity-6610821552889974784-0Pfs",
+  "timeSincePosted": "6yr",
+  "shareUrn": "urn:li:share:6610821552277606400",
+  "text": "Díky moc Jan Vlnas za tip na https://codingcoach.io. Hned jsem to přidal na #juniorguru do části o mentorech: https://lnkd.in/dUDTxgB",
+  "attributes": [
+    {
+      "start": 9,
+      "length": 9,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Vlnas",
+        "occupation": "Senior Software Engineer for Open API at Mews",
+        "id": "47732077",
+        "publicId": "janvlnas",
+        "profileId": "ACoAAALYVW0BDqoHy4lGYgYXvwuLwoZ8CBa5LGI"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Nora",
+        "lastName": "Kořánová",
+        "occupation": "Technical Writer at SUSE",
+        "id": "508052457",
+        "publicId": "nkoranova",
+        "profileId": "ACoAAB5IQ-kBW4PRexbBNd-Zk4iJtNiwBro2uLY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Vlnas",
+        "occupation": "Senior Software Engineer for Open API at Mews",
+        "id": "47732077",
+        "publicId": "janvlnas",
+        "profileId": "ACoAAALYVW0BDqoHy4lGYgYXvwuLwoZ8CBa5LGI"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 2,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1576142681334,
+  "postedAtISO": "2019-12-12T09:24:41.334Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

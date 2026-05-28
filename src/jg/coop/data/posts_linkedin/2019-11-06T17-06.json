@@ -1,0 +1,155 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:7765211935439249222",
+    "url": "http://junior.guru",
+    "title": "Jak se naučit programovat a získat svou první práci v IT"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6597891881986736128",
+  "url": "https://www.linkedin.com/posts/honzajavorek_jak-se-nau%C4%8Dit-programovat-a-z%C3%ADskat-svou-prvn%C3%AD-activity-6597891881986736128-xJuW",
+  "timeSincePosted": "6yr",
+  "shareUrn": "urn:li:share:6597891881399525376",
+  "text": "Pár týdnů už stránky běží, ale teprve tři dny se věnuji junior.guru naplno. Statistika k tomuto momentu:\n\n🐣 ~3500 návštěv ze všech koutů ČR (i SR a odjinud)\n🐣 8 nabídek práce (včetně Rossum nebo Red Hat)\n🐣 32 lidí v newsletteru (který teda teprve začnu posílat)\n\nVelká radost!",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daniel",
+        "lastName": "Kopecký",
+        "occupation": "From Chaos to System | 0→1 R&D & Early-Stage Technology | Modeling, Python | Technical Education",
+        "id": "150688527",
+        "publicId": "dankopecky",
+        "profileId": "ACoAAAj7Uw8Bnb0RahPTccELn2ximxZOpdvgnl0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "František",
+        "lastName": "V.",
+        "occupation": "• Business - Marketer •",
+        "id": "134340385",
+        "publicId": "frantisekvacha",
+        "profileId": "ACoAAAgB3yEBCp4bV1hj_v-0xxobi5FvPWGBAws"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Matušková",
+        "occupation": "testing, continual learning, experience sharing and supporting others",
+        "id": "355461703",
+        "publicId": "veronika-matuskova",
+        "profileId": "ACoAABUv6kcBoVGit-O-mc6Z6ejoj797DUSac98"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Roman",
+        "lastName": "Schejbal",
+        "occupation": "Rust Engineer",
+        "id": "167037061",
+        "publicId": "roman-schejbal-b71b3447",
+        "profileId": "ACoAAAn0yIUBjyEk1cmLwF6_s9kWhDu4mbBt-6Y"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Iva",
+        "lastName": "Stencel",
+        "occupation": "CSV Lead/ Senior Business Analyst",
+        "id": "587257188",
+        "publicId": "iva-stencel-ab0807144",
+        "profileId": "ACoAACMA1WQBgV8EKd7FupQXOjpsAgya9rL3QLA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tereza",
+        "lastName": "Černá",
+        "occupation": "Founder @ReactGirls, Community @Mews, Software Engineer",
+        "id": "662278178",
+        "publicId": "tereza-vankova",
+        "profileId": "ACoAACd5kCIBkil_yiYqyksAU2xUhl_An8PtzTQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Bažacký",
+        "occupation": "Všechno se dá naučit...",
+        "id": "142278472",
+        "publicId": "jan-bažacký-0b47953b",
+        "profileId": "ACoAAAh6_0gBiYlDyJ1kWElyj1UKK71xZojBRYg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ivan",
+        "lastName": "Kvasnica",
+        "occupation": "TypeScript Engineer | Backend-First | Clean Architecture, Product Mindset, AI-Enhanced Workflow",
+        "id": "26597578",
+        "publicId": "ikvasnica",
+        "profileId": "ACoAAAGV2MoBN8JZ2pQK395RLRvyRx1Tw4GdAYg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Anezka",
+        "lastName": "Muller",
+        "occupation": "🧑‍🤝‍🧑 Working with and for communities, organizing events, studying service design, having fun in all that. ✏️",
+        "id": "58610470",
+        "publicId": "anezkamll",
+        "profileId": "ACoAAAN-UyYBW_5FlwBOtClk7WVpl3JlZMHMVn4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Žížek",
+        "occupation": "Průvodce cykly bohatství 📈",
+        "id": "229451762",
+        "publicId": "petr-žížek-702a1464",
+        "profileId": "ACoAAA2tJ_IB7sP5S6LHxlMS2UfNxfoAbaFpW4w"
+      }
+    }
+  ],
+  "numShares": 2,
+  "numLikes": 26,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1573060007569,
+  "postedAtISO": "2019-11-06T17:06:47.569Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

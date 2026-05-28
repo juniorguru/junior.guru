@@ -8,7 +8,7 @@
           {
             "width": 576,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQG2pvkHKl99WQ",
-            "expiresAt": 1780430400000,
+            "expiresAt": 1780434000000,
             "height": 720
           }
         ],
@@ -18,8 +18,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQG2pvkHKl99WQ/mp4-720p-30fp-crf28/B4DZy8x4iGJoCI-/0/1772693728317?e=1780430400&v=beta&t=Gm20HvutgaRUHovZ0IENZG30IdcGGqckzbY3KFw3sZY",
-              "expiresAt": 1780430400000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQG2pvkHKl99WQ/mp4-720p-30fp-crf28/B4DZy8x4iGJoCI-/0/1772693728317?e=1780434000&v=beta&t=523XmQugCJCWW4kjwE0fH9VFrCNdG1P6E6JrSLfZquo",
+              "expiresAt": 1780434000000
             }
           ],
           "size": 0,
@@ -31,8 +31,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQG2pvkHKl99WQ/mp4-640p-30fp-crf28/B4DZy8x4iGJoBw-/0/1772693727308?e=1780430400&v=beta&t=G5R-d4WeyjnLyigTrhN14ikH1GA7K53D6fGlvd9EoA8",
-              "expiresAt": 1780430400000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQG2pvkHKl99WQ/mp4-640p-30fp-crf28/B4DZy8x4iGJoBw-/0/1772693727308?e=1780434000&v=beta&t=wDlXDfZU93rl5u8Cm9f5ETky04L-uQ3rm_K1Z7ncBUI",
+              "expiresAt": 1780434000000
             }
           ],
           "size": 0,
@@ -54,8 +54,8 @@
           "mediaType": "application/vnd.apple.mpegURL",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQG2pvkHKl99WQ/BAQQKYkcgX9?e=1780430400&v=beta&t=n5xa5kzlI2nZAa5yxUpGFHmXaD3G3dBHFAv_GPRe-EA",
-              "expiresAt": 1780430400000
+              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQG2pvkHKl99WQ/BAQQKYkcgX9?e=1780434000&v=beta&t=HjKZZ5uGBEVoq5dkQxAdSMPmD7xS3JmeTu8nBG-mwi8",
+              "expiresAt": 1780434000000
             }
           ]
         },
@@ -65,8 +65,8 @@
           "mediaType": "application/dash+xml",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQG2pvkHKl99WQ/BAQQKYkcgX9?e=1780430400&v=beta&t=k0D2YlVmWyma_DSxBdknBYGAAe0wuScsuE9loLFJQg4",
-              "expiresAt": 1780430400000
+              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQG2pvkHKl99WQ/BAQQKYkcgX9?e=1780434000&v=beta&t=FEOamudYN6u4iAje0BOfWDVq1kEOi7EHrxdmOOsm33Q",
+              "expiresAt": 1780434000000
             }
           ]
         }

@@ -1,0 +1,115 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "type": "article",
+    "article": {
+      "type": "EXTERNAL_FULL",
+      "urn": "urn:li:article:7113009272611368389",
+      "url": "https://cz.linkedin.com/jobs/view/fullstack-javascript-developer-apiary-open-source-tools-at-oracle-apiary-864266787",
+      "title": "Fullstack JavaScript developer - Apiary Open Source tools"
+    },
+    "isActivity": false,
+    "urn": "urn:li:activity:6444987360341041152",
+    "url": "https://www.linkedin.com/posts/vendula-burdova-3a3a818_fullstack-javascript-developer-apiary-open-activity-6444987360341041152-u548?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAEVanCoBZrcQX6UUSuuRySIzAwruVGdYTEw",
+    "timeSincePosted": "7yr",
+    "shareUrn": "urn:li:share:6444987359787388928",
+    "text": "APIARY Open Source tools team is looking for new colleagues - Fullstack Javascript developers of all seniority are welcome, only interest or experience in Open Source is requested! Feel free to reach out for more details!",
+    "attributes": [],
+    "comments": [],
+    "reactions": [
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Maria",
+          "lastName": "Boroșoiu",
+          "occupation": "Senior People Operations Specialist EMEA @UiPath 🚀",
+          "id": "589405347",
+          "publicId": "maria-boroșoiu-083483145",
+          "profileId": "ACoAACMhnKMB8Qm6sePaLuMUJEXzWAJxjmb42Qk"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Radka",
+          "lastName": "Svejnohova",
+          "occupation": "✨Building OCI (Oracle Cloud Infrastructure) teams across EMEA region ✨",
+          "id": "83121339",
+          "publicId": "radka-svejnohova-763a0623",
+          "profileId": "ACoAAAT0VLsB017-Z4t3ErDnNVk7oyyjOvcAX7k"
+        }
+      }
+    ],
+    "numShares": 3,
+    "numLikes": 3,
+    "numComments": 0,
+    "canReact": true,
+    "canPostComments": true,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "ALL",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "firstName": "Vendula",
+      "lastName": "Burdova",
+      "occupation": "Human Resources | People Strategy, Talent Acquisition",
+      "id": "26544363",
+      "publicId": "vendula-burdova-3a3a818",
+      "profileId": "ACoAAAGVCOsBdhjKf5niQLwnRso7XuJhV_6FA2Y"
+    },
+    "authorProfileId": "vendula-burdova-3a3a818",
+    "authorType": "Person",
+    "authorName": "Vendula Burdova",
+    "authorProfileUrl": "https://www.linkedin.com/in/vendula-burdova-3a3a818?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAGVCOsBdhjKf5niQLwnRso7XuJhV_6FA2Y",
+    "authorUrn": "urn:li:member:26544363",
+    "postedAtTimestamp": 1536604728780,
+    "postedAtISO": "2018-09-10T18:38:48.780Z"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6447891406055964672",
+  "url": "https://www.linkedin.com/posts/honzajavorek_fullstack-javascript-developer-apiary-open-activity-6447891406055964672-m9R5",
+  "timeSincePosted": "7yr",
+  "shareUrn": "urn:li:share:6447891405401657344",
+  "text": "Hiring to my team!",
+  "attributes": [],
+  "comments": [],
+  "reactions": [],
+  "numShares": 1,
+  "numLikes": 0,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1537297107233,
+  "postedAtISO": "2018-09-18T18:58:27.233Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

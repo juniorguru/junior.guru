@@ -1,0 +1,78 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:6923758988285268548",
+    "url": "https://blog.python.cz/ja-python-a-rosti",
+    "title": "Já, Python a Roští - Python v ČR bloguje"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6614782736429268992",
+  "url": "https://www.linkedin.com/posts/honzajavorek_j%C3%A1-python-a-ro%C5%A1t%C3%AD-pythonv%C4%8Dr-bloguje-activity-6614782736429268992-Nn-o",
+  "timeSincePosted": "6yr",
+  "shareUrn": "urn:li:share:6614782735917563904",
+  "text": "Není mechanik seřizovač-programátor jako programátor. Marek začínal s CNC, zkoušel řemeslo, skončil jako skladník. Dali mu šanci v Roští a programuje! Dnes zápasí s angličtinou. Jak radím i na #juniorguru, učte se ji, je důležitější než matika!",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Nora",
+        "lastName": "Kořánová",
+        "occupation": "Technical Writer at SUSE",
+        "id": "508052457",
+        "publicId": "nkoranova",
+        "profileId": "ACoAAB5IQ-kBW4PRexbBNd-Zk4iJtNiwBro2uLY"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Iva",
+        "lastName": "Stencel",
+        "occupation": "CSV Lead/ Senior Business Analyst",
+        "id": "587257188",
+        "publicId": "iva-stencel-ab0807144",
+        "profileId": "ACoAACMA1WQBgV8EKd7FupQXOjpsAgya9rL3QLA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Nowak",
+        "occupation": "Senior Software Engineer | Team Builder & Engineering Leader | Driving quality, timely delivery and trust-based team culture | Founder at Veritas Dev",
+        "id": "16893430",
+        "publicId": "nowaja",
+        "profileId": "ACoAAAEBxfYBVYrri33NdhoMSs5DohrgctITu4o"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 3,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1577087101085,
+  "postedAtISO": "2019-12-23T07:45:01.085Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

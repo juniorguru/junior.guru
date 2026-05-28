@@ -1,0 +1,248 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:7765211935439249222",
+    "url": "https://junior.guru/",
+    "title": "Jak se naučit programovat a získat svou první práci v IT"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6589771442487902209",
+  "url": "https://www.linkedin.com/posts/honzajavorek_jak-se-nau%C4%8Dit-programovat-a-z%C3%ADskat-svou-prvn%C3%AD-activity-6589771442487902209-Zm5j",
+  "timeSincePosted": "6yr",
+  "shareUrn": "urn:li:share:6589771441464492032",
+  "text": "Po 5,5 letech odcházím z Apiary za novým dobrodružstvím.\n\nPrvní, co jsem se rozhodl udělat, je vytvořit web junior.guru, který se snaží lidem pomoci naučit se z nuly programovat a získat svou první práci v IT.\n\nJe to ale pro všechny, kteří by se chtěli programování naučit, nemusí hned měnit obor. I základní znalost programování dokáže mnohou jinou práci zjednodušit, ať už kancelářskou nebo vědeckou.\n\nBudu rád za jakoukoliv zpětnou vazbu a za sdílení, aby se to dostalo k co nejvíce lidem, kterým by to mohlo pomoci.",
+  "attributes": [
+    {
+      "start": 25,
+      "length": 6,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Apiary",
+        "universalName": "apiary-io",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:2222917"
+      }
+    },
+    {
+      "start": 108,
+      "length": 11,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Junior Guru",
+        "universalName": "juniorguru",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:26218444"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1571297349098,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6589771442487902209?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6589771442487902209%2C6590498756519571456%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286590498756519571456%2Curn%3Ali%3Aactivity%3A6589771442487902209%29",
+      "text": "Honzo díky za to, dcera i syn se již nějaký čas pokoušejí a tohle je určitě zajímavá možnost, takže se ozveme:-)\n",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Sandra",
+        "lastName": "Arbesová",
+        "occupation": "Můj denní režim: práce, cesta do práce, cesta z práce a občas myšlenka, že bych klidně nešla. 🤣🤣",
+        "id": "252954283",
+        "publicId": "sandraarbes",
+        "profileId": "ACoAAA8TxqsByWREPyl8cLgUwquJdvghxcnTqr0",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1571244854509,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6589771442487902209?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6589771442487902209%2C6590278578242412544%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286590278578242412544%2Curn%3Ali%3Aactivity%3A6589771442487902209%29",
+      "text": "Drzim palce. Este pridat sekciu so zameranim na ucenie deti ak by sa dalo, prosim.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Slovak",
+      "author": {
+        "firstName": "Viktor",
+        "lastName": "Nagy",
+        "occupation": "Information Security & Risk Management",
+        "id": "7975981",
+        "publicId": "viktor17nagy",
+        "profileId": "ACoAAAB5tC0BnDMesVLYIPHWp45kaiPM46ddcms",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1571186299660,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6589771442487902209?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6589771442487902209%2C6590032981400842240%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286590032981400842240%2Curn%3Ali%3Aactivity%3A6589771442487902209%29",
+      "text": "Mozna knoflik na prepnuti do English? 🤔",
+      "entities": [],
+      "pinned": false,
+      "author": {
+        "firstName": "Iva",
+        "lastName": "Stencel",
+        "occupation": "CSV Lead/ Senior Business Analyst",
+        "id": "587257188",
+        "publicId": "iva-stencel-ab0807144",
+        "profileId": "ACoAACMA1WQBgV8EKd7FupQXOjpsAgya9rL3QLA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1571169690168,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6589771442487902209?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6589771442487902209%2C6589963316146249728%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286589963316146249728%2Curn%3Ali%3Aactivity%3A6589771442487902209%29",
+      "text": "Za mě je velmi dobrý přehled programovacích znalostí (ale i souvisejících základů) https://github.com/ossu/computer-science",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Igor",
+        "lastName": "Kytka",
+        "occupation": "Co-founder @ Sanitka přání | Lead UX Researcher at @ Kentico",
+        "id": "28455037",
+        "publicId": "ikytka",
+        "profileId": "ACoAAAGyMH0BbEklZEy7DTPWfm9W903rC8NSnA8",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vendula",
+        "lastName": "Burdova",
+        "occupation": "Human Resources | People Strategy, Talent Acquisition",
+        "id": "26544363",
+        "publicId": "vendula-burdova-3a3a818",
+        "profileId": "ACoAAAGVCOsBdhjKf5niQLwnRso7XuJhV_6FA2Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomas",
+        "lastName": "Kapin",
+        "occupation": "Principal Group Software Engineering Manager at Microsoft",
+        "id": "11697354",
+        "publicId": "tomaskapin",
+        "profileId": "ACoAAACyfMoBrxXIxmXp9XHuADIJR4QnV2KF3B8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Peter",
+        "lastName": "Kincel",
+        "occupation": "Graphic Designer • UX/UI Designer • 15+ years of experience • Travel Blogger",
+        "id": "110772598",
+        "publicId": "peterkincel",
+        "profileId": "ACoAAAaaQXYB0EORAwnq7HqXv4hQreXNDodNj6g"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Burián",
+        "occupation": "Board Member at ASWA | CEO at Fragaria Ltd. |",
+        "id": "151562317",
+        "publicId": "martinburi8n",
+        "profileId": "ACoAAAkIqE0BrfSsuWbeWHntZH3jhqLdC8JI99o"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Adam",
+        "lastName": "Popelka",
+        "occupation": "Product Owner & Finance Manager at Adbros, s.r.o.",
+        "id": "599765980",
+        "publicId": "adampopelka",
+        "profileId": "ACoAACO_s9wB3QrdQ-X-Kluexq_EwYtu0HifCiA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Janda",
+        "occupation": "IT konzultant, admin a občas i programátor",
+        "id": "14662775",
+        "publicId": "martin-janda-czechia",
+        "profileId": "ACoAAADfvHcB4pq5I2GFku_uIsUgIQWbMw1K5bA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michal",
+        "lastName": "Langmajer",
+        "occupation": "Vibe Entrepreneur",
+        "id": "119620033",
+        "publicId": "michallangmajer",
+        "profileId": "ACoAAAchQcEBLKxAuKfcSxCdE6OZDoOAUE3pQHA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Mike",
+        "lastName": "A.",
+        "occupation": "Designer",
+        "id": "15397598",
+        "publicId": "acler",
+        "profileId": "ACoAAADq8t4Bj_97wrU0eCSRFY4-Pjz59fuhJKk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomas",
+        "lastName": "Vesely",
+        "occupation": "Senior Director, Engineering at Medallia (Prague Site Lead)",
+        "id": "20469925",
+        "publicId": "veselytomas",
+        "profileId": "ACoAAAE4WKUBfH5fuKb57n5_4OifF-xI7plQ9E4"
+      }
+    },
+    {
+      "type": "INTEREST",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Riško",
+        "occupation": "When you use Salesforce properly, anything is possible.",
+        "id": "216312748",
+        "publicId": "pavelrisko",
+        "profileId": "ACoAAAzkq6wBuo03ajhnNuj0xZxA73BoOEk4D7c"
+      }
+    }
+  ],
+  "numShares": 9,
+  "numLikes": 139,
+  "numComments": 12,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1571123943922,
+  "postedAtISO": "2019-10-15T07:19:03.922Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

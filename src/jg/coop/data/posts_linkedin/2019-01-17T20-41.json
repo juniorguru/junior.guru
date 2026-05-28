@@ -1,0 +1,155 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:8788609611814638720",
+    "url": "https://blog.apiary.io/ApiaryUI",
+    "title": "ApiaryUI — Apiary Blog"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6491766240082698241",
+  "url": "https://www.linkedin.com/posts/honzajavorek_apiaryui-apiary-blog-activity-6491766240082698241-7UJn",
+  "timeSincePosted": "7yr",
+  "shareUrn": "urn:li:share:6491766239776509952",
+  "text": "\"After months of hard work and burning the midnight oil we're very proud to announce #ApiaryUI - our brand new, fully rethought, and refactored version of our existing interactive documentation.\" 🍾 🎉 https://lnkd.in/dWei-YC #documentation #announcements #api #apis #openapi #apiblueprint #apiary",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Fouad",
+        "lastName": "Husseini",
+        "occupation": "FCII | Insurance Nexus awards runner up | GM for GIG subsidiary",
+        "id": "24594602",
+        "publicId": "fouad-husseini-ba22a08",
+        "profileId": "ACoAAAF3SKoBEY5FFnRQJxT6RQYl_CT86Nlu_8I"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Béla",
+        "lastName": "B.",
+        "occupation": "Senior Program and Project Manager | Business Analyst | CX/EX Transformation Leader",
+        "id": "363926358",
+        "publicId": "bbela-consultant",
+        "profileId": "ACoAABWxE1YBF8INfuyWprDF2wIbQ9zvhghINM8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Nora",
+        "lastName": "Kořánová",
+        "occupation": "Technical Writer at SUSE",
+        "id": "508052457",
+        "publicId": "nkoranova",
+        "profileId": "ACoAAB5IQ-kBW4PRexbBNd-Zk4iJtNiwBro2uLY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ladislav",
+        "lastName": "Prskavec",
+        "occupation": "Staff Engineer at Everpure (formerly Pure Storage, Inc.)",
+        "id": "6413396",
+        "publicId": "ladislavprskavec",
+        "profileId": "ACoAAABh3FQBjDcRIsKdGUqUWVVxs45nmvivIO4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Monika",
+        "lastName": "Mikesova",
+        "occupation": "You can’t scale a business if you’re breaking the people",
+        "id": "151137351",
+        "publicId": "monikamikesova",
+        "profileId": "ACoAAAkCLEcBZjIuplszSXycU8NImLv0qlPYSNo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Joerg",
+        "lastName": "K.",
+        "occupation": "Head of Marketing at WisdomAI | Ex LeadIQ, Apollo, Heap",
+        "id": "28102",
+        "publicId": "joergkoehler",
+        "profileId": "ACoAAAAAbcYBOzkoRFPJDAT4kNfHOAiFGG1FFZQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Mrinmoy",
+        "lastName": "Aich",
+        "occupation": "Cloud & AI Integration Architect & Thought Leader | Driving Global Innovation in Agentic AI, Cloud Architecture, and Digital Transformation | Thought Leadership Mentor | Fellow BCS | IEEE Senior Member | MIET",
+        "id": "5190514",
+        "publicId": "mrinmoyaich",
+        "profileId": "ACoAAABPM3IBOH1AI81xwfEf-EgP4wqYD8CwpH8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Nešetřil",
+        "occupation": "Vice-Rector, Startup Founder, Non-Profit Founder, Tech Geek, Dad",
+        "id": "4492193",
+        "publicId": "nesetril",
+        "profileId": "ACoAAABEi6EBQrrCicPfMMGCR7w_Vww5tJNNxPg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Iva",
+        "lastName": "Stencel",
+        "occupation": "CSV Lead/ Senior Business Analyst",
+        "id": "587257188",
+        "publicId": "iva-stencel-ab0807144",
+        "profileId": "ACoAACMA1WQBgV8EKd7FupQXOjpsAgya9rL3QLA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Monica",
+        "lastName": "Rothschild",
+        "occupation": "Enterprise Account Executive @ Supio",
+        "id": "3044869",
+        "publicId": "monicarothschild",
+        "profileId": "ACoAAAAudgUBRhczFG3t_MncGfh850bIs_JLzZ4"
+      }
+    }
+  ],
+  "numShares": 8,
+  "numLikes": 10,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1547757682820,
+  "postedAtISO": "2019-01-17T20:41:22.820Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

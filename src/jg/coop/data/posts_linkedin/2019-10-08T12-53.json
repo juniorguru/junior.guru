@@ -1,0 +1,228 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "type": "image",
+    "images": [],
+    "isActivity": false,
+    "urn": "urn:li:activity:6587280240182087681",
+    "url": "https://www.linkedin.com/posts/dariagru_hivetalks-behaviordrivendevelopment-hivetalks-activity-6587280240182087681-wBxi?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFOj8-sBSMUxlveLaiq7tYyYCN_WE7nq9uU",
+    "timeSincePosted": "6yr",
+    "shareUrn": "urn:li:share:6587280239569719297",
+    "text": "Looking forward to today's Apiary #HiveTalks - Vladimír Gorej Standa Opichal and Honza Javorek will talk about BDD https://lnkd.in/e9EQ85e #behaviordrivendevelopment #hivetalks #cucumber #bdd 🤩",
+    "attributes": [
+      {
+        "start": 27,
+        "length": 6,
+        "type": "COMPANY_NAME",
+        "company": {
+          "name": "Apiary",
+          "universalName": "apiary-io",
+          "active": true,
+          "showcase": false,
+          "entityUrn": "urn:li:fs_miniCompany:2222917"
+        }
+      },
+      {
+        "start": 47,
+        "length": 14,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Vladimír",
+          "lastName": "Gorej",
+          "occupation": "Full-Stack Software Engineer & Problem Solver | Open Source maintainer & contributor | Alumni GitHub Star | AsyncAPI maintainer | PSD I / PSM I / GCP / LFCA",
+          "id": "58899881",
+          "publicId": "vladimirgorej",
+          "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
+        }
+      },
+      {
+        "start": 62,
+        "length": 14,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Standa",
+          "lastName": "Opichal",
+          "occupation": "Member of Technical Staff at Pure Storage",
+          "id": "3578160",
+          "publicId": "opichals",
+          "profileId": "ACoAAAA2mTAB0vQRaBG0Lt6G3F13S-8hPYhR3UU"
+        }
+      },
+      {
+        "start": 81,
+        "length": 13,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+        }
+      }
+    ],
+    "comments": [],
+    "reactions": [
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Elena",
+          "lastName": "Porras",
+          "occupation": "MSc Data Science Student | Software Developer",
+          "id": "606494453",
+          "publicId": "elena-porras",
+          "profileId": "ACoAACQmXvUBtv3TaKR073PNareOOxVhNLWTQu8"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Vojtech",
+          "lastName": "FILIPEC",
+          "occupation": "freelancer, data scientist, credit risk, statistics, machine learning",
+          "id": "172399456",
+          "publicId": "vojtech-filipec",
+          "profileId": "ACoAAApGm2ABs_vEjvcF8Qtjk9ICzW5tYc4U1LA"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Éva",
+          "lastName": "Pálfi-Szentgyörgyi",
+          "occupation": "Believer of lifelong learning",
+          "id": "306437717",
+          "publicId": "eva-psz",
+          "profileId": "ACoAABJD3lUBmOo5Yri0gqk8dj9mf74wR4yayfA"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Sara",
+          "lastName": "Litwak",
+          "occupation": "MuleSoft Onboarding & Enablement | Agentforce Innovator | Certified MuleSoft Professional | Hyperautomation | Content Enthusiast & Digital Storyteller",
+          "id": "313946456",
+          "publicId": "sara-litwak",
+          "profileId": "ACoAABK2cVgB0IK55PYf6urgAuKQ0aqRFXN9qo4"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Krzysztof",
+          "lastName": "Stawujak",
+          "occupation": "VP Sales Drug Development Europe & Asia @ Selvita · CRO Business Development · Oligonucleotides · Peptides · Biologics · Partnering Biotech & Pharma across EU, India, Japan & South Korea · PhD",
+          "id": "80547663",
+          "publicId": "krzysztofstawujak",
+          "profileId": "ACoAAATND08BseCUPsuFIohV3BQFd9HzkcxHYM8"
+        }
+      }
+    ],
+    "numShares": 2,
+    "numLikes": 6,
+    "numComments": 0,
+    "canReact": true,
+    "canPostComments": true,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "ALL",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "firstName": "Daria",
+      "lastName": "Linhart Grudzien",
+      "occupation": "Technical Content & Communications, Community, Events | EuroPython Organizer & Team Lead | Formerly Reliability Engineering & Incident Response at Redpanda, Oracle Cloud Infrastructure, Apiary",
+      "id": "183293578",
+      "publicId": "dariagru",
+      "profileId": "ACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0"
+    },
+    "authorProfileId": "dariagru",
+    "authorType": "Person",
+    "authorName": "Daria Linhart Grudzien",
+    "authorProfileUrl": "https://www.linkedin.com/in/dariagru?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAArs1ooBK7N7bVh89TvkqlPQFYFmtXtxbi0",
+    "authorUrn": "urn:li:member:183293578",
+    "postedAtTimestamp": 1570529995008,
+    "postedAtISO": "2019-10-08T10:19:55.008Z"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6587318896510935042",
+  "url": "https://www.linkedin.com/posts/honzajavorek_hivetalks-behaviordrivendevelopment-hivetalks-activity-6587318896510935042-W2tD",
+  "timeSincePosted": "6yr",
+  "shareUrn": "urn:li:share:6587318895760154624",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Hana",
+        "lastName": "Kalivodová",
+        "occupation": "Student of New Media Studies",
+        "id": "254281372",
+        "publicId": "hanakalivodova",
+        "profileId": "ACoAAA8oBpwB65u5nWe0nCLRJM8a5P0FLRgRUMw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Edita",
+        "lastName": "Siler",
+        "occupation": "Senior HR Consultant at Oracle",
+        "id": "83524426",
+        "publicId": "editavesela",
+        "profileId": "ACoAAAT6e0oBVxqy8TDqP4ucx5hsYsDSI8yXwK8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Monika",
+        "lastName": "Mikesova",
+        "occupation": "You can’t scale a business if you’re breaking the people",
+        "id": "151137351",
+        "publicId": "monikamikesova",
+        "profileId": "ACoAAAkCLEcBZjIuplszSXycU8NImLv0qlPYSNo"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 3,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1570539211395,
+  "postedAtISO": "2019-10-08T12:53:31.395Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

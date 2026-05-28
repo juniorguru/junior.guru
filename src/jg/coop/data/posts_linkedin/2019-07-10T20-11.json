@@ -1,0 +1,98 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "isActivity": false,
+    "urn": "urn:li:activity:6547536893460959232",
+    "url": "https://www.linkedin.com/posts/ladislavprskavec_im-looking-for-new-people-into-my-team-activity-6547536893460959232-ful4?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFOj8-sBSMUxlveLaiq7tYyYCN_WE7nq9uU",
+    "timeSincePosted": "6yr",
+    "shareUrn": "urn:li:share:6547536892953452544",
+    "text": "I’m looking for new people into my team. Check out this job: Senior Site Reliability Engineer",
+    "attributes": [],
+    "comments": [],
+    "reactions": [
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Martin",
+          "lastName": "Vyšohlíd",
+          "occupation": "Make things work.",
+          "id": "32457297",
+          "publicId": "vysohlidm",
+          "profileId": "ACoAAAHvQlEBsX7hoscEhQYJO9lk-O1wesrvgU0"
+        }
+      }
+    ],
+    "numShares": 4,
+    "numLikes": 1,
+    "numComments": 0,
+    "canReact": true,
+    "canPostComments": true,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "ALL",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "firstName": "Ladislav",
+      "lastName": "Prskavec",
+      "occupation": "Staff Engineer at Everpure (formerly Pure Storage, Inc.)",
+      "id": "6413396",
+      "publicId": "ladislavprskavec",
+      "profileId": "ACoAAABh3FQBjDcRIsKdGUqUWVVxs45nmvivIO4"
+    },
+    "authorProfileId": "ladislavprskavec",
+    "authorType": "Person",
+    "authorName": "Ladislav Prskavec",
+    "authorProfileUrl": "https://www.linkedin.com/in/ladislavprskavec?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAABh3FQBjDcRIsKdGUqUWVVxs45nmvivIO4",
+    "authorUrn": "urn:li:member:6413396",
+    "postedAtTimestamp": 1561054442754,
+    "postedAtISO": "2019-06-20T18:14:02.754Z"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6554814155914829825",
+  "url": "https://www.linkedin.com/posts/honzajavorek_im-looking-for-new-people-into-my-team-activity-6554814155914829825-lyHS",
+  "timeSincePosted": "6yr",
+  "shareUrn": "urn:li:share:6554814155369570304",
+  "text": "SRE team in Apiary is hiring :) #hiring #sre",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Natalie",
+        "lastName": "Mikešová",
+        "occupation": "Softwarový inženýr ve společnosti Security Scorecard",
+        "id": "199634401",
+        "publicId": "nataliemikesova",
+        "profileId": "ACoAAAvmLeEBB2iZ_vXMYhR3WoUsSC-k3iPuG4Y"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 1,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1562789477328,
+  "postedAtISO": "2019-07-10T20:11:17.328Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

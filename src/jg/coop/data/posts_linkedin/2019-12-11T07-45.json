@@ -1,0 +1,144 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:8671656243573658079",
+    "url": "https://junior.guru/jobs/",
+    "title": "Práce pro začínající programátory"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6610434097061867520",
+  "url": "https://www.linkedin.com/posts/honzajavorek_pr%C3%A1ce-pro-za%C4%8D%C3%ADnaj%C3%ADc%C3%AD-program%C3%A1tory-activity-6610434097061867520-bZlq",
+  "timeSincePosted": "6yr",
+  "shareUrn": "urn:li:share:6610434096428531712",
+  "text": "Nová stránka s pracovními nabídkami je venku 🎉 Každý inzerát má nyní svou vlastní stránku. Design i texty jsou uhlazenější.",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Smolinkova",
+        "occupation": "What doesn't kill me makes me stronger.",
+        "id": "24700716",
+        "publicId": "jana-smolinkova",
+        "profileId": "ACoAAAF45ywB9Fk_T0H0XOkWh_vqZWF13an54IM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Mia",
+        "lastName": "Bajić",
+        "occupation": "Software Engineer",
+        "id": "530925455",
+        "publicId": "mia-bajic",
+        "profileId": "ACoAAB-lR48BFvPhQ6doZNGTRVftkLrzcnIv-Ss"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marco",
+        "lastName": "Friso",
+        "occupation": "Software Engineer | JavaScript, TypeScript, React & Node.js | Web3 & Cloud on AWS | Interested in Software Architecture and AI-assisted coding 🚀",
+        "id": "7614604",
+        "publicId": "marcofriso",
+        "profileId": "ACoAAAB0MIwBvz-6wL8bknVvqqtBibNVBWZr7Ks"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ladislav",
+        "lastName": "Prskavec",
+        "occupation": "Staff Engineer at Everpure (formerly Pure Storage, Inc.)",
+        "id": "6413396",
+        "publicId": "ladislavprskavec",
+        "profileId": "ACoAAABh3FQBjDcRIsKdGUqUWVVxs45nmvivIO4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Nora",
+        "lastName": "Kořánová",
+        "occupation": "Technical Writer at SUSE",
+        "id": "508052457",
+        "publicId": "nkoranova",
+        "profileId": "ACoAAB5IQ-kBW4PRexbBNd-Zk4iJtNiwBro2uLY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Messner",
+        "occupation": "Full-stack software engineer and developer",
+        "id": "21519263",
+        "publicId": "messa",
+        "profileId": "ACoAAAFIW58BHQuf7UmFIL0JxAANFW73V79_YOY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavla",
+        "lastName": "Pilchová",
+        "occupation": "Komunikační specialistka ~ copywriting & copyediting ~ tvorba & úprava textu ~ PR komunikace ~ event specialistka ~ produkce",
+        "id": "228599758",
+        "publicId": "pavlapilchova",
+        "profileId": "ACoAAA2gJ84BUO4TQAQEEIu0swowkiEljEIjXAk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Roman",
+        "lastName": "Urbanovski",
+        "occupation": "Talent Advisor, Data Whisperer, and Ashby ATS enthusiast",
+        "id": "12556957",
+        "publicId": "roman-urbanovski-9112564",
+        "profileId": "ACoAAAC_mp0BrGty44oxuoHJLqg1VGWPb2yqcOk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daniel",
+        "lastName": "Kopecký",
+        "occupation": "From Chaos to System | 0→1 R&D & Early-Stage Technology | Modeling, Python | Technical Education",
+        "id": "150688527",
+        "publicId": "dankopecky",
+        "profileId": "ACoAAAj7Uw8Bnb0RahPTccELn2ximxZOpdvgnl0"
+      }
+    }
+  ],
+  "numShares": 3,
+  "numLikes": 15,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1576050304666,
+  "postedAtISO": "2019-12-11T07:45:04.666Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

@@ -1,0 +1,155 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:7251900350023877950",
+    "url": "https://blog.apiary.io/OAS-3",
+    "title": "Welcoming OpenAPI 3.0 to Apiary — Apiary Blog"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6499006768377577472",
+  "url": "https://www.linkedin.com/posts/honzajavorek_welcoming-openapi-30-to-apiary-apiary-activity-6499006768377577472-ayO0",
+  "timeSincePosted": "7yr",
+  "shareUrn": "urn:li:share:6499006768054624256",
+  "text": "I’m delighted to share the announcement of experimental support for OpenAPI 3.0 in Apiary! #announcements #apis #openapi #apiary #documentation #apiblueprint #apiaryui #api",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Natalie",
+        "lastName": "Mikešová",
+        "occupation": "Softwarový inženýr ve společnosti Security Scorecard",
+        "id": "199634401",
+        "publicId": "nataliemikesova",
+        "profileId": "ACoAAAvmLeEBB2iZ_vXMYhR3WoUsSC-k3iPuG4Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Fouad",
+        "lastName": "Husseini",
+        "occupation": "FCII | Insurance Nexus awards runner up | GM for GIG subsidiary",
+        "id": "24594602",
+        "publicId": "fouad-husseini-ba22a08",
+        "profileId": "ACoAAAF3SKoBEY5FFnRQJxT6RQYl_CT86Nlu_8I"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Mahesh",
+        "lastName": "Vasishtha",
+        "occupation": "Director Product Management at Oracle",
+        "id": "35717114",
+        "publicId": "mahesh-vasishtha",
+        "profileId": "ACoAAAIg__oB18gfsgt9Vv8me_U2BSx3UtQ6HPY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Nešetřil",
+        "occupation": "Vice-Rector, Startup Founder, Non-Profit Founder, Tech Geek, Dad",
+        "id": "4492193",
+        "publicId": "nesetril",
+        "profileId": "ACoAAABEi6EBQrrCicPfMMGCR7w_Vww5tJNNxPg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Harris",
+        "lastName": "Qureshi",
+        "occupation": "Enterprise Integration & AI Automation Strategist | Distinguished Integration Black Belt @ Oracle | AI Agents, Generative AI & Developer Enablement",
+        "id": "5622137",
+        "publicId": "harrismoinqureshi",
+        "profileId": "ACoAAABVyXkBxdqr10Nnkwgkl16iYFbvx1s8lcc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vikas",
+        "lastName": "Anand",
+        "occupation": "Director of Product @ Google helping XMs builders deliver Agentic Apps| Antigravity, Gemini CLI, Firebase, Observability | 0→1 | Past: Apigee | Appsheet | Payment Gateway | iPaaS | Ex-VP Oracle | Startup Advisor",
+        "id": "2534080",
+        "publicId": "vikasanandsf",
+        "profileId": "ACoAAAAmqsABp2KigKtTt_xaJ5nclmHh1DCVLyw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Iva",
+        "lastName": "Stencel",
+        "occupation": "CSV Lead/ Senior Business Analyst",
+        "id": "587257188",
+        "publicId": "iva-stencel-ab0807144",
+        "profileId": "ACoAACMA1WQBgV8EKd7FupQXOjpsAgya9rL3QLA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Robert",
+        "lastName": "Wunderlich",
+        "occupation": "AI Strategy & Enterprise Integration | Ex-Oracle Product Leader (OCI, APIs, Messaging) | Deep-diving into agentic AI & real-world applications | Open to selective conversations",
+        "id": "5242292",
+        "publicId": "wunderlich",
+        "profileId": "ACoAAABP_bQBKO5DXZ8Vh_Qlsjvqa0SbX21tA1k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lukas",
+        "lastName": "Linhart",
+        "occupation": "Staff Engineer",
+        "id": "17244345",
+        "publicId": "almad",
+        "profileId": "ACoAAAEHILkB4Bzt2NxVHr_Jl8lpknbM03XMQv4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Paulo Alberto",
+        "lastName": "Simoes",
+        "occupation": "Technology Evangelist | Executive Technical Advisor | Mentor & Conference Speaker | AI, Cloud & Enterprise Transformation",
+        "id": "15510371",
+        "publicId": "pasimoes",
+        "profileId": "ACoAAADsq2MB1U34oWgkYfCpnEaQhTALYs5E1AE"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 10,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1549483959288,
+  "postedAtISO": "2019-02-06T20:12:39.288Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

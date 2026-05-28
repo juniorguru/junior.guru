@@ -1,0 +1,237 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "type": "text",
+    "isActivity": false,
+    "urn": "urn:li:activity:6588368484483244032",
+    "url": "https://www.linkedin.com/posts/brozekp_itjobs-guru-education-activity-6588368484483244032-KFME?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFOj8-sBSMUxlveLaiq7tYyYCN_WE7nq9uU",
+    "timeSincePosted": "6yr",
+    "shareUrn": "urn:li:share:6588368484042846208",
+    "text": "S poptávkou po vývojářích roste chuť lidí z různých oborů stát se vývojářem (v poslední době sleduji trend uprchlíků z oblasti recruitmentu do IT:) a vyměnit jedny výhody/nevýhody za jiné. Líbí se mi myšlenka celoživotního vzdělávání, svoboda informací i ona volnost pohybu v rámci trhu práce, proto bych vám rád doporučil web Junior guru (odkaz v komentářích), který rozběhl Honza Javorek - zkušený startupista i korporátník:). \n\nNa webu získáte základy programování, dostatek cvičení a už i pár nabídek práce. #itjobs #guru #education",
+    "attributes": [
+      {
+        "start": 376,
+        "length": 13,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+        }
+      }
+    ],
+    "comments": [
+      {
+        "time": 1570879351218,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:6588368484483244032?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6588368484483244032%2C6588745546322718720%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286588745546322718720%2Curn%3Ali%3Aactivity%3A6588368484483244032%29",
+        "text": "Zaujímavé, na LI sa dá pozorovať aj úspešný presun pár indivíduí opačným smerom, z IT do recruitmentu. Otázka za zlatého bludišťáka je, ktorým smerom to ide ľahšie 😀\n\nP.S.: ak by niekomu nevyhovoval junior.guru, z českých webov môžete vyskúšať napr. itnetwork.cz",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Slovak",
+        "author": {
+          "firstName": "🔥",
+          "lastName": "Martin Petrovaj",
+          "occupation": "We employ drones as productivity multiplier",
+          "id": "618696472",
+          "publicId": "martin-petrovaj",
+          "profileId": "ACoAACTgjxgBV_hXKeB2UjV1xHoFnPCP74lqFM8",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1570794525192,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:6588368484483244032?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6588368484483244032%2C6588389760182558720%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286588389760182558720%2Curn%3Ali%3Aactivity%3A6588368484483244032%29",
+        "text": "Já už koukám po kurzech od Czechitas, ale ono to mělo důvod proč jsem tehdy šla na práva...to “it” myšlení dost bolí :D",
+        "entities": [
+          {
+            "start": 27,
+            "length": 9,
+            "type": "COMPANY_NAME",
+            "company": {
+              "name": "Czechitas",
+              "universalName": "czechitas",
+              "active": true,
+              "showcase": false,
+              "entityUrn": "urn:li:fs_miniCompany:5319681"
+            }
+          }
+        ],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Jana",
+          "lastName": "Sedláková",
+          "occupation": "structuring🟡startups🟢technology🟡M&A",
+          "id": "509893714",
+          "publicId": "jana-sedlakova",
+          "profileId": "ACoAAB5kXFIBQepZJWH6vHeOJy8s5dGKcmWbnDU",
+          "distance": "OUT_OF_NETWORK"
+        }
+      }
+    ],
+    "reactions": [
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Pavol",
+          "lastName": "Hejny",
+          "occupation": "Founder & CTO | We capture senior expertise and personality, then scale it through AI agents | Built 100+ agents | 20,000+ hours freed for strategy",
+          "id": "318663257",
+          "publicId": "hejny",
+          "profileId": "ACoAABL-alkBOK9NI806e3E-X6g4ziPkyFkoN4I"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Denisa",
+          "lastName": "Čuprová",
+          "occupation": "HR Manager / Qest technologies",
+          "id": "11940633",
+          "publicId": "cuprdenisa",
+          "profileId": "ACoAAAC2MxkB2ID0Fy0ZWx4cQg0AwInJq-KGZ-8"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Miroslava",
+          "lastName": "Pagáč",
+          "occupation": "„Kompetenz in Zahlen. Verlässlichkeit im Alltag.“",
+          "id": "728758504",
+          "publicId": "miroslava-pagáč-2b4087184",
+          "profileId": "ACoAACtv-OgBunKhMfWf5tNYEUKAmtNDlrcsGyc"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Ondřej",
+          "lastName": "Jiříček",
+          "occupation": "Recruitment Partner & Managing Director",
+          "id": "583661786",
+          "publicId": "ondrej-jiricek",
+          "profileId": "ACoAACLJ-NoBP31ar8v8ThrA4K7NNwSpG3G_SWk"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "michal",
+          "lastName": "halmeš",
+          "occupation": "digital services ~ sports ~ a strategic planning fan ~ football coach ~ mobile apps",
+          "id": "277053635",
+          "publicId": "michalhalmes",
+          "profileId": "ACoAABCDgMMBVI-Ee0P5woyNQWSAhWX_SLmtADI"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Václav",
+          "lastName": "Kotyk",
+          "occupation": "Talent Sourcer @ SentinelOne.ai | The Future of CyberSec will be determined by You - let’s Secure Tomorrow™ together! 🛡️👾 | In 💜 with s1.ai/PurpleAI | 🕵️‍♂️ CyBeer security meetups organizer",
+          "id": "322518163",
+          "publicId": "vaclavkotyk",
+          "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Petr",
+          "lastName": "Žížek",
+          "occupation": "Průvodce cykly bohatství 📈",
+          "id": "229451762",
+          "publicId": "petr-žížek-702a1464",
+          "profileId": "ACoAAA2tJ_IB7sP5S6LHxlMS2UfNxfoAbaFpW4w"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Eva",
+          "lastName": "Bordovská ",
+          "occupation": "HR & MKT",
+          "id": "320012987",
+          "publicId": "evabordovska",
+          "profileId": "ACoAABMTArsBlUAGRkkBZy8w2pkY06UhISsgebk"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Adam",
+          "lastName": "Černý",
+          "occupation": "Operations manager v e-commerce",
+          "id": "112251844",
+          "publicId": "adamcerny",
+          "profileId": "ACoAAAaw08QBZfHys8lAHKvdcsDELisCQxeaxQ4"
+        }
+      }
+    ],
+    "numShares": 1,
+    "numLikes": 31,
+    "numComments": 2,
+    "canReact": true,
+    "canPostComments": true,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "ALL",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "firstName": "Pavel",
+      "lastName": "Brožek",
+      "occupation": "Senior Recruiter & Psychologist | Solving Client Problems | AI / automation enthusiast | Vibe-coding fan",
+      "id": "213472357",
+      "publicId": "brozekp",
+      "profileId": "ACoAAAy5VGUB5CxvF4yTf8e2Iwdn6vZy95xNujc"
+    },
+    "authorProfileId": "brozekp",
+    "authorType": "Person",
+    "authorName": "Pavel Brožek",
+    "authorProfileUrl": "https://www.linkedin.com/in/brozekp?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAy5VGUB5CxvF4yTf8e2Iwdn6vZy95xNujc",
+    "authorUrn": "urn:li:member:213472357",
+    "postedAtTimestamp": 1570789452668,
+    "postedAtISO": "2019-10-11T10:24:12.668Z"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6588480820887998465",
+  "url": "https://www.linkedin.com/posts/honzajavorek_itjobs-guru-education-activity-6588480820887998465-S9w9",
+  "timeSincePosted": "6yr",
+  "shareUrn": "urn:li:share:6588480820388868096",
+  "text": "Díky za doporučení! #juniorguru",
+  "attributes": [],
+  "comments": [],
+  "reactions": [],
+  "numShares": 0,
+  "numLikes": 0,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1570816235754,
+  "postedAtISO": "2019-10-11T17:50:35.754Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

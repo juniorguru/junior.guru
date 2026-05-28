@@ -1,0 +1,207 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "type": "article",
+    "article": {
+      "type": "EXTERNAL_FULL",
+      "urn": "urn:li:article:7653806527519989779",
+      "url": "https://survivejs.com/blog/dredd-interview/",
+      "title": "Dredd - Language-agnostic HTTP API Testing Tool - Interview with Honza Javorek"
+    },
+    "isActivity": false,
+    "urn": "urn:li:activity:6514895359678914560",
+    "url": "https://www.linkedin.com/posts/juhovepsalainen_dredd-language-agnostic-http-api-testing-activity-6514895359678914560-GOPO?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFOj8-sBSMUxlveLaiq7tYyYCN_WE7nq9uU",
+    "timeSincePosted": "7yr",
+    "shareUrn": "urn:li:share:6514895359217532928",
+    "text": "I interviewed Honza Javorek about Dredd, an API testing tool",
+    "attributes": [
+      {
+        "start": 14,
+        "length": 13,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+        }
+      }
+    ],
+    "comments": [],
+    "reactions": [
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Tomasz",
+          "lastName": "Jadczyk",
+          "occupation": "Cardiac Electrophysiologist | Senior Digital Health Expert | University Professor of Cardiology MD PhD DSc | Cedars-Sinai Accelerator Alumnus | Chief Medical Officer at InBioSens",
+          "id": "32125330",
+          "publicId": "tomasz-jadczyk",
+          "profileId": "ACoAAAHqMZIBBqkwxthsW4oB-NoVjQA_95fGz4I"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Rafael",
+          "lastName": "Cordones",
+          "occupation": "Senior Software Engineer and Architect (Contract)",
+          "id": "2274156",
+          "publicId": "rafaelcordones",
+          "profileId": "ACoAAAAis2wBASVqkVmv_R0FXnvQwGAd6HWIhNw"
+        }
+      }
+    ],
+    "numShares": 1,
+    "numLikes": 3,
+    "numComments": 0,
+    "canReact": true,
+    "canPostComments": true,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "ALL",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "firstName": "Juho",
+      "lastName": "Vepsäläinen",
+      "occupation": "University Teacher at Aalto University",
+      "id": "26970526",
+      "publicId": "juhovepsalainen",
+      "profileId": "ACoAAAGbiZ4BqxPYwUU1K_4HYqyJCMcPMvXULqQ"
+    },
+    "authorProfileId": "juhovepsalainen",
+    "authorType": "Person",
+    "authorName": "Juho Vepsäläinen",
+    "authorProfileUrl": "https://www.linkedin.com/in/juhovepsalainen?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAGbiZ4BqxPYwUU1K_4HYqyJCMcPMvXULqQ",
+    "authorUrn": "urn:li:member:26970526",
+    "postedAtTimestamp": 1553272094650,
+    "postedAtISO": "2019-03-22T16:28:14.650Z"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6515930304182517761",
+  "url": "https://www.linkedin.com/posts/honzajavorek_dredd-language-agnostic-http-api-testing-activity-6515930304182517761-tZYl",
+  "timeSincePosted": "7yr",
+  "shareUrn": "urn:li:share:6515930303855362048",
+  "text": "My interview with SurviveJS about Dredd #dredd #testing #webapis #openapi #apiblueprint #apis",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marco",
+        "lastName": "Friso",
+        "occupation": "Software Engineer | JavaScript, TypeScript, React & Node.js | Web3 & Cloud on AWS | Interested in Software Architecture and AI-assisted coding 🚀",
+        "id": "7614604",
+        "publicId": "marcofriso",
+        "profileId": "ACoAAAB0MIwBvz-6wL8bknVvqqtBibNVBWZr7Ks"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Artem",
+        "lastName": "Zakharchenko",
+        "occupation": "Software engineer & Educator",
+        "id": "479400907",
+        "publicId": "artem-zakharchenko",
+        "profileId": "ACoAAByTE8sBD2jc0LWL1WTudVD1bG_e2hh-aG0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Rahul",
+        "lastName": "Yadav",
+        "occupation": "AI Jargons and Stuff | Data and Machine Learning Enthu | Open Source Advocate | Aviation Noob | Reader l Views are personal.",
+        "id": "102938486",
+        "publicId": "testerops",
+        "profileId": "ACoAAAYit3YBfKScsSNAH3lcxjAFPUL7MWA8-2M"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Natalie",
+        "lastName": "Mikešová",
+        "occupation": "Softwarový inženýr ve společnosti Security Scorecard",
+        "id": "199634401",
+        "publicId": "nataliemikesova",
+        "profileId": "ACoAAAvmLeEBB2iZ_vXMYhR3WoUsSC-k3iPuG4Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Iva",
+        "lastName": "Stencel",
+        "occupation": "CSV Lead/ Senior Business Analyst",
+        "id": "587257188",
+        "publicId": "iva-stencel-ab0807144",
+        "profileId": "ACoAACMA1WQBgV8EKd7FupQXOjpsAgya9rL3QLA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tony",
+        "lastName": "T.",
+        "occupation": "Founder at Hapi, Inc.",
+        "id": "30124181",
+        "publicId": "ttahmouch",
+        "profileId": "ACoAAAHLqJUBclXTf61Q91nSjWQY8NPtnF9GUI4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vladimír",
+        "lastName": "Gorej",
+        "occupation": "Full-Stack Software Engineer & Problem Solver | Open Source maintainer & contributor | Alumni GitHub Star | AsyncAPI maintainer | PSD I / PSM I / GCP / LFCA",
+        "id": "58899881",
+        "publicId": "vladimirgorej",
+        "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 7,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1553518844648,
+  "postedAtISO": "2019-03-25T13:00:44.648Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

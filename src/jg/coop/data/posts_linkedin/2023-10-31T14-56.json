@@ -4,7 +4,7 @@
     "type": "text",
     "isActivity": false,
     "urn": "urn:li:activity:7124677459861528576",
-    "url": "https://www.linkedin.com/posts/lenka-kurov%C3%A1-29875469_doba-je-zl%C3%A1-pro-juniorn%C3%AD-aj%C5%A5%C3%A1ky-ur%C4%8Dit%C4%9B-activity-7124677459861528576-Hj-v?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAC29INoBu4UxIfyNnC3051th8thkLppPT1Y",
+    "url": "https://www.linkedin.com/posts/lenka-kurov%C3%A1-29875469_doba-je-zl%C3%A1-pro-juniorn%C3%AD-aj%C5%A5%C3%A1ky-ur%C4%8Dit%C4%9B-activity-7124677459861528576-Hj-v?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAACkYlAQBRTNz8CdXZeg6hzVz7QVXcc1syiY",
     "timeSincePosted": "2yr",
     "shareUrn": "urn:li:share:7124677459400085504",
     "text": "☢ Doba je zlá...\n🖥 Pro juniorní ajťáky určitě.\n\n🕸 V síti mám spoustu šikovných juniorů - ať už testerů, vývojářů, analytiků. Ráda bych je nasměrovala do firem, kde jsou juniorům otevření - ať už na zaměstnanecký poměr, tak na placené i neplacené stáže.\n\n❓Pracujete v takové firmě nebo víte o nějaké?\nProsím do komentáře 👇 nebo soukromé zprávy 📩",
@@ -58,23 +58,6 @@
         }
       },
       {
-        "time": 1698871436159,
-        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7124677459861528576?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7124677459861528576%2C7125583260167942144%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287125583260167942144%2Curn%3Ali%3Aactivity%3A7124677459861528576%29",
-        "text": "Asi nejsem na seznamu uchazečů co?...",
-        "entities": [],
-        "pinned": false,
-        "originalLanguage": "Czech",
-        "author": {
-          "firstName": "Tomáš",
-          "lastName": "Cibulec",
-          "occupation": "Python vývojář s přesahem. 🐍",
-          "id": "399499541",
-          "publicId": "ypsilonxpython",
-          "profileId": "ACoAABfP4RUBhhqww_PQuiFQs580Isbr6ZqrqOg",
-          "distance": "OUT_OF_NETWORK"
-        }
-      },
-      {
         "time": 1698657119822,
         "link": "https://www.linkedin.com/feed/update/urn:li:activity:7124677459861528576?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7124677459861528576%2C7124684352294113280%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287124684352294113280%2Curn%3Ali%3Aactivity%3A7124677459861528576%29",
         "text": "Firmy si po posledních pár letech (kdy byl v IT obří trend \"vychovej si svého juniora\") uvědomily, že když vezmou juniora, aniž by mu někdo zkušený dobrovolně věnoval dost času a energie, firmě to moc nepřinese a junior z toho dost možná bude tak akorát naštvaný a frustrovaný. Nedávno jsem o tom psala - https://www.linkedin.com/posts/knezkova_nem%C5%AF%C5%BEete-naj%C3%ADt-zku%C5%A1en%C3%A9-odborn%C3%ADky-vychovejte-activity-7095329301683650560-iV8j?utm_source=share&utm_medium=member_desktop\nBohužel nikdo teď moc neví, co se všemi nadšenými a často i schopnými juniory, co se teď věnovali vlastní rekvalifikaci.\nJe super, že se tomu věnujete a snažíte se pomoct! 😍 ",
@@ -105,6 +88,23 @@
           "id": "515478184",
           "publicId": "annacahová",
           "profileId": "ACoAAB65kqgBFR97g5NvbU3olQ6YzGoI84FNe10",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1698871436159,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7124677459861528576?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7124677459861528576%2C7125583260167942144%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287125583260167942144%2Curn%3Ali%3Aactivity%3A7124677459861528576%29",
+        "text": "Asi nejsem na seznamu uchazečů co?...",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Tomáš",
+          "lastName": "Cibulec",
+          "occupation": "Python vývojář s přesahem. 🐍",
+          "id": "399499541",
+          "publicId": "ypsilonxpython",
+          "profileId": "ACoAABfP4RUBhhqww_PQuiFQs580Isbr6ZqrqOg",
           "distance": "OUT_OF_NETWORK"
         }
       },

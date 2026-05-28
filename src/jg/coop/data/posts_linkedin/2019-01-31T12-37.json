@@ -1,0 +1,204 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "type": "article",
+    "article": {
+      "type": "EXTERNAL_FULL",
+      "urn": "urn:li:article:8576667152387296903",
+      "url": "https://blog.apiary.io/What-you-need-from-your-CI",
+      "title": "What you need from your CI — Apiary Blog"
+    },
+    "isActivity": false,
+    "urn": "urn:li:activity:6496697528849887232",
+    "url": "https://www.linkedin.com/posts/ladislavprskavec_what-you-need-from-your-ci-apiary-blog-activity-6496697528849887232-VZvX?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFOj8-sBSMUxlveLaiq7tYyYCN_WE7nq9uU",
+    "timeSincePosted": "7yr",
+    "shareUrn": "urn:li:share:6496697528426254336",
+    "text": "My blog post about CI -",
+    "attributes": [],
+    "comments": [],
+    "reactions": [
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Michal",
+          "lastName": "Pristas",
+          "occupation": "Senior Software Engineer @ Elastic | Go Development, Open Telemetry",
+          "id": "78090432",
+          "publicId": "michalpristas",
+          "profileId": "ACoAAASnkMABGZk0esh6hgiXhL10xD_TmtvXiaA"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Pavel",
+          "lastName": "A.",
+          "occupation": "Test-Automation - future-of-testing",
+          "id": "445430503",
+          "publicId": "padamcz",
+          "profileId": "ACoAABqMuucBaZD3YJjmvtzdL7vlftupKbfq_YY"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Diarmuid",
+          "lastName": "Buckley",
+          "occupation": "Google-Certified and Oracle-Certified Cloud Architect",
+          "id": "6530203",
+          "publicId": "diarmuidbuckley",
+          "profileId": "ACoAAABjpJsBpjrJePOQv_KiPTBYHc-nwO3n8fE"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Mrinmoy",
+          "lastName": "Aich",
+          "occupation": "Cloud & AI Integration Architect & Thought Leader | Driving Global Innovation in Agentic AI, Cloud Architecture, and Digital Transformation | Thought Leadership Mentor | Fellow BCS | IEEE Senior Member | MIET",
+          "id": "5190514",
+          "publicId": "mrinmoyaich",
+          "profileId": "ACoAAABPM3IBOH1AI81xwfEf-EgP4wqYD8CwpH8"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Shiladitya",
+          "lastName": "Dasgupta",
+          "occupation": "Principal Consultant at IBM Consultingl IntegrationlAgentic Ai|Prompt Engineering|Fusion Erp",
+          "id": "96089162",
+          "publicId": "shiladitya-dasgupta-1a221b28",
+          "profileId": "ACoAAAW6NEoBROkxAVN9GiJMyU_JBUIvNUitRRY"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Robert",
+          "lastName": "Wunderlich",
+          "occupation": "AI Strategy & Enterprise Integration | Ex-Oracle Product Leader (OCI, APIs, Messaging) | Deep-diving into agentic AI & real-world applications | Open to selective conversations",
+          "id": "5242292",
+          "publicId": "wunderlich",
+          "profileId": "ACoAAABP_bQBKO5DXZ8Vh_Qlsjvqa0SbX21tA1k"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Vikas",
+          "lastName": "Anand",
+          "occupation": "Director of Product @ Google helping XMs builders deliver Agentic Apps| Antigravity, Gemini CLI, Firebase, Observability | 0→1 | Past: Apigee | Appsheet | Payment Gateway | iPaaS | Ex-VP Oracle | Startup Advisor",
+          "id": "2534080",
+          "publicId": "vikasanandsf",
+          "profileId": "ACoAAAAmqsABp2KigKtTt_xaJ5nclmHh1DCVLyw"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Tomáš",
+          "lastName": "Hák",
+          "occupation": "QA automation lead | Tesena. Robot framework fan. Bud Spencer of czech testing. Když jsem byl malý, byl jsem namyšlený, ale teď už nemám chybu. ;-) Fight till the last bug.",
+          "id": "48661512",
+          "publicId": "haktom",
+          "profileId": "ACoAAALmhAgBh8OohHP-xGB4KA7gv6fse_ycEog"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+        }
+      }
+    ],
+    "numShares": 1,
+    "numLikes": 9,
+    "numComments": 0,
+    "canReact": true,
+    "canPostComments": true,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "ALL",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "firstName": "Ladislav",
+      "lastName": "Prskavec",
+      "occupation": "Staff Engineer at Everpure (formerly Pure Storage, Inc.)",
+      "id": "6413396",
+      "publicId": "ladislavprskavec",
+      "profileId": "ACoAAABh3FQBjDcRIsKdGUqUWVVxs45nmvivIO4"
+    },
+    "authorProfileId": "ladislavprskavec",
+    "authorType": "Person",
+    "authorName": "Ladislav Prskavec",
+    "authorProfileUrl": "https://www.linkedin.com/in/ladislavprskavec?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAABh3FQBjDcRIsKdGUqUWVVxs45nmvivIO4",
+    "authorUrn": "urn:li:member:6413396",
+    "postedAtTimestamp": 1548933393681,
+    "postedAtISO": "2019-01-31T11:16:33.681Z"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:6496718017655775232",
+  "url": "https://www.linkedin.com/posts/honzajavorek_what-you-need-from-your-ci-apiary-blog-activity-6496718017655775232-aI4E",
+  "timeSincePosted": "7yr",
+  "shareUrn": "urn:li:share:6496718016670109696",
+  "text": "How we use CI in Apiary",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vladimír",
+        "lastName": "Gorej",
+        "occupation": "Full-Stack Software Engineer & Problem Solver | Open Source maintainer & contributor | Alumni GitHub Star | AsyncAPI maintainer | PSD I / PSM I / GCP / LFCA",
+        "id": "58899881",
+        "publicId": "vladimirgorej",
+        "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Messner",
+        "occupation": "Full-stack software engineer and developer",
+        "id": "21519263",
+        "publicId": "messa",
+        "profileId": "ACoAAAFIW58BHQuf7UmFIL0JxAANFW73V79_YOY"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 2,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1548938278593,
+  "postedAtISO": "2019-01-31T12:37:58.593Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

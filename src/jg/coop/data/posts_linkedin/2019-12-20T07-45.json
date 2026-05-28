@@ -1,0 +1,56 @@
+{
+  "type": "text",
+  "isActivity": false,
+  "urn": "urn:li:activity:6613695572824084481",
+  "url": "https://www.linkedin.com/posts/honzajavorek_v%C3%ADte-o-n%C4%9Bjak%C3%BDch-dal%C5%A1%C3%ADch-p%C5%99%C3%ADb%C4%9Bz%C3%ADch-kter%C3%A9-activity-6613695572824084481-EDlm",
+  "timeSincePosted": "6yr",
+  "shareUrn": "urn:li:share:6613695572438200320",
+  "text": "Víte o nějakých dalších příbězích, které bych mohl přidat do seznamu na https://lnkd.in/dzpKTmZ ? Články, přednášky... Má jít o motivaci:\n\n1. programování se hodí umět i v různých jiných oborech,\n2. jde změnit kariéru a začít se živit programováním.\n\nPředem díky za tipy!",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1579129734629,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:6613695572824084481?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A6613695572824084481%2C6623350162473402368%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%286623350162473402368%2Curn%3Ali%3Aactivity%3A6613695572824084481%29",
+      "text": "No, je to anglicky a není to zcela kompletní změna kariéry, ale kolega hezky popsal jak se přestěhoval z USA do Prahy a nastoupil jako junior vývojář (předtím ale v IT pracoval): https://medium.com/socialbakers-engineering/my-precarious-path-to-programming-in-prague-103929145233",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Jan",
+        "lastName": "Vlnas",
+        "occupation": "Senior Software Engineer for Open API at Mews",
+        "id": "47732077",
+        "publicId": "janvlnas",
+        "profileId": "ACoAAALYVW0BDqoHy4lGYgYXvwuLwoZ8CBa5LGI",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [],
+  "numShares": 0,
+  "numLikes": 0,
+  "numComments": 2,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1576827901083,
+  "postedAtISO": "2019-12-20T07:45:01.083Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}
