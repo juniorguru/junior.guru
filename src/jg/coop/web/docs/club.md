@@ -7,13 +7,16 @@ description: Přidej se na junior.guru Discord! Jsme tvoje online programovací 
 {% from 'macros.html' import blockquote_avatar, blockquote_toxic, img, lead, link_card, logos_list, markdown with context %}
 
 
+<!-- pro koho je JG: pro všechny kdo něco dělají s kódem -->
+
+
 <header class="masthead"><div class="masthead-container">
 <div class="masthead-column">
 <h1>Tvoje programovací parta</h1>
 <div class="masthead-body">
 
 {% call lead() %}
-Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáhat. V klubu svoje programování nebo hledání práce posuneš o **1 % každý den**.
+Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáhat. V klubu svoje dovednosti s kódem nebo hledání práce posuneš o **1 % každý den**.
 {% endcall %}
 
 <div class="numbers">
@@ -373,3 +376,4 @@ Vrtá ti hlavou, jak přesně to celé funguje? Máš nějaké problémy s regis
 {% endcall %}
 </div></div>
 </section>
+
