@@ -76,6 +76,7 @@ registry:
       Full-stack vývojářka se silným finančním backgroundem, ambasadorka 'Apify doing good' iniciativy, mentorka v Czechitas, milovnice (ultra)trailů.
     bio_links:
       - https://www.linkedin.com/in/katerina-hronikova/
+      - https://github.com/katacek/junior-guru-job-scraper-demo
 
   - id: 61
     title: "Co nám může nabídnout Rust?"
