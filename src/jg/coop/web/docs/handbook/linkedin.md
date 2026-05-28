@@ -6,17 +6,21 @@ description: Proč by měl mít každý junior v IT profil na síti LinkedIn? J
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import illustration, blockquote_avatar, note with context %}
+{% from 'macros.html' import illustration, blockquote_avatar, lead, note with context %}
 
 # Profil na LinkedIn
+
+{% call lead() %}
+  LinkedIn není kouzelná hůlka, která ti sama zařídí práci.
+  Pro juniora je to ale důležitá vizitka a místo, kde tě můžou objevit recruiteři a další lidé z IT. Nastav si profil tak, aby rychle ukázal, co umíš a kam směřuješ.
+{% endcall %}
+
+{{ illustration('static/illustrations/linkedin.webp') }}
 
 {% call note(standout=True) %}
   {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
   Mezitím si můžeš přečíst o tom, jak si vyladit [životopis](cv.md).
 {% endcall %}
-
-{{ illustration('static/illustrations/linkedin.webp') }}
-
 
 <!-- {#
 

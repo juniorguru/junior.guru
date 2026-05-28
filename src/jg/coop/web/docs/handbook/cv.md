@@ -14,9 +14,9 @@ template: main_handbook.html
   Co dát do životopisu, když jsi junior v IT a nemáš ještě praxi? Tady máš návod na přehledné a úderné CV, ze kterého budou mít recruiteři radost.
 {% endcall %}
 
-[TOC]
-
 {{ illustration('static/illustrations/cv.webp') }}
+
+[TOC]
 
 ## Začni s naší přednáškou a šablonou
 

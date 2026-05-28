@@ -17,9 +17,9 @@ template: main_handbook.html
   Ve skupině je vše veselejší, učení rychlejší, motivace nezlomnější.
 {% endcall %}
 
-[TOC]
-
 {{ illustration('static/illustrations/collaboration.webp') }}
+
+[TOC]
 
 ## Zkus „hackathon“
 

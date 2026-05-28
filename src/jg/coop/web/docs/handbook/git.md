@@ -6,12 +6,12 @@ description: Co je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a Gi
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, illustration, link_card, note with context %}
+{% from 'macros.html' import blockquote_avatar, illustration, lead, link_card, note with context %}
 
 # Git a GitHub
 
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
+{% call lead() %}
+  Když děláš s kódem, bez Gitu se dnes nepohneš. Působí složitě, ale pro začátek stačí chápat k čemu je, a ovládat pár příkazů. Ujasni si rozdíl mezi Gitem a GitHubem a osvoj si základy, které využiješ nejen při spolupráci s dalšími lidmi, ale i na vlastních projektech.
 {% endcall %}
 
 {{ illustration('static/illustrations/git.webp') }}

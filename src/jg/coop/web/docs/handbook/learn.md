@@ -15,9 +15,9 @@ template: main_handbook.html
   Jak začít programovat? Zde najdeš pečlivě nachystané jen to, co pro tebe bude do úplného startu nejlepší a nejefektivnější. Až tím projdeš, můžeš začít [získávat praxi](practice.md).
 {% endcall %}
 
-[TOC]
-
 {{ illustration('static/illustrations/learn.webp') }}
+
+[TOC]
 
 ## Co budeš potřebovat    <span id="requirements"></span>
 

@@ -6,16 +6,21 @@ description: Jak začít hledat svou první práci v IT? Jak se připravit na po
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, blockquote_toxic, jobs_inline, link_card, note, video_card, engeto_video_card with context %}
+{% from 'macros.html' import blockquote_avatar, blockquote_toxic, jobs_inline, lead, link_card, note, video_card, engeto_video_card with context %}
 
 
 # Hledání první práce v IT
 
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Původně se „Příručka“ říkalo pouze této stránce, takže má velkolepý úvod a závěr, jako by tady další stránky ani nebyly. Cílem je postupně tuto dlouhou „nudli“ rozsekávat do kratších samostatných stránek.
+{% call lead() %}
+  Hledání první práce v IT bývá spíš maraton než sprint.
+  Když víš, co firmy u juniorů opravdu čekají, bude se ti hledat mnohem lépe. Tady najdeš realistický plán, jak se připravit a neztratit u toho směr.
 {% endcall %}
 
 [TOC]
+
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Původně se „Příručka“ říkalo pouze této stránce, takže má velkolepý úvod a závěr, jako by tady další stránky ani nebyly. Cílem je postupně tuto dlouhou „nudli“ rozsekávat do kratších samostatných stránek.
+{% endcall %}
 
 ## Úvod    <span id="preface"></span>
 

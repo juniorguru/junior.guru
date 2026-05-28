@@ -14,9 +14,9 @@ template: main_handbook.html
 K čemu se hodí programování? Není jen pro ty, kdo chtějí pracovat v IT. Pomáhá vědcům, úředníkům nebo novinářům — a práci může usnadnit i tobě.
 {% endcall %}
 
-[TOC]
-
 {{ illustration('static/illustrations/motivation.webp') }}
+
+[TOC]
 
 ## Co je programování    <span id="what"></span>
 

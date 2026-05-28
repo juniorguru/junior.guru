@@ -18,10 +18,6 @@ template: main_handbook.html
 
 {{ illustration('static/illustrations/mentoring.webp') }}
 
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
-{% endcall %}
-
 Mentor nemusí být vyloženě mistr v oboru, stačí když bude v programování alespoň o něco zkušenější než ty. A klidně může stačit, když se uvidíte jednu hodinu týdně přes videohovor. Pokud znáš někoho, kdo by mohl být tvým mentorem, ale nemá s tím praktické zkušenosti, projděte spolu [přednášku o mentorování](https://github.com/honzajavorek/become-mentor/blob/master/cs.md#readme) a prostě to zkuste!
 
 <div class="link-cards">

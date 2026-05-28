@@ -6,12 +6,12 @@ description: Pokud se učíš programovat, práce na vlastních projektech je ne
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, illustration, note with context %}
+{% from 'macros.html' import blockquote_avatar, illustration, lead, note with context %}
 
 # Projekty jako první praxe
 
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
+{% call lead() %}
+  Vlastní projekt tě naučí přemýšlet jako programátorka nebo programátor. Naučíš se rozkládat velké problémy na menší, řešit záseky a dotahovat věci do konce. A firmám tím ukážeš, že svoje znalosti umíš fakt použít.
 {% endcall %}
 
 {{ illustration('static/illustrations/projects.webp') }}

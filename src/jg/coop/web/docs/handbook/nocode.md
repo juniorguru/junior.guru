@@ -16,9 +16,9 @@ Kdy je použít?
 A má vlastně smysl učit se programovat, když se dá dnes leccos vytvořit pouhým klikáním?
 {% endcall %}
 
-[TOC]
-
 {{ illustration('static/illustrations/nocode.webp') }}
+
+[TOC]
 
 ## Co je „low-code“ nebo „no-code“
 

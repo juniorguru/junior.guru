@@ -14,9 +14,9 @@ template: main_handbook.html
   Certifikace, certifikáty, osvědčení, vysvědčení, diplomy. Jak se v tom vyznat? Které mají na pracovním trhu nějakou váhu a které si naopak můžeš akorát tak založit do šuplíku?
 {% endcall %}
 
-[TOC]
-
 {{ illustration('static/illustrations/certification.webp') }}
+
+[TOC]
 
 ## Co zajímá firmy
 

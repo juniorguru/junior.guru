@@ -18,6 +18,8 @@ template: main_handbook.html
   Co je opravdu důležité tam mít a co jsou jen bonusy navíc?
 {% endcall %}
 
+{{ illustration('static/illustrations/github-profile.webp') }}
+
 <form id="github-profile-form" action="https://github.com/juniorguru/eggtray/issues/new" target="_blank">
   <fieldset class="github-profile">
     <legend class="github-profile-title">
@@ -40,8 +42,6 @@ template: main_handbook.html
 </form>
 
 [TOC]
-
-{{ illustration('static/illustrations/github-profile.webp') }}
 
 ## GitHub profil? Cože?
 

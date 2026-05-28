@@ -16,9 +16,9 @@ Ale taky: Naučíš se to za tři měsíce a utrhnou ti ruce! Sto tisíc mzda!
 Všelijakých mýtů o kariéře v IT koluje spousta. Takže jak to je?
 {% endcall %}
 
-[TOC]
-
 {{ illustration('static/illustrations/myths.webp') }}
+
+[TOC]
 
 ## Nejčastější mýty
 

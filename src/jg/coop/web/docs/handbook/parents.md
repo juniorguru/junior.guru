@@ -19,10 +19,6 @@ A mohou programovat i děti?
 
 {{ illustration('static/illustrations/parents.webp') }}
 
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
-{% endcall %}
-
 ## Programování pro děti
 
 Proč učit děti programovat? Jak začít? Kdy začít?

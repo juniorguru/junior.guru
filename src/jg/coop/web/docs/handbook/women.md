@@ -20,10 +20,6 @@ A co ti může na cestě pomoci?
 
 {{ illustration('static/illustrations/women.webp') }}
 
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
-{% endcall %}
-
 Žen je v IT málo — v Evropských státech je to mezi 10 až 30 %. [Česko je na tom se svými 10 % hůř než Turecko](https://www.ceskovdatech.cz/clanek/128-neni-ajtak-jako-ajtak/), takže existují aktivity, které se snaží ženám cestu do IT usnadnit.
 
 {% call blockquote_avatar(

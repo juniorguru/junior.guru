@@ -10,14 +10,14 @@ template: main_handbook.html
 
 # Jak vybírat kurz
 
+{{ illustration('static/illustrations/course.webp') }}
+
+[TOC]
+
 {% call note(standout=True) %}
   {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
   Mezitím si můžeš přečíst [Jak si vybrat IT kurz?](https://lucietvrdikova.cz/nahlednete-za-oponu-jak-si-vybrat-it-kurz/) od Lucie Tvrdíkové, což je zatím nejlepší popis téhle problematiky, ačkoliv ne 100% nezávislý.
 {% endcall %}
-
-[TOC]
-
-{{ illustration('static/illustrations/course.webp') }}
 
 ## Stačí kurz?
 

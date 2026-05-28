@@ -82,10 +82,6 @@ Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. **Žádná o
   ) }}
 </div>
 
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
-{% endcall %}
-
 
 <!-- {#
 

@@ -10,13 +10,9 @@ template: main_handbook.html
 
 # Pohovor
 
-{% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
-{% endcall %}
+{{ illustration('static/illustrations/interview.webp') }}
 
 [TOC]
-
-{{ illustration('static/illustrations/interview.webp') }}
 
 ## Otázky na tebe
 
