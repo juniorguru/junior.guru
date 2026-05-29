@@ -398,4 +398,9 @@ Dobrá rada od <@957908402594545664> ohledně „open to work“ na LI https://w
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1506303019405279242/1506331006704160841
+
+---
+
+
 #} -->

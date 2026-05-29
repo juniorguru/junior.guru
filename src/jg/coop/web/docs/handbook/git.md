@@ -219,4 +219,52 @@ A samozřejmě při některých těch operacích vlastně GitHub za tebe píše 
 ---
 
 
+--- https://discord.com/channels/769966886598737931/806621830383271937/1492103659386048573
+Zajímavé pokročilé techniky, jak lze používat Git na analýzu projektu, když přijdete k novému kódu a chcete se v něm zorientovat. Je to spíš seniorní věc a hodí se to spíš při změně práce nebo přeřazení na jiný projekt, případně když je člověk konzultant a skáče z jednoho klienta na druhého, než při denodenní práci, ale je to zajímavé _out of the box_ myšlení. https://piechowski.io/post/git-commands-before-reading-code/
+---
+
+
+--- https://discord.com/channels/769966886598737931/991010207280807986/1484795843411181699
+Kdyz jsem s Gitem zacinala hodne mi pomohlo tohle video od Yablka, ma tedy dost specificky styl vyjadrovani, ale me to naopak pomohlo konecne pochopit vsechny ty zakladni prikazy. https://youtu.be/0v5K4GvK4Gs?si=yRxXeCywJOlj8hAl
+
+Pokud bys chtel neco serioznejsiho tak kanal Informatika s Misom, ma taky super videa. Git zde https://m.youtube.com/playlist?list=PLNAMH_0HgWT-ey31hQqrmi_Rgr4OVWgH3
+
+Jinak pak urcite zkouset, hrat si s tim. Je fajn si to osahat i v prikazove radce, ale ja taky pouzivam GitHub Desktop. Vyber si proste co ti vice vyhovuje.
+---
+
+
+--- https://discord.com/channels/769966886598737931/991010207280807986/1484869189805146152
+a když se něco pokazí, může se hodit https://dangitgit.com/en (jestli to někomu připomíná *Oh Shit, Git!?!*, tak je to totěž)
+---
+
+
+--- https://discord.com/channels/769966886598737931/991010207280807986/1484837986112638987
+Ahoj, já ještě doporučím tento úvod z MIT: https://missing.csail.mit.edu/2026/version-control/
+---
+
+
+--- https://discord.com/channels/769966886598737931/991010207280807986/1484819919550943406
+Git se dá prozkoumat i hravou formou. Mně pomohlo, že to ty vztahy vizualizuje https://ohmygit.org/
+---
+
+
+--- https://discord.com/channels/769966886598737931/991010207280807986/1484940433279946803
+tak přihodím rovnou https://jvns.ca/blog/2023/11/01/confusing-git-terminology/
+---
+
+
+--- https://discord.com/channels/769966886598737931/991010207280807986/1484940447276208322
+https://github.blog/open-source/git/how-to-undo-almost-anything-with-git/
+---
+
+
+--- https://discord.com/channels/769966886598737931/991010207280807986/1484838648984633395
+Kdyby těch materiálů bylo málo…
+
+https://naucse.python.cz/course/pyladies/sessions/foss/
+
+https://naucse.python.cz/course/gitworking/
+---
+
+
 #} -->

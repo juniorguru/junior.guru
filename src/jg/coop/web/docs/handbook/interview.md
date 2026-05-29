@@ -1183,4 +1183,36 @@ dlouhé čtení, kde je všechno o vyjednávání o penězích 💰 https://www.
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1488099386998132777
+Ty články hodně píšou o tom, jak je důležité umět si obhájit, že ten člověk v rozumné době dokáže firmě vydělat peníze, které přesáhnou jeho mzdu.
+
+Málokterá firma ale takhle skutečně uvažuje. Pořád je to hodně o nějakém gut feelingu a dojmu z toho, jaký přístup ten člověk má.
+Když si vzpomenu na dobu, kdy jsem učil na ČVUT, tak jsem měl největší frustraci z lidí, kteří **zbytečně plýtvali mým časem**.
+
+**Za mě by kvalitní kandidát, byť juniorní, měl:**
+- vždy zhodnotit, zda má vše, co potřebuje, a nečekat, až si někdo všimne, že se na něčem zasekl
+- pokud řekne "dnes to bude" a ono to nebude, tak mi dá vědět
+- dokáže si dohledat základní věci sám a nebude se ptát 10x denně na něco co je jasně vyspecifikované
+- dokáže stručně popsat, co zkoušel, co fungovalo a co ne
+- dokáže pochopit kontext - proč to děláme a ne jen splnit task
+- obecná spolehlivost v malých věcech (dochvilnost, follow-upy, dokončování rozdělaných věcí)
+
+Ne všechny z těchto vlastností se dají odhalit už na pohovoru, ale určitě tomu ten člověk může jít naproti podle toho, jak bude vystupovat a jak bude komunikovat.
+
+A pak je tu celá řada pouček, jak na pohovoru zaujmout - např. že si člověk o té firmě něco nastuduje a to téma ve správný okamžik vytasí... mrkne na sociální sítě lidí, kteří budou na tom meetingu, a prostuduje si, co je baví a co v poslední době postovali. Ale to už je spíše pohovorová psychologie než aspekty, které tomu člověku pomůžou v té firmě dlouhodobě přežít.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1481309723532857516
+Tohle, koukám, zapadlo. Já bych to viděl takhle:
+
+- Dělám si projekt(y) a zlepšuju se v řemesle.
+- Jakmile mám něco aspoň trochu většího funkčního (víc než cvičení, prostě nějaká appka, kterou spustím a něco dělá, a nemusí to být dokonalé, ani „hotové“, protože software nikdy není hotový), tak začínám posílat CVčka na inzeráty
+- Koukám, co v inzerátech chtějí, a jestli mně zvou, nezvou, jak to vypadá na trhu prostě.
+- Pak ladím podle zpětné vazby a podle toho, kam se chci rozvíjet. A během toho si vypiplávám a dodělávám projekt(y), abych stále zlepšoval své šance.
+
+Dává to takto smysl?
+---
+
+
 #} -->

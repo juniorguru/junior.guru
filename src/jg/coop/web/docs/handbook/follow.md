@@ -162,4 +162,11 @@ https://www.youtube.com/watch?v=RVCjcIqMeh8
 Co sledovat? Komixy, filmy, seriály (it crowd, Silicon Valley, nova šichta), dat do klubu i do příručky?
 
 
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1485620193190350848
+Sdílím tento YouTube kanál, který jsem objevila a který obsahuje videa o IT kariérách souvisejících s AI:
+myslím, že by mohl doplnit to, co nám nabízí <@668226181769986078> v Přednáškách. Hosté se zdají být kvalitní a organizátor/prezentující klade dobré otázky a vznáší dobré body!
+https://www.youtube.com/@DataTalksClub
+---
+
+
 #} -->

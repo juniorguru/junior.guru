@@ -683,4 +683,11 @@ První kontakt - CV: Já chci vidět, že kandidát ví, kam se hlásí a věnov
 https://www.linkedin.com/feed/update/urn:li:activity:7427646943742414848?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7427646943742414848%2C7427675019050143745%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287427675019050143745%2Curn%3Ali%3Aactivity%3A7427646943742414848%29
 
 
+--- https://discord.com/channels/769966886598737931/789107031939481641/1483231636295385242
+Náhodně zachyceno na FB... Týkalo se diskuse, kdy paní marně hledá uplatnění v IT, i když má IT vystudované. Jen je čerstvě po mateřské...
+
+"Dělam na HR. V 1. řadě - recruiteři ani manažeři cv nečtou, ale v podstate scanujou očima. To znamená - hlásíte se na pozici IT analytik - nazvěte svou poslední pozici IT analytik a to i když se jmenovala jinak. Nikdy to nikdo kontrolovat nebude. Nechoďte s platem dolu - je to podezřelý. Některý mng jsou prostě debilove a řeknou si, ta je nějaká levná, aby neměla nějakej problém. Hlasite se na juniornejsi pozici, skryjte v cv, ze jste senior. Dejte si do cv fotku, vzdycky to ma vetsi úspěch, nahrajte video, cokoliv, čím si získáte pozornost, tech cv proste je hodně. Do motivaku uveďte něco, z čeho vyplyne, ze firmu znáte - treba že víte, ze koupili novou entitu nebo cokoliv, co bude vypadat, že vás ta firma děsně zajímá. Tvařte se, že jste furt zaměstnaná, jste na MD, vlastne to tak je. Že máte děti dneska není problém u většiny moderních firem. Obecne je problém to, že recruiteri často nemůžou dohnat manažery aby se k cv vyjádřili v jejich náborovým systému a po 14 dnech recruiter to cv zamítne, pač si řekne, že uz je to pasé."
+---
+
+
 #} -->

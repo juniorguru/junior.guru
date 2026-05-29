@@ -331,4 +331,13 @@ komu to vcera nevyslo na Pyvo <:pyvo:935796907127754812> , ale tiez sa chce niec
 ---
 
 
+--- https://discord.com/channels/769966886598737931/864434067968360459/1501504063076958239
+<@1124654505808633997> odpovím ti na <#1500556166038814794> tady, protože mi přijde, že to patří spíš sem a mohlo by to zajímat i další lidi, kteří by to vlákno mohli přehlédnout. Co se týče vypínání a odpočívání, doporučuju přečíst tenhle článek: https://www.oliverburkeman.com/fourhours
+
+Je to o tom, že mozek zvládne denně zhruba maximálně 4 hodiny intenzivní soustředěné mentální práce. Když je toho víc, stojí to za prd.
+
+Podle toho bych si nějak rozvrhl ten tvůj učící den, pokud se učíš fakt intenzivně. Ono to nakonec hodně u programování funguje tak, že věci do sebe zaklapávají v době, kdy na mozek netlačíš, a naopak má čas v klidu si to propojit a nestrukturovaně se jen tak flákat. Často se děje, že 6h tlačíš na kód a nejde to. A pak jdeš vynést odpadky, nebo trůníš na záchodě, nebo si dáš sprchu, a za 5 minut to máš vymyšlené, protože ti dojde, co má být jinak, nebo co zkusit. Ty pauzy jsou fakt prospěšné a není to, že nic neděláš, ale že necháš tu hlavu přebrat si, co se naučila.
+---
+
+
 #} -->

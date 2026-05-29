@@ -184,4 +184,20 @@ https://www.linkedin.com/company/mamajob/
 https://www.aperio.cz/clanky/navrat-do-zamestnani-po-materske-rodicovske-dovolene
 
 
+--- https://discord.com/channels/769966886598737931/1075419658800332830/1498033472693080104
+Ted jsem si vsiml ze je tady detsky tema tak ja to trochu posunu jinym smerem 😄
+
+Pokud mate deti a chteli by jste je zacit uvadet do nejakeho toho programovani tak muzu doporucit https://arcade.makecode.com/  (klidne si to zkuste sami)
+
+- daj se v tom delat gamesky
+- bud blokove (ala scratch) coz zvladne dite od utleho veku a pak jde prejit na JavaScript nebo Python
+- bezi to v mobilu, da se to nasdilet kamosum
+- pokud je rodic sikovny tak muze diteti postavit (pripadne potupne koupit :-D) handheld konzolu nebo postavit arcadovej kabinet kde jdou hry spustit
+
+A prihodim k tomu i jednu kratkou prednasku na todle tema - https://www.youtube.com/watch?v=potFhvkgreA (kratka prvni cast, cca 15 minut)
+
+K te prednasce mozna jedna poznamka - prezentujici je moje dcerka, tenkrat ji bylo 13 a zvladla prezentovat pred cca 150 dospelyma programatorama a machrem z Microsoftu kvuli kteremu tam vsichni dosli a ona mu delala predskokana 🙂 Dala to na vybornou a tweety od Scotta typu "13 leta holka prave dela live coding na stagi!!" dost pobavili 🙂
+---
+
+
 #} -->

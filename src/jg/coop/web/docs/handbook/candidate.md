@@ -1522,4 +1522,103 @@ nevím jak moc správně, ale asi sem opravil chyby v tabulkách 2024 a 2025 <:l
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1504830281608204459
+Největší slabiny juniorních projektů oproti praxi jsou:
+
+- malá nekomplexní neprodukční codebase
+- a nula zkušeností s prací, organizací práce a komunikací v týmu.
+
+Junior ale nemůže udělat víc, než si zajistit nějaké vlastní projekty, takže to firmy berou jako dobrý začátek. Pokud má někdo zkušenost se spoluprací v týmu nebo na větší codebase, třeba na open sourcu nebo nějakém dobrovolnickém projektu, je to velký a významný bonus, ale je tak těžké se kolem něčeho takového vyskytovat, že to po lidech nelze vyžadovat a nastavovat takhle laťku.
+
+A moje pointa: Ani jedno z toho ti AI nedá. Takže podle mě ti to nijak nepomůže obejít komerční praxi. Jasně, můžeš vyrobit vlastní funkční produkt a nahodit ho, ale to je vlastně jiná disciplína, než práce programátora 🙂 To se bavíme o nějakém produktovém nebo podnikatelském myšlení. Pokud to někde ocení, bude to plus, ale pro práci programátora v tradičním slova smyslu to je podle mě bonusová věc do boku, ne něco, u čeho by si při náboru řekli: „jo tak když si dokázal udělat vlastní appku a na app storu ji už používá 10 lidí, tak to asi zvládne pracovat na našem produktu o 400.000 LOC (lines of code) a komunikovat v týmu 10 lidí přes Slack, Jiru, a koordinovat se s kolegama...“, to podle mě nefunguje.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1501491862853390357
+Pro ty, co se poohlíží po práci ve startupu - sepsal jsem pár důležitých poznatků:
+https://www.linkedin.com/pulse/na-co-si-d%C3%A1t-pozor-ne%C5%BE-p%C5%AFjde%C5%A1-do-startupu-adam-vesecky-p2n7f/
+---
+
+
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1492442434943324260
+jinak ja jsem si to tu otevrel puvodne proto abych sem hodil toto, ale klidne pokracujme v debate, prijde mi uzitecna a velmi k veci v kontextu zacatecniku v oboru.
+
+tohle je clanek, ktery popisuje presne to, co jsme tady uz delsi dobu psali, ze mnohdy firmy propousti a AI pouziji jen jako zástěrku, zvlast predtim, kdyz jdou k investorum s dluhopisy 🙂 takze az uvidite zase ze nejaka firma propousti 1000 lidi kvuli AI, tak mavnete rukou a učte se ten Git 😆 https://cc.cz/umela-inteligence-je-megatrend-pod-ktery-se-da-ledacos-skryt-a-treba-ji-zduvodnit-masove-skrty/
+---
+
+
+--- https://discord.com/channels/769966886598737931/1489835601950675005/1489890450885181581
+Hledala jsem tenkrát startupjobs, prace.cz, jobs.cz, LinkedIn.. bohužel ne úspěšně 😇 ale že neodpovídají spíš vypovídá něco o těch oslovených firmách, než o tom portálu samotném 🤔
+
+Pak jsem šla i tím směrem, že jsem si našla IT firmy v okolí bydliště a koukala na vypsané pozice přímo na jejich stránkách. Pokud se mi firma hodně líbila, tak jsem psala i když nikoho zrovna nehledala ☺️
+---
+
+
+--- https://discord.com/channels/769966886598737931/1489835601950675005/1491368700891369603
+tak různě, na Google "it firmy Pardubice a okolí", koukala jsem kolem sebe, když jsem cestovala po městě, i ty mapy jsem projížděla 😁 pak tuším firmy.cz nebo podobný rejstřík firem 😁
+---
+
+
+--- https://discord.com/channels/769966886598737931/1489835601950675005/1491524678081187940
+Nejak podobne jsem nasla svou nynejsi praci. Mela jsem pocit, ze pres pracovni portaly nemam absolutne sanci. Otevrela jsem mapy, napsala "software" a zkoumala proste nejblizsi firmy. Mrkla na jejich web, co delaji a pripadne do sekce kariera. Pokud firma nema nic vypsaneho, zkusila bych napsat i tak, projevit zajem, poptat se. Za to clovek nic neda.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1488099386998132777
+Ty články hodně píšou o tom, jak je důležité umět si obhájit, že ten člověk v rozumné době dokáže firmě vydělat peníze, které přesáhnou jeho mzdu.
+
+Málokterá firma ale takhle skutečně uvažuje. Pořád je to hodně o nějakém gut feelingu a dojmu z toho, jaký přístup ten člověk má.
+Když si vzpomenu na dobu, kdy jsem učil na ČVUT, tak jsem měl největší frustraci z lidí, kteří **zbytečně plýtvali mým časem**.
+
+**Za mě by kvalitní kandidát, byť juniorní, měl:**
+- vždy zhodnotit, zda má vše, co potřebuje, a nečekat, až si někdo všimne, že se na něčem zasekl
+- pokud řekne "dnes to bude" a ono to nebude, tak mi dá vědět
+- dokáže si dohledat základní věci sám a nebude se ptát 10x denně na něco co je jasně vyspecifikované
+- dokáže stručně popsat, co zkoušel, co fungovalo a co ne
+- dokáže pochopit kontext - proč to děláme a ne jen splnit task
+- obecná spolehlivost v malých věcech (dochvilnost, follow-upy, dokončování rozdělaných věcí)
+
+Ne všechny z těchto vlastností se dají odhalit už na pohovoru, ale určitě tomu ten člověk může jít naproti podle toho, jak bude vystupovat a jak bude komunikovat.
+
+A pak je tu celá řada pouček, jak na pohovoru zaujmout - např. že si člověk o té firmě něco nastuduje a to téma ve správný okamžik vytasí... mrkne na sociální sítě lidí, kteří budou na tom meetingu, a prostuduje si, co je baví a co v poslední době postovali. Ale to už je spíše pohovorová psychologie než aspekty, které tomu člověku pomůžou v té firmě dlouhodobě přežít.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1483899675903000738
+Víc není třeba. Jasně, dá se šermovat agenty a pokud to někoho láká a chce si s tím hrát a je „product builder” a má peníze na tokeny, tak hurá do toho, klidně surfujte na vlně a uděláte díru do světa – zcela neironicky. Ale pokud jste tady, protože chcete do IT a chcete tvořit webovky v JavaScriptu apod., tak se učte JavaScript, učte se Git, všechno okolo, a naučte se při tom efektivně používat AI v podobě (libovolného) agenta. Tak, aby násobil vaše znalosti, které si neustále prohlubujete, ne tak, aby za vás „podváděl“.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1483385466026983486
+https://www.linkedin.com/posts/zdenekkoutsky_it-trh-v-roce-2026-manual-activity-7439358347545468928-fZIT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE2R0oBGXvR6LHbw738r7LTmMdhWnyymsU
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1483071576386830510
+Zmíněno na meetup o změně kariéry: https://www.swyx.io/create-luck
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1481309723532857516
+Tohle, koukám, zapadlo. Já bych to viděl takhle:
+
+- Dělám si projekt(y) a zlepšuju se v řemesle.
+- Jakmile mám něco aspoň trochu většího funkčního (víc než cvičení, prostě nějaká appka, kterou spustím a něco dělá, a nemusí to být dokonalé, ani „hotové“, protože software nikdy není hotový), tak začínám posílat CVčka na inzeráty
+- Koukám, co v inzerátech chtějí, a jestli mně zvou, nezvou, jak to vypadá na trhu prostě.
+- Pak ladím podle zpětné vazby a podle toho, kam se chci rozvíjet. A během toho si vypiplávám a dodělávám projekt(y), abych stále zlepšoval své šance.
+
+Dává to takto smysl?
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1481315861158695044
+Souzním s tím, co napsal Honza a jen ještě vyzdvihnu tu proaktivitu -
+Proaktivita je základ úspěchu. Musí být vidět, že se vzděláváš, že máš progress za sebou. Jít tomu naproti, nečekat co Ti spadne do klína. 
+
+Hledat si příležitosti, klidně si i najít nějakého mentora, který by Ti jednou za čas řekl, v čem by ses měl třeba zlepšit, nebo jakou cestou jít. Samozřejmě ne, aby Ti diktoval Tvou cestu, ale spíš Tě korigoval aby ses nezasekl na nějaké koko*ině. 
+
+Ale vždy a všem říkám - radši si vezmu méně zkušeného člověka, který je aktivní, než neaktivního, ale zkušeného. Pro mě je taky plus, když jde vidět, že něco děláš v osobním životě. Skauting (klidně i v minulosti), rozvoj společnosti - osobní zkušenost, tohle mi pomohlo dostat se na jednu pozici, protože díky tomu si řekli, že bych zapadl do týmu a že by takového člověka chtěli. Takže i takové věci se pak vyplatí psát do životopisu (ale mezi posledními věcmi).
+---
+
+
 #} -->

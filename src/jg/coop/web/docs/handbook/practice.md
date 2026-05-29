@@ -1074,4 +1074,76 @@ Já osobně jsem byl po SŠ zhruba power user na cestě k adminovi, ale operačn
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1508838315120529460/1509104847125872650
+Mimochodem na czechitasích kurzech jsme roky studentkám obrázek podobný tomu, co výše dával <@924088945187369000>, (plus ještě jeden podobný specifický pro jablíčkovou českou klávesnici), ale pak k tomu jednou sednul Filip Chalupa a to samé předělal do téhle webové stránky, tak třeba by se to někomu taky mohlo líbit:
+https://klavesnice.czechitas-podklady.cz/
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/1502977646546518237
+Ahoj 👋 Nakonec jsem udělal kompilaci všech svých článků o testování:
+https://x.com/kettanaito/status/2053397722175008846
+
+Nevadí jak jste zkušené anebo který jazyk používáte, prosím přečtěte!
+---
+
+
+--- https://discord.com/channels/769966886598737931/806621830383271937/1500884340840730756
+[SQL] https://sqlbolt.com/ 
+Super stránky na naučení a procvičení základů SQL. Trocha teorie a hned praxe, bez žádného instalování a nastavování. S SQL jsem dost bojovala, teď už mě to celkem i baví 😄
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/1496892233943744704
+průřezový kurz obecných základů pro MIT (bash a cli, ide/editory, git,  debuggery/profilery, atd.), verze 2026 s přednáškou věnovanou kódování s agenty nebo přispívání do open source a podobným soft-skills tématům
+https://www.youtube.com/playlist?list=PLyzOVJj3bHQunmnnTXrNbZnBaCA-ieK4L
+---
+
+
+--- https://discord.com/channels/769966886598737931/788832177135026197/1496445396468236360
+Různé známé zákonitosti při výrobě softwaru – https://lawsofsoftwareengineering.com/ Kdokoliv chce z juniora aspoň trochu pokročit k senioritě, tak toto je pastva, na které byste měli strávit hodně času 🌱 🌼 🌻 🌱
+---
+
+
+--- https://discord.com/channels/769966886598737931/1421181822389325828/1490545474426507415
+Používat nějaký AI/LLM na nějaký security review je fajn nápad, až mě mrzí a stydím se za to, že mě to nenapadlo dřív. Někdy z toho vylezou halucinace ("Claude Code: tohle může být problém když použiješ cURL 7.86 a starší", po chvíli zkoumání co se tam změnilo a když jsem nic nenašel, tak jsem se Clauda zeptal a "aha, sorry, to jsem si vymyslel, žádnej bug jsem nenašel, ale hmm, vypadá to, že tomůže být problém vlastně furt, ale není to jistý, ale když s tím něco uděláš, tak to nebude ničemu vadit"), ale převážně to najde věci, který jsem zapomněl, nebo někdo jiný zapomněl (samozřejmě, že to nenajde věci, na který jsem myslel, jedině, že bych na ně myslel *blbě*), nebo jsem si neuvědomil, třeba proto, že původně to něco mělo jiný scope (což je častý zdroj bezpečnostních chyb: "to nikdo nepoužije jinak a nikdo tam nic nepřidá, to je v cajku").
+
+Většinou to nechci opravit - protože to třeba taky používám na 3rd party code. Tuhle někdo chtěl na každej web nám dávat nějakej chatbot nebo co, tak jsem si stáhl ten JS a "tady je nějakej JS, řekni mi co to dělá a jaký tam jsou bezpečnostní chyby a rizika, ukaž mi ten kód a dej mi čísla řádků". Nějaký věci to našlo, párkrát jsem musel něco dopromptovat, ale vysvětlilo to hezky (nepotřeboval jsem, ale stejně si to nechávám vysvětlit, aby mi třeba něco neuniklo) V tom do určitý míry minifikovaným JS bych to nenašel a když jo, tak za hodně moc času.
+
+Tady je třeba ukázka na nějaký knihovně, kde jsem zkusil jednoduchý "Identify any security vulnerability or even a risk in the codebase that would need fixing before 1.0 happens." a vylezlo z toho něco, na co jsem nemyslel. Zkusil jsem schválně teď napsat ať mi to dovysvětlí 
+https://github.com/spaze/security-txt/pull/64#issuecomment-4123888270 Na konci už je to PHP, validuje mi to moje fixy, ale na začátku je to obecný a je vidět, že i kdybych o tom věděl prd, tak bych se z toho něco naučil.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1421181822389325828/1490265161292972073
+Lidi ani nenapadne, že po AI můžou security review chtít. Sama od sebe to neudělá. No a když chci pověsit aplikaci na internet, tak ať už se chci učit security, nebo ještě ne, prompt ve stylu toho, který jsem napsal, je to nejmenší, co můžu udělat, a zlepší mi to spaní. Nějaký “správný” způsob učení můžu dělat potom.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1481950932391690360/1487183351487008839
+pro úplnost odkaz na "Akademii," což je prakticky přesně obsah workshopu
+https://akademie.rosti.cz/
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1487030777160925274
+mi napadlo, ze https://worrydream.com/LadderOfAbstraction/ musia poznat vsetci ... ale mozno sa to oplati zopakovat raz za 5-10 rokov 🪜
+---
+
+
+--- https://discord.com/channels/769966886598737931/806621830383271937/1478864168831418529
+tohle znate? 🙂 https://www.thegitcity.com/ 
+kazde git repo je jedna budova - vysoka podle contributions
+
+(presunuto, jsem zapomnela na objev kanal :D)
+---
+
+
+--- https://discord.com/channels/769966886598737931/1470530280208204049/1475067929845432431
+Zdarec, kurz je fajn, ale ve vysledku je to stejne o tve praci a hlavne procvicovani. Jestli umis anglicky a mas odhodlani, sedni k youtube, napis Luke Barousse,  Alex the analyst nebo freecodecamp Data Analytics a jed. Da to zabrat byt konzistentni, ale druhy, treti tyden uz to zacne byt zvyk a pujde to samo. 
+Pro zacatek je fantasticky coddy.tech ->  https://link.coddy.tech/bvMS/ref?af_sub2=D88234GM92Ya
+Je to jak Duolingo, ale s jednoduchym vysvetlenim a hned za tim kratke testiky. Skvely na 15-20min denne. <:database:900833211809136641>  <:successkid:842730583293558795>
+---
+
+
 #} -->

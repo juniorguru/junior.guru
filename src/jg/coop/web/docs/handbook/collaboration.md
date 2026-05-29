@@ -173,4 +173,34 @@ https://www.youtube.com/watch?v=5nY_cy8zcO4
 
 https://davidism.com/school-assignment-open-source/
 
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1504830281608204459
+Největší slabiny juniorních projektů oproti praxi jsou:
+
+- malá nekomplexní neprodukční codebase
+- a nula zkušeností s prací, organizací práce a komunikací v týmu.
+
+Junior ale nemůže udělat víc, než si zajistit nějaké vlastní projekty, takže to firmy berou jako dobrý začátek. Pokud má někdo zkušenost se spoluprací v týmu nebo na větší codebase, třeba na open sourcu nebo nějakém dobrovolnickém projektu, je to velký a významný bonus, ale je tak těžké se kolem něčeho takového vyskytovat, že to po lidech nelze vyžadovat a nastavovat takhle laťku.
+
+A moje pointa: Ani jedno z toho ti AI nedá. Takže podle mě ti to nijak nepomůže obejít komerční praxi. Jasně, můžeš vyrobit vlastní funkční produkt a nahodit ho, ale to je vlastně jiná disciplína, než práce programátora 🙂 To se bavíme o nějakém produktovém nebo podnikatelském myšlení. Pokud to někde ocení, bude to plus, ale pro práci programátora v tradičním slova smyslu to je podle mě bonusová věc do boku, ne něco, u čeho by si při náboru řekli: „jo tak když si dokázal udělat vlastní appku a na app storu ji už používá 10 lidí, tak to asi zvládne pracovat na našem produktu o 400.000 LOC (lines of code) a komunikovat v týmu 10 lidí přes Slack, Jiru, a koordinovat se s kolegama...“, to podle mě nefunguje.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1478343159615455243
+👋 Ahoj komunito!
+Jdu sem ukázat, co děláme a co si myslím, že je docela cool :)) 
+
+## Začátek 
+Učil jsem v Czechitas testování na API vrstvě a chyběla mi nějaká aplikace, na které bych to dokázal dobře ilustrovat - aby tam byl frontend a byly ta možné základní operace - bez přihlášení, po přihlášení. A tak jsem po večer začal bastlit Czechibank - appka, kde si můžeš posílat mezi sebou Czechitokeny, vytvářet bankovní účty, swagger dokumentace included. Odučil jsem první rok na tom a viděl jsem, že to potřebuje dopilovat, že dokumentace neodpovídala úplně realitě atd..
+
+## Nápad
+A tak mě napadlo, že zkusím nabrat lidi do vývoje a QA. A že z toho udělám další projekt, kde se lidi můžou učit. Učit procesy, mít reálný projekt, který opravují, vyvíjejí, testují něco, co se reálně bude používat (byť zase na učení). A tak jsem založil JIRA, github organizaci, Discord server a nadhodil to v Czechitas discordu, že kdo chce, tak se může takhle vzdělávat a já můžu dát feedback. 
+
+## Jak to funguje?
+Máme tým devs a QA, já zajišťuju mentoring a pozici PO. V dev týmu máme zkušenou vývojářku, já dělám QA už cca 10 let, tak pomáhám zase tam (byť dělám hlavně vývoj na Czbank). A jedeme Kanban, žádný stres, prostě na co máš čas, to uděláš. Každý říká, kolik hodin tomu může dát týdně, ale ve výsledku je to mnohem méně (máme vždy velké oči na začátku :)) ). V backlogu máme nějaké tickety, které se mají udělat (třeba opravit dokumentaci, nové features, devops věci, prostě to, na co jste zvyklí z SW vývoje). Vývojář si ticket vezme, udělá, následuje code review jiného vývojáře a pak si ticket převezmou QA lidi a otestují (chceme mít Preview appky, ale zatím bojujeme s Coolify a Better-auth). 
+QA má taky Zephyr v JIRA na testcasy, takže máme sadu testů na FE, tak na API. 
+
+Víc ve vlákně:  🧵
+---
+
+
 #} -->

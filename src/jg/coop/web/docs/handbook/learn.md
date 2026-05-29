@@ -733,4 +733,16 @@ Jak se učit https://www.youtube.com/shorts/uU-1T3qKSBA
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1508838315120529460/1509104847125872650
+Mimochodem na czechitasích kurzech jsme roky studentkám obrázek podobný tomu, co výše dával <@924088945187369000>, (plus ještě jeden podobný specifický pro jablíčkovou českou klávesnici), ale pak k tomu jednou sednul Filip Chalupa a to samé předělal do téhle webové stránky, tak třeba by se to někomu taky mohlo líbit:
+https://klavesnice.czechitas-podklady.cz/
+---
+
+
+--- https://discord.com/channels/769966886598737931/1494640011113660701/1495698633369194536
+Tady je veze s videama: https://naucse.python.cz/2021/online-jaro/
+Ale ta není to dělaná přímo pro samouky; kdyžtak se ptej :)
+---
+
+
 #} -->

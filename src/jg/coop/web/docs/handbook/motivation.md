@@ -709,4 +709,73 @@ Co si myslíte o tomto? https://engeto.cz/blog/kariera/it-trh-2026-komplexni-pru
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1496112110298464408
+AI fackupy přehledně: https://crackr.dev/vibe-coding-failures
+---
+
+
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1492442434943324260
+jinak ja jsem si to tu otevrel puvodne proto abych sem hodil toto, ale klidne pokracujme v debate, prijde mi uzitecna a velmi k veci v kontextu zacatecniku v oboru.
+
+tohle je clanek, ktery popisuje presne to, co jsme tady uz delsi dobu psali, ze mnohdy firmy propousti a AI pouziji jen jako zástěrku, zvlast predtim, kdyz jdou k investorum s dluhopisy 🙂 takze az uvidite zase ze nejaka firma propousti 1000 lidi kvuli AI, tak mavnete rukou a učte se ten Git 😆 https://cc.cz/umela-inteligence-je-megatrend-pod-ktery-se-da-ledacos-skryt-a-treba-ji-zduvodnit-masove-skrty/
+---
+
+
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1492274379508154600
+Poslední dobou se mě mí studenti a taky lidi, co jsou na začátku programovací kariéry, docela často ptají, jestli by se měli začít učit používat AI, místo samotného programování nebo vzdělávání se. Protože jim připadá, že se všechno hýbe kupředu strašně rychle, a že jim ujede vlak, když teď nebudou trávit spoustu času prací s agenty. Říkal jsem si, že tohle téma by mohlo být relevantní pro tento kanál, a že bych tu napsal, co jim na to odpovídám.
+
+Dle mého názoru je to zbytečná obava. Cokoliv, co dneska budete nad agenty dělat navíc, tak se do těch agentů za pár měsíců dostane v základu, a budou to dělat automaticky. Veškeré tipy a triky, které se lidi s agenty učili během minulého roku, tak už dnes agenti mají zabudované v sobě, a nemusíte to víceméně řešit. Zároveň ladění efektivity agentů do posledních pár procent postrádá smysl v momentě, kdy co půl roku vyjde nový model, který ten starý poráží rozdílem třídy.
+
+Z AI mám sice strach ze spousty jiných důvodů, ale zrovna toho ujetí vlaku bych se nebál. V podstatě by definition je to něco, co se dá naučit používat za pár dní, a nepotřebujete k tomu používání nějaké extra znalosti. Rozdíl mezi člověkem, co agenty používá dva roky nebo týden, moc velký nebude. Naopak si myslím, že může mít přidanou hodnotu strávit ten čas učením se věcem opravdu porozumět, a mít pak výhodu oproti lidem, kteří tomu na pozadí nerozumí vůbec, a pouze vibekódují (teda za předpokladu, že v budoucnu bude porozumění věcem stále bráno jako něco potřebného a užitečného, ale to je jiné téma.. 🙂 ).
+---
+
+
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1492409399346597949
+šlo mi vyloženě o to FOMO a učení. používat agenty dnes pro někoho může být užitečné, pak je může používat, aby něčeho dosáhl, samozřejmě. ale nemyslím si, že by se tím člověk něco extra učil
+
+možná bych to přeformuloval, když začnu s agenty o 6 měsíců později, tak nebudu o 6 měsíců ve skluzu oproti lidem, co je používají dnes, budu ve skluzu možná dva týdny, a dá se to jednoduše doučit
+
+protože se to jednak za tu dobu celé posune a změní, a taky na tom vlastně není moc co se extra učit
+---
+
+
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1492477788702376127
+(SDLC = software development lifecycle)
+
+jsem tady chtěl původně napsat takovou povzbuzující zprávu, a teď to vypadá, že by se měl člověk učit programování i práci s AI najednou do podrobna 😁
+
+Nikdo z nás neví, jak bude vypadat budoucnost. Možná za pár let už znalost programování k ničemu nebude, místo knihoven kódu budou knihovny promptů, a aplikace se budou vytvářet vibe-diktováním do mikrofonu. Možná už ani žádné aplikace nebudou a na PC poběží už jen plně univerzální agent. Nebo naopak bude stále znalost toho, jak věci fungují na pozadí, hodnotná, a nebude ekonomické/možné/efektivní používat AI na všechno.
+
+Z mého pohledu je mnohem jednodušší se doučit práci s agenty, než se doučit ty "fundamentální" znalosti, takže mi i přijde jako menší risk věnovat více času studiu těch věcí na pozadí, než zkoušet všechny možné i nemožné AI tooly a workflow, nebo z toho mít FOMO stres.
+
+Na druhou stranu, dnes spousta firem nějakou znalost agentů už asi očekává, takže aspoň si to ošahat není na škodu. Všeho s mírou 🙂
+---
+
+
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1489339905053163601
+Problém je, že lidi pak nevidí, kde je čára mezi hraním a doručováním seriózního softwaru. CEOs a novináři společně fetují Dunning-Krugera a dotahují to do extrému, že programování už si každý udělá sám a programátoři nebudou potřeba. To je za mně blbost. Pouze nedohlédnou, co vše ta profese obnáší a co to vůbec znamená vyvíjet, provozovat, opravovat a udržovat software.
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1484117751248195614
+Jedno hezké motivační video, aby někdo nepodléhal skepsi budoucnosti s AI jako programátor 😄 https://www.youtube.com/watch?v=BAlSzHFmmwU
+---
+
+
+--- https://discord.com/channels/769966886598737931/1177266646579163246/1483514733838602252
+> tímhle stylem bude na stejnou práci potřeba tak třetina lidí
+
+třeba, ale 
+
+a) i to AI musí někdo „engineerovat“, to se samo neudělá
+
+b) pokud se někde hraničně kopou do zadku a nemají nekonečný backlog, tak možná, ale pokud najednou jde udělat o 30 % víc práce, tak už je to rozhodnutí spíš otázka toho, co má prioritu, není to technologický, ale byznysový: potřebujeme spíš ušetřit za lidi a zhruba jet jako doposud? Chceme za stejný prachy víc kódu? Chceme ještě víc kódu, když je teď takhle levnej?
+---
+
+
+--- https://discord.com/channels/769966886598737931/1177266646579163246/1483515258206289991
+Když slyším že jste někde měli desítky padajících testů a takový kód prošel do produkce (WTF OMG) a pak to x lidí měsíce fixovalo, tak teď to může jeden člověk fixnout za měsíc třeba… najednou to je dosažitelný. Přijatelná cena i čas.
+---
+
+
 #} -->
