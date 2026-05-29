@@ -1,7 +1,8 @@
 import asyncio
+import re
 from collections import defaultdict
 from pathlib import Path
-from time import perf_counter_ns
+from typing import Iterable
 
 import click
 import discord
@@ -16,39 +17,34 @@ from jg.coop.lib.discord_club import (
     get_reaction,
     parse_discord_link,
 )
-from jg.coop.models.base import db
-from jg.coop.models.page import Page
-from jg.coop.models.sync import Sync
-from jg.coop.sync.pages import main as sync_pages
 
 
-PAGES_PATH = Path("src/jg/coop/web/docs")
+EMOJI_RE = re.compile(r"^emoji:\s*(\S.*?)\s*$", re.MULTILINE)
 
 NOTES_END = "\n\n#} -->"
-
-EMOJI_PROCESSED = "✅"
 
 
 logger = loggers.from_path(__file__)
 
 
 @click.command()
+@click.option(
+    "--handbook-dir",
+    default=Path("src/jg/coop/web/docs/handbook"),
+    type=click.Path(path_type=Path, exists=True, file_okay=False),
+)
+@click.option("--check-emoji", default="✅")
 @click.pass_context
-def main(context):
-    with db.connection_context():
-        sync = Sync.start(perf_counter_ns())
-    context.obj = dict(sync=sync, skip_dependencies=False)
-    context.invoke(sync_pages)
+def main(context: click.Context, handbook_dir: Path, check_emoji: str) -> None:
     mutations.allow("discord")
-    discord_task.run(process_pins)
+    context.call_on_close(mutations.allow_none)
+    discord_task.run(process_pins, handbook_dir, check_emoji)
 
 
-@db.connection_context()
-async def process_pins(client: ClubClient):
-    emoji_mapping = {
-        page.meta["emoji"]: PAGES_PATH.absolute() / page.src_uri
-        for page in Page.handbook_listing()
-    }
+async def process_pins(
+    client: ClubClient, handbook_dir: Path, check_emoji: str
+) -> None:
+    emoji_mapping = get_handbook_emoji_mapping(handbook_dir.glob("*.md"))
     notes_mapping = defaultdict(list)
 
     dm_channel = await get_or_create_dm_channel(client.get_user(ClubMemberID.HONZA))
@@ -58,7 +54,7 @@ async def process_pins(client: ClubClient):
         if not message.reactions:
             logger.debug(f"Skipping {message.jump_url}")
             continue
-        if get_reaction(message.reactions, EMOJI_PROCESSED):
+        if get_reaction(message.reactions, check_emoji):
             logger.debug(f"Already processed {message.jump_url}")
             continue
         logger.info(f"Processing {message.jump_url}")
@@ -94,5 +90,24 @@ async def process_pins(client: ClubClient):
         notes_text = "\n\n" + "\n\n".join(notes) + NOTES_END
         path.write_text(text.replace(NOTES_END, notes_text))
         await asyncio.gather(
-            *[message.add_reaction(EMOJI_PROCESSED) for message in messages]
+            *[message.add_reaction(check_emoji) for message in messages]
         )
+
+
+def get_handbook_emoji_mapping(handbook_paths: Iterable[Path]) -> dict[str, Path]:
+    mapping = {}
+    for path in sorted(handbook_paths):
+        emoji = parse_emoji(path.read_text())
+        if emoji in mapping:
+            raise ValueError(
+                f"Emoji {emoji} is duplicated in {path} and {mapping[emoji]}"
+            )
+        mapping[emoji] = path.absolute()
+    return mapping
+
+
+def parse_emoji(source: str) -> str:
+    if not (match := EMOJI_RE.search(source)):
+        raise ValueError("Missing 'emoji: ...' line")
+
+    return match.group(1)
