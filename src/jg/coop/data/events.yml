@@ -77,6 +77,9 @@ registry:
     bio_links:
       - https://www.linkedin.com/in/katerina-hronikova/
       - https://github.com/katacek/junior-guru-job-scraper-demo
+    club_speaker_ids:
+      - 801406662589284382
+    club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1509989040265629836
 
   - id: 61
     title: "Co nám může nabídnout Rust?"
