@@ -1,5 +1,6 @@
 import hashlib
 import itertools
+import logging
 from datetime import timedelta
 from io import BytesIO
 from pathlib import Path
@@ -8,6 +9,14 @@ import click
 import httpx
 from PIL import Image, ImageChops, ImageOps
 from pydantic import BaseModel
+from tenacity import (
+    before_sleep_log,
+    retry,
+    retry_if_exception,
+    retry_if_exception_type,
+    stop_after_attempt,
+    wait_random_exponential,
+)
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import apify, loggers
@@ -19,6 +28,8 @@ from jg.coop.models.job import ListedJob, LogoSourceType
 
 
 SIZE_PX = 100
+
+RETRYABLE_DOWNLOAD_STATUS_CODES = (429, 500, 502, 503, 504)
 
 IMAGES_DIR = Path("src/jg/coop/images")
 
@@ -103,9 +114,8 @@ def main(actor_name: str, clear_files: bool):
                 logger.debug(f"Logo {logo_path} already exists, skipping download")
             else:
                 logger.debug(f"Downloading: {logo.image.image_url}")
-                response = httpx.get(logo.image.image_url, follow_redirects=True)
-                response.raise_for_status()
-                image = Image.open(BytesIO(response.content))
+                image_content = download_logo_image(logo.image.image_url)
+                image = Image.open(BytesIO(image_content))
                 convert_image(image).save(logo_path, **IMAGE_SAVE_OPTIONS)
             job.company_logo_path = logo_path.relative_to(IMAGES_DIR)
             job.save()
@@ -150,6 +160,29 @@ def sort_key(logo: Logo) -> tuple[bool, int, int]:
     area = -1 * logo.image.width * logo.image.height
 
     return (is_icon, similarity_to_square, area)
+
+
+def is_retryable_download_error(exc: Exception) -> bool:
+    return (
+        isinstance(exc, httpx.HTTPStatusError)
+        and exc.response.status_code in RETRYABLE_DOWNLOAD_STATUS_CODES
+    )
+
+
+@retry(
+    retry=(
+        retry_if_exception_type(httpx.RequestError)
+        | retry_if_exception(is_retryable_download_error)
+    ),
+    wait=wait_random_exponential(max=60),
+    stop=stop_after_attempt(3),
+    reraise=True,
+    before_sleep=before_sleep_log(logger, logging.WARNING),
+)
+def download_logo_image(url: str) -> bytes:
+    response = httpx.get(url, follow_redirects=True)
+    response.raise_for_status()
+    return response.content
 
 
 def convert_image(image: Image) -> Image:
