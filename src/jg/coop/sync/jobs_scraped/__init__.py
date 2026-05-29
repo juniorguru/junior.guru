@@ -8,7 +8,7 @@ from peewee import IntegrityError
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import apify, loggers
-from jg.coop.lib.async_utils import make_async
+from jg.coop.lib.async_utils import limit, make_async
 from jg.coop.lib.cli import async_command
 from jg.coop.models.base import db
 from jg.coop.models.job import DroppedJob, ScrapedJob
@@ -83,11 +83,11 @@ async def main():
     logger.info("Processing items")
     count = 0
     drops = 0
-    for processing in logger.progress(
-        asyncio.as_completed(process_item(pipelines, item) for item in items)
-    ):
-        count += 1
-        drops += 1 - (await processing)
+    async with asyncio.TaskGroup() as group:
+        tasks = [group.create_task(process_item(pipelines, item)) for item in items]
+        for processing in logger.progress(asyncio.as_completed(tasks)):
+            count += 1
+            drops += 1 - (await processing)
     logger.info(f"Stats: {count} items, {drops} drops")
 
 
@@ -130,11 +130,13 @@ async def process_item(
                 raise
     except DropItem:
         logger.debug(f"Saving dropped job {item['url']}")
-        await save_dropped_job(item)
+        async with limit(1):
+            await save_dropped_job(item)
         return 0
 
     logger.debug(f"Saving scraped job {item['url']}")
-    await save_scraped_job(item)
+    async with limit(1):
+        await save_scraped_job(item)
     return 1
 
 
