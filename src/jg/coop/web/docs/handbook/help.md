@@ -6,7 +6,7 @@ description: Jak se ptát? Jak debugovat? Při programování tě i drobný zád
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import lead, link_card, illustration, note with context %}
+{% from 'macros.html' import illustration, lead, link_card with context %}
 
 
 # Řešení problémů během programování

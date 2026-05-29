@@ -6,7 +6,7 @@ description: Kde najít mentory, jak s nimi komunikovat, a proč se toho nebát?
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import note, lead, illustration, link_card with context %}
+{% from 'macros.html' import illustration, lead, link_card with context %}
 
 # Mentoring při programování
 

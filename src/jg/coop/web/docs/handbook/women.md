@@ -6,7 +6,7 @@ description: Je IT pro ženy? Existují vůbec nějaké programátorky? Jak do 
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import lead, illustration, blockquote_avatar, link_card, note with context %}
+{% from 'macros.html' import blockquote_avatar, illustration, lead, link_card with context %}
 
 # Ženy a kariéra v IT
 

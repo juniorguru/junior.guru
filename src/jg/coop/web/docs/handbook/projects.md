@@ -6,7 +6,7 @@ description: Pokud se učíš programovat, práce na vlastních projektech je ne
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, illustration, lead, note with context %}
+{% from 'macros.html' import blockquote_avatar, illustration, lead with context %}
 
 # Projekty jako první praxe
 
