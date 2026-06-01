@@ -60,7 +60,8 @@
 # - https://www.fotor.com/photo-editor-app/editor/beauty
 
 registry:
-- id: 63
+registry:
+  - id: 63
     title: "Focus v době AI"
     date: "2026-06-09"
     description: |
@@ -76,7 +77,6 @@ registry:
       - https://x.com/AdinaFXV
       - https://github.com/adinafxv
       - https://www.linkedin.com/in/adina-fox/
-
   - id: 62
     title: "Web scraping: Nechte internet pracovat za vás"
     date: "2026-05-28"
