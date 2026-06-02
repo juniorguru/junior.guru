@@ -27,6 +27,13 @@ DATETIME_KEY = "postedAtISO"
 def main(actor_name: str, posts_dir: Path) -> None:
     logger.info(f"Fetching LinkedIn posts from {actor_name}")
     posts = apify.fetch_data(actor_name)
+
+    if not posts:
+        logger.error("No posts scraped!")
+        return
+    if posts[0].get("error", None):
+        logger.error(f"Error scraping posts! {posts[0]!r}")
+        return
     logger.info(f"Fetched {len(posts)} posts")
 
     posts_dir.mkdir(parents=True, exist_ok=True)
