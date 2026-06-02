@@ -26,33 +26,17 @@ Je to objektivně dost složitý program a jeho příkazy nejsou moc intuitivní
 
 Stačí ti tedy pochopit, co vlastně Git dělá a možná i trochu jak to dělá, a potom zvládat aspoň pár příkazů. Umět stáhnout kód odjinud, nahrát změny, apod. Nic víc se od juniorů neočekává.
 
-## Co je GitHub
-
-GitHub je **úložiště kódu a něco jako sociální síť pro programátory**. Kód tam lze poslat pomocí Gitu.
-
-Další podobná úložiště jsou např. GitLab nebo BitBucket, a existují i řešení, která si může kdokoliv zprovoznit sám, jako Forgejo nebo Gitea.
-
-GitHub je ale nejoblíbenějším pro [open source](collaboration.md), takže **tam najdeš nejvíc projektů a lidí**. Většina kódu knihoven a frameworků, na kterých se staví software, se nachází právě tam, takže když zrovna GitHub nejede, mnohdy si mohou programátoři udělat tak akorát procházku do parku. Od roku 2018 patří GitHub pod Microsoft.
-
-Na GitHubu je **milion funkcí a tlačítek**. Lidé, kteří jsou v oboru už dekádu nebo dvě, se v něm orientují dobře jen díky tomu, že jim to pod rukama rostlo postupně. Je přirozené, pokud tobě to přijde zahlcující a nepřehledné.
-
-Je to ale podobné jako s Gitem. **Nikdo neočekává, že budeš hned znát všechno.** Pro začátek stačí [vytvořit si profil](github-profile.md), umět založit _repozitář_ a nahrát tam kód svého projektu, vědět co je _Pull Request_ a jak ho vytvořit. Když se budeš umět i popasovat s _code review_, tak to je příjemný bonus.
-
-Pokud se dostaneš do firmy, kde se nepoužívá konkrétně GitHub, znalost těchto konceptů se hodí i pro libovolný podobný systém.
-
-## Neboj se ukázat kód!    <span id="showoff"></span>
-
-U začátečníků rozhodně platí, že **nemají co schovávat a měli by světu ukázat co nejvíce toho, co dokázali vytvořit, nebo co zkoušeli řešit**. Můžeš tím jenom získat. GitHub je příhodné místo, kam všechny své projekty a pokusy nahrávat. Zároveň je to místo, kde mají své projekty i všichni ostatní a kde lze spolupracovat s lidmi z celého světa.
-
-Nenech se omezovat strachem, že někdo uvidí tvůj kód a pomyslí si, že nic neumíš. Neboj se mít svůj kód veřejně a ukazovat ho druhým! Tato obava je zbytečnou překážkou ve tvém rozjezdu. Programování je o spolupráci a **GitHub je hřiště pro programátory, kde si každý experimentuje na čem chce.** Čím více tam toho máš, tím lépe. Nejen že se naučíš lépe ovládat Git, ale hlavně budeš moci svůj kód ukázat, když budeš potřebovat [pomoc na dálku](help.md). Pokud tě někdo straší, že si tvůj GitHub budou procházet náboráři, [nenech se tím zmást, je to trochu jinak](cv.md#6-projekty).
-
-## Jak se naučit Git a GitHub    <span id="howto-git-github"></span>
-
 <div class="link-cards">
   {{ link_card(
     'Git a GitHub od základov',
     'https://www.youtube.com/watch?v=0v5K4GvK4Gs',
-    'YouTube kurz Gitu a GitHubu od <a href="http://robweb.sk">yablka</a>.'
+    'Srandovní kurz Gitu a GitHubu od yablka.'
+  ) }}
+
+  {{ link_card(
+    'Kurz Gitu s Mišom',
+    'https://youtube.com/playlist?list=PLNAMH_0HgWT-ey31hQqrmi_Rgr4OVWgH3',
+    'Seriózní kurz Gitu na Informatika s Mišom.'
   ) }}
 
   {{ link_card(
@@ -68,6 +52,34 @@ Nenech se omezovat strachem, že někdo uvidí tvůj kód a pomyslí si, že nic
   ) }}
 </div>
 
+## Co je GitHub
+
+GitHub je **úložiště kódu a něco jako sociální síť pro programátory**. Kód tam lze poslat pomocí Gitu.
+
+Další podobná úložiště jsou např. GitLab nebo BitBucket, a existují i řešení, která si může kdokoliv zprovoznit sám, jako Forgejo nebo Gitea.
+
+GitHub je ale nejoblíbenějším pro [open source](collaboration.md), takže **tam najdeš nejvíc projektů a lidí**. Většina kódu knihoven a frameworků, na kterých se staví software, se nachází právě tam, takže když zrovna GitHub nejede, mnohdy si mohou programátoři udělat tak akorát procházku do parku. Od roku 2018 patří GitHub pod Microsoft.
+
+Na GitHubu je **milion funkcí a tlačítek**. Lidé, kteří jsou v oboru už dekádu nebo dvě, se v něm orientují dobře jen díky tomu, že jim to pod rukama rostlo postupně. Je přirozené, pokud tobě to přijde zahlcující a nepřehledné.
+
+Je to ale podobné jako s Gitem. **Nikdo neočekává, že budeš hned znát všechno.** Pro začátek stačí [vytvořit si profil](github-profile.md), umět založit _repozitář_ a nahrát tam kód svého projektu, vědět co je _Pull Request_ a jak ho vytvořit. Když se budeš umět i popasovat s _code review_, tak to je příjemný bonus.
+
+Pokud se dostaneš do firmy, kde se nepoužívá konkrétně GitHub, znalost těchto konceptů se hodí i pro libovolný podobný systém.
+
+<div class="link-cards">
+  {{ link_card(
+    'Git a GitHub od základov',
+    'https://www.youtube.com/watch?v=0v5K4GvK4Gs',
+    'Srandovní kurz Gitu a GitHubu od yablka.'
+  ) }}
+</div>
+
+## Neboj se ukázat kód!    <span id="showoff"></span>
+
+U začátečníků rozhodně platí, že **nemají co schovávat a měli by světu ukázat co nejvíce toho, co dokázali vytvořit, nebo co zkoušeli řešit**. Můžeš tím jenom získat. GitHub je příhodné místo, kam všechny své projekty a pokusy nahrávat. Zároveň je to místo, kde mají své projekty i všichni ostatní a kde lze spolupracovat s lidmi z celého světa.
+
+Nenech se omezovat strachem, že někdo uvidí tvůj kód a pomyslí si, že nic neumíš. Neboj se mít svůj kód veřejně a ukazovat ho druhým! Tato obava je zbytečnou překážkou ve tvém rozjezdu. Programování je o spolupráci a **GitHub je hřiště pro programátory, kde si každý experimentuje na čem chce.** Čím více tam toho máš, tím lépe. Nejen že se naučíš lépe ovládat Git, ale hlavně budeš moci svůj kód ukázat, když budeš potřebovat [pomoc na dálku](help.md). Pokud tě někdo straší, že si tvůj GitHub budou procházet náboráři, [nenech se tím zmást, je to trochu jinak](cv.md#6-projekty).
+
 ## README
 
 {% call note(standout=True) %}
@@ -78,12 +90,6 @@ Nenech se omezovat strachem, že někdo uvidí tvůj kód a pomyslí si, že nic
 <!-- {#
 
 https://dariagrudzien.com/posts/the-one-about-your-github-account/
-
-- [ ] Co je GitHub - dává se tam kód, lidi spolupracují na komunitních projektech https://github.com/
-- [ ] Naučit se Git a GitHub?
-- [ ] yablko https://www.youtube.com/watch?v=0v5K4GvK4Gs
-- [ ] MIT The Missing Semester https://missing.csail.mit.edu/2020/version-control/
-- [ ] Nauč se Python https://naucse.python.cz/course/pyladies/sessions/foss/
 
 https://git-scm.com/book/cs/v2
 https://www.honeybadger.io/blog/git-tricks/
@@ -239,15 +245,6 @@ A samozřejmě při některých těch operacích vlastně GitHub za tebe píše 
 
 --- https://discord.com/channels/769966886598737931/806621830383271937/1492103659386048573
 Zajímavé pokročilé techniky, jak lze používat Git na analýzu projektu, když přijdete k novému kódu a chcete se v něm zorientovat. Je to spíš seniorní věc a hodí se to spíš při změně práce nebo přeřazení na jiný projekt, případně když je člověk konzultant a skáče z jednoho klienta na druhého, než při denodenní práci, ale je to zajímavé _out of the box_ myšlení. https://piechowski.io/post/git-commands-before-reading-code/
----
-
-
---- https://discord.com/channels/769966886598737931/991010207280807986/1484795843411181699
-Kdyz jsem s Gitem zacinala hodne mi pomohlo tohle video od Yablka, ma tedy dost specificky styl vyjadrovani, ale me to naopak pomohlo konecne pochopit vsechny ty zakladni prikazy. https://youtu.be/0v5K4GvK4Gs?si=yRxXeCywJOlj8hAl
-
-Pokud bys chtel neco serioznejsiho tak kanal Informatika s Misom, ma taky super videa. Git zde https://m.youtube.com/playlist?list=PLNAMH_0HgWT-ey31hQqrmi_Rgr4OVWgH3
-
-Jinak pak urcite zkouset, hrat si s tim. Je fajn si to osahat i v prikazove radce, ale ja taky pouzivam GitHub Desktop. Vyber si proste co ti vice vyhovuje.
 ---
 
 
