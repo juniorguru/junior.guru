@@ -458,7 +458,7 @@
 {% endmacro %}
 
 
-{% macro club_teaser(button_text) %}
+{% macro club_teaser(button_text, extra_text='') %}
 <div class="club-teaser">
   <a class="club-teaser-button" href="{{ pages|docs_url('club.md')|url }}">
     {{ 'discord'|icon }} {{ button_text }}
@@ -470,6 +470,7 @@
     {% endfor %}
     </span>
     <small class="club-teaser-note">
+      {{ extra_text }}
       Na junior.guru Discordu si aktuálně pomáhá {{ members_total_count }} lidí
     </small>
   </div>

@@ -236,15 +236,16 @@ Máš nějaký **větší vlastní výtvor**? Bakalářku nebo diplomku? Vypomá
 
 U každé takové věci by neměl chybět **název, krátký popis a odkazy**. Nejen odkaz na kód, ale i na ukázku. Pokud jde o dobrovolnictví nebo jinou spolupráci, popiš kontext a svůj přínos.
 
-Kód projektu můžeš poskytnout **ke stažení jako zip** na nějakém veřejném odkazu. Dropbox bude působit lépe než Ulož.to. Nejmazanější volbou je ale [používat GitHub](github-profile.md), ideálně už během samotného programování. Prokážeš tím, že umíš aspoň trochu pracovat s Gitem a druhá strana si může vše projít přímo v prohlížeči.
+Kód projektu můžeš poskytnout **ke stažení jako zip** na nějakém veřejném odkazu, třeba Google Drive, Dropbox… Nejmazanější volbou je ale [používat GitHub](git.md), ideálně už během samotného programování. Prokážeš tím, že umíš aspoň trochu pracovat s Gitem a druhá strana si může vše projít přímo v prohlížeči.
 
 Nikdo si nebude nic instalovat, takže **ukázka je zásadní**. Recruiteři kód vůbec nečtou a i programátoři z týmu, kam chceš nastoupit, si jej otevřou až v průběhu technického kola pohovoru. Buď ať to jde proklikat v prohlížeči, nebo někam dej aspoň snímky obrazovky. Když vyrobíš něco interaktivního, třeba hru, můžeš natočit záznam obrazovky, jak ji hraješ, a do CV dát odkaz na YouTube.
 
-Určitě do CV **vypíchni konkrétní projekty**, které chceš ukázat a u každého měj zvlášť odkazy na jejich repozitáře. Nespoléhej se na jeden odkaz na GitHub profil, do hloubky si jej bude procházet málokdo. Pokud si někdo při rozřazování kandidátů otevře repozitář na GitHubu, **proletí očima hlavně [README](git.md#readme)**. Ujisti se, že všechny tvé významné projekty ho mají.
+Určitě do CV **vypíchni konkrétní projekty**, které chceš ukázat a u každého měj zvlášť odkazy na jejich repozitáře. Nespoléhej se na jeden odkaz na GitHub profil, do hloubky si jej bude procházet málokdo. Pokud si někdo při rozřazování kandidátů otevře repozitář na GitHubu, **proletí očima hlavně README**. Ujisti se, že všechny tvé významné projekty ho mají.
 
-{% call note() %}
-  {{ 'lightbulb'|icon }} Pochlub se svými výrobky v [klubu](../club.md)! Rádi na ně mrkneme, pomůžeme ti vyladit si GitHub a vylepšit README tvých projektů.
-{% endcall %}
+{{ club_teaser(
+  "Pochlub se svými výtvory",
+  "Rádi na ně mrkneme, pomůžeme ti vyladit si GitHub a vylepšit README tvých projektů."
+) }}
 
 ### 7. Vzdělání
 
@@ -336,7 +337,7 @@ Buď spontánní. **Nalaď se na komunikační vlnu z pracovního inzerátu.** J
 
 Než začneš CV posílat do firem, nech si na něj dát zpětnou vazbu. Pokud nemáš po ruce někoho z IT nebo HR, nevadí. Skoro kdokoliv ti **zkontroluje překlepy, angličtinu, smysluplnost vět, nebo jestli se dá klikat na odkazy**. Zpětnou vazbu na svůj životopis můžeš dostat i na místním Discordu.
 
-{{ club_teaser("Pošli CV do klubu") }}
+{{ club_teaser("Pošli CV do klubu", "Dáme ti na něj zpětnou vazbu a vyladíme ho s tebou podle všech doporučení.") }}
 
 ## Něco extra
 
