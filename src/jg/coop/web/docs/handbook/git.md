@@ -11,16 +11,34 @@ template: main_handbook.html
 # Git a GitHub
 
 {% call lead() %}
-  Když děláš s kódem, bez Gitu se dnes nepohneš. Působí složitě, ale pro začátek stačí chápat k čemu je, a ovládat pár příkazů. Ujasni si rozdíl mezi Gitem a GitHubem a osvoj si základy, které využiješ nejen při spolupráci s dalšími lidmi, ale i na vlastních projektech.
+  Když děláš s kódem, bez Gitu se dnes nepohneš. Působí složitě, ale pro začátek stačí chápat, k čemu je, a ovládat pár příkazů. Ujasni si rozdíl mezi Gitem a GitHubem a osvoj si základy, které využiješ nejen při spolupráci s dalšími lidmi, ale i na vlastních projektech.
 {% endcall %}
 
 {{ illustration('static/illustrations/git.webp') }}
 
-Git je **nástroj, který ti umožňuje sledovat historii změn v kódu a sdílet kód s dalšími lidmi**. Je to program, který nainstaluješ do svého počítače a pracuješ s ním v příkazové řádce, nebo jej ovládáš např. prostřednictvím svého editoru. Git se dnes používá skoro v každé firmě. I když jeho výhody nejvíc oceníš při práci ve dvou a více lidech, může ti pomoci i jako jednotlivci: Zálohovat kód svých projektů jinam, synchronizovat jej mezi vlastním počítačem a internetem, na dálku jej někomu ukázat.
+## Co je Git
 
-## GitHub
+Git je **nástroj, který ti umožňuje sledovat historii změn v kódu a sdílet kód s dalšími lidmi**. Je to program, který nainstaluješ do svého počítače a pracuješ s ním v příkazové řádce, nebo jej ovládáš např. prostřednictvím svého editoru.
 
-[GitHub](https://github.com/) je **úložiště kódu a něco jako sociální síť pro programátory**. Kód tam lze poslat pomocí Gitu. GitHub není jediným takovým úložištěm, další jsou např. GitLab nebo BitBucket. GitHub je ale nejoblíbenějším pro [open source](collaboration.md), takže tam najdeš nejvíc projektů a lidí.
+Git se dnes **používá skoro v každé firmě**. I když jeho výhody nejvíc oceníš při práci ve dvou a více lidech, může ti pomoci i jako jednotlivci: Zálohovat kód svých projektů jinam, synchronizovat jej mezi vlastním počítačem a internetem, na dálku jej někomu ukázat.
+
+Je to objektivně dost složitý program a jeho příkazy nejsou moc intuitivní. **I profíci si z hlavy běžně pamatují nanejvýš pět příkazů, které používají denně**, ale u zbytku už musí hledat, jak se to správně používá.
+
+Stačí ti tedy pochopit, co vlastně Git dělá a možná i trochu jak to dělá, a potom zvládat aspoň pár příkazů. Umět stáhnout kód odjinud, nahrát změny, apod. Nic víc se od juniorů neočekává.
+
+## Co je GitHub
+
+GitHub je **úložiště kódu a něco jako sociální síť pro programátory**. Kód tam lze poslat pomocí Gitu.
+
+Další podobná úložiště jsou např. GitLab nebo BitBucket, a existují i řešení, která si může kdokoliv zprovoznit sám, jako Forgejo nebo Gitea.
+
+GitHub je ale nejoblíbenějším pro [open source](collaboration.md), takže **tam najdeš nejvíc projektů a lidí**. Většina kódu knihoven a frameworků, na kterých se staví software, se nachází právě tam, takže když zrovna GitHub nejede, mnohdy si mohou programátoři udělat tak akorát procházku do parku. Od roku 2018 patří GitHub pod Microsoft.
+
+Na GitHubu je **milion funkcí a tlačítek**. Lidé, kteří jsou v oboru už dekádu nebo dvě, se v něm orientují dobře jen díky tomu, že jim to pod rukama rostlo postupně. Je přirozené, pokud tobě to přijde zahlcující a nepřehledné.
+
+Je to ale podobné jako s Gitem. **Nikdo neočekává, že budeš hned znát všechno.** Pro začátek stačí [vytvořit si profil](github-profile.md), umět založit _repozitář_ a nahrát tam kód svého projektu, vědět co je _Pull Request_ a jak ho vytvořit. Když se budeš umět i popasovat s _code review_, tak to je příjemný bonus.
+
+Pokud se dostaneš do firmy, kde se nepoužívá konkrétně GitHub, znalost těchto konceptů se hodí i pro libovolný podobný systém.
 
 ## Neboj se ukázat kód!    <span id="showoff"></span>
 
