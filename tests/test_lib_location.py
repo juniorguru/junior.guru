@@ -52,6 +52,16 @@ def test_generate_queries_rewrite(location_raw, expected):
             ],
             "Bratislava",
         ),
+        (
+            ResponseCountry(
+                name="Slovensko", type=ResponseRegionType.country, isoCode="SK"
+            ),
+            [
+                ResponseRegion(name="Okres Žilina", type=ResponseRegionType.region),
+                ResponseRegion(name="Žilinský kraj", type=ResponseRegionType.region),
+            ],
+            "Žilina",
+        ),
     ],
 )
 def test_get_region_name(country, regions, expected):

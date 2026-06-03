@@ -317,17 +317,12 @@ def get_region_name(country: ResponseCountry, regions: list[ResponseRegion]) -> 
     if country.isoCode == "SK":
         if not regions:
             return "Slovensko"
-        try:
-            if regions[-1].name == "Bratislavský kraj":
+        for region in reversed(regions):
+            if region.name in REGIONS_MAPPING_SK:
+                return REGIONS_MAPPING_SK[region.name]
+            if "Bratislav" in region.name:
                 return "Bratislava"
-            # avoiding e.g. 'oblast RŠÚJ Západné Slovensko'
-            region_name_official = regions[-2].name
-        except IndexError:
-            return "Bratislava"
-        if "Bratislava" in region_name_official:
-            # stuff like 'Okres Bratislava III'
-            return "Bratislava"
-        return REGIONS_MAPPING_SK[region_name_official]
+        raise NotImplementedError(f"Unable to get region name for {regions!r}")
 
     return country.name
 
