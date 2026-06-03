@@ -60,22 +60,25 @@
 # - https://www.fotor.com/photo-editor-app/editor/beauty
 
 registry:
-#  - id: 63
-#    title: "Focus v době AI"
-#    date: "2026-06-09"
-#    description: |
-#      Nové nástroje, nová očekávání, neustálý tlak držet krok. Jak se neztratit a jak to ustát, když nevíme, co nás čeká? V krátké přednášce zazní pár myšlenek a strategií z designu, které jsou použitelné napříč obory.
-#    avatar_path: avatars-participants/adina-fox.jpg
-#    bio_name: Adina Fox
-#    bio_title: "Product design teams & systems"
-#    bio: |
-#      Adina je vedoucí produktového designu v Košík.cz, kde vede mezioborový tým zaměřený na tvorbu digitálních produktů a uživatelských zkušeností s reálným dopadem.
-#      Kromě své práce v Košík.cz se věnuje také konzultacím, mentoringu a spolupráci na vybraných projektech.
-#    bio_links:
-#      - https://adinafox.com/
-#      - https://x.com/AdinaFXV
-#      - https://github.com/adinafxv
-#      - https://www.linkedin.com/in/adina-fox/
+  - id: 63
+    title: "Focus v době AI"
+    date: "2026-06-30"
+    description: |
+      Nové nástroje, nová očekávání, neustálý tlak držet krok. Jak se neztratit a jak to ustát, když nevíme, co nás čeká? V krátké přednášce zazní pár myšlenek a strategií z designu, které jsou použitelné napříč obory.
+    avatar_path: avatars-participants/adina-fox.jpg
+    bio_name: Adina Fox
+    bio_title: "Product design teams & systems"
+    bio: |
+      Adina je vedoucí produktového designu v Košík.cz, kde vede mezioborový tým zaměřený na tvorbu digitálních produktů a uživatelských zkušeností s reálným dopadem.
+      Kromě své práce v Košík.cz se věnuje také konzultacím, mentoringu a spolupráci na vybraných projektech.
+    bio_links:
+      - https://adinafox.com/
+      - https://x.com/AdinaFXV
+      - https://github.com/adinafxv
+      - https://www.linkedin.com/in/adina-fox/
+    club_speaker_ids:
+      - 658628731337965586
+      
   - id: 62
     title: "Web scraping: Nechte internet pracovat za vás"
     date: "2026-05-28"
