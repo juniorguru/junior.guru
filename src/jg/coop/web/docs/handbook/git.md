@@ -6,7 +6,7 @@ description: Co je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a Gi
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, illustration, lead, link_card, note with context %}
+{% from 'macros.html' import illustration, lead, link_card with context %}
 
 # Git a GitHub
 
