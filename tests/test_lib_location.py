@@ -16,11 +16,17 @@ from jg.coop.lib.location import (
     [
         (
             "Pikrtova 1737/1A (4. patro), Praha 4",
-            ("Pikrtova 1737/1A, Praha 4", ResponseRegionType.address),
+            (
+                "Pikrtova 1737/1A, Praha 4",
+                ResponseRegionType.address,
+            ),
         ),
         (
             "Bratislava III",
-            ("Bratislava", ResponseRegionType.municipality),
+            (
+                "Bratislava",
+                ResponseRegionType.municipality,
+            ),
         ),
         (
             "Hostinec Pod Schody\nHrnčířská 813/23\n602 00 Brno-střed-Veveří ((alias Pivovar Fénix))",
@@ -29,7 +35,13 @@ from jg.coop.lib.location import (
                 ResponseRegionType.address,
             ),
         ),
-        ("Greater Hyderabad Area", ("Hyderabad", ResponseRegionType.municipality)),
+        (
+            "Greater Hyderabad Area",
+            (
+                "Hyderabad",
+                ResponseRegionType.municipality,
+            ),
+        ),
     ],
 )
 def test_generate_queries_rewrite(location_raw, expected):
@@ -42,23 +54,37 @@ def test_generate_queries_rewrite(location_raw, expected):
     [
         (
             ResponseCountry(
-                name="Slovensko", type=ResponseRegionType.country, isoCode="SK"
+                name="Slovensko",
+                type=ResponseRegionType.country,
+                isoCode="SK",
             ),
             [
-                ResponseRegion(name="Okres Pezinok", type=ResponseRegionType.region),
                 ResponseRegion(
-                    name="Bratislavský kraj", type=ResponseRegionType.region
+                    name="Okres Pezinok",
+                    type=ResponseRegionType.region,
+                ),
+                ResponseRegion(
+                    name="Bratislavský kraj",
+                    type=ResponseRegionType.region,
                 ),
             ],
             "Bratislava",
         ),
         (
             ResponseCountry(
-                name="Slovensko", type=ResponseRegionType.country, isoCode="SK"
+                name="Slovensko",
+                type=ResponseRegionType.country,
+                isoCode="SK",
             ),
             [
-                ResponseRegion(name="Okres Žilina", type=ResponseRegionType.region),
-                ResponseRegion(name="Žilinský kraj", type=ResponseRegionType.region),
+                ResponseRegion(
+                    name="Okres Žilina",
+                    type=ResponseRegionType.region,
+                ),
+                ResponseRegion(
+                    name="Žilinský kraj",
+                    type=ResponseRegionType.region,
+                ),
             ],
             "Žilina",
         ),
