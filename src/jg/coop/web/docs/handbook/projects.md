@@ -49,6 +49,13 @@ Pokud vlastní nápad nepřichází a mentor není po ruce, můžeš zkusit [hac
 {% endcall %}
 
 <!--
+Dobre: Poslat se žádostí o práci odkaz na svůj veřejný projekt na GitHubu
+Spatne: Poslat se žádostí o práci odkaz na svůj veřejný projekt na GitHubu, kam jste commitli a pushli také složky jako __pycache__, node_modules a další a taky přístupy na ssh, k databázi a k emailu, které ta aplikace využívá.
+
+
+TODO: udelat kapitolu o README
+
+
 koľko HODÍN DENNE musím PROGRAMOVAŤ? (programátor radí) https://www.youtube.com/watch?app=desktop&v=LG-d_BOZE6k
 
 včera a předevčírem mi bublinou prolétlo tohle vlákno https://twitter.com/varjmes/status/1363607492765376513, kde se lidé vyjadřují k tomu, jestli dělají side projects nebo ne. spousta lidí programuje v práci, ve volném čase už ne, to myšlení o programátorovi, co programuje od rána do noci se už posunulo. časté jsou sebevzdělávací side projects - vyzkoušet si technologie apod. nebo "cesta je cíl" - hraní si s projektem, ale nikdy nedokončit.
