@@ -44,7 +44,7 @@
           Začátečníci, kteří hledají komunitu a podporu. Senioři s chutí sdílet své zkušenosti.
           K tomu pravidelné online akce a mnoho dalšího.
         </p>
-        {% if related_channels %}
+        {% if related_channels and related_channels_monthly_size > 100 %}
           <p class="lead">
             {% if related_channels|length == 1 %}
               Konkrétně v kanálu
