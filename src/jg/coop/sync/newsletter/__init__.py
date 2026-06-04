@@ -67,6 +67,13 @@ logger = loggers.from_path(__file__)
     help="Force creating even if there are already emails this month",
 )
 @click.option(
+    "-p",
+    "--print-only",
+    is_flag=True,
+    default=False,
+    help="Print the created draft without sending",
+)
+@click.option(
     "-o",
     "--open",
     "open_browser",
@@ -84,6 +91,7 @@ logger = loggers.from_path(__file__)
 @async_command
 async def main(
     force: bool,
+    print_only: bool,
     open_browser: bool,
     today: date,
     summary_correction_attempts: int,
@@ -257,6 +265,10 @@ async def main(
         "status": "draft",
     }
     logger.debug(f"Email data:\n{pformat(email_data)}")
+    if print_only:
+        logger.info("Printing email body:\n")
+        print(email_data["body"])
+        return
 
     logger.info("Creating draft")
     async with ButtondownAPI() as api:
