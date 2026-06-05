@@ -1330,3 +1330,4 @@
 {"_id": "27660355212", "amount": 8895, "category": "memberships", "happened_on": "2026-06-01"}
 {"_id": "27668473468", "amount": -1049, "category": "memberful", "happened_on": "2026-06-02"}
 {"_id": "27669003171", "amount": 6, "category": "donations", "happened_on": "2026-06-03"}
+{"_id": "27670930974", "amount": 45000, "category": "sponsorships", "happened_on": "2026-06-04"}
