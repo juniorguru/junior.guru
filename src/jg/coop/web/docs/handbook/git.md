@@ -6,7 +6,7 @@ description: Co je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a Gi
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import illustration, lead, link_card, github_profile_form with context %}
+{% from 'macros.html' import illustration, note, lead, link_card, figure, github_profile_form with context %}
 
 # Git a GitHub
 
@@ -22,13 +22,27 @@ template: main_handbook.html
 
 Git je **nástroj, který ti umožňuje sledovat historii změn v kódu a sdílet kód s dalšími lidmi**. Je to program, který nainstaluješ do svého počítače a pracuješ s ním v příkazové řádce, nebo jej ovládáš např. prostřednictvím svého editoru.
 
-Git se dnes **používá skoro v každé firmě**. I když jeho výhody nejvíc oceníš při práci ve dvou a více lidech, může ti pomoci i jako jednotlivci: Zálohovat kód svých projektů jinam, synchronizovat jej mezi vlastním počítačem a internetem, na dálku jej někomu ukázat.
+{% call note() %}
+  {{ 'lightbulb'|icon }} Nejde o zkratku, takže se název píše opravdu Git a ne GIT. Není to zkratka. Slovo „git” v britské angličtině hovorově znamená „blbec”.
+{% endcall %}
+
+Git se dnes **používá skoro v každé firmě**. Nejvíc jeho funkce vyniknou při práci ve dvou a více lidech, ale hodit se mohou i jednotlivcům:
+
+- **Historie a záloha:** Když si rozdrbeš kód, můžeš se s Gitem bezpečně vrátit k přechozí, funkční verzi.
+- **Sdílení:** Díky GitHubu můžeš kód někomu na dálku ukázat, třeba aby ti dal zpětnou vazbu a poradil.
+- **Synchronizace:** S Gitem jde kód bezpečně nahrávat, stahovat a měnit z různých počítačů.
+
+{% call figure('static/figures/git-home.png', 2050, 770, 'webovka Gitu') %}
+  Webovka nástroje Git
+{% endcall %}
 
 ## Jak se učit Git
 
-Git je objektivně dost složitý a jeho příkazy nejsou moc intuitivní. **I profíci si z hlavy běžně pamatují nanejvýš pět příkazů, které používají denně**, ale u zbytku už musí hledat, jak se to správně používá.
+Git je objektivně dost složitý a jeho příkazy nejsou moc intuitivní. **I profíci si z hlavy běžně pamatují nanejvýš pět příkazů, které používají denně**, ale u zbytku už musí hledat, jak se to správně používá. Stačí ti tedy pochopit, co vlastně Git dělá a možná i trochu jak to dělá, a potom zvládat aspoň pár příkazů.
 
-Stačí ti tedy pochopit, co vlastně Git dělá a možná i trochu jak to dělá, a potom zvládat aspoň pár příkazů. Umět stáhnout kód odjinud, nahrát změny, apod. Nic víc se od juniorů neočekává.
+**Začni postupně**, zatímco pracuješ na nějakém vlastním [projektu](projects.md). Po každé fungující změně si **ulož verzi kódu jako commit**. Klidně týdny dělej jen tohle. Pak se nauč, jak se dá vrátit k předchozím verzím.
+
+Až budeš mít projekt trochu hotový, nahraj ho jako **repozitář na GitHub** a nauč se tam nahrávat další změny. Pak si zkus stáhnout cizí repozitář. A až potom koukej na **větve a _Pull Requesty_**. To stačí, nic víc se od juniorů neočekává.
 
 Následující odkazy by ti měly dát dobrý základ. Něco jsou kurzy na YouTube, něco interaktivní hračky, které tě s Gitem naučí prakticky. A nakonec i kniha, ve které je úplně všechno.
 
@@ -98,9 +112,7 @@ Když budeš chtít pochopit nějakou konkrétní věc, třeba jak řešit _merg
 
 ## Ovládání Gitu
 
-Git jde ovládat přes **příkazovou řádku** nebo přes nějaké **klikací rozhraní**.
-
-Prakticky každý editor na kód má na Git už něco zabudovaného v sobě, nebo si to můžeš snadno doinstalovat. Na ovládání Gitu klikáním není nic špatného ani neprofesionálního.
+Git jde ovládat přes **příkazovou řádku** nebo přes nějaké **klikací rozhraní**. Prakticky každý editor na kód má na Git už něco zabudovaného v sobě, nebo si to můžeš snadno doinstalovat. Na ovládání Gitu klikáním není nic špatného ani neprofesionálního.
 
 Počítej ale s tím, že **příkazová řádka je „společný jazyk“ všech návodů**. Klikací rozhraní každé vypadá a chová se trochu jinak. Když se však řekne `git pull origin main` nebo `git commit --amend --no-edit`, tak to všem funguje stejně.
 
@@ -128,7 +140,7 @@ Pokud se ti to stane, **nech si poradit od AI**. Vysvětli situaci a krok za kro
 
 ## Co je GitHub
 
-GitHub je **úložiště kódu a něco jako sociální síť pro programátory**. Kód tam lze poslat pomocí Gitu.
+GitHub je **úložiště kódu a něco jako sociální síť pro programátory**. Kód tam jde poslat pomocí Gitu.
 
 Od roku 2018 patří GitHub pod Microsoft. Další podobná úložiště jsou např. GitLab nebo Atlassian Bitbucket, a existují i řešení, která si může kdokoliv zprovoznit sám, jako Forgejo nebo Gitea. Všechny fungují na podobném principu:
 
@@ -137,6 +149,10 @@ Od roku 2018 patří GitHub pod Microsoft. Další podobná úložiště jsou na
 - **Všechno kolem.** _Issues_ na to, aby někdo mohl nahlásit chybu, nebo sdílet nápad. Komentáře. _Pull Requesty_ (někde se říká _Merge Requesty_), aby šlo poslat návrh na změnu kódu i do cizího repozitáře. Projekty… Možnost hostovat si tam statický web… Spouštění všelijakých automatizovaných testů… Tlačítko na vyžehlení prádla…
 
 Historicky je GitHub nejoblíbenějším místem pro [open source](collaboration.md), takže **tam najdeš nejvíc projektů a lidí**. Většina kódu knihoven a frameworků, na kterých se staví software, se nachází právě tam. To má i své nevýhody. Když zrovna GitHub nejede, mnohdy si mohou programátoři udělat tak akorát procházku do parku.
+
+{% call figure('static/figures/github-repo.png', 2694, 1119, 'repozitář na GitHubu') %}
+  Repozitář junior.guru na GitHubu, ve kterém je veřejně kód i této stránky
+{% endcall %}
 
 ## Jak se učit GitHub
 
@@ -185,6 +201,10 @@ Když vyhledáš vhodný výraz, můžeš se třeba podívat, jak někdo jiný p
 Pamatuj ale na to, že **najdeš i spoustu nekvalitního kódu**, takže vždycky zvaž, jestli se tím, co vidíš, chceš opravdu inspirovat. Když najdeš něco, čemu nerozumíš, konzultuj to v [komunitách](community.md), nebo aspoň s AI.
 
 No a nemusíš jen koukat, do **open source** projektů [můžeš i přispět](collaboration.md)! To, že jsi na začátku, neznamená, že nemůžeš objevit chybu nebo opravit větu v dokumentaci. A odvaha být v tomto směru aktivní se u juniorů dost cení.
+
+{% call figure('static/figures/github-data-rozhlas.png', 2694, 1570, 'organizace na GitHubu') %}
+  Projekty datového týmu Českého Rozhlasu s veřejným kódem na GitHubu
+{% endcall %}
 
 ## GitHub a pohovory
 
