@@ -183,14 +183,29 @@ def post_process(output_path: Path):
 
 
 def _fill_image_dimensions(html_text: str, output_path: Path, html_path: Path) -> str:
-    def replace_img(match: re.Match[str]) -> str:
-        img = BeautifulSoup(match.group(0), "html.parser").find("img")
-        url = img["src"]
+    log = logger["postprocess"]["image-dimensions"]
 
-        with Image.open(resolve_path(output_path, html_path, url)) as image:
+    def replace_img(match: re.Match[str]) -> str:
+        img_tag = match.group(0)
+        img = BeautifulSoup(img_tag, "html.parser").find("img")
+
+        if img.get("width") and img.get("height"):
+            log.debug(f"{img['src']}: Already has dimensions, skipping")
+            return img_tag
+        try:
+            image_path = resolve_path(output_path, html_path, img["src"])
+        except ValueError:
+            log.debug(f"{img['src']}: Unable to resolve path, skipping")
+            return img_tag
+
+        if image_path.suffix.lower() == ".svg":
+            log.debug(f"{image_path}: SVG, skipping")
+            return img_tag
+
+        with Image.open(image_path) as image:
             width, height = image.size
 
-        logger["postprocess"].debug(f"Setting dimensions for {url}: {width}x{height}")
+        log.info(f"{image_path}: {width}x{height}")
         img["width"], img["height"] = str(width), str(height)
         return str(img).replace("/>", ">")
 
@@ -198,14 +213,16 @@ def _fill_image_dimensions(html_text: str, output_path: Path, html_path: Path) -
 
 
 def _cache_bust_urls(html_text: str, output_path: Path, html_path: Path) -> str:
+    log = logger["postprocess"]["cache-busting"]
+
     def bust_url(url: str) -> str:
         try:
             file_path = resolve_path(output_path, html_path, url)
         except ValueError as e:
-            logger["postprocess"].debug(str(e))
+            log.debug(str(e))
             return url
 
-        logger["postprocess"].debug(f"Cache busting {url} ({file_path})")
+        log.debug(f"Cache busting {url} ({file_path})")
         separator = "&" if "?" in url else "?"
         return f"{url}{separator}hash={hash_file(file_path)}"
 
