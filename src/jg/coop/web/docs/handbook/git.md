@@ -32,7 +32,7 @@ Git se dnes **používá skoro v každé firmě**. Nejvíc jeho funkce vyniknou 
 - **Sdílení:** Díky GitHubu můžeš kód někomu na dálku ukázat, třeba aby ti dal zpětnou vazbu a poradil.
 - **Synchronizace:** S Gitem jde kód bezpečně nahrávat, stahovat a měnit z různých počítačů.
 
-{% call figure('static/figures/git-home.png', 'webovka Gitu') %}
+{% call figure('static/figures/git-home.webp', 'webovka Gitu') %}
   Webovka nástroje Git
 {% endcall %}
 
@@ -150,7 +150,7 @@ Od roku 2018 patří GitHub pod Microsoft. Další podobná úložiště jsou na
 
 Historicky je GitHub nejoblíbenějším místem pro [open source](collaboration.md), takže **tam najdeš nejvíc projektů a lidí**. Většina kódu knihoven a frameworků, na kterých se staví software, se nachází právě tam. To má i své nevýhody. Když zrovna GitHub nejede, mnohdy si mohou programátoři udělat tak akorát procházku do parku.
 
-{% call figure('static/figures/github-repo.png', 'repozitář na GitHubu') %}
+{% call figure('static/figures/github-repo.webp', 'repozitář na GitHubu') %}
   Repozitář junior.guru na GitHubu, ve kterém je veřejně kód i této stránky
 {% endcall %}
 
@@ -202,7 +202,7 @@ Pamatuj ale na to, že **najdeš i spoustu nekvalitního kódu**, takže vždyck
 
 No a nemusíš jen koukat, do **open source** projektů [můžeš i přispět](collaboration.md)! To, že jsi na začátku, neznamená, že nemůžeš objevit chybu nebo opravit větu v dokumentaci. A odvaha být v tomto směru aktivní se u juniorů dost cení.
 
-{% call figure('static/figures/github-data-rozhlas.png', 'organizace na GitHubu') %}
+{% call figure('static/figures/github-data-rozhlas.webp', 'organizace na GitHubu') %}
   Projekty datového týmu Českého Rozhlasu s veřejným kódem na GitHubu
 {% endcall %}
 
