@@ -289,6 +289,35 @@
 {% endmacro %}
 
 
+{% macro github_profile_form(homepage=False) %}
+<form id="github-profile-form" action="https://github.com/juniorguru/eggtray/issues/new" target="_blank">
+  <fieldset class="github-profile{% if homepage %} homepage{% endif %}">
+    <legend class="github-profile-title">
+      {{ "check-circle-fill"|icon }}
+      {% if homepage %}
+        <h4>Můžeš si už hledat práci? Otestuj si GitHub profil</h4>
+        {{ img('static/chick-icon.svg', '', 207, 165, class='github-profile-chick', lazy=False) }}
+      {% else %}
+        <h4>Otestuj si GitHub profil</h4>
+      {% endif %}
+    </legend>
+    <label for="github-profile-input" class="github-profile-label">Adresa tvého GitHub profilu:</label>
+    <div class="github-profile-row">
+      <input id="github-profile-input" class="github-profile-input" required placeholder="https://github.com/username">
+      <input type="submit" value="Otestovat" class="github-profile-button">
+    </div>
+    <p class="github-profile-help">
+      Po odeslání se ti otevře předvyplněné GitHub issue. Když jej vytvoříš, tak spustíš bota,
+      který ti dá v komentáři zdarma zpětnou vazbu.
+    </p>
+    <input type="hidden" name="template" value="check.md">
+    <input type="hidden" name="title" value="Zpětná vazba na profil">
+    <input type="hidden" name="body" value="Kuřátko, mrkni prosím na @, díky!">
+  </fieldset>
+</form>
+{% endmacro %}
+
+
 {% macro see_also(page) %}
   <div class="see-also standout-top">
     <h2>Související</h2>

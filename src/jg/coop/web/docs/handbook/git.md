@@ -6,7 +6,7 @@ description: Co je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a Gi
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import illustration, lead, link_card with context %}
+{% from 'macros.html' import illustration, lead, link_card, github_profile_form with context %}
 
 # Git a GitHub
 
@@ -194,23 +194,4 @@ Manažeři a senioři občas ano, ale podstatné je, jestli jim dáš v CVčku p
 
 Sekce [GitHub jako vitrínka](github-profile.md#github-jako-vitrinka) v návodu na GitHub profil nebo [Projekty](cv.md#6-projekty) v návodu na CV ti dají praktické tipy, jak GitHub používat jako dílnu a zároveň zajistit, že pohovorující nebudou zakopávát o nepořádek.
 
-<form id="github-profile-form" action="https://github.com/juniorguru/eggtray/issues/new" target="_blank">
-  <fieldset class="github-profile">
-    <legend class="github-profile-title">
-      {{ "check-circle-fill"|icon }}
-      <h4>Otestuj si GitHub profil</h4>
-    </legend>
-    <label for="github-profile-input" class="github-profile-label">Adresa tvého GitHub profilu:</label>
-    <div class="github-profile-row">
-      <input id="github-profile-input" class="github-profile-input" required placeholder="https://github.com/username">
-      <input type="submit" value="Otestovat" class="github-profile-button">
-    </div>
-    <p class="github-profile-help">
-      Po odeslání se ti otevře předvyplněné GitHub issue. Když jej vytvoříš, tak spustíš bota,
-      který ti dá v komentáři zdarma zpětnou vazbu.
-    </p>
-    <input type="hidden" name="template" value="check.md">
-    <input type="hidden" name="title" value="Zpětná vazba na profil">
-    <input type="hidden" name="body" value="Kuřátko, mrkni prosím na @, díky!">
-  </fieldset>
-</form>
+{{ github_profile_form() }}

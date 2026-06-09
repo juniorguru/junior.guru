@@ -6,7 +6,7 @@ description: Má být tvůj GitHub profil spíš naleštěným životopisem, neb
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import illustration, blockquote_avatar, figure, club_teaser, lead with context %}
+{% from 'macros.html' import illustration, blockquote_avatar, figure, club_teaser, lead, github_profile_form with context %}
 
 # GitHub profil
 
@@ -16,26 +16,7 @@ template: main_handbook.html
 
 {{ illustration('static/illustrations/github-profile.webp') }}
 
-<form id="github-profile-form" action="https://github.com/juniorguru/eggtray/issues/new" target="_blank">
-  <fieldset class="github-profile">
-    <legend class="github-profile-title">
-      {{ "check-circle-fill"|icon }}
-      <h4>Otestuj si GitHub profil</h4>
-    </legend>
-    <label for="github-profile-input" class="github-profile-label">Adresa tvého GitHub profilu:</label>
-    <div class="github-profile-row">
-      <input id="github-profile-input" class="github-profile-input" required placeholder="https://github.com/username">
-      <input type="submit" value="Otestovat" class="github-profile-button">
-    </div>
-    <p class="github-profile-help">
-      Po odeslání se ti otevře předvyplněné GitHub issue. Když jej vytvoříš, tak spustíš bota,
-      který ti dá v komentáři zdarma zpětnou vazbu.
-    </p>
-    <input type="hidden" name="template" value="check.md">
-    <input type="hidden" name="title" value="Zpětná vazba na profil">
-    <input type="hidden" name="body" value="Kuřátko, mrkni prosím na @, díky!">
-  </fieldset>
-</form>
+{{ github_profile_form() }}
 
 [TOC]
 
