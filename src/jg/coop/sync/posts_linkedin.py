@@ -2,6 +2,7 @@ import json
 import subprocess
 from datetime import datetime
 from pathlib import Path
+from pprint import pformat
 from typing import Any
 from urllib.parse import urlsplit, urlunsplit
 
@@ -31,13 +32,14 @@ def main(actor_name: str, posts_dir: Path) -> None:
     if not posts:
         logger.error("No posts scraped!")
         return
-    if posts[0].get("error", None):
+    if posts[0].get("error", None) is not None:
         logger.error(f"Error scraping posts! {posts[0]!r}")
         return
     logger.info(f"Fetched {len(posts)} posts")
 
     posts_dir.mkdir(parents=True, exist_ok=True)
     for post in posts:
+        logger.debug(f"Post: {pformat(post)}")
         filename = get_post_filename(post)
         content = serialize_post(post)
 
