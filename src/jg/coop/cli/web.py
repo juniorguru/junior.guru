@@ -8,8 +8,10 @@ from pathlib import Path
 from time import perf_counter
 
 import click
+from bs4 import BeautifulSoup
 from livereload import Server
 from mkdocs.__main__ import build_command as _build_mkdocs
+from PIL import Image
 
 from jg.coop.lib import loggers
 
@@ -41,6 +43,8 @@ JS_SCRIPT_RE = re.compile(
     """,
     re.IGNORECASE | re.VERBOSE,
 )
+
+IMG_TAG_RE = re.compile(r"""<img\b[^>]*>""", re.IGNORECASE)
 
 
 @click.group()
@@ -173,7 +177,24 @@ def post_process(output_path: Path):
     for html_path in output_path.glob("**/*.html"):
         logger["postprocess"].info(f"Post-processing {html_path}")
         html_text = html_path.read_text()
-        html_path.write_text(_cache_bust_urls(html_text, output_path, html_path))
+        html_text = _fill_image_dimensions(html_text, output_path, html_path)
+        html_text = _cache_bust_urls(html_text, output_path, html_path)
+        html_path.write_text(html_text)
+
+
+def _fill_image_dimensions(html_text: str, output_path: Path, html_path: Path) -> str:
+    def replace_img(match: re.Match[str]) -> str:
+        img = BeautifulSoup(match.group(0), "html.parser").find("img")
+        url = img["src"]
+
+        with Image.open(resolve_path(output_path, html_path, url)) as image:
+            width, height = image.size
+
+        logger["postprocess"].debug(f"Setting dimensions for {url}: {width}x{height}")
+        img["width"], img["height"] = str(width), str(height)
+        return str(img).replace("/>", ">")
+
+    return IMG_TAG_RE.sub(replace_img, html_text)
 
 
 def _cache_bust_urls(html_text: str, output_path: Path, html_path: Path) -> str:
@@ -198,11 +219,12 @@ def _cache_bust_urls(html_text: str, output_path: Path, html_path: Path) -> str:
 
 
 def resolve_path(output_path: Path, html_path: Path, url: str):
-    if url.startswith("http"):
+    clean_url = url.split("#", 1)[0].split("?", 1)[0]
+    if clean_url.startswith("http"):
         raise ValueError(f"Cannot resolve external URL: {url}")
-    if url.startswith("/"):
-        return (output_path / url.lstrip("/")).resolve()
-    return (html_path.parent / url).resolve()
+    if clean_url.startswith("/"):
+        return (output_path / clean_url.lstrip("/")).resolve()
+    return (html_path.parent / clean_url).resolve()
 
 
 @cache

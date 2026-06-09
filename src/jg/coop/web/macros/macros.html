@@ -3,8 +3,10 @@
 {% endmacro %}
 
 
-{% macro img(filename, alt, width, height, class=none, lazy=True) %}
-<img src="{{ filename|url }}" alt="{{ alt }}" width="{{ width }}" height="{{ height }}"
+{% macro img(filename, alt, width=none, height=none, class=none, lazy=True) %}
+<img src="{{ filename|url }}" alt="{{ alt }}"
+  {%- if width %} width="{{ width }}"{% endif -%}
+  {%- if height %} height="{{ height }}"{% endif -%}
   {%- if lazy %} loading="lazy"{% endif -%}
   {%- if class %} class="{{ class }}"{% endif -%}
 >
@@ -19,7 +21,7 @@
 {% endmacro %}
 
 
-{% macro figure(path, alt, width, height, lazy=True, caption=none, class=none) %}
+{% macro figure(path, alt, width=700, height=none, lazy=True, caption=none, class=none) %}
 <figure class="figure{% if class %} {{ class }}{% endif %}">
   {{ img(path, alt, width, height, class='figure-img', lazy=lazy) }}
   {% if caption %}
