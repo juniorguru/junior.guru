@@ -1,5 +1,7 @@
 import itertools
 import math
+import mimetypes
+import os
 import re
 import subprocess
 from glob import glob
@@ -58,6 +60,7 @@ def main(context, code: bool):
     if code:
         return
     context.invoke(optimize_avatars)
+    context.invoke(optimize_figures)
     context.invoke(optimize_svg)
 
 
@@ -147,6 +150,79 @@ def optimize_avatars(size_px: int, glob_pattern: str):
 
 
 @main.command()
+@click.option(
+    "-p",
+    "--path",
+    "paths",
+    multiple=True,
+    type=click.Path(path_type=Path, exists=True, file_okay=False, dir_okay=True),
+    default=(
+        Path("src/jg/coop/images/figures"),
+        Path("src/jg/coop/images/illustrations"),
+    ),
+    show_default=True,
+)
+@click.option(
+    "-d",
+    "--docs-path",
+    type=click.Path(path_type=Path, exists=True, file_okay=False, dir_okay=True),
+    default=Path("src/jg/coop/web"),
+    show_default=True,
+)
+@click.option(
+    "-g",
+    "--docs-glob",
+    "docs_globs",
+    multiple=True,
+    default=("*.md", "*.jinja"),
+    show_default=True,
+)
+def optimize_figures(
+    paths: tuple[Path, ...], docs_path: Path, docs_globs: tuple[str, ...]
+):
+    logger.info("Optimizing figures")
+    image_paths = [
+        image_path
+        for images_path in paths
+        for image_path in images_path.rglob("*")
+        if is_image(image_path) and image_path.suffix.lower() != ".webp"
+    ]
+    logger.debug(f"Found {len(image_paths)} images to optimize")
+
+    if image_paths:
+        logger.debug("Optimizing images with optimizt")
+        subprocess.run(
+            ["npx", "@343dev/optimizt", "--webp", *map(str, image_paths)],
+            check=True,
+        )
+        logger.debug("Deleting original images")
+        for image_path in image_paths:
+            image_path.unlink()
+
+    logger.debug("Checking new images")
+    image_paths = [
+        image_path
+        for images_path in paths
+        for image_path in images_path.rglob("*.webp")
+    ]
+    logger.debug(f"Found {len(image_paths)} WebP images")
+
+    logger.debug("Fixing image paths in documents")
+    common_parent_path = Path(os.path.commonpath(paths))
+    for docs_glob in docs_globs:
+        for doc_path in docs_path.rglob(docs_glob):
+            logger.debug(f"Document: {doc_path}")
+            doc_markup = doc_path.read_text()
+            for image_path in image_paths:
+                image_path_short = f"/{image_path.relative_to(common_parent_path)}"
+                image_path_stub = image_path_short.removesuffix("webp")
+                image_path_re = re.compile(re.escape(image_path_stub) + r"\w{3,4}")
+                logger.debug(f"Replacing: {image_path_stub}* → {image_path_short}")
+                doc_markup = image_path_re.sub(image_path_short, doc_markup)
+            doc_path.write_text(doc_markup)
+
+
+@main.command()
 def optimize_svg():
     logger.info("Optimizing SVGs")
     images_dir = Path("src/jg/coop/images")
@@ -213,3 +289,8 @@ def replace_jinja_imports(markup: str, names: Iterable[str]) -> str:
         new_import = f"{{% from {match.group('source')} import {new_names} %}}"
         return JINJA_IMPORT_RE.sub(new_import, markup)
     return markup
+
+
+def is_image(path: Path) -> bool:
+    mime, _ = mimetypes.guess_type(path)
+    return mime is not None and mime.startswith("image/")
