@@ -97,9 +97,10 @@ def fetch_analytics(pages: list[str], time_range: dict[str, str]) -> int:
         version=5,
         fields="pageviews",
         info="false",
-        pages=",".join(pages),
         **time_range,
     )
+    if pages != ["*"]:
+        params["pages"] = ",".join(pages)
     response = requests.get(
         "https://simpleanalytics.com/junior.guru.json", params=params
     )
