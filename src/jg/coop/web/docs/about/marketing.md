@@ -152,9 +152,39 @@ Vývoj počtu sledujících na profilech na relevantních sociálních sítích 
 
 ## Video kanály
 
-Tentýž graf jako předchozí, akorát pouze s kanály, kam se dávají krátká videa na výšku (_reels, shorts_).
+Tentýž graf jako předchozí, akorát pouze s kanály, kam se dávají krátká videa na výšku, to znamená _reels_ nebo _shorts_.
 
-
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="300"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts.video_followers_breakdown_labels,
+        'datasets': [
+            {
+                'label': 'YouTube',
+                'data': charts.video_followers_breakdown.pop('youtube'),
+                'borderColor': '#FF0000',
+                'borderWidth': 1,
+            },
+            {
+                'label': 'Instagram',
+                'data': charts.video_followers_breakdown.pop('instagram'),
+                'borderColor': '#C13584',
+                'borderWidth': 1,
+            },
+            {
+                'label': 'Facebook',
+                'data': charts.video_followers_breakdown.pop('facebook'),
+                'borderColor': '#0866FF',
+                'borderWidth': 1,
+            },
+        ],
+    }|tojson|forceescape }}"
+    {{ charts.video_followers_breakdown.keys()|list|assert_empty }}
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'plugins': {'annotation': charts.video_followers_breakdown_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
 
 ## Výkonnost kanálů podle ankety
 
