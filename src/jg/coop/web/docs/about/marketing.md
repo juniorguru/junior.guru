@@ -204,6 +204,8 @@ Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_marketin
             'llm': 'AI asistenti',
             'friend': 'doporučení známého',
             'facebook': 'Facebook',
+            'instagram': 'Instagram',
+            'tiktok': 'TikTok',
             'podcasts': 'podcasty',
             'linkedin': 'LinkedIn',
             'youtube': 'YouTube',

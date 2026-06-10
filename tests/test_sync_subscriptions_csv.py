@@ -74,6 +74,12 @@ def test_classify_referrer(url, expected):
         ("Dotaz na Claude (Sonnet 4.5)", "llm"),
         ("Pres perplexity", "llm"),
         ("ChatGPT mi doporučil junior.guru", "llm"),
+        ("IG", "instagram"),
+        ("instagram", "instagram"),
+        ("Instagram", "instagram"),
+        ("insta", "instagram"),
+        ("tiktok", "tiktok"),
+        ("TikTok", "tiktok"),
     ],
 )
 def test_classify_marketing_survey_answer(text, expected):

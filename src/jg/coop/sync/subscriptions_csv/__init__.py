@@ -217,6 +217,12 @@ def classify_marketing_survey_answer(text: str) -> str:
         return "courses"
     if re.search(r"\b(youtube|yt)\b", text, re.I):
         return "youtube"
+    if re.search(r"\b(instagram\w*|insta\w*)\b", text, re.I):
+        return "instagram"
+    if re.search(r"\bIG\b", text):
+        return "instagram"
+    if re.search(r"\btik\s*tok\w*\b", text, re.I):
+        return "tiktok"
     if re.search(r"\b(facebook\w*|fb|fcb)\b", text, re.I):
         return "facebook"
     if re.search(r"\blinkedin\w*\b", text, re.I) or re.search(r"\bLI\b", text):
