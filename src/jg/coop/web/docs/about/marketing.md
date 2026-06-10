@@ -83,39 +83,63 @@ Vývoj počtu sledujících na profilech na relevantních sociálních sítích 
                 'borderWidth': 2,
             },
             {
+                'label': 'LinkedIn',
+                'data': charts.followers_breakdown.pop('linkedin'),
+                'borderColor': '#0A66C2',
+                'borderWidth': 1,
+            },
+            {
                 'label': 'osobní LinkedIn',
                 'data': charts.followers_breakdown.pop('linkedin_personal'),
-                'borderColor': '#1755d1',
+                'borderColor': '#0A66C2',
                 'borderWidth': 2,
             },
             {
                 'label': 'YouTube',
                 'data': charts.followers_breakdown.pop('youtube'),
-                'borderColor': '#dc3545',
+                'borderColor': '#FF0000',
                 'borderWidth': 2,
+            },
+            {
+                'label': 'Instagram',
+                'data': charts.followers_breakdown.pop('instagram'),
+                'borderColor': '#C13584',
+                'borderWidth': 2,
+            },
+            {
+                'label': 'osobní Instagram',
+                'data': charts.followers_breakdown.pop('instagram_personal'),
+                'borderColor': '#C13584',
+                'borderWidth': 1,
+            },
+            {
+                'label': 'Facebook',
+                'data': charts.followers_breakdown.pop('facebook'),
+                'borderColor': '#0866FF',
+                'borderWidth': 1,
+            },
+            {
+                'label': 'osobní Facebook',
+                'data': charts.followers_breakdown.pop('facebook_personal'),
+                'borderColor': '#0866FF',
+                'borderWidth': 1,
             },
             {
                 'label': 'osobní GitHub',
                 'data': charts.followers_breakdown.pop('github_personal'),
                 'borderColor': '#343434',
-                'borderWidth': 2,
-            },
-            {
-                'label': 'LinkedIn',
-                'data': charts.followers_breakdown.pop('linkedin'),
-                'borderColor': '#1755d1',
-                'borderWidth': 1,
-            },
-            {
-                'label': 'Mastodon',
-                'data': charts.followers_breakdown.pop('mastodon'),
-                'borderColor': '#563acc',
                 'borderWidth': 1,
             },
             {
                 'label': 'GitHub',
                 'data': charts.followers_breakdown.pop('github'),
                 'borderColor': '#343434',
+                'borderWidth': 1,
+            },
+            {
+                'label': 'Mastodon',
+                'data': charts.followers_breakdown.pop('mastodon'),
+                'borderColor': '#563acc',
                 'borderWidth': 1,
             }
         ],
@@ -125,6 +149,12 @@ Vývoj počtu sledujících na profilech na relevantních sociálních sítích 
         'interaction': {'mode': 'index'},
         'plugins': {'annotation': charts.followers_breakdown_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
+
+## Video kanály
+
+Tentýž graf jako předchozí, akorát pouze s kanály, kam se dávají krátká videa na výšku (_reels, shorts_).
+
+
 
 ## Výkonnost kanálů podle ankety
 

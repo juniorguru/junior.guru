@@ -13,8 +13,13 @@
 {"month": "2026-02", "name": "checks", "count": 9}
 {"month": "2026-03", "name": "checks", "count": 6}
 {"month": "2026-04", "name": "checks", "count": 19}
-{"month": "2026-05", "name": "checks", "count": 8}
+{"month": "2026-05", "name": "checks", "count": 20}
 {"month": "2026-05", "name": "listed_feminine", "count": 12}
 {"month": "2026-05", "name": "listed_members", "count": 14}
 {"month": "2026-05", "name": "listed_ready", "count": 14}
 {"month": "2026-05", "name": "listed_total", "count": 25}
+{"month": "2026-06", "name": "checks", "count": 15}
+{"month": "2026-06", "name": "listed_feminine", "count": 13}
+{"month": "2026-06", "name": "listed_members", "count": 14}
+{"month": "2026-06", "name": "listed_ready", "count": 15}
+{"month": "2026-06", "name": "listed_total", "count": 26}

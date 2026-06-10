@@ -60,6 +60,12 @@ class Followers(BaseModel):
         return breakdown
 
     @classmethod
+    def video_breakdown(cls, date: date) -> dict[str, int]:
+        video_sources = ("youtube", "instagram", "facebook")
+        breakdown = cls.breakdown(date)
+        return {name: breakdown.get(name) for name in video_sources}
+
+    @classmethod
     def names(cls) -> list[str]:
         query = cls.select(cls.name).distinct().order_by(cls.name)
         return [t[0] for t in query.tuples()]

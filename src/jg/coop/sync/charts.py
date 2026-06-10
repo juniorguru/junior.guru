@@ -389,6 +389,13 @@ def followers_breakdown(today: date) -> IntBreakdownChartDict:
 
 
 @chart
+def video_followers_breakdown(today: date) -> IntBreakdownChartDict:
+    months = charts.months(*Followers.months_range())
+    data = charts.per_month_breakdown(Followers.video_breakdown, months)
+    return dict(data=data, months=months)
+
+
+@chart
 def web_usage_total(today: date) -> ChartDict:
     months = charts.months(*WebUsage.months_range())
     breakdown = charts.per_month_breakdown(WebUsage.breakdown, months)
