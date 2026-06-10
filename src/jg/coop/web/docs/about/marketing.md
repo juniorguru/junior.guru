@@ -195,6 +195,7 @@ Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_marketin
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="300"
     data-chart-type="bar"
+    {% set marketing_keys = charts.total_spend_marketing_breakdown|dictsort(by='value', reverse=true)|map(attribute=0)|list %}
     data-chart="{{ {
         'labels': {
             'other': 'ostatní',
@@ -211,16 +212,16 @@ Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_marketin
             'youtube': 'YouTube',
             'yablko': 'yablko',
             'courses_search': 'vyhledávání recenzí kurzů',
-        }|mapping(charts.total_spend_marketing_breakdown.keys()),
+        }|mapping(marketing_keys),
         'datasets': [
             {
                 'label': '% členů',
-                'data': charts.total_marketing_breakdown.values()|list,
+                'data': charts.total_marketing_breakdown|mapping(marketing_keys),
                 'backgroundColor': '#1755d1',
             },
             {
                 'label': '% peněz',
-                'data': charts.total_spend_marketing_breakdown.values()|list,
+                'data': charts.total_spend_marketing_breakdown|mapping(marketing_keys),
                 'backgroundColor': '#638cdd',
             },
         ],
@@ -239,6 +240,7 @@ Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_referrer
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="300"
     data-chart-type="bar"
+    {% set referrer_keys = charts.total_spend_referrer_breakdown|dictsort(by='value', reverse=true)|map(attribute=0)|list %}
     data-chart="{{ {
         'labels': {
             'other': 'ostatní',
@@ -248,16 +250,16 @@ Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_referrer
             'facebook': 'Facebook',
             'linkedin': 'LinkedIn',
             'youtube': 'YouTube',
-        }|mapping(charts.total_spend_referrer_breakdown.keys()),
+        }|mapping(referrer_keys),
         'datasets': [
             {
                 'label': '% členů',
-                'data': charts.total_referrer_breakdown.values()|list,
+                'data': charts.total_referrer_breakdown|mapping(referrer_keys),
                 'backgroundColor': '#1755d1',
             },
             {
                 'label': '% peněz',
-                'data': charts.total_spend_referrer_breakdown.values()|list,
+                'data': charts.total_spend_referrer_breakdown|mapping(referrer_keys),
                 'backgroundColor': '#638cdd',
             },
         ],
