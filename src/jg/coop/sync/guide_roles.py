@@ -6,18 +6,13 @@ from discord import Colour, Embed, File
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
 from jg.coop.lib.cache import get_cache
-from jg.coop.lib.discord_club import ClubClient, parse_channel
-from jg.coop.lib.mutations import mutating_discord
+from jg.coop.lib.discord_club import ClubClient, parse_channel, sync_guide_channel
 from jg.coop.lib.text import emoji_url
 from jg.coop.models.base import db, hash_models
 from jg.coop.models.role import DocumentedRole
 
 
 IMAGES_DIR = Path("src/jg/coop/images")
-
-HEADER_MESSAGE = (
-    "# Popis klubových rolí\n\nTady najdeš většinu rolí, které mohou lidi v klubu mít. "
-)
 
 
 logger = loggers.from_path(__file__)
@@ -46,51 +41,35 @@ def main(channel_id: int, cache_key: str, cache_days: int, force: bool):
 async def sync_channel(
     client: ClubClient, channel_id: int, roles: list[DocumentedRole]
 ):
-    channel = await client.fetch_channel(channel_id)
-    messages = [
-        message async for message in channel.history(limit=None, oldest_first=True)
+    message_args_list = [
+        {
+            "content": (
+                "# Popis klubových rolí\n\n"
+                "Tady najdeš většinu rolí, které mohou lidi v klubu mít. "
+            ),
+            "embeds": [],
+            "suppress": True,
+        },
+        *(build_role_args(role) for role in roles),
     ]
-    if messages:
-        header_message = messages[0]
-        with mutating_discord(header_message) as proxy:
-            await proxy.edit(content=HEADER_MESSAGE, embeds=[], suppress=True)
-        role_messages = messages[1:]
+    await sync_guide_channel(client, channel_id, message_args_list)
+
+
+def build_role_args(role: DocumentedRole) -> dict:
+    embed = Embed(
+        title=role.name,
+        color=Colour(role.color),
+        description=role.description,
+    )
+    file = None
+    if role.icon_path:
+        path = IMAGES_DIR / role.icon_path
+        logger.debug(f"Setting thumbnail: {path}")
+        embed.set_thumbnail(url=f"attachment://{path.name}")
+        file = File(path)
+    elif role.emoji:
+        logger.debug(f"Setting emoji thumbnail: {role.emoji}")
+        embed.set_thumbnail(url=emoji_url(role.emoji))
     else:
-        with mutating_discord(channel) as proxy:
-            await proxy.send(content=HEADER_MESSAGE, suppress=True)
-        role_messages = []
-
-    for index, role in enumerate(roles):
-        embed = Embed(
-            title=role.name,
-            color=Colour(role.color),
-            description=role.description,
-        )
-        file = None
-        if role.icon_path:
-            path = IMAGES_DIR / role.icon_path
-            logger.debug(f"Setting thumbnail: {path}")
-            embed.set_thumbnail(url=f"attachment://{path.name}")
-            file = File(path)
-        elif role.emoji:
-            logger.debug(f"Setting emoji thumbnail: {role.emoji}")
-            embed.set_thumbnail(url=emoji_url(role.emoji))
-        else:
-            logger.debug(f"Setting no thumbnail, role.icon_path is {role.icon_path!r}")
-
-        try:
-            message = role_messages[index]
-        except IndexError:
-            logger.info(f"Posting new message for {role.name!r}")
-            with mutating_discord(channel) as proxy:
-                await proxy.send(embed=embed, file=file)
-        else:
-            logger.info(f"Updating message for {role.name!r}")
-            with mutating_discord(message) as proxy:
-                await proxy.edit(embed=embed, file=file)
-
-    if extra_messages := role_messages[len(roles) :]:
-        logger.info(f"Deleting {len(extra_messages)} outdated message(s)")
-        for message in extra_messages:
-            with mutating_discord(message) as proxy:
-                await proxy.delete()
+        logger.debug(f"Setting no thumbnail, role.icon_path is {role.icon_path!r}")
+    return dict(embed=embed, file=file)
