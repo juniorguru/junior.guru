@@ -41,10 +41,7 @@ async def main(archive_dir: Path, today: date):
             logger.info(f"Archived as {path}")
 
     logger.info("Tidying up JSON files")
-    subprocess.run(
-        ["npx", "@biomejs/biome", "format", "--write", str(archive_dir)],
-        check=True,
-    )
+    subprocess.run(["npx", "oxfmt", str(archive_dir)], check=True)
 
     logger.info("Saving published issues to database")
     NewsletterIssue.drop_table()

@@ -4,6 +4,7 @@ import re
 from datetime import date, datetime, timedelta, timezone
 from enum import IntEnum, StrEnum, unique
 from functools import wraps
+from pprint import pformat
 from typing import TYPE_CHECKING, AsyncGenerator, TypedDict
 
 import discord
@@ -412,3 +413,46 @@ def is_forum_guide(message: discord.Message) -> bool:
     if message.channel.is_pinned():
         return True
     return False
+
+
+async def sync_guide_channel(
+    client: ClubClient, channel_id: int, message_args_list: list[dict]
+) -> None:
+    logger.info(f"Syncing {len(message_args_list)} message(s) to channel {channel_id}")
+    channel = await client.fetch_channel(channel_id)
+    messages = [
+        message async for message in channel.history(limit=None, oldest_first=True)
+    ]
+    logger.info(f"Fetched {len(messages)} existing message(s)")
+    for index, message_args in enumerate(message_args_list):
+        try:
+            message = messages[index]
+        except IndexError:
+            logger.info("Posting new message")
+            logger.debug(f"Message args:\n{pformat(message_args)}")
+            with mutations.mutating_discord(channel) as proxy:
+                await proxy.send(**message_args)
+        else:
+            logger.info("Updating message")
+            logger.debug(f"Message args:\n{pformat(message_args)}")
+            with mutations.mutating_discord(message) as proxy:
+                edit_args = get_edit_args(message_args)
+                await proxy.edit(**edit_args)
+    if extra_messages := messages[len(message_args_list) :]:
+        logger.info(f"Deleting {len(extra_messages)} outdated message(s)")
+        for message in extra_messages:
+            with mutations.mutating_discord(message) as proxy:
+                await proxy.delete()
+
+
+def get_edit_args(message_args: dict) -> dict:
+    # falsy file/files will become attachments=[]
+    edit_args = {
+        key: value
+        for key, value in message_args.items()
+        if key not in ("file", "files") or value
+    }
+    # if any file/files present, clear existing attachments
+    if "file" in message_args or "files" in message_args:
+        edit_args["attachments"] = []
+    return edit_args

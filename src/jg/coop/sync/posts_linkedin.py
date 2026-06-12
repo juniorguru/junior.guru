@@ -48,10 +48,7 @@ def main(actor_name: str, posts_dir: Path) -> None:
     logger.info(f"Saved {len(posts)} post files")
 
     logger.info("Tidying up JSON files")
-    subprocess.run(
-        ["npx", "@biomejs/biome", "format", "--write", str(posts_dir)],
-        check=True,
-    )
+    subprocess.run(["npx", "oxfmt", str(posts_dir)], check=True)
 
 
 def parse_posted_at(value: str) -> datetime:

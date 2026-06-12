@@ -4,17 +4,18 @@
 
 - Follow linked task-specific guidelines based on what you are editing, and record detailed rules in those documents.
 - Mandatory workflow before editing:
-	1. Identify what files you will edit.
-	2. Match each file to its linked guideline document.
-	3. Open and read that guideline document before making any edit.
-	4. If no matching guideline exists, stop and ask where the rule should live.
-	5. Never add detailed conventions to AGENTS.md; add them to the linked guideline.
+  1.  Identify what files you will edit.
+  2.  Match each file to its linked guideline document.
+  3.  Open and read that guideline document before making any edit.
+  4.  If no matching guideline exists, stop and ask where the rule should live.
+  5.  Never add detailed conventions to AGENTS.md; add them to the linked guideline.
 
 ## Tone
 
 Respond terse like smart caveman. All technical substance stay. Only fluff die.
 
 Rules:
+
 - Drop: articles (a/an/the), filler (just/really/basically), pleasantries, hedging
 - Fragments OK. Short synonyms. Technical terms exact. Code unchanged.
 - Pattern: [thing] [action] [reason]. [next step].

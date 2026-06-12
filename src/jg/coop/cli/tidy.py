@@ -79,7 +79,7 @@ def format_python():
 def format_web():
     try:
         logger.info("Formatting web platform code")
-        subprocess.run(["npx", "@biomejs/biome", "format", "--write"], check=True)
+        subprocess.run(["npx", "oxfmt"], check=True)
     except subprocess.CalledProcessError:
         raise click.Abort()
 

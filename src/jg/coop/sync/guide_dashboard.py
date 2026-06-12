@@ -11,14 +11,31 @@ from jg.coop.lib.discord_club import (
     ClubChannelID,
     ClubClient,
     parse_channel,
+    sync_guide_channel,
 )
-from jg.coop.lib.mutations import mutating_discord
 from jg.coop.lib.text import emoji_url
 from jg.coop.models.base import db, hash_models
 from jg.coop.models.tip import Tip
 
 
 IMAGES_DIR = Path("src/jg/coop/images")
+
+HEADER_MESSAGE = (
+    "# Pravidla a tipy\n\n"
+    "Klub je místo, kde můžeš spolu s ostatními posunout svůj rozvoj v oblasti programování, "
+    "nebo s tím pomoci ostatním.\n\n"
+    "👉 Tykáme si\n"
+    "👉 Dodržuj pravidla chování na [junior.guru/coc](https://junior.guru/coc/)"
+)
+
+LINKS_MESSAGE = "## Odkazy"
+
+
+TIPS_HEADER_MESSAGE = (
+    "## Tipy\n\n"
+    "Jak z klubu dostat maximum? Tady je seznam tipů, které ti pomohou se zorientovat. "
+    f"Najdeš je také v <#{ClubChannelID.TIPS}>"
+)
 
 
 logger = loggers.from_path(__file__)
@@ -37,67 +54,53 @@ def main(channel_id: int, cache_key: str, cache_days: int, force: bool):
     cache_miss = cache.get(cache_key) != tips_hash
 
     if force or cache_miss:
-        logger.info(f"Recreating channel! (force={force}, cache_miss={cache_miss})")
-        discord_task.run(recreate_channel, channel_id, tips)
+        logger.info(f"Synchronizing channel (force={force}, cache_miss={cache_miss})")
+        discord_task.run(sync_channel, channel_id, tips)
         cache.set(cache_key, tips_hash, expire=86_400 * cache_days)
     else:
         logger.info("Channel is up-to-date")
 
 
-async def recreate_channel(client: ClubClient, channel_id: int, tips: list[Tip]):
-    channel = await client.fetch_channel(channel_id)
-    with mutating_discord(channel) as proxy:
-        await proxy.purge(limit=None)
-        await proxy.send(
-            (
-                "# Pravidla a tipy\n\n"
-                "Klub je místo, kde můžeš spolu s ostatními posunout svůj rozvoj v oblasti programování, "
-                "nebo s tím pomoci ostatním.\n\n"
-                "👉 Tykáme si\n"
-                "👉 Dodržuj pravidla chování na [junior.guru/coc](https://junior.guru/coc/)"
-            ),
-            suppress=True,
-        )
-        await proxy.send(
-            "## Odkazy",
-            view=ui.View(
-                ui.Button(
-                    emoji="💳",
-                    label="Nastavení placení",
-                    url="https://juniorguru.memberful.com",
-                ),
-                ui.Button(
-                    emoji="🤔",
-                    label="Časté dotazy",
-                    url="https://junior.guru/faq/",
-                ),
-                ui.Button(
-                    emoji="💕",
-                    label="Pravidla chování",
-                    url="https://junior.guru/coc/",
-                ),
-                ui.Button(
-                    emoji="💡",
-                    label="Zpětná vazba",
-                    url=f"https://discord.com/channels/{CLUB_GUILD_ID}/{ClubChannelID.META}",
-                ),
-            ),
-        )
-        await proxy.send(
-            (
-                "## Tipy\n\n"
-                "Jak z klubu dostat maximum? Tady je seznam tipů, které ti pomohou se zorientovat. "
-                f"Najdeš je také v <#{ClubChannelID.TIPS}>"
-            ),
-            suppress=True,
-        )
-    for tip in tips:
-        logger.info(f"Posting {tip.title!r}")
-        embed = Embed(
-            title=tip.title_text,
-            url=tip.discord_url,
-            description=tip.lead,
-        )
-        embed.set_thumbnail(url=emoji_url(tip.emoji))
-        with mutating_discord(channel) as proxy:
-            await proxy.send(embed=embed)
+async def sync_channel(client: ClubClient, channel_id: int, tips: list[Tip]):
+    message_args_list = [
+        dict(content=HEADER_MESSAGE, embeds=[], suppress=True),
+        dict(content=LINKS_MESSAGE, embeds=[], view=build_links_view()),
+        dict(content=TIPS_HEADER_MESSAGE, embeds=[], suppress=True),
+        *(build_tip_args(tip) for tip in tips),
+    ]
+    await sync_guide_channel(client, channel_id, message_args_list)
+
+
+def build_tip_args(tip: Tip) -> dict:
+    embed = Embed(
+        title=tip.title_text,
+        url=tip.discord_url,
+        description=tip.lead,
+    )
+    embed.set_thumbnail(url=emoji_url(tip.emoji))
+    return dict(embed=embed)
+
+
+def build_links_view() -> ui.View:
+    return ui.View(
+        ui.Button(
+            emoji="💳",
+            label="Nastavení placení",
+            url="https://juniorguru.memberful.com",
+        ),
+        ui.Button(
+            emoji="🤔",
+            label="Časté dotazy",
+            url="https://junior.guru/faq/",
+        ),
+        ui.Button(
+            emoji="💕",
+            label="Pravidla chování",
+            url="https://junior.guru/coc/",
+        ),
+        ui.Button(
+            emoji="💡",
+            label="Zpětná vazba",
+            url=f"https://discord.com/channels/{CLUB_GUILD_ID}/{ClubChannelID.META}",
+        ),
+    )
