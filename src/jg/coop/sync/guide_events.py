@@ -6,19 +6,12 @@ from discord import Embed, File, ui
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
 from jg.coop.lib.cache import get_cache
-from jg.coop.lib.discord_club import ClubClient, parse_channel
-from jg.coop.lib.mutations import mutating_discord
+from jg.coop.lib.discord_club import ClubClient, parse_channel, sync_guide_channel
 from jg.coop.models.base import db, hash_models
 from jg.coop.models.event import Event
 
 
 IMAGES_DIR = Path("src/jg/coop/images")
-
-HEADER_MESSAGE = (
-    "# Záznamy klubových akcí\n\n"
-    "Tady najdeš všechny přednášky, které se konaly v klubu. "
-    "Videa nejsou „veřejná”, ale pokud chceš odkaz poslat kamarádovi mimo klub, můžeš. "
-)
 
 
 logger = loggers.from_path(__file__)
@@ -45,45 +38,22 @@ def main(channel_id: int, cache_key: str, cache_days: int, force: bool):
 
 
 async def sync_channel(client: ClubClient, channel_id: int, events: list[Event]):
-    channel = await client.fetch_channel(channel_id)
-    messages = [
-        message async for message in channel.history(limit=None, oldest_first=True)
-    ]
-    if messages:
-        header_message = messages[0]
-        with mutating_discord(header_message) as proxy:
-            await proxy.edit(**build_header_args())
-        event_messages = messages[1:]
-    else:
-        with mutating_discord(channel) as proxy:
-            await proxy.send(**build_header_args())
-        event_messages = []
-
-    for index, event in enumerate(events):
-        try:
-            message = event_messages[index]
-        except IndexError:
-            logger.info(f"Posting new message for {event.title!r}")
-            with mutating_discord(channel) as proxy:
-                await proxy.send(**build_event_args(event))
-        else:
-            logger.info(f"Updating message for {event.title!r}")
-            with mutating_discord(message) as proxy:
-                await proxy.edit(**build_event_args(event))
-
-    if extra_messages := event_messages[len(events) :]:
-        logger.info(f"Deleting {len(extra_messages)} outdated message(s)")
-        for message in extra_messages:
-            with mutating_discord(message) as proxy:
-                await proxy.delete()
-
-
-def build_header_args() -> dict:
-    return dict(
-        content=HEADER_MESSAGE,
-        embeds=[],
-        view=None,
-        suppress=True,
+    await sync_guide_channel(
+        client,
+        channel_id,
+        [
+            {
+                "content": (
+                    "# Záznamy klubových akcí\n\n"
+                    "Tady najdeš všechny přednášky, které se konaly v klubu. "
+                    "Videa nejsou „veřejná”, ale pokud chceš odkaz poslat kamarádovi mimo klub, můžeš. "
+                ),
+                "embeds": [],
+                "view": None,
+                "suppress": True,
+            },
+            *(build_event_args(event) for event in events),
+        ],
     )
 
 
