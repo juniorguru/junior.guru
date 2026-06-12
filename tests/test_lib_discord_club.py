@@ -413,13 +413,13 @@ def test_parse_channel(channel, expected):
         ),
         pytest.param(
             {"content": "hello", "file": "avatar.png"},
-            {"content": "hello", "attachments": ["avatar.png"]},
-            id="single-file-becomes-replacement-attachments",
+            {"content": "hello", "file": "avatar.png", "attachments": []},
+            id="single-file-kept-for-upload-old-attachments-cleared",
         ),
         pytest.param(
             {"content": "hello", "file": "avatar.png", "attachments": ["stale.png"]},
-            {"content": "hello", "attachments": ["avatar.png"]},
-            id="single-file-replaces-existing-attachments",
+            {"content": "hello", "file": "avatar.png", "attachments": []},
+            id="single-file-replaces-stale-attachments",
         ),
         pytest.param(
             {"content": "hello", "file": None},
@@ -428,8 +428,8 @@ def test_parse_channel(channel, expected):
         ),
         pytest.param(
             {"content": "hello", "files": ["a.png", "b.png"]},
-            {"content": "hello", "attachments": ["a.png", "b.png"]},
-            id="files-becomes-replacement-attachments",
+            {"content": "hello", "files": ["a.png", "b.png"], "attachments": []},
+            id="files-kept-for-upload-old-attachments-cleared",
         ),
         pytest.param(
             {"content": "hello", "files": None},
