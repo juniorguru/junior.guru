@@ -446,15 +446,13 @@ async def sync_guide_channel(
 
 
 def get_edit_args(message_args: dict) -> dict:
-    edit_args = message_args.copy()
-    if "files" in edit_args:
-        files = edit_args.pop("files")
-        if files:
-            edit_args["files"] = files
-        edit_args["attachments"] = []
-    elif "file" in edit_args:
-        file = edit_args.pop("file")
-        if file is not None:
-            edit_args["file"] = file
+    # falsy file/files will become attachments=[]
+    edit_args = {
+        key: value
+        for key, value in message_args.items()
+        if key not in ("file", "files") or value
+    }
+    # if any file/files present, clear existing attachments
+    if "file" in message_args or "files" in message_args:
         edit_args["attachments"] = []
     return edit_args
