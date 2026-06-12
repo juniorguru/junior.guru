@@ -15,6 +15,10 @@ from jg.coop.models.role import DocumentedRole
 
 IMAGES_DIR = Path("src/jg/coop/images")
 
+HEADER_MESSAGE = (
+    "# Popis klubových rolí\n\nTady najdeš většinu rolí, které mohou lidi v klubu mít. "
+)
+
 
 logger = loggers.from_path(__file__)
 
@@ -32,27 +36,31 @@ def main(channel_id: int, cache_key: str, cache_days: int, force: bool):
     cache_miss = cache.get(cache_key) != roles_hash
 
     if force or cache_miss:
-        logger.info(f"Recreating channel! (force={force}, cache_miss={cache_miss})")
-        discord_task.run(recreate_channel, channel_id, roles)
+        logger.info(f"Synchronizing channel (force={force}, cache_miss={cache_miss})")
+        discord_task.run(sync_channel, channel_id, roles)
         cache.set(cache_key, roles_hash, expire=86_400 * cache_days)
     else:
         logger.info("Channel is up-to-date")
 
 
-async def recreate_channel(
+async def sync_channel(
     client: ClubClient, channel_id: int, roles: list[DocumentedRole]
 ):
     channel = await client.fetch_channel(channel_id)
-    with mutating_discord(channel) as proxy:
-        await proxy.purge(limit=None)
-    with mutating_discord(channel) as proxy:
-        await proxy.send(
-            "# Popis klubových rolí\n\n"
-            "Tady najdeš většinu rolí, které mohou lidi v klubu mít. ",
-            suppress=True,
-        )
-    for role in roles:
-        logger.info(f"Posting {role.name!r}")
+    messages = [
+        message async for message in channel.history(limit=None, oldest_first=True)
+    ]
+    if messages:
+        header_message = messages[0]
+        with mutating_discord(header_message) as proxy:
+            await proxy.edit(content=HEADER_MESSAGE, embeds=[], suppress=True)
+        role_messages = messages[1:]
+    else:
+        with mutating_discord(channel) as proxy:
+            await proxy.send(content=HEADER_MESSAGE, suppress=True)
+        role_messages = []
+
+    for index, role in enumerate(roles):
         embed = Embed(
             title=role.name,
             color=Colour(role.color),
@@ -69,5 +77,20 @@ async def recreate_channel(
             embed.set_thumbnail(url=emoji_url(role.emoji))
         else:
             logger.debug(f"Setting no thumbnail, role.icon_path is {role.icon_path!r}")
-        with mutating_discord(channel) as proxy:
-            await proxy.send(embed=embed, file=file)
+
+        try:
+            message = role_messages[index]
+        except IndexError:
+            logger.info(f"Posting new message for {role.name!r}")
+            with mutating_discord(channel) as proxy:
+                await proxy.send(embed=embed, file=file)
+        else:
+            logger.info(f"Updating message for {role.name!r}")
+            with mutating_discord(message) as proxy:
+                await proxy.edit(embed=embed, file=file)
+
+    if extra_messages := role_messages[len(roles) :]:
+        logger.info(f"Deleting {len(extra_messages)} outdated message(s)")
+        for message in extra_messages:
+            with mutating_discord(message) as proxy:
+                await proxy.delete()
