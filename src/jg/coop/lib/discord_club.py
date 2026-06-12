@@ -436,9 +436,23 @@ async def sync_guide_channel(
             logger.info("Updating message")
             logger.debug(f"Message args:\n{pformat(message_args)}")
             with mutations.mutating_discord(message) as proxy:
-                await proxy.edit(**message_args)
+                edit_args = get_edit_args(message_args)
+                await proxy.edit(**edit_args)
     if extra_messages := messages[len(message_args_list) :]:
         logger.info(f"Deleting {len(extra_messages)} outdated message(s)")
         for message in extra_messages:
             with mutations.mutating_discord(message) as proxy:
                 await proxy.delete()
+
+
+def get_edit_args(message_args: dict) -> dict:
+    edit_args = message_args.copy()
+    attachments = None
+    if "files" in edit_args:
+        attachments = list(edit_args.pop("files") or [])
+    elif "file" in edit_args:
+        file = edit_args.pop("file")
+        attachments = [file] if file else []
+    if attachments is not None:
+        edit_args["attachments"] = attachments
+    return edit_args

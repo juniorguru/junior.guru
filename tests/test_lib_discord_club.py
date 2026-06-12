@@ -401,3 +401,54 @@ def test_get_channel_name_dm():
 )
 def test_parse_channel(channel, expected):
     assert discord_club.parse_channel(channel) == expected
+
+
+@pytest.mark.parametrize(
+    "message_args, expected",
+    [
+        pytest.param(
+            {"content": "hello", "embeds": []},
+            {"content": "hello", "embeds": []},
+            id="no-file-keys-keeps-args",
+        ),
+        pytest.param(
+            {"content": "hello", "file": "avatar.png"},
+            {"content": "hello", "attachments": ["avatar.png"]},
+            id="single-file-becomes-replacement-attachments",
+        ),
+        pytest.param(
+            {"content": "hello", "file": "avatar.png", "attachments": ["stale.png"]},
+            {"content": "hello", "attachments": ["avatar.png"]},
+            id="single-file-replaces-existing-attachments",
+        ),
+        pytest.param(
+            {"content": "hello", "file": None},
+            {"content": "hello", "attachments": []},
+            id="none-file-clears-attachments",
+        ),
+        pytest.param(
+            {"content": "hello", "files": ["a.png", "b.png"]},
+            {"content": "hello", "attachments": ["a.png", "b.png"]},
+            id="files-becomes-replacement-attachments",
+        ),
+        pytest.param(
+            {"content": "hello", "files": None},
+            {"content": "hello", "attachments": []},
+            id="none-files-clears-attachments",
+        ),
+    ],
+)
+def test_get_edit_args(message_args: dict, expected: dict):
+    edit_args = discord_club.get_edit_args(message_args)
+
+    assert edit_args == expected
+
+
+def test_get_edit_args_doesnt_mutate_attachments():
+    message_args = {"content": "hello", "attachments": ["stale.png"]}
+    input_args = message_args.copy()
+    edit_args = discord_club.get_edit_args(input_args)
+
+    assert input_args == message_args
+    assert edit_args is not input_args
+    assert edit_args == {"content": "hello", "attachments": ["stale.png"]}
