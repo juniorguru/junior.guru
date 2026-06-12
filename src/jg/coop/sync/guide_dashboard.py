@@ -11,8 +11,8 @@ from jg.coop.lib.discord_club import (
     ClubChannelID,
     ClubClient,
     parse_channel,
+    sync_guide_channel,
 )
-from jg.coop.lib.mutations import mutating_discord
 from jg.coop.lib.text import emoji_url
 from jg.coop.models.base import db, hash_models
 from jg.coop.models.tip import Tip
@@ -84,59 +84,20 @@ def main(channel_id: int, cache_key: str, cache_days: int, force: bool):
 
 
 async def sync_channel(client: ClubClient, channel_id: int, tips: list[Tip]):
-    channel = await client.fetch_channel(channel_id)
-    messages = [
-        message async for message in channel.history(limit=None, oldest_first=True)
+    message_args_list = [
+        dict(content=HEADER_MESSAGE, embeds=[], suppress=True),
+        dict(content=LINKS_MESSAGE, embeds=[], view=LINKS_VIEW),
+        dict(content=TIPS_HEADER_MESSAGE, embeds=[], suppress=True),
+        *(build_tip_args(tip) for tip in tips),
     ]
-    if messages:
-        header_message = messages[0]
-        with mutating_discord(header_message) as proxy:
-            await proxy.edit(
-                content=HEADER_MESSAGE,
-                embeds=[],
-                suppress=True,
-            )
-        links_message = messages[1] if len(messages) > 1 else None
-        if links_message:
-            with mutating_discord(links_message) as proxy:
-                await proxy.edit(content=LINKS_MESSAGE, embeds=[], view=LINKS_VIEW)
-        tips_header_message = messages[2] if len(messages) > 2 else None
-        if tips_header_message:
-            with mutating_discord(tips_header_message) as proxy:
-                await proxy.edit(
-                    content=TIPS_HEADER_MESSAGE,
-                    embeds=[],
-                    suppress=True,
-                )
-        tip_messages = messages[3:]
-    else:
-        with mutating_discord(channel) as proxy:
-            await proxy.send(content=HEADER_MESSAGE, suppress=True)
-            await proxy.send(content=LINKS_MESSAGE, view=LINKS_VIEW)
-            await proxy.send(content=TIPS_HEADER_MESSAGE, suppress=True)
-        tip_messages = []
+    await sync_guide_channel(client, channel_id, message_args_list)
 
-    for index, tip in enumerate(tips):
-        embed = Embed(
-            title=tip.title_text,
-            url=tip.discord_url,
-            description=tip.lead,
-        )
-        embed.set_thumbnail(url=emoji_url(tip.emoji))
 
-        try:
-            message = tip_messages[index]
-        except IndexError:
-            logger.info(f"Posting new message for {tip.title!r}")
-            with mutating_discord(channel) as proxy:
-                await proxy.send(embed=embed)
-        else:
-            logger.info(f"Updating message for {tip.title!r}")
-            with mutating_discord(message) as proxy:
-                await proxy.edit(embed=embed)
-
-    if extra_messages := tip_messages[len(tips) :]:
-        logger.info(f"Deleting {len(extra_messages)} outdated message(s)")
-        for message in extra_messages:
-            with mutating_discord(message) as proxy:
-                await proxy.delete()
+def build_tip_args(tip: Tip) -> dict:
+    embed = Embed(
+        title=tip.title_text,
+        url=tip.discord_url,
+        description=tip.lead,
+    )
+    embed.set_thumbnail(url=emoji_url(tip.emoji))
+    return dict(embed=embed)
