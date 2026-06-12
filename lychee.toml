@@ -34,34 +34,34 @@ root_dir = "public"
 
 # Exclude - https://github.com/lycheeverse/lychee/discussions/1909
 exclude_path = [
-    "^public/jobs/index\\.html$",
-    "^public/jobs/[^/]+/index\\.html$",
-    "^public/news/[^/]+/index\\.html$",
+  "^public/jobs/index\\.html$",
+  "^public/jobs/[^/]+/index\\.html$",
+  "^public/news/[^/]+/index\\.html$",
 ]
 exclude = [
-    # Specifications
-    "^https://ogp\\.me/ns/website",
+  # Specifications
+  "^https://ogp\\.me/ns/website",
 
-    # Internet Archive – assume it works, don't strain their servers
-    "^https://web\\.archive\\.org/web/.*",
+  # Internet Archive – assume it works, don't strain their servers
+  "^https://web\\.archive\\.org/web/.*",
 
-    # Infrastructure
-    "^https://juniorguru\\.memberful\\.com",
-    "^https://js\\.memberful\\.com",
-    "^https://assets\\.memberful\\.com",
-    "^https://js\\.stripe\\.com",
-    "^https://m\\.stripe\\.network",
-    "^https://sa\\.junior\\.guru",
+  # Infrastructure
+  "^https://juniorguru\\.memberful\\.com",
+  "^https://js\\.memberful\\.com",
+  "^https://assets\\.memberful\\.com",
+  "^https://js\\.stripe\\.com",
+  "^https://m\\.stripe\\.network",
+  "^https://sa\\.junior\\.guru",
 
-    # Webcal
-    "^webcal://",
+  # Webcal
+  "^webcal://",
 
-    # Anti-scraping protections
-    "^https://(www\\.)?(linkedin|facebook|reddit)\\.com",
-    "^https://(www\\.)?(beeit|glancemedia|prace\\.rovnou|keyguru)\\.cz",
-    "^https://([^\\.]+\\.)?discord\\.com",
+  # Anti-scraping protections
+  "^https://(www\\.)?(linkedin|facebook|reddit)\\.com",
+  "^https://(www\\.)?(beeit|glancemedia|prace\\.rovnou|keyguru)\\.cz",
+  "^https://([^\\.]+\\.)?discord\\.com",
 
-    # Not yet deployed avatars of club members or company logos
-    "^https://junior\\.guru/static/avatars-club/[^\\.]+\\.png",
-    "^https://junior\\.guru/static/logos-jobs/[^\\.]+\\.webp",
+  # Not yet deployed avatars of club members or company logos
+  "^https://junior\\.guru/static/avatars-club/[^\\.]+\\.png",
+  "^https://junior\\.guru/static/logos-jobs/[^\\.]+\\.webp",
 ]

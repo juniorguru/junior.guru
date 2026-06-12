@@ -78,7 +78,7 @@ registry:
       - https://www.linkedin.com/in/adina-fox/
     club_speaker_ids:
       - 658628731337965586
-      
+
   - id: 62
     title: "Web scraping: Nechte internet pracovat za vás"
     date: "2026-05-28"
