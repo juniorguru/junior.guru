@@ -30,28 +30,6 @@ HEADER_MESSAGE = (
 
 LINKS_MESSAGE = "## Odkazy"
 
-LINKS_VIEW = ui.View(
-    ui.Button(
-        emoji="💳",
-        label="Nastavení placení",
-        url="https://juniorguru.memberful.com",
-    ),
-    ui.Button(
-        emoji="🤔",
-        label="Časté dotazy",
-        url="https://junior.guru/faq/",
-    ),
-    ui.Button(
-        emoji="💕",
-        label="Pravidla chování",
-        url="https://junior.guru/coc/",
-    ),
-    ui.Button(
-        emoji="💡",
-        label="Zpětná vazba",
-        url=f"https://discord.com/channels/{CLUB_GUILD_ID}/{ClubChannelID.META}",
-    ),
-)
 
 TIPS_HEADER_MESSAGE = (
     "## Tipy\n\n"
@@ -86,7 +64,7 @@ def main(channel_id: int, cache_key: str, cache_days: int, force: bool):
 async def sync_channel(client: ClubClient, channel_id: int, tips: list[Tip]):
     message_args_list = [
         dict(content=HEADER_MESSAGE, embeds=[], suppress=True),
-        dict(content=LINKS_MESSAGE, embeds=[], view=LINKS_VIEW),
+        dict(content=LINKS_MESSAGE, embeds=[], view=build_links_view()),
         dict(content=TIPS_HEADER_MESSAGE, embeds=[], suppress=True),
         *(build_tip_args(tip) for tip in tips),
     ]
@@ -101,3 +79,28 @@ def build_tip_args(tip: Tip) -> dict:
     )
     embed.set_thumbnail(url=emoji_url(tip.emoji))
     return dict(embed=embed)
+
+
+def build_links_view() -> ui.View:
+    return ui.View(
+        ui.Button(
+            emoji="💳",
+            label="Nastavení placení",
+            url="https://juniorguru.memberful.com",
+        ),
+        ui.Button(
+            emoji="🤔",
+            label="Časté dotazy",
+            url="https://junior.guru/faq/",
+        ),
+        ui.Button(
+            emoji="💕",
+            label="Pravidla chování",
+            url="https://junior.guru/coc/",
+        ),
+        ui.Button(
+            emoji="💡",
+            label="Zpětná vazba",
+            url=f"https://discord.com/channels/{CLUB_GUILD_ID}/{ClubChannelID.META}",
+        ),
+    )
