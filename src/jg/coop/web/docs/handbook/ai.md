@@ -686,4 +686,9 @@ Chce to ale k tomu směřovat. AI funguje v dobrém prostředí dobře, ale samo
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1514594407742177411
+Pro nás tady asi žádný nový objev, ale je fajn si o tom přečíst i jinde 😀 https://www.lupa.cz/clanky/propousteni-kvuli-ai-je-mnohdy-clona-ktera-cynicky-maskuje-bezhlave-utraceni-skrty-a-neschopnost-vedeni/
+---
+
+
 #} -->

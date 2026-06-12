@@ -1215,4 +1215,11 @@ Dává to takto smysl?
 ---
 
 
+--- https://discord.com/channels/769966886598737931/789107031939481641/1513539435570921593
+A ještě:
+> Kdo jste více aktivní na Linkedin, tak vás také asi od Matěje Matolína neminul jeho post o tom, jak testovali na 2,2k životopisech výběr pomocí AI a AI až o 23-60% pravděpodobněji vybírala CV psané ve svém modelu. Co tak slýchám z tábora náborářů, je výběr pomocí AI zejména v prvním kole více a více standardem. Otázka, kterou MM pokládá (a já souzním): kolik toho víme o black box části AI, kterou pro nábor používáme? Já klientům říkám - stejně jako jsme se nikdy nemohli zavděčit super životopisem všem recruiterům, nezavděčíme se ani všem AI modelům. Objektivitu nečekejme nikdy.
+https://www.linkedin.com/posts/matejmatolin_v%C4%9Bdci-vzali-2-245-re%C3%A1ln%C3%BDch-%C5%BEivotopis%C5%AF-nechali-activity-7454439551671963648-EJLx?utm_source=share&utm_medium=member_desktop&rcm=ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA
+---
+
+
 #} -->
