@@ -23,6 +23,7 @@ roles:
       slug: linux
     threads:
       - https://discord.com/channels/769966886598737931/1421135941619159083
+      - https://discord.com/channels/769966886598737931/1509991652905713725
 
   # C# and .NET
   - id: 1085220839227654204
@@ -71,6 +72,7 @@ roles:
       slug: shield-lock
     threads:
       - https://discord.com/channels/769966886598737931/1421181822389325828
+      # - https://discord.com/channels/769966886598737931/1508406954119270440
 
   # Testing
   - id: 1045328672254603384
