@@ -135,16 +135,10 @@ class Members(BaseModel):
 
     @classmethod
     def monthly_members_growth_ptc(cls, months: Iterable[date]) -> list[float]:
-        return cls._yoy_growth_ptc(cls.monthly_members, months)
+        return charts.yoy_growth_ptc(cls.monthly_members, months)
 
     @classmethod
     def monthly_members_individuals_growth_ptc(
         cls, months: Iterable[date]
     ) -> list[float]:
-        return cls._yoy_growth_ptc(cls.monthly_members_individuals, months)
-
-    @classmethod
-    def _yoy_growth_ptc(cls, counts_fn, months: Iterable[date]) -> list[float]:
-        months = list(months)
-        years_ago = [month.replace(day=1, year=month.year - 1) for month in months]
-        return charts.growth_ptc(counts_fn(months), counts_fn(years_ago))
+        return charts.yoy_growth_ptc(cls.monthly_members_individuals, months)

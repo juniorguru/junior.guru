@@ -104,6 +104,14 @@ def growth_ptc(
     ]
 
 
+def yoy_growth_ptc(
+    counts_fn: Callable[[list[date]], list[Number | None]], months: Iterable[date]
+) -> list[float | None]:
+    months = list(months)
+    years_ago = [month.replace(day=1, year=month.year - 1) for month in months]
+    return growth_ptc(counts_fn(months), counts_fn(years_ago))
+
+
 def per_month_aggregate_breakdown(
     items: Iterable[T],
     day_fn: Callable[[T], date],

@@ -265,3 +265,24 @@ def test_per_month_aggregate_breakdown_empty_input():
 )
 def test_growth_ptc(values, previous_values, expected):
     assert charts.growth_ptc(values, previous_values) == expected
+
+
+def test_yoy_growth_ptc():
+    counts = {(2024, 1): 100, (2024, 2): 110, (2025, 1): 120, (2025, 2): 99}
+
+    def counts_fn(months):
+        return [counts.get((month.year, month.month)) for month in months]
+
+    months = [date(2025, 1, 31), date(2025, 2, 28)]
+
+    assert charts.yoy_growth_ptc(counts_fn, months) == [20.0, -10.0]
+
+
+def test_yoy_growth_ptc_handles_leap_day():
+    def counts_fn(months):
+        counts = {(2023, 2): 50, (2024, 2): 75}
+        return [counts.get((month.year, month.month)) for month in months]
+
+    months = [date(2024, 2, 29)]
+
+    assert charts.yoy_growth_ptc(counts_fn, months) == [50.0]
