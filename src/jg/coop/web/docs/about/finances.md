@@ -114,7 +114,7 @@ Občas se někde píše o zahraničních podnikavcích, kteří taky otevřeně 
 
 ## Meziroční růst výnosů
 
-Růst výnosů v procentech. Každý měsíc se porovnává se stejným měsícem o rok dříve (MoM, _Month-over-Month_). Mělo by to ukazovat meziroční růst nebo pokles.
+Růst výnosů v procentech. Každý měsíc se porovnává se stejným měsícem o rok dříve (YoY, _Year-over-Year_). Mělo by to ukazovat meziroční růst nebo pokles.
 
 Pro každý měsíc se ještě počítá součet za uplynulých 12 měsíců (TTM, _trailing twelve months_), vyděleno 12, a to se pak srovnává se stejnou hodnotou o rok dříve. Mělo by to ukazovat meziroční růst nebo pokles očištěný o sezónní výkyvy.
 
@@ -126,13 +126,13 @@ Pro každý měsíc se ještě počítá součet za uplynulých 12 měsíců (TT
         'labels': charts.revenue_growth_labels,
         'datasets': [
             {
-                'label': 'MoM růst v %',
+                'label': 'YoY růst v %',
                 'data': charts.revenue_growth,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
             {
-                'label': 'MoM TTM růst v %',
+                'label': 'YoY TTM růst v %',
                 'data': charts.revenue_ttm_growth,
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
