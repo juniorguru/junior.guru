@@ -6,6 +6,7 @@ from typing import Iterable, Self
 from peewee import CharField, IntegerField
 from playhouse.shortcuts import model_to_dict
 
+from jg.coop.lib import charts
 from jg.coop.models.base import BaseModel, check
 from jg.coop.models.club import SubscriptionType
 
@@ -133,24 +134,17 @@ class Members(BaseModel):
         ]
 
     @classmethod
-    def _monthly_growth_ptc(cls, counts_fn, months: Iterable[date]) -> list[float]:
-        months = list(months)
-        years_ago = [month.replace(day=1, year=month.year - 1) for month in months]
-        return [
-            (
-                ((count - count_year_ago) * 100) / count_year_ago
-                if (count is not None and count_year_ago)
-                else None
-            )
-            for (count, count_year_ago) in zip(counts_fn(months), counts_fn(years_ago))
-        ]
-
-    @classmethod
     def monthly_members_growth_ptc(cls, months: Iterable[date]) -> list[float]:
-        return cls._monthly_growth_ptc(cls.monthly_members, months)
+        return cls._yoy_growth_ptc(cls.monthly_members, months)
 
     @classmethod
     def monthly_members_individuals_growth_ptc(
         cls, months: Iterable[date]
     ) -> list[float]:
-        return cls._monthly_growth_ptc(cls.monthly_members_individuals, months)
+        return cls._yoy_growth_ptc(cls.monthly_members_individuals, months)
+
+    @classmethod
+    def _yoy_growth_ptc(cls, counts_fn, months: Iterable[date]) -> list[float]:
+        months = list(months)
+        years_ago = [month.replace(day=1, year=month.year - 1) for month in months]
+        return charts.growth_ptc(counts_fn(months), counts_fn(years_ago))

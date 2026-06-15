@@ -91,6 +91,19 @@ def average_round(values: list[Number]) -> int:
     return round(sum(values) / len(values))
 
 
+def growth_ptc(
+    values: Iterable[Number | None], previous_values: Iterable[Number | None]
+) -> list[float | None]:
+    return [
+        (
+            ((value - previous) * 100) / previous
+            if (value is not None and previous)
+            else None
+        )
+        for value, previous in zip(values, previous_values)
+    ]
+
+
 def per_month_aggregate_breakdown(
     items: Iterable[T],
     day_fn: Callable[[T], date],

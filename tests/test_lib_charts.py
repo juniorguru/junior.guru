@@ -243,3 +243,25 @@ def test_per_month_aggregate_breakdown_empty_input():
 
     assert months == []
     assert data == {"listed": [], "dropped": []}
+
+
+@pytest.mark.parametrize(
+    "values, previous_values, expected",
+    [
+        pytest.param([120], [100], [20.0], id="growth"),
+        pytest.param([80], [100], [-20.0], id="decline"),
+        pytest.param([100], [100], [0.0], id="flat"),
+        pytest.param([None], [100], [None], id="missing current value"),
+        pytest.param([120], [None], [None], id="missing previous value"),
+        pytest.param([120], [0], [None], id="zero previous value avoids division"),
+        pytest.param(
+            [110, 90, 200],
+            [100, 100, 100],
+            [10.0, -10.0, 100.0],
+            id="multiple values",
+        ),
+        pytest.param([], [], [], id="empty"),
+    ],
+)
+def test_growth_ptc(values, previous_values, expected):
+    assert charts.growth_ptc(values, previous_values) == expected
