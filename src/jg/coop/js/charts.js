@@ -29,7 +29,6 @@ function setupChart(canvas) {
   if (canvas.dataset.chartZeroLine !== undefined) {
     options.scales.y.grid = {
       ...options.scales.y.grid,
-      lineWidth: (ctx) => (ctx.tick.value === 0 ? 2 : 1),
       color: (ctx) =>
         ctx.tick.value === 0 ? "#666" : "rgba(0, 0, 0, 0.1)",
     };

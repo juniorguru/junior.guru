@@ -264,6 +264,7 @@ Výdaje na [marketing](./marketing.md) jsou předplatné nástrojů, tisk samole
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="300"
     data-chart-type="bar"
+    data-chart-zero-line
     data-chart="{{ {
         'labels': charts.cost_breakdown_labels,
         'datasets': [
@@ -288,7 +289,7 @@ Výdaje na [marketing](./marketing.md) jsou předplatné nástrojů, tisk samole
                 'backgroundColor': '#aaa',
             },
             {
-                'label': 'produkce videa, podcastu, články',
+                'label': 'produkce videa, podcastu, článků',
                 'data': charts.cost_breakdown.pop('production'),
                 'backgroundColor': '#0c1633',
             },
