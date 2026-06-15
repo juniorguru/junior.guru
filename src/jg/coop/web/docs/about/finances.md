@@ -89,6 +89,7 @@ Občas se někde píše o zahraničních podnikavcích, kteří taky otevřeně 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="300"
     data-chart-type="line"
+    data-chart-zero-line
     data-chart="{{ {
         'labels': charts.profit_labels,
         'datasets': [
@@ -111,24 +112,27 @@ Občas se někde píše o zahraničních podnikavcích, kteří taky otevřeně 
         'plugins': {'annotation': charts.profit_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
-## Růst
+## Meziroční růst výnosů
 
-Vypočítaný růst příjmů v procentech. Každý měsíc se porovnává se stejným měsícem o rok dříve.
+Růst výnosů v procentech. Každý měsíc se porovnává se stejným měsícem o rok dříve (MoM, _Month-over-Month_). Mělo by to ukazovat meziroční růst nebo pokles.
+
+Pro každý měsíc se ještě počítá součet za uplynulých 12 měsíců (TTM, _trailing twelve months_), vyděleno 12, a to se pak srovnává se stejnou hodnotou o rok dříve. Mělo by to ukazovat meziroční růst nebo pokles očištěný o sezónní výkyvy.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="300"
     data-chart-type="line"
+    data-chart-zero-line
     data-chart="{{ {
         'labels': charts.revenue_growth_labels,
         'datasets': [
             {
-                'label': 'růst příjmů v %',
+                'label': 'MoM růst v %',
                 'data': charts.revenue_growth,
                 'borderColor': '#1755d1',
                 'borderWidth': 2,
             },
             {
-                'label': 'růst příjmů TTM/12 v %',
+                'label': 'MoM TTM růst v %',
                 'data': charts.revenue_ttm_growth,
                 'borderColor': '#1755d1',
                 'borderWidth': 1,
