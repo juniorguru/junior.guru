@@ -154,6 +154,20 @@ def revenue_ttm(today: date) -> IntChartDict:
 
 
 @chart
+def revenue_growth(today: date) -> FloatChartDict:
+    months = charts.months(today.replace(year=today.year - 3), today)
+    data = charts.per_month(Transaction.revenue_growth_ptc, months)
+    return dict(data=data, months=months)
+
+
+@chart
+def revenue_ttm_growth(today: date) -> FloatChartDict:
+    months = charts.months(today.replace(year=today.year - 3), today)
+    data = charts.per_month(Transaction.revenue_ttm_growth_ptc, months)
+    return dict(data=data, months=months)
+
+
+@chart
 def revenue_breakdown(today: date) -> IntBreakdownChartDict:
     months = charts.months(BUSINESS_BEGIN_ON, today)
     data = charts.per_month_breakdown(Transaction.revenue_breakdown, months)

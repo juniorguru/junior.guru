@@ -111,6 +111,35 @@ Občas se někde píše o zahraničních podnikavcích, kteří taky otevřeně 
         'plugins': {'annotation': charts.profit_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
+## Růst
+
+Vypočítaný růst příjmů v procentech. Každý měsíc se porovnává se stejným měsícem o rok dříve.
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="300"
+    data-chart-type="line"
+    data-chart="{{ {
+        'labels': charts.revenue_growth_labels,
+        'datasets': [
+            {
+                'label': 'růst příjmů v %',
+                'data': charts.revenue_growth,
+                'borderColor': '#1755d1',
+                'borderWidth': 2,
+            },
+            {
+                'label': 'růst příjmů TTM/12 v %',
+                'data': charts.revenue_ttm_growth,
+                'borderColor': '#1755d1',
+                'borderWidth': 1,
+            }
+        ]
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'plugins': {'annotation': charts.revenue_growth_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+
 ## Výnosy a náklady
 
 Silné čáry zobrazují vývoj výnosů a nákladů v každém konkrétním měsíci. Tenké linky zobrazují totéž, ale vždy za posledních 12 měsíců (TTM, _trailing twelve months_), vyděleno 12. Čistý zisk je rozdíl mezi modrou a červenou čárou.

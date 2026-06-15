@@ -95,6 +95,20 @@ class Transaction(BaseModel):
         )
 
     @classmethod
+    def revenue_growth_ptc(cls, date):
+        previous = cls.revenue(ttm_range(date)[0])
+        if not previous:
+            return None
+        return ((cls.revenue(date) - previous) / previous) * 100
+
+    @classmethod
+    def revenue_ttm_growth_ptc(cls, date):
+        previous = cls.revenue_ttm(ttm_range(date)[0])
+        if not previous:
+            return None
+        return ((cls.revenue_ttm(date) - previous) / previous) * 100
+
+    @classmethod
     def revenue_breakdown(cls, date):
         return sum_by_category(cls.incomes(*month_range(date)))
 
