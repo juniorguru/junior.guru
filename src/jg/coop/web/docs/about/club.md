@@ -35,13 +35,13 @@ Klub má teď **{{ members_total_count }} členů** celkem. Z nich si to **{{ ch
                 'label': 'všechna členství',
                 'data': charts.members,
                 'borderColor': '#1755d1',
-                'borderWidth': 2,
+                'borderWidth': 1,
             },
             {
                 'label': 'všechna individuální členství',
                 'data': charts.members_individuals,
                 'borderColor': '#1755d1',
-                'borderWidth': 1,
+                'borderWidth': 2,
             },
         ],
     }|tojson|forceescape }}"
@@ -49,6 +49,40 @@ Klub má teď **{{ members_total_count }} členů** celkem. Z nich si to **{{ ch
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
         'plugins': {'annotation': charts.members_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+
+## Meziroční růst počtu členů
+
+Růst počtu členů v procentech. Každý měsíc se porovnává se stejným měsícem o rok dříve (YoY, _Year-over-Year_). Mělo by to ukazovat meziroční růst nebo pokles.
+
+{% call note() %}
+  {{ 'trash'|icon }} V létě 2024 se změnila metodika ukládání dat ohledně členství v klubu. Starší data bohužel nejsou k dispozici.
+{% endcall %}
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="300"
+    data-chart-type="line"
+    data-chart-zero-line
+    data-chart="{{ {
+        'labels': charts.members_growth_labels,
+        'datasets': [
+            {
+                'label': 'YoY růst členství v %',
+                'data': charts.members_growth,
+                'borderColor': '#1755d1',
+                'borderWidth': 1,
+            },
+            {
+                'label': 'YoY růst individuálních členství v %',
+                'data': charts.members_individuals_growth,
+                'borderColor': '#1755d1',
+                'borderWidth': 2,
+            },
+        ],
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'plugins': {'annotation': charts.members_growth_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
 ## Typy členství

@@ -252,6 +252,20 @@ def members_individuals_today_ptc(today: date) -> ChartDict:
 
 
 @chart
+def members_growth(today: date) -> FloatChartDict:
+    months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
+    data = Members.monthly_members_growth_ptc(months)
+    return dict(data=data, months=months)
+
+
+@chart
+def members_individuals_growth(today: date) -> FloatChartDict:
+    months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
+    data = Members.monthly_members_individuals_growth_ptc(months)
+    return dict(data=data, months=months)
+
+
+@chart
 def members_women(today: date) -> FloatChartDict:
     months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
     data = Members.monthly_members_women_ptc(months)

@@ -68,7 +68,7 @@ class Members(BaseModel):
     @classmethod
     def monthly_members_individuals(cls, months: Iterable[date]) -> list[int]:
         return [
-            monthly + yearly
+            (monthly + yearly if (monthly is not None and yearly is not None) else None)
             for (monthly, yearly) in zip(
                 cls.per_month("subscription_types_monthly", months),
                 cls.per_month("subscription_types_yearly", months),
@@ -131,3 +131,26 @@ class Members(BaseModel):
                 cls.monthly_members_individuals(months), cls.monthly_quits(months)
             )
         ]
+
+    @classmethod
+    def _monthly_growth_ptc(cls, counts_fn, months: Iterable[date]) -> list[float]:
+        months = list(months)
+        years_ago = [month.replace(day=1, year=month.year - 1) for month in months]
+        return [
+            (
+                ((count - count_year_ago) * 100) / count_year_ago
+                if (count is not None and count_year_ago)
+                else None
+            )
+            for (count, count_year_ago) in zip(counts_fn(months), counts_fn(years_ago))
+        ]
+
+    @classmethod
+    def monthly_members_growth_ptc(cls, months: Iterable[date]) -> list[float]:
+        return cls._monthly_growth_ptc(cls.monthly_members, months)
+
+    @classmethod
+    def monthly_members_individuals_growth_ptc(
+        cls, months: Iterable[date]
+    ) -> list[float]:
+        return cls._monthly_growth_ptc(cls.monthly_members_individuals, months)
