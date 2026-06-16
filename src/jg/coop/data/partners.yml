@@ -105,32 +105,12 @@ registry:
     note: |
       Zdarma poskytují platformu pro sběr dat, kde může junior.guru provozovat programy stahující data o pracovních nabídkách, programátorských srazech, a mnohé další.
 
-  # POTENTIAL PARTNERS
-
-  - name: CDN77.com
-    slug: cdn77
-    url: https://www.cdn77.com/
-    cz_business_id: 24149624
-    start_on: 2100-01 #2021-10
-    note: |
-      Zdarma poskytují svou CDN pro Junior Guru podcast.
-
-  - name: ContentParty
-    slug: contentparty
-    url: https://contentparty.cz/
-    cz_business_id: 11948167
-    start_on: 2100-01 #2024-02
-    note: |
-      Sdílíme know-how a zkušenosti s budováním komunity. Terka významně pomohla s vytvořením prodejní stránky klubu.
-
-  # PAST PARTNERS
-
   - name: CoreSkill
     slug: coreskill
     url: https://coreskill.tech/
     cz_business_id: 69320144
     start_on: 2021-02
-    end_on: 2026-07
     subscription: https://juniorguru.memberful.com/admin/subscriptions/3699681
     note: |
-      Využívají klub pro komunikaci se svými klienty (studenty). Dan Srb v klubu moderuje a radí s frontendem.
+      Využívali klub pro komunikaci se svými klienty (studenty). Dan Srb v klubu moderuje a radí s frontendem, sdílíme šablonu na CV.
+
