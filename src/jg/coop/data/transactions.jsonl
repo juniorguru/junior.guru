@@ -1339,3 +1339,4 @@
 {"_id": "27686858062", "amount": 3243, "category": "memberships", "happened_on": "2026-06-15"}
 {"_id": "27687043054", "amount": -5720, "category": "tax", "happened_on": "2026-06-15"}
 {"_id": "27687043055", "amount": -3306, "category": "tax", "happened_on": "2026-06-15"}
+{"_id": "27688407071", "amount": -1000, "category": "production", "happened_on": "2026-06-15"}
