@@ -40,8 +40,8 @@ Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáha
 
 </div></div>
 <div class="masthead-column masthead-object-container">
-  <lite-youtube class="video" videoid="zHt4z5lp2e0" playlabel="Přehrát představení klubu" params="rel=0&modestbranding=1">
-    <a href="https://www.youtube.com/watch?v=zHt4z5lp2e0" target="_blank" rel="noopener noreferrer" class="lyt-playbtn" title="Přehrát představení klubu">
+  <lite-youtube class="video" videoid="d5Uu1jhaaBg" playlabel="Přehrát představení klubu" params="rel=0&modestbranding=1">
+    <a href="https://www.youtube.com/watch?v=d5Uu1jhaaBg" target="_blank" rel="noopener noreferrer" class="lyt-playbtn" title="Přehrát představení klubu">
       <span class="lyt-visually-hidden">Přehrát představení klubu</span>
     </a>
   </lite-youtube>
