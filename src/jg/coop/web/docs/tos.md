@@ -168,7 +168,7 @@ Tyto obchodní podmínky pokrývají digitální předplatné a podmínky přís
 
 **10.1.** Kupujícímu je doručováno na jeho e-mailovou adresu uvedenou v objednávce případně v jeho uživatelském profilu.
 
-**10.2.** Mě můžete doručovat na e-mailovou adresu [honza@junior.guru](mailto:honza@junior.guru), případně poštou na adresu sídla: Jan Javorek, Lupáčova 375/24, 130 00 Praha
+**10.2.** Mě můžete doručovat na e-mailovou adresu [honza@junior.guru](mailto:honza@junior.guru), případně poštou na adresu sídla: Jan Javorek, Kunešova 2651/14, 130 00 Praha
 
 ## 11\. Vyřizování stížností a případné spory
 
