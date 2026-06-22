@@ -590,27 +590,27 @@ auth-app = [
 
 [[package]]
 name = "githubkit-schemas"
-version = "26.6.14"
+version = "26.6.20"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "githubkit" },
     { name = "githubkit-schemas-2026-03-10" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/3c/d4/c3b289658ba277a5ab265e58bbb5f7758269a8fc29c35d6fbfb75d025c05/githubkit_schemas-26.6.14.tar.gz", hash = "sha256:db05a66cb316d6a53cdcb47ed0e41f863f4d0667f95444f959fa174e64c091cc", size = 119155, upload-time = "2026-06-14T08:13:41.139Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/91/e2/07822708faae3683a8cc758961be45c74ae0e0fb809013f717dd81ba8cc7/githubkit_schemas-26.6.20.tar.gz", hash = "sha256:7c34a6a728b5f79c8266b7a04fdb25459cb1bfc43206a46f800c50d9f215b7f5", size = 118861, upload-time = "2026-06-20T12:16:59.977Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/58/b9/9e3e75b93beaa6a7b2bb45552ed6abff972b7aa5ff97f2387ea9de39270b/githubkit_schemas-26.6.14-py3-none-any.whl", hash = "sha256:892302864fc410e2ea57c1b8b7faad2857d80abf36be43f2bc7548e77c4cede9", size = 121992, upload-time = "2026-06-14T08:13:38.336Z" },
+    { url = "https://files.pythonhosted.org/packages/b4/97/9b53be4ee906a371b8c1e7747e74c8e8dd4dca710d94f00f1cfee4a2734d/githubkit_schemas-26.6.20-py3-none-any.whl", hash = "sha256:54afa7c6a0828ab2f6a6122e0dd73b8f68dd29cb0f640a93927c0f15626f13d5", size = 121804, upload-time = "2026-06-20T12:16:52.301Z" },
 ]
 
 [[package]]
 name = "githubkit-schemas-2026-03-10"
-version = "26.6.14"
+version = "26.6.20"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "githubkit-schemas" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/65/74/67cd90e0c6ea4d9ff115293845f0b782297a7f4a8eed10c156c5c0945050/githubkit_schemas_2026_03_10-26.6.14.tar.gz", hash = "sha256:cec67b995d31890003b4f55fe1345ec12ee1a879473f9bb995452a398beb6dab", size = 1313123, upload-time = "2026-06-14T08:13:42.084Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c2/5a/dea0b72a22f348ce614fb7485545d2d6beadf30bc00344ef1352558e5923/githubkit_schemas_2026_03_10-26.6.20.tar.gz", hash = "sha256:063b8f0d789ec4efe75744deb125616d428d773beddeb0a08d64b7a13a345441", size = 1310598, upload-time = "2026-06-20T12:17:02.137Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/78/e6/ef80b47b566a9fb3731553cc8d60f29a8a104ffb5f26b679dd585b8064e6/githubkit_schemas_2026_03_10-26.6.14-py3-none-any.whl", hash = "sha256:0a8e083274209f48e6c38cf06f3801e62b7fc525545cf632955a4c95918ee226", size = 3255696, upload-time = "2026-06-14T08:13:36.701Z" },
+    { url = "https://files.pythonhosted.org/packages/79/30/6b47cfae68103e547d927282371a77f86a3a8c6cfeaf45efb9d7409a75b1/githubkit_schemas_2026_03_10-26.6.20-py3-none-any.whl", hash = "sha256:9866cb1170679c29cd0b286c37b4bfb4c446af3ca758212c92922aeacb13075c", size = 3253088, upload-time = "2026-06-20T12:16:55.168Z" },
 ]
 
 [[package]]
@@ -1660,8 +1660,8 @@ wheels = [
 
 [[package]]
 name = "py-cord"
-version = "2.8.1.dev22+gc7cb45d69"
-source = { git = "https://github.com/Pycord-Development/pycord.git#c7cb45d69187d4214ddc3f9a0c2b47a207d296f1" }
+version = "2.8.1.dev25+g71c48a2ca"
+source = { git = "https://github.com/Pycord-Development/pycord.git#71c48a2caf04f24e8938ba55ab37ed2967572a32" }
 dependencies = [
     { name = "aiohttp" },
     { name = "typing-extensions" },
