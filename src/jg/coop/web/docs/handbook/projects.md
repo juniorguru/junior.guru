@@ -6,39 +6,28 @@ description: Pokud se učíš programovat, práce na vlastních projektech je ne
 template: main_handbook.html
 ---
 
-{% from 'macros.html' import blockquote_avatar, illustration, lead with context %}
+{% from 'macros.html' import note, blockquote_avatar, illustration, lead with context %}
 
 # Projekty jako první praxe
 
 {% call lead() %}
-  Vlastní projekt tě naučí přemýšlet jako programátorka nebo programátor. Naučíš se rozkládat velké problémy na menší, řešit záseky a dotahovat věci do konce. A firmám tím ukážeš, že svoje znalosti umíš fakt použít.
+  Vlastní projekt tě naučí přemýšlet jako programátoři. Naučíš se rozkládat velké problémy na menší, řešit záseky a dotahovat věci do konce. A firmám tím ukážeš, že svoje znalosti umíš fakt použít.
 {% endcall %}
 
 {{ illustration('static/illustrations/projects.webp') }}
 
-<!--
-DOPLNIT: jak udelat MOAT v dobe kdy je AI
-DOPLNIT: jak udělat demo konzolové aplikace, vyloženě návod na animovaný obrázek z terminálu - třeba https://github.com/AdriansRepos/VyukaNasobilky
+[TOC]
 
-To je super pro rok 2021. Teď je 2026. Senior takový projekt vygeneruje s pomocí AI za 2 dny. Ukaž, že to umíš taky. (Nepotřebuješ know-how nebo skill, je to AI minset a Cursor AI, co potřebuješ.) Ukaž, že jsi zabiják 🏴‍☠️, "team-of-one" 💀, a že píšeš jeden projekt za druhým 😵😵😵 když zrovna v noci nespíš. Firmy mají dnes těžké se uživit a pokud nejdeš do korporátu, potřebují, abys jim vygeneroval větší zisk, než je stojíš.
+## Projektové učení
 
-Nakonec prezentace. Na kód nikdo koukat nebude - stejně je to AI. (Ano, je to pro všechny okolo AI, i kdyby jsi to psal ručně a strávil nad tím měsíc.). Udělej super krátké 50s video, kde odprezentuješ, co aplikace umí. Moje zkušenost - někteří HR si ta videa pouští a pak zpětně chválí. 🥳
+Nic tě nenaučí tolik, jako když si zkusíš něco samostatně vyrobit. Říká se tomu [projektové učení](https://cs.wikipedia.org/wiki/Projektov%C3%A9_u%C4%8Den%C3%AD). Má to hned několik výhod:
 
-https://www.linkedin.com/posts/lukasbednarik_jak-dostat-pr%C3%A1ci-jako-junior-developer-v-activity-7427646943742414848-I8TX/
--->
-
-<!-- Bez projektů jde dnes tvoje CVčko přímo do koše. 200 lidí na jeden inzerát. jak vynikneš? -->
-
-<!-- ## Projektové učení -->
-
-Nic tě nenaučí tolik, jako když si zkusíš něco samostatně vyrobit. Říká se tomu [projektové učení](https://cs.wikipedia.org/wiki/Projektov%C3%A9_u%C4%8Den%C3%AD). Nejlepší je vymyslet si něco vlastního a řešení procházet s [mentorem](mentoring.md). Inspirace na projekt se nejlépe hledá přímo okolo tebe:
-
-*   Jednoduchá hra, např. piškvorky nebo [had](https://naucse.python.cz/2018/snake-brno/),
-*   automatizace něčeho, co teď na počítači musíš dělat ručně (mrkni na [tuto knihu](https://automatetheboringstuff.com)),
-*   program na procvičování příkladů nebo slovíček pro děti do školy,
-*   [osobní webová stránka](candidate.md#osobni-web-a-blog).
-
-Pokud vlastní nápad nepřichází a mentor není po ruce, můžeš zkusit [hackathon](collaboration.md) nebo [open source](collaboration.md).
+- **Otestuješ naučené znalosti v praxi.** Vyhrneš rukávy, ušpiníš si ruce. Překonáš nekonečné zírání na blikající kurzor v prázdném novém souboru.
+- Naučíš se **řešit reálné problémy**, na které lze při školních projektech narazit jen těžko.
+- Procvičíš si překlad zadání na řešení, **rozklad větších problémů na podproblémy**.
+- Automaticky se na tebe nabalí **spousta souvisejících znalostí**. Kam uložit data? Do databáze. Jak nasdílet kód? Přes Git. Kam napsat, jak se projekt instaluje? Do README. Kam nasadit webovku? Na Linuxový server…
+- Zažiješ si, jak to vypadá, když narazíš na **těžko řešitelný problém** a budeš se jej **snažit překonat**. Naučíš se debugovat, ptát se, správně vyhledávat rady.
+- U pohovoru **budeš moci ukázat, že to, co tvrdíš, že umíš, opravdu umíš**. „Mám projekt v JavaScriptu“ zní vždycky tisíckrát lépe než „mám kurz na JavaScript”.
 
 {% call blockquote_avatar(
   'Junioři si často udělají kurz, certifikaci, ale potom už tu znalost neprocvičují. A to je strašná škoda, protože ji do pár měsíců zapomenou. Lepší méně kurzů, ale potom začít praktikovat a něco si vytvořit. Nákupní seznam, jednoduchého bota, malou aplikaci.',
@@ -48,38 +37,13 @@ Pokud vlastní nápad nepřichází a mentor není po ruce, můžeš zkusit [hac
   Jiří Psotka, recruiter v [Red Hatu](https://www.redhat.com/en/jobs) v [prvním dílu podcastu junior.guru](../podcast/1.jinja)
 {% endcall %}
 
-<!--
-Dobre: Poslat se žádostí o práci odkaz na svůj veřejný projekt na GitHubu
-Spatne: Poslat se žádostí o práci odkaz na svůj veřejný projekt na GitHubu, kam jste commitli a pushli také složky jako __pycache__, node_modules a další a taky přístupy na ssh, k databázi a k emailu, které ta aplikace využívá.
+## Projekt kompenzuje praxi
 
+Protože [certifikáty na trhu nikoho nezajímají](certification.md), junior s nula kurzy a pěti vlastními projekty je docela dobře zaměstnatelný, kdežto **CVčko člověka s pěti kurzy a žádnými projekty nejspíš skončí v koši**.
 
-TODO: udelat kapitolu o README
+Potřebuješ sobě i firmám ukázat, že **umíš něco vyrobit, dotáhnout do konce, že máš na něčem otestované základní znalosti z kurzů, knížek a videí.** Když budeš vědět, že tohle dokážeš, nejen že ti to zlepší šance na trhu, ale hlavně ti to dodá sebevědomí a ujištění, že tvoje cesta někam vede.
 
-
-koľko HODÍN DENNE musím PROGRAMOVAŤ? (programátor radí) https://www.youtube.com/watch?app=desktop&v=LG-d_BOZE6k
-
-včera a předevčírem mi bublinou prolétlo tohle vlákno https://twitter.com/varjmes/status/1363607492765376513, kde se lidé vyjadřují k tomu, jestli dělají side projects nebo ne. spousta lidí programuje v práci, ve volném čase už ne, to myšlení o programátorovi, co programuje od rána do noci se už posunulo. časté jsou sebevzdělávací side projects - vyzkoušet si technologie apod. nebo "cesta je cíl" - hraní si s projektem, ale nikdy nedokončit.
-
---- https://discord.com/channels/769966886598737931/769966887055392768/1212356957240033331
-> My advice to a beginner dev struggling with their side-projects would be to always make sure that you're doing them for yourself, and for the right reasons. Instead of approaching your first project purely as a means to make it big or to impress recruiters, see it firstly as a means to learn and explore what's possible.
-https://robbowen.digital/wrote-about/abandoned-side-projects/
----
-
---- https://discord.com/channels/769966886598737931/1113873887445397564/1113931127531520050
-Junior guru je skvělá příručka. Nauč se základy , udělej alespoň jeden velkej projekt, vymazli github -cv. Následoval jsem tyhle kroky a fungovalo to. Ale nemůžeš vynechat ten projekt. Musíš si prostě tim ušpinit ruce a zaměstnat hlavu. Když si vymyslíš svůj, bude tě to více bavit. Ale musíš vytvářet. A googlit ,jak na ty dílči kroky, ne procházet něčí osnovu. Protože to tě nenutí tolik přemýšlet. člověk  nesmí skončit u piškvorek z návodu, musí přidat něco svého co ho donutí se posunout. A bude to nepříjemné, když se zasekneě. Stalo se mi to hodněkrát. Celý den jsem strávil na tom , jak udělat jednu věc, kterou senior napíše za  20 minut.  Bylo to peklo, říkal jsem si , tohle už je můj limit.  Ale pak jsem to vždy nějak napsal a fungovalo to. Po třech měsích v práci se stydím, za svůj projekt, se kterým jsem se o tu práci ucházel. Ale podle mě bylo to co zaměstnavatele přimělo mě vyzkoušet. To , že se pokusím udělat to co jsem si dal za úkol i když to je náročné. Protože ten projekt je  pro začátečníka podle mě náročnější než kurz.  Ale zábavnější. A určitě tě vědomí toho, že si to dokázal vyrobit, naplní víc, než certifikát.
-Nechci hodnotit výše zmíněné kurzy,  určitě mohou pomoci získat znalosti. Ale upřímně si polož otázku, jestli ty nepotřebuješ jen aplikovat a procvičit to, co už si minimálně jednou slyšel. Fandím ti. Máš výdrž a když nepolevíš, tak se ti ten cíl splní. Sleduji tě už dlouho a opravdu držím palce. Kdyby si měl pocit, že se chceš na něco z mé cesty zeptat, klidně napiš. Ale opravdu, zkus jít za tu hranu, toho, co se ti třeba nechce..tam tě totiž čeká to ,co chceš 🙂
----
--->
-
-<!-- ## První praxe -->
-
-Na inzerát bytu k pronájmu, u kterého nejsou fotky, nikdo odpovídat nebude. Stejně je to i s kandidáty. **Potřebuješ ukázat, že umíš něco vyrobit, dotáhnout do konce, že máš na něčem otestované základní zkušenosti z kurzů a knížek.** K tomu slouží projekty. Pokud nemáš vysokou školu s IT zaměřením, kompenzuješ svými projekty i chybějící vzdělání. Snažíš se jimi říct: „Sice nemám školu, ale koukejte, když dokážu vytvořit toto, tak je to asi jedno, ne?“
-
-Říká se, že kód na GitHubu je u programátorů stejně důležitý, ne-li důležitější, než životopis. Není to tak úplně pravda. U zkušených profesionálů je to ve skutečnosti [velmi špatné měřítko dovedností](https://web.archive.org/web/20240329194129/https://www.benfrederickson.com/github-wont-help-with-hiring/). Náboráři se na GitHub nedívají, maximálně jej přepošlou programátorům ve firmě. Přijímací procesy mají většinou i jiný způsob, jak si ověřit tvé znalosti, např. domácí úkol nebo test. **Zajímavý projekt s veřejným kódem ti ale může pomoci přijímací proces doplnit nebo přeskočit.** Dokazuje totiž, že umíš něco vytvořit, že umíš s Gitem, a tví budoucí kolegové si mohou rovnou omrknout tvůj kód. Člověk s projekty skoro jistě dostane přednost před někým, kdo nemá co ukázat, zvlášť pokud ani jeden nebudou mít formální vzdělání v oboru.
-
-Konkrétně GitHub s tím ale nesouvisí. Stejný efekt má, pokud kód vystavíš na BitBucket nebo pošleš jako přílohu v e-mailu. Když někdo říká, že „máš mít GitHub“, myslí tím hlavně to, že máš mít prokazatelnou praxi na projektech. GitHub je akorát příhodné místo, kam všechny své projekty a pokusy nahrávat. **Nahrávej tam vše a nestyď se za to,** ať už jsou to jen řešení [úloh z Codewars](practice.md) nebo něco většího, třeba [tvůj osobní web](candidate.md#osobni-web-a-blog). Nikdo od tebe neočekává skládání symfonií, potřebují ale mít aspoň trochu realistickou představu, jak zvládáš základní akordy. Budou díky tomu vědět, co tě mají naučit.
-
-Pokud se za nějaký starý kód vyloženě stydíš, můžeš repozitář s ním [archivovat](https://docs.github.com/en/repositories/archiving-a-github-repository/archiving-repositories). Jestliže se chceš nějakými repozitáři pochlubit na svém profilu, můžeš si je tam [přišpendlit](https://github.blog/2016-06-16-pin-repositories-to-your-github-profile/). Výhodou je, že přišpendlit jde i cizí repozitáře, do kterých pouze přispíváš.
+Pokud nemáš vysokou školu s IT zaměřením, **kompenzuješ svými projekty i chybějící formální vzdělání**. Snažíš se říct: „Sice nemám školu, ale koukejte, když dokážu vytvořit toto, tak je to asi jedno, ne?“
 
 {% call blockquote_avatar(
   'Na pohovoru mě nezajímá, co kdo vystudoval, ale jak přemýšlí a jaké má vlastní projekty. Nemusí být nijak světoborné, je to však praxe, kterou ani čerstvý inženýr často nemá.',
@@ -89,9 +53,22 @@ Pokud se za nějaký starý kód vyloženě stydíš, můžeš repozitář s ní
   Josef Skládanka, profesionální programátor
 {% endcall %}
 
-Máš-li za sebou nějakou vysokou školu z oboru, ukaž svou bakalářku nebo diplomku. Je to něco, co je výsledkem tvé dlouhodobé, intenzivní práce. Pochlub se s tím!
+{% call note(standout=True) %}
+  {{ 'exclamation-circle'|icon }} Zbytek kapitoly se připravuje. Honza to tu zrovna teď (červen 2026) přepisuje, tak se sem mrkni třeba za týden, mělo by tady být zase něco nového.
+{% endcall %}
+
+{#
 
 <!--
+
+Říká se, že kód na GitHubu je u programátorů stejně důležitý, ne-li důležitější, než životopis. Není to tak úplně pravda. U zkušených profesionálů je to ve skutečnosti [velmi špatné měřítko dovedností](https://web.archive.org/web/20240329194129/https://www.benfrederickson.com/github-wont-help-with-hiring/). Náboráři se na GitHub nedívají, maximálně jej přepošlou programátorům ve firmě. Přijímací procesy mají většinou i jiný způsob, jak si ověřit tvé znalosti, např. domácí úkol nebo test. **Zajímavý projekt s veřejným kódem ti ale může pomoci přijímací proces doplnit nebo přeskočit.** Dokazuje totiž, že umíš něco vytvořit, že umíš s Gitem, a tví budoucí kolegové si mohou rovnou omrknout tvůj kód. Člověk s projekty skoro jistě dostane přednost před někým, kdo nemá co ukázat, zvlášť pokud ani jeden nebudou mít formální vzdělání v oboru.
+
+Konkrétně GitHub s tím ale nesouvisí. Stejný efekt má, pokud kód vystavíš na BitBucket nebo pošleš jako přílohu v e-mailu. Když někdo říká, že „máš mít GitHub“, myslí tím hlavně to, že máš mít prokazatelnou praxi na projektech. GitHub je akorát příhodné místo, kam všechny své projekty a pokusy nahrávat. **Nahrávej tam vše a nestyď se za to,** ať už jsou to jen řešení [úloh z Codewars](practice.md) nebo něco většího, třeba [tvůj osobní web](candidate.md#osobni-web-a-blog). Nikdo od tebe neočekává skládání symfonií, potřebují ale mít aspoň trochu realistickou představu, jak zvládáš základní akordy. Budou díky tomu vědět, co tě mají naučit.
+
+Pokud se za nějaký starý kód vyloženě stydíš, můžeš repozitář s ním [archivovat](https://docs.github.com/en/repositories/archiving-a-github-repository/archiving-repositories). Jestliže se chceš nějakými repozitáři pochlubit na svém profilu, můžeš si je tam [přišpendlit](https://github.blog/2016-06-16-pin-repositories-to-your-github-profile/). Výhodou je, že přišpendlit jde i cizí repozitáře, do kterých pouze přispíváš.
+
+--- 
+
 Myslím, že projekty u juniora nebo jiný důkaz praxe (open source, stáž…) slouží k tomu, aby člověk ukázal, že zvládne něco sám vyrobit a aplikovat moudra z knížek a kurzů, ne jen opisovat z tabule. Poslouží to i absolventovi VŠ, ale u career switchers je to skoro nutnost, aby prostě měli něco v ruce, protože jejich vzdělání je pohledem recruitera všelijaké a recruiter nebo ten tým, který pohovoruje, chce nějakou záruku, že člověk má aspoň nějaký minimální level. Co je minimální se liší u každé firmy. Někomu budou stačit codewars řešení, někdo bude chtít celou Django appku, stejně jako se liší vnímání slova junior firma od firmy. Vidím to jako škálu s otevřeným koncem, kde na začátku je 0 řádků vlastního projektu a mizivá šance s tím někoho zaujmout a čím komplikovanější ten projekt je, tím víc prokazuji svou odbornost. Existují pozice, kde tu odbornost nevyžadují a vezmou tě na základě soft skills a osobnosti, takže to rozhodně není jediná věc, která hraje roli, ale obecně bych řekl, že pokud se hlásíš na roli **programátora**, platí, že čím víc praxe, tím víc Adidas.
 
 Tedy minimální požadavky neexistují. Jsou lidi, které vzali pomalu jen s úkoly z PyLadies kurzu. Ale to jsou náhody, kdy se sešla nabídka a poptávka tímto způsobem a zapůsobila třeba řada soft skills té osoby atd. Na většinu nabídek to, dovolím si říct, stačit nebude.
@@ -116,9 +93,11 @@ Samozřejmě jde i o to, jestli chceš/potřebuješ změnu co nejrychleji nebo j
 ---
 -->
 
-<!-- {#
-
 ## Jak začít
+
+<!--
+
+Nejlepší je vymyslet si něco vlastního a řešení sdílet s [komunitou](community.md), [mentorem](mentoring.md) nebo s AI, ať máš nějakou zpětnou vazbu.
 
 Ještě mě napadl zacyklený junior/switcher. Má základy, maká, ale buď se točí v kurzech, nebo se točí v malých cvičeních, ne a ne se dostat k výrobě většího vlastního projektu. Možná zkouší i pohovory, ale nedaří se. Přemýšlí, zda by nemělo smysl aspoň to manuální testování, třeba nabere praxi tam…
 
@@ -162,7 +141,32 @@ Příklad - v rámci jednoho cvičení jsem napsal jednoduchý program který si
 
 [ Potom by mohly být třeba dva konkrétní příklady prvním psotupem a druhým … - jak by u nich vypadala analýza, jak hledat třeba materiály k doučení se toho co mi chybí (ne každý umí hledat, což souvisí s tím že ne každy ví jak se učit…) ]
 
+--- https://discord.com/channels/769966886598737931/1113873887445397564/1113931127531520050
+Když si vymyslíš svůj, bude tě to více bavit. Ale musíš vytvářet. A googlit ,jak na ty dílči kroky, ne procházet něčí osnovu. Protože to tě nenutí tolik přemýšlet. člověk  nesmí skončit u piškvorek z návodu, musí přidat něco svého co ho donutí se posunout. A bude to nepříjemné, když se zasekneě. Stalo se mi to hodněkrát. Celý den jsem strávil na tom , jak udělat jednu věc, kterou senior napíše za  20 minut.  Bylo to peklo, říkal jsem si , tohle už je můj limit.  Ale pak jsem to vždy nějak napsal a fungovalo to. Po třech měsích v práci se stydím, za svůj projekt, se kterým jsem se o tu práci ucházel. Ale podle mě bylo to co zaměstnavatele přimělo mě vyzkoušet. To , že se pokusím udělat to co jsem si dal za úkol i když to je náročné. Protože ten projekt je  pro začátečníka podle mě náročnější než kurz.  Ale zábavnější. A určitě tě vědomí toho, že si to dokázal vyrobit, naplní víc, než certifikát.
+Nechci hodnotit výše zmíněné kurzy,  určitě mohou pomoci získat znalosti. Ale upřímně si polož otázku, jestli ty nepotřebuješ jen aplikovat a procvičit to, co už si minimálně jednou slyšel. Fandím ti. Máš výdrž a když nepolevíš, tak se ti ten cíl splní. Sleduji tě už dlouho a opravdu držím palce. Kdyby si měl pocit, že se chceš na něco z mé cesty zeptat, klidně napiš. Ale opravdu, zkus jít za tu hranu, toho, co se ti třeba nechce..tam tě totiž čeká to ,co chceš 🙂
+---
+
+-->
+
+## Jak si rozvrhnout práci
+
+<!--
+
+koľko HODÍN DENNE musím PROGRAMOVAŤ? (programátor radí) https://www.youtube.com/watch?v=LG-d_BOZE6k
+- nenuť se do toho, vyhoříš, skončíš brzy
+- nedělej 12hodinovky měsíc v kuse
+- dej tomu každý den hodinku, udělej si to udržitelné, 3-4h maximálně https://www.oliverburkeman.com/fourhours
+- pocitej s tim ze budes prekonavat problemy, prekonavat frustraci, atd.
+- nesrovnavej se s nekym kdo v kurzu na youtube jede šup šup šup a všechno umí. je to jako kdyz se ucis kreslit a srovnavas se s nejakym karikaturistou na karlove moste
+- tu kousek tam kousek, ne busit a vyhoret
+- po mesici se podivej co za tebou zustalo
+- zabava je lepsi motivator nez "muset"
+
+-->
+
 ## Kolik projektů a jak velké
+
+<!--
 
 --- https://discord.com/channels/769966886598737931/1067513448168181850/1067758031472967750
 hele mám 6 projektů
@@ -179,7 +183,36 @@ U ukázkového projektu by mě tedy zajímalo především:
 Petr Viktorin:
 Kdyz delam povor ja, beru projekt jako odrazovy mustek pro dalsi diskuzi. Kdyz tam treba vidim pouziti nejake slozitejsi techniky nebo jinou zajimavost, tak se zeptam na neco vic o ni -- kde se o tom kandidat dozvedel, co si o tom dohledal, proc pouzil X misto Y. Driv jsem mel predem pripravene otazky, ale ty se prilis casto trefi do neceho na co kandidat na sve ceste zrovna jeste nenarazil. (Teda krome absolventu VŠ informatiky s otazkama co meli na zkousce.)
 
+-->
+
+## Jak moc využívat AI
+
+<!-- DOPLNIT: jak udelat MOAT v dobe kdy je AI -->
+<!--
+To je super pro rok 2021. Teď je 2026. Senior takový projekt vygeneruje s pomocí AI za 2 dny. Ukaž, že to umíš taky. (Nepotřebuješ know-how nebo skill, je to AI minset a Cursor AI, co potřebuješ.) Ukaž, že jsi zabiják 🏴‍☠️, "team-of-one" 💀, a že píšeš jeden projekt za druhým 😵😵😵 když zrovna v noci nespíš. Firmy mají dnes těžké se uživit a pokud nejdeš do korporátu, potřebují, abys jim vygeneroval větší zisk, než je stojíš.
+
+Nakonec prezentace. Na kód nikdo koukat nebude - stejně je to AI. (Ano, je to pro všechny okolo AI, i kdyby jsi to psal ručně a strávil nad tím měsíc.). Udělej super krátké 50s video, kde odprezentuješ, co aplikace umí. Moje zkušenost - někteří HR si ta videa pouští a pak zpětně chválí. 🥳
+
+https://www.linkedin.com/posts/lukasbednarik_jak-dostat-pr%C3%A1ci-jako-junior-developer-v-activity-7427646943742414848-I8TX/
+-->
+
 ## Co tvořit
+
+Inspirace na projekt se nejlépe hledá přímo okolo tebe:
+
+*   Jednoduchá hra, např. piškvorky nebo [had](https://naucse.python.cz/2018/snake-brno/),
+*   automatizace něčeho, co teď na počítači musíš dělat ručně (mrkni na [tuto knihu](https://automatetheboringstuff.com)),
+*   program na procvičování příkladů nebo slovíček pro děti do školy,
+*   [osobní webová stránka](candidate.md#osobni-web-a-blog).
+
+Pokud vlastní nápad nepřichází a mentor není po ruce, můžeš zkusit [hackathon](collaboration.md) nebo [open source](collaboration.md).
+
+<!--
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1212356957240033331
+> My advice to a beginner dev struggling with their side-projects would be to always make sure that you're doing them for yourself, and for the right reasons. Instead of approaching your first project purely as a means to make it big or to impress recruiters, see it firstly as a means to learn and explore what's possible.
+https://robbowen.digital/wrote-about/abandoned-side-projects/
+---
 
 --- https://discord.com/channels/769966886598737931/769966887055392768/859041142553051138
 Z mých poznámek, kde se dají sehnat projekty na rozjezd:
@@ -300,13 +333,23 @@ P.S. 4️⃣ Dokumentace! Mít podrobnou a přehlednou dokumentaci projektu v AJ
 
 zminit se o challenge v klubu
 
+-->
+
 ### Školní projekty
+
+<!--
+
+**Vysoká škola taky končí vlastním projektem – bakalářkou nebo diplomkou.** Kdo si dobře vybral a povedla se mu, může se s ní klidně chlubit na pohovorech namísto projektu. Závěrečná práce taky vyžaduje dlouhodobé a intenzivní úsilí, tah na branku, překonávání překážek, schopnost prioritizace a dotáhnutí věci do konce.
 
 Školní projekty bývají typicky menší. Třeba na VUT FIT jsme projekty větší velikosti dělali i v běžné výuce, ale v týmu a byl na to celý semestr. V době, kdy jsem VUT FIT studoval (tzn. ~10 let zpět, tehdy ještě ČVUT FIT ani neexistoval), měla ta škola mnohem větší podíl praktických projektů ve výuce než jiné školy u nás. Někteří absolventi jiných IT fakult se s praktickým projektem potkali skoro až po škole. Jak je to dnes, to upřímně nevím (zajímalo by mě to).
 
 Jak tady už lidi radí, kurz nestačí - i kdyby ti to na kurzu nastokrát opakovali 🙂 Pár takových kurzů se blíží k tomu, aby to stačilo, ale i tak někdy pochybuju. Až se něco naučíš, potřebuješ si to pak sám na něčem vyzkoušet a dokázat tím sobě a později na pohovoru ostatním, že nabyté znalosti dokážeš samostatně aplikovat. Samostatně neznamená, že ti nesmí nikdo radit, to vůbec, ale že sám postupuješ a postupně něco tvoříš, debuguješ, hledáš řešení, vybíráš řešení, aplikuješ rady, analyzuješ problém, rozvrhneš si práci.
 
+-->
+
 ### Úkoly z pohovorů
+
+<!--
 
 projekty vs zadání na pohovory
 
@@ -315,7 +358,11 @@ jedno zadaní od firmy, které jsem vypracoval, jsem si dal taky na github, krit
 Zadání práce na doma mi dává smysl jen pokud není kód, nad kterým se můžu s kandidátem bavit a když ten kód je, ideálně bez práce dostupný na GitHubu, tak nemá cenu je zadávat.
 A na pohovoru se budu (kromě samotné náplně práce) bavit právě o tom kódu… Ne každý si může dovolit mít projekty, ale pořád je to mnohem víc lidí, než si může dovolit studovat VŠ.
 
+-->
+
 ### Týmové projekty a přispívání do open source
+
+<!--
 
 --- https://discord.com/channels/769966886598737931/1054825337160212571/1057998994980221040
 <@668226181769986078> Myslím si, že i jinak proaktivní jedinci můžou mít s projekty problém, ať už se bavíme o jejich vymýšlení nebo realizaci. Společný projekt podle mě člověka více "nakopne", vyzkouší si (byť třeba v hodně omezené míře) spolupracovat s někým jiným a může se u toho naučit věci, se kterými se u samostatného projektu setkat nemusí 🙂 Může se tak třeba podílet i na něčem větším, co by jinak sám nezvládl. Někdo by to taky mohl vidět jako hybrida vlastního projektu a přispívání do něčeho open-source 🤷‍♂️
@@ -360,7 +407,11 @@ Souhlas s ostatními a trochu to rozepíšu:
 
 v klubu muzou udelat projektovou skupinku
 
-### Vlastní webovka neboli portfolio
+-->
+
+### Osobní webovka neboli portfolio
+
+<!--
 
 --- https://discord.com/channels/769966886598737931/1256028325105897583/1256201188039458857
 Kdy bych s portfoliem neztrácel čas (stačí splnit jediný bod).
@@ -377,7 +428,11 @@ Nemyslím si, že je nutné ho mít, ale mají ho všichni klienti <:coreskill:9
 Proč? Protože je to výborné zadání na jednoduchý statický web, kterým začínáme a je méně motivující dělat nějaký cvičný, který se pak zahodí, než tohle, co má nějakej smysl a navíc obsah je jasnej. Taky je časem větší motivace ho upravovat a vylepšovat.
 ---
 
+-->
+
 ### E-shop pro tetičku
+
+<!--
 
 PROC NEDELAT ESHOPY
 Rozhodně ne jako byznys model pro začátečníka v oboru. Fungující byznys modely v tomto směru:
@@ -416,7 +471,11 @@ Toto me hodne namotivovalo 🙂
 rady od mentorů, AI
 v klubu muzou dostat guidance
 
+-->
+
 ## Kdy je projekt hotový
+
+<!--
 
 – nekódují podle návrhu, přestože to je většina práce pro většinu těch, co CSS tvoří
 – kódují podle návrhu v PNG/JPG apod. místo Figmy (případně XD nebo Sketche)
@@ -467,7 +526,11 @@ Souhlas, hlavně ta druhá část od
 je přesná.
 ---
 
+-->
+
 ## Repozitáře na GitHubu
+
+<!--
 
 commit messages maju hlavu a patu (kludne "initial commit" a "add numpy", hlavne nech to nie je "dfasdf")
 
@@ -531,7 +594,14 @@ Taky využij funkce GitHubu a doplň popisy těch projektů. Radši dobrou češ
 
 Nicméně v kódu je asi lepší angličtina pro názvy proměnných i když upřímně je to to poslední, co bych při zkoumání toho, jak někdo přemýšlí řešil. To už by mě víc zajímalo, jestli ty názvy opravdu popisují to, co obsahují nebo co funkce dělají…
 
+-->
+
 ## Soubor .gitignore
+
+<!--
+
+Dobre: Poslat se žádostí o práci odkaz na svůj veřejný projekt na GitHubu
+Spatne: Poslat se žádostí o práci odkaz na svůj veřejný projekt na GitHubu, kam jste commitli a pushli také složky jako __pycache__, node_modules a další a taky přístupy na ssh, k databázi a k emailu, které ta aplikace využívá.
 
 Taky mrkni na .gitignore a přidej si tam složku .idea.
 
@@ -543,7 +613,14 @@ Taky mrkni na .gitignore a přidej si tam složku .idea.
 - Github se to trochu snaží hlídat, ale samozřejmě to není stoprocentní: [https://docs.github.com/en/code-security/secret-security/about-secret-scanning](https://docs.github.com/en/code-security/secret-security/about-secret-scanning "https://docs.github.com/en/code-security/secret-security/about-secret-scanning")
 - Jasně. Ty složky, co jsem jmenoval, se do verzovacího systému nepřidávají, protože to nemá smysl. Je to spíš znak toho, že ti jako samoukovi a začátečníkovi něco uteklo.
 
+-->
+
 ## README a dokumentace
+
+<!--
+
+TODO: udelat kapitolu o README
+DOPLNIT: jak udělat demo konzolové aplikace, vyloženě návod na animovaný obrázek z terminálu - třeba https://github.com/AdriansRepos/VyukaNasobilky
 
 je pekna dokumentacia v README.md (co to je na 2 vety, screenshot - aj ked to je len command line, super-strucny postup ako to instalovat a spustit)
 
@@ -615,7 +692,11 @@ Jak to máte u svých veřejných projektů vy? Stačí upozornění, nebo to ra
 
 A k těm si vyplň **dobře** 1) popis, abych rychle zjistil o co jde už z přehledu a url přímo na GitHubu, abych se mohl podívat na běžící web, pokud to jde (k tomu ne moc podstatná věc, [https://pet-finder.netlify.app/#/](https://pet-finder.netlify.app/#/ "https://pet-finder.netlify.app/#/") -> [https://pet-finder.netlify.app/](https://pet-finder.netlify.app/ "https://pet-finder.netlify.app/"))
 
+-->
+
 ## Tokeny a přístupová hesla
+
+<!--
 
 --- https://discord.com/channels/769966886598737931/1090649291804135485/1090912862542766121
 
@@ -636,7 +717,11 @@ gitleaks projdou kod a oznami vsechno co vypada jako token atd.
 
 S těmi tokeny apod. doporucuju projít si [https://12factor.net/](https://12factor.net/ "https://12factor.net/"), to je v podstatě standard, jak se dnes delaji webové aplikace z hlediska konfigurace, nasazováni, apod. Mnoho lidi by řeklo ze to je takový nepsany, obecně prijimany standard, ale on není nepsany, je popsaný tady na tom webu ![😀](https://discord.com/assets/503f3c92fca30bb4275f.svg) Především [https://12factor.net/config](https://12factor.net/config "https://12factor.net/config") se konkrétně zabývá tím jak dělat konfiguraci tak, aby se nemusel nějaký token nebo heslo commitnout do gitu, kde to uvidí všichni
 
+-->
+
 ## Bonusové body
+
+<!--
 
 testy
 
@@ -661,7 +746,11 @@ Par bodu na ktere se doporucuju podivat (a bez kterych si nedokazu predstavit re
 Neni potreba ani jedna z tech veci a asi nikdo neceka, ze takovy projekt bude mit vsechny, ale kazda pomuze. Vzdy radsi uvidim jeden projekt ktery ma alespon par techto veci nez 4x rozpracovany tutorial.
 ---
 
+-->
+
 ## Sdílení a zpětná vazba
+
+<!--
 
 V průběhu to někam nahrát a ukazovat lidem, ať si do toho klikají a počítají slepice. Třeba ti i napíšou, že to nefunguje dobře na mobilu, nebo něco poradí. Nemusí to být hotové, protože to nebude hotové nikdy. Kód nahraješ třeba na ten GitHub a do CV dáš na oboje odkaz - na kód i výsledek. Vyladíš CV a už v průběhu, co vylepšuješ kalkulačku na slepice, začneš CVčko posílat na juniorní nabídky, nebo sem napíšeš znovu a nabídneš se, ale už s něčím v ruce. Jak by vypadal tvůj status tady, kdyby k němu byl odkaz na kalkulačku slepic? 😃 Jako zní to vtipně, ale já si myslím, že bys pár nabídek práce už i dostal.
 
@@ -676,7 +765,11 @@ https://dariagrudzien.com/posts/the-one-about-giving-and-receiving-feedback/
 
 zpetna vazba v klubu na junior.guru, testeri
 
+-->
+
 ## Inspirace
+
+<!--
 
 extrem: I Recreated Shazam's Algorithm from Scratch because no one is hiring jnr devs
 https://www.youtube.com/watch?app=desktop&v=a0CVCcb0RJM
@@ -710,4 +803,6 @@ Zajímavé věci se ženou do CSS. Líbí se mi, jak si s tím vším borec hraj
 
 inspirace: vypsat nejake projekty lidi z candidates a reklama na candidates
 
-#} -->
+-->
+
+#}
