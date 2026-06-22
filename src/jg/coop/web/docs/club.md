@@ -22,10 +22,10 @@ Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáha
 <div class="numbers">
 {% set years = today.year - 2021 %}
 {% call markdown() %}
-- **{{ years }}** {{ years|nplurals("rok", "roky", "let") }} komunity
 - **{{ members_total_count }}** členů klubu
 - **{{ charts.members_women_today|round|int }}%** jsou ženy
 - **{{ events_recordings_count }}** záznamů přednášek
+- **{{ years }}** {{ years|nplurals("rok", "roky", "let") }} komunity
 {% endcall %}
 </div>
 

@@ -91,7 +91,10 @@ $masthead-eggshell-height: map.get($spacers, 5);
 
 .masthead .numbers ul {
   margin-top: map.get($spacers, 4);
-  border-color: $jg-yellow-dark;
+}
+
+.masthead .numbers li {
+  width: 25%;
 }
 
 .masthead-object-container {

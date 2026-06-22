@@ -4,10 +4,7 @@
   ul {
     @extend .list-unstyled;
     display: flex;
-    gap: map.get($spacers, 2);
-    justify-content: space-around;
-    padding: $spacer;
-    margin: 0 $spacer;
+    gap: map.get($spacers, 5);
     border-color: transparent;
     border-style: solid;
     border-width: 2px;
