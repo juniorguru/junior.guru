@@ -16,7 +16,7 @@ template: main_handbook.html
 
 {% call note(standout=True) %}
   {{ 'exclamation-circle'|icon }}
-  Kapitola se teprve připravuje, ale popravdě, teď není úplně na pořadu dne ji dopsat. Honza se teď věnuje spíš jiným oblastem. Přečti si [Jak si vybrat IT kurz?](https://lucietvrdikova.cz/nahlednete-za-oponu-jak-si-vybrat-it-kurz/) od Lucie Tvrdíkové, což je zatím nejlepší popis téhle problematiky, ačkoliv ne 100% nezávislý.
+  Kapitola se teprve připravuje, ale popravdě, teď není úplně na pořadu dne ji dopsat. Honza se teď prioritně věnuje jiným kapitolám. Přečti si [Jak si vybrat IT kurz?](https://lucietvrdikova.cz/nahlednete-za-oponu-jak-si-vybrat-it-kurz/) od Lucie Tvrdíkové, což je zatím nejlepší popis téhle problematiky, ačkoliv ne 100% nezávislý.
 {% endcall %}
 
 ## Stačí kurz?
