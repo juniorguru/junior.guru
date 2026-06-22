@@ -907,7 +907,7 @@ wheels = [
 [[package]]
 name = "jg-beak"
 version = "0.0"
-source = { git = "https://github.com/juniorguru/beak.git#20776c6b61c4529520b405ad300fa18a7898289d" }
+source = { git = "https://github.com/juniorguru/beak.git#6a86e0276e065dd385e3889d7965e556f7576795" }
 dependencies = [
     { name = "click" },
 ]
@@ -1053,7 +1053,7 @@ dev = [
 [[package]]
 name = "jg-eggtray"
 version = "0.0"
-source = { git = "https://github.com/juniorguru/eggtray.git#e92b262505765efa2704dc593d34201d08065099" }
+source = { git = "https://github.com/juniorguru/eggtray.git#9fbcd10cc1ee05baaf0efb2b7dd811f7a041c509" }
 dependencies = [
     { name = "click" },
     { name = "diskcache" },
@@ -1071,7 +1071,7 @@ dependencies = [
 [[package]]
 name = "jg-hen"
 version = "0.0"
-source = { git = "https://github.com/juniorguru/hen.git#4e1c3cd0af2b700259f9aeae871e7fa99cada5e1" }
+source = { git = "https://github.com/juniorguru/hen.git#726dcf340075c579ae95106a890fdef914177dab" }
 dependencies = [
     { name = "beautifulsoup4" },
     { name = "blinker" },
