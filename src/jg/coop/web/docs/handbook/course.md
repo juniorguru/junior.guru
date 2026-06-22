@@ -15,8 +15,8 @@ template: main_handbook.html
 [TOC]
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
-  Mezitím si můžeš přečíst [Jak si vybrat IT kurz?](https://lucietvrdikova.cz/nahlednete-za-oponu-jak-si-vybrat-it-kurz/) od Lucie Tvrdíkové, což je zatím nejlepší popis téhle problematiky, ačkoliv ne 100% nezávislý.
+  {{ 'exclamation-circle'|icon }}
+  Kapitola se teprve připravuje, ale popravdě, teď není úplně na pořadu dne ji dopsat. Honza se teď věnuje spíš jiným oblastem. Přečti si [Jak si vybrat IT kurz?](https://lucietvrdikova.cz/nahlednete-za-oponu-jak-si-vybrat-it-kurz/) od Lucie Tvrdíkové, což je zatím nejlepší popis téhle problematiky, ačkoliv ne 100% nezávislý.
 {% endcall %}
 
 ## Stačí kurz?
