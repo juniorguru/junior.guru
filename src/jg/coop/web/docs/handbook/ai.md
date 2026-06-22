@@ -691,4 +691,8 @@ Pro nás tady asi žádný nový objev, ale je fajn si o tom přečíst i jinde 
 ---
 
 
+https://www.miroslavudan.com/blog/jak-jsem-sam-za-pet-tydnu-postavil-saas-ktery-mi-loni-nacenili-na-dva-miliony/
+tohle je ale clovek s mega zkusenostmi z predchozich firem, vycepovany, a AI ho dokaze posunout strasne moc, protoze i kdyz neumi programovat, tak ma nasbirany unikatni koktejl znalosti, ktery muze tou AI strasne moc znasobit. clovek, ktery nema „privilegia“ (napriklad si nezaplati nejaky brutal tarif u LLM) a „zkusenosti“ (nevi ze existuje security a co ma pohlidat, nevi co je validace formulare, atd. on tam predpoklada hromady veci jako automaticke, ale on akorat proste nevidi tu bednu na ktere stoji, ze jim vubec rozumi, nebo ze vi, ze existuji) a prodava to jako navod pro kazdeho. na jednu stranu je to uzasne co jde, na druhou stranu tohle proste neni navod pro kazdeho a pokud nekdo nema ty jeho zkusenosti, tak vytvori zmetek, ktery se za tyden rozpadne. nebo """Když se ptám „je tahle funkce fakt nutná?“, chci slyšet i odpověď „není“. Nejlevnější funkce je ta, kterou neuděláte.""" to jsou vsechno veci, ktere by si rekl programator, a on si je rekne taky, ale proto, ze stravil s programatory strasne moc casu v jedne mistnosti, stejne tak testy, atd. on chape ty koncepty. """zírám na localhost""" je normalne programátorská hantýrka, zejo. Pise """Rozsekejte práci na malé kusy""" a to je presne ale mysleni, ktere se roky uci programator. on to pise jako ze to je jednoduchy, ale ono neni.
+https://honzajavorek.cz/blog/jak-programator-sam-za-pet-tydnu-postavil-saas-ktery-mu-loni-nacenili-na-dva-miliony/
+
 #} -->
