@@ -23,7 +23,7 @@ template: main_handbook.html
 Git je **nástroj, který ti umožňuje sledovat historii změn v kódu a sdílet kód s dalšími lidmi**. Je to program, který nainstaluješ do svého počítače a pracuješ s ním v příkazové řádce, nebo jej ovládáš např. prostřednictvím svého editoru.
 
 {% call note() %}
-  {{ 'lightbulb'|icon }} Nejde o zkratku, takže se název píše opravdu Git a ne GIT. Není to zkratka. Slovo „git” v britské angličtině hovorově znamená „blbec”.
+  {{ 'lightbulb'|icon }} Nejde o zkratku, takže se název píše opravdu Git a ne GIT. Slovo „git” v britské angličtině hovorově znamená „blbec”.
 {% endcall %}
 
 Git se dnes **používá skoro v každé firmě**. Nejvíc jeho funkce vyniknou při práci ve dvou a více lidech, ale hodit se mohou i jednotlivcům:
