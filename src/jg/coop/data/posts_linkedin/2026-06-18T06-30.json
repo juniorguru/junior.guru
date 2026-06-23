@@ -1,0 +1,168 @@
+{
+  "type": "image",
+  "images": [],
+  "isActivity": false,
+  "urn": "urn:li:activity:7473260783649480705",
+  "url": "https://www.linkedin.com/posts/honzajavorek_%C5%BEiv%C3%A1-discord-komunita-bezpe%C4%8Dn%C3%A9-m%C3%ADsto-pestr%C3%A1-activity-7473260783649480705-YXdP",
+  "timeSincePosted": "4d",
+  "shareUrn": "urn:li:share:7465387829624397824",
+  "text": "Živá Discord komunita, bezpečné místo, pestrá parta.\n\nSnažím se udělat teaser na klub pro novou homepage junior.guru a zatím to vypadá takhle.\n\nTrochu si s tím nevím rady, protože je pro mně strašně těžké vydestilovat ty pilíře, které dělají klub klubem, a najít největší lákadla, která lidi namotivují kliknout a zjistit si o naší komunitě něco víc.\n\nSnad to bude takhle aspoň dobrý začátek a zbytek se doladí za pochodu. Napadá vás, co by tam mělo být jinak?\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1781775833319,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7473260783649480705?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7473260783649480705%2C7473309504789520385%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287473309504789520385%2Curn%3Ali%3Aactivity%3A7473260783649480705%29",
+      "text": "Az budou chechtaky, urcite se prihlasim :-))",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Karla",
+        "lastName": "Root",
+        "occupation": "Stay calm. Ask AI first, then decide whether to panic. 👣 Data never lie. People do.",
+        "id": "420075610",
+        "publicId": "karlaroot",
+        "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Vácha",
+        "occupation": "Head of Engineering",
+        "id": "76115329",
+        "publicId": "vachapetr",
+        "profileId": "ACoAAASJbYEBMeOmhTR-EWaXg0q9HUTng5HCt9E"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Helena",
+        "lastName": "Lorenc",
+        "occupation": "Career Counseling | Learning & Development | Data | Founder of Buď aktivní - the biggest database of opportunities for students in Czechia",
+        "id": "465803442",
+        "publicId": "helena-lorenc",
+        "profileId": "ACoAABvDmLIBI599JC2ZTdlrqbioIMgP9UeboOI"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Benešová",
+        "occupation": "Vedu péči o dobrovolníky v Czechitas🩷",
+        "id": "1036178862",
+        "publicId": "jana-benešová-66602024b",
+        "profileId": "ACoAAD3C1a4Bwb3HrDCRzQTyWV3hn1tRhr72LlU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Dinh",
+        "occupation": "🧋",
+        "id": "93710529",
+        "publicId": "tomasdinh",
+        "profileId": "ACoAAAWV6MEBhDedvZT9lRhWi3Woz4OTpEvJ8r0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Matěj",
+        "lastName": "Kahún",
+        "occupation": "Komuniťák v Czechitas 🏄‍♂️",
+        "id": "726742558",
+        "publicId": "matejkahun",
+        "profileId": "ACoAACtRNh4Bgs49PDAKRTrJ0zQclHv-UqoqjOs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Patrik",
+        "lastName": "Brnušák",
+        "occupation": "Otevřen novým příležitostem",
+        "id": "666440295",
+        "publicId": "patrik-brnusak-cz",
+        "profileId": "ACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavla",
+        "lastName": "Beránková",
+        "occupation": "PHP programátorka",
+        "id": "549611439",
+        "publicId": "berankova-pavla",
+        "profileId": "ACoAACDCZ68BhDuYokjdegYmFm0rxSx_6Mlwh9c"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Karla",
+        "lastName": "Root",
+        "occupation": "Stay calm. Ask AI first, then decide whether to panic. 👣 Data never lie. People do.",
+        "id": "420075610",
+        "publicId": "karlaroot",
+        "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Meissner",
+        "occupation": "Product & Tech Community Lead at Mews",
+        "id": "677292059",
+        "publicId": "jan-meissner",
+        "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Zuzana",
+        "lastName": "Bodri",
+        "occupation": "QA Engineer | Test Automation Enthusiast | SAP & HRIS Specialist | Czechitas DA Testing Graduate",
+        "id": "221016832",
+        "publicId": "zuzanabodri",
+        "profileId": "ACoAAA0scwABJpACMUjr-uyYFHcpxEGnpoxwrks"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 13,
+  "numComments": 3,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1781764217293,
+  "postedAtISO": "2026-06-18T06:30:17.293Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

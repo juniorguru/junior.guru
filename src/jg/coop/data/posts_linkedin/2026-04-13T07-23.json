@@ -4,7 +4,7 @@
   "isActivity": false,
   "urn": "urn:li:activity:7449356461664714753",
   "url": "https://www.linkedin.com/posts/honzajavorek_stahuju-nab%C3%ADdky-pr%C3%A1ce-zportalisossgovcz-activity-7449356461664714753-4-1L",
-  "timeSincePosted": "1mo",
+  "timeSincePosted": "2mo",
   "shareUrn": "urn:li:share:7449356460381171712",
   "text": "Stahuju nabídky práce z portal.isoss.gov.cz, čímž jsem omylem vytvořil kontrolu uptimu toho portálu.\n\nTeď tam je už 4 dny „Služba je dočasně nedostupná z důvodu údržby systému“ a v mých systémech celou dobu blikají kontrolky.\n\nDělám to, abych státu pomoh obsadit IT role. Nemám z toho nic. Musel jsem to vyrobit, ještě v době před AI. Když se něco změní, opravuju to. Jsou z toho jednotky inzerátů na junior.guru/jobs/\n\nZjevně mi na té službě záleží víc, než jejím autorům. Mám to smazat?\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
   "attributes": [],
@@ -126,17 +126,6 @@
     {
       "type": "LIKE",
       "profile": {
-        "firstName": "Magdalena",
-        "lastName": "Grecová",
-        "occupation": "Aspiring Data Analyst | Czechitas Digitální akademie Data",
-        "id": "1650544248",
-        "publicId": "magdalena-grecova",
-        "profileId": "ACoAAGJhTngBFgAIt3drKZqAK6I_8UL80lMEiOU"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
         "firstName": "Václav",
         "lastName": "Lorenc",
         "occupation": "Principal Information Security Engineer at HERE",
@@ -150,7 +139,7 @@
       "profile": {
         "firstName": "Karel",
         "lastName": "Pěnka",
-        "occupation": "Moderní cesta k práci | RobJob.cz",
+        "occupation": "🚀 Moderní cesta k práci | RobJob.cz | Chytřejší nábor",
         "id": "187704089",
         "publicId": "karel-pěnka-075a4152",
         "profileId": "ACoAAAswIxkBvZTVBZB2Gkr6ymyh-F_4-GgKb4U"
@@ -161,7 +150,7 @@
       "profile": {
         "firstName": "Pavel",
         "lastName": "Eliáš",
-        "occupation": "IT Specialista : SAP ERP, SAP Testing - S/4 HANA, Linux CentOS: Disk Management, LVM disks, Iptables, BIND, Postfix, Samba, NFS, DHCP, Apache Cisco: Configuration of routers, switches, VLAN, NAT, Wi-Fi.",
+        "occupation": "Správce informačního systému Helios Nephrite ve společnosti VÍTKOVICE IT SOLUTIONS a.s.",
         "id": "485340171",
         "publicId": "pavel-eliáš-1a3658116",
         "profileId": "ACoAABzttAsBLPi5MZCx4hPM2gRu8K1psxHEGFI"
@@ -187,6 +176,17 @@
         "id": "188339170",
         "publicId": "ivo-komarek",
         "profileId": "ACoAAAs50-IBujpmaaf7NQt5dflNvxTz8huNALM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martina",
+        "lastName": "Vyoralová",
+        "occupation": "Junior QA Tester | Absolventka Czechitas Digitální akademie | Zaměřená na kvalitu, detail a spolehlivost",
+        "id": "1427573187",
+        "publicId": "martinavyoralova",
+        "profileId": "ACoAAFUXCcMBlHZ6I3TCwWXfe4Wcib7gzTUnsDc"
       }
     }
   ],

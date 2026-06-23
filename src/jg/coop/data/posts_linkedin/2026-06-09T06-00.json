@@ -1,0 +1,128 @@
+{
+  "type": "image",
+  "images": [],
+  "isActivity": false,
+  "urn": "urn:li:activity:7469991776754262017",
+  "url": "https://www.linkedin.com/posts/honzajavorek_%C5%A1est-n%C3%A1stroj%C5%AF-jeden-c%C3%ADl-kvalitn%C3%AD-kandid%C3%A1t-activity-7469991776754262017-0mkn",
+  "timeSincePosted": "1w",
+  "shareUrn": "urn:li:share:7465386474734104576",
+  "text": "Šest nástrojů, jeden cíl: Kvalitní kandidát\n\nTohle je nová sekce na homepage junior.guru. Původně jsem myslel, že tam dám jen rozcestník.\n\nJak ale teď vybírám různé věci do domácnosti, všiml jsem si, že firmy vyrábějící vodovodní baterie, zástěny na vanu, sporáky, digestoře, nebo žárovky… to dělají jinak.\n\nPopisují, co ta jejich věc dělá dobře, případně jinak. Tohle je promyšlené tak, aby to vydrželo a neničilo se. Tohle je z dobrého materiálu. Na tohle jsme mysleli. Tohle chcete, protože.\n\nA nejlíp je to ještě jako šest nějakých ikonek, abyste viděli, na co vše při výrobě pamatovali, a abyste si chtěli koupit tenhle jejich systém. Abyste věřili tomu, že tahle značka ví, co dělá.\n\nTak jsem to zkusil taky. Šest nástrojů, které člověku pomohou stát se kvalitním kandidátem.\n\nSamo se to nestane, musí být proaktivní a ty nástroje umět využít ke svému prospěchu. Ale jsou tady a tím kvalitním kandidátem být můžete, když budete chtít. A kromě klubu jsou tam všechny zdarma.\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daniel",
+        "lastName": "Kohoutek",
+        "occupation": "It",
+        "id": "363086630",
+        "publicId": "daniel-kohoutek-6b271ba1",
+        "profileId": "ACoAABWkQyYB03VJn05oIEuMvrsTM0MnVEvxd6Q"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Alena",
+        "lastName": "Kadecka",
+        "occupation": "Growing into Cybersecurity",
+        "id": "980524499",
+        "publicId": "alena-kadecka-1ab461234",
+        "profileId": "ACoAADpxndMBinAAl7bBHANq9NCSbSp2a1G0Mdo"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Šotnar",
+        "occupation": "Frontend Developer Trainee | JavaScript, TypeScript, React",
+        "id": "1332351529",
+        "publicId": "sotnar",
+        "profileId": "ACoAAE9qEikBy98vuvk8guHa2u80sek2g2OsTAg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Andrea",
+        "lastName": "Poláková",
+        "occupation": "Bridging Data Engineering & Data Science | Python, SQL, ML | Workflow & Reporting Enthusiast",
+        "id": "911341573",
+        "publicId": "andrea-poláková",
+        "profileId": "ACoAADZR-AUBW3eam7je1cwF0dYvW9JRkEdkUaA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavla",
+        "lastName": "Beránková",
+        "occupation": "PHP programátorka",
+        "id": "549611439",
+        "publicId": "berankova-pavla",
+        "profileId": "ACoAACDCZ68BhDuYokjdegYmFm0rxSx_6Mlwh9c"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Zmijková",
+        "occupation": "Software Developer",
+        "id": "450096743",
+        "publicId": "zmijkova",
+        "profileId": "ACoAABrT7mcBs7ie4r1nA4McNBK2tV0qfujA2v4"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Šimon",
+        "lastName": "Kořený",
+        "occupation": "Product Owner & Dad | Building great products, raising great humans",
+        "id": "283596586",
+        "publicId": "fusatytata",
+        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Tomas",
+        "lastName": "Manhal",
+        "occupation": "SEO/UX Specialist at Webmium ✅ Aspiring Backend Developer at Home ✅",
+        "id": "356811200",
+        "publicId": "tomasmanhal",
+        "profileId": "ACoAABVEgcABhXssunqzWgZ32PhPvDuM7pOY7Sw"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 8,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1780984825314,
+  "postedAtISO": "2026-06-09T06:00:25.314Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

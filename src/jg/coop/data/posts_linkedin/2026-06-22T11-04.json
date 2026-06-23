@@ -1,0 +1,433 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "type": "article",
+    "article": {
+      "type": "EXTERNAL_FULL",
+      "urn": "urn:li:article:9125292391855626551",
+      "url": "https://www.miroslavudan.com/blog/jak-jsem-sam-za-pet-tydnu-postavil-saas-ktery-mi-loni-nacenili-na-dva-miliony/",
+      "title": "Jak jsem sám za pět týdnů postavil SaaS, který mi loni nacenili na dva miliony"
+    },
+    "isActivity": false,
+    "urn": "urn:li:activity:7474699304298012672",
+    "url": "https://www.linkedin.com/posts/miroslavudan_jak-jsem-s%C3%A1m-za-p%C4%9Bt-t%C3%BDdn%C5%AF-postavil-saas-activity-7474699304298012672-LSna?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAGk6OIgB4XbDZ-jz83tt3eMSpf1QDM1gdEI",
+    "timeSincePosted": "19h",
+    "shareUrn": "urn:li:share:7474699303454830592",
+    "text": "Pratele, vy co me znate, vite, jak skromny a zaroven dokonaly clovek jsem. Obcas se sam nad tim, jak jsem sikovny, az dojmu. Ale tohle je proste ulet. 😎\n\nRok zpatky jsem mel v hlave ideu na aplikaci - hledal jsem, kdo mi ji napise, a nabidky (jen za MVP!) se pohybovaly kolem 2 mega a cca 6 mesicu prace. Jak asi vite, jeden fail za 20 mega uz mam za sebou, tak jsem byl na nesetrne utraceni lehce nervozni a dal to zatim do supliku. Za ten rok se vse posunulo nekam uplne do vesmiru. Pred 2 mesici jsem si rekl, ze zacnu vic zkoumat vibecoding, a po 5 tydnech jsem, ani nevim jak, mel apku, po ktere jsem touzil - OutOfDark.com byl na svete 🚀 (ja vim, ja vim! Ale kdyz me ta domena stala tolik penez, preci to nenecham prijit vnivec!).\n\nPosledni rok se v klidu venuji novemu byznysu. Stal jsem se zakaznikem sve byvale firmy a vznikl eshop Mincmistr.cz - skloubila se tam ma laska k historii, marketingu a budovani. S kamaradem jsme za ten rok vybudovali brand, ktery si v ramci sveho segmentu ziskal sve silne misto na slunci. Ale cely ten cas jsem porad premyslel, kde jsou ty ryce a lopaty pro ty zlatokopy (tady to skoro ani neni metafora). A nakonec jsem to objevil - udelam moderni katalog minci pro sberatele. A diky vibecodingu jsem dostal do rukou kouzelnou hulku, ktera mi vzdy chybela. Takze jsem za 5 tydnu udelal apku, ktera ma AI rozpoznavani druhu minci, cool prezentaci katalogu, jednoduchy prodej na eBay nebo Aukru, vlastni trziste, kalendare aukci, exporty/importy a, omg!, desitky dalsich funkci. Citil jsem se jako dite zamcene pres noc v hrackarstvi 🤩. Cokoliv, co jsem chtel, bylo za par hodin hotove. Zadne cekani. Zadne kompromisy. Ale nebylo to na jedno mavnuti hulkou, realne jsem na tom pracoval uplne kazdy jeden den, vzdy cca 10-12 hodin prace. A diky zkusenostem, co jsem nasbiral jako CEO/produktak/projektak ze Shoptetu, u me vznikl proces, ktery mne - neprogramatorovi - umoznil tvorit kod, ktery je (troufam si, i na zaklade externiho auditu, tvrdit) bezpecny, stabilni, bez spagety kodu, skalovatelny, UX friendly a samozlepsujici se. Za tu dobu jsem v Clickupu zavrel skoro 800 tasku (z toho zhruba tretina byla tykajici se security) a nyní je 0 tasku v backlogu! Tvl, co by bylo ze Shoptetu, kdybych tehdy mel tuhle kouzelnou hulku! 🙂\n\nA protoze nejsem sketa, sepsal jsem pro vsechny dalsi borkyne a borce, co chteji tvorit produkt v dobe, kdy uz to neni o milionech investovanych do vyvojaru, ale o produktovem, strategickem a taktickem premysleni, o nastavenych pravidlech a workflow, o totalni zmene mindsetu, clanek o tom, jak jsem si za tech 5 tydnu vybudoval svoje dalsi SaaSko. Clanek je pro produktove magory, co chteji tvorit, ale neumi programovat 🙂. A pokud mate nejake tipy, na zaklade vaseho vyladeneho workflow, sem s nimi! \n\n👇 Clanek tuna:",
+    "attributes": [
+      {
+        "start": 1845,
+        "length": 7,
+        "type": "COMPANY_NAME",
+        "company": {
+          "name": "Shoptet",
+          "universalName": "shoptet",
+          "active": true,
+          "showcase": false,
+          "entityUrn": "urn:li:fs_miniCompany:4980935"
+        }
+      }
+    ],
+    "comments": [
+      {
+        "time": 1782126821172,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474781654545448960%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474781654545448960%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
+        "text": "Dovolil jsem si reakci. Začal jsem to psát jako komentář o dvou větách tady, ale pak to nějak přeteklo, tak jsem začal psát status, ale to mi taky přeteklo, tak je to na blogu: https://honzajavorek.cz/blog/jak-programator-sam-za-pet-tydnu-postavil-saas-ktery-mu-loni-nacenili-na-dva-miliony/",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1782121087703,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474757606633496576%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474757606633496576%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
+        "text": "Miroslave, Vas clanek me inspiroval natolik, ze jsem se konecne rozhodl po 11 letech, aktualizovat OS W7 na W10 na domacim kompu abych mohl rozjet Claude na desktopu. Ted uz mi nic nebrani abych se konecne pustil do projektu, na ktery mam pripravenou domenu od 2009. :-) Takze diky moc za clanek, slupl jsem ho na jeden zatah jak malinu! K tem pravidlum, je to neco co by se dalo vice nasdilet?",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Alexandr",
+          "lastName": "Panek",
+          "occupation": "Senior Product Designer | B2C & B2B E-commerce Strategy | Managing 5 Platforms across 160 Countries | UX • CX • CRO • CSAT • Ex-Management Consulting",
+          "id": "14306832",
+          "publicId": "alexandrpanek",
+          "profileId": "ACoAAADaThABkPYl6adVaaxBrrgmkoCsxDOlWms",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1782159345385,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474918070981955586%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474918070981955586%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
+        "text": "Jako člověk sledující Mincmistra i Out of Dark z první řady musím vypíchnout jednu důležitou věc: U tebe je extrémně znát ten CEO/produkťák/projekťák background.\n\nNás za posledního půl roku oslovilo určitě 10+ vibecoded projektů. Do spolupráce jsme šli pouze s tebou. \n\nJe extrémní rozdíl mezi někým, kdo má nápad, který díky vibecodingu může snadno zkusit realizovat a tebou, kdo díky tvému backgroundu pospojuje stovky jemných faktorů, které z nápadu dělají funkční byznys a jenom potřebuješ tu lopatu, která to naprogramuje. Víš na co si dát pozor, co si pohlídat, co jak rozvinout. \n\nTakže pokud tohle čte někdo, kdo si myslí, že bude druhý Míra Uďan jen proto, že používáte stejný Claude Code (aka máte stejnou lopatu), mám pro vás smutnou zpravu. Spíš nebudete :))",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Jiří",
+          "lastName": "Schaffer",
+          "occupation": "Výkonnostní reklama 🤎 Vedu tým seniorních specialistů 🤎 Myslíme na reklamy za vás",
+          "id": "193025483",
+          "publicId": "jiri-schaffer",
+          "profileId": "ACoAAAuBVcsBSWD8z-fn4dANBvoxAJPDS-KrtUc",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1782108982252,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474706832691949568%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474706832691949568%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
+        "text": "Díky za sepsání! 👍",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Jiří",
+          "lastName": "Urban",
+          "occupation": "From Developer to CEO at Lentiamo • Sharing insights on building European e-commerce • Founder of Pod pokličkou e-commerce",
+          "id": "60154273",
+          "publicId": "urbanjiri",
+          "profileId": "ACoAAAOV4aEBos7etN_bLUuwgkv0VufLavb6cY0",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1782112027968,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474719607350747136%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474719607350747136%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
+        "text": "Skvěle sepsané. Jako neprogrmátor jsem si musel projít vlastní cestou, jak se naučit s vibecodingem. Mám vytvořenou vlastní hokejovou aplikaci a k tomu dashboard pro reporting B2B firem. Takže v tom mám dnes vlastní stovky hodin odpracovaných\n\nJsem rád, že jsem si mohl zkontrolovat vlastní setup s někým, kdo nevyužívá AI jen na chat.\n\nHodil jsem do do AI a závěr:\n\nJe to skvělá validace tvého směru od někoho, kdo postavil miliardovou firmu. Potvrzuje, že tvůj agent/memory/ústava systém je správná architektura, ne over-engineering. Systém máš často v lepší verzi. V několika věcech jsi dál než on. Máš sofistikovanější obranu proti regresím, než popisuje.",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Alexander",
+          "lastName": "Visnyai",
+          "occupation": "Stavím růstové strategie pro B2B & B2B ecommerce | BecomeX | Hokejovytrenink.cz | exGoogle certified trainer",
+          "id": "97504208",
+          "publicId": "alexander-visnyai",
+          "profileId": "ACoAAAXPy9ABkJrR4i2b4YHvST6t8L_w0XFhF7g",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1782108387733,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474704339098583040%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474704339098583040%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
+        "text": "Dobry den, Miroslave. Tohle je supr clanek, narazil jsem na nej pres random feed na FB, kdyz jsem cekal v Korei na odbavenu letu do Japonska. Zabavil me na celou frontu a hned jsem mel chut si zase neco vyrobit :) Na vibu jedu uz par mesicu, ty pocity, ktere popisujete, presne znam. Nejvic me inspirovala to robustni zadavani. Diky za konkretni, uzitecny navod k pouziti. Uz mam plny zuby tech \"open claw agentu na Mac Mini\", kterych je tady plny LI a ktere pri nejlepsim slouzi na spravu kalendare.",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Martin",
+          "lastName": "Juza",
+          "occupation": "CEO at Krutart | Building the „Pixar for Planetariums“ | Co-host of Pitch.cz - The leading podcast for Czech film professionals | Featured in Forbes",
+          "id": "175045816",
+          "publicId": "martinjuza",
+          "profileId": "ACoAAApu_LgBXvXbUijhJUiwJBzBWkqqD9o0CxM",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1782108700906,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474705652641284096%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474705652641284096%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
+        "text": "Díky moc, posielam rovno do kindle 🙇‍♂️",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Matus",
+          "lastName": "Pavliscak",
+          "occupation": "Data & AI Engineering Leader | 10+ yrs building & scaling data teams",
+          "id": "57598610",
+          "publicId": "pavliscak",
+          "profileId": "ACoAAANu4pIBeHRRpRmTNKuI3y6hmmkCDoYoFAw",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1782117872942,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474744122948431872%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474744122948431872%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
+        "text": "Miroslav Uďan To je super příběh a hlavně jsem rád že čtu o tom, že vám zkušený programátor udělal takový vibe audit. , to by měl v určité chvíli dělat každý a nevěřit jen že to \"AI nějak udělala\". \n\nBudete v budoucnu i sdílet váš konkrétní security check jak o něm píšete v článku? ",
+        "entities": [
+          {
+            "start": 0,
+            "length": 13,
+            "type": "PROFILE_MENTION",
+            "profile": {
+              "firstName": "Miroslav",
+              "lastName": "Uďan",
+              "occupation": "Angel investor 😇 & advisor 🦉 | founder & exCEO @Shoptet",
+              "id": "92922933",
+              "publicId": "miroslavudan",
+              "profileId": "ACoAAAWJ5DUB7zk_VbdheeUw6OZjTEN2_2LMRY4"
+            }
+          }
+        ],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Jan",
+          "lastName": "Ševčík",
+          "occupation": "CEO SNADNEE",
+          "id": "93995024",
+          "publicId": "jan-sevcik",
+          "profileId": "ACoAAAWaQBABqNWxGKgcSJb3y0zSIsUaEaWmhfg",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1782152177591,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474888007075094528%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474888007075094528%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
+        "text": "Keby to napísal kňaz povedzme, a nulový nadšenec, bolo by to ok.\n\nVy ste predsa len iná \"liga\" hoci nemusíte byť programátor.",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Slovak",
+        "author": {
+          "firstName": "Peter",
+          "lastName": "Haratík",
+          "occupation": "Senior online a offline obchodník. Robím čo chcem, môžem a viem. Pohodlný? Som.",
+          "id": "336826288",
+          "publicId": "peter-haratík",
+          "profileId": "ACoAABQTj7ABmJmTXG7uPafROHj0cRtEAqa6VDY",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1782111418267,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474717050079305728%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474717050079305728%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
+        "text": "Je radost sledovat, v co všechno se proměňují zkušenosti z budování Shoptetu. 🤩",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech"
+      }
+    ],
+    "reactions": [
+      {
+        "type": "INTEREST",
+        "profile": {
+          "firstName": "Filip",
+          "lastName": "Gregor",
+          "occupation": "Global Marketing Manager at Billigence | Turning Data Strategy into Market Impact",
+          "id": "88447883",
+          "publicId": "filipgregor1",
+          "profileId": "ACoAAAVFm4sBobGtr6XaMeISG1EHOI1BWSJR8qI"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Ondrej",
+          "lastName": "Tomek",
+          "occupation": "-",
+          "id": "3551234",
+          "publicId": "ondratomek",
+          "profileId": "ACoAAAA2MAIBaD6gx9cVH8zSdbOwhjQbkghebeQ"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "David P.",
+          "lastName": "Stefanovič",
+          "occupation": "NGCE Manager Baltics & Croatia+ at Takeda",
+          "id": "167587319",
+          "publicId": "davidpstefanovic",
+          "profileId": "ACoAAAn9LfcBvLa5Yw4THKEv0lXP58iHwZ7G0tY"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Šárka",
+          "lastName": "Rauchová",
+          "occupation": "CMO @ Kogi | Senior Consultant – Communication, Marketing & CX",
+          "id": "41578917",
+          "publicId": "sarkarauchova",
+          "profileId": "ACoAAAJ6caUBx5wb-vjcz582qXs2Lne-ugK-Rng"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Adam",
+          "lastName": "Trnka",
+          "occupation": "Onboarding Architect | Solution Expert @ ProductFruits | Building intelligent adoption systems that helping SaaS teams reduce time-to-value by 60%",
+          "id": "64978679",
+          "publicId": "adamtrnka",
+          "profileId": "ACoAAAPffvcBOGoL54fu6Ft7RB_SXWo94J33ELc"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Dr. Adam",
+          "lastName": "Streck",
+          "occupation": "[Postdoctoral Machine Learning Researcher] Systems Biology | Mechanistic Learning | Agent-based Models",
+          "id": "158148001",
+          "publicId": "dr-adam-streck-a01b6844",
+          "profileId": "ACoAAAltJaEBoqkAu3FzSFfoXLwNUAFOm_-z4MY"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Jiří",
+          "lastName": "Schaffer",
+          "occupation": "Výkonnostní reklama 🤎 Vedu tým seniorních specialistů 🤎 Myslíme na reklamy za vás",
+          "id": "193025483",
+          "publicId": "jiri-schaffer",
+          "profileId": "ACoAAAuBVcsBSWD8z-fn4dANBvoxAJPDS-KrtUc"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Josefina",
+          "lastName": "Vybora",
+          "occupation": "Head of Sales & Partnerships at FABINI // ex-Avast",
+          "id": "338653120",
+          "publicId": "josefinavybora",
+          "profileId": "ACoAABQvb8ABeRIiNJ38JNK9uIeSf9dTudtvwF8"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Alexandra",
+          "lastName": "Hanzlová",
+          "occupation": "Building lasting customer and partner relationships | CX | Account Management | Loyalty | Engagement",
+          "id": "203610951",
+          "publicId": "hanzlovaalex",
+          "profileId": "ACoAAAwi20cBLsj50MW5QunJl6naFsdclZfApgU"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Peter",
+          "lastName": "Haratík",
+          "occupation": "Senior online a offline obchodník. Robím čo chcem, môžem a viem. Pohodlný? Som.",
+          "id": "336826288",
+          "publicId": "peter-haratík",
+          "profileId": "ACoAABQTj7ABmJmTXG7uPafROHj0cRtEAqa6VDY"
+        }
+      }
+    ],
+    "numShares": 1,
+    "numLikes": 150,
+    "numComments": 27,
+    "canReact": true,
+    "canPostComments": true,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "ALL",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "firstName": "Miroslav",
+      "lastName": "Uďan",
+      "occupation": "Angel investor 😇 & advisor 🦉 | founder & exCEO @Shoptet",
+      "id": "92922933",
+      "publicId": "miroslavudan",
+      "profileId": "ACoAAAWJ5DUB7zk_VbdheeUw6OZjTEN2_2LMRY4"
+    },
+    "authorProfileId": "miroslavudan",
+    "authorType": "Person",
+    "authorName": "Miroslav Uďan",
+    "authorProfileUrl": "https://www.linkedin.com/in/miroslavudan?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAWJ5DUB7zk_VbdheeUw6OZjTEN2_2LMRY4",
+    "authorUrn": "urn:li:member:92922933",
+    "postedAtTimestamp": 1782107187342,
+    "postedAtISO": "2026-06-22T05:46:27.342Z"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7474779230157869056",
+  "url": "https://www.linkedin.com/posts/honzajavorek_jak-jsem-s%C3%A1m-za-p%C4%9Bt-t%C3%BDdn%C5%AF-postavil-saas-activity-7474779230157869056-6coC",
+  "timeSincePosted": "13h",
+  "shareUrn": "urn:li:share:7474779229247705090",
+  "text": "Sepsal návod na vibecoding pro netechnické lidi, ale nevšiml si, že už dávno není jedním z nich.\n\nPro produkťáka nebo CEO je důležité, jak rychle se jim myšlenky pod rukama mění v realitu a pokud se mění rychle, připadají si jako kouzelníci, kterým se splnily nejdivočejší sny.\n\nUž žádné zdržování s programátory, diskuze o technickém dluhu. Mávne hůlkou a hned si může proklikat výsledek. Když chce něco vyzkoušet jinak, nemusí se nikoho doprošovat. Iterace při tvorbě prototypu zkrácená na minuty.\n\nJe to konec programátorů?\n\nUďan nepíše kód, a tak prý není programátorem. Ve svých předchozích firmách musel při realizaci důvěřovat týmu programátorů, a to se prý nezměnilo. Jen to teď jsou AI agenti.\n\nA makají bez bordelu v kuchyňce, zdravotního a sociálního, remcání, odmlouvání a OČR. Ve dne v noci. Úkoly mizí, fičury přibývají. Kdyby náhodou měli své vlastní nápady, zakáže se to v pravidlech. Pro CEO nebo produkťáka fakt splněný sen.\n\n„Prototyp v produkci, to známe!“\n\n…smějí se programátoři, a o svou práci se nebojí. Prý protože se ten kód za půl roku zamotá do sebe a rozpadne na kousky. Nebo nebude bezpečný a někdo to hackne. Nebo to začne používat 1000 lidí místo 100 a architektura nebude připravená. A nic z toho si tihle chytráci produkťáci neuvědomují, a dožene je to.\n\n„Když jsem to dal na kontrolu zkušenému programátorovi, řekl, že tam nemá moc co dělat – že je to ze strany struktury i zabezpečení nadprůměrně připravené.“\n\n…píše zase Uďan. A já mu věřím. Víte proč? Protože mu nevěřím něco jiného: Že není programátor.\n\nChápu jeho snahu předat světu svoje nadšení a svůj objev, co všechno je dnes možné. Sepsat návod a nasdílet to, aby se do toho pustili i ostatní.\n\nJá pořád píšu nějaké návody (docs.pyvec.org, cojeapi.cz, junior.guru, docs.apify.com…) a ten pocit znám. Obdivuji každého, kdo tuhle krásnou úchylku sdílí. Ostatně mám moc rád Uďanovo svympanem.cz, návod jak začít s firmou.\n\nAle obávám se, že když o programování a obecně o tvorbě softwaru nevíte nic, tak vám jeho článek nepomůže. Uďan totiž vůbec nevidí tu horu znalostí, na které stojí, a jak dlouho se na ni škrábal. Jedna věta za všechny:\n\n„Hodně pomůže základní orientace v IT konceptech: vědět zhruba, co je databáze, co je server, co je cache a její invalidace, a aspoň trošku chápat, jak probíhají hackerské útoky. Kdo začíná úplně od nuly, zvládne to taky, ať ale počítá s delším rozjezdem.“\n\nTrávím život se začátečníky, kteří se snaží dostat do IT, tak jsem na tohle denodenně trénovaný a když ten článek procházím, jen se usmívám.\n\nUďan může díky vibecodingu vytvořit kvalitně postavený produkt jen díky tomu, že strávil dekády v jedné místnosti s programátory, a stal se programátorem. Ano, ačkoliv nenapíše ani řádek kódu.\n\n(A víc se mi tady k tomu nevlezlo, takže jsem to napsal k sobě na blog a odkaz dám do komentáře 😅 Nebyl to záměr, chtěl jsem k tomu původně napsat dvě věty, ale pak jsem prostě psal a psal a najednou mi na LinkedInu došel papír 😂 )",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1782126259511,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474779230157869056?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474779230157869056%2C7474779298772488192%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474779298772488192%2Curn%3Ali%3Aactivity%3A7474779230157869056%29",
+      "text": "Zbytek je tady: https://honzajavorek.cz/blog/jak-programator-sam-za-pet-tydnu-postavil-saas-ktery-mu-loni-nacenili-na-dva-miliony/",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Dana",
+        "lastName": "Lamatová",
+        "occupation": "Data Analyst in progress | SQL, Python, Power BI |Logistics & operations background",
+        "id": "428236412",
+        "publicId": "dana-lamatova",
+        "profileId": "ACoAABmGXnwBvB8lqpoLx_sgAzyThGezeu4okiE"
+      }
+    },
+    {
+      "type": "INTEREST",
+      "profile": {
+        "firstName": "Vladimir",
+        "lastName": "Sedlacek",
+        "occupation": "Grandmaster 🧙‍♂️ of ICT, Grey hat, e-government consultant",
+        "id": "20827742",
+        "publicId": "vladimir-sedlacek",
+        "profileId": "ACoAAAE9zl4BQ4al5Xvn16NZGxwRv6q5wFXHZ5I"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Miroslav",
+        "lastName": "Uďan",
+        "occupation": "Angel investor 😇 & advisor 🦉 | founder & exCEO @Shoptet",
+        "id": "92922933",
+        "publicId": "miroslavudan",
+        "profileId": "ACoAAAWJ5DUB7zk_VbdheeUw6OZjTEN2_2LMRY4"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 3,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1782126243152,
+  "postedAtISO": "2026-06-22T11:04:03.152Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

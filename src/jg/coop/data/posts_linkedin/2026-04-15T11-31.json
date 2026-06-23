@@ -13,7 +13,7 @@
   },
   "urn": "urn:li:activity:7450143835697061888",
   "url": "https://www.linkedin.com/posts/ondrejvlcek_breaking-on-the-back-of-our-jagged-frontier-activity-7449846611876405248-wbrR",
-  "timeSincePosted": "1mo",
+  "timeSincePosted": "2mo",
   "shareUrn": "urn:li:share:7449846609171111936",
   "text": "🔥 BREAKING: On the back of our \"Jagged Frontier\" blog post last week, we built \"nano-analyzer\" - a simple zero-day scanner (one Python file, one dependency, no agentic loop beyond simple grep) - and ran it on FreeBSD, OpenBSD, and OpenSSL, with some of the cheapest models available. \n\nThis time, no hints - the models received entire source files with no guidance on where to look. \n\nIt surfaced the same FreeBSD vulnerability (CVE-2026-4747) that Anthropic highlighted as a flagship Mythos result, multiple kernel bug candidates across FreeBSD and OpenBSD including a new bug now confirmed by the maintainer, and several additional findings under active investigation. A responsibly disclosed FreeBSD networking issue (AISLE-2026-E445) appears to have been in the codebase for over 20 years. \n\nPerhaps most striking: an open-weights model with just 5.1B active parameters independently surfaced the Mythos flagship vulnerability and multiple additional bug candidates - at 600x lower cost per token. \n\n💥 We're open-sourcing the entire analyzer codebase today.💥\n\nModels happily provided by our friends at Hugging Face (cheers Clem Delangue 🤗, Thomas Wolf, Julien Chaumond 👋)\n\nExcited to be building this with Stanislav Fort and Jaya Baloo\n\nMore details in the first comment.\n\nLET'S GO AISLE™! 🚀",
   "attributes": [
@@ -75,7 +75,7 @@
       "profile": {
         "firstName": "Stanislav",
         "lastName": "Fort",
-        "occupation": "Founder/Chief Scientist at AISLE | ex-Anthropic & DeepMind | Stanford AI/ML PhD | Forbes 30 under 30",
+        "occupation": "Founder/Chief Scientist & CTO at AISLE | ex-Anthropic & DeepMind | Stanford AI/ML PhD | Forbes 30 under 30",
         "id": "205490833",
         "publicId": "stanislav-fort",
         "profileId": "ACoAAAw_ipEBDEN3Oi3IjLIHdrWguJOBr3eNgEw"
@@ -135,7 +135,7 @@
       "author": {
         "firstName": "Manish",
         "lastName": "Sainani 🤫 ",
-        "occupation": "Co-Founder, Engineer & CEO @ hushh 🤫, ex-Google Director of Product - Core Developer & ML, GPU TPU AI/ML Infra, Board Member, Tech Advisor & Investor, ex-Microsoft AI, Splunk AI/ML, E&Y / Capgemini, UBS, ING, Adobe, Sun",
+        "occupation": "Co-Founder, Engineer & CEO @ 🤫 hussh / hushh - ex-Google Director of Product - Core AI Infrastructure, GPU TPU, Board Member, Tech Advisor & Investor, ex-Microsoft AI, Splunk AI/ML, E&Y / Capgemini, UBS, ING, Adobe, Sun",
         "id": "3436493",
         "publicId": "manishsainani",
         "profileId": "ACoAAAA0b80B9vF2lKjAiVu5MF5tVMFxA0WopDc",
@@ -237,7 +237,7 @@
       "author": {
         "firstName": "Des Raj",
         "lastName": "C.",
-        "occupation": "Building Sovereign AI Infrastructure for Enterprise | Co-Founder & CTO, Aliph Solutions | Your employees use AI daily. Does your data stay within your walls?",
+        "occupation": "Building Sovereign AI Infrastructure for Enterprise | CTO, ProcessBay | Your employees use AI daily. Does your data stay within your walls?",
         "id": "218879354",
         "publicId": "desrajchauhan",
         "profileId": "ACoAAA0L1XoBMibPYLQoKGJyXxwshP7lU5Ji2cw",
@@ -285,7 +285,7 @@
       "profile": {
         "firstName": "Sayantan",
         "lastName": "Datta",
-        "occupation": "Senior Security Consultant @ PWC | Cyber Security Former Faculty | Founder BSides Kolkata | Ex Google MLCC Facilitator | Ex FBDC Moderator | CRTP | Blockchain Evangelist | freeCodeCamp CU Lead | AWS Security",
+        "occupation": "Sr. AI Security Engineer @ Levi’s | Ex PWC | Cyber Security Former Faculty | Founder BSides Kolkata | Ex Google MLCC Facilitator | Ex FBDC Moderator | CRTP | Blockchain Evangelist | freeCodeCamp CU Lead | AWS Security",
         "id": "530522003",
         "publicId": "sayantan",
         "profileId": "ACoAAB-fH5MBeSjjGdEug0dQH9Za8vuNAR_abz8"
@@ -307,7 +307,7 @@
       "profile": {
         "firstName": "Filip",
         "lastName": "Brebera",
-        "occupation": "Making M&A deals faster with AI | CTO & Co-founder @ Plomo, Building agents & LLM stuff",
+        "occupation": "Making M&A deals faster with AI @ Plomo, building agents & LLM-based stuff",
         "id": "704156705",
         "publicId": "brebera",
         "profileId": "ACoAACn4lCEBNrZfjfyTKjH8u841SGUMu1zoTPw"
@@ -362,7 +362,7 @@
       "profile": {
         "firstName": "Alan",
         "lastName": "Xu",
-        "occupation": "AI Engineer @ GenDigital (S&P 500 | Ex. Norton) | Building reliable AI Agents for enterprise — Frontend + AI Systems",
+        "occupation": "AI Engineer | Agent systems, evaluation tooling & applied AI R&D | ex-Sr. SWE @ GenDigital/Norton/Avast",
         "id": "858307337",
         "publicId": "alanxurox",
         "profileId": "ACoAADMouwkBOUsnh9EMMYIx2wgfT3a_LCMasnE"
@@ -372,8 +372,8 @@
       "type": "LIKE",
       "profile": {
         "firstName": "Ali",
-        "lastName": "S.",
-        "occupation": "Harnessing Offensive AI to Protect Critical Infrastructure | Cybersecurity & SaaS Platforms | Accounts & New Logo | Public Speaker & Host | DEIB & ESG Champion",
+        "lastName": "Subhan",
+        "occupation": "Agentic AI, Cybersecurity & SaaS Platforms | Sales Transformation | Founding AE | Public Speaker & Host | ESG Champion | Gooner",
         "id": "2613190",
         "publicId": "alisubhan",
         "profileId": "ACoAAAAn38YBWAdgMitziddCAiTeNarpG8imbD4"

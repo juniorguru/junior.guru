@@ -1,0 +1,156 @@
+{
+  "type": "article",
+  "article": {
+    "type": "FIRST_PARTY",
+    "urn": "urn:li:linkedInArticle:7466129200152764416",
+    "url": "https://www.linkedin.com/pulse/t%25C3%25BDdenn%25C3%25AD-pozn%25C3%25A1mky-roadtrip-na-karvinsko-dokon%25C4%258Den%25C3%25AD-nov%25C3%25A9-honza-javorek-bivof?trackingId=1HgqeWG6QGC454wvG94rGA%3D%3D",
+    "title": "Týdenní poznámky: Roadtrip na Karvinsko a dokončení nové homepage",
+    "description": "Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Od posledních poznámek už utekl nějaký ten týden (21. 5. až 29. 5.), tak nastal čas"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7466129302468784128",
+  "url": "https://www.linkedin.com/posts/honzajavorek_t%C3%BDdenn%C3%AD-pozn%C3%A1mky-jak-se-mi-da%C5%99%C3%AD-v-jednom-activity-7466129302468784128-3Z5M",
+  "timeSincePosted": "3w",
+  "shareUrn": "urn:li:ugcPost:7466129302099488768",
+  "text": "Týdenní poznámky! Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Tentokrát je to na 9 min čtení 🧐",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Manivannan",
+        "lastName": "Selvaraj",
+        "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
+        "id": "13167565",
+        "publicId": "citizenmani",
+        "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ngazetungue",
+        "lastName": "Muheue",
+        "occupation": "Software Engineer | Open Source Community Leader | Founder, Ubuntu Namibia | Co-founder, Python & Django Namibia | PyCon Namibia Organizer | Active in Python/Django Communities Worldwide",
+        "id": "221253458",
+        "publicId": "ngazetungue-muheue",
+        "profileId": "ACoAAA0wD1IBIafco_2nGTY7fIO-l33yumakv88"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Kateřina",
+        "lastName": "Hroníková",
+        "occupation": "Full-stack engineer with a strong background in finances 👩‍💻 Apify doing good Ambassador ❤️ Czechitas mentor 💃 (Ultra)trails lover 🍀",
+        "id": "327394424",
+        "publicId": "katerina-hronikova",
+        "profileId": "ACoAABODpHgB8Z8XT0Q-xfLGZMGuJSS6-npRT08"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Eliáš",
+        "occupation": "Správce informačního systému Helios Nephrite ve společnosti VÍTKOVICE IT SOLUTIONS a.s.",
+        "id": "485340171",
+        "publicId": "pavel-eliáš-1a3658116",
+        "profileId": "ACoAABzttAsBLPi5MZCx4hPM2gRu8K1psxHEGFI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Přibil",
+        "occupation": "Global Sales Manager | Specialty Lubricants",
+        "id": "132002824",
+        "publicId": "petr-pribil",
+        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marcel",
+        "lastName": "Mravec",
+        "occupation": "iOS/ KMP developer / C/C++ developer / 42Prague.com student",
+        "id": "960822563",
+        "publicId": "mravec",
+        "profileId": "ACoAADlE_SMBMQ93eU8DFPPPG8mDrrPsd7fIxQ8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Dana",
+        "lastName": "Lamatová",
+        "occupation": "Data Analyst in progress | SQL, Python, Power BI |Logistics & operations background",
+        "id": "428236412",
+        "publicId": "dana-lamatova",
+        "profileId": "ACoAABmGXnwBvB8lqpoLx_sgAzyThGezeu4okiE"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Illek",
+        "occupation": "Frontend developer at Annertech. Ambasador Česko.Digital. CSGOV Founder. Drupal Developer.",
+        "id": "130527892",
+        "publicId": "petrillek",
+        "profileId": "ACoAAAfHspQBHywWAVFe_b9cRC0iYcgrUq_iWbE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomas",
+        "lastName": "Manhal",
+        "occupation": "SEO/UX Specialist at Webmium ✅ Aspiring Backend Developer at Home ✅",
+        "id": "356811200",
+        "publicId": "tomasmanhal",
+        "profileId": "ACoAABVEgcABhXssunqzWgZ32PhPvDuM7pOY7Sw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michal",
+        "lastName": "Plachý",
+        "occupation": "Junior Python Developer | Skills: Python, API, JSON, Git | Open to entry-level roles in IT | Graduate of Coding School Prague",
+        "id": "1499043274",
+        "publicId": "michal-plachy-a8a03935a",
+        "profileId": "ACoAAFlZlcoBPn1JU1mMOZ8evxr3L93O6gJIHWs"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 12,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1780063939683,
+  "postedAtISO": "2026-05-29T14:12:19.683Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

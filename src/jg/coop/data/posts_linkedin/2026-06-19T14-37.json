@@ -1,0 +1,191 @@
+{
+  "type": "article",
+  "article": {
+    "type": "FIRST_PARTY",
+    "urn": "urn:li:linkedInArticle:7473745462965997568",
+    "url": "https://www.linkedin.com/pulse/t%25C3%25BDdenn%25C3%25AD-pozn%25C3%25A1mky-depka-reelska-honza-javorek-kxylf?trackingId=q%2Fqq9o5ETueRxmogh38jaQ%3D%3D",
+    "title": "Týdenní poznámky: Depka a reelska",
+    "description": "Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Od posledních poznámek už utekl nějaký ten týden (12. 6. až 19. 6.), tak nastal čas"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7473745895994421248",
+  "url": "https://www.linkedin.com/posts/honzajavorek_t%C3%BDdenn%C3%AD-pozn%C3%A1mky-jak-se-mi-da%C5%99%C3%AD-v-jednom-activity-7473745895994421248-9qni",
+  "timeSincePosted": "3d",
+  "shareUrn": "urn:li:ugcPost:7473745895583444992",
+  "text": "Týdenní poznámky! Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Tentokrát je to na 6 min čtení 🧐",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1782060437230,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7473745895583444992?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7473745895583444992%2C7474503220111835136%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474503220111835136%2Curn%3Ali%3AugcPost%3A7473745895583444992%29",
+      "text": "Naprosto chápu vyčerpání, přeji hodně síly a gratuluji k dalšímu potomkovi :-)",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Karla",
+        "lastName": "Root",
+        "occupation": "Stay calm. Ask AI first, then decide whether to panic. 👣 Data never lie. People do.",
+        "id": "420075610",
+        "publicId": "karlaroot",
+        "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1781883523659,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7473745895583444992?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7473745895583444992%2C7473761190813511680%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287473761190813511680%2Curn%3Ali%3AugcPost%3A7473745895583444992%29",
+      "text": "Posílám objetí, sílu a rozdmýchávání podnikatelského štěstíčka! 🫂 ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Sarka",
+        "lastName": "Melicharova",
+        "occupation": "Czech language teacher for foreigners | Czech for life & Czech for exams (A2, B1, ...) | Czech Buddy",
+        "id": "648814916",
+        "publicId": "melicharova",
+        "profileId": "ACoAACasIUQBi0zapOVDWOPcCXCviPxBdRa-Lgo",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Dana",
+        "lastName": "Lamatová",
+        "occupation": "Data Analyst in progress | SQL, Python, Power BI |Logistics & operations background",
+        "id": "428236412",
+        "publicId": "dana-lamatova",
+        "profileId": "ACoAABmGXnwBvB8lqpoLx_sgAzyThGezeu4okiE"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Karla",
+        "lastName": "Root",
+        "occupation": "Stay calm. Ask AI first, then decide whether to panic. 👣 Data never lie. People do.",
+        "id": "420075610",
+        "publicId": "karlaroot",
+        "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Chovančák",
+        "occupation": "CNC obráběč kovů ⚙️ Stále je co zlepšovat a učení se novinkám nemá konce 📚 Přeskoč, přelez, nepodlez 🏃",
+        "id": "345720045",
+        "publicId": "jakub-chovančák-57994597",
+        "profileId": "ACoAABSbRO0B7tQlleLlRpEfGoxYSvDM9qNmH0k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marek",
+        "lastName": "VELAS",
+        "occupation": "Founder @EDUpunk | Learning design @Reactgirls.com | AI & Health Content Strategist | TALENT Mentor & MEME Therapist",
+        "id": "201927716",
+        "publicId": "marek-velas",
+        "profileId": "ACoAAAwJLCQB-ePqkhYoO0olYYFCoOJGgdydJEs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Táňa",
+        "lastName": "Váchová",
+        "occupation": "📌 administrativa ⊃ podpora ⊃ empatie",
+        "id": "1399848350",
+        "publicId": "tanavachova",
+        "profileId": "ACoAAFNv_Z4BxskkxA5XZSQetiT0HKCBk4rbPGE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Zuzana",
+        "lastName": "Shivram Sami",
+        "occupation": "Technical Consultant Transitioning into Data & AI | Python, SQL, ML Projects, Streamlit | 10+ Years in SAP Basis & Security",
+        "id": "112364016",
+        "publicId": "zuzana-s-sami",
+        "profileId": "ACoAAAayifABmB06rWpHFGHCST6gKfiEp-MibpI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Sanka",
+        "occupation": "Senior HR & Organizational Development Executive | HR extensive experience | Leadership | Talent development",
+        "id": "1248198738",
+        "publicId": "pavelsanka",
+        "profileId": "ACoAAEpmAFIBs1dbjA9a2V3nQHxsW5NlkIxFH08"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Vladimír",
+        "lastName": "Gorej",
+        "occupation": "Co-Founder @ 𝐒𝐩𝐞𝐜𝐋𝐲𝐧𝐱 — open, local-first API tooling · AsyncAPI maintainer · ex-Swagger · ex-Apiary · GitHub Stars alumni",
+        "id": "58899881",
+        "publicId": "vladimirgorej",
+        "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Erik",
+        "lastName": "Lerch",
+        "occupation": "PPC specialista & marketingový stratég | Nastavím vám kampaně na sociálních sítích i ve vyhledávání | Pomohu vám uchopit digitální business | Meta Ads • Google Ads • Sklik • Mergado • Mailing",
+        "id": "331751822",
+        "publicId": "eriklerch-cz",
+        "profileId": "ACoAABPGIY4BXOU63bAgY0RD5gxSKuP9QTIlNMc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Manivannan",
+        "lastName": "Selvaraj",
+        "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
+        "id": "13167565",
+        "publicId": "citizenmani",
+        "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 12,
+  "numComments": 4,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1781879877089,
+  "postedAtISO": "2026-06-19T14:37:57.089Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

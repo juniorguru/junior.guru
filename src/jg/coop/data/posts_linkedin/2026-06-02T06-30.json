@@ -1,0 +1,227 @@
+{
+  "type": "image",
+  "images": [],
+  "isActivity": false,
+  "urn": "urn:li:activity:7467462579817459712",
+  "url": "https://www.linkedin.com/posts/honzajavorek_man%C5%BEelka-byla-na-rodi%C4%8Dovsk%C3%A9-a-%C4%8Dekali-jsme-activity-7467462579817459712-WKC_",
+  "timeSincePosted": "2w",
+  "shareUrn": "urn:li:share:7465323683675504640",
+  "text": "„Manželka byla na rodičovské a čekali jsme druhé dítě — to na mě vytvářelo velký tlak. Na CV mi skoro nikdo neodepisoval a když, tak na jinou pozici. Setkání s komunitou junior.guru mi hodně pomohlo nevzdat to.“\n\nRozhovory záměrně neděláme sluníčkově oslavné, ale naopak se snažíme rozkrýt, co bylo pro lidi na cestě do IT těžké, a jak si s tím dokázali poradit.\n\n„Pracujeme na vojenském systému. Jako tester simuluji vojáka, který ho ovládá. Je to něco jako radar zajišťující přehled o bojišti — systém analyzuje pozice vysílačů signálu, například letadel, a pomocí geometrie odhaduje jejich polohu. Využívá to protivzdušná obrana, zpravodajci, dnes už i přímo v boji.“\n\nVýhoda juniorů, kteří nevylezli zrovna ze školy, ale mají zkušenosti z jiných oborů, je ta, že… mají zkušenosti z jiných oborů 😀 Petrovi odešel z armády, ale v IT našel práci, kde na to může pěkně navázat 🫡\n\nDíky Adéla Pavlun za nový rozhovor s Petr Kašička ❤️ Přečíst si ho můžete na junior.guru/stories\n\nOdkaz dám do komentářů.\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 885,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Adéla",
+        "lastName": "Pavlun",
+        "occupation": "Writer & Guide in Somatic Healing and Trauma release",
+        "id": "59184567",
+        "publicId": "adelapavlun",
+        "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"
+      }
+    },
+    {
+      "start": 917,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Kašička",
+        "occupation": "SW tester se zkušenostmi z oblasti military a bezpečnosti.",
+        "id": "1110545599",
+        "publicId": "p-kasicka",
+        "profileId": "ACoAAEIxlL8Bfkq3CiEwFXvTQla3a5z_FUgQD3w"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1780397333293,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7467462579817459712?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7467462579817459712%2C7467527656616591360%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287467527656616591360%2Curn%3Ali%3Aactivity%3A7467462579817459712%29",
+      "text": "Tohle je přesné: \"Výhoda juniorů, kteří nevylezli zrovna ze školy, ale mají zkušenosti z jiných oborů, je ta, že… mají zkušenosti z jiných oborů.\" \n\nPodepisuju! A vysvětluju to každému svému klientovi, který se snaží o větší kariérní tranzici. ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Jana ",
+        "lastName": "Buchmannová",
+        "occupation": "Kariérová poradkyně ➤ Usnadňuji a zrychluji nalezení práce, která vám sedne | Provázím kariérní změnou | Poskytuji komplexní i jednorázové poradenství | 16 let praxe • 950+ klientů • on-line nebo osobně v Brně",
+        "id": "73865761",
+        "publicId": "janabuchmannova",
+        "profileId": "ACoAAARnGiEBziyMSuekWOTA_4CKhIynPIHYD-Y",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1780387933036,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7467462579817459712?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7467462579817459712%2C7467488229080969217%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287467488229080969217%2Curn%3Ali%3Aactivity%3A7467462579817459712%29",
+      "text": "🙏💛",
+      "entities": [],
+      "pinned": false,
+      "author": {
+        "firstName": "Šimon",
+        "lastName": "Kořený",
+        "occupation": "Product Owner & Dad | Building great products, raising great humans",
+        "id": "283596586",
+        "publicId": "fusatytata",
+        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1780384370022,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7467462579817459712?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7467462579817459712%2C7467473284717031424%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287467473284717031424%2Curn%3Ali%3Aactivity%3A7467462579817459712%29",
+      "text": "Odkaz tady! https://junior.guru/stories/petr-kasicka/",
+      "entities": [],
+      "pinned": false,
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Adéla",
+        "lastName": "Pavlun",
+        "occupation": "Writer & Guide in Somatic Healing and Trauma release",
+        "id": "59184567",
+        "publicId": "adelapavlun",
+        "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Manivannan",
+        "lastName": "Selvaraj",
+        "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
+        "id": "13167565",
+        "publicId": "citizenmani",
+        "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Katarina",
+        "lastName": "Balintova",
+        "occupation": "User & Access Management Specialist | Active Directory, Azure AD | IAM | Open to Opportunities",
+        "id": "651471128",
+        "publicId": "katarina-balintova-908214162",
+        "profileId": "ACoAACbUqRgBm-ftsQ0G2pc8HyJDwW47JVDYaN4"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Ďurechová",
+        "occupation": "Operations Specialist | E-commerce Process Optimization | GA4 Student",
+        "id": "531621563",
+        "publicId": "durechova",
+        "profileId": "ACoAAB-v5rsBooIQ9wOxiE6lWhw3QYi_ZgbxHtY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Andrea",
+        "lastName": "Poláková",
+        "occupation": "Bridging Data Engineering & Data Science | Python, SQL, ML | Workflow & Reporting Enthusiast",
+        "id": "911341573",
+        "publicId": "andrea-poláková",
+        "profileId": "ACoAADZR-AUBW3eam7je1cwF0dYvW9JRkEdkUaA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tatiana",
+        "lastName": "Zakrevskaya",
+        "occupation": "Data Engineer | Data Analyst | Python lover",
+        "id": "1045181466",
+        "publicId": "tatiana-zakrevskaya",
+        "profileId": "ACoAAD5MNBoB2x6HtJWEzwAU5t769wPXTo7X6Zk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marcela",
+        "lastName": "Bačovská",
+        "occupation": "In a committed relationship with SQL",
+        "id": "1129172479",
+        "publicId": "marcela-bacovska",
+        "profileId": "ACoAAENNzf8BSZSqqeOhi8Xq5bLzMELIlCIXKU0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Dana",
+        "lastName": "Lamatová",
+        "occupation": "Data Analyst in progress | SQL, Python, Power BI |Logistics & operations background",
+        "id": "428236412",
+        "publicId": "dana-lamatova",
+        "profileId": "ACoAABmGXnwBvB8lqpoLx_sgAzyThGezeu4okiE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Sebastian",
+        "lastName": "Reed",
+        "occupation": "AI & Automation | Software Engineering",
+        "id": "1424791793",
+        "publicId": "sebastian-reed-3551b0339",
+        "profileId": "ACoAAFTsmPEBcIKyeEQlVv8SqcaAhkzTASCDGHQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Milada",
+        "lastName": "Borrow",
+        "occupation": "Junior Data Analyst, AP Accounting, Reporting, Controlling",
+        "id": "1136414018",
+        "publicId": "milada-borrow",
+        "profileId": "ACoAAEO8TUIBAcDwMiytj9V95pkvE0KMj3HLGwM"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 32,
+  "numComments": 4,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1780381817774,
+  "postedAtISO": "2026-06-02T06:30:17.774Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

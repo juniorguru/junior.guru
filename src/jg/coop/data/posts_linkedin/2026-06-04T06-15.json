@@ -1,0 +1,155 @@
+{
+  "type": "image",
+  "images": [],
+  "isActivity": false,
+  "urn": "urn:li:activity:7468183540648534016",
+  "url": "https://www.linkedin.com/posts/honzajavorek_l%C3%ADp-u%C5%BE-asi-vizu%C3%A1ln%C4%9B-nevysv%C4%9Btl%C3%ADm-k-%C4%8Demu-je-activity-7468183540648534016-ixcT",
+  "timeSincePosted": "2w",
+  "shareUrn": "urn:li:share:7465384618419150850",
+  "text": "Líp už asi vizuálně nevysvětlím, k čemu je junior.guru dobré 😅\n\nTohle je nová sekce na homepage. Propojil jsem seznam kandidátů, kteří si právě hledají práci na junior.guru/candidates, a příběhy lidmí, kteří už práci mají a spolu s Adéla Pavlun s nimi děláme rozhovory na junior.guru/stories\n\nVlevo kandidáti, které můžete rovnou oslovit, vpravo příběhy těch, kteří cestu do své první práce v IT našli.\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 232,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Adéla",
+        "lastName": "Pavlun",
+        "occupation": "Writer & Guide in Somatic Healing and Trauma release",
+        "id": "59184567",
+        "publicId": "adelapavlun",
+        "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1780576613151,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7468183540648534016?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7468183540648534016%2C7468279610842193920%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287468279610842193920%2Curn%3Ali%3Aactivity%3A7468183540648534016%29",
+      "text": "Je to krásně přehledné 👏👍 Taky jsem si přes junior.guru našla práci a pořád jsem členem klubu a čerpám tady inspiraci 💛",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Barbora",
+        "lastName": "Lendacká",
+        "occupation": "junior react developer | lifelong hands-on learner 📚",
+        "id": "244185326",
+        "publicId": "barbora-lendacka",
+        "profileId": "ACoAAA6N-O4BkRvPPyIgRFUKOlr5LSE8hcrD3UQ",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1780570767735,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7468183540648534016?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7468183540648534016%2C7468255093390479362%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287468255093390479362%2Curn%3Ali%3Aactivity%3A7468183540648534016%29",
+      "text": "Vypadá to skvěle! Je tam i nějaký řadící algoritmus, co např. upřednostňuje lidi podle toho, jak intenzivně hledají či jak dlouho?",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Adam",
+        "lastName": "Vesecky",
+        "occupation": "Product Engineer | Troll Master | Meme Lord",
+        "id": "747440841",
+        "publicId": "adam-vesecky",
+        "profileId": "ACoAACyNCskB7sVinQ5shqVPzyhnvRc9S8xEWk4",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1780569243203,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7468183540648534016?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7468183540648534016%2C7468248699039645698%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287468248699039645698%2Curn%3Ali%3Aactivity%3A7468183540648534016%29",
+      "text": "To by se mi teď mohlo hodit  ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Barbora",
+        "lastName": "Janků",
+        "occupation": "QA Engineer | Automation | Python | Manual testing | Playwright",
+        "id": "278953648",
+        "publicId": "barbora-janků",
+        "profileId": "ACoAABCgfrAB0AjgVomcjmLLotOrmul0M9j_8bE",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1780564807203,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7468183540648534016?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7468183540648534016%2C7468230093107126275%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287468230093107126275%2Curn%3Ali%3Aactivity%3A7468183540648534016%29",
+      "text": "Jsi prostě borec.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Tomáš",
+        "lastName": "Cibulec",
+        "occupation": "Python vývojář s přesahem. 🐍",
+        "id": "399499541",
+        "publicId": "ypsilonxpython",
+        "profileId": "ACoAABfP4RUBhhqww_PQuiFQs580Isbr6ZqrqOg",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1780556285810,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7468183540648534016?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7468183540648534016%2C7468194351794335745%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287468194351794335745%2Curn%3Ali%3Aactivity%3A7468183540648534016%29",
+      "text": "🙋‍♀️ děkuju za příležitost Honzo 🍀, být na seznamu kandidátů hledající práci, tato úprava přišla ve správnou chvíli 🐣",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Vendula",
+        "lastName": "Krajíčková",
+        "occupation": "Frontend vývojářka 🚀 | React, TypeScript, Next.js | Hledám novou výzvu ve frontend vývoji 👩‍💻",
+        "id": "1145616814",
+        "publicId": "vendula-krajickova",
+        "profileId": "ACoAAERIua4Bk44zfiGE6PT1BmSNoKdqiNkFOYc",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1780555705754,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7468183540648534016?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7468183540648534016%2C7468191918863253504%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287468191918863253504%2Curn%3Ali%3Aactivity%3A7468183540648534016%29",
+      "text": "Honzu a jeho web doporučuji. Také mi pomohl, našel jsem tam i inspiraci a dneska už makám v IT. 🥳",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Martin",
+        "lastName": "Čížek",
+        "occupation": "IT test analytik | Manual tester se zkušeností z bankovnictví | QA | Testování procesů | SQL | Postman | JIRA | 💙",
+        "id": "1226588575",
+        "publicId": "m-cizek",
+        "profileId": "ACoAAEkcQZ8BJdRpDYvEMxzgsu7_TE_8sSjKi_Q",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 68,
+  "numComments": 15,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1780553708231,
+  "postedAtISO": "2026-06-04T06:15:08.231Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

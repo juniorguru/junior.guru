@@ -4,7 +4,7 @@
   "isActivity": false,
   "urn": "urn:li:activity:7464993220163264512",
   "url": "https://www.linkedin.com/posts/honzajavorek_ka%C5%BEd%C3%BD-den-ru%C4%8Dn%C4%9B-prolustrovat-p%C4%9Bt-pracovn%C3%ADch-activity-7464993220163264512-rhJE",
-  "timeSincePosted": "9h",
+  "timeSincePosted": "3w",
   "shareUrn": "urn:li:share:7464993218812604419",
   "text": "Každý den ručně prolustrovat pět pracovních portálů? Sledovat, jestli zase klesla cena toho laptopu? Na tohle přece máme počítače!\n\nUž tento čtvrtek 28.5. bude u nás na Discordu Kateřina Hroníková z Apify ukazovat, jak si člověk může v životě pomoci tím, že vytvoří scraper – tedy program, který za tebe umí chodit po webu.\n\nUkáže, co web scraping je, k čemu se hodí a jak bez předchozích zkušeností začít. Vysvětlí, jak weby fungují „zevnitř“, jak najít data, která nás zajímají, a proč je scraping užitečný nástroj do výbavy každého vývojáře.\n\nA přímo během akce prý v TypeScriptu vyrobí jeden scraper, který umí sám procházet pracovní nabídky a ukládat výsledky do přehledné tabulky 😱\n\n(Což je teda jeden z pilířů junior.guru/jobs, kdybyste si to nechtěli tvořit sami 😆)\n\nJá provozuji hromadu scraperů pro pracovní i osobní potřeby, a myslím, že pro juniory je tahle oblast skvělé hřiště.\n\nMám třeba věc, která mi hází promítání filmů v nejbližších kinech do Google Kalendáře a přidává mi k tomu délku filmu a hodnocení z ČSFD.\n\nA přesně takové projekty jsou podle mě pro juniory ideální na rozjezd. Malá věc, která ale řeší reálný problém a je to zábava tvořit.\n\nTaky mi scrapery přijdou jako ideální trénink pro ty, kdo se chtějí naučit nebo zlepšit v automatizovaném testování webovek: Playwright, CSS selektory, API…\n\nJestli chceš dorazit živě a pokládat Katce vlastní otázky, mrkni na junior.guru/events a připoj se k nám na Discord!\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
   "attributes": [
@@ -34,122 +34,140 @@
       }
     }
   ],
-  "comments": [],
+  "comments": [
+    {
+      "time": 1780046391118,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7464993220163264512?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7464993220163264512%2C7466055698448248832%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287466055698448248832%2Curn%3Ali%3Aactivity%3A7464993220163264512%29",
+      "text": ".. diky za prilezitost a krasny vecer se super komunitou, moc jsem si to s vami uzila!",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Kateřina",
+        "lastName": "Hroníková",
+        "occupation": "Full-stack engineer with a strong background in finances 👩‍💻 Apify doing good Ambassador ❤️ Czechitas mentor 💃 (Ultra)trails lover 🍀",
+        "id": "327394424",
+        "publicId": "katerina-hronikova",
+        "profileId": "ACoAABODpHgB8Z8XT0Q-xfLGZMGuJSS6-npRT08",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
   "reactions": [
     {
       "type": "LIKE",
       "profile": {
-        "firstName": "Zuzka",
-        "lastName": "Pelechova",
-        "occupation": "Head of Apify Store",
-        "id": "321232684",
-        "publicId": "zpelechova",
-        "profileId": "ACoAABMlnywBEZARVqFK-dRWgvXMJeOqP5dRtrc"
-      }
-    },
-    {
-      "type": "PRAISE",
-      "profile": {
-        "firstName": "Irena",
-        "lastName": "Zatloukalova",
-        "occupation": "empowering #autisticTalent in Tech 🚀 | Guiding your communication for change | Systemic coaching",
-        "id": "99891449",
-        "publicId": "izatlouk",
-        "profileId": "ACoAAAX0OPkBzZjVvVi08LqhaKA5UMdVz4M5inM"
+        "firstName": "Karla",
+        "lastName": "Root",
+        "occupation": "Stay calm. Ask AI first, then decide whether to panic. 👣 Data never lie. People do.",
+        "id": "420075610",
+        "publicId": "karlaroot",
+        "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog"
       }
     },
     {
       "type": "LIKE",
       "profile": {
-        "firstName": "Jiří",
-        "lastName": "Moravčík",
-        "occupation": "Senior Engineer @ Apify | MSc in AI",
-        "id": "680273048",
-        "publicId": "jirimoravcik",
-        "profileId": "ACoAACiMJJgBH8bo7U3aDK6O3hdMuCqRA2cRLeM"
+        "firstName": "Monika",
+        "lastName": "Krausová",
+        "occupation": "Python Developer & QA | Flask & Django | Cloudflare & Docker | SQL, Git & AI Integration | Systems Architect | Web Scraping & Data Integrity",
+        "id": "405131688",
+        "publicId": "monika-krausová-paprcekmonimerka",
+        "profileId": "ACoAABgl0agBlYKzbZNVcQjdy6G-8NjG0ZdW62U"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Dana",
+        "lastName": "Lamatová",
+        "occupation": "Data Analyst in progress | SQL, Python, Power BI |Logistics & operations background",
+        "id": "428236412",
+        "publicId": "dana-lamatova",
+        "profileId": "ACoAABmGXnwBvB8lqpoLx_sgAzyThGezeu4okiE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Kamila",
+        "lastName": "Červinková",
+        "occupation": "Project Management & Coordination | Grant Support | Process Optimization | Stakeholder Communication",
+        "id": "472716943",
+        "publicId": "kamila-červinková-06738b112",
+        "profileId": "ACoAABwtFo8B1I8ilk--fTbjBMsvD30pSgPAXOg"
+      }
+    },
+    {
+      "type": "INTEREST",
+      "profile": {
+        "firstName": "Andrea",
+        "lastName": "Bohačíková",
+        "occupation": "CEO M.arter | Impact Star Deloitte Technology Fast50 2024I Žena roku 2024I Management rodičovské, prorodinná firemní politika a flexibilní práce | DEI, ESG I Podnikání žen | Byznys & startup mentorka",
+        "id": "606716241",
+        "publicId": "andreabohacikova",
+        "profileId": "ACoAACQpwVEBfOHJAW9vr2GKFGW0rLZzSArR-Ik"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lucie",
+        "lastName": "Zlatohlávková",
+        "occupation": "People-first, AI-curious | People Partner @ Apify",
+        "id": "165778243",
+        "publicId": "zlatohlavkovalucie",
+        "profileId": "ACoAAAnhk0MB2zpvxpwlsiw6cW6SpdOopNWlcD8"
       }
     },
     {
       "type": "EMPATHY",
       "profile": {
-        "firstName": "Jiří",
-        "lastName": "Vicherek",
-        "occupation": "Předseda České startupové asociace",
-        "id": "74476785",
-        "publicId": "vicherek",
-        "profileId": "ACoAAARwbPEBJ-4PcqhyrjMq_qci_GH59b-vNUc"
-      }
-    },
-    {
-      "type": "APPRECIATION",
-      "profile": {
-        "firstName": "Hana",
-        "lastName": "Halamová",
-        "occupation": "Technical Consultant & Customer Success | Project Management | SaaS, APIs, Automation | ex-Apify, Verizon | Open to Opportunities",
-        "id": "415421893",
-        "publicId": "hana-halamová-23115ab7",
-        "profileId": "ACoAABjC1cUBchzk-bYyjxeFKdsCsUkQbEGa2Ok"
+        "firstName": "Ngazetungue",
+        "lastName": "Muheue",
+        "occupation": "Software Engineer | Open Source Community Leader | Founder, Ubuntu Namibia | Co-founder, Python & Django Namibia | PyCon Namibia Organizer | Active in Python/Django Communities Worldwide",
+        "id": "221253458",
+        "publicId": "ngazetungue-muheue",
+        "profileId": "ACoAAA0wD1IBIafco_2nGTY7fIO-l33yumakv88"
       }
     },
     {
       "type": "LIKE",
       "profile": {
-        "firstName": "Jakub",
-        "lastName": "Chovančák",
-        "occupation": "CNC obráběč kovů ⚙️ Stále je co zlepšovat a učení se novinkám nemá konce 📚 Přeskoč, přelez, nepodlez 🏃",
-        "id": "345720045",
-        "publicId": "jakub-chovančák-57994597",
-        "profileId": "ACoAABSbRO0B7tQlleLlRpEfGoxYSvDM9qNmH0k"
+        "firstName": "Lenka",
+        "lastName": "Matějová",
+        "occupation": "...",
+        "id": "212362653",
+        "publicId": "lenka-matějová-0791535b",
+        "profileId": "ACoAAAyoZZ0BOS1B_PZN1qbkv-R_Pd20LKcx4w4"
       }
     },
     {
       "type": "LIKE",
       "profile": {
-        "firstName": "Milan",
-        "lastName": "Chvojka",
-        "occupation": ".NET na volné noze",
-        "id": "1297961898",
-        "publicId": "chvojka",
-        "profileId": "ACoAAE1dU6oBZ91nGNDreOPzewb8Y2gJemtWCLA"
+        "firstName": "Daniel",
+        "lastName": "Kohoutek",
+        "occupation": "It",
+        "id": "363086630",
+        "publicId": "daniel-kohoutek-6b271ba1",
+        "profileId": "ACoAABWkQyYB03VJn05oIEuMvrsTM0MnVEvxd6Q"
       }
     },
     {
       "type": "LIKE",
       "profile": {
-        "firstName": "Jana",
-        "lastName": "N.",
-        "occupation": "Naděje je ta věc s peřím, co hnízdí ve tvé duši.",
-        "id": "322913139",
-        "publicId": "janagabrielova",
-        "profileId": "ACoAABM_Q3MB0deNLr6Z3qLWrAqsKvlVXpPUXnk"
-      }
-    },
-    {
-      "type": "PRAISE",
-      "profile": {
-        "firstName": "Barbora",
-        "lastName": "F.",
-        "occupation": "Technical Consultant | FinTech Systems | .NET & SQL | Business–Technology Bridge",
-        "id": "311525805",
-        "publicId": "barbraflegel",
-        "profileId": "ACoAABKRga0BXm651eikOVK4V4p7rMAbADWRtCE"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Alena",
-        "lastName": "Mašková",
-        "occupation": "Software Engineer | AI Orchestration | Python & FastAPI",
-        "id": "601033770",
-        "publicId": "alena-maskova",
-        "profileId": "ACoAACPTDCoBiGew1za7JByyUlNWZHU5NjF76wc"
+        "firstName": "Martin",
+        "lastName": "Šotnar",
+        "occupation": "Frontend Developer Trainee | JavaScript, TypeScript, React",
+        "id": "1332351529",
+        "publicId": "sotnar",
+        "profileId": "ACoAAE9qEikBy98vuvk8guHa2u80sek2g2OsTAg"
       }
     }
   ],
   "numShares": 3,
-  "numLikes": 17,
-  "numComments": 0,
+  "numLikes": 38,
+  "numComments": 2,
   "canReact": true,
   "canPostComments": true,
   "canShare": true,

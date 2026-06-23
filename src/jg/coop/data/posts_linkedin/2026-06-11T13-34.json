@@ -1,0 +1,235 @@
+{
+  "type": "linkedinVideo",
+  "linkedinVideo": {
+    "videoPlayMetadata": {
+      "duration": 30000,
+      "thumbnail": {
+        "artifacts": [
+          {
+            "width": 720,
+            "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEiSu1SG_tPBA",
+            "fileIdentifyingUrlPathSegment": "high/B4DZ6247icKUBM-/0/1781184840046?e=1782781200&v=beta&t=ht5gui2VsxrJ-Gm1mJzPvLXr9SUzgE5EG_7U1JRvLwc",
+            "expiresAt": 1782781200000,
+            "height": 1280
+          },
+          {
+            "width": 360,
+            "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEiSu1SG_tPBA",
+            "fileIdentifyingUrlPathSegment": "low/B4DZ6247icKUBI-/0/1781184840046?e=1782781200&v=beta&t=HYFgQuajFpolviLQaSSThf87UyB0t0GQdek0tsmOktA",
+            "expiresAt": 1782781200000,
+            "height": 640
+          }
+        ]
+      },
+      "progressiveStreams": [
+        {
+          "streamingLocations": [
+            {
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/mp4-720p-30fp-crf28/B4DZ6247icKUB8-/0/1781184842453?e=1782781200&v=beta&t=ClKp--Vtvgfo3PjFdAo7k03ZSBrR5D3DefqAuHCYwlc",
+              "expiresAt": 1782781200000
+            }
+          ],
+          "size": 0,
+          "bitRate": 733144,
+          "width": 720,
+          "mediaType": "video/mp4",
+          "height": 1280
+        },
+        {
+          "streamingLocations": [
+            {
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/mp4-640p-30fp-crf28/B4DZ6247icKUBk-/0/1781184842453?e=1782781200&v=beta&t=B1voXRL3S1FRsk8gPY8STkkKODH-EZFLBZtckiW4gck",
+              "expiresAt": 1782781200000
+            }
+          ],
+          "size": 0,
+          "bitRate": 577965,
+          "width": 640,
+          "mediaType": "video/mp4",
+          "height": 1138
+        }
+      ],
+      "transcripts": [],
+      "entityUrn": "urn:li:digitalmediaAsset:D4D05AQEiSu1SG_tPBA",
+      "provider": "UGC",
+      "aspectRatio": 0.5625,
+      "media": "urn:li:digitalmediaAsset:D4D05AQEiSu1SG_tPBA",
+      "adaptiveStreams": [
+        {
+          "initialBitRate": 534652,
+          "protocol": "HLS",
+          "mediaType": "application/vnd.apple.mpegURL",
+          "masterPlaylists": [
+            {
+              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEiSu1SG_tPBA/CeJxzMnGJMjMyMc9M9g51KdbVcULmh6LxI9H4yWj8bF0AVCcVdA?e=1782781200&v=beta&t=YtX_YgV0Fm2hOjxMnbVxkvO1WUt18fIaGYiB3mGnb5g",
+              "expiresAt": 1782781200000
+            }
+          ]
+        },
+        {
+          "initialBitRate": 534652,
+          "protocol": "DASH",
+          "mediaType": "application/dash+xml",
+          "masterPlaylists": [
+            {
+              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEiSu1SG_tPBA/CeJxzMnGJMjMyMc9M9g51KdbVcULmh6LxI9H4yWj8bF0AVCcVdA?e=1782781200&v=beta&t=fMXpWbuiIIcO1nlqhV4SlpJrl9tUc-VSFqUbdCewDYY",
+              "expiresAt": 1782781200000
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7470830734442676224",
+  "url": "https://www.linkedin.com/posts/honzajavorek_jak-na-git-a-github-co-je-git-a-k-%C4%8Demu-activity-7470830734442676224-La8q",
+  "timeSincePosted": "1w",
+  "shareUrn": "urn:li:ugcPost:7470830667237572610",
+  "text": "Jak na Git a GitHub?\n\nCo je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a GitHubem? Jak začít s Gitem?\n\nDovíte se na nově aktualizované stránce v příručce na junior.guru/handbook 📖 \n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1781184872824,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7470830667237572610?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7470830667237572610%2C7470830836825866240%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287470830836825866240%2Curn%3Ali%3AugcPost%3A7470830667237572610%29",
+      "text": "Odkaz tu: https://junior.guru/handbook/git/",
+      "entities": [],
+      "pinned": false,
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Magdalena",
+        "lastName": "Grecová",
+        "occupation": "Junior Data Analyst | Czechitas Digitální akademie Data",
+        "id": "1650544248",
+        "publicId": "magdalena-grecova",
+        "profileId": "ACoAAGJhTngBFgAIt3drKZqAK6I_8UL80lMEiOU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomas",
+        "lastName": "Votruba",
+        "occupation": "Chief Cleaning Officer @ Rector | Coaching, Turning Legacy codebases into High Value code since 2014",
+        "id": "768515172",
+        "publicId": "tomas-votruba",
+        "profileId": "ACoAAC3OnGQBSTXo3yuoRBtMs9woV1UbEk7ALEc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jaroslav",
+        "lastName": "Veselý",
+        "occupation": "Test Engineer at Tesena. Co neumím, to se rád doučím. Fotograf, kuchař, šermíř, zdravotník, pivovarník. Cogito, ergo armatus sum.",
+        "id": "1279583682",
+        "publicId": "jarovesel",
+        "profileId": "ACoAAExE5cIBl3lcy4FDfslnw7_G9LNTX4sAsUI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Erik",
+        "lastName": "Lerch",
+        "occupation": "PPC specialista & marketingový stratég | Nastavím vám kampaně na sociálních sítích i ve vyhledávání | Pomohu vám uchopit digitální business | Meta Ads • Google Ads • Sklik • Mergado • Mailing",
+        "id": "331751822",
+        "publicId": "eriklerch-cz",
+        "profileId": "ACoAABPGIY4BXOU63bAgY0RD5gxSKuP9QTIlNMc"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Irena",
+        "lastName": "Zatloukalova",
+        "occupation": "Founder & CEO @Diversight.ai | Helping B2B companies eliminate Data Debt and AI Hallucinations through high-precision Human-in-the-Loop validation | Empowering #AutisticTalent in Tech 🚀",
+        "id": "99891449",
+        "publicId": "izatlouk",
+        "profileId": "ACoAAAX0OPkBzZjVvVi08LqhaKA5UMdVz4M5inM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Salamánek",
+        "occupation": "Po téměř 20 letech ve strojírenství jsem objevil svět IT. Bylo to pro mě, jako když poprvé otevřete internet a žasnete, kolik nových informací Vám svět kolem nabízí.",
+        "id": "117107557",
+        "publicId": "salamanek",
+        "profileId": "ACoAAAb662UB8Fk1x6YnfJ2zd6FiGd1MufWQHX4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Cibulec",
+        "occupation": "Python vývojář s přesahem. 🐍",
+        "id": "399499541",
+        "publicId": "ypsilonxpython",
+        "profileId": "ACoAABfP4RUBhhqww_PQuiFQs580Isbr6ZqrqOg"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Šimon",
+        "lastName": "Kořený",
+        "occupation": "Product Owner & Dad | Building great products, raising great humans",
+        "id": "283596586",
+        "publicId": "fusatytata",
+        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Manivannan",
+        "lastName": "Selvaraj",
+        "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
+        "id": "13167565",
+        "publicId": "citizenmani",
+        "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 9,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1781184848414,
+  "postedAtISO": "2026-06-11T13:34:08.414Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

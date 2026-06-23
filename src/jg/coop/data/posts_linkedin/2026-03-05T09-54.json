@@ -8,7 +8,7 @@
           {
             "width": 576,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQG2pvkHKl99WQ",
-            "expiresAt": 1780434000000,
+            "expiresAt": 1782781200000,
             "height": 720
           }
         ],
@@ -18,8 +18,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQG2pvkHKl99WQ/mp4-720p-30fp-crf28/B4DZy8x4iGJoCI-/0/1772693728317?e=1780434000&v=beta&t=523XmQugCJCWW4kjwE0fH9VFrCNdG1P6E6JrSLfZquo",
-              "expiresAt": 1780434000000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQG2pvkHKl99WQ/mp4-720p-30fp-crf28/B4DZy8x4iGJoCI-/0/1772693728317?e=1782781200&v=beta&t=Rz_R5I2r3PmtWLDl7nyEN0bqQ7qTqMKjnA47eDjlceU",
+              "expiresAt": 1782781200000
             }
           ],
           "size": 0,
@@ -31,8 +31,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQG2pvkHKl99WQ/mp4-640p-30fp-crf28/B4DZy8x4iGJoBw-/0/1772693727308?e=1780434000&v=beta&t=wDlXDfZU93rl5u8Cm9f5ETky04L-uQ3rm_K1Z7ncBUI",
-              "expiresAt": 1780434000000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQG2pvkHKl99WQ/mp4-640p-30fp-crf28/B4DZy8x4iGJoBw-/0/1772693727308?e=1782781200&v=beta&t=Qow2iaGbxz-khNMyiolidIklwL9MF0p2YyVv8mqzEQs",
+              "expiresAt": 1782781200000
             }
           ],
           "size": 0,
@@ -54,8 +54,8 @@
           "mediaType": "application/vnd.apple.mpegURL",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQG2pvkHKl99WQ/BAQQKYkcgX9?e=1780434000&v=beta&t=HjKZZ5uGBEVoq5dkQxAdSMPmD7xS3JmeTu8nBG-mwi8",
-              "expiresAt": 1780434000000
+              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQG2pvkHKl99WQ/CeJxzMnGJqrSoMMl098p3sdDVcULmm6DyXQPR-I5ofE80voEuAEfCHBo?e=1782781200&v=beta&t=210_mCilPYQwdFgn3QbOA3-OEzWjJwWkjPCxWKbs58A",
+              "expiresAt": 1782781200000
             }
           ]
         },
@@ -65,8 +65,8 @@
           "mediaType": "application/dash+xml",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQG2pvkHKl99WQ/BAQQKYkcgX9?e=1780434000&v=beta&t=FEOamudYN6u4iAje0BOfWDVq1kEOi7EHrxdmOOsm33Q",
-              "expiresAt": 1780434000000
+              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQG2pvkHKl99WQ/CeJxzMnGJqrSoMMl098p3sdDVcULmm6DyXQPR-I5ofE80voEuAEfCHBo?e=1782781200&v=beta&t=FH-19DrD3mOYL_DMxjDy-HTAGytBmsWbscNTeDUIfN8",
+              "expiresAt": 1782781200000
             }
           ]
         }
@@ -85,7 +85,7 @@
   },
   "urn": "urn:li:activity:7435261476447154176",
   "url": "https://www.linkedin.com/posts/kate%C5%99ina-bou%C5%A1kov%C3%A1-728294b3_snad-d%C3%ADky-tomuto-videu-budeme-pou%C5%BE%C3%ADvat-spr%C3%A1vn%C4%9B-ugcPost-7435216180530847744-4LQ1",
-  "timeSincePosted": "2mo",
+  "timeSincePosted": "3mo",
   "shareUrn": "urn:li:ugcPost:7435216180530847744",
   "text": "Snad DÍKY tomuto videu budeme používat správně KVŮLI 🙏\n\nEDIT: Byla jsem správně upozorněna, že je důležitější důsledek než příčina. A je to tak, protože.. Díky spoustě mrtvým, můžu já žít. Omlouvám se za nepřesnost a věnujme tak pozornost především důsledku 🙏",
   "attributes": [],
@@ -134,7 +134,7 @@
       "author": {
         "firstName": "Martina",
         "lastName": "Pavlincová",
-        "occupation": "Pomáhám online podnikatelkám proměnit jejich nápad ve funkční prodejní systém. Stavím funnely, které prodávají, aby se mohly soustředit na růst svého podnikání a práci s klienty.",
+        "occupation": "Pomáhám koučkám, mentorkám a tvůrkyním digitálních produktů proměnit databázi v aktivum, které přináší prodeje, stabilitu a větší nezávislost na sociálních sítích.",
         "id": "971490423",
         "publicId": "martinapavlincova",
         "profileId": "ACoAADnnxHcB17KrKmsw4mVc71AaEmjRaRbKj_4",
@@ -151,7 +151,7 @@
       "author": {
         "firstName": "Eva",
         "lastName": "Musilová",
-        "occupation": "Editorka, překladatelka, lektorka psaní. Texty krásné, funkční i správné.",
+        "occupation": "Učím profesionální práci s textem a komunikaci – od redakce, korektur a tvůrčího psaní až po typografii, prezentační dovednosti a autorské vzdělávací kurzy. Profesionální čeština | redakce | vzdělávání | publikační praxe",
         "id": "661608431",
         "publicId": "emusilova",
         "profileId": "ACoAACdvV-8Bksp6dHixHxYzjTJOJ6EbUJnbcEE",
@@ -182,7 +182,7 @@
       "author": {
         "firstName": "Taťána",
         "lastName": "le Moigne",
-        "occupation": "Tech for Care | Portfolio Leader | Thinking Partner & Trusted Advisor | Public Speaker | Board Member |",
+        "occupation": "Tech for Care Investor | Thinking Partner & Trusted Advisor | Keynote Speaker | Board Member |",
         "id": "17162684",
         "publicId": "tanialemoigne",
         "profileId": "ACoAAAEF4bwBXZEMBKsSED8XyWZn1g48P20Dzdk",

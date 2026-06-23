@@ -4,7 +4,7 @@
   "isActivity": false,
   "urn": "urn:li:activity:7429117358461460481",
   "url": "https://www.linkedin.com/posts/honzajavorek_kon%C4%8D%C3%AD-program%C3%A1to%C5%99i-v-t%C3%A9-podob%C4%9B-jakou-zn%C3%A1me-activity-7429117358461460481-hgKe",
-  "timeSincePosted": "3mo",
+  "timeSincePosted": "4mo",
   "shareUrn": "urn:li:share:7429117357093965824",
   "text": "Končí programátoři v té podobě, jakou známe dnes? Existuje něco, co se na našem oboru ani s AI nemění?\n\nJeden prompt do AI asistenta a mám hotový, funkční program. Takže programátoři už stříhají metr, než pověsí svou mechanickou klávesnici na hřebík a půjdou nosit bedny do Dobrovízi, že?\n\nTo je aktuální narativ. A ono AI už dnes opravdu chrlí tuny kódu. Znamená to ale, že programování už nebude potřeba?\n\nNe.\n\nMění se nároky na programátory. Na programování samotné. Ale mění ≠ končí.\n\n💁‍♀️ Mnoho věcí, které byly dřív složité, jsou dnes jednoduché.\n🛠️ To, co bylo dřív jednoduché, můžeme nyní vyrábět ve větším množství a za kratší dobu.\n🤷‍♂️ A mnoho věcí, které byly dřív složité, jsou složité i dnes.\n\nJeff Atwood, spoluzakladatel Stack Overflow a Discourse, psal na svůj slavný blog Coding Horror článek „The Best Code is No Code At All“ už v roce 2007.\n\nPokud vytvoříte zbytečnost tisíckrát rychleji, pořád je to zbytečnost. Cílem programování není psát kód, ale řešit lidem problémy, pokud ty je zrovna nejvhodnější řešit softwarem.\n\nDoma máme takovou vtipnou plechovou cedulku, na které je „DRINK COFFEE, do stupid things faster and with more energy!“ Dnes by se dala udělat stejná, jen by místo COFFEE bylo AI.\n\nKteré věci se s AI nijak nezměnily?\n\n- Doručit feature neznamená doručit hodnotu.\n- Refactoring zákazníka nezajímá.\n- Vývojáři málokdy rozumí produktu, který vytváří.\n- Psát hezký kód nestačí.\n\nA o těchto věcech bude ve středu v našem klubu pro juniory přednáška od Adam Vesecky.\n\nToho možná znáte z podcastů jako CTO, kterého vyhodili ze startupu pro jeho sarkastické LinkedIn statusy o pracovní kultuře, nebo jako vtipálka, který každý měsíc dělá stále bizarnější souhrny bizáru na LinkedInu.\n\nAle on jako i něco umí a třeba taky učil na VŠ, fakt! 😆 \n\nMoc se tohle téma, které Adam vybral, těším. Přijde mi, že obsahu o tom, co se mění, je dnes obrovské, až nepojmutelné množství.\n\nAle není v turbulentní době nakonec stejně důležité, a pro juniory z kariérního hlediska možná důležitější, soustředit se právě na to, co se NEmění?\n\nPřijďte ve středu 18.2.2026 v 18:00 k nám na náš klubový Discord! Všechno o našich akcích a návod, jak se na ně dostat, najdete na junior.guru/events Budu se těšit!\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
   "attributes": [
@@ -86,7 +86,7 @@
       "profile": {
         "firstName": "Ing. Nikoleta",
         "lastName": "Kocurova, Bc., Mini MBA",
-        "occupation": "AI Product Engineer @ brainlocatio | exBloomreach | JavaScript | Python | Software Engineering | API design | Data Engineering | Database design | AI | Machine Learning | Data Science | System Design",
+        "occupation": "Data Engineer @ brainlocatio | exBloomreach | PySpark | JavaScript | Python | Software Engineering | API design | Data Engineering | Database design | AI | Machine Learning | Data Science | System Design",
         "id": "501251729",
         "publicId": "ing-nikoleta-kocurova-bc-mini-mba-295a5011b",
         "profileId": "ACoAAB3gfpEBc9e5ZzlhzoEvekkYsV7WmbfGet4"

@@ -3,14 +3,14 @@
   "article": {
     "type": "FIRST_PARTY",
     "urn": "urn:li:linkedInArticle:7435680858063314944",
-    "url": "https://www.linkedin.com/pulse/%25C3%25BAnor-2026-ve-sv%25C4%259Bt%25C4%259B-junior%25C5%25AF-honza-javorek-kextf?trackingId=iJUBfOFQTmGzS4Z9jfJk2Q%3D%3D",
+    "url": "https://www.linkedin.com/pulse/%25C3%25BAnor-2026-ve-sv%25C4%259Bt%25C4%259B-junior%25C5%25AF-honza-javorek-kextf?trackingId=Ly7%2FR%2FWMSiKRpiodugI%2BFQ%3D%3D",
     "title": "Únor 2026 ve světě IT juniorů",
     "description": "Ahoj, tady robotické kuře z junior.guru! Mám pro tebe aktuální dávku novinek. Vítám 11 nových odběratelů, celkem je vás už 735! Baví tě tyhle novinky "
   },
   "isActivity": false,
   "urn": "urn:li:activity:7435681062682492928",
   "url": "https://www.linkedin.com/posts/honzajavorek_za%C4%8D%C3%ADn%C3%A1%C5%A1-v-it-v-tomhle-newsletteru-najde%C5%A1-activity-7435681062682492928-wRZn",
-  "timeSincePosted": "2mo",
+  "timeSincePosted": "3mo",
   "shareUrn": "urn:li:ugcPost:7435681062246137856",
   "text": "Začínáš v IT? V tomhle newsletteru najdeš pozvánky, kurzy, podcasty, přednášky, články a další zdroje, které tě posunou a namotivují.",
   "attributes": [],
@@ -43,7 +43,7 @@
       "profile": {
         "firstName": "Ing. Nikoleta",
         "lastName": "Kocurova, Bc., Mini MBA",
-        "occupation": "AI Product Engineer @ brainlocatio | exBloomreach | JavaScript | Python | Software Engineering | API design | Data Engineering | Database design | AI | Machine Learning | Data Science | System Design",
+        "occupation": "Data Engineer @ brainlocatio | exBloomreach | PySpark | JavaScript | Python | Software Engineering | API design | Data Engineering | Database design | AI | Machine Learning | Data Science | System Design",
         "id": "501251729",
         "publicId": "ing-nikoleta-kocurova-bc-mini-mba-295a5011b",
         "profileId": "ACoAAB3gfpEBc9e5ZzlhzoEvekkYsV7WmbfGet4"

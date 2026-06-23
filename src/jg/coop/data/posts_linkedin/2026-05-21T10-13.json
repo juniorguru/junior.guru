@@ -13,7 +13,7 @@
   },
   "urn": "urn:li:activity:7463170155309756416",
   "url": "https://www.linkedin.com/posts/zuzana-vlachovska_zdrav%C3%ADm-linkedine-obrac%C3%ADm-se-na-v%C3%A1s-activity-7462837610210705408-NZDK",
-  "timeSincePosted": "6d",
+  "timeSincePosted": "1mo",
   "shareUrn": "urn:li:share:7462837608977481729",
   "text": "Zdravím LinkedIne! 👋 \n\nObracím se na vás trochu mimo běžná témata, tentokrát jako studentka Univerzita Karlova. 👩‍🎓 Píšu diplomovou práci na téma Role softwarových komunit v podpoře reskillingu žen do oboru informačních technologií. 💻 \n\nNechci po vás vyplnění dotazníku, nebojte se. 😅 Rozhodla jsem se pro kvalitativní šetření, kde si potřebuju „popovídat“ online s alespoň 12 informantkami o tom, jakým způsobem jim zapojení do softwarových komunit pomohlo v procesu reskillingu do IT. Otázky se týkají opravdu jen způsobů podpory, nebudu se ptát na recenze nebo zkušenosti s jednotlivými komunitami nebo na rozdíly mezi nimi. Vše bude anonymní, žádná příprava není potřeba, rozhovor bude trvat přibližně hodinku. 🕛 \n\nByly byste samy ochotné, nebo znáte ženy, které splňují následující požadavky a byly by ochotné mi tu hodinku věnovat? Ráda to samozřejmě oplatím, pokud vás napadne čím. 😊 \n\nHledám informantky:\n📍 Ženy s českým občanstvím a češtinou jako rodným jazykem\n📍 V současnosti pracující alespoň půl roku na pozici software developerky\n📍 Které v roce 2019 nebo později (tzn. 2020, 21, 22...) ještě pracovaly v jiném oboru než IT (případně byly na MD/RD)\n📍 Během období kariérního přechodu do IT se více než polovinu tohoto období aktivně účastnily/zapojovaly do jedné nebo více softwarových komunit (ReactGirls, Czechitas, PyLadies, Frontendisti, junior.guru apod.)\n\nPokud máte chuť mi pomoct, budu moc ráda, když mi napíšete buď sem, nebo klidně na email zvlachovska@email.cz. Jestli se chcete šetření účastnit, ale nevíte jistě, jestli zapadáte do kritérií, napište prosím taky a domluvíme se individuálně. Budu moc ráda, pokud vás napadnou i další ženy, které do kritérií zapadají. Předem moc děkuji za pomoc! 🙏 💙 \n\nP.S.: Takhle hezky se budu usmívat na každého, kdo mi se sháněním informantek pomůže. 👩‍🎓 😄",
   "attributes": [
@@ -239,6 +239,50 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Vladyslav",
+        "lastName": "Arseniuk",
+        "occupation": "Software Engineer",
+        "id": "609331586",
+        "publicId": "vladyslav-arseniuk-542092150",
+        "profileId": "ACoAACRRqYIB9A9mFJA_o2CCHpl6GvVnNCMahL0"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Kyle",
+        "lastName": "Goss",
+        "occupation": "English lecturer",
+        "id": "401172340",
+        "publicId": "kyle-goss-b04427b2",
+        "profileId": "ACoAABfpZ3QBYQfEfsXsG-ovxZRhmtRMmB3n8HM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Dana",
+        "lastName": "Lamatová",
+        "occupation": "Data Analyst in progress | SQL, Python, Power BI |Logistics & operations background",
+        "id": "428236412",
+        "publicId": "dana-lamatova",
+        "profileId": "ACoAABmGXnwBvB8lqpoLx_sgAzyThGezeu4okiE"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Lukáš",
+        "lastName": "Kratochvíl",
+        "occupation": "Senior Software Engineer at Mews | Guest Experience",
+        "id": "356545354",
+        "publicId": "progresak",
+        "profileId": "ACoAABVAc0oB5Udoi47XlvYziQthZ3xyFpTqWVo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Jana",
         "lastName": "Zmijková",
         "occupation": "Software Developer",
@@ -301,55 +345,11 @@
         "publicId": "radek-in-cybersec",
         "profileId": "ACoAAB_38UYBxzrVlVnDZB45Rlg9B-MMD_leZjY"
       }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Eliška",
-        "lastName": "Janovcová",
-        "occupation": "IT student • UX design a výzkum • Front-end",
-        "id": "1039765305",
-        "publicId": "eliška-janovcová-27111999x",
-        "profileId": "ACoAAD35jzkBvk4kfp0t9EliY_loOiBDlWLlFWA"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Lukas",
-        "lastName": "Cizek",
-        "occupation": "Senior Full-stack Developer | React, Node.js, TypeScript | Team leader",
-        "id": "420594570",
-        "publicId": "lukascizek",
-        "profileId": "ACoAABkRw4oB55umyBLKrtCymi3ZAc087xVYy34"
-      }
-    },
-    {
-      "type": "PRAISE",
-      "profile": {
-        "firstName": "Marcela",
-        "lastName": "Kovalská ",
-        "occupation": "Non programming IT lady. Experienced in Busines Analysis and Test Analysis & Test Management, Technical Documentation or Training. ISTQB Certified. Currently open to a new project. If anyone knows about, let me know.",
-        "id": "6185820",
-        "publicId": "marcelakovalska",
-        "profileId": "ACoAAABeY1wBMH8kgyLkTytpbcy7ToEc-cIbE34"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Pavel",
-        "lastName": "Vančák",
-        "occupation": "IT Expert at RB",
-        "id": "12321851",
-        "publicId": "vancakpavel",
-        "profileId": "ACoAAAC8BDsBfo5KqnbvMyoLW0dtqdZAGfdY3wM"
-      }
     }
   ],
   "numShares": 5,
-  "numLikes": 40,
-  "numComments": 12,
+  "numLikes": 44,
+  "numComments": 14,
   "canReact": true,
   "canPostComments": true,
   "canShare": true,

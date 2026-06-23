@@ -3,14 +3,14 @@
   "article": {
     "type": "FIRST_PARTY",
     "urn": "urn:li:linkedInArticle:7463315934259269632",
-    "url": "https://www.linkedin.com/pulse/t%25C3%25BDdenn%25C3%25AD-pozn%25C3%25A1mky-kv%25C4%259Bten-honza-javorek-3exbf?trackingId=Ee7jqWORTgiS1ayLa1cZRQ%3D%3D",
+    "url": "https://www.linkedin.com/pulse/t%25C3%25BDdenn%25C3%25AD-pozn%25C3%25A1mky-kv%25C4%259Bten-honza-javorek-3exbf?trackingId=eY0Zf1QYRf201hwqp7VCEA%3D%3D",
     "title": "Týdenní poznámky: Květen",
     "description": "Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Od posledních poznámek už utekl nějaký ten týden (24. 4. až 21. 5.), tak nastal čas"
   },
   "isActivity": false,
   "urn": "urn:li:activity:7463316031051264000",
   "url": "https://www.linkedin.com/posts/honzajavorek_t%C3%BDdenn%C3%AD-pozn%C3%A1mky-jak-se-mi-da%C5%99%C3%AD-v-jednom-activity-7463316031051264000-v0mE",
-  "timeSincePosted": "5d",
+  "timeSincePosted": "1mo",
   "shareUrn": "urn:li:ugcPost:7463316030631890945",
   "text": "Týdenní poznámky! Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Tentokrát je to na 14 min čtení 🧐",
   "attributes": [],
@@ -20,8 +20,19 @@
       "type": "LIKE",
       "profile": {
         "firstName": "Pavel",
+        "lastName": "Eliáš",
+        "occupation": "Správce informačního systému Helios Nephrite ve společnosti VÍTKOVICE IT SOLUTIONS a.s.",
+        "id": "485340171",
+        "publicId": "pavel-eliáš-1a3658116",
+        "profileId": "ACoAABzttAsBLPi5MZCx4hPM2gRu8K1psxHEGFI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel",
         "lastName": "Sanka",
-        "occupation": "HR extensive experience | Leadership | Talent development | Creating environments where employees thrive and deliver their best.",
+        "occupation": "Senior HR & Organizational Development Executive | HR extensive experience | Leadership | Talent development",
         "id": "1248198738",
         "publicId": "pavelsanka",
         "profileId": "ACoAAEpmAFIBs1dbjA9a2V3nQHxsW5NlkIxFH08"
@@ -40,7 +51,7 @@
     }
   ],
   "numShares": 0,
-  "numLikes": 2,
+  "numLikes": 3,
   "numComments": 0,
   "canReact": true,
   "canPostComments": true,

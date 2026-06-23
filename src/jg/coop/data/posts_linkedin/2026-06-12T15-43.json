@@ -1,0 +1,112 @@
+{
+  "type": "article",
+  "article": {
+    "type": "FIRST_PARTY",
+    "urn": "urn:li:linkedInArticle:7471225500221444096",
+    "url": "https://www.linkedin.com/pulse/t%25C3%25BDdenn%25C3%25AD-pozn%25C3%25A1mky-p%25C5%2599ed%25C4%259Blan%25C3%25A1-str%25C3%25A1nka-v-p%25C5%2599%25C3%25ADru%25C4%258Dce-prvn%25C3%25AD-video-javorek-frc8f?trackingId=q9HZFYvLRfmwQmaAIw1C2A%3D%3D",
+    "title": "Týdenní poznámky: Předělaná stránka v příručce a první marketingové video",
+    "description": "Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Od posledních poznámek už utekl nějaký ten týden (29. 5. až 12. 6.), tak nastal čas"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7471225573105659904",
+  "url": "https://www.linkedin.com/posts/honzajavorek_t%C3%BDdenn%C3%AD-pozn%C3%A1mky-jak-se-mi-da%C5%99%C3%AD-v-jednom-activity-7471225573105659904-qa1s",
+  "timeSincePosted": "1w",
+  "shareUrn": "urn:li:ugcPost:7471225572593954816",
+  "text": "Týdenní poznámky! Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Tentokrát je to na 12 min čtení 🧐",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Salamánek",
+        "occupation": "Po téměř 20 letech ve strojírenství jsem objevil svět IT. Bylo to pro mě, jako když poprvé otevřete internet a žasnete, kolik nových informací Vám svět kolem nabízí.",
+        "id": "117107557",
+        "publicId": "salamanek",
+        "profileId": "ACoAAAb662UB8Fk1x6YnfJ2zd6FiGd1MufWQHX4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Sanka",
+        "occupation": "Senior HR & Organizational Development Executive | HR extensive experience | Leadership | Talent development",
+        "id": "1248198738",
+        "publicId": "pavelsanka",
+        "profileId": "ACoAAEpmAFIBs1dbjA9a2V3nQHxsW5NlkIxFH08"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ngazetungue",
+        "lastName": "Muheue",
+        "occupation": "Software Engineer | Open Source Community Leader | Founder, Ubuntu Namibia | Co-founder, Python & Django Namibia | PyCon Namibia Organizer | Active in Python/Django Communities Worldwide",
+        "id": "221253458",
+        "publicId": "ngazetungue-muheue",
+        "profileId": "ACoAAA0wD1IBIafco_2nGTY7fIO-l33yumakv88"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marek",
+        "lastName": "VELAS",
+        "occupation": "Founder @EDUpunk | Learning design @Reactgirls.com | AI & Health Content Strategist | TALENT Mentor & MEME Therapist",
+        "id": "201927716",
+        "publicId": "marek-velas",
+        "profileId": "ACoAAAwJLCQB-ePqkhYoO0olYYFCoOJGgdydJEs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Karel",
+        "lastName": "Ševčík",
+        "occupation": "Zkušený obchodník a manažer vracející se k prodeji. Spojuji letitou praxi v obchodu a péči o zákazníky s vášní pro moderní technologie (AI, Python, 3D tisk). Rychle se učím a hledám novou výzvu!",
+        "id": "1758483502",
+        "publicId": "karel-ševčík-abaab4410",
+        "profileId": "ACoAAGjQVC4BbdhbwoGfp7HD5KT7LV8tlTuPlXM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Eliáš",
+        "occupation": "Správce informačního systému Helios Nephrite ve společnosti VÍTKOVICE IT SOLUTIONS a.s.",
+        "id": "485340171",
+        "publicId": "pavel-eliáš-1a3658116",
+        "profileId": "ACoAABzttAsBLPi5MZCx4hPM2gRu8K1psxHEGFI"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 6,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1781278985287,
+  "postedAtISO": "2026-06-12T15:43:05.287Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}
