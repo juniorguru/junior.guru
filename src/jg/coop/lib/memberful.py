@@ -234,8 +234,19 @@ def memberful_url(account_id: int | str) -> str:
 
 
 def parse_export_id(html_tree: html.HtmlElement) -> int:
-    html_element = html_tree.cssselect("*[data-auto-refreshable-url-value]")[0]
-    refreshable_url = html_element.get("data-auto-refreshable-url-value")
+    html_elements = html_tree.cssselect("*[data-auto-refreshable-url-value]")
+    if not html_elements:
+        # Memberful occasionally changes the markup of the export response. When
+        # that happens the selector stops matching and we used to fail with a
+        # cryptic "list index out of range". Surface the actual HTML instead so
+        # the new structure can be inspected (it ends up in the Discord report).
+        snippet = html.tostring(html_tree, encoding="unicode").strip()[:1500]
+        raise DownloadError(
+            "Could not find the export element carrying "
+            "'data-auto-refreshable-url-value'. Memberful likely changed its "
+            f"export response markup. HTML received:\n{snippet}"
+        )
+    refreshable_url = html_elements[0].get("data-auto-refreshable-url-value")
 
     # refreshable_url is something like /admin/members/exports/68746
     return int(refreshable_url.split("/")[-1])

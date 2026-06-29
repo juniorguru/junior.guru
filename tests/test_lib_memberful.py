@@ -1,7 +1,12 @@
 import pytest
 from lxml import html
 
-from jg.coop.lib.memberful import from_cents, parse_export_id, parse_tier_name
+from jg.coop.lib.memberful import (
+    DownloadError,
+    from_cents,
+    parse_export_id,
+    parse_tier_name,
+)
 
 
 def test_parse_export_id_members():
@@ -65,6 +70,15 @@ def test_parse_export_id_cancellations():
     )
 
     assert parse_export_id(html_tree) == 68751
+
+
+def test_parse_export_id_missing_element_raises_download_error():
+    html_tree = html.fromstring(
+        "<turbo-frame id='modal'><p>Something Memberful changed</p></turbo-frame>"
+    )
+
+    with pytest.raises(DownloadError, match="Something Memberful changed"):
+        parse_export_id(html_tree)
 
 
 def test_from_cents():
