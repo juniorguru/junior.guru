@@ -56,6 +56,11 @@ exclude = [
   # Webcal
   "^webcal://",
 
+  # Flaky/overloaded server – returns intermittent 500s, TLS errors, and
+  # timeouts while the site is in fact live (course pages load with current
+  # course dates and the company is active in the Slovak business registry)
+  "^https://(www\\.)?it-academy\\.sk",
+
   # Anti-scraping protections
   "^https://(www\\.)?(linkedin|facebook|reddit)\\.com",
   "^https://(www\\.)?(beeit|glancemedia|prace\\.rovnou|keyguru)\\.cz",
