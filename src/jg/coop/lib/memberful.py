@@ -198,18 +198,26 @@ class MemberfulCSV:
                 "X-CSRF-Token": self.auth_token.value,
             },
             data={self.auth_token.param: self.auth_token.value} | (form_params or {}),
+            allow_redirects=False,
         )
         response.raise_for_status()
 
         location_url = response.headers.get("Location") or None
         if location_url is None:
-            logger.debug("Parsing download URL from HTML")
+            logger.debug("Parsing export ID from HTML")
             html_tree = html.fromstring(response.content)
             export_id = parse_export_id(html_tree)
-            download_url = f"https://juniorguru.memberful.com/admin/csv_exports/{export_id}/download"
         else:
-            logger.debug("Using Location header for download URL")
-            download_url = f"{location_url}/download"
+            logger.debug("Parsing export ID from Location header")
+            export_id = int(location_url.rstrip("/").split("/")[-1])
+
+        # The file always downloads from /admin/csv_exports/{id}/download,
+        # regardless of which endpoint created the export. E.g. POST to
+        # /admin/members/exports redirects to /admin/members/exports/{id},
+        # but the actual CSV lives under /admin/csv_exports/{id}/download.
+        download_url = (
+            f"https://juniorguru.memberful.com/admin/csv_exports/{export_id}/download"
+        )
 
         logger.debug(f"Polling: {download_url}")
         return self._poll_for_csv(download_url)
