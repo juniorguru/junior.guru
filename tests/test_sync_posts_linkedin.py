@@ -56,20 +56,69 @@ def test_serialize_post_removes_tracking_id_recursively():
     assert json.loads(serialize_post(post)) == expected
 
 
-def test_serialize_post_strips_query_from_post_level_url_only():
+def test_serialize_post_strips_all_query_from_post_level_url():
     post = {
         "postedAtISO": "2026-05-21T19:53:23.509Z",
         "url": "https://www.linkedin.com/posts/honzajavorek_example-activity-1?utm_source=combined_share_message&utm_medium=member_desktop&rcm=foo",
-        "article": {
-            "url": "https://www.linkedin.com/pulse/example-article?trackingId=abc123"
-        },
     }
     expected = {
         "postedAtISO": "2026-05-21T19:53:23.509Z",
         "url": "https://www.linkedin.com/posts/honzajavorek_example-activity-1",
+    }
+
+    assert json.loads(serialize_post(post)) == expected
+
+
+def test_serialize_post_pops_tracking_id_from_nested_urls():
+    post = {
+        "postedAtISO": "2026-05-21T19:53:23.509Z",
         "article": {
             "url": "https://www.linkedin.com/pulse/example-article?trackingId=abc123"
         },
+        "items": [
+            {"url": "https://www.linkedin.com/pulse/foo?a=1&trackingId=xyz&b=2"},
+        ],
+    }
+    expected = {
+        "postedAtISO": "2026-05-21T19:53:23.509Z",
+        "article": {"url": "https://www.linkedin.com/pulse/example-article"},
+        "items": [
+            {"url": "https://www.linkedin.com/pulse/foo?a=1&b=2"},
+        ],
+    }
+
+    assert json.loads(serialize_post(post)) == expected
+
+
+def test_serialize_post_preserves_double_encoded_url_when_popping_tracking_id():
+    url = (
+        "https://www.linkedin.com/pulse/"
+        "t%25C3%25BDdenn%25C3%25AD-pozn%25C3%25A1mky-honza-javorek-elppf"
+    )
+    post = {
+        "postedAtISO": "2026-05-21T19:53:23.509Z",
+        "article": {"url": f"{url}?trackingId=VcxvKxDjSSyxXaBRuxk66A%3D%3D"},
+    }
+    expected = {
+        "postedAtISO": "2026-05-21T19:53:23.509Z",
+        "article": {"url": url},
+    }
+
+    assert json.loads(serialize_post(post)) == expected
+
+
+def test_serialize_post_drops_time_since_posted_recursively():
+    post = {
+        "postedAtISO": "2026-05-21T19:53:23.509Z",
+        "timeSincePosted": "3mo",
+        "meta": {
+            "timeSincePosted": "3mo",
+            "items": [{"timeSincePosted": "1w"}, "plain"],
+        },
+    }
+    expected = {
+        "postedAtISO": "2026-05-21T19:53:23.509Z",
+        "meta": {"items": [{}, "plain"]},
     }
 
     assert json.loads(serialize_post(post)) == expected

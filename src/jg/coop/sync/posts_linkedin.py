@@ -17,6 +17,10 @@ logger = loggers.from_path(__file__)
 
 DATETIME_KEY = "postedAtISO"
 
+VOLATILE_KEYS = frozenset(["trackingId", "timeSincePosted"])
+
+TRACKING_PARAM = "trackingId"
+
 
 @cli.sync_command()
 @click.option("--actor", "actor_name", default="supreme_coder/linkedin-post")
@@ -63,8 +67,7 @@ def get_post_filename(post: dict) -> str:
 
 def serialize_post(post: dict) -> str:
     post = strip_tracking_params(post)
-    post = drop_volatile_media_urls(post)
-    post = remove_tracking_id(post)
+    post = clean_value(post)
     return json.dumps(post, ensure_ascii=False, indent=2) + "\n"
 
 
@@ -79,31 +82,33 @@ def strip_tracking_params(post: dict) -> dict:
     return {**post, "url": url}
 
 
-def drop_volatile_media_urls(value: Any) -> Any:
+def clean_value(value: Any) -> Any:
     if isinstance(value, dict):
         return {
             key: cleaned
             for key, item in value.items()
-            if (cleaned := drop_volatile_media_urls(item)) is not None
+            if key not in VOLATILE_KEYS and (cleaned := clean_value(item)) is not None
         }
     if isinstance(value, list):
         return [
-            cleaned
-            for item in value
-            if (cleaned := drop_volatile_media_urls(item)) is not None
+            cleaned for item in value if (cleaned := clean_value(item)) is not None
         ]
-    if isinstance(value, str) and urlsplit(value).netloc == "media.licdn.com":
+    if isinstance(value, str):
+        return clean_url(value)
+    return value
+
+
+def clean_url(url: str) -> str | None:
+    split_url = urlsplit(url)
+    if split_url.netloc == "media.licdn.com":
         return None
-    return value
-
-
-def remove_tracking_id(value: Any) -> Any:
-    if isinstance(value, dict):
-        return {
-            key: remove_tracking_id(item)
-            for key, item in value.items()
-            if key != "trackingId"
-        }
-    if isinstance(value, list):
-        return [remove_tracking_id(item) for item in value]
-    return value
+    if not split_url.netloc or not split_url.query:
+        return url
+    query = "&".join(
+        pair
+        for pair in split_url.query.split("&")
+        if pair.split("=", 1)[0] != TRACKING_PARAM
+    )
+    return urlunsplit(
+        (split_url.scheme, split_url.netloc, split_url.path, query, split_url.fragment)
+    )
