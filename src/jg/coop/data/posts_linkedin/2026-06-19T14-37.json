@@ -24,7 +24,7 @@
       "author": {
         "firstName": "Karla",
         "lastName": "Root",
-        "occupation": "Stay calm. Ask AI first, then decide whether to panic. 👣 Data never lie. People do.",
+        "occupation": "Stay calm. Ask AI first, then panic. 👣 Data never lie. People do.",
         "id": "420075610",
         "publicId": "karlaroot",
         "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog",
@@ -51,11 +51,44 @@
   ],
   "reactions": [
     {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Hassman",
+        "occupation": "🎯 Product Manager, 👑 Product Owner, 👨🏼‍💻 Technology Enthusiast, 🗣️ English, Czech, Spanish, 👷Open to work",
+        "id": "357018",
+        "publicId": "hassman",
+        "profileId": "ACoAAAAFcpoBmteS--laK_PQYfP-f5of-I9xOqA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marcel",
+        "lastName": "Mravec",
+        "occupation": "iOS/ KMP developer / C/C++ developer / 42Prague.com student",
+        "id": "960822563",
+        "publicId": "mravec",
+        "profileId": "ACoAADlE_SMBMQ93eU8DFPPPG8mDrrPsd7fIxQ8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Věra",
+        "lastName": "Paukrtová",
+        "occupation": "Customer Operations · UAT Testing · DAX & IT Systems · Process Clarity",
+        "id": "360931331",
+        "publicId": "vera-paukrtova",
+        "profileId": "ACoAABWDYAMBFYDd-8UbIa_Hpu7wcIyFm7tZrYM"
+      }
+    },
+    {
       "type": "LIKE",
       "profile": {
         "firstName": "Dana",
         "lastName": "Lamatová",
-        "occupation": "Data Analyst in progress | SQL, Python, Power BI |Logistics & operations background",
+        "occupation": "Aspiring Data Analyst | SQL | Power BI | Snowflake | Data Modeling | Logistics & Operations",
         "id": "428236412",
         "publicId": "dana-lamatova",
         "profileId": "ACoAABmGXnwBvB8lqpoLx_sgAzyThGezeu4okiE"
@@ -66,7 +99,7 @@
       "profile": {
         "firstName": "Karla",
         "lastName": "Root",
-        "occupation": "Stay calm. Ask AI first, then decide whether to panic. 👣 Data never lie. People do.",
+        "occupation": "Stay calm. Ask AI first, then panic. 👣 Data never lie. People do.",
         "id": "420075610",
         "publicId": "karlaroot",
         "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog"
@@ -126,43 +159,10 @@
         "publicId": "pavelsanka",
         "profileId": "ACoAAEpmAFIBs1dbjA9a2V3nQHxsW5NlkIxFH08"
       }
-    },
-    {
-      "type": "APPRECIATION",
-      "profile": {
-        "firstName": "Vladimír",
-        "lastName": "Gorej",
-        "occupation": "Co-Founder @ 𝐒𝐩𝐞𝐜𝐋𝐲𝐧𝐱 — open, local-first API tooling · AsyncAPI maintainer · ex-Swagger · ex-Apiary · GitHub Stars alumni",
-        "id": "58899881",
-        "publicId": "vladimirgorej",
-        "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Erik",
-        "lastName": "Lerch",
-        "occupation": "PPC specialista & marketingový stratég | Nastavím vám kampaně na sociálních sítích i ve vyhledávání | Pomohu vám uchopit digitální business | Meta Ads • Google Ads • Sklik • Mergado • Mailing",
-        "id": "331751822",
-        "publicId": "eriklerch-cz",
-        "profileId": "ACoAABPGIY4BXOU63bAgY0RD5gxSKuP9QTIlNMc"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Manivannan",
-        "lastName": "Selvaraj",
-        "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
-        "id": "13167565",
-        "publicId": "citizenmani",
-        "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ"
-      }
     }
   ],
   "numShares": 0,
-  "numLikes": 12,
+  "numLikes": 15,
   "numComments": 4,
   "canReact": true,
   "canPostComments": true,

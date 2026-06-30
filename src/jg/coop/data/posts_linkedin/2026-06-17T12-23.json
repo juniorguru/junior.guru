@@ -29,9 +29,20 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Barbora",
+        "lastName": "Profantová",
+        "occupation": "Data • Python • PyLadies • Community 🧗‍♀️🌄🥽",
+        "id": "500082573",
+        "publicId": "profantova",
+        "profileId": "ACoAAB3Op40BezEaqbB9vgUJupTUksuxIhZtA1E"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Dana",
         "lastName": "Lamatová",
-        "occupation": "Data Analyst in progress | SQL, Python, Power BI |Logistics & operations background",
+        "occupation": "Aspiring Data Analyst | SQL | Power BI | Snowflake | Data Modeling | Logistics & Operations",
         "id": "428236412",
         "publicId": "dana-lamatova",
         "profileId": "ACoAABmGXnwBvB8lqpoLx_sgAzyThGezeu4okiE"
@@ -124,21 +135,10 @@
         "publicId": "josef-ďuriš-a3913986",
         "profileId": "ACoAABIsYY0ByKzpglEMZ3CjzvZoYSp9yKeTxvs"
       }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Pavla",
-        "lastName": "Beránková",
-        "occupation": "PHP programátorka",
-        "id": "549611439",
-        "publicId": "berankova-pavla",
-        "profileId": "ACoAACDCZ68BhDuYokjdegYmFm0rxSx_6Mlwh9c"
-      }
     }
   ],
   "numShares": 0,
-  "numLikes": 12,
+  "numLikes": 13,
   "numComments": 1,
   "canReact": true,
   "canPostComments": true,

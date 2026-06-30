@@ -1,0 +1,127 @@
+{
+  "type": "document",
+  "document": {
+    "coverPages": [],
+    "title": "Jak se učit Git?",
+    "totalPageCount": 7
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7477336052777603072",
+  "url": "https://www.linkedin.com/posts/honzajavorek_jak-se-u%C4%8Dit-git-activity-7477336052777603072-sVME",
+  "shareUrn": "urn:li:ugcPost:7477336051968229378",
+  "text": "Jak se učit Git?",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1782735928639,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7477336051968229378?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7477336051968229378%2C7477336436430778368%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287477336436430778368%2Curn%3Ali%3AugcPost%3A7477336051968229378%29",
+      "text": "Odkazy na dobré zdroje tu: https://junior.guru/handbook/git/#jak-se-ucit-git",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Andrea",
+        "lastName": "Poláková",
+        "occupation": "Bridging Data Engineering & Data Science | Python, SQL, ML | Workflow & Reporting Enthusiast",
+        "id": "911341573",
+        "publicId": "andrea-poláková",
+        "profileId": "ACoAADZR-AUBW3eam7je1cwF0dYvW9JRkEdkUaA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Eliáš",
+        "occupation": "Správce informačního systému Helios Nephrite ve společnosti VÍTKOVICE IT SOLUTIONS a.s.",
+        "id": "485340171",
+        "publicId": "pavel-eliáš-1a3658116",
+        "profileId": "ACoAABzttAsBLPi5MZCx4hPM2gRu8K1psxHEGFI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Salamánek",
+        "occupation": "Po téměř 20 letech ve strojírenství jsem objevil svět IT. Bylo to pro mě, jako když poprvé otevřete internet a žasnete, kolik nových informací Vám svět kolem nabízí.",
+        "id": "117107557",
+        "publicId": "salamanek",
+        "profileId": "ACoAAAb662UB8Fk1x6YnfJ2zd6FiGd1MufWQHX4"
+      }
+    },
+    {
+      "type": "INTEREST",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Zpěváková",
+        "occupation": "BI/ Data analyst, junior AI enthusiast, quizmaker and host in DATA Mesh Prague",
+        "id": "637440646",
+        "publicId": "py-veronika-zpevakova",
+        "profileId": "ACoAACX-koYBZCeuCb06SzAT8F955fJvI0OEIAc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Josef",
+        "lastName": "Ďuriš",
+        "occupation": "Embedded Systems Engineer | From Advanced System Analysis to Low-Level Development | C/C++ | Linux | HW/SW Integration",
+        "id": "304898445",
+        "publicId": "josef-ďuriš-a3913986",
+        "profileId": "ACoAABIsYY0ByKzpglEMZ3CjzvZoYSp9yKeTxvs"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 6,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1782735837168,
+  "postedAtISO": "2026-06-29T12:23:57.168Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

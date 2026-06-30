@@ -1,0 +1,153 @@
+{
+  "type": "document",
+  "document": {
+    "coverPages": [],
+    "title": "Co je Git?",
+    "totalPageCount": 8
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7475797435504717824",
+  "url": "https://www.linkedin.com/posts/honzajavorek_co-je-git-activity-7475797435504717824-HQFo",
+  "shareUrn": "urn:li:ugcPost:7475249775781756928",
+  "text": "Co je Git?",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiří",
+        "lastName": "Langr",
+        "occupation": "Interim CAIO (Chief AI Officer) | AI transformation isn’t about technology – it’s about people | 20+ yrs strategic & business consulting | Founder @ LANGR & AI Agents 🤖 FAIL25&26 Alumni #futureaileader #fail",
+        "id": "139231798",
+        "publicId": "jirilangr",
+        "profileId": "ACoAAAhMgjYBbNvQ7e8pZLwdsj2JfdXW2AuZSUo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Monika",
+        "lastName": "Krausová",
+        "occupation": "Python Developer & QA | Flask & Django | Cloudflare & Docker | SQL, Git & AI Integration | Systems Architect | Web Scraping & Data Integrity",
+        "id": "405131688",
+        "publicId": "monika-krausová-paprcekmonimerka",
+        "profileId": "ACoAABgl0agBlYKzbZNVcQjdy6G-8NjG0ZdW62U"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Matura",
+        "occupation": "SaaS GTM konzultant. Pomáhám founderům zlepšit go-to-market a zjednodušit produkt tak, aby si ho zákazníci zamilovali ❤️.",
+        "id": "389740042",
+        "publicId": "jan-matura-00a634aa",
+        "profileId": "ACoAABc69goB3hXDRrHHEJXP_BpDcVrGX2EgqjA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lukáš",
+        "lastName": "Doul",
+        "occupation": "Nadšenec z dm do AI 🤖 Copilot ⚙️ Profi lektor a uživatel MS365 📎 Projects 🎯",
+        "id": "899724952",
+        "publicId": "lukáš-doul-1b4396211",
+        "profileId": "ACoAADWgtpgB6bHeUozbpVp2kaJjt6emvZUTh3A"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michal",
+        "lastName": "Hladík",
+        "occupation": "Junior/Medior Javascript & Java developer",
+        "id": "1026285388",
+        "publicId": "michal-hladík",
+        "profileId": "ACoAAD0r30wBa0_QD8ZxhqRkaG7xqix-8UjEhwo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Vetrak",
+        "occupation": "Founder of DiPSAVe s.r.o. | Maintenance of production machines | PLC, HMI programmer | Industrial Automation trouble solver",
+        "id": "1203121672",
+        "publicId": "petr-vetrak-dipsave-sro",
+        "profileId": "ACoAAEe2LggB4J0uM-rKBUKE0-MJ1Ct_uRwdexs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vendula",
+        "lastName": "Krajíčková",
+        "occupation": "Frontend vývojářka 🚀 | React, TypeScript, Next.js | Hledám novou výzvu ve frontend vývoji 👩‍💻",
+        "id": "1145616814",
+        "publicId": "vendula-krajickova",
+        "profileId": "ACoAAERIua4Bk44zfiGE6PT1BmSNoKdqiNkFOYc"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Irena",
+        "lastName": "Zatloukalova",
+        "occupation": "Founder & CEO @Diversight.ai | Helping B2B companies eliminate Data Debt and AI Hallucinations through high-precision Human-in-the-Loop validation | Empowering #AutisticTalent in Tech 🚀",
+        "id": "99891449",
+        "publicId": "izatlouk",
+        "profileId": "ACoAAAX0OPkBzZjVvVi08LqhaKA5UMdVz4M5inM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daniel",
+        "lastName": "Gamrot",
+        "occupation": "Digital productivity and AI trainer for companies. 15,000+ trained, 300+ clients. ČEZ, EY, PwC, T-Mobile.",
+        "id": "56451897",
+        "publicId": "danielgamrot",
+        "profileId": "ACoAAANdYzkBivuJ7sQfeDlqQTpgvj7ApWqujDU"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Zpěváková",
+        "occupation": "BI/ Data analyst, junior AI enthusiast, quizmaker and host in DATA Mesh Prague",
+        "id": "637440646",
+        "publicId": "py-veronika-zpevakova",
+        "profileId": "ACoAACX-koYBZCeuCb06SzAT8F955fJvI0OEIAc"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 18,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1782369002224,
+  "postedAtISO": "2026-06-25T06:30:02.224Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

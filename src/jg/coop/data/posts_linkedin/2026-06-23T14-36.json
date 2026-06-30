@@ -1,0 +1,200 @@
+{
+  "type": "image",
+  "images": [],
+  "isActivity": false,
+  "urn": "urn:li:activity:7475194982346371074",
+  "url": "https://www.linkedin.com/posts/honzajavorek_taky-m%C3%A1%C5%A1-ten-pocit-%C5%BEe-se-mus%C3%AD%C5%A1-u%C4%8Dit-st%C3%A1le-activity-7475194982346371074-kRtt",
+  "shareUrn": "urn:li:share:7475194980702015488",
+  "text": "Taky máš ten pocit, že se musíš učit stále rychleji, jinak tě ostatní převálcují? Každý týden nové AI nástroje a technologie, které umožňují nové, průlomové věci. Co s tím?\n\nČlověk, který si teprve hledá cestu do IT, má obvykle už i bez tohoto tlaku pocit nedostatečnosti. Čím víc toho ví, tím víc si začíná uvědomovat, kolik toho ještě neví. A do toho teď to AI všude.\n\nJak se v tom všem soustředit na to podstatné, když ani nevíme, co nás čeká za měsíc, za rok?\n\nV úterý 30.6. od 18:00 bude o tomhle u nás na Discordu mluvit Adina J. Fox, vedoucí produktového designu v Košíku – ale třeba ji znáte i jako dlouholetou moderátorku na WebExpo Conference 🎤\n\nPodělí se o pár myšlenek a strategií, které si přinesla z designu, ale o kterých si myslí, že se dají použít napříč obory.\n\nDlouhodobě se snažím s junior.guru soustředit nejen na „hard skills“, ale i na věci, které cestu do IT doprovázejí.\n\nPatří k tomu duševní zdraví, tělesné zdraví, nebo třeba strategie, jak si zorganizovat učení nebo hledání práce, a jak se u něj dlouhodobě udržet. Tahle přednáška do toho hezky zapadá.\n\nJestli se junior dokáže prosekat vším tím (marketingovým?) povykem, obavami, nejistotami, prioritizací, propady motivace, a jinými nástrahami, tak většinou už dokáže všechno.\n\nPochopit, co dělá Git, nebo jak napsat cyklus v Pythonu, už jsou oproti tomu vlastně detaily.\n\nJestli chceš dorazit živě a pokládat Adině vlastní otázky, mrkni na junior.guru/events a připoj se k nám na Discord!\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 527,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Adina J.",
+        "lastName": "Fox",
+        "occupation": "Product design teams & systems 🚀",
+        "id": "530422661",
+        "publicId": "adina-fox",
+        "profileId": "ACoAAB-dm4UBphpPt0M3o_HcoFhUNSFgam6yIyY"
+      }
+    },
+    {
+      "start": 634,
+      "length": 18,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "WebExpo Conference",
+        "universalName": "webexpo",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:923725"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1782737983523,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7475194982346371074?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7475194982346371074%2C7477345055238828033%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287477345055238828033%2Curn%3Ali%3Aactivity%3A7475194982346371074%29",
+      "text": "Technologie se mění, ale zvědavost a chuť učit se zůstávají. 💛 Přejeme inspirativní večer a spoustu zajímavých otázek. 🧐",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech"
+    },
+    {
+      "time": 1782225707644,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7475194982346371074?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7475194982346371074%2C7475196414474493952%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287475196414474493952%2Curn%3Ali%3Aactivity%3A7475194982346371074%29",
+      "text": "Wow! 📌",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "English",
+      "author": {
+        "firstName": "Šimon",
+        "lastName": "Kořený",
+        "occupation": "Product Owner & Dad | Building great products, raising great humans",
+        "id": "283596586",
+        "publicId": "fusatytata",
+        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Kate",
+        "lastName": "Astrid",
+        "occupation": "Helping Developers Build Better Products | Developer Advocate | React, TypeScript, AI & Developer Experience",
+        "id": "910704341",
+        "publicId": "kate-astrid",
+        "profileId": "ACoAADZIPtUB336Igt6HfTV2a4dqPXMyhzpfFdE"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Šárka",
+        "lastName": "Štrossová",
+        "occupation": "Director at WebExpo",
+        "id": "48615076",
+        "publicId": "sarkastrossova",
+        "profileId": "ACoAAALlzqQB09j823QJG6Boc_hfwM5VA2nQhUg"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "company": {
+        "name": "WebExpo Conference",
+        "universalName": "webexpo",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:923725"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Andrea",
+        "lastName": "Poláková",
+        "occupation": "Bridging Data Engineering & Data Science | Python, SQL, ML | Workflow & Reporting Enthusiast",
+        "id": "911341573",
+        "publicId": "andrea-poláková",
+        "profileId": "ACoAADZR-AUBW3eam7je1cwF0dYvW9JRkEdkUaA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Matej",
+        "lastName": "Hegedüš",
+        "occupation": "Spacemanager @ Billa Slovensko",
+        "id": "1122498754",
+        "publicId": "matej-hegedus",
+        "profileId": "ACoAAELn-MIBKW5DBFhFP8iarfyu4bK2OZTPwC4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Monika",
+        "lastName": "Krausová",
+        "occupation": "Python Developer & QA | Flask & Django | Cloudflare & Docker | SQL, Git & AI Integration | Systems Architect | Web Scraping & Data Integrity",
+        "id": "405131688",
+        "publicId": "monika-krausová-paprcekmonimerka",
+        "profileId": "ACoAABgl0agBlYKzbZNVcQjdy6G-8NjG0ZdW62U"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Irena",
+        "lastName": "Zatloukalova",
+        "occupation": "Founder & CEO @Diversight.ai | Helping B2B companies eliminate Data Debt and AI Hallucinations through high-precision Human-in-the-Loop validation | Empowering #AutisticTalent in Tech 🚀",
+        "id": "99891449",
+        "publicId": "izatlouk",
+        "profileId": "ACoAAAX0OPkBzZjVvVi08LqhaKA5UMdVz4M5inM"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Adéla",
+        "lastName": "Tichá",
+        "occupation": "Graphic designer, moving into UX/UI design",
+        "id": "422345507",
+        "publicId": "adelticha",
+        "profileId": "ACoAABkseyMBcA3muv646Fc2S5gVsWt0b9uYw-0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavla",
+        "lastName": "Beránková",
+        "occupation": "PHP programátorka",
+        "id": "549611439",
+        "publicId": "berankova-pavla",
+        "profileId": "ACoAACDCZ68BhDuYokjdegYmFm0rxSx_6Mlwh9c"
+      }
+    }
+  ],
+  "numShares": 3,
+  "numLikes": 17,
+  "numComments": 2,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1782225366198,
+  "postedAtISO": "2026-06-23T14:36:06.198Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

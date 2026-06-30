@@ -10,7 +10,7 @@
     },
     "isActivity": false,
     "urn": "urn:li:activity:7474699304298012672",
-    "url": "https://www.linkedin.com/posts/miroslavudan_jak-jsem-s%C3%A1m-za-p%C4%9Bt-t%C3%BDdn%C5%AF-postavil-saas-activity-7474699304298012672-LSna?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAGk6OIgB4XbDZ-jz83tt3eMSpf1QDM1gdEI",
+    "url": "https://www.linkedin.com/posts/miroslavudan_jak-jsem-s%C3%A1m-za-p%C4%9Bt-t%C3%BDdn%C5%AF-postavil-saas-activity-7474699304298012672-LSna?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAGo5PTMBMzBJTL-h0-jT1PBMePpJgPsjH-M",
     "shareUrn": "urn:li:share:7474699303454830592",
     "text": "Pratele, vy co me znate, vite, jak skromny a zaroven dokonaly clovek jsem. Obcas se sam nad tim, jak jsem sikovny, az dojmu. Ale tohle je proste ulet. 😎\n\nRok zpatky jsem mel v hlave ideu na aplikaci - hledal jsem, kdo mi ji napise, a nabidky (jen za MVP!) se pohybovaly kolem 2 mega a cca 6 mesicu prace. Jak asi vite, jeden fail za 20 mega uz mam za sebou, tak jsem byl na nesetrne utraceni lehce nervozni a dal to zatim do supliku. Za ten rok se vse posunulo nekam uplne do vesmiru. Pred 2 mesici jsem si rekl, ze zacnu vic zkoumat vibecoding, a po 5 tydnech jsem, ani nevim jak, mel apku, po ktere jsem touzil - OutOfDark.com byl na svete 🚀 (ja vim, ja vim! Ale kdyz me ta domena stala tolik penez, preci to nenecham prijit vnivec!).\n\nPosledni rok se v klidu venuji novemu byznysu. Stal jsem se zakaznikem sve byvale firmy a vznikl eshop Mincmistr.cz - skloubila se tam ma laska k historii, marketingu a budovani. S kamaradem jsme za ten rok vybudovali brand, ktery si v ramci sveho segmentu ziskal sve silne misto na slunci. Ale cely ten cas jsem porad premyslel, kde jsou ty ryce a lopaty pro ty zlatokopy (tady to skoro ani neni metafora). A nakonec jsem to objevil - udelam moderni katalog minci pro sberatele. A diky vibecodingu jsem dostal do rukou kouzelnou hulku, ktera mi vzdy chybela. Takze jsem za 5 tydnu udelal apku, ktera ma AI rozpoznavani druhu minci, cool prezentaci katalogu, jednoduchy prodej na eBay nebo Aukru, vlastni trziste, kalendare aukci, exporty/importy a, omg!, desitky dalsich funkci. Citil jsem se jako dite zamcene pres noc v hrackarstvi 🤩. Cokoliv, co jsem chtel, bylo za par hodin hotove. Zadne cekani. Zadne kompromisy. Ale nebylo to na jedno mavnuti hulkou, realne jsem na tom pracoval uplne kazdy jeden den, vzdy cca 10-12 hodin prace. A diky zkusenostem, co jsem nasbiral jako CEO/produktak/projektak ze Shoptetu, u me vznikl proces, ktery mne - neprogramatorovi - umoznil tvorit kod, ktery je (troufam si, i na zaklade externiho auditu, tvrdit) bezpecny, stabilni, bez spagety kodu, skalovatelny, UX friendly a samozlepsujici se. Za tu dobu jsem v Clickupu zavrel skoro 800 tasku (z toho zhruba tretina byla tykajici se security) a nyní je 0 tasku v backlogu! Tvl, co by bylo ze Shoptetu, kdybych tehdy mel tuhle kouzelnou hulku! 🙂\n\nA protoze nejsem sketa, sepsal jsem pro vsechny dalsi borkyne a borce, co chteji tvorit produkt v dobe, kdy uz to neni o milionech investovanych do vyvojaru, ale o produktovem, strategickem a taktickem premysleni, o nastavenych pravidlech a workflow, o totalni zmene mindsetu, clanek o tom, jak jsem si za tech 5 tydnu vybudoval svoje dalsi SaaSko. Clanek je pro produktove magory, co chteji tvorit, ale neumi programovat 🙂. A pokud mate nejake tipy, na zaklade vaseho vyladeneho workflow, sem s nimi! \n\n👇 Clanek tuna:",
     "attributes": [
@@ -29,53 +29,36 @@
     ],
     "comments": [
       {
-        "time": 1782126821172,
-        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474781654545448960%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474781654545448960%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
-        "text": "Dovolil jsem si reakci. Začal jsem to psát jako komentář o dvou větách tady, ale pak to nějak přeteklo, tak jsem začal psát status, ale to mi taky přeteklo, tak je to na blogu: https://honzajavorek.cz/blog/jak-programator-sam-za-pet-tydnu-postavil-saas-ktery-mu-loni-nacenili-na-dva-miliony/",
+        "time": 1782108387733,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474704339098583040%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474704339098583040%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
+        "text": "Dobry den, Miroslave. Tohle je supr clanek, narazil jsem na nej pres random feed na FB, kdyz jsem cekal v Korei na odbavenu letu do Japonska. Zabavil me na celou frontu a hned jsem mel chut si zase neco vyrobit :) Na vibu jedu uz par mesicu, ty pocity, ktere popisujete, presne znam. Nejvic me inspirovala to robustni zadavani. Diky za konkretni, uzitecny navod k pouziti. Uz mam plny zuby tech \"open claw agentu na Mac Mini\", kterych je tady plny LI a ktere pri nejlepsim slouzi na spravu kalendare.",
         "entities": [],
         "pinned": false,
         "originalLanguage": "Czech",
         "author": {
-          "firstName": "Honza",
-          "lastName": "Javorek",
-          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
-          "id": "8517488",
-          "publicId": "honzajavorek",
-          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+          "firstName": "Martin",
+          "lastName": "Juza",
+          "occupation": "CEO at Krutart | Building the „Pixar for Planetariums“ | Co-host of Pitch.cz - The leading podcast for Czech film professionals | Featured in Forbes",
+          "id": "175045816",
+          "publicId": "martinjuza",
+          "profileId": "ACoAAApu_LgBXvXbUijhJUiwJBzBWkqqD9o0CxM",
           "distance": "OUT_OF_NETWORK"
         }
       },
       {
-        "time": 1782121087703,
-        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474757606633496576%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474757606633496576%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
-        "text": "Miroslave, Vas clanek me inspiroval natolik, ze jsem se konecne rozhodl po 11 letech, aktualizovat OS W7 na W10 na domacim kompu abych mohl rozjet Claude na desktopu. Ted uz mi nic nebrani abych se konecne pustil do projektu, na ktery mam pripravenou domenu od 2009. :-) Takze diky moc za clanek, slupl jsem ho na jeden zatah jak malinu! K tem pravidlum, je to neco co by se dalo vice nasdilet?",
+        "time": 1782370809314,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7475805014989545472%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287475805014989545472%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
+        "text": "Nechcete rozjet paralelni dvojče na filatelii? Aneb \"všichni máme na půdě nějaké známky po dědovi z války a netušíme, co s tím\" ? :)",
         "entities": [],
         "pinned": false,
         "originalLanguage": "Czech",
         "author": {
-          "firstName": "Alexandr",
-          "lastName": "Panek",
-          "occupation": "Senior Product Designer | B2C & B2B E-commerce Strategy | Managing 5 Platforms across 160 Countries | UX • CX • CRO • CSAT • Ex-Management Consulting",
-          "id": "14306832",
-          "publicId": "alexandrpanek",
-          "profileId": "ACoAAADaThABkPYl6adVaaxBrrgmkoCsxDOlWms",
-          "distance": "OUT_OF_NETWORK"
-        }
-      },
-      {
-        "time": 1782159345385,
-        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474918070981955586%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474918070981955586%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
-        "text": "Jako člověk sledující Mincmistra i Out of Dark z první řady musím vypíchnout jednu důležitou věc: U tebe je extrémně znát ten CEO/produkťák/projekťák background.\n\nNás za posledního půl roku oslovilo určitě 10+ vibecoded projektů. Do spolupráce jsme šli pouze s tebou. \n\nJe extrémní rozdíl mezi někým, kdo má nápad, který díky vibecodingu může snadno zkusit realizovat a tebou, kdo díky tvému backgroundu pospojuje stovky jemných faktorů, které z nápadu dělají funkční byznys a jenom potřebuješ tu lopatu, která to naprogramuje. Víš na co si dát pozor, co si pohlídat, co jak rozvinout. \n\nTakže pokud tohle čte někdo, kdo si myslí, že bude druhý Míra Uďan jen proto, že používáte stejný Claude Code (aka máte stejnou lopatu), mám pro vás smutnou zpravu. Spíš nebudete :))",
-        "entities": [],
-        "pinned": false,
-        "originalLanguage": "Czech",
-        "author": {
-          "firstName": "Jiří",
-          "lastName": "Schaffer",
-          "occupation": "Výkonnostní reklama 🤎 Vedu tým seniorních specialistů 🤎 Myslíme na reklamy za vás",
-          "id": "193025483",
-          "publicId": "jiri-schaffer",
-          "profileId": "ACoAAAuBVcsBSWD8z-fn4dANBvoxAJPDS-KrtUc",
+          "firstName": "Jan",
+          "lastName": "Andersson",
+          "occupation": "Design & Discovery Leader | Building business-centric capabilities in Insurance & Financial Services",
+          "id": "33475356",
+          "publicId": "seversson",
+          "profileId": "ACoAAAH-yxwByoSii1ZW1ngDc9cxs8Ow1OtYx9o",
           "distance": "OUT_OF_NETWORK"
         }
       },
@@ -97,53 +80,36 @@
         }
       },
       {
-        "time": 1782112027968,
-        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474719607350747136%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474719607350747136%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
-        "text": "Skvěle sepsané. Jako neprogrmátor jsem si musel projít vlastní cestou, jak se naučit s vibecodingem. Mám vytvořenou vlastní hokejovou aplikaci a k tomu dashboard pro reporting B2B firem. Takže v tom mám dnes vlastní stovky hodin odpracovaných\n\nJsem rád, že jsem si mohl zkontrolovat vlastní setup s někým, kdo nevyužívá AI jen na chat.\n\nHodil jsem do do AI a závěr:\n\nJe to skvělá validace tvého směru od někoho, kdo postavil miliardovou firmu. Potvrzuje, že tvůj agent/memory/ústava systém je správná architektura, ne over-engineering. Systém máš často v lepší verzi. V několika věcech jsi dál než on. Máš sofistikovanější obranu proti regresím, než popisuje.",
+        "time": 1782159345385,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474918070981955586%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474918070981955586%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
+        "text": "Jako člověk sledující Mincmistra i Out of Dark z první řady musím vypíchnout jednu důležitou věc: U tebe je extrémně znát ten CEO/produkťák/projekťák background.\n\nNás za posledního půl roku oslovilo určitě 10+ vibecoded projektů. Do spolupráce jsme šli pouze s tebou. \n\nJe extrémní rozdíl mezi někým, kdo má nápad, který díky vibecodingu může snadno zkusit realizovat a tebou, kdo díky tvému backgroundu pospojuje stovky jemných faktorů, které z nápadu dělají funkční byznys a jenom potřebuješ tu lopatu, která to naprogramuje. Víš na co si dát pozor, co si pohlídat, co jak rozvinout. \n\nTakže pokud tohle čte někdo, kdo si myslí, že bude druhý Míra Uďan jen proto, že používáte stejný Claude Code (aka máte stejnou lopatu), mám pro vás smutnou zpravu. Spíš nebudete :))",
         "entities": [],
         "pinned": false,
         "originalLanguage": "Czech",
         "author": {
-          "firstName": "Alexander",
-          "lastName": "Visnyai",
-          "occupation": "Stavím růstové strategie pro B2B & B2B ecommerce | BecomeX | Hokejovytrenink.cz | exGoogle certified trainer",
-          "id": "97504208",
-          "publicId": "alexander-visnyai",
-          "profileId": "ACoAAAXPy9ABkJrR4i2b4YHvST6t8L_w0XFhF7g",
+          "firstName": "Jiří",
+          "lastName": "Schaffer",
+          "occupation": "Výkonnostní reklama 🤎 Vedu tým seniorních specialistů 🤎 Myslíme na reklamy za vás",
+          "id": "193025483",
+          "publicId": "jiri-schaffer",
+          "profileId": "ACoAAAuBVcsBSWD8z-fn4dANBvoxAJPDS-KrtUc",
           "distance": "OUT_OF_NETWORK"
         }
       },
       {
-        "time": 1782108387733,
-        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474704339098583040%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474704339098583040%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
-        "text": "Dobry den, Miroslave. Tohle je supr clanek, narazil jsem na nej pres random feed na FB, kdyz jsem cekal v Korei na odbavenu letu do Japonska. Zabavil me na celou frontu a hned jsem mel chut si zase neco vyrobit :) Na vibu jedu uz par mesicu, ty pocity, ktere popisujete, presne znam. Nejvic me inspirovala to robustni zadavani. Diky za konkretni, uzitecny navod k pouziti. Uz mam plny zuby tech \"open claw agentu na Mac Mini\", kterych je tady plny LI a ktere pri nejlepsim slouzi na spravu kalendare.",
+        "time": 1782126821172,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474781654545448960%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474781654545448960%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
+        "text": "Dovolil jsem si reakci. Začal jsem to psát jako komentář o dvou větách tady, ale pak to nějak přeteklo, tak jsem začal psát status, ale to mi taky přeteklo, tak je to na blogu: https://honzajavorek.cz/blog/jak-programator-sam-za-pet-tydnu-postavil-saas-ktery-mu-loni-nacenili-na-dva-miliony/",
         "entities": [],
         "pinned": false,
         "originalLanguage": "Czech",
         "author": {
-          "firstName": "Martin",
-          "lastName": "Juza",
-          "occupation": "CEO at Krutart | Building the „Pixar for Planetariums“ | Co-host of Pitch.cz - The leading podcast for Czech film professionals | Featured in Forbes",
-          "id": "175045816",
-          "publicId": "martinjuza",
-          "profileId": "ACoAAApu_LgBXvXbUijhJUiwJBzBWkqqD9o0CxM",
-          "distance": "OUT_OF_NETWORK"
-        }
-      },
-      {
-        "time": 1782108700906,
-        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474705652641284096%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474705652641284096%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
-        "text": "Díky moc, posielam rovno do kindle 🙇‍♂️",
-        "entities": [],
-        "pinned": false,
-        "originalLanguage": "Czech",
-        "author": {
-          "firstName": "Matus",
-          "lastName": "Pavliscak",
-          "occupation": "Data & AI Engineering Leader | 10+ yrs building & scaling data teams",
-          "id": "57598610",
-          "publicId": "pavliscak",
-          "profileId": "ACoAAANu4pIBeHRRpRmTNKuI3y6hmmkCDoYoFAw",
+          "firstName": "Honza",
+          "lastName": "Javorek",
+          "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+          "id": "8517488",
+          "publicId": "honzajavorek",
+          "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
           "distance": "OUT_OF_NETWORK"
         }
       },
@@ -179,6 +145,57 @@
         }
       },
       {
+        "time": 1782112027968,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474719607350747136%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474719607350747136%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
+        "text": "Skvěle sepsané. Jako neprogrmátor jsem si musel projít vlastní cestou, jak se naučit s vibecodingem. Mám vytvořenou vlastní hokejovou aplikaci a k tomu dashboard pro reporting B2B firem. Takže v tom mám dnes vlastní stovky hodin odpracovaných\n\nJsem rád, že jsem si mohl zkontrolovat vlastní setup s někým, kdo nevyužívá AI jen na chat.\n\nHodil jsem do do AI a závěr:\n\nJe to skvělá validace tvého směru od někoho, kdo postavil miliardovou firmu. Potvrzuje, že tvůj agent/memory/ústava systém je správná architektura, ne over-engineering. Systém máš často v lepší verzi. V několika věcech jsi dál než on. Máš sofistikovanější obranu proti regresím, než popisuje.",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Alexander",
+          "lastName": "Visnyai",
+          "occupation": "Stavím růstové strategie pro B2B & B2B ecommerce | BecomeX | Hokejovytrenink.cz | exGoogle certified trainer",
+          "id": "97504208",
+          "publicId": "alexander-visnyai",
+          "profileId": "ACoAAAXPy9ABkJrR4i2b4YHvST6t8L_w0XFhF7g",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1782108700906,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474705652641284096%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474705652641284096%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
+        "text": "Díky moc, posielam rovno do kindle 🙇‍♂️",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Matus",
+          "lastName": "Pavliscak",
+          "occupation": "Data & AI Engineering Leader | 10+ yrs building & scaling data teams",
+          "id": "57598610",
+          "publicId": "pavliscak",
+          "profileId": "ACoAAANu4pIBeHRRpRmTNKuI3y6hmmkCDoYoFAw",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
+        "time": 1782121087703,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474757606633496576%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474757606633496576%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
+        "text": "Miroslave, Vas clanek me inspiroval natolik, ze jsem se konecne rozhodl po 11 letech, aktualizovat OS W7 na W10 na domacim kompu abych mohl rozjet Claude na desktopu. Ted uz mi nic nebrani abych se konecne pustil do projektu, na ktery mam pripravenou domenu od 2009. :-) Takze diky moc za clanek, slupl jsem ho na jeden zatah jak malinu! K tem pravidlum, je to neco co by se dalo vice nasdilet?",
+        "entities": [],
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "author": {
+          "firstName": "Alexandr",
+          "lastName": "Panek",
+          "occupation": "Senior Product Designer | B2C & B2B E-commerce Strategy | Managing 5 Platforms across 160 Countries | UX • CX • CRO • CSAT • Ex-Management Consulting",
+          "id": "14306832",
+          "publicId": "alexandrpanek",
+          "profileId": "ACoAAADaThABkPYl6adVaaxBrrgmkoCsxDOlWms",
+          "distance": "OUT_OF_NETWORK"
+        }
+      },
+      {
         "time": 1782152177591,
         "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474888007075094528%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474888007075094528%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
         "text": "Keby to napísal kňaz povedzme, a nulový nadšenec, bolo by to ok.\n\nVy ste predsa len iná \"liga\" hoci nemusíte byť programátor.",
@@ -194,131 +211,123 @@
           "profileId": "ACoAABQTj7ABmJmTXG7uPafROHj0cRtEAqa6VDY",
           "distance": "OUT_OF_NETWORK"
         }
-      },
-      {
-        "time": 1782111418267,
-        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474717050079305728%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474717050079305728%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
-        "text": "Je radost sledovat, v co všechno se proměňují zkušenosti z budování Shoptetu. 🤩",
-        "entities": [],
-        "pinned": false,
-        "originalLanguage": "Czech"
       }
     ],
     "reactions": [
       {
-        "type": "INTEREST",
+        "type": "PRAISE",
         "profile": {
-          "firstName": "Filip",
-          "lastName": "Gregor",
-          "occupation": "Global Marketing Manager at Billigence | Turning Data Strategy into Market Impact",
-          "id": "88447883",
-          "publicId": "filipgregor1",
-          "profileId": "ACoAAAVFm4sBobGtr6XaMeISG1EHOI1BWSJR8qI"
-        }
-      },
-      {
-        "type": "LIKE",
-        "profile": {
-          "firstName": "Ondrej",
-          "lastName": "Tomek",
-          "occupation": "-",
-          "id": "3551234",
-          "publicId": "ondratomek",
-          "profileId": "ACoAAAA2MAIBaD6gx9cVH8zSdbOwhjQbkghebeQ"
-        }
-      },
-      {
-        "type": "LIKE",
-        "profile": {
-          "firstName": "David P.",
-          "lastName": "Stefanovič",
-          "occupation": "NGCE Manager Baltics & Croatia+ at Takeda",
-          "id": "167587319",
-          "publicId": "davidpstefanovic",
-          "profileId": "ACoAAAn9LfcBvLa5Yw4THKEv0lXP58iHwZ7G0tY"
-        }
-      },
-      {
-        "type": "LIKE",
-        "profile": {
-          "firstName": "Šárka",
-          "lastName": "Rauchová",
-          "occupation": "CMO @ Kogi | Senior Consultant – Communication, Marketing & CX",
-          "id": "41578917",
-          "publicId": "sarkarauchova",
-          "profileId": "ACoAAAJ6caUBx5wb-vjcz582qXs2Lne-ugK-Rng"
-        }
-      },
-      {
-        "type": "LIKE",
-        "profile": {
-          "firstName": "Adam",
-          "lastName": "Trnka",
-          "occupation": "Onboarding Architect | Solution Expert @ ProductFruits | Building intelligent adoption systems that helping SaaS teams reduce time-to-value by 60%",
-          "id": "64978679",
-          "publicId": "adamtrnka",
-          "profileId": "ACoAAAPffvcBOGoL54fu6Ft7RB_SXWo94J33ELc"
-        }
-      },
-      {
-        "type": "LIKE",
-        "profile": {
-          "firstName": "Dr. Adam",
-          "lastName": "Streck",
-          "occupation": "[Postdoctoral Machine Learning Researcher] Systems Biology | Mechanistic Learning | Agent-based Models",
-          "id": "158148001",
-          "publicId": "dr-adam-streck-a01b6844",
-          "profileId": "ACoAAAltJaEBoqkAu3FzSFfoXLwNUAFOm_-z4MY"
+          "firstName": "Ilona",
+          "lastName": "Filipi",
+          "occupation": "Managing Partner | Moove Agency | WordPress VIP Agency",
+          "id": "19567206",
+          "publicId": "ilonafilipi",
+          "profileId": "ACoAAAEqkmYBJX8jZAi8a9LoKP8J2IKR7fvAcWA"
         }
       },
       {
         "type": "LIKE",
         "profile": {
           "firstName": "Jiří",
-          "lastName": "Schaffer",
-          "occupation": "Výkonnostní reklama 🤎 Vedu tým seniorních specialistů 🤎 Myslíme na reklamy za vás",
-          "id": "193025483",
-          "publicId": "jiri-schaffer",
-          "profileId": "ACoAAAuBVcsBSWD8z-fn4dANBvoxAJPDS-KrtUc"
+          "lastName": "Tomek",
+          "occupation": "Senior Customer Success Manager ve společnosti Shoptet",
+          "id": "526867464",
+          "publicId": "jiří-tomek-1a0544128",
+          "profileId": "ACoAAB9nXAgBAf-4BT6iIbj3MA5-8G5lCd3NB0U"
+        }
+      },
+      {
+        "type": "EMPATHY",
+        "profile": {
+          "firstName": "Matej",
+          "lastName": "Dvonč",
+          "occupation": "Founder @ wewe studio 💜 | UX & Product Architect 🧠 | Web Infra & MVP Delivery 💎 | Investor & Crypto Enthusiast 🦄",
+          "id": "817359802",
+          "publicId": "matej-dvonc",
+          "profileId": "ACoAADC367oB7TkCUlaA_ad9VFyBbRA989NA7e4"
         }
       },
       {
         "type": "LIKE",
         "profile": {
-          "firstName": "Josefina",
-          "lastName": "Vybora",
-          "occupation": "Head of Sales & Partnerships at FABINI // ex-Avast",
-          "id": "338653120",
-          "publicId": "josefinavybora",
-          "profileId": "ACoAABQvb8ABeRIiNJ38JNK9uIeSf9dTudtvwF8"
+          "firstName": "Martin",
+          "lastName": "Matějka",
+          "occupation": "Freelance online marketing consultant",
+          "id": "20353448",
+          "publicId": "martinmatejka",
+          "profileId": "ACoAAAE2kagBUDHKZ_tMWywkf8gjTf-JYKwcMUo"
         }
       },
       {
         "type": "LIKE",
         "profile": {
-          "firstName": "Alexandra",
-          "lastName": "Hanzlová",
-          "occupation": "Building lasting customer and partner relationships | CX | Account Management | Loyalty | Engagement",
-          "id": "203610951",
-          "publicId": "hanzlovaalex",
-          "profileId": "ACoAAAwi20cBLsj50MW5QunJl6naFsdclZfApgU"
+          "firstName": "Lukas",
+          "lastName": "Martinak",
+          "occupation": "VP Customer Success at Kontent.ai | Customer Success Mentor | Strategic Advisor",
+          "id": "49315425",
+          "publicId": "lukas-martinak",
+          "profileId": "ACoAAALwfmEBo2NFkBTuCD0VkswBTSu-DwafV8Q"
+        }
+      },
+      {
+        "type": "PRAISE",
+        "profile": {
+          "firstName": "Veronika",
+          "lastName": "Tomášková",
+          "occupation": "produktový manažer seminářů a konferencí ve společnosti Wolters Kluwer",
+          "id": "762451655",
+          "publicId": "veronika-tomášková-71b415193",
+          "profileId": "ACoAAC1yFscBYgpKfSxuT2fuvKC5ppVu3Ll3rf0"
         }
       },
       {
         "type": "LIKE",
         "profile": {
-          "firstName": "Peter",
-          "lastName": "Haratík",
-          "occupation": "Senior online a offline obchodník. Robím čo chcem, môžem a viem. Pohodlný? Som.",
-          "id": "336826288",
-          "publicId": "peter-haratík",
-          "profileId": "ACoAABQTj7ABmJmTXG7uPafROHj0cRtEAqa6VDY"
+          "firstName": "Jana",
+          "lastName": "Hájková",
+          "occupation": "Procesní manažer | Marketing | Recruitment",
+          "id": "149043265",
+          "publicId": "jana-hajkova",
+          "profileId": "ACoAAAjiOEEBh6uIfFjqSc5SQLAvwXlc1r1fXKI"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Sylva",
+          "lastName": "Sulaimanova",
+          "occupation": "PR Senior Consultant",
+          "id": "75280458",
+          "publicId": "sylva-sulaimanova-0b626521",
+          "profileId": "ACoAAAR8sEoBW9cPjwDCIZ8rgE46BH6u_UiQnjY"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "David",
+          "lastName": "Arzt",
+          "occupation": "Helping businesses grow",
+          "id": "10588766",
+          "publicId": "arpid",
+          "profileId": "ACoAAAChkl4BVlf6F3xm7LDEDG6-t15RzN9a1WU"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Radek",
+          "lastName": "Štěpánek",
+          "occupation": "Business Development & Investor Relations @ 2BMINER | Pomáhám firmám a investorům zhodnocovat kapitál skrze infrastrukturu pro těžbu Bitcoinu v USA, SAE a Etiopii",
+          "id": "1773636731",
+          "publicId": "radek-štěpánek-18bba2415",
+          "profileId": "ACoAAGm3jHsBWHih_K6L4fvMZAqIx88WdYaOOyI"
         }
       }
     ],
     "numShares": 1,
-    "numLikes": 150,
-    "numComments": 27,
+    "numLikes": 172,
+    "numComments": 31,
     "canReact": true,
     "canPostComments": true,
     "canShare": true,
@@ -371,9 +380,64 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Martin",
+        "lastName": "Kůra",
+        "occupation": "Data Analysis • AI • Crypto Research",
+        "id": "838677857",
+        "publicId": "martin-kura",
+        "profileId": "ACoAADH9NWEBxz9x0WdDuD1qB_5dbHSmlCiGB4c"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lukáš",
+        "lastName": "Hartmann",
+        "occupation": "Programmer and SEO consultant as freelancer",
+        "id": "172304478",
+        "publicId": "lukashartmann",
+        "profileId": "ACoAAApFKF4B-pRSg4thUGXm11ackpR7pzvAlEA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Věra",
+        "lastName": "Paukrtová",
+        "occupation": "Customer Operations · UAT Testing · DAX & IT Systems · Process Clarity",
+        "id": "360931331",
+        "publicId": "vera-paukrtova",
+        "profileId": "ACoAABWDYAMBFYDd-8UbIa_Hpu7wcIyFm7tZrYM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vojtěch",
+        "lastName": "Oram",
+        "occupation": "Senior Full Stack Engineer at Leadspicker.com",
+        "id": "210301792",
+        "publicId": "vojtechoram",
+        "profileId": "ACoAAAyI82ABkjPc2jb-1bKnJT4hep8nNkbq2zU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Zpěváková",
+        "occupation": "BI/ Data analyst, junior AI enthusiast, quizmaker and host in DATA Mesh Prague",
+        "id": "637440646",
+        "publicId": "py-veronika-zpevakova",
+        "profileId": "ACoAACX-koYBZCeuCb06SzAT8F955fJvI0OEIAc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Dana",
         "lastName": "Lamatová",
-        "occupation": "Data Analyst in progress | SQL, Python, Power BI |Logistics & operations background",
+        "occupation": "Aspiring Data Analyst | SQL | Power BI | Snowflake | Data Modeling | Logistics & Operations",
         "id": "428236412",
         "publicId": "dana-lamatova",
         "profileId": "ACoAABmGXnwBvB8lqpoLx_sgAzyThGezeu4okiE"
@@ -403,7 +467,7 @@
     }
   ],
   "numShares": 0,
-  "numLikes": 3,
+  "numLikes": 8,
   "numComments": 1,
   "canReact": true,
   "canPostComments": true,

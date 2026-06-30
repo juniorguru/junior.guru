@@ -5,7 +5,7 @@
     "images": [],
     "isActivity": false,
     "urn": "urn:li:activity:7473260783649480705",
-    "url": "https://www.linkedin.com/posts/honzajavorek_%C5%BEiv%C3%A1-discord-komunita-bezpe%C4%8Dn%C3%A9-m%C3%ADsto-pestr%C3%A1-activity-7473260783649480705-YXdP?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAGk6OIgB4XbDZ-jz83tt3eMSpf1QDM1gdEI",
+    "url": "https://www.linkedin.com/posts/honzajavorek_%C5%BEiv%C3%A1-discord-komunita-bezpe%C4%8Dn%C3%A9-m%C3%ADsto-pestr%C3%A1-activity-7473260783649480705-YXdP?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAGo5PTMBMzBJTL-h0-jT1PBMePpJgPsjH-M",
     "shareUrn": "urn:li:share:7465387829624397824",
     "text": "Živá Discord komunita, bezpečné místo, pestrá parta.\n\nSnažím se udělat teaser na klub pro novou homepage junior.guru a zatím to vypadá takhle.\n\nTrochu si s tím nevím rady, protože je pro mně strašně těžké vydestilovat ty pilíře, které dělají klub klubem, a najít největší lákadla, která lidi namotivují kliknout a zjistit si o naší komunitě něco víc.\n\nSnad to bude takhle aspoň dobrý začátek a zbytek se doladí za pochodu. Napadá vás, co by tam mělo být jinak?\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
     "attributes": [],
@@ -20,7 +20,7 @@
         "author": {
           "firstName": "Karla",
           "lastName": "Root",
-          "occupation": "Stay calm. Ask AI first, then decide whether to panic. 👣 Data never lie. People do.",
+          "occupation": "Stay calm. Ask AI first, then panic. 👣 Data never lie. People do.",
           "id": "420075610",
           "publicId": "karlaroot",
           "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog",
@@ -29,6 +29,17 @@
       }
     ],
     "reactions": [
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Jiri",
+          "lastName": "Gunka",
+          "occupation": "cyp",
+          "id": "106076066",
+          "publicId": "jiri-gunka",
+          "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+        }
+      },
       {
         "type": "LIKE",
         "profile": {
@@ -78,7 +89,7 @@
         "profile": {
           "firstName": "Matěj",
           "lastName": "Kahún",
-          "occupation": "Komuniťák v Czechitas 🏄‍♂️",
+          "occupation": "People, content & processes 🏄‍♂️",
           "id": "726742558",
           "publicId": "matejkahun",
           "profileId": "ACoAACtRNh4Bgs49PDAKRTrJ0zQclHv-UqoqjOs"
@@ -111,7 +122,7 @@
         "profile": {
           "firstName": "Karla",
           "lastName": "Root",
-          "occupation": "Stay calm. Ask AI first, then decide whether to panic. 👣 Data never lie. People do.",
+          "occupation": "Stay calm. Ask AI first, then panic. 👣 Data never lie. People do.",
           "id": "420075610",
           "publicId": "karlaroot",
           "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog"
@@ -127,21 +138,10 @@
           "publicId": "jan-meissner",
           "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw"
         }
-      },
-      {
-        "type": "LIKE",
-        "profile": {
-          "firstName": "Zuzana",
-          "lastName": "Bodri",
-          "occupation": "QA Engineer | Test Automation Enthusiast | SAP & HRIS Specialist | Czechitas DA Testing Graduate",
-          "id": "221016832",
-          "publicId": "zuzanabodri",
-          "profileId": "ACoAAA0scwABJpACMUjr-uyYFHcpxEGnpoxwrks"
-        }
       }
     ],
     "numShares": 1,
-    "numLikes": 13,
+    "numLikes": 14,
     "numComments": 3,
     "canReact": true,
     "canPostComments": true,
@@ -212,6 +212,17 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Karel",
+        "lastName": "Stastny",
+        "occupation": "Regional Sales Director @ FLO | Cross-team collaboration, Salesforce & Databricks",
+        "id": "49776558",
+        "publicId": "karelstastny",
+        "profileId": "ACoAAAL3h64Bt0IraE_KyRlnKagIEcmEYoJzC-U"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Martin",
         "lastName": "Hassman",
         "occupation": "🎯 Product Manager, 👑 Product Owner, 👨🏼‍💻 Technology Enthusiast, 🗣️ English, Czech, Spanish, 👷Open to work",
@@ -255,7 +266,7 @@
     }
   ],
   "numShares": 1,
-  "numLikes": 4,
+  "numLikes": 5,
   "numComments": 0,
   "canReact": true,
   "canPostComments": true,

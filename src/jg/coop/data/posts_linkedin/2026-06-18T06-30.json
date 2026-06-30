@@ -18,7 +18,7 @@
       "author": {
         "firstName": "Karla",
         "lastName": "Root",
-        "occupation": "Stay calm. Ask AI first, then decide whether to panic. 👣 Data never lie. People do.",
+        "occupation": "Stay calm. Ask AI first, then panic. 👣 Data never lie. People do.",
         "id": "420075610",
         "publicId": "karlaroot",
         "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog",
@@ -27,6 +27,17 @@
     }
   ],
   "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
     {
       "type": "LIKE",
       "profile": {
@@ -76,7 +87,7 @@
       "profile": {
         "firstName": "Matěj",
         "lastName": "Kahún",
-        "occupation": "Komuniťák v Czechitas 🏄‍♂️",
+        "occupation": "People, content & processes 🏄‍♂️",
         "id": "726742558",
         "publicId": "matejkahun",
         "profileId": "ACoAACtRNh4Bgs49PDAKRTrJ0zQclHv-UqoqjOs"
@@ -109,7 +120,7 @@
       "profile": {
         "firstName": "Karla",
         "lastName": "Root",
-        "occupation": "Stay calm. Ask AI first, then decide whether to panic. 👣 Data never lie. People do.",
+        "occupation": "Stay calm. Ask AI first, then panic. 👣 Data never lie. People do.",
         "id": "420075610",
         "publicId": "karlaroot",
         "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog"
@@ -125,21 +136,10 @@
         "publicId": "jan-meissner",
         "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw"
       }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Zuzana",
-        "lastName": "Bodri",
-        "occupation": "QA Engineer | Test Automation Enthusiast | SAP & HRIS Specialist | Czechitas DA Testing Graduate",
-        "id": "221016832",
-        "publicId": "zuzanabodri",
-        "profileId": "ACoAAA0scwABJpACMUjr-uyYFHcpxEGnpoxwrks"
-      }
     }
   ],
   "numShares": 1,
-  "numLikes": 13,
+  "numLikes": 14,
   "numComments": 3,
   "canReact": true,
   "canPostComments": true,
