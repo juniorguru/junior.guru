@@ -33,11 +33,14 @@ template: main_handbook.html
     'Řeš malé úlohy přímo v prohlížeči, uč se z řešení druhých.'
   ) }}
 
+  {#
+  <!-- disabled 2026-06-30, certificate issue -->
   {{ link_card(
     'CheckiO',
     'https://checkio.org/',
     'Procházej online hru pomocí programovacích úloh, uč se od druhých.'
   ) }}
+  #}
 
   {% call link_card(
     'Umíme informatiku',

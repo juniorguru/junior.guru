@@ -88,7 +88,7 @@ Ať už budeš nakonec dělat cokoliv, začít s programovacím jazykem [Python]
 *   Má přátelskou komunitu lidí, kteří píšou materiály pro začátečníky a pořádají nejrůznější akce.
 *   Dobře se hledá pomoc při řešení problémů během učení, a to i v češtině.
 *   Je to dnes jeden z nejpoužívanějších a nejoblíbenějších jazyků vůbec.
-    *   [InfoTech News: Oficiální jazyk pro výuku ve Francii](https://meterpreter.org/python-will-become-the-official-programming-language-for-french-high-schools/)
+    *   [Éduscol: Oficiální jazyk pro výuku ve Francii](https://www.education.gouv.fr/reussir-au-lycee/la-specialite-numerique-et-sciences-informatiques-au-bac-325448)
     *   [The Economist: Stává se nejoblíbenějším jazykem na světě](https://www.economist.com/graphic-detail/2018/07/26/python-is-becoming-the-worlds-most-popular-coding-language)
     *   [StackOverflow: Jazyk s nejrychleji rostoucí popularitou a druhý nejmilovanější](https://insights.stackoverflow.com/survey/2019)
     *   [Vývoj dat ze StackOverflow: Během 10 let se stal nejoblíbenějším jazykem](https://www.youtube.com/watch?v=cKzP61Gjf00)
