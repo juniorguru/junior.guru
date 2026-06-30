@@ -1347,3 +1347,4 @@
 {"_id": "27698691692", "amount": 5125, "category": "memberships", "happened_on": "2026-06-22"}
 {"_id": "27702622106", "amount": 6, "category": "donations", "happened_on": "2026-06-24"}
 {"_id": "27708656278", "amount": 7400, "category": "memberships", "happened_on": "2026-06-29"}
+{"_id": "27709486018", "amount": -2000, "category": "office", "happened_on": "2026-06-29"}
