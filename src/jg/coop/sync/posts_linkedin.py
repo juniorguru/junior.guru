@@ -90,9 +90,7 @@ def clean_value(value: Any) -> Any:
             if key not in VOLATILE_KEYS and (cleaned := clean_value(item)) is not None
         }
     if isinstance(value, list):
-        return [
-            cleaned for item in value if (cleaned := clean_value(item)) is not None
-        ]
+        return [cleaned for item in value if (cleaned := clean_value(item)) is not None]
     if isinstance(value, str):
         return clean_url(value)
     return value
