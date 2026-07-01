@@ -12,12 +12,12 @@
     "rough-notation": "0.5.1"
   },
   "devDependencies": {
-    "@343dev/optimizt": "12.1.1",
+    "@343dev/optimizt": "13.0.0",
     "bootstrap": "5.3.8",
     "esbuild": "0.28.1",
     "esbuild-sass-plugin": "3.7.0",
     "jsdom": "29.1.1",
-    "oxfmt": "0.56.0",
+    "oxfmt": "0.57.0",
     "sass": "1.77.6",
     "stylelint": "16.26.1",
     "stylelint-config-twbs-bootstrap": "16.1.0",
