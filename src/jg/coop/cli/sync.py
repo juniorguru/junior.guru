@@ -9,7 +9,7 @@ import click
 
 from jg.coop import sync as sync_package
 from jg.coop.lib import images, loggers, mutations
-from jg.coop.lib.cli import command_name, import_commands
+from jg.coop.lib.cli import command_name, find_commands, import_command
 from jg.coop.models.base import db
 from jg.coop.models.sync import Sync
 
@@ -34,7 +34,10 @@ class Group(click.Group):
 
     @cached_property
     def sync_commands(self):
-        return dict(import_commands(self.sync_package))
+        return {
+            name: import_command(name, import_path)
+            for name, import_path in find_commands(self.sync_package)
+        }
 
     @cached_property
     def dependencies_map(self):

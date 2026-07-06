@@ -13,18 +13,12 @@ def command_name(module_name: str) -> str:
     return module_name.split(".")[-1].replace("_", "-")
 
 
-def load_command(module: ModuleType) -> tuple[str, Callable]:
-    return command_name(module.__name__), module.main
-
-
-def import_command(
-    context: click.Context, name: str, import_path: str
-) -> click.Command:
+def import_command(name: str, import_path: str) -> click.Command:
     module = import_module(import_path)
     if name == command_name(module.__name__):
         return module.main
     # assuming main is a flattened click.Group
-    return module.main.get_command(context, name)
+    return module.main.get_command(None, name)
 
 
 def find_commands(
@@ -40,11 +34,6 @@ def find_commands(
                 yield command_name_, import_path
         else:
             yield (command_name(module_name), import_path)
-
-
-def import_commands(package: ModuleType) -> Generator[tuple[str, Callable], None, None]:
-    for _, module_name in find_commands(package):
-        yield load_command(import_module(module_name))
 
 
 def async_command(fn: Callable[..., Awaitable]) -> Callable:

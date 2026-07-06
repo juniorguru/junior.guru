@@ -16,7 +16,7 @@ class LazyGroup(click.Group):
     def get_command(self, context: click.Context, name: str) -> click.Command | None:
         commands = dict(find_commands(__name__, flatten=self.flattened_modules))
         if import_path := commands.get(name):
-            return import_command(context, name, import_path)
+            return import_command(name, import_path)
         return None
 
 
