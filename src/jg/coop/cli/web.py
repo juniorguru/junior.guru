@@ -151,6 +151,12 @@ def serve(context, output_path: Path, open: bool):
         context.invoke(build_static, output_path=output_path)
 
     def rebuild_mkdocs():
+        # In-process: fast, reuses the already-imported jg. Fine for content,
+        # data, and template edits, which don't need Python to be re-imported.
+        context.invoke(build_mkdocs, output_path=output_path)
+
+    def rebuild_mkdocs_subprocess():
+        # Fresh process: picks up edited Python (lib/, models/, web/*.py).
         subprocess.run(["jg", "web", "build-mkdocs", str(output_path)], check=True)
 
     server = Server()
@@ -159,9 +165,12 @@ def serve(context, output_path: Path, open: bool):
     server.watch("src/jg/coop/**/*.scss", rebuild_static)
     server.watch("src/jg/coop/images/", rebuild_static)
     server.watch("src/jg/coop/data/", rebuild_mkdocs, ignore=ignore_data)
-    server.watch("src/jg/coop/lib/", rebuild_mkdocs)
-    server.watch("src/jg/coop/models/", rebuild_mkdocs)
-    server.watch("src/jg/coop/web/", rebuild_mkdocs)
+    server.watch("src/jg/coop/web/docs/", rebuild_mkdocs)
+    server.watch("src/jg/coop/web/macros/", rebuild_mkdocs)
+    server.watch("src/jg/coop/web/theme/", rebuild_mkdocs)
+    server.watch("src/jg/coop/lib/", rebuild_mkdocs_subprocess)
+    server.watch("src/jg/coop/models/", rebuild_mkdocs_subprocess)
+    server.watch("src/jg/coop/web/**/*.py", rebuild_mkdocs_subprocess)
     server.serve(
         host="localhost",
         root=str(output_path.absolute()),
