@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import Callable
 
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment as BaseEnvironment, FileSystemLoader
 from mkdocs.config import Config
 from mkdocs.structure.files import File, Files
 from mkdocs.structure.pages import Page
@@ -85,7 +85,30 @@ def get_filters() -> dict[str, Callable]:
     return {name: getattr(template_filters, name) for name in TEMPLATE_FILTERS}
 
 
+class Environment(BaseEnvironment):
+    """Jinja environment that memoizes compilation by source.
+
+    Many pages are generated from a handful of shared content templates, so
+    caching by source skips redundant compiles across those pages.
+    """
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._template_cache = {}
+
+    def from_string(self, source, *args, **kwargs):
+        if args or kwargs:
+            return super().from_string(source, *args, **kwargs)
+        try:
+            return self._template_cache[source]
+        except KeyError:
+            template = self._template_cache[source] = super().from_string(source)
+            return template
+
+
 def get_env(config: Config) -> Environment:
+    # Page-independent, so it's built once and reused for all pages. The per-page
+    # 'md' filter is set on it before each render (see hooks.on_page_markdown).
     env = Environment(
         loader=FileSystemLoader(get_macros_dir(config)),
         auto_reload=False,

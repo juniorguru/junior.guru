@@ -14,7 +14,6 @@ mkdocs_jinja.monkey_patch()
 def on_pre_build(config):
     config["theme"].dirs.append(mkdocs_jinja.get_macros_dir(config))
     config["jinja_env"] = mkdocs_jinja.get_env(config)
-    config["jinja_templates"] = {}
     config["shared_context"] = {}
     context_hooks.on_shared_context(config["shared_context"])
     config["docs_context"] = {}
@@ -40,13 +39,7 @@ def on_page_markdown(markdown, page, config, files) -> str:
     )
     context_hooks.on_shared_page_context(context, page, config, files)
     context_hooks.on_docs_page_context(context, page, config, files)
-
-    # avoid repeated compilation of the same templates
-    templates = config["jinja_templates"]
-    try:
-        template = templates[markdown]
-    except KeyError:
-        template = templates[markdown] = env.from_string(markdown)
+    template = env.from_string(markdown)
     return template.render(**context)
 
 
