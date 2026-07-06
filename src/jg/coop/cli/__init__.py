@@ -1,55 +1,30 @@
+import pkgutil
+from importlib import import_module
+from typing import cast
+
 import click
 
-from jg.coop.cli import (
-    backup,
-    cache,
-    cancel_previous_builds,
-    channel_to_thread,
-    check_bot,
-    check_docs,
-    check_sponsors,
-    data,
-    locate,
-    notes,
-    screenshots,
-    sync,
-    tidy,
-    web,
-    winners,
-)
-from jg.coop.cli.dev import main as dev
 from jg.coop.lib import loggers
 from jg.coop.lib.cache import close_cache
-from jg.coop.lib.cli import load_command
+from jg.coop.lib.cli import command_name, find_commands, import_command
 
 
-subcommands = click.Group(
-    commands=dict(
-        map(
-            load_command,
-            [
-                backup,
-                cache,
-                cancel_previous_builds,
-                channel_to_thread,
-                check_bot,
-                check_docs,
-                check_sponsors,
-                data,
-                locate,
-                notes,
-                screenshots,
-                sync,
-                tidy,
-                web,
-                winners,
-            ],
-        )
-    )
-)
+class LazyGroup(click.Group):
+    """Imports a subcommand's module only when that command is actually used"""
+
+    flattened_modules = ["dev"]
+
+    def list_commands(self, ctx: click.Context) -> list[str]:
+        return sorted(find_commands(__path__, flatten=self.flattened_modules))
+
+    def get_command(self, ctx: click.Context, name: str) -> click.Command | None:
+        commands = dict(find_commands(__path__, flatten=self.flattened_modules))
+        if import_path := commands.get(name):
+            return import_command(ctx, name, import_path)
+        return None
 
 
-@click.command(cls=click.CommandCollection, sources=[dev, subcommands])
+@click.command(cls=LazyGroup)
 @click.option("--debug/--no-debug", default=None)
 @click.pass_context
 def main(context: click.Context, debug: bool):
