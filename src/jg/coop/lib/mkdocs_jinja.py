@@ -6,7 +6,7 @@ from mkdocs.config import Config
 from mkdocs.structure.files import File, Files
 from mkdocs.structure.pages import Page
 from mkdocs.structure.toc import get_toc
-from mkdocs.utils.filters import url_filter
+from mkdocs.utils.templates import url_filter
 
 from jg.coop.lib import loggers, template_filters
 from jg.coop.lib.cache import get_jinja_cache
@@ -85,7 +85,7 @@ def get_filters() -> dict[str, Callable]:
     return {name: getattr(template_filters, name) for name in TEMPLATE_FILTERS}
 
 
-def get_env(page: Page, config: Config, files: Files) -> Environment:
+def get_env(config: Config) -> Environment:
     env = Environment(
         loader=FileSystemLoader(get_macros_dir(config)),
         auto_reload=False,
@@ -94,7 +94,6 @@ def get_env(page: Page, config: Config, files: Files) -> Environment:
     )
     env.filters.update(get_filters())
     env.filters["url"] = url_filter
-    env.filters["md"] = create_md_filter(page, config, files)
     return env
 
 

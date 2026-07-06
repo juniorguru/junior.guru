@@ -13,6 +13,8 @@ mkdocs_jinja.monkey_patch()
 
 def on_pre_build(config):
     config["theme"].dirs.append(mkdocs_jinja.get_macros_dir(config))
+    config["jinja_env"] = mkdocs_jinja.get_env(config)
+    config["jinja_templates"] = {}
     config["shared_context"] = {}
     context_hooks.on_shared_context(config["shared_context"])
     config["docs_context"] = {}
@@ -26,7 +28,8 @@ def on_page_markdown(markdown, page, config, files) -> str:
 
     Inspired by https://github.com/fralau/mkdocs_macros_plugin
     """
-    env = mkdocs_jinja.get_env(page, config, files)
+    env = config["jinja_env"]
+    env.filters["md"] = mkdocs_jinja.create_md_filter(page, config, files)
     context = dict(
         page=page,
         config=config,
@@ -37,7 +40,13 @@ def on_page_markdown(markdown, page, config, files) -> str:
     )
     context_hooks.on_shared_page_context(context, page, config, files)
     context_hooks.on_docs_page_context(context, page, config, files)
-    template = env.from_string(markdown)
+
+    # avoid repeated compilation of the same templates
+    templates = config["jinja_templates"]
+    try:
+        template = templates[markdown]
+    except KeyError:
+        template = templates[markdown] = env.from_string(markdown)
     return template.render(**context)
 
 
