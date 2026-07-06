@@ -1,12 +1,8 @@
-import pkgutil
-from importlib import import_module
-from typing import cast
-
 import click
 
 from jg.coop.lib import loggers
 from jg.coop.lib.cache import close_cache
-from jg.coop.lib.cli import command_name, find_commands, import_command
+from jg.coop.lib.cli import find_commands, import_command
 
 
 class LazyGroup(click.Group):
@@ -15,12 +11,12 @@ class LazyGroup(click.Group):
     flattened_modules = ["dev"]
 
     def list_commands(self, ctx: click.Context) -> list[str]:
-        return sorted(find_commands(__path__, flatten=self.flattened_modules))
+        return sorted(dict(find_commands(__name__, flatten=self.flattened_modules)))
 
-    def get_command(self, ctx: click.Context, name: str) -> click.Command | None:
-        commands = dict(find_commands(__path__, flatten=self.flattened_modules))
+    def get_command(self, context: click.Context, name: str) -> click.Command | None:
+        commands = dict(find_commands(__name__, flatten=self.flattened_modules))
         if import_path := commands.get(name):
-            return import_command(ctx, name, import_path)
+            return import_command(context, name, import_path)
         return None
 
 

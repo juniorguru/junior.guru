@@ -24,18 +24,16 @@ def import_command(
     if name == command_name(module.__name__):
         return module.main
     # assuming main is a flattened click.Group
-    return main.get_command(context, name)
+    return module.main.get_command(context, name)
 
 
 def find_commands(
     package: str | ModuleType, flatten: list[str] | None = None
 ) -> Generator[tuple[str, str], None, None]:
-    try:
-        package_path = package.__path__
-    except AttributeError:
-        package_path = str(package)
-    for _, module_name, _ in pkgutil.iter_modules(package_path):
-        import_path = f"{package_path}.{module_name}"
+    if isinstance(package, str):
+        package = import_module(package)
+    for _, module_name, _ in pkgutil.iter_modules(package.__path__):
+        import_path = f"{package.__name__}.{module_name}"
         if flatten and module_name in flatten:
             group: click.Group = import_module(import_path).main
             for command_name_ in group.list_commands(None):
