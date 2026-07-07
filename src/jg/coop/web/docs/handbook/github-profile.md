@@ -144,6 +144,8 @@ Velké množství juniorů na vlastní obrázek kašle, takže i když je to dvo
 
 ## Vyplň si základní údaje
 
+Nastav si _Public email_, protože je to jediný spolehlivý kontakt, kterým se ti mohou napřímo ozvat případní zaměstnavatelé.
+
 Doplň si v [nastavení](https://github.com/settings/profile) svoje jméno.
 Pokud chceš, uveď _Bio_, tzn. nějakou větu o sobě.
 
