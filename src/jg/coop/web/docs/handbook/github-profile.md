@@ -147,6 +147,8 @@ Velké množství juniorů na vlastní obrázek kašle, takže i když je to dvo
 Doplň si v [nastavení](https://github.com/settings/profile) svoje jméno.
 Pokud chceš, uveď _Bio_, tzn. nějakou větu o sobě.
 
+Vyplatí se nastavit i _Public email_ — přes e-mail se ti zaměstnavatelé ozývají nejspolehlivěji, výrazně častěji než přes LinkedIn.
+
 Můžeš vyplnit _Location_, ale není to nutné a klidně napiš jen „Czechia“, stačí to.
 GitHub je globální, takže jestli tam chceš dát město, doplň i stát, třeba „Prešov, Slovakia“.
 
