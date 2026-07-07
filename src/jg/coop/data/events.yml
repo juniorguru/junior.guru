@@ -60,6 +60,19 @@
 # - https://www.fotor.com/photo-editor-app/editor/beauty
 
 registry:
+  - id: 64
+    title: "(něco o impostor syndromu, bude upřesněno)"
+    date: "2026-07-28"
+    description: |
+      (bude upřesněno)
+    avatar_path: avatars-participants/eliska-cejpova.jpg
+    bio_name: Eliška Čejpová
+    bio_title: "Koučka agilního vývoje softwaru"
+    bio: |
+      (bude upřesněno)
+    bio_links:
+      - https://www.linkedin.com/in/eliskacejpova/
+
   - id: 63
     title: "Focus v době AI"
     date: "2026-06-30"
