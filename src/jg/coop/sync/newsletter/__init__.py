@@ -11,7 +11,7 @@ from jinja2 import Template
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers, months
-from jg.coop.lib.buttondown import ButtondownAPI
+from jg.coop.lib.buttondown import ButtondownAPI, ButtondownError
 from jg.coop.lib.cli import async_command
 from jg.coop.lib.discord_club import ClubChannelID
 from jg.coop.lib.mutations import MutationsNotAllowedError
@@ -91,7 +91,7 @@ logger = loggers.from_path(__file__)
 @click.option(
     "--max-drafts",
     default=3,
-    type=int,
+    type=click.IntRange(min=0),
     help="Maximum number of email drafts to keep",
 )
 @db.connection_context()
@@ -331,7 +331,10 @@ async def delete_old_drafts(api: ButtondownAPI, max_drafts: int) -> None:
                 f"with status {draft['status']!r}"
             )
         logger.info(f"Deleting draft {draft['id']} ({draft.get('subject')!r})")
-        await api.delete_email(draft["id"])
+        try:
+            await api.delete_email(draft["id"])
+        except ButtondownError as e:
+            logger.warning(f"Failed to delete draft {draft['id']}: {e}")
 
 
 def get_cv_review_types(

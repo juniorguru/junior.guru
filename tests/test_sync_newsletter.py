@@ -16,12 +16,12 @@ class FakeButtondownAPI:
         self.deleted_ids.append(email_id)
 
 
-def draft(id: str, creation_date: str, status: str = "draft") -> dict:
+def draft(draft_id: str, creation_date: str, status: str = "draft") -> dict:
     return {
-        "id": id,
+        "id": draft_id,
         "creation_date": creation_date,
         "status": status,
-        "subject": f"Draft {id}",
+        "subject": f"Draft {draft_id}",
     }
 
 
