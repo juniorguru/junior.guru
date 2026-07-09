@@ -118,7 +118,7 @@ wheels = [
 
 [[package]]
 name = "apify-client"
-version = "3.0.4"
+version = "3.0.5"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "colorama" },
@@ -126,9 +126,9 @@ dependencies = [
     { name = "more-itertools" },
     { name = "pydantic", extra = ["email"] },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/a0/6f/a565a30c6af9f6947557bd38a72a55ccd0c216fe0d5278e7b2096ecad720/apify_client-3.0.4.tar.gz", hash = "sha256:b53c622bae1a04ce5d75112bc6bcdd3955e1465155fa6a4e0eb50d7e6561ebbd", size = 121871, upload-time = "2026-06-26T09:58:35.257Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/0b/a5/27ddc2abb92e8a40982ef640b235cca7b67a64f2dc8d24db3bd9ded5babd/apify_client-3.0.5.tar.gz", hash = "sha256:29b8066fb4327eb88bd5f3022d7c4aa2f8aed747da77a77ad6216a939620bf60", size = 123258, upload-time = "2026-07-08T13:18:43.675Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/46/90/eeff086835f8549225705599a8d711b21b5199027f2642ddaa54554924f4/apify_client-3.0.4-py3-none-any.whl", hash = "sha256:2ddf731fbb642cd0efa1e252fa60f04a4e9d9403a519c13a7d1800fbce52c476", size = 140353, upload-time = "2026-06-26T09:58:34.033Z" },
+    { url = "https://files.pythonhosted.org/packages/3a/11/2877963d8997ef9dbf079353bc0ff535ec803638e4315338b74890788501/apify_client-3.0.5-py3-none-any.whl", hash = "sha256:ba53f422c45b5e9fa32ebccd582e33ba37d9d067af78d888518971556f09b8c1", size = 141259, upload-time = "2026-07-08T13:18:42.324Z" },
 ]
 
 [[package]]
@@ -646,15 +646,15 @@ wheels = [
 
 [[package]]
 name = "google-auth"
-version = "2.55.1"
+version = "2.55.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "cryptography" },
     { name = "pyasn1-modules" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/a3/6f/f3f4ac177c67bbee8fe8e88f2ab4f36af88c44a096e165c5217accf6e5d3/google_auth-2.55.1.tar.gz", hash = "sha256:fb2d9b730f2c9b8d326ec8d7222f21aef2ead15bf0513793d6442485d87af0a1", size = 349527, upload-time = "2026-06-25T23:39:27.182Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/79/b9/e370d86fea3da13ec0256df30323dd26c0cb9c8c85f0c6ec42ac9df0106b/google_auth-2.55.2.tar.gz", hash = "sha256:97ae7790ff740f2bc9db60eb864a7804f4ac19f5f02c38b3d942f2fea6e9b9ae", size = 361414, upload-time = "2026-07-07T18:43:21.227Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/e8/1d/f6d3ca1ad0725f2e08a1c6915640748a52de2e66596160a4d53b010cccf0/google_auth-2.55.1-py3-none-any.whl", hash = "sha256:eada68dfd52b3b81191827601e2a0c3fa12540c818534b630ddc5355769c3995", size = 252349, upload-time = "2026-06-25T23:38:52.946Z" },
+    { url = "https://files.pythonhosted.org/packages/1e/c6/02eb5a337ac316a4c30c012e747bad5cea36e1a876efecdf80865541f7d8/google_auth-2.55.2-py3-none-any.whl", hash = "sha256:d715f265f2cafc6a5f1bf0dc19870d20e3119f6f6682785a250bce3d03d38a3b", size = 256778, upload-time = "2026-07-07T18:43:19.52Z" },
 ]
 
 [[package]]
@@ -1609,14 +1609,14 @@ wheels = [
 
 [[package]]
 name = "proto-plus"
-version = "1.28.0"
+version = "1.28.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "protobuf" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c9/56/e647b0c675392d2da368da7b6f158f7368b18542fd6f7d7400a2f39de000/proto_plus-1.28.0.tar.gz", hash = "sha256:38e5696342835b08fc116f30a25665b29531cda9d5d5643e9b81fc312385abd9", size = 57221, upload-time = "2026-05-07T08:04:50.811Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/87/44/767757fd2cdd4a60d7e4440d9f7b491d6131103d313638d2c03e06c268fb/proto_plus-1.28.1.tar.gz", hash = "sha256:832e68e7fe064cf90ab153b6e5eb935b27891bb89aaeb68b115e9b702f6cb168", size = 57166, upload-time = "2026-07-08T17:04:02.367Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/7c/20/b122d4626976acb81132036d2ad1bb35a1a8775fceb837ec30964622516a/proto_plus-1.28.0-py3-none-any.whl", hash = "sha256:a630604310899e73c59ec302e5765c058d412b2f090b9c79c8822589f14955b8", size = 50410, upload-time = "2026-05-07T08:03:31.962Z" },
+    { url = "https://files.pythonhosted.org/packages/6a/34/2f2b57dbfd145b995a29847a16b0903fce5ef6ad3c7aad740a609c5d3678/proto_plus-1.28.1-py3-none-any.whl", hash = "sha256:6660f5f1970874bdcfc3088b435188a36a37bd3596668f7d726417c4ae8cfbed", size = 50408, upload-time = "2026-07-08T17:03:34.532Z" },
 ]
 
 [[package]]
@@ -1636,8 +1636,8 @@ wheels = [
 
 [[package]]
 name = "py-cord"
-version = "2.8.1.dev41+g7fdc17b9e"
-source = { git = "https://github.com/Pycord-Development/pycord.git#7fdc17b9e2fe17ebf2a58862d11929bebf3202ca" }
+version = "2.8.1.dev48+g6c4e759e3"
+source = { git = "https://github.com/Pycord-Development/pycord.git#6c4e759e3ea406a40d37d2917f81d11cec81c496" }
 dependencies = [
     { name = "aiohttp" },
     { name = "typing-extensions" },
@@ -1651,11 +1651,11 @@ speed = [
 
 [[package]]
 name = "pyasn1"
-version = "0.6.3"
+version = "0.6.4"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/5c/5f/6583902b6f79b399c9c40674ac384fd9cd77805f9e6205075f828ef11fb2/pyasn1-0.6.3.tar.gz", hash = "sha256:697a8ecd6d98891189184ca1fa05d1bb00e2f84b5977c481452050549c8a72cf", size = 148685, upload-time = "2026-03-17T01:06:53.382Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/a4/9a/23310166d960def5897e91fe20e5b724601b02a22e84ba1f94232c0b7f67/pyasn1-0.6.4.tar.gz", hash = "sha256:9c447d8431c947fe4c8febc4ed9e760bc29011a5b01e5c74b67025bd9fb8ce81", size = 151262, upload-time = "2026-07-09T01:12:33.988Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/5d/a0/7d793dce3fa811fe047d6ae2431c672364b462850c6235ae306c0efd025f/pyasn1-0.6.3-py3-none-any.whl", hash = "sha256:a80184d120f0864a52a073acc6fc642847d0be408e7c7252f31390c0f4eadcde", size = 83997, upload-time = "2026-03-17T01:06:52.036Z" },
+    { url = "https://files.pythonhosted.org/packages/9a/3b/6163796d69c3977d1e4287bea4a6979161cbbdd170ebb430511e8e1999ce/pyasn1-0.6.4-py3-none-any.whl", hash = "sha256:deda9277cfd454080ec40b207fb6df82206a3a2688735233cdcd8d3d565f088b", size = 84410, upload-time = "2026-07-09T01:12:32.92Z" },
 ]
 
 [[package]]
