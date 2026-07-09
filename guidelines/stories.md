@@ -8,7 +8,7 @@ Stories live as Markdown files in src/jg/coop/web/docs/stories, where each file 
 - In Google Docs, go to _Download_, then _Markdown (.md)_.
 - Save the file to src/jg/coop/web/docs/stories, filename being the name of the interviewee (all lowercase, without diacritics, and with dashes instead of whitespace).
 - Put the photo inside src/jg/coop/images/avatars-participants, again with a filename reflecting the name of the interviewee (all lowercase, without diacritics, and with dashes instead of whitespace)
-- Analyze the image (find face) and determine the best (and largest) possible looking crop of the image to regular square. Convert the image to JPEG and make sure it has `.jpg` as an extension. Then run `uv run jg tidy` which optimizes all images.
+- Analyze the image and determine the most aesthetically pleasing (and largest) possible looking crop of the image to regular square. Convert the image to JPEG and make sure it has `.jpg` as an extension. Then run `uv run jg tidy` which optimizes all images.
 - Look at other existing stories inside the src/jg/coop/web/docs/stories folder and rework the Markdown file so that it fits all the conventions: front matter with configuration, some added markup for navigation, article lead, correct markup of the interview text itself…
 - Each question and answer should be separated by double new lines.
 - If the interview contains standalone quotes, usually in form of `*„text”*`, use the `blockquote_avatar` to render it properly. See other existing interviews for guidance.
