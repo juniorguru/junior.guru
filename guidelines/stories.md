@@ -12,4 +12,4 @@ Stories live as Markdown files in src/jg/coop/web/docs/stories, where each file 
 - Look at other existing stories inside the src/jg/coop/web/docs/stories folder and rework the Markdown file so that it fits all the conventions: front matter with configuration, some added markup for navigation, article lead, correct markup of the interview text itself…
 - Each question and answer should be separated by double new lines.
 - If the interview contains standalone quotes, usually in form of `*„text”*`, use the `blockquote_avatar` to render it properly. See other existing interviews for guidance.
-- Fix typos in markup, e.g. double whitespace `  ` after a regular sentence, which should be a single whitespace ` `.
+- Fix typos in markup, e.g. double whitespace `  ` after a regular sentence, which should be a single whitespace ` `. Replace `...` with `…`.
