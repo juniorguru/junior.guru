@@ -104,6 +104,10 @@ def build_mkdocs(context, config_path: Path, output_path: Path, warn: bool):
         # Unfortunately MkDocs sets their own warnings filter, so we have to
         # nuke the whole thing to disable warnings. This is a hack, but it works.
         warnings.simplefilter = lambda *args, **kwargs: None
+        # Silence urllib3's DependencyWarning about missing PySocks, which fires
+        # when 'requests' lazily imports urllib3.contrib.socks during the build.
+        # We don't use SOCKS proxies, so PySocks is not worth adding as a dep.
+        warnings.filterwarnings("ignore", message=".*SOCKS support in urllib3.*")
     hidden_static_path = output_path / ".static"
     static_path = output_path / "static"
     try:
