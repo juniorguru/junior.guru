@@ -1,6 +1,8 @@
 import logging
 
 import gspread
+
+# gspread performs its HTTP over 'requests', so these are the exceptions it raises.
 from requests.exceptions import ConnectionError, Timeout
 from tenacity import (
     before_sleep_log,

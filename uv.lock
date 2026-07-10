@@ -711,9 +711,8 @@ wheels = [
 ]
 
 [package.optional-dependencies]
-requests = [
-    { name = "requests" },
-    { name = "requests-toolbelt" },
+httpx = [
+    { name = "httpx" },
 ]
 
 [[package]]
@@ -937,7 +936,7 @@ dependencies = [
     { name = "githubkit" },
     { name = "google-api-python-client" },
     { name = "google-auth" },
-    { name = "gql", extra = ["requests"] },
+    { name = "gql", extra = ["httpx"] },
     { name = "gspread" },
     { name = "httpx" },
     { name = "ics" },
@@ -964,7 +963,6 @@ dependencies = [
     { name = "pydantic" },
     { name = "python-slugify" },
     { name = "pyyaml" },
-    { name = "requests" },
     { name = "stripe" },
     { name = "tenacity" },
     { name = "tiktoken" },
@@ -998,7 +996,7 @@ requires-dist = [
     { name = "githubkit", specifier = ">=0.13.3" },
     { name = "google-api-python-client", specifier = ">=2.184.0" },
     { name = "google-auth", specifier = ">=2.41.1" },
-    { name = "gql", extras = ["requests"], specifier = ">=4.0.0" },
+    { name = "gql", extras = ["httpx"], specifier = ">=4.0.0" },
     { name = "gspread", specifier = ">=6.2.1" },
     { name = "httpx", specifier = ">=0.28.1" },
     { name = "ics", specifier = ">=0.8.0.dev0" },
@@ -1025,7 +1023,6 @@ requires-dist = [
     { name = "pydantic", specifier = ">=2.11.10" },
     { name = "python-slugify", specifier = ">=8.0.4" },
     { name = "pyyaml", specifier = ">=6.0.3" },
-    { name = "requests", specifier = ">=2.32.5" },
     { name = "stripe", specifier = ">=13.0.1" },
     { name = "tenacity", specifier = ">=9.1.2" },
     { name = "tiktoken", specifier = ">=0.11.0" },
