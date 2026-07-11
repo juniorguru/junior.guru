@@ -132,7 +132,7 @@ def process_episode(yaml_record):
             logger_ep.info(
                 "Using media size and duration from YAML and only verifying the audio file exists"
             )
-            response = httpx.head(media_url)
+            response = httpx.head(media_url, timeout=None)
             response.raise_for_status()
             media_size = yaml_record["media_size"]
             media_duration_s = yaml_record["media_duration_s"]
