@@ -22,7 +22,7 @@ def main(feed_url: str):
     BlogArticle.create_table()
 
     logger.info(f"Reading feed: {feed_url}")
-    response = httpx.get(feed_url, follow_redirects=True, timeout=None)
+    response = httpx.get(feed_url, follow_redirects=True)
     response.raise_for_status()
     articles = feedparser.parse(response.content).entries
     articles = sorted(articles, key=attrgetter("published"), reverse=True)

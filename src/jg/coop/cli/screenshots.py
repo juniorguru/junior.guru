@@ -255,7 +255,6 @@ def download_yt_cover_image(screenshot):
     resp = httpx.get(
         f"https://img.youtube.com/vi/{parse_youtube_id(url)}/maxresdefault.jpg",
         follow_redirects=True,
-        timeout=None,
     )
     try:
         resp.raise_for_status()
@@ -263,7 +262,6 @@ def download_yt_cover_image(screenshot):
         resp = httpx.get(
             f"https://img.youtube.com/vi/{parse_youtube_id(url)}/hqdefault.jpg",
             follow_redirects=True,
-            timeout=None,
         )
         resp.raise_for_status()
     image_bytes = edit_image(resp.content)
@@ -287,7 +285,7 @@ def download_fb_cover_image(screenshot):
             browser.close()
             raise RuntimeError(f"Cover photo not found on Facebook page: {url}")
         browser.close()
-    resp = httpx.get(image_url, follow_redirects=True, timeout=None)
+    resp = httpx.get(image_url, follow_redirects=True)
     resp.raise_for_status()
     image_bytes = edit_image(resp.content)
     logger.info(f"Writing {path}")

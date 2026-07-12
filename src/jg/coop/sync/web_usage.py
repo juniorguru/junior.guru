@@ -105,7 +105,6 @@ def fetch_analytics(pages: list[str], time_range: dict[str, str]) -> int:
         "https://simpleanalytics.com/junior.guru.json",
         params=params,
         follow_redirects=True,
-        timeout=None,
     )
     response.raise_for_status()
     data = response.json()

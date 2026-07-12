@@ -64,7 +64,6 @@ class MemberfulAPI:
                     "User-Agent": self.user_agent,
                 },
                 transport=httpx.HTTPTransport(verify=True, retries=3),
-                timeout=None,
             )
             self._client = Client(transport=transport)
         return self._client
@@ -151,7 +150,7 @@ class MemberfulCSV:
 
     def _auth(self) -> tuple[httpx.Client, Any]:
         logger.debug("Logging into Memberful")
-        session = httpx.Client(follow_redirects=True, timeout=None)
+        session = httpx.Client(follow_redirects=True)
         session.headers.update({"User-Agent": BROWSER_USER_AGENT})
         response = session.get("https://juniorguru.memberful.com/admin/auth/sign_in")
         response.raise_for_status()
