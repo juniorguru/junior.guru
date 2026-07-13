@@ -7,9 +7,9 @@ from dataclasses import dataclass
 from datetime import date, datetime, timedelta, timezone
 from typing import Any, Callable, Generator
 
-import requests
+import httpx
 from gql import Client, gql
-from gql.transport.requests import RequestsHTTPTransport
+from gql.transport.httpx import HTTPXTransport
 from lxml import html
 from tenacity import (
     before_sleep_log,
@@ -57,14 +57,13 @@ class MemberfulAPI:
     def client(self) -> Client:
         if not self._client:
             logger.debug("Connecting")
-            transport = RequestsHTTPTransport(
+            transport = HTTPXTransport(
                 url="https://juniorguru.memberful.com/api/graphql/",
                 headers={
                     "Authorization": f"Bearer {self.api_key}",
                     "User-Agent": self.user_agent,
                 },
-                verify=True,
-                retries=3,
+                transport=httpx.HTTPTransport(verify=True, retries=3),
             )
             self._client = Client(transport=transport)
         return self._client
@@ -138,7 +137,7 @@ class MemberfulCSV:
         self._auth_token = None
 
     @property
-    def session(self) -> requests.Session:
+    def session(self) -> httpx.Client:
         if not self._session:
             self._session, self._auth_token = self._auth()
         return self._session
@@ -149,18 +148,18 @@ class MemberfulCSV:
             self._session, self._auth_token = self._auth()
         return self._auth_token
 
-    def _auth(self) -> tuple[requests.Session, Any]:
+    def _auth(self) -> tuple[httpx.Client, Any]:
         logger.debug("Logging into Memberful")
-        session = requests.Session()
+        session = httpx.Client(follow_redirects=True)
         session.headers.update({"User-Agent": BROWSER_USER_AGENT})
         response = session.get("https://juniorguru.memberful.com/admin/auth/sign_in")
         response.raise_for_status()
         html_tree = html.fromstring(response.content)
-        html_tree.make_links_absolute(response.url)
+        html_tree.make_links_absolute(str(response.url))
         form = html_tree.forms[0]
         form.fields["email"] = self.email
         form.fields["password"] = self.password
-        response = session.post(form.action, data=form.form_values())
+        response = session.post(form.action, data=dict(form.form_values()))
         response.raise_for_status()
         logger.debug("Parsing auth token")
         html_tree = html.fromstring(response.content)
@@ -175,8 +174,8 @@ class MemberfulCSV:
     @cache(expire=timedelta(hours=1), ignore=(0,), tag="memberful-csv")
     @retry(
         retry=(
-            retry_if_exception_type(requests.exceptions.HTTPError)
-            | retry_if_exception_type(requests.exceptions.ConnectionError)
+            retry_if_exception_type(httpx.HTTPStatusError)
+            | retry_if_exception_type(httpx.ConnectError)
         ),
         wait=wait_random_exponential(max=60),
         stop=stop_after_attempt(3),
@@ -198,7 +197,7 @@ class MemberfulCSV:
                 "X-CSRF-Token": self.auth_token.value,
             },
             data={self.auth_token.param: self.auth_token.value} | (form_params or {}),
-            allow_redirects=False,
+            follow_redirects=False,
         )
         response.raise_for_status()
 
@@ -223,7 +222,7 @@ class MemberfulCSV:
         return self._poll_for_csv(download_url)
 
     @retry(
-        retry=retry_if_exception_type(requests.exceptions.HTTPError),
+        retry=retry_if_exception_type(httpx.HTTPStatusError),
         wait=wait_fixed(5),
         stop=stop_after_attempt(10),
         reraise=True,

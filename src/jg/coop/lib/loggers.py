@@ -18,7 +18,7 @@ MUTED_LOGGERS = [
     "discord",
     "google",
     "googleapiclient",
-    "gql.transport.requests",
+    "gql.transport.httpx",
     "httpcore",
     "httpx",
     "jg.coop.lib.mutations.allowing",

@@ -3,12 +3,12 @@ from multiprocessing import Pool
 from pathlib import Path
 
 import click
-import requests
+import httpx
 import yaml
 from discord import Color, Embed, File, ui
+from httpx import HTTPStatusError
 from pod2gen import Media
 from pydantic import BaseModel
-from requests.exceptions import HTTPError
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
@@ -132,11 +132,11 @@ def process_episode(yaml_record):
             logger_ep.info(
                 "Using media size and duration from YAML and only verifying the audio file exists"
             )
-            response = requests.head(media_url)
+            response = httpx.head(media_url, timeout=30)
             response.raise_for_status()
             media_size = yaml_record["media_size"]
             media_duration_s = yaml_record["media_duration_s"]
-    except HTTPError as e:
+    except HTTPStatusError as e:
         if yaml_record["publish_on"] >= TODAY and e.response.status_code == 404:
             logger_ep.warning(f"Future episode {media_url} doesn't exist yet")
             return None

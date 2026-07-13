@@ -5,7 +5,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 import click
-import requests
+import httpx
 from discord import Colour, Embed, File, ForumChannel, ForumTag, Message, Thread, ui
 
 from jg.coop.cli.sync import main as cli
@@ -274,7 +274,7 @@ async def create_thread(
                 message: Message = await thread.fetch_message(thread.id)
                 if message.attachments:
                     logo_url = message.attachments[0].url
-                    response = requests.head(logo_url)
+                    response = httpx.head(logo_url)
                     logo_bytes_count = int(response.headers.get("Content-Length", 0))
                 else:
                     logo_url = None
