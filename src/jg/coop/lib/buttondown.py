@@ -86,6 +86,8 @@ class ButtondownAPI:
         try:
             response = await self._client.request(method.lower(), url, **kwargs)
             response.raise_for_status()
+            if response.status_code == 204 or not response.content:
+                return {}
             return response.json()
         except httpx.HTTPStatusError as e:
             exc_data = e.response.json()
@@ -116,6 +118,19 @@ class ButtondownAPI:
             "emails",
             params={"status": "draft", "creation_date__start": since_date.isoformat()},
         )
+
+    async def get_drafts(self) -> AsyncGenerator[dict, None]:
+        next_url = "emails?status=draft"
+        while next_url:
+            logger.debug(f"Fetching drafts: {next_url}")
+            data = await self._request("GET", next_url)
+            for item in data["results"]:
+                yield item
+            next_url = data["next"]
+
+    @mutations.mutates_buttondown()
+    async def delete_email(self, email_id: str) -> None:
+        return await self._request("DELETE", f"emails/{email_id}")
 
     @mutations.mutates_buttondown()
     async def update_email(self, email_id: str, email_data: dict) -> None:

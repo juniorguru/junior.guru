@@ -1,6 +1,7 @@
 import random
 import time
 from datetime import date
+from operator import itemgetter
 from pathlib import Path
 from pprint import pformat
 from typing import Generator, Literal
@@ -10,7 +11,7 @@ from jinja2 import Template
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers, months
-from jg.coop.lib.buttondown import ButtondownAPI
+from jg.coop.lib.buttondown import ButtondownAPI, ButtondownError
 from jg.coop.lib.cli import async_command
 from jg.coop.lib.discord_club import ClubChannelID
 from jg.coop.lib.mutations import MutationsNotAllowedError
@@ -87,6 +88,12 @@ logger = loggers.from_path(__file__)
     type=date.fromisoformat,
 )
 @click.option("--summary-correction-attempts", default=3, type=int)
+@click.option(
+    "--max-drafts",
+    default=3,
+    type=click.IntRange(min=0),
+    help="Maximum number of email drafts to keep",
+)
 @db.connection_context()
 @async_command
 async def main(
@@ -95,24 +102,44 @@ async def main(
     open_browser: bool,
     today: date,
     summary_correction_attempts: int,
+    max_drafts: int,
 ):
     this_month = months.this_month(today)
-    prev_month = months.prev_month(today)
-    prev_prev_month = months.prev_prev_month(today)
 
     logger.info(f"Checking existing emails since {this_month}")
     async with ButtondownAPI() as api:
         emails_count = (await api.get_emails_since(this_month))["count"]
+
+    if emails_count and not force:
+        logger.warning(
+            "There are emails published this month. Skipping newsletter draft creation! Check https://buttondown.com/emails"
+        )
+    else:
         if emails_count:
-            if force:
-                logger.warning(
-                    "Forcing email creation even though there are already emails this month!"
-                )
-            else:
-                logger.warning(
-                    "There are emails published this month. Skipping newsletter! Check https://buttondown.com/emails"
-                )
-                return
+            logger.warning(
+                "Forcing email creation even though there are already emails this month!"
+            )
+        if not await create_newsletter_draft(
+            today, print_only, open_browser, summary_correction_attempts
+        ):
+            return
+
+    logger.info(f"Cleaning up drafts, keeping {max_drafts} most recent")
+    async with ButtondownAPI() as api:
+        await delete_old_drafts(api, max_drafts)
+
+
+async def create_newsletter_draft(
+    today: date,
+    print_only: bool,
+    open_browser: bool,
+    summary_correction_attempts: int,
+) -> bool:
+    """Create a newsletter draft. Returns False when execution should stop
+    without proceeding to draft cleanup (dry run or aborted summarization)."""
+    this_month = months.this_month(today)
+    prev_month = months.prev_month(today)
+    prev_prev_month = months.prev_prev_month(today)
 
     logger.info(f"Preparing email data: {prev_month} → {this_month}")
     logger.debug("Preparing subscribers")
@@ -227,7 +254,7 @@ async def main(
         await create_club_summary_topics(today, summary_correction_attempts)
     except MutationsNotAllowedError:
         logger.error("Unable to summarize club! Skipping newsletter draft creation")
-        return
+        return False
     topics = list(ClubSummaryTopic.listing())
 
     logger.debug("Rendering email body")
@@ -268,7 +295,7 @@ async def main(
     if print_only:
         logger.info("Printing email body:\n")
         print(email_data["body"])
-        return
+        return False
 
     logger.info("Creating draft")
     async with ButtondownAPI() as api:
@@ -281,6 +308,33 @@ async def main(
             if open_browser:
                 time.sleep(1)
                 click.launch(data["absolute_url"])
+    return True
+
+
+def select_drafts_to_delete(emails: list[dict], max_drafts: int) -> list[dict]:
+    """Pick draft emails to delete so that at most ``max_drafts`` most recent
+    drafts remain. Never selects a non-draft email."""
+    drafts = sorted(
+        (email for email in emails if email["status"] == "draft"),
+        key=itemgetter("creation_date"),
+        reverse=True,
+    )
+    return drafts[max_drafts:]
+
+
+async def delete_old_drafts(api: ButtondownAPI, max_drafts: int) -> None:
+    emails = [email async for email in api.get_drafts()]
+    drafts_to_delete = select_drafts_to_delete(emails, max_drafts)
+    if not drafts_to_delete:
+        logger.info(f"Nothing to clean up (limit {max_drafts})")
+        return
+    logger.info(f"Deleting {len(drafts_to_delete)} drafts to keep {max_drafts} recent")
+    for draft in drafts_to_delete:
+        logger.info(f"Deleting draft {draft['id']} ({draft.get('subject')!r})")
+        try:
+            await api.delete_email(draft["id"])
+        except ButtondownError as e:
+            logger.warning(f"Failed to delete draft {draft['id']}: {e}")
 
 
 def get_cv_review_types(
