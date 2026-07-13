@@ -1,5 +1,16 @@
 # Code Guidelines
 
+- Aim for the [Clean Architecture](https://www.youtube.com/watch?v=DJtef410XaM) ([textual slides](https://rhodesmill.org/brandon/slides/2014-07-pyohio/clean-architecture/)): an "imperative shell" wrapping a "functional core".
+- Use Python type hints everywhere.
+- Aim for low cyclomatic complexity.
+- Use `httpx` for HTTP requests (not `requests`, which stays only as a transitive dependency); use `click` for CLI specification.
+- Walrus operators are welcome; keep the code modern (pyupgrade-style, via Ruff `UP` rules).
+- Ruff target version must comply with `requires-python`.
+- Develop by red-green TDD.
+- Aim for many fast unit tests covering the "functional core" and few integration tests covering the "imperative shell".
+- Tests must never depend on network, time, etc. Smoke e2e tests may access network but must not run by default.
+- When testing against remote HTML, download it as a fixture into the tests directory and test against the fixture. Add several HTML fixtures when there are edge cases.
+- Aim at a single descriptive assert per test function, unless impractical (e.g. comparing small bits of complex structures).
 - Use `@pytest.mark.parametrize` if applicable, and always include spaces after commas in the argument list, e.g. "secondary_school, university, expected".
 - In `key=` situations (e.g., `sorted()`, `max()`, `min()`), prefer `attrgetter`/`itemgetter` over lambda when applicable.
 - Do not use `if TYPE_CHECKING:` blocks. Prefer straightforward imports/annotations without this pattern.
