@@ -6,7 +6,7 @@ from typing import Callable
 
 import click
 import httpx
-import requests  # FioBank performs its HTTP over 'requests' and raises its exceptions
+import requests
 from fiobank import FioBank
 
 from jg.coop.cli.sync import confirm, default_from_env, main as cli
