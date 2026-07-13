@@ -274,7 +274,7 @@ async def create_thread(
                 message: Message = await thread.fetch_message(thread.id)
                 if message.attachments:
                     logo_url = message.attachments[0].url
-                    response = httpx.head(logo_url, timeout=30)
+                    response = httpx.head(logo_url)
                     logo_bytes_count = int(response.headers.get("Content-Length", 0))
                 else:
                     logo_url = None
