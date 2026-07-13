@@ -199,7 +199,11 @@ class MemberfulCSV:
             data={self.auth_token.param: self.auth_token.value} | (form_params or {}),
             follow_redirects=False,
         )
-        response.raise_for_status()
+        # The POST 303-redirects to the created export. Unlike requests,
+        # httpx's raise_for_status() treats an unfollowed redirect as an error,
+        # so only raise on a genuine 4xx/5xx here.
+        if response.is_error:
+            response.raise_for_status()
 
         location_url = response.headers.get("Location") or None
         if location_url is None:
