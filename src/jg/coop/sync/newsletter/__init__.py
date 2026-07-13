@@ -311,25 +311,25 @@ async def create_newsletter_draft(
     return True
 
 
-async def delete_old_drafts(api: ButtondownAPI, max_drafts: int) -> None:
-    drafts = [draft async for draft in api.get_drafts() if draft["status"] == "draft"]
-    drafts.sort(key=itemgetter("creation_date"), reverse=True)
-    drafts_to_delete = drafts[max_drafts:]
-    if not drafts_to_delete:
-        logger.info(
-            f"Found {len(drafts)} drafts, nothing to clean up (limit {max_drafts})"
-        )
-        return
-    logger.info(
-        f"Found {len(drafts)} drafts, deleting {len(drafts_to_delete)} "
-        f"to keep {max_drafts} most recent"
+def select_drafts_to_delete(emails: list[dict], max_drafts: int) -> list[dict]:
+    """Pick draft emails to delete so that at most ``max_drafts`` most recent
+    drafts remain. Never selects a non-draft email."""
+    drafts = sorted(
+        (email for email in emails if email["status"] == "draft"),
+        key=itemgetter("creation_date"),
+        reverse=True,
     )
+    return drafts[max_drafts:]
+
+
+async def delete_old_drafts(api: ButtondownAPI, max_drafts: int) -> None:
+    emails = [email async for email in api.get_drafts()]
+    drafts_to_delete = select_drafts_to_delete(emails, max_drafts)
+    if not drafts_to_delete:
+        logger.info(f"Nothing to clean up (limit {max_drafts})")
+        return
+    logger.info(f"Deleting {len(drafts_to_delete)} drafts to keep {max_drafts} recent")
     for draft in drafts_to_delete:
-        if draft["status"] != "draft":
-            raise ValueError(
-                f"Refusing to delete email {draft['id']!r} "
-                f"with status {draft['status']!r}"
-            )
         logger.info(f"Deleting draft {draft['id']} ({draft.get('subject')!r})")
         try:
             await api.delete_email(draft["id"])
