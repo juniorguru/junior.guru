@@ -20,6 +20,12 @@
       }
     },
     {
+      "start": 210,
+      "length": 14,
+      "link": "https://www.linkedin.com/company/page404cz/",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 261,
       "length": 18,
       "type": "PROFILE_MENTION",
@@ -31,6 +37,12 @@
         "publicId": "apolena-rychlíková-833523203",
         "profileId": "ACoAADPeZucBVtc7ecuU7gUFi2Qc0YiRfwT_m6U"
       }
+    },
+    {
+      "start": 261,
+      "length": 18,
+      "link": "https://www.linkedin.com/in/ACoAADPeZucBVtc7ecuU7gUFi2Qc0YiRfwT_m6U",
+      "type": "HYPERLINK"
     },
     {
       "start": 282,
@@ -46,6 +58,12 @@
       }
     },
     {
+      "start": 282,
+      "length": 13,
+      "link": "https://www.linkedin.com/in/ACoAAAsIpMsBRiQgTBNmtams0ZbZkQtz0iiHH3E",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 358,
       "length": 14,
       "type": "PROFILE_MENTION",
@@ -56,6 +74,21 @@
         "id": "671410598",
         "publicId": "majakovacevic1995",
         "profileId": "ACoAACgE6aYB1kxPVvn6QT-gdlBeFT0wIoxQLxg"
+      }
+    },
+    {
+      "start": 358,
+      "length": 14,
+      "link": "https://www.linkedin.com/in/ACoAACgE6aYB1kxPVvn6QT-gdlBeFT0wIoxQLxg",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 674,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
       }
     },
     {
@@ -72,6 +105,21 @@
       }
     },
     {
+      "start": 1236,
+      "length": 24,
+      "link": "https://www.linkedin.com/in/ACoAAANa4aIBHk1CCKmRv1zZXqfXpIWkfbwQD5M",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 1296,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    },
+    {
       "start": 1654,
       "length": 13,
       "type": "PROFILE_MENTION",
@@ -85,6 +133,12 @@
       }
     },
     {
+      "start": 1654,
+      "length": 13,
+      "link": "https://www.linkedin.com/in/ACoAAAAnLA0BbBFLGUMYzUQDif9PDUSZKbS1T0c",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 2015,
       "length": 14,
       "type": "PROFILE_MENTION",
@@ -95,6 +149,21 @@
         "id": "762997811",
         "publicId": "miloslav-jezek",
         "profileId": "ACoAAC16bDMBDX69DVpckffdp3s7WQFJkN9ZQPE"
+      }
+    },
+    {
+      "start": 2015,
+      "length": 14,
+      "link": "https://www.linkedin.com/in/ACoAAC16bDMBDX69DVpckffdp3s7WQFJkN9ZQPE",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 2454,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
       }
     }
   ],
@@ -131,6 +200,21 @@
             "active": true,
             "showcase": false,
             "entityUrn": "urn:li:fs_miniCompany:104606605"
+          }
+        },
+        {
+          "start": 10,
+          "length": 14,
+          "link": "https://www.linkedin.com/company/page404cz/",
+          "type": "HYPERLINK"
+        },
+        {
+          "start": 26,
+          "length": 96,
+          "type": "TEXT_LINK",
+          "textLink": {
+            "viewingBehavior": "DEFAULT",
+            "url": "https://pagenotfound.cz/clanek/jak-nam-ukradli-komunitu-a-prodali-zpatky-jako-mesicni-predplatne"
           }
         }
       ],
@@ -197,7 +281,7 @@
       "profile": {
         "firstName": "Kateřina",
         "lastName": "Vystavělová",
-        "occupation": "Strategic Marketing · Positioning, Messaging & Customer Insight · Open to new opportunities · I write about what adult language learners feel but are often afraid to say out loud.",
+        "occupation": "Exploring mismatches between learners and methods 💙 Marketing in Education 💜 Adult language learning 🧡 Open to new opportunities · I write about what adult language learners feel but are often afraid to say out loud.",
         "id": "1428175354",
         "publicId": "katerina-vystavelova",
         "profileId": "ACoAAFUgOfoBb9yGflWKZnaaeswZaHANDoVfjVo"
@@ -252,7 +336,7 @@
       "profile": {
         "firstName": "Adéla",
         "lastName": "Tichá",
-        "occupation": "Graphic designer, moving into UX/UI design",
+        "occupation": "Customer Success & Support Professional | Passionate about UX/UI & Product Development",
         "id": "422345507",
         "publicId": "adelticha",
         "profileId": "ACoAABkseyMBcA3muv646Fc2S5gVsWt0b9uYw-0"

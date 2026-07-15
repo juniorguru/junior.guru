@@ -33,6 +33,12 @@
         "publicId": "evapavlikova",
         "profileId": "ACoAAAC46F0BJQLhw3nCC7aaTcpYSs6RqWaP1Vw"
       }
+    },
+    {
+      "start": 365,
+      "length": 13,
+      "link": "https://www.linkedin.com/in/ACoAAAC46F0BJQLhw3nCC7aaTcpYSs6RqWaP1Vw",
+      "type": "HYPERLINK"
     }
   ],
   "comments": [
@@ -157,6 +163,12 @@
           }
         },
         {
+          "start": 136,
+          "length": 13,
+          "link": "https://www.linkedin.com/in/ACoAAAC46F0BJQLhw3nCC7aaTcpYSs6RqWaP1Vw",
+          "type": "HYPERLINK"
+        },
+        {
           "start": 387,
           "length": 16,
           "type": "PROFILE_MENTION",
@@ -168,6 +180,12 @@
             "publicId": "vítězslav-vlasák-0a663a94",
             "profileId": "ACoAABQG_v4BdMW3BaCObU-WBhT0FQXrK8hlD34"
           }
+        },
+        {
+          "start": 387,
+          "length": 16,
+          "link": "https://www.linkedin.com/in/ACoAABQG_v4BdMW3BaCObU-WBhT0FQXrK8hlD34",
+          "type": "HYPERLINK"
         }
       ],
       "pinned": false,
@@ -338,7 +356,7 @@
       "profile": {
         "firstName": "Justýna",
         "lastName": "B.",
-        "occupation": "Social Media & Marketing 💻🤳 | Studentka Marketingových komunikací na FMK UTB",
+        "occupation": "Social Media & Influencer Marketing 💻🤳 | Studentka Marketingových komunikací na FMK UTB",
         "id": "963053613",
         "publicId": "justynabrazdilova",
         "profileId": "ACoAADlnCC0Bnv2lVyzTCF5v2lxme_sccaqyD0c"

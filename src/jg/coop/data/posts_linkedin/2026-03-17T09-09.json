@@ -19,6 +19,30 @@
         "publicId": "stepanbechynsky",
         "profileId": "ACoAAAYrXOABkIRTSLNDYbaZAeldcsTKFuxTueU"
       }
+    },
+    {
+      "start": 1049,
+      "length": 16,
+      "link": "https://www.linkedin.com/in/ACoAAAYrXOABkIRTSLNDYbaZAeldcsTKFuxTueU",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 1333,
+      "length": 18,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru/events"
+      }
+    },
+    {
+      "start": 1432,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
     }
   ],
   "comments": [
@@ -26,7 +50,17 @@
       "time": 1773741954837,
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7439598808755449856?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7439598808755449856%2C7439612976136978433%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287439612976136978433%2Curn%3Ali%3Aactivity%3A7439598808755449856%29",
       "text": "Kdo pamatuje tohle album? https://cs.wikipedia.org/wiki/Ppoommaalluu 😉 ",
-      "entities": [],
+      "entities": [
+        {
+          "start": 26,
+          "length": 42,
+          "type": "TEXT_LINK",
+          "textLink": {
+            "viewingBehavior": "DEFAULT",
+            "url": "https://cs.wikipedia.org/wiki/Ppoommaalluu"
+          }
+        }
+      ],
       "pinned": false,
       "originalLanguage": "Czech",
       "author": {
@@ -101,9 +135,9 @@
       "profile": {
         "firstName": "Šárka",
         "lastName": "Šimová",
-        "occupation": "Web Developer | Agentic Coding Orchestrator | Synthesist",
+        "occupation": "Operating Leader | Founder | CTO",
         "id": "561190816",
-        "publicId": "simova-web-developer",
+        "publicId": "s-simova",
         "profileId": "ACoAACFzF6ABcKcRgmAClhtiHuhWkASqyvnYAec"
       }
     },

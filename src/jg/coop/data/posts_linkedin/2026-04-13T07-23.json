@@ -6,7 +6,35 @@
   "url": "https://www.linkedin.com/posts/honzajavorek_stahuju-nab%C3%ADdky-pr%C3%A1ce-zportalisossgovcz-activity-7449356461664714753-4-1L",
   "shareUrn": "urn:li:share:7449356460381171712",
   "text": "Stahuju nabídky práce z portal.isoss.gov.cz, čímž jsem omylem vytvořil kontrolu uptimu toho portálu.\n\nTeď tam je už 4 dny „Služba je dočasně nedostupná z důvodu údržby systému“ a v mých systémech celou dobu blikají kontrolky.\n\nDělám to, abych státu pomoh obsadit IT role. Nemám z toho nic. Musel jsem to vyrobit, ještě v době před AI. Když se něco změní, opravuju to. Jsou z toho jednotky inzerátů na junior.guru/jobs/\n\nZjevně mi na té službě záleží víc, než jejím autorům. Mám to smazat?\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
-  "attributes": [],
+  "attributes": [
+    {
+      "start": 24,
+      "length": 19,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://portal.isoss.gov.cz"
+      }
+    },
+    {
+      "start": 401,
+      "length": 17,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru/jobs/"
+      }
+    },
+    {
+      "start": 512,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    }
+  ],
   "comments": [
     {
       "time": 1776248249698,
@@ -63,7 +91,17 @@
       "time": 1776066364644,
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7449356461664714753?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7449356461664714753%2C7449362257488039938%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287449362257488039938%2Curn%3Ali%3Aactivity%3A7449356461664714753%29",
       "text": "Já bych je pinkla, že se asi něco porouchalo :) dobrý úmysl ze tvé strany a šance na rychlejší nápravu šikovného nástroje. Otázka je, zda tam vůbec někdo je, kdo má na starost tuto agendu  😅 Pár kontaktů jsem našla tady https://mv.gov.cz/sluzba/clanek/informacni-system-o-statni-sluzbe-kontakty.aspx",
-      "entities": [],
+      "entities": [
+        {
+          "start": 220,
+          "length": 79,
+          "type": "TEXT_LINK",
+          "textLink": {
+            "viewingBehavior": "DEFAULT",
+            "url": "https://mv.gov.cz/sluzba/clanek/informacni-system-o-statni-sluzbe-kontakty.aspx"
+          }
+        }
+      ],
       "pinned": false,
       "originalLanguage": "Czech",
       "author": {
@@ -83,7 +121,7 @@
       "profile": {
         "firstName": "Karla",
         "lastName": "Root",
-        "occupation": "Stay calm. Ask AI first, then decide whether to panic. 👣 Data never lie. People do.",
+        "occupation": "Stay calm. Ask AI first, then panic. 👣 Data never lie. People do.",
         "id": "420075610",
         "publicId": "karlaroot",
         "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog"
@@ -125,6 +163,17 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Magdalena",
+        "lastName": "Grecová",
+        "occupation": "Junior Data Analyst | Czechitas Digitální akademie Data",
+        "id": "1650544248",
+        "publicId": "magdalena-grecova",
+        "profileId": "ACoAAGJhTngBFgAIt3drKZqAK6I_8UL80lMEiOU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Václav",
         "lastName": "Lorenc",
         "occupation": "Principal Information Security Engineer at HERE",
@@ -160,7 +209,7 @@
       "profile": {
         "firstName": "Ondřej",
         "lastName": "Divácký",
-        "occupation": "Turning business decisions into data-driven insights through SQL & Power BI",
+        "occupation": "General Manager | Business Development | Strategic Growth | Commercial Strategy | P&L Management | Data-Driven Decision Making | Analytics",
         "id": "347166977",
         "publicId": "ondrej-divacky",
         "profileId": "ACoAABSxWQEB3IBm_JFusPR7TzaoCaMoAe4qSO0"
@@ -175,17 +224,6 @@
         "id": "188339170",
         "publicId": "ivo-komarek",
         "profileId": "ACoAAAs50-IBujpmaaf7NQt5dflNvxTz8huNALM"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Martina",
-        "lastName": "Vyoralová",
-        "occupation": "Junior QA Tester | Absolventka Czechitas Digitální akademie | Zaměřená na kvalitu, detail a spolehlivost",
-        "id": "1427573187",
-        "publicId": "martinavyoralova",
-        "profileId": "ACoAAFUXCcMBlHZ6I3TCwWXfe4Wcib7gzTUnsDc"
       }
     }
   ],

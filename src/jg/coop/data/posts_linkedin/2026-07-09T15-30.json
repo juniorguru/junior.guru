@@ -1,0 +1,284 @@
+{
+  "type": "linkedinVideo",
+  "linkedinVideo": {
+    "videoPlayMetadata": {
+      "duration": 96333,
+      "thumbnail": {
+        "artifacts": [
+          {
+            "width": 360,
+            "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEAFy9wJGCckA",
+            "fileIdentifyingUrlPathSegment": "low/B4DZ9HgF0pKsBI-/0/1783611024778?e=1784595600&v=beta&t=gmyAnIzkoPnsbAOwKEdDX9dAAKQngqgwAxF5ahyYu4o",
+            "expiresAt": 1784595600000,
+            "height": 640
+          },
+          {
+            "width": 720,
+            "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEAFy9wJGCckA",
+            "fileIdentifyingUrlPathSegment": "high/B4DZ9HgF0pKsBM-/0/1783611024778?e=1784595600&v=beta&t=SOXDR2JXhvi3I0WI5epULKi2DFAyFHDXrWgOYV6eqNA",
+            "expiresAt": 1784595600000,
+            "height": 1280
+          }
+        ]
+      },
+      "progressiveStreams": [
+        {
+          "streamingLocations": [
+            {
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEAFy9wJGCckA/mp4-720p-30fp-crf28/B4DZ9HgF0pKsB8-/0/1783611030199?e=1784595600&v=beta&t=C_jDlhDI0NofOLWDuDBc35oc0Y4_v3XYgYSXcAD-Zhg",
+              "expiresAt": 1784595600000
+            }
+          ],
+          "size": 0,
+          "bitRate": 315577,
+          "width": 720,
+          "mediaType": "video/mp4",
+          "height": 1280
+        },
+        {
+          "streamingLocations": [
+            {
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEAFy9wJGCckA/mp4-640p-30fp-crf28/B4DZ9HgF0pKsBk-/0/1783611030199?e=1784595600&v=beta&t=HRqr6T3Y31lnEML1fTmZdYreSbY5mb25gjJSWci4eQQ",
+              "expiresAt": 1784595600000
+            }
+          ],
+          "size": 0,
+          "bitRate": 240190,
+          "width": 640,
+          "mediaType": "video/mp4",
+          "height": 1138
+        }
+      ],
+      "transcripts": [],
+      "entityUrn": "urn:li:digitalmediaAsset:D4D05AQEAFy9wJGCckA",
+      "provider": "UGC",
+      "aspectRatio": 0.5625,
+      "media": "urn:li:digitalmediaAsset:D4D05AQEAFy9wJGCckA",
+      "adaptiveStreams": [
+        {
+          "initialBitRate": 251636,
+          "protocol": "HLS",
+          "mediaType": "application/vnd.apple.mpegURL",
+          "masterPlaylists": [
+            {
+              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEAFy9wJGCckA/CeJxzMnGJsvRIdzMo8C52KdbVcULmh6LxI9H4yWj8bF0AkJoW9Q?e=1784595600&v=beta&t=_csL8tuQA0N2NFVZ6mTb8WeF9fAy1Zhz7pp0rX4jlXk",
+              "expiresAt": 1784595600000
+            }
+          ]
+        },
+        {
+          "initialBitRate": 251636,
+          "protocol": "DASH",
+          "mediaType": "application/dash+xml",
+          "masterPlaylists": [
+            {
+              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEAFy9wJGCckA/CeJxzMnGJsvRIdzMo8C52KdbVcULmh6LxI9H4yWj8bF0AkJoW9Q?e=1784595600&v=beta&t=wzfbM5zi1JbShmUF26oOoVycSeaiks-BuoEWUpnPX2k",
+              "expiresAt": 1784595600000
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7481006914575687680",
+  "url": "https://www.linkedin.com/posts/honzajavorek_co-pat%C5%99%C3%AD-do-motiva%C4%8Dn%C3%ADho-dopisu-%C3%BAryvek-ze-activity-7481006914575687680-lOUh",
+  "shareUrn": "urn:li:ugcPost:7481006832875130880",
+  "text": "Co patří do motivačního dopisu?\n\nÚryvek ze záznamu klubové akce „Jak na CV při změně kariéry do IT“, hostem byl Daniel Srb.\n\nVšechny akce najdeš na junior.guru/events, jak plánované, tak i archiv. Připoj se!\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 112,
+      "length": 10,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Daniel",
+        "lastName": "Srb",
+        "occupation": "Helping people to become junior frontend developers",
+        "id": "15446232",
+        "publicId": "danielsrb",
+        "profileId": "ACoAAADrsNgBFfAixAgw_mCw8WtR9SeNIvEEI8Q"
+      }
+    },
+    {
+      "start": 112,
+      "length": 10,
+      "link": "https://www.linkedin.com/in/ACoAAADrsNgBFfAixAgw_mCw8WtR9SeNIvEEI8Q",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 148,
+      "length": 18,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru/events"
+      }
+    },
+    {
+      "start": 231,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1783625124456,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7481006832875130880?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7481006832875130880%2C7481065994002690049%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287481065994002690049%2Curn%3Ali%3AugcPost%3A7481006832875130880%29",
+      "text": "Si mě vypípals! A mohls to dop*** zkrátit, když už jsem to nezvládl já tehdy :)",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Daniel",
+        "lastName": "Srb",
+        "occupation": "Helping people to become junior frontend developers",
+        "id": "15446232",
+        "publicId": "danielsrb",
+        "profileId": "ACoAAADrsNgBFfAixAgw_mCw8WtR9SeNIvEEI8Q",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Barbora",
+        "lastName": "Lendacká",
+        "occupation": "junior react developer | lifelong hands-on learner 📚",
+        "id": "244185326",
+        "publicId": "barbora-lendacka",
+        "profileId": "ACoAAA6N-O4BkRvPPyIgRFUKOlr5LSE8hcrD3UQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Viktor",
+        "lastName": "Danko",
+        "occupation": "Software Engineer",
+        "id": "603260959",
+        "publicId": "viktordanko",
+        "profileId": "ACoAACP1CB8B5mSaZE5ldJZ-pAOCocDywUFeQKg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vladimír",
+        "lastName": "J.",
+        "occupation": "CTI@CERT-EU | GCTI | RHCE",
+        "id": "636163890",
+        "publicId": "vladimir-janout",
+        "profileId": "ACoAACXrFzIBXsvwiBIwOwGP0kAVVEzQPu-qdwE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Hassman",
+        "occupation": "📺 Digitalizuji Kavky, 🎯 Product Manager, 👑 Product Owner, 👨🏼‍💻 Technology Enthusiast, 🗣️ English, Czech, Spanish.",
+        "id": "357018",
+        "publicId": "hassman",
+        "profileId": "ACoAAAAFcpoBmteS--laK_PQYfP-f5of-I9xOqA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Eliška  ",
+        "lastName": "Čejpová",
+        "occupation": "Agile Coach by day, Speakers @DevFest.cz by night | ScanAgile🦊| GDG Helsinki | GUG.cz | Women Techmakers | Agile Enthusiast | Speaker Coach | Community Soul | Workshopper",
+        "id": "218425264",
+        "publicId": "eliskacejpova",
+        "profileId": "ACoAAA0E57ABXEjOnGWXi4ykBAzrRSYQ2_2aGg4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Přibil",
+        "occupation": "Global Sales Manager | Specialty Lubricants",
+        "id": "132002824",
+        "publicId": "petr-pribil",
+        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Salamánek",
+        "occupation": "Po téměř 20 letech ve strojírenství jsem objevil svět IT. Bylo to pro mě, jako když poprvé otevřete internet a žasnete, kolik nových informací Vám svět kolem nabízí.",
+        "id": "117107557",
+        "publicId": "salamanek",
+        "profileId": "ACoAAAb662UB8Fk1x6YnfJ2zd6FiGd1MufWQHX4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marek",
+        "lastName": "VELAS",
+        "occupation": "Founder @EDUpunk | Learning design @Reactgirls.com | AI & Health Content Strategist | TALENT Mentor & MEME Therapist",
+        "id": "201927716",
+        "publicId": "marek-velas",
+        "profileId": "ACoAAAwJLCQB-ePqkhYoO0olYYFCoOJGgdydJEs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jitka",
+        "lastName": "Marešová",
+        "occupation": "Cybersecurity Specialist | Penetration Tester | Full-Stack Developer",
+        "id": "227066345",
+        "publicId": "jitka-marešová",
+        "profileId": "ACoAAA2IwekByahlnQAtuKNt4Xlww1xrII0Li34"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 18,
+  "numComments": 3,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1783611038822,
+  "postedAtISO": "2026-07-09T15:30:38.822Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

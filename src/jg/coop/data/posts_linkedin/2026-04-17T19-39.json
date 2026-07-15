@@ -12,7 +12,17 @@
   "url": "https://www.linkedin.com/posts/honzajavorek_t%C3%BDdenn%C3%AD-pozn%C3%A1mky-jak-se-mi-da%C5%99%C3%AD-v-jednom-activity-7450991259470610432-_Ip4",
   "shareUrn": "urn:li:ugcPost:7450991259030208515",
   "text": "Týdenní poznámky! Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Tentokrát je to na 10 min čtení 🧐",
-  "attributes": [],
+  "attributes": [
+    {
+      "start": 72,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    }
+  ],
   "comments": [],
   "reactions": [
     {
@@ -42,7 +52,7 @@
       "profile": {
         "firstName": "Tereza",
         "lastName": "Kubickova",
-        "occupation": "Brand copywriter & LinkedIn accelerator for freelancers and founders 🟠 Web copywriting, ghostwriting, LinkedIn consulting 🟠 CZ+EN 🟠 Living Intelligence writing",
+        "occupation": "I turn buried expertise into sharp positioning, memorable messaging, and trust-building content 🟠 Communication strategy, LinkedIn, personal branding, website copy, ghostwriting 🟠 For founders, CEOs & experts",
         "id": "595059077",
         "publicId": "tereza-kubickova",
         "profileId": "ACoAACN34YUBpmN7aktMnvnh8OWhM5xq_C00c0o"

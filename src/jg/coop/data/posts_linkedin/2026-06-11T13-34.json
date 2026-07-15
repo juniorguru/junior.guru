@@ -8,15 +8,15 @@
           {
             "width": 720,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEiSu1SG_tPBA",
-            "fileIdentifyingUrlPathSegment": "high/B4DZ6247icKUBM-/0/1781184840046?e=1782781200&v=beta&t=ht5gui2VsxrJ-Gm1mJzPvLXr9SUzgE5EG_7U1JRvLwc",
-            "expiresAt": 1782781200000,
+            "fileIdentifyingUrlPathSegment": "high/B4DZ6247icKUBM-/0/1781184840046?e=1784595600&v=beta&t=60WOynlWyWCLuuaeCGw7mYWHqv-V32bpUMF6trKhiT8",
+            "expiresAt": 1784595600000,
             "height": 1280
           },
           {
             "width": 360,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEiSu1SG_tPBA",
-            "fileIdentifyingUrlPathSegment": "low/B4DZ6247icKUBI-/0/1781184840046?e=1782781200&v=beta&t=HYFgQuajFpolviLQaSSThf87UyB0t0GQdek0tsmOktA",
-            "expiresAt": 1782781200000,
+            "fileIdentifyingUrlPathSegment": "low/B4DZ6247icKUBI-/0/1781184840046?e=1784595600&v=beta&t=KU3lAgY6lEZ5lpWx-FGQk93r42ZH2dbcvac81vSKuw0",
+            "expiresAt": 1784595600000,
             "height": 640
           }
         ]
@@ -25,8 +25,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/mp4-720p-30fp-crf28/B4DZ6247icKUB8-/0/1781184842453?e=1782781200&v=beta&t=ClKp--Vtvgfo3PjFdAo7k03ZSBrR5D3DefqAuHCYwlc",
-              "expiresAt": 1782781200000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/mp4-720p-30fp-crf28/B4DZ6247icKUB8-/0/1781184842453?e=1784595600&v=beta&t=B88djAbHfGRPsv923j3p88GpDZ-MI-4DZIGsIWFwSe4",
+              "expiresAt": 1784595600000
             }
           ],
           "size": 0,
@@ -38,8 +38,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/mp4-640p-30fp-crf28/B4DZ6247icKUBk-/0/1781184842453?e=1782781200&v=beta&t=B1voXRL3S1FRsk8gPY8STkkKODH-EZFLBZtckiW4gck",
-              "expiresAt": 1782781200000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/mp4-640p-30fp-crf28/B4DZ6247icKUBk-/0/1781184842453?e=1784595600&v=beta&t=MCzLjLaJGZdlYTaPwiDRxfNJNxcJ2SZtxU3tfe-kZCg",
+              "expiresAt": 1784595600000
             }
           ],
           "size": 0,
@@ -61,8 +61,8 @@
           "mediaType": "application/vnd.apple.mpegURL",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEiSu1SG_tPBA/CeJxzMnGJMjMyMc9M9g51KdbVcULmh6LxI9H4yWj8bF0AVCcVdA?e=1782781200&v=beta&t=YtX_YgV0Fm2hOjxMnbVxkvO1WUt18fIaGYiB3mGnb5g",
-              "expiresAt": 1782781200000
+              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEiSu1SG_tPBA/CeJxzMnGJMjMyMc9M9g51KdbVcULmh6LxI9H4yWj8bF0AVCcVdA?e=1784595600&v=beta&t=22BVgb7gAzZvXRFIvaS2BLD1DKnJYg_8PmiUH4V4zRg",
+              "expiresAt": 1784595600000
             }
           ]
         },
@@ -72,8 +72,8 @@
           "mediaType": "application/dash+xml",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEiSu1SG_tPBA/CeJxzMnGJMjMyMc9M9g51KdbVcULmh6LxI9H4yWj8bF0AVCcVdA?e=1782781200&v=beta&t=fMXpWbuiIIcO1nlqhV4SlpJrl9tUc-VSFqUbdCewDYY",
-              "expiresAt": 1782781200000
+              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEiSu1SG_tPBA/CeJxzMnGJMjMyMc9M9g51KdbVcULmh6LxI9H4yWj8bF0AVCcVdA?e=1784595600&v=beta&t=SjMlTGp3j5L5QV06SVUUk1WxShgqz6ue5SueYBoMWzI",
+              "expiresAt": 1784595600000
             }
           ]
         }
@@ -85,13 +85,42 @@
   "url": "https://www.linkedin.com/posts/honzajavorek_jak-na-git-a-github-co-je-git-a-k-%C4%8Demu-activity-7470830734442676224-La8q",
   "shareUrn": "urn:li:ugcPost:7470830667237572610",
   "text": "Jak na Git a GitHub?\n\nCo je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a GitHubem? Jak začít s Gitem?\n\nDovíte se na nově aktualizované stránce v příručce na junior.guru/handbook 📖 \n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
-  "attributes": [],
+  "attributes": [
+    {
+      "start": 165,
+      "length": 20,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru/handbook"
+      }
+    },
+    {
+      "start": 212,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    }
+  ],
   "comments": [
     {
       "time": 1781184872824,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7470830667237572610?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7470830667237572610%2C7470830836825866240%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287470830836825866240%2Curn%3Ali%3AugcPost%3A7470830667237572610%29",
       "text": "Odkaz tu: https://junior.guru/handbook/git/",
-      "entities": [],
+      "entities": [
+        {
+          "start": 10,
+          "length": 33,
+          "type": "TEXT_LINK",
+          "textLink": {
+            "viewingBehavior": "DEFAULT",
+            "url": "https://junior.guru/handbook/git/"
+          }
+        }
+      ],
       "pinned": false,
       "author": {
         "firstName": "Honza",
@@ -105,6 +134,17 @@
     }
   ],
   "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Čamborová",
+        "occupation": "Frontend developer",
+        "id": "1082522617",
+        "publicId": "veronika-čamborová",
+        "profileId": "ACoAAECF-_kB69byXoaMHs_qzffiv1hqdN_aZ0U"
+      }
+    },
     {
       "type": "EMPATHY",
       "profile": {
@@ -121,7 +161,7 @@
       "profile": {
         "firstName": "Tomas",
         "lastName": "Votruba",
-        "occupation": "Chief Cleaning Officer @ Rector | Coaching, Turning Legacy codebases into High Value code since 2014",
+        "occupation": "Agentic and AST-assisted upgrades of legacy codebases. Turning established projects to valuable code, while your team keeps delivering features.",
         "id": "768515172",
         "publicId": "tomas-votruba",
         "profileId": "ACoAAC3OnGQBSTXo3yuoRBtMs9woV1UbEk7ALEc"
@@ -206,7 +246,7 @@
     }
   ],
   "numShares": 0,
-  "numLikes": 9,
+  "numLikes": 10,
   "numComments": 1,
   "canReact": true,
   "canPostComments": true,

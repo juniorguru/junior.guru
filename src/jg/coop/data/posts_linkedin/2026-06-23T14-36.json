@@ -21,6 +21,12 @@
       }
     },
     {
+      "start": 527,
+      "length": 12,
+      "link": "https://www.linkedin.com/in/ACoAAB-dm4UBphpPt0M3o_HcoFhUNSFgam6yIyY",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 634,
       "length": 18,
       "type": "COMPANY_NAME",
@@ -30,6 +36,39 @@
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:923725"
+      }
+    },
+    {
+      "start": 634,
+      "length": 18,
+      "link": "https://www.linkedin.com/company/webexpo/",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 803,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    },
+    {
+      "start": 1422,
+      "length": 18,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru/events"
+      }
+    },
+    {
+      "start": 1494,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
       }
     }
   ],
@@ -64,9 +103,31 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Nikola",
+        "lastName": "Š.",
+        "occupation": "QA - Tester | IT Analysing | Data Analysing 🐞",
+        "id": "319858539",
+        "publicId": "nikola-stepanova",
+        "profileId": "ACoAABMQp2sBmRC1qNniYn1P7zaZCoUs2TubYIY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Patrik",
+        "lastName": "Brnušák",
+        "occupation": "Otevřen novým příležitostem",
+        "id": "666440295",
+        "publicId": "patrik-brnusak-cz",
+        "profileId": "ACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Kate",
         "lastName": "Astrid",
-        "occupation": "Helping Developers Build Better Products | Developer Advocate | React, TypeScript, AI & Developer Experience",
+        "occupation": "Helping Developers Build Better Products | Developer Advocate | React, TypeScript, AI & Developer Experience | UXDX Ambassador",
         "id": "910704341",
         "publicId": "kate-astrid",
         "profileId": "ACoAADZIPtUB336Igt6HfTV2a4dqPXMyhzpfFdE"
@@ -131,7 +192,7 @@
       "profile": {
         "firstName": "Monika",
         "lastName": "Krausová",
-        "occupation": "Python Developer & QA | Flask & Django | Cloudflare & Docker | SQL, Git & AI Integration | Systems Architect | Web Scraping & Data Integrity",
+        "occupation": "Software Architect / Backend Developer",
         "id": "405131688",
         "publicId": "monika-krausová-paprcekmonimerka",
         "profileId": "ACoAABgl0agBlYKzbZNVcQjdy6G-8NjG0ZdW62U"
@@ -147,32 +208,10 @@
         "publicId": "izatlouk",
         "profileId": "ACoAAAX0OPkBzZjVvVi08LqhaKA5UMdVz4M5inM"
       }
-    },
-    {
-      "type": "APPRECIATION",
-      "profile": {
-        "firstName": "Adéla",
-        "lastName": "Tichá",
-        "occupation": "Graphic designer, moving into UX/UI design",
-        "id": "422345507",
-        "publicId": "adelticha",
-        "profileId": "ACoAABkseyMBcA3muv646Fc2S5gVsWt0b9uYw-0"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Pavla",
-        "lastName": "Beránková",
-        "occupation": "PHP programátorka",
-        "id": "549611439",
-        "publicId": "berankova-pavla",
-        "profileId": "ACoAACDCZ68BhDuYokjdegYmFm0rxSx_6Mlwh9c"
-      }
     }
   ],
   "numShares": 3,
-  "numLikes": 17,
+  "numLikes": 19,
   "numComments": 2,
   "canReact": true,
   "canPostComments": true,

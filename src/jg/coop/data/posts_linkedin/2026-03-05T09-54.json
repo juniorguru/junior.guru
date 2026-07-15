@@ -8,7 +8,7 @@
           {
             "width": 576,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQG2pvkHKl99WQ",
-            "expiresAt": 1782781200000,
+            "expiresAt": 1784595600000,
             "height": 720
           }
         ],
@@ -18,8 +18,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQG2pvkHKl99WQ/mp4-720p-30fp-crf28/B4DZy8x4iGJoCI-/0/1772693728317?e=1782781200&v=beta&t=Rz_R5I2r3PmtWLDl7nyEN0bqQ7qTqMKjnA47eDjlceU",
-              "expiresAt": 1782781200000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQG2pvkHKl99WQ/mp4-720p-30fp-crf28/B4DZy8x4iGJoCI-/0/1772693728317?e=1784595600&v=beta&t=6kzZh6U1S9jQb84GBovZxhFFq3gUWMU8-HMcJwYzdzo",
+              "expiresAt": 1784595600000
             }
           ],
           "size": 0,
@@ -31,8 +31,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQG2pvkHKl99WQ/mp4-640p-30fp-crf28/B4DZy8x4iGJoBw-/0/1772693727308?e=1782781200&v=beta&t=Qow2iaGbxz-khNMyiolidIklwL9MF0p2YyVv8mqzEQs",
-              "expiresAt": 1782781200000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQG2pvkHKl99WQ/mp4-640p-30fp-crf28/B4DZy8x4iGJoBw-/0/1772693727308?e=1784595600&v=beta&t=Tile4lqT1v2tGvpRcONEItuCi4yj6tb7KNWeVGalaug",
+              "expiresAt": 1784595600000
             }
           ],
           "size": 0,
@@ -54,8 +54,8 @@
           "mediaType": "application/vnd.apple.mpegURL",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQG2pvkHKl99WQ/CeJxzMnGJqrSoMMl098p3sdDVcULmm6DyXQPR-I5ofE80voEuAEfCHBo?e=1782781200&v=beta&t=210_mCilPYQwdFgn3QbOA3-OEzWjJwWkjPCxWKbs58A",
-              "expiresAt": 1782781200000
+              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQG2pvkHKl99WQ/CeJxzMnGJqrSoMMl098p3sdDVcULmm6DyXQPR-I5ofE80voEuAEfCHBo?e=1784595600&v=beta&t=GMpfm1Jc7nKuKZLuvUc1YvFeTZZtJIuOuZZEjPi_fGQ",
+              "expiresAt": 1784595600000
             }
           ]
         },
@@ -65,8 +65,8 @@
           "mediaType": "application/dash+xml",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQG2pvkHKl99WQ/CeJxzMnGJqrSoMMl098p3sdDVcULmm6DyXQPR-I5ofE80voEuAEfCHBo?e=1782781200&v=beta&t=FH-19DrD3mOYL_DMxjDy-HTAGytBmsWbscNTeDUIfN8",
-              "expiresAt": 1782781200000
+              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQG2pvkHKl99WQ/CeJxzMnGJqrSoMMl098p3sdDVcULmm6DyXQPR-I5ofE80voEuAEfCHBo?e=1784595600&v=beta&t=lTdiIl2aluYUMTXfRGz3lEbvNDbOU9CLI4hXBDMnaH8",
+              "expiresAt": 1784595600000
             }
           ]
         }
@@ -144,13 +144,23 @@
       "time": 1772892943412,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7435216180530847744?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7435216180530847744%2C7436051964121178112%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287436051964121178112%2Curn%3Ali%3AugcPost%3A7435216180530847744%29",
       "text": "Ústav pro jazyk český je mi čím dál tím sympatičtější. Rozumný. Mrkněte: https://dotazy.ujc.cas.cz/odpovedi/?id_klicove_slovo=4914&filter=1",
-      "entities": [],
+      "entities": [
+        {
+          "start": 73,
+          "length": 66,
+          "type": "TEXT_LINK",
+          "textLink": {
+            "viewingBehavior": "DEFAULT",
+            "url": "https://dotazy.ujc.cas.cz/odpovedi/?id_klicove_slovo=4914&filter=1"
+          }
+        }
+      ],
       "pinned": false,
       "originalLanguage": "Czech",
       "author": {
         "firstName": "Eva",
         "lastName": "Musilová",
-        "occupation": "Učím profesionální práci s textem a komunikaci – od redakce, korektur a tvůrčího psaní až po typografii, prezentační dovednosti a autorské vzdělávací kurzy. Profesionální čeština | redakce | vzdělávání | publikační praxe",
+        "occupation": "Navrhuji, tvořím a rozvíjím vzdělávací obsah. Učím profesionální práci s textem – od redakce, korektur a tvůrčího psaní až po typografii. Profesionální čeština | redakce | vzdělávání | publikační praxe",
         "id": "661608431",
         "publicId": "emusilova",
         "profileId": "ACoAACdvV-8Bksp6dHixHxYzjTJOJ6EbUJnbcEE",
@@ -174,6 +184,12 @@
             "publicId": "kateřina-boušková-728294b3",
             "profileId": "ACoAABgRgBABjBPiNyEALSOceBUppnoLyGskSFo"
           }
+        },
+        {
+          "start": 5,
+          "length": 17,
+          "link": "https://www.linkedin.com/in/ACoAABgRgBABjBPiNyEALSOceBUppnoLyGskSFo",
+          "type": "HYPERLINK"
         }
       ],
       "pinned": false,
@@ -181,7 +197,7 @@
       "author": {
         "firstName": "Taťána",
         "lastName": "le Moigne",
-        "occupation": "Tech for Care Investor | Thinking Partner & Trusted Advisor | Keynote Speaker | Board Member |",
+        "occupation": "Tech for Care Investor | Thinking Partner | Keynote Speaker | Board Member |",
         "id": "17162684",
         "publicId": "tanialemoigne",
         "profileId": "ACoAAAEF4bwBXZEMBKsSED8XyWZn1g48P20Dzdk",

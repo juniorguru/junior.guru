@@ -16,7 +16,17 @@
       "time": 1782735928639,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7477336051968229378?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7477336051968229378%2C7477336436430778368%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287477336436430778368%2Curn%3Ali%3AugcPost%3A7477336051968229378%29",
       "text": "Odkazy na dobré zdroje tu: https://junior.guru/handbook/git/#jak-se-ucit-git",
-      "entities": [],
+      "entities": [
+        {
+          "start": 27,
+          "length": 49,
+          "type": "TEXT_LINK",
+          "textLink": {
+            "viewingBehavior": "DEFAULT",
+            "url": "https://junior.guru/handbook/git/#jak-se-ucit-git"
+          }
+        }
+      ],
       "pinned": false,
       "originalLanguage": "Czech",
       "author": {
@@ -31,6 +41,61 @@
     }
   ],
   "reactions": [
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Katerina",
+        "lastName": "Mackovikova",
+        "occupation": "Data analyst passionate about systems integration",
+        "id": "262585845",
+        "publicId": "katerina-mackovikova-499b3373",
+        "profileId": "ACoAAA-mvfUBi9EOGyMJGQ2V5sq1pa_91Q3yqB4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lukáš",
+        "lastName": "Konarovský",
+        "occupation": "🤖 Creating useful software",
+        "id": "16958557",
+        "publicId": "lukaskonarovsky",
+        "profileId": "ACoAAAECxF0Bn8L1if6aBIgIt7NKsx9XZPpdHJY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Radek",
+        "lastName": "Žilka",
+        "occupation": "--",
+        "id": "950233530",
+        "publicId": "radek-žilka-7b6293226",
+        "profileId": "ACoAADijaboB9UPOK3vwYAPXZlbZTTvT6lJqX80"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "David",
+        "lastName": "Navara",
+        "occupation": "Literature is my love and writing is my passion.",
+        "id": "259029785",
+        "publicId": "davidnavara",
+        "profileId": "ACoAAA9wexkBeMq1T5Ri3IYmOdYLLFfvwExFPJk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vladimír",
+        "lastName": "Gorej",
+        "occupation": "Co-Founder @ 𝐒𝐩𝐞𝐜𝐋𝐲𝐧𝐱 — open, local-first API tooling · AsyncAPI maintainer · ex-Swagger · ex-Apiary · GitHub Stars alumni",
+        "id": "58899881",
+        "publicId": "vladimirgorej",
+        "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
+      }
+    },
     {
       "type": "LIKE",
       "profile": {
@@ -85,21 +150,10 @@
         "publicId": "py-veronika-zpevakova",
         "profileId": "ACoAACX-koYBZCeuCb06SzAT8F955fJvI0OEIAc"
       }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Josef",
-        "lastName": "Ďuriš",
-        "occupation": "Embedded Systems Engineer | From Advanced System Analysis to Low-Level Development | C/C++ | Linux | HW/SW Integration",
-        "id": "304898445",
-        "publicId": "josef-ďuriš-a3913986",
-        "profileId": "ACoAABIsYY0ByKzpglEMZ3CjzvZoYSp9yKeTxvs"
-      }
     }
   ],
   "numShares": 0,
-  "numLikes": 6,
+  "numLikes": 11,
   "numComments": 1,
   "canReact": true,
   "canPostComments": true,

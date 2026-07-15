@@ -8,6 +8,15 @@
   "text": "Sleva 50 %, 5.000 Kč, 20 % a 30 %. To se nám to hezky sešlo! A k tomu ještě dvě soutěže.\n\nObčas někdo osloví náš klub pro juniory v IT a poskytne slevu, nebo dá volňásky, třeba na konferenci.\n\nVětšinou se něco objeví 1x za měsíc nebo dva, ale teď se stalo, že máme fakt velkou úrodu 🤩 Aktuální nabídka pro členy junior.guru/club :\n\n🎲 soutěž o lístek na mDevCamp\n🎲 soutěž o knihu Pavla Ponce „Učebnice jazyka Java pro samouky” (čerstvé, třetí vydání)\n\n🎁 sleva na JetBrains Academy\n🎁 sleva na kurz od Bezpečný kód\n🎁 sleva na Gophercamp od Jan Bleha\n🎁 sleva na Prague Crawl od Apify\n\nTolik dárečků! Přitom Vánoce už byly 😀\n\nVše uvedené mohou samozřejmě využít i senioři, kteří v našem klubu jsou. Mají to jako malou odměnu za to, že ve volném čase pomáhají ostatním.\n\nA i z těch šikovných a aktivních juniorů, které v komunitě máme, budou jednoho dne senioři… Když jim svou značku nebo produkt ukážete už dnes, vytvoříte „vhodný“ návyk 😉\n\nDíky partnerstvím se doví o tom, že konference nebo produkt existuje. A budou vědět, že kdo dělá mobilní appky, tak se má ukázat na mDevCampu. Nebo že kdo scrapuje, má se ukázat na Prague Crawl.\n\nFakturoid má zase dlouhodobě logo na příručce pro juniory junior.guru/handbook a věřím, že díky tomu každý junior či medior, který jde poslat svou první fakturu, začne právě u nich. Nebo je minimálně automaticky zvažuje.\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
   "attributes": [
     {
+      "start": 312,
+      "length": 16,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru/club"
+      }
+    },
+    {
       "start": 353,
       "length": 8,
       "type": "COMPANY_NAME",
@@ -18,6 +27,12 @@
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:28135155"
       }
+    },
+    {
+      "start": 353,
+      "length": 8,
+      "link": "https://www.linkedin.com/company/mdevcamp/",
+      "type": "HYPERLINK"
     },
     {
       "start": 462,
@@ -32,6 +47,12 @@
       }
     },
     {
+      "start": 462,
+      "length": 17,
+      "link": "https://www.linkedin.com/company/jetbrains-academy/",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 499,
       "length": 12,
       "type": "COMPANY_NAME",
@@ -42,6 +63,12 @@
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:91609695"
       }
+    },
+    {
+      "start": 499,
+      "length": 12,
+      "link": "https://www.linkedin.com/company/outcybers/",
+      "type": "HYPERLINK"
     },
     {
       "start": 537,
@@ -57,6 +84,12 @@
       }
     },
     {
+      "start": 537,
+      "length": 9,
+      "link": "https://www.linkedin.com/in/ACoAAAj_LgcBZzuSAV2XPW-aQfdbuteb1J1SlLs",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 574,
       "length": 5,
       "type": "COMPANY_NAME",
@@ -69,6 +102,12 @@
       }
     },
     {
+      "start": 574,
+      "length": 5,
+      "link": "https://www.linkedin.com/company/apify/",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 1132,
       "length": 9,
       "type": "COMPANY_NAME",
@@ -78,6 +117,30 @@
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:612241"
+      }
+    },
+    {
+      "start": 1132,
+      "length": 9,
+      "link": "https://www.linkedin.com/company/fakturoid/",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 1190,
+      "length": 20,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru/handbook"
+      }
+    },
+    {
+      "start": 1376,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
       }
     }
   ],
@@ -176,7 +239,7 @@
       "profile": {
         "firstName": "Jan",
         "lastName": "Řezáč",
-        "occupation": "CEO · autor 📖 Web ostrý jako břitva",
+        "occupation": "CEO · autor 📖 Řež & Web ostrý jako břitva",
         "id": "16677247",
         "publicId": "jan2rezac",
         "profileId": "ACoAAAD-eX8BGeM_SaDxrD9QhHdovva-_z0sxH4"
@@ -187,7 +250,7 @@
       "profile": {
         "firstName": "Matěj",
         "lastName": "Kahún",
-        "occupation": "Komuniťák v Czechitas 🏄‍♂️",
+        "occupation": "People, content & processes 🏄‍♂️",
         "id": "726742558",
         "publicId": "matejkahun",
         "profileId": "ACoAACtRNh4Bgs49PDAKRTrJ0zQclHv-UqoqjOs"

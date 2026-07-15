@@ -12,7 +12,17 @@
   "url": "https://www.linkedin.com/posts/honzajavorek_t%C3%BDdenn%C3%AD-pozn%C3%A1mky-jak-se-mi-da%C5%99%C3%AD-v-jednom-activity-7473745895994421248-9qni",
   "shareUrn": "urn:li:ugcPost:7473745895583444992",
   "text": "Týdenní poznámky! Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Tentokrát je to na 6 min čtení 🧐",
-  "attributes": [],
+  "attributes": [
+    {
+      "start": 72,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    }
+  ],
   "comments": [
     {
       "time": 1782060437230,
@@ -51,11 +61,22 @@
   ],
   "reactions": [
     {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Patrik",
+        "lastName": "Brnušák",
+        "occupation": "Otevřen novým příležitostem",
+        "id": "666440295",
+        "publicId": "patrik-brnusak-cz",
+        "profileId": "ACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU"
+      }
+    },
+    {
       "type": "APPRECIATION",
       "profile": {
         "firstName": "Martin",
         "lastName": "Hassman",
-        "occupation": "🎯 Product Manager, 👑 Product Owner, 👨🏼‍💻 Technology Enthusiast, 🗣️ English, Czech, Spanish, 👷Open to work",
+        "occupation": "📺 Digitalizuji Kavky, 🎯 Product Manager, 👑 Product Owner, 👨🏼‍💻 Technology Enthusiast, 🗣️ English, Czech, Spanish.",
         "id": "357018",
         "publicId": "hassman",
         "profileId": "ACoAAAAFcpoBmteS--laK_PQYfP-f5of-I9xOqA"
@@ -88,7 +109,7 @@
       "profile": {
         "firstName": "Dana",
         "lastName": "Lamatová",
-        "occupation": "Aspiring Data Analyst | SQL | Power BI | Snowflake | Data Modeling | Logistics & Operations",
+        "occupation": "Junior Data Engineer | SQL | Snowflake | Power BI | Keboola",
         "id": "428236412",
         "publicId": "dana-lamatova",
         "profileId": "ACoAABmGXnwBvB8lqpoLx_sgAzyThGezeu4okiE"
@@ -148,21 +169,10 @@
         "publicId": "zuzana-s-sami",
         "profileId": "ACoAAAayifABmB06rWpHFGHCST6gKfiEp-MibpI"
       }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Pavel",
-        "lastName": "Sanka",
-        "occupation": "Senior HR & Organizational Development Executive | HR extensive experience | Leadership | Talent development",
-        "id": "1248198738",
-        "publicId": "pavelsanka",
-        "profileId": "ACoAAEpmAFIBs1dbjA9a2V3nQHxsW5NlkIxFH08"
-      }
     }
   ],
   "numShares": 0,
-  "numLikes": 15,
+  "numLikes": 16,
   "numComments": 4,
   "canReact": true,
   "canPostComments": true,

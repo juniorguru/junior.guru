@@ -3,7 +3,7 @@
   "resharedPost": {
     "isActivity": false,
     "urn": "urn:li:activity:7429255959329476608",
-    "url": "https://www.linkedin.com/posts/barbora-lendacka_s-rados%C5%A5ou-oznamujem-%C5%BEe-som-od-nov%C3%A9ho-roka-activity-7429255959329476608-2jpF?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAGnh_fwBnLD3vER8AJVJOcNfFRLdwCxoWqE",
+    "url": "https://www.linkedin.com/posts/barbora-lendacka_s-rados%C5%A5ou-oznamujem-%C5%BEe-som-od-nov%C3%A9ho-roka-activity-7429255959329476608-2jpF?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAE9RxIABTzVWAJdUWiMfVOc97D6SdiB2L20",
     "shareUrn": "urn:li:ugcPost:7429255958549196800",
     "text": "S radosťou oznamujem, že som od nového roka nastúpila do spoločnosti CMS s.r.o. ako junior frontend developer.\n\nTeším sa na všetko čo ma čaká, a som vďačná za skvelý onboarding a podporu od celého aplikačného tímu. Ďakujem za milé prijatie!\n\nVeľké ďakujem patrí aj komunite Junior Guru ❤️ Za podporu pri projektoch, za cenné rady a aj za povzbudenie v momentoch, keď som ho najviac potrebovala.\nNiekedy tam človek nenájde len riešenie problému, ale aj svojho budúceho šéfa 😉",
     "attributes": [
@@ -20,6 +20,12 @@
         }
       },
       {
+        "start": 69,
+        "length": 10,
+        "link": "https://www.linkedin.com/company/cms-s.r.o./",
+        "type": "HYPERLINK"
+      },
+      {
         "start": 274,
         "length": 11,
         "type": "COMPANY_NAME",
@@ -30,6 +36,12 @@
           "showcase": false,
           "entityUrn": "urn:li:fs_miniCompany:26218444"
         }
+      },
+      {
+        "start": 274,
+        "length": 11,
+        "link": "https://www.linkedin.com/company/juniorguru/",
+        "type": "HYPERLINK"
       }
     ],
     "comments": [
@@ -66,6 +78,12 @@
               "showcase": false,
               "entityUrn": "urn:li:fs_miniCompany:26218444"
             }
+          },
+          {
+            "start": 29,
+            "length": 11,
+            "link": "https://www.linkedin.com/company/juniorguru/",
+            "type": "HYPERLINK"
           }
         ],
         "pinned": false,
@@ -107,7 +125,7 @@
         "author": {
           "firstName": "Eva",
           "lastName": "Čechová",
-          "occupation": "Frontend Developer | REACT | JS & TS | CSS | HTML",
+          "occupation": "Software Engineer (React, TS) | exMews | Junior Tech Coach | Photographer",
           "id": "673606395",
           "publicId": "evacechova",
           "profileId": "ACoAACgmavsBu7pgrECIK66USVuQeNiRz6XNfsM",
@@ -265,7 +283,7 @@
         "profile": {
           "firstName": "Sandrina",
           "lastName": "Vučić",
-          "occupation": "Senior Concierge Manager and IT tester",
+          "occupation": "Virtuální asistentka & concierge | Prémiové služby, cestování po celém světě | Diskrétně & profesionálně | CZ/EN",
           "id": "208238473",
           "publicId": "sandrina-vučić-4618a459",
           "profileId": "ACoAAAxpd4kBpL8KKSI6Fbg6MwBV_k5X8jionp8"
@@ -443,7 +461,7 @@
       "profile": {
         "firstName": "Evi",
         "lastName": "Sasínek",
-        "occupation": "Operations & project manager | Analyst | Polyglot | Open to part-time roles in Prague",
+        "occupation": "Data & Operations | Analyst · Coordinator · Project Support | SQL, Python | Inspire & Impact Network member",
         "id": "302853963",
         "publicId": "evi-sasinek",
         "profileId": "ACoAABINL0sBJeTEQ3LumWYU3giO19KZI7wFucw"

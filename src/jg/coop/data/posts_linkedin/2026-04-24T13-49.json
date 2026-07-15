@@ -12,7 +12,17 @@
   "url": "https://www.linkedin.com/posts/honzajavorek_t%C3%BDdenn%C3%AD-pozn%C3%A1mky-jak-se-mi-da%C5%99%C3%AD-v-jednom-activity-7453439961833541632-uocD",
   "shareUrn": "urn:li:ugcPost:7453439961455804417",
   "text": "Týdenní poznámky! Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Tentokrát je to na 7 min čtení 🧐",
-  "attributes": [],
+  "attributes": [
+    {
+      "start": 72,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    }
+  ],
   "comments": [],
   "reactions": [
     {

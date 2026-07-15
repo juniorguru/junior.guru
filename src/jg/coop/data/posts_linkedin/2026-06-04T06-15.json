@@ -8,16 +8,58 @@
   "text": "Líp už asi vizuálně nevysvětlím, k čemu je junior.guru dobré 😅\n\nTohle je nová sekce na homepage. Propojil jsem seznam kandidátů, kteří si právě hledají práci na junior.guru/candidates, a příběhy lidmí, kteří už práci mají a spolu s Adéla Pavlun s nimi děláme rozhovory na junior.guru/stories\n\nVlevo kandidáti, které můžete rovnou oslovit, vpravo příběhy těch, kteří cestu do své první práce v IT našli.\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
   "attributes": [
     {
+      "start": 43,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    },
+    {
+      "start": 161,
+      "length": 22,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru/candidates"
+      }
+    },
+    {
       "start": 232,
       "length": 12,
       "type": "PROFILE_MENTION",
       "profile": {
         "firstName": "Adéla",
         "lastName": "Pavlun",
-        "occupation": "Writer & Guide in Somatic Healing and Trauma release",
+        "occupation": "Writer | People & Culture Facilitator | Somatic Practitioner | Exploring human connection, safety and growth",
         "id": "59184567",
         "publicId": "adelapavlun",
         "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"
+      }
+    },
+    {
+      "start": 232,
+      "length": 12,
+      "link": "https://www.linkedin.com/in/ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 272,
+      "length": 19,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru/stories"
+      }
+    },
+    {
+      "start": 426,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
       }
     }
   ],
@@ -26,7 +68,17 @@
       "time": 1780576613151,
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7468183540648534016?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7468183540648534016%2C7468279610842193920%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287468279610842193920%2Curn%3Ali%3Aactivity%3A7468183540648534016%29",
       "text": "Je to krásně přehledné 👏👍 Taky jsem si přes junior.guru našla práci a pořád jsem členem klubu a čerpám tady inspiraci 💛",
-      "entities": [],
+      "entities": [
+        {
+          "start": 44,
+          "length": 11,
+          "type": "TEXT_LINK",
+          "textLink": {
+            "viewingBehavior": "DEFAULT",
+            "url": "http://junior.guru"
+          }
+        }
+      ],
       "pinned": false,
       "originalLanguage": "Czech",
       "author": {
@@ -125,8 +177,120 @@
       }
     }
   ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marek",
+        "lastName": "VELAS",
+        "occupation": "Founder @EDUpunk | Learning design @Reactgirls.com | AI & Health Content Strategist | TALENT Mentor & MEME Therapist",
+        "id": "201927716",
+        "publicId": "marek-velas",
+        "profileId": "ACoAAAwJLCQB-ePqkhYoO0olYYFCoOJGgdydJEs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ella Michaela",
+        "lastName": "Malečková",
+        "occupation": "Data Engineer ☆ Data analyst",
+        "id": "689768652",
+        "publicId": "michaela-ella-maleckova",
+        "profileId": "ACoAACkdCMwB3ZHqe7uP9J5zQIm7UsUq0AZq_fU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Trnecka",
+        "occupation": "Aspiring Python Developer 🐍 | Every professional was once a beginner.",
+        "id": "375361759",
+        "publicId": "jiritrnecka",
+        "profileId": "ACoAABZfkN8BNu9pdZBNrF7Jqz2TzMfJbZPtPgQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Josef",
+        "lastName": "Jetmar",
+        "occupation": "Software development",
+        "id": "347089678",
+        "publicId": "jetmar",
+        "profileId": "ACoAABSwKw4B7lEhapAD2XfsGKC-guOCV4GjAcE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Zuzana",
+        "lastName": "Belaskova",
+        "occupation": "Frontend Developer | React • Next.js • TypeScript | Turning product requirements into maintainable UI",
+        "id": "445543791",
+        "publicId": "zuzana-belaskova-a13265105",
+        "profileId": "ACoAABqOdW8BPdt7uDNmmQfk3jdr4TYzQZCA9ys"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Ďurechová",
+        "occupation": "Business Process Analyst | Process & Operations Specialist | Lean Six Sigma Green Belt (in progress) | Cross-funkční koordinace & Data-driven Process Improvement",
+        "id": "531621563",
+        "publicId": "durechova",
+        "profileId": "ACoAAB-v5rsBooIQ9wOxiE6lWhw3QYi_ZgbxHtY"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Šotnar",
+        "occupation": "Frontend Developer Trainee | JavaScript, TypeScript, React",
+        "id": "1332351529",
+        "publicId": "sotnar",
+        "profileId": "ACoAAE9qEikBy98vuvk8guHa2u80sek2g2OsTAg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ondrej",
+        "lastName": "Lacina",
+        "occupation": "Data Analyst | SQL & Power BI & Excel | React, Banking Background",
+        "id": "536484368",
+        "publicId": "ondrej-lacina",
+        "profileId": "ACoAAB_6GhABy-VP5R9zHpUDSitdl8aYwBUabes"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Blanka",
+        "lastName": "Semanová",
+        "occupation": "Frontend Developer - React and Next",
+        "id": "740316381",
+        "publicId": "blanka-semanová",
+        "profileId": "ACoAACwgVN0BXjPO356is1a7HECdYY6oGuzTouY"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Alena",
+        "lastName": "Kadecka",
+        "occupation": "Growing into Cybersecurity",
+        "id": "980524499",
+        "publicId": "alena-kadecka-1ab461234",
+        "profileId": "ACoAADpxndMBinAAl7bBHANq9NCSbSp2a1G0Mdo"
+      }
+    }
+  ],
   "numShares": 0,
-  "numLikes": 68,
+  "numLikes": 69,
   "numComments": 15,
   "canReact": true,
   "canPostComments": true,

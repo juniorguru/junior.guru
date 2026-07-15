@@ -1,0 +1,177 @@
+{
+  "type": "image",
+  "images": [],
+  "isActivity": false,
+  "urn": "urn:li:activity:7477605609195048960",
+  "url": "https://www.linkedin.com/posts/honzajavorek_na50cv%C4%8Dek-m%C3%A1%C5%A1-5odpov%C4%9Bd%C3%AD-ado-toho-%C4%8Dte%C5%A1-activity-7477605609195048960-8fRo",
+  "shareUrn": "urn:li:share:7465389443168985088",
+  "text": "„Na 50 CVček máš 5 odpovědí a do toho čteš články, že AI nahradí programátory. Nebo vlastně všechny lidi, a možná i křečky!“\n\nSnažil jsem se, aby to bylo trochu čtivé 😆 \n\nTahle část nové homepage junior.guru by měla fungovat jako vysvětlení, v čem to vlastně juniorům nejvíc pomůže. Co od toho můžou čekat. Co tam najdou.\n\nA taky jako diferenciace. Protože junior.guru není kurz programování. Od svého vzniku je tady proto, aby pomáhalo překlenout díru mezi školami nebo kurzy a první prací v oboru.\n\nTaky jsem tam pak přidal ještě odstavec, který by mohl pomoci roztříštit obavy mnohých začátečníků, jestli má vůbec smysl se o IT v dnešní době snažit, když nás údajně všechny do pár let sežere AI.\n\nBude to takhle fungovat? Nevím! Dá se tam něco vylepšit? Dejte mi vědět! 😅 \n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 196,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    },
+    {
+      "start": 357,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    },
+    {
+      "start": 799,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petra",
+        "lastName": "Kubita Nulíčková",
+        "occupation": "HR Manager v Pale Fire Capital | Head of HR v Aukro | HR consultant and mentor | #sharingiscaring",
+        "id": "473833031",
+        "publicId": "petranulickova",
+        "profileId": "ACoAABw-HkcBifENxX8nxAs2YjwxbI6b2XtAF98"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Andrea",
+        "lastName": "Poláková",
+        "occupation": "Bridging Data Engineering & Data Science | Python, SQL, ML | Workflow & Reporting Enthusiast",
+        "id": "911341573",
+        "publicId": "andrea-poláková",
+        "profileId": "ACoAADZR-AUBW3eam7je1cwF0dYvW9JRkEdkUaA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Beneda",
+        "occupation": "I’m still having a blast coding Java.",
+        "id": "126275059",
+        "publicId": "beneda",
+        "profileId": "ACoAAAeGzfMB3cm5D2-vqsLVkTeGSRXKVfEDpJU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Šárka",
+        "lastName": "M.",
+        "occupation": "Security🔥",
+        "id": "390209713",
+        "publicId": "šárka-m-98181baa",
+        "profileId": "ACoAABdCILEB07y3oARo2gRV3h5igas9WXxER4k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Messner",
+        "occupation": "Full-stack software engineer and developer",
+        "id": "21519263",
+        "publicId": "messa",
+        "profileId": "ACoAAAFIW58BHQuf7UmFIL0JxAANFW73V79_YOY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michal",
+        "lastName": "Illich",
+        "occupation": "Founder of Zuri - hybrid VTOL aircraft",
+        "id": "3278465",
+        "publicId": "michal-illich",
+        "profileId": "ACoAAAAyBoEB4jYPsFdRnHZ_GB9yH_FwtlnwjFQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ivan",
+        "lastName": "Kvasnica",
+        "occupation": "TypeScript Engineer | Backend-First | Clean Architecture, Product Mindset, AI-Enhanced Workflow",
+        "id": "26597578",
+        "publicId": "ikvasnica",
+        "profileId": "ACoAAAGV2MoBN8JZ2pQK395RLRvyRx1Tw4GdAYg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Daniel",
+        "lastName": "Vašek",
+        "occupation": "DevOps ⬝ SRE ⬝ IaC ⬝ k8s ⬝ o11y",
+        "id": "578321821",
+        "publicId": "daniel-vasek",
+        "profileId": "ACoAACJ4fZ0Bt9HmK1LjeVmmCJJm_NgvxIhPgH4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Barbora",
+        "lastName": "Lendacká",
+        "occupation": "junior react developer | lifelong hands-on learner 📚",
+        "id": "244185326",
+        "publicId": "barbora-lendacka",
+        "profileId": "ACoAAA6N-O4BkRvPPyIgRFUKOlr5LSE8hcrD3UQ"
+      }
+    }
+  ],
+  "numShares": 3,
+  "numLikes": 30,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1782800104426,
+  "postedAtISO": "2026-06-30T06:15:04.426Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

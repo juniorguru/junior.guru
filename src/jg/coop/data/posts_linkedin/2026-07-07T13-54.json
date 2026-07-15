@@ -1,0 +1,139 @@
+{
+  "isActivity": true,
+  "activityDescription": "Honza Javorek reposted this",
+  "activityOfUser": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "urn": "urn:li:activity:7480258038461894656",
+  "url": "https://www.linkedin.com/posts/mat%C4%9Bj-drbohlav-28886a63_opentowork-ugcPost-7478818609323163648-lOT6",
+  "shareUrn": "urn:li:ugcPost:7478818609323163648",
+  "text": "Hi everyone — I’m currently looking for a new opportunity as a Java Software Engineer.\n\nAfter a personal break and relocation, I’m ready to join a new team or full-time project. I’m open to roles in Prague, across Czechia, or remote worldwide.\n\nA bit about me: \n• Java Software Engineer\n• Experience at CREDITAS Group, AIS Servis, s.r.o., and Bileto\n• Strong in Java, Spring Boot, and backend development\n• Available immediately\n\nIf you know of any relevant opportunities, I’d really appreciate a message, comment, or share. #OpenToWork",
+  "attributes": [
+    {
+      "trackingUrn": "urn:li:hashtag:opentowork",
+      "start": 525,
+      "length": 11,
+      "link": "https://www.linkedin.com/search/results/all/?keywords=%23opentowork&origin=HASH_TAG_FROM_FEED",
+      "dashHashtagUrn": "urn:li:fsd_hashtag:(opentowork,urn:li:activity:7480258038461894656)",
+      "type": "HASHTAG"
+    }
+  ],
+  "comments": [
+    {
+      "time": 1783368517799,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7478818609323163648?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7478818609323163648%2C7479989707674697728%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287479989707674697728%2Curn%3Ali%3AugcPost%3A7478818609323163648%29",
+      "text": "Držím palce! Jsem si jistý, že ve správém prostředí dokážeš jet bomby a určitě doporučuju všem týmům, kde něco dělají s Javou, aby si s tebou pokecali – protože pak uvidí tu tvoji jiskru v oku a ještě se o tebe budou přetahovat 😛",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Přibil",
+        "occupation": "Global Sales Manager | Specialty Lubricants",
+        "id": "132002824",
+        "publicId": "petr-pribil",
+        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ailana",
+        "lastName": "Soares",
+        "occupation": "Manager, E-commerce at Gibson Brands, Inc.",
+        "id": "396679253",
+        "publicId": "ailana-soares-905a1bb0",
+        "profileId": "ACoAABek2FUBTvdgK1pCYQfOEdy8byA6awRVjAo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Rafael",
+        "lastName": "Stangherlin",
+        "occupation": "Product Data Management @Action",
+        "id": "139247837",
+        "publicId": "rafael-stangherlin",
+        "profileId": "ACoAAAhMwN0B-va_9oGT-2Uf89pzG1RoCxoOUHY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lukáš",
+        "lastName": "Zibner",
+        "occupation": "First Officer Embraer Legacy 600/650, A320 type rated, ATPL(A)",
+        "id": "734204401",
+        "publicId": "lukáš-zibner-981a72185",
+        "profileId": "ACoAACvDEfEBxoOgA98J6dpAl0XL4kJa3D1Tvs0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Moučka",
+        "occupation": "PLC and robot programmer",
+        "id": "748475780",
+        "publicId": "martin-moučka-8587b518a",
+        "profileId": "ACoAACyc1YQBEbPjFpwhBhZpkTSsafiflvM0BJg"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 6,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": false,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "CONNECTIONS_ONLY",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Matěj",
+    "lastName": "Drbohlav",
+    "occupation": "Java Software Developer",
+    "id": "226081544",
+    "publicId": "matěj-drbohlav-28886a63",
+    "profileId": "ACoAAA15uwgB3hEzaiddes3w50AFR1_ImKhpjH8"
+  },
+  "authorProfileId": "matěj-drbohlav-28886a63",
+  "authorType": "Person",
+  "authorName": "Matěj Drbohlav",
+  "authorProfileUrl": "https://www.linkedin.com/in/mat%C4%9Bj-drbohlav-28886a63?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAA15uwgB3hEzaiddes3w50AFR1_ImKhpjH8",
+  "authorUrn": "urn:li:member:226081544",
+  "postedAtTimestamp": 1783432492843,
+  "postedAtISO": "2026-07-07T13:54:52.843Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

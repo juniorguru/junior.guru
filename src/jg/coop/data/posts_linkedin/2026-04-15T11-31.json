@@ -29,6 +29,12 @@
       }
     },
     {
+      "start": 1106,
+      "length": 12,
+      "link": "https://www.linkedin.com/company/huggingface/",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 1127,
       "length": 15,
       "type": "PROFILE_MENTION",
@@ -40,6 +46,12 @@
         "publicId": "clementdelangue",
         "profileId": "ACoAAAITKL4B5dyhNTXLdGTE-0Vq4LnTZjHanpU"
       }
+    },
+    {
+      "start": 1127,
+      "length": 15,
+      "link": "https://www.linkedin.com/in/ACoAAAITKL4B5dyhNTXLdGTE-0Vq4LnTZjHanpU",
+      "type": "HYPERLINK"
     },
     {
       "start": 1144,
@@ -55,6 +67,12 @@
       }
     },
     {
+      "start": 1144,
+      "length": 11,
+      "link": "https://www.linkedin.com/in/ACoAAAFYZ2UBzPnShY0OkuyWzB3BaoJCf5FRgCk",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 1157,
       "length": 15,
       "type": "PROFILE_MENTION",
@@ -66,6 +84,12 @@
         "publicId": "julienchaumond",
         "profileId": "ACoAAACGArQBeIsShtJCKN3fD399YabWHlFXTLc"
       }
+    },
+    {
+      "start": 1157,
+      "length": 15,
+      "link": "https://www.linkedin.com/in/ACoAAACGArQBeIsShtJCKN3fD399YabWHlFXTLc",
+      "type": "HYPERLINK"
     },
     {
       "start": 1210,
@@ -81,6 +105,12 @@
       }
     },
     {
+      "start": 1210,
+      "length": 14,
+      "link": "https://www.linkedin.com/in/ACoAAAw_ipEBDEN3Oi3IjLIHdrWguJOBr3eNgEw",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 1229,
       "length": 10,
       "type": "PROFILE_MENTION",
@@ -94,6 +124,12 @@
       }
     },
     {
+      "start": 1229,
+      "length": 10,
+      "link": "https://www.linkedin.com/in/ACoAAAASGZQBVaLoOt49zN7a0zkAo2bqJucZigI",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 1286,
       "length": 6,
       "type": "COMPANY_NAME",
@@ -104,6 +140,12 @@
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:104743927"
       }
+    },
+    {
+      "start": 1286,
+      "length": 6,
+      "link": "https://www.linkedin.com/company/aisleinc/",
+      "type": "HYPERLINK"
     }
   ],
   "comments": [
@@ -317,7 +359,7 @@
       "profile": {
         "firstName": "Ondrej",
         "lastName": "Michalak",
-        "occupation": "AI & Data Management Consulting",
+        "occupation": "AI Context / Data Management",
         "id": "25829723",
         "publicId": "ondrejmichalak",
         "profileId": "ACoAAAGKIVsBXNLj8Dk7bd-MGE9A49IczSVYZbg"
@@ -372,7 +414,7 @@
       "profile": {
         "firstName": "Ali",
         "lastName": "Subhan",
-        "occupation": "Agentic AI, Cybersecurity & SaaS Platforms | Sales Transformation | Founding AE | Public Speaker & Host | ESG Champion | Gooner",
+        "occupation": "Agentic AI, Cybersecurity & SaaS Platforms | Founding AE | Public Speaker | ESG Champion",
         "id": "2613190",
         "publicId": "alisubhan",
         "profileId": "ACoAAAAn38YBWAdgMitziddCAiTeNarpG8imbD4"
@@ -392,7 +434,7 @@
   ],
   "numShares": 52,
   "numLikes": 513,
-  "numComments": 54,
+  "numComments": 53,
   "canReact": true,
   "canPostComments": true,
   "canShare": true,

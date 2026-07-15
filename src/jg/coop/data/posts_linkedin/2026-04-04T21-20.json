@@ -33,6 +33,21 @@
         "publicId": "jukben",
         "profileId": "ACoAABb1yWsBoQCg5XNZe2mG_MXrfvNzrXHh6UQ"
       }
+    },
+    {
+      "start": 9,
+      "length": 11,
+      "link": "https://www.linkedin.com/in/ACoAABb1yWsBoQCg5XNZe2mG_MXrfvNzrXHh6UQ",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 178,
+      "length": 22,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "https://www.sdilny.cz/"
+      }
     }
   ],
   "comments": [
@@ -52,6 +67,12 @@
             "showcase": false,
             "entityUrn": "urn:li:fs_miniCompany:105992017"
           }
+        },
+        {
+          "start": 13,
+          "length": 18,
+          "link": "https://www.linkedin.com/company/martins-3d-garage/",
+          "type": "HYPERLINK"
         }
       ],
       "pinned": false,
@@ -59,7 +80,7 @@
       "author": {
         "firstName": "Martin",
         "lastName": "Pohl",
-        "occupation": "👋🏻 Systems Engineer | Cloud & Infrastructure | Apple Ecosystem | AI Enthusiast 9+ years across Windows, Linux, virtualization & cloud (AWS/Azure/GCP). Building at the intersection of AI, tech & 3D printing.",
+        "occupation": "👋🏻 Systems Engineer | Cloud × Apple × AI | Founder @ ProfiSprávceSVJ | 9+ yrs building infrastructure, automation & digital products across Windows, Linux, macOS, AWS, Azure & GCP.",
         "id": "91978707",
         "publicId": "martinp0",
         "profileId": "ACoAAAV7e9MBFtGH5maIeSHpnJTRWcXT7M2Xajw",
@@ -92,7 +113,7 @@
       "author": {
         "firstName": "Václav",
         "lastName": "Kotyk",
-        "occupation": "Talent Sourcer @ SentinelOne.ai | The Future of CyberSec will be determined by You - let’s Secure Tomorrow™ together! 🛡️👾 | In 💜 with s1.ai/PurpleAI | 🕵️‍♂️ CyBeer security meetups organizer",
+        "occupation": "Talent Sourcer @ SentinelOne | The Future of CyberSec will be determined by You - let’s Secure Tomorrow™ together! 🛡️👾 | In 💜 with s1.ai/PurpleAI | 🕵️‍♂️ CyBeer security meetups organizer",
         "id": "322518163",
         "publicId": "vaclavkotyk",
         "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0",
@@ -128,7 +149,7 @@
       "profile": {
         "firstName": "Julie",
         "lastName": "Rakovcová",
-        "occupation": "Software Engineer in Salted, ex-Productboard",
+        "occupation": "Software Engineer in Everpure, ex-Productboard",
         "id": "666870794",
         "publicId": "julie-rakovcova",
         "profileId": "ACoAACe_pAoBl8J8abHVdSZhYHv_FP7udlhcFAE"
@@ -194,7 +215,7 @@
       "profile": {
         "firstName": "Martin",
         "lastName": "Pohl",
-        "occupation": "👋🏻 Systems Engineer | Cloud & Infrastructure | Apple Ecosystem | AI Enthusiast 9+ years across Windows, Linux, virtualization & cloud (AWS/Azure/GCP). Building at the intersection of AI, tech & 3D printing.",
+        "occupation": "👋🏻 Systems Engineer | Cloud × Apple × AI | Founder @ ProfiSprávceSVJ | 9+ yrs building infrastructure, automation & digital products across Windows, Linux, macOS, AWS, Azure & GCP.",
         "id": "91978707",
         "publicId": "martinp0",
         "profileId": "ACoAAAV7e9MBFtGH5maIeSHpnJTRWcXT7M2Xajw"

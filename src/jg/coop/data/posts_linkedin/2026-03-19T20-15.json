@@ -18,6 +18,30 @@
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:81876095"
       }
+    },
+    {
+      "start": 244,
+      "length": 8,
+      "link": "https://www.linkedin.com/company/obsidianmd/",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 495,
+      "length": 16,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru/club"
+      }
+    },
+    {
+      "start": 971,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
     }
   ],
   "comments": [],

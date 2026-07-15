@@ -1,0 +1,281 @@
+{
+  "type": "image",
+  "images": [],
+  "isActivity": true,
+  "activityDescription": "Honza Javorek reposted this",
+  "activityOfUser": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "urn": "urn:li:activity:7478047143639969792",
+  "url": "https://www.linkedin.com/posts/adina-fox_druh%C3%A1-p%C5%99edn%C3%A1%C5%A1ka-v-junior-guru-za-mnou-pov%C3%ADdali-activity-7477797958718255104-JtfG",
+  "shareUrn": "urn:li:share:7477797957459894272",
+  "text": "Druhá přednáška v Junior Guru za mnou - povídali jsme si o tom, jak si udržet focus v době AI. Potkali jsme se ve FigJamu, a z jednostranné přednášky byl kolaborativní prostor. Díky všem, co dorazili! Tenhle obrázek budu mít na památku :D\nKlub Junior Guru doporučuju všem začátečníkům v programování, kteří na to už nechtějí být sami 🥚 🐣 🐥",
+  "attributes": [
+    {
+      "start": 18,
+      "length": 11,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Junior Guru",
+        "universalName": "juniorguru",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:26218444"
+      }
+    },
+    {
+      "start": 18,
+      "length": 11,
+      "link": "https://www.linkedin.com/company/juniorguru/",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 244,
+      "length": 11,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Junior Guru",
+        "universalName": "juniorguru",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:26218444"
+      }
+    },
+    {
+      "start": 244,
+      "length": 11,
+      "link": "https://www.linkedin.com/company/juniorguru/",
+      "type": "HYPERLINK"
+    }
+  ],
+  "comments": [
+    {
+      "time": 1782911691276,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7477797958718255104?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7477797958718255104%2C7478073638362103808%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287478073638362103808%2Curn%3Ali%3Aactivity%3A7477797958718255104%29",
+      "text": "Více takových interaktivních přednášek. ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Pavla",
+        "lastName": "Beránková",
+        "occupation": "PHP programátorka",
+        "id": "549611439",
+        "publicId": "berankova-pavla",
+        "profileId": "ACoAACDCZ68BhDuYokjdegYmFm0rxSx_6Mlwh9c",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1782905364055,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7477797958718255104?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7477797958718255104%2C7478047100073787392%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287478047100073787392%2Curn%3Ali%3Aactivity%3A7477797958718255104%29",
+      "text": "Bylo to skvělý, díky, že jsi za námi přišla! Sešli se skvělí lidi v publiku a ten FigJam byla fakt zábava, tohle jsem ještě na přednášce neviděl  ❤️  🦈  😆 ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1782879376194,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7477797958718255104?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7477797958718255104%2C7477938099088510976%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287477938099088510976%2Curn%3Ali%3Aactivity%3A7477797958718255104%29",
+      "text": "Hltal jsem každou minutu a bylo to velmi přínosné. Díky moc.",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Tomáš",
+        "lastName": "Cibulec",
+        "occupation": "Python vývojář s přesahem. 🐍",
+        "id": "399499541",
+        "publicId": "ypsilonxpython",
+        "profileId": "ACoAABfP4RUBhhqww_PQuiFQs580Isbr6ZqrqOg",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1782848754910,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7477797958718255104?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7477797958718255104%2C7477809664110387200%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287477809664110387200%2Curn%3Ali%3Aactivity%3A7477797958718255104%29",
+      "text": "Díky, bylo to fajn povídání. Rozhodně se budu těšit na nějakou další \"přednášku\" - byl to vlastně takový fajn brainstorming.  😀 ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Tomáš",
+        "lastName": "Salamánek",
+        "occupation": "Po téměř 20 letech ve strojírenství jsem objevil svět IT. Bylo to pro mě, jako když poprvé otevřete internet a žasnete, kolik nových informací Vám svět kolem nabízí.",
+        "id": "117107557",
+        "publicId": "salamanek",
+        "profileId": "ACoAAAb662UB8Fk1x6YnfJ2zd6FiGd1MufWQHX4",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1782846711591,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7477797958718255104?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7477797958718255104%2C7477801093809369088%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287477801093809369088%2Curn%3Ali%3Aactivity%3A7477797958718255104%29",
+      "text": "Bylo to supr, moc dík 😊",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Tomas",
+        "lastName": "Manhal",
+        "occupation": "SEO/UX Specialist at Webmium ✅ Aspiring Backend Developer at Home ✅",
+        "id": "356811200",
+        "publicId": "tomasmanhal",
+        "profileId": "ACoAABVEgcABhXssunqzWgZ32PhPvDuM7pOY7Sw",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vladimír",
+        "lastName": "O.",
+        "occupation": "Principal Software Engineer",
+        "id": "48741678",
+        "publicId": "vladimirorany",
+        "profileId": "ACoAAALnvS4BFtmKA2kvfu3gWdNhNko-yDkjZZY"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Daniel",
+        "lastName": "Srb",
+        "occupation": "Helping people to become junior frontend developers",
+        "id": "15446232",
+        "publicId": "danielsrb",
+        "profileId": "ACoAAADrsNgBFfAixAgw_mCw8WtR9SeNIvEEI8Q"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Manivannan",
+        "lastName": "Selvaraj",
+        "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
+        "id": "13167565",
+        "publicId": "citizenmani",
+        "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Karolina",
+        "lastName": "Kramkova",
+        "occupation": "Be not afraid to step out of your comfort zone and face unknown challenges, it is usual the best thing to do!",
+        "id": "537474680",
+        "publicId": "karolina-kramkova",
+        "profileId": "ACoAACAJNngB4ybl2bJ9KL4XIvIBiZoPcrRLgyI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Patrik",
+        "lastName": "Brnušák",
+        "occupation": "Otevřen novým příležitostem",
+        "id": "666440295",
+        "publicId": "patrik-brnusak-cz",
+        "profileId": "ACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Zuzana",
+        "lastName": "Nemesová",
+        "occupation": "I came to IT through curiosity. Over the years I’ve completed various courses and bring experience in operations and process-oriented environments. I’m currently working on transition into a more hands-on skills role.",
+        "id": "845651538",
+        "publicId": "zuzananemesova",
+        "profileId": "ACoAADJnnlIBquclOb_prE3qoGE193gnweDGBA4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Táňa",
+        "lastName": "Váchová",
+        "occupation": "📌 administrativa ⊃ podpora ⊃ empatie",
+        "id": "1399848350",
+        "publicId": "tanavachova",
+        "profileId": "ACoAAFNv_Z4BxskkxA5XZSQetiT0HKCBk4rbPGE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "David",
+        "lastName": "Jura",
+        "occupation": "HR Manager ▪ Office Manager ve společnosti Dactyl Group s.r.o. a Techmates.io ▪ Vášnivý Frontend Developer",
+        "id": "1027619155",
+        "publicId": "davidjura",
+        "profileId": "ACoAAD1AOVMBJNSJlkfxOjkRzHNodgvOV3HdaEg"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lukáš",
+        "lastName": "Ú.",
+        "occupation": "Senior product designer leader | Transforming complex B2B systems into intuitive experiences",
+        "id": "145132400",
+        "publicId": "uradnicek",
+        "profileId": "ACoAAAimi3ABDK4rvuF9LHZ88UYeDiHI82naAXY"
+      }
+    }
+  ],
+  "numShares": 2,
+  "numLikes": 24,
+  "numComments": 6,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Adina J.",
+    "lastName": "Fox",
+    "occupation": "Product design teams & systems 🚀",
+    "id": "530422661",
+    "publicId": "adina-fox",
+    "profileId": "ACoAAB-dm4UBphpPt0M3o_HcoFhUNSFgam6yIyY"
+  },
+  "authorProfileId": "adina-fox",
+  "authorType": "Person",
+  "authorName": "Adina J. Fox",
+  "authorProfileUrl": "https://www.linkedin.com/in/adina-fox?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAB-dm4UBphpPt0M3o_HcoFhUNSFgam6yIyY",
+  "authorUrn": "urn:li:member:530422661",
+  "postedAtTimestamp": 1782905374441,
+  "postedAtISO": "2026-07-01T11:29:34.441Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

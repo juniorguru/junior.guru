@@ -12,7 +12,17 @@
   "url": "https://www.linkedin.com/posts/honzajavorek_t%C3%BDdenn%C3%AD-pozn%C3%A1mky-jak-se-mi-da%C5%99%C3%AD-v-jednom-activity-7431792609578250240-HCzJ",
   "shareUrn": "urn:li:ugcPost:7431792609112555520",
   "text": "Týdenní poznámky! Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Tentokrát je v tom skoro celý únor a je to prý na 23 min čtení 😅",
-  "attributes": [],
+  "attributes": [
+    {
+      "start": 72,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    }
+  ],
   "comments": [
     {
       "time": 1771927243976,
@@ -154,7 +164,7 @@
       "profile": {
         "firstName": "Matěj",
         "lastName": "Kahún",
-        "occupation": "Komuniťák v Czechitas 🏄‍♂️",
+        "occupation": "People, content & processes 🏄‍♂️",
         "id": "726742558",
         "publicId": "matejkahun",
         "profileId": "ACoAACtRNh4Bgs49PDAKRTrJ0zQclHv-UqoqjOs"
