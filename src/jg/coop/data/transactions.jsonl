@@ -1361,3 +1361,4 @@
 {"_id": "27734289070", "amount": 1532, "category": "memberships", "happened_on": "2026-07-13"}
 {"_id": "27738830860", "amount": -5303, "category": "tax", "happened_on": "2026-07-15"}
 {"_id": "27738830861", "amount": -3306, "category": "tax", "happened_on": "2026-07-15"}
+{"_id": "27739504488", "amount": 6, "category": "donations", "happened_on": "2026-07-15"}
