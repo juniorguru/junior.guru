@@ -72,6 +72,8 @@ registry:
       (bude upřesněno)
     bio_links:
       - https://www.linkedin.com/in/eliskacejpova/
+    club_speaker_ids:
+      - 648142994662227969
 
   - id: 63
     title: "Focus v době AI"
