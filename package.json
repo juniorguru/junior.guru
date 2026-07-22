@@ -2,7 +2,7 @@
   "name": "juniorguru",
   "type": "module",
   "dependencies": {
-    "@fontsource/inter": "5.2.8",
+    "@fontsource/inter": "5.3.0",
     "@popperjs/core": "2.11.8",
     "bootstrap-icons": "1.13.1",
     "chart.js": "4.5.1",
@@ -17,7 +17,7 @@
     "esbuild": "0.28.1",
     "esbuild-sass-plugin": "3.7.0",
     "jsdom": "29.1.1",
-    "oxfmt": "0.59.0",
+    "oxfmt": "0.60.0",
     "sass": "1.77.6",
     "stylelint": "16.26.1",
     "stylelint-config-twbs-bootstrap": "16.1.0",
