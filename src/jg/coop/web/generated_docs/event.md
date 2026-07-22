@@ -9,6 +9,11 @@
   <li class="article-details-item">
     <a class="article-details-link" href="{{ ("static/" + event.poster_path)|url }}" target="_blank" rel="noopener" download>Stáhni plakát</a>
   </li>
+  {% if event.avatar_path != 'chick-avatar.png' %}
+  <li class="article-details-item">
+    <a class="article-details-link" href="{{ ("static/" + event.avatar_path)|url }}" target="_blank" rel="noopener" download>Stáhni fotku</a>
+  </li>
+  {% endif %}
 </ul>
 
 {% call lead() %}{{ event.description|md }}{% endcall %}
