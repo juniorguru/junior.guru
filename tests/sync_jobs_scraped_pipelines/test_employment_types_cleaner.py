@@ -56,24 +56,24 @@ def test_clean_employment_type_raises():
     "item, expected",
     [
         (
-            dict(employment_types=["Full-Time"]),
-            dict(employment_types=["fulltime"]),
+            {"employment_types": ["Full-Time"]},
+            {"employment_types": ["fulltime"]},
         ),
         (
-            dict(employment_types=["part time", "Full-Time"]),
-            dict(employment_types=["fulltime", "parttime"]),
+            {"employment_types": ["part time", "Full-Time"]},
+            {"employment_types": ["fulltime", "parttime"]},
         ),
         (
-            dict(employment_types=["other", "Full-Time"]),
-            dict(employment_types=["fulltime"]),
+            {"employment_types": ["other", "Full-Time"]},
+            {"employment_types": ["fulltime"]},
         ),
         (
-            dict(employment_types=["other"]),
-            dict(employment_types=[]),
+            {"employment_types": ["other"]},
+            {"employment_types": []},
         ),
         (
-            dict(),
-            dict(),
+            {},
+            {},
         ),
     ],
 )

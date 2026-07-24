@@ -1,8 +1,9 @@
 import asyncio
 import logging
+from collections.abc import Callable
 from datetime import timedelta
 from functools import lru_cache, wraps
-from typing import Any, Callable
+from typing import Any
 
 from diskcache import Cache
 from diskcache.core import ENOVAL, args_to_key, full_name
@@ -42,7 +43,7 @@ def close_cache() -> None:
 
 
 def cache(
-    expire: float | int | timedelta | None = None,
+    expire: float | timedelta | None = None,
     tag: str | None = None,
     ignore: tuple[int | str] = (),
 ) -> Callable:
@@ -92,6 +93,6 @@ class BytecodeCache(BaseBytecodeCache):
         self.cache.set(f"jinja:{bucket.key}", bucket.bytecode_to_string(), tag="jinja")
 
 
-@lru_cache()
+@lru_cache
 def get_jinja_cache() -> BytecodeCache:
     return BytecodeCache(get_cache())

@@ -1,4 +1,4 @@
-from typing import Generator
+from collections.abc import Generator
 
 import pytest
 
@@ -27,7 +27,7 @@ def create_partner(slug: str, **kwargs) -> Partner:
 
 
 @pytest.fixture
-def test_db() -> Generator[SqliteDatabase, None, None]:
+def test_db() -> Generator[SqliteDatabase]:
     yield from prepare_test_db([CourseProvider, Sponsor, SponsorTier, Partner])
 
 

@@ -22,11 +22,11 @@ def main():
     discord_task.run(crawl)
 
     with db.connection_context():
-        stats = dict(
-            messages=ClubMessage.count(),
-            users=ClubUser.count(),
-            channels=ClubChannel.count(),
-            members=ClubUser.members_count(),
-            pins=ClubPin.count(),
-        )
+        stats = {
+            "messages": ClubMessage.count(),
+            "users": ClubUser.count(),
+            "channels": ClubChannel.count(),
+            "members": ClubUser.members_count(),
+            "pins": ClubPin.count(),
+        }
     logger.info(f"Finished with\n{pformat(stats)}")

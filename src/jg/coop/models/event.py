@@ -204,11 +204,7 @@ class Event(BaseModel):
 
     @classmethod
     def list_speaking_members(cls):
-        return (
-            ClubUser.select()
-            .where(ClubUser.is_member == True)  # noqa: E712
-            .join(EventSpeaking)
-        )
+        return ClubUser.select().where(ClubUser.is_member == True).join(EventSpeaking)
 
     @classmethod
     def listing(cls):
@@ -227,7 +223,7 @@ class Event(BaseModel):
         if has_recording:
             query = query.where(
                 (cls.club_recording_url.is_null(False))
-                | (cls.public_recording_url.is_null(False))  # noqa: E712
+                | (cls.public_recording_url.is_null(False))
             )
         if has_avatar:
             query = query.where(cls.avatar_path != cls.avatar_path.default)
@@ -280,7 +276,7 @@ class Event(BaseModel):
             cls.select()
             .where(
                 (cls.club_recording_url.is_null(False))
-                | (cls.public_recording_url.is_null(False))  # noqa: E712
+                | (cls.public_recording_url.is_null(False))
             )
             .count()
         )
@@ -311,7 +307,7 @@ class Event(BaseModel):
         )
 
     @classmethod
-    def featured_listing(cls, now: datetime = None) -> list[Self]:
+    def featured_listing(cls, now: datetime | None = None) -> list[Self]:
         return list(
             itertools.chain(
                 cls.planned_listing(now=now).limit(1),
@@ -345,7 +341,7 @@ class EventSpeaking(BaseModel):
             cls.listing(from_date, to_date)
             .switch(cls)
             .join(ClubUser)
-            .where(ClubUser.has_feminine_name == True)  # noqa: E712
+            .where(ClubUser.has_feminine_name == True)
         )
 
     @classmethod

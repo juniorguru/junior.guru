@@ -46,8 +46,8 @@ async def sync_channel(client: ClubClient, channel_id: int, sponsors: list[Spons
 
 
 def build_header_args() -> dict:
-    return dict(
-        content=(
+    return {
+        "content": (
             "# Seznam sponzorů\n\n"
             "Tyto organizace se podílejí na financování junior.guru. "
             "Můžeš se tady prokliknout na jejich stránky. "
@@ -57,10 +57,10 @@ def build_header_args() -> dict:
             "Role využívej a sponzory klidně označ, pokud po nich něco potřebuješ. "
             "Seznam sponzorů je tady seřazený podle počtu jejich lidí v klubu. "
         ),
-        embeds=[],
-        suppress=True,
-        allowed_mentions=AllowedMentions.none(),
-    )
+        "embeds": [],
+        "suppress": True,
+        "allowed_mentions": AllowedMentions.none(),
+    }
 
 
 def build_sponsor_args(sponsor: Sponsor) -> dict:
@@ -71,8 +71,8 @@ def build_sponsor_args(sponsor: Sponsor) -> dict:
         description=f"Role: <@&{sponsor.role_id}>\nČlenů: {sponsor.members_count}",
     )
     embed.set_thumbnail(url=f"attachment://{Path(sponsor.poster_path).name}")
-    return dict(
-        embed=embed,
-        files=[File(IMAGES_DIR / sponsor.poster_path)],
-        allowed_mentions=AllowedMentions.none(),
-    )
+    return {
+        "embed": embed,
+        "files": [File(IMAGES_DIR / sponsor.poster_path)],
+        "allowed_mentions": AllowedMentions.none(),
+    }

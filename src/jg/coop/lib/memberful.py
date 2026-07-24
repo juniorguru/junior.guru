@@ -3,9 +3,10 @@ import json
 import logging
 import os
 import re
+from collections.abc import Callable, Generator
 from dataclasses import dataclass
-from datetime import date, datetime, timedelta, timezone
-from typing import Any, Callable, Generator
+from datetime import UTC, date, datetime, timedelta
+from typing import Any
 
 import httpx
 from gql import Client, gql
@@ -46,7 +47,7 @@ class MemberfulAPI:
 
     def __init__(
         self,
-        api_key: str = None,
+        api_key: str | None = None,
         user_agent: str | None = None,
     ):
         self.api_key = api_key or MEMBERFUL_API_KEY
@@ -73,8 +74,8 @@ class MemberfulAPI:
         return self.client.execute(gql(mutation), variable_values=variable_values)
 
     def get_nodes(
-        self, query: str, variable_values: dict = None
-    ) -> Generator[dict, None, None]:
+        self, query: str, variable_values: dict | None = None
+    ) -> Generator[dict]:
         if match := COLLECTION_NAME_RE.search(query):
             collection_name = match.group("collection_name")
         else:
@@ -87,10 +88,12 @@ class MemberfulAPI:
             for edge in result[collection_name]["edges"]:
                 yield edge["node"]
 
-    def get(self, query: str, variable_values: dict = None) -> list[dict]:
+    def get(self, query: str, variable_values: dict | None = None) -> list[dict]:
         return self._execute_query(query, variable_values)
 
-    def _query(self, query: str, get_page_info: Callable, variable_values: dict = None):
+    def _query(
+        self, query: str, get_page_info: Callable, variable_values: dict | None = None
+    ):
         variable_values = variable_values or {}
         cursor = ""
         n = 0
@@ -126,8 +129,8 @@ class MemberfulAuthToken:
 class MemberfulCSV:
     def __init__(
         self,
-        email: str = None,
-        password: str = None,
+        email: str | None = None,
+        password: str | None = None,
         user_agent: str | None = None,
     ):
         self.email = email or MEMBERFUL_EMAIL
@@ -279,11 +282,11 @@ def is_partner_plan(plan: dict) -> bool:
 
 
 def is_individual_plan(plan: dict) -> bool:
-    return re.search(r"\bčlenství\sv\sklubu\b", plan["name"], re.I) is not None
+    return re.search(r"\bčlenství\sv\sklubu\b", plan["name"], re.IGNORECASE) is not None
 
 
 def timestamp_to_datetime(timestamp: int) -> datetime:
-    return datetime.fromtimestamp(timestamp, tz=timezone.utc).replace(tzinfo=None)
+    return datetime.fromtimestamp(timestamp, tz=UTC).replace(tzinfo=None)
 
 
 def timestamp_to_date(timestamp: int) -> date:

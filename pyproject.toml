@@ -89,6 +89,13 @@ target-version = "py313"
 
 [tool.ruff.lint]
 extend-select = ["I"]
+# Opt out of opinionated rule families (enabled by Ruff's expanded defaults)
+# that conflict with intentional patterns in this codebase:
+# - DTZ: naive datetimes/dates are used deliberately (peewee storage, date-only logic)
+# - BLE001: blind `except Exception` is an intentional resilience pattern in sync scripts
+# - RUF012: mutable class defaults are used as config/data holders
+# - ASYNC210/221/251: blocking calls inside async setup/sync code are acceptable here
+ignore = ["DTZ", "BLE001", "RUF012", "ASYNC210", "ASYNC221", "ASYNC251"]
 
 [tool.ruff.lint.isort]
 combine-as-imports = true

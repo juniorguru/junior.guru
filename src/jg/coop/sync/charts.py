@@ -1,6 +1,7 @@
+from collections.abc import Callable
 from datetime import date
 from operator import attrgetter
-from typing import Any, Callable, NotRequired, TypedDict
+from typing import Any, NotRequired, TypedDict
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import charts, loggers
@@ -129,118 +130,118 @@ def chart(chart_fn: Callable) -> Callable:
 def profit(today: date) -> IntChartDict:
     months = charts.months(BUSINESS_BEGIN_ON, today)
     data = charts.per_month(Transaction.profit, months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def profit_ttm(today: date) -> IntChartDict:
     months = charts.months(BUSINESS_BEGIN_ON, today)
     data = charts.per_month(Transaction.profit_ttm, months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def revenue(today: date) -> IntChartDict:
     months = charts.months(BUSINESS_BEGIN_ON, today)
     data = charts.per_month(Transaction.revenue, months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def revenue_ttm(today: date) -> IntChartDict:
     months = charts.months(BUSINESS_BEGIN_ON, today)
     data = charts.per_month(Transaction.revenue_ttm, months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def revenue_growth(today: date) -> FloatChartDict:
     months = charts.months(today.replace(year=today.year - 3), today)
     data = charts.per_month(Transaction.revenue_growth_ptc, months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def revenue_ttm_growth(today: date) -> FloatChartDict:
     months = charts.months(today.replace(year=today.year - 3), today)
     data = charts.per_month(Transaction.revenue_ttm_growth_ptc, months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def revenue_breakdown(today: date) -> IntBreakdownChartDict:
     months = charts.months(BUSINESS_BEGIN_ON, today)
     data = charts.per_month_breakdown(Transaction.revenue_breakdown, months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def cost(today: date) -> IntChartDict:
     months = charts.months(BUSINESS_BEGIN_ON, today)
     data = charts.per_month(Transaction.cost, months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def cost_ttm(today: date) -> IntChartDict:
     months = charts.months(BUSINESS_BEGIN_ON, today)
     data = charts.per_month(Transaction.cost_ttm, months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def cost_breakdown(today: date) -> IntBreakdownChartDict:
     months = charts.months(BUSINESS_BEGIN_ON, today)
     data = charts.per_month_breakdown(Transaction.cost_breakdown, months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def events(today: date) -> IntChartDict:
     months = charts.months(CLUB_BEGIN_ON, today)
     data = charts.per_month(Event.count_by_month, months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def events_ttm(today: date) -> IntChartDict:
     months = charts.months(CLUB_BEGIN_ON, today)
     data = charts.per_month(Event.count_by_month_ttm, months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def events_women(today: date) -> FloatChartDict:
     months = charts.months(CLUB_BEGIN_ON, today)
     data = charts.per_month(EventSpeaking.women_ptc_ttm, months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def podcast_women(today: date) -> FloatChartDict:
     months = charts.months(PODCAST_BEGIN_ON, today)
     data = charts.per_month(PodcastEpisode.women_ptc_ttm, months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def members(today: date) -> IntChartDict:
     months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
     data = Members.monthly_members(months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def members_individuals(today: date) -> IntChartDict:
     months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
     data = Members.monthly_members_individuals(months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def members_individuals_today(today: date) -> ChartDict:
     data = Members.monthly_members_individuals([today])[-1]
-    return dict(data=data)
+    return {"data": data}
 
 
 @chart
@@ -248,84 +249,84 @@ def members_individuals_today_ptc(today: date) -> ChartDict:
     members_individuals_count = Members.monthly_members_individuals([today])[-1]
     members_count = Members.monthly_members([today])[-1]
     data = (members_individuals_count * 100) / members_count
-    return dict(data=data)
+    return {"data": data}
 
 
 @chart
 def members_growth(today: date) -> FloatChartDict:
     months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
     data = Members.monthly_members_growth_ptc(months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def members_individuals_growth(today: date) -> FloatChartDict:
     months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
     data = Members.monthly_members_individuals_growth_ptc(months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def members_women(today: date) -> FloatChartDict:
     months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
     data = Members.monthly_members_women_ptc(months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def members_women_today(today: date) -> ChartDict:
     data = Members.monthly_members_women_ptc([today])[-1]
-    return dict(data=data)
+    return {"data": data}
 
 
 @chart
 def total_marketing_breakdown(today: date) -> FloatBreakdownChartDict:
-    return dict(
-        data=SubscriptionMarketingSurvey.total_breakdown_ptc(),
-        count=SubscriptionMarketingSurvey.count(),
-    )
+    return {
+        "data": SubscriptionMarketingSurvey.total_breakdown_ptc(),
+        "count": SubscriptionMarketingSurvey.count(),
+    }
 
 
 @chart
 def total_spend_marketing_breakdown(today: date) -> FloatBreakdownChartDict:
-    return dict(
-        data=SubscriptionMarketingSurvey.total_spend_breakdown_ptc(),
-        count=SubscriptionMarketingSurvey.count(),
-    )
+    return {
+        "data": SubscriptionMarketingSurvey.total_spend_breakdown_ptc(),
+        "count": SubscriptionMarketingSurvey.count(),
+    }
 
 
 @chart
 def total_referrer_breakdown(today: date) -> FloatBreakdownChartDict:
-    return dict(
-        data=SubscriptionReferrer.total_breakdown_ptc(),
-        count=SubscriptionReferrer.count(),
-    )
+    return {
+        "data": SubscriptionReferrer.total_breakdown_ptc(),
+        "count": SubscriptionReferrer.count(),
+    }
 
 
 @chart
 def total_spend_referrer_breakdown(today: date) -> FloatBreakdownChartDict:
-    return dict(
-        data=SubscriptionReferrer.total_spend_breakdown_ptc(),
-        count=SubscriptionReferrer.count(),
-    )
+    return {
+        "data": SubscriptionReferrer.total_spend_breakdown_ptc(),
+        "count": SubscriptionReferrer.count(),
+    }
 
 
 @chart
 def total_internal_referrer_breakdown(today: date) -> FloatBreakdownChartDict:
     period_days = 30 * 6
-    return dict(
-        data=SubscriptionInternalReferrer.total_breakdown_ptc(period_days),
-        count=SubscriptionInternalReferrer.count(period_days),
-    )
+    return {
+        "data": SubscriptionInternalReferrer.total_breakdown_ptc(period_days),
+        "count": SubscriptionInternalReferrer.count(period_days),
+    }
 
 
 @chart
 def total_spend_internal_referrer_breakdown(today: date) -> FloatBreakdownChartDict:
     period_days = 30 * 6
-    return dict(
-        data=SubscriptionInternalReferrer.total_spend_breakdown_ptc(period_days),
-        count=SubscriptionInternalReferrer.count(period_days),
-    )
+    return {
+        "data": SubscriptionInternalReferrer.total_spend_breakdown_ptc(period_days),
+        "count": SubscriptionInternalReferrer.count(period_days),
+    }
 
 
 @chart
@@ -333,50 +334,50 @@ def cancellations_breakdown(today: date) -> IntBreakdownChartDict:
     months = charts.months(SURVEYS_BEGIN_ON, today)
     data = charts.per_month_breakdown(SubscriptionCancellation.breakdown_ptc, months)
     count = SubscriptionCancellation.count()
-    return dict(data=data, months=months, count=count)
+    return {"data": data, "months": months, "count": count}
 
 
 @chart
 def total_cancellations_breakdown(today: date) -> FloatBreakdownChartDict:
-    return dict(
-        data=SubscriptionCancellation.total_breakdown_ptc(),
-        count=SubscriptionCancellation.count(),
-    )
+    return {
+        "data": SubscriptionCancellation.total_breakdown_ptc(),
+        "count": SubscriptionCancellation.count(),
+    }
 
 
 @chart
 def subscription_types_breakdown(today: date) -> IntBreakdownChartDict:
     months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
     data = Members.monthly_subscription_types_breakdown(months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def trials_conversion(today: date) -> FloatChartDict:
     months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
     data = Members.monthly_converting_trials_ptc(months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def signups(today: date) -> IntChartDict:
     months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
     data = Members.monthly_signups(months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def quits(today: date) -> IntChartDict:
     months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
     data = Members.monthly_quits(months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def churn(today: date) -> FloatChartDict:
     months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
     data = Members.monthly_churn_ptc(months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
@@ -386,7 +387,7 @@ def club_content(today: date) -> IntChartDict:
         charts.previous_month(today),
     )
     data = charts.per_month(ClubMessage.content_size_by_month, months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
@@ -396,7 +397,7 @@ def handbook(today: date) -> IntChartDict:
         for page in Page.handbook_listing()
     ]
     data = [page.size for page in Page.handbook_listing()]
-    return dict(data=data, labels=labels)
+    return {"data": data, "labels": labels}
 
 
 @chart
@@ -406,28 +407,28 @@ def handbook_notes(today: date) -> IntChartDict:
         for page in Page.handbook_listing()
     ]
     data = [page.notes_size for page in Page.handbook_listing()]
-    return dict(data=data, labels=labels)
+    return {"data": data, "labels": labels}
 
 
 @chart
 def followers_breakdown(today: date) -> IntBreakdownChartDict:
     months = charts.months(*Followers.months_range())
     data = charts.per_month_breakdown(Followers.breakdown, months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def video_followers_breakdown(today: date) -> IntBreakdownChartDict:
     months = charts.months(*Followers.months_range())
     data = charts.per_month_breakdown(Followers.video_breakdown, months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def web_usage_total(today: date) -> ChartDict:
     months = charts.months(*WebUsage.months_range())
     breakdown = charts.per_month_breakdown(WebUsage.breakdown, months)
-    return dict(data=breakdown.pop("total"), months=months)
+    return {"data": breakdown.pop("total"), "months": months}
 
 
 @chart
@@ -435,7 +436,7 @@ def web_usage_breakdown(today: date) -> IntBreakdownChartDict:
     months = charts.months(*WebUsage.months_range())
     breakdown = charts.per_month_breakdown(WebUsage.breakdown, months)
     del breakdown["total"]
-    return dict(data=breakdown, months=months)
+    return {"data": breakdown, "months": months}
 
 
 @chart
@@ -454,7 +455,7 @@ def web_club_conversion(today: date) -> FloatChartDict:
             [WebUsage.breakdown(month).get("club") for month in months],
         )
     ]
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
@@ -471,7 +472,7 @@ def logo_impressions_breakdown(today: date) -> IntBreakdownChartDict:
         for product_name, values in web_usage_breakdown_items
         if product_name in product_names
     }
-    return dict(data=impressions_breakdown)
+    return {"data": impressions_breakdown}
 
 
 @chart
@@ -480,14 +481,14 @@ def jobs_count_listed_discord(today: date) -> IntBreakdownChartDict:
     months, data = charts.per_month_aggregate_breakdown(
         stats,
         day_fn=attrgetter("day"),
-        value_fns=dict(
-            listed=attrgetter("listed_count"),
-            discord=attrgetter("discord_count"),
-        ),
+        value_fns={
+            "listed": attrgetter("listed_count"),
+            "discord": attrgetter("discord_count"),
+        },
         aggregate_fn=charts.average_round,
     )
-    data = dict(listed=data["listed"], discord=data["discord"])
-    return dict(data=data, months=months)
+    data = {"listed": data["listed"], "discord": data["discord"]}
+    return {"data": data, "months": months}
 
 
 @chart
@@ -496,14 +497,14 @@ def jobs_count_listed_dropped(today: date) -> IntBreakdownChartDict:
     months, data = charts.per_month_aggregate_breakdown(
         stats,
         day_fn=attrgetter("day"),
-        value_fns=dict(
-            listed=attrgetter("listed_count"),
-            dropped=attrgetter("dropped_count"),
-        ),
+        value_fns={
+            "listed": attrgetter("listed_count"),
+            "dropped": attrgetter("dropped_count"),
+        },
         aggregate_fn=charts.average_round,
     )
-    data = dict(listed=data["listed"], dropped=data["dropped"])
-    return dict(data=data, months=months)
+    data = {"listed": data["listed"], "dropped": data["dropped"]}
+    return {"data": data, "months": months}
 
 
 @chart
@@ -512,10 +513,10 @@ def jobs_listed_ptc(today: date) -> FloatChartDict:
     months, breakdown = charts.per_month_aggregate_breakdown(
         stats,
         day_fn=attrgetter("day"),
-        value_fns=dict(
-            listed=attrgetter("listed_count"),
-            dropped=attrgetter("dropped_count"),
-        ),
+        value_fns={
+            "listed": attrgetter("listed_count"),
+            "dropped": attrgetter("dropped_count"),
+        },
         aggregate_fn=charts.average_round,
     )
     listed_counts = breakdown["listed"]
@@ -529,21 +530,21 @@ def jobs_listed_ptc(today: date) -> FloatChartDict:
         for listed_count, dropped_count in zip(listed_counts, dropped_counts)
         for total_count in [listed_count + dropped_count]
     ]
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def candidates_listed_breakdown(today: date) -> IntBreakdownChartDict:
     months = charts.months(CANDIDATES_BEGIN_ON, today)
     data = charts.per_month_breakdown(CandidateStats.listed_breakdown, months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def candidates_listed_breakdown_ptc(today: date) -> FloatBreakdownChartDict:
     months = charts.months(CANDIDATES_BEGIN_ON, today)
     data = charts.per_month_breakdown(CandidateStats.listed_breakdown_ptc, months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
@@ -553,14 +554,14 @@ def candidates_women(today: date) -> FloatChartDict:
         CandidateStats.listed_breakdown_ptc(month).get("listed_feminine")
         for month in months
     ]
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 @chart
 def candidates_github_checks(today: date) -> IntChartDict:
     months = charts.months(GITHUB_CHECKS_BEGIN_ON, today)
     data = charts.per_month(CandidateStats.checks_count, months)
-    return dict(data=data, months=months)
+    return {"data": data, "months": months}
 
 
 def position(names: list[str], name: str) -> int:
@@ -580,15 +581,15 @@ def countries(today: date) -> ChartDict:
     revenue_breakdown = Transaction.revenue_breakdown(charts.previous_month(today))
     revenue_memberships = revenue_breakdown["memberships"]
 
-    return dict(
-        data=dict(
-            breakdown=breakdown,
-            oss_limit_eur=oss_limit_eur,
-            oss_limit_czk=oss_limit_czk,
-            oss_limit_czk_monthly=int(oss_limit_czk / 12),
-            revenue_memberships=revenue_memberships,
-            revenue_memberships_non_cz=int(
+    return {
+        "data": {
+            "breakdown": breakdown,
+            "oss_limit_eur": oss_limit_eur,
+            "oss_limit_czk": oss_limit_czk,
+            "oss_limit_czk_monthly": int(oss_limit_czk / 12),
+            "revenue_memberships": revenue_memberships,
+            "revenue_memberships_non_cz": int(
                 ((100 - breakdown["CZ"]) * revenue_memberships) / 100
             ),
-        )
-    )
+        }
+    }

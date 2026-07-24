@@ -1,6 +1,7 @@
 import math
+from collections.abc import Iterable
 from datetime import date, datetime, time
-from typing import Iterable, Self
+from typing import Self
 from zoneinfo import ZoneInfo
 
 from peewee import BooleanField, CharField, DateField, IntegerField
@@ -61,14 +62,14 @@ class PodcastEpisode(BaseModel):
         return math.ceil(self.media_duration_s / 60)
 
     def to_card(self) -> dict:
-        return dict(
-            title=self.format_title(number=False, affiliation=False),
-            url=self.page_url,
-            image_path=self.image_path,
-            image_alt=self.format_title(),
-            subtitle=self.guest_affiliation,
-            date=self.publish_on,
-        )
+        return {
+            "title": self.format_title(number=False, affiliation=False),
+            "url": self.page_url,
+            "image_path": self.image_path,
+            "image_alt": self.format_title(),
+            "subtitle": self.guest_affiliation,
+            "date": self.publish_on,
+        }
 
     @classmethod
     def get_by_number(cls, number: int):
@@ -113,7 +114,7 @@ class PodcastEpisode(BaseModel):
     @classmethod
     def women_listing(cls, from_date, to_date):
         return cls.guests_listing(from_date, to_date).where(
-            cls.guest_has_feminine_name == True  # noqa: E712
+            cls.guest_has_feminine_name == True
         )
 
     @classmethod

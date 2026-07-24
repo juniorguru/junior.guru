@@ -94,7 +94,7 @@ async def sync_jobs(client: ClubClient, channel_id: int):
 
     logger.debug("Checking if tags are in sync")
     tags_enum = set(map(str, ForumTagName))
-    tags_discord = set(t.name for t in channel.available_tags)
+    tags_discord = {t.name for t in channel.available_tags}
     if tags_enum != tags_discord:
         raise ValueError(f"Tags don't match! {tags_discord ^ tags_enum}")
 
@@ -380,10 +380,10 @@ async def prepare_thread_params(job: ListedJob) -> dict:
         )
         embeds.append(reason_embed)
 
-    return dict(
-        name=job.title_short,
-        content=content,
-        files=files,
-        embeds=embeds,
-        view=ui.View(ui.Button(emoji="👉", label="Celý inzerát", url=job.url)),
-    )
+    return {
+        "name": job.title_short,
+        "content": content,
+        "files": files,
+        "embeds": embeds,
+        "view": ui.View(ui.Button(emoji="👉", label="Celý inzerát", url=job.url)),
+    }

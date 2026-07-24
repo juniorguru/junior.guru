@@ -1,8 +1,8 @@
 import math
+from collections.abc import Callable
 from datetime import date, timedelta
 from functools import wraps
 from pathlib import Path
-from typing import Callable
 
 import httpx
 import yaml
@@ -102,13 +102,13 @@ def main():
         ("page_last_month_pageviews", 30),
     ]:
         logger.info(f"Fetching analytics: {metric_name}")
-        params = dict(
-            version=5,
-            fields="pageviews,pages",
-            info="false",
-            page="/courses/*",
-            start=str(date.today() - timedelta(days=days)),
-        )
+        params = {
+            "version": 5,
+            "fields": "pageviews,pages",
+            "info": "false",
+            "page": "/courses/*",
+            "start": str(date.today() - timedelta(days=days)),
+        }
         response = httpx.get(
             "https://simpleanalytics.com/junior.guru.json", params=params
         )
@@ -148,7 +148,7 @@ def compile_page_title(name: str) -> str:
 
 
 @raise_if_too_long
-def compile_page_description(name: str, extra_questions: list = None) -> str:
+def compile_page_description(name: str, extra_questions: list | None = None) -> str:
     questions = [
         f"Vyplatí se kurzy programování u {name}?",
         "Co říkají absolventi?",
@@ -160,7 +160,7 @@ def compile_page_description(name: str, extra_questions: list = None) -> str:
 
 
 @raise_if_too_long
-def compile_page_lead(name: str, extra_questions: list = None) -> str:
+def compile_page_lead(name: str, extra_questions: list | None = None) -> str:
     questions = [
         f"Vyplatí se {name}?",
         "Hledáš někoho, kdo s tím má zkušenosti?",

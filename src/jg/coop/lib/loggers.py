@@ -2,8 +2,9 @@ import logging
 import os
 import threading
 import time
+from collections.abc import Callable, Generator, Iterable
 from pathlib import Path
-from typing import Callable, Generator, Iterable, TypeVar, cast
+from typing import TypeVar, cast
 
 import click
 
@@ -46,9 +47,7 @@ class Logger(logging.Logger):
     def __getitem__(self, name) -> logging.Logger:
         return self.getChild(str(name))
 
-    def progress(
-        self, iterable: Iterable[T], chunk_size=100
-    ) -> Generator[T, None, None]:
+    def progress(self, iterable: Iterable[T], chunk_size=100) -> Generator[T]:
         total_count = 0
         for chunk in chunks(iterable, size=chunk_size):
             yield from chunk
@@ -164,9 +163,7 @@ def _infer_timestamp(cached_value: bool | None, env: dict) -> bool:
         value = env.get("LOG_TIMESTAMP")
     if value is None:
         value = env.get("CI")
-    if not value or value.lower() in ["0", "false"]:
-        return False
-    return True
+    return not (not value or value.lower() in ["0", "false"])
 
 
 def get(name) -> Logger:

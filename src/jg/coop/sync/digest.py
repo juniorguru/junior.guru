@@ -115,7 +115,7 @@ def format_channel_digest(channel_digest: dict) -> str:
 
 
 def format_content(content: str) -> str:
-    text = md_as_text(neutralize_urls((content)), newline=" ")
+    text = md_as_text(neutralize_urls(content), newline=" ")
     text_short = textwrap.shorten(text, 150, placeholder="…")
     return f"> {text_short}"
 

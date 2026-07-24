@@ -6,7 +6,7 @@ from urllib.parse import urlparse
 def coerce(mapping, record):
     data = {}
     for key_pattern, (key_name, key_coerce) in mapping.items():
-        key_re = re.compile(key_pattern, re.I)
+        key_re = re.compile(key_pattern, re.IGNORECASE)
         for record_key, record_value in record.items():
             if key_re.search(record_key):
                 value = key_coerce(record_value)
@@ -31,9 +31,14 @@ def parse_int(value):
 
 def parse_boolean_words(value):
     if value is not None:
-        return dict(yes=True, no=False, ano=True, ne=False, true=True, false=False).get(
-            value.strip().lower()
-        )
+        return {
+            "yes": True,
+            "no": False,
+            "ano": True,
+            "ne": False,
+            "true": True,
+            "false": False,
+        }.get(value.strip().lower())
 
 
 def parse_datetime(value):

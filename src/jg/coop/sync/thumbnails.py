@@ -56,7 +56,7 @@ def main(images_path, output_dir, width, height, clear):
 def process_thumbnail(args: tuple[int, int, int, str, dict, Path]) -> tuple[int, Path]:
     i, args = args[0], args[1:]
     image_path = render_image_file(
-        *args, filters=dict(local_time=local_time, weekday=weekday, icon=icon)
+        *args, filters={"local_time": local_time, "weekday": weekday, "icon": icon}
     )
     return i, image_path
 
@@ -70,25 +70,25 @@ def get_thumbnail_context(page: Page) -> dict:
         "Inspirace": "rocket-takeoff",
         "Info": "info-circle",
     }.get(page.mainnav_name, "arrow-right-circle")
-    return dict(
-        title=page.meta.get("thumbnail_title", page.meta["title"]),
-        image_path=page.meta.get("thumbnail_image_path", "chick-avatar.png"),
-        date=(
+    return {
+        "title": page.meta.get("thumbnail_title", page.meta["title"]),
+        "image_path": page.meta.get("thumbnail_image_path", "chick-avatar.png"),
+        "date": (
             datetime.fromisoformat(page.meta["thumbnail_date"])
             if page.meta.get("thumbnail_date")
             else None
         ),
-        subheading=page.meta.get(
+        "subheading": page.meta.get(
             "thumbnail_subheading", f"junior.guru — {page.mainnav_name}"
         ),
-        button_heading=page.meta.get("thumbnail_button_heading"),
-        button_icon=(
+        "button_heading": page.meta.get("thumbnail_button_heading"),
+        "button_icon": (
             None
             if page.meta.get("thumbnail_button_heading")
             else (page.meta.get("thumbnail_button_icon", default_button_icon))
         ),
-        button_link=page.meta.get(
+        "button_link": page.meta.get(
             "thumbnail_button_link", f"junior.guru/{page.dest_uri.split('/')[0]}"
         ),
-        platforms=page.meta.get("thumbnail_platforms", []),
-    )
+        "platforms": page.meta.get("thumbnail_platforms", []),
+    }

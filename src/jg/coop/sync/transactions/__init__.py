@@ -1,8 +1,8 @@
 import re
+from collections.abc import Callable
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from pprint import pformat
-from typing import Callable
 
 import click
 import httpx
@@ -82,7 +82,7 @@ def main(
         )
         if not confirm("Continue anyway?"):
             raise click.Abort()
-    secrets = dict(video_outsourcing_token=video_outsourcing_token)
+    secrets = {"video_outsourcing_token": video_outsourcing_token}
 
     logger.info("Preparing database")
     Transaction.drop_table()
@@ -94,7 +94,7 @@ def main(
     with fakturoid.get_client(fakturoid_token) as client:
         while True:
             logger.debug(f"Fakturoid todos, page {page}")
-            response = client.get("/todos.json", params=dict(page=page))
+            response = client.get("/todos.json", params={"page": page})
             response.raise_for_status()
             todos_page = response.json()
             todos.extend(
@@ -111,7 +111,7 @@ def main(
     logger.info(f"Found {len(todos)} Fakturoid todos")
     todos = {get_todo_key(todo): todo for todo in todos}
     logger.debug(f"Mapping Fakturoid todos by key leaves {len(todos)} todos")
-    for key in todos.keys():
+    for key in todos:
         logger.debug(f"Todo key: {key!r}")
 
     logger.info("Reading history from a file")
@@ -135,7 +135,7 @@ def main(
         )
     except requests.HTTPError as e:
         logger.error(f"FioBank API error: {e.response.text}")
-        raise e
+        raise
     except requests.ConnectionError:
         logger.error("FioBank API connection error!")
         transactions = []
@@ -155,12 +155,12 @@ def main(
         logger.debug(f"Category: {category!r}")
         if category != TransactionsCategory.IGNORE:
             db_records.append(
-                dict(
-                    id=transaction["transaction_id"],
-                    happened_on=transaction["date"],
-                    category=category,
-                    amount=transaction["amount"],
-                )
+                {
+                    "id": transaction["transaction_id"],
+                    "happened_on": transaction["date"],
+                    "category": category,
+                    "amount": transaction["amount"],
+                }
             )
         if (
             transaction["amount"] > 0

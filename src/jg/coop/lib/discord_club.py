@@ -1,11 +1,12 @@
 import asyncio
 import itertools
 import re
-from datetime import date, datetime, timedelta, timezone
+from collections.abc import AsyncGenerator
+from datetime import UTC, date, datetime, timedelta
 from enum import IntEnum, StrEnum, unique
 from functools import wraps
 from pprint import pformat
-from typing import TYPE_CHECKING, AsyncGenerator, TypedDict
+from typing import TYPE_CHECKING, TypedDict
 
 import discord
 import emoji
@@ -22,7 +23,7 @@ CLUB_GUILD_ID = 769966886598737931
 DEFAULT_AUTO_ARCHIVE_DURATION = 10_080  # minutes
 
 DEFAULT_THREAD_CREATED_AT = datetime(
-    2022, 1, 9, tzinfo=timezone.utc
+    2022, 1, 9, tzinfo=UTC
 )  # threads have 'created_at' since 2022-01-09
 
 DEFAULT_CHANNELS_HISTORY_SINCE = timedelta(days=380)
@@ -228,7 +229,9 @@ def is_message_older_than(message: "discord.Message | ClubMessage", date: date) 
 
 
 def is_message_over_period_ago(
-    message: "discord.Message | ClubMessage", period: timedelta, today: date = None
+    message: "discord.Message | ClubMessage",
+    period: timedelta,
+    today: date | None = None,
 ) -> bool:
     today = today or date.today()
     ago = today - period
@@ -238,7 +241,7 @@ def is_message_over_period_ago(
 
 async def fetch_threads(
     channel: discord.abc.GuildChannel | discord.DMChannel,
-) -> AsyncGenerator[discord.Thread, None]:
+) -> AsyncGenerator[discord.Thread]:
     try:
         channel_threads = channel.threads
     except AttributeError:
@@ -268,7 +271,7 @@ async def add_reactions(
                 f"Message #{message.jump_url} reached maximum number of reactions!"
             )
         else:
-            raise e
+            raise
 
 
 def get_missing_reactions(reactions: discord.Reaction, emojis: set[str]) -> set[str]:
@@ -410,9 +413,7 @@ def resolve_references(markdown: str, roles: dict[str, int] | None = None) -> st
 def is_forum_guide(message: discord.Message) -> bool:
     if message.id != message.channel.id:
         return False
-    if message.channel.is_pinned():
-        return True
-    return False
+    return bool(message.channel.is_pinned())
 
 
 async def sync_guide_channel(

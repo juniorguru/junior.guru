@@ -1,9 +1,10 @@
 import itertools
 import json
+from collections.abc import Iterable
 from datetime import date, timedelta
 from enum import StrEnum, auto
 from operator import attrgetter
-from typing import Iterable, Self
+from typing import Self
 
 from peewee import (
     BooleanField,
@@ -296,15 +297,15 @@ class Candidate(BaseModel):
 
     @classmethod
     def count_ready(cls) -> int:
-        return cls.select().where(cls.is_ready == True).count()  # noqa: E712
+        return cls.select().where(cls.is_ready == True).count()
 
     @classmethod
     def count_members(cls) -> int:
-        return cls.select().where(cls.is_member == True).count()  # noqa: E712
+        return cls.select().where(cls.is_member == True).count()
 
     @classmethod
     def count_feminine(cls) -> int:
-        return cls.select().where(cls.has_feminine_name == True).count()  # noqa: E712
+        return cls.select().where(cls.has_feminine_name == True).count()
 
     @classmethod
     def listing(cls) -> Iterable[Self]:
@@ -316,13 +317,11 @@ class Candidate(BaseModel):
     def promo_listing(cls, limit: int = 4) -> Iterable[Self]:
         first_half = limit // 2
         yield from (
-            cls.listing()
-            .where(cls.has_feminine_name == True)  # noqa: E712
-            .limit(first_half)
+            cls.listing().where(cls.has_feminine_name == True).limit(first_half)
         )
         yield from (
             cls.listing()
-            .where(cls.has_feminine_name == False)  # noqa: E712
+            .where(cls.has_feminine_name == False)
             .limit(limit - first_half)
         )
 
@@ -332,8 +331,8 @@ class Candidate(BaseModel):
             cls.listing()
             .join(ClubUser)
             .where(
-                cls.is_member == True,  # noqa: E712
-                cls.is_ready == False,  # noqa: E712
+                cls.is_member == True,
+                cls.is_ready == False,
                 cls.report_url.is_null(False),
                 ClubUser.dm_channel_id.is_null(False),
             )

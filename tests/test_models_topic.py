@@ -1,4 +1,4 @@
-from typing import Generator
+from collections.abc import Generator
 
 import pytest
 
@@ -9,7 +9,7 @@ from testing_utils import prepare_test_db
 
 
 @pytest.fixture
-def test_db() -> Generator[SqliteDatabase, None, None]:
+def test_db() -> Generator[SqliteDatabase]:
     yield from prepare_test_db([TopicMention, TopicDiscussion])
 
 

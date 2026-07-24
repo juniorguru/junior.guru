@@ -1,8 +1,9 @@
 import re
+from collections.abc import Iterable
 from datetime import date, timedelta
 from operator import itemgetter
 from pathlib import Path
-from typing import Annotated, Any, Iterable, Literal, TypedDict
+from typing import Annotated, Any, Literal, TypedDict
 
 import click
 import yaml
@@ -49,8 +50,8 @@ POSTERS_DIR = IMAGES_DIR / "posters-sponsors"
 POSTER_SIZE = 700
 
 TIERS_EXTRAS = {
-    "Budujeme brand": dict(max_sponsors=4, courses_highlight=True),
-    "Poskytujeme kurzy": dict(courses_highlight=True),
+    "Budujeme brand": {"max_sponsors": 4, "courses_highlight": True},
+    "Poskytujeme kurzy": {"courses_highlight": True},
 }
 
 
@@ -195,7 +196,7 @@ def main(today: date, clear_posters: bool):
             elif sponsor.subscription:
                 subscription_id = parse_subscription_id(sponsor.subscription)
                 subscription = memberful.get(
-                    SUBSCRIPTION_GQL_PATH.read_text(), dict(id=subscription_id)
+                    SUBSCRIPTION_GQL_PATH.read_text(), {"id": subscription_id}
                 )["subscription"]
                 plan_id = get_plan_id(subscription)
                 tier = tiers_by_plan_id[plan_id]
@@ -215,11 +216,11 @@ def main(today: date, clear_posters: bool):
                 POSTER_SIZE,
                 POSTER_SIZE,
                 "sponsor.jinja",
-                dict(
-                    sponsor_name=sponsor.name,
-                    sponsor_logo_path=logo_path,
-                    tier_priority=tier.priority,
-                ),
+                {
+                    "sponsor_name": sponsor.name,
+                    "sponsor_logo_path": logo_path,
+                    "tier_priority": tier.priority,
+                },
                 POSTERS_DIR,
                 prefix=sponsor.slug,
             )
@@ -276,7 +277,7 @@ def main(today: date, clear_posters: bool):
             elif partner.subscription:
                 subscription_id = parse_subscription_id(partner.subscription)
                 subscription = memberful.get(
-                    SUBSCRIPTION_GQL_PATH.read_text(), dict(id=subscription_id)
+                    SUBSCRIPTION_GQL_PATH.read_text(), {"id": subscription_id}
                 )["subscription"]
                 plan_id = get_plan_id(subscription)
                 account_ids = get_account_ids(subscription)
@@ -322,12 +323,12 @@ def get_account_ids(subscription: SubscriptionEntity) -> list[int]:
 
 
 def get_tier_data(plan: PlanEntity) -> dict[str, Any]:
-    return dict(
-        plan_id=int(plan["id"]),
-        name=parse_tier_name(plan["name"]),
-        price=from_cents(plan["priceCents"]),
-        member_price=from_cents(plan["additionalMemberPriceCents"]) or None,
-    )
+    return {
+        "plan_id": int(plan["id"]),
+        "name": parse_tier_name(plan["name"]),
+        "price": from_cents(plan["priceCents"]),
+        "member_price": from_cents(plan["additionalMemberPriceCents"]) or None,
+    }
 
 
 def prepare_tiers(
@@ -343,7 +344,7 @@ def prepare_tiers(
     )
     for tier_name, data in (extras or {}).items():
         try:
-            tier = next((tier for tier in tiers if tier["name"] == tier_name))
+            tier = next(tier for tier in tiers if tier["name"] == tier_name)
             tier.update(data)
         except StopIteration:
             raise ValueError(f"Tier {tier_name!r} not found")
@@ -351,13 +352,13 @@ def prepare_tiers(
 
 
 def get_start_on(periods: list[tuple[str, str | None]]) -> date:
-    first_period_start = sorted(periods)[0][0]
+    first_period_start = min(periods)[0]
     year, month = map(int, first_period_start.split("-"))
     return date(year, month, 1)
 
 
 def get_renews_on(periods: list[tuple[str, str | None]], today: date) -> bool:
-    current_period = sorted(periods, reverse=True)[0]
+    current_period = max(periods)
     period_start, period_end = current_period
 
     if period_end:

@@ -1,10 +1,11 @@
 import os
 import random
 import re
+from collections.abc import Generator
 from datetime import timedelta
 from decimal import Decimal
 from enum import StrEnum
-from typing import Generator, Literal
+from typing import Literal
 
 import czech_sort
 import httpx
@@ -46,17 +47,17 @@ UNIVERSAL_LOCATIONS = {
 REWRITES_RE = {
     re.compile(r"[\n\r]+"): ", ",
     re.compile(r"\s+"): " ",
-    re.compile(r"\(+[^\)]+\)+", re.I): "",
-    re.compile(r"\bGreater\s+(.+?)\s+Area\b", re.I): r"\1",
-    re.compile(r"\bBratislava\W+[IV]{1,3}\b", re.I): "Bratislava",
-    re.compile(r"\bBrno\W+(Staré Brno|Střed)\b", re.I): "Brno",
-    re.compile(r"\bCentral Bohemia\b", re.I): "Středočeský kraj",
-    re.compile(r"\bMetropolitan Area\b", re.I): "",
-    re.compile(r"\bMoravia-Silesia\b", re.I): "Moravskoslezský kraj",
-    re.compile(r"\bPraha\W+(východ|západ)\b", re.I): "Středočeský kraj",
-    re.compile(r"\bPraha\W+Nové Město\b", re.I): "Praha",
-    re.compile(r"\bSouth Bohemia\b", re.I): "Jihočeský kraj",
-    re.compile(r"\bSouth Moravia\b", re.I): "Jihomoravský kraj",
+    re.compile(r"\(+[^\)]+\)+", re.IGNORECASE): "",
+    re.compile(r"\bGreater\s+(.+?)\s+Area\b", re.IGNORECASE): r"\1",
+    re.compile(r"\bBratislava\W+[IV]{1,3}\b", re.IGNORECASE): "Bratislava",
+    re.compile(r"\bBrno\W+(Staré Brno|Střed)\b", re.IGNORECASE): "Brno",
+    re.compile(r"\bCentral Bohemia\b", re.IGNORECASE): "Středočeský kraj",
+    re.compile(r"\bMetropolitan Area\b", re.IGNORECASE): "",
+    re.compile(r"\bMoravia-Silesia\b", re.IGNORECASE): "Moravskoslezský kraj",
+    re.compile(r"\bPraha\W+(východ|západ)\b", re.IGNORECASE): "Středočeský kraj",
+    re.compile(r"\bPraha\W+Nové Město\b", re.IGNORECASE): "Praha",
+    re.compile(r"\bSouth Bohemia\b", re.IGNORECASE): "Jihočeský kraj",
+    re.compile(r"\bSouth Moravia\b", re.IGNORECASE): "Jihomoravský kraj",
 }
 
 REGIONS_MAPPING_CZ = {
@@ -238,7 +239,7 @@ async def locate(
 
 def generate_queries(
     location_raw: str,
-) -> Generator[tuple[str, ResponseRegionType], None, None]:
+) -> Generator[tuple[str, ResponseRegionType]]:
     # rewrite strings not recognized by the API
     for rewrite_re, rewrite_value in REWRITES_RE.items():
         location_raw = rewrite_re.sub(rewrite_value, location_raw)

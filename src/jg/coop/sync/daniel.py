@@ -47,8 +47,8 @@ async def send_daily_report(client: ClubClient):
             for message in daniel.list_public_messages
             if message.created_at.date() == yesterday
         ]
-        daniel_channels = set(message.parent_channel_id for message in daniel_messages)
-        daniel_threads = set(message.channel_id for message in daniel_messages)
+        daniel_channels = {message.parent_channel_id for message in daniel_messages}
+        daniel_threads = {message.channel_id for message in daniel_messages}
         daniel_content_size = sum(message.content_size for message in daniel_messages)
 
         daniel_all_messages = [
@@ -56,10 +56,10 @@ async def send_daily_report(client: ClubClient):
             for message in daniel.list_messages
             if message.created_at.date() == yesterday
         ]
-        daniel_all_channels = set(
+        daniel_all_channels = {
             message.parent_channel_id for message in daniel_all_messages
-        )
-        daniel_all_threads = set(message.channel_id for message in daniel_all_messages)
+        }
+        daniel_all_threads = {message.channel_id for message in daniel_all_messages}
         daniel_all_content_size = sum(
             message.content_size for message in daniel_all_messages
         )

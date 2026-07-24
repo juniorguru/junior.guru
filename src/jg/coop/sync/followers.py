@@ -101,18 +101,18 @@ def scrape_youtube():
         response.raise_for_status()
         html_tree = html.fromstring(response.content)
         try:
-            consent_form = [
+            consent_form = next(
                 form
                 for form in html_tree.forms
                 if form.action == YOUTUBE_CONSENT_FORM_URL
-            ][0]
+            )
             response = client.request(
                 consent_form.method.lower(),
                 consent_form.action,
                 params=consent_form.form_values(),
             )
             response.raise_for_status()
-        except IndexError:
+        except StopIteration:
             logger.warning("There is no YouTube consent form")
         match = re.search(r'"(\d+) (odběratelů|subscribers)"', response.text)
         try:

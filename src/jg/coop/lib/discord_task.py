@@ -2,8 +2,8 @@ import asyncio
 import os
 import sys
 import threading
+from collections.abc import Awaitable, Callable
 from queue import Queue
-from typing import Awaitable, Callable
 
 from jg.coop.lib import loggers
 from jg.coop.lib.discord_club import ClubClient
@@ -46,7 +46,7 @@ def run(task_fn: Callable[..., Awaitable], *args, **kwargs) -> None:
 
             async def on_error(self, event, *args, **kwargs):
                 logger.debug("Got an error")
-                exc_type, exc_value, tb = sys.exc_info()
+                _exc_type, exc_value, _tb = sys.exc_info()
                 exc_queue.put(exc_value)
 
         logger.debug("Starting")

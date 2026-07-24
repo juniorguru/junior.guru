@@ -30,7 +30,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 logger = loggers.from_path(__file__)
 
 
-Schema = TypeVar("T", bound=BaseModel)
+Schema = TypeVar("Schema", bound=BaseModel)
 
 
 class LLMModel(StrEnum):
@@ -56,7 +56,7 @@ async def ask_llm(
 
 
 @overload
-async def ask_llm(
+async def ask_llm[Schema: BaseModel](
     system_prompt: str,
     user_prompt: str,
     model: LLMModel = LLMModel.simple,
@@ -65,11 +65,11 @@ async def ask_llm(
 ) -> Schema: ...
 
 
-retry_defaults = dict(
-    reraise=True,
-    before_sleep=before_sleep_log(logger, logging.DEBUG),
-    stop=stop_after_attempt(5),
-)
+retry_defaults = {
+    "reraise": True,
+    "before_sleep": before_sleep_log(logger, logging.DEBUG),
+    "stop": stop_after_attempt(5),
+}
 
 
 @mutates("openai", raises=True)
@@ -100,7 +100,7 @@ retry_defaults = dict(
     **retry_defaults,
 )
 @cache(expire=timedelta(days=60), tag="llm")
-async def ask_llm(
+async def ask_llm[Schema: BaseModel](
     system_prompt: str,
     user_prompt: str,
     model: LLMModel = LLMModel.simple,

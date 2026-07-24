@@ -1,10 +1,11 @@
 import calendar
 import itertools
 from collections import defaultdict
+from collections.abc import Callable, Generator, Iterable
 from datetime import date, timedelta
 from functools import cache
 from numbers import Number
-from typing import Callable, Generator, Iterable, TypeVar
+from typing import TypeVar
 
 from slugify import slugify
 
@@ -45,7 +46,7 @@ def months(from_date: date, to_date: date) -> list[date]:
     return list(generate_months(from_date, to_date))
 
 
-def generate_months(from_date: date, to_date: date) -> Generator[date, None, None]:
+def generate_months(from_date: date, to_date: date) -> Generator[date]:
     d = from_date
     while d <= to_date:
         last_date_of_month = d.replace(day=calendar.monthrange(d.year, d.month)[1])
@@ -78,7 +79,7 @@ def month_end(day: date) -> date:
     return month_range(day)[1]
 
 
-def group_by_month_end(
+def group_by_month_end[T](
     items: Iterable[T], day_fn: Callable[[T], date]
 ) -> dict[date, list[T]]:
     grouped = defaultdict(list)
@@ -112,7 +113,7 @@ def yoy_growth_ptc(
     return growth_ptc(counts_fn(months), counts_fn(years_ago))
 
 
-def per_month_aggregate_breakdown(
+def per_month_aggregate_breakdown[T](
     items: Iterable[T],
     day_fn: Callable[[T], date],
     value_fns: dict[str, Callable[[T], Number]],
@@ -160,15 +161,15 @@ def milestones(months: list[date], milestones: list[tuple[date, str]]) -> dict:
     for milestone_date, milestone_name in dict(milestones).items():
         name = slugify(milestone_name)
         try:
-            x = [
+            x = next(
                 index
                 for index, month in enumerate(months)
                 if (
                     month.year == milestone_date.year
                     and month.month == milestone_date.month
                 )
-            ][0]
-        except IndexError:
+            )
+        except StopIteration:
             continue
         else:
             annotations[f"{name}-label"] = {

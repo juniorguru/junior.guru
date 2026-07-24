@@ -3,11 +3,10 @@ import hashlib
 import json
 import pickle
 import sqlite3
-from collections.abc import Set
+from collections.abc import Iterable, Set as AbstractSet
 from enum import Enum
 from functools import cache, wraps
 from pathlib import Path
-from typing import Iterable
 
 from czech_sort import bytes_key as czech_sort_key
 from peewee import (
@@ -78,7 +77,7 @@ class JSONField(BaseJSONField):
 
 def json_dumps(value):
     def default(o):
-        if isinstance(o, Set):
+        if isinstance(o, AbstractSet):
             return list(o)
         try:
             return o.isoformat()

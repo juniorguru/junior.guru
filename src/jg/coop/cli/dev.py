@@ -31,8 +31,10 @@ def update(pull, packages, push, stash):
         logger.info("Terminating running processes")
         python_path = sys.executable
         jg_path = f"{python_path.removesuffix('3').removesuffix('/python')}/jg"
-        subprocess.run(["pgrep", "-fl", jg_path])  # prints what's getting terminated
-        subprocess.run(["pkill", "-SIGTERM", "-f", jg_path])
+        subprocess.run(
+            ["pgrep", "-fl", jg_path], check=False
+        )  # prints what's getting terminated
+        subprocess.run(["pkill", "-SIGTERM", "-f", jg_path], check=False)
         if stash:
             logger.info("Stashing work in progress")
             subprocess.run(["git", "stash"], check=True)
@@ -47,8 +49,8 @@ def update(pull, packages, push, stash):
             subprocess.run(["npm", "update"], check=True)
             subprocess.run(["npm", "install"], check=True)
             paths = ["pyproject.toml", "uv.lock", "package-lock.json", ci_config_path]
-            subprocess.run(["git", "add"] + paths)
-            subprocess.run(["git", "commit", "-m", "update packages 📦"])
+            subprocess.run(["git", "add"] + paths, check=False)
+            subprocess.run(["git", "commit", "-m", "update packages 📦"], check=False)
         else:
             logger.info("Installing packages")
             subprocess.run(["uv", "install"], check=True)
@@ -84,11 +86,9 @@ def upgrade_lychee(ci_config_path: Path | str):
     response = httpx.get(api_url)
     response.raise_for_status()
     linux_musl = next(
-        (
-            asset
-            for asset in response.json().get("assets", [])
-            if "x86_64-unknown-linux-musl" in asset["name"]
-        )
+        asset
+        for asset in response.json().get("assets", [])
+        if "x86_64-unknown-linux-musl" in asset["name"]
     )
     download_url = linux_musl["browser_download_url"]
     logger.debug(f"Latest lychee release download URL: {download_url}")
@@ -178,7 +178,9 @@ def save_changes(paths, message, build_url, skip_ci):
             subprocess.run(["git", "add", "-A", str(path)], check=True)
 
         proc = subprocess.run(
-            ["git", "diff", "--name-only", "--cached"], stdout=subprocess.PIPE
+            ["git", "diff", "--name-only", "--cached"],
+            stdout=subprocess.PIPE,
+            check=False,
         )
         if proc.stdout:
             logger["save-changes"].info(f"Commit message: {message!r}")

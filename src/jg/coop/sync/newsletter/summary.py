@@ -250,7 +250,7 @@ async def summarize_club(today: date, correction_attempts: int) -> Summary:
 def to_feed(
     messages: list[ClubMessage],
     channel_mapping: dict[int, str],
-    threads_only_channels: list[int] = None,
+    threads_only_channels: list[int] | None = None,
 ) -> str:
     docs = []
     for channel_id, channel_messages in groupby(messages, key=attrgetter("channel_id")):
@@ -266,7 +266,7 @@ def to_feed(
 
         # stats
         messages_count = len(channel_messages)
-        authors_count = len(set(m.author.id for m in channel_messages))
+        authors_count = len({m.author.id for m in channel_messages})
         reactions_count = sum(sum(m.reactions.values()) for m in channel_messages)
         content_size = sum(m.content_size for m in channel_messages)
 

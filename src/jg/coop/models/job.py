@@ -2,10 +2,11 @@ import itertools
 import json
 import textwrap
 from collections import Counter
+from collections.abc import Iterable
 from datetime import date, datetime, time, timedelta
 from enum import StrEnum, auto
 from operator import attrgetter
-from typing import Iterable, Self
+from typing import Self
 from urllib.parse import quote_plus
 
 from peewee import (
@@ -100,7 +101,7 @@ class SubmittedJob(BaseModel):
     def to_listed(self) -> "ListedJob":
         data = {
             field_name: getattr(self, field_name, None)
-            for field_name in ListedJob._meta.fields.keys()
+            for field_name in ListedJob._meta.fields
             if (
                 field_name in self.__class__._meta.fields
                 and field_name not in ["id", "submitted_job"]
@@ -160,7 +161,7 @@ class ScrapedJob(BaseModel):
     def from_item(cls, item) -> Self:
         data = {
             field_name: item.get(field_name)
-            for field_name in cls._meta.fields.keys()
+            for field_name in cls._meta.fields
             if field_name in item
         }
         data["posted_on"] = date.fromisoformat(item["posted_on"])
@@ -170,7 +171,7 @@ class ScrapedJob(BaseModel):
         return model_to_dict(self)
 
     def merge_item(self, item):
-        for field_name in self.__class__._meta.fields.keys():
+        for field_name in self.__class__._meta.fields:
             try:
                 # use merging method if present
                 merge_method = getattr(self, f"_merge_{field_name}")
@@ -202,7 +203,7 @@ class ScrapedJob(BaseModel):
     def to_listed(self) -> "ListedJob":
         data = {
             field_name: getattr(self, field_name, None)
-            for field_name in ListedJob._meta.fields.keys()
+            for field_name in ListedJob._meta.fields
             if (
                 field_name in self.__class__._meta.fields
                 and field_name not in ["id", "submitted_job"]
@@ -345,7 +346,7 @@ class ListedJob(BaseModel):
 
     @property
     def regions(self) -> list[str]:
-        return sorted(set(location["region"] for location in self.locations or []))
+        return sorted({location["region"] for location in self.locations or []})
 
     @property
     def location_text(self) -> str | None:
@@ -414,14 +415,12 @@ class ListedJob(BaseModel):
 
     @classmethod
     def remote_listing(cls) -> Iterable[Self]:
-        return cls.listing().where(cls.remote == True)  # noqa: E712
+        return cls.listing().where(cls.remote == True)
 
     @classmethod
     def tags_listing(cls, tags: Iterable[str]) -> Iterable[Self]:
         tags = set(tags)
-        return [
-            job for job in cls.listing() if tags & set([tag.slug for tag in job.tags])
-        ]
+        return [job for job in cls.listing() if tags & {tag.slug for tag in job.tags}]
 
     @classmethod
     def internship_listing(cls) -> Iterable[Self]:
@@ -467,19 +466,15 @@ class ListedJob(BaseModel):
 
     def to_czechitas_api(self) -> dict[str, str | int | datetime | None]:
         return dict(
-            **dict(
-                title=self.title,
-                company_name=self.company_name,
-                url=self.url,
-                remote=self.remote,
-                first_seen_at=datetime.combine(
-                    self.posted_on, time(0, 0)
-                ),  # datetime for backwards compatibility
-                last_seen_at=None,  # not relevant anymore, equals to present moment
-                lang=self.lang,
-                juniority_score=None,  # won't expose publicly anymore
-                source=None,  # use external IDs instead
-            ),
+            title=self.title,
+            company_name=self.company_name,
+            url=self.url,
+            remote=self.remote,
+            first_seen_at=datetime.combine(self.posted_on, time(0, 0)),
+            last_seen_at=None,
+            lang=self.lang,
+            juniority_score=None,
+            source=None,
             **{
                 f"external_ids_{i}": value
                 for i, value in columns(  # renamed elsewhere, but keeping backwards compatible
@@ -498,9 +493,7 @@ class ListedJob(BaseModel):
                 f"employment_types_{i}": value
                 for i, value in columns(self.employment_types, 10)
             },
-            **dict(
-                description_html=self.description_html,
-            ),
+            description_html=self.description_html,
         )
 
 

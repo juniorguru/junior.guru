@@ -1,9 +1,10 @@
 import math
+from collections.abc import Iterable
 from datetime import date, datetime, timedelta
 from enum import StrEnum, auto, unique
 from itertools import groupby
 from operator import attrgetter
-from typing import Iterable, Optional, Self, TypeVar
+from typing import Optional, Self, TypeVar
 
 from discord import ChannelType
 from peewee import (
@@ -109,9 +110,9 @@ class ClubUser(BaseModel):
 
     @property
     def list_public_messages(self) -> Iterable["ClubMessage"]:
-        return self.list_messages.where(
-            ClubMessage.is_private == False  # noqa: E712
-        ).order_by(ClubMessage.created_at.desc())
+        return self.list_messages.where(ClubMessage.is_private == False).order_by(
+            ClubMessage.created_at.desc()
+        )
 
     @property
     def intro_thread_id(self) -> int | None:
@@ -197,11 +198,7 @@ class ClubUser(BaseModel):
 
     @classmethod
     def feminine_names_count(cls) -> int:
-        return (
-            cls.members_listing()
-            .where(cls.has_feminine_name == True)  # noqa: E712
-            .count()
-        )
+        return cls.members_listing().where(cls.has_feminine_name == True).count()
 
     @classmethod
     def subscription_types_breakdown(cls) -> dict[str, int]:
@@ -212,12 +209,9 @@ class ClubUser(BaseModel):
                 fn.count(cls.id).alias("count"),
             )
             .where(
-                cls.is_bot == False,  # noqa: E712
-                cls.is_member == True,  # noqa: E712
-                (
-                    (cls.is_trespassing == False)  # noqa: E712
-                    | cls.is_trespassing.is_null()
-                ),
+                cls.is_bot == False,
+                cls.is_member == True,
+                ((cls.is_trespassing == False) | cls.is_trespassing.is_null()),
             )
             .group_by(cls.subscription_type)
             .order_by(cls.subscription_type)
@@ -237,12 +231,9 @@ class ClubUser(BaseModel):
     @classmethod
     def members_listing(cls, shuffle=False) -> Iterable[Self]:
         members = cls.listing().where(
-            cls.is_bot == False,  # noqa: E712
-            cls.is_member == True,  # noqa: E712
-            (
-                (cls.is_trespassing == False)  # noqa: E712
-                | cls.is_trespassing.is_null()
-            ),
+            cls.is_bot == False,
+            cls.is_member == True,
+            ((cls.is_trespassing == False) | cls.is_trespassing.is_null()),
         )
         if shuffle:
             members = members.order_by(fn.random())
@@ -333,19 +324,15 @@ class ClubMessage(BaseModel):
         messages = (
             cls.select()
             .where(cls.created_month == f"{date:%Y-%m}")
-            .where(cls.author_is_bot == False)  # noqa: E712
-            .where(cls.is_private == False)  # noqa: E712
+            .where(cls.author_is_bot == False)
+            .where(cls.is_private == False)
             .where(cls.channel_id.not_in(STATS_EXCLUDE_CHANNELS))
         )
         return sum(message.content_size for message in messages)
 
     @classmethod
     def listing(cls) -> Iterable[Self]:
-        return (
-            cls.select()
-            .where(cls.is_private == False)  # noqa: E712
-            .order_by(cls.created_at)
-        )
+        return cls.select().where(cls.is_private == False).order_by(cls.created_at)
 
     @classmethod
     def pinning_listing(cls) -> Iterable[Self]:
@@ -378,7 +365,7 @@ class ClubMessage(BaseModel):
         else:
             query = query.where(cls.channel_id == channel_id)
         if by_bot:
-            query = query.where(cls.author_is_bot == True)  # noqa: E712
+            query = query.where(cls.author_is_bot == True)
         if starting_emoji:
             query = query.where(cls.content_starting_emoji == starting_emoji)
         if since_at:
@@ -417,7 +404,7 @@ class ClubMessage(BaseModel):
             .order_by(cls.created_at.desc())
         )
         if skip_guide:
-            query = query.having(fn.max(cls.is_forum_guide == False))  # noqa: E712
+            query = query.having(fn.max(cls.is_forum_guide == False))
         return query
 
     @classmethod
@@ -431,8 +418,8 @@ class ClubMessage(BaseModel):
             cls.select()
             .where(
                 cls.channel_id.in_([message.channel_id for message in threads]),
-                cls.is_private == False,  # noqa: E712
-                cls.author_is_bot == False,  # noqa: E712
+                cls.is_private == False,
+                cls.author_is_bot == False,
                 cls.type.in_(["default", "reply"]),
                 cls.created_at >= datetime.combine(since_on, datetime.min.time()),
             )
@@ -446,7 +433,7 @@ class ClubMessage(BaseModel):
         return (
             cls.forum_listing(channel_id, skip_guide=False)
             .where(
-                cls.is_forum_guide == True,  # noqa: E712
+                cls.is_forum_guide == True,
             )
             .first()
         )
@@ -463,8 +450,8 @@ class ClubMessage(BaseModel):
         return (
             cls.select()
             .where(
-                cls.is_private == False,  # noqa: E712
-                cls.author_is_bot == False,  # noqa: E712
+                cls.is_private == False,
+                cls.author_is_bot == False,
                 cls.type.in_(["default", "reply"]),
                 ClubMessage.parent_channel_id.not_in(exclude_channels),
                 (
@@ -482,7 +469,7 @@ class ClubMessage(BaseModel):
         return (
             cls.select()
             .where(
-                cls.is_private == False,  # noqa: E712
+                cls.is_private == False,
                 ClubMessage.parent_channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS),
                 cls.created_at >= datetime.combine(since_on, datetime.min.time()),
             )
@@ -502,7 +489,7 @@ class ClubMessage(BaseModel):
                 cls.parent_channel_name,
             )
             .where(
-                cls.is_private == False,  # noqa: E712
+                cls.is_private == False,
                 ClubMessage.parent_channel_id.not_in(UPVOTES_EXCLUDE_CHANNELS),
                 cls.created_at >= datetime.combine(since_on, datetime.min.time()),
             )
@@ -530,7 +517,7 @@ class ClubMessage(BaseModel):
         query = (
             cls.select()
             .where(
-                cls.author_is_bot == True,  # noqa: E712
+                cls.author_is_bot == True,
                 cls.channel_id == channel_id,
             )
             .order_by(cls.created_at.desc())
@@ -578,14 +565,14 @@ class ClubPin(BaseModel):
         )
 
 
-def non_empty_min(values: Iterable[T | None]) -> T | None:
+def non_empty_min[T](values: Iterable[T | None]) -> T | None:
     values = list(filter(None, values))
     if values:
         return min(values)
     return None
 
 
-def non_empty_max(values: Iterable[T | None]) -> T | None:
+def non_empty_max[T](values: Iterable[T | None]) -> T | None:
     values = list(filter(None, values))
     if values:
         return max(values)

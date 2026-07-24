@@ -1,6 +1,6 @@
 import asyncio
-from datetime import datetime, timedelta, timezone
-from typing import AsyncGenerator
+from collections.abc import AsyncGenerator
+from datetime import UTC, datetime, timedelta
 
 from discord import ChannelType, DMChannel, Member, Message, Reaction, User
 from discord.abc import GuildChannel
@@ -210,7 +210,7 @@ def get_channel_logger(
 async def fetch_messages(
     channel: GuildChannel | DMChannel,
     after: datetime | None,
-) -> AsyncGenerator[Message, None]:
+) -> AsyncGenerator[Message]:
     logger_m = logger["messages"][channel.id]
 
     # Get channel history iterator
@@ -230,7 +230,7 @@ async def fetch_messages(
 
 async def fetch_members_reacting_by_pin(
     reactions: list[Reaction],
-) -> AsyncGenerator[User | Member, None]:
+) -> AsyncGenerator[User | Member]:
     for reaction in reactions:
         if emoji_name(reaction.emoji) == ClubEmoji.PIN:
             async for user in reaction.users():
@@ -240,11 +240,11 @@ async def fetch_members_reacting_by_pin(
 
 
 def get_history_after(
-    history_since: timedelta | None, now: datetime = None
+    history_since: timedelta | None, now: datetime | None = None
 ) -> datetime:
     if now:
         if now.tzinfo is None:
             raise ValueError("now must be timezone-aware")
     else:
-        now = datetime.now(timezone.utc)
+        now = datetime.now(UTC)
     return now - history_since

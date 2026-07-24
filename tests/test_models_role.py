@@ -1,4 +1,4 @@
-from typing import Generator
+from collections.abc import Generator
 
 import pytest
 
@@ -14,7 +14,7 @@ def create_user(id_, **kwargs) -> ClubUser:
 
 
 @pytest.fixture
-def test_db() -> Generator[SqliteDatabase, None, None]:
+def test_db() -> Generator[SqliteDatabase]:
     yield from prepare_test_db([ClubUser, InterestRole])
 
 

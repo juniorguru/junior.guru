@@ -227,17 +227,17 @@ def is_expired_path(path):
 
 
 def is_overridden_screenshot(screenshot):
-    url, path = screenshot
+    _url, path = screenshot
     return (SCREENSHOTS_OVERRIDES_DIR / Path(path).name).exists()
 
 
 def is_existing_screenshot(screenshot):
-    url, path = screenshot
+    _url, path = screenshot
     return Path(path).exists()
 
 
 def is_yt_screenshot(screenshot):
-    url, path = screenshot
+    url, _path = screenshot
     try:
         return bool(parse_youtube_id(url))
     except ValueError:
@@ -245,7 +245,7 @@ def is_yt_screenshot(screenshot):
 
 
 def is_fb_screenshot(screenshot):
-    url, path = screenshot
+    url, _path = screenshot
     return bool(FACEBOOK_URL_RE.search(url))
 
 

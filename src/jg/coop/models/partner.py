@@ -1,4 +1,5 @@
-from typing import Iterable, Literal, Self
+from collections.abc import Iterable
+from typing import Literal, Self
 
 from peewee import BooleanField, CharField, DateField, IntegerField, TextField, fn
 
@@ -23,7 +24,6 @@ class Partner(BaseModel):
     start_on = DateField()
     is_free = BooleanField(default=True)
     note = TextField()
-    role_id = IntegerField(null=True)
 
     @property
     def utm_campaign(self) -> Literal["partnership"]:
@@ -43,7 +43,7 @@ class Partner(BaseModel):
 
     @classmethod
     def free_listing(cls) -> Iterable[Self]:
-        return cls.listing().where(cls.is_free == True)  # noqa: E712
+        return cls.listing().where(cls.is_free == True)
 
     @classmethod
     def count(cls) -> int:

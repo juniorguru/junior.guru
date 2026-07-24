@@ -1,5 +1,5 @@
+from collections.abc import Generator
 from datetime import date
-from typing import Generator
 
 import pytest
 
@@ -16,7 +16,7 @@ def create_sponsor(slug: str, **kwargs) -> Sponsor:
 
 
 @pytest.fixture
-def test_db() -> Generator[SqliteDatabase, None, None]:
+def test_db() -> Generator[SqliteDatabase]:
     yield from prepare_test_db(
         [
             Sponsor,

@@ -155,14 +155,14 @@ def test_message_digest_channels(test_db):
 
 def test_message_digest_channels_ignores_private_messages(test_db):
     user = create_user(1)
-    kwargs = dict(
-        created_at=datetime(2023, 5, 2),
-        content="abcd",
-        channel_id=1,
-        channel_name="channel",
-        parent_channel_id=100,
-        parent_channel_name="parent-channel",
-    )
+    kwargs = {
+        "created_at": datetime(2023, 5, 2),
+        "content": "abcd",
+        "channel_id": 1,
+        "channel_name": "channel",
+        "parent_channel_id": 100,
+        "parent_channel_name": "parent-channel",
+    }
     for i in range(3):
         create_message(10 + i, user, is_private=False, **kwargs)
     for i in range(10):
@@ -219,13 +219,13 @@ def test_message_digest_channels_ignores_certain_channels(test_db):
 
 def test_message_digest_channels_ignores_old_messages(test_db):
     user = create_user(1)
-    kwargs = dict(
-        content="abcd",
-        channel_id=1,
-        channel_name="channel",
-        parent_channel_id=100,
-        parent_channel_name="parent-channel",
-    )
+    kwargs = {
+        "content": "abcd",
+        "channel_id": 1,
+        "channel_name": "channel",
+        "parent_channel_id": 100,
+        "parent_channel_name": "parent-channel",
+    }
     for i in range(3):
         create_message(10 + i, user, created_at=datetime(2023, 4, 29), **kwargs)
     for i in range(10):
@@ -288,21 +288,21 @@ def test_user_top_members_limit_is_five_percent(test_db):
     for id_ in range(100):
         create_user(id_)
 
-    ClubUser.top_members_limit() == 5
+    assert ClubUser.top_members_limit() == 5
 
 
 def test_user_top_members_limit_doesnt_count_past_members(test_db):
     for id_ in range(200):
         create_user(id_, is_member=id_ < 100)
 
-    ClubUser.top_members_limit() == 5
+    assert ClubUser.top_members_limit() == 5
 
 
 def test_user_top_members_limit_doesnt_count_bots(test_db):
     for id_ in range(200):
         create_user(id_, is_bot=id_ < 100)
 
-    ClubUser.top_members_limit() == 5
+    assert ClubUser.top_members_limit() == 5
 
 
 def test_user_top_members_limit_rounds_up(test_db):
@@ -310,7 +310,7 @@ def test_user_top_members_limit_rounds_up(test_db):
     create_user(2)
     create_user(3)
 
-    ClubUser.top_members_limit() == 1
+    assert ClubUser.top_members_limit() == 1
 
 
 def test_avatars_listing(test_db):

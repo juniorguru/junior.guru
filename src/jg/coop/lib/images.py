@@ -4,12 +4,13 @@ import os
 import pickle
 import shutil
 import time
+from collections.abc import Callable, Generator, Iterable
 from functools import lru_cache
 from hashlib import sha256
 from io import BytesIO
 from pathlib import Path
 from subprocess import run
-from typing import Any, Callable, Generator, Iterable
+from typing import Any
 
 from fontTools.ttLib import TTFont
 from fontTools.ttLib.tables._c_m_a_p import CmapSubtable
@@ -97,7 +98,7 @@ def render_template(
     height: int,
     template_name: str,
     context: dict[str, Any],
-    filters: dict[str, Callable] = None,
+    filters: dict[str, Callable] | None = None,
 ) -> bytes:
     logger.info(f"Rendering {width}x{height} {template_name}")
     if not len(list(CACHE_DIR.glob("*.css"))):
@@ -197,7 +198,7 @@ def _get_source_paths(metafile: dict[str, Any]) -> list[str]:
 
 def _get_fs_snapshot(
     paths: Iterable[str | Path],
-) -> Generator[tuple[str, tuple[float, int]], None, None]:
+) -> Generator[tuple[str, tuple[float, int]]]:
     for path in paths:
         try:
             stat = Path(path).stat()
@@ -252,7 +253,7 @@ def create_fallback_image(
     font = ImageFont.truetype(font_path, size_px - (padding * 2))
 
     logger.debug(f"Centering text for {initial}")
-    _, _, box_width, box_height = draw.textbbox(xy=(0, 0), text=initial, font=font)
+    _, _, _box_width, box_height = draw.textbbox(xy=(0, 0), text=initial, font=font)
     text_width, text_height = font.getmask(initial).size
     x_text = (size_px - text_width) / 2
     y_text = ((size_px - box_height) / 2) - ((box_height - text_height) / 2)

@@ -4,7 +4,7 @@ from functools import partial
 
 
 def regex(pattern: str) -> re.Pattern:
-    return re.compile(pattern, re.I)
+    return re.compile(pattern, re.IGNORECASE)
 
 
 class Names(StrEnum):

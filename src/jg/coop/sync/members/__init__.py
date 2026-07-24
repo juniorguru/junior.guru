@@ -1,11 +1,12 @@
 import math
 from collections import defaultdict
+from collections.abc import Iterable
 from datetime import date, datetime
 from enum import StrEnum
 from operator import itemgetter
 from pathlib import Path
 from pprint import pformat
-from typing import DefaultDict, Iterable, Literal, TypedDict
+from typing import Literal, TypedDict
 
 import click
 from discord import NotFound
@@ -99,7 +100,7 @@ def main(history_path: Path, today: date):
 
     stats_from = today.replace(day=1)
     stats_to = today
-    stats: DefaultDict[StatName, int] = defaultdict(int)
+    stats: defaultdict[StatName, int] = defaultdict(int)
 
     for account in logger.progress(accounts):
         account_id = int(account["id"])
@@ -225,7 +226,7 @@ async def report_trespassing_members(client: ClubClient, members_ids: list[int])
 
 
 def get_active_subscription(
-    subscriptions: list[SubscriptionEntity], today: date = None
+    subscriptions: list[SubscriptionEntity], today: date | None = None
 ) -> SubscriptionEntity:
     today = today or date.today()
 
@@ -300,9 +301,7 @@ def get_coupon(subscription: SubscriptionEntity) -> str | None:
     if subscription["coupon"]:
         return subscription["coupon"]["code"]
 
-    orders = list(
-        sorted(subscription["orders"], key=itemgetter("createdAt"), reverse=True)
-    )
+    orders = sorted(subscription["orders"], key=itemgetter("createdAt"), reverse=True)
     try:
         last_order = orders[0]
         if not last_order["coupon"]:
@@ -327,9 +326,10 @@ def get_subscription_type(
                 return SubscriptionType.FINAID
             if coupon.startswith("THANKYOU"):
                 return SubscriptionType.FREE
-        if trial_end_at := subscription["trialEndAt"]:
-            if timestamp_to_date(trial_end_at) >= today:
-                return SubscriptionType.TRIAL
+        if (trial_end_at := subscription["trialEndAt"]) and timestamp_to_date(
+            trial_end_at
+        ) >= today:
+            return SubscriptionType.TRIAL
         if plan["intervalUnit"] == "month":
             return SubscriptionType.MONTHLY
         if plan["intervalUnit"] == "year":

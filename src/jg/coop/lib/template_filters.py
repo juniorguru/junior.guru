@@ -1,10 +1,11 @@
 import math
 import random
 import re
+from collections.abc import Generator, Iterable
 from datetime import UTC, timedelta
 from numbers import Number
 from operator import itemgetter
-from typing import Generator, Iterable, Literal
+from typing import Literal
 from urllib.parse import unquote, urljoin, urlparse, urlunparse
 from zoneinfo import ZoneInfo
 
@@ -172,17 +173,17 @@ def mapping(mapping: dict, keys: Iterable) -> list:
     return [mapping[key] for key in keys]
 
 
-def mainnav(nav: Navigation) -> Generator[dict, None, None]:
+def mainnav(nav: Navigation) -> Generator[dict]:
     for item in list(nav)[:6]:
         first_child = _get_first_child(item)
-        yield dict(title=item.title, url=first_child.url, is_active=item.active)
+        yield {"title": item.title, "url": first_child.url, "is_active": item.active}
 
 
-def subnav(nav: Navigation) -> Generator[dict, None, None]:
+def subnav(nav: Navigation) -> Generator[dict]:
     mainnav_item = next(item for item in nav if item.active)
     for item in mainnav_item.children:
         first_child = _get_first_child(item)
-        yield dict(title=item.title, url=first_child.url, is_active=item.active)
+        yield {"title": item.title, "url": first_child.url, "is_active": item.active}
 
 
 def _get_first_child(item: StructureItem) -> StructureItem:
@@ -196,7 +197,7 @@ def _get_first_child(item: StructureItem) -> StructureItem:
     return children[0]
 
 
-def toc(page: Page) -> Generator[dict, None, None]:
+def toc(page: Page) -> Generator[dict]:
     # for pages without children, this should result in the same
     # value as page.parent, but for pages further down the tree,
     # this ensures we display only the top-level items, regardless
@@ -212,14 +213,15 @@ def toc(page: Page) -> Generator[dict, None, None]:
             item_page = item.children[0]
         else:
             item_page = item
-        yield dict(
-            title=item_page.title,
-            url=item_page.url,
-            is_active=item.active,
-            headings=[
-                dict(title=heading.title, url=heading.url) for heading in item_page.toc
+        yield {
+            "title": item_page.title,
+            "url": item_page.url,
+            "is_active": item.active,
+            "headings": [
+                {"title": heading.title, "url": heading.url}
+                for heading in item_page.toc
             ],
-        )
+        }
 
 
 def parent_page(page: Page) -> StructureItem | None:
