@@ -62,6 +62,7 @@ exclude = [
   "^https://(www\\.)?it-academy\\.sk",
 
   # Anti-scraping protections
+  "^https://(www\\.)?youtube\\.com/results",  # YouTube search-results URLs trigger Google's abuse gate (endless 302 loop)
   "^https://(www\\.)?(linkedin|facebook|reddit)\\.com",
   "^https://(www\\.)?(beeit|glancemedia|prace\\.rovnou|keyguru)\\.cz",
   "^https://([^\\.]+\\.)?discord\\.com",
