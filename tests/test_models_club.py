@@ -288,21 +288,21 @@ def test_user_top_members_limit_is_five_percent(test_db):
     for id_ in range(100):
         create_user(id_)
 
-    ClubUser.top_members_limit() == 5
+    assert ClubUser.top_members_limit() == 5
 
 
 def test_user_top_members_limit_doesnt_count_past_members(test_db):
     for id_ in range(200):
         create_user(id_, is_member=id_ < 100)
 
-    ClubUser.top_members_limit() == 5
+    assert ClubUser.top_members_limit() == 5
 
 
 def test_user_top_members_limit_doesnt_count_bots(test_db):
     for id_ in range(200):
         create_user(id_, is_bot=id_ < 100)
 
-    ClubUser.top_members_limit() == 5
+    assert ClubUser.top_members_limit() == 5
 
 
 def test_user_top_members_limit_rounds_up(test_db):
@@ -310,7 +310,7 @@ def test_user_top_members_limit_rounds_up(test_db):
     create_user(2)
     create_user(3)
 
-    ClubUser.top_members_limit() == 1
+    assert ClubUser.top_members_limit() == 1
 
 
 def test_avatars_listing(test_db):
