@@ -1,0 +1,203 @@
+{
+  "isActivity": true,
+  "activityDescription": "Honza Javorek reposted this",
+  "activityOfUser": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "urn": "urn:li:activity:7485652361676447744",
+  "url": "https://www.linkedin.com/posts/py-veronika-zpevakova_opentowork-dataanalyst-hybridjob-ugcPost-7485631101038800896-739N",
+  "shareUrn": "urn:li:ugcPost:7485631101038800896",
+  "text": "💼Hledám novou pozici v datech: Junior Data Analyst / Data analytik / Junior Software Developer / Datový inženýr\n\nMěsíc spolupráce s datovým týmem v Bonami mi dal několik cenných lekcí:\n1️⃣ Cílit primárně na výkon a samostatnost není vždycky ta správná cesta.\n2️⃣ 60 otázek za hodinu od juniora není moc – jde jen o to umět rozlišit, kdy se zeptat AI a kdy kolegy.\n3️⃣ Keboola je boží! 🐙 \n\nPokud hledáte ve svém týmu někoho s takovou zkušeností a chutí se stále rozvíjet, napište mi. \n#OpenToWork #DataAnalyst #HybridJob #JuniorDataAnalyst\n\nO mně:\n💻  SQL, Python, Keboola, Databricks, AI nástroje\n🌍 Ze zdravotních důvodů preferuji hybridní roli v Praze.\n🗓️ Kdy: co nejdříve.\n⭐ Dříve: Microsoft, EPAM Systems, Bonami",
+  "attributes": [
+    {
+      "start": 368,
+      "length": 7,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Keboola",
+        "universalName": "keboola",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:1833529"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1784719573446,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7485631101038800896?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7485631101038800896%2C7485656445779247105%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287485656445779247105%2Curn%3Ali%3AugcPost%3A7485631101038800896%29",
+      "text": "Analytika zrovna hledame :) \nhttps://grnh.se/xsix57if1us",
+      "entities": [],
+      "pinned": false,
+      "author": {
+        "firstName": "Lucie",
+        "lastName": "Blechová",
+        "occupation": "Data Science Manager",
+        "id": "485057758",
+        "publicId": "lucieblechova",
+        "profileId": "ACoAABzpZN4B2KhPlXi0QrYOYREvB4_ng-8W_mo",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1784715332372,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7485631101038800896?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7485631101038800896%2C7485638657425567745%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287485638657425567745%2Curn%3Ali%3AugcPost%3A7485631101038800896%29",
+      "text": "Držím palce při hledání! 🙂 ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Jiří",
+        "lastName": "Pešík",
+        "occupation": "Software Engineer @Rapid7 | Python | Lecturer @Czechitas",
+        "id": "200663642",
+        "publicId": "jiripesik",
+        "profileId": "ACoAAAv14loBOgqNPz5X9IP-_WVU9GaKVu6xMSA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "ENTERTAINMENT",
+      "profile": {
+        "firstName": "Ondřej",
+        "lastName": "Buzek",
+        "occupation": "Accelerating success through data solutions",
+        "id": "205843542",
+        "publicId": "ondrej-buzek",
+        "profileId": "ACoAAAxE7FYBCLde_pxANQpfdxhWqQY0vB6d4Uk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Matěj",
+        "lastName": "Srna",
+        "occupation": "Tvořím přehledné BI reporty pro CEO & CFO! | Power BI | Finance | Data | Reports",
+        "id": "800012570",
+        "publicId": "matejsrna",
+        "profileId": "ACoAAC-vORoBcIFjgvI9oiBGXToij-Gf_ONREyU"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Saleh",
+        "lastName": "Saeed",
+        "occupation": "IT Help Desk Support || Technical & Customer Support Specialist || Active Learner || Multilingual Translator & Interpreter",
+        "id": "734818563",
+        "publicId": "saleh-saeed-28310a186",
+        "profileId": "ACoAACvMcQMBVk0pyZ9sd5TyITm4JPjz4CRXJw4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Heidlberk",
+        "occupation": "Data Analyst - Business Intelligence - Data Enthusiast - Python Rookie - AI Noob",
+        "id": "366272831",
+        "publicId": "jakub-heidlberk-53b7b7a2",
+        "profileId": "ACoAABXU4T8Bg5naNrS_NMOJXeSJQdZ2xwMS0iU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Štěpán",
+        "lastName": "Rešl",
+        "occupation": "Lead technical consultant | DataBrothers co-founder | Microsoft Fabric & Power BI MVP",
+        "id": "615286156",
+        "publicId": "stepan-resl",
+        "profileId": "ACoAACSshYwBLf15BPVuln3nt6HFSWRNHs22ais"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Dana",
+        "lastName": "Lamatová",
+        "occupation": "Junior Data Engineer | SQL | Snowflake | Power BI | Keboola",
+        "id": "428236412",
+        "publicId": "dana-lamatova",
+        "profileId": "ACoAABmGXnwBvB8lqpoLx_sgAzyThGezeu4okiE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Čížková",
+        "occupation": "Data Analyst | IT Data",
+        "id": "1126044841",
+        "publicId": "veronika-cizkova-data",
+        "profileId": "ACoAAEMeFKkBsaXext87d6L7r2_o80OIcIvXYRQ"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Soňa",
+        "lastName": "Brunnerová",
+        "occupation": "Specialistka na online komunikaci a sociální sítě 🌐",
+        "id": "244945343",
+        "publicId": "sobrunn",
+        "profileId": "ACoAAA6Zkb8B-REJKFctJQ-IR4HqqNEUSr_3GSE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavlína",
+        "lastName": "Prausová",
+        "occupation": "HR & Recruitment Consultant | Externí podpora firemního růstu",
+        "id": "416923869",
+        "publicId": "pavlína-prausová",
+        "profileId": "ACoAABjZwN0Bww6ay0S1Wzr5kZAMXAkmGagjy1Q"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Onur",
+        "lastName": "Pektas",
+        "occupation": "AI Trainer | Data Scientist | Research Analyst | Data Analyst | Media Analyst | Talks about #ai, #yz, #research, #yapayzeka, and #artificialintelligence",
+        "id": "235306662",
+        "publicId": "onur-pektas-a0697866",
+        "profileId": "ACoAAA4GfqYBCCwfZ78RIt9z9oMAmh6FeO9sfYM"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 30,
+  "numComments": 5,
+  "canReact": true,
+  "canPostComments": false,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "CONNECTIONS_ONLY",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Veronika",
+    "lastName": "Zpěváková",
+    "occupation": "BI/ Data analyst, junior AI enthusiast, quizmaker and host in DATA Mesh Prague",
+    "id": "637440646",
+    "publicId": "py-veronika-zpevakova",
+    "profileId": "ACoAACX-koYBZCeuCb06SzAT8F955fJvI0OEIAc"
+  },
+  "authorProfileId": "py-veronika-zpevakova",
+  "authorType": "Person",
+  "authorName": "Veronika Zpěváková",
+  "authorProfileUrl": "https://www.linkedin.com/in/py-veronika-zpevakova?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAACX-koYBZCeuCb06SzAT8F955fJvI0OEIAc",
+  "authorUrn": "urn:li:member:637440646",
+  "postedAtTimestamp": 1784718599719,
+  "postedAtISO": "2026-07-22T11:09:59.719Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

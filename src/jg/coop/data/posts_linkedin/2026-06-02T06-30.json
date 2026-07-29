@@ -8,32 +8,17 @@
   "text": "„Manželka byla na rodičovské a čekali jsme druhé dítě — to na mě vytvářelo velký tlak. Na CV mi skoro nikdo neodepisoval a když, tak na jinou pozici. Setkání s komunitou junior.guru mi hodně pomohlo nevzdat to.“\n\nRozhovory záměrně neděláme sluníčkově oslavné, ale naopak se snažíme rozkrýt, co bylo pro lidi na cestě do IT těžké, a jak si s tím dokázali poradit.\n\n„Pracujeme na vojenském systému. Jako tester simuluji vojáka, který ho ovládá. Je to něco jako radar zajišťující přehled o bojišti — systém analyzuje pozice vysílačů signálu, například letadel, a pomocí geometrie odhaduje jejich polohu. Využívá to protivzdušná obrana, zpravodajci, dnes už i přímo v boji.“\n\nVýhoda juniorů, kteří nevylezli zrovna ze školy, ale mají zkušenosti z jiných oborů, je ta, že… mají zkušenosti z jiných oborů 😀 Petrovi odešel z armády, ale v IT našel práci, kde na to může pěkně navázat 🫡\n\nDíky Adéla Pavlun za nový rozhovor s Petr Kašička ❤️ Přečíst si ho můžete na junior.guru/stories\n\nOdkaz dám do komentářů.\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
   "attributes": [
     {
-      "start": 170,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
-    },
-    {
       "start": 885,
       "length": 12,
       "type": "PROFILE_MENTION",
       "profile": {
         "firstName": "Adéla",
         "lastName": "Pavlun",
-        "occupation": "Writer | People & Culture Facilitator | Somatic Practitioner | Exploring human connection, safety and growth",
+        "occupation": "Somatic Guide & Writer | TRE® · SE® | Exploring human connection, safety and growth",
         "id": "59184567",
         "publicId": "adelapavlun",
         "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"
       }
-    },
-    {
-      "start": 885,
-      "length": 12,
-      "link": "https://www.linkedin.com/in/ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk",
-      "type": "HYPERLINK"
     },
     {
       "start": 917,
@@ -46,30 +31,6 @@
         "id": "1110545599",
         "publicId": "p-kasicka",
         "profileId": "ACoAAEIxlL8Bfkq3CiEwFXvTQla3a5z_FUgQD3w"
-      }
-    },
-    {
-      "start": 917,
-      "length": 12,
-      "link": "https://www.linkedin.com/in/ACoAAEIxlL8Bfkq3CiEwFXvTQla3a5z_FUgQD3w",
-      "type": "HYPERLINK"
-    },
-    {
-      "start": 957,
-      "length": 19,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru/stories"
-      }
-    },
-    {
-      "start": 1025,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
       }
     }
   ],
@@ -84,7 +45,7 @@
       "author": {
         "firstName": "Jana ",
         "lastName": "Buchmannová",
-        "occupation": "Celostní kariérové poradenství ➤ Usnadňuji a zrychluji nalezení práce, která vám sedne | Provázím kariérní změnou | Poskytuji komplexní i jednorázové poradenství | 16 let praxe • 950+ klientů • on-line nebo osobně v Brně",
+        "occupation": "Celostní kariérové poradenství ➤ Chcete mít práci, kterou budete milovat? Pomůžu vám ji najít | Komplexní i jednorázové poradenství | 16 let praxe • 950+ klientů • on-line nebo osobně v Brně",
         "id": "73865761",
         "publicId": "janabuchmannova",
         "profileId": "ACoAAARnGiEBziyMSuekWOTA_4CKhIynPIHYD-Y",
@@ -111,17 +72,7 @@
       "time": 1780384370022,
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7467462579817459712?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7467462579817459712%2C7467473284717031424%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287467473284717031424%2Curn%3Ali%3Aactivity%3A7467462579817459712%29",
       "text": "Odkaz tady! https://junior.guru/stories/petr-kasicka/",
-      "entities": [
-        {
-          "start": 12,
-          "length": 41,
-          "type": "TEXT_LINK",
-          "textLink": {
-            "viewingBehavior": "DEFAULT",
-            "url": "https://junior.guru/stories/petr-kasicka/"
-          }
-        }
-      ],
+      "entities": [],
       "pinned": false,
       "author": {
         "firstName": "Honza",
@@ -140,7 +91,7 @@
       "profile": {
         "firstName": "Adéla",
         "lastName": "Pavlun",
-        "occupation": "Writer | People & Culture Facilitator | Somatic Practitioner | Exploring human connection, safety and growth",
+        "occupation": "Somatic Guide & Writer | TRE® · SE® | Exploring human connection, safety and growth",
         "id": "59184567",
         "publicId": "adelapavlun",
         "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"

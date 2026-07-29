@@ -29,12 +29,6 @@
       }
     },
     {
-      "start": 92,
-      "length": 18,
-      "link": "https://www.linkedin.com/company/univerzita-karlova/",
-      "type": "HYPERLINK"
-    },
-    {
       "start": 1309,
       "length": 10,
       "type": "COMPANY_NAME",
@@ -45,12 +39,6 @@
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:34588565"
       }
-    },
-    {
-      "start": 1309,
-      "length": 10,
-      "link": "https://www.linkedin.com/company/reactgirlsprague/",
-      "type": "HYPERLINK"
     },
     {
       "start": 1321,
@@ -65,12 +53,6 @@
       }
     },
     {
-      "start": 1321,
-      "length": 9,
-      "link": "https://www.linkedin.com/company/czechitas/",
-      "type": "HYPERLINK"
-    },
-    {
       "start": 1332,
       "length": 8,
       "type": "COMPANY_NAME",
@@ -83,12 +65,6 @@
       }
     },
     {
-      "start": 1332,
-      "length": 8,
-      "link": "https://www.linkedin.com/company/pyladies-global/",
-      "type": "HYPERLINK"
-    },
-    {
       "start": 1342,
       "length": 12,
       "type": "COMPANY_NAME",
@@ -98,30 +74,6 @@
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:26270417"
-      }
-    },
-    {
-      "start": 1342,
-      "length": 12,
-      "link": "https://www.linkedin.com/company/frontendisti/",
-      "type": "HYPERLINK"
-    },
-    {
-      "start": 1356,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
-    },
-    {
-      "start": 1465,
-      "length": 20,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "mailto:zvlachovska@email.cz"
       }
     }
   ],
@@ -177,12 +129,6 @@
             "publicId": "jana-benešová-66602024b",
             "profileId": "ACoAAD3C1a4Bwb3HrDCRzQTyWV3hn1tRhr72LlU"
           }
-        },
-        {
-          "start": 60,
-          "length": 13,
-          "link": "https://www.linkedin.com/in/ACoAAD3C1a4Bwb3HrDCRzQTyWV3hn1tRhr72LlU",
-          "type": "HYPERLINK"
         }
       ],
       "pinned": false,
@@ -231,12 +177,6 @@
             "publicId": "zuzana-vlachovska",
             "profileId": "ACoAADdzvW0BMlX8bbn5rBF19jX-JjopP8qNdaw"
           }
-        },
-        {
-          "start": 0,
-          "length": 6,
-          "link": "https://www.linkedin.com/in/ACoAADdzvW0BMlX8bbn5rBF19jX-JjopP8qNdaw",
-          "type": "HYPERLINK"
         }
       ],
       "pinned": false,

@@ -1,0 +1,120 @@
+{
+  "type": "document",
+  "document": {
+    "coverPages": [],
+    "title": "Řešení problémů s Gitem",
+    "totalPageCount": 4
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7485690074597224450",
+  "url": "https://www.linkedin.com/posts/honzajavorek_%C5%99e%C5%A1en%C3%AD-probl%C3%A9m%C5%AF-s-gitem-activity-7485690074597224450-cgTq",
+  "shareUrn": "urn:li:ugcPost:7485690073448038401",
+  "text": "Jak řešit problémy s Gitem?\n\nAsi neexistuje člověk, který někdy pracoval s Gitem a nikdy se do něj nezamotal. Je to úplně běžné a stává se to i zkušenějším.\n\nPokud se ti to stane, nech si poradit od AI. Vysvětli situaci a krok za krokem dojděte k nápravě. Ze zájmu si můžeš klidně projít Oh Shit, Git!?!, stránku, která zachránila několik generací, ale pokud něco zrovna řešíš, AI ti dnes už poradí úplně na míru pro tvou situaci.\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lukas",
+        "lastName": "Kouril",
+        "occupation": "Full Stack Developer",
+        "id": "672958989",
+        "publicId": "lukas-kouril",
+        "profileId": "ACoAACgcig0Bc3u0e4pBuL8BWH2Uw4pMGcutqr8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Dr. Alice",
+        "lastName": "Reznickova",
+        "occupation": "Cloud & DevOps Engineer | Former Physicist",
+        "id": "715244766",
+        "publicId": "alicerez",
+        "profileId": "ACoAACqhxN4BidLqSDiAhAFk-qaLAt_uKMIjE0k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Monika",
+        "lastName": "Krausová",
+        "occupation": "Software Architect / Backend Developer",
+        "id": "405131688",
+        "publicId": "monika-krausová-paprcekmonimerka",
+        "profileId": "ACoAABgl0agBlYKzbZNVcQjdy6G-8NjG0ZdW62U"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Patrik",
+        "lastName": "Brnušák",
+        "occupation": "Video editor, střihač a tvůrce obsahu. Hledáte posilu? Ozvěte se!",
+        "id": "666440295",
+        "publicId": "patrik-brnusak-cz",
+        "profileId": "ACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Václav",
+        "lastName": "Lorenc",
+        "occupation": "Principal Information Security Engineer at HERE",
+        "id": "3719671",
+        "publicId": "valor",
+        "profileId": "ACoAAAA4wfcB-6wfVwYbMy69XKSeovQjgDHJSW0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Manivannan",
+        "lastName": "Selvaraj",
+        "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
+        "id": "13167565",
+        "publicId": "citizenmani",
+        "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 7,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1784727591180,
+  "postedAtISO": "2026-07-22T13:39:51.180Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

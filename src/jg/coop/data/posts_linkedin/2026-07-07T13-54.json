@@ -13,16 +13,7 @@
   "url": "https://www.linkedin.com/posts/mat%C4%9Bj-drbohlav-28886a63_opentowork-ugcPost-7478818609323163648-lOT6",
   "shareUrn": "urn:li:ugcPost:7478818609323163648",
   "text": "Hi everyone — I’m currently looking for a new opportunity as a Java Software Engineer.\n\nAfter a personal break and relocation, I’m ready to join a new team or full-time project. I’m open to roles in Prague, across Czechia, or remote worldwide.\n\nA bit about me: \n• Java Software Engineer\n• Experience at CREDITAS Group, AIS Servis, s.r.o., and Bileto\n• Strong in Java, Spring Boot, and backend development\n• Available immediately\n\nIf you know of any relevant opportunities, I’d really appreciate a message, comment, or share. #OpenToWork",
-  "attributes": [
-    {
-      "trackingUrn": "urn:li:hashtag:opentowork",
-      "start": 525,
-      "length": 11,
-      "link": "https://www.linkedin.com/search/results/all/?keywords=%23opentowork&origin=HASH_TAG_FROM_FEED",
-      "dashHashtagUrn": "urn:li:fsd_hashtag:(opentowork,urn:li:activity:7480258038461894656)",
-      "type": "HASHTAG"
-    }
-  ],
+  "attributes": [],
   "comments": [
     {
       "time": 1783368517799,
@@ -43,6 +34,17 @@
     }
   ],
   "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Alexandr",
+        "lastName": "Larionov",
+        "occupation": "Java middle backend developer 6 years expierence of microservices, QA automation and gamedev. Really ready to relocate. I can chating in english.",
+        "id": "146870550",
+        "publicId": "a-f-larionov",
+        "profileId": "ACoAAAjBERYBZX-6w4RJrhPEivx1TMIPsXo3mNY"
+      }
+    },
     {
       "type": "LIKE",
       "profile": {
@@ -92,7 +94,7 @@
       "profile": {
         "firstName": "Lukáš",
         "lastName": "Zibner",
-        "occupation": "First Officer Embraer Legacy 600/650, A320 type rated, ATPL(A)",
+        "occupation": "Captain Embraer Legacy 600/650, A320 type rated",
         "id": "734204401",
         "publicId": "lukáš-zibner-981a72185",
         "profileId": "ACoAACvDEfEBxoOgA98J6dpAl0XL4kJa3D1Tvs0"
@@ -111,7 +113,7 @@
     }
   ],
   "numShares": 1,
-  "numLikes": 6,
+  "numLikes": 7,
   "numComments": 1,
   "canReact": true,
   "canPostComments": false,

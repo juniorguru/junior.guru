@@ -16,17 +16,7 @@
       "time": 1782735928639,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7477336051968229378?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7477336051968229378%2C7477336436430778368%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287477336436430778368%2Curn%3Ali%3AugcPost%3A7477336051968229378%29",
       "text": "Odkazy na dobré zdroje tu: https://junior.guru/handbook/git/#jak-se-ucit-git",
-      "entities": [
-        {
-          "start": 27,
-          "length": 49,
-          "type": "TEXT_LINK",
-          "textLink": {
-            "viewingBehavior": "DEFAULT",
-            "url": "https://junior.guru/handbook/git/#jak-se-ucit-git"
-          }
-        }
-      ],
+      "entities": [],
       "pinned": false,
       "originalLanguage": "Czech",
       "author": {
@@ -41,6 +31,17 @@
     }
   ],
   "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Manivannan",
+        "lastName": "Selvaraj",
+        "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
+        "id": "13167565",
+        "publicId": "citizenmani",
+        "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ"
+      }
+    },
     {
       "type": "EMPATHY",
       "profile": {
@@ -90,7 +91,7 @@
       "profile": {
         "firstName": "Vladimír",
         "lastName": "Gorej",
-        "occupation": "Co-Founder @ 𝐒𝐩𝐞𝐜𝐋𝐲𝐧𝐱 — open, local-first API tooling · AsyncAPI maintainer · ex-Swagger · ex-Apiary · GitHub Stars alumni",
+        "occupation": "Senior Full-Stack Engineer · TypeScript, React, Node.js, Python, FastAPI · OpenAPI, AsyncAPI & AI-agent tooling | AsyncAPI maintainer · OpenAPI & Arazzo contributor · ex-Swagger · GitHub Stars alumn",
         "id": "58899881",
         "publicId": "vladimirgorej",
         "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
@@ -139,21 +140,10 @@
         "publicId": "salamanek",
         "profileId": "ACoAAAb662UB8Fk1x6YnfJ2zd6FiGd1MufWQHX4"
       }
-    },
-    {
-      "type": "INTEREST",
-      "profile": {
-        "firstName": "Veronika",
-        "lastName": "Zpěváková",
-        "occupation": "BI/ Data analyst, junior AI enthusiast, quizmaker and host in DATA Mesh Prague",
-        "id": "637440646",
-        "publicId": "py-veronika-zpevakova",
-        "profileId": "ACoAACX-koYBZCeuCb06SzAT8F955fJvI0OEIAc"
-      }
     }
   ],
   "numShares": 0,
-  "numLikes": 11,
+  "numLikes": 12,
   "numComments": 1,
   "canReact": true,
   "canPostComments": true,

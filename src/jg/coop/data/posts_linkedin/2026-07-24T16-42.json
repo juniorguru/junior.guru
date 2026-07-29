@@ -1,0 +1,151 @@
+{
+  "type": "article",
+  "article": {
+    "type": "FIRST_PARTY",
+    "urn": "urn:li:linkedInArticle:7486460298153959424",
+    "url": "https://www.linkedin.com/pulse/t%25C3%25BDdenn%25C3%25AD-pozn%25C3%25A1mky-zm%25C4%259Bny-honza-javorek-panqf",
+    "title": "Týdenní poznámky: Změny",
+    "description": "Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Od posledních poznámek už utekl nějaký ten týden (19. 6. až 24. 7.), tak nastal čas"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7486460710915563520",
+  "url": "https://www.linkedin.com/posts/honzajavorek_t%C3%BDdenn%C3%AD-pozn%C3%A1mky-jak-se-mi-da%C5%99%C3%AD-v-jednom-activity-7486460710915563520-YcT_",
+  "shareUrn": "urn:li:ugcPost:7486460710525345792",
+  "text": "Týdenní poznámky! Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Tentokrát je to na 23 min čtení 😅",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1785147994603,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7486460710525345792?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7486460710525345792%2C7487453374351638528%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287487453374351638528%2Curn%3Ali%3AugcPost%3A7486460710525345792%29",
+      "text": "Přeji maximální úlevu na psychické i fyzické úrovni! Věřím, že to přerámování přinese mnoho dobrého a gratuluji, že ses k němu odhodlal (jestli je něco nevyhnutelné, je jistě úlevné se tomu nevyhýbat [dnes jdu k zubaři, takže o tom něco vím! :D]).\nBude dobře!",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Sarka",
+        "lastName": "Melicharova",
+        "occupation": "Czech language teacher for foreigners | Czech for life & Czech for exams (A2, B1, ...) | Czech Buddy",
+        "id": "648814916",
+        "publicId": "melicharova",
+        "profileId": "ACoAACasIUQBi0zapOVDWOPcCXCviPxBdRa-Lgo",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Sarka",
+        "lastName": "Melicharova",
+        "occupation": "Czech language teacher for foreigners | Czech for life & Czech for exams (A2, B1, ...) | Czech Buddy",
+        "id": "648814916",
+        "publicId": "melicharova",
+        "profileId": "ACoAACasIUQBi0zapOVDWOPcCXCviPxBdRa-Lgo"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Adéla",
+        "lastName": "Pavlun",
+        "occupation": "Somatic Guide & Writer | TRE® · SE® | Exploring human connection, safety and growth",
+        "id": "59184567",
+        "publicId": "adelapavlun",
+        "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Erbenova",
+        "occupation": "Application Developer at Barclays",
+        "id": "361531956",
+        "publicId": "lenkaerbenova",
+        "profileId": "ACoAABWMijQBlQzoTAse2JjfcJmbjz4dAQnIsQs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Sanka",
+        "occupation": "Senior HR & Organizational Development Executive | HR extensive experience | Leadership | Talent development",
+        "id": "1248198738",
+        "publicId": "pavelsanka",
+        "profileId": "ACoAAEpmAFIBs1dbjA9a2V3nQHxsW5NlkIxFH08"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Václav",
+        "lastName": "Lorenc",
+        "occupation": "Principal Information Security Engineer at HERE",
+        "id": "3719671",
+        "publicId": "valor",
+        "profileId": "ACoAAAA4wfcB-6wfVwYbMy69XKSeovQjgDHJSW0"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Karla",
+        "lastName": "Root",
+        "occupation": "Stay calm. Ask AI first, then panic | Data Analyst | Automation | Power BI",
+        "id": "420075610",
+        "publicId": "karlaroot",
+        "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marek",
+        "lastName": "VELAS",
+        "occupation": "Founder @EDUpunk | Learning design @Reactgirls.com | AI & Health Content Strategist | TALENT Mentor & MEME Therapist",
+        "id": "201927716",
+        "publicId": "marek-velas",
+        "profileId": "ACoAAAwJLCQB-ePqkhYoO0olYYFCoOJGgdydJEs"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Martina",
+        "lastName": "Kolářová",
+        "occupation": "Data jsou jen část příběhu. Za nimi stojí lidé, procesy i systémy.",
+        "id": "1288256758",
+        "publicId": "martina-kolářová-b5a5262bb",
+        "profileId": "ACoAAEzJPPYB0oev8QzBLDxRPw2C_U584wBuIvc"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 8,
+  "numComments": 3,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1784911325196,
+  "postedAtISO": "2026-07-24T16:42:05.196Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

@@ -1,0 +1,196 @@
+{
+  "type": "image",
+  "images": [],
+  "isActivity": true,
+  "activityDescription": "Honza Javorek reposted this",
+  "activityOfUser": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "urn": "urn:li:activity:7485314986886737920",
+  "url": "https://www.linkedin.com/posts/patrik-brnusak-cz_m%C3%A1m-velkou-radost-%C5%BEe-se-moje-profesn%C3%AD-cesta-activity-7485215791966113792-H3YG",
+  "shareUrn": "urn:li:share:7485215790795976704",
+  "text": "Mám velkou radost, že se moje profesní cesta hezky vyvíjí. Aktuálně se naplno věnuji videoprodukci a střihu pro Behind the Commit (Mia Bajić) a nově také komplexní správě obsahu a sítí pro AI ta Krajta. Petr Glaser 🤖, děkuji za doporučení, neboť nebýt tebe, tak bych se k této zajímavé partě lidí nedostal.\n\nTěší mě i prohloubení spolupráce s Junior Guru, kdy mi Honza Javorek nejen naložil zajímavou práci navíc, ale je na mé cestě mou velkou podporou.\n\nPo třech letech cesty z amatérského střihání do freelancingu mě těší, že znám svůj profesní směr. 🙂 \n\nDíky za důvěru! 🚀",
+  "attributes": [
+    {
+      "start": 131,
+      "length": 9,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Mia",
+        "lastName": "Bajić",
+        "occupation": "Software Engineer · Python & Full-Stack · Vice Chair @ EuroPython Society · PSF Fellow · Podcast Host",
+        "id": "530925455",
+        "publicId": "mia-bajic",
+        "profileId": "ACoAAB-lR48BFvPhQ6doZNGTRVftkLrzcnIv-Ss"
+      }
+    },
+    {
+      "start": 189,
+      "length": 12,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "AI ta Krajta",
+        "universalName": "aitakrajta",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:98357381"
+      }
+    },
+    {
+      "start": 203,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Glaser 🤖",
+        "occupation": "AI Engineering Consultant building a platform to make coding agents production-ready with full observability.",
+        "id": "653562608",
+        "publicId": "bleedingdev",
+        "profileId": "ACoAACb0kvABzEvpATXhOiWBbEuq4yfGI43iXrc"
+      }
+    },
+    {
+      "start": 343,
+      "length": 11,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Junior Guru",
+        "universalName": "juniorguru",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:26218444"
+      }
+    },
+    {
+      "start": 363,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1784637811152,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7485215791966113792?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7485215791966113792%2C7485313509862518784%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287485313509862518784%2Curn%3Ali%3Aactivity%3A7485215791966113792%29",
+      "text": "Držím palce, ať se ti to ještě víc rozjede! Podle mě má tohle v dnešní době určitě budoucnost 💪 ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Mia",
+        "lastName": "Bajić",
+        "occupation": "Software Engineer · Python & Full-Stack · Vice Chair @ EuroPython Society · PSF Fellow · Podcast Host",
+        "id": "530925455",
+        "publicId": "mia-bajic",
+        "profileId": "ACoAAB-lR48BFvPhQ6doZNGTRVftkLrzcnIv-Ss"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Josef",
+        "lastName": "Ďuriš",
+        "occupation": "Embedded Systems Engineer | From Advanced System Analysis to Low-Level Development | C/C++ | Linux | HW/SW Integration",
+        "id": "304898445",
+        "publicId": "josef-ďuriš-a3913986",
+        "profileId": "ACoAABIsYY0ByKzpglEMZ3CjzvZoYSp9yKeTxvs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Kuklínek",
+        "occupation": "Sitting kills.",
+        "id": "340239742",
+        "publicId": "jan-kuklínek-bbab4195",
+        "profileId": "ACoAABRHpX4BrOHNYEbhnCcJ5L0cp3eSUM5rdhs"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Vendula",
+        "lastName": "Štajgerová",
+        "occupation": "Carpe diem",
+        "id": "1059307183",
+        "publicId": "vendula-štajgerová-ba7914256",
+        "profileId": "ACoAAD8jvq8B0E5lj5uZhQuq9HccBZqZ5_8Fix4"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Glaser 🤖",
+        "occupation": "AI Engineering Consultant building a platform to make coding agents production-ready with full observability.",
+        "id": "653562608",
+        "publicId": "bleedingdev",
+        "profileId": "ACoAACb0kvABzEvpATXhOiWBbEuq4yfGI43iXrc"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 6,
+  "numComments": 2,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Patrik",
+    "lastName": "Brnušák",
+    "occupation": "Video editor, střihač a tvůrce obsahu. Hledáte posilu? Ozvěte se!",
+    "id": "666440295",
+    "publicId": "patrik-brnusak-cz",
+    "profileId": "ACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU"
+  },
+  "authorProfileId": "patrik-brnusak-cz",
+  "authorType": "Person",
+  "authorName": "Patrik Brnušák",
+  "authorProfileUrl": "https://www.linkedin.com/in/patrik-brnusak-cz?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU",
+  "authorUrn": "urn:li:member:666440295",
+  "postedAtTimestamp": 1784638163301,
+  "postedAtISO": "2026-07-21T12:49:23.301Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

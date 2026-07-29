@@ -29,12 +29,6 @@
       }
     },
     {
-      "start": 18,
-      "length": 11,
-      "link": "https://www.linkedin.com/company/juniorguru/",
-      "type": "HYPERLINK"
-    },
-    {
       "start": 244,
       "length": 11,
       "type": "COMPANY_NAME",
@@ -45,12 +39,6 @@
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:26218444"
       }
-    },
-    {
-      "start": 244,
-      "length": 11,
-      "link": "https://www.linkedin.com/company/juniorguru/",
-      "type": "HYPERLINK"
     }
   ],
   "comments": [
@@ -64,7 +52,7 @@
       "author": {
         "firstName": "Pavla",
         "lastName": "Beránková",
-        "occupation": "PHP programátorka",
+        "occupation": "junior PHP programátorka",
         "id": "549611439",
         "publicId": "berankova-pavla",
         "profileId": "ACoAACDCZ68BhDuYokjdegYmFm0rxSx_6Mlwh9c",
@@ -144,6 +132,17 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "David",
+        "lastName": "Pěknic",
+        "occupation": "Tech Executive & founder ⚙️ | Sport Enthusiast 🚴‍♂️ | Transforming Teams and Driving Innovation",
+        "id": "15116957",
+        "publicId": "davidpeknic",
+        "profileId": "ACoAAADmqp0B9oH2ArKbN3fG6zZZsQj_WMnSFGQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Vladimír",
         "lastName": "O.",
         "occupation": "Principal Software Engineer",
@@ -190,7 +189,7 @@
       "profile": {
         "firstName": "Patrik",
         "lastName": "Brnušák",
-        "occupation": "Otevřen novým příležitostem",
+        "occupation": "Video editor, střihač a tvůrce obsahu. Hledáte posilu? Ozvěte se!",
         "id": "666440295",
         "publicId": "patrik-brnusak-cz",
         "profileId": "ACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU"
@@ -239,21 +238,10 @@
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
       }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Lukáš",
-        "lastName": "Ú.",
-        "occupation": "Senior product designer leader | Transforming complex B2B systems into intuitive experiences",
-        "id": "145132400",
-        "publicId": "uradnicek",
-        "profileId": "ACoAAAimi3ABDK4rvuF9LHZ88UYeDiHI82naAXY"
-      }
     }
   ],
   "numShares": 2,
-  "numLikes": 24,
+  "numLikes": 25,
   "numComments": 6,
   "canReact": true,
   "canPostComments": true,

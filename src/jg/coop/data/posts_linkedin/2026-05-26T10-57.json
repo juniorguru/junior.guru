@@ -21,12 +21,6 @@
       }
     },
     {
-      "start": 178,
-      "length": 18,
-      "link": "https://www.linkedin.com/in/ACoAABODpHgB8Z8XT0Q-xfLGZMGuJSS6-npRT08",
-      "type": "HYPERLINK"
-    },
-    {
       "start": 199,
       "length": 5,
       "type": "COMPANY_NAME",
@@ -36,39 +30,6 @@
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:10608457"
-      }
-    },
-    {
-      "start": 199,
-      "length": 5,
-      "link": "https://www.linkedin.com/company/apify/",
-      "type": "HYPERLINK"
-    },
-    {
-      "start": 717,
-      "length": 16,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru/jobs"
-      }
-    },
-    {
-      "start": 1393,
-      "length": 18,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru/events"
-      }
-    },
-    {
-      "start": 1465,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
       }
     }
   ],
@@ -97,7 +58,7 @@
       "profile": {
         "firstName": "Karla",
         "lastName": "Root",
-        "occupation": "Stay calm. Ask AI first, then panic. 👣 Data never lie. People do.",
+        "occupation": "Stay calm. Ask AI first, then panic | Data Analyst | Automation | Power BI",
         "id": "420075610",
         "publicId": "karlaroot",
         "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog"

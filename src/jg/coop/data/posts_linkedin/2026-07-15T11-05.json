@@ -1,0 +1,195 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:8442444045941086234",
+    "url": "https://junior.guru/stories/lucie-kopecka/",
+    "title": "Volalo mi padesát vymahačů denně. Dnes pracuju v IT a nechápu, jak jsem to zvládla, říká Lucie Kopecká"
+  },
+  "isActivity": true,
+  "activityDescription": "Honza Javorek reposted this",
+  "activityOfUser": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "urn": "urn:li:activity:7483114608422219776",
+  "url": "https://www.linkedin.com/posts/lucie-kopecka199722_volalo-mi-pades%C3%A1t-vymaha%C4%8D%C5%AF-denn%C4%9B-dnes-pracuju-activity-7481444609429159936-BtLD",
+  "shareUrn": "urn:li:share:7481444608523116544",
+  "text": "Insolvence nebyla konec mého příběhu. I když jsem si to dlouhou dobu myslela.\n\nKdyž mě Honza Javorek oslovil s nabídkou poskytnout rozhovor o mé cestě do IT pro junior.guru, moje první reakce rozhodně nebyla jednoznačné ano (a od první konverzace o rozhovoru uplynul již nejméně rok).\n\nNikdy předtím jsem žádný rozhovor neposkytovala a především jsem si nebyla jistá, zda chci veřejně sdílet tak podstatnou část svého příběhu.\nInsolvence je pro mě stále citlivé téma. Nejen kvůli tomu, čím jsem si sama prošla, ale také proto, že je často tabuizovaná a spojená s předsudky vůči lidem, kteří se v ní ocitnou.\n\nTy předsudky jsem měla také. Vůči sobě.\n\nDlouho jsem se nedokázala smířit s tím, že se mi něco takového vůbec stalo. Téměř nikdo v mém okolí o insolvenci nevěděl a já jsem měla pocit, že je to část života, kterou musím skrývat. Nakonec jsem se ale rozhodla svůj příběh sdílet. Ne proto, že už je pro mě snadné o něm mluvit, ale protože možná může pomoct někomu, kdo se právě nachází v podobné situaci.\n\nInsolvence je psychicky náročná, ale nemusí znamenat konec ambicí ani možností, profesních ani osobních. Pro mě byla součástí období, během kterého jsem se vzdělávala, měnila obor a postupně si hledala cestu do IT.\n\nDěkuji za citlivý přístup Honzovi i Adél. 💚",
+  "attributes": [
+    {
+      "start": 87,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1783937641934,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7481444609429159936?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7481444609429159936%2C7482376787310850048%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287482376787310850048%2Curn%3Ali%3Aactivity%3A7481444609429159936%29",
+      "text": "Moc si vážím toho, že jsi do toho rozhovoru šla. Bylo by super, kdyby tohle nezapadlo: „Insolvence je psychicky náročná, ale nemusí znamenat konec ambicí ani možností, profesních ani osobních.“  💪 ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Chianti",
+        "lastName": "Chen",
+        "occupation": "Senior Analytics Engineer at Wise",
+        "id": "932681332",
+        "publicId": "chianti-yuying-chen",
+        "profileId": "ACoAADeXlnQBgvgIx6kepuGQCG7ucqsjsPsQYzU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Šimon",
+        "lastName": "Kořený",
+        "occupation": "Product Owner & Dad | Building great products, raising great humans",
+        "id": "283596586",
+        "publicId": "fusatytata",
+        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Filip",
+        "lastName": "Průdek",
+        "occupation": "Nefunguje mi to → Super, už to jede | Feed specialista & Customer Success @Mergado",
+        "id": "904009499",
+        "publicId": "filip-prudek",
+        "profileId": "ACoAADXiFxsBDrfvLqXfc46dYlgCQklCaExwUMY"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Otakar",
+        "lastName": "Veleba",
+        "occupation": "Senior Analytics Engineer at Mews",
+        "id": "232631398",
+        "publicId": "otakar-veleba",
+        "profileId": "ACoAAA3drGYBqkSarfyjg6J0-SOm25UCtsUwt20"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ondřej",
+        "lastName": "Plátek",
+        "occupation": "Augmenting People & AI | LLM researcher @ BottleCapAI | Builder | Father",
+        "id": "40877573",
+        "publicId": "ondrejplatek",
+        "profileId": "ACoAAAJvvgUBaYSdI7ylEmLT6m10gww0mjOjOpA"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Silvia",
+        "lastName": "Strazovcova",
+        "occupation": "💻 Frontend Developer · React, Next.js, REST APIs 💼 Finance Background",
+        "id": "238963413",
+        "publicId": "silvia-strazovcova",
+        "profileId": "ACoAAA4-StUBEZm6byvbdafJCV0gZFB_P2QBkkw"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Denisa",
+        "lastName": "G.",
+        "occupation": "CGI Partner | CSEE",
+        "id": "680040578",
+        "publicId": "denisa-gafova",
+        "profileId": "ACoAACiImIIBLJWxkk68doQQ7kQNlSGv5cK2vWQ"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Meissner",
+        "occupation": "Product & Tech Community Lead at Mews",
+        "id": "677292059",
+        "publicId": "jan-meissner",
+        "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "F.",
+        "occupation": "Logistics specialist | Aspiring data analyst",
+        "id": "895303221",
+        "publicId": "jakub-f-359a0320b",
+        "profileId": "ACoAADVdPjUB4aDql2p9fwC2crHhiqm4G2mUorw"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Karla",
+        "lastName": "Root",
+        "occupation": "Stay calm. Ask AI first, then panic | Data Analyst | Automation | Power BI",
+        "id": "420075610",
+        "publicId": "karlaroot",
+        "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog"
+      }
+    }
+  ],
+  "numShares": 2,
+  "numLikes": 19,
+  "numComments": 2,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Lucie",
+    "lastName": "Kopecká",
+    "occupation": "Data Analyst | Gamer and Bookworm",
+    "id": "500341187",
+    "publicId": "lucie-kopecka199722",
+    "profileId": "ACoAAB3SmcMBvL6G2roLd-uQG9E4UdBKyXxJXDY"
+  },
+  "authorProfileId": "lucie-kopecka199722",
+  "authorType": "Person",
+  "authorName": "Lucie Kopecká",
+  "authorProfileUrl": "https://www.linkedin.com/in/lucie-kopecka199722?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAB3SmcMBvL6G2roLd-uQG9E4UdBKyXxJXDY",
+  "authorUrn": "urn:li:member:500341187",
+  "postedAtTimestamp": 1784113552194,
+  "postedAtISO": "2026-07-15T11:05:52.194Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

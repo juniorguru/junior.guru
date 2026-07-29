@@ -1,0 +1,202 @@
+{
+  "type": "image",
+  "images": [],
+  "isActivity": true,
+  "activityDescription": "Honza Javorek reposted this",
+  "activityOfUser": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "urn": "urn:li:activity:7485640785678290946",
+  "url": "https://www.linkedin.com/posts/michalkasparek_hele-jakej-m%C3%A1me-kr%C3%A1snej-web-sp%C3%ADchnul-ho-activity-7485617729383841793-L4yw",
+  "shareUrn": "urn:li:share:7485617728133787648",
+  "text": "Hele, jakej máme krásnej web! Spíchnul ho Petr Kočí a konečně tam na jedné kupě najdete naše datové články. Včetně vynikající série o femicidách, kterou napsala Klára Filipová, a která vás snad neminula – ale kdyby přece jen…\n\nhttps://data.irozhlas.cz/",
+  "attributes": [
+    {
+      "start": 42,
+      "length": 9,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Kočí",
+        "occupation": "Data Journalist ve společnosti Samizdat/Český rozhlas",
+        "id": "5065361",
+        "publicId": "petrkoci",
+        "profileId": "ACoAAABNSpEBkxasB8uqJ3zcizYluVXPEFz2mrs"
+      }
+    },
+    {
+      "start": 161,
+      "length": 14,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Klára",
+        "lastName": "Filipová",
+        "occupation": "Novinářka na volné noze",
+        "id": "464910812",
+        "publicId": "klara-filipova",
+        "profileId": "ACoAABu1-dwB6AqCUhubhhlFXfAMDhspSJy7JAQ"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1784890090622,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7485617729383841793?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7485617729383841793%2C7486371646652731392%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287486371646652731392%2Curn%3Ali%3Aactivity%3A7485617729383841793%29",
+      "text": "Wow, to je nádhera! 💛",
+      "entities": [],
+      "pinned": false,
+      "author": {
+        "firstName": "Kristína",
+        "lastName": "Pšorn Zákopčanová",
+        "occupation": "Data Visualization and Information Designer | Designing, Consulting & Teaching",
+        "id": "804232685",
+        "publicId": "kristina-zakopcanova",
+        "profileId": "ACoAAC_vne0BL34W_gMgZJiEu6tVSfCxBxD59SU",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Dagmar",
+        "lastName": "Hanzlikova",
+        "occupation": "Open Science | Librarian | Linguist | Tolkien scholar in training",
+        "id": "690763040",
+        "publicId": "dagmar-hanzlikova",
+        "profileId": "ACoAACksNSAB9GXz_JdsnSwvlHtb3zSUYFr_66E"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Kodada",
+        "occupation": "Tech Writer | Team Lead | Developer",
+        "id": "571830630",
+        "publicId": "martin-kodada",
+        "profileId": "ACoAACIVcWYBadjcDjWNopXivbMeb-KzmafZb5U"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Stepanka",
+        "lastName": "Pechackova",
+        "occupation": "​Strategic content for value-driven brands | 10+ years of experience with focus on the NGO & pet segment 💙🐕 | Data • Integrity • Strategy",
+        "id": "285650980",
+        "publicId": "stepankapech",
+        "profileId": "ACoAABEGsCQBAzqGily9OrvWctWzXOlalsath9Q"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Juraj",
+        "lastName": "Kováč",
+        "occupation": "Keeping 2M+ people in motion with a smart urban mobility system",
+        "id": "250547579",
+        "publicId": "j-kovac",
+        "profileId": "ACoAAA7vDXsBw4Oxl4dKbywvEYNGTD6LKCN54MA"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Klára",
+        "lastName": "Polišenská",
+        "occupation": "MSc Research Master Social Sciences at UvA",
+        "id": "1069346814",
+        "publicId": "klára-polišenská-b6615625a",
+        "profileId": "ACoAAD-87_4Bgo6dnHKV_oRG3RoVtZf8tT0KYkg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Kaštánek",
+        "occupation": "Economic Analyst at Czech National Bank",
+        "id": "918940436",
+        "publicId": "petr-kaštánek-298902217",
+        "profileId": "ACoAADbF6xQBDNF4mIXwU1ZBORRxrXmb3J85cRg"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Kristína",
+        "lastName": "Pšorn Zákopčanová",
+        "occupation": "Data Visualization and Information Designer | Designing, Consulting & Teaching",
+        "id": "804232685",
+        "publicId": "kristina-zakopcanova",
+        "profileId": "ACoAAC_vne0BL34W_gMgZJiEu6tVSfCxBxD59SU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Prager",
+        "occupation": "Kliku na sebe máme, zbejvá najít správný dveře! :)",
+        "id": "389168747",
+        "publicId": "lenka-prager-48b3b9aa",
+        "profileId": "ACoAABcyPmsBXc7Fwj5WGvCiBS1MjhDW19IdQfI"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Komárek",
+        "occupation": "ekonom ve službách státu & SŠ učitel ve Vršovicích",
+        "id": "432446588",
+        "publicId": "jakub-komárek",
+        "profileId": "ACoAABnGnHwBnpv_W4TjFPaTujRNvlnZh0oyQHY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Hodina",
+        "occupation": ".",
+        "id": "493778453",
+        "publicId": "petr-hodina-505447119",
+        "profileId": "ACoAAB1udhUBZEavxB9OgN120aaeMYALQ2v_hfA"
+      }
+    }
+  ],
+  "numShares": 2,
+  "numLikes": 41,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Michal",
+    "lastName": "Kašpárek",
+    "occupation": "kultura a sport v datech v Českém rozhlase",
+    "id": "4073287",
+    "publicId": "michalkasparek",
+    "profileId": "ACoAAAA-J0cBpVvvZfelniap5rSenFLQTeMUp2k"
+  },
+  "authorProfileId": "michalkasparek",
+  "authorType": "Person",
+  "authorName": "Michal Kašpárek",
+  "authorProfileUrl": "https://www.linkedin.com/in/michalkasparek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAA-J0cBpVvvZfelniap5rSenFLQTeMUp2k",
+  "authorUrn": "urn:li:member:4073287",
+  "postedAtTimestamp": 1784715839786,
+  "postedAtISO": "2026-07-22T10:23:59.786Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

@@ -10,18 +10,25 @@
   "url": "https://www.linkedin.com/posts/honzajavorek_ovl%C3%A1d%C3%A1n%C3%AD-gitu-p%C5%99%C3%ADkazama-nebo-klik%C3%A1n%C3%ADm-activity-7480296831374123010-hsgG",
   "shareUrn": "urn:li:ugcPost:7480296830401069056",
   "text": "Ovládání Gitu: Příkazama, nebo klikáním?\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
-  "attributes": [
-    {
-      "start": 64,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
-    }
-  ],
+  "attributes": [],
   "comments": [
+    {
+      "time": 1784231935546,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7480296830401069056?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7480296830401069056%2C7483611144188862464%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287483611144188862464%2Curn%3Ali%3AugcPost%3A7480296830401069056%29",
+      "text": "sice (zatím) základní, ale jedu příkazy  😁 ",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Sandra",
+        "lastName": "Heinzová",
+        "occupation": "Junior Python Developer who is looking for first IT job opportunity. Not from Prague, but I can take a train :-)",
+        "id": "1057345779",
+        "publicId": "sandra-heinzova",
+        "profileId": "ACoAAD8F0PMB3ls8oo2W-xuzIAVJuEfCRdY-hRA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
     {
       "time": 1783885873231,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7480296830401069056?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7480296830401069056%2C7482159653632782336%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287482159653632782336%2Curn%3Ali%3AugcPost%3A7480296830401069056%29",
@@ -49,7 +56,7 @@
       "author": {
         "firstName": "Vendula",
         "lastName": "Krajíčková",
-        "occupation": "Frontend vývojářka 🚀 | React, TypeScript, Next.js | Hledám novou výzvu ve frontend vývoji 👩‍💻",
+        "occupation": "Frontend vývojářka 🚀 | React, Next.js, TypeScript | Hledám novou výzvu ve frontend vývoji 👩‍💻",
         "id": "1145616814",
         "publicId": "vendula-krajickova",
         "profileId": "ACoAAERIua4Bk44zfiGE6PT1BmSNoKdqiNkFOYc",
@@ -66,7 +73,7 @@
       "author": {
         "firstName": "Pavla",
         "lastName": "Beránková",
-        "occupation": "PHP programátorka",
+        "occupation": "junior PHP programátorka",
         "id": "549611439",
         "publicId": "berankova-pavla",
         "profileId": "ACoAACDCZ68BhDuYokjdegYmFm0rxSx_6Mlwh9c",
@@ -75,6 +82,17 @@
     }
   ],
   "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Miroslav",
+        "lastName": "H.",
+        "occupation": "Síťový administrátor | IT Infrastruktura & Kybernetická bezpečnost | Linux Enthusiast | Mensa ČR",
+        "id": "883759669",
+        "publicId": "miroslavhrib",
+        "profileId": "ACoAADStGjUBt39YNxuf-BvEjnMbywcEJhy0f0E"
+      }
+    },
     {
       "type": "LIKE",
       "profile": {
@@ -124,7 +142,7 @@
       "profile": {
         "firstName": "Pavla",
         "lastName": "Beránková",
-        "occupation": "PHP programátorka",
+        "occupation": "junior PHP programátorka",
         "id": "549611439",
         "publicId": "berankova-pavla",
         "profileId": "ACoAACDCZ68BhDuYokjdegYmFm0rxSx_6Mlwh9c"
@@ -135,7 +153,7 @@
       "profile": {
         "firstName": "Veronika",
         "lastName": "Čamborová",
-        "occupation": "Frontend developer",
+        "occupation": "SW developer",
         "id": "1082522617",
         "publicId": "veronika-čamborová",
         "profileId": "ACoAAECF-_kB69byXoaMHs_qzffiv1hqdN_aZ0U"
@@ -143,8 +161,8 @@
     }
   ],
   "numShares": 0,
-  "numLikes": 6,
-  "numComments": 3,
+  "numLikes": 7,
+  "numComments": 4,
   "canReact": true,
   "canPostComments": true,
   "canShare": true,

@@ -8,15 +8,15 @@
           {
             "width": 720,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEiSu1SG_tPBA",
-            "fileIdentifyingUrlPathSegment": "high/B4DZ6247icKUBM-/0/1781184840046?e=1784595600&v=beta&t=60WOynlWyWCLuuaeCGw7mYWHqv-V32bpUMF6trKhiT8",
-            "expiresAt": 1784595600000,
+            "fileIdentifyingUrlPathSegment": "high/B4DZ6247icKUBM-/0/1781184840046?e=1785805200&v=beta&t=cYtNNRloU49QSY-NQammN4ikDjfaXcqcoBRexhRdrts",
+            "expiresAt": 1785805200000,
             "height": 1280
           },
           {
             "width": 360,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEiSu1SG_tPBA",
-            "fileIdentifyingUrlPathSegment": "low/B4DZ6247icKUBI-/0/1781184840046?e=1784595600&v=beta&t=KU3lAgY6lEZ5lpWx-FGQk93r42ZH2dbcvac81vSKuw0",
-            "expiresAt": 1784595600000,
+            "fileIdentifyingUrlPathSegment": "low/B4DZ6247icKUBI-/0/1781184840046?e=1785805200&v=beta&t=Rgz0YwYcQk5GYg_ohq8V6DwwfkpPfOqJYsEKLjzXm2Y",
+            "expiresAt": 1785805200000,
             "height": 640
           }
         ]
@@ -25,8 +25,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/mp4-720p-30fp-crf28/B4DZ6247icKUB8-/0/1781184842453?e=1784595600&v=beta&t=B88djAbHfGRPsv923j3p88GpDZ-MI-4DZIGsIWFwSe4",
-              "expiresAt": 1784595600000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/mp4-720p-30fp-crf28/B4DZ6247icKUB8-/0/1781184842453?e=1785805200&v=beta&t=GorylUIyBHb2PAYffRe4F4w2BGMkz8KnjYznNrWtc04",
+              "expiresAt": 1785805200000
             }
           ],
           "size": 0,
@@ -38,8 +38,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/mp4-640p-30fp-crf28/B4DZ6247icKUBk-/0/1781184842453?e=1784595600&v=beta&t=MCzLjLaJGZdlYTaPwiDRxfNJNxcJ2SZtxU3tfe-kZCg",
-              "expiresAt": 1784595600000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/mp4-640p-30fp-crf28/B4DZ6247icKUBk-/0/1781184842453?e=1785805200&v=beta&t=O27jlRVG4vu4QlA05nnelZVWsmg9Ho7pROpm6eOZdpQ",
+              "expiresAt": 1785805200000
             }
           ],
           "size": 0,
@@ -61,8 +61,8 @@
           "mediaType": "application/vnd.apple.mpegURL",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEiSu1SG_tPBA/CeJxzMnGJMjMyMc9M9g51KdbVcULmh6LxI9H4yWj8bF0AVCcVdA?e=1784595600&v=beta&t=22BVgb7gAzZvXRFIvaS2BLD1DKnJYg_8PmiUH4V4zRg",
-              "expiresAt": 1784595600000
+              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEiSu1SG_tPBA/CeJxzMnGJMjMyMc9M9g51KdbVcULmh6LxI9H4yWj8bF0AVCcVdA?e=1785805200&v=beta&t=LvHXKf7E9KQlUN3lXzYJbD1M3AEyh0nkOmxn51C2P0Q",
+              "expiresAt": 1785805200000
             }
           ]
         },
@@ -72,8 +72,8 @@
           "mediaType": "application/dash+xml",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEiSu1SG_tPBA/CeJxzMnGJMjMyMc9M9g51KdbVcULmh6LxI9H4yWj8bF0AVCcVdA?e=1784595600&v=beta&t=SjMlTGp3j5L5QV06SVUUk1WxShgqz6ue5SueYBoMWzI",
-              "expiresAt": 1784595600000
+              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEiSu1SG_tPBA/CeJxzMnGJMjMyMc9M9g51KdbVcULmh6LxI9H4yWj8bF0AVCcVdA?e=1785805200&v=beta&t=37y1voAF4bf0G7SPy1JQI21BFsHGH5ayNDMZ1R68Wms",
+              "expiresAt": 1785805200000
             }
           ]
         }
@@ -85,42 +85,13 @@
   "url": "https://www.linkedin.com/posts/honzajavorek_jak-na-git-a-github-co-je-git-a-k-%C4%8Demu-activity-7470830734442676224-La8q",
   "shareUrn": "urn:li:ugcPost:7470830667237572610",
   "text": "Jak na Git a GitHub?\n\nCo je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a GitHubem? Jak začít s Gitem?\n\nDovíte se na nově aktualizované stránce v příručce na junior.guru/handbook 📖 \n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
-  "attributes": [
-    {
-      "start": 165,
-      "length": 20,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru/handbook"
-      }
-    },
-    {
-      "start": 212,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
-    }
-  ],
+  "attributes": [],
   "comments": [
     {
       "time": 1781184872824,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7470830667237572610?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7470830667237572610%2C7470830836825866240%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287470830836825866240%2Curn%3Ali%3AugcPost%3A7470830667237572610%29",
       "text": "Odkaz tu: https://junior.guru/handbook/git/",
-      "entities": [
-        {
-          "start": 10,
-          "length": 33,
-          "type": "TEXT_LINK",
-          "textLink": {
-            "viewingBehavior": "DEFAULT",
-            "url": "https://junior.guru/handbook/git/"
-          }
-        }
-      ],
+      "entities": [],
       "pinned": false,
       "author": {
         "firstName": "Honza",
@@ -139,7 +110,7 @@
       "profile": {
         "firstName": "Veronika",
         "lastName": "Čamborová",
-        "occupation": "Frontend developer",
+        "occupation": "SW developer",
         "id": "1082522617",
         "publicId": "veronika-čamborová",
         "profileId": "ACoAAECF-_kB69byXoaMHs_qzffiv1hqdN_aZ0U"
@@ -183,7 +154,7 @@
       "profile": {
         "firstName": "Erik",
         "lastName": "Lerch",
-        "occupation": "PPC specialista & marketingový stratég | Nastavím vám kampaně na sociálních sítích i ve vyhledávání | Pomohu vám uchopit digitální business | Meta Ads • Google Ads • Sklik • Mergado • Mailing",
+        "occupation": "PPC specialista & marketingový stratég | Nastavím vám kampaně na sociálních sítích i ve vyhledávání | Pomohu vám uchopit digitální business | Meta Ads • Google Ads • Sklik • Mailing • Mergado",
         "id": "331751822",
         "publicId": "eriklerch-cz",
         "profileId": "ACoAABPGIY4BXOU63bAgY0RD5gxSKuP9QTIlNMc"

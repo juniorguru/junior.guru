@@ -1,0 +1,128 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:9048833552423462434",
+    "url": "https://frontkon.tech",
+    "title": "FrontKon"
+  },
+  "isActivity": true,
+  "activityDescription": "Honza Javorek reposted this",
+  "activityOfUser": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "urn": "urn:li:activity:7482826701039783936",
+  "url": "https://www.linkedin.com/posts/artem-zakharchenko_frontkon-activity-7482801349487763475-hHQb",
+  "shareUrn": "urn:li:share:7482801348766400512",
+  "text": "Last time I gave this workshop, the room was fully packed and the folks absolutely loved using Vitest to test their components directly in the real browser.\n\n👉 Join me in-person to level up your React component tests!\n\n🗓️ October 5th, FrontKon, Prague",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1785172378321,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7482801349487763475?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7482801349487763475%2C7487555647077646336%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287487555647077646336%2Curn%3Ali%3Aactivity%3A7482801349487763475%29",
+      "text": "Hey Artem, looking forward to your workshop and excited to see you on stage at FrontKon - Prague's Frontend Conference!",
+      "entities": [
+        {
+          "start": 79,
+          "length": 39,
+          "type": "COMPANY_NAME",
+          "company": {
+            "name": "FrontKon - Prague's Frontend Conference",
+            "universalName": "frontkon",
+            "active": true,
+            "showcase": false,
+            "entityUrn": "urn:li:fs_miniCompany:111694409"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "English",
+      "author": {
+        "firstName": "Martin",
+        "lastName": "Michálek",
+        "occupation": "PageSpeed.ONE. Konference FrontKon. Podcast FrontKec.",
+        "id": "35134614",
+        "publicId": "martinmichalek",
+        "profileId": "ACoAAAIYHJYBZSP9siKk6AdjAqLpr14snue9t7g",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Artem",
+        "lastName": "Zakharchenko",
+        "occupation": "Software engineer & Educator",
+        "id": "479400907",
+        "publicId": "artem-zakharchenko",
+        "profileId": "ACoAAByTE8sBD2jc0LWL1WTudVD1bG_e2hh-aG0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Filip",
+        "lastName": "Mešša",
+        "occupation": "Senior Front-End Engineer (React/TypeScript) · Open to remote roles",
+        "id": "349677591",
+        "publicId": "filipmessa",
+        "profileId": "ACoAABTXqBcBJvq3NlUj6X50PLadp918RAJss9s"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Łukasz",
+        "lastName": "Nowak",
+        "occupation": "Senior software engineer w HL Tech",
+        "id": "435048951",
+        "publicId": "łukasz-nowak-533844101",
+        "profileId": "ACoAABnuUfcBLS-wtAwXdCQU_henKuytTTnUE8g"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 4,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Artem",
+    "lastName": "Zakharchenko",
+    "occupation": "Software engineer & Educator",
+    "id": "479400907",
+    "publicId": "artem-zakharchenko",
+    "profileId": "ACoAAByTE8sBD2jc0LWL1WTudVD1bG_e2hh-aG0"
+  },
+  "authorProfileId": "artem-zakharchenko",
+  "authorType": "Person",
+  "authorName": "Artem Zakharchenko",
+  "authorProfileUrl": "https://www.linkedin.com/in/artem-zakharchenko?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAByTE8sBD2jc0LWL1WTudVD1bG_e2hh-aG0",
+  "authorUrn": "urn:li:member:479400907",
+  "postedAtTimestamp": 1784044909725,
+  "postedAtISO": "2026-07-14T16:01:49.725Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

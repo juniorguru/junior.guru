@@ -1,0 +1,131 @@
+{
+  "type": "document",
+  "document": {
+    "coverPages": [],
+    "title": "Rozhovor s Lucií Kopeckou",
+    "totalPageCount": 6
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7486359986789543936",
+  "url": "https://www.linkedin.com/posts/honzajavorek_rozhovor-s-luci%C3%AD-kopeckou-activity-7486359986789543936-GsHA",
+  "shareUrn": "urn:li:ugcPost:7486359985640271872",
+  "text": "Pravdivě o kariéře v IT 🙏  Přečtěte si rozhovor Adéla Pavlun s Lucie Kopecká\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 48,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Adéla",
+        "lastName": "Pavlun",
+        "occupation": "Somatic Guide & Writer | TRE® · SE® | Exploring human connection, safety and growth",
+        "id": "59184567",
+        "publicId": "adelapavlun",
+        "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"
+      }
+    },
+    {
+      "start": 63,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Lucie",
+        "lastName": "Kopecká",
+        "occupation": "Data Analyst | Gamer and Bookworm",
+        "id": "500341187",
+        "publicId": "lucie-kopecka199722",
+        "profileId": "ACoAAB3SmcMBvL6G2roLd-uQG9E4UdBKyXxJXDY"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1785094805004,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7486359985640271872?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7486359985640271872%2C7487230281007927296%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287487230281007927296%2Curn%3Ali%3AugcPost%3A7486359985640271872%29",
+      "text": "Odkaz tu https://junior.guru/stories/lucie-kopecka/",
+      "entities": [],
+      "pinned": false,
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Šimon",
+        "lastName": "Kořený",
+        "occupation": "Product Owner & Dad | Building great products, raising great humans",
+        "id": "283596586",
+        "publicId": "fusatytata",
+        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavla",
+        "lastName": "Pilchová",
+        "occupation": "Komunikační specialistka ~ copywriting & copyediting ~ tvorba & úprava textu ~ PR komunikace ~ event specialistka ~ produkce",
+        "id": "228599758",
+        "publicId": "pavlapilchova",
+        "profileId": "ACoAAA2gJ84BUO4TQAQEEIu0swowkiEljEIjXAk"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Adéla",
+        "lastName": "Pavlun",
+        "occupation": "Somatic Guide & Writer | TRE® · SE® | Exploring human connection, safety and growth",
+        "id": "59184567",
+        "publicId": "adelapavlun",
+        "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Karla",
+        "lastName": "Root",
+        "occupation": "Stay calm. Ask AI first, then panic | Data Analyst | Automation | Power BI",
+        "id": "420075610",
+        "publicId": "karlaroot",
+        "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 4,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1784887310693,
+  "postedAtISO": "2026-07-24T10:01:50.693Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

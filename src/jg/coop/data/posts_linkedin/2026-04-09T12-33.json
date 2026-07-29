@@ -19,30 +19,6 @@
         "publicId": "jakub-beranek",
         "profileId": "ACoAAAm3TkIBMAGmX-tikAmVz9Q3WEHBv-jb7Pg"
       }
-    },
-    {
-      "start": 148,
-      "length": 13,
-      "link": "https://www.linkedin.com/in/ACoAAAm3TkIBMAGmX-tikAmVz9Q3WEHBv-jb7Pg",
-      "type": "HYPERLINK"
-    },
-    {
-      "start": 1125,
-      "length": 18,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru/events"
-      }
-    },
-    {
-      "start": 1212,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
     }
   ],
   "comments": [],

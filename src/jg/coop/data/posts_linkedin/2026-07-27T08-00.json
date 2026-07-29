@@ -1,0 +1,65 @@
+{
+  "type": "document",
+  "document": {
+    "coverPages": [],
+    "title": "Co je GitHub?",
+    "totalPageCount": 8
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7487416546424893440",
+  "url": "https://www.linkedin.com/posts/honzajavorek_co-je-github-activity-7487416546424893440-TY7W",
+  "shareUrn": "urn:li:ugcPost:7486359296977321985",
+  "text": "Co je GitHub?\n\nGitHub je úložiště kódu a něco jako sociální síť pro programátory. Kód tam jde poslat pomocí Gitu.\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Illek",
+        "occupation": "Frontend developer at Annertech. Ambasador Česko.Digital. CSGOV Founder. Drupal Developer.",
+        "id": "130527892",
+        "publicId": "petrillek",
+        "profileId": "ACoAAAfHspQBHywWAVFe_b9cRC0iYcgrUq_iWbE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Čamborová",
+        "occupation": "SW developer",
+        "id": "1082522617",
+        "publicId": "veronika-čamborová",
+        "profileId": "ACoAAECF-_kB69byXoaMHs_qzffiv1hqdN_aZ0U"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 2,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1785139214140,
+  "postedAtISO": "2026-07-27T08:00:14.140Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

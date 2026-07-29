@@ -1,0 +1,181 @@
+{
+  "type": "document",
+  "document": {
+    "coverPages": [],
+    "title": "Reframing Your Narrative workshop",
+    "totalPageCount": 10
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7486028798866612225",
+  "url": "https://www.linkedin.com/posts/honzajavorek_reframing-your-narrative-workshop-activity-7486028798866612225-Txzb",
+  "shareUrn": "urn:li:ugcPost:7486028797599727616",
+  "text": "Zatoč s impostor syndromem!\n\nKdyž máme na pohovoru, v CVčku nebo u networkingu popsat svou práci, zlehčujeme často úspěchy a nenecháváme vyniknout, co už umíme.\n\nPřipoj se k nám v úterý večer do klubu na oficiální online workshop od iniciativy Women Techmakers (Google), který ti pomůže vnitřního kritika ztišit.\n\nNa tvoje zkušenosti se podíváme novou optikou a naučíme tě o nich mluvit bez přehánění, ale s jistotou. Odneseš si nejen konkrétní tipy, jak reprezentovat samu sebe, ale i hotový draft profesního bio, na který budou hrdí tvoje šéfka i tvůj děda.\n\nEliška Čejpová, která povede workshop, začala jako vývojářka, ale pak se našla v prostoru mezi technologiemi a lidmi.\n\nPůsobí jako agilní koučka, organizuje IT konference, školí speakery, buduje komunity. Nejraději odhaluje antipatterny ve vývoji a podporuje lidi v růstu stavbou skvělých týmů.\n\nZa ~15 let v komunitách facilitovala workshopy od malých týmů až po globální tech summity.\n\nChce zanechat svět o něco lepší, než jak ho našla. Má tsundoku, názory, lásku pro gify a víc řasokoulí než člověk potřebuje.\n\nJestli chceš dorazit živě, účastnit se workshopu a pokládat Elišce vlastní otázky, mrkni na junior.guru/events a připoj se k nám na Discord!\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 244,
+      "length": 16,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Women Techmakers",
+        "universalName": "womentechmakers",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:71553084"
+      }
+    },
+    {
+      "start": 561,
+      "length": 14,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Eliška  ",
+        "lastName": "Čejpová",
+        "occupation": "Agile Coach by day, Speakers @DevFest.cz by night | ScanAgile🦊| GDG Helsinki | GUG.cz | Women Techmakers | Agile Enthusiast | Speaker Coach | Community Soul | Workshopper",
+        "id": "218425264",
+        "publicId": "eliskacejpova",
+        "profileId": "ACoAAA0E57ABXEjOnGWXi4ykBAzrRSYQ2_2aGg4"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1785141172921,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7486028797599727616?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7486028797599727616%2C7487424762143465472%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287487424762143465472%2Curn%3Ali%3AugcPost%3A7486028797599727616%29",
+      "text": "Já se těším, já se těším, JÁ SE TĚŠÍM! 🤩 Tenhle workshop dělám fakt ráda.. 💙",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Eliška  ",
+        "lastName": "Čejpová",
+        "occupation": "Agile Coach by day, Speakers @DevFest.cz by night | ScanAgile🦊| GDG Helsinki | GUG.cz | Women Techmakers | Agile Enthusiast | Speaker Coach | Community Soul | Workshopper",
+        "id": "218425264",
+        "publicId": "eliskacejpova",
+        "profileId": "ACoAAA0E57ABXEjOnGWXi4ykBAzrRSYQ2_2aGg4",
+        "distance": "OUT_OF_NETWORK"
+      }
+    },
+    {
+      "time": 1784808360585,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7486028797599727616?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7486028797599727616%2C7486028846031548417%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287486028846031548417%2Curn%3Ali%3AugcPost%3A7486028797599727616%29",
+      "text": "Více info tu https://junior.guru/events/64/",
+      "entities": [],
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Ludmila",
+        "lastName": "Sušek",
+        "occupation": "Digital Transformation Consultant | EdTech & Non-Profit",
+        "id": "283958840",
+        "publicId": "ludmilasusek",
+        "profileId": "ACoAABDs3jgBq-Rmpg5kZedhzDCi6DaSJu75KwY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Irena",
+        "lastName": "Zatloukalova",
+        "occupation": "Founder & CEO @Diversight.ai | Helping B2B companies eliminate Data Debt and AI Hallucinations through high-precision Human-in-the-Loop validation | Empowering #AutisticTalent in Tech 🚀",
+        "id": "99891449",
+        "publicId": "izatlouk",
+        "profileId": "ACoAAAX0OPkBzZjVvVi08LqhaKA5UMdVz4M5inM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marek",
+        "lastName": "VELAS",
+        "occupation": "Founder @EDUpunk | Learning design @Reactgirls.com | AI & Health Content Strategist | TALENT Mentor & MEME Therapist",
+        "id": "201927716",
+        "publicId": "marek-velas",
+        "profileId": "ACoAAAwJLCQB-ePqkhYoO0olYYFCoOJGgdydJEs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Eliška  ",
+        "lastName": "Čejpová",
+        "occupation": "Agile Coach by day, Speakers @DevFest.cz by night | ScanAgile🦊| GDG Helsinki | GUG.cz | Women Techmakers | Agile Enthusiast | Speaker Coach | Community Soul | Workshopper",
+        "id": "218425264",
+        "publicId": "eliskacejpova",
+        "profileId": "ACoAAA0E57ABXEjOnGWXi4ykBAzrRSYQ2_2aGg4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jitka",
+        "lastName": "Marešová",
+        "occupation": "Cybersecurity Specialist | Penetration Tester | Full-Stack Developer",
+        "id": "227066345",
+        "publicId": "jitka-marešová",
+        "profileId": "ACoAAA2IwekByahlnQAtuKNt4Xlww1xrII0Li34"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Adéla",
+        "lastName": "Tichá",
+        "occupation": "Customer Success & Support Professional | Passionate about UX/UI & Product Development",
+        "id": "422345507",
+        "publicId": "adelticha",
+        "profileId": "ACoAABkseyMBcA3muv646Fc2S5gVsWt0b9uYw-0"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 7,
+  "numComments": 3,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1784808349339,
+  "postedAtISO": "2026-07-23T12:05:49.339Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

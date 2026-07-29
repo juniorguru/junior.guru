@@ -21,12 +21,6 @@
       }
     },
     {
-      "start": 527,
-      "length": 12,
-      "link": "https://www.linkedin.com/in/ACoAAB-dm4UBphpPt0M3o_HcoFhUNSFgam6yIyY",
-      "type": "HYPERLINK"
-    },
-    {
       "start": 634,
       "length": 18,
       "type": "COMPANY_NAME",
@@ -36,39 +30,6 @@
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:923725"
-      }
-    },
-    {
-      "start": 634,
-      "length": 18,
-      "link": "https://www.linkedin.com/company/webexpo/",
-      "type": "HYPERLINK"
-    },
-    {
-      "start": 803,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
-    },
-    {
-      "start": 1422,
-      "length": 18,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru/events"
-      }
-    },
-    {
-      "start": 1494,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
       }
     }
   ],
@@ -116,7 +77,7 @@
       "profile": {
         "firstName": "Patrik",
         "lastName": "Brnušák",
-        "occupation": "Otevřen novým příležitostem",
+        "occupation": "Video editor, střihač a tvůrce obsahu. Hledáte posilu? Ozvěte se!",
         "id": "666440295",
         "publicId": "patrik-brnusak-cz",
         "profileId": "ACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU"

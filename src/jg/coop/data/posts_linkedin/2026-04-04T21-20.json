@@ -33,21 +33,6 @@
         "publicId": "jukben",
         "profileId": "ACoAABb1yWsBoQCg5XNZe2mG_MXrfvNzrXHh6UQ"
       }
-    },
-    {
-      "start": 9,
-      "length": 11,
-      "link": "https://www.linkedin.com/in/ACoAABb1yWsBoQCg5XNZe2mG_MXrfvNzrXHh6UQ",
-      "type": "HYPERLINK"
-    },
-    {
-      "start": 178,
-      "length": 22,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "https://www.sdilny.cz/"
-      }
     }
   ],
   "comments": [
@@ -67,12 +52,6 @@
             "showcase": false,
             "entityUrn": "urn:li:fs_miniCompany:105992017"
           }
-        },
-        {
-          "start": 13,
-          "length": 18,
-          "link": "https://www.linkedin.com/company/martins-3d-garage/",
-          "type": "HYPERLINK"
         }
       ],
       "pinned": false,

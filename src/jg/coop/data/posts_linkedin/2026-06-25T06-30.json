@@ -16,6 +16,17 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Veronika",
+        "lastName": "Čamborová",
+        "occupation": "SW developer",
+        "id": "1082522617",
+        "publicId": "veronika-čamborová",
+        "profileId": "ACoAAECF-_kB69byXoaMHs_qzffiv1hqdN_aZ0U"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Jiří",
         "lastName": "Langr",
         "occupation": "Interim CAIO (Chief AI Officer) | AI transformation isn’t about technology – it’s about people & adoption | 15+ yrs strategic & business consulting | Founder @ LANGR & AI Agents 🤖 FAIL25&26 Alumni #futureaileader #fail",
@@ -84,7 +95,7 @@
       "profile": {
         "firstName": "Vendula",
         "lastName": "Krajíčková",
-        "occupation": "Frontend vývojářka 🚀 | React, TypeScript, Next.js | Hledám novou výzvu ve frontend vývoji 👩‍💻",
+        "occupation": "Frontend vývojářka 🚀 | React, Next.js, TypeScript | Hledám novou výzvu ve frontend vývoji 👩‍💻",
         "id": "1145616814",
         "publicId": "vendula-krajickova",
         "profileId": "ACoAAERIua4Bk44zfiGE6PT1BmSNoKdqiNkFOYc"
@@ -106,26 +117,15 @@
       "profile": {
         "firstName": "Daniel",
         "lastName": "Gamrot",
-        "occupation": "Digital productivity and AI trainer for companies. 15,000+ trained, 300+ clients. ČEZ, EY, PwC, T-Mobile.",
+        "occupation": "Productivity trainer for companies. 15,000+ trained, 300+ clients. ČEZ, EY, PwC, T-Mobile.",
         "id": "56451897",
         "publicId": "danielgamrot",
         "profileId": "ACoAAANdYzkBivuJ7sQfeDlqQTpgvj7ApWqujDU"
       }
-    },
-    {
-      "type": "EMPATHY",
-      "profile": {
-        "firstName": "Veronika",
-        "lastName": "Zpěváková",
-        "occupation": "BI/ Data analyst, junior AI enthusiast, quizmaker and host in DATA Mesh Prague",
-        "id": "637440646",
-        "publicId": "py-veronika-zpevakova",
-        "profileId": "ACoAACX-koYBZCeuCb06SzAT8F955fJvI0OEIAc"
-      }
     }
   ],
   "numShares": 0,
-  "numLikes": 18,
+  "numLikes": 19,
   "numComments": 0,
   "canReact": true,
   "canPostComments": true,

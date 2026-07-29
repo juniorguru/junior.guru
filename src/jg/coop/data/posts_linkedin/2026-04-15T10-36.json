@@ -20,21 +20,6 @@
       }
     },
     {
-      "start": 241,
-      "length": 11,
-      "link": "https://www.linkedin.com/company/pyladies-cz/",
-      "type": "HYPERLINK"
-    },
-    {
-      "start": 352,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
-    },
-    {
       "start": 383,
       "length": 36,
       "type": "COMPANY_NAME",
@@ -47,37 +32,16 @@
       }
     },
     {
-      "start": 383,
-      "length": 36,
-      "link": "https://www.linkedin.com/company/national-technical-library/",
-      "type": "HYPERLINK"
-    },
-    {
       "start": 510,
       "length": 12,
       "type": "PROFILE_MENTION",
       "profile": {
         "firstName": "Adéla",
         "lastName": "Pavlun",
-        "occupation": "Writer | People & Culture Facilitator | Somatic Practitioner | Exploring human connection, safety and growth",
+        "occupation": "Somatic Guide & Writer | TRE® · SE® | Exploring human connection, safety and growth",
         "id": "59184567",
         "publicId": "adelapavlun",
         "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"
-      }
-    },
-    {
-      "start": 510,
-      "length": 12,
-      "link": "https://www.linkedin.com/in/ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk",
-      "type": "HYPERLINK"
-    },
-    {
-      "start": 531,
-      "length": 19,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru/stories"
       }
     },
     {
@@ -91,21 +55,6 @@
         "id": "1120687960",
         "publicId": "elvira-krieger",
         "profileId": "ACoAAELMV1gBtMlcRFOyaHOrgdhzKXc8l9aoZqA"
-      }
-    },
-    {
-      "start": 567,
-      "length": 14,
-      "link": "https://www.linkedin.com/in/ACoAAELMV1gBtMlcRFOyaHOrgdhzKXc8l9aoZqA",
-      "type": "HYPERLINK"
-    },
-    {
-      "start": 630,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
       }
     }
   ],
@@ -148,17 +97,7 @@
       "time": 1776249707341,
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7450130007169028096?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7450130007169028096%2C7450131252495572992%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287450131252495572992%2Curn%3Ali%3Aactivity%3A7450130007169028096%29",
       "text": "Celý rozhovor: https://junior.guru/stories/elvira-krieger/",
-      "entities": [
-        {
-          "start": 15,
-          "length": 43,
-          "type": "TEXT_LINK",
-          "textLink": {
-            "viewingBehavior": "DEFAULT",
-            "url": "https://junior.guru/stories/elvira-krieger/"
-          }
-        }
-      ],
+      "entities": [],
       "pinned": false,
       "originalLanguage": "Czech",
       "author": {
@@ -244,7 +183,7 @@
       "profile": {
         "firstName": "Jaroslava",
         "lastName": "Schovancova",
-        "occupation": "Sr. Staff SW Engineer · Distributed Systems · AI & Robotics",
+        "occupation": "Sr. Staff Software Engineer · Distributed Systems & Physical AI | Postgres Distributed at EDB | ex-CERN: 170+ site infrastructure + robotics sensing R&D | MSc AI & Robotics | C/C++ · Rust · Python · Containers",
         "id": "81703970",
         "publicId": "jaroslava-schovancova",
         "profileId": "ACoAAATetCIB519986QqSN6Bb6uSgSoJDHMq3fM"
