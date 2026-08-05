@@ -153,15 +153,11 @@ class GitHubSponsor(BaseModel):
 
     @classmethod
     def listing(cls) -> Iterable[Self]:
-        return (
-            cls.select().where(cls.is_active == True).order_by(cls.slug)  # noqa: E712
-        )
+        return cls.select().where(cls.is_active == True).order_by(cls.slug)
 
     @classmethod
     def past_listing(cls) -> Iterable[Self]:
-        return (
-            cls.select().where(cls.is_active == False).order_by(cls.slug)  # noqa: E712
-        )
+        return cls.select().where(cls.is_active == False).order_by(cls.slug)
 
     @classmethod
     def count(cls) -> int:
