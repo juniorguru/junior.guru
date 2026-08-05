@@ -1,5 +1,5 @@
 import itertools
-from datetime import date, datetime, time, timedelta, timezone
+from datetime import UTC, date, datetime, time, timedelta
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers, mutations
@@ -31,7 +31,7 @@ def main():
         if org.subscription_id:
             renews_on = getattr(org, "renews_on", today + timedelta(days=365))
             logger.info(f"Organization {org.slug!r} renews on {renews_on}")
-            renews_at = datetime.combine(renews_on, time(tzinfo=timezone.utc))
+            renews_at = datetime.combine(renews_on, time(tzinfo=UTC))
             params = {
                 "id": org.subscription_id,
                 "expiresAt": int(renews_at.timestamp()),

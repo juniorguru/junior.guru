@@ -1,5 +1,5 @@
 from collections import namedtuple
-from datetime import date, datetime, timedelta, timezone
+from datetime import UTC, date, datetime, timedelta
 
 import pytest
 from discord import ChannelType, Route
@@ -370,7 +370,7 @@ def test_is_member_user():
 
 def test_is_member_member():
     StubMember = namedtuple("Member", ["id", "joined_at"])
-    member = StubMember(1, datetime(2021, 1, 1, tzinfo=timezone.utc))
+    member = StubMember(1, datetime(2021, 1, 1, tzinfo=UTC))
 
     assert discord_club.is_member(member) is True
 

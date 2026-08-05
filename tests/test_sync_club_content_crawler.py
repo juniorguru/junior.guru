@@ -1,6 +1,6 @@
 import logging
 from collections import namedtuple
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 
 import pytest
 
@@ -14,10 +14,10 @@ def test_get_history_after_given_naive_datetime():
 
 def test_get_history_after_given_timezone_aware_datetime():
     history_after = get_history_after(
-        timedelta(days=2), now=datetime(2023, 8, 30, tzinfo=timezone.utc)
+        timedelta(days=2), now=datetime(2023, 8, 30, tzinfo=UTC)
     )
 
-    assert history_after == datetime(2023, 8, 28, tzinfo=timezone.utc)
+    assert history_after == datetime(2023, 8, 28, tzinfo=UTC)
 
 
 def test_get_channel_logger():
