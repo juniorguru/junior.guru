@@ -24,7 +24,6 @@ class Partner(BaseModel):
     start_on = DateField()
     is_free = BooleanField(default=True)
     note = TextField()
-    role_id = IntegerField(null=True)
 
     @property
     def utm_campaign(self) -> Literal["partnership"]:

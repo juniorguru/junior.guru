@@ -10,9 +10,9 @@ class ExchangeRate(BaseModel):
     rate = DecimalField()
 
     @classmethod
-    def in_currency(cls, amount_czk: Decimal | int | float, currency: str) -> Decimal:
+    def in_currency(cls, amount_czk: Decimal | float, currency: str) -> Decimal:
         return int(amount_czk / ExchangeRate.get(code=currency.upper()).rate)
 
     @classmethod
-    def from_currency(cls, amount: Decimal | int | float, currency: str) -> Decimal:
+    def from_currency(cls, amount: Decimal | float, currency: str) -> Decimal:
         return int(amount * ExchangeRate.get(code=currency.upper()).rate)

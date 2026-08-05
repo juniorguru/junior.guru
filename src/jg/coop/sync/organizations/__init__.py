@@ -352,13 +352,13 @@ def prepare_tiers(
 
 
 def get_start_on(periods: list[tuple[str, str | None]]) -> date:
-    first_period_start = sorted(periods)[0][0]
+    first_period_start = min(periods)[0]
     year, month = map(int, first_period_start.split("-"))
     return date(year, month, 1)
 
 
 def get_renews_on(periods: list[tuple[str, str | None]], today: date) -> bool:
-    current_period = sorted(periods, reverse=True)[0]
+    current_period = max(periods)
     period_start, period_end = current_period
 
     if period_end:

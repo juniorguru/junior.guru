@@ -62,9 +62,8 @@ async def main():
         try:
             li_items = list(map(transform_linkedin_item, raw_li_items))
             items = itertools.chain(items, li_items)
-        except Exception as e:
-            logger.error("Failed to scrape LinkedIn!")
-            logger.exception(e)
+        except Exception:
+            logger.exception("Failed to scrape LinkedIn!")
 
     logger.info(f"Pipelines:\n{pformat(PIPELINES)}")
     pipelines = [

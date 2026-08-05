@@ -226,7 +226,7 @@ async def report_trespassing_members(client: ClubClient, members_ids: list[int])
 
 
 def get_active_subscription(
-    subscriptions: list[SubscriptionEntity], today: date = None
+    subscriptions: list[SubscriptionEntity], today: date | None = None
 ) -> SubscriptionEntity:
     today = today or date.today()
 

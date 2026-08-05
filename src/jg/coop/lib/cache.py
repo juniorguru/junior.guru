@@ -43,7 +43,7 @@ def close_cache() -> None:
 
 
 def cache(
-    expire: float | int | timedelta | None = None,
+    expire: float | timedelta | None = None,
     tag: str | None = None,
     ignore: tuple[int | str] = (),
 ) -> Callable:
