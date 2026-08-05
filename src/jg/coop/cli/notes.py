@@ -1,8 +1,8 @@
 import asyncio
 import re
 from collections import defaultdict
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Iterable
 
 import click
 import discord

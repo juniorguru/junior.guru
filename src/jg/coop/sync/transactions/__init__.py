@@ -1,8 +1,8 @@
 import re
+from collections.abc import Callable
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from pprint import pformat
-from typing import Callable
 
 import click
 import httpx

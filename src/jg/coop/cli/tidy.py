@@ -4,10 +4,10 @@ import mimetypes
 import os
 import re
 import subprocess
+from collections.abc import Iterable
 from glob import glob
 from io import BytesIO
 from pathlib import Path
-from typing import Iterable
 
 import click
 from PIL import Image

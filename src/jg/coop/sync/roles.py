@@ -1,8 +1,8 @@
 import itertools
 from collections import Counter
+from collections.abc import Iterable
 from pathlib import Path
 from pprint import pformat
-from typing import Iterable
 
 import yaml
 from discord import Color, Role

@@ -2,8 +2,8 @@ import asyncio
 import os
 import sys
 import threading
+from collections.abc import Awaitable, Callable
 from queue import Queue
-from typing import Awaitable, Callable
 
 from jg.coop.lib import loggers
 from jg.coop.lib.discord_club import ClubClient

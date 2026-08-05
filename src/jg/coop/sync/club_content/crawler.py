@@ -1,6 +1,6 @@
 import asyncio
+from collections.abc import AsyncGenerator
 from datetime import datetime, timedelta, timezone
-from typing import AsyncGenerator
 
 from discord import ChannelType, DMChannel, Member, Message, Reaction, User
 from discord.abc import GuildChannel

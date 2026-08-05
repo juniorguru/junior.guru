@@ -2,10 +2,11 @@ import itertools
 import json
 import textwrap
 from collections import Counter
+from collections.abc import Iterable
 from datetime import date, datetime, time, timedelta
 from enum import StrEnum, auto
 from operator import attrgetter
-from typing import Iterable, Self
+from typing import Self
 from urllib.parse import quote_plus
 
 from peewee import (

@@ -1,8 +1,8 @@
 import math
+from collections.abc import Callable
 from datetime import date, timedelta
 from functools import wraps
 from pathlib import Path
-from typing import Callable
 
 import httpx
 import yaml

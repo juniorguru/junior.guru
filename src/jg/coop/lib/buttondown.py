@@ -1,8 +1,9 @@
 import logging
 import os
+from collections.abc import AsyncGenerator
 from datetime import date
 from enum import StrEnum
-from typing import AsyncGenerator, Self, TypeVar
+from typing import Self, TypeVar
 
 import httpx
 from tenacity import (

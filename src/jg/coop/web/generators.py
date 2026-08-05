@@ -1,6 +1,7 @@
 from collections import Counter
+from collections.abc import Generator
 from pathlib import Path
-from typing import Any, Generator
+from typing import Any
 
 import mkdocs_gen_files
 import yaml

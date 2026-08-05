@@ -1,6 +1,7 @@
 import re
+from collections.abc import Iterable
 from datetime import datetime
-from typing import Iterable, Self
+from typing import Self
 
 from peewee import CharField, DateField, IntegerField
 

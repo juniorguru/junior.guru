@@ -1,8 +1,8 @@
 import asyncio
 import importlib
 import itertools
+from collections.abc import Awaitable, Callable
 from pprint import pformat
-from typing import Awaitable, Callable
 
 from peewee import IntegrityError
 

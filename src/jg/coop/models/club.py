@@ -1,9 +1,10 @@
 import math
+from collections.abc import Iterable
 from datetime import date, datetime, timedelta
 from enum import StrEnum, auto, unique
 from itertools import groupby
 from operator import attrgetter
-from typing import Iterable, Optional, Self, TypeVar
+from typing import Optional, Self, TypeVar
 
 from discord import ChannelType
 from peewee import (

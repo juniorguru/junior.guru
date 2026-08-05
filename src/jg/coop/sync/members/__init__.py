@@ -1,11 +1,12 @@
 import math
 from collections import defaultdict
+from collections.abc import Iterable
 from datetime import date, datetime
 from enum import StrEnum
 from operator import itemgetter
 from pathlib import Path
 from pprint import pformat
-from typing import DefaultDict, Iterable, Literal, TypedDict
+from typing import Literal, TypedDict
 
 import click
 from discord import NotFound
@@ -99,7 +100,7 @@ def main(history_path: Path, today: date):
 
     stats_from = today.replace(day=1)
     stats_to = today
-    stats: DefaultDict[StatName, int] = defaultdict(int)
+    stats: defaultdict[StatName, int] = defaultdict(int)
 
     for account in logger.progress(accounts):
         account_id = int(account["id"])
