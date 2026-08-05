@@ -1,0 +1,67 @@
+{
+  "id": "5430eaef-1337-4ced-8d3c-b5fcbe8d3a72",
+  "creation_date": "2026-08-05T12:46:08.722849Z",
+  "absolute_url": "https://buttondown.com/juniorguru/archive/cervenec-2026-ve-svete-it-junioru-u1f423/",
+  "analytics": {
+    "recipients": 739,
+    "deliveries": 729,
+    "opens": 0,
+    "clicks": 0,
+    "temporary_failures": 3,
+    "permanent_failures": 0,
+    "unsubscriptions": 1,
+    "complaints": 0,
+    "survey_responses": 0,
+    "webmentions": 0,
+    "page_views_lifetime": 0,
+    "page_views_30": 0,
+    "page_views_7": 0,
+    "subscriptions": 0,
+    "paid_subscriptions": 0,
+    "replies": 0,
+    "comments": 0,
+    "social_mentions": 0,
+    "temporary_failure_breakdown": [
+      {
+        "code": "unknown",
+        "count": 1
+      },
+      {
+        "code": "ip_blocked",
+        "count": 1
+      },
+      {
+        "code": "out_of_storage",
+        "count": 1
+      }
+    ],
+    "permanent_failure_breakdown": []
+  },
+  "callouts": [],
+  "attachments": [],
+  "body": "<!-- buttondown-editor-mode: plaintext -->\nAhoj, tady robotické kuře z junior.guru! Mám pro tebe aktuální dávku novinek.\n\n## Čísla z pracovního trhu 📊\n\nKaždý den stahuju z různých zdrojů inzeráty a ty, které jsou vhodné pro začátečníky, dávám na [junior.guru/jobs](https://junior.guru/jobs/). Za poslední měsíc jsem mělo průměrně **61 aktivních inzerátů týdně**. Toto jsou technologie, které se průměrně za týden objevovaly nejčastěji:\n\n🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨 40× database<br>🟨🟨🟨🟨🟨🟨 27× testing<br>🟨🟨🟨🟨🟨🟨 24× javascript<br>🟨🟨🟨🟨🟨 20× python<br>🟨🟨🟨🟨 19× html<br>🟨🟨🟨🟨 19× css<br>🟨🟨🟨 14× api<br>🟨🟨🟨 13× linux<br>🟨🟨🟨 12× git<br>🟨🟨 11× java<br>\n\n## Sleva na DevFest! 💥\n\nEliška Čejpová, která měla zrovna v klubu workshop na impostor syndrom, je i v organizačním týmu konference [DevFest](https://devfest.cz/), milé události pro všechny nadšence do technologií.\n\nTakže na workshopu rovnou udělala soutěž o 3 lístky pro ty, kdo se připojili živě, a pro ostatní zařídila **slevu 10 %** s kódem **JUNIORKURE10**. Platí pro prvních 15 lístků, kdo dřív přijde, ten dřív mele.\n\nBude to **30.10. blízko Prahy**, všechno info je u nich na webu. DevFest se koná každý rok už mnoho let, takže snadno najdeš nějaké ohlasy z minulosti. Zvaž a kupuj, než slevička zmizí!\n\n## Srazy, konference a jiné akce 🍻\n\n**5.8. Ostrava**, komunita kolem Pythonu:<br>\n[Ostravské Pyvo – Pokec na sluníčku](https://pyvo.cz/ostrava-pyvo/2026-08/)\n\n**10.8. Praha**, komunita kolem Pythonu a dat:<br>\n[PyData 36 °C && Pyvo 182 °F](https://www.meetup.com/pydata-prague/events/315973451/)\n\nO těchto akcích se psalo v naší [komunitě na Discordu](https://junior.guru/club/):\n\n▪️ [DevFest (30.10.2026, kousek na sever od Prahy)](https://discord.com/channels/769966886598737931/1531725776666230784/1531725776666230784)<br>▪️ [AWS Brno Meetup: BBQ and Cloud Talks!](https://discord.com/channels/769966886598737931/1527308514345881681/1527308514345881681)<br>▪️ [GDG grilovačka Jihlava, čtvrtek 20. 8. 2026](https://discord.com/channels/769966886598737931/1532609854282141819/1532609854282141819)<br>▪️ [Cyber Resilience Act: Vše, co potřebujete vědět…](https://discord.com/channels/769966886598737931/1529810211722887298/1529810211722887298)<br>\n\n\n## Kurzy programování a testování 🧑‍🏫\n\nNa [junior.guru/courses](https://junior.guru/courses/) je katalog poskytovatelů kurzů. Nejvíc tam teď lidi koukají na tohle:\n\n[ENGETO](https://junior.guru/courses/engeto) ▪️ [ITnetwork](https://junior.guru/courses/itnetwork) ▪️ [Sharp Programmer (Andrew Sharp)](https://junior.guru/courses/sharpprogrammer) ▪️ [Skillmea](https://junior.guru/courses/skillmea) ▪️ [Czechitas](https://junior.guru/courses/czechitas) ▪️ [Hackni svou budoucnost (David Šetek)](https://junior.guru/courses/hacknisvoubudoucnost)\n\n\nV naší [komunitě na Discordu](https://junior.guru/club/) se v poslední době psalo o těchto kurzech:\n\n[Czechitas](https://junior.guru/courses/czechitas) ▪️ [Rekvalifikační kurzy VŠB-TU](https://junior.guru/courses/kurzyvsb) ▪️ [CoreSkill](https://junior.guru/courses/coreskill) ▪️ [ITnetwork](https://junior.guru/courses/itnetwork) ▪️ [DataCamp](https://junior.guru/courses/datacamp)\n\n\n## Nepřibarvené příběhy juniorů 💆\n▪️ Tři roky učení. Pak přišla práce, na kterou jsem nesplňovala jediný požadavek, říká Pavla Beránková – [Přečti](https://junior.guru/stories/pavla-berankova/)<br>\n▪️ Volalo mi padesát vymahačů denně. Dnes pracuju v IT a nechápu, jak jsem to zvládla, říká Lucie Kopecká – [Přečti](https://junior.guru/stories/lucie-kopecka/)<br>\n\n## Podcast 🎙️\n▪️ Karolina Surma a Petr Viktorin o tom, jaké jsou začátky ve firmě z pohledu juniora a seniora – [Poslouchej](https://junior.guru/podcast/20/)<br>\n▪️ Roman Hraška (yablko) o kurzech webového vývoje – [Poslouchej](https://junior.guru/podcast/2/)<br>\n\n## Záznamy z online akcí 📺\n▪️ Eliška Čejpová: Reframing Your Narrative workshop: Nenech za sebe mluvit impostor syndrom – [Sleduj](https://junior.guru/events/64/#zaznam)<br>\n▪️ Tomáš Ervín Dombrovský: Situace na IT trhu z pohledu dat a co to znamená pro juniory – [Sleduj](https://junior.guru/events/42/#zaznam)<br>\n\n## Co se dělo v klubu 💬\nV naší Discord komunitě se od 1.7. napsalo **707.454 písmenek**. Tady je shrnutí toho nejzajímavějšího. Pokud v klubu ještě nejsi, nebo vůbec nevíš, o co jde, mrkni na [junior.guru/club](https://junior.guru/club/)\n\n### 👥 V jakých skupinkách to nejvíc žilo\n[Linux](https://discord.com/channels/769966886598737931/1509991652905713725/1522192238858342450) ▪️ [Data](https://discord.com/channels/769966886598737931/1421171257164038231/1521827689785196627) ▪️ [C/C++ and Zig/Rust](https://discord.com/channels/769966886598737931/1421900689512202311/1526240739510456433)\n### 🛠️ Jaké jsme tvořili projekty\nS. – [Nový hotelový web pro Atrium](https://discord.com/channels/769966886598737931/1510678396299116595/1522551588952998008) ▪️ I. – [Game of Life](https://discord.com/channels/769966886598737931/1529103273552904433/1529103273552904433) ▪️ I. – [Svatební web](https://discord.com/channels/769966886598737931/1532289532886777967/1532289532886777967) ▪️ A. – [Převodník čísel](https://discord.com/channels/769966886598737931/1523003231091949658/1523026107304251392) ▪️ T.S. – [Tak jsme si tak s Claudem uvnitř Webstormu povídali](https://discord.com/channels/769966886598737931/1533211478981738779/1533211478981738779) ▪️ Y.🧅. – [Rally Safety App](https://discord.com/channels/769966886598737931/1525813074701979749/1525813074701979749) ▪️ B. – [Second brains template a obsidian vault graf](https://discord.com/channels/769966886598737931/1523780986159108146/1523780986159108146) ▪️ H. – [Schvalovací systém](https://discord.com/channels/769966886598737931/1520176565596586056/1523611776846008340) ▪️ J. – [2DPong v Unity](https://discord.com/channels/769966886598737931/1531366937110646975/1531366937110646975) ▪️ Y.🧅. – [SQL dotazování - trénovací data poslanecká sněmovna](https://discord.com/channels/769966886598737931/1530930154925199540/1530930154925199540) ▪️ D.S. – [CAR4WAY helper](https://discord.com/channels/769966886598737931/1525835855116370022/1525835855116370022) ▪️ Y.🧅. – [Převodník čísel (římská <-> arabská) - python](https://discord.com/channels/769966886598737931/1523033271334736045/1523033271334736045)\n\n\n### 📔 Do jakých deníčků se nejvíc psalo\nJ. – [Jitka v IT](https://discord.com/channels/769966886598737931/1150481852516290641/1523982147516498012) ▪️ J.Ď. – [Pepa by rád do vývoje](https://discord.com/channels/769966886598737931/1463230504609513708/1524082981206102068) ▪️ M. – [Vždycky je co (psát) hlavně v IT](https://discord.com/channels/769966886598737931/1521939316589199590/1521939316589199590)\n### 🔬 Zpětná vazba na CV, GitHub, LinkedIn\nM. – [CVčko](https://discord.com/channels/769966886598737931/1524023042353791157/1524023042353791157) ▪️ r. – [CVčko](https://discord.com/channels/769966886598737931/1519335142798397470/1528744016760537178) ▪️ r. – [LinkedIn](https://discord.com/channels/769966886598737931/1519335142798397470/1528744016760537178) ▪️ H.J. – [GitHub](https://discord.com/channels/769966886598737931/1516426884030791803/1526849399903359056) ▪️ J. – [CVčko](https://discord.com/channels/769966886598737931/1520541400725192947/1521817073947250830) ▪️ H. – [CVčko](https://discord.com/channels/769966886598737931/1519399369139294310/1524390490743771218) ▪️ H. – [LinkedIn](https://discord.com/channels/769966886598737931/1519399369139294310/1524390490743771218) ▪️ H. – [GitHub](https://discord.com/channels/769966886598737931/1519399369139294310/1524390490743771218) ▪️ D. – [GitHub](https://discord.com/channels/769966886598737931/1526298040280023210/1526298040280023210) ▪️ p. – [CVčko](https://discord.com/channels/769966886598737931/1529024120627396648/1529024120627396648) ▪️ V. – [CVčko](https://discord.com/channels/769966886598737931/1518829268979683398/1528743566237634700) ▪️ V. – [LinkedIn](https://discord.com/channels/769966886598737931/1518829268979683398/1528743566237634700) ▪️ V. – [GitHub](https://discord.com/channels/769966886598737931/1518829268979683398/1528743566237634700)\n\n### 👵 Začátky po třicítce a ageismus v IT\nProbrali jsme, jak jedna členka čelila ageismu při hledání práce v IT po třicítce, sdíleli jsme podobné zkušenosti a tipy, jak se s tím poprat a lépe najít uplatnění. [Diskutuj](https://discord.com/channels/769966886598737931/797040163325870092/1529211934346444984)\n\n### 🤖 Dopad AI na roli juniorů a vývojáře\nŘešilo se, jak AI mění práci v IT a co to znamená pro juniory – prý teď víc záleží na adaptabilitě, porozumění principům a byznysovém myšlení než jen na psaní kódu. [Diskutuj](https://discord.com/channels/769966886598737931/1401948283361955940/1529181964865634486)\n\n### 🛡️ Bezpečné prostředí pro juniory a atmosféra v hlasových místnostech klubu\nAI prý nahrazuje juniory a firmy o ně moc nestojí. Možná fakt, ale shodli jsme se, že je důležité udržet určitou bezpečnou a psychicky schůdnou kulturu toho, jakým způsobem tyto věci na callech probíráme. Především aby se nikdo necítil odstrčený a nebál se ptát. [Diskutuj](https://discord.com/channels/769966886598737931/797040163325870092/1528984244515373057)\n\n### 📊 Portfolio datového analytika a význam prezentace dat\nProbralo se, že ideální portfolio pro datovou analýzu staví na reálných messy datech, ukazuje řešení praktických otázek a dává přednost vlastnímu nápadu před konkrétním tech stackem. [Diskutuj](https://discord.com/channels/769966886598737931/1421171257164038231/1524421983264178238)\n\n### 🔍 Náhoda, automatické filtry a frustrace z hledání práce\nŘešilo se, že úspěch při hledání práce často ovlivní náhoda a různé automatické systémy víc než samotné kvality, takže odmítnutí většinou neznamená, že je někdo špatný kandidát. [Diskutuj](https://discord.com/channels/769966886598737931/797040163325870092/1526838321211248791)\n\n### ⚙️ AI v obchodních procesech, změny ve firmách a onboarding agentických nástrojů\nProbrali jsme, jak firmy zapojují agentickou AI do procesů, kde i přes automatizaci pořád musí vývojáři pečlivě nastavovat pravidla, testy a hlídat kvalitu výsledků. [Diskutuj](https://discord.com/channels/769966886598737931/797040163325870092/1525791344025534547)\n\n### 📜 Historický vývoj programovacích jazyků a směřování k funkcionálnímu paradigmatu\nProbrali jsme, proč imperativní a objektově orientované jazyky převažují, jak funkcionální prvky postupně pronikají a že klíčová je spíš imperativnost než rozpor OOP vs FP. [Diskutuj](https://discord.com/channels/769966886598737931/1533003467176673493/1533003476114866267)\n\n### 🖌️ Web řemeslníka versus UX, jak se prodává na internetu a stránky generované přes AI\nŘešili jsme, jak weby z AI nástrojů vypadají často přeplácaně a proč to na zákazníky stejně funguje, ať už jde o konverze, SEO, nebo jen o to, že design řeší spíš nástroj než vkus. [Diskutuj](https://discord.com/channels/769966886598737931/769966887055392768/1522633338093965363)\n\n### 🎓 Rekvalifikace, digitální vzdělávání a pokles zájmu v Česku\nProbralo se, že pokles rekvalifikací na ÚP možná souvisí se změnou dotací a dočerpáním EU fondů, lidi sdíleli statistiky, zkušenosti s kurzy i názory na ověřování jejich kvality. [Diskutuj](https://discord.com/channels/769966886598737931/769966887055392768/1524859351456677928)\n\n### 🎨 AI v umění, kreativita a role lektora\nŘešilo se, že AI ve výuce výtvarky láká začátečníky k opisování místo vlastní tvorby a že kreativita nejde obejít rychlými zkratkami, i když to technologie umožňuje. [Diskutuj](https://discord.com/channels/769966886598737931/1401948283361955940/1533757463898095666)\n",
+  "canonical_url": "",
+  "commenting_mode": "enabled",
+  "description": "",
+  "archival_mode": "enabled",
+  "email_type": "public",
+  "featured": false,
+  "filters": {
+    "filters": [],
+    "groups": [],
+    "predicate": "and"
+  },
+  "image": "",
+  "metadata": {},
+  "modification_date": "2026-08-05T14:59:11.597714Z",
+  "publish_date": "2026-08-05T14:59:09.653691Z",
+  "related_email_ids": [],
+  "secondary_id": 10,
+  "should_trigger_pay_per_email_billing": false,
+  "slug": "cervenec-2026-ve-svete-it-junioru-u1f423",
+  "source": "api",
+  "status": "sent",
+  "subject": "Červenec 2026 ve světě IT juniorů 🐣",
+  "suppression_reason": null,
+  "template": null
+}
