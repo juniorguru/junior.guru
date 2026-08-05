@@ -1,7 +1,8 @@
 import inspect
+from collections.abc import Generator, Iterable
 from contextlib import contextmanager
 from functools import partial, wraps
-from typing import Any, Generator, Iterable, Literal
+from typing import Any, Literal
 
 from jg.coop.lib import loggers
 from jg.coop.lib.cache import get_cache

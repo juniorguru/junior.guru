@@ -1,6 +1,7 @@
+from collections.abc import Iterable
 from datetime import date
 from itertools import groupby
-from typing import Iterable, Literal, Self
+from typing import Literal, Self
 
 import czech_sort
 from peewee import (

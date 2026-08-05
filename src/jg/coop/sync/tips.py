@@ -95,7 +95,7 @@ def parse_tip(markdown: str, roles: dict[str, int] | None = None) -> dict:
     except Exception as e:
         raise ValueError("Could not parse lead") from e
 
-    return dict(emoji=emoji, title=title, lead=lead, content=markdown)
+    return {"emoji": emoji, "title": title, "lead": lead, "content": markdown}
 
 
 @db.connection_context()

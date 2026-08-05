@@ -69,7 +69,7 @@ def main():
     date_to = date.today()
     date_from = date_to - timedelta(days=30 * MONTHS_RANGE)
     time_ranges = [
-        dict(start=month.replace(day=1).isoformat(), end=month.isoformat())
+        {"start": month.replace(day=1).isoformat(), "end": month.isoformat()}
         for month in charts.generate_months(date_from, date_to)
     ][:MONTHS_RANGE]
 

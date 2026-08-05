@@ -1,5 +1,5 @@
+from collections.abc import Callable
 from datetime import date
-from typing import Callable
 
 from jg.coop.models.transaction import TransactionsCategory
 

@@ -2,8 +2,9 @@ import logging
 import os
 import threading
 import time
+from collections.abc import Callable, Generator, Iterable
 from pathlib import Path
-from typing import Callable, Generator, Iterable, TypeVar, cast
+from typing import TypeVar, cast
 
 import click
 

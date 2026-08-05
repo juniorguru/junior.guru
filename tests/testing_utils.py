@@ -1,7 +1,8 @@
 import random
+from collections.abc import Generator
 from datetime import date, datetime, timedelta
 from pathlib import Path
-from typing import Any, Generator
+from typing import Any
 
 import pytest
 from peewee import SqliteDatabase
@@ -67,59 +68,61 @@ def param_xfail_missing(path, values=2):
 
 
 def prepare_user_data(id_: int, **kwargs) -> dict[str, Any]:
-    return dict(
-        id=id_,
-        is_member=kwargs.get("is_member", True),
-        is_bot=kwargs.get("is_bot", False),
-        avatar_path=kwargs.get("avatar_path"),
-        display_name=kwargs.get("display_name", "Kuře Žluté"),
-        mention=kwargs.get("mention", f"<@{id_}>"),
-        joined_at=kwargs.get("joined_at", datetime.now() - timedelta(days=3)),
-        expires_at=kwargs.get("expires_at", datetime.now() + timedelta(days=100)),
-        initial_roles=kwargs.get("initial_roles", []),
-    )
+    return {
+        "id": id_,
+        "is_member": kwargs.get("is_member", True),
+        "is_bot": kwargs.get("is_bot", False),
+        "avatar_path": kwargs.get("avatar_path"),
+        "display_name": kwargs.get("display_name", "Kuře Žluté"),
+        "mention": kwargs.get("mention", f"<@{id_}>"),
+        "joined_at": kwargs.get("joined_at", datetime.now() - timedelta(days=3)),
+        "expires_at": kwargs.get("expires_at", datetime.now() + timedelta(days=100)),
+        "initial_roles": kwargs.get("initial_roles", []),
+    }
 
 
 def prepare_job_data(id_: int | str, **kwargs) -> dict[str, Any]:
-    return dict(
-        id=str(id_),
-        posted_at=kwargs.get("posted_at", date(2019, 7, 6)),
-        company_name=kwargs.get("company_name", "Honza Ltd."),
-        employment_types=kwargs.get("employment_types", ["internship"]),
-        title=kwargs.get("title", "Junior Software Engineer"),
-        company_url=kwargs.get("company_url", "https://example.com"),
-        email=kwargs.get("email", "recruiter@example.com"),
-        remote=kwargs.get("remote", False),
-        locations_raw=kwargs.get("locations_raw", ["Brno, Czech Republic"]),
-        locations=kwargs.get("locations", [{"name": "Brno", "region": "Brno"}]),
-        description_html=kwargs.get(
+    return {
+        "id": str(id_),
+        "posted_at": kwargs.get("posted_at", date(2019, 7, 6)),
+        "company_name": kwargs.get("company_name", "Honza Ltd."),
+        "employment_types": kwargs.get("employment_types", ["internship"]),
+        "title": kwargs.get("title", "Junior Software Engineer"),
+        "company_url": kwargs.get("company_url", "https://example.com"),
+        "email": kwargs.get("email", "recruiter@example.com"),
+        "remote": kwargs.get("remote", False),
+        "locations_raw": kwargs.get("locations_raw", ["Brno, Czech Republic"]),
+        "locations": kwargs.get("locations", [{"name": "Brno", "region": "Brno"}]),
+        "description_html": kwargs.get(
             "description", "<p><strong>Useful</strong> description.</p>"
         ),
-        source=kwargs.get("source", random.choice(["juniorguru", "moo", "boo", "foo"])),
-        expires_at=kwargs.get("expires_at", date.today() + timedelta(days=3)),
-        junior_rank=kwargs.get("junior_rank", 10),
-        sort_rank=kwargs.get("sort_rank", 5),
-        lang=kwargs.get("lang", "en"),
-        link=kwargs.get("link", "https://example.com/jobs/123/"),
-        apply_link=kwargs.get("apply_link"),
-        pricing_plan=kwargs.get("pricing_plan", "community"),
-    )
+        "source": kwargs.get(
+            "source", random.choice(["juniorguru", "moo", "boo", "foo"])
+        ),
+        "expires_at": kwargs.get("expires_at", date.today() + timedelta(days=3)),
+        "junior_rank": kwargs.get("junior_rank", 10),
+        "sort_rank": kwargs.get("sort_rank", 5),
+        "lang": kwargs.get("lang", "en"),
+        "link": kwargs.get("link", "https://example.com/jobs/123/"),
+        "apply_link": kwargs.get("apply_link"),
+        "pricing_plan": kwargs.get("pricing_plan", "community"),
+    }
 
 
 def prepare_logo_data(id_: int, **kwargs) -> dict[str, Any]:
     today = date.today()
-    return dict(
-        id=id_,
-        name=kwargs.get("name", "Awesome Company"),
-        filename=kwargs.get("filename", "awesome-company.svg"),
-        email=kwargs.get("email", "recruitment@example.com"),
-        email_reports=kwargs.get("email_reports", True),
-        link=kwargs.get("link", "https://jobs.example.com"),
-        link_re=kwargs.get("link_re"),
-        months=kwargs.get("monhts", 12),
-        starts_at=kwargs.get("starts_at", today),
-        expires_at=kwargs.get("expires_at", today + timedelta(days=365)),
-    )
+    return {
+        "id": id_,
+        "name": kwargs.get("name", "Awesome Company"),
+        "filename": kwargs.get("filename", "awesome-company.svg"),
+        "email": kwargs.get("email", "recruitment@example.com"),
+        "email_reports": kwargs.get("email_reports", True),
+        "link": kwargs.get("link", "https://jobs.example.com"),
+        "link_re": kwargs.get("link_re"),
+        "months": kwargs.get("monhts", 12),
+        "starts_at": kwargs.get("starts_at", today),
+        "expires_at": kwargs.get("expires_at", today + timedelta(days=365)),
+    }
 
 
 def prepare_organization_data(slug: str, **kwargs) -> dict[str, Any]:

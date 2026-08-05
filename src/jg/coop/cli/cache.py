@@ -1,7 +1,7 @@
 from collections import Counter
+from collections.abc import Iterable
 from pathlib import Path
 from sqlite3 import OperationalError
-from typing import Iterable
 
 import click
 from diskcache.core import DBNAME

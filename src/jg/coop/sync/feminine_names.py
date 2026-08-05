@@ -72,8 +72,8 @@ def main():
         logger.info(f"{name} → {name_lower}, {name_ascii}")
         FeminineName.insert_many(
             [
-                dict(name=name_lower),
-                dict(name=name_ascii),
+                {"name": name_lower},
+                {"name": name_ascii},
             ]
         ).on_conflict_ignore().execute()
 

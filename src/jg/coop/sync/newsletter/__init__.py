@@ -1,10 +1,11 @@
 import random
 import time
+from collections.abc import Generator
 from datetime import date
 from operator import itemgetter
 from pathlib import Path
 from pprint import pformat
-from typing import Generator, Literal
+from typing import Literal
 
 import click
 from jinja2 import Template
@@ -259,31 +260,31 @@ async def create_newsletter_draft(
 
     logger.debug("Rendering email body")
     template = Template(Path(__file__).with_name("newsletter.jinja").read_text())
-    template_context = dict(
-        club_content_size=thousands(ClubMessage.content_size_by_month(prev_month)),
-        club_creations=club_creations,
-        club_cv_reviews=club_cv_reviews,
-        club_diaries=club_diaries,
-        club_groups=club_groups,
-        club_promo_events=club_promo_events,
-        course_providers_by_mentions=course_providers_by_mentions,
-        course_providers=course_providers,
-        event_last=event_last,
-        event_random=event_random,
-        events_planned=events_planned,
-        jobs_count=jobs_count,
-        jobs_tags_stats=jobs_tags_stats,
-        meetups=meetups,
-        members_count=ClubUser.members_count(),
-        podcast_last=podcast_last,
-        podcast_random=podcast_random,
-        prev_month=prev_month,
-        story_last=story_last,
-        story_random=story_random,
-        subscribers_count=subscribers_count,
-        subscribers_new_count=subscribers_new_count,
-        topics=topics,
-    )
+    template_context = {
+        "club_content_size": thousands(ClubMessage.content_size_by_month(prev_month)),
+        "club_creations": club_creations,
+        "club_cv_reviews": club_cv_reviews,
+        "club_diaries": club_diaries,
+        "club_groups": club_groups,
+        "club_promo_events": club_promo_events,
+        "course_providers_by_mentions": course_providers_by_mentions,
+        "course_providers": course_providers,
+        "event_last": event_last,
+        "event_random": event_random,
+        "events_planned": events_planned,
+        "jobs_count": jobs_count,
+        "jobs_tags_stats": jobs_tags_stats,
+        "meetups": meetups,
+        "members_count": ClubUser.members_count(),
+        "podcast_last": podcast_last,
+        "podcast_random": podcast_random,
+        "prev_month": prev_month,
+        "story_last": story_last,
+        "story_random": story_random,
+        "subscribers_count": subscribers_count,
+        "subscribers_new_count": subscribers_new_count,
+        "topics": topics,
+    }
     logger.debug(f"Template context:\n{pformat(template_context)}")
     month_name = f"{MONTH_NAMES[prev_month.month - 1]} {prev_month.year}"
     email_data = {

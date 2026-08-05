@@ -1,8 +1,9 @@
 import itertools
+from collections.abc import Iterable
 from enum import StrEnum
 from itertools import groupby
 from operator import attrgetter
-from typing import Iterable, Self
+from typing import Self
 
 import czech_sort
 from peewee import BooleanField, CharField, IntegerField, TextField, fn

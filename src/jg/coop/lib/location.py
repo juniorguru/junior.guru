@@ -1,10 +1,11 @@
 import os
 import random
 import re
+from collections.abc import Generator
 from datetime import timedelta
 from decimal import Decimal
 from enum import StrEnum
-from typing import Generator, Literal
+from typing import Literal
 
 import czech_sort
 import httpx

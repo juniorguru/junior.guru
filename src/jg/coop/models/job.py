@@ -2,10 +2,11 @@ import itertools
 import json
 import textwrap
 from collections import Counter
+from collections.abc import Iterable
 from datetime import date, datetime, time, timedelta
 from enum import StrEnum, auto
 from operator import attrgetter
-from typing import Iterable, Self
+from typing import Self
 from urllib.parse import quote_plus
 
 from peewee import (
@@ -467,19 +468,19 @@ class ListedJob(BaseModel):
 
     def to_czechitas_api(self) -> dict[str, str | int | datetime | None]:
         return dict(
-            **dict(
-                title=self.title,
-                company_name=self.company_name,
-                url=self.url,
-                remote=self.remote,
-                first_seen_at=datetime.combine(
+            **{
+                "title": self.title,
+                "company_name": self.company_name,
+                "url": self.url,
+                "remote": self.remote,
+                "first_seen_at": datetime.combine(
                     self.posted_on, time(0, 0)
                 ),  # datetime for backwards compatibility
-                last_seen_at=None,  # not relevant anymore, equals to present moment
-                lang=self.lang,
-                juniority_score=None,  # won't expose publicly anymore
-                source=None,  # use external IDs instead
-            ),
+                "last_seen_at": None,  # not relevant anymore, equals to present moment
+                "lang": self.lang,
+                "juniority_score": None,  # won't expose publicly anymore
+                "source": None,  # use external IDs instead
+            },
             **{
                 f"external_ids_{i}": value
                 for i, value in columns(  # renamed elsewhere, but keeping backwards compatible
@@ -498,9 +499,9 @@ class ListedJob(BaseModel):
                 f"employment_types_{i}": value
                 for i, value in columns(self.employment_types, 10)
             },
-            **dict(
-                description_html=self.description_html,
-            ),
+            **{
+                "description_html": self.description_html,
+            },
         )
 
 

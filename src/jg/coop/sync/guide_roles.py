@@ -72,4 +72,4 @@ def build_role_args(role: DocumentedRole) -> dict:
         embed.set_thumbnail(url=emoji_url(role.emoji))
     else:
         logger.debug(f"Setting no thumbnail, role.icon_path is {role.icon_path!r}")
-    return dict(embed=embed, file=file)
+    return {"embed": embed, "file": file}

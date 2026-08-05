@@ -83,12 +83,12 @@ def main(error_channel_id: int):
 
             referrer = csv_row["Referrer"] or None
             if referrer:
-                account_details = dict(
-                    account_id=account_id,
-                    account_name=csv_row["Full Name"],
-                    account_email=csv_row["Email"],
-                    account_total_spend=total_spend[account_id],
-                )
+                account_details = {
+                    "account_id": account_id,
+                    "account_name": csv_row["Full Name"],
+                    "account_email": csv_row["Email"],
+                    "account_total_spend": total_spend[account_id],
+                }
                 created_on = date.fromisoformat(csv_row["Created at"])
                 referrer_type = classify_referrer(referrer)
                 if referrer_type.startswith("/"):

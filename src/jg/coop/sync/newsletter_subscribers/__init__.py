@@ -1,7 +1,8 @@
 import asyncio
+from collections.abc import Generator
 from datetime import date
 from pathlib import Path
-from typing import Generator, TypedDict
+from typing import TypedDict
 
 import click
 

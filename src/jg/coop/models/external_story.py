@@ -23,15 +23,15 @@ class ExternalStory(BaseModel):
         return re.sub(r"^www\.", "", urlparse(url).netloc).lower()
 
     def to_card(self) -> dict:
-        return dict(
-            title=self.title,
-            url=self.url,
-            image_path=self.image_path,
-            image_alt=self.name,
-            subtitle=self.name,
-            date=self.date,
-            external=True,
-        )
+        return {
+            "title": self.title,
+            "url": self.url,
+            "image_path": self.image_path,
+            "image_alt": self.name,
+            "subtitle": self.name,
+            "date": self.date,
+            "external": True,
+        }
 
     @classmethod
     def listing(cls):

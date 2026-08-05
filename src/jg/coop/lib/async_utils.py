@@ -1,6 +1,6 @@
 import asyncio
+from collections.abc import Awaitable, Callable
 from functools import partial, wraps
-from typing import Awaitable, Callable
 
 
 semaphores = {}

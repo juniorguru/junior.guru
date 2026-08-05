@@ -1,8 +1,8 @@
 import asyncio
 import importlib
 import itertools
+from collections.abc import Awaitable, Callable
 from pprint import pformat
-from typing import Awaitable, Callable
 
 from peewee import IntegrityError
 
@@ -93,20 +93,20 @@ async def main():
 
 def transform_linkedin_item(item: dict) -> dict:
     try:
-        return dict(
-            title=item["title"],
-            posted_on=item["postedAt"][:10],
-            url=item["link"],
-            apply_url=item.get("applyUrl") or None,
-            company_name=item["companyName"],
-            company_url=item.get("companyWebsite"),
-            company_logo_urls=[item["companyLogo"]],
-            locations_raw=[item["location"]],
-            employment_types=[item.get("employmentType", "Full-time")],
-            description_html=item.get("descriptionHtml", item["descriptionText"]),
-            source="jobs-linkedin",
-            source_urls=[item["inputUrl"]],
-        )
+        return {
+            "title": item["title"],
+            "posted_on": item["postedAt"][:10],
+            "url": item["link"],
+            "apply_url": item.get("applyUrl") or None,
+            "company_name": item["companyName"],
+            "company_url": item.get("companyWebsite"),
+            "company_logo_urls": [item["companyLogo"]],
+            "locations_raw": [item["location"]],
+            "employment_types": [item.get("employmentType", "Full-time")],
+            "description_html": item.get("descriptionHtml", item["descriptionText"]),
+            "source": "jobs-linkedin",
+            "source_urls": [item["inputUrl"]],
+        }
     except Exception as e:
         if error := item.get("error"):
             raise RuntimeError(error)

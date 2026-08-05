@@ -26,11 +26,11 @@ def test_json_dumps(o, expected):
 
 
 def test_json_dumps_item():
-    item = dict(
-        posted_at=datetime(2020, 4, 30, 14, 35, 10),
-        title="Junior developer",
-        employment_types=frozenset(["full-time"]),
-    )
+    item = {
+        "posted_at": datetime(2020, 4, 30, 14, 35, 10),
+        "title": "Junior developer",
+        "employment_types": frozenset(["full-time"]),
+    }
 
     assert json_dumps(item) == (
         "{"

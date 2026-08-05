@@ -287,29 +287,29 @@ def merge_diskcaches(table_from: Table, table_to: Table):
             logger_t.debug(f"Row {row_from['key']!r} exists, updating")
             row_to = next(table_to.rows_where("key = ?", [row_from["key"]], limit=1))
             pks = [row_to[pk] for pk in table_to.pks]
-            updates = dict(
-                store_time=skip_none_max(
+            updates = {
+                "store_time": skip_none_max(
                     row_from["store_time"],
                     row_to["store_time"],
                 ),
-                expire_time=skip_none_max(
+                "expire_time": skip_none_max(
                     row_from["expire_time"],
                     row_to["expire_time"],
                 ),
-                access_time=skip_none_max(
+                "access_time": skip_none_max(
                     row_from["access_time"],
                     row_to["access_time"],
                 ),
-                access_count=row_from["access_count"] + row_to["access_count"],
-            )
+                "access_count": row_from["access_count"] + row_to["access_count"],
+            }
             if row_from["store_time"] > row_to["store_time"]:
-                updates |= dict(
-                    tag=row_from["tag"],
-                    size=row_from["size"],
-                    mode=row_from["mode"],
-                    filename=row_from["filename"],
-                    value=row_from["value"],
-                )
+                updates |= {
+                    "tag": row_from["tag"],
+                    "size": row_from["size"],
+                    "mode": row_from["mode"],
+                    "filename": row_from["filename"],
+                    "value": row_from["value"],
+                }
             logger_t.debug(f"Updating {pks!r} with {pformat(updates)}")
             table_to.update(pks, updates)
 
