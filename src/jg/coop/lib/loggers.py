@@ -163,7 +163,10 @@ def _infer_timestamp(cached_value: bool | None, env: dict) -> bool:
         value = env.get("LOG_TIMESTAMP")
     if value is None:
         value = env.get("CI")
-    return not (not value or value.lower() in ["0", "false"])
+    if not value:
+        return False
+    is_disabled = value.lower() in ["0", "false"]
+    return not is_disabled
 
 
 def get(name) -> Logger:
