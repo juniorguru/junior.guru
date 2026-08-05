@@ -16,6 +16,12 @@ from jg.coop.lib import loggers
 logger = loggers.from_path(__file__)
 
 
+def run(
+    args: list[str], *, check: bool = True, **kwargs
+) -> subprocess.CompletedProcess:
+    return subprocess.run(args, check=check, **kwargs)
+
+
 @click.group()
 def main():
     pass
@@ -31,38 +37,36 @@ def update(pull, packages, push, stash):
         logger.info("Terminating running processes")
         python_path = sys.executable
         jg_path = f"{python_path.removesuffix('3').removesuffix('/python')}/jg"
-        subprocess.run(
-            ["pgrep", "-fl", jg_path], check=False
-        )  # prints what's getting terminated
-        subprocess.run(["pkill", "-SIGTERM", "-f", jg_path], check=False)
+        run(["pgrep", "-fl", jg_path], check=False)  # prints what's getting terminated
+        run(["pkill", "-SIGTERM", "-f", jg_path], check=False)
         if stash:
             logger.info("Stashing work in progress")
-            subprocess.run(["git", "stash"], check=True)
+            run(["git", "stash"])
         if pull:
             logger.info("Pulling changes")
-            subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=True)
+            run(["git", "pull", "--rebase", "origin", "main"])
         if packages:
             logger.info("Upgrading packages")
             ci_config_path = ".circleci/config.yml"
             upgrade_lychee(ci_config_path)
-            subprocess.run(["uv", "sync", "--upgrade"], check=True)
-            subprocess.run(["npm", "update"], check=True)
-            subprocess.run(["npm", "install"], check=True)
+            run(["uv", "sync", "--upgrade"])
+            run(["npm", "update"])
+            run(["npm", "install"])
             paths = ["pyproject.toml", "uv.lock", "package-lock.json", ci_config_path]
-            subprocess.run(["git", "add"] + paths, check=False)
-            subprocess.run(["git", "commit", "-m", "update packages 📦"], check=False)
+            run(["git", "add"] + paths, check=False)
+            run(["git", "commit", "-m", "update packages 📦"], check=False)
         else:
             logger.info("Installing packages")
-            subprocess.run(["uv", "install"], check=True)
-            subprocess.run(["npm", "install"], check=True)
+            run(["uv", "install"])
+            run(["npm", "install"])
         logger.info("Installing Playwright browsers")
-        subprocess.run(["playwright", "install", "firefox"], check=True)
+        run(["playwright", "install", "firefox"])
         if push:
             logger.info("Pushing changes")
-            subprocess.run(["git", "push"], check=True)
+            run(["git", "push"])
         if stash:
             logger.info("Getting work in progress back from stash")
-            subprocess.run(["git", "stash", "pop"], check=True)
+            run(["git", "stash", "pop"])
         logger.info("Removing the 'public' directory")
         shutil.rmtree("public", ignore_errors=True)
     except subprocess.CalledProcessError:
@@ -114,22 +118,19 @@ def test(verbose: bool):
 
     logger.info("Running JavaScript tests")
     try:
-        subprocess.run(
-            ["npx", "vitest", "--dir=tests", "--run", "--environment=jsdom"], check=True
-        )
+        run(["npx", "vitest", "--dir=tests", "--run", "--environment=jsdom"])
     except subprocess.CalledProcessError:
         raise click.Abort()
 
     logger.info("Linting SCSS")
     try:
-        subprocess.run(
+        run(
             [
                 "npx",
                 "stylelint",
                 "src/jg/coop/css/**/*.*css",
                 "src/jg/coop/image_templates/*.*css",
-            ],
-            check=True,
+            ]
         )
     except subprocess.CalledProcessError:
         raise click.Abort()
@@ -156,8 +157,8 @@ def deploy(public_dir: Path, commit_hash: str, build_url: str):
 @main.command()
 def reset_repo():
     try:
-        subprocess.run(["git", "reset", "--hard"], check=True)
-        subprocess.run(["git", "clean", "-f", "-d"], check=True)
+        run(["git", "reset", "--hard"])
+        run(["git", "clean", "-f", "-d"])
     except subprocess.CalledProcessError:
         raise click.Abort()
 
@@ -175,18 +176,18 @@ def save_changes(paths, message, build_url, skip_ci):
     try:
         for path in paths:
             logger["save-changes"].info(f"Adding path: {path}")
-            subprocess.run(["git", "add", "-A", str(path)], check=True)
+            run(["git", "add", "-A", str(path)])
 
-        proc = subprocess.run(
+        proc = run(
             ["git", "diff", "--name-only", "--cached"],
             stdout=subprocess.PIPE,
             check=False,
         )
         if proc.stdout:
             logger["save-changes"].info(f"Commit message: {message!r}")
-            subprocess.run(["git", "commit", "-m", message], check=True)
+            run(["git", "commit", "-m", message])
             logger["save-changes"].info("Pushing changes")
-            subprocess.run(["git", "push"], check=True)
+            run(["git", "push"])
         else:
             logger["save-changes"].warning("No changes to push")
     except subprocess.CalledProcessError:
