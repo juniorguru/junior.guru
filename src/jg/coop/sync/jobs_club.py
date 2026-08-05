@@ -380,10 +380,10 @@ async def prepare_thread_params(job: ListedJob) -> dict:
         )
         embeds.append(reason_embed)
 
-    return dict(
-        name=job.title_short,
-        content=content,
-        files=files,
-        embeds=embeds,
-        view=ui.View(ui.Button(emoji="👉", label="Celý inzerát", url=job.url)),
-    )
+    return {
+        "name": job.title_short,
+        "content": content,
+        "files": files,
+        "embeds": embeds,
+        "view": ui.View(ui.Button(emoji="👉", label="Celý inzerát", url=job.url)),
+    }

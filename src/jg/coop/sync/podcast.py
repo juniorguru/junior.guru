@@ -152,21 +152,21 @@ def process_episode(yaml_record):
         raise ValueError(f"Episode #{number} is missing guest_name")
 
     logger_ep.debug("Preparing data")
-    data = dict(
-        number=number,
-        publish_on=yaml_record["publish_on"],
-        title=yaml_record["title"],
-        guest_name=guest_name,
-        guest_has_feminine_name=guest_has_feminine_name,
-        guest_affiliation=guest_affiliation,
-        image_path=image_path,
-        description=yaml_record["description"],
-        media_slug=media_slug,
-        media_url=media_url,
-        media_size=media_size,
-        media_type=media_type,
-        media_duration_s=media_duration_s,
-    )
+    data = {
+        "number": number,
+        "publish_on": yaml_record["publish_on"],
+        "title": yaml_record["title"],
+        "guest_name": guest_name,
+        "guest_has_feminine_name": guest_has_feminine_name,
+        "guest_affiliation": guest_affiliation,
+        "image_path": image_path,
+        "description": yaml_record["description"],
+        "media_slug": media_slug,
+        "media_url": media_url,
+        "media_size": media_size,
+        "media_type": media_type,
+        "media_duration_s": media_duration_s,
+    }
 
     logger_ep.debug("Rendering poster")
     podcast_episode = PodcastEpisode(**data)
@@ -176,7 +176,7 @@ def process_episode(yaml_record):
     # the image renderer with a populated Peewee model object, so let's drop
     # the contents.
     podcast_episode.clear_dirty_fields()
-    tpl_context = dict(podcast_episode=podcast_episode)
+    tpl_context = {"podcast_episode": podcast_episode}
     poster_path = render_image_file(
         POSTER_WIDTH,
         POSTER_HEIGHT,
@@ -184,7 +184,7 @@ def process_episode(yaml_record):
         tpl_context,
         POSTERS_DIR,
         prefix=media_slug,
-        filters=dict(icon=icon),
+        filters={"icon": icon},
     )
     data["poster_path"] = poster_path.relative_to(IMAGES_DIR)
 

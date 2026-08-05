@@ -175,14 +175,14 @@ def mapping(mapping: dict, keys: Iterable) -> list:
 def mainnav(nav: Navigation) -> Generator[dict, None, None]:
     for item in list(nav)[:6]:
         first_child = _get_first_child(item)
-        yield dict(title=item.title, url=first_child.url, is_active=item.active)
+        yield {"title": item.title, "url": first_child.url, "is_active": item.active}
 
 
 def subnav(nav: Navigation) -> Generator[dict, None, None]:
     mainnav_item = next(item for item in nav if item.active)
     for item in mainnav_item.children:
         first_child = _get_first_child(item)
-        yield dict(title=item.title, url=first_child.url, is_active=item.active)
+        yield {"title": item.title, "url": first_child.url, "is_active": item.active}
 
 
 def _get_first_child(item: StructureItem) -> StructureItem:
@@ -212,14 +212,15 @@ def toc(page: Page) -> Generator[dict, None, None]:
             item_page = item.children[0]
         else:
             item_page = item
-        yield dict(
-            title=item_page.title,
-            url=item_page.url,
-            is_active=item.active,
-            headings=[
-                dict(title=heading.title, url=heading.url) for heading in item_page.toc
+        yield {
+            "title": item_page.title,
+            "url": item_page.url,
+            "is_active": item.active,
+            "headings": [
+                {"title": heading.title, "url": heading.url}
+                for heading in item_page.toc
             ],
-        )
+        }
 
 
 def parent_page(page: Page) -> StructureItem | None:

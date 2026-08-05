@@ -19,11 +19,11 @@ def test_parse_meta():
 
                 """
         )
-    ) == dict(
-        title="Jak na Git a GitHub",
-        description="Co je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a GitHubem? Jak začít s Gitem?",
-        template="main_handbook.html",
-    )
+    ) == {
+        "title": "Jak na Git a GitHub",
+        "description": "Co je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a GitHubem? Jak začít s Gitem?",
+        "template": "main_handbook.html",
+    }
 
 
 def test_parse_notes():

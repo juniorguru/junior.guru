@@ -18,11 +18,11 @@ def test_publish_at_prg():
 @pytest.mark.parametrize(
     "kwargs, expected",
     [
-        (dict(), "Adéla (Company) about testing"),
-        (dict(number=True, affiliation=True), "#1 Adéla (Company) about testing"),
-        (dict(number=False, affiliation=True), "Adéla (Company) about testing"),
-        (dict(number=True, affiliation=False), "#1 Adéla about testing"),
-        (dict(number=False, affiliation=False), "Adéla about testing"),
+        ({}, "Adéla (Company) about testing"),
+        ({"number": True, "affiliation": True}, "#1 Adéla (Company) about testing"),
+        ({"number": False, "affiliation": True}, "Adéla (Company) about testing"),
+        ({"number": True, "affiliation": False}, "#1 Adéla about testing"),
+        ({"number": False, "affiliation": False}, "Adéla about testing"),
     ],
 )
 def test_format_title(kwargs, expected):
@@ -36,11 +36,11 @@ def test_format_title(kwargs, expected):
 @pytest.mark.parametrize(
     "kwargs, expected",
     [
-        (dict(), "Adéla about testing"),
-        (dict(number=True, affiliation=True), "#1 Adéla about testing"),
-        (dict(number=False, affiliation=True), "Adéla about testing"),
-        (dict(number=True, affiliation=False), "#1 Adéla about testing"),
-        (dict(number=False, affiliation=False), "Adéla about testing"),
+        ({}, "Adéla about testing"),
+        ({"number": True, "affiliation": True}, "#1 Adéla about testing"),
+        ({"number": False, "affiliation": True}, "Adéla about testing"),
+        ({"number": True, "affiliation": False}, "#1 Adéla about testing"),
+        ({"number": False, "affiliation": False}, "Adéla about testing"),
     ],
 )
 def test_format_title_with_no_affiliation(kwargs, expected):
@@ -54,11 +54,11 @@ def test_format_title_with_no_affiliation(kwargs, expected):
 @pytest.mark.parametrize(
     "kwargs, expected",
     [
-        (dict(), "About testing"),
-        (dict(number=True, affiliation=True), "#1 About testing"),
-        (dict(number=False, affiliation=True), "About testing"),
-        (dict(number=True, affiliation=False), "#1 About testing"),
-        (dict(number=False, affiliation=False), "About testing"),
+        ({}, "About testing"),
+        ({"number": True, "affiliation": True}, "#1 About testing"),
+        ({"number": False, "affiliation": True}, "About testing"),
+        ({"number": True, "affiliation": False}, "#1 About testing"),
+        ({"number": False, "affiliation": False}, "About testing"),
     ],
 )
 def test_format_title_with_no_guest(kwargs, expected):

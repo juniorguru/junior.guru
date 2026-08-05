@@ -56,7 +56,7 @@ def test_times_min(test_db):
     sync.command_start("cows", 15 * NS_IN_MIN)
     sync.command_end("cows", 30 * NS_IN_MIN)
 
-    assert sync.times_min() == dict(cows=15, cats=10, dogs=5)
+    assert sync.times_min() == {"cows": 15, "cats": 10, "dogs": 5}
 
 
 @pytest.mark.parametrize(

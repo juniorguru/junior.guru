@@ -158,7 +158,7 @@ def main(
     images.init_templates_cache()
     with db.connection_context():
         sync = Sync.start(id)
-    context.obj = dict(sync=sync, skip_dependencies=not deps)
+    context.obj = {"sync": sync, "skip_dependencies": not deps}
     logger.debug(
         f"Sync #{id} starts with {sync.count_commands()} commands already recorded"
     )

@@ -73,8 +73,8 @@ async def sync_candidates_dms(
 
 
 def create_message(candidate: Candidate, emoji: str) -> dict:
-    return dict(
-        content=(
+    return {
+        "content": (
             f"{emoji} Ahoj! "
             "Tvůj profil na [junior.guru/candidates](https://junior.guru/candidates) "
             f"má **nedostatky**, takže je v seznamu kandidátů upozaděný. "
@@ -87,9 +87,9 @@ def create_message(candidate: Candidate, emoji: str) -> dict:
             "Tlačítkem pod touto zprávou přejdi na soubor, pak tři tečky vpravo nahoře, "
             "v menu najdi _Delete file_ a pak to potvrď zeleným _Commit changes_."
         ),
-        view=ui.View(
+        "view": ui.View(
             ui.Button(label="⚠️ Co mám opravit?", url=candidate.report_url),
             ui.Button(label="❌ Smazat profil", url=candidate.yaml_url),
         ),
-        suppress=True,
-    )
+        "suppress": True,
+    }

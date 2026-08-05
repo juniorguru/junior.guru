@@ -57,8 +57,8 @@ def fetch_customer_data(customer: stripe.Customer) -> str:
         country_code = payment_methods.data[0].card.country
     except IndexError:
         country_code = None
-    return dict(
-        id=customer.id,
-        email=customer.email,
-        country_code=country_code,
-    )
+    return {
+        "id": customer.id,
+        "email": customer.email,
+        "country_code": country_code,
+    }

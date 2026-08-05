@@ -62,11 +62,11 @@ def generate_redirects() -> Generator[GeneratedDocument, None, None]:
     for redirect in config.registry:
         yield GeneratedDocument(
             path=redirect.from_doc,
-            meta=dict(
-                title="Přesměrování",
-                template="redirect.html",
-                redirect=redirect.to_doc,
-            ),
+            meta={
+                "title": "Přesměrování",
+                "template": "redirect.html",
+                "redirect": redirect.to_doc,
+            },
             content=(DOCS_DIR / "redirect.jinja").read_text(),
         )
 
@@ -78,15 +78,15 @@ def generate_region_jobs_pages() -> Generator[GeneratedDocument, None, None]:
     yield GeneratedDocument(
         path=f"jobs/{REMOTE_TAG_SLUG}.jinja",
         meta=meta
-        | dict(
-            title=f"{meta['title']}: na dálku, z domova, remote",
-            description=(
+        | {
+            "title": f"{meta['title']}: na dálku, z domova, remote",
+            "description": (
                 "Pracovní příležitosti pro začátečníky v IT, "
                 f"které jsou na dálku, z domova, remote. {meta['description']}"
             ),
-            region="na dálku",
-            region_tag_slug=REMOTE_TAG_SLUG,
-        ),
+            "region": "na dálku",
+            "region_tag_slug": REMOTE_TAG_SLUG,
+        },
         content=content,
     )
     for region in REGIONS:
@@ -95,12 +95,12 @@ def generate_region_jobs_pages() -> Generator[GeneratedDocument, None, None]:
         yield GeneratedDocument(
             path=f"jobs/{doc_slug}.jinja",
             meta=meta
-            | dict(
-                title=f"{meta['title']}: {region}",
-                description=f"Jaké nabízí {region} příležitosti pro začátečníky v IT? {meta['description']}",
-                region=region,
-                region_tag_slug=tag_slug,
-            ),
+            | {
+                "title": f"{meta['title']}: {region}",
+                "description": f"Jaké nabízí {region} příležitosti pro začátečníky v IT? {meta['description']}",
+                "region": region,
+                "region_tag_slug": tag_slug,
+            },
             content=content,
         )
 
@@ -110,18 +110,18 @@ def generate_job_pages() -> Generator[GeneratedDocument, None, None]:
     for job in ListedJob.submitted_listing():
         yield GeneratedDocument(
             path=f"jobs/{job.submitted_job.id}.jinja",
-            meta=dict(
-                title=f"{job.title_short} – {job.company_name} – {job.location_text or '?'}",
-                description=(
+            meta={
+                "title": f"{job.title_short} – {job.company_name} – {job.location_text or '?'}",
+                "description": (
                     f"Pracovní nabídka pro začínající programátory: "
                     f"{job.title} – {job.company_name}, {job.location_text or '?'}"
                 ),
-                job_id=job.submitted_job.id,
-                job_company_name=job.company_name,
-                job_apply_url=job.apply_url or "",
-                job_apply_email=job.apply_email or "",
-                template="main_job.html",
-            ),
+                "job_id": job.submitted_job.id,
+                "job_company_name": job.company_name,
+                "job_apply_url": job.apply_url or "",
+                "job_apply_email": job.apply_email or "",
+                "template": "main_job.html",
+            },
             content=(DOCS_DIR / "job.jinja").read_text(),
         )
 
@@ -160,23 +160,23 @@ def generate_podcast_episode_pages() -> Generator[GeneratedDocument, None, None]
     for podcast_episode in PodcastEpisode.listing():
         yield GeneratedDocument(
             path=f"podcast/{podcast_episode.number}.jinja",
-            meta=dict(
-                title=f"Podcast – {podcast_episode.format_title()}",
-                description=f"Poslechni si {podcast_episode.number}. díl Junior Guru podcastu.",
-                podcast_episode_number=podcast_episode.number,
-                breadcrumb_parent="Podcast",
-                breadcrumb_item=(
+            meta={
+                "title": f"Podcast – {podcast_episode.format_title()}",
+                "description": f"Poslechni si {podcast_episode.number}. díl Junior Guru podcastu.",
+                "podcast_episode_number": podcast_episode.number,
+                "breadcrumb_parent": "Podcast",
+                "breadcrumb_item": (
                     podcast_episode.guest_name or f"Epizoda {podcast_episode.number}"
                 ),
-                thumbnail_title=podcast_episode.format_title(affiliation=False),
-                thumbnail_subheading=f"Epizoda {podcast_episode.number}",
-                thumbnail_image_path=podcast_episode.image_path,
-                thumbnail_button_heading="Poslouchej na",
-                thumbnail_button_link="junior.guru/podcast",
-                thumbnail_platforms=["youtube", "spotify", "apple"],
-                comments_heading="Máš otázky? Chceš probrat podobná témata?",
-                template="main_content_detail.html",
-            ),
+                "thumbnail_title": podcast_episode.format_title(affiliation=False),
+                "thumbnail_subheading": f"Epizoda {podcast_episode.number}",
+                "thumbnail_image_path": podcast_episode.image_path,
+                "thumbnail_button_heading": "Poslouchej na",
+                "thumbnail_button_link": "junior.guru/podcast",
+                "thumbnail_platforms": ["youtube", "spotify", "apple"],
+                "comments_heading": "Máš otázky? Chceš probrat podobná témata?",
+                "template": "main_content_detail.html",
+            },
             content=(DOCS_DIR / "podcast_episode.jinja").read_text(),
         )
 
@@ -186,12 +186,12 @@ def generate_course_provider_pages() -> Generator[GeneratedDocument, None, None]
     for course_provider in CourseProvider.listing():
         yield GeneratedDocument(
             path=f"courses/{course_provider.slug}.md",
-            meta=dict(
-                title=course_provider.page_title,
-                description=course_provider.page_description,
-                course_provider_slug=course_provider.slug,
-                topic_mention_id=course_provider.slug,
-            ),
+            meta={
+                "title": course_provider.page_title,
+                "description": course_provider.page_description,
+                "course_provider_slug": course_provider.slug,
+                "topic_mention_id": course_provider.slug,
+            },
             content=(DOCS_DIR / "course_provider.md").read_text(),
         )
 
@@ -201,18 +201,18 @@ def generate_newsletter_issue_pages() -> Generator[GeneratedDocument, None, None
     for newsletter_issue in NewsletterIssue.listing():
         yield GeneratedDocument(
             path=f"news/{newsletter_issue.slug}.md",
-            meta=dict(
-                title=newsletter_issue.subject,
-                description="Začínáš v IT? V tomhle newsletteru najdeš pozvánky, kurzy, podcasty, přednášky, články a další zdroje, které tě posunou a namotivují.",
-                date=newsletter_issue.published_on.isoformat(),
-                newsletter_issue_id=newsletter_issue.id,
-                template="main_subnav.html",
-                thumbnail_title=newsletter_issue.subject,
-                thumbnail_subheading="Newsletter",
-                thumbnail_date=newsletter_issue.published_on.isoformat(),
-                thumbnail_button_heading="Čti na",
-                thumbnail_button_link="junior.guru/news",
-            ),
+            meta={
+                "title": newsletter_issue.subject,
+                "description": "Začínáš v IT? V tomhle newsletteru najdeš pozvánky, kurzy, podcasty, přednášky, články a další zdroje, které tě posunou a namotivují.",
+                "date": newsletter_issue.published_on.isoformat(),
+                "newsletter_issue_id": newsletter_issue.id,
+                "template": "main_subnav.html",
+                "thumbnail_title": newsletter_issue.subject,
+                "thumbnail_subheading": "Newsletter",
+                "thumbnail_date": newsletter_issue.published_on.isoformat(),
+                "thumbnail_button_heading": "Čti na",
+                "thumbnail_button_link": "junior.guru/news",
+            },
             content=(DOCS_DIR / "newsletter_issue.md").read_text(),
         )
 

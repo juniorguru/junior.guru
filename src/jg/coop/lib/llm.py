@@ -65,11 +65,11 @@ async def ask_llm(
 ) -> Schema: ...
 
 
-retry_defaults = dict(
-    reraise=True,
-    before_sleep=before_sleep_log(logger, logging.DEBUG),
-    stop=stop_after_attempt(5),
-)
+retry_defaults = {
+    "reraise": True,
+    "before_sleep": before_sleep_log(logger, logging.DEBUG),
+    "stop": stop_after_attempt(5),
+}
 
 
 @mutates("openai", raises=True)

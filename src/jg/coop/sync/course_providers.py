@@ -102,13 +102,13 @@ def main():
         ("page_last_month_pageviews", 30),
     ]:
         logger.info(f"Fetching analytics: {metric_name}")
-        params = dict(
-            version=5,
-            fields="pageviews,pages",
-            info="false",
-            page="/courses/*",
-            start=str(date.today() - timedelta(days=days)),
-        )
+        params = {
+            "version": 5,
+            "fields": "pageviews,pages",
+            "info": "false",
+            "page": "/courses/*",
+            "start": str(date.today() - timedelta(days=days)),
+        }
         response = httpx.get(
             "https://simpleanalytics.com/junior.guru.json", params=params
         )

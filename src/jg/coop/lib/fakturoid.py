@@ -31,7 +31,7 @@ def auth(
             "User-Agent": user_agent,
             "Authorization": f"Basic {credentials_base64}",
         },
-        json=dict(grant_type="client_credentials"),
+        json={"grant_type": "client_credentials"},
         follow_redirects=True,
     )
     response.raise_for_status()

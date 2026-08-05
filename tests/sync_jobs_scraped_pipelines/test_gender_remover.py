@@ -74,7 +74,7 @@ from jg.coop.sync.jobs_scraped.pipelines.gender_remover import process
 )
 @pytest.mark.asyncio
 async def test_gender_remover_german(title, expected):
-    item = await process(dict(title=title))
+    item = await process({"title": title})
 
     assert item["title"] == expected
 
@@ -90,7 +90,7 @@ async def test_gender_remover_german(title, expected):
 )
 @pytest.mark.asyncio
 async def test_gender_remover_french(title, expected):
-    item = await process(dict(title=title))
+    item = await process({"title": title})
 
     assert item["title"] == expected
 
@@ -114,7 +114,7 @@ async def test_gender_remover_french(title, expected):
 )
 @pytest.mark.asyncio
 async def test_gender_remover_czech(title, expected):
-    item = await process(dict(title=title))
+    item = await process({"title": title})
 
     assert item["title"] == expected
 
@@ -127,6 +127,6 @@ async def test_gender_remover_czech(title, expected):
 )
 @pytest.mark.asyncio
 async def test_gender_remover_false_positives(title):
-    item = await process(dict(title=title))
+    item = await process({"title": title})
 
     assert item["title"] == title
