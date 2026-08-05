@@ -415,7 +415,7 @@ class ListedJob(BaseModel):
 
     @classmethod
     def remote_listing(cls) -> Iterable[Self]:
-        return cls.listing().where(cls.remote == True)  # noqa: E712
+        return cls.listing().where(cls.remote == True)
 
     @classmethod
     def tags_listing(cls, tags: Iterable[str]) -> Iterable[Self]:

@@ -43,7 +43,7 @@ class Partner(BaseModel):
 
     @classmethod
     def free_listing(cls) -> Iterable[Self]:
-        return cls.listing().where(cls.is_free == True)  # noqa: E712
+        return cls.listing().where(cls.is_free == True)
 
     @classmethod
     def count(cls) -> int:

@@ -88,7 +88,11 @@ asyncio_default_fixture_loop_scope = "function"
 target-version = "py313"
 
 [tool.ruff.lint]
-extend-select = ["C420", "E4", "E7", "E9", "FURB110", "I", "PLC0207", "PLC1802", "SIM910"]
+# Rely on Ruff's default rule set, plus isort ("I"). The ignored families
+# clash with intentional patterns here: DTZ (deliberately naive datetimes),
+# BLE001 (broad excepts in sync scripts), RUF012 (mutable class defaults used
+# as config), ASYNC210/221/251 (blocking calls in async setup code).
+extend-select = ["I"]
 ignore = ["ASYNC210", "ASYNC221", "ASYNC251", "BLE001", "DTZ", "RUF012"]
 
 [tool.ruff.lint.isort]

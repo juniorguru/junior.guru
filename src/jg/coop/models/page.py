@@ -76,7 +76,7 @@ class Page(BaseModel):
             .from_(cls, stages)
             .where(
                 cls.nav_name.is_null(False),
-                cls.noindex == False,  # noqa: E712
+                cls.noindex == False,
                 stages.c.value == slug,
             )
             .order_by(cls.nav_sort_key)
@@ -89,7 +89,7 @@ class Page(BaseModel):
             cls.listing()
             .from_(cls, stages)
             .where(
-                cls.noindex == True,  # noqa: E712
+                cls.noindex == True,
                 stages.c.value == slug,
             )
             .order_by(cls.title)
