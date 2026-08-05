@@ -71,7 +71,7 @@ def build_event_args(event: Event) -> dict:
         ui.Button(
             emoji="<:youtube:976200175490060299>",
             label="Záznam",
-            url=recording_url if recording_url else None,
+            url=recording_url or None,
             disabled=not recording_url,
         )
     )

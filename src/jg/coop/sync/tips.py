@@ -164,11 +164,7 @@ async def create_tip(channel: ForumChannel, tip: dict) -> Thread:
 @mutations.mutates_discord()
 async def update_tip(thread: Thread, tip: dict) -> None:
     logger.info(f"Updating tip: {tip['title']}")
-    message = (
-        thread.starting_message
-        if thread.starting_message
-        else (await thread.fetch_message(thread.id))
-    )
+    message = thread.starting_message or (await thread.fetch_message(thread.id))
     view = await create_view(tip["edit_url"])
 
     thread_params = {}
