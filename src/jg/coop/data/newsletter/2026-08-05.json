@@ -7,7 +7,7 @@
     "deliveries": 733,
     "opens": 0,
     "clicks": 0,
-    "temporary_failures": 3,
+    "temporary_failures": 6,
     "permanent_failures": 0,
     "unsubscriptions": 4,
     "complaints": 0,
@@ -24,7 +24,7 @@
     "temporary_failure_breakdown": [
       {
         "code": "unknown",
-        "count": 1
+        "count": 4
       },
       {
         "code": "ip_blocked",
