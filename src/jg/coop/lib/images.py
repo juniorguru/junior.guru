@@ -4,12 +4,13 @@ import os
 import pickle
 import shutil
 import time
+from collections.abc import Callable, Generator, Iterable
 from functools import lru_cache
 from hashlib import sha256
 from io import BytesIO
 from pathlib import Path
 from subprocess import run
-from typing import Any, Callable, Generator, Iterable
+from typing import Any
 
 from fontTools.ttLib import TTFont
 from fontTools.ttLib.tables._c_m_a_p import CmapSubtable

@@ -1,5 +1,5 @@
+from collections.abc import Callable
 from pathlib import Path
-from typing import Callable
 
 from jinja2 import Environment as BaseEnvironment, FileSystemLoader
 from mkdocs.config import Config

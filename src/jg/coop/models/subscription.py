@@ -1,7 +1,8 @@
 from collections import Counter
+from collections.abc import Iterable
 from datetime import date, timedelta
 from enum import StrEnum, unique
-from typing import Iterable, Self
+from typing import Self
 
 from peewee import (
     Case,

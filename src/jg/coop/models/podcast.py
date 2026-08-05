@@ -1,6 +1,7 @@
 import math
+from collections.abc import Iterable
 from datetime import date, datetime, time
-from typing import Iterable, Self
+from typing import Self
 from zoneinfo import ZoneInfo
 
 from peewee import BooleanField, CharField, DateField, IntegerField

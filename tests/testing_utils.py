@@ -1,7 +1,8 @@
 import random
+from collections.abc import Generator
 from datetime import date, datetime, timedelta
 from pathlib import Path
-from typing import Any, Generator
+from typing import Any
 
 import pytest
 from peewee import SqliteDatabase

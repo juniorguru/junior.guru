@@ -3,9 +3,10 @@ import json
 import logging
 import os
 import re
+from collections.abc import Callable, Generator
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta, timezone
-from typing import Any, Callable, Generator
+from typing import Any
 
 import httpx
 from gql import Client, gql

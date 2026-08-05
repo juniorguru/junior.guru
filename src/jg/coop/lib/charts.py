@@ -1,10 +1,11 @@
 import calendar
 import itertools
 from collections import defaultdict
+from collections.abc import Callable, Generator, Iterable
 from datetime import date, timedelta
 from functools import cache
 from numbers import Number
-from typing import Callable, Generator, Iterable, TypeVar
+from typing import TypeVar
 
 from slugify import slugify
 

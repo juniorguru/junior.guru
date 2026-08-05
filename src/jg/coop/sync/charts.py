@@ -1,6 +1,7 @@
+from collections.abc import Callable
 from datetime import date
 from operator import attrgetter
-from typing import Any, Callable, NotRequired, TypedDict
+from typing import Any, NotRequired, TypedDict
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import charts, loggers

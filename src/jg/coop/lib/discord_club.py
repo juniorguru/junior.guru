@@ -1,11 +1,12 @@
 import asyncio
 import itertools
 import re
+from collections.abc import AsyncGenerator
 from datetime import date, datetime, timedelta, timezone
 from enum import IntEnum, StrEnum, unique
 from functools import wraps
 from pprint import pformat
-from typing import TYPE_CHECKING, AsyncGenerator, TypedDict
+from typing import TYPE_CHECKING, TypedDict
 
 import discord
 import emoji

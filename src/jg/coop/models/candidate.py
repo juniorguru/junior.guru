@@ -1,9 +1,10 @@
 import itertools
 import json
+from collections.abc import Iterable
 from datetime import date, timedelta
 from enum import StrEnum, auto
 from operator import attrgetter
-from typing import Iterable, Self
+from typing import Self
 
 from peewee import (
     BooleanField,

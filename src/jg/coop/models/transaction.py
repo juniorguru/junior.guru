@@ -1,9 +1,10 @@
 import functools
 import json
 import math
+from collections.abc import Iterable
 from datetime import date
 from enum import StrEnum, unique
-from typing import Iterable, Self
+from typing import Self
 
 from peewee import CharField, DateField, IntegerField
 from playhouse.shortcuts import model_to_dict

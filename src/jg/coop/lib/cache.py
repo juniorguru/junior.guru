@@ -1,8 +1,9 @@
 import asyncio
 import logging
+from collections.abc import Callable
 from datetime import timedelta
 from functools import lru_cache, wraps
-from typing import Any, Callable
+from typing import Any
 
 from diskcache import Cache
 from diskcache.core import ENOVAL, args_to_key, full_name

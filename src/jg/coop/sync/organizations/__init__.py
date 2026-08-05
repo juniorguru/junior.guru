@@ -1,8 +1,9 @@
 import re
+from collections.abc import Iterable
 from datetime import date, timedelta
 from operator import itemgetter
 from pathlib import Path
-from typing import Annotated, Any, Iterable, Literal, TypedDict
+from typing import Annotated, Any, Literal, TypedDict
 
 import click
 import yaml

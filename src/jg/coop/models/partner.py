@@ -1,4 +1,5 @@
-from typing import Iterable, Literal, Self
+from collections.abc import Iterable
+from typing import Literal, Self
 
 from peewee import BooleanField, CharField, DateField, IntegerField, TextField, fn
 

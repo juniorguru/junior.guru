@@ -1,7 +1,8 @@
 import itertools
 import json
+from collections.abc import Iterable
 from datetime import date
-from typing import Iterable, Self
+from typing import Self
 
 from peewee import CharField, IntegerField
 from playhouse.shortcuts import model_to_dict

@@ -1,10 +1,10 @@
 import asyncio
 import pkgutil
 import threading
+from collections.abc import Awaitable, Callable, Generator
 from functools import wraps
 from importlib import import_module
 from types import ModuleType
-from typing import Awaitable, Callable, Generator
 
 import click
 

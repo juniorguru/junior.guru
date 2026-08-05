@@ -1,10 +1,11 @@
 import math
 import random
 import re
+from collections.abc import Generator, Iterable
 from datetime import UTC, timedelta
 from numbers import Number
 from operator import itemgetter
-from typing import Generator, Iterable, Literal
+from typing import Literal
 from urllib.parse import unquote, urljoin, urlparse, urlunparse
 from zoneinfo import ZoneInfo
 
