@@ -4,7 +4,7 @@ from datetime import timedelta
 from enum import StrEnum
 from functools import lru_cache
 from textwrap import dedent
-from typing import TypeVar, overload
+from typing import overload
 
 import tiktoken
 from openai import AsyncOpenAI, InternalServerError, RateLimitError
@@ -30,9 +30,6 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 logger = loggers.from_path(__file__)
 
 
-Schema = TypeVar("T", bound=BaseModel)
-
-
 class LLMModel(StrEnum):
     simple = "gpt-4o-mini"
     medium = "gpt-4.1-mini"
@@ -56,7 +53,7 @@ async def ask_llm(
 
 
 @overload
-async def ask_llm(
+async def ask_llm[Schema: BaseModel](
     system_prompt: str,
     user_prompt: str,
     model: LLMModel = LLMModel.simple,
@@ -100,7 +97,7 @@ retry_defaults = {
     **retry_defaults,
 )
 @cache(expire=timedelta(days=60), tag="llm")
-async def ask_llm(
+async def ask_llm[Schema: BaseModel](
     system_prompt: str,
     user_prompt: str,
     model: LLMModel = LLMModel.simple,

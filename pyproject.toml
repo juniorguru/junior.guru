@@ -88,7 +88,7 @@ asyncio_default_fixture_loop_scope = "function"
 target-version = "py313"
 
 [tool.ruff.lint]
-select = ["C408", "E4", "E7", "E9", "F", "FURB167", "I", "RUF100", "UP017", "UP034", "UP035", "UP043"]
+select = ["C408", "E4", "E7", "E9", "F", "FURB167", "I", "RUF100", "UP017", "UP034", "UP035", "UP043", "UP047"]
 
 [tool.ruff.lint.isort]
 combine-as-imports = true
