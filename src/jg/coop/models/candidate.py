@@ -385,7 +385,7 @@ class CandidateProject(BaseModel):
 
     @property
     def title_pretty(self) -> str:
-        return remove_emoji(self.title if self.title else self.name_repo)
+        return remove_emoji(self.title or self.name_repo)
 
     @property
     def duration(self) -> timedelta:
