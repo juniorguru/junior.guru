@@ -61,7 +61,7 @@ class Members(BaseModel):
             row.month: row.count
             for row in cls.select().where(cls.name == name).order_by(cls.month)
         }
-        return [counts.get(month.strftime("%Y-%m"), None) for month in months]
+        return [counts.get(month.strftime("%Y-%m")) for month in months]
 
     @classmethod
     def monthly_members(cls, months: Iterable[date]) -> list[int]:
