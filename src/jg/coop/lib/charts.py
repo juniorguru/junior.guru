@@ -5,12 +5,8 @@ from collections.abc import Callable, Generator, Iterable
 from datetime import date, timedelta
 from functools import cache
 from numbers import Number
-from typing import TypeVar
 
 from slugify import slugify
-
-
-T = TypeVar("T")
 
 
 ANNOTATION_LABEL_OPTIONS = {
@@ -79,7 +75,7 @@ def month_end(day: date) -> date:
     return month_range(day)[1]
 
 
-def group_by_month_end(
+def group_by_month_end[T](
     items: Iterable[T], day_fn: Callable[[T], date]
 ) -> dict[date, list[T]]:
     grouped = defaultdict(list)
@@ -113,7 +109,7 @@ def yoy_growth_ptc(
     return growth_ptc(counts_fn(months), counts_fn(years_ago))
 
 
-def per_month_aggregate_breakdown(
+def per_month_aggregate_breakdown[T](
     items: Iterable[T],
     day_fn: Callable[[T], date],
     value_fns: dict[str, Callable[[T], Number]],

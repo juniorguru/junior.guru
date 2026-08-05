@@ -4,7 +4,7 @@ from datetime import date, datetime, timedelta
 from enum import StrEnum, auto, unique
 from itertools import groupby
 from operator import attrgetter
-from typing import Optional, Self, TypeVar
+from typing import Optional, Self
 
 from discord import ChannelType
 from peewee import (
@@ -25,8 +25,6 @@ from jg.coop.lib.discord_club import (
 )
 from jg.coop.models.base import BaseModel, JSONField, check_enum
 
-
-T = TypeVar("T")
 
 TOP_MEMBERS_PERCENT = 0.05
 
@@ -579,14 +577,14 @@ class ClubPin(BaseModel):
         )
 
 
-def non_empty_min(values: Iterable[T | None]) -> T | None:
+def non_empty_min[T](values: Iterable[T | None]) -> T | None:
     values = list(filter(None, values))
     if values:
         return min(values)
     return None
 
 
-def non_empty_max(values: Iterable[T | None]) -> T | None:
+def non_empty_max[T](values: Iterable[T | None]) -> T | None:
     values = list(filter(None, values))
     if values:
         return max(values)
