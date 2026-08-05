@@ -10,7 +10,7 @@ import click
 
 
 def command_name(module_name: str) -> str:
-    return module_name.split(".")[-1].replace("_", "-")
+    return module_name.rsplit(".", maxsplit=1)[-1].replace("_", "-")
 
 
 def import_command(name: str, import_path: str) -> click.Command:
