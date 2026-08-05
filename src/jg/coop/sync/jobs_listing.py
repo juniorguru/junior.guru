@@ -52,7 +52,7 @@ def main(actor_name: str):
 
     status_by_url = {check["url"]: check["ok"] for check in checks}
     for scraped_job in scraped_jobs:
-        status = status_by_url.get(scraped_job.url, None)
+        status = status_by_url.get(scraped_job.url)
         status_for_humans = {
             None: "N/A",
             True: "OK",
