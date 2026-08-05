@@ -1,6 +1,6 @@
 import asyncio
 from collections.abc import AsyncGenerator
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 
 from discord import ChannelType, DMChannel, Member, Message, Reaction, User
 from discord.abc import GuildChannel
@@ -246,5 +246,5 @@ def get_history_after(
         if now.tzinfo is None:
             raise ValueError("now must be timezone-aware")
     else:
-        now = datetime.now(timezone.utc)
+        now = datetime.now(UTC)
     return now - history_since

@@ -5,7 +5,7 @@ import os
 import re
 from collections.abc import Callable, Generator
 from dataclasses import dataclass
-from datetime import date, datetime, timedelta, timezone
+from datetime import UTC, date, datetime, timedelta
 from typing import Any
 
 import httpx
@@ -282,7 +282,7 @@ def is_individual_plan(plan: dict) -> bool:
 
 
 def timestamp_to_datetime(timestamp: int) -> datetime:
-    return datetime.fromtimestamp(timestamp, tz=timezone.utc).replace(tzinfo=None)
+    return datetime.fromtimestamp(timestamp, tz=UTC).replace(tzinfo=None)
 
 
 def timestamp_to_date(timestamp: int) -> date:

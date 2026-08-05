@@ -2,7 +2,7 @@ import asyncio
 import itertools
 import re
 from collections.abc import AsyncGenerator
-from datetime import date, datetime, timedelta, timezone
+from datetime import UTC, date, datetime, timedelta
 from enum import IntEnum, StrEnum, unique
 from functools import wraps
 from pprint import pformat
@@ -23,7 +23,7 @@ CLUB_GUILD_ID = 769966886598737931
 DEFAULT_AUTO_ARCHIVE_DURATION = 10_080  # minutes
 
 DEFAULT_THREAD_CREATED_AT = datetime(
-    2022, 1, 9, tzinfo=timezone.utc
+    2022, 1, 9, tzinfo=UTC
 )  # threads have 'created_at' since 2022-01-09
 
 DEFAULT_CHANNELS_HISTORY_SINCE = timedelta(days=380)
