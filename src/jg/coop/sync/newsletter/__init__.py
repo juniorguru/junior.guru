@@ -4,7 +4,7 @@ from datetime import date
 from operator import itemgetter
 from pathlib import Path
 from pprint import pformat
-from typing import Generator, Literal
+from typing import Literal
 
 import click
 from jinja2 import Template
@@ -339,7 +339,7 @@ async def delete_old_drafts(api: ButtondownAPI, max_drafts: int) -> None:
 
 def get_cv_review_types(
     tags: list[str],
-) -> Generator[Literal["cv", "gh", "li"]]:
+) -> list[Literal["cv", "gh", "li"]]:
     prefix = "zpětná vazba na"
     relevant_tags = [tag for tag in map(str.lower, tags) if tag.startswith(prefix)]
     return [tag.removeprefix(prefix).strip() for tag in relevant_tags]
