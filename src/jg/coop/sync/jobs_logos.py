@@ -79,13 +79,11 @@ def main(actor_name: str, clear_files: bool):
     logger.info("Collecting logo URLs")
     source_urls = sorted(
         set(
-            (
-                url
-                for url in itertools.chain.from_iterable(
-                    job.company_logo_source_urls for job in jobs
-                )
-                if url.startswith(("http://", "https://"))
+            url
+            for url in itertools.chain.from_iterable(
+                job.company_logo_source_urls for job in jobs
             )
+            if url.startswith(("http://", "https://"))
         )
     )
     try:

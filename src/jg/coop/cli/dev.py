@@ -84,11 +84,9 @@ def upgrade_lychee(ci_config_path: Path | str):
     response = httpx.get(api_url)
     response.raise_for_status()
     linux_musl = next(
-        (
-            asset
-            for asset in response.json().get("assets", [])
-            if "x86_64-unknown-linux-musl" in asset["name"]
-        )
+        asset
+        for asset in response.json().get("assets", [])
+        if "x86_64-unknown-linux-musl" in asset["name"]
     )
     download_url = linux_musl["browser_download_url"]
     logger.debug(f"Latest lychee release download URL: {download_url}")

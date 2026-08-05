@@ -344,7 +344,7 @@ def prepare_tiers(
     )
     for tier_name, data in (extras or {}).items():
         try:
-            tier = next((tier for tier in tiers if tier["name"] == tier_name))
+            tier = next(tier for tier in tiers if tier["name"] == tier_name)
             tier.update(data)
         except StopIteration:
             raise ValueError(f"Tier {tier_name!r} not found")
