@@ -279,7 +279,7 @@ def is_partner_plan(plan: dict) -> bool:
 
 
 def is_individual_plan(plan: dict) -> bool:
-    return re.search(r"\bčlenství\sv\sklubu\b", plan["name"], re.I) is not None
+    return re.search(r"\bčlenství\sv\sklubu\b", plan["name"], re.IGNORECASE) is not None
 
 
 def timestamp_to_datetime(timestamp: int) -> datetime:

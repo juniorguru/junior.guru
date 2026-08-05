@@ -6,7 +6,7 @@ from urllib.parse import urlparse
 def coerce(mapping, record):
     data = {}
     for key_pattern, (key_name, key_coerce) in mapping.items():
-        key_re = re.compile(key_pattern, re.I)
+        key_re = re.compile(key_pattern, re.IGNORECASE)
         for record_key, record_value in record.items():
             if key_re.search(record_key):
                 value = key_coerce(record_value)
