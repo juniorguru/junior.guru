@@ -339,7 +339,7 @@ async def delete_old_drafts(api: ButtondownAPI, max_drafts: int) -> None:
 
 def get_cv_review_types(
     tags: list[str],
-) -> Generator[Literal["cv", "gh", "li"], None, None]:
+) -> Generator[Literal["cv", "gh", "li"]]:
     prefix = "zpětná vazba na"
     relevant_tags = [tag for tag in map(str.lower, tags) if tag.startswith(prefix)]
     return [tag.removeprefix(prefix).strip() for tag in relevant_tags]

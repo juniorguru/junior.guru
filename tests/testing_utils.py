@@ -9,7 +9,7 @@ from peewee import SqliteDatabase
 from jg.coop.models.base import BaseModel, db as production_db
 
 
-def prepare_test_db(models: list[BaseModel]) -> Generator[SqliteDatabase, None, None]:
+def prepare_test_db(models: list[BaseModel]) -> Generator[SqliteDatabase]:
     """
     Prepares a temporary in-memory SQLite database with the given models
     and the same custom functions as on the production database.

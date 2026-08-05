@@ -197,7 +197,7 @@ def _get_source_paths(metafile: dict[str, Any]) -> list[str]:
 
 def _get_fs_snapshot(
     paths: Iterable[str | Path],
-) -> Generator[tuple[str, tuple[float, int]], None, None]:
+) -> Generator[tuple[str, tuple[float, int]]]:
     for path in paths:
         try:
             stat = Path(path).stat()

@@ -172,13 +172,13 @@ def mapping(mapping: dict, keys: Iterable) -> list:
     return [mapping[key] for key in keys]
 
 
-def mainnav(nav: Navigation) -> Generator[dict, None, None]:
+def mainnav(nav: Navigation) -> Generator[dict]:
     for item in list(nav)[:6]:
         first_child = _get_first_child(item)
         yield {"title": item.title, "url": first_child.url, "is_active": item.active}
 
 
-def subnav(nav: Navigation) -> Generator[dict, None, None]:
+def subnav(nav: Navigation) -> Generator[dict]:
     mainnav_item = next(item for item in nav if item.active)
     for item in mainnav_item.children:
         first_child = _get_first_child(item)
@@ -196,7 +196,7 @@ def _get_first_child(item: StructureItem) -> StructureItem:
     return children[0]
 
 
-def toc(page: Page) -> Generator[dict, None, None]:
+def toc(page: Page) -> Generator[dict]:
     # for pages without children, this should result in the same
     # value as page.parent, but for pages further down the tree,
     # this ensures we display only the top-level items, regardless

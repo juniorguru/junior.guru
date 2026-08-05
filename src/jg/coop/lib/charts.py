@@ -45,7 +45,7 @@ def months(from_date: date, to_date: date) -> list[date]:
     return list(generate_months(from_date, to_date))
 
 
-def generate_months(from_date: date, to_date: date) -> Generator[date, None, None]:
+def generate_months(from_date: date, to_date: date) -> Generator[date]:
     d = from_date
     while d <= to_date:
         last_date_of_month = d.replace(day=calendar.monthrange(d.year, d.month)[1])

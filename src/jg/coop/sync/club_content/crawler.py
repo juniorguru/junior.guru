@@ -210,7 +210,7 @@ def get_channel_logger(
 async def fetch_messages(
     channel: GuildChannel | DMChannel,
     after: datetime | None,
-) -> AsyncGenerator[Message, None]:
+) -> AsyncGenerator[Message]:
     logger_m = logger["messages"][channel.id]
 
     # Get channel history iterator
@@ -230,7 +230,7 @@ async def fetch_messages(
 
 async def fetch_members_reacting_by_pin(
     reactions: list[Reaction],
-) -> AsyncGenerator[User | Member, None]:
+) -> AsyncGenerator[User | Member]:
     for reaction in reactions:
         if emoji_name(reaction.emoji) == ClubEmoji.PIN:
             async for user in reaction.users():

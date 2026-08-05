@@ -126,7 +126,7 @@ class MutatingProxy:
 
 
 @contextmanager
-def mutating(*args, **kwargs) -> Generator[MutatingProxy, None, None]:
+def mutating(*args, **kwargs) -> Generator[MutatingProxy]:
     yield MutatingProxy(*args, **kwargs)
 
 

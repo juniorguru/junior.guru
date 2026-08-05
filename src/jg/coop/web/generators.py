@@ -57,7 +57,7 @@ class RedirectsConfig(YAMLConfig):
     registry: list[RedirectConfig]
 
 
-def generate_redirects() -> Generator[GeneratedDocument, None, None]:
+def generate_redirects() -> Generator[GeneratedDocument]:
     config = RedirectsConfig(**yaml.safe_load(REDIRECTS_YAML_PATH.read_text()))
     for redirect in config.registry:
         yield GeneratedDocument(
@@ -71,7 +71,7 @@ def generate_redirects() -> Generator[GeneratedDocument, None, None]:
         )
 
 
-def generate_region_jobs_pages() -> Generator[GeneratedDocument, None, None]:
+def generate_region_jobs_pages() -> Generator[GeneratedDocument]:
     jobs_file = Path("src/jg/coop/web/docs/jobs.jinja")
     jobs_text = jobs_file.read_text(encoding="utf-8-sig", errors="strict")
     content, meta = parse_document(jobs_text)
@@ -106,7 +106,7 @@ def generate_region_jobs_pages() -> Generator[GeneratedDocument, None, None]:
 
 
 @db.connection_context()
-def generate_job_pages() -> Generator[GeneratedDocument, None, None]:
+def generate_job_pages() -> Generator[GeneratedDocument]:
     for job in ListedJob.submitted_listing():
         yield GeneratedDocument(
             path=f"jobs/{job.submitted_job.id}.jinja",
@@ -127,7 +127,7 @@ def generate_job_pages() -> Generator[GeneratedDocument, None, None]:
 
 
 @db.connection_context()
-def generate_event_pages() -> Generator[GeneratedDocument, None, None]:
+def generate_event_pages() -> Generator[GeneratedDocument]:
     archive_size = Event.count_recording()
     for event in Event.listing():
         title_suffix = "online akce na Discordu junior.guru"
@@ -156,7 +156,7 @@ def generate_event_pages() -> Generator[GeneratedDocument, None, None]:
 
 
 @db.connection_context()
-def generate_podcast_episode_pages() -> Generator[GeneratedDocument, None, None]:
+def generate_podcast_episode_pages() -> Generator[GeneratedDocument]:
     for podcast_episode in PodcastEpisode.listing():
         yield GeneratedDocument(
             path=f"podcast/{podcast_episode.number}.jinja",
@@ -182,7 +182,7 @@ def generate_podcast_episode_pages() -> Generator[GeneratedDocument, None, None]
 
 
 @db.connection_context()
-def generate_course_provider_pages() -> Generator[GeneratedDocument, None, None]:
+def generate_course_provider_pages() -> Generator[GeneratedDocument]:
     for course_provider in CourseProvider.listing():
         yield GeneratedDocument(
             path=f"courses/{course_provider.slug}.md",
@@ -197,7 +197,7 @@ def generate_course_provider_pages() -> Generator[GeneratedDocument, None, None]
 
 
 @db.connection_context()
-def generate_newsletter_issue_pages() -> Generator[GeneratedDocument, None, None]:
+def generate_newsletter_issue_pages() -> Generator[GeneratedDocument]:
     for newsletter_issue in NewsletterIssue.listing():
         yield GeneratedDocument(
             path=f"news/{newsletter_issue.slug}.md",

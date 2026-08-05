@@ -46,9 +46,7 @@ class Logger(logging.Logger):
     def __getitem__(self, name) -> logging.Logger:
         return self.getChild(str(name))
 
-    def progress(
-        self, iterable: Iterable[T], chunk_size=100
-    ) -> Generator[T, None, None]:
+    def progress(self, iterable: Iterable[T], chunk_size=100) -> Generator[T]:
         total_count = 0
         for chunk in chunks(iterable, size=chunk_size):
             yield from chunk

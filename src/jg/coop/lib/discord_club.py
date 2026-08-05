@@ -238,7 +238,7 @@ def is_message_over_period_ago(
 
 async def fetch_threads(
     channel: discord.abc.GuildChannel | discord.DMChannel,
-) -> AsyncGenerator[discord.Thread, None]:
+) -> AsyncGenerator[discord.Thread]:
     try:
         channel_threads = channel.threads
     except AttributeError:
