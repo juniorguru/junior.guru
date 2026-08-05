@@ -167,9 +167,27 @@ def test_prepare_tiers():
     ]
 
     assert prepare_tiers(plans) == [
-        dict(priority=0, plan_id=111, name="Prdíme", price=1, member_price=None),
-        dict(priority=1, plan_id=222, name="Smrdíme", price=2, member_price=2),
-        dict(priority=2, plan_id=333, name="Voníme", price=3, member_price=3),
+        {
+            "priority": 0,
+            "plan_id": 111,
+            "name": "Prdíme",
+            "price": 1,
+            "member_price": None,
+        },
+        {
+            "priority": 1,
+            "plan_id": 222,
+            "name": "Smrdíme",
+            "price": 2,
+            "member_price": 2,
+        },
+        {
+            "priority": 2,
+            "plan_id": 333,
+            "name": "Voníme",
+            "price": 3,
+            "member_price": 3,
+        },
     ]
 
 
@@ -198,35 +216,35 @@ def test_prepare_tiers_with_extras():
         ),
     ]
     extras = {
-        "Smrdíme": dict(max_sponsors=4, courses_highlight=True),
-        "Prdíme": dict(courses_highlight=True),
+        "Smrdíme": {"max_sponsors": 4, "courses_highlight": True},
+        "Prdíme": {"courses_highlight": True},
     }
 
     assert prepare_tiers(plans, extras=extras) == [
-        dict(
-            priority=0,
-            plan_id=111,
-            name="Prdíme",
-            price=1,
-            member_price=None,
-            courses_highlight=True,
-        ),
-        dict(
-            priority=1,
-            plan_id=222,
-            name="Smrdíme",
-            price=2,
-            member_price=2,
-            max_sponsors=4,
-            courses_highlight=True,
-        ),
-        dict(
-            priority=2,
-            plan_id=333,
-            name="Voníme",
-            price=3,
-            member_price=3,
-        ),
+        {
+            "priority": 0,
+            "plan_id": 111,
+            "name": "Prdíme",
+            "price": 1,
+            "member_price": None,
+            "courses_highlight": True,
+        },
+        {
+            "priority": 1,
+            "plan_id": 222,
+            "name": "Smrdíme",
+            "price": 2,
+            "member_price": 2,
+            "max_sponsors": 4,
+            "courses_highlight": True,
+        },
+        {
+            "priority": 2,
+            "plan_id": 333,
+            "name": "Voníme",
+            "price": 3,
+            "member_price": 3,
+        },
     ]
 
 
@@ -249,7 +267,13 @@ def test_prepare_tiers_ignores_individual_plans():
     ]
 
     assert prepare_tiers(plans) == [
-        dict(priority=0, plan_id=333, name="Voníme", price=3, member_price=3),
+        {
+            "priority": 0,
+            "plan_id": 333,
+            "name": "Voníme",
+            "price": 3,
+            "member_price": 3,
+        },
     ]
 
 
@@ -272,5 +296,11 @@ def test_prepare_tiers_ignores_private_plans():
     ]
 
     assert prepare_tiers(plans) == [
-        dict(priority=0, plan_id=333, name="Voníme", price=3, member_price=3),
+        {
+            "priority": 0,
+            "plan_id": 333,
+            "name": "Voníme",
+            "price": 3,
+            "member_price": 3,
+        },
     ]

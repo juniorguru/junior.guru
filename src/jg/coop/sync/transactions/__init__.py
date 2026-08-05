@@ -82,7 +82,7 @@ def main(
         )
         if not confirm("Continue anyway?"):
             raise click.Abort()
-    secrets = dict(video_outsourcing_token=video_outsourcing_token)
+    secrets = {"video_outsourcing_token": video_outsourcing_token}
 
     logger.info("Preparing database")
     Transaction.drop_table()
@@ -94,7 +94,7 @@ def main(
     with fakturoid.get_client(fakturoid_token) as client:
         while True:
             logger.debug(f"Fakturoid todos, page {page}")
-            response = client.get("/todos.json", params=dict(page=page))
+            response = client.get("/todos.json", params={"page": page})
             response.raise_for_status()
             todos_page = response.json()
             todos.extend(
@@ -155,12 +155,12 @@ def main(
         logger.debug(f"Category: {category!r}")
         if category != TransactionsCategory.IGNORE:
             db_records.append(
-                dict(
-                    id=transaction["transaction_id"],
-                    happened_on=transaction["date"],
-                    category=category,
-                    amount=transaction["amount"],
-                )
+                {
+                    "id": transaction["transaction_id"],
+                    "happened_on": transaction["date"],
+                    "category": category,
+                    "amount": transaction["amount"],
+                }
             )
         if (
             transaction["amount"] > 0

@@ -333,7 +333,7 @@ async def apply_changes(client: ClubClient, changes):
         if role_id is None:
             logger.error(f"Cannot {op} role for #{member_id}: role_id not created yet")
         else:
-            changes_by_members.setdefault(member_id, dict(add=[], remove=[]))
+            changes_by_members.setdefault(member_id, {"add": [], "remove": []})
             changes_by_members[member_id][op].append(role_id)
 
     for member_id, changes in changes_by_members.items():

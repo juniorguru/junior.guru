@@ -200,7 +200,7 @@ def main(
             event.save()
 
             logger.info(f"Rendering posters for {event_config.title!r}")
-            filters = dict(local_time=local_time, weekday=weekday, icon=icon)
+            filters = {"local_time": local_time, "weekday": weekday, "icon": icon}
             date_prefix = event.start_at.date().isoformat().replace("-", "")
             for event_property, context, prefix in [
                 (

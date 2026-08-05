@@ -49,8 +49,8 @@ POSTERS_DIR = IMAGES_DIR / "posters-sponsors"
 POSTER_SIZE = 700
 
 TIERS_EXTRAS = {
-    "Budujeme brand": dict(max_sponsors=4, courses_highlight=True),
-    "Poskytujeme kurzy": dict(courses_highlight=True),
+    "Budujeme brand": {"max_sponsors": 4, "courses_highlight": True},
+    "Poskytujeme kurzy": {"courses_highlight": True},
 }
 
 
@@ -195,7 +195,7 @@ def main(today: date, clear_posters: bool):
             elif sponsor.subscription:
                 subscription_id = parse_subscription_id(sponsor.subscription)
                 subscription = memberful.get(
-                    SUBSCRIPTION_GQL_PATH.read_text(), dict(id=subscription_id)
+                    SUBSCRIPTION_GQL_PATH.read_text(), {"id": subscription_id}
                 )["subscription"]
                 plan_id = get_plan_id(subscription)
                 tier = tiers_by_plan_id[plan_id]
@@ -215,11 +215,11 @@ def main(today: date, clear_posters: bool):
                 POSTER_SIZE,
                 POSTER_SIZE,
                 "sponsor.jinja",
-                dict(
-                    sponsor_name=sponsor.name,
-                    sponsor_logo_path=logo_path,
-                    tier_priority=tier.priority,
-                ),
+                {
+                    "sponsor_name": sponsor.name,
+                    "sponsor_logo_path": logo_path,
+                    "tier_priority": tier.priority,
+                },
                 POSTERS_DIR,
                 prefix=sponsor.slug,
             )
@@ -276,7 +276,7 @@ def main(today: date, clear_posters: bool):
             elif partner.subscription:
                 subscription_id = parse_subscription_id(partner.subscription)
                 subscription = memberful.get(
-                    SUBSCRIPTION_GQL_PATH.read_text(), dict(id=subscription_id)
+                    SUBSCRIPTION_GQL_PATH.read_text(), {"id": subscription_id}
                 )["subscription"]
                 plan_id = get_plan_id(subscription)
                 account_ids = get_account_ids(subscription)
@@ -322,12 +322,12 @@ def get_account_ids(subscription: SubscriptionEntity) -> list[int]:
 
 
 def get_tier_data(plan: PlanEntity) -> dict[str, Any]:
-    return dict(
-        plan_id=int(plan["id"]),
-        name=parse_tier_name(plan["name"]),
-        price=from_cents(plan["priceCents"]),
-        member_price=from_cents(plan["additionalMemberPriceCents"]) or None,
-    )
+    return {
+        "plan_id": int(plan["id"]),
+        "name": parse_tier_name(plan["name"]),
+        "price": from_cents(plan["priceCents"]),
+        "member_price": from_cents(plan["additionalMemberPriceCents"]) or None,
+    }
 
 
 def prepare_tiers(

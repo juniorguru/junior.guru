@@ -31,13 +31,13 @@ def test_format_message():
 
 
 def test_format_channel_digest():
-    channel_digest = dict(
-        channel_id=123,
-        channel_name="general",
-        parent_channel_id=123,
-        parent_channel_name="general",
-        size=4,
-    )
+    channel_digest = {
+        "channel_id": 123,
+        "channel_name": "general",
+        "parent_channel_id": 123,
+        "parent_channel_name": "general",
+        "size": 4,
+    }
 
     assert format_channel_digest(channel_digest) == (
         "**#general**\n"

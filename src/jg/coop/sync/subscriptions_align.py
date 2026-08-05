@@ -32,7 +32,10 @@ def main():
             renews_on = getattr(org, "renews_on", today + timedelta(days=365))
             logger.info(f"Organization {org.slug!r} renews on {renews_on}")
             renews_at = datetime.combine(renews_on, time(tzinfo=timezone.utc))
-            params = dict(id=org.subscription_id, expiresAt=int(renews_at.timestamp()))
+            params = {
+                "id": org.subscription_id,
+                "expiresAt": int(renews_at.timestamp()),
+            }
             logger.debug(f"Updating organization {org.slug!r} to renew at {renews_at}")
             if align_subscription(memberful, mutation, params):
                 logger.info(

@@ -76,8 +76,8 @@ def build_event_args(event: Event) -> dict:
         )
     )
 
-    return dict(
-        embed=embed,
-        files=[File(IMAGES_DIR / event.avatar_path)],
-        view=view,
-    )
+    return {
+        "embed": embed,
+        "files": [File(IMAGES_DIR / event.avatar_path)],
+        "view": view,
+    }

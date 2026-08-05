@@ -63,9 +63,9 @@ def main(channel_id: int, cache_key: str, cache_days: int, force: bool):
 
 async def sync_channel(client: ClubClient, channel_id: int, tips: list[Tip]):
     message_args_list = [
-        dict(content=HEADER_MESSAGE, embeds=[], suppress=True),
-        dict(content=LINKS_MESSAGE, embeds=[], view=build_links_view()),
-        dict(content=TIPS_HEADER_MESSAGE, embeds=[], suppress=True),
+        {"content": HEADER_MESSAGE, "embeds": [], "suppress": True},
+        {"content": LINKS_MESSAGE, "embeds": [], "view": build_links_view()},
+        {"content": TIPS_HEADER_MESSAGE, "embeds": [], "suppress": True},
         *(build_tip_args(tip) for tip in tips),
     ]
     await sync_guide_channel(client, channel_id, message_args_list)
@@ -78,7 +78,7 @@ def build_tip_args(tip: Tip) -> dict:
         description=tip.lead,
     )
     embed.set_thumbnail(url=emoji_url(tip.emoji))
-    return dict(embed=embed)
+    return {"embed": embed}
 
 
 def build_links_view() -> ui.View:
