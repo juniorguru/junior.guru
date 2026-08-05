@@ -159,12 +159,12 @@ def discord(template):
 async def backup_discord(client: ClubClient, template_name):
     try:
         logger.info(f"Looking for template {template_name}")
-        template = [
+        template = next(
             template
             for template in (await client.club_guild.templates())
             if template.name == template_name
-        ][0]
-    except IndexError:
+        )
+    except StopIteration:
         logger.warning(f"Not found! Creating template {template_name}")
         await client.club_guild.create_template(name=template_name)
     else:

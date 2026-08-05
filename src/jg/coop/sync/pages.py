@@ -92,7 +92,7 @@ def parse_notes(source: str) -> str:
 
 
 def get_nav_names(src_uri: str, nav: Navigation) -> tuple[str, str]:
-    nav_item = [item for item in nav.pages if item.file.src_uri == src_uri][0]
+    nav_item = next(item for item in nav.pages if item.file.src_uri == src_uri)
     return (list(nav_item.ancestors)[-1].title, nav_item.title)
 
 

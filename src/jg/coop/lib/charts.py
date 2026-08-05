@@ -157,15 +157,15 @@ def milestones(months: list[date], milestones: list[tuple[date, str]]) -> dict:
     for milestone_date, milestone_name in dict(milestones).items():
         name = slugify(milestone_name)
         try:
-            x = [
+            x = next(
                 index
                 for index, month in enumerate(months)
                 if (
                     month.year == milestone_date.year
                     and month.month == milestone_date.month
                 )
-            ][0]
-        except IndexError:
+            )
+        except StopIteration:
             continue
         else:
             annotations[f"{name}-label"] = {
