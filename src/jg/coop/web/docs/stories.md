@@ -12,6 +12,30 @@ template: main_subnav.html
 Inspirativní příbehy lidí jako ty, kteří se bez předchozí znalosti naučili programovat, programování jim v něčem pomohlo, nebo si v IT dokonce našli i práci.
 {% endcall %}
 
+## Příběhy z junior.guru
+
+Děláme rozhovory s členy zdejšího [klubu](club.md).
+Cílem je nejen ilustrovat hodnotu klubu pro juniory, ale taky snaha popsat cestu do IT co nejautentičtějším způsobem.
+
+Co pro ně bylo těžké a nedařilo se to?
+Kdy chtěli všeho vzdát a jen brečet v koutě?
+Jak to nakonec překonali?
+Co by poradili ostatním?
+Nejen že se nebojíme o nepříjemnostech psát, my se na ně přímo ptáme!
+
+<div class="link-cards compact">
+{% for story_page in stories_pages %}
+  {{
+    link_card(
+      story_page.title,
+      pages|docs_url(story_page.src_uri)|url,
+      caption=story_page.meta['interviewee'],
+      thumbnail_url='static/' + story_page.meta['interviewee_avatar_path'],
+    )
+  }}
+{% endfor %}
+</div>
+
 ## Inspiruj se
 
 Jako **inspirace a motivace** jsou příběhy fajn.
@@ -78,30 +102,6 @@ Tak jednoduché to ale není. Znaky, které najdeme u úspěšných, můžeme st
 ) %}
   Petr Houdek, behaviorální ekonom, v článku [Přelud úspěchu](https://houdekpetr.blogspot.com/2024/07/prelud-uspechu.html)
 {% endcall %}
-
-## Příběhy z junior.guru
-
-Děláme rozhovory s členy zdejšího [klubu](club.md).
-Cílem je nejen ilustrovat hodnotu klubu pro juniory, ale taky snaha popsat cestu do IT co nejautentičtějším způsobem.
-
-Co pro ně bylo těžké a nedařilo se to?
-Kdy chtěli všeho vzdát a jen brečet v koutě?
-Jak to nakonec překonali?
-Co by poradili ostatním?
-Nejen že se nebojíme o nepříjemnostech psát, my se na ně přímo ptáme!
-
-<div class="link-cards compact">
-{% for story_page in stories_pages %}
-  {{
-    link_card(
-      story_page.title,
-      pages|docs_url(story_page.src_uri)|url,
-      caption=story_page.meta['interviewee'],
-      thumbnail_url='static/' + story_page.meta['interviewee_avatar_path'],
-    )
-  }}
-{% endfor %}
-</div>
 
 ## Z horníka programátorem
 
