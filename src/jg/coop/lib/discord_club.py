@@ -411,9 +411,7 @@ def resolve_references(markdown: str, roles: dict[str, int] | None = None) -> st
 def is_forum_guide(message: discord.Message) -> bool:
     if message.id != message.channel.id:
         return False
-    if message.channel.is_pinned():
-        return True
-    return False
+    return bool(message.channel.is_pinned())
 
 
 async def sync_guide_channel(

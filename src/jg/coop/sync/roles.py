@@ -259,7 +259,7 @@ async def sync_roles(client: ClubClient):
     await manage_organization_roles(client, discord_roles, organizations)
 
     for org in organizations:
-        org_members_ids = set(member.id for member in org.list_members)
+        org_members_ids = {member.id for member in org.list_members}
         logger.debug(f"{org.slug}_members_ids: {repr_ids(members, org_members_ids)}")
         for member in members:
             changes.extend(

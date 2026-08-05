@@ -101,7 +101,7 @@ class SubmittedJob(BaseModel):
     def to_listed(self) -> "ListedJob":
         data = {
             field_name: getattr(self, field_name, None)
-            for field_name in ListedJob._meta.fields.keys()
+            for field_name in ListedJob._meta.fields
             if (
                 field_name in self.__class__._meta.fields
                 and field_name not in ["id", "submitted_job"]
@@ -161,7 +161,7 @@ class ScrapedJob(BaseModel):
     def from_item(cls, item) -> Self:
         data = {
             field_name: item.get(field_name)
-            for field_name in cls._meta.fields.keys()
+            for field_name in cls._meta.fields
             if field_name in item
         }
         data["posted_on"] = date.fromisoformat(item["posted_on"])
@@ -171,7 +171,7 @@ class ScrapedJob(BaseModel):
         return model_to_dict(self)
 
     def merge_item(self, item):
-        for field_name in self.__class__._meta.fields.keys():
+        for field_name in self.__class__._meta.fields:
             try:
                 # use merging method if present
                 merge_method = getattr(self, f"_merge_{field_name}")
@@ -203,7 +203,7 @@ class ScrapedJob(BaseModel):
     def to_listed(self) -> "ListedJob":
         data = {
             field_name: getattr(self, field_name, None)
-            for field_name in ListedJob._meta.fields.keys()
+            for field_name in ListedJob._meta.fields
             if (
                 field_name in self.__class__._meta.fields
                 and field_name not in ["id", "submitted_job"]
@@ -346,7 +346,7 @@ class ListedJob(BaseModel):
 
     @property
     def regions(self) -> list[str]:
-        return sorted(set(location["region"] for location in self.locations or []))
+        return sorted({location["region"] for location in self.locations or []})
 
     @property
     def location_text(self) -> str | None:
@@ -420,9 +420,7 @@ class ListedJob(BaseModel):
     @classmethod
     def tags_listing(cls, tags: Iterable[str]) -> Iterable[Self]:
         tags = set(tags)
-        return [
-            job for job in cls.listing() if tags & set([tag.slug for tag in job.tags])
-        ]
+        return [job for job in cls.listing() if tags & {tag.slug for tag in job.tags}]
 
     @classmethod
     def internship_listing(cls) -> Iterable[Self]:

@@ -326,9 +326,10 @@ def get_subscription_type(
                 return SubscriptionType.FINAID
             if coupon.startswith("THANKYOU"):
                 return SubscriptionType.FREE
-        if trial_end_at := subscription["trialEndAt"]:
-            if timestamp_to_date(trial_end_at) >= today:
-                return SubscriptionType.TRIAL
+        if (trial_end_at := subscription["trialEndAt"]) and timestamp_to_date(
+            trial_end_at
+        ) >= today:
+            return SubscriptionType.TRIAL
         if plan["intervalUnit"] == "month":
             return SubscriptionType.MONTHLY
         if plan["intervalUnit"] == "year":
