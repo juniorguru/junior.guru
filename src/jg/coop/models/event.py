@@ -227,7 +227,7 @@ class Event(BaseModel):
         if has_recording:
             query = query.where(
                 (cls.club_recording_url.is_null(False))
-                | (cls.public_recording_url.is_null(False))  # noqa: E712
+                | (cls.public_recording_url.is_null(False))
             )
         if has_avatar:
             query = query.where(cls.avatar_path != cls.avatar_path.default)
@@ -280,7 +280,7 @@ class Event(BaseModel):
             cls.select()
             .where(
                 (cls.club_recording_url.is_null(False))
-                | (cls.public_recording_url.is_null(False))  # noqa: E712
+                | (cls.public_recording_url.is_null(False))
             )
             .count()
         )
