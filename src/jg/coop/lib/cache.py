@@ -93,6 +93,6 @@ class BytecodeCache(BaseBytecodeCache):
         self.cache.set(f"jinja:{bucket.key}", bucket.bytecode_to_string(), tag="jinja")
 
 
-@lru_cache()
+@lru_cache
 def get_jinja_cache() -> BytecodeCache:
     return BytecodeCache(get_cache())
