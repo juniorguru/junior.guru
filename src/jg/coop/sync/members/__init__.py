@@ -301,9 +301,7 @@ def get_coupon(subscription: SubscriptionEntity) -> str | None:
     if subscription["coupon"]:
         return subscription["coupon"]["code"]
 
-    orders = list(
-        sorted(subscription["orders"], key=itemgetter("createdAt"), reverse=True)
-    )
+    orders = sorted(subscription["orders"], key=itemgetter("createdAt"), reverse=True)
     try:
         last_order = orders[0]
         if not last_order["coupon"]:
