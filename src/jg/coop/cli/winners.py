@@ -22,7 +22,7 @@ def main(message_url, winners_count):
 
 async def draw_winners(client: ClubClient, message_url, winners_count):
     roles = await client.club_guild.fetch_roles()
-    role = [role for role in roles if role.id == ROLE][0]
+    role = next(role for role in roles if role.id == ROLE)
     logger.info(f"Limiting winners to only those with role '{role.name}'")
 
     message_url_parts = message_url.split("/")
