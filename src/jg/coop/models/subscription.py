@@ -284,4 +284,4 @@ def get_breakdown_ptc(counter: dict, enum: StrEnum | None = None) -> dict[str, f
         types = [type.value for type in enum]
     if total_count := sum(counter.values()):
         return {type: (counter[type] / total_count) * 100 for type in types}
-    return {type: 0 for type in types}
+    return dict.fromkeys(types, 0)
