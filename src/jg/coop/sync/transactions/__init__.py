@@ -111,7 +111,7 @@ def main(
     logger.info(f"Found {len(todos)} Fakturoid todos")
     todos = {get_todo_key(todo): todo for todo in todos}
     logger.debug(f"Mapping Fakturoid todos by key leaves {len(todos)} todos")
-    for key in todos.keys():
+    for key in todos:
         logger.debug(f"Todo key: {key!r}")
 
     logger.info("Reading history from a file")

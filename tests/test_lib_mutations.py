@@ -180,9 +180,11 @@ def test_mutating_proxy_not_allowed(nothing_allowed):
 def test_mutating_proxy_not_allowed_raises(nothing_allowed):
     obj = Something(123)
 
-    with pytest.raises(MutationsNotAllowedError):
-        with mutating("discord", obj, raises=True) as proxy:
-            proxy.method(4, 4)
+    with (
+        pytest.raises(MutationsNotAllowedError),
+        mutating("discord", obj, raises=True) as proxy,
+    ):
+        proxy.method(4, 4)
 
 
 @pytest.mark.asyncio
@@ -210,9 +212,11 @@ async def test_mutating_proxy_not_allowed_async(nothing_allowed):
 async def test_mutating_proxy_not_allowed_async_raises(nothing_allowed):
     obj = Something(123)
 
-    with pytest.raises(MutationsNotAllowedError):
-        with mutating("discord", obj, raises=True) as proxy:
-            await proxy.async_method(4, 4)
+    with (
+        pytest.raises(MutationsNotAllowedError),
+        mutating("discord", obj, raises=True) as proxy,
+    ):
+        await proxy.async_method(4, 4)
 
 
 def test_mutations_not_allowed_works_as_boolean(nothing_allowed):

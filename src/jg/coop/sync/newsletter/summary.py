@@ -266,7 +266,7 @@ def to_feed(
 
         # stats
         messages_count = len(channel_messages)
-        authors_count = len(set(m.author.id for m in channel_messages))
+        authors_count = len({m.author.id for m in channel_messages})
         reactions_count = sum(sum(m.reactions.values()) for m in channel_messages)
         content_size = sum(m.content_size for m in channel_messages)
 
