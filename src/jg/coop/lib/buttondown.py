@@ -98,7 +98,7 @@ class ButtondownAPI:
                 metadata=exc_data.get("metadata"),
             ) from e
 
-    async def get_emails_before(self, before_date: date) -> AsyncGenerator[dict, None]:
+    async def get_emails_before(self, before_date: date) -> AsyncGenerator[dict]:
         next_url = f"emails?publish_date__end={before_date}"
         while next_url:
             logger.debug(f"Fetching emails: {next_url}")
@@ -119,7 +119,7 @@ class ButtondownAPI:
             params={"status": "draft", "creation_date__start": since_date.isoformat()},
         )
 
-    async def get_drafts(self) -> AsyncGenerator[dict, None]:
+    async def get_drafts(self) -> AsyncGenerator[dict]:
         next_url = "emails?status=draft"
         while next_url:
             logger.debug(f"Fetching drafts: {next_url}")

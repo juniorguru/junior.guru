@@ -72,9 +72,7 @@ class MemberfulAPI:
         logger.debug("Sending a mutation")
         return self.client.execute(gql(mutation), variable_values=variable_values)
 
-    def get_nodes(
-        self, query: str, variable_values: dict = None
-    ) -> Generator[dict, None, None]:
+    def get_nodes(self, query: str, variable_values: dict = None) -> Generator[dict]:
         if match := COLLECTION_NAME_RE.search(query):
             collection_name = match.group("collection_name")
         else:

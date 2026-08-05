@@ -23,7 +23,7 @@ def import_command(name: str, import_path: str) -> click.Command:
 
 def find_commands(
     package: str | ModuleType, flatten: list[str] | None = None
-) -> Generator[tuple[str, str], None, None]:
+) -> Generator[tuple[str, str]]:
     if isinstance(package, str):
         package = import_module(package)
     for _, module_name, _ in pkgutil.iter_modules(package.__path__):

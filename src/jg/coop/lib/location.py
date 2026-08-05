@@ -238,7 +238,7 @@ async def locate(
 
 def generate_queries(
     location_raw: str,
-) -> Generator[tuple[str, ResponseRegionType], None, None]:
+) -> Generator[tuple[str, ResponseRegionType]]:
     # rewrite strings not recognized by the API
     for rewrite_re, rewrite_value in REWRITES_RE.items():
         location_raw = rewrite_re.sub(rewrite_value, location_raw)
