@@ -101,7 +101,7 @@ def render_template(
     filters: dict[str, Callable] = None,
 ) -> bytes:
     logger.info(f"Rendering {width}x{height} {template_name}")
-    if not len(list(CACHE_DIR.glob("*.css"))):
+    if not list(CACHE_DIR.glob("*.css")):
         raise FileNotFoundError(
             f"Cache {CACHE_DIR.absolute()} does not exist, run init_templates_cache() before rendering"
         )
