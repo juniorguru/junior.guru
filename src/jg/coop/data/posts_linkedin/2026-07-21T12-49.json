@@ -101,6 +101,17 @@
   ],
   "reactions": [
     {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Táňa",
+        "lastName": "Váchová",
+        "occupation": "📌 administrativa ⊃ podpora ⊃ empatie",
+        "id": "1399848350",
+        "publicId": "tanavachova",
+        "profileId": "ACoAAFNv_Z4BxskkxA5XZSQetiT0HKCBk4rbPGE"
+      }
+    },
+    {
       "type": "LIKE",
       "profile": {
         "firstName": "Mia",
@@ -168,7 +179,7 @@
     }
   ],
   "numShares": 1,
-  "numLikes": 6,
+  "numLikes": 7,
   "numComments": 2,
   "canReact": true,
   "canPostComments": true,

@@ -23,6 +23,28 @@
   "attributes": [],
   "comments": [
     {
+      "time": 1785229562207,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7482801349487763475?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7482801349487763475%2C7487795493683499008%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287487795493683499008%2Curn%3Ali%3Aactivity%3A7482801349487763475%29",
+      "text": "We'll be right there in the front row, laptops open, waiting for you to ruin browser-like environments for us forever. 💥 See you in Prague, Artem!",
+      "entities": [
+        {
+          "start": 140,
+          "length": 5,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Artem",
+            "lastName": "Zakharchenko",
+            "occupation": "Software engineer & Educator",
+            "id": "479400907",
+            "publicId": "artem-zakharchenko",
+            "profileId": "ACoAAByTE8sBD2jc0LWL1WTudVD1bG_e2hh-aG0"
+          }
+        }
+      ],
+      "pinned": false,
+      "originalLanguage": "English"
+    },
+    {
       "time": 1785172378321,
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7482801349487763475?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7482801349487763475%2C7487555647077646336%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287487555647077646336%2Curn%3Ali%3Aactivity%3A7482801349487763475%29",
       "text": "Hey Artem, looking forward to your workshop and excited to see you on stage at FrontKon - Prague's Frontend Conference!",
@@ -54,6 +76,16 @@
     }
   ],
   "reactions": [
+    {
+      "type": "EMPATHY",
+      "company": {
+        "name": "FrontKon - Prague's Frontend Conference",
+        "universalName": "frontkon",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:111694409"
+      }
+    },
     {
       "type": "LIKE",
       "profile": {
@@ -99,9 +131,9 @@
       }
     }
   ],
-  "numShares": 1,
-  "numLikes": 4,
-  "numComments": 1,
+  "numShares": 2,
+  "numLikes": 5,
+  "numComments": 2,
   "canReact": true,
   "canPostComments": true,
   "canShare": true,

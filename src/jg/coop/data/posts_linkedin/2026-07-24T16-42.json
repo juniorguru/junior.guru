@@ -34,6 +34,17 @@
   ],
   "reactions": [
     {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Domitil",
+        "lastName": "Katemo",
+        "occupation": "Business Administrator | 3+ years in administration, marketing & customer service | Skilled in project coordination & process improvement",
+        "id": "525351228",
+        "publicId": "domitil-katemo-850b32127",
+        "profileId": "ACoAAB9QOTwBjYo-pyQWuo9wx4mjFG9_olxX9_w"
+      }
+    },
+    {
       "type": "EMPATHY",
       "profile": {
         "firstName": "Sarka",
@@ -123,7 +134,7 @@
     }
   ],
   "numShares": 0,
-  "numLikes": 8,
+  "numLikes": 9,
   "numComments": 3,
   "canReact": true,
   "canPostComments": true,

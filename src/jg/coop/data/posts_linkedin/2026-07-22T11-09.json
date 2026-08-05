@@ -54,7 +54,7 @@
       "author": {
         "firstName": "Jiří",
         "lastName": "Pešík",
-        "occupation": "Software Engineer @Rapid7 | Python | Lecturer @Czechitas",
+        "occupation": "Front office engineer @Powertica | Python | Lektor @Czechitas",
         "id": "200663642",
         "publicId": "jiripesik",
         "profileId": "ACoAAAv14loBOgqNPz5X9IP-_WVU9GaKVu6xMSA",
@@ -63,6 +63,17 @@
     }
   ],
   "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Volák",
+        "occupation": "Tady je místo pro strašně hluboké moudro.",
+        "id": "1626848937",
+        "publicId": "martin-volák-6099b3394",
+        "profileId": "ACoAAGD3vqkBg9ktO2kJn2KpNA-zuos1G4gjqeM"
+      }
+    },
     {
       "type": "ENTERTAINMENT",
       "profile": {
@@ -161,21 +172,10 @@
         "publicId": "pavlína-prausová",
         "profileId": "ACoAABjZwN0Bww6ay0S1Wzr5kZAMXAkmGagjy1Q"
       }
-    },
-    {
-      "type": "APPRECIATION",
-      "profile": {
-        "firstName": "Onur",
-        "lastName": "Pektas",
-        "occupation": "AI Trainer | Data Scientist | Research Analyst | Data Analyst | Media Analyst | Talks about #ai, #yz, #research, #yapayzeka, and #artificialintelligence",
-        "id": "235306662",
-        "publicId": "onur-pektas-a0697866",
-        "profileId": "ACoAAA4GfqYBCCwfZ78RIt9z9oMAmh6FeO9sfYM"
-      }
     }
   ],
   "numShares": 1,
-  "numLikes": 30,
+  "numLikes": 31,
   "numComments": 5,
   "canReact": true,
   "canPostComments": false,

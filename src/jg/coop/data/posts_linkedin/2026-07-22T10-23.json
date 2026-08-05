@@ -63,6 +63,94 @@
   ],
   "reactions": [
     {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Zuzana",
+        "lastName": "Šrámková",
+        "occupation": "Píšu. A než to napíšu, hodně se ptám, abych našla jádro pudla.***Kromě psaní také pečuji - o děti i ty, kteří z tohoto světa odcházejí.",
+        "id": "641992540",
+        "publicId": "zuzana-šrámková-56400315b",
+        "profileId": "ACoAACZEB1wBuGRXuYDdLs9SUMN-3UgjWZ4HBoU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Sebastian",
+        "lastName": "Štros",
+        "occupation": "Philosopher, data scientist, social democrat, see podcast Z Údivu",
+        "id": "846787740",
+        "publicId": "sebastian-štros-2507071b7",
+        "profileId": "ACoAADJ49JwBU-5ZZIEdqP6VJxONYSTl4r-Vgdw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martina",
+        "lastName": "Májíček Poliaková",
+        "occupation": "Director of Strategic Development ve společnosti Český rozhlas",
+        "id": "327757738",
+        "publicId": "martina-poliakova",
+        "profileId": "ACoAABOJL6oBEBNcJXj7Lf-U-LyWw7SUxmFo7Do"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Eva-Marie",
+        "lastName": "Lacinová",
+        "occupation": "Product Analytics powered by AI",
+        "id": "659894857",
+        "publicId": "evamarielacinova",
+        "profileId": "ACoAACdVMkkB4lHVPMN7yXQmAb9-QgVhLmZ2qx8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "David",
+        "lastName": "Poul",
+        "occupation": "Bavím se tvorbou výpočetních modelů pro odpadové hospodářství a cirkulární ekonomiku. A do toho fotím",
+        "id": "572692097",
+        "publicId": "davidpoulcz",
+        "profileId": "ACoAACIiloEBy1EWpQJJaadg3RVDH1kNcvQL7D8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jozef",
+        "lastName": "Rosenberger",
+        "occupation": "Frontend developer",
+        "id": "521089464",
+        "publicId": "jozef-rosenberger",
+        "profileId": "ACoAAB8PMbgBpt53LX6v-qavyhofA2kmpCiUB6A"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Dufka",
+        "occupation": "Vedoucí Archivu Českého rozhlasu",
+        "id": "518034234",
+        "publicId": "tomáš-dufka-3b65a4125",
+        "profileId": "ACoAAB7gkzoBuu3PMjmBqJbRTlGmmFUGWMX-Mrk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Kateřina",
+        "lastName": "Hudáčová",
+        "occupation": "Datová analytička • Vládní analytický útvar",
+        "id": "797889913",
+        "publicId": "katerina-hudacova",
+        "profileId": "ACoAAC-O1XkB0BSLtwyNvw0uVN1CaxEJs-zuE0g"
+      }
+    },
+    {
       "type": "APPRECIATION",
       "profile": {
         "firstName": "Dagmar",
@@ -83,98 +171,10 @@
         "publicId": "martin-kodada",
         "profileId": "ACoAACIVcWYBadjcDjWNopXivbMeb-KzmafZb5U"
       }
-    },
-    {
-      "type": "APPRECIATION",
-      "profile": {
-        "firstName": "Stepanka",
-        "lastName": "Pechackova",
-        "occupation": "​Strategic content for value-driven brands | 10+ years of experience with focus on the NGO & pet segment 💙🐕 | Data • Integrity • Strategy",
-        "id": "285650980",
-        "publicId": "stepankapech",
-        "profileId": "ACoAABEGsCQBAzqGily9OrvWctWzXOlalsath9Q"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Juraj",
-        "lastName": "Kováč",
-        "occupation": "Keeping 2M+ people in motion with a smart urban mobility system",
-        "id": "250547579",
-        "publicId": "j-kovac",
-        "profileId": "ACoAAA7vDXsBw4Oxl4dKbywvEYNGTD6LKCN54MA"
-      }
-    },
-    {
-      "type": "PRAISE",
-      "profile": {
-        "firstName": "Klára",
-        "lastName": "Polišenská",
-        "occupation": "MSc Research Master Social Sciences at UvA",
-        "id": "1069346814",
-        "publicId": "klára-polišenská-b6615625a",
-        "profileId": "ACoAAD-87_4Bgo6dnHKV_oRG3RoVtZf8tT0KYkg"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Petr",
-        "lastName": "Kaštánek",
-        "occupation": "Economic Analyst at Czech National Bank",
-        "id": "918940436",
-        "publicId": "petr-kaštánek-298902217",
-        "profileId": "ACoAADbF6xQBDNF4mIXwU1ZBORRxrXmb3J85cRg"
-      }
-    },
-    {
-      "type": "EMPATHY",
-      "profile": {
-        "firstName": "Kristína",
-        "lastName": "Pšorn Zákopčanová",
-        "occupation": "Data Visualization and Information Designer | Designing, Consulting & Teaching",
-        "id": "804232685",
-        "publicId": "kristina-zakopcanova",
-        "profileId": "ACoAAC_vne0BL34W_gMgZJiEu6tVSfCxBxD59SU"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Lenka",
-        "lastName": "Prager",
-        "occupation": "Kliku na sebe máme, zbejvá najít správný dveře! :)",
-        "id": "389168747",
-        "publicId": "lenka-prager-48b3b9aa",
-        "profileId": "ACoAABcyPmsBXc7Fwj5WGvCiBS1MjhDW19IdQfI"
-      }
-    },
-    {
-      "type": "APPRECIATION",
-      "profile": {
-        "firstName": "Jakub",
-        "lastName": "Komárek",
-        "occupation": "ekonom ve službách státu & SŠ učitel ve Vršovicích",
-        "id": "432446588",
-        "publicId": "jakub-komárek",
-        "profileId": "ACoAABnGnHwBnpv_W4TjFPaTujRNvlnZh0oyQHY"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Petr",
-        "lastName": "Hodina",
-        "occupation": ".",
-        "id": "493778453",
-        "publicId": "petr-hodina-505447119",
-        "profileId": "ACoAAB1udhUBZEavxB9OgN120aaeMYALQ2v_hfA"
-      }
     }
   ],
   "numShares": 2,
-  "numLikes": 41,
+  "numLikes": 49,
   "numComments": 1,
   "canReact": true,
   "canPostComments": true,

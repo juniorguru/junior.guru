@@ -1,0 +1,165 @@
+{
+  "type": "linkedinVideo",
+  "linkedinVideo": {
+    "videoPlayMetadata": {
+      "duration": 74066,
+      "thumbnail": {
+        "artifacts": [
+          {
+            "width": 720,
+            "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEjWyChVsNLsg",
+            "fileIdentifyingUrlPathSegment": "high/B4DZ.TpynyIIBQ-/0/1784888636029?e=1786410000&v=beta&t=xrvW4oWI6FAOjUWaNcE3-gdRs1mFL9BzvXk61hsMVuQ",
+            "expiresAt": 1786410000000,
+            "height": 1280
+          },
+          {
+            "width": 360,
+            "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEjWyChVsNLsg",
+            "fileIdentifyingUrlPathSegment": "low/B4DZ.TpynyIIBM-/0/1784888636029?e=1786410000&v=beta&t=2m0a_LNgd4IzdZAvI9__XNvsLsOr9CLPKOVDJmIywDU",
+            "expiresAt": 1786410000000,
+            "height": 640
+          }
+        ]
+      },
+      "progressiveStreams": [
+        {
+          "streamingLocations": [
+            {
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEjWyChVsNLsg/mp4-720p-30fp-crf28/B4DZ.TpynyIICA-/0/1784888640537?e=1786410000&v=beta&t=_7R7M_HDQ75F8Z2p278PmE91qk1_Z1YgDkJmY67cfvg",
+              "expiresAt": 1786410000000
+            }
+          ],
+          "size": 0,
+          "bitRate": 134506,
+          "width": 720,
+          "mediaType": "video/mp4",
+          "height": 1280
+        },
+        {
+          "streamingLocations": [
+            {
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEjWyChVsNLsg/mp4-640p-30fp-crf28/B4DZ.TpynyIIBo-/0/1784888640049?e=1786410000&v=beta&t=aHFhlWkqw_55IF2o26JJYOipsoMjCbXroP2fmKnjEsU",
+              "expiresAt": 1786410000000
+            }
+          ],
+          "size": 0,
+          "bitRate": 109405,
+          "width": 640,
+          "mediaType": "video/mp4",
+          "height": 1138
+        }
+      ],
+      "transcripts": [],
+      "entityUrn": "urn:li:digitalmediaAsset:D4D05AQEjWyChVsNLsg",
+      "provider": "UGC",
+      "aspectRatio": 0.5625,
+      "media": "urn:li:digitalmediaAsset:D4D05AQEjWyChVsNLsg",
+      "adaptiveStreams": [
+        {
+          "initialBitRate": 582686,
+          "protocol": "HLS",
+          "mediaType": "application/vnd.apple.mpegURL",
+          "masterPlaylists": [
+            {
+              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEjWyChVsNLsg/CeJxzMnGJ0gspqMyr9PR0KdfVcULmR6Lxk9H46Wj8fF0A2qQYxw?e=1786410000&v=beta&t=0bn1A1JYs__ywMUvEhAWDgi0GSgbflpuMOa14gNbVGA",
+              "expiresAt": 1786410000000
+            }
+          ]
+        },
+        {
+          "initialBitRate": 582686,
+          "protocol": "DASH",
+          "mediaType": "application/dash+xml",
+          "masterPlaylists": [
+            {
+              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEjWyChVsNLsg/CeJxzMnGJ0gspqMyr9PR0KdfVcULmR6Lxk9H46Wj8fF0A2qQYxw?e=1786410000&v=beta&t=QbdDk2QvhE6YYj68lwGWoxSh-ynBMId2NIQHLidXB5g",
+              "expiresAt": 1786410000000
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7487760081313398784",
+  "url": "https://www.linkedin.com/posts/honzajavorek_workshop-na-impostor-syndrom-s-eli%C5%A1ka-%C4%8Dejpov%C3%A1-activity-7487760081313398784-ELx2",
+  "shareUrn": "urn:li:ugcPost:7486365533043433472",
+  "text": "Workshop na impostor syndrom s Eliška Čejpová! Už dnes večer u nás na Discordu! A bude se prý i soutěžit o lístky na devfest.cz 🙀 \n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 31,
+      "length": 14,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Eliška  ",
+        "lastName": "Čejpová",
+        "occupation": "Agile Coach by day, Speakers @DevFest.cz by night | ScanAgile🦊| GDG Helsinki | GUG.cz | Women Techmakers | Agile Enthusiast | Speaker Coach | Community Soul | Workshopper",
+        "id": "218425264",
+        "publicId": "eliskacejpova",
+        "profileId": "ACoAAA0E57ABXEjOnGWXi4ykBAzrRSYQ2_2aGg4"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavla",
+        "lastName": "Beránková",
+        "occupation": "junior PHP programátorka",
+        "id": "549611439",
+        "publicId": "berankova-pavla",
+        "profileId": "ACoAACDCZ68BhDuYokjdegYmFm0rxSx_6Mlwh9c"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Salamánek",
+        "occupation": "Po téměř 20 letech ve strojírenství jsem objevil svět IT. Bylo to pro mě, jako když poprvé otevřete internet a žasnete, kolik nových informací Vám svět kolem nabízí.",
+        "id": "117107557",
+        "publicId": "salamanek",
+        "profileId": "ACoAAAb662UB8Fk1x6YnfJ2zd6FiGd1MufWQHX4"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Karla",
+        "lastName": "Root",
+        "occupation": "Stay calm. Ask AI first, then panic | Data Analyst | Automation | Power BI",
+        "id": "420075610",
+        "publicId": "karlaroot",
+        "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 3,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1785221119240,
+  "postedAtISO": "2026-07-28T06:45:19.240Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

@@ -9,7 +9,7 @@
     },
     "isActivity": false,
     "urn": "urn:li:activity:7486028798866612225",
-    "url": "https://www.linkedin.com/posts/honzajavorek_reframing-your-narrative-workshop-activity-7486028798866612225-Txzb?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAGqk6PgBmVRYNuA5_OXJUvFD_PmJGPR0MDc",
+    "url": "https://www.linkedin.com/posts/honzajavorek_reframing-your-narrative-workshop-activity-7486028798866612225-Txzb?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAGulFeUB5VLMFj8CAu8YhiYyoL4skan5k4E",
     "shareUrn": "urn:li:ugcPost:7486028797599727616",
     "text": "Zatoč s impostor syndromem!\n\nKdyž máme na pohovoru, v CVčku nebo u networkingu popsat svou práci, zlehčujeme často úspěchy a nenecháváme vyniknout, co už umíme.\n\nPřipoj se k nám v úterý večer do klubu na oficiální online workshop od iniciativy Women Techmakers (Google), který ti pomůže vnitřního kritika ztišit.\n\nNa tvoje zkušenosti se podíváme novou optikou a naučíme tě o nich mluvit bez přehánění, ale s jistotou. Odneseš si nejen konkrétní tipy, jak reprezentovat samu sebe, ale i hotový draft profesního bio, na který budou hrdí tvoje šéfka i tvůj děda.\n\nEliška Čejpová, která povede workshop, začala jako vývojářka, ale pak se našla v prostoru mezi technologiemi a lidmi.\n\nPůsobí jako agilní koučka, organizuje IT konference, školí speakery, buduje komunity. Nejraději odhaluje antipatterny ve vývoji a podporuje lidi v růstu stavbou skvělých týmů.\n\nZa ~15 let v komunitách facilitovala workshopy od malých týmů až po globální tech summity.\n\nChce zanechat svět o něco lepší, než jak ho našla. Má tsundoku, názory, lásku pro gify a víc řasokoulí než člověk potřebuje.\n\nJestli chceš dorazit živě, účastnit se workshopu a pokládat Elišce vlastní otázky, mrkni na junior.guru/events a připoj se k nám na Discord!\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
     "attributes": [
@@ -77,6 +77,50 @@
     ],
     "reactions": [
       {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Matej",
+          "lastName": "Hegedüš",
+          "occupation": "Spacemanager @ Billa Slovensko",
+          "id": "1122498754",
+          "publicId": "matej-hegedus",
+          "profileId": "ACoAAELn-MIBKW5DBFhFP8iarfyu4bK2OZTPwC4"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Alena",
+          "lastName": "Ulrichova",
+          "occupation": "Business Analyst | Energy Markets & Enterprise Systems | Agile Delivery",
+          "id": "603952437",
+          "publicId": "alena-ulrichova-61931914a",
+          "profileId": "ACoAACP_lTUBzPoSMxsiO9fl1aC-lmUSRGDB77c"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Martin",
+          "lastName": "Tomášek",
+          "occupation": "Cyber Security & DevOps Enthusiast",
+          "id": "1140176543",
+          "publicId": "martin-tomasek-it",
+          "profileId": "ACoAAEP1tp8ByffefVNHDDyXt0htOsk6ag_XjSw"
+        }
+      },
+      {
+        "type": "EMPATHY",
+        "profile": {
+          "firstName": "Martin",
+          "lastName": "Šotnar",
+          "occupation": "Frontend Developer Trainee | JavaScript, TypeScript, React",
+          "id": "1332351529",
+          "publicId": "sotnar",
+          "profileId": "ACoAAE9qEikBy98vuvk8guHa2u80sek2g2OsTAg"
+        }
+      },
+      {
         "type": "PRAISE",
         "profile": {
           "firstName": "Ludmila",
@@ -141,21 +185,10 @@
           "publicId": "jitka-marešová",
           "profileId": "ACoAAA2IwekByahlnQAtuKNt4Xlww1xrII0Li34"
         }
-      },
-      {
-        "type": "LIKE",
-        "profile": {
-          "firstName": "Adéla",
-          "lastName": "Tichá",
-          "occupation": "Customer Success & Support Professional | Passionate about UX/UI & Product Development",
-          "id": "422345507",
-          "publicId": "adelticha",
-          "profileId": "ACoAABkseyMBcA3muv646Fc2S5gVsWt0b9uYw-0"
-        }
       }
     ],
     "numShares": 1,
-    "numLikes": 7,
+    "numLikes": 11,
     "numComments": 3,
     "canReact": true,
     "canPostComments": true,
@@ -283,6 +316,17 @@
   ],
   "reactions": [
     {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Ondrej",
+        "lastName": "Hoos",
+        "occupation": "Senior Android Developer | Kotlin · Jetpack Compose · Kotlin Multiplatform (KMP/CMP) | 10 yrs | Legacy Android → shared Android+iOS codebase | Available now · Remote or hybrid (Prague)",
+        "id": "365769282",
+        "publicId": "ondrejhoos",
+        "profileId": "ACoAABXNMkIBY6T4cewOP2nDpOgNz5Jw7kQ5Mm4"
+      }
+    },
+    {
       "type": "LIKE",
       "company": {
         "name": "Women Techmakers",
@@ -338,7 +382,7 @@
     }
   ],
   "numShares": 1,
-  "numLikes": 5,
+  "numLikes": 6,
   "numComments": 4,
   "canReact": true,
   "canPostComments": true,

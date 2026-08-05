@@ -58,6 +58,39 @@
   ],
   "reactions": [
     {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Michaela",
+        "lastName": "G.",
+        "occupation": "Manual Tester | ISTQB Certified | GDS | Tourism | Technical Support",
+        "id": "314600446",
+        "publicId": "michaela-gazakova",
+        "profileId": "ACoAABLAa_4Bf1MdgJb9bSZuHYJb7uPpON1qAk0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michal",
+        "lastName": "Illich",
+        "occupation": "Founder of Zuri - hybrid VTOL aircraft",
+        "id": "3278465",
+        "publicId": "michal-illich",
+        "profileId": "ACoAAAAyBoEB4jYPsFdRnHZ_GB9yH_FwtlnwjFQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vladimír",
+        "lastName": "Šabík",
+        "occupation": "Data Engineer at loclahost.company.",
+        "id": "1096028311",
+        "publicId": "vladimír-šabík-787083267",
+        "profileId": "ACoAAEFUEJcBC6bIB1xwgnf2Gw6dz0V0v2pUT1I"
+      }
+    },
+    {
       "type": "LIKE",
       "profile": {
         "firstName": "Šimon",
@@ -103,7 +136,7 @@
     }
   ],
   "numShares": 0,
-  "numLikes": 4,
+  "numLikes": 7,
   "numComments": 1,
   "canReact": true,
   "canPostComments": true,

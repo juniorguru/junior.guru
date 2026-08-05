@@ -132,6 +132,17 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Michaela",
+        "lastName": "B",
+        "occupation": "HR @Košík.cz",
+        "id": "243911127",
+        "publicId": "bukackovamichaela",
+        "profileId": "ACoAAA6JydcBCwRoDrTAvBQ6iqMAonBFE0S0dHQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "David",
         "lastName": "Pěknic",
         "occupation": "Tech Executive & founder ⚙️ | Sport Enthusiast 🚴‍♂️ | Transforming Teams and Driving Innovation",
@@ -227,21 +238,10 @@
         "publicId": "davidjura",
         "profileId": "ACoAAD1AOVMBJNSJlkfxOjkRzHNodgvOV3HdaEg"
       }
-    },
-    {
-      "type": "EMPATHY",
-      "profile": {
-        "firstName": "Honza",
-        "lastName": "Javorek",
-        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
-        "id": "8517488",
-        "publicId": "honzajavorek",
-        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
-      }
     }
   ],
   "numShares": 2,
-  "numLikes": 25,
+  "numLikes": 26,
   "numComments": 6,
   "canReact": true,
   "canPostComments": true,

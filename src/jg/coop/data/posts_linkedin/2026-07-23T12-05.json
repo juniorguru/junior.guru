@@ -75,6 +75,50 @@
   ],
   "reactions": [
     {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Matej",
+        "lastName": "Hegedüš",
+        "occupation": "Spacemanager @ Billa Slovensko",
+        "id": "1122498754",
+        "publicId": "matej-hegedus",
+        "profileId": "ACoAAELn-MIBKW5DBFhFP8iarfyu4bK2OZTPwC4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Alena",
+        "lastName": "Ulrichova",
+        "occupation": "Business Analyst | Energy Markets & Enterprise Systems | Agile Delivery",
+        "id": "603952437",
+        "publicId": "alena-ulrichova-61931914a",
+        "profileId": "ACoAACP_lTUBzPoSMxsiO9fl1aC-lmUSRGDB77c"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Tomášek",
+        "occupation": "Cyber Security & DevOps Enthusiast",
+        "id": "1140176543",
+        "publicId": "martin-tomasek-it",
+        "profileId": "ACoAAEP1tp8ByffefVNHDDyXt0htOsk6ag_XjSw"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Šotnar",
+        "occupation": "Frontend Developer Trainee | JavaScript, TypeScript, React",
+        "id": "1332351529",
+        "publicId": "sotnar",
+        "profileId": "ACoAAE9qEikBy98vuvk8guHa2u80sek2g2OsTAg"
+      }
+    },
+    {
       "type": "PRAISE",
       "profile": {
         "firstName": "Ludmila",
@@ -139,21 +183,10 @@
         "publicId": "jitka-marešová",
         "profileId": "ACoAAA2IwekByahlnQAtuKNt4Xlww1xrII0Li34"
       }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Adéla",
-        "lastName": "Tichá",
-        "occupation": "Customer Success & Support Professional | Passionate about UX/UI & Product Development",
-        "id": "422345507",
-        "publicId": "adelticha",
-        "profileId": "ACoAABkseyMBcA3muv646Fc2S5gVsWt0b9uYw-0"
-      }
     }
   ],
   "numShares": 1,
-  "numLikes": 7,
+  "numLikes": 11,
   "numComments": 3,
   "canReact": true,
   "canPostComments": true,

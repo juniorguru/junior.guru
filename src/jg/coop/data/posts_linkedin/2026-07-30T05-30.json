@@ -1,0 +1,120 @@
+{
+  "type": "document",
+  "document": {
+    "coverPages": [],
+    "title": "Rozhovor se Šimonem Kořeným",
+    "totalPageCount": 6
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7488465991086116864",
+  "url": "https://www.linkedin.com/posts/honzajavorek_rozhovor-se-%C5%A1imonem-ko%C5%99en%C3%BDm-activity-7488465991086116864-TuQF",
+  "shareUrn": "urn:li:ugcPost:7486360419578830848",
+  "text": "Pravdivě o kariéře v IT 🙏 Přečtěte si rozhovor Adéla Pavlun se Šimon Kořený\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 47,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Adéla",
+        "lastName": "Pavlun",
+        "occupation": "Somatic Guide & Writer | TRE® · SE® | Exploring human connection, safety and growth",
+        "id": "59184567",
+        "publicId": "adelapavlun",
+        "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"
+      }
+    },
+    {
+      "start": 63,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Šimon",
+        "lastName": "Kořený",
+        "occupation": "Product Owner & Dad | Building great products, raising great humans",
+        "id": "283596586",
+        "publicId": "fusatytata",
+        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1785407022372,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7486360419578830848?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7486360419578830848%2C7488539815559266304%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287488539815559266304%2Curn%3Ali%3AugcPost%3A7486360419578830848%29",
+      "text": "Odkaz tu: https://junior.guru/stories/simon-koreny/",
+      "entities": [],
+      "pinned": false,
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Barbora",
+        "lastName": "K.",
+        "occupation": "Senior Data Engineer",
+        "id": "256928895",
+        "publicId": "barbora-kacerovska",
+        "profileId": "ACoAAA9QbH8BULNdxK71_92EwEkYXA77X2Z9O3Q"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Patrik",
+        "lastName": "Brnušák",
+        "occupation": "Video editor, střihač a tvůrce obsahu. Hledáte posilu? Ozvěte se!",
+        "id": "666440295",
+        "publicId": "patrik-brnusak-cz",
+        "profileId": "ACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomas",
+        "lastName": "Manhal",
+        "occupation": "SEO/UX Specialist at Webmium ✅ Aspiring Backend Developer at Home ✅",
+        "id": "356811200",
+        "publicId": "tomasmanhal",
+        "profileId": "ACoAABVEgcABhXssunqzWgZ32PhPvDuM7pOY7Sw"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 3,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1785389421245,
+  "postedAtISO": "2026-07-30T05:30:21.245Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}
