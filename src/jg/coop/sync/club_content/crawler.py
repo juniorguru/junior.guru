@@ -240,7 +240,7 @@ async def fetch_members_reacting_by_pin(
 
 
 def get_history_after(
-    history_since: timedelta | None, now: datetime = None
+    history_since: timedelta | None, now: datetime | None = None
 ) -> datetime:
     if now:
         if now.tzinfo is None:

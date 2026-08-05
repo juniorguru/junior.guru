@@ -47,7 +47,7 @@ class MemberfulAPI:
 
     def __init__(
         self,
-        api_key: str = None,
+        api_key: str | None = None,
         user_agent: str | None = None,
     ):
         self.api_key = api_key or MEMBERFUL_API_KEY
@@ -73,7 +73,9 @@ class MemberfulAPI:
         logger.debug("Sending a mutation")
         return self.client.execute(gql(mutation), variable_values=variable_values)
 
-    def get_nodes(self, query: str, variable_values: dict = None) -> Generator[dict]:
+    def get_nodes(
+        self, query: str, variable_values: dict | None = None
+    ) -> Generator[dict]:
         if match := COLLECTION_NAME_RE.search(query):
             collection_name = match.group("collection_name")
         else:
@@ -86,10 +88,12 @@ class MemberfulAPI:
             for edge in result[collection_name]["edges"]:
                 yield edge["node"]
 
-    def get(self, query: str, variable_values: dict = None) -> list[dict]:
+    def get(self, query: str, variable_values: dict | None = None) -> list[dict]:
         return self._execute_query(query, variable_values)
 
-    def _query(self, query: str, get_page_info: Callable, variable_values: dict = None):
+    def _query(
+        self, query: str, get_page_info: Callable, variable_values: dict | None = None
+    ):
         variable_values = variable_values or {}
         cursor = ""
         n = 0
@@ -125,8 +129,8 @@ class MemberfulAuthToken:
 class MemberfulCSV:
     def __init__(
         self,
-        email: str = None,
-        password: str = None,
+        email: str | None = None,
+        password: str | None = None,
         user_agent: str | None = None,
     ):
         self.email = email or MEMBERFUL_EMAIL

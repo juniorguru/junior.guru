@@ -229,7 +229,9 @@ def is_message_older_than(message: "discord.Message | ClubMessage", date: date) 
 
 
 def is_message_over_period_ago(
-    message: "discord.Message | ClubMessage", period: timedelta, today: date = None
+    message: "discord.Message | ClubMessage",
+    period: timedelta,
+    today: date | None = None,
 ) -> bool:
     today = today or date.today()
     ago = today - period
@@ -269,7 +271,7 @@ async def add_reactions(
                 f"Message #{message.jump_url} reached maximum number of reactions!"
             )
         else:
-            raise e
+            raise
 
 
 def get_missing_reactions(reactions: discord.Reaction, emojis: set[str]) -> set[str]:

@@ -68,7 +68,7 @@ def load_tips(tips_path: Path, roles: dict[str, int] | None = None):
         )
 
 
-def get_edit_url(path: Path, cwd: Path = None) -> str:
+def get_edit_url(path: Path, cwd: Path | None = None) -> str:
     cwd = cwd or Path.cwd()
     path = path.absolute().relative_to(cwd)
     return f"https://github.com/juniorguru/junior.guru/blob/main/{path}"

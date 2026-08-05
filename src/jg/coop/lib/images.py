@@ -98,7 +98,7 @@ def render_template(
     height: int,
     template_name: str,
     context: dict[str, Any],
-    filters: dict[str, Callable] = None,
+    filters: dict[str, Callable] | None = None,
 ) -> bytes:
     logger.info(f"Rendering {width}x{height} {template_name}")
     if not list(CACHE_DIR.glob("*.css")):
@@ -253,7 +253,7 @@ def create_fallback_image(
     font = ImageFont.truetype(font_path, size_px - (padding * 2))
 
     logger.debug(f"Centering text for {initial}")
-    _, _, box_width, box_height = draw.textbbox(xy=(0, 0), text=initial, font=font)
+    _, _, _box_width, box_height = draw.textbbox(xy=(0, 0), text=initial, font=font)
     text_width, text_height = font.getmask(initial).size
     x_text = (size_px - text_width) / 2
     y_text = ((size_px - box_height) / 2) - ((box_height - text_height) / 2)

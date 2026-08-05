@@ -88,7 +88,8 @@ asyncio_default_fixture_loop_scope = "function"
 target-version = "py313"
 
 [tool.ruff.lint]
-select = ["C401", "C403", "C408", "C413", "C420", "E4", "E7", "E9", "F", "FURB110", "FURB167", "I", "PLC0207", "PLC1802", "RUF015", "RUF100", "SIM102", "SIM103", "SIM117", "SIM118", "SIM910", "UP011", "UP017", "UP034", "UP035", "UP043", "UP047"]
+extend-select = ["C420", "E4", "E7", "E9", "FURB110", "I", "PLC0207", "PLC1802", "SIM910"]
+ignore = ["ASYNC210", "ASYNC221", "ASYNC251", "BLE001", "DTZ", "RUF012"]
 
 [tool.ruff.lint.isort]
 combine-as-imports = true

@@ -336,18 +336,20 @@ async def apply_changes(client: ClubClient, changes):
             changes_by_members.setdefault(member_id, {"add": [], "remove": []})
             changes_by_members[member_id][op].append(role_id)
 
-    for member_id, changes in changes_by_members.items():
+    for member_id, member_changes in changes_by_members.items():
         discord_member = await client.club_guild.fetch_member(member_id)
-        if changes["add"]:
-            discord_roles = [all_discord_roles[role_id] for role_id in changes["add"]]
+        if member_changes["add"]:
+            discord_roles = [
+                all_discord_roles[role_id] for role_id in member_changes["add"]
+            ]
             logger.debug(
                 f"{discord_member.display_name}: adding {repr_roles(discord_roles)}"
             )
             with mutating_discord(discord_member) as proxy:
                 await proxy.add_roles(*discord_roles)
-        if changes["remove"]:
+        if member_changes["remove"]:
             discord_roles = [
-                all_discord_roles[role_id] for role_id in changes["remove"]
+                all_discord_roles[role_id] for role_id in member_changes["remove"]
             ]
             logger.debug(
                 f"{discord_member.display_name}: removing {repr_roles(discord_roles)}"

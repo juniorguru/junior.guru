@@ -250,7 +250,7 @@ async def summarize_club(today: date, correction_attempts: int) -> Summary:
 def to_feed(
     messages: list[ClubMessage],
     channel_mapping: dict[int, str],
-    threads_only_channels: list[int] = None,
+    threads_only_channels: list[int] | None = None,
 ) -> str:
     docs = []
     for channel_id, channel_messages in groupby(messages, key=attrgetter("channel_id")):

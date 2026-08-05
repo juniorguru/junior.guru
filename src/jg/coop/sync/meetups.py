@@ -34,6 +34,8 @@ from jg.coop.models.meetup import Meetup
 
 YAML_PATH = Path("src/jg/coop/data/meetups.yml")
 
+PRAGUE_TZ = ZoneInfo("Europe/Prague")
+
 
 logger = loggers.from_path(__file__)
 
@@ -254,7 +256,7 @@ async def sync_meetups(client: ClubClient, instructions: list[PostingInstruction
 
 
 def format_time(
-    starts_at: datetime, ends_at: datetime, tz: ZoneInfo = ZoneInfo("Europe/Prague")
+    starts_at: datetime, ends_at: datetime, tz: ZoneInfo = PRAGUE_TZ
 ) -> str:
     starts_at = starts_at.astimezone(tz)
     ends_at = ends_at.astimezone(tz)

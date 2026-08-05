@@ -135,7 +135,7 @@ def main(
         )
     except requests.HTTPError as e:
         logger.error(f"FioBank API error: {e.response.text}")
-        raise e
+        raise
     except requests.ConnectionError:
         logger.error("FioBank API connection error!")
         transactions = []

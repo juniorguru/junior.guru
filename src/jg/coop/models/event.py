@@ -311,7 +311,7 @@ class Event(BaseModel):
         )
 
     @classmethod
-    def featured_listing(cls, now: datetime = None) -> list[Self]:
+    def featured_listing(cls, now: datetime | None = None) -> list[Self]:
         return list(
             itertools.chain(
                 cls.planned_listing(now=now).limit(1),

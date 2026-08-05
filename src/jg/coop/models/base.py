@@ -3,7 +3,7 @@ import hashlib
 import json
 import pickle
 import sqlite3
-from collections.abc import Iterable, Set
+from collections.abc import Iterable, Set as AbstractSet
 from enum import Enum
 from functools import cache, wraps
 from pathlib import Path
@@ -77,7 +77,7 @@ class JSONField(BaseJSONField):
 
 def json_dumps(value):
     def default(o):
-        if isinstance(o, Set):
+        if isinstance(o, AbstractSet):
             return list(o)
         try:
             return o.isoformat()
