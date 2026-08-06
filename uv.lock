@@ -1,5 +1,5 @@
 version = 1
-revision = 4
+revision = 3
 requires-python = "==3.13.*"
 
 [[package]]
@@ -988,6 +988,66 @@ dev = [
     { name = "ruff" },
     { name = "scour" },
     { name = "sqlite-utils" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "apify-client", specifier = ">=2.1.0" },
+    { name = "beautifulsoup4", specifier = ">=4.14.2" },
+    { name = "click", specifier = ">=8.3.0" },
+    { name = "cssselect", specifier = ">=1.3.0" },
+    { name = "czech-sort", specifier = ">=1.1.0" },
+    { name = "diskcache", specifier = ">=5.6.3" },
+    { name = "emoji", specifier = ">=2.15.0" },
+    { name = "favicon", specifier = ">=0.7.0" },
+    { name = "feedparser", specifier = ">=6.0.12" },
+    { name = "fiobank", specifier = ">=4.0.0" },
+    { name = "fonttools", specifier = ">=4.60.1" },
+    { name = "githubkit", specifier = ">=0.13.3" },
+    { name = "google-api-python-client", specifier = ">=2.184.0" },
+    { name = "google-auth", specifier = ">=2.41.1" },
+    { name = "gql", extras = ["httpx"], specifier = ">=4.0.0" },
+    { name = "gspread", specifier = ">=6.2.1" },
+    { name = "httpx", specifier = ">=0.28.1" },
+    { name = "ics", specifier = ">=0.8.0.dev0" },
+    { name = "jg-beak", git = "https://github.com/juniorguru/beak.git" },
+    { name = "jg-chick", git = "https://github.com/juniorguru/chick.git" },
+    { name = "jinja2", specifier = ">=3.1.6" },
+    { name = "lingua-language-detector", specifier = ">=2.1.1" },
+    { name = "livereload", specifier = ">=2.7.1" },
+    { name = "lxml", specifier = ">=6.0.2" },
+    { name = "markdown", specifier = ">=3.9" },
+    { name = "markdownify", specifier = ">=1.2.2" },
+    { name = "markupsafe", specifier = ">=3.0.3" },
+    { name = "mastodon-py", specifier = ">=2.1.4" },
+    { name = "mkdocs", specifier = ">=1.6.1" },
+    { name = "mkdocs-awesome-nav", specifier = ">=3.2.0" },
+    { name = "mkdocs-gen-files", specifier = ">=0.5.0" },
+    { name = "openai", specifier = ">=2.1.0" },
+    { name = "peewee", specifier = ">=3.18.2" },
+    { name = "pillow", specifier = ">=11.3.0" },
+    { name = "playwright", specifier = ">=1.55.0" },
+    { name = "pod2gen", specifier = ">=1.0.3" },
+    { name = "py-cord", extras = ["speed"], git = "https://github.com/Pycord-Development/pycord.git" },
+    { name = "pycircleci", specifier = ">=0.7.0" },
+    { name = "pydantic", specifier = ">=2.11.10" },
+    { name = "python-slugify", specifier = ">=8.0.4" },
+    { name = "pyyaml", specifier = ">=6.0.3" },
+    { name = "stripe", specifier = ">=13.0.1" },
+    { name = "tenacity", specifier = ">=9.1.2" },
+    { name = "tiktoken", specifier = ">=0.11.0" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "ghp-import", specifier = ">=2.1.0" },
+    { name = "pync", specifier = ">=2.0.3" },
+    { name = "pytest", specifier = ">=8.4.2" },
+    { name = "pytest-asyncio", specifier = ">=1.2.0" },
+    { name = "pytest-ruff", specifier = ">=0.5" },
+    { name = "ruff", specifier = ">=0.13.3" },
+    { name = "scour", specifier = ">=0.38.2" },
+    { name = "sqlite-utils", specifier = ">=3.38" },
 ]
 
 [[package]]
