@@ -149,16 +149,20 @@ class ClubUser(BaseModel):
 
     def first_seen_on(self) -> date:
         first_message = self.list_messages.order_by(ClubMessage.created_at).first()
-        if not first_message:
-            first_pin = (
-                self.list_pins.join(
-                    ClubMessage, on=(ClubPin.pinned_message == ClubMessage.id)
-                )
-                .order_by(ClubMessage.created_at)
-                .first()
+        first_pin = (
+            self.list_pins.join(
+                ClubMessage, on=(ClubPin.pinned_message == ClubMessage.id)
             )
-            first_message = first_pin.pinned_message if first_pin else None
-        return first_message.created_at.date() if first_message else self.joined_on
+            .order_by(ClubMessage.created_at)
+            .first()
+        )
+        return non_empty_min(
+            [
+                self.joined_on,
+                first_message.created_at.date() if first_message else None,
+                first_pin.pinned_message.created_at.date() if first_pin else None,
+            ]
+        )
 
     def list_recent_messages(
         self, today=None, days=RECENT_PERIOD_DAYS, private=False

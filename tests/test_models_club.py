@@ -377,13 +377,13 @@ def test_user_first_seen_on_from_messages(test_db):
     assert user.first_seen_on() == date(2021, 3, 15)
 
 
-def test_user_first_seen_on_respects_messages(test_db):
+def test_user_first_seen_on_uses_joined_at_before_messages(test_db):
     user = create_user(1, joined_at=datetime(2021, 4, 1))
 
     create_message(1, user, created_at=datetime(2021, 4, 15))
     create_message(2, user, created_at=datetime(2021, 8, 30))
 
-    assert user.first_seen_on() == date(2021, 4, 15)
+    assert user.first_seen_on() == date(2021, 4, 1)
 
 
 def test_user_first_seen_on_from_joined_at(test_db):
@@ -400,6 +400,17 @@ def test_user_first_seen_on_from_pins(test_db):
     ClubPin.create(member=user2, pinned_message=message)
 
     assert user2.first_seen_on() == date(2021, 12, 19)
+
+
+def test_user_first_seen_on_uses_pin_before_join_and_messages(test_db):
+    user1 = create_user(1)
+    user2 = create_user(2, joined_at=datetime(2021, 4, 1))
+
+    pinned_message = create_message(1, user1, created_at=datetime(2021, 3, 15))
+    ClubPin.create(member=user2, pinned_message=pinned_message)
+    create_message(2, user2, created_at=datetime(2021, 4, 15))
+
+    assert user2.first_seen_on() == date(2021, 3, 15)
 
 
 @pytest.mark.parametrize(
