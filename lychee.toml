@@ -61,6 +61,12 @@ exclude = [
   # course dates and the company is active in the Slovak business registry)
   "^https://(www\\.)?it-academy\\.sk",
 
+  # Incomplete TLS chain – server serves its cert without the intermediate,
+  # so lychee (rustls) rejects it as "SSL certificate not trusted" on every
+  # run, while the site is in fact live (Slovak Python conference). Browsers
+  # paper over this via AIA fetching; lychee does not.
+  "^https://(www\\.)?pycon\\.sk",
+
   # Anti-scraping protections
   "^https://(www\\.)?youtube\\.com/results", # YouTube search-results URLs trigger Google's abuse gate (endless 302 loop)
   "^https://(www\\.)?(linkedin|facebook|reddit)\\.com",
