@@ -1,0 +1,54 @@
+{
+  "type": "document",
+  "document": {
+    "coverPages": [],
+    "title": "Jak se učit GitHub?",
+    "totalPageCount": 6
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7490285491037093888",
+  "url": "https://www.linkedin.com/posts/honzajavorek_jak-se-u%C4%8Dit-github-activity-7490285491037093888-tBnD",
+  "shareUrn": "urn:li:ugcPost:7486362645374267392",
+  "text": "Jak se učit GitHub?\n\nNa GitHubu je milion funkcí a tlačítek. Lidé, kteří jsou v oboru už dekádu nebo dvě, se v něm orientují dobře jen díky tomu, že jim to pod rukama rostlo postupně. Je přirozené, pokud tobě to přijde zahlcující a nepřehledné.\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 1,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1785823223838,
+  "postedAtISO": "2026-08-04T06:00:23.838Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

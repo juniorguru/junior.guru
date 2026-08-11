@@ -77,6 +77,17 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Manivannan",
+        "lastName": "Selvaraj",
+        "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
+        "id": "13167565",
+        "publicId": "citizenmani",
+        "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Matej",
         "lastName": "Hegedüš",
         "occupation": "Spacemanager @ Billa Slovensko",
@@ -172,21 +183,10 @@
         "publicId": "eliskacejpova",
         "profileId": "ACoAAA0E57ABXEjOnGWXi4ykBAzrRSYQ2_2aGg4"
       }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Jitka",
-        "lastName": "Marešová",
-        "occupation": "Cybersecurity Specialist | Penetration Tester | Full-Stack Developer",
-        "id": "227066345",
-        "publicId": "jitka-marešová",
-        "profileId": "ACoAAA2IwekByahlnQAtuKNt4Xlww1xrII0Li34"
-      }
     }
   ],
   "numShares": 1,
-  "numLikes": 11,
+  "numLikes": 12,
   "numComments": 3,
   "canReact": true,
   "canPostComments": true,

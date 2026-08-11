@@ -66,6 +66,17 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Drdla",
+        "occupation": "Zakladatel Webotvůrců | S klienty na jedné lodi v online moři",
+        "id": "336898478",
+        "publicId": "tomasdrdla",
+        "profileId": "ACoAABQUqa4BHyC9Ok_v3X6aobYkuqKB80CzN3Q"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Martin",
         "lastName": "Volák",
         "occupation": "Tady je místo pro strašně hluboké moudro.",
@@ -156,26 +167,15 @@
       "profile": {
         "firstName": "Soňa",
         "lastName": "Brunnerová",
-        "occupation": "Specialistka na online komunikaci a sociální sítě 🌐",
+        "occupation": "Specialistka na sociální sítě 🌐 Holka z médií 📰",
         "id": "244945343",
         "publicId": "sobrunn",
         "profileId": "ACoAAA6Zkb8B-REJKFctJQ-IR4HqqNEUSr_3GSE"
       }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Pavlína",
-        "lastName": "Prausová",
-        "occupation": "HR & Recruitment Consultant | Externí podpora firemního růstu",
-        "id": "416923869",
-        "publicId": "pavlína-prausová",
-        "profileId": "ACoAABjZwN0Bww6ay0S1Wzr5kZAMXAkmGagjy1Q"
-      }
     }
   ],
   "numShares": 1,
-  "numLikes": 31,
+  "numLikes": 32,
   "numComments": 5,
   "canReact": true,
   "canPostComments": false,

@@ -63,6 +63,17 @@
   ],
   "reactions": [
     {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "M.",
+        "occupation": "➕Matika Česku | Building initiatives showcasing CZ excellence | Analytical & Product Mind | With data answering question why 🧐",
+        "id": "1028266265",
+        "publicId": "jana-malickova",
+        "profileId": "ACoAAD1KGRkBI-VAyGnf9AocrmFalO_11-T5Qzc"
+      }
+    },
+    {
       "type": "LIKE",
       "profile": {
         "firstName": "Zuzana",
@@ -160,21 +171,10 @@
         "publicId": "dagmar-hanzlikova",
         "profileId": "ACoAACksNSAB9GXz_JdsnSwvlHtb3zSUYFr_66E"
       }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Martin",
-        "lastName": "Kodada",
-        "occupation": "Tech Writer | Team Lead | Developer",
-        "id": "571830630",
-        "publicId": "martin-kodada",
-        "profileId": "ACoAACIVcWYBadjcDjWNopXivbMeb-KzmafZb5U"
-      }
     }
   ],
   "numShares": 2,
-  "numLikes": 49,
+  "numLikes": 50,
   "numComments": 1,
   "canReact": true,
   "canPostComments": true,

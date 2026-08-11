@@ -8,15 +8,15 @@
           {
             "width": 720,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEiSu1SG_tPBA",
-            "fileIdentifyingUrlPathSegment": "high/B4DZ6247icKUBM-/0/1781184840046?e=1786410000&v=beta&t=djzXqTwjx1B1pZi4RPVZ6ATHWGMJeg1HhwT_n_JItzg",
-            "expiresAt": 1786410000000,
+            "fileIdentifyingUrlPathSegment": "high/B4DZ6247icKUBM-/0/1781184840046?e=1787014800&v=beta&t=bhCA57rvrK4B-2_hQbwvcgBT3wo9Ue_UpY-Z903bdYA",
+            "expiresAt": 1787014800000,
             "height": 1280
           },
           {
             "width": 360,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEiSu1SG_tPBA",
-            "fileIdentifyingUrlPathSegment": "low/B4DZ6247icKUBI-/0/1781184840046?e=1786410000&v=beta&t=uN8yhXNwFD5Tp7olszBnpsK16gdPlst1FZBFKcs9nfQ",
-            "expiresAt": 1786410000000,
+            "fileIdentifyingUrlPathSegment": "low/B4DZ6247icKUBI-/0/1781184840046?e=1787014800&v=beta&t=j-LvV_oJNV9dlnjeU4PbpBT0Jm9lIIiYaqhKz6JayKc",
+            "expiresAt": 1787014800000,
             "height": 640
           }
         ]
@@ -25,8 +25,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/mp4-720p-30fp-crf28/B4DZ6247icKUB8-/0/1781184842453?e=1786410000&v=beta&t=kYE4Fn5Dp6sRR7ZGHbA__B1TdmER0f1DbfXL_7rN4LU",
-              "expiresAt": 1786410000000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/mp4-720p-30fp-crf28/B4DZ6247icKUB8-/0/1781184842453?e=1787014800&v=beta&t=mLJjjWgjJk0xtTOvE7Ufpi_Y3Ug1v-gBMj4W9JUy_7Y",
+              "expiresAt": 1787014800000
             }
           ],
           "size": 0,
@@ -38,8 +38,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/mp4-640p-30fp-crf28/B4DZ6247icKUBk-/0/1781184842453?e=1786410000&v=beta&t=3dnmZXyfIBxVYXzPlIJgiHj_RkbsznkXomHhslxbDyQ",
-              "expiresAt": 1786410000000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/mp4-640p-30fp-crf28/B4DZ6247icKUBk-/0/1781184842453?e=1787014800&v=beta&t=sQfn4fPJwCfTgBPvCwyQXD-EumQIVF_NjNWRIWVEDUg",
+              "expiresAt": 1787014800000
             }
           ],
           "size": 0,
@@ -61,8 +61,8 @@
           "mediaType": "application/vnd.apple.mpegURL",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEiSu1SG_tPBA/CeJxzMnGJMjMyMc9M9g51KdbVcULmh6LxI9H4yWj8bF0AVCcVdA?e=1786410000&v=beta&t=ersvCTgcWc7JAJFMpno0BenHTzHpC3HcbLK4KiQxk0g",
-              "expiresAt": 1786410000000
+              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEiSu1SG_tPBA/CeJxzMnGJMjMyMc9M9g51KdbVcULmh6LxI9H4yWj8bF0AVCcVdA?e=1787014800&v=beta&t=v3FaTJQsxOGv7QPFZdXXlqKWBlSZeseA-HjCtsD4_dE",
+              "expiresAt": 1787014800000
             }
           ]
         },
@@ -72,8 +72,8 @@
           "mediaType": "application/dash+xml",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEiSu1SG_tPBA/CeJxzMnGJMjMyMc9M9g51KdbVcULmh6LxI9H4yWj8bF0AVCcVdA?e=1786410000&v=beta&t=Kg_QaSbUqWUHTpwgKV5Cn5JeyDTg62oEb7HgMODLlbw",
-              "expiresAt": 1786410000000
+              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEiSu1SG_tPBA/CeJxzMnGJMjMyMc9M9g51KdbVcULmh6LxI9H4yWj8bF0AVCcVdA?e=1787014800&v=beta&t=5TGcZC46LynFvpO0WtdRuQXcN8GJ0SoY45bBN9WUrbk",
+              "expiresAt": 1787014800000
             }
           ]
         }
@@ -154,7 +154,7 @@
       "profile": {
         "firstName": "Erik",
         "lastName": "Lerch",
-        "occupation": "PPC specialista & marketingový stratég | Nastavím vám kampaně na sociálních sítích i ve vyhledávání | Pomohu vám uchopit digitální business | Meta Ads • Google Ads • Sklik • Mailing • Mergado",
+        "occupation": "PPC specialista & marketingový stratég | Nastavím vám kampaně na sociálních sítích i ve vyhledávání | Pomůžu vám uchopit digitální business | Meta Ads • Google Ads • Sklik • Mailing • Mergado",
         "id": "331751822",
         "publicId": "eriklerch-cz",
         "profileId": "ACoAABPGIY4BXOU63bAgY0RD5gxSKuP9QTIlNMc"

@@ -56,6 +56,17 @@
   ],
   "reactions": [
     {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tereza",
+        "lastName": "Š.",
+        "occupation": "Head of QA | Game Marketing | Producer",
+        "id": "823539328",
+        "publicId": "terezaš",
+        "profileId": "ACoAADEWNoABWkzHNWzfIr522ZGNxv0pCO2umFc"
+      }
+    },
+    {
       "type": "APPRECIATION",
       "profile": {
         "firstName": "Chianti",
@@ -153,21 +164,10 @@
         "publicId": "jakub-f-359a0320b",
         "profileId": "ACoAADVdPjUB4aDql2p9fwC2crHhiqm4G2mUorw"
       }
-    },
-    {
-      "type": "APPRECIATION",
-      "profile": {
-        "firstName": "Karla",
-        "lastName": "Root",
-        "occupation": "Stay calm. Ask AI first, then panic | Data Analyst | Automation | Power BI",
-        "id": "420075610",
-        "publicId": "karlaroot",
-        "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog"
-      }
     }
   ],
   "numShares": 2,
-  "numLikes": 19,
+  "numLikes": 20,
   "numComments": 2,
   "canReact": true,
   "canPostComments": true,
@@ -179,7 +179,7 @@
   "author": {
     "firstName": "Lucie",
     "lastName": "Kopecká",
-    "occupation": "Data Analyst | Gamer and Bookworm",
+    "occupation": "Associate Data Analyst ve společnosti Mews",
     "id": "500341187",
     "publicId": "lucie-kopecka199722",
     "profileId": "ACoAAB3SmcMBvL6G2roLd-uQG9E4UdBKyXxJXDY"

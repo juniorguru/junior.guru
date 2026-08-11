@@ -36,6 +36,17 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Ying-Chieh (Lisa)",
+        "lastName": "Lee",
+        "occupation": "Manager Biostatistics at LivaNova",
+        "id": "434115272",
+        "publicId": "ying-chieh-lisa-lee-148474101",
+        "profileId": "ACoAABngEsgBgM_P_7Q9uZWxv4J0T1KUyP4LiOA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Domitil",
         "lastName": "Katemo",
         "occupation": "Business Administrator | 3+ years in administration, marketing & customer service | Skilled in project coordination & process improvement",
@@ -134,7 +145,7 @@
     }
   ],
   "numShares": 0,
-  "numLikes": 9,
+  "numLikes": 10,
   "numComments": 3,
   "canReact": true,
   "canPostComments": true,

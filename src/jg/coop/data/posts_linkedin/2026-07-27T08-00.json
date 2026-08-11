@@ -16,6 +16,17 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Jana ",
+        "lastName": "Buchmannová",
+        "occupation": "Pomůžu vám najít práci, kterou budete milovat | Komplexní kariérové poradenství i jednorázové konzultace | 16 let praxe • 950+ klientů • on-line nebo osobně v Brně",
+        "id": "73865761",
+        "publicId": "janabuchmannova",
+        "profileId": "ACoAAARnGiEBziyMSuekWOTA_4CKhIynPIHYD-Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Petr",
         "lastName": "Illek",
         "occupation": "Frontend developer at Annertech. Ambasador Česko.Digital. CSGOV Founder. Drupal Developer.",
@@ -37,7 +48,7 @@
     }
   ],
   "numShares": 0,
-  "numLikes": 2,
+  "numLikes": 3,
   "numComments": 0,
   "canReact": true,
   "canPostComments": true,

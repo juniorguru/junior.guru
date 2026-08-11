@@ -1,0 +1,120 @@
+{
+  "type": "document",
+  "document": {
+    "coverPages": [],
+    "title": "Rozhovor s Petrem Kašičkou",
+    "totalPageCount": 8
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7491032837777788928",
+  "url": "https://www.linkedin.com/posts/honzajavorek_rozhovor-s-petrem-ka%C5%A1i%C4%8Dkou-activity-7491032837777788928-ekLp",
+  "shareUrn": "urn:li:ugcPost:7486360681219276801",
+  "text": "Pravdivě o kariéře v IT 🙏 Přečtěte si rozhovor Adéla Pavlun s Petr Kašička\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 47,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Adéla",
+        "lastName": "Pavlun",
+        "occupation": "Somatic Guide & Writer | TRE® · SE® | Exploring human connection, safety and growth",
+        "id": "59184567",
+        "publicId": "adelapavlun",
+        "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"
+      }
+    },
+    {
+      "start": 62,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Kašička",
+        "occupation": "SW tester se zkušenostmi z oblasti military a bezpečnosti.",
+        "id": "1110545599",
+        "publicId": "p-kasicka",
+        "profileId": "ACoAAEIxlL8Bfkq3CiEwFXvTQla3a5z_FUgQD3w"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1786021014979,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7486360681219276801?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7486360681219276801%2C7491115087206850560%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287491115087206850560%2Curn%3Ali%3AugcPost%3A7486360681219276801%29",
+      "text": "Odkaz tu: https://junior.guru/stories/petr-kasicka/",
+      "entities": [],
+      "pinned": false,
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "distance": "OUT_OF_NETWORK"
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Táňa",
+        "lastName": "Váchová",
+        "occupation": "📌 administrativa ⊃ podpora ⊃ empatie",
+        "id": "1399848350",
+        "publicId": "tanavachova",
+        "profileId": "ACoAAFNv_Z4BxskkxA5XZSQetiT0HKCBk4rbPGE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Zmijková",
+        "occupation": "Software Developer",
+        "id": "450096743",
+        "publicId": "zmijkova",
+        "profileId": "ACoAABrT7mcBs7ie4r1nA4McNBK2tV0qfujA2v4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Červinka",
+        "occupation": "Python developer and lecturer",
+        "id": "355842259",
+        "publicId": "jakub-červinka",
+        "profileId": "ACoAABU1uNMBxEkN7xMohKuhfytB97ZjK-tfEKo"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 3,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1786001405186,
+  "postedAtISO": "2026-08-06T07:30:05.186Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

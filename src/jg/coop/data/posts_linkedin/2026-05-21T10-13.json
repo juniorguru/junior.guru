@@ -238,6 +238,17 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Francisco",
+        "lastName": "G. Rodriguez",
+        "occupation": "Cybersecurity | Cloud Architecture | Software Engineering @ Rapid7",
+        "id": "7296830",
+        "publicId": "fgr-infosec",
+        "profileId": "ACoAAABvVz4BhLZ9ope_atfXXVKXiR5UNYSOats"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Vladyslav",
         "lastName": "Arseniuk",
         "occupation": "Software Engineer",
@@ -333,21 +344,10 @@
         "publicId": "jana-benešová-66602024b",
         "profileId": "ACoAAD3C1a4Bwb3HrDCRzQTyWV3hn1tRhr72LlU"
       }
-    },
-    {
-      "type": "PRAISE",
-      "profile": {
-        "firstName": "Radek",
-        "lastName": "Novák",
-        "occupation": "Product Owner of CyberSecurity education at Czechitas",
-        "id": "536342854",
-        "publicId": "radek-in-cybersec",
-        "profileId": "ACoAAB_38UYBxzrVlVnDZB45Rlg9B-MMD_leZjY"
-      }
     }
   ],
   "numShares": 5,
-  "numLikes": 44,
+  "numLikes": 45,
   "numComments": 14,
   "canReact": true,
   "canPostComments": true,

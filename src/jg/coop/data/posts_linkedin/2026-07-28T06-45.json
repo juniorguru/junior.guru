@@ -8,15 +8,15 @@
           {
             "width": 720,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEjWyChVsNLsg",
-            "fileIdentifyingUrlPathSegment": "high/B4DZ.TpynyIIBQ-/0/1784888636029?e=1786410000&v=beta&t=xrvW4oWI6FAOjUWaNcE3-gdRs1mFL9BzvXk61hsMVuQ",
-            "expiresAt": 1786410000000,
+            "fileIdentifyingUrlPathSegment": "high/B4DZ.TpynyIIBQ-/0/1784888636029?e=1787014800&v=beta&t=apd-3Nr66kU17DTVBWs9S_9zPfHXx0Bh6ASNp8d6mKc",
+            "expiresAt": 1787014800000,
             "height": 1280
           },
           {
             "width": 360,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEjWyChVsNLsg",
-            "fileIdentifyingUrlPathSegment": "low/B4DZ.TpynyIIBM-/0/1784888636029?e=1786410000&v=beta&t=2m0a_LNgd4IzdZAvI9__XNvsLsOr9CLPKOVDJmIywDU",
-            "expiresAt": 1786410000000,
+            "fileIdentifyingUrlPathSegment": "low/B4DZ.TpynyIIBM-/0/1784888636029?e=1787014800&v=beta&t=Domrmfb6lDrdk8NlFJyWBRmPrnW6PvoNPSBj78vI2aI",
+            "expiresAt": 1787014800000,
             "height": 640
           }
         ]
@@ -25,8 +25,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEjWyChVsNLsg/mp4-720p-30fp-crf28/B4DZ.TpynyIICA-/0/1784888640537?e=1786410000&v=beta&t=_7R7M_HDQ75F8Z2p278PmE91qk1_Z1YgDkJmY67cfvg",
-              "expiresAt": 1786410000000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEjWyChVsNLsg/mp4-720p-30fp-crf28/B4DZ.TpynyIICA-/0/1784888640537?e=1787014800&v=beta&t=-JA0qX5ZtdWmWGCMzfGgN5UnbvHKoF8xntUi6AUms4k",
+              "expiresAt": 1787014800000
             }
           ],
           "size": 0,
@@ -38,8 +38,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEjWyChVsNLsg/mp4-640p-30fp-crf28/B4DZ.TpynyIIBo-/0/1784888640049?e=1786410000&v=beta&t=aHFhlWkqw_55IF2o26JJYOipsoMjCbXroP2fmKnjEsU",
-              "expiresAt": 1786410000000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEjWyChVsNLsg/mp4-640p-30fp-crf28/B4DZ.TpynyIIBo-/0/1784888640049?e=1787014800&v=beta&t=cGpGHt36R2Haxtm4z8upCxCSrlqGFCOxNugIJMK15yg",
+              "expiresAt": 1787014800000
             }
           ],
           "size": 0,
@@ -61,8 +61,8 @@
           "mediaType": "application/vnd.apple.mpegURL",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEjWyChVsNLsg/CeJxzMnGJ0gspqMyr9PR0KdfVcULmR6Lxk9H46Wj8fF0A2qQYxw?e=1786410000&v=beta&t=0bn1A1JYs__ywMUvEhAWDgi0GSgbflpuMOa14gNbVGA",
-              "expiresAt": 1786410000000
+              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEjWyChVsNLsg/CeJxzMnGJ0gspqMyr9PR0KdfVcULmR6Lxk9H46Wj8fF0A2qQYxw?e=1787014800&v=beta&t=ObpYHf1gCoLb3YUwjJj0fzZ1dOSMhPX1eCYUQq84rGo",
+              "expiresAt": 1787014800000
             }
           ]
         },
@@ -72,8 +72,8 @@
           "mediaType": "application/dash+xml",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEjWyChVsNLsg/CeJxzMnGJ0gspqMyr9PR0KdfVcULmR6Lxk9H46Wj8fF0A2qQYxw?e=1786410000&v=beta&t=QbdDk2QvhE6YYj68lwGWoxSh-ynBMId2NIQHLidXB5g",
-              "expiresAt": 1786410000000
+              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEjWyChVsNLsg/CeJxzMnGJ0gspqMyr9PR0KdfVcULmR6Lxk9H46Wj8fF0A2qQYxw?e=1787014800&v=beta&t=thVNNGgrEoR3BxGN2Q4kuw__gaGe6riiderKIBAYOsI",
+              "expiresAt": 1787014800000
             }
           ]
         }

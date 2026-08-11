@@ -60,6 +60,17 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Barbora",
         "lastName": "K.",
         "occupation": "Senior Data Engineer",
@@ -92,7 +103,7 @@
     }
   ],
   "numShares": 1,
-  "numLikes": 3,
+  "numLikes": 4,
   "numComments": 1,
   "canReact": true,
   "canPostComments": true,

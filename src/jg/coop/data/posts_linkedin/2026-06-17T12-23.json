@@ -27,6 +27,17 @@
   ],
   "reactions": [
     {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Radek",
+        "lastName": "Holý",
+        "occupation": "Test Automation Engineer | Python Devotee | Open Source Hippie | Chasing Edge Cases & Fairness",
+        "id": "56523553",
+        "publicId": "jmenemradek",
+        "profileId": "ACoAAANeeyEB64ERPMylSJEByw6iLTk9SWwioOE"
+      }
+    },
+    {
       "type": "LIKE",
       "profile": {
         "firstName": "Barbora",
@@ -124,21 +135,10 @@
         "publicId": "ikvasnica",
         "profileId": "ACoAAAGV2MoBN8JZ2pQK395RLRvyRx1Tw4GdAYg"
       }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Josef",
-        "lastName": "Ďuriš",
-        "occupation": "Embedded Systems Engineer | From Advanced System Analysis to Low-Level Development | C/C++ | Linux | HW/SW Integration",
-        "id": "304898445",
-        "publicId": "josef-ďuriš-a3913986",
-        "profileId": "ACoAABIsYY0ByKzpglEMZ3CjzvZoYSp9yKeTxvs"
-      }
     }
   ],
   "numShares": 0,
-  "numLikes": 13,
+  "numLikes": 14,
   "numComments": 1,
   "canReact": true,
   "canPostComments": true,
