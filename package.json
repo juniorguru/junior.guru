@@ -14,10 +14,10 @@
   "devDependencies": {
     "@343dev/optimizt": "13.0.0",
     "bootstrap": "5.3.8",
-    "esbuild": "0.28.1",
+    "esbuild": "0.28.2",
     "esbuild-sass-plugin": "3.7.0",
     "jsdom": "30.0.1",
-    "oxfmt": "0.61.0",
+    "oxfmt": "0.62.0",
     "sass": "1.77.6",
     "stylelint": "16.26.1",
     "stylelint-config-twbs-bootstrap": "16.1.0",
