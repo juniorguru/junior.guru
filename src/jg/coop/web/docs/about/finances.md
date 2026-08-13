@@ -36,10 +36,11 @@ Cílem není zbohatnout, ale dlouhodobě pomáhat juniorům, pohodlně živit ro
     </tr>
 </table>
 
-Honza na junior.guru pracuje na plný úvazek, má malé dítě, bydlí v nájmu uprostřed Prahy, nemá ani auto.
-Seniorní programátor s [jeho zkušenostmi](https://www.linkedin.com/in/honzajavorek/), který pracuje pro pražskou nebo zahraniční firmu, vydělává 100.000 Kč měsíčně čistého a víc.
-Honzu ale práce na junior.guru hodně naplňuje a tak se tomu za podpory své rodiny věnuje i přesto, že to vydělá méně.
-Z předchozích angažmá má úspory, díky nimž může projekt držet při životě, i když je zrovna horší období a moc nevydělává.
+Mezi lety 2019–2024 mohl Honza dělat junior.guru na plný úvazek. Kvůli ekonomickým změnám na trhu po roce 2023 si pak našel částečný úvazek v [Apify](https://apify.com/), čímž vykrývá nedostatečné příjmy z junior.guru.
+
+Honza žije s rodinou v Praze, na Žižkově. Děti má, auto nemá, hypotéku má.
+Seniorní programátor s [jeho zkušenostmi](https://www.linkedin.com/in/honzajavorek/), který pracuje pro pražskou nebo zahraniční firmu, vydělává běžně 100.000 Kč měsíčně čistého a víc.
+Honzu ale práce na junior.guru hodně naplňuje, a tak se tomu za podpory své rodiny věnuje i přesto, že vydělá méně.
 
 <table class="table table-goals">
     {% set progress_40_ptc = ((profit_ttm * 100) / 40000)|round|int %}
@@ -74,7 +75,7 @@ Z předchozích angažmá má úspory, díky nimž může projekt držet při ž
     </tr>
 </table>
 
-Částky nelze přímočaře srovnávat se mzdou. Jako podnikatel potřebuje velkou rezervu, aby se nemusel strachovat s každou změnou rodinných nákladů, jestli může pokračovat. Také mu nikdo neplatí dovolenou, nemocenskou, nespoří na důchod.
+Částky nelze přímočaře srovnávat se mzdou. Jako podnikatel potřebuje velkou rezervu, aby se nemusel strachovat s každou změnou rodinných nákladů, jestli může pokračovat. Také si musí sám zařídit dovolenou, nemocenskou, spořit na důchod, apod.
 
 <p class="text-center standout-top">
   <a href="{{ pages|docs_url("love.jinja")|url }}" class="love-btn btn-lg pulse">{{ 'heart-fill'|icon }} Pošli LOVE</a>
