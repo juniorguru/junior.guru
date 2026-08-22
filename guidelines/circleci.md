@@ -15,7 +15,7 @@ The repo is public, so the **CircleCI API needs no token**. Slug is `gh/juniorgu
 
 ## Is the failure intermittent?
 
-Always weigh whether the failure is a real regression or a flake — especially for network-heavy jobs like `check-links`, where transient `5xx` are common. Pull the **last ~5 runs** of the same workflow (repeat steps 1–4 per pipeline) and compare the failed job. Likely intermittent when:
+Always weigh whether the failure is a real regression or a flake — especially for network-heavy jobs like `check-links`, where transient `5xx` are common. Collect the **last ~5 runs of the same workflow**: page through the pipeline list following each response's `next_page_token`, skipping unrelated pipelines on intervening pages (a single page rarely holds 5 nightly runs, since `02:xx` and branch/PR pipelines are interleaved), until 5 matching pipelines are gathered. Then repeat steps 2–4 per pipeline and compare the failed job. Likely intermittent when:
 
 - The same job passed on other recent runs, and/or
 - The failing detail differs run to run (e.g. a different URL each time), and/or
