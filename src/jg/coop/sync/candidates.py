@@ -224,7 +224,7 @@ async def main(
 
 @cache(expire=timedelta(hours=1), ignore=(0,), tag="candidates-images")
 @retry(
-    retry=retry_if_exception_type(httpx.RequestError),
+    retry=retry_if_exception_type((httpx.RequestError, httpx.HTTPStatusError)),
     wait=wait_random_exponential(max=60),
     stop=stop_after_attempt(3),
     reraise=True,
