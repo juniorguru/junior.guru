@@ -23,6 +23,8 @@ Always weigh whether the failure is a real regression or a flake — especially 
 
 A real regression fails the **same way every run** on the same commit range.
 
+When intermittent and the flaky call lives in our own code (a sync request, an API call), the fix is often to retry that request with `tenacity` (already a dependency; see existing usage under `src/jg/coop/sync`) rather than to touch the failing target. External link-check flakes (`check-links`) are handled in lychee config instead.
+
 ## Reporting
 
 Give: which job failed, the concrete error, the intermittent-vs-regression verdict with evidence, then suggested fixes. Wait for the user to decide before sending a PR.
