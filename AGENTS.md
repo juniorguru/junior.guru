@@ -33,7 +33,7 @@ Boundaries: code/commits/PRs written normal.
 
 - Always run the `jg` project CLI as `uv run jg`. Always prefer `uv` over custom Python binary and virtual environment management.
 - If you edit code, follow [Code Guidelines](guidelines/code.md).
-- To check the nightly build or CI, or to diagnose why it failed, follow [Nightly Guidelines](guidelines/nightly.md).
+- To check the CI or nightly build, or to diagnose why it failed, follow [CircleCI Guidelines](guidelines/circleci.md).
 - After any changes inside `src/jg/coop/images`, always run `uv run jg tidy` before finishing the work.
 - If you work inside `src/jg/coop/data/tips`, always check [Tips Guidelines](src/jg/coop/data/tips/README.md) first.
 - If you work inside `src/jg/coop/web/docs/stories`, follow [Stories Guidelines](guidelines/stories.md).
