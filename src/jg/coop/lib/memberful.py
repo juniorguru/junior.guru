@@ -8,7 +8,7 @@ from dataclasses import dataclass
 from datetime import UTC, date, datetime, timedelta
 from typing import Any
 
-import httpx
+import httpx2
 from gql import Client, gql
 from gql.transport.httpx import HTTPXTransport
 from lxml import html
@@ -64,7 +64,7 @@ class MemberfulAPI:
                     "Authorization": f"Bearer {self.api_key}",
                     "User-Agent": self.user_agent,
                 },
-                transport=httpx.HTTPTransport(verify=True, retries=3),
+                transport=httpx2.HTTPTransport(verify=True, retries=3),
             )
             self._client = Client(transport=transport)
         return self._client
@@ -140,7 +140,7 @@ class MemberfulCSV:
         self._auth_token = None
 
     @property
-    def session(self) -> httpx.Client:
+    def session(self) -> httpx2.Client:
         if not self._session:
             self._session, self._auth_token = self._auth()
         return self._session
@@ -151,9 +151,9 @@ class MemberfulCSV:
             self._session, self._auth_token = self._auth()
         return self._auth_token
 
-    def _auth(self) -> tuple[httpx.Client, Any]:
+    def _auth(self) -> tuple[httpx2.Client, Any]:
         logger.debug("Logging into Memberful")
-        session = httpx.Client(follow_redirects=True)
+        session = httpx2.Client(follow_redirects=True)
         session.headers.update({"User-Agent": BROWSER_USER_AGENT})
         response = session.get("https://juniorguru.memberful.com/admin/auth/sign_in")
         response.raise_for_status()
@@ -177,8 +177,8 @@ class MemberfulCSV:
     @cache(expire=timedelta(hours=1), ignore=(0,), tag="memberful-csv")
     @retry(
         retry=(
-            retry_if_exception_type(httpx.HTTPStatusError)
-            | retry_if_exception_type(httpx.ConnectError)
+            retry_if_exception_type(httpx2.HTTPStatusError)
+            | retry_if_exception_type(httpx2.ConnectError)
         ),
         wait=wait_random_exponential(max=60),
         stop=stop_after_attempt(3),
@@ -203,7 +203,7 @@ class MemberfulCSV:
             follow_redirects=False,
         )
         # The POST 303-redirects to the created export. Unlike requests,
-        # httpx's raise_for_status() treats an unfollowed redirect as an error,
+        # httpx2's raise_for_status() treats an unfollowed redirect as an error,
         # so only raise on a genuine 4xx/5xx here.
         if response.is_error:
             response.raise_for_status()
@@ -229,7 +229,7 @@ class MemberfulCSV:
         return self._poll_for_csv(download_url)
 
     @retry(
-        retry=retry_if_exception_type(httpx.HTTPStatusError),
+        retry=retry_if_exception_type(httpx2.HTTPStatusError),
         wait=wait_fixed(5),
         stop=stop_after_attempt(10),
         reraise=True,
