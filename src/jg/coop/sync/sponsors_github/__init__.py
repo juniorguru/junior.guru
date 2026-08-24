@@ -2,7 +2,7 @@ from io import BytesIO
 from pathlib import Path
 
 import click
-import httpx
+import httpx2
 from githubkit import GitHub
 from PIL import Image
 
@@ -48,7 +48,7 @@ def main(github_api_key: str):
             avatar_url = node["sponsorEntity"]["avatarUrl"]
 
             logger.info(f"Downloading avatar {avatar_url}")
-            response = httpx.get(avatar_url, follow_redirects=True, timeout=30)
+            response = httpx2.get(avatar_url, follow_redirects=True, timeout=30)
             response.raise_for_status()
             image = Image.open(BytesIO(response.content))
             image.thumbnail((AVATAR_SIZE_PX, AVATAR_SIZE_PX))

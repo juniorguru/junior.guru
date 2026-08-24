@@ -8,7 +8,7 @@ from enum import StrEnum
 from typing import Literal
 
 import czech_sort
-import httpx
+import httpx2
 from pydantic import BaseModel
 
 from jg.coop.lib import loggers
@@ -211,7 +211,7 @@ async def locate(
 
     async with limit(4):
         logger.debug(f"Locating: {location_raw!r}")
-        async with httpx.AsyncClient(headers=DEFAULT_HEADERS) as client:
+        async with httpx2.AsyncClient(headers=DEFAULT_HEADERS) as client:
             for query, type in generate_queries(location_raw):
                 logger.debug(f"Locating as {type}: {query!r}")
                 # See also https://pro.mapy.cz/examples/geocode/

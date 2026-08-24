@@ -2,7 +2,7 @@ from pathlib import Path
 from typing import Literal
 
 import click
-import httpx
+import httpx2
 import yaml
 from discord import ChannelType, Thread
 from discord.errors import Forbidden
@@ -107,7 +107,7 @@ async def main(config_path: Path, tag: str, debug_user: int | None):
         raise ValueError(f"Configured interest roles not found: {extra_ids}")
 
     # Ensure roles have icons
-    async with httpx.AsyncClient() as http_client:
+    async with httpx2.AsyncClient() as http_client:
         for role_id, role in interest_roles.items():
             icon_path = ICONS_DIR / f"{role_id}.svg"
             if icon_path.exists():

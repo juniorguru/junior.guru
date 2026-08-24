@@ -3,7 +3,7 @@ from datetime import date
 from operator import attrgetter
 
 import click
-import httpx
+import httpx2
 from discord import Embed, File, MessageType
 from emoji import emojize, is_emoji
 
@@ -95,7 +95,7 @@ async def move(
         )
 
     with tempfile.NamedTemporaryFile(suffix=".png") as f:
-        response = httpx.get(emoji_url(emoji))
+        response = httpx2.get(emoji_url(emoji))
         response.raise_for_status()
         f.write(response.content)
         f.flush()

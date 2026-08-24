@@ -23,9 +23,10 @@ dependencies = [
   "githubkit>=0.13.3",
   "google-api-python-client>=2.184.0",
   "google-auth>=2.41.1",
-  "gql[httpx]>=4.0.0",
+  # Pre-release: httpx2 support (gql[httpx2]) lands only in gql 4.4 betas.
+  "gql[httpx2]>=4.4.0b0",
   "gspread>=6.2.1",
-  "httpx>=0.28.1",
+  "httpx2>=2.12.0",
   "ics>=0.8.0.dev0",
   "jinja2>=3.1.6",
   "lingua-language-detector>=2.1.1",
@@ -73,6 +74,11 @@ dev = [
   "scour>=0.38.2",
   "sqlite-utils>=3.38",
 ]
+
+[tool.uv]
+# gql[httpx2] only ships in gql 4.4 betas, which pull the still-prerelease
+# graphql-core 3.3 (a transitive dep with no stable release in range).
+prerelease = "allow"
 
 [tool.pytest.ini_options]
 python_files = "test_*.py"

@@ -4,7 +4,7 @@ from functools import partial
 from pathlib import Path
 
 import click
-import httpx
+import httpx2
 from githubkit import GitHub
 from lxml import html
 
@@ -96,7 +96,7 @@ async def main(history_path: Path, github_api_key: str):
 def scrape_youtube():
     # TODO move to Plucker
     logger.info("Scraping YouTube")
-    with httpx.Client(follow_redirects=True) as client:
+    with httpx2.Client(follow_redirects=True) as client:
         response = client.get(YOUTUBE_URL)
         response.raise_for_status()
         html_tree = html.fromstring(response.content)

@@ -7,7 +7,7 @@ from pathlib import Path
 from time import sleep
 
 import click
-import httpx
+import httpx2
 from lxml import html
 from PIL import Image
 from playwright.sync_api import (
@@ -252,14 +252,14 @@ def is_fb_screenshot(screenshot):
 def download_yt_cover_image(screenshot):
     url, path = screenshot
     logger.info(f"Shooting {url}")
-    resp = httpx.get(
+    resp = httpx2.get(
         f"https://img.youtube.com/vi/{parse_youtube_id(url)}/maxresdefault.jpg",
         follow_redirects=True,
     )
     try:
         resp.raise_for_status()
-    except httpx.HTTPStatusError:
-        resp = httpx.get(
+    except httpx2.HTTPStatusError:
+        resp = httpx2.get(
             f"https://img.youtube.com/vi/{parse_youtube_id(url)}/hqdefault.jpg",
             follow_redirects=True,
         )
@@ -285,7 +285,7 @@ def download_fb_cover_image(screenshot):
             browser.close()
             raise RuntimeError(f"Cover photo not found on Facebook page: {url}")
         browser.close()
-    resp = httpx.get(image_url, follow_redirects=True)
+    resp = httpx2.get(image_url, follow_redirects=True)
     resp.raise_for_status()
     image_bytes = edit_image(resp.content)
     logger.info(f"Writing {path}")

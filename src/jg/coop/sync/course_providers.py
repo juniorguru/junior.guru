@@ -4,7 +4,7 @@ from datetime import date, timedelta
 from functools import wraps
 from pathlib import Path
 
-import httpx
+import httpx2
 import yaml
 from pydantic import HttpUrl
 
@@ -109,7 +109,7 @@ def main():
             "page": "/courses/*",
             "start": str(date.today() - timedelta(days=days)),
         }
-        response = httpx.get(
+        response = httpx2.get(
             "https://simpleanalytics.com/junior.guru.json", params=params
         )
         logger.debug(f"API URL: {response.url}")

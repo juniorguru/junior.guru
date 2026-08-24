@@ -2,7 +2,7 @@ import logging
 
 import click
 import feedparser
-import httpx
+import httpx2
 from discord.abc import GuildChannel
 from tenacity import (
     before_sleep_log,
@@ -35,7 +35,7 @@ def main(channel_id: int, rss_url: str):
     logger.info(f"Reading RSS: {rss_url}")
     try:
         response = fetch_rss(rss_url)
-    except httpx.HTTPError as e:
+    except httpx2.HTTPError as e:
         logger.warning(f"Failed to fetch RSS {rss_url}: {e}")
         return
     if not (articles := feedparser.parse(response.content).entries):
@@ -61,13 +61,13 @@ def main(channel_id: int, rss_url: str):
 
 
 @retry(
-    retry=retry_if_exception_type(httpx.HTTPError),
+    retry=retry_if_exception_type(httpx2.HTTPError),
     stop=stop_after_attempt(3),
     reraise=True,
     before_sleep=before_sleep_log(logger, logging.WARNING),
 )
-def fetch_rss(rss_url: str) -> httpx.Response:
-    response = httpx.get(rss_url)
+def fetch_rss(rss_url: str) -> httpx2.Response:
+    response = httpx2.get(rss_url)
     response.raise_for_status()
     return response
 

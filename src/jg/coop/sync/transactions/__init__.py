@@ -5,7 +5,7 @@ from pathlib import Path
 from pprint import pformat
 
 import click
-import httpx
+import httpx2
 import requests
 from fiobank import FioBank
 
@@ -188,7 +188,7 @@ def main(
 
 
 @mutations.mutates_fakturoid()
-def toggle_fakturoid_todo(client: httpx.Client, todo_id: int):
+def toggle_fakturoid_todo(client: httpx2.Client, todo_id: int):
     logger.info(f"Toggling todo: ID {todo_id}")
     response = client.post(f"/todos/{todo_id}/toggle_completion.json")
     response.raise_for_status()

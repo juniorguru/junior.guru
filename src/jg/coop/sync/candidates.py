@@ -6,7 +6,7 @@ from pathlib import Path
 from pprint import pformat
 
 import click
-import httpx
+import httpx2
 from githubkit import GitHub
 from PIL import Image
 from tenacity import (
@@ -111,7 +111,7 @@ async def main(
             CandidateStats.deserialize(line)
 
     logger.info("Reading API")
-    async with httpx.AsyncClient() as client:
+    async with httpx2.AsyncClient() as client:
         response = await client.get(api_url)
         response.raise_for_status()
         data = response.json()
@@ -224,13 +224,13 @@ async def main(
 
 @cache(expire=timedelta(hours=1), ignore=(0,), tag="candidates-images")
 @retry(
-    retry=retry_if_exception_type((httpx.RequestError, httpx.HTTPStatusError)),
+    retry=retry_if_exception_type((httpx2.RequestError, httpx2.HTTPStatusError)),
     wait=wait_random_exponential(max=60),
     stop=stop_after_attempt(3),
     reraise=True,
     before_sleep=before_sleep_log(logger, logging.WARNING),
 )
-async def download_image(client: httpx.AsyncClient, url: str) -> bytes:
+async def download_image(client: httpx2.AsyncClient, url: str) -> bytes:
     logger.debug(f"Downloading image: {url}")
     response = await client.get(url)
     response.raise_for_status()

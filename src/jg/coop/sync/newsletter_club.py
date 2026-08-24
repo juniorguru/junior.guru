@@ -1,7 +1,7 @@
 from datetime import date, datetime, timedelta
 
 import click
-import httpx
+import httpx2
 from discord.abc import GuildChannel
 from pydantic import BaseModel
 
@@ -61,9 +61,9 @@ async def main(
     logger.info(f"Latest newsletter URL: {newsletter.absolute_url}")
     try:
         logger.info("Verifying newsletter page accessibility")
-        response = httpx.head(newsletter.absolute_url, timeout=5.0)
+        response = httpx2.head(newsletter.absolute_url, timeout=5.0)
         response.raise_for_status()
-    except httpx.HTTPError as e:
+    except httpx2.HTTPError as e:
         logger.warning(f"Newsletter page not accessible: {e}")
     else:
         logger.info(f"Newsletter published on: {newsletter.published_on}")

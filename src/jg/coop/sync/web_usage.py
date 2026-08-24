@@ -1,6 +1,6 @@
 from datetime import date, timedelta
 
-import httpx
+import httpx2
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import charts, loggers
@@ -101,7 +101,7 @@ def fetch_analytics(pages: list[str], time_range: dict[str, str]) -> int:
     )
     if pages != ["*"]:
         params["pages"] = ",".join(pages)
-    response = httpx.get(
+    response = httpx2.get(
         "https://simpleanalytics.com/junior.guru.json",
         params=params,
         follow_redirects=True,

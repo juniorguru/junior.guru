@@ -1,7 +1,7 @@
 from datetime import date, datetime, timedelta
 
 import click
-import httpx
+import httpx2
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import fakturoid, loggers, mutations
@@ -37,7 +37,7 @@ def main(today: date, expire_days: int):
 
 
 @mutations.mutates_fakturoid()
-def remove_inbox_file(client: httpx.Client, inbox_file_id: int):
+def remove_inbox_file(client: httpx2.Client, inbox_file_id: int):
     logger.info(f"Removing file: ID {inbox_file_id}")
     response = client.delete(f"/inbox_files/{inbox_file_id}.json")
     response.raise_for_status()
