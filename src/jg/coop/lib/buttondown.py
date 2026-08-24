@@ -5,7 +5,7 @@ from datetime import date
 from enum import StrEnum
 from typing import Self, TypeVar
 
-import httpx
+import httpx2
 from tenacity import (
     before_sleep_log,
     retry,
@@ -65,7 +65,7 @@ class ButtondownAPI:
         self._client = None
 
     async def __aenter__(self) -> Self:
-        self._client = httpx.AsyncClient(
+        self._client = httpx2.AsyncClient(
             base_url="https://api.buttondown.com/v1/",
             headers={"Authorization": f"Token {self.token}"},
             follow_redirects=True,
@@ -77,7 +77,7 @@ class ButtondownAPI:
             await self._client.aclose()
 
     @retry(
-        retry=retry_if_exception_type(httpx.RequestError),
+        retry=retry_if_exception_type(httpx2.RequestError),
         wait=wait_random_exponential(max=60),
         stop=stop_after_attempt(3),
         reraise=True,
@@ -90,7 +90,7 @@ class ButtondownAPI:
             if response.status_code == 204 or not response.content:
                 return {}
             return response.json()
-        except httpx.HTTPStatusError as e:
+        except httpx2.HTTPStatusError as e:
             exc_data = e.response.json()
             raise ButtondownError(
                 f"{exc_data['detail']} – {e.request.method} {e.request.url}",

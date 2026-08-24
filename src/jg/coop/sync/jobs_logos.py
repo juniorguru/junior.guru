@@ -6,7 +6,7 @@ from io import BytesIO
 from pathlib import Path
 
 import click
-import httpx
+import httpx2
 from PIL import Image, ImageChops, ImageOps
 from pydantic import BaseModel
 from tenacity import (
@@ -162,14 +162,14 @@ def sort_key(logo: Logo) -> tuple[bool, int, int]:
 
 def is_retryable_download_error(exc: Exception) -> bool:
     return (
-        isinstance(exc, httpx.HTTPStatusError)
+        isinstance(exc, httpx2.HTTPStatusError)
         and exc.response.status_code in RETRYABLE_DOWNLOAD_STATUS_CODES
     )
 
 
 @retry(
     retry=(
-        retry_if_exception_type(httpx.RequestError)
+        retry_if_exception_type(httpx2.RequestError)
         | retry_if_exception(is_retryable_download_error)
     ),
     wait=wait_random_exponential(max=60),
@@ -178,7 +178,7 @@ def is_retryable_download_error(exc: Exception) -> bool:
     before_sleep=before_sleep_log(logger, logging.WARNING),
 )
 def download_logo_image(url: str) -> bytes:
-    response = httpx.get(url, follow_redirects=True)
+    response = httpx2.get(url, follow_redirects=True)
     response.raise_for_status()
     return response.content
 

@@ -1,5 +1,5 @@
 import click
-import httpx
+import httpx2
 
 from jg.coop.lib import loggers
 
@@ -10,7 +10,7 @@ logger = loggers.from_path(__file__)
 @click.command()
 @click.option("--bot-url", default="https://juniorguru-chick.fly.dev")
 def main(bot_url):
-    response = httpx.get(bot_url, follow_redirects=True)
+    response = httpx2.get(bot_url, follow_redirects=True)
     response.raise_for_status()
     data = response.json()
     if data["status"] == "ok":

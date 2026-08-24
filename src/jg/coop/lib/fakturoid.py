@@ -1,7 +1,7 @@
 import base64
 import os
 
-import httpx
+import httpx2
 
 
 BASE_URL = "https://app.fakturoid.cz/api/v3/accounts/honzajavorek"
@@ -24,7 +24,7 @@ def auth(
 
     credentials = f"{client_id}:{client_secret}"
     credentials_base64 = base64.b64encode(credentials.encode()).decode()
-    response = httpx.post(
+    response = httpx2.post(
         "https://app.fakturoid.cz/api/v3/oauth/token",
         headers={
             "Accept": "application/json",
@@ -40,10 +40,10 @@ def auth(
 
 def get_client(
     token: str, base_url: str | None = None, user_agent: str | None = None
-) -> httpx.Client:
+) -> httpx2.Client:
     base_url = (base_url or BASE_URL).rstrip("/")
     user_agent = user_agent or USER_AGENT
-    return httpx.Client(
+    return httpx2.Client(
         base_url=base_url,
         headers={"User-Agent": user_agent, "Authorization": f"Bearer {token}"},
         follow_redirects=True,

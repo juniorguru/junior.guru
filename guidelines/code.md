@@ -3,7 +3,7 @@
 - Aim for the [Clean Architecture](https://www.youtube.com/watch?v=DJtef410XaM) ([textual slides](https://rhodesmill.org/brandon/slides/2014-07-pyohio/clean-architecture/)): an "imperative shell" wrapping a "functional core".
 - Use Python type hints everywhere.
 - Aim for low cyclomatic complexity.
-- Use `httpx` for HTTP requests (not `requests`, which stays only as a transitive dependency); use `click` for CLI specification.
+- Use `httpx2` for HTTP requests (not `requests`, which stays only as a transitive dependency; plain `httpx` remains only where `gql`'s HTTPX transport requires it); use `click` for CLI specification.
 - Walrus operators are welcome; keep the code modern (pyupgrade-style, via Ruff `UP` rules).
 - Ruff target version must comply with `requires-python`.
 - Develop by red-green TDD.

@@ -3,10 +3,10 @@ from multiprocessing import Pool
 from pathlib import Path
 
 import click
-import httpx
+import httpx2
 import yaml
 from discord import Color, Embed, File, ui
-from httpx import HTTPStatusError
+from httpx2 import HTTPStatusError
 from pod2gen import Media
 from pydantic import BaseModel
 
@@ -132,7 +132,7 @@ def process_episode(yaml_record):
             logger_ep.info(
                 "Using media size and duration from YAML and only verifying the audio file exists"
             )
-            response = httpx.head(media_url, timeout=30)
+            response = httpx2.head(media_url, timeout=30)
             response.raise_for_status()
             media_size = yaml_record["media_size"]
             media_duration_s = yaml_record["media_duration_s"]

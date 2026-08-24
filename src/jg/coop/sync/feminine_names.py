@@ -1,6 +1,6 @@
 import unicodedata
 
-import httpx
+import httpx2
 from lxml import html
 
 from jg.coop.cli.sync import main as cli
@@ -45,7 +45,7 @@ def main():
     FeminineName.drop_table()
     FeminineName.create_table()
 
-    response = httpx.get(
+    response = httpx2.get(
         WIKI_API_URL,
         params={
             "action": "parse",

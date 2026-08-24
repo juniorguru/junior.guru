@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 
 import click
-import httpx
+import httpx2
 import pytest
 import yaml
 from ghp_import import ghp_import
@@ -87,7 +87,7 @@ def upgrade_lychee(ci_config_path: Path | str):
     logger.debug(f"Lychee download command: {original_command!r}")
 
     api_url = "https://api.github.com/repos/lycheeverse/lychee/releases/latest"
-    response = httpx.get(api_url)
+    response = httpx2.get(api_url)
     response.raise_for_status()
     linux_musl = next(
         asset
