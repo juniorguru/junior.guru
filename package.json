@@ -17,12 +17,12 @@
     "esbuild": "0.28.2",
     "esbuild-sass-plugin": "3.7.0",
     "jsdom": "30.0.1",
-    "oxfmt": "0.63.0",
+    "oxfmt": "0.64.0",
     "sass": "1.77.6",
     "stylelint": "16.26.1",
     "stylelint-config-twbs-bootstrap": "16.1.0",
     "stylelint-order": "8.1.1",
-    "vitest": "4.1.10"
+    "vitest": "4.1.11"
   },
   "engines": {
     "node": "24.x"
