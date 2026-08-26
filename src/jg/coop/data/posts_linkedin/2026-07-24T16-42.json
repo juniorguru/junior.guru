@@ -12,15 +12,36 @@
   "url": "https://www.linkedin.com/posts/honzajavorek_t%C3%BDdenn%C3%AD-pozn%C3%A1mky-jak-se-mi-da%C5%99%C3%AD-v-jednom-activity-7486460710915563520-YcT_",
   "shareUrn": "urn:li:ugcPost:7486460710525345792",
   "text": "Týdenní poznámky! Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Tentokrát je to na 23 min čtení 😅",
-  "attributes": [],
+  "attributes": [
+    {
+      "start": 72,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    }
+  ],
   "comments": [
     {
       "time": 1785147994603,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7486460710525345792?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7486460710525345792%2C7487453374351638528%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287487453374351638528%2Curn%3Ali%3AugcPost%3A7486460710525345792%29",
       "text": "Přeji maximální úlevu na psychické i fyzické úrovni! Věřím, že to přerámování přinese mnoho dobrého a gratuluji, že ses k němu odhodlal (jestli je něco nevyhnutelné, je jistě úlevné se tomu nevyhýbat [dnes jdu k zubaři, takže o tom něco vím! :D]).\nBude dobře!",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(ugcPost:7486460710525345792,7487453374351638528)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 2,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "EMPATHY"
+        }
+      ],
       "author": {
         "firstName": "Sarka",
         "lastName": "Melicharova",
@@ -28,8 +49,10 @@
         "id": "648814916",
         "publicId": "melicharova",
         "profileId": "ACoAACasIUQBi0zapOVDWOPcCXCviPxBdRa-Lgo",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/melicharova"
+      },
+      "authorType": "Person"
     }
   ],
   "reactions": [
@@ -131,21 +154,10 @@
         "publicId": "marek-velas",
         "profileId": "ACoAAAwJLCQB-ePqkhYoO0olYYFCoOJGgdydJEs"
       }
-    },
-    {
-      "type": "EMPATHY",
-      "profile": {
-        "firstName": "Martina",
-        "lastName": "Kolářová",
-        "occupation": "Data jsou jen část příběhu. Za nimi stojí lidé, procesy i systémy.",
-        "id": "1288256758",
-        "publicId": "martina-kolářová-b5a5262bb",
-        "profileId": "ACoAAEzJPPYB0oev8QzBLDxRPw2C_U584wBuIvc"
-      }
     }
   ],
   "numShares": 0,
-  "numLikes": 10,
+  "numLikes": 9,
   "numComments": 3,
   "canReact": true,
   "canPostComments": true,

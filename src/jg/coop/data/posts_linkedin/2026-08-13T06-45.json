@@ -1,0 +1,149 @@
+{
+  "type": "document",
+  "document": {
+    "coverPages": [],
+    "title": "Rozhovor s Elvírou Krieger",
+    "totalPageCount": 6
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7493558207760678912",
+  "url": "https://www.linkedin.com/posts/honzajavorek_rozhovor-s-elv%C3%ADrou-krieger-activity-7493558207760678912-em8Q",
+  "shareUrn": "urn:li:ugcPost:7486361054869106688",
+  "text": "Pravdivě o kariéře v IT 🙏 Přečtěte si rozhovor Adéla Pavlun s Elvíra Krieger\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 47,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Adéla",
+        "lastName": "Pavlun",
+        "occupation": "Somatic Guide & Writer | TRE® · SE® | Exploring human connection, safety and growth",
+        "id": "59184567",
+        "publicId": "adelapavlun",
+        "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"
+      }
+    },
+    {
+      "start": 47,
+      "length": 12,
+      "link": "https://www.linkedin.com/in/ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 62,
+      "length": 14,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Elvíra",
+        "lastName": "Krieger",
+        "occupation": "Where others see code, I see the weave of fate.",
+        "id": "1120687960",
+        "publicId": "elvira-krieger",
+        "profileId": "ACoAAELMV1gBtMlcRFOyaHOrgdhzKXc8l9aoZqA"
+      }
+    },
+    {
+      "start": 62,
+      "length": 14,
+      "link": "https://www.linkedin.com/in/ACoAAELMV1gBtMlcRFOyaHOrgdhzKXc8l9aoZqA",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 100,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1786802312511,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7486361054869106688?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7486361054869106688%2C7494392086570541056%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287494392086570541056%2Curn%3Ali%3AugcPost%3A7486361054869106688%29",
+      "text": "Ještě odkaz! https://junior.guru/stories/elvira-krieger/",
+      "entities": [
+        {
+          "start": 13,
+          "length": 43,
+          "type": "TEXT_LINK",
+          "textLink": {
+            "viewingBehavior": "DEFAULT",
+            "url": "https://junior.guru/stories/elvira-krieger/"
+          }
+        }
+      ],
+      "fromPostAuthor": true,
+      "urn": "urn:li:comment:(ugcPost:7486361054869106688,7494392086570541056)",
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 0,
+      "numComments": 0,
+      "reactionTypeCounts": [],
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/honzajavorek"
+      },
+      "authorType": "Person"
+    }
+  ],
+  "reactions": [
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Ďurechová",
+        "occupation": "Specialistka procesní administrace a koordinace projektů | E-commerce, data a provoz",
+        "id": "531621563",
+        "publicId": "durechova",
+        "profileId": "ACoAAB-v5rsBooIQ9wOxiE6lWhw3QYi_ZgbxHtY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Manivannan",
+        "lastName": "Selvaraj",
+        "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
+        "id": "13167565",
+        "publicId": "citizenmani",
+        "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 2,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1786603500309,
+  "postedAtISO": "2026-08-13T06:45:00.309Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

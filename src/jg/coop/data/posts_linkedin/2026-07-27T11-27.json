@@ -9,7 +9,7 @@
     },
     "isActivity": false,
     "urn": "urn:li:activity:7486028798866612225",
-    "url": "https://www.linkedin.com/posts/honzajavorek_reframing-your-narrative-workshop-activity-7486028798866612225-Txzb?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAGu56hEBqCaRwe-PegF0nE5Jwk8LYTatweg",
+    "url": "https://www.linkedin.com/posts/honzajavorek_reframing-your-narrative-workshop-activity-7486028798866612225-Txzb?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAGxBV6UBgnS8Z4KrslAXi1OOV7zEjK-6smQ",
     "shareUrn": "urn:li:ugcPost:7486028797599727616",
     "text": "Zatoč s impostor syndromem!\n\nKdyž máme na pohovoru, v CVčku nebo u networkingu popsat svou práci, zlehčujeme často úspěchy a nenecháváme vyniknout, co už umíme.\n\nPřipoj se k nám v úterý večer do klubu na oficiální online workshop od iniciativy Women Techmakers (Google), který ti pomůže vnitřního kritika ztišit.\n\nNa tvoje zkušenosti se podíváme novou optikou a naučíme tě o nich mluvit bez přehánění, ale s jistotou. Odneseš si nejen konkrétní tipy, jak reprezentovat samu sebe, ale i hotový draft profesního bio, na který budou hrdí tvoje šéfka i tvůj děda.\n\nEliška Čejpová, která povede workshop, začala jako vývojářka, ale pak se našla v prostoru mezi technologiemi a lidmi.\n\nPůsobí jako agilní koučka, organizuje IT konference, školí speakery, buduje komunity. Nejraději odhaluje antipatterny ve vývoji a podporuje lidi v růstu stavbou skvělých týmů.\n\nZa ~15 let v komunitách facilitovala workshopy od malých týmů až po globální tech summity.\n\nChce zanechat svět o něco lepší, než jak ho našla. Má tsundoku, názory, lásku pro gify a víc řasokoulí než člověk potřebuje.\n\nJestli chceš dorazit živě, účastnit se workshopu a pokládat Elišce vlastní otázky, mrkni na junior.guru/events a připoj se k nám na Discord!\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
     "attributes": [
@@ -26,6 +26,12 @@
         }
       },
       {
+        "start": 244,
+        "length": 16,
+        "link": "https://www.linkedin.com/company/womentechmakers/",
+        "type": "HYPERLINK"
+      },
+      {
         "start": 561,
         "length": 14,
         "type": "PROFILE_MENTION",
@@ -37,6 +43,30 @@
           "publicId": "eliskacejpova",
           "profileId": "ACoAAA0E57ABXEjOnGWXi4ykBAzrRSYQ2_2aGg4"
         }
+      },
+      {
+        "start": 561,
+        "length": 14,
+        "link": "https://www.linkedin.com/in/ACoAAA0E57ABXEjOnGWXi4ykBAzrRSYQ2_2aGg4",
+        "type": "HYPERLINK"
+      },
+      {
+        "start": 1167,
+        "length": 18,
+        "type": "TEXT_LINK",
+        "textLink": {
+          "viewingBehavior": "DEFAULT",
+          "url": "http://junior.guru/events"
+        }
+      },
+      {
+        "start": 1239,
+        "length": 11,
+        "type": "TEXT_LINK",
+        "textLink": {
+          "viewingBehavior": "DEFAULT",
+          "url": "http://junior.guru"
+        }
       }
     ],
     "comments": [
@@ -44,9 +74,25 @@
         "time": 1784808360585,
         "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7486028797599727616?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7486028797599727616%2C7486028846031548417%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287486028846031548417%2Curn%3Ali%3AugcPost%3A7486028797599727616%29",
         "text": "Více info tu https://junior.guru/events/64/",
-        "entities": [],
+        "entities": [
+          {
+            "start": 13,
+            "length": 30,
+            "type": "TEXT_LINK",
+            "textLink": {
+              "viewingBehavior": "DEFAULT",
+              "url": "https://junior.guru/events/64/"
+            }
+          }
+        ],
+        "fromPostAuthor": true,
+        "urn": "urn:li:comment:(ugcPost:7486028797599727616,7486028846031548417)",
         "pinned": false,
         "originalLanguage": "Czech",
+        "edited": false,
+        "numLikes": 0,
+        "numComments": 0,
+        "reactionTypeCounts": [],
         "author": {
           "firstName": "Honza",
           "lastName": "Javorek",
@@ -54,16 +100,29 @@
           "id": "8517488",
           "publicId": "honzajavorek",
           "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-          "distance": "OUT_OF_NETWORK"
-        }
+          "distance": "OUT_OF_NETWORK",
+          "profileUrl": "https://www.linkedin.com/in/honzajavorek"
+        },
+        "authorType": "Person"
       },
       {
         "time": 1785141172921,
         "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7486028797599727616?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7486028797599727616%2C7487424762143465472%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287487424762143465472%2Curn%3Ali%3AugcPost%3A7486028797599727616%29",
         "text": "Já se těším, já se těším, JÁ SE TĚŠÍM! 🤩 Tenhle workshop dělám fakt ráda.. 💙",
         "entities": [],
+        "fromPostAuthor": false,
+        "urn": "urn:li:comment:(ugcPost:7486028797599727616,7487424762143465472)",
         "pinned": false,
         "originalLanguage": "Czech",
+        "edited": false,
+        "numLikes": 1,
+        "numComments": 1,
+        "reactionTypeCounts": [
+          {
+            "count": 1,
+            "reactionType": "EMPATHY"
+          }
+        ],
         "author": {
           "firstName": "Eliška  ",
           "lastName": "Čejpová",
@@ -71,8 +130,10 @@
           "id": "218425264",
           "publicId": "eliskacejpova",
           "profileId": "ACoAAA0E57ABXEjOnGWXi4ykBAzrRSYQ2_2aGg4",
-          "distance": "OUT_OF_NETWORK"
-        }
+          "distance": "OUT_OF_NETWORK",
+          "profileUrl": "https://www.linkedin.com/in/eliskacejpova"
+        },
+        "authorType": "Person"
       }
     ],
     "reactions": [
@@ -242,6 +303,12 @@
       }
     },
     {
+      "start": 55,
+      "length": 5,
+      "link": "https://www.linkedin.com/in/ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 100,
       "length": 11,
       "type": "COMPANY_NAME",
@@ -252,6 +319,12 @@
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:26218444"
       }
+    },
+    {
+      "start": 100,
+      "length": 11,
+      "link": "https://www.linkedin.com/company/juniorguru/",
+      "type": "HYPERLINK"
     },
     {
       "start": 629,
@@ -266,6 +339,12 @@
       }
     },
     {
+      "start": 629,
+      "length": 16,
+      "link": "https://www.linkedin.com/company/womentechmakers/",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 818,
       "length": 10,
       "type": "COMPANY_NAME",
@@ -276,6 +355,12 @@
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:11053288"
       }
+    },
+    {
+      "start": 818,
+      "length": 10,
+      "link": "https://www.linkedin.com/company/devfest-czech-republic/",
+      "type": "HYPERLINK"
     }
   ],
   "comments": [
@@ -284,8 +369,23 @@
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7487414176190025729?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7487414176190025729%2C7487469172243775489%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287487469172243775489%2Curn%3Ali%3AugcPost%3A7487414176190025729%29",
       "text": "Taky se moc těším! „Honzovi se (většinou) NE neříká 😅“, to slyším poprvé  😆 Tohle se o mně říká?",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(ugcPost:7487414176190025729,7487469172243775489)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 2,
+      "numComments": 2,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "APPRECIATION"
+        },
+        {
+          "count": 1,
+          "reactionType": "ENTERTAINMENT"
+        }
+      ],
       "author": {
         "firstName": "Honza",
         "lastName": "Javorek",
@@ -293,25 +393,40 @@
         "id": "8517488",
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/honzajavorek"
+      },
+      "authorType": "Person"
     },
     {
       "time": 1785139824570,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7487414176190025729?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7487414176190025729%2C7487419106753826816%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287487419106753826816%2Curn%3Ali%3AugcPost%3A7487414176190025729%29",
       "text": "Kdo jiný na toto téma! They are in for a treat! :) ",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(ugcPost:7487414176190025729,7487419106753826816)",
       "pinned": false,
       "originalLanguage": "English",
+      "edited": false,
+      "numLikes": 2,
+      "numComments": 0,
+      "reactionTypeCounts": [
+        {
+          "count": 2,
+          "reactionType": "EMPATHY"
+        }
+      ],
       "author": {
         "firstName": "Pavla",
         "lastName": "Lokajova",
-        "occupation": "I’ve helped 500+ founders and CEOs craft and tell their stories. You can trust me with yours | LOKREATIVE | Strategic visibility partner",
+        "occupation": "I’ve help 500+ founders and CEOs craft and tell their stories. You can trust me with yours | Strategic storytelling partner | Founder at LOKREATIVE | Group CMO at PEERS",
         "id": "223732146",
         "publicId": "pavlaloka",
         "profileId": "ACoAAA1V4bIBDK7cwEH47EDTuW2h7OzifWiIelY",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/pavlaloka"
+      },
+      "authorType": "Person"
     }
   ],
   "reactions": [
@@ -385,7 +500,7 @@
       "profile": {
         "firstName": "Pavla",
         "lastName": "Lokajova",
-        "occupation": "I’ve helped 500+ founders and CEOs craft and tell their stories. You can trust me with yours | LOKREATIVE | Strategic visibility partner",
+        "occupation": "I’ve help 500+ founders and CEOs craft and tell their stories. You can trust me with yours | Strategic storytelling partner | Founder at LOKREATIVE | Group CMO at PEERS",
         "id": "223732146",
         "publicId": "pavlaloka",
         "profileId": "ACoAAA1V4bIBDK7cwEH47EDTuW2h7OzifWiIelY"

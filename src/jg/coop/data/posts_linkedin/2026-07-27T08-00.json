@@ -10,7 +10,17 @@
   "url": "https://www.linkedin.com/posts/honzajavorek_co-je-github-activity-7487416546424893440-TY7W",
   "shareUrn": "urn:li:ugcPost:7486359296977321985",
   "text": "Co je GitHub?\n\nGitHub je úložiště kódu a něco jako sociální síť pro programátory. Kód tam jde poslat pomocí Gitu.\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
-  "attributes": [],
+  "attributes": [
+    {
+      "start": 137,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    }
+  ],
   "comments": [],
   "reactions": [
     {

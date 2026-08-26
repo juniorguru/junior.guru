@@ -10,7 +10,7 @@
     },
     "isActivity": false,
     "urn": "urn:li:activity:7481444609429159936",
-    "url": "https://www.linkedin.com/posts/lucie-kopecka199722_volalo-mi-pades%C3%A1t-vymaha%C4%8D%C5%AF-denn%C4%9B-dnes-pracuju-activity-7481444609429159936-BtLD?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAGuw44EBDY99fyiq7vYMoZaCm9giE2FcphM",
+    "url": "https://www.linkedin.com/posts/lucie-kopecka199722_volalo-mi-pades%C3%A1t-vymaha%C4%8D%C5%AF-denn%C4%9B-dnes-pracuju-activity-7481444609429159936-BtLD?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAADqL1OcBAXWrRcuI4d2AcDfThU3o9n6KtZg",
     "shareUrn": "urn:li:share:7481444608523116544",
     "text": "Insolvence nebyla konec mého příběhu. I když jsem si to dlouhou dobu myslela.\n\nKdyž mě Honza Javorek oslovil s nabídkou poskytnout rozhovor o mé cestě do IT pro junior.guru, moje první reakce rozhodně nebyla jednoznačné ano (a od první konverzace o rozhovoru uplynul již nejméně rok).\n\nNikdy předtím jsem žádný rozhovor neposkytovala a především jsem si nebyla jistá, zda chci veřejně sdílet tak podstatnou část svého příběhu.\nInsolvence je pro mě stále citlivé téma. Nejen kvůli tomu, čím jsem si sama prošla, ale také proto, že je často tabuizovaná a spojená s předsudky vůči lidem, kteří se v ní ocitnou.\n\nTy předsudky jsem měla také. Vůči sobě.\n\nDlouho jsem se nedokázala smířit s tím, že se mi něco takového vůbec stalo. Téměř nikdo v mém okolí o insolvenci nevěděl a já jsem měla pocit, že je to část života, kterou musím skrývat. Nakonec jsem se ale rozhodla svůj příběh sdílet. Ne proto, že už je pro mě snadné o něm mluvit, ale protože možná může pomoct někomu, kdo se právě nachází v podobné situaci.\n\nInsolvence je psychicky náročná, ale nemusí znamenat konec ambicí ani možností, profesních ani osobních. Pro mě byla součástí období, během kterého jsem se vzdělávala, měnila obor a postupně si hledala cestu do IT.\n\nDěkuji za citlivý přístup Honzovi i Adél. 💚",
     "attributes": [
@@ -26,6 +26,21 @@
           "publicId": "honzajavorek",
           "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
         }
+      },
+      {
+        "start": 87,
+        "length": 13,
+        "link": "https://www.linkedin.com/in/ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "type": "HYPERLINK"
+      },
+      {
+        "start": 161,
+        "length": 11,
+        "type": "TEXT_LINK",
+        "textLink": {
+          "viewingBehavior": "DEFAULT",
+          "url": "http://junior.guru"
+        }
       }
     ],
     "comments": [
@@ -34,8 +49,23 @@
         "link": "https://www.linkedin.com/feed/update/urn:li:activity:7481444609429159936?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7481444609429159936%2C7482376787310850048%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287482376787310850048%2Curn%3Ali%3Aactivity%3A7481444609429159936%29",
         "text": "Moc si vážím toho, že jsi do toho rozhovoru šla. Bylo by super, kdyby tohle nezapadlo: „Insolvence je psychicky náročná, ale nemusí znamenat konec ambicí ani možností, profesních ani osobních.“  💪 ",
         "entities": [],
+        "fromPostAuthor": false,
+        "urn": "urn:li:comment:(activity:7481444609429159936,7482376787310850048)",
         "pinned": false,
         "originalLanguage": "Czech",
+        "edited": false,
+        "numLikes": 2,
+        "numComments": 1,
+        "reactionTypeCounts": [
+          {
+            "count": 1,
+            "reactionType": "LIKE"
+          },
+          {
+            "count": 1,
+            "reactionType": "EMPATHY"
+          }
+        ],
         "author": {
           "firstName": "Honza",
           "lastName": "Javorek",
@@ -43,8 +73,10 @@
           "id": "8517488",
           "publicId": "honzajavorek",
           "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-          "distance": "OUT_OF_NETWORK"
-        }
+          "distance": "OUT_OF_NETWORK",
+          "profileUrl": "https://www.linkedin.com/in/honzajavorek"
+        },
+        "authorType": "Person"
       }
     ],
     "reactions": [
@@ -204,6 +236,12 @@
       }
     },
     {
+      "start": 115,
+      "length": 4,
+      "link": "https://www.linkedin.com/company/mewssystems/",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 168,
       "length": 12,
       "type": "PROFILE_MENTION",
@@ -215,6 +253,12 @@
         "publicId": "adelapavlun",
         "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"
       }
+    },
+    {
+      "start": 168,
+      "length": 12,
+      "link": "https://www.linkedin.com/in/ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk",
+      "type": "HYPERLINK"
     },
     {
       "start": 200,
@@ -230,6 +274,12 @@
       }
     },
     {
+      "start": 200,
+      "length": 13,
+      "link": "https://www.linkedin.com/in/ACoAAB3SmcMBvL6G2roLd-uQG9E4UdBKyXxJXDY",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 584,
       "length": 12,
       "type": "PROFILE_MENTION",
@@ -240,6 +290,21 @@
         "id": "677292059",
         "publicId": "jan-meissner",
         "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw"
+      }
+    },
+    {
+      "start": 584,
+      "length": 12,
+      "link": "https://www.linkedin.com/in/ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 662,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
       }
     }
   ],

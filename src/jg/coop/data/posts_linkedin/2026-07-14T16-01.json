@@ -3,7 +3,7 @@
   "article": {
     "type": "EXTERNAL_FULL",
     "urn": "urn:li:article:9048833552423462434",
-    "url": "https://frontkon.tech",
+    "url": "https://www.linkedin.com/redir/suspicious-page?url=https%3A%2F%2Ffrontkon%2etech",
     "title": "FrontKon"
   },
   "isActivity": true,
@@ -39,10 +39,32 @@
             "publicId": "artem-zakharchenko",
             "profileId": "ACoAAByTE8sBD2jc0LWL1WTudVD1bG_e2hh-aG0"
           }
+        },
+        {
+          "start": 140,
+          "length": 5,
+          "link": "https://www.linkedin.com/in/ACoAAByTE8sBD2jc0LWL1WTudVD1bG_e2hh-aG0",
+          "type": "HYPERLINK"
         }
       ],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7482801349487763475,7487795493683499008)",
       "pinned": false,
-      "originalLanguage": "English"
+      "originalLanguage": "English",
+      "edited": false,
+      "numLikes": 0,
+      "numComments": 0,
+      "reactionTypeCounts": [],
+      "author": {
+        "name": "FrontKon - Prague's Frontend Conference",
+        "universalName": "frontkon",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:111694409",
+        "followerCount": 119,
+        "profileUrl": "https://www.linkedin.com/company/frontkon"
+      },
+      "authorType": "Company"
     },
     {
       "time": 1785172378321,
@@ -60,10 +82,31 @@
             "showcase": false,
             "entityUrn": "urn:li:fs_miniCompany:111694409"
           }
+        },
+        {
+          "start": 79,
+          "length": 39,
+          "link": "https://www.linkedin.com/company/frontkon/",
+          "type": "HYPERLINK"
         }
       ],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7482801349487763475,7487555647077646336)",
       "pinned": false,
       "originalLanguage": "English",
+      "edited": false,
+      "numLikes": 2,
+      "numComments": 0,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "LIKE"
+        },
+        {
+          "count": 1,
+          "reactionType": "EMPATHY"
+        }
+      ],
       "author": {
         "firstName": "Martin",
         "lastName": "Michálek",
@@ -71,8 +114,10 @@
         "id": "35134614",
         "publicId": "martinmichalek",
         "profileId": "ACoAAAIYHJYBZSP9siKk6AdjAqLpr14snue9t7g",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/martinmichalek"
+      },
+      "authorType": "Person"
     }
   ],
   "reactions": [

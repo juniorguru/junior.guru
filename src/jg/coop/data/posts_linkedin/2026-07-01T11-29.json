@@ -29,6 +29,12 @@
       }
     },
     {
+      "start": 18,
+      "length": 11,
+      "link": "https://www.linkedin.com/company/juniorguru/",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 244,
       "length": 11,
       "type": "COMPANY_NAME",
@@ -39,6 +45,12 @@
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:26218444"
       }
+    },
+    {
+      "start": 244,
+      "length": 11,
+      "link": "https://www.linkedin.com/company/juniorguru/",
+      "type": "HYPERLINK"
     }
   ],
   "comments": [
@@ -47,8 +59,19 @@
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7477797958718255104?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7477797958718255104%2C7478073638362103808%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287478073638362103808%2Curn%3Ali%3Aactivity%3A7477797958718255104%29",
       "text": "Více takových interaktivních přednášek. ",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7477797958718255104,7478073638362103808)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 0,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "EMPATHY"
+        }
+      ],
       "author": {
         "firstName": "Pavla",
         "lastName": "Beránková",
@@ -56,16 +79,33 @@
         "id": "549611439",
         "publicId": "berankova-pavla",
         "profileId": "ACoAACDCZ68BhDuYokjdegYmFm0rxSx_6Mlwh9c",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/berankova-pavla"
+      },
+      "authorType": "Person"
     },
     {
       "time": 1782905364055,
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7477797958718255104?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7477797958718255104%2C7478047100073787392%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287478047100073787392%2Curn%3Ali%3Aactivity%3A7477797958718255104%29",
       "text": "Bylo to skvělý, díky, že jsi za námi přišla! Sešli se skvělí lidi v publiku a ten FigJam byla fakt zábava, tohle jsem ještě na přednášce neviděl  ❤️  🦈  😆 ",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7477797958718255104,7478047100073787392)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 2,
+      "numComments": 1,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "LIKE"
+        },
+        {
+          "count": 1,
+          "reactionType": "EMPATHY"
+        }
+      ],
       "author": {
         "firstName": "Honza",
         "lastName": "Javorek",
@@ -73,16 +113,29 @@
         "id": "8517488",
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/honzajavorek"
+      },
+      "authorType": "Person"
     },
     {
       "time": 1782879376194,
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7477797958718255104?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7477797958718255104%2C7477938099088510976%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287477938099088510976%2Curn%3Ali%3Aactivity%3A7477797958718255104%29",
       "text": "Hltal jsem každou minutu a bylo to velmi přínosné. Díky moc.",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7477797958718255104,7477938099088510976)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 2,
+      "numComments": 0,
+      "reactionTypeCounts": [
+        {
+          "count": 2,
+          "reactionType": "EMPATHY"
+        }
+      ],
       "author": {
         "firstName": "Tomáš",
         "lastName": "Cibulec",
@@ -90,33 +143,59 @@
         "id": "399499541",
         "publicId": "ypsilonxpython",
         "profileId": "ACoAABfP4RUBhhqww_PQuiFQs580Isbr6ZqrqOg",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/ypsilonxpython"
+      },
+      "authorType": "Person"
     },
     {
       "time": 1782848754910,
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7477797958718255104?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7477797958718255104%2C7477809664110387200%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287477809664110387200%2Curn%3Ali%3Aactivity%3A7477797958718255104%29",
       "text": "Díky, bylo to fajn povídání. Rozhodně se budu těšit na nějakou další \"přednášku\" - byl to vlastně takový fajn brainstorming.  😀 ",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7477797958718255104,7477809664110387200)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 2,
+      "numComments": 0,
+      "reactionTypeCounts": [
+        {
+          "count": 2,
+          "reactionType": "EMPATHY"
+        }
+      ],
       "author": {
         "firstName": "Tomáš",
         "lastName": "Salamánek",
-        "occupation": "Po téměř 20 letech ve strojírenství jsem objevil svět IT. Bylo to pro mě, jako když poprvé otevřete internet a žasnete, kolik nových informací Vám svět kolem nabízí.",
+        "occupation": "On my way to becoming a Java developer | Spring Boot | 20 years of CAD/CAM in manufacturing",
         "id": "117107557",
         "publicId": "salamanek",
         "profileId": "ACoAAAb662UB8Fk1x6YnfJ2zd6FiGd1MufWQHX4",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/salamanek"
+      },
+      "authorType": "Person"
     },
     {
       "time": 1782846711591,
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7477797958718255104?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7477797958718255104%2C7477801093809369088%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287477801093809369088%2Curn%3Ali%3Aactivity%3A7477797958718255104%29",
       "text": "Bylo to supr, moc dík 😊",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7477797958718255104,7477801093809369088)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 2,
+      "numComments": 0,
+      "reactionTypeCounts": [
+        {
+          "count": 2,
+          "reactionType": "EMPATHY"
+        }
+      ],
       "author": {
         "firstName": "Tomas",
         "lastName": "Manhal",
@@ -124,8 +203,10 @@
         "id": "356811200",
         "publicId": "tomasmanhal",
         "profileId": "ACoAABVEgcABhXssunqzWgZ32PhPvDuM7pOY7Sw",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/tomasmanhal"
+      },
+      "authorType": "Person"
     }
   ],
   "reactions": [
@@ -222,7 +303,7 @@
       "profile": {
         "firstName": "Táňa",
         "lastName": "Váchová",
-        "occupation": "📌 administrativa ⊃ podpora ⊃ empatie",
+        "occupation": "virtuální asistentka ⊃ administrativa ⊃ podpora",
         "id": "1399848350",
         "publicId": "tanavachova",
         "profileId": "ACoAAFNv_Z4BxskkxA5XZSQetiT0HKCBk4rbPGE"

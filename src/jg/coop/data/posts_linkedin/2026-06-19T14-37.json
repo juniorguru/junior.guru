@@ -12,15 +12,31 @@
   "url": "https://www.linkedin.com/posts/honzajavorek_t%C3%BDdenn%C3%AD-pozn%C3%A1mky-jak-se-mi-da%C5%99%C3%AD-v-jednom-activity-7473745895994421248-9qni",
   "shareUrn": "urn:li:ugcPost:7473745895583444992",
   "text": "Týdenní poznámky! Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Tentokrát je to na 6 min čtení 🧐",
-  "attributes": [],
+  "attributes": [
+    {
+      "start": 72,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    }
+  ],
   "comments": [
     {
       "time": 1782060437230,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7473745895583444992?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7473745895583444992%2C7474503220111835136%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474503220111835136%2Curn%3Ali%3AugcPost%3A7473745895583444992%29",
       "text": "Naprosto chápu vyčerpání, přeji hodně síly a gratuluji k dalšímu potomkovi :-)",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(ugcPost:7473745895583444992,7474503220111835136)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 0,
+      "numComments": 1,
+      "reactionTypeCounts": [],
       "author": {
         "firstName": "Karla",
         "lastName": "Root",
@@ -28,16 +44,24 @@
         "id": "420075610",
         "publicId": "karlaroot",
         "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/karlaroot"
+      },
+      "authorType": "Person"
     },
     {
       "time": 1781883523659,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7473745895583444992?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7473745895583444992%2C7473761190813511680%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287473761190813511680%2Curn%3Ali%3AugcPost%3A7473745895583444992%29",
       "text": "Posílám objetí, sílu a rozdmýchávání podnikatelského štěstíčka! 🫂 ",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(ugcPost:7473745895583444992,7473761190813511680)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 0,
+      "numComments": 1,
+      "reactionTypeCounts": [],
       "author": {
         "firstName": "Sarka",
         "lastName": "Melicharova",
@@ -45,8 +69,10 @@
         "id": "648814916",
         "publicId": "melicharova",
         "profileId": "ACoAACasIUQBi0zapOVDWOPcCXCviPxBdRa-Lgo",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/melicharova"
+      },
+      "authorType": "Person"
     }
   ],
   "reactions": [
@@ -143,7 +169,7 @@
       "profile": {
         "firstName": "Táňa",
         "lastName": "Váchová",
-        "occupation": "📌 administrativa ⊃ podpora ⊃ empatie",
+        "occupation": "virtuální asistentka ⊃ administrativa ⊃ podpora",
         "id": "1399848350",
         "publicId": "tanavachova",
         "profileId": "ACoAAFNv_Z4BxskkxA5XZSQetiT0HKCBk4rbPGE"

@@ -1,0 +1,159 @@
+{
+  "type": "document",
+  "document": {
+    "coverPages": [],
+    "title": "Co najdeš na GitHubu?",
+    "totalPageCount": 7
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7495011541952659457",
+  "url": "https://www.linkedin.com/posts/honzajavorek_co-najde%C5%A1-na-githubu-activity-7495011541952659457-DPTm",
+  "shareUrn": "urn:li:ugcPost:7486363670218993665",
+  "text": "Co najdeš na GitHubu?\n\nVětšina otevřeného kódu na světě je na GitHubu. Využívej jeho vyhledávání a pokukuj po inspiraci, jak se dá co řešit.\n\nMůžeš koukat pod ruce různým projektům a organizacím, třeba datovým novinářům z Českého Rozhlasu, Hlídači Státu, české Python komunitě, nebo třeba i junior.guru.\n\nKdyž vyhledáš vhodný výraz, můžeš se třeba podívat, jak někdo jiný používá konkrétní framework, knihovnu, funkci. Nebo hledat nezabezpečené projekty jiných lidí a připadat si jako velký hacke… ehm, upozorňovat je, že by si to měli opravit.\n\nPamatuj ale na to, že najdeš i spoustu nekvalitního kódu, takže vždycky zvaž, jestli se tím, co vidíš, chceš opravdu inspirovat. Když najdeš něco, čemu nerozumíš, konzultuj to v komunitách, nebo aspoň s AI.\n\nNo a nemusíš jen koukat, do open source projektů můžeš i přispět! To, že jsi na začátku, neznamená, že nemůžeš objevit chybu nebo opravit větu v dokumentaci. A odvaha být v tomto směru aktivní se u juniorů dost cení.\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 291,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    },
+    {
+      "start": 994,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1787035330318,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7486363670218993665?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7486363670218993665%2C7495369434090356737%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287495369434090356737%2Curn%3Ali%3AugcPost%3A7486363670218993665%29",
+      "text": "Jo, toho nekvalitního kódu je tam habakuk :-)) Ale ještě než začaly bejt dostupní coding agents, dokázal jsem díky inspiraci na GitHub rozchodit řídící jednotku dronu. Jen tak experimentálně - nic produkčního. Z dokumentace jsem vůbec nedokázal pochopit, jak se ten ROS framework má používat k tomu, co potřebuju (navést dron na konkrétní QR kód na zemi). Takže potvrzuju všechno, co píšeš :-)",
+      "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(ugcPost:7486363670218993665,7495369434090356737)",
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "edited": true,
+      "numLikes": 2,
+      "numComments": 3,
+      "reactionTypeCounts": [
+        {
+          "count": 2,
+          "reactionType": "LIKE"
+        }
+      ],
+      "author": {
+        "firstName": "Radek",
+        "lastName": "Holý",
+        "occupation": "Test Automation Engineer | Python Devotee | Open Source Hippie | Chasing Edge Cases & Fairness",
+        "id": "56523553",
+        "publicId": "jmenemradek",
+        "profileId": "ACoAAANeeyEB64ERPMylSJEByw6iLTk9SWwioOE",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/jmenemradek"
+      },
+      "authorType": "Person"
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Radek",
+        "lastName": "Holý",
+        "occupation": "Test Automation Engineer | Python Devotee | Open Source Hippie | Chasing Edge Cases & Fairness",
+        "id": "56523553",
+        "publicId": "jmenemradek",
+        "profileId": "ACoAAANeeyEB64ERPMylSJEByw6iLTk9SWwioOE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Komenda",
+        "occupation": "UX Designer ve společnosti SPORTISIMO",
+        "id": "89195572",
+        "publicId": "jkomenda",
+        "profileId": "ACoAAAVRBDQBLCWHiB_D14Yes5H3kTQFYqGTgZ4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Andra",
+        "lastName": "Nistor",
+        "occupation": "Frontend Developer with Product Owner mindset | React | TypeScript | JavaScript",
+        "id": "669545448",
+        "publicId": "andra-nistor",
+        "profileId": "ACoAACfoc-gB4WXWUEatPnWMtiaY-XUJ4EyiiME"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marek",
+        "lastName": "VELAS",
+        "occupation": "Founder @EDUpunk | Learning design @Reactgirls.com | AI & Health Content Strategist | TALENT Mentor & MEME Therapist",
+        "id": "201927716",
+        "publicId": "marek-velas",
+        "profileId": "ACoAAAwJLCQB-ePqkhYoO0olYYFCoOJGgdydJEs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Josef",
+        "lastName": "Ďuriš",
+        "occupation": "Embedded Systems Engineer | From Advanced System Analysis to Low-Level Development | C/C++ | Linux | HW/SW Integration",
+        "id": "304898445",
+        "publicId": "josef-ďuriš-a3913986",
+        "profileId": "ACoAABIsYY0ByKzpglEMZ3CjzvZoYSp9yKeTxvs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 6,
+  "numComments": 4,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1786950002182,
+  "postedAtISO": "2026-08-17T07:00:02.182Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

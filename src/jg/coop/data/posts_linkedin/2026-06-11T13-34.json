@@ -8,15 +8,15 @@
           {
             "width": 720,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEiSu1SG_tPBA",
-            "fileIdentifyingUrlPathSegment": "high/B4DZ6247icKUBM-/0/1781184840046?e=1787014800&v=beta&t=bhCA57rvrK4B-2_hQbwvcgBT3wo9Ue_UpY-Z903bdYA",
-            "expiresAt": 1787014800000,
+            "fileIdentifyingUrlPathSegment": "high/B4DZ6247icKUBM-/0/1781184840046?e=1788224400&v=beta&t=bzjUyHVseUXTOBmfOQyQspLwoEmSUFGAivuQfaFNomU",
+            "expiresAt": 1788224400000,
             "height": 1280
           },
           {
             "width": 360,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEiSu1SG_tPBA",
-            "fileIdentifyingUrlPathSegment": "low/B4DZ6247icKUBI-/0/1781184840046?e=1787014800&v=beta&t=j-LvV_oJNV9dlnjeU4PbpBT0Jm9lIIiYaqhKz6JayKc",
-            "expiresAt": 1787014800000,
+            "fileIdentifyingUrlPathSegment": "low/B4DZ6247icKUBI-/0/1781184840046?e=1788224400&v=beta&t=uK2Mn8UpMjXATzEiUsdKLXdnWpc1E-QPPEbLaqujDbA",
+            "expiresAt": 1788224400000,
             "height": 640
           }
         ]
@@ -25,8 +25,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/mp4-720p-30fp-crf28/B4DZ6247icKUB8-/0/1781184842453?e=1787014800&v=beta&t=mLJjjWgjJk0xtTOvE7Ufpi_Y3Ug1v-gBMj4W9JUy_7Y",
-              "expiresAt": 1787014800000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/mp4-720p-30fp-crf28/B4DZ6247icKUB8-/0/1781184842453?e=1788224400&v=beta&t=abgAEgCbEtJylh1YhUva1CMJHChavYbd27WmS5W3MP8",
+              "expiresAt": 1788224400000
             }
           ],
           "size": 0,
@@ -38,8 +38,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/mp4-640p-30fp-crf28/B4DZ6247icKUBk-/0/1781184842453?e=1787014800&v=beta&t=sQfn4fPJwCfTgBPvCwyQXD-EumQIVF_NjNWRIWVEDUg",
-              "expiresAt": 1787014800000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/mp4-640p-30fp-crf28/B4DZ6247icKUBk-/0/1781184842453?e=1788224400&v=beta&t=gqEdXeCJZtyLYOu-XQUTUdNELfqsCFxdAMEAEWZeohI",
+              "expiresAt": 1788224400000
             }
           ],
           "size": 0,
@@ -61,8 +61,8 @@
           "mediaType": "application/vnd.apple.mpegURL",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEiSu1SG_tPBA/CeJxzMnGJMjMyMc9M9g51KdbVcULmh6LxI9H4yWj8bF0AVCcVdA?e=1787014800&v=beta&t=v3FaTJQsxOGv7QPFZdXXlqKWBlSZeseA-HjCtsD4_dE",
-              "expiresAt": 1787014800000
+              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEiSu1SG_tPBA/CeJxzMnGJMjMyMc9M9g51KdbVcULmh6LxI9H4yWj8bF0AVCcVdA?e=1788224400&v=beta&t=U8z_GLVm1myBpotHcNE9_87_b7mIKm_q72VIS08i2Wk",
+              "expiresAt": 1788224400000
             }
           ]
         },
@@ -72,8 +72,8 @@
           "mediaType": "application/dash+xml",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEiSu1SG_tPBA/CeJxzMnGJMjMyMc9M9g51KdbVcULmh6LxI9H4yWj8bF0AVCcVdA?e=1787014800&v=beta&t=5TGcZC46LynFvpO0WtdRuQXcN8GJ0SoY45bBN9WUrbk",
-              "expiresAt": 1787014800000
+              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEiSu1SG_tPBA/CeJxzMnGJMjMyMc9M9g51KdbVcULmh6LxI9H4yWj8bF0AVCcVdA?e=1788224400&v=beta&t=mw6hkntWT5bTOHLrTSRRlXLd16h-mpNDndLLfXFPrgg",
+              "expiresAt": 1788224400000
             }
           ]
         }
@@ -85,14 +85,54 @@
   "url": "https://www.linkedin.com/posts/honzajavorek_jak-na-git-a-github-co-je-git-a-k-%C4%8Demu-activity-7470830734442676224-La8q",
   "shareUrn": "urn:li:ugcPost:7470830667237572610",
   "text": "Jak na Git a GitHub?\n\nCo je Git a k čemu se používá? Jaký je rozdíl mezi Gitem a GitHubem? Jak začít s Gitem?\n\nDovíte se na nově aktualizované stránce v příručce na junior.guru/handbook 📖 \n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
-  "attributes": [],
+  "attributes": [
+    {
+      "start": 165,
+      "length": 20,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru/handbook"
+      }
+    },
+    {
+      "start": 212,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    }
+  ],
   "comments": [
     {
       "time": 1781184872824,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7470830667237572610?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7470830667237572610%2C7470830836825866240%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287470830836825866240%2Curn%3Ali%3AugcPost%3A7470830667237572610%29",
       "text": "Odkaz tu: https://junior.guru/handbook/git/",
-      "entities": [],
+      "entities": [
+        {
+          "start": 10,
+          "length": 33,
+          "type": "TEXT_LINK",
+          "textLink": {
+            "viewingBehavior": "DEFAULT",
+            "url": "https://junior.guru/handbook/git/"
+          }
+        }
+      ],
+      "fromPostAuthor": true,
+      "urn": "urn:li:comment:(ugcPost:7470830667237572610,7470830836825866240)",
       "pinned": false,
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 0,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "LIKE"
+        }
+      ],
       "author": {
         "firstName": "Honza",
         "lastName": "Javorek",
@@ -100,8 +140,10 @@
         "id": "8517488",
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/honzajavorek"
+      },
+      "authorType": "Person"
     }
   ],
   "reactions": [
@@ -176,7 +218,7 @@
       "profile": {
         "firstName": "Tomáš",
         "lastName": "Salamánek",
-        "occupation": "Po téměř 20 letech ve strojírenství jsem objevil svět IT. Bylo to pro mě, jako když poprvé otevřete internet a žasnete, kolik nových informací Vám svět kolem nabízí.",
+        "occupation": "On my way to becoming a Java developer | Spring Boot | 20 years of CAD/CAM in manufacturing",
         "id": "117107557",
         "publicId": "salamanek",
         "profileId": "ACoAAAb662UB8Fk1x6YnfJ2zd6FiGd1MufWQHX4"

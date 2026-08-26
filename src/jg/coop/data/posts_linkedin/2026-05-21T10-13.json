@@ -29,6 +29,12 @@
       }
     },
     {
+      "start": 92,
+      "length": 18,
+      "link": "https://www.linkedin.com/company/univerzita-karlova/",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 1309,
       "length": 10,
       "type": "COMPANY_NAME",
@@ -39,6 +45,12 @@
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:34588565"
       }
+    },
+    {
+      "start": 1309,
+      "length": 10,
+      "link": "https://www.linkedin.com/company/reactgirlsprague/",
+      "type": "HYPERLINK"
     },
     {
       "start": 1321,
@@ -53,6 +65,12 @@
       }
     },
     {
+      "start": 1321,
+      "length": 9,
+      "link": "https://www.linkedin.com/company/czechitas/",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 1332,
       "length": 8,
       "type": "COMPANY_NAME",
@@ -65,6 +83,12 @@
       }
     },
     {
+      "start": 1332,
+      "length": 8,
+      "link": "https://www.linkedin.com/company/pyladies-global/",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 1342,
       "length": 12,
       "type": "COMPANY_NAME",
@@ -75,6 +99,30 @@
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:26270417"
       }
+    },
+    {
+      "start": 1342,
+      "length": 12,
+      "link": "https://www.linkedin.com/company/frontendisti/",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 1356,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    },
+    {
+      "start": 1465,
+      "length": 20,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "mailto:zvlachovska@email.cz"
+      }
     }
   ],
   "comments": [
@@ -83,8 +131,19 @@
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7462837610210705408?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7462837610210705408%2C7465055035215990784%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287465055035215990784%2Curn%3Ali%3Aactivity%3A7462837610210705408%29",
       "text": "Zuzko, jestli se kvalifikuju, karierni zmenu od 7/23, ted jsem teda uz 10 mesicu na RD, ale 2 roky jsem byla na sw develu. Kdyztak napis :)",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7462837610210705408,7465055035215990784)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 1,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "APPRECIATION"
+        }
+      ],
       "author": {
         "firstName": "Pavla",
         "lastName": "Zaklová (Šimůnková)",
@@ -92,16 +151,29 @@
         "id": "311583832",
         "publicId": "pavlazaklova",
         "profileId": "ACoAABKSZFgBHzkaskMBP-wrNl33ZUxJNBlyEGQ",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/pavlazaklova"
+      },
+      "authorType": "Person"
     },
     {
       "time": 1779782759068,
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7462837610210705408?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7462837610210705408%2C7464949945490595840%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287464949945490595840%2Curn%3Ali%3Aactivity%3A7462837610210705408%29",
       "text": "Hezky den, ja zatim nesplnuji kriterium delky prace v IT, drzim palce, at sezenete dostatek respondentek :)",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7462837610210705408,7464949945490595840)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 1,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "EMPATHY"
+        }
+      ],
       "author": {
         "firstName": "Jana",
         "lastName": "Zmijková",
@@ -109,8 +181,10 @@
         "id": "450096743",
         "publicId": "zmijkova",
         "profileId": "ACoAABrT7mcBs7ie4r1nA4McNBK2tV0qfujA2v4",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/zmijkova"
+      },
+      "authorType": "Person"
     },
     {
       "time": 1779447561117,
@@ -129,10 +203,31 @@
             "publicId": "jana-benešová-66602024b",
             "profileId": "ACoAAD3C1a4Bwb3HrDCRzQTyWV3hn1tRhr72LlU"
           }
+        },
+        {
+          "start": 60,
+          "length": 13,
+          "link": "https://www.linkedin.com/in/ACoAAD3C1a4Bwb3HrDCRzQTyWV3hn1tRhr72LlU",
+          "type": "HYPERLINK"
         }
       ],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7462837610210705408,7463544023379505153)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 2,
+      "numComments": 2,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "LIKE"
+        },
+        {
+          "count": 1,
+          "reactionType": "EMPATHY"
+        }
+      ],
       "author": {
         "firstName": "Radek",
         "lastName": "Novák",
@@ -140,16 +235,29 @@
         "id": "536342854",
         "publicId": "radek-in-cybersec",
         "profileId": "ACoAAB_38UYBxzrVlVnDZB45Rlg9B-MMD_leZjY",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/radek-in-cybersec"
+      },
+      "authorType": "Person"
     },
     {
       "time": 1779370448746,
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7462837610210705408?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7462837610210705408%2C7463220590653616129%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287463220590653616129%2Curn%3Ali%3Aactivity%3A7462837610210705408%29",
       "text": "Pani reditelko preji hodne stesti",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7462837610210705408,7463220590653616129)",
       "pinned": false,
       "originalLanguage": "Slovenian",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 1,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "EMPATHY"
+        }
+      ],
       "author": {
         "firstName": "Lukas",
         "lastName": "Cizek",
@@ -157,8 +265,10 @@
         "id": "420594570",
         "publicId": "lukascizek",
         "profileId": "ACoAABkRw4oB55umyBLKrtCymi3ZAc087xVYy34",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/lukascizek"
+      },
+      "authorType": "Person"
     },
     {
       "time": 1779349047012,
@@ -177,18 +287,56 @@
             "publicId": "zuzana-vlachovska",
             "profileId": "ACoAADdzvW0BMlX8bbn5rBF19jX-JjopP8qNdaw"
           }
+        },
+        {
+          "start": 0,
+          "length": 6,
+          "link": "https://www.linkedin.com/in/ACoAADdzvW0BMlX8bbn5rBF19jX-JjopP8qNdaw",
+          "type": "HYPERLINK"
         }
       ],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7462837610210705408,7463130825274961920)",
       "pinned": false,
-      "originalLanguage": "Czech"
+      "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 0,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "EMPATHY"
+        }
+      ],
+      "author": {
+        "name": "Czechitas",
+        "universalName": "czechitas",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:5319681",
+        "followerCount": 40863,
+        "profileUrl": "https://www.linkedin.com/school/czechitas"
+      },
+      "authorType": "Company"
     },
     {
       "time": 1779304222474,
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7462837610210705408?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7462837610210705408%2C7462942817535848448%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287462942817535848448%2Curn%3Ali%3Aactivity%3A7462837610210705408%29",
       "text": "Komentuji pro dosah! 🚀🦸‍♀️",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7462837610210705408,7462942817535848448)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 0,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "EMPATHY"
+        }
+      ],
       "author": {
         "firstName": "Václav",
         "lastName": "Kotyk",
@@ -196,16 +344,29 @@
         "id": "322518163",
         "publicId": "vaclavkotyk",
         "profileId": "ACoAABM5PJMBqs2feAwP7loSSkovAcEbPvRXDI0",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/vaclavkotyk"
+      },
+      "authorType": "Person"
     },
     {
       "time": 1779303724931,
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7462837610210705408?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7462837610210705408%2C7462940730689261568%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287462940730689261568%2Curn%3Ali%3Aactivity%3A7462837610210705408%29",
       "text": "Komentuji pro dosah 😌",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7462837610210705408,7462940730689261568)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 0,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "EMPATHY"
+        }
+      ],
       "author": {
         "firstName": "Katerina",
         "lastName": "Berankova",
@@ -213,16 +374,33 @@
         "id": "727652877",
         "publicId": "katerina-berankova-student",
         "profileId": "ACoAACtfGg0B4cYkw4L9l5_OxY3sXMmKF0P1gVo",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/katerina-berankova-student"
+      },
+      "authorType": "Person"
     },
     {
       "time": 1779290877378,
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7462837610210705408?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7462837610210705408%2C7462886844146515969%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287462886844146515969%2Curn%3Ali%3Aactivity%3A7462837610210705408%29",
       "text": "Ty nemáš dost respondentek? :O \nNevěřím!\nMoc ráda Tě zas uvidím a popovídám.",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7462837610210705408,7462886844146515969)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 2,
+      "numComments": 1,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "APPRECIATION"
+        },
+        {
+          "count": 1,
+          "reactionType": "EMPATHY"
+        }
+      ],
       "author": {
         "firstName": "Eliška",
         "lastName": "Novotná",
@@ -230,8 +408,10 @@
         "id": "814185299",
         "publicId": "enovotna",
         "profileId": "ACoAADCHe1MBqCmPBVtBJgxUdvnCf2-PnNDgigQ",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/enovotna"
+      },
+      "authorType": "Person"
     }
   ],
   "reactions": [
@@ -284,7 +464,7 @@
       "profile": {
         "firstName": "Lukáš",
         "lastName": "Kratochvíl",
-        "occupation": "Senior Software Engineer at Mews | Guest Experience",
+        "occupation": "Lead Product Builder at Mews",
         "id": "356545354",
         "publicId": "progresak",
         "profileId": "ACoAABVAc0oB5Udoi47XlvYziQthZ3xyFpTqWVo"

@@ -1,0 +1,585 @@
+{
+  "type": "image",
+  "images": [],
+  "isActivity": true,
+  "activityDescription": "Honza Javorek reposted this",
+  "activityOfUser": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "urn": "urn:li:activity:7493209340619792384",
+  "url": "https://www.linkedin.com/posts/mia-bajic_im-looking-for-a-new-opportunity-are-you-activity-7493207311360946177-t-WX",
+  "shareUrn": "urn:li:share:7492899911362019328",
+  "text": "I'm looking for a new opportunity! Are you hiring for Python, backend, platform, or forward-deployed engineering roles? \n\nI have 10 years of experience in IT: half in backend and full-stack development, half in technical support. Most recently I was at Ataccama, a SaaS product scaleup, where I owned an SDK for data engineers and before that I worked on a data visualization tool backend. \nAlong the way: SDKs, microservices, internal tools, infra, Kubernetes, deployments, and a lot of talking to customers.\n\nYou might also know me from organizing EuroPython, PyCon CZ, Python Pizza and Prague Python meetups, hosting the Behind the Commit podcast, or speaking at international conferences.\n\nLooking for roles in Warsaw, Prague, or remote within the EU. If your team is hiring, I'd love an intro! 🐍",
+  "attributes": [
+    {
+      "start": 253,
+      "length": 8,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Ataccama",
+        "universalName": "ataccama",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:250453"
+      }
+    },
+    {
+      "start": 253,
+      "length": 8,
+      "link": "https://www.linkedin.com/company/ataccama/",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 550,
+      "length": 10,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "EuroPython",
+        "universalName": "europython",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:41130723"
+      }
+    },
+    {
+      "start": 550,
+      "length": 10,
+      "link": "https://www.linkedin.com/company/europython/",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 562,
+      "length": 8,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "PyCon CZ",
+        "universalName": "pycon-cz",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:96200896"
+      }
+    },
+    {
+      "start": 562,
+      "length": 8,
+      "link": "https://www.linkedin.com/company/pycon-cz/",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 572,
+      "length": 12,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Python Pizza",
+        "universalName": "python-pizza",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:98334563"
+      }
+    },
+    {
+      "start": 572,
+      "length": 12,
+      "link": "https://www.linkedin.com/company/python-pizza/",
+      "type": "HYPERLINK"
+    }
+  ],
+  "comments": [
+    {
+      "time": 1787037618831,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7493207311360946177?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7493207311360946177%2C7495379032809766912%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287495379032809766912%2Curn%3Ali%3Aactivity%3A7493207311360946177%29",
+      "text": "Commenting for visibility.",
+      "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7493207311360946177,7495379032809766912)",
+      "pinned": false,
+      "originalLanguage": "English",
+      "edited": false,
+      "numLikes": 0,
+      "numComments": 0,
+      "reactionTypeCounts": [],
+      "author": {
+        "firstName": "Radoslav",
+        "lastName": "Georgiev",
+        "occupation": "Managing Director for Bulgaria at Waracle",
+        "id": "585862301",
+        "publicId": "radoslav-georgiev-waracle",
+        "profileId": "ACoAACLrjJ0Bk-FyqKObAP8UVL4dxltMsOX7M_c",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/radoslav-georgiev-waracle"
+      },
+      "authorType": "Person"
+    },
+    {
+      "time": 1786796700910,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7493207311360946177?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7493207311360946177%2C7494368549814222848%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287494368549814222848%2Curn%3Ali%3Aactivity%3A7493207311360946177%29",
+      "text": "Good luck Mia and keep rockin 🚀 #Python #opensource Rocks 🙌",
+      "entities": [
+        {
+          "trackingUrn": "urn:li:hashtag:python",
+          "start": 32,
+          "length": 7,
+          "link": "https://www.linkedin.com/search/results/all/?keywords=%23python&origin=HASH_TAG_FROM_FEED",
+          "dashHashtagUrn": "urn:li:fsd_hashtag:(python,urn:li:activity:-)",
+          "type": "HASHTAG"
+        },
+        {
+          "trackingUrn": "urn:li:hashtag:opensource",
+          "start": 40,
+          "length": 11,
+          "link": "https://www.linkedin.com/search/results/all/?keywords=%23opensource&origin=HASH_TAG_FROM_FEED",
+          "dashHashtagUrn": "urn:li:fsd_hashtag:(opensource,urn:li:activity:-)",
+          "type": "HASHTAG"
+        }
+      ],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7493207311360946177,7494368549814222848)",
+      "pinned": false,
+      "originalLanguage": "English",
+      "edited": false,
+      "numLikes": 0,
+      "numComments": 0,
+      "reactionTypeCounts": [],
+      "author": {
+        "firstName": "Thomas",
+        "lastName": "Fabula",
+        "occupation": "Demand Manager at Kommunales Rechenzentrum Niederrhein (KRZN)",
+        "id": "1405791",
+        "publicId": "thomasfabula",
+        "profileId": "ACoAAAAVc18BOA2ClPPT6nKxl8vqxXabc2Vv120",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/thomasfabula"
+      },
+      "authorType": "Person"
+    },
+    {
+      "time": 1786755444320,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7493207311360946177?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7493207311360946177%2C7494195507129626624%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287494195507129626624%2Curn%3Ali%3Aactivity%3A7493207311360946177%29",
+      "text": "I wish you all the best!\n",
+      "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7493207311360946177,7494195507129626624)",
+      "pinned": false,
+      "originalLanguage": "English",
+      "edited": false,
+      "numLikes": 0,
+      "numComments": 0,
+      "reactionTypeCounts": [],
+      "author": {
+        "firstName": "Adjamilton",
+        "lastName": "Junior",
+        "occupation": "DevOps Engineer | Linux | Go | Python | PostgreSQL | GCP | AWS | K8s",
+        "id": "98515447",
+        "publicId": "a-jr",
+        "profileId": "ACoAAAXfOfcBdHALUaemevTb_2wop3Q0LOTe0uA",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/a-jr"
+      },
+      "authorType": "Person"
+    },
+    {
+      "time": 1786638234896,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7493207311360946177?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7493207311360946177%2C7493703895177699329%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287493703895177699329%2Curn%3Ali%3Aactivity%3A7493207311360946177%29",
+      "text": "Cfbr",
+      "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7493207311360946177,7493703895177699329)",
+      "pinned": false,
+      "edited": false,
+      "numLikes": 0,
+      "numComments": 0,
+      "reactionTypeCounts": [],
+      "author": {
+        "firstName": "Anant",
+        "lastName": "Agarwal",
+        "occupation": "Program Management @Amazon | 50K LinkedIn | Strategy & Operations | Product Management | Cornell MBA",
+        "id": "68028071",
+        "publicId": "anantgtcornell",
+        "profileId": "ACoAAAQOBqcBR7BuX7xE9yUgFo5FWeK96YGc65M",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/anantgtcornell"
+      },
+      "authorType": "Person"
+    },
+    {
+      "time": 1786627107211,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7493207311360946177?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7493207311360946177%2C7493657222279979008%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287493657222279979008%2Curn%3Ali%3Aactivity%3A7493207311360946177%29",
+      "text": "https://gofund.me/fff0c2fb7",
+      "entities": [
+        {
+          "start": 0,
+          "length": 27,
+          "type": "TEXT_LINK",
+          "textLink": {
+            "viewingBehavior": "DEFAULT",
+            "url": "https://gofund.me/fff0c2fb7"
+          }
+        }
+      ],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7493207311360946177,7493657222279979008)",
+      "pinned": false,
+      "edited": false,
+      "numLikes": 0,
+      "numComments": 0,
+      "reactionTypeCounts": [],
+      "author": {
+        "firstName": "Alessandro",
+        "lastName": "Savino",
+        "occupation": "Rider presso Just Eat Takeaway.com",
+        "id": "1697432957",
+        "publicId": "alessandro-savino-8a55723b4",
+        "profileId": "ACoAAGUsxX0Bp4TVXm87BB36q1jEqq32Zg9I9p0",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/alessandro-savino-8a55723b4"
+      },
+      "authorType": "Person"
+    },
+    {
+      "time": 1786627089742,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7493207311360946177?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7493207311360946177%2C7493657149009612801%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287493657149009612801%2Curn%3Ali%3Aactivity%3A7493207311360946177%29",
+      "text": "https://gofund.me/fff0c2fb7",
+      "entities": [
+        {
+          "start": 0,
+          "length": 27,
+          "type": "TEXT_LINK",
+          "textLink": {
+            "viewingBehavior": "DEFAULT",
+            "url": "https://gofund.me/fff0c2fb7"
+          }
+        }
+      ],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7493207311360946177,7493657149009612801)",
+      "pinned": false,
+      "edited": false,
+      "numLikes": 0,
+      "numComments": 0,
+      "reactionTypeCounts": [],
+      "author": {
+        "firstName": "Alessandro",
+        "lastName": "Savino",
+        "occupation": "Rider presso Just Eat Takeaway.com",
+        "id": "1697432957",
+        "publicId": "alessandro-savino-8a55723b4",
+        "profileId": "ACoAAGUsxX0Bp4TVXm87BB36q1jEqq32Zg9I9p0",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/alessandro-savino-8a55723b4"
+      },
+      "authorType": "Person"
+    },
+    {
+      "time": 1786537781711,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7493207311360946177?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7493207311360946177%2C7493282563977838592%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287493282563977838592%2Curn%3Ali%3Aactivity%3A7493207311360946177%29",
+      "text": "Hoping the best for you in the job hunt ",
+      "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7493207311360946177,7493282563977838592)",
+      "pinned": false,
+      "originalLanguage": "English",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 0,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "EMPATHY"
+        }
+      ],
+      "author": {
+        "firstName": "Swastik",
+        "lastName": "Baranwal",
+        "occupation": "Member of Technical Staff - Open Source Engineer @ TestMu AI (Formerly LambdaTest)",
+        "id": "1027608345",
+        "publicId": "swastik-baranwal",
+        "profileId": "ACoAAD1ADxkBKEy9WVFifhrxtmf9zUC4Zt2X_ZU",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/swastik-baranwal"
+      },
+      "authorType": "Person"
+    },
+    {
+      "time": 1786536264515,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7493207311360946177?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7493207311360946177%2C7493276200400826368%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287493276200400826368%2Curn%3Ali%3Aactivity%3A7493207311360946177%29",
+      "text": "Sending you a DM...",
+      "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7493207311360946177,7493276200400826368)",
+      "pinned": false,
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 0,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "EMPATHY"
+        }
+      ],
+      "author": {
+        "firstName": "Marcus",
+        "lastName": "Davage",
+        "occupation": "BSc CITP CEng MBCS | Lead Software Engineer | Mainframe Moderniser | Podcaster | 5 x IBM Champion | UK Db2 User Group Chair | STEM Ambassador | Open Mainframe Project Ambassador",
+        "id": "7238002",
+        "publicId": "marcusdavage",
+        "profileId": "ACoAAABucXIBRcIi2ALJQNMMjrpZv4SBuSw7w-E",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/marcusdavage"
+      },
+      "authorType": "Person"
+    },
+    {
+      "time": 1786528484216,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7493207311360946177?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7493207311360946177%2C7493243567457574912%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287493243567457574912%2Curn%3Ali%3Aactivity%3A7493207311360946177%29",
+      "text": "Samuel Colvin Pydantic AI Pydantic ",
+      "entities": [
+        {
+          "start": 0,
+          "length": 13,
+          "type": "PROFILE_MENTION",
+          "profile": {
+            "firstName": "Samuel",
+            "lastName": "Colvin",
+            "occupation": "Building the Pydantic Stack: Validation, AI and Logfire. AI: it’s still Engineering. London/San Francisco.",
+            "id": "81397817",
+            "publicId": "samuel-colvin",
+            "profileId": "ACoAAATaCDkBT-7pY5eDzTBNrejLHmRzJ5l0h84"
+          }
+        },
+        {
+          "start": 0,
+          "length": 13,
+          "link": "https://www.linkedin.com/in/ACoAAATaCDkBT-7pY5eDzTBNrejLHmRzJ5l0h84",
+          "type": "HYPERLINK"
+        },
+        {
+          "start": 14,
+          "length": 11,
+          "type": "COMPANY_NAME",
+          "company": {
+            "name": "Pydantic AI",
+            "universalName": "pydantic-ai",
+            "active": true,
+            "showcase": true,
+            "entityUrn": "urn:li:fs_miniCompany:113019655"
+          }
+        },
+        {
+          "start": 14,
+          "length": 11,
+          "link": "https://www.linkedin.com/company/pydantic-ai/",
+          "type": "HYPERLINK"
+        },
+        {
+          "start": 26,
+          "length": 8,
+          "type": "COMPANY_NAME",
+          "company": {
+            "name": "Pydantic",
+            "universalName": "pydantic",
+            "active": true,
+            "showcase": false,
+            "entityUrn": "urn:li:fs_miniCompany:93077574"
+          }
+        },
+        {
+          "start": 26,
+          "length": 8,
+          "link": "https://www.linkedin.com/company/pydantic/",
+          "type": "HYPERLINK"
+        }
+      ],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7493207311360946177,7493243567457574912)",
+      "pinned": false,
+      "edited": false,
+      "numLikes": 0,
+      "numComments": 0,
+      "reactionTypeCounts": [],
+      "author": {
+        "firstName": "Nse-Abasi",
+        "lastName": "Etim",
+        "occupation": "Software Engineering Lead, ex OpenAI| Python, Node, Rust, Distributed Systems | Fintech & Web3 Payments | Blockchain,Celo and MiniPay Integration",
+        "id": "518481128",
+        "publicId": "nseetim",
+        "profileId": "ACoAAB7nZOgBPpgOCZzDuzZq-trD2UIx5GLKHow",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/nseetim"
+      },
+      "authorType": "Person"
+    },
+    {
+      "time": 1786524533325,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7493207311360946177?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7493207311360946177%2C7493226996219518976%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287493226996219518976%2Curn%3Ali%3Aactivity%3A7493207311360946177%29",
+      "text": "Hope your next opportunity is as good as the events you help organize. Yes, I know, that's a pretty high bar 😄\nCommenting to give you a boost! 🚀 ",
+      "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7493207311360946177,7493226996219518976)",
+      "pinned": false,
+      "originalLanguage": "English",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 1,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "EMPATHY"
+        }
+      ],
+      "author": {
+        "firstName": "Antonio",
+        "lastName": "Spadaro",
+        "occupation": "Software Engineer | DevOps Engineer @ Par-Tec S.p.A. | OSS Maintainer | Competitive Programmer",
+        "id": "799349292",
+        "publicId": "antonio-spadaro",
+        "profileId": "ACoAAC-lGiwBBeqtjn5J_5M50_TC3jO5c3561gU",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/antonio-spadaro"
+      },
+      "authorType": "Person"
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jorge Iván",
+        "lastName": "Guevara Pérez",
+        "occupation": "Could/Data engineer | Backend Developer | TI | Consulting",
+        "id": "100290771",
+        "publicId": "jorge-ivan-guevara-perez",
+        "profileId": "ACoAAAX6UNMBvWSOqG005jSn_rBR88KnPrsJxc4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Adelia",
+        "lastName": "Fathipour",
+        "occupation": "Développeuse Backend Python | Python Backend Developer | Flask • PostgreSQL • APIs • Docker",
+        "id": "972584112",
+        "publicId": "adelia-fathipour-040872231",
+        "profileId": "ACoAADn4dLABLAxmbpa29V_FcPQSljIBZTNk7p0"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "🕳 Paco",
+        "lastName": "Brevers 🕳",
+        "occupation": "Multistack doppelgänger enveloper",
+        "id": "31958616",
+        "publicId": "pacobrevers",
+        "profileId": "ACoAAAHnplgBaxB3qa5L8NclzUNy9nt225d2hP4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michał",
+        "lastName": "Kołodziejski",
+        "occupation": "Senior Software Developer @ STX Next | Former Computing Engineer @ CERN | Building Systems from the Ground Up with Python, React, and Kubernetes",
+        "id": "188588209",
+        "publicId": "mic4ael",
+        "profileId": "ACoAAAs9oLEBkwkCOBke2fKKJCsRXUPo8B5T39w"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Karo",
+        "lastName": "Ladino-Puerto",
+        "occupation": "Product & Project Manager | Community Leader",
+        "id": "359079309",
+        "publicId": "karobotco",
+        "profileId": "ACoAABVnHY0BCIOKvkfQabmIz9HEQzmPu2LjmD0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Juanmi",
+        "lastName": "Taboada",
+        "occupation": "Full Stack & Software Analyst #Python #C #Rust #Cassandra #ETL #DataEngineer #DevOps #BigData #MachineLearning #CTO",
+        "id": "19051473",
+        "publicId": "juanmitaboada",
+        "profileId": "ACoAAAEis9EB821FNYVYIZp0X4qcIjs-H8pQUK4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Gideon",
+        "lastName": "Courage Fummey",
+        "occupation": "Software Engineer | Builds B2B & B2C products",
+        "id": "952060485",
+        "publicId": "gideoncouragefummey",
+        "profileId": "ACoAADi_SkUBW0E4i0jnAshDihGSP7ucJUvq9U8"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Radoslav",
+        "lastName": "Georgiev",
+        "occupation": "Managing Director for Bulgaria at Waracle",
+        "id": "585862301",
+        "publicId": "radoslav-georgiev-waracle",
+        "profileId": "ACoAACLrjJ0Bk-FyqKObAP8UVL4dxltMsOX7M_c"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petar",
+        "lastName": "Pilipovic",
+        "occupation": "Software Engineer at Erlang Solutions",
+        "id": "454769726",
+        "publicId": "ppilipovic",
+        "profileId": "ACoAABsbPD4BDJnndBYYXZ8-ZmpeRt7XhR1iLQ4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Denis",
+        "lastName": "Prodanovic",
+        "occupation": "Global Recruiting | Tech - Product - GTM (C-level) |",
+        "id": "157503175",
+        "publicId": "denisprodanovic",
+        "profileId": "ACoAAAljTscBk04gNMdKegiQZbItnMb2o8mv3e0"
+      }
+    }
+  ],
+  "numShares": 34,
+  "numLikes": 267,
+  "numComments": 15,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Mia",
+    "lastName": "Bajić",
+    "occupation": "Software Engineer · Python & Full-Stack · Vice Chair @ EuroPython Society · PSF Fellow · Podcast Host",
+    "id": "530925455",
+    "publicId": "mia-bajic",
+    "profileId": "ACoAAB-lR48BFvPhQ6doZNGTRVftkLrzcnIv-Ss"
+  },
+  "authorProfileId": "mia-bajic",
+  "authorType": "Person",
+  "authorName": "Mia Bajić",
+  "authorProfileUrl": "https://www.linkedin.com/in/mia-bajic?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAB-lR48BFvPhQ6doZNGTRVftkLrzcnIv-Ss",
+  "authorUrn": "urn:li:member:530925455",
+  "postedAtTimestamp": 1786520323901,
+  "postedAtISO": "2026-08-12T07:38:43.901Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

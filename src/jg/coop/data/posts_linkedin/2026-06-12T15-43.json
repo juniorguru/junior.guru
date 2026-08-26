@@ -12,7 +12,17 @@
   "url": "https://www.linkedin.com/posts/honzajavorek_t%C3%BDdenn%C3%AD-pozn%C3%A1mky-jak-se-mi-da%C5%99%C3%AD-v-jednom-activity-7471225573105659904-qa1s",
   "shareUrn": "urn:li:ugcPost:7471225572593954816",
   "text": "Týdenní poznámky! Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Tentokrát je to na 12 min čtení 🧐",
-  "attributes": [],
+  "attributes": [
+    {
+      "start": 72,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    }
+  ],
   "comments": [],
   "reactions": [
     {
@@ -20,7 +30,7 @@
       "profile": {
         "firstName": "Tomáš",
         "lastName": "Salamánek",
-        "occupation": "Po téměř 20 letech ve strojírenství jsem objevil svět IT. Bylo to pro mě, jako když poprvé otevřete internet a žasnete, kolik nových informací Vám svět kolem nabízí.",
+        "occupation": "On my way to becoming a Java developer | Spring Boot | 20 years of CAD/CAM in manufacturing",
         "id": "117107557",
         "publicId": "salamanek",
         "profileId": "ACoAAAb662UB8Fk1x6YnfJ2zd6FiGd1MufWQHX4"

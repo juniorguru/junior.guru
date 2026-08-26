@@ -1,0 +1,121 @@
+{
+  "type": "article",
+  "article": {
+    "type": "FIRST_PARTY",
+    "urn": "urn:li:linkedInArticle:7492931939524362240",
+    "url": "https://www.linkedin.com/pulse/t%25C3%25BDdenn%25C3%25AD-pozn%25C3%25A1mky-dokon%25C4%258Dov%25C3%25A1n%25C3%25AD-kurzu-o-vytv%25C3%25A1%25C5%2599en%25C3%25AD-scraper%25C5%25AF-honza-javorek-tnj1f",
+    "title": "Týdenní poznámky: Dokončování kurzu o vytváření scraperů pomocí AI",
+    "description": "Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Od posledních poznámek už utekl nějaký ten týden (24. 7. až 11. 8.), tak nastal čas"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7492932820164796416",
+  "url": "https://www.linkedin.com/posts/honzajavorek_t%C3%BDdenn%C3%AD-pozn%C3%A1mky-jak-se-mi-da%C5%99%C3%AD-v-jednom-activity-7492932820164796416-BqC5",
+  "shareUrn": "urn:li:ugcPost:7492932819732627456",
+  "text": "Týdenní poznámky! Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Tentokrát je to na 13 min čtení 🧐",
+  "attributes": [
+    {
+      "start": 72,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Radek",
+        "lastName": "Holý",
+        "occupation": "Test Automation Engineer | Python Devotee | Open Source Hippie | Chasing Edge Cases & Fairness",
+        "id": "56523553",
+        "publicId": "jmenemradek",
+        "profileId": "ACoAAANeeyEB64ERPMylSJEByw6iLTk9SWwioOE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Sanka",
+        "occupation": "Senior HR & Organizational Development Executive | HR extensive experience | Leadership | Talent development",
+        "id": "1248198738",
+        "publicId": "pavelsanka",
+        "profileId": "ACoAAEpmAFIBs1dbjA9a2V3nQHxsW5NlkIxFH08"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Salamánek",
+        "occupation": "On my way to becoming a Java developer | Spring Boot | 20 years of CAD/CAM in manufacturing",
+        "id": "117107557",
+        "publicId": "salamanek",
+        "profileId": "ACoAAAb662UB8Fk1x6YnfJ2zd6FiGd1MufWQHX4"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Illek",
+        "occupation": "Frontend developer at Annertech. Ambasador Česko.Digital. CSGOV Founder. Drupal Developer.",
+        "id": "130527892",
+        "publicId": "petrillek",
+        "profileId": "ACoAAAfHspQBHywWAVFe_b9cRC0iYcgrUq_iWbE"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Vladimír",
+        "lastName": "Gorej",
+        "occupation": "Senior Full-Stack Engineer & API Tooling Specialist | Available for Contract & Fractional Roles | TypeScript, Node.js, Python, OpenAPI & Arazzo | Building API tools for developers and AI agents",
+        "id": "58899881",
+        "publicId": "vladimirgorej",
+        "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Manivannan",
+        "lastName": "Selvaraj",
+        "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
+        "id": "13167565",
+        "publicId": "citizenmani",
+        "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 6,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1786454396287,
+  "postedAtISO": "2026-08-11T13:19:56.287Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

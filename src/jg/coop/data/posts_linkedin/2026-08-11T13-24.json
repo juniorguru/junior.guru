@@ -1,0 +1,100 @@
+{
+  "type": "article",
+  "article": {
+    "type": "FIRST_PARTY",
+    "urn": "urn:li:linkedInArticle:7492933861199433728",
+    "url": "https://www.linkedin.com/pulse/%25C4%258Dervenec-2026-ve-sv%25C4%259Bt%25C4%259B-junior%25C5%25AF-honza-javorek-zecxf",
+    "title": "Červenec 2026 ve světě IT juniorů",
+    "description": "Ahoj, tady robotické kuře z junior.guru! Mám pro tebe aktuální dávku novinek. Baví tě tyhle novinky a chceš si je číst pravidelně? Nespoléhej se na al"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7492933918229172227",
+  "url": "https://www.linkedin.com/posts/honzajavorek_za%C4%8D%C3%ADn%C3%A1%C5%A1-v-it-v-tomhle-newsletteru-najde%C5%A1-activity-7492933918229172227-WSwY",
+  "shareUrn": "urn:li:ugcPost:7492933917747085313",
+  "text": "Začínáš v IT? V tomhle newsletteru najdeš pozvánky, kurzy, podcasty, přednášky, články a další zdroje, které tě posunou a namotivují.",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Josef",
+        "lastName": "Ďuriš",
+        "occupation": "Embedded Systems Engineer | From Advanced System Analysis to Low-Level Development | C/C++ | Linux | HW/SW Integration",
+        "id": "304898445",
+        "publicId": "josef-ďuriš-a3913986",
+        "profileId": "ACoAABIsYY0ByKzpglEMZ3CjzvZoYSp9yKeTxvs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Karla",
+        "lastName": "Root",
+        "occupation": "Stay calm. Ask AI first, then panic | Data Analyst | Automation | Power BI",
+        "id": "420075610",
+        "publicId": "karlaroot",
+        "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog"
+      }
+    },
+    {
+      "type": "INTEREST",
+      "profile": {
+        "firstName": "Viera",
+        "lastName": "Bohonkova",
+        "occupation": "IT & Employer Branding | Connecting people, communication and company culture with business needs",
+        "id": "44250873",
+        "publicId": "vierabohonkova",
+        "profileId": "ACoAAAKjNvkBmXGpyp4SVHtKGXpOtLfcV1wUeyU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Manivannan",
+        "lastName": "Selvaraj",
+        "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
+        "id": "13167565",
+        "publicId": "citizenmani",
+        "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 5,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1786454658086,
+  "postedAtISO": "2026-08-11T13:24:18.086Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

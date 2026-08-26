@@ -24,6 +24,12 @@
       }
     },
     {
+      "start": 244,
+      "length": 16,
+      "link": "https://www.linkedin.com/company/womentechmakers/",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 561,
       "length": 14,
       "type": "PROFILE_MENTION",
@@ -35,6 +41,30 @@
         "publicId": "eliskacejpova",
         "profileId": "ACoAAA0E57ABXEjOnGWXi4ykBAzrRSYQ2_2aGg4"
       }
+    },
+    {
+      "start": 561,
+      "length": 14,
+      "link": "https://www.linkedin.com/in/ACoAAA0E57ABXEjOnGWXi4ykBAzrRSYQ2_2aGg4",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 1167,
+      "length": 18,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru/events"
+      }
+    },
+    {
+      "start": 1239,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
     }
   ],
   "comments": [
@@ -43,8 +73,19 @@
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7486028797599727616?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7486028797599727616%2C7487424762143465472%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287487424762143465472%2Curn%3Ali%3AugcPost%3A7486028797599727616%29",
       "text": "Já se těším, já se těším, JÁ SE TĚŠÍM! 🤩 Tenhle workshop dělám fakt ráda.. 💙",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(ugcPost:7486028797599727616,7487424762143465472)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 1,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "EMPATHY"
+        }
+      ],
       "author": {
         "firstName": "Eliška  ",
         "lastName": "Čejpová",
@@ -52,16 +93,34 @@
         "id": "218425264",
         "publicId": "eliskacejpova",
         "profileId": "ACoAAA0E57ABXEjOnGWXi4ykBAzrRSYQ2_2aGg4",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/eliskacejpova"
+      },
+      "authorType": "Person"
     },
     {
       "time": 1784808360585,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7486028797599727616?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7486028797599727616%2C7486028846031548417%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287486028846031548417%2Curn%3Ali%3AugcPost%3A7486028797599727616%29",
       "text": "Více info tu https://junior.guru/events/64/",
-      "entities": [],
+      "entities": [
+        {
+          "start": 13,
+          "length": 30,
+          "type": "TEXT_LINK",
+          "textLink": {
+            "viewingBehavior": "DEFAULT",
+            "url": "https://junior.guru/events/64/"
+          }
+        }
+      ],
+      "fromPostAuthor": true,
+      "urn": "urn:li:comment:(ugcPost:7486028797599727616,7486028846031548417)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 0,
+      "numComments": 0,
+      "reactionTypeCounts": [],
       "author": {
         "firstName": "Honza",
         "lastName": "Javorek",
@@ -69,8 +128,10 @@
         "id": "8517488",
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/honzajavorek"
+      },
+      "authorType": "Person"
     }
   ],
   "reactions": [

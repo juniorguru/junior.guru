@@ -16,9 +16,25 @@
       "time": 1782735928639,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7477336051968229378?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7477336051968229378%2C7477336436430778368%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287477336436430778368%2Curn%3Ali%3AugcPost%3A7477336051968229378%29",
       "text": "Odkazy na dobré zdroje tu: https://junior.guru/handbook/git/#jak-se-ucit-git",
-      "entities": [],
+      "entities": [
+        {
+          "start": 27,
+          "length": 49,
+          "type": "TEXT_LINK",
+          "textLink": {
+            "viewingBehavior": "DEFAULT",
+            "url": "https://junior.guru/handbook/git/#jak-se-ucit-git"
+          }
+        }
+      ],
+      "fromPostAuthor": true,
+      "urn": "urn:li:comment:(ugcPost:7477336051968229378,7477336436430778368)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 0,
+      "numComments": 0,
+      "reactionTypeCounts": [],
       "author": {
         "firstName": "Honza",
         "lastName": "Javorek",
@@ -26,8 +42,10 @@
         "id": "8517488",
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/honzajavorek"
+      },
+      "authorType": "Person"
     }
   ],
   "reactions": [
@@ -91,7 +109,7 @@
       "profile": {
         "firstName": "Vladimír",
         "lastName": "Gorej",
-        "occupation": "Senior Full-Stack Engineer · TypeScript, React, Node.js, Python, FastAPI · OpenAPI, AsyncAPI & AI-agent tooling | AsyncAPI maintainer · OpenAPI & Arazzo contributor · ex-Swagger · GitHub Stars alumn",
+        "occupation": "Senior Full-Stack Engineer & API Tooling Specialist | Available for Contract & Fractional Roles | TypeScript, Node.js, Python, OpenAPI & Arazzo | Building API tools for developers and AI agents",
         "id": "58899881",
         "publicId": "vladimirgorej",
         "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
@@ -135,7 +153,7 @@
       "profile": {
         "firstName": "Tomáš",
         "lastName": "Salamánek",
-        "occupation": "Po téměř 20 letech ve strojírenství jsem objevil svět IT. Bylo to pro mě, jako když poprvé otevřete internet a žasnete, kolik nových informací Vám svět kolem nabízí.",
+        "occupation": "On my way to becoming a Java developer | Spring Boot | 20 years of CAD/CAM in manufacturing",
         "id": "117107557",
         "publicId": "salamanek",
         "profileId": "ACoAAAb662UB8Fk1x6YnfJ2zd6FiGd1MufWQHX4"

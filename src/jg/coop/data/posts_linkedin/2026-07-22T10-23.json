@@ -30,6 +30,12 @@
       }
     },
     {
+      "start": 42,
+      "length": 9,
+      "link": "https://www.linkedin.com/in/ACoAAABNSpEBkxasB8uqJ3zcizYluVXPEFz2mrs",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 161,
       "length": 14,
       "type": "PROFILE_MENTION",
@@ -41,6 +47,21 @@
         "publicId": "klara-filipova",
         "profileId": "ACoAABu1-dwB6AqCUhubhhlFXfAMDhspSJy7JAQ"
       }
+    },
+    {
+      "start": 161,
+      "length": 14,
+      "link": "https://www.linkedin.com/in/ACoAABu1-dwB6AqCUhubhhlFXfAMDhspSJy7JAQ",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 227,
+      "length": 25,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "https://data.irozhlas.cz/"
+      }
     }
   ],
   "comments": [
@@ -49,7 +70,13 @@
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7485617729383841793?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7485617729383841793%2C7486371646652731392%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287486371646652731392%2Curn%3Ali%3Aactivity%3A7485617729383841793%29",
       "text": "Wow, to je nádhera! 💛",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7485617729383841793,7486371646652731392)",
       "pinned": false,
+      "edited": false,
+      "numLikes": 0,
+      "numComments": 0,
+      "reactionTypeCounts": [],
       "author": {
         "firstName": "Kristína",
         "lastName": "Pšorn Zákopčanová",
@@ -57,8 +84,10 @@
         "id": "804232685",
         "publicId": "kristina-zakopcanova",
         "profileId": "ACoAAC_vne0BL34W_gMgZJiEu6tVSfCxBxD59SU",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/kristina-zakopcanova"
+      },
+      "authorType": "Person"
     }
   ],
   "reactions": [

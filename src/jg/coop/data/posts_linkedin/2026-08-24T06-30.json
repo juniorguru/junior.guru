@@ -1,0 +1,128 @@
+{
+  "type": "document",
+  "document": {
+    "coverPages": [],
+    "title": "Má GitHub význam na pohovoru?",
+    "totalPageCount": 5
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7497540757906497536",
+  "url": "https://www.linkedin.com/posts/honzajavorek_m%C3%A1-github-v%C3%BDznam-na-pohovoru-activity-7497540757906497536-lGtK",
+  "shareUrn": "urn:li:ugcPost:7486364248412053504",
+  "text": "Má GitHub význam na pohovoru?\n\nPokud tě někdo straší, že si tvůj GitHub budou procházet náboráři a máš jej proto mít sterilně dokonalý, nenech se tím zmást. Recruiteři kód nečtou.\n\nManažeři a senioři občas ano, ale podstatné je, jestli jim dáš v CVčku pod nos konkrétní projekty, kterými se chceš chlubit, nebo jim předhodíš jen tak celý profil a necháš je tápat.\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 387,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1787569730987,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7486364248412053504?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7486364248412053504%2C7497610872954146816%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287497610872954146816%2Curn%3Ali%3AugcPost%3A7486364248412053504%29",
+      "text": "My teda github obvykle chceme vidět a bohužel ho většina lidí má dost zanedbaný a pak se složitě vymýšlí, kde zanonymizují kousek kódu, aby se nemuseli s ničím dělat nově, je to škoda.",
+      "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(ugcPost:7486364248412053504,7497610872954146816)",
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 2,
+      "numComments": 2,
+      "reactionTypeCounts": [
+        {
+          "count": 2,
+          "reactionType": "LIKE"
+        }
+      ],
+      "author": {
+        "firstName": "Radka",
+        "lastName": "Klusackova",
+        "occupation": "Helping companies find the best IT professionals quickly and effectively 🎯║ Recruitment lead Wesecon",
+        "id": "195550619",
+        "publicId": "radka-klusackova",
+        "profileId": "ACoAAAun3ZsB2O9OG0oDlq6ukI1ybywBsZNh1y4",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/radka-klusackova"
+      },
+      "authorType": "Person"
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Mohammad",
+        "lastName": "Hasan",
+        "occupation": "𝑭𝒓𝒐𝒏𝒕𝒆𝒏𝒅 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓 | 𝑾𝒐𝒓𝒅𝑷𝒓𝒆𝒔𝒔 𝑬𝒙𝒑𝒆𝒓𝒕 | 𝑫𝒓𝒐𝒑𝒔𝒉𝒊𝒑𝒑𝒆𝒓 | 𝑷𝒓𝒐𝒇𝒆𝒔𝒔𝒊𝒐𝒏𝒂𝒍 𝑪𝒐𝒅𝒆𝒓 | 𝑳𝒆𝒗𝒆𝒍 1 𝑭𝒊𝒗𝒆𝒓𝒓 𝑭𝒓𝒆𝒆𝒍𝒂𝒏𝒄𝒆𝒓 | 𝑳𝒆𝒕𝒔 𝑪𝒐𝒏𝒏𝒆𝒄𝒕 🎯",
+        "id": "1046276327",
+        "publicId": "mohammad-hasan-dev",
+        "profileId": "ACoAAD5c6OcBsKii9YrLw9AU8zH4G-6V9KUxhO4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Marketa",
+        "lastName": "Willis",
+        "occupation": "Frontend developer | React | Typescript | Mentor",
+        "id": "690320871",
+        "publicId": "marketa-willis",
+        "profileId": "ACoAACkldecB7E9DWErMM56bPMpJ3V49koGflx0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vladimír",
+        "lastName": "Gorej",
+        "occupation": "Senior Full-Stack Engineer & API Tooling Specialist | Available for Contract & Fractional Roles | TypeScript, Node.js, Python, OpenAPI & Arazzo | Building API tools for developers and AI agents",
+        "id": "58899881",
+        "publicId": "vladimirgorej",
+        "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 4,
+  "numComments": 3,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1787553014256,
+  "postedAtISO": "2026-08-24T06:30:14.256Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

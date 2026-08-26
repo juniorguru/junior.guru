@@ -25,6 +25,12 @@
       }
     },
     {
+      "start": 47,
+      "length": 12,
+      "link": "https://www.linkedin.com/in/ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 63,
       "length": 12,
       "type": "PROFILE_MENTION",
@@ -36,6 +42,21 @@
         "publicId": "fusatytata",
         "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k"
       }
+    },
+    {
+      "start": 63,
+      "length": 12,
+      "link": "https://www.linkedin.com/in/ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 99,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
     }
   ],
   "comments": [
@@ -43,8 +64,24 @@
       "time": 1785407022372,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7486360419578830848?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7486360419578830848%2C7488539815559266304%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287488539815559266304%2Curn%3Ali%3AugcPost%3A7486360419578830848%29",
       "text": "Odkaz tu: https://junior.guru/stories/simon-koreny/",
-      "entities": [],
+      "entities": [
+        {
+          "start": 10,
+          "length": 41,
+          "type": "TEXT_LINK",
+          "textLink": {
+            "viewingBehavior": "DEFAULT",
+            "url": "https://junior.guru/stories/simon-koreny/"
+          }
+        }
+      ],
+      "fromPostAuthor": true,
+      "urn": "urn:li:comment:(ugcPost:7486360419578830848,7488539815559266304)",
       "pinned": false,
+      "edited": false,
+      "numLikes": 0,
+      "numComments": 0,
+      "reactionTypeCounts": [],
       "author": {
         "firstName": "Honza",
         "lastName": "Javorek",
@@ -52,8 +89,10 @@
         "id": "8517488",
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/honzajavorek"
+      },
+      "authorType": "Person"
     }
   ],
   "reactions": [
@@ -73,7 +112,7 @@
       "profile": {
         "firstName": "Barbora",
         "lastName": "K.",
-        "occupation": "Senior Data Engineer",
+        "occupation": "Senior Data Engineer at Paylocity",
         "id": "256928895",
         "publicId": "barbora-kacerovska",
         "profileId": "ACoAAA9QbH8BULNdxK71_92EwEkYXA77X2Z9O3Q"

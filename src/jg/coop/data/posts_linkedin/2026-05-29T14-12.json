@@ -12,7 +12,17 @@
   "url": "https://www.linkedin.com/posts/honzajavorek_t%C3%BDdenn%C3%AD-pozn%C3%A1mky-jak-se-mi-da%C5%99%C3%AD-v-jednom-activity-7466129302468784128-3Z5M",
   "shareUrn": "urn:li:ugcPost:7466129302099488768",
   "text": "Týdenní poznámky! Jak se mi daří v jednom člověku provozovat a rozvíjet junior.guru? Tentokrát je to na 9 min čtení 🧐",
-  "attributes": [],
+  "attributes": [
+    {
+      "start": 72,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    }
+  ],
   "comments": [],
   "reactions": [
     {
@@ -42,7 +52,7 @@
       "profile": {
         "firstName": "Kateřina",
         "lastName": "Hroníková",
-        "occupation": "Full-stack engineer with a strong background in finances 👩‍💻 Apify doing good Ambassador ❤️ Czechitas mentor 💃 (Ultra)trails lover 🍀",
+        "occupation": "Full-stack engineer with a background in finance & operations 👩‍💻 Founder & lead of Apify Doing Good ❤️ Czechitas mentor 💃 (Ultra)trails lover 🏃‍♀️",
         "id": "327394424",
         "publicId": "katerina-hronikova",
         "profileId": "ACoAABODpHgB8Z8XT0Q-xfLGZMGuJSS6-npRT08"

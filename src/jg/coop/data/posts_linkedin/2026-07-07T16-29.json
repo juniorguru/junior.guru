@@ -10,15 +10,36 @@
   "url": "https://www.linkedin.com/posts/honzajavorek_ovl%C3%A1d%C3%A1n%C3%AD-gitu-p%C5%99%C3%ADkazama-nebo-klik%C3%A1n%C3%ADm-activity-7480296831374123010-hsgG",
   "shareUrn": "urn:li:ugcPost:7480296830401069056",
   "text": "Ovládání Gitu: Příkazama, nebo klikáním?\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
-  "attributes": [],
+  "attributes": [
+    {
+      "start": 64,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    }
+  ],
   "comments": [
     {
       "time": 1784231935546,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7480296830401069056?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7480296830401069056%2C7483611144188862464%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287483611144188862464%2Curn%3Ali%3AugcPost%3A7480296830401069056%29",
       "text": "sice (zatím) základní, ale jedu příkazy  😁 ",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(ugcPost:7480296830401069056,7483611144188862464)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 0,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "PRAISE"
+        }
+      ],
       "author": {
         "firstName": "Sandra",
         "lastName": "Heinzová",
@@ -26,16 +47,29 @@
         "id": "1057345779",
         "publicId": "sandra-heinzova",
         "profileId": "ACoAAD8F0PMB3ls8oo2W-xuzIAVJuEfCRdY-hRA",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/sandra-heinzova"
+      },
+      "authorType": "Person"
     },
     {
       "time": 1783885873231,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7480296830401069056?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7480296830401069056%2C7482159653632782336%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287482159653632782336%2Curn%3Ali%3AugcPost%3A7480296830401069056%29",
       "text": "Dnes už chybí možnost nechat ovládání na agentovi :)",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(ugcPost:7480296830401069056,7482159653632782336)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 0,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "INTEREST"
+        }
+      ],
       "author": {
         "firstName": "Luděk",
         "lastName": "Reif",
@@ -43,33 +77,63 @@
         "id": "420771089",
         "publicId": "luipenox",
         "profileId": "ACoAABkUdREBIfZ0TShVcsHtK1JLR-icKCTCnhw",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/luipenox"
+      },
+      "authorType": "Person"
     },
     {
       "time": 1783528947248,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7480296830401069056?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7480296830401069056%2C7480662597554409472%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287480662597554409472%2Curn%3Ali%3AugcPost%3A7480296830401069056%29",
       "text": "ovládání Gitu příkazama 😊 ",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(ugcPost:7480296830401069056,7480662597554409472)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 2,
+      "numComments": 0,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "PRAISE"
+        },
+        {
+          "count": 1,
+          "reactionType": "LIKE"
+        }
+      ],
       "author": {
         "firstName": "Vendula",
         "lastName": "Krajíčková",
-        "occupation": "Frontend vývojářka 🚀 | React, Next.js, TypeScript | Hledám novou výzvu ve frontend vývoji 👩‍💻",
+        "occupation": "Frontend vývojářka 🚀 | React, Next.js, TypeScript | Hledám novou výzvu ve frontend vývoji 👩‍💻 | Ex-BlueGhost 👻💙",
         "id": "1145616814",
         "publicId": "vendula-krajickova",
         "profileId": "ACoAAERIua4Bk44zfiGE6PT1BmSNoKdqiNkFOYc",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/vendula-krajickova"
+      },
+      "authorType": "Person"
     },
     {
       "time": 1783474618164,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7480296830401069056?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7480296830401069056%2C7480434724860243969%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287480434724860243969%2Curn%3Ali%3AugcPost%3A7480296830401069056%29",
       "text": "Já se přiznám, že jsem klikač :-D",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(ugcPost:7480296830401069056,7480434724860243969)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 0,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "ENTERTAINMENT"
+        }
+      ],
       "author": {
         "firstName": "Pavla",
         "lastName": "Beránková",
@@ -77,8 +141,10 @@
         "id": "549611439",
         "publicId": "berankova-pavla",
         "profileId": "ACoAACDCZ68BhDuYokjdegYmFm0rxSx_6Mlwh9c",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/berankova-pavla"
+      },
+      "authorType": "Person"
     }
   ],
   "reactions": [

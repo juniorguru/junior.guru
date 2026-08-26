@@ -6,15 +6,45 @@
   "url": "https://www.linkedin.com/posts/honzajavorek_%C5%BEiv%C3%A1-discord-komunita-bezpe%C4%8Dn%C3%A9-m%C3%ADsto-pestr%C3%A1-activity-7473260783649480705-YXdP",
   "shareUrn": "urn:li:share:7465387829624397824",
   "text": "Živá Discord komunita, bezpečné místo, pestrá parta.\n\nSnažím se udělat teaser na klub pro novou homepage junior.guru a zatím to vypadá takhle.\n\nTrochu si s tím nevím rady, protože je pro mně strašně těžké vydestilovat ty pilíře, které dělají klub klubem, a najít největší lákadla, která lidi namotivují kliknout a zjistit si o naší komunitě něco víc.\n\nSnad to bude takhle aspoň dobrý začátek a zbytek se doladí za pochodu. Napadá vás, co by tam mělo být jinak?\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
-  "attributes": [],
+  "attributes": [
+    {
+      "start": 105,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    },
+    {
+      "start": 484,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    }
+  ],
   "comments": [
     {
       "time": 1781775833319,
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7473260783649480705?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7473260783649480705%2C7473309504789520385%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287473309504789520385%2Curn%3Ali%3Aactivity%3A7473260783649480705%29",
       "text": "Az budou chechtaky, urcite se prihlasim :-))",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7473260783649480705,7473309504789520385)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 2,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "EMPATHY"
+        }
+      ],
       "author": {
         "firstName": "Karla",
         "lastName": "Root",
@@ -22,8 +52,10 @@
         "id": "420075610",
         "publicId": "karlaroot",
         "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/karlaroot"
+      },
+      "authorType": "Person"
     }
   ],
   "reactions": [

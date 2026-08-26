@@ -25,6 +25,12 @@
       }
     },
     {
+      "start": 47,
+      "length": 12,
+      "link": "https://www.linkedin.com/in/ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 62,
       "length": 12,
       "type": "PROFILE_MENTION",
@@ -36,6 +42,21 @@
         "publicId": "p-kasicka",
         "profileId": "ACoAAEIxlL8Bfkq3CiEwFXvTQla3a5z_FUgQD3w"
       }
+    },
+    {
+      "start": 62,
+      "length": 12,
+      "link": "https://www.linkedin.com/in/ACoAAEIxlL8Bfkq3CiEwFXvTQla3a5z_FUgQD3w",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 98,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
     }
   ],
   "comments": [
@@ -43,8 +64,24 @@
       "time": 1786021014979,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7486360681219276801?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7486360681219276801%2C7491115087206850560%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287491115087206850560%2Curn%3Ali%3AugcPost%3A7486360681219276801%29",
       "text": "Odkaz tu: https://junior.guru/stories/petr-kasicka/",
-      "entities": [],
+      "entities": [
+        {
+          "start": 10,
+          "length": 41,
+          "type": "TEXT_LINK",
+          "textLink": {
+            "viewingBehavior": "DEFAULT",
+            "url": "https://junior.guru/stories/petr-kasicka/"
+          }
+        }
+      ],
+      "fromPostAuthor": true,
+      "urn": "urn:li:comment:(ugcPost:7486360681219276801,7491115087206850560)",
       "pinned": false,
+      "edited": false,
+      "numLikes": 0,
+      "numComments": 0,
+      "reactionTypeCounts": [],
       "author": {
         "firstName": "Honza",
         "lastName": "Javorek",
@@ -52,17 +89,52 @@
         "id": "8517488",
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/honzajavorek"
+      },
+      "authorType": "Person"
     }
   ],
   "reactions": [
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Oleksandr",
+        "lastName": "Moskaliuk",
+        "occupation": "Full-Stack Developer with a stack of technologies: JavaScript | TypeScript | React.js | Next.js | Node.js | Express.js | Nest.js | REST API | MongoDB | PostgreSQL | GIT | HTML | CSS | SCSS | Responsive/Adaptive Design",
+        "id": "755320840",
+        "publicId": "oleksandr-moskaliuk",
+        "profileId": "ACoAAC0FSAgBJxQ_zQQNUzvoiYnmvkh_XMUi4jk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ivana",
+        "lastName": "Šafránková",
+        "occupation": "Project manager, Client Service manager",
+        "id": "60087464",
+        "publicId": "ivanasafr",
+        "profileId": "ACoAAAOU3KgBGSHc69nnR0enWjNx32KZrafPk0Y"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Adéla",
+        "lastName": "Pavlun",
+        "occupation": "Somatic Guide & Writer | TRE® · SE® | Exploring human connection, safety and growth",
+        "id": "59184567",
+        "publicId": "adelapavlun",
+        "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Táňa",
         "lastName": "Váchová",
-        "occupation": "📌 administrativa ⊃ podpora ⊃ empatie",
+        "occupation": "virtuální asistentka ⊃ administrativa ⊃ podpora",
         "id": "1399848350",
         "publicId": "tanavachova",
         "profileId": "ACoAAFNv_Z4BxskkxA5XZSQetiT0HKCBk4rbPGE"
@@ -92,7 +164,7 @@
     }
   ],
   "numShares": 0,
-  "numLikes": 3,
+  "numLikes": 6,
   "numComments": 1,
   "canReact": true,
   "canPostComments": true,

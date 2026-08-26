@@ -21,6 +21,12 @@
       }
     },
     {
+      "start": 527,
+      "length": 12,
+      "link": "https://www.linkedin.com/in/ACoAAB-dm4UBphpPt0M3o_HcoFhUNSFgam6yIyY",
+      "type": "HYPERLINK"
+    },
+    {
       "start": 634,
       "length": 18,
       "type": "COMPANY_NAME",
@@ -31,6 +37,39 @@
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:923725"
       }
+    },
+    {
+      "start": 634,
+      "length": 18,
+      "link": "https://www.linkedin.com/company/webexpo/",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 803,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    },
+    {
+      "start": 1422,
+      "length": 18,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru/events"
+      }
+    },
+    {
+      "start": 1494,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
     }
   ],
   "comments": [
@@ -39,16 +78,48 @@
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7475194982346371074?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7475194982346371074%2C7477345055238828033%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287477345055238828033%2Curn%3Ali%3Aactivity%3A7475194982346371074%29",
       "text": "Technologie se mění, ale zvědavost a chuť učit se zůstávají. 💛 Přejeme inspirativní večer a spoustu zajímavých otázek. 🧐",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7475194982346371074,7477345055238828033)",
       "pinned": false,
-      "originalLanguage": "Czech"
+      "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 2,
+      "numComments": 0,
+      "reactionTypeCounts": [
+        {
+          "count": 2,
+          "reactionType": "EMPATHY"
+        }
+      ],
+      "author": {
+        "name": "WebExpo Conference",
+        "universalName": "webexpo",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:923725",
+        "followerCount": 5274,
+        "profileUrl": "https://www.linkedin.com/company/webexpo"
+      },
+      "authorType": "Company"
     },
     {
       "time": 1782225707644,
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7475194982346371074?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7475194982346371074%2C7475196414474493952%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287475196414474493952%2Curn%3Ali%3Aactivity%3A7475194982346371074%29",
       "text": "Wow! 📌",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7475194982346371074,7475196414474493952)",
       "pinned": false,
       "originalLanguage": "English",
+      "edited": false,
+      "numLikes": 2,
+      "numComments": 0,
+      "reactionTypeCounts": [
+        {
+          "count": 2,
+          "reactionType": "EMPATHY"
+        }
+      ],
       "author": {
         "firstName": "Šimon",
         "lastName": "Kořený",
@@ -56,8 +127,10 @@
         "id": "283596586",
         "publicId": "fusatytata",
         "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/fusatytata"
+      },
+      "authorType": "Person"
     }
   ],
   "reactions": [

@@ -1,0 +1,201 @@
+{
+  "type": "document",
+  "document": {
+    "coverPages": [],
+    "title": "Rozhovor s Lucií Cicvárkovou",
+    "totalPageCount": 7
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7496068516052291585",
+  "url": "https://www.linkedin.com/posts/honzajavorek_rozhovor-s-luci%C3%AD-cicv%C3%A1rkovou-activity-7496068516052291585-f9zo",
+  "shareUrn": "urn:li:ugcPost:7486361377352282112",
+  "text": "Pravdivě o kariéře v IT 🙏 Přečtěte si rozhovor Adéla Pavlun s Lucie Cicvárková\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 47,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Adéla",
+        "lastName": "Pavlun",
+        "occupation": "Somatic Guide & Writer | TRE® · SE® | Exploring human connection, safety and growth",
+        "id": "59184567",
+        "publicId": "adelapavlun",
+        "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"
+      }
+    },
+    {
+      "start": 47,
+      "length": 12,
+      "link": "https://www.linkedin.com/in/ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 62,
+      "length": 16,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Lucie",
+        "lastName": "Cicvárková",
+        "occupation": "SW Engineer in Test at NetSuite",
+        "id": "832383941",
+        "publicId": "lucie-cicvárková-80591b1b2",
+        "profileId": "ACoAADGdK8UBeksm_PFcuvdQUOzp-Qt-UCd0OiI"
+      }
+    },
+    {
+      "start": 62,
+      "length": 16,
+      "link": "https://www.linkedin.com/in/ACoAADGdK8UBeksm_PFcuvdQUOzp-Qt-UCd0OiI",
+      "type": "HYPERLINK"
+    },
+    {
+      "start": 102,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Michaela",
+        "lastName": "G.",
+        "occupation": "Manual Tester | ISTQB Certified | GDS | Tourism | Technical Support",
+        "id": "314600446",
+        "publicId": "michaela-gazakova",
+        "profileId": "ACoAABLAa_4Bf1MdgJb9bSZuHYJb7uPpON1qAk0"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Kateřina",
+        "lastName": "Hroníková",
+        "occupation": "Full-stack engineer with a background in finance & operations 👩‍💻 Founder & lead of Apify Doing Good ❤️ Czechitas mentor 💃 (Ultra)trails lover 🏃‍♀️",
+        "id": "327394424",
+        "publicId": "katerina-hronikova",
+        "profileId": "ACoAABODpHgB8Z8XT0Q-xfLGZMGuJSS6-npRT08"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Denisa",
+        "lastName": "Adamcová",
+        "occupation": "Test Automation Engineer | Playwright | Coach at Czechitas",
+        "id": "663230550",
+        "publicId": "denisa-adamcova",
+        "profileId": "ACoAACeIGFYBWteXbpyiOkw1l0_zZZ5IUyzF-y0"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Marketa",
+        "lastName": "Willis",
+        "occupation": "Frontend developer | React | Typescript | Mentor",
+        "id": "690320871",
+        "publicId": "marketa-willis",
+        "profileId": "ACoAACkldecB7E9DWErMM56bPMpJ3V49koGflx0"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Sarka",
+        "lastName": "Melicharova",
+        "occupation": "Czech language teacher for foreigners | Czech for life & Czech for exams (A2, B1, ...) | Czech Buddy",
+        "id": "648814916",
+        "publicId": "melicharova",
+        "profileId": "ACoAACasIUQBi0zapOVDWOPcCXCviPxBdRa-Lgo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Eliska",
+        "lastName": "Benes",
+        "occupation": "Functional / Data Analyst",
+        "id": "244725559",
+        "publicId": "eliskabenes",
+        "profileId": "ACoAAA6WNzcBRolDntqSCawISWmQ4fVnsysbXAY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Adéla",
+        "lastName": "Tichá",
+        "occupation": "Experienced Product Support Specialist | Passionate about UX/UI",
+        "id": "422345507",
+        "publicId": "adelticha",
+        "profileId": "ACoAABkseyMBcA3muv646Fc2S5gVsWt0b9uYw-0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vladimír",
+        "lastName": "Gorej",
+        "occupation": "Senior Full-Stack Engineer & API Tooling Specialist | Available for Contract & Fractional Roles | TypeScript, Node.js, Python, OpenAPI & Arazzo | Building API tools for developers and AI agents",
+        "id": "58899881",
+        "publicId": "vladimirgorej",
+        "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Manivannan",
+        "lastName": "Selvaraj",
+        "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
+        "id": "13167565",
+        "publicId": "citizenmani",
+        "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Illek",
+        "occupation": "Frontend developer at Annertech. Ambasador Česko.Digital. CSGOV Founder. Drupal Developer.",
+        "id": "130527892",
+        "publicId": "petrillek",
+        "profileId": "ACoAAAfHspQBHywWAVFe_b9cRC0iYcgrUq_iWbE"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 10,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1787202004445,
+  "postedAtISO": "2026-08-20T05:00:04.445Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

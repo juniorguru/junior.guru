@@ -10,15 +10,36 @@
   "url": "https://www.linkedin.com/posts/honzajavorek_d%C3%A1vat-k%C3%B3d-na-github-activity-7492482559461883906-OrMz",
   "shareUrn": "urn:li:ugcPost:7486362997402263553",
   "text": "Dávat kód na GitHub?\n\nU začátečníků platí, že nemají co schovávat a měli by světu ukázat co nejvíce toho, co dokázali vytvořit, nebo co zkoušeli řešit. Můžeš tím jen získat.\n\nNo a GitHub je příhodné místo, kam všechny své projekty a pokusy nahrávat. Zároveň tam mají své projekty i všichni ostatní a jde tam spolupracovat s lidmi z celého světa. Je to hřiště pro programátory, kde si každý experimentuje na čem chce.\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
-  "attributes": [],
+  "attributes": [
+    {
+      "start": 440,
+      "length": 11,
+      "type": "TEXT_LINK",
+      "textLink": {
+        "viewingBehavior": "DEFAULT",
+        "url": "http://junior.guru"
+      }
+    }
+  ],
   "comments": [
     {
       "time": 1786347992014,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7486362997402263553?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7486362997402263553%2C7492486528292757504%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287492486528292757504%2Curn%3Ali%3AugcPost%3A7486362997402263553%29",
       "text": "Problém každého z nás je publikovat i nehotové, neuhlazené projekty s chybami. A právě je to o tom zlomit ten strach a jít s kůží na trh. :)",
       "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(ugcPost:7486362997402263553,7492486528292757504)",
       "pinned": false,
       "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 1,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "EMPATHY"
+        }
+      ],
       "author": {
         "firstName": "Patrik",
         "lastName": "Brnušák",
@@ -26,11 +47,24 @@
         "id": "666440295",
         "publicId": "patrik-brnusak-cz",
         "profileId": "ACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU",
-        "distance": "OUT_OF_NETWORK"
-      }
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/patrik-brnusak-cz"
+      },
+      "authorType": "Person"
     }
   ],
   "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
     {
       "type": "LIKE",
       "profile": {
@@ -66,7 +100,7 @@
     }
   ],
   "numShares": 0,
-  "numLikes": 3,
+  "numLikes": 4,
   "numComments": 2,
   "canReact": true,
   "canPostComments": true,
