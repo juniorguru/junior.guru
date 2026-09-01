@@ -36,6 +36,24 @@ class LLMModel(StrEnum):
     advanced = "gpt-4.1"
 
 
+class EmptyLLMResponseError(Exception):
+    """The LLM returned an empty response, a transient issue worth retrying."""
+
+
+def is_empty_response_error(error: ValidationError) -> bool:
+    """Whether a schema validation failure is caused by an empty LLM response.
+
+    Distinguishes an empty (or whitespace-only) completion, which is a transient
+    condition worth retrying, from a genuine schema mismatch or truncated JSON.
+    """
+    return any(
+        detail["type"] == "json_invalid"
+        and isinstance(detail.get("input"), str)
+        and not detail["input"].strip()
+        for detail in error.errors()
+    )
+
+
 @lru_cache
 def get_client() -> AsyncOpenAI:
     logger.debug("Creating OpenAI client")
@@ -96,6 +114,11 @@ retry_defaults = {
     wait=wait_random_exponential(min=60, max=5 * 60),
     **retry_defaults,
 )
+@retry(
+    retry=retry_if_exception_type(EmptyLLMResponseError),
+    wait=wait_random_exponential(min=2, max=30),
+    **retry_defaults,
+)
 @cache(expire=timedelta(days=60), tag="llm")
 async def ask_llm[Schema: BaseModel](
     system_prompt: str,
@@ -128,6 +151,10 @@ async def ask_llm[Schema: BaseModel](
                     ).output_parsed
                     break
                 except ValidationError as e:
+                    if is_empty_response_error(e):
+                        raise EmptyLLMResponseError(
+                            "LLM returned an empty response"
+                        ) from e
                     if attempt == validation_attempts:
                         raise
                     logger.warning(f"Schema validation failed, attempt #{attempt}: {e}")
@@ -139,6 +166,8 @@ async def ask_llm[Schema: BaseModel](
                     # prompt_cache_retention="24h",
                 )
             ).output_text
+            if not result.strip():
+                raise EmptyLLMResponseError("LLM returned an empty response")
     return result
 
 
