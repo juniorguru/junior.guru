@@ -1,3 +1,4 @@
+import logging
 import math
 from collections.abc import Callable
 from datetime import date, timedelta
@@ -7,6 +8,12 @@ from pathlib import Path
 import httpx2
 import yaml
 from pydantic import HttpUrl
+from tenacity import (
+    before_sleep_log,
+    retry,
+    retry_if_exception_type,
+    stop_after_attempt,
+)
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import apify, loggers
@@ -97,34 +104,46 @@ def main():
         )
         logger.info(f"Loaded {yaml_path.name} as {config.name!r}")
 
-    for metric_name, days in [
-        ("page_monthly_pageviews", 365),
-        ("page_last_month_pageviews", 30),
+    for metric_name, days, divisor in [
+        ("page_monthly_pageviews", 365, 12),
+        ("page_last_month_pageviews", 30, 1),
     ]:
         logger.info(f"Fetching analytics: {metric_name}")
-        params = {
-            "version": 5,
-            "fields": "pageviews,pages",
-            "info": "false",
-            "page": "/courses/*",
-            "start": str(date.today() - timedelta(days=days)),
-        }
-        response = httpx2.get(
-            "https://simpleanalytics.com/junior.guru.json", params=params
-        )
-        logger.debug(f"API URL: {response.url}")
-        response.raise_for_status()
-        data = response.json()
-        for page in data["pages"]:
+        for page in fetch_course_pageviews(days):
             slug = page["value"].replace("/courses/", "")
             try:
                 course_provider = CourseProvider.get_by_slug(slug)
-                metric_value = math.ceil(page["pageviews"] / 12)
+                metric_value = math.ceil(page["pageviews"] / divisor)
                 setattr(course_provider, metric_name, metric_value)
                 course_provider.save()
                 logger.info(f"Saved {slug} metric: {metric_name}={metric_value}")
             except CourseProvider.DoesNotExist:
                 logger.warning(f"Course provider {slug!r} not found in the database")
+
+
+@retry(
+    retry=retry_if_exception_type(httpx2.HTTPError),
+    stop=stop_after_attempt(3),
+    reraise=True,
+    before_sleep=before_sleep_log(logger, logging.WARNING),
+)
+def fetch_course_pageviews(days: int) -> list[dict]:
+    # The 365-day aggregation takes ~8s to generate server-side, so the read
+    # timeout must be well above httpx2's 5s default or the request times out.
+    response = httpx2.get(
+        "https://simpleanalytics.com/junior.guru.json",
+        params={
+            "version": 5,
+            "fields": "pages",
+            "info": "false",
+            "page": "/courses/*",
+            "start": str(date.today() - timedelta(days=days)),
+        },
+        timeout=httpx2.Timeout(30.0),
+    )
+    logger.debug(f"API URL: {response.url}")
+    response.raise_for_status()
+    return response.json()["pages"]
 
 
 def raise_if_too_long(fn: Callable[..., str]) -> Callable[..., str]:
