@@ -2,13 +2,19 @@ from types import SimpleNamespace
 
 import pytest
 from openai.types.responses import Response
+from pydantic import BaseModel
 
 from jg.coop.lib.llm import (
     describe_raw_response,
     describe_response,
     is_requests_rate_limit_error,
     is_tokens_rate_limit_error,
+    parse_llm_json,
 )
+
+
+class Result(BaseModel):
+    value: int
 
 
 @pytest.mark.parametrize(
@@ -36,6 +42,18 @@ def test_is_tokens_rate_limit_error(type_, expected):
     error = SimpleNamespace(type=type_, message="")
 
     assert is_tokens_rate_limit_error(error) is expected
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        '{"value": 1}',
+        '```json\n{"value": 1}\n```',
+        'Here is the result:\n```json\n{"value": 1}\n```\nDone.',
+    ],
+)
+def test_parse_llm_json(text):
+    assert parse_llm_json(text, Result) == Result(value=1)
 
 
 def create_response(**kwargs) -> Response:

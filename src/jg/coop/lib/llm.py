@@ -1,5 +1,6 @@
 import logging
 import os
+import re
 from datetime import timedelta
 from enum import StrEnum
 from functools import lru_cache
@@ -50,6 +51,7 @@ async def ask_llm(
     user_prompt: str,
     model: LLMModel = LLMModel.simple,
     schema: None = None,
+    structured_output: bool = True,
 ) -> str: ...
 
 
@@ -59,6 +61,7 @@ async def ask_llm[Schema: BaseModel](
     user_prompt: str,
     model: LLMModel = LLMModel.simple,
     schema: type[Schema] = ...,
+    structured_output: bool = True,
 ) -> Schema: ...
 
 
@@ -127,6 +130,7 @@ async def ask_llm[Schema: BaseModel](
     user_prompt: str,
     model: LLMModel = LLMModel.simple,
     schema: type[Schema] | None = None,
+    structured_output: bool = True,
 ) -> Schema | str:
     client = get_client()
     async with limit(4):
@@ -138,7 +142,7 @@ async def ask_llm[Schema: BaseModel](
             {"role": "developer", "content": prompt(system_prompt)},
             {"role": "user", "content": prompt(user_prompt)},
         ]
-        if schema:
+        if schema and structured_output:
             # Go through with_raw_response so that, when the SDK fails to parse
             # the structured output, we still have the raw response to inspect
             # (status, refusal, incomplete_details) instead of just an opaque
@@ -159,9 +163,23 @@ async def ask_llm[Schema: BaseModel](
                 raise LLMResponseError(
                     f"LLM response failed schema validation: {reason}"
                 ) from e
-        return (
-            await client.responses.create(model=str(model), input=llm_input)
-        ).output_text
+        response = await client.responses.create(model=str(model), input=llm_input)
+        if schema:
+            try:
+                return parse_llm_json(response.output_text, schema)
+            except ValidationError as e:
+                raise LLMResponseError(
+                    f"LLM response failed schema validation: "
+                    f"{describe_response(response)}"
+                ) from e
+        return response.output_text
+
+
+def parse_llm_json[Schema: BaseModel](text: str, schema: type[Schema]) -> Schema:
+    fenced_json_match = re.search(r"```(?:json)?\s*\n(.*?)\n\s*```", text, re.DOTALL)
+    if fenced_json_match:
+        text = fenced_json_match.group(1)
+    return schema.model_validate_json(text)
 
 
 def describe_response(response: Response) -> str:

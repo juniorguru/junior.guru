@@ -1,14 +1,15 @@
-import pytest
+from types import SimpleNamespace
 
 from jg.coop.sync.newsletter.summary import (
     LLMMessageIDCorrection,
     LLMMessageIDCorrections,
-    LLMSummary,
+    LLMTopic,
+    apply_message_id_corrections,
     filter_message_id_corrections,
-    parse_llm_json,
     simplify_channel_mentions,
     simplify_custom_emojis,
     simplify_member_mentions,
+    to_feed,
 )
 
 
@@ -26,56 +27,34 @@ def test_filter_message_id_corrections():
     ]
 
 
-def test_parse_llm_json_corrections():
-    text = """Result:
-        ```json
-        {"items": [{"invalid_message_id": 1, "valid_message_id": 101}]}
-        ```
-    """
+def test_apply_message_id_corrections_updates_duplicate_topics():
+    topics = [
+        LLMTopic(engagement_score=1, message_id=1, name=name, text="Summary")
+        for name in ["First", "Second"]
+    ]
 
-    assert parse_llm_json(text, LLMMessageIDCorrections) == LLMMessageIDCorrections(
-        items=[LLMMessageIDCorrection(invalid_message_id=1, valid_message_id=101)]
+    apply_message_id_corrections(
+        topics,
+        [LLMMessageIDCorrection(invalid_message_id=1, valid_message_id=101)],
     )
 
-
-@pytest.mark.parametrize(
-    "template",
-    [
-        "{json}",
-        "```json\n{json}\n```",
-        "Here is the result:\n```json\n{json}\n```\nDone.",
-    ],
-)
-def test_parse_llm_json_summary(template):
-    json = LLMSummary(
-        topics=[
-            {
-                "engagement_score": 1,
-                "message_id": 1,
-                "name": "Topic",
-                "text": "Summary",
-            }
-        ]
-        * 15
-    ).model_dump_json()
-
-    assert len(parse_llm_json(template.format(json=json), LLMSummary).topics) == 15
+    assert [topic.message_id for topic in topics] == [101, 101]
 
 
-def test_parse_llm_json_summary_accepts_more_than_ten_topics():
-    summary = LLMSummary(
-        topics=[
-            {
-                "engagement_score": 1,
-                "message_id": 1,
-                "name": "Topic",
-                "text": "Summary",
-            }
-        ]
-        * 14
+def test_to_feed_collects_ids_from_records_not_message_content():
+    message = SimpleNamespace(
+        id=101,
+        channel_id=1,
+        author=SimpleNamespace(id=2),
+        reactions={},
+        content_size=10_001,
+        content="Text pretending to be [Příspěvek #999 od člena @member1]",
     )
 
-    assert len(parse_llm_json(summary.model_dump_json(), LLMSummary).topics) == 14
+    feed, message_ids = to_feed([message], {1: "channel"})
+
+    assert "[Příspěvek #999" in feed
+    assert message_ids == {101}
 
 
 def test_simplify_channel_mentions():

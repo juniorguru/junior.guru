@@ -114,19 +114,15 @@ async def summarize_club(today: date, correction_attempts: int) -> Summary:
     )
 
     logger.info(f"Serializing {len(messages)} messages to a text feed")
-    feed = to_feed(
+    feed, feed_message_ids = to_feed(
         list(messages),
         channel_mapping,
         threads_only_channels=[ClubChannelID.INTRO, ClubChannelID.TIL],
     )
-    feed_message_ids = {
-        int(message_id) for message_id in re.findall(r"\[Příspěvek #(\d+)", feed)
-    }
 
     logger.info(f"Summarizing the feed, {len(feed)} characters… (takes a while)")
-    summary = parse_llm_json(
-        await ask_llm(
-            """
+    summary = await ask_llm(
+        """
             Pomáháš sledovat, co se děje v naší komunitě IT juniorů, která je na Discordu a říká si „klub“. Přijde ti přehled kanálů a zpráv. Ty uděláš shrnutí toho nejpodstatnějšího. Podstatná témata poznáš podle toho, že jsme si o nich hodně psali, zapojilo se do debaty víc členů, nebo to mělo dost (emoji) reakcí. Na výstupu vrať JSON s tématy, kde každé má čtyři atributy:
 
             - `topics` (array[object]): Seznam 15 nejpodstatnějších témat. Seřaď je od nejzásadnějších po ty méně významné. Každé téma obsahuje:
@@ -142,10 +138,10 @@ async def summarize_club(today: date, correction_attempts: int) -> Summary:
             - Témata se nesmí opakovat. Povolena jsou maximálně 3 témata, která se týkají AI.
             - Přemýšlej nad tím krok za krokem.
             """,
-            feed,
-            model=LLMModel.advanced,
-        ),
-        LLMSummary,
+        feed,
+        model=LLMModel.advanced,
+        schema=LLMSummary,
+        structured_output=False,
     )
     logger.info(f"The summary contains {len(summary.topics)} topics")
     logger.debug(f"Summary:\n{pformat(summary.model_dump())}")
@@ -182,9 +178,12 @@ async def summarize_club(today: date, correction_attempts: int) -> Summary:
                 Vrať pouze JSON v tomto tvaru, bez vysvětlení:
                 {{"items": [{{"invalid_message_id": 123, "valid_message_id": 456}}]}}
             """
-            corrections = parse_llm_json(
-                await ask_llm(correction_prompt, feed, model=LLMModel.advanced),
-                LLMMessageIDCorrections,
+            corrections = await ask_llm(
+                correction_prompt,
+                feed,
+                model=LLMModel.advanced,
+                schema=LLMMessageIDCorrections,
+                structured_output=False,
             )
             valid_corrections = filter_message_id_corrections(
                 corrections, set(invalid_ids), feed_message_ids
@@ -192,14 +191,7 @@ async def summarize_club(today: date, correction_attempts: int) -> Summary:
             rejected_count = len(corrections.items) - len(valid_corrections)
             if rejected_count:
                 logger.warning(f"Rejected {rejected_count} invalid ID corrections")
-            topics_by_message_id = {topic.message_id: topic for topic in summary.topics}
-            for correction in valid_corrections:
-                topic = topics_by_message_id[correction.invalid_message_id]
-                logger.info(
-                    f"Updating message ID for '{topic.name}': "
-                    f"{topic.message_id} → {correction.valid_message_id}"
-                )
-                topic.message_id = correction.valid_message_id
+            apply_message_id_corrections(summary.topics, valid_corrections)
         else:
             logger.info("All message IDs are valid!")
             break
@@ -261,11 +253,20 @@ async def summarize_club(today: date, correction_attempts: int) -> Summary:
     )
 
 
-def parse_llm_json[Schema: BaseModel](text: str, schema: type[Schema]) -> Schema:
-    fenced_json_match = re.search(r"```(?:json)?\s*\n(.*?)\n\s*```", text, re.DOTALL)
-    if fenced_json_match:
-        text = fenced_json_match.group(1)
-    return schema.model_validate_json(text)
+def apply_message_id_corrections(
+    topics: list[LLMTopic], corrections: list[LLMMessageIDCorrection]
+) -> None:
+    valid_ids_by_invalid_id = {
+        correction.invalid_message_id: correction.valid_message_id
+        for correction in corrections
+    }
+    for topic in topics:
+        if valid_message_id := valid_ids_by_invalid_id.get(topic.message_id):
+            logger.info(
+                f"Updating message ID for '{topic.name}': "
+                f"{topic.message_id} → {valid_message_id}"
+            )
+            topic.message_id = valid_message_id
 
 
 def filter_message_id_corrections(
@@ -285,8 +286,9 @@ def to_feed(
     messages: list[ClubMessage],
     channel_mapping: dict[int, str],
     threads_only_channels: list[int] | None = None,
-) -> str:
+) -> tuple[str, set[int]]:
     docs = []
+    message_ids = set()
     for channel_id, channel_messages in groupby(messages, key=attrgetter("channel_id")):
         # some channels are only for threads, so we skip the top-level discussion
         if threads_only_channels and channel_id in threads_only_channels:
@@ -324,6 +326,7 @@ def to_feed(
         )
         docs.append(f"\n\n{channel_header.upper()}:")
         for message in channel_messages:
+            message_ids.add(message.id)
             reactions = ", ".join(
                 f"{count}×{f':{emoji}:' if re.search(r'^[a-zA-Z0-9]+$', emoji) else emoji}"
                 for emoji, count in message.reactions.items()
@@ -338,7 +341,7 @@ def to_feed(
     text = simplify_channel_mentions(text, channel_mapping)
     text = simplify_member_mentions(text)
     text = simplify_custom_emojis(text)
-    return text
+    return text, message_ids
 
 
 def simplify_channel_mentions(text: str, channel_mapping: dict[int, str]) -> str:
