@@ -11,6 +11,7 @@ from openai import AsyncOpenAI, InternalServerError, RateLimitError
 from openai.types.responses import Response
 from pydantic import BaseModel, ValidationError
 from tenacity import (
+    RetryCallState,
     before_sleep_log,
     retry,
     retry_if_exception,
@@ -61,8 +62,27 @@ async def ask_llm[Schema: BaseModel](
 ) -> Schema: ...
 
 
-# How many times to re-ask the LLM when its response does not match the schema.
 VALIDATION_ATTEMPTS = 3
+
+
+class LLMResponseError(Exception):
+    pass
+
+
+def is_requests_rate_limit_error(exception: RateLimitError) -> bool:
+    return exception.type == "requests" and "requests per day" not in exception.message
+
+
+def is_tokens_rate_limit_error(exception: RateLimitError) -> bool:
+    return exception.type == "tokens"
+
+
+def log_and_reraise_validation_error(retry_state: RetryCallState) -> None:
+    # Runs only after the last validation attempt, so the terminal diagnostic
+    # is logged at error level before the exception propagates.
+    exception = retry_state.outcome.exception()
+    logger.error(str(exception))
+    raise exception
 
 
 retry_defaults = {
@@ -76,12 +96,7 @@ retry_defaults = {
 @retry(
     retry=(
         retry_if_exception_type(RateLimitError)
-        & retry_if_exception(
-            lambda exception: (
-                exception.type == "requests"
-                and "requests per day" not in exception.message
-            )
-        )
+        & retry_if_exception(is_requests_rate_limit_error)
     ),
     wait=wait_random_exponential(min=1, max=60),
     **retry_defaults,
@@ -89,7 +104,7 @@ retry_defaults = {
 @retry(
     retry=(
         retry_if_exception_type(RateLimitError)
-        & retry_if_exception(lambda exception: exception.type == "tokens")
+        & retry_if_exception(is_tokens_rate_limit_error)
     ),
     wait=wait_random_exponential(min=60, max=5 * 60),
     **retry_defaults,
@@ -100,9 +115,11 @@ retry_defaults = {
     **retry_defaults,
 )
 @retry(
-    retry=retry_if_exception_type(ValidationError),
+    retry=retry_if_exception_type(LLMResponseError),
     stop=stop_after_attempt(VALIDATION_ATTEMPTS),
-    reraise=True,
+    # Warn before each further attempt; error on the final one (see callback).
+    before_sleep=before_sleep_log(logger, logging.WARNING),
+    retry_error_callback=log_and_reraise_validation_error,
 )
 @cache(expire=timedelta(days=60), tag="llm")
 async def ask_llm[Schema: BaseModel](
@@ -128,29 +145,23 @@ async def ask_llm[Schema: BaseModel](
             # "invalid JSON: EOF" error. The happy path still uses the SDK's own
             # parsing (raw_response.parse()), so we don't reimplement it.
             raw_response = await client.responses.with_raw_response.parse(
-                model=str(model),
-                input=llm_input,
-                text_format=schema,
-                # prompt_cache_retention="24h",
+                model=str(model), input=llm_input, text_format=schema
             )
             try:
                 return (await raw_response.parse()).output_parsed
-            except ValidationError:
-                # Best-effort diagnostic, logged before the retry decorator
-                # re-asks or finally re-raises; never mask the real error.
+            except ValidationError as e:
+                # Best-effort diagnostic, carried on the exception so the retry
+                # decorator can log it; never mask the real error.
                 try:
                     response = Response.model_validate_json(await raw_response.text())
                     reason = describe_response(response)
                 except Exception as diagnostic_error:
                     reason = f"could not describe response: {diagnostic_error}"
-                logger.warning(f"LLM response failed schema validation: {reason}")
-                raise
+                raise LLMResponseError(
+                    f"LLM response failed schema validation: {reason}"
+                ) from e
         return (
-            await client.responses.create(
-                model=str(model),
-                input=llm_input,
-                # prompt_cache_retention="24h",
-            )
+            await client.responses.create(model=str(model), input=llm_input)
         ).output_text
 
 

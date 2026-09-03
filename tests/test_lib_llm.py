@@ -1,7 +1,40 @@
+from types import SimpleNamespace
+
 import pytest
 from openai.types.responses import Response
 
-from jg.coop.lib.llm import describe_response
+from jg.coop.lib.llm import (
+    describe_response,
+    is_requests_rate_limit_error,
+    is_tokens_rate_limit_error,
+)
+
+
+@pytest.mark.parametrize(
+    "type_, message, expected",
+    [
+        ("requests", "too many requests", True),
+        ("requests", "requests per day exceeded", False),
+        ("tokens", "too many requests", False),
+    ],
+)
+def test_is_requests_rate_limit_error(type_, message, expected):
+    error = SimpleNamespace(type=type_, message=message)
+
+    assert is_requests_rate_limit_error(error) is expected
+
+
+@pytest.mark.parametrize(
+    "type_, expected",
+    [
+        ("tokens", True),
+        ("requests", False),
+    ],
+)
+def test_is_tokens_rate_limit_error(type_, expected):
+    error = SimpleNamespace(type=type_, message="")
+
+    assert is_tokens_rate_limit_error(error) is expected
 
 
 def create_response(**kwargs) -> Response:
