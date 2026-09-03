@@ -31,6 +31,15 @@ class LLMSummary(BaseModel):
     topics: list[LLMTopic]
 
 
+class LLMMessageIDCorrection(BaseModel):
+    invalid_message_id: conint(ge=SQLITE_INT_MIN, le=SQLITE_INT_MAX)  # type: ignore
+    valid_message_id: conint(ge=SQLITE_INT_MIN, le=SQLITE_INT_MAX)  # type: ignore
+
+
+class LLMMessageIDCorrections(BaseModel):
+    items: list[LLMMessageIDCorrection]
+
+
 class LLMTopicEmoji(BaseModel):
     topic_id: int
     emoji: str
@@ -110,10 +119,14 @@ async def summarize_club(today: date, correction_attempts: int) -> Summary:
         channel_mapping,
         threads_only_channels=[ClubChannelID.INTRO, ClubChannelID.TIL],
     )
+    feed_message_ids = {
+        int(message_id) for message_id in re.findall(r"\[Příspěvek #(\d+)", feed)
+    }
 
     logger.info(f"Summarizing the feed, {len(feed)} characters… (takes a while)")
-    summary = await ask_llm(
-        """
+    summary = parse_llm_json(
+        await ask_llm(
+            """
             Pomáháš sledovat, co se děje v naší komunitě IT juniorů, která je na Discordu a říká si „klub“. Přijde ti přehled kanálů a zpráv. Ty uděláš shrnutí toho nejpodstatnějšího. Podstatná témata poznáš podle toho, že jsme si o nich hodně psali, zapojilo se do debaty víc členů, nebo to mělo dost (emoji) reakcí. Na výstupu vrať JSON s tématy, kde každé má čtyři atributy:
 
             - `topics` (array[object]): Seznam 15 nejpodstatnějších témat. Seřaď je od nejzásadnějších po ty méně významné. Každé téma obsahuje:
@@ -128,10 +141,11 @@ async def summarize_club(today: date, correction_attempts: int) -> Summary:
             - Ať je to pestré z různých částí klubu, ne všechno z jednoho kanálu.
             - Témata se nesmí opakovat. Povolena jsou maximálně 3 témata, která se týkají AI.
             - Přemýšlej nad tím krok za krokem.
-        """,
-        feed,
-        model=LLMModel.advanced,
-        schema=LLMSummary,
+            """,
+            feed,
+            model=LLMModel.advanced,
+        ),
+        LLMSummary,
     )
     logger.info(f"The summary contains {len(summary.topics)} topics")
     logger.debug(f"Summary:\n{pformat(summary.model_dump())}")
@@ -153,39 +167,39 @@ async def summarize_club(today: date, correction_attempts: int) -> Summary:
         ]
         if invalid_ids:
             logger.warning(f"Found {len(invalid_ids)} invalid message IDs")
-            correction_prompt = f"""
-                Toto je shrnutí toho nejpodstatnějšího, co se událo v naší Discord komunitě:
-
-                {json.dumps(summary.model_dump(), indent=2, ensure_ascii=False)}
-
-                Je v něm ale chyba. Shrnutí má obsahovat vždy ID první zprávy, která téma odstartovala. Jenže zprávy s těmito ID neexistují: {", ".join(map(str, invalid_ids))}
-
-                Najdi v přiloženém přehledu kanálů a zpráv nějaké vhodné existující zprávy pro témata s chybnými ID, a nahraď chybná ID za čísla těchto zpráv.
-                Důležité: Nic jiného ve shrnutí neměň, pouze oprav ta neexistující ID!
-            """
-            corrected_summary = await ask_llm(
-                correction_prompt, feed, model=LLMModel.advanced, schema=LLMSummary
-            )
-            logger.debug(
-                f"Corrected summary:\n{pformat(corrected_summary.model_dump())}"
-            )
-            invalid_topic_indexes_by_name = {
-                topic.name: i
-                for i, topic in enumerate(summary.topics)
+            invalid_topics = [
+                topic.model_dump()
+                for topic in summary.topics
                 if topic.message_id in invalid_ids
-            }
-            for corrected_topic in corrected_summary.topics:
-                try:
-                    index = invalid_topic_indexes_by_name[corrected_topic.name]
-                    logger.info(
-                        f"Updating message ID for '{corrected_topic.name}': "
-                        f"{summary.topics[index].message_id} → {corrected_topic.message_id}"
-                    )
-                    summary.topics[index].message_id = corrected_topic.message_id
-                except KeyError:
-                    logger.debug(
-                        f"Topic '{corrected_topic.name}' not invalid, skipping"
-                    )
+            ]
+            correction_prompt = f"""
+                Toto jsou témata z naší Discord komunity s neexistujícími ID zpráv:
+
+                {json.dumps(invalid_topics, indent=2, ensure_ascii=False)}
+
+                Najdi pro každé téma v přiloženém přehledu první existující zprávu, která dané téma odstartovala. Použij výhradně ID doslova uvedená za „Příspěvek #“ v přehledu.
+
+                Vrať pouze JSON v tomto tvaru, bez vysvětlení:
+                {{"items": [{{"invalid_message_id": 123, "valid_message_id": 456}}]}}
+            """
+            corrections = parse_llm_json(
+                await ask_llm(correction_prompt, feed, model=LLMModel.advanced),
+                LLMMessageIDCorrections,
+            )
+            valid_corrections = filter_message_id_corrections(
+                corrections, set(invalid_ids), feed_message_ids
+            )
+            rejected_count = len(corrections.items) - len(valid_corrections)
+            if rejected_count:
+                logger.warning(f"Rejected {rejected_count} invalid ID corrections")
+            topics_by_message_id = {topic.message_id: topic for topic in summary.topics}
+            for correction in valid_corrections:
+                topic = topics_by_message_id[correction.invalid_message_id]
+                logger.info(
+                    f"Updating message ID for '{topic.name}': "
+                    f"{topic.message_id} → {correction.valid_message_id}"
+                )
+                topic.message_id = correction.valid_message_id
         else:
             logger.info("All message IDs are valid!")
             break
@@ -245,6 +259,26 @@ async def summarize_club(today: date, correction_attempts: int) -> Summary:
             for i, topic in enumerate(summary.topics)
         ]
     )
+
+
+def parse_llm_json[Schema: BaseModel](text: str, schema: type[Schema]) -> Schema:
+    fenced_json_match = re.search(r"```(?:json)?\s*\n(.*?)\n\s*```", text, re.DOTALL)
+    if fenced_json_match:
+        text = fenced_json_match.group(1)
+    return schema.model_validate_json(text)
+
+
+def filter_message_id_corrections(
+    corrections: LLMMessageIDCorrections,
+    invalid_message_ids: set[int],
+    feed_message_ids: set[int],
+) -> list[LLMMessageIDCorrection]:
+    return [
+        correction
+        for correction in corrections.items
+        if correction.invalid_message_id in invalid_message_ids
+        and correction.valid_message_id in feed_message_ids
+    ]
 
 
 def to_feed(

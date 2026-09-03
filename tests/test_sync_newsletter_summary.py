@@ -1,8 +1,81 @@
+import pytest
+
 from jg.coop.sync.newsletter.summary import (
+    LLMMessageIDCorrection,
+    LLMMessageIDCorrections,
+    LLMSummary,
+    filter_message_id_corrections,
+    parse_llm_json,
     simplify_channel_mentions,
     simplify_custom_emojis,
     simplify_member_mentions,
 )
+
+
+def test_filter_message_id_corrections():
+    corrections = LLMMessageIDCorrections(
+        items=[
+            LLMMessageIDCorrection(invalid_message_id=1, valid_message_id=101),
+            LLMMessageIDCorrection(invalid_message_id=2, valid_message_id=999),
+            LLMMessageIDCorrection(invalid_message_id=3, valid_message_id=103),
+        ]
+    )
+
+    assert filter_message_id_corrections(corrections, {1, 2}, {101, 103}) == [
+        LLMMessageIDCorrection(invalid_message_id=1, valid_message_id=101)
+    ]
+
+
+def test_parse_llm_json_corrections():
+    text = """Result:
+        ```json
+        {"items": [{"invalid_message_id": 1, "valid_message_id": 101}]}
+        ```
+    """
+
+    assert parse_llm_json(text, LLMMessageIDCorrections) == LLMMessageIDCorrections(
+        items=[LLMMessageIDCorrection(invalid_message_id=1, valid_message_id=101)]
+    )
+
+
+@pytest.mark.parametrize(
+    "template",
+    [
+        "{json}",
+        "```json\n{json}\n```",
+        "Here is the result:\n```json\n{json}\n```\nDone.",
+    ],
+)
+def test_parse_llm_json_summary(template):
+    json = LLMSummary(
+        topics=[
+            {
+                "engagement_score": 1,
+                "message_id": 1,
+                "name": "Topic",
+                "text": "Summary",
+            }
+        ]
+        * 15
+    ).model_dump_json()
+
+    assert len(parse_llm_json(template.format(json=json), LLMSummary).topics) == 15
+
+
+def test_parse_llm_json_summary_accepts_more_than_ten_topics():
+    summary = LLMSummary(
+        topics=[
+            {
+                "engagement_score": 1,
+                "message_id": 1,
+                "name": "Topic",
+                "text": "Summary",
+            }
+        ]
+        * 14
+    )
+
+    assert len(parse_llm_json(summary.model_dump_json(), LLMSummary).topics) == 14
 
 
 def test_simplify_channel_mentions():
