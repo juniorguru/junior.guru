@@ -1,3 +1,4 @@
+import json
 import logging
 import os
 import re
@@ -166,8 +167,19 @@ async def ask_llm[Schema: BaseModel](
                         "Structured output failed, retrying as plain text: "
                         f"{describe_response(response)}"
                     )
+                    fallback_input = [
+                        {
+                            "role": "developer",
+                            "content": (
+                                f"{prompt(system_prompt)}\n\n"
+                                "Return only valid JSON matching this JSON Schema:\n"
+                                f"{json.dumps(schema.model_json_schema())}"
+                            ),
+                        },
+                        {"role": "user", "content": prompt(user_prompt)},
+                    ]
                     response = await client.responses.create(
-                        model=str(model), input=llm_input
+                        model=str(model), input=fallback_input
                     )
                     try:
                         return parse_llm_json(response.output_text, schema)
@@ -186,7 +198,7 @@ async def ask_llm[Schema: BaseModel](
 
 
 def parse_llm_json[Schema: BaseModel](text: str, schema: type[Schema]) -> Schema:
-    fenced_json_match = re.search(r"```(?:json)?\s*\n(.*?)\n\s*```", text, re.DOTALL)
+    fenced_json_match = re.search(r"```[a-zA-Z]*\s*(.*?)\s*```", text, re.DOTALL)
     if fenced_json_match:
         text = fenced_json_match.group(1)
     return schema.model_validate_json(text)

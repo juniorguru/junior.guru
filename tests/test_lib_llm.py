@@ -50,6 +50,9 @@ def test_is_tokens_rate_limit_error(type_, expected):
         '{"value": 1}',
         '```json\n{"value": 1}\n```',
         'Here is the result:\n```json\n{"value": 1}\n```\nDone.',
+        '```json\n{"value": 1}```',
+        '```JSON\n{"value": 1}\n```',
+        '```json {"value": 1} ```',
     ],
 )
 def test_parse_llm_json(text):
