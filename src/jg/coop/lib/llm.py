@@ -8,8 +8,10 @@ from typing import overload
 
 import tiktoken
 from openai import AsyncOpenAI, InternalServerError, RateLimitError
+from openai.types.responses import Response
 from pydantic import BaseModel, ValidationError
 from tenacity import (
+    RetryCallState,
     before_sleep_log,
     retry,
     retry_if_exception,
@@ -48,7 +50,6 @@ async def ask_llm(
     user_prompt: str,
     model: LLMModel = LLMModel.simple,
     schema: None = None,
-    validation_attempts: int = 3,
 ) -> str: ...
 
 
@@ -58,8 +59,30 @@ async def ask_llm[Schema: BaseModel](
     user_prompt: str,
     model: LLMModel = LLMModel.simple,
     schema: type[Schema] = ...,
-    validation_attempts: int = 3,
 ) -> Schema: ...
+
+
+VALIDATION_ATTEMPTS = 3
+
+
+class LLMResponseError(Exception):
+    pass
+
+
+def is_requests_rate_limit_error(exception: RateLimitError) -> bool:
+    return exception.type == "requests" and "requests per day" not in exception.message
+
+
+def is_tokens_rate_limit_error(exception: RateLimitError) -> bool:
+    return exception.type == "tokens"
+
+
+def log_and_reraise_validation_error(retry_state: RetryCallState) -> None:
+    # Runs only after the last validation attempt, so the terminal diagnostic
+    # is logged at error level before the exception propagates.
+    exception = retry_state.outcome.exception()
+    logger.error(str(exception))
+    raise exception
 
 
 retry_defaults = {
@@ -73,12 +96,7 @@ retry_defaults = {
 @retry(
     retry=(
         retry_if_exception_type(RateLimitError)
-        & retry_if_exception(
-            lambda exception: (
-                exception.type == "requests"
-                and "requests per day" not in exception.message
-            )
-        )
+        & retry_if_exception(is_requests_rate_limit_error)
     ),
     wait=wait_random_exponential(min=1, max=60),
     **retry_defaults,
@@ -86,7 +104,7 @@ retry_defaults = {
 @retry(
     retry=(
         retry_if_exception_type(RateLimitError)
-        & retry_if_exception(lambda exception: exception.type == "tokens")
+        & retry_if_exception(is_tokens_rate_limit_error)
     ),
     wait=wait_random_exponential(min=60, max=5 * 60),
     **retry_defaults,
@@ -96,13 +114,19 @@ retry_defaults = {
     wait=wait_random_exponential(min=60, max=5 * 60),
     **retry_defaults,
 )
+@retry(
+    retry=retry_if_exception_type(LLMResponseError),
+    stop=stop_after_attempt(VALIDATION_ATTEMPTS),
+    # Warn before each further attempt; error on the final one (see callback).
+    before_sleep=before_sleep_log(logger, logging.WARNING),
+    retry_error_callback=log_and_reraise_validation_error,
+)
 @cache(expire=timedelta(days=60), tag="llm")
 async def ask_llm[Schema: BaseModel](
     system_prompt: str,
     user_prompt: str,
     model: LLMModel = LLMModel.simple,
     schema: type[Schema] | None = None,
-    validation_attempts: int = 3,
 ) -> Schema | str:
     client = get_client()
     async with limit(4):
@@ -115,31 +139,46 @@ async def ask_llm[Schema: BaseModel](
             {"role": "user", "content": prompt(user_prompt)},
         ]
         if schema:
-            for attempt in range(1, validation_attempts + 1):
-                logger.debug(f"Asking LLM with schema validation, attempt #{attempt}")
+            # Go through with_raw_response so that, when the SDK fails to parse
+            # the structured output, we still have the raw response to inspect
+            # (status, refusal, incomplete_details) instead of just an opaque
+            # "invalid JSON: EOF" error. The happy path still uses the SDK's own
+            # parsing (raw_response.parse()), so we don't reimplement it.
+            raw_response = await client.responses.with_raw_response.parse(
+                model=str(model), input=llm_input, text_format=schema
+            )
+            try:
+                return (await raw_response.parse()).output_parsed
+            except ValidationError as e:
+                # Best-effort diagnostic, carried on the exception so the retry
+                # decorator can log it; never mask the real error.
                 try:
-                    result = (
-                        await client.responses.parse(
-                            model=str(model),
-                            input=llm_input,
-                            text_format=schema,
-                            # prompt_cache_retention="24h",
-                        )
-                    ).output_parsed
-                    break
-                except ValidationError as e:
-                    if attempt == validation_attempts:
-                        raise
-                    logger.warning(f"Schema validation failed, attempt #{attempt}: {e}")
-        else:
-            result = (
-                await client.responses.create(
-                    model=str(model),
-                    input=llm_input,
-                    # prompt_cache_retention="24h",
-                )
-            ).output_text
-    return result
+                    response = Response.model_validate_json(await raw_response.text())
+                    reason = describe_response(response)
+                except Exception as diagnostic_error:
+                    reason = f"could not describe response: {diagnostic_error}"
+                raise LLMResponseError(
+                    f"LLM response failed schema validation: {reason}"
+                ) from e
+        return (
+            await client.responses.create(model=str(model), input=llm_input)
+        ).output_text
+
+
+def describe_response(response: Response) -> str:
+    parts = [f"status={response.status!r}"]
+    if response.incomplete_details:
+        parts.append(f"incomplete_reason={response.incomplete_details.reason!r}")
+    if response.error:
+        parts.append(f"error={response.error.code!r}: {response.error.message!r}")
+    for item in response.output:
+        if item.type == "message":
+            for content in item.content:
+                if content.type == "refusal":
+                    parts.append(f"refusal={content.refusal!r}")
+    text = response.output_text
+    parts.append(f"output_text={text[:500]!r} ({len(text)} chars)")
+    return ", ".join(parts)
 
 
 def count_tokens(text: str) -> int:
