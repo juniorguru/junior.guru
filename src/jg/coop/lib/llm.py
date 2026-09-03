@@ -49,7 +49,6 @@ async def ask_llm(
     user_prompt: str,
     model: LLMModel = LLMModel.simple,
     schema: None = None,
-    validation_attempts: int = 3,
 ) -> str: ...
 
 
@@ -59,8 +58,11 @@ async def ask_llm[Schema: BaseModel](
     user_prompt: str,
     model: LLMModel = LLMModel.simple,
     schema: type[Schema] = ...,
-    validation_attempts: int = 3,
 ) -> Schema: ...
+
+
+# How many times to re-ask the LLM when its response does not match the schema.
+VALIDATION_ATTEMPTS = 3
 
 
 retry_defaults = {
@@ -97,13 +99,17 @@ retry_defaults = {
     wait=wait_random_exponential(min=60, max=5 * 60),
     **retry_defaults,
 )
+@retry(
+    retry=retry_if_exception_type(ValidationError),
+    stop=stop_after_attempt(VALIDATION_ATTEMPTS),
+    reraise=True,
+)
 @cache(expire=timedelta(days=60), tag="llm")
 async def ask_llm[Schema: BaseModel](
     system_prompt: str,
     user_prompt: str,
     model: LLMModel = LLMModel.simple,
     schema: type[Schema] | None = None,
-    validation_attempts: int = 3,
 ) -> Schema | str:
     client = get_client()
     async with limit(4):
@@ -116,43 +122,34 @@ async def ask_llm[Schema: BaseModel](
             {"role": "user", "content": prompt(user_prompt)},
         ]
         if schema:
-            for attempt in range(1, validation_attempts + 1):
-                logger.debug(f"Asking LLM with schema validation, attempt #{attempt}")
-                # Fetch the raw response so we can inspect it (status, refusal,
-                # incomplete_details) when parsing fails, instead of only seeing
-                # an opaque "invalid JSON: EOF" error. Non-2xx (rate limit, 5xx)
-                # still raises before this returns, so retries keep working.
-                raw_response = await client.responses.with_raw_response.parse(
-                    model=str(model),
-                    input=llm_input,
-                    text_format=schema,
-                    # prompt_cache_retention="24h",
+            # Fetch the raw response so we can inspect it (status, refusal,
+            # incomplete_details) when parsing fails, instead of only seeing
+            # an opaque "invalid JSON: EOF" error. Non-2xx (rate limit, 5xx)
+            # still raises before this returns, so those retries keep working.
+            raw_response = await client.responses.with_raw_response.parse(
+                model=str(model),
+                input=llm_input,
+                text_format=schema,
+                # prompt_cache_retention="24h",
+            )
+            response = Response.model_validate_json(await raw_response.text())
+            try:
+                return schema.model_validate_json(response.output_text)
+            except ValidationError:
+                # Logged on every failed attempt, so the reason is visible right
+                # before the retry decorator re-asks or finally re-raises.
+                logger.warning(
+                    f"LLM response failed schema validation: "
+                    f"{describe_response(response)}"
                 )
-                response = Response.model_validate_json(await raw_response.text())
-                try:
-                    result = schema.model_validate_json(response.output_text)
-                    break
-                except ValidationError as e:
-                    reason = describe_response(response)
-                    if attempt == validation_attempts:
-                        logger.error(
-                            f"Schema validation failed, attempt #{attempt} (final): "
-                            f"{e}\nLLM response: {reason}"
-                        )
-                        raise
-                    logger.warning(
-                        f"Schema validation failed, attempt #{attempt}: "
-                        f"{e}\nLLM response: {reason}"
-                    )
-        else:
-            result = (
-                await client.responses.create(
-                    model=str(model),
-                    input=llm_input,
-                    # prompt_cache_retention="24h",
-                )
-            ).output_text
-    return result
+                raise
+        return (
+            await client.responses.create(
+                model=str(model),
+                input=llm_input,
+                # prompt_cache_retention="24h",
+            )
+        ).output_text
 
 
 def describe_response(response: Response) -> str:
