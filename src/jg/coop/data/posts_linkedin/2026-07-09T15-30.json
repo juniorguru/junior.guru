@@ -8,15 +8,15 @@
           {
             "width": 360,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEAFy9wJGCckA",
-            "fileIdentifyingUrlPathSegment": "low/B4DZ9HgF0pKsBI-/0/1783611024778?e=1788224400&v=beta&t=kQmPUNzc8jHGgKvpxM_iVr1-MRaFx4kvicj8ynb-P60",
-            "expiresAt": 1788224400000,
+            "fileIdentifyingUrlPathSegment": "low/B4DZ9HgF0pKsBI-/0/1783611024778?e=1788829200&v=beta&t=DueavOjSsMq_QhtQrdK2xgWcPBBW5H0jPIxgC3OSUV0",
+            "expiresAt": 1788829200000,
             "height": 640
           },
           {
             "width": 720,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEAFy9wJGCckA",
-            "fileIdentifyingUrlPathSegment": "high/B4DZ9HgF0pKsBM-/0/1783611024778?e=1788224400&v=beta&t=MXZgCs-HXf8Ki_NeYZSSsXW904UoTAs9dxH5QI0qk1s",
-            "expiresAt": 1788224400000,
+            "fileIdentifyingUrlPathSegment": "high/B4DZ9HgF0pKsBM-/0/1783611024778?e=1788829200&v=beta&t=zMmDP3vWKgpLSX1J0a3Tg6L8FvviNUEyCVukU0mg8M0",
+            "expiresAt": 1788829200000,
             "height": 1280
           }
         ]
@@ -25,8 +25,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEAFy9wJGCckA/mp4-720p-30fp-crf28/B4DZ9HgF0pKsB8-/0/1783611030199?e=1788224400&v=beta&t=1AdX6jf_XBUrevQMbBKl7b6n4b2irZ7-ted3wU6ur0Q",
-              "expiresAt": 1788224400000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEAFy9wJGCckA/mp4-720p-30fp-crf28/B4DZ9HgF0pKsB8-/0/1783611030199?e=1788829200&v=beta&t=OfSfdMuPLCecQfwWdKtMJBQeNs5tMb9GlX26_y1L9y0",
+              "expiresAt": 1788829200000
             }
           ],
           "size": 0,
@@ -38,8 +38,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEAFy9wJGCckA/mp4-640p-30fp-crf28/B4DZ9HgF0pKsBk-/0/1783611030199?e=1788224400&v=beta&t=wkLvEaJDjro2w-ULdKvlLde_yd_9wb02O__qpuqjtgk",
-              "expiresAt": 1788224400000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEAFy9wJGCckA/mp4-640p-30fp-crf28/B4DZ9HgF0pKsBk-/0/1783611030199?e=1788829200&v=beta&t=rhqiXU6heobLGOn34hAvVaaErZhSGhd-I8pYw0DpIy8",
+              "expiresAt": 1788829200000
             }
           ],
           "size": 0,
@@ -61,8 +61,8 @@
           "mediaType": "application/vnd.apple.mpegURL",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEAFy9wJGCckA/CeJxzMnGJsvRIdzMo8C52KdbVcULmh6LxI9H4yWj8bF0AkJoW9Q?e=1788224400&v=beta&t=UWBBq5B149PpKUmROcimMchOvMnEpfe0hd9TRb7BCUM",
-              "expiresAt": 1788224400000
+              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEAFy9wJGCckA/CeJxzMnGJsvRIdzMo8C52KdbVcULmh6LxI9H4yWj8bF0AkJoW9Q?e=1788829200&v=beta&t=WoAiI3cTAvTrfGscGqhvW5qULwhEeooX_MZ--eqnyQI",
+              "expiresAt": 1788829200000
             }
           ]
         },
@@ -72,8 +72,8 @@
           "mediaType": "application/dash+xml",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEAFy9wJGCckA/CeJxzMnGJsvRIdzMo8C52KdbVcULmh6LxI9H4yWj8bF0AkJoW9Q?e=1788224400&v=beta&t=qP3OoJZrbusj5zw4FkSpvj6AHLGrOXaB9umPIHBbHDw",
-              "expiresAt": 1788224400000
+              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEAFy9wJGCckA/CeJxzMnGJsvRIdzMo8C52KdbVcULmh6LxI9H4yWj8bF0AkJoW9Q?e=1788829200&v=beta&t=bKf0abtCf7HddYglCT-noaSvURW1wDYfuea1z9EYY2k",
+              "expiresAt": 1788829200000
             }
           ]
         }
@@ -97,30 +97,6 @@
         "id": "15446232",
         "publicId": "danielsrb",
         "profileId": "ACoAAADrsNgBFfAixAgw_mCw8WtR9SeNIvEEI8Q"
-      }
-    },
-    {
-      "start": 112,
-      "length": 10,
-      "link": "https://www.linkedin.com/in/ACoAAADrsNgBFfAixAgw_mCw8WtR9SeNIvEEI8Q",
-      "type": "HYPERLINK"
-    },
-    {
-      "start": 148,
-      "length": 18,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru/events"
-      }
-    },
-    {
-      "start": 231,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
       }
     }
   ],

@@ -9,7 +9,7 @@
     },
     "isActivity": false,
     "urn": "urn:li:activity:7486028798866612225",
-    "url": "https://www.linkedin.com/posts/honzajavorek_reframing-your-narrative-workshop-activity-7486028798866612225-Txzb?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAGxBV6UBgnS8Z4KrslAXi1OOV7zEjK-6smQ",
+    "url": "https://www.linkedin.com/posts/honzajavorek_reframing-your-narrative-workshop-activity-7486028798866612225-Txzb?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAGu61RoB7zvWJFQH22p9o-GgjrSg5E0Qfzk",
     "shareUrn": "urn:li:ugcPost:7486028797599727616",
     "text": "Zatoč s impostor syndromem!\n\nKdyž máme na pohovoru, v CVčku nebo u networkingu popsat svou práci, zlehčujeme často úspěchy a nenecháváme vyniknout, co už umíme.\n\nPřipoj se k nám v úterý večer do klubu na oficiální online workshop od iniciativy Women Techmakers (Google), který ti pomůže vnitřního kritika ztišit.\n\nNa tvoje zkušenosti se podíváme novou optikou a naučíme tě o nich mluvit bez přehánění, ale s jistotou. Odneseš si nejen konkrétní tipy, jak reprezentovat samu sebe, ale i hotový draft profesního bio, na který budou hrdí tvoje šéfka i tvůj děda.\n\nEliška Čejpová, která povede workshop, začala jako vývojářka, ale pak se našla v prostoru mezi technologiemi a lidmi.\n\nPůsobí jako agilní koučka, organizuje IT konference, školí speakery, buduje komunity. Nejraději odhaluje antipatterny ve vývoji a podporuje lidi v růstu stavbou skvělých týmů.\n\nZa ~15 let v komunitách facilitovala workshopy od malých týmů až po globální tech summity.\n\nChce zanechat svět o něco lepší, než jak ho našla. Má tsundoku, názory, lásku pro gify a víc řasokoulí než člověk potřebuje.\n\nJestli chceš dorazit živě, účastnit se workshopu a pokládat Elišce vlastní otázky, mrkni na junior.guru/events a připoj se k nám na Discord!\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
     "attributes": [
@@ -26,12 +26,6 @@
         }
       },
       {
-        "start": 244,
-        "length": 16,
-        "link": "https://www.linkedin.com/company/womentechmakers/",
-        "type": "HYPERLINK"
-      },
-      {
         "start": 561,
         "length": 14,
         "type": "PROFILE_MENTION",
@@ -43,30 +37,6 @@
           "publicId": "eliskacejpova",
           "profileId": "ACoAAA0E57ABXEjOnGWXi4ykBAzrRSYQ2_2aGg4"
         }
-      },
-      {
-        "start": 561,
-        "length": 14,
-        "link": "https://www.linkedin.com/in/ACoAAA0E57ABXEjOnGWXi4ykBAzrRSYQ2_2aGg4",
-        "type": "HYPERLINK"
-      },
-      {
-        "start": 1167,
-        "length": 18,
-        "type": "TEXT_LINK",
-        "textLink": {
-          "viewingBehavior": "DEFAULT",
-          "url": "http://junior.guru/events"
-        }
-      },
-      {
-        "start": 1239,
-        "length": 11,
-        "type": "TEXT_LINK",
-        "textLink": {
-          "viewingBehavior": "DEFAULT",
-          "url": "http://junior.guru"
-        }
       }
     ],
     "comments": [
@@ -74,17 +44,7 @@
         "time": 1784808360585,
         "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7486028797599727616?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7486028797599727616%2C7486028846031548417%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287486028846031548417%2Curn%3Ali%3AugcPost%3A7486028797599727616%29",
         "text": "Více info tu https://junior.guru/events/64/",
-        "entities": [
-          {
-            "start": 13,
-            "length": 30,
-            "type": "TEXT_LINK",
-            "textLink": {
-              "viewingBehavior": "DEFAULT",
-              "url": "https://junior.guru/events/64/"
-            }
-          }
-        ],
+        "entities": [],
         "fromPostAuthor": true,
         "urn": "urn:li:comment:(ugcPost:7486028797599727616,7486028846031548417)",
         "pinned": false,
@@ -303,12 +263,6 @@
       }
     },
     {
-      "start": 55,
-      "length": 5,
-      "link": "https://www.linkedin.com/in/ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-      "type": "HYPERLINK"
-    },
-    {
       "start": 100,
       "length": 11,
       "type": "COMPANY_NAME",
@@ -319,12 +273,6 @@
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:26218444"
       }
-    },
-    {
-      "start": 100,
-      "length": 11,
-      "link": "https://www.linkedin.com/company/juniorguru/",
-      "type": "HYPERLINK"
     },
     {
       "start": 629,
@@ -339,12 +287,6 @@
       }
     },
     {
-      "start": 629,
-      "length": 16,
-      "link": "https://www.linkedin.com/company/womentechmakers/",
-      "type": "HYPERLINK"
-    },
-    {
       "start": 818,
       "length": 10,
       "type": "COMPANY_NAME",
@@ -355,12 +297,6 @@
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:11053288"
       }
-    },
-    {
-      "start": 818,
-      "length": 10,
-      "link": "https://www.linkedin.com/company/devfest-czech-republic/",
-      "type": "HYPERLINK"
     }
   ],
   "comments": [
@@ -430,6 +366,27 @@
     }
   ],
   "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Věra",
+        "lastName": "Milotová",
+        "occupation": "Data-curious analyst & lifelong learner — turning messy data into compelling, human-centered stories",
+        "id": "531615284",
+        "publicId": "verkamilotova",
+        "profileId": "ACoAAB-vzjQBHkHky3BCi-jpblYhMgqwLmQScyU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "company": {
+        "name": "DevFest.cz",
+        "universalName": "devfest-czech-republic",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:11053288"
+      }
+    },
     {
       "type": "LIKE",
       "profile": {
@@ -508,7 +465,7 @@
     }
   ],
   "numShares": 1,
-  "numLikes": 7,
+  "numLikes": 9,
   "numComments": 4,
   "canReact": true,
   "canPostComments": true,

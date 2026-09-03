@@ -29,12 +29,6 @@
       }
     },
     {
-      "start": 18,
-      "length": 11,
-      "link": "https://www.linkedin.com/company/juniorguru/",
-      "type": "HYPERLINK"
-    },
-    {
       "start": 244,
       "length": 11,
       "type": "COMPANY_NAME",
@@ -45,12 +39,6 @@
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:26218444"
       }
-    },
-    {
-      "start": 244,
-      "length": 11,
-      "link": "https://www.linkedin.com/company/juniorguru/",
-      "type": "HYPERLINK"
     }
   ],
   "comments": [

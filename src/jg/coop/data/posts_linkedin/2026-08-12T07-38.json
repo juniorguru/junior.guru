@@ -29,12 +29,6 @@
       }
     },
     {
-      "start": 253,
-      "length": 8,
-      "link": "https://www.linkedin.com/company/ataccama/",
-      "type": "HYPERLINK"
-    },
-    {
       "start": 550,
       "length": 10,
       "type": "COMPANY_NAME",
@@ -45,12 +39,6 @@
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:41130723"
       }
-    },
-    {
-      "start": 550,
-      "length": 10,
-      "link": "https://www.linkedin.com/company/europython/",
-      "type": "HYPERLINK"
     },
     {
       "start": 562,
@@ -65,12 +53,6 @@
       }
     },
     {
-      "start": 562,
-      "length": 8,
-      "link": "https://www.linkedin.com/company/pycon-cz/",
-      "type": "HYPERLINK"
-    },
-    {
       "start": 572,
       "length": 12,
       "type": "COMPANY_NAME",
@@ -81,12 +63,6 @@
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:98334563"
       }
-    },
-    {
-      "start": 572,
-      "length": 12,
-      "link": "https://www.linkedin.com/company/python-pizza/",
-      "type": "HYPERLINK"
     }
   ],
   "comments": [
@@ -119,24 +95,7 @@
       "time": 1786796700910,
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7493207311360946177?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7493207311360946177%2C7494368549814222848%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287494368549814222848%2Curn%3Ali%3Aactivity%3A7493207311360946177%29",
       "text": "Good luck Mia and keep rockin 🚀 #Python #opensource Rocks 🙌",
-      "entities": [
-        {
-          "trackingUrn": "urn:li:hashtag:python",
-          "start": 32,
-          "length": 7,
-          "link": "https://www.linkedin.com/search/results/all/?keywords=%23python&origin=HASH_TAG_FROM_FEED",
-          "dashHashtagUrn": "urn:li:fsd_hashtag:(python,urn:li:activity:-)",
-          "type": "HASHTAG"
-        },
-        {
-          "trackingUrn": "urn:li:hashtag:opensource",
-          "start": 40,
-          "length": 11,
-          "link": "https://www.linkedin.com/search/results/all/?keywords=%23opensource&origin=HASH_TAG_FROM_FEED",
-          "dashHashtagUrn": "urn:li:fsd_hashtag:(opensource,urn:li:activity:-)",
-          "type": "HASHTAG"
-        }
-      ],
+      "entities": [],
       "fromPostAuthor": false,
       "urn": "urn:li:comment:(activity:7493207311360946177,7494368549814222848)",
       "pinned": false,
@@ -210,17 +169,7 @@
       "time": 1786627107211,
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7493207311360946177?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7493207311360946177%2C7493657222279979008%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287493657222279979008%2Curn%3Ali%3Aactivity%3A7493207311360946177%29",
       "text": "https://gofund.me/fff0c2fb7",
-      "entities": [
-        {
-          "start": 0,
-          "length": 27,
-          "type": "TEXT_LINK",
-          "textLink": {
-            "viewingBehavior": "DEFAULT",
-            "url": "https://gofund.me/fff0c2fb7"
-          }
-        }
-      ],
+      "entities": [],
       "fromPostAuthor": false,
       "urn": "urn:li:comment:(activity:7493207311360946177,7493657222279979008)",
       "pinned": false,
@@ -244,17 +193,7 @@
       "time": 1786627089742,
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7493207311360946177?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7493207311360946177%2C7493657149009612801%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287493657149009612801%2Curn%3Ali%3Aactivity%3A7493207311360946177%29",
       "text": "https://gofund.me/fff0c2fb7",
-      "entities": [
-        {
-          "start": 0,
-          "length": 27,
-          "type": "TEXT_LINK",
-          "textLink": {
-            "viewingBehavior": "DEFAULT",
-            "url": "https://gofund.me/fff0c2fb7"
-          }
-        }
-      ],
+      "entities": [],
       "fromPostAuthor": false,
       "urn": "urn:li:comment:(activity:7493207311360946177,7493657149009612801)",
       "pinned": false,
@@ -352,12 +291,6 @@
           }
         },
         {
-          "start": 0,
-          "length": 13,
-          "link": "https://www.linkedin.com/in/ACoAAATaCDkBT-7pY5eDzTBNrejLHmRzJ5l0h84",
-          "type": "HYPERLINK"
-        },
-        {
           "start": 14,
           "length": 11,
           "type": "COMPANY_NAME",
@@ -370,12 +303,6 @@
           }
         },
         {
-          "start": 14,
-          "length": 11,
-          "link": "https://www.linkedin.com/company/pydantic-ai/",
-          "type": "HYPERLINK"
-        },
-        {
           "start": 26,
           "length": 8,
           "type": "COMPANY_NAME",
@@ -386,12 +313,6 @@
             "showcase": false,
             "entityUrn": "urn:li:fs_miniCompany:93077574"
           }
-        },
-        {
-          "start": 26,
-          "length": 8,
-          "link": "https://www.linkedin.com/company/pydantic/",
-          "type": "HYPERLINK"
         }
       ],
       "fromPostAuthor": false,
@@ -448,6 +369,105 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Juan Carlos",
+        "lastName": "Sedano Salas",
+        "occupation": "visita pythonistas-gdl.org",
+        "id": "201495346",
+        "publicId": "jsedano",
+        "profileId": "ACoAAAwCkzIBl6lJhTOmb2z0o703So48_4TMPLQ"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Denny",
+        "lastName": "Perez",
+        "occupation": "Software QA Analyst || PSF Director & Fellow || Building Open Source Communities || Conference Organizer || WTM Ambassador || Pythonista 🐍 | PyLadies 💜 | 🇩🇴 🇨🇦",
+        "id": "742354702",
+        "publicId": "dennyperez18",
+        "profileId": "ACoAACw_bw4Bqi-UatFD39V_YcnZPyDM7uQW-ek"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Siddhartha",
+        "lastName": "Khanal",
+        "occupation": "Team Lead | Backend Engineer",
+        "id": "864905962",
+        "publicId": "siddhartha-khanal",
+        "profileId": "ACoAADONauoB7d4-NvRASfmi2pix2upsfa3cG9s"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Ahmed",
+        "lastName": "Nassar",
+        "occupation": "Software Engineer | Ex-Nokia, Mercor",
+        "id": "982628143",
+        "publicId": "nasssar",
+        "profileId": "ACoAADqRty8BoHCVpSgjy1_MEGAX-qGUcsoiVgY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Luca",
+        "lastName": "Mancinelli",
+        "occupation": "Junior Data Analyst",
+        "id": "211865425",
+        "publicId": "luca-mancinelli",
+        "profileId": "ACoAAAygz1EB2HABxbdQPxtB3TjFoua1vHxQZR4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "guillaume",
+        "lastName": "barbat",
+        "occupation": "Building | Self proclaimed Django GHO - Growth Hacking Officer",
+        "id": "594855692",
+        "publicId": "guillaume-barbat-238271147",
+        "profileId": "ACoAACN0xwwBJw4hribRNK3mDuZx04syryBspkk"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Predrag",
+        "lastName": "Kulić",
+        "occupation": "Senior Talent Acquisition Specialist @Accion Labs Europe",
+        "id": "207126323",
+        "publicId": "predragkulic",
+        "profileId": "ACoAAAxYfzMBGNMxsffAm8Q9PUgoynuDt2C6jBY"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Javier",
+        "lastName": "Alonso Silva",
+        "occupation": "Team Lead at GEOTAB 🚘 | President of Python Spain 🇪🇸 | #Speaker 🗣 | #PyConES Organizer 🐍 | Celera Talent",
+        "id": "622984178",
+        "publicId": "javinator9889",
+        "profileId": "ACoAACUh-_IBoFBSoMFHqg1kxD9KIy45_gV1yMU"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Rafael",
+        "lastName": "Lopes",
+        "occupation": "Software Engineer | Backend  | Java | Kotlin | Spring Boot | Microservices | AWS | Kubernetes | Typescript | Node.js",
+        "id": "629509733",
+        "publicId": "rafael-ernesto-lopes",
+        "profileId": "ACoAACWFjmUB65vcaDH9v73kMw3rsTF8rltUOuw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Jorge Iván",
         "lastName": "Guevara Pérez",
         "occupation": "Could/Data engineer | Backend Developer | TI | Consulting",
@@ -455,109 +475,10 @@
         "publicId": "jorge-ivan-guevara-perez",
         "profileId": "ACoAAAX6UNMBvWSOqG005jSn_rBR88KnPrsJxc4"
       }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Adelia",
-        "lastName": "Fathipour",
-        "occupation": "Développeuse Backend Python | Python Backend Developer | Flask • PostgreSQL • APIs • Docker",
-        "id": "972584112",
-        "publicId": "adelia-fathipour-040872231",
-        "profileId": "ACoAADn4dLABLAxmbpa29V_FcPQSljIBZTNk7p0"
-      }
-    },
-    {
-      "type": "APPRECIATION",
-      "profile": {
-        "firstName": "🕳 Paco",
-        "lastName": "Brevers 🕳",
-        "occupation": "Multistack doppelgänger enveloper",
-        "id": "31958616",
-        "publicId": "pacobrevers",
-        "profileId": "ACoAAAHnplgBaxB3qa5L8NclzUNy9nt225d2hP4"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Michał",
-        "lastName": "Kołodziejski",
-        "occupation": "Senior Software Developer @ STX Next | Former Computing Engineer @ CERN | Building Systems from the Ground Up with Python, React, and Kubernetes",
-        "id": "188588209",
-        "publicId": "mic4ael",
-        "profileId": "ACoAAAs9oLEBkwkCOBke2fKKJCsRXUPo8B5T39w"
-      }
-    },
-    {
-      "type": "APPRECIATION",
-      "profile": {
-        "firstName": "Karo",
-        "lastName": "Ladino-Puerto",
-        "occupation": "Product & Project Manager | Community Leader",
-        "id": "359079309",
-        "publicId": "karobotco",
-        "profileId": "ACoAABVnHY0BCIOKvkfQabmIz9HEQzmPu2LjmD0"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Juanmi",
-        "lastName": "Taboada",
-        "occupation": "Full Stack & Software Analyst #Python #C #Rust #Cassandra #ETL #DataEngineer #DevOps #BigData #MachineLearning #CTO",
-        "id": "19051473",
-        "publicId": "juanmitaboada",
-        "profileId": "ACoAAAEis9EB821FNYVYIZp0X4qcIjs-H8pQUK4"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Gideon",
-        "lastName": "Courage Fummey",
-        "occupation": "Software Engineer | Builds B2B & B2C products",
-        "id": "952060485",
-        "publicId": "gideoncouragefummey",
-        "profileId": "ACoAADi_SkUBW0E4i0jnAshDihGSP7ucJUvq9U8"
-      }
-    },
-    {
-      "type": "APPRECIATION",
-      "profile": {
-        "firstName": "Radoslav",
-        "lastName": "Georgiev",
-        "occupation": "Managing Director for Bulgaria at Waracle",
-        "id": "585862301",
-        "publicId": "radoslav-georgiev-waracle",
-        "profileId": "ACoAACLrjJ0Bk-FyqKObAP8UVL4dxltMsOX7M_c"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Petar",
-        "lastName": "Pilipovic",
-        "occupation": "Software Engineer at Erlang Solutions",
-        "id": "454769726",
-        "publicId": "ppilipovic",
-        "profileId": "ACoAABsbPD4BDJnndBYYXZ8-ZmpeRt7XhR1iLQ4"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Denis",
-        "lastName": "Prodanovic",
-        "occupation": "Global Recruiting | Tech - Product - GTM (C-level) |",
-        "id": "157503175",
-        "publicId": "denisprodanovic",
-        "profileId": "ACoAAAljTscBk04gNMdKegiQZbItnMb2o8mv3e0"
-      }
     }
   ],
   "numShares": 34,
-  "numLikes": 267,
+  "numLikes": 276,
   "numComments": 15,
   "canReact": true,
   "canPostComments": true,

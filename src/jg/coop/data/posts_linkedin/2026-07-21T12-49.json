@@ -30,12 +30,6 @@
       }
     },
     {
-      "start": 131,
-      "length": 9,
-      "link": "https://www.linkedin.com/in/ACoAAB-lR48BFvPhQ6doZNGTRVftkLrzcnIv-Ss",
-      "type": "HYPERLINK"
-    },
-    {
       "start": 189,
       "length": 12,
       "type": "COMPANY_NAME",
@@ -46,12 +40,6 @@
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:98357381"
       }
-    },
-    {
-      "start": 189,
-      "length": 12,
-      "link": "https://www.linkedin.com/company/aitakrajta/",
-      "type": "HYPERLINK"
     },
     {
       "start": 203,
@@ -67,12 +55,6 @@
       }
     },
     {
-      "start": 203,
-      "length": 13,
-      "link": "https://www.linkedin.com/in/ACoAACb0kvABzEvpATXhOiWBbEuq4yfGI43iXrc",
-      "type": "HYPERLINK"
-    },
-    {
       "start": 343,
       "length": 11,
       "type": "COMPANY_NAME",
@@ -83,12 +65,6 @@
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:26218444"
       }
-    },
-    {
-      "start": 343,
-      "length": 11,
-      "link": "https://www.linkedin.com/company/juniorguru/",
-      "type": "HYPERLINK"
     },
     {
       "start": 363,
@@ -102,12 +78,6 @@
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
       }
-    },
-    {
-      "start": 363,
-      "length": 13,
-      "link": "https://www.linkedin.com/in/ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-      "type": "HYPERLINK"
     }
   ],
   "comments": [

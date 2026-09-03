@@ -6,51 +6,13 @@
   "url": "https://www.linkedin.com/posts/honzajavorek_pustil-jsem-si-po-roce-svoje-promo-video-activity-7472987268513902595-eHjU",
   "shareUrn": "urn:li:share:7472987267200983043",
   "text": "Pustil jsem si po roce svoje promo video, a neuvěříte, co se stalo! Ano, překvapivě dost zastaralo 😅 \n\nJenže co s tím? Text na webu jde přepsat, ale video? Musí se udělat nové záběry obrazovky. Pak se to musí přestříhat. A pokud je to namluvené, musí se to znova nahrát. Uf.\n\n🎬 Cena za klub je jiná, prodejní stránka vypadá odlišně.\n🎬 Úvodní stránka junior.guru je komplet předělaná.\n🎬 Tlačítko, kterým se jde na stránku o klubu, je jinde a má jinou barvu.\n🎬 Místo deseti pevných kanálů máme v klubu zájmové skupinky, které může vytvářet kdokoliv.\n🎬 Místo „zdraví mysli“ a „zdraví těla“ to teď máme dohromady jako „zdraví“.\n\nNěkde jsem to přestříhal, někde jsem si vypomohl přidáním poznámky na bok. Většina původního videa naštěstí stále drží pohromadě, takže mám nakonec nové video hotové za pár hodin, ale teda s odřenýma ušima.\n\nNejsem si jistý, jak dlouho to takhle vydrží. Třeba o seznamu juniorních kandidátů na junior.guru/candidates , který vznikl později, tam stále ještě není ani slovo. Třeba příště.\n\nNovou verzi dávám na web, a teď už to jen vzít a nastříhat z tohoto krásného videa na šířku dvacet reelsek na výšku 😆 🥹 🫣 \n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
-  "attributes": [
-    {
-      "start": 350,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
-    },
-    {
-      "start": 919,
-      "length": 22,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru/candidates"
-      }
-    },
-    {
-      "start": 1159,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
-    }
-  ],
+  "attributes": [],
   "comments": [
     {
       "time": 1781699021533,
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7472987268513902595?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7472987268513902595%2C7472987332808286209%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287472987332808286209%2Curn%3Ali%3Aactivity%3A7472987268513902595%29",
       "text": "Video tu: https://www.youtube.com/watch?v=d5Uu1jhaaBg",
-      "entities": [
-        {
-          "start": 10,
-          "length": 43,
-          "type": "TEXT_LINK",
-          "textLink": {
-            "viewingBehavior": "DEFAULT",
-            "url": "https://www.youtube.com/watch?v=d5Uu1jhaaBg"
-          }
-        }
-      ],
+      "entities": [],
       "fromPostAuthor": true,
       "urn": "urn:li:comment:(activity:7472987268513902595,7472987332808286209)",
       "pinned": false,

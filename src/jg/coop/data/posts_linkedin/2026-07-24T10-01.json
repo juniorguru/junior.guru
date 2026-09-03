@@ -25,12 +25,6 @@
       }
     },
     {
-      "start": 48,
-      "length": 12,
-      "link": "https://www.linkedin.com/in/ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk",
-      "type": "HYPERLINK"
-    },
-    {
       "start": 63,
       "length": 13,
       "type": "PROFILE_MENTION",
@@ -42,21 +36,6 @@
         "publicId": "lucie-kopecka199722",
         "profileId": "ACoAAB3SmcMBvL6G2roLd-uQG9E4UdBKyXxJXDY"
       }
-    },
-    {
-      "start": 63,
-      "length": 13,
-      "link": "https://www.linkedin.com/in/ACoAAB3SmcMBvL6G2roLd-uQG9E4UdBKyXxJXDY",
-      "type": "HYPERLINK"
-    },
-    {
-      "start": 100,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
     }
   ],
   "comments": [
@@ -64,17 +43,7 @@
       "time": 1785094805004,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7486359985640271872?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7486359985640271872%2C7487230281007927296%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287487230281007927296%2Curn%3Ali%3AugcPost%3A7486359985640271872%29",
       "text": "Odkaz tu https://junior.guru/stories/lucie-kopecka/",
-      "entities": [
-        {
-          "start": 9,
-          "length": 42,
-          "type": "TEXT_LINK",
-          "textLink": {
-            "viewingBehavior": "DEFAULT",
-            "url": "https://junior.guru/stories/lucie-kopecka/"
-          }
-        }
-      ],
+      "entities": [],
       "fromPostAuthor": true,
       "urn": "urn:li:comment:(ugcPost:7486359985640271872,7487230281007927296)",
       "pinned": false,

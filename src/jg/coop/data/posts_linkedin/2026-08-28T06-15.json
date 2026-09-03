@@ -1,0 +1,162 @@
+{
+  "type": "image",
+  "images": [],
+  "isActivity": false,
+  "urn": "urn:li:activity:7498986497610784768",
+  "url": "https://www.linkedin.com/posts/honzajavorek_chcete-v-%C5%99%C3%ADjnu-na-frontkon-pragues-frontend-activity-7498986497610784768--9lP",
+  "shareUrn": "urn:li:share:7498765837755985920",
+  "text": "Chcete v říjnu na FrontKon - Prague's Frontend Conference? Zlevněné „Early Bird“ lístky už jsou vyprodané, ale u nás v klubu teď můžete soutěžit o dva volňásky.\n\nPokud jste členy klubu na junior.guru/club, napište do příslušného soutěžního vlákna něco o tom, jak zápasíte s frontendem, co se učíte, s čím si nevíte rady, nebo co se učit chystáte 💪\n\nDva lístky budu losovat během 3.9., a to pomocí „import random“ 😀 \n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 18,
+      "length": 39,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "FrontKon - Prague's Frontend Conference",
+        "universalName": "frontkon",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:111694409"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jozef",
+        "lastName": "Rosenberger",
+        "occupation": "Frontend developer",
+        "id": "521089464",
+        "publicId": "jozef-rosenberger",
+        "profileId": "ACoAAB8PMbgBpt53LX6v-qavyhofA2kmpCiUB6A"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vladana",
+        "lastName": "Bacova",
+        "occupation": "I fix marketing in B2B tech companies. Fractional CMO & strategic partner for founders. Founder of SaaS Contesaur.",
+        "id": "87066362",
+        "publicId": "vladana-bacova",
+        "profileId": "ACoAAAUwhvoBAZu73tHjWu42KdbAshjlo9rjfjc"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Marek",
+        "lastName": "VELAS",
+        "occupation": "Founder @EDUpunk | Learning design @Reactgirls.com | AI & Health Content Strategist | TALENT Mentor & MEME Therapist",
+        "id": "201927716",
+        "publicId": "marek-velas",
+        "profileId": "ACoAAAwJLCQB-ePqkhYoO0olYYFCoOJGgdydJEs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vladimír",
+        "lastName": "Gorej",
+        "occupation": "Senior Full-Stack Engineer & API Tooling Specialist | Freelance, Contract & Fractional Roles | TypeScript, Node.js, Python, OpenAPI & Arazzo | Building API tools for developers and AI agents",
+        "id": "58899881",
+        "publicId": "vladimirgorej",
+        "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Artem",
+        "lastName": "Zakharchenko",
+        "occupation": "Software engineer & Educator",
+        "id": "479400907",
+        "publicId": "artem-zakharchenko",
+        "profileId": "ACoAAByTE8sBD2jc0LWL1WTudVD1bG_e2hh-aG0"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Illek",
+        "occupation": "Frontend developer at Annertech. Ambasador Česko.Digital. CSGOV Founder. Drupal Developer.",
+        "id": "130527892",
+        "publicId": "petrillek",
+        "profileId": "ACoAAAfHspQBHywWAVFe_b9cRC0iYcgrUq_iWbE"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Marketa",
+        "lastName": "Willis",
+        "occupation": "Frontend developer | React | Typescript | Mentor",
+        "id": "690320871",
+        "publicId": "marketa-willis",
+        "profileId": "ACoAACkldecB7E9DWErMM56bPMpJ3V49koGflx0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Natália",
+        "lastName": "Rydzá",
+        "occupation": "Solution Developer at Jigx",
+        "id": "368513805",
+        "publicId": "natália-rydzá",
+        "profileId": "ACoAABX3Ew0BUHQbxGZpVNCtTpps5YdBDGUZhas"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Vendula",
+        "lastName": "Krajíčková",
+        "occupation": "Frontend vývojářka 🚀 | React, Next.js, TypeScript | Hledám novou výzvu ve frontend vývoji 👩‍💻 | Ex-BlueGhost 👻💙",
+        "id": "1145616814",
+        "publicId": "vendula-krajickova",
+        "profileId": "ACoAAERIua4Bk44zfiGE6PT1BmSNoKdqiNkFOYc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Hana",
+        "lastName": "Šumberová",
+        "occupation": "Copy | Content | Creative",
+        "id": "262820006",
+        "publicId": "hana-bartu",
+        "profileId": "ACoAAA-qUKYBrt-M4zFuaDrsujA5plQztBc9zK4"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 12,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1787897705462,
+  "postedAtISO": "2026-08-28T06:15:05.462Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

@@ -10,26 +10,7 @@
   "url": "https://www.linkedin.com/posts/honzajavorek_co-najde%C5%A1-na-githubu-activity-7495011541952659457-DPTm",
   "shareUrn": "urn:li:ugcPost:7486363670218993665",
   "text": "Co najdeš na GitHubu?\n\nVětšina otevřeného kódu na světě je na GitHubu. Využívej jeho vyhledávání a pokukuj po inspiraci, jak se dá co řešit.\n\nMůžeš koukat pod ruce různým projektům a organizacím, třeba datovým novinářům z Českého Rozhlasu, Hlídači Státu, české Python komunitě, nebo třeba i junior.guru.\n\nKdyž vyhledáš vhodný výraz, můžeš se třeba podívat, jak někdo jiný používá konkrétní framework, knihovnu, funkci. Nebo hledat nezabezpečené projekty jiných lidí a připadat si jako velký hacke… ehm, upozorňovat je, že by si to měli opravit.\n\nPamatuj ale na to, že najdeš i spoustu nekvalitního kódu, takže vždycky zvaž, jestli se tím, co vidíš, chceš opravdu inspirovat. Když najdeš něco, čemu nerozumíš, konzultuj to v komunitách, nebo aspoň s AI.\n\nNo a nemusíš jen koukat, do open source projektů můžeš i přispět! To, že jsi na začátku, neznamená, že nemůžeš objevit chybu nebo opravit větu v dokumentaci. A odvaha být v tomto směru aktivní se u juniorů dost cení.\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
-  "attributes": [
-    {
-      "start": 291,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
-    },
-    {
-      "start": 994,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
-    }
-  ],
+  "attributes": [],
   "comments": [
     {
       "time": 1787035330318,

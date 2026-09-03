@@ -25,12 +25,6 @@
       }
     },
     {
-      "start": 47,
-      "length": 12,
-      "link": "https://www.linkedin.com/in/ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk",
-      "type": "HYPERLINK"
-    },
-    {
       "start": 62,
       "length": 16,
       "type": "PROFILE_MENTION",
@@ -42,24 +36,34 @@
         "publicId": "lucie-cicvárková-80591b1b2",
         "profileId": "ACoAADGdK8UBeksm_PFcuvdQUOzp-Qt-UCd0OiI"
       }
-    },
-    {
-      "start": 62,
-      "length": 16,
-      "link": "https://www.linkedin.com/in/ACoAADGdK8UBeksm_PFcuvdQUOzp-Qt-UCd0OiI",
-      "type": "HYPERLINK"
-    },
-    {
-      "start": 102,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
     }
   ],
-  "comments": [],
+  "comments": [
+    {
+      "time": 1787834730629,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7486361377352282112?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7486361377352282112%2C7498722362012524544%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287498722362012524544%2Curn%3Ali%3AugcPost%3A7486361377352282112%29",
+      "text": "Odkaz tu! https://junior.guru/stories/lucie-cicvarkova/",
+      "entities": [],
+      "fromPostAuthor": true,
+      "urn": "urn:li:comment:(ugcPost:7486361377352282112,7498722362012524544)",
+      "pinned": false,
+      "edited": false,
+      "numLikes": 0,
+      "numComments": 0,
+      "reactionTypeCounts": [],
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/honzajavorek"
+      },
+      "authorType": "Person"
+    }
+  ],
   "reactions": [
     {
       "type": "PRAISE",
@@ -143,7 +147,7 @@
       "profile": {
         "firstName": "Vladimír",
         "lastName": "Gorej",
-        "occupation": "Senior Full-Stack Engineer & API Tooling Specialist | Available for Contract & Fractional Roles | TypeScript, Node.js, Python, OpenAPI & Arazzo | Building API tools for developers and AI agents",
+        "occupation": "Senior Full-Stack Engineer & API Tooling Specialist | Freelance, Contract & Fractional Roles | TypeScript, Node.js, Python, OpenAPI & Arazzo | Building API tools for developers and AI agents",
         "id": "58899881",
         "publicId": "vladimirgorej",
         "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
@@ -174,7 +178,7 @@
   ],
   "numShares": 0,
   "numLikes": 10,
-  "numComments": 0,
+  "numComments": 1,
   "canReact": true,
   "canPostComments": true,
   "canShare": true,

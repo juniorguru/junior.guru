@@ -25,12 +25,6 @@
       }
     },
     {
-      "start": 47,
-      "length": 12,
-      "link": "https://www.linkedin.com/in/ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk",
-      "type": "HYPERLINK"
-    },
-    {
       "start": 62,
       "length": 12,
       "type": "PROFILE_MENTION",
@@ -42,21 +36,6 @@
         "publicId": "p-kasicka",
         "profileId": "ACoAAEIxlL8Bfkq3CiEwFXvTQla3a5z_FUgQD3w"
       }
-    },
-    {
-      "start": 62,
-      "length": 12,
-      "link": "https://www.linkedin.com/in/ACoAAEIxlL8Bfkq3CiEwFXvTQla3a5z_FUgQD3w",
-      "type": "HYPERLINK"
-    },
-    {
-      "start": 98,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
     }
   ],
   "comments": [
@@ -64,17 +43,7 @@
       "time": 1786021014979,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7486360681219276801?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7486360681219276801%2C7491115087206850560%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287491115087206850560%2Curn%3Ali%3AugcPost%3A7486360681219276801%29",
       "text": "Odkaz tu: https://junior.guru/stories/petr-kasicka/",
-      "entities": [
-        {
-          "start": 10,
-          "length": 41,
-          "type": "TEXT_LINK",
-          "textLink": {
-            "viewingBehavior": "DEFAULT",
-            "url": "https://junior.guru/stories/petr-kasicka/"
-          }
-        }
-      ],
+      "entities": [],
       "fromPostAuthor": true,
       "urn": "urn:li:comment:(ugcPost:7486360681219276801,7491115087206850560)",
       "pinned": false,

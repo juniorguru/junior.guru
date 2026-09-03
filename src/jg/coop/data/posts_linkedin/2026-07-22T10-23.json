@@ -30,12 +30,6 @@
       }
     },
     {
-      "start": 42,
-      "length": 9,
-      "link": "https://www.linkedin.com/in/ACoAAABNSpEBkxasB8uqJ3zcizYluVXPEFz2mrs",
-      "type": "HYPERLINK"
-    },
-    {
       "start": 161,
       "length": 14,
       "type": "PROFILE_MENTION",
@@ -46,21 +40,6 @@
         "id": "464910812",
         "publicId": "klara-filipova",
         "profileId": "ACoAABu1-dwB6AqCUhubhhlFXfAMDhspSJy7JAQ"
-      }
-    },
-    {
-      "start": 161,
-      "length": 14,
-      "link": "https://www.linkedin.com/in/ACoAABu1-dwB6AqCUhubhhlFXfAMDhspSJy7JAQ",
-      "type": "HYPERLINK"
-    },
-    {
-      "start": 227,
-      "length": 25,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "https://data.irozhlas.cz/"
       }
     }
   ],

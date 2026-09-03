@@ -16,17 +16,7 @@
       "time": 1782735928639,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7477336051968229378?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7477336051968229378%2C7477336436430778368%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287477336436430778368%2Curn%3Ali%3AugcPost%3A7477336051968229378%29",
       "text": "Odkazy na dobré zdroje tu: https://junior.guru/handbook/git/#jak-se-ucit-git",
-      "entities": [
-        {
-          "start": 27,
-          "length": 49,
-          "type": "TEXT_LINK",
-          "textLink": {
-            "viewingBehavior": "DEFAULT",
-            "url": "https://junior.guru/handbook/git/#jak-se-ucit-git"
-          }
-        }
-      ],
+      "entities": [],
       "fromPostAuthor": true,
       "urn": "urn:li:comment:(ugcPost:7477336051968229378,7477336436430778368)",
       "pinned": false,
@@ -109,7 +99,7 @@
       "profile": {
         "firstName": "Vladimír",
         "lastName": "Gorej",
-        "occupation": "Senior Full-Stack Engineer & API Tooling Specialist | Available for Contract & Fractional Roles | TypeScript, Node.js, Python, OpenAPI & Arazzo | Building API tools for developers and AI agents",
+        "occupation": "Senior Full-Stack Engineer & API Tooling Specialist | Freelance, Contract & Fractional Roles | TypeScript, Node.js, Python, OpenAPI & Arazzo | Building API tools for developers and AI agents",
         "id": "58899881",
         "publicId": "vladimirgorej",
         "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"

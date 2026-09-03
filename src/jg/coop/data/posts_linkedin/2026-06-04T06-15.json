@@ -8,24 +8,6 @@
   "text": "Líp už asi vizuálně nevysvětlím, k čemu je junior.guru dobré 😅\n\nTohle je nová sekce na homepage. Propojil jsem seznam kandidátů, kteří si právě hledají práci na junior.guru/candidates, a příběhy lidmí, kteří už práci mají a spolu s Adéla Pavlun s nimi děláme rozhovory na junior.guru/stories\n\nVlevo kandidáti, které můžete rovnou oslovit, vpravo příběhy těch, kteří cestu do své první práce v IT našli.\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
   "attributes": [
     {
-      "start": 43,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
-    },
-    {
-      "start": 161,
-      "length": 22,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru/candidates"
-      }
-    },
-    {
       "start": 232,
       "length": 12,
       "type": "PROFILE_MENTION",
@@ -37,30 +19,6 @@
         "publicId": "adelapavlun",
         "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"
       }
-    },
-    {
-      "start": 232,
-      "length": 12,
-      "link": "https://www.linkedin.com/in/ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk",
-      "type": "HYPERLINK"
-    },
-    {
-      "start": 272,
-      "length": 19,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru/stories"
-      }
-    },
-    {
-      "start": 426,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
     }
   ],
   "comments": [
@@ -68,17 +26,7 @@
       "time": 1780576613151,
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7468183540648534016?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7468183540648534016%2C7468279610842193920%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287468279610842193920%2Curn%3Ali%3Aactivity%3A7468183540648534016%29",
       "text": "Je to krásně přehledné 👏👍 Taky jsem si přes junior.guru našla práci a pořád jsem členem klubu a čerpám tady inspiraci 💛",
-      "entities": [
-        {
-          "start": 44,
-          "length": 11,
-          "type": "TEXT_LINK",
-          "textLink": {
-            "viewingBehavior": "DEFAULT",
-            "url": "http://junior.guru"
-          }
-        }
-      ],
+      "entities": [],
       "fromPostAuthor": false,
       "urn": "urn:li:comment:(activity:7468183540648534016,7468279610842193920)",
       "pinned": false,
@@ -331,7 +279,7 @@
       "profile": {
         "firstName": "Lenka",
         "lastName": "Ďurechová",
-        "occupation": "Specialistka procesní administrace a koordinace projektů | E-commerce, data a provoz",
+        "occupation": "Process & Data Operations Specialist | Cross-functional Coordination pro Marketing, Digital & Gaming Teams | Jira, Asana, GA4",
         "id": "531621563",
         "publicId": "durechova",
         "profileId": "ACoAAB-v5rsBooIQ9wOxiE6lWhw3QYi_ZgbxHtY"

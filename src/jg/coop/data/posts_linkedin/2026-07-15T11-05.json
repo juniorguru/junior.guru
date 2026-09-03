@@ -33,21 +33,6 @@
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
       }
-    },
-    {
-      "start": 87,
-      "length": 13,
-      "link": "https://www.linkedin.com/in/ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-      "type": "HYPERLINK"
-    },
-    {
-      "start": 161,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
     }
   ],
   "comments": [
@@ -169,7 +154,7 @@
       "profile": {
         "firstName": "Denisa",
         "lastName": "G.",
-        "occupation": "CGI Partner | CSEE",
+        "occupation": "Junior business analyst | CGI Partner | Energy & Utilities | CSEE",
         "id": "680040578",
         "publicId": "denisa-gafova",
         "profileId": "ACoAACiImIIBLJWxkk68doQQ7kQNlSGv5cK2vWQ"
@@ -180,7 +165,7 @@
       "profile": {
         "firstName": "Jan",
         "lastName": "Meissner",
-        "occupation": "Product & Tech Community Lead at Mews",
+        "occupation": "Community builder",
         "id": "677292059",
         "publicId": "jan-meissner",
         "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw"

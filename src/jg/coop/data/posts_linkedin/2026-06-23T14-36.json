@@ -21,12 +21,6 @@
       }
     },
     {
-      "start": 527,
-      "length": 12,
-      "link": "https://www.linkedin.com/in/ACoAAB-dm4UBphpPt0M3o_HcoFhUNSFgam6yIyY",
-      "type": "HYPERLINK"
-    },
-    {
       "start": 634,
       "length": 18,
       "type": "COMPANY_NAME",
@@ -36,39 +30,6 @@
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:923725"
-      }
-    },
-    {
-      "start": 634,
-      "length": 18,
-      "link": "https://www.linkedin.com/company/webexpo/",
-      "type": "HYPERLINK"
-    },
-    {
-      "start": 803,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
-    },
-    {
-      "start": 1422,
-      "length": 18,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru/events"
-      }
-    },
-    {
-      "start": 1494,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
       }
     }
   ],
@@ -97,7 +58,7 @@
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:923725",
-        "followerCount": 5274,
+        "followerCount": 5270,
         "profileUrl": "https://www.linkedin.com/company/webexpo"
       },
       "authorType": "Company"
@@ -139,7 +100,7 @@
       "profile": {
         "firstName": "Nikola",
         "lastName": "Š.",
-        "occupation": "QA - Tester | IT Analysing | Data Analysing 🐞",
+        "occupation": "QA - Tester | Analysing | Data Analysing and data validation 🐞",
         "id": "319858539",
         "publicId": "nikola-stepanova",
         "profileId": "ACoAABMQp2sBmRC1qNniYn1P7zaZCoUs2TubYIY"

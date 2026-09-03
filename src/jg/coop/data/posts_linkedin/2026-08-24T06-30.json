@@ -10,17 +10,7 @@
   "url": "https://www.linkedin.com/posts/honzajavorek_m%C3%A1-github-v%C3%BDznam-na-pohovoru-activity-7497540757906497536-lGtK",
   "shareUrn": "urn:li:ugcPost:7486364248412053504",
   "text": "Má GitHub význam na pohovoru?\n\nPokud tě někdo straší, že si tvůj GitHub budou procházet náboráři a máš jej proto mít sterilně dokonalý, nenech se tím zmást. Recruiteři kód nečtou.\n\nManažeři a senioři občas ano, ale podstatné je, jestli jim dáš v CVčku pod nos konkrétní projekty, kterými se chceš chlubit, nebo jim předhodíš jen tak celý profil a necháš je tápat.\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
-  "attributes": [
-    {
-      "start": 387,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
-    }
-  ],
+  "attributes": [],
   "comments": [
     {
       "time": 1787569730987,
@@ -33,7 +23,7 @@
       "originalLanguage": "Czech",
       "edited": false,
       "numLikes": 2,
-      "numComments": 2,
+      "numComments": 7,
       "reactionTypeCounts": [
         {
           "count": 2,
@@ -54,6 +44,61 @@
     }
   ],
   "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiří",
+        "lastName": "Brunclík",
+        "occupation": "CTO at Ataccama",
+        "id": "3155830",
+        "publicId": "jirib",
+        "profileId": "ACoAAAAwJ3YBk5O5LfB3D3jRSl4uAWShwlClI9A"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Artem",
+        "lastName": "Zakharchenko",
+        "occupation": "Software engineer & Educator",
+        "id": "479400907",
+        "publicId": "artem-zakharchenko",
+        "profileId": "ACoAAByTE8sBD2jc0LWL1WTudVD1bG_e2hh-aG0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Mikhail",
+        "lastName": "Shishov",
+        "occupation": "Frontend-focused full-stack developer | 9+ years of experience | HTML/CSS, JS, TS, PHP, Vue.js, Laravel | Trusted by Lexus, Intel, Asus & others around the world | Based in Slovakia with residence & work permit",
+        "id": "782690721",
+        "publicId": "mikhail-shishov",
+        "profileId": "ACoAAC6m6aEBlduoSyumfJ0SqPtF6RepYipU5N8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Milos",
+        "lastName": "Marejka",
+        "occupation": "Programátor",
+        "id": "1007144655",
+        "publicId": "milos-marejka-41335a241",
+        "profileId": "ACoAADwHzs8BfUd8-0JL3NCqNiX0qBLlaadfI3E"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Zpěváková",
+        "occupation": "BI/ Data analyst, junior AI enthusiast, quizmaker and host in DATA Mesh Prague",
+        "id": "637440646",
+        "publicId": "py-veronika-zpevakova",
+        "profileId": "ACoAACX-koYBZCeuCb06SzAT8F955fJvI0OEIAc"
+      }
+    },
     {
       "type": "LIKE",
       "profile": {
@@ -92,7 +137,7 @@
       "profile": {
         "firstName": "Vladimír",
         "lastName": "Gorej",
-        "occupation": "Senior Full-Stack Engineer & API Tooling Specialist | Available for Contract & Fractional Roles | TypeScript, Node.js, Python, OpenAPI & Arazzo | Building API tools for developers and AI agents",
+        "occupation": "Senior Full-Stack Engineer & API Tooling Specialist | Freelance, Contract & Fractional Roles | TypeScript, Node.js, Python, OpenAPI & Arazzo | Building API tools for developers and AI agents",
         "id": "58899881",
         "publicId": "vladimirgorej",
         "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
@@ -100,8 +145,8 @@
     }
   ],
   "numShares": 0,
-  "numLikes": 4,
-  "numComments": 3,
+  "numLikes": 9,
+  "numComments": 8,
   "canReact": true,
   "canPostComments": true,
   "canShare": true,

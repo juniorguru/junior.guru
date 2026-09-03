@@ -25,12 +25,6 @@
       }
     },
     {
-      "start": 47,
-      "length": 12,
-      "link": "https://www.linkedin.com/in/ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk",
-      "type": "HYPERLINK"
-    },
-    {
       "start": 62,
       "length": 14,
       "type": "PROFILE_MENTION",
@@ -42,21 +36,6 @@
         "publicId": "elvira-krieger",
         "profileId": "ACoAAELMV1gBtMlcRFOyaHOrgdhzKXc8l9aoZqA"
       }
-    },
-    {
-      "start": 62,
-      "length": 14,
-      "link": "https://www.linkedin.com/in/ACoAAELMV1gBtMlcRFOyaHOrgdhzKXc8l9aoZqA",
-      "type": "HYPERLINK"
-    },
-    {
-      "start": 100,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
     }
   ],
   "comments": [
@@ -64,17 +43,7 @@
       "time": 1786802312511,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7486361054869106688?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7486361054869106688%2C7494392086570541056%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287494392086570541056%2Curn%3Ali%3AugcPost%3A7486361054869106688%29",
       "text": "Ještě odkaz! https://junior.guru/stories/elvira-krieger/",
-      "entities": [
-        {
-          "start": 13,
-          "length": 43,
-          "type": "TEXT_LINK",
-          "textLink": {
-            "viewingBehavior": "DEFAULT",
-            "url": "https://junior.guru/stories/elvira-krieger/"
-          }
-        }
-      ],
+      "entities": [],
       "fromPostAuthor": true,
       "urn": "urn:li:comment:(ugcPost:7486361054869106688,7494392086570541056)",
       "pinned": false,
@@ -98,11 +67,22 @@
   ],
   "reactions": [
     {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vladimír",
+        "lastName": "Gorej",
+        "occupation": "Senior Full-Stack Engineer & API Tooling Specialist | Freelance, Contract & Fractional Roles | TypeScript, Node.js, Python, OpenAPI & Arazzo | Building API tools for developers and AI agents",
+        "id": "58899881",
+        "publicId": "vladimirgorej",
+        "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
+      }
+    },
+    {
       "type": "APPRECIATION",
       "profile": {
         "firstName": "Lenka",
         "lastName": "Ďurechová",
-        "occupation": "Specialistka procesní administrace a koordinace projektů | E-commerce, data a provoz",
+        "occupation": "Process & Data Operations Specialist | Cross-functional Coordination pro Marketing, Digital & Gaming Teams | Jira, Asana, GA4",
         "id": "531621563",
         "publicId": "durechova",
         "profileId": "ACoAAB-v5rsBooIQ9wOxiE6lWhw3QYi_ZgbxHtY"
@@ -121,7 +101,7 @@
     }
   ],
   "numShares": 0,
-  "numLikes": 2,
+  "numLikes": 3,
   "numComments": 1,
   "canReact": true,
   "canPostComments": true,

@@ -6,35 +6,7 @@
   "url": "https://www.linkedin.com/posts/honzajavorek_na50cv%C4%8Dek-m%C3%A1%C5%A1-5odpov%C4%9Bd%C3%AD-ado-toho-%C4%8Dte%C5%A1-activity-7477605609195048960-8fRo",
   "shareUrn": "urn:li:share:7465389443168985088",
   "text": "„Na 50 CVček máš 5 odpovědí a do toho čteš články, že AI nahradí programátory. Nebo vlastně všechny lidi, a možná i křečky!“\n\nSnažil jsem se, aby to bylo trochu čtivé 😆 \n\nTahle část nové homepage junior.guru by měla fungovat jako vysvětlení, v čem to vlastně juniorům nejvíc pomůže. Co od toho můžou čekat. Co tam najdou.\n\nA taky jako diferenciace. Protože junior.guru není kurz programování. Od svého vzniku je tady proto, aby pomáhalo překlenout díru mezi školami nebo kurzy a první prací v oboru.\n\nTaky jsem tam pak přidal ještě odstavec, který by mohl pomoci roztříštit obavy mnohých začátečníků, jestli má vůbec smysl se o IT v dnešní době snažit, když nás údajně všechny do pár let sežere AI.\n\nBude to takhle fungovat? Nevím! Dá se tam něco vylepšit? Dejte mi vědět! 😅 \n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
-  "attributes": [
-    {
-      "start": 196,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
-    },
-    {
-      "start": 357,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
-    },
-    {
-      "start": 799,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
-    }
-  ],
+  "attributes": [],
   "comments": [],
   "reactions": [
     {

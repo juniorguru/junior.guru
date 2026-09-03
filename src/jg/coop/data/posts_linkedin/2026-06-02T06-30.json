@@ -8,15 +8,6 @@
   "text": "„Manželka byla na rodičovské a čekali jsme druhé dítě — to na mě vytvářelo velký tlak. Na CV mi skoro nikdo neodepisoval a když, tak na jinou pozici. Setkání s komunitou junior.guru mi hodně pomohlo nevzdat to.“\n\nRozhovory záměrně neděláme sluníčkově oslavné, ale naopak se snažíme rozkrýt, co bylo pro lidi na cestě do IT těžké, a jak si s tím dokázali poradit.\n\n„Pracujeme na vojenském systému. Jako tester simuluji vojáka, který ho ovládá. Je to něco jako radar zajišťující přehled o bojišti — systém analyzuje pozice vysílačů signálu, například letadel, a pomocí geometrie odhaduje jejich polohu. Využívá to protivzdušná obrana, zpravodajci, dnes už i přímo v boji.“\n\nVýhoda juniorů, kteří nevylezli zrovna ze školy, ale mají zkušenosti z jiných oborů, je ta, že… mají zkušenosti z jiných oborů 😀 Petrovi odešel z armády, ale v IT našel práci, kde na to může pěkně navázat 🫡\n\nDíky Adéla Pavlun za nový rozhovor s Petr Kašička ❤️ Přečíst si ho můžete na junior.guru/stories\n\nOdkaz dám do komentářů.\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
   "attributes": [
     {
-      "start": 170,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
-    },
-    {
       "start": 885,
       "length": 12,
       "type": "PROFILE_MENTION",
@@ -30,12 +21,6 @@
       }
     },
     {
-      "start": 885,
-      "length": 12,
-      "link": "https://www.linkedin.com/in/ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk",
-      "type": "HYPERLINK"
-    },
-    {
       "start": 917,
       "length": 12,
       "type": "PROFILE_MENTION",
@@ -46,30 +31,6 @@
         "id": "1110545599",
         "publicId": "p-kasicka",
         "profileId": "ACoAAEIxlL8Bfkq3CiEwFXvTQla3a5z_FUgQD3w"
-      }
-    },
-    {
-      "start": 917,
-      "length": 12,
-      "link": "https://www.linkedin.com/in/ACoAAEIxlL8Bfkq3CiEwFXvTQla3a5z_FUgQD3w",
-      "type": "HYPERLINK"
-    },
-    {
-      "start": 957,
-      "length": 19,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru/stories"
-      }
-    },
-    {
-      "start": 1025,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
       }
     }
   ],
@@ -132,17 +93,7 @@
       "time": 1780384370022,
       "link": "https://www.linkedin.com/feed/update/urn:li:activity:7467462579817459712?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7467462579817459712%2C7467473284717031424%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287467473284717031424%2Curn%3Ali%3Aactivity%3A7467462579817459712%29",
       "text": "Odkaz tady! https://junior.guru/stories/petr-kasicka/",
-      "entities": [
-        {
-          "start": 12,
-          "length": 41,
-          "type": "TEXT_LINK",
-          "textLink": {
-            "viewingBehavior": "DEFAULT",
-            "url": "https://junior.guru/stories/petr-kasicka/"
-          }
-        }
-      ],
+      "entities": [],
       "fromPostAuthor": true,
       "urn": "urn:li:comment:(activity:7467462579817459712,7467473284717031424)",
       "pinned": false,
@@ -202,7 +153,7 @@
       "profile": {
         "firstName": "Lenka",
         "lastName": "Ďurechová",
-        "occupation": "Specialistka procesní administrace a koordinace projektů | E-commerce, data a provoz",
+        "occupation": "Process & Data Operations Specialist | Cross-functional Coordination pro Marketing, Digital & Gaming Teams | Jira, Asana, GA4",
         "id": "531621563",
         "publicId": "durechova",
         "profileId": "ACoAAB-v5rsBooIQ9wOxiE6lWhw3QYi_ZgbxHtY"
@@ -235,7 +186,7 @@
       "profile": {
         "firstName": "Marcela",
         "lastName": "Bačovská",
-        "occupation": "In a committed relationship with SQL",
+        "occupation": "Committed to SQL, but seeing other frameworks",
         "id": "1129172479",
         "publicId": "marcela-bacovska",
         "profileId": "ACoAAENNzf8BSZSqqeOhi8Xq5bLzMELIlCIXKU0"

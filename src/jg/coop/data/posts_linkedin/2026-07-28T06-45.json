@@ -8,15 +8,15 @@
           {
             "width": 720,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEjWyChVsNLsg",
-            "fileIdentifyingUrlPathSegment": "high/B4DZ.TpynyIIBQ-/0/1784888636029?e=1788224400&v=beta&t=u72x0DZFQnAZLfMGDT_53UAYHI0m7KcB4qifKXp-NTE",
-            "expiresAt": 1788224400000,
+            "fileIdentifyingUrlPathSegment": "high/B4DZ.TpynyIIBQ-/0/1784888636029?e=1788829200&v=beta&t=_YwYRyxdRYtDngDKJH8lK9lzjSTH_TJz2k4w-XSJl5c",
+            "expiresAt": 1788829200000,
             "height": 1280
           },
           {
             "width": 360,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEjWyChVsNLsg",
-            "fileIdentifyingUrlPathSegment": "low/B4DZ.TpynyIIBM-/0/1784888636029?e=1788224400&v=beta&t=S3YCGMaBn64n_WI9mMB-kRPXdA3Mw3NzZ9tfFRDHw5I",
-            "expiresAt": 1788224400000,
+            "fileIdentifyingUrlPathSegment": "low/B4DZ.TpynyIIBM-/0/1784888636029?e=1788829200&v=beta&t=z0Hu5rpiZMjq_MyiWTiSIV-UhsTMKASkHxBDvmq22T4",
+            "expiresAt": 1788829200000,
             "height": 640
           }
         ]
@@ -25,8 +25,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEjWyChVsNLsg/mp4-720p-30fp-crf28/B4DZ.TpynyIICA-/0/1784888640537?e=1788224400&v=beta&t=XBkqAU02ia4HxKrRj6ViWojndPAFn24Xflaun_mrO0w",
-              "expiresAt": 1788224400000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEjWyChVsNLsg/mp4-720p-30fp-crf28/B4DZ.TpynyIICA-/0/1784888640537?e=1788829200&v=beta&t=mZ23pZ1VN7sbqvj8uIwWh5yYdzTb8RmIOwL9b9ByJlY",
+              "expiresAt": 1788829200000
             }
           ],
           "size": 0,
@@ -38,8 +38,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEjWyChVsNLsg/mp4-640p-30fp-crf28/B4DZ.TpynyIIBo-/0/1784888640049?e=1788224400&v=beta&t=2klMZQGmwv0lA6VxgIhG63VG5nIQbl3RAgf22GEDvH8",
-              "expiresAt": 1788224400000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEjWyChVsNLsg/mp4-640p-30fp-crf28/B4DZ.TpynyIIBo-/0/1784888640049?e=1788829200&v=beta&t=QyYOsM3SILmWJ8zBWYHmukiY6A6kjQOiGxnwTCpAIvE",
+              "expiresAt": 1788829200000
             }
           ],
           "size": 0,
@@ -61,8 +61,8 @@
           "mediaType": "application/vnd.apple.mpegURL",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEjWyChVsNLsg/CeJxzMnGJ0gspqMyr9PR0KdfVcULmR6Lxk9H46Wj8fF0A2qQYxw?e=1788224400&v=beta&t=A78e3ckVanLJrk5PoRQxuJkQ3skTUACHVM1MFedg4bo",
-              "expiresAt": 1788224400000
+              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEjWyChVsNLsg/CeJxzMnGJ0gspqMyr9PR0KdfVcULmR6Lxk9H46Wj8fF0A2qQYxw?e=1788829200&v=beta&t=Waoy3zNyIc9jZ_1OlD-3PpXNqYJDXScjEf2L8AqrslQ",
+              "expiresAt": 1788829200000
             }
           ]
         },
@@ -72,8 +72,8 @@
           "mediaType": "application/dash+xml",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEjWyChVsNLsg/CeJxzMnGJ0gspqMyr9PR0KdfVcULmR6Lxk9H46Wj8fF0A2qQYxw?e=1788224400&v=beta&t=pjErYhAFgMQU9PXeSG6MoSjTrbR4J9ETpqrW6QUS1Ls",
-              "expiresAt": 1788224400000
+              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEjWyChVsNLsg/CeJxzMnGJ0gspqMyr9PR0KdfVcULmR6Lxk9H46Wj8fF0A2qQYxw?e=1788829200&v=beta&t=zIgywqDI88u9M2s7cq8Z8NdPG8RERXgAXH7GcDVuvHY",
+              "expiresAt": 1788829200000
             }
           ]
         }
@@ -98,30 +98,6 @@
         "publicId": "eliskacejpova",
         "profileId": "ACoAAA0E57ABXEjOnGWXi4ykBAzrRSYQ2_2aGg4"
       }
-    },
-    {
-      "start": 31,
-      "length": 14,
-      "link": "https://www.linkedin.com/in/ACoAAA0E57ABXEjOnGWXi4ykBAzrRSYQ2_2aGg4",
-      "type": "HYPERLINK"
-    },
-    {
-      "start": 117,
-      "length": 10,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://devfest.cz"
-      }
-    },
-    {
-      "start": 154,
-      "length": 11,
-      "type": "TEXT_LINK",
-      "textLink": {
-        "viewingBehavior": "DEFAULT",
-        "url": "http://junior.guru"
-      }
     }
   ],
   "comments": [],
@@ -131,7 +107,7 @@
       "profile": {
         "firstName": "Vladimír",
         "lastName": "Gorej",
-        "occupation": "Senior Full-Stack Engineer & API Tooling Specialist | Available for Contract & Fractional Roles | TypeScript, Node.js, Python, OpenAPI & Arazzo | Building API tools for developers and AI agents",
+        "occupation": "Senior Full-Stack Engineer & API Tooling Specialist | Freelance, Contract & Fractional Roles | TypeScript, Node.js, Python, OpenAPI & Arazzo | Building API tools for developers and AI agents",
         "id": "58899881",
         "publicId": "vladimirgorej",
         "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"

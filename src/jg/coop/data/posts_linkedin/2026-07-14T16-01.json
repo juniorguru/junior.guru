@@ -39,12 +39,6 @@
             "publicId": "artem-zakharchenko",
             "profileId": "ACoAAByTE8sBD2jc0LWL1WTudVD1bG_e2hh-aG0"
           }
-        },
-        {
-          "start": 140,
-          "length": 5,
-          "link": "https://www.linkedin.com/in/ACoAAByTE8sBD2jc0LWL1WTudVD1bG_e2hh-aG0",
-          "type": "HYPERLINK"
         }
       ],
       "fromPostAuthor": false,
@@ -61,7 +55,7 @@
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:111694409",
-        "followerCount": 119,
+        "followerCount": 122,
         "profileUrl": "https://www.linkedin.com/company/frontkon"
       },
       "authorType": "Company"
@@ -82,12 +76,6 @@
             "showcase": false,
             "entityUrn": "urn:li:fs_miniCompany:111694409"
           }
-        },
-        {
-          "start": 79,
-          "length": 39,
-          "link": "https://www.linkedin.com/company/frontkon/",
-          "type": "HYPERLINK"
         }
       ],
       "fromPostAuthor": false,
