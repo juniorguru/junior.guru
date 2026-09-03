@@ -1,5 +1,7 @@
+import json
 import logging
 import os
+import re
 from datetime import timedelta
 from enum import StrEnum
 from functools import lru_cache
@@ -148,21 +150,67 @@ async def ask_llm[Schema: BaseModel](
                 model=str(model), input=llm_input, text_format=schema
             )
             try:
-                return (await raw_response.parse()).output_parsed
-            except ValidationError as e:
-                # Best-effort diagnostic, carried on the exception so the retry
-                # decorator can log it; never mask the real error.
+                return raw_response.parse().output_parsed
+            except ValidationError as validation_error:
                 try:
-                    response = Response.model_validate_json(await raw_response.text())
-                    reason = describe_response(response)
+                    response = Response.model_validate_json(raw_response.text)
                 except Exception as diagnostic_error:
-                    reason = f"could not describe response: {diagnostic_error}"
+                    raise LLMResponseError(
+                        "LLM response failed schema validation; could not describe "
+                        f"response: {diagnostic_error}"
+                    ) from validation_error
+                if is_empty_incomplete_response(response):
+                    # OpenAI Structured Outputs occasionally returns an empty
+                    # incomplete response for large inputs. Plain text generation
+                    # works for the same prompt, so fall back and validate locally.
+                    logger.warning(
+                        "Structured output failed, retrying as plain text: "
+                        f"{describe_response(response)}"
+                    )
+                    fallback_input = [
+                        {
+                            "role": "developer",
+                            "content": (
+                                f"{prompt(system_prompt)}\n\n"
+                                "Return only valid JSON matching this JSON Schema:\n"
+                                f"{json.dumps(schema.model_json_schema())}"
+                            ),
+                        },
+                        {"role": "user", "content": prompt(user_prompt)},
+                    ]
+                    response = await client.responses.create(
+                        model=str(model), input=fallback_input
+                    )
+                    try:
+                        return parse_llm_json(response.output_text, schema)
+                    except ValidationError as fallback_validation_error:
+                        raise LLMResponseError(
+                            "Plain-text fallback failed schema validation: "
+                            f"{describe_response(response)}"
+                        ) from fallback_validation_error
                 raise LLMResponseError(
-                    f"LLM response failed schema validation: {reason}"
-                ) from e
+                    "LLM response failed schema validation: "
+                    f"{describe_response(response)}"
+                ) from validation_error
         return (
             await client.responses.create(model=str(model), input=llm_input)
         ).output_text
+
+
+def parse_llm_json[Schema: BaseModel](text: str, schema: type[Schema]) -> Schema:
+    fenced_json_match = re.search(r"```[a-zA-Z]*\s*(.*?)\s*```", text, re.DOTALL)
+    if fenced_json_match:
+        text = fenced_json_match.group(1)
+    return schema.model_validate_json(text)
+
+
+def is_empty_incomplete_response(response: Response) -> bool:
+    return (
+        response.status == "incomplete"
+        and response.incomplete_details is not None
+        and response.incomplete_details.reason == "max_output_tokens"
+        and not response.output_text
+    )
 
 
 def describe_response(response: Response) -> str:

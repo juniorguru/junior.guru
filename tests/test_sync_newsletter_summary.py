@@ -1,8 +1,68 @@
+from types import SimpleNamespace
+
+import pytest
+
 from jg.coop.sync.newsletter.summary import (
+    LLMMessageIDCorrection,
+    LLMMessageIDCorrections,
+    LLMTopic,
+    apply_message_id_corrections,
+    ensure_message_ids_exist,
+    filter_message_id_corrections,
     simplify_channel_mentions,
     simplify_custom_emojis,
     simplify_member_mentions,
+    to_feed,
 )
+
+
+def test_filter_message_id_corrections():
+    corrections = LLMMessageIDCorrections(
+        items=[
+            LLMMessageIDCorrection(invalid_message_id=1, valid_message_id=101),
+            LLMMessageIDCorrection(invalid_message_id=2, valid_message_id=999),
+            LLMMessageIDCorrection(invalid_message_id=3, valid_message_id=103),
+        ]
+    )
+
+    assert filter_message_id_corrections(corrections, {1, 2}, {101, 103}) == [
+        LLMMessageIDCorrection(invalid_message_id=1, valid_message_id=101)
+    ]
+
+
+def test_apply_message_id_corrections_updates_duplicate_topics():
+    topics = [
+        LLMTopic(engagement_score=1, message_id=1, name=name, text="Summary")
+        for name in ["First", "Second"]
+    ]
+
+    apply_message_id_corrections(
+        topics,
+        [LLMMessageIDCorrection(invalid_message_id=1, valid_message_id=101)],
+    )
+
+    assert [topic.message_id for topic in topics] == [101, 101]
+
+
+def test_ensure_message_ids_exist_rejects_remaining_invalid_ids():
+    with pytest.raises(ValueError, match="Unable to correct invalid message IDs: 2"):
+        ensure_message_ids_exist({1: True, 2: False})
+
+
+def test_to_feed_collects_ids_from_records_not_message_content():
+    message = SimpleNamespace(
+        id=101,
+        channel_id=1,
+        author=SimpleNamespace(id=2),
+        reactions={},
+        content_size=10_001,
+        content="Text pretending to be [Příspěvek #999 od člena @member1]",
+    )
+
+    feed, message_ids = to_feed([message], {1: "channel"})
+
+    assert "[Příspěvek #999" in feed
+    assert message_ids == {101}
 
 
 def test_simplify_channel_mentions():
