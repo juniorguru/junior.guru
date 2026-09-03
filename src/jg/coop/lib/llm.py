@@ -150,13 +150,13 @@ async def ask_llm[Schema: BaseModel](
             )
             try:
                 return raw_response.parse().output_parsed
-            except ValidationError as e:
+            except ValidationError as validation_error:
                 try:
                     response = Response.model_validate_json(raw_response.text)
-                except Exception as diagnostic_error:
+                except Exception as e:
                     raise LLMResponseError(
                         "LLM response failed schema validation; could not describe "
-                        f"response: {diagnostic_error}"
+                        f"response: {e}"
                     ) from e
                 if is_empty_incomplete_response(response):
                     # OpenAI Structured Outputs occasionally returns an empty
@@ -179,7 +179,7 @@ async def ask_llm[Schema: BaseModel](
                 raise LLMResponseError(
                     "LLM response failed schema validation: "
                     f"{describe_response(response)}"
-                ) from e
+                ) from validation_error
         return (
             await client.responses.create(model=str(model), input=llm_input)
         ).output_text
