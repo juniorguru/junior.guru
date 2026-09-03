@@ -148,7 +148,7 @@ async def ask_llm[Schema: BaseModel](
                 model=str(model), input=llm_input, text_format=schema
             )
             try:
-                return (await raw_response.parse()).output_parsed
+                return raw_response.parse().output_parsed
             except ValidationError as e:
                 # Best-effort diagnostic, carried on the exception so the retry
                 # decorator can log it; never mask the real error.
