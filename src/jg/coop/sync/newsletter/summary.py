@@ -141,7 +141,6 @@ async def summarize_club(today: date, correction_attempts: int) -> Summary:
         feed,
         model=LLMModel.advanced,
         schema=LLMSummary,
-        structured_output=False,
     )
     logger.info(f"The summary contains {len(summary.topics)} topics")
     logger.debug(f"Summary:\n{pformat(summary.model_dump())}")
@@ -183,7 +182,6 @@ async def summarize_club(today: date, correction_attempts: int) -> Summary:
                 feed,
                 model=LLMModel.advanced,
                 schema=LLMMessageIDCorrections,
-                structured_output=False,
             )
             valid_corrections = filter_message_id_corrections(
                 corrections, set(invalid_ids), feed_message_ids

@@ -7,6 +7,7 @@ from pydantic import BaseModel
 from jg.coop.lib.llm import (
     describe_raw_response,
     describe_response,
+    is_empty_incomplete_response,
     is_requests_rate_limit_error,
     is_tokens_rate_limit_error,
     parse_llm_json,
@@ -54,6 +55,26 @@ def test_is_tokens_rate_limit_error(type_, expected):
 )
 def test_parse_llm_json(text):
     assert parse_llm_json(text, Result) == Result(value=1)
+
+
+@pytest.mark.parametrize(
+    "status, reason, text, expected",
+    [
+        ("incomplete", "max_output_tokens", "", True),
+        ("completed", None, "", False),
+        ("incomplete", "max_output_tokens", '{"value": 1}', False),
+    ],
+)
+def test_is_empty_incomplete_response(status, reason, text, expected):
+    response = create_response(
+        status=status,
+        incomplete_details={"reason": reason} if reason else None,
+        output=[message({"type": "output_text", "text": text, "annotations": []})]
+        if text
+        else [],
+    )
+
+    assert is_empty_incomplete_response(response) is expected
 
 
 def create_response(**kwargs) -> Response:

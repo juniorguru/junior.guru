@@ -51,7 +51,6 @@ async def ask_llm(
     user_prompt: str,
     model: LLMModel = LLMModel.simple,
     schema: None = None,
-    structured_output: bool = True,
 ) -> str: ...
 
 
@@ -61,7 +60,6 @@ async def ask_llm[Schema: BaseModel](
     user_prompt: str,
     model: LLMModel = LLMModel.simple,
     schema: type[Schema] = ...,
-    structured_output: bool = True,
 ) -> Schema: ...
 
 
@@ -130,7 +128,6 @@ async def ask_llm[Schema: BaseModel](
     user_prompt: str,
     model: LLMModel = LLMModel.simple,
     schema: type[Schema] | None = None,
-    structured_output: bool = True,
 ) -> Schema | str:
     client = get_client()
     async with limit(4):
@@ -142,7 +139,7 @@ async def ask_llm[Schema: BaseModel](
             {"role": "developer", "content": prompt(system_prompt)},
             {"role": "user", "content": prompt(user_prompt)},
         ]
-        if schema and structured_output:
+        if schema:
             # Go through with_raw_response so that, when the SDK fails to parse
             # the structured output, we still have the raw response to inspect
             # (status, refusal, incomplete_details) instead of just an opaque
@@ -154,25 +151,38 @@ async def ask_llm[Schema: BaseModel](
             try:
                 return raw_response.parse().output_parsed
             except ValidationError as e:
-                # Best-effort diagnostic, carried on the exception so the retry
-                # decorator can log it; never mask the real error.
                 try:
-                    reason = describe_raw_response(raw_response.text)
+                    response = Response.model_validate_json(raw_response.text)
                 except Exception as diagnostic_error:
-                    reason = f"could not describe response: {diagnostic_error}"
+                    raise LLMResponseError(
+                        "LLM response failed schema validation; could not describe "
+                        f"response: {diagnostic_error}"
+                    ) from e
+                if is_empty_incomplete_response(response):
+                    # OpenAI Structured Outputs occasionally returns an empty
+                    # incomplete response for large inputs. Plain text generation
+                    # works for the same prompt, so fall back and validate locally.
+                    logger.warning(
+                        "Structured output failed, retrying as plain text: "
+                        f"{describe_response(response)}"
+                    )
+                    response = await client.responses.create(
+                        model=str(model), input=llm_input
+                    )
+                    try:
+                        return parse_llm_json(response.output_text, schema)
+                    except ValidationError as fallback_error:
+                        raise LLMResponseError(
+                            "Plain-text fallback failed schema validation: "
+                            f"{describe_response(response)}"
+                        ) from fallback_error
                 raise LLMResponseError(
-                    f"LLM response failed schema validation: {reason}"
-                ) from e
-        response = await client.responses.create(model=str(model), input=llm_input)
-        if schema:
-            try:
-                return parse_llm_json(response.output_text, schema)
-            except ValidationError as e:
-                raise LLMResponseError(
-                    f"LLM response failed schema validation: "
+                    "LLM response failed schema validation: "
                     f"{describe_response(response)}"
                 ) from e
-        return response.output_text
+        return (
+            await client.responses.create(model=str(model), input=llm_input)
+        ).output_text
 
 
 def parse_llm_json[Schema: BaseModel](text: str, schema: type[Schema]) -> Schema:
@@ -180,6 +190,15 @@ def parse_llm_json[Schema: BaseModel](text: str, schema: type[Schema]) -> Schema
     if fenced_json_match:
         text = fenced_json_match.group(1)
     return schema.model_validate_json(text)
+
+
+def is_empty_incomplete_response(response: Response) -> bool:
+    return (
+        response.status == "incomplete"
+        and response.incomplete_details is not None
+        and response.incomplete_details.reason == "max_output_tokens"
+        and not response.output_text
+    )
 
 
 def describe_response(response: Response) -> str:
