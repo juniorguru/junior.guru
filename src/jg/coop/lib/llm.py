@@ -157,7 +157,7 @@ async def ask_llm[Schema: BaseModel](
                     raise LLMResponseError(
                         "LLM response failed schema validation; could not describe "
                         f"response: {e}"
-                    ) from e
+                    ) from validation_error
                 if is_empty_incomplete_response(response):
                     # OpenAI Structured Outputs occasionally returns an empty
                     # incomplete response for large inputs. Plain text generation
