@@ -4,6 +4,7 @@ import pytest
 from openai.types.responses import Response
 
 from jg.coop.lib.llm import (
+    describe_raw_response,
     describe_response,
     is_requests_rate_limit_error,
     is_tokens_rate_limit_error,
@@ -67,6 +68,17 @@ def test_describe_response_empty():
     response = create_response()
 
     assert describe_response(response) == "status='completed', output_text='' (0 chars)"
+
+
+def test_describe_raw_response():
+    response = create_response(
+        status="incomplete",
+        incomplete_details={"reason": "max_output_tokens"},
+    )
+
+    assert "incomplete_reason='max_output_tokens'" in describe_raw_response(
+        response.model_dump_json()
+    )
 
 
 def test_describe_response_incomplete():

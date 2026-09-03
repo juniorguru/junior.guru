@@ -153,8 +153,7 @@ async def ask_llm[Schema: BaseModel](
                 # Best-effort diagnostic, carried on the exception so the retry
                 # decorator can log it; never mask the real error.
                 try:
-                    response = Response.model_validate_json(await raw_response.text())
-                    reason = describe_response(response)
+                    reason = describe_raw_response(raw_response.text)
                 except Exception as diagnostic_error:
                     reason = f"could not describe response: {diagnostic_error}"
                 raise LLMResponseError(
@@ -179,6 +178,10 @@ def describe_response(response: Response) -> str:
     text = response.output_text
     parts.append(f"output_text={text[:500]!r} ({len(text)} chars)")
     return ", ".join(parts)
+
+
+def describe_raw_response(raw_response_text: str) -> str:
+    return describe_response(Response.model_validate_json(raw_response_text))
 
 
 def count_tokens(text: str) -> int:
