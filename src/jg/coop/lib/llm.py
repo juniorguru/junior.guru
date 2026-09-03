@@ -122,26 +122,28 @@ async def ask_llm[Schema: BaseModel](
             {"role": "user", "content": prompt(user_prompt)},
         ]
         if schema:
-            # Fetch the raw response so we can inspect it (status, refusal,
-            # incomplete_details) when parsing fails, instead of only seeing
-            # an opaque "invalid JSON: EOF" error. Non-2xx (rate limit, 5xx)
-            # still raises before this returns, so those retries keep working.
+            # Go through with_raw_response so that, when the SDK fails to parse
+            # the structured output, we still have the raw response to inspect
+            # (status, refusal, incomplete_details) instead of just an opaque
+            # "invalid JSON: EOF" error. The happy path still uses the SDK's own
+            # parsing (raw_response.parse()), so we don't reimplement it.
             raw_response = await client.responses.with_raw_response.parse(
                 model=str(model),
                 input=llm_input,
                 text_format=schema,
                 # prompt_cache_retention="24h",
             )
-            response = Response.model_validate_json(await raw_response.text())
             try:
-                return schema.model_validate_json(response.output_text)
+                return (await raw_response.parse()).output_parsed
             except ValidationError:
-                # Logged on every failed attempt, so the reason is visible right
-                # before the retry decorator re-asks or finally re-raises.
-                logger.warning(
-                    f"LLM response failed schema validation: "
-                    f"{describe_response(response)}"
-                )
+                # Best-effort diagnostic, logged before the retry decorator
+                # re-asks or finally re-raises; never mask the real error.
+                try:
+                    response = Response.model_validate_json(await raw_response.text())
+                    reason = describe_response(response)
+                except Exception as diagnostic_error:
+                    reason = f"could not describe response: {diagnostic_error}"
+                logger.warning(f"LLM response failed schema validation: {reason}")
                 raise
         return (
             await client.responses.create(
