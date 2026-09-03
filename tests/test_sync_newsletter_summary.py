@@ -1,10 +1,13 @@
 from types import SimpleNamespace
 
+import pytest
+
 from jg.coop.sync.newsletter.summary import (
     LLMMessageIDCorrection,
     LLMMessageIDCorrections,
     LLMTopic,
     apply_message_id_corrections,
+    ensure_message_ids_exist,
     filter_message_id_corrections,
     simplify_channel_mentions,
     simplify_custom_emojis,
@@ -39,6 +42,11 @@ def test_apply_message_id_corrections_updates_duplicate_topics():
     )
 
     assert [topic.message_id for topic in topics] == [101, 101]
+
+
+def test_ensure_message_ids_exist_rejects_remaining_invalid_ids():
+    with pytest.raises(ValueError, match="Unable to correct invalid message IDs: 2"):
+        ensure_message_ids_exist({1: True, 2: False})
 
 
 def test_to_feed_collects_ids_from_records_not_message_content():

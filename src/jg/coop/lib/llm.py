@@ -153,10 +153,10 @@ async def ask_llm[Schema: BaseModel](
             except ValidationError as validation_error:
                 try:
                     response = Response.model_validate_json(raw_response.text)
-                except Exception as e:
+                except Exception as diagnostic_error:
                     raise LLMResponseError(
                         "LLM response failed schema validation; could not describe "
-                        f"response: {e}"
+                        f"response: {diagnostic_error}"
                     ) from validation_error
                 if is_empty_incomplete_response(response):
                     # OpenAI Structured Outputs occasionally returns an empty
@@ -171,11 +171,11 @@ async def ask_llm[Schema: BaseModel](
                     )
                     try:
                         return parse_llm_json(response.output_text, schema)
-                    except ValidationError as fallback_error:
+                    except ValidationError as fallback_validation_error:
                         raise LLMResponseError(
                             "Plain-text fallback failed schema validation: "
                             f"{describe_response(response)}"
-                        ) from fallback_error
+                        ) from fallback_validation_error
                 raise LLMResponseError(
                     "LLM response failed schema validation: "
                     f"{describe_response(response)}"
@@ -215,10 +215,6 @@ def describe_response(response: Response) -> str:
     text = response.output_text
     parts.append(f"output_text={text[:500]!r} ({len(text)} chars)")
     return ", ".join(parts)
-
-
-def describe_raw_response(raw_response_text: str) -> str:
-    return describe_response(Response.model_validate_json(raw_response_text))
 
 
 def count_tokens(text: str) -> int:

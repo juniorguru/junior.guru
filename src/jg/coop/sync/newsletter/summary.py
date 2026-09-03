@@ -186,13 +186,21 @@ async def summarize_club(today: date, correction_attempts: int) -> Summary:
             valid_corrections = filter_message_id_corrections(
                 corrections, set(invalid_ids), feed_message_ids
             )
-            rejected_count = len(corrections.items) - len(valid_corrections)
-            if rejected_count:
-                logger.warning(f"Rejected {rejected_count} invalid ID corrections")
+            if rejected_count := len(corrections.items) - len(valid_corrections):
+                logger.warning(
+                    f"Rejected {rejected_count} invalid ID corrections; "
+                    "remaining IDs will be verified again"
+                )
+            logger.info(f"Applying {len(valid_corrections)} valid ID corrections")
             apply_message_id_corrections(summary.topics, valid_corrections)
         else:
             logger.info("All message IDs are valid!")
             break
+    else:
+        messages_existence = ClubMessage.check_existence(
+            [topic.message_id for topic in summary.topics]
+        )
+        ensure_message_ids_exist(messages_existence)
 
     logger.info("Adjusting the summary text's style")
     tasks = [
@@ -260,11 +268,16 @@ def apply_message_id_corrections(
     }
     for topic in topics:
         if valid_message_id := valid_ids_by_invalid_id.get(topic.message_id):
-            logger.info(
-                f"Updating message ID for '{topic.name}': "
-                f"{topic.message_id} → {valid_message_id}"
-            )
             topic.message_id = valid_message_id
+
+
+def ensure_message_ids_exist(messages_existence: dict[int, bool]) -> None:
+    if invalid_ids := [
+        message_id for message_id, exists in messages_existence.items() if not exists
+    ]:
+        raise ValueError(
+            f"Unable to correct invalid message IDs: {', '.join(map(str, invalid_ids))}"
+        )
 
 
 def filter_message_id_corrections(
