@@ -8,6 +8,7 @@ from typing import overload
 
 import tiktoken
 from openai import AsyncOpenAI, InternalServerError, RateLimitError
+from openai.types.responses import Response
 from pydantic import BaseModel, ValidationError
 from tenacity import (
     before_sleep_log,
@@ -117,20 +118,32 @@ async def ask_llm[Schema: BaseModel](
         if schema:
             for attempt in range(1, validation_attempts + 1):
                 logger.debug(f"Asking LLM with schema validation, attempt #{attempt}")
+                # Fetch the raw response so we can inspect it (status, refusal,
+                # incomplete_details) when parsing fails, instead of only seeing
+                # an opaque "invalid JSON: EOF" error. Non-2xx (rate limit, 5xx)
+                # still raises before this returns, so retries keep working.
+                raw_response = await client.responses.with_raw_response.parse(
+                    model=str(model),
+                    input=llm_input,
+                    text_format=schema,
+                    # prompt_cache_retention="24h",
+                )
+                response = Response.model_validate_json(await raw_response.text())
                 try:
-                    result = (
-                        await client.responses.parse(
-                            model=str(model),
-                            input=llm_input,
-                            text_format=schema,
-                            # prompt_cache_retention="24h",
-                        )
-                    ).output_parsed
+                    result = schema.model_validate_json(response.output_text)
                     break
                 except ValidationError as e:
+                    reason = describe_response(response)
                     if attempt == validation_attempts:
+                        logger.error(
+                            f"Schema validation failed, attempt #{attempt} (final): "
+                            f"{e}\nLLM response: {reason}"
+                        )
                         raise
-                    logger.warning(f"Schema validation failed, attempt #{attempt}: {e}")
+                    logger.warning(
+                        f"Schema validation failed, attempt #{attempt}: "
+                        f"{e}\nLLM response: {reason}"
+                    )
         else:
             result = (
                 await client.responses.create(
@@ -140,6 +153,22 @@ async def ask_llm[Schema: BaseModel](
                 )
             ).output_text
     return result
+
+
+def describe_response(response: Response) -> str:
+    parts = [f"status={response.status!r}"]
+    if response.incomplete_details:
+        parts.append(f"incomplete_reason={response.incomplete_details.reason!r}")
+    if response.error:
+        parts.append(f"error={response.error.code!r}: {response.error.message!r}")
+    for item in response.output:
+        if item.type == "message":
+            for content in item.content:
+                if content.type == "refusal":
+                    parts.append(f"refusal={content.refusal!r}")
+    text = response.output_text
+    parts.append(f"output_text={text[:500]!r} ({len(text)} chars)")
+    return ", ".join(parts)
 
 
 def count_tokens(text: str) -> int:
