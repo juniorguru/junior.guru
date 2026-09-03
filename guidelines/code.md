@@ -3,6 +3,7 @@
 - Aim for the [Clean Architecture](https://www.youtube.com/watch?v=DJtef410XaM) ([textual slides](https://rhodesmill.org/brandon/slides/2014-07-pyohio/clean-architecture/)): an "imperative shell" wrapping a "functional core".
 - Use Python type hints everywhere.
 - Aim for low cyclomatic complexity.
+- Order functions in modules from highest-level entry points to progressively smaller helpers. The only exception is functions that must be defined earlier because they are used during module import.
 - Use `httpx2` for HTTP requests (not `requests` or plain `httpx`, which stay only as transitive dependencies); use `click` for CLI specification.
 - Walrus operators are welcome; keep the code modern (pyupgrade-style, via Ruff `UP` rules).
 - Ruff target version must comply with `requires-python`.
