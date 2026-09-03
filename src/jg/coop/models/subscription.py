@@ -50,6 +50,8 @@ class SubscriptionMarketingSurveyAnswer(StrEnum):
     PODCASTS = "podcasts"
     COURSES = "courses"
     YOUTUBE = "youtube"
+    INSTAGRAM = "instagram"
+    TIKTOK = "tiktok"
     FACEBOOK = "facebook"
     LINKEDIN = "linkedin"
     COURSES_SEARCH = "courses_search"
