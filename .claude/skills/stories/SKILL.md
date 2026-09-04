@@ -3,7 +3,7 @@ name: stories
 description: Add or edit junior.guru interview stories and participant photos under src/jg/coop/web/docs/stories and src/jg/coop/images/avatars-participants. Use for importing an interview from Google Docs, formatting story Markdown, or preparing its portrait.
 ---
 
-# Junior Guru Stories
+# Stories in junior.guru
 
 Stories are Markdown pages in `src/jg/coop/web/docs/stories` within the MkDocs junior.guru website.
 
