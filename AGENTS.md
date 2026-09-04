@@ -35,6 +35,5 @@ Boundaries: code/commits/PRs written normal.
 - If you edit code, follow [Code Guidelines](guidelines/code.md).
 - After any changes inside `src/jg/coop/images`, always run `uv run jg tidy` before finishing the work.
 - If you work inside `src/jg/coop/data/tips`, always check [Tips Guidelines](src/jg/coop/data/tips/README.md) first.
-- If you work inside `src/jg/coop/web/docs/stories`, follow [Stories Guidelines](guidelines/stories.md).
 - If you write documents inside src/jg/coop/web/docs/handbook, follow [Handbook Guidelines](guidelines/handbook.md).
 - After significant changes to the Discord integration always check the [bot docs](src/jg/coop/web/docs/about/bot.md) if they need update.
