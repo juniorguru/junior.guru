@@ -5,7 +5,7 @@ description: Create or edit Czech club-member tips in src/jg/coop/data/tips for 
 
 # Club Tips
 
-Tips are short guidance texts for club members. `jg sync tips` parses them and synchronizes each tip to Discord as a separate forum thread.
+Tips are short guidance texts for club members. `uv run jg sync tips` parses them and synchronizes each tip to Discord as a separate forum thread.
 
 ## Voice and language
 
