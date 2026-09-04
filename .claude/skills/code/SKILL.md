@@ -1,6 +1,6 @@
 ---
 name: code
-description: Implement or modify Python, JavaScript, SCSS, templates, CLI, HTTP, or tests in the junior.guru repository. Use for code changes in this project; applies architecture, style, testing, and verification conventions.
+description: Implement or modify Python, JavaScript, SCSS, templates, CLI, HTTP, logging, or tests in the junior.guru repository. Use for code changes in this project; applies architecture, style, testing, and verification conventions.
 ---
 
 # Code in junior.guru
@@ -28,6 +28,12 @@ description: Implement or modify Python, JavaScript, SCSS, templates, CLI, HTTP,
 - For remote HTML, download representative pages as fixtures under tests and test against those fixtures. Add multiple fixtures for meaningful edge cases.
 - Aim for one descriptive assertion per test function unless impractical, such as checking several small parts of one complex structure.
 - Use `@pytest.mark.parametrize` when applicable. Include spaces after commas in parameter names, for example `"secondary_school, university, expected"`.
+
+## Logging
+
+- Set `LOG_LEVEL=debug` to show DEBUG logs. Default level is INFO; selected muted loggers default to WARNING. Configuration lives in `loggers.py`.
+- Log potentially sensitive diagnostic details only at DEBUG because CI normally logs INFO.
+- Never log actual secrets or other data unsafe for CI output. CI may temporarily enable DEBUG while diagnosing failures that cannot be reproduced locally.
 
 ## Verification
 
