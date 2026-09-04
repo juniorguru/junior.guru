@@ -42,6 +42,13 @@ from jg.coop.lib.location import (
                 ResponseRegionType.municipality,
             ),
         ),
+        (
+            "Národní pavilon Z – Výstaviště České Budějovice, České Budějovice & REUSE festival",
+            (
+                "České Budějovice",
+                ResponseRegionType.municipality,
+            ),
+        ),
     ],
 )
 def test_generate_queries_rewrite(location_raw, expected):

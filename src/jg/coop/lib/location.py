@@ -52,6 +52,7 @@ REWRITES_RE = {
     re.compile(r"\bBratislava\W+[IV]{1,3}\b", re.IGNORECASE): "Bratislava",
     re.compile(r"\bBrno\W+(Staré Brno|Střed)\b", re.IGNORECASE): "Brno",
     re.compile(r"\bCentral Bohemia\b", re.IGNORECASE): "Středočeský kraj",
+    re.compile(r"^.*\bČeské Budějovice\b.*$", re.IGNORECASE): "České Budějovice",
     re.compile(r"\bMetropolitan Area\b", re.IGNORECASE): "",
     re.compile(r"\bMoravia-Silesia\b", re.IGNORECASE): "Moravskoslezský kraj",
     re.compile(r"\bPraha\W+(východ|západ)\b", re.IGNORECASE): "Středočeský kraj",
