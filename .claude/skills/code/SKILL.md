@@ -1,6 +1,6 @@
 ---
 name: code
-description: Implement or modify Python, JavaScript, SCSS, templates, CLI, HTTP, logging, or tests in the junior.guru repository. Use for code changes in this project; applies architecture, style, testing, and verification conventions.
+description: Implement or modify Python, JavaScript, SCSS, templates, CLI, HTTP, logging, or tests. Use for code changes that require architecture, style, testing, and verification conventions.
 ---
 
 # Code in junior.guru
