@@ -57,7 +57,7 @@ template: main_handbook.html
     badge_icon='list-check',
     badge_text='Cvičení',
   ) -%}
-    Systém učení skrze cvičení a opakování. [Podloženo výzkumem](https://www.umimeto.org/podlozeno-vyzkumem).
+    Systém učení skrze cvičení a opakování. [Podloženo výzkumem](https://www.umimeto.org/shrnuti-vyzkum-umime).
   {%- endcall %}
 
   {{ link_card(
