@@ -150,7 +150,7 @@ Nemusíš se přebírat hromadami možností a přemýšlet, do které se vyplat
     badge_icon='list-check',
     badge_text='Cvičení',
   ) -%}
-    Uč se skrze cvičení a opakování. [Podloženo výzkumem](https://www.umimeto.org/podlozeno-vyzkumem).
+    Uč se skrze cvičení a opakování. [Podloženo výzkumem](https://www.umimeto.org/shrnuti-vyzkum-umime).
   {%- endcall %}
 
   {{ link_card(
