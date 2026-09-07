@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 4
 requires-python = "==3.13.*"
 
 [options]
@@ -97,15 +97,15 @@ wheels = [
 
 [[package]]
 name = "anyio"
-version = "4.15.0"
+version = "4.15.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "idna" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/ea/9a/c15a60547004a3f3cea20296c934f827ddd7bdba225a2e7e9fcb5ec48c80/anyio-4.15.0.tar.gz", hash = "sha256:b5c620ed540725e2579c31b17bb995b3bf02c9281c9cace04c7d186380bab85e", size = 276504, upload-time = "2026-09-02T21:46:36.957Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz", hash = "sha256:9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94", size = 276966, upload-time = "2026-09-05T10:42:39.44Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/21/a6/2b21ce5ebe4d8938a247c9b0dbb7271566ae559b01795c83ea4bb2660ed7/anyio-4.15.0-py3-none-any.whl", hash = "sha256:7ecd9937369ffce8bba0b5ccb9b3a9507b101b0ed50256aecfbab27e6c2acb99", size = 131908, upload-time = "2026-09-02T21:46:35.485Z" },
+    { url = "https://files.pythonhosted.org/packages/12/b8/4bd346e22b28902df4d651910f5242c28d84e4a5c2435ca5c3f797ed7e2e/anyio-4.15.1-py3-none-any.whl", hash = "sha256:6152fdbbf9a77fdec97731721bebf7c4c44f7c29b424b0065826173efc7ed101", size = 132079, upload-time = "2026-09-05T10:42:37.923Z" },
 ]
 
 [[package]]
@@ -956,7 +956,7 @@ wheels = [
 [[package]]
 name = "jg-beak"
 version = "0.0"
-source = { git = "https://github.com/juniorguru/beak.git#b99f672dd4e347f9b5b9a2d4beaddb8aa3969db2" }
+source = { git = "https://github.com/juniorguru/beak.git#3c7cb04641ba720a211a042b9242399821fed5ba" }
 dependencies = [
     { name = "click" },
 ]
@@ -1035,66 +1035,6 @@ dev = [
     { name = "ruff" },
     { name = "scour" },
     { name = "sqlite-utils" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "apify-client", specifier = ">=2.1.0" },
-    { name = "beautifulsoup4", specifier = ">=4.14.2" },
-    { name = "click", specifier = ">=8.3.0" },
-    { name = "cssselect", specifier = ">=1.3.0" },
-    { name = "czech-sort", specifier = ">=1.1.0" },
-    { name = "diskcache", specifier = ">=5.6.3" },
-    { name = "emoji", specifier = ">=2.15.0" },
-    { name = "favicon", specifier = ">=0.7.0" },
-    { name = "feedparser", specifier = ">=6.0.12" },
-    { name = "fiobank", specifier = ">=4.0.0" },
-    { name = "fonttools", specifier = ">=4.60.1" },
-    { name = "githubkit", specifier = ">=0.13.3" },
-    { name = "google-api-python-client", specifier = ">=2.184.0" },
-    { name = "google-auth", specifier = ">=2.41.1" },
-    { name = "gql", extras = ["httpx2"], specifier = ">=4.4.0b0" },
-    { name = "gspread", specifier = ">=6.2.1" },
-    { name = "httpx2", specifier = ">=2.12.0" },
-    { name = "ics", specifier = ">=0.8.0.dev0" },
-    { name = "jg-beak", git = "https://github.com/juniorguru/beak.git" },
-    { name = "jg-chick", git = "https://github.com/juniorguru/chick.git" },
-    { name = "jinja2", specifier = ">=3.1.6" },
-    { name = "lingua-language-detector", specifier = ">=2.1.1" },
-    { name = "livereload", specifier = ">=2.7.1" },
-    { name = "lxml", specifier = ">=6.0.2" },
-    { name = "markdown", specifier = ">=3.9" },
-    { name = "markdownify", specifier = ">=1.2.2" },
-    { name = "markupsafe", specifier = ">=3.0.3" },
-    { name = "mastodon-py", specifier = ">=2.1.4" },
-    { name = "mkdocs", specifier = ">=1.6.1" },
-    { name = "mkdocs-awesome-nav", specifier = ">=3.2.0" },
-    { name = "mkdocs-gen-files", specifier = ">=0.5.0" },
-    { name = "openai", specifier = ">=2.1.0" },
-    { name = "peewee", specifier = ">=3.18.2" },
-    { name = "pillow", specifier = ">=11.3.0" },
-    { name = "playwright", specifier = ">=1.55.0" },
-    { name = "pod2gen", specifier = ">=1.0.3" },
-    { name = "py-cord", extras = ["speed"], git = "https://github.com/Pycord-Development/pycord.git" },
-    { name = "pycircleci", specifier = ">=0.7.0" },
-    { name = "pydantic", specifier = ">=2.11.10" },
-    { name = "python-slugify", specifier = ">=8.0.4" },
-    { name = "pyyaml", specifier = ">=6.0.3" },
-    { name = "stripe", specifier = ">=13.0.1" },
-    { name = "tenacity", specifier = ">=9.1.2" },
-    { name = "tiktoken", specifier = ">=0.11.0" },
-]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "ghp-import", specifier = ">=2.1.0" },
-    { name = "pync", specifier = ">=2.0.3" },
-    { name = "pytest", specifier = ">=8.4.2" },
-    { name = "pytest-asyncio", specifier = ">=1.2.0" },
-    { name = "pytest-ruff", specifier = ">=0.5" },
-    { name = "ruff", specifier = ">=0.13.3" },
-    { name = "scour", specifier = ">=0.38.2" },
-    { name = "sqlite-utils", specifier = ">=3.38" },
 ]
 
 [[package]]
@@ -1513,11 +1453,11 @@ wheels = [
 
 [[package]]
 name = "peewee"
-version = "4.4.0"
+version = "4.5.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/46/98/919cd14a0115c4e81093d723faff2ed03145966c61c5c8dac13104d4d94f/peewee-4.4.0.tar.gz", hash = "sha256:ea3b013d2366d09bb0bd7b6223f0e3e34125caad5d4dfc23525c668c8aad7026", size = 817279, upload-time = "2026-08-23T11:43:40.093Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/1f/33/30b4496a8e35a2a9967418d1431bdee9a486e2460365965a270f679dc17f/peewee-4.5.0.tar.gz", hash = "sha256:4432dc35adc1c159b286205cddce6cff42adf0508e276f17dc57342bafcd0a72", size = 822868, upload-time = "2026-09-05T14:19:01.043Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/69/28/1ed7ca6ec0b45d0209346fb82d7145a5abf8fd9bdca6bcb75cb868601f43/peewee-4.4.0-py3-none-any.whl", hash = "sha256:c4d6bc13d9a9b22fe691f695f5a5d716645b4bd5387fef27b9cb53ef14fae1e1", size = 191247, upload-time = "2026-08-23T11:43:38.979Z" },
+    { url = "https://files.pythonhosted.org/packages/63/c8/6e24d15eec77a83ee1b86c3e5db8f2ddd6b3fe52bbd6ad5379c24c66d815/peewee-4.5.0-py3-none-any.whl", hash = "sha256:b210911b0535be1b7c0d1e1a276770575150c8dc981bff92eef494595a51696c", size = 193590, upload-time = "2026-09-05T14:18:59.948Z" },
 ]
 
 [[package]]
@@ -1698,8 +1638,8 @@ wheels = [
 
 [[package]]
 name = "py-cord"
-version = "2.8.2.dev50+g639693fd6"
-source = { git = "https://github.com/Pycord-Development/pycord.git#639693fd659b4ffe5f633a31b4cb2870cdcf4b59" }
+version = "2.8.2.dev51+ge0dcd8fe2"
+source = { git = "https://github.com/Pycord-Development/pycord.git#e0dcd8fe2795e538094d01cb2c3def32d3e03755" }
 dependencies = [
     { name = "aiohttp" },
     { name = "typing-extensions" },
