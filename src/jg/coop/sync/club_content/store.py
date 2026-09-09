@@ -138,9 +138,14 @@ def store_pin(message: ClubMessage, member: Member) -> None:
     logger["pins"].debug(
         f"Message {message.url} is pinned by member '{member.display_name}' #{member.id}"
     )
-    ClubPin.insert(
-        pinned_message=message.id, member=ClubUser.get_member_by_id(member.id)
-    ).on_conflict_ignore().execute()
+    try:
+        ClubPin.create(
+            pinned_message=message.id, member=ClubUser.get_member_by_id(member.id)
+        )
+    except peewee.IntegrityError:
+        logger["pins"].debug(
+            f"Message {message.url} apparently already pinned by member #{member.id}"
+        )
 
 
 @make_async
