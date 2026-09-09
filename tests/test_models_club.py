@@ -1,5 +1,6 @@
 from datetime import date, datetime, timedelta
 
+import peewee
 import pytest
 from discord import ChannelType
 
@@ -411,6 +412,37 @@ def test_user_first_seen_on_uses_pin_before_join_and_messages(test_db):
     create_message(2, user2, created_at=datetime(2021, 4, 15))
 
     assert user2.first_seen_on() == date(2021, 3, 15)
+
+
+def test_pin_rejects_duplicate_and_preserves_pinning_message(test_db):
+    user1 = create_user(1)
+    user2 = create_user(2)
+    message = create_message(1, user1)
+    pinning_message = create_message(2, user1)
+
+    # A pin already recorded together with its pinning message
+    ClubPin.create(
+        member=user2, pinned_message=message, pinning_message=pinning_message
+    )
+    # A duplicate (pinned_message, member) hits the unique index, which is what
+    # store_pin relies on to skip it (logging at debug instead of raising)
+    with pytest.raises(peewee.IntegrityError):
+        ClubPin.create(member=user2, pinned_message=message)
+
+    # The original row, with its pinning_message, is left untouched
+    assert ClubPin.count() == 1
+    assert ClubPin.get().pinning_message == pinning_message
+
+
+def test_pin_allows_different_members_on_same_message(test_db):
+    user1 = create_user(1)
+    user2 = create_user(2)
+    message = create_message(1, user1)
+
+    ClubPin.create(member=user1, pinned_message=message)
+    ClubPin.create(member=user2, pinned_message=message)
+
+    assert ClubPin.count() == 2
 
 
 @pytest.mark.parametrize(
