@@ -156,29 +156,28 @@ def _is_read(route) -> bool:
     before_sleep=before_sleep_log(logger, logging.WARNING),
 )
 async def _request_with_retry(request, route, *args, **kwargs):
-    # Pycord's own request loop retries 429, 5xx, and connection resets, but
-    # lets read timeouts propagate on the first try, so retry them here. Scoped
-    # to reads (see _check_mutations) as retrying a mutation could apply it twice.
+    """Perform a Discord read request, retrying on read timeouts.
+
+    Pycord's own request loop retries 429, 5xx, and connection resets, but lets
+    read timeouts propagate on the first try, so retry them here. Scoped to
+    reads (see _intercept_request) as retrying a mutation could apply it twice.
+    """
     return await request(route, *args, **kwargs)
 
 
-def _check_mutations(request):
+def _intercept_request(request):
     def is_dm_channel_creation(route) -> bool:
         return route.method == "POST" and route.path == "/users/@me/channels"
 
     @wraps(request)
     async def wrapper(route, *args, **kwargs):
-        if not (
-            mutations.is_allowed("discord")
-            or _is_read(route)
-            or is_dm_channel_creation(route)
-        ):
-            raise mutations.MutationsNotAllowedError(
-                f"Discord mutations not allowed! {route.method} {route.path}"
-            )
         if _is_read(route):
             return await _request_with_retry(request, route, *args, **kwargs)
-        return await request(route, *args, **kwargs)
+        if mutations.is_allowed("discord") or is_dm_channel_creation(route):
+            return await request(route, *args, **kwargs)
+        raise mutations.MutationsNotAllowedError(
+            f"Discord mutations not allowed! {route.method} {route.path}"
+        )
 
     return wrapper
 
@@ -188,7 +187,7 @@ class ClubClient(discord.Client):
         club_intents = discord.Intents(guilds=True, members=True, message_content=True)
         kwargs["intents"] = kwargs.pop("intents", club_intents)
         super().__init__(*args, **kwargs)
-        self.http.request = _check_mutations(self.http.request)
+        self.http.request = _intercept_request(self.http.request)
 
     @property
     def club_guild(self) -> discord.Guild:

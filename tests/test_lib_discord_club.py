@@ -239,8 +239,8 @@ def test_parse_discord_link(url, expected):
     ],
 )
 @pytest.mark.asyncio
-async def test_check_mutations(nothing_allowed, method):
-    @discord_club._check_mutations
+async def test_intercept_request(nothing_allowed, method):
+    @discord_club._intercept_request
     async def request(*args, **kwargs):
         return args, kwargs
 
@@ -262,8 +262,8 @@ async def test_check_mutations(nothing_allowed, method):
     ],
 )
 @pytest.mark.asyncio
-async def test_check_mutations_raises(nothing_allowed, method):
-    @discord_club._check_mutations
+async def test_intercept_request_raises(nothing_allowed, method):
+    @discord_club._intercept_request
     async def request(*args, **kwargs):
         return args, kwargs
 
@@ -283,10 +283,12 @@ async def test_check_mutations_raises(nothing_allowed, method):
     ],
 )
 @pytest.mark.asyncio
-async def test_check_mutations_doesnt_raise_if_discord_allowed(nothing_allowed, method):
+async def test_intercept_request_doesnt_raise_if_discord_allowed(
+    nothing_allowed, method
+):
     allow("discord")
 
-    @discord_club._check_mutations
+    @discord_club._intercept_request
     async def request(*args, **kwargs):
         return args, kwargs
 
@@ -299,8 +301,8 @@ async def test_check_mutations_doesnt_raise_if_discord_allowed(nothing_allowed, 
 
 
 @pytest.mark.asyncio
-async def test_check_mutations_allows_dm_channel_creation(nothing_allowed):
-    @discord_club._check_mutations
+async def test_intercept_request_allows_dm_channel_creation(nothing_allowed):
+    @discord_club._intercept_request
     async def request(*args, **kwargs):
         return args, kwargs
 
@@ -313,11 +315,11 @@ async def test_check_mutations_allows_dm_channel_creation(nothing_allowed):
 
 
 @pytest.mark.asyncio
-async def test_check_mutations_retries_read_timeouts(nothing_allowed, monkeypatch):
+async def test_intercept_request_retries_read_timeouts(nothing_allowed, monkeypatch):
     monkeypatch.setattr(discord_club._request_with_retry.retry, "wait", wait_none())
     calls = 0
 
-    @discord_club._check_mutations
+    @discord_club._intercept_request
     async def request(*args, **kwargs):
         nonlocal calls
         calls += 1
@@ -330,13 +332,13 @@ async def test_check_mutations_retries_read_timeouts(nothing_allowed, monkeypatc
 
 
 @pytest.mark.asyncio
-async def test_check_mutations_reraises_read_timeout_after_retries(
+async def test_intercept_request_reraises_read_timeout_after_retries(
     nothing_allowed, monkeypatch
 ):
     monkeypatch.setattr(discord_club._request_with_retry.retry, "wait", wait_none())
     calls = 0
 
-    @discord_club._check_mutations
+    @discord_club._intercept_request
     async def request(*args, **kwargs):
         nonlocal calls
         calls += 1
@@ -348,11 +350,11 @@ async def test_check_mutations_reraises_read_timeout_after_retries(
 
 
 @pytest.mark.asyncio
-async def test_check_mutations_does_not_retry_mutation_timeouts(nothing_allowed):
+async def test_intercept_request_does_not_retry_mutation_timeouts(nothing_allowed):
     allow("discord")
     calls = 0
 
-    @discord_club._check_mutations
+    @discord_club._intercept_request
     async def request(*args, **kwargs):
         nonlocal calls
         calls += 1

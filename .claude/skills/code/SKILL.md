@@ -18,6 +18,7 @@ description: Implement or modify Python, JavaScript, SCSS, templates, CLI, HTTP,
 - In `key=` callbacks such as `sorted()`, `max()`, and `min()`, prefer `attrgetter` or `itemgetter` over lambda when applicable.
 - Do not use `if TYPE_CHECKING:` blocks. Prefer direct imports and annotations.
 - Do not place imports inside functions or methods. Keep them at module level.
+- When a simple function opens with a long-ish explanatory comment, prefer a native Python docstring over a leading `#` comment block.
 - In SCSS, prefer `$spacer` over equivalent `map.get($spacers, 3)`.
 
 ## Tests
