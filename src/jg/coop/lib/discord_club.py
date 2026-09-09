@@ -1,5 +1,6 @@
 import asyncio
 import itertools
+import logging
 import re
 from collections.abc import AsyncGenerator
 from datetime import UTC, date, datetime, timedelta
@@ -10,6 +11,13 @@ from typing import TYPE_CHECKING, TypedDict
 
 import discord
 import emoji
+from tenacity import (
+    before_sleep_log,
+    retry,
+    retry_if_exception_type,
+    stop_after_attempt,
+    wait_random_exponential,
+)
 
 from jg.coop.lib import loggers, mutations
 
@@ -136,21 +144,41 @@ class ClubEmoji(StrEnum):
     SPONSOR_INTRO = "👋"
 
 
+def _is_read(route) -> bool:
+    return route.method in ("GET", "HEAD", "OPTIONS")
+
+
+@retry(
+    retry=retry_if_exception_type(TimeoutError),
+    wait=wait_random_exponential(max=60),
+    stop=stop_after_attempt(5),
+    reraise=True,
+    before_sleep=before_sleep_log(logger, logging.WARNING),
+)
+async def _request_with_retry(request, route, *args, **kwargs):
+    # Pycord's own request loop retries 429, 5xx, and connection resets, but
+    # lets read timeouts propagate on the first try, so retry them here. Scoped
+    # to reads (see _check_mutations) as retrying a mutation could apply it twice.
+    return await request(route, *args, **kwargs)
+
+
 def _check_mutations(request):
     def is_dm_channel_creation(route) -> bool:
         return route.method == "POST" and route.path == "/users/@me/channels"
 
     @wraps(request)
     async def wrapper(route, *args, **kwargs):
-        if (
+        if not (
             mutations.is_allowed("discord")
-            or route.method in ("GET", "HEAD", "OPTIONS")
+            or _is_read(route)
             or is_dm_channel_creation(route)
         ):
-            return await request(route, *args, **kwargs)
-        raise mutations.MutationsNotAllowedError(
-            f"Discord mutations not allowed! {route.method} {route.path}"
-        )
+            raise mutations.MutationsNotAllowedError(
+                f"Discord mutations not allowed! {route.method} {route.path}"
+            )
+        if _is_read(route):
+            return await _request_with_retry(request, route, *args, **kwargs)
+        return await request(route, *args, **kwargs)
 
     return wrapper
 

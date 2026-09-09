@@ -3,6 +3,7 @@ from datetime import UTC, date, datetime, timedelta
 
 import pytest
 from discord import ChannelType, Route
+from tenacity import wait_none
 
 from jg.coop.lib import discord_club
 from jg.coop.lib.mutations import (
@@ -309,6 +310,57 @@ async def test_check_mutations_allows_dm_channel_creation(nothing_allowed):
         (route, 1, 2),
         {"kwarg1": 3, "kwarg2": 4},
     )
+
+
+@pytest.mark.asyncio
+async def test_check_mutations_retries_read_timeouts(nothing_allowed, monkeypatch):
+    monkeypatch.setattr(discord_club._request_with_retry.retry, "wait", wait_none())
+    calls = 0
+
+    @discord_club._check_mutations
+    async def request(*args, **kwargs):
+        nonlocal calls
+        calls += 1
+        if calls < 3:
+            raise TimeoutError()
+        return "ok"
+
+    assert await request(Route("GET", "/something")) == "ok"
+    assert calls == 3
+
+
+@pytest.mark.asyncio
+async def test_check_mutations_reraises_read_timeout_after_retries(
+    nothing_allowed, monkeypatch
+):
+    monkeypatch.setattr(discord_club._request_with_retry.retry, "wait", wait_none())
+    calls = 0
+
+    @discord_club._check_mutations
+    async def request(*args, **kwargs):
+        nonlocal calls
+        calls += 1
+        raise TimeoutError()
+
+    with pytest.raises(TimeoutError):
+        await request(Route("GET", "/something"))
+    assert calls == 5
+
+
+@pytest.mark.asyncio
+async def test_check_mutations_does_not_retry_mutation_timeouts(nothing_allowed):
+    allow("discord")
+    calls = 0
+
+    @discord_club._check_mutations
+    async def request(*args, **kwargs):
+        nonlocal calls
+        calls += 1
+        raise TimeoutError()
+
+    with pytest.raises(TimeoutError):
+        await request(Route("POST", "/something"))
+    assert calls == 1
 
 
 def test_get_missing_reactions():
