@@ -138,9 +138,9 @@ def store_pin(message: ClubMessage, member: Member) -> None:
     logger["pins"].debug(
         f"Message {message.url} is pinned by member '{member.display_name}' #{member.id}"
     )
-    ClubPin.create(
+    ClubPin.insert(
         pinned_message=message.id, member=ClubUser.get_member_by_id(member.id)
-    )
+    ).on_conflict_ignore().execute()
 
 
 @make_async

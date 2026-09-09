@@ -538,6 +538,9 @@ class ClubPin(BaseModel):
         ClubMessage, backref="_pin", null=True, unique=True
     )
 
+    class Meta:
+        indexes = ((("pinned_message", "member"), True),)
+
     @classmethod
     def count(cls):
         return cls.select().count()
