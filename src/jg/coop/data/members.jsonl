@@ -319,6 +319,6 @@
 {"month": "2026-09", "name": "subscription_types_sponsor", "count": 4}
 {"month": "2026-09", "name": "subscription_types_trial", "count": 8}
 {"month": "2026-09", "name": "subscription_types_yearly", "count": 24}
-{"month": "2026-09", "name": "subscriptions_quits", "count": 2}
+{"month": "2026-09", "name": "subscriptions_quits", "count": 3}
 {"month": "2026-09", "name": "subscriptions_signups", "count": 1}
-{"month": "2026-09", "name": "subscriptions_trials", "count": 8}
+{"month": "2026-09", "name": "subscriptions_trials", "count": 10}
