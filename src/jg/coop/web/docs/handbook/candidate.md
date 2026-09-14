@@ -1626,4 +1626,14 @@ Vkládám tématický článek o Červené Královně, bo to co mě opravdu zaj�
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1524513312639811725
+zahlédla jsem na LinkedInu
+---
+
+
+--- https://discord.com/channels/769966886598737931/789107031939481641/1524116283971600524
+Gergely Orosz prinasi zpravy ze zahranici. No doufam, ze takovahle depka k nam nedorazi moc rychle a ze je to tu prece jenom zatim o neco lepsi 🙏 https://newsletter.pragmaticengineer.com/p/tech-jobs-market-in-2026-part-3-hiring
+---
+
+
 #} -->

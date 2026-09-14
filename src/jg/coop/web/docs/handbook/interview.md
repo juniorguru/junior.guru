@@ -1222,4 +1222,14 @@ https://www.linkedin.com/posts/matejmatolin_v%C4%9Bdci-vzali-2-245-re%C3%A1ln%C3
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1150481852516290641/1530253472924958730
+Jelikož jsem si pohovor nahrála, udělala jsem přepis a soubor jsem předala Chaťulo s vysokým reasoningem (GPT-5.6 Thinking). Požadovala jsem analýzu, aniž by mi nadržoval, aby zhodnotil pohovor celkově, vyzdvihnul silná místa a upozornil na slabiny. Myslím, že to byl velice užitečný výstup, kdy v podstatě mi přijde to zhodnotil celkem realisticky. Po pravdě vyplynulo, že jsem působila méně zkušeně v AD věcech (kde reálně mám méně zkušeností) a k celkovému dojmu přispěla moje komunikace, která má tendenci ke shazování toho co umím a upozorňování na to, co není ideální a hodně vyzdvihuji učení a pak to vypadá, že jsem spíše jak věčný žák než že jdu prodat nějakou svou úroveň. V kostce. "Největším problémem nebyl počet špatných odpovědí. Byl to způsob, jakým ses prezentovala." - a na tom budu teda muset zapracovat.
+---
+
+
+--- https://discord.com/channels/769966886598737931/788826407412170752/1524513312639811725
+zahlédla jsem na LinkedInu
+---
+
+
 #} -->

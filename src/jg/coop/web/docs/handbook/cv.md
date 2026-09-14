@@ -698,4 +698,41 @@ https://www.linkedin.com/posts/matejmatolin_v%C4%9Bdci-vzali-2-245-re%C3%A1ln%C3
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1526297283203694748
+Nasdilim tady prompt, ktery se mi dnes osvedcil (tedy ve smyslu, ze mi vystup prisel uzitecny, jestli mi to opravdu pomuze ziskat praci jeste nevim). Ten feedback byl brutalni a vedl ke trem iteracim meho motivacniho emailu a CV.
+```
+You are a hiring manager and senior technical lead at ... in Prague. You are hiring for a ... role. 
+A candidate has applied with the cover letter and CV below. You have never met them and know nothing 
+beyond what is here. Rely ONLY on this material — assume no other context.
+
+Read them the way you actually would — letter first, then CV — and give me a candid assessment:
+
+1. First impression in ~10 seconds: who is this person, and are they plausibly right for this role?
+2. Does the writing read as authentic and human, or does any of it read as generic or
+   AI-generated? Judge the cover letter and the CV separately.
+3. Does the cover letter help or hurt the application? What does it do well, and where does it
+   fall short? What would you still want to ask after reading it?
+4. Strengths for THIS role, and the biggest concerns or gaps you would probe in an interview.
+5. Bottom line: would you invite them to interview? What 2–3 questions would you most want answered?
+
+Be honest and specific. I would rather hear the problems than be reassured.
+
+======================================================================
+THE ROLE (condensed from the job posting)
+======================================================================
+...
+
+======================================================================
+THE COVER LETTER
+======================================================================
+...
+
+======================================================================
+THE CV
+======================================================================
+...
+```
+---
+
+
 #} -->

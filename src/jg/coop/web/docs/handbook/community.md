@@ -175,4 +175,24 @@ Frontendisti nebo Pyvo většinou probíhají tak, že přijdeš, je nějaký č
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1546651700272832522/1546765335087157279
+Ahoj, ak tomu spravne z kontextu rozumiem tak este stale chodis na strednu skolu. Ja som sice na strednej neprogramoval ale pocital priklady z matenatiky, co bolo snad estd horsie na socializovanie 😁. Pokial planujes ist na vysoku skolu, za to ze si na gympli mozno este budes vdacny.
+
+Jedna vec ktoru ti mozem doporucit: existuju rozne sutaze a korespondencne seminare. Pokial si chces najst kamosov, s ktorymi sa budes bavit o programovani, tam su vsetci takyto ludia. Tu su priklady: 
+ksp https://ksp.mff.cuni.cz/
+fiks https://fiks.fit.cvut.cz/
+ksi https://ksi.fi.muni.cz/
+
+Tieto seminare typicky organizuju univerzity pre stredoskolakov, mas vacsinou 2 sady uloh v priebehu skolskeho roku a najlepsi riesitelia na konci skolskehk roku postupia na niekolkodnove sustredenia kde sa vsetci stretnu :). Okrem toho vacsinou organizuju aj rozne vylety, jednodnove vylety a dalsie aktivity v priebehu roku.
+
+Ja som sice programatorske seminare neriesil, riesil som tie matematicke, ale okolo seminarov a sustredeni sa tocil cely moj svet a zpetne vyhodnodnocujem ze to bola najlepsia vec co sa ma v zivote stretla a moji najlepsi kamosi su dodnes z tohoto prostredia.
+---
+
+
+--- https://discord.com/channels/769966886598737931/806215364379148348/1517999158806577243
+Zajímavá myšlenka.
+> Ahoj, už příští týden bude další akce na podporu všech, kteří jsou na prahu svojí kariéry a přemýšlejí jak dál. Tentokrát s víc jak desítkou zkušených mentorek a mentorů, kteří jsou připravení sdílet svoje zkušenosti a poradit se startem v UX/designu 🙂 Link na registraci. https://meetu.ps/e/Q5gRq/xxfsZ/i
+---
+
+
 #} -->

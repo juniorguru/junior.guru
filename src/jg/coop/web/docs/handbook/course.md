@@ -1120,4 +1120,9 @@ Jak moc se to chytí na trhu (ono se to pochopitelně netýká zdaleka jenom IT,
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1517973492450984010
+free kurzy o AI, pokud někdo prozkoumáte, dejte vědět jaký to je https://bluedot.org/courses/future-of-ai
+---
+
+
 #} -->

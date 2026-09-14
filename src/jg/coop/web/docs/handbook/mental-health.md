@@ -340,4 +340,11 @@ Podle toho bych si nějak rozvrhl ten tvůj učící den, pokud se učíš fakt 
 ---
 
 
+--- https://discord.com/channels/769966886598737931/864434067968360459/1519993655568367647
+Na svém kanálu jsem natočila rozhovor s týpkem, který z Indie dostal práci pro Slack ve San Franciscu jako Staff Engineer, a přitom trpí syndromem podvodníka a nikdy si nevěřil. Bavili jsme se o vyhoření, syndromu podvodníka a jak mu mentorství pomohlo v kariéře: https://youtu.be/xnAil3y1yNg
+
+Pokud jste byli v roce 2023 na PyCon CZ nebo beginners' day na EuroPythonu, tak jste se s ním mohli potkat. Docela inspirativní člověk, mně osobně taky dal dost rozumých rad do života. 🙂
+---
+
+
 #} -->

@@ -795,4 +795,11 @@ https://workweave.dev/blog/hiring-only-senior-engineers-is-killing-companies
 ---
 
 
+--- https://discord.com/channels/769966886598737931/806215364379148348/1542831367644119060
+*Jak se zorientovat ve velkém až obřím projektu?* Stáhnu repo z Githubu (protože demonstrace by asi měla být na open source kvůli NDA atd.), zkusím zkompilovat, mám požadavek na drobnou změnu, musím dohledat, kam pro ni šáhnout a jak si ověřit, že jsem to místo odhadl dobře a nerozbiju nic jiného atd. Prostě praktický postup, který ten člověk používá. A dalo by se to asi snadno občas zopakovat s jiným hostem, protože každý k tomu bude přistupovat trochu jinak (plus bude jinak využívat AI, protože tu je potřeba dneska zmínit u všeho, že 🙂 ).
+
+Ale u toho by mohl být trochu problém, jak se vejít do jednoho večera (± hodina až dvě).
+---
+
+
 #} -->

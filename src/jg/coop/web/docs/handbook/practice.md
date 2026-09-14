@@ -1149,4 +1149,82 @@ Je to jak Duolingo, ale s jednoduchym vysvetlenim a hned za tim kratke testiky. 
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1548030738232901645
+od 3b1b je super v podstate vsechno, vcetne neuronovych siti a jak funguje LLM, taky doporucuju
+---
+
+
+--- https://discord.com/channels/769966886598737931/806215364379148348/1542778821949005925
+Ahoj, me by zajimalo treba neco na tema Co se deje pri buildu programu. Nevim, jestli to jde obecne.. napr compiler vs interpreter, co je vlastne build, co je DLL, co je .exe… jak je vlastne mozne, ze se treba do instalacky posklada i vic veci nez jen zakladni program… me by to zajimalo kvuli buildu programu v Delphi, ale je mi jasne, ze tady nikdo dalsi takovy asi neni 😀
+---
+
+
+--- https://discord.com/channels/769966886598737931/1530907480232693871/1531749985434075337
+Jinak docela hezký zdroj dat lze taky najít ve státní správě. RUIAN adresy jsou docela čistá data, myslím, že se snad dají i exportovat jako csv - a pokud pracuješ s PostgreSQL, ten umí csv soubory elegantně nahrávat.
+
+https://nahlizenidokn.cuzk.gov.cz/StahniAdresniMistaRUIAN.aspx
+
+Jsou to teda jen adresy, ale uchovává to dost detailů, včetně kódovýck označení jednotlivých prvků.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1530907480232693871/1530994355215532103
+pro nějaké to základní procvičování/opakování mám připravené toto https://sqlbolt.com/ ☺️
+---
+
+
+--- https://discord.com/channels/769966886598737931/1530907480232693871/1530923404079923211
+Ahoj, nevím jak na tom reálně jsi, ale už jsme něco probírali s lidmi odtud v pokecu apod... pokud chceš si zkusit práci s DB a pak nad tou DB zkoušet dotazy našli jsme perfektní veřejné data která jsou docela stálá. Jedná se o stránky poslanecké sněmovny (asi trochu nuda) -> Zde najdeš popis dat: https://www.psp.cz/sqw/hp.sqw?k=1301
+Zde najdeš ZIP soubor s .unl soubory což jsou CSV s oddělovačem "|" -> https://www.psp.cz/eknih/cdrom/opendata/poslanci.zip
+No a pokud chceš si to zkusit udělat DB tak doporučuji tento program se musí instalovat: https://letos.org/
+
+Nebo možná je tohle pro tebe overkill, tak ti mohu nasdílet pak hotovou DB nad kterou si můžeš zkoušet SQL dotazy - třeba v pythonu, ten má sqlite nativně.
+
+Jaká je tvá cesta?
+Co se týče podkladů doporučuji https://www.w3schools.com/sql/
+Nebo u czechitas to umí dobře: https://www.czechitas.cz/kurzy/ziskej-v-datech-jistotu-zaklady-sql
+nebo krátkodobé od czechitas: https://www.czechitas.cz/kurzy/uvod-do-datove-analyzy
+Nebo tady ještě u ITnetwork ale pokud nezaplatíš tak máš omezené možnosti: https://www.itnetwork.cz/sql
+
+Snad jsem trochu pomohl.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1530907480232693871/1530930506559000630
+https://discord.com/channels/769966886598737931/1530930154925199540
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1534452237957599273
+Teorie grafů vysvětlená na sekání trávníku https://pudding.cool/2026/06/mow/
+---
+
+
+--- https://discord.com/channels/769966886598737931/797040163325870092/1528449920283971604
+znam, pisu o tom tady: https://discord.com/channels/769966886598737931/797040163325870092/1528010384953573596
+A jeste existuje treba https://store.steampowered.com/app/1885690/Virtual_Circuit_Board/
+---
+
+
+--- https://discord.com/channels/769966886598737931/797040163325870092/1528009023193088061
+https://www.youtube.com/watch?v=goclUECM2ds Jestli někoho zajímá low-level fungování počítačů, tak hodně doporučuji early access hru **Turing Complete.** Můžu říct, že  má opravdu velký přesah i do programování a myslím že se budete poté na dost věcí ohledně PC dívat jinak. Začínáte u základních součástek ze kterých se staví počítač (NAND brány), poté z těchto bran stavíte další brány (OR, NOR, AND atd.)... V pozdějších úrovních stavíte vlastní CPU až nakonec postavíte funkční PC. Vždy mě zajímalo jak počítače fungují a byl to pro mě dlouho dobu takový blackbox, kterému jsem nerozuměl, do té doby než jsem zkusil tuhle hru, jestli vás něco podobného zajímá tak give it at try, nebudete litovat 👍  
+
+(btw tu sčítačku aktivních vstupů na obrázku jsem včera postavil z hlavy a byl to upřímně nejvíc satisfying moment co jsem za poslední dobu při hraní her měl 😂 )
+---
+
+
+--- https://discord.com/channels/769966886598737931/806621830383271937/1519443296416567316
+Aplikace, která umožňuje si testovat SQL a ostatní data engineer znalosti na "prý" reálných datech z pohovorů.
+Vibe-coded, prý to bude stále free - někomu by mohlo přijít zajímavé. :))
+https://datadriven.io
+
+Narazil jsem na to na redditu https://www.reddit.com/user/datadriven_io/comments/1smdi1g/free_interview_prep_specifically_for_data/?p=1&impressionid=5359577545119553042
+---
+
+
+--- https://discord.com/channels/769966886598737931/1421171257164038231/1519310337805914133
+v skratke ? Data Analyst rieši napr. prečo klesli predaje minulý mesiac o 15%, Data Scientist rieši ktorí zákazníci pravdepodobne odídu alebo aký bude dopyt budúci mesiac, Data Engineer rieši ako dostať dáta z rôznych systémov do jedného napr. data warehouse:)
+---
+
+
 #} -->

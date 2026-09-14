@@ -695,4 +695,85 @@ https://www.miroslavudan.com/blog/jak-jsem-sam-za-pet-tydnu-postavil-saas-ktery-
 tohle je ale clovek s mega zkusenostmi z predchozich firem, vycepovany, a AI ho dokaze posunout strasne moc, protoze i kdyz neumi programovat, tak ma nasbirany unikatni koktejl znalosti, ktery muze tou AI strasne moc znasobit. clovek, ktery nema „privilegia“ (napriklad si nezaplati nejaky brutal tarif u LLM) a „zkusenosti“ (nevi ze existuje security a co ma pohlidat, nevi co je validace formulare, atd. on tam predpoklada hromady veci jako automaticke, ale on akorat proste nevidi tu bednu na ktere stoji, ze jim vubec rozumi, nebo ze vi, ze existuji) a prodava to jako navod pro kazdeho. na jednu stranu je to uzasne co jde, na druhou stranu tohle proste neni navod pro kazdeho a pokud nekdo nema ty jeho zkusenosti, tak vytvori zmetek, ktery se za tyden rozpadne. nebo """Když se ptám „je tahle funkce fakt nutná?“, chci slyšet i odpověď „není“. Nejlevnější funkce je ta, kterou neuděláte.""" to jsou vsechno veci, ktere by si rekl programator, a on si je rekne taky, ale proto, ze stravil s programatory strasne moc casu v jedne mistnosti, stejne tak testy, atd. on chape ty koncepty. """zírám na localhost""" je normalne programátorská hantýrka, zejo. Pise """Rozsekejte práci na malé kusy""" a to je presne ale mysleni, ktere se roky uci programator. on to pise jako ze to je jednoduchy, ale ono neni.
 https://honzajavorek.cz/blog/jak-programator-sam-za-pet-tydnu-postavil-saas-ktery-mu-loni-nacenili-na-dva-miliony/
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1543874915088732190
+> If a developer wants to learn Java, they should probably not start with Spring Boot. If they want to learn JavaScript fundamentals, they should not start with React. If they want to become highly adept at CSS, they should not start with Tailwind. LLMs could be considered the ultimate leaky abstraction.
+> 
+> My advice here is very similar to my previous prescription.
+> If a developer wants to become an expert in programming, they should largely disregard the pure code generation capabilities of these models, and instead use them for interactive documentation, dynamic tutorial generators, and Socratic exercises.
+https://larsfaye.com/articles/ai-coding-will-prevent-expertise
+---
+
+
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1534260554066300991
+Tohle ted v jedne diskuzi vypadlo z Claude Code ohledne uceni s pomoci AI. Nejde o nic prevratneho (tu zvyraznenou cast tady jinymi slovy tvrdim uz dlouho), ale treba se nekomu ta myslenka takhle sepsana bude hodit:
+
+> Ask it to test you, not just tell you. After it explains something, say "now ask me three questions about this." **Reading an explanation feels like learning, but mostly it isn't** — it makes sense while you're reading and it's gone a week later. Getting a question wrong is what makes it stick.
+> 
+> Before you run code the AI wrote for you, say what it does. One sentence, out loud. If you just run it and it works, you never find out which bits you didn't follow — it all feels fine either way. Predicting first tells you which lines you actually understood and which ones you were only guessing at.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1533375412590088222
+Jinými slovy, jak to chápu já, nebuďte smutní z FOMO, pokud nefrčíte agenty, protože se to mění tak rychle, že za pár měsíců byste stejně tyhle znalosti povětšinou zahodili.
+
+Ale zase bych řekl, že spustit aspoň jednou jednoho agenta a nechat ho něco udělat, třeba v Cursoru, už by mělo být v základu dovedností juniora (jako že si na to aspoň sáhl, ví co to je, viděl to, zkusil to).
+---
+
+
+--- https://discord.com/channels/769966886598737931/806621830383271937/1532666269910962298
+Parádní GUI nad vaším local AI harnessem - https://t3.codes
+Kudos to Cookielab za ukázku jeho používání. (není veřejně dostupný myslím)
+- ať už máte cloud, raspberry pi, etc. - nainstalujete Claude Code, Codex, spravujete odkudkoliv z GUI podobné Claude a Codex App
+- ještě víc zjednodušeně - sessionu v Claude Code mám přímo dostupnou na mobilu nebo tabletu (vidí to jen nově spuštěné přes t3 code, ne starší již rozpracované sessions)
+---
+
+
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1529407802966282311
+jasný, když jsme u nás ve firmě přemýšleli, jak přeložit "harness" do češtiny pro ne-technické uživatele, mě se moc líbilo slovo "výbava" - představ si to jako v autě. Každý auto má motor (model, třeba sonnet, opus, gpt...), ale některý auta mají klimu, některý autorádio, některý vyhřívaný sedačky - to je ta výbava (harness) toho auta. 
+
+Stejně tak máš harness modelů: sada nástrojů a nastavení prostředí, ve kterém a se kterými LLM agent pracuje. Je to všechno, co kolem modelu postavíš, aby dokázal samostatně pracovat. Volant, pedály, převodovka, navigace, senzory, pravidla provozu (když zůstaneme u příměru s autem 🙂 ). Model je "mozek", harness je systém kolem nějk, který mu dává nástroje, kontext, pravidla a pracovní postup.
+
+Agentic harness je softwarové zázemí kolem AI modelu, které z něj udělá agenta schopného používat nástroje, kontrolovat svou práci a postupovat k cíli.
+
+Claude code má například nějaké nástroje v sobě (umí spouštět bash / powershell příkazy, umí editovat, číst soubory, umí spouštět subagenty, má nějaké agenty v sobě definované, má nějaké defaultní skilly....), nějaké mu dodáš (vlastní custom skilly, napojení na externí systemy, aby si dokázal třeba číst dokumentaci, shánět informace), nějaké mu nastavíš (opravnění: co ne/může dělat, kam ne/může sahat), nějaké vlastní nástroje mu dodáš (hooky: když claude code udělá nějakou akci, třeba zedituje nějaký soubor, ty na tu akci spustíš třeba nějaký script, třeba test, formátování, deterministickou kontrolu správnosti...) - a to všechno se dá navzájem kombinovat.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1527620709101207624
+Za mě vzít OpenCode Go subscription (10 USD, není to Čína) a s ním se pomocí /teach skillu od Matta Pococka tyhle věci naučit. Pak s tím udělám i analýzu mého PC a vymyslíme co a jak trénovat. Jsou i fakt miniaturní modely. Dokonce jsem teď viděl video, jak si trénovat na mobilu.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1075492184373080084/1518551904353910836
+Jo, vlastně bych si na to dneska už vytvořil skill... formou že bych s nim prošel jeden problém, co se chci naučit... řeknu mu ať se to takhle naučí mi podávat, a pak si z podobných skillů sestavil vlastní kurz
+---
+
+
+--- https://discord.com/channels/769966886598737931/1075492184373080084/1518149806021804103
+Me prijde, ze prave AI nekdy pouzivam az moc, ze jsem zlenivela a chci mit vsechno rychle, misto abych se chvili zamyslela a "zkusila" na to prijit sama, hned to resim s AI. Ano, necham si to vysvetlit, abych to chapala atd., ale v podstate mi to serviruje bez extra moji namahy a tady mi prijde, ze je to podobne jak kdyz clovek driv sledoval tutorialy o programovani, opisoval kod a rikal si, jo tomu "rozumim". Akorat ze vubec. 
+
+Kdezto kdyz necemu dam cas a vic usili, prectu si dokumentaci, zkusim cast napsat sama, vyzkousim jestli to funguje, pripadne proc to vlastne nefunguje. V te hlave se mi to lepe usadi. 
+
+Pokladam si vzdycky otazku, zvladla bych tohle bez AI? 
+
+Momentalne nejvic AI pouzivam hlavne na frontend, protoze to neni moje hlavni zamereni, ale na backendovy veci se snazim zpomalit, porozumet tomu a AI vyuzivat stridmeji.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1075492184373080084/1518163059154223126
+Presne pred timhle varuju ty, kteri se uci jenom s LLM - dava to prilis rychle odpovedi, clovek se nad problemem nestihne dostatecne zamyslet a uz ma odpoved. A "nechat si to vysvetlit potom" je porad pasivni forma uceni a v podstate neco jako tutorial hell, ale mnohem, mnohem rychlejsi. A mozek se neuci rychle, potrebuje cas ty informace zpracovat.
+Nerikam, ze LLM je spatny nastroj, urcite to jde spravnym promptem pouzit lip i pro uceni, ale clovek musi byt obezretny, neformulovat otazky primo, ale typem "pomoz mi prijit na to jak, se dela xx tak, abych to pochopil, nedavej mi odpoved" - a tohle imho stoji spoustu zbytecneho usili - clovek pak misto toho, aby premyslel nad tim svym puvodnim problemem, tak resi to, jak to napromptovat.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1075492184373080084/1519070426595332307
+Skill je něco, co se vyvolá až podle potřeby, asi bych to směřoval spíš k těm základním AGENTS.md (CLAUDE.md) v projektu, který by byl pro to učení, případně pokud chci všechno jen učení, tak v obecném souboru pro uživatele (globálním). Ale to je asi detail.
+---
+
+
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1517973492450984010
+free kurzy o AI, pokud někdo prozkoumáte, dejte vědět jaký to je https://bluedot.org/courses/future-of-ai
+---
+
+
 #} -->
