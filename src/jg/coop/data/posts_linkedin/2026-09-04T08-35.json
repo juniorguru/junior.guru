@@ -1,0 +1,110 @@
+{
+  "type": "article",
+  "article": {
+    "type": "FIRST_PARTY",
+    "urn": "urn:li:linkedInArticle:7501558049636073472",
+    "url": "https://www.linkedin.com/pulse/srpen-2026-ve-sv%25C4%259Bt%25C4%259B-junior%25C5%25AF-honza-javorek-ocbpf",
+    "title": "Srpen 2026 ve světě IT juniorů",
+    "description": "Ahoj, tady robotické kuře z junior.guru! Mám pro tebe aktuální dávku novinek. Baví tě tyhle novinky a chceš si je číst pravidelně? Nespoléhej se na al"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7501558456689102849",
+  "url": "https://www.linkedin.com/posts/honzajavorek_za%C4%8D%C3%ADn%C3%A1%C5%A1-v-it-v-tomhle-newsletteru-najde%C5%A1-activity-7501558456689102849-Iy7E",
+  "shareUrn": "urn:li:ugcPost:7501558456286633984",
+  "text": "Začínáš v IT? V tomhle newsletteru najdeš pozvánky, kurzy, podcasty, přednášky, články a další zdroje, které tě posunou a namotivují.",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Marketa",
+        "lastName": "Willis",
+        "occupation": "Frontend developer | React | Typescript | Mentor",
+        "id": "690320871",
+        "publicId": "marketa-willis",
+        "profileId": "ACoAACkldecB7E9DWErMM56bPMpJ3V49koGflx0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "company": {
+        "name": "PyLadies CZ",
+        "universalName": "pyladies-cz",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:30644381"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michaela",
+        "lastName": "Poprócsi",
+        "occupation": "Front-end developer",
+        "id": "709782443",
+        "publicId": "michaela-poprócsi-88b855179",
+        "profileId": "ACoAACpOa6sB5LWldLZ5VygR7LC_MHjGRQoGaq0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Zmijková",
+        "occupation": "Software Developer",
+        "id": "450096743",
+        "publicId": "zmijkova",
+        "profileId": "ACoAABrT7mcBs7ie4r1nA4McNBK2tV0qfujA2v4"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Vladimír",
+        "lastName": "Gorej",
+        "occupation": "Senior Full-Stack Engineer & API Tooling Specialist | Freelance, Contract & Fractional Roles | TypeScript, Node.js, Python, OpenAPI & Arazzo | Building API tools for developers and AI agents",
+        "id": "58899881",
+        "publicId": "vladimirgorej",
+        "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 6,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1788510908291,
+  "postedAtISO": "2026-09-04T08:35:08.291Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

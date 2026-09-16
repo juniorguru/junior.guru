@@ -2,31 +2,42 @@
   "type": "linkedinVideo",
   "linkedinVideo": {
     "videoPlayMetadata": {
-      "duration": 30000,
       "thumbnail": {
         "artifacts": [
           {
             "width": 720,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEiSu1SG_tPBA",
-            "fileIdentifyingUrlPathSegment": "high/B4DZ6247icKUBM-/0/1781184840046?e=1788829200&v=beta&t=YQFIm1ZYocAxFPQbTahVEdayXbBxGRns7Ajb9DgmU3M",
-            "expiresAt": 1788829200000,
+            "fileIdentifyingUrlPathSegment": "high/B4DZ6247icKUBM-/0/1781184840046?e=1790038800&v=beta&t=mAnMJfjuf-AVo7EW40tUTU632Fi3_yhzOZiPgS5-6uU",
+            "expiresAt": 1790038800000,
             "height": 1280
           },
           {
             "width": 360,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEiSu1SG_tPBA",
-            "fileIdentifyingUrlPathSegment": "low/B4DZ6247icKUBI-/0/1781184840046?e=1788829200&v=beta&t=aMTnEdxSLctsLbBFN-gD2gHom46AFzgZN5VFQ7SxPRY",
-            "expiresAt": 1788829200000,
+            "fileIdentifyingUrlPathSegment": "low/B4DZ6247icKUBI-/0/1781184840046?e=1790038800&v=beta&t=sPhytcsufJ-QMQwBzWoUeAcpwS8W7SQwxa3KR1E98u8",
+            "expiresAt": 1790038800000,
             "height": 640
           }
         ]
+      },
+      "gifThumbnail": {
+        "artifacts": [
+          {
+            "width": 360,
+            "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEiSu1SG_tPBA",
+            "fileIdentifyingUrlPathSegment": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/video-gif-5sec-360/B4DZ6247icKUCU-/0/1781184840046?e=1790038800&v=beta&t=ca8hR4aflyMEGVTtKY7wBb4TEAR4wJ2iEg4Dl4U29H4",
+            "expiresAt": 1790038800000,
+            "height": 640
+          }
+        ],
+        "rootUrl": ""
       },
       "progressiveStreams": [
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/mp4-720p-30fp-crf28/B4DZ6247icKUB8-/0/1781184842453?e=1788829200&v=beta&t=DBIn2rf68akP9vvINKS-1WY4SCKZ9kk7yELITCw4EVo",
-              "expiresAt": 1788829200000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/mp4-720p-30fp-crf28/B4DZ6247icKUB8-/0/1781184842453?e=1790038800&v=beta&t=b6osKzmQ5llhayAFib3JARe6FmoxbJn9klXNceJ7QZ8",
+              "expiresAt": 1790038800000
             }
           ],
           "size": 0,
@@ -38,8 +49,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/mp4-640p-30fp-crf28/B4DZ6247icKUBk-/0/1781184842453?e=1788829200&v=beta&t=seLFXKhU77cWxP2phvz5R531fw0L96jB2Mwn9rfGRwU",
-              "expiresAt": 1788829200000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/mp4-640p-30fp-crf28/B4DZ6247icKUBk-/0/1781184842453?e=1790038800&v=beta&t=QeCrqBB9RI0GTU1y9fH4l682sOnPwm84-ZWtezyULyY",
+              "expiresAt": 1790038800000
             }
           ],
           "size": 0,
@@ -50,8 +61,6 @@
         }
       ],
       "transcripts": [],
-      "entityUrn": "urn:li:digitalmediaAsset:D4D05AQEiSu1SG_tPBA",
-      "provider": "UGC",
       "aspectRatio": 0.5625,
       "media": "urn:li:digitalmediaAsset:D4D05AQEiSu1SG_tPBA",
       "adaptiveStreams": [
@@ -61,8 +70,8 @@
           "mediaType": "application/vnd.apple.mpegURL",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEiSu1SG_tPBA/CeJxzMnGJMjMyMc9M9g51KdbVcULmh6LxI9H4yWj8bF0AVCcVdA?e=1788829200&v=beta&t=BpHWMCh1dBODw5ms_VcxSpU7u4q4AGGZq02xn-GYDGc",
-              "expiresAt": 1788829200000
+              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEiSu1SG_tPBA/CeJxzMnGJMjMyMc9M9g51KdbVcULmh6LxI9H4yWj8bF0AVCcVdA?e=1790038800&v=beta&t=Zzxffn4RhF6YMmODat7q3W_zlGkZzCOgbyreSY4Aehk",
+              "expiresAt": 1790038800000
             }
           ]
         },
@@ -72,12 +81,46 @@
           "mediaType": "application/dash+xml",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEiSu1SG_tPBA/CeJxzMnGJMjMyMc9M9g51KdbVcULmh6LxI9H4yWj8bF0AVCcVdA?e=1788829200&v=beta&t=G3vlRoA28C5pOMR0Iil5X31123N1C_HZZU8H4MhfYv4",
-              "expiresAt": 1788829200000
+              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEiSu1SG_tPBA/CeJxzMnGJMjMyMc9M9g51KdbVcULmh6LxI9H4yWj8bF0AVCcVdA?e=1790038800&v=beta&t=xrJeTReRyi80sQO05K5m80y7rzyjYFeb8oLD8LNLVBY",
+              "expiresAt": 1790038800000
             }
           ]
         }
-      ]
+      ],
+      "duration": 30000,
+      "thumbnailWithPlayButton": {
+        "artifacts": [
+          {
+            "width": 720,
+            "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEiSu1SG_tPBA",
+            "fileIdentifyingUrlPathSegment": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/thumbnail-with-play-button-overlay-high/B4DZ6247icKUC0-/0/1781184842452?e=1790038800&v=beta&t=XpLEbK4z60YI0YWBv2H8oCyTKgaD7pNXWB6a1_s0LHA",
+            "expiresAt": 1790038800000,
+            "height": 1280
+          }
+        ],
+        "rootUrl": ""
+      },
+      "entityUrn": "urn:li:digitalmediaAsset:D4D05AQEiSu1SG_tPBA",
+      "provider": "UGC",
+      "firstFrameThumbnail": {
+        "artifacts": [
+          {
+            "width": 360,
+            "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEiSu1SG_tPBA",
+            "fileIdentifyingUrlPathSegment": "low/B4DZ6247icKUBU-/0/1781184840046?e=1790038800&v=beta&t=RzHHVXPGMUImnTCQX7IMvpzwAnTZcKDoyBCI7xNJvM4",
+            "expiresAt": 1790038800000,
+            "height": 640
+          },
+          {
+            "width": 720,
+            "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEiSu1SG_tPBA",
+            "fileIdentifyingUrlPathSegment": "high/B4DZ6247icKUBQ-/0/1781184840046?e=1790038800&v=beta&t=tWpTAM7BjYCfNkyr95Xo6cxHhB7ZElcIUPkNcXQytho",
+            "expiresAt": 1790038800000,
+            "height": 1280
+          }
+        ],
+        "rootUrl": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEiSu1SG_tPBA/videocover-firstframe-"
+      }
     }
   },
   "isActivity": false,

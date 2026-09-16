@@ -277,6 +277,17 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Nikol",
+        "lastName": "Štěpánková",
+        "occupation": "Event & Marketing Manager at RethinkArchitecture.cz",
+        "id": "333888012",
+        "publicId": "nikol-stepankova",
+        "profileId": "ACoAABPmugwBe3a2h9KjxM6kjiDaC9AqAAcjBvc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Václav",
         "lastName": "Kalkuš",
         "occupation": "Flight instructor Self-Employed",
@@ -372,22 +383,11 @@
         "publicId": "zdeňka-prokopová-40091a153",
         "profileId": "ACoAACT6MsABY3oo3tvyTQzLqBrZKlsUOJVd6e8"
       }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Vít",
-        "lastName": "Rozsíval",
-        "occupation": "👨‍💻 Full-Stack Engineer · Scalable Systems · Analytical Mind with a Creative Edge",
-        "id": "306112378",
-        "publicId": "vitrozsival",
-        "profileId": "ACoAABI-53oB5IfmUh9aHejFZnK9tIlFMtEE68Q"
-      }
     }
   ],
   "numShares": 14,
-  "numLikes": 1078,
-  "numComments": 225,
+  "numLikes": 1079,
+  "numComments": 224,
   "canReact": true,
   "canPostComments": true,
   "canShare": true,

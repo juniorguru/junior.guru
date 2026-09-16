@@ -10,7 +10,7 @@
     },
     "isActivity": false,
     "urn": "urn:li:activity:7474699304298012672",
-    "url": "https://www.linkedin.com/posts/miroslavudan_jak-jsem-s%C3%A1m-za-p%C4%9Bt-t%C3%BDdn%C5%AF-postavil-saas-activity-7474699304298012672-LSna?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAGqkr68BFN_91eYophncEHxpbuSJY0TMYG4",
+    "url": "https://www.linkedin.com/posts/miroslavudan_jak-jsem-s%C3%A1m-za-p%C4%9Bt-t%C3%BDdn%C5%AF-postavil-saas-activity-7474699304298012672-LSna?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAFGhM8EB49LH0dgRT0j4UHvUO_aTtjvB6Z8",
     "shareUrn": "urn:li:share:7474699303454830592",
     "text": "Pratele, vy co me znate, vite, jak skromny a zaroven dokonaly clovek jsem. Obcas se sam nad tim, jak jsem sikovny, az dojmu. Ale tohle je proste ulet. 😎\n\nRok zpatky jsem mel v hlave ideu na aplikaci - hledal jsem, kdo mi ji napise, a nabidky (jen za MVP!) se pohybovaly kolem 2 mega a cca 6 mesicu prace. Jak asi vite, jeden fail za 20 mega uz mam za sebou, tak jsem byl na nesetrne utraceni lehce nervozni a dal to zatim do supliku. Za ten rok se vse posunulo nekam uplne do vesmiru. Pred 2 mesici jsem si rekl, ze zacnu vic zkoumat vibecoding, a po 5 tydnech jsem, ani nevim jak, mel apku, po ktere jsem touzil - OutOfDark.com byl na svete 🚀 (ja vim, ja vim! Ale kdyz me ta domena stala tolik penez, preci to nenecham prijit vnivec!).\n\nPosledni rok se v klidu venuji novemu byznysu. Stal jsem se zakaznikem sve byvale firmy a vznikl eshop Mincmistr.cz - skloubila se tam ma laska k historii, marketingu a budovani. S kamaradem jsme za ten rok vybudovali brand, ktery si v ramci sveho segmentu ziskal sve silne misto na slunci. Ale cely ten cas jsem porad premyslel, kde jsou ty ryce a lopaty pro ty zlatokopy (tady to skoro ani neni metafora). A nakonec jsem to objevil - udelam moderni katalog minci pro sberatele. A diky vibecodingu jsem dostal do rukou kouzelnou hulku, ktera mi vzdy chybela. Takze jsem za 5 tydnu udelal apku, ktera ma AI rozpoznavani druhu minci, cool prezentaci katalogu, jednoduchy prodej na eBay nebo Aukru, vlastni trziste, kalendare aukci, exporty/importy a, omg!, desitky dalsich funkci. Citil jsem se jako dite zamcene pres noc v hrackarstvi 🤩. Cokoliv, co jsem chtel, bylo za par hodin hotove. Zadne cekani. Zadne kompromisy. Ale nebylo to na jedno mavnuti hulkou, realne jsem na tom pracoval uplne kazdy jeden den, vzdy cca 10-12 hodin prace. A diky zkusenostem, co jsem nasbiral jako CEO/produktak/projektak ze Shoptetu, u me vznikl proces, ktery mne - neprogramatorovi - umoznil tvorit kod, ktery je (troufam si, i na zaklade externiho auditu, tvrdit) bezpecny, stabilni, bez spagety kodu, skalovatelny, UX friendly a samozlepsujici se. Za tu dobu jsem v Clickupu zavrel skoro 800 tasku (z toho zhruba tretina byla tykajici se security) a nyní je 0 tasku v backlogu! Tvl, co by bylo ze Shoptetu, kdybych tehdy mel tuhle kouzelnou hulku! 🙂\n\nA protoze nejsem sketa, sepsal jsem pro vsechny dalsi borkyne a borce, co chteji tvorit produkt v dobe, kdy uz to neni o milionech investovanych do vyvojaru, ale o produktovem, strategickem a taktickem premysleni, o nastavenych pravidlech a workflow, o totalni zmene mindsetu, clanek o tom, jak jsem si za tech 5 tydnu vybudoval svoje dalsi SaaSko. Clanek je pro produktove magory, co chteji tvorit, ale neumi programovat 🙂. A pokud mate nejake tipy, na zaklade vaseho vyladeneho workflow, sem s nimi! \n\n👇 Clanek tuna:",
     "attributes": [
@@ -176,8 +176,8 @@
         "reactionTypeCounts": [],
         "author": {
           "firstName": "Jan",
-          "lastName": "Ševčík",
-          "occupation": "CEO SNADNEE",
+          "lastName": "Sevcik",
+          "occupation": "We build AI for companies and audit the apps they vibe-code themselves | VibeAudit · AI agents · software development | CEO @ SNADNEE",
           "id": "93995024",
           "publicId": "jan-sevcik",
           "profileId": "ACoAAAWaQBABqNWxGKgcSJb3y0zSIsUaEaWmhfg",
@@ -212,6 +212,36 @@
         "authorType": "Person"
       },
       {
+        "time": 1782108700906,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474705652641284096%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474705652641284096%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
+        "text": "Díky moc, posielam rovno do kindle 🙇‍♂️",
+        "entities": [],
+        "fromPostAuthor": false,
+        "urn": "urn:li:comment:(activity:7474699304298012672,7474705652641284096)",
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "edited": false,
+        "numLikes": 1,
+        "numComments": 2,
+        "reactionTypeCounts": [
+          {
+            "count": 1,
+            "reactionType": "EMPATHY"
+          }
+        ],
+        "author": {
+          "firstName": "Matus",
+          "lastName": "Pavliscak",
+          "occupation": "always building something",
+          "id": "57598610",
+          "publicId": "pavliscak",
+          "profileId": "ACoAAANu4pIBeHRRpRmTNKuI3y6hmmkCDoYoFAw",
+          "distance": "OUT_OF_NETWORK",
+          "profileUrl": "https://www.linkedin.com/in/pavliscak"
+        },
+        "authorType": "Person"
+      },
+      {
         "time": 1782108387733,
         "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474704339098583040%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474704339098583040%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
         "text": "Dobry den, Miroslave. Tohle je supr clanek, narazil jsem na nej pres random feed na FB, kdyz jsem cekal v Korei na odbavenu letu do Japonska. Zabavil me na celou frontu a hned jsem mel chut si zase neco vyrobit :) Na vibu jedu uz par mesicu, ty pocity, ktere popisujete, presne znam. Nejvic me inspirovala to robustni zadavani. Diky za konkretni, uzitecny navod k pouziti. Uz mam plny zuby tech \"open claw agentu na Mac Mini\", kterych je tady plny LI a ktere pri nejlepsim slouzi na spravu kalendare.",
@@ -238,70 +268,6 @@
           "profileId": "ACoAAApu_LgBXvXbUijhJUiwJBzBWkqqD9o0CxM",
           "distance": "OUT_OF_NETWORK",
           "profileUrl": "https://www.linkedin.com/in/martinjuza"
-        },
-        "authorType": "Person"
-      },
-      {
-        "time": 1782108700906,
-        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474705652641284096%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474705652641284096%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
-        "text": "Díky moc, posielam rovno do kindle 🙇‍♂️",
-        "entities": [],
-        "fromPostAuthor": false,
-        "urn": "urn:li:comment:(activity:7474699304298012672,7474705652641284096)",
-        "pinned": false,
-        "originalLanguage": "Czech",
-        "edited": false,
-        "numLikes": 1,
-        "numComments": 2,
-        "reactionTypeCounts": [
-          {
-            "count": 1,
-            "reactionType": "EMPATHY"
-          }
-        ],
-        "author": {
-          "firstName": "Matus",
-          "lastName": "Pavliscak",
-          "occupation": "Data & AI Engineering Leader | 10+ yrs building & scaling data teams",
-          "id": "57598610",
-          "publicId": "pavliscak",
-          "profileId": "ACoAAANu4pIBeHRRpRmTNKuI3y6hmmkCDoYoFAw",
-          "distance": "OUT_OF_NETWORK",
-          "profileUrl": "https://www.linkedin.com/in/pavliscak"
-        },
-        "authorType": "Person"
-      },
-      {
-        "time": 1782108982252,
-        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474706832691949568%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474706832691949568%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
-        "text": "Díky za sepsání! 👍",
-        "entities": [],
-        "fromPostAuthor": false,
-        "urn": "urn:li:comment:(activity:7474699304298012672,7474706832691949568)",
-        "pinned": false,
-        "originalLanguage": "Czech",
-        "edited": false,
-        "numLikes": 2,
-        "numComments": 1,
-        "reactionTypeCounts": [
-          {
-            "count": 1,
-            "reactionType": "LIKE"
-          },
-          {
-            "count": 1,
-            "reactionType": "EMPATHY"
-          }
-        ],
-        "author": {
-          "firstName": "Jiří",
-          "lastName": "Urban",
-          "occupation": "From Developer to CEO at Lentiamo • Sharing insights on building European e-commerce • Founder of Pod pokličkou e-commerce",
-          "id": "60154273",
-          "publicId": "urbanjiri",
-          "profileId": "ACoAAAOV4aEBos7etN_bLUuwgkv0VufLavb6cY0",
-          "distance": "OUT_OF_NETWORK",
-          "profileUrl": "https://www.linkedin.com/in/urbanjiri"
         },
         "authorType": "Person"
       },
@@ -338,9 +304,54 @@
           "profileUrl": "https://www.linkedin.com/in/honzajavorek"
         },
         "authorType": "Person"
+      },
+      {
+        "time": 1782108982252,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7474699304298012672?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7474699304298012672%2C7474706832691949568%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287474706832691949568%2Curn%3Ali%3Aactivity%3A7474699304298012672%29",
+        "text": "Díky za sepsání! 👍",
+        "entities": [],
+        "fromPostAuthor": false,
+        "urn": "urn:li:comment:(activity:7474699304298012672,7474706832691949568)",
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "edited": false,
+        "numLikes": 2,
+        "numComments": 1,
+        "reactionTypeCounts": [
+          {
+            "count": 1,
+            "reactionType": "LIKE"
+          },
+          {
+            "count": 1,
+            "reactionType": "EMPATHY"
+          }
+        ],
+        "author": {
+          "firstName": "Jiří",
+          "lastName": "Urban",
+          "occupation": "From Developer to CEO at Lentiamo • Sharing insights on building European e-commerce • Founder of Pod pokličkou e-commerce",
+          "id": "60154273",
+          "publicId": "urbanjiri",
+          "profileId": "ACoAAAOV4aEBos7etN_bLUuwgkv0VufLavb6cY0",
+          "distance": "OUT_OF_NETWORK",
+          "profileUrl": "https://www.linkedin.com/in/urbanjiri"
+        },
+        "authorType": "Person"
       }
     ],
     "reactions": [
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Jamilya",
+          "lastName": "Andreyeva",
+          "occupation": "Propojuji značky se světem filmu a kultury 🎬 | Product & People Placement | Tvorba filmů, reklam, klipů a audioknih | No Stress Production",
+          "id": "195493713",
+          "publicId": "jamilya-andreyeva",
+          "profileId": "ACoAAAum_1EBvpP0hrIUgsRZvjpJgELj-wRitqs"
+        }
+      },
       {
         "type": "LIKE",
         "profile": {
@@ -438,21 +449,10 @@
           "showcase": false,
           "entityUrn": "urn:li:fs_miniCompany:109446898"
         }
-      },
-      {
-        "type": "EMPATHY",
-        "profile": {
-          "firstName": "Ľubomír",
-          "lastName": "Kukuča",
-          "occupation": "💡 Illuminating Ideas, Driving Success",
-          "id": "162794181",
-          "publicId": "lubomirkukuca",
-          "profileId": "ACoAAAm0CsUB3Y9RCCUZJ7OfZcjFv7j2EP0ai68"
-        }
       }
     ],
     "numShares": 1,
-    "numLikes": 183,
+    "numLikes": 184,
     "numComments": 32,
     "canReact": true,
     "canPostComments": true,
@@ -543,7 +543,7 @@
       "profile": {
         "firstName": "Martin",
         "lastName": "Kůra",
-        "occupation": "Data Analysis • AI • Crypto Research",
+        "occupation": "AI Engineer at K&P AI",
         "id": "838677857",
         "publicId": "martin-kura",
         "profileId": "ACoAADH9NWEBxz9x0WdDuD1qB_5dbHSmlCiGB4c"

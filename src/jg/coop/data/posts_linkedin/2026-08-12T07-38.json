@@ -263,7 +263,7 @@
       "author": {
         "firstName": "Marcus",
         "lastName": "Davage",
-        "occupation": "BSc CITP CEng MBCS | Lead Software Engineer | Mainframe Moderniser | Podcaster | 5 x IBM Champion | UK Db2 User Group Chair | STEM Ambassador | Open Mainframe Project Ambassador",
+        "occupation": "BSc CITP CEng MBCS | Lead Software Engineer | Mainframe Moderniser | Podcaster | 5 x IBM Champion | UK Db2 User Group Chair | STEM Ambassador | Open Mainframe Project Ambassador | AI Vibe Coder Apparently",
         "id": "7238002",
         "publicId": "marcusdavage",
         "profileId": "ACoAAABucXIBRcIi2ALJQNMMjrpZv4SBuSw7w-E",
@@ -369,6 +369,72 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Abdul",
+        "lastName": "Rehman Shahid",
+        "occupation": "Software Engineer @Devdimensions | I help design systems and ship reliable APIs faster | Python, Django, AWS, System Design, Devops",
+        "id": "1056579628",
+        "publicId": "abdul216",
+        "profileId": "ACoAAD76ICwBOEkGMXj98qh5811JrgYyDG-qrdg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomas",
+        "lastName": "Vlach",
+        "occupation": "VP of Engineering",
+        "id": "90042944",
+        "publicId": "tomasvlach",
+        "profileId": "ACoAAAVd8kAB2IEFAsXqYZI7IJX14qXttRjWZLY"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Ivan",
+        "lastName": "Miletic",
+        "occupation": "Back End Developer at Ernieapp | Your Privacy Knowledge Manager |",
+        "id": "671984142",
+        "publicId": "ivan-miletic-866067169",
+        "profileId": "ACoAACgNqg4BEM0zLgixyNKnfDuUwtEPTtD7pvA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Georgi N.",
+        "lastName": "Kostov",
+        "occupation": "Lead Software Engineer | AI | Ruby | Rails | Python | JavaScript | Vue.js | Architecture",
+        "id": "311063229",
+        "publicId": "joromir",
+        "profileId": "ACoAABKKcr0B0WJydHPoD_j4O0mKzhaCSrUg5vY"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Annie",
+        "lastName": "Ramos",
+        "occupation": "Recruiter @ Tines",
+        "id": "283089810",
+        "publicId": "annie-ramos-1569817a",
+        "profileId": "ACoAABDfm5IBVVwiN1sxTyThs5ypxZE3a8kHfhg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Bayram",
+        "lastName": "Uysal",
+        "occupation": "Python Backend Developer | FastAPI | Flask | PostgreSQL | SQLAlchemy | Docker | REST APIs | MBA | Open to Remote (EMEA)",
+        "id": "196255883",
+        "publicId": "bayram-uysal",
+        "profileId": "ACoAAAuyoIsB5kMTW7BBfcgpf-mU-ocLpyUhQpg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Juan Carlos",
         "lastName": "Sedano Salas",
         "occupation": "visita pythonistas-gdl.org",
@@ -404,81 +470,15 @@
       "profile": {
         "firstName": "Ahmed",
         "lastName": "Nassar",
-        "occupation": "Software Engineer | Ex-Nokia, Mercor",
+        "occupation": "Software Engineer | Ex-Nokia, Mercor | DSF Member | ITI Graduate | Community Builder",
         "id": "982628143",
         "publicId": "nasssar",
         "profileId": "ACoAADqRty8BoHCVpSgjy1_MEGAX-qGUcsoiVgY"
       }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Luca",
-        "lastName": "Mancinelli",
-        "occupation": "Junior Data Analyst",
-        "id": "211865425",
-        "publicId": "luca-mancinelli",
-        "profileId": "ACoAAAygz1EB2HABxbdQPxtB3TjFoua1vHxQZR4"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "guillaume",
-        "lastName": "barbat",
-        "occupation": "Building | Self proclaimed Django GHO - Growth Hacking Officer",
-        "id": "594855692",
-        "publicId": "guillaume-barbat-238271147",
-        "profileId": "ACoAACN0xwwBJw4hribRNK3mDuZx04syryBspkk"
-      }
-    },
-    {
-      "type": "APPRECIATION",
-      "profile": {
-        "firstName": "Predrag",
-        "lastName": "Kulić",
-        "occupation": "Senior Talent Acquisition Specialist @Accion Labs Europe",
-        "id": "207126323",
-        "publicId": "predragkulic",
-        "profileId": "ACoAAAxYfzMBGNMxsffAm8Q9PUgoynuDt2C6jBY"
-      }
-    },
-    {
-      "type": "APPRECIATION",
-      "profile": {
-        "firstName": "Javier",
-        "lastName": "Alonso Silva",
-        "occupation": "Team Lead at GEOTAB 🚘 | President of Python Spain 🇪🇸 | #Speaker 🗣 | #PyConES Organizer 🐍 | Celera Talent",
-        "id": "622984178",
-        "publicId": "javinator9889",
-        "profileId": "ACoAACUh-_IBoFBSoMFHqg1kxD9KIy45_gV1yMU"
-      }
-    },
-    {
-      "type": "APPRECIATION",
-      "profile": {
-        "firstName": "Rafael",
-        "lastName": "Lopes",
-        "occupation": "Software Engineer | Backend  | Java | Kotlin | Spring Boot | Microservices | AWS | Kubernetes | Typescript | Node.js",
-        "id": "629509733",
-        "publicId": "rafael-ernesto-lopes",
-        "profileId": "ACoAACWFjmUB65vcaDH9v73kMw3rsTF8rltUOuw"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Jorge Iván",
-        "lastName": "Guevara Pérez",
-        "occupation": "Could/Data engineer | Backend Developer | TI | Consulting",
-        "id": "100290771",
-        "publicId": "jorge-ivan-guevara-perez",
-        "profileId": "ACoAAAX6UNMBvWSOqG005jSn_rBR88KnPrsJxc4"
-      }
     }
   ],
-  "numShares": 34,
-  "numLikes": 276,
+  "numShares": 35,
+  "numLikes": 282,
   "numComments": 15,
   "canReact": true,
   "canPostComments": true,
@@ -490,7 +490,7 @@
   "author": {
     "firstName": "Mia",
     "lastName": "Bajić",
-    "occupation": "Software Engineer · Python & Full-Stack · Vice Chair @ EuroPython Society · PSF Fellow · Podcast Host",
+    "occupation": "Software Engineer · Vice Chair @ EuroPython Society · PSF Fellow · Podcast Host",
     "id": "530925455",
     "publicId": "mia-bajic",
     "profileId": "ACoAAB-lR48BFvPhQ6doZNGTRVftkLrzcnIv-Ss"

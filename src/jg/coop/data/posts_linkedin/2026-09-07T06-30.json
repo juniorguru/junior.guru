@@ -1,0 +1,207 @@
+{
+  "type": "image",
+  "images": [],
+  "isActivity": false,
+  "urn": "urn:li:activity:7502614202512031744",
+  "url": "https://www.linkedin.com/posts/honzajavorek_trvalo-to-t%C5%99i-roky-b%C4%9Bhem-kter%C3%BDch-n%C4%9Bkolikr%C3%A1t-activity-7502614202512031744-nzCR",
+  "shareUrn": "urn:li:share:7501596330562052096",
+  "text": "„Trvalo to tři roky, během kterých několikrát zvažovala, že to vzdá. Dnes pracuje pětatřicetiletá Pavla Beránková jako PHP vývojářka, moderuje komunitu junior.guru a otevřeně mluví o tom, proč je i v době AI nejdůležitější vytrvalost.“\n\nRozhovory záměrně neděláme sluníčkově oslavné, ale naopak se snažíme rozkrýt, co bylo pro lidi na cestě do IT těžké, a jak si s tím dokázali poradit.\n\n„Po rodičovské jsem v iOS nic nenašla, tak jsem se dívala i po něčem jiném… Našla jsem práci ve skladu, kde jsem pracovala ještě rok a půl. Sem tam jsem se ještě něco učila. S inzeráty do IT jsem to už pomalu vzdávala, měla jsem pocit, že to asi nevyjde nebo až za delší čas.“\n\nJak to dopadlo s Pavlou, dlouholetou členkou a moderátorkou junior.guru klubu, slovutnou vyzyvatelkou Swiftu na iOS, neúnavnou zápasnicí s PHP a pisatelkou oblíbeného klubového deníčku?\n\nČtěte na junior.guru/stories ! Odkaz na celý článek dám do komentářů. A díky Adéla Pavlun za nový rozhovor ❤️ \n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 98,
+      "length": 15,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Pavla",
+        "lastName": "Beránková",
+        "occupation": "junior PHP programátorka",
+        "id": "549611439",
+        "publicId": "berankova-pavla",
+        "profileId": "ACoAACDCZ68BhDuYokjdegYmFm0rxSx_6Mlwh9c"
+      }
+    },
+    {
+      "start": 930,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Adéla",
+        "lastName": "Pavlun",
+        "occupation": "Somatic Guide & Writer | TRE® · SE® | Exploring human connection, safety and growth",
+        "id": "59184567",
+        "publicId": "adelapavlun",
+        "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1788764685839,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7502614202512031744?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7502614202512031744%2C7502622876869517312%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287502622876869517312%2Curn%3Ali%3Aactivity%3A7502614202512031744%29",
+      "text": "Skvělý!  💙 ",
+      "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7502614202512031744,7502622876869517312)",
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 1,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "EMPATHY"
+        }
+      ],
+      "author": {
+        "firstName": "Tereza",
+        "lastName": "Hurtova",
+        "occupation": "CMO at Nuomy & ENGETO",
+        "id": "414371750",
+        "publicId": "terezahurtova",
+        "profileId": "ACoAABiyz6YBd5eOGXzM1olVgh-n263CyuHhTqA",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/terezahurtova"
+      },
+      "authorType": "Person"
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petra",
+        "lastName": "Drahoňovská",
+        "occupation": "CAREER DESIGNER: outplacement | career coaching, counseling & training | active placement | EAP | <​3 topics: career shifts & career switchers & professional transitions & sabbaticals | career apps, books, projects",
+        "id": "90294198",
+        "publicId": "petradrahonovska",
+        "profileId": "ACoAAAVhx7YBNGJxIGclfAXLPoY5RQyjXr24FTA"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Adéla",
+        "lastName": "Pavlun",
+        "occupation": "Somatic Guide & Writer | TRE® · SE® | Exploring human connection, safety and growth",
+        "id": "59184567",
+        "publicId": "adelapavlun",
+        "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Pavla",
+        "lastName": "Beránková",
+        "occupation": "junior PHP programátorka",
+        "id": "549611439",
+        "publicId": "berankova-pavla",
+        "profileId": "ACoAACDCZ68BhDuYokjdegYmFm0rxSx_6Mlwh9c"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Tomáš",
+        "lastName": "Novák",
+        "occupation": "Bubeník | FE developer",
+        "id": "1140304130",
+        "publicId": "tomáš-novák-282a76279",
+        "profileId": "ACoAAEP3qQIBOSmQUU7OefSQ0SraedY57sCw_0g"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Michala",
+        "lastName": "Marková",
+        "occupation": "Software Tester",
+        "id": "28126493",
+        "publicId": "ing-michala-marková",
+        "profileId": "ACoAAAGtLR0BnXLQF1av5B7xQLStQEy7WXZundw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vendula",
+        "lastName": "Krajíčková",
+        "occupation": "Frontend vývojářka 🚀 | React, Next.js, TypeScript | Hledám novou výzvu ve frontend vývoji 👩‍💻 | Ex-BlueGhost 👻💙",
+        "id": "1145616814",
+        "publicId": "vendula-krajickova",
+        "profileId": "ACoAAERIua4Bk44zfiGE6PT1BmSNoKdqiNkFOYc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Hassman",
+        "occupation": "📺 Digitalizuji Kavky, 🎯 Product Manager, 👑 Product Owner, 👨🏼‍💻 Technology Enthusiast, 🗣️ English, Czech, Spanish.",
+        "id": "357018",
+        "publicId": "hassman",
+        "profileId": "ACoAAAAFcpoBmteS--laK_PQYfP-f5of-I9xOqA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Ilona",
+        "lastName": "Podlahová",
+        "occupation": "V&V Engineer / Tester | Standards-based Certification Testing of Industrial Communication Networks",
+        "id": "382015784",
+        "publicId": "ilona-podlahova",
+        "profileId": "ACoAABbFGSgB081V2JKHc6skpuJFFobsm5QpXfI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Sandra",
+        "lastName": "Heinzová",
+        "occupation": "Junior Python Developer who is looking for first IT job opportunity. Not from Prague, but I can take a train :-)",
+        "id": "1057345779",
+        "publicId": "sandra-heinzova",
+        "profileId": "ACoAAD8F0PMB3ls8oo2W-xuzIAVJuEfCRdY-hRA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Simecek",
+        "occupation": "Tamer of llamas. I write code that gets deployed and papers that get cited. Bridging the gap between ‘it works in theory’ and ‘it works in prod’ one commit at a time.",
+        "id": "8338936",
+        "publicId": "simecekpetr",
+        "profileId": "ACoAAAB_PfgBsL4w8dCi9wIyQLatN_3k_nTllm0"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 11,
+  "numComments": 2,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1788762617710,
+  "postedAtISO": "2026-09-07T06:30:17.710Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

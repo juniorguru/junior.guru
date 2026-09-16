@@ -1,0 +1,131 @@
+{
+  "type": "article",
+  "article": {
+    "type": "FIRST_PARTY",
+    "urn": "urn:li:linkedInArticle:7501695056597254146",
+    "url": "https://www.linkedin.com/pulse/t%25C3%25BDdenn%25C3%25AD-pozn%25C3%25A1mky-odpo%25C4%258D%25C3%25ADv%25C3%25A1n%25C3%25AD-nov%25C3%25A9-starty-honza-javorek-ijxcf",
+    "title": "Týdenní poznámky: Odpočívání a nové starty",
+    "description": "Jak se mi daří pracovat na junior.guru a dalších věcech? Od posledních poznámek už utekl nějaký ten týden (11. 8. až 4. 9.), tak nastal čas se opět oh"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7501696425311924224",
+  "url": "https://www.linkedin.com/posts/honzajavorek_t%C3%BDdenn%C3%AD-pozn%C3%A1mky-jak-se-mi-da%C5%99%C3%AD-pracovat-activity-7501696425311924224-TOCG",
+  "shareUrn": "urn:li:ugcPost:7501696424913510400",
+  "text": "Týdenní poznámky! Jak se mi daří pracovat na junior.guru a dalších věcech? Tentokrát je to na 11 min čtení 🧐",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1788683594554,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7501696424913510400?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7501696424913510400%2C7502282755368574976%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287502282755368574976%2Curn%3Ali%3AugcPost%3A7501696424913510400%29",
+      "text": "\"každý týden popisuje na svém blogu\" bych v patičce webu chtěl jako odkaz na blog. Děkuju 🙏\n",
+      "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(ugcPost:7501696424913510400,7502282755368574976)",
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 1,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "LIKE"
+        }
+      ],
+      "author": {
+        "firstName": "Aleš",
+        "lastName": "Roubíček",
+        "occupation": "Problem Solver, DevOps&FinOps consultant, Web developer, Technowokeist, AI atheist, DJ",
+        "id": "1312080177",
+        "publicId": "rarous",
+        "profileId": "ACoAAE40wTEBTRjKUEs1SOsiocsjxAj8jDMc7Nk",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/rarous"
+      },
+      "authorType": "Person"
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Karla",
+        "lastName": "Root",
+        "occupation": "#opentowork | Data Analyst | Automation | Power BI | Stay calm. Ask AI first, then panic...",
+        "id": "420075610",
+        "publicId": "karlaroot",
+        "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Josef",
+        "lastName": "Ďuriš",
+        "occupation": "Embedded Systems Engineer | From Advanced System Analysis to Low-Level Development | C/C++ | Linux | HW/SW Integration",
+        "id": "304898445",
+        "publicId": "josef-ďuriš-a3913986",
+        "profileId": "ACoAABIsYY0ByKzpglEMZ3CjzvZoYSp9yKeTxvs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lucia",
+        "lastName": "Tóthová",
+        "occupation": "Stuck in digital limbo? Let’s fix that | Digital Transformation Consultant",
+        "id": "13888736",
+        "publicId": "luciatothovadigitalbusinessanalyst",
+        "profileId": "ACoAAADT7OABGZeefUla5Bvd7sz7urj6Hyg4d8s"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Sanka",
+        "occupation": "Senior HR & Organizational Development Executive | HR extensive experience | Leadership | Talent development",
+        "id": "1248198738",
+        "publicId": "pavelsanka",
+        "profileId": "ACoAAEpmAFIBs1dbjA9a2V3nQHxsW5NlkIxFH08"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 5,
+  "numComments": 2,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1788543802574,
+  "postedAtISO": "2026-09-04T17:43:22.574Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

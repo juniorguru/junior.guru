@@ -1,0 +1,156 @@
+{
+  "type": "document",
+  "document": {
+    "coverPages": [],
+    "title": "Rozhovor s Romanem Viktorem Dvořákem",
+    "totalPageCount": 6
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7501157081157263361",
+  "url": "https://www.linkedin.com/posts/honzajavorek_rozhovor-s-romanem-viktorem-dvo%C5%99%C3%A1kem-activity-7501157081157263361-fAtY",
+  "shareUrn": "urn:li:ugcPost:7486361969168658432",
+  "text": "Pravdivě o kariéře v IT 🙏 Přečtěte si rozhovor Adéla Pavlun s Roman Viktor Dvořák\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 47,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Adéla",
+        "lastName": "Pavlun",
+        "occupation": "Somatic Guide & Writer | TRE® · SE® | Exploring human connection, safety and growth",
+        "id": "59184567",
+        "publicId": "adelapavlun",
+        "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"
+      }
+    },
+    {
+      "start": 62,
+      "length": 19,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Roman Viktor",
+        "lastName": "Dvořák",
+        "occupation": "Python Backend Developer | IoT & Embedded Systems | REST APIs · PostgreSQL · Docker · AWS · Raspberry Pi",
+        "id": "915717151",
+        "publicId": "romanviktor",
+        "profileId": "ACoAADaUvB8B9l6wphhyhnpLoAOKG5H1Eb1LO4E"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1788415998888,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7486361969168658432?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7486361969168658432%2C7501160377796390912%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287501160377796390912%2Curn%3Ali%3AugcPost%3A7486361969168658432%29",
+      "text": "Je super, že tahle možnost existuje, nebylo to lehký se do IT dostat, a obzvlášť to není lehké  v dnešní době AI, “Google vám dá odpovědi” - to byly časy 🙂",
+      "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(ugcPost:7486361969168658432,7501160377796390912)",
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 3,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "LIKE"
+        }
+      ],
+      "author": {
+        "firstName": "Jakub",
+        "lastName": "Kraus",
+        "occupation": "I teach developers to ship production-ready code with AI | Founder, ReactivDevs | FE Competency Lead",
+        "id": "336139143",
+        "publicId": "jakub-kraus-b736a494",
+        "profileId": "ACoAABQJE4cBMm_dlzsMuy1arbIjZ_etPiLADOY",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/jakub-kraus-b736a494"
+      },
+      "authorType": "Person"
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marek",
+        "lastName": "Fisera",
+        "occupation": "Marketer who can code and understand AI",
+        "id": "628502898",
+        "publicId": "marekfisera",
+        "profileId": "ACoAACV2MXIB9skmB6pJiDm1V_Rmc-qCMHKCOCI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vladimír",
+        "lastName": "Gorej",
+        "occupation": "Senior Full-Stack Engineer & API Tooling Specialist | Freelance, Contract & Fractional Roles | TypeScript, Node.js, Python, OpenAPI & Arazzo | Building API tools for developers and AI agents",
+        "id": "58899881",
+        "publicId": "vladimirgorej",
+        "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Karla",
+        "lastName": "Root",
+        "occupation": "#opentowork | Data Analyst | Automation | Power BI | Stay calm. Ask AI first, then panic...",
+        "id": "420075610",
+        "publicId": "karlaroot",
+        "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Kraus",
+        "occupation": "I teach developers to ship production-ready code with AI | Founder, ReactivDevs | FE Competency Lead",
+        "id": "336139143",
+        "publicId": "jakub-kraus-b736a494",
+        "profileId": "ACoAABQJE4cBMm_dlzsMuy1arbIjZ_etPiLADOY"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 5,
+  "numComments": 4,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1788415212907,
+  "postedAtISO": "2026-09-03T06:00:12.907Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}
