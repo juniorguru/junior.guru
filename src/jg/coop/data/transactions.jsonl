@@ -1400,3 +1400,4 @@
 {"_id": "27843051240", "amount": -5303, "category": "tax", "happened_on": "2026-09-15"}
 {"_id": "27843051241", "amount": -3306, "category": "tax", "happened_on": "2026-09-15"}
 {"_id": "27845125909", "amount": -3630, "category": "miscellaneous", "happened_on": "2026-09-15"}
+{"_id": "27846050180", "amount": 6, "category": "donations", "happened_on": "2026-09-16"}
