@@ -3,7 +3,7 @@ import re
 from datetime import date, timedelta
 
 import click
-from discord import Color, Embed
+from discord import Embed
 from jg.chick.lib.threads import ping_members_with_role
 
 from jg.coop.cli.sync import main as cli
@@ -14,6 +14,7 @@ from jg.coop.lib.discord_club import (
     parse_channel,
 )
 from jg.coop.lib.mutations import mutating_discord
+from jg.coop.lib.text import emoji_url
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
 from jg.coop.models.role import DocumentedRole
@@ -81,22 +82,22 @@ async def kickoff_weekly_plans(
         "💭 Proč? Uspořádáš si myšlenky. Uvědomíš si, jak se posunuješ. Dáš do slov, čím teď procházíš. "
         "Všimneš si, s čím zápasí ostatní a třeba uvidíš, že si nějak můžete pomoci. "
         "A někdo když veřejně přislíbí, že něco udělá, tak se k tomu pak spíš dokope. "
-        "\n\u200b"  # forces margin between message and the embeds
-    )
-
-    template_embed = Embed(
-        title="Šablona",
-        description=(
-            "<:successkid:842730583293558795> Co se mi podařilo minulý týden? / What did I accomplish last week?"
-            "\n\n"
-            "🛠️ Na čem teď dělám? Čemu se budu věnovat tento týden? / What am I going to focus on this week?"
-            "\n\n"
-            "🔥 Co mě pálí? Řeším nějaký problém? / Any problems?"
-        ),
-        color=Color.teal(),
+        "\n\u200b"  # forces margin between message and the embed
     )
     wisdom_embed = Embed(title="Moudro týdne", description=f"„{wisdom.text}“")
     wisdom_embed.set_footer(text=f"— {wisdom.name}")
+
+    template = (
+        "<:successkid:842730583293558795> Co se mi podařilo minulý týden? / What did I accomplish last week?"
+        "\n\n"
+        "🛠️ Na čem teď dělám? Čemu se budu věnovat tento týden? / What am I going to focus on this week?"
+        "\n\n"
+        "🔥 Co mě pálí? Řeším nějaký problém? / Any problems?"
+    )
+    template_embed = Embed()
+    template_embed.set_footer(
+        text="šablona pro snadné zkopírování", icon_url=emoji_url("👆")
+    )
 
     logger.info("Kicking off the weekly plans")
     channel = await client.fetch_channel(channel_id)
@@ -104,10 +105,13 @@ async def kickoff_weekly_plans(
         thread = await proxy.create_thread(
             name=name,
             content=content,
-            embeds=[template_embed, wisdom_embed],
+            embeds=[wisdom_embed],
             auto_archive_duration=DEFAULT_AUTO_ARCHIVE_DURATION,
         )
     if thread:
+        logger.info("Posting the template as the first message in the thread")
+        with mutating_discord(thread) as proxy:
+            await proxy.send(template, embed=template_embed)
         logger.info("Adding members with the week planner role to the thread")
         with mutating_discord(thread) as proxy:
             await ping_members_with_role(proxy, role_id)
