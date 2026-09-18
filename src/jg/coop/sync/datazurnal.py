@@ -1,20 +1,14 @@
-import logging
-
 import click
 import feedparser
 import httpx2
 from discord.abc import GuildChannel
-from tenacity import (
-    before_sleep_log,
-    retry,
-    retry_if_exception_type,
-    stop_after_attempt,
-)
+from tenacity import retry_if_exception_type
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers, mutations
 from jg.coop.lib.discord_club import ClubClient, parse_channel
 from jg.coop.lib.reading_time import reading_time
+from jg.coop.lib.retrying import retry
 from jg.coop.lib.text import extract_text
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
@@ -60,12 +54,7 @@ def main(channel_id: int, rss_url: str):
     discord_task.run(post, channel_id, latest.title, latest.link, mins)
 
 
-@retry(
-    retry=retry_if_exception_type(httpx2.HTTPError),
-    stop=stop_after_attempt(3),
-    reraise=True,
-    before_sleep=before_sleep_log(logger, logging.WARNING),
-)
+@retry(retry=retry_if_exception_type(httpx2.HTTPError))
 def fetch_rss(rss_url: str) -> httpx2.Response:
     response = httpx2.get(rss_url)
     response.raise_for_status()

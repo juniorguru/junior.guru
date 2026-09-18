@@ -1,4 +1,3 @@
-import logging
 from collections import defaultdict
 from datetime import date, timedelta
 from io import BytesIO
@@ -9,13 +8,7 @@ import click
 import httpx2
 from githubkit import GitHub
 from PIL import Image
-from tenacity import (
-    before_sleep_log,
-    retry,
-    retry_if_exception_type,
-    stop_after_attempt,
-    wait_random_exponential,
-)
+from tenacity import retry_if_exception_type
 
 from jg.coop.cli.sync import default_from_env, main as cli
 from jg.coop.lib import loggers
@@ -23,6 +16,7 @@ from jg.coop.lib.cache import cache
 from jg.coop.lib.cli import async_command
 from jg.coop.lib.images import create_fallback_image
 from jg.coop.lib.location import locate_fuzzy
+from jg.coop.lib.retrying import retry
 from jg.coop.models.base import db
 from jg.coop.models.candidate import (
     Candidate,
@@ -223,13 +217,7 @@ async def main(
 
 
 @cache(expire=timedelta(hours=1), ignore=(0,), tag="candidates-images")
-@retry(
-    retry=retry_if_exception_type((httpx2.RequestError, httpx2.HTTPStatusError)),
-    wait=wait_random_exponential(max=60),
-    stop=stop_after_attempt(3),
-    reraise=True,
-    before_sleep=before_sleep_log(logger, logging.WARNING),
-)
+@retry(retry=retry_if_exception_type((httpx2.RequestError, httpx2.HTTPStatusError)))
 async def download_image(client: httpx2.AsyncClient, url: str) -> bytes:
     logger.debug(f"Downloading image: {url}")
     response = await client.get(url)
