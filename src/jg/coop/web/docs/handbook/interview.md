@@ -1232,4 +1232,11 @@ zahlédla jsem na LinkedInu
 ---
 
 
+--- https://discord.com/channels/769966886598737931/789107031939481641/1549333959400497196
+Absolvovala jsem telefonický pohovor s AI 🙃  Do té firmy, co chtěla ty testy.
+Mé dojmy: Je to jako psát si s AI, vždycky něco řeknu a ona shrne, zabalí do pozitivních keců a tak. Ale je to docela náročné na postřeh, mnohem méně času na rozmyšlenou a formulování. Myslím, že lidé, co neradi telefonují, by se z toho zvencli. 
+Ptalo se mě to víceméně na věci, které jsem měla zformulované v motivačním dopise. Tedy co mě zaujalo na té pozici, proč se o ni ucházím, a pak to šlo do detailů ohledně workflow a využívání AI k tomu. Mělo to zjevně nějaký základní promt, co má hlavně od kandidáta zjišťovat, ale reagovalo to pružně i na mé odpovědi. Nicméně vracelo se to vytrvale k jádru. Když jsem odbočila, tak to shrnulo, řeklo, že je to zajímavé a zeptalo se znovu jinak. Ta shrnutí dávala smysl, zhruba na úrovni ChatGPT, jak jsem zvyklá. Jen prostě nejsem zvyklá na to tempo komunikace, zatím jsem si dosud s AIčkem jen psala. A z hlediska pohovoru tam hodně chybí ten lidský faktor, je to prostě telefonický hovor, a se strojem k tomu. No zajímavá zkušenost.
+---
+
+
 #} -->

@@ -735,4 +735,9 @@ THE CV
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1549295047894237184
+https://www.linkedin.com/feed/update/urn:li:activity:7505491171050369025/ reklama na Skilleto, ale vyzkoušela jsem to a nepřijde mi to marný, vlastně docela relevantní poznámky jak si k dané roli upravit CV, jaké otázky mohu čekat...
+---
+
+
 #} -->
