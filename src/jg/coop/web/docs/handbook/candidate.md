@@ -1636,4 +1636,9 @@ Gergely Orosz prinasi zpravy ze zahranici. No doufam, ze takovahle depka k nam n
 ---
 
 
+--- https://discord.com/channels/769966886598737931/788826407412170752/1547546196153860146
+Zrovna dorazil newsletter od Startupjobs s pár radami pro juniory
+---
+
+
 #} -->

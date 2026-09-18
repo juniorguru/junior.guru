@@ -1227,4 +1227,9 @@ v skratke ? Data Analyst rieši napr. prečo klesli predaje minulý mesiac o 15%
 ---
 
 
+--- https://discord.com/channels/769966886598737931/797040163325870092/1548045474924200120
+nedávno se tu hledalo něco co by bavilo u SQL nebo tak něco - zrovna jsou na steamu slevy na programovací hry - objevil jsem tu na SQL tuhle detektivku 😄 -> https://store.steampowered.com/app/3950130/Database_Detective_Minor_Crimes_Division/
+---
+
+
 #} -->
