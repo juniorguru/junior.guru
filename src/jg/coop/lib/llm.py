@@ -88,12 +88,6 @@ def log_and_reraise_validation_error(retry_state: RetryCallState) -> None:
     raise exception
 
 
-# These API-error retries share a higher attempt count than the project default.
-retry_defaults = {
-    "stop": stop_after_attempt(5),
-}
-
-
 @mutates("openai", raises=True)
 @retry(
     retry=(
@@ -101,7 +95,7 @@ retry_defaults = {
         & retry_if_exception(is_requests_rate_limit_error)
     ),
     wait=wait_random_exponential(min=1, max=60),
-    **retry_defaults,
+    stop=stop_after_attempt(5),
 )
 @retry(
     retry=(
@@ -109,12 +103,12 @@ retry_defaults = {
         & retry_if_exception(is_tokens_rate_limit_error)
     ),
     wait=wait_random_exponential(min=60, max=5 * 60),
-    **retry_defaults,
+    stop=stop_after_attempt(5),
 )
 @retry(
     retry=retry_if_exception_type(InternalServerError),
     wait=wait_random_exponential(min=60, max=5 * 60),
-    **retry_defaults,
+    stop=stop_after_attempt(5),
 )
 @retry(
     retry=retry_if_exception_type(LLMResponseError),

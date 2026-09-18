@@ -36,13 +36,6 @@ class RetryDecorator(Protocol):
     ) -> Callable[[WrappedFn], WrappedFn]: ...
 
 
-# A thin wrapper over tenacity's ``retry`` with the project's sensible defaults
-# baked in, so call sites only spell out what they actually mean to change.
-# The defaults: reraise the last exception, 3 attempts, exponential backoff with
-# jitter capped at 60s, and retries logged as DEBUG under this module's logger.
-# Any of them can be overridden per call site (e.g. ``stop=stop_after_attempt(5)``
-# or ``wait=wait_fixed(5)``), and ``retry=`` (which exceptions to retry on) is
-# always given explicitly, since that is the one genuinely per-case decision.
 retry = cast(
     RetryDecorator,
     partial(
