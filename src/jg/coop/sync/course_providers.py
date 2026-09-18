@@ -1,4 +1,3 @@
-import logging
 import math
 from collections.abc import Callable
 from datetime import date, timedelta
@@ -8,15 +7,11 @@ from pathlib import Path
 import httpx2
 import yaml
 from pydantic import HttpUrl
-from tenacity import (
-    before_sleep_log,
-    retry,
-    retry_if_exception_type,
-    stop_after_attempt,
-)
+from tenacity import retry_if_exception_type
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import apify, loggers
+from jg.coop.lib.retrying import retry
 from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
@@ -121,12 +116,7 @@ def main():
                 logger.warning(f"Course provider {slug!r} not found in the database")
 
 
-@retry(
-    retry=retry_if_exception_type(httpx2.HTTPError),
-    stop=stop_after_attempt(3),
-    reraise=True,
-    before_sleep=before_sleep_log(logger, logging.WARNING),
-)
+@retry(retry=retry_if_exception_type(httpx2.HTTPError))
 def fetch_course_pageviews(days: int) -> list[dict]:
     # The 365-day aggregation takes ~8s to generate server-side, so the read
     # timeout must be well above httpx2's 5s default or the request times out.

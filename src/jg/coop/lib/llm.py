@@ -15,10 +15,10 @@ from pydantic import BaseModel, ValidationError
 from tenacity import (
     RetryCallState,
     before_sleep_log,
-    retry,
     retry_if_exception,
     retry_if_exception_type,
     stop_after_attempt,
+    wait_none,
     wait_random_exponential,
 )
 
@@ -26,6 +26,7 @@ from jg.coop.lib import loggers
 from jg.coop.lib.async_utils import limit
 from jg.coop.lib.cache import cache
 from jg.coop.lib.mutations import mutates
+from jg.coop.lib.retrying import retry
 
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -87,9 +88,8 @@ def log_and_reraise_validation_error(retry_state: RetryCallState) -> None:
     raise exception
 
 
+# These API-error retries share a higher attempt count than the project default.
 retry_defaults = {
-    "reraise": True,
-    "before_sleep": before_sleep_log(logger, logging.DEBUG),
     "stop": stop_after_attempt(5),
 }
 
@@ -119,6 +119,8 @@ retry_defaults = {
 @retry(
     retry=retry_if_exception_type(LLMResponseError),
     stop=stop_after_attempt(VALIDATION_ATTEMPTS),
+    # A bad response is deterministic, so re-ask immediately instead of backing off.
+    wait=wait_none(),
     # Warn before each further attempt; error on the final one (see callback).
     before_sleep=before_sleep_log(logger, logging.WARNING),
     retry_error_callback=log_and_reraise_validation_error,

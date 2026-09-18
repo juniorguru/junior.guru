@@ -1,18 +1,14 @@
-import logging
-
 import gspread
 from requests.exceptions import ConnectionError, Timeout
 from tenacity import (
-    before_sleep_log,
-    retry,
     retry_if_exception,
     retry_if_exception_type,
     stop_after_attempt,
-    wait_random_exponential,
 )
 
 from jg.coop.lib import loggers
 from jg.coop.lib.google_api import get_credentials
+from jg.coop.lib.retrying import retry
 
 
 logger = loggers.from_path(__file__)
@@ -28,10 +24,7 @@ def is_retryable_api_error(exc: Exception) -> bool:
         | retry_if_exception_type(ConnectionError)
         | retry_if_exception_type(Timeout)
     ),
-    wait=wait_random_exponential(max=60),
     stop=stop_after_attempt(5),
-    reraise=True,
-    before_sleep=before_sleep_log(logger, logging.WARNING),
 )
 def get(doc_key, sheet_name):
     credentials = get_credentials(

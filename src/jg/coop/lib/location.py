@@ -1,4 +1,3 @@
-import logging
 import os
 import random
 import re
@@ -12,12 +11,8 @@ import czech_sort
 import httpx2
 from pydantic import BaseModel
 from tenacity import (
-    before_sleep_log,
-    retry,
     retry_if_exception,
     retry_if_exception_type,
-    stop_after_attempt,
-    wait_random_exponential,
 )
 
 from jg.coop.lib import loggers
@@ -25,6 +20,7 @@ from jg.coop.lib.async_utils import limit
 from jg.coop.lib.cache import cache
 from jg.coop.lib.llm import ask_llm
 from jg.coop.lib.mutations import MutationsNotAllowedError
+from jg.coop.lib.retrying import retry
 
 
 MAPYCZ_API_KEY = os.getenv("MAPYCZ_API_KEY")
@@ -225,10 +221,6 @@ def is_retryable_geocode_error(exc: Exception) -> bool:
         retry_if_exception_type(httpx2.RequestError)
         | retry_if_exception(is_retryable_geocode_error)
     ),
-    wait=wait_random_exponential(max=60),
-    stop=stop_after_attempt(3),
-    reraise=True,
-    before_sleep=before_sleep_log(logger, logging.WARNING),
 )
 async def locate(
     location_raw: str,

@@ -1,6 +1,5 @@
 import asyncio
 import itertools
-import logging
 import re
 from collections.abc import AsyncGenerator
 from datetime import UTC, date, datetime, timedelta
@@ -12,14 +11,12 @@ from typing import TYPE_CHECKING, TypedDict
 import discord
 import emoji
 from tenacity import (
-    before_sleep_log,
-    retry,
     retry_if_exception_type,
     stop_after_attempt,
-    wait_random_exponential,
 )
 
 from jg.coop.lib import loggers, mutations
+from jg.coop.lib.retrying import retry
 
 
 if TYPE_CHECKING:
@@ -150,10 +147,7 @@ def _is_read(route) -> bool:
 
 @retry(
     retry=retry_if_exception_type(TimeoutError),
-    wait=wait_random_exponential(max=60),
     stop=stop_after_attempt(5),
-    reraise=True,
-    before_sleep=before_sleep_log(logger, logging.WARNING),
 )
 async def _request_with_retry(request, route, *args, **kwargs):
     """Perform a Discord read request, retrying on read timeouts.

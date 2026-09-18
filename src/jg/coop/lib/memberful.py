@@ -1,6 +1,5 @@
 import csv
 import json
-import logging
 import os
 import re
 from collections.abc import Callable, Generator
@@ -13,16 +12,14 @@ from gql import Client, gql
 from gql.transport.httpx import HTTPXTransport
 from lxml import html
 from tenacity import (
-    before_sleep_log,
-    retry,
     retry_if_exception_type,
     stop_after_attempt,
     wait_fixed,
-    wait_random_exponential,
 )
 
 from jg.coop.lib import loggers
 from jg.coop.lib.cache import cache
+from jg.coop.lib.retrying import retry
 
 
 BOT_USER_AGENT = "JuniorGuruBot (+https://junior.guru)"
@@ -180,10 +177,6 @@ class MemberfulCSV:
             retry_if_exception_type(httpx2.HTTPStatusError)
             | retry_if_exception_type(httpx2.ConnectError)
         ),
-        wait=wait_random_exponential(max=60),
-        stop=stop_after_attempt(3),
-        reraise=True,
-        before_sleep=before_sleep_log(logger, logging.WARNING),
     )
     def _download_csv(
         self,
@@ -232,8 +225,6 @@ class MemberfulCSV:
         retry=retry_if_exception_type(httpx2.HTTPStatusError),
         wait=wait_fixed(5),
         stop=stop_after_attempt(10),
-        reraise=True,
-        before_sleep=before_sleep_log(logger, logging.DEBUG),
     )
     def _poll_for_csv(self, download_url: str) -> str:
         response = self.session.get(download_url)
