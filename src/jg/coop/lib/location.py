@@ -1,3 +1,4 @@
+import logging
 import os
 import random
 import re
@@ -10,6 +11,14 @@ from typing import Literal
 import czech_sort
 import httpx2
 from pydantic import BaseModel
+from tenacity import (
+    before_sleep_log,
+    retry,
+    retry_if_exception,
+    retry_if_exception_type,
+    stop_after_attempt,
+    wait_random_exponential,
+)
 
 from jg.coop.lib import loggers
 from jg.coop.lib.async_utils import limit
@@ -25,6 +34,8 @@ DEFAULT_HEADERS = {
 }
 
 LANGUAGE_CODE = "cs"
+
+RETRYABLE_STATUS_CODES = (429, 500, 502, 503, 504)
 
 # Includes Czechia and Slovakia (use https://pro.mapy.cz/examples/geocode/ to determine the bounding box)
 BOUNDING_BOX = (
@@ -199,8 +210,25 @@ async def locate_fuzzy(location_raw: str) -> Location:
         )
 
 
+def is_retryable_geocode_error(exc: Exception) -> bool:
+    return (
+        isinstance(exc, httpx2.HTTPStatusError)
+        and exc.response.status_code in RETRYABLE_STATUS_CODES
+    )
+
+
 @cache(
     expire=timedelta(days=60), tag="location-locate", ignore=("api_key", "bounding_box")
+)
+@retry(
+    retry=(
+        retry_if_exception_type(httpx2.RequestError)
+        | retry_if_exception(is_retryable_geocode_error)
+    ),
+    wait=wait_random_exponential(max=60),
+    stop=stop_after_attempt(3),
+    reraise=True,
+    before_sleep=before_sleep_log(logger, logging.WARNING),
 )
 async def locate(
     location_raw: str,
