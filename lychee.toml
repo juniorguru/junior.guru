@@ -64,7 +64,7 @@ exclude = [
   # Anti-scraping protections
   "^https://(www\\.)?youtube\\.com/results", # YouTube search-results URLs trigger Google's abuse gate (endless 302 loop)
   "^https://(www\\.)?(linkedin|facebook|reddit)\\.com",
-  "^https://(www\\.)?(beeit|glancemedia|prace\\.rovnou|keyguru)\\.cz",
+  "^https://(www\\.)?(beeit|glancemedia|prace\\.rovnou|keyguru|sifrovacky)\\.cz",
   "^https://([^\\.]+\\.)?discord\\.com",
 
   # Not yet deployed avatars of club members or company logos
