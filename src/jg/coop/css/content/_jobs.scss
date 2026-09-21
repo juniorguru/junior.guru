@@ -162,6 +162,7 @@
 .jobs-title {
   @extend .fs-5;
   display: flex;
+  align-items: flex-start;
   margin-bottom: -1 * ($spacer - $headings-margin-bottom);
   color: $jg-blue;
 }
