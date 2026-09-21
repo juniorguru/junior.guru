@@ -65,6 +65,7 @@ registry:
     date: "2026-09-24"
     description: |
       (Podrobnosti o přednášce budou upřesněny)
+    avatar_path: avatars-participants/martin-rapavy.jpg
     bio_name: Martin Rapavý
     bio_title: "AI Specialista v Raiffeisenbank a.s."
     bio: |
