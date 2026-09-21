@@ -60,12 +60,16 @@
 # - https://www.fotor.com/photo-editor-app/editor/beauty
 
 registry:
- - id: 64
+  - id: 65
     title: "Základy o LLMkách - bude upřesněno"
     date: "2026-09-24"
+    description: |
+      Podrobnosti o přednášce budou upřesněny.
     bio_name: Martin Rapavý
     bio_title: "AI Specialista v Raiffeisenbank a.s."
-  bio_links:
+    bio: |
+      Martin pracuje jako AI specialista v Raiffeisenbank a.s.
+    bio_links:
       - https://www.linkedin.com/in/martin-rapavy/
     club_speaker_ids:
       - 156884455628341249
