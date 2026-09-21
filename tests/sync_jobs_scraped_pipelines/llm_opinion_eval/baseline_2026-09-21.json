@@ -1,0 +1,500 @@
+[
+  {
+    "id": "st-003",
+    "keep": false,
+    "predicted": true,
+    "llm_reason": "The role involves coding with Python and requires strong software engineering fundamentals. It also mentions hands-on experience with testing and evaluating AI-powered products, aligning with software testing criteria. The job appears to be beginner-friendly, emphasizing learning and curiosity without requiring extensive prior experience."
+  },
+  {
+    "id": "st-008",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job posting for Growth Manager does not mention any coding or software testing tasks explicitly. While it involves data analysis and managing digital performance tasks, these roles do not involve coding or QA responsibilities, making it irrelevant for someone seeking coding or testing opportunities."
+  },
+  {
+    "id": "st-015",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The position explicitly requires PHP coding and backend development skills using Nette and Symfony, making coding a significant part of the role. However, it lacks a clear indication of being beginner-friendly or open to juniors, and it appears to prefer experienced candidates. Thus, it may not be suitable for someone just starting out."
+  },
+  {
+    "id": "st-021",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job posting focuses on marketing for prop trading and does not involve coding or software testing tasks. It emphasizes paid ads and AI but lacks any mention of coding responsibilities, making it not relevant to someone looking for a coding or testing role."
+  },
+  {
+    "id": "st-025",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job focuses on project management and marketing without any explicit mention of coding, software testing, or technical roles involving code. Thus, it doesn't meet the criteria needed for someone starting in coding or software testing."
+  },
+  {
+    "id": "st-029",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job requires backend development in .NET or Go, which involves coding. However, it specifies 'several years' of experience, making it unsuitable for someone who has just learned coding. It mandates strong skills, which go beyond junior capabilities, and doesn't mention mentorship for beginners."
+  },
+  {
+    "id": "st-030",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job posting explicitly requires commercial experience in backend development using Java/Kotlin, including writing unit and integration tests. This aligns with the coding requirements for development and testing roles. However, the experience requirement exceeds 2 years, making it not relevant for absolute beginners."
+  },
+  {
+    "id": "st-039",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job posting seeks a fullstack developer with practical experience in coding using Node.js and React. It mentions the expectation for hands-on development and working closely with the team, aiming for those with junior to medior levels of experience, making it suitable for new developers. However, there\u2019s an emphasis on experience which might be beyond a strict junior level."
+  },
+  {
+    "id": "st-042",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job description focuses on a customer success role with responsibilities around onboarding and consulting. It mentions the need for data handling in SQL and JSON, but it does not specify direct coding or software testing tasks. Therefore, it doesn't meet the criteria for relevant positions that explicitly require programming or testing skills."
+  },
+  {
+    "id": "st-053",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "This job is focused on content creation and editing, requiring strong language skills and editorial judgment rather than coding or software testing. It does not involve explicitly stated coding tasks or software testing, making it irrelevant for a beginner in those fields."
+  },
+  {
+    "id": "st-056",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job focuses primarily on PPC management with a significant emphasis on analytics and strategy, which does not explicitly include coding or software testing. It also requires over 2 years of experience, which is beyond the desired limit for a junior role."
+  },
+  {
+    "id": "st-071",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "This job posting is for a Senior Product Manager position, which primarily focuses on leading teams and client relationships rather than coding or software testing. The role does not explicitly mention coding tasks or require technical experience related to software development or QA, making it irrelevant for those seeking entry-level coding or testing roles."
+  },
+  {
+    "id": "st-075",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "This job is not relevant because it requires 3+ years of experience and a strong background in backend development with specific skills in Node.js/TypeScript or Python. While coding is an important aspect of the role, the experience requirement exceeds the maximum of 2 years."
+  },
+  {
+    "id": "st-087",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The role requires a minimum of 5 years experience and is targeted towards senior professionals, which disqualifies it for junior candidates. It focuses heavily on architecture and design responsibilities rather than coding, testing, or entry-level tasks."
+  },
+  {
+    "id": "st-090",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "This job requires at least 5 years of IT experience, far exceeding the 2-year maximum stated in the criteria. It involves technical tasks related to IT security, but significantly emphasizes prior experience and higher responsibility which does not align with junior roles."
+  },
+  {
+    "id": "st-091",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job posting for a Digital Marketing & Content Manager does not mention any explicit coding or software testing responsibilities. While it involves digital content creation and campaign management, it is primarily focused on marketing rather than coding-related tasks, which makes it irrelevant for a coding or software testing role."
+  },
+  {
+    "id": "st-102",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job role involves managing Microsoft 365, automating tasks with Power Automate and scripting, which includes coding in Python or JavaScript. It also requires experience with automation and internal development, making it relevant for someone with coding and testing skills. However, the requirement for real-world experience and administrative rights might make it less beginner-friendly for true juniors."
+  },
+  {
+    "id": "st-108",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job primarily focuses on AI engineering with an emphasis on building software, which implies coding and working with data, but it's oriented towards more experienced candidates (no junior mentorship or onboarding mentioned). Requires familiarity with RAG and a strong sense of ownership over code, which contradicts the beginner-friendly criteria."
+  },
+  {
+    "id": "st-111",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "This job posting focuses on a UX/Design Engineer role, emphasizing work with code to build prototypes, but it is primarily oriented towards design and UX. The mention of coding is limited and not central to the role\u2014making it less suitable for a beginner specifically looking for a coding or testing position. Thus, it's not relevant."
+  },
+  {
+    "id": "st-116",
+    "keep": false,
+    "predicted": true,
+    "llm_reason": "The job involves coding, particularly in the context of building an AI service where the candidate will write code and work on prototypes. It offers mentoring and is positioned for someone with a relevant background, indicating a junior-friendly environment. However, it does require some prior experience and knowledge of customer interactions."
+  },
+  {
+    "id": "st-126",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job posting is for a leadership role focused on owning and shaping an AI engine's outputs, which implies significant experience and responsibility in AI system design, architecture, and deep learning. It does not explicitly cater to junior positions or provide mentoring, nor does it mention relatively low experience requirements."
+  },
+  {
+    "id": "st-127",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job requires significant responsibility for designing and building a trading application from scratch, which involves coding and architectural decisions. However, it calls for experience in designing systems independently, which contradicts the beginner-friendly aspect and suggests it's not suitable for someone just starting out in coding or testing."
+  },
+  {
+    "id": "st-141",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job posting seeks a PHP and Node.js developer with at least 4 years of experience, which exceeds the maximum allowed 2 years for this position. Additionally, it requires a medior to senior level, meaning it\u2019s not beginner-friendly for someone just starting in coding or software testing."
+  },
+  {
+    "id": "st-150",
+    "keep": true,
+    "predicted": false,
+    "llm_reason": "This job involves coding, specifically using TypeScript, and scripting tasks, which indicates a significant amount of coding is expected. It is aimed at early-career candidates with 1-3 years of experience, and emphasizes learning and teamwork, aligning well with a beginner-friendly environment. However, it focuses more on infrastructure and operations rather than pure coding or software testing roles."
+  },
+  {
+    "id": "st-172",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job is for a Senior Developer role requiring more than 3 years of experience in programming. It focuses on designing and developing an e-commerce platform, which involves architecture responsibilities. Therefore, it does not meet the requirement of being for juniors or requiring a maximum of 2 years of experience."
+  },
+  {
+    "id": "st-178",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The role of AI Engineer indicates strong experience in coding with backend skills required in Go, C#/ .NET, and Python, which are mainstream languages. However, it appears to be aimed at mid-senior levels and does not mention specific junior-friendly support or onboarding, making it less relevant for first-time job seekers."
+  },
+  {
+    "id": "jo-200",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job description focuses on building data-driven features and mentions coding with specific technologies like SQL and involvement in data analysis. However, it does not specify that this position is for juniors or offers mentoring, indicating it may not be suitable for those just starting out. Additionally, the role seems more senior given the level of autonomy and complexity expected."
+  },
+  {
+    "id": "jo-216",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job posting specifies a strong Java backend focus, requiring very good Java skills and involves significant software development in a coding capacity. However, it is aimed at mid-level or senior candidates and does not indicate a junior or beginner-friendly role, nor does it offer mentoring or onboarding for less experienced candidates."
+  },
+  {
+    "id": "jo-288",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job is for a mid-level full stack developer requiring strong Java and JavaScript skills, with responsibilities for software development and testing, including writing unit tests and maintaining CI/CD pipelines. However, it specifies a mid-level position, making it less suitable for beginners seeking junior roles."
+  },
+  {
+    "id": "jo-194",
+    "keep": true,
+    "predicted": true,
+    "llm_reason": "The job posting explicitly mentions coding in Python for developing tools, libraries, and algorithms related to AI and involves a significant coding component. It seeks motivated candidates and includes a team with junior positions, indicating beginner-friendliness. Experience required is up to 2 years."
+  },
+  {
+    "id": "st-121",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "This AI Engineer position at Sudolabs does require coding skills in languages like TypeScript, Node, React, and Python. However, it emphasizes responsibilities such as solution architecture and client engagement that go beyond entry-level roles and may not be beginner-friendly. Overall, it doesn't meet the criteria as it expects more than 2 years of experience and involves significant responsibilities."
+  },
+  {
+    "id": "st-051",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "This job is not relevant because it is for a Senior/Lead Backend Engineer position, requiring significant experience and expertise in Python and FastAPI for backend development. It specifically calls for seasoned candidates and includes responsibilities for designing architecture and setting standards, which does not fit the criteria for beginners or juniors."
+  },
+  {
+    "id": "st-157",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "This job is not relevant as it requires 3-5 years of experience, which exceeds the 2-year maximum specified. While it mentions coding and tools like Python and Go, the role is targeted towards more senior candidates, thus it doesn\u2019t fit beginner-friendly criteria."
+  },
+  {
+    "id": "st-139",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job requires at least 5 years of experience in data engineering and involves significant responsibilities related to managing data platforms and systems design, which exceeds the maximum 2 years of experience requirement for a junior role. Hence, it is not suitable for beginners or those just starting their careers."
+  },
+  {
+    "id": "jo-192",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "This job posting for a SW Quality Engineer requires experience in QA with automated testing using Selenium in Java or C#. It emphasizes the development of automated tests and participating in a QA strategy, making it relevant for someone with coding skills. However, the 3+ years of experience requirement exceeds the 2-year limit for a beginner-friendly role."
+  },
+  {
+    "id": "st-136",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job posting emphasizes the role of a Data Analyst requiring SQL skills and involves analyzing and preparing data. However, it specifies 2-4 years of experience, exceeding the 2-year max you mentioned and lacks explicit software testing responsibilities. Thus, it's not relevant for a junior position looking for less experience."
+  },
+  {
+    "id": "st-161",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job posting for the Atlassian Solution Architect focuses heavily on architecture, client interaction, and mentoring, with only indirect references to coding or software testing. Although it mentions creating automations and working with scripts, these tasks do not clearly define coding or testing responsibilities explicitly. The role appears more advisory and strategic rather than coding-focused, making it less relevant for a newcomer mainly seeking coding or testing roles."
+  },
+  {
+    "id": "jo-204",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The position is aimed at experienced NLP/AI researchers with 3-5 years required, not suitable for beginners. It primarily involves leadership and significant responsibility for developing tools and managing a team, contradicting the beginner-friendly aspect. Thus, it is not relevant for junior-level candidates."
+  },
+  {
+    "id": "jo-257",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job posting lacks any explicit mention of coding, software testing, or related tasks within mainstream programming languages. It does not specify responsibilities or requirements that focus on these areas for junior candidates, making it non-relevant for someone looking for a coding or testing role."
+  },
+  {
+    "id": "jo-186",
+    "keep": false,
+    "predicted": true,
+    "llm_reason": "The job involves coding in Python and working with AI/LLM APIs, focusing on building solutions for business problems. It appears to be aimed at junior candidates, allows for individual input, and offers a hands-on learning experience without requiring extensive prior experience. However, it doesn't mention mentoring or extensive onboarding support."
+  },
+  {
+    "id": "jo-187",
+    "keep": true,
+    "predicted": true,
+    "llm_reason": "The job description explicitly mentions the need for Java programming skills and involves working on AI solutions, which includes processing and training AI models. It's indicated as suitable for fresh graduates, suggesting it's beginner-friendly and does not place responsibility on system design."
+  },
+  {
+    "id": "jo-210",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job focuses on analyzing logistics and operational processes without explicitly mentioning coding or software testing. While it involves working with data and automation, it does not state any required experience in programming languages or software testing, making it not relevant for someone seeking a coding or testing role."
+  },
+  {
+    "id": "st-011",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job description for the Account Manager position primarily focuses on client relations, project management, and marketing. It does not explicitly mention coding, software testing, or significant work with code, making it irrelevant for someone looking for opportunities in coding or software testing roles."
+  },
+  {
+    "id": "st-007",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job posting for a Project Manager at a startup does not explicitly mention coding or software testing as part of the role. It focuses on project management skills and business-related tasks without indicating any requirement or involvement in programming or testing activities, making it irrelevant for a coding or testing beginner."
+  },
+  {
+    "id": "st-043",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job posting is for a Business Development Manager role, which focuses on client communication, presentations, and analysis. It doesn't involve coding or software testing tasks, and explicitly states that no programming skills are needed. Thus, it does not meet the relevance criteria."
+  },
+  {
+    "id": "st-092",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job posting is for a Digital Designer (UX/UI) role, which focuses on design rather than coding or software testing. It does not involve programming tasks or software testing responsibilities, which are essential for the criteria of relevance."
+  },
+  {
+    "id": "st-104",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job posting is for a Senior Graphic Designer position, which does not involve any coding or software testing. The role focuses solely on graphic design, creativity, and visual identity without any mention of technical skills or coding tasks. Thus, it's not relevant for someone seeking a coding or testing job."
+  },
+  {
+    "id": "jo-249",
+    "keep": false,
+    "predicted": true,
+    "llm_reason": "The job title and duties explicitly mention testing and validation of ADAS systems, which may involve coding tasks related to system behavior analysis. It is aimed at fresh graduates, requires no more than 2 years of experience, and seems to offer a supportive work environment. However, there is limited mention of specific coding requirements."
+  },
+  {
+    "id": "jo-284",
+    "keep": false,
+    "predicted": true,
+    "llm_reason": "The job posting for a PPC specialist/data analyst is relevant as it involves analytical tasks, working with data, and technical aspects related to digital marketing. It mentions the use of Google Tag Manager and Google Analytics, implying familiarity with coding or data handling is needed. It fits the junior level criteria and requires a maximum of one year of experience in PPC."
+  },
+  {
+    "id": "st-113",
+    "keep": false,
+    "predicted": true,
+    "llm_reason": "The job explicitly requires coding in both frontend (React, ReScript) and backend (Java, Spring WebFlux) programming languages, meeting the core criteria for a role focused on software development. It appears to be suitable for junior candidates as it invites them to contribute to the project with mentoring and collaborative team support."
+  },
+  {
+    "id": "st-046",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "This job is not relevant because it is aimed at candidates with 8-12+ years of experience and involves a leadership role overseeing data teams. It requires substantial expertise in data strategy and architecture, rather than being entry-level or aimed at juniors."
+  },
+  {
+    "id": "st-163",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "This job posting is for a RevOps and Sales Transformation Lead, which primarily focuses on project management and process improvement rather than coding or software testing. It does not mention any explicitly coding-related responsibilities or the requirement for software testing skills, making it irrelevant for someone seeking coding or testing roles."
+  },
+  {
+    "id": "st-142",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "This job posting does not explicitly mention coding or software testing as a significant part of the role. While it involves campaign management and optimization, these tasks are primarily focused on advertising and client communication rather than programming or QA responsibilities. Therefore, it is not considered relevant for someone looking for a coding or software testing position."
+  },
+  {
+    "id": "st-162",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "This job posting is for a leadership role in IT operations, requiring significant experience (minimum 5 years) and focusing on systems administration and IT management, rather than coding or software testing. It does not fit the criteria for relevant positions for beginners."
+  },
+  {
+    "id": "st-112",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job posting is for a technical leader role that requires significant experience in leadership and architectural design, with a focus on directing product development and implementation. It is not suitable for juniors as it expects prior responsibility for development or technical leadership, which likely exceeds the 2-year experience limit and does not involve mentoring or supportive onboarding for beginners."
+  },
+  {
+    "id": "st-089",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The role primarily focuses on customer support without any explicit coding or software testing tasks mentioned. While it involves technical knowledge and communication with developers, it does not meet the criteria of significant coding or testing responsibilities."
+  },
+  {
+    "id": "st-059",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job is for a Partnership Manager, primarily focused on business development and relationship management, with no mention of coding or software testing responsibilities. It does not involve development, testing, or direct engagement with code or programming languages, making it irrelevant for someone seeking coding or software testing roles."
+  },
+  {
+    "id": "jo-250",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job primarily focuses on architecture design, cloud solutions, and integration strategies rather than hands-on coding or software testing. While it mentions knowledge of programming in Java or C#, coding is not a significant part of the role. Therefore, it does not align with the criteria for relevance for a junior coding or testing position."
+  },
+  {
+    "id": "jo-289",
+    "keep": false,
+    "predicted": true,
+    "llm_reason": "The job involves working as a BI Developer, explicitly requiring experience with SQL and Microsoft Power BI, where coding/data manipulation is a core aspect. It focuses on migrating reports and understanding business logic, which aligns with coding and data analysis tasks. The offering mentions growth opportunities and is suitable for those with practical experience, making it relevant for beginners."
+  },
+  {
+    "id": "st-160",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job posting is for an IT Business Analyst position. While it mentions working with software development and analyzing business requirements, it does not explicitly indicate that coding in a mainstream programming language or software testing is a significant part of the role. Moreover, the focus is more on analysis than coding, which makes it not relevant for a coding or testing role."
+  },
+  {
+    "id": "st-010",
+    "keep": true,
+    "predicted": false,
+    "llm_reason": "The job posting is for a .NET Developer role which explicitly involves coding in C#. It requires experience with .NET development and mentions collaboration as part of the team, which is consistent with working on projects rather than system design or architecture. However, the requirement for at least two years of experience makes it not suitable for beginners."
+  },
+  {
+    "id": "st-098",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job requires over 2 years of experience and includes responsibilities for system architecture and implementation, which is not suitable for someone just starting out. Additionally, it focuses on data security rather than explicit coding or software testing roles."
+  },
+  {
+    "id": "jo-242",
+    "keep": true,
+    "predicted": true,
+    "llm_reason": "The job explicitly requires experience in software testing with coding skills in TypeScript or JavaScript for writing automated tests. It offers opportunities for juniors with mentoring, focuses on collaboration in an agile environment, and does not involve system design responsibilities. This aligns perfectly with entry-level requirements."
+  },
+  {
+    "id": "jo-206",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job requires at least 3 years of experience in C++, making it unsuitable for beginners or those with minimal experience. While it involves refactoring and modernizing C++ code, it does not provide a beginner-friendly environment or mentoring opportunities. As a result, this position is not relevant for someone newly learning coding or software testing."
+  },
+  {
+    "id": "jo-293",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "This job position is focused on experienced testers, requiring 3-5 years of software testing experience, which exceeds the maximum 2 years allowed. Additionally, it includes responsibilities for designing test strategies, which does not align with the criteria for junior roles without design responsibility."
+  },
+  {
+    "id": "st-097",
+    "keep": true,
+    "predicted": true,
+    "llm_reason": "This job is relevant as it explicitly involves testing features, reporting bugs, writing test cases, and requires knowledge of Git and REST API, all of which are important for a junior software testing role. It mentions seeking candidates with basic to intermediate experience and suggests a supportive team culture, making it beginner-friendly."
+  },
+  {
+    "id": "st-134",
+    "keep": true,
+    "predicted": true,
+    "llm_reason": "The job involves ethical hacking and penetration testing, which includes working with web applications and APIs\u2014explicit coding tasks in programming languages like JavaScript, Java, PHP, C, or Python are required. The role offers mentorship and is suitable for juniors, making it a relevant opportunity."
+  },
+  {
+    "id": "jo-282",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job requires at least 3 years of SQL experience and 3 years of Power BI, which exceeds the maximum 2 years of experience specified. Additionally, the role mainly focuses on data analysis rather than software testing or coding, making it less relevant for someone looking to break into coding or testing roles."
+  },
+  {
+    "id": "st-068",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "This role involves technical support and requires analyzing and reproducing incidents, which may include some interaction with code. However, it primarily focuses on support tasks rather than explicit coding or software testing. It lacks substantial coding responsibilities and emphasizes incident analysis instead."
+  },
+  {
+    "id": "st-065",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "This job posting is for a People Operations Partner role focused on HR operations and administration, without any mention of coding or software testing responsibilities. It does not align with the specified criteria as it primarily revolves around human resources."
+  },
+  {
+    "id": "jo-222",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job is for a Senior IT Business Analyst, requiring experience in analysis and integration, but it does not explicitly mention coding or software testing as a significant part of the role. Additionally, it asks for more than 2 years of experience, which does not align with the beginner-friendly criteria."
+  },
+  {
+    "id": "st-067",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The role of Customer Success Manager focuses on client relationships and technical onboarding rather than explicit coding or software testing tasks. While familiarity with SQL or Python is mentioned, it is not a core responsibility of the position, making it irrelevant for someone seeking a coding or testing role."
+  },
+  {
+    "id": "jo-209",
+    "keep": false,
+    "predicted": true,
+    "llm_reason": "The job involves a significant amount of hands-on testing and creation of test scenarios, which includes working directly with business and IT users. It expects prior practical experience in testing, making it suitable for juniors, while not requiring extensive architectural responsibilities."
+  },
+  {
+    "id": "st-140",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job posting is focused on IT hardware, helpdesk, and customer support without explicitly mentioning coding or software testing roles. Although it provides technical training, the responsibilities are predominantly hardware-focused and not in line with coding or QA tasks. Thus, it's not suitable for someone seeking a coding or software testing role."
+  },
+  {
+    "id": "jo-228",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job posting is for a Forwarding Manager / Business Developer and focuses on business development in logistics, without any mention of coding or software testing. It emphasizes client relationships and transport management, which does not meet the criteria for relevance."
+  },
+  {
+    "id": "st-100",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job posting is for a Junior Project Manager role that does not explicitly mention coding or software testing tasks as part of the responsibilities. The focus is on communication, strategy, and market research without any indication of software-related work, making it irrelevant."
+  },
+  {
+    "id": "st-014",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job posting for Head of Accounting does not involve coding or software testing tasks, nor is it aimed at junior candidates. It is focused on accounting responsibilities and does not mention any programming or software development tasks, making it irrelevant for a beginner in coding or QA."
+  },
+  {
+    "id": "jo-264",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job description emphasizes investigative analysis and working with open-source tools within the domain of cybersecurity, but it does not explicitly mention coding in any programming languages or software testing responsibilities. Therefore, it does not meet the criteria for relevance."
+  },
+  {
+    "id": "jo-185",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job title mentions 'Data Analyst with Python', indicating a significant use of the Python programming language for data analysis. However, the posting does not provide details about mentoring, junior requirements, or responsibilities. Without explicit mention of these aspects, it cannot be confirmed as suitable for beginners."
+  },
+  {
+    "id": "jo-202",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job description heavily emphasizes project coordination and working with CATIA for plastic part development, but it lacks any explicit mention of coding or software testing, thus not meeting the criteria."
+  },
+  {
+    "id": "st-038",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "This job posting is for an Office Assistant/Receptionist role, which primarily involves administrative tasks and direct contact with visitors. There is no mention of coding, software testing, or any programming responsibilities, making it not relevant for someone seeking a coding or testing position."
+  },
+  {
+    "id": "st-149",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job posting for a Product Manager does not explicitly involve coding or software testing tasks. It focuses on product strategy, management, and user feedback without a clear requirement for coding or technical tasks, making it irrelevant for someone seeking a coding or software testing role."
+  },
+  {
+    "id": "st-026",
+    "keep": false,
+    "predicted": false,
+    "llm_reason": "The job focuses on online marketing, social media, and influencer collaboration, but it does not explicitly require coding or software testing. The responsibilities outlined do not involve any coding tasks, making the job not relevant for someone looking for a coding or testing position."
+  }
+]
