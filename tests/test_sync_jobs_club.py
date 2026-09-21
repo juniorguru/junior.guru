@@ -2,10 +2,47 @@ from collections import namedtuple
 
 import pytest
 
-from jg.coop.sync.jobs_club import ForumTagName, get_company_web_name, get_forum_tags
+from jg.coop.sync.jobs_club import (
+    TAGS_MAPPING,
+    ForumTagName,
+    get_company_web_name,
+    get_forum_tags,
+)
 
 
 StubForumTag = namedtuple("ForumTag", ["name"])
+
+
+@pytest.mark.parametrize(
+    "tag", ["ai", "agenticengineering", "buildingai", "vibecoding"]
+)
+def test_get_forum_tags_generalizes_ai(tag):
+    forum_tags = [StubForumTag("AI"), StubForumTag("Python")]
+
+    assert get_forum_tags(TAGS_MAPPING, forum_tags, [tag, "python"]) == forum_tags
+
+
+def test_get_forum_tags_deduplicates_before_applying_limit():
+    forum_tags = [
+        StubForumTag(name)
+        for name in ["AI", "C & C++", "HTML & CSS", "Java & Kotlin", "Python", "PHP"]
+    ]
+    tech_tags = [
+        "ai",
+        "agenticengineering",
+        "buildingai",
+        "vibecoding",
+        "c",
+        "cpp",
+        "html",
+        "css",
+        "java",
+        "kotlin",
+        "python",
+        "php",
+    ]
+
+    assert get_forum_tags(TAGS_MAPPING, forum_tags, tech_tags) == forum_tags[:5]
 
 
 @pytest.mark.parametrize(

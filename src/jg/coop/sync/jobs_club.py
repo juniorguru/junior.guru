@@ -29,6 +29,7 @@ IMAGES_DIR = Path("src/jg/coop/images")
 
 
 class ForumTagName(StrEnum):
+    ai = "AI"
     ccpp = "C & C++"
     csharp = "C#"
     dataanalysis = "datová analýza"
@@ -47,6 +48,9 @@ class ForumTagName(StrEnum):
 
 
 TAGS_MAPPING = {
+    "ai": ForumTagName.ai,
+    "agenticengineering": ForumTagName.ai,
+    "buildingai": ForumTagName.ai,
     "c": ForumTagName.ccpp,
     "cpp": ForumTagName.ccpp,
     "csharp": ForumTagName.csharp,
@@ -68,6 +72,7 @@ TAGS_MAPPING = {
     "ruby": ForumTagName.ruby,
     "swift": ForumTagName.swift,
     "testing": ForumTagName.testing,
+    "vibecoding": ForumTagName.ai,
 }
 
 
