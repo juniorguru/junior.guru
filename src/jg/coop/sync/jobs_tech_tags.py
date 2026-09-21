@@ -1,4 +1,4 @@
-from jg.beak.core import beak
+from jg.beak import beak
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
@@ -13,5 +13,5 @@ logger = loggers.from_path(__file__)
 @db.connection_context()
 def main():
     for job in ListedJob.listing():
-        job.tech_tags = list(map(str, beak(job.description_text)))
+        job.tech_tags = sorted(map(str, beak(job.description_text)))
         job.save()
