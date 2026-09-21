@@ -1,5 +1,5 @@
 ---
-title: Práce v IT pro juniory a absolventy | junior.guru
+title: Práce v IT pro juniory bez komerční praxe
 description: Procházej nabídky práce, stáže a brigády zaměřené výhradně na juniory bez komerční praxe.
 template: main.html
 ---
@@ -15,13 +15,13 @@ template: main.html
 {% elif is_region_listing %}
   Práce pro juniory: {{ page.meta.region|replace(' ', ' ') }}
 {% else %}
-  Práce v IT pro juniory bez komerční praxe
+  Práce v IT pro juniory
 {% endif %}
 </h1>
 
 {% call lead() %}
   {% if not is_region_listing %}
-    Nabídky práce v programování, testování a datové analytice pro juniory a absolventy.
+    Nabídky práce v programování, testování a datové analytice. Pro juniory, kterých se týká rekvalifikace do IT, i pro absolventy s VŠ.
   {% endif %}
   Už žádné „požadujeme 4 roky zkušeností“.
   Robot každý den stahuje inzeráty z různých zdrojů a pomocí umělé inteligence {{ "stars"|icon }} vybírá jen ty,

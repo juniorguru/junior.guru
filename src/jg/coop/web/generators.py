@@ -76,12 +76,11 @@ def generate_region_jobs_pages() -> Generator[GeneratedDocument]:
     jobs_file = Path("src/jg/coop/web/docs/jobs.jinja")
     jobs_text = jobs_file.read_text(encoding="utf-8-sig", errors="strict")
     content, meta = parse_document(jobs_text)
-    title = "Práce pro juniorní programátory, testery nebo dataře"
     yield GeneratedDocument(
         path=f"jobs/{REMOTE_TAG_SLUG}.jinja",
         meta=meta
         | {
-            "title": f"{title}: na dálku, z domova, remote",
+            "title": f"{meta['title']}: na dálku, z domova, remote",
             "description": (
                 "Pracovní příležitosti pro začátečníky v IT, "
                 f"které jsou na dálku, z domova, remote. {meta['description']}"
@@ -98,7 +97,7 @@ def generate_region_jobs_pages() -> Generator[GeneratedDocument]:
             path=f"jobs/{doc_slug}.jinja",
             meta=meta
             | {
-                "title": f"{title}: {region}",
+                "title": f"{meta['title']}: {region}",
                 "description": f"Jaké nabízí {region} příležitosti pro začátečníky v IT? {meta['description']}",
                 "region": region,
                 "region_tag_slug": tag_slug,
