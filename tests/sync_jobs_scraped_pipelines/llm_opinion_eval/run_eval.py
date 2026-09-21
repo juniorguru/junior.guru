@@ -55,11 +55,8 @@ def print_report(results: list[dict], gold_set: dict[str, dict]) -> None:
         cm["tp"] / (cm["tp"] + cm["fp"]) if (cm["tp"] + cm["fp"]) else float("nan")
     )
     recall = cm["tp"] / (cm["tp"] + cm["fn"]) if (cm["tp"] + cm["fn"]) else float("nan")
-    f1 = (
-        2 * precision * recall / (precision + recall)
-        if precision and recall and (precision + recall)
-        else float("nan")
-    )
+    f1_denominator = 2 * cm["tp"] + cm["fp"] + cm["fn"]
+    f1 = 2 * cm["tp"] / f1_denominator if f1_denominator else float("nan")
     accuracy = (cm["tp"] + cm["tn"]) / len(results) if results else float("nan")
 
     print("\nConfusion matrix (gold rows x predicted columns):")
@@ -74,12 +71,21 @@ def print_report(results: list[dict], gold_set: dict[str, dict]) -> None:
 
 
 def print_diff(results: list[dict], baseline: list[dict]) -> None:
+    result_ids = {r["id"] for r in results}
+    baseline_ids = {r["id"] for r in baseline}
+    if result_ids != baseline_ids:
+        raise ValueError(
+            "Baseline covers a different set of postings than this run "
+            f"(only in baseline: {sorted(baseline_ids - result_ids)}, "
+            f"only in this run: {sorted(result_ids - baseline_ids)}); "
+            "not comparable."
+        )
+
     baseline_by_id = {r["id"]: r for r in baseline}
     flips = [
         (r, baseline_by_id[r["id"]])
         for r in results
-        if r["id"] in baseline_by_id
-        and r["predicted"] != baseline_by_id[r["id"]]["predicted"]
+        if r["predicted"] != baseline_by_id[r["id"]]["predicted"]
     ]
     print(f"\n{len(flips)} postings flipped decision vs baseline:")
     for r, old in flips:
