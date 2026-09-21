@@ -66,6 +66,7 @@ coop = "jg.coop.cli:main"
 [dependency-groups]
 dev = [
   "ghp-import>=2.1.0",
+  "pydantic-evals>=1.15.0",
   "pync>=2.0.3",
   "pytest>=8.4.2",
   "pytest-asyncio>=1.2.0",
