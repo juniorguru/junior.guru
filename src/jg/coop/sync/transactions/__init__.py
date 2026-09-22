@@ -30,6 +30,8 @@ TODO_TEXT_RE = re.compile(
     re.VERBOSE,
 )
 
+TODOS_PAGE_SIZE = 40
+
 TOGGLE_TODOS_CATEGORIES = [
     TransactionsCategory.DONATIONS,
     TransactionsCategory.MEMBERSHIPS,
@@ -44,6 +46,12 @@ logger = loggers.from_path(__file__)
 @click.option(
     "--from-date",
     default="2020-01-01",
+    type=date.fromisoformat,
+    required=True,
+)
+@click.option(
+    "--todos-since",
+    default=f"{date.today() - timedelta(days=14)}",
     type=date.fromisoformat,
     required=True,
 )
@@ -66,6 +74,7 @@ logger = loggers.from_path(__file__)
 @click.option("--clear-history/--keep-history", default=False)
 def main(
     from_date: str,
+    todos_since: date,
     fio_api_key: str,
     video_outsourcing_token: str | None,
     history_path: Path,
@@ -88,13 +97,18 @@ def main(
     Transaction.drop_table()
     Transaction.create_table()
 
-    logger.info("Getting Fakturoid todos for unpaired transactions")
+    logger.info(
+        f"Getting Fakturoid todos for unpaired transactions since {todos_since}"
+    )
     todos = []
     page = 1
     with fakturoid.get_client(fakturoid_token) as client:
         while True:
             logger.debug(f"Fakturoid todos, page {page}")
-            response = client.get("/todos.json", params={"page": page})
+            response = client.get(
+                "/todos.json",
+                params={"page": page, "since": todos_since.isoformat()},
+            )
             response.raise_for_status()
             todos_page = response.json()
             todos.extend(
@@ -105,7 +119,7 @@ def main(
                     and not todo["completed_at"]
                 )
             )
-            if not todos_page:
+            if len(todos_page) < TODOS_PAGE_SIZE:
                 break
             page += 1
     logger.info(f"Found {len(todos)} Fakturoid todos")
