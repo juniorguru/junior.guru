@@ -61,15 +61,15 @@
 
 registry:
   - id: 65
-    title: "Základy o LLMkách (bude upřesněno)"
+    title: "Jak fungují jazykové modely a co z toho plyne pro práci s nimi"
     date: "2026-09-24"
     description: |
-      (Podrobnosti o přednášce budou upřesněny)
+      Na přednášce získáte hlubší porozumění nejen o tom, CO máte při práci s AI dělat, ale i PROČ tyto rady fungují. Nebudeme si představovat samotné funkcionality jednotlivých nástrojů, ale podíváme se na to jak fungují na pozadí, proč jsou navrženy právě takto, a jakou roli v tom hrají samotné jazykové modely.
     avatar_path: avatars-participants/martin-rapavy.jpg
     bio_name: Martin Rapavý
-    bio_title: "AI Specialista v Raiffeisenbank a.s."
+    bio_title: "AI Specialist v Raiffeisenbank a.s."
     bio: |
-      Martin pracuje jako AI specialista v Raiffeisenbank a.s.
+      Martin je AI Specialist v Raiffeisenbank, kde vede pětičlenný tým vyvíjející AI Portál. Ten každý měsíc využívá více než 2.500 zaměstnanců. Martin se zaměřuje na praktické využití AI a na to, aby ji technické i netechnické týmy dokázaly zapojit do každodenní práce.
     bio_links:
       - https://www.linkedin.com/in/martin-rapavy/
     club_speaker_ids:
