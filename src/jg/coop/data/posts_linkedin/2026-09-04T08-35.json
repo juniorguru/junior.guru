@@ -16,6 +16,17 @@
   "comments": [],
   "reactions": [
     {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Patrik",
+        "lastName": "Brnušák",
+        "occupation": "Video editor, střihač a tvůrce obsahu. Hledáte posilu? Ozvěte se!",
+        "id": "666440295",
+        "publicId": "patrik-brnusak-cz",
+        "profileId": "ACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU"
+      }
+    },
+    {
       "type": "APPRECIATION",
       "profile": {
         "firstName": "Marketa",
@@ -82,7 +93,7 @@
     }
   ],
   "numShares": 0,
-  "numLikes": 6,
+  "numLikes": 7,
   "numComments": 0,
   "canReact": true,
   "canPostComments": true,

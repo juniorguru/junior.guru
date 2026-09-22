@@ -47,11 +47,22 @@
   ],
   "reactions": [
     {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Zpěváková",
+        "occupation": "BI/ Data analyst, junior AI enthusiast, quizmaker and host in DATA Mesh Prague",
+        "id": "637440646",
+        "publicId": "py-veronika-zpevakova",
+        "profileId": "ACoAACX-koYBZCeuCb06SzAT8F955fJvI0OEIAc"
+      }
+    },
+    {
       "type": "LIKE",
       "profile": {
         "firstName": "Karla",
         "lastName": "Root",
-        "occupation": "#opentowork | Data Analyst | Automation | Power BI | Stay calm. Ask AI first, then panic...",
+        "occupation": "#opentowork | Data Analyst | Power Automate | Power BI | Stay calm. Ask AI first, then panic...",
         "id": "420075610",
         "publicId": "karlaroot",
         "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog"
@@ -103,7 +114,7 @@
     }
   ],
   "numShares": 0,
-  "numLikes": 5,
+  "numLikes": 6,
   "numComments": 2,
   "canReact": true,
   "canPostComments": true,

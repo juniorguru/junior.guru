@@ -7,15 +7,15 @@
           {
             "width": 360,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEAFy9wJGCckA",
-            "fileIdentifyingUrlPathSegment": "low/B4DZ9HgF0pKsBI-/0/1783611024778?e=1790038800&v=beta&t=8-NWKjkRXcqKJyJLLwLzYZgnj2c3vGkFW7i8ZPRKXTY",
-            "expiresAt": 1790038800000,
+            "fileIdentifyingUrlPathSegment": "low/B4DZ9HgF0pKsBI-/0/1783611024778?e=1790643600&v=beta&t=8iTJeMXDAMQ7uBdTJGTeMCE6Hspy5NWa9aDztIzZdh4",
+            "expiresAt": 1790643600000,
             "height": 640
           },
           {
             "width": 720,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEAFy9wJGCckA",
-            "fileIdentifyingUrlPathSegment": "high/B4DZ9HgF0pKsBM-/0/1783611024778?e=1790038800&v=beta&t=gKa-SDem8VSC-ELG_qbIYMNdPHCwrj3d_hrjtilNGqY",
-            "expiresAt": 1790038800000,
+            "fileIdentifyingUrlPathSegment": "high/B4DZ9HgF0pKsBM-/0/1783611024778?e=1790643600&v=beta&t=6FFixN3c3nTHGKusnV9UT8Ym187xUjN2Z0XbnfPVt7A",
+            "expiresAt": 1790643600000,
             "height": 1280
           }
         ]
@@ -25,8 +25,8 @@
           {
             "width": 360,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEAFy9wJGCckA",
-            "fileIdentifyingUrlPathSegment": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEAFy9wJGCckA/video-gif-5sec-360/B4DZ9HgF0pKsCU-/0/1783611024778?e=1790038800&v=beta&t=XKJxs7OF8XZ-LVzcbJrufpxKvG6G-1RP0VZ8k_Y2ZSQ",
-            "expiresAt": 1790038800000,
+            "fileIdentifyingUrlPathSegment": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEAFy9wJGCckA/video-gif-5sec-360/B4DZ9HgF0pKsCU-/0/1783611024778?e=1790643600&v=beta&t=R4V62ZR0ueeDE26ysgvSebykfEu6hPGmR02_U64KfPQ",
+            "expiresAt": 1790643600000,
             "height": 640
           }
         ],
@@ -36,8 +36,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEAFy9wJGCckA/mp4-720p-30fp-crf28/B4DZ9HgF0pKsB8-/0/1783611030199?e=1790038800&v=beta&t=omxiuTS10cpuMuxF55P1hz1SECiovsFACftbBm7KYGc",
-              "expiresAt": 1790038800000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEAFy9wJGCckA/mp4-720p-30fp-crf28/B4DZ9HgF0pKsB8-/0/1783611030199?e=1790643600&v=beta&t=SPsRmetJfRIEqH4vmEvyDcRZxavC53UxPYJsCIDD1h4",
+              "expiresAt": 1790643600000
             }
           ],
           "size": 0,
@@ -49,8 +49,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEAFy9wJGCckA/mp4-640p-30fp-crf28/B4DZ9HgF0pKsBk-/0/1783611030199?e=1790038800&v=beta&t=IdtG4Uo9b5aDBKXuy9tHvYzizCJDyZLAX20MUIgKmqA",
-              "expiresAt": 1790038800000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEAFy9wJGCckA/mp4-640p-30fp-crf28/B4DZ9HgF0pKsBk-/0/1783611030199?e=1790643600&v=beta&t=5tM780FZnNeG_GuC0270UCDRHXINPE4WWMxEUZHpEm8",
+              "expiresAt": 1790643600000
             }
           ],
           "size": 0,
@@ -70,8 +70,8 @@
           "mediaType": "application/vnd.apple.mpegURL",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEAFy9wJGCckA/CeJxzMnGJsvRIdzMo8C52KdbVcULmh6LxI9H4yWj8bF0AkJoW9Q?e=1790038800&v=beta&t=T9_HmQZlaOH3qnfe5zEr2zu7MsBs97yDqcSjbW75dHQ",
-              "expiresAt": 1790038800000
+              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEAFy9wJGCckA/CeJxzMnGJsvRIdzMo8C52KdbVcULmh6LxI9H4yWj8bF0AkJoW9Q?e=1790643600&v=beta&t=TEJlwyHrOzgol5NfrNbVVAfxmdIXrXhpZq54T57lvlY",
+              "expiresAt": 1790643600000
             }
           ]
         },
@@ -81,8 +81,8 @@
           "mediaType": "application/dash+xml",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEAFy9wJGCckA/CeJxzMnGJsvRIdzMo8C52KdbVcULmh6LxI9H4yWj8bF0AkJoW9Q?e=1790038800&v=beta&t=eccu2QDwi536MgVP26DBRiIBTDm16QFwe2nJ0LviOk0",
-              "expiresAt": 1790038800000
+              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEAFy9wJGCckA/CeJxzMnGJsvRIdzMo8C52KdbVcULmh6LxI9H4yWj8bF0AkJoW9Q?e=1790643600&v=beta&t=vHgYvt-aNm6ipQ1fvGt99QkhID7pfeJDe9NjuvWllis",
+              "expiresAt": 1790643600000
             }
           ]
         }
@@ -93,8 +93,8 @@
           {
             "width": 720,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEAFy9wJGCckA",
-            "fileIdentifyingUrlPathSegment": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEAFy9wJGCckA/thumbnail-with-play-button-overlay-high/B4DZ9HgF0pKsC0-/0/1783611030199?e=1790038800&v=beta&t=YdAPPdOit3viFvMlOqIBL3-ntDJ96U0etD6xa39WcAY",
-            "expiresAt": 1790038800000,
+            "fileIdentifyingUrlPathSegment": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEAFy9wJGCckA/thumbnail-with-play-button-overlay-high/B4DZ9HgF0pKsC0-/0/1783611030199?e=1790643600&v=beta&t=fp5kjBHGTkaf1R4Aoe0mnFRiTEzqueSPWNoBL7oR1-s",
+            "expiresAt": 1790643600000,
             "height": 1280
           }
         ],
@@ -107,15 +107,15 @@
           {
             "width": 720,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEAFy9wJGCckA",
-            "fileIdentifyingUrlPathSegment": "high/B4DZ9HgF0pKsBQ-/0/1783611024778?e=1790038800&v=beta&t=LJ8SlHZitsxHCik59dJf9MIK_vMH_wbwJeOvwJdGzaw",
-            "expiresAt": 1790038800000,
+            "fileIdentifyingUrlPathSegment": "high/B4DZ9HgF0pKsBQ-/0/1783611024778?e=1790643600&v=beta&t=k7jixjvvC_fSOLMCX6csaZ5c14ggNkQi4hf3L4Tiyrs",
+            "expiresAt": 1790643600000,
             "height": 1280
           },
           {
             "width": 360,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEAFy9wJGCckA",
-            "fileIdentifyingUrlPathSegment": "low/B4DZ9HgF0pKsBU-/0/1783611024778?e=1790038800&v=beta&t=xi7ALj76wlwVZgVSje8PWpyrjwya6vste1GPsvsM-j4",
-            "expiresAt": 1790038800000,
+            "fileIdentifyingUrlPathSegment": "low/B4DZ9HgF0pKsBU-/0/1783611024778?e=1790643600&v=beta&t=Pu4NqeR0i769w8kN3IL4aUWRf5bAvlZ3Z3CpdSsp5lM",
+            "expiresAt": 1790643600000,
             "height": 640
           }
         ],
@@ -165,7 +165,7 @@
       "author": {
         "firstName": "Karla",
         "lastName": "Root",
-        "occupation": "#opentowork | Data Analyst | Automation | Power BI | Stay calm. Ask AI first, then panic...",
+        "occupation": "#opentowork | Data Analyst | Power Automate | Power BI | Stay calm. Ask AI first, then panic...",
         "id": "420075610",
         "publicId": "karlaroot",
         "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog",
@@ -219,7 +219,7 @@
       "profile": {
         "firstName": "Karla",
         "lastName": "Root",
-        "occupation": "#opentowork | Data Analyst | Automation | Power BI | Stay calm. Ask AI first, then panic...",
+        "occupation": "#opentowork | Data Analyst | Power Automate | Power BI | Stay calm. Ask AI first, then panic...",
         "id": "420075610",
         "publicId": "karlaroot",
         "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog"
@@ -316,12 +316,12 @@
     {
       "type": "LIKE",
       "profile": {
-        "firstName": "Marcel",
-        "lastName": "Mravec",
-        "occupation": "iOS/ KMP developer / C/C++ developer / 42Prague.com student",
-        "id": "960822563",
-        "publicId": "mravec",
-        "profileId": "ACoAADlE_SMBMQ93eU8DFPPPG8mDrrPsd7fIxQ8"
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
       }
     }
   ],

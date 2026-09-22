@@ -329,7 +329,7 @@
         "id": "518481128",
         "publicId": "nseetim",
         "profileId": "ACoAAB7nZOgBPpgOCZzDuzZq-trD2UIx5GLKHow",
-        "distance": "OUT_OF_NETWORK",
+        "distance": "DISTANCE_2",
         "profileUrl": "https://www.linkedin.com/in/nseetim"
       },
       "authorType": "Person"
@@ -371,7 +371,7 @@
       "profile": {
         "firstName": "Abdul",
         "lastName": "Rehman Shahid",
-        "occupation": "Software Engineer @Devdimensions | I help design systems and ship reliable APIs faster | Python, Django, AWS, System Design, Devops",
+        "occupation": "Software Engineer @Devdimensions | I help design systems and ship reliable APIs faster | Python, Django, AWS, System Design, DevOps | Open to Remote",
         "id": "1056579628",
         "publicId": "abdul216",
         "profileId": "ACoAAD76ICwBOEkGMXj98qh5811JrgYyDG-qrdg"

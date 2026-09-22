@@ -56,7 +56,7 @@
       "author": {
         "firstName": "Tereza",
         "lastName": "Hurtova",
-        "occupation": "CMO at Nuomy & ENGETO",
+        "occupation": "CMO at Nuomy & ENGETO | Turning human potential into real-world impact",
         "id": "414371750",
         "publicId": "terezahurtova",
         "profileId": "ACoAABiyz6YBd5eOGXzM1olVgh-n263CyuHhTqA",
@@ -67,6 +67,28 @@
     }
   ],
   "reactions": [
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Denisa",
+        "lastName": "Adamcová",
+        "occupation": "Test Automation Engineer | Playwright | Coach at Czechitas",
+        "id": "663230550",
+        "publicId": "denisa-adamcova",
+        "profileId": "ACoAACeIGFYBWteXbpyiOkw1l0_zZZ5IUyzF-y0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Nekvapilová",
+        "occupation": "Tester (Air Bank) | Junior Frontend Developer (HTML, CSS, JavaScript, React, TypeScript) | Czechitas Alumni",
+        "id": "569826842",
+        "publicId": "jana-nekvapilova",
+        "profileId": "ACoAACH23hoBrmBO_-MbfcowPbNRmb5o6lI0CJM"
+      }
+    },
     {
       "type": "LIKE",
       "profile": {
@@ -154,32 +176,10 @@
         "publicId": "ilona-podlahova",
         "profileId": "ACoAABbFGSgB081V2JKHc6skpuJFFobsm5QpXfI"
       }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Sandra",
-        "lastName": "Heinzová",
-        "occupation": "Junior Python Developer who is looking for first IT job opportunity. Not from Prague, but I can take a train :-)",
-        "id": "1057345779",
-        "publicId": "sandra-heinzova",
-        "profileId": "ACoAAD8F0PMB3ls8oo2W-xuzIAVJuEfCRdY-hRA"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Petr",
-        "lastName": "Simecek",
-        "occupation": "Tamer of llamas. I write code that gets deployed and papers that get cited. Bridging the gap between ‘it works in theory’ and ‘it works in prod’ one commit at a time.",
-        "id": "8338936",
-        "publicId": "simecekpetr",
-        "profileId": "ACoAAAB_PfgBsL4w8dCi9wIyQLatN_3k_nTllm0"
-      }
     }
   ],
   "numShares": 1,
-  "numLikes": 11,
+  "numLikes": 13,
   "numComments": 2,
   "canReact": true,
   "canPostComments": true,
