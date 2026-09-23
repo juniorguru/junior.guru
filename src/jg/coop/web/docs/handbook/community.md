@@ -64,7 +64,7 @@ Je velmi těžké se učit zcela samostatně, bez kontaktu s dalšími samouky n
 
   {{ link_card(
     'PyCon SK',
-    'https://2024.pycon.sk/',
+    'https://pycon.sk/',
     'Přijeď na slovenskou Python konferenci.',
     badge_icon='calendar-check',
     badge_text='Konference',
