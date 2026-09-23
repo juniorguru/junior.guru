@@ -142,6 +142,7 @@ HIDDEN_ELEMENTS = [
     "#uc-overlay",  # mapotic.com
     "#uc-cross-domain-consent-sharing-bridge",  # mapotic.com
     "#usercentrics-cmp-ui",  # mapotic.com
+    "main > .fixed.bottom-4.left-4",  # pycon.sk
 ]
 
 BLOCKED_ROUTES = [
