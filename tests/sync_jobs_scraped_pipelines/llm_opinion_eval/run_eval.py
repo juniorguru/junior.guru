@@ -101,6 +101,9 @@ def main() -> None:
     try:
         dataset = load_dataset()
         report = dataset.evaluate_sync(relevance_task)
+        if report.failures:
+            failed = ", ".join(failure.name for failure in report.failures)
+            raise RuntimeError(f"Task execution failed for: {failed}")
 
         baseline = None
         if args.compare:
