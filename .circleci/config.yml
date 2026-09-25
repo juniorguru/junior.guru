@@ -61,7 +61,7 @@ jobs:
       - run:
           name: Install browser
           command: |
-            uv run playwright install firefox
+            uv run playwright install chromium
       - run:
           name: Install JavaScript dependencies
           command: npm ci

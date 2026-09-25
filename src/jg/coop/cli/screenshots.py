@@ -274,7 +274,7 @@ def download_fb_cover_image(screenshot):
     url, path = screenshot
     logger.info(f"Shooting {url}")
     with sync_playwright() as playwright:
-        browser = playwright.firefox.launch()
+        browser = playwright.chromium.launch()
         page = browser.new_page()
         page.goto(url, wait_until="networkidle")
         image_url = page.evaluate(
@@ -301,7 +301,7 @@ def generate_batches(iterable, batch_size):
 
 def create_screenshots(screenshots):
     with sync_playwright() as playwright:
-        browser = playwright.firefox.launch()
+        browser = playwright.chromium.launch()
         page = browser.new_page()
         for url, path in screenshots:
             logger.info(f"Shooting {url}")

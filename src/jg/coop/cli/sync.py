@@ -307,7 +307,10 @@ def close(context):
 def notify(title, text):
     print("\a", end="", flush=True)
     if pync:
-        pync.Notifier.notify(text, title=title)
+        try:
+            pync.Notifier.notify(text, title=title)
+        except Exception:
+            logger.exception("Desktop notification failed")
 
 
 def get_parallel_chains(dependencies_map, exclude=None):

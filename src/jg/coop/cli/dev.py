@@ -60,7 +60,7 @@ def update(pull, packages, push, stash):
             run(["uv", "install"])
             run(["npm", "install"])
         logger.info("Installing Playwright browsers")
-        run(["playwright", "install", "firefox"])
+        run(["playwright", "install", "chromium"])
         if push:
             logger.info("Pushing changes")
             run(["git", "push"])

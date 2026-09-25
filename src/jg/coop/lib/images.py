@@ -124,7 +124,7 @@ def render_template(
 
     logger.info(f"Taking screenshot {width}x{height} {html_path}")
     with sync_playwright() as playwright:
-        browser = playwright.firefox.launch()
+        browser = playwright.chromium.launch()
         try:
             page = browser.new_page()
             page.set_viewport_size({"width": width, "height": height})
