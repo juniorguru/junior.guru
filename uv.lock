@@ -122,7 +122,7 @@ wheels = [
 
 [[package]]
 name = "apify-client"
-version = "3.2.1b4"
+version = "3.2.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "colorama" },
@@ -131,9 +131,9 @@ dependencies = [
     { name = "pydantic", extra = ["email"] },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/97/9b/f61eb59031ea9dc464f7f9e2b986213e39874d12e57bf63d5f80100d4722/apify_client-3.2.1b4.tar.gz", hash = "sha256:4c6593bd6a8270b49fdb002750226390640b58d304f014506f0f2b697879717a", size = 144755, upload-time = "2026-09-24T07:38:42.684Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/cb/37/0e7374e97e7cdb0749f8a0b1e9d84b1036b0e08b1ff636fb140463246084/apify_client-3.2.1.tar.gz", hash = "sha256:604561af6eada8ca2ed4f3b6afb62f22e5bf6e00f8f4c46f6f51636301412215", size = 144669, upload-time = "2026-09-25T12:55:14.751Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/2e/db/91b009d5ddec440d4d13d03e0e8f5120e12f3bd7455bd98db2ff30df1148/apify_client-3.2.1b4-py3-none-any.whl", hash = "sha256:703e0607e91d32e42157c5ab93615845c1d75a0ee1651c73efe1ac21bae9dc9b", size = 160266, upload-time = "2026-09-24T07:38:41.127Z" },
+    { url = "https://files.pythonhosted.org/packages/d5/05/9dff8e2767335f159fb9506926888a990b3f3855dfbef34dada70be96762/apify_client-3.2.1-py3-none-any.whl", hash = "sha256:b464064ae14e1f96b0fc253529a093bcf4ccb8ff3112647c326d11011b2454ea", size = 160238, upload-time = "2026-09-25T12:55:12.808Z" },
 ]
 
 [[package]]
@@ -1203,11 +1203,11 @@ wheels = [
 
 [[package]]
 name = "markdown"
-version = "3.10.3"
+version = "3.11"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/29/6f/da4c6aea59b3001f2e8c0ec7497475aadaf3b021c10cab5b2858f0f32b26/markdown-3.10.3.tar.gz", hash = "sha256:3589362618f743188b4d955b874402bc814f4f83f544dc207719f4baa7d9c45f", size = 372596, upload-time = "2026-07-30T19:05:29.005Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/f8/4f/700155c8c20d9e655dd0732b5fc3c7614f291b9148da271d7388e50bf774/markdown-3.11.tar.gz", hash = "sha256:180224db6aed87ba9ce1f2781ebcd5826253de8ff637112090e24b84502bbf9f", size = 485623, upload-time = "2026-09-25T13:46:23.473Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/64/69/4a5af2bc115a9a33fefe51709749de8262be3f9ba063d1753a837cdbc49c/markdown-3.10.3-py3-none-any.whl", hash = "sha256:fa6c92a00a4a3c98b22728c64a935ae1928250ae65058a6ded814d2cc29a4cea", size = 110757, upload-time = "2026-07-30T19:05:27.883Z" },
+    { url = "https://files.pythonhosted.org/packages/ec/1e/32971905a7ab47f8b66866ed949fa48b104ba1c4a6fa57794c4f2c4b2cb8/markdown-3.11-py3-none-any.whl", hash = "sha256:cd6c89e7eb308c8b332ed673215a52d208a43f8bacc030b1419376129408719e", size = 111296, upload-time = "2026-09-25T13:46:22.163Z" },
 ]
 
 [[package]]
@@ -1455,14 +1455,14 @@ wheels = [
 
 [[package]]
 name = "opentelemetry-api"
-version = "1.44.0"
+version = "1.45.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/ee/8b/aa9e2d8b8dfa7c946f7dec5d1f8f6ba8eca062f43509a06bdb5ce93d26c0/opentelemetry_api-1.44.0.tar.gz", hash = "sha256:67647e5e9566edcf421166fdf022b3537f818635daa852b289e34604dc6fb33a", size = 72406, upload-time = "2026-07-16T15:25:32.678Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/1f/dc/e12c1fe1ed8a7b7149777127b1a0e12ce5bd5a81d97408bedc2128c260f5/opentelemetry_api-1.45.0.tar.gz", hash = "sha256:711ede81773c8025c2c03dac0450bc89f3d30aea6eabcc815c570d4e35a963f7", size = 72115, upload-time = "2026-09-25T12:32:28.399Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ca/6f/a04e900f465ff3221ccc395522503e2d10e79fa21f2723c8e177aae1e0d1/opentelemetry_api-1.44.0-py3-none-any.whl", hash = "sha256:94b98c893a91b88657eaac1e3ba89618cdb85be6918196705354f34728b2cdef", size = 60018, upload-time = "2026-07-16T15:25:11.657Z" },
+    { url = "https://files.pythonhosted.org/packages/44/b9/040d1a1c7836922828e6480cd2366bb8fe0ebf75b413d2bb51a9b0e7f78f/opentelemetry_api-1.45.0-py3-none-any.whl", hash = "sha256:80e068aba7cd56c8b58512d6a36f8d25cb1dfaa0c0a4cc1c938ccf9f362d9cb3", size = 60020, upload-time = "2026-09-25T12:32:03.192Z" },
 ]
 
 [[package]]
