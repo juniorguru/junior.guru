@@ -16,6 +16,7 @@ function setupGitHubProfileForm() {
     const username = getGitHubProfileUsername(input.value);
     titleInput.value += ` @${username}`;
     bodyInput.value = bodyInput.value.replace("@", `@${username}`);
+    window.sa_event?.("github_profile_check");
 
     setTimeout(() => {
       titleInput.value = defaultTitle;
