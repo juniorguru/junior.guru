@@ -61,6 +61,8 @@ def update(pull, packages, push, stash):
             run(["npm", "install"])
         logger.info("Installing Playwright browsers")
         run(["playwright", "install", "chromium"])
+        logger.info("Installing Camoufox browser")
+        run(["camoufox", "fetch"])
         if push:
             logger.info("Pushing changes")
             run(["git", "push"])

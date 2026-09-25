@@ -22,7 +22,10 @@ $ brew install gpg
 
 ```
 $ playwright install
+$ camoufox fetch
 ```
+
+`jg update` runs both of these for you.
 
 ## Setting up email address
 

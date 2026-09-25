@@ -8,6 +8,7 @@ from time import sleep
 
 import click
 import httpx2
+from camoufox.sync_api import Camoufox
 from lxml import html
 from PIL import Image
 from playwright.sync_api import (
@@ -300,8 +301,12 @@ def generate_batches(iterable, batch_size):
 
 
 def create_screenshots(screenshots):
-    with sync_playwright() as playwright:
-        browser = playwright.chromium.launch()
+    # Camoufox bundles uBlock Origin by default, which blocks ads and
+    # trackers during the shoot. Its default filter lists don't include the
+    # "Cookie Notices" ones (those are opt-in "Annoyances" lists), so it
+    # doesn't hide cookie/consent banners generically and HIDDEN_ELEMENTS is
+    # still needed for those.
+    with Camoufox(headless=True) as browser:
         page = browser.new_page()
         for url, path in screenshots:
             logger.info(f"Shooting {url}")
@@ -310,7 +315,6 @@ def create_screenshots(screenshots):
             image_bytes = edit_image(image_bytes)
             logger.info(f"Writing {path}")
             Path(path).write_bytes(image_bytes)
-        browser.close()
 
 
 def create_screenshot(page, url):
