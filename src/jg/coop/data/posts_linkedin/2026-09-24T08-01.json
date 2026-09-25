@@ -1,0 +1,268 @@
+{
+  "type": "image",
+  "images": [],
+  "isActivity": false,
+  "urn": "urn:li:activity:7508797738239733760",
+  "url": "https://www.linkedin.com/posts/honzajavorek_p%C5%99esv%C4%9Bd%C4%8D-%C5%A1%C3%A9fku-nebo-%C5%A1%C3%A9fa-pro%C4%8D-stoj%C3%AD-za-to-activity-7508797738239733760-40SW",
+  "shareUrn": "urn:li:share:7508513524202061824",
+  "text": "Přesvědč šéfku nebo šéfa, proč stojí za to jet na FrontKon 😀\n\nTo je článek na blogu FrontKon - Prague's Frontend Conference. Celý si ho můžete přečíst tady: https://lnkd.in/dEH79ww2\n\nA je to fakt dobrý. A mají to i v angličtině. To musíme jako Python komunita okopírovat, až budeme rozjíždět propagaci prodeje lístků pro PyCon CZ 😛 \n\nNo každopádně, já budu mít sice 5.–6. října jiné starosti (rozrůstající se rodinu), ale vy se v tu dobu můžete družit a vzdělávat v Praze na FrontKonu, a pokud nevíte, jak to vysvětlit šéfce nebo šéfovi, tak teď už víte.\n\nPokud pojedete, bude to určitě jedna z nejlepších věcí, co můžete v tu dobu dělat, protože je to fakt prima konference.\n\nJednak mě kdysi pozvali, abych tam přednášel a něco říkal v panelovce, a to já nezapomenu, to já si takovou důvěru pamatuju a hřeju si ji u srdce. Jednak z toho dobrovolně dodnes sdílí fotky, třeba Jana Nečasová, takže na to asi vzpomínají v dobrém, a to jsou body navíc. Jednak tam bude zase Artem Zakharchenko s jeho testováním, a to si nesmíte nechat ujít, protože Artem tomu fakt rozumí a umí věci strašně dobře vysvětlovat a je do toho nadšený a je moc šikovný a umí toho strašně moc s takovýma těma moderníma frontendovýma věcma. Další důvod: Tu konferenci dělají samí super lidi, které mám rád a kteří mají rádi mně (aspoň myslím). Hej a teď jsem si na webu všiml, že Marta K. bude moderátorka! No tak tak to je další mega důvod, to bude určitě sranda. Jo a zajisté se tam taky dovíte spoustu zajímavých novinek z oboru.\n\nProstě jeďte, FrontKon je super. I pro juniory. I pro seniory. Celej je super. Jeďte.\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+  "attributes": [
+    {
+      "start": 84,
+      "length": 39,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "FrontKon - Prague's Frontend Conference",
+        "universalName": "frontkon",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:111694409"
+      }
+    },
+    {
+      "start": 321,
+      "length": 8,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "PyCon CZ",
+        "universalName": "pycon-cz",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:96200896"
+      }
+    },
+    {
+      "start": 875,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Nečasová",
+        "occupation": "People&Community Superkoders 🩵 Frontendisti.cz Brno 💛",
+        "id": "600428192",
+        "publicId": "jananecas",
+        "profileId": "ACoAACPJzqABtEhQZaPa2y7niKJdfPDfAdzm3OM"
+      }
+    },
+    {
+      "start": 970,
+      "length": 18,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Artem",
+        "lastName": "Zakharchenko",
+        "occupation": "Software engineer & Educator",
+        "id": "479400907",
+        "publicId": "artem-zakharchenko",
+        "profileId": "ACoAAByTE8sBD2jc0LWL1WTudVD1bG_e2hh-aG0"
+      }
+    },
+    {
+      "start": 1352,
+      "length": 8,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Marta",
+        "lastName": "K.",
+        "occupation": "Dev & Cybersecurity",
+        "id": "1012518966",
+        "publicId": "marta-k-586110243",
+        "profileId": "ACoAADxZ0DYBhgRxdaOMklaYfOCWKlHCxgpVXYI"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1790258913666,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7508797738239733760?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7508797738239733760%2C7508890122621255680%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287508890122621255680%2Curn%3Ali%3Aactivity%3A7508797738239733760%29",
+      "text": "To si piš, že to bude zase jízda!😍 ",
+      "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7508797738239733760,7508890122621255680)",
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 0,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "ENTERTAINMENT"
+        }
+      ],
+      "author": {
+        "firstName": "Marta",
+        "lastName": "K.",
+        "occupation": "Dev & Cybersecurity",
+        "id": "1012518966",
+        "publicId": "marta-k-586110243",
+        "profileId": "ACoAADxZ0DYBhgRxdaOMklaYfOCWKlHCxgpVXYI",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/marta-k-586110243"
+      },
+      "authorType": "Person"
+    },
+    {
+      "time": 1790240100286,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7508797738239733760?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7508797738239733760%2C7508811213586415616%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287508811213586415616%2Curn%3Ali%3Aactivity%3A7508797738239733760%29",
+      "text": "Neřekla bych to líp. Pojďte, bude to supeer! 🔥",
+      "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7508797738239733760,7508811213586415616)",
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 0,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "LIKE"
+        }
+      ],
+      "author": {
+        "firstName": "Jana",
+        "lastName": "Nečasová",
+        "occupation": "People&Community Superkoders 🩵 Frontendisti.cz Brno 💛",
+        "id": "600428192",
+        "publicId": "jananecas",
+        "profileId": "ACoAACPJzqABtEhQZaPa2y7niKJdfPDfAdzm3OM",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/jananecas"
+      },
+      "authorType": "Person"
+    },
+    {
+      "time": 1790238135401,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7508797738239733760?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7508797738239733760%2C7508802972261376000%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287508802972261376000%2Curn%3Ali%3Aactivity%3A7508797738239733760%29",
+      "text": "To víš, že tě máme rádi! 💛 Moc díky za skvělý příspěvek a držíme palce na domácí frontě, ať všechno proběhne hladce. 🍼 A snad tedy za rok naviděnou 😀",
+      "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7508797738239733760,7508802972261376000)",
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 1,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "EMPATHY"
+        }
+      ],
+      "author": {
+        "name": "FrontKon - Prague's Frontend Conference",
+        "universalName": "frontkon",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:111694409",
+        "followerCount": 160,
+        "profileUrl": "https://www.linkedin.com/company/frontkon"
+      },
+      "authorType": "Company"
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Radek",
+        "lastName": "Pavlíček",
+        "occupation": "Senior Digital Accessibility Specialist (CPWA) | Event Manager (Agora, INSPO) | Project Lead (Théseus, Pélion, etc.) | Mosty 2022 Awardee | IAAP Global Accessibility Leadership Award Winner 2025 | Poslepu.cz",
+        "id": "108912490",
+        "publicId": "radekpavlicek",
+        "profileId": "ACoAAAZ932oB3E_Lu3tRzXYtZXYJgNzHE2ns9-k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "company": {
+        "name": "earlyvia.com",
+        "universalName": "earlyvia",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:104280665"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Hana",
+        "lastName": "Šumberová",
+        "occupation": "Copy | Content | Creative",
+        "id": "262820006",
+        "publicId": "hana-bartu",
+        "profileId": "ACoAAA-qUKYBrt-M4zFuaDrsujA5plQztBc9zK4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Čamborová",
+        "occupation": "SW developer",
+        "id": "1082522617",
+        "publicId": "veronika-čamborová",
+        "profileId": "ACoAAECF-_kB69byXoaMHs_qzffiv1hqdN_aZ0U"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Nečasová",
+        "occupation": "People&Community Superkoders 🩵 Frontendisti.cz Brno 💛",
+        "id": "600428192",
+        "publicId": "jananecas",
+        "profileId": "ACoAACPJzqABtEhQZaPa2y7niKJdfPDfAdzm3OM"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Vladana",
+        "lastName": "Bacova",
+        "occupation": "I fix marketing in B2B tech companies. Fractional CMO & strategic partner for founders. Founder of SaaS Contesaur.",
+        "id": "87066362",
+        "publicId": "vladana-bacova",
+        "profileId": "ACoAAAUwhvoBAZu73tHjWu42KdbAshjlo9rjfjc"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "company": {
+        "name": "FrontKon - Prague's Frontend Conference",
+        "universalName": "frontkon",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:111694409"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 7,
+  "numComments": 4,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1790236887512,
+  "postedAtISO": "2026-09-24T08:01:27.512Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

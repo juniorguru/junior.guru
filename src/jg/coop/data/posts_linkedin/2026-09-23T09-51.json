@@ -1,0 +1,516 @@
+{
+  "type": "text",
+  "resharedPost": {
+    "type": "image",
+    "images": [],
+    "isActivity": false,
+    "urn": "urn:li:activity:7508441327446085632",
+    "url": "https://www.linkedin.com/posts/honzajavorek_sna%C5%BE%C3%AD%C5%A1-se-dostat-do-it-a-m%C3%A1%C5%A1-fomo-z-ai-poj%C4%8F-activity-7508441327446085632-6mQG?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAClNa6sB8ciDW3bqA-BCob71jkzsJV-THUk",
+    "shareUrn": "urn:li:share:7508441325785092096",
+    "text": "Snažíš se dostat do IT a máš FOMO z AI? Pojď si doplnit nějaký pěkný základ, na kterém pak můžeš stavět.\n\nPřipoj se ve čtvrtek 24.9. na naši přednášku od Martin Rapavý. Martin je AI Specialist v Raiffeisenbank Česká republika. Tam vede pětičlenný tým vyvíjející AI Portál, který využívá více než 2.500 zaměstnanců každý měsíc.\n\nMartin je dlouholetým členem klubu na junior.guru a byl i v panelovce o AI, kterou jsme před časem dělali v Mews (záznamy celé akce máme na YouTube, díky moc, Karolina Kramkova!).\n\nVe skutečnosti ale Martin nebyl jen v panelovce, on byl šedou eminencí celé té akce, protože mi vnuknul nápad na téma a úhel, jakým ho nasvítit: prakticky a bez hypu.\n\nMartin se v práci zaměřuje na praktické využití AI a na to, aby ji technické i netechnické týmy dokázaly zapojit do každodenní práce. Něco podobného můžeš čekat i na čtvrteční přednášce. Získáš tam hlubší porozumění nejen co se týče toho, CO máš při práci s AI dělat, ale i PROČ tyto rady fungují.\n\nNebudeme si představovat samotné funkcionality jednotlivých nástrojů, ale mrkneme se na to, jak fungují na pozadí, proč jsou navrženy právě takto, a jakou roli v tom hrají samotné jazykové modely.\n\nJestli chceš dorazit živě a pokládat Martinovi vlastní otázky, mrkni na junior.guru/events a připoj se k nám na Discord!\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
+    "attributes": [
+      {
+        "start": 154,
+        "length": 13,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Martin",
+          "lastName": "Rapavý",
+          "occupation": "AI Specialist at Raiffeisenbank a.s.",
+          "id": "475183572",
+          "publicId": "martin-rapavy",
+          "profileId": "ACoAABxSudQBHuhA8cJ5OL9XXk9jIvrhocisM3w"
+        }
+      },
+      {
+        "start": 436,
+        "length": 4,
+        "type": "COMPANY_NAME",
+        "company": {
+          "name": "Mews",
+          "universalName": "mewssystems",
+          "active": true,
+          "showcase": false,
+          "entityUrn": "urn:li:fs_miniCompany:2574959"
+        }
+      },
+      {
+        "start": 487,
+        "length": 17,
+        "type": "PROFILE_MENTION",
+        "profile": {
+          "firstName": "Karolina",
+          "lastName": "Kramkova",
+          "occupation": "Be not afraid to step out of your comfort zone and face unknown challenges, it is usual the best thing to do!",
+          "id": "537474680",
+          "publicId": "karolina-kramkova",
+          "profileId": "ACoAACAJNngB4ybl2bJ9KL4XIvIBiZoPcrRLgyI"
+        }
+      }
+    ],
+    "comments": [
+      {
+        "time": 1790167941501,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7508441327446085632?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7508441327446085632%2C7508508557705809921%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287508508557705809921%2Curn%3Ali%3Aactivity%3A7508441327446085632%29",
+        "text": "Je přednáška přístupná i nečlenům?",
+        "entities": [],
+        "fromPostAuthor": false,
+        "urn": "urn:li:comment:(activity:7508441327446085632,7508508557705809921)",
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "edited": false,
+        "numLikes": 1,
+        "numComments": 4,
+        "reactionTypeCounts": [
+          {
+            "count": 1,
+            "reactionType": "LIKE"
+          }
+        ],
+        "author": {
+          "firstName": "Marie",
+          "lastName": "Říhová",
+          "occupation": "\"S poctivým a laskavým srdcem, vytrvalou kreativitou a optimistickou zvídavostí věřím, doufám a miluji, a tak poznávám svět.\"",
+          "id": "1523280724",
+          "publicId": "mř-manager-domacnosti-zahradnik-tester",
+          "profileId": "ACoAAFrLa1QBbI8pTdlbDpoozMATl8Q5wl1nQik",
+          "distance": "OUT_OF_NETWORK",
+          "profileUrl": "https://www.linkedin.com/in/m%C5%99-manager-domacnosti-zahradnik-tester"
+        },
+        "authorType": "Person"
+      },
+      {
+        "time": 1790162568638,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7508441327446085632?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7508441327446085632%2C7508486022285148160%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287508486022285148160%2Curn%3Ali%3Aactivity%3A7508441327446085632%29",
+        "text": "Na panelovce byl Martin Rapavý Top! Přednáška bude super určitě 💯",
+        "entities": [
+          {
+            "start": 17,
+            "length": 13,
+            "type": "PROFILE_MENTION",
+            "profile": {
+              "firstName": "Martin",
+              "lastName": "Rapavý",
+              "occupation": "AI Specialist at Raiffeisenbank a.s.",
+              "id": "475183572",
+              "publicId": "martin-rapavy",
+              "profileId": "ACoAABxSudQBHuhA8cJ5OL9XXk9jIvrhocisM3w"
+            }
+          }
+        ],
+        "fromPostAuthor": false,
+        "urn": "urn:li:comment:(activity:7508441327446085632,7508486022285148160)",
+        "pinned": false,
+        "originalLanguage": "Czech",
+        "edited": false,
+        "numLikes": 2,
+        "numComments": 1,
+        "reactionTypeCounts": [
+          {
+            "count": 1,
+            "reactionType": "LIKE"
+          },
+          {
+            "count": 1,
+            "reactionType": "EMPATHY"
+          }
+        ],
+        "author": {
+          "firstName": "Marketa",
+          "lastName": "Willis",
+          "occupation": "Frontend developer | React | Typescript | Mentor",
+          "id": "690320871",
+          "publicId": "marketa-willis",
+          "profileId": "ACoAACkldecB7E9DWErMM56bPMpJ3V49koGflx0",
+          "distance": "OUT_OF_NETWORK",
+          "profileUrl": "https://www.linkedin.com/in/marketa-willis"
+        },
+        "authorType": "Person"
+      },
+      {
+        "time": 1790156667820,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7508441327446085632?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7508441327446085632%2C7508461272460607488%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287508461272460607488%2Curn%3Ali%3Aactivity%3A7508441327446085632%29",
+        "text": "",
+        "entities": [],
+        "fromPostAuthor": false,
+        "urn": "urn:li:comment:(activity:7508441327446085632,7508461272460607488)",
+        "pinned": false,
+        "edited": false,
+        "numLikes": 1,
+        "numComments": 0,
+        "reactionTypeCounts": [
+          {
+            "count": 1,
+            "reactionType": "ENTERTAINMENT"
+          }
+        ],
+        "author": {
+          "firstName": "Martin",
+          "lastName": "Rapavý",
+          "occupation": "AI Specialist at Raiffeisenbank a.s.",
+          "id": "475183572",
+          "publicId": "martin-rapavy",
+          "profileId": "ACoAABxSudQBHuhA8cJ5OL9XXk9jIvrhocisM3w",
+          "distance": "OUT_OF_NETWORK",
+          "profileUrl": "https://www.linkedin.com/in/martin-rapavy"
+        },
+        "authorType": "Person"
+      }
+    ],
+    "reactions": [
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Jana",
+          "lastName": "Zmijková",
+          "occupation": "Software Developer",
+          "id": "450096743",
+          "publicId": "zmijkova",
+          "profileId": "ACoAABrT7mcBs7ie4r1nA4McNBK2tV0qfujA2v4"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Tereza",
+          "lastName": "Ondroušková",
+          "occupation": "AI Transformation Officer @Raiffeisenbank a.s.",
+          "id": "31777978",
+          "publicId": "tereza-ondroušková-04a786a",
+          "profileId": "ACoAAAHk5LoBXXCYuAqX6mWXF7nYIS3eMEzCH_Q"
+        }
+      },
+      {
+        "type": "APPRECIATION",
+        "profile": {
+          "firstName": "Karolina",
+          "lastName": "Kramkova",
+          "occupation": "Be not afraid to step out of your comfort zone and face unknown challenges, it is usual the best thing to do!",
+          "id": "537474680",
+          "publicId": "karolina-kramkova",
+          "profileId": "ACoAACAJNngB4ybl2bJ9KL4XIvIBiZoPcrRLgyI"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Katerina",
+          "lastName": "Maresova Ali",
+          "occupation": "Employer Branding v IT | Moderátorka smitio komunity 🎤 | Pomáhám firmám budovat značku a oslovit talenty skrze autentický obsah.",
+          "id": "21030863",
+          "publicId": "katerina-maresova-smitio",
+          "profileId": "ACoAAAFA588Br07-uohoO-ZxDwmW5hiuFHo-v7s"
+        }
+      },
+      {
+        "type": "PRAISE",
+        "profile": {
+          "firstName": "Marketa",
+          "lastName": "Willis",
+          "occupation": "Frontend developer | React | Typescript | Mentor",
+          "id": "690320871",
+          "publicId": "marketa-willis",
+          "profileId": "ACoAACkldecB7E9DWErMM56bPMpJ3V49koGflx0"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Martin",
+          "lastName": "Hajný",
+          "occupation": "AI CoE Leader @ Raiffeisenbank | Entrepreneur in Digital Opportunities",
+          "id": "555042112",
+          "publicId": "martin-hajny",
+          "profileId": "ACoAACEVRUABO-jkXWVVslqS0lk1rr2lezqTXf8"
+        }
+      },
+      {
+        "type": "ENTERTAINMENT",
+        "profile": {
+          "firstName": "Martin",
+          "lastName": "Rapavý",
+          "occupation": "AI Specialist at Raiffeisenbank a.s.",
+          "id": "475183572",
+          "publicId": "martin-rapavy",
+          "profileId": "ACoAABxSudQBHuhA8cJ5OL9XXk9jIvrhocisM3w"
+        }
+      },
+      {
+        "type": "EMPATHY",
+        "profile": {
+          "firstName": "Vladimír",
+          "lastName": "Gorej",
+          "occupation": "Senior Full-Stack Engineer & API Tooling Specialist | Freelance, Contract & Fractional Roles | TypeScript, Node.js, Python, OpenAPI & Arazzo | Building API tools for developers and AI agents",
+          "id": "58899881",
+          "publicId": "vladimirgorej",
+          "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
+        }
+      },
+      {
+        "type": "APPRECIATION",
+        "profile": {
+          "firstName": "Šimon",
+          "lastName": "Kořený",
+          "occupation": "Product Owner & Dad | Building great products, raising great humans",
+          "id": "283596586",
+          "publicId": "fusatytata",
+          "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k"
+        }
+      },
+      {
+        "type": "LIKE",
+        "profile": {
+          "firstName": "Manivannan",
+          "lastName": "Selvaraj",
+          "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
+          "id": "13167565",
+          "publicId": "citizenmani",
+          "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ"
+        }
+      }
+    ],
+    "numShares": 1,
+    "numLikes": 11,
+    "numComments": 8,
+    "canReact": true,
+    "canPostComments": true,
+    "canShare": true,
+    "commentingDisabled": false,
+    "allowedCommentersScope": "ALL",
+    "rootShare": true,
+    "shareAudience": "PUBLIC",
+    "author": {
+      "firstName": "Honza",
+      "lastName": "Javorek",
+      "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+      "id": "8517488",
+      "publicId": "honzajavorek",
+      "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+    },
+    "authorProfileId": "honzajavorek",
+    "authorType": "Person",
+    "authorName": "Honza Javorek",
+    "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+    "authorUrn": "urn:li:member:8517488",
+    "postedAtTimestamp": 1790151912557,
+    "postedAtISO": "2026-09-23T08:25:12.557Z"
+  },
+  "isActivity": true,
+  "activityDescription": "Honza Javorek reposted this",
+  "activityOfUser": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "urn": "urn:li:activity:7508463165731684352",
+  "url": "https://www.linkedin.com/posts/martin-rapavy_sna%C5%BE%C3%AD%C5%A1-se-dostat-do-it-a-m%C3%A1%C5%A1-fomo-z-ai-poj%C4%8F-activity-7508460406219210752-4KFx",
+  "shareUrn": "urn:li:share:7508460405309198336",
+  "text": "Tu je to trochu osobné :)\n\nJeden z mojich najväčších objavov posledných rokov bolo objavenie junior.guru a Honza Javorek pred 3 rokmi na PyCon CZ. Už v tej dobe som sa v Raiffeisenbank Česká republika pomerne intenzívne venoval rozširovaniu povedomia a využitia Pythonu a hlavne s tým súvisiaceho upskillingu kolegov. To čo som často videl okolo seba bolo, že IT, programovanie a všeobecne svet technológií sa často staval do pozície takého exkluzívneho klubu iba pre vyvolených. A myslím, že tu sme sa pretli. Honza sa snaží pomáhať juniorom nájsť svoju prvú profesionálnu prácu, mňa vždy bavilo prinášať technológie k ľuďom, ktorý ich dokážu využiť v svojej aktuálnej (často netechnickej) práci.\n\nNapriek tomu, že v tej dobe som už junior asi nebol, pobyt v klube mi za tie 3 roky dal hrozne veľa a povedal by som, že moje dnešné premýšľanie nad adopciou AI a hlavne nad tou časťou, ktorá sa týka ľudí, bolo do veľkej miery ovplyvnené tým, čo som za tie 3 roky videl na junior.guru. Akým problémom a výzvam juniori čelia, s akými predsudkami sa dnes na rôznych miestach stretávajú, aké sú potreby ľudí v tejto pozícii a hlavne ako tomu dokážeme pomáhať my, ľudia, ktorý sme si týmto už prešli. Niekde tam vznikla moja pozícia \"people believera\" :D. \n\nPreto veľmi rád u Honzy v klube porozprávam o tom čomu aspoň do nejakej miery rozumiem a to sú jazykové modely. Bude to pohľad z mojej perspektívy, trochu inak a hlavne tak, aby všetci odišli s hlbším pochopením toho, s čím dnes a denne pracujeme.",
+  "attributes": [
+    {
+      "start": 107,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+      }
+    },
+    {
+      "start": 137,
+      "length": 8,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "PyCon CZ",
+        "universalName": "pycon-cz",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:96200896"
+      }
+    },
+    {
+      "start": 170,
+      "length": 30,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Raiffeisenbank Česká republika",
+        "universalName": "raiffeisenbank-cz",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:274735"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1790157205837,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7508460406219210752?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7508460406219210752%2C7508463529067376640%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287508463529067376640%2Curn%3Ali%3Aactivity%3A7508460406219210752%29",
+      "text": "Klub pro juniory, kde se něco přiučí každý 💪 I já se tam toho hodně učím, a to jsem principál cirkusu. I na tvojí přednášce se určitě něco přiučím a těším se na to  😀 ",
+      "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7508460406219210752,7508463529067376640)",
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 0,
+      "numComments": 0,
+      "reactionTypeCounts": [],
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/honzajavorek"
+      },
+      "authorType": "Person"
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Denisa",
+        "lastName": "Adamcová",
+        "occupation": "Test Automation Engineer | Playwright | Coach at Czechitas",
+        "id": "663230550",
+        "publicId": "denisa-adamcova",
+        "profileId": "ACoAACeIGFYBWteXbpyiOkw1l0_zZZ5IUyzF-y0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Barbora",
+        "lastName": "Lendacká",
+        "occupation": "junior react developer | lifelong hands-on learner 📚",
+        "id": "244185326",
+        "publicId": "barbora-lendacka",
+        "profileId": "ACoAAA6N-O4BkRvPPyIgRFUKOlr5LSE8hcrD3UQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lucie",
+        "lastName": "Cicvárková",
+        "occupation": "Software Testing |  QA | Technical Writing | Technical Documentation | Requirements Analysis | AI Tools",
+        "id": "832383941",
+        "publicId": "lucie-cicvarkova",
+        "profileId": "ACoAADGdK8UBeksm_PFcuvdQUOzp-Qt-UCd0OiI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavla",
+        "lastName": "Beránková",
+        "occupation": "junior PHP programátorka",
+        "id": "549611439",
+        "publicId": "berankova-pavla",
+        "profileId": "ACoAACDCZ68BhDuYokjdegYmFm0rxSx_6Mlwh9c"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Jaroslav",
+        "lastName": "Reken",
+        "occupation": "Data Strategist | Co-owner at Joyful Craftsmen | Advisor for corporate data leaders | Keynote speaker | Microsoft Data & AI Solutions partner",
+        "id": "14612217",
+        "publicId": "jaroreken",
+        "profileId": "ACoAAADe9vkBSML404kItrIcID6Mojb0S0ZIoNA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Oliver",
+        "lastName": "Kamenský",
+        "occupation": "Agile Product Owner | Tatra banka | MBA in AI",
+        "id": "420268337",
+        "publicId": "oliverkamensky",
+        "profileId": "ACoAABkMyTEB4eXQwZRhkZqnIiFNwu3_FM1E0vY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Dana",
+        "lastName": "Holbová",
+        "occupation": "Head of Adaptive Enablement at Raiffeisenbank Česká republika",
+        "id": "516977741",
+        "publicId": "dana-holbová-b25174125",
+        "profileId": "ACoAAB7QdE0BGIK6lFHGHVsSlvbWA8Ic19jO7G8"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Zuzana",
+        "lastName": "Halgašová 👩‍💻",
+        "occupation": "Lead Frontend Developer @ PHI | Angular & Vue Enthusiast",
+        "id": "202420220",
+        "publicId": "zuzana-halgašová-👩‍💻-3b895957",
+        "profileId": "ACoAAAwQr_wBquffvGEl5K8iwrXYvvC8G88d9Uw"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Tereza",
+        "lastName": "Ondroušková",
+        "occupation": "AI Transformation Officer @Raiffeisenbank a.s.",
+        "id": "31777978",
+        "publicId": "tereza-ondroušková-04a786a",
+        "profileId": "ACoAAAHk5LoBXXCYuAqX6mWXF7nYIS3eMEzCH_Q"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vladyslav",
+        "lastName": "Lypchei",
+        "occupation": "Student at Vysoká škola ekonomická v Praze",
+        "id": "1555614841",
+        "publicId": "vladyslav-lypchei-0a1b80374",
+        "profileId": "ACoAAFy4zHkBJIRH9k_p7lO3eRKDUQxs_xFFl4s"
+      }
+    }
+  ],
+  "numShares": 3,
+  "numLikes": 21,
+  "numComments": 1,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": false,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Martin",
+    "lastName": "Rapavý",
+    "occupation": "AI Specialist at Raiffeisenbank a.s.",
+    "id": "475183572",
+    "publicId": "martin-rapavy",
+    "profileId": "ACoAABxSudQBHuhA8cJ5OL9XXk9jIvrhocisM3w"
+  },
+  "authorProfileId": "martin-rapavy",
+  "authorType": "Person",
+  "authorName": "Martin Rapavý",
+  "authorProfileUrl": "https://www.linkedin.com/in/martin-rapavy?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAABxSudQBHuhA8cJ5OL9XXk9jIvrhocisM3w",
+  "authorUrn": "urn:li:member:475183572",
+  "postedAtTimestamp": 1790157119210,
+  "postedAtISO": "2026-09-23T09:51:59.210Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}
