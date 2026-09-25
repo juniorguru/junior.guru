@@ -8,7 +8,6 @@ from time import sleep
 
 import click
 import httpx2
-from camoufox.sync_api import Camoufox
 from lxml import html
 from PIL import Image
 from playwright.sync_api import (
@@ -49,6 +48,23 @@ PLAYWRIGHT_WORKERS = 3
 
 PLAYWRIGHT_RETRIES = 3
 
+# Standalone content script from https://github.com/duckduckgo/autoconsent,
+# installed as an npm dependency ('npm install', which 'jg update' already
+# runs). It opts out of cookie/consent banners for ~380 known CMPs (OneTrust,
+# Cookiebot, Didomi, Usercentrics, TrustArc, Axeptio, CookieYes, Transcend,
+# the orestbida/cookieconsent library, and more), so HIDDEN_ELEMENTS no
+# longer needs a hand-maintained entry per CMP vendor, only for
+# junior.guru-specific chrome (chat widgets, promo banners, sign-in prompts,
+# ...) that isn't a cookie consent popup to begin with.
+AUTOCONSENT_SCRIPT_PATH = Path(
+    "node_modules/@duckduckgo/autoconsent/dist/autoconsent.standalone.js"
+)
+
+# How long to let autoconsent detect and opt out of a CMP popup before we
+# take the screenshot. Its own internal detection loop retries for up to 10s
+# (20 retries, 500ms apart), but it resolves much sooner in practice.
+AUTOCONSENT_TIMEOUT = 4000
+
 HIDDEN_ELEMENTS = [
     '[class*="cookie"]:not(html,body)',
     '[id*="cookie"]:not(html,body)',
@@ -64,10 +80,6 @@ HIDDEN_ELEMENTS = [
     '[aria-describedby*="cookie"]',
     "[aria-modal]",
     '[role="dialog"]',
-    '[id*="onetrust"]',
-    '[class*="onetrust"]',
-    '[id*="transcend"]',
-    '[class*="transcend"]',
     '[id*="onesignal"]',
     '[class*="onesignal"]',
     '[id*="gdpr-consent"]',
@@ -78,11 +90,8 @@ HIDDEN_ELEMENTS = [
     '[class*="consent-banner"]',
     '[id*="consent-manager"]',
     '[class*="consent-manager"]',
-    '[id*="cky-consent"]',
-    '[class*="cky-consent"]',
     '[data-section-name*="cookie"]',
     '[data-component-name*="cookie"]',
-    '[class*="termsfeed-com---"]',
     "[fs-consent-element]",
     ".fs-consent_banner",
     ".alert-dismissible",
@@ -96,8 +105,6 @@ HIDDEN_ELEMENTS = [
     ".fb_iframe_widget",
     ".fb_dialog",
     '[id*="cookiebanner-container"]',
-    "#cc--main",  # seduo.cz
-    "#cc_div",  # seduo.cz
     '[class*="frb-"]',  # wikipedia.org
     '[id="siteNotice"]',  # wikipedia.org
     '[id*="drift-"]',  # pluralsight.com
@@ -118,31 +125,21 @@ HIDDEN_ELEMENTS = [
     "body.modal-open > .modal.fade",  # code.org
     '[style*="Toaster-indicatorColor"]',  # reddit.com
     "reddit-cookie-banner",  # reddit.com
-    "#axeptio_overlay",  # welcometothejungle.com
     '[class*="Modal_modalBackground__"]',  # make.com
     ".hsbeacon-chat__button",  # fakturoid.cz
     ".n-ads-branding-spacer",  # heroine.cz
     ".n-paywall-notification",  # heroine.cz
-    "#didomi-notice",  # heroine.cz
-    ".cm-wrapper",
-    '[id*="CybotCookiebotDialog"]',  # shoptet.cz
     ".toast-container",  # coderslab.cz
     '[class*="dc-ps-banner"]',  # datacamp.com
     ".oj-page-content .homebanner",  # onlinejazyky.cz
     "#awsccc-cb-c",  # aws.amazon.com
-    '[class^="truste-"]',  # redhat.com
-    '[id^="truste-"]',  # redhat.com
     ".cc_banner",  # it-academy.sk
     "cc_container",  # it-academy.sk
     "#IMS_box1",  # it-academy.sk
     "#IMS_iframe1",  # it-academy.sk
     ".IMS_iframeBox",  # it-academy.sk
     "rpl-modal-card",  # reddit.com
-    '[class*="truste_"]',
     "[data-backdrop]",  # welcometothejungle.com
-    "#uc-overlay",  # mapotic.com
-    "#uc-cross-domain-consent-sharing-bridge",  # mapotic.com
-    "#usercentrics-cmp-ui",  # mapotic.com
     "main > .fixed.bottom-4.left-4",  # pycon.sk
 ]
 
@@ -301,13 +298,11 @@ def generate_batches(iterable, batch_size):
 
 
 def create_screenshots(screenshots):
-    # Camoufox bundles uBlock Origin by default, which blocks ads and
-    # trackers during the shoot. Its default filter lists don't include the
-    # "Cookie Notices" ones (those are opt-in "Annoyances" lists), so it
-    # doesn't hide cookie/consent banners generically and HIDDEN_ELEMENTS is
-    # still needed for those.
-    with Camoufox(headless=True) as browser:
+    autoconsent_script = AUTOCONSENT_SCRIPT_PATH.read_text()
+    with sync_playwright() as playwright:
+        browser = playwright.chromium.launch()
         page = browser.new_page()
+        page.add_init_script(autoconsent_script)
         for url, path in screenshots:
             logger.info(f"Shooting {url}")
             sleep(0.3)
@@ -315,6 +310,7 @@ def create_screenshots(screenshots):
             image_bytes = edit_image(image_bytes)
             logger.info(f"Writing {path}")
             Path(path).write_bytes(image_bytes)
+        browser.close()
 
 
 def create_screenshot(page, url):
@@ -327,6 +323,7 @@ def create_screenshot(page, url):
                 page.goto(url, wait_until="networkidle")
             except PlaywrightTimeoutError:
                 pass
+            page.wait_for_timeout(AUTOCONSENT_TIMEOUT)
             page.evaluate(
                 """
                     selectors => Array.from(document.querySelectorAll(selectors.join(', ')))

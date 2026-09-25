@@ -2,6 +2,7 @@
   "name": "juniorguru",
   "type": "module",
   "dependencies": {
+    "@duckduckgo/autoconsent": "16.42.0",
     "@fontsource/inter": "5.3.0",
     "@popperjs/core": "2.11.8",
     "bootstrap-icons": "1.13.1",
