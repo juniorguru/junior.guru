@@ -60,10 +60,27 @@ AUTOCONSENT_SCRIPT_PATH = Path(
     "node_modules/@duckduckgo/autoconsent/dist/autoconsent.standalone.js"
 )
 
-# How long to let autoconsent detect and opt out of a CMP popup before we
-# take the screenshot. Its own internal detection loop retries for up to 10s
-# (20 retries, 500ms apart), but it resolves much sooner in practice.
-AUTOCONSENT_TIMEOUT = 4000
+# Upper bound while polling for autoconsent to reach a terminal lifecycle
+# state (see AUTOCONSENT_DONE_STATES below) before we take the screenshot
+# regardless. A page where a CMP *is* found resolves way under this, in
+# practice within milliseconds of networkidle -- this bound is only ever
+# fully spent on a page with no CMP at all, since "nothing here" is only
+# decided at the end of autoconsent's own detection loop (which retries for
+# up to 10s: 20 retries, 500ms apart).
+AUTOCONSENT_TIMEOUT = 8000
+
+# window.autoconsentStandalone.instance.state.lifecycle values that mean
+# autoconsent is done with a page, one way or another (see lib/web.ts in
+# https://github.com/duckduckgo/autoconsent) -- no CMP found, or a popup was
+# found and opted in/out of, successfully or not.
+AUTOCONSENT_DONE_STATES = [
+    "nothingDetected",
+    "done",
+    "optOutSucceeded",
+    "optOutFailed",
+    "optInSucceeded",
+    "optInFailed",
+]
 
 HIDDEN_ELEMENTS = [
     '[class*="cookie"]:not(html,body)',
@@ -323,7 +340,17 @@ def create_screenshot(page, url):
                 page.goto(url, wait_until="networkidle")
             except PlaywrightTimeoutError:
                 pass
-            page.wait_for_timeout(AUTOCONSENT_TIMEOUT)
+            try:
+                page.wait_for_function(
+                    """(doneStates) => {
+                        const state = window.autoconsentStandalone?.instance?.state;
+                        return Boolean(state && doneStates.includes(state.lifecycle));
+                    }""",
+                    arg=AUTOCONSENT_DONE_STATES,
+                    timeout=AUTOCONSENT_TIMEOUT,
+                )
+            except PlaywrightTimeoutError:
+                pass
             page.evaluate(
                 """
                     selectors => Array.from(document.querySelectorAll(selectors.join(', ')))
