@@ -74,6 +74,7 @@ registry:
       - https://www.linkedin.com/in/martin-rapavy/
     club_speaker_ids:
       - 156884455628341249
+    club_recording_url: https://discord.com/channels/769966886598737931/789046675247333397/1553695681284149258
 
   - id: 64
     title: "Reframing Your Narrative workshop: Nenech za sebe mluvit impostor syndrom"
