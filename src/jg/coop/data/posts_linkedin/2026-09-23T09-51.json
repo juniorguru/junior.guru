@@ -5,7 +5,7 @@
     "images": [],
     "isActivity": false,
     "urn": "urn:li:activity:7508441327446085632",
-    "url": "https://www.linkedin.com/posts/honzajavorek_sna%C5%BE%C3%AD%C5%A1-se-dostat-do-it-a-m%C3%A1%C5%A1-fomo-z-ai-poj%C4%8F-activity-7508441327446085632-6mQG?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAClNa6sB8ciDW3bqA-BCob71jkzsJV-THUk",
+    "url": "https://www.linkedin.com/posts/honzajavorek_sna%C5%BE%C3%AD%C5%A1-se-dostat-do-it-a-m%C3%A1%C5%A1-fomo-z-ai-poj%C4%8F-activity-7508441327446085632-6mQG?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAGnjYh8BS9fABVGN_pY_pxAAw51tK1JtvKo",
     "shareUrn": "urn:li:share:7508441325785092096",
     "text": "Snažíš se dostat do IT a máš FOMO z AI? Pojď si doplnit nějaký pěkný základ, na kterém pak můžeš stavět.\n\nPřipoj se ve čtvrtek 24.9. na naši přednášku od Martin Rapavý. Martin je AI Specialist v Raiffeisenbank Česká republika. Tam vede pětičlenný tým vyvíjející AI Portál, který využívá více než 2.500 zaměstnanců každý měsíc.\n\nMartin je dlouholetým členem klubu na junior.guru a byl i v panelovce o AI, kterou jsme před časem dělali v Mews (záznamy celé akce máme na YouTube, díky moc, Karolina Kramkova!).\n\nVe skutečnosti ale Martin nebyl jen v panelovce, on byl šedou eminencí celé té akce, protože mi vnuknul nápad na téma a úhel, jakým ho nasvítit: prakticky a bez hypu.\n\nMartin se v práci zaměřuje na praktické využití AI a na to, aby ji technické i netechnické týmy dokázaly zapojit do každodenní práce. Něco podobného můžeš čekat i na čtvrteční přednášce. Získáš tam hlubší porozumění nejen co se týče toho, CO máš při práci s AI dělat, ale i PROČ tyto rady fungují.\n\nNebudeme si představovat samotné funkcionality jednotlivých nástrojů, ale mrkneme se na to, jak fungují na pozadí, proč jsou navrženy právě takto, a jakou roli v tom hrají samotné jazykové modely.\n\nJestli chceš dorazit živě a pokládat Martinovi vlastní otázky, mrkni na junior.guru/events a připoj se k nám na Discord!\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
     "attributes": [
@@ -80,6 +80,35 @@
         "authorType": "Person"
       },
       {
+        "time": 1790156667820,
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7508441327446085632?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7508441327446085632%2C7508461272460607488%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287508461272460607488%2Curn%3Ali%3Aactivity%3A7508441327446085632%29",
+        "text": "",
+        "entities": [],
+        "fromPostAuthor": false,
+        "urn": "urn:li:comment:(activity:7508441327446085632,7508461272460607488)",
+        "pinned": false,
+        "edited": false,
+        "numLikes": 1,
+        "numComments": 0,
+        "reactionTypeCounts": [
+          {
+            "count": 1,
+            "reactionType": "ENTERTAINMENT"
+          }
+        ],
+        "author": {
+          "firstName": "Martin",
+          "lastName": "Rapavý",
+          "occupation": "AI Specialist at Raiffeisenbank a.s.",
+          "id": "475183572",
+          "publicId": "martin-rapavy",
+          "profileId": "ACoAABxSudQBHuhA8cJ5OL9XXk9jIvrhocisM3w",
+          "distance": "OUT_OF_NETWORK",
+          "profileUrl": "https://www.linkedin.com/in/martin-rapavy"
+        },
+        "authorType": "Person"
+      },
+      {
         "time": 1790162568638,
         "link": "https://www.linkedin.com/feed/update/urn:li:activity:7508441327446085632?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7508441327446085632%2C7508486022285148160%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287508486022285148160%2Curn%3Ali%3Aactivity%3A7508441327446085632%29",
         "text": "Na panelovce byl Martin Rapavý Top! Přednáška bude super určitě 💯",
@@ -124,35 +153,6 @@
           "profileId": "ACoAACkldecB7E9DWErMM56bPMpJ3V49koGflx0",
           "distance": "OUT_OF_NETWORK",
           "profileUrl": "https://www.linkedin.com/in/marketa-willis"
-        },
-        "authorType": "Person"
-      },
-      {
-        "time": 1790156667820,
-        "link": "https://www.linkedin.com/feed/update/urn:li:activity:7508441327446085632?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7508441327446085632%2C7508461272460607488%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287508461272460607488%2Curn%3Ali%3Aactivity%3A7508441327446085632%29",
-        "text": "",
-        "entities": [],
-        "fromPostAuthor": false,
-        "urn": "urn:li:comment:(activity:7508441327446085632,7508461272460607488)",
-        "pinned": false,
-        "edited": false,
-        "numLikes": 1,
-        "numComments": 0,
-        "reactionTypeCounts": [
-          {
-            "count": 1,
-            "reactionType": "ENTERTAINMENT"
-          }
-        ],
-        "author": {
-          "firstName": "Martin",
-          "lastName": "Rapavý",
-          "occupation": "AI Specialist at Raiffeisenbank a.s.",
-          "id": "475183572",
-          "publicId": "martin-rapavy",
-          "profileId": "ACoAABxSudQBHuhA8cJ5OL9XXk9jIvrhocisM3w",
-          "distance": "OUT_OF_NETWORK",
-          "profileUrl": "https://www.linkedin.com/in/martin-rapavy"
         },
         "authorType": "Person"
       }
@@ -377,6 +377,39 @@
   ],
   "reactions": [
     {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Čamborová",
+        "occupation": "SW developer",
+        "id": "1082522617",
+        "publicId": "veronika-čamborová",
+        "profileId": "ACoAAECF-_kB69byXoaMHs_qzffiv1hqdN_aZ0U"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Matej",
+        "lastName": "Hegedüš",
+        "occupation": "Spacemanager @ Billa Slovensko",
+        "id": "1122498754",
+        "publicId": "matej-hegedus",
+        "profileId": "ACoAAELn-MIBKW5DBFhFP8iarfyu4bK2OZTPwC4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Diana",
+        "lastName": "Nikiforova",
+        "occupation": "Design Engineer at Wamisoftware | UX/UI Designer | Merging Design & Front-End with AI",
+        "id": "563638109",
+        "publicId": "diana-nikiforova",
+        "profileId": "ACoAACGYb10BMqIWjY1WsLh1Q8oYnpvhdK9FjXY"
+      }
+    },
+    {
       "type": "LIKE",
       "profile": {
         "firstName": "Denisa",
@@ -452,43 +485,10 @@
         "publicId": "dana-holbová-b25174125",
         "profileId": "ACoAAB7QdE0BGIK6lFHGHVsSlvbWA8Ic19jO7G8"
       }
-    },
-    {
-      "type": "APPRECIATION",
-      "profile": {
-        "firstName": "Zuzana",
-        "lastName": "Halgašová 👩‍💻",
-        "occupation": "Lead Frontend Developer @ PHI | Angular & Vue Enthusiast",
-        "id": "202420220",
-        "publicId": "zuzana-halgašová-👩‍💻-3b895957",
-        "profileId": "ACoAAAwQr_wBquffvGEl5K8iwrXYvvC8G88d9Uw"
-      }
-    },
-    {
-      "type": "PRAISE",
-      "profile": {
-        "firstName": "Tereza",
-        "lastName": "Ondroušková",
-        "occupation": "AI Transformation Officer @Raiffeisenbank a.s.",
-        "id": "31777978",
-        "publicId": "tereza-ondroušková-04a786a",
-        "profileId": "ACoAAAHk5LoBXXCYuAqX6mWXF7nYIS3eMEzCH_Q"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Vladyslav",
-        "lastName": "Lypchei",
-        "occupation": "Student at Vysoká škola ekonomická v Praze",
-        "id": "1555614841",
-        "publicId": "vladyslav-lypchei-0a1b80374",
-        "profileId": "ACoAAFy4zHkBJIRH9k_p7lO3eRKDUQxs_xFFl4s"
-      }
     }
   ],
   "numShares": 3,
-  "numLikes": 21,
+  "numLikes": 24,
   "numComments": 1,
   "canReact": true,
   "canPostComments": true,

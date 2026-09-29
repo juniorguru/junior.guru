@@ -1,0 +1,120 @@
+{
+  "type": "article",
+  "article": {
+    "type": "FIRST_PARTY",
+    "urn": "urn:li:linkedInArticle:7509249174601891840",
+    "url": "https://www.linkedin.com/pulse/t%25C3%25BDdenn%25C3%25AD-pozn%25C3%25A1mky-meetingy-statusy-p%25C5%2599edn%25C3%25A1%25C5%25A1ka-%25C3%25BAnava-honza-javorek-fxabf",
+    "title": "Týdenní poznámky: Meetingy, statusy, přednáška, únava",
+    "description": "Jak se mi daří pracovat na junior.guru a dalších věcech? Od posledních poznámek už utekl nějaký ten týden (18. 9. až 25. 9.), tak nastal čas se opět o"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7509249329652715520",
+  "url": "https://www.linkedin.com/posts/honzajavorek_t%C3%BDdenn%C3%AD-pozn%C3%A1mky-jak-se-mi-da%C5%99%C3%AD-pracovat-activity-7509249329652715520-uh9C",
+  "shareUrn": "urn:li:ugcPost:7509249329233223680",
+  "text": "Týdenní poznámky! Jak se mi daří pracovat na junior.guru a dalších věcech? Tentokrát je to na 11 min čtení 🧐",
+  "attributes": [],
+  "comments": [
+    {
+      "time": 1790346393307,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7509249329233223680?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7509249329233223680%2C7509257038833684480%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287509257038833684480%2Curn%3Ali%3AugcPost%3A7509249329233223680%29",
+      "text": "díky za ten odkaz v patičce junior.guru 🙏",
+      "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(ugcPost:7509249329233223680,7509257038833684480)",
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 1,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "EMPATHY"
+        }
+      ],
+      "author": {
+        "firstName": "Aleš",
+        "lastName": "Roubíček",
+        "occupation": "Problem Solver, DevOps&FinOps consultant, Web developer, Technowokeist, AI atheist, DJ",
+        "id": "1312080177",
+        "publicId": "rarous",
+        "profileId": "ACoAAE40wTEBTRjKUEs1SOsiocsjxAj8jDMc7Nk",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/rarous"
+      },
+      "authorType": "Person"
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martina",
+        "lastName": "H.",
+        "occupation": "Mathematical Modelling & Simulation",
+        "id": "1095436636",
+        "publicId": "martina-hermanova",
+        "profileId": "ACoAAEFLCVwBT19QTg1fXGo3IDjCfw4RMoMxwPs"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Patrik",
+        "lastName": "Brnušák",
+        "occupation": "Video editor, střihač a tvůrce obsahu. Hledáte posilu? Ozvěte se!",
+        "id": "666440295",
+        "publicId": "patrik-brnusak-cz",
+        "profileId": "ACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavel",
+        "lastName": "Sanka",
+        "occupation": "Senior HR & Organizational Development Executive | HR extensive experience | Leadership | Talent development",
+        "id": "1248198738",
+        "publicId": "pavelsanka",
+        "profileId": "ACoAAEpmAFIBs1dbjA9a2V3nQHxsW5NlkIxFH08"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marek",
+        "lastName": "VELAS",
+        "occupation": "Founder @EDUpunk | Learning design @Reactgirls.com | AI & Health Content Strategist | TALENT Mentor & MEME Therapist",
+        "id": "201927716",
+        "publicId": "marek-velas",
+        "profileId": "ACoAAAwJLCQB-ePqkhYoO0olYYFCoOJGgdydJEs"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 4,
+  "numComments": 2,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1790344555295,
+  "postedAtISO": "2026-09-25T13:55:55.295Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

@@ -68,6 +68,28 @@
   ],
   "reactions": [
     {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Manivannan",
+        "lastName": "Selvaraj",
+        "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
+        "id": "13167565",
+        "publicId": "citizenmani",
+        "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marek",
+        "lastName": "VELAS",
+        "occupation": "Founder @EDUpunk | Learning design @Reactgirls.com | AI & Health Content Strategist | TALENT Mentor & MEME Therapist",
+        "id": "201927716",
+        "publicId": "marek-velas",
+        "profileId": "ACoAAAwJLCQB-ePqkhYoO0olYYFCoOJGgdydJEs"
+      }
+    },
+    {
       "type": "APPRECIATION",
       "profile": {
         "firstName": "Denisa",
@@ -154,32 +176,10 @@
         "publicId": "vendula-krajickova",
         "profileId": "ACoAAERIua4Bk44zfiGE6PT1BmSNoKdqiNkFOYc"
       }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Martin",
-        "lastName": "Hassman",
-        "occupation": "📺 Digitalizuji Kavky, 🎯 Product Manager, 👑 Product Owner, 👨🏼‍💻 Technology Enthusiast, 🗣️ English, Czech, Spanish.",
-        "id": "357018",
-        "publicId": "hassman",
-        "profileId": "ACoAAAAFcpoBmteS--laK_PQYfP-f5of-I9xOqA"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Ilona",
-        "lastName": "Podlahová",
-        "occupation": "V&V Engineer / Tester | Standards-based Certification Testing of Industrial Communication Networks",
-        "id": "382015784",
-        "publicId": "ilona-podlahova",
-        "profileId": "ACoAABbFGSgB081V2JKHc6skpuJFFobsm5QpXfI"
-      }
     }
   ],
   "numShares": 1,
-  "numLikes": 13,
+  "numLikes": 15,
   "numComments": 2,
   "canReact": true,
   "canPostComments": true,
