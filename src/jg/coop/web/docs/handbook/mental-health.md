@@ -126,7 +126,7 @@ Rozeznat moment, ve kterém už je dobré si říct o pomoc, je někdy náročn�
 - Psychicky se **dlouhodobě** necítíš dobře, tzn. obtíže v řádu měsíců neustupují.
 - Tvé problémy jsou **intenzivní** a začínají ti proto **způsobovat problémy v každodenním životě**. Je kvůli nim např. obtížnější odvádět výkon v práci, či udržovat spokojené vztahy.
 
-Je taky výhodné dát na **upozornění našeho okolí**, které je schopné někdy lépe registrovat pozvolné změny v našem stavu. Samozřejmě neváhej, pokud cítíš, že **situace není udržitelná**. Národní ústav duševního zdraví (NÚDZ) nabízí [dotazníky](https://www.opatruj.se/otestujte-se), kterými můžeš svůj aktuální stav otestovat.
+Je taky výhodné dát na **upozornění našeho okolí**, které je schopné někdy lépe registrovat pozvolné změny v našem stavu. Samozřejmě neváhej, pokud cítíš, že **situace není udržitelná**. Národní ústav duševního zdraví (NÚDZ) nabízí [dotazníky](https://www.opatruj.se/otestuj-se), kterými můžeš svůj aktuální stav otestovat.
 
 ### Když je krize
 
@@ -222,7 +222,7 @@ Psychiatr tě vyslechne, proberete tvůj stav, a pak ti nabídne pomoc. Může t
 <div class="link-cards">
   {{ link_card(
     'Otestuj svůj psychický stav',
-    'https://www.opatruj.se/otestujte-se',
+    'https://www.opatruj.se/otestuj-se',
     'Orientační diagnostika psychického zdraví.',
   ) }}
 
