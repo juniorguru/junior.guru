@@ -1,0 +1,63 @@
+{
+  "id": "97c97a67-2c63-4ed8-b650-d4fb9b0e30be",
+  "creation_date": "2026-10-02T13:59:37.162690Z",
+  "absolute_url": "https://buttondown.com/juniorguru/archive/zari-2026-ve-svete-it-junioru-u1f423-2481/",
+  "analytics": {
+    "recipients": 734,
+    "deliveries": 732,
+    "opens": 0,
+    "clicks": 0,
+    "temporary_failures": 2,
+    "permanent_failures": 0,
+    "unsubscriptions": 1,
+    "complaints": 0,
+    "survey_responses": 0,
+    "webmentions": 0,
+    "page_views_lifetime": 0,
+    "page_views_30": 0,
+    "page_views_7": 0,
+    "subscriptions": 0,
+    "paid_subscriptions": 0,
+    "replies": 0,
+    "comments": 0,
+    "social_mentions": 0,
+    "temporary_failure_breakdown": [
+      {
+        "code": "unknown",
+        "count": 1
+      },
+      {
+        "code": "out_of_storage",
+        "count": 1
+      }
+    ],
+    "permanent_failure_breakdown": []
+  },
+  "callouts": [],
+  "attachments": [],
+  "body": "<!-- buttondown-editor-mode: plaintext -->## Ahoj, tady robotické kuře z junior.guru! Mám pro tebe aktuální dávku novinek.\n\n## Čísla z pracovního trhu 📊\n\nKaždý den stahuju z různých zdrojů inzeráty a ty, které jsou vhodné pro začátečníky, dávám na [junior.guru/jobs](https://junior.guru/jobs/). Za poslední měsíc jsem mělo průměrně **70 aktivních inzerátů týdně**. Toto jsou technologie, které se průměrně za týden objevovaly nejčastěji:\n\n🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨 41× database  \n🟨🟨🟨🟨🟨🟨🟨 31× testing  \n🟨🟨🟨🟨🟨🟨 28× python  \n🟨🟨🟨🟨🟨 22× javascript  \n🟨🟨🟨🟨 20× api  \n🟨🟨🟨 14× git  \n🟨🟨🟨 14× css  \n🟨🟨 12× linux  \n🟨🟨 12× html  \n🟨🟨 12× csharp\n\n## Plánované online akce 🗓️\n\n**8.12. 18:00** [Od zdrojáku ke strojáku: Jak fungují kompilátory a interpretery](https://junior.guru/events/66/) (David Majda)\n\n## Srazy, konference a jiné akce 🍻\n\n**3.10. České Budějovice**, komunita technologických kutilů:  \n[Maker Faire České Budějovice & REUSE festival](https://makerfaire.cz/ceske-budejovice/)\n\n**6.10. Praha**, komunita kolem frontendu:  \n[FrontKon#26 - konference komunity Frontendisti](https://www.meetup.com/frontendisti/events/312364806/)\n\n**7.10. Ostrava**, místní IT komunita:  \n[TechMeetup #43: AI F\\*ckUpy](https://www.meetup.com/techmeetupostrava/events/316550536/)\n\n**15.10. České Budějovice**, místní IT komunita:  \n[DEV Čtvrtkon #143](https://ctvrtkon.cz/public/udalost/dev-ctvrtkon-143)\n\n**17.10. Brno**, komunita technologických kutilů:  \n[Maker Faire Brno (1. den)](https://makerfaire.cz/brno/)\n\n**18.10. Brno**, komunita technologických kutilů:  \n[Maker Faire Brno (2. den)](https://makerfaire.cz/brno/)\n\n**22.10. Praha**, komunita (nejen) žen kolem Reactu a frontendu:  \n[ReactGirls & Active24 meetup](https://www.meetup.com/reactgirls/events/315972875/)\n\n**22.10. Brno**, komunita kolem Javy:  \n[Three Incidents Later: Why We Turned Virtual Threads Off](https://www.meetup.com/brno-java-meetup/events/316579260/)\n\nO těchto akcích se psalo v naší [komunitě na Discordu](https://junior.guru/club/):\n\n▪️ [Linux Days (Praha FIT ČVUT, 3. - 4. 10. 2026)](https://discord.com/channels/769966886598737931/1555573723082526760/1555573723082526760)  \n▪️ [Soutěž o lístky na Frontkon 2026 (Praha, 5.-6.10.)](https://discord.com/channels/769966886598737931/1542556492639772824/1544182704445063179)  \n▪️ [Humanoidní roboti naživo (Jihlava, 17. 9.)](https://discord.com/channels/769966886598737931/1544575500867997716/1544575500867997716)\n\n## Kurzy programování a testování 🧑‍🏫\n\nNa [junior.guru/courses](https://junior.guru/courses/) je katalog poskytovatelů kurzů. Nejvíc tam teď lidi koukají na tohle:\n\n[ENGETO](https://junior.guru/courses/engeto) ▪️ [Sharp Programmer (Andrew Sharp)](https://junior.guru/courses/sharpprogrammer) ▪️ [Skillmea](https://junior.guru/courses/skillmea) ▪️ [ITnetwork](https://junior.guru/courses/itnetwork) ▪️ [42 Prague](https://junior.guru/courses/42prague) ▪️ [Coders Lab](https://junior.guru/courses/coderslab)\n\nV naší [komunitě na Discordu](https://junior.guru/club/) se v poslední době psalo o těchto kurzech:\n\n[PyLadies](https://junior.guru/courses/pyladies) ▪️ [Czechitas](https://junior.guru/courses/czechitas)\n\n## Nepřibarvené příběhy juniorů 💆\n\n▪️ Na pohovoru proti mně sedělo šest lidí. Tomáš Novák o tranzitu z hudby do IT – [Přečti](https://junior.guru/stories/tomas-novak/)  \n  \n▪️ Volalo mi padesát vymahačů denně. Dnes pracuju v IT a nechápu, jak jsem to zvládla, říká Lucie Kopecká – [Přečti](https://junior.guru/stories/lucie-kopecka/)\n\n## Podcast 🎙️\n\n▪️ Karolina Surma a Petr Viktorin o tom, jaké jsou začátky ve firmě z pohledu juniora a seniora – [Poslouchej](https://junior.guru/podcast/20/)  \n  \n▪️ Jiří Psotka o hledání první práce v IT – [Poslouchej](https://junior.guru/podcast/1/)\n\n## Záznamy z online akcí 📺\n\n▪️ Martin Rapavý: Jak fungují jazykové modely a co z toho plyne pro práci s nimi – [Sleduj](https://junior.guru/events/65/#zaznam)  \n  \n▪️ Svetlana Margetová: Chcem mobilnú aplikáciu. Ako a kde začať? – [Sleduj](https://junior.guru/events/17/#zaznam)\n\n## Co se dělo v klubu 💬\n\nV naší Discord komunitě se od 1.9. napsalo **399.248 písmenek**. Tady je shrnutí toho nejzajímavějšího. Pokud v klubu ještě nejsi, nebo vůbec nevíš, o co jde, mrkni na [junior.guru/club](https://junior.guru/club/)\n\n### 👥 V jakých skupinkách to nejvíc žilo\n\n[Bezpečnost](https://discord.com/channels/769966886598737931/1421181822389325828/1544619040218026054) ▪️ [Pondělní (i jiné) povídání](https://discord.com/channels/769966886598737931/1198999483309117582/1546393835733647381) ▪️ [ESP32,Arduino, STM a bereme i Pico](https://discord.com/channels/769966886598737931/1309193455578386472/1544989262422740992)\n\n### 🛠️ Jaké jsme tvořili projekty\n\nA. – [Password Generator - C#](https://discord.com/channels/769966886598737931/1545463588552966224/1545463588552966224) ▪️ T.S. – [Učební materiál o \"Prompt Engineeringu\" vytvořený na základě vlastního skillu.](https://discord.com/channels/769966886598737931/1555572071231266917/1555572071231266917)\n\n### 📔 Do jakých deníčků se nejvíc psalo\n\nL. – [Deníček switcherky](https://discord.com/channels/769966886598737931/1177266646579163246/1544237004542189629) ▪️ J. – [Jitka v IT](https://discord.com/channels/769966886598737931/1150481852516290641/1545057468546023444) ▪️ T. – [Zahradníkův rok](https://discord.com/channels/769966886598737931/1464559456112083161/1544323819865378857)\n\n### 🤖 Stupnice využití AI při tvorbě softwaru a realita v týmech\n\nProbírali jsme, jak různé týmy využívají AI při psaní kódu, že většina je zatím kolem levelu 4–6 z 10, vznikají nové role, řešily se rozdíly v dovednostech i potřeba vzdělávání. [Diskutuj](https://discord.com/channels/769966886598737931/1401948283361955940/1551916722192130099)\n\n### ⚖️ Průměrnost, perfekcionismus a výkon v práci\n\nŘešilo se, jak vnímat průměrnost v práci, tlak na výkon, strach z chyb i vyhoření a hlavně jak najít svůj balanc a nenechat se zbytečně srovnávat s ostatními. Probrali jsme, jak se lidi vyrovnávají s tím být v týmu průměrní, jaké na sebe kladou nároky a jak firemní kultura ovlivňuje vnímání uznání i balanc práce a osobního života. [Diskutuj](https://discord.com/channels/769966886598737931/864434067968360459/1550412789313703998)\n\n### 💰 Vyjednávání o zvýšení mzdy v IT – strategie, doporučení\n\nProbrali jsme, kdy a jak si v IT říct o přidání, jak si připravit argumenty, že by ženy měly žádat častěji, rozdíly mezi firmami a že někdy malé přidání spíš demotivuje. [Diskutuj](https://discord.com/channels/769966886598737931/788826407412170752/1546930513154150510)\n\n### 🛠️ Základní dovednosti pro vývojáře v éře AI/vibecodingu\n\nŘešilo se, že v době AI a vibecodingu je klíčové umět nejen promptovat, ale i základy gitu, cloud engineeringu, bezpečnosti, CI/CD, API a vůbec rozumět základům software a jeho procesům. [Diskutuj](https://discord.com/channels/769966886598737931/1401948283361955940/1554097817918902377)\n\n### 📄 Vliv AI na životopisy a proces náboru\n\nProbrali jsme, jak AI mění psaní životopisů, že moc uhlazené CV budí u HR nedůvěru a že autenticita je důležitá i kvůli etice a férovosti k různým typům uchazečů. [Diskutuj](https://discord.com/channels/769966886598737931/788826407412170752/1545132593236672622)\n\n### 📈 Požadovaný plat při pohovorech: strategie, úskalí\n\nProbralo se, jak ve firmách řešit otázku očekávané mzdy, kdy lidi radili stát si za svou částkou, zjistit si informace, nebát se o platu mluvit a využít různé portály na srovnání platů. [Diskutuj](https://discord.com/channels/769966886598737931/789107031939481641/1544447545130881114)\n\n### 💻 Registrace a online účast na Linux Days\n\nŘešilo se, jak se online připojit na Linux Days, jestli je potřeba registrace, kde najít streamy a obecně jak na podobné IT akce najít odkazy a obsah. [Diskutuj](https://discord.com/channels/769966886598737931/769966887055392768/1554479342967586889)\n\n### 🖨️ Výběr 3D tiskárny: zkušenosti, materiály a bezpečnost\n\nProbrali jsme zkušenosti s výběrem kryté 3D tiskárny do 15 tisíc, doporučení na materiály, tipy pro začátečníky, bezpečnost i rady ke koupi a používání resinových tiskáren. [Diskutuj](https://discord.com/channels/769966886598737931/789087476072710174/1546512902457135114)",
+  "canonical_url": "",
+  "commenting_mode": "enabled",
+  "description": "",
+  "archival_mode": "enabled",
+  "email_type": "public",
+  "featured": false,
+  "filters": {
+    "filters": [],
+    "groups": [],
+    "predicate": "and"
+  },
+  "image": "",
+  "metadata": {},
+  "modification_date": "2026-10-02T14:15:36.547008Z",
+  "publish_date": "2026-10-02T14:15:36.211284Z",
+  "related_email_ids": [],
+  "secondary_id": 12,
+  "should_trigger_pay_per_email_billing": false,
+  "slug": "zari-2026-ve-svete-it-junioru-u1f423-2481",
+  "source": "api",
+  "status": "sent",
+  "subject": "Září 2026 ve světě IT juniorů 🐣",
+  "suppression_reason": null,
+  "template": null
+}
