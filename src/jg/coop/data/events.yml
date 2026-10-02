@@ -60,6 +60,27 @@
 # - https://www.fotor.com/photo-editor-app/editor/beauty
 
 registry:
+  - id: 66
+    title: "Od zdrojáku ke strojáku: Jak fungují kompilátory a interpretery"
+    date: "2026-12-08"
+    description: |
+      Co všechno se děje od chvíle, kdy napíšete program, do chvíle, kdy ho můžete spustit? Projdeme si celou cestu od zdrojového kódu přes syntaktický strom až po strojový kód nebo bajtkód. Vysvětlíme si, co je parser nebo linker, a ukážeme si, jak se od sebe liší různé jazyky. Vše si předvedeme na živých ukázkách.
+
+      Po přednášce budete lépe chápat, jak fungují vývojářské nástroje, které používáte. Nabyté znalosti můžete využít i při implementaci funkcí jako je pokročilé vyhledávání nebo třeba k vytvoření vlastních lintovacích pravidel.
+    avatar_path: avatars-participants/david-majda.jpg
+    bio_name: David Majda
+    bio_title: "Senior AOCS Software Engineer, VZLU AEROSPACE"
+    bio: |
+      David je programátor tělem i duší. Zajímají ho webové technologie, programovací jazyky a jak psát software dobře a udržitelně. V oboru se pohybuje 20+ let a za tu dobu stihl pracovat pro velké firmy i startupy, vést týmy, učit na VŠ a vybudovat [úspěšný open source projekt](https://github.com/pegjs/pegjs). Nyní ve [VZLU AEROSPACE](https://cs.wikipedia.org/wiki/VZLU_Aerospace) vytváří letový software pro satelity vyvíjené v rámci českého vesmírného programu.
+    bio_links:
+      - https://majda.cz/
+      - https://www.linkedin.com/in/dmajda/
+      - https://github.com/dmajda
+      - https://mastodon.social/@dmajda
+      - https://speakerdeck.com/dmajda
+    club_speaker_ids:
+      - 628865437207363586
+
   - id: 65
     title: "Jak fungují jazykové modely a co z toho plyne pro práci s nimi"
     date: "2026-09-24"

@@ -21,6 +21,6 @@ Story author Adéla typically provides a Google Docs interview and attaches part
 ## Formatting
 
 - Separate every question and answer with two blank lines.
-- Render standalone quotes—often written as `*„text”*`—with `blockquote_avatar`. Follow existing interviews for exact usage.
+- Render standalone quotes—often written as `*„text”*`—with `blockquote_avatar`. Follow existing interviews for exact usage. The macro loads the avatar from `src/jg/coop/images/avatars-quotes`, so copy the participant photo there too.
 - Fix markup typos. Replace accidental double spaces after ordinary sentences with one space.
 - Replace `...` with `…`.
