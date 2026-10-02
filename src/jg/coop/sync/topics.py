@@ -114,6 +114,8 @@ KEYWORDS = {
         r"cesta\s*do\s*it": "cestadoit",
         r"petr\s*fiala": "cestadoit",
         r"mark[ée]ta\s*willis": "marketawillis",
+        r"reactiv\s*devs?": "reactivdevs",
+        r"(ja)?kub\w*\s+kraus\w*": "reactivdevs",
     }.items()
 }
 
