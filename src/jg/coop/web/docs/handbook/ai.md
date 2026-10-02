@@ -776,4 +776,45 @@ free kurzy o AI, pokud někdo prozkoumáte, dejte vědět jaký to je https://bl
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1554153546885365790
+A z druhé strany - je to i o tom připravit bezpečnější prostředí (infrastrukturu) pro běh software (ať už ho napsal kdokoliv nebo cokoliv).
+Posledních 15 let jsem se při nasazování softwaru do produkce inspiroval mimojiné u https://12factor.net/ Je to “ideologický framework”, jak místo piplání s každou nasazovanou komponentou zkusit nějaký víc uniformní přístup. Ale počítá to s tím, že software je napsán korektně a příčetnými lidmi. Dnes i jenom kyberbezpečnostní situace je taková, že si nikdo nemůže být jist skoro ničím.
+Nový software se snažím psát tak, aby bylo co nejméně věcí, které se mohou pokazit. Je potřeba, aby si software načítal konfiguraci s API tokeny? Není - API bude volat přes proxy a ta tam ten token doplní + řeší audit log. (Navíc v některých případech lze long-lived token nahradit jinými technologiemi.) Je potřeba, aby software řešil auth? Není, auth bude řešit gateway nebo reverzní proxy a můj software už jen dostane jméno přihlášeného uživatele. Tím se mi odfiltrovalo 90 % obvyklých druhů útoků.
+Ostatně takhle by se asi mělo přemýšlet i nad izolací/sandboxováním AI agentů.
+I operační systémy jsou dnes mnohem dále. Virtuální filesystémy, virtuální sítě, rootless kontejnery… tooly jako bubblewrap, gvisor… Když AI agent, nebo jakýkoli software, chce spustit shell příkaz, můžu ho pustit s omezením na pracovní adresář a klidně jen v read-only režimu.
+Nad tím vším mi může běžet furt dokola nějaký vhodný model (i např. Jev) a dívat se, jestli vše vypadá ok.
+V těchto oblastech očekávám rozvoj v příštích měsících (ostatně probíhá už teď).
+---
+
+
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1551916722192130099
+Na svem poslednim pohovoru jsem dostal (ocekavany) dotaz, jak pouzivam AI. Manazer na me vytahl tuhle stupnici:
+> Level 0: Human did not use AI at all
+> Level 1: Human asked chatbot for ideas
+> Level 2: Human coded with minor assists
+> Level 3: Human coded, bots assisted non-trivially
+> Level 4: Human coded, bots helped significantly
+> Level 5: Bots coded, human understands completely
+> Level 6: Bots coded, human understands mostly
+> Level 7: Human specced, bots coded
+> Level 8: Bots planned, human approved
+> Level 9: Human fired-and-forgot
+> Level 10: Rogue bots, zero human attention
+(vychazi to z https://www.visidata.org/blog/2026/ai/, ale to jsem v ramci pohoru necetl)
+For the record, ja jsem ted na levelu 4.8, ale to neni pointa - davam to sem proto, ze by to nekomu mohlo pomoct zformulovat odpoved na otazku "co vy a AI", ale hlavne mi to pomohlo pochopit, ze je to skala. Moje cernobile perfekcionisticke videni sveta a FOMO do te chvile tapalo - zvlast, kdyz se clovek pokousi porovnavat s temi nadsenci, co porad mluvi o skillech, harnessech a evalech a mne se jeste porad nechce zjistovat, co to vlastne je. Mel jsem pocit, ze mi ujizdi vlak. Diky te stupnici jsem si ale uvedomil, ze i ja jsem udelal za poslednich par let nejaky pokrok a pravdepodobne se na tom svym levelu pet ani nezastavim, potrebuju proste jen vic casu nez ti, kteri do toho skocili obema nohama. A taky mi pomohlo, kdyz mi ten manager prozaradil, ze v te firme sice jsou lidi na levelu 8-9, ale taky je tam porad spousta lidi na levelu 0.
+Tak treba to tady nekomu jako mne trochu pomuze ujasnit si svuj pristup k AI.
+(Vahal jsem, jestli to spis nedat do <#864434067968360459> , ale prece jen je to hodne o AI)
+---
+
+
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1551503771429773372
+Kdyby si někdo chtěl počíst, co je vlastně ten AI agent harness (i když to tu teda myslím už dřív <@848937104398090321> vysvětloval) https://earendil.com/posts/what-is-a-harness/
+---
+
+
+--- https://discord.com/channels/769966886598737931/769966887055392768/1550096587949219901
+https://www.youtube.com/watch?v=HTUh0OO6Kmo
+---
+
+
 #} -->
