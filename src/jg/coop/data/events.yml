@@ -61,7 +61,7 @@
 
 registry:
   - id: 66
-    title: "Od zdrojáku ke strojáku: Jak fungují kompilátory a interpretery"
+    title: "Od zdrojáku ke strojáku: Jak fungují kompilátory a interpretery"
     date: "2026-12-08"
     description: |
       Co všechno se děje od chvíle, kdy napíšete program, do chvíle, kdy ho můžete spustit? Projdeme si celou cestu od zdrojového kódu přes syntaktický strom až po strojový kód nebo bajtkód. Vysvětlíme si, co je parser nebo linker, a ukážeme si, jak se od sebe liší různé jazyky. Vše si předvedeme na živých ukázkách.
