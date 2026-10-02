@@ -2,9 +2,11 @@ import unicodedata
 
 import httpx2
 from lxml import html
+from tenacity import retry_if_exception_type
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
+from jg.coop.lib.retrying import retry
 from jg.coop.models.base import db
 from jg.coop.models.feminine_name import FeminineName
 
@@ -45,18 +47,7 @@ def main():
     FeminineName.drop_table()
     FeminineName.create_table()
 
-    response = httpx2.get(
-        WIKI_API_URL,
-        params={
-            "action": "parse",
-            "page": WIKI_PAGE_TITLE,
-            "prop": "text",
-            "format": "json",
-        },
-        headers={"User-Agent": "JuniorGuruBot (+https://junior.guru)"},
-    )
-    response.raise_for_status()
-    data = response.json()
+    data = fetch_wiki_page()
 
     page_html = data["parse"]["text"]["*"]
     html_tree = html.fromstring(page_html)
@@ -76,6 +67,23 @@ def main():
                 {"name": name_ascii},
             ]
         ).on_conflict_ignore().execute()
+
+
+@retry(retry=retry_if_exception_type(httpx2.TransportError))
+def fetch_wiki_page() -> dict:
+    response = httpx2.get(
+        WIKI_API_URL,
+        params={
+            "action": "parse",
+            "page": WIKI_PAGE_TITLE,
+            "prop": "text",
+            "format": "json",
+        },
+        headers={"User-Agent": "JuniorGuruBot (+https://junior.guru)"},
+        timeout=30,
+    )
+    response.raise_for_status()
+    return response.json()
 
 
 def remove_accents(s):
