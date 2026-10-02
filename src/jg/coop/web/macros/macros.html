@@ -420,7 +420,8 @@
           {% else %}
             <a class="jobs-inline-link" href="{{ jobs_url }}">
           {% endif %}
-            <link itemprop="url" href="{{ job.effective_link }}">
+            {# rel=nofollow just so that lychee skips flaky job URLs #}
+            <link itemprop="url" rel="nofollow" href="{{ job.effective_link }}">
             <div class="jobs-inline-logo">
               {% if job.company_logo_path %}
                 {{ img('static/' + job.company_logo_path, 'Logo ' + job.company_name, 100, 100, class='jobs-inline-image') }}
@@ -433,7 +434,7 @@
               </h5>
               <p class="jobs-inline-company" itemprop="hiringOrganization" itemscope itemtype="http://schema.org/Organization">
                 <span itemprop="name">{{ job.company_name }}</span>
-                {% if job.company_url %}<link itemprop="url" href="{{ job.company_url }}">{% endif %}
+                {% if job.company_url %}<link itemprop="url" rel="nofollow" href="{{ job.company_url }}">{% endif %}
               </p>
             </div>
           </a>
