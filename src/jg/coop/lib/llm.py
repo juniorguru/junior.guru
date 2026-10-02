@@ -1,12 +1,13 @@
+import asyncio
 import json
 import logging
 import os
 import re
 from datetime import timedelta
 from enum import StrEnum
-from functools import lru_cache
 from textwrap import dedent
 from typing import overload
+from weakref import WeakKeyDictionary
 
 import tiktoken
 from openai import AsyncOpenAI, InternalServerError, RateLimitError
@@ -41,10 +42,20 @@ class LLMModel(StrEnum):
     advanced = "gpt-4.1"
 
 
-@lru_cache
+_clients: WeakKeyDictionary[asyncio.AbstractEventLoop, AsyncOpenAI] = (
+    WeakKeyDictionary()
+)
+
+
 def get_client() -> AsyncOpenAI:
-    logger.debug("Creating OpenAI client")
-    return AsyncOpenAI(api_key=OPENAI_API_KEY)
+    # The client's connection pool is bound to the event loop it was used in.
+    # Sync commands each run in their own loop within one process, so reusing
+    # a client across loops fails with "Event loop is closed".
+    loop = asyncio.get_running_loop()
+    if loop not in _clients:
+        logger.debug("Creating OpenAI client")
+        _clients[loop] = AsyncOpenAI(api_key=OPENAI_API_KEY)
+    return _clients[loop]
 
 
 @overload
