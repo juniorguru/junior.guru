@@ -106,7 +106,7 @@
         "id": "8517488",
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "distance": "DISTANCE_2",
+        "distance": "OUT_OF_NETWORK",
         "profileUrl": "https://www.linkedin.com/in/honzajavorek"
       },
       "authorType": "Person"
@@ -118,7 +118,7 @@
       "profile": {
         "firstName": "Táňa",
         "lastName": "Váchová",
-        "occupation": "virtuální asistentka ⊃ administrativa ⊃ podpora",
+        "occupation": "📌virtuální asistentka ⊃ administrativa ⊃ podpora",
         "id": "1399848350",
         "publicId": "tanavachova",
         "profileId": "ACoAAFNv_Z4BxskkxA5XZSQetiT0HKCBk4rbPGE"

@@ -65,7 +65,7 @@
         "id": "8517488",
         "publicId": "honzajavorek",
         "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
-        "distance": "DISTANCE_2",
+        "distance": "OUT_OF_NETWORK",
         "profileUrl": "https://www.linkedin.com/in/honzajavorek"
       },
       "authorType": "Person"
@@ -121,7 +121,7 @@
       "profile": {
         "firstName": "Otakar",
         "lastName": "Veleba",
-        "occupation": "Senior Analytics Engineer at Mews",
+        "occupation": "Data Product Builder at Mews",
         "id": "232631398",
         "publicId": "otakar-veleba",
         "profileId": "ACoAAA3drGYBqkSarfyjg6J0-SOm25UCtsUwt20"

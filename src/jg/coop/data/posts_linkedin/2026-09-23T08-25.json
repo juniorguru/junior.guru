@@ -159,6 +159,28 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Ondrej",
+        "lastName": "Lacina",
+        "occupation": "Frontend & React developer | React • JavaScript • Tailwind • SQL | Ex-Banking",
+        "id": "536484368",
+        "publicId": "ondrej-lacina",
+        "profileId": "ACoAAB_6GhABy-VP5R9zHpUDSitdl8aYwBUabes"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Jana",
         "lastName": "Zmijková",
         "occupation": "Software Developer",
@@ -243,32 +265,10 @@
         "publicId": "vladimirgorej",
         "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
       }
-    },
-    {
-      "type": "APPRECIATION",
-      "profile": {
-        "firstName": "Šimon",
-        "lastName": "Kořený",
-        "occupation": "Product Owner & Dad | Building great products, raising great humans",
-        "id": "283596586",
-        "publicId": "fusatytata",
-        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Manivannan",
-        "lastName": "Selvaraj",
-        "occupation": "Tech Advisor | Early Stage Investor (Robotics, Deep Tech) | Engineering Leader | International Speaker | Ex-Silicon Valley | Tech Humor",
-        "id": "13167565",
-        "publicId": "citizenmani",
-        "profileId": "ACoAAADI680BxjF9ZBGBwolVcqzsTG0Patm5NtQ"
-      }
     }
   ],
   "numShares": 1,
-  "numLikes": 11,
+  "numLikes": 13,
   "numComments": 8,
   "canReact": true,
   "canPostComments": true,

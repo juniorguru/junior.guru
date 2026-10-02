@@ -25,7 +25,7 @@
       "originalLanguage": "Czech",
       "edited": false,
       "numLikes": 1,
-      "numComments": 1,
+      "numComments": 3,
       "reactionTypeCounts": [
         {
           "count": 1,
@@ -46,6 +46,17 @@
     }
   ],
   "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
     {
       "type": "LIKE",
       "profile": {
@@ -92,8 +103,8 @@
     }
   ],
   "numShares": 0,
-  "numLikes": 4,
-  "numComments": 2,
+  "numLikes": 5,
+  "numComments": 4,
   "canReact": true,
   "canPostComments": true,
   "canShare": true,
