@@ -210,6 +210,7 @@ jobs:
                     src/jg/coop/data/members.jsonl \
                     src/jg/coop/data/followers.jsonl \
                     src/jg/coop/data/jobs.jsonl \
+                    src/jg/coop/data/candidates.jsonl \
                     --message="record automatic updates 📥"
 
   web:
