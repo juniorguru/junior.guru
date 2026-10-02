@@ -1042,7 +1042,6 @@ dependencies = [
 [package.dev-dependencies]
 dev = [
     { name = "ghp-import" },
-    { name = "pync" },
     { name = "pytest" },
     { name = "pytest-asyncio" },
     { name = "pytest-ruff" },
@@ -1102,7 +1101,6 @@ requires-dist = [
 [package.metadata.requires-dev]
 dev = [
     { name = "ghp-import", specifier = ">=2.1.0" },
-    { name = "pync", specifier = ">=2.0.3" },
     { name = "pytest", specifier = ">=8.4.2" },
     { name = "pytest-asyncio", specifier = ">=1.2.0" },
     { name = "pytest-ruff", specifier = ">=0.5" },
@@ -1851,15 +1849,6 @@ wheels = [
 crypto = [
     { name = "cryptography" },
 ]
-
-[[package]]
-name = "pync"
-version = "2.0.3"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "python-dateutil" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/71/ce/06fca51df0cceb13dbcd8168e2657ffd942184005b3bb958dd17c14e0148/pync-2.0.3.tar.gz", hash = "sha256:38b9e61735a3161f9211a5773c5f5ea698f36af4ff7f77fa03e8d1ff0caa117f", size = 374289, upload-time = "2018-05-04T19:28:40.383Z" }
 
 [[package]]
 name = "pyparsing"

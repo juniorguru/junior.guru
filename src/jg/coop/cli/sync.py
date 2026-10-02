@@ -1,4 +1,6 @@
 import os
+import shutil
+import subprocess
 import sys
 from functools import cached_property, wraps
 from graphlib import TopologicalSorter
@@ -12,12 +14,6 @@ from jg.coop.lib import images, loggers, mutations
 from jg.coop.lib.cli import command_name, find_commands, import_command
 from jg.coop.models.base import db
 from jg.coop.models.sync import Sync
-
-
-try:
-    import pync
-except (Exception, ImportError):
-    pync = None
 
 
 NOTIFY_AFTER_MIN = 1
@@ -306,9 +302,14 @@ def close(context):
 
 def notify(title, text):
     print("\a", end="", flush=True)
-    if pync:
+    if sys.platform == "darwin" and shutil.which("osascript"):
+        script = "on run argv\ndisplay notification (item 1 of argv) with title (item 2 of argv)\nend run"
         try:
-            pync.Notifier.notify(text, title=title)
+            subprocess.run(
+                ["osascript", "-e", script, "--", text, title],
+                check=True,
+                capture_output=True,
+            )
         except Exception:
             logger.exception("Desktop notification failed")
 
