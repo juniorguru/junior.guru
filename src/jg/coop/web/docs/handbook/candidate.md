@@ -1641,4 +1641,9 @@ Zrovna dorazil newsletter od Startupjobs s pár radami pro juniory
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1177266646579163246/1552796041219416165
+každopádně, můj závěr z tohoto hledání práce je, že je to opravdu nepředvídatelný proces s mnoha proměnnými, které neovlivníš. statisticky vzato z toho lze odvodit nějaké závěry (třeba když tě odmítne 10/10, tak na tom něco je), ale na úrovni jednotlivých firem to nikdy nevíš. někdy jsou to pozice, které jsou již interně obsazené, někdy firmy hlásí, že nabírají i když nenabírají protože to vypadá lépe pro investory, někdy se jim nechce procházet životopisy a radši vezmou známého přes doporučení nebo náhodného člověka atd atd atd.
+---
+
+
 #} -->

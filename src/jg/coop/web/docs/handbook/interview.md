@@ -1239,4 +1239,24 @@ Ptalo se mě to víceméně na věci, které jsem měla zformulované v motivač
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1551916722192130099
+Na svem poslednim pohovoru jsem dostal (ocekavany) dotaz, jak pouzivam AI. Manazer na me vytahl tuhle stupnici:
+> Level 0: Human did not use AI at all
+> Level 1: Human asked chatbot for ideas
+> Level 2: Human coded with minor assists
+> Level 3: Human coded, bots assisted non-trivially
+> Level 4: Human coded, bots helped significantly
+> Level 5: Bots coded, human understands completely
+> Level 6: Bots coded, human understands mostly
+> Level 7: Human specced, bots coded
+> Level 8: Bots planned, human approved
+> Level 9: Human fired-and-forgot
+> Level 10: Rogue bots, zero human attention
+(vychazi to z https://www.visidata.org/blog/2026/ai/, ale to jsem v ramci pohoru necetl)
+For the record, ja jsem ted na levelu 4.8, ale to neni pointa - davam to sem proto, ze by to nekomu mohlo pomoct zformulovat odpoved na otazku "co vy a AI", ale hlavne mi to pomohlo pochopit, ze je to skala. Moje cernobile perfekcionisticke videni sveta a FOMO do te chvile tapalo - zvlast, kdyz se clovek pokousi porovnavat s temi nadsenci, co porad mluvi o skillech, harnessech a evalech a mne se jeste porad nechce zjistovat, co to vlastne je. Mel jsem pocit, ze mi ujizdi vlak. Diky te stupnici jsem si ale uvedomil, ze i ja jsem udelal za poslednich par let nejaky pokrok a pravdepodobne se na tom svym levelu pet ani nezastavim, potrebuju proste jen vic casu nez ti, kteri do toho skocili obema nohama. A taky mi pomohlo, kdyz mi ten manager prozaradil, ze v te firme sice jsou lidi na levelu 8-9, ale taky je tam porad spousta lidi na levelu 0.
+Tak treba to tady nekomu jako mne trochu pomuze ujasnit si svuj pristup k AI.
+(Vahal jsem, jestli to spis nedat do <#864434067968360459> , ale prece jen je to hodne o AI)
+---
+
+
 #} -->

@@ -740,4 +740,9 @@ https://www.linkedin.com/feed/update/urn:li:activity:7505491171050369025/ reklam
 ---
 
 
+--- https://discord.com/channels/769966886598737931/789107031939481641/1551171505147088986
+doufam, ze to davam spravne-jak jsme se bavili o tom ze kandidat pasoval primo na pozici, kterou si vymysleli nekde u kafe :_P https://www.instagram.com/reel/Ddd3Gy5ghKn/?utm_source=ig_web_copy_link&stkn=NTc4MTIwNjQ2YQ==
+---
+
+
 #} -->

@@ -1232,4 +1232,15 @@ nedávno se tu hledalo něco co by bavilo u SQL nebo tak něco - zrovna jsou na 
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1554153546885365790
+A z druhé strany - je to i o tom připravit bezpečnější prostředí (infrastrukturu) pro běh software (ať už ho napsal kdokoliv nebo cokoliv).
+Posledních 15 let jsem se při nasazování softwaru do produkce inspiroval mimojiné u https://12factor.net/ Je to “ideologický framework”, jak místo piplání s každou nasazovanou komponentou zkusit nějaký víc uniformní přístup. Ale počítá to s tím, že software je napsán korektně a příčetnými lidmi. Dnes i jenom kyberbezpečnostní situace je taková, že si nikdo nemůže být jist skoro ničím.
+Nový software se snažím psát tak, aby bylo co nejméně věcí, které se mohou pokazit. Je potřeba, aby si software načítal konfiguraci s API tokeny? Není - API bude volat přes proxy a ta tam ten token doplní + řeší audit log. (Navíc v některých případech lze long-lived token nahradit jinými technologiemi.) Je potřeba, aby software řešil auth? Není, auth bude řešit gateway nebo reverzní proxy a můj software už jen dostane jméno přihlášeného uživatele. Tím se mi odfiltrovalo 90 % obvyklých druhů útoků.
+Ostatně takhle by se asi mělo přemýšlet i nad izolací/sandboxováním AI agentů.
+I operační systémy jsou dnes mnohem dále. Virtuální filesystémy, virtuální sítě, rootless kontejnery… tooly jako bubblewrap, gvisor… Když AI agent, nebo jakýkoli software, chce spustit shell příkaz, můžu ho pustit s omezením na pracovní adresář a klidně jen v read-only režimu.
+Nad tím vším mi může běžet furt dokola nějaký vhodný model (i např. Jev) a dívat se, jestli vše vypadá ok.
+V těchto oblastech očekávám rozvoj v příštích měsících (ostatně probíhá už teď).
+---
+
+
 #} -->
