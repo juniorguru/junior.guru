@@ -33,7 +33,7 @@ template: main_content_detail.html
 <div class="article-lead">
 {{ img('static/' + page.meta.interviewee_avatar_path, page.title + ', foto', 100, 100, lazy=False, class='article-image') }}
 {% call lead() %}
-Projít životopis čtyřiatřicetiletého Tomáše Nováka zabere jen pár vteřin. A hned máte jasno. Tomáš je bubeník hrající v několika kapelách, učitel bicích a současně také juniorní frontend developer. Ve třiceti se ohlédl a neviděl za sebou nic než hudbu, a tak se rozhodl naučit se něco nového. „Nejdřív jsem zkazil dvěma klukům účesy a pak jsem se rozhodl naučit se programovat. Když jsem dostal práci, nemohl jsem tomu pár hodin uvěřit,“ říká Tomáš.
+Projít životopis čtyřiatřicetiletého Tomáše Nováka zabere jen pár vteřin. A hned máte jasno. Tomáš je bubeník hrající v několika kapelách (Strýc, Bardolino, Loes & Celtic link…), učitel bicích a současně také juniorní frontend developer. Ve třiceti se ohlédl a neviděl za sebou nic než hudbu, a tak se rozhodl naučit se něco nového. „Nejdřív jsem zkazil dvěma klukům účesy a pak jsem se rozhodl naučit se programovat. Když jsem dostal práci, nemohl jsem tomu pár hodin uvěřit,“ říká Tomáš.
 {% endcall %}
 </div>
 
