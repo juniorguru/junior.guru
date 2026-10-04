@@ -71,7 +71,7 @@ registry:
     bio_name: David Majda
     bio_title: "Senior AOCS Software Engineer, VZLU AEROSPACE"
     bio: |
-      David je programátor tělem i duší. Zajímají ho webové technologie, programovací jazyky a jak psát software dobře a udržitelně. V oboru se pohybuje 20+ let a za tu dobu stihl pracovat pro velké firmy i startupy, vést týmy, učit na VŠ a vybudovat [úspěšný open source projekt](https://github.com/pegjs/pegjs). Nyní ve [VZLU AEROSPACE](https://cs.wikipedia.org/wiki/VZLU_Aerospace) vytváří letový software pro satelity vyvíjené v rámci českého vesmírného programu.
+      David je programátor tělem i duší. Zajímají ho webové technologie, programovací jazyky a jak psát software dobře a udržitelně. V oboru se pohybuje 20+ let a za tu dobu stihl pracovat pro velké firmy i startupy, vést týmy, učit na VŠ a vybudovat [úspěšný open source projekt](https://github.com/pegjs/pegjs/tree/v0.10.0). Nyní ve [VZLU AEROSPACE](https://cs.wikipedia.org/wiki/VZLU_Aerospace) vytváří letový software pro satelity vyvíjené v rámci českého vesmírného programu.
     bio_links:
       - https://majda.cz/
       - https://www.linkedin.com/in/dmajda/
