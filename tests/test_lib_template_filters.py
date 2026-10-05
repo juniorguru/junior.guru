@@ -399,6 +399,11 @@ def test_hours(seconds: int, expected: str):
             "@user@f.cz",
         ),
         (
+            "https://fosstodon.org/@user",
+            "mastodon",
+            "@user@fosstodon.org",
+        ),
+        (
             "https://www.instagram.com/matejkotrba/",
             "instagram",
             "@matejkotrba",

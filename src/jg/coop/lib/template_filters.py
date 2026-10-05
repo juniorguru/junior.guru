@@ -284,6 +284,7 @@ def hours(seconds: int) -> str:
 
 MASTODON_DOMAINS = {
     "f.cz",
+    "fosstodon.org",
     "mamutovo.cz",
     "mastodon.social",
     "mastodonczech.cz",
