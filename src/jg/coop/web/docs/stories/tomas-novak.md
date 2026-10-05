@@ -66,7 +66,7 @@ Postupně. Při plném úvazku na ZUŠ jsem se učil tři až čtyři hodiny den
 
 **Jak jsi věděl, co se učit?**
 
-Po prozkoumání trhu jsem se držel rozhodnutí jít směrem React, takže jsem vyhledával kurzy zaměřené na tuto technologii. Ze začátku bylo těžké se v nabídce vyznat – firem a reklam na rychlokvašené kurzy se slibovanými 150 tisíci po nástupu bylo na českém Facebooku spousta, a lidi, které jsem znal z oboru, o kurzech tolik nevěděli. Pomohl mi kamarád a pak junior.guru. Nejdřív se mi nechtělo platit za členství, ale když to na mě vyskočilo potřetí, zkusil jsem to a platím dodnes. Sleduju hlavně diskuse v kariérní skupině, situace z pohovorů a JavaScript novinky, a sám tam sdílím inzeráty, když u nás ve firmě sháníme juniory nebo mediory – dá se tím předběhnout fronta u HR.
+Po prozkoumání trhu jsem se držel rozhodnutí jít směrem React, takže jsem vyhledával kurzy zaměřené na tuto technologii. Ze začátku bylo těžké se v nabídce vyznat – firem a reklam na rychlokvašené kurzy se slibovanými 150 tisíci po nástupu bylo na českém Facebooku spousta, a lidi, které jsem znal z oboru, o kurzech tolik nevěděli. Pomohl mi kamarád a pak junior.guru. Nejdřív se mi nechtělo platit za členství, ale když to na mě vyskočilo potřetí, zkusil jsem to a platím dodnes. Sleduju hlavně diskuse v kariérní skupině, situace z pohovorů a JavaScript novinky, a sám tam sdílím inzeráty, když u nás ve firmě sháníme juniory nebo mediory.
 
 **Jaké to bylo pro tebe hledat první práci?**
 
@@ -78,11 +78,11 @@ Nakonec ano, a byla to náhoda přes bicí. 31. července jsem končil na ZUŠ, 
 
 **Jaký byl pohovor?**
 
-Oslovila mě HR, ke které se dostalo mé CV, a přes ni jsem prošel do dalšího kola, kde proti mně sedělo šest lidí. Bylo to docela děsivé. Musel jsem z hlavy řešit problémy a hledat chyby v kódu. Končili jsme tím, že jsme se bavili o mých koníčcích. Důležitou otázkou bylo, jestli hraju hry, tedy jestli zapadnu do týmu. V tu chvíli jsem zvedl hrnek se znakem Hordy. Mám za sebou pár let s WoW, hry mi fakt cizí nejsou.
+Oslovila mě Klára z TA, ke které se dostalo mé CV, a přes ni jsem prošel do dalšího kola, kde proti mně sedělo šest lidí. Bylo to docela děsivé. Musel jsem z hlavy řešit problémy a hledat chyby v kódu. Končili jsme tím, že jsme se bavili o mých koníčcích. Důležitou otázkou bylo, jestli hraju hry, tedy jestli zapadnu do týmu. V tu chvíli jsem zvedl hrnek se znakem Hordy. Mám za sebou pár let s WoW, hry mi fakt cizí nejsou.
 
 **Jaký to byl pocit, když jsi dostal nabídku, a jak dlouho ti trvalo se v novém týmu usadit?**
 
-Trvalo mi pár hodin, než jsem tomu uvěřil. Vůbec jsem neváhal. Když mi volala HR, řekl jsem rovnou ano, ona na mě, ať si to v klidu promyslím. Přes léto se zprocesování vleklo, je to velký korporát, byl jsem z toho trochu nervózní. Bylo to hezké zadostiučinění, ale i strašák, jestli vím dost na to, abych tam vůbec byl k něčemu… impostor syndrom se párkrát objevil i po nástupu. Naštěstí vedoucí týmu je super a vysvětlil mi, že se nemám bát ozvat, když takové myšlenky přijdou. Narazil jsem na skvělý tým, nikdo tu nečeká na chybu, máme společné cíle. Tím, jak je naše aplikace rozsáhlá a složitá, se firma snaží, aby lidi neutekli. I seniornějšímu člověku by tady trvalo zhruba rok, než bude samostatný.
+Trvalo mi pár hodin, než jsem tomu uvěřil. Vůbec jsem neváhal. Když mi volala Klára s nabídkou, řekl jsem rovnou ano, ona na mě, ať si to v klidu promyslím. Bylo to hezké zadostiučinění, ale i strašák, jestli vím dost na to, abych tam vůbec byl k něčemu… impostor syndrom se párkrát objevil i po nástupu. Naštěstí vedoucí týmu je super a vysvětlil mi, že se nemám bát ozvat, když takové myšlenky přijdou. Narazil jsem na skvělý tým, nikdo tu nečeká na chybu, máme společné cíle. Tím, jak je naše aplikace rozsáhlá a složitá, se firma snaží, aby lidi neutekli. I seniornějšímu člověku by tady trvalo zhruba rok, než bude samostatný.
 
 **Na čem tam pracuješ?**
 
