@@ -282,6 +282,15 @@ def hours(seconds: int) -> str:
     return f"{hours_str}h"
 
 
+MASTODON_DOMAINS = {
+    "f.cz",
+    "mamutovo.cz",
+    "mastodon.social",
+    "mastodonczech.cz",
+    "witter.cz",
+}
+
+
 def bio_link(url: str) -> Markup:
     parts = urlparse(url)
     domain = parts.netloc.removeprefix("www.")
@@ -294,8 +303,7 @@ def bio_link(url: str) -> Markup:
         "twitter.com": "twitter-x",
         "x.com": "twitter-x",
         "bsky.app": "bluesky",
-        "witter.cz": "mastodon",
-        "mastodon.social": "mastodon",
+        **{mastodon_domain: "mastodon" for mastodon_domain in MASTODON_DOMAINS},
         "instagram.com": "instagram",
     }.get(domain, "link-45deg")
     username = {
@@ -307,8 +315,10 @@ def bio_link(url: str) -> Markup:
             if len(path_parts) > 1 and path_parts[0] == "profile"
             else None
         ),
-        "witter.cz": path_parts[0] + "@" + domain,
-        "mastodon.social": path_parts[0] + "@" + domain,
+        **{
+            mastodon_domain: path_parts[0] + "@" + domain
+            for mastodon_domain in MASTODON_DOMAINS
+        },
         "instagram.com": "@" + path_parts[0],
         "linkedin.com": unquote(parts.path.strip("/")),
         "youtube.com": (path_parts[0] if "@" in parts.path else None),

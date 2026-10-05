@@ -384,6 +384,21 @@ def test_hours(seconds: int, expected: str):
             "@dmajda@mastodon.social",
         ),
         (
+            "https://mastodonczech.cz/@user",
+            "mastodon",
+            "@user@mastodonczech.cz",
+        ),
+        (
+            "https://mamutovo.cz/@user",
+            "mastodon",
+            "@user@mamutovo.cz",
+        ),
+        (
+            "https://f.cz/@user",
+            "mastodon",
+            "@user@f.cz",
+        ),
+        (
             "https://www.instagram.com/matejkotrba/",
             "instagram",
             "@matejkotrba",
