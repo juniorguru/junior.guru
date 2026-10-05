@@ -379,6 +379,31 @@ def test_hours(seconds: int, expected: str):
             "@Lwicze@witter.cz",
         ),
         (
+            "https://mastodon.social/@dmajda",
+            "mastodon",
+            "@dmajda@mastodon.social",
+        ),
+        (
+            "https://mastodonczech.cz/@user",
+            "mastodon",
+            "@user@mastodonczech.cz",
+        ),
+        (
+            "https://mamutovo.cz/@user",
+            "mastodon",
+            "@user@mamutovo.cz",
+        ),
+        (
+            "https://f.cz/@user",
+            "mastodon",
+            "@user@f.cz",
+        ),
+        (
+            "https://fosstodon.org/@user",
+            "mastodon",
+            "@user@fosstodon.org",
+        ),
+        (
             "https://www.instagram.com/matejkotrba/",
             "instagram",
             "@matejkotrba",
