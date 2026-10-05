@@ -295,6 +295,7 @@ def bio_link(url: str) -> Markup:
         "x.com": "twitter-x",
         "bsky.app": "bluesky",
         "witter.cz": "mastodon",
+        "mastodon.social": "mastodon",
         "instagram.com": "instagram",
     }.get(domain, "link-45deg")
     username = {
@@ -307,6 +308,7 @@ def bio_link(url: str) -> Markup:
             else None
         ),
         "witter.cz": path_parts[0] + "@" + domain,
+        "mastodon.social": path_parts[0] + "@" + domain,
         "instagram.com": "@" + path_parts[0],
         "linkedin.com": unquote(parts.path.strip("/")),
         "youtube.com": (path_parts[0] if "@" in parts.path else None),
