@@ -1,0 +1,157 @@
+{
+  "type": "article",
+  "article": {
+    "type": "EXTERNAL_FULL",
+    "urn": "urn:li:article:7432009647424849295",
+    "url": "https://junior.guru/stories/tomas-novak/",
+    "title": "Na pohovoru proti mně sedělo šest lidí. Tomáš Novák o tranzitu z hudby do IT"
+  },
+  "isActivity": true,
+  "activityDescription": "Honza Javorek reposted this",
+  "activityOfUser": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "urn": "urn:li:activity:7512886003041472512",
+  "url": "https://www.linkedin.com/posts/tom%C3%A1%C5%A1-nov%C3%A1k-282a76279_na-pohovoru-proti-mn%C4%9B-sed%C4%9Blo-%C5%A1est-lid%C3%AD-tom%C3%A1%C5%A1-activity-7512803325374050304-WOBs",
+  "shareUrn": "urn:li:share:7512803324568506368",
+  "text": "Díky moc Honza Javorek za příležitost něco o své cestě říct a Adéla Pavlun za milý rozhovor. Snad se Vám čtení bude líbit.",
+  "attributes": [
+    {
+      "start": 9,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+      }
+    },
+    {
+      "start": 62,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Adéla",
+        "lastName": "Pavlun",
+        "occupation": "Somatic Guide & Writer | TRE® · SE® | Exploring human connection, safety and growth",
+        "id": "59184567",
+        "publicId": "adelapavlun",
+        "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"
+      }
+    }
+  ],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Šimon",
+        "lastName": "Kořený",
+        "occupation": "Product Owner & Dad | Building great products, raising great humans",
+        "id": "283596586",
+        "publicId": "fusatytata",
+        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Čamborová",
+        "occupation": "SW developer",
+        "id": "1082522617",
+        "publicId": "veronika-čamborová",
+        "profileId": "ACoAAECF-_kB69byXoaMHs_qzffiv1hqdN_aZ0U"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Robin",
+        "lastName": "Pokorny",
+        "occupation": "Sr Staff Engineer at Ataccama | Socio-Technical Architect Driving Strategy with Teams & Product | Meet-Up Organiser",
+        "id": "27792509",
+        "publicId": "robinpokorny",
+        "profileId": "ACoAAAGoFH0BaO5d8cs38AEj9ozNJQcEMTd9cDY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Ryšánek",
+        "occupation": "...",
+        "id": "207025803",
+        "publicId": "jan-rysanek",
+        "profileId": "ACoAAAxW9osBZq3gE7vuMaPMFI_ls-payusR-S4"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Monika",
+        "lastName": "Kasprij",
+        "occupation": "QA Engineer | Business & Integration Testing | Quality Ownership | QA Analyst | Problem & Incident Manager",
+        "id": "217455628",
+        "publicId": "monikakasprij",
+        "profileId": "ACoAAAz2HAwBFdYYmQVPJYxtxeuP85EXmvLAX5M"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jan",
+        "lastName": "Szotkowski",
+        "occupation": "Frontend Tech Lead",
+        "id": "636707625",
+        "publicId": "janszotkowski",
+        "profileId": "ACoAACXzYykBfAeG2Vie2YQ61wFKP14L-RK2ilk"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 7,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Tomáš",
+    "lastName": "Novák",
+    "occupation": "Bubeník | FE developer",
+    "id": "1140304130",
+    "publicId": "tomáš-novák-282a76279",
+    "profileId": "ACoAAEP3qQIBOSmQUU7OefSQ0SraedY57sCw_0g"
+  },
+  "authorProfileId": "tomáš-novák-282a76279",
+  "authorType": "Person",
+  "authorName": "Tomáš Novák",
+  "authorProfileUrl": "https://www.linkedin.com/in/tom%C3%A1%C5%A1-nov%C3%A1k-282a76279?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAEP3qQIBOSmQUU7OefSQ0SraedY57sCw_0g",
+  "authorUrn": "urn:li:member:1140304130",
+  "postedAtTimestamp": 1791211605797,
+  "postedAtISO": "2026-10-05T14:46:45.797Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

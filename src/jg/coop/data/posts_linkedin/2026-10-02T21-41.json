@@ -1,0 +1,56 @@
+{
+  "type": "article",
+  "article": {
+    "type": "FIRST_PARTY",
+    "urn": "urn:li:linkedInArticle:7511903206617161728",
+    "url": "https://www.linkedin.com/pulse/z%25C3%25A1%25C5%2599%25C3%25AD-2026-ve-sv%25C4%259Bt%25C4%259B-junior%25C5%25AF-honza-javorek-edgbf",
+    "title": "Září 2026 ve světě IT juniorů",
+    "description": "Ahoj, tady robotické kuře z junior.guru! Mám pro tebe aktuální dávku novinek. Čísla z pracovního trhu Každý den stahuju z různých zdrojů inzeráty a ty"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7511903274019651584",
+  "url": "https://www.linkedin.com/posts/honzajavorek_za%C4%8D%C3%ADn%C3%A1%C5%A1-v-it-v-tomhle-newsletteru-najde%C5%A1-activity-7511903274019651584-5isu",
+  "shareUrn": "urn:li:ugcPost:7511903273671426048",
+  "text": "Začínáš v IT? V tomhle newsletteru najdeš pozvánky, kurzy, podcasty, přednášky, články a další zdroje, které tě posunou a namotivují.",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vladimír",
+        "lastName": "Gorej",
+        "occupation": "Senior Full-Stack Engineer & API Tooling Specialist | Freelance, Contract & Fractional Roles | TypeScript, Node.js, Python, OpenAPI & Arazzo | Building API tools for developers and AI agents",
+        "id": "58899881",
+        "publicId": "vladimirgorej",
+        "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 1,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1790977304940,
+  "postedAtISO": "2026-10-02T21:41:44.940Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

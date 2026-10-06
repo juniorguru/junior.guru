@@ -5,7 +5,7 @@
     "images": [],
     "isActivity": false,
     "urn": "urn:li:activity:7508441327446085632",
-    "url": "https://www.linkedin.com/posts/honzajavorek_sna%C5%BE%C3%AD%C5%A1-se-dostat-do-it-a-m%C3%A1%C5%A1-fomo-z-ai-poj%C4%8F-activity-7508441327446085632-6mQG?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAADwrDL4BPgsl7e_bv0m37s91EFOD8vdaNQQ",
+    "url": "https://www.linkedin.com/posts/honzajavorek_sna%C5%BE%C3%AD%C5%A1-se-dostat-do-it-a-m%C3%A1%C5%A1-fomo-z-ai-poj%C4%8F-activity-7508441327446085632-6mQG?utm_source=combined_share_message&utm_medium=member_desktop&rcm=ACoAAGoUMOwBLgUPA-E7kqKR2byzwhrlwajJr_E",
     "shareUrn": "urn:li:share:7508441325785092096",
     "text": "Snažíš se dostat do IT a máš FOMO z AI? Pojď si doplnit nějaký pěkný základ, na kterém pak můžeš stavět.\n\nPřipoj se ve čtvrtek 24.9. na naši přednášku od Martin Rapavý. Martin je AI Specialist v Raiffeisenbank Česká republika. Tam vede pětičlenný tým vyvíjející AI Portál, který využívá více než 2.500 zaměstnanců každý měsíc.\n\nMartin je dlouholetým členem klubu na junior.guru a byl i v panelovce o AI, kterou jsme před časem dělali v Mews (záznamy celé akce máme na YouTube, díky moc, Karolina Kramkova!).\n\nVe skutečnosti ale Martin nebyl jen v panelovce, on byl šedou eminencí celé té akce, protože mi vnuknul nápad na téma a úhel, jakým ho nasvítit: prakticky a bez hypu.\n\nMartin se v práci zaměřuje na praktické využití AI a na to, aby ji technické i netechnické týmy dokázaly zapojit do každodenní práce. Něco podobného můžeš čekat i na čtvrteční přednášce. Získáš tam hlubší porozumění nejen co se týče toho, CO máš při práci s AI dělat, ale i PROČ tyto rady fungují.\n\nNebudeme si představovat samotné funkcionality jednotlivých nástrojů, ale mrkneme se na to, jak fungují na pozadí, proč jsou navrženy právě takto, a jakou roli v tom hrají samotné jazykové modely.\n\nJestli chceš dorazit živě a pokládat Martinovi vlastní otázky, mrkni na junior.guru/events a připoj se k nám na Discord!\n\n🐣\n\nJsem Honza a skrze junior.guru pomáhám juniorním programátorům, testerům nebo datařům najít cestu do IT – protože když je na to člověk sám, je to past vedle pasti.",
     "attributes": [
@@ -377,6 +377,17 @@
   ],
   "reactions": [
     {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Zuzana",
+        "lastName": "Škampová Prelcová",
+        "occupation": "Money is not the only answer, but it makes a difference.",
+        "id": "586015938",
+        "publicId": "zuzana-škampová-prelcová-716309144",
+        "profileId": "ACoAACLt5MIBha18Rd8LaTB4Uxt9SznaxqeKLsg"
+      }
+    },
+    {
       "type": "APPRECIATION",
       "profile": {
         "firstName": "Veronika",
@@ -474,21 +485,10 @@
         "publicId": "oliverkamensky",
         "profileId": "ACoAABkMyTEB4eXQwZRhkZqnIiFNwu3_FM1E0vY"
       }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Dana",
-        "lastName": "Holbová",
-        "occupation": "Head of Adaptive Enablement at Raiffeisenbank Česká republika",
-        "id": "516977741",
-        "publicId": "dana-holbová-b25174125",
-        "profileId": "ACoAAB7QdE0BGIK6lFHGHVsSlvbWA8Ic19jO7G8"
-      }
     }
   ],
   "numShares": 3,
-  "numLikes": 24,
+  "numLikes": 25,
   "numComments": 1,
   "canReact": true,
   "canPostComments": true,
