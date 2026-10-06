@@ -78,7 +78,7 @@ Nakonec ano, a byla to náhoda přes bicí. 31. července jsem končil na ZUŠ, 
 
 **Jaký byl pohovor?**
 
-Oslovila mě Klára z TA, ke které se dostalo mé CV, a přes ni jsem prošel do dalšího kola, kde proti mně sedělo šest lidí. Bylo to docela děsivé. Musel jsem z hlavy řešit problémy a hledat chyby v kódu. Končili jsme tím, že jsme se bavili o mých koníčcích. Důležitou otázkou bylo, jestli hraju hry, tedy jestli zapadnu do týmu. V tu chvíli jsem zvedl hrnek se znakem Hordy. Mám za sebou pár let s WoW, hry mi fakt cizí nejsou.
+Oslovila mě Klára z _talent acquisition_, ke které se dostalo mé CV, a přes ni jsem prošel do dalšího kola, kde proti mně sedělo šest lidí. Bylo to docela děsivé. Musel jsem z hlavy řešit problémy a hledat chyby v kódu. Končili jsme tím, že jsme se bavili o mých koníčcích. Důležitou otázkou bylo, jestli hraju hry, tedy jestli zapadnu do týmu. V tu chvíli jsem zvedl hrnek se znakem Hordy. Mám za sebou pár let s WoW, hry mi fakt cizí nejsou.
 
 **Jaký to byl pocit, když jsi dostal nabídku, a jak dlouho ti trvalo se v novém týmu usadit?**
 
