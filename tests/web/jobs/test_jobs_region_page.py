@@ -2,8 +2,7 @@ import re
 
 import pytest
 from playwright.sync_api import Page, expect
-
-from conftest import create_job
+from web.helpers import create_job
 
 
 @pytest.mark.parametrize(
@@ -116,6 +115,7 @@ def test_region_page_empty_state_suggests_remote(page: Page, jobs_page):
         "and the JS crashes"
     ),
     strict=True,
+    raises=AssertionError,
 )
 def test_region_page_with_multiword_name(page: Page, jobs_page):
     create_job(title="Ústí Developer", regions=["Ústí nad Labem"])

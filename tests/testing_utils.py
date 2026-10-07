@@ -58,16 +58,16 @@ def prepare_test_db(
 
     db = SqliteDatabase(":memory:")
     db._functions = dict(production_db._functions)  # copy functions
-    UnavailableDatabase().bind(other_models)
+    UnavailableDatabase().bind(other_models, bind_refs=False, bind_backrefs=False)
     try:
         with db.connection_context():
-            db.bind(models)
+            db.bind(models, bind_refs=False, bind_backrefs=False)
             db.create_tables(models)
             yield db
             db.drop_tables(models)
     finally:
         for model, original_db in original_dbs.items():
-            model.bind(original_db)
+            model._meta.set_database(original_db)
 
 
 def startswith_skip(path):

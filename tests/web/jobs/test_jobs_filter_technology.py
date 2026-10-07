@@ -1,8 +1,7 @@
 import re
 
 from playwright.sync_api import Page, expect
-
-from conftest import create_job
+from web.helpers import create_job
 
 
 def test_shows_all_jobs_without_filter(page: Page, jobs_page):

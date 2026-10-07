@@ -2,8 +2,7 @@ import re
 
 import pytest
 from playwright.sync_api import Page, expect
-
-from conftest import create_job
+from web.helpers import create_job
 
 
 def test_url_lists_types_and_tags_in_stable_order(page: Page, jobs_page):
@@ -58,6 +57,7 @@ def test_url_with_unknown_tag_shows_all_jobs(page: Page, jobs_page):
 @pytest.mark.xfail(
     reason="Bug: filtering removes all query parameters, not only the filter ones",
     strict=True,
+    raises=AssertionError,
 )
 def test_unrelated_query_parameters_are_kept_on_load(page: Page, jobs_page):
     create_job(title="Python Developer", tech_tags=["python"])
@@ -71,6 +71,7 @@ def test_unrelated_query_parameters_are_kept_on_load(page: Page, jobs_page):
 @pytest.mark.xfail(
     reason="Bug: filtering removes all query parameters, not only the filter ones",
     strict=True,
+    raises=AssertionError,
 )
 def test_unrelated_query_parameters_are_kept_on_filtering(page: Page, jobs_page):
     create_job(title="Python Developer", tech_tags=["python"])

@@ -2,8 +2,7 @@ import re
 
 import pytest
 from playwright.sync_api import Page, expect
-
-from conftest import create_discord_job, create_job
+from web.helpers import create_discord_job, create_job
 
 
 def test_tags_of_different_types_must_all_match(page: Page, jobs_page):
@@ -107,6 +106,7 @@ def test_discord_jobs_are_not_filtered(page: Page, jobs_page):
 @pytest.mark.xfail(
     reason="Bug: matching compares tag slugs regardless of their type",
     strict=True,
+    raises=AssertionError,
 )
 def test_tags_match_only_within_their_type(page: Page, jobs_page):
     create_job(title="Remote Developer", remote=True)

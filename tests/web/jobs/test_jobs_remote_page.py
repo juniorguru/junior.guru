@@ -1,8 +1,7 @@
 import re
 
 from playwright.sync_api import Page, expect
-
-from conftest import create_job
+from web.helpers import create_job
 
 
 def test_remote_page_shows_only_remote_jobs(page: Page, jobs_page):
