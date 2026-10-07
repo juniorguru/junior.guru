@@ -19,12 +19,15 @@ from jinja2 import Environment, FileSystemLoader
 from mkdocs.utils.meta import get_data as parse_document
 from mkdocs.utils.templates import url_filter
 from peewee import SqliteDatabase
-from playwright.sync_api import Browser, Page, Route, sync_playwright
+from playwright.sync_api import Browser, Page, Route, expect, sync_playwright
 
 from jg.coop.lib import template_filters
+from jg.coop.lib.location import REGIONS
 from jg.coop.lib.mkdocs_jinja import get_filters
-from jg.coop.models.job import ListedJob
+from jg.coop.models.club import ClubUser
+from jg.coop.models.job import DiscordJob, ListedJob
 from jg.coop.web.context import get_jobs_context
+from jg.coop.web.generators import generate_region_jobs_pages
 
 from testing_utils import prepare_test_db
 
@@ -38,13 +41,19 @@ MACROS_DIR = WEB_DIR / "macros"
 BASE_URL = "https://junior.guru"
 
 
+# Pages are served from memory, so there's no need to wait long
+expect.set_options(timeout=2_000)
+
+
 @pytest.fixture
 def test_db() -> Generator[SqliteDatabase]:
     yield from prepare_test_db()
 
 
-def create_job(**kwargs) -> ListedJob:
+def create_job(regions: list[str] | None = None, **kwargs) -> ListedJob:
     title = kwargs.pop("title", "Junior Developer")
+    if regions:
+        kwargs["locations"] = [create_location(region) for region in regions]
     return ListedJob.create(
         **{
             "title": title,
@@ -56,6 +65,31 @@ def create_job(**kwargs) -> ListedJob:
             "url": f"https://example.com/jobs/{ListedJob.select().count() + 1}",
             "company_name": "První Programátorská, a.s.",
             "company_logo_path": "logos-jobs/unknown.webp",
+            **kwargs,
+        }
+    )
+
+
+def create_location(region: str) -> dict[str, str]:
+    if region not in REGIONS:
+        raise ValueError(f"Unknown region: {region}")
+    return {"raw": region, "place": region, "region": region, "country_code": "CZ"}
+
+
+def create_discord_job(**kwargs) -> DiscordJob:
+    author, _ = ClubUser.get_or_create(
+        id=1, defaults={"display_name": "Kuře Žluté", "mention": "<@1>"}
+    )
+    number = DiscordJob.select().count() + 1
+    return DiscordJob.create(
+        **{
+            "title": "Junior Developer from Discord",
+            "author": author,
+            "posted_on": date(2026, 1, 1),
+            "description_discord": "Junior Developer from Discord",
+            "url": f"https://discord.com/channels/1/2/{number}",
+            "upvotes_count": 0,
+            "comments_count": 0,
             **kwargs,
         }
     )
@@ -93,7 +127,9 @@ def render(
     )
 
 
-@pytest.fixture(scope="session")
+# Module scope, because the sync Playwright API keeps an event loop running,
+# which would break any async tests executed while the browser is open
+@pytest.fixture(scope="module")
 def browser() -> Generator[Browser]:
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch()
@@ -111,10 +147,18 @@ def page(browser: Browser, static_dir: Path) -> Generator[Page]:
 
 @pytest.fixture
 def serve(page: Page, static_dir: Path) -> Callable[[str], None]:
-    """Serves given HTML for any page URL, and the JS/CSS bundle for /static/"""
+    """
+    Serves given HTML for any page URL, and the JS/CSS bundle for /static/
+
+    Requests outside of junior.guru are blocked, so that clicking an external
+    link never reaches the internet, even if it opens in a new tab.
+    """
 
     def serve(html: str) -> None:
         def handle(route: Route) -> None:
+            if not route.request.url.startswith(f"{BASE_URL}/"):
+                route.abort()
+                return
             path = route.request.url.removeprefix(BASE_URL).split("?")[0]
             if path.startswith("/static/"):
                 file_path = static_dir / path.removeprefix("/static/")
@@ -125,16 +169,32 @@ def serve(page: Page, static_dir: Path) -> Callable[[str], None]:
             else:
                 route.fulfill(body=html, content_type="text/html; charset=utf-8")
 
-        page.route(f"{BASE_URL}/**", handle)
+        page.context.route("**/*", handle)
 
     return serve
 
 
 @pytest.fixture
 def jobs_page(test_db: SqliteDatabase, serve: Callable[[str], None]) -> Callable:
-    """Renders jobs.jinja from whatever jobs are in the test database"""
+    """
+    Renders jobs.jinja from whatever jobs are in the test database
 
-    def jobs_page(url: str = "/jobs/", page_meta: dict | None = None) -> None:
+    For region pages, such as /jobs/brno/, it takes page metadata
+    from the same generator which creates those pages for the real website.
+    """
+
+    def jobs_page(url: str = "/jobs/") -> None:
+        page_meta = None
+        if url != "/jobs/":
+            page_meta = get_region_jobs_page_meta(url)
         serve(render("jobs.jinja", get_jobs_context(), url, page_meta))
 
     return jobs_page
+
+
+def get_region_jobs_page_meta(url: str) -> dict[str, Any]:
+    path = url.strip("/") + ".jinja"
+    for document in generate_region_jobs_pages():
+        if document.path == path:
+            return document.meta
+    raise ValueError(f"No region jobs page for {url}")
