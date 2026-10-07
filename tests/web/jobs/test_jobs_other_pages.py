@@ -1,5 +1,5 @@
 """
-The JS bundle is shared by all pages, so code for one page must not break others
+The JS bundle is shared by all pages, so the jobs JS must not break other pages
 """
 
 from collections.abc import Callable
