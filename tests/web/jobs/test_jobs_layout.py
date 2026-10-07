@@ -10,7 +10,10 @@ LONG_TITLE = (
 
 
 def test_close_button_stays_at_top_of_wrapped_title(page: Page, jobs_page):
-    # Regression: https://github.com/juniorguru/junior.guru/issues/1751
+    """
+    Regression: the close button used to be misaligned when the title wrapped,
+    see https://github.com/juniorguru/junior.guru/issues/1751
+    """
     create_job(title=LONG_TITLE)
     jobs_page()
     page.set_viewport_size({"width": 600, "height": 800})
@@ -26,7 +29,9 @@ def test_close_button_stays_at_top_of_wrapped_title(page: Page, jobs_page):
 
 
 def test_region_tag_is_not_stretched(page: Page, jobs_page):
-    # Regression: the link to all regions used to stretch the region tag
+    """
+    Regression: the link to all regions used to stretch the region tag
+    """
     create_job(title="Brno Developer", regions=["Brno"], employment_types=["fulltime"])
     jobs_page("/jobs/brno/")
     page.goto("/jobs/brno/")

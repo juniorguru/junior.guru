@@ -27,7 +27,9 @@ def test_heading(page: Page, jobs_page, url: str, heading: str):
 
 
 def test_intro_is_a_paragraph(page: Page, jobs_page):
-    # Regression: an indented line in the intro used to render as a code block
+    """
+    Regression: an indented line in the intro used to render as a code block
+    """
     create_job(title="Python Developer")
     jobs_page()
     page.goto("/jobs/")
@@ -62,7 +64,9 @@ def test_link_to_all_regions_only_on_region_page(page: Page, jobs_page):
 
 
 def test_location_is_shown_only_if_known(page: Page, jobs_page):
-    # Regression: jobs without location used to show a question mark
+    """
+    Regression: jobs without location used to show a question mark
+    """
     create_job(title="Brno Developer", regions=["Brno"])
     create_job(title="Nowhere Developer")
     jobs_page()
@@ -144,7 +148,9 @@ def test_discussion_button_only_if_job_is_in_club(page: Page, jobs_page):
 
 
 def test_logos_exist(page: Page, jobs_page):
-    # Regression: Discord jobs used to point to a logo which didn't exist
+    """
+    Regression: Discord jobs used to point to a logo which didn't exist
+    """
     create_job(title="Python Developer")
     create_discord_job(title="Discord Developer")
     jobs_page()

@@ -99,8 +99,10 @@ def test_no_matching_jobs_shows_empty_state(page: Page, jobs_page):
 
 
 def test_tags_outside_filters_are_ignored(page: Page, jobs_page):
-    # Regression: the #remote tag in the empty state note has the 'active'
-    # class too, and it used to be mistaken for an active filter
+    """
+    Regression: the #remote tag in the empty state note has the 'active' class
+    too, and it used to be mistaken for an active filter
+    """
     create_job(title="Python Developer", tech_tags=["python"], remote=False)
     create_job(title="Remote Developer", tech_tags=["javascript"], remote=True)
     jobs_page()
