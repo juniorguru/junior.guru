@@ -28,6 +28,7 @@ description: Implement or modify Python, JavaScript, SCSS, templates, CLI, HTTP,
 - Tests must not depend on network, current time, or similar external state. Networked smoke/e2e tests must not run by default.
 - For remote HTML, download representative pages as fixtures under tests and test against those fixtures. Add multiple fixtures for meaningful edge cases.
 - Aim for one descriptive assertion per test function unless impractical, such as checking several small parts of one complex structure.
+- For stub objects, prefer `types.SimpleNamespace` over named tuples. Exception: use a named tuple when the stub must be hashable, e.g. when collected into a set.
 - Use `@pytest.mark.parametrize` when applicable. Include spaces after commas in parameter names, for example `"secondary_school, university, expected"`.
 
 ## Logging

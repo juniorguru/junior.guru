@@ -1,5 +1,5 @@
-from collections import namedtuple
 from operator import attrgetter
+from types import SimpleNamespace
 
 from jg.coop.sync.roles import (
     calc_stats,
@@ -10,23 +10,21 @@ from jg.coop.sync.roles import (
 )
 
 
-DummyRole = namedtuple("Role", ["name"])
-DummyMember = namedtuple(
-    "Member", ["id", "display_name", "upvotes_count"], defaults=[0]
-)
-
-
 def test_repr_roles():
-    roles = [DummyRole("admin"), DummyRole("member"), DummyRole("hero")]
+    roles = [
+        SimpleNamespace(name="admin"),
+        SimpleNamespace(name="member"),
+        SimpleNamespace(name="hero"),
+    ]
 
     assert repr_roles(roles) == "['admin', 'member', 'hero']"
 
 
 def test_repr_ids():
     members = [
-        DummyMember(1, "Zuzka"),
-        DummyMember(2, "Honza"),
-        DummyMember(3, "Ondřej"),
+        SimpleNamespace(id=1, display_name="Zuzka"),
+        SimpleNamespace(id=2, display_name="Honza"),
+        SimpleNamespace(id=3, display_name="Ondřej"),
     ]
 
     assert repr_ids(members, [1, 2]) == "['Honza', 'Zuzka']"
@@ -34,9 +32,9 @@ def test_repr_ids():
 
 def test_repr_ids_case_doesnt_matter():
     members = [
-        DummyMember(1, "Zuzka"),
-        DummyMember(2, "honza"),
-        DummyMember(3, "ondřej"),
+        SimpleNamespace(id=1, display_name="Zuzka"),
+        SimpleNamespace(id=2, display_name="honza"),
+        SimpleNamespace(id=3, display_name="ondřej"),
     ]
 
     assert repr_ids(members, [1, 2]) == "['honza', 'Zuzka']"
@@ -44,9 +42,9 @@ def test_repr_ids_case_doesnt_matter():
 
 def test_repr_stats():
     members = [
-        DummyMember(1, "Zuzka"),
-        DummyMember(2, "Honza"),
-        DummyMember(3, "Ondřej"),
+        SimpleNamespace(id=1, display_name="Zuzka"),
+        SimpleNamespace(id=2, display_name="Honza"),
+        SimpleNamespace(id=3, display_name="Ondřej"),
     ]
     stats = {1: 42, 2: 420}
 
@@ -55,9 +53,9 @@ def test_repr_stats():
 
 def test_calc_stats():
     members = [
-        DummyMember(1, "Zuzka", 20),
-        DummyMember(2, "Honza", 1),
-        DummyMember(3, "Ondřej", 5),
+        SimpleNamespace(id=1, display_name="Zuzka", upvotes_count=20),
+        SimpleNamespace(id=2, display_name="Honza", upvotes_count=1),
+        SimpleNamespace(id=3, display_name="Ondřej", upvotes_count=5),
     ]
 
     assert calc_stats(members, attrgetter("upvotes_count"), 1) == {1: 20}
@@ -65,9 +63,9 @@ def test_calc_stats():
 
 def test_calc_stats_higher_top_limit():
     members = [
-        DummyMember(1, "Zuzka", 20),
-        DummyMember(2, "Honza", 1),
-        DummyMember(3, "Ondřej", 5),
+        SimpleNamespace(id=1, display_name="Zuzka", upvotes_count=20),
+        SimpleNamespace(id=2, display_name="Honza", upvotes_count=1),
+        SimpleNamespace(id=3, display_name="Ondřej", upvotes_count=5),
     ]
 
     assert calc_stats(members, attrgetter("upvotes_count"), 2) == {1: 20, 3: 5}
