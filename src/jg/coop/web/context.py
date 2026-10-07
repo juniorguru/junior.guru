@@ -136,13 +136,7 @@ def on_docs_context(context):
     context["external_stories_by_tags"] = ExternalStory.tags_mapping()
 
     # jobs.jinja, handbook/candidate.md
-    context["jobs"] = ListedJob.listing()
-    context["jobs_discord"] = DiscordJob.listing()
-    context["jobs_remote"] = ListedJob.remote_listing()
-    context["jobs_internship"] = ListedJob.internship_listing()
-    context["jobs_volunteering"] = ListedJob.volunteering_listing()
-    context["jobs_tags"] = ListedJob.tags_by_type()
-    context["jobs_region_tags"] = ListedJob.region_tags()
+    context.update(get_jobs_context())
 
     # about/*.md
     context["blog"] = BlogArticle.listing()
@@ -174,6 +168,18 @@ def on_docs_context(context):
     context["channels_digest"] = ClubMessage.digest_channels(
         date.today() - timedelta(days=7), limit=5
     )
+
+
+def get_jobs_context() -> dict:
+    return {
+        "jobs": ListedJob.listing(),
+        "jobs_discord": DiscordJob.listing(),
+        "jobs_remote": ListedJob.remote_listing(),
+        "jobs_internship": ListedJob.internship_listing(),
+        "jobs_volunteering": ListedJob.volunteering_listing(),
+        "jobs_tags": ListedJob.tags_by_type(),
+        "jobs_region_tags": ListedJob.region_tags(),
+    }
 
 
 @db.connection_context()

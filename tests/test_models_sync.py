@@ -10,7 +10,7 @@ NS_IN_MIN = 60_000_000_000
 
 @pytest.fixture
 def test_db():
-    yield from prepare_test_db([Sync])
+    yield from prepare_test_db([Sync, SyncCommand])
 
 
 def test_start_flushes_on_different_id(test_db):

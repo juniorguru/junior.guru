@@ -82,6 +82,7 @@ prerelease = "allow"
 [tool.pytest.ini_options]
 python_files = "test_*.py"
 testpaths = "tests"
+pythonpath = ["tests"]
 norecursedirs = "node_modules"
 addopts = "--ff --ruff --ruff-format"
 filterwarnings = [
