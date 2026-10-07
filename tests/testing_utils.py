@@ -1,3 +1,5 @@
+import importlib
+import pkgutil
 import random
 from collections.abc import Generator
 from datetime import date, datetime, timedelta
@@ -7,21 +9,65 @@ from typing import Any
 import pytest
 from peewee import SqliteDatabase
 
+from jg.coop import models as models_package
 from jg.coop.models.base import BaseModel, db as production_db
 
 
-def prepare_test_db(models: list[BaseModel]) -> Generator[SqliteDatabase]:
+class UnavailableDatabase(SqliteDatabase):
+    """
+    Database for models which aren't part of the test database,
+    so that accessing them fails instead of reaching production data
+    """
+
+    def __init__(self):
+        super().__init__(":memory:")
+
+    def connect(self, reuse_if_open=False):
+        raise RuntimeError(
+            "This model isn't part of the test database. "
+            "Add it to prepare_test_db() or call it without arguments."
+        )
+
+
+def get_all_models() -> list[type[BaseModel]]:
+    for module in pkgutil.iter_modules(models_package.__path__):
+        importlib.import_module(f"{models_package.__name__}.{module.name}")
+    return list(dict.fromkeys(iter_subclasses(BaseModel)))
+
+
+def iter_subclasses(cls: type) -> Generator[type]:
+    for subclass in cls.__subclasses__():
+        yield subclass
+        yield from iter_subclasses(subclass)
+
+
+def prepare_test_db(
+    models: list[type[BaseModel]] | None = None,
+) -> Generator[SqliteDatabase]:
     """
     Prepares a temporary in-memory SQLite database with the given models
     and the same custom functions as on the production database.
+
+    Without arguments, the database contains all models. With a list of
+    models, all other models are bound to a database which raises on access.
     """
+    all_models = get_all_models()
+    models = all_models if models is None else models
+    other_models = [model for model in all_models if model not in models]
+    original_dbs = {model: model._meta.database for model in all_models}
+
     db = SqliteDatabase(":memory:")
     db._functions = dict(production_db._functions)  # copy functions
-    with db.connection_context():
-        db.bind(models)
-        db.create_tables(models)
-        yield db
-        db.drop_tables(models)
+    UnavailableDatabase().bind(other_models)
+    try:
+        with db.connection_context():
+            db.bind(models)
+            db.create_tables(models)
+            yield db
+            db.drop_tables(models)
+    finally:
+        for model, original_db in original_dbs.items():
+            model.bind(original_db)
 
 
 def startswith_skip(path):

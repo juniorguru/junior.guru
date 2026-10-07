@@ -23,10 +23,10 @@ from playwright.sync_api import Browser, Page, Route, sync_playwright
 
 from jg.coop.lib import template_filters
 from jg.coop.lib.mkdocs_jinja import get_filters
-from jg.coop.models.base import db as production_db
-from jg.coop.models.club import ClubUser
-from jg.coop.models.job import DiscordJob, ListedJob, SubmittedJob
+from jg.coop.models.job import ListedJob
 from jg.coop.web.context import get_jobs_context
+
+from testing_utils import prepare_test_db
 
 
 WEB_DIR = Path("src/jg/coop/web")
@@ -40,14 +40,7 @@ BASE_URL = "https://junior.guru"
 
 @pytest.fixture
 def test_db() -> Generator[SqliteDatabase]:
-    models = [ClubUser, SubmittedJob, ListedJob, DiscordJob]
-    db = SqliteDatabase(":memory:")
-    db._functions = dict(production_db._functions)
-    with db.connection_context():
-        db.bind(models)
-        db.create_tables(models)
-        yield db
-        db.drop_tables(models)
+    yield from prepare_test_db()
 
 
 def create_job(**kwargs) -> ListedJob:
