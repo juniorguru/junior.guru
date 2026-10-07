@@ -69,9 +69,17 @@ def render(
     content, meta = parse_document(source)
     page = SimpleNamespace(url=url.lstrip("/"), meta=meta | (page_meta or {}))
     html = env.from_string(content).render(page=page, pages=[], base_url="/", **context)
+    return wrap_html(html)
+
+
+def wrap_html(html: str) -> str:
+    """
+    Wraps given HTML in a minimal document with the real JS and CSS bundle
+    """
     return (
         "<!DOCTYPE html>"
         '<html lang="cs"><head><meta charset="utf-8">'
+        '<meta name="viewport" content="width=device-width, initial-scale=1">'
         '<link rel="stylesheet" href="/static/css/index.css">'
         '<script defer src="/static/js/index.js"></script>'
         f"</head><body>{html}</body></html>"

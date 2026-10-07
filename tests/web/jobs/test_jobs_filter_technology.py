@@ -1,5 +1,6 @@
 import re
 
+import pytest
 from playwright.sync_api import Page, expect
 from web.helpers import create_job
 
@@ -95,3 +96,42 @@ def test_no_matching_jobs_shows_empty_state(page: Page, jobs_page):
 
     expect(page.locator(".jobs-item.tagged:visible")).to_have_count(0)
     expect(page.locator(".jobs-empty")).to_be_visible()
+
+
+def test_tags_outside_filters_are_ignored(page: Page, jobs_page):
+    # Regression: the #remote tag in the empty state note has the 'active'
+    # class too, and it used to be mistaken for an active filter
+    create_job(title="Python Developer", tech_tags=["python"], remote=False)
+    create_job(title="Remote Developer", tech_tags=["javascript"], remote=True)
+    jobs_page()
+    page.goto("/jobs/")
+
+    expect(page.locator(".jobs-empty .jobs-tag.active")).to_have_count(1)
+    expect(page.locator(".jobs-item.tagged:visible")).to_have_count(2)
+    expect(page).to_have_url(re.compile(r"/jobs/$"))
+
+    page.locator(".jobs-filters [data-jobs-tag='python']").click()
+    page.locator(".jobs-filters [data-jobs-tag='remote']").click()
+    page.locator(".jobs-filters [data-jobs-tag='remote']").click()
+
+    expect(page.locator(".jobs-item.tagged:visible")).to_have_count(1)
+    expect(page).to_have_url(re.compile(r"/jobs/\?technology=python$"))
+
+
+@pytest.mark.xfail(
+    reason="Bug: filter tags are spans, so they can't be focused or used by keyboard",
+    strict=True,
+    raises=AssertionError,
+)
+def test_tags_can_be_used_by_keyboard(page: Page, jobs_page):
+    create_job(title="Python Developer", tech_tags=["python"])
+    create_job(title="JavaScript Developer", tech_tags=["javascript"])
+    jobs_page()
+    page.goto("/jobs/")
+
+    tag = page.locator(".jobs-filters [data-jobs-tag='python']")
+    tag.focus()
+    expect(tag).to_be_focused()
+    page.keyboard.press("Enter")
+
+    expect(page.locator(".jobs-item.tagged:visible")).to_have_count(1)

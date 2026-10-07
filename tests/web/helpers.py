@@ -6,7 +6,7 @@ from datetime import date
 
 from jg.coop.lib.location import REGIONS
 from jg.coop.models.club import ClubUser
-from jg.coop.models.job import DiscordJob, ListedJob
+from jg.coop.models.job import DiscordJob, ListedJob, SubmittedJob
 
 
 def create_job(regions: list[str] | None = None, **kwargs) -> ListedJob:
@@ -52,3 +52,20 @@ def create_discord_job(**kwargs) -> DiscordJob:
             **kwargs,
         }
     )
+
+
+def create_submitted_job(id: str = "abc123", **kwargs) -> ListedJob:
+    url = f"https://junior.guru/jobs/{id}/"
+    submitted_job = SubmittedJob.create(
+        id=id,
+        title=kwargs.get("title", "Junior Developer"),
+        posted_on=date(2026, 1, 1),
+        expires_on=date(2026, 12, 31),
+        lang="cs",
+        description_html="<p>Junior Developer</p>",
+        description_text="Junior Developer",
+        url=url,
+        company_name="První Programátorská, a.s.",
+        company_url="https://example.com",
+    )
+    return create_job(submitted_job=submitted_job, url=url, **kwargs)

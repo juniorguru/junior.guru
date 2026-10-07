@@ -82,3 +82,26 @@ def test_unrelated_query_parameters_are_kept_on_filtering(page: Page, jobs_page)
 
     expect(page).to_have_url(re.compile(r"[?&]utm_source=newsletter(&|$)"))
     expect(page).to_have_url(re.compile(r"[?&]technology=python(&|$)"))
+
+
+@pytest.mark.parametrize(
+    "query",
+    [
+        "technology=",
+        "technology=Python",
+        "technology=python|",
+        "unknown=python",
+    ],
+)
+def test_url_with_odd_values_shows_jobs(page: Page, jobs_page, query: str):
+    create_job(title="Python Developer", tech_tags=["python"])
+    create_job(title="Java Developer", tech_tags=["java"])
+    jobs_page()
+    errors = []
+    page.on("pageerror", lambda error: errors.append(error))
+    page.goto(f"/jobs/?{query}")
+
+    expect(page.locator(".jobs-noscript")).to_have_count(0)
+    expect(page.locator(".jobs-item.tagged:visible").first).to_be_visible()
+    expect(page.locator(".jobs-empty")).to_be_hidden()
+    assert errors == []
