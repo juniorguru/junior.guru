@@ -1,22 +1,21 @@
-from collections import namedtuple
+from types import SimpleNamespace
 
 from jg.coop.lib import discord_votes
 
 
-StubReaction = namedtuple("Reaction", ["emoji", "count"])
-
-StubEmoji = namedtuple("Emoji", ["name"])
-
-
 def test_count_upvotes():
     reactions = [
-        StubReaction(StubEmoji("plus_one"), 4),
-        StubReaction("👍", 1),
-        StubReaction("🐣", 3),
+        SimpleNamespace(emoji=SimpleNamespace(name="plus_one"), count=4),
+        SimpleNamespace(emoji="👍", count=1),
+        SimpleNamespace(emoji="🐣", count=3),
     ]
     assert discord_votes.count_upvotes(reactions) == 5
 
 
 def test_count_downvotes():
-    reactions = [StubReaction("🙁", 4), StubReaction("👎", 1), StubReaction("🐣", 3)]
+    reactions = [
+        SimpleNamespace(emoji="🙁", count=4),
+        SimpleNamespace(emoji="👎", count=1),
+        SimpleNamespace(emoji="🐣", count=3),
+    ]
     assert discord_votes.count_downvotes(reactions) == 1

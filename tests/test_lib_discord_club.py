@@ -1,5 +1,5 @@
-from collections import namedtuple
 from datetime import UTC, date, datetime, timedelta
+from types import SimpleNamespace
 
 import pytest
 from discord import ChannelType, Route
@@ -12,21 +12,6 @@ from jg.coop.lib.mutations import (
     _set_allowed,
     allow,
 )
-
-
-StubEmoji = namedtuple("Emoji", ["name"])
-
-StubUser = namedtuple("User", ["id"])
-
-StubMember = namedtuple("Member", ["id", "roles"], defaults=[[]])
-
-StubRole = namedtuple("Role", ["id"])
-
-StubGuild = namedtuple("Guild", ["roles"])
-
-StubMessage = namedtuple("Message", ["author", "content"])
-
-StubClubMessage = namedtuple("ClubMessage", ["created_at"])
 
 
 class StubThread:
@@ -51,8 +36,8 @@ def nothing_allowed():
     [
         ("🆗", "🆗"),
         ("AHOJ", "AHOJ"),
-        (StubEmoji("lolpain"), "lolpain"),
-        (StubEmoji("BabyYoda"), "babyyoda"),
+        (SimpleNamespace(name="lolpain"), "lolpain"),
+        (SimpleNamespace(name="BabyYoda"), "babyyoda"),
         ("👋🏻", "👋"),
         ("<:meowsheart:1002448596572061746>", "meowsheart"),
         ("<a:batmanhmm:1080478927786610858>", "batmanhmm"),
@@ -108,8 +93,13 @@ def test_get_starting_emoji(text, expected):
 @pytest.mark.parametrize(
     "member_or_user, expected",
     [
-        (StubUser(1), []),
-        (StubMember(1, [StubRole(42), StubRole(38)]), [42, 38]),
+        (SimpleNamespace(id=1), []),
+        (
+            SimpleNamespace(
+                id=1, roles=[SimpleNamespace(id=42), SimpleNamespace(id=38)]
+            ),
+            [42, 38],
+        ),
     ],
 )
 def test_get_user_roles(member_or_user, expected):
@@ -117,16 +107,16 @@ def test_get_user_roles(member_or_user, expected):
 
 
 def test_get_guild_role():
-    role42 = StubRole(42)
-    role38 = StubRole(38)
-    guild = StubGuild([role42, role38])
+    role42 = SimpleNamespace(id=42)
+    role38 = SimpleNamespace(id=38)
+    guild = SimpleNamespace(roles=[role42, role38])
 
     assert discord_club.get_guild_role(guild, 42) == role42
 
 
 def test_get_guild_role_not_found_raises():
     with pytest.raises(ValueError):
-        discord_club.get_guild_role(StubGuild([]), 42)
+        discord_club.get_guild_role(SimpleNamespace(roles=[]), 42)
 
 
 @pytest.mark.parametrize(
@@ -139,7 +129,7 @@ def test_get_guild_role_not_found_raises():
 )
 def test_is_message_older_than(date_, expected):
     created_at = datetime(2022, 1, 25)
-    message = StubClubMessage(created_at)
+    message = SimpleNamespace(created_at=created_at)
 
     assert discord_club.is_message_older_than(message, date_) is expected
 
@@ -158,7 +148,7 @@ def test_is_message_older_than_no_message():
 )
 def test_is_message_over_period_ago(today, expected):
     created_at = datetime(2022, 1, 18)
-    message = StubClubMessage(created_at)
+    message = SimpleNamespace(created_at=created_at)
 
     assert (
         discord_club.is_message_over_period_ago(message, timedelta(weeks=1), today)
@@ -174,9 +164,6 @@ def test_is_message_over_period_ago(today, expected):
     ],
 )
 def test_get_pinned_message_url(link_text):
-    StubEmbed = namedtuple("Embed", ["description"])
-    StubChannel = namedtuple("Channel", ["type"])
-    StubMessage = namedtuple("Message", ["content", "embeds", "channel"])
 
     description = (
         "**Dan Srb** v kanálu „ITnetwork informační hodnota kurzů”:"
@@ -187,8 +174,10 @@ def test_get_pinned_message_url(link_text):
         "MSMT-6316/2022-2 Edu partners s.r.o. info@edu-partners.cz Programátor www aplikací…"
         f"\n[{link_text}](https://discord.com/channels/769966886598737931/1083734944121102436/1089250472776454154)"
     )
-    message = StubMessage(
-        "📌 ...", [StubEmbed(description)], StubChannel(type=ChannelType.private)
+    message = SimpleNamespace(
+        content="📌 ...",
+        embeds=[SimpleNamespace(description=description)],
+        channel=SimpleNamespace(type=ChannelType.private),
     )
 
     assert (
@@ -366,15 +355,19 @@ async def test_intercept_request_does_not_retry_mutation_timeouts(nothing_allowe
 
 
 def test_get_missing_reactions():
-    StubReaction = namedtuple("Reaction", ["emoji", "me"])
-    reactions = [StubReaction("👍", True), StubReaction("👎", True)]
+    reactions = [
+        SimpleNamespace(emoji="👍", me=True),
+        SimpleNamespace(emoji="👎", me=True),
+    ]
 
     assert discord_club.get_missing_reactions(reactions, ["👍", "👎", "🤷"]) == {"🤷"}
 
 
 def test_get_missing_reactions_supports_custom_emoji():
-    StubReaction = namedtuple("Reaction", ["emoji", "me"])
-    reactions = [StubReaction("pyconcz", True), StubReaction("batmanhmm", True)]
+    reactions = [
+        SimpleNamespace(emoji="pyconcz", me=True),
+        SimpleNamespace(emoji="batmanhmm", me=True),
+    ]
 
     assert discord_club.get_missing_reactions(
         reactions,
@@ -383,8 +376,10 @@ def test_get_missing_reactions_supports_custom_emoji():
 
 
 def test_get_missing_reactions_excludes_emojis_from_others():
-    StubReaction = namedtuple("Reaction", ["emoji", "me"])
-    reactions = [StubReaction("👍", False), StubReaction("👎", True)]
+    reactions = [
+        SimpleNamespace(emoji="👍", me=False),
+        SimpleNamespace(emoji="👎", me=True),
+    ]
 
     assert discord_club.get_missing_reactions(reactions, ["👍", "👎", "🤷"]) == {
         "👍",
@@ -393,54 +388,46 @@ def test_get_missing_reactions_excludes_emojis_from_others():
 
 
 def test_get_reaction():
-    StubReaction = namedtuple("Reaction", ["emoji"])
-    reaction_up = StubReaction("👍")
-    reaction_down = StubReaction("👎")
+    reaction_up = SimpleNamespace(emoji="👍")
+    reaction_down = SimpleNamespace(emoji="👎")
 
     assert discord_club.get_reaction([reaction_up, reaction_down], "👍") == reaction_up
 
 
 def test_get_parent_channel():
-    StubChannel = namedtuple("Channel", ["id"])
-    channel = StubChannel(1)
+    channel = SimpleNamespace(id=1)
 
     assert discord_club.get_parent_channel(channel).id == 1
 
 
 def test_get_parent_channel_thread():
-    StubChannel = namedtuple("Channel", ["id", "parent"])
-    channel = StubChannel(1, None)
-    thread = StubChannel(2, channel)
+    channel = SimpleNamespace(id=1, parent=None)
+    thread = SimpleNamespace(id=2, parent=channel)
 
     assert discord_club.get_parent_channel(thread).id == 1
 
 
 def test_is_member_user():
-    StubUser = namedtuple("User", ["id"])
-    user = StubUser(1)
+    user = SimpleNamespace(id=1)
 
     assert discord_club.is_member(user) is False
 
 
 def test_is_member_member():
-    StubMember = namedtuple("Member", ["id", "joined_at"])
-    member = StubMember(1, datetime(2021, 1, 1, tzinfo=UTC))
+    member = SimpleNamespace(id=1, joined_at=datetime(2021, 1, 1, tzinfo=UTC))
 
     assert discord_club.is_member(member) is True
 
 
 def test_get_channel_name_guild():
-    StubChannel = namedtuple("Channel", ["name"])
-    channel = StubChannel("ahoj")
+    channel = SimpleNamespace(name="ahoj")
 
     assert discord_club.get_channel_name(channel) == "ahoj"
 
 
 def test_get_channel_name_dm():
-    StubUser = namedtuple("User", ["display_name"])
-    user = StubUser("Gargamel")
-    StubDMChannel = namedtuple("DMChannel", ["recipient"])
-    channel = StubDMChannel(user)
+    user = SimpleNamespace(display_name="Gargamel")
+    channel = SimpleNamespace(recipient=user)
 
     assert discord_club.get_channel_name(channel) == "Gargamel"
 

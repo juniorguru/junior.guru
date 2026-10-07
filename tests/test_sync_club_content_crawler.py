@@ -1,6 +1,6 @@
 import logging
-from collections import namedtuple
 from datetime import UTC, datetime, timedelta
+from types import SimpleNamespace
 
 import pytest
 
@@ -22,8 +22,7 @@ def test_get_history_after_given_timezone_aware_datetime():
 
 def test_get_channel_logger():
     logger = logging.getLogger("test_get_channel_logger")
-    StubChannel = namedtuple("Channel", ["id"])
-    channel = StubChannel(1)
+    channel = SimpleNamespace(id=1)
     channel_logger = get_channel_logger(logger, channel)
 
     assert channel_logger.name == "test_get_channel_logger.1"
@@ -31,9 +30,8 @@ def test_get_channel_logger():
 
 def test_get_channel_logger_thread():
     logger = logging.getLogger("test_get_channel_logger")
-    StubChannel = namedtuple("Channel", ["id", "parent"])
-    channel = StubChannel(1, None)
-    thread = StubChannel(2, channel)
+    channel = SimpleNamespace(id=1, parent=None)
+    thread = SimpleNamespace(id=2, parent=channel)
     channel_logger = get_channel_logger(logger, thread)
 
     assert channel_logger.name == "test_get_channel_logger.1.2"
