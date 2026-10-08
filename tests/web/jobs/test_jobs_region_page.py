@@ -134,3 +134,55 @@ def test_region_page_with_multiword_name(page: Page, jobs_page):
     expect(page.locator(".jobs-noscript")).to_have_count(0)
     expect(page).to_have_url(re.compile(r"/jobs/usti-nad-labem/$"))
     assert errors == []
+
+
+def test_region_page_url_restores_remote(page: Page, jobs_page):
+    create_job(title="Brno Developer", regions=["Brno"])
+    create_job(title="Praha Developer", regions=["Praha"])
+    create_job(title="Remote Developer", remote=True)
+    jobs_page("/jobs/brno/")
+    page.goto("/jobs/brno/?location=remote")
+
+    expect(page.locator(".jobs-filters [data-jobs-tag='brno']")).to_have_class(
+        re.compile(r"\bactive\b")
+    )
+    expect(page.locator(".jobs-filters [data-jobs-tag='remote']")).to_have_class(
+        re.compile(r"\bactive\b")
+    )
+    visible_jobs = page.locator(".jobs-item.tagged:visible")
+    expect(visible_jobs).to_have_count(2)
+    expect(visible_jobs.filter(has_text="Praha Developer")).to_have_count(0)
+
+
+def test_region_page_url_ignores_other_regions(page: Page, jobs_page):
+    create_job(title="Brno Developer", regions=["Brno"])
+    create_job(title="Praha Developer", regions=["Praha"])
+    jobs_page("/jobs/brno/")
+    page.goto("/jobs/brno/?location=praha")
+
+    visible_jobs = page.locator(".jobs-item.tagged:visible")
+    expect(visible_jobs).to_have_count(1)
+    expect(visible_jobs).to_contain_text("Brno Developer")
+
+
+def test_back_button_on_region_page(page: Page, jobs_page):
+    create_job(title="Brno Python", regions=["Brno"], tech_tags=["python"])
+    create_job(title="Brno Java", regions=["Brno"], tech_tags=["java"])
+    create_job(title="Praha Python", regions=["Praha"], tech_tags=["python"])
+    jobs_page("/jobs/brno/")
+    page.goto("/jobs/brno/")
+
+    page.locator(".jobs-filters [data-jobs-tag='python']").click()
+    expect(page.locator(".jobs-item.tagged:visible")).to_have_count(1)
+    page.go_back()
+
+    expect(page).to_have_url(re.compile(r"/jobs/brno/$"))
+    expect(page.locator(".jobs-filters [data-jobs-tag='brno']")).to_have_class(
+        re.compile(r"\bactive\b")
+    )
+    expect(page.locator(".jobs-filters [data-jobs-tag='python']")).not_to_have_class(
+        re.compile(r"\bactive\b")
+    )
+    visible_jobs = page.locator(".jobs-item.tagged:visible")
+    expect(visible_jobs).to_have_count(2)
+    expect(visible_jobs.filter(has_text="Praha Python")).to_have_count(0)

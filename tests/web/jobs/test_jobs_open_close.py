@@ -1,7 +1,8 @@
 import re
 
-from playwright.sync_api import Page, expect
-from web.helpers import create_job
+import pytest
+from playwright.sync_api import Page, TimeoutError, expect
+from web.helpers import create_job, hide_subscribe_box
 
 
 def test_jobs_are_closed_initially(page: Page, jobs_page):
@@ -80,3 +81,57 @@ def test_subscribe_box_hides_after_click(page: Page, jobs_page):
     subscribe.click()
 
     expect(subscribe).to_be_hidden()
+
+
+def test_clicking_anywhere_on_job_opens_it(page: Page, jobs_page):
+    create_job(title="Python Developer", company_name="Kuře Žluté, s.r.o.")
+    jobs_page()
+    page.goto("/jobs/")
+
+    job = page.locator(".jobs-item.tagged")
+    company = job.locator(".jobs-info").get_by_text("Kuře Žluté, s.r.o.")
+    box = company.bounding_box()
+    page.mouse.click(box["x"] + box["width"] / 2, box["y"] + box["height"] / 2)
+
+    expect(job).to_have_class(re.compile(r"\bopen\b"))
+    expect(page).to_have_url(re.compile(r"/jobs/$"))
+
+
+def test_open_job_links_are_clickable(page: Page, jobs_page):
+    create_job(title="Python Developer")
+    jobs_page()
+    page.goto("/jobs/")
+
+    hide_subscribe_box(page)
+    job = page.locator(".jobs-item.tagged")
+    job.locator(".jobs-title-link").click()
+    requested_urls = []
+    page.context.on("request", lambda request: requested_urls.append(request.url))
+    with page.context.expect_page() as new_page_info:
+        job.locator(".jobs-action-button.continue").click()
+
+    assert new_page_info.value.opener() == page
+    assert "https://example.com/jobs/1" in requested_urls
+    expect(job).to_have_class(re.compile(r"\bopen\b"))
+
+
+@pytest.mark.xfail(
+    reason="Bug: clicks with a modifier key open the job instead of a new tab",
+    strict=True,
+    raises=(AssertionError, TimeoutError),
+)
+def test_modifier_click_on_title_opens_new_tab(page: Page, jobs_page):
+    create_job(title="Python Developer")
+    jobs_page()
+    page.goto("/jobs/")
+
+    job = page.locator(".jobs-item.tagged")
+    requested_urls = []
+    page.context.on("request", lambda request: requested_urls.append(request.url))
+    with page.context.expect_page(timeout=2_000) as new_page_info:
+        job.locator(".jobs-title-link").click(modifiers=["ControlOrMeta"])
+
+    assert new_page_info.value.opener() == page
+    assert "https://example.com/jobs/1" in requested_urls
+    expect(job).not_to_have_class(re.compile(r"\bopen\b"))
+    expect(job.locator(".jobs-actions")).to_be_hidden()

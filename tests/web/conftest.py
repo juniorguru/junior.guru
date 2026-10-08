@@ -69,9 +69,17 @@ def render(
     content, meta = parse_document(source)
     page = SimpleNamespace(url=url.lstrip("/"), meta=meta | (page_meta or {}))
     html = env.from_string(content).render(page=page, pages=[], base_url="/", **context)
+    return wrap_html(html)
+
+
+def wrap_html(html: str) -> str:
+    """
+    Wraps given HTML in a minimal document with the real JS and CSS bundle
+    """
     return (
         "<!DOCTYPE html>"
         '<html lang="cs"><head><meta charset="utf-8">'
+        '<meta name="viewport" content="width=device-width, initial-scale=1">'
         '<link rel="stylesheet" href="/static/css/index.css">'
         '<script defer src="/static/js/index.js"></script>'
         f"</head><body>{html}</body></html>"
@@ -89,8 +97,18 @@ def browser() -> Generator[Browser]:
 
 
 @pytest.fixture
-def page(browser: Browser, static_dir: Path) -> Generator[Page]:
-    context = browser.new_context(base_url=BASE_URL)
+def context_options() -> dict[str, Any]:
+    """
+    Options for the browser context, override to change them for a module or test
+    """
+    return {}
+
+
+@pytest.fixture
+def page(
+    browser: Browser, static_dir: Path, context_options: dict[str, Any]
+) -> Generator[Page]:
+    context = browser.new_context(base_url=BASE_URL, **context_options)
     page = context.new_page()
     yield page
     context.close()

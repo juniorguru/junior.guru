@@ -121,3 +121,17 @@ def test_tags_match_only_within_their_type(page: Page, jobs_page):
     visible_jobs = page.locator(".jobs-item.tagged:visible")
     expect(visible_jobs).to_have_count(1)
     expect(visible_jobs).to_contain_text("Remote Developer")
+
+
+def test_jobs_without_tags_are_hidden_when_filtering(page: Page, jobs_page):
+    create_job(title="Python Developer", tech_tags=["python"])
+    create_job(title="Untagged Developer")
+    jobs_page()
+    page.goto("/jobs/")
+    expect(page.locator(".jobs-item.tagged:visible")).to_have_count(2)
+
+    page.locator(".jobs-filters [data-jobs-tag='python']").click()
+
+    visible_jobs = page.locator(".jobs-item.tagged:visible")
+    expect(visible_jobs).to_have_count(1)
+    expect(visible_jobs).to_contain_text("Python Developer")
