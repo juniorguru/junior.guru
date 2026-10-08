@@ -32,6 +32,10 @@ jobs:
       # 👍 passed, inline comments for issues found, 🚀 skipped (reason in the check's annotations)
       - id: claude
         uses: anthropics/claude-code-action@v1
+        env:
+          # The plugin launches subagents and Claude may run them in the background,
+          # then end the run while they're still working, without reviewing anything
+          CLAUDE_CODE_DISABLE_BACKGROUND_TASKS: "1"
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           plugin_marketplaces: "https://github.com/anthropics/claude-code.git"
@@ -59,9 +63,9 @@ jobs:
           printf '%s\n' "$result" >> "$GITHUB_STEP_SUMMARY"
 
           if [[ "$result" == *"No issues found"* ]]; then
-            gh api "$REACTIONS_URL" -f content=+1
+            gh api "$REACTIONS_URL" -f content=+1 --silent
           elif [ "$comments" -eq 0 ]; then
-            gh api "$REACTIONS_URL" -f content=rocket
+            gh api "$REACTIONS_URL" -f content=rocket --silent
             reason=$(grep -m1 -o 'Review skipped:.*' <<< "$result" || tr '\n' ' ' <<< "$result")
             echo "::notice title=Claude review skipped::$reason"
           fi
