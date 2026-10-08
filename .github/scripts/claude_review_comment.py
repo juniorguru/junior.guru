@@ -20,7 +20,10 @@ def get_failure_reason(step_outcome: str) -> str:
             or result["subtype"]
         )
     except (FileNotFoundError, IndexError, KeyError, json.JSONDecodeError):
-        reason = "Claude produced no result, see the logs."
+        reason = (
+            "Claude produced no result. Either the action failed before Claude started, "
+            "or the step hit its timeout. The error is in the log."
+        )
     return f"Step outcome: `{step_outcome}`\n\n{reason}"
 
 
@@ -33,19 +36,18 @@ def main() -> None:
         title = TITLES.get(review["outcome"], review["outcome"])
         summary = review["summary"]
     elif step_outcome == "success":
+        # Claude must return structured output, otherwise the step fails, so the only
+        # way to get here is the action's check that the workflow file isn't modified
         title = "skipped"
         summary = (
-            "The Claude action exited without running Claude. It does that e.g. on PRs "
-            "changing this workflow file, which must match the default branch. "
-            "See the warning in the logs."
+            "This PR changes the workflow file of the Claude review. The Claude action "
+            "refuses to run unless the file is identical to the one on the default branch."
         )
     else:
         title = "failed"
         summary = get_failure_reason(step_outcome)
 
-    body = (
-        f"## Claude review: {title}\n\n{summary}\n\n[Logs]({os.environ['RUN_URL']})\n"
-    )
+    body = f"## Claude review: {title}\n\n{summary}\n\n[Log]({os.environ['JOB_URL']})\n"
     subprocess.run(
         ["gh", "pr", "comment", os.environ["PR_NUMBER"], "--body", body], check=True
     )

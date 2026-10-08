@@ -71,5 +71,5 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           CLAUDE_OUTCOME: ${{ steps.claude.outcome }}
           STRUCTURED_OUTPUT: ${{ steps.claude.outputs.structured_output }}
-          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          JOB_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}/job/${{ job.check_run_id }}
         run: python3 .github/scripts/claude_review_comment.py
