@@ -11,6 +11,7 @@ function setupJobsTags() {
         showElement(tag);
       });
     updateJobsTagsUI();
+    window.addEventListener("popstate", updateJobsTagsUI);
     container.classList.remove("noscript");
   }
   document.querySelectorAll(".jobs-noscript").forEach(function (noscript) {
@@ -174,4 +175,3 @@ function getLocationSlug(location) {
 
 document.addEventListener("DOMContentLoaded", setupJobsTags);
 document.addEventListener("DOMContentLoaded", setupJobs);
-window.addEventListener("popstate", updateJobsTagsUI);

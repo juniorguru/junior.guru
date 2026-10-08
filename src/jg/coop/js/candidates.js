@@ -14,6 +14,7 @@ function setupCandidatesTags() {
         showElement(tag);
       });
     updateCandidatesTagsUI();
+    window.addEventListener("popstate", updateCandidatesTagsUI);
     container.classList.remove("noscript");
   }
   document
@@ -178,4 +179,3 @@ function hideElement(element) {
 
 document.addEventListener("DOMContentLoaded", setupCandidatesTags);
 document.addEventListener("DOMContentLoaded", setupCandidates);
-window.addEventListener("popstate", updateCandidatesTagsUI);
