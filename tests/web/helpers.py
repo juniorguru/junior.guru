@@ -7,6 +7,7 @@ from datetime import date
 from playwright.sync_api import Page, expect
 
 from jg.coop.lib.location import REGIONS
+from jg.coop.models.candidate import Candidate, CandidateProject
 from jg.coop.models.club import ClubUser
 from jg.coop.models.job import DiscordJob, ListedJob, SubmittedJob
 
@@ -92,3 +93,50 @@ def create_submitted_job(id: str = "abc123", **kwargs) -> ListedJob:
     job.company_logo_path = "logos-jobs/unknown.webp"
     job.save()
     return job
+
+
+def create_candidate(regions: list[str] | None = None, **kwargs) -> Candidate:
+    name = kwargs.pop("name", "Kuře Žluté")
+    username = kwargs.pop(
+        "github_username", f"candidate{Candidate.select().count() + 1}"
+    )
+    if regions:
+        kwargs["location_fuzzy"] = {
+            "locations": [create_location(region) for region in regions],
+            "is_universal": False,
+        }
+    if not kwargs.get("is_ready", True):
+        number = Candidate.select().count() + 1
+        kwargs.setdefault(
+            "report_url", f"https://github.com/juniorguru/eggtray/issues/{number}"
+        )
+    return Candidate.create(
+        **{
+            "github_username": username,
+            "github_url": f"https://github.com/{username}",
+            "name": name,
+            "avatar_url": f"https://avatars.githubusercontent.com/{username}",
+            "avatar_is_default": False,
+            "avatar_path": "chick-avatar.png",
+            "is_ready": True,
+            "is_member": False,
+            "has_feminine_name": False,
+            **kwargs,
+        }
+    )
+
+
+def create_candidate_project(candidate: Candidate, **kwargs) -> CandidateProject:
+    number = CandidateProject.select().count() + 1
+    name = kwargs.pop("name", f"{candidate.github_username}/project{number}")
+    return CandidateProject.create(
+        **{
+            "name": name,
+            "candidate": candidate,
+            "source_url": f"https://github.com/{name}",
+            "priority": number,
+            "start_on": date(2025, 1, 1),
+            "end_on": date(2025, 3, 1),
+            **kwargs,
+        }
+    )
