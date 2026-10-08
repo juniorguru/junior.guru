@@ -1,0 +1,63 @@
+name: Nightly Check
+on:
+  schedule:
+    # CircleCI nightly starts at 04:00 UTC and usually finishes by 05:10 UTC,
+    # this leaves a buffer of almost two hours
+    - cron: "53 6 * * *"
+  workflow_dispatch:
+jobs:
+  investigate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: read
+      issues: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+      - id: nightly
+        run: python3 .github/scripts/nightly_status.py
+      - if: steps.nightly.outputs.investigate == 'true'
+        uses: anthropics/claude-code-action@v1
+        timeout-minutes: 30
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            REPO: ${{ github.repository }}
+            NIGHTLY: ${{ steps.nightly.outputs.url }}
+            FAILED JOBS: ${{ steps.nightly.outputs.failed }}
+            DATE: ${{ steps.nightly.outputs.date }}
+
+            Today's CircleCI nightly build failed. Use the circleci skill to investigate why,
+            including the comparison with recent nightly runs.
+
+            Ignore failures that are expected as described in the skill. If nothing else is left, stop.
+
+            Group the remaining failures by root cause. One reason is one distinct problem, e.g. one broken
+            link, one failing test, one external service being down.
+
+            - 3 or fewer reasons: report each reason separately, with a specific title such as
+              "Sync failing: <job> <short cause>". Broken links are titled "Broken link: <domain>" with just
+              the domain without "www.", e.g. "Broken link: marketawillis.com" or "Broken link: mpsv.gov.cz".
+              Broken links on the same domain are one reason.
+            - More than 3 reasons: report all of them together, titled
+              "Nightly build failure ${{ steps.nightly.outputs.date }}", one section per reason.
+
+            Before reporting, list open issues (`gh issue list --state open --limit 100`) and check whether
+            one already covers the same problem. If it does, don't file a new issue; add a short comment
+            (`gh issue comment <number> --body "..."`) saying the problem persisted in the nightly on
+            ${{ steps.nightly.outputs.date }}, with a link to the CircleCI job and anything that changed.
+            Otherwise file a new issue (`gh issue create --title "..." --body "..."`).
+
+            Issue bodies must be brief and to the point, in English, Markdown, with these sections
+            (per reason, in the combined issue):
+            - **Failed job** with a link to the CircleCI job
+            - **Error**: the concrete error from the logs, quoted
+            - **Verdict**: intermittent or regression, with the evidence from recent runs in one or two sentences
+            - **Suggested fixes**: a short list
+
+            Do not open a PR and do not change any files.
+          claude_args: |
+            --allowedTools "Skill,Read,Glob,Grep,Bash(curl:*),Bash(jq:*),Bash(gh issue create:*),Bash(gh issue list:*),Bash(gh issue view:*),Bash(gh issue comment:*)"
