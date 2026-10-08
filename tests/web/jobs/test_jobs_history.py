@@ -1,6 +1,5 @@
 import re
 
-import pytest
 from playwright.sync_api import Page, expect
 from web.helpers import create_job
 
@@ -42,11 +41,6 @@ def test_back_button_restores_unfiltered_list(page: Page, jobs_page):
     expect(page.locator(".jobs-item.tagged:visible")).to_have_count(2)
 
 
-@pytest.mark.xfail(
-    reason="Bug: loading the page pushes an extra history entry",
-    strict=True,
-    raises=AssertionError,
-)
 def test_loading_page_adds_no_history_entry(page: Page, jobs_page):
     create_job(title="Python Developer", tech_tags=["python"])
     jobs_page()
@@ -57,11 +51,6 @@ def test_loading_page_adds_no_history_entry(page: Page, jobs_page):
     assert page.evaluate("history.length") == page.evaluate("initialHistoryLength")
 
 
-@pytest.mark.xfail(
-    reason="Bug: going back pushes a new history entry, which drops the forward ones",
-    strict=True,
-    raises=AssertionError,
-)
 def test_forward_button_works_after_going_back(page: Page, jobs_page):
     create_job(title="Python Developer", tech_tags=["python"])
     create_job(title="Java Developer", tech_tags=["java"])

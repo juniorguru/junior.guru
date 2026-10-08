@@ -6,7 +6,7 @@ function setupJobsTags() {
       .forEach(function (tag) {
         tag.addEventListener("click", function () {
           tag.classList.toggle("active");
-          filterJobs();
+          filterJobs({ pushHistory: true });
         });
         showElement(tag);
       });
@@ -56,7 +56,7 @@ function setupJobs() {
   }
 }
 
-function filterJobs() {
+function filterJobs({ pushHistory = false } = {}) {
   const activeTags = Array.from(
     document.querySelectorAll(".jobs-filters .jobs-tag.active"),
   );
@@ -84,7 +84,9 @@ function filterJobs() {
     }
     url.searchParams.set(type, tags.join("|"));
   });
-  window.history.pushState({}, "", url);
+  if (pushHistory) {
+    window.history.pushState({}, "", url);
+  }
 
   const jobs = Array.from(document.querySelectorAll(".jobs-item.tagged"));
   const allJobTags = Array.from(
