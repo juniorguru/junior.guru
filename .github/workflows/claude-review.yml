@@ -14,21 +14,57 @@ jobs:
     timeout-minutes: 10
     permissions:
       contents: read
-      pull-requests: read
+      pull-requests: write
       issues: read
       id-token: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REACTIONS_URL: repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/reactions
     steps:
+      - id: eyes
+        continue-on-error: true
+        run: echo "id=$(gh api "$REACTIONS_URL" -f content=eyes --jq .id)" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v6
         with:
           fetch-depth: 1
-      - uses: anthropics/claude-code-action@v1
+      # The plugin posts a "No issues found" comment when the PR passes, which is
+      # noisy, so it's disallowed and the outcome is reported by reactions instead:
+      # 👍 passed, inline comments for issues found, 🚀 skipped (reason in the check's annotations)
+      - id: claude
+        uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           plugin_marketplaces: "https://github.com/anthropics/claude-code.git"
           plugins: "code-review@claude-code-plugins"
-          prompt: "/code-review:code-review --comment ${{ github.repository }}/pull/${{ github.event.pull_request.number }}"
+          prompt: >-
+            /code-review:code-review --comment ${{ github.repository }}/pull/${{ github.event.pull_request.number }}
+            If you stop without reviewing the PR, end your final message with a single line
+            starting with "Review skipped:" followed by the reason.
           claude_args: |
             --allowedTools "mcp__github_inline_comment__create_inline_comment"
+            --disallowedTools "Bash(gh pr comment:*)"
+      - if: always()
+        continue-on-error: true
+        env:
+          EYES_ID: ${{ steps.eyes.outputs.id }}
+          CLAUDE_OUTCOME: ${{ steps.claude.outcome }}
+          EXECUTION_FILE: ${{ steps.claude.outputs.execution_file }}
+        run: |
+          if [ -n "$EYES_ID" ]; then gh api -X DELETE "$REACTIONS_URL/$EYES_ID"; fi
+          if [ "$CLAUDE_OUTCOME" != success ] || [ ! -f "$EXECUTION_FILE" ]; then exit 0; fi
+
+          result=$(jq -r 'last(.[] | select(.type == "result")).result // ""' "$EXECUTION_FILE")
+          comments=$(jq '[.[] | select(.type == "assistant") | .message.content[]?
+            | select(.type == "tool_use" and .name == "mcp__github_inline_comment__create_inline_comment")] | length' "$EXECUTION_FILE")
+          printf '%s\n' "$result" >> "$GITHUB_STEP_SUMMARY"
+
+          if [[ "$result" == *"No issues found"* ]]; then
+            gh api "$REACTIONS_URL" -f content=+1
+          elif [ "$comments" -eq 0 ]; then
+            gh api "$REACTIONS_URL" -f content=rocket
+            reason=$(grep -m1 -o 'Review skipped:.*' <<< "$result" || tr '\n' ' ' <<< "$result")
+            echo "::notice title=Claude review skipped::$reason"
+          fi
 
   # The plugin above skips PRs Claude already commented on, so re-reviews
   # are requested by commenting "@claude review" or "@claude re-review" on the PR
