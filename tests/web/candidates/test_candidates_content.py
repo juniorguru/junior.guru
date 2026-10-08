@@ -168,18 +168,7 @@ def test_no_badges_without_projects(page: Page, candidates_page):
     [
         ("it", "IT VŠ"),
         ("math", "matematická VŠ"),
-        pytest.param(
-            "electro",
-            "elektro VŠ",
-            marks=pytest.mark.xfail(
-                reason=(
-                    "Bug: the badge is looked up as 'ele', but eggtray "
-                    "and school_text use 'electro'"
-                ),
-                strict=True,
-                raises=AssertionError,
-            ),
-        ),
+        ("electro", "elektro VŠ"),
     ],
 )
 def test_university_badge(page: Page, candidates_page, university: str, label: str):
