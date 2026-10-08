@@ -64,6 +64,9 @@ jobs:
               *) title="skipped" ;;
             esac
             summary=$(jq -r .summary <<< "$STRUCTURED_OUTPUT")
+          elif [ "$CLAUDE_OUTCOME" = success ]; then
+            title="skipped"
+            summary="The Claude action exited without running Claude. It does that e.g. on PRs changing this workflow file, which must match the default branch. See the warning in the logs."
           else
             title="failed"
             execution_file="$RUNNER_TEMP/claude-execution-output.json"
