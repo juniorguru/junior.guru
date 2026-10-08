@@ -137,7 +137,7 @@ class Candidate(BaseModel):
                 help_text="Má vystudovanou matematickou VŠ",
                 promo=True,
             ),
-            "ele": Badge(
+            "electro": Badge(
                 icon="mortarboard-fill",
                 label="elektro VŠ",
                 help_text="Má vystudovanou elektrotechnickou VŠ",
