@@ -251,6 +251,8 @@
 .candidates-badge[title],
 .candidates-badge[data-bs-title],
 .candidates-badge[data-bs-original-title] {
+  position: relative;
+  z-index: 2; // above the stretched title link
   cursor: help;
 }
 
