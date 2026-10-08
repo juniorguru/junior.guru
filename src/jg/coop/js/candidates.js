@@ -129,11 +129,13 @@ function filterCandidates({ pushHistory = false } = {}) {
       const candidateTags = Array.from(
         candidate.querySelectorAll(".candidates-tag"),
       );
-      const candidateSlugs = candidateTags.map(
-        (tag) => tag.dataset.candidatesTag,
-      );
       const isRelevant = Object.entries(activeTagsByType).every(
-        ([type, tags]) => tags.some((tag) => candidateSlugs.includes(tag)),
+        ([type, tags]) =>
+          candidateTags.some(
+            (tag) =>
+              tag.dataset.candidatesTagType === type &&
+              tags.includes(tag.dataset.candidatesTag),
+          ),
       );
       if (isRelevant) {
         showElement(candidate);
