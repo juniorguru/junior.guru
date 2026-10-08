@@ -50,7 +50,7 @@ def test_region_tag_cannot_be_turned_off(page: Page, jobs_page):
     page.goto("/jobs/brno/")
 
     region_tag = page.locator(".jobs-filters [data-jobs-tag='brno']")
-    region_tag.click()
+    region_tag.click(force=True)
 
     expect(region_tag).to_have_class(re.compile(r"\bactive\b"))
     expect(page.locator(".jobs-item.tagged:visible")).to_have_count(1)

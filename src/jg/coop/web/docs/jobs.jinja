@@ -38,22 +38,27 @@ template: main.html
   <dd class="jobs-tags">
     {% if is_region_listing %}
       {% if not is_remote_listing %}
-        <span
+        <button
+          type="button"
           class="jobs-tag"
+          aria-pressed="false"
           hidden
           data-jobs-tag="remote"
           data-jobs-tag-type="location"
         >
           #remote
-        </span>
+        </button>
       {% endif %}
-      <span
+      <button
+        type="button"
         class="jobs-tag active disabled"
+        disabled
+        aria-pressed="true"
         data-jobs-tag="{{ page.meta.region_tag_slug }}"
         data-jobs-tag-type="location"
       >
         #{{- page.meta.region_tag_slug -}}
-      </span>
+      </button>
       <a href="{{ pages|docs_url('jobs.jinja')|url }}" class="jobs-tag-link">
         {{ 'sliders'|icon }}
         <span class="jobs-tag-link-label">
@@ -62,14 +67,16 @@ template: main.html
       </a>
     {% else %}
       {% for tag in jobs_region_tags %}
-        <span
+        <button
+          type="button"
           class="jobs-tag"
+          aria-pressed="false"
           hidden
           data-jobs-tag="{{ tag.slug }}"
           data-jobs-tag-type="{{ tag.type|lower }}"
         >
           {{- tag.name -}}
-        </span>
+        </button>
       {% endfor %}
       <span class="jobs-noscript">Stala se chyba a filtrování nefunguje</span>
     {% endif %}
@@ -77,42 +84,48 @@ template: main.html
   <dt class="jobs-filters-heading">{{ "hourglass-split"|icon }} Úvazek:</dt>
   <dd class="jobs-tags">
     {% for tag in jobs_tags.employment %}
-      <span
+      <button
+        type="button"
         class="jobs-tag"
+        aria-pressed="false"
         hidden
         data-jobs-tag="{{ tag.slug }}"
         data-jobs-tag-type="{{ tag.type|lower }}"
       >
         {{- tag.name -}}
-      </span>
+      </button>
     {% endfor %}
     <span class="jobs-noscript">Stala se chyba a filtrování nefunguje</span>
   </dd>
   <dt class="jobs-filters-heading">{{ "tools"|icon }} Nářadí:</dt>
   <dd class="jobs-tags">
     {% for tag in jobs_tags.technology %}
-      <span
+      <button
+        type="button"
         class="jobs-tag"
+        aria-pressed="false"
         hidden
         data-jobs-tag="{{ tag.slug }}"
         data-jobs-tag-type="{{ tag.type|lower }}"
       >
         {{- tag.name -}}
-      </span>
+      </button>
     {% endfor %}
     <span class="jobs-noscript">Stala se chyba a filtrování nefunguje</span>
   </dd>
   <dt class="jobs-filters-heading">{{ "box-arrow-down"|icon }} Zdroj:</dt>
   <dd class="jobs-tags">
     {% for tag in jobs_tags.source %}
-      <span
+      <button
+        type="button"
         class="jobs-tag"
+        aria-pressed="false"
         hidden
         data-jobs-tag="{{ tag.slug }}"
         data-jobs-tag-type="{{ tag.type|lower }}"
       >
         {{- tag.name -}}
-      </span>
+      </button>
     {% endfor %}
     <span class="jobs-noscript">Stala se chyba a filtrování nefunguje</span>
   </dd>
