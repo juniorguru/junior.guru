@@ -11,66 +11,69 @@ jobs:
       group: claude-review-${{ github.event.pull_request.number || github.event.issue.number }}
       cancel-in-progress: true
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     permissions:
       contents: read
       pull-requests: write
       issues: read
       id-token: write
-    env:
-      GH_TOKEN: ${{ github.token }}
-      REACTIONS_URL: repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/reactions
     steps:
-      - id: eyes
-        continue-on-error: true
-        run: echo "id=$(gh api "$REACTIONS_URL" -f content=eyes --jq .id)" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v6
         with:
           fetch-depth: 1
-      # The plugin posts a "No issues found" comment when the PR passes, which is
-      # noisy, so it's disallowed and the outcome is reported by reactions instead:
-      # 👍 passed, inline comments for issues found, 🚀 skipped (reason in the check's annotations)
       - id: claude
         uses: anthropics/claude-code-action@v1
-        env:
-          # The plugin launches subagents and Claude may run them in the background,
-          # then end the run while they're still working, without reviewing anything
-          CLAUDE_CODE_DISABLE_BACKGROUND_TASKS: "1"
+        timeout-minutes: 15
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          plugin_marketplaces: "https://github.com/anthropics/claude-code.git"
-          plugins: "code-review@claude-code-plugins"
-          prompt: >-
-            /code-review:code-review --comment ${{ github.repository }}/pull/${{ github.event.pull_request.number }}
-            If you stop without reviewing the PR, end your final message with a single line
-            starting with "Review skipped:" followed by the reason.
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ github.event.pull_request.number }}
+
+            Review this pull request. The PR is already checked out in the current working directory.
+
+            1. Read the PR (`gh pr view ${{ github.event.pull_request.number }}`), its diff
+               (`gh pr diff ${{ github.event.pull_request.number }}`), and the CLAUDE.md files
+               in the root and in the directories of the changed files.
+            2. Look for bugs and CLAUDE.md violations in the changed code. Only report issues you are
+               confident are real: code that won't run, clearly wrong logic, or a CLAUDE.md rule you
+               can quote being broken. Skip style, nits, pre-existing issues, and anything a linter would catch.
+            3. Post each issue with `mcp__github_inline_comment__create_inline_comment` (with `confirmed: true`).
+            4. Finish with the structured output:
+               - `outcome`: "issues" if you posted any, "ok" if you found none,
+                 "skipped" if you decided not to review the PR at all
+               - `summary`: Markdown for a PR comment. For "issues", list them briefly.
+                 For "ok", say in a sentence or two what you checked. For "skipped", explain exactly why.
+
+            Don't post any other GitHub comments, the summary gets posted for you.
           claude_args: |
-            --allowedTools "mcp__github_inline_comment__create_inline_comment"
-            --disallowedTools "Bash(gh pr comment:*)"
+            --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr diff:*),Bash(gh pr view:*)"
+            --json-schema '{"type":"object","properties":{"outcome":{"type":"string","enum":["issues","ok","skipped"]},"summary":{"type":"string"}},"required":["outcome","summary"]}'
       - if: always()
-        continue-on-error: true
         env:
-          EYES_ID: ${{ steps.eyes.outputs.id }}
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
           CLAUDE_OUTCOME: ${{ steps.claude.outcome }}
-          EXECUTION_FILE: ${{ steps.claude.outputs.execution_file }}
+          STRUCTURED_OUTPUT: ${{ steps.claude.outputs.structured_output }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          if [ -n "$EYES_ID" ]; then gh api -X DELETE "$REACTIONS_URL/$EYES_ID"; fi
-          if [ "$CLAUDE_OUTCOME" != success ] || [ ! -f "$EXECUTION_FILE" ]; then exit 0; fi
-
-          result=$(jq -r 'last(.[] | select(.type == "result")).result // ""' "$EXECUTION_FILE")
-          comments=$(jq '[.[] | select(.type == "assistant") | .message.content[]?
-            | select(.type == "tool_use" and .name == "mcp__github_inline_comment__create_inline_comment")] | length' "$EXECUTION_FILE")
-          printf '%s\n' "$result" >> "$GITHUB_STEP_SUMMARY"
-
-          if [[ "$result" == *"No issues found"* ]]; then
-            gh api "$REACTIONS_URL" -f content=+1 --silent
-          elif [ "$comments" -eq 0 ]; then
-            gh api "$REACTIONS_URL" -f content=rocket --silent
-            reason=$(grep -m1 -o 'Review skipped:.*' <<< "$result" || tr '\n' ' ' <<< "$result")
-            echo "::notice title=Claude review skipped::$reason"
+          if [ "$CLAUDE_OUTCOME" = success ] && [ -n "$STRUCTURED_OUTPUT" ]; then
+            case $(jq -r .outcome <<< "$STRUCTURED_OUTPUT") in
+              issues) title="found issues" ;;
+              ok) title="no issues found" ;;
+              *) title="skipped" ;;
+            esac
+            summary=$(jq -r .summary <<< "$STRUCTURED_OUTPUT")
+          else
+            title="failed"
+            execution_file="$RUNNER_TEMP/claude-execution-output.json"
+            summary=$(jq -r 'last(.[] | select(.type == "result")) | .result // (.errors // [] | join("\n")) // .subtype' "$execution_file" 2>/dev/null || true)
+            summary="Step outcome: \`$CLAUDE_OUTCOME\`"$'\n\n'"${summary:-Claude produced no result, see the logs.}"
           fi
+          printf '## Claude review: %s\n\n%s\n\n[Logs](%s)\n' "$title" "$summary" "$RUN_URL" > comment.md
+          gh pr comment "$PR_NUMBER" --body-file comment.md
 
-  # The plugin above skips PRs Claude already commented on, so re-reviews
+  # The review above only runs when the PR is opened, so re-reviews
   # are requested by commenting "@claude review" or "@claude re-review" on the PR
   re-review:
     if: >-
