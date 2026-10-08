@@ -127,19 +127,11 @@ def test_title_links_to_github(page: Page, candidates_page):
             ["GitHub", "LinkedIn"],
             ["https://github.com/ada", "https://www.linkedin.com/in/ada/"],
         ),
-        pytest.param(
+        (
             None,
             "ada@example.com",
             ["GitHub", "E-mail"],
             ["https://github.com/ada", "mailto:ada@example.com"],
-            marks=pytest.mark.xfail(
-                reason=(
-                    "Bug: without LinkedIn, the GitHub button is styled "
-                    "as the main contact, even if there's e-mail"
-                ),
-                strict=True,
-                raises=AssertionError,
-            ),
         ),
         (
             "https://www.linkedin.com/in/ada/",

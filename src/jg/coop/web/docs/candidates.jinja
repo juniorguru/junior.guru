@@ -237,7 +237,7 @@ template: main.html
               href="{{ candidate.github_url }}"
               rel="nofollow noopener"
               target="_blank"
-              class="candidates-action-button {% if candidate.linkedin_url %}profile{% else %}contact{% endif %}"
+              class="candidates-action-button {% if candidate.linkedin_url or candidate.email %}profile{% else %}contact{% endif %}"
             >
               {{ "github"|icon }} GitHub
             </a>
