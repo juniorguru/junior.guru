@@ -124,10 +124,8 @@ def on_docs_context(context):
     # courses.md
     context["course_providers_by_group"] = CourseProvider.grouping()
 
-    # candidates.md
-    context["candidates"] = Candidate.listing()
-    context["candidates_tags"] = Candidate.tags_by_type()
-    context["candidates_region_tags"] = Candidate.region_tags()
+    # candidates.jinja
+    context.update(get_candidates_context())
 
     # handbook/index.md
     context["stages"] = Stage.listing()
@@ -179,6 +177,14 @@ def get_jobs_context() -> dict:
         "jobs_volunteering": ListedJob.volunteering_listing(),
         "jobs_tags": ListedJob.tags_by_type(),
         "jobs_region_tags": ListedJob.region_tags(),
+    }
+
+
+def get_candidates_context() -> dict:
+    return {
+        "candidates": Candidate.listing(),
+        "candidates_tags": Candidate.tags_by_type(),
+        "candidates_region_tags": Candidate.region_tags(),
     }
 
 

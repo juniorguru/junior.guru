@@ -22,7 +22,7 @@ from playwright.sync_api import Browser, Page, Route, expect, sync_playwright
 
 from jg.coop.lib import template_filters
 from jg.coop.lib.mkdocs_jinja import get_filters
-from jg.coop.web.context import get_jobs_context
+from jg.coop.web.context import get_candidates_context, get_jobs_context
 from jg.coop.web.generators import generate_region_jobs_pages
 
 from testing_utils import prepare_test_db
@@ -167,3 +167,15 @@ def get_region_jobs_page_meta(url: str) -> dict[str, Any]:
         if document.path == path:
             return document.meta
     raise ValueError(f"No region jobs page for {url}")
+
+
+@pytest.fixture
+def candidates_page(test_db: SqliteDatabase, serve: Callable[[str], None]) -> Callable:
+    """
+    Renders candidates.jinja from whatever candidates are in the test database
+    """
+
+    def candidates_page() -> None:
+        serve(render("candidates.jinja", get_candidates_context(), "/candidates/"))
+
+    return candidates_page
