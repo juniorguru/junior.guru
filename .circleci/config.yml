@@ -101,7 +101,7 @@ jobs:
   sync-1:
     executor: python-js
     resource_class: large
-    parallelism: 23
+    parallelism: 24
     steps:
       - attach_workspace:
           at: "~"
@@ -206,6 +206,7 @@ jobs:
                   uv run jg save-changes \
                     src/jg/coop/data/newsletter \
                     src/jg/coop/data/posts_linkedin \
+                    src/jg/coop/data/search_console \
                     src/jg/coop/data/transactions.jsonl \
                     src/jg/coop/data/members.jsonl \
                     src/jg/coop/data/followers.jsonl \
