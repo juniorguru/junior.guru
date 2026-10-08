@@ -9,15 +9,6 @@ LONG_NAME = (
 )
 
 
-@pytest.mark.xfail(
-    reason=(
-        "Bug: the close button stretches to the height of the wrapped title "
-        "and its icon ends up in the middle, see "
-        "https://github.com/juniorguru/junior.guru/issues/1751 fixed for jobs"
-    ),
-    strict=True,
-    raises=AssertionError,
-)
 def test_close_button_stays_at_top_of_wrapped_title(page: Page, candidates_page):
     create_candidate(name=LONG_NAME)
     candidates_page()
