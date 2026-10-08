@@ -47,11 +47,6 @@ def test_url_with_unknown_tag_shows_all_candidates(page: Page, candidates_page):
     expect(page.locator(".candidates-item.tagged:visible")).to_have_count(2)
 
 
-@pytest.mark.xfail(
-    reason="Bug: filtering removes all query parameters, not only the filter ones",
-    strict=True,
-    raises=AssertionError,
-)
 def test_unrelated_query_parameters_are_kept_on_load(page: Page, candidates_page):
     create_candidate(name="Ada Lovelace", skills=["Python"])
     candidates_page()

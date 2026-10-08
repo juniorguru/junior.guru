@@ -9,7 +9,7 @@ function setupCandidatesTags() {
       .forEach(function (tag) {
         tag.addEventListener("click", function () {
           tag.classList.toggle("active");
-          filterCandidates();
+          filterCandidates({ pushHistory: true });
         });
         showElement(tag);
       });
@@ -68,7 +68,7 @@ function setupCandidates() {
   }
 }
 
-function filterCandidates() {
+function filterCandidates({ pushHistory = false } = {}) {
   const activeTags = Array.from(
     document.querySelectorAll(".candidates-filters .candidates-tag.active"),
   );
@@ -89,7 +89,9 @@ function filterCandidates() {
     }
     url.searchParams.set(type, tags.join("|"));
   });
-  window.history.pushState({}, "", url);
+  if (pushHistory) {
+    window.history.pushState({}, "", url);
+  }
 
   const candidates = Array.from(
     document.querySelectorAll(".candidates-item.tagged"),

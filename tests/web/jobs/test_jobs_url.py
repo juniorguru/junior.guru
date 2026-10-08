@@ -54,11 +54,6 @@ def test_url_with_unknown_tag_shows_all_jobs(page: Page, jobs_page):
     expect(page.locator(".jobs-item.tagged:visible")).to_have_count(2)
 
 
-@pytest.mark.xfail(
-    reason="Bug: filtering removes all query parameters, not only the filter ones",
-    strict=True,
-    raises=AssertionError,
-)
 def test_unrelated_query_parameters_are_kept_on_load(page: Page, jobs_page):
     create_job(title="Python Developer", tech_tags=["python"])
     jobs_page()
