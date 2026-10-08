@@ -2,3 +2,11 @@ html {
   background: linear-gradient(to bottom, $jg-dark 0%, $jg-dark 50%, $jg-yellow 50%, $jg-yellow 100%);
   background-color: $jg-dark;
 }
+
+/*
+  Monospace spaces are as wide as letters, which makes words look too far apart.
+  Inspired by https://hachyderm.io/@nedbat/117404883392646620
+*/
+.font-monospace {
+  word-spacing: -.5ch;
+}
