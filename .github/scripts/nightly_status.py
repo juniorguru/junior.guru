@@ -13,7 +13,7 @@ PROJECT = "gh/juniorguru/junior.guru"
 # Failures in these jobs are intentional reminders, not breakages
 EXPECTED_FAILURES = {"check-sponsors"}
 POLL_INTERVAL = 5 * 60
-POLL_LIMIT = 90 * 60
+POLL_LIMIT = 20 * 60
 
 
 def get(path: str) -> dict:

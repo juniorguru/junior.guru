@@ -1,13 +1,14 @@
 name: Nightly Check
 on:
   schedule:
-    # CircleCI nightly starts at 04:00 UTC and usually finishes by 05:10 UTC
-    - cron: "13 6 * * *"
+    # CircleCI nightly starts at 04:00 UTC and usually finishes by 05:10 UTC,
+    # this leaves a buffer of almost two hours
+    - cron: "53 6 * * *"
   workflow_dispatch:
 jobs:
   investigate:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 60
     permissions:
       contents: read
       issues: write
