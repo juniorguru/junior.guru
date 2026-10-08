@@ -3,7 +3,6 @@
 import json
 import os
 import sys
-import time
 import urllib.request
 from datetime import UTC, datetime
 
@@ -12,8 +11,6 @@ API = "https://circleci.com/api/v2"
 PROJECT = "gh/juniorguru/junior.guru"
 # Failures in these jobs are intentional reminders, not breakages
 EXPECTED_FAILURES = {"check-sponsors"}
-POLL_INTERVAL = 5 * 60
-POLL_LIMIT = 20 * 60
 
 
 def get(path: str) -> dict:
@@ -21,7 +18,7 @@ def get(path: str) -> dict:
         return json.load(response)
 
 
-def find_nightly(date: str) -> dict | None:
+def find_nightly(date: str) -> dict:
     pipelines = get(f"/project/{PROJECT}/pipeline?branch=main")["items"]
     for pipeline in pipelines:
         if pipeline["trigger"]["type"] != "schedule":
@@ -31,7 +28,7 @@ def find_nightly(date: str) -> dict | None:
                 date
             ):
                 return {"pipeline_number": pipeline["number"], **workflow}
-    return None
+    sys.exit(f"No nightly found for {date}")
 
 
 def output(**values: str) -> None:
@@ -41,17 +38,9 @@ def output(**values: str) -> None:
 
 def main() -> None:
     date = datetime.now(UTC).date().isoformat()
-    started = time.monotonic()
-    while True:
-        workflow = find_nightly(date)
-        if workflow and workflow["status"] not in ("running", "on_hold"):
-            break
-        if time.monotonic() - started > POLL_LIMIT:
-            print(f"Nightly for {date} not finished: {workflow and workflow['status']}")
-            output(investigate="false")
-            return
-        print(f"Waiting for nightly for {date}: {workflow and workflow['status']}")
-        time.sleep(POLL_INTERVAL)
+    workflow = find_nightly(date)
+    if workflow["status"] in ("running", "on_hold"):
+        sys.exit(f"Nightly for {date} has not finished yet")
 
     url = f"https://app.circleci.com/pipelines/{PROJECT}/{workflow['pipeline_number']}/workflows/{workflow['id']}"
     print(f"Nightly {workflow['status']}: {url}")
@@ -70,4 +59,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    main()
