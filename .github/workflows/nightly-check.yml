@@ -39,7 +39,9 @@ jobs:
             link, one failing test, one external service being down.
 
             - 3 or fewer reasons: report each reason separately, with a specific title such as
-              "Broken link: https://www.marketawillis.com/" or "Sync failing: <job> <short cause>".
+              "Sync failing: <job> <short cause>". Broken links are titled "Broken link: <domain>" with just
+              the domain without "www.", e.g. "Broken link: marketawillis.com" or "Broken link: mpsv.gov.cz".
+              Broken links on the same domain are one reason.
             - More than 3 reasons: report all of them together, titled
               "Nightly build failure ${{ steps.nightly.outputs.date }}", one section per reason.
 
