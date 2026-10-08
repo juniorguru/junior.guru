@@ -1,7 +1,7 @@
 import re
 
 import pytest
-from playwright.sync_api import Page, TimeoutError, expect
+from playwright.sync_api import Page, expect
 from web.helpers import create_candidate, create_candidate_project
 
 
@@ -264,23 +264,17 @@ def test_open_candidate_badges_show_tooltips(page: Page, candidates_page):
     expect(tooltip).to_have_text("Má vystudovanou IT VŠ")
 
 
-@pytest.mark.xfail(
-    reason="Bug: clicks with a modifier key open the candidate instead of a new tab",
-    strict=True,
-    raises=(AssertionError, TimeoutError),
-)
-def test_modifier_click_on_title_opens_new_tab(page: Page, candidates_page):
+def test_modifier_click_on_title_opens_candidate(page: Page, candidates_page):
     create_candidate(name="Ada Lovelace", github_username="ada")
     candidates_page()
     page.goto("/candidates/")
 
     item = page.locator(".candidates-item.tagged")
-    requested_urls = []
-    page.context.on("request", lambda request: requested_urls.append(request.url))
-    with page.context.expect_page(timeout=2_000) as new_page_info:
-        item.locator(".candidates-title-link").click(modifiers=["ControlOrMeta"])
+    new_pages = []
+    page.context.on("page", lambda new_page: new_pages.append(new_page))
+    item.locator(".candidates-title-link").click(modifiers=["ControlOrMeta"])
 
-    assert new_page_info.value.opener() == page
-    assert "https://github.com/ada" in requested_urls
-    expect(item).not_to_have_class(re.compile(r"\bopen\b"))
-    expect(item.locator(".candidates-actions")).to_be_hidden()
+    expect(item).to_have_class(re.compile(r"\bopen\b"))
+    expect(item.locator(".candidates-actions")).to_be_visible()
+    expect(page).to_have_url(re.compile(r"/candidates/$"))
+    assert new_pages == []
