@@ -118,9 +118,13 @@ function filterJobs({ pushHistory = false } = {}) {
   const count = jobs
     .map((job) => {
       const jobTags = Array.from(job.querySelectorAll(".jobs-tag"));
-      const jobSlugs = jobTags.map((tag) => tag.dataset.jobsTag);
       const isRelevant = Object.entries(activeTagsByType).every(
-        ([type, tags]) => tags.some((tag) => jobSlugs.includes(tag)),
+        ([type, tags]) =>
+          jobTags.some(
+            (tag) =>
+              tag.dataset.jobsTagType === type &&
+              tags.includes(tag.dataset.jobsTag),
+          ),
       );
       if (isRelevant) {
         showElement(job);

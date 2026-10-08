@@ -262,11 +262,6 @@ def test_tags_can_be_used_by_keyboard(page: Page, candidates_page):
     expect(page.locator(".candidates-item.tagged:visible")).to_have_count(1)
 
 
-@pytest.mark.xfail(
-    reason="Bug: matching compares tag slugs regardless of their type",
-    strict=True,
-    raises=AssertionError,
-)
 def test_tags_match_only_within_their_type(page: Page, candidates_page):
     create_candidate(name="Ada Lovelace", regions=["Brno"])
     create_candidate(name="Grace Hopper", regions=["Praha"], skills=["Brno"])

@@ -1,6 +1,5 @@
 import re
 
-import pytest
 from playwright.sync_api import Page, expect
 from web.helpers import create_discord_job, create_job
 
@@ -103,11 +102,6 @@ def test_discord_jobs_are_not_filtered(page: Page, jobs_page):
     expect(page.locator(".jobs-item:not(.tagged)")).to_contain_text("Discord Developer")
 
 
-@pytest.mark.xfail(
-    reason="Bug: matching compares tag slugs regardless of their type",
-    strict=True,
-    raises=AssertionError,
-)
 def test_tags_match_only_within_their_type(page: Page, jobs_page):
     create_job(title="Remote Developer", remote=True)
     create_job(title="Office Developer", tech_tags=["remote"])
