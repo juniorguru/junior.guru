@@ -132,7 +132,10 @@ def test_tags_can_be_used_by_keyboard(page: Page, jobs_page):
     page.goto("/jobs/")
 
     tag = page.locator(".jobs-filters [data-jobs-tag='python']")
-    tag.focus()
+    for _ in range(page.locator("a, button, [tabindex]").count() + 1):
+        page.keyboard.press("Tab")
+        if tag.evaluate("tag => tag === document.activeElement"):
+            break
     expect(tag).to_be_focused()
     page.keyboard.press("Enter")
 

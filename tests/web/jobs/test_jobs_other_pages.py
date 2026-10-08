@@ -28,11 +28,14 @@ def test_page_without_jobs_has_no_errors(page: Page, serve: Callable[[str], None
 
 
 @pytest.mark.xfail(
-    reason="Bug: the jobs JS reacts to going back on any page and crashes",
+    reason=(
+        "Bug: the jobs JS reacts to popstate on any page, which browsers fire "
+        "also when following an anchor link, and crashes"
+    ),
     strict=True,
     raises=AssertionError,
 )
-def test_page_without_jobs_has_no_errors_on_going_back(
+def test_page_without_jobs_has_no_errors_on_anchor_links(
     page: Page, serve: Callable[[str], None]
 ):
     serve(wrap_html(HTML))
@@ -42,6 +45,8 @@ def test_page_without_jobs_has_no_errors_on_going_back(
 
     page.get_by_text("Jump to section").click()
     expect(page).to_have_url("https://junior.guru/some-page/#section")
+    assert errors == []
+
     page.go_back()
     expect(page).to_have_url("https://junior.guru/some-page/")
 

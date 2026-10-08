@@ -44,6 +44,10 @@ def test_region_tag_is_not_stretched(page: Page, jobs_page):
     assert abs(region_box["height"] - employment_box["height"]) < 1
 
 
+@pytest.mark.parametrize(
+    "context_options",
+    [{"viewport": {"width": 360, "height": 800}, "is_mobile": True}],
+)
 @pytest.mark.parametrize("url", ["/jobs/", "/jobs/brno/"])
 def test_no_horizontal_scroll_on_mobile(page: Page, jobs_page, url: str):
     create_job(
@@ -56,7 +60,6 @@ def test_no_horizontal_scroll_on_mobile(page: Page, jobs_page, url: str):
         company_url="https://example.com",
     )
     jobs_page(url)
-    page.set_viewport_size({"width": 360, "height": 800})
     page.goto(url)
     page.locator(".jobs-item.tagged .jobs-title-link").click()
 

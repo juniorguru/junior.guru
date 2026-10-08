@@ -85,15 +85,15 @@ def test_unrelated_query_parameters_are_kept_on_filtering(page: Page, jobs_page)
 
 
 @pytest.mark.parametrize(
-    "query",
+    "query, count",
     [
-        "technology=",
-        "technology=Python",
-        "technology=python|",
-        "unknown=python",
+        ("technology=", 2),
+        ("technology=Python", 2),
+        ("technology=python|", 1),
+        ("unknown=python", 2),
     ],
 )
-def test_url_with_odd_values_shows_jobs(page: Page, jobs_page, query: str):
+def test_url_with_odd_values_shows_jobs(page: Page, jobs_page, query: str, count: int):
     create_job(title="Python Developer", tech_tags=["python"])
     create_job(title="Java Developer", tech_tags=["java"])
     jobs_page()
@@ -102,6 +102,6 @@ def test_url_with_odd_values_shows_jobs(page: Page, jobs_page, query: str):
     page.goto(f"/jobs/?{query}")
 
     expect(page.locator(".jobs-noscript")).to_have_count(0)
-    expect(page.locator(".jobs-item.tagged:visible").first).to_be_visible()
+    expect(page.locator(".jobs-item.tagged:visible")).to_have_count(count)
     expect(page.locator(".jobs-empty")).to_be_hidden()
     assert errors == []

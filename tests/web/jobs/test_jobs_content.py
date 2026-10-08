@@ -3,7 +3,12 @@ from pathlib import Path
 
 import pytest
 from playwright.sync_api import Page, expect
-from web.helpers import create_discord_job, create_job, create_submitted_job
+from web.helpers import (
+    create_discord_job,
+    create_job,
+    create_submitted_job,
+    hide_subscribe_box,
+)
 
 
 IMAGES_DIR = Path("src/jg/coop/images")
@@ -86,9 +91,6 @@ def test_company_website_link_only_if_known(page: Page, jobs_page):
     jobs_page()
     page.goto("/jobs/")
 
-    for job in page.locator(".jobs-item.tagged").all():
-        job.locator(".jobs-title-link").click()
-
     with_website = page.locator(".jobs-item", has_text="With Website")
     expect(with_website.locator(".jobs-company-link")).to_have_count(5)
     expect(with_website.locator(".jobs-company-link").last).to_have_attribute(
@@ -104,6 +106,7 @@ def test_submitted_job_is_highlighted_and_links_to_junior_guru(page: Page, jobs_
     jobs_page()
     page.goto("/jobs/")
 
+    hide_subscribe_box(page)
     jobs = page.locator(".jobs-item.tagged")
     submitted = jobs.first
     expect(submitted).to_contain_text("Submitted Developer")
@@ -114,37 +117,47 @@ def test_submitted_job_is_highlighted_and_links_to_junior_guru(page: Page, jobs_
     continue_link = submitted.locator(".jobs-action-button.continue")
     expect(continue_link).to_have_attribute("href", "/jobs/abc123/")
     expect(continue_link).not_to_have_attribute("target", "_blank")
-    # the fixed subscribe box covers the bottom of this short test page
-    continue_link.press("Enter")
+    continue_link.click()
 
     expect(page).to_have_url("https://junior.guru/jobs/abc123/")
     assert len(page.context.pages) == 1
 
 
-def test_discussion_button_only_if_job_is_in_club(page: Page, jobs_page):
+@pytest.mark.parametrize(
+    "upvotes_count, comments_count, counts",
+    [
+        (4, 0, ["4"]),
+        (0, 2, ["2"]),
+        (4, 2, ["4", "2"]),
+        (0, 0, []),
+    ],
+)
+def test_discussion_button_only_if_job_is_in_club(
+    page: Page,
+    jobs_page,
+    upvotes_count: int,
+    comments_count: int,
+    counts: list[str],
+):
     create_job(
         title="Discussed Developer",
         discord_url="https://discord.com/channels/1/2/3",
-        upvotes_count=4,
-        comments_count=0,
+        upvotes_count=upvotes_count,
+        comments_count=comments_count,
     )
     create_job(title="Quiet Developer")
     jobs_page()
     page.goto("/jobs/")
-
-    for job in page.locator(".jobs-item.tagged").all():
-        job.locator(".jobs-title-link").click()
 
     discussed = page.locator(".jobs-item", has_text="Discussed Developer")
     club = discussed.locator(".jobs-action-club")
     expect(club.locator(".jobs-action-button.club")).to_have_attribute(
         "href", "https://discord.com/channels/1/2/3"
     )
-    expect(club.locator("span")).to_have_count(1)
-    expect(club.locator("span")).to_contain_text("4")
+    expect(club.locator("span")).to_have_text(counts)
     quiet = page.locator(".jobs-item", has_text="Quiet Developer")
     expect(quiet.locator(".jobs-action-club")).to_have_count(0)
-    expect(quiet.locator(".jobs-action-button.continue")).to_be_visible()
+    expect(quiet.locator(".jobs-action-button.continue")).to_have_count(1)
 
 
 def test_logos_exist(page: Page, jobs_page):

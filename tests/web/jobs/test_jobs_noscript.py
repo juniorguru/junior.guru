@@ -1,17 +1,13 @@
-from collections.abc import Generator
+from typing import Any
 
 import pytest
-from playwright.sync_api import Browser, Page, expect
-from web.conftest import BASE_URL
+from playwright.sync_api import Page, expect
 from web.helpers import create_job
 
 
 @pytest.fixture
-def page(browser: Browser) -> Generator[Page]:
-    context = browser.new_context(base_url=BASE_URL, java_script_enabled=False)
-    page = context.new_page()
-    yield page
-    context.close()
+def context_options() -> dict[str, Any]:
+    return {"java_script_enabled": False}
 
 
 def test_without_js_all_jobs_are_listed(page: Page, jobs_page):

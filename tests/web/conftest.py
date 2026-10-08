@@ -97,8 +97,18 @@ def browser() -> Generator[Browser]:
 
 
 @pytest.fixture
-def page(browser: Browser, static_dir: Path) -> Generator[Page]:
-    context = browser.new_context(base_url=BASE_URL)
+def context_options() -> dict[str, Any]:
+    """
+    Options for the browser context, override to change them for a module or test
+    """
+    return {}
+
+
+@pytest.fixture
+def page(
+    browser: Browser, static_dir: Path, context_options: dict[str, Any]
+) -> Generator[Page]:
+    context = browser.new_context(base_url=BASE_URL, **context_options)
     page = context.new_page()
     yield page
     context.close()
