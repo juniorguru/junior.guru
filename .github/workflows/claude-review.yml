@@ -29,7 +29,7 @@ jobs:
           fetch-depth: 1
       # The plugin posts a "No issues found" comment when the PR passes, which is
       # noisy, so it's disallowed and the outcome is reported by reactions instead:
-      # 👍 passed, inline comments for issues found, 😕 skipped (reason in the check's annotations)
+      # 👍 passed, inline comments for issues found, 🚀 skipped (reason in the check's annotations)
       - id: claude
         uses: anthropics/claude-code-action@v1
         with:
@@ -61,7 +61,7 @@ jobs:
           if [[ "$result" == *"No issues found"* ]]; then
             gh api "$REACTIONS_URL" -f content=+1
           elif [ "$comments" -eq 0 ]; then
-            gh api "$REACTIONS_URL" -f content=confused
+            gh api "$REACTIONS_URL" -f content=rocket
             reason=$(grep -m1 -o 'Review skipped:.*' <<< "$result" || tr '\n' ' ' <<< "$result")
             echo "::notice title=Claude review skipped::$reason"
           fi
