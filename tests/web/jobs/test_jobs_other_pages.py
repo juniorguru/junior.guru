@@ -4,7 +4,6 @@ The JS bundle is shared by all pages, so the jobs JS must not break other pages
 
 from collections.abc import Callable
 
-import pytest
 from playwright.sync_api import Page, expect
 from web.conftest import wrap_html
 
@@ -27,14 +26,6 @@ def test_page_without_jobs_has_no_errors(page: Page, serve: Callable[[str], None
     assert errors == []
 
 
-@pytest.mark.xfail(
-    reason=(
-        "Bug: the jobs JS reacts to popstate on any page, which browsers fire "
-        "also when following an anchor link, and crashes"
-    ),
-    strict=True,
-    raises=AssertionError,
-)
 def test_page_without_jobs_has_no_errors_on_anchor_links(
     page: Page, serve: Callable[[str], None]
 ):
