@@ -63,11 +63,6 @@ def test_unrelated_query_parameters_are_kept_on_load(page: Page, jobs_page):
     expect(page).to_have_url(re.compile(r"/jobs/\?utm_source=newsletter$"))
 
 
-@pytest.mark.xfail(
-    reason="Bug: filtering removes all query parameters, not only the filter ones",
-    strict=True,
-    raises=AssertionError,
-)
 def test_unrelated_query_parameters_are_kept_on_filtering(page: Page, jobs_page):
     create_job(title="Python Developer", tech_tags=["python"])
     jobs_page()
