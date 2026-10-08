@@ -1,7 +1,7 @@
 import re
 
 import pytest
-from playwright.sync_api import Page, TimeoutError, expect
+from playwright.sync_api import Page, expect
 from web.helpers import create_candidate, create_candidate_project
 
 
@@ -202,14 +202,6 @@ def test_no_university_badge_for_other_schools(
     expect(page.locator(".candidates-badge")).to_have_count(0)
 
 
-@pytest.mark.xfail(
-    reason=(
-        "Bug: the stretched title link covers the badges of a closed candidate, "
-        "so their tooltips can't be shown, even though the cursor suggests help"
-    ),
-    strict=True,
-    raises=TimeoutError,
-)
 def test_hovering_badge_shows_tooltip(page: Page, candidates_page):
     candidate = create_candidate(name="Ada Lovelace")
     create_candidate_project(candidate)
