@@ -1,0 +1,403 @@
+{"page": "/", "query": "ano", "clicks": 1, "impressions": 1, "position": 1}
+{"page": "/", "query": "guru", "clicks": 0, "impressions": 152, "position": 11.62}
+{"page": "/", "query": "guru junior", "clicks": 1, "impressions": 4, "position": 19.5}
+{"page": "/", "query": "it guru", "clicks": 4, "impressions": 45, "position": 15.62}
+{"page": "/", "query": "junior", "clicks": 0, "impressions": 64, "position": 11}
+{"page": "/", "query": "junior guru", "clicks": 97, "impressions": 163, "position": 1.1}
+{"page": "/", "query": "junior.guru", "clicks": 7, "impressions": 10, "position": 1.3}
+{"page": "/", "query": "juniorguru", "clicks": 13, "impressions": 23, "position": 1.3}
+{"page": "/", "query": "juniors", "clicks": 0, "impressions": 25, "position": 11.2}
+{"page": "/", "query": "site:.guru", "clicks": 0, "impressions": 26, "position": 29.73}
+{"page": "/about/club/", "query": "junior guru", "clicks": 0, "impressions": 12, "position": 4.42}
+{"page": "/about/sponsors-partners/", "query": "spolupráce s komunitami a firmami", "clicks": 0, "impressions": 15, "position": 9.6}
+{"page": "/club/", "query": "junior guru", "clicks": 1, "impressions": 152, "position": 1.16}
+{"page": "/club/", "query": "junior.guru", "clicks": 0, "impressions": 10, "position": 1}
+{"page": "/club/", "query": "juniorguru", "clicks": 0, "impressions": 19, "position": 1}
+{"page": "/club/", "query": "mužský klub discord", "clicks": 0, "impressions": 22, "position": 9.36}
+{"page": "/courses/", "query": "david šetek", "clicks": 1, "impressions": 7, "position": 11.14}
+{"page": "/courses/", "query": "engeto python", "clicks": 0, "impressions": 19, "position": 29.58}
+{"page": "/courses/", "query": "junior guru", "clicks": 3, "impressions": 149, "position": 1.09}
+{"page": "/courses/", "query": "juniorguru", "clicks": 0, "impressions": 18, "position": 1.17}
+{"page": "/courses/", "query": "kurzy programování", "clicks": 0, "impressions": 10, "position": 59}
+{"page": "/courses/42prague/", "query": "42 prague", "clicks": 0, "impressions": 15, "position": 12.27}
+{"page": "/courses/42prague/", "query": "42 prague recenze", "clicks": 12, "impressions": 38, "position": 2.95}
+{"page": "/courses/42prague/", "query": "42prague", "clicks": 0, "impressions": 10, "position": 8.2}
+{"page": "/courses/ajtyvit/", "query": "aj ty v it", "clicks": 0, "impressions": 23, "position": 8.3}
+{"page": "/courses/ajtyvit/", "query": "aj ty v it kurzy", "clicks": 0, "impressions": 13, "position": 5.54}
+{"page": "/courses/ajtyvit/", "query": "ajtyvit kurzy", "clicks": 0, "impressions": 11, "position": 6.36}
+{"page": "/courses/beeit/", "query": "beeit", "clicks": 0, "impressions": 77, "position": 5.92}
+{"page": "/courses/coderslab/", "query": "coders lab", "clicks": 0, "impressions": 36, "position": 12.53}
+{"page": "/courses/coderslab/", "query": "coders lab cz & sk - it academy recenze", "clicks": 0, "impressions": 20, "position": 6.35}
+{"page": "/courses/coderslab/", "query": "coders lab recenze", "clicks": 1, "impressions": 23, "position": 3.13}
+{"page": "/courses/coderslab/", "query": "coderslab recenze", "clicks": 5, "impressions": 20, "position": 3.7}
+{"page": "/courses/codingbootcamppraha/", "query": "bootcamp praha", "clicks": 0, "impressions": 29, "position": 7.31}
+{"page": "/courses/codingbootcamppraha/", "query": "coding bootcamp", "clicks": 0, "impressions": 103, "position": 9.95}
+{"page": "/courses/czechitas/", "query": "czechitas recenze", "clicks": 2, "impressions": 28, "position": 7.25}
+{"page": "/courses/djangogirls/", "query": "django girl", "clicks": 1, "impressions": 2, "position": 5.5}
+{"page": "/courses/engeto/", "query": "engeto", "clicks": 2, "impressions": 485, "position": 7.1}
+{"page": "/courses/engeto/", "query": "engeto academy", "clicks": 0, "impressions": 60, "position": 5.55}
+{"page": "/courses/engeto/", "query": "engeto akademie", "clicks": 0, "impressions": 10, "position": 8.2}
+{"page": "/courses/engeto/", "query": "engeto kurzy", "clicks": 0, "impressions": 24, "position": 4.29}
+{"page": "/courses/engeto/", "query": "engeto python", "clicks": 0, "impressions": 37, "position": 22.43}
+{"page": "/courses/engeto/", "query": "engeto recenze", "clicks": 6, "impressions": 60, "position": 3.1}
+{"page": "/courses/engeto/", "query": "engeto, slovákova 357/8, 602 00 brno-střed", "clicks": 0, "impressions": 11, "position": 7.27}
+{"page": "/courses/greenfox/", "query": "green fox", "clicks": 0, "impressions": 13, "position": 12.69}
+{"page": "/courses/greenfox/", "query": "green fox academy", "clicks": 1, "impressions": 102, "position": 11.93}
+{"page": "/courses/greenfox/", "query": "greenfox", "clicks": 0, "impressions": 27, "position": 15.07}
+{"page": "/courses/greenfox/", "query": "greenfox academy", "clicks": 0, "impressions": 14, "position": 16.14}
+{"page": "/courses/hacknisvoubudoucnost/", "query": "bit.ly/hackni-python", "clicks": 3, "impressions": 48, "position": 2.31}
+{"page": "/courses/hacknisvoubudoucnost/", "query": "david setek", "clicks": 0, "impressions": 54, "position": 5.46}
+{"page": "/courses/hacknisvoubudoucnost/", "query": "david šetek", "clicks": 7, "impressions": 100, "position": 5.8}
+{"page": "/courses/hacknisvoubudoucnost/", "query": "hackni svou budoucnost", "clicks": 6, "impressions": 169, "position": 3.14}
+{"page": "/courses/itacademy/", "query": "it academy", "clicks": 0, "impressions": 14, "position": 14.93}
+{"page": "/courses/itacademy/", "query": "step it academy recenze", "clicks": 1, "impressions": 7, "position": 19.14}
+{"page": "/courses/itnetwork/", "query": "it network", "clicks": 0, "impressions": 87, "position": 6.33}
+{"page": "/courses/itnetwork/", "query": "itnetwork", "clicks": 1, "impressions": 635, "position": 6.9}
+{"page": "/courses/itnetwork/", "query": "itnetwork recenze", "clicks": 17, "impressions": 160, "position": 3.1}
+{"page": "/courses/kurzyvsb/", "query": "kurzy vsb", "clicks": 1, "impressions": 6, "position": 6.67}
+{"page": "/courses/lucietvrdikova/", "query": "lucie tvrdíková", "clicks": 0, "impressions": 11, "position": 6.45}
+{"page": "/courses/naucsepython/", "query": "naucsepython", "clicks": 0, "impressions": 44, "position": 2.75}
+{"page": "/courses/prahacodingschool/", "query": "coding school", "clicks": 1, "impressions": 7, "position": 5.86}
+{"page": "/courses/prahacodingschool/", "query": "prague coding school", "clicks": 0, "impressions": 26, "position": 5.58}
+{"page": "/courses/prahacodingschool/", "query": "praha coding school", "clicks": 0, "impressions": 105, "position": 4.1}
+{"page": "/courses/prahacodingschool/", "query": "praha coding school recenze", "clicks": 0, "impressions": 11, "position": 2.18}
+{"page": "/courses/primakurzy/", "query": "prima kurzy", "clicks": 0, "impressions": 30, "position": 14.4}
+{"page": "/courses/primakurzy/", "query": "prima kurzy online", "clicks": 0, "impressions": 16, "position": 20.56}
+{"page": "/courses/primakurzy/", "query": "primafuture recenze", "clicks": 0, "impressions": 45, "position": 7.36}
+{"page": "/courses/primakurzy/", "query": "primakurzy", "clicks": 0, "impressions": 106, "position": 6.76}
+{"page": "/courses/primakurzy/", "query": "primakurzy recenze", "clicks": 1, "impressions": 29, "position": 4.9}
+{"page": "/courses/programkonet/", "query": "petr voborník", "clicks": 0, "impressions": 22, "position": 10.73}
+{"page": "/courses/radekkitner/", "query": "radek kitner", "clicks": 1, "impressions": 19, "position": 5.68}
+{"page": "/courses/reactgirls/", "query": "react girls", "clicks": 3, "impressions": 37, "position": 6.57}
+{"page": "/courses/reactgirls/", "query": "reactgirls", "clicks": 0, "impressions": 37, "position": 6.86}
+{"page": "/courses/robotdreams/", "query": "laba kurzy recenze", "clicks": 0, "impressions": 16, "position": 37.94}
+{"page": "/courses/robotdreams/", "query": "robot dreams", "clicks": 0, "impressions": 16, "position": 8.12}
+{"page": "/courses/robotdreams/", "query": "robot dreams cz", "clicks": 0, "impressions": 15, "position": 5.07}
+{"page": "/courses/robotdreams/", "query": "robot dreams kurzy", "clicks": 0, "impressions": 20, "position": 4.1}
+{"page": "/courses/robotdreams/", "query": "robot dreams recenze", "clicks": 10, "impressions": 28, "position": 3.39}
+{"page": "/courses/robotdreams/", "query": "robot_dreams", "clicks": 0, "impressions": 12, "position": 6.33}
+{"page": "/courses/robotdreams/", "query": "robotdreams", "clicks": 0, "impressions": 51, "position": 7.27}
+{"page": "/courses/robotdreams/", "query": "robotdreams czech", "clicks": 0, "impressions": 12, "position": 5.58}
+{"page": "/courses/robotdreams/", "query": "robotdreams recenze", "clicks": 9, "impressions": 37, "position": 3.41}
+{"page": "/courses/robweb/", "query": "yablko", "clicks": 0, "impressions": 24, "position": 7.46}
+{"page": "/courses/robweb/", "query": "yablko kurzy", "clicks": 1, "impressions": 11, "position": 19.18}
+{"page": "/courses/sdacademy/", "query": "sd academy", "clicks": 1, "impressions": 10, "position": 2.9}
+{"page": "/courses/sdacademy/", "query": "sda academy", "clicks": 2, "impressions": 46, "position": 11.91}
+{"page": "/courses/sdacademy/", "query": "sdacademy", "clicks": 5, "impressions": 23, "position": 6.57}
+{"page": "/courses/sdacademy/", "query": "software development academy", "clicks": 5, "impressions": 52, "position": 21.17}
+{"page": "/courses/seduo/", "query": "seduo recenze", "clicks": 0, "impressions": 14, "position": 11.71}
+{"page": "/courses/sharpprogrammer/", "query": "andrew sharp", "clicks": 5, "impressions": 114, "position": 5.15}
+{"page": "/courses/sharpprogrammer/", "query": "sharp programmer", "clicks": 2, "impressions": 34, "position": 2.24}
+{"page": "/courses/skillmea/", "query": "skillmea", "clicks": 1, "impressions": 729, "position": 4.3}
+{"page": "/courses/skillmea/", "query": "skillmea recenze", "clicks": 13, "impressions": 65, "position": 2.15}
+{"page": "/courses/skillmea/", "query": "skillmea recenzie", "clicks": 3, "impressions": 77, "position": 7.69}
+{"page": "/courses/skillmea/", "query": "skillmea skusenosti", "clicks": 0, "impressions": 13, "position": 9.62}
+{"page": "/courses/skillmea/", "query": "skilmea", "clicks": 0, "impressions": 96, "position": 3.89}
+{"page": "/courses/step/", "query": "step it academy", "clicks": 0, "impressions": 17, "position": 8.94}
+{"page": "/courses/step/", "query": "step it academy brno recenze", "clicks": 0, "impressions": 13, "position": 9.46}
+{"page": "/courses/step/", "query": "step it academy recenze", "clicks": 2, "impressions": 29, "position": 6.72}
+{"page": "/courses/udemy/", "query": "udemy recenze", "clicks": 2, "impressions": 17, "position": 3.47}
+{"page": "/courses/unicornhatchery/", "query": "unicorn hatchery", "clicks": 2, "impressions": 33, "position": 6.42}
+{"page": "/courses/vita/", "query": "vita academy", "clicks": 0, "impressions": 14, "position": 3}
+{"page": "/courses/vita/", "query": "vita academy recenzie", "clicks": 3, "impressions": 12, "position": 9}
+{"page": "/courses/webrebel/", "query": "webrebel", "clicks": 0, "impressions": 16, "position": 13.56}
+{"page": "/courses/webykvalitne/", "query": "magdalena boušková", "clicks": 0, "impressions": 11, "position": 7.45}
+{"page": "/events/", "query": "junior guru", "clicks": 0, "impressions": 15, "position": 4.6}
+{"page": "/events/10/", "query": "jan smitka", "clicks": 2, "impressions": 20, "position": 1.85}
+{"page": "/events/44/", "query": "lukáš pavelka", "clicks": 0, "impressions": 10, "position": 1}
+{"page": "/events/48/", "query": "bleedingdev", "clicks": 0, "impressions": 10, "position": 7.1}
+{"page": "/events/56/", "query": "jan meissner", "clicks": 1, "impressions": 13, "position": 1.46}
+{"page": "/events/59/", "query": "adam vesecky", "clicks": 1, "impressions": 24, "position": 7.21}
+{"page": "/events/59/", "query": "adam vesecký", "clicks": 0, "impressions": 14, "position": 7.5}
+{"page": "/handbook/", "query": "junior guru", "clicks": 1, "impressions": 138, "position": 1}
+{"page": "/handbook/", "query": "juniorguru", "clicks": 0, "impressions": 18, "position": 1.56}
+{"page": "/handbook/candidate/", "query": "jak začít v it", "clicks": 0, "impressions": 12, "position": 4.5}
+{"page": "/handbook/candidate/", "query": "junior guru", "clicks": 1, "impressions": 112, "position": 1}
+{"page": "/handbook/candidate/", "query": "junior.guru", "clicks": 1, "impressions": 7, "position": 1}
+{"page": "/handbook/candidate/", "query": "juniorguru", "clicks": 0, "impressions": 18, "position": 1}
+{"page": "/handbook/candidate/", "query": "kde hledat práci v it", "clicks": 0, "impressions": 43, "position": 10.91}
+{"page": "/handbook/candidate/", "query": "práce v it pro začátečníky", "clicks": 0, "impressions": 29, "position": 15.38}
+{"page": "/handbook/candidate/#jak-dlouho-to-trva", "query": "kde hledat práci v it", "clicks": 0, "impressions": 13, "position": 9.38}
+{"page": "/handbook/candidate/#kdy-zacit-hledat", "query": "kde hledat práci v it", "clicks": 0, "impressions": 13, "position": 9.38}
+{"page": "/handbook/candidate/#uvod", "query": "kde hledat práci v it", "clicks": 0, "impressions": 13, "position": 9.38}
+{"page": "/handbook/candidate/#volba-strategie", "query": "kde hledat práci v it", "clicks": 0, "impressions": 13, "position": 9.38}
+{"page": "/handbook/certification/", "query": "certifikace", "clicks": 0, "impressions": 46, "position": 13.33}
+{"page": "/handbook/certification/", "query": "certifikace it", "clicks": 0, "impressions": 240, "position": 2.35}
+{"page": "/handbook/certification/", "query": "certifikace it služeb", "clicks": 0, "impressions": 145, "position": 13.92}
+{"page": "/handbook/certification/", "query": "certifikat it", "clicks": 0, "impressions": 94, "position": 1.95}
+{"page": "/handbook/certification/", "query": "co je certifikace", "clicks": 0, "impressions": 11, "position": 10.09}
+{"page": "/handbook/certification/", "query": "it certifikace", "clicks": 2, "impressions": 269, "position": 2.32}
+{"page": "/handbook/certification/", "query": "it certifikaty", "clicks": 1, "impressions": 6, "position": 8}
+{"page": "/handbook/certification/", "query": "it kurz s certifikátem", "clicks": 0, "impressions": 42, "position": 11.52}
+{"page": "/handbook/certification/", "query": "it kurzy s certifikátem", "clicks": 1, "impressions": 57, "position": 10.09}
+{"page": "/handbook/certification/#certifikaty", "query": "certifikat it", "clicks": 0, "impressions": 76, "position": 1.91}
+{"page": "/handbook/certification/#co-zajima-firmy", "query": "certifikat it", "clicks": 0, "impressions": 76, "position": 1.91}
+{"page": "/handbook/certification/#osvedceni-o-rekvalifikaci-od-msmt-cr", "query": "certifikat it", "clicks": 0, "impressions": 76, "position": 1.91}
+{"page": "/handbook/course/", "query": "kurz programování", "clicks": 0, "impressions": 30, "position": 31.1}
+{"page": "/handbook/cv/", "query": "cv", "clicks": 0, "impressions": 19, "position": 40.68}
+{"page": "/handbook/cv/", "query": "site:.guru", "clicks": 0, "impressions": 11, "position": 91.18}
+{"page": "/handbook/cv/", "query": "životopis", "clicks": 0, "impressions": 14, "position": 43.21}
+{"page": "/handbook/cv/", "query": "životopis informatik", "clicks": 0, "impressions": 31, "position": 6.97}
+{"page": "/handbook/cv/", "query": "životopis it manažer", "clicks": 0, "impressions": 30, "position": 9.37}
+{"page": "/handbook/cv/", "query": "životopis programátor", "clicks": 1, "impressions": 8, "position": 4.75}
+{"page": "/handbook/cv/", "query": "životopis programátorka", "clicks": 0, "impressions": 32, "position": 9.38}
+{"page": "/handbook/cv/", "query": "životopis technik", "clicks": 0, "impressions": 26, "position": 8.5}
+{"page": "/handbook/cv/", "query": "životopis vývojář softwaru", "clicks": 0, "impressions": 23, "position": 12.48}
+{"page": "/handbook/cv/", "query": "životopis webového vývojáře", "clicks": 0, "impressions": 21, "position": 26.57}
+{"page": "/handbook/cv/#chces-prehlednost-ne-krasu", "query": "životopis programátorka", "clicks": 0, "impressions": 11, "position": 10.45}
+{"page": "/handbook/cv/#jak-nad-tim-premyslet", "query": "životopis programátorka", "clicks": 0, "impressions": 11, "position": 10.45}
+{"page": "/handbook/cv/#jak-nad-tim-premyslet", "query": "životopis vývojář softwaru", "clicks": 0, "impressions": 14, "position": 11.36}
+{"page": "/handbook/cv/#obsah-zivotopisu", "query": "životopis programátorka", "clicks": 0, "impressions": 11, "position": 10.45}
+{"page": "/handbook/cv/#obsah-zivotopisu", "query": "životopis vývojář softwaru", "clicks": 0, "impressions": 14, "position": 11.36}
+{"page": "/handbook/cv/#zacni-s-nasi-prednaskou-a-sablonou", "query": "životopis vývojář softwaru", "clicks": 0, "impressions": 14, "position": 11.36}
+{"page": "/handbook/git/", "query": "co je git", "clicks": 0, "impressions": 146, "position": 7.77}
+{"page": "/handbook/git/", "query": "co je github", "clicks": 0, "impressions": 177, "position": 6.41}
+{"page": "/handbook/git/", "query": "co je github?", "clicks": 0, "impressions": 22, "position": 5.14}
+{"page": "/handbook/git/", "query": "co je to git", "clicks": 0, "impressions": 41, "position": 5.39}
+{"page": "/handbook/git/", "query": "co je to github", "clicks": 0, "impressions": 57, "position": 4.7}
+{"page": "/handbook/git/", "query": "co to je github", "clicks": 0, "impressions": 14, "position": 4.93}
+{"page": "/handbook/git/", "query": "git", "clicks": 0, "impressions": 18, "position": 10.89}
+{"page": "/handbook/git/", "query": "git -c", "clicks": 1, "impressions": 8, "position": 8.38}
+{"page": "/handbook/git/", "query": "git co to je", "clicks": 0, "impressions": 14, "position": 2.07}
+{"page": "/handbook/git/", "query": "git vyznam", "clicks": 0, "impressions": 14, "position": 1}
+{"page": "/handbook/git/", "query": "github", "clicks": 0, "impressions": 61, "position": 6.74}
+{"page": "/handbook/git/", "query": "github co to je", "clicks": 0, "impressions": 78, "position": 5.58}
+{"page": "/handbook/git/", "query": "github cz", "clicks": 1, "impressions": 1, "position": 11}
+{"page": "/handbook/git/", "query": "čo je git", "clicks": 0, "impressions": 28, "position": 9.29}
+{"page": "/handbook/interview/", "query": "programator pohovor", "clicks": 0, "impressions": 14, "position": 7.29}
+{"page": "/handbook/learn/", "query": "ako sa naucit programovat", "clicks": 0, "impressions": 14, "position": 22.36}
+{"page": "/handbook/learn/", "query": "ako sa naučiť programovať", "clicks": 0, "impressions": 13, "position": 25.92}
+{"page": "/handbook/learn/", "query": "co je to programování", "clicks": 0, "impressions": 19, "position": 24.58}
+{"page": "/handbook/learn/", "query": "it kurz", "clicks": 0, "impressions": 11, "position": 2.64}
+{"page": "/handbook/learn/", "query": "jak programovat", "clicks": 1, "impressions": 85, "position": 1.88}
+{"page": "/handbook/learn/", "query": "jak se naucit programovat", "clicks": 2, "impressions": 41, "position": 2.8}
+{"page": "/handbook/learn/", "query": "jak se naučit programovat", "clicks": 2, "impressions": 165, "position": 2.3}
+{"page": "/handbook/learn/", "query": "jak se naučit programovat v pythonu", "clicks": 0, "impressions": 38, "position": 7.16}
+{"page": "/handbook/learn/", "query": "jak se naučit programování", "clicks": 0, "impressions": 63, "position": 2.29}
+{"page": "/handbook/learn/", "query": "jak se naučit python", "clicks": 0, "impressions": 15, "position": 8.73}
+{"page": "/handbook/learn/", "query": "jak začít programovat", "clicks": 1, "impressions": 40, "position": 4}
+{"page": "/handbook/learn/", "query": "jak začít s programováním", "clicks": 1, "impressions": 24, "position": 2.33}
+{"page": "/handbook/learn/", "query": "java pro začátečníky", "clicks": 0, "impressions": 20, "position": 40.75}
+{"page": "/handbook/learn/", "query": "jednoduché programování", "clicks": 0, "impressions": 10, "position": 3.3}
+{"page": "/handbook/learn/", "query": "junior guru", "clicks": 0, "impressions": 12, "position": 3.08}
+{"page": "/handbook/learn/", "query": "kurz it", "clicks": 0, "impressions": 10, "position": 3}
+{"page": "/handbook/learn/", "query": "kurz programování", "clicks": 0, "impressions": 25, "position": 26.48}
+{"page": "/handbook/learn/", "query": "kurz programování online", "clicks": 0, "impressions": 10, "position": 32.1}
+{"page": "/handbook/learn/", "query": "kurz programování pro začátečníky", "clicks": 1, "impressions": 44, "position": 10.8}
+{"page": "/handbook/learn/", "query": "kurz programování zdarma", "clicks": 0, "impressions": 10, "position": 18.3}
+{"page": "/handbook/learn/", "query": "kurzy programovani", "clicks": 0, "impressions": 24, "position": 16.25}
+{"page": "/handbook/learn/", "query": "kurzy programování", "clicks": 0, "impressions": 29, "position": 15.79}
+{"page": "/handbook/learn/", "query": "kurzy programování pro začátečníky", "clicks": 0, "impressions": 21, "position": 9.48}
+{"page": "/handbook/learn/", "query": "naučit se programovat", "clicks": 0, "impressions": 15, "position": 1.6}
+{"page": "/handbook/learn/", "query": "online kurz programování", "clicks": 0, "impressions": 19, "position": 42.95}
+{"page": "/handbook/learn/", "query": "programovani", "clicks": 1, "impressions": 229, "position": 6.76}
+{"page": "/handbook/learn/", "query": "programovani kurzy", "clicks": 0, "impressions": 11, "position": 16.36}
+{"page": "/handbook/learn/", "query": "programovani pro zacatecniky", "clicks": 0, "impressions": 16, "position": 2.81}
+{"page": "/handbook/learn/", "query": "programovaní", "clicks": 0, "impressions": 21, "position": 8.9}
+{"page": "/handbook/learn/", "query": "programovat", "clicks": 0, "impressions": 19, "position": 6.95}
+{"page": "/handbook/learn/", "query": "programování", "clicks": 0, "impressions": 466, "position": 5.97}
+{"page": "/handbook/learn/", "query": "programování kurz", "clicks": 0, "impressions": 13, "position": 26.62}
+{"page": "/handbook/learn/", "query": "programování online", "clicks": 0, "impressions": 19, "position": 9.74}
+{"page": "/handbook/learn/", "query": "programování pro děti online zdarma", "clicks": 1, "impressions": 13, "position": 5}
+{"page": "/handbook/learn/", "query": "programování pro začátečníky", "clicks": 1, "impressions": 92, "position": 3.25}
+{"page": "/handbook/learn/", "query": "programování pro začátečníky zdarma", "clicks": 0, "impressions": 20, "position": 8.35}
+{"page": "/handbook/learn/", "query": "práce v it pro začátečníky", "clicks": 0, "impressions": 11, "position": 1.91}
+{"page": "/handbook/learn/", "query": "výuka programování", "clicks": 0, "impressions": 14, "position": 7.57}
+{"page": "/handbook/learn/", "query": "zaklady programovani", "clicks": 0, "impressions": 20, "position": 2.4}
+{"page": "/handbook/learn/", "query": "základy programovania", "clicks": 0, "impressions": 12, "position": 49.83}
+{"page": "/handbook/learn/", "query": "základy programování", "clicks": 4, "impressions": 152, "position": 3.31}
+{"page": "/handbook/learn/", "query": "školení programátor zdarma", "clicks": 0, "impressions": 11, "position": 6.09}
+{"page": "/handbook/mentoring/", "query": "mentoringový program", "clicks": 0, "impressions": 12, "position": 26.42}
+{"page": "/handbook/mentoring/", "query": "mentorka", "clicks": 0, "impressions": 15, "position": 22.13}
+{"page": "/handbook/mentoring/", "query": "mentorování", "clicks": 0, "impressions": 39, "position": 15.05}
+{"page": "/handbook/mentoring/", "query": "web mentoring", "clicks": 0, "impressions": 241, "position": 11.84}
+{"page": "/handbook/motivation/", "query": "co je to programování", "clicks": 0, "impressions": 10, "position": 27.9}
+{"page": "/handbook/motivation/", "query": "programovat", "clicks": 0, "impressions": 12, "position": 5.5}
+{"page": "/handbook/nocode/", "query": "co je low code", "clicks": 0, "impressions": 14, "position": 8.64}
+{"page": "/handbook/nocode/", "query": "code", "clicks": 0, "impressions": 57, "position": 1.07}
+{"page": "/handbook/nocode/", "query": "low code", "clicks": 2, "impressions": 130, "position": 4.32}
+{"page": "/handbook/nocode/", "query": "low coding", "clicks": 0, "impressions": 10, "position": 1.6}
+{"page": "/handbook/nocode/", "query": "low-code", "clicks": 0, "impressions": 17, "position": 3.82}
+{"page": "/handbook/nocode/", "query": "lowcode", "clicks": 0, "impressions": 44, "position": 3.5}
+{"page": "/handbook/nocode/", "query": "no code", "clicks": 0, "impressions": 81, "position": 5.28}
+{"page": "/handbook/nocode/", "query": "no code low code", "clicks": 1, "impressions": 4, "position": 5.5}
+{"page": "/handbook/nocode/", "query": "no coding", "clicks": 1, "impressions": 4, "position": 3}
+{"page": "/handbook/nocode/", "query": "no-code", "clicks": 0, "impressions": 14, "position": 5.43}
+{"page": "/handbook/nocode/", "query": "nocode", "clicks": 0, "impressions": 14, "position": 4.07}
+{"page": "/handbook/nocode/#co-je-low-code-nebo-no-code", "query": "low code", "clicks": 0, "impressions": 44, "position": 4.55}
+{"page": "/handbook/nocode/#platforma-versus-open-source", "query": "low code", "clicks": 0, "impressions": 44, "position": 4.55}
+{"page": "/handbook/nocode/#proc-to-pouzivat", "query": "low code", "clicks": 0, "impressions": 44, "position": 4.55}
+{"page": "/handbook/women/", "query": "it kurzy pro ženy", "clicks": 0, "impressions": 36, "position": 16.03}
+{"page": "/handbook/women/", "query": "zeny v it", "clicks": 1, "impressions": 28, "position": 15}
+{"page": "/handbook/women/", "query": "ženy v it", "clicks": 0, "impressions": 18, "position": 11.61}
+{"page": "/jobs/", "query": ".net junior", "clicks": 1, "impressions": 2, "position": 5}
+{"page": "/jobs/", "query": "brigady pro zacatecniky", "clicks": 0, "impressions": 19, "position": 10.53}
+{"page": "/jobs/", "query": "brigáda programování", "clicks": 1, "impressions": 21, "position": 7.1}
+{"page": "/jobs/", "query": "brigáda programátor", "clicks": 0, "impressions": 29, "position": 6.93}
+{"page": "/jobs/", "query": "cena programátora webassembly", "clicks": 0, "impressions": 12, "position": 30.58}
+{"page": "/jobs/", "query": "entry level jobs", "clicks": 0, "impressions": 155, "position": 9.68}
+{"page": "/jobs/", "query": "hledáme programátora", "clicks": 0, "impressions": 14, "position": 6.07}
+{"page": "/jobs/", "query": "it brigáda pro studenty", "clicks": 1, "impressions": 24, "position": 7.08}
+{"page": "/jobs/", "query": "it developer", "clicks": 0, "impressions": 12, "position": 9.67}
+{"page": "/jobs/", "query": "it junior", "clicks": 1, "impressions": 27, "position": 8.81}
+{"page": "/jobs/", "query": "it junior pozice", "clicks": 3, "impressions": 40, "position": 4.67}
+{"page": "/jobs/", "query": "it pozice", "clicks": 0, "impressions": 21, "position": 18.19}
+{"page": "/jobs/", "query": "it programator", "clicks": 0, "impressions": 14, "position": 4.57}
+{"page": "/jobs/", "query": "it programátor", "clicks": 0, "impressions": 40, "position": 6.42}
+{"page": "/jobs/", "query": "it tester bez praxe", "clicks": 1, "impressions": 31, "position": 8.19}
+{"page": "/jobs/", "query": "it tester junior", "clicks": 2, "impressions": 26, "position": 12.04}
+{"page": "/jobs/", "query": "java junior praca", "clicks": 1, "impressions": 2, "position": 20.5}
+{"page": "/jobs/", "query": "javascript junior", "clicks": 0, "impressions": 13, "position": 14.08}
+{"page": "/jobs/", "query": "job guru", "clicks": 1, "impressions": 5, "position": 4.8}
+{"page": "/jobs/", "query": "junior database", "clicks": 1, "impressions": 3, "position": 5.33}
+{"page": "/jobs/", "query": "junior developer", "clicks": 1, "impressions": 16, "position": 9.25}
+{"page": "/jobs/", "query": "junior guru", "clicks": 8, "impressions": 144, "position": 1.3}
+{"page": "/jobs/", "query": "junior it", "clicks": 3, "impressions": 24, "position": 4.83}
+{"page": "/jobs/", "query": "junior it pozice", "clicks": 1, "impressions": 26, "position": 5.23}
+{"page": "/jobs/", "query": "junior java developer", "clicks": 1, "impressions": 4, "position": 37.5}
+{"page": "/jobs/", "query": "junior pozice", "clicks": 0, "impressions": 27, "position": 5.89}
+{"page": "/jobs/", "query": "junior programator", "clicks": 6, "impressions": 43, "position": 5.84}
+{"page": "/jobs/", "query": "junior programátor", "clicks": 1, "impressions": 66, "position": 9.18}
+{"page": "/jobs/", "query": "junior programátor freelancer", "clicks": 0, "impressions": 17, "position": 11.94}
+{"page": "/jobs/", "query": "junior programátor práce", "clicks": 1, "impressions": 3, "position": 5}
+{"page": "/jobs/", "query": "junior python", "clicks": 0, "impressions": 12, "position": 15.25}
+{"page": "/jobs/", "query": "junior python developer", "clicks": 0, "impressions": 18, "position": 16.11}
+{"page": "/jobs/", "query": "junior python programátor", "clicks": 1, "impressions": 8, "position": 4.75}
+{"page": "/jobs/", "query": "junior qa tester", "clicks": 1, "impressions": 22, "position": 6.45}
+{"page": "/jobs/", "query": "junior software engineer", "clicks": 1, "impressions": 5, "position": 7.6}
+{"page": "/jobs/", "query": "junior software tester", "clicks": 1, "impressions": 5, "position": 20}
+{"page": "/jobs/", "query": "junior tester", "clicks": 5, "impressions": 65, "position": 7.91}
+{"page": "/jobs/", "query": "junior tester bez praxe", "clicks": 2, "impressions": 50, "position": 7.26}
+{"page": "/jobs/", "query": "junior tester praha", "clicks": 2, "impressions": 44, "position": 7.23}
+{"page": "/jobs/", "query": "junior.guru", "clicks": 0, "impressions": 10, "position": 1.4}
+{"page": "/jobs/", "query": "juniorguru", "clicks": 1, "impressions": 20, "position": 1.75}
+{"page": "/jobs/", "query": "juniorní pozice", "clicks": 0, "impressions": 11, "position": 5.55}
+{"page": "/jobs/", "query": "kodér práce", "clicks": 1, "impressions": 1, "position": 43}
+{"page": "/jobs/", "query": "nabídka práce programátor", "clicks": 0, "impressions": 29, "position": 9.69}
+{"page": "/jobs/", "query": "nabídky práce it", "clicks": 0, "impressions": 10, "position": 19}
+{"page": "/jobs/", "query": "pozice v it", "clicks": 0, "impressions": 13, "position": 13}
+{"page": "/jobs/", "query": "prace pro zacatecniky", "clicks": 0, "impressions": 15, "position": 6.33}
+{"page": "/jobs/", "query": "prace programator", "clicks": 0, "impressions": 34, "position": 7.44}
+{"page": "/jobs/", "query": "programator", "clicks": 0, "impressions": 12, "position": 18.42}
+{"page": "/jobs/", "query": "programator junior", "clicks": 0, "impressions": 23, "position": 7.91}
+{"page": "/jobs/", "query": "programator prace", "clicks": 1, "impressions": 22, "position": 7.73}
+{"page": "/jobs/", "query": "programátor", "clicks": 0, "impressions": 65, "position": 19.77}
+{"page": "/jobs/", "query": "programátor brigáda", "clicks": 1, "impressions": 15, "position": 5.6}
+{"page": "/jobs/", "query": "programátor junior", "clicks": 0, "impressions": 40, "position": 11.12}
+{"page": "/jobs/", "query": "programátor junior práce", "clicks": 1, "impressions": 15, "position": 5}
+{"page": "/jobs/", "query": "programátor práce", "clicks": 0, "impressions": 53, "position": 9.92}
+{"page": "/jobs/", "query": "programátor python", "clicks": 1, "impressions": 12, "position": 10.58}
+{"page": "/jobs/", "query": "programátorské práce", "clicks": 0, "impressions": 62, "position": 7.61}
+{"page": "/jobs/", "query": "práce pro začínající programátory", "clicks": 0, "impressions": 11, "position": 3.09}
+{"page": "/jobs/", "query": "práce programátor", "clicks": 0, "impressions": 88, "position": 9.31}
+{"page": "/jobs/", "query": "práce programátora", "clicks": 0, "impressions": 30, "position": 15.2}
+{"page": "/jobs/", "query": "práce v it bez praxe", "clicks": 0, "impressions": 68, "position": 14.37}
+{"page": "/jobs/", "query": "práce v it junior", "clicks": 0, "impressions": 24, "position": 5}
+{"page": "/jobs/", "query": "práce v it pro začátečníky", "clicks": 4, "impressions": 114, "position": 5.75}
+{"page": "/jobs/", "query": "práce vývojář", "clicks": 0, "impressions": 11, "position": 12.27}
+{"page": "/jobs/", "query": "python developer junior", "clicks": 1, "impressions": 3, "position": 10.33}
+{"page": "/jobs/", "query": "python junior", "clicks": 0, "impressions": 26, "position": 16.96}
+{"page": "/jobs/", "query": "python junior práce", "clicks": 1, "impressions": 27, "position": 5.78}
+{"page": "/jobs/", "query": "python prace", "clicks": 0, "impressions": 10, "position": 10.6}
+{"page": "/jobs/", "query": "python programator", "clicks": 0, "impressions": 29, "position": 10.41}
+{"page": "/jobs/", "query": "python programátor", "clicks": 0, "impressions": 20, "position": 11.15}
+{"page": "/jobs/", "query": "python práce", "clicks": 0, "impressions": 13, "position": 10.23}
+{"page": "/jobs/", "query": "python trainee jobs", "clicks": 1, "impressions": 2, "position": 8}
+{"page": "/jobs/", "query": "qa tester junior", "clicks": 2, "impressions": 20, "position": 6.1}
+{"page": "/jobs/", "query": "react junior developer", "clicks": 1, "impressions": 1, "position": 40}
+{"page": "/jobs/", "query": "softwarový vývojář", "clicks": 0, "impressions": 10, "position": 10.4}
+{"page": "/jobs/", "query": "sql junior", "clicks": 1, "impressions": 7, "position": 7.14}
+{"page": "/jobs/", "query": "sql junior jobs", "clicks": 1, "impressions": 2, "position": 8}
+{"page": "/jobs/", "query": "tester junior", "clicks": 1, "impressions": 20, "position": 5.35}
+{"page": "/jobs/", "query": "vyvojar", "clicks": 0, "impressions": 12, "position": 19.5}
+{"page": "/jobs/", "query": "vývojář", "clicks": 0, "impressions": 30, "position": 22.1}
+{"page": "/jobs/", "query": "vývojář softwaru", "clicks": 1, "impressions": 3, "position": 11.33}
+{"page": "/jobs/", "query": "web programator", "clicks": 0, "impressions": 10, "position": 8.3}
+{"page": "/jobs/", "query": "web programátor", "clicks": 0, "impressions": 18, "position": 8.28}
+{"page": "/jobs/", "query": "webový programátor", "clicks": 0, "impressions": 17, "position": 9.88}
+{"page": "/jobs/brno/", "query": "developer brno", "clicks": 0, "impressions": 36, "position": 9.36}
+{"page": "/jobs/brno/", "query": "it brno", "clicks": 0, "impressions": 20, "position": 19.3}
+{"page": "/jobs/brno/", "query": "it internship brno", "clicks": 1, "impressions": 15, "position": 6.87}
+{"page": "/jobs/brno/", "query": "it junior brno", "clicks": 4, "impressions": 23, "position": 3.57}
+{"page": "/jobs/brno/", "query": "it prace brno", "clicks": 2, "impressions": 46, "position": 10.22}
+{"page": "/jobs/brno/", "query": "it práce brno", "clicks": 0, "impressions": 13, "position": 10.69}
+{"page": "/jobs/brno/", "query": "it práce v brně", "clicks": 0, "impressions": 14, "position": 10.93}
+{"page": "/jobs/brno/", "query": "it tester brno", "clicks": 1, "impressions": 8, "position": 8.12}
+{"page": "/jobs/brno/", "query": "junior developer part time", "clicks": 1, "impressions": 2, "position": 2}
+{"page": "/jobs/brno/", "query": "junior guru", "clicks": 5, "impressions": 25, "position": 1.96}
+{"page": "/jobs/brno/", "query": "junior pozice brno", "clicks": 0, "impressions": 25, "position": 4.72}
+{"page": "/jobs/brno/", "query": "junior programator", "clicks": 0, "impressions": 11, "position": 12.82}
+{"page": "/jobs/brno/", "query": "junior programátor brno", "clicks": 2, "impressions": 14, "position": 2.14}
+{"page": "/jobs/brno/", "query": "junior tester brno", "clicks": 1, "impressions": 39, "position": 7.41}
+{"page": "/jobs/brno/", "query": "php programator brno", "clicks": 0, "impressions": 12, "position": 20.42}
+{"page": "/jobs/brno/", "query": "prace it brno", "clicks": 0, "impressions": 13, "position": 9.38}
+{"page": "/jobs/brno/", "query": "prace v it brno", "clicks": 0, "impressions": 17, "position": 8.65}
+{"page": "/jobs/brno/", "query": "programator brno", "clicks": 0, "impressions": 12, "position": 9.92}
+{"page": "/jobs/brno/", "query": "programator junior", "clicks": 0, "impressions": 12, "position": 19.33}
+{"page": "/jobs/brno/", "query": "programátor brno", "clicks": 0, "impressions": 55, "position": 9.27}
+{"page": "/jobs/brno/", "query": "programátor junior", "clicks": 0, "impressions": 14, "position": 23.21}
+{"page": "/jobs/brno/", "query": "práce v it brno", "clicks": 0, "impressions": 28, "position": 9.82}
+{"page": "/jobs/brno/", "query": "práce v it pro začátečníky brno", "clicks": 1, "impressions": 12, "position": 3.17}
+{"page": "/jobs/brno/", "query": "python brno", "clicks": 0, "impressions": 12, "position": 18}
+{"page": "/jobs/brno/", "query": "python junior brno", "clicks": 2, "impressions": 12, "position": 8.25}
+{"page": "/jobs/brno/", "query": "qa tester brno", "clicks": 1, "impressions": 3, "position": 17.33}
+{"page": "/jobs/brno/", "query": "react developer brno", "clicks": 1, "impressions": 3, "position": 20.67}
+{"page": "/jobs/brno/", "query": "tester brno", "clicks": 4, "impressions": 36, "position": 9.17}
+{"page": "/jobs/brno/", "query": "trainee program brno", "clicks": 0, "impressions": 41, "position": 10}
+{"page": "/jobs/brno/", "query": "web developer brno", "clicks": 0, "impressions": 13, "position": 12.31}
+{"page": "/jobs/d66feb3de0c8367cc6ca82f3d7448eff19524e25edfd5c3a0b238cc2/", "query": "redhat junior", "clicks": 1, "impressions": 1, "position": 5}
+{"page": "/jobs/olomouc/", "query": "programátor olomouc", "clicks": 1, "impressions": 22, "position": 10}
+{"page": "/jobs/ostrava/", "query": "junior programátor ostrava", "clicks": 1, "impressions": 10, "position": 5.7}
+{"page": "/jobs/praha/", "query": "developer praha", "clicks": 0, "impressions": 44, "position": 14.89}
+{"page": "/jobs/praha/", "query": "it junior", "clicks": 0, "impressions": 12, "position": 3.92}
+{"page": "/jobs/praha/", "query": "it junior pozice", "clicks": 2, "impressions": 11, "position": 6.18}
+{"page": "/jobs/praha/", "query": "it junior praha", "clicks": 0, "impressions": 14, "position": 3.93}
+{"page": "/jobs/praha/", "query": "it prace praha", "clicks": 0, "impressions": 11, "position": 16.27}
+{"page": "/jobs/praha/", "query": "it praha", "clicks": 0, "impressions": 20, "position": 11.35}
+{"page": "/jobs/praha/", "query": "it práce praha", "clicks": 0, "impressions": 23, "position": 13.04}
+{"page": "/jobs/praha/", "query": "java developer junior jobs", "clicks": 1, "impressions": 1, "position": 4}
+{"page": "/jobs/praha/", "query": "java developer praha", "clicks": 0, "impressions": 33, "position": 10.09}
+{"page": "/jobs/praha/", "query": "java junior", "clicks": 0, "impressions": 23, "position": 9.43}
+{"page": "/jobs/praha/", "query": "junior backend developer", "clicks": 1, "impressions": 4, "position": 3.5}
+{"page": "/jobs/praha/", "query": "junior developer", "clicks": 0, "impressions": 37, "position": 5.46}
+{"page": "/jobs/praha/", "query": "junior developer job", "clicks": 1, "impressions": 1, "position": 2}
+{"page": "/jobs/praha/", "query": "junior developer praha", "clicks": 4, "impressions": 22, "position": 2.59}
+{"page": "/jobs/praha/", "query": "junior google", "clicks": 1, "impressions": 1, "position": 1}
+{"page": "/jobs/praha/", "query": "junior guru", "clicks": 0, "impressions": 12, "position": 2.75}
+{"page": "/jobs/praha/", "query": "junior it", "clicks": 1, "impressions": 19, "position": 4.84}
+{"page": "/jobs/praha/", "query": "junior it developer jobs", "clicks": 1, "impressions": 1, "position": 6}
+{"page": "/jobs/praha/", "query": "junior java developer", "clicks": 2, "impressions": 28, "position": 5.89}
+{"page": "/jobs/praha/", "query": "junior java developer praha", "clicks": 3, "impressions": 16, "position": 5.31}
+{"page": "/jobs/praha/", "query": "junior java programátor", "clicks": 0, "impressions": 19, "position": 6.58}
+{"page": "/jobs/praha/", "query": "junior pozice praha", "clicks": 0, "impressions": 35, "position": 5.26}
+{"page": "/jobs/praha/", "query": "junior programator", "clicks": 0, "impressions": 16, "position": 9.31}
+{"page": "/jobs/praha/", "query": "junior programátor", "clicks": 4, "impressions": 37, "position": 10.46}
+{"page": "/jobs/praha/", "query": "junior programátor freelancer", "clicks": 0, "impressions": 21, "position": 15.24}
+{"page": "/jobs/praha/", "query": "junior programátor praha", "clicks": 1, "impressions": 20, "position": 3.7}
+{"page": "/jobs/praha/", "query": "junior python praha", "clicks": 1, "impressions": 4, "position": 6.5}
+{"page": "/jobs/praha/", "query": "junior tester praha", "clicks": 1, "impressions": 9, "position": 24.78}
+{"page": "/jobs/praha/", "query": "programator junior", "clicks": 0, "impressions": 10, "position": 14.2}
+{"page": "/jobs/praha/", "query": "programátor junior", "clicks": 1, "impressions": 31, "position": 9.19}
+{"page": "/jobs/praha/", "query": "programátor junior práce", "clicks": 1, "impressions": 8, "position": 4.75}
+{"page": "/jobs/praha/", "query": "práce pro začínající programátory", "clicks": 1, "impressions": 9, "position": 4}
+{"page": "/jobs/praha/", "query": "práce v it bez praxe", "clicks": 1, "impressions": 3, "position": 12.33}
+{"page": "/jobs/praha/", "query": "práce v it junior", "clicks": 1, "impressions": 9, "position": 6.78}
+{"page": "/jobs/praha/", "query": "práce v it pro začátečníky", "clicks": 0, "impressions": 49, "position": 6.57}
+{"page": "/jobs/praha/", "query": "python internship czech", "clicks": 0, "impressions": 49, "position": 7.92}
+{"page": "/jobs/praha/", "query": "python junior práce", "clicks": 0, "impressions": 10, "position": 8}
+{"page": "/jobs/praha/", "query": "python praha", "clicks": 0, "impressions": 12, "position": 23.42}
+{"page": "/jobs/praha/", "query": "vývoj software praha", "clicks": 0, "impressions": 16, "position": 22.62}
+{"page": "/jobs/praha/", "query": "vývojáři praha", "clicks": 0, "impressions": 61, "position": 9.02}
+{"page": "/jobs/remote/", "query": "junior remote", "clicks": 1, "impressions": 3, "position": 2.33}
+{"page": "/jobs/remote/", "query": "junior tester remote", "clicks": 1, "impressions": 1, "position": 9}
+{"page": "/jobs/remote/", "query": "prace remote", "clicks": 0, "impressions": 14, "position": 17.79}
+{"page": "/jobs/remote/", "query": "práce remote", "clicks": 1, "impressions": 28, "position": 16.43}
+{"page": "/jobs/remote/", "query": "remote prace", "clicks": 0, "impressions": 27, "position": 11.04}
+{"page": "/jobs/remote/", "query": "remote práce", "clicks": 0, "impressions": 61, "position": 15.02}
+{"page": "/jobs/zlin/", "query": "programátor zlín", "clicks": 0, "impressions": 40, "position": 13.43}
+{"page": "/news/prosinec-2025-ve-svete-it-junioru-5664/", "query": "cena programátora svelte", "clicks": 0, "impressions": 32, "position": 23.53}
+{"page": "/news/prosinec-2025-ve-svete-it-junioru-5664/", "query": "sazba programátora svelte", "clicks": 0, "impressions": 34, "position": 11.29}
+{"page": "/podcast/", "query": "junior guru", "clicks": 1, "impressions": 61, "position": 2.95}
+{"page": "/podcast/", "query": "podcast it", "clicks": 1, "impressions": 5, "position": 8.8}
+{"page": "/podcast/3/", "query": "filip kirschner", "clicks": 0, "impressions": 26, "position": 6.65}
+{"page": "http://junior.guru/", "query": "junior.guru", "clicks": 1, "impressions": 1, "position": 1}
