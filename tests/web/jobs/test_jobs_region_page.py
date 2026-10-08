@@ -108,15 +108,6 @@ def test_region_page_empty_state_suggests_remote(page: Page, jobs_page):
     expect(empty).to_contain_text("#remote")
 
 
-@pytest.mark.xfail(
-    reason=(
-        "Bug: the region slug is derived from the URL by removing only the first "
-        "hyphen, so on /jobs/usti-nad-labem/ the region tag gets deactivated "
-        "and the JS crashes"
-    ),
-    strict=True,
-    raises=AssertionError,
-)
 def test_region_page_with_multiword_name(page: Page, jobs_page):
     create_job(title="Ústí Developer", regions=["Ústí nad Labem"])
     create_job(title="Praha Developer", regions=["Praha"])

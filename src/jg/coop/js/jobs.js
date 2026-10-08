@@ -170,7 +170,7 @@ function hideElement(element) {
 
 function getLocationSlug(location) {
   const match = location.pathname.match(/\/jobs\/([^/]+)\/?$/);
-  return match ? match[1].replace("-", "") : null;
+  return match ? match[1].replaceAll("-", "") : null;
 }
 
 document.addEventListener("DOMContentLoaded", setupJobsTags);
