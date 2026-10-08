@@ -62,14 +62,14 @@ jobs:
             Re-review this pull request. Claude reviewed it before and the author has since pushed changes.
             The PR head is already checked out in the current working directory.
 
-            1. Read the PR's existing comments and review comments (`gh pr view --comments`,
+            1. Read the PR's existing comments and review comments (`gh pr view ${{ github.event.issue.number }} --comments`,
                `gh api repos/${{ github.repository }}/pulls/${{ github.event.issue.number }}/comments`)
                to find the issues raised in previous reviews.
-            2. Read the current diff (`gh pr diff`) and check whether each previously raised issue is fixed.
+            2. Read the current diff (`gh pr diff ${{ github.event.issue.number }}`) and check whether each previously raised issue is fixed.
             3. Look for new bugs or CLAUDE.md violations introduced by the changes. Only report issues you are
                confident are real; skip nits and anything a linter would catch.
             4. Post each new issue with `mcp__github_inline_comment__create_inline_comment` (with `confirmed: true`).
-            5. Post one `gh pr comment` summarizing which earlier issues are fixed, which remain, and how many new ones you found.
+            5. Post one `gh pr comment ${{ github.event.issue.number }}` summarizing which earlier issues are fixed, which remain, and how many new ones you found.
 
             Only post GitHub comments - don't submit review text as messages.
           claude_args: |
