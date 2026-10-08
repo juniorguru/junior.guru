@@ -1,8 +1,10 @@
 from datetime import date
+from types import SimpleNamespace
 
 import pytest
 
 from jg.coop.sync.search_console import (
+    fetch_available_dates,
     get_complete_months,
     get_months_to_sync,
     is_significant,
@@ -11,6 +13,36 @@ from jg.coop.sync.search_console import (
     serialize_rows,
     shorten_url,
 )
+
+
+def create_client(response: dict) -> SimpleNamespace:
+    requests = []
+
+    def query(siteUrl: str, body: dict) -> SimpleNamespace:
+        requests.append({"siteUrl": siteUrl, "body": body})
+        return SimpleNamespace(execute=lambda: response)
+
+    searchanalytics = SimpleNamespace(query=query)
+    return SimpleNamespace(searchanalytics=lambda: searchanalytics, requests=requests)
+
+
+def test_fetch_available_dates():
+    client = create_client(
+        {"rows": [{"keys": ["2025-06-01"]}, {"keys": ["2025-06-02"]}]}
+    )
+
+    assert fetch_available_dates(client, "sc-domain:junior.guru", date(2025, 7, 1)) == [
+        date(2025, 6, 1),
+        date(2025, 6, 2),
+    ]
+
+
+def test_fetch_available_dates_requests_lookback_until_today():
+    client = create_client({})
+    fetch_available_dates(client, "sc-domain:junior.guru", date(2025, 7, 1))
+    body = client.requests[0]["body"]
+
+    assert (body["startDate"], body["endDate"]) == ("2023-11-09", "2025-07-01")
 
 
 def test_get_complete_months():

@@ -1,4 +1,3 @@
-import calendar
 import json
 from collections.abc import Iterable
 from datetime import date, timedelta
@@ -7,9 +6,10 @@ from pathlib import Path
 from typing import Any
 
 import click
+from googleapiclient.discovery import Resource
 
 from jg.coop.cli.sync import main as cli
-from jg.coop.lib import google_api, loggers
+from jg.coop.lib import charts, google_api, loggers
 
 
 logger = loggers.from_path(__file__)
@@ -75,8 +75,10 @@ def main(data_dir: Path, site_url: str | None) -> None:
             logger.info(f"Saved {len(rows)} rows to {path}")
 
 
-def fetch_available_dates(client: Any, site_url: str) -> list[date]:
-    today = date.today()
+def fetch_available_dates(
+    client: Resource, site_url: str, today: date | None = None
+) -> list[date]:
+    today = today or date.today()
     body = {
         "startDate": (today - timedelta(days=LOOKBACK_DAYS)).isoformat(),
         "endDate": today.isoformat(),
@@ -88,13 +90,13 @@ def fetch_available_dates(client: Any, site_url: str) -> list[date]:
 
 
 def fetch_rows(
-    client: Any, site_url: str, month: date, dimensions: list[str]
+    client: Resource, site_url: str, month: date, dimensions: list[str]
 ) -> Iterable[dict[str, Any]]:
     start_row = 0
     while True:
         body = {
             "startDate": month.isoformat(),
-            "endDate": get_month_end(month).isoformat(),
+            "endDate": charts.month_end(month).isoformat(),
             "dimensions": dimensions,
             "rowLimit": ROW_LIMIT,
             "startRow": start_row,
@@ -126,11 +128,11 @@ def get_complete_months(available_dates: list[date]) -> list[date]:
     first_date, last_date = min(available_dates), max(available_dates)
     month = first_date.replace(day=1)
     if month < first_date:
-        month = get_next_month(month)
+        month = charts.next_month(month)
     months = []
-    while get_month_end(month) <= last_date:
+    while charts.month_end(month) <= last_date:
         months.append(month)
-        month = get_next_month(month)
+        month = charts.next_month(month)
     return months
 
 
@@ -164,11 +166,3 @@ def serialize_rows(rows: list[dict[str, Any]], dimensions: list[str]) -> str:
         f"{json.dumps(row, ensure_ascii=False)}\n"
         for row in sorted(rows, key=itemgetter(*dimensions))
     )
-
-
-def get_month_end(month: date) -> date:
-    return month.replace(day=calendar.monthrange(month.year, month.month)[1])
-
-
-def get_next_month(month: date) -> date:
-    return get_month_end(month) + timedelta(days=1)
