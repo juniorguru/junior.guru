@@ -34,11 +34,11 @@ Evidence favors regression when same deterministic error repeats across runs in 
 
 When flaky call belongs to project code, retrying with `tenacity` is often appropriate; dependency already used under `src/jg/coop/sync`. Handle external `check-links` flakes in lychee configuration instead of changing remote target.
 
-## Expected failures
+## Reminders
 
-Some nightly failures are intentional reminders for the maintainer, not breakages. Report them as expected; they need no fix:
+Some nightly failures are intentional reminders for the maintainer, not breakages. Report them as reminders, not as regressions or flakes:
 
-- `check-sponsors` failing with `renews soon!` errors, as a sponsor's renewal date approaches. Fails nightly until `src/jg/coop/data/sponsors.yml` gets updated.
+- `check-sponsors` failing with `renews soon!` errors, as a sponsor's renewal date approaches. Fails nightly until the sponsorship gets renewed or ended and `src/jg/coop/data/sponsors.yml` updated.
 
 ## Report
 

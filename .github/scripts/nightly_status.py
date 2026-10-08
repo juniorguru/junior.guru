@@ -9,8 +9,6 @@ from datetime import UTC, datetime
 
 API = "https://circleci.com/api/v2"
 PROJECT = "gh/juniorguru/junior.guru"
-# Failures in these jobs are intentional reminders, not breakages
-EXPECTED_FAILURES = {"check-sponsors"}
 
 
 def get(path: str) -> dict:
@@ -48,10 +46,8 @@ def main() -> None:
     failed = sorted(job["name"] for job in jobs if job["status"] == "failed")
     print(f"Failed jobs: {', '.join(failed) or 'none'}")
 
-    unexpected = set(failed) - EXPECTED_FAILURES
-    investigate = workflow["status"] != "success" and (unexpected or not failed)
     output(
-        investigate=str(bool(investigate)).lower(),
+        investigate=str(workflow["status"] != "success").lower(),
         date=date,
         url=url,
         failed=",".join(failed),
