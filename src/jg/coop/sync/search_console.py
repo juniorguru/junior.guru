@@ -19,6 +19,8 @@ SCOPES = ["https://www.googleapis.com/auth/webmasters.readonly"]
 
 SITE_DOMAIN = "junior.guru"
 
+SITE_ORIGIN = f"https://{SITE_DOMAIN}/"
+
 LOOKBACK_DAYS = 600
 
 ROW_LIMIT = 25_000
@@ -137,11 +139,20 @@ def get_months_to_sync(months: list[date], existing_months: set[date]) -> list[d
 
 
 def parse_row(row: dict[str, Any], dimensions: list[str]) -> dict[str, Any]:
-    return dict(zip(dimensions, row["keys"], strict=True)) | {
+    keys = dict(zip(dimensions, row["keys"], strict=True))
+    if "page" in keys:
+        keys["page"] = shorten_url(keys["page"])
+    return keys | {
         "clicks": int(row["clicks"]),
         "impressions": int(row["impressions"]),
         "position": round(row["position"], 2),
     }
+
+
+def shorten_url(url: str) -> str:
+    if url.startswith(SITE_ORIGIN):
+        return url.removeprefix(SITE_ORIGIN.rstrip("/"))
+    return url
 
 
 def is_significant(row: dict[str, Any]) -> bool:

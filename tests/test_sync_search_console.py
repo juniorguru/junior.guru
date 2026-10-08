@@ -9,6 +9,7 @@ from jg.coop.sync.search_console import (
     parse_row,
     pick_site_url,
     serialize_rows,
+    shorten_url,
 )
 
 
@@ -65,12 +66,28 @@ def test_parse_row():
     }
 
     assert parse_row(row, ["page", "query"]) == {
-        "page": "https://junior.guru/handbook/",
+        "page": "/handbook/",
         "query": "jak se naučit programovat",
         "clicks": 12,
         "impressions": 345,
         "position": 7.46,
     }
+
+
+@pytest.mark.parametrize(
+    "url, expected",
+    [
+        ("https://junior.guru/", "/"),
+        ("https://junior.guru/handbook/", "/handbook/"),
+        ("https://junior.guru/jobs/brno?page=2", "/jobs/brno?page=2"),
+        ("https://junior.guru", "https://junior.guru"),
+        ("http://junior.guru/handbook/", "http://junior.guru/handbook/"),
+        ("https://www.junior.guru/handbook/", "https://www.junior.guru/handbook/"),
+        ("https://junior.guru.example.com/", "https://junior.guru.example.com/"),
+    ],
+)
+def test_shorten_url(url: str, expected: str):
+    assert shorten_url(url) == expected
 
 
 @pytest.mark.parametrize(

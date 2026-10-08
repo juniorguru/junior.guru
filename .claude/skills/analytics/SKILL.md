@@ -68,10 +68,11 @@ src/jg/coop/data/search_console/
 Row shapes:
 
 ```json
-{"page": "https://junior.guru/handbook/", "clicks": 120, "impressions": 4500, "position": 8.21}
-{"page": "https://junior.guru/handbook/", "query": "jak se naučit programovat", "clicks": 12, "impressions": 345, "position": 7.46}
+{"page": "/handbook/", "clicks": 120, "impressions": 4500, "position": 8.21}
+{"page": "/handbook/", "query": "jak se naučit programovat", "clicks": 12, "impressions": 345, "position": 7.46}
 ```
 
+- `page` — path on https://junior.guru (prefix stripped to save space). Any other URL Google reports (`http://`, `www.`, subdomains) is kept in full.
 - `clicks` — clicks from Google search results to the page.
 - `impressions` — how many times the page appeared in search results.
 - `position` — average ranking position (1 = top), weighted by impressions. Lower is better.
