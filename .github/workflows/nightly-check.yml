@@ -33,17 +33,29 @@ jobs:
             Today's CircleCI nightly build failed. Use the circleci skill to investigate why,
             including the comparison with recent nightly runs.
 
-            If every failure is an expected one as described in the skill, stop and file nothing.
+            Ignore failures that are expected as described in the skill. If nothing else is left, stop.
 
-            Otherwise file exactly one issue:
+            Group the remaining failures by root cause. One reason is one distinct problem, e.g. one broken
+            link, one failing test, one external service being down.
 
-            gh issue create --title "Nightly build failure ${{ steps.nightly.outputs.date }}" --body "..."
+            - 3 or fewer reasons: report each reason separately, with a specific title such as
+              "Broken link: https://www.marketawillis.com/" or "Sync failing: <job> <short cause>".
+            - More than 3 reasons: report all of them together, titled
+              "Nightly build failure ${{ steps.nightly.outputs.date }}", one section per reason.
 
-            The body must be brief and to the point, in English, Markdown, with these sections:
-            - **Failed job(s)** with links to the CircleCI job(s)
+            Before reporting, list open issues (`gh issue list --state open --limit 100`) and check whether
+            one already covers the same problem. If it does, don't file a new issue; add a short comment
+            (`gh issue comment <number> --body "..."`) saying the problem persisted in the nightly on
+            ${{ steps.nightly.outputs.date }}, with a link to the CircleCI job and anything that changed.
+            Otherwise file a new issue (`gh issue create --title "..." --body "..."`).
+
+            Issue bodies must be brief and to the point, in English, Markdown, with these sections
+            (per reason, in the combined issue):
+            - **Failed job** with a link to the CircleCI job
             - **Error**: the concrete error from the logs, quoted
             - **Verdict**: intermittent or regression, with the evidence from recent runs in one or two sentences
             - **Suggested fixes**: a short list
+
             Do not open a PR and do not change any files.
           claude_args: |
-            --allowedTools "Skill,Read,Glob,Grep,Bash(curl:*),Bash(jq:*),Bash(gh issue create:*),Bash(gh issue list:*)"
+            --allowedTools "Skill,Read,Glob,Grep,Bash(curl:*),Bash(jq:*),Bash(gh issue create:*),Bash(gh issue list:*),Bash(gh issue view:*),Bash(gh issue comment:*)"
