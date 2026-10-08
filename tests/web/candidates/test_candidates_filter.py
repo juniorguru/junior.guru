@@ -245,11 +245,6 @@ def test_tags_of_candidates_are_not_filters(page: Page, candidates_page):
     expect(page).to_have_url(re.compile(r"/candidates/$"))
 
 
-@pytest.mark.xfail(
-    reason="Bug: filter tags are spans, so they can't be focused or used by keyboard",
-    strict=True,
-    raises=AssertionError,
-)
 def test_tags_can_be_used_by_keyboard(page: Page, candidates_page):
     create_candidate(name="Ada Lovelace", skills=["Python"])
     create_candidate(name="Grace Hopper", skills=["COBOL"])

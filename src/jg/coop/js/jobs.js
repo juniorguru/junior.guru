@@ -5,7 +5,8 @@ function setupJobsTags() {
       .querySelectorAll(".jobs-tag:not(.disabled)")
       .forEach(function (tag) {
         tag.addEventListener("click", function () {
-          tag.classList.toggle("active");
+          const isActive = tag.classList.toggle("active");
+          tag.setAttribute("aria-pressed", isActive);
           filterJobs({ pushHistory: true });
         });
         showElement(tag);
@@ -151,11 +152,8 @@ function updateJobsTagsUI() {
   container.querySelectorAll(".jobs-tag").forEach((tag) => {
     const activeSlugs = activeSlugsByType[tag.dataset.jobsTagType] || [];
     const isActive = activeSlugs.includes(tag.dataset.jobsTag);
-    if (isActive) {
-      tag.classList.add("active");
-    } else {
-      tag.classList.remove("active");
-    }
+    tag.classList.toggle("active", isActive);
+    tag.setAttribute("aria-pressed", isActive);
   });
   filterJobs();
 }

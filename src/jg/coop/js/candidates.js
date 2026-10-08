@@ -8,7 +8,8 @@ function setupCandidatesTags() {
       .querySelectorAll(".candidates-tag:not(.disabled)")
       .forEach(function (tag) {
         tag.addEventListener("click", function () {
-          tag.classList.toggle("active");
+          const isActive = tag.classList.toggle("active");
+          tag.setAttribute("aria-pressed", isActive);
           filterCandidates({ pushHistory: true });
         });
         showElement(tag);
@@ -160,11 +161,8 @@ function updateCandidatesTagsUI() {
   container.querySelectorAll(".candidates-tag").forEach((tag) => {
     const activeSlugs = activeSlugsByType[tag.dataset.candidatesTagType] || [];
     const isActive = activeSlugs.includes(tag.dataset.candidatesTag);
-    if (isActive) {
-      tag.classList.add("active");
-    } else {
-      tag.classList.remove("active");
-    }
+    tag.classList.toggle("active", isActive);
+    tag.setAttribute("aria-pressed", isActive);
   });
   filterCandidates();
 }

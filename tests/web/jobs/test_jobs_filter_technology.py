@@ -1,6 +1,5 @@
 import re
 
-import pytest
 from playwright.sync_api import Page, expect
 from web.helpers import create_job
 
@@ -120,11 +119,6 @@ def test_tags_outside_filters_are_ignored(page: Page, jobs_page):
     expect(page).to_have_url(re.compile(r"/jobs/\?technology=python$"))
 
 
-@pytest.mark.xfail(
-    reason="Bug: filter tags are spans, so they can't be focused or used by keyboard",
-    strict=True,
-    raises=AssertionError,
-)
 def test_tags_can_be_used_by_keyboard(page: Page, jobs_page):
     create_job(title="Python Developer", tech_tags=["python"])
     create_job(title="JavaScript Developer", tech_tags=["javascript"])
