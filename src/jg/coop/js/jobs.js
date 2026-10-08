@@ -72,10 +72,14 @@ function filterJobs({ pushHistory = false } = {}) {
   }
   Object.values(activeTagsByType).forEach((tags) => tags.sort());
 
-  const url = new URL(window.location.href);
-  Array.from(url.searchParams.keys()).forEach((type) =>
-    url.searchParams.delete(type),
+  const filterTypes = new Set(
+    Array.from(
+      document.querySelectorAll(".jobs-filters .jobs-tag"),
+      (tag) => tag.dataset.jobsTagType,
+    ),
   );
+  const url = new URL(window.location.href);
+  filterTypes.forEach((type) => url.searchParams.delete(type));
   Object.entries(activeTagsByType).forEach(([type, tags]) => {
     if (tags.includes(locationSlug)) {
       tags = tags.filter((tag) => tag !== locationSlug);
