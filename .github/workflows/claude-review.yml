@@ -5,8 +5,12 @@ on:
   issue_comment:
     types: [created]
 jobs:
+  # Runs when a PR is opened, or again when someone comments "@claude review" or "@claude re-review" on it
   review:
-    if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]' && !github.event.pull_request.draft
+    if: >-
+      (github.event_name == 'pull_request' && github.actor != 'dependabot[bot]' && !github.event.pull_request.draft)
+      || (github.event_name == 'issue_comment' && github.event.issue.pull_request
+          && (contains(github.event.comment.body, '@claude review') || contains(github.event.comment.body, '@claude re-review')))
     concurrency:
       group: claude-review-${{ github.event.pull_request.number || github.event.issue.number }}
       cancel-in-progress: true
@@ -17,9 +21,12 @@ jobs:
       pull-requests: write
       issues: read
       id-token: write
+    env:
+      PR_NUMBER: ${{ github.event.pull_request.number || github.event.issue.number }}
     steps:
       - uses: actions/checkout@v6
         with:
+          ref: ${{ github.event_name == 'issue_comment' && format('refs/pull/{0}/head', github.event.issue.number) || '' }}
           fetch-depth: 1
       - id: claude
         uses: anthropics/claude-code-action@v1
@@ -28,95 +35,35 @@ jobs:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           prompt: |
             REPO: ${{ github.repository }}
-            PR NUMBER: ${{ github.event.pull_request.number }}
+            PR NUMBER: ${{ env.PR_NUMBER }}
 
             Review this pull request. The PR is already checked out in the current working directory.
 
-            1. Read the PR (`gh pr view ${{ github.event.pull_request.number }}`), its diff
-               (`gh pr diff ${{ github.event.pull_request.number }}`), and the CLAUDE.md files
-               in the root and in the directories of the changed files.
-            2. Look for bugs and CLAUDE.md violations in the changed code. Only report issues you are
+            1. Read the PR with its comments (`gh pr view ${{ env.PR_NUMBER }} --comments`), its review comments
+               (`gh api repos/${{ github.repository }}/pulls/${{ env.PR_NUMBER }}/comments`), its diff
+               (`gh pr diff ${{ env.PR_NUMBER }}`), and the CLAUDE.md files in the root and in the directories
+               of the changed files.
+            2. If Claude reviewed this PR before, check whether each issue raised back then is fixed.
+            3. Look for bugs and CLAUDE.md violations in the changed code. Only report issues you are
                confident are real: code that won't run, clearly wrong logic, or a CLAUDE.md rule you
-               can quote being broken. Skip style, nits, pre-existing issues, and anything a linter would catch.
-            3. Post each issue with `mcp__github_inline_comment__create_inline_comment` (with `confirmed: true`).
-            4. Finish with the structured output:
-               - `outcome`: "issues" if you posted any, "ok" if you found none,
+               can quote being broken. Skip style, nits, pre-existing issues, issues already raised,
+               and anything a linter would catch.
+            4. Post each new issue with `mcp__github_inline_comment__create_inline_comment` (with `confirmed: true`).
+            5. Finish with the structured output:
+               - `outcome`: "issues" if any issues are open (new or unfixed), "ok" if there are none,
                  "skipped" if you decided not to review the PR at all
                - `summary`: Markdown for a PR comment. For "issues", list them briefly.
                  For "ok", say in a sentence or two what you checked. For "skipped", explain exactly why.
+                 If Claude reviewed the PR before, also say which earlier issues are fixed.
 
             Don't post any other GitHub comments, the summary gets posted for you.
           claude_args: |
-            --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr diff:*),Bash(gh pr view:*)"
+            --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh api repos/${{ github.repository }}/pulls/${{ env.PR_NUMBER }}/comments)"
             --json-schema '{"type":"object","properties":{"outcome":{"type":"string","enum":["issues","ok","skipped"]},"summary":{"type":"string"}},"required":["outcome","summary"]}'
       - if: always()
         env:
           GH_TOKEN: ${{ github.token }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
           CLAUDE_OUTCOME: ${{ steps.claude.outcome }}
           STRUCTURED_OUTPUT: ${{ steps.claude.outputs.structured_output }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-        run: |
-          if [ "$CLAUDE_OUTCOME" = success ] && [ -n "$STRUCTURED_OUTPUT" ]; then
-            case $(jq -r .outcome <<< "$STRUCTURED_OUTPUT") in
-              issues) title="found issues" ;;
-              ok) title="no issues found" ;;
-              *) title="skipped" ;;
-            esac
-            summary=$(jq -r .summary <<< "$STRUCTURED_OUTPUT")
-          elif [ "$CLAUDE_OUTCOME" = success ]; then
-            title="skipped"
-            summary="The Claude action exited without running Claude. It does that e.g. on PRs changing this workflow file, which must match the default branch. See the warning in the logs."
-          else
-            title="failed"
-            execution_file="$RUNNER_TEMP/claude-execution-output.json"
-            summary=$(jq -r 'last(.[] | select(.type == "result")) | .result // (.errors // [] | join("\n")) // .subtype' "$execution_file" 2>/dev/null || true)
-            summary="Step outcome: \`$CLAUDE_OUTCOME\`"$'\n\n'"${summary:-Claude produced no result, see the logs.}"
-          fi
-          printf '## Claude review: %s\n\n%s\n\n[Logs](%s)\n' "$title" "$summary" "$RUN_URL" > comment.md
-          gh pr comment "$PR_NUMBER" --body-file comment.md
-
-  # The review above only runs when the PR is opened, so re-reviews
-  # are requested by commenting "@claude review" or "@claude re-review" on the PR
-  re-review:
-    if: >-
-      github.event_name == 'issue_comment'
-      && github.event.issue.pull_request
-      && (contains(github.event.comment.body, '@claude review') || contains(github.event.comment.body, '@claude re-review'))
-    concurrency:
-      group: claude-review-${{ github.event.pull_request.number || github.event.issue.number }}
-      cancel-in-progress: true
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    permissions:
-      contents: read
-      pull-requests: write
-      issues: read
-      id-token: write
-    steps:
-      - uses: actions/checkout@v6
-        with:
-          ref: refs/pull/${{ github.event.issue.number }}/head
-          fetch-depth: 1
-      - uses: anthropics/claude-code-action@v1
-        with:
-          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          prompt: |
-            REPO: ${{ github.repository }}
-            PR NUMBER: ${{ github.event.issue.number }}
-
-            Re-review this pull request. Claude reviewed it before and the author has since pushed changes.
-            The PR head is already checked out in the current working directory.
-
-            1. Read the PR's existing comments and review comments (`gh pr view ${{ github.event.issue.number }} --comments`,
-               `gh api repos/${{ github.repository }}/pulls/${{ github.event.issue.number }}/comments`)
-               to find the issues raised in previous reviews.
-            2. Read the current diff (`gh pr diff ${{ github.event.issue.number }}`) and check whether each previously raised issue is fixed.
-            3. Look for new bugs or CLAUDE.md violations introduced by the changes. Only report issues you are
-               confident are real; skip nits and anything a linter would catch.
-            4. Post each new issue with `mcp__github_inline_comment__create_inline_comment` (with `confirmed: true`).
-            5. Post one `gh pr comment ${{ github.event.issue.number }}` summarizing which earlier issues are fixed, which remain, and how many new ones you found.
-
-            Only post GitHub comments - don't submit review text as messages.
-          claude_args: |
-            --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh api repos/${{ github.repository }}/pulls/${{ github.event.issue.number }}/comments)"
+        run: python3 .github/scripts/claude_review_comment.py
