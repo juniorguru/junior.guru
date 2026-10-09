@@ -48,14 +48,18 @@ jobs:
                (`gh api repos/${{ github.repository }}/pulls/${{ env.PR_NUMBER }}/comments`), its diff
                (`gh pr diff ${{ env.PR_NUMBER }}`), and the CLAUDE.md files in the root and in the directories
                of the changed files.
-            2. If Claude reviewed this PR before, check whether each issue raised back then is fixed.
-            3. Look for bugs, CLAUDE.md violations, and changes that will hurt long-term maintainability
+            2. Most of the project's coding and writing guidelines live in skills. Read the frontmatter
+               of every `.claude/skills/*/SKILL.md`, then fully read each skill relevant to the changed files
+               (e.g. `code` for any code change), including the files it references. Treat their rules
+               like CLAUDE.md rules.
+            3. If Claude reviewed this PR before, check whether each issue raised back then is fixed.
+            4. Look for bugs, CLAUDE.md or skill violations, and changes that will hurt long-term maintainability
                of the architecture (e.g. duplicated logic, wrong layer, needless complexity). Only report issues
-               you are confident are real: code that won't run, clearly wrong logic, a CLAUDE.md rule you can
-               quote being broken, or a design choice you'd regret in a year. Skip style, nits, pre-existing issues,
+               you are confident are real: code that won't run, clearly wrong logic, a CLAUDE.md or skill rule
+               you can quote being broken, or a design choice you'd regret in a year. Skip style, nits, pre-existing issues,
                issues already raised, missing handling of unlikely edge cases, and anything a linter would catch.
-            4. Post each new issue with `mcp__github_inline_comment__create_inline_comment` (with `confirmed: true`).
-            5. Finish with the structured output:
+            5. Post each new issue with `mcp__github_inline_comment__create_inline_comment` (with `confirmed: true`).
+            6. Finish with the structured output:
                - `outcome`: "issues" if any issues are open (new or unfixed), "ok" if there are none,
                  "skipped" if you decided not to review the PR at all
                - `summary`: Markdown for a PR comment. For "issues", list them briefly.
