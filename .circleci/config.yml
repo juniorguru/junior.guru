@@ -19,6 +19,16 @@ commands:
             echo $PATH
             which uv
             uv --version
+  # Dependencies aren't part of the workspace, because restoring them from
+  # cache is way faster than attaching them as a huge workspace layer
+  install-dependencies:
+    steps:
+      - use-updated-uv
+      - restore_cache:
+          key: deps-{{ checksum "uv.lock" }}-{{ checksum "package-lock.json" }}
+      - run:
+          name: Install Python dependencies
+          command: uv sync
   enable-github-pushing:
     steps:
       - add_ssh_keys:
@@ -80,12 +90,13 @@ jobs:
       - run:
           name: Snapshot files
           command: uv run jg data snapshot
+      - run:
+          name: Remove dependencies from workspace
+          command: rm -rf .venv node_modules
       - persist_to_workspace:
           root: "~"
           paths:
             - bin
-            - .cache/uv
-            - .cache/ms-playwright
             - project
 
   test:
@@ -93,7 +104,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - use-updated-uv
+      - install-dependencies
       - run:
           name: Test
           command: uv run jg test --verbose
@@ -105,7 +116,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - use-updated-uv
+      - install-dependencies
       - run:
           name: Cache stats
           command: uv run jg cache tags
@@ -126,7 +137,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - use-updated-uv
+      - install-dependencies
       - run:
           name: Load data
           command: uv run jg data load --move
@@ -149,7 +160,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - use-updated-uv
+      - install-dependencies
       - run:
           name: Snapshot files
           command: uv run jg data snapshot
@@ -173,7 +184,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - use-updated-uv
+      - install-dependencies
       - run:
           name: Load data
           command: uv run jg data load --move
@@ -220,7 +231,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - use-updated-uv
+      - install-dependencies
       - run:
           name: Build web
           command: uv run jg web build
@@ -237,7 +248,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - use-updated-uv
+      - install-dependencies
       - run:
           name: Reset repo
           command: uv run jg reset-repo
@@ -254,7 +265,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - use-updated-uv
+      - install-dependencies
       - run:
           name: Backup data
           command: uv run jg backup data
@@ -272,7 +283,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - use-updated-uv
+      - install-dependencies
       - enable-github-pushing
       - run:
           name: Deploy to GitHub Pages
@@ -283,7 +294,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - use-updated-uv
+      - install-dependencies
       - run: uv run jg check-docs --no-build
 
   check-links:
@@ -309,7 +320,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - use-updated-uv
+      - install-dependencies
       - run: uv run jg check-bot
 
   check-sponsors:
@@ -317,7 +328,7 @@ jobs:
     steps:
       - attach_workspace:
           at: "~"
-      - use-updated-uv
+      - install-dependencies
       - run: uv run jg check-sponsors
 
 workflows:
