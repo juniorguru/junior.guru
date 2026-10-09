@@ -1,5 +1,6 @@
 ---
-title: Katalog poskytovatelů kurzů programování a testování
+title: Katalog kurzů programování a testování s recenzemi
+description: Nezávislý katalog kurzů programování a testování. Recenze a zkušenosti absolventů z klubu junior.guru. Vyber si rekvalifikaci podle lidí, ne podle reklam.
 ---
 
 {% from 'macros.html' import link_card, note, lead with context %}
