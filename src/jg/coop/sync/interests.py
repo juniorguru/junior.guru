@@ -7,6 +7,7 @@ import yaml
 from discord import ChannelType, Thread
 from discord.errors import Forbidden
 from pydantic import BaseModel, HttpUrl, computed_field, field_validator
+from tenacity import retry_if_exception_type
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
@@ -18,6 +19,7 @@ from jg.coop.lib.discord_club import (
     parse_channel_link,
 )
 from jg.coop.lib.mutations import mutating_discord
+from jg.coop.lib.retrying import retry
 from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubChannel, ClubMessage, ClubUser
@@ -107,7 +109,7 @@ async def main(config_path: Path, tag: str, debug_user: int | None):
         raise ValueError(f"Configured interest roles not found: {extra_ids}")
 
     # Ensure roles have icons
-    async with httpx2.AsyncClient() as http_client:
+    async with httpx2.AsyncClient(timeout=httpx2.Timeout(30.0)) as http_client:
         for role_id, role in interest_roles.items():
             icon_path = ICONS_DIR / f"{role_id}.svg"
             if icon_path.exists():
@@ -116,9 +118,7 @@ async def main(config_path: Path, tag: str, debug_user: int | None):
                 config_icon = config_roles[role_id].icon
                 icon_url = ICON_URLS[config_icon.set].format(slug=config_icon.slug)
                 logger.info(f"Fetching {role.interest_name!r} icon from {icon_url}")
-                response = await http_client.get(icon_url)
-                response.raise_for_status()
-                icon_path.write_bytes(response.content)
+                icon_path.write_bytes(await download_icon(http_client, icon_url))
             role.icon_path = icon_path.relative_to(IMAGES_DIR)
             role.save()
 
@@ -203,6 +203,13 @@ async def main(config_path: Path, tag: str, debug_user: int | None):
         )
     if members_interests:
         discord_task.run(sync_interests, members_interests)
+
+
+@retry(retry=retry_if_exception_type((httpx2.RequestError, httpx2.HTTPStatusError)))
+async def download_icon(client: httpx2.AsyncClient, url: str) -> bytes:
+    response = await client.get(url)
+    response.raise_for_status()
+    return response.content
 
 
 async def sync_interests(client: ClubClient, members_interests: list[MemberInterests]):
