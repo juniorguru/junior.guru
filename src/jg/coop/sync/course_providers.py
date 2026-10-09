@@ -21,6 +21,8 @@ YAML_DIR_PATH = Path("src/jg/coop/data/course_providers")
 
 STRING_LENGTH_SEO_LIMIT = 150
 
+TITLE_LENGTH_SEO_LIMIT = 60
+
 
 logger = loggers.from_path(__file__)
 
@@ -149,30 +151,36 @@ def raise_if_too_long(fn: Callable[..., str]) -> Callable[..., str]:
     return wrapper
 
 
-@raise_if_too_long
 def compile_page_title(name: str) -> str:
-    if name.lower().startswith("s"):
-        return f"Zkušenosti se {name}"
-    return f"Zkušenosti s {name}"
+    """
+    People search for course reviews using the word "recenze", so the title
+    should contain it. Search engines truncate long titles, hence the fallback.
+    """
+    for title in [f"{name}: recenze a zkušenosti absolventů", f"{name}: recenze"]:
+        if len(title) <= TITLE_LENGTH_SEO_LIMIT:
+            return title
+    raise ValueError(
+        f"Page title for {name!r} has more than {TITLE_LENGTH_SEO_LIMIT} characters"
+    )
 
 
 @raise_if_too_long
 def compile_page_description(name: str, extra_questions: list | None = None) -> str:
-    questions = [
-        f"Vyplatí se kurzy programování u {name}?",
-        "Co říkají absolventi?",
+    texts = [
+        f"Recenze a zkušenosti absolventů {name}.",
+        "Vyplatí se?",
         "Je to vhodné jako rekvalifikace?",
     ]
     if extra_questions:
-        questions += extra_questions
-    return " ".join(questions)
+        texts += extra_questions
+    return " ".join(texts)
 
 
 @raise_if_too_long
 def compile_page_lead(name: str, extra_questions: list | None = None) -> str:
     questions = [
         f"Vyplatí se {name}?",
-        "Hledáš někoho, kdo s tím má zkušenosti?",
+        "Hledáš recenze od lidí, kteří s tím mají zkušenosti?",
         "Je to vhodné jako rekvalifikace?",
     ]
     if extra_questions:
