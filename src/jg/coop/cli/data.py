@@ -190,6 +190,10 @@ def merge_databases(path_from: Path, path_to: Path):
     logger["db"].info(f"Merging {path_from} to {path_to}")
     db_from, db_to = Database(path_from), Database(path_to)
 
+    # each row gets written in its own transaction, so fsync on every commit
+    # would make the merge very slow, and a crash fails the whole CI job anyway
+    db_to.execute("PRAGMA synchronous = OFF")
+
     logger["db"].info("Applying schema")
     db_to.executescript(make_schema_idempotent(db_from.schema))
 
