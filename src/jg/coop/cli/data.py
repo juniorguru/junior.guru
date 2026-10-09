@@ -19,6 +19,8 @@ SNAPSHOT_FILE = ".persist-to-workspace-snapshot"
 
 PERSIST_DIR = "persist-to-workspace"
 
+MERGE_SOURCE_ALIAS = "merge_source"
+
 SNAPSHOT_EXCLUDE = [
     ".git",
     "backups",
@@ -196,6 +198,7 @@ def merge_databases(path_from: Path, path_to: Path):
 
     logger["db"].info("Applying schema")
     db_to.executescript(make_schema_idempotent(db_from.schema))
+    db_to.attach(MERGE_SOURCE_ALIAS, path_from)
 
     for table_from in db_from.tables:
         name = table_from.name
@@ -244,7 +247,7 @@ def get_row_updates(row_from, row_to) -> dict:
 def merge_tables(table_from: Table, table_to: Table):
     logger_t = logger["db"][table_from.name]
 
-    for row_from in table_from.rows:
+    for row_from in get_changed_rows(table_from, table_to):
         try:
             pks = [row_from[pk] for pk in table_from.pks]
         except KeyError:
@@ -267,6 +270,17 @@ def merge_tables(table_from: Table, table_to: Table):
             if updates:
                 logger_t.debug(f"Updating {pks!r} with {pformat(updates)}")
                 table_to.update(pks, updates)
+
+
+def get_changed_rows(table_from: Table, table_to: Table) -> list[dict]:
+    # rows which already exist in the target as they are would be a no-op,
+    # and comparing them one by one in Python is slow for large tables
+    columns = ", ".join(f"[{column}]" for column in table_from.columns_dict)
+    sql = (
+        f"SELECT {columns} FROM {MERGE_SOURCE_ALIAS}.[{table_from.name}]"
+        f" EXCEPT SELECT {columns} FROM main.[{table_to.name}]"
+    )
+    return list(table_to.db.query(sql))
 
 
 def is_diskcache(table: Table) -> bool:
