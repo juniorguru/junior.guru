@@ -320,6 +320,22 @@ jobs:
       - use-updated-uv
       - run: uv run jg check-sponsors
 
+  # Requires:
+  #
+  # $GITHUB_DISPATCH_TOKEN (fine-grained, Actions: write on this repo)
+  report-nightly:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - run:
+          name: Trigger Nightly Check on GitHub
+          command: |
+            curl --fail-with-body -sS -X POST \
+              -H "Authorization: Bearer $GITHUB_DISPATCH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              https://api.github.com/repos/juniorguru/junior.guru/actions/workflows/nightly-check.yml/dispatches \
+              -d "{\"ref\": \"main\", \"inputs\": {\"circleci_workflow_id\": \"$CIRCLE_WORKFLOW_ID\"}}"
+
 workflows:
   push:
     jobs:
@@ -387,6 +403,12 @@ workflows:
       - deploy-web:
           requires:
             - web
+      - report-nightly:
+          requires:
+            - check-bot: terminal
+            - check-sponsors: terminal
+            - backup: terminal
+            - check-links: terminal
     triggers:
       - schedule:
           cron: "0 4 * * *"
