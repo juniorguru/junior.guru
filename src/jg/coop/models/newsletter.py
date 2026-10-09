@@ -90,6 +90,11 @@ def edit_content_html(content_html: str) -> str:
     content_html = re.sub(r"(<h2[^>]*>)(.*?)(</h2>)", _strip_emoji, content_html)
     content_html = re.sub(r"(<h3[^>]*>)(.*?)(</h3>)", _strip_emoji, content_html)
 
+    # add trailing slash to course provider URLs to avoid redirects
+    content_html = re.sub(
+        r'(href="https://junior\.guru/courses/[\w-]+)(?=["?#])', r"\1/", content_html
+    )
+
     return content_html
 
 

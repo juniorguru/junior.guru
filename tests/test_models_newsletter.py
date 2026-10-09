@@ -100,3 +100,20 @@ def test_edit_content_html_strips_emoji_from_h2():
     ).strip()
 
     assert edit_content_html(body) == expected
+
+
+def test_edit_content_html_adds_trailing_slash_to_course_urls():
+    body = (
+        '<a href="https://junior.guru/courses/engeto">Engeto</a> '
+        '<a href="https://junior.guru/courses/42prague?utm_source=x">42</a> '
+        '<a href="https://junior.guru/courses/czechitas/">Czechitas</a> '
+        '<a href="https://junior.guru/courses/">Kurzy</a>'
+    )
+    expected = (
+        '<a href="https://junior.guru/courses/engeto/">Engeto</a> '
+        '<a href="https://junior.guru/courses/42prague/?utm_source=x">42</a> '
+        '<a href="https://junior.guru/courses/czechitas/">Czechitas</a> '
+        '<a href="https://junior.guru/courses/">Kurzy</a>'
+    )
+
+    assert edit_content_html(body) == expected

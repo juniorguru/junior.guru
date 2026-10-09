@@ -73,7 +73,7 @@ class CourseProvider(BaseModel):
 
     @property
     def catalogue_url(self) -> str:
-        return f"https://junior.guru/courses/{self.slug}"
+        return f"https://junior.guru/courses/{self.slug}/"
 
     @property
     def page_url(self) -> str:
