@@ -1,4 +1,4 @@
-"""Finds today's CircleCI nightly and tells the GitHub workflow whether Claude should investigate it"""
+"""Finds the CircleCI nightly and tells the GitHub workflow whether Claude should investigate it"""
 
 import json
 import os
@@ -9,6 +9,11 @@ from datetime import UTC, datetime
 
 API_URL = "https://circleci.com/api/v2"
 PROJECT_URL_PATH = "gh/juniorguru/junior.guru"
+
+# The job which triggers this check, it is still running while the check runs
+REPORT_JOB = "report-nightly"
+
+UNFINISHED_STATUSES = ("running", "queued", "not_running", "blocked", "on_hold")
 
 
 def get(path: str) -> dict:
@@ -25,7 +30,7 @@ def find_nightly(date: str) -> dict:
             if workflow["name"] == "nightly" and workflow["created_at"].startswith(
                 date
             ):
-                return {"pipeline_number": pipeline["number"], **workflow}
+                return workflow
     sys.exit(f"No nightly found for {date}")
 
 
@@ -35,19 +40,29 @@ def output(**values: str) -> None:
 
 
 def main() -> None:
-    date = datetime.now(UTC).date().isoformat()
-    workflow = find_nightly(date)
-    if workflow["status"] in ("running", "on_hold"):
+    if workflow_id := os.environ.get("CIRCLECI_WORKFLOW_ID"):
+        workflow = get(f"/workflow/{workflow_id}")
+    else:
+        workflow = find_nightly(datetime.now(UTC).date().isoformat())
+    date = workflow["created_at"][:10]
+
+    jobs = [
+        job
+        for job in get(f"/workflow/{workflow['id']}/job")["items"]
+        if job["name"] != REPORT_JOB
+    ]
+    if any(job["status"] in UNFINISHED_STATUSES for job in jobs):
         sys.exit(f"Nightly for {date} has not finished yet")
 
     url = f"https://app.circleci.com/pipelines/{PROJECT_URL_PATH}/{workflow['pipeline_number']}/workflows/{workflow['id']}"
-    print(f"Nightly {workflow['status']}: {url}")
-    jobs = get(f"/workflow/{workflow['id']}/job")["items"]
-    failed = sorted(job["name"] for job in jobs if job["status"] == "failed")
+    failed = sorted(
+        job["name"] for job in jobs if job["status"] not in ("success", "not_run")
+    )
+    print(f"Nightly {date}: {url}")
     print(f"Failed jobs: {', '.join(failed) or 'none'}")
 
     output(
-        investigate=str(workflow["status"] != "success").lower(),
+        investigate=str(any(job["status"] != "success" for job in jobs)).lower(),
         date=date,
         url=url,
         failed=",".join(failed),
