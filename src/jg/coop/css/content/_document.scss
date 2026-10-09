@@ -79,10 +79,6 @@
   color: $primary;
 }
 
-.document > h1 .headerlink {
-  @extend .visually-hidden;
-}
-
 .document > h2:target,
 .document > h3:target,
 .document > h4:target {
