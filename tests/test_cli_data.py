@@ -1,8 +1,10 @@
+from pathlib import Path
 from textwrap import dedent
 
 import pytest
+from sqlite_utils import Database
 
-from jg.coop.cli.data import get_row_updates, make_schema_idempotent
+from jg.coop.cli.data import get_row_updates, make_schema_idempotent, merge_databases
 
 
 def test_make_schema_idempotent():
@@ -80,3 +82,50 @@ def test_get_row_updates_raises_conflict(row_from, row_to):
 def test_get_row_updates_raises_inconsistence(row_from, row_to):
     with pytest.raises(ValueError):
         get_row_updates(row_from, row_to)
+
+
+def create_db(path: Path, rows: list[dict]) -> None:
+    db = Database(path)
+    db.execute(
+        'CREATE TABLE "items" ("id" INTEGER NOT NULL PRIMARY KEY, "name" TEXT NOT NULL, "note" TEXT)'
+    )
+    db["items"].insert_all(rows)
+    db.close()
+
+
+def test_merge_databases(tmp_path: Path):
+    path_from, path_to = tmp_path / "from.db", tmp_path / "to.db"
+    create_db(
+        path_from,
+        [
+            {"id": 1, "name": "same", "note": None},
+            {"id": 2, "name": "filled", "note": "new"},
+            {"id": 3, "name": "added", "note": None},
+        ],
+    )
+    create_db(
+        path_to,
+        [
+            {"id": 1, "name": "same", "note": None},
+            {"id": 2, "name": "filled", "note": None},
+            {"id": 4, "name": "kept", "note": None},
+        ],
+    )
+
+    merge_databases(path_from, path_to)
+
+    assert list(Database(path_to)["items"].rows_where(order_by="id")) == [
+        {"id": 1, "name": "same", "note": None},
+        {"id": 2, "name": "filled", "note": "new"},
+        {"id": 3, "name": "added", "note": None},
+        {"id": 4, "name": "kept", "note": None},
+    ]
+
+
+def test_merge_databases_raises_conflict(tmp_path: Path):
+    path_from, path_to = tmp_path / "from.db", tmp_path / "to.db"
+    create_db(path_from, [{"id": 1, "name": "a", "note": None}])
+    create_db(path_to, [{"id": 1, "name": "b", "note": None}])
+
+    with pytest.raises(RuntimeError):
+        merge_databases(path_from, path_to)
