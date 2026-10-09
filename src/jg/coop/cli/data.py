@@ -247,6 +247,7 @@ def get_row_updates(row_from, row_to) -> dict:
 def merge_tables(table_from: Table, table_to: Table):
     logger_t = logger["db"][table_from.name]
 
+    new_rows = []
     for row_from in get_changed_rows(table_from, table_to):
         try:
             pks = [row_from[pk] for pk in table_from.pks]
@@ -258,7 +259,7 @@ def merge_tables(table_from: Table, table_to: Table):
             row_to = table_to.get(pks)
         except NotFoundError:
             logger_t.debug(f"Inserting {pks!r}")
-            table_to.insert(row_from, pk=table_from.pks)
+            new_rows.append(row_from)
         else:
             try:
                 updates = get_row_updates(row_from, row_to)
@@ -270,6 +271,7 @@ def merge_tables(table_from: Table, table_to: Table):
             if updates:
                 logger_t.debug(f"Updating {pks!r} with {pformat(updates)}")
                 table_to.update(pks, updates)
+    table_to.insert_all(new_rows, pk=table_from.pks)
 
 
 def get_changed_rows(table_from: Table, table_to: Table) -> list[dict]:
