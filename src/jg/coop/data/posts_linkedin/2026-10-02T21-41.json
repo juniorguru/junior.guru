@@ -18,6 +18,39 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Šimon",
+        "lastName": "Kořený",
+        "occupation": "Product Owner & Dad | Building great products, raising great humans",
+        "id": "283596586",
+        "publicId": "fusatytata",
+        "profileId": "ACoAABDnVyoBAtj2jNSQ0mKJB84EeAmS3DoPJ5k"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Artem",
+        "lastName": "Zakharchenko",
+        "occupation": "Software engineer & Educator",
+        "id": "479400907",
+        "publicId": "artem-zakharchenko",
+        "profileId": "ACoAAByTE8sBD2jc0LWL1WTudVD1bG_e2hh-aG0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Vladimír",
         "lastName": "Gorej",
         "occupation": "Senior Full-Stack Engineer & API Tooling Specialist | Freelance, Contract & Fractional Roles | TypeScript, Node.js, Python, OpenAPI & Arazzo | Building API tools for developers and AI agents",
@@ -27,8 +60,8 @@
       }
     }
   ],
-  "numShares": 0,
-  "numLikes": 1,
+  "numShares": 1,
+  "numLikes": 4,
   "numComments": 0,
   "canReact": true,
   "canPostComments": true,

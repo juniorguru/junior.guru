@@ -51,6 +51,61 @@
   "comments": [],
   "reactions": [
     {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Filip",
+        "lastName": "Peška",
+        "occupation": "AI Engineer & Lecturer",
+        "id": "808492282",
+        "publicId": "peskaf",
+        "profileId": "ACoAADAwnPoBIe8kQvcNFTDAy95JH_zZY1oc90M"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Adéla",
+        "lastName": "Pavlun",
+        "occupation": "Somatic Guide & Writer | TRE® · SE® | Exploring human connection, safety and growth",
+        "id": "59184567",
+        "publicId": "adelapavlun",
+        "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Barbora",
+        "lastName": "Lendacká",
+        "occupation": "Frontend developer | lifelong hands-on learner 📚",
+        "id": "244185326",
+        "publicId": "barbora-lendacka",
+        "profileId": "ACoAAA6N-O4BkRvPPyIgRFUKOlr5LSE8hcrD3UQ"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Kraus",
+        "occupation": "Adastra FE Competency Lead | Mentoring Devs & AI | Production-ready FE developer course author | Founder, ReactivDevs",
+        "id": "336139143",
+        "publicId": "jakub-kraus-b736a494",
+        "profileId": "ACoAABQJE4cBMm_dlzsMuy1arbIjZ_etPiLADOY"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vendula",
+        "lastName": "Krajíčková",
+        "occupation": "Frontend vývojářka 🚀 | React, Next.js, TypeScript | Ex-BlueGhost 👻💙",
+        "id": "1145616814",
+        "publicId": "vendula-krajickova",
+        "profileId": "ACoAAERIua4Bk44zfiGE6PT1BmSNoKdqiNkFOYc"
+      }
+    },
+    {
       "type": "PRAISE",
       "profile": {
         "firstName": "Šimon",
@@ -104,32 +159,10 @@
         "publicId": "jan-rysanek",
         "profileId": "ACoAAAxW9osBZq3gE7vuMaPMFI_ls-payusR-S4"
       }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Monika",
-        "lastName": "Kasprij",
-        "occupation": "QA Engineer | Business & Integration Testing | Quality Ownership | QA Analyst | Problem & Incident Manager",
-        "id": "217455628",
-        "publicId": "monikakasprij",
-        "profileId": "ACoAAAz2HAwBFdYYmQVPJYxtxeuP85EXmvLAX5M"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Jan",
-        "lastName": "Szotkowski",
-        "occupation": "Frontend Tech Lead",
-        "id": "636707625",
-        "publicId": "janszotkowski",
-        "profileId": "ACoAACXzYykBfAeG2Vie2YQ61wFKP14L-RK2ilk"
-      }
     }
   ],
   "numShares": 1,
-  "numLikes": 7,
+  "numLikes": 12,
   "numComments": 0,
   "canReact": true,
   "canPostComments": true,

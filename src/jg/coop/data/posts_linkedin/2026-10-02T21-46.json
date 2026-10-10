@@ -18,6 +18,17 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Táňa",
         "lastName": "Váchová",
         "occupation": "📌virtuální asistentka ⊃ administrativa ⊃ podpora",
@@ -105,7 +116,7 @@
     }
   ],
   "numShares": 0,
-  "numLikes": 8,
+  "numLikes": 9,
   "numComments": 0,
   "canReact": true,
   "canPostComments": true,

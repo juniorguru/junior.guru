@@ -116,7 +116,7 @@
       "author": {
         "firstName": "Marketa",
         "lastName": "Willis",
-        "occupation": "Frontend developer | React | Typescript | Mentor",
+        "occupation": "Kariérní positioning pro ženy s nelineární kariérou 🟣 Přetvoř svou pestrou minulost v hodnotu, za kterou trh platí 🟣 10+ let mentoring, 6 let softwarový vývoj, 5 let kariérní strategie",
         "id": "690320871",
         "publicId": "marketa-willis",
         "profileId": "ACoAACkldecB7E9DWErMM56bPMpJ3V49koGflx0",
@@ -156,6 +156,17 @@
     }
   ],
   "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Filip",
+        "lastName": "Průdek",
+        "occupation": "Nefunguje mi to → Super, už to jede | Feed specialista & Customer Success @Mergado",
+        "id": "904009499",
+        "publicId": "filip-prudek",
+        "profileId": "ACoAADXiFxsBDrfvLqXfc46dYlgCQklCaExwUMY"
+      }
+    },
     {
       "type": "LIKE",
       "profile": {
@@ -227,7 +238,7 @@
       "profile": {
         "firstName": "Marketa",
         "lastName": "Willis",
-        "occupation": "Frontend developer | React | Typescript | Mentor",
+        "occupation": "Kariérní positioning pro ženy s nelineární kariérou 🟣 Přetvoř svou pestrou minulost v hodnotu, za kterou trh platí 🟣 10+ let mentoring, 6 let softwarový vývoj, 5 let kariérní strategie",
         "id": "690320871",
         "publicId": "marketa-willis",
         "profileId": "ACoAACkldecB7E9DWErMM56bPMpJ3V49koGflx0"
@@ -254,21 +265,10 @@
         "publicId": "martin-rapavy",
         "profileId": "ACoAABxSudQBHuhA8cJ5OL9XXk9jIvrhocisM3w"
       }
-    },
-    {
-      "type": "EMPATHY",
-      "profile": {
-        "firstName": "Vladimír",
-        "lastName": "Gorej",
-        "occupation": "Senior Full-Stack Engineer & API Tooling Specialist | Freelance, Contract & Fractional Roles | TypeScript, Node.js, Python, OpenAPI & Arazzo | Building API tools for developers and AI agents",
-        "id": "58899881",
-        "publicId": "vladimirgorej",
-        "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
-      }
     }
   ],
   "numShares": 1,
-  "numLikes": 13,
+  "numLikes": 14,
   "numComments": 8,
   "canReact": true,
   "canPostComments": true,
