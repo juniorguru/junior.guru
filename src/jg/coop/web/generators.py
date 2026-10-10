@@ -28,10 +28,6 @@ REDIRECTS_YAML_PATH = Path("src/jg/coop/data/redirects.yml")
 
 DOCS_DIR = Path("src/jg/coop/web/generated_docs")
 
-TITLE_SUFFIX = " | junior.guru"
-
-TITLE_MAX_LENGTH = 60
-
 
 class GeneratedDocument(BaseModel):
     model_config = ConfigDict(extra="forbid")
@@ -135,9 +131,6 @@ def generate_job_pages() -> Generator[GeneratedDocument]:
 def generate_event_pages() -> Generator[GeneratedDocument]:
     archive_size = Event.count_recording()
     for event in Event.listing():
-        title = f"{event.bio_name} – {event.title}"
-        if len(title + TITLE_SUFFIX) <= TITLE_MAX_LENGTH:
-            title += TITLE_SUFFIX
         description = (
             "Klub junior.guru pořádá vzdělávací akce, online na svém Discordu. "
             "Mohou to být přednášky, stream, Q&A, AMA, webináře… "
@@ -146,7 +139,7 @@ def generate_event_pages() -> Generator[GeneratedDocument]:
         yield GeneratedDocument(
             path=f"events/{event.id}.md",
             meta=dict(
-                title=title,
+                title=f"{event.bio_name} – {event.title}",
                 description=description,
                 template="main_content_detail.html",
                 event_id=event.id,
