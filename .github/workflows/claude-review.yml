@@ -5,12 +5,54 @@ on:
   issue_comment:
     types: [created]
 jobs:
-  # Runs when a PR is opened, or again when someone comments "@claude review" or "@claude re-review" on it
-  review:
+  # Runs when a PR is opened, or again when someone comments "@claude review" or "@claude re-review" on it.
+  # Prepares code of the PR's dependencies for the review. Installing them runs their code, so this job
+  # gets no secrets and no write permissions, and runs on a separate runner from the review.
+  deps:
     if: >-
       (github.event_name == 'pull_request' && github.actor != 'dependabot[bot]' && !github.event.pull_request.draft)
       || (github.event_name == 'issue_comment' && github.event.issue.pull_request
+          && contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)
           && (contains(github.event.comment.body, '@claude review') || contains(github.event.comment.body, '@claude re-review')))
+    concurrency:
+      group: claude-review-deps-${{ github.event.pull_request.number || github.event.issue.number }}
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event_name == 'issue_comment' && format('refs/pull/{0}/head', github.event.issue.number) || '' }}
+          fetch-depth: 1
+          persist-credentials: false
+      # Original files of added or changed dependencies, for the supply-chain audit. Must be
+      # uploaded before anything gets installed, so that no package code can tamper with them.
+      - run: |
+          git fetch --depth=1 origin ${{ github.event.repository.default_branch }}
+          python3 .github/scripts/download_new_deps.py FETCH_HEAD new-deps
+      - uses: actions/upload-artifact@v7
+        with:
+          name: new-deps
+          path: new-deps
+          retention-days: 1
+      - uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: false
+      - run: uv sync --frozen
+      - run: >-
+          rsync -a --prune-empty-dirs --include='*/'
+          --include='*.py' --include='*.pyi' --include='*.pth' --include='METADATA' --include='entry_points.txt'
+          --exclude='*' .venv/lib/python*/site-packages/ site-packages/
+      - uses: actions/upload-artifact@v7
+        with:
+          name: site-packages
+          path: site-packages
+          retention-days: 1
+  review:
+    needs: deps
+    if: ${{ !cancelled() && needs.deps.result != 'skipped' }}
     concurrency:
       group: claude-review-${{ github.event.pull_request.number || github.event.issue.number }}
       cancel-in-progress: true
@@ -28,6 +70,11 @@ jobs:
         with:
           ref: ${{ github.event_name == 'issue_comment' && format('refs/pull/{0}/head', github.event.issue.number) || '' }}
           fetch-depth: 1
+      # The deps job may have failed, but the review should happen anyway
+      - uses: actions/download-artifact@v8
+        continue-on-error: true
+        with:
+          path: review-deps
       - id: claude
         uses: anthropics/claude-code-action@v1
         timeout-minutes: 15
@@ -43,6 +90,11 @@ jobs:
             what keeps the whole architecture simple and maintainable in the long run.
 
             Review this pull request. The PR is already checked out in the current working directory.
+            CI runs the tests, so don't worry about them. The `review-deps` directory isn't part of the PR:
+            - `review-deps/site-packages/` has the Python code of all dependencies as the PR installs them.
+            - `review-deps/new-deps/` has the original, uninstalled files of each Python or npm package
+              the PR adds or changes, listed in `review-deps/new-deps/index.md`.
+            If either directory is missing, preparing it failed. Mention that in the summary.
 
             1. Read the PR with its comments (`gh pr view ${{ env.PR_NUMBER }} --comments`), its review comments
                (`gh api repos/${{ github.repository }}/pulls/${{ env.PR_NUMBER }}/comments`), its diff
@@ -52,14 +104,26 @@ jobs:
                of every `.claude/skills/*/SKILL.md`, then fully read each skill relevant to the changed files
                (e.g. `code` for any code change), including the files it references. Treat their rules
                like CLAUDE.md rules.
-            3. If Claude reviewed this PR before, check whether each issue raised back then is fixed.
-            4. Look for bugs, CLAUDE.md or skill violations, and changes that will hurt long-term maintainability
+            3. Verify your assumptions instead of relying on memory: whenever the change depends on
+               a third-party API, read its source in `review-deps/site-packages/`, and look up its
+               official docs on the web if the source isn't enough.
+            4. Audit each package listed in `review-deps/new-deps/index.md` for signs of a malicious
+               or compromised package: code running at install or import time (`setup.py`, custom build
+               backends, `.pth` files, npm `preinstall`, `install` or `postinstall` scripts), obfuscated
+               or encoded code, `exec` or `eval` of dynamic strings, reading env variables, credentials or
+               files unrelated to the package's purpose, unexpected network calls, binaries that don't fit
+               the package, a name resembling a popular package, or a source other than the usual registry.
+               Check its registry history with WebFetch (`https://pypi.org/pypi/<name>/json` or
+               `https://registry.npmjs.org/<name>`) for a very new package, a recent change of maintainers,
+               or an odd version jump. Report anything suspicious as an issue on the lockfile.
+            5. If Claude reviewed this PR before, check whether each issue raised back then is fixed.
+            6. Look for bugs, CLAUDE.md or skill violations, and changes that will hurt long-term maintainability
                of the architecture (e.g. duplicated logic, wrong layer, needless complexity). Only report issues
                you are confident are real: code that won't run, clearly wrong logic, a CLAUDE.md or skill rule
                you can quote being broken, or a design choice you'd regret in a year. Skip style, nits, pre-existing issues,
                issues already raised, missing handling of unlikely edge cases, and anything a linter would catch.
-            5. Post each new issue with `mcp__github_inline_comment__create_inline_comment` (with `confirmed: true`).
-            6. Finish with the structured output:
+            7. Post each new issue with `mcp__github_inline_comment__create_inline_comment` (with `confirmed: true`).
+            8. Finish with the structured output:
                - `outcome`: "issues" if any issues are open (new or unfixed), "ok" if there are none,
                  "skipped" if you decided not to review the PR at all
                - `summary`: Markdown for a PR comment. For "issues", list them briefly.
@@ -68,7 +132,7 @@ jobs:
 
             Don't post any other GitHub comments, the summary gets posted for you.
           claude_args: |
-            --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh api repos/${{ github.repository }}/pulls/${{ env.PR_NUMBER }}/comments)"
+            --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh api repos/${{ github.repository }}/pulls/${{ env.PR_NUMBER }}/comments),WebSearch,WebFetch"
             --json-schema '{"type":"object","properties":{"outcome":{"type":"string","enum":["issues","ok","skipped"]},"summary":{"type":"string"}},"required":["outcome","summary"]}'
       - if: always()
         env:
