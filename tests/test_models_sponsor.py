@@ -87,12 +87,27 @@ def test_handbook_listing(
     tier_mid: SponsorTier,
     tier_top: SponsorTier,
 ):
-    create_sponsor("banana", tier=tier_low)
-    create_sponsor("apple", tier=tier_mid)
+    sponsor1 = create_sponsor("banana", tier=tier_low)
+    sponsor2 = create_sponsor("apple", tier=tier_mid)
     sponsor3 = create_sponsor("orange", tier=tier_top)
     sponsor4 = create_sponsor("lemon", tier=tier_top)
 
-    assert list(Sponsor.handbook_listing()) == [sponsor4, sponsor3]
+    assert Sponsor.handbook_listing() == [sponsor4, sponsor3, sponsor2, sponsor1]
+
+
+def test_handbook_listing_too_many(
+    test_db: SqliteDatabase,
+    tier_low: SponsorTier,
+    tier_top: SponsorTier,
+):
+    create_sponsor("banana", tier=tier_low)
+    create_sponsor("apple", tier=tier_low)
+    create_sponsor("orange", tier=tier_top)
+    create_sponsor("lemon", tier=tier_top)
+    create_sponsor("avocado", tier=tier_top)
+
+    with pytest.raises(ValueError):
+        Sponsor.handbook_listing()
 
 
 def test_club_listing(

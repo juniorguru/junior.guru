@@ -18,6 +18,9 @@ from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubUser
 
 
+HANDBOOK_MAX_SPONSORS = 4
+
+
 class SponsorTier(BaseModel):
     name = CharField()
     priority = IntegerField()
@@ -117,9 +120,14 @@ class Sponsor(BaseModel):
         ]
 
     @classmethod
-    def handbook_listing(cls) -> Iterable[Self]:
-        for _, sponsors in cls.tier_grouping():
-            return sponsors
+    def handbook_listing(cls) -> list[Self]:
+        sponsors = list(cls.listing())
+        if len(sponsors) > HANDBOOK_MAX_SPONSORS:
+            raise ValueError(
+                f"Too many sponsors for the handbook logo bar: {len(sponsors)} "
+                f"(max {HANDBOOK_MAX_SPONSORS})"
+            )
+        return sponsors
 
     @classmethod
     def count(cls) -> int:
