@@ -1,6 +1,4 @@
 registry:
-  # CURRENT SPONSORS
-
   - name: Fakturoid
     slug: fakturoid
     url: https://www.fakturoid.cz/
@@ -61,8 +59,6 @@ registry:
     subscription: https://juniorguru.memberful.com/admin/subscriptions/4021650
     periods:
       - [2025-02, 2026-03]
-
-  # PAST SPONSORS
 
   - name: ITnetwork
     slug: itnetwork
@@ -161,3 +157,11 @@ registry:
     cz_business_id: 8237107
     periods:
       - [2021-02, 2022-02]
+
+  - name: Logical
+    slug: logical
+    url: https://www.logical.finance/
+    cz_business_id: 7421290
+    subscription: https://juniorguru.memberful.com/admin/subscriptions/4857049
+    periods:
+      - [2026-10, 2027-11]
