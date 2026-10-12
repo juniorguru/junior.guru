@@ -2,7 +2,7 @@ import pytest
 
 from jg.coop.lib.location import Location
 from jg.coop.sync import jobs_locations
-from jg.coop.sync.jobs_locations import locate_list
+from jg.coop.sync.jobs_locations import LocationsList, is_relevant, locate_list
 
 
 async def fake_locate(location_raw: str) -> Location:
@@ -24,3 +24,35 @@ async def test_locate_list_universal(locate):
         True,
         ["Bratislava"],
     )
+
+
+def make_locations_list(
+    country_codes: list[str], is_universal: bool = False
+) -> LocationsList:
+    return LocationsList(
+        locations=[
+            Location(raw=code, place=code, region=code, country_code=code)
+            for code in country_codes
+        ],
+        is_universal=is_universal,
+    )
+
+
+@pytest.mark.parametrize(
+    "country_codes, is_universal, remote, expected",
+    [
+        (["CZ"], False, False, True),
+        (["DE", "SK"], False, False, True),
+        (["DE"], False, False, False),
+        ([], False, False, False),
+        ([], True, False, True),
+        ([], False, True, True),
+        (["DE"], False, True, True),
+    ],
+)
+def test_is_relevant(
+    country_codes: list[str], is_universal: bool, remote: bool, expected: bool
+):
+    locations_list = make_locations_list(country_codes, is_universal)
+
+    assert is_relevant(locations_list, remote, {"CZ", "SK"}) is expected
