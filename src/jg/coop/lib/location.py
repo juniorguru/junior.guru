@@ -1,3 +1,4 @@
+import itertools
 import os
 import random
 import re
@@ -43,7 +44,13 @@ BOUNDING_BOX = (
 
 UNIVERSAL_LOCATIONS = {
     "czechia",
+    "czech republic",
+    "česko",
+    "česká republika",
     "slovakia",
+    "slovak republic",
+    "slovensko",
+    "slovenská republika",
     "remote",
     "emea",
     "europe",
@@ -66,6 +73,7 @@ REWRITES_RE = {
     re.compile(r"\bPraha\W+Nové Město\b", re.IGNORECASE): "Praha",
     re.compile(r"\bSouth Bohemia\b", re.IGNORECASE): "Jihočeský kraj",
     re.compile(r"\bSouth Moravia\b", re.IGNORECASE): "Jihomoravský kraj",
+    re.compile(r"\b(kraj )?Vysočina\b", re.IGNORECASE): "Kraj Vysočina",
 }
 
 REGIONS_MAPPING_CZ = {
@@ -102,6 +110,8 @@ REGIONS = sorted(
 )
 
 ZIP_CODE_RE = re.compile(r"\b\d{3} ?\d{2}\b")
+
+REGION_RE = re.compile(r"\bkraj\b", re.IGNORECASE)
 
 
 class Location(BaseModel):
@@ -266,6 +276,10 @@ def generate_queries(
         location_raw = rewrite_re.sub(rewrite_value, location_raw)
     location_raw = ", ".join(filter(None, map(str.strip, location_raw.split(","))))
 
+    # the API would locate a region name as a random municipality within the region
+    if is_region(location_raw):
+        yield location_raw, ResponseRegionType.region
+
     if contains_comma_and_number(location_raw) or contains_house_number(location_raw):
         yield location_raw, ResponseRegionType.address
 
@@ -287,6 +301,10 @@ def generate_queries(
     if "," in location_raw:
         _, location_raw = location_raw.split(",", 1)
         yield from generate_queries(location_raw)
+
+
+def is_region(location_raw: str) -> bool:
+    return "," not in location_raw and REGION_RE.search(location_raw) is not None
 
 
 def contains_comma_and_number(location_raw: str) -> bool:
@@ -351,6 +369,28 @@ def get_region_name(country: ResponseCountry, regions: list[ResponseRegion]) -> 
 
 def is_universal_location(location_raw: str) -> bool:
     return location_raw.strip().lower() in UNIVERSAL_LOCATIONS
+
+
+def get_place_names(locations_raw: list[str]) -> list[str]:
+    return [
+        location_raw
+        for location_raw in itertools.chain.from_iterable(
+            map(split_locations, locations_raw)
+        )
+        if not is_universal_location(location_raw)
+    ]
+
+
+def split_locations(location_raw: str) -> list[str]:
+    """Splits a list of regions, e.g. 'Prešovský kraj, Košický kraj'
+
+    The API would locate only one of them. Other comma-separated values
+    are usually a single location written as parts of an address.
+    """
+    parts = [part.strip() for part in location_raw.split(",")]
+    if len(parts) > 1 and all(map(is_region, parts)):
+        return parts
+    return [location_raw]
 
 
 def repr_locations(locations: list[Location], remote: bool = False) -> str | None:

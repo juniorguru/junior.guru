@@ -6,7 +6,12 @@ from pydantic import BaseModel
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
 from jg.coop.lib.cli import async_command
-from jg.coop.lib.location import Location, is_universal_location, locate
+from jg.coop.lib.location import (
+    Location,
+    get_place_names,
+    is_universal_location,
+    locate,
+)
 from jg.coop.models.base import db
 from jg.coop.models.job import ListedJob
 
@@ -62,10 +67,10 @@ async def main(country_codes: set[str]):
 
 async def locate_list(locations_raw: list[str]) -> LocationsList:
     if locations_raw:
-        to_locate = [loc for loc in locations_raw if not is_universal_location(loc)]
-        is_universal = len(to_locate) < len(locations_raw)
+        place_names = get_place_names(locations_raw)
+        is_universal = any(map(is_universal_location, locations_raw))
         locations = await asyncio.gather(
-            *[asyncio.create_task(locate(location)) for location in to_locate]
+            *[asyncio.create_task(locate(place_name)) for place_name in place_names]
         )
         return LocationsList(locations=locations, is_universal=is_universal)
     return LocationsList()

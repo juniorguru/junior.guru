@@ -6,8 +6,11 @@ from jg.coop.lib.location import (
     ResponseRegion,
     ResponseRegionType,
     generate_queries,
+    get_place_names,
     get_region_name,
+    is_universal_location,
     repr_locations,
+    split_locations,
 )
 
 
@@ -47,6 +50,48 @@ from jg.coop.lib.location import (
             (
                 "České Budějovice",
                 ResponseRegionType.municipality,
+            ),
+        ),
+        (
+            "Nitriansky kraj",
+            (
+                "Nitriansky kraj",
+                ResponseRegionType.region,
+            ),
+        ),
+        (
+            "Kraj Vysočina",
+            (
+                "Kraj Vysočina",
+                ResponseRegionType.region,
+            ),
+        ),
+        (
+            "Vysočina",
+            (
+                "Kraj Vysočina",
+                ResponseRegionType.region,
+            ),
+        ),
+        (
+            "kraj Vysočina",
+            (
+                "Kraj Vysočina",
+                ResponseRegionType.region,
+            ),
+        ),
+        (
+            "Gáň, Trnavský kraj",
+            (
+                "Gáň, Trnavský kraj",
+                ResponseRegionType.municipality,
+            ),
+        ),
+        (
+            "Krajská 5, Brno",
+            (
+                "Krajská 5, Brno",
+                ResponseRegionType.address,
             ),
         ),
     ],
@@ -262,3 +307,95 @@ def test_get_region_name(country, regions, expected):
 )
 def test_repr_locations(locations, remote, expected):
     assert repr_locations(locations, remote) == expected
+
+
+@pytest.mark.parametrize(
+    "location_raw",
+    [
+        "Slovakia",
+        "Slovensko",
+        "Slovak Republic",
+        "Slovenská republika",
+        "Czechia",
+        "Česko",
+        "Czech Republic",
+        "Česká republika",
+        " slovensko ",
+    ],
+)
+def test_is_universal_location_country(location_raw):
+    assert is_universal_location(location_raw) is True
+
+
+@pytest.mark.parametrize(
+    "location_raw",
+    [
+        "Bratislava, Slovensko",
+        "Bratislavský kraj",
+        "okres Vranov nad Topľou",
+    ],
+)
+def test_is_universal_location_place(location_raw):
+    assert is_universal_location(location_raw) is False
+
+
+@pytest.mark.parametrize(
+    "location_raw, expected",
+    [
+        (
+            "Prešovský kraj, Košický kraj",
+            ["Prešovský kraj", "Košický kraj"],
+        ),
+        (
+            "Jihomoravský kraj, Zlínský kraj, Kraj Vysočina",
+            ["Jihomoravský kraj", "Zlínský kraj", "Kraj Vysočina"],
+        ),
+        (
+            "Nitriansky kraj, Trenčiansky kraj",
+            ["Nitriansky kraj", "Trenčiansky kraj"],
+        ),
+        (
+            "Bratislavský kraj",
+            ["Bratislavský kraj"],
+        ),
+        (
+            "Gáň, Trnavský kraj",
+            ["Gáň, Trnavský kraj"],
+        ),
+        (
+            "Bratislava, Bratislavský kraj",
+            ["Bratislava, Bratislavský kraj"],
+        ),
+        (
+            "Gáň, Gáň, Galanta",
+            ["Gáň, Gáň, Galanta"],
+        ),
+    ],
+)
+def test_split_locations(location_raw, expected):
+    assert split_locations(location_raw) == expected
+
+
+@pytest.mark.parametrize(
+    "locations_raw, expected",
+    [
+        (
+            ["Bratislava", "Košice"],
+            ["Bratislava", "Košice"],
+        ),
+        (
+            ["Prešovský kraj, Košický kraj", "Bratislava"],
+            ["Prešovský kraj", "Košický kraj", "Bratislava"],
+        ),
+        (
+            ["Slovensko", "Bratislava", "remote"],
+            ["Bratislava"],
+        ),
+        (
+            ["Slovensko"],
+            [],
+        ),
+    ],
+)
+def test_get_place_names(locations_raw, expected):
+    assert get_place_names(locations_raw) == expected
