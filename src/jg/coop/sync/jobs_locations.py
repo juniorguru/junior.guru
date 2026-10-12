@@ -56,7 +56,7 @@ async def main(country_codes: set[str]):
             logger.info(
                 f"Locations normalized: {job.locations_raw} → {value.locations} (universal: {value.is_universal})"
             )
-            if is_relevant_country(value, country_codes):
+            if is_relevant(value, job.remote, country_codes):
                 job.locations = [location.model_dump() for location in value.locations]
                 job.remote = job.remote or value.is_universal
                 job.save()
@@ -76,8 +76,10 @@ async def locate_list(locations_raw: list[str]) -> LocationsList:
     return LocationsList()
 
 
-def is_relevant_country(locations_list: LocationsList, country_codes: set[str]) -> bool:
-    if locations_list.is_universal:
+def is_relevant(
+    locations_list: LocationsList, remote: bool, country_codes: set[str]
+) -> bool:
+    if locations_list.is_universal or remote:
         return True
     return any(
         location.country_code in country_codes for location in locations_list.locations
