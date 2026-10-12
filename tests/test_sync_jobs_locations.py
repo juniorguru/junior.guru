@@ -41,13 +41,13 @@ def make_locations_list(
 @pytest.mark.parametrize(
     "country_codes, is_universal, remote, expected",
     [
-        (["CZ"], False, False, True),
-        (["DE", "SK"], False, False, True),
-        (["DE"], False, False, False),
-        ([], False, False, False),
-        ([], True, False, True),
-        ([], False, True, True),
-        (["DE"], False, True, True),
+        pytest.param(["CZ"], False, False, True, id="czech"),
+        pytest.param(["DE", "SK"], False, False, True, id="foreign-and-slovak"),
+        pytest.param(["DE"], False, False, False, id="foreign"),
+        pytest.param([], False, False, False, id="no-locations"),
+        pytest.param([], True, False, True, id="universal"),
+        pytest.param([], False, True, True, id="remote-no-locations"),
+        pytest.param(["DE"], False, True, True, id="remote-foreign"),
     ],
 )
 def test_is_relevant(
