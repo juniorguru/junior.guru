@@ -10,9 +10,11 @@ from jg.coop.sync.jobs_scraped.pipelines.employment_types_cleaner import (
 @pytest.mark.parametrize(
     "employment_type, expected",
     [
+        ("brigáda", "temporary"),
         ("částečný úvazek", "parttime"),
         ("Contract", "contract"),
         ("dobrovolnictví", "volunteering"),
+        ("dohoda", "temporary"),
         ("external collaboration", "contract"),
         ("full time", "fulltime"),
         ("full-time work", "fulltime"),
@@ -21,6 +23,8 @@ from jg.coop.sync.jobs_scraped.pipelines.employment_types_cleaner import (
         ("internship", "internship"),
         ("Internship", "internship"),
         ("jiný typ práce", None),
+        ("na dohodu", "temporary"),
+        ("na dohodu (brigády)", "temporary"),
         ("neplacená stáž", "internship"),
         ("other", None),
         ("paid internship", "internship"),
@@ -30,10 +34,12 @@ from jg.coop.sync.jobs_scraped.pipelines.employment_types_cleaner import (
         ("placená stáž", "internship"),
         ("plný úvazek", "fulltime"),
         ("práca na plný úväzok", "fulltime"),
+        ("práca na skrátený úväzok", "parttime"),
         ("práca na zkrátený úväzok", "parttime"),
         ("práce na plný úvazek", "fulltime"),
         ("práce na zkrácený úvazek", "parttime"),
         ("praxe a stáže", "internship"),
+        ("skrátený úväzok", "parttime"),
         ("stáž", "internship"),
         ("temporary", "temporary"),
         ("trainee programs", "internship"),
@@ -41,15 +47,16 @@ from jg.coop.sync.jobs_scraped.pipelines.employment_types_cleaner import (
         ("unpaid internship", "internship"),
         ("volunteering", "volunteering"),
         ("volunteer", "volunteering"),
+        ("živnost", "contract"),
+        ("živnosť", "contract"),
     ],
 )
 def test_clean_employment_type(employment_type, expected):
     assert clean_employment_type(employment_type) == expected
 
 
-def test_clean_employment_type_raises():
-    with pytest.raises(ValueError):
-        assert clean_employment_type("gargamel")
+def test_clean_employment_type_unknown():
+    assert clean_employment_type("gargamel") is None
 
 
 @pytest.mark.parametrize(
@@ -96,6 +103,5 @@ def test_clean_employment_types(employment_types, expected):
     assert clean_employment_types(employment_types) == expected
 
 
-def test_clean_employment_types_raises():
-    with pytest.raises(ValueError):
-        assert clean_employment_types(["Full-Time", "Gargamel"])
+def test_clean_employment_types_unknown():
+    assert clean_employment_types(["Full-Time", "Gargamel"]) == ["fulltime"]

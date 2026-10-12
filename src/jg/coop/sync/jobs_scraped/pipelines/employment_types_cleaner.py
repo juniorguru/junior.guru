@@ -1,6 +1,11 @@
 import re
 from enum import StrEnum, auto
 
+from jg.coop.lib import loggers
+
+
+logger = loggers.from_path(__file__)
+
 
 class EmploymentTypes(StrEnum):
     CONTRACT = auto()
@@ -21,14 +26,18 @@ STOP_WORDS = [
 SEPARATORS_RE = re.compile(r"[\-\s]+")
 
 EMPLOYMENT_TYPES_MAPPING = {
+    "brigáda": EmploymentTypes.TEMPORARY,
     "částečný úvazek": EmploymentTypes.PARTTIME,
     "contract": EmploymentTypes.CONTRACT,
     "dobrovolnictví": EmploymentTypes.VOLUNTEERING,
+    "dohoda": EmploymentTypes.TEMPORARY,
     "external collaboration": EmploymentTypes.CONTRACT,
     "full time": EmploymentTypes.FULLTIME,
     "fulltime": EmploymentTypes.FULLTIME,
     "internship": EmploymentTypes.INTERNSHIP,
     "jiný typ": None,
+    "na dohodu": EmploymentTypes.TEMPORARY,
+    "na dohodu (brigády)": EmploymentTypes.TEMPORARY,
     "neplacená stáž": EmploymentTypes.INTERNSHIP,
     "other": None,
     "paid internship": EmploymentTypes.INTERNSHIP,
@@ -38,6 +47,7 @@ EMPLOYMENT_TYPES_MAPPING = {
     "plný úvazek": EmploymentTypes.FULLTIME,
     "plný úväzok": EmploymentTypes.FULLTIME,
     "praxe a stáže": EmploymentTypes.INTERNSHIP,
+    "skrátený úväzok": EmploymentTypes.PARTTIME,
     "stáž": EmploymentTypes.INTERNSHIP,
     "temporary": EmploymentTypes.TEMPORARY,
     "trainee": EmploymentTypes.INTERNSHIP,
@@ -46,6 +56,8 @@ EMPLOYMENT_TYPES_MAPPING = {
     "volunteering": EmploymentTypes.VOLUNTEERING,
     "zkrácený úvazek": EmploymentTypes.PARTTIME,
     "zkrátený úväzok": EmploymentTypes.PARTTIME,
+    "živnost": EmploymentTypes.CONTRACT,
+    "živnosť": EmploymentTypes.CONTRACT,
 }
 
 
@@ -67,6 +79,7 @@ def clean_employment_type(employment_type: str) -> str | None:
     try:
         employment_type = EMPLOYMENT_TYPES_MAPPING[mapping_key]
     except KeyError:
-        raise ValueError(f"Unknown employment type: {employment_type}")
+        logger.warning(f"Unknown employment type: {employment_type!r}")
+        return None
     else:
         return str(employment_type).lower() if employment_type else None
