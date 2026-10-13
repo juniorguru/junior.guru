@@ -1,11 +1,6 @@
 import re
 from enum import StrEnum, auto
 
-from jg.coop.lib import loggers
-
-
-logger = loggers.from_path(__file__)
-
 
 class EmploymentTypes(StrEnum):
     CONTRACT = auto()
@@ -79,7 +74,6 @@ def clean_employment_type(employment_type: str) -> str | None:
     try:
         employment_type = EMPLOYMENT_TYPES_MAPPING[mapping_key]
     except KeyError:
-        logger.warning(f"Unknown employment type: {employment_type!r}")
-        return None
+        raise ValueError(f"Unknown employment type: {employment_type}")
     else:
         return str(employment_type).lower() if employment_type else None

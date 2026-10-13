@@ -55,8 +55,9 @@ def test_clean_employment_type(employment_type, expected):
     assert clean_employment_type(employment_type) == expected
 
 
-def test_clean_employment_type_unknown():
-    assert clean_employment_type("gargamel") is None
+def test_clean_employment_type_raises():
+    with pytest.raises(ValueError):
+        assert clean_employment_type("gargamel")
 
 
 @pytest.mark.parametrize(
@@ -103,5 +104,6 @@ def test_clean_employment_types(employment_types, expected):
     assert clean_employment_types(employment_types) == expected
 
 
-def test_clean_employment_types_unknown():
-    assert clean_employment_types(["Full-Time", "Gargamel"]) == ["fulltime"]
+def test_clean_employment_types_raises():
+    with pytest.raises(ValueError):
+        assert clean_employment_types(["Full-Time", "Gargamel"])
