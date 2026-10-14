@@ -377,13 +377,6 @@
 {% endmacro %}
 
 
-{% macro logos_sponsors_by_tier(sponsors_by_tier) %}
-  {% for tier, sponsors in sponsors_by_tier %}
-    {{ logos_list(sponsors, class="logos-tier-" + tier.priority|string) }}
-  {% endfor %}
-{% endmacro %}
-
-
 {% macro external_stories_list(stories) %}
   <div class="external-stories">
     {% for story in stories %}
