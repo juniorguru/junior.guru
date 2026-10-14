@@ -6,6 +6,7 @@ from zoneinfo import ZoneInfo
 
 from peewee import BooleanField, CharField, DateField, IntegerField
 
+from jg.coop.lib import json_ld
 from jg.coop.lib.charts import ttm_range
 from jg.coop.models.base import BaseModel
 
@@ -70,6 +71,33 @@ class PodcastEpisode(BaseModel):
             "subtitle": self.guest_affiliation,
             "date": self.publish_on,
         }
+
+    def to_json_ld(self) -> str:
+        return json_ld.dumps(
+            {
+                "@type": "PodcastEpisode",
+                "associatedMedia": {
+                    "@type": "MediaObject",
+                    "contentSize": str(self.media_size),
+                    "contentUrl": self.media_url,
+                    "encodingFormat": self.media_type,
+                },
+                "datePublished": self.publish_on.isoformat(),
+                "description": self.description,
+                "duration": f"PT{self.media_duration_s}S",
+                "episodeNumber": self.number,
+                "image": f"https://junior.guru/static/{self.image_path}",
+                "inLanguage": "cs",
+                "name": self.format_title(),
+                "partOfSeries": {
+                    "@type": "PodcastSeries",
+                    "@id": f"{json_ld.PODCAST_URL}#series",
+                    "name": json_ld.PODCAST_NAME,
+                    "url": json_ld.PODCAST_URL,
+                },
+                "url": self.url,
+            }
+        )
 
     @classmethod
     def get_by_number(cls, number: int):

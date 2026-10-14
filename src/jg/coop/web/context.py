@@ -1,6 +1,7 @@
+from collections.abc import Generator
 from datetime import UTC, date, datetime, timedelta
 
-from jg.coop.lib import loggers, months
+from jg.coop.lib import json_ld, loggers, months
 from jg.coop.lib.discord_club import (
     CLUB_EVENTS_CHANNEL_URL,
     CLUB_GUILD_ID,
@@ -227,8 +228,32 @@ def on_theme_page_context(context, page, config, files):
             context["thumbnail_url"] = thumbnail_url
         else:
             logger.warning(f"No thumbnail for {page.file.src_uri}")
+        context["json_ld"] = list(get_json_ld(page, current_page.thumbnail_url))
         context["related_pages"] = current_page.list_related()
         context["related_channels"] = current_page.list_related_channels()
         context["related_channels_monthly_size"] = (
             current_page.related_channels_monthly_size
+        )
+
+
+def get_json_ld(page, thumbnail_url: str | None = None) -> Generator[str]:
+    if page.is_homepage:
+        yield json_ld.website()
+        yield json_ld.organization()
+    if page.file.src_uri == "podcast.md":
+        yield json_ld.podcast_series()
+    if number := page.meta.get("podcast_episode_number"):
+        yield PodcastEpisode.get_by_number(number).to_json_ld()
+    if slug := page.meta.get("course_provider_slug"):
+        yield CourseProvider.get_by_slug(slug).to_json_ld()
+    if page.meta.get("faq"):
+        yield json_ld.faq_page(page.content)
+    if page.meta.get("interviewee"):
+        yield json_ld.article(
+            headline=page.meta["title"],
+            url=page.canonical_url,
+            published_on=page.meta["date"],
+            author_name=page.meta["author"],
+            author_url=page.meta.get("author_url"),
+            image_url=thumbnail_url,
         )

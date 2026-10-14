@@ -1,3 +1,4 @@
+import json
 from collections.abc import Generator
 
 import pytest
@@ -238,3 +239,33 @@ def test_listing_sorts_alphabetically_case_insensitive(test_db: SqliteDatabase):
     cp4 = create_course_provider(4, name="zzz Courses")
 
     assert list(CourseProvider.listing()) == [cp2, cp1, cp3, cp4]
+
+
+def test_to_json_ld(test_db: SqliteDatabase):
+    cp = create_course_provider(
+        1, name="Cool Courses", slug="cool", url="https://cool.example.com"
+    )
+
+    assert json.loads(cp.to_json_ld()) == {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "mainEntityOfPage": "https://junior.guru/courses/cool/",
+        "name": "Cool Courses",
+        "url": "https://cool.example.com",
+    }
+
+
+def test_to_json_ld_legal_name(test_db: SqliteDatabase):
+    cp = create_course_provider(1, cz_business_id=123, cz_name="Cool s.r.o.")
+
+    assert json.loads(cp.to_json_ld())["legalName"] == "Cool s.r.o."
+
+
+def test_to_json_ld_logo(test_db: SqliteDatabase, tier_low: SponsorTier):
+    cp = create_course_provider(1, slug="xyz", cz_business_id=123)
+    create_sponsor("xyz", cz_business_id=123, tier=tier_low, logo_path="logos/xyz.svg")
+
+    assert (
+        json.loads(cp.to_json_ld())["logo"]
+        == "https://junior.guru/static/logos/xyz.svg"
+    )

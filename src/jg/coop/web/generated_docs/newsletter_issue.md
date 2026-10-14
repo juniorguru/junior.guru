@@ -12,6 +12,7 @@
     </li>
   </ol>
 </nav>
+<script type="application/ld+json">{{ [((page|parent_page).title, (page|parent_page).canonical_url), (newsletter_issue.subject, page.canonical_url)]|breadcrumb_list }}</script>
 
 # {{ newsletter_issue.subject }}
 

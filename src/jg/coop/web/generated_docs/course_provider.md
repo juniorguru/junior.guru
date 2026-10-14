@@ -12,6 +12,7 @@
     </li>
   </ol>
 </nav>
+<script type="application/ld+json">{{ [((page|parent_page).title, (page|parent_page).canonical_url), (course_provider.name, page.canonical_url)]|breadcrumb_list }}</script>
 
 # Kurzy od {{ course_provider.name }}
 
