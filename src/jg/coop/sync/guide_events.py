@@ -7,7 +7,7 @@ from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
 from jg.coop.lib.cache import get_cache
 from jg.coop.lib.discord_club import ClubClient, parse_channel, sync_guide_channel
-from jg.coop.models.base import db, hash_models
+from jg.coop.models.base import db, hash_data
 from jg.coop.models.event import Event
 
 
@@ -24,9 +24,9 @@ logger = loggers.from_path(__file__)
 @click.option("--force", is_flag=True, default=False)
 def main(channel_id: int, cache_key: str, cache_days: int, force: bool):
     with db.connection_context():
-        events = list(Event.archive_listing())
+        events = [event.to_guide_data() for event in Event.archive_listing()]
     cache = get_cache()
-    events_hash = hash_models(events)
+    events_hash = hash_data(events)
     cache_miss = cache.get(cache_key) != events_hash
 
     if force or cache_miss:
@@ -37,7 +37,7 @@ def main(channel_id: int, cache_key: str, cache_days: int, force: bool):
         logger.info("Channel is up-to-date")
 
 
-async def sync_channel(client: ClubClient, channel_id: int, events: list[Event]):
+async def sync_channel(client: ClubClient, channel_id: int, events: list[dict]):
     await sync_guide_channel(
         client,
         channel_id,
@@ -57,16 +57,16 @@ async def sync_channel(client: ClubClient, channel_id: int, events: list[Event])
     )
 
 
-def build_event_args(event: Event) -> dict:
+def build_event_args(event: dict) -> dict:
     embed = Embed(
-        title=event.title,
-        url=event.url,
-        timestamp=event.start_at_prg,
+        title=event["title"],
+        url=event["url"],
+        timestamp=event["start_at_prg"],
     )
-    embed.set_author(name=event.bio_name)
-    embed.set_thumbnail(url=f"attachment://{Path(event.avatar_path).name}")
+    embed.set_author(name=event["bio_name"])
+    embed.set_thumbnail(url=f"attachment://{Path(event['avatar_path']).name}")
 
-    recording_url = event.private_recording_url or event.public_recording_url
+    recording_url = event["recording_url"]
     view = ui.View(
         ui.Button(
             emoji="<:youtube:976200175490060299>",
@@ -78,6 +78,6 @@ def build_event_args(event: Event) -> dict:
 
     return {
         "embed": embed,
-        "files": [File(IMAGES_DIR / event.avatar_path)],
+        "files": [File(IMAGES_DIR / event["avatar_path"])],
         "view": view,
     }

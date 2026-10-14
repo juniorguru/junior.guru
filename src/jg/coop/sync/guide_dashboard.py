@@ -14,7 +14,7 @@ from jg.coop.lib.discord_club import (
     sync_guide_channel,
 )
 from jg.coop.lib.text import emoji_url
-from jg.coop.models.base import db, hash_models
+from jg.coop.models.base import db, hash_data
 from jg.coop.models.tip import Tip
 
 
@@ -48,9 +48,9 @@ logger = loggers.from_path(__file__)
 @click.option("--force", is_flag=True, default=False)
 def main(channel_id: int, cache_key: str, cache_days: int, force: bool):
     with db.connection_context():
-        tips = list(Tip.listing())
+        tips = [tip.to_guide_data() for tip in Tip.listing()]
     cache = get_cache()
-    tips_hash = hash_models(tips)
+    tips_hash = hash_data(tips)
     cache_miss = cache.get(cache_key) != tips_hash
 
     if force or cache_miss:
@@ -61,7 +61,7 @@ def main(channel_id: int, cache_key: str, cache_days: int, force: bool):
         logger.info("Channel is up-to-date")
 
 
-async def sync_channel(client: ClubClient, channel_id: int, tips: list[Tip]):
+async def sync_channel(client: ClubClient, channel_id: int, tips: list[dict]):
     message_args_list = [
         {"content": HEADER_MESSAGE, "embeds": [], "suppress": True},
         {"content": LINKS_MESSAGE, "embeds": [], "view": build_links_view()},
@@ -71,13 +71,13 @@ async def sync_channel(client: ClubClient, channel_id: int, tips: list[Tip]):
     await sync_guide_channel(client, channel_id, message_args_list)
 
 
-def build_tip_args(tip: Tip) -> dict:
+def build_tip_args(tip: dict) -> dict:
     embed = Embed(
-        title=tip.title_text,
-        url=tip.discord_url,
-        description=tip.lead,
+        title=tip["title_text"],
+        url=tip["discord_url"],
+        description=tip["lead"],
     )
-    embed.set_thumbnail(url=emoji_url(tip.emoji))
+    embed.set_thumbnail(url=emoji_url(tip["emoji"]))
     return {"embed": embed}
 
 

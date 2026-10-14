@@ -17,6 +17,14 @@ class Tip(BaseModel):
     lead = TextField()
     content = TextField()
 
+    def to_guide_data(self) -> dict:
+        return {
+            "title_text": self.title_text,
+            "discord_url": self.discord_url,
+            "lead": self.lead,
+            "emoji": self.emoji,
+        }
+
     @classmethod
     def listing(cls) -> Iterable[Self]:
         return cls.select().order_by(cls.position)
