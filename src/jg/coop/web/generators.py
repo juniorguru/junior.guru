@@ -97,7 +97,7 @@ def generate_region_jobs_pages() -> Generator[GeneratedDocument]:
             path=f"jobs/{doc_slug}.jinja",
             meta=meta
             | {
-                "title": f"Junior programátor, tester a další IT práce pro začátečníky: {region}",
+                "title": f"Práce v IT, {region}, bez praxe: junior programátor, tester a další",
                 "description": f"Jaké nabízí {region} příležitosti pro začátečníky v IT? {meta['description']}",
                 "region": region,
                 "region_tag_slug": tag_slug,
