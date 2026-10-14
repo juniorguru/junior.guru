@@ -29,10 +29,7 @@ REGEXES = [
     (Names.JOBSCZ, regex(r"\bwww\.jobs\.cz/fp/[^/]+/(?P<id>\d+)")),
     (Names.JOBSCZ, regex(r"\.jobs\.cz/detail-pozice.*[\&\?]id=(?P<id>\d+)")),
     (Names.LINKEDIN, regex(r"\blinkedin\.com/jobs/view/([\w+\-%]+\-)?(?P<id>\d+)")),
-    (
-        Names.PROFESIASK,
-        regex(r"\bprofesia\.sk/(?:praca/[^/?#]+/|en/work/[^/?#]+/)?(?P<id>O\d+)\b"),
-    ),
+    (Names.PROFESIASK, regex(r"\bprofesia\.sk/([^?#]*/)?(?P<id>O\d+)\b")),
 ]
 
 TEMPLATES = {
