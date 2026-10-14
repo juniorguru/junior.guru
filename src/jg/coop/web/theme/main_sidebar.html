@@ -18,6 +18,7 @@
             </li>
           </ol>
         </nav>
+        <script type="application/ld+json">{{ [(page.parent.title, (page|parent_page).canonical_url), (page.title, page.canonical_url)]|breadcrumb_list }}</script>
 
         {{ super() }}
       {% endblock %}

@@ -16,6 +16,7 @@ TEMPLATE_FILTERS = [
     "absolute_url",
     "assert_empty",
     "bio_link",
+    "breadcrumb_list",
     "docs_url",
     "duration",
     "email_link",

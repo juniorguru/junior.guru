@@ -37,6 +37,7 @@
       <meta property="og:url" content="{{ page.canonical_url }}">
     {% endif %}
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="junior.guru">
     <meta property="og:locale" content="cs_CZ">
 
     <link href="https://mastodonczech.cz/@honzajavorek" rel="me">
@@ -52,6 +53,10 @@
     {% endif %}
 
     {% if page and page.meta.description %}<meta name="description" content="{{ page.meta.description }}">{% endif %}
+
+    {% for item in json_ld %}
+    <script type="application/ld+json">{{ item }}</script>
+    {% endfor %}
   {% endblock meta %}
 </head>
 <body>
