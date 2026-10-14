@@ -12,6 +12,7 @@ class Names(StrEnum):
     JOBSCZ = "jobscz"
     JUNIORGURU = "juniorguru"
     LINKEDIN = "linkedin"
+    PROFESIASK = "profesiask"
     STARTUPJOBS = "startupjobs"
 
 
@@ -28,6 +29,10 @@ REGEXES = [
     (Names.JOBSCZ, regex(r"\bwww\.jobs\.cz/fp/[^/]+/(?P<id>\d+)")),
     (Names.JOBSCZ, regex(r"\.jobs\.cz/detail-pozice.*[\&\?]id=(?P<id>\d+)")),
     (Names.LINKEDIN, regex(r"\blinkedin\.com/jobs/view/([\w+\-%]+\-)?(?P<id>\d+)")),
+    (
+        Names.PROFESIASK,
+        regex(r"\bprofesia\.sk/(?:praca/[^/?#]+/|en/work/[^/?#]+/)?(?P<id>O\d+)\b"),
+    ),
 ]
 
 TEMPLATES = {
@@ -36,6 +41,7 @@ TEMPLATES = {
     Names.STARTUPJOBS: "https://www.startupjobs.cz/nabidka/{id}",
     Names.JOBSCZ: "https://www.jobs.cz/rpd/{id}/",
     Names.LINKEDIN: "https://www.linkedin.com/jobs/view/{id}/",
+    Names.PROFESIASK: "https://www.profesia.sk/{id}",
 }
 
 ORDERING = list(TEMPLATES.keys())
