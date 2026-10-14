@@ -1,5 +1,5 @@
 ---
-title: Jak na životopis pro juniory v IT
+title: "Životopis programátora a vývojáře: jak na CV v IT (vzor)"
 emoji: 📝
 stages: [preparing]
 description: Co dát do životopisu, když nemáš praxi? Když jsi student? Jak můžeš i jako junior bez praxe připravit CV, které tě dostane na pohovor v IT?

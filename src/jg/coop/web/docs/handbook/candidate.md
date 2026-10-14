@@ -1,5 +1,5 @@
 ---
-title: Jak najít svou první práci v IT
+title: Jak se stát programátorem a najít první práci v IT
 emoji: 👔
 stages: [preparing, applying]
 description: Jak začít hledat svou první práci v IT? Jak se připravit na pohovor?

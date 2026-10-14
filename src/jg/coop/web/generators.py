@@ -80,7 +80,7 @@ def generate_region_jobs_pages() -> Generator[GeneratedDocument]:
         path=f"jobs/{REMOTE_TAG_SLUG}.jinja",
         meta=meta
         | {
-            "title": f"{meta['title']}: na dálku, z domova, remote",
+            "title": "Remote práce v IT pro juniory: na dálku, z domova",
             "description": (
                 "Pracovní příležitosti pro začátečníky v IT, "
                 f"které jsou na dálku, z domova, remote. {meta['description']}"
@@ -97,7 +97,7 @@ def generate_region_jobs_pages() -> Generator[GeneratedDocument]:
             path=f"jobs/{doc_slug}.jinja",
             meta=meta
             | {
-                "title": f"{meta['title']}: {region}",
+                "title": f"Junior programátor, tester a další IT práce pro začátečníky: {region}",
                 "description": f"Jaké nabízí {region} příležitosti pro začátečníky v IT? {meta['description']}",
                 "region": region,
                 "region_tag_slug": tag_slug,
