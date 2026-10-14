@@ -7,15 +7,15 @@
           {
             "width": 720,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEjWyChVsNLsg",
-            "fileIdentifyingUrlPathSegment": "high/B4DZ.TpynyIIBQ-/0/1784888636029?e=1792112400&v=beta&t=qq52np1fS9SeCVsK8t4t55u_AzeV5LC20qmoYVESMKs",
-            "expiresAt": 1792112400000,
+            "fileIdentifyingUrlPathSegment": "high/B4DZ.TpynyIIBQ-/0/1784888636029?e=1792458000&v=beta&t=Gh-xIsU-GlsiSSnP0XsrqBz20clYjLX388WuQVPvQNs",
+            "expiresAt": 1792458000000,
             "height": 1280
           },
           {
             "width": 360,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEjWyChVsNLsg",
-            "fileIdentifyingUrlPathSegment": "low/B4DZ.TpynyIIBM-/0/1784888636029?e=1792112400&v=beta&t=GlPv4qPyGEx82u9EsaNw5zMU7BVBORY2RTesNAWxAN0",
-            "expiresAt": 1792112400000,
+            "fileIdentifyingUrlPathSegment": "low/B4DZ.TpynyIIBM-/0/1784888636029?e=1792458000&v=beta&t=TXmq2jCa6FBgT_QXOIDngsusRf1dkda7Jvtx3Cyvr5k",
+            "expiresAt": 1792458000000,
             "height": 640
           }
         ]
@@ -25,8 +25,8 @@
           {
             "width": 360,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEjWyChVsNLsg",
-            "fileIdentifyingUrlPathSegment": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEjWyChVsNLsg/video-gif-5sec-360/B4DZ.TpynyIICY-/0/1784888636029?e=1792112400&v=beta&t=OueAOrpai2hT7Mw4z6Rp1Q4dabym47G0jUIDOC10sTs",
-            "expiresAt": 1792112400000,
+            "fileIdentifyingUrlPathSegment": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEjWyChVsNLsg/video-gif-5sec-360/B4DZ.TpynyIICY-/0/1784888636029?e=1792458000&v=beta&t=O4XKNQIjARl-GSlV069fuyOcSt7C10dPywGzJU9i7YY",
+            "expiresAt": 1792458000000,
             "height": 640
           }
         ],
@@ -36,8 +36,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEjWyChVsNLsg/mp4-720p-30fp-crf28/B4DZ.TpynyIICA-/0/1784888640537?e=1792112400&v=beta&t=7iu_fGtkEz07q0vrALEpBErnhd3tnTnI8cUkWCLoAho",
-              "expiresAt": 1792112400000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEjWyChVsNLsg/mp4-720p-30fp-crf28/B4DZ.TpynyIICA-/0/1784888640537?e=1792458000&v=beta&t=Gf-9okW3PiPFy5_9OhGpssCbz5I38LAzH_oInEdKrO0",
+              "expiresAt": 1792458000000
             }
           ],
           "size": 0,
@@ -49,8 +49,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEjWyChVsNLsg/mp4-640p-30fp-crf28/B4DZ.TpynyIIBo-/0/1784888640049?e=1792112400&v=beta&t=On0YDPahlB2pwcJ7vU-e5fymTW3oku4M5btP78eNr0A",
-              "expiresAt": 1792112400000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEjWyChVsNLsg/mp4-640p-30fp-crf28/B4DZ.TpynyIIBo-/0/1784888640049?e=1792458000&v=beta&t=dI-8DfFQPpplxvTdMRG-O45GPs73tWfvc6PI8jhHo-A",
+              "expiresAt": 1792458000000
             }
           ],
           "size": 0,
@@ -70,8 +70,8 @@
           "mediaType": "application/vnd.apple.mpegURL",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEjWyChVsNLsg/CeJxzMnGJ0gspqMyr9PR0KdfVcULmR6Lxk9H46Wj8fF0A2qQYxw?e=1792112400&v=beta&t=FZ4Aib_CNTLeb_7Jcpz8v6JVQJ0YGdp9B5Qb1yYiPLE",
-              "expiresAt": 1792112400000
+              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEjWyChVsNLsg/CeJxzMnGJ0gspqMyr9PR0KdfVcULmR6Lxk9H46Wj8fF0A2qQYxw?e=1792458000&v=beta&t=SItUtaZl7SojzD997xhvgiaV7NGP0mGNOIKyIK1VFG8",
+              "expiresAt": 1792458000000
             }
           ]
         },
@@ -81,8 +81,8 @@
           "mediaType": "application/dash+xml",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEjWyChVsNLsg/CeJxzMnGJ0gspqMyr9PR0KdfVcULmR6Lxk9H46Wj8fF0A2qQYxw?e=1792112400&v=beta&t=FfCCKvzYsSvrznjCjFeOmMRfTxJIYfkcbOWQGMtlJJQ",
-              "expiresAt": 1792112400000
+              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEjWyChVsNLsg/CeJxzMnGJ0gspqMyr9PR0KdfVcULmR6Lxk9H46Wj8fF0A2qQYxw?e=1792458000&v=beta&t=8n-acaE2teAZGnTrPzsKFOfC3BOTqYdQ6Wwn9sunJHc",
+              "expiresAt": 1792458000000
             }
           ]
         }
@@ -93,8 +93,8 @@
           {
             "width": 720,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEjWyChVsNLsg",
-            "fileIdentifyingUrlPathSegment": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEjWyChVsNLsg/thumbnail-with-play-button-overlay-high/B4DZ.TpynyIIC4-/0/1784888640049?e=1792112400&v=beta&t=HRdJeJNlP9u7aTU7jZ2MussEILortc-zCHlEjUoZXc0",
-            "expiresAt": 1792112400000,
+            "fileIdentifyingUrlPathSegment": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEjWyChVsNLsg/thumbnail-with-play-button-overlay-high/B4DZ.TpynyIIC4-/0/1784888640049?e=1792458000&v=beta&t=YY0WUUAQuY1_6hF8rVDiyo4c_jxHXNqDiJlIiAsG4iQ",
+            "expiresAt": 1792458000000,
             "height": 1280
           }
         ],
@@ -107,15 +107,15 @@
           {
             "width": 720,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEjWyChVsNLsg",
-            "fileIdentifyingUrlPathSegment": "high/B4DZ.TpynyIIBU-/0/1784888636029?e=1792112400&v=beta&t=d6jRJUew2AsW-BNXyQ2XjfgdWaAZnmiuH88gh55J7Lc",
-            "expiresAt": 1792112400000,
+            "fileIdentifyingUrlPathSegment": "high/B4DZ.TpynyIIBU-/0/1784888636029?e=1792458000&v=beta&t=HN6WeIP7ZEE1POy-PTZpTfT1v8UyKHfFdRZ6oNQvL78",
+            "expiresAt": 1792458000000,
             "height": 1280
           },
           {
             "width": 360,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEjWyChVsNLsg",
-            "fileIdentifyingUrlPathSegment": "low/B4DZ.TpynyIIBY-/0/1784888636029?e=1792112400&v=beta&t=FYF_gij6IbxrsglKTXp15enxWrZOD5R6muG6aVCFCRQ",
-            "expiresAt": 1792112400000,
+            "fileIdentifyingUrlPathSegment": "low/B4DZ.TpynyIIBY-/0/1784888636029?e=1792458000&v=beta&t=unPMQ6cqaS49n-3sEYCD5PigpGgYj0lpegPIkUYsIj8",
+            "expiresAt": 1792458000000,
             "height": 640
           }
         ],
@@ -194,7 +194,7 @@
       "profile": {
         "firstName": "Karla",
         "lastName": "Root",
-        "occupation": "#opentowork | Data Analyst | Power Automate | Power BI | Stay calm. Ask AI first, then panic...",
+        "occupation": "#opentowork Data Analyst | Process Nerd | Power Automate | Power BI | Stay calm. Ask AI first, then panic...",
         "id": "420075610",
         "publicId": "karlaroot",
         "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog"

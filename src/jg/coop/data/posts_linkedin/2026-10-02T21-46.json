@@ -18,6 +18,17 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "David",
+        "lastName": "Navara",
+        "occupation": "Literature is my love and writing is my passion.",
+        "id": "259029785",
+        "publicId": "davidnavara",
+        "profileId": "ACoAAA9wexkBeMq1T5Ri3IYmOdYLLFfvwExFPJk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Jiri",
         "lastName": "Gunka",
         "occupation": "cyp",
@@ -53,7 +64,7 @@
       "profile": {
         "firstName": "Karla",
         "lastName": "Root",
-        "occupation": "#opentowork | Data Analyst | Power Automate | Power BI | Stay calm. Ask AI first, then panic...",
+        "occupation": "#opentowork Data Analyst | Process Nerd | Power Automate | Power BI | Stay calm. Ask AI first, then panic...",
         "id": "420075610",
         "publicId": "karlaroot",
         "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog"
@@ -116,7 +127,7 @@
     }
   ],
   "numShares": 0,
-  "numLikes": 9,
+  "numLikes": 10,
   "numComments": 0,
   "canReact": true,
   "canPostComments": true,
