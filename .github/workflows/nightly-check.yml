@@ -48,7 +48,8 @@ jobs:
             one already covers the same problem. If it does, don't file a new issue; add a short comment
             (`gh issue comment <number> --body "..."`) saying the problem persisted in the nightly on
             ${{ steps.nightly.outputs.date }}, with a link to the CircleCI job and anything that changed.
-            Otherwise file a new issue (`gh issue create --title "..." --body "..."`).
+            Otherwise file a new issue (`gh issue create --title "..." --body "..." --label nightly`).
+            Every new issue must have the `nightly` label.
 
             Issue bodies must be brief and to the point, in English, Markdown, with these sections
             (per reason, in the combined issue):
