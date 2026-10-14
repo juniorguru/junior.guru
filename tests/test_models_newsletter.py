@@ -1,6 +1,11 @@
 from textwrap import dedent
 
-from jg.coop.models.newsletter import content_to_html, edit_content_html
+from jg.coop.models.newsletter import (
+    content_to_html,
+    edit_content_html,
+    get_headings,
+    get_issue_description,
+)
 
 
 def test_content_to_html_with_markdown():
@@ -117,3 +122,51 @@ def test_edit_content_html_adds_trailing_slash_to_course_urls():
     )
 
     assert edit_content_html(body) == expected
+
+
+def test_get_headings():
+    content_html = dedent(
+        """
+            <h1>Nadpis</h1>
+            <h2 id="trh">Čísla z <strong>trhu</strong></h2>
+            <p>Text</p>
+            <h3>AI a junioři</h3>
+            <h4>Detail</h4>
+        """
+    )
+
+    assert get_headings(content_html) == ["Čísla z trhu", "AI a junioři"]
+
+
+def test_get_issue_description():
+    description = get_issue_description(
+        "Září 2026 ve světě IT juniorů",
+        ["Čísla z trhu", "AI a junioři", "Podcast", "Vyjednávání mzdy"],
+        recurring_headings={"Čísla z trhu", "Podcast"},
+    )
+
+    assert description == (
+        "Září 2026 ve světě IT juniorů. Témata: AI a junioři, Vyjednávání mzdy"
+    )
+
+
+def test_get_issue_description_only_recurring_headings():
+    description = get_issue_description(
+        "Říjen 2025 ve světě IT juniorů",
+        ["Čísla z trhu", "Podcast"],
+        recurring_headings={"Čísla z trhu", "Podcast"},
+    )
+
+    assert description == (
+        "Říjen 2025 ve světě IT juniorů. Témata: Čísla z trhu, Podcast"
+    )
+
+
+def test_get_issue_description_shortened():
+    description = get_issue_description(
+        "Září 2026 ve světě IT juniorů",
+        [f"Velmi dlouhé téma číslo {i}" for i in range(10)],
+        recurring_headings=set(),
+    )
+
+    assert len(description) <= 160

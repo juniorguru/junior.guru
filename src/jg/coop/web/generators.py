@@ -11,13 +11,14 @@ from slugify import slugify
 
 from jg.coop.lib import loggers
 from jg.coop.lib.location import REGIONS
-from jg.coop.lib.text import get_tag_slug
+from jg.coop.lib.md import md_as_text
+from jg.coop.lib.text import get_tag_slug, shorten_description
 from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.event import Event
 from jg.coop.models.job import REMOTE_TAG_SLUG, ListedJob
-from jg.coop.models.newsletter import NewsletterIssue
+from jg.coop.models.newsletter import NewsletterIssue, get_issue_description
 from jg.coop.models.podcast import PodcastEpisode
 
 
@@ -131,11 +132,7 @@ def generate_job_pages() -> Generator[GeneratedDocument]:
 def generate_event_pages() -> Generator[GeneratedDocument]:
     archive_size = Event.count_recording()
     for event in Event.listing():
-        description = (
-            "Klub junior.guru pořádá vzdělávací akce, online na svém Discordu. "
-            "Mohou to být přednášky, stream, Q&A, AMA, webináře… "
-            "Toto je stránka o jedné z nich."
-        )
+        description = shorten_description(md_as_text(event.description, newline=" "))
         yield GeneratedDocument(
             path=f"events/{event.id}.md",
             meta=dict(
@@ -198,12 +195,25 @@ def generate_course_provider_pages() -> Generator[GeneratedDocument]:
 
 @db.connection_context()
 def generate_newsletter_issue_pages() -> Generator[GeneratedDocument]:
-    for newsletter_issue in NewsletterIssue.listing():
+    newsletter_issues = list(NewsletterIssue.listing())
+    headings_counter = Counter(
+        heading
+        for newsletter_issue in newsletter_issues
+        for heading in set(newsletter_issue.headings)
+    )
+    recurring_headings = {
+        heading for heading, count in headings_counter.items() if count > 1
+    }
+    for newsletter_issue in newsletter_issues:
         yield GeneratedDocument(
             path=f"news/{newsletter_issue.slug}.md",
             meta={
                 "title": newsletter_issue.subject,
-                "description": "Začínáš v IT? V tomhle newsletteru najdeš pozvánky, kurzy, podcasty, přednášky, články a další zdroje, které tě posunou a namotivují.",
+                "description": get_issue_description(
+                    newsletter_issue.subject,
+                    newsletter_issue.headings,
+                    recurring_headings,
+                ),
                 "date": newsletter_issue.published_on.isoformat(),
                 "newsletter_issue_id": newsletter_issue.id,
                 "template": "main_subnav.html",

@@ -3,11 +3,12 @@ from collections.abc import Iterable
 from datetime import datetime
 from typing import Self
 
+from lxml import html
 from peewee import CharField, DateField, IntegerField
 
 from jg.coop.lib.md import md
 from jg.coop.lib.reading_time import reading_time
-from jg.coop.lib.text import extract_text, remove_emoji
+from jg.coop.lib.text import extract_text, remove_emoji, shorten_description
 from jg.coop.models.base import BaseModel
 from jg.coop.models.page import Page
 
@@ -44,6 +45,10 @@ class NewsletterIssue(BaseModel):
             updates["image"] = page.thumbnail_url
 
         return updates
+
+    @property
+    def headings(self) -> list[str]:
+        return get_headings(self.content_html)
 
     @classmethod
     def from_buttondown(cls, data: dict) -> Self:
@@ -96,6 +101,20 @@ def edit_content_html(content_html: str) -> str:
     )
 
     return content_html
+
+
+def get_headings(content_html: str) -> list[str]:
+    el = html.fragment_fromstring(content_html, create_parent="div")
+    return [heading.text_content().strip() for heading in el.cssselect("h2, h3")]
+
+
+def get_issue_description(
+    subject: str, headings: list[str], recurring_headings: set[str]
+) -> str:
+    topics = [
+        heading for heading in headings if heading not in recurring_headings
+    ] or headings
+    return shorten_description(f"{subject}. Témata: {', '.join(topics)}")
 
 
 def _strip_emoji(match: re.Match) -> str:
