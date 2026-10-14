@@ -1,0 +1,44 @@
+name: Nightly Issues Review
+on:
+  schedule:
+    # Sundays, after the Nightly Check finishes
+    - cron: "47 8 * * 0"
+  workflow_dispatch:
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: read
+      issues: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+      - uses: anthropics/claude-code-action@v1
+        timeout-minutes: 30
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            REPO: ${{ github.repository }}
+
+            Review open issues labeled `nightly` (`gh issue list --state open --label nightly --limit 100`).
+            The Nightly Check workflow files them when the CircleCI nightly build fails. For each issue,
+            read it including comments (`gh issue view <number> --comments`) and verify whether the problem
+            still exists. Use the circleci skill to inspect the two most recent finished nightly runs.
+
+            The problem is gone if it didn't show up in either of them, and also:
+            - Broken link: the link no longer appears in the repository, or `curl` gets a successful response.
+            - Sponsor expiring: `src/jg/coop/data/sponsors.yml` has the sponsorship renewed or ended.
+            - Sync failing or anything else: the failing job passed, or failed for an unrelated reason.
+
+            If the problem still exists, or you're unsure, leave the issue intact. Don't comment on it.
+
+            If the problem is gone, comment on the issue (`gh issue comment <number> --body "..."`) with
+            brief reasoning in English and links to the CircleCI runs you checked as evidence, then close it
+            (`gh issue close <number> --reason completed`).
+
+            Do not open a PR, do not change any files, and do not file new issues.
+          claude_args: |
+            --allowedTools "Skill,Read,Glob,Grep,Bash(curl:*),Bash(jq:*),Bash(gh issue list:*),Bash(gh issue view:*),Bash(gh issue comment:*),Bash(gh issue close:*)"
