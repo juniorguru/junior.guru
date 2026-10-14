@@ -21,14 +21,18 @@ STOP_WORDS = [
 SEPARATORS_RE = re.compile(r"[\-\s]+")
 
 EMPLOYMENT_TYPES_MAPPING = {
+    "brigáda": EmploymentTypes.TEMPORARY,
     "částečný úvazek": EmploymentTypes.PARTTIME,
     "contract": EmploymentTypes.CONTRACT,
     "dobrovolnictví": EmploymentTypes.VOLUNTEERING,
+    "dohoda": EmploymentTypes.TEMPORARY,
     "external collaboration": EmploymentTypes.CONTRACT,
     "full time": EmploymentTypes.FULLTIME,
     "fulltime": EmploymentTypes.FULLTIME,
     "internship": EmploymentTypes.INTERNSHIP,
     "jiný typ": None,
+    "na dohodu": EmploymentTypes.TEMPORARY,
+    "na dohodu (brigády)": EmploymentTypes.TEMPORARY,
     "neplacená stáž": EmploymentTypes.INTERNSHIP,
     "other": None,
     "paid internship": EmploymentTypes.INTERNSHIP,
@@ -38,6 +42,7 @@ EMPLOYMENT_TYPES_MAPPING = {
     "plný úvazek": EmploymentTypes.FULLTIME,
     "plný úväzok": EmploymentTypes.FULLTIME,
     "praxe a stáže": EmploymentTypes.INTERNSHIP,
+    "skrátený úväzok": EmploymentTypes.PARTTIME,
     "stáž": EmploymentTypes.INTERNSHIP,
     "temporary": EmploymentTypes.TEMPORARY,
     "trainee": EmploymentTypes.INTERNSHIP,
@@ -46,6 +51,8 @@ EMPLOYMENT_TYPES_MAPPING = {
     "volunteering": EmploymentTypes.VOLUNTEERING,
     "zkrácený úvazek": EmploymentTypes.PARTTIME,
     "zkrátený úväzok": EmploymentTypes.PARTTIME,
+    "živnost": EmploymentTypes.CONTRACT,
+    "živnosť": EmploymentTypes.CONTRACT,
 }
 
 
