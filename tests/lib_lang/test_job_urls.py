@@ -32,6 +32,10 @@ from jg.coop.lib.job_urls import (
             "govcz#30093955",
             "https://portal.isoss.gov.cz/irj/portal/anonymous/eosmlistpublic#/detail/30093955",
         ),
+        (
+            "profesiask#O5372759",
+            "https://www.profesia.sk/O5372759",
+        ),
     ],
 )
 def test_id_to_url(id: str, expected: str):
@@ -97,6 +101,26 @@ def test_id_to_url_raises_not_implemented_error_for_unknown_name():
         (
             "https://www.startupjobs.cz/nabidka/97145/backend-engineer?utm_source=juniorguru&utm_medium=cpc&utm_campaign=juniorguru",
             "startupjobs#97145/backend-engineer",
+        ),
+        (
+            "https://www.profesia.sk/praca/grafton-slovakia/O5372759",
+            "profesiask#O5372759",
+        ),
+        (
+            "https://www.profesia.sk/praca/grafton-slovakia/O5372759?search_id=abc&utm_source=x",
+            "profesiask#O5372759",
+        ),
+        (
+            "https://www.profesia.sk/en/work/grafton-slovakia/O5372759",
+            "profesiask#O5372759",
+        ),
+        (
+            "https://www.profesia.sk/O5372759",
+            "profesiask#O5372759",
+        ),
+        (
+            "https://www.profesia.sk/praca/informacne-technologie/",
+            None,
         ),
     ],
 )
