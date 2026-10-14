@@ -4,7 +4,7 @@ import pytest
 
 from jg.coop.models.base import SqliteDatabase
 from jg.coop.models.club import ClubUser
-from jg.coop.models.role import InterestRole
+from jg.coop.models.role import DocumentedRole, InterestRole
 
 from testing_utils import prepare_test_db, prepare_user_data
 
@@ -15,7 +15,7 @@ def create_user(id_, **kwargs) -> ClubUser:
 
 @pytest.fixture
 def test_db() -> Generator[SqliteDatabase]:
-    yield from prepare_test_db([ClubUser, InterestRole])
+    yield from prepare_test_db([ClubUser, InterestRole, DocumentedRole])
 
 
 def test_interests(test_db):
@@ -52,3 +52,25 @@ def test_interests(test_db):
         (role4, 2),
         (role2, 1),
     ]
+
+
+def test_documented_role_to_guide_data(test_db):
+    role = DocumentedRole.create(
+        club_id=1111,
+        name="Kouč",
+        mention="<@&1111>",
+        slug="coach",
+        description="Pomáhá ostatním.",
+        position=1,
+        emoji="🏋️",
+        color=0xFF0000,
+        icon_path="icons/coach.png",
+    )
+
+    assert role.to_guide_data() == {
+        "name": "Kouč",
+        "description": "Pomáhá ostatním.",
+        "color": 0xFF0000,
+        "emoji": "🏋️",
+        "icon_path": "icons/coach.png",
+    }

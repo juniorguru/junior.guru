@@ -206,3 +206,31 @@ def test_to_video_with_non_utc_datetime_raises_value_error():
         event.to_video(
             now=datetime(2021, 5, 2, 12, tzinfo=timezone(timedelta(hours=2)))
         )
+
+
+def test_to_guide_data(test_db):
+    event = create_event(
+        42,
+        title="Awesome Talk",
+        start_at=datetime(2024, 1, 15, 17, 0),
+        bio_name="Jane Doe",
+        avatar_path="avatars-participants/jane.jpg",
+        public_recording_url="https://www.youtube.com/watch?v=abc",
+    )
+
+    assert event.to_guide_data() == {
+        "title": "Awesome Talk",
+        "url": "https://junior.guru/events/42/",
+        "start_at_prg": datetime(2024, 1, 15, 18, 0),
+        "bio_name": "Jane Doe",
+        "avatar_path": "avatars-participants/jane.jpg",
+        "recording_url": "https://www.youtube.com/watch?v=abc",
+    }
+
+
+def test_to_guide_data_ignores_view_count(test_db):
+    event = create_event(1, view_count=10)
+    guide_data = event.to_guide_data()
+    event.view_count = 20
+
+    assert event.to_guide_data() == guide_data

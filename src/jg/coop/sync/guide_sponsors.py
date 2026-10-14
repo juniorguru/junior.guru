@@ -7,7 +7,7 @@ from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
 from jg.coop.lib.cache import get_cache
 from jg.coop.lib.discord_club import ClubClient, parse_channel, sync_guide_channel
-from jg.coop.models.base import db, hash_models
+from jg.coop.models.base import db, hash_data
 from jg.coop.models.sponsor import Sponsor
 
 
@@ -24,9 +24,9 @@ logger = loggers.from_path(__file__)
 @click.option("--force", is_flag=True, default=False)
 def main(channel_id: int, cache_key: str, cache_days: int, force: bool):
     with db.connection_context():
-        sponsors = list(Sponsor.club_listing())
+        sponsors = [sponsor.to_guide_data() for sponsor in Sponsor.club_listing()]
     cache = get_cache()
-    sponsors_hash = hash_models(sponsors)
+    sponsors_hash = hash_data(sponsors)
     cache_miss = cache.get(cache_key) != sponsors_hash
 
     if force or cache_miss:
@@ -37,7 +37,7 @@ def main(channel_id: int, cache_key: str, cache_days: int, force: bool):
         logger.info("Channel is up-to-date")
 
 
-async def sync_channel(client: ClubClient, channel_id: int, sponsors: list[Sponsor]):
+async def sync_channel(client: ClubClient, channel_id: int, sponsors: list[dict]):
     message_args_list = [
         build_header_args(),
         *(build_sponsor_args(sponsor) for sponsor in sponsors),
@@ -63,16 +63,16 @@ def build_header_args() -> dict:
     }
 
 
-def build_sponsor_args(sponsor: Sponsor) -> dict:
+def build_sponsor_args(sponsor: dict) -> dict:
     embed = Embed(
-        title=sponsor.name,
-        url=sponsor.url,
+        title=sponsor["name"],
+        url=sponsor["url"],
         color=Color.dark_grey(),
-        description=f"Role: <@&{sponsor.role_id}>\nČlenů: {sponsor.members_count}",
+        description=f"Role: <@&{sponsor['role_id']}>\nČlenů: {sponsor['members_count']}",
     )
-    embed.set_thumbnail(url=f"attachment://{Path(sponsor.poster_path).name}")
+    embed.set_thumbnail(url=f"attachment://{Path(sponsor['poster_path']).name}")
     return {
         "embed": embed,
-        "files": [File(IMAGES_DIR / sponsor.poster_path)],
+        "files": [File(IMAGES_DIR / sponsor["poster_path"])],
         "allowed_mentions": AllowedMentions.none(),
     }

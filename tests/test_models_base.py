@@ -2,7 +2,7 @@ from datetime import date, datetime, time
 
 import pytest
 
-from jg.coop.models.base import json_dumps
+from jg.coop.models.base import hash_data, json_dumps
 
 
 @pytest.mark.parametrize(
@@ -39,3 +39,19 @@ def test_json_dumps_item():
         '"employment_types": ["full-time"]'
         "}"
     )
+
+
+def test_hash_data_same():
+    assert hash_data([{"a": 1}, {"b": 2}]) == hash_data([{"a": 1}, {"b": 2}])
+
+
+@pytest.mark.parametrize(
+    "data",
+    [
+        [{"a": 2}, {"b": 2}],
+        [{"b": 2}, {"a": 1}],
+        [{"a": 1}],
+    ],
+)
+def test_hash_data_differs(data):
+    assert hash_data([{"a": 1}, {"b": 2}]) != hash_data(data)
