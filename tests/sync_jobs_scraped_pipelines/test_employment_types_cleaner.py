@@ -3,6 +3,7 @@ import pytest
 from jg.coop.sync.jobs_scraped.pipelines.employment_types_cleaner import (
     clean_employment_type,
     clean_employment_types,
+    is_internship_title,
     process,
 )
 
@@ -83,6 +84,22 @@ def test_clean_employment_type_raises():
             {},
             {},
         ),
+        (
+            {"title": "Stáž v IT", "employment_types": ["part time"]},
+            {"title": "Stáž v IT", "employment_types": ["internship", "parttime"]},
+        ),
+        (
+            {"title": "Software Engineer Intern", "employment_types": ["internship"]},
+            {"title": "Software Engineer Intern", "employment_types": ["internship"]},
+        ),
+        (
+            {"title": "Trainee Developer"},
+            {"title": "Trainee Developer", "employment_types": ["internship"]},
+        ),
+        (
+            {"title": "Internal Auditor", "employment_types": ["Full-Time"]},
+            {"title": "Internal Auditor", "employment_types": ["fulltime"]},
+        ),
     ],
 )
 @pytest.mark.asyncio
@@ -107,3 +124,28 @@ def test_clean_employment_types(employment_types, expected):
 def test_clean_employment_types_raises():
     with pytest.raises(ValueError):
         assert clean_employment_types(["Full-Time", "Gargamel"])
+
+
+@pytest.mark.parametrize(
+    "title, expected",
+    [
+        ("Stáž v oblasti IT", True),
+        ("IT stážista/stážistka", True),
+        ("Placená stáže pro studenty", True),
+        ("Software Engineer Intern", True),
+        ("Internship – Data Analyst", True),
+        ("Interns for QA team", True),
+        ("Trainee Software Developer", True),
+        ("Graduate Traineeship in IT", True),
+        ("Praktikant/ka pro vývoj webu", True),
+        ("Praktikantka do IT oddělení", True),
+        ("Internal Systems Specialist", False),
+        ("International Sales Engineer", False),
+        ("Internet Marketing Specialist", False),
+        ("Junior Python Developer", False),
+        ("", False),
+        (None, False),
+    ],
+)
+def test_is_internship_title(title, expected):
+    assert is_internship_title(title) is expected
