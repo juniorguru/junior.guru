@@ -21,6 +21,10 @@ EVENTS_URL_PREFIX = "junior.guru/events/"
 
 SUBJECT_PERIOD_RE = re.compile(r"^(\w+ \d{4}) ")
 
+ITEM_RE = re.compile(r"^▪\ufe0f? (?P<text>.+) –$")
+
+RECORDING_RE = re.compile(r"^(?P<speaker>[^:]+): (?P<title>.+)$")
+
 
 @dataclass(frozen=True)
 class NewsletterContent:
@@ -111,10 +115,9 @@ def get_recording_title(
     url_prefix: str = EVENTS_URL_PREFIX,
 ) -> str:
     text = get_linked_item_text(content_html, heading, url_prefix)
-    try:
-        return text.split(": ", 1)[1]
-    except IndexError:
-        raise ValueError(f"No speaker and title in {text!r}")
+    if match := RECORDING_RE.match(text):
+        return match.group("title")
+    raise ValueError(f"No speaker and title in {text!r}")
 
 
 def get_linked_item_text(content_html: str, heading: str, url_prefix: str) -> str:
@@ -124,8 +127,10 @@ def get_linked_item_text(content_html: str, heading: str, url_prefix: str) -> st
     """
     for el in get_section(content_html, heading):
         for link in el.cssselect(f'a[href*="{url_prefix}"]'):
-            text = get_line_before(link)
-            return " ".join(text.replace("▪️", "").split()).rstrip(" –")
+            line = " ".join(get_line_before(link).split())
+            if match := ITEM_RE.match(line):
+                return match.group("text")
+            raise ValueError(f"Unexpected item {line!r} in the {heading!r} section")
     raise ValueError(f"No {url_prefix!r} link in the {heading!r} section")
 
 

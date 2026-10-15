@@ -280,3 +280,32 @@ def test_edit_content_html_adds_trailing_slash_to_course_urls():
     )
 
     assert edit_content_html(body) == expected
+
+
+@pytest.mark.parametrize(
+    "item_html",
+    [
+        '▪️ – <a href="https://junior.guru/stories/jana/">Přečti</a>',
+        '▪️ <a href="https://junior.guru/stories/jana/">Přečti</a>',
+        '▪️ Text bez oddělovače <a href="https://junior.guru/stories/jana/">Přečti</a>',
+    ],
+)
+def test_get_story_headline_unidentifiable(item_html: str):
+    content_html = f"<h2>Nepřibarvené příběhy juniorů</h2><p>{item_html}</p>"
+
+    with pytest.raises(ValueError):
+        get_story_headline(content_html)
+
+
+@pytest.mark.parametrize(
+    "text",
+    ["Martin Rapavý:  ", ": Jak fungují jazykové modely"],
+)
+def test_get_recording_title_unidentifiable(text: str):
+    content_html = (
+        "<h2>Záznamy z online akcí</h2>"
+        f'<p>▪️ {text} – <a href="https://junior.guru/events/1/">Sleduj</a></p>'
+    )
+
+    with pytest.raises(ValueError):
+        get_recording_title(content_html)
