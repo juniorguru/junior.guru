@@ -20,6 +20,10 @@ STOP_WORDS = [
 
 SEPARATORS_RE = re.compile(r"[\-\s]+")
 
+INTERNSHIP_TITLE_RE = re.compile(
+    r"\b(stáž\w*|intern(s|ships?)?|trainee\w*|praktikant\w*)\b", re.IGNORECASE
+)
+
 EMPLOYMENT_TYPES_MAPPING = {
     "brigáda": EmploymentTypes.TEMPORARY,
     "částečný úvazek": EmploymentTypes.PARTTIME,
@@ -59,7 +63,15 @@ EMPLOYMENT_TYPES_MAPPING = {
 async def process(item: dict) -> dict:
     if item.get("employment_types"):
         item["employment_types"] = clean_employment_types(item["employment_types"])
+    if is_internship_title(item.get("title")):
+        item["employment_types"] = sorted(
+            set(item.get("employment_types") or []) | {str(EmploymentTypes.INTERNSHIP)}
+        )
     return item
+
+
+def is_internship_title(title: str | None) -> bool:
+    return bool(title and INTERNSHIP_TITLE_RE.search(title))
 
 
 def clean_employment_types(employment_types: list[str]) -> list[str]:
