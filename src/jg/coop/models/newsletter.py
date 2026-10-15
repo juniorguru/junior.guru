@@ -4,7 +4,7 @@ from typing import Self
 
 from peewee import CharField, DateField, IntegerField
 
-from jg.coop.lib.newsletter_content import parse_newsletter
+from jg.coop.lib.newsletter_content_info import parse_newsletter_content
 from jg.coop.lib.text import remove_emoji
 from jg.coop.models.base import BaseModel
 from jg.coop.models.page import Page
@@ -46,7 +46,7 @@ class NewsletterIssue(BaseModel):
 
     @classmethod
     def from_buttondown(cls, data: dict) -> Self:
-        content_info = parse_newsletter(data["body"])
+        content_info = parse_newsletter_content(data["body"])
         subject = remove_emoji(data["subject"])
         return cls(
             buttondown_id=data["id"],

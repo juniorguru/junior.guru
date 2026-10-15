@@ -9,6 +9,6 @@
     "src/jg/coop/web/**/*.html",
     "src/jg/coop/web/**/*.md",
     "tests/**/*.html",
-    "tests/lib_newsletter_content/*.md"
+    "tests/lib_newsletter_content_info/*.md"
   ]
 }

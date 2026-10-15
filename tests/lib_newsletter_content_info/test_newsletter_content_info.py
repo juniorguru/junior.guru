@@ -3,16 +3,16 @@ from textwrap import dedent
 
 import pytest
 
-from jg.coop.lib.newsletter_content import (
-    NewsletterContent,
-    content_to_html,
-    edit_content_html,
-    get_linked_item_text,
-    get_meetups_count,
-    get_recording_title,
-    get_section,
-    get_story_headline,
-    parse_newsletter,
+from jg.coop.lib.newsletter_content_info import (
+    NewsletterContentInfo,
+    _get_linked_item_text,
+    _get_meetups_count,
+    _get_recording_title,
+    _get_section,
+    _get_story_headline,
+    edit_newsletter_content_html,
+    newsletter_content_to_html,
+    parse_newsletter_content,
 )
 
 
@@ -50,35 +50,35 @@ def read_fixture(name: str) -> str:
         ),
     ],
 )
-def test_parse_newsletter(fixture_name: str, expected: tuple):
-    content = parse_newsletter(read_fixture(fixture_name))
+def test_parse_newsletter_content(fixture_name: str, expected: tuple):
+    content_info = parse_newsletter_content(read_fixture(fixture_name))
 
     assert (
-        content.meetups_count,
-        content.story_headline,
-        content.recording_title,
+        content_info.meetups_count,
+        content_info.story_headline,
+        content_info.recording_title,
     ) == expected
 
 
-def test_parse_newsletter_with_colon_in_recording_title():
-    content = parse_newsletter(
+def test_parse_newsletter_content_with_colon_in_recording_title():
+    content_info = parse_newsletter_content(
         read_fixture("newsletter_content_with_colon_in_recording_title.md")
     )
 
-    assert content.recording_title == (
+    assert content_info.recording_title == (
         "Z diplomacie do jednorožce: Jak jsem se ocitl v IT bez řádku kódu"
     )
 
 
-def test_parse_newsletter_missing_section():
+def test_parse_newsletter_content_missing_section():
     with pytest.raises(ValueError):
-        parse_newsletter("<h2>Podcast</h2><p>Text</p>")
+        parse_newsletter_content("<h2>Podcast</h2><p>Text</p>")
 
 
 def test_get_description():
-    content = parse_newsletter(read_fixture("newsletter_content.md"))
+    content_info = parse_newsletter_content(read_fixture("newsletter_content.md"))
 
-    assert content.get_description("Září 2026 ve světě IT juniorů") == (
+    assert content_info.get_description("Září 2026 ve světě IT juniorů") == (
         "Shrnutí pro juniory v IT za září 2026: 8 akcí kam přijít, "
         "příběh „Na pohovoru proti mně sedělo šest lidí. "
         "Tomáš Novák o tranzitu z hudby do IT“, "
@@ -91,7 +91,7 @@ def test_get_description():
     [(1, " 1 akce kam"), (3, " 3 akce kam"), (5, " 5 akcí kam")],
 )
 def test_get_description_plurals(meetups_count: int, expected: str):
-    content = NewsletterContent(
+    content_info = NewsletterContentInfo(
         html="",
         reading_time=1,
         meetups_count=meetups_count,
@@ -99,11 +99,11 @@ def test_get_description_plurals(meetups_count: int, expected: str):
         recording_title="Záznam",
     )
 
-    assert expected in content.get_description("Říjen 2025 ve světě IT juniorů")
+    assert expected in content_info.get_description("Říjen 2025 ve světě IT juniorů")
 
 
 def test_get_description_unexpected_subject():
-    content = NewsletterContent(
+    content_info = NewsletterContentInfo(
         html="",
         reading_time=1,
         meetups_count=1,
@@ -112,19 +112,19 @@ def test_get_description_unexpected_subject():
     )
 
     with pytest.raises(ValueError):
-        content.get_description("Newsletter ve světě IT juniorů")
+        content_info.get_description("Newsletter ve světě IT juniorů")
 
 
 def test_get_section():
     content_html = "<h2>A</h2><p>1</p><h2>B</h2><p>2</p><ul><li>3</li></ul><h2>C</h2>"
-    section = get_section(content_html, "B")
+    section = _get_section(content_html, "B")
 
     assert [el.tag for el in section] == ["p", "ul"]
 
 
 def test_get_section_missing():
     with pytest.raises(ValueError):
-        get_section("<h2>A</h2><p>1</p>", "B")
+        _get_section("<h2>A</h2><p>1</p>", "B")
 
 
 def test_get_recording_title_without_speaker():
@@ -134,7 +134,7 @@ def test_get_recording_title_without_speaker():
     )
 
     with pytest.raises(ValueError):
-        get_recording_title(content_html)
+        _get_recording_title(content_html)
 
 
 def test_get_linked_item_text_custom_heading_and_url_prefix():
@@ -145,13 +145,13 @@ def test_get_linked_item_text_custom_heading_and_url_prefix():
     )
 
     assert (
-        get_linked_item_text(content_html, "Videa", "example.com/talks/")
+        _get_linked_item_text(content_html, "Videa", "example.com/talks/")
         == "Druhé video"
     )
 
 
 @pytest.mark.parametrize(
-    "get_value", [get_meetups_count, get_story_headline, get_recording_title]
+    "get_value", [_get_meetups_count, _get_story_headline, _get_recording_title]
 )
 def test_get_value_from_empty_section(get_value):
     content_html = dedent(
@@ -170,14 +170,14 @@ def test_get_value_from_empty_section(get_value):
 
 
 @pytest.mark.parametrize(
-    "get_value", [get_meetups_count, get_story_headline, get_recording_title]
+    "get_value", [_get_meetups_count, _get_story_headline, _get_recording_title]
 )
 def test_get_value_from_missing_section(get_value):
     with pytest.raises(ValueError):
         get_value("<h2>Podcast</h2><p>Text</p>")
 
 
-def test_content_to_html_with_markdown():
+def test_newsletter_content_to_html_with_markdown():
     body = dedent(
         """
             # Nadpis
@@ -199,10 +199,10 @@ def test_content_to_html_with_markdown():
         """
     ).strip()
 
-    assert content_to_html(body) == expected
+    assert newsletter_content_to_html(body) == expected
 
 
-def test_content_to_html_with_html():
+def test_newsletter_content_to_html_with_html():
     body = dedent(
         """
             <h1>Nadpis</h1>
@@ -214,10 +214,10 @@ def test_content_to_html_with_html():
         """
     ).strip()
 
-    assert content_to_html(body) == body
+    assert newsletter_content_to_html(body) == body
 
 
-def test_edit_content_html_removes_double_br():
+def test_edit_newsletter_content_html_removes_double_br():
     body = dedent(
         """
             <p>
@@ -236,10 +236,10 @@ def test_edit_content_html_removes_double_br():
         """
     ).strip()
 
-    assert edit_content_html(body) == expected
+    assert edit_newsletter_content_html(body) == expected
 
 
-def test_edit_content_html_preserves_chart():
+def test_edit_newsletter_content_html_preserves_chart():
     chart = dedent(
         """
             <p>
@@ -256,10 +256,10 @@ def test_edit_content_html_preserves_chart():
             </p>
         """
     ).strip()
-    assert edit_content_html(chart) == chart
+    assert edit_newsletter_content_html(chart) == chart
 
 
-def test_edit_content_html_strips_emoji_from_h2():
+def test_edit_newsletter_content_html_strips_emoji_from_h2():
     body = dedent(
         """
             <h2>🚀 Nové kurzy a články</h2>
@@ -273,10 +273,10 @@ def test_edit_content_html_strips_emoji_from_h2():
         """
     ).strip()
 
-    assert edit_content_html(body) == expected
+    assert edit_newsletter_content_html(body) == expected
 
 
-def test_edit_content_html_adds_trailing_slash_to_course_urls():
+def test_edit_newsletter_content_html_adds_trailing_slash_to_course_urls():
     body = (
         '<a href="https://junior.guru/courses/engeto">Engeto</a> '
         '<a href="https://junior.guru/courses/42prague?utm_source=x">42</a> '
@@ -290,7 +290,7 @@ def test_edit_content_html_adds_trailing_slash_to_course_urls():
         '<a href="https://junior.guru/courses/">Kurzy</a>'
     )
 
-    assert edit_content_html(body) == expected
+    assert edit_newsletter_content_html(body) == expected
 
 
 @pytest.mark.parametrize(
@@ -305,7 +305,7 @@ def test_get_story_headline_unidentifiable(item_html: str):
     content_html = f"<h2>Nepřibarvené příběhy juniorů</h2><p>{item_html}</p>"
 
     with pytest.raises(ValueError):
-        get_story_headline(content_html)
+        _get_story_headline(content_html)
 
 
 @pytest.mark.parametrize(
@@ -319,4 +319,4 @@ def test_get_recording_title_unidentifiable(text: str):
     )
 
     with pytest.raises(ValueError):
-        get_recording_title(content_html)
+        _get_recording_title(content_html)

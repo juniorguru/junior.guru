@@ -27,7 +27,7 @@ RECORDING_RE = re.compile(r"^(?P<speaker>[^:]+): (?P<title>.+)$")
 
 
 @dataclass(frozen=True)
-class NewsletterContent:
+class NewsletterContentInfo:
     html: str
     reading_time: int
     meetups_count: int
@@ -50,19 +50,19 @@ class NewsletterContent:
         )
 
 
-def parse_newsletter(body: str) -> NewsletterContent:
-    content_html = content_to_html(body)
-    edited_html = edit_content_html(content_html)
-    return NewsletterContent(
+def parse_newsletter_content(body: str) -> NewsletterContentInfo:
+    content_html = newsletter_content_to_html(body)
+    edited_html = edit_newsletter_content_html(content_html)
+    return NewsletterContentInfo(
         html=edited_html,
         reading_time=reading_time(len(extract_text(content_html))),
-        meetups_count=get_meetups_count(edited_html),
-        story_headline=get_story_headline(edited_html),
-        recording_title=get_recording_title(edited_html),
+        meetups_count=_get_meetups_count(edited_html),
+        story_headline=_get_story_headline(edited_html),
+        recording_title=_get_recording_title(edited_html),
     )
 
 
-def content_to_html(content_raw: str) -> str:
+def newsletter_content_to_html(content_raw: str) -> str:
     """
     Detects if it's Markdown or HTML. Markdown can contain tags,
     so we need a heuristic. If the text contains Markdown links,
@@ -73,7 +73,7 @@ def content_to_html(content_raw: str) -> str:
     return content_raw
 
 
-def edit_content_html(content_html: str) -> str:
+def edit_newsletter_content_html(content_html: str) -> str:
     # remove double <br>
     content_html = re.sub(r"<br>\s*<br>", "<br>", content_html)
 
@@ -89,10 +89,10 @@ def edit_content_html(content_html: str) -> str:
     return content_html
 
 
-def get_meetups_count(content_html: str, heading: str = MEETUPS_HEADING) -> int:
+def _get_meetups_count(content_html: str, heading: str = MEETUPS_HEADING) -> int:
     paragraphs = [
         el
-        for el in get_section(content_html, heading)
+        for el in _get_section(content_html, heading)
         if el.tag == "p"
         and not (el.text or "").strip()
         and el[:1]
@@ -103,40 +103,40 @@ def get_meetups_count(content_html: str, heading: str = MEETUPS_HEADING) -> int:
     return len(paragraphs)
 
 
-def get_story_headline(
+def _get_story_headline(
     content_html: str,
     heading: str = STORIES_HEADING,
     url_prefix: str = STORIES_URL_PREFIX,
 ) -> str:
-    return get_linked_item_text(content_html, heading, url_prefix)
+    return _get_linked_item_text(content_html, heading, url_prefix)
 
 
-def get_recording_title(
+def _get_recording_title(
     content_html: str,
     heading: str = RECORDINGS_HEADING,
     url_prefix: str = EVENTS_URL_PREFIX,
 ) -> str:
-    text = get_linked_item_text(content_html, heading, url_prefix)
+    text = _get_linked_item_text(content_html, heading, url_prefix)
     if match := RECORDING_RE.match(text):
         return match.group("title")
     raise ValueError(f"No speaker and title in {text!r}")
 
 
-def get_linked_item_text(content_html: str, heading: str, url_prefix: str) -> str:
+def _get_linked_item_text(content_html: str, heading: str, url_prefix: str) -> str:
     """
     Returns text of the first list item linking to the given URL prefix,
     where items are lines like '▪️ Text – <a href="...">Link</a><br>'
     """
-    for el in get_section(content_html, heading):
+    for el in _get_section(content_html, heading):
         for link in el.cssselect(f'a[href*="{url_prefix}"]'):
-            line = " ".join(get_line_before(link).split())
+            line = " ".join(_get_line_before(link).split())
             if match := ITEM_RE.match(line):
                 return match.group("text")
             raise ValueError(f"Unexpected item {line!r} in the {heading!r} section")
     raise ValueError(f"No {url_prefix!r} link in the {heading!r} section")
 
 
-def get_line_before(el: html.HtmlElement) -> str:
+def _get_line_before(el: html.HtmlElement) -> str:
     parent = el.getparent()
     text = parent.text or ""
     for sibling in parent:
@@ -149,7 +149,7 @@ def get_line_before(el: html.HtmlElement) -> str:
     raise ValueError("Element not found in its parent")
 
 
-def get_section(content_html: str, heading: str) -> list[html.HtmlElement]:
+def _get_section(content_html: str, heading: str) -> list[html.HtmlElement]:
     root = html.fragment_fromstring(content_html, create_parent="div")
     for h2 in root.cssselect("h2"):
         if h2.text_content().strip() == heading:
