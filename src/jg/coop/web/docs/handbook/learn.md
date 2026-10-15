@@ -1,5 +1,5 @@
 ---
-title: Jak se naučit programovat
+title: "Jak se naučit programovat: základy programování od nuly"
 emoji: 🚀
 stages: [trying, learning]
 description: Jak začít programovat? Tady máš úvod do programování v podobě rozcestníku na nejlepší a nejefektivnější materiály

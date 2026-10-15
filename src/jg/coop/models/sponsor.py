@@ -89,6 +89,15 @@ class Sponsor(BaseModel):
     def members_count(self) -> int:
         return len(self.account_ids)
 
+    def to_guide_data(self) -> dict:
+        return {
+            "name": self.name,
+            "url": self.url,
+            "role_id": self.role_id,
+            "members_count": self.members_count,
+            "poster_path": self.poster_path,
+        }
+
     def days_until_renew(self, today=None) -> int:
         today = today or date.today()
         return max(0, (self.renews_on - today).days)
