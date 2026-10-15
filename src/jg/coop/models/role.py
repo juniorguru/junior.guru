@@ -47,6 +47,15 @@ class DocumentedRole(BaseModel):
     color = IntegerField(null=True)
     icon_path = CharField(null=True)
 
+    def to_guide_data(self) -> dict:
+        return {
+            "name": self.name,
+            "description": self.description,
+            "color": self.color,
+            "emoji": self.emoji,
+            "icon_path": self.icon_path,
+        }
+
     @classmethod
     def get_by_slug(cls, slug) -> Self:
         if not slug:

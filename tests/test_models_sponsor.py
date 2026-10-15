@@ -147,3 +147,23 @@ def test_tier_grouping(
         (tier_mid, [sponsor2]),
         (tier_low, [sponsor1]),
     ]
+
+
+def test_to_guide_data(test_db: SqliteDatabase, tier_low: SponsorTier):
+    sponsor = create_sponsor(
+        "xerox",
+        name="Xerox",
+        url="https://xerox.example.com",
+        poster_path="posters/xerox.png",
+        role_id=123,
+        tier=tier_low,
+        account_ids=[11],
+    )
+
+    assert sponsor.to_guide_data() == {
+        "name": "Xerox",
+        "url": "https://xerox.example.com",
+        "role_id": 123,
+        "members_count": 1,
+        "poster_path": "posters/xerox.png",
+    }

@@ -8,7 +8,7 @@ from jg.coop.lib import discord_task, loggers
 from jg.coop.lib.cache import get_cache
 from jg.coop.lib.discord_club import ClubClient, parse_channel, sync_guide_channel
 from jg.coop.lib.text import emoji_url
-from jg.coop.models.base import db, hash_models
+from jg.coop.models.base import db, hash_data
 from jg.coop.models.role import DocumentedRole
 
 
@@ -25,9 +25,9 @@ logger = loggers.from_path(__file__)
 @click.option("--force", is_flag=True, default=False)
 def main(channel_id: int, cache_key: str, cache_days: int, force: bool):
     with db.connection_context():
-        roles = list(DocumentedRole.listing())
+        roles = [role.to_guide_data() for role in DocumentedRole.listing()]
     cache = get_cache()
-    roles_hash = hash_models(roles, exclude=[DocumentedRole.id])
+    roles_hash = hash_data(roles)
     cache_miss = cache.get(cache_key) != roles_hash
 
     if force or cache_miss:
@@ -38,9 +38,7 @@ def main(channel_id: int, cache_key: str, cache_days: int, force: bool):
         logger.info("Channel is up-to-date")
 
 
-async def sync_channel(
-    client: ClubClient, channel_id: int, roles: list[DocumentedRole]
-):
+async def sync_channel(client: ClubClient, channel_id: int, roles: list[dict]):
     message_args_list = [
         {
             "content": (
@@ -55,21 +53,21 @@ async def sync_channel(
     await sync_guide_channel(client, channel_id, message_args_list)
 
 
-def build_role_args(role: DocumentedRole) -> dict:
+def build_role_args(role: dict) -> dict:
     embed = Embed(
-        title=role.name,
-        color=Colour(role.color),
-        description=role.description,
+        title=role["name"],
+        color=Colour(role["color"]),
+        description=role["description"],
     )
     file = None
-    if role.icon_path:
-        path = IMAGES_DIR / role.icon_path
+    if role["icon_path"]:
+        path = IMAGES_DIR / role["icon_path"]
         logger.debug(f"Setting thumbnail: {path}")
         embed.set_thumbnail(url=f"attachment://{path.name}")
         file = File(path)
-    elif role.emoji:
-        logger.debug(f"Setting emoji thumbnail: {role.emoji}")
-        embed.set_thumbnail(url=emoji_url(role.emoji))
+    elif role["emoji"]:
+        logger.debug(f"Setting emoji thumbnail: {role['emoji']}")
+        embed.set_thumbnail(url=emoji_url(role["emoji"]))
     else:
-        logger.debug(f"Setting no thumbnail, role.icon_path is {role.icon_path!r}")
+        logger.debug(f"Setting no thumbnail, icon_path is {role['icon_path']!r}")
     return {"embed": embed, "file": file}

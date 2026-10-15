@@ -210,6 +210,16 @@ class Event(BaseModel):
             }
         return context
 
+    def to_guide_data(self) -> dict:
+        return {
+            "title": self.title,
+            "url": self.url,
+            "start_at_prg": self.start_at_prg,
+            "bio_name": self.bio_name,
+            "avatar_path": self.avatar_path,
+            "recording_url": self.private_recording_url or self.public_recording_url,
+        }
+
     def to_thumbnail_meta(self) -> dict:
         meta = {
             f"thumbnail_{key}": value

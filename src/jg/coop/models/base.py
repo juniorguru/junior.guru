@@ -16,7 +16,6 @@ from peewee import (
     Node,
     SqliteDatabase as BaseSqliteDatabase,
 )
-from playhouse.shortcuts import model_to_dict
 from playhouse.sqlite_ext import JSONField as BaseJSONField
 
 from jg.coop.lib import loggers
@@ -89,9 +88,8 @@ def json_dumps(value):
     return json.dumps(value, ensure_ascii=False, default=default)
 
 
-def hash_models(models: list[BaseModel], **model_to_dict_kwargs) -> str:
-    dicts = [model_to_dict(model, **model_to_dict_kwargs) for model in models]
-    return hashlib.sha256(pickle.dumps(dicts)).hexdigest()
+def hash_data(data: list[dict]) -> str:
+    return hashlib.sha256(pickle.dumps(data)).hexdigest()
 
 
 def check_enum(field_name: str, enum_cls: Enum) -> Node:
