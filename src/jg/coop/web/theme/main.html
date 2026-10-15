@@ -53,10 +53,6 @@
     {% endif %}
 
     {% if page and page.meta.description %}<meta name="description" content="{{ page.meta.description }}">{% endif %}
-
-    {% for item in json_ld %}
-    <script type="application/ld+json">{{ item }}</script>
-    {% endfor %}
   {% endblock meta %}
 </head>
 <body>
@@ -246,7 +242,7 @@
 
         <ul class="footer-icons">
           <li>
-            <a href="https://www.youtube.com/@juniordotguru" target="_blank" rel="noopener">
+            <a href="{{ youtube_url }}" target="_blank" rel="noopener">
               {{ 'youtube'|icon(alt='YouTube') }}
             </a>
           </li>
@@ -266,7 +262,7 @@
             </a>
           </li>
           <li>
-            <a href="https://github.com/juniorguru/" target="_blank" rel="noopener">
+            <a href="{{ github_url }}" target="_blank" rel="noopener">
               {{ 'github'|icon(alt='GitHub') }}
             </a>
           </li>

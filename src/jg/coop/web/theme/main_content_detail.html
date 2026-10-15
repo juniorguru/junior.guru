@@ -16,7 +16,15 @@
           </li>
         </ol>
       </nav>
-      <script type="application/ld+json">{{ [(page.meta.breadcrumb_parent, (page|parent_page).canonical_url), (page.meta.breadcrumb_item, page.canonical_url)]|breadcrumb_list }}</script>
+      <script type="application/ld+json">{{ breadcrumb_list_json_ld([(page.meta.breadcrumb_parent, (page|parent_page).canonical_url), (page.meta.breadcrumb_item, page.canonical_url)]) }}</script>
+      <script type="application/ld+json">{{ article_json_ld(
+        headline=page.meta.title,
+        url=page.canonical_url,
+        published_on=page.meta.date,
+        author_name=page.meta.author,
+        author_url=page.meta.author_url,
+        image_url=thumbnail_url,
+      ) }}</script>
       {% block content %}{{ page.content }}{% endblock %}
     </main>
   </div>

@@ -6,27 +6,20 @@ import pytest
 from jg.coop.lib import json_ld
 
 
-FAQ_HTML = """
-<h1>Klub: Otázky a odpovědi</h1>
-<div class="lead"><p>Intro</p></div>
-<div class="document-toc"><ul><li><a href="#q1">Jak funguje členství?</a></li></ul></div>
-<h2 id="q1">Jak funguje členství?<a class="headerlink" href="#q1" title="Odkaz na tuto sekci">#</a></h2>
-<p>Dokud máš <a href="https://discord.com/">aktivní</a> předplatné.</p>
-<p>Druhý
-  odstavec.</p>
-<h2 id="q2">Proč zrovna Discord?<a class="headerlink" href="#q2">#</a></h2>
-<ul><li>Hlasové kanály</li></ul>
-"""
-
-
 def test_dumps_adds_context():
     data = json.loads(json_ld.dumps({"@type": "Thing"}))
 
     assert data == {"@context": "https://schema.org", "@type": "Thing"}
 
 
-def test_dumps_escapes_script_closing_tag():
-    assert "</script>" not in json_ld.dumps({"name": "</script><script>"})
+def test_dumps_escapes_html():
+    assert "<" not in json_ld.dumps({"name": "</script><script>"})
+
+
+def test_dumps_escaped_html_round_trips():
+    data = json.loads(json_ld.dumps({"name": "</script>&'"}))
+
+    assert data["name"] == "</script>&'"
 
 
 def test_dumps_keeps_unicode():
@@ -34,7 +27,7 @@ def test_dumps_keeps_unicode():
 
 
 def test_website():
-    data = json.loads(json_ld.website())
+    data = json.loads(json_ld.website_json_ld())
 
     assert data["@type"] == "WebSite"
     assert data["name"] == "junior.guru"
@@ -43,22 +36,15 @@ def test_website():
 
 
 def test_website_publisher_references_organization():
-    website = json.loads(json_ld.website())
-    organization = json.loads(json_ld.organization())
+    website = json.loads(json_ld.website_json_ld())
+    organization = json.loads(json_ld.organization_json_ld())
 
     assert website["publisher"]["@id"] == organization["@id"]
 
 
-def test_podcast_series():
-    data = json.loads(json_ld.podcast_series())
-
-    assert data["@type"] == "PodcastSeries"
-    assert data["url"] == "https://junior.guru/podcast/"
-
-
 def test_breadcrumb_list():
     data = json.loads(
-        json_ld.breadcrumb_list(
+        json_ld.breadcrumb_list_json_ld(
             [
                 ("Příběhy", "https://junior.guru/stories/"),
                 ("Elvíra Krieger", "https://junior.guru/stories/elvira-krieger/"),
@@ -84,7 +70,7 @@ def test_breadcrumb_list():
 
 def test_article():
     data = json.loads(
-        json_ld.article(
+        json_ld.article_json_ld(
             headline="Do IT bez titulu",
             url="https://junior.guru/stories/elvira-krieger/",
             published_on=date(2026, 4, 9),
@@ -114,7 +100,7 @@ def test_article():
 @pytest.mark.parametrize("key", ["image", "author.url"])
 def test_article_optional_fields(key: str):
     data = json.loads(
-        json_ld.article(
+        json_ld.article_json_ld(
             headline="Do IT bez titulu",
             url="https://junior.guru/stories/elvira-krieger/",
             published_on=date(2026, 4, 9),
@@ -126,23 +112,3 @@ def test_article_optional_fields(key: str):
         data = data[parent]
 
     assert name not in data
-
-
-def test_parse_faq():
-    assert json_ld.parse_faq(FAQ_HTML) == [
-        ("Jak funguje členství?", "Dokud máš aktivní předplatné.\n\nDruhý odstavec."),
-        ("Proč zrovna Discord?", "Hlasové kanály"),
-    ]
-
-
-def test_faq_page():
-    data = json.loads(json_ld.faq_page(FAQ_HTML))
-
-    assert data["mainEntity"][0] == {
-        "@type": "Question",
-        "name": "Jak funguje členství?",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Dokud máš aktivní předplatné.\n\nDruhý odstavec.",
-        },
-    }

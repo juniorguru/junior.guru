@@ -1,7 +1,6 @@
 ---
 title: Otázky a odpovědi
 template: main_about.html
-faq: true
 ---
 
 {% from 'macros.html' import lead %}

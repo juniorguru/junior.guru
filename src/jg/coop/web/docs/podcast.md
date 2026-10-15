@@ -8,15 +8,17 @@ template: main_podcast.html
 
 # Podcast
 
+<script type="application/ld+json">{{ podcast_series_json_ld }}</script>
+
 {% call lead() %}
 Podcast pro juniory v IT! Jak začít s programováním? Jak najít práci v IT? Přinášíme odpovědi, inspiraci, motivaci.
 {% endcall %}
 
 <div class="standout">
-  <a class="brand-btn youtube" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA">{{ 'youtube'|icon }} YouTube</a>
-  <a class="brand-btn spotify" target="_blank" rel="noopener" href="https://open.spotify.com/show/12w93IKRzfCsgo7XrGEVw4">{{ 'spotify'|icon }} Spotify</a>
-  <a class="brand-btn apple-podcasts" target="_blank" rel="noopener" href="https://podcasts.apple.com/cz/podcast/junior-guru-podcast/id1603653549">{{ 'apple'|icon }} Apple</a>
-  <a class="brand-btn rss" target="_blank" rel="noopener" href="https://junior.guru/api/podcast.xml">{{ 'rss-fill'|icon }} RSS</a>
+  <a class="brand-btn youtube" target="_blank" rel="noopener" href="{{ podcast_youtube_url }}">{{ 'youtube'|icon }} YouTube</a>
+  <a class="brand-btn spotify" target="_blank" rel="noopener" href="{{ podcast_spotify_url }}">{{ 'spotify'|icon }} Spotify</a>
+  <a class="brand-btn apple-podcasts" target="_blank" rel="noopener" href="{{ podcast_apple_url }}">{{ 'apple'|icon }} Apple</a>
+  <a class="brand-btn rss" target="_blank" rel="noopener" href="{{ podcast_feed_url }}">{{ 'rss-fill'|icon }} RSS</a>
   <a class="brand-btn email" href="{{ pages|docs_url('news.jinja')|url }}">{{ 'envelope-paper-fill'|icon }} Newsletter</a>
 </div>
 

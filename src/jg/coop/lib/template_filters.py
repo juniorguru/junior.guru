@@ -15,7 +15,6 @@ from mkdocs.structure.nav import Navigation
 from mkdocs.structure.pages import Page
 from slugify import slugify
 
-from jg.coop.lib import json_ld
 from jg.coop.lib.md import md as md_
 from jg.coop.lib.utm_params import strip_utm_params
 
@@ -244,10 +243,6 @@ def sibling_page(page: Page, offset: int) -> StructureItem | None:
         return page.parent.children[sibling_index]
     except (AttributeError, IndexError):
         return None
-
-
-def breadcrumb_list(items: Iterable[tuple[str, str]]) -> str:
-    return json_ld.breadcrumb_list(items)
 
 
 def skip(items: Iterable, n: int) -> list:

@@ -53,6 +53,7 @@ def on_env(env, config, files):
 
     filters["md"] = md
     env.filters.update(filters)
+    env.globals.update(mkdocs_jinja.TEMPLATE_GLOBALS)
 
 
 def on_template_context(
