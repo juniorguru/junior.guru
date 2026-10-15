@@ -63,9 +63,11 @@ def parse_newsletter(body: str) -> NewsletterContent:
 
 
 def content_to_html(content_raw: str) -> str:
-    # Detect if it's Markdown or HTML. Markdown can contain tags,
-    # so we need a heuristic. If the text contains Markdown links,
-    # it's probably Markdown.
+    """
+    Detects if it's Markdown or HTML. Markdown can contain tags,
+    so we need a heuristic. If the text contains Markdown links,
+    it's probably Markdown.
+    """
     if re.search(r"\[.*?\]\(.*?\)", content_raw):
         return md(content_raw)
     return content_raw
