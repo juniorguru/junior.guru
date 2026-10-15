@@ -4,7 +4,11 @@ from zoneinfo import ZoneInfo
 
 import pytest
 
-from jg.coop.models.podcast import PodcastEpisode
+from jg.coop.models.podcast import (
+    PODCAST_NAME,
+    PodcastEpisode,
+    podcast_series_json_ld,
+)
 
 
 def test_publish_at_prg():
@@ -102,8 +106,14 @@ def test_to_json_ld():
         "partOfSeries": {
             "@type": "PodcastSeries",
             "@id": "https://junior.guru/podcast/#series",
-            "name": "Junior Guru: programování a kariéra v IT",
+            "name": PODCAST_NAME,
             "url": "https://junior.guru/podcast/",
         },
         "url": "https://junior.guru/podcast/42/",
     }
+
+
+def test_podcast_series_json_ld():
+    data = json.loads(podcast_series_json_ld())
+
+    assert data["@id"] == "https://junior.guru/podcast/#series"

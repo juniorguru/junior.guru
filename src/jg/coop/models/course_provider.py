@@ -125,8 +125,6 @@ class CourseProvider(BaseModel):
             "name": self.name,
             "url": self.url,
         }
-        if legal_name := (self.cz_name or self.sk_name):
-            data["legalName"] = legal_name
         if org := self.organization:
             data["logo"] = f"https://junior.guru/static/{org.logo_path}"
         return json_ld.dumps(data)

@@ -8,7 +8,42 @@ from peewee import BooleanField, CharField, DateField, IntegerField
 
 from jg.coop.lib import json_ld
 from jg.coop.lib.charts import ttm_range
+from jg.coop.lib.social import YOUTUBE_URL
 from jg.coop.models.base import BaseModel
+
+
+PODCAST_NAME = "Junior Guru: programování a kariéra v IT"
+
+PODCAST_URL = "https://junior.guru/podcast/"
+
+PODCAST_ID = f"{PODCAST_URL}#series"
+
+PODCAST_FEED_URL = "https://junior.guru/api/podcast.xml"
+
+PODCAST_IMAGE_URL = "https://junior.guru/static/podcast-v1.png"
+
+PODCAST_YOUTUBE_URL = YOUTUBE_URL
+
+PODCAST_SPOTIFY_URL = "https://open.spotify.com/show/12w93IKRzfCsgo7XrGEVw4"
+
+PODCAST_APPLE_URL = (
+    "https://podcasts.apple.com/cz/podcast/junior-guru-podcast/id1603653549"
+)
+
+
+def podcast_series_json_ld() -> str:
+    return json_ld.dumps(
+        {
+            "@type": "PodcastSeries",
+            "@id": PODCAST_ID,
+            "name": PODCAST_NAME,
+            "url": PODCAST_URL,
+            "inLanguage": "cs",
+            "webFeed": PODCAST_FEED_URL,
+            "image": PODCAST_IMAGE_URL,
+            "sameAs": [PODCAST_YOUTUBE_URL, PODCAST_SPOTIFY_URL, PODCAST_APPLE_URL],
+        }
+    )
 
 
 class PodcastEpisode(BaseModel):
@@ -91,9 +126,9 @@ class PodcastEpisode(BaseModel):
                 "name": self.format_title(),
                 "partOfSeries": {
                     "@type": "PodcastSeries",
-                    "@id": f"{json_ld.PODCAST_URL}#series",
-                    "name": json_ld.PODCAST_NAME,
-                    "url": json_ld.PODCAST_URL,
+                    "@id": PODCAST_ID,
+                    "name": PODCAST_NAME,
+                    "url": PODCAST_URL,
                 },
                 "url": self.url,
             }

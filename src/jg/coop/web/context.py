@@ -1,13 +1,13 @@
-from collections.abc import Generator
 from datetime import UTC, date, datetime, timedelta
 
-from jg.coop.lib import json_ld, loggers, months
+from jg.coop.lib import loggers, months
 from jg.coop.lib.discord_club import (
     CLUB_EVENTS_CHANNEL_URL,
     CLUB_GUILD_ID,
     ClubChannelID,
     ClubMemberID,
 )
+from jg.coop.lib.social import GITHUB_URL, YOUTUBE_URL
 from jg.coop.models.base import db
 from jg.coop.models.blog import BlogArticle
 from jg.coop.models.candidate import Candidate
@@ -22,7 +22,14 @@ from jg.coop.models.job import DiscordJob, ListedJob
 from jg.coop.models.newsletter import NewsletterIssue
 from jg.coop.models.page import Page
 from jg.coop.models.partner import Partner
-from jg.coop.models.podcast import PodcastEpisode
+from jg.coop.models.podcast import (
+    PODCAST_APPLE_URL,
+    PODCAST_FEED_URL,
+    PODCAST_SPOTIFY_URL,
+    PODCAST_YOUTUBE_URL,
+    PodcastEpisode,
+    podcast_series_json_ld,
+)
 from jg.coop.models.role import InterestRole
 from jg.coop.models.sponsor import GitHubSponsor, PastSponsor, Sponsor, SponsorTier
 from jg.coop.models.stage import Stage
@@ -46,6 +53,16 @@ def on_shared_context(context):
     context["now"] = now
     context["today"] = today
     context["club_events_channel_url"] = CLUB_EVENTS_CHANNEL_URL
+
+    # main.html, events.md, about/marketing.md
+    context["youtube_url"] = YOUTUBE_URL
+    context["github_url"] = GITHUB_URL
+
+    # main_podcast.html, podcast.md, news.jinja
+    context["podcast_feed_url"] = PODCAST_FEED_URL
+    context["podcast_youtube_url"] = PODCAST_YOUTUBE_URL
+    context["podcast_spotify_url"] = PODCAST_SPOTIFY_URL
+    context["podcast_apple_url"] = PODCAST_APPLE_URL
 
     # main.html, index.jinja, about/*.md, love.jinja
     context["sponsors_github"] = GitHubSponsor.listing()
@@ -149,6 +166,9 @@ def on_docs_context(context):
     # podcast.md, handbook/cv.md, news.jinja
     context["podcast_episodes"] = PodcastEpisode.listing()
 
+    # podcast.md
+    context["podcast_series_json_ld"] = podcast_series_json_ld()
+
     # events.md, news.jinja
     context["events_planned"] = Event.planned_listing()
     context["events_archive"] = Event.archive_listing()
@@ -228,32 +248,8 @@ def on_theme_page_context(context, page, config, files):
             context["thumbnail_url"] = thumbnail_url
         else:
             logger.warning(f"No thumbnail for {page.file.src_uri}")
-        context["json_ld"] = list(get_json_ld(page, current_page.thumbnail_url))
         context["related_pages"] = current_page.list_related()
         context["related_channels"] = current_page.list_related_channels()
         context["related_channels_monthly_size"] = (
             current_page.related_channels_monthly_size
-        )
-
-
-def get_json_ld(page, thumbnail_url: str | None = None) -> Generator[str]:
-    if page.is_homepage:
-        yield json_ld.website()
-        yield json_ld.organization()
-    if page.file.src_uri == "podcast.md":
-        yield json_ld.podcast_series()
-    if number := page.meta.get("podcast_episode_number"):
-        yield PodcastEpisode.get_by_number(number).to_json_ld()
-    if slug := page.meta.get("course_provider_slug"):
-        yield CourseProvider.get_by_slug(slug).to_json_ld()
-    if page.meta.get("faq"):
-        yield json_ld.faq_page(page.content)
-    if page.meta.get("interviewee"):
-        yield json_ld.article(
-            headline=page.meta["title"],
-            url=page.canonical_url,
-            published_on=page.meta["date"],
-            author_name=page.meta["author"],
-            author_url=page.meta.get("author_url"),
-            image_url=thumbnail_url,
         )
