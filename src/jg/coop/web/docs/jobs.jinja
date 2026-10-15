@@ -19,7 +19,7 @@ template: main.html
 
 <h1>
 {% if is_parttime_listing %}
-  Brigády a stáže v IT pro juniory
+  Brigády, stáže a dobrovolnictví v IT
 {% elif is_remote_listing %}
   Práce na dálku pro juniory
 {% elif is_region_listing %}
@@ -30,7 +30,9 @@ template: main.html
 </h1>
 
 {% call lead() %}
-  {% if not is_region_listing %}
+  {% if is_parttime_listing %}
+  IT brigády nejen pro studenty, stáže, práce na částečný úvazek i dobrovolnictví. Pro všechny, kdo chtějí v IT začít při škole, vedle jiné práce, nebo jen sbírají první praxi.
+  {% elif not is_region_listing %}
   Nabídky práce v programování, testování a datové analytice. Pro juniory, kterých se týká rekvalifikace do IT, i pro absolventy s VŠ.
   {% endif %}
   Už žádné „požadujeme 4 roky zkušeností“.

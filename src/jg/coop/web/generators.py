@@ -16,7 +16,7 @@ from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.event import Event
-from jg.coop.models.job import PARTTIME_PAGE_SLUG, REMOTE_TAG_SLUG, ListedJob
+from jg.coop.models.job import REMOTE_TAG_SLUG, ListedJob
 from jg.coop.models.newsletter import NewsletterIssue
 from jg.coop.models.podcast import PodcastEpisode
 
@@ -77,7 +77,7 @@ def generate_region_jobs_pages() -> Generator[GeneratedDocument]:
     jobs_text = jobs_file.read_text(encoding="utf-8-sig", errors="strict")
     content, meta = parse_document(jobs_text)
     yield GeneratedDocument(
-        path=f"jobs/{REMOTE_TAG_SLUG}.jinja",
+        path="jobs/remote.jinja",
         meta=meta
         | {
             "title": "Remote práce v IT pro juniory: na dálku, z domova",
@@ -106,18 +106,18 @@ def generate_region_jobs_pages() -> Generator[GeneratedDocument]:
         )
 
 
-def generate_parttime_jobs_pages() -> Generator[GeneratedDocument]:
+def generate_employment_type_jobs_pages() -> Generator[GeneratedDocument]:
     jobs_file = Path("src/jg/coop/web/docs/jobs.jinja")
     jobs_text = jobs_file.read_text(encoding="utf-8-sig", errors="strict")
     content, meta = parse_document(jobs_text)
     yield GeneratedDocument(
-        path=f"jobs/{PARTTIME_PAGE_SLUG}.jinja",
+        path="jobs/part-time.jinja",
         meta=meta
         | {
-            "title": "IT brigády a stáže pro studenty a juniory: programátor, tester a další",
+            "title": "IT brigády, stáže a dobrovolnictví nejen pro studenty: programátor, tester a další",
             "description": (
-                "Brigády v IT pro studenty, stáže, práce na částečný úvazek "
-                f"i dobrovolnictví pro začátečníky. {meta['description']}"
+                "Brigády v IT nejen pro studenty, stáže, práce na částečný úvazek "
+                f"i dobrovolnictví pro začátečníky. {meta['description']}"
             ),
             "jobs_listing": "parttime",
         },
@@ -234,10 +234,10 @@ def generate_newsletter_issue_pages() -> Generator[GeneratedDocument]:
 def main():
     generators = [
         generate_course_provider_pages,
+        generate_employment_type_jobs_pages,
         generate_event_pages,
         generate_job_pages,
         generate_newsletter_issue_pages,
-        generate_parttime_jobs_pages,
         generate_podcast_episode_pages,
         generate_redirects,
         generate_region_jobs_pages,

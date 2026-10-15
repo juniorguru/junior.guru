@@ -25,7 +25,7 @@ from jg.coop.lib import template_filters
 from jg.coop.lib.mkdocs_jinja import get_filters
 from jg.coop.web.context import get_candidates_context, get_jobs_context
 from jg.coop.web.generators import (
-    generate_parttime_jobs_pages,
+    generate_employment_type_jobs_pages,
     generate_region_jobs_pages,
 )
 
@@ -167,7 +167,9 @@ def jobs_page(test_db: SqliteDatabase, serve: Callable[[str], None]) -> Callable
 
 def get_listing_jobs_page_meta(url: str) -> dict[str, Any]:
     path = url.strip("/") + ".jinja"
-    for document in chain(generate_region_jobs_pages(), generate_parttime_jobs_pages()):
+    for document in chain(
+        generate_region_jobs_pages(), generate_employment_type_jobs_pages()
+    ):
         if document.path == path:
             return document.meta
     raise ValueError(f"No jobs listing page for {url}")

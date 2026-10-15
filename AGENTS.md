@@ -9,3 +9,4 @@
 - Treat `jg sync` as a danger area. Never execute it deliberately unless the user explicitly instructed or approved that exact sync operation.
 - After significant changes to the Discord integration always check the [bot docs](src/jg/coop/web/docs/about/bot.md) if they need update.
 - The package imported as `discord` is [Pycord](https://docs.pycord.dev), not discord.py — the two differ, and Pycord is often installed bleeding-edge from git. Never rely on discord.py knowledge; always read the installed package source under `.venv/lib/**/site-packages/discord/` before drawing conclusions about its behavior.
+- In Czech text (Markdown, templates, and string values in code), put a non-breaking space after one- and two-letter words such as "a", "v", "i", "s", "k", "na", so that a line never ends with them. Use the Unicode character U+00A0 directly, not the `&nbsp;` entity.

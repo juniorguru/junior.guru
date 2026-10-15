@@ -35,8 +35,6 @@ JOB_EXPIRED_SOON_DAYS = 10
 
 REMOTE_TAG_SLUG = "remote"
 
-PARTTIME_PAGE_SLUG = "part-time"
-
 PARTTIME_TAG_SLUGS = ["internship", "parttime", "volunteering"]
 
 
