@@ -292,7 +292,7 @@ Nemáš-li nápady, mrkni na [Pyvec](https://pyvec.org/), [Česko.Digital](https
 
 {% if jobs_volunteering %}
 Přímo na junior.guru jsou [nabídky práce výhradně pro juniory](../jobs.jinja) a občas se mezi nimi objeví i nabídka dobrovolnictví (neziskovky a malé projekty zde mohou inzerovat zdarma). Zrovna dnes tam něco je:
-{{ jobs_inline(jobs_volunteering, 2, jobs_url='/jobs/remote/') }}
+{{ jobs_inline(jobs_volunteering, 2, jobs_url='/jobs/parttime/') }}
 {% endif %}
 
 
@@ -318,7 +318,7 @@ Pozor na **neplacené stáže**. Je na tobě si vyhodnotit, zda se ti stáž bez
 
 {% if jobs_internship %}
 Přímo na junior.guru najdeš [nabídky práce výhradně pro juniory](../jobs.jinja). Zrovna dnes jsou mezi nimi i nějaké stáže:
-{{ jobs_inline(jobs_internship, 2, jobs_url='/jobs/remote/') }}
+{{ jobs_inline(jobs_internship, 2, jobs_url='/jobs/parttime/') }}
 {% endif %}
 
 ### Práce pro velkou firmu    <span id="big-companies"></span>

@@ -67,7 +67,7 @@ function filterJobs({ pushHistory = false } = {}) {
     mapping[tag.dataset.jobsTagType].push(tag.dataset.jobsTag);
     return mapping;
   }, {});
-  const locationSlug = getLocationSlug(window.location);
+  const locationSlug = getLocationSlug();
   if (locationSlug && !activeTagsByType["location"].includes(locationSlug)) {
     activeTagsByType["location"].push(locationSlug);
   }
@@ -152,7 +152,7 @@ function updateJobsTagsUI() {
     },
     { location: [] },
   );
-  const locationSlug = getLocationSlug(window.location);
+  const locationSlug = getLocationSlug();
   if (locationSlug) {
     activeSlugsByType["location"].push(locationSlug);
   }
@@ -174,9 +174,11 @@ function hideElement(element) {
   element.setAttribute("hidden", "");
 }
 
-function getLocationSlug(location) {
-  const match = location.pathname.match(/\/jobs\/([^/]+)\/?$/);
-  return match ? match[1].replaceAll("-", "") : null;
+function getLocationSlug() {
+  const tag = document.querySelector(
+    ".jobs-filters .jobs-tag.disabled[data-jobs-tag-type='location']",
+  );
+  return tag ? tag.dataset.jobsTag : null;
 }
 
 document.addEventListener("DOMContentLoaded", setupJobsTags);

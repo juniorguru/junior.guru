@@ -9,6 +9,7 @@ and serves it to Playwright as if it was https://junior.guru/<path>.
 
 import subprocess
 from collections.abc import Callable, Generator
+from itertools import chain
 from pathlib import Path
 from types import SimpleNamespace
 from typing import Any
@@ -23,7 +24,10 @@ from playwright.sync_api import Browser, Page, Route, expect, sync_playwright
 from jg.coop.lib import template_filters
 from jg.coop.lib.mkdocs_jinja import get_filters
 from jg.coop.web.context import get_candidates_context, get_jobs_context
-from jg.coop.web.generators import generate_region_jobs_pages
+from jg.coop.web.generators import (
+    generate_parttime_jobs_pages,
+    generate_region_jobs_pages,
+)
 
 from testing_utils import prepare_test_db
 

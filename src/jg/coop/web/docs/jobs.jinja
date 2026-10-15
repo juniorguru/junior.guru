@@ -8,9 +8,19 @@ template: main.html
 
 {% set is_region_listing = page.meta.region_tag_slug %}
 {% set is_remote_listing = page.meta.region_tag_slug == "remote" %}
+{% set is_parttime_listing = page.meta.jobs_listing == "parttime" %}
+
+{% if is_parttime_listing %}
+  {% set jobs = jobs_parttime %}
+  {% set employment_tags = jobs_tags.employment|selectattr("slug", "in", jobs_parttime_tag_slugs)|list %}
+{% else %}
+  {% set employment_tags = jobs_tags.employment %}
+{% endif %}
 
 <h1>
-{% if is_remote_listing %}
+{% if is_parttime_listing %}
+  Brigády a stáže v IT pro juniory
+{% elif is_remote_listing %}
   Práce na dálku pro juniory
 {% elif is_region_listing %}
   Práce pro juniory: {{ page.meta.region|replace(' ', ' ') }}
@@ -83,7 +93,7 @@ template: main.html
   </dd>
   <dt class="jobs-filters-heading">{{ "hourglass-split"|icon }} Úvazek:</dt>
   <dd class="jobs-tags">
-    {% for tag in jobs_tags.employment %}
+    {% for tag in employment_tags %}
       <button
         type="button"
         class="jobs-tag"
