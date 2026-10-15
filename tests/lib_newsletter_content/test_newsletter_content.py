@@ -27,7 +27,7 @@ def read_fixture(name: str) -> str:
     "fixture_name, expected",
     [
         (
-            "newsletter_content_in_html.html",
+            "newsletter_content.html",
             (
                 10,
                 (
@@ -38,7 +38,7 @@ def read_fixture(name: str) -> str:
             ),
         ),
         (
-            "newsletter_content_in_markdown.md",
+            "newsletter_content.md",
             (
                 8,
                 (
@@ -76,7 +76,7 @@ def test_parse_newsletter_missing_section():
 
 
 def test_get_description():
-    content = parse_newsletter(read_fixture("newsletter_content_in_markdown.md"))
+    content = parse_newsletter(read_fixture("newsletter_content.md"))
 
     assert content.get_description("Září 2026 ve světě IT juniorů") == (
         "Shrnutí pro juniory v IT za září 2026: 8 akcí kam přijít, "
