@@ -4,7 +4,13 @@ from datetime import date
 
 from jinja2.utils import htmlsafe_json_dumps
 
-from jg.coop.lib.social import GITHUB_URL, LINKEDIN_URL, YOUTUBE_URL
+from jg.coop.lib.social import (
+    GITHUB_URL,
+    INSTAGRAM_URL,
+    LINKEDIN_URL,
+    TIKTOK_URL,
+    YOUTUBE_URL,
+)
 
 
 SITE_URL = "https://junior.guru/"
@@ -47,7 +53,13 @@ def organization_json_ld() -> str:
             "url": SITE_URL,
             "logo": f"{SITE_URL}static/logo.png",
             "founder": {"@type": "Person", "name": "Honza Javorek"},
-            "sameAs": [GITHUB_URL, LINKEDIN_URL, YOUTUBE_URL],
+            "sameAs": [
+                GITHUB_URL,
+                INSTAGRAM_URL,
+                LINKEDIN_URL,
+                TIKTOK_URL,
+                YOUTUBE_URL,
+            ],
         }
     )
 
