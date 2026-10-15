@@ -186,6 +186,36 @@ def test_get_recording_event_id():
     assert get_recording_event_id(CONTENT_HTML) == 65
 
 
+def test_get_story_slug_custom_heading_and_url_prefix():
+    content_html = (
+        "<h2>Příběhy</h2>"
+        '<p><a href="https://junior.guru/events/1/">Akce</a> '
+        '<a href="https://example.com/people/jana-nova/">Jana</a></p>'
+    )
+
+    assert (
+        get_story_slug(
+            content_html, heading="Příběhy", url_prefix="example.com/people/"
+        )
+        == "jana-nova"
+    )
+
+
+def test_get_recording_event_id_custom_heading_and_url_prefix():
+    content_html = (
+        "<h2>Videa</h2>"
+        '<p><a href="https://junior.guru/stories/jana/">Jana</a> '
+        '<a href="https://example.com/talks/42/">Talk</a></p>'
+    )
+
+    assert (
+        get_recording_event_id(
+            content_html, heading="Videa", url_prefix="example.com/talks/"
+        )
+        == 42
+    )
+
+
 @pytest.mark.parametrize(
     "get_value", [get_meetups_count, get_story_slug, get_recording_event_id]
 )

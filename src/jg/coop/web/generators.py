@@ -17,7 +17,7 @@ from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.event import Event
 from jg.coop.models.job import REMOTE_TAG_SLUG, ListedJob
-from jg.coop.models.newsletter import NewsletterIssue, get_issue_description
+from jg.coop.models.newsletter import NewsletterIssue
 from jg.coop.models.podcast import PodcastEpisode
 
 
@@ -27,8 +27,6 @@ logger = loggers.from_path(__file__)
 REDIRECTS_YAML_PATH = Path("src/jg/coop/data/redirects.yml")
 
 DOCS_DIR = Path("src/jg/coop/web/generated_docs")
-
-STORIES_DIR = Path("src/jg/coop/web/docs/stories")
 
 
 class GeneratedDocument(BaseModel):
@@ -196,17 +194,11 @@ def generate_course_provider_pages() -> Generator[GeneratedDocument]:
 @db.connection_context()
 def generate_newsletter_issue_pages() -> Generator[GeneratedDocument]:
     for newsletter_issue in NewsletterIssue.listing():
-        recording_event = Event.get_by_id(newsletter_issue.recording_event_id)
         yield GeneratedDocument(
             path=f"news/{newsletter_issue.slug}.md",
             meta={
                 "title": newsletter_issue.subject,
-                "description": get_issue_description(
-                    newsletter_issue.subject,
-                    newsletter_issue.meetups_count,
-                    get_story_interviewee(newsletter_issue.story_slug),
-                    recording_event.title,
-                ),
+                "description": newsletter_issue.description,
                 "date": newsletter_issue.published_on.isoformat(),
                 "newsletter_issue_id": newsletter_issue.id,
                 "template": "main_subnav.html",
@@ -218,11 +210,6 @@ def generate_newsletter_issue_pages() -> Generator[GeneratedDocument]:
             },
             content=(DOCS_DIR / "newsletter_issue.md").read_text(),
         )
-
-
-def get_story_interviewee(slug: str) -> str:
-    _, meta = parse_document((STORIES_DIR / f"{slug}.md").read_text())
-    return meta["interviewee"]
 
 
 def main():
