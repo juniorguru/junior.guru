@@ -27,7 +27,7 @@ def read_fixture(name: str) -> str:
     "fixture_name, expected",
     [
         (
-            "newsletter_content_before_2025-12-05.html",
+            "newsletter_content_before_2025-12.html",
             (
                 10,
                 (
