@@ -400,20 +400,12 @@
   <div class="jobs-inline">
     <ul class="jobs-inline-list">
       {% for job in jobs|sample_jobs(n) %}
-        <li class="jobs-inline-item" itemscope itemtype="https://schema.org/JobPosting">
-          <meta itemprop="industry" content="Informační technologie">
-          <meta itemprop="datePosted" content="{{ job.posted_on.isoformat() }}">
-          <meta itemprop="description" content="Pracovní nabídka pro začínající programátory: {{ job.title }} &mdash; {{ job.company_name }}, {{ job.location_text|default('?', true) }}">
-          <div itemprop="jobLocation" itemscope itemtype="http://schema.org/Place">
-            <meta itemprop="address" content="{{ job.location_text|default('?', true) }}">
-          </div>
-
+        <li class="jobs-inline-item">
           {% if job.is_submitted %}
-            <a class="jobs-inline-link" href="{{ job.url|relative_url }}" itemprop="url">
+            <a class="jobs-inline-link" href="{{ job.url|relative_url }}">
           {% else %}
             <a class="jobs-inline-link" href="{{ jobs_url }}">
           {% endif %}
-            <meta itemprop="url" content="{{ job.effective_link }}">
             <div class="jobs-inline-logo">
               {% if job.company_logo_path %}
                 {{ img('static/' + job.company_logo_path, 'Logo ' + job.company_name, 100, 100, class='jobs-inline-image') }}
@@ -422,12 +414,8 @@
             <div class="jobs-inline-body">
               <h5 class="jobs-inline-title" title="{{ job.title }}">
                 {{ job.title|truncate(60) }}
-                <meta itemprop="title" content="{{ job.title }}">
               </h5>
-              <p class="jobs-inline-company" itemprop="hiringOrganization" itemscope itemtype="http://schema.org/Organization">
-                <span itemprop="name">{{ job.company_name }}</span>
-                {% if job.company_url %}<meta itemprop="url" content="{{ job.company_url }}">{% endif %}
-              </p>
+              <p class="jobs-inline-company">{{ job.company_name }}</p>
             </div>
           </a>
         </li>

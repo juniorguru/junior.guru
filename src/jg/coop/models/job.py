@@ -434,36 +434,6 @@ class ListedJob(BaseModel):
     def api_listing(cls) -> Iterable[Self]:
         return cls.select().order_by(cls.posted_on.desc())
 
-    def to_json_ld(self) -> str:
-        description_parts = [self.title, self.company_name, self.location_text]
-        description = " — ".join(filter(None, description_parts))
-        return json.dumps(
-            {
-                "@context": "https://schema.org",
-                "@type": "JobPosting",
-                "title": self.title,
-                "url": self.url,
-                "description": (
-                    f"Pracovní nabídka "
-                    f"pro začínající programátory nebo testery: {description}"
-                ),
-                "datePosted": self.posted_on.isoformat(),
-                "industry": "Informační technologie",
-                "jobLocation": {
-                    "@type": "Place",
-                    "address": self.location_text,
-                },
-                "image": f"https://junior.guru/static/{self.company_logo_path}",
-                "hiringOrganization": {
-                    "@type": "Organization",
-                    "name": self.company_name,
-                    "logo": f"https://junior.guru/static/{self.company_logo_path}",
-                },
-            },
-            ensure_ascii=False,
-            sort_keys=True,
-        )
-
     def to_czechitas_api(self) -> dict[str, str | int | datetime | None]:
         return dict(
             title=self.title,

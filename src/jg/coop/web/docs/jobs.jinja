@@ -149,7 +149,6 @@ template: main.html
   <ul class="jobs-list">
     {% for job in jobs %}
     <li class="jobs-item openable tagged{% if job.is_highlighted %} highlighted{% endif %}">
-      <script type="application/ld+json">{{ job.to_json_ld() }}</script>
       <div class="jobs-item-container">
         <div class="jobs-logo">
           {{ img('static/' + job.company_logo_path, 'Logo ' + job.company_name, 100, 100, class="jobs-image") }}
