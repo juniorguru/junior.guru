@@ -46,7 +46,7 @@ class NewsletterIssue(BaseModel):
 
     @classmethod
     def from_buttondown(cls, data: dict) -> Self:
-        content = parse_newsletter(data["body"])
+        content_info = parse_newsletter(data["body"])
         subject = remove_emoji(data["subject"])
         return cls(
             buttondown_id=data["id"],
@@ -54,11 +54,11 @@ class NewsletterIssue(BaseModel):
             published_on=datetime.fromisoformat(data["publish_date"]).date(),
             subject_raw=data["subject"],
             subject=subject,
-            content_html=content.html,
-            reading_time=content.reading_time,
+            content_html=content_info.html,
+            reading_time=content_info.reading_time,
             canonical_url=data.get("canonical_url") or None,
             thumbnail_url=data.get("image") or None,
-            description=content.get_description(subject),
+            description=content_info.get_description(subject),
         )
 
     @classmethod
