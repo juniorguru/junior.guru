@@ -1,3 +1,4 @@
+from pathlib import Path
 from textwrap import dedent
 
 import pytest
@@ -13,6 +14,9 @@ from jg.coop.lib.newsletter_content import (
     get_story_headline,
     parse_newsletter,
 )
+
+
+FIXTURES_DIR = Path(__file__).parent
 
 
 CONTENT_HTML = dedent(
@@ -47,6 +51,56 @@ CONTENT_HTML_EMPTY_SECTIONS = dedent(
         <p>Nic</p>
     """
 )
+
+
+@pytest.mark.parametrize(
+    "fixture_name, expected",
+    [
+        pytest.param(
+            "2025-11-03.html",
+            (
+                10,
+                (
+                    "Mnohdy ani sama firma nemá jasno v tom, koho chce nabrat, "
+                    "říká vývojářka Nina"
+                ),
+                "DevOps/SRE - co to vlastně je a chci to vůbec vědět?",
+            ),
+            id="html",
+        ),
+        pytest.param(
+            "2026-10-02.md",
+            (
+                8,
+                (
+                    "Na pohovoru proti mně sedělo šest lidí. "
+                    "Tomáš Novák o tranzitu z hudby do IT"
+                ),
+                "Jak fungují jazykové modely a co z toho plyne pro práci s nimi",
+            ),
+            id="markdown",
+        ),
+    ],
+)
+def test_parse_newsletter_fixture(fixture_name: str, expected: tuple):
+    content = parse_newsletter((FIXTURES_DIR / fixture_name).read_text())
+
+    assert (
+        content.meetups_count,
+        content.story_headline,
+        content.recording_title,
+    ) == expected
+
+
+def test_parse_newsletter_fixture_description():
+    content = parse_newsletter((FIXTURES_DIR / "2026-10-02.md").read_text())
+
+    assert content.get_description("Září 2026 ve světě IT juniorů") == (
+        "Shrnutí pro juniory v IT za září 2026: 8 akcí kam přijít, "
+        "příběh „Na pohovoru proti mně sedělo šest lidí. "
+        "Tomáš Novák o tranzitu z hudby do IT“, "
+        "záznam z akce „Jak fungují jazykové modely a co z toho plyne pro práci s nimi“"
+    )
 
 
 def test_parse_newsletter():
