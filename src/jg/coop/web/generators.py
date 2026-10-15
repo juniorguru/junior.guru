@@ -131,16 +131,11 @@ def generate_job_pages() -> Generator[GeneratedDocument]:
 def generate_event_pages() -> Generator[GeneratedDocument]:
     archive_size = Event.count_recording()
     for event in Event.listing():
-        description = (
-            "Klub junior.guru pořádá vzdělávací akce, online na svém Discordu. "
-            "Mohou to být přednášky, stream, Q&A, AMA, webináře… "
-            "Toto je stránka o jedné z nich."
-        )
         yield GeneratedDocument(
             path=f"events/{event.id}.md",
             meta=dict(
                 title=f"{event.bio_name} – {event.title}",
-                description=description,
+                description=event.get_page_description(),
                 template="main_content_detail.html",
                 event_id=event.id,
                 breadcrumb_parent="Klubové akce",
@@ -162,7 +157,7 @@ def generate_podcast_episode_pages() -> Generator[GeneratedDocument]:
             path=f"podcast/{podcast_episode.number}.jinja",
             meta={
                 "title": f"Podcast – {podcast_episode.format_title()}",
-                "description": f"Poslechni si {podcast_episode.number}. díl Junior Guru podcastu.",
+                "description": podcast_episode.page_description,
                 "podcast_episode_number": podcast_episode.number,
                 "breadcrumb_parent": "Podcast",
                 "breadcrumb_item": (
@@ -203,7 +198,7 @@ def generate_newsletter_issue_pages() -> Generator[GeneratedDocument]:
             path=f"news/{newsletter_issue.slug}.md",
             meta={
                 "title": newsletter_issue.subject,
-                "description": "Začínáš v IT? V tomhle newsletteru najdeš pozvánky, kurzy, podcasty, přednášky, články a další zdroje, které tě posunou a namotivují.",
+                "description": newsletter_issue.description,
                 "date": newsletter_issue.published_on.isoformat(),
                 "newsletter_issue_id": newsletter_issue.id,
                 "template": "main_subnav.html",
