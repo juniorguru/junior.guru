@@ -1,5 +1,5 @@
 import itertools
-from collections.abc import Iterable
+from collections.abc import Generator, Iterable
 from enum import StrEnum
 from itertools import groupby
 from operator import attrgetter
@@ -127,7 +127,27 @@ class CourseProvider(BaseModel):
         }
         if org := self.organization:
             data["logo"] = f"https://junior.guru/static/{org.logo_path}"
+        if companies := list(self.list_companies_json_ld()):
+            data["subOrganization"] = companies
         return json_ld.dumps(data)
+
+    def list_companies_json_ld(self) -> Generator[dict]:
+        companies = [
+            ("CZ", self.cz_business_id, self.cz_name),
+            ("SK", self.sk_business_id, self.sk_name),
+        ]
+        for country, business_id, legal_name in companies:
+            if business_id:
+                yield {
+                    "@type": "Organization",
+                    "legalName": legal_name or self.name,
+                    "identifier": {
+                        "@type": "PropertyValue",
+                        "propertyID": "IČO",
+                        "value": str(business_id),
+                    },
+                    "address": {"@type": "PostalAddress", "addressCountry": country},
+                }
 
     @classmethod
     def listing(cls) -> Iterable[Self]:
