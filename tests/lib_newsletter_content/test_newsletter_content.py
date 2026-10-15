@@ -19,45 +19,15 @@ from jg.coop.lib.newsletter_content import (
 FIXTURES_DIR = Path(__file__).parent
 
 
-CONTENT_HTML = dedent(
-    """
-        <h2>Plánované online akce</h2>
-        <p><a href="https://junior.guru/events/66/">Od zdrojáku ke strojáku</a></p>
-        <h2 id="srazy">Srazy, konference a jiné akce</h2>
-        <p><strong>3.10. Brno</strong>, komunita:<br>
-        <a href="https://example.com/1">Sraz 1</a></p>
-        <p><strong>6.10. Praha</strong>, komunita:<br>
-        <a href="https://example.com/2">Sraz 2</a></p>
-        <p>O těchto akcích se psalo v <a href="https://junior.guru/club/">klubu</a>:</p>
-        <p>▪️ <a href="https://discord.com/channels/1/2/3">Akce z Discordu</a></p>
-        <h2>Nepřibarvené příběhy juniorů</h2>
-        <p>▪️ Na pohovoru proti mně sedělo šest lidí. Tomáš Novák o\xa0tranzitu z\xa0hudby do\xa0IT – <a href="https://junior.guru/stories/tomas-novak/">Přečti</a><br>
-        ▪️ Volalo mi padesát vymahačů denně, říká Lucie Kopecká – <a href="https://junior.guru/stories/lucie-kopecka/">Přečti</a></p>
-        <h2>Záznamy z online akcí</h2>
-        <p>▪️ Martin Rapavý: Jak fungují jazykové\xa0modely: Úvod – <a href="https://junior.guru/events/65/#zaznam">Sleduj</a><br>
-        ▪️ Adina Fox: Designování vysněné práce – <a href="https://junior.guru/events/4/#zaznam">Sleduj</a></p>
-        <h2>Co se dělo v klubu</h2>
-        <p><a href="https://junior.guru/events/1/">Akce</a></p>
-    """
-)
-
-CONTENT_HTML_EMPTY_SECTIONS = dedent(
-    """
-        <h2>Srazy, konference a jiné akce</h2>
-        <p>Nic</p>
-        <h2>Nepřibarvené příběhy juniorů</h2>
-        <p>Nic</p>
-        <h2>Záznamy z online akcí</h2>
-        <p>Nic</p>
-    """
-)
+def read_fixture(name: str) -> str:
+    return (FIXTURES_DIR / name).read_text()
 
 
 @pytest.mark.parametrize(
     "fixture_name, expected",
     [
-        pytest.param(
-            "2025-11-03.html",
+        (
+            "newsletter_content_in_html.html",
             (
                 10,
                 (
@@ -66,10 +36,9 @@ CONTENT_HTML_EMPTY_SECTIONS = dedent(
                 ),
                 "DevOps/SRE - co to vlastně je a chci to vůbec vědět?",
             ),
-            id="html",
         ),
-        pytest.param(
-            "2026-10-02.md",
+        (
+            "newsletter_content_in_markdown.md",
             (
                 8,
                 (
@@ -78,12 +47,11 @@ CONTENT_HTML_EMPTY_SECTIONS = dedent(
                 ),
                 "Jak fungují jazykové modely a co z toho plyne pro práci s nimi",
             ),
-            id="markdown",
         ),
     ],
 )
-def test_parse_newsletter_fixture(fixture_name: str, expected: tuple):
-    content = parse_newsletter((FIXTURES_DIR / fixture_name).read_text())
+def test_parse_newsletter(fixture_name: str, expected: tuple):
+    content = parse_newsletter(read_fixture(fixture_name))
 
     assert (
         content.meetups_count,
@@ -92,39 +60,29 @@ def test_parse_newsletter_fixture(fixture_name: str, expected: tuple):
     ) == expected
 
 
-def test_parse_newsletter_fixture_description():
-    content = parse_newsletter((FIXTURES_DIR / "2026-10-02.md").read_text())
+def test_parse_newsletter_with_colon_in_recording_title():
+    content = parse_newsletter(
+        read_fixture("newsletter_content_with_colon_in_recording_title.md")
+    )
+
+    assert content.recording_title == (
+        "Z diplomacie do jednorožce: Jak jsem se ocitl v IT bez řádku kódu"
+    )
+
+
+def test_parse_newsletter_missing_section():
+    with pytest.raises(ValueError):
+        parse_newsletter("<h2>Podcast</h2><p>Text</p>")
+
+
+def test_get_description():
+    content = parse_newsletter(read_fixture("newsletter_content_in_markdown.md"))
 
     assert content.get_description("Září 2026 ve světě IT juniorů") == (
         "Shrnutí pro juniory v IT za září 2026: 8 akcí kam přijít, "
         "příběh „Na pohovoru proti mně sedělo šest lidí. "
         "Tomáš Novák o tranzitu z hudby do IT“, "
         "záznam z akce „Jak fungují jazykové modely a co z toho plyne pro práci s nimi“"
-    )
-
-
-def test_parse_newsletter():
-    content = parse_newsletter(CONTENT_HTML)
-
-    assert (
-        content.meetups_count,
-        content.story_headline,
-        content.recording_title,
-    ) == (
-        2,
-        "Na pohovoru proti mně sedělo šest lidí. Tomáš Novák o tranzitu z hudby do IT",
-        "Jak fungují jazykové modely: Úvod",
-    )
-
-
-def test_get_description():
-    content = parse_newsletter(CONTENT_HTML)
-
-    assert content.get_description("Září 2026 ve světě IT juniorů") == (
-        "Shrnutí pro juniory v IT za září 2026: 2 akce kam přijít, "
-        "příběh „Na pohovoru proti mně sedělo šest lidí. "
-        "Tomáš Novák o tranzitu z hudby do IT“, "
-        "záznam z akce „Jak fungují jazykové modely: Úvod“"
     )
 
 
@@ -145,40 +103,28 @@ def test_get_description_plurals(meetups_count: int, expected: str):
 
 
 def test_get_description_unexpected_subject():
-    content = parse_newsletter(CONTENT_HTML)
+    content = NewsletterContent(
+        html="",
+        reading_time=1,
+        meetups_count=1,
+        story_headline="Příběh",
+        recording_title="Záznam",
+    )
 
     with pytest.raises(ValueError):
         content.get_description("Newsletter ve světě IT juniorů")
 
 
-def test_parse_newsletter_missing_section():
-    with pytest.raises(ValueError):
-        parse_newsletter("<h2>Podcast</h2><p>Text</p>")
-
-
 def test_get_section():
-    section = get_section(CONTENT_HTML, "Záznamy z online akcí")
+    content_html = "<h2>A</h2><p>1</p><h2>B</h2><p>2</p><ul><li>3</li></ul><h2>C</h2>"
+    section = get_section(content_html, "B")
 
-    assert [el.tag for el in section] == ["p"]
+    assert [el.tag for el in section] == ["p", "ul"]
 
 
 def test_get_section_missing():
     with pytest.raises(ValueError):
-        get_section(CONTENT_HTML, "Neexistující sekce")
-
-
-def test_get_meetups_count():
-    assert get_meetups_count(CONTENT_HTML) == 2
-
-
-def test_get_story_headline():
-    assert get_story_headline(CONTENT_HTML) == (
-        "Na pohovoru proti mně sedělo šest lidí. Tomáš Novák o tranzitu z hudby do IT"
-    )
-
-
-def test_get_recording_title():
-    assert get_recording_title(CONTENT_HTML) == "Jak fungují jazykové modely: Úvod"
+        get_section("<h2>A</h2><p>1</p>", "B")
 
 
 def test_get_recording_title_without_speaker():
@@ -208,8 +154,19 @@ def test_get_linked_item_text_custom_heading_and_url_prefix():
     "get_value", [get_meetups_count, get_story_headline, get_recording_title]
 )
 def test_get_value_from_empty_section(get_value):
+    content_html = dedent(
+        """
+            <h2>Srazy, konference a jiné akce</h2>
+            <p>Nic</p>
+            <h2>Nepřibarvené příběhy juniorů</h2>
+            <p>Nic</p>
+            <h2>Záznamy z online akcí</h2>
+            <p>Nic</p>
+        """
+    )
+
     with pytest.raises(ValueError):
-        get_value(CONTENT_HTML_EMPTY_SECTIONS)
+        get_value(content_html)
 
 
 @pytest.mark.parametrize(
