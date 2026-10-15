@@ -211,7 +211,10 @@ def test_to_video_with_non_utc_datetime_raises_value_error():
 @pytest.mark.parametrize(
     "kwargs, expected",
     [
-        ({}, "Online akce v klubu junior.guru, 8. 12. 2026. Akci vede"),
+        (
+            {},
+            "Online akce v klubu junior.guru, 8. 12. 2026. Akci vede",
+        ),
         (
             {"start_at": datetime(2026, 9, 24, 16)},
             "Online akce v klubu junior.guru z 24. 9. 2026. Akci vede",

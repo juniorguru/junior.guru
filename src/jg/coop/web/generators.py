@@ -157,7 +157,7 @@ def generate_podcast_episode_pages() -> Generator[GeneratedDocument]:
             path=f"podcast/{podcast_episode.number}.jinja",
             meta={
                 "title": f"Podcast – {podcast_episode.format_title()}",
-                "description": f"Poslechni si {podcast_episode.number}. díl Junior Guru podcastu.",
+                "description": podcast_episode.page_description,
                 "podcast_episode_number": podcast_episode.number,
                 "breadcrumb_parent": "Podcast",
                 "breadcrumb_item": (
