@@ -3,28 +3,13 @@ from collections.abc import Iterable
 from datetime import datetime
 from typing import Self
 
-from lxml import html
 from peewee import CharField, DateField, IntegerField
 
 from jg.coop.lib.md import md
 from jg.coop.lib.reading_time import reading_time
-from jg.coop.lib.template_filters import nplurals
 from jg.coop.lib.text import extract_text, remove_emoji
 from jg.coop.models.base import BaseModel
 from jg.coop.models.page import Page
-
-
-MEETUPS_HEADING = "Srazy, konference a jiné akce"
-
-STORIES_HEADING = "Nepřibarvené příběhy juniorů"
-
-RECORDINGS_HEADING = "Záznamy z online akcí"
-
-STORIES_URL_PREFIX = "junior.guru/stories/"
-
-EVENTS_URL_PREFIX = "junior.guru/events/"
-
-SUBJECT_PERIOD_RE = re.compile(r"^(\w+ \d{4}) ")
 
 
 class NewsletterIssue(BaseModel):
@@ -112,75 +97,6 @@ def edit_content_html(content_html: str) -> str:
     )
 
     return content_html
-
-
-def get_issue_description(
-    subject: str, meetups_count: int, interviewee: str, recording_title: str
-) -> str:
-    if not (match := SUBJECT_PERIOD_RE.match(subject)):
-        raise ValueError(f"Unexpected newsletter subject: {subject!r}")
-    period = match.group(1).lower()
-    meetups = f"{meetups_count} {nplurals(meetups_count, 'akce', 'akce', 'akcí')}"
-    return (
-        f"Shrnutí pro juniory v IT za {period}: "
-        f"{meetups} kam přijít, "
-        f"{interviewee} o své cestě do IT, "
-        f"záznam z akce „{' '.join(recording_title.split())}“"
-    )
-
-
-def get_meetups_count(content_html: str, heading: str = MEETUPS_HEADING) -> int:
-    paragraphs = [
-        el
-        for el in get_section(content_html, heading)
-        if el.tag == "p"
-        and not (el.text or "").strip()
-        and el[:1]
-        and el[0].tag == "strong"
-    ]
-    if not paragraphs:
-        raise ValueError(f"No meetups in the {heading!r} section")
-    return len(paragraphs)
-
-
-def get_story_slug(
-    content_html: str,
-    heading: str = STORIES_HEADING,
-    url_prefix: str = STORIES_URL_PREFIX,
-) -> str:
-    return get_linked_value(content_html, heading, url_prefix, r"[\w-]+")
-
-
-def get_recording_event_id(
-    content_html: str,
-    heading: str = RECORDINGS_HEADING,
-    url_prefix: str = EVENTS_URL_PREFIX,
-) -> int:
-    return int(get_linked_value(content_html, heading, url_prefix, r"\d+"))
-
-
-def get_linked_value(
-    content_html: str, heading: str, url_prefix: str, value_pattern: str
-) -> str:
-    url_re = re.compile(rf"{re.escape(url_prefix)}({value_pattern})")
-    for el in get_section(content_html, heading):
-        for link in el.cssselect(f'a[href*="{url_prefix}"]'):
-            if match := url_re.search(link.get("href")):
-                return match.group(1)
-    raise ValueError(f"No {url_prefix!r} link in the {heading!r} section")
-
-
-def get_section(content_html: str, heading: str) -> list[html.HtmlElement]:
-    root = html.fragment_fromstring(content_html, create_parent="div")
-    for h2 in root.cssselect("h2"):
-        if h2.text_content().strip() == heading:
-            section = []
-            for el in h2.itersiblings():
-                if el.tag == "h2":
-                    break
-                section.append(el)
-            return section
-    raise ValueError(f"Section {heading!r} not found in the newsletter issue")
 
 
 def _strip_emoji(match: re.Match) -> str:
