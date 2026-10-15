@@ -103,6 +103,22 @@ class Event(BaseModel):
     def page_url(self) -> str:
         return f"events/{self.id}.md"
 
+    def get_page_description(self, now: None | datetime = None) -> str:
+        start_on = self.start_at_prg.date()
+        if self.is_public:
+            intro = "Záznam online akce z klubu junior.guru, zdarma ke shlédnutí."
+        elif self.club_recording_url:
+            intro = (
+                f"Online akce v klubu junior.guru z {start_on:%-d. %-m. %Y}, "
+                "členové si ji mohou pustit ze záznamu."
+            )
+        elif self.is_past(now=now):
+            intro = f"Online akce v klubu junior.guru z {start_on:%-d. %-m. %Y}."
+        else:
+            intro = f"Online akce v klubu junior.guru, {start_on:%-d. %-m. %Y}."
+        host = ", ".join(filter(None, [self.bio_name, self.bio_title]))
+        return " ".join(f"{intro} Akci vede {host.rstrip('.')}.".split())
+
     def is_past(self, now: None | datetime = None) -> bool:
         now = now or datetime.now(UTC)
         if now.tzinfo is not None:

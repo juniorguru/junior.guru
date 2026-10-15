@@ -76,8 +76,6 @@ WHITESPACE_RE = re.compile(r"\s+")
 
 MULTIPLE_NEWLINES_RE = re.compile(r"\n{2,}")
 
-DESCRIPTION_MAX_LENGTH = 160
-
 
 def extract_text(html_text: str, newline="\n") -> str:
     """
@@ -132,18 +130,6 @@ def split_blocks(text: str) -> list[str]:
         for block in MULTIPLE_NEWLINES_RE.split(text)
     )
     return [block for block in blocks if block]
-
-
-def shorten_description(text: str, max_length: int = DESCRIPTION_MAX_LENGTH) -> str:
-    """
-    Shortens text to fit the recommended length of a page's meta description,
-    cutting it at a word boundary and ending it with an ellipsis if needed
-    """
-    text = WHITESPACE_RE.sub(" ", normalize_space(text))
-    if len(text) <= max_length:
-        return text
-    shortened = text[:max_length].rsplit(" ", 1)[0]
-    return f"{shortened.rstrip(',.;:!?–- ')}…"
 
 
 def remove_emoji(text: str) -> str:

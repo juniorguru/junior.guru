@@ -11,8 +11,7 @@ from slugify import slugify
 
 from jg.coop.lib import loggers
 from jg.coop.lib.location import REGIONS
-from jg.coop.lib.md import md_as_text
-from jg.coop.lib.text import get_tag_slug, shorten_description
+from jg.coop.lib.text import get_tag_slug
 from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
@@ -28,6 +27,8 @@ logger = loggers.from_path(__file__)
 REDIRECTS_YAML_PATH = Path("src/jg/coop/data/redirects.yml")
 
 DOCS_DIR = Path("src/jg/coop/web/generated_docs")
+
+STORIES_DIR = Path("src/jg/coop/web/docs/stories")
 
 
 class GeneratedDocument(BaseModel):
@@ -132,12 +133,11 @@ def generate_job_pages() -> Generator[GeneratedDocument]:
 def generate_event_pages() -> Generator[GeneratedDocument]:
     archive_size = Event.count_recording()
     for event in Event.listing():
-        description = shorten_description(md_as_text(event.description, newline=" "))
         yield GeneratedDocument(
             path=f"events/{event.id}.md",
             meta=dict(
                 title=f"{event.bio_name} – {event.title}",
-                description=description,
+                description=event.get_page_description(),
                 template="main_content_detail.html",
                 event_id=event.id,
                 breadcrumb_parent="Klubové akce",
@@ -195,24 +195,17 @@ def generate_course_provider_pages() -> Generator[GeneratedDocument]:
 
 @db.connection_context()
 def generate_newsletter_issue_pages() -> Generator[GeneratedDocument]:
-    newsletter_issues = list(NewsletterIssue.listing())
-    headings_counter = Counter(
-        heading
-        for newsletter_issue in newsletter_issues
-        for heading in set(newsletter_issue.headings)
-    )
-    recurring_headings = {
-        heading for heading, count in headings_counter.items() if count > 1
-    }
-    for newsletter_issue in newsletter_issues:
+    for newsletter_issue in NewsletterIssue.listing():
+        recording_event = Event.get_by_id(newsletter_issue.recording_event_id)
         yield GeneratedDocument(
             path=f"news/{newsletter_issue.slug}.md",
             meta={
                 "title": newsletter_issue.subject,
                 "description": get_issue_description(
                     newsletter_issue.subject,
-                    newsletter_issue.headings,
-                    recurring_headings,
+                    newsletter_issue.meetups_count,
+                    get_story_interviewee(newsletter_issue.story_slug),
+                    recording_event.title,
                 ),
                 "date": newsletter_issue.published_on.isoformat(),
                 "newsletter_issue_id": newsletter_issue.id,
@@ -225,6 +218,11 @@ def generate_newsletter_issue_pages() -> Generator[GeneratedDocument]:
             },
             content=(DOCS_DIR / "newsletter_issue.md").read_text(),
         )
+
+
+def get_story_interviewee(slug: str) -> str:
+    _, meta = parse_document((STORIES_DIR / f"{slug}.md").read_text())
+    return meta["interviewee"]
 
 
 def main():

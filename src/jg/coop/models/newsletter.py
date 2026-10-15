@@ -8,9 +8,36 @@ from peewee import CharField, DateField, IntegerField
 
 from jg.coop.lib.md import md
 from jg.coop.lib.reading_time import reading_time
-from jg.coop.lib.text import extract_text, remove_emoji, shorten_description
+from jg.coop.lib.template_filters import nplurals
+from jg.coop.lib.text import extract_text, remove_emoji
 from jg.coop.models.base import BaseModel
 from jg.coop.models.page import Page
+
+
+MEETUPS_HEADING = "Srazy, konference a jiné akce"
+
+STORIES_HEADING = "Nepřibarvené příběhy juniorů"
+
+RECORDINGS_HEADING = "Záznamy z online akcí"
+
+STORY_URL_RE = re.compile(r"junior\.guru/stories/([\w-]+)")
+
+EVENT_URL_RE = re.compile(r"junior\.guru/events/(\d+)")
+
+MONTH_ADJECTIVES = {
+    "Leden": "Lednové",
+    "Únor": "Únorové",
+    "Březen": "Březnové",
+    "Duben": "Dubnové",
+    "Květen": "Květnové",
+    "Červen": "Červnové",
+    "Červenec": "Červencové",
+    "Srpen": "Srpnové",
+    "Září": "Zářijové",
+    "Říjen": "Říjnové",
+    "Listopad": "Listopadové",
+    "Prosinec": "Prosincové",
+}
 
 
 class NewsletterIssue(BaseModel):
@@ -47,8 +74,16 @@ class NewsletterIssue(BaseModel):
         return updates
 
     @property
-    def headings(self) -> list[str]:
-        return get_headings(self.content_html)
+    def meetups_count(self) -> int:
+        return get_meetups_count(self.content_html)
+
+    @property
+    def story_slug(self) -> str:
+        return get_story_slug(self.content_html)
+
+    @property
+    def recording_event_id(self) -> int:
+        return get_recording_event_id(self.content_html)
 
     @classmethod
     def from_buttondown(cls, data: dict) -> Self:
@@ -103,18 +138,64 @@ def edit_content_html(content_html: str) -> str:
     return content_html
 
 
-def get_headings(content_html: str) -> list[str]:
-    el = html.fragment_fromstring(content_html, create_parent="div")
-    return [heading.text_content().strip() for heading in el.cssselect("h2, h3")]
-
-
 def get_issue_description(
-    subject: str, headings: list[str], recurring_headings: set[str]
+    subject: str, meetups_count: int, interviewee: str, recording_title: str
 ) -> str:
-    topics = [
-        heading for heading in headings if heading not in recurring_headings
-    ] or headings
-    return shorten_description(f"{subject}. Témata: {', '.join(topics)}")
+    month = subject.split()[0]
+    try:
+        month_adjective = MONTH_ADJECTIVES[month]
+    except KeyError:
+        raise ValueError(f"Unexpected month in newsletter subject: {subject!r}")
+    meetups = f"{meetups_count} {nplurals(meetups_count, 'akce', 'akce', 'akcí')}"
+    return (
+        f"{month_adjective} shrnutí pro juniory v IT: "
+        f"{meetups} kam přijít, "
+        f"{interviewee} o své cestě do IT, "
+        f"záznam z akce „{' '.join(recording_title.split())}“"
+    )
+
+
+def get_meetups_count(content_html: str) -> int:
+    paragraphs = [
+        el
+        for el in get_section(content_html, MEETUPS_HEADING)
+        if el.tag == "p"
+        and not (el.text or "").strip()
+        and el[:1]
+        and el[0].tag == "strong"
+    ]
+    if not paragraphs:
+        raise ValueError(f"No meetups in the {MEETUPS_HEADING!r} section")
+    return len(paragraphs)
+
+
+def get_story_slug(content_html: str) -> str:
+    for el in get_section(content_html, STORIES_HEADING):
+        for link in el.cssselect('a[href*="junior.guru/stories/"]'):
+            if match := STORY_URL_RE.search(link.get("href")):
+                return match.group(1)
+    raise ValueError(f"No story link in the {STORIES_HEADING!r} section")
+
+
+def get_recording_event_id(content_html: str) -> int:
+    for el in get_section(content_html, RECORDINGS_HEADING):
+        for link in el.cssselect('a[href*="junior.guru/events/"]'):
+            if match := EVENT_URL_RE.search(link.get("href")):
+                return int(match.group(1))
+    raise ValueError(f"No event link in the {RECORDINGS_HEADING!r} section")
+
+
+def get_section(content_html: str, heading: str) -> list[html.HtmlElement]:
+    root = html.fragment_fromstring(content_html, create_parent="div")
+    for h2 in root.cssselect("h2"):
+        if h2.text_content().strip() == heading:
+            section = []
+            for el in h2.itersiblings():
+                if el.tag == "h2":
+                    break
+                section.append(el)
+            return section
+    raise ValueError(f"Section {heading!r} not found in the newsletter issue")
 
 
 def _strip_emoji(match: re.Match) -> str:

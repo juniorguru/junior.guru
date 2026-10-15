@@ -42,6 +42,21 @@ class PodcastEpisode(BaseModel):
         return title + self.title
 
     @property
+    def page_description(self) -> str:
+        intro = f"V {self.number}. dílu Junior Guru podcastu"
+        if not self.guest_name:
+            return f"{intro}: {self.title}"
+        if " a " in self.guest_name:
+            guest = "jsou hosty"
+        elif self.guest_has_feminine_name:
+            guest = "je hostkou"
+        else:
+            guest = "je hostem"
+        if self.guest_affiliation:
+            return f"{intro} {guest} {self.guest_name} ({self.guest_affiliation})."
+        return f"{intro} {guest} {self.guest_name}."
+
+    @property
     def url(self) -> str:
         return f"https://junior.guru/podcast/{self.number}/"
 
