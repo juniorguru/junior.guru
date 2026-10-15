@@ -241,7 +241,7 @@ def test_get_issue_description():
     )
 
     assert description == (
-        "Zářijové shrnutí pro juniory v IT: 11 akcí kam přijít, "
+        "Shrnutí pro juniory v IT za září 2026: 11 akcí kam přijít, "
         "Tomáš Novák o své cestě do IT, "
         "záznam z akce „Jak fungují jazykové modely“"
     )
@@ -249,7 +249,7 @@ def test_get_issue_description():
 
 @pytest.mark.parametrize(
     "meetups_count, expected",
-    [(1, ": 1 akce kam"), (3, ": 3 akce kam"), (5, ": 5 akcí kam")],
+    [(1, " 1 akce kam"), (3, " 3 akce kam"), (5, " 5 akcí kam")],
 )
 def test_get_issue_description_plurals(meetups_count: int, expected: str):
     description = get_issue_description(
@@ -259,6 +259,6 @@ def test_get_issue_description_plurals(meetups_count: int, expected: str):
     assert expected in description
 
 
-def test_get_issue_description_unexpected_month():
+def test_get_issue_description_unexpected_subject():
     with pytest.raises(ValueError):
         get_issue_description("Newsletter ve světě IT juniorů", 1, "Nina", "Akce")

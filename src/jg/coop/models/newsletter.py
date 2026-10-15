@@ -24,20 +24,7 @@ STORIES_URL_PREFIX = "junior.guru/stories/"
 
 EVENTS_URL_PREFIX = "junior.guru/events/"
 
-MONTH_ADJECTIVES = {
-    "Leden": "Lednové",
-    "Únor": "Únorové",
-    "Březen": "Březnové",
-    "Duben": "Dubnové",
-    "Květen": "Květnové",
-    "Červen": "Červnové",
-    "Červenec": "Červencové",
-    "Srpen": "Srpnové",
-    "Září": "Zářijové",
-    "Říjen": "Říjnové",
-    "Listopad": "Listopadové",
-    "Prosinec": "Prosincové",
-}
+SUBJECT_PERIOD_RE = re.compile(r"^(\w+ \d{4}) ")
 
 
 class NewsletterIssue(BaseModel):
@@ -130,14 +117,12 @@ def edit_content_html(content_html: str) -> str:
 def get_issue_description(
     subject: str, meetups_count: int, interviewee: str, recording_title: str
 ) -> str:
-    month = subject.split()[0]
-    try:
-        month_adjective = MONTH_ADJECTIVES[month]
-    except KeyError:
-        raise ValueError(f"Unexpected month in newsletter subject: {subject!r}")
+    if not (match := SUBJECT_PERIOD_RE.match(subject)):
+        raise ValueError(f"Unexpected newsletter subject: {subject!r}")
+    period = match.group(1).lower()
     meetups = f"{meetups_count} {nplurals(meetups_count, 'akce', 'akce', 'akcí')}"
     return (
-        f"{month_adjective} shrnutí pro juniory v IT: "
+        f"Shrnutí pro juniory v IT za {period}: "
         f"{meetups} kam přijít, "
         f"{interviewee} o své cestě do IT, "
         f"záznam z akce „{' '.join(recording_title.split())}“"
