@@ -7,6 +7,7 @@ macros, wraps it in a minimal HTML document with the real JS and CSS bundle,
 and serves it to Playwright as if it was https://junior.guru/<path>.
 """
 
+import os
 import subprocess
 from collections.abc import Callable, Generator
 from pathlib import Path
@@ -18,7 +19,14 @@ from jinja2 import Environment, FileSystemLoader
 from mkdocs.utils.meta import get_data as parse_document
 from mkdocs.utils.templates import url_filter
 from peewee import SqliteDatabase
-from playwright.sync_api import Browser, Page, Route, expect, sync_playwright
+from playwright.sync_api import (
+    Browser,
+    Error as PlaywrightError,
+    Page,
+    Route,
+    expect,
+    sync_playwright,
+)
 
 from jg.coop.lib import template_filters
 from jg.coop.lib.mkdocs_jinja import get_filters
@@ -91,7 +99,17 @@ def wrap_html(html: str) -> str:
 @pytest.fixture(scope="module")
 def browser() -> Generator[Browser]:
     with sync_playwright() as playwright:
-        browser = playwright.chromium.launch()
+        # Allows using a browser build other than the one pinned by playwright
+        executable_path = os.getenv("JG_CHROMIUM_EXECUTABLE_PATH") or None
+        try:
+            browser = playwright.chromium.launch(executable_path=executable_path)
+        except PlaywrightError as e:
+            if "Executable doesn't exist" in str(e):
+                e.add_note(
+                    "Install the browser with 'uv run playwright install chromium', "
+                    "or set JG_CHROMIUM_EXECUTABLE_PATH to a Chromium executable"
+                )
+            raise
         yield browser
         browser.close()
 

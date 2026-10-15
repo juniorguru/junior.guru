@@ -54,6 +54,8 @@ docs/_build/
 /.claude/*
 !/.claude/skills/
 !/.claude/skills/**
+!/.claude/settings.json
+!/.claude/hooks/
 
 # pyenv
 .python-version
