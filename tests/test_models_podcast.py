@@ -117,3 +117,27 @@ def test_podcast_series_json_ld():
     data = json.loads(podcast_series_json_ld())
 
     assert data["@id"] == "https://junior.guru/podcast/#series"
+
+
+@pytest.mark.parametrize(
+    "kwargs, expected",
+    [
+        (
+            {"guest_name": "Jiří Psotka", "guest_affiliation": "Red Hat"},
+            "V 1. dílu Junior Guru podcastu je hostem Jiří Psotka (Red Hat).",
+        ),
+        (
+            {"guest_name": "Adéla", "guest_has_feminine_name": True},
+            "V 1. dílu Junior Guru podcastu je hostkou Adéla.",
+        ),
+        (
+            {"guest_name": "Karolina Surma a Petr Viktorin"},
+            "V 1. dílu Junior Guru podcastu jsou hosty Karolina Surma a Petr Viktorin.",
+        ),
+        ({}, "V 1. dílu Junior Guru podcastu: Startujeme!"),
+    ],
+)
+def test_page_description(kwargs: dict, expected: str):
+    podcast_episode = PodcastEpisode(number=1, title="Startujeme!", **kwargs)
+
+    assert podcast_episode.page_description == expected

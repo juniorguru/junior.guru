@@ -208,6 +208,61 @@ def test_to_video_with_non_utc_datetime_raises_value_error():
         )
 
 
+@pytest.mark.parametrize(
+    "kwargs, expected",
+    [
+        (
+            {},
+            "Online akce v klubu junior.guru, 8. 12. 2026. Akci vede",
+        ),
+        (
+            {"start_at": datetime(2026, 9, 24, 16)},
+            "Online akce v klubu junior.guru z 24. 9. 2026. Akci vede",
+        ),
+        (
+            {
+                "start_at": datetime(2026, 9, 24, 16),
+                "club_recording_url": "https://discord.com/channels/1/2/3",
+            },
+            (
+                "Online akce v klubu junior.guru z 24. 9. 2026, "
+                "členové si ji mohou pustit ze záznamu. Akci vede"
+            ),
+        ),
+        (
+            {
+                "start_at": datetime(2026, 9, 24, 16),
+                "club_recording_url": "https://discord.com/channels/1/2/3",
+                "public_recording_url": "https://youtube.com/watch?v=123",
+            },
+            "Záznam online akce z klubu junior.guru, zdarma ke shlédnutí. Akci vede",
+        ),
+    ],
+)
+def test_get_page_description_intro(kwargs: dict, expected: str):
+    event = Event(**{"start_at": datetime(2026, 12, 8, 17), **kwargs})
+    description = event.get_page_description(now=datetime(2026, 10, 15))
+
+    assert description.startswith(expected)
+
+
+@pytest.mark.parametrize(
+    "bio_title, expected",
+    [
+        ("Senior\xa0Engineer,\nACME", "Akci vede Jane Doe, Senior Engineer, ACME."),
+        (None, "Akci vede Jane Doe."),
+        ("ACME a.s.", "Akci vede Jane Doe, ACME a.s."),
+    ],
+)
+def test_get_page_description_host(bio_title: str | None, expected: str):
+    event = Event(
+        start_at=datetime(2026, 12, 8, 17), bio_name="Jane Doe", bio_title=bio_title
+    )
+    description = event.get_page_description(now=datetime(2026, 10, 15))
+
+    assert description.endswith(f". {expected}")
+
+
 def test_to_guide_data(test_db):
     event = create_event(
         42,

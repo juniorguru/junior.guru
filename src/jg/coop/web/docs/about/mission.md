@@ -1,6 +1,6 @@
 ---
-title: Vše o junior.guru
-description: Čísla, statistiky, grafy, kontext. Jak se Honzovi daří provozovat junior.guru?
+title: Mise a hodnoty junior.guru
+description: Proč existuje junior.guru a jaké problémy řeší? S jakým záměrem Honza projekt provozuje a podle jakých hodnot se rozhoduje?
 template: main_about.html
 ---
 
