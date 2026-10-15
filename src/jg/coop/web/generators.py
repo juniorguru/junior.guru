@@ -16,7 +16,7 @@ from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.event import Event
-from jg.coop.models.job import PARTTIME_LISTING_SLUG, REMOTE_TAG_SLUG, ListedJob
+from jg.coop.models.job import PARTTIME_PAGE_SLUG, REMOTE_TAG_SLUG, ListedJob
 from jg.coop.models.newsletter import NewsletterIssue
 from jg.coop.models.podcast import PodcastEpisode
 
@@ -111,7 +111,7 @@ def generate_parttime_jobs_pages() -> Generator[GeneratedDocument]:
     jobs_text = jobs_file.read_text(encoding="utf-8-sig", errors="strict")
     content, meta = parse_document(jobs_text)
     yield GeneratedDocument(
-        path=f"jobs/{PARTTIME_LISTING_SLUG}.jinja",
+        path=f"jobs/{PARTTIME_PAGE_SLUG}.jinja",
         meta=meta
         | {
             "title": "IT brigády a stáže pro studenty a juniory: programátor, tester a další",
@@ -119,7 +119,7 @@ def generate_parttime_jobs_pages() -> Generator[GeneratedDocument]:
                 "Brigády v IT pro studenty, stáže, práce na částečný úvazek "
                 f"i dobrovolnictví pro začátečníky. {meta['description']}"
             ),
-            "jobs_listing": PARTTIME_LISTING_SLUG,
+            "jobs_listing": "parttime",
         },
         content=content,
     )

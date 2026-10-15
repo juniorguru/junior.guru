@@ -10,21 +10,21 @@ def test_parttime_page_shows_only_parttime_jobs(page: Page, jobs_page):
     create_job(title="Python Volunteering", employment_types=["volunteering"])
     create_job(title="Python Full-time", employment_types=["fulltime"])
     create_job(title="Python Untagged")
-    jobs_page("/jobs/parttime/")
-    page.goto("/jobs/parttime/")
+    jobs_page("/jobs/part-time/")
+    page.goto("/jobs/part-time/")
 
     visible_jobs = page.locator(".jobs-item.tagged:visible")
     expect(visible_jobs).to_have_count(3)
     expect(visible_jobs.filter(has_text="Full-time")).to_have_count(0)
     expect(visible_jobs.filter(has_text="Untagged")).to_have_count(0)
-    expect(page).to_have_url(re.compile(r"/jobs/parttime/$"))
+    expect(page).to_have_url(re.compile(r"/jobs/part-time/$"))
 
 
 def test_parttime_page_offers_only_parttime_employment_types(page: Page, jobs_page):
     create_job(title="Internship", employment_types=["internship", "fulltime"])
     create_job(title="Full-time", employment_types=["fulltime", "contract"])
-    jobs_page("/jobs/parttime/")
-    page.goto("/jobs/parttime/")
+    jobs_page("/jobs/part-time/")
+    page.goto("/jobs/part-time/")
 
     employment_tags = page.locator(
         ".jobs-filters [data-jobs-tag-type='employment']:visible"
@@ -40,12 +40,12 @@ def test_parttime_page_offers_all_locations(page: Page, jobs_page):
     create_job(
         title="Praha Internship", regions=["Praha"], employment_types=["internship"]
     )
-    jobs_page("/jobs/parttime/")
-    page.goto("/jobs/parttime/")
+    jobs_page("/jobs/part-time/")
+    page.goto("/jobs/part-time/")
 
     page.locator(".jobs-filters [data-jobs-tag='brno']").click()
 
     visible_jobs = page.locator(".jobs-item.tagged:visible")
     expect(visible_jobs).to_have_count(1)
     expect(visible_jobs).to_contain_text("Brno Internship")
-    expect(page).to_have_url(re.compile(r"/jobs/parttime/\?location=brno$"))
+    expect(page).to_have_url(re.compile(r"/jobs/part-time/\?location=brno$"))
