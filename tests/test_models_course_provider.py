@@ -263,3 +263,50 @@ def test_to_json_ld_logo(test_db: SqliteDatabase, tier_low: SponsorTier):
         json.loads(cp.to_json_ld())["logo"]
         == "https://junior.guru/static/logos/xyz.svg"
     )
+
+
+def test_to_json_ld_companies(test_db: SqliteDatabase):
+    cp = create_course_provider(
+        1,
+        name="Cool Courses",
+        cz_business_id=123,
+        cz_name="Cool s.r.o.",
+        sk_business_id=456,
+        sk_name="Cool SK s.r.o.",
+    )
+
+    assert json.loads(cp.to_json_ld())["subOrganization"] == [
+        {
+            "@type": "Organization",
+            "address": {"@type": "PostalAddress", "addressCountry": "CZ"},
+            "identifier": {
+                "@type": "PropertyValue",
+                "propertyID": "IČO",
+                "value": "123",
+            },
+            "legalName": "Cool s.r.o.",
+        },
+        {
+            "@type": "Organization",
+            "address": {"@type": "PostalAddress", "addressCountry": "SK"},
+            "identifier": {
+                "@type": "PropertyValue",
+                "propertyID": "IČO",
+                "value": "456",
+            },
+            "legalName": "Cool SK s.r.o.",
+        },
+    ]
+
+
+def test_to_json_ld_companies_legal_name_fallback(test_db: SqliteDatabase):
+    cp = create_course_provider(1, name="Cool Courses", sk_business_id=456)
+    company = json.loads(cp.to_json_ld())["subOrganization"][0]
+
+    assert company["legalName"] == "Cool Courses"
+
+
+def test_to_json_ld_no_companies(test_db: SqliteDatabase):
+    cp = create_course_provider(1)
+
+    assert "subOrganization" not in json.loads(cp.to_json_ld())
