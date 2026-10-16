@@ -13,6 +13,7 @@ import click
 from PIL import Image
 
 from jg.coop.lib import loggers
+from jg.coop.lib.nbsp import add_nbsp
 
 
 JINJA_IMPORT_RE = re.compile(
@@ -55,6 +56,7 @@ def main(context, code: bool):
         return
     context.invoke(format_python)
     context.invoke(format_jinja)
+    context.invoke(fix_nbsp)
     context.invoke(format_web)
     context.invoke(fix_scss)
     if code:
@@ -119,6 +121,22 @@ def format_jinja():
         if unused_imports:
             logger.warning(f"Unused imports: {', '.join(unused_imports)}")
             path.write_text(replace_jinja_imports(markup, calls))
+
+
+@main.command()
+def fix_nbsp():
+    logger.info("Adding non-breaking spaces to Czech text")
+    cwd = Path.cwd()
+    web_dir = Path("src/jg/coop/web/").resolve()
+    paths = itertools.chain(
+        web_dir.rglob("*.jinja"), web_dir.rglob("*.md"), web_dir.rglob("*.html")
+    )
+    for path in paths:
+        logger.debug(path.relative_to(cwd))
+        markup = path.read_text()
+        if (fixed_markup := add_nbsp(markup)) != markup:
+            logger.info(f"Non-breaking spaces added: {path.relative_to(cwd)}")
+            path.write_text(fixed_markup)
 
 
 @main.command()

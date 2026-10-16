@@ -16,7 +16,7 @@ Story author Adéla typically provides a Google Docs interview and attaches part
 3. Save photo under `src/jg/coop/images/avatars-participants` using same filename convention.
 4. Inspect photo and choose largest aesthetically pleasing square crop. Convert it to JPEG with `.jpg` extension.
 5. Inspect existing stories, then adapt imported Markdown to their conventions: front matter, navigation markup, article lead, and interview formatting.
-6. Run `uv run jg tidy` to optimize images.
+6. Run `uv run jg tidy` to optimize images and add missing non-breaking spaces.
 
 ## Formatting
 

@@ -39,7 +39,7 @@ description: Implement or modify Python, JavaScript, SCSS, templates, CLI, HTTP,
 
 ## Verification
 
-- After any code changes, run `uv run jg tidy --code` before finishing.
+- After any code changes, run `uv run jg tidy --code` before finishing. It also adds missing non-breaking spaces to Czech text in templates.
 - Run `uv run jg test` only after substantial Python or JavaScript changes.
 - After major SCSS or JavaScript changes, consider `uv run jg web build-static` to catch asset build failures.
 - After template, `context.py`, or related rendering changes, consider `uv run jg web build` to verify site generation.

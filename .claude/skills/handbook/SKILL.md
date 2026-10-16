@@ -40,3 +40,7 @@ description: Write or edit Czech junior.guru handbook content under src/jg/coop/
 - Link relevant handbook chapters instead of repeating their content.
 - Make English IT terms clear from context or explain them in Czech.
 - Spell brand exactly `junior.guru` in running text. Prefer `klub junior.guru` and `podcast junior.guru`. Use `Junior Guru` only when dot cannot be used.
+
+## Verification
+
+- Before finishing, run `uv run jg tidy fix-nbsp` to add missing non-breaking spaces.
