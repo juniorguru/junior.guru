@@ -35,6 +35,8 @@ JOB_EXPIRED_SOON_DAYS = 10
 
 REMOTE_TAG_SLUG = "remote"
 
+PARTTIME_TAG_SLUGS = ["internship", "parttime", "volunteering"]
+
 
 class TagType(StrEnum):
     EMPLOYMENT = auto()
@@ -424,11 +426,15 @@ class ListedJob(BaseModel):
 
     @classmethod
     def internship_listing(cls) -> Iterable[Self]:
-        return cls.tags_listing(["INTERNSHIP"])
+        return cls.tags_listing(["internship"])
 
     @classmethod
     def volunteering_listing(cls) -> Iterable[Self]:
-        return cls.tags_listing(["VOLUNTEERING"])
+        return cls.tags_listing(["volunteering"])
+
+    @classmethod
+    def parttime_listing(cls) -> Iterable[Self]:
+        return cls.tags_listing(PARTTIME_TAG_SLUGS)
 
     @classmethod
     def api_listing(cls) -> Iterable[Self]:

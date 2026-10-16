@@ -77,7 +77,7 @@ def generate_region_jobs_pages() -> Generator[GeneratedDocument]:
     jobs_text = jobs_file.read_text(encoding="utf-8-sig", errors="strict")
     content, meta = parse_document(jobs_text)
     yield GeneratedDocument(
-        path=f"jobs/{REMOTE_TAG_SLUG}.jinja",
+        path="jobs/remote.jinja",
         meta=meta
         | {
             "title": "Remote práce v IT pro juniory: na dálku, z domova",
@@ -104,6 +104,25 @@ def generate_region_jobs_pages() -> Generator[GeneratedDocument]:
             },
             content=content,
         )
+
+
+def generate_employment_type_jobs_pages() -> Generator[GeneratedDocument]:
+    jobs_file = Path("src/jg/coop/web/docs/jobs.jinja")
+    jobs_text = jobs_file.read_text(encoding="utf-8-sig", errors="strict")
+    content, meta = parse_document(jobs_text)
+    yield GeneratedDocument(
+        path="jobs/part-time.jinja",
+        meta=meta
+        | {
+            "title": "IT brigády, stáže a dobrovolnictví nejen pro studenty: programátor, tester a další",
+            "description": (
+                "Brigády v IT nejen pro studenty a absolventy, stáže, práce na částečný úvazek "
+                f"a dobrovolnictví pro začátečníky. {meta['description']}"
+            ),
+            "jobs_listing": "parttime",
+        },
+        content=content,
+    )
 
 
 @db.connection_context()
@@ -215,6 +234,7 @@ def generate_newsletter_issue_pages() -> Generator[GeneratedDocument]:
 def main():
     generators = [
         generate_course_provider_pages,
+        generate_employment_type_jobs_pages,
         generate_event_pages,
         generate_job_pages,
         generate_newsletter_issue_pages,

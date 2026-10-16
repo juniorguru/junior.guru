@@ -8,9 +8,19 @@ template: main.html
 
 {% set is_region_listing = page.meta.region_tag_slug %}
 {% set is_remote_listing = page.meta.region_tag_slug == "remote" %}
+{% set is_parttime_listing = page.meta.jobs_listing == "parttime" %}
+
+{% if is_parttime_listing %}
+  {% set jobs = jobs_parttime %}
+  {% set employment_tags = jobs_tags.employment|selectattr("slug", "in", jobs_parttime_tag_slugs)|list %}
+{% else %}
+  {% set employment_tags = jobs_tags.employment %}
+{% endif %}
 
 <h1>
-{% if is_remote_listing %}
+{% if is_parttime_listing %}
+  Brigády, stáže a dobrovolnictví v IT
+{% elif is_remote_listing %}
   Práce na dálku pro juniory
 {% elif is_region_listing %}
   Práce pro juniory: {{ page.meta.region|replace(' ', ' ') }}
@@ -20,7 +30,9 @@ template: main.html
 </h1>
 
 {% call lead() %}
-  {% if not is_region_listing %}
+  {% if is_parttime_listing %}
+  IT brigády nejen pro studenty, stáže, práce na částečný úvazek i dobrovolnictví. Pro všechny, kdo chtějí v IT začít při škole, vedle jiné práce, nebo jen sbírají první praxi.
+  {% elif not is_region_listing %}
   Nabídky práce v programování, testování a datové analytice. Pro juniory, kterých se týká rekvalifikace do IT, i pro absolventy s VŠ.
   {% endif %}
   Už žádné „požadujeme 4 roky zkušeností“.
@@ -83,7 +95,7 @@ template: main.html
   </dd>
   <dt class="jobs-filters-heading">{{ "hourglass-split"|icon }} Úvazek:</dt>
   <dd class="jobs-tags">
-    {% for tag in jobs_tags.employment %}
+    {% for tag in employment_tags %}
       <button
         type="button"
         class="jobs-tag"
