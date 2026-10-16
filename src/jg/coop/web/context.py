@@ -17,7 +17,12 @@ from jg.coop.models.event import Event
 from jg.coop.models.exchange_rate import ExchangeRate
 from jg.coop.models.external_story import ExternalStory
 from jg.coop.models.followers import Followers
-from jg.coop.models.job import PARTTIME_TAG_SLUGS, DiscordJob, ListedJob
+from jg.coop.models.job import (
+    PARTTIME_TAG_SLUGS,
+    TECH_LISTINGS,
+    DiscordJob,
+    ListedJob,
+)
 from jg.coop.models.newsletter import NewsletterIssue
 from jg.coop.models.page import Page
 from jg.coop.models.partner import Partner
@@ -179,6 +184,7 @@ def get_jobs_context() -> dict:
         "jobs_parttime_tag_slugs": PARTTIME_TAG_SLUGS,
         "jobs_tags": ListedJob.tags_by_type(),
         "jobs_region_tags": ListedJob.region_tags(),
+        "jobs_tech_listings": TECH_LISTINGS,
     }
 
 

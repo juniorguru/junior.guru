@@ -9,6 +9,11 @@ template: main.html
 {% set is_region_listing = page.meta.region_tag_slug %}
 {% set is_remote_listing = page.meta.region_tag_slug == "remote" %}
 {% set is_parttime_listing = page.meta.jobs_listing == "parttime" %}
+{% set is_tech_listing = page.meta.tech_listing_slug %}
+
+{% if is_tech_listing %}
+  {% set jobs = jobs|tagged(page.meta.tech_listing_tag_slugs) %}
+{% endif %}
 
 {% if is_parttime_listing %}
   {% set jobs = jobs_parttime %}
@@ -24,6 +29,8 @@ template: main.html
   Práce na dálku pro juniory
 {% elif is_region_listing %}
   Práce pro juniory: {{ page.meta.region|replace(' ', ' ') }}
+{% elif is_tech_listing %}
+  {{ page.meta.tech_listing_heading }}
 {% else %}
   Práce v IT pro juniory
 {% endif %}
@@ -119,19 +126,40 @@ template: main.html
   </dd>
   <dt class="jobs-filters-heading">{{ "tools"|icon }} Nářadí:</dt>
   <dd class="jobs-tags">
-    {% for tag in jobs_tags.technology %}
-      <button
-        type="button"
-        class="jobs-tag"
-        aria-pressed="false"
-        hidden
-        data-jobs-tag="{{ tag.slug }}"
-        data-jobs-tag-type="{{ tag.type|lower }}"
-      >
-        {{- tag.name -}}
-      </button>
-    {% endfor %}
-    <span class="jobs-noscript">Stala se chyba a filtrování nefunguje</span>
+    {% if is_tech_listing %}
+      {% for tag_slug in page.meta.tech_listing_tag_slugs %}
+        <button
+          type="button"
+          class="jobs-tag active disabled"
+          disabled
+          aria-pressed="true"
+          data-jobs-tag="{{ tag_slug }}"
+          data-jobs-tag-type="technology"
+        >
+          #{{- tag_slug -}}
+        </button>
+      {% endfor %}
+      <a href="{{ pages|docs_url('jobs.jinja')|url }}" class="jobs-tag-link">
+        {{ 'sliders'|icon }}
+        <span class="jobs-tag-link-label">
+          Procházej všechny technologie
+        </span>
+      </a>
+    {% else %}
+      {% for tag in jobs_tags.technology %}
+        <button
+          type="button"
+          class="jobs-tag"
+          aria-pressed="false"
+          hidden
+          data-jobs-tag="{{ tag.slug }}"
+          data-jobs-tag-type="{{ tag.type|lower }}"
+        >
+          {{- tag.name -}}
+        </button>
+      {% endfor %}
+      <span class="jobs-noscript">Stala se chyba a filtrování nefunguje</span>
+    {% endif %}
   </dd>
   <dt class="jobs-filters-heading">{{ "box-arrow-down"|icon }} Zdroj:</dt>
   <dd class="jobs-tags">
@@ -150,6 +178,19 @@ template: main.html
     <span class="jobs-noscript">Stala se chyba a filtrování nefunguje</span>
   </dd>
 </dl>
+
+{% if not is_region_listing and not is_parttime_listing %}
+  <p class="jobs-listings">
+    Nabídky podle zaměření:
+    {% for tech_listing in jobs_tech_listings -%}
+      {% if tech_listing.slug == page.meta.tech_listing_slug -%}
+        <strong>{{ tech_listing.name }}</strong>
+      {%- else -%}
+        <a href="{{ pages|docs_url('jobs/' + tech_listing.slug + '.jinja')|url }}">{{ tech_listing.name }}</a>
+      {%- endif %}{% if not loop.last %}, {% endif %}
+    {%- endfor %}
+  </p>
+{% endif %}
 
 <div class="jobs-subscribe">
   <p class="jobs-subscribe-text">
@@ -311,14 +352,21 @@ template: main.html
       </div>
     </li>
   {% endfor %}
-    <li class="jobs-empty" hidden>
+    <li class="jobs-empty"{% if not (is_tech_listing and not jobs) %} hidden{% endif %}>
       {% call note() -%}
         {{ 'search'|icon }}
-        Tvým filtrům neodpovídají žádné inzeráty.
-        {{- ' ' -}}
-        {%- if not is_remote_listing -%}
-          Pokud hledáš podle místa, zkus přidat <span class="jobs-tag active">#remote</span>.
-        {%- endif -%}
+        {% if is_tech_listing -%}
+          Zrovna tu nejsou žádné vhodné inzeráty.
+          Nové přibývají každý den, tak se sem brzy vrať.
+          Mezitím se můžeš podívat na <a href="{{ pages|docs_url('jobs/remote.jinja')|url }}">práci na dálku</a>
+          nebo na <a href="{{ pages|docs_url('jobs.jinja')|url }}">všechny nabídky</a>.
+        {%- else -%}
+          Tvým filtrům neodpovídají žádné inzeráty.
+          {{- ' ' -}}
+          {%- if not is_remote_listing -%}
+            Pokud hledáš podle místa, zkus přidat <span class="jobs-tag active">#remote</span>.
+          {%- endif -%}
+        {%- endif %}
       {%- endcall %}
     </li>
   </ul>

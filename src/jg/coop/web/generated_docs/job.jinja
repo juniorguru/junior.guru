@@ -8,3 +8,15 @@
 </p>
 
 {{ job.submitted_job.description_html|safe }}
+
+{% set job_tag_slugs = job.tags|map(attribute="slug")|list %}
+{% for tech_listing in jobs_tech_listings if tech_listing.tag_slugs|select("in", job_tag_slugs)|list %}
+  {% if loop.first %}
+    <h2>Podobné nabídky</h2>
+    <ul>
+  {% endif %}
+  <li><a href="{{ pages|docs_url('jobs/' + tech_listing.slug + '.jinja')|url }}">{{ tech_listing.heading }}</a></li>
+  {% if loop.last %}
+    </ul>
+  {% endif %}
+{% endfor %}

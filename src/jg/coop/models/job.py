@@ -38,6 +38,77 @@ REMOTE_TAG_SLUG = "remote"
 PARTTIME_TAG_SLUGS = ["internship", "parttime", "volunteering"]
 
 
+class TechListing(PydanticBaseModel):
+    """
+    Standalone jobs listing page for a technology, e.g. /jobs/python/
+
+    Titles and headings use words people actually search for,
+    see https://github.com/juniorguru/junior.guru/issues/1824
+    """
+
+    model_config = ConfigDict(frozen=True)
+
+    slug: str
+    tag_slugs: list[str]
+    name: str
+    heading: str
+    title: str
+    description: str
+
+
+TECH_LISTINGS = [
+    TechListing(
+        slug="tester",
+        tag_slugs=["testing"],
+        name="tester",
+        heading="Práce pro juniory: tester",
+        title="Junior tester bez praxe: práce v testování, QA, manuální i automatizované testy",
+        description="Pracovní nabídky pro začínající testery a testerky bez praxe.",
+    ),
+    TechListing(
+        slug="python",
+        tag_slugs=["python"],
+        name="Python",
+        heading="Práce pro juniory: Python",
+        title="Junior Python developer: práce v Pythonu pro začátečníky bez praxe",
+        description="Pracovní nabídky v Pythonu pro začátečníky bez praxe.",
+    ),
+    TechListing(
+        slug="java",
+        tag_slugs=["java"],
+        name="Java",
+        heading="Práce pro juniory: Java",
+        title="Junior Java developer: práce v Javě pro začátečníky bez praxe",
+        description="Pracovní nabídky v Javě pro začátečníky bez praxe.",
+    ),
+    TechListing(
+        slug="javascript",
+        tag_slugs=["javascript", "typescript"],
+        name="JavaScript",
+        heading="Práce pro juniory: JavaScript",
+        title="Junior JavaScript developer: práce v JavaScriptu pro začátečníky bez praxe",
+        description="Pracovní nabídky v JavaScriptu a TypeScriptu pro začátečníky bez praxe.",
+    ),
+    TechListing(
+        slug="csharp",
+        tag_slugs=["csharp"],
+        name="C#/.NET",
+        heading="Práce pro juniory: C# a .NET",
+        title="Junior C# a .NET developer: práce v C# pro začátečníky bez praxe",
+        description="Pracovní nabídky v C# a .NET pro začátečníky bez praxe.",
+    ),
+    TechListing(
+        slug="ai",
+        # The 'ai' tag is noisy, it gets applied to any job ad mentioning AI
+        tag_slugs=["agenticengineering", "buildingai", "vibecoding"],
+        name="AI",
+        heading="Práce s AI pro juniory",
+        title="Práce s AI pro juniory: AI vývojář, AI engineer, vibe coding",
+        description="Pracovní nabídky pro začátečníky, kteří chtějí pracovat s AI.",
+    ),
+]
+
+
 class TagType(StrEnum):
     EMPLOYMENT = auto()
     LOCATION = auto()
