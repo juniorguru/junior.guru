@@ -51,11 +51,11 @@ docs/_build/
 # Editors
 /.idea/
 /.vscode/
-/.claude/*
-!/.claude/skills/
-!/.claude/skills/**
-!/.claude/settings.json
-!/.claude/hooks/
+
+# Claude Code (local state only, the rest of .claude/ is shared)
+/.claude/settings.local.json
+/.claude/scheduled_tasks.*
+/.claude/worktrees/
 
 # pyenv
 .python-version
