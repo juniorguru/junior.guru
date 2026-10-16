@@ -1,19 +1,19 @@
 ---
-title: Katalog kurzů programování a testování s recenzemi
-description: Nezávislý katalog kurzů programování a testování. Recenze a zkušenosti absolventů z klubu junior.guru. Vyber si rekvalifikaci podle lidí, ne podle reklam.
+title: Katalog kurzů programování a testování s recenzemi
+description: Nezávislý katalog kurzů programování a testování. Recenze a zkušenosti absolventů z klubu junior.guru. Vyber si rekvalifikaci podle lidí, ne podle reklam.
 ---
 
 {% from 'macros.html' import link_card, note, lead with context %}
 
 
-# Kurzy programování a testování
+# Kurzy programování a testování
 
 {% call lead() %}
-  Nevybírej si kurzy programování nebo testování podle reklam, ale podle serióznosti provozovatelů a podle recenzí lidí, kteří je absolvovali.
+  Nevybírej si kurzy programování nebo testování podle reklam, ale podle serióznosti provozovatelů a podle recenzí lidí, kteří je absolvovali.
 {% endcall %}
 
 {% call note(standout=true) %}
-  {{ 'plus-circle'|icon }} Pokud víš o kurzech, které tady chybí, piš na {{ 'honza@junior.guru'|email_link }}
+  {{ 'plus-circle'|icon }} Pokud víš o kurzech, které tady chybí, piš na {{ 'honza@junior.guru'|email_link }}
 {% endcall %}
 
 [TOC]
@@ -22,19 +22,19 @@ description: Nezávislý katalog kurzů programování a testování. Recenze a 
   {% if group == "highlighted" %}
 
 ## Sponzoři
-Vybrali si [tarif z ceníku](love.jinja) a poslali finanční prostředky na provoz junior.guru. Neznamená to, že jsou nejlepší, ale budiž jim ke cti, že podporují tento projekt.
+Vybrali si [tarif z ceníku](love.jinja) a poslali finanční prostředky na provoz junior.guru. Neznamená to, že jsou nejlepší, ale budiž jim ke cti, že podporují tento projekt.
 {% set card_class = 'highlighted' %}
 
   {% elif group == "partners" %}
 
 ## Partneři
-Komunity a malé subjekty, s nimiž má junior.guru domluvenou nějakou oboustrannou nefinanční výpomoc. Není v možnostech junior.guru ověřovat kvalitu, ale takováto spolupráce se asi dá brát jako známka toho, že jde o něco důvěryhodného. Na každé podstránce je detailní popis spolupráce.
+Komunity a malé subjekty, s nimiž má junior.guru domluvenou nějakou oboustrannou nefinanční výpomoc. Není v možnostech junior.guru ověřovat kvalitu, ale takováto spolupráce se asi dá brát jako známka toho, že jde o něco důvěryhodného. Na každé podstránce je detailní popis spolupráce.
 {% set card_class = '' %}
 
   {% elif group == "graveyard" %}
 
 ## Hřbitov
-Subjekty, které v minulosti kurzy poskytovaly, ale dnes už neposkytují. V katalogu jsou jen pro úplnost, kdyby je někdo ještě hledal.
+Subjekty, které v minulosti kurzy poskytovaly, ale dnes už neposkytují. V katalogu jsou jen pro úplnost, kdyby je někdo ještě hledal.
 {% set card_class = 'grayscale' %}
 
   {% else %}

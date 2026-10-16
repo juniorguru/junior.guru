@@ -2,19 +2,19 @@
 title: Rodiče v IT
 emoji: 👶
 stages: [thinking, preparing, applying]
-description: Jak na kariéru v IT během rodičovství? Mateřská, rodičovská, částečný úvazek, programování s dětmi a mnoho dalšího.
+description: Jak na kariéru v IT během rodičovství? Mateřská, rodičovská, částečný úvazek, programování s dětmi a mnoho dalšího.
 template: main_handbook.html
 ---
 
 {% from 'macros.html' import blockquote_avatar, illustration, lead, link_card with context %}
 
-# Rodičovství a kariéra v IT
+# Rodičovství a kariéra v IT
 
 {% call lead() %}
-Jak se dá s programováním kombinovat mateřská nebo rodičovská?
+Jak se dá s programováním kombinovat mateřská nebo rodičovská?
 Je těžké najít v IT práci na částečný pracovní úvazek?
-Jak prezentovat péči o děti v životopisu?
-A mohou programovat i děti?
+Jak prezentovat péči o děti v životopisu?
+A mohou programovat i děti?
 {% endcall %}
 
 {{ illustration('static/illustrations/parents.webp') }}
@@ -29,15 +29,15 @@ Přečti si [článek Luboše Račanského](https://www.heroine.cz/zeny-it/7677-
   'lubos-racansky.jpg',
   'Luboš Račanský'
 ) %}
-  Luboš Račanský, lektor kroužku pro děti a autor článku [U budoucích ajťáků je nejdůležitější touha nespokojit se s prvním řešením, říká lektor programování pro děti](https://www.heroine.cz/zeny-it/7677-u-budoucich-ajtaku-je-nejdulezitejsi-touha-nespokojit-se-s-prvnim-resenim-rika-lektor-programovani-pro-deti)
+  Luboš Račanský, lektor kroužku pro děti a autor článku [U budoucích ajťáků je nejdůležitější touha nespokojit se s prvním řešením, říká lektor programování pro děti](https://www.heroine.cz/zeny-it/7677-u-budoucich-ajtaku-je-nejdulezitejsi-touha-nespokojit-se-s-prvnim-resenim-rika-lektor-programovani-pro-deti)
 {% endcall %}
 
-Pokud tě láká to zkusit a trénovat s dětmi [informatické myšlení](https://cs.wikipedia.org/wiki/Informatick%C3%A9_my%C5%A1len%C3%AD), následující odkazy tě nasměrují na stránky, které jsou vhodnější než junior.guru. I když je v názvu tohoto webu slovo _junior_, není pro děti.
-Slovem junior se označují začátečníci na pracovním trhu a tento web ukazuje cestu k programování a kariéře v IT dospělým, případně dospívajícím lidem.
+Pokud tě láká to zkusit a trénovat s dětmi [informatické myšlení](https://cs.wikipedia.org/wiki/Informatick%C3%A9_my%C5%A1len%C3%AD), následující odkazy tě nasměrují na stránky, které jsou vhodnější než junior.guru. I když je v názvu tohoto webu slovo _junior_, není pro děti.
+Slovem junior se označují začátečníci na pracovním trhu a tento web ukazuje cestu k programování a kariéře v IT dospělým, případně dospívajícím lidem.
 
 ### Kde začít
 
-Programování pro děti se odehrává v **barevném prostředí, kde jde s dětmi vytvářet zábavné příběhy, hry, animace**. Rozhodně by nemělo spočívat v psaní písmenek na černou obrazovku nebo v práci s Wordem.
+Programování pro děti se odehrává v **barevném prostředí, kde jde s dětmi vytvářet zábavné příběhy, hry, animace**. Rozhodně by nemělo spočívat v psaní písmenek na černou obrazovku nebo v práci s Wordem.
 
 <div class="link-cards">
   {{ link_card(
@@ -61,8 +61,8 @@ Programování pro děti se odehrává v **barevném prostředí, kde jde s dět
 
 ### Pro nadšence
 
-Zkusili jste s dětmi programování a fakt hodně vás to baví?
-Možná by z tebe mohl být nadšenec!
+Zkusili jste s dětmi programování a fakt hodně vás to baví?
+Možná by z tebe mohl být nadšenec!
 Tady máš pár odkazů, které by tě mohly inspirovat.
 
 <div class="link-cards">

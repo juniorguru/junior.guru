@@ -1,6 +1,6 @@
 ---
-title: Online akce pro začátečníky v programování
-description: Online akce pro členy klubu junior.guru. Seznam akcí proběhlých i budoucích. Přednášky, streamy, Q&A, AMA, webináře, a další.
+title: Online akce pro začátečníky v programování
+description: Online akce pro členy klubu junior.guru. Seznam akcí proběhlých i budoucích. Přednášky, streamy, Q&A, AMA, webináře, a další.
 template: main_subnav.html
 ---
 
@@ -9,8 +9,8 @@ template: main_subnav.html
 # Klubové akce
 
 {% call lead() %}
-Online přednášky a další akce pořádané junior.guru klubem.
-Zveme si profíky na témata kolem programování nebo shánění první práce v oboru.
+Online přednášky a další akce pořádané junior.guru klubem.
+Zveme si profíky na témata kolem programování nebo shánění první práce v oboru.
 Pojetí akcí je vždy vyloženě pro začátečníky.
 Žádná záplava odborných „termitů“, které ti nikdo nevysvětlil!
 {% endcall %}
@@ -60,7 +60,7 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
       </a>
     </h3>
     {% call markdown() -%}
-      Autor projektu junior.guru. Shání hosty, stará se o propagaci, moderuje akce.
+      Autor projektu junior.guru. Shání hosty, stará se o propagaci, moderuje akce.
     {%- endcall %}
   </div>
 </div>
@@ -75,7 +75,7 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
       </a>
     </h3>
     {% call markdown() -%}
-      Stará se o domlouvání termínů a veškerou administrativu kolem přípravy přednášek.
+      Stará se o domlouvání termínů a veškerou administrativu kolem přípravy přednášek.
     {%- endcall %}
   </div>
 </div>
@@ -99,7 +99,7 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
 </div>
 
 {% call note(standout=True) %}
-  {{ 'lightbulb'|icon }} Chceš juniorům taky něco ukázat nebo vysvětlit? Napiš na {{ 'honza@junior.guru'|email_link }} a třeba se domluvíme. Co to obnáší se dovíš v [návodu](speaker.md). Přednášející mají členství v klubu na rok zdarma.
+  {{ 'lightbulb'|icon }} Chceš juniorům taky něco ukázat nebo vysvětlit? Napiš na {{ 'honza@junior.guru'|email_link }} a třeba se domluvíme. Co to obnáší se dovíš v [návodu](speaker.md). Přednášející mají členství v klubu na rok zdarma.
 {% endcall %}
 
 {% if events_planned|length %}

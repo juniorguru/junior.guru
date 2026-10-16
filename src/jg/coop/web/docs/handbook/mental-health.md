@@ -2,7 +2,7 @@
 title: Jak přežít cestu juniora po psychické stránce
 emoji: 💆
 stages: [learning, preparing, applying, onboarding]
-description: Cesta do IT může být náročná životní změna. Vysoké nároky na sebe sama, srovnávání se s ostatními, nedostatek odpočinku, nejistota. Přečti si, jak se to dá zvládat.
+description: Cesta do IT může být náročná životní změna. Vysoké nároky na sebe sama, srovnávání se s ostatními, nedostatek odpočinku, nejistota. Přečti si, jak se to dá zvládat.
 template: main_handbook.html
 ---
 
@@ -11,7 +11,7 @@ template: main_handbook.html
 # Psychika na cestě do IT
 
 {% call lead() %}
-  Říká se, že všechno je to v hlavě. Mysl ti může být skvělým spojencem – zdrojem motivace, odvahy a vytrvalosti. Stejně tak ti ale může cestu do IT i pěkně znesnadnit. Nejeden junior se utápí v nadměrných pochybách, má na sebe příliš velké nároky a cítí se pod tlakem. Jak se nenechat brzdit, ale mít svou psychiku za spojence?
+  Říká se, že všechno je to v hlavě. Mysl ti může být skvělým spojencem – zdrojem motivace, odvahy a vytrvalosti. Stejně tak ti ale může cestu do IT i pěkně znesnadnit. Nejeden junior se utápí v nadměrných pochybách, má na sebe příliš velké nároky a cítí se pod tlakem. Jak se nenechat brzdit, ale mít svou psychiku za spojence?
 {% endcall %}
 
 {{ illustration('static/illustrations/mental-health.webp') }}
@@ -19,16 +19,16 @@ template: main_handbook.html
 [TOC]
 
 {% call guarantor('Nela Slezáková', 'avatars-participants/nela-slezakova.jpg', url='https://www.nelaprovazi.cz/', standout=True) %}
-  Jak psycholožka, tak programátorka. Rozumí tomu, jak funguje lidská psychika a sama si zažila, co obnáší dostat se do IT po vlastní ose. Ve vlastní praxi pomáhá i lidem v IT anebo do IT. S otázkami kolem duševního zdraví juniorům pomáhá i ve [zdejším klubu](../club.md).
+  Jak psycholožka, tak programátorka. Rozumí tomu, jak funguje lidská psychika a sama si zažila, co obnáší dostat se do IT po vlastní ose. Ve vlastní praxi pomáhá i lidem v IT anebo do IT. S otázkami kolem duševního zdraví juniorům pomáhá i ve [zdejším klubu](../club.md).
 {% endcall %}
 
 ## Správné načasování
 
-Jako první zvaž, zda je právě nyní vhodný čas na kariérní změnu do IT. Podobně jako je v případě horské túry důležité odhadnout dobře své síly. Není totiž nic horšího, než uprostřed cesty zjistit, že už to dál nepůjde.
+Jako první zvaž, zda je právě nyní vhodný čas na kariérní změnu do IT. Podobně jako je v případě horské túry důležité odhadnout dobře své síly. Není totiž nic horšího, než uprostřed cesty zjistit, že už to dál nepůjde.
 
-První aspekt, který pečlivě promysli, je **zdraví**. Pokud se necítíš dlouhodobě psychicky či fyzicky v pořádku, nemusíš mít dost sil extra zátěž dlouhodobě ustát. Obzvláště riskantní počin je snažit se o kariérní změnu na pokraji vyhoření, když už není odkud brát energii. Možná si aktuálně potřebuješ spíš oddychnout, dát se do pořádku a pokusit se o změnu ve vhodnější čas.
+První aspekt, který pečlivě promysli, je **zdraví**. Pokud se necítíš dlouhodobě psychicky či fyzicky v pořádku, nemusíš mít dost sil extra zátěž dlouhodobě ustát. Obzvláště riskantní počin je snažit se o kariérní změnu na pokraji vyhoření, když už není odkud brát energii. Možná si aktuálně potřebuješ spíš oddychnout, dát se do pořádku a pokusit se o změnu ve vhodnější čas.
 
-Druhým aspektem jsou **peníze**. Kurzy něco stojí a hledání práce se může oproti původním odhadům docela protáhnout. Sledovat ztenčující se finanční rezervu a stále nemít nabídku práce je extrémně stresující. Možná si aktuálně potřebuješ spíš vytvořit finanční polštář a poté se o změnu pokusit s čistou hlavou.
+Druhým aspektem jsou **peníze**. Kurzy něco stojí a hledání práce se může oproti původním odhadům docela protáhnout. Sledovat ztenčující se finanční rezervu a stále nemít nabídku práce je extrémně stresující. Možná si aktuálně potřebuješ spíš vytvořit finanční polštář a poté se o změnu pokusit s čistou hlavou.
 
 {% call blockquote(
   'Chci být k dispozici dceři, než trochu doroste a zvykne si ve školce. Takže jsem byla ráda, když jsem dostala příležitost pracovat u nás ve městě na zámku. Budu mít jistý příjem, stabilitu a čas na postupné vzdělávání. Najít si práci v IT mám pořád v plánu.'
@@ -36,13 +36,13 @@ Druhým aspektem jsou **peníze**. Kurzy něco stojí a hledání práce se mů�
   Katka
 {% endcall %}
 
-Pak je tady **čas**. Kolik času můžeš věnovat učení a zároveň nevyškrtat ze svého diáře všechen odpočinek? Možná je nejdříve potřeba zamyslet se, jaké povinnosti a aktivity můžeš zrušit, zkrátit si úvazek, anebo i počkat na vhodnější životní období.
+Pak je tady **čas**. Kolik času můžeš věnovat učení a zároveň nevyškrtat ze svého diáře všechen odpočinek? Možná je nejdříve potřeba zamyslet se, jaké povinnosti a aktivity můžeš zrušit, zkrátit si úvazek, anebo i počkat na vhodnější životní období.
 
-A nakonec, máš dostatečnou **podporu okolí**? Může být velmi náročné potýkat se s vlastními obavami, zároveň se nemít o koho opřít, a nad to ještě rozhánět pochyby své rodiny a přátel. Možná si chceš nejprve najít nějaké spojence. Co třeba v [klubu na junior.guru](../club.md)?
+A nakonec, máš dostatečnou **podporu okolí**? Může být velmi náročné potýkat se s vlastními obavami, zároveň se nemít o koho opřít, a nad to ještě rozhánět pochyby své rodiny a přátel. Možná si chceš nejprve najít nějaké spojence. Co třeba v [klubu na junior.guru](../club.md)?
 
 ## Duševní hygiena pro juniory
 
-Vybav se pro začátek 5 zásadami, díky kterým můžeš svou cestu do IT zvládnout ve větší duševní pohodě a udržitelně. V přednášce se mimo jiné dozvíš, jak stát nohama víc na zemi, proč je důležité přijímat se i se svými limity anebo jak získat nadhled.
+Vybav se pro začátek 5 zásadami, díky kterým můžeš svou cestu do IT zvládnout ve větší duševní pohodě a udržitelně. V přednášce se mimo jiné dozvíš, jak stát nohama víc na zemi, proč je důležité přijímat se i se svými limity anebo jak získat nadhled.
 
 {% set event = events|selectattr("id", "equalto", 18)|first %}
 {{ video_card(
@@ -55,13 +55,13 @@ Vybav se pro začátek 5 zásadami, díky kterým můžeš svou cestu do IT zvl�
 
 ## Impostor syndrom
 
-Znáš ten pocit, když **dosáhneš úspěchu, ale místo radosti ti hlavou víří pochybnosti a obavy**, že tvůj úspěch je spíše výsledkem náhody než tvého skutečného talentu?
+Znáš ten pocit, když **dosáhneš úspěchu, ale místo radosti ti hlavou víří pochybnosti a obavy**, že tvůj úspěch je spíše výsledkem náhody než tvého skutečného talentu?
 
-Možná zažíváš [syndrom podvodníka](https://cs.wikipedia.org/wiki/Syndrom_podvodn%C3%ADka), anglicky _impostor syndrom_. Definují ho pocity vlastní neschopnosti, kdy úspěch vnímáš jako nezasloužený. Je doprovázený **strachem z toho, že jednoho dne ostatní prohlédnou, že ve toho skutečnosti toho tolik neumíš**. Že svoje znalosti jen předstíráš.
+Možná zažíváš [syndrom podvodníka](https://cs.wikipedia.org/wiki/Syndrom_podvodn%C3%ADka), anglicky _impostor syndrom_. Definují ho pocity vlastní neschopnosti, kdy úspěch vnímáš jako nezasloužený. Je doprovázený **strachem z toho, že jednoho dne ostatní prohlédnou, že ve toho skutečnosti toho tolik neumíš**. Že svoje znalosti jen předstíráš.
 
-Možná se to nezdá, ale impostor syndrom je poměrně častý. Co s tím? Začni si nadměrných obav všímat, ověřuj si pravidělně svoje vidění s okolím (a ber vážně to, co říkají), anebo zkus psychoterapii.
+Možná se to nezdá, ale impostor syndrom je poměrně častý. Co s tím? Začni si nadměrných obav všímat, ověřuj si pravidělně svoje vidění s okolím (a ber vážně to, co říkají), anebo zkus psychoterapii.
 
-Docela dobře funguje **deníček, kam si zapisuješ svou cestu**. Pomůže ti ohlédnout se a uvědomit si, jak velký kus cesty už máš za sebou. Ve [zdejším klubu](../club.md) si lidi přesně takové deníčky píšou.
+Docela dobře funguje **deníček, kam si zapisuješ svou cestu**. Pomůže ti ohlédnout se a uvědomit si, jak velký kus cesty už máš za sebou. Ve [zdejším klubu](../club.md) si lidi přesně takové deníčky píšou.
 
 <div class="link-cards">
   {{ link_card(
@@ -85,11 +85,11 @@ Docela dobře funguje **deníček, kam si zapisuješ svou cestu**. Pomůže ti o
 
 ## Sokratovo „vím, že nic nevím“
 
-Jako většině juniorů se ti nejspíš nevyhne onen opojný stav, kdy do sebe všechno jakoby zapadne. Proměnné, cykly, podmínky i funkce už nejsou žádnou výzvou a od teď už to bude jen lehčí!
+Jako většině juniorů se ti nejspíš nevyhne onen opojný stav, kdy do sebe všechno jakoby zapadne. Proměnné, cykly, podmínky i funkce už nejsou žádnou výzvou a od teď už to bude jen lehčí!
 
-Jak bolestné je zjistit, že **za horizontem se tyčí další hory a velehory**, které je potřeba zdolat. Že šíře poznání a dovedností v IT se rozpíná jako vesmír a nikde nemá hranice.
+Jak bolestné je zjistit, že **za horizontem se tyčí další hory a velehory**, které je potřeba zdolat. Že šíře poznání a dovedností v IT se rozpíná jako vesmír a nikde nemá hranice.
 
-Nenech se tím zviklat! Vědět, že víš fakt málo, je **známkou toho, že už něco umíš**, a je to zcela normální.
+Nenech se tím zviklat! Vědět, že víš fakt málo, je **známkou toho, že už něco umíš**, a je to zcela normální.
 
 <div class="link-cards">
   {{ link_card(
@@ -99,15 +99,15 @@ Nenech se tím zviklat! Vědět, že víš fakt málo, je **známkou toho, že u
   ) }}
 </div>
 
-## Juniory často sužují obavy a pochybnosti
+## Juniory často sužují obavy a pochybnosti
 
-Z naší ankety s více než 200 juniory (květen až červen 2023) vyplynulo:
+Z naší ankety s více než 200 juniory (květen až červen 2023) vyplynulo:
 
-- 44 % se bojí, že ostat­ní při­jdou na to, že jsou k ni­čemu,
-- 70 % z těch, kdo hle­da­jí práci, má strach, zda si vů­bec ně­ja­kou na­jdou,
-- 55 % z těch, kdo už pra­cu­jí, má po­cit, že jsou ne­schop­ní.
+- 44 % se bojí, že ostat­ní při­jdou na to, že jsou k ni­čemu,
+- 70 % z těch, kdo hle­da­jí práci, má strach, zda si vů­bec ně­ja­kou na­jdou,
+- 55 % z těch, kdo už pra­cu­jí, má po­cit, že jsou ne­schop­ní.
 
-To nejsou vůbec líbivá čísla. V přednášce „Jak se jako ajťák/čka zbavit pochyb a pocitu, že nejsem dost” se můžeš seznámit s kompletními výsledky z ankety a ujistit se, že vůbec nejsi sám/sama, kdo se tolik obává. V druhé části přednášky najdeš tipy jak pracovat s nadměrnými pochybami v kontextu IT.
+To nejsou vůbec líbivá čísla. V přednášce „Jak se jako ajťák/čka zbavit pochyb a pocitu, že nejsem dost” se můžeš seznámit s kompletními výsledky z ankety a ujistit se, že vůbec nejsi sám/sama, kdo se tolik obává. V druhé části přednášky najdeš tipy jak pracovat s nadměrnými pochybami v kontextu IT.
 
 {% set event = events|selectattr("id", "equalto", 36)|first %}
 {{ video_card(
@@ -121,22 +121,22 @@ To nejsou vůbec líbivá čísla. V přednášce „Jak se jako ajťák/čka zb
 
 ## Rozcestník pomoci
 
-Rozeznat moment, ve kterém už je dobré si říct o pomoc, je někdy náročné. Sleduj především tyto dva signály:
+Rozeznat moment, ve kterém už je dobré si říct o pomoc, je někdy náročné. Sleduj především tyto dva signály:
 
-- Psychicky se **dlouhodobě** necítíš dobře, tzn. obtíže v řádu měsíců neustupují.
-- Tvé problémy jsou **intenzivní** a začínají ti proto **způsobovat problémy v každodenním životě**. Je kvůli nim např. obtížnější odvádět výkon v práci, či udržovat spokojené vztahy.
+- Psychicky se **dlouhodobě** necítíš dobře, tzn. obtíže v řádu měsíců neustupují.
+- Tvé problémy jsou **intenzivní** a začínají ti proto **způsobovat problémy v každodenním životě**. Je kvůli nim např. obtížnější odvádět výkon v práci, či udržovat spokojené vztahy.
 
-Je taky výhodné dát na **upozornění našeho okolí**, které je schopné někdy lépe registrovat pozvolné změny v našem stavu. Samozřejmě neváhej, pokud cítíš, že **situace není udržitelná**. Národní ústav duševního zdraví (NÚDZ) nabízí [dotazníky](https://www.opatruj.se/otestuj-se), kterými můžeš svůj aktuální stav otestovat.
+Je taky výhodné dát na **upozornění našeho okolí**, které je schopné někdy lépe registrovat pozvolné změny v našem stavu. Samozřejmě neváhej, pokud cítíš, že **situace není udržitelná**. Národní ústav duševního zdraví (NÚDZ) nabízí [dotazníky](https://www.opatruj.se/otestuj-se), kterými můžeš svůj aktuální stav otestovat.
 
 ### Když je krize
 
-Existují situace, které nesnesou odkladu. Pokud tě zaplaví velmi silné emoce a nevíš si s nimi rady anebo cítíš, že prostě takhle už dál nemůžeš, nechej si s tím pomoct.
+Existují situace, které nesnesou odkladu. Pokud tě zaplaví velmi silné emoce a nevíš si s nimi rady anebo cítíš, že prostě takhle už dál nemůžeš, nechej si s tím pomoct.
 
-**Aplikace Nepanikař** obsahuje tipy na základní a rychlou sebepomoc, řízená dechová cvičení, i kontakty na odborníky.
+**Aplikace Nepanikař** obsahuje tipy na základní a rychlou sebepomoc, řízená dechová cvičení, i kontakty na odborníky.
 
-**Telefonní krizové linky** ti umožňují rychlý kontakt s odborníkem. Hovor by ti měl přinést jak okamžitou úlevu, tak doporučení na to, jak postupovat dál.
+**Telefonní krizové linky** ti umožňují rychlý kontakt s odborníkem. Hovor by ti měl přinést jak okamžitou úlevu, tak doporučení na to, jak postupovat dál.
 
-**Krizové centrum** nabízí nejvíce komplexní pomoc v krizi. Můžeš tam přijít bez objednání a s odborníkem do hloubky probrat svoji životní situaci. Některá centra fungují dokonce nonstop. Návštěva ti pomůže se zklidnit a naplánovat další kroky.
+**Krizové centrum** nabízí nejvíce komplexní pomoc v krizi. Můžeš tam přijít bez objednání a s odborníkem do hloubky probrat svoji životní situaci. Některá centra fungují dokonce nonstop. Návštěva ti pomůže se zklidnit a naplánovat další kroky.
 
 <div class="link-cards">
   {{ link_card(
@@ -160,17 +160,17 @@ Existují situace, které nesnesou odkladu. Pokud tě zaplaví velmi silné emoc
 
 ### Psychoterapie
 
-V méně akutních případech můžeš vyhledat jednoho ze dvou odborníků: klinického psychologa, nebo psychoterapeuta na přímou platbu.
+V méně akutních případech můžeš vyhledat jednoho ze dvou odborníků: klinického psychologa, nebo psychoterapeuta na přímou platbu.
 
-Psychoterapie jsou, zjednodušeně řečeno, **rozhovory s psychoterapeutem** o tématech, které tě tíží. Postupně ventiluješ emoce, chápeš lépe sebe i svou situaci, získáváš nadhled. Hlavně ale přicházíš na způsoby, jakými své problémy řešit.
+Psychoterapie jsou, zjednodušeně řečeno, **rozhovory s psychoterapeutem** o tématech, které tě tíží. Postupně ventiluješ emoce, chápeš lépe sebe i svou situaci, získáváš nadhled. Hlavně ale přicházíš na způsoby, jakými své problémy řešit.
 
-Terapeuti své služby dnes už běžně nabízí **jak osobně, tak online**. Existují i specializované platformy nabízející terapii výhradně přes videohovor.
+Terapeuti své služby dnes už běžně nabízí **jak osobně, tak online**. Existují i specializované platformy nabízející terapii výhradně přes videohovor.
 
-Pokud po pár sezeních necítíš významné zlepšení, nevěš hlavu, **chce to čas**. Je běžné cítit se o něco lépe už po pár týdnech, či měsících, ale rovněž je normální zažít i dočasný výkyv k horšímu. Celé to může trvat i víc než rok.
+Pokud po pár sezeních necítíš významné zlepšení, nevěš hlavu, **chce to čas**. Je běžné cítit se o něco lépe už po pár týdnech, či měsících, ale rovněž je normální zažít i dočasný výkyv k horšímu. Celé to může trvat i víc než rok.
 
 #### Klinický psycholog
 
-Absolventi postgraduálního specializačního vzdělávání v oboru klinické psychologie mohou poskytovat psychoterapii a zhodnocovat tvůj psychický stav (psychodiagnostika). Sice ti **vše uhradí pojišťovna**, ale protože klinických psychologů není mnoho, tak mívají plno, nebo nabízejí dlouhé objednací lhůty.
+Absolventi postgraduálního specializačního vzdělávání v oboru klinické psychologie mohou poskytovat psychoterapii a zhodnocovat tvůj psychický stav (psychodiagnostika). Sice ti **vše uhradí pojišťovna**, ale protože klinických psychologů není mnoho, tak mívají plno, nebo nabízejí dlouhé objednací lhůty.
 
 <div class="link-cards">
   {{ link_card(
@@ -182,13 +182,13 @@ Absolventi postgraduálního specializačního vzdělávání v oboru klinické 
 
 #### Psychoterapeut na přímou platbu
 
-Psychoterapeut je někdo, kdo má započatý či úspěšně zakončený psychoterapeutický výcvik. Součástí psychoterapeutických výcviků jsou stovky hodin vzdělávání a desítky hodin nácviků, supervizí a poznávání sebe sama na psychoterapii. Člověk se na takovém výcviku naučí, jak dělat dobrou terapii v praxi. Pokud je navíc vysokoškolsky vzdělaný v psychologii, zná i teorii o fungování lidské psychiky.
+Psychoterapeut je někdo, kdo má započatý či úspěšně zakončený psychoterapeutický výcvik. Součástí psychoterapeutických výcviků jsou stovky hodin vzdělávání a desítky hodin nácviků, supervizí a poznávání sebe sama na psychoterapii. Člověk se na takovém výcviku naučí, jak dělat dobrou terapii v praxi. Pokud je navíc vysokoškolsky vzdělaný v psychologii, zná i teorii o fungování lidské psychiky.
 
-Existuje řada adresářů psychoterapeutů. Největší je asi ten od [České asociace pro psychoterapii (ČAP)](https://www.czap.cz/adresar). Můžeš ale zkusit i vyhledávání přes internet, specializované platformy, nebo se ptát známých. Nakonec je nejlepší vybrat někoho sympatického blízko tvému bydlišti či práci a pak zhodnotit, jak jste si sedli a jak ti spolupráce vyhovuje, případně zkusit někoho jiného. Pamatuj, že terapie plní svůj účel pouze pokud na ní panuje přijímající a chápající atmosféra, ve které můžeš mluvit o čemkoliv, aniž by tě někdo bral na lehkou váhu anebo tě zesměšňoval.
+Existuje řada adresářů psychoterapeutů. Největší je asi ten od [České asociace pro psychoterapii (ČAP)](https://www.czap.cz/adresar). Můžeš ale zkusit i vyhledávání přes internet, specializované platformy, nebo se ptát známých. Nakonec je nejlepší vybrat někoho sympatického blízko tvému bydlišti či práci a pak zhodnotit, jak jste si sedli a jak ti spolupráce vyhovuje, případně zkusit někoho jiného. Pamatuj, že terapie plní svůj účel pouze pokud na ní panuje přijímající a chápající atmosféra, ve které můžeš mluvit o čemkoliv, aniž by tě někdo bral na lehkou váhu anebo tě zesměšňoval.
 
-Výcviky mají určité **specializace** a různý styl práce, takže i typ výcviku může být vodítkem při výběru. V základu jsou ovšem pro výkon psychoterapie všechny stejně dobré. Každý terapeut by měl mít na webu napsáno, jaký má výcvik.
+Výcviky mají určité **specializace** a různý styl práce, takže i typ výcviku může být vodítkem při výběru. V základu jsou ovšem pro výkon psychoterapie všechny stejně dobré. Každý terapeut by měl mít na webu napsáno, jaký má výcvik.
 
-Hodina sezení tě zpravidla vyjde na 1200-1500 Kč, ale mnozí poskytují **slevy pro studenty, nebo znevýhodněné skupiny**. Od pandemie covidu-19 začaly navíc na terapii přispívat skoro všechny **zdravotní pojišťovny**. Většinou mají na webu postup, jak příspěvek získat, a seznam terapeutů, u kterých jej můžeš čerpat.
+Hodina sezení tě zpravidla vyjde na 1200-1500 Kč, ale mnozí poskytují **slevy pro studenty, nebo znevýhodněné skupiny**. Od pandemie covidu-19 začaly navíc na terapii přispívat skoro všechny **zdravotní pojišťovny**. Většinou mají na webu postup, jak příspěvek získat, a seznam terapeutů, u kterých jej můžeš čerpat.
 
 <div class="link-cards">
   {{ link_card(
@@ -215,9 +215,9 @@ Hodina sezení tě zpravidla vyjde na 1200-1500 Kč, ale mnozí poskytují **sle
 
 ### Psychiatr
 
-Adekvátně hloubce problému se může míra prožívaných obtíží jevit až neúnosně. Ve chvíli, kdy ti **základní nároky každodenního života připomínají výstup na Everest**, může být na místě konzultovat tvůj stav s psychiatrem, tedy lékařem. Říká se, že pro psychoterapii potřebuje být člověk alespoň trochu „v kondici“, aby měl energii posvítit si na příčiny svých problémů a započít tak proces úzdravy.
+Adekvátně hloubce problému se může míra prožívaných obtíží jevit až neúnosně. Ve chvíli, kdy ti **základní nároky každodenního života připomínají výstup na Everest**, může být na místě konzultovat tvůj stav s psychiatrem, tedy lékařem. Říká se, že pro psychoterapii potřebuje být člověk alespoň trochu „v kondici“, aby měl energii posvítit si na příčiny svých problémů a započít tak proces úzdravy.
 
-Psychiatr tě vyslechne, proberete tvůj stav, a pak ti nabídne pomoc. Může ti nabídnout **vyladění režimu** (např. spánku, každodenních rutin…), doporučit **doplňky stravy** podporující zlepšení tvého stavu, nebo předepsat **léky (tzv. psychofarmaka)** zaměřené na konkrétní obtíže. Cílem je překlenout náročné životní období (snížit úzkosti, zvýšit tvou životní energii…) a dostat tě do kondice pro psychoterapii. Pokud se vám to podaří s pomocí psychofarmak, typicky se časem můžete s lékařem domluvit, že léky zase vysadíte.
+Psychiatr tě vyslechne, proberete tvůj stav, a pak ti nabídne pomoc. Může ti nabídnout **vyladění režimu** (např. spánku, každodenních rutin…), doporučit **doplňky stravy** podporující zlepšení tvého stavu, nebo předepsat **léky (tzv. psychofarmaka)** zaměřené na konkrétní obtíže. Cílem je překlenout náročné životní období (snížit úzkosti, zvýšit tvou životní energii…) a dostat tě do kondice pro psychoterapii. Pokud se vám to podaří s pomocí psychofarmak, typicky se časem můžete s lékařem domluvit, že léky zase vysadíte.
 
 <div class="link-cards">
   {{ link_card(
@@ -235,13 +235,13 @@ Psychiatr tě vyslechne, proberete tvůj stav, a pak ti nabídne pomoc. Může t
 
 ### Koučink
 
-Pokud **toužíš dosáhnout určitého stavu nebo cíle**, můžeš zkusit koučink. Jde o krátkodobější a rychlejší řešení, které spočívá v provádění konkrétních změn ve tvém životě.
+Pokud **toužíš dosáhnout určitého stavu nebo cíle**, můžeš zkusit koučink. Jde o krátkodobější a rychlejší řešení, které spočívá v provádění konkrétních změn ve tvém životě.
 
-Koučink nejde do hloubky a nezabývá se příliš emocemi, takže se nejedná o léčebný nástroj vhodný k řešení psychických obtíží, jakými jsou úzkosti nebo deprese.
+Koučink nejde do hloubky a nezabývá se příliš emocemi, takže se nejedná o léčebný nástroj vhodný k řešení psychických obtíží, jakými jsou úzkosti nebo deprese.
 
-Kouč ti dává otevřené otázky a provádí tě procesem, při kterém si uvědomíš, čeho chceš vlastně dosáhnout, jaká je situace a jak to celé uděláš (model GROW).
+Kouč ti dává otevřené otázky a provádí tě procesem, při kterém si uvědomíš, čeho chceš vlastně dosáhnout, jaká je situace a jak to celé uděláš (model GROW).
 
-Kouč je někdo, kdo absolvoval dlouhodobý a ideálně i akreditovaný koučovací výcvik, díky kterému je odborníkem na metodu koučování. Spolupráce s koučem se točí kolem konkrétních změn, a tak bývá rychlejší a za vyšší sazby, než je běžné u psychoterapie.
+Kouč je někdo, kdo absolvoval dlouhodobý a ideálně i akreditovaný koučovací výcvik, díky kterému je odborníkem na metodu koučování. Spolupráce s koučem se točí kolem konkrétních změn, a tak bývá rychlejší a za vyšší sazby, než je běžné u psychoterapie.
 
 <div class="link-cards">
   {{ link_card(

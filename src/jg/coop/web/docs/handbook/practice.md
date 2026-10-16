@@ -2,18 +2,18 @@
 title: Jak procvičovat programování
 emoji: 🏋️
 stages: [learning, creating]
-description: Znáš základy, ale na větší projekt si ještě netroufáš? Procvičuj programování na malých úkolech a rozšiřuj si znalosti
+description: Znáš základy, ale na větší projekt si ještě netroufáš? Procvičuj programování na malých úkolech a rozšiřuj si znalosti
 template: main_handbook.html
 ---
 
 {% from 'macros.html' import illustration, lead, link_card with context %}
 
 
-# Jak procvičovat a rozšiřovat si znalosti
+# Jak procvičovat a rozšiřovat si znalosti
 
 {% call lead() %}
   Dokážeš napsat pár řádků kódu, ale na větší projekt si ještě netroufáš?
-  Pomůže ti procvičování a postupné posouvání znalostí řešením malých úkolů.
+  Pomůže ti procvičování a postupné posouvání znalostí řešením malých úkolů.
 {% endcall %}
 
 {{ illustration('static/illustrations/practice.webp') }}
@@ -46,7 +46,7 @@ template: main_handbook.html
     'Umíme informatiku',
     'https://www.umimeinformatiku.cz',
   ) -%}
-    Uč se skrze cvičení a opakování. [Podloženo výzkumem](https://www.umimeto.org/shrnuti-vyzkum-umime).
+    Uč se skrze cvičení a opakování. [Podloženo výzkumem](https://www.umimeto.org/shrnuti-vyzkum-umime).
   {%- endcall %}
 
   {{ link_card(
@@ -67,9 +67,9 @@ template: main_handbook.html
 
 ## Rozšiřuj si znalosti    <span id="skills"></span>
 
-Umět programovat např. v Pythonu je dobrý základ, ale pro plnohodnotnou práci to nestačí. S prvními pokusy se uplatnit zjistíš, že by se ti hodilo aspoň trochu znát Git, HTML, SQL, JavaScript, … Pro každou takovou technologii existují kurzy, workshopy, knihy.
+Umět programovat např. v Pythonu je dobrý základ, ale pro plnohodnotnou práci to nestačí. S prvními pokusy se uplatnit zjistíš, že by se ti hodilo aspoň trochu znát Git, HTML, SQL, JavaScript, … Pro každou takovou technologii existují kurzy, workshopy, knihy.
 
-Vždy, když narazíš na nový pojem nebo zkratku, přečti si alespoň co to je a k čemu se to používá. Pokud o tom uslyšíš poněkolikáté, zkus si najít víc a pochopit základy.
+Vždy, když narazíš na nový pojem nebo zkratku, přečti si alespoň co to je a k čemu se to používá. Pokud o tom uslyšíš poněkolikáté, zkus si najít víc a pochopit základy.
 
 ### Základy    <span id="basics"></span>
 

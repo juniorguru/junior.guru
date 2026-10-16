@@ -1,8 +1,8 @@
 ---
-title: Kde a jak hledat pomoc během programování
+title: Kde a jak hledat pomoc během programování
 emoji: 🙋
 stages: [learning, creating]
-description: Jak se ptát? Jak debugovat? Při programování tě i drobný zádrhel může zaseknout na týdny a úplně ti zkazit radost z učení. Kde můžeš své problémy konzultovat a jak se ptát tak, aby se ti dostalo odpovědi?
+description: Jak se ptát? Jak debugovat? Při programování tě i drobný zádrhel může zaseknout na týdny a úplně ti zkazit radost z učení. Kde můžeš své problémy konzultovat a jak se ptát tak, aby se ti dostalo odpovědi?
 template: main_handbook.html
 ---
 
@@ -16,14 +16,14 @@ template: main_handbook.html
 #}
 
 {% call lead() %}
-  Je velmi těžké se učit zcela bez cizí pomoci. I drobný zádrhel tě může zaseknout na týdny a úplně ti zkazit radost z učení. Neboj se ptát online, radit se s lidmi na [akcích](community.md), nebo si najít [mentora](mentoring.md).
+  Je velmi těžké se učit zcela bez cizí pomoci. I drobný zádrhel tě může zaseknout na týdny a úplně ti zkazit radost z učení. Neboj se ptát online, radit se s lidmi na [akcích](community.md), nebo si najít [mentora](mentoring.md).
 {% endcall %}
 
 {{ illustration('static/illustrations/help.webp') }}
 
-## Kde a jak se ptát
+## Kde a jak se ptát
 
-Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. **Žádná otázka není hloupá, může však být hloupě položená.** Než se někde začneš ptát, přečti si [nejslavnější návod na internetu o psaní dotazů](https://www.root.cz/texty/jak-se-spravne-ptat/), nebo alespoň [tento krátký návod od Stack Overflow](https://stackoverflow.com/help/how-to-ask).
+Neboj se ptát, ale zároveň se nauč formulovat dotazy správně. **Žádná otázka není hloupá, může však být hloupě položená.** Než se někde začneš ptát, přečti si [nejslavnější návod na internetu o psaní dotazů](https://www.root.cz/texty/jak-se-spravne-ptat/), nebo alespoň [tento krátký návod od Stack Overflow](https://stackoverflow.com/help/how-to-ask).
 
 <div class="link-cards">
   {{ link_card(

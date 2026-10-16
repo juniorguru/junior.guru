@@ -1,7 +1,7 @@
 ---
 title: Klub pro začátečníky v programování
 template: main_club.html
-description: Přidej se na junior.guru Discord! Jsme tvoje online programovací parta, skupina, fórum. Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáhat. Svoje programování nebo hledání práce posuneš o 1 % každý den.
+description: Přidej se na junior.guru Discord! Jsme tvoje online programovací parta, skupina, fórum. Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáhat. Svoje programování nebo hledání práce posuneš o 1 % každý den.
 ---
 
 {% from 'macros.html' import blockquote_avatar, blockquote_toxic, img, lead, link_card, logos_list, markdown with context %}
@@ -51,9 +51,9 @@ Začátečníci, kteří to myslí vážně. Profesionálové s chutí pomáha
 <section class="section">
 <h2>Získej parťáky, mentory, kamarády</h2>
 {% call lead() %}
-Začátečníci potřebují víc než [příručku](handbook/index.md). Nejvíc je posune, **když v tom všem nejsou sami**. Když jim někdo může pomoci se zapeklitou situací, dát zpětnou vazbu, dodat motivaci.
+Začátečníci potřebují víc než [příručku](handbook/index.md). Nejvíc je posune, **když v tom všem nejsou sami**. Když jim někdo může pomoci se zapeklitou situací, dát zpětnou vazbu, dodat motivaci.
 
-Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme přednášky, ale nejsme škola, neděláme kurzy. Sdílíme si tipy a postřehy. Podporujeme se a radíme, když někomu něco nejde, ať už jde o seniora nebo juniora. Dáváme si zpětnou vazbu. Dohazujeme si práci. Společně se radujeme z úspěchů. Můžeš se aktivně zapojit, nebo vše jen potichu sledovat.
+Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme přednášky, ale nejsme škola, neděláme kurzy. Sdílíme si tipy a postřehy. Podporujeme se a radíme, když někomu něco nejde, ať už jde o seniora nebo juniora. Dáváme si zpětnou vazbu. Dohazujeme si práci. Společně se radujeme z úspěchů. Můžeš se aktivně zapojit, nebo vše jen potichu sledovat.
 {% endcall %}
 
 <div class="standout"><div class="topics">
@@ -115,7 +115,7 @@ Jsme **online komunita** na [Discordu](https://discord.com/). Občas pořádáme
 <section class="section">
 <h2>Jaká témata zajímají členy klubu</h2>
 {% call lead() %}
-Chceš mít jistotu, že v klubu najdeš lidi, které zajímá totéž co tebe? Že najdeš publikum pro svůj dotaz nebo parťáky pro svůj projekt? Podívej se, co o svých zájmech prozradili sami členové.
+Chceš mít jistotu, že v klubu najdeš lidi, které zajímá totéž co tebe? Že najdeš publikum pro svůj dotaz nebo parťáky pro svůj projekt? Podívej se, co o svých zájmech prozradili sami členové.
 {% endcall %}
 <ul class="interests yellow standout">
 {% set max_members_count = interests|map(attribute=1)|max %}
@@ -131,7 +131,7 @@ Chceš mít jistotu, že v klubu najdeš lidi, které zajímá totéž co tebe? 
 {% endfor %}
 </ul>
 {% call lead() %}
-V klubu se ale diskutuje o všem, co souvisí co se světem juniorů. Tady máš seřazený seznam toho, co lidi v klubu za poslední půlrok nejvíc řeší.
+V klubu se ale diskutuje o všem, co souvisí co se světem juniorů. Tady máš seřazený seznam toho, co lidi v klubu za poslední půlrok nejvíc řeší.
 {% endcall %}
 {% set top_topic_discussions = topic_discussions[:6] %}
 {% if top_topic_discussions %}
@@ -154,9 +154,9 @@ V klubu se ale diskutuje o všem, co souvisí co se světem juniorů. Tady máš
 <div class="section-background blue-light"><section class="section">
 <h2>Užívej si přednášky pro začátečníky</h2>
 {% call lead() %}
-Jednou za měsíc máme na Discordu **živou online akci**. Bývají večer a trvají 1 až 2h. Můžeš pokládat dotazy přes chat, nebo si to jen pustit do uší při vaření večeře. Téma i pojetí je vždy **vyloženě pro začátečníky**. Žádná záplava odborných „termitů“, které ti nikdo nevysvětlil!
+Jednou za měsíc máme na Discordu **živou online akci**. Bývají večer a trvají 1 až 2h. Můžeš pokládat dotazy přes chat, nebo si to jen pustit do uší při vaření večeře. Téma i pojetí je vždy **vyloženě pro začátečníky**. Žádná záplava odborných „termitů“, které ti nikdo nevysvětlil!
 
-Pokud akci nestihneš, můžeš se podívat na záznam. V archivu máme už **{{ events_recordings_count }} videí** a všechny jsou členům kdykoliv k dispozici.
+Pokud akci nestihneš, můžeš se podívat na záznam. V archivu máme už **{{ events_recordings_count }} videí** a všechny jsou členům kdykoliv k dispozici.
 {% endcall %}
 
 <div class="link-cards avatars standout-top">
@@ -192,14 +192,14 @@ Pokud akci nestihneš, můžeš se podívat na záznam. V archivu máme už **{{
 
 
 <section class="section">
-<h2>Propoj se s lidmi z oboru</h2>
+<h2>Propoj se s lidmi z oboru</h2>
 {% call lead() %}
-O klub se stará **Honza Javorek, autor junior.guru**. Okolo se však „poflakuje“ i řada dalších **profíků s chutí pomáhat**. Partnerství klubu s **firmami a programátorskými komunitami** ti rozšíří možnosti zapojit se i jinde, propojit se s potenciálními zaměstnavateli a dovědět se o zajímavých akcích, případně na ně získat slevu.
+O klub se stará **Honza Javorek, autor junior.guru**. Okolo se však „poflakuje“ i řada dalších **profíků s chutí pomáhat**. Partnerství klubu s **firmami a programátorskými komunitami** ti rozšíří možnosti zapojit se i jinde, propojit se s potenciálními zaměstnavateli a dovědět se o zajímavých akcích, případně na ně získat slevu.
 
 {{ logos_list(sponsors, class="standout") }}
 {{ logos_list(partners, class="standout") }}
 
-Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý s jiným životním příběhem, ale s velmi podobnými dotazy a problémy. Mnozí si v klubu píšou **deníčky o cestě do IT**, které ti mohou sloužit jako zdroj inspirace a motivace.
+Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý s jiným životním příběhem, ale s velmi podobnými dotazy a problémy. Mnozí si v klubu píšou **deníčky o cestě do IT**, které ti mohou sloužit jako zdroj inspirace a motivace.
 
 <ul class="diaries standout-top">
 {% for diary in club_diaries|sample(8) %}
@@ -213,7 +213,7 @@ Potkáš u nás samozřejmě i **stejné začátečníky, jako jsi ty**. Každý
 <div class="section-background blue-light"><section class="section">
 <h2>Ptej se bez obav</h2>
 {% call lead() %}
-Respektujeme se, pomáháme si, jsme k sobě laskaví a profesionální. **Hloupé otázky neexistují,** nemáme potřebu někoho stírat. **Uslintané vtipy nikoho nezajímají,** mezi členy jsou ženy, muži, staří, mladí.
+Respektujeme se, pomáháme si, jsme k sobě laskaví a profesionální. **Hloupé otázky neexistují,** nemáme potřebu někoho stírat. **Uslintané vtipy nikoho nezajímají,** mezi členy jsou ženy, muži, staří, mladí.
 {% endcall %}
 <div class="blockquotes-roll standout">
 {{ blockquote_avatar(
@@ -242,7 +242,7 @@ Respektujeme se, pomáháme si, jsme k sobě laskaví a profesionální. **Hloup
 ) }}
 </div>
 {% call lead() %}
-Šetři čas a energii. Posouvej se vpřed bez zakopávání o nezralé názory, hulváty, sexisty a přebujelá ega. Případné úlety se u nás řídí [pravidly chování](coc.md).
+Šetři čas a energii. Posouvej se vpřed bez zakopávání o nezralé názory, hulváty, sexisty a přebujelá ega. Případné úlety se u nás řídí [pravidly chování](coc.md).
 {% endcall %}
 <div class="blockquotes-roll standout-top">
 {{ blockquote_toxic(
@@ -262,7 +262,7 @@ Respektujeme se, pomáháme si, jsme k sobě laskaví a profesionální. **Hloup
 <section class="section">
 <h2>Nech si radit od profíků</h2>
 {% call lead() %}
-Vycházíme z [postupu](handbook/index.md), který je založen na reálných zkušenostech a **osvědčil se mnohým začátečníkům**. Snažíme se však radit objektivně a brát ohled i na tvou konkrétní situaci. Než abychom tě utopili v možnostech, **pomůžeme ti s rozhodováním**. Poskytneme ti sice různé pohledy, ale taky **jasný směr**. Profíci, kteří šli do klubu, to udělali ze zájmu o juniory a **s chutí pomáhat**, nejsou to náhodní kolemjdoucí.
+Vycházíme z [postupu](handbook/index.md), který je založen na reálných zkušenostech a **osvědčil se mnohým začátečníkům**. Snažíme se však radit objektivně a brát ohled i na tvou konkrétní situaci. Než abychom tě utopili v možnostech, **pomůžeme ti s rozhodováním**. Poskytneme ti sice různé pohledy, ale taky **jasný směr**. Profíci, kteří šli do klubu, to udělali ze zájmu o juniory a **s chutí pomáhat**, nejsou to náhodní kolemjdoucí.
 {% endcall %}
 
 <div class="standout"><div class="comparison">
@@ -282,7 +282,7 @@ Vycházíme z [postupu](handbook/index.md), který je založen na reálných zku
 </div></div>
 
 {% call lead() %}
-Rady kolemjdoucích ve veřejných skupinách jsou náchylné k fanouškovství, opakují nejrůznější mýty, doporučují staré postupy. Vycházejí z toho, že když něco vyhovovalo jednomu, zákonitě musí i druhému. Na jednoduchou otázku běžně dostaneš **desítky rozcházejících se odpovědí**, mnohdy zcela nevhodných.
+Rady kolemjdoucích ve veřejných skupinách jsou náchylné k fanouškovství, opakují nejrůznější mýty, doporučují staré postupy. Vycházejí z toho, že když něco vyhovovalo jednomu, zákonitě musí i druhému. Na jednoduchou otázku běžně dostaneš **desítky rozcházejících se odpovědí**, mnohdy zcela nevhodných.
 {% endcall %}
 <div class="blockquotes-roll standout-top animated">
 {{ blockquote_avatar(
@@ -330,7 +330,7 @@ Rady kolemjdoucích ve veřejných skupinách jsou náchylné k fanouškovství,
 
 <h2>Přidej se k nám</h2>
 {% call lead() %}
-Zaregistruj se a nakoukni, jak to u nás vypadá. Kartu nezadáváš. Klidně si všechno nejdřív vyzkoušej. Pokud ti klub nesedne, prostě akorát po dvou týdnech nedoplníš platební údaje a systém tě automaticky odebere.
+Zaregistruj se a nakoukni, jak to u nás vypadá. Kartu nezadáváš. Klidně si všechno nejdřív vyzkoušej. Pokud ti klub nesedne, prostě akorát po dvou týdnech nedoplníš platební údaje a systém tě automaticky odebere.
 {% endcall %}
 
 <div class="pricing standout">
@@ -341,19 +341,19 @@ Zaregistruj se a nakoukni, jak to u nás vypadá. Kartu nezadáváš. Klidně si
       {# <li class="pricing-benefits-item price"><strong>Zdarma na 14 dní</strong></li> #}
       <li class="pricing-benefits-item">{{ 'check-circle-fill'|icon }} Bez zadávání karty, bez placení</li>
       <li class="pricing-benefits-item">{{ 'check-circle-fill'|icon }} Po 2 týdnech se rozhodneš</li>
-      <li class="pricing-benefits-item">{{ 'check-circle-fill'|icon }} I potom to jde kdykoliv zrušit</li>
+      <li class="pricing-benefits-item">{{ 'check-circle-fill'|icon }} I potom to jde kdykoliv zrušit</li>
     </ul>
     <a class="pricing-button" href="https://juniorguru.memberful.com/checkout?plan=143775">Bezplatně vyzkoušet</a>
   </div>
 </div>
 
 {% call markdown() %}
-[Obchodní podmínky](tos.md) jsou napsané lidsky, klidně si je projdi. Je to smlouva, kterou mezi sebou budeme mít. Odkazuje se na [pravidla chování](coc.md), tak na ně taky mrkni, ať znáš mantinely a víš kam pro pomoc. [Zásady ochrany osobních údajů](privacy.md) popisují, jaká data o tobě Honza má a jak s nimi zachází.
+[Obchodní podmínky](tos.md) jsou napsané lidsky, klidně si je projdi. Je to smlouva, kterou mezi sebou budeme mít. Odkazuje se na [pravidla chování](coc.md), tak na ně taky mrkni, ať znáš mantinely a víš kam pro pomoc. [Zásady ochrany osobních údajů](privacy.md) popisují, jaká data o tobě Honza má a jak s nimi zachází.
 {% endcall %}
 
 <p class="pricing-note">
   <small>
-    <sup>*</sup> Žádný háček, ani skrytá podmínka. Tohle je jen poznámka na okraj, že pokud by se ti v klubu líbilo, ale 299 Kč měsíčně je na tebe moc, můžeš <a href="{{ pages|docs_url('finaid.md')|url }}">požádat o roční stipendium</a>.
+    <sup>*</sup> Žádný háček, ani skrytá podmínka. Tohle je jen poznámka na okraj, že pokud by se ti v klubu líbilo, ale 299 Kč měsíčně je na tebe moc, můžeš <a href="{{ pages|docs_url('finaid.md')|url }}">požádat o roční stipendium</a>.
   </small>
 </p>
 </section></div>
@@ -362,14 +362,14 @@ Zaregistruj se a nakoukni, jak to u nás vypadá. Kartu nezadáváš. Klidně si
 <section class="section">
 <h2>Otázky?</h2>
 {% call lead() %}
-Vrtá ti hlavou, jak přesně to celé funguje? Máš nějaké problémy s registrací nebo s Discordem? Zajímají tě veškeré detaily ohledně placení? Vypršela ti platnost karty? Prolétni si **otázky a odpovědi**.
+Vrtá ti hlavou, jak přesně to celé funguje? Máš nějaké problémy s registrací nebo s Discordem? Zajímají tě veškeré detaily ohledně placení? Vypršela ti platnost karty? Prolétni si **otázky a odpovědi**.
 {% endcall %}
 
 <div class="standout"><div class="topics topics-grid">
 {% call markdown() %}
-- [{{ 'person-plus'|icon }} Členství v klubu](faq.md#jak-funguje-clenstvi)
+- [{{ 'person-plus'|icon }} Členství v klubu](faq.md#jak-funguje-clenstvi)
 - [{{ 'person-check'|icon }} Pro koho je klub](faq.md#je-to-jen-pro-zacatecniky)
-- [{{ 'compass'|icon }} Co je a není klub](faq.md#jak-se-klub-lisi-od-skol-akademii-a-kurzu)
+- [{{ 'compass'|icon }} Co je a není klub](faq.md#jak-se-klub-lisi-od-skol-akademii-a-kurzu)
 - [{{ 'chat-right'|icon }} Discord](faq.md#proc-zrovna-discord)
 - [{{ 'credit-card'|icon }} Placení za klub](faq.md#proc-je-klub-placeny)
 - [{{ 'three-dots'|icon }} Další](faq.md)

@@ -8,14 +8,14 @@ template: main_about.html
 # Finanční výsledky
 
 {% call lead() %}
-Transparentně o zisku, příjmech, výdajích. Čísla a grafy. Data se každý den stahují přímo z Honzova podnikatelského účtu u Fio banky.
+Transparentně o zisku, příjmech, výdajích. Čísla a grafy. Data se každý den stahují přímo z Honzova podnikatelského účtu u Fio banky.
 {% endcall %}
 
 [TOC]
 
 ## Záměr
 
-Cílem není zbohatnout, ale dlouhodobě pomáhat juniorům, pohodlně živit rodinu a žít při tom šťastný život. Vlevo vidíte měsíční čistý zisk junior.guru a vpravo jak se na to Honza tváří.
+Cílem není zbohatnout, ale dlouhodobě pomáhat juniorům, pohodlně živit rodinu a žít při tom šťastný život. Vlevo vidíte měsíční čistý zisk junior.guru a vpravo jak se na to Honza tváří.
 
 <table class="table table-mood">
     <tr>
@@ -36,11 +36,11 @@ Cílem není zbohatnout, ale dlouhodobě pomáhat juniorům, pohodlně živit ro
     </tr>
 </table>
 
-Mezi lety 2019–2024 mohl Honza dělat junior.guru na plný úvazek. Kvůli ekonomickým změnám na trhu po roce 2023 si pak našel částečný úvazek v [Apify](https://apify.com/), čímž vykrývá nedostatečné příjmy z junior.guru.
+Mezi lety 2019–2024 mohl Honza dělat junior.guru na plný úvazek. Kvůli ekonomickým změnám na trhu po roce 2023 si pak našel částečný úvazek v [Apify](https://apify.com/), čímž vykrývá nedostatečné příjmy z junior.guru.
 
-Honza žije s rodinou v Praze, na Žižkově. Děti má, auto nemá, hypotéku má.
-Seniorní programátor s [jeho zkušenostmi](https://www.linkedin.com/in/honzajavorek/), který pracuje pro pražskou nebo zahraniční firmu, vydělává běžně 100.000 Kč měsíčně čistého a víc.
-Honzu ale práce na junior.guru hodně naplňuje, a tak se tomu za podpory své rodiny věnuje i přesto, že vydělá méně.
+Honza žije s rodinou v Praze, na Žižkově. Děti má, auto nemá, hypotéku má.
+Seniorní programátor s [jeho zkušenostmi](https://www.linkedin.com/in/honzajavorek/), který pracuje pro pražskou nebo zahraniční firmu, vydělává běžně 100.000 Kč měsíčně čistého a víc.
+Honzu ale práce na junior.guru hodně naplňuje, a tak se tomu za podpory své rodiny věnuje i přesto, že vydělá méně.
 
 <table class="table table-goals">
     {% set progress_40_ptc = ((profit_ttm * 100) / 40000)|round|int %}
@@ -75,7 +75,7 @@ Honzu ale práce na junior.guru hodně naplňuje, a tak se tomu za podpory své 
     </tr>
 </table>
 
-Částky nelze přímočaře srovnávat se mzdou. Jako podnikatel potřebuje velkou rezervu, aby se nemusel strachovat s každou změnou rodinných nákladů, jestli může pokračovat. Také si musí sám zařídit dovolenou, nemocenskou, spořit na důchod, apod.
+Částky nelze přímočaře srovnávat se mzdou. Jako podnikatel potřebuje velkou rezervu, aby se nemusel strachovat s každou změnou rodinných nákladů, jestli může pokračovat. Také si musí sám zařídit dovolenou, nemocenskou, spořit na důchod, apod.
 
 <p class="text-center standout-top">
   <a href="{{ pages|docs_url("love.jinja")|url }}" class="love-btn btn-lg pulse">{{ 'heart-fill'|icon }} Pošli LOVE</a>
@@ -83,9 +83,9 @@ Honzu ale práce na junior.guru hodně naplňuje, a tak se tomu za podpory své 
 
 ## Čistý zisk
 
-Zisk jsou výnosy mínus náklady včetně daní, tedy částka, která už jde z Honzova podnikání přímo do rodinného rozpočtu. Aktuální čistý zisk junior.guru je **{{ profit_ttm|thousands }} Kč měsíčně**. Spočítáno jako zisk za posledních 12 měsíců (TTM, _trailing twelve months_) vydělený 12.
+Zisk jsou výnosy mínus náklady včetně daní, tedy částka, která už jde z Honzova podnikání přímo do rodinného rozpočtu. Aktuální čistý zisk junior.guru je **{{ profit_ttm|thousands }} Kč měsíčně**. Spočítáno jako zisk za posledních 12 měsíců (TTM, _trailing twelve months_) vydělený 12.
 
-Občas se někde píše o zahraničních podnikavcích, kteří taky otevřeně sdílí svoje výdělky. Mají to však v jiné měně, tak se to špatně srovnává. Takže podle pondělních kurzů ČNB se to dá přepočítat na zhruba **${{ profit_ttm_usd|thousands }}** nebo **{{ profit_ttm_eur|thousands }}€** čistého měsíčně.
+Občas se někde píše o zahraničních podnikavcích, kteří taky otevřeně sdílí svoje výdělky. Mají to však v jiné měně, tak se to špatně srovnává. Takže podle pondělních kurzů ČNB se to dá přepočítat na zhruba **${{ profit_ttm_usd|thousands }}** nebo **{{ profit_ttm_eur|thousands }}€** čistého měsíčně.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="300"
@@ -115,9 +115,9 @@ Občas se někde píše o zahraničních podnikavcích, kteří taky otevřeně 
 
 ## Meziroční růst výnosů
 
-Růst výnosů v procentech. Každý měsíc se porovnává se stejným měsícem o rok dříve (YoY, _Year-over-Year_). Mělo by to ukazovat meziroční růst nebo pokles.
+Růst výnosů v procentech. Každý měsíc se porovnává se stejným měsícem o rok dříve (YoY, _Year-over-Year_). Mělo by to ukazovat meziroční růst nebo pokles.
 
-Pro každý měsíc se ještě počítá součet za uplynulých 12 měsíců (TTM, _trailing twelve months_), vyděleno 12, a to se pak srovnává se stejnou hodnotou o rok dříve. Mělo by to ukazovat meziroční růst nebo pokles očištěný o sezónní výkyvy.
+Pro každý měsíc se ještě počítá součet za uplynulých 12 měsíců (TTM, _trailing twelve months_), vyděleno 12, a to se pak srovnává se stejnou hodnotou o rok dříve. Mělo by to ukazovat meziroční růst nebo pokles očištěný o sezónní výkyvy.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="300"
@@ -145,11 +145,11 @@ Pro každý měsíc se ještě počítá součet za uplynulých 12 měsíců (TT
         'plugins': {'annotation': charts.revenue_growth_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
-## Výnosy a náklady
+## Výnosy a náklady
 
-Silné čáry zobrazují vývoj výnosů a nákladů v každém konkrétním měsíci. Tenké linky zobrazují totéž, ale vždy za posledních 12 měsíců (TTM, _trailing twelve months_), vyděleno 12. Čistý zisk je rozdíl mezi modrou a červenou čárou.
+Silné čáry zobrazují vývoj výnosů a nákladů v každém konkrétním měsíci. Tenké linky zobrazují totéž, ale vždy za posledních 12 měsíců (TTM, _trailing twelve months_), vyděleno 12. Čistý zisk je rozdíl mezi modrou a červenou čárou.
 
-Výnosy ani náklady junior.guru nemají pravidelný, měsíční charakter. Jeden měsíc je to víc, jiný méně, stejné je to s výdaji. Zároveň nemá s nikým delší kontrakt než roční, ať už jsou to jednotlivci nebo firmy. TTM tedy stírá tyto skoky nahoru a dolů. Protože se ale byznys hýbe rychleji než ročním tempem, TTM neukazuje dobře trend za poslední půlrok nebo čtvrtrok. Ten ukazují silné čáry.
+Výnosy ani náklady junior.guru nemají pravidelný, měsíční charakter. Jeden měsíc je to víc, jiný méně, stejné je to s výdaji. Zároveň nemá s nikým delší kontrakt než roční, ať už jsou to jednotlivci nebo firmy. TTM tedy stírá tyto skoky nahoru a dolů. Protože se ale byznys hýbe rychleji než ročním tempem, TTM neukazuje dobře trend za poslední půlrok nebo čtvrtrok. Ten ukazují silné čáry.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="300"
@@ -190,11 +190,11 @@ Výnosy ani náklady junior.guru nemají pravidelný, měsíční charakter. Jed
 
 ## Výnosy
 
-Původně junior.guru mělo vydělávat z inzerce nabídek práce, ale byznys na tomto modelu Honza nedokázal dostatečně rozpohybovat tak, aby věřil, že má smysl v tom dál pokračovat. Mezitím se pokusil zpeněžit [příručku](../handbook/index.md) skrze loga firem a začal prosit návštěvníky webu o [dobrovolné příspěvky](../love.jinja).
+Původně junior.guru mělo vydělávat z inzerce nabídek práce, ale byznys na tomto modelu Honza nedokázal dostatečně rozpohybovat tak, aby věřil, že má smysl v tom dál pokračovat. Mezitím se pokusil zpeněžit [příručku](../handbook/index.md) skrze loga firem a začal prosit návštěvníky webu o [dobrovolné příspěvky](../love.jinja).
 
-Ke konci roku 2020 se rozhodl změnit byznys model a vytvořit kolem junior.guru [placenou komunitu na Discordu](../club.md). Toto detailně popisuje ve svém [článku na blogu](https://honzajavorek.cz/blog/spoustim-klub/). Klub se veřejnosti otevřel v únoru 2021.
+Ke konci roku 2020 se rozhodl změnit byznys model a vytvořit kolem junior.guru [placenou komunitu na Discordu](../club.md). Toto detailně popisuje ve svém [článku na blogu](https://honzajavorek.cz/blog/spoustim-klub/). Klub se veřejnosti otevřel v únoru 2021.
 
-V ideálním případě by stačilo individuální členství lidí v klubu, protože je to pravidelný, předvídatelný příjem, který navíc zajišťuje největší nezávislost projektu. Individuální členství ale nevystačí, takže má junior.guru i [sponzory](sponsors-partners.md). Z těch jsou větší jednorázové příjmy, které lze obtížně předvídat. Sponzorské dohody mohou ovlivňovat Honzovu kritičnost ke konkrétním firmám, a proto jsou všechna sponzorství [transparentně popsána](sponsors-partners.md).
+V ideálním případě by stačilo individuální členství lidí v klubu, protože je to pravidelný, předvídatelný příjem, který navíc zajišťuje největší nezávislost projektu. Individuální členství ale nevystačí, takže má junior.guru i [sponzory](sponsors-partners.md). Z těch jsou větší jednorázové příjmy, které lze obtížně předvídat. Sponzorské dohody mohou ovlivňovat Honzovu kritičnost ke konkrétním firmám, a proto jsou všechna sponzorství [transparentně popsána](sponsors-partners.md).
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="300"
@@ -235,9 +235,9 @@ V ideálním případě by stačilo individuální členství lidí v klubu, pro
 
 Procentuální poměr zdrojů výnosů za posledních 12 měsíců (TTM, _trailing twelve months_), vyděleno 12.
 
-Tabulka v podstatě říká, kdo je na junior.guru zákazník, komu projekt slouží, pro koho Honza pracuje.
-Čím víc procent jde z členství v klubu nebo dobrovolných příspěvků, tím víc si junior.guru platí samotní junioři nebo fanoušci a tím spíš je nezpochybnitelná Honzova motivace dělat vše pro ně.
-Čím víc procent jde ze sponzorských příspěvků, tím spíš se bude Honza věnovat závazkům vůči firmám a dbát na jejich pohled na věc.
+Tabulka v podstatě říká, kdo je na junior.guru zákazník, komu projekt slouží, pro koho Honza pracuje.
+Čím víc procent jde z členství v klubu nebo dobrovolných příspěvků, tím víc si junior.guru platí samotní junioři nebo fanoušci a tím spíš je nezpochybnitelná Honzova motivace dělat vše pro ně.
+Čím víc procent jde ze sponzorských příspěvků, tím spíš se bude Honza věnovat závazkům vůči firmám a dbát na jejich pohled na věc.
 
 <div class="table-responsive"><table class="table">
 {% for name, value_pct in revenue_ttm_breakdown|money_breakdown_ptc|revenue_categories %}
@@ -250,15 +250,15 @@ Tabulka v podstatě říká, kdo je na junior.guru zákazník, komu projekt slou
 
 ## Proč tu není MRR
 
-MRR znamená _monthly recurring revenue_ a je základní metrikou většiny online byznysů, které jsou vedeny jako pravidelně placená služba. Je to součet výnosů, které pravidelně měsíčně chodí na účet skrze předplatné, tedy pravidelný příjem, na který se dá spolehnout. I když je junior.guru služba s členstvím na měsíční bázi a MRR by spočítat šlo, nakonec se Honza rozhodl jej zatím neřešit a dívá se spíš na ono TTM vydělené 12.
+MRR znamená _monthly recurring revenue_ a je základní metrikou většiny online byznysů, které jsou vedeny jako pravidelně placená služba. Je to součet výnosů, které pravidelně měsíčně chodí na účet skrze předplatné, tedy pravidelný příjem, na který se dá spolehnout. I když je junior.guru služba s členstvím na měsíční bázi a MRR by spočítat šlo, nakonec se Honza rozhodl jej zatím neřešit a dívá se spíš na ono TTM vydělené 12.
 
-Jedním důvodem je složitost výpočtu. Data se berou z bankovního účtu, kam ale nechodí částky za jednotlivé lidi. Platební brána vždy posílá úhrnné částky za několik týdnů zpětně. Musely by se kombinovat data z více zdrojů. Navíc existují i roční členství, které by se musely rozpočítávat.
+Jedním důvodem je složitost výpočtu. Data se berou z bankovního účtu, kam ale nechodí částky za jednotlivé lidi. Platební brána vždy posílá úhrnné částky za několik týdnů zpětně. Musely by se kombinovat data z více zdrojů. Navíc existují i roční členství, které by se musely rozpočítávat.
 
-Druhým důvodem je malá vypovídající hodnota. Velkou část výnosů tvoří kontrakty s firmami, jež jsou nárazovým, ale ve svém množství poměrně stabilním příjmem. Pravidelné příjmy jsou i z dobrovolných příspěvků, jež by se do MRR započítávaly jen velice složitě. Aby bylo číslo přesné, bylo by potřeba stahovat data o tom, jak přesně kdo přispívá přes GitHub Sponsors (a dříve Patreon), což se nevyplatí řešit.
+Druhým důvodem je malá vypovídající hodnota. Velkou část výnosů tvoří kontrakty s firmami, jež jsou nárazovým, ale ve svém množství poměrně stabilním příjmem. Pravidelné příjmy jsou i z dobrovolných příspěvků, jež by se do MRR započítávaly jen velice složitě. Aby bylo číslo přesné, bylo by potřeba stahovat data o tom, jak přesně kdo přispívá přes GitHub Sponsors (a dříve Patreon), což se nevyplatí řešit.
 
 ## Náklady
 
-Zahrnuty jsou pouze náklady na byznys, ale zase i s daněmi a odvody na zdravotní a sociální pojištění. V roce 2020 je v nich díra, protože kvůli covidu-19 nebyla povinnost je platit. Občas jdou do mínusu (stává se z nich příjem), protože úřady něco vrátily.
+Zahrnuty jsou pouze náklady na byznys, ale zase i s daněmi a odvody na zdravotní a sociální pojištění. V roce 2020 je v nich díra, protože kvůli covidu-19 nebyla povinnost je platit. Občas jdou do mínusu (stává se z nich příjem), protože úřady něco vrátily.
 
 Výdaje na [marketing](./marketing.md) jsou předplatné nástrojů, tisk samolepek, konzultace, apod., ne platby za reklamu.
 
@@ -325,13 +325,13 @@ Výdaje na [marketing](./marketing.md) jsou předplatné nástrojů, tisk samole
 
 ## Odkud jsou platící členové klubu
 
-Samotné junior.guru o členech [klubu](../club.md) žádné detailní informace nesbírá, ale platební systém Stripe umožňuje zjistit, v jaké zemi byla vydána jejich karta.
-Díky tomu lze odhadnout, kolik lidí není z Česka.
+Samotné junior.guru o členech [klubu](../club.md) žádné detailní informace nesbírá, ale platební systém Stripe umožňuje zjistit, v jaké zemi byla vydána jejich karta.
+Díky tomu lze odhadnout, kolik lidí není z Česka.
 
 Honza to potřebuje sledovat, aby věděl, jestli nepřesáhl limit pro [One Stop Shop](https://vat-one-stop-shop.ec.europa.eu/one-stop-shop/declare-and-pay-oss_en). Ten je {{ charts.countries.oss_limit_eur|thousands }}€/rok, což je {{ charts.countries.oss_limit_czk|thousands }} Kč/rok, což je {{ charts.countries.oss_limit_czk_monthly|thousands }}/měsíc.
 
 Přes karty minulý měsíc přišlo celkem {{ charts.countries.revenue_memberships|thousands }} Kč.
-Když se použijí procenta z grafu níže, odhadem by mělo být {{ charts.countries.revenue_memberships_non_cz|thousands }} Kč odjinud než z Česka. {% if charts.countries.oss_limit_czk_monthly > charts.countries.revenue_memberships_non_cz %}**Takže asi dobrý.**{% endif %}
+Když se použijí procenta z grafu níže, odhadem by mělo být {{ charts.countries.revenue_memberships_non_cz|thousands }} Kč odjinud než z Česka. {% if charts.countries.oss_limit_czk_monthly > charts.countries.revenue_memberships_non_cz %}**Takže asi dobrý.**{% endif %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"

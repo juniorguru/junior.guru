@@ -2,7 +2,7 @@
 title: Mentoring
 emoji: 💁
 stages: [learning, creating, preparing]
-description: Kde najít mentory, jak s nimi komunikovat, a proč se toho nebát? Může ti s mentorováním pomoci ChatGPT?
+description: Kde najít mentory, jak s nimi komunikovat, a proč se toho nebát? Může ti s mentorováním pomoci ChatGPT?
 template: main_handbook.html
 ---
 
@@ -11,14 +11,14 @@ template: main_handbook.html
 # Mentoring při programování
 
 {% call lead() %}
-  Mentorka nebo mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady.
-  Kde takové lidi najít, jak s nimi komunikovat, a proč se toho nebát?
-  Může ti s mentorováním pomoci AI?
+  Mentorka nebo mentor ti pomůže s věcmi, se kterými si samostatně nevíš rady.
+  Kde takové lidi najít, jak s nimi komunikovat, a proč se toho nebát?
+  Může ti s mentorováním pomoci AI?
 {% endcall %}
 
 {{ illustration('static/illustrations/mentoring.webp') }}
 
-Mentor nemusí být vyloženě mistr v oboru, stačí když bude v programování alespoň o něco zkušenější než ty. A klidně může stačit, když se uvidíte jednu hodinu týdně přes videohovor. Pokud znáš někoho, kdo by mohl být tvým mentorem, ale nemá s tím praktické zkušenosti, projděte spolu [přednášku o mentorování](https://github.com/honzajavorek/become-mentor/blob/master/cs.md#readme) a prostě to zkuste!
+Mentor nemusí být vyloženě mistr v oboru, stačí když bude v programování alespoň o něco zkušenější než ty. A klidně může stačit, když se uvidíte jednu hodinu týdně přes videohovor. Pokud znáš někoho, kdo by mohl být tvým mentorem, ale nemá s tím praktické zkušenosti, projděte spolu [přednášku o mentorování](https://github.com/honzajavorek/become-mentor/blob/master/cs.md#readme) a prostě to zkuste!
 
 <div class="link-cards">
   {{ link_card(

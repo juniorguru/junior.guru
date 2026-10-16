@@ -8,21 +8,21 @@ template: main_about.html
 # Vše o klubu
 
 {% call lead() %}
-Informace o [klubu pro juniory](../club.md). Záměr a hodnoty, se kterými je provozován. K tomu ještě pár zajímavých statistik.
+Informace o [klubu pro juniory](../club.md). Záměr a hodnoty, se kterými je provozován. K tomu ještě pár zajímavých statistik.
 {% endcall %}
 
 [TOC]
 
 ## Vznik
 
-Na junior.guru byla původně pouze příručka a pracovní nabídky. Placená komunita vznikla až v roce 2021. Honza tenkrát svou motivaci a veškeré okolnosti vzniku klubu otevřeně popsal v [rozsáhlém článku na svém blogu](https://honzajavorek.cz/blog/spoustim-klub/).
+Na junior.guru byla původně pouze příručka a pracovní nabídky. Placená komunita vznikla až v roce 2021. Honza tenkrát svou motivaci a veškeré okolnosti vzniku klubu otevřeně popsal v [rozsáhlém článku na svém blogu](https://honzajavorek.cz/blog/spoustim-klub/).
 
 ## Počet členů
 
-Klub má teď **{{ members_total_count }} členů** celkem. Z nich si to **{{ charts.members_individuals_today }} platí ze svého**, tj. {{ charts.members_individuals_today_ptc|round|int }} %.
+Klub má teď **{{ members_total_count }} členů** celkem. Z nich si to **{{ charts.members_individuals_today }} platí ze svého**, tj. {{ charts.members_individuals_today_ptc|round|int }} %.
 
 {% call note() %}
-  {{ 'trash'|icon }} V létě 2024 se změnila metodika ukládání dat ohledně členství v klubu. Starší data bohužel nejsou k dispozici.
+  {{ 'trash'|icon }} V létě 2024 se změnila metodika ukládání dat ohledně členství v klubu. Starší data bohužel nejsou k dispozici.
 {% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
@@ -53,10 +53,10 @@ Klub má teď **{{ members_total_count }} členů** celkem. Z nich si to **{{ ch
 
 ## Meziroční růst počtu členů
 
-Růst počtu členů v procentech. Každý měsíc se porovnává se stejným měsícem o rok dříve (YoY, _Year-over-Year_). Mělo by to ukazovat meziroční růst nebo pokles.
+Růst počtu členů v procentech. Každý měsíc se porovnává se stejným měsícem o rok dříve (YoY, _Year-over-Year_). Mělo by to ukazovat meziroční růst nebo pokles.
 
 {% call note() %}
-  {{ 'trash'|icon }} V létě 2024 se změnila metodika ukládání dat ohledně členství v klubu. Starší data bohužel nejsou k dispozici.
+  {{ 'trash'|icon }} V létě 2024 se změnila metodika ukládání dat ohledně členství v klubu. Starší data bohužel nejsou k dispozici.
 {% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
@@ -87,10 +87,10 @@ Růst počtu členů v procentech. Každý měsíc se porovnává se stejným m�
 
 ## Typy členství
 
-Ke členství v klubu lze přijít různými způsoby. Každý nově příchozí má v klubu dva týdny zdarma na vyzkoušení. Někteří lidé dostávají vstup do klubu zdarma jako poděkování za dobrovolné příspěvky (takže to zdarma ani není), za přednášku v klubu, jako stipendium, nebo ze strategických důvodů. Část lidí je v klubu díky [sponzorům či partnerům](./sponsors-partners.md).
+Ke členství v klubu lze přijít různými způsoby. Každý nově příchozí má v klubu dva týdny zdarma na vyzkoušení. Někteří lidé dostávají vstup do klubu zdarma jako poděkování za dobrovolné příspěvky (takže to zdarma ani není), za přednášku v klubu, jako stipendium, nebo ze strategických důvodů. Část lidí je v klubu díky [sponzorům či partnerům](./sponsors-partners.md).
 
 {% call note() %}
-  {{ 'trash'|icon }} V létě 2024 se změnila metodika ukládání dat ohledně členství v klubu. Starší data bohužel nejsou k dispozici.
+  {{ 'trash'|icon }} V létě 2024 se změnila metodika ukládání dat ohledně členství v klubu. Starší data bohužel nejsou k dispozici.
 {% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
@@ -145,10 +145,10 @@ Ke členství v klubu lze přijít různými způsoby. Každý nově příchozí
 
 ## Počet znaků napsaných na Discordu
 
-Aktivita na Discordu je sezónní. V létě se moc nepíše, v zimě se píše hodně. Celé je to ale pouze orientační metrika:
+Aktivita na Discordu je sezónní. V létě se moc nepíše, v zimě se píše hodně. Celé je to ale pouze orientační metrika:
 
-- V grafu není celá historie, data jsou jen za rok zpětně. Některé kanály se nezapočítávají. Nejde o kompletní _engagement_, protože lidi se mohou v klubu projevovat různě, např. reagováním pomocí emoji.
-- Není správné sledovat a glorifikovat _engagement_, protože lidi mají z klubu úplně v pohodě hodnotu i pokud si jej pouze čtou. K tématu např. [Stop Measuring Community Engagement](https://rosie.land/posts/stop-measuring-community-engagement/).
+- V grafu není celá historie, data jsou jen za rok zpětně. Některé kanály se nezapočítávají. Nejde o kompletní _engagement_, protože lidi se mohou v klubu projevovat různě, např. reagováním pomocí emoji.
+- Není správné sledovat a glorifikovat _engagement_, protože lidi mají z klubu úplně v pohodě hodnotu i pokud si jej pouze čtou. K tématu např. [Stop Measuring Community Engagement](https://rosie.land/posts/stop-measuring-community-engagement/).
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -170,9 +170,9 @@ Aktivita na Discordu je sezónní. V létě se moc nepíše, v zimě se píše h
         'plugins': {'annotation': charts.club_content_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
-## Počet online akcí v klubu
+## Počet online akcí v klubu
 
-Bylo by fajn mít v klubu v průměru aspoň jednu [oficiální online akci](../events.md) měsíčně. Do grafu se nezapočítávají doplňkové akce, jako jsou například pravidelná Pondělní povídání.
+Bylo by fajn mít v klubu v průměru aspoň jednu [oficiální online akci](../events.md) měsíčně. Do grafu se nezapočítávají doplňkové akce, jako jsou například pravidelná Pondělní povídání.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -202,13 +202,13 @@ Bylo by fajn mít v klubu v průměru aspoň jednu [oficiální online akci](../
 
 ## Konverze dvou týdnů na zkoušku
 
-Nově registrovaní mají v klubu dva týdny zdarma na zkoušku, tzv. _trial_.
+Nově registrovaní mají v klubu dva týdny zdarma na zkoušku, tzv. _trial_.
 Jejich členství není nijak omezeno, mohou dělat všechno, co ostatní členové.
-Po dvou týdnech buď vyplní kartu a začnou platit, nebo je jim členství zrušeno.
+Po dvou týdnech buď vyplní kartu a začnou platit, nebo je jim členství zrušeno.
 Graf ukazuje konverzi _trialů_.
 
 {% call note() %}
-  {{ 'trash'|icon }} V létě 2024 se změnila metodika ukládání dat ohledně členství v klubu. Starší data bohužel nejsou k dispozici.
+  {{ 'trash'|icon }} V létě 2024 se změnila metodika ukládání dat ohledně členství v klubu. Starší data bohužel nejsou k dispozici.
 {% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
@@ -231,12 +231,12 @@ Graf ukazuje konverzi _trialů_.
         'plugins': {'annotation': charts.trials_conversion_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
-## Příchody a odchody
+## Příchody a odchody
 
-Graf s **příchody** ukazuje počet členů, kteří v daném měsíci přešli na individuální placení. Graf s **odchody** ukazuje počet členů, kteří už za klub něco ze svého zaplatili a v daném měsíci platit přestali.
+Graf s **příchody** ukazuje počet členů, kteří v daném měsíci přešli na individuální placení. Graf s **odchody** ukazuje počet členů, kteří už za klub něco ze svého zaplatili a v daném měsíci platit přestali.
 
 {% call note() %}
-  {{ 'trash'|icon }} V létě 2024 se změnila metodika ukládání dat ohledně členství v klubu. Starší data bohužel nejsou k dispozici.
+  {{ 'trash'|icon }} V létě 2024 se změnila metodika ukládání dat ohledně členství v klubu. Starší data bohužel nejsou k dispozici.
 {% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
@@ -267,10 +267,10 @@ Graf s **příchody** ukazuje počet členů, kteří v daném měsíci přešli
 
 ## Retence klubu
 
-Procento členů, kteří si klub platí ze svého a odcházejí, neboli _churn_.
+Procento členů, kteří si klub platí ze svého a odcházejí, neboli _churn_.
 
 {% call note() %}
-  {{ 'trash'|icon }} V létě 2024 se změnila metodika ukládání dat ohledně členství v klubu. Starší data bohužel nejsou k dispozici.
+  {{ 'trash'|icon }} V létě 2024 se změnila metodika ukládání dat ohledně členství v klubu. Starší data bohužel nejsou k dispozici.
 {% endcall %}
 
 <div class="chart-scroll"><div class="chart-container"><canvas
@@ -295,7 +295,7 @@ Procento členů, kteří si klub platí ze svého a odcházejí, neboli _churn_
 
 ## Důvody odchodu
 
-Když někdo ukončuje členství v klubu, může sdělit důvod, proč tak činí.
+Když někdo ukončuje členství v klubu, může sdělit důvod, proč tak činí.
 Data jsou celkem od **{{ charts.cancellations_breakdown_count }}** lidí.
 
 <div class="chart-scroll"><div class="chart-container"><canvas

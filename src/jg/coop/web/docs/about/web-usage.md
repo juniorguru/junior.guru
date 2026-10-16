@@ -8,29 +8,29 @@ template: main_about.html
 # Návštěvnost webu
 
 {% call lead() %}
-Na junior.guru se měří návštěvnost pomocí Simple Analytics, které nesledují uživatele, nepoužívají cookies a odpovídají všem zákonným i etickým normám. Všechny grafy níže zobrazují trend pouze zpětně za jeden rok, protože to tak Honzovi stačí.
+Na junior.guru se měří návštěvnost pomocí Simple Analytics, které nesledují uživatele, nepoužívají cookies a odpovídají všem zákonným i etickým normám. Všechny grafy níže zobrazují trend pouze zpětně za jeden rok, protože to tak Honzovi stačí.
 {% endcall %}
 
 [TOC]
 
-## Otevřená data o návštěvnosti
+## Otevřená data o návštěvnosti
 
-Na této stránce jsou jen grafy, které by se ručně špatně naklikávaly na [Simple Analytics](https://simpleanalytics.com/junior.guru). Kompletní data o návštěvnosti jsou veřejně přístupná tam.
+Na této stránce jsou jen grafy, které by se ručně špatně naklikávaly na [Simple Analytics](https://simpleanalytics.com/junior.guru). Kompletní data o návštěvnosti jsou veřejně přístupná tam.
 
 ## Proč Simple Analytics
 
-Rozhraní Google Analytics bylo komplikované a nepřehledné. Jejich skripty zpomalují načítání stránek. Google sleduje lidi a junior.guru by muselo mít cookie lištu.
+Rozhraní Google Analytics bylo komplikované a nepřehledné. Jejich skripty zpomalují načítání stránek. Google sleduje lidi a junior.guru by muselo mít cookie lištu.
 
 Lidi na web junior.guru zavítají mnohokrát, než se pak rozhodnou, že půjdou do klubu zkusí jej.
-Lze měřit, kolik jich projde od objednávky do Discordu, ale… V jednom člověku a v byznysu, který nemá jasnou cestu od načtení stránky po nákup, Honzovi stačí vidět to nahrubo a pocitově.
+Lze měřit, kolik jich projde od objednávky do Discordu, ale… V jednom člověku a v byznysu, který nemá jasnou cestu od načtení stránky po nákup, Honzovi stačí vidět to nahrubo a pocitově.
 Pokročilé měření je zbytečné, stačí počítadlo.
 
-Simple Analytics jsou přehledné a splňují veškeré zákonné i etické normy.
+Simple Analytics jsou přehledné a splňují veškeré zákonné i etické normy.
 Nijak nenarušují soukromí návštěvníků webu, nezpomalují načítání, nevyžadují cookie lištu.
 
 ## Celková návštěvnost
 
-Většinou je nejvyšší v lednu a nejnižší v létě.
+Většinou je nejvyšší v lednu a nejnižší v létě.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -55,7 +55,7 @@ Většinou je nejvyšší v lednu a nejnižší v létě.
 ## Souhrnná návštěvnost podle produktů
 
 Nad jednotlivými částmi junior.guru Honza přemýšlí jako nad produkty.
-Graf mu pomáhá zjistit, jak velkou návštěvnost přitahuje každý z nich.
+Graf mu pomáhá zjistit, jak velkou návštěvnost přitahuje každý z nich.
 Při čtení grafu je ale dobré si uvědomit, že návštěvnost není vše.
 Například klub nebo podcast mají „to hlavní“ jinde než na webu.
 
@@ -118,7 +118,7 @@ Například klub nebo podcast mají „to hlavní“ jinde než na webu.
 
 ## Konverze klubové prodejní stránky
 
-Vývoj poměru mezi počtem zobrazení [klubové prodejní stránky](../club.md) a počtem dvou týdnů na zkoušku.
+Vývoj poměru mezi počtem zobrazení [klubové prodejní stránky](../club.md) a počtem dvou týdnů na zkoušku.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
@@ -143,10 +143,10 @@ Vývoj poměru mezi počtem zobrazení [klubové prodejní stránky](../club.md)
 
 ## Registrace do klubu podle předchozí stránky
 
-Když se někdo registruje do klubu, systém si uloží [referrer](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer), tzn. z jaké webové stránky přišel.
+Když se někdo registruje do klubu, systém si uloží [referrer](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer), tzn. z jaké webové stránky přišel.
 {% if charts.total_internal_referrer_breakdown_count -%}
-Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_internal_referrer_breakdown_count }}** lidí, kteří měli za poslední půlrok _referrer_ z junior.guru.
-Tzv. _long tail_ je z grafu uříznutý.
+Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_internal_referrer_breakdown_count }}** lidí, kteří měli za poslední půlrok _referrer_ z junior.guru.
+Tzv. _long tail_ je z grafu uříznutý.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="300"
@@ -173,13 +173,13 @@ Tzv. _long tail_ je z grafu uříznutý.
   {%- endcall %}
 {% endif %}
 
-## Peníze za členství v klubu podle předchozí stránky
+## Peníze za členství v klubu podle předchozí stránky
 
-Když se někdo registruje do klubu, systém si uloží [referrer](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer), tzn. z jaké webové stránky přišel.
+Když se někdo registruje do klubu, systém si uloží [referrer](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer), tzn. z jaké webové stránky přišel.
 Graf ukazuje, kolik takhle jednotlivé stránky skrze klub přinesly peněz.
 {% if charts.total_spend_internal_referrer_breakdown_count -%}
-Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_spend_internal_referrer_breakdown_count }}** lidí, kteří měli za poslední půlrok _referrer_ z junior.guru.
-Tzv. _long tail_ je z grafu uříznutý.
+Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_spend_internal_referrer_breakdown_count }}** lidí, kteří měli za poslední půlrok _referrer_ z junior.guru.
+Tzv. _long tail_ je z grafu uříznutý.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="300"

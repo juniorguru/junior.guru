@@ -8,67 +8,67 @@ template: main_about.html
 # Marketing
 
 {% call lead() %}
-Co dělá junior.guru v rámci marketingu a jak se mu v tom daří? Týdenní poznámky, sociální sítě, newsletter… K tomu pár grafů se základním měřením výkonnosti jednotlivých kanálů.
+Co dělá junior.guru v rámci marketingu a jak se mu v tom daří? Týdenní poznámky, sociální sítě, newsletter… K tomu pár grafů se základním měřením výkonnosti jednotlivých kanálů.
 {% endcall %}
 
 [TOC]
 
 ## Reklama vs. inbound marketing
 
-Od začátku existence si junior.guru nikde nezaplatilo žádnou reklamu. Spoléhá se na vlastní marketingové aktivity a čistě organický dosah.
-Je to částečně proto, že Honza v osobním životě reklamu rád nemá a spíš mu vadí.
+Od začátku existence si junior.guru nikde nezaplatilo žádnou reklamu. Spoléhá se na vlastní marketingové aktivity a čistě organický dosah.
+Je to částečně proto, že Honza v osobním životě reklamu rád nemá a spíš mu vadí.
 
-Za dosavadním úspěchem junior.guru stojí především víra v samonosný obsah užitečný pro společnost, který si pak lidi sdílí dobrovolně.
+Za dosavadním úspěchem junior.guru stojí především víra v samonosný obsah užitečný pro společnost, který si pak lidi sdílí dobrovolně.
 Tahounem návštěvnosti je tedy [inbound marketing](https://cs.wikipedia.org/wiki/Inbound_marketing).
-Obsah ale není tvořen s účelem, aby někoho přilákal, je tvořen primárně proto, aby byl někomu užitečný.
+Obsah ale není tvořen s účelem, aby někoho přilákal, je tvořen primárně proto, aby byl někomu užitečný.
 
-Honza se snaží dávat důraz na základní SEO poučky a vytvářet rychle se načítající webovou stránku, což má Google rád a přivádí potom na web lidi z vyhledávání.
+Honza se snaží dávat důraz na základní SEO poučky a vytvářet rychle se načítající webovou stránku, což má Google rád a přivádí potom na web lidi z vyhledávání.
 
-## Otevřenost a Týdenní poznámky
+## Otevřenost a Týdenní poznámky
 
-Jednou z [hodnot junior.guru](./mission.md) je otevřenost, díky které existuje celá tato sekce webu, kde jsou transparentně všechny čísla a grafy.
-V souladu s otevřeností jsou i pravidelné „týdenní poznámky” na Honzově blogu:
+Jednou z [hodnot junior.guru](./mission.md) je otevřenost, díky které existuje celá tato sekce webu, kde jsou transparentně všechny čísla a grafy.
+V souladu s otevřeností jsou i pravidelné „týdenní poznámky” na Honzově blogu:
 
 {% for blog_article in blog[:5] %}
 -   [{{ blog_article.title }}]({{ blog_article.url }}), {{ '{:%-d.%-m.%Y}'.format(blog_article.published_on) }}
 {% endfor %}
 
 Byť primárním záměrem této otevřenosti není marketing, je vedlejším produktem.
-Lidé rádi nakukují pod pokličku, projektu potom fandí a šíří o něm povědomí.
+Lidé rádi nakukují pod pokličku, projektu potom fandí a šíří o něm povědomí.
 
-Když jeli [trabanti do Afriky](https://www.ceskatelevize.cz/porady/10660318675-trabantem-napric-afrikou/), našlo se ohromné publikum lidí, kteří by tam nikdy nejeli, ale fandili jim a drželi palce, bavilo je sledovat tu cestu a ty obtíže. Taková trochu reality show. Když Honza píše o svém podnikání, lidi si připadají, že jsou součástí toho příběhu, že mají kousek toho (ne)úspěchu.
+Když jeli [trabanti do Afriky](https://www.ceskatelevize.cz/porady/10660318675-trabantem-napric-afrikou/), našlo se ohromné publikum lidí, kteří by tam nikdy nejeli, ale fandili jim a drželi palce, bavilo je sledovat tu cestu a ty obtíže. Taková trochu reality show. Když Honza píše o svém podnikání, lidi si připadají, že jsou součástí toho příběhu, že mají kousek toho (ne)úspěchu.
 
 ## Sociální sítě
 
-V roce 2022 [Honzu unavily sociální sítě](https://honzajavorek.cz/blog/moje-nova-strategie-na-socialni-site/) a z většiny odešel.
-Aktuálně je aktivní hlavně na LinkedInu a uvažuje o tom, že by víc využíval YouTube.
+V roce 2022 [Honzu unavily sociální sítě](https://honzajavorek.cz/blog/moje-nova-strategie-na-socialni-site/) a z většiny odešel.
+Aktuálně je aktivní hlavně na LinkedInu a uvažuje o tom, že by víc využíval YouTube.
 Nejraději používá [Mastodon](https://mastodonczech.cz/@honzajavorek), ale spíš pro soukromé než marketingové účely.
 
 - [LinkedIn](https://www.linkedin.com/in/honzajavorek/)
 - [YouTube](https://www.youtube.com/@juniordotguru)
 - [Mastodon](https://mastodonczech.cz/@honzajavorek/)
 
-Žádnou ucelenou strategii nemá a plácá příspěvky na sítě tak, jak to cítí.
-Nemá rád poskakování podle toho, jak algoritmus píská, takže nedbá obecných doporučení a příspěvky hází nepravidelně, podle nálady, ne podle redakčního plánu.
+Žádnou ucelenou strategii nemá a plácá příspěvky na sítě tak, jak to cítí.
+Nemá rád poskakování podle toho, jak algoritmus píská, takže nedbá obecných doporučení a příspěvky hází nepravidelně, podle nálady, ne podle redakčního plánu.
 
 ## Newsletter
 
-Dříve existoval newsletter junior.guru, kde se rozesílaly aktuální nabídky práce, postupně i zajímavé tipy.
-Ten byl zrušen pro nedostatek sil se mu věnovat a také jako zbytečná duplicita vedle [klubu](../club.md).
+Dříve existoval newsletter junior.guru, kde se rozesílaly aktuální nabídky práce, postupně i zajímavé tipy.
+Ten byl zrušen pro nedostatek sil se mu věnovat a také jako zbytečná duplicita vedle [klubu](../club.md).
 
-Newsletter byl [v jiné podobě obnoven](../news.jinja) během podzimu 2025. Přes [Buttondown](https://buttondown.com/) se posílá shrnutí různých novinek a probíraných témat v klubu.
+Newsletter byl [v jiné podobě obnoven](../news.jinja) během podzimu 2025. Přes [Buttondown](https://buttondown.com/) se posílá shrnutí různých novinek a probíraných témat v klubu.
 
-## Veřejná vystoupení a publikace
+## Veřejná vystoupení a publikace
 
-Na Honzově webu je [historie všech jeho vystoupení a publikací](https://honzajavorek.cz/#appearances).
-Postupně opouští psaní článků nebo přednášení na srazech a oborových konferencích.
-Preferuje vystupování v podcastech, rozhovorech a diskuzních panelech.
+Na Honzově webu je [historie všech jeho vystoupení a publikací](https://honzajavorek.cz/#appearances).
+Postupně opouští psaní článků nebo přednášení na srazech a oborových konferencích.
+Preferuje vystupování v podcastech, rozhovorech a diskuzních panelech.
 
-Oproti psaní článku, které může zabrat i týden, nebo přednášce, která vyžaduje mnoho příprav a stresu, jsou nároky na rozhovor minimální, a přesto má výsledek dosah.
+Oproti psaní článku, které může zabrat i týden, nebo přednášce, která vyžaduje mnoho příprav a stresu, jsou nároky na rozhovor minimální, a přesto má výsledek dosah.
 
-## Sociální sítě a newsletter
+## Sociální sítě a newsletter
 
-Vývoj počtu sledujících na profilech na relevantních sociálních sítích a počtu odběratelů newsletteru.
+Vývoj počtu sledujících na profilech na relevantních sociálních sítích a počtu odběratelů newsletteru.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="300"
@@ -152,7 +152,7 @@ Vývoj počtu sledujících na profilech na relevantních sociálních sítích 
 
 ## Video kanály
 
-Tentýž graf jako předchozí, akorát pouze s kanály, kam se dávají krátká videa na výšku, to znamená _reels_ nebo _shorts_.
+Tentýž graf jako předchozí, akorát pouze s kanály, kam se dávají krátká videa na výšku, to znamená _reels_ nebo _shorts_.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="300"
@@ -188,9 +188,9 @@ Tentýž graf jako předchozí, akorát pouze s kanály, kam se dávají krátk�
 
 ## Výkonnost kanálů podle ankety
 
-Když se někdo registruje do klubu, může v anketě sdělit, kde na junior.guru narazil.
-Graf porovnává kolik lidí jednotlivé marketingové kanály přivedly do klubu, a kolik z toho doposud bylo peněz.
-Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_marketing_breakdown_count }}** lidí, kteří odpověděli na anketu.
+Když se někdo registruje do klubu, může v anketě sdělit, kde na junior.guru narazil.
+Graf porovnává kolik lidí jednotlivé marketingové kanály přivedly do klubu, a kolik z toho doposud bylo peněz.
+Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_marketing_breakdown_count }}** lidí, kteří odpověděli na anketu.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="300"
@@ -233,9 +233,9 @@ Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_marketin
 
 ## Výkonnost kanálů podle předchozí stránky
 
-Když se někdo registruje do klubu, systém si uloží [referrer](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer), tzn. z jaké webové stránky přišel.
-Graf porovnává kolik lidí jednotlivé marketingové kanály přivedly do klubu, a kolik z toho doposud bylo peněz.
-Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_referrer_breakdown_count }}** lidí, kteří měli _referrer_ odjinud než z junior.guru.
+Když se někdo registruje do klubu, systém si uloží [referrer](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer), tzn. z jaké webové stránky přišel.
+Graf porovnává kolik lidí jednotlivé marketingové kanály přivedly do klubu, a kolik z toho doposud bylo peněz.
+Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_referrer_breakdown_count }}** lidí, kteří měli _referrer_ odjinud než z junior.guru.
 
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="300"

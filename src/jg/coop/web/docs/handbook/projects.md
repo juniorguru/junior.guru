@@ -11,7 +11,7 @@ template: main_handbook.html
 # Projekty jako první praxe
 
 {% call lead() %}
-  Vlastní projekt tě naučí přemýšlet jako programátoři. Naučíš se rozkládat velké problémy na menší, řešit záseky a dotahovat věci do konce. A firmám tím ukážeš, že svoje znalosti umíš fakt použít.
+  Vlastní projekt tě naučí přemýšlet jako programátoři. Naučíš se rozkládat velké problémy na menší, řešit záseky a dotahovat věci do konce. A firmám tím ukážeš, že svoje znalosti umíš fakt použít.
 {% endcall %}
 
 {{ illustration('static/illustrations/projects.webp') }}
@@ -22,28 +22,28 @@ template: main_handbook.html
 
 Nic tě nenaučí tolik, jako když si zkusíš něco samostatně vyrobit. Říká se tomu [projektové učení](https://cs.wikipedia.org/wiki/Projektov%C3%A9_u%C4%8Den%C3%AD). Má to hned několik výhod:
 
-- **Otestuješ naučené znalosti v praxi.** Vyhrneš rukávy, ušpiníš si ruce. Překonáš nekonečné zírání na blikající kurzor v prázdném novém souboru.
+- **Otestuješ naučené znalosti v praxi.** Vyhrneš rukávy, ušpiníš si ruce. Překonáš nekonečné zírání na blikající kurzor v prázdném novém souboru.
 - Naučíš se **řešit reálné problémy**, na které lze při školních projektech narazit jen těžko.
 - Procvičíš si překlad zadání na řešení, **rozklad větších problémů na podproblémy**.
 - Automaticky se na tebe nabalí **spousta souvisejících znalostí**. Kam uložit data? Do databáze. Jak nasdílet kód? Přes Git. Kam napsat, jak se projekt instaluje? Do README. Kam nasadit webovku? Na Linuxový server…
-- Zažiješ si, jak to vypadá, když narazíš na **těžko řešitelný problém** a budeš se jej **snažit překonat**. Naučíš se debugovat, ptát se, správně vyhledávat rady.
-- U pohovoru **budeš moci ukázat, že to, co tvrdíš, že umíš, opravdu umíš**. „Mám projekt v JavaScriptu“ zní vždycky tisíckrát lépe než „mám kurz na JavaScript”.
+- Zažiješ si, jak to vypadá, když narazíš na **těžko řešitelný problém** a budeš se jej **snažit překonat**. Naučíš se debugovat, ptát se, správně vyhledávat rady.
+- U pohovoru **budeš moci ukázat, že to, co tvrdíš, že umíš, opravdu umíš**. „Mám projekt v JavaScriptu“ zní vždycky tisíckrát lépe než „mám kurz na JavaScript”.
 
 {% call blockquote_avatar(
   'Junioři si často udělají kurz, certifikaci, ale potom už tu znalost neprocvičují. A to je strašná škoda, protože ji do pár měsíců zapomenou. Lepší méně kurzů, ale potom začít praktikovat a něco si vytvořit. Nákupní seznam, jednoduchého bota, malou aplikaci.',
   'jiri-psotka.jpg',
   'Jiří Psotka'
 ) %}
-  Jiří Psotka, recruiter v [Red Hatu](https://www.redhat.com/en/jobs) v [prvním dílu podcastu junior.guru](../podcast/1.jinja)
+  Jiří Psotka, recruiter v [Red Hatu](https://www.redhat.com/en/jobs) v [prvním dílu podcastu junior.guru](../podcast/1.jinja)
 {% endcall %}
 
 ## Projekt kompenzuje praxi
 
-Protože [certifikáty na trhu nikoho nezajímají](certification.md), junior s nula kurzy a pěti vlastními projekty je docela dobře zaměstnatelný, kdežto **CVčko člověka s pěti kurzy a žádnými projekty nejspíš skončí v koši**.
+Protože [certifikáty na trhu nikoho nezajímají](certification.md), junior s nula kurzy a pěti vlastními projekty je docela dobře zaměstnatelný, kdežto **CVčko člověka s pěti kurzy a žádnými projekty nejspíš skončí v koši**.
 
-Potřebuješ sobě i firmám ukázat, že **umíš něco vyrobit, dotáhnout do konce, že máš na něčem otestované základní znalosti z kurzů, knížek a videí.** Když budeš vědět, že tohle dokážeš, nejen že ti to zlepší šance na trhu, ale hlavně ti to dodá sebevědomí a ujištění, že tvoje cesta někam vede.
+Potřebuješ sobě i firmám ukázat, že **umíš něco vyrobit, dotáhnout do konce, že máš na něčem otestované základní znalosti z kurzů, knížek a videí.** Když budeš vědět, že tohle dokážeš, nejen že ti to zlepší šance na trhu, ale hlavně ti to dodá sebevědomí a ujištění, že tvoje cesta někam vede.
 
-Pokud nemáš vysokou školu s IT zaměřením, **kompenzuješ svými projekty i chybějící formální vzdělání**. Snažíš se říct: „Sice nemám školu, ale koukejte, když dokážu vytvořit toto, tak je to asi jedno, ne?“
+Pokud nemáš vysokou školu s IT zaměřením, **kompenzuješ svými projekty i chybějící formální vzdělání**. Snažíš se říct: „Sice nemám školu, ale koukejte, když dokážu vytvořit toto, tak je to asi jedno, ne?“
 
 {% call blockquote_avatar(
   'Na pohovoru mě nezajímá, co kdo vystudoval, ale jak přemýšlí a jaké má vlastní projekty. Nemusí být nijak světoborné, je to však praxe, kterou ani čerstvý inženýr často nemá.',

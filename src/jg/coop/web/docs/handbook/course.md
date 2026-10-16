@@ -2,7 +2,7 @@
 title: Jak vybrat kurz programování
 emoji: 🧑‍🏫
 stages: [learning]
-description: Jaký kurz základů programování je vhodný zrovna pro tebe? Které jsou rekvalifikační a jak je to s úřadem práce? Prezenčně, nebo online? Za peníze, nebo zdarma?
+description: Jaký kurz základů programování je vhodný zrovna pro tebe? Které jsou rekvalifikační a jak je to s úřadem práce? Prezenčně, nebo online? Za peníze, nebo zdarma?
 template: main_handbook.html
 ---
 
@@ -96,7 +96,7 @@ template: main_handbook.html
 <!-- certifikát vs certifikace -->
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Viz [Certifikáty a certifikace](./certification.md).
+  {{ 'exclamation-circle'|icon }} Viz [Certifikáty a certifikace](./certification.md).
 {% endcall %}
 
 ## Za peníze nebo zdarma?
@@ -115,7 +115,7 @@ template: main_handbook.html
   {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
 {% endcall %}
 
-### Jsem v kurzu
+### Jsem v kurzu
 
 {% call note(standout=True) %}
   {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
@@ -148,7 +148,7 @@ template: main_handbook.html
 <!-- certifikát vs certifikace -->
 
 {% call note(standout=True) %}
-  {{ 'exclamation-circle'|icon }} Viz [Certifikáty a certifikace](./certification.md).
+  {{ 'exclamation-circle'|icon }} Viz [Certifikáty a certifikace](./certification.md).
 {% endcall %}
 
 ### Psychotesty

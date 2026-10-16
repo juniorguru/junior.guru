@@ -1,32 +1,32 @@
 ---
-title: O kandidátech na junior.guru
+title: O kandidátech na junior.guru
 template: main_about.html
 ---
 
 {% from 'macros.html' import lead, note with context %}
 
-# Vše o kandidátech
+# Vše o kandidátech
 
 {% call lead() %}
-Informace o [seznamu juniorních kandidátů](../candidates.jinja) a o kontrolách GitHub profilů. Záměr a hodnoty, se kterými je to provozováno. K tomu ještě pár zajímavých statistik.
+Informace o [seznamu juniorních kandidátů](../candidates.jinja) a o kontrolách GitHub profilů. Záměr a hodnoty, se kterými je to provozováno. K tomu ještě pár zajímavých statistik.
 {% endcall %}
 
 [TOC]
 
 ## Vznik
 
-Seznam kandidátů vznikl v roce 2025 jako reakce na otočku trhu, který začal být zdrženlivější a bylo stále těžší prosadit juniory do firem. Kandidáti se mohou do seznamu přidat zdarma, firmy mohou seznam zdarma používat. Pokud si kandidát platí za klub, tak je zvýrazněný.
+Seznam kandidátů vznikl v roce 2025 jako reakce na otočku trhu, který začal být zdrženlivější a bylo stále těžší prosadit juniory do firem. Kandidáti se mohou do seznamu přidat zdarma, firmy mohou seznam zdarma používat. Pokud si kandidát platí za klub, tak je zvýrazněný.
 
-Cílem je podpořit nábor juniorů ve firmách a odprezentovat juniory v tom nejlepším světle. Aby kandidáti měli určitou minimální laťku, je na seznam napojený systém denních kontrol. Pokud kandidát přestane laťku splňovat, spadne na konec seznamu a zobrazí se poloprůhledně.
+Cílem je podpořit nábor juniorů ve firmách a odprezentovat juniory v tom nejlepším světle. Aby kandidáti měli určitou minimální laťku, je na seznam napojený systém denních kontrol. Pokud kandidát přestane laťku splňovat, spadne na konec seznamu a zobrazí se poloprůhledně.
 
-Junioři si mohou z úvodní stránky junior.guru kdykoliv sami a zdarma spustit zpětnou vazbu na svůj profil, což by mělo sloužit jako zpětná vazba, jestli jsou už připraveni hledat si první práci.
+Junioři si mohou z úvodní stránky junior.guru kdykoliv sami a zdarma spustit zpětnou vazbu na svůj profil, což by mělo sloužit jako zpětná vazba, jestli jsou už připraveni hledat si první práci.
 
 ## Počet kandidátů
 
-Tlustá čára ukazuje, kolik kandidátů se na portálu prezentovalo v jednotlivých měsících. Tenké čáry ještě zvlášť vypichují určité zajímavé skupiny, které se ale prolínají.
+Tlustá čára ukazuje, kolik kandidátů se na portálu prezentovalo v jednotlivých měsících. Tenké čáry ještě zvlášť vypichují určité zajímavé skupiny, které se ale prolínají.
 
 {% call note() %}
-  {{ 'trash'|icon }} V prvním půlroce provozu seznamu kandidátů se nesbírala data o jejich počtu, takže v grafu chybí.
+  {{ 'trash'|icon }} V prvním půlroce provozu seznamu kandidátů se nesbírala data o jejich počtu, takže v grafu chybí.
 {% endcall %}
 
 {% if charts.candidates_listed_breakdown_labels -%}
@@ -74,9 +74,9 @@ Tlustá čára ukazuje, kolik kandidátů se na portálu prezentovalo v jednotli
   {%- endcall %}
 {% endif %}
 
-## Typy kandidátů (% z celku)
+## Typy kandidátů (% z celku)
 
-Vývoj určitých zajímavých skupin kandidátů, podobně jako v předchozím grafu, akorát jako procento z celku.
+Vývoj určitých zajímavých skupin kandidátů, podobně jako v předchozím grafu, akorát jako procento z celku.
 
 {% if charts.candidates_listed_breakdown_ptc_labels -%}
 <div class="chart-scroll"><div class="chart-container"><canvas
@@ -119,7 +119,7 @@ Vývoj určitých zajímavých skupin kandidátů, podobně jako v předchozím 
 
 ## Počet kontrol GitHub profilů
 
-Počet spuštěných zpětných vazeb na GitHub profily v jednotlivých měsících. V podstatě je to [tenhle filtr](https://github.com/juniorguru/eggtray/issues?q=is%3Aissue%20label%3Acheck) převedený do grafu. V samém počátku existence kontrol jich bylo skoro 50 za měsíc, protože se hodně testovalo, jestli to vůbec funguje 😀 Ty další měsíce jsou už reálný provoz.
+Počet spuštěných zpětných vazeb na GitHub profily v jednotlivých měsících. V podstatě je to [tenhle filtr](https://github.com/juniorguru/eggtray/issues?q=is%3Aissue%20label%3Acheck) převedený do grafu. V samém počátku existence kontrol jich bylo skoro 50 za měsíc, protože se hodně testovalo, jestli to vůbec funguje 😀 Ty další měsíce jsou už reálný provoz.
 
 {% if charts.candidates_github_checks_labels -%}
 <div class="chart-scroll"><div class="chart-container"><canvas

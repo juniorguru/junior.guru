@@ -33,7 +33,7 @@ Podcast pro juniory v IT! Jak začít s programováním? Jak najít práci v 
       </a>
     </h3>
     {% call markdown() -%}
-      Autorka podcastu, datová analytička, PyLady. Vymýšlí témata, zve hosty, moderuje. Natáčí a stříhá epizody.
+      Autorka podcastu, datová analytička, PyLady. Vymýšlí témata, zve hosty, moderuje. Natáčí a stříhá epizody.
     {%- endcall %}
   </div>
 </div>
@@ -48,7 +48,7 @@ Podcast pro juniory v IT! Jak začít s programováním? Jak najít práci v 
       </a>
     </h3>
     {% call markdown() -%}
-      Autor projektu junior.guru. Pomáhá shánět hosty, stará se o technické zázemí a propagaci podcastu.
+      Autor projektu junior.guru. Pomáhá shánět hosty, stará se o technické zázemí a propagaci podcastu.
     {%- endcall %}
   </div>
 </div>
@@ -56,7 +56,7 @@ Podcast pro juniory v IT! Jak začít s programováním? Jak najít práci v 
 
 ## Epizody
 
-Poučky praví, že podcast se stává kvalitním a slavným, až když se autoři zajedou a vymluví, což trvá přibližně 100 epizod. Chceme vydávat zhruba **jednu epizodu měsíčně**, takže špičkové kvality a věčné slávy plánujeme dosáhnout kolem roku 2030. Znělku nám na míru složil [Patrik Veltruský](https://veltrusky.net/), děkujeme!
+Poučky praví, že podcast se stává kvalitním a slavným, až když se autoři zajedou a vymluví, což trvá přibližně 100 epizod. Chceme vydávat zhruba **jednu epizodu měsíčně**, takže špičkové kvality a věčné slávy plánujeme dosáhnout kolem roku 2030. Znělku nám na míru složil [Patrik Veltruský](https://veltrusky.net/), děkujeme!
 
 <div class="link-cards compact">
 {% for podcast_episode in podcast_episodes %}

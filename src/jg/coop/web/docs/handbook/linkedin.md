@@ -2,7 +2,7 @@
 title: Proč mít a jak si vyladit LinkedIn profil
 emoji: 🦸
 stages: [preparing, applying]
-description: Proč by měl mít každý junior v IT profil na síti LinkedIn? Jak jej vyladit, aby ti pomohl s hledáním práce?
+description: Proč by měl mít každý junior v IT profil na síti LinkedIn? Jak jej vyladit, aby ti pomohl s hledáním práce?
 template: main_handbook.html
 ---
 
@@ -12,14 +12,14 @@ template: main_handbook.html
 
 {% call lead() %}
   LinkedIn není kouzelná hůlka, která ti sama zařídí práci.
-  Pro juniora je to ale důležitá vizitka a místo, kde tě můžou objevit recruiteři a další lidé z IT. Nastav si profil tak, aby rychle ukázal, co umíš a kam směřuješ.
+  Pro juniora je to ale důležitá vizitka a místo, kde tě můžou objevit recruiteři a další lidé z IT. Nastav si profil tak, aby rychle ukázal, co umíš a kam směřuješ.
 {% endcall %}
 
 {{ illustration('static/illustrations/linkedin.webp') }}
 
 {% call note(standout=True) %}
   {{ 'exclamation-circle'|icon }} Kapitola se teprve připravuje.
-  Mezitím si můžeš přečíst o tom, jak si vyladit [životopis](cv.md).
+  Mezitím si můžeš přečíst o tom, jak si vyladit [životopis](cv.md).
 {% endcall %}
 
 <!-- {#

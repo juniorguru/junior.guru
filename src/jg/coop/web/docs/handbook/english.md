@@ -11,7 +11,7 @@ template: main_handbook.html
 # Angličtina pro programátory
 
 {% call lead() %}
-  Mnohem více než matematika je při programování potřeba angličtina. Materiály pro začačínající programátory občas existují i v češtině, ale potom už se bez schopnosti alespoň rozumět anglicky obejít nelze.
+  Mnohem více než matematika je při programování potřeba angličtina. Materiály pro začačínající programátory občas existují i v češtině, ale potom už se bez schopnosti alespoň rozumět anglicky obejít nelze.
 {% endcall %}
 
 {{ illustration('static/illustrations/english.webp') }}
@@ -57,7 +57,7 @@ template: main_handbook.html
     badge_icon='list-check',
     badge_text='Cvičení',
   ) -%}
-    Systém učení skrze cvičení a opakování. [Podloženo výzkumem](https://www.umimeto.org/shrnuti-vyzkum-umime).
+    Systém učení skrze cvičení a opakování. [Podloženo výzkumem](https://www.umimeto.org/shrnuti-vyzkum-umime).
   {%- endcall %}
 
   {{ link_card(
@@ -87,11 +87,11 @@ template: main_handbook.html
 Pro začátek je důležitá motivace.
 Musíš pochopit, že **bez angličtiny se neobejdeš.**
 Je to klíč ke dveřím do celého světa.
-Vybíráš ze dvou českých mentorů, ze tří českých online kurzů, z pár lokálních firem?
-S angličtinou vybíráš ze stovek mentorů, desítek kurzů.
-Oslovit můžeš i mezinárodní a zahraniční firmy.
+Vybíráš ze dvou českých mentorů, ze tří českých online kurzů, z pár lokálních firem?
+S angličtinou vybíráš ze stovek mentorů, desítek kurzů.
+Oslovit můžeš i mezinárodní a zahraniční firmy.
 
-**Chybějící angličtina je v IT jako bolavý zub.** Chvíli s ním vydržíš, ale když to nezačneš řešit včas, budeš hodně litovat. Nauč se ji aspoň pasivně — pokud zvládáš číst anglický text, pochopit v něm zadání a učit se z něj nové věci, pro start to stačí.
+**Chybějící angličtina je v IT jako bolavý zub.** Chvíli s ním vydržíš, ale když to nezačneš řešit včas, budeš hodně litovat. Nauč se ji aspoň pasivně — pokud zvládáš číst anglický text, pochopit v něm zadání a učit se z něj nové věci, pro start to stačí.
 
 <div class="link-cards">
   {{ link_card(
@@ -101,7 +101,7 @@ Oslovit můžeš i mezinárodní a zahraniční firmy.
   ) }}
 </div>
 
-Angličtina je důležitá, ale **i s omezenou, pasivní angličtinou se dá začít**. Pokud zvládáš číst anglický text, pochopit v něm zadání a učit se z něj nové věci, pro start to stačí.
+Angličtina je důležitá, ale **i s omezenou, pasivní angličtinou se dá začít**. Pokud zvládáš číst anglický text, pochopit v něm zadání a učit se z něj nové věci, pro start to stačí.
 
 
 <!-- {#

@@ -17,7 +17,7 @@
 
 {% call lead() %}
   {{ course_provider.page_lead }}
-  {% if not course_provider.is_gone and course_provider.usp_description %}Tady je aspoň základní info, které ti pomůže s rozhodováním.{% endif %}
+  {% if not course_provider.is_gone and course_provider.usp_description %}Tady je aspoň základní info, které ti pomůže s rozhodováním.{% endif %}
 {% endcall %}
 
 {% set screenshot_image_url = course_provider.url|screenshot_url %}
@@ -49,7 +49,7 @@
         </li>
       </ul>
       {% if course_provider.cz_business_id %}
-      <h5 class="details-heading">Provozovatel v Česku</h5>
+      <h5 class="details-heading">Provozovatel v Česku</h5>
       <ul class="details-items compact">
         {% if course_provider.cz_name %}
         <li class="details-item">
@@ -120,14 +120,14 @@
 
 <small>
 Pokud tento popis umíš nějak doplnit, napiš prosím na {{ 'honza@junior.guru'|email_link }}.
-Umíš s GitHubem? [Pošli Pull Request]({{ course_provider.edit_url }})!
+Umíš s GitHubem? [Pošli Pull Request]({{ course_provider.edit_url }})!
 </small>
 {% else %}
 {% call note() %}
   {{ 'exclamation-circle'|icon }}
   Zatím tady chybí popis.
-  Pokud o {{ course_provider.name }} něco víš, napiš prosím na {{ 'honza@junior.guru'|email_link }}.
-  Umíš s GitHubem? [Pošli Pull Request]({{ course_provider.edit_url }})!
+  Pokud o {{ course_provider.name }} něco víš, napiš prosím na {{ 'honza@junior.guru'|email_link }}.
+  Umíš s GitHubem? [Pošli Pull Request]({{ course_provider.edit_url }})!
 {% endcall %}
 {% endif %}
 
@@ -136,23 +136,23 @@ Umíš s GitHubem? [Pošli Pull Request]({{ course_provider.edit_url }})!
 {% if course_provider.is_gone %}
 Recenze kurzů najdeš na místním Discordu.
 {% if topic_mention.mentions_count > 5 -%}
-  I když už neexistuje, o {{ course_provider.name }} tam je **{{ topic_mention.mentions_count|thousands }} zmínek**.
+  I když už neexistuje, o {{ course_provider.name }} tam je **{{ topic_mention.mentions_count|thousands }} zmínek**.
 {%- endif %}
-Nevíš si rady s výběrem kurzů?
-Vždy záleží v jaké jsi konkrétní situaci a co zrovna potřebuješ.
-A přesně takové věci se na tom našem Discordu taky probírají.
+Nevíš si rady s výběrem kurzů?
+Vždy záleží v jaké jsi konkrétní situaci a co zrovna potřebuješ.
+A přesně takové věci se na tom našem Discordu taky probírají.
 Poradíme!
 {% else %}
 Nějaké recenze najdeš na místním Discordu.
 {% if topic_mention.mentions_count > 5 -%}
-  Vyloženě o {{ course_provider.name }} tam je **{{ topic_mention.mentions_count|thousands }} zmínek**.
+  Vyloženě o {{ course_provider.name }} tam je **{{ topic_mention.mentions_count|thousands }} zmínek**.
 {%- endif %}
-Dojmy absolventů ti mohou pomoci poodhalit celkovou kvalitu, ale čti je s rezervou.
-Nevíš, s jakými očekáváními si kurz vybrali.
+Dojmy absolventů ti mohou pomoci poodhalit celkovou kvalitu, ale čti je s rezervou.
+Nevíš, s jakými očekáváními si kurz vybrali.
 
-Jak zjistíš, zda je vzdělávání u {{ course_provider.name }} vhodné zrovna pro tebe?
-Vždy záleží v jaké jsi konkrétní situaci a co zrovna potřebuješ.
-A přesně takové věci se na tom našem Discordu taky probírají.
+Jak zjistíš, zda je vzdělávání u {{ course_provider.name }} vhodné zrovna pro tebe?
+Vždy záleží v jaké jsi konkrétní situaci a co zrovna potřebuješ.
+A přesně takové věci se na tom našem Discordu taky probírají.
 Poradíme!
 {% endif %}
 {{ club_teaser("Hledej recenze v klubu") }}
@@ -162,7 +162,7 @@ Poradíme!
 
 {% set courses_up = course_provider.list_courses_up|list %}
 
-Úřad práce ČR přispívá na kurzy, které má ve svém katalogu [Jsem v kurzu](https://mpsv.gov.cz/jsem-v-kurzu).
+Úřad práce ČR přispívá na kurzy, které má ve svém katalogu [Jsem v kurzu](https://mpsv.gov.cz/jsem-v-kurzu).
 {%- if courses_up %}
 Provozovatel {{ course_provider.name }} tam nabízí tyto kurzy:
 <table class="table">
@@ -181,23 +181,23 @@ Provozovatel {{ course_provider.name }} tam nabízí tyto kurzy:
 {% endif %}
 
 {% if course_provider.group == "partners" %}
-## Spolupráce s junior.guru
+## Spolupráce s junior.guru
 
-{{ course_provider.name }} spolupracuje s junior.guru. Vztah s junior.guru je v interních záznamech popsán následovně:
+{{ course_provider.name }} spolupracuje s junior.guru. Vztah s junior.guru je v interních záznamech popsán následovně:
 
 „{{ course_provider.organization.note }}“
 
-Není v možnostech junior.guru ověřovat kvalitu kurzů, ale takováto spolupráce se asi dá brát jako známka toho, že jde o něco důvěryhodného.
+Není v možnostech junior.guru ověřovat kvalitu kurzů, ale takováto spolupráce se asi dá brát jako známka toho, že jde o něco důvěryhodného.
 {% elif course_provider.group == "highlighted" %}
 ## Sponzorství junior.guru
 
-{{ course_provider.name }} sponzoruje junior.guru a díky tomu tady má zvýraznění.
+{{ course_provider.name }} sponzoruje junior.guru a díky tomu tady má zvýraznění.
 Neznamená to ale, že junior.guru tvrdí, že jsou dobré, ověřené, nebo je doporučuje.
 Budiž jim však ke cti, že podporují tento projekt.
 {% else %}
-## Vztah s junior.guru
+## Vztah s junior.guru
 
-Kurzy od {{ course_provider.name }} jsou tady v rámci seznamu všech míst, kde se můžeš učit programovat.
+Kurzy od {{ course_provider.name }} jsou tady v rámci seznamu všech míst, kde se můžeš učit programovat.
 Neznamená to, že junior.guru tvrdí, že jsou dobré, ověřené, nebo je doporučuje.
 {% endif %}
 

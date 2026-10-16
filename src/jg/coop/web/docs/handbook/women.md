@@ -2,7 +2,7 @@
 title: Ženy v IT
 emoji: 👩
 stages: [thinking, preparing, applying]
-description: Je IT pro ženy? Existují vůbec nějaké programátorky? Jak do oboru prorazit jako žena? Co očekávat? A co ti může na cestě pomoci?
+description: Je IT pro ženy? Existují vůbec nějaké programátorky? Jak do oboru prorazit jako žena? Co očekávat? A co ti může na cestě pomoci?
 template: main_handbook.html
 ---
 
@@ -15,19 +15,19 @@ Je IT pro ženy?
 Existují vůbec nějaké programátorky?
 Jak do oboru prorazit jako žena?
 Co očekávat?
-A co ti může na cestě pomoci?
+A co ti může na cestě pomoci?
 {% endcall %}
 
 {{ illustration('static/illustrations/women.webp') }}
 
-Žen je v IT málo — v Evropských státech je to mezi 10 až 30 %. [Česko je na tom se svými 10 % hůř než Turecko](https://www.ceskovdatech.cz/clanek/128-neni-ajtak-jako-ajtak/), takže existují aktivity, které se snaží ženám cestu do IT usnadnit.
+Žen je v IT málo — v Evropských státech je to mezi 10 až 30 %. [Česko je na tom se svými 10 % hůř než Turecko](https://www.ceskovdatech.cz/clanek/128-neni-ajtak-jako-ajtak/), takže existují aktivity, které se snaží ženám cestu do IT usnadnit.
 
 {% call blockquote_avatar(
   'Po několika kurzech programování jsem si uvědomila, že mě to baví víc než laboratoř. Šlo to dělat kdykoliv a kdekoliv, v noci, z hřiště, během kojení…',
   'lenka-segura.jpg',
   'Lenka Segura',
 ) %}
-  Lenka Segura v [rozhovoru pro CyberMagnolia](https://web.archive.org/web/20221204155402/https://cybermagnolia.com/blog/page/2/), bývalá agrochemička
+  Lenka Segura v [rozhovoru pro CyberMagnolia](https://web.archive.org/web/20221204155402/https://cybermagnolia.com/blog/page/2/), bývalá agrochemička
 {% endcall %}
 
 <div class="link-cards">
