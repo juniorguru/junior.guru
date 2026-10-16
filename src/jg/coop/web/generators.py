@@ -116,8 +116,8 @@ def generate_employment_type_jobs_pages() -> Generator[GeneratedDocument]:
         | {
             "title": "IT brigády, stáže a dobrovolnictví nejen pro studenty: programátor, tester a další",
             "description": (
-                "Brigády v IT nejen pro studenty, stáže, práce na částečný úvazek "
-                f"i dobrovolnictví pro začátečníky. {meta['description']}"
+                "Brigády v IT nejen pro studenty a absolventy, stáže, práce na částečný úvazek "
+                f"a dobrovolnictví pro začátečníky. {meta['description']}"
             ),
             "jobs_listing": "parttime",
         },
