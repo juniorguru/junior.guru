@@ -1,5 +1,5 @@
 import itertools
-from collections.abc import Iterable
+from collections.abc import Generator, Iterable
 from enum import StrEnum
 from itertools import groupby
 from operator import attrgetter
@@ -8,6 +8,7 @@ from typing import Self
 import czech_sort
 from peewee import BooleanField, CharField, IntegerField, TextField, fn
 
+from jg.coop.lib import json_ld
 from jg.coop.models.base import BaseModel
 from jg.coop.models.partner import Partner
 from jg.coop.models.sponsor import Sponsor, SponsorTier
@@ -116,6 +117,37 @@ class CourseProvider(BaseModel):
             return orgs[0]
         except IndexError:
             return None
+
+    def to_json_ld(self) -> str:
+        data = {
+            "@type": "EducationalOrganization",
+            "mainEntityOfPage": self.catalogue_url,
+            "name": self.name,
+            "url": self.url,
+        }
+        if org := self.organization:
+            data["logo"] = f"https://junior.guru/static/{org.logo_path}"
+        if companies := list(self.list_companies_json_ld()):
+            data["subOrganization"] = companies
+        return json_ld.dumps(data)
+
+    def list_companies_json_ld(self) -> Generator[dict]:
+        companies = [
+            ("CZ", self.cz_business_id, self.cz_name),
+            ("SK", self.sk_business_id, self.sk_name),
+        ]
+        for country, business_id, legal_name in companies:
+            if business_id:
+                yield {
+                    "@type": "Organization",
+                    "legalName": legal_name or self.name,
+                    "identifier": {
+                        "@type": "PropertyValue",
+                        "propertyID": "IČO",
+                        "value": str(business_id),
+                    },
+                    "address": {"@type": "PostalAddress", "addressCountry": country},
+                }
 
     @classmethod
     def listing(cls) -> Iterable[Self]:
