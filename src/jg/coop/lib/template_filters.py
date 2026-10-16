@@ -75,6 +75,11 @@ def sample_jobs(jobs, n=2, sample_fn=None):
     return (sample_fn or random.sample)(jobs, n)
 
 
+def tagged(items: Iterable, tag_slugs: Iterable[str]) -> list:
+    tag_slugs = set(tag_slugs)
+    return [item for item in items if tag_slugs & {tag.slug for tag in item.tags}]
+
+
 def icon(name, classes=None, alt=None):
     if classes:
         classes = set(filter(None, [cls.strip() for cls in classes.split(" ")]))
