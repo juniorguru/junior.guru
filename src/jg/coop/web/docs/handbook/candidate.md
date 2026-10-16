@@ -547,7 +547,7 @@ Např. amatérská analýza dat z LinkedIn [odhalila](https://www.reddit.com/r/d
 {% if jobs %}
 #### Nabídky práce na junior.guru
 Přímo na junior.guru také najdeš [pracovní portál](../jobs.jinja), ale s nabídkami jen a pouze pro juniory. Jiné zde inzerovat ani nelze. Navíc se každý den spouští robot, který se rozhlíží i po nabídkách z dalších zdrojů. Poté je filtruje na základě přísných pravidel a nechá jen ty, o nichž usoudí, že jsou opravdu pro začátečníky:
-{{ jobs_inline(jobs, 3, jobs_url='/jobs/remote/') }}
+{{ jobs_inline(jobs, 3) }}
 {% endif %}
 
 ### Náboráři    <span id="recruiters"></span>
