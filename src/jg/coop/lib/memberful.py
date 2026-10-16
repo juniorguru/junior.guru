@@ -9,6 +9,7 @@ from typing import Any
 
 import httpx2
 from gql import Client, gql
+from gql.transport.exceptions import TransportConnectionFailed
 from gql.transport.httpx import HTTPXTransport
 from lxml import html
 from tenacity import (
@@ -62,6 +63,7 @@ class MemberfulAPI:
                     "User-Agent": self.user_agent,
                 },
                 transport=httpx2.HTTPTransport(verify=True, retries=3),
+                timeout=httpx2.Timeout(30.0),
             )
             self._client = Client(transport=transport)
         return self._client
@@ -106,6 +108,7 @@ class MemberfulAPI:
                 cursor = None
 
     @cache(expire=timedelta(hours=1), ignore=(0,), tag="memberful-api")
+    @retry(retry=retry_if_exception_type(TransportConnectionFailed))
     def _execute_query(self, query: str, variable_values: dict) -> dict:
         logger.debug(
             f"Querying Memberful API, variable values: {json.dumps(variable_values)}"
