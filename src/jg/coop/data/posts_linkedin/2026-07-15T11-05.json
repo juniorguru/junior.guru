@@ -84,6 +84,17 @@
       }
     },
     {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Pavla",
+        "lastName": "Beránková",
+        "occupation": "junior PHP programátorka",
+        "id": "549611439",
+        "publicId": "berankova-pavla",
+        "profileId": "ACoAACDCZ68BhDuYokjdegYmFm0rxSx_6Mlwh9c"
+      }
+    },
+    {
       "type": "APPRECIATION",
       "profile": {
         "firstName": "Chianti",
@@ -169,17 +180,6 @@
         "id": "677292059",
         "publicId": "jan-meissner",
         "profileId": "ACoAACheqBsBeJcNySvvCz5p0WNXEKmppIuTEdw"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Jakub",
-        "lastName": "F.",
-        "occupation": "Logistics specialist | Data analyst",
-        "id": "895303221",
-        "publicId": "jakub-f-359a0320b",
-        "profileId": "ACoAADVdPjUB4aDql2p9fwC2crHhiqm4G2mUorw"
       }
     }
   ],

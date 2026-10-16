@@ -156,13 +156,24 @@
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:111694409",
-        "followerCount": 192,
+        "followerCount": 201,
         "profileUrl": "https://www.linkedin.com/company/frontkon"
       },
       "authorType": "Company"
     }
   ],
   "reactions": [
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Jason",
+        "lastName": "McNamara",
+        "occupation": "You Don’t Hate Work, You Hate Being Trapped. US Veteran | Founder, NoMore9to5 Club. I help founders build “boring income” systems + elite mental performance.",
+        "id": "86771278",
+        "publicId": "jasonnomore9to5",
+        "profileId": "ACoAAAUsBk4BaiRwGXAUsk8is7wlO3qFP1vvXtI"
+      }
+    },
     {
       "type": "EMPATHY",
       "profile": {
@@ -260,21 +271,10 @@
         "publicId": "jananecas",
         "profileId": "ACoAACPJzqABtEhQZaPa2y7niKJdfPDfAdzm3OM"
       }
-    },
-    {
-      "type": "PRAISE",
-      "profile": {
-        "firstName": "Vladana",
-        "lastName": "Bacova",
-        "occupation": "I fix marketing in B2B tech companies. Fractional CMO & strategic partner for founders. Founder of SaaS Contesaur.",
-        "id": "87066362",
-        "publicId": "vladana-bacova",
-        "profileId": "ACoAAAUwhvoBAZu73tHjWu42KdbAshjlo9rjfjc"
-      }
     }
   ],
   "numShares": 0,
-  "numLikes": 11,
+  "numLikes": 12,
   "numComments": 4,
   "canReact": true,
   "canPostComments": true,
