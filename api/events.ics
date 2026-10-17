@@ -1,0 +1,616 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:ics.py 0.8.0.dev1 - http://git.io/lLljaA
+BEGIN:VTIMEZONE
+TZID:/ics.py/2020.1/Europe/Prague
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+RDATE:19700329T020000
+TZNAME:CEST
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+RDATE:19701025T030000
+TZNAME:CET
+END:STANDARD
+LAST-MODIFIED:20200620T153818Z
+X-LIC-LOCATION:Europe/Prague
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20261208T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20261208T193000
+SUMMARY:Od zdrojáku ke strojáku: Jak fungují kompilátory a interpretery
+UID:02c95377-fe63-48ad-9d20-bee7fe77d393@02c9.org
+DESCRIPTION:https://junior.guru/events/66/
+LOCATION:https://discord.com/events/769966886598737931/1555567126759088260
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20260924T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20260924T201224
+SUMMARY:Jak fungují jazykové modely a co z toho plyne pro práci s nimi
+UID:b305b627-f8ee-4bdb-8d82-68c496d898b5@b305.org
+DESCRIPTION:https://junior.guru/events/65/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20260728T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20260728T191235
+SUMMARY:Reframing Your Narrative workshop: Nenech za sebe mluvit impostor 
+ syndrom
+UID:ff38de2d-705e-4f95-9c3a-eb54966b4e9f@ff38.org
+DESCRIPTION:https://junior.guru/events/64/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20260630T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20260630T195045
+SUMMARY:Focus v době AI
+UID:67e0fb18-1d4d-40f7-9fd7-6ee631a6d268@67e0.org
+DESCRIPTION:https://junior.guru/events/63/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20260528T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20260528T201542
+SUMMARY:Web scraping: Nechte internet pracovat za vás
+UID:5934db2a-9a29-4ec1-9b9b-8a91c80fb505@5934.org
+DESCRIPTION:https://junior.guru/events/62/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20260415T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20260415T203251
+SUMMARY:Co nám může nabídnout Rust?
+UID:2b112bbe-228c-4f72-8d87-8c526085afa0@2b11.org
+DESCRIPTION:https://junior.guru/events/61/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20260318T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20260318T185315
+SUMMARY:Jak se dělá Infrastructure as Code
+UID:209bd12b-17fb-4caf-b191-7e0682564141@209b.org
+DESCRIPTION:https://junior.guru/events/60/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20260218T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20260218T192355
+SUMMARY:Jak se vzdělává a přemýšlí product-oriented vývojář v roce 2026
+UID:08672541-43bb-4148-9d79-6042a9ed9018@0867.org
+DESCRIPTION:https://junior.guru/events/59/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20260127T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20260127T191748
+SUMMARY:Proč programátoři kašlou na testy
+UID:f03d7701-c74e-46a7-8987-3b3f1186295f@f03d.org
+DESCRIPTION:https://junior.guru/events/58/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20251210T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20251210T192421
+SUMMARY:Jak vytěžit z IT eventů maximum: Strategie pro introverty (i 
+ extroverty)
+UID:eba11c5c-630b-426d-986c-a46298b5724e@eba1.org
+DESCRIPTION:https://junior.guru/events/57/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20251126T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20251126T191838
+SUMMARY:Z diplomacie do jednorožce: Jak jsem se ocitl v IT bez řádku kódu
+UID:0f7e8fac-3b1f-4599-b48f-3047b70da28e@0f7e.org
+DESCRIPTION:https://junior.guru/events/56/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20251122T093000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20251122T111208
+SUMMARY:Jak se učit v době AI
+UID:f041317c-b9bd-4cd2-8591-43d58c47b16d@f041.org
+DESCRIPTION:https://junior.guru/events/55/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20250819T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20250819T194813
+SUMMARY:DevOps/SRE - co to vlastně je a chci to vůbec vědět?
+UID:2cfd79e6-12eb-49a7-a951-2709bcf2f03a@2cfd.org
+DESCRIPTION:https://junior.guru/events/54/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20250611T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20250611T183646
+SUMMARY:Jak rozjet svou IT kariéru ve státní správě
+UID:d7457dd2-7f43-4098-857e-028fa20b59bf@d745.org
+DESCRIPTION:https://junior.guru/events/52/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20250513T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20250513T190313
+SUMMARY:Proč se certifikovat?
+UID:5f7391b5-832a-41b3-9fc3-a1a9e272555d@5f73.org
+DESCRIPTION:https://junior.guru/events/51/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20250312T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20250312T194827
+SUMMARY:Jak se jako junior nepos#at z LinkedInu a nebát se ukázat
+UID:60238fcd-eda6-416d-b21d-dd7aad5f98c5@6023.org
+DESCRIPTION:https://junior.guru/events/50/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20250204T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20250204T192701
+SUMMARY:Q&A: Generalista nebo specialista? PyLadies\, Linux\, cloud\, cesta
+  do NTK
+UID:4288a343-19fa-4bf9-acad-50f5878f168a@4288.org
+DESCRIPTION:https://junior.guru/events/49/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20241217T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20241217T193415
+SUMMARY:Jak používat AI asistenty a odnést si z nich maximum
+UID:8b302470-5504-4e8e-a663-e2384b1301a8@8b30.org
+DESCRIPTION:https://junior.guru/events/48/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20241130T093000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20241130T111708
+SUMMARY:Úvod do Obsidianu a organizace poznámek (workshop)
+UID:255a9b6e-a08b-4f3a-bad2-d7cf09bf6de9@255a.org
+DESCRIPTION:https://junior.guru/events/47/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20241120T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20241120T200700
+SUMMARY:Programování jako kariéra? Ptej se! (Q&A)
+UID:04c39e2d-141a-4a3d-a16f-78b0672e1b70@04c3.org
+DESCRIPTION:https://junior.guru/events/46/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20241119T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20241119T214636
+SUMMARY:Jak na CV při změně kariéry do IT
+UID:8bf92c75-228a-4d3e-ba27-422ec13654fc@8bf9.org
+DESCRIPTION:https://junior.guru/events/45/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20241015T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20241015T192413
+SUMMARY:Kubernetes: Co\, proč a jak – průvodce pro začátečníky
+UID:91dd23b6-10ff-4215-a4ed-fcd822d982b0@91dd.org
+DESCRIPTION:https://junior.guru/events/44/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20240806T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20240806T192425
+SUMMARY:Docker pro začátečníky: Základy kontejnerizace
+UID:f205094d-d834-435d-a1b3-11686df34380@f205.org
+DESCRIPTION:https://junior.guru/events/43/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20240528T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20240528T194553
+SUMMARY:Situace na IT trhu z pohledu dat a co to znamená pro juniory
+UID:d7f43c7c-151b-4073-8045-3b7dc30eb042@d7f4.org
+DESCRIPTION:https://junior.guru/events/42/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20240312T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20240312T195001
+SUMMARY:„Agile is dead!“ …nebo ne?
+UID:c2ff0639-d5c6-4cfa-993a-8c7a1da3fe83@c2ff.org
+DESCRIPTION:https://junior.guru/events/41/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20231219T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20231219T194255
+SUMMARY:Směrem k úspěchu aneb jak vykročit tou správnou nohou
+UID:2be05b0f-be3f-4e0e-a2bf-d3fa4b22000f@2be0.org
+DESCRIPTION:https://junior.guru/events/38/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20231205T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20231205T194325
+SUMMARY:Proč mají programátoři rádi šifrovací hry a proč by mohly bavit i 
+ vás
+UID:c5b18e7d-c215-4fbb-85eb-48c6961ddbcc@c5b1.org
+DESCRIPTION:https://junior.guru/events/37/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20231128T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20231128T191648
+SUMMARY:Úvod do Advent of Code a „přátelský pokec u kakaa“
+UID:758e942d-9e80-48cd-bafd-47c127d5e290@758e.org
+DESCRIPTION:https://junior.guru/events/40/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20231121T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20231121T195046
+SUMMARY:Programování jako kariéra? Ptej se! (Q&A v rámci Týdne pro 
+ Digitální Česko)
+UID:bdc134ce-5044-44cc-b7bc-65fcbaf5c130@bdc1.org
+DESCRIPTION:https://junior.guru/events/39/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20230620T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20230620T185322
+SUMMARY:Jak se jako ajťák/čka zbavit pochyb a pocitu\, že nejsem dost
+UID:8454212c-30a1-42a8-acbc-37c701b120b6@8454.org
+DESCRIPTION:https://junior.guru/events/36/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20230502T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20230502T191221
+SUMMARY:Začínáme správně: klíčové faktory pro úspěšný frontend projekt
+UID:ae189630-8b07-45b1-b037-4e20c92a6ac1@ae18.org
+DESCRIPTION:https://junior.guru/events/35/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20230425T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20230425T190813
+SUMMARY:Dev Fiction: Junioři a realita vývojářského týmu
+UID:c0cfc68b-f566-4d6a-bdae-83471b8b7cbc@c0cf.org
+DESCRIPTION:https://junior.guru/events/34/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20230411T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20230411T191055
+SUMMARY:Programování jako kariéra? Ptej se! (Q&A)
+UID:dd68eb66-c369-4d78-b793-5c9f8fdb235d@dd68.org
+DESCRIPTION:https://junior.guru/events/33/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20230321T183000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20230321T195633
+SUMMARY:Práce a dítě: Jak být k sobě laskavější
+UID:c5e02619-e3e9-4580-a52b-c3092158b215@c5e0.org
+DESCRIPTION:https://junior.guru/events/32/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20230221T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20230221T192110
+SUMMARY:Vývoj desktopových aplikací v C#: Nové trendy a možnosti
+UID:e3cb9d30-048c-49d6-b544-69704d5b2948@e3cb.org
+DESCRIPTION:https://junior.guru/events/31/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20230207T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20230207T194846
+SUMMARY:Základy bezpečnosti pro vývojáře
+UID:308d6fd1-2685-4f14-8528-b36ea6a4f1a4@308d.org
+DESCRIPTION:https://junior.guru/events/30/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20230125T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20230125T192315
+SUMMARY:Analýza geoprostorových dat\, GIS a geospatial data science
+UID:e56e871f-cf4b-4660-ad8c-96cd10776302@e56e.org
+DESCRIPTION:https://junior.guru/events/29/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20230110T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20230110T195018
+SUMMARY:Kdo je to IT analytik a jak se jím stát?
+UID:7e7fc4d2-59e2-4a5b-8c52-6bc9b93f0d90@7e7f.org
+DESCRIPTION:https://junior.guru/events/28/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20221206T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20221206T192939
+SUMMARY:Posuďme Javu podle obalu
+UID:b0e9abed-73f7-4498-9315-4c1177cd8f0b@b0e9.org
+DESCRIPTION:https://junior.guru/events/27/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20221115T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20221115T190150
+SUMMARY:Jak funguje mentoring a uvítání mentorů z Mews
+UID:63838d86-40b2-4fce-b4c4-6406509d8860@6383.org
+DESCRIPTION:https://junior.guru/events/26/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20221101T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20221101T193000
+SUMMARY:Technologický dluh\, zabiják inovace
+UID:7c1d2471-9cdc-4cd3-b1f0-b35af09b4cbb@7c1d.org
+DESCRIPTION:https://junior.guru/events/25/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20221018T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20221018T194915
+SUMMARY:Jak se správně připravit na pohovor
+UID:8711871f-8df7-4272-ace9-7b896a805d06@8711.org
+DESCRIPTION:https://junior.guru/events/24/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20221012T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20221012T193125
+SUMMARY:Jak se stát webovým analytikem
+UID:76e1a969-cc55-435f-b56d-06d23446cf09@76e1.org
+DESCRIPTION:https://junior.guru/events/23/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20220607T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20220607T193155
+SUMMARY:Od C# k .NETu
+UID:8e93fb28-72b3-4526-98cd-72496ccc0a0e@8e93.org
+DESCRIPTION:https://junior.guru/events/22/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20220511T183000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20220511T192107
+SUMMARY:Jak funguje mentoring a uvítání mentorů z Pure Storage
+UID:9bf4b2ed-5134-478d-b8f2-63df820e4203@9bf4.org
+DESCRIPTION:https://junior.guru/events/21/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20220419T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20220419T190343
+SUMMARY:Next.js úvod pre juniorov
+UID:c7f0e5be-ff60-46a4-a2cc-7fa427dcefc2@c7f0.org
+DESCRIPTION:https://junior.guru/events/20/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20220223T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20220223T185312
+SUMMARY:Představení Jetveo
+UID:41749e28-ab72-4fd2-b41d-df4b995ba654@4174.org
+DESCRIPTION:https://junior.guru/events/19/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20220222T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20220222T183948
+SUMMARY:Jak přežít cestu juniora po psychické stránce
+UID:5370dca8-0834-48a6-a68e-6c96f7c73697@5370.org
+DESCRIPTION:https://junior.guru/events/18/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20220208T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20220208T193435
+SUMMARY:Chcem mobilnú aplikáciu. Ako a kde začať?
+UID:22535fe4-a91a-4472-a156-d902ba4833eb@2253.org
+DESCRIPTION:https://junior.guru/events/17/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20220111T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20220111T190421
+SUMMARY:Dobrá mzda je jen začátkem
+UID:2f7809ab-0ef6-4b5c-977c-e52ee5d05595@2f78.org
+DESCRIPTION:https://junior.guru/events/16/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20211207T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20211207T191410
+SUMMARY:Tester jako ideální první práce\, aneb čím začít kariéru v IT
+UID:affe0c34-dc84-45d3-a000-5eadcae7e482@affe.org
+DESCRIPTION:https://junior.guru/events/15/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20211116T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20211116T192618
+SUMMARY:10 klíčových otázek\, na které by každý junior měl znát odpověď
+UID:e4817593-3202-4459-a375-5a1330329c52@e481.org
+DESCRIPTION:https://junior.guru/events/14/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20211102T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20211102T195101
+SUMMARY:Případová studie: Jak se staví rychlý\, moderní prezentační web
+UID:d1ac4f22-b2f0-4011-b680-26cd011718fc@d1ac.org
+DESCRIPTION:https://junior.guru/events/13/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20211019T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20211019T194322
+SUMMARY:AMA: Expert na škálování a architekturu
+UID:22026b2f-becf-47b4-a3cc-56ea3e9bf904@2202.org
+DESCRIPTION:https://junior.guru/events/12/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20210929T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20210929T190510
+SUMMARY:AMA: Mentoři na frontend
+UID:8e72b0ab-6353-489d-ba6f-172431811c8f@8e72.org
+DESCRIPTION:https://junior.guru/events/11/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20210831T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20210831T191416
+SUMMARY:Relační databáze efektivně
+UID:988cfb93-3703-4288-90cd-b76a9c32fc26@988c.org
+DESCRIPTION:https://junior.guru/events/10/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20210817T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20210817T190202
+SUMMARY:Od recruitingu cez Lambda School až do globálneho startupu
+UID:afad3c5b-86d9-4aa3-a7ce-fabb69bef4f2@afad.org
+DESCRIPTION:https://junior.guru/events/9/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20210810T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20210810T194933
+SUMMARY:Jak jsou datové struktury uloženy v paměti
+UID:2e259e4e-8486-4af4-9027-b73379b1fdd8@2e25.org
+DESCRIPTION:https://junior.guru/events/8/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20210727T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20210727T185724
+SUMMARY:Proč a jak být technickým redaktorem?
+UID:40e04962-2e7f-47a1-a663-423a16db68c7@40e0.org
+DESCRIPTION:https://junior.guru/events/7/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20210518T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20210518T192822
+SUMMARY:Život HTTP požadavku
+UID:8ae27d07-c8ff-489b-911a-3ac8dabc93e0@8ae2.org
+DESCRIPTION:https://junior.guru/events/6/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20210505T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20210505T201413
+SUMMARY:AMA: Recruiter se zaměřením na juniory
+UID:bdc2a07f-f834-436c-bd03-93e1e6afdd0b@bdc2.org
+DESCRIPTION:https://junior.guru/events/5/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20210413T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20210413T192621
+SUMMARY:Designování vysněné práce
+UID:5a3ee79f-5e26-47eb-81ec-57a527dc9bee@5a3e.org
+DESCRIPTION:https://junior.guru/events/4/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20210331T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20210331T190229
+SUMMARY:Jamstack
+UID:41cb0b36-d0e3-4116-a864-415966676ac6@41cb.org
+DESCRIPTION:https://junior.guru/events/3/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20210316T180000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20210316T184243
+SUMMARY:#Junioring 101 - How Not To Go Bonkers At The Start
+UID:9e84c57c-4abb-4b34-bd26-1cc8ebd0b529@9e84.org
+DESCRIPTION:https://junior.guru/events/2/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=/ics.py/2020.1/Europe/Prague:20210211T183000
+DTEND;TZID=/ics.py/2020.1/Europe/Prague:20210211T200000
+SUMMARY:První klubový sraz
+UID:ea7a8024-fd4a-4901-8fd6-ad26e54d1ed7@ea7a.org
+DESCRIPTION:https://junior.guru/events/1/
+DTSTAMP:20261017T044257Z
+ORGANIZER;CN=junior.guru klub:honza@junior.guru
+END:VEVENT
+END:VCALENDAR
