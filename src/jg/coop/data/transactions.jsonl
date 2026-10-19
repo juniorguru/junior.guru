@@ -1422,3 +1422,5 @@
 {"_id": "27895022270", "amount": -3306, "category": "tax", "happened_on": "2026-10-15"}
 {"_id": "27895681718", "amount": 8000, "category": "sponsorships", "happened_on": "2026-10-15"}
 {"_id": "27898399984", "amount": -91, "category": "tax", "happened_on": "2026-10-16"}
+{"_id": "27901135201", "amount": -333, "category": "miscellaneous", "happened_on": "2026-10-18"}
+{"_id": "27901286609", "amount": 3063, "category": "memberships", "happened_on": "2026-10-19"}
