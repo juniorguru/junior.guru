@@ -1,10 +1,13 @@
 name: Nightly Check
 on:
-  schedule:
-    # CircleCI nightly starts at 04:00 UTC and usually finishes by 05:10 UTC,
-    # this leaves a buffer of almost two hours
-    - cron: "53 6 * * *"
+  # Triggered by the report-nightly job at the end of the CircleCI nightly,
+  # GitHub's own schedule proved unreliable. When run manually without input,
+  # it checks today's nightly.
   workflow_dispatch:
+    inputs:
+      circleci_workflow_id:
+        description: CircleCI workflow ID of the nightly
+        required: false
 jobs:
   investigate:
     runs-on: ubuntu-latest
@@ -19,6 +22,8 @@ jobs:
           fetch-depth: 1
       - id: nightly
         run: python3 .github/scripts/nightly_status.py
+        env:
+          CIRCLECI_WORKFLOW_ID: ${{ inputs.circleci_workflow_id }}
       - if: steps.nightly.outputs.investigate == 'true'
         uses: anthropics/claude-code-action@v1
         timeout-minutes: 30
@@ -30,7 +35,7 @@ jobs:
             FAILED JOBS: ${{ steps.nightly.outputs.failed }}
             DATE: ${{ steps.nightly.outputs.date }}
 
-            Today's CircleCI nightly build failed. Use the circleci skill to investigate why,
+            The CircleCI nightly build from ${{ steps.nightly.outputs.date }} failed. Use the circleci skill to investigate why,
             including the comparison with recent nightly runs.
 
             Group the remaining failures by root cause. One reason is one distinct problem, e.g. one broken
