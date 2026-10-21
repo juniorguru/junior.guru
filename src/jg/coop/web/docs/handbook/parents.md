@@ -100,7 +100,7 @@ https://twitter.com/programohrajeme/status/1462698199001489411
 
 - Magda https://mail.google.com/mail/u/0/#inbox/KtbxLrjGQcnLHJfGrPfPsPdVzHDfvDThLB
 
-https://imysleni.cz/ucebnice/zaklady-programovani-v-jazyce-python-pro-stredni-skoly
+https://archiv-imysleni.npi.cz/ucebnice/zaklady-programovani-v-jazyce-python-pro-stredni-skoly.html
 
 Privydelek na materske
 - vpp na mateřské
