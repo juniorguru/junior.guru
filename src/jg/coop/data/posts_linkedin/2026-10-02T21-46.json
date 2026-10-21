@@ -18,6 +18,17 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Salwa",
+        "lastName": "El Hafid",
+        "occupation": "Étudiante dans Al kindy",
+        "id": "1729915933",
+        "publicId": "salwa-el-hafid-911418403",
+        "profileId": "ACoAAGccbB0BDxBnkn7o6eRB4WLCXsj_AWOzDKg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "David",
         "lastName": "Navara",
         "occupation": "Literature is my love and writing is my passion.",
@@ -113,21 +124,10 @@
         "publicId": "vladimirgorej",
         "profileId": "ACoAAAOCvakBhgi7YUynPTjma0QEJcXvgHxxHuk"
       }
-    },
-    {
-      "type": "EMPATHY",
-      "profile": {
-        "firstName": "Tomas",
-        "lastName": "Manhal",
-        "occupation": "SEO/UX Specialist at Webmium ✅ Aspiring Backend Developer at Home ✅",
-        "id": "356811200",
-        "publicId": "tomasmanhal",
-        "profileId": "ACoAABVEgcABhXssunqzWgZ32PhPvDuM7pOY7Sw"
-      }
     }
   ],
   "numShares": 0,
-  "numLikes": 10,
+  "numLikes": 11,
   "numComments": 0,
   "canReact": true,
   "canPostComments": true,
