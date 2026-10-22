@@ -10,6 +10,8 @@ This README is missing a lot of information. Honza didn't have time yet to add a
 
 Contributions are welcome, but Honza didn't have much time yet to make the repo very friendly to contributors.
 
+`jg sync posts-linkedin` still reads the last successful dataset of `supreme_coder/linkedin-post`. It does not start a run. Pass `--actor johnvc/linkedin-posts-api` to read that actor's last successful dataset instead. Rows whose `result_type` is `post` get `postedAtISO` from `datePosted` and `url` from `postUrl`, then the sync saves the same JSON files. [Actor](https://apify.com/johnvc/linkedin-posts-api). [Alpha OSINT](https://alphaosint.com/).
+
 ## Installation on macOS M1
 
 This is needed for decrypting backups:

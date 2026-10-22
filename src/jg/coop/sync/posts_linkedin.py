@@ -10,6 +10,7 @@ import click
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import apify, loggers
+from jg.coop.sync.posts_linkedin_adapter import accept_linkedin_posts
 
 
 logger = loggers.from_path(__file__)
@@ -23,7 +24,12 @@ TRACKING_PARAM = "trackingId"
 
 
 @cli.sync_command()
-@click.option("--actor", "actor_name", default="supreme_coder/linkedin-post")
+@click.option(
+    "--actor",
+    "actor_name",
+    default="supreme_coder/linkedin-post",
+    help="Actor whose last successful dataset is read. The default stays supreme_coder/linkedin-post.",
+)
 @click.option(
     "--posts-dir",
     default=Path("src/jg/coop/data/posts_linkedin"),
@@ -31,7 +37,7 @@ TRACKING_PARAM = "trackingId"
 )
 def main(actor_name: str, posts_dir: Path) -> None:
     logger.info(f"Fetching LinkedIn posts from {actor_name}")
-    posts = apify.fetch_data(actor_name)
+    posts = accept_linkedin_posts(actor_name, apify.fetch_data(actor_name))
 
     if not posts:
         logger.error("No posts scraped!")
