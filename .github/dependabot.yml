@@ -8,6 +8,11 @@ updates:
     groups:
       python:
         patterns: ["*"]
+    # Pin MkDocs to version 1.x, because 2.0 drops the plugin system we rely on
+    # See: https://github.com/juniorguru/junior.guru/issues/1918
+    ignore:
+      - dependency-name: "mkdocs"
+        update-types: ["version-update:semver-major"]
     labels:
       - dependencies
   - package-ecosystem: npm
