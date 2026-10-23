@@ -12,6 +12,7 @@ from jg.coop.cli.sync import default_from_env, main as cli
 from jg.coop.lib import apify, loggers
 from jg.coop.lib.buttondown import ButtondownAPI
 from jg.coop.lib.cli import async_command
+from jg.coop.lib.social import YOUTUBE_URL
 from jg.coop.models.base import db
 from jg.coop.models.followers import Followers
 
@@ -19,13 +20,9 @@ from jg.coop.models.followers import Followers
 logger = loggers.from_path(__file__)
 
 
-YOUTUBE_URL = "https://www.youtube.com/@juniordotguru"
-
 YOUTUBE_CONSENT_FORM_URL = "https://consent.youtube.com/save"
 
 YOUTUBE_LANGUAGE_FORM_URL = "https://consent.youtube.com/ml"
-
-LINKEDIN_URL = "https://www.linkedin.com/company/juniorguru"
 
 LINKEDIN_PERSONAL_SEARCH_URL = (
     "https://duckduckgo.com/?q=honza+javorek+site%3Alinkedin.com&ia=web"
