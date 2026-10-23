@@ -66,6 +66,7 @@ exclude = [
   "^https://(www\\.)?(linkedin|facebook|reddit)\\.com",
   "^https://(www\\.)?(beeit|glancemedia|prace\\.rovnou|keyguru|sifrovacky)\\.cz",
   "^https://([^\\.]+\\.)?discord\\.com",
+  "^https://([^/]+\\.)?gov\\.cz(/|$)", # Czech government sites (*.gov.cz) time out on bots
 
   # Not yet deployed avatars of club members or company logos
   "^https://junior\\.guru/static/avatars-club/[^\\.]+\\.png",
