@@ -16,7 +16,7 @@ from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.event import Event
-from jg.coop.models.job import REMOTE_TAG_SLUG, ListedJob
+from jg.coop.models.job import REMOTE_TAG_SLUG, TECH_LISTINGS, ListedJob
 from jg.coop.models.newsletter import NewsletterIssue
 from jg.coop.models.podcast import PodcastEpisode
 
@@ -101,6 +101,26 @@ def generate_region_jobs_pages() -> Generator[GeneratedDocument]:
                 "description": f"Jaké nabízí {region} příležitosti pro začátečníky v IT? {meta['description']}",
                 "region": region,
                 "region_tag_slug": tag_slug,
+            },
+            content=content,
+        )
+
+
+def generate_tech_jobs_pages() -> Generator[GeneratedDocument]:
+    jobs_file = Path("src/jg/coop/web/docs/jobs.jinja")
+    jobs_text = jobs_file.read_text(encoding="utf-8-sig", errors="strict")
+    content, meta = parse_document(jobs_text)
+    for tech_listing in TECH_LISTINGS:
+        yield GeneratedDocument(
+            path=f"jobs/{tech_listing.slug}.jinja",
+            meta=meta
+            | {
+                "title": tech_listing.title,
+                "description": f"{tech_listing.description} {meta['description']}",
+                "tech_listing_slug": tech_listing.slug,
+                "tech_listing_heading": tech_listing.heading,
+                "tech_listing_name": tech_listing.name,
+                "tech_listing_tag_slugs": tech_listing.tag_slugs,
             },
             content=content,
         )
@@ -242,6 +262,7 @@ def main():
         generate_podcast_episode_pages,
         generate_redirects,
         generate_region_jobs_pages,
+        generate_tech_jobs_pages,
     ]
     logger.info(f"Generating documents ({len(generators)} generators)")
     counter = Counter()
