@@ -32,6 +32,7 @@ async def test_url_fixer():
     [
         ("example.com", "https://example.com"),
         ("  https://www.samsung.com/cz/", "https://www.samsung.com/cz/"),
+        ("http://www.sap.com", "https://www.sap.com"),
         ("", None),
         (None, None),
     ],
