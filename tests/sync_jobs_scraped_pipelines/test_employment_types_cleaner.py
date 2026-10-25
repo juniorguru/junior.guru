@@ -39,6 +39,10 @@ from jg.coop.sync.jobs_scraped.pipelines.employment_types_cleaner import (
         ("práca na zkrátený úväzok", "parttime"),
         ("práce na plný úvazek", "fulltime"),
         ("práce na zkrácený úvazek", "parttime"),
+        (
+            "practical training and short-term placement",
+            "internship",
+        ),
         ("praxe a stáže", "internship"),
         ("skrátený úväzok", "parttime"),
         ("stáž", "internship"),

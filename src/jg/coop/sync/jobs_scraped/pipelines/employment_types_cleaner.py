@@ -45,6 +45,7 @@ EMPLOYMENT_TYPES_MAPPING = {
     "placená stáž": EmploymentTypes.INTERNSHIP,
     "plný úvazek": EmploymentTypes.FULLTIME,
     "plný úväzok": EmploymentTypes.FULLTIME,
+    "practical training and short term placement": EmploymentTypes.INTERNSHIP,
     "praxe a stáže": EmploymentTypes.INTERNSHIP,
     "skrátený úväzok": EmploymentTypes.PARTTIME,
     "stáž": EmploymentTypes.INTERNSHIP,
