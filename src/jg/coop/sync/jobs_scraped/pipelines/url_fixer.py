@@ -19,6 +19,8 @@ def fix_url(url: str) -> str:
     if not url:
         return None
     url = url.strip()
+    if url.startswith("http://"):
+        return "https://" + url.removeprefix("http://")
     if not url.startswith("http"):
         return f"https://{url}"
     return url
