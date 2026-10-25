@@ -1,8 +1,10 @@
 import hashlib
 import itertools
+from collections.abc import Iterable
 from datetime import timedelta
 from io import BytesIO
 from pathlib import Path
+from urllib.parse import urlparse
 
 import click
 import httpx2
@@ -32,6 +34,8 @@ IMAGES_DIR = Path("src/jg/coop/images")
 IMAGE_SAVE_OPTIONS = {"format": "WEBP", "optimize": True}
 
 LOGOS_DIR = IMAGES_DIR / "logos-jobs"
+
+UNKNOWN_LOGO_NAME = "unknown.webp"
 
 
 logger = loggers.from_path(__file__)
@@ -101,7 +105,7 @@ def main(actor_name: str, clear_files: bool):
         logger.debug(f"Logo candidates: {len(logos)}")
         for logo in logos:
             logger.info(f"Source {logo.image.original_image_url}")
-            basename = hashlib.sha256(logo.image.image_url.encode()).hexdigest()
+            basename = get_logo_basename(logo.image.image_url)
             logo_path = LOGOS_DIR / f"{basename}.webp"
             logger.info(f"Destination {logo_path}")
             if logo_path.exists():
@@ -135,8 +139,20 @@ def main(actor_name: str, clear_files: bool):
 
     logger.info("Generating special question mark logo for club jobs")
     create_fallback_image("?", SIZE_PX).save(
-        LOGOS_DIR / "unknown.webp", **IMAGE_SAVE_OPTIONS
+        LOGOS_DIR / UNKNOWN_LOGO_NAME, **IMAGE_SAVE_OPTIONS
     )
+
+    logger.info("Deleting unused logo files")
+    used_paths = [
+        IMAGES_DIR / job.company_logo_path
+        for job in ListedJob.listing()
+        if job.company_logo_path
+    ]
+    for path in get_unused_paths(
+        LOGOS_DIR.glob("*.webp"), used_paths, keep={UNKNOWN_LOGO_NAME}
+    ):
+        logger.debug(f"Deleting {path}")
+        path.unlink()
 
 
 def sort_key(logo: Logo) -> tuple[bool, int, int]:
@@ -154,6 +170,25 @@ def sort_key(logo: Logo) -> tuple[bool, int, int]:
     area = -1 * logo.image.width * logo.image.height
 
     return (is_icon, similarity_to_square, area)
+
+
+def get_logo_basename(image_url: str) -> str:
+    """Returns the key-value store record key from the image URL.
+
+    The key is the SHA-256 of the image content, so unlike the whole URL,
+    which includes the store ID and a signature, it stays the same across
+    actor runs.
+    """
+    return urlparse(image_url).path.rstrip("/").split("/")[-1]
+
+
+def get_unused_paths(
+    paths: Iterable[Path], used_paths: Iterable[Path], keep: set[str]
+) -> list[Path]:
+    used_paths = set(used_paths)
+    return sorted(
+        path for path in paths if path not in used_paths and path.name not in keep
+    )
 
 
 def is_retryable_download_error(exc: Exception) -> bool:
