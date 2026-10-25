@@ -197,6 +197,7 @@ jobs:
           key: cache-v2-{{ .Branch }}-{{ .Revision }}
           paths:
             - .cache
+            - src/jg/coop/images/logos-jobs
             - src/jg/coop/images/posters-events
             - src/jg/coop/images/posters-sponsors
             - src/jg/coop/images/posters-podcast
