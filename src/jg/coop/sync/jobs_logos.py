@@ -55,7 +55,7 @@ class Logo(BaseModel):
     source_type: LogoSourceType
 
 
-@cache(expire=timedelta(days=14), tag="job-logos")
+@cache(expire=timedelta(hours=6), tag="job-logos")
 def fetch_logos(actor_name: str, urls: list[str]) -> list[dict]:
     return apify.run(actor_name, {"links": [{"url": url} for url in urls]})
 
