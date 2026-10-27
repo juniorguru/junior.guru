@@ -53,6 +53,17 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Ondřej",
+        "lastName": "Marek",
+        "occupation": "Team Leader - Development ve společnosti Quadient",
+        "id": "115837697",
+        "publicId": "ondřej-marek-85596332",
+        "profileId": "ACoAAAbniwEBHrmS0E37hw0zfKF0XywHao4H0bQ"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Filip",
         "lastName": "Peška",
         "occupation": "AI Engineer & Lecturer",
@@ -148,21 +159,10 @@
         "publicId": "robinpokorny",
         "profileId": "ACoAAAGoFH0BaO5d8cs38AEj9ozNJQcEMTd9cDY"
       }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Jan",
-        "lastName": "Ryšánek",
-        "occupation": "...",
-        "id": "207025803",
-        "publicId": "jan-rysanek",
-        "profileId": "ACoAAAxW9osBZq3gE7vuMaPMFI_ls-payusR-S4"
-      }
     }
   ],
   "numShares": 1,
-  "numLikes": 12,
+  "numLikes": 13,
   "numComments": 0,
   "canReact": true,
   "canPostComments": true,

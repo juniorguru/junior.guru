@@ -19,15 +19,7 @@
     {
       "start": 42,
       "length": 9,
-      "type": "PROFILE_MENTION",
-      "profile": {
-        "firstName": "Petr",
-        "lastName": "Kočí",
-        "occupation": "Data Journalist ve společnosti Samizdat/Český rozhlas",
-        "id": "5065361",
-        "publicId": "petrkoci",
-        "profileId": "ACoAAABNSpEBkxasB8uqJ3zcizYluVXPEFz2mrs"
-      }
+      "type": "BOLD"
     },
     {
       "start": 161,
