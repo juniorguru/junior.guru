@@ -107,7 +107,7 @@ registry:
 
   - name: CoreSkill
     slug: coreskill
-    url: https://coreskill.tech/
+    url: https://coreskill.cz/
     cz_business_id: 69320144
     start_on: 2021-02
     subscription: https://juniorguru.memberful.com/admin/subscriptions/3699681

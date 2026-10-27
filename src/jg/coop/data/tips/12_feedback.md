@@ -15,7 +15,7 @@ Pokud do <#CV_GITHUB_LINKEDIN> nahraješ PDF s životopisem, nebo odkaz na Linke
 Pojmenuj vlákno tak, ať je tam jméno a co chceš řešit. Třeba: „Zdislava Kuřátková - CV, Linkedin“ Používej štítky. Ať se v tom vyznáme.
 
 ## Danova šablona 📝
-<@DANIEL> má [šablonu na CV](https://coreskill.tech/sablona-cv), která sleduje všechna doporučení z [návodu na junior.guru](https://junior.guru/handbook/cv/), případně se od nich odchyluje jen minimálně. Mrkni na [připnuté vlákno s dalšími detaily](https://discord.com/channels/769966886598737931/1308551749736468540/1308551749736468540).
+<@DANIEL> má [šablonu na CV](https://coreskill.cz/sablona-cv), která sleduje všechna doporučení z [návodu na junior.guru](https://junior.guru/handbook/cv/), případně se od nich odchyluje jen minimálně. Mrkni na [připnuté vlákno s dalšími detaily](https://discord.com/channels/769966886598737931/1308551749736468540/1308551749736468540).
 
 ## Výtvory 🛠️
 Pokud něco vytvoříš, třeba i malou blbinku, hoď to se štítkem _chlubím se_ do <#CREATIONS> a sdílej tu radost! Pokud chceš, aby někdo mrknul i na kód a napsal ti, co by šlo zlepšit, dej tomu štítek _chci zpětnou vazbu_.

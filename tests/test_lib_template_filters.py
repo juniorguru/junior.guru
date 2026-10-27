@@ -252,8 +252,8 @@ def test_money_breakdown_ptc():
             "static/screenshots/cs-wikipedia-org-wiki-ildiko-jmeno.webp",
         ),
         (
-            "https://coreskill.tech/?utm_source=junior.guru&utm_medium=web&utm_campaign=catalog",
-            "static/screenshots/coreskill-tech.webp",
+            "https://coreskill.cz/?utm_source=junior.guru&utm_medium=web&utm_campaign=catalog",
+            "static/screenshots/coreskill-cz.webp",
         ),
     ],
 )
@@ -277,8 +277,8 @@ def test_screenshot_url(url, expected):
             "cs.wikipedia.org/wiki/Ildikó_(jméno)",
         ),
         (
-            "https://coreskill.tech/?utm_source=junior.guru&utm_medium=web&utm_campaign=catalog",
-            "coreskill.tech",
+            "https://coreskill.cz/?utm_source=junior.guru&utm_medium=web&utm_campaign=catalog",
+            "coreskill.cz",
         ),
         (
             "https://web.archive.org/web/20241212205702/https://www.codingbootcamp.cz",
@@ -294,8 +294,8 @@ def test_nice_url(url: str, expected: str):
     "url, expected",
     [
         (
-            "https://coreskill.tech/?utm_source=junior.guru&utm_medium=web&utm_campaign=catalog",
-            "https://coreskill.tech/?utm_source=junior.guru&utm_medium=web&utm_campaign=catalog",
+            "https://coreskill.cz/?utm_source=junior.guru&utm_medium=web&utm_campaign=catalog",
+            "https://coreskill.cz/?utm_source=junior.guru&utm_medium=web&utm_campaign=catalog",
         ),
         (
             "https://web.archive.org/web/20241212205702/https://www.codingbootcamp.cz",

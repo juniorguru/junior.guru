@@ -46,7 +46,7 @@ Je pouhou iluzí, že by šlo celé junior.guru dělat v jednom člověku. Tady 
 
 <table class="table">
   <tr>
-    <td><a href="https://coreskill.tech/">Dan Srb</a></td>
+    <td><a href="https://coreskill.cz/">Dan Srb</a></td>
     <td>moderování klubu a rady kolem CVček</td>
   </tr>
   <tr>

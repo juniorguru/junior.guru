@@ -446,7 +446,7 @@ registry:
     title: "Jak na CV při změně kariéry do IT"
     date: "2024-11-19"
     description: |
-      Daniel Srb, který viděl spoustu CV, když nabíral vývojáře, pracoval také jako designér a již několik let provází klienty změnou kariéry do IT, ukáže, jak vytvořit efektivní životopis pro hledání první práce v IT. Představí i [šablonu](https://coreskill.tech/sablona-cv), která tě zdarma provede tvorbou kvalitního CV.
+      Daniel Srb, který viděl spoustu CV, když nabíral vývojáře, pracoval také jako designér a již několik let provází klienty změnou kariéry do IT, ukáže, jak vytvořit efektivní životopis pro hledání první práce v IT. Představí i [šablonu](https://coreskill.cz/sablona-cv), která tě zdarma provede tvorbou kvalitního CV.
 
       Akce pro širokou veřejnost v rámci Týdne pro Digitální Česko. Zároveň pro členy junior.guru Discordu i [veřejně na YouTube](https://youtube.com/live/8_ZUwRKEJ7A).
     avatar_path: avatars-participants/daniel-srb.jpg
@@ -455,7 +455,7 @@ registry:
     bio: |
       Dan Srb se zaměřuje na návrh a implementaci webových uživatelských rozhraní. Jezdí na skládačce a má rád dobrou kávu, i když už ji moc nepije.
     bio_links:
-      - https://coreskill.tech/
+      - https://coreskill.cz/
       - https://github.com/benabraham
       - https://www.linkedin.com/in/danielsrb/
     club_speaker_ids:
@@ -1045,14 +1045,14 @@ registry:
     title: "AMA: Mentoři na frontend"
     date: "2021-09-29"
     description: |
-      AMA znamená _ask me anything_. Zeptej se na cokoliv, co tě zajímá! Dan a Kate pod značkou [CoreSkill](https://coreskill.tech/) pomáhají budoucím frontendistům a frontendistkám se vším, co potřebují k tomu, aby se jimi co nejdřív stali. Tématy určitě budou HTML, CSS i JavaScript, ale i to, co to frontend je a co frontendisti vlastně všechno dělají a co je minimum pro nalezení první práce.
+      AMA znamená _ask me anything_. Zeptej se na cokoliv, co tě zajímá! Dan a Kate pod značkou [CoreSkill](https://coreskill.cz/) pomáhají budoucím frontendistům a frontendistkám se vším, co potřebují k tomu, aby se jimi co nejdřív stali. Tématy určitě budou HTML, CSS i JavaScript, ale i to, co to frontend je a co frontendisti vlastně všechno dělají a co je minimum pro nalezení první práce.
     avatar_path: avatars-participants/coreskill.jpg
     bio_name: Daniel Srb, Kate Miháliková
     bio_title: vývojáři a mentoři, CoreSkill
     bio: |
       Dan Srb se zaměřuje na návrh a implementaci webových uživatelských rozhraní. Jezdí na skládačce a má rád dobrou kávu, i když už ji moc nepije. Kate Miháliková je frontedová vývojářka se zaměřením na TypeScript a JavaScript. Baví ji vlaky, hraje si ráda s Arduinem a na první dobrou rozezná jména Pokémonů od buzzwordů a názvů technologií.
     bio_links:
-      - https://coreskill.tech/
+      - https://coreskill.cz/
       - https://github.com/katemihalikova
       - https://www.linkedin.com/in/katemihalikova/
       - https://github.com/benabraham

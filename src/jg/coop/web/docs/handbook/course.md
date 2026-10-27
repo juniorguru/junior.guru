@@ -376,7 +376,7 @@ Ale prostě někdo kdo nikdy neprogramoval a najednou má sedět 12 hodin denně
 
 
 --- https://discord.com/channels/769966886598737931/789092262965280778/1037426032849993776
-Kromě kurzů od <:czechitas:842465242071171132>  Czechitas (Staň se kodérkou nebo DA: Web), které mají bezkonkurenční poměr cena / výkon, tak jen nás, tedy <:coreskill:929824061071192084> https://CoreSkill.tech
+Kromě kurzů od <:czechitas:842465242071171132>  Czechitas (Staň se kodérkou nebo DA: Web), které mají bezkonkurenční poměr cena / výkon, tak jen nás, tedy <:coreskill:929824061071192084> https://CoreSkill.cz
 
 Jaké jsou alternativy?
 <:sdacademy:929734682097107024> SDA https://sdacademy.cz/kurzy/javascript/
