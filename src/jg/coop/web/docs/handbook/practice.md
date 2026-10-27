@@ -388,9 +388,9 @@ Chybí vám tam kdyžtak nějaký meetup?
 Motivován debatou jinde, jestli je lepší CZ nebo US rozložení klávesnice pro vývojáře jsem aktualizoval „tahák“ na klávesnici. Třeba by se i tady mohl někomu hodit.
 
 **EDIT: verze aktualizovaná  podle připomínek**
-PNG (1920×1080 px) https://coreskill.tech/downloads/klavesnice-cz-en.png
-SVG https://coreskill.tech/downloads/klavesnice-cz-en.svg
-PDF (A4 pro tisk) https://coreskill.tech/downloads/klavesnice-cz-en.pdf
+PNG (1920×1080 px) https://coreskill.cz/downloads/klavesnice-cz-en.png
+SVG https://coreskill.cz/downloads/klavesnice-cz-en.svg
+PDF (A4 pro tisk) https://coreskill.cz/downloads/klavesnice-cz-en.pdf
 ---
 
 

@@ -28,7 +28,7 @@ Návod na dobré CV si můžeš buď přečíst v následujících odstavcích, 
 
 V přednášce ukazuje, jak vytvořit **efektivní životopis pro hledání první práce v IT**. Pokrývá i témata, která tento textový návod příliš nezmiňuje, jako samotnou sazbu textu a vzhled, barvy, apod.
 
-Taky v přednášce představuje svou **[šablonu na CV](https://coreskill.tech/sablona-cv), která je vymazlená přesně pro potřeby juniorů** a následuje veškeré rady, které jsou tady v příručce. Nevymýšlej kolo!
+Taky v přednášce představuje svou **[šablonu na CV](https://coreskill.cz/sablona-cv), která je vymazlená přesně pro potřeby juniorů** a následuje veškeré rady, které jsou tady v příručce. Nevymýšlej kolo!
 
 {% set event = events|selectattr("id", "equalto", 45)|first %}
 {{ video_card(
