@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, beforeEach } from "vitest";
 
 import {
   createTags,
@@ -7,6 +7,7 @@ import {
   matchesTags,
   mergeTags,
   parseTags,
+  setupTagFilter,
   toggleTag,
 } from "../../src/jg/coop/js/tag-filter";
 
@@ -180,6 +181,91 @@ describe("tag-filter.js", () => {
       ],
     ])("matches %s", (_, activeTags, expected) => {
       expect(matchesTags(itemTags, activeTags)).toBe(expected);
+    });
+  });
+  describe("setupTagFilter()", () => {
+    const select = (selector) => document.querySelector(selector);
+    const isHidden = (selector) => select(selector).hidden;
+
+    beforeEach(() => {
+      window.history.replaceState({}, "", "/jobs/brno/");
+      document.body.innerHTML = `
+        <dl class="jobs-filters noscript">
+          <button class="jobs-tag" data-jobs-tag="remote" data-jobs-tag-type="location" aria-pressed="false" hidden></button>
+          <button class="jobs-tag active disabled" data-jobs-tag="brno" data-jobs-tag-type="location" aria-pressed="true" disabled></button>
+          <button class="jobs-tag" data-jobs-tag="python" data-jobs-tag-type="tech" aria-pressed="false" hidden></button>
+          <span class="jobs-noscript">Error</span>
+        </dl>
+        <ul>
+          <li class="jobs-item tagged" id="brno-java">
+            <span class="jobs-tag" data-jobs-tag="brno" data-jobs-tag-type="location"></span>
+            <span class="jobs-tag" data-jobs-tag="java" data-jobs-tag-type="tech"></span>
+          </li>
+          <li class="jobs-item tagged" id="praha-python">
+            <span class="jobs-tag" data-jobs-tag="praha" data-jobs-tag-type="location"></span>
+            <span class="jobs-tag" data-jobs-tag="python" data-jobs-tag-type="tech"></span>
+          </li>
+          <li class="jobs-empty" hidden></li>
+        </ul>
+      `;
+      setupTagFilter("jobs");
+    });
+
+    it("shows selectable tags and removes noscript fallbacks", () => {
+      expect([
+        isHidden("[data-jobs-tag='remote']"),
+        isHidden("[data-jobs-tag='python']"),
+        select(".jobs-filters").classList.contains("noscript"),
+        select(".jobs-noscript"),
+      ]).toEqual([false, false, false, null]);
+    });
+
+    it("filters by the fixed tag", () => {
+      expect([
+        isHidden("#brno-java"),
+        isHidden("#praha-python"),
+        isHidden(".jobs-empty"),
+        select("#brno-java [data-jobs-tag='brno']").classList.contains(
+          "matching",
+        ),
+      ]).toEqual([false, true, true, true]);
+    });
+
+    it("toggles a tag on click", () => {
+      const button = select(".jobs-filters [data-jobs-tag='python']");
+      button.click();
+      expect([
+        button.classList.contains("active"),
+        button.getAttribute("aria-pressed"),
+      ]).toEqual([true, "true"]);
+    });
+
+    it("writes clicked tags to the URL without the fixed tag", () => {
+      select(".jobs-filters [data-jobs-tag='python']").click();
+      select(".jobs-filters [data-jobs-tag='remote']").click();
+      expect(window.location.search).toBe("?location=remote&tech=python");
+    });
+
+    it("shows the empty state when nothing matches", () => {
+      select(".jobs-filters [data-jobs-tag='python']").click();
+      expect([
+        isHidden("#brno-java"),
+        isHidden("#praha-python"),
+        isHidden(".jobs-empty"),
+      ]).toEqual([true, true, false]);
+    });
+
+    it("restores the filter from the URL on popstate", () => {
+      select(".jobs-filters [data-jobs-tag='python']").click();
+      window.history.replaceState({}, "", "/jobs/brno/");
+      window.dispatchEvent(new PopStateEvent("popstate"));
+      expect([
+        select(".jobs-filters [data-jobs-tag='python']").classList.contains(
+          "active",
+        ),
+        isHidden("#brno-java"),
+        isHidden(".jobs-empty"),
+      ]).toEqual([false, false, true]);
     });
   });
 });
