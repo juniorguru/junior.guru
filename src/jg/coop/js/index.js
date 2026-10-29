@@ -8,6 +8,7 @@ import "./github-profile";
 import "./jobs";
 import "./membership";
 import "./metrics";
+import "./openable";
 import "instant.page";
 import "lite-youtube-embed";
 

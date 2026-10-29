@@ -168,7 +168,7 @@ template: main.html
 <div class="jobs">
   <ul class="jobs-list">
     {% for job in jobs %}
-    <li class="jobs-item openable tagged{% if job.is_highlighted %} highlighted{% endif %}">
+    <li class="jobs-item openable tagged{% if job.is_highlighted %} highlighted{% endif %}" data-openable>
       <div class="jobs-item-container">
         <div class="jobs-logo">
           {{ img('static/' + job.company_logo_path, 'Logo ' + job.company_name, 100, 100, class="jobs-image") }}
@@ -176,6 +176,8 @@ template: main.html
         <div class="jobs-body">
           <h3 class="jobs-title">
             <a class="jobs-title-link"
+              data-openable-action="open"
+              data-openable-visible="closed"
               {% if job.is_submitted %}
                 href="{{ job.url|relative_url }}"
               {% else %}
@@ -184,9 +186,9 @@ template: main.html
             >
               {{ job.title }}
             </a>
-            <span class="jobs-title-text" hidden>{{ job.title }}</span>
-            <span class="jobs-open">{{ "arrow-down-square"|icon }}</span>
-            <button class="jobs-close" hidden>{{ "x-lg"|icon }}</button>
+            <span class="jobs-title-text" data-openable-visible="open" hidden>{{ job.title }}</span>
+            <span class="jobs-open" data-openable-visible="closed">{{ "arrow-down-square"|icon }}</span>
+            <button class="jobs-close" data-openable-action="close" data-openable-visible="open" hidden>{{ "x-lg"|icon }}</button>
           </h3>
           <p class="jobs-info">
             <strong class="jobs-info-item">{{ job.company_name }}</strong>
@@ -205,7 +207,7 @@ template: main.html
               </span>
             {% endfor %}
           </p>
-          <div class="jobs-company" hidden>
+          <div class="jobs-company" data-openable-visible="open" hidden>
             <h4 class="jobs-company-heading">Vyhledat firmu</h4>
             <ul class="jobs-company-links">
               <li>
@@ -269,7 +271,7 @@ template: main.html
           </div>
         </div>
       </div>
-      <div class="jobs-actions" hidden>
+      <div class="jobs-actions" data-openable-visible="open" hidden>
         <ul class="jobs-actions-list">
           {% if job.discord_url %}
             <li class="jobs-action-club">
