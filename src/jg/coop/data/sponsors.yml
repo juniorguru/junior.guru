@@ -13,7 +13,7 @@ registry:
     cz_business_id: 27690016
     subscription: https://juniorguru.memberful.com/admin/subscriptions/3699651
     periods:
-      - [2020-09, 2026-11]
+      - [2020-09, 2026-12]
 
   - name: Rector
     slug: rector
@@ -30,7 +30,7 @@ registry:
     cz_business_id: 4671317
     subscription: https://juniorguru.memberful.com/admin/subscriptions/4367080
     periods:
-      - [2025-10, 2026-11]
+      - [2025-10, 2026-12]
       - [2021-05, 2025-08]
 
   - name: Mews
