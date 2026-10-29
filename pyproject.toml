@@ -8,7 +8,8 @@ license = "AGPL-3.0-only AND CC-BY-SA-4.0"
 requires-python = ">=3.13,<3.14"
 dependencies = [
   "jg.beak@git+https://github.com/juniorguru/beak.git",
-  "jg.chick@git+https://github.com/juniorguru/chick.git",
+  # Pinned to the last Python 3.13 compatible revision, see #1947
+  "jg.chick@git+https://github.com/juniorguru/chick.git@8e59ceb52df1f3dc1c7042fd0db0dddd8b016700",
   "apify-client>=2.1.0",
   "beautifulsoup4>=4.14.2",
   "click>=8.3.0",
@@ -20,7 +21,8 @@ dependencies = [
   "feedparser>=6.0.12",
   "fiobank>=4.0.0",
   "fonttools>=4.60.1",
-  "githubkit>=0.13.3",
+  # Capped until jg.hen can be upgraded, see #1947
+  "githubkit>=0.13.3,<0.16",
   "google-api-python-client>=2.184.0",
   "google-auth>=2.41.1",
   # Pre-release: httpx2 support (gql[httpx2]) lands only in gql 4.4 betas.
@@ -78,6 +80,11 @@ dev = [
 # gql[httpx2] only ships in gql 4.4 betas, which pull the still-prerelease
 # graphql-core 3.3 (a transitive dep with no stable release in range).
 prerelease = "allow"
+# Pinned to the last Python 3.13 compatible revisions, see #1947
+override-dependencies = [
+  "jg.eggtray@git+https://github.com/juniorguru/eggtray.git@c9692738b55c9df9ccc768545bf3150d46cba559",
+  "jg.hen@git+https://github.com/juniorguru/hen.git@f96e30e6afdd17b9ed6bd9eb9a1ed1143f54b746",
+]
 
 [tool.pytest.ini_options]
 python_files = "test_*.py"
