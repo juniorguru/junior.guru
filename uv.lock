@@ -5,6 +5,12 @@ requires-python = "==3.13.*"
 [options]
 prerelease-mode = "allow"
 
+[manifest]
+overrides = [
+    { name = "jg-eggtray", git = "https://github.com/juniorguru/eggtray.git?rev=c9692738b55c9df9ccc768545bf3150d46cba559" },
+    { name = "jg-hen", git = "https://github.com/juniorguru/hen.git?rev=f96e30e6afdd17b9ed6bd9eb9a1ed1143f54b746" },
+]
+
 [[package]]
 name = "aiodns"
 version = "4.0.4"
@@ -602,49 +608,23 @@ wheels = [
 
 [[package]]
 name = "githubkit"
-version = "0.16.1"
+version = "0.15.5"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "anyio" },
-    { name = "githubkit-schemas" },
-    { name = "hishel", extra = ["async", "httpx"] },
+    { name = "hishel" },
     { name = "httpx" },
     { name = "pydantic" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/45/a8/ebfcbddccb3e813837600f4cdb79fc462fd284c1db03abc1ad31072d0757/githubkit-0.16.1.tar.gz", hash = "sha256:f56ea4e796f169773d114c7f39089790f99443f1d05871d594d6bdca7928945c", size = 36999, upload-time = "2026-08-14T07:46:05.363Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/ff/ac/857b78d82bf95a91413322614d6751db2f55ab214b24239f31729d8821e6/githubkit-0.15.5.tar.gz", hash = "sha256:5ee487b77d3f4332c73fe5dbc69f932d8012ff0bb1aa9c544c238aef74ef1ae0", size = 5550333, upload-time = "2026-05-01T08:57:12.016Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b0/eb/ee6424e6d257433a8a62e86016cdbce6efdbd26d7db5735c5c099da85e44/githubkit-0.16.1-py3-none-any.whl", hash = "sha256:a791e0eb57ec80824a711321376c5816aa1cd204e6982e4ad5ddce6c87490863", size = 42935, upload-time = "2026-08-14T07:46:04.167Z" },
+    { url = "https://files.pythonhosted.org/packages/76/ed/d08de6b425a6cce4554ea70a559e03d545058881b5b1d2d0a193d886d3a8/githubkit-0.15.5-py3-none-any.whl", hash = "sha256:69934fdce7e4f197f24d85ea91d808ef245f4463bb982e4c19ac32d827bc7a40", size = 13436716, upload-time = "2026-05-01T08:57:07.644Z" },
 ]
 
 [package.optional-dependencies]
 auth-app = [
     { name = "pyjwt", extra = ["crypto"] },
-]
-
-[[package]]
-name = "githubkit-schemas"
-version = "26.10.21"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "githubkit" },
-    { name = "githubkit-schemas-2026-03-10" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/f0/c7/d9c1b6a7c9c27f576865e553f506c76468d90aa62d288b67019a7e3d75ec/githubkit_schemas-26.10.21.tar.gz", hash = "sha256:db1d50a983a42f680728e996e2ea8d5d29bca069dff9e2ba42538ac04996c706", size = 133192, upload-time = "2026-10-21T12:03:19.152Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/24/42/d46642456c963fd15be017d960e46b5a1f8dfe0b7a71154c9ad5ddb2ea52/githubkit_schemas-26.10.21-py3-none-any.whl", hash = "sha256:c7bdacbcb9ebb927acee77ca1e98c30826cce72242395fd1d7e781a8c9790f88", size = 135469, upload-time = "2026-10-21T12:03:10.741Z" },
-]
-
-[[package]]
-name = "githubkit-schemas-2026-03-10"
-version = "26.10.21"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "githubkit-schemas" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/7e/33/e10bf271bc4394033ae0e6465d84da1a881a3170d0ff7bfa2ca81269ae79/githubkit_schemas_2026_03_10-26.10.21.tar.gz", hash = "sha256:c1bceb0e6a997260f7d92d4063289e051c85d2eb857b9e01dd051660b8b32114", size = 1567622, upload-time = "2026-10-21T12:03:22.143Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/8e/a2/019937870e0097e48bdff41ac3f4a2e33aa299bc50d336df93228be56c47/githubkit_schemas_2026_03_10-26.10.21-py3-none-any.whl", hash = "sha256:3faed30ed851fcc0b22c66c522c736a9dfb9add70ccdf685ee1d0787817bab4b", size = 3631914, upload-time = "2026-10-21T12:03:13.947Z" },
 ]
 
 [[package]]
@@ -802,26 +782,18 @@ wheels = [
 
 [[package]]
 name = "hishel"
-version = "1.4.0"
+version = "0.1.5"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "msgpack" },
-    { name = "typing-extensions" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/c6/ff/efba29288e1d304359491fa3aab83174c3ef24a63819e6acad6873d8c0a9/hishel-1.4.0.tar.gz", hash = "sha256:e406b052c658ce28629fc31423b9914b637d47d7c923f5fe9e288ec47e4823d1", size = 813499, upload-time = "2026-09-16T15:38:54.085Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/da/c5/2cf7b80da9833de6ae5099111b64cf541830ccb4ef26605ae86f23ed5604/hishel-1.4.0-py3-none-any.whl", hash = "sha256:38cb62d7d38fb437dc086f789c26d0cab41310d12497ec3f56dcead4b08571f0", size = 80795, upload-time = "2026-09-16T15:38:52.545Z" },
-]
-
-[package.optional-dependencies]
-async = [
-    { name = "anyio" },
-    { name = "anysqlite" },
-]
-httpx = [
     { name = "anyio" },
     { name = "anysqlite" },
     { name = "httpx" },
+    { name = "msgpack" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/e5/64/a104ccac48f123f853254483617b16e0efc1649bd7e35bcdc5a5a5ef0ae2/hishel-0.1.5.tar.gz", hash = "sha256:9d40c682cd94fd6e1394fb05713ae20a75ed8aeba6f5272380444039ce6257f2", size = 75468, upload-time = "2025-10-18T13:32:41.854Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/70/83/4f8b77839e62114bb034375ee8e08cfb6af1164754b925b271d3f1ec06ee/hishel-0.1.5-py3-none-any.whl", hash = "sha256:0bfbe9a2b9342090eba82ba6de88258092e1c4c7b730cd4cb4b570e4b40e44a7", size = 92486, upload-time = "2025-10-18T13:32:40.333Z" },
 ]
 
 [[package]]
@@ -982,7 +954,7 @@ dependencies = [
 [[package]]
 name = "jg-chick"
 version = "0.0.1"
-source = { git = "https://github.com/juniorguru/chick.git#8e59ceb52df1f3dc1c7042fd0db0dddd8b016700" }
+source = { git = "https://github.com/juniorguru/chick.git?rev=8e59ceb52df1f3dc1c7042fd0db0dddd8b016700#8e59ceb52df1f3dc1c7042fd0db0dddd8b016700" }
 dependencies = [
     { name = "aiohttp" },
     { name = "click" },
@@ -1067,7 +1039,7 @@ requires-dist = [
     { name = "feedparser", specifier = ">=6.0.12" },
     { name = "fiobank", specifier = ">=4.0.0" },
     { name = "fonttools", specifier = ">=4.60.1" },
-    { name = "githubkit", specifier = ">=0.13.3" },
+    { name = "githubkit", specifier = ">=0.13.3,<0.16" },
     { name = "google-api-python-client", specifier = ">=2.184.0" },
     { name = "google-auth", specifier = ">=2.41.1" },
     { name = "gql", extras = ["httpx2"], specifier = ">=4.4.0b0" },
@@ -1075,7 +1047,7 @@ requires-dist = [
     { name = "httpx2", specifier = ">=2.12.0" },
     { name = "ics", specifier = ">=0.8.0.dev0" },
     { name = "jg-beak", git = "https://github.com/juniorguru/beak.git" },
-    { name = "jg-chick", git = "https://github.com/juniorguru/chick.git" },
+    { name = "jg-chick", git = "https://github.com/juniorguru/chick.git?rev=8e59ceb52df1f3dc1c7042fd0db0dddd8b016700" },
     { name = "jinja2", specifier = ">=3.1.6" },
     { name = "lingua-language-detector", specifier = ">=2.1.1" },
     { name = "livereload", specifier = ">=2.7.1" },
@@ -1116,7 +1088,7 @@ dev = [
 [[package]]
 name = "jg-eggtray"
 version = "0.0"
-source = { git = "https://github.com/juniorguru/eggtray.git#c9692738b55c9df9ccc768545bf3150d46cba559" }
+source = { git = "https://github.com/juniorguru/eggtray.git?rev=c9692738b55c9df9ccc768545bf3150d46cba559#c9692738b55c9df9ccc768545bf3150d46cba559" }
 dependencies = [
     { name = "click" },
     { name = "diskcache" },
@@ -1134,7 +1106,7 @@ dependencies = [
 [[package]]
 name = "jg-hen"
 version = "0.0"
-source = { git = "https://github.com/juniorguru/hen.git#f96e30e6afdd17b9ed6bd9eb9a1ed1143f54b746" }
+source = { git = "https://github.com/juniorguru/hen.git?rev=f96e30e6afdd17b9ed6bd9eb9a1ed1143f54b746#f96e30e6afdd17b9ed6bd9eb9a1ed1143f54b746" }
 dependencies = [
     { name = "beautifulsoup4" },
     { name = "blinker" },
