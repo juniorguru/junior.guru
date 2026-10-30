@@ -26,7 +26,7 @@ function setupOpenable(item) {
   setOpen(item, false);
 }
 
-export function setOpen(item, isOpen) {
+function setOpen(item, isOpen) {
   item.classList.toggle("open", isOpen);
   item.querySelectorAll("[data-openable-visible]").forEach((element) => {
     element.hidden = (element.dataset.openableVisible === "open") !== isOpen;
