@@ -302,6 +302,11 @@ def generate_queries(
         _, location_raw = location_raw.split(",", 1)
         yield from generate_queries(location_raw)
 
+    # remove the city district (e.g. Žilina-Vlčince)
+    elif "-" in location_raw:
+        location_raw, _ = location_raw.split("-", 1)
+        yield from generate_queries(location_raw)
+
 
 def is_region(location_raw: str) -> bool:
     return "," not in location_raw and REGION_RE.search(location_raw) is not None

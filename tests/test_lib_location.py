@@ -102,6 +102,17 @@ def test_generate_queries_rewrite(location_raw, expected):
 
 
 @pytest.mark.parametrize(
+    "location_raw, expected",
+    [
+        ("Obchodná, Žilina-Vlčince", ("Žilina", ResponseRegionType.municipality)),
+        ("Praha - Smíchov", ("Praha", ResponseRegionType.municipality)),
+    ],
+)
+def test_generate_queries_city_district(location_raw, expected):
+    assert expected in list(generate_queries(location_raw))
+
+
+@pytest.mark.parametrize(
     "country, regions, expected",
     [
         (
