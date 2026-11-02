@@ -60,6 +60,21 @@
 # - https://www.fotor.com/photo-editor-app/editor/beauty
 
 registry:
+  - id: 67
+    title: "Trh práce pro juniory v roce 2026: co změnila AI a kde jsou příležitosti"
+    date: "2026-11-25"
+    description: |
+      Jak se za poslední dva roky proměnila poptávka po juniorech v IT, co v datech opravdu vidíme a co je jen mediální panika, které role naopak rostou a co dnes firmy od juniorů čekají. Povídání nad daty ze StartupJobs a nad tím, jak se na trh dívat, když do něj člověk vstupuje právě teď.
+    avatar_path: avatars-participants/filip-mikschik.jpg
+    bio_name: Filip Mikschik
+    bio_title: "Founder & CEO, StartupJobs"
+    bio: |
+      Filip Mikschik je zakladatel a CEO StartupJobs, platformy, která od roku 2012 propojila přes milion kandidátů s firmami napříč obory. Přes StartupJobs už si našlo práci více než 40 tisíc lidí.
+    bio_links:
+      - https://www.startupjobs.cz/
+      - https://www.linkedin.com/in/mikschik/
+      - https://mikschik.substack.com/
+
   - id: 66
     title: "Od zdrojáku ke strojáku: Jak fungují kompilátory a interpretery"
     date: "2026-12-08"
