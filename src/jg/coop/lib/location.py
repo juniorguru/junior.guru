@@ -52,6 +52,8 @@ UNIVERSAL_LOCATIONS = {
     "slovensko",
     "slovenská republika",
     "remote",
+    "práca z domu",
+    "práce z domu",
     "emea",
     "europe",
     "anywhere",

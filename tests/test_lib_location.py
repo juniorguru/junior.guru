@@ -338,6 +338,11 @@ def test_is_universal_location_country(location_raw):
     assert is_universal_location(location_raw) is True
 
 
+@pytest.mark.parametrize("location_raw", ["Remote", "Práca z domu", "Práce z domu"])
+def test_is_universal_location_remote(location_raw):
+    assert is_universal_location(location_raw) is True
+
+
 @pytest.mark.parametrize(
     "location_raw",
     [
