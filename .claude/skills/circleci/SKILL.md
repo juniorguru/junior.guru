@@ -14,7 +14,7 @@ Workflows include per-branch and PR builds, plus scheduled `nightly` on `main` a
 Repository public; CircleCI API needs no token. Project slug: `gh/juniorguru/junior.guru`.
 
 1. List pipelines with `GET https://circleci.com/api/v2/project/gh/juniorguru/junior.guru/pipeline?branch={branch}`. Find target by pipeline `number`. On `main`, `nightly` runs around `04:xx`; `nightly-tidy` runs around `02:xx`.
-2. Get workflows with `GET /api/v2/pipeline/{pipeline_id}/workflow` and inspect each workflow's `status`.
+2. Get workflows: unauthenticated `GET /api/v2/pipeline/{pipeline_id}/workflow` returns 404. Instead list builds with `GET https://circleci.com/api/v1.1/project/gh/juniorguru/junior.guru/tree/{branch}?limit=100&shallow=true` (header `Accept: application/json`), take `workflows.workflow_id` of builds whose `workflows.workflow_name` matches, and inspect each with `GET /api/v2/workflow/{workflow_id}` (`status`, `pipeline_number`).
 3. Get jobs with `GET /api/v2/workflow/{workflow_id}/job`; identify failed job and its `job_number`.
 4. Get per-step logs with `GET /api/v1.1/project/gh/juniorguru/junior.guru/{job_number}`. Fetch plain URLs found in `steps[].actions[].output_url`. API v2 does not expose per-step output.
 

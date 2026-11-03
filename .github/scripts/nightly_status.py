@@ -7,25 +7,31 @@ import urllib.request
 from datetime import UTC, datetime
 
 
-API_URL = "https://circleci.com/api/v2"
+API_URL = "https://circleci.com/api"
 PROJECT_URL_PATH = "gh/juniorguru/junior.guru"
 
 
-def get(path: str) -> dict:
-    with urllib.request.urlopen(f"{API_URL}{path}", timeout=30) as response:
+def get(path: str) -> dict | list:
+    request = urllib.request.Request(
+        f"{API_URL}{path}", headers={"Accept": "application/json"}
+    )
+    with urllib.request.urlopen(request, timeout=30) as response:
         return json.load(response)
 
 
 def find_nightly(date: str) -> dict:
-    pipelines = get(f"/project/{PROJECT_URL_PATH}/pipeline?branch=main")["items"]
-    for pipeline in pipelines:
-        if pipeline["trigger"]["type"] != "schedule":
-            continue
-        for workflow in get(f"/pipeline/{pipeline['id']}/workflow")["items"]:
-            if workflow["name"] == "nightly" and workflow["created_at"].startswith(
-                date
-            ):
-                return {"pipeline_number": pipeline["number"], **workflow}
+    # Unauthenticated GET /pipeline/{id}/workflow returns 404, so workflow IDs
+    # are taken from the API v1.1 list of recent builds on main
+    builds = get(f"/v1.1/project/{PROJECT_URL_PATH}/tree/main?limit=100&shallow=true")
+    workflow_ids = {
+        build["workflows"]["workflow_id"]: None
+        for build in builds
+        if (build.get("workflows") or {}).get("workflow_name") == "nightly"
+    }
+    for workflow_id in workflow_ids:
+        workflow = get(f"/v2/workflow/{workflow_id}")
+        if workflow["created_at"].startswith(date):
+            return workflow
     sys.exit(f"No nightly found for {date}")
 
 
@@ -42,7 +48,7 @@ def main() -> None:
 
     url = f"https://app.circleci.com/pipelines/{PROJECT_URL_PATH}/{workflow['pipeline_number']}/workflows/{workflow['id']}"
     print(f"Nightly {workflow['status']}: {url}")
-    jobs = get(f"/workflow/{workflow['id']}/job")["items"]
+    jobs = get(f"/v2/workflow/{workflow['id']}/job")["items"]
     failed = sorted(job["name"] for job in jobs if job["status"] == "failed")
     print(f"Failed jobs: {', '.join(failed) or 'none'}")
 
