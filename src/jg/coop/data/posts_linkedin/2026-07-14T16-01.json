@@ -55,7 +55,7 @@
         "active": true,
         "showcase": false,
         "entityUrn": "urn:li:fs_miniCompany:111694409",
-        "followerCount": 209,
+        "followerCount": 210,
         "profileUrl": "https://www.linkedin.com/company/frontkon"
       },
       "authorType": "Company"
@@ -135,7 +135,7 @@
       "profile": {
         "firstName": "Filip",
         "lastName": "Mešša",
-        "occupation": "Senior Engineer · React, TypeScript, Next.js · UI Architecture & Design Systems · AI-assisted development · Ex-Erste (George), Kiwi.com · Open to remote",
+        "occupation": "Senior Full-Stack Engineer · React, TypeScript, Next.js, Node.js · AI-native development with Claude Code & Codex · Ex-Erste (George), Kiwi.com · Open to remote, hybrid (Bratislava) & contract",
         "id": "349677591",
         "publicId": "filipmessa",
         "profileId": "ACoAABTXqBcBJvq3NlUj6X50PLadp918RAJss9s"

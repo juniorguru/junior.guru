@@ -7,15 +7,15 @@
           {
             "width": 360,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEAFy9wJGCckA",
-            "fileIdentifyingUrlPathSegment": "low/B4DZ9HgF0pKsBI-/0/1783611024778?e=1793930400&v=beta&t=zaUy14v1bv8z4m4nzOwg0c4i3PUHFbfdIYWFhmve6qc",
-            "expiresAt": 1793930400000,
+            "fileIdentifyingUrlPathSegment": "low/B4DZ9HgF0pKsBI-/0/1783611024778?e=1794276000&v=beta&t=dU5IcfWw_hkJlg2UukSbztdP_HBLVjR4f2QA-P399xI",
+            "expiresAt": 1794276000000,
             "height": 640
           },
           {
             "width": 720,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEAFy9wJGCckA",
-            "fileIdentifyingUrlPathSegment": "high/B4DZ9HgF0pKsBM-/0/1783611024778?e=1793930400&v=beta&t=R6WCF_82LfQV5WLMtQSBLp2hr84666DR9Sm_jITkfPs",
-            "expiresAt": 1793930400000,
+            "fileIdentifyingUrlPathSegment": "high/B4DZ9HgF0pKsBM-/0/1783611024778?e=1794276000&v=beta&t=adTv0rZX_Ge378Z3uwvaWNN5d3auQk6QU8z4XHoNj_U",
+            "expiresAt": 1794276000000,
             "height": 1280
           }
         ]
@@ -25,8 +25,8 @@
           {
             "width": 360,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEAFy9wJGCckA",
-            "fileIdentifyingUrlPathSegment": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEAFy9wJGCckA/video-gif-5sec-360/B4DZ9HgF0pKsCU-/0/1783611024778?e=1793930400&v=beta&t=WCbTusZckarZvitWyoX6xImokRJn4iCDWxxqposMZgk",
-            "expiresAt": 1793930400000,
+            "fileIdentifyingUrlPathSegment": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEAFy9wJGCckA/video-gif-5sec-360/B4DZ9HgF0pKsCU-/0/1783611024778?e=1794276000&v=beta&t=V7sOqNQWG1cx4Du0cg5EBfJ5FfIW-O4d1pFte5oQn6s",
+            "expiresAt": 1794276000000,
             "height": 640
           }
         ],
@@ -36,8 +36,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEAFy9wJGCckA/mp4-720p-30fp-crf28/B4DZ9HgF0pKsB8-/0/1783611030199?e=1793930400&v=beta&t=H_LB5vsc-3BIw43jYZPiQz3Egltf8Rru8BhTPfXdUiA",
-              "expiresAt": 1793930400000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEAFy9wJGCckA/mp4-720p-30fp-crf28/B4DZ9HgF0pKsB8-/0/1783611030199?e=1794276000&v=beta&t=aEV7jF0sELG3JzLaFChSPsDWH70uv1X4OTCclGkHy_w",
+              "expiresAt": 1794276000000
             }
           ],
           "size": 0,
@@ -49,8 +49,8 @@
         {
           "streamingLocations": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEAFy9wJGCckA/mp4-640p-30fp-crf28/B4DZ9HgF0pKsBk-/0/1783611030199?e=1793930400&v=beta&t=3wElX7WFB4eZd5o3beO7Ab-QeYinbxW3Im2TVClfQK0",
-              "expiresAt": 1793930400000
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEAFy9wJGCckA/mp4-640p-30fp-crf28/B4DZ9HgF0pKsBk-/0/1783611030199?e=1794276000&v=beta&t=hl_If_xtNQhciEd05m7wUVSuB-HcIQqjMc9r5BHg9aI",
+              "expiresAt": 1794276000000
             }
           ],
           "size": 0,
@@ -70,8 +70,8 @@
           "mediaType": "application/vnd.apple.mpegURL",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEAFy9wJGCckA/CeJxzMnGJsvRIdzMo8C52KdbVcULmh6LxI9H4yWj8bF0AkJoW9Q?e=1793930400&v=beta&t=P1YMRSs_dTy4PpL3Fa3rAAUndLUAK4J3W4bmzoVQHqw",
-              "expiresAt": 1793930400000
+              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQEAFy9wJGCckA/CeJxzMnGJsvRIdzMo8C52KdbVcULmh6LxI9H4yWj8bF0AkJoW9Q?e=1794276000&v=beta&t=mc2c2qrTZfG6y_sEbtzLp51YQz5rmHmjg676M62M6AA",
+              "expiresAt": 1794276000000
             }
           ]
         },
@@ -81,8 +81,8 @@
           "mediaType": "application/dash+xml",
           "masterPlaylists": [
             {
-              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEAFy9wJGCckA/CeJxzMnGJsvRIdzMo8C52KdbVcULmh6LxI9H4yWj8bF0AkJoW9Q?e=1793930400&v=beta&t=sz5U7eiBzIOFBwd4vWA0WJoUiRBmCcyNN_qZnWOfqqA",
-              "expiresAt": 1793930400000
+              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQEAFy9wJGCckA/CeJxzMnGJsvRIdzMo8C52KdbVcULmh6LxI9H4yWj8bF0AkJoW9Q?e=1794276000&v=beta&t=pcgfWIK9Qa-ZUYGlLbNcONU2BnCKg-Tr9gbDfymaXDY",
+              "expiresAt": 1794276000000
             }
           ]
         }
@@ -93,8 +93,8 @@
           {
             "width": 720,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEAFy9wJGCckA",
-            "fileIdentifyingUrlPathSegment": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEAFy9wJGCckA/thumbnail-with-play-button-overlay-high/B4DZ9HgF0pKsC0-/0/1783611030199?e=1793930400&v=beta&t=6fWh4orYW-p2PVu7H8mfW_Y-Zg5d4v9z9caH8pdXWQQ",
-            "expiresAt": 1793930400000,
+            "fileIdentifyingUrlPathSegment": "https://dms.licdn.com/playlist/vid/v2/D4D05AQEAFy9wJGCckA/thumbnail-with-play-button-overlay-high/B4DZ9HgF0pKsC0-/0/1783611030199?e=1794276000&v=beta&t=SvU4WIN6xEBjJgYpgpsbdKyRx48h2-0GyR0cQMgCZyU",
+            "expiresAt": 1794276000000,
             "height": 1280
           }
         ],
@@ -107,15 +107,15 @@
           {
             "width": 720,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEAFy9wJGCckA",
-            "fileIdentifyingUrlPathSegment": "high/B4DZ9HgF0pKsBQ-/0/1783611024778?e=1793930400&v=beta&t=84U9JgxbkuRDGiJDHJTIzLUGob_hdGdzDjM09909oF4",
-            "expiresAt": 1793930400000,
+            "fileIdentifyingUrlPathSegment": "high/B4DZ9HgF0pKsBQ-/0/1783611024778?e=1794276000&v=beta&t=oUDQoTmLIP4pXdHqCzoqtd6bsqqEDkWvWlDu0JM0sQI",
+            "expiresAt": 1794276000000,
             "height": 1280
           },
           {
             "width": 360,
             "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQEAFy9wJGCckA",
-            "fileIdentifyingUrlPathSegment": "low/B4DZ9HgF0pKsBU-/0/1783611024778?e=1793930400&v=beta&t=Qn70Qk2oH_l_vKpyv6xjITwGlAzmfQX0h1VvAdI8QDg",
-            "expiresAt": 1793930400000,
+            "fileIdentifyingUrlPathSegment": "low/B4DZ9HgF0pKsBU-/0/1783611024778?e=1794276000&v=beta&t=7nY2m4_ZMtSmghKN_wL599Q76Rf9rsOY-UhKayXKNSs",
+            "expiresAt": 1794276000000,
             "height": 640
           }
         ],
