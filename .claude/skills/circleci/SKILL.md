@@ -11,18 +11,18 @@ Workflows include per-branch and PR builds, plus scheduled `nightly` on `main` a
 
 ## Access builds
 
-Repository public; CircleCI API needs no token. Project slug: `gh/juniorguru/junior.guru`.
+Repository public; CircleCI API needs no token. Use API v3 (`https://circleci.com/api/v3`). Project ID: `ecf683af-646e-4014-8483-a95ab98fa816`. Pages have max 20 items; follow `page.next` as `page[cursor]`. Use `curl -g`.
 
-1. List pipelines with `GET https://circleci.com/api/v2/project/gh/juniorguru/junior.guru/pipeline?branch={branch}`. Find target by pipeline `number`. On `main`, `nightly` runs around `04:xx`; `nightly-tidy` runs around `02:xx`.
-2. Get workflows with `GET /api/v2/pipeline/{pipeline_id}/workflow` and inspect each workflow's `status`.
-3. Get jobs with `GET /api/v2/workflow/{workflow_id}/job`; identify failed job and its `job_number`.
-4. Get per-step logs with `GET /api/v1.1/project/gh/juniorguru/junior.guru/{job_number}`. Fetch plain URLs found in `steps[].actions[].output_url`. API v2 does not expose per-step output.
+1. List runs with `GET /api/v3/runs?filter[project_id]={project_id}&page[limit]=20`. There is no branch filter: check `references.event.attributes.vcs.branch` and `references.trigger.attributes.event_source.type` (`schedule` for scheduled). On `main`, `nightly` runs around `04:xx`; `nightly-tidy` runs around `02:xx`.
+2. Get workflows with `GET /api/v3/workflows?filter[run_id]={run_id}` and inspect each workflow's `attributes.phase` and `attributes.outcome`.
+3. Get jobs with `GET /api/v3/jobs?filter[workflow_id]={workflow_id}`; identify failed job and its `attributes.number` (job number).
+4. Get per-step logs with `GET /api/v1.1/project/gh/juniorguru/junior.guru/{job_number}`. Fetch plain URLs found in `steps[].actions[].output_url`. API v3 job details and logs require a token, so use v1.1 for them.
 
 ## Distinguish regression from flake
 
 Always compare roughly five recent runs of same workflow, especially for network-heavy jobs such as `check-links`.
 
-Follow pipeline response `next_page_token` across pages until five matching pipelines are collected. Skip unrelated PR, branch, `nightly`, or `nightly-tidy` pipelines interleaved in results. For every matching pipeline, inspect workflows, jobs, and relevant step logs as above.
+Follow runs `page.next` across pages until five matching runs are collected. Skip unrelated PR, branch, `nightly`, or `nightly-tidy` runs interleaved in results. For every matching run, inspect workflows, jobs, and relevant step logs as above.
 
 Evidence favors intermittent failure when:
 

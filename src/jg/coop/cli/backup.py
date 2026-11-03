@@ -3,9 +3,9 @@ import subprocess
 from pathlib import Path
 
 import click
-from pycircleci.api import Api
 
 from jg.coop.lib import discord_task, loggers, mutations
+from jg.coop.lib.circleci import create_client, get_data
 from jg.coop.lib.discord_club import ClubClient
 
 
@@ -83,34 +83,39 @@ def encrypt(backup_file, passphrase, op_item):
 @click.argument("circleci_workflow")
 @click.option("--circleci-api-key", envvar="CIRCLECI_API_KEY")
 def download(circleci_workflow, circleci_api_key):
-    circleci = Api(token=circleci_api_key)
     if match := re.search(r"/workflows/([^/]+)", circleci_workflow):
         workflow_id = match.group(1)
     else:
         workflow_id = circleci_workflow
 
-    jobs = circleci.get_workflow_jobs(workflow_id, paginate=True)
-    try:
-        backup_job = next(job for job in jobs if job["name"] == "backup")
-    except StopIteration:
-        logger.error("The workflow has no backup job")
-        raise click.Abort()
+    with create_client(circleci_api_key) as client:
+        jobs = get_data(client, "/jobs", {"filter[workflow_id]": workflow_id})
+        try:
+            backup_job = next(
+                job for job in jobs if job["attributes"]["name"] == "backup"
+            )
+        except StopIteration:
+            logger.error("The workflow has no backup job")
+            raise click.Abort()
 
-    artifacts = circleci.get_artifacts(
-        "juniorguru", "junior.guru", backup_job["job_number"]
-    )
-    try:
-        backup_artifact = next(
-            artifact
-            for artifact in artifacts
-            if artifact["path"].split(".")[0] == "backup"
-        )
-    except StopIteration:
-        logger.error("The job has no backup artifact")
-        raise click.Abort()
+        artifacts = get_data(client, f"/jobs/{backup_job['id']}/artifacts")
+        try:
+            backup_artifact = next(
+                artifact["attributes"]
+                for artifact in artifacts
+                if artifact["attributes"]["path"].split(".")[0] == "backup"
+            )
+        except StopIteration:
+            logger.error("The job has no backup artifact")
+            raise click.Abort()
 
-    logger.info(f"Downloading {backup_artifact['url']}")
-    artifact_file = Path(circleci.download_artifact(backup_artifact["url"]))
+        logger.info(f"Downloading {backup_artifact['url']}")
+        artifact_file = Path(Path(backup_artifact["path"]).name)
+        with client.stream("GET", backup_artifact["url"]) as response:
+            response.raise_for_status()
+            with artifact_file.open("wb") as file:
+                for chunk in response.iter_bytes():
+                    file.write(chunk)
     logger.info(f"Done! {artifact_file.stat().st_size / 1048576:.0f} MB")
 
 

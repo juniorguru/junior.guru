@@ -1,12 +1,17 @@
-from datetime import date, datetime, timedelta
+from collections.abc import Iterable
+from datetime import UTC, datetime, timedelta
+from itertools import takewhile
 
 import click
-from pycircleci.api import Api
 
 from jg.coop.lib import loggers
+from jg.coop.lib.circleci import PROJECT_ID, create_client, get_data, get_workflow_url
 
 
 logger = loggers.from_path(__file__)
+
+
+RUNS_MAX_AGE = timedelta(days=3)
 
 
 @click.command()
@@ -15,42 +20,65 @@ logger = loggers.from_path(__file__)
 @click.option("--production", envvar="CIRCLECI")
 @click.option("--circleci-api-key", envvar="CIRCLECI_API_KEY")
 def main(circleci_branch, circleci_workflow_id, production, circleci_api_key):
-    circleci = Api(token=circleci_api_key)
-    pipelines = circleci.get_project_pipelines(
-        "juniorguru", "junior.guru", branch=circleci_branch, paginate=True
-    )
-    days_ago = date.today() - timedelta(days=3)
-    pipelines = [
-        pipeline
-        for pipeline in pipelines
-        if datetime.fromisoformat(pipeline["created_at"].rstrip("Z")).date() > days_ago
-    ]
-
-    running_workflows = {}
-    for pipeline in pipelines:
-        workflows = circleci.get_pipeline_workflow(pipeline["id"], paginate=True)
-        running_workflows.update(
-            (workflow["id"], workflow)
-            for workflow in workflows
-            if workflow["status"] == "running"
+    with create_client(circleci_api_key) as client:
+        runs = get_recent_runs(
+            get_data(client, "/runs", {"filter[project_id]": PROJECT_ID}),
+            datetime.now(UTC) - RUNS_MAX_AGE,
         )
+        workflows = [
+            workflow
+            for run in runs
+            if get_run_branch(run) == circleci_branch
+            for workflow in get_data(
+                client, "/workflows", {"filter[run_id]": run["id"]}
+            )
+        ]
+        for workflow in get_workflows_to_cancel(workflows, circleci_workflow_id):
+            url = get_workflow_url(get_run_number(workflow, runs), workflow["id"])
+            if production:
+                logger.info(f"Canceling {url}")
+                client.post(
+                    f"/workflows/{workflow['id']}/cancel", json={}
+                ).raise_for_status()
+            else:
+                logger.info(f"Would cancel {url}")
 
-    current_workflow = running_workflows.pop(circleci_workflow_id)
-    created_at = datetime.fromisoformat(current_workflow["created_at"].rstrip("Z"))
-    workflows_to_cancel = [
+
+def get_recent_runs(runs: Iterable[dict], since: datetime) -> list[dict]:
+    """Takes runs (newest first) until reaching one created before given time"""
+    return list(
+        takewhile(
+            lambda run: parse_datetime(run["attributes"]["created_at"]) >= since,
+            runs,
+        )
+    )
+
+
+def get_run_branch(run: dict) -> str | None:
+    return run["references"]["event"]["attributes"].get("vcs", {}).get("branch")
+
+
+def get_workflows_to_cancel(
+    workflows: list[dict], current_workflow_id: str
+) -> list[dict]:
+    running_workflows = {
+        workflow["id"]: workflow
+        for workflow in workflows
+        if workflow["attributes"]["phase"] != "ended"
+    }
+    current_workflow = running_workflows.pop(current_workflow_id)
+    created_at = parse_datetime(current_workflow["attributes"]["created_at"])
+    return [
         workflow
         for workflow in running_workflows.values()
-        if datetime.fromisoformat(workflow["created_at"].rstrip("Z")) < created_at
+        if parse_datetime(workflow["attributes"]["created_at"]) < created_at
     ]
 
-    for workflow in workflows_to_cancel:
-        url = (
-            "https://app.circleci.com/pipelines/"
-            "github/juniorguru/junior.guru"
-            f"/{workflow['pipeline_number']}/workflows/{workflow['id']}"
-        )
-        if production:
-            logger.info(f"Canceling {url}")
-            circleci.cancel_workflow(workflow["id"])
-        else:
-            logger.info(f"Would cancel {url}")
+
+def get_run_number(workflow: dict, runs: list[dict]) -> int:
+    run_id = workflow["references"]["run"]["id"]
+    return next(run["attributes"]["number"] for run in runs if run["id"] == run_id)
+
+
+def parse_datetime(value: str) -> datetime:
+    return datetime.fromisoformat(value)
