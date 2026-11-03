@@ -1,4 +1,6 @@
-from datetime import datetime
+from collections.abc import Iterable
+from datetime import UTC, datetime, timedelta
+from itertools import takewhile
 
 import click
 
@@ -9,7 +11,7 @@ from jg.coop.lib.circleci import PROJECT_ID, create_client, get_data, get_workfl
 logger = loggers.from_path(__file__)
 
 
-RUNS_LIMIT = 20
+RUNS_MAX_AGE = timedelta(days=3)
 
 
 @click.command()
@@ -19,10 +21,9 @@ RUNS_LIMIT = 20
 @click.option("--circleci-api-key", envvar="CIRCLECI_API_KEY")
 def main(circleci_branch, circleci_workflow_id, production, circleci_api_key):
     with create_client(circleci_api_key) as client:
-        runs = get_data(
-            client,
-            "/runs",
-            {"filter[project_id]": PROJECT_ID, "page[limit]": RUNS_LIMIT},
+        runs = get_recent_runs(
+            get_data(client, "/runs", {"filter[project_id]": PROJECT_ID}),
+            datetime.now(UTC) - RUNS_MAX_AGE,
         )
         workflows = [
             workflow
@@ -41,6 +42,16 @@ def main(circleci_branch, circleci_workflow_id, production, circleci_api_key):
                 ).raise_for_status()
             else:
                 logger.info(f"Would cancel {url}")
+
+
+def get_recent_runs(runs: Iterable[dict], since: datetime) -> list[dict]:
+    """Takes runs (newest first) until reaching one created before given time"""
+    return list(
+        takewhile(
+            lambda run: parse_datetime(run["attributes"]["created_at"]) >= since,
+            runs,
+        )
+    )
 
 
 def get_run_branch(run: dict) -> str | None:
@@ -70,4 +81,4 @@ def get_run_number(workflow: dict, runs: list[dict]) -> int:
 
 
 def parse_datetime(value: str) -> datetime:
-    return datetime.fromisoformat(value.rstrip("Z"))
+    return datetime.fromisoformat(value)

@@ -1,6 +1,9 @@
+from datetime import UTC, datetime
+
 import pytest
 
 from jg.coop.cli.cancel_previous_builds import (
+    get_recent_runs,
     get_run_branch,
     get_run_number,
     get_workflows_to_cancel,
@@ -47,3 +50,16 @@ def test_get_run_number():
     ]
 
     assert get_run_number(workflow, runs) == 42
+
+
+def test_get_recent_runs():
+    runs = iter(
+        [
+            {"id": "new", "attributes": {"created_at": "2026-11-03T10:00:00.000Z"}},
+            {"id": "old", "attributes": {"created_at": "2026-10-30T10:00:00.000Z"}},
+            {"id": "new2", "attributes": {"created_at": "2026-11-03T09:00:00.000Z"}},
+        ]
+    )
+    since = datetime(2026, 11, 1, tzinfo=UTC)
+
+    assert [run["id"] for run in get_recent_runs(runs, since)] == ["new"]
