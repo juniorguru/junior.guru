@@ -2,7 +2,7 @@ import pytest
 
 from jg.coop.cli.cancel_previous_builds import (
     get_run_branch,
-    get_workflow_url,
+    get_run_number,
     get_workflows_to_cancel,
 )
 
@@ -39,11 +39,11 @@ def test_get_run_branch(event_attributes: dict, expected: str | None):
     assert get_run_branch(run) == expected
 
 
-def test_get_workflow_url():
+def test_get_run_number():
     workflow = create_workflow("abc", "started", "2026-11-03T10:00:00.000Z")
-    runs = [{"id": "run-abc", "attributes": {"number": 42}}]
+    runs = [
+        {"id": "run-xyz", "attributes": {"number": 41}},
+        {"id": "run-abc", "attributes": {"number": 42}},
+    ]
 
-    assert get_workflow_url(workflow, runs) == (
-        "https://app.circleci.com/pipelines/github/juniorguru/junior.guru"
-        "/42/workflows/abc"
-    )
+    assert get_run_number(workflow, runs) == 42

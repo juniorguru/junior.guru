@@ -1,17 +1,13 @@
 from datetime import datetime
 
 import click
-import httpx2
 
 from jg.coop.lib import loggers
+from jg.coop.lib.circleci import PROJECT_ID, create_client, get_data, get_workflow_url
 
 
 logger = loggers.from_path(__file__)
 
-
-API_URL = "https://circleci.com/api/v3"
-
-PROJECT_ID = "ecf683af-646e-4014-8483-a95ab98fa816"  # gh/juniorguru/junior.guru
 
 RUNS_LIMIT = 20
 
@@ -22,10 +18,7 @@ RUNS_LIMIT = 20
 @click.option("--production", envvar="CIRCLECI")
 @click.option("--circleci-api-key", envvar="CIRCLECI_API_KEY")
 def main(circleci_branch, circleci_workflow_id, production, circleci_api_key):
-    headers = (
-        {"Authorization": f"Bearer {circleci_api_key}"} if circleci_api_key else {}
-    )
-    with httpx2.Client(base_url=API_URL, headers=headers, timeout=30) as client:
+    with create_client(circleci_api_key) as client:
         runs = get_data(
             client,
             "/runs",
@@ -40,7 +33,7 @@ def main(circleci_branch, circleci_workflow_id, production, circleci_api_key):
             )
         ]
         for workflow in get_workflows_to_cancel(workflows, circleci_workflow_id):
-            url = get_workflow_url(workflow, runs)
+            url = get_workflow_url(get_run_number(workflow, runs), workflow["id"])
             if production:
                 logger.info(f"Canceling {url}")
                 client.post(
@@ -48,12 +41,6 @@ def main(circleci_branch, circleci_workflow_id, production, circleci_api_key):
                 ).raise_for_status()
             else:
                 logger.info(f"Would cancel {url}")
-
-
-def get_data(client: httpx2.Client, path: str, params: dict) -> list[dict]:
-    response = client.get(path, params=params)
-    response.raise_for_status()
-    return response.json()["data"]
 
 
 def get_run_branch(run: dict) -> str | None:
@@ -77,15 +64,9 @@ def get_workflows_to_cancel(
     ]
 
 
-def get_workflow_url(workflow: dict, runs: list[dict]) -> str:
+def get_run_number(workflow: dict, runs: list[dict]) -> int:
     run_id = workflow["references"]["run"]["id"]
-    run_number = next(
-        run["attributes"]["number"] for run in runs if run["id"] == run_id
-    )
-    return (
-        "https://app.circleci.com/pipelines/github/juniorguru/junior.guru"
-        f"/{run_number}/workflows/{workflow['id']}"
-    )
+    return next(run["attributes"]["number"] for run in runs if run["id"] == run_id)
 
 
 def parse_datetime(value: str) -> datetime:

@@ -45,7 +45,6 @@ dependencies = [
   "playwright>=1.55.0",
   "pod2gen>=1.0.3",
   "py-cord[speed]@git+https://github.com/Pycord-Development/pycord.git",
-  "pycircleci>=0.7.0",
   "python-slugify>=8.0.4",
   "pyyaml>=6.0.3",
   "stripe>=13.0.1",
