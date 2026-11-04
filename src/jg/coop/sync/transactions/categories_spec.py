@@ -7,8 +7,9 @@ from jg.coop.models.transaction import TransactionsCategory
 CATEGORIES_SPEC = []
 
 
-def category_rule(rule: Callable):
+def category_rule(rule: Callable) -> Callable:
     CATEGORIES_SPEC.append(rule)
+    return rule
 
 
 @category_rule
@@ -31,7 +32,8 @@ def membership_by_invoice(transaction: dict, secrets: dict) -> TransactionsCateg
 
 @category_rule
 def pavlun(transaction: dict, secrets: dict) -> TransactionsCategory:
-    if "pavlun" in transaction["message"] and transaction["amount"] < 0:
+    text = f"{transaction['message']} {transaction.get('account_name') or ''}"
+    if "pavlun" in text.lower() and transaction["amount"] < 0:
         return TransactionsCategory.PRODUCTION
     if "doniocz" in transaction["message"] and transaction["amount"] == 6180:
         return TransactionsCategory.PRODUCTION
