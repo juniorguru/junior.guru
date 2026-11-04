@@ -22,7 +22,7 @@ dependencies = [
   "fiobank>=4.0.0",
   "fonttools>=4.60.1",
   # Capped until jg.hen can be upgraded, see #1947
-  "githubkit>=0.13.3,<0.16",
+  "githubkit>=0.13.3,<0.18",
   "google-api-python-client>=2.184.0",
   "google-auth>=2.41.1",
   # Pre-release: httpx2 support (gql[httpx2]) lands only in gql 4.4 betas.
