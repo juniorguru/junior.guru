@@ -2,10 +2,12 @@ from datetime import date
 
 import pytest
 
+from jg.coop.models.transaction import TransactionsCategory
 from jg.coop.sync.transactions import (
     get_todo_key,
     normalize_variable_symbol,
 )
+from jg.coop.sync.transactions.categories_spec import pavlun
 
 
 def test_get_todo_key():
@@ -41,3 +43,23 @@ def test_get_todo_key():
 )
 def test_normalize_variable_symbol(value, expected):
     assert normalize_variable_symbol(value) == expected
+
+
+@pytest.mark.parametrize(
+    "message, account_name",
+    [
+        ("pavlun", None),
+        ("Adéla PAVLUN, faktura", None),
+        ("rozhovor", "Pavlun Adéla"),
+    ],
+)
+def test_pavlun(message: str, account_name: str | None):
+    transaction = {"message": message, "account_name": account_name, "amount": -4000}
+
+    assert pavlun(transaction, {}) == TransactionsCategory.PRODUCTION
+
+
+def test_pavlun_ignores_incoming():
+    transaction = {"message": "Pavlun", "account_name": None, "amount": 4000}
+
+    assert pavlun(transaction, {}) is None
