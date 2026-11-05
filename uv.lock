@@ -1039,7 +1039,7 @@ requires-dist = [
     { name = "feedparser", specifier = ">=6.0.12" },
     { name = "fiobank", specifier = ">=4.0.0" },
     { name = "fonttools", specifier = ">=4.60.1" },
-    { name = "githubkit", specifier = ">=0.13.3,<0.16" },
+    { name = "githubkit", specifier = ">=0.13.3,<0.18" },
     { name = "google-api-python-client", specifier = ">=2.184.0" },
     { name = "google-auth", specifier = ">=2.41.1" },
     { name = "gql", extras = ["httpx2"], specifier = ">=4.4.0b0" },
