@@ -62,8 +62,8 @@ exclude = [
   "^https://(www\\.)?it-academy\\.sk",
 
   # Anti-scraping protections
-  "^https://((www\\.|m\\.)?youtube\\.com|youtu\\.be)", # HTTP/2 protocol errors, search results trigger Google's abuse gate (endless 302 loop)
-  "^https://([^/]+\\.)?medium\\.com", # 403s on a different set of URLs every night
+  "^https://((www\\.|m\\.)?youtube\\.com|youtu\\.be)",
+  "^https://([^/]+\\.)?medium\\.com",
   "^https://(www\\.)?(linkedin|facebook|reddit)\\.com",
   "^https://(www\\.)?(beeit|glancemedia|prace\\.rovnou|keyguru|sifrovacky)\\.cz",
   "^https://([^\\.]+\\.)?discord\\.com",
