@@ -8,7 +8,7 @@ from mkdocs.structure.pages import Page
 from mkdocs.structure.toc import get_toc
 from mkdocs.utils.templates import url_filter
 
-from jg.coop.lib import loggers, template_filters
+from jg.coop.lib import json_ld, loggers, template_filters
 from jg.coop.lib.cache import get_jinja_cache
 
 
@@ -43,6 +43,13 @@ TEMPLATE_FILTERS = [
     "toc",
     "unwrap_webarchive_url",
 ]
+
+TEMPLATE_GLOBALS = {
+    "article_json_ld": json_ld.article_json_ld,
+    "breadcrumb_list_json_ld": json_ld.breadcrumb_list_json_ld,
+    "organization_json_ld": json_ld.organization_json_ld,
+    "website_json_ld": json_ld.website_json_ld,
+}
 
 
 logger = loggers.from_path(__file__)
@@ -117,6 +124,7 @@ def get_env(config: Config) -> Environment:
     )
     env.filters.update(get_filters())
     env.filters["url"] = url_filter
+    env.globals.update(TEMPLATE_GLOBALS)
     return env
 
 

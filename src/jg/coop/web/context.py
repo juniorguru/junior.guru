@@ -7,6 +7,7 @@ from jg.coop.lib.discord_club import (
     ClubChannelID,
     ClubMemberID,
 )
+from jg.coop.lib.social import GITHUB_URL, YOUTUBE_URL
 from jg.coop.models.base import db
 from jg.coop.models.blog import BlogArticle
 from jg.coop.models.candidate import Candidate
@@ -21,7 +22,14 @@ from jg.coop.models.job import PARTTIME_TAG_SLUGS, DiscordJob, ListedJob
 from jg.coop.models.newsletter import NewsletterIssue
 from jg.coop.models.page import Page
 from jg.coop.models.partner import Partner
-from jg.coop.models.podcast import PodcastEpisode
+from jg.coop.models.podcast import (
+    PODCAST_APPLE_URL,
+    PODCAST_FEED_URL,
+    PODCAST_SPOTIFY_URL,
+    PODCAST_YOUTUBE_URL,
+    PodcastEpisode,
+    podcast_series_json_ld,
+)
 from jg.coop.models.role import InterestRole
 from jg.coop.models.sponsor import GitHubSponsor, PastSponsor, Sponsor, SponsorTier
 from jg.coop.models.stage import Stage
@@ -45,6 +53,16 @@ def on_shared_context(context):
     context["now"] = now
     context["today"] = today
     context["club_events_channel_url"] = CLUB_EVENTS_CHANNEL_URL
+
+    # main.html, events.md, about/marketing.md
+    context["youtube_url"] = YOUTUBE_URL
+    context["github_url"] = GITHUB_URL
+
+    # main_podcast.html, podcast.md, news.jinja
+    context["podcast_feed_url"] = PODCAST_FEED_URL
+    context["podcast_youtube_url"] = PODCAST_YOUTUBE_URL
+    context["podcast_spotify_url"] = PODCAST_SPOTIFY_URL
+    context["podcast_apple_url"] = PODCAST_APPLE_URL
 
     # main.html, index.jinja, about/*.md, love.jinja
     context["sponsors_github"] = GitHubSponsor.listing()
@@ -147,6 +165,9 @@ def on_docs_context(context):
 
     # podcast.md, handbook/cv.md, news.jinja
     context["podcast_episodes"] = PodcastEpisode.listing()
+
+    # podcast.md
+    context["podcast_series_json_ld"] = podcast_series_json_ld()
 
     # events.md, news.jinja
     context["events_planned"] = Event.planned_listing()

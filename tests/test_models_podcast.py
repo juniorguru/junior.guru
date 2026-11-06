@@ -1,9 +1,14 @@
+import json
 from datetime import date, datetime
 from zoneinfo import ZoneInfo
 
 import pytest
 
-from jg.coop.models.podcast import PodcastEpisode
+from jg.coop.models.podcast import (
+    PODCAST_NAME,
+    PodcastEpisode,
+    podcast_series_json_ld,
+)
 
 
 def test_publish_at_prg():
@@ -65,6 +70,53 @@ def test_format_title_with_no_guest(kwargs, expected):
     podcast_episode = PodcastEpisode(number=1, title="About testing")
 
     assert podcast_episode.format_title(**kwargs) == expected
+
+
+def test_to_json_ld():
+    podcast_episode = PodcastEpisode(
+        number=42,
+        publish_on=date(2023, 2, 10),
+        title="about testing",
+        guest_name="Adéla",
+        guest_affiliation="Company",
+        image_path="podcast/42.jpg",
+        media_url="https://example.com/42.mp3",
+        media_size=1000,
+        media_type="audio/mpeg",
+        media_duration_s=3600,
+        description="Description",
+    )
+
+    assert json.loads(podcast_episode.to_json_ld()) == {
+        "@context": "https://schema.org",
+        "@type": "PodcastEpisode",
+        "associatedMedia": {
+            "@type": "MediaObject",
+            "contentSize": "1000",
+            "contentUrl": "https://example.com/42.mp3",
+            "encodingFormat": "audio/mpeg",
+        },
+        "datePublished": "2023-02-10",
+        "description": "Description",
+        "duration": "PT3600S",
+        "episodeNumber": 42,
+        "image": "https://junior.guru/static/podcast/42.jpg",
+        "inLanguage": "cs",
+        "name": "Adéla (Company) about testing",
+        "partOfSeries": {
+            "@type": "PodcastSeries",
+            "@id": "https://junior.guru/podcast/#series",
+            "name": PODCAST_NAME,
+            "url": "https://junior.guru/podcast/",
+        },
+        "url": "https://junior.guru/podcast/42/",
+    }
+
+
+def test_podcast_series_json_ld():
+    data = json.loads(podcast_series_json_ld())
+
+    assert data["@id"] == "https://junior.guru/podcast/#series"
 
 
 @pytest.mark.parametrize(
