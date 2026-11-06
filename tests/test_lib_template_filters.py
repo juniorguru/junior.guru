@@ -1,5 +1,6 @@
 from collections import namedtuple
 from datetime import UTC, date, datetime, timedelta
+from types import SimpleNamespace
 
 import pytest
 from mkdocs.structure.files import File
@@ -125,6 +126,26 @@ StubJob = namedtuple("Job", ["id", "is_submitted"])
 )
 def test_sample_jobs(jobs, n, expected):
     assert set(template_filters.sample_jobs(jobs, n)) == expected
+
+
+@pytest.mark.parametrize(
+    "tag_slugs, expected",
+    [
+        (["python"], ["a", "b"]),
+        (["java", "ruby"], ["b", "c"]),
+        (["php"], []),
+    ],
+)
+def test_tagged(tag_slugs: list[str], expected: list[str]):
+    items = [
+        SimpleNamespace(id="a", tags=[SimpleNamespace(slug="python")]),
+        SimpleNamespace(
+            id="b", tags=[SimpleNamespace(slug="python"), SimpleNamespace(slug="java")]
+        ),
+        SimpleNamespace(id="c", tags=[SimpleNamespace(slug="ruby")]),
+    ]
+
+    assert [item.id for item in template_filters.tagged(items, tag_slugs)] == expected
 
 
 def test_sample_jobs_not_enough_preferred_jobs():

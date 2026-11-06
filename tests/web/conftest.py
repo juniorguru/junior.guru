@@ -35,6 +35,7 @@ from jg.coop.web.context import get_candidates_context, get_jobs_context
 from jg.coop.web.generators import (
     generate_employment_type_jobs_pages,
     generate_region_jobs_pages,
+    generate_tech_jobs_pages,
 )
 
 from testing_utils import prepare_test_db
@@ -170,7 +171,7 @@ def jobs_page(test_db: SqliteDatabase, serve: Callable[[str], None]) -> Callable
     """
     Renders jobs.jinja from whatever jobs are in the test database
 
-    For listing pages, such as /jobs/brno/ or /jobs/part-time/, it takes page metadata
+    For listing pages, such as /jobs/brno/, /jobs/part-time/, or /jobs/python/, it takes page metadata
     from the same generator which creates those pages for the real website.
     """
 
@@ -186,7 +187,9 @@ def jobs_page(test_db: SqliteDatabase, serve: Callable[[str], None]) -> Callable
 def get_listing_jobs_page_meta(url: str) -> dict[str, Any]:
     path = url.strip("/") + ".jinja"
     for document in chain(
-        generate_region_jobs_pages(), generate_employment_type_jobs_pages()
+        generate_region_jobs_pages(),
+        generate_employment_type_jobs_pages(),
+        generate_tech_jobs_pages(),
     ):
         if document.path == path:
             return document.meta
