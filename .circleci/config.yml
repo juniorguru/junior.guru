@@ -312,9 +312,21 @@ jobs:
       - run:
           name: Lychee version
           command: ./lychee --version
+      - install-dependencies
+      - restore_cache:
+          key: lychee-history-v1-{{ .Branch }}-
       - run:
           name: Check links
-          command: ./lychee public
+          # Exit code 2 means broken links, which are analyzed in the next step
+          command: ./lychee --format json --output lychee.json public || [ $? -eq 2 ]
+      - run:
+          name: Analyze broken links
+          command: uv run jg check-links lychee.json --history-path .lychee-history.json
+      - save_cache:
+          key: lychee-history-v1-{{ .Branch }}-{{ epoch }}
+          paths:
+            - .lychee-history.json
+          when: always
 
   check-bot:
     executor: python-js

@@ -32,7 +32,7 @@ Evidence favors intermittent failure when:
 
 Evidence favors regression when same deterministic error repeats across runs in same commit range, such as `404`, assertion failure, or non-zero exit from application logic.
 
-When flaky call belongs to project code, retrying with `tenacity` is often appropriate; dependency already used under `src/jg/coop/sync`. Handle external `check-links` flakes in lychee configuration instead of changing remote target.
+When flaky call belongs to project code, retrying with `tenacity` is often appropriate; dependency already used under `src/jg/coop/sync`. Handle external `check-links` flakes in lychee configuration instead of changing remote target. The `check-links` job fails only on links which failed in each of the last three nightly checks (`uv run jg check-links`, history cached in CircleCI); its log lists them in the "Analyze broken links" step, while all other failures are only reported.
 
 ## Reminders
 
