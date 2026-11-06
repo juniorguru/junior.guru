@@ -1,0 +1,155 @@
+{
+  "type": "article",
+  "article": {
+    "type": "FIRST_PARTY",
+    "urn": "urn:li:linkedInArticle:7523388414679805953",
+    "url": "https://www.linkedin.com/pulse/t%25C3%25BDdenn%25C3%25AD-pozn%25C3%25A1mky-nov%25C3%25BD-%25C5%25BEivot-honza-javorek-ea09f",
+    "title": "Týdenní poznámky: Nový život",
+    "description": "Jak se mi daří pracovat na junior.guru a dalších věcech? Od posledních poznámek už utekl nějaký ten týden (2. 10. až 2. 11.), tak nastal čas se opět o"
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7523389132140785665",
+  "url": "https://www.linkedin.com/posts/honzajavorek_v-%C5%99%C3%ADjnu-to-byla-j%C3%ADzda-tak%C5%BEe-t%C3%BDdenn%C3%AD-pozn%C3%A1mky-activity-7523389132140785665-Wt83",
+  "shareUrn": "urn:li:ugcPost:7523389131683692544",
+  "text": "V říjnu to byla jízda, takže „týdenní poznámky“ až po měsíci. Dlouhé a výživné! O životě před miminkem a s miminkem. O dopravních omezeních na Praze 3. O junior.guru, o Apify, a taky hodně o AI. Ale bude to i o Šmoulech! A malé cameo má dokonce i Láďa Hruška.",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Vysoky",
+        "occupation": "Founder & CTO at Roomstorm",
+        "id": "15425730",
+        "publicId": "jakubvysoky",
+        "profileId": "ACoAAADrYMIB-G1Ga_9z6wmfEDMsav3918zrFVs"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Bára",
+        "lastName": "Drbohlavová",
+        "occupation": "data – events – community",
+        "id": "138678453",
+        "publicId": "baradrb",
+        "profileId": "ACoAAAhEELUBh00AQMpcqeGwUSsN_Kuc2a0w0G8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Čamborová",
+        "occupation": "SW developer",
+        "id": "1082522617",
+        "publicId": "veronika-čamborová",
+        "profileId": "ACoAAECF-_kB69byXoaMHs_qzffiv1hqdN_aZ0U"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Irena",
+        "lastName": "Zatloukalova",
+        "occupation": "Founder & CEO @Diversight.ai | Helping B2B companies eliminate Data Debt and AI Hallucinations through high-precision Human-in-the-Loop validation | Empowering #AutisticTalent in Tech 🚀",
+        "id": "99891449",
+        "publicId": "izatlouk",
+        "profileId": "ACoAAAX0OPkBzZjVvVi08LqhaKA5UMdVz4M5inM"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Sarka",
+        "lastName": "Melicharova",
+        "occupation": "Czech language teacher for foreigners | Czech for life & Czech for exams (A2, B1, ...) | Czech Buddy",
+        "id": "648814916",
+        "publicId": "melicharova",
+        "profileId": "ACoAACasIUQBi0zapOVDWOPcCXCviPxBdRa-Lgo"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Zmijková",
+        "occupation": "Software Developer",
+        "id": "450096743",
+        "publicId": "zmijkova",
+        "profileId": "ACoAABrT7mcBs7ie4r1nA4McNBK2tV0qfujA2v4"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Adéla",
+        "lastName": "Pavlun",
+        "occupation": "Somatic Guide & Writer | TRE® · SE® | Exploring human connection, safety and growth",
+        "id": "59184567",
+        "publicId": "adelapavlun",
+        "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Přibil",
+        "occupation": "Global Sales Manager | Specialty Lubricants",
+        "id": "132002824",
+        "publicId": "petr-pribil",
+        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Monika",
+        "lastName": "Pencikova",
+        "occupation": "Accounts Receivable Specialist | SAP | Credit & Collections | German & English | Shared Services",
+        "id": "327149170",
+        "publicId": "monika-pencikova-52a68a91",
+        "profileId": "ACoAABN_5nIBA_vikujfaQgDNO8RrD1Bi_-4xKo"
+      }
+    }
+  ],
+  "numShares": 0,
+  "numLikes": 10,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1793715746913,
+  "postedAtISO": "2026-11-03T14:22:26.913Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

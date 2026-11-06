@@ -1,0 +1,136 @@
+{
+  "type": "image",
+  "images": [],
+  "isActivity": true,
+  "activityDescription": "Honza Javorek reposted this",
+  "activityOfUser": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "urn": "urn:li:activity:7523492192460435456",
+  "url": "https://www.linkedin.com/posts/barborahulova_pycon-cz-2027-hled%C3%A1-sponzory-pycon-cz-activity-7523382971719086080-Gxq9",
+  "shareUrn": "urn:li:share:7523382970611789825",
+  "text": "Pycon CZ 2027 hledá sponzory! 🍀\n\nPyCon CZ sdružuje vývojáře, datové vědce, studenty a open-source projektů přispěvatele, aby si zdokonalili své dovednosti, podělili se o to, co funguje v praxi, a prozkoumali nové technologie a poznali nové přátele a kontakty. \nJe to konference, kterou organizují výhradně dobrovolníci, a proto se spoléháme na sponzorskou podporu, aby vstupenky zůstaly cenově dostupné.\n\nNo jo, ale proč byste měli uvažovat o sponzoringu Pyconu? 👀\nJako sponzor můžete:\n• Zvýšit povědomí o vaší společnosti v rámci české Pythonové komunity\n• Navázat kontakty a spolupráci s vývojáři, architekty, kteří mohou posunout vaše kolegy, ale také můžete navázat vztahy s potenciálními budoucími zaměstnanci\n• Prezentovat své produkty, nástroje a technologie přímo lidem, kteří je používají\n• Investovat do silnější Python komunity, která podporuje úspěch vaší firmy\n• Objevit nové příležitosti pro partnerství a spolupráci\n\nJe úplně jedno zda jste rostoucí startup, zavedená firma nebo velká technologická společnost, máme pro vás možnosti, které odpovídají vašim cílům i rozpočtu – ať už se chcete zviditelnit mezi 400 a více účastníky nebo se aktivněji účastnit na pořádání této akce.\n\nMáte otázky? Kontaktujte náš tým, který má partnerství na starosti: sponsorship@pycon.cz\n\nChcete vědět víc? \nKoukněte na nabídku sponzorských balíčků: https://lnkd.in/dp-3tAyB\n\nA pokud chcete pomoci jen tak, budu ráda, když o Pyconu řeknete dál, třeba firmě ve vašem okolí, která Python používá a mohla by se podílet na rozšíření komunity i know-how okolo světa Pythonu 🐍",
+  "attributes": [],
+  "comments": [],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Vanek",
+        "occupation": "Keep calm and write code",
+        "id": "234412487",
+        "publicId": "vanekjiri",
+        "profileId": "ACoAAA342ccBU2kYn7pzshLgGTLyXZ22Ge9gmmE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Nizar Akbar",
+        "lastName": "Meilani",
+        "occupation": "Linux System Administrator with The Analysis Skill of Reverse Engineer",
+        "id": "509409970",
+        "publicId": "nizarakbarm",
+        "profileId": "ACoAAB5c-rIBPMnuS4pHUyTMZLYzie1ulcFvBY8"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Bojan",
+        "lastName": "Jovanovic",
+        "occupation": "Elasticsearch & OpenSearch experts who design, fix and scale search infrastructure | Official Elastic Partner | Founder, PyCon Balkan",
+        "id": "94458396",
+        "publicId": "bojovanovic",
+        "profileId": "ACoAAAWhUhwBqJRTQqxuC7DddplqLvj1odHp4rw"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Eva",
+        "lastName": "Bohnova",
+        "occupation": "Power BI Developer | PL-300 Certified | SQL • Data Modeling • Analytics & Automation | PyCon CZ Volunteer",
+        "id": "462766551",
+        "publicId": "eva-bohnova-873b9010a",
+        "profileId": "ACoAABuVQdcB_sDsFeGHmC-uQ-e1-MpuDl4GT-0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lutfi",
+        "lastName": "Zuchri",
+        "occupation": "Sponsorship team @ WordCamp Asia, Community Steward @ Python, PyData & WP ID, Empowering Tech @ OpenTechAlliance",
+        "id": "5700907",
+        "publicId": "lutfizuchri",
+        "profileId": "ACoAAABW_SsBtUsNIW6XW1pfzqxIGRTZN32t-jo"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Mária",
+        "lastName": "Melišková",
+        "occupation": "Volunteer Organizer at PyCon CZ",
+        "id": "1879219593",
+        "publicId": "mária-melišková-40941b445",
+        "profileId": "ACoAAHACnYkBTSm9dRjAmMmn3Y3Cq4mgZz_yOTw"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Honza",
+        "lastName": "Král",
+        "occupation": "Principal/Staff Engineer and Consultant",
+        "id": "15417913",
+        "publicId": "honzakral",
+        "profileId": "ACoAAADrQjkBMdyjVQZIdZEP_111Ovr9-Xie6mA"
+      }
+    }
+  ],
+  "numShares": 3,
+  "numLikes": 8,
+  "numComments": 0,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Barbora",
+    "lastName": "Hůlová",
+    "occupation": "SW engineer - Heureka Group | Extrovert community cheerleader 🐍👩🏻‍💻 | “Head” of volunteers for next PyCon CZ 2027",
+    "id": "924061147",
+    "publicId": "barborahulova",
+    "profileId": "ACoAADcUDdsB8hutIOCmI8gTlj5Pxa3eof1-z6o"
+  },
+  "authorProfileId": "barborahulova",
+  "authorType": "Person",
+  "authorName": "Barbora Hůlová",
+  "authorProfileUrl": "https://www.linkedin.com/in/barborahulova?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADcUDdsB8hutIOCmI8gTlj5Pxa3eof1-z6o",
+  "authorUrn": "urn:li:member:924061147",
+  "postedAtTimestamp": 1793740318408,
+  "postedAtISO": "2026-11-03T21:11:58.408Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}
