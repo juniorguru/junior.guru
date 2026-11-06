@@ -359,7 +359,7 @@ Pokud se učíš vytvářet webovky, **vyrob si osobní stránky**. Bude se to p
 
 ### Buď člověk
 
-[Yablko](https://robweb.sk) radí, ať dáš **průchod svojí osobnosti**. Píše o tom ve svém starším článku [Ukaž, že jsi člověk](https://medium.com/@yablko/uk%C3%A1%C5%BE-%C5%BEe-si-%C4%8Dlovek-3d134c421940) a zmiňuje to i tady ve videu:
+[Yablko](https://www.youtube.com/@RobWebSK) radí, ať dáš **průchod svojí osobnosti**. Píše o tom ve svém starším článku [Ukaž, že jsi člověk](https://medium.com/@yablko/uk%C3%A1%C5%BE-%C5%BEe-si-%C4%8Dlovek-3d134c421940) a zmiňuje to i tady ve videu:
 
 {{ video_card(
   'Jak získat job v IT?',

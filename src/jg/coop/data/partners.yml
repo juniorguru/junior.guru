@@ -64,7 +64,7 @@ registry:
 
   - name: yablko
     slug: yablko
-    url: http://robweb.sk/
+    url: https://www.youtube.com/@RobWebSK
     sk_business_id: 50518224
     start_on: 2020-09
     subscription: https://juniorguru.memberful.com/admin/subscriptions/3699660
