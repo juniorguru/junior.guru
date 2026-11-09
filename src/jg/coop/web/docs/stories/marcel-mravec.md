@@ -162,7 +162,7 @@ Nebál bych se toho, ale zároveň bych nepřeceňoval, jak jednoduché to bud
 
 **Co tě na programování baví?**
 
-Vždycky mě bavilo řešit problémy a hádanky. Programování mě baví a myslím, že je to dobrá věc i do důchodu. Člověk nezakrní.
+Vždycky mě bavilo řešit problémy a hádanky. Programování mě baví, a myslím, že je to dobrá věc i do důchodu. Člověk nezakrní.
 
 **Kam by ses chtěl profesně posunout?**
 
