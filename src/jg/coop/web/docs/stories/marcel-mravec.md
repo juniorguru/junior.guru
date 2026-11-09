@@ -93,7 +93,7 @@ Studenti to neplatí. Funguje to tak, že školu podporují firmy, které maj
 
 Záleží na tom, kam až chce člověk dojít. Já už mám dokončenou základní část studia, které se říká _Common Core_. Na jejím konci jsem složil závěrečnou zkoušku, dostal potvrzení o absolvování a měli jsme také setkání se sponzory školy.
 
-Ve studiu ale pokračuji dál v takzvaném Advanced Core. Projekty jsou náročnější a často na nich pracuje více studentů společně. Podmínkou pro dokončení je také praxe. Podle toho, jaké další projekty člověk absolvuje, může získat francouzskou profesní kvalifikaci RNCP úrovně 6 nebo 7, které zhruba odpovídají bakalářskému a magisterskému stupni vzdělání.
+Ve studiu ale pokračuji dál v takzvaném _Advanced Core_. Projekty jsou náročnější a často na nich pracuje více studentů společně. Podmínkou pro dokončení je také praxe. Podle toho, jaké další projekty člověk absolvuje, může získat francouzskou profesní kvalifikaci RNCP úrovně 6 nebo 7, které zhruba odpovídají bakalářskému a magisterskému stupni vzdělání.
 
 Na dokončení mám celkem čtyři a půl roku. Já ale nikam nespěchám. Pokračuji hlavně proto, že mě studium pořád posouvá a učím se díky němu nové věci.
 
