@@ -137,7 +137,7 @@ Udělal jsem mobilní aplikaci, která umožňuje vyplnit formulář o nehodě.
 
 **Doporučil bys něco konkrétního lidem, kteří se chtějí věnovat iOS vývoji?**
 
-Hodně mi pomohl kurz 100 Days of Swift. Je zaměřený na lidi, kteří se učí Swift a vývoj pro zařízení Apple.
+Hodně mi pomohl kurz [100 Days of Swift](https://www.hackingwithswift.com/100). Je zaměřený na lidi, kteří se učí Swift a vývoj pro zařízení Apple.
 
 {{ blockquote_avatar(
 	'Programování je dobrá věc i do důchodu. Člověk nezakrní.',
