@@ -817,4 +817,10 @@ https://www.youtube.com/watch?v=HTUh0OO6Kmo
 ---
 
 
+--- https://discord.com/channels/769966886598737931/1401948283361955940/1560946236289191976
+> Tohle je super resource pro lidi na ai https://github.com/rohitg00/ai-engineering-from-scratch
+Přeposílám od známého, jen jsem to zatím proletěl. Prý dobrý manuál pro lidi, kteří chtějí umět od základů stavět AI systémy.
+---
+
+
 #} -->

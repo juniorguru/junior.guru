@@ -778,4 +778,10 @@ Když slyším že jste někde měli desítky padajících testů a takový kód
 ---
 
 
+--- https://discord.com/channels/769966886598737931/769966887055392768/1564985690838540310
+https://felixrieseberg.com/hunger-beats-tenure-advice-for-junior-engineers/
+Naděje pro juniory: už nepotřebují roky praxe s programováním, nevědí, že “něco nejde”, mají nové nápady a empatii k zákazníkům.
+---
+
+
 #} -->
