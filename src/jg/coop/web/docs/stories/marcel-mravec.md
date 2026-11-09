@@ -33,7 +33,7 @@ template: main_content_detail.html
 <div class="article-lead">
 {{ img('static/' + page.meta.interviewee_avatar_path, page.title + ', foto', 100, 100, lazy=False, class='article-image') }}
 {% call lead() %}
-Marcel Mravec začal programovat už na základní škole, do IT se ale naplno pustil až o několik desítek let později. Po letech v rodinném podnikání se postupně propracoval k vývoji mobilních aplikací. Dnes působí jako iOS vývojář, vedle zaměstnání studuje na 42 Prague a otevřeně mluví o tom, jak náročné je hledat práci v době, kdy mají firmy z čeho vybírat a juniorům se dveře do oboru neotevírají snadno.
+Marcel Mravec začal programovat už na základní škole, do IT se ale naplno pustil až o několik desítek let později. Po letech v rodinném podnikání se postupně propracoval k vývoji mobilních aplikací. Dnes působí jako iOS vývojář, vedle zaměstnání studuje na [42 Prague](../courses/42prague.md) a otevřeně mluví o tom, jak náročné je hledat práci v době, kdy mají firmy z čeho vybírat a juniorům se dveře do oboru neotevírají snadno.
 {% endcall %}
 </div>
 
