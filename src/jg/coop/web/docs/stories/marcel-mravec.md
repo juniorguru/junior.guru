@@ -69,7 +69,7 @@ Mezitím jsem se ale hlásil také do firmy Evolwings, která hledala iOS výv
 
 **Red Hat je známá firma a nabízel ti velmi dobré podmínky. Proč ses nakonec rozhodl pro Evolwings?**
 
-Bylo to docela dilema. Red Hat je super firma, kde bych se mohl naučit spoustu nových věcí. Nabízeli mi pozici Quality Engineera, kde bych pracoval s C a Linuxem. Na druhé straně tu byla Evolwings, kde bych mohl dělat iOS vývoj. Ten jsem vždycky chtěl dělat, baví mě a navíc šlo o plně remote práci, což mi také vyhovuje.
+Bylo to docela dilema. Red Hat je super firma, kde bych se mohl naučit spoustu nových věcí. Nabízeli mi pozici Quality Engineera, kde bych pracoval s C a Linuxem. Na druhé straně tu byla Evolwings, kde bych mohl dělat iOS vývoj. Ten jsem vždycky chtěl dělat, baví mě, a navíc šlo o plně remote práci, což mi také vyhovuje.
 
 Nakonec jsem se rozhodl pro Evolwings. Vzal jsem méně peněz, ale mohl jsem se věnovat tomu, co mě skutečně baví. Pro peníze to nedělám.
 
