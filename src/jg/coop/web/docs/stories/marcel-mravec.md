@@ -63,13 +63,13 @@ Nastoupil jsem do Cleverlance, kde jsem poprvé pracoval jako iOS vývojář. Z
 
 **Nakonec ses ale dostal do situace, kdy sis mohl vybírat mezi dvěma pracovními nabídkami. Jak se to seběhlo?**
 
-V březnu 2025 jsem se hlásil do RedHatu na pozici Associate Quality Engineer, kde se pracovalo s C a Linuxem. To jsou technologie, kterým se věnuji i na 42 Prague, takže mi pozice dávala smysl. Prošel jsem několika koly pohovorů, dostal jsem domácí úkol a nakonec mi nabídli práci za šedesát tisíc hrubého, což byla na juniorní pozici opravdu luxusní nabídka.
+V březnu 2025 jsem se hlásil do Red Hatu na pozici Associate Quality Engineer, kde se pracovalo s C a Linuxem. To jsou technologie, kterým se věnuji i na 42 Prague, takže mi pozice dávala smysl. Prošel jsem několika koly pohovorů, dostal jsem domácí úkol a nakonec mi nabídli práci za šedesát tisíc hrubého, což byla na juniorní pozici opravdu luxusní nabídka.
 
 Mezitím jsem se ale hlásil také do firmy Evolwings, která hledala iOS vývojáře. Absolvoval jsem pohovor a dostal domácí úkol, ve kterém jsem pracoval na projektu v Kotlin Multiplatform. Nakonec mi i oni nabídli místo.
 
-**RedHat je známá firma a nabízel ti velmi dobré podmínky. Proč ses nakonec rozhodl pro Evolwings?**
+**Red Hat je známá firma a nabízel ti velmi dobré podmínky. Proč ses nakonec rozhodl pro Evolwings?**
 
-Bylo to docela dilema. RedHat je super firma, kde bych se mohl naučit spoustu nových věcí. Nabízeli mi pozici Quality Engineera, kde bych pracoval s C a Linuxem. Na druhé straně tu byla Evolwings, kde bych mohl dělat iOS vývoj. Ten jsem vždycky chtěl dělat, baví mě a navíc šlo o plně remote práci, což mi také vyhovuje.
+Bylo to docela dilema. Red Hat je super firma, kde bych se mohl naučit spoustu nových věcí. Nabízeli mi pozici Quality Engineera, kde bych pracoval s C a Linuxem. Na druhé straně tu byla Evolwings, kde bych mohl dělat iOS vývoj. Ten jsem vždycky chtěl dělat, baví mě a navíc šlo o plně remote práci, což mi také vyhovuje.
 
 Nakonec jsem se rozhodl pro Evolwings. Vzal jsem méně peněz, ale mohl jsem se věnovat tomu, co mě skutečně baví. Pro peníze to nedělám.
 
@@ -99,7 +99,7 @@ Na dokončení mám celkem čtyři a půl roku. Já ale nikam nespěchám. Po
 
 **Jak se díváš na svou pozici na trhu práce s dosavadními zkušenostmi?**
 
-Když se podívám, kolik lidí v Česku hledá práci, nejsem si jistý, jestli by mi moje dosavadní praxe stačila, abych se snadno uplatnil někde jinde. Nedávno jsem se znovu zkoušel hlásit do RedHatu na pozici, kde se pracovalo s C. To se učím ve škole, takže by mi to vyhovovalo. Tentokrát mě ale dál nepozvali.
+Když se podívám, kolik lidí v Česku hledá práci, nejsem si jistý, jestli by mi moje dosavadní praxe stačila, abych se snadno uplatnil někde jinde. Nedávno jsem se znovu zkoušel hlásit do Red Hatu na pozici, kde se pracovalo s C. To se učím ve škole, takže by mi to vyhovovalo. Tentokrát mě ale dál nepozvali.
 
 Jsem rád, že mám práci a nemusím teď nic akutně řešit. I u nás je ale vidět, že práce ubývá. Kolegové, kteří s námi pracují externě, mají také problém najít další zakázky, přestože mají třeba víc zkušeností než já.
 
@@ -109,7 +109,7 @@ Jednoduché by bylo říct, že za to může AI, ale to není odpověď na�
 
 Aplikací je spousta. Dřív si někdo nechal vytvořit mobilní aplikaci, protože na to měl peníze a chtěl něco moderního. Nakonec se ale ukázalo, že mu stačí webová stránka. Lidí, kteří opravdu potřebují vlastní aplikaci, je podle mě méně, než se zdá.
 
-**Je zajímavé, že takto otevřeně říkáš, že ses hlásil do RedHatu.**
+**Je zajímavé, že takto otevřeně říkáš, že ses hlásil do Red Hatu.**
 
 Občas něco zkusím, abych věděl, jak na tom jsem. Nehledám teď aktivně novou práci, ale chci mít přehled o tom, jaké jsou možnosti.
 
@@ -150,7 +150,7 @@ Hodně mi pomohl kurz 100 Days of Swift. Je zaměřený na lidi, kteří se�
 
 Nejlepší je mít vlastní projekt, který člověka baví. K tomu si připravit životopis a nechat si ho zkontrolovat třeba na junior.guru. Člověk by se neměl bát posílat životopisy. Když ho odmítnou, nic to samo o sobě neznamená. Je potřeba zkoušet dál, protože konkurence je obrovská.
 
-Když jsem se hlásil do RedHatu, věděl jsem, že tam bude velká konkurence. Kousek od něj je VUT, kde studuje informatiku spousta lidí. Každý rok přibývají další a řada z nich by tam chtěla pracovat. Člověk musí zkoušet různé možnosti a nabídnout také něco jiného než jen technické dovednosti.
+Když jsem se hlásil do Red Hatu, věděl jsem, že tam bude velká konkurence. Kousek od něj je VUT, kde studuje informatiku spousta lidí. Každý rok přibývají další a řada z nich by tam chtěla pracovat. Člověk musí zkoušet různé možnosti a nabídnout také něco jiného než jen technické dovednosti.
 
 **Co může být výhodou člověka, který přichází z jiného oboru?**
 
