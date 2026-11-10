@@ -21,8 +21,6 @@ from jg.coop.models.role import DocumentedRole, InterestRole
 from jg.coop.models.sponsor import Sponsor
 
 
-IMAGES_DIR = Path("src/jg/coop/images")
-
 YAML_PATH = Path("src/jg/coop/data/roles.yml")
 
 INTEREST_ROLE_PREFIX = "Zajímá mě: "
@@ -37,6 +35,7 @@ class RoleConfig(BaseModel):
     id: int
     slug: str
     description: str
+    emoji: str | None = None
 
 
 class FounderConfig(BaseModel):
@@ -85,18 +84,16 @@ async def sync_roles(client: ClubClient):
     documented_discord_roles = sorted(documented_discord_roles, reverse=True)
     for position, discord_role in enumerate(documented_discord_roles, start=1):
         logger.debug(f"#{position} {discord_role.name}")
+        role_config = roles_config_registry[discord_role.id]
         DocumentedRole.create(
             club_id=discord_role.id,
             position=position,
             name=discord_role.name,
             mention=discord_role.mention,
-            slug=roles_config_registry[discord_role.id].slug,
-            description=resolve_references(
-                roles_config_registry[discord_role.id].description.strip()
-            ),
-            emoji=discord_role.unicode_emoji,
+            slug=role_config.slug,
+            description=resolve_references(role_config.description.strip()),
+            emoji=resolve_emoji(discord_role, role_config),
             color=discord_role.color.value,
-            icon_path=resolve_icon_path(discord_role),
         )
 
     for discord_role in discord_roles:
@@ -397,12 +394,27 @@ def repr_roles(roles):
     return repr([role.name for role in roles])
 
 
-def resolve_icon_path(role: Role | None) -> str | None:
+def resolve_emoji(role: Role, role_config: RoleConfig) -> str | None:
+    """Return the role's emoji as specified in configuration.
+
+    Configuration is the source of truth, because role icons need the server
+    to be boosted to Level 2 and below that Discord may stop returning them.
+    If Discord returns an icon, it must match the configuration, so that
+    the two can't silently drift apart. Image icons aren't supported.
+    """
     if role.icon:
-        icon_path = IMAGES_DIR / "roles" / f"{role.id}.png"
-        if not icon_path.exists():
-            raise ValueError(
-                f"Missing icon file: {icon_path} (download at {role.icon.url})"
-            )
-        return str(icon_path.relative_to(IMAGES_DIR))
-    return None
+        raise ValueError(
+            f"Role {role.name!r} has an image icon, only standard emoji are supported"
+        )
+    if role.unicode_emoji and normalize_emoji(role.unicode_emoji) != normalize_emoji(
+        role_config.emoji
+    ):
+        raise ValueError(
+            f"Role {role.name!r} has icon {role.unicode_emoji!r} on Discord, "
+            f"but {role_config.emoji!r} in {YAML_PATH}"
+        )
+    return role_config.emoji
+
+
+def normalize_emoji(emoji: str | None) -> str | None:
+    return emoji.replace("\ufe0f", "") if emoji else None

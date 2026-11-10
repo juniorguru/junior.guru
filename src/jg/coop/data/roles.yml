@@ -1,31 +1,37 @@
 registry:
   - id: 795609174385098762
     slug: moderator
+    emoji: ⭐
     description: |
       Kdo hlídá fajn atmosféru v klubu, nasměruje tě, poradí ti.
 
   - id: 836960665578766396
     slug: most_helpful
+    emoji: 💛
     description: |
       Kdo má nejvíc pozitivně hodnocených příspěvků (palce, srdíčka…). Nejprestižnější ocenění! Roli automaticky spravuje bot.
 
   - id: 1134476995229663374
     slug: candidate
+    emoji: 🦸
     description: |
       Kdo se [přes Pull Request](https://github.com/juniorguru/eggtray) přidal do [seznamu kandidátů](https://junior.guru/candidates). Roli automaticky spravuje bot. Může trvat i den, než se změny projeví.
 
   - id: 915967369661251624
     slug: psychologist
+    emoji: 🧠
     description: |
       Pro info, aby bylo ve <#MENTAL_HEALTH> vidět, kdo je a není laik. Role je vysoko jen aby barva a ikonka přebily ostatní.
 
   - id: 927544920292601906
     slug: multimedia
+    emoji: 🪄
     description: |
       Kdo dělá [podcast](https://junior.guru/podcast/) nebo videa z akcí v klubu.
 
   - id: 836928169092710441
     slug: speaker
+    emoji: 🧑‍🏫
     description: |
       Kdo měl, nebo teprve bude mít přednášku v klubu. Akce minulé i budoucí najdeš [na webu](https://junior.guru/events/). Roli automaticky spravuje bot.
 
@@ -61,6 +67,7 @@ registry:
 
   - id: 917431428227145780
     slug: founder
+    emoji: 🎖️
     description: |
       Kdo je v klubu od jeho vzniku v únoru 2021. Roli automaticky spravuje bot.
 
@@ -71,6 +78,7 @@ registry:
 
   - id: 1078667139881377913
     slug: events_organizer
+    emoji: 🗓️
     description: |
       Kdo má chuť organizovat vlastní akce, např. v <#CLUBHOUSE>. Roli si dáš vlastnoručně v _Kanály a role_.
 
@@ -81,6 +89,7 @@ registry:
 
   - id: 1075044541796716604
     slug: cv_commenter
+    emoji: 📝
     description: |
       Kdo má chuť komentovat v <#CV_GITHUB_LINKEDIN>. Roli si dáš vlastnoručně v _Kanály a role_.
 

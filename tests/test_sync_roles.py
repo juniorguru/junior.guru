@@ -1,12 +1,17 @@
 from operator import attrgetter
 from types import SimpleNamespace
 
+import pytest
+
 from jg.coop.sync.roles import (
+    RoleConfig,
     calc_stats,
     evaluate_changes,
+    normalize_emoji,
     repr_ids,
     repr_roles,
     repr_stats,
+    resolve_emoji,
 )
 
 
@@ -113,3 +118,61 @@ def test_evaluate_changes_member_shouldnt_have_this_role_but_has():
     assert evaluate_changes(member_id, member_roles, role_members_ids, role_id) == [
         (1, "remove", 222)
     ]
+
+
+def create_role_config(emoji: str | None = None) -> RoleConfig:
+    return RoleConfig(id=1, slug="coach", description="Pomáhá ostatním.", emoji=emoji)
+
+
+@pytest.mark.parametrize(
+    "unicode_emoji, config_emoji, expected",
+    [
+        (None, None, None),
+        (None, "🧠", "🧠"),
+        ("🧠", "🧠", "🧠"),
+        ("🗓", "🗓️", "🗓️"),
+        ("🗓️", "🗓", "🗓"),
+    ],
+)
+def test_resolve_emoji(unicode_emoji, config_emoji, expected):
+    role = SimpleNamespace(name="Kouč", icon=None, unicode_emoji=unicode_emoji)
+
+    assert resolve_emoji(role, create_role_config(config_emoji)) == expected
+
+
+@pytest.mark.parametrize(
+    "unicode_emoji, config_emoji",
+    [
+        ("⭐", "🧠"),
+        ("⭐", None),
+    ],
+)
+def test_resolve_emoji_raises_on_mismatch(unicode_emoji, config_emoji):
+    role = SimpleNamespace(name="Kouč", icon=None, unicode_emoji=unicode_emoji)
+
+    with pytest.raises(ValueError, match="has icon"):
+        resolve_emoji(role, create_role_config(config_emoji))
+
+
+def test_resolve_emoji_raises_on_image_icon():
+    role = SimpleNamespace(
+        name="Kouč",
+        icon=SimpleNamespace(url="https://example.com/icon.png"),
+        unicode_emoji=None,
+    )
+
+    with pytest.raises(ValueError, match="image icon"):
+        resolve_emoji(role, create_role_config("🧠"))
+
+
+@pytest.mark.parametrize(
+    "emoji, expected",
+    [
+        (None, None),
+        ("", None),
+        ("🧠", "🧠"),
+        ("🗓️", "🗓"),
+    ],
+)
+def test_normalize_emoji(emoji, expected):
+    assert normalize_emoji(emoji) == expected
