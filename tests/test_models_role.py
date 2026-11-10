@@ -64,7 +64,6 @@ def test_documented_role_to_guide_data(test_db):
         position=1,
         emoji="🏋️",
         color=0xFF0000,
-        icon_path="icons/coach.png",
     )
 
     assert role.to_guide_data() == {
@@ -72,5 +71,4 @@ def test_documented_role_to_guide_data(test_db):
         "description": "Pomáhá ostatním.",
         "color": 0xFF0000,
         "emoji": "🏋️",
-        "icon_path": "icons/coach.png",
     }

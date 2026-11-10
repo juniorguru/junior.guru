@@ -1,7 +1,5 @@
-from pathlib import Path
-
 import click
-from discord import Colour, Embed, File
+from discord import Colour, Embed
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
@@ -10,9 +8,6 @@ from jg.coop.lib.discord_club import ClubClient, parse_channel, sync_guide_chann
 from jg.coop.lib.text import emoji_url
 from jg.coop.models.base import db, hash_data
 from jg.coop.models.role import DocumentedRole
-
-
-IMAGES_DIR = Path("src/jg/coop/images")
 
 
 logger = loggers.from_path(__file__)
@@ -59,15 +54,10 @@ def build_role_args(role: dict) -> dict:
         color=Colour(role["color"]),
         description=role["description"],
     )
-    file = None
-    if role["icon_path"]:
-        path = IMAGES_DIR / role["icon_path"]
-        logger.debug(f"Setting thumbnail: {path}")
-        embed.set_thumbnail(url=f"attachment://{path.name}")
-        file = File(path)
-    elif role["emoji"]:
+    if role["emoji"]:
         logger.debug(f"Setting emoji thumbnail: {role['emoji']}")
         embed.set_thumbnail(url=emoji_url(role["emoji"]))
     else:
-        logger.debug(f"Setting no thumbnail, icon_path is {role['icon_path']!r}")
-    return {"embed": embed, "file": file}
+        logger.debug("Setting no thumbnail")
+    # Falsy file clears attachments left over from former image icons
+    return {"embed": embed, "file": None}

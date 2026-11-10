@@ -45,7 +45,6 @@ class DocumentedRole(BaseModel):
     position = IntegerField(unique=True)
     emoji = CharField(null=True)
     color = IntegerField(null=True)
-    icon_path = CharField(null=True)
 
     def to_guide_data(self) -> dict:
         return {
@@ -53,7 +52,6 @@ class DocumentedRole(BaseModel):
             "description": self.description,
             "color": self.color,
             "emoji": self.emoji,
-            "icon_path": self.icon_path,
         }
 
     @classmethod
