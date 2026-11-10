@@ -18,6 +18,28 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Ondřej",
+        "lastName": "Nejedlý",
+        "occupation": "Figuring things out",
+        "id": "636783830",
+        "publicId": "ondrej-nejedly",
+        "profileId": "ACoAACX0jNYBBp4pNO4mLEbQUUn-bbnugxSEhHU"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Adrián",
+        "lastName": "Ferenčík",
+        "occupation": "Rád se učím nové věci a čelím novým výzvám",
+        "id": "1892351485",
+        "publicId": "adrián-ferenčík-9918b2449",
+        "profileId": "ACoAAHDK_f0BPoLxy9I8ygqP7J06YVdHD1PUYGU"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Jiri",
         "lastName": "Gunka",
         "occupation": "cyp",
@@ -102,32 +124,10 @@
         "publicId": "adelapavlun",
         "profileId": "ACoAAAOHFbcBKv8acMuOXjIB8tx8YMK5XTLPoEk"
       }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Petr",
-        "lastName": "Přibil",
-        "occupation": "Global Sales Manager | Specialty Lubricants",
-        "id": "132002824",
-        "publicId": "petr-pribil",
-        "profileId": "ACoAAAfeNAgBoN0dEx44SvOJMrr1wXdzXDehEck"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Monika",
-        "lastName": "Pencikova",
-        "occupation": "Accounts Receivable Specialist | SAP | Credit & Collections | German & English | Shared Services",
-        "id": "327149170",
-        "publicId": "monika-pencikova-52a68a91",
-        "profileId": "ACoAABN_5nIBA_vikujfaQgDNO8RrD1Bi_-4xKo"
-      }
     }
   ],
   "numShares": 0,
-  "numLikes": 10,
+  "numLikes": 12,
   "numComments": 0,
   "canReact": true,
   "canPostComments": true,

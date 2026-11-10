@@ -21,6 +21,17 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Jan",
+        "lastName": "Pipek",
+        "occupation": "Looking for a job with a positive social impact | PyData Prague co-organiser",
+        "id": "166702429",
+        "publicId": "janpipek",
+        "profileId": "ACoAAAnvrV0BOWOb1jKqOcasSN5hFHbgTeS9jXA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Jiri",
         "lastName": "Vanek",
         "occupation": "Keep calm and write code",
@@ -45,7 +56,7 @@
       "profile": {
         "firstName": "Nizar Akbar",
         "lastName": "Meilani",
-        "occupation": "Linux System Administrator with The Analysis Skill of Reverse Engineer",
+        "occupation": "Linux System Administrator · cPanel/WHM fleet at scale · Nginx/OpenResty edge automation · CVE mitigation · Python eBPF",
         "id": "509409970",
         "publicId": "nizarakbarm",
         "profileId": "ACoAAB5c-rIBPMnuS4pHUyTMZLYzie1ulcFvBY8"
@@ -108,7 +119,7 @@
     }
   ],
   "numShares": 3,
-  "numLikes": 8,
+  "numLikes": 9,
   "numComments": 0,
   "canReact": true,
   "canPostComments": true,
