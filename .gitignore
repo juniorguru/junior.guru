@@ -84,8 +84,8 @@ google_service_account.json
 
 # Synced data
 /src/jg/coop/data/newsletter-*.csv
-/src/jg/coop/data/*.db
-/src/jg/coop/data/*.db-*
+*.db
+*.db-*
 /src/jg/coop/data/jobs/*.*
 /src/jg/coop/images/avatars-candidates/*.png
 /src/jg/coop/images/avatars-candidates/*.webp
