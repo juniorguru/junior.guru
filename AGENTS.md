@@ -1,6 +1,7 @@
 # Guidance for AI agents
 
 - The only allowed stylizations of the project name in regular sentences or headings are "junior.guru" and "Junior Guru".
+- In any Python change, keep data transformation in pure, unit-tested functions, separate from I/O (database, HTTP, files, Discord). Details are in the `code` skill (`.claude/skills/code/SKILL.md`). Don't copy mixed patterns from surrounding code.
 - Always run the `jg` project CLI as `uv run jg`. Always prefer `uv` over custom Python binary and virtual environment management.
 - Write GitHub issues, PRs, and comments in English, even when the source material (e.g. a quoted message) is in Czech.
 - When working locally under close supervision, never commit until the user says so, and leave changes uncommitted for them to review. However, if a session (especially a claude.ai/code cloud session) starts with a request to open or create a pull request, take that as permission to handle git yourself: branch, commit, push, and open the PR.

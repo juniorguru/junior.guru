@@ -7,7 +7,7 @@ description: Implement or modify Python, JavaScript, SCSS, templates, CLI, HTTP,
 
 ## Design and style
 
-- Aim for [Clean Architecture](https://www.youtube.com/watch?v=DJtef410XaM) ([textual slides](https://rhodesmill.org/brandon/slides/2014-07-pyohio/clean-architecture/)): imperative shell wrapping functional core.
+- Aim for [Clean Architecture](https://www.youtube.com/watch?v=DJtef410XaM) ([textual slides](https://rhodesmill.org/brandon/slides/2014-07-pyohio/clean-architecture/)): imperative shell wrapping functional core. See [Pure core, I/O shell](#pure-core-io-shell).
 - Use Python type hints everywhere.
 - Keep cyclomatic complexity low.
 - Order module functions from highest-level entry points to progressively smaller helpers. Exception: functions that must exist earlier because module import uses them.
@@ -20,6 +20,16 @@ description: Implement or modify Python, JavaScript, SCSS, templates, CLI, HTTP,
 - Do not place imports inside functions or methods. Keep them at module level.
 - When a comment at the start of a function documents the whole function, write it as a docstring, not a leading `#` comment block. Keep `#` comments for individual steps inside the function.
 - In SCSS, prefer `$spacer` over equivalent `map.get($spacers, 3)`.
+
+## Pure core, I/O shell
+
+A function either computes or does I/O (database, HTTP, files, Discord, CLI output), never both.
+
+- Put data transformation in pure functions that take plain data and return plain data (dicts, dataclasses, primitives). Cover them with unit tests.
+- I/O functions only fetch data, pass it to pure functions, and save or send the results.
+- Existing code doesn't always follow this. Don't copy a mixed pattern from surrounding code; split it in the code you add or change.
+
+Example: don't write `save_referrer(member)`, which builds a row from API data and calls `.create()`. Write a pure `parse_referrer(member) -> dict | None`, test it, and have the sync loop call `Model.create(**referrer)`.
 
 ## Tests
 
@@ -39,6 +49,7 @@ description: Implement or modify Python, JavaScript, SCSS, templates, CLI, HTTP,
 
 ## Verification
 
+- Before finishing, check every function you added or changed: if it both transforms data and does I/O (`.create()`, `.save()`, HTTP calls, file writes, etc.), split it.
 - After any code changes, run `uv run jg tidy --code` before finishing.
 - Run `uv run jg test` only after substantial Python or JavaScript changes.
 - After major SCSS or JavaScript changes, consider `uv run jg web build-static` to catch asset build failures.
