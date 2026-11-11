@@ -6,7 +6,10 @@ from jg.coop.sync.subscriptions_csv import (
     Row,
     classify_marketing_survey_answer,
     classify_referrer,
+    get_created_on,
     get_date,
+    get_referrer,
+    is_active,
     is_redacted_row,
 )
 
@@ -132,3 +135,35 @@ def test_is_redacted_row(row: Row, expected: bool):
 )
 def test_get_date(row: Row, expected: date | None):
     assert get_date(row) == expected
+
+
+@pytest.mark.parametrize(
+    "subscriptions, expected",
+    [
+        ([], False),
+        ([{"active": False}], False),
+        ([{"active": False}, {"active": True}], True),
+    ],
+)
+def test_is_active(subscriptions: list[dict], expected: bool):
+    assert is_active({"subscriptions": subscriptions}) is expected
+
+
+@pytest.mark.parametrize(
+    "tracking_params, expected",
+    [
+        (None, None),
+        ({}, None),
+        ({"utm_source": "juniorguru"}, None),
+        ({"referrer": ""}, None),
+        ({"referrer": "https://junior.guru/"}, "https://junior.guru/"),
+    ],
+)
+def test_get_referrer(tracking_params: dict | None, expected: str | None):
+    assert get_referrer({"trackingParams": tracking_params}) == expected
+
+
+def test_get_created_on():
+    member = {"orders": [{"createdAt": 1700000000}, {"createdAt": 1600000000}]}
+
+    assert get_created_on(member) == date(2020, 9, 13)
