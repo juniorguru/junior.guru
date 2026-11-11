@@ -6,8 +6,12 @@ from jg.coop.sync.subscriptions_csv import (
     Row,
     classify_marketing_survey_answer,
     classify_referrer,
+    get_created_on,
     get_date,
+    get_referrer,
+    is_active,
     is_redacted_row,
+    parse_referrer,
 )
 
 
@@ -132,3 +136,75 @@ def test_is_redacted_row(row: Row, expected: bool):
 )
 def test_get_date(row: Row, expected: date | None):
     assert get_date(row) == expected
+
+
+@pytest.mark.parametrize(
+    "subscriptions, expected",
+    [
+        ([], False),
+        ([{"active": False}], False),
+        ([{"active": False}, {"active": True}], True),
+    ],
+)
+def test_is_active(subscriptions: list[dict], expected: bool):
+    assert is_active({"subscriptions": subscriptions}) is expected
+
+
+@pytest.mark.parametrize(
+    "tracking_params, expected",
+    [
+        (None, None),
+        ({}, None),
+        ({"utm_source": "juniorguru"}, None),
+        ({"referrer": ""}, None),
+        ({"referrer": "https://junior.guru/"}, "https://junior.guru/"),
+    ],
+)
+def test_get_referrer(tracking_params: dict | None, expected: str | None):
+    assert get_referrer({"trackingParams": tracking_params}) == expected
+
+
+def test_get_created_on():
+    member = {"orders": [{"createdAt": 1700000000}, {"createdAt": 1600000000}]}
+
+    assert get_created_on(member) == date(2020, 9, 13)
+
+
+MEMBER = {
+    "id": "123",
+    "fullName": "Jane Doe",
+    "email": "jane@example.com",
+    "totalSpendCents": 12345,
+    "trackingParams": {"referrer": "https://junior.guru/learn/"},
+    "subscriptions": [{"active": True}],
+    "orders": [{"createdAt": 1600000000}],
+}
+
+
+def test_parse_referrer_internal():
+    assert parse_referrer(MEMBER) == {
+        "account_id": 123,
+        "account_name": "Jane Doe",
+        "account_email": "jane@example.com",
+        "account_total_spend": 124,
+        "created_on": date(2020, 9, 13),
+        "url": "https://junior.guru/learn/",
+        "path": "/learn",
+    }
+
+
+def test_parse_referrer_external():
+    member = MEMBER | {"trackingParams": {"referrer": "https://www.google.com/"}}
+
+    assert parse_referrer(member)["type"] == "google"
+
+
+@pytest.mark.parametrize(
+    "changes",
+    [
+        {"subscriptions": [{"active": False}]},
+        {"trackingParams": {}},
+    ],
+)
+def test_parse_referrer_skipped(changes: dict):
+    assert parse_referrer(MEMBER | changes) is None

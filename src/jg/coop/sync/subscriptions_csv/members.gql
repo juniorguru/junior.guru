@@ -8,7 +8,15 @@ query fetch($cursor: String!) {
       node {
         id
         email
+        fullName
         totalSpendCents
+        trackingParams
+        subscriptions {
+          active
+        }
+        orders {
+          createdAt
+        }
       }
     }
   }

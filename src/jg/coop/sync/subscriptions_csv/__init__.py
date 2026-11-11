@@ -11,7 +11,12 @@ from slugify import slugify
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
 from jg.coop.lib.discord_club import ClubClient, parse_channel
-from jg.coop.lib.memberful import MemberfulAPI, MemberfulCSV, memberful_url
+from jg.coop.lib.memberful import (
+    MemberfulAPI,
+    MemberfulCSV,
+    memberful_url,
+    timestamp_to_date,
+)
 from jg.coop.lib.mutations import mutating_discord
 from jg.coop.models.base import db
 from jg.coop.models.subscription import (
@@ -62,6 +67,14 @@ def main(error_channel_id: int):
             for member in members
         }
 
+        logger.info("Saving referrers")
+        for member in members:
+            if referrer := parse_referrer(member):
+                if "path" in referrer:
+                    SubscriptionInternalReferrer.create(**referrer)
+                else:
+                    SubscriptionReferrer.create(**referrer)
+
         logger.info("Fetching members data from Memberful CSV")
         memberful = MemberfulCSV()
         seen_account_ids = set()
@@ -80,31 +93,6 @@ def main(error_channel_id: int):
                 # the rows as duplicates to simplify further code.
                 continue
             seen_account_ids.add(account_id)
-
-            referrer = csv_row["Referrer"] or None
-            if referrer:
-                account_details = {
-                    "account_id": account_id,
-                    "account_name": csv_row["Full Name"],
-                    "account_email": csv_row["Email"],
-                    "account_total_spend": total_spend[account_id],
-                }
-                created_on = date.fromisoformat(csv_row["Created at"])
-                referrer_type = classify_referrer(referrer)
-                if referrer_type.startswith("/"):
-                    SubscriptionInternalReferrer.create(
-                        created_on=created_on,
-                        url=referrer,
-                        path=referrer_type,
-                        **account_details,
-                    )
-                else:
-                    SubscriptionReferrer.create(
-                        created_on=created_on,
-                        url=referrer,
-                        type=referrer_type,
-                        **account_details,
-                    )
 
             marketing_survey_answer = (
                 csv_row["Jak ses dozvěděl(a) o junior.guru?"] or None
@@ -175,6 +163,36 @@ async def report_exception(client: ClubClient, channel_id: int, exception: Excep
         await proxy.send(
             f"Failed to fetch CSV data from Memberful:\n```\n{exception}\n```"
         )
+
+
+def parse_referrer(member: dict) -> dict | None:
+    """Returns fields of SubscriptionInternalReferrer (has 'path') or SubscriptionReferrer (has 'type')"""
+    if not is_active(member) or not (url := get_referrer(member)):
+        return None
+    referrer = {
+        "account_id": int(member["id"]),
+        "account_name": member["fullName"],
+        "account_email": member["email"],
+        "account_total_spend": math.ceil(member["totalSpendCents"] / 100),
+        "created_on": get_created_on(member),
+        "url": url,
+    }
+    referrer_type = classify_referrer(url)
+    if referrer_type.startswith("/"):
+        return referrer | {"path": referrer_type}
+    return referrer | {"type": referrer_type}
+
+
+def is_active(member: dict) -> bool:
+    return any(subscription["active"] for subscription in member["subscriptions"])
+
+
+def get_referrer(member: dict) -> str | None:
+    return (member["trackingParams"] or {}).get("referrer") or None
+
+
+def get_created_on(member: dict) -> date:
+    return timestamp_to_date(min(order["createdAt"] for order in member["orders"]))
 
 
 def classify_referrer(url: str) -> str:
