@@ -40,6 +40,10 @@ MEMBERFUL_PASSWORD = os.getenv("MEMBERFUL_PASSWORD")
 # requires the code every time.
 MEMBERFUL_TRUSTED_BROWSER = os.getenv("MEMBERFUL_TRUSTED_BROWSER")
 
+MEMBERFUL_DOMAIN = "juniorguru.memberful.com"
+
+TRUSTED_BROWSER_COOKIE = "staff_trusted_browser"
+
 
 logger = loggers.from_path(__file__)
 
@@ -164,31 +168,21 @@ class MemberfulCSV:
 
     def _auth(self) -> tuple[httpx2.Client, Any]:
         logger.debug("Logging into Memberful")
-        session = httpx2.Client(follow_redirects=True)
-        session.headers.update({"User-Agent": BROWSER_USER_AGENT})
+        session = create_session()
         if self.trusted_browser:
             session.cookies.set(
-                "staff_trusted_browser",
+                TRUSTED_BROWSER_COOKIE,
                 self.trusted_browser,
-                domain="juniorguru.memberful.com",
+                domain=MEMBERFUL_DOMAIN,
             )
         else:
             logger.warning("MEMBERFUL_TRUSTED_BROWSER not set")
-        response = session.get("https://juniorguru.memberful.com/admin/auth/sign_in")
-        response.raise_for_status()
-        html_tree = html.fromstring(response.content)
-        html_tree.make_links_absolute(str(response.url))
-        form = html_tree.forms[0]
-        form.fields["email"] = self.email
-        form.fields["password"] = self.password
-        response = session.post(form.action, data=dict(form.form_values()))
-        response.raise_for_status()
+        response = sign_in(session, self.email, self.password)
         if is_one_time_code_url(str(response.url)):
             raise OneTimeCodeRequired(
                 "Memberful requires a one-time code to sign in. "
-                "Update MEMBERFUL_TRUSTED_BROWSER with the value of the "
-                "'staff_trusted_browser' cookie from a browser where "
-                f"{self.email} entered the code."
+                "Run 'uv run jg memberful-trusted-browser' and update "
+                "MEMBERFUL_TRUSTED_BROWSER with the value it prints."
             )
         logger.debug("Parsing auth token")
         html_tree = html.fromstring(response.content)
@@ -259,6 +253,52 @@ class MemberfulCSV:
         response = self.session.get(download_url)
         response.raise_for_status()
         return response.content.decode("utf-8")
+
+
+def acquire_trusted_browser(
+    email: str, password: str, get_code: Callable[[], str]
+) -> str:
+    """Signs in with a one-time code and returns the trusted browser cookie
+
+    Uses the same User-Agent as MemberfulCSV, so the cookie is issued
+    to the same 'browser' the sync scripts identify as.
+    """
+    with create_session() as session:
+        response = sign_in(session, email, password)
+        if is_one_time_code_url(str(response.url)):
+            response = submit_form(response, session, {"otp": get_code()})
+            if is_one_time_code_url(str(response.url)):
+                raise OneTimeCodeRequired("The one-time code was not accepted")
+        if value := session.cookies.get(
+            TRUSTED_BROWSER_COOKIE, domain=MEMBERFUL_DOMAIN
+        ):
+            return value
+        raise RuntimeError(f"Memberful didn't set the {TRUSTED_BROWSER_COOKIE} cookie")
+
+
+def create_session() -> httpx2.Client:
+    return httpx2.Client(
+        follow_redirects=True, headers={"User-Agent": BROWSER_USER_AGENT}
+    )
+
+
+def sign_in(session: httpx2.Client, email: str, password: str) -> httpx2.Response:
+    response = session.get(f"https://{MEMBERFUL_DOMAIN}/admin/auth/sign_in")
+    response.raise_for_status()
+    return submit_form(response, session, {"email": email, "password": password})
+
+
+def submit_form(
+    response: httpx2.Response, session: httpx2.Client, values: dict[str, str]
+) -> httpx2.Response:
+    html_tree = html.fromstring(response.content)
+    html_tree.make_links_absolute(str(response.url))
+    form = html_tree.forms[0]
+    for name, value in values.items():
+        form.fields[name] = value
+    response = session.post(form.action, data=dict(form.form_values()))
+    response.raise_for_status()
+    return response
 
 
 def memberful_url(account_id: int | str) -> str:
