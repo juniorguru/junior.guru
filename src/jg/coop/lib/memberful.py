@@ -35,6 +35,11 @@ MEMBERFUL_EMAIL = os.getenv("MEMBERFUL_EMAIL") or "kure@junior.guru"
 
 MEMBERFUL_PASSWORD = os.getenv("MEMBERFUL_PASSWORD")
 
+# Value of the long-lived 'staff_trusted_browser' cookie Memberful sets after
+# entering an emailed one-time code. Without it, signing into the dashboard
+# requires the code every time.
+MEMBERFUL_TRUSTED_BROWSER = os.getenv("MEMBERFUL_TRUSTED_BROWSER")
+
 
 logger = loggers.from_path(__file__)
 
@@ -120,6 +125,10 @@ class DownloadError(Exception):
     pass
 
 
+class OneTimeCodeRequired(Exception):
+    pass
+
+
 @dataclass
 class MemberfulAuthToken:
     param: str
@@ -131,10 +140,12 @@ class MemberfulCSV:
         self,
         email: str | None = None,
         password: str | None = None,
+        trusted_browser: str | None = None,
         user_agent: str | None = None,
     ):
         self.email = email or MEMBERFUL_EMAIL
         self.password = password or MEMBERFUL_PASSWORD
+        self.trusted_browser = trusted_browser or MEMBERFUL_TRUSTED_BROWSER
         self.user_agent = user_agent or BROWSER_USER_AGENT
         self._session = None
         self._auth_token = None
@@ -155,6 +166,14 @@ class MemberfulCSV:
         logger.debug("Logging into Memberful")
         session = httpx2.Client(follow_redirects=True)
         session.headers.update({"User-Agent": BROWSER_USER_AGENT})
+        if self.trusted_browser:
+            session.cookies.set(
+                "staff_trusted_browser",
+                self.trusted_browser,
+                domain="juniorguru.memberful.com",
+            )
+        else:
+            logger.warning("MEMBERFUL_TRUSTED_BROWSER not set")
         response = session.get("https://juniorguru.memberful.com/admin/auth/sign_in")
         response.raise_for_status()
         html_tree = html.fromstring(response.content)
@@ -164,6 +183,13 @@ class MemberfulCSV:
         form.fields["password"] = self.password
         response = session.post(form.action, data=dict(form.form_values()))
         response.raise_for_status()
+        if is_one_time_code_url(str(response.url)):
+            raise OneTimeCodeRequired(
+                "Memberful requires a one-time code to sign in. "
+                "Update MEMBERFUL_TRUSTED_BROWSER with the value of the "
+                "'staff_trusted_browser' cookie from a browser where "
+                f"{self.email} entered the code."
+            )
         logger.debug("Parsing auth token")
         html_tree = html.fromstring(response.content)
         return session, MemberfulAuthToken(
@@ -239,6 +265,10 @@ def memberful_url(account_id: int | str) -> str:
     if not account_id:
         raise ValueError(f"{account_id}")
     return f"https://juniorguru.memberful.com/admin/members/{account_id}/"
+
+
+def is_one_time_code_url(url: str) -> bool:
+    return "/admin/auth/magic_link" in url
 
 
 def parse_export_id(html_tree: html.HtmlElement) -> int:

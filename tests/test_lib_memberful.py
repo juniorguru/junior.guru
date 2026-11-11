@@ -1,7 +1,12 @@
 import pytest
 from lxml import html
 
-from jg.coop.lib.memberful import from_cents, parse_export_id, parse_tier_name
+from jg.coop.lib.memberful import (
+    from_cents,
+    is_one_time_code_url,
+    parse_export_id,
+    parse_tier_name,
+)
 
 
 def test_parse_export_id_members():
@@ -80,3 +85,15 @@ def test_from_cents():
 )
 def test_parse_tier_name(name: str, expected: str):
     assert parse_tier_name(name) == expected
+
+
+@pytest.mark.parametrize(
+    "url, expected",
+    [
+        ("https://juniorguru.memberful.com/admin/auth/magic_link/edit", True),
+        ("https://juniorguru.memberful.com/admin", False),
+        ("https://juniorguru.memberful.com/admin/auth/sign_in", False),
+    ],
+)
+def test_is_one_time_code_url(url: str, expected: bool):
+    assert is_one_time_code_url(url) is expected
