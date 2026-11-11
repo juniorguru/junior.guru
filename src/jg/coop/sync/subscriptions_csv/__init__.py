@@ -69,8 +69,11 @@ def main(error_channel_id: int):
 
         logger.info("Saving referrers")
         for member in members:
-            if is_active(member) and (referrer := get_referrer(member)):
-                save_referrer(member, referrer)
+            if referrer := parse_referrer(member):
+                if "path" in referrer:
+                    SubscriptionInternalReferrer.create(**referrer)
+                else:
+                    SubscriptionReferrer.create(**referrer)
 
         logger.info("Fetching members data from Memberful CSV")
         memberful = MemberfulCSV()
@@ -152,22 +155,6 @@ def main(error_channel_id: int):
         discord_task.run(report_exception, error_channel_id, e)
 
 
-def save_referrer(member: dict, referrer: str) -> None:
-    details = {
-        "account_id": int(member["id"]),
-        "account_name": member["fullName"],
-        "account_email": member["email"],
-        "account_total_spend": math.ceil(member["totalSpendCents"] / 100),
-        "created_on": get_created_on(member),
-        "url": referrer,
-    }
-    referrer_type = classify_referrer(referrer)
-    if referrer_type.startswith("/"):
-        SubscriptionInternalReferrer.create(path=referrer_type, **details)
-    else:
-        SubscriptionReferrer.create(type=referrer_type, **details)
-
-
 @db.connection_context()
 async def report_exception(client: ClubClient, channel_id: int, exception: Exception):
     logger.info("Reporting error to Discord")
@@ -176,6 +163,24 @@ async def report_exception(client: ClubClient, channel_id: int, exception: Excep
         await proxy.send(
             f"Failed to fetch CSV data from Memberful:\n```\n{exception}\n```"
         )
+
+
+def parse_referrer(member: dict) -> dict | None:
+    """Returns fields of SubscriptionInternalReferrer (has 'path') or SubscriptionReferrer (has 'type')"""
+    if not is_active(member) or not (url := get_referrer(member)):
+        return None
+    referrer = {
+        "account_id": int(member["id"]),
+        "account_name": member["fullName"],
+        "account_email": member["email"],
+        "account_total_spend": math.ceil(member["totalSpendCents"] / 100),
+        "created_on": get_created_on(member),
+        "url": url,
+    }
+    referrer_type = classify_referrer(url)
+    if referrer_type.startswith("/"):
+        return referrer | {"path": referrer_type}
+    return referrer | {"type": referrer_type}
 
 
 def is_active(member: dict) -> bool:
