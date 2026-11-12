@@ -26,19 +26,30 @@ logger = loggers.from_path(__file__)
 
 @make_async
 @db.connection_context()
-def store_member(member: Member) -> ClubUser:
-    """Stores in database given Discord Member object"""
-    logger["users"][member.id].debug(f"Saving {member.display_name!r}")
-    return ClubUser.create(
-        id=member.id,
-        is_bot=member.bot,
-        is_member=True,
-        has_avatar=bool(member.avatar),
-        display_name=member.display_name,
-        mention=member.mention,
-        joined_at=member.joined_at.replace(tzinfo=None),
-        initial_roles=get_user_roles(member),
-    )
+def store_members(members: list[Member]) -> None:
+    """
+    Stores in database given Discord Member objects
+
+    Writes in a single transaction from a single thread, because concurrent
+    writes from many threads make SQLite raise 'database is locked'.
+    """
+    logger["users"].debug(f"Saving {len(members)} members")
+    with db.atomic():
+        for member in members:
+            ClubUser.create(**parse_member(member))
+
+
+def parse_member(member: Member) -> dict:
+    return {
+        "id": member.id,
+        "is_bot": member.bot,
+        "is_member": True,
+        "has_avatar": bool(member.avatar),
+        "display_name": member.display_name,
+        "mention": member.mention,
+        "joined_at": member.joined_at.replace(tzinfo=None),
+        "initial_roles": get_user_roles(member),
+    }
 
 
 @db.connection_context()
