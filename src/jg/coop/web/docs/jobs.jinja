@@ -180,19 +180,6 @@ template: main.html
   </dd>
 </dl>
 
-{% if not is_region_listing and not is_parttime_listing %}
-  <p class="jobs-listings">
-    Nabídky podle zaměření:
-    {% for tech_listing in jobs_tech_listings -%}
-      {% if tech_listing.slug == page.meta.tech_listing_slug -%}
-        <strong>{{ tech_listing.name }}</strong>
-      {%- else -%}
-        <a href="{{ pages|docs_url('jobs/' + tech_listing.slug + '.jinja')|url }}">{{ tech_listing.name }}</a>
-      {%- endif %}{% if not loop.last %}, {% endif %}
-    {%- endfor %}
-  </p>
-{% endif %}
-
 <div class="jobs-subscribe">
   <p class="jobs-subscribe-text">
     Chceš upozornění na nové inzeráty? Členové klubu je mají

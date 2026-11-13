@@ -118,26 +118,3 @@ def test_tech_page_empty_by_filters_suggests_remote_tag(page: Page, jobs_page):
     expect(empty).to_be_visible()
     expect(empty).to_contain_text("#remote")
     expect(page.locator(".jobs-empty-listing")).to_be_hidden()
-
-
-def test_tech_page_links_other_tech_pages(page: Page, jobs_page):
-    jobs_page("/jobs/python/")
-    page.goto("/jobs/python/")
-
-    listings = page.locator(".jobs-listings")
-    expect(listings.locator("strong")).to_have_text("Python")
-    expect(listings.locator("a", has_text="Java").first).to_be_visible()
-
-
-def test_jobs_page_links_tech_pages(page: Page, jobs_page):
-    jobs_page()
-    page.goto("/jobs/")
-
-    expect(page.locator(".jobs-listings a", has_text="tester")).to_be_visible()
-
-
-def test_region_page_does_not_link_tech_pages(page: Page, jobs_page):
-    jobs_page("/jobs/brno/")
-    page.goto("/jobs/brno/")
-
-    expect(page.locator(".jobs-listings")).to_have_count(0)
