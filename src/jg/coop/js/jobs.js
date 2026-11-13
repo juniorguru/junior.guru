@@ -59,19 +59,14 @@ function setupJobs() {
 }
 
 function filterJobs({ pushHistory = false } = {}) {
-  const activeTags = Array.from(
+  // Fixed tags are disabled and always active, e.g. the region on /jobs/brno/,
+  // so they take part in filtering, but they never get to the URL
+  const activeTagsByType = groupTagsByType(
     document.querySelectorAll(".jobs-filters .jobs-tag.active"),
   );
-  const activeTagsByType = activeTags.reduce((mapping, tag) => {
-    mapping[tag.dataset.jobsTagType] ||= [];
-    mapping[tag.dataset.jobsTagType].push(tag.dataset.jobsTag);
-    return mapping;
-  }, {});
-  const locationSlug = getLocationSlug();
-  if (locationSlug && !activeTagsByType["location"].includes(locationSlug)) {
-    activeTagsByType["location"].push(locationSlug);
-  }
-  Object.values(activeTagsByType).forEach((tags) => tags.sort());
+  const selectedTagsByType = groupTagsByType(
+    document.querySelectorAll(".jobs-filters .jobs-tag.active:not(.disabled)"),
+  );
 
   const filterTypes = new Set(
     Array.from(
@@ -81,13 +76,7 @@ function filterJobs({ pushHistory = false } = {}) {
   );
   const url = new URL(window.location.href);
   filterTypes.forEach((type) => url.searchParams.delete(type));
-  Object.entries(activeTagsByType).forEach(([type, tags]) => {
-    if (tags.includes(locationSlug)) {
-      tags = tags.filter((tag) => tag !== locationSlug);
-    }
-    if (tags.length === 0) {
-      return;
-    }
+  Object.entries(selectedTagsByType).forEach(([type, tags]) => {
     url.searchParams.set(type, tags.join("|"));
   });
   if (pushHistory) {
@@ -135,11 +124,17 @@ function filterJobs({ pushHistory = false } = {}) {
     })
     .reduce((a, b) => a + b, 0);
 
+  // If the page itself has no relevant jobs, e.g. /jobs/brno/ with no jobs in Brno,
+  // the empty list isn't caused by the user's own filters
   const empty = document.querySelector(".jobs-empty");
-  if (count === 0) {
-    showElement(empty);
-  } else {
-    hideElement(empty);
+  const emptyListing = document.querySelector(".jobs-empty-listing");
+  const isListingEmpty =
+    emptyListing !== null &&
+    count === 0 &&
+    (jobs.length === 0 || Object.keys(selectedTagsByType).length === 0);
+  toggleElement(empty, count === 0 && !isListingEmpty);
+  if (emptyListing) {
+    toggleElement(emptyListing, isListingEmpty);
   }
 }
 
@@ -150,14 +145,10 @@ function updateJobsTagsUI() {
       mapping[type] = url.searchParams.get(type).split("|");
       return mapping;
     },
-    { location: [] },
+    {},
   );
-  const locationSlug = getLocationSlug();
-  if (locationSlug) {
-    activeSlugsByType["location"].push(locationSlug);
-  }
   const container = document.querySelector(".jobs-filters");
-  container.querySelectorAll(".jobs-tag").forEach((tag) => {
+  container.querySelectorAll(".jobs-tag:not(.disabled)").forEach((tag) => {
     const activeSlugs = activeSlugsByType[tag.dataset.jobsTagType] || [];
     const isActive = activeSlugs.includes(tag.dataset.jobsTag);
     tag.classList.toggle("active", isActive);
@@ -174,11 +165,22 @@ function hideElement(element) {
   element.setAttribute("hidden", "");
 }
 
-function getLocationSlug() {
-  const tag = document.querySelector(
-    ".jobs-filters .jobs-tag.disabled[data-jobs-tag-type='location']",
-  );
-  return tag ? tag.dataset.jobsTag : null;
+function toggleElement(element, isVisible) {
+  if (isVisible) {
+    showElement(element);
+  } else {
+    hideElement(element);
+  }
+}
+
+function groupTagsByType(tags) {
+  const tagsByType = Array.from(tags).reduce((mapping, tag) => {
+    mapping[tag.dataset.jobsTagType] ||= [];
+    mapping[tag.dataset.jobsTagType].push(tag.dataset.jobsTag);
+    return mapping;
+  }, {});
+  Object.values(tagsByType).forEach((slugs) => slugs.sort());
+  return tagsByType;
 }
 
 document.addEventListener("DOMContentLoaded", setupJobsTags);

@@ -103,9 +103,22 @@ def test_region_page_empty_state_suggests_remote(page: Page, jobs_page):
     jobs_page("/jobs/brno/")
     page.goto("/jobs/brno/")
 
+    empty = page.locator(".jobs-empty-listing")
+    expect(empty).to_be_visible()
+    expect(empty.locator("a")).to_have_text("práci\u00a0na\u00a0dálku")
+    expect(page.locator(".jobs-empty")).to_be_hidden()
+
+
+def test_region_page_empty_by_filters_suggests_remote_tag(page: Page, jobs_page):
+    create_job(title="Brno Python", regions=["Brno"], tech_tags=["python"])
+    create_job(title="Praha Java", regions=["Praha"], tech_tags=["java"])
+    jobs_page("/jobs/brno/")
+    page.goto("/jobs/brno/?technology=java")
+
     empty = page.locator(".jobs-empty")
     expect(empty).to_be_visible()
     expect(empty).to_contain_text("#remote")
+    expect(page.locator(".jobs-empty-listing")).to_be_hidden()
 
 
 def test_region_page_with_multiword_name(page: Page, jobs_page):
