@@ -307,5 +307,27 @@ describe("tag-filter.js", () => {
         isHidden(".jobs-empty"),
       ]).toEqual([false, false, true]);
     });
+
+    it("tells apart an empty listing page from the user's filters", () => {
+      select("#brno-java").remove();
+      select(".jobs-empty").insertAdjacentHTML(
+        "beforebegin",
+        '<li class="jobs-empty-listing" hidden></li>',
+      );
+      setupTagFilter("jobs");
+      const listingEmpty = [
+        isHidden(".jobs-empty-listing"),
+        isHidden(".jobs-empty"),
+      ];
+      select(".jobs-filters [data-jobs-tag='python']").click();
+      const filterEmpty = [
+        isHidden(".jobs-empty-listing"),
+        isHidden(".jobs-empty"),
+      ];
+      expect([listingEmpty, filterEmpty]).toEqual([
+        [false, true],
+        [true, false],
+      ]);
+    });
   });
 });
