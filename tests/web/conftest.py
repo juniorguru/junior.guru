@@ -72,16 +72,28 @@ def render(
     url: str,
     page_meta: dict[str, Any] | None = None,
 ) -> str:
+    source = (DOCS_DIR / template_path).read_text(encoding="utf-8-sig")
+    content, meta = parse_document(source)
+    return render_string(content, context, url, meta | (page_meta or {}))
+
+
+def render_string(
+    source: str,
+    context: dict[str, Any],
+    url: str,
+    page_meta: dict[str, Any] | None = None,
+) -> str:
+    """
+    Renders given Jinja source, e.g. a snippet calling a macro, as a page
+    """
     env = Environment(loader=FileSystemLoader(MACROS_DIR))
     env.filters.update(get_filters())
     env.filters["url"] = url_filter
     env.filters["md"] = template_filters.md
     env.filters["docs_url"] = lambda files, src_path: "#"
 
-    source = (DOCS_DIR / template_path).read_text(encoding="utf-8-sig")
-    content, meta = parse_document(source)
-    page = SimpleNamespace(url=url.lstrip("/"), meta=meta | (page_meta or {}))
-    html = env.from_string(content).render(page=page, pages=[], base_url="/", **context)
+    page = SimpleNamespace(url=url.lstrip("/"), meta=page_meta or {})
+    html = env.from_string(source).render(page=page, pages=[], base_url="/", **context)
     return wrap_html(html)
 
 

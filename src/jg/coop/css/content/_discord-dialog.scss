@@ -1,6 +1,6 @@
 .discord-dialog {
   max-width: 90%;
-  padding: $spacer;
+  padding: 0;
   text-align: center;
   border: none;
   border-radius: $border-radius;
@@ -8,6 +8,10 @@
   @include media-breakpoint-up(sm) {
     max-width: 30rem;
   }
+}
+
+.discord-dialog-content {
+  padding: $spacer;
 }
 
 .discord-dialog::backdrop {

@@ -1,42 +1,40 @@
-function setupEmailForm() {
+function setupEmail() {
   const form = document.querySelector("#email-form");
   const subscribed = document.querySelector("#email-subscribed");
   const confirmed = document.querySelector("#email-confirmed");
-
   if (!form || !subscribed || !confirmed) return;
 
-  const emailAddress = new URLSearchParams(window.location.search).get(
-    "email_address",
-  );
-  if (emailAddress && emailAddress.includes("@")) {
-    // subscribed: https://junior.guru/news/?email_address=example@example.com
-    form.setAttribute("hidden", "");
-    subscribed.removeAttribute("hidden");
-    confirmed.setAttribute("hidden", "");
-  } else if (emailAddress === "confirmed") {
-    // confirmed: https://junior.guru/news/?email_address=confirmed
-    form.setAttribute("hidden", "");
-    subscribed.setAttribute("hidden", "");
-    confirmed.removeAttribute("hidden");
-  } else {
-    form.removeAttribute("hidden");
-    subscribed.setAttribute("hidden", "");
-    confirmed.setAttribute("hidden", "");
+  function render() {
+    const searchParams = new URLSearchParams(window.location.search);
+    const state = getEmailState(searchParams);
+    form.hidden = state !== "form";
+    subscribed.hidden = state !== "subscribed";
+    confirmed.hidden = state !== "confirmed";
   }
-}
 
-function setupEmailResetButton() {
-  const resetButton = document.querySelector("#email-reset");
-  if (!resetButton) return;
-  resetButton.addEventListener("click", function (event) {
+  document.querySelector("#email-reset")?.addEventListener("click", (event) => {
     event.preventDefault();
     const url = new URL(window.location.href);
     url.searchParams.delete("email_address");
-    window.history.pushState({}, "", url.pathname + url.search);
-    setupEmailForm();
+    window.history.pushState({}, "", url);
+    render();
   });
+  window.addEventListener("popstate", render);
+  render();
 }
 
-document.addEventListener("DOMContentLoaded", setupEmailForm);
-document.addEventListener("popstate", setupEmailForm);
-document.addEventListener("DOMContentLoaded", setupEmailResetButton);
+/**
+ * Decides which state of the newsletter sign up to show, based on the URL
+ *
+ * - subscribed: https://junior.guru/news/?email_address=example@example.com
+ * - confirmed: https://junior.guru/news/?email_address=confirmed
+ * - form: anything else
+ */
+export function getEmailState(searchParams) {
+  const emailAddress = searchParams.get("email_address") ?? "";
+  if (emailAddress === "confirmed") return "confirmed";
+  if (emailAddress.includes("@")) return "subscribed";
+  return "form";
+}
+
+document.addEventListener("DOMContentLoaded", setupEmail);

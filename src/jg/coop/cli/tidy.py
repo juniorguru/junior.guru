@@ -55,6 +55,7 @@ def main(context, code: bool):
         return
     context.invoke(format_python)
     context.invoke(format_jinja)
+    context.invoke(fix_js)
     context.invoke(format_web)
     context.invoke(fix_scss)
     if code:
@@ -80,6 +81,15 @@ def format_web():
     try:
         logger.info("Formatting web platform code")
         subprocess.run(["npx", "oxfmt"], check=True)
+    except subprocess.CalledProcessError:
+        raise click.Abort()
+
+
+@main.command()
+def fix_js():
+    try:
+        logger.info("Fixing JavaScript code")
+        subprocess.run(["npx", "oxlint", "--fix", "--deny-warnings"], check=True)
     except subprocess.CalledProcessError:
         raise click.Abort()
 

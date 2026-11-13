@@ -13,17 +13,15 @@ function setupChart(canvas) {
   const context = canvas.getContext("2d");
   const type = canvas.dataset.chartType;
   const data = JSON.parse(canvas.dataset.chart);
-  const options = {
-    ...DEFAULT_OPTIONS,
-    ...(canvas.dataset.chartOptions
-      ? JSON.parse(canvas.dataset.chartOptions)
-      : {}),
-  };
+  const options = mergeOptions(
+    DEFAULT_OPTIONS,
+    JSON.parse(canvas.dataset.chartOptions ?? "{}"),
+  );
 
   Object.values(options.plugins.annotation.annotations)
-    .filter((annotation) => annotation.type == "label")
+    .filter((annotation) => annotation.type === "label")
     .forEach((annotation) => {
-      annotation.yValue = yValue;
+      annotation.yValue = (ctx) => ctx.chart.scales.y.max;
     });
 
   if (canvas.dataset.chartZeroLine !== undefined) {
@@ -35,18 +33,47 @@ function setupChart(canvas) {
 
   const chart = new Chart(context, { type, data, options });
 
-  const milestonesOffsetPtc =
-    (canvas.dataset.chartMilestonesOffsetPtc || 20) / 100;
-  if (milestonesOffsetPtc) {
-    chart.options.scales.y.max =
-      chart.scales.y.max + chart.scales.y.max * milestonesOffsetPtc;
+  const offset = parseMilestonesOffset(canvas.dataset.chartMilestonesOffsetPtc);
+  if (offset) {
+    chart.options.scales.y.max = chart.scales.y.max * (1 + offset);
+    chart.update();
   }
-
-  chart.update();
 }
 
-function yValue(context) {
-  return context.chart.scales.y.max;
+/**
+ * Deeply merges custom chart options into defaults, returning a new object
+ *
+ * Plain objects get merged, anything else from the custom options
+ * replaces the default. The defaults get copied, so they're never shared
+ * between charts and never modified.
+ */
+export function mergeOptions(defaults, custom) {
+  const result = structuredClone(defaults);
+  for (const [key, value] of Object.entries(custom)) {
+    result[key] =
+      isPlainObject(value) && isPlainObject(result[key])
+        ? mergeOptions(result[key], value)
+        : value;
+  }
+  return result;
+}
+
+/**
+ * Parses how much space above the highest value to leave for milestones
+ *
+ * Takes percents as a string and returns a ratio, e.g. "20" → 0.2.
+ * Defaults to 20 % if the value is missing.
+ */
+export function parseMilestonesOffset(value) {
+  return Number(value ?? 20) / 100;
+}
+
+function isPlainObject(value) {
+  return (
+    typeof value === "object" &&
+    value !== null &&
+    Object.getPrototypeOf(value) === Object.prototype
+  );
 }
 
 document.addEventListener("DOMContentLoaded", () => {

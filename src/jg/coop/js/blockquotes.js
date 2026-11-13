@@ -32,44 +32,27 @@ function setupAnimatedBlockquotesRoll(roll) {
   let autoplayIntervalId = null;
   let transitionEndHandler = null;
 
-  function readCssDurationMs(variableName, fallbackMs) {
+  function getStepDurationMs() {
     const value = window
       .getComputedStyle(roll)
-      .getPropertyValue(variableName)
-      .trim();
-
-    if (!value) {
-      return fallbackMs;
-    }
-
-    if (value.endsWith("ms")) {
-      return Number.parseFloat(value);
-    }
-
-    if (value.endsWith("s")) {
-      return Number.parseFloat(value) * 1000;
-    }
-
-    return fallbackMs;
-  }
-
-  function getStepDurationMs() {
-    return readCssDurationMs("--blockquotes-roll-step-duration", 4000);
+      .getPropertyValue("--blockquotes-roll-step-duration");
+    return parseCssDuration(value, 4000);
   }
 
   function getColumnsCount() {
     return breakpoint.matches ? 2 : 1;
   }
 
-  function getDotsCount() {
-    return testimonials.length;
-  }
-
   function updateActiveDot() {
     dots.querySelectorAll(".blockquotes-roll-dot").forEach((dot, index) => {
-      const isActive = index === firstVisibleIndex;
+      const isActive =
+        index === getActiveIndex(firstVisibleIndex, testimonials.length);
       dot.classList.toggle("active", isActive);
-      dot.setAttribute("aria-pressed", isActive ? "true" : "false");
+      if (isActive) {
+        dot.setAttribute("aria-current", "true");
+      } else {
+        dot.removeAttribute("aria-current");
+      }
     });
   }
 
@@ -97,9 +80,7 @@ function setupAnimatedBlockquotesRoll(roll) {
   function clearClones() {
     track
       .querySelectorAll(".blockquote-container.is-clone")
-      .forEach((clone) => {
-        clone.remove();
-      });
+      .forEach((clone) => clone.remove());
   }
 
   function ensureClones() {
@@ -119,19 +100,17 @@ function setupAnimatedBlockquotesRoll(roll) {
 
     clearTransitionEndHandler();
 
-    if (animated) {
-      track.classList.add("is-animating");
-    } else {
-      track.classList.remove("is-animating");
-    }
+    track.classList.toggle("is-animating", animated);
 
     track.style.transform = `translateX(${-offset}px)`;
   }
 
   function updateStageHeight() {
-    const maxHeight = testimonials.reduce((result, testimonial) => {
-      return Math.max(result, testimonial.getBoundingClientRect().height);
-    }, 0);
+    const maxHeight = Math.max(
+      ...testimonials.map(
+        (testimonial) => testimonial.getBoundingClientRect().height,
+      ),
+    );
 
     roll.style.setProperty(
       "--blockquotes-roll-stage-height",
@@ -176,16 +155,13 @@ function setupAnimatedBlockquotesRoll(roll) {
   }
 
   function renderDots() {
-    const dotsCount = getDotsCount();
+    dots.replaceChildren();
 
-    dots.innerHTML = "";
-
-    for (let index = 0; index < dotsCount; index += 1) {
+    for (let index = 0; index < testimonials.length; index += 1) {
       const dot = document.createElement("button");
       dot.type = "button";
       dot.className = "blockquotes-roll-dot";
       dot.setAttribute("aria-label", `Zobrazit recenzi ${index + 1}`);
-      dot.setAttribute("aria-pressed", "false");
       dot.addEventListener("click", () => {
         isManual = true;
         stopAutoplay();
@@ -206,7 +182,7 @@ function setupAnimatedBlockquotesRoll(roll) {
   startAutoplay();
 
   breakpoint.addEventListener("change", () => {
-    firstVisibleIndex = firstVisibleIndex % testimonials.length;
+    firstVisibleIndex = getActiveIndex(firstVisibleIndex, testimonials.length);
     ensureClones();
     updateStageHeight();
     setTrackPosition(false);
@@ -215,10 +191,47 @@ function setupAnimatedBlockquotesRoll(roll) {
   });
 
   reducedMotion.addEventListener("change", startAutoplay);
-  window.addEventListener("resize", () => {
-    updateStageHeight();
-    setTrackPosition(false);
-  });
+  window.addEventListener(
+    "resize",
+    debounce(() => {
+      updateStageHeight();
+      setTrackPosition(false);
+    }, 100),
+  );
+}
+
+/**
+ * Parses a CSS duration such as "4s" or "300ms" to milliseconds
+ *
+ * Returns the fallback if the value is empty or not a duration.
+ */
+export function parseCssDuration(value, fallbackMs) {
+  const match = value.trim().match(/^(\d*\.?\d+)(ms|s)$/);
+  if (!match) return fallbackMs;
+  const number = Number.parseFloat(match[1]);
+  return match[2] === "s" ? number * 1000 : number;
+}
+
+/**
+ * Returns index of the testimonial being shown first
+ *
+ * After the last testimonial, the track shows clones of the first ones,
+ * so the index can get past the number of testimonials for a moment.
+ */
+export function getActiveIndex(firstVisibleIndex, count) {
+  return firstVisibleIndex % count;
+}
+
+/**
+ * Returns a function which calls the given function only after it stops
+ * being called for the given number of milliseconds
+ */
+export function debounce(fn, ms) {
+  let timeoutId = null;
+  return (...args) => {
+    window.clearTimeout(timeoutId);
+    timeoutId = window.setTimeout(() => fn(...args), ms);
+  };
 }
 
 function setupBlockquotesRolls() {

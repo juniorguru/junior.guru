@@ -1,37 +1,48 @@
 function setupGitHubProfileForm() {
   const form = document.querySelector("#github-profile-form");
-
-  if (!form) return;
-
-  const input = form.querySelector("#github-profile-input");
-  const titleInput = form.querySelector('[name="title"]');
-  const bodyInput = form.querySelector('[name="body"]');
-
-  if (!input || !titleInput || !bodyInput) return;
-
-  const defaultTitle = titleInput.value;
-  const defaultBody = bodyInput.value;
+  const input = form?.querySelector("#github-profile-input");
+  if (!input) return;
 
   form.addEventListener("submit", (event) => {
+    event.preventDefault();
     const username = getGitHubProfileUsername(input.value);
-    titleInput.value += ` @${username}`;
-    bodyInput.value = bodyInput.value.replace("@", `@${username}`);
+    const url = getGitHubProfileIssueURL(
+      form.action,
+      new FormData(form),
+      username,
+    );
     window.sa_event?.("github_profile_check");
-
-    setTimeout(() => {
-      titleInput.value = defaultTitle;
-      bodyInput.value = defaultBody;
-      input.value = `@${username}`;
-    }, 100);
+    window.open(url, "_blank", "noopener");
+    input.value = `@${username}`;
   });
 }
 
 export function getGitHubProfileUsername(inputValue) {
-  const match = inputValue.match(/github\.com\/([^\/?]+)/);
+  const match = inputValue.match(/github\.com\/([^/?]+)/);
   if (match) {
     return match[1];
   }
   return inputValue.trim().replace(/^@/, "");
+}
+
+/**
+ * Builds URL of a new GitHub issue, which asks the bot to check the profile
+ *
+ * Takes the form fields and fills the username into the title and body.
+ * The body contains a lone "@" as a placeholder for the username.
+ */
+export function getGitHubProfileIssueURL(action, fields, username) {
+  const url = new URL(action);
+  for (const [name, value] of fields) {
+    if (name === "title") {
+      url.searchParams.set(name, `${value} @${username}`);
+    } else if (name === "body") {
+      url.searchParams.set(name, value.replace("@", `@${username}`));
+    } else {
+      url.searchParams.set(name, value);
+    }
+  }
+  return url.toString();
 }
 
 document.addEventListener("DOMContentLoaded", setupGitHubProfileForm);

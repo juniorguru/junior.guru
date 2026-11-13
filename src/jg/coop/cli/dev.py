@@ -122,6 +122,12 @@ def test(verbose: bool):
     except subprocess.CalledProcessError:
         raise click.Abort()
 
+    logger.info("Linting JavaScript")
+    try:
+        run(["npx", "oxlint", "--deny-warnings"])
+    except subprocess.CalledProcessError:
+        raise click.Abort()
+
     logger.info("Linting SCSS")
     try:
         run(
