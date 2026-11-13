@@ -357,12 +357,12 @@ template: main.html
       <li class="jobs-empty-listing"{% if not (is_tech_listing and not jobs) %} hidden{% endif %}>
         {% call note() -%}
           {{ 'search'|icon }}
-          Zrovna tu nejsou žádné vhodné inzeráty.
-          Nové přibývají každý den, tak se sem brzy vrať.
+          Zrovna tu nejsou žádné vhodné inzeráty.
+          Nové přibývají každý den, tak se sem brzy vrať.
           {% if is_region_listing and not is_remote_listing -%}
-            Mezitím se můžeš podívat na <a href="{{ pages|docs_url('jobs/remote.jinja')|url }}">práci na dálku</a>.
+            Mezitím se můžeš podívat na <a href="{{ pages|docs_url('jobs/remote.jinja')|url }}">práci na dálku</a>.
           {%- else -%}
-            Mezitím se můžeš podívat na <a href="{{ pages|docs_url('jobs.jinja')|url }}">ostatní nabídky</a>.
+            Mezitím se můžeš podívat na <a href="{{ pages|docs_url('jobs.jinja')|url }}">ostatní nabídky</a>.
           {%- endif %}
         {%- endcall %}
       </li>
