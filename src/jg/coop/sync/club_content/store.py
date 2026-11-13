@@ -36,10 +36,10 @@ def store_members(members: list[Member]) -> None:
     logger["users"].debug(f"Saving {len(members)} members")
     with db.atomic():
         for member in members:
-            ClubUser.create(**parse_member(member))
+            ClubUser.create(**get_member_data(member))
 
 
-def parse_member(member: Member) -> dict:
+def get_member_data(member: Member) -> dict:
     return {
         "id": member.id,
         "is_bot": member.bot,

@@ -3,7 +3,7 @@ from types import SimpleNamespace
 
 import pytest
 
-from jg.coop.sync.club_content.store import parse_member
+from jg.coop.sync.club_content.store import get_member_data
 
 
 def create_member(**kwargs) -> SimpleNamespace:
@@ -21,8 +21,8 @@ def create_member(**kwargs) -> SimpleNamespace:
     )
 
 
-def test_parse_member():
-    assert parse_member(create_member()) == {
+def test_get_member_data():
+    assert get_member_data(create_member()) == {
         "id": 123,
         "is_bot": False,
         "is_member": True,
@@ -35,9 +35,9 @@ def test_parse_member():
 
 
 @pytest.mark.parametrize("avatar, expected", [(None, False), ("https://x", True)])
-def test_parse_member_has_avatar(avatar, expected):
-    assert parse_member(create_member(avatar=avatar))["has_avatar"] is expected
+def test_get_member_data_has_avatar(avatar, expected):
+    assert get_member_data(create_member(avatar=avatar))["has_avatar"] is expected
 
 
-def test_parse_member_is_bot():
-    assert parse_member(create_member(bot=True))["is_bot"] is True
+def test_get_member_data_is_bot():
+    assert get_member_data(create_member(bot=True))["is_bot"] is True
