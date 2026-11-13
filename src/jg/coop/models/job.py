@@ -42,8 +42,7 @@ class TechListing(PydanticBaseModel):
     """
     Standalone jobs listing page for a technology, e.g. /jobs/python/
 
-    Titles and headings use words people actually search for,
-    see https://github.com/juniorguru/junior.guru/issues/1824
+    Titles and headings use words people actually search for
     """
 
     model_config = ConfigDict(frozen=True)
@@ -63,7 +62,7 @@ TECH_LISTINGS = [
         name="tester",
         heading="Práce pro juniory: tester",
         title="Junior tester bez praxe: práce v testování, QA, manuální i automatizované testy",
-        description="Pracovní nabídky pro začínající testery a testerky bez praxe.",
+        description="Nabídky práce pro začínající testery a testerky. Manuální i automatizované testování, QA, stáže a junior pozice.",
     ),
     TechListing(
         slug="python",
@@ -71,7 +70,7 @@ TECH_LISTINGS = [
         name="Python",
         heading="Práce pro juniory: Python",
         title="Junior Python developer: práce v Pythonu pro začátečníky bez praxe",
-        description="Pracovní nabídky v Pythonu pro začátečníky bez praxe.",
+        description="Nabídky práce v Pythonu pro začátečníky. Junior pozice, stáže a brigády pro ty, kdo s Pythonem teprve začínají.",
     ),
     TechListing(
         slug="java",
@@ -79,7 +78,7 @@ TECH_LISTINGS = [
         name="Java",
         heading="Práce pro juniory: Java",
         title="Junior Java developer: práce v Javě pro začátečníky bez praxe",
-        description="Pracovní nabídky v Javě pro začátečníky bez praxe.",
+        description="Nabídky práce v Javě pro začátečníky. Junior pozice, stáže a brigády pro ty, kdo s Javou teprve začínají.",
     ),
     TechListing(
         slug="javascript",
@@ -87,7 +86,7 @@ TECH_LISTINGS = [
         name="JavaScript",
         heading="Práce pro juniory: JavaScript",
         title="Junior JavaScript developer: práce v JavaScriptu pro začátečníky bez praxe",
-        description="Pracovní nabídky v JavaScriptu a TypeScriptu pro začátečníky bez praxe.",
+        description="Nabídky práce v JavaScriptu a TypeScriptu pro začátečníky. Junior pozice, stáže a brigády na frontendu i backendu.",
     ),
     TechListing(
         slug="csharp",
@@ -95,7 +94,7 @@ TECH_LISTINGS = [
         name="C#/.NET",
         heading="Práce pro juniory: C# a .NET",
         title="Junior C# a .NET developer: práce v C# pro začátečníky bez praxe",
-        description="Pracovní nabídky v C# a .NET pro začátečníky bez praxe.",
+        description="Nabídky práce v C# a .NET pro začátečníky. Junior pozice, stáže a brigády pro ty, kdo s .NET teprve začínají.",
     ),
     TechListing(
         slug="ai",
@@ -104,7 +103,7 @@ TECH_LISTINGS = [
         name="AI",
         heading="Práce s AI pro juniory",
         title="Práce s AI pro juniory: AI vývojář, AI engineer, vibe coding",
-        description="Pracovní nabídky pro začátečníky, kteří chtějí pracovat s AI.",
+        description="Nabídky práce s AI pro začátečníky. Vývoj aplikací s AI, agentní programování a vibe coding na junior pozicích.",
     ),
 ]
 

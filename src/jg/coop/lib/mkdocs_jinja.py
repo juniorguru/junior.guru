@@ -39,7 +39,6 @@ TEMPLATE_FILTERS = [
     "sibling_page",
     "skip",
     "subnav",
-    "tagged",
     "thousands",
     "toc",
     "unwrap_webarchive_url",

@@ -12,7 +12,8 @@ template: main.html
 {% set is_tech_listing = page.meta.tech_listing_slug %}
 
 {% if is_tech_listing %}
-  {% set jobs = jobs|tagged(page.meta.tech_listing_tag_slugs) %}
+  {% set tech_listing = jobs_tech_listings|selectattr("slug", "equalto", page.meta.tech_listing_slug)|first %}
+  {% set jobs = jobs_by_tech_listing[tech_listing.slug] %}
 {% endif %}
 
 {% if is_parttime_listing %}
@@ -30,7 +31,7 @@ template: main.html
 {% elif is_region_listing %}
   Práce pro juniory: {{ page.meta.region|replace(' ', ' ') }}
 {% elif is_tech_listing %}
-  {{ page.meta.tech_listing_heading }}
+  {{ tech_listing.heading }}
 {% else %}
   Práce v IT pro juniory
 {% endif %}
@@ -127,7 +128,7 @@ template: main.html
   <dt class="jobs-filters-heading">{{ "tools"|icon }} Nářadí:</dt>
   <dd class="jobs-tags">
     {% if is_tech_listing %}
-      {% for tag_slug in page.meta.tech_listing_tag_slugs %}
+      {% for tag_slug in tech_listing.tag_slugs %}
         <button
           type="button"
           class="jobs-tag active disabled"
@@ -352,21 +353,28 @@ template: main.html
       </div>
     </li>
   {% endfor %}
-    <li class="jobs-empty"{% if not (is_tech_listing and not jobs) %} hidden{% endif %}>
+    {% if is_region_listing or is_tech_listing %}
+      <li class="jobs-empty-listing"{% if not (is_tech_listing and not jobs) %} hidden{% endif %}>
+        {% call note() -%}
+          {{ 'search'|icon }}
+          Zrovna tu nejsou žádné vhodné inzeráty.
+          Nové přibývají každý den, tak se sem brzy vrať.
+          {% if is_region_listing and not is_remote_listing -%}
+            Mezitím se můžeš podívat na <a href="{{ pages|docs_url('jobs/remote.jinja')|url }}">práci na dálku</a>.
+          {%- else -%}
+            Mezitím se můžeš podívat na <a href="{{ pages|docs_url('jobs.jinja')|url }}">ostatní nabídky</a>.
+          {%- endif %}
+        {%- endcall %}
+      </li>
+    {% endif %}
+    <li class="jobs-empty" hidden>
       {% call note() -%}
         {{ 'search'|icon }}
-        {% if is_tech_listing -%}
-          Zrovna tu nejsou žádné vhodné inzeráty.
-          Nové přibývají každý den, tak se sem brzy vrať.
-          Mezitím se můžeš podívat na <a href="{{ pages|docs_url('jobs/remote.jinja')|url }}">práci na dálku</a>
-          nebo na <a href="{{ pages|docs_url('jobs.jinja')|url }}">všechny nabídky</a>.
-        {%- else -%}
-          Tvým filtrům neodpovídají žádné inzeráty.
-          {{- ' ' -}}
-          {%- if not is_remote_listing -%}
-            Pokud hledáš podle místa, zkus přidat <span class="jobs-tag active">#remote</span>.
-          {%- endif -%}
-        {%- endif %}
+        Tvým filtrům neodpovídají žádné inzeráty.
+        {{- ' ' -}}
+        {%- if not is_remote_listing -%}
+          Pokud hledáš podle místa, zkus přidat <span class="jobs-tag active">#remote</span>.
+        {%- endif -%}
       {%- endcall %}
     </li>
   </ul>

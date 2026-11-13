@@ -116,11 +116,8 @@ def generate_tech_jobs_pages() -> Generator[GeneratedDocument]:
             meta=meta
             | {
                 "title": tech_listing.title,
-                "description": f"{tech_listing.description} {meta['description']}",
+                "description": tech_listing.description,
                 "tech_listing_slug": tech_listing.slug,
-                "tech_listing_heading": tech_listing.heading,
-                "tech_listing_name": tech_listing.name,
-                "tech_listing_tag_slugs": tech_listing.tag_slugs,
             },
             content=content,
         )

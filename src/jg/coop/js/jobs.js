@@ -124,11 +124,17 @@ function filterJobs({ pushHistory = false } = {}) {
     })
     .reduce((a, b) => a + b, 0);
 
+  // If the page itself has no relevant jobs, e.g. /jobs/brno/ with no jobs in Brno,
+  // the empty list isn't caused by the user's own filters
   const empty = document.querySelector(".jobs-empty");
-  if (count === 0) {
-    showElement(empty);
-  } else {
-    hideElement(empty);
+  const emptyListing = document.querySelector(".jobs-empty-listing");
+  const isListingEmpty =
+    emptyListing !== null &&
+    count === 0 &&
+    (jobs.length === 0 || Object.keys(selectedTagsByType).length === 0);
+  toggleElement(empty, count === 0 && !isListingEmpty);
+  if (emptyListing) {
+    toggleElement(emptyListing, isListingEmpty);
   }
 }
 
@@ -157,6 +163,14 @@ function showElement(element) {
 
 function hideElement(element) {
   element.setAttribute("hidden", "");
+}
+
+function toggleElement(element, isVisible) {
+  if (isVisible) {
+    showElement(element);
+  } else {
+    hideElement(element);
+  }
 }
 
 function groupTagsByType(tags) {

@@ -185,6 +185,10 @@ def get_jobs_context() -> dict:
         "jobs_tags": ListedJob.tags_by_type(),
         "jobs_region_tags": ListedJob.region_tags(),
         "jobs_tech_listings": TECH_LISTINGS,
+        "jobs_by_tech_listing": {
+            tech_listing.slug: ListedJob.tags_listing(tech_listing.tag_slugs)
+            for tech_listing in TECH_LISTINGS
+        },
     }
 
 

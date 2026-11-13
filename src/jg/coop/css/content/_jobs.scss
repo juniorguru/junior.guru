@@ -322,7 +322,8 @@
   @extend .btn-primary;
 }
 
-.jobs-empty .note {
+.jobs-empty .note,
+.jobs-empty-listing .note {
   background-color: $jg-blue-light;
 }
 

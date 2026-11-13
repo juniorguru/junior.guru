@@ -85,14 +85,39 @@ def test_tech_page_url_restores_filter(page: Page, jobs_page):
     expect(visible_jobs).to_contain_text("Praha Python")
 
 
-def test_tech_page_empty_state_links_related_pages(page: Page, jobs_page):
+def test_tech_page_empty_state_links_other_jobs(page: Page, jobs_page):
     create_job(title="Ruby Developer", tech_tags=["ruby"])
     jobs_page("/jobs/java/")
     page.goto("/jobs/java/")
 
+    empty = page.locator(".jobs-empty-listing")
+    expect(empty).to_be_visible()
+    expect(empty.locator("a")).to_have_text("ostatní nabídky")
+    expect(page.locator(".jobs-empty")).to_be_hidden()
+
+
+def test_tech_page_empty_state_with_filters(page: Page, jobs_page):
+    create_job(title="Ruby Developer", tech_tags=["ruby"])
+    jobs_page("/jobs/java/")
+    page.goto("/jobs/java/")
+
+    page.locator(".jobs-filters [data-jobs-tag='brno']").click()
+
+    expect(page.locator(".jobs-empty-listing")).to_be_visible()
+    expect(page.locator(".jobs-empty")).to_be_hidden()
+
+
+def test_tech_page_empty_by_filters_suggests_remote_tag(page: Page, jobs_page):
+    create_job(title="Praha Python", regions=["Praha"], tech_tags=["python"])
+    jobs_page("/jobs/python/")
+    page.goto("/jobs/python/")
+
+    page.locator(".jobs-filters [data-jobs-tag='brno']").click()
+
     empty = page.locator(".jobs-empty")
     expect(empty).to_be_visible()
-    expect(empty).to_contain_text("práci na dálku")
+    expect(empty).to_contain_text("#remote")
+    expect(page.locator(".jobs-empty-listing")).to_be_hidden()
 
 
 def test_tech_page_links_other_tech_pages(page: Page, jobs_page):
