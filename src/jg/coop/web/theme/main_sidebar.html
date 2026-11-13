@@ -18,6 +18,10 @@
             </li>
           </ol>
         </nav>
+        {% set breadcrumb_parent = page|parent_page %}
+        {% if page.parent and breadcrumb_parent and breadcrumb_parent.canonical_url %}
+        <script type="application/ld+json">{{ breadcrumb_list_json_ld([(page.parent.title, breadcrumb_parent.canonical_url), (page.title, page.canonical_url)]) }}</script>
+        {% endif %}
 
         {{ super() }}
       {% endblock %}

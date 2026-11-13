@@ -12,6 +12,8 @@
     </li>
   </ol>
 </nav>
+<script type="application/ld+json">{{ breadcrumb_list_json_ld([((page|parent_page).title, (page|parent_page).canonical_url), (course_provider.name, page.canonical_url)]) }}</script>
+<script type="application/ld+json">{{ course_provider.to_json_ld() }}</script>
 
 # Kurzy od {{ course_provider.name }}
 

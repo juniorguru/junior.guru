@@ -11,7 +11,13 @@ from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.event import Event
 from jg.coop.models.job import ListedJob
-from jg.coop.models.podcast import PodcastEpisode
+from jg.coop.models.podcast import (
+    PODCAST_FEED_URL,
+    PODCAST_IMAGE_URL,
+    PODCAST_NAME,
+    PODCAST_URL,
+    PodcastEpisode,
+)
 from jg.coop.models.role import InterestRole
 
 
@@ -118,18 +124,18 @@ def build_podcast_xml(api_dir, config):
 
     person_hj = Person("Honza Javorek", "honza@junior.guru")
     podcast = Podcast(
-        name="Junior Guru: programování a kariéra v IT",
+        name=PODCAST_NAME,
         description="Jsme tu pro všechny juniory v IT! Jak začít s programováním? Jak najít práci v IT? Přinášíme odpovědi, inspiraci, motivaci.",
         language="cs",
         category=Category("Technology"),
-        website="https://junior.guru/podcast/",
-        feed_url="https://junior.guru/api/podcast.xml",
+        website=PODCAST_URL,
+        feed_url=PODCAST_FEED_URL,
         authors=[Person("Pája Froňková"), person_hj],
         owner=person_hj,
         web_master=person_hj,
         copyright=f"© {PodcastEpisode.copyright_year()} Pavlína Froňková, Jan Javorek",
         generator="JuniorGuruBot (+https://junior.guru)",
-        image="https://junior.guru/static/podcast-v1.png",
+        image=PODCAST_IMAGE_URL,
         fundings=[
             Funding("Přidej se do klubu junior.guru", "https://junior.guru/club/"),
             Funding("Přispěj junior.guru", "https://junior.guru/love/"),

@@ -45,7 +45,7 @@ Aktuálně je aktivní hlavně na LinkedInu a uvažuje o tom, že by víc využ�
 Nejraději používá [Mastodon](https://mastodonczech.cz/@honzajavorek), ale spíš pro soukromé než marketingové účely.
 
 - [LinkedIn](https://www.linkedin.com/in/honzajavorek/)
-- [YouTube](https://www.youtube.com/@juniordotguru)
+- [YouTube]({{ youtube_url }})
 - [Mastodon](https://mastodonczech.cz/@honzajavorek/)
 
 Žádnou ucelenou strategii nemá a plácá příspěvky na sítě tak, jak to cítí.

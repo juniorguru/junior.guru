@@ -19,7 +19,12 @@ from jg.coop.lib.template_filters import icon
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
 from jg.coop.models.feminine_name import FeminineName
-from jg.coop.models.podcast import PodcastEpisode
+from jg.coop.models.podcast import (
+    PODCAST_APPLE_URL,
+    PODCAST_SPOTIFY_URL,
+    PODCAST_YOUTUBE_URL,
+    PodcastEpisode,
+)
 
 
 logger = loggers.from_path(__file__)
@@ -235,17 +240,17 @@ async def announce_new_episode(client: ClubClient):
             ui.Button(
                 emoji="<:youtube:976200175490060299>",
                 label="YouTube",
-                url="https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA",
+                url=PODCAST_YOUTUBE_URL,
             ),
             ui.Button(
                 emoji="<:spotify:1085596335794819092>",
                 label="Spotify",
-                url="https://open.spotify.com/show/12w93IKRzfCsgo7XrGEVw4",
+                url=PODCAST_SPOTIFY_URL,
             ),
             ui.Button(
                 emoji="<:appleinc:842465215718227987>",
                 label="Apple",
-                url="https://podcasts.apple.com/cz/podcast/junior-guru-podcast/id1603653549",
+                url=PODCAST_APPLE_URL,
             ),
         )
         with mutating_discord(channel) as proxy:
