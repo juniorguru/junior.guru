@@ -21,6 +21,17 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Petr",
+        "lastName": "Simecek",
+        "occupation": "Tamer of llamas. I write code that gets deployed and papers that get cited. Bridging the gap between ‘it works in theory’ and ‘it works in prod’ one commit at a time.",
+        "id": "8338936",
+        "publicId": "simecekpetr",
+        "profileId": "ACoAAAB_PfgBsL4w8dCi9wIyQLatN_3k_nTllm0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Jan",
         "lastName": "Pipek",
         "occupation": "Looking for a job with a positive social impact | PyData Prague co-organiser",
@@ -119,7 +130,7 @@
     }
   ],
   "numShares": 3,
-  "numLikes": 9,
+  "numLikes": 10,
   "numComments": 0,
   "canReact": true,
   "canPostComments": true,
