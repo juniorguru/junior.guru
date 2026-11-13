@@ -21,7 +21,7 @@ from jg.coop.lib.discord_club import (
 from jg.coop.sync.club_content.store import (
     store_channel,
     store_dm_channel,
-    store_member,
+    store_members,
     store_message,
     store_pin,
     store_thread,
@@ -61,12 +61,8 @@ CHANNELS_SKIP = [
 
 async def crawl(client: ClubClient) -> None:
     logger.info("Crawling members")
-    members = []
-    tasks = []
-    async for member in client.club_guild.fetch_members(limit=None):
-        members.append(member)
-        tasks.append(asyncio.create_task(store_member(member)))
-    await asyncio.gather(*tasks)
+    members = [member async for member in client.club_guild.fetch_members(limit=None)]
+    await store_members(members)
 
     logger.info("Crawling club channels")
     queue = asyncio.Queue()
