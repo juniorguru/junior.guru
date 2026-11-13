@@ -12,6 +12,9 @@ import {
   toggleTag,
 } from "../../src/jg/coop/js/tag-filter";
 
+const select = (selector) => document.querySelector(selector);
+const isHidden = (selector) => select(selector).hidden;
+
 const KNOWN_TAGS = new Map([
   ["tech", new Set(["java", "python"])],
   ["location", new Set(["brno", "remote"])],
@@ -224,9 +227,6 @@ describe("tag-filter.js", () => {
   });
 
   describe("setupTagFilter()", () => {
-    const select = (selector) => document.querySelector(selector);
-    const isHidden = (selector) => select(selector).hidden;
-
     beforeEach(() => {
       window.history.replaceState({}, "", "/jobs/brno/");
       document.body.innerHTML = `

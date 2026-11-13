@@ -1,6 +1,9 @@
 import { describe, it, expect } from "vitest";
 
-import { getGitHubProfileUsername } from "../../src/jg/coop/js/github-profile";
+import {
+  getGitHubProfileIssueURL,
+  getGitHubProfileUsername,
+} from "../../src/jg/coop/js/github-profile";
 
 describe("github-profile.js", () => {
   describe("getGitHubProfileUsername()", () => {
@@ -62,6 +65,30 @@ describe("github-profile.js", () => {
           "https://github.com/honzajavorek?tab=projects",
         ),
       ).toBe("honzajavorek");
+    });
+  });
+
+  describe("getGitHubProfileIssueURL()", () => {
+    it("fills the username into title and body", () => {
+      const fields = [
+        ["template", "check.md"],
+        ["title", "Zpětná vazba na profil"],
+        ["body", "Kuřátko, mrkni prosím na @, díky!"],
+      ];
+      const url = new URL(
+        getGitHubProfileIssueURL(
+          "https://github.com/juniorguru/eggtray/issues/new",
+          fields,
+          "honzajavorek",
+        ),
+      );
+
+      expect([url.origin + url.pathname, ...url.searchParams]).toEqual([
+        "https://github.com/juniorguru/eggtray/issues/new",
+        ["template", "check.md"],
+        ["title", "Zpětná vazba na profil @honzajavorek"],
+        ["body", "Kuřátko, mrkni prosím na @honzajavorek, díky!"],
+      ]);
     });
   });
 });

@@ -488,3 +488,21 @@
   </div>
 </div>
 {% endmacro %}
+
+
+{% macro discord_dialog() %}
+<dialog class="discord-dialog">
+  <div class="discord-dialog-content">
+    <p>
+      Odkaz vede do <strong>klubu</strong> na sociální síti <strong>Discord</strong>, kam mají přístup jen členové.
+      Pokud v klubu nejsi, neotevře se ti to správně.
+    </p>
+    <a class="discord-dialog-continue">
+      Otevřít
+    </a>
+    <a class="discord-dialog-club" href="{{ pages|docs_url('club.md')|url }}">
+      Co je klub?
+    </a>
+  </div>
+</dialog>
+{% endmacro %}
