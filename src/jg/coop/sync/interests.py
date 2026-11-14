@@ -177,6 +177,11 @@ async def main(config_path: Path, tag: str, debug_user: int | None):
             )
             continue
 
+        # Members who don't accept DMs have no DM channel
+        if not member.dm_channel_id:
+            logger.warning(f"Member #{member.id} has no DM channel, skipping")
+            continue
+
         # Figure out what relevant messages the member has in their DM channel
         messages = ClubMessage.channel_listing(
             member.dm_channel_id, starting_emoji=EMOJI, by_bot=True
