@@ -1438,3 +1438,5 @@
 {"_id": "27939212724", "amount": -201, "category": "miscellaneous", "happened_on": "2026-11-09"}
 {"_id": "27940453668", "amount": -202, "category": "tax", "happened_on": "2026-11-10"}
 {"_id": "27942054220", "amount": 6, "category": "donations", "happened_on": "2026-11-11"}
+{"_id": "27948826466", "amount": -5303, "category": "tax", "happened_on": "2026-11-15"}
+{"_id": "27948826467", "amount": -3306, "category": "tax", "happened_on": "2026-11-15"}
