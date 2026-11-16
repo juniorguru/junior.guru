@@ -1,5 +1,4 @@
 import itertools
-import json
 import math
 import random
 from datetime import UTC, date, datetime, timedelta
@@ -164,30 +163,25 @@ class Event(BaseModel):
             "badge_text": "Záznam není dostupný",
         }
 
-    def to_json_ld(self) -> str:
-        return json.dumps(
-            {
-                "@context": "https://schema.org",
-                "@type": "EducationEvent",
-                "educationalLevel": "beginner",
-                "endDate": self.end_at.isoformat() + "Z",
-                "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-                "image": f"https://junior.guru/static/{self.poster_path}",
-                "location": {
-                    "@type": "VirtualLocation",
-                    "url": (
-                        self.public_recording_url
-                        or self.club_recording_url
-                        or CLUB_EVENTS_CHANNEL_URL
-                    ),
-                },
-                "name": self.get_full_title(),
-                "startDate": self.start_at.isoformat() + "Z",
-                "url": f"https://junior.guru/events/{self.id}/",
+    def to_json_ld(self) -> dict:
+        return {
+            "@type": "EducationEvent",
+            "educationalLevel": "beginner",
+            "endDate": self.end_at.isoformat() + "Z",
+            "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+            "image": f"https://junior.guru/static/{self.poster_path}",
+            "location": {
+                "@type": "VirtualLocation",
+                "url": (
+                    self.public_recording_url
+                    or self.club_recording_url
+                    or CLUB_EVENTS_CHANNEL_URL
+                ),
             },
-            ensure_ascii=False,
-            sort_keys=True,
-        )
+            "name": self.get_full_title(),
+            "startDate": self.start_at.isoformat() + "Z",
+            "url": f"https://junior.guru/events/{self.id}/",
+        }
 
     def to_image_template_context(self, plain: bool = False) -> dict:
         context = {

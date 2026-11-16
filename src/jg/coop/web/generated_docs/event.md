@@ -2,7 +2,7 @@
 
 # {{ event.get_full_title() }}
 
-<script type="application/ld+json">{{ event.to_json_ld() }}</script>
+<script type="application/ld+json">{{ event.to_json_ld()|json_ld }}</script>
 
 <ul class="article-details">
   <li class="article-details-item">{{ '{:%-d.%-m.%Y, %-H:%M}'.format(event.start_at_prg) }}</li>
