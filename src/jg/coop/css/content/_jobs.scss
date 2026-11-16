@@ -389,13 +389,12 @@
 }
 
 .jobs-listings-group-heading {
+  @extend .small;
+  @extend .font-monospace;
+  @extend .text-uppercase;
   margin-top: 0;
-  margin-bottom: map.get($spacers, 2);
-  font-size: $font-size-base;
+  margin-bottom: $spacer;
   font-weight: $font-weight-normal;
-  color: $jg-gray;
-  text-transform: uppercase;
-  letter-spacing: .05em;
 }
 
 .jobs-listings-list {
