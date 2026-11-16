@@ -18,8 +18,10 @@ from jg.coop.lib.memberful import (
     timestamp_to_date,
 )
 from jg.coop.lib.mutations import mutating_discord
+from jg.coop.lib.utm_params import UTM_PARAM_NAMES
 from jg.coop.models.base import db
 from jg.coop.models.subscription import (
+    SubscriptionCampaign,
     SubscriptionCancellation,
     SubscriptionCancellationReason,
     SubscriptionInternalReferrer,
@@ -47,6 +49,7 @@ def main(error_channel_id: int):
     memberful = MemberfulAPI()
 
     tables = [
+        SubscriptionCampaign,
         SubscriptionReferrer,
         SubscriptionInternalReferrer,
         SubscriptionMarketingSurvey,
@@ -74,6 +77,11 @@ def main(error_channel_id: int):
                     SubscriptionInternalReferrer.create(**referrer)
                 else:
                     SubscriptionReferrer.create(**referrer)
+
+        logger.info("Saving campaigns")
+        for member in members:
+            if campaign := parse_campaign(member):
+                SubscriptionCampaign.create(**campaign)
 
         logger.info("Fetching members data from Memberful CSV")
         memberful = MemberfulCSV()
@@ -181,6 +189,29 @@ def parse_referrer(member: dict) -> dict | None:
     if referrer_type.startswith("/"):
         return referrer | {"path": referrer_type}
     return referrer | {"type": referrer_type}
+
+
+def parse_campaign(member: dict) -> dict | None:
+    """Returns fields of SubscriptionCampaign if the member signed up with UTM params"""
+    if not member["orders"] or not (utm_params := get_utm_params(member)):
+        return None
+    return {
+        "account_id": int(member["id"]),
+        "account_total_spend": math.ceil(member["totalSpendCents"] / 100),
+        "created_on": get_created_on(member),
+        "utm_source": utm_params["utm_source"],
+        "utm_medium": utm_params.get("utm_medium"),
+        "utm_campaign": utm_params.get("utm_campaign"),
+    }
+
+
+def get_utm_params(member: dict) -> dict[str, str]:
+    tracking_params = member["trackingParams"] or {}
+    if not tracking_params.get("utm_source"):
+        return {}
+    return {
+        name: value for name in UTM_PARAM_NAMES if (value := tracking_params.get(name))
+    }
 
 
 def is_active(member: dict) -> bool:
