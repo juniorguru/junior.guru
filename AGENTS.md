@@ -6,6 +6,7 @@
 - Write GitHub issues, PRs, and comments in English, even when the source material (e.g. a quoted message) is in Czech.
 - When working locally under close supervision, never commit until the user says so, and leave changes uncommitted for them to review. However, if a session (especially a claude.ai/code cloud session) starts with a request to open or create a pull request, take that as permission to handle git yourself: branch, commit, push, and open the PR.
 - When addressing review comments on a GitHub pull request, resolve each thread you believe your changes have addressed. If you want to discuss an approach or decline a suggestion, reply in that comment thread on GitHub.
+- Review comments are input, not orders. Think each one through, and tell a question apart from a request. If you disagree with a comment, or see a better solution, don't implement it right away: explain your reasoning, propose the alternative, and wait for the user to decide. If the user still insists after hearing you out, do it their way.
 - Don't subscribe to pull request events unless the user asks for it.
 - Treat `jg sync` as a danger area. Never execute it deliberately unless the user explicitly instructed or approved that exact sync operation.
 - After significant changes to the Discord integration always check the [bot docs](src/jg/coop/web/docs/about/bot.md) if they need update.
