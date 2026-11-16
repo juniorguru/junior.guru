@@ -9,7 +9,7 @@ template: main_about.html
 # Klub: Otázky a odpovědi
 
 {% call lead() %}
-Vrtá ti hlavou, jak přesně funguje klub? Prolétni si tuto stránku, třeba najdeš odpovědi. Pokud ne, neváhej a piš na {{ brand.CONTACT_EMAIL|email_link }}.
+Vrtá ti hlavou, jak přesně funguje klub? Prolétni si tuto stránku, třeba najdeš odpovědi. Pokud ne, neváhej a piš na [{{ brand.CONTACT_EMAIL }}](mailto:{{ brand.CONTACT_EMAIL }}).
 {% endcall %}
 
 [TOC]
@@ -64,11 +64,11 @@ V klubu se koncentrují lidé, kteří „to myslí vážně“, ať už jde o p
 
 ## Nedaří se mi dostat na Discord
 
-Po registraci na junior.guru by ti měl přijít e-mail s odkazem na propojení. Pokud nic nepřišlo, [klikni sem](https://juniorguru.memberful.com/account/discord/authorize), to je stejný odkaz. Jestliže ještě nemáš účet na Discordu, budeš si jej muset vytvořit. Aby vše správně fungovalo, musí mít tvůj Discord účet ověřenou e-mailovou adresu. V případě problémů napiš na {{ brand.CONTACT_EMAIL|email_link }}, společně to vyřešíme.
+Po registraci na junior.guru by ti měl přijít e-mail s odkazem na propojení. Pokud nic nepřišlo, [klikni sem](https://juniorguru.memberful.com/account/discord/authorize), to je stejný odkaz. Jestliže ještě nemáš účet na Discordu, budeš si jej muset vytvořit. Aby vše správně fungovalo, musí mít tvůj Discord účet ověřenou e-mailovou adresu. V případě problémů napiš na [{{ brand.CONTACT_EMAIL }}](mailto:{{ brand.CONTACT_EMAIL }}), společně to vyřešíme.
 
 ## Mám účet na Discordu, jak jej propojím s klubem
 
-Jestli už Discord používáš a máš tam účet, stačí jej propojit s junior.guru. Aby vše správně fungovalo, musí mít tvůj Discord účet ověřenou e-mailovou adresu. Po registraci na junior.guru by ti měl přijít e-mail s odkazem na propojení. Pokud nic nepřišlo, [klikni sem](https://juniorguru.memberful.com/account/discord/authorize), to je stejný odkaz. V případě problémů napiš na {{ brand.CONTACT_EMAIL|email_link }}, společně to vyřešíme.
+Jestli už Discord používáš a máš tam účet, stačí jej propojit s junior.guru. Aby vše správně fungovalo, musí mít tvůj Discord účet ověřenou e-mailovou adresu. Po registraci na junior.guru by ti měl přijít e-mail s odkazem na propojení. Pokud nic nepřišlo, [klikni sem](https://juniorguru.memberful.com/account/discord/authorize), to je stejný odkaz. V případě problémů napiš na [{{ brand.CONTACT_EMAIL }}](mailto:{{ brand.CONTACT_EMAIL }}), společně to vyřešíme.
 
 ## Proč je klub placený?
 
@@ -96,7 +96,7 @@ S největší pravděpodobností tě vyhodil proto, že nemáš vyplněny údaje
 
 ## Co když se mi nelíbí, co se strhlo z karty?
 
-Sice se to nikdy nestane, ale kdyby se to náhodou stalo, podívej se nejdříve do [nastavení](https://juniorguru.memberful.com/account), kde by měl být aktuální stav tvého předplatného. Jestliže vidíš nějaký nesoulad, neváhej napsat na {{ brand.CONTACT_EMAIL|email_link }}, společně to objasníme. Honza Javorek, provozovatel klubu, má možnost v případě jakéhokoliv problému strhnutou částku ručně vrátit zpět. Další detaily najdeš v [obchodních podmínkách](tos.md).
+Sice se to nikdy nestane, ale kdyby se to náhodou stalo, podívej se nejdříve do [nastavení](https://juniorguru.memberful.com/account), kde by měl být aktuální stav tvého předplatného. Jestliže vidíš nějaký nesoulad, neváhej napsat na [{{ brand.CONTACT_EMAIL }}](mailto:{{ brand.CONTACT_EMAIL }}), společně to objasníme. Honza Javorek, provozovatel klubu, má možnost v případě jakéhokoliv problému strhnutou částku ručně vrátit zpět. Další detaily najdeš v [obchodních podmínkách](tos.md).
 
 ## Jak zjistím stav svého předplatného?
 
@@ -108,4 +108,4 @@ Za klub jde platit nejen měsíčně, ale i ročně. Roční předplatné je opr
 
 ## Jak zruším předplatné?
 
-Předplatné můžeš zrušit v [nastavení](https://juniorguru.memberful.com/account). Pokud chceš zrušit roční předplatné, počítej s tím, že se ti nevrátí peníze za zbytek nevyužitého období. Další detaily najdeš v [obchodních podmínkách](tos.md). V případě jakéhokoliv problému neváhej napsat na {{ brand.CONTACT_EMAIL|email_link }}.
+Předplatné můžeš zrušit v [nastavení](https://juniorguru.memberful.com/account). Pokud chceš zrušit roční předplatné, počítej s tím, že se ti nevrátí peníze za zbytek nevyužitého období. Další detaily najdeš v [obchodních podmínkách](tos.md). V případě jakéhokoliv problému neváhej napsat na [{{ brand.CONTACT_EMAIL }}](mailto:{{ brand.CONTACT_EMAIL }}).

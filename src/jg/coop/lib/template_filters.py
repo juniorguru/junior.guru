@@ -21,13 +21,6 @@ from jg.coop.lib.md import md as md_
 from jg.coop.lib.utm_params import strip_utm_params
 
 
-def email_link(email: str) -> Markup:
-    user, server = email.split("@")
-    return Markup(
-        f'<a href="mailto:{user}&#64;{server}">{user}&#64;<!---->{server}</a>'
-    )
-
-
 def relative_url(url):
     return url.removeprefix(SITE_URL.removesuffix("/"))
 

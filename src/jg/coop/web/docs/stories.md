@@ -139,7 +139,7 @@ Jak přesně rekfalifikační program probíhal a kolik horníků se dostalo do�
 Sbíráme je z různých koutů českého a slovenského internetu, stejně jako když v 19. století zapisovali Němcová s Erbenem lidovou slovesnost.
 
 Víš o dalších?
-Tipy můžeš poslat na {{ brand.CONTACT_EMAIL|email_link }}.
+Tipy můžeš poslat na [{{ brand.CONTACT_EMAIL }}](mailto:{{ brand.CONTACT_EMAIL }}).
 Jedinou podmínkou je, že musí být publikovány na „neutrální půdě“.
 Každá vzdělávací agentura si dává na web _success stories_, které ukazují, jak jsou jejich kurzy úžasné a absolventi úspěšní.
 Záměrem tohoto seznamu je vytvářet nezávislou protiváhu a ukazovat, že:

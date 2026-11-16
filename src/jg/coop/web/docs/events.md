@@ -99,7 +99,7 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
 </div>
 
 {% call note(standout=True) %}
-  {{ 'lightbulb'|icon }} Chceš juniorům taky něco ukázat nebo vysvětlit? Napiš na {{ brand.CONTACT_EMAIL|email_link }} a třeba se domluvíme. Co to obnáší se dovíš v [návodu](speaker.md). Přednášející mají členství v klubu na rok zdarma.
+  {{ 'lightbulb'|icon }} Chceš juniorům taky něco ukázat nebo vysvětlit? Napiš na <a href="mailto:{{ brand.CONTACT_EMAIL }}">{{ brand.CONTACT_EMAIL }}</a> a třeba se domluvíme. Co to obnáší se dovíš v [návodu](speaker.md). Přednášející mají členství v klubu na rok zdarma.
 {% endcall %}
 
 {% if events_planned|length %}

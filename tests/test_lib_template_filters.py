@@ -7,13 +7,6 @@ from mkdocs.structure.files import File
 from jg.coop.lib import template_filters
 
 
-def test_email_link():
-    markup = str(template_filters.email_link("xyz@example.com"))
-    assert (
-        markup == '<a href="mailto:xyz&#64;example.com">xyz&#64;<!---->example.com</a>'
-    )
-
-
 def test_remove_p():
     markup = str(
         template_filters.remove_p(
