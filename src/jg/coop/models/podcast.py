@@ -7,6 +7,7 @@ from zoneinfo import ZoneInfo
 from peewee import BooleanField, CharField, DateField, IntegerField
 
 from jg.coop.lib.brand import (
+    PODCAST_EPISODE_ID_PREFIX,
     PODCAST_NAME,
     PODCAST_URL,
     site_url,
@@ -34,7 +35,7 @@ class PodcastEpisode(BaseModel):
 
     @property
     def global_id(self) -> str:
-        return f"podcast.junior.guru#{self.media_slug}"
+        return f"{PODCAST_EPISODE_ID_PREFIX}{self.media_slug}"
 
     def format_title(self, number: bool = False, affiliation: bool = True) -> str:
         title = ""

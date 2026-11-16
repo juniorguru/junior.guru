@@ -38,6 +38,9 @@ PODCAST_IMAGE_URL = f"{SITE_URL}static/podcast-v1.png"
 
 PODCAST_MEDIA_URL = "https://podcast.junior.guru/episodes/"
 
+# Prefix of permanent episode IDs (GUIDs) in the podcast feed, must never change
+PODCAST_EPISODE_ID_PREFIX = "podcast.junior.guru#"
+
 PODCAST_SPOTIFY_URL = "https://open.spotify.com/show/12w93IKRzfCsgo7XrGEVw4"
 
 PODCAST_APPLE_URL = (
