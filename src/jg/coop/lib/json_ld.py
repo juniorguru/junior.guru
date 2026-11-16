@@ -39,6 +39,11 @@ def dumps(data: dict) -> Markup:
     )
 
 
+def graph_json_ld(*nodes: dict) -> dict:
+    """Combines several nodes, linked by their @id, into one JSON-LD document."""
+    return {"@graph": list(nodes)}
+
+
 def website_json_ld() -> dict:
     return {
         "@type": "WebSite",

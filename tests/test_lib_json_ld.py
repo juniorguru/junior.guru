@@ -26,6 +26,12 @@ def test_dumps_keeps_unicode():
     assert "Otázky" in json_ld.dumps({"name": "Otázky"})
 
 
+def test_graph():
+    data = json_ld.graph_json_ld({"@type": "WebSite"}, {"@type": "Organization"})
+
+    assert data == {"@graph": [{"@type": "WebSite"}, {"@type": "Organization"}]}
+
+
 def test_website():
     data = json_ld.website_json_ld()
 

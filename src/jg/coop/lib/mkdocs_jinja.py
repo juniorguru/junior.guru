@@ -49,6 +49,7 @@ TEMPLATE_GLOBALS = {
     "brand": brand,
     "article_json_ld": json_ld.article_json_ld,
     "breadcrumb_list_json_ld": json_ld.breadcrumb_list_json_ld,
+    "graph_json_ld": json_ld.graph_json_ld,
     "organization_json_ld": json_ld.organization_json_ld,
     "podcast_series_json_ld": json_ld.podcast_series_json_ld,
     "website_json_ld": json_ld.website_json_ld,
