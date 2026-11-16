@@ -7,34 +7,14 @@ from zoneinfo import ZoneInfo
 from peewee import BooleanField, CharField, DateField, IntegerField
 
 from jg.coop.lib.brand import (
-    PODCAST_APPLE_URL,
-    PODCAST_FEED_URL,
-    PODCAST_IMAGE_URL,
     PODCAST_NAME,
-    PODCAST_SPOTIFY_URL,
     PODCAST_URL,
-    PODCAST_YOUTUBE_URL,
     site_url,
     static_url,
 )
 from jg.coop.lib.charts import ttm_range
+from jg.coop.lib.json_ld import PODCAST_ID
 from jg.coop.models.base import BaseModel
-
-
-PODCAST_ID = f"{PODCAST_URL}#series"
-
-
-def podcast_series_json_ld() -> dict:
-    return {
-        "@type": "PodcastSeries",
-        "@id": PODCAST_ID,
-        "name": PODCAST_NAME,
-        "url": PODCAST_URL,
-        "inLanguage": "cs",
-        "webFeed": PODCAST_FEED_URL,
-        "image": PODCAST_IMAGE_URL,
-        "sameAs": [PODCAST_YOUTUBE_URL, PODCAST_SPOTIFY_URL, PODCAST_APPLE_URL],
-    }
 
 
 class PodcastEpisode(BaseModel):

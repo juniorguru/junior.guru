@@ -8,7 +8,7 @@ from mkdocs.structure.pages import Page
 from mkdocs.structure.toc import get_toc
 from mkdocs.utils.templates import url_filter
 
-from jg.coop.lib import json_ld, loggers, template_filters
+from jg.coop.lib import brand, json_ld, loggers, template_filters
 from jg.coop.lib.cache import get_jinja_cache
 
 
@@ -46,9 +46,11 @@ TEMPLATE_FILTERS = [
 ]
 
 TEMPLATE_GLOBALS = {
+    "brand": brand,
     "article_json_ld": json_ld.article_json_ld,
     "breadcrumb_list_json_ld": json_ld.breadcrumb_list_json_ld,
     "organization_json_ld": json_ld.organization_json_ld,
+    "podcast_series_json_ld": json_ld.podcast_series_json_ld,
     "website_json_ld": json_ld.website_json_ld,
 }
 

@@ -4,7 +4,7 @@ from zoneinfo import ZoneInfo
 import pytest
 
 from jg.coop.lib.brand import PODCAST_NAME
-from jg.coop.models.podcast import PodcastEpisode, podcast_series_json_ld
+from jg.coop.models.podcast import PodcastEpisode
 
 
 def test_publish_at_prg():
@@ -130,9 +130,3 @@ def test_to_json_ld():
         },
         "url": "https://junior.guru/podcast/42/",
     }
-
-
-def test_podcast_series_json_ld():
-    data = podcast_series_json_ld()
-
-    assert data["@id"] == "https://junior.guru/podcast/#series"

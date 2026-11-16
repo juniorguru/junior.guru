@@ -105,3 +105,9 @@ def test_article_optional_fields(key: str):
         data = data[parent]
 
     assert name not in data
+
+
+def test_podcast_series_id():
+    data = json_ld.podcast_series_json_ld()
+
+    assert data["@id"] == "https://junior.guru/podcast/#series"

@@ -37,7 +37,7 @@
       <meta property="og:url" content="{{ page.canonical_url }}">
     {% endif %}
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="junior.guru">
+    <meta property="og:site_name" content="{{ brand.SITE_NAME }}">
     <meta property="og:locale" content="cs_CZ">
 
     <link href="https://mastodonczech.cz/@honzajavorek" rel="me">
@@ -242,7 +242,7 @@
 
         <ul class="footer-icons">
           <li>
-            <a href="{{ youtube_url }}" target="_blank" rel="noopener">
+            <a href="{{ brand.YOUTUBE_URL }}" target="_blank" rel="noopener">
               {{ 'youtube'|icon(alt='YouTube') }}
             </a>
           </li>
@@ -262,7 +262,7 @@
             </a>
           </li>
           <li>
-            <a href="{{ github_url }}" target="_blank" rel="noopener">
+            <a href="{{ brand.GITHUB_URL }}" target="_blank" rel="noopener">
               {{ 'github'|icon(alt='GitHub') }}
             </a>
           </li>

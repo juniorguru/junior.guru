@@ -3,5 +3,5 @@
 
 {% block meta %}
   {{ super() }}
-  <link rel="alternate" type="application/rss+xml" title="{{ page.meta.title }}" href="{{ podcast_feed_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ page.meta.title }}" href="{{ brand.PODCAST_FEED_URL }}">
 {% endblock %}

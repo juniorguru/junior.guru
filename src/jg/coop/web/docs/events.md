@@ -37,7 +37,7 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
   <a
     class="brand-btn youtube"
     target="_blank"
-    rel="noopener" href="{{ youtube_url }}">
+    rel="noopener" href="{{ brand.YOUTUBE_URL }}">
     {{ 'youtube'|icon }} YouTube
   </a>
   <a

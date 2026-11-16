@@ -10,6 +10,13 @@ from jg.coop.lib.brand import (
     GITHUB_URL,
     INSTAGRAM_URL,
     LINKEDIN_URL,
+    PODCAST_APPLE_URL,
+    PODCAST_FEED_URL,
+    PODCAST_IMAGE_URL,
+    PODCAST_NAME,
+    PODCAST_SPOTIFY_URL,
+    PODCAST_URL,
+    PODCAST_YOUTUBE_URL,
     SITE_ALTERNATE_NAMES,
     SITE_NAME,
     SITE_URL,
@@ -20,6 +27,8 @@ from jg.coop.lib.brand import (
 
 
 ORGANIZATION_ID = f"{SITE_URL}#organization"
+
+PODCAST_ID = f"{PODCAST_URL}#series"
 
 
 def dumps(data: dict) -> Markup:
@@ -93,3 +102,16 @@ def article_json_ld(
     if image_url:
         data["image"] = image_url
     return data
+
+
+def podcast_series_json_ld() -> dict:
+    return {
+        "@type": "PodcastSeries",
+        "@id": PODCAST_ID,
+        "name": PODCAST_NAME,
+        "url": PODCAST_URL,
+        "inLanguage": "cs",
+        "webFeed": PODCAST_FEED_URL,
+        "image": PODCAST_IMAGE_URL,
+        "sameAs": [PODCAST_YOUTUBE_URL, PODCAST_SPOTIFY_URL, PODCAST_APPLE_URL],
+    }
