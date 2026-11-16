@@ -45,7 +45,7 @@ Ačkoliv LinkedIn umožňuje stáhnout profil jako PDF, nepoužívejte to místo
 
 
 
-Základem v dnešní době je mít **co nejlépe vyplněný [profil na LinkedIn](https://www.linkedin.com/in/honzajavorek)**. Většinou stačí poslat odkaz na svůj LinkedIn a krátký průvodní dopis — není potřeba přikládat ještě zvlášť sepsaný životopis ve Wordu nebo v PDF. Zajímavým doplňkem životopisu může být tvůj [osobní web](candidate.md#osobni-web-a-blog).
+Základem v dnešní době je mít **co nejlépe vyplněný [profil na LinkedIn]({{ brand.FOUNDER_LINKEDIN_URL }})**. Většinou stačí poslat odkaz na svůj LinkedIn a krátký průvodní dopis — není potřeba přikládat ještě zvlášť sepsaný životopis ve Wordu nebo v PDF. Zajímavým doplňkem životopisu může být tvůj [osobní web](candidate.md#osobni-web-a-blog).
 
 **Životopis piš anglicky, česká verze je zbytečná.** Větší firmy mají buď přímo mezinárodní kolektiv, nebo i tak vyžadují nějakou úroveň znalosti angličtiny. Ani ryze české firmy s angličtinou nebudou mít problém, v IT je to standard.
 

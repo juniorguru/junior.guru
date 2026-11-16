@@ -54,7 +54,7 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
   <div class="team-member-body">
     <h3>
       Honza Javorek
-      <a class="team-member-link" href="https://www.linkedin.com/in/honzajavorek/" target="_blank" rel="noopener">
+      <a class="team-member-link" href="{{ brand.FOUNDER_LINKEDIN_URL }}" target="_blank" rel="noopener">
         {{ 'linkedin'|icon }}
         <span class="visually-hidden">LinkedIn</span>
       </a>

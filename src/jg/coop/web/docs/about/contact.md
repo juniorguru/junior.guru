@@ -20,7 +20,7 @@ S některými úkoly mu pomáhá tým dobrovolníků a kontraktorů.
 
 ## Kdo je Honza
 
-Projekt provozuje **Honza Javorek**, obyčejný programátor. Více se o něm dovíš na jeho [osobním webu](https://honzajavorek.cz) nebo na [LinkedIn](https://www.linkedin.com/in/honzajavorek/). Původně je z Karviné, dlouho bydlel v Brně, teď žije v Praze.
+Projekt provozuje **Honza Javorek**, obyčejný programátor. Více se o něm dovíš na jeho [osobním webu](https://honzajavorek.cz) nebo na [LinkedIn]({{ brand.FOUNDER_LINKEDIN_URL }}). Původně je z Karviné, dlouho bydlel v Brně, teď žije v Praze.
 
 Díky dobrovolným aktivitám se dostal k pomáhání začátečníkům, a to ho hodně bavilo. Časem mu přišlo, že chybí jedno místo, kde by byly všechny pracovní nabídky pro juniory, nezávislé informace a základní praktické rady.
 

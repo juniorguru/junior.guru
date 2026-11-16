@@ -8,6 +8,10 @@ SITE_ALTERNATE_NAMES = ["Junior Guru"]
 
 FOUNDER_NAME = "Honza Javorek"
 
+FOUNDER_LINKEDIN_URL = "https://www.linkedin.com/in/honzajavorek/"
+
+FOUNDER_MASTODON_URL = "https://mastodonczech.cz/@honzajavorek"
+
 YOUTUBE_URL = "https://www.youtube.com/@juniordotguru"
 
 LINKEDIN_URL = "https://www.linkedin.com/company/juniorguru"

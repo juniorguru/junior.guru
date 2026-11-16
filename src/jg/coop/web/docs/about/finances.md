@@ -39,7 +39,7 @@ Cílem není zbohatnout, ale dlouhodobě pomáhat juniorům, pohodlně živit ro
 Mezi lety 2019–2024 mohl Honza dělat junior.guru na plný úvazek. Kvůli ekonomickým změnám na trhu po roce 2023 si pak našel částečný úvazek v [Apify](https://apify.com/), čímž vykrývá nedostatečné příjmy z junior.guru.
 
 Honza žije s rodinou v Praze, na Žižkově. Děti má, auto nemá, hypotéku má.
-Seniorní programátor s [jeho zkušenostmi](https://www.linkedin.com/in/honzajavorek/), který pracuje pro pražskou nebo zahraniční firmu, vydělává běžně 100.000 Kč měsíčně čistého a víc.
+Seniorní programátor s [jeho zkušenostmi]({{ brand.FOUNDER_LINKEDIN_URL }}), který pracuje pro pražskou nebo zahraniční firmu, vydělává běžně 100.000 Kč měsíčně čistého a víc.
 Honzu ale práce na junior.guru hodně naplňuje, a tak se tomu za podpory své rodiny věnuje i přesto, že vydělá méně.
 
 <table class="table table-goals">
