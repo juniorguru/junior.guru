@@ -50,7 +50,7 @@ template: main.html
 {% endcall %}
 
 {% call note() -%}
-  {{ 'plus-circle'|icon }} Chceš přidat inzerát? Napiš na {{ brand.CONTACT_EMAIL|email_link }}
+  {{ 'plus-circle'|icon }} Chceš přidat inzerát? Napiš na <a href="mailto:{{ brand.CONTACT_EMAIL }}">{{ brand.CONTACT_EMAIL }}</a>
 {%- endcall %}
 
 <dl class="jobs-filters standout noscript">

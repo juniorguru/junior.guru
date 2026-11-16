@@ -18,7 +18,6 @@ TEMPLATE_FILTERS = [
     "bio_link",
     "docs_url",
     "duration",
-    "email_link",
     "github_url",
     "hours",
     "icon",

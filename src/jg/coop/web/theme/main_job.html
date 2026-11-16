@@ -24,7 +24,7 @@
         </a>
       {% else %}
         <p id="apply" class="c2a-text">
-          Máš zájem? Napiš na {{ page.meta.job_apply_email|email_link }}
+          Máš zájem? Napiš na <a href="mailto:{{ page.meta.job_apply_email }}">{{ page.meta.job_apply_email }}</a>
         </p>
       {% endif %}
     </div>
