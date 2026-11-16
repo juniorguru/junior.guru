@@ -1,14 +1,12 @@
-# Ahoj! Toto je soubor s daty o podcastových epizodách junior.guru/podcast.
-# Z dat se generuje XML feed pro podcast, stránka https://junior.guru/podcast/
-# a různé jiné věci. Data využívá Discord bot, který na akce upozorňuje. Z dat
-# se rovněž automaticky generují plakátky, tj. upoutávky, které Honza sdílí
-# na sociální sítě.
-#
-# Pavlína sem přidává popisky k novým epizodám pomocí Pull Requestu. Nevyplňuje
-# image_path, media_size, nebo media_duration_s, to nechává na dořešení Honzovi.
+# Ahoj! Toto je soubor s daty o podcastových epizodách junior.guru/podcast.
+# Z dat se generuje XML feed pro podcast, stránka https://junior.guru/podcast/
+# a různé jiné věci. Nové epizody už nevycházejí, data jsou uzavřená.
+# Každá epizoda musí mít vyplněné media_size a media_duration_s, protože
+# synchronizace zvukové soubory vůbec nestahuje.
 
 - number: 20
   guest_name: Karolina Surma a Petr Viktorin
+  guest_has_feminine_name: true
   guest_affiliation: Red Hat
   title: "o tom, jaké jsou začátky ve firmě z pohledu juniora a seniora"
   publish_on: "2024-02-01"
@@ -20,6 +18,7 @@
 
 - number: 19
   guest_name: Vilibald Wanča
+  guest_has_feminine_name: false
   guest_affiliation: Oracle, YBYR podcast
   title: "o tom, co se vám může hodit kromě programování"
   publish_on: "2023-11-01"
@@ -31,6 +30,7 @@
 
 - number: 18
   guest_name: Anastázie Sedláková
+  guest_has_feminine_name: true
   guest_affiliation: DNAnexus
   title: "nejen o mateřství a kariéře v IT"
   publish_on: "2023-08-01"
@@ -42,6 +42,7 @@
 
 - number: 17
   guest_name: Matěj Kotrba
+  guest_has_feminine_name: false
   guest_affiliation: Fuckupy v IT, Očima ajťáka
   title: "o tom, jak se recruiterům dostat do hledáčku"
   publish_on: "2023-07-01"
@@ -53,6 +54,7 @@
 
 - number: 16
   guest_name: Kateřina Lesch
+  guest_has_feminine_name: true
   guest_affiliation: Deloitte
   title: "o umělé inteligenci"
   publish_on: "2023-06-01"
@@ -64,6 +66,7 @@
 
 - number: 15
   guest_name: Marián Kameništák
+  guest_has_feminine_name: false
   guest_affiliation: kamenistak.com
   title: "o pohovorech a kariéře v IT"
   publish_on: "2023-04-15"
@@ -75,6 +78,7 @@
 
 - number: 14
   guest_name: Lukáš Kubec
+  guest_has_feminine_name: false
   guest_affiliation: Green Fox Academy
   title: "o cestě z KFC na software developera a mentora programování"
   publish_on: "2023-03-16"
@@ -86,6 +90,7 @@
 
 - number: 13
   guest_name: Tomáš Ervín Dombrovský
+  guest_has_feminine_name: false
   guest_affiliation: LMC
   title: "o IT sektoru v Česku"
   publish_on: "2023-02-16"
@@ -97,6 +102,7 @@
 
 - number: 12
   guest_name: Veronika Gabrielová
+  guest_has_feminine_name: true
   guest_affiliation: Aimful
   title: "o efektivním kariérním růstu"
   publish_on: "2023-01-15"
@@ -108,6 +114,7 @@
 
 - number: 11
   guest_name: Lukáš Konarovský
+  guest_has_feminine_name: false
   guest_affiliation: Fakturoid
   title: "o podnikání, třeba i v IT"
   publish_on: "2022-12-15"
@@ -119,6 +126,7 @@
 
 - number: 10
   guest_name: Klára Šťouračová
+  guest_has_feminine_name: true
   guest_affiliation: Productboard
   title: "o úspěšném startu kariéry v IT"
   publish_on: "2022-11-15"
@@ -130,6 +138,7 @@
 
 - number: 9
   guest_name: Markéta Lourenco
+  guest_has_feminine_name: true
   guest_affiliation: Mews
   title: "o cestě od lingvistiky k datové analýze"
   publish_on: "2022-10-15"
@@ -141,6 +150,7 @@
 
 - number: 8
   guest_name: Michal Matuška
+  guest_has_feminine_name: false
   guest_affiliation: SUPERKODERS
   title: "o leadershipu a juniorech"
   publish_on: "2022-09-15"
@@ -152,6 +162,7 @@
 
 - number: 7
   guest_name: Mia Bajić
+  guest_has_feminine_name: true
   guest_affiliation: Seznam
   title: "o cestě z Bosny do českého Seznamu"
   publish_on: "2022-07-17"
@@ -163,6 +174,7 @@
 
 - number: 6
   guest_name: Markéta Willis
+  guest_has_feminine_name: true
   guest_affiliation: Applifting
   title: "o její cestě k IT a učení (se) programování"
   publish_on: "2022-06-15"
@@ -174,6 +186,7 @@
 
 - number: 5
   guest_name: Petr Přibil (Tatanka)
+  guest_has_feminine_name: false
   title: "o změně kariéry od lesníka až k Python developerovi"
   publish_on: "2022-05-16"
   description: |
@@ -184,6 +197,7 @@
 
 - number: 4
   guest_name: Tereza Vaňková
+  guest_has_feminine_name: true
   guest_affiliation: Deepnote
   title: "o její cestě k programování a komunitě ReactGirls"
   publish_on: "2022-04-15"
@@ -195,6 +209,7 @@
 
 - number: 3
   guest_name: Filip Kirschner
+  guest_has_feminine_name: false
   guest_affiliation: Applifting
   title: "o firemním přístupu k juniorům a nejen tom"
   publish_on: "2022-03-15"
@@ -206,6 +221,7 @@
 
 - number: 2
   guest_name: Roman Hraška (yablko)
+  guest_has_feminine_name: false
   title: "o kurzech webového vývoje"
   publish_on: "2022-02-15"
   description: |
@@ -216,6 +232,7 @@
 
 - number: 1
   guest_name: Jiří Psotka
+  guest_has_feminine_name: false
   guest_affiliation: Red Hat
   title: "o hledání první práce v IT"
   publish_on: "2022-01-15"
