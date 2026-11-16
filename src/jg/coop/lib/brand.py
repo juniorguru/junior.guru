@@ -36,11 +36,6 @@ PODCAST_FEED_URL = f"{SITE_URL}api/podcast.xml"
 
 PODCAST_IMAGE_URL = f"{SITE_URL}static/podcast-v1.png"
 
-PODCAST_MEDIA_URL = "https://podcast.junior.guru/episodes/"
-
-# Prefix of permanent episode IDs (GUIDs) in the podcast feed, must never change
-PODCAST_EPISODE_ID_PREFIX = "podcast.junior.guru#"
-
 PODCAST_SPOTIFY_URL = "https://open.spotify.com/show/12w93IKRzfCsgo7XrGEVw4"
 
 PODCAST_APPLE_URL = (
@@ -54,3 +49,12 @@ def site_url(path: str = "") -> str:
 
 def static_url(path: str) -> str:
     return site_url(f"static/{path.removeprefix('/')}")
+
+
+def podcast_media_url(media_slug: str) -> str:
+    return f"https://podcast.junior.guru/episodes/{media_slug}.mp3"
+
+
+def podcast_episode_id(media_slug: str) -> str:
+    """Permanent episode ID (GUID) in the podcast feed, must never change"""
+    return f"podcast.junior.guru#{media_slug}"
