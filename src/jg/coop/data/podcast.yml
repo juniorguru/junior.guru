@@ -1,8 +1,7 @@
 # Ahoj! Toto je soubor s daty o podcastových epizodách junior.guru/podcast.
 # Z dat se generuje XML feed pro podcast, stránka https://junior.guru/podcast/
-# a různé jiné věci. Nové epizody už nevycházejí, data jsou uzavřená.
-# Každá epizoda musí mít vyplněné media_size a media_duration_s, protože
-# synchronizace zvukové soubory vůbec nestahuje.
+# a různé jiné věci. Nové epizody už nevycházejí, takže tahle data jsou
+# archiv. Viz https://github.com/juniorguru/junior.guru/pull/2004/
 
 - number: 20
   guest_name: Karolina Surma a Petr Viktorin
