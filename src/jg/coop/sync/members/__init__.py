@@ -1,7 +1,7 @@
 import math
 from collections import defaultdict
 from collections.abc import Iterable
-from datetime import date, datetime
+from datetime import UTC, date, datetime, time
 from enum import StrEnum
 from operator import itemgetter
 from pathlib import Path
@@ -13,7 +13,7 @@ from discord import NotFound
 from playhouse.shortcuts import model_to_dict
 
 from jg.coop.cli.sync import main as cli
-from jg.coop.lib import discord_task, loggers
+from jg.coop.lib import charts, discord_task, loggers
 from jg.coop.lib.discord_club import ClubChannelID, ClubClient, ClubMemberID
 from jg.coop.lib.memberful import (
     MemberfulAPI,
@@ -28,13 +28,17 @@ from jg.coop.lib.mutations import mutating_discord
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubUser, SubscriptionType
 from jg.coop.models.feminine_name import FeminineName
-from jg.coop.models.members import Members
+from jg.coop.models.members import MRR_BEGIN_ON, Members
 
 
 logger = loggers.from_path(__file__)
 
 
 MEMBERS_GQL_PATH = Path(__file__).parent / "members.gql"
+
+ORDERS_GQL_PATH = Path(__file__).parent / "orders.gql"
+
+MRR_YEARLY_MONTHS = 12
 
 ADMIN_MEMBER_IDS = [ClubMemberID.HONZA, ClubMemberID.HONZA_TEST]
 
@@ -62,6 +66,13 @@ class SubscriptionEntity(TypedDict):
     coupon: dict  # TODO
     orders: list[dict]  # TODO
     plan: PlanEntity
+
+
+class OrderEntity(TypedDict):
+    createdAt: int
+    status: Literal["completed", "refunded", "suspended"]
+    totalCents: int
+    purchasable: dict | None
 
 
 class AccountEntity(TypedDict):
@@ -185,6 +196,20 @@ def main(history_path: Path, today: date):
         for line in f:
             Members.deserialize(line)
 
+    logger.info("Getting orders from Memberful")
+    orders_from = get_mrr_orders_from(MRR_BEGIN_ON)
+    orders: list[OrderEntity] = list(
+        memberful.get_nodes(
+            ORDERS_GQL_PATH.read_text(),
+            {"createdFrom": date_to_timestamp(orders_from)},
+        )
+    )
+    logger.info(f"Got {len(orders)} orders created since {orders_from}")
+
+    logger.info("Recording individual MRR")
+    for mrr_month, mrr in get_mrr_history(orders, MRR_BEGIN_ON, today).items():
+        Members.record(month=mrr_month, name="mrr_individuals", count=mrr)
+
     month = f"{today:%Y-%m}"
     logger.info(f"Recording {month} stats")
 
@@ -223,6 +248,61 @@ async def report_trespassing_members(client: ClubClient, members_ids: list[int])
             )
     else:
         logger.info("After all, there are no users to report")
+
+
+def get_mrr_history(
+    orders: Iterable[OrderEntity], begin_on: date, today: date
+) -> dict[str, int]:
+    """Calculates individual MRR for each month from begin_on to today"""
+    orders = list(orders)
+    return {
+        f"{month:%Y-%m}": get_mrr(orders, month)
+        for month in charts.months(begin_on, today)
+    }
+
+
+def get_mrr(orders: Iterable[OrderEntity], month: date) -> int:
+    """Calculates individual MRR in CZK for the month of given date
+
+    Sums paid orders on monthly individual plans created in the month,
+    plus 1/12 of paid orders on yearly individual plans created in the
+    last 12 months. Free orders, such as trials or 100% coupons, add nothing.
+    """
+    month_starts_on = month.replace(day=1)
+    month_ends_on = charts.next_month(month_starts_on)
+    yearly_starts_on = get_mrr_orders_from(month_starts_on)
+    total_cents = 0.0
+    for order in orders:
+        if not is_individual_paid_order(order):
+            continue
+        created_on = timestamp_to_date(order["createdAt"])
+        interval_unit = order["purchasable"]["intervalUnit"]
+        if interval_unit == "month" and month_starts_on <= created_on < month_ends_on:
+            total_cents += order["totalCents"]
+        elif interval_unit == "year" and yearly_starts_on <= created_on < month_ends_on:
+            total_cents += order["totalCents"] / MRR_YEARLY_MONTHS
+    return round(total_cents / 100)
+
+
+def is_individual_paid_order(order: OrderEntity) -> bool:
+    plan = order["purchasable"]
+    return (
+        order["status"] == "completed"
+        and order["totalCents"] > 0
+        and plan is not None
+        and "name" in plan
+        and is_individual_plan(plan)
+    )
+
+
+def get_mrr_orders_from(month: date) -> date:
+    """Returns the first day of the oldest month a yearly order still counts in MRR"""
+    index = month.year * 12 + month.month - 1 - (MRR_YEARLY_MONTHS - 1)
+    return date(index // 12, index % 12 + 1, 1)
+
+
+def date_to_timestamp(day: date) -> int:
+    return int(datetime.combine(day, time(), UTC).timestamp())
 
 
 def get_active_subscription(

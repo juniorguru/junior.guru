@@ -14,7 +14,7 @@ from jg.coop.models.event import Event, EventSpeaking
 from jg.coop.models.exchange_rate import ExchangeRate
 from jg.coop.models.followers import Followers
 from jg.coop.models.job import JobStats
-from jg.coop.models.members import Members
+from jg.coop.models.members import MRR_BEGIN_ON, Members
 from jg.coop.models.page import Page
 from jg.coop.models.podcast import PodcastEpisode
 from jg.coop.models.subscription import (
@@ -235,6 +235,13 @@ def members(today: date) -> IntChartDict:
 def members_individuals(today: date) -> IntChartDict:
     months = charts.months(MEMBERS_DATA_BEGIN_ON, today)
     data = Members.monthly_members_individuals(months)
+    return {"data": data, "months": months}
+
+
+@chart
+def mrr_individuals(today: date) -> IntChartDict:
+    months = charts.months(MRR_BEGIN_ON, today)
+    data = Members.monthly_mrr_individuals(months)
     return {"data": data, "months": months}
 
 

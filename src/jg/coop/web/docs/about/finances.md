@@ -252,13 +252,32 @@ Tabulka v podstatě říká, kdo je na junior.guru zákazník, komu projekt slou
 {% endfor %}
 </table></div>
 
-## Proč tu není MRR
+## MRR z individuálních členství
 
-MRR znamená _monthly recurring revenue_ a je základní metrikou většiny online byznysů, které jsou vedeny jako pravidelně placená služba. Je to součet výnosů, které pravidelně měsíčně chodí na účet skrze předplatné, tedy pravidelný příjem, na který se dá spolehnout. I když je junior.guru služba s členstvím na měsíční bázi a MRR by spočítat šlo, nakonec se Honza rozhodl jej zatím neřešit a dívá se spíš na ono TTM vydělené 12.
+Individuální členství v klubu je pro junior.guru nejdůležitější zdroj peněz. Je pravidelné, dá se s ním dopředu počítat a nezavazuje Honzu vůči žádné firmě. Graf ukazuje, jestli tento příjem roste, nebo klesá, a tedy jestli se junior.guru blíží tomu, aby ho uživili samotní junioři. Podle jeho vývoje se Honza rozhoduje, kam projekt dál směřovat.
 
-Jedním důvodem je složitost výpočtu. Data se berou z bankovního účtu, kam ale nechodí částky za jednotlivé lidi. Platební brána vždy posílá úhrnné částky za několik týdnů zpětně. Musely by se kombinovat data z více zdrojů. Navíc existují i roční členství, které by se musely rozpočítávat.
+Jde o MRR (_monthly recurring revenue_), ale jen z lidí, kteří si klub platí ze svého. Počítají se platby za měsíční členství v daném měsíci a dvanáctina plateb za roční členství z posledních dvanácti měsíců. Členství zdarma, dva týdny na zkoušku ani členství od sponzorů a partnerů se nepočítají. Sponzoři a dobrovolné příspěvky v grafu nejsou schválně. Jsou nárazové nebo se těžko rozpočítávají na měsíce, takže by číslo spíš zkreslovaly. Částky jsou v korunách před odečtením poplatků za platby, data jsou od začátku roku 2026.
 
-Druhým důvodem je malá vypovídající hodnota. Velkou část výnosů tvoří kontrakty s firmami, jež jsou nárazovým, ale ve svém množství poměrně stabilním příjmem. Pravidelné příjmy jsou i z dobrovolných příspěvků, jež by se do MRR započítávaly jen velice složitě. Aby bylo číslo přesné, bylo by potřeba stahovat data o tom, jak přesně kdo přispívá přes GitHub Sponsors (a dříve Patreon), což se nevyplatí řešit.
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="line"
+    data-chart-partial-last
+    data-chart="{{ {
+        'labels': charts.mrr_individuals_labels,
+        'datasets': [
+            {
+                'label': 'MRR z individuálních členství v Kč',
+                'data': charts.mrr_individuals,
+                'borderColor': '#1755d1',
+                'borderWidth': 2,
+            },
+        ],
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}},
+        'plugins': {'annotation': charts.mrr_individuals_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
 
 ## Náklady
 
