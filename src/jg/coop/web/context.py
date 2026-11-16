@@ -19,6 +19,7 @@ from jg.coop.models.external_story import ExternalStory
 from jg.coop.models.followers import Followers
 from jg.coop.models.job import (
     PARTTIME_TAG_SLUGS,
+    REGION_LISTINGS,
     TECH_LISTINGS,
     DiscordJob,
     ListedJob,
@@ -184,6 +185,7 @@ def get_jobs_context() -> dict:
         "jobs_parttime_tag_slugs": PARTTIME_TAG_SLUGS,
         "jobs_tags": ListedJob.tags_by_type(),
         "jobs_region_tags": ListedJob.region_tags(),
+        "jobs_region_listings": REGION_LISTINGS,
         "jobs_tech_listings": TECH_LISTINGS,
         "jobs_by_tech_listing": {
             tech_listing.slug: ListedJob.tags_listing(tech_listing.tag_slugs)

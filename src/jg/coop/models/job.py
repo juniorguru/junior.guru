@@ -21,6 +21,7 @@ from peewee import (
 )
 from playhouse.shortcuts import model_to_dict
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
+from slugify import slugify
 
 from jg.coop.lib import charts
 from jg.coop.lib.discord_markdown import to_discord_markdown
@@ -49,6 +50,7 @@ class TechListing(PydanticBaseModel):
 
     slug: str
     tag_slugs: list[str]
+    name: str
     heading: str
     title: str
     description: str
@@ -58,6 +60,7 @@ TECH_LISTINGS = [
     TechListing(
         slug="tester",
         tag_slugs=["testing"],
+        name="Tester",
         heading="Práce pro juniory: tester",
         title="Junior tester bez praxe: práce v testování, QA, manuální i automatizované testy",
         description="Nabídky práce pro začínající testery a testerky. Manuální i automatizované testování, QA, stáže a junior pozice.",
@@ -65,6 +68,7 @@ TECH_LISTINGS = [
     TechListing(
         slug="python",
         tag_slugs=["python"],
+        name="Python",
         heading="Práce pro juniory: Python",
         title="Junior Python developer: práce v Pythonu pro začátečníky bez praxe",
         description="Nabídky práce v Pythonu pro začátečníky. Junior pozice, stáže a brigády pro ty, kdo s Pythonem teprve začínají.",
@@ -72,6 +76,7 @@ TECH_LISTINGS = [
     TechListing(
         slug="java",
         tag_slugs=["java"],
+        name="Java",
         heading="Práce pro juniory: Java",
         title="Junior Java developer: práce v Javě pro začátečníky bez praxe",
         description="Nabídky práce v Javě pro začátečníky. Junior pozice, stáže a brigády pro ty, kdo s Javou teprve začínají.",
@@ -79,6 +84,7 @@ TECH_LISTINGS = [
     TechListing(
         slug="javascript",
         tag_slugs=["javascript", "typescript"],
+        name="JavaScript",
         heading="Práce pro juniory: JavaScript",
         title="Junior JavaScript developer: práce v JavaScriptu pro začátečníky bez praxe",
         description="Nabídky práce v JavaScriptu a TypeScriptu pro začátečníky. Junior pozice, stáže a brigády na frontendu i backendu.",
@@ -86,6 +92,7 @@ TECH_LISTINGS = [
     TechListing(
         slug="csharp",
         tag_slugs=["csharp"],
+        name="C# a .NET",
         heading="Práce pro juniory: C# a .NET",
         title="Junior C# a .NET developer: práce v C# pro začátečníky bez praxe",
         description="Nabídky práce v C# a .NET pro začátečníky. Junior pozice, stáže a brigády pro ty, kdo s .NET teprve začínají.",
@@ -94,11 +101,42 @@ TECH_LISTINGS = [
         slug="ai",
         # The 'ai' tag is noisy, it gets applied to any job ad mentioning AI
         tag_slugs=["agenticengineering", "buildingai", "vibecoding"],
+        name="AI",
         heading="Práce s AI pro juniory",
         title="Práce s AI pro juniory: AI vývojář, AI engineer, vibe coding",
         description="Nabídky práce s AI pro začátečníky. Vývoj aplikací s AI, agentní programování a vibe coding na junior pozicích.",
     ),
 ]
+
+
+class RegionListing(PydanticBaseModel):
+    """
+    Standalone jobs listing page for a region, e.g. /jobs/brno/
+    """
+
+    model_config = ConfigDict(frozen=True)
+
+    slug: str
+    tag_slug: str
+    name: str
+
+
+def get_region_listings(regions: Iterable[str]) -> list[RegionListing]:
+    """
+    Lists region listing pages, starting with remote jobs
+    """
+    return [
+        RegionListing(slug=REMOTE_TAG_SLUG, tag_slug=REMOTE_TAG_SLUG, name="Na dálku"),
+        *(
+            RegionListing(
+                slug=slugify(region), tag_slug=get_tag_slug(region), name=region
+            )
+            for region in regions
+        ),
+    ]
+
+
+REGION_LISTINGS = get_region_listings(REGIONS)
 
 
 class TagType(StrEnum):
