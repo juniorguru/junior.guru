@@ -12,6 +12,8 @@ from jg.coop.lib.brand import (
     PODCAST_IMAGE_URL,
     PODCAST_NAME,
     PODCAST_URL,
+    site_url,
+    static_url,
 )
 from jg.coop.lib.md import md
 from jg.coop.models.base import db
@@ -138,8 +140,8 @@ def build_podcast_xml(api_dir, config):
         generator="JuniorGuruBot (+https://junior.guru)",
         image=PODCAST_IMAGE_URL,
         fundings=[
-            Funding("Přidej se do klubu junior.guru", "https://junior.guru/club/"),
-            Funding("Přispěj junior.guru", "https://junior.guru/love/"),
+            Funding("Přidej se do klubu junior.guru", site_url("club/")),
+            Funding("Přispěj junior.guru", site_url("love/")),
         ],
         explicit=False,
     )
@@ -172,7 +174,7 @@ def build_podcast_xml(api_dir, config):
             episode_number=number,
             episode_name=f"#{db_episode.number}",
             title=db_episode.format_title(number=True),
-            image=f"https://junior.guru/static/{db_episode.image_path}",
+            image=static_url(db_episode.image_path),
             publication_date=db_episode.publish_at_prg,
             link=db_episode.url,
             summary=md(db_episode.description + club_ad),

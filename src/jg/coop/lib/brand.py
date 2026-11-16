@@ -20,11 +20,11 @@ TIKTOK_URL = "https://www.tiktok.com/@juniordotguru"
 
 PODCAST_NAME = "Junior Guru: programování a kariéra v IT"
 
-PODCAST_URL = "https://junior.guru/podcast/"
+PODCAST_URL = f"{SITE_URL}podcast/"
 
-PODCAST_FEED_URL = "https://junior.guru/api/podcast.xml"
+PODCAST_FEED_URL = f"{SITE_URL}api/podcast.xml"
 
-PODCAST_IMAGE_URL = "https://junior.guru/static/podcast-v1.png"
+PODCAST_IMAGE_URL = f"{SITE_URL}static/podcast-v1.png"
 
 PODCAST_YOUTUBE_URL = YOUTUBE_URL
 
@@ -33,3 +33,11 @@ PODCAST_SPOTIFY_URL = "https://open.spotify.com/show/12w93IKRzfCsgo7XrGEVw4"
 PODCAST_APPLE_URL = (
     "https://podcasts.apple.com/cz/podcast/junior-guru-podcast/id1603653549"
 )
+
+
+def site_url(path: str = "") -> str:
+    return f"{SITE_URL}{path.removeprefix('/')}"
+
+
+def static_url(path: str) -> str:
+    return site_url(f"static/{path.removeprefix('/')}")

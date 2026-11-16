@@ -15,6 +15,7 @@ from jg.coop.lib.brand import (
     SITE_URL,
     TIKTOK_URL,
     YOUTUBE_URL,
+    static_url,
 )
 
 
@@ -47,7 +48,7 @@ def organization_json_ld() -> dict:
         "name": SITE_NAME,
         "alternateName": SITE_ALTERNATE_NAMES,
         "url": SITE_URL,
-        "logo": f"{SITE_URL}static/logo.png",
+        "logo": static_url("logo.png"),
         "founder": {"@type": "Person", "name": FOUNDER_NAME},
         "sameAs": [
             GITHUB_URL,

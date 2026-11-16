@@ -14,6 +14,7 @@ from peewee import (
     fn,
 )
 
+from jg.coop.lib.brand import site_url
 from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubUser
 
@@ -32,7 +33,7 @@ class SponsorTier(BaseModel):
 
     @property
     def url(self) -> str:
-        return f"https://junior.guru/love/#{self.slug}"
+        return site_url(f"love/#{self.slug}")
 
     @property
     def plan_url(self) -> str:

@@ -16,6 +16,7 @@ from mkdocs.structure.pages import Page
 from slugify import slugify
 
 from jg.coop.lib import json_ld as json_ld_
+from jg.coop.lib.brand import SITE_URL
 from jg.coop.lib.md import md as md_
 from jg.coop.lib.utm_params import strip_utm_params
 
@@ -28,11 +29,11 @@ def email_link(email: str) -> Markup:
 
 
 def relative_url(url):
-    return url.removeprefix("https://junior.guru")
+    return url.removeprefix(SITE_URL.removesuffix("/"))
 
 
 def absolute_url(url):
-    return urljoin("https://junior.guru", url)
+    return urljoin(SITE_URL, url)
 
 
 def json_ld(data: dict) -> Markup:

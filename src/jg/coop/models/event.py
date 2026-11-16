@@ -14,6 +14,7 @@ from peewee import (
     fn,
 )
 
+from jg.coop.lib.brand import site_url, static_url
 from jg.coop.lib.charts import month_range, ttm_range
 from jg.coop.lib.discord_club import (
     CLUB_EVENTS_CHANNEL_URL,
@@ -96,7 +97,7 @@ class Event(BaseModel):
 
     @property
     def url(self) -> str:
-        return f"https://junior.guru/events/{self.id}/"
+        return site_url(f"events/{self.id}/")
 
     @property
     def page_url(self) -> str:
@@ -169,7 +170,7 @@ class Event(BaseModel):
             "educationalLevel": "beginner",
             "endDate": self.end_at.isoformat() + "Z",
             "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-            "image": f"https://junior.guru/static/{self.poster_path}",
+            "image": static_url(self.poster_path),
             "location": {
                 "@type": "VirtualLocation",
                 "url": (
@@ -180,7 +181,7 @@ class Event(BaseModel):
             },
             "name": self.get_full_title(),
             "startDate": self.start_at.isoformat() + "Z",
-            "url": f"https://junior.guru/events/{self.id}/",
+            "url": site_url(f"events/{self.id}/"),
         }
 
     def to_image_template_context(self, plain: bool = False) -> dict:

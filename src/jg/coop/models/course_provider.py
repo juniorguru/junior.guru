@@ -8,6 +8,7 @@ from typing import Self
 import czech_sort
 from peewee import BooleanField, CharField, IntegerField, TextField, fn
 
+from jg.coop.lib.brand import site_url, static_url
 from jg.coop.models.base import BaseModel
 from jg.coop.models.partner import Partner
 from jg.coop.models.sponsor import Sponsor, SponsorTier
@@ -73,7 +74,7 @@ class CourseProvider(BaseModel):
 
     @property
     def catalogue_url(self) -> str:
-        return f"https://junior.guru/courses/{self.slug}/"
+        return site_url(f"courses/{self.slug}/")
 
     @property
     def page_url(self) -> str:
@@ -125,7 +126,7 @@ class CourseProvider(BaseModel):
             "url": self.url,
         }
         if org := self.organization:
-            data["logo"] = f"https://junior.guru/static/{org.logo_path}"
+            data["logo"] = static_url(org.logo_path)
         if companies := list(self.list_companies_json_ld()):
             data["subOrganization"] = companies
         return data

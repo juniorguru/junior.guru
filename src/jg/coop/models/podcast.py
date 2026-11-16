@@ -14,6 +14,8 @@ from jg.coop.lib.brand import (
     PODCAST_SPOTIFY_URL,
     PODCAST_URL,
     PODCAST_YOUTUBE_URL,
+    site_url,
+    static_url,
 )
 from jg.coop.lib.charts import ttm_range
 from jg.coop.models.base import BaseModel
@@ -83,7 +85,7 @@ class PodcastEpisode(BaseModel):
 
     @property
     def url(self) -> str:
-        return f"https://junior.guru/podcast/{self.number}/"
+        return site_url(f"podcast/{self.number}/")
 
     @property
     def page_url(self) -> str:
@@ -124,7 +126,7 @@ class PodcastEpisode(BaseModel):
             "description": self.description,
             "duration": f"PT{self.media_duration_s}S",
             "episodeNumber": self.number,
-            "image": f"https://junior.guru/static/{self.image_path}",
+            "image": static_url(self.image_path),
             "inLanguage": "cs",
             "name": self.format_title(),
             "partOfSeries": {
