@@ -1,16 +1,21 @@
-from datetime import date, datetime
+from datetime import UTC, date, datetime
 
 import pytest
 
 from jg.coop.models.club import SubscriptionType
 from jg.coop.sync.members import (
+    date_to_timestamp,
     get_active_subscription,
     get_coupon,
     get_expires_at,
+    get_mrr,
+    get_mrr_history,
+    get_mrr_orders_from,
     get_subscription_type,
     had_quit,
     had_signup,
     had_trial,
+    is_individual_paid_order,
 )
 
 
@@ -653,3 +658,124 @@ def test_is_quit():
     }
 
     assert had_quit(member, date(2024, 7, 1), date(2024, 7, 31)) is True
+
+
+PLAN_MONTHLY = {"name": "Členství v klubu", "intervalUnit": "month"}
+
+PLAN_YEARLY = {"name": "Roční členství v klubu", "intervalUnit": "year"}
+
+PLAN_SPONSOR = {"name": "Tarif „Sponzorujeme“", "intervalUnit": "year"}
+
+
+def create_order(
+    created_on: date,
+    total_cents: int,
+    plan: dict | None = PLAN_MONTHLY,
+    status: str = "completed",
+) -> dict:
+    created_at = int(datetime(*created_on.timetuple()[:3], 12, tzinfo=UTC).timestamp())
+    return {
+        "createdAt": created_at,
+        "status": status,
+        "totalCents": total_cents,
+        "purchasable": plan,
+    }
+
+
+@pytest.mark.parametrize(
+    "order, expected",
+    [
+        pytest.param(create_order(date(2026, 10, 5), 15000), True, id="monthly"),
+        pytest.param(
+            create_order(date(2026, 10, 5), 150000, PLAN_YEARLY), True, id="yearly"
+        ),
+        pytest.param(create_order(date(2026, 10, 5), 0), False, id="free"),
+        pytest.param(
+            create_order(date(2026, 10, 5), 15000, status="refunded"),
+            False,
+            id="refunded",
+        ),
+        pytest.param(
+            create_order(date(2026, 10, 5), 1000000, PLAN_SPONSOR),
+            False,
+            id="sponsor",
+        ),
+        pytest.param(create_order(date(2026, 10, 5), 15000, None), False, id="no plan"),
+        pytest.param(create_order(date(2026, 10, 5), 15000, {}), False, id="download"),
+    ],
+)
+def test_is_individual_paid_order(order: dict, expected: bool):
+    assert is_individual_paid_order(order) is expected
+
+
+@pytest.mark.parametrize(
+    "month, expected",
+    [
+        (date(2026, 1, 1), date(2025, 2, 1)),
+        (date(2026, 10, 31), date(2025, 11, 1)),
+        (date(2026, 12, 15), date(2026, 1, 1)),
+    ],
+)
+def test_get_mrr_orders_from(month: date, expected: date):
+    assert get_mrr_orders_from(month) == expected
+
+
+def test_get_mrr_sums_monthly_orders_in_the_month():
+    orders = [
+        create_order(date(2026, 9, 30), 15000),
+        create_order(date(2026, 10, 1), 15000),
+        create_order(date(2026, 10, 31), 9900),
+        create_order(date(2026, 11, 1), 15000),
+    ]
+
+    assert get_mrr(orders, date(2026, 10, 15)) == 249
+
+
+def test_get_mrr_spreads_yearly_orders_over_twelve_months():
+    orders = [
+        create_order(date(2025, 10, 31), 120000, PLAN_YEARLY),
+        create_order(date(2025, 11, 1), 120000, PLAN_YEARLY),
+        create_order(date(2026, 10, 31), 120000, PLAN_YEARLY),
+        create_order(date(2026, 11, 1), 120000, PLAN_YEARLY),
+    ]
+
+    assert get_mrr(orders, date(2026, 10, 15)) == 200
+
+
+def test_get_mrr_ignores_unpaid_and_non_individual_orders():
+    orders = [
+        create_order(date(2026, 10, 5), 0),
+        create_order(date(2026, 10, 5), 15000, status="refunded"),
+        create_order(date(2026, 10, 5), 1000000, PLAN_SPONSOR),
+        create_order(date(2026, 10, 5), 15000, None),
+    ]
+
+    assert get_mrr(orders, date(2026, 10, 15)) == 0
+
+
+def test_get_mrr_rounds_to_whole_crowns():
+    orders = [
+        create_order(date(2026, 10, 5), 15050),
+        create_order(date(2026, 10, 5), 100000, PLAN_YEARLY),
+    ]
+
+    assert get_mrr(orders, date(2026, 10, 15)) == 234  # 150.5 + 83.33
+
+
+def test_get_mrr_history():
+    orders = [
+        create_order(date(2025, 12, 5), 120000, PLAN_YEARLY),
+        create_order(date(2026, 1, 5), 15000),
+        create_order(date(2026, 2, 5), 15000),
+        create_order(date(2026, 2, 6), 15000),
+    ]
+
+    assert get_mrr_history(orders, date(2026, 1, 1), date(2026, 3, 10)) == {
+        "2026-01": 250,
+        "2026-02": 400,
+        "2026-03": 100,
+    }
+
+
+def test_date_to_timestamp():
+    assert date_to_timestamp(date(2025, 2, 1)) == 1738368000

@@ -14,9 +14,12 @@ from jg.coop.models.club import SubscriptionType
 
 SUBSCRIPTION_TYPES_PREFIX = "subscription_types_"
 
+MRR_BEGIN_ON = date(2026, 1, 1)
+
 NAMES = [
     "members",
     "members_f",
+    "mrr_individuals",
     "subscriptions_quits",
     "subscriptions_signups",
     "subscriptions_trials",
@@ -103,6 +106,10 @@ class Members(BaseModel):
             name.removeprefix(SUBSCRIPTION_TYPES_PREFIX): cls.per_month(name, months)
             for name in subscription_types
         }
+
+    @classmethod
+    def monthly_mrr_individuals(cls, months: Iterable[date]) -> list[int]:
+        return cls.per_month("mrr_individuals", months)
 
     @classmethod
     def monthly_signups(cls, months: Iterable[date]) -> list[int]:

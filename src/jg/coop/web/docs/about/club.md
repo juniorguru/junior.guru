@@ -51,6 +51,31 @@ Klub má teď **{{ members_total_count }} členů** celkem. Z nich si to **{{ ch
         'plugins': {'annotation': charts.members_annotations},
     }|tojson|forceescape }}"></canvas></div></div>
 
+## Měsíční příjem z individuálních členství
+
+Kolik měsíčně platí lidé, kteří si klub platí ze svého (MRR, _Monthly Recurring Revenue_). Počítají se platby za měsíční členství v daném měsíci a dvanáctina plateb za roční členství z posledních dvanácti měsíců. Členství zdarma, dva týdny na zkoušku ani členství od sponzorů a partnerů se nepočítají. Je to v korunách, před odečtením poplatků za platby. Data jsou od začátku roku 2026.
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="line"
+    data-chart-partial-last
+    data-chart="{{ {
+        'labels': charts.mrr_individuals_labels,
+        'datasets': [
+            {
+                'label': 'MRR z individuálních členství v Kč',
+                'data': charts.mrr_individuals,
+                'borderColor': '#1755d1',
+                'borderWidth': 2,
+            },
+        ],
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {'y': {'beginAtZero': true}},
+        'plugins': {'annotation': charts.mrr_individuals_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+
 ## Meziroční růst počtu členů
 
 Růst počtu členů v procentech. Každý měsíc se porovnává se stejným měsícem o rok dříve (YoY, _Year-over-Year_). Mělo by to ukazovat meziroční růst nebo pokles.
