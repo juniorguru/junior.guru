@@ -13,7 +13,7 @@ description: Nezávislý katalog kurzů programování a testování. Recenze a 
 {% endcall %}
 
 {% call note(standout=true) %}
-  {{ 'plus-circle'|icon }} Pokud víš o kurzech, které tady chybí, piš na {{ 'honza@junior.guru'|email_link }}
+  {{ 'plus-circle'|icon }} Pokud víš o kurzech, které tady chybí, piš na {{ brand.CONTACT_EMAIL|email_link }}
 {% endcall %}
 
 [TOC]

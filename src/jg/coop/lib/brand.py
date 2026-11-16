@@ -6,6 +6,8 @@ SITE_NAME = "junior.guru"
 
 SITE_ALTERNATE_NAMES = ["Junior Guru"]
 
+CONTACT_EMAIL = "honza@junior.guru"
+
 FOUNDER_NAME = "Honza Javorek"
 
 FOUNDER_LINKEDIN_URL = "https://www.linkedin.com/in/honzajavorek/"

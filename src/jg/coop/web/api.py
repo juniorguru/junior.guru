@@ -7,6 +7,7 @@ import ics
 from pod2gen import Category, Episode, Funding, Media, Person, Podcast
 
 from jg.coop.lib.brand import (
+    CONTACT_EMAIL,
     FOUNDER_NAME,
     PODCAST_FEED_URL,
     PODCAST_IMAGE_URL,
@@ -64,7 +65,7 @@ def build_events_ics(api_dir, config):
                 end=naive_utc_to_prg(event.end_at),
                 description=event.url,
                 organizer=ics.Organizer(
-                    common_name="junior.guru klub", email="honza@junior.guru"
+                    common_name="junior.guru klub", email=CONTACT_EMAIL
                 ),
                 location=event.club_event_url,
             )
@@ -125,7 +126,7 @@ def build_podcast_xml(api_dir, config):
     # TODO Category('Business'), Category('Education')
     # https://gitlab.com/caproni-podcast-publishing/pod2gen/-/issues/26
 
-    person_hj = Person(FOUNDER_NAME, "honza@junior.guru")
+    person_hj = Person(FOUNDER_NAME, CONTACT_EMAIL)
     podcast = Podcast(
         name=PODCAST_NAME,
         description="Jsme tu pro všechny juniory v IT! Jak začít s programováním? Jak najít práci v IT? Přinášíme odpovědi, inspiraci, motivaci.",

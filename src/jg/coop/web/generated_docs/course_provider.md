@@ -115,14 +115,14 @@
 {{ course_provider.usp_description }}
 
 <small>
-Pokud tento popis umíš nějak doplnit, napiš prosím na {{ 'honza@junior.guru'|email_link }}.
+Pokud tento popis umíš nějak doplnit, napiš prosím na {{ brand.CONTACT_EMAIL|email_link }}.
 Umíš s GitHubem? [Pošli Pull Request]({{ course_provider.edit_url }})!
 </small>
 {% else %}
 {% call note() %}
   {{ 'exclamation-circle'|icon }}
   Zatím tady chybí popis.
-  Pokud o {{ course_provider.name }} něco víš, napiš prosím na {{ 'honza@junior.guru'|email_link }}.
+  Pokud o {{ course_provider.name }} něco víš, napiš prosím na {{ brand.CONTACT_EMAIL|email_link }}.
   Umíš s GitHubem? [Pošli Pull Request]({{ course_provider.edit_url }})!
 {% endcall %}
 {% endif %}
