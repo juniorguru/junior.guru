@@ -37,7 +37,7 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
   <a
     class="brand-btn youtube"
     target="_blank"
-    rel="noopener" href="https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA">
+    rel="noopener" href="{{ brand.YOUTUBE_URL }}">
     {{ 'youtube'|icon }} YouTube
   </a>
   <a
@@ -54,7 +54,7 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
   <div class="team-member-body">
     <h3>
       Honza Javorek
-      <a class="team-member-link" href="https://www.linkedin.com/in/honzajavorek/" target="_blank" rel="noopener">
+      <a class="team-member-link" href="{{ brand.FOUNDER_LINKEDIN_URL }}" target="_blank" rel="noopener">
         {{ 'linkedin'|icon }}
         <span class="visually-hidden">LinkedIn</span>
       </a>
@@ -99,7 +99,7 @@ Pojetí akcí je vždy vyloženě pro začátečníky.
 </div>
 
 {% call note(standout=True) %}
-  {{ 'lightbulb'|icon }} Chceš juniorům taky něco ukázat nebo vysvětlit? Napiš na {{ 'honza@junior.guru'|email_link }} a třeba se domluvíme. Co to obnáší se dovíš v [návodu](speaker.md). Přednášející mají členství v klubu na rok zdarma.
+  {{ 'lightbulb'|icon }} Chceš juniorům taky něco ukázat nebo vysvětlit? Napiš na {{ brand.CONTACT_EMAIL|email_link }} a třeba se domluvíme. Co to obnáší se dovíš v [návodu](speaker.md). Přednášející mají členství v klubu na rok zdarma.
 {% endcall %}
 
 {% if events_planned|length %}

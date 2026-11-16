@@ -30,7 +30,7 @@ from playwright.sync_api import (
 )
 
 from jg.coop.lib import template_filters
-from jg.coop.lib.mkdocs_jinja import get_filters
+from jg.coop.lib.mkdocs_jinja import TEMPLATE_GLOBALS, get_filters
 from jg.coop.web.context import get_candidates_context, get_jobs_context
 from jg.coop.web.generators import (
     generate_employment_type_jobs_pages,
@@ -91,6 +91,7 @@ def render_string(
     env.filters["url"] = url_filter
     env.filters["md"] = template_filters.md
     env.filters["docs_url"] = lambda files, src_path: "#"
+    env.globals.update(TEMPLATE_GLOBALS)
 
     page = SimpleNamespace(url=url.lstrip("/"), meta=page_meta or {})
     html = env.from_string(source).render(page=page, pages=[], base_url="/", **context)

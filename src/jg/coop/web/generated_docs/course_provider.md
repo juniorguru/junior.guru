@@ -1,17 +1,13 @@
-{% from 'macros.html' import club_teaser, img, lead, note with context %}
+{% from 'macros.html' import breadcrumbs, club_teaser, img, lead, note with context %}
 
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item">
-      <a href="{{ (page|parent_page).url|url }}">
-        {{ (page|parent_page).title }}
-      </a>
-    </li>
-    <li class="breadcrumb-item active" aria-current="page">
-      {{ course_provider.name }}
-    </li>
-  </ol>
-</nav>
+{{ breadcrumbs(
+  parent_title=(page|parent_page).title,
+  parent_href=(page|parent_page).url|url,
+  parent_url=(page|parent_page).canonical_url,
+  title=course_provider.name,
+  url=page.canonical_url,
+) }}
+<script type="application/ld+json">{{ course_provider.to_json_ld()|json_ld }}</script>
 
 # Kurzy od {{ course_provider.name }}
 
@@ -119,14 +115,14 @@
 {{ course_provider.usp_description }}
 
 <small>
-Pokud tento popis umíš nějak doplnit, napiš prosím na {{ 'honza@junior.guru'|email_link }}.
+Pokud tento popis umíš nějak doplnit, napiš prosím na {{ brand.CONTACT_EMAIL|email_link }}.
 Umíš s GitHubem? [Pošli Pull Request]({{ course_provider.edit_url }})!
 </small>
 {% else %}
 {% call note() %}
   {{ 'exclamation-circle'|icon }}
   Zatím tady chybí popis.
-  Pokud o {{ course_provider.name }} něco víš, napiš prosím na {{ 'honza@junior.guru'|email_link }}.
+  Pokud o {{ course_provider.name }} něco víš, napiš prosím na {{ brand.CONTACT_EMAIL|email_link }}.
   Umíš s GitHubem? [Pošli Pull Request]({{ course_provider.edit_url }})!
 {% endcall %}
 {% endif %}

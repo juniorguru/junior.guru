@@ -36,7 +36,7 @@ Pravidla platí pro všechny účastníky akcí a diskuzí pod hlavičkou Junior
 
 ## Jak nahlásit porušení?
 
-Pokud jsi svědkem nevhodného chování, nebo dokonce jeho terčem, neprodleně kontaktuj realizační tým, organizátory nebo moderátory. Popiš co se stalo a pošli to na [honza@junior.guru](mailto:honza@junior.guru). Pokud jde o něco urgentního, moderátoři mají k dispozici i telefonní číslo na Honzu. Upozornění vždy zůstávají tajná a zodpovědné osoby se zavazují je řešit.
+Pokud jsi svědkem nevhodného chování, nebo dokonce jeho terčem, neprodleně kontaktuj realizační tým, organizátory nebo moderátory. Popiš co se stalo a pošli to na [{{ brand.CONTACT_EMAIL }}](mailto:{{ brand.CONTACT_EMAIL }}). Pokud jde o něco urgentního, moderátoři mají k dispozici i telefonní číslo na Honzu. Upozornění vždy zůstávají tajná a zodpovědné osoby se zavazují je řešit.
 
 ## Proč potřebujeme pravidla chování?
 

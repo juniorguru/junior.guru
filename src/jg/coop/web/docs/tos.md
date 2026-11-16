@@ -75,7 +75,7 @@ Tyto obchodní podmínky pokrývají digitální předplatné a podmínky přís
 
 ## 3\. Zvláštní pravidla pro objednávky ze strany společnosti
 
-**3.1.** Společnostem je poskytováno digitální předplatné na základě specifických podmínek, a to formou individuální objednávky přes e-mail: [honza@junior.guru](mailto:honza@junior.guru). Společnostem je následně vystavován daňový doklad se zákonným náležitostmi a úhrada za služby probíhá formou bezhotovostního převodu na účet poskytovatele.
+**3.1.** Společnostem je poskytováno digitální předplatné na základě specifických podmínek, a to formou individuální objednávky přes e-mail: [{{ brand.CONTACT_EMAIL }}](mailto:{{ brand.CONTACT_EMAIL }}). Společnostem je následně vystavován daňový doklad se zákonným náležitostmi a úhrada za služby probíhá formou bezhotovostního převodu na účet poskytovatele.
 
 **3.2.** Společnost bere na vědomí, že členství v diskuzním klubu poskytnuté formou dle tohoto odstavce, je poskytováno vystavením voucherů. Je tedy pouze na společnosti, komu vouchery poskytne. Vouchery jednou uplatněné nemohou být převedeny na další osobu. Člen, který tímto způsobem získá členství v diskuzním klubu, nemůže být tohoto členství z vůle společnosti zbaven, a to i v případě, že by například ukončil pracovní poměr u společnosti a obdobně.
 
@@ -168,11 +168,11 @@ Tyto obchodní podmínky pokrývají digitální předplatné a podmínky přís
 
 **10.1.** Kupujícímu je doručováno na jeho e-mailovou adresu uvedenou v objednávce případně v jeho uživatelském profilu.
 
-**10.2.** Mě můžete doručovat na e-mailovou adresu [honza@junior.guru](mailto:honza@junior.guru), případně poštou na adresu sídla: Jan Javorek, Kunešova 2651/14, 130 00 Praha
+**10.2.** Mě můžete doručovat na e-mailovou adresu [{{ brand.CONTACT_EMAIL }}](mailto:{{ brand.CONTACT_EMAIL }}), případně poštou na adresu sídla: Jan Javorek, Kunešova 2651/14, 130 00 Praha
 
 ## 11\. Vyřizování stížností a případné spory
 
-**11.1.** Vyřizování stížností spotřebitelů zajišťuji prostřednictvím digitální adresy [honza@junior.guru](mailto:honza@junior.guru). Informaci o vyřízení vaší stížnosti vám následně zašlu na vaši e-mailovou adresu.
+**11.1.** Vyřizování stížností spotřebitelů zajišťuji prostřednictvím digitální adresy [{{ brand.CONTACT_EMAIL }}](mailto:{{ brand.CONTACT_EMAIL }}). Informaci o vyřízení vaší stížnosti vám následně zašlu na vaši e-mailovou adresu.
 
 **11.2.** K mimosoudnímu řešení spotřebitelských sporů z kupní smlouvy je příslušná Česká obchodní inspekce, se sídlem Štěpánská 567/15, 120 00 Praha 2, IČ: 000 20 869, internetová adresa: [coi.gov.cz](https://coi.gov.cz/). Platformu pro řešení sporů on-line nacházející se na internetové adrese [ec.europa.eu/consumers/odr](https://ec.europa.eu/consumers/odr) je možné využít při řešení sporů mezi poskytovatelem a kupujícím z kupní smlouvy.
 

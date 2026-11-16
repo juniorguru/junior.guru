@@ -27,7 +27,7 @@ Se zřízením registrace v klientské sekci či odesláním objednávky na mé 
 
 ## 1. Účel zpracování osobních údajů
 
-Osobní údaje jsou zpracovávány za účelem poskytování služeb správce podle smlouvy uzavřené s klientem. Jméno, příjmení a e-mailová adresa mohou být vedle toho využity k zasílání obchodních sdělení ze strany poskytovatele. Zpracování osobních údajů klienta za účelem zasílání obchodních sdělení může být kdykoliv odmítnuto. Odmítnutí nemá vliv na jiné vzájemné vztahy. E-mail s příslušnou žádostí (odmítnutím) stačí zaslat na [honza@junior.guru](mailto:honza@junior.guru) nebo jinou adresu, ze které bylo obchodní sdělení zasláno.
+Osobní údaje jsou zpracovávány za účelem poskytování služeb správce podle smlouvy uzavřené s klientem. Jméno, příjmení a e-mailová adresa mohou být vedle toho využity k zasílání obchodních sdělení ze strany poskytovatele. Zpracování osobních údajů klienta za účelem zasílání obchodních sdělení může být kdykoliv odmítnuto. Odmítnutí nemá vliv na jiné vzájemné vztahy. E-mail s příslušnou žádostí (odmítnutím) stačí zaslat na [{{ brand.CONTACT_EMAIL }}](mailto:{{ brand.CONTACT_EMAIL }}) nebo jinou adresu, ze které bylo obchodní sdělení zasláno.
 
 ## 2\. Rozsah zpracování osobních údajů
 

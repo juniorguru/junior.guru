@@ -12,6 +12,11 @@ from pydantic import BaseModel
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
+from jg.coop.lib.brand import (
+    PODCAST_APPLE_URL,
+    PODCAST_SPOTIFY_URL,
+    YOUTUBE_URL,
+)
 from jg.coop.lib.discord_club import ClubChannelID, ClubClient, ClubMemberID
 from jg.coop.lib.images import PostersCache, is_image, render_image_file, validate_image
 from jg.coop.lib.mutations import mutating_discord
@@ -235,17 +240,17 @@ async def announce_new_episode(client: ClubClient):
             ui.Button(
                 emoji="<:youtube:976200175490060299>",
                 label="YouTube",
-                url="https://www.youtube.com/channel/UCp-dlEJLFPaNExzYX079gCA",
+                url=YOUTUBE_URL,
             ),
             ui.Button(
                 emoji="<:spotify:1085596335794819092>",
                 label="Spotify",
-                url="https://open.spotify.com/show/12w93IKRzfCsgo7XrGEVw4",
+                url=PODCAST_SPOTIFY_URL,
             ),
             ui.Button(
                 emoji="<:appleinc:842465215718227987>",
                 label="Apple",
-                url="https://podcasts.apple.com/cz/podcast/junior-guru-podcast/id1603653549",
+                url=PODCAST_APPLE_URL,
             ),
         )
         with mutating_discord(channel) as proxy:

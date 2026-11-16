@@ -3,6 +3,7 @@ from typing import Self
 
 from peewee import BooleanField, CharField, DateField, IntegerField, fn
 
+from jg.coop.lib.brand import site_url, static_url
 from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubChannel, ClubMessage
 from jg.coop.models.topic import TopicDiscussion
@@ -44,12 +45,12 @@ class Page(BaseModel):
 
     @property
     def absolute_url(self) -> str:
-        return f"https://junior.guru/{self.dest_uri.removesuffix('index.html')}"
+        return site_url(self.dest_uri.removesuffix("index.html"))
 
     @property
     def thumbnail_url(self) -> str | None:
         if self.thumbnail_path:
-            return f"https://junior.guru/static/{self.thumbnail_path}"
+            return static_url(self.thumbnail_path)
         return None
 
     @classmethod

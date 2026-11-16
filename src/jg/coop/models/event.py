@@ -1,5 +1,4 @@
 import itertools
-import json
 import math
 import random
 from datetime import UTC, date, datetime, timedelta
@@ -15,6 +14,7 @@ from peewee import (
     fn,
 )
 
+from jg.coop.lib.brand import site_url, static_url
 from jg.coop.lib.charts import month_range, ttm_range
 from jg.coop.lib.discord_club import (
     CLUB_EVENTS_CHANNEL_URL,
@@ -97,7 +97,7 @@ class Event(BaseModel):
 
     @property
     def url(self) -> str:
-        return f"https://junior.guru/events/{self.id}/"
+        return site_url(f"events/{self.id}/")
 
     @property
     def page_url(self) -> str:
@@ -164,30 +164,25 @@ class Event(BaseModel):
             "badge_text": "Záznam není dostupný",
         }
 
-    def to_json_ld(self) -> str:
-        return json.dumps(
-            {
-                "@context": "https://schema.org",
-                "@type": "EducationEvent",
-                "educationalLevel": "beginner",
-                "endDate": self.end_at.isoformat() + "Z",
-                "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-                "image": f"https://junior.guru/static/{self.poster_path}",
-                "location": {
-                    "@type": "VirtualLocation",
-                    "url": (
-                        self.public_recording_url
-                        or self.club_recording_url
-                        or CLUB_EVENTS_CHANNEL_URL
-                    ),
-                },
-                "name": self.get_full_title(),
-                "startDate": self.start_at.isoformat() + "Z",
-                "url": f"https://junior.guru/events/{self.id}/",
+    def to_json_ld(self) -> dict:
+        return {
+            "@type": "EducationEvent",
+            "educationalLevel": "beginner",
+            "endDate": self.end_at.isoformat() + "Z",
+            "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+            "image": static_url(self.poster_path),
+            "location": {
+                "@type": "VirtualLocation",
+                "url": (
+                    self.public_recording_url
+                    or self.club_recording_url
+                    or CLUB_EVENTS_CHANNEL_URL
+                ),
             },
-            ensure_ascii=False,
-            sort_keys=True,
-        )
+            "name": self.get_full_title(),
+            "startDate": self.start_at.isoformat() + "Z",
+            "url": site_url(f"events/{self.id}/"),
+        }
 
     def to_image_template_context(self, plain: bool = False) -> dict:
         context = {

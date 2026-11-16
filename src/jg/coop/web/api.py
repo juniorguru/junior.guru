@@ -6,6 +6,17 @@ from zoneinfo import ZoneInfo
 import ics
 from pod2gen import Category, Episode, Funding, Media, Person, Podcast
 
+from jg.coop.lib.brand import (
+    BOT_USER_AGENT,
+    CONTACT_EMAIL,
+    FOUNDER_NAME,
+    PODCAST_FEED_URL,
+    PODCAST_IMAGE_URL,
+    PODCAST_NAME,
+    PODCAST_URL,
+    site_url,
+    static_url,
+)
 from jg.coop.lib.md import md
 from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
@@ -55,7 +66,7 @@ def build_events_ics(api_dir, config):
                 end=naive_utc_to_prg(event.end_at),
                 description=event.url,
                 organizer=ics.Organizer(
-                    common_name="junior.guru klub", email="honza@junior.guru"
+                    common_name="junior.guru klub", email=CONTACT_EMAIL
                 ),
                 location=event.club_event_url,
             )
@@ -116,23 +127,23 @@ def build_podcast_xml(api_dir, config):
     # TODO Category('Business'), Category('Education')
     # https://gitlab.com/caproni-podcast-publishing/pod2gen/-/issues/26
 
-    person_hj = Person("Honza Javorek", "honza@junior.guru")
+    person_hj = Person(FOUNDER_NAME, CONTACT_EMAIL)
     podcast = Podcast(
-        name="Junior Guru: programování a kariéra v IT",
+        name=PODCAST_NAME,
         description="Jsme tu pro všechny juniory v IT! Jak začít s programováním? Jak najít práci v IT? Přinášíme odpovědi, inspiraci, motivaci.",
         language="cs",
         category=Category("Technology"),
-        website="https://junior.guru/podcast/",
-        feed_url="https://junior.guru/api/podcast.xml",
+        website=PODCAST_URL,
+        feed_url=PODCAST_FEED_URL,
         authors=[Person("Pája Froňková"), person_hj],
         owner=person_hj,
         web_master=person_hj,
         copyright=f"© {PodcastEpisode.copyright_year()} Pavlína Froňková, Jan Javorek",
-        generator="JuniorGuruBot (+https://junior.guru)",
-        image="https://junior.guru/static/podcast-v1.png",
+        generator=BOT_USER_AGENT,
+        image=PODCAST_IMAGE_URL,
         fundings=[
-            Funding("Přidej se do klubu junior.guru", "https://junior.guru/club/"),
-            Funding("Přispěj junior.guru", "https://junior.guru/love/"),
+            Funding("Přidej se do klubu junior.guru", site_url("club/")),
+            Funding("Přispěj junior.guru", site_url("love/")),
         ],
         explicit=False,
     )
@@ -165,7 +176,7 @@ def build_podcast_xml(api_dir, config):
             episode_number=number,
             episode_name=f"#{db_episode.number}",
             title=db_episode.format_title(number=True),
-            image=f"https://junior.guru/static/{db_episode.image_path}",
+            image=static_url(db_episode.image_path),
             publication_date=db_episode.publish_at_prg,
             link=db_episode.url,
             summary=md(db_episode.description + club_ad),

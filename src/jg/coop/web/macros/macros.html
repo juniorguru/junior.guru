@@ -13,6 +13,25 @@
 {% endmacro %}
 
 
+{% macro breadcrumbs(parent_title, parent_href, title, parent_url=none, url=none) -%}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="{{ parent_href }}">
+        {{ parent_title }}
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      {{ title }}
+    </li>
+  </ol>
+</nav>
+{%- if parent_url and url %}
+<script type="application/ld+json">{{ breadcrumb_list_json_ld([(parent_title, parent_url), (title, url)])|json_ld }}</script>
+{%- endif %}
+{%- endmacro %}
+
+
 {% macro illustration(path) %}
 <div class="illustration standout">
   {{ img(path, 'ilustrace', 710, 500, class='illustration-main', lazy=False) }}
@@ -465,7 +484,7 @@
   se sídlem Kunešova 2651/14, 130 00 Praha<br>
   IČO: <a href="https://ares.gov.cz/ekonomicke-subjekty?ico=74279858" target="_blank" rel="noopener">74279858</a>,<br>
   neplátce DPH,<br>
-  E-mail: {{ "honza@junior.guru"|email_link }}<br>
+  E-mail: {{ brand.CONTACT_EMAIL|email_link }}<br>
 </p>
 {% endmacro %}
 

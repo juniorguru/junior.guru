@@ -1,17 +1,12 @@
-{% from 'macros.html' import lead with context %}
+{% from 'macros.html' import breadcrumbs, lead with context %}
 
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item">
-      <a href="{{ (page|parent_page).url|url }}">
-        {{ (page|parent_page).title }}
-      </a>
-    </li>
-    <li class="breadcrumb-item active" aria-current="page">
-      {{ newsletter_issue.subject }}
-    </li>
-  </ol>
-</nav>
+{{ breadcrumbs(
+  parent_title=(page|parent_page).title,
+  parent_href=(page|parent_page).url|url,
+  parent_url=(page|parent_page).canonical_url,
+  title=newsletter_issue.subject,
+  url=page.canonical_url,
+) }}
 
 # {{ newsletter_issue.subject }}
 

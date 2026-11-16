@@ -8,6 +8,7 @@ from typing import Self
 import czech_sort
 from peewee import BooleanField, CharField, IntegerField, TextField, fn
 
+from jg.coop.lib.brand import site_url, static_url
 from jg.coop.models.base import BaseModel
 from jg.coop.models.partner import Partner
 from jg.coop.models.sponsor import Sponsor, SponsorTier
@@ -73,7 +74,7 @@ class CourseProvider(BaseModel):
 
     @property
     def catalogue_url(self) -> str:
-        return f"https://junior.guru/courses/{self.slug}/"
+        return site_url(f"courses/{self.slug}/")
 
     @property
     def page_url(self) -> str:
@@ -116,6 +117,39 @@ class CourseProvider(BaseModel):
             return orgs[0]
         except IndexError:
             return None
+
+    def to_json_ld(self) -> dict:
+        data = {
+            "@type": "EducationalOrganization",
+            "mainEntityOfPage": self.catalogue_url,
+            "name": self.name,
+            "url": self.url,
+        }
+        if org := self.organization:
+            data["logo"] = static_url(org.logo_path)
+        if companies := self._companies_json_ld():
+            data["subOrganization"] = companies
+        return data
+
+    def _companies_json_ld(self) -> list[dict]:
+        companies = [
+            ("CZ", self.cz_business_id, self.cz_name),
+            ("SK", self.sk_business_id, self.sk_name),
+        ]
+        return [
+            {
+                "@type": "Organization",
+                "legalName": legal_name or self.name,
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "propertyID": "IČO",
+                    "value": str(business_id),
+                },
+                "address": {"@type": "PostalAddress", "addressCountry": country},
+            }
+            for country, business_id, legal_name in companies
+            if business_id
+        ]
 
     @classmethod
     def listing(cls) -> Iterable[Self]:

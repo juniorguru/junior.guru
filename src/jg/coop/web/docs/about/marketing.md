@@ -42,11 +42,11 @@ Když jeli [trabanti do Afriky](https://www.ceskatelevize.cz/porady/10660318675-
 
 V roce 2022 [Honzu unavily sociální sítě](https://honzajavorek.cz/blog/moje-nova-strategie-na-socialni-site/) a z většiny odešel.
 Aktuálně je aktivní hlavně na LinkedInu a uvažuje o tom, že by víc využíval YouTube.
-Nejraději používá [Mastodon](https://mastodonczech.cz/@honzajavorek), ale spíš pro soukromé než marketingové účely.
+Nejraději používá [Mastodon]({{ brand.FOUNDER_MASTODON_URL }}), ale spíš pro soukromé než marketingové účely.
 
-- [LinkedIn](https://www.linkedin.com/in/honzajavorek/)
-- [YouTube](https://www.youtube.com/@juniordotguru)
-- [Mastodon](https://mastodonczech.cz/@honzajavorek/)
+- [LinkedIn]({{ brand.FOUNDER_LINKEDIN_URL }})
+- [YouTube]({{ brand.YOUTUBE_URL }})
+- [Mastodon]({{ brand.FOUNDER_MASTODON_URL }})
 
 Žádnou ucelenou strategii nemá a plácá příspěvky na sítě tak, jak to cítí.
 Nemá rád poskakování podle toho, jak algoritmus píská, takže nedbá obecných doporučení a příspěvky hází nepravidelně, podle nálady, ne podle redakčního plánu.

@@ -26,7 +26,7 @@ template: main_handbook.html
 
 Ještě než se začteš, jednu věc si musíme ujasnit hned. **Toto není e-book.** Nacházíš se na „živé stránce“, na které stále probíhají úpravy. Kdykoliv tady může přibýt něco nového, takže není od věci se sem občas vrátit. Všechny změny [najdeš na GitHubu](https://github.com/juniorguru/junior.guru/commits/main/src/jg/coop/web/docs/handbook/), o těch důležitých se můžeš dovědět na sociálních sítích junior.guru nebo prostřednictvím [klubu](../club.md).
 
-A věci mohou přibývat i díky tobě! Pokud máš připomínku, vlastní zkušenost, nebo nápad na novou kapitolu, napiš na {{ 'honza@junior.guru'|email_link }}.
+A věci mohou přibývat i díky tobě! Pokud máš připomínku, vlastní zkušenost, nebo nápad na novou kapitolu, napiš na {{ brand.CONTACT_EMAIL|email_link }}.
 
 ### Předmluva    <span id="foreword"></span>
 
@@ -567,7 +567,7 @@ Výhodou firemních náborářů je, že **znají společnost do hloubky** a jso
 
 Kromě procházení nabídek práce **si můžeš vytvořit profil, na základě kterého tě mohou firmy najít samy**. Přesněji, mohou tě najít [recruiteři](#naborari).
 
-Základem profilu je životopis. [Účet na LinkedIn](https://www.linkedin.com/in/honzajavorek/) nebo [osobní stránky](#osobni-web-a-blog) by tedy šlo za takový „profil kandidáta“ považovat, ale ten většinou bývá **obohacen ještě o další, zpravidla neveřejné informace, které pomáhají náborářům v orientaci**. Mohou to být výsledky testů tvých znalostí, podrobnější informace o tvých mzdových představách nebo popis ideální hledané pozice z pohledu kandidáta. Profil si můžeš vytvořit skoro na každém webu, který se zabývá nabídkou a poptávkou práce, [včetně junior.guru](../candidates.jinja).
+Základem profilu je životopis. [Účet na LinkedIn]({{ brand.FOUNDER_LINKEDIN_URL }}) nebo [osobní stránky](#osobni-web-a-blog) by tedy šlo za takový „profil kandidáta“ považovat, ale ten většinou bývá **obohacen ještě o další, zpravidla neveřejné informace, které pomáhají náborářům v orientaci**. Mohou to být výsledky testů tvých znalostí, podrobnější informace o tvých mzdových představách nebo popis ideální hledané pozice z pohledu kandidáta. Profil si můžeš vytvořit skoro na každém webu, který se zabývá nabídkou a poptávkou práce, [včetně junior.guru](../candidates.jinja).
 
 Kromě takovýchto strukturovaných profilů **se můžeš nabízet také volně v programátorské komunitě**. Základem je [networking](#networking), ale lze využít i sílu sociálních sítí. Příspěvky o tom, že hledáš práci, můžeš zveřejnit na místech, kde se sdružují programátoři, např. ve [Facebookové skupině o jazyce Python](https://www.facebook.com/groups/pyonieri/). **Upřímně popiš co umíš a co hledáš.** Konkrétně v případě Facebooku si dej ale pozor na to, že soukromé zprávy od lidí, které nemáš v přátelích, ti spadnou do „žádostí o zprávy“. Můžeš tak minout vážně míněné nabídky práce zaslané jako reakce na tvůj příspěvek.
 
@@ -716,7 +716,7 @@ Kde se bere vášeň? Do začátku stačí, když ti programování přijde jako
 
 **P.S.** Nezapomeň, že jsi na „živé stránce“, na které stále probíhají úpravy. Kdykoliv tady může přibýt něco nového, takže není od věci se sem občas vrátit. Všechny změny [najdeš na GitHubu](https://github.com/juniorguru/junior.guru/commits/main/src/jg/coop/web/docs/handbook/), o těch důležitých se můžeš dovědět na sociálních sítích junior.guru nebo prostřednictvím [klubu](../club.md).
 
-A věci mohou přibývat i díky tobě! Pokud máš připomínku, vlastní zkušenost, nebo nápad na novou kapitolu, napiš na {{ 'honza@junior.guru'|email_link }}. Jestli se ti díky junior.guru povede sehnat práci, ozvi se! Můžeš [motivovat ostatní svým příběhem](../stories.md), nebo tím prostě jen udělat Honzovi, autorovi junior.guru, radost.
+A věci mohou přibývat i díky tobě! Pokud máš připomínku, vlastní zkušenost, nebo nápad na novou kapitolu, napiš na {{ brand.CONTACT_EMAIL|email_link }}. Jestli se ti díky junior.guru povede sehnat práci, ozvi se! Můžeš [motivovat ostatní svým příběhem](../stories.md), nebo tím prostě jen udělat Honzovi, autorovi junior.guru, radost.
 
 
 <!-- {#

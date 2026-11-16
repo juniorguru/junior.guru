@@ -3,6 +3,7 @@ from zoneinfo import ZoneInfo
 
 import pytest
 
+from jg.coop.lib.brand import PODCAST_NAME
 from jg.coop.models.podcast import PodcastEpisode
 
 
@@ -89,3 +90,43 @@ def test_page_description(kwargs: dict, expected: str):
     podcast_episode = PodcastEpisode(number=1, title="Startujeme!", **kwargs)
 
     assert podcast_episode.page_description == expected
+
+
+def test_to_json_ld():
+    podcast_episode = PodcastEpisode(
+        number=42,
+        publish_on=date(2023, 2, 10),
+        title="about testing",
+        guest_name="Adéla",
+        guest_affiliation="Company",
+        image_path="podcast/42.jpg",
+        media_url="https://example.com/42.mp3",
+        media_size=1000,
+        media_type="audio/mpeg",
+        media_duration_s=3600,
+        description="Description",
+    )
+
+    assert podcast_episode.to_json_ld() == {
+        "@type": "PodcastEpisode",
+        "associatedMedia": {
+            "@type": "MediaObject",
+            "contentSize": "1000",
+            "contentUrl": "https://example.com/42.mp3",
+            "encodingFormat": "audio/mpeg",
+        },
+        "datePublished": "2023-02-10",
+        "description": "Description",
+        "duration": "PT3600S",
+        "episodeNumber": 42,
+        "image": "https://junior.guru/static/podcast/42.jpg",
+        "inLanguage": "cs",
+        "name": "Adéla (Company) about testing",
+        "partOfSeries": {
+            "@type": "PodcastSeries",
+            "@id": "https://junior.guru/podcast/#series",
+            "name": PODCAST_NAME,
+            "url": "https://junior.guru/podcast/",
+        },
+        "url": "https://junior.guru/podcast/42/",
+    }

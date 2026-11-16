@@ -6,7 +6,14 @@ from zoneinfo import ZoneInfo
 
 from peewee import BooleanField, CharField, DateField, IntegerField
 
+from jg.coop.lib.brand import (
+    PODCAST_NAME,
+    PODCAST_URL,
+    site_url,
+    static_url,
+)
 from jg.coop.lib.charts import ttm_range
+from jg.coop.lib.json_ld import PODCAST_ID
 from jg.coop.models.base import BaseModel
 
 
@@ -58,7 +65,7 @@ class PodcastEpisode(BaseModel):
 
     @property
     def url(self) -> str:
-        return f"https://junior.guru/podcast/{self.number}/"
+        return site_url(f"podcast/{self.number}/")
 
     @property
     def page_url(self) -> str:
@@ -84,6 +91,31 @@ class PodcastEpisode(BaseModel):
             "image_alt": self.format_title(),
             "subtitle": self.guest_affiliation,
             "date": self.publish_on,
+        }
+
+    def to_json_ld(self) -> dict:
+        return {
+            "@type": "PodcastEpisode",
+            "associatedMedia": {
+                "@type": "MediaObject",
+                "contentSize": str(self.media_size),
+                "contentUrl": self.media_url,
+                "encodingFormat": self.media_type,
+            },
+            "datePublished": self.publish_on.isoformat(),
+            "description": self.description,
+            "duration": f"PT{self.media_duration_s}S",
+            "episodeNumber": self.number,
+            "image": static_url(self.image_path),
+            "inLanguage": "cs",
+            "name": self.format_title(),
+            "partOfSeries": {
+                "@type": "PodcastSeries",
+                "@id": PODCAST_ID,
+                "name": PODCAST_NAME,
+                "url": PODCAST_URL,
+            },
+            "url": self.url,
         }
 
     @classmethod

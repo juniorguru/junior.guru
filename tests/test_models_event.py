@@ -289,3 +289,25 @@ def test_to_guide_data_ignores_view_count(test_db):
     event.view_count = 20
 
     assert event.to_guide_data() == guide_data
+
+
+def test_to_json_ld():
+    event = create_event_instance(
+        poster_path="events/1.webp",
+        public_recording_url="https://youtube.com/watch?v=abc",
+    )
+
+    assert event.to_json_ld() == {
+        "@type": "EducationEvent",
+        "educationalLevel": "beginner",
+        "endDate": "2021-05-01T11:00:00Z",
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "image": "https://junior.guru/static/events/1.webp",
+        "location": {
+            "@type": "VirtualLocation",
+            "url": "https://youtube.com/watch?v=abc",
+        },
+        "name": "Jane Doe: Event #1",
+        "startDate": "2021-05-01T10:00:00Z",
+        "url": "https://junior.guru/events/1/",
+    }

@@ -115,7 +115,7 @@ thumbnail_button_icon: heart
 
       {% else %}
         {% call note(standout=True) -%}
-          {{ 'exclamation-circle'|icon }} Tady něco má být, ale není to tu. Napiš prosím na {{ 'honza@junior.guru'|email_link }}
+          {{ 'exclamation-circle'|icon }} Tady něco má být, ale není to tu. Napiš prosím na {{ brand.CONTACT_EMAIL|email_link }}
         {%- endcall %}
       {% endif %}
     </div>

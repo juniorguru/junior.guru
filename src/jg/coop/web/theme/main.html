@@ -37,9 +37,10 @@
       <meta property="og:url" content="{{ page.canonical_url }}">
     {% endif %}
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ brand.SITE_NAME }}">
     <meta property="og:locale" content="cs_CZ">
 
-    <link href="https://mastodonczech.cz/@honzajavorek" rel="me">
+    <link href="{{ brand.FOUNDER_MASTODON_URL }}" rel="me">
     <meta name="fediverse:creator" content="@honzajavorek@mastodonczech.cz">
     <meta name="twitter:creator" content="@honzajavorek">
 
@@ -231,7 +232,7 @@
         <ul class="footer-list">
           <li>
             <strong class="footer-list-heading">E-mail</strong>
-            <span class="footer-list-data">{{ 'honza@junior.guru'|email_link }}</span>
+            <span class="footer-list-data">{{ brand.CONTACT_EMAIL|email_link }}</span>
           </li>
           <li>
             <strong class="footer-list-heading">IČO</strong>
@@ -241,12 +242,12 @@
 
         <ul class="footer-icons">
           <li>
-            <a href="https://www.youtube.com/@juniordotguru" target="_blank" rel="noopener">
+            <a href="{{ brand.YOUTUBE_URL }}" target="_blank" rel="noopener">
               {{ 'youtube'|icon(alt='YouTube') }}
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/honzajavorek/" target="_blank" rel="noopener">
+            <a href="{{ brand.FOUNDER_LINKEDIN_URL }}" target="_blank" rel="noopener">
               {{ 'linkedin'|icon(alt='LinkedIn') }}
             </a>
           </li>
@@ -256,12 +257,12 @@
             </a>
           </li>
           <li>
-            <a href="https://mastodonczech.cz/@honzajavorek/tagged/juniorguru" target="_blank" rel="noopener">
+            <a href="{{ brand.FOUNDER_MASTODON_URL }}/tagged/juniorguru" target="_blank" rel="noopener">
               {{ 'mastodon'|icon(alt='Mastodon') }}
             </a>
           </li>
           <li>
-            <a href="https://github.com/juniorguru/" target="_blank" rel="noopener">
+            <a href="{{ brand.GITHUB_URL }}" target="_blank" rel="noopener">
               {{ 'github'|icon(alt='GitHub') }}
             </a>
           </li>

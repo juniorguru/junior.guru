@@ -1,4 +1,5 @@
 {% extends 'main.html' %}
+{% from 'macros.html' import breadcrumbs with context %}
 
 
 {% block main %}
@@ -6,18 +7,13 @@
   <div class="content-container">
     <main class="content document">
       {% block content %}
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-              <a href="#toc">
-                {{ page.parent.title }}
-              </a>
-            </li>
-            <li class="breadcrumb-item active" aria-current="page">
-              {{ page.title }}
-            </li>
-          </ol>
-        </nav>
+        {{ breadcrumbs(
+          parent_title=page.parent.title,
+          parent_href='#toc',
+          parent_url=page.parent and (page|parent_page).canonical_url,
+          title=page.title,
+          url=page.canonical_url,
+        ) }}
 
         {{ super() }}
       {% endblock %}

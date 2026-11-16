@@ -7,6 +7,8 @@ thumbnail_subheading: junior.guru
 
 {% from 'macros.html' import blockquote_avatar, img, logo, github_profile_form with context %}
 
+<script type="application/ld+json">{{ graph_json_ld(website_json_ld(), organization_json_ld())|json_ld }}</script>
+
 
 <header class="masthead"><div class="masthead-container">
 
