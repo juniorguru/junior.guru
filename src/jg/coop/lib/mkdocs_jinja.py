@@ -22,6 +22,7 @@ TEMPLATE_FILTERS = [
     "github_url",
     "hours",
     "icon",
+    "json_ld",
     "local_time",
     "mainnav",
     "mapping",

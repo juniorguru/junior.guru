@@ -1,4 +1,3 @@
-import json
 from datetime import date, datetime
 from zoneinfo import ZoneInfo
 
@@ -111,8 +110,7 @@ def test_to_json_ld():
         description="Description",
     )
 
-    assert json.loads(podcast_episode.to_json_ld()) == {
-        "@context": "https://schema.org",
+    assert podcast_episode.to_json_ld() == {
         "@type": "PodcastEpisode",
         "associatedMedia": {
             "@type": "MediaObject",
@@ -138,6 +136,6 @@ def test_to_json_ld():
 
 
 def test_podcast_series_json_ld():
-    data = json.loads(podcast_series_json_ld())
+    data = podcast_series_json_ld()
 
     assert data["@id"] == "https://junior.guru/podcast/#series"

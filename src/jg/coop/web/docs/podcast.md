@@ -8,7 +8,7 @@ template: main_podcast.html
 
 # Podcast
 
-<script type="application/ld+json">{{ podcast_series_json_ld }}</script>
+<script type="application/ld+json">{{ podcast_series_json_ld|json_ld }}</script>
 
 {% call lead() %}
 Podcast pro juniory v IT! Jak začít s programováním? Jak najít práci v IT? Přinášíme odpovědi, inspiraci, motivaci.

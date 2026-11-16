@@ -2,7 +2,7 @@
 
 <h1>{{ podcast_episode.format_title(affiliation=false) }}</h1>
 
-<script type="application/ld+json">{{ podcast_episode.to_json_ld() }}</script>
+<script type="application/ld+json">{{ podcast_episode.to_json_ld()|json_ld }}</script>
 
 <ul class="article-details">
   <li class="article-details-item">

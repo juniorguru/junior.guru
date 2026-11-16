@@ -27,7 +27,7 @@ def test_dumps_keeps_unicode():
 
 
 def test_website():
-    data = json.loads(json_ld.website_json_ld())
+    data = json_ld.website_json_ld()
 
     assert data["@type"] == "WebSite"
     assert data["name"] == "junior.guru"
@@ -36,20 +36,18 @@ def test_website():
 
 
 def test_website_publisher_references_organization():
-    website = json.loads(json_ld.website_json_ld())
-    organization = json.loads(json_ld.organization_json_ld())
+    website = json_ld.website_json_ld()
+    organization = json_ld.organization_json_ld()
 
     assert website["publisher"]["@id"] == organization["@id"]
 
 
 def test_breadcrumb_list():
-    data = json.loads(
-        json_ld.breadcrumb_list_json_ld(
-            [
-                ("Příběhy", "https://junior.guru/stories/"),
-                ("Elvíra Krieger", "https://junior.guru/stories/elvira-krieger/"),
-            ]
-        )
+    data = json_ld.breadcrumb_list_json_ld(
+        [
+            ("Příběhy", "https://junior.guru/stories/"),
+            ("Elvíra Krieger", "https://junior.guru/stories/elvira-krieger/"),
+        ]
     )
 
     assert data["itemListElement"] == [
@@ -69,19 +67,16 @@ def test_breadcrumb_list():
 
 
 def test_article():
-    data = json.loads(
-        json_ld.article_json_ld(
-            headline="Do IT bez titulu",
-            url="https://junior.guru/stories/elvira-krieger/",
-            published_on=date(2026, 4, 9),
-            author_name="Adéla Pavlun",
-            author_url="https://www.linkedin.com/in/adelapavlun/",
-            image_url="https://junior.guru/static/thumbnail.png",
-        )
+    data = json_ld.article_json_ld(
+        headline="Do IT bez titulu",
+        url="https://junior.guru/stories/elvira-krieger/",
+        published_on=date(2026, 4, 9),
+        author_name="Adéla Pavlun",
+        author_url="https://www.linkedin.com/in/adelapavlun/",
+        image_url="https://junior.guru/static/thumbnail.png",
     )
 
     assert data == {
-        "@context": "https://schema.org",
         "@type": "Article",
         "author": {
             "@type": "Person",
@@ -99,13 +94,11 @@ def test_article():
 
 @pytest.mark.parametrize("key", ["image", "author.url"])
 def test_article_optional_fields(key: str):
-    data = json.loads(
-        json_ld.article_json_ld(
-            headline="Do IT bez titulu",
-            url="https://junior.guru/stories/elvira-krieger/",
-            published_on=date(2026, 4, 9),
-            author_name="Adéla Pavlun",
-        )
+    data = json_ld.article_json_ld(
+        headline="Do IT bez titulu",
+        url="https://junior.guru/stories/elvira-krieger/",
+        published_on=date(2026, 4, 9),
+        author_name="Adéla Pavlun",
     )
     *parents, name = key.split(".")
     for parent in parents:

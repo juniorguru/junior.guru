@@ -1,4 +1,3 @@
-import json
 from collections.abc import Generator
 
 import pytest
@@ -246,8 +245,7 @@ def test_to_json_ld(test_db: SqliteDatabase):
         1, name="Cool Courses", slug="cool", url="https://cool.example.com"
     )
 
-    assert json.loads(cp.to_json_ld()) == {
-        "@context": "https://schema.org",
+    assert cp.to_json_ld() == {
         "@type": "EducationalOrganization",
         "mainEntityOfPage": "https://junior.guru/courses/cool/",
         "name": "Cool Courses",
@@ -259,10 +257,7 @@ def test_to_json_ld_logo(test_db: SqliteDatabase, tier_low: SponsorTier):
     cp = create_course_provider(1, slug="xyz", cz_business_id=123)
     create_sponsor("xyz", cz_business_id=123, tier=tier_low, logo_path="logos/xyz.svg")
 
-    assert (
-        json.loads(cp.to_json_ld())["logo"]
-        == "https://junior.guru/static/logos/xyz.svg"
-    )
+    assert cp.to_json_ld()["logo"] == "https://junior.guru/static/logos/xyz.svg"
 
 
 def test_to_json_ld_companies(test_db: SqliteDatabase):
@@ -275,7 +270,7 @@ def test_to_json_ld_companies(test_db: SqliteDatabase):
         sk_name="Cool SK s.r.o.",
     )
 
-    assert json.loads(cp.to_json_ld())["subOrganization"] == [
+    assert cp.to_json_ld()["subOrganization"] == [
         {
             "@type": "Organization",
             "address": {"@type": "PostalAddress", "addressCountry": "CZ"},
@@ -301,7 +296,7 @@ def test_to_json_ld_companies(test_db: SqliteDatabase):
 
 def test_to_json_ld_companies_legal_name_fallback(test_db: SqliteDatabase):
     cp = create_course_provider(1, name="Cool Courses", sk_business_id=456)
-    company = json.loads(cp.to_json_ld())["subOrganization"][0]
+    company = cp.to_json_ld()["subOrganization"][0]
 
     assert company["legalName"] == "Cool Courses"
 
@@ -309,4 +304,4 @@ def test_to_json_ld_companies_legal_name_fallback(test_db: SqliteDatabase):
 def test_to_json_ld_no_companies(test_db: SqliteDatabase):
     cp = create_course_provider(1)
 
-    assert "subOrganization" not in json.loads(cp.to_json_ld())
+    assert "subOrganization" not in cp.to_json_ld()

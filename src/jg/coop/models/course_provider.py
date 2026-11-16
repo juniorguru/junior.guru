@@ -8,7 +8,6 @@ from typing import Self
 import czech_sort
 from peewee import BooleanField, CharField, IntegerField, TextField, fn
 
-from jg.coop.lib import json_ld
 from jg.coop.models.base import BaseModel
 from jg.coop.models.partner import Partner
 from jg.coop.models.sponsor import Sponsor, SponsorTier
@@ -118,7 +117,7 @@ class CourseProvider(BaseModel):
         except IndexError:
             return None
 
-    def to_json_ld(self) -> str:
+    def to_json_ld(self) -> dict:
         data = {
             "@type": "EducationalOrganization",
             "mainEntityOfPage": self.catalogue_url,
@@ -129,7 +128,7 @@ class CourseProvider(BaseModel):
             data["logo"] = f"https://junior.guru/static/{org.logo_path}"
         if companies := list(self.list_companies_json_ld()):
             data["subOrganization"] = companies
-        return json_ld.dumps(data)
+        return data
 
     def list_companies_json_ld(self) -> Generator[dict]:
         companies = [
