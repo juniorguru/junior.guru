@@ -177,6 +177,7 @@ Bylo by fajn mít v klubu v průměru aspoň jednu [oficiální online akci](../
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
     data-chart-type="line"
+    data-chart-partial-last
     data-chart="{{ {
         'labels': charts.events_labels,
         'datasets': [
@@ -214,6 +215,7 @@ Graf ukazuje konverzi _trialů_.
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
     data-chart-type="line"
+    data-chart-partial-last
     data-chart="{{ {
         'labels': charts.trials_conversion_labels,
         'datasets': [
@@ -242,6 +244,7 @@ Graf s **příchody** ukazuje počet členů, kteří v daném měsíci přešli
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
     data-chart-type="line"
+    data-chart-partial-last
     data-chart="{{ {
         'labels': charts.signups_labels,
         'datasets': [
@@ -276,6 +279,7 @@ Procento členů, kteří si klub platí ze svého a odcházejí, neboli _churn_
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="230"
     data-chart-type="line"
+    data-chart-partial-last
     data-chart="{{ {
         'labels': charts.churn_labels,
         'datasets': [
@@ -301,6 +305,7 @@ Data jsou celkem od **{{ charts.cancellations_breakdown_count }}** lidí.
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="300"
     data-chart-type="bar"
+    data-chart-partial-last
     data-chart="{{ {
         'labels': charts.cancellations_breakdown_labels,
         'datasets': [

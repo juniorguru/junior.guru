@@ -91,6 +91,7 @@ Občas se někde píše o zahraničních podnikavcích, kteří taky otevřeně 
     class="chart" width="400" height="300"
     data-chart-type="line"
     data-chart-zero-line
+    data-chart-partial-last
     data-chart="{{ {
         'labels': charts.profit_labels,
         'datasets': [
@@ -123,6 +124,7 @@ Pro každý měsíc se ještě počítá součet za uplynulých 12 měsíců (TT
     class="chart" width="400" height="300"
     data-chart-type="line"
     data-chart-zero-line
+    data-chart-partial-last
     data-chart="{{ {
         'labels': charts.revenue_growth_labels,
         'datasets': [
@@ -154,6 +156,7 @@ Výnosy ani náklady junior.guru nemají pravidelný, měsíční charakter. Jed
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="300"
     data-chart-type="line"
+    data-chart-partial-last
     data-chart="{{ {
         'labels': charts.revenue_labels,
         'datasets': [
@@ -199,6 +202,7 @@ V ideálním případě by stačilo individuální členství lidí v klubu, pro
 <div class="chart-scroll"><div class="chart-container"><canvas
     class="chart" width="400" height="300"
     data-chart-type="bar"
+    data-chart-partial-last
     data-chart="{{ {
         'labels': charts.revenue_breakdown_labels,
         'datasets': [
@@ -266,6 +270,7 @@ Výdaje na [marketing](./marketing.md) jsou předplatné nástrojů, tisk samole
     class="chart" width="400" height="300"
     data-chart-type="bar"
     data-chart-zero-line
+    data-chart-partial-last
     data-chart="{{ {
         'labels': charts.cost_breakdown_labels,
         'datasets': [
