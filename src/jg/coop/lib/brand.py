@@ -1,4 +1,4 @@
-"""Names and links which identify junior.guru across the web, the API, and Discord."""
+"""Names and links which identify junior.guru across the web, the API, and Discord"""
 
 SITE_URL = "https://junior.guru/"
 

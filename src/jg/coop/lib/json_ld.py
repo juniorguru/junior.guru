@@ -31,7 +31,7 @@ PODCAST_ID = f"{PODCAST_URL}#series"
 
 
 def dumps(data: dict) -> Markup:
-    """Serializes structured data so that it's safe to embed in a <script> tag."""
+    """Serializes structured data so that it's safe to embed in a <script> tag"""
     data = {"@context": "https://schema.org"} | data
     return htmlsafe_json_dumps(
         data, dumps=json.dumps, ensure_ascii=False, sort_keys=True
@@ -39,7 +39,7 @@ def dumps(data: dict) -> Markup:
 
 
 def graph_json_ld(*nodes: dict) -> dict:
-    """Combines several nodes, linked by their @id, into one JSON-LD document."""
+    """Combines several nodes, linked by their @id, into one JSON-LD document"""
     return {"@graph": list(nodes)}
 
 
