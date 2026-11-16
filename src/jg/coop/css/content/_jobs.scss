@@ -374,53 +374,52 @@
 .jobs-listings-groups {
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: $spacer;
-  margin-bottom: $spacer * 1.5;
+  gap: $spacer * 1.5;
 
-  @include media-breakpoint-up(sm) {
-    grid-template-columns: min-content 1fr;
-    column-gap: $spacer * 1.5;
+  @include media-breakpoint-up(md) {
+    grid-template-columns: 3fr 1fr;
+    column-gap: $spacer * 3;
   }
 }
 
 .jobs-listings-group-heading {
+  margin-top: 0;
+  margin-bottom: map.get($spacers, 2);
+  font-size: $font-size-base;
   font-weight: $font-weight-normal;
-  line-height: 2rem;
   color: $jg-gray;
-  white-space: nowrap;
-}
-
-.jobs-listings-group {
-  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: .05em;
 }
 
 .jobs-listings-list {
   @extend .list-unstyled;
-  display: flex;
-  flex-wrap: wrap;
-  gap: map.get($spacers, 2);
-  margin: 0;
+  column-gap: $spacer * 2;
+  margin-bottom: $spacer * 1.5;
+  column-count: 2;
 }
 
-.jobs-listings-link {
-  @extend .jobs-tag;
-  display: inline-block;
-  padding: .5em .9em;
-  font-size: $font-size-base;
-  line-height: 1;
-  text-decoration: none;
-  user-select: auto;
+.jobs-listings-list li {
+  padding: .15rem 0;
+  white-space: nowrap;
+  break-inside: avoid;
 }
 
-.jobs-listings-link:hover {
-  color: $jg-blue;
+.jobs-listings-group.regions .jobs-listings-list {
+  @include media-breakpoint-up(sm) {
+    column-count: 3;
+  }
+
+}
+
+.jobs-listings-group.technologies .jobs-listings-list {
+  @include media-breakpoint-up(md) {
+    column-count: 1;
+  }
 }
 
 .jobs-listings-link.active {
-  color: $jg-white;
-  background: $jg-blue;
-}
-
-.jobs-listings-all {
-  color: $jg-gray;
+  font-weight: $font-weight-bold;
+  color: $jg-dark;
+  text-decoration: none;
 }

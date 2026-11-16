@@ -415,9 +415,9 @@ template: main.html
 
 <nav class="jobs-listings standout-top" aria-labelledby="jobs-listings-heading">
   <h2 id="jobs-listings-heading" class="jobs-listings-heading">Nabídky podle místa a zaměření</h2>
-  <dl class="jobs-listings-groups">
-    <dt class="jobs-listings-group-heading">{{ "geo-alt"|icon }} Místo</dt>
-    <dd class="jobs-listings-group">
+  <div class="jobs-listings-groups">
+    <div class="jobs-listings-group regions">
+      <h3 class="jobs-listings-group-heading">Místo</h3>
       <ul class="jobs-listings-list">
         {% for region_listing in jobs_region_listings %}
           {% set is_current = page.meta.region_tag_slug == region_listing.tag_slug %}
@@ -432,9 +432,9 @@ template: main.html
           </li>
         {% endfor %}
       </ul>
-    </dd>
-    <dt class="jobs-listings-group-heading">{{ "tools"|icon }} Zaměření</dt>
-    <dd class="jobs-listings-group">
+    </div>
+    <div class="jobs-listings-group technologies">
+      <h3 class="jobs-listings-group-heading">Zaměření</h3>
       <ul class="jobs-listings-list">
         {% for tech_listing in jobs_tech_listings %}
           {% set is_current = page.meta.tech_listing_slug == tech_listing.slug %}
@@ -449,11 +449,11 @@ template: main.html
           </li>
         {% endfor %}
       </ul>
-    </dd>
-  </dl>
-  <p class="jobs-listings-all">
-    <a href="{{ pages|docs_url('jobs.jinja')|url }}">Všechny nabídky práce</a>
-    ·
-    <a href="{{ pages|docs_url('jobs/part-time.jinja')|url }}">Brigády, stáže a dobrovolnictví</a>
-  </p>
+      <h3 class="jobs-listings-group-heading">Další</h3>
+      <ul class="jobs-listings-list">
+        <li><a href="{{ pages|docs_url('jobs.jinja')|url }}" class="jobs-listings-link">Všechny nabídky</a></li>
+        <li><a href="{{ pages|docs_url('jobs/part-time.jinja')|url }}" class="jobs-listings-link">Brigády a stáže</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
