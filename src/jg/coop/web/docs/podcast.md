@@ -15,7 +15,7 @@ Podcast pro juniory v IT! Jak začít s programováním? Jak najít práci v 
 {% endcall %}
 
 <div class="standout">
-  <a class="brand-btn youtube" target="_blank" rel="noopener" href="{{ brand.PODCAST_YOUTUBE_URL }}">{{ 'youtube'|icon }} YouTube</a>
+  <a class="brand-btn youtube" target="_blank" rel="noopener" href="{{ brand.YOUTUBE_URL }}">{{ 'youtube'|icon }} YouTube</a>
   <a class="brand-btn spotify" target="_blank" rel="noopener" href="{{ brand.PODCAST_SPOTIFY_URL }}">{{ 'spotify'|icon }} Spotify</a>
   <a class="brand-btn apple-podcasts" target="_blank" rel="noopener" href="{{ brand.PODCAST_APPLE_URL }}">{{ 'apple'|icon }} Apple</a>
   <a class="brand-btn rss" target="_blank" rel="noopener" href="{{ brand.PODCAST_FEED_URL }}">{{ 'rss-fill'|icon }} RSS</a>

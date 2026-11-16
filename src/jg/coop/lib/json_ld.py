@@ -16,7 +16,6 @@ from jg.coop.lib.brand import (
     PODCAST_NAME,
     PODCAST_SPOTIFY_URL,
     PODCAST_URL,
-    PODCAST_YOUTUBE_URL,
     SITE_ALTERNATE_NAMES,
     SITE_NAME,
     SITE_URL,
@@ -118,5 +117,5 @@ def podcast_series_json_ld() -> dict:
         "inLanguage": "cs",
         "webFeed": PODCAST_FEED_URL,
         "image": PODCAST_IMAGE_URL,
-        "sameAs": [PODCAST_YOUTUBE_URL, PODCAST_SPOTIFY_URL, PODCAST_APPLE_URL],
+        "sameAs": [YOUTUBE_URL, PODCAST_SPOTIFY_URL, PODCAST_APPLE_URL],
     }

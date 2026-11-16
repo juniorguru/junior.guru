@@ -15,7 +15,7 @@ from jg.coop.lib import discord_task, loggers
 from jg.coop.lib.brand import (
     PODCAST_APPLE_URL,
     PODCAST_SPOTIFY_URL,
-    PODCAST_YOUTUBE_URL,
+    YOUTUBE_URL,
 )
 from jg.coop.lib.discord_club import ClubChannelID, ClubClient, ClubMemberID
 from jg.coop.lib.images import PostersCache, is_image, render_image_file, validate_image
@@ -240,7 +240,7 @@ async def announce_new_episode(client: ClubClient):
             ui.Button(
                 emoji="<:youtube:976200175490060299>",
                 label="YouTube",
-                url=PODCAST_YOUTUBE_URL,
+                url=YOUTUBE_URL,
             ),
             ui.Button(
                 emoji="<:spotify:1085596335794819092>",

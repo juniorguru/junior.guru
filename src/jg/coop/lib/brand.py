@@ -26,8 +26,6 @@ PODCAST_FEED_URL = f"{SITE_URL}api/podcast.xml"
 
 PODCAST_IMAGE_URL = f"{SITE_URL}static/podcast-v1.png"
 
-PODCAST_YOUTUBE_URL = YOUTUBE_URL
-
 PODCAST_SPOTIFY_URL = "https://open.spotify.com/show/12w93IKRzfCsgo7XrGEVw4"
 
 PODCAST_APPLE_URL = (
