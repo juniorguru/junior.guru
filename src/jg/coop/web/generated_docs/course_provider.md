@@ -1,18 +1,12 @@
-{% from 'macros.html' import club_teaser, img, lead, note with context %}
+{% from 'macros.html' import breadcrumbs, club_teaser, img, lead, note with context %}
 
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item">
-      <a href="{{ (page|parent_page).url|url }}">
-        {{ (page|parent_page).title }}
-      </a>
-    </li>
-    <li class="breadcrumb-item active" aria-current="page">
-      {{ course_provider.name }}
-    </li>
-  </ol>
-</nav>
-<script type="application/ld+json">{{ breadcrumb_list_json_ld([((page|parent_page).title, (page|parent_page).canonical_url), (course_provider.name, page.canonical_url)])|json_ld }}</script>
+{{ breadcrumbs(
+  parent_title=(page|parent_page).title,
+  parent_href=(page|parent_page).url|url,
+  parent_url=(page|parent_page).canonical_url,
+  title=course_provider.name,
+  url=page.canonical_url,
+) }}
 <script type="application/ld+json">{{ course_provider.to_json_ld()|json_ld }}</script>
 
 # Kurzy od {{ course_provider.name }}

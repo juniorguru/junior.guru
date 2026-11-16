@@ -1,22 +1,17 @@
 {% extends 'main_subnav.html' %}
+{% from 'macros.html' import breadcrumbs with context %}
 
 
 {% block main %}
   <div class="main main-simple">
     <main class="content document">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="{{ (page|parent_page).url|url }}">
-              {{ page.meta.breadcrumb_parent }}
-            </a>
-          </li>
-          <li class="breadcrumb-item active" aria-current="page">
-            {{ page.meta.breadcrumb_item }}
-          </li>
-        </ol>
-      </nav>
-      <script type="application/ld+json">{{ breadcrumb_list_json_ld([(page.meta.breadcrumb_parent, (page|parent_page).canonical_url), (page.meta.breadcrumb_item, page.canonical_url)])|json_ld }}</script>
+      {{ breadcrumbs(
+        parent_title=page.meta.breadcrumb_parent,
+        parent_href=(page|parent_page).url|url,
+        parent_url=(page|parent_page).canonical_url,
+        title=page.meta.breadcrumb_item,
+        url=page.canonical_url,
+      ) }}
       {% if page.meta.author %}
       <script type="application/ld+json">{{ article_json_ld(
         headline=page.meta.title,
