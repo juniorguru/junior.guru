@@ -3,10 +3,12 @@ import os
 
 import httpx2
 
+from jg.coop.lib.brand import BOT_NAME, CONTACT_EMAIL, SITE_URL
+
 
 BASE_URL = "https://app.fakturoid.cz/api/v3/accounts/honzajavorek"
 
-USER_AGENT = "JuniorGuruBot (honza@junior.guru; +https://junior.guru)"
+USER_AGENT = f"{BOT_NAME} ({CONTACT_EMAIL}; +{SITE_URL.removesuffix('/')})"
 
 CLIENT_ID = os.getenv("FAKTUROID_CLIENT_ID")
 

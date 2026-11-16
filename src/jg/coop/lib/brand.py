@@ -8,6 +8,10 @@ SITE_ALTERNATE_NAMES = ["Junior Guru"]
 
 CONTACT_EMAIL = "honza@junior.guru"
 
+BOT_NAME = "JuniorGuruBot"
+
+BOT_USER_AGENT = f"{BOT_NAME} (+{SITE_URL.removesuffix('/')})"
+
 FOUNDER_NAME = "Honza Javorek"
 
 FOUNDER_LINKEDIN_URL = "https://www.linkedin.com/in/honzajavorek/"

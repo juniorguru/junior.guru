@@ -7,6 +7,7 @@ import ics
 from pod2gen import Category, Episode, Funding, Media, Person, Podcast
 
 from jg.coop.lib.brand import (
+    BOT_USER_AGENT,
     CONTACT_EMAIL,
     FOUNDER_NAME,
     PODCAST_FEED_URL,
@@ -138,7 +139,7 @@ def build_podcast_xml(api_dir, config):
         owner=person_hj,
         web_master=person_hj,
         copyright=f"© {PodcastEpisode.copyright_year()} Pavlína Froňková, Jan Javorek",
-        generator="JuniorGuruBot (+https://junior.guru)",
+        generator=BOT_USER_AGENT,
         image=PODCAST_IMAGE_URL,
         fundings=[
             Funding("Přidej se do klubu junior.guru", site_url("club/")),

@@ -19,11 +19,10 @@ from tenacity import (
 )
 
 from jg.coop.lib import loggers
+from jg.coop.lib.brand import BOT_USER_AGENT
 from jg.coop.lib.cache import cache
 from jg.coop.lib.retrying import retry
 
-
-BOT_USER_AGENT = "JuniorGuruBot (+https://junior.guru)"
 
 BROWSER_USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:124.0) Gecko/20100101 Firefox/124.0"
 

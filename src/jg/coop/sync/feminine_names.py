@@ -6,6 +6,7 @@ from tenacity import retry_if_exception_type
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
+from jg.coop.lib.brand import BOT_USER_AGENT
 from jg.coop.lib.retrying import retry
 from jg.coop.models.base import db
 from jg.coop.models.feminine_name import FeminineName
@@ -79,7 +80,7 @@ def fetch_wiki_page() -> dict:
             "prop": "text",
             "format": "json",
         },
-        headers={"User-Agent": "JuniorGuruBot (+https://junior.guru)"},
+        headers={"User-Agent": BOT_USER_AGENT},
         timeout=30,
     )
     response.raise_for_status()

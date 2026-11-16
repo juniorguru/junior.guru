@@ -18,6 +18,7 @@ from tenacity import (
 
 from jg.coop.lib import loggers
 from jg.coop.lib.async_utils import limit
+from jg.coop.lib.brand import BOT_USER_AGENT
 from jg.coop.lib.cache import cache
 from jg.coop.lib.llm import ask_llm
 from jg.coop.lib.mutations import MutationsNotAllowedError
@@ -27,7 +28,7 @@ from jg.coop.lib.retrying import retry
 MAPYCZ_API_KEY = os.getenv("MAPYCZ_API_KEY")
 
 DEFAULT_HEADERS = {
-    "User-Agent": "JuniorGuruBot (+https://junior.guru)",
+    "User-Agent": BOT_USER_AGENT,
 }
 
 LANGUAGE_CODE = "cs"
