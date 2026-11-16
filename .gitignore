@@ -99,8 +99,6 @@ google_service_account.json
 /src/jg/coop/images/posters-events/*.webp
 /src/jg/coop/images/posters-sponsors/*.png
 /src/jg/coop/images/posters-sponsors/*.webp
-/src/jg/coop/images/posters-podcast/*.png
-/src/jg/coop/images/posters-podcast/*.webp
 /src/jg/coop/images/thumbnails/*.png
 /src/jg/coop/images/thumbnails/*.webp
 /src/jg/coop/images/interests/*.svg

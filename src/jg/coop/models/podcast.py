@@ -9,6 +9,7 @@ from peewee import BooleanField, CharField, DateField, IntegerField
 from jg.coop.lib.brand import (
     PODCAST_NAME,
     PODCAST_URL,
+    podcast_episode_id,
     site_url,
     static_url,
 )
@@ -31,11 +32,10 @@ class PodcastEpisode(BaseModel):
     media_type = CharField()
     media_duration_s = IntegerField()
     description = CharField()
-    poster_path = CharField(null=True)
 
     @property
     def global_id(self) -> str:
-        return f"podcast.junior.guru#{self.media_slug}"
+        return podcast_episode_id(self.media_slug)
 
     def format_title(self, number: bool = False, affiliation: bool = True) -> str:
         title = ""

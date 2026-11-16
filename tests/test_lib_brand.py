@@ -1,6 +1,11 @@
 import pytest
 
-from jg.coop.lib.brand import site_url, static_url
+from jg.coop.lib.brand import (
+    podcast_episode_id,
+    podcast_media_url,
+    site_url,
+    static_url,
+)
 
 
 @pytest.mark.parametrize(
@@ -24,3 +29,11 @@ def test_site_url(path: str, expected: str):
 )
 def test_static_url(path: str, expected: str):
     assert static_url(path) == expected
+
+
+def test_podcast_media_url():
+    assert podcast_media_url("0007") == "https://podcast.junior.guru/episodes/0007.mp3"
+
+
+def test_podcast_episode_id():
+    assert podcast_episode_id("0007") == "podcast.junior.guru#0007"

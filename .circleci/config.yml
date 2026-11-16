@@ -112,7 +112,7 @@ jobs:
   sync-1:
     executor: python-js
     resource_class: large
-    parallelism: 24
+    parallelism: 25
     steps:
       - attach_workspace:
           at: "~"
@@ -200,7 +200,6 @@ jobs:
             - src/jg/coop/images/logos-jobs
             - src/jg/coop/images/posters-events
             - src/jg/coop/images/posters-sponsors
-            - src/jg/coop/images/posters-podcast
             - src/jg/coop/images/thumbnails
       - persist_to_workspace:
           root: "~"

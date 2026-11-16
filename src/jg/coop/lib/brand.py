@@ -49,3 +49,12 @@ def site_url(path: str = "") -> str:
 
 def static_url(path: str) -> str:
     return site_url(f"static/{path.removeprefix('/')}")
+
+
+def podcast_media_url(media_slug: str) -> str:
+    return f"https://podcast.junior.guru/episodes/{media_slug}.mp3"
+
+
+def podcast_episode_id(media_slug: str) -> str:
+    """Permanent episode ID (GUID) in the podcast feed, must never change"""
+    return f"podcast.junior.guru#{media_slug}"
