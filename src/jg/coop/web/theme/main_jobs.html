@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+{% from 'macros.html' import jobs_listings with context %}
+
+
+{% block main %}
+  {{ super() }}
+  <hr class="visually-hidden">
+  {{ jobs_listings(
+    jobs_region_listings,
+    jobs_tech_listings,
+    current_region_tag_slug=page.meta.region_tag_slug,
+    current_tech_listing_slug=page.meta.tech_listing_slug,
+  ) }}
+{% endblock %}

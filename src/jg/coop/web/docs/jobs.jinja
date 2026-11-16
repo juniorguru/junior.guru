@@ -1,7 +1,7 @@
 ---
 title: "Práce v IT pro začátečníky bez praxe: junior a entry level pozice, stáže, brigády"
 description: Procházej nabídky práce, stáže a brigády zaměřené výhradně na juniory bez komerční praxe.
-template: main.html
+template: main_jobs.html
 ---
 
 {% from 'macros.html' import img, lead, note, club_teaser with context %}
@@ -412,48 +412,3 @@ template: main.html
     {{ club_teaser("Nakoukni do klubu") }}
   {% endif %}
 </div>
-
-<nav class="jobs-listings standout-top" aria-labelledby="jobs-listings-heading">
-  <h2 id="jobs-listings-heading" class="jobs-listings-heading">Nabídky podle místa a zaměření</h2>
-  <div class="jobs-listings-groups">
-    <div class="jobs-listings-group regions">
-      <h3 class="jobs-listings-group-heading">Místo</h3>
-      <ul class="jobs-listings-list">
-        {% for region_listing in jobs_region_listings %}
-          {% set is_current = page.meta.region_tag_slug == region_listing.tag_slug %}
-          <li>
-            <a
-              href="{{ pages|docs_url('jobs/' ~ region_listing.slug ~ '.jinja')|url }}"
-              class="jobs-listings-link{% if is_current %} active{% endif %}"
-              {% if is_current %}aria-current="page"{% endif %}
-            >
-              {{- region_listing.name -}}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-    <div class="jobs-listings-group technologies">
-      <h3 class="jobs-listings-group-heading">Zaměření</h3>
-      <ul class="jobs-listings-list">
-        {% for tech_listing in jobs_tech_listings %}
-          {% set is_current = page.meta.tech_listing_slug == tech_listing.slug %}
-          <li>
-            <a
-              href="{{ pages|docs_url('jobs/' ~ tech_listing.slug ~ '.jinja')|url }}"
-              class="jobs-listings-link{% if is_current %} active{% endif %}"
-              {% if is_current %}aria-current="page"{% endif %}
-            >
-              {{- tech_listing.name -}}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-      <h3 class="jobs-listings-group-heading">Další</h3>
-      <ul class="jobs-listings-list">
-        <li><a href="{{ pages|docs_url('jobs.jinja')|url }}" class="jobs-listings-link">Všechny nabídky</a></li>
-        <li><a href="{{ pages|docs_url('jobs/part-time.jinja')|url }}" class="jobs-listings-link">Brigády a stáže</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>

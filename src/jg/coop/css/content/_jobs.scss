@@ -362,8 +362,14 @@
 }
 
 .jobs-listings {
-  padding-top: $spacer * 2;
-  border-top: 1px solid $jg-gray-light;
+  background: $jg-blue-light;
+}
+
+.jobs-listings-container {
+  @extend .container-lg;
+  max-width: $main-document-width;
+  padding-top: $main-spacer;
+  padding-bottom: $main-spacer - $spacer * 1.5;
 }
 
 .jobs-listings-heading {
