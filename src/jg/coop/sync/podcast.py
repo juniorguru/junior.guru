@@ -7,6 +7,7 @@ from pydantic import BaseModel
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
+from jg.coop.lib.brand import PODCAST_MEDIA_URL
 from jg.coop.lib.images import is_image, validate_image
 from jg.coop.models.base import db
 from jg.coop.models.podcast import PodcastEpisode
@@ -84,7 +85,7 @@ def parse_episode(config: PodcastEpisodeConfig) -> dict:
         "image_path": config.image_path,
         "description": config.description,
         "media_slug": media_slug,
-        "media_url": f"https://podcast.junior.guru/episodes/{media_slug}.mp3",
+        "media_url": f"{PODCAST_MEDIA_URL}{media_slug}.mp3",
         "media_size": config.media_size,
         "media_type": MEDIA_TYPE,
         "media_duration_s": config.media_duration_s,
