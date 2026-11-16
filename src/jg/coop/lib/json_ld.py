@@ -5,29 +5,12 @@ from datetime import date
 from jinja2.utils import htmlsafe_json_dumps
 from markupsafe import Markup
 
-from jg.coop.lib.brand import (
-    FOUNDER_NAME,
-    GITHUB_URL,
-    INSTAGRAM_URL,
-    LINKEDIN_URL,
-    PODCAST_APPLE_URL,
-    PODCAST_FEED_URL,
-    PODCAST_IMAGE_URL,
-    PODCAST_NAME,
-    PODCAST_SPOTIFY_URL,
-    PODCAST_URL,
-    SITE_ALTERNATE_NAMES,
-    SITE_NAME,
-    SITE_URL,
-    TIKTOK_URL,
-    YOUTUBE_URL,
-    static_url,
-)
+from jg.coop.lib import brand
 
 
-ORGANIZATION_ID = f"{SITE_URL}#organization"
+ORGANIZATION_ID = f"{brand.SITE_URL}#organization"
 
-PODCAST_ID = f"{PODCAST_URL}#series"
+PODCAST_ID = f"{brand.PODCAST_URL}#series"
 
 
 def dumps(data: dict) -> Markup:
@@ -46,9 +29,9 @@ def graph_json_ld(*nodes: dict) -> dict:
 def website_json_ld() -> dict:
     return {
         "@type": "WebSite",
-        "name": SITE_NAME,
-        "alternateName": SITE_ALTERNATE_NAMES,
-        "url": SITE_URL,
+        "name": brand.SITE_NAME,
+        "alternateName": brand.SITE_ALTERNATE_NAMES,
+        "url": brand.SITE_URL,
         "inLanguage": "cs",
         "publisher": {"@id": ORGANIZATION_ID},
     }
@@ -58,17 +41,17 @@ def organization_json_ld() -> dict:
     return {
         "@type": "Organization",
         "@id": ORGANIZATION_ID,
-        "name": SITE_NAME,
-        "alternateName": SITE_ALTERNATE_NAMES,
-        "url": SITE_URL,
-        "logo": static_url("logo.png"),
-        "founder": {"@type": "Person", "name": FOUNDER_NAME},
+        "name": brand.SITE_NAME,
+        "alternateName": brand.SITE_ALTERNATE_NAMES,
+        "url": brand.SITE_URL,
+        "logo": brand.static_url("logo.png"),
+        "founder": {"@type": "Person", "name": brand.FOUNDER_NAME},
         "sameAs": [
-            GITHUB_URL,
-            INSTAGRAM_URL,
-            LINKEDIN_URL,
-            TIKTOK_URL,
-            YOUTUBE_URL,
+            brand.GITHUB_URL,
+            brand.INSTAGRAM_URL,
+            brand.LINKEDIN_URL,
+            brand.TIKTOK_URL,
+            brand.YOUTUBE_URL,
         ],
     }
 
@@ -112,10 +95,14 @@ def podcast_series_json_ld() -> dict:
     return {
         "@type": "PodcastSeries",
         "@id": PODCAST_ID,
-        "name": PODCAST_NAME,
-        "url": PODCAST_URL,
+        "name": brand.PODCAST_NAME,
+        "url": brand.PODCAST_URL,
         "inLanguage": "cs",
-        "webFeed": PODCAST_FEED_URL,
-        "image": PODCAST_IMAGE_URL,
-        "sameAs": [YOUTUBE_URL, PODCAST_SPOTIFY_URL, PODCAST_APPLE_URL],
+        "webFeed": brand.PODCAST_FEED_URL,
+        "image": brand.PODCAST_IMAGE_URL,
+        "sameAs": [
+            brand.YOUTUBE_URL,
+            brand.PODCAST_SPOTIFY_URL,
+            brand.PODCAST_APPLE_URL,
+        ],
     }
