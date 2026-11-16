@@ -1,13 +1,10 @@
 import unicodedata
+from pathlib import Path
 
-import httpx2
-from lxml import html
-from tenacity import retry_if_exception_type
+import click
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import loggers
-from jg.coop.lib.brand import BOT_USER_AGENT
-from jg.coop.lib.retrying import retry
 from jg.coop.models.base import db
 from jg.coop.models.feminine_name import FeminineName
 
@@ -15,79 +12,41 @@ from jg.coop.models.feminine_name import FeminineName
 logger = loggers.from_path(__file__)
 
 
-# https://cs.wikipedia.org/wiki/Seznam_nej%C4%8Dast%C4%9Bj%C5%A1%C3%ADch_%C5%BEensk%C3%BDch_jmen_v_%C4%8Cesku
-WIKI_PAGE_TITLE = "Seznam nejčastějších ženských jmen v Česku"
-
-WIKI_API_URL = "https://cs.wikipedia.org/w/api.php"
-
-EXTRA_NAMES = [
-    "Alisa",
-    "Anastasija",
-    "Anastassiya",
-    "Darja",
-    "Dinara",
-    "Eleanor",
-    "Evgenia",
-    "Hannah",
-    "Hany",
-    "Katarína",
-    "Kate",
-    "Kayla",
-    "Lindice",
-    "Lívia",
-    "Nataliya",
-    "Oxana",
-    "Rozvita",
-    "Tina",
-]
-
-
 @cli.sync_command()
+@click.option(
+    "--path",
+    default=Path("src/jg/coop/data/feminine_names.txt"),
+    type=click.Path(exists=True, dir_okay=False, path_type=Path),
+)
 @db.connection_context()
-def main():
+def main(path: Path):
+    """Fill the table with feminine names from a static file
+
+    The file has been originally scraped from https://cs.wikipedia.org/wiki/Seznam_nej%C4%8Dast%C4%9Bj%C5%A1%C3%ADch_%C5%BEensk%C3%BDch_jmen_v_%C4%8Cesku
+    and extended with extra names.
+    """
     FeminineName.drop_table()
     FeminineName.create_table()
+    names = parse_names(path.read_text())
+    variants = get_variants(names)
+    logger.info(f"Loaded {len(names)} names, {len(variants)} variants")
+    FeminineName.insert_many([{"name": name} for name in variants]).execute()
 
-    data = fetch_wiki_page()
 
-    page_html = data["parse"]["text"]["*"]
-    html_tree = html.fromstring(page_html)
+def parse_names(text: str) -> list[str]:
+    return [name for line in text.splitlines() if (name := line.strip())]
 
-    names = [
-        element.text_content().strip()
-        for element in html_tree.cssselect(".wikitable a[href]")
-    ] + EXTRA_NAMES
 
+def get_variants(names: list[str]) -> list[str]:
+    variants = {}
     for name in names:
         name_lower = name.lower()
-        name_ascii = remove_accents(name_lower)
-        logger.info(f"{name} → {name_lower}, {name_ascii}")
-        FeminineName.insert_many(
-            [
-                {"name": name_lower},
-                {"name": name_ascii},
-            ]
-        ).on_conflict_ignore().execute()
+        variants[name_lower] = True
+        variants[remove_accents(name_lower)] = True
+    return list(variants)
 
 
-@retry(retry=retry_if_exception_type(httpx2.TransportError))
-def fetch_wiki_page() -> dict:
-    response = httpx2.get(
-        WIKI_API_URL,
-        params={
-            "action": "parse",
-            "page": WIKI_PAGE_TITLE,
-            "prop": "text",
-            "format": "json",
-        },
-        headers={"User-Agent": BOT_USER_AGENT},
-        timeout=30,
-    )
-    response.raise_for_status()
-    return response.json()
-
-
-def remove_accents(s):
+def remove_accents(s: str) -> str:
     # https://stackoverflow.com/a/518232/325365
     return "".join(
         c for c in unicodedata.normalize("NFD", s) if unicodedata.category(c) != "Mn"
