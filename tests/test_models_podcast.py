@@ -3,11 +3,8 @@ from zoneinfo import ZoneInfo
 
 import pytest
 
-from jg.coop.models.podcast import (
-    PODCAST_NAME,
-    PodcastEpisode,
-    podcast_series_json_ld,
-)
+from jg.coop.lib.brand import PODCAST_NAME
+from jg.coop.models.podcast import PodcastEpisode, podcast_series_json_ld
 
 
 def test_publish_at_prg():

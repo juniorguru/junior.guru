@@ -1,13 +1,20 @@
 from datetime import UTC, date, datetime, timedelta
 
 from jg.coop.lib import loggers, months
+from jg.coop.lib.brand import (
+    GITHUB_URL,
+    PODCAST_APPLE_URL,
+    PODCAST_FEED_URL,
+    PODCAST_SPOTIFY_URL,
+    PODCAST_YOUTUBE_URL,
+    YOUTUBE_URL,
+)
 from jg.coop.lib.discord_club import (
     CLUB_EVENTS_CHANNEL_URL,
     CLUB_GUILD_ID,
     ClubChannelID,
     ClubMemberID,
 )
-from jg.coop.lib.social import GITHUB_URL, YOUTUBE_URL
 from jg.coop.models.base import db
 from jg.coop.models.blog import BlogArticle
 from jg.coop.models.candidate import Candidate
@@ -27,14 +34,7 @@ from jg.coop.models.job import (
 from jg.coop.models.newsletter import NewsletterIssue
 from jg.coop.models.page import Page
 from jg.coop.models.partner import Partner
-from jg.coop.models.podcast import (
-    PODCAST_APPLE_URL,
-    PODCAST_FEED_URL,
-    PODCAST_SPOTIFY_URL,
-    PODCAST_YOUTUBE_URL,
-    PodcastEpisode,
-    podcast_series_json_ld,
-)
+from jg.coop.models.podcast import PodcastEpisode, podcast_series_json_ld
 from jg.coop.models.role import InterestRole
 from jg.coop.models.sponsor import GitHubSponsor, PastSponsor, Sponsor, SponsorTier
 from jg.coop.models.stage import Stage

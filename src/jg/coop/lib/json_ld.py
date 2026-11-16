@@ -5,20 +5,18 @@ from datetime import date
 from jinja2.utils import htmlsafe_json_dumps
 from markupsafe import Markup
 
-from jg.coop.lib.social import (
+from jg.coop.lib.brand import (
+    FOUNDER_NAME,
     GITHUB_URL,
     INSTAGRAM_URL,
     LINKEDIN_URL,
+    SITE_ALTERNATE_NAMES,
+    SITE_NAME,
+    SITE_URL,
     TIKTOK_URL,
     YOUTUBE_URL,
 )
 
-
-SITE_URL = "https://junior.guru/"
-
-SITE_NAME = "junior.guru"
-
-SITE_ALTERNATE_NAMES = ["Junior Guru"]
 
 ORGANIZATION_ID = f"{SITE_URL}#organization"
 
@@ -50,7 +48,7 @@ def organization_json_ld() -> dict:
         "alternateName": SITE_ALTERNATE_NAMES,
         "url": SITE_URL,
         "logo": f"{SITE_URL}static/logo.png",
-        "founder": {"@type": "Person", "name": "Honza Javorek"},
+        "founder": {"@type": "Person", "name": FOUNDER_NAME},
         "sameAs": [
             GITHUB_URL,
             INSTAGRAM_URL,

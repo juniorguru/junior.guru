@@ -12,6 +12,11 @@ from pydantic import BaseModel
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import discord_task, loggers
+from jg.coop.lib.brand import (
+    PODCAST_APPLE_URL,
+    PODCAST_SPOTIFY_URL,
+    PODCAST_YOUTUBE_URL,
+)
 from jg.coop.lib.discord_club import ClubChannelID, ClubClient, ClubMemberID
 from jg.coop.lib.images import PostersCache, is_image, render_image_file, validate_image
 from jg.coop.lib.mutations import mutating_discord
@@ -19,12 +24,7 @@ from jg.coop.lib.template_filters import icon
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
 from jg.coop.models.feminine_name import FeminineName
-from jg.coop.models.podcast import (
-    PODCAST_APPLE_URL,
-    PODCAST_SPOTIFY_URL,
-    PODCAST_YOUTUBE_URL,
-    PodcastEpisode,
-)
+from jg.coop.models.podcast import PodcastEpisode
 
 
 logger = loggers.from_path(__file__)

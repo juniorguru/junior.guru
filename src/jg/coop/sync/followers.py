@@ -10,9 +10,9 @@ from lxml import html
 
 from jg.coop.cli.sync import default_from_env, main as cli
 from jg.coop.lib import apify, loggers
+from jg.coop.lib.brand import YOUTUBE_URL
 from jg.coop.lib.buttondown import ButtondownAPI
 from jg.coop.lib.cli import async_command
-from jg.coop.lib.social import YOUTUBE_URL
 from jg.coop.models.base import db
 from jg.coop.models.followers import Followers
 

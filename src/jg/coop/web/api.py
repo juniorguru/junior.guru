@@ -6,18 +6,19 @@ from zoneinfo import ZoneInfo
 import ics
 from pod2gen import Category, Episode, Funding, Media, Person, Podcast
 
+from jg.coop.lib.brand import (
+    FOUNDER_NAME,
+    PODCAST_FEED_URL,
+    PODCAST_IMAGE_URL,
+    PODCAST_NAME,
+    PODCAST_URL,
+)
 from jg.coop.lib.md import md
 from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.event import Event
 from jg.coop.models.job import ListedJob
-from jg.coop.models.podcast import (
-    PODCAST_FEED_URL,
-    PODCAST_IMAGE_URL,
-    PODCAST_NAME,
-    PODCAST_URL,
-    PodcastEpisode,
-)
+from jg.coop.models.podcast import PodcastEpisode
 from jg.coop.models.role import InterestRole
 
 
@@ -122,7 +123,7 @@ def build_podcast_xml(api_dir, config):
     # TODO Category('Business'), Category('Education')
     # https://gitlab.com/caproni-podcast-publishing/pod2gen/-/issues/26
 
-    person_hj = Person("Honza Javorek", "honza@junior.guru")
+    person_hj = Person(FOUNDER_NAME, "honza@junior.guru")
     podcast = Podcast(
         name=PODCAST_NAME,
         description="Jsme tu pro všechny juniory v IT! Jak začít s programováním? Jak najít práci v IT? Přinášíme odpovědi, inspiraci, motivaci.",
