@@ -21,9 +21,31 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Ege",
+        "lastName": "Akman",
+        "occupation": "EuroPython Society Board | Open Source Software | Robotics & Computer Vision | Python Community and Conference Organizer",
+        "id": "850704518",
+        "publicId": "egeakman",
+        "profileId": "ACoAADK0uIYBQbnTCoKD1ttvJnZa10-Wuaf5uwI"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Artur",
+        "lastName": "Czepiel",
+        "occupation": "Senior Software Developer",
+        "id": "53544825",
+        "publicId": "arturczepiel",
+        "profileId": "ACoAAAMxB3kBq42ivkWQ70yUH8Ipe_ycJbZw9gg"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Petr",
         "lastName": "Simecek",
-        "occupation": "Tamer of llamas. I write code that gets deployed and papers that get cited. Bridging the gap between ‘it works in theory’ and ‘it works in prod’ one commit at a time.",
+        "occupation": "Tamer of llamas. Alice in Wonderland. Member of Technical Staff.",
         "id": "8338936",
         "publicId": "simecekpetr",
         "profileId": "ACoAAAB_PfgBsL4w8dCi9wIyQLatN_3k_nTllm0"
@@ -105,32 +127,10 @@
         "publicId": "lutfizuchri",
         "profileId": "ACoAAABW_SsBtUsNIW6XW1pfzqxIGRTZN32t-jo"
       }
-    },
-    {
-      "type": "EMPATHY",
-      "profile": {
-        "firstName": "Mária",
-        "lastName": "Melišková",
-        "occupation": "Volunteer Organizer at PyCon CZ",
-        "id": "1879219593",
-        "publicId": "mária-melišková-40941b445",
-        "profileId": "ACoAAHACnYkBTSm9dRjAmMmn3Y3Cq4mgZz_yOTw"
-      }
-    },
-    {
-      "type": "EMPATHY",
-      "profile": {
-        "firstName": "Honza",
-        "lastName": "Král",
-        "occupation": "Principal/Staff Engineer and Consultant",
-        "id": "15417913",
-        "publicId": "honzakral",
-        "profileId": "ACoAAADrQjkBMdyjVQZIdZEP_111Ovr9-Xie6mA"
-      }
     }
   ],
   "numShares": 3,
-  "numLikes": 10,
+  "numLikes": 12,
   "numComments": 0,
   "canReact": true,
   "canPostComments": true,
