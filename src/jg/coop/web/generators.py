@@ -13,15 +13,8 @@ from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.event import Event
-from jg.coop.models.job import (
-    PARTTIME_LISTING_SLUG,
-    REGION_LISTINGS,
-    REMOTE_TAG_SLUG,
-    TECH_LISTINGS,
-    ListedJob,
-    RegionListing,
-    get_listing_doc_path,
-)
+from jg.coop.models.job import ListedJob
+from jg.coop.models.jobs_listing import JOBS_LISTINGS, JobsListing
 from jg.coop.models.newsletter import NewsletterIssue
 from jg.coop.models.podcast import PodcastEpisode
 
@@ -77,79 +70,29 @@ def generate_redirects() -> Generator[GeneratedDocument]:
         )
 
 
-def generate_region_jobs_pages() -> Generator[GeneratedDocument]:
+def generate_jobs_listing_pages() -> Generator[GeneratedDocument]:
     jobs_file = Path("src/jg/coop/web/docs/jobs.jinja")
     jobs_text = jobs_file.read_text(encoding="utf-8-sig", errors="strict")
     content, meta = parse_document(jobs_text)
-    for region_listing in REGION_LISTINGS:
+    for listing in JOBS_LISTINGS:
         yield GeneratedDocument(
-            path=region_listing.doc_path,
-            meta=meta | get_region_page_meta(region_listing, meta["description"]),
+            path=listing.doc_path,
+            meta=build_listing_meta(meta, listing),
             content=content,
         )
 
 
-def get_region_page_meta(
-    region_listing: RegionListing, description: str
-) -> dict[str, str]:
+def build_listing_meta(
+    base_meta: dict[str, Any], listing: JobsListing
+) -> dict[str, Any]:
     """
-    Page metadata for a region listing page, based on the main jobs page description
+    Page metadata for a jobs listing page, based on the main jobs page metadata
     """
-    if region_listing.slug == REMOTE_TAG_SLUG:
-        title = "Remote práce v IT pro juniory: na dálku, z domova"
-        description = (
-            "Pracovní příležitosti pro začátečníky v IT, "
-            f"které jsou na dálku, z domova, remote. {description}"
-        )
-    else:
-        region = region_listing.name
-        title = f"Práce v IT, {region}, bez praxe: junior programátor, tester a další"
-        description = (
-            f"Jaké nabízí {region} příležitosti pro začátečníky v IT? {description}"
-        )
-    return {
-        "title": title,
-        "description": description,
-        "region": region_listing.name,
-        "region_tag_slug": region_listing.tag_slug,
+    return base_meta | {
+        "title": listing.title,
+        "description": listing.description,
+        "jobs_listing_slug": listing.slug,
     }
-
-
-def generate_tech_jobs_pages() -> Generator[GeneratedDocument]:
-    jobs_file = Path("src/jg/coop/web/docs/jobs.jinja")
-    jobs_text = jobs_file.read_text(encoding="utf-8-sig", errors="strict")
-    content, meta = parse_document(jobs_text)
-    for tech_listing in TECH_LISTINGS:
-        yield GeneratedDocument(
-            path=tech_listing.doc_path,
-            meta=meta
-            | {
-                "title": tech_listing.title,
-                "description": tech_listing.description,
-                "tech_listing_slug": tech_listing.slug,
-            },
-            content=content,
-        )
-
-
-def generate_employment_type_jobs_pages() -> Generator[GeneratedDocument]:
-    jobs_file = Path("src/jg/coop/web/docs/jobs.jinja")
-    jobs_text = jobs_file.read_text(encoding="utf-8-sig", errors="strict")
-    content, meta = parse_document(jobs_text)
-    yield GeneratedDocument(
-        path=get_listing_doc_path(PARTTIME_LISTING_SLUG),
-        meta=meta
-        | {
-            "title": "IT brigády, stáže a dobrovolnictví nejen pro studenty: programátor, tester a další",
-            "description": (
-                "IT brigády nejen pro studenty, stáže, částečné úvazky i dobrovolnictví. "
-                "Pro začátečníky, kteří chtějí práci v IT při škole, na mateřské či rodičovské, "
-                "nebo vedle jiné práce."
-            ),
-            "jobs_listing": "parttime",
-        },
-        content=content,
-    )
 
 
 @db.connection_context()
@@ -261,14 +204,12 @@ def generate_newsletter_issue_pages() -> Generator[GeneratedDocument]:
 def main():
     generators = [
         generate_course_provider_pages,
-        generate_employment_type_jobs_pages,
         generate_event_pages,
         generate_job_pages,
+        generate_jobs_listing_pages,
         generate_newsletter_issue_pages,
         generate_podcast_episode_pages,
         generate_redirects,
-        generate_region_jobs_pages,
-        generate_tech_jobs_pages,
     ]
     logger.info(f"Generating documents ({len(generators)} generators)")
     counter = Counter()

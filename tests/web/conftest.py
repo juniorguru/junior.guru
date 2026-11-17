@@ -10,7 +10,6 @@ and serves it to Playwright as if it was https://junior.guru/<path>.
 import os
 import subprocess
 from collections.abc import Callable, Generator
-from itertools import chain
 from pathlib import Path
 from types import SimpleNamespace
 from typing import Any
@@ -31,12 +30,9 @@ from playwright.sync_api import (
 
 from jg.coop.lib import template_filters
 from jg.coop.lib.mkdocs_jinja import TEMPLATE_GLOBALS, get_filters
+from jg.coop.models.jobs_listing import JOBS_LISTINGS_BY_SLUG
 from jg.coop.web.context import get_candidates_context, get_jobs_context
-from jg.coop.web.generators import (
-    generate_employment_type_jobs_pages,
-    generate_region_jobs_pages,
-    generate_tech_jobs_pages,
-)
+from jg.coop.web.generators import generate_jobs_listing_pages
 
 from testing_utils import prepare_test_db
 
@@ -199,21 +195,21 @@ def jobs_page(test_db: SqliteDatabase, serve: Callable[[str], None]) -> Callable
     """
 
     def jobs_page(url: str = "/jobs/") -> None:
+        context = get_jobs_context()
         page_meta = None
         if url != "/jobs/":
             page_meta = get_listing_jobs_page_meta(url)
-        serve(render("jobs.jinja", get_jobs_context(), url, page_meta))
+            # Mimics what on_docs_page_context does for the real website
+            slug = page_meta["jobs_listing_slug"]
+            context["jobs_listing"] = JOBS_LISTINGS_BY_SLUG[slug]
+        serve(render("jobs.jinja", context, url, page_meta))
 
     return jobs_page
 
 
 def get_listing_jobs_page_meta(url: str) -> dict[str, Any]:
     path = url.strip("/") + ".jinja"
-    for document in chain(
-        generate_region_jobs_pages(),
-        generate_employment_type_jobs_pages(),
-        generate_tech_jobs_pages(),
-    ):
+    for document in generate_jobs_listing_pages():
         if document.path == path:
             return document.meta
     raise ValueError(f"No jobs listing page for {url}")

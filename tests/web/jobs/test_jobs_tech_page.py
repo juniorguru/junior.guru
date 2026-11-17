@@ -92,7 +92,7 @@ def test_tech_page_empty_state_links_other_jobs(page: Page, jobs_page):
 
     empty = page.locator(".jobs-empty-listing")
     expect(empty).to_be_visible()
-    expect(empty.locator("a")).to_have_text("ostatní nabídky")
+    expect(empty.locator("a")).to_have_text("Všechny nabídky")
     expect(page.locator(".jobs-empty")).to_be_hidden()
 
 
