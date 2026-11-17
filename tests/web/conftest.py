@@ -90,12 +90,22 @@ def render_string(
     env.filters.update(get_filters())
     env.filters["url"] = url_filter
     env.filters["md"] = template_filters.md
-    env.filters["docs_url"] = lambda files, src_path: "#"
+    env.filters["docs_url"] = lambda files, src_path: docs_url_stub(src_path)
     env.globals.update(TEMPLATE_GLOBALS)
 
     page = SimpleNamespace(url=url.lstrip("/"), meta=page_meta or {})
     html = env.from_string(source).render(page=page, pages=[], base_url="/", **context)
     return wrap_html(html)
+
+
+def docs_url_stub(src_path: str) -> str:
+    """
+    Mimics how MkDocs turns a source path into a URL, e.g. jobs/brno.jinja to /jobs/brno/
+    """
+    path = Path(src_path).with_suffix("").as_posix()
+    if path == "index" or path.endswith("/index"):
+        path = path.removesuffix("index")
+    return f"/{path.strip('/')}/".replace("//", "/")
 
 
 def wrap_html(html: str) -> str:

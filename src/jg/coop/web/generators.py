@@ -7,16 +7,21 @@ import mkdocs_gen_files
 import yaml
 from mkdocs.utils.meta import get_data as parse_document
 from pydantic import BaseModel, ConfigDict
-from slugify import slugify
 
 from jg.coop.lib import loggers
-from jg.coop.lib.location import REGIONS
-from jg.coop.lib.text import get_tag_slug
 from jg.coop.lib.yaml import YAMLConfig
 from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.event import Event
-from jg.coop.models.job import REMOTE_TAG_SLUG, TECH_LISTINGS, ListedJob
+from jg.coop.models.job import (
+    PARTTIME_LISTING_SLUG,
+    REGION_LISTINGS,
+    REMOTE_TAG_SLUG,
+    TECH_LISTINGS,
+    ListedJob,
+    RegionListing,
+    get_listing_doc_path,
+)
 from jg.coop.models.newsletter import NewsletterIssue
 from jg.coop.models.podcast import PodcastEpisode
 
@@ -76,34 +81,38 @@ def generate_region_jobs_pages() -> Generator[GeneratedDocument]:
     jobs_file = Path("src/jg/coop/web/docs/jobs.jinja")
     jobs_text = jobs_file.read_text(encoding="utf-8-sig", errors="strict")
     content, meta = parse_document(jobs_text)
-    yield GeneratedDocument(
-        path="jobs/remote.jinja",
-        meta=meta
-        | {
-            "title": "Remote práce v IT pro juniory: na dálku, z domova",
-            "description": (
-                "Pracovní příležitosti pro začátečníky v IT, "
-                f"které jsou na dálku, z domova, remote. {meta['description']}"
-            ),
-            "region": "na dálku",
-            "region_tag_slug": REMOTE_TAG_SLUG,
-        },
-        content=content,
-    )
-    for region in REGIONS:
-        doc_slug = slugify(region)
-        tag_slug = get_tag_slug(region)
+    for region_listing in REGION_LISTINGS:
         yield GeneratedDocument(
-            path=f"jobs/{doc_slug}.jinja",
-            meta=meta
-            | {
-                "title": f"Práce v IT, {region}, bez praxe: junior programátor, tester a další",
-                "description": f"Jaké nabízí {region} příležitosti pro začátečníky v IT? {meta['description']}",
-                "region": region,
-                "region_tag_slug": tag_slug,
-            },
+            path=region_listing.doc_path,
+            meta=meta | get_region_page_meta(region_listing, meta["description"]),
             content=content,
         )
+
+
+def get_region_page_meta(
+    region_listing: RegionListing, description: str
+) -> dict[str, str]:
+    """
+    Page metadata for a region listing page, based on the main jobs page description
+    """
+    if region_listing.slug == REMOTE_TAG_SLUG:
+        title = "Remote práce v IT pro juniory: na dálku, z domova"
+        description = (
+            "Pracovní příležitosti pro začátečníky v IT, "
+            f"které jsou na dálku, z domova, remote. {description}"
+        )
+    else:
+        region = region_listing.name
+        title = f"Práce v IT, {region}, bez praxe: junior programátor, tester a další"
+        description = (
+            f"Jaké nabízí {region} příležitosti pro začátečníky v IT? {description}"
+        )
+    return {
+        "title": title,
+        "description": description,
+        "region": region_listing.name,
+        "region_tag_slug": region_listing.tag_slug,
+    }
 
 
 def generate_tech_jobs_pages() -> Generator[GeneratedDocument]:
@@ -112,7 +121,7 @@ def generate_tech_jobs_pages() -> Generator[GeneratedDocument]:
     content, meta = parse_document(jobs_text)
     for tech_listing in TECH_LISTINGS:
         yield GeneratedDocument(
-            path=f"jobs/{tech_listing.slug}.jinja",
+            path=tech_listing.doc_path,
             meta=meta
             | {
                 "title": tech_listing.title,
@@ -128,7 +137,7 @@ def generate_employment_type_jobs_pages() -> Generator[GeneratedDocument]:
     jobs_text = jobs_file.read_text(encoding="utf-8-sig", errors="strict")
     content, meta = parse_document(jobs_text)
     yield GeneratedDocument(
-        path="jobs/part-time.jinja",
+        path=get_listing_doc_path(PARTTIME_LISTING_SLUG),
         meta=meta
         | {
             "title": "IT brigády, stáže a dobrovolnictví nejen pro studenty: programátor, tester a další",

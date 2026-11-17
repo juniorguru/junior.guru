@@ -18,7 +18,9 @@ from jg.coop.models.exchange_rate import ExchangeRate
 from jg.coop.models.external_story import ExternalStory
 from jg.coop.models.followers import Followers
 from jg.coop.models.job import (
+    JOBS_OTHER_LINKS,
     PARTTIME_TAG_SLUGS,
+    REGION_LISTINGS,
     TECH_LISTINGS,
     DiscordJob,
     ListedJob,
@@ -226,6 +228,11 @@ def on_theme_context(context):
     context["promo_events"] = Event.featured_listing()
     context["newsletter_subscribers_count"] = Followers.get_latest("newsletter").count
     context["sponsors"] = Sponsor.listing()
+
+    # main_jobs.html
+    context["jobs_region_listings"] = REGION_LISTINGS
+    context["jobs_tech_listings"] = TECH_LISTINGS
+    context["jobs_other_links"] = JOBS_OTHER_LINKS
 
 
 @db.connection_context()
