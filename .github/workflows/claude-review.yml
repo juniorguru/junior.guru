@@ -15,7 +15,7 @@ jobs:
       group: claude-review-${{ github.event.pull_request.number || github.event.issue.number }}
       cancel-in-progress: true
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     permissions:
       contents: read
       pull-requests: write
@@ -30,7 +30,7 @@ jobs:
           fetch-depth: 1
       - id: claude
         uses: anthropics/claude-code-action@v1
-        timeout-minutes: 15
+        timeout-minutes: 25
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           prompt: |
@@ -56,8 +56,8 @@ jobs:
             4. Look for bugs, AGENTS.md or skill violations, and changes that will hurt long-term maintainability
                of the architecture (e.g. duplicated logic, wrong layer, needless complexity). Only report issues
                you are confident are real: code that won't run, clearly wrong logic, a AGENTS.md or skill rule
-               you can quote being broken, or a design choice you'd regret in a year. Skip style, nits, pre-existing issues,
-               issues already raised, missing handling of unlikely edge cases, and anything a linter would catch.
+               you can quote being broken, or a design choice you'd regret in a year. Skip style, nits,
+               pre-existing issues (step 6 covers those), issues already raised, missing handling of unlikely edge cases, and anything a linter would catch.
             5. Scrutinize every added or changed test even harder than the code. A green test that proves nothing
                is worse than no test, because it gives false confidence. For each test, ask: would it fail if
                the behavior it claims to cover broke? Report tests that can't fail (tautological assertions,
@@ -66,13 +66,29 @@ jobs:
                assert, tests that mock away the very logic they should exercise, assertions too loose to catch
                a regression, and changed behavior in the diff that no test would notice breaking. Also flag
                tests that only pin down implementation details and will break on harmless refactoring.
-            6. Post each new issue with `mcp__github_inline_comment__create_inline_comment` (with `confirmed: true`).
-            7. Finish with the structured output:
+            6. Step back and look at the code surrounding the change: the modules, templates, and tests the PR touches
+               or plugs into, and how the same concept is handled elsewhere in the codebase. Ask yourself, as
+               an experienced software architect with a passion for clean code and separation of concerns:
+               what changes to this surrounding code would improve the architecture, maintainability,
+               separation of concerns, and clean code overall? Look for things like the same concept modeled
+               several different ways, special cases that a better data model would remove, logic or copy
+               in the wrong layer, magic strings and hand-built paths repeated across files, data
+               transformation mixed with I/O, and the same thing defined in more than one place. These are
+               suggestions for follow-up work, not requests for this PR, so pre-existing code is fair game here.
+               Only suggest what's directly related to the area the PR touches and what you'd actually do
+               if you owned the code. Pick the few that matter most, at most five, and skip this if nothing
+               is worth it. Don't post them as inline comments.
+            7. Post each new issue with `mcp__github_inline_comment__create_inline_comment` (with `confirmed: true`).
+            8. Finish with the structured output:
                - `outcome`: "issues" if any issues are open (new or unfixed), "ok" if there are none,
                  "skipped" if you decided not to review the PR at all
                - `summary`: Markdown for a PR comment. For "issues", list them briefly.
                  For "ok", say in a sentence or two what you checked. For "skipped", explain exactly why.
                  If Claude reviewed the PR before, also say which earlier issues are fixed.
+                 If you have suggestions from step 6, add them at the end under a `### Architecture suggestions`
+                 heading, each as a short bullet naming the files involved and the concrete change you propose.
+                 They don't count as issues, so they don't affect `outcome`. On a re-review, repeat them only
+                 if they changed.
 
             Don't post any other GitHub comments, the summary gets posted for you.
           claude_args: |
