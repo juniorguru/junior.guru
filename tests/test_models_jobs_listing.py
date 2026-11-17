@@ -2,7 +2,7 @@ from types import SimpleNamespace
 
 import pytest
 
-from jg.coop.models.job import Tag, TagType, group_tags_by_type
+from jg.coop.models.job import Tag, TagType
 from jg.coop.models.jobs_listing import (
     JOBS_LISTINGS,
     JOBS_LISTINGS_BY_SLUG,
@@ -11,10 +11,12 @@ from jg.coop.models.jobs_listing import (
     RegionListingTemplate,
     build_jobs_listings,
     build_region_listing,
+    filter_by_tags,
     get_jobs_filters,
     get_listings_nav,
     get_location_tags,
     group_jobs_by_listing,
+    group_tags_by_type,
 )
 
 
@@ -57,12 +59,32 @@ def test_jobs_listings_fallbacks_exist():
     assert fallback_slugs <= set(JOBS_LISTINGS_BY_SLUG)
 
 
+def test_jobs_listings_regions_fall_back_to_remote():
+    region_listings = [
+        listing
+        for listing in JOBS_LISTINGS
+        if listing.type == TagType.LOCATION and listing.slug != "remote"
+    ]
+
+    assert {listing.fallback_slug for listing in region_listings} == {"remote"}
+
+
 def test_jobs_listings_start_with_remote():
     assert JOBS_LISTINGS[0].slug == "remote"
 
 
 def test_jobs_listings_include_regions():
     assert {"brno", "hradec-kralove", "usti-nad-labem"} <= set(JOBS_LISTINGS_BY_SLUG)
+
+
+def test_build_jobs_listings_keeps_registry_first_within_type():
+    config = JobsListingsConfig(
+        registry=[create_listing(slug="remote", type=TagType.LOCATION)],
+        region_listing=REGION_TEMPLATE,
+    )
+    listings = build_jobs_listings(config, ["Brno", "Praha"])
+
+    assert [listing.slug for listing in listings] == ["remote", "brno", "praha"]
 
 
 def test_build_jobs_listings_groups_by_type():
@@ -168,6 +190,14 @@ def test_group_jobs_by_listing():
     }
 
 
+def test_filter_by_tags():
+    python = create_job(Tag(slug="python", type=TagType.TECHNOLOGY))
+    java = create_job(Tag(slug="java", type=TagType.TECHNOLOGY))
+    untagged = create_job()
+
+    assert filter_by_tags([python, java, untagged], ["python", "ruby"]) == [python]
+
+
 def test_group_tags_by_type():
     jobs = [
         create_job(
@@ -263,3 +293,25 @@ def test_get_jobs_filters_browse_all_link_for_listing_type():
     filters = get_jobs_filters(TAGS_BY_TYPE, LOCATION_TAGS, listing)
 
     assert [type for type, f in filters.items() if f.browse_all_text] == ["technology"]
+
+
+@pytest.mark.parametrize(
+    "heading, name, doc_path",
+    [
+        ("Místo", "Na dálku", "jobs/remote.jinja"),
+        ("Místo", "Hradec Králové", "jobs/hradec-kralove.jinja"),
+        ("Místo", "Ústí nad Labem", "jobs/usti-nad-labem.jinja"),
+        ("Zaměření", "Python", "jobs/python.jinja"),
+        ("Zaměření", "C# a .NET", "jobs/csharp.jinja"),
+        ("Další", "Všechny nabídky", "jobs.jinja"),
+        ("Další", "Brigády a stáže", "jobs/part-time.jinja"),
+    ],
+)
+def test_jobs_listings_nav_links(heading: str, name: str, doc_path: str):
+    links = {
+        (group.heading, link.name): link.doc_path
+        for group in get_listings_nav(JOBS_LISTINGS)
+        for link in group.links
+    }
+
+    assert links[(heading, name)] == doc_path
