@@ -18,6 +18,7 @@ from jg.coop.models.job import (
     REMOTE_TAG_SLUG,
     TECH_LISTINGS,
     ListedJob,
+    RegionListing,
 )
 from jg.coop.models.newsletter import NewsletterIssue
 from jg.coop.models.podcast import PodcastEpisode
@@ -78,35 +79,38 @@ def generate_region_jobs_pages() -> Generator[GeneratedDocument]:
     jobs_file = Path("src/jg/coop/web/docs/jobs.jinja")
     jobs_text = jobs_file.read_text(encoding="utf-8-sig", errors="strict")
     content, meta = parse_document(jobs_text)
-    yield GeneratedDocument(
-        path="jobs/remote.jinja",
-        meta=meta
-        | {
-            "title": "Remote práce v IT pro juniory: na dálku, z domova",
-            "description": (
-                "Pracovní příležitosti pro začátečníky v IT, "
-                f"které jsou na dálku, z domova, remote. {meta['description']}"
-            ),
-            "region": "na dálku",
-            "region_tag_slug": REMOTE_TAG_SLUG,
-        },
-        content=content,
-    )
     for region_listing in REGION_LISTINGS:
-        if region_listing.slug == REMOTE_TAG_SLUG:
-            continue
-        region = region_listing.name
         yield GeneratedDocument(
             path=f"jobs/{region_listing.slug}.jinja",
-            meta=meta
-            | {
-                "title": f"Práce v IT, {region}, bez praxe: junior programátor, tester a další",
-                "description": f"Jaké nabízí {region} příležitosti pro začátečníky v IT? {meta['description']}",
-                "region": region,
-                "region_tag_slug": region_listing.tag_slug,
-            },
+            meta=meta | get_region_page_meta(region_listing, meta["description"]),
             content=content,
         )
+
+
+def get_region_page_meta(
+    region_listing: RegionListing, description: str
+) -> dict[str, str]:
+    """
+    Page metadata for a region listing page, based on the main jobs page description
+    """
+    if region_listing.slug == REMOTE_TAG_SLUG:
+        title = "Remote práce v IT pro juniory: na dálku, z domova"
+        description = (
+            "Pracovní příležitosti pro začátečníky v IT, "
+            f"které jsou na dálku, z domova, remote. {description}"
+        )
+    else:
+        region = region_listing.name
+        title = f"Práce v IT, {region}, bez praxe: junior programátor, tester a další"
+        description = (
+            f"Jaké nabízí {region} příležitosti pro začátečníky v IT? {description}"
+        )
+    return {
+        "title": title,
+        "description": description,
+        "region": region_listing.name,
+        "region_tag_slug": region_listing.tag_slug,
+    }
 
 
 def generate_tech_jobs_pages() -> Generator[GeneratedDocument]:
