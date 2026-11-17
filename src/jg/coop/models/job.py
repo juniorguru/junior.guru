@@ -38,6 +38,10 @@ REMOTE_TAG_SLUG = "remote"
 
 PARTTIME_TAG_SLUGS = ["internship", "parttime", "volunteering"]
 
+PARTTIME_LISTING_SLUG = "part-time"
+
+JOBS_DOC_PATH = "jobs.jinja"
+
 
 class TechListing(PydanticBaseModel):
     """
@@ -134,6 +138,25 @@ def get_listing_doc_path(slug: str) -> str:
     Path to the source document of a jobs listing page, as used by docs_url
     """
     return f"jobs/{slug}.jinja"
+
+
+class JobsLink(PydanticBaseModel):
+    """
+    Link to a jobs page which isn't a region or technology listing
+    """
+
+    model_config = ConfigDict(frozen=True)
+
+    name: str
+    doc_path: str
+
+
+JOBS_OTHER_LINKS = [
+    JobsLink(name="Všechny nabídky", doc_path=JOBS_DOC_PATH),
+    JobsLink(
+        name="Brigády a stáže", doc_path=get_listing_doc_path(PARTTIME_LISTING_SLUG)
+    ),
+]
 
 
 def get_region_listings(regions: Iterable[str]) -> list[RegionListing]:

@@ -14,11 +14,13 @@ from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.event import Event
 from jg.coop.models.job import (
+    PARTTIME_LISTING_SLUG,
     REGION_LISTINGS,
     REMOTE_TAG_SLUG,
     TECH_LISTINGS,
     ListedJob,
     RegionListing,
+    get_listing_doc_path,
 )
 from jg.coop.models.newsletter import NewsletterIssue
 from jg.coop.models.podcast import PodcastEpisode
@@ -135,7 +137,7 @@ def generate_employment_type_jobs_pages() -> Generator[GeneratedDocument]:
     jobs_text = jobs_file.read_text(encoding="utf-8-sig", errors="strict")
     content, meta = parse_document(jobs_text)
     yield GeneratedDocument(
-        path="jobs/part-time.jinja",
+        path=get_listing_doc_path(PARTTIME_LISTING_SLUG),
         meta=meta
         | {
             "title": "IT brigády, stáže a dobrovolnictví nejen pro studenty: programátor, tester a další",

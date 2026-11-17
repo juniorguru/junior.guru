@@ -526,51 +526,39 @@
 </dialog>
 {% endmacro %}
 
-{% macro jobs_listings(region_listings, tech_listings, current_region_tag_slug=none, current_tech_listing_slug=none) %}
+{% macro jobs_listings(region_listings, tech_listings, other_links, current_doc_path=none) %}
 <nav class="jobs-listings" aria-labelledby="jobs-listings-heading">
   <div class="jobs-listings-container">
-  <h2 id="jobs-listings-heading" class="jobs-listings-heading">Nabídky podle místa a zaměření</h2>
-  <div class="jobs-listings-groups">
-    <div class="jobs-listings-group regions">
-      <h3 class="jobs-listings-group-heading">Místo</h3>
-      <ul class="jobs-listings-list">
-        {% for region_listing in region_listings %}
-          {% set is_current = current_region_tag_slug == region_listing.tag_slug %}
-          <li>
-            <a
-              href="{{ pages|docs_url(region_listing.doc_path)|url }}"
-              class="jobs-listings-link{% if is_current %} active{% endif %}"
-              {% if is_current %}aria-current="page"{% endif %}
-            >
-              {{- region_listing.name -}}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
+    <h2 id="jobs-listings-heading" class="jobs-listings-heading">Nabídky podle místa a zaměření</h2>
+    <div class="jobs-listings-groups">
+      <div class="jobs-listings-group regions">
+        <h3 class="jobs-listings-group-heading">Místo</h3>
+        {{ jobs_listings_list(region_listings, current_doc_path) }}
+      </div>
+      <div class="jobs-listings-group technologies">
+        <h3 class="jobs-listings-group-heading">Zaměření</h3>
+        {{ jobs_listings_list(tech_listings, current_doc_path) }}
+        <h3 class="jobs-listings-group-heading">Další</h3>
+        {{ jobs_listings_list(other_links, current_doc_path) }}
+      </div>
     </div>
-    <div class="jobs-listings-group technologies">
-      <h3 class="jobs-listings-group-heading">Zaměření</h3>
-      <ul class="jobs-listings-list">
-        {% for tech_listing in tech_listings %}
-          {% set is_current = current_tech_listing_slug == tech_listing.slug %}
-          <li>
-            <a
-              href="{{ pages|docs_url(tech_listing.doc_path)|url }}"
-              class="jobs-listings-link{% if is_current %} active{% endif %}"
-              {% if is_current %}aria-current="page"{% endif %}
-            >
-              {{- tech_listing.name -}}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-      <h3 class="jobs-listings-group-heading">Další</h3>
-      <ul class="jobs-listings-list">
-        <li><a href="{{ pages|docs_url('jobs.jinja')|url }}" class="jobs-listings-link">Všechny nabídky</a></li>
-        <li><a href="{{ pages|docs_url('jobs/part-time.jinja')|url }}" class="jobs-listings-link">Brigády a stáže</a></li>
-      </ul>
-    </div>
-  </div>
   </div>
 </nav>
+{% endmacro %}
+
+{% macro jobs_listings_list(links, current_doc_path=none) %}
+<ul class="jobs-listings-list">
+  {% for link in links %}
+    {% set is_current = link.doc_path == current_doc_path %}
+    <li>
+      <a
+        href="{{ pages|docs_url(link.doc_path)|url }}"
+        class="jobs-listings-link{% if is_current %} active{% endif %}"
+        {% if is_current %}aria-current="page"{% endif %}
+      >
+        {{- link.name -}}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
 {% endmacro %}

@@ -8,7 +8,7 @@
   {{ jobs_listings(
     jobs_region_listings,
     jobs_tech_listings,
-    current_region_tag_slug=page.meta.region_tag_slug,
-    current_tech_listing_slug=page.meta.tech_listing_slug,
+    jobs_other_links,
+    current_doc_path=page.file.src_uri,
   ) }}
 {% endblock %}

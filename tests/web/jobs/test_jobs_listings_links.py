@@ -5,7 +5,7 @@ import pytest
 from playwright.sync_api import Page, expect
 from web.conftest import docs_url_stub, render_string
 
-from jg.coop.models.job import REGION_LISTINGS, TECH_LISTINGS
+from jg.coop.models.job import JOBS_OTHER_LINKS, REGION_LISTINGS, TECH_LISTINGS
 from jg.coop.web.generators import (
     generate_employment_type_jobs_pages,
     generate_region_jobs_pages,
@@ -19,21 +19,17 @@ def listings_page(serve: Callable[[str], None]) -> Callable:
     Renders the section linking listing pages, as the jobs theme template does
     """
 
-    def listings_page(
-        current_region_tag_slug: str | None = None,
-        current_tech_listing_slug: str | None = None,
-    ) -> None:
+    def listings_page(current_doc_path: str | None = None) -> None:
         source = (
             "{% from 'macros.html' import jobs_listings with context %}"
-            "{{ jobs_listings(region_listings, tech_listings,"
-            " current_region_tag_slug=current_region_tag_slug,"
-            " current_tech_listing_slug=current_tech_listing_slug) }}"
+            "{{ jobs_listings(region_listings, tech_listings, other_links,"
+            " current_doc_path=current_doc_path) }}"
         )
         context = {
             "region_listings": REGION_LISTINGS,
             "tech_listings": TECH_LISTINGS,
-            "current_region_tag_slug": current_region_tag_slug,
-            "current_tech_listing_slug": current_tech_listing_slug,
+            "other_links": JOBS_OTHER_LINKS,
+            "current_doc_path": current_doc_path,
         }
         serve(render_string(source, context, "/jobs/"))
 
@@ -78,29 +74,20 @@ def test_links_to_all_generated_listing_pages(page: Page, listings_page):
     assert set(hrefs) == expected_hrefs
 
 
-def test_no_current_listing_on_main_page(page: Page, listings_page):
-    listings_page()
-    page.goto("/jobs/")
-
-    expect(page.locator(".jobs-listings-link[aria-current='page']")).to_have_count(0)
-
-
 @pytest.mark.parametrize(
-    "current_region_tag_slug, current_tech_listing_slug, name",
+    "current_doc_path, name",
     [
-        ("remote", None, "Na dálku"),
-        ("brno", None, "Brno"),
-        (None, "python", "Python"),
+        ("jobs.jinja", "Všechny nabídky"),
+        ("jobs/remote.jinja", "Na dálku"),
+        ("jobs/brno.jinja", "Brno"),
+        ("jobs/python.jinja", "Python"),
+        ("jobs/part-time.jinja", "Brigády a\u00a0stáže"),
     ],
 )
 def test_current_listing_is_marked(
-    page: Page,
-    listings_page,
-    current_region_tag_slug: str | None,
-    current_tech_listing_slug: str | None,
-    name: str,
+    page: Page, listings_page, current_doc_path: str, name: str
 ):
-    listings_page(current_region_tag_slug, current_tech_listing_slug)
+    listings_page(current_doc_path)
     page.goto("/jobs/")
 
     expect(page.locator(".jobs-listings-link[aria-current='page']")).to_have_text(name)
