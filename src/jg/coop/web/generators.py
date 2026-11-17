@@ -81,7 +81,7 @@ def generate_region_jobs_pages() -> Generator[GeneratedDocument]:
     content, meta = parse_document(jobs_text)
     for region_listing in REGION_LISTINGS:
         yield GeneratedDocument(
-            path=f"jobs/{region_listing.slug}.jinja",
+            path=region_listing.doc_path,
             meta=meta | get_region_page_meta(region_listing, meta["description"]),
             content=content,
         )
@@ -119,7 +119,7 @@ def generate_tech_jobs_pages() -> Generator[GeneratedDocument]:
     content, meta = parse_document(jobs_text)
     for tech_listing in TECH_LISTINGS:
         yield GeneratedDocument(
-            path=f"jobs/{tech_listing.slug}.jinja",
+            path=tech_listing.doc_path,
             meta=meta
             | {
                 "title": tech_listing.title,

@@ -55,6 +55,10 @@ class TechListing(PydanticBaseModel):
     title: str
     description: str
 
+    @property
+    def doc_path(self) -> str:
+        return get_listing_doc_path(self.slug)
+
 
 TECH_LISTINGS = [
     TechListing(
@@ -119,6 +123,17 @@ class RegionListing(PydanticBaseModel):
     slug: str
     tag_slug: str
     name: str
+
+    @property
+    def doc_path(self) -> str:
+        return get_listing_doc_path(self.slug)
+
+
+def get_listing_doc_path(slug: str) -> str:
+    """
+    Path to the source document of a jobs listing page, as used by docs_url
+    """
+    return f"jobs/{slug}.jinja"
 
 
 def get_region_listings(regions: Iterable[str]) -> list[RegionListing]:
@@ -462,8 +477,9 @@ class ListedJob(BaseModel):
 
     @classmethod
     def region_tags(cls) -> list[Tag]:
-        return [Tag(slug=REMOTE_TAG_SLUG, type=TagType.LOCATION)] + [
-            Tag(slug=get_tag_slug(region), type=TagType.LOCATION) for region in REGIONS
+        return [
+            Tag(slug=region_listing.tag_slug, type=TagType.LOCATION)
+            for region_listing in REGION_LISTINGS
         ]
 
     @classmethod
