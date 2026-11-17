@@ -5,10 +5,5 @@
 {% block main %}
   {{ super() }}
   <hr class="visually-hidden">
-  {{ jobs_listings(
-    jobs_region_listings,
-    jobs_tech_listings,
-    jobs_other_links,
-    current_doc_path=page.file.src_uri,
-  ) }}
+  {{ jobs_listings(jobs_listings_nav) }}
 {% endblock %}

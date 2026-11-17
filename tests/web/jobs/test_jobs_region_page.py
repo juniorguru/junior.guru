@@ -24,23 +24,24 @@ def test_region_page_shows_only_jobs_in_region(
     region_tag = page.locator(f".jobs-filters [data-jobs-tag='{tag_slug}']")
     expect(region_tag).to_be_visible()
     expect(region_tag).to_have_class(re.compile(r"\bactive\b"))
-    visible_jobs = page.locator(".jobs-item.tagged:visible")
-    expect(visible_jobs).to_have_count(1)
-    expect(visible_jobs).to_contain_text("Local Developer")
+    jobs = page.locator(".jobs-item.tagged")
+    expect(jobs).to_have_count(1)
+    expect(jobs).to_contain_text("Local Developer")
     expect(page).to_have_url(re.compile(f"{url}$"))
 
 
-def test_region_page_offers_only_region_and_remote(page: Page, jobs_page):
+def test_region_page_offers_only_region(page: Page, jobs_page):
     create_job(title="Brno Developer", regions=["Brno"])
     create_job(title="Praha Developer", regions=["Praha"])
+    create_job(title="Remote Developer", remote=True)
     jobs_page("/jobs/brno/")
     page.goto("/jobs/brno/")
 
     location_tags = page.locator(
         ".jobs-filters [data-jobs-tag-type='location']:visible"
     )
-    expect(location_tags).to_have_count(2)
-    expect(page.locator(".jobs-filters [data-jobs-tag='praha']")).to_have_count(0)
+    expect(location_tags).to_have_count(1)
+    expect(location_tags).to_have_attribute("data-jobs-tag", "brno")
 
 
 def test_region_tag_cannot_be_turned_off(page: Page, jobs_page):
@@ -55,21 +56,6 @@ def test_region_tag_cannot_be_turned_off(page: Page, jobs_page):
     expect(region_tag).to_have_class(re.compile(r"\bactive\b"))
     expect(page.locator(".jobs-item.tagged:visible")).to_have_count(1)
     expect(page).to_have_url(re.compile(r"/jobs/brno/$"))
-
-
-def test_region_page_with_remote_shows_both(page: Page, jobs_page):
-    create_job(title="Brno Developer", regions=["Brno"])
-    create_job(title="Praha Developer", regions=["Praha"])
-    create_job(title="Remote Developer", remote=True)
-    jobs_page("/jobs/brno/")
-    page.goto("/jobs/brno/")
-
-    page.locator(".jobs-filters [data-jobs-tag='remote']").click()
-
-    visible_jobs = page.locator(".jobs-item.tagged:visible")
-    expect(visible_jobs).to_have_count(2)
-    expect(visible_jobs.filter(has_text="Praha Developer")).to_have_count(0)
-    expect(page).to_have_url(re.compile(r"/jobs/brno/\?location=remote$"))
 
 
 def test_region_page_with_other_filters(page: Page, jobs_page):
@@ -105,19 +91,32 @@ def test_region_page_empty_state_suggests_remote(page: Page, jobs_page):
 
     empty = page.locator(".jobs-empty-listing")
     expect(empty).to_be_visible()
-    expect(empty.locator("a")).to_have_text("práci\u00a0na\u00a0dálku")
+    expect(empty.locator("a")).to_have_text("Na\u00a0dálku")
+    expect(empty.locator("a")).to_have_attribute("href", "/jobs/remote/")
     expect(page.locator(".jobs-empty")).to_be_hidden()
 
 
-def test_region_page_empty_by_filters_suggests_remote_tag(page: Page, jobs_page):
-    create_job(title="Brno Python", regions=["Brno"], tech_tags=["python"])
-    create_job(title="Praha Java", regions=["Praha"], tech_tags=["java"])
+def test_region_page_empty_by_filters_does_not_suggest_remote_tag(
+    page: Page, jobs_page
+):
+    create_job(
+        title="Brno Python",
+        regions=["Brno"],
+        tech_tags=["python"],
+        employment_types=["fulltime"],
+    )
+    create_job(
+        title="Brno Java",
+        regions=["Brno"],
+        tech_tags=["java"],
+        employment_types=["internship"],
+    )
     jobs_page("/jobs/brno/")
-    page.goto("/jobs/brno/?technology=java")
+    page.goto("/jobs/brno/?technology=java&employment=fulltime")
 
     empty = page.locator(".jobs-empty")
     expect(empty).to_be_visible()
-    expect(empty).to_contain_text("#remote")
+    expect(empty).not_to_contain_text("#remote")
     expect(page.locator(".jobs-empty-listing")).to_be_hidden()
 
 
@@ -138,24 +137,6 @@ def test_region_page_with_multiword_name(page: Page, jobs_page):
     expect(page.locator(".jobs-noscript")).to_have_count(0)
     expect(page).to_have_url(re.compile(r"/jobs/usti-nad-labem/$"))
     assert errors == []
-
-
-def test_region_page_url_restores_remote(page: Page, jobs_page):
-    create_job(title="Brno Developer", regions=["Brno"])
-    create_job(title="Praha Developer", regions=["Praha"])
-    create_job(title="Remote Developer", remote=True)
-    jobs_page("/jobs/brno/")
-    page.goto("/jobs/brno/?location=remote")
-
-    expect(page.locator(".jobs-filters [data-jobs-tag='brno']")).to_have_class(
-        re.compile(r"\bactive\b")
-    )
-    expect(page.locator(".jobs-filters [data-jobs-tag='remote']")).to_have_class(
-        re.compile(r"\bactive\b")
-    )
-    visible_jobs = page.locator(".jobs-item.tagged:visible")
-    expect(visible_jobs).to_have_count(2)
-    expect(visible_jobs.filter(has_text="Praha Developer")).to_have_count(0)
 
 
 def test_region_page_url_ignores_other_regions(page: Page, jobs_page):
