@@ -1,12 +1,10 @@
-import itertools
 import json
 import textwrap
 from collections import Counter
 from collections.abc import Iterable
 from datetime import date, datetime, time, timedelta
 from enum import StrEnum, auto
-from operator import attrgetter
-from typing import Any, Self
+from typing import Self
 from urllib.parse import quote_plus
 
 from peewee import (
@@ -52,20 +50,6 @@ class Tag(PydanticBaseModel):
     @property
     def name(self) -> str:
         return f"#{self.slug}"
-
-
-def group_tags_by_type(jobs: Iterable[Any]) -> dict[str, list[Tag]]:
-    """
-    Maps each tag type to sorted unique tags of given jobs, or anything with tags
-    """
-    tags = sorted(
-        set(itertools.chain.from_iterable(job.tags for job in jobs)),
-        key=attrgetter("type", "slug"),
-    )
-    return {
-        str(type).lower(): list(tags)
-        for type, tags in itertools.groupby(tags, key=attrgetter("type"))
-    }
 
 
 class SubmittedJob(BaseModel):
@@ -409,23 +393,6 @@ class ListedJob(BaseModel):
             )
         else:
             raise ValueError(f"Could not determine canonical ID: {url}")
-
-    @classmethod
-    def remote_listing(cls) -> Iterable[Self]:
-        return cls.listing().where(cls.remote == True)
-
-    @classmethod
-    def tags_listing(cls, tags: Iterable[str]) -> Iterable[Self]:
-        tags = set(tags)
-        return [job for job in cls.listing() if tags & {tag.slug for tag in job.tags}]
-
-    @classmethod
-    def internship_listing(cls) -> Iterable[Self]:
-        return cls.tags_listing(["internship"])
-
-    @classmethod
-    def volunteering_listing(cls) -> Iterable[Self]:
-        return cls.tags_listing(["volunteering"])
 
     @classmethod
     def api_listing(cls) -> Iterable[Self]:

@@ -22,15 +22,16 @@ from jg.coop.models.job import (
     REMOTE_TAG_SLUG,
     DiscordJob,
     ListedJob,
-    group_tags_by_type,
 )
 from jg.coop.models.jobs_listing import (
     JOBS_LISTINGS,
     JOBS_LISTINGS_BY_SLUG,
+    filter_by_tags,
     get_jobs_filters,
     get_listings_nav,
     get_location_tags,
     group_jobs_by_listing,
+    group_tags_by_type,
 )
 from jg.coop.models.newsletter import NewsletterIssue
 from jg.coop.models.page import Page
@@ -189,9 +190,9 @@ def get_jobs_context() -> dict:
     return {
         "jobs": jobs,
         "jobs_discord": DiscordJob.listing(),
-        "jobs_remote": ListedJob.remote_listing(),
-        "jobs_internship": ListedJob.internship_listing(),
-        "jobs_volunteering": ListedJob.volunteering_listing(),
+        "jobs_remote": jobs_by_listing[REMOTE_TAG_SLUG],
+        "jobs_internship": filter_by_tags(jobs, ["internship"]),
+        "jobs_volunteering": filter_by_tags(jobs, ["volunteering"]),
         "jobs_filters": get_jobs_filters(group_tags_by_type(jobs), location_tags),
         "jobs_listings": JOBS_LISTINGS_BY_SLUG,
         "jobs_by_listing": jobs_by_listing,

@@ -1,6 +1,8 @@
+import itertools
 from collections.abc import Iterable, Sequence
+from operator import attrgetter
 from pathlib import Path
-from typing import Any
+from typing import Protocol
 
 import yaml
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
@@ -32,6 +34,11 @@ FILTERS = [
     (TagType.TECHNOLOGY, "Nářadí", "tools", "Procházej všechny technologie"),
     (TagType.SOURCE, "Zdroj", "box-arrow-down", None),
 ]
+
+
+class Tagged(Protocol):
+    @property
+    def tags(self) -> list[Tag]: ...
 
 
 class JobsListing(YAMLConfig):
@@ -119,6 +126,8 @@ def build_jobs_listings(
         *config.registry,
         *(build_region_listing(config.region_listing, region) for region in regions),
     ]
+    # The sort is stable, so within a type the registry order is kept,
+    # and generated regions go after the locations from the registry
     return sorted(listings, key=lambda listing: LISTING_TYPES.index(listing.type))
 
 
@@ -184,22 +193,39 @@ def get_location_tags(listings: Iterable[JobsListing]) -> list[Tag]:
     ]
 
 
-def group_jobs_by_listing(
-    jobs: Iterable[Any], listings: Iterable[JobsListing]
-) -> dict[str, list[Any]]:
+def group_jobs_by_listing[TaggedT: Tagged](
+    jobs: Iterable[TaggedT], listings: Iterable[JobsListing]
+) -> dict[str, list[TaggedT]]:
     """
     Maps each listing slug to the jobs having any of the listing's tags
-
-    Jobs can be anything with a 'tags' attribute, their order is kept.
     """
     jobs = list(jobs)
     return {
-        listing.slug: [
-            job
-            for job in jobs
-            if set(listing.tag_slugs) & {tag.slug for tag in job.tags}
-        ]
-        for listing in listings
+        listing.slug: filter_by_tags(jobs, listing.tag_slugs) for listing in listings
+    }
+
+
+def filter_by_tags[TaggedT: Tagged](
+    jobs: Iterable[TaggedT], tag_slugs: Iterable[str]
+) -> list[TaggedT]:
+    """
+    Lists jobs having any of given tags, keeping their order
+    """
+    tag_slugs = set(tag_slugs)
+    return [job for job in jobs if tag_slugs & {tag.slug for tag in job.tags}]
+
+
+def group_tags_by_type(jobs: Iterable[Tagged]) -> dict[str, list[Tag]]:
+    """
+    Maps each tag type to sorted unique tags of given jobs
+    """
+    tags = sorted(
+        set(itertools.chain.from_iterable(job.tags for job in jobs)),
+        key=attrgetter("type", "slug"),
+    )
+    return {
+        str(type).lower(): list(tags)
+        for type, tags in itertools.groupby(tags, key=attrgetter("type"))
     }
 
 
