@@ -4,44 +4,28 @@ description: Procházej nabídky práce, stáže a brigády zaměřené výhrad
 template: main_jobs.html
 ---
 
-{% from 'macros.html' import img, lead, note, club_teaser with context %}
+{% from 'macros.html' import img, lead, note, club_teaser, jobs_filters_form, job_card with context %}
 
-{% set is_region_listing = page.meta.region_tag_slug %}
-{% set is_remote_listing = page.meta.region_tag_slug == "remote" %}
-{% set is_parttime_listing = page.meta.jobs_listing == "parttime" %}
-{% set is_tech_listing = page.meta.tech_listing_slug %}
-
-{% if is_tech_listing %}
-  {% set tech_listing = jobs_tech_listings|selectattr("slug", "equalto", page.meta.tech_listing_slug)|first %}
-  {% set jobs = jobs_by_tech_listing[tech_listing.slug] %}
-{% endif %}
-
-{% if is_parttime_listing %}
-  {% set jobs = jobs_parttime %}
-  {% set employment_tags = jobs_tags.employment|selectattr("slug", "in", jobs_parttime_tag_slugs)|list %}
+{% if jobs_listing %}
+  {% set jobs = jobs_by_listing[jobs_listing.slug] %}
+  {% set filters = jobs_filters_by_listing[jobs_listing.slug] %}
 {% else %}
-  {% set employment_tags = jobs_tags.employment %}
+  {% set filters = jobs_filters %}
 {% endif %}
 
 <h1>
-{% if is_parttime_listing %}
-  Brigády, stáže a dobrovolnictví v IT
-{% elif is_remote_listing %}
-  Práce na dálku pro juniory
-{% elif is_region_listing %}
-  Práce pro juniory: {{ page.meta.region|replace(' ', ' ') }}
-{% elif is_tech_listing %}
-  {{ tech_listing.heading }}
+{% if jobs_listing %}
+  {{ jobs_listing.heading }}
 {% else %}
-  Práce v IT pro juniory
+  Práce v IT pro juniory
 {% endif %}
 </h1>
 
 {% call lead() %}
-  {% if is_parttime_listing %}
-  Chceš začít v IT při škole, na mateřské či rodičovské, vedle jiné práce, nebo prostě jen sbíráš první praxi? Tady máš brigády, stáže, částečné úvazky a dobrovolnictví. Ať už se tě týká rekvalifikace, nebo studuješ VŠ.
-  {% elif not is_region_listing %}
-  Nabídky práce v programování, testování a datové analytice. Pro juniory, kterých se týká rekvalifikace do IT, i pro absolventy s VŠ.
+  {% if jobs_listing %}
+  {{ jobs_listing.lead or '' }}
+  {% else %}
+  Nabídky práce v programování, testování a datové analytice. Pro juniory, kterých se týká rekvalifikace do IT, i pro absolventy s VŠ.
   {% endif %}
   Už žádné „požadujeme 4 roky zkušeností“.
   Robot každý den stahuje inzeráty z různých zdrojů a pomocí umělé inteligence {{ "stars"|icon }} vybírá jen ty,
@@ -53,132 +37,7 @@ template: main_jobs.html
   {{ 'plus-circle'|icon }} Chceš přidat inzerát? Napiš na <a href="mailto:{{ brand.CONTACT_EMAIL }}">{{ brand.CONTACT_EMAIL }}</a>
 {%- endcall %}
 
-<dl class="jobs-filters standout noscript">
-  <dt class="jobs-filters-heading">{{ "geo-alt"|icon }} Místo:</dt>
-  <dd class="jobs-tags">
-    {% if is_region_listing %}
-      {% if not is_remote_listing %}
-        <button
-          type="button"
-          class="jobs-tag"
-          aria-pressed="false"
-          hidden
-          data-jobs-tag="remote"
-          data-jobs-tag-type="location"
-        >
-          #remote
-        </button>
-      {% endif %}
-      <button
-        type="button"
-        class="jobs-tag active disabled"
-        disabled
-        aria-pressed="true"
-        data-jobs-tag="{{ page.meta.region_tag_slug }}"
-        data-jobs-tag-type="location"
-      >
-        #{{- page.meta.region_tag_slug -}}
-      </button>
-      <a href="{{ pages|docs_url('jobs.jinja')|url }}" class="jobs-tag-link">
-        {{ 'sliders'|icon }}
-        <span class="jobs-tag-link-label">
-          Procházej všechna místa
-        </span>
-      </a>
-    {% else %}
-      {% for tag in jobs_region_tags %}
-        <button
-          type="button"
-          class="jobs-tag"
-          aria-pressed="false"
-          hidden
-          data-jobs-tag="{{ tag.slug }}"
-          data-jobs-tag-type="{{ tag.type|lower }}"
-        >
-          {{- tag.name -}}
-        </button>
-      {% endfor %}
-      <span class="jobs-noscript">Stala se chyba a filtrování nefunguje</span>
-    {% endif %}
-  </dd>
-  <dt class="jobs-filters-heading">{{ "hourglass-split"|icon }} Úvazek:</dt>
-  <dd class="jobs-tags">
-    {% for tag in employment_tags %}
-      <button
-        type="button"
-        class="jobs-tag"
-        aria-pressed="false"
-        hidden
-        data-jobs-tag="{{ tag.slug }}"
-        data-jobs-tag-type="{{ tag.type|lower }}"
-      >
-        {{- tag.name -}}
-      </button>
-    {% endfor %}
-    {% if is_parttime_listing %}
-      <a href="{{ pages|docs_url('jobs.jinja')|url }}" class="jobs-tag-link">
-        {{ 'sliders'|icon }}
-        <span class="jobs-tag-link-label">
-          Procházej i plné úvazky
-        </span>
-      </a>
-    {% endif %}
-    <span class="jobs-noscript">Stala se chyba a filtrování nefunguje</span>
-  </dd>
-  <dt class="jobs-filters-heading">{{ "tools"|icon }} Nářadí:</dt>
-  <dd class="jobs-tags">
-    {% if is_tech_listing %}
-      {% for tag_slug in tech_listing.tag_slugs %}
-        <button
-          type="button"
-          class="jobs-tag active disabled"
-          disabled
-          aria-pressed="true"
-          data-jobs-tag="{{ tag_slug }}"
-          data-jobs-tag-type="technology"
-        >
-          #{{- tag_slug -}}
-        </button>
-      {% endfor %}
-      <a href="{{ pages|docs_url('jobs.jinja')|url }}" class="jobs-tag-link">
-        {{ 'sliders'|icon }}
-        <span class="jobs-tag-link-label">
-          Procházej všechny technologie
-        </span>
-      </a>
-    {% else %}
-      {% for tag in jobs_tags.technology %}
-        <button
-          type="button"
-          class="jobs-tag"
-          aria-pressed="false"
-          hidden
-          data-jobs-tag="{{ tag.slug }}"
-          data-jobs-tag-type="{{ tag.type|lower }}"
-        >
-          {{- tag.name -}}
-        </button>
-      {% endfor %}
-      <span class="jobs-noscript">Stala se chyba a filtrování nefunguje</span>
-    {% endif %}
-  </dd>
-  <dt class="jobs-filters-heading">{{ "box-arrow-down"|icon }} Zdroj:</dt>
-  <dd class="jobs-tags">
-    {% for tag in jobs_tags.source %}
-      <button
-        type="button"
-        class="jobs-tag"
-        aria-pressed="false"
-        hidden
-        data-jobs-tag="{{ tag.slug }}"
-        data-jobs-tag-type="{{ tag.type|lower }}"
-      >
-        {{- tag.name -}}
-      </button>
-    {% endfor %}
-    <span class="jobs-noscript">Stala se chyba a filtrování nefunguje</span>
-  </dd>
-</dl>
+{{ jobs_filters_form(filters) }}
 
 <div class="jobs-subscribe">
   <p class="jobs-subscribe-text">
@@ -186,7 +45,7 @@ template: main_jobs.html
   </p>
   <a
     class="jobs-subscribe-button"
-    href="https://discord.com/channels/769966886598737931/1080052057752477716"
+    href="{{ club_jobs_channel_url }}"
     rel="nofollow noopener"
     target="_blank"
   >
@@ -197,161 +56,20 @@ template: main_jobs.html
 <div class="jobs">
   <ul class="jobs-list">
     {% for job in jobs %}
-    <li class="jobs-item openable tagged{% if job.is_highlighted %} highlighted{% endif %}" data-openable>
-      <div class="jobs-item-container">
-        <div class="jobs-logo">
-          {{ img('static/' + job.company_logo_path, 'Logo ' + job.company_name, 100, 100, class="jobs-image") }}
-        </div>
-        <div class="jobs-body">
-          <h3 class="jobs-title">
-            <a class="jobs-title-link"
-              data-openable-action="open"
-              data-openable-visible="closed"
-              {% if job.is_submitted %}
-                href="{{ job.url|relative_url }}"
-              {% else %}
-                href="{{ job.url }}" rel="nofollow noopener" target="_blank"
-              {% endif %}
-            >
-              {{ job.title }}
-            </a>
-            <span class="jobs-title-text" data-openable-visible="open" hidden>{{ job.title }}</span>
-            <span class="jobs-open" data-openable-visible="closed">{{ "arrow-down-square"|icon }}</span>
-            <button class="jobs-close" data-openable-action="close" data-openable-visible="open" hidden>{{ "x-lg"|icon }}</button>
-          </h3>
-          <p class="jobs-info">
-            <strong class="jobs-info-item">{{ job.company_name }}</strong>
-            {% if job.location_text %}
-              <span class="jobs-info-item">{{ "geo-alt"|icon }} {{ job.location_text }}</span>
-            {% endif %}
-          </p>
-          <p class="jobs-tags">
-            {% for tag in job.tags %}
-              <span
-                class="jobs-tag"
-                data-jobs-tag="{{ tag.slug }}"
-                data-jobs-tag-type="{{ tag.type|lower }}"
-              >
-                {{- tag.name -}}
-              </span>
-            {% endfor %}
-          </p>
-          <div class="jobs-company" data-openable-visible="open" hidden>
-            <h4 class="jobs-company-heading">Vyhledat firmu</h4>
-            <ul class="jobs-company-links">
-              <li>
-                <a
-                  href="{{ job.company_linkedin_url }}"
-                  rel="nofollow noopener"
-                  target="_blank"
-                  class="jobs-company-link"
-                >
-                  <span>{{ "linkedin"|icon }}</span>
-                  <span>LinkedIn</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="{{ job.company_atmoskop_url }}"
-                  rel="nofollow noopener"
-                  target="_blank"
-                  class="jobs-company-link"
-                >
-                  <span>{{ "zoom-in"|icon }}</span>
-                  <span>Atmoskop</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="{{ job.company_jakybylpohovor_url }}"
-                  rel="nofollow noopener"
-                  target="_blank"
-                  class="jobs-company-link"
-                >
-                  <span>{{ "suitcase-lg"|icon }}</span>
-                  <span>Jaký byl pohovor?</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="{{ job.company_search_url }}"
-                  rel="nofollow noopener"
-                  target="_blank"
-                  class="jobs-company-link"
-                >
-                  <span>{{ "google"|icon }}</span>
-                  <span>Google</span>
-                </a>
-              </li>
-              {% if job.company_url %}
-                <li>
-                  <a
-                    href="{{ job.company_url }}"
-                    rel="nofollow noopener"
-                    target="_blank"
-                    class="jobs-company-link"
-                  >
-                    <span>{{ "house"|icon }}</span>
-                    <span>Web</span>
-                  </a>
-                </li>
-              {% endif %}
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="jobs-actions" data-openable-visible="open" hidden>
-        <ul class="jobs-actions-list">
-          {% if job.discord_url %}
-            <li class="jobs-action-club">
-              {% if job.upvotes_count %}
-                <span>
-                  {{ "hand-thumbs-up"|icon }} {{ job.upvotes_count }}
-                </span>
-              {% endif %}
-              {% if job.comments_count %}
-                <span>
-                  {{ "chat"|icon }} {{ job.comments_count }}
-                </span>
-              {% endif %}
-              <a
-                href="{{ job.discord_url }}"
-                class="jobs-action-button club"
-                rel="nofollow noopener"
-                target="_blank"
-              >
-                {{ "discord"|icon }} Diskutovat
-              </a>
-            </li>
-          {% endif %}
-          <li class="jobs-action-continue">
-            <a
-              {% if job.is_submitted %}
-                href="{{ job.url|relative_url }}"
-              {% else %}
-                href="{{ job.url }}"
-                rel="nofollow noopener"
-                target="_blank"
-              {% endif %}
-              class="jobs-action-button continue"
-            >
-              Celý inzerát
-            </a>
-          </li>
-        </ul>
-      </div>
-    </li>
-  {% endfor %}
-    {% if is_region_listing or is_tech_listing %}
-      <li class="jobs-empty-listing"{% if not (is_tech_listing and not jobs) %} hidden{% endif %}>
+      {{ job_card(job) }}
+    {% endfor %}
+    {% if jobs_listing %}
+      {% set fallback = jobs_listings[jobs_listing.fallback_slug] if jobs_listing.fallback_slug else none %}
+      <li class="jobs-empty-listing"{% if jobs %} hidden{% endif %}>
         {% call note() -%}
           {{ 'search'|icon }}
-          Zrovna tu nejsou žádné vhodné inzeráty.
-          Nové přibývají každý den, tak se sem brzy vrať.
-          {% if is_region_listing and not is_remote_listing -%}
-            Mezitím se můžeš podívat na <a href="{{ pages|docs_url('jobs/remote.jinja')|url }}">práci na dálku</a>.
+          Zrovna tu nejsou žádné vhodné inzeráty.
+          Nové přibývají každý den, tak se sem brzy vrať.
+          Mezitím můžeš zkusit:
+          {% if fallback -%}
+            <a href="{{ pages|docs_url(fallback.doc_path)|url }}">{{ fallback.name }}</a>
           {%- else -%}
-            Mezitím se můžeš podívat na <a href="{{ pages|docs_url('jobs.jinja')|url }}">ostatní nabídky</a>.
+            <a href="{{ pages|docs_url('jobs.jinja')|url }}">Všechny nabídky</a>
           {%- endif %}
         {%- endcall %}
       </li>
@@ -361,8 +79,8 @@ template: main_jobs.html
         {{ 'search'|icon }}
         Tvým filtrům neodpovídají žádné inzeráty.
         {{- ' ' -}}
-        {%- if not is_remote_listing -%}
-          Pokud hledáš podle místa, zkus přidat <span class="jobs-tag active">#remote</span>.
+        {%- if jobs_remote_tag_slug in filters.location.selectable_slugs -%}
+          Pokud hledáš podle místa, zkus přidat <span class="jobs-tag active">#{{ jobs_remote_tag_slug }}</span>.
         {%- endif -%}
       {%- endcall %}
     </li>

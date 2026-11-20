@@ -13,9 +13,9 @@ def test_remote_page_shows_only_remote_jobs(page: Page, jobs_page):
     remote_tag = page.locator(".jobs-filters [data-jobs-tag='remote']")
     expect(remote_tag).to_have_count(1)
     expect(remote_tag).to_have_class(re.compile(r"\bactive\b"))
-    visible_jobs = page.locator(".jobs-item.tagged:visible")
-    expect(visible_jobs).to_have_count(1)
-    expect(visible_jobs).to_contain_text("Remote Developer")
+    jobs = page.locator(".jobs-item.tagged")
+    expect(jobs).to_have_count(1)
+    expect(jobs).to_contain_text("Remote Developer")
     expect(page).to_have_url(re.compile(r"/jobs/remote/$"))
 
 
@@ -34,10 +34,20 @@ def test_remote_page_with_other_filters(page: Page, jobs_page):
 
 
 def test_remote_page_empty_state_does_not_suggest_remote(page: Page, jobs_page):
-    create_job(title="Remote Python", remote=True, tech_tags=["python"])
-    create_job(title="Brno Java", regions=["Brno"], tech_tags=["java"])
+    create_job(
+        title="Remote Python",
+        remote=True,
+        tech_tags=["python"],
+        employment_types=["fulltime"],
+    )
+    create_job(
+        title="Remote Java",
+        remote=True,
+        tech_tags=["java"],
+        employment_types=["internship"],
+    )
     jobs_page("/jobs/remote/")
-    page.goto("/jobs/remote/?technology=java")
+    page.goto("/jobs/remote/?technology=java&employment=fulltime")
 
     empty = page.locator(".jobs-empty")
     expect(empty).to_be_visible()

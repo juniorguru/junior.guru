@@ -135,6 +135,10 @@ CLUB_EVENTS_CHANNEL_URL = (
     f"https://discord.com/channels/{CLUB_GUILD_ID}/{int(ClubChannelID.EVENTS)}"
 )
 
+CLUB_JOBS_CHANNEL_URL = (
+    f"https://discord.com/channels/{CLUB_GUILD_ID}/{int(ClubChannelID.JOBS)}"
+)
+
 
 class ClubEmoji(StrEnum):
     PIN = "📌"

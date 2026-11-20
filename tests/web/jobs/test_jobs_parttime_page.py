@@ -13,10 +13,10 @@ def test_parttime_page_shows_only_parttime_jobs(page: Page, jobs_page):
     jobs_page("/jobs/part-time/")
     page.goto("/jobs/part-time/")
 
-    visible_jobs = page.locator(".jobs-item.tagged:visible")
-    expect(visible_jobs).to_have_count(3)
-    expect(visible_jobs.filter(has_text="Full-time")).to_have_count(0)
-    expect(visible_jobs.filter(has_text="Untagged")).to_have_count(0)
+    jobs = page.locator(".jobs-item.tagged")
+    expect(jobs).to_have_count(3)
+    expect(jobs.filter(has_text="Full-time")).to_have_count(0)
+    expect(jobs.filter(has_text="Untagged")).to_have_count(0)
     expect(page).to_have_url(re.compile(r"/jobs/part-time/$"))
 
 

@@ -1,11 +1,9 @@
-import itertools
 import json
 import textwrap
 from collections import Counter
 from collections.abc import Iterable
 from datetime import date, datetime, time, timedelta
 from enum import StrEnum, auto
-from operator import attrgetter
 from typing import Self
 from urllib.parse import quote_plus
 
@@ -21,12 +19,11 @@ from peewee import (
 )
 from playhouse.shortcuts import model_to_dict
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
-from slugify import slugify
 
 from jg.coop.lib import charts
 from jg.coop.lib.discord_markdown import to_discord_markdown
 from jg.coop.lib.job_urls import url_to_id
-from jg.coop.lib.location import REGIONS, Location, repr_locations
+from jg.coop.lib.location import Location, repr_locations
 from jg.coop.lib.text import get_tag_slug
 from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubUser
@@ -35,146 +32,6 @@ from jg.coop.models.club import ClubUser
 JOB_EXPIRED_SOON_DAYS = 10
 
 REMOTE_TAG_SLUG = "remote"
-
-PARTTIME_TAG_SLUGS = ["internship", "parttime", "volunteering"]
-
-PARTTIME_LISTING_SLUG = "part-time"
-
-JOBS_DOC_PATH = "jobs.jinja"
-
-
-class TechListing(PydanticBaseModel):
-    """
-    Standalone jobs listing page for a technology, e.g. /jobs/python/
-
-    Titles and headings use words people actually search for
-    """
-
-    model_config = ConfigDict(frozen=True)
-
-    slug: str
-    tag_slugs: list[str]
-    name: str
-    heading: str
-    title: str
-    description: str
-
-    @property
-    def doc_path(self) -> str:
-        return get_listing_doc_path(self.slug)
-
-
-TECH_LISTINGS = [
-    TechListing(
-        slug="tester",
-        tag_slugs=["testing"],
-        name="Tester",
-        heading="Práce pro juniory: tester",
-        title="Junior tester bez praxe: práce v testování, QA, manuální i automatizované testy",
-        description="Nabídky práce pro začínající testery a testerky. Manuální i automatizované testování, QA, stáže a junior pozice.",
-    ),
-    TechListing(
-        slug="python",
-        tag_slugs=["python"],
-        name="Python",
-        heading="Práce pro juniory: Python",
-        title="Junior Python developer: práce v Pythonu pro začátečníky bez praxe",
-        description="Nabídky práce v Pythonu pro začátečníky. Junior pozice, stáže a brigády pro ty, kdo s Pythonem teprve začínají.",
-    ),
-    TechListing(
-        slug="java",
-        tag_slugs=["java"],
-        name="Java",
-        heading="Práce pro juniory: Java",
-        title="Junior Java developer: práce v Javě pro začátečníky bez praxe",
-        description="Nabídky práce v Javě pro začátečníky. Junior pozice, stáže a brigády pro ty, kdo s Javou teprve začínají.",
-    ),
-    TechListing(
-        slug="javascript",
-        tag_slugs=["javascript", "typescript"],
-        name="JavaScript",
-        heading="Práce pro juniory: JavaScript",
-        title="Junior JavaScript developer: práce v JavaScriptu pro začátečníky bez praxe",
-        description="Nabídky práce v JavaScriptu a TypeScriptu pro začátečníky. Junior pozice, stáže a brigády na frontendu i backendu.",
-    ),
-    TechListing(
-        slug="csharp",
-        tag_slugs=["csharp"],
-        name="C# a .NET",
-        heading="Práce pro juniory: C# a .NET",
-        title="Junior C# a .NET developer: práce v C# pro začátečníky bez praxe",
-        description="Nabídky práce v C# a .NET pro začátečníky. Junior pozice, stáže a brigády pro ty, kdo s .NET teprve začínají.",
-    ),
-    TechListing(
-        slug="ai",
-        # The 'ai' tag is noisy, it gets applied to any job ad mentioning AI
-        tag_slugs=["agenticengineering", "buildingai", "vibecoding"],
-        name="AI",
-        heading="Práce s AI pro juniory",
-        title="Práce s AI pro juniory: AI vývojář, AI engineer, vibe coding",
-        description="Nabídky práce s AI pro začátečníky. Vývoj aplikací s AI, agentní programování a vibe coding na junior pozicích.",
-    ),
-]
-
-
-class RegionListing(PydanticBaseModel):
-    """
-    Standalone jobs listing page for a region, e.g. /jobs/brno/
-    """
-
-    model_config = ConfigDict(frozen=True)
-
-    slug: str
-    tag_slug: str
-    name: str
-
-    @property
-    def doc_path(self) -> str:
-        return get_listing_doc_path(self.slug)
-
-
-def get_listing_doc_path(slug: str) -> str:
-    """
-    Path to the source document of a jobs listing page, as used by docs_url
-    """
-    return f"jobs/{slug}.jinja"
-
-
-class JobsLink(PydanticBaseModel):
-    """
-    Link to a jobs page which isn't a region or technology listing
-    """
-
-    model_config = ConfigDict(frozen=True)
-
-    name: str
-    doc_path: str
-
-
-JOBS_OTHER_LINKS = [
-    JobsLink(name="Všechny nabídky", doc_path=JOBS_DOC_PATH),
-    JobsLink(
-        name="Brigády a stáže", doc_path=get_listing_doc_path(PARTTIME_LISTING_SLUG)
-    ),
-]
-
-
-def get_region_listings(regions: Iterable[str]) -> list[RegionListing]:
-    """
-    Lists region listing pages, starting with remote jobs
-    """
-    return [
-        RegionListing(slug=REMOTE_TAG_SLUG, tag_slug=REMOTE_TAG_SLUG, name="Na dálku"),
-        *(
-            RegionListing(
-                slug=slugify(region), tag_slug=get_tag_slug(region), name=region
-            )
-            for region in regions
-        ),
-    ]
-
-
-REGION_LISTINGS = get_region_listings(REGIONS)
 
 
 class TagType(StrEnum):
@@ -499,24 +356,6 @@ class ListedJob(BaseModel):
         return cls.listing().count()
 
     @classmethod
-    def region_tags(cls) -> list[Tag]:
-        return [
-            Tag(slug=region_listing.tag_slug, type=TagType.LOCATION)
-            for region_listing in REGION_LISTINGS
-        ]
-
-    @classmethod
-    def tags_by_type(cls) -> dict[str, list[Tag]]:
-        tags = sorted(
-            set(itertools.chain.from_iterable(job.tags for job in cls.listing())),
-            key=attrgetter("type", "slug"),
-        )
-        return {
-            str(type).lower(): list(tags)
-            for type, tags in itertools.groupby(tags, key=attrgetter("type"))
-        }
-
-    @classmethod
     def listing(cls) -> Iterable[Self]:
         upvotes_count = fn.coalesce(cls.upvotes_count, 0)
         comments_count = fn.coalesce(cls.comments_count, 0)
@@ -554,27 +393,6 @@ class ListedJob(BaseModel):
             )
         else:
             raise ValueError(f"Could not determine canonical ID: {url}")
-
-    @classmethod
-    def remote_listing(cls) -> Iterable[Self]:
-        return cls.listing().where(cls.remote == True)
-
-    @classmethod
-    def tags_listing(cls, tags: Iterable[str]) -> Iterable[Self]:
-        tags = set(tags)
-        return [job for job in cls.listing() if tags & {tag.slug for tag in job.tags}]
-
-    @classmethod
-    def internship_listing(cls) -> Iterable[Self]:
-        return cls.tags_listing(["internship"])
-
-    @classmethod
-    def volunteering_listing(cls) -> Iterable[Self]:
-        return cls.tags_listing(["volunteering"])
-
-    @classmethod
-    def parttime_listing(cls) -> Iterable[Self]:
-        return cls.tags_listing(PARTTIME_TAG_SLUGS)
 
     @classmethod
     def api_listing(cls) -> Iterable[Self]:
