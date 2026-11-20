@@ -1,0 +1,235 @@
+{
+  "type": "document",
+  "document": {
+    "coverPages": [],
+    "title": "Trh a IT junioři: co změnila AI, kde jsou příležitosti",
+    "totalPageCount": 9
+  },
+  "isActivity": false,
+  "urn": "urn:li:activity:7528827504493621248",
+  "url": "https://www.linkedin.com/posts/honzajavorek_trh-a-it-junio%C5%99i-co-zm%C4%9Bnila-ai-kde-jsou-activity-7528827504493621248-ESJN",
+  "shareUrn": "urn:li:ugcPost:7528827503331713025",
+  "text": "Jak je to teda s juniory v IT? Dojmy máme všichni. Ale co data?\n\nData má třeba Filip Mikschik, zakladatel a CEO StartupJobs.cz, takže jsme si ho pozvali k nám do klubu na junior.guru, aby nám dal lepší představu:\n\n👉 Jak se za poslední dva roky proměnila poptávka po juniorech?\n👉 Co v datech opravdu vidíme a co je jen mediální panika?\n👉 Které role rostou a co dnes firmy od juniorů čekají?\n\nZajímá vás ještě něco dalšího? Zaregistrujte se zdarma, připojte se na náš Discord, a ptejte se přímo v chatu!\n\nAkce bude za týden ve středu, 25.11. v 18:00. Jak dlouhé to bude, se můžeme jen domnívat - záleží i na vás a vašich dotazech 😅",
+  "attributes": [
+    {
+      "start": 79,
+      "length": 14,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Filip",
+        "lastName": "Mikschik",
+        "occupation": "Founder & CEO StartupJobs - pomáhám lidem najít práci, která je posune vpřed.",
+        "id": "71319948",
+        "publicId": "mikschik",
+        "profileId": "ACoAAARAQYwB32Ve0_mA1kZBQAGgqRCGjwzOYkk"
+      }
+    },
+    {
+      "start": 112,
+      "length": 14,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "StartupJobs.cz",
+        "universalName": "startupjobs-cz",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:2622160"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1795013502373,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7528827503331713025?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7528827503331713025%2C7528832313053507584%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287528832313053507584%2Curn%3Ali%3AugcPost%3A7528827503331713025%29",
+      "text": "Už se těším :-)",
+      "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(ugcPost:7528827503331713025,7528832313053507584)",
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 0,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "EMPATHY"
+        }
+      ],
+      "author": {
+        "firstName": "Karla",
+        "lastName": "Root",
+        "occupation": "#opentowork Data Analyst | Process Nerd | Power Automate | Power BI | Stay calm. Ask AI first, then panic...",
+        "id": "420075610",
+        "publicId": "karlaroot",
+        "profileId": "ACoAABkJ2FoBTyti7b2tWEdLiODfYKDO6El_iog",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/karlaroot"
+      },
+      "authorType": "Person"
+    },
+    {
+      "time": 1795012394681,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7528827503331713025?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7528827503331713025%2C7528827667060805632%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287528827667060805632%2Curn%3Ali%3AugcPost%3A7528827503331713025%29",
+      "text": "Všechno info tu: https://junior.guru/events/67/",
+      "entities": [],
+      "fromPostAuthor": true,
+      "urn": "urn:li:comment:(ugcPost:7528827503331713025,7528827667060805632)",
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 0,
+      "numComments": 0,
+      "reactionTypeCounts": [],
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/honzajavorek"
+      },
+      "authorType": "Person"
+    }
+  ],
+  "reactions": [
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Tereza",
+        "lastName": "Hurtova",
+        "occupation": "CMO at Nuomy & ENGETO | Turning human potential into real-world impact",
+        "id": "414371750",
+        "publicId": "terezahurtova",
+        "profileId": "ACoAABiyz6YBd5eOGXzM1olVgh-n263CyuHhTqA"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petra",
+        "lastName": "Kubita Nulíčková",
+        "occupation": "HR Manager v Pale Fire Capital | Head of HR v Aukro | HR consultant and mentor | #sharingiscaring",
+        "id": "473833031",
+        "publicId": "petranulickova",
+        "profileId": "ACoAABw-HkcBifENxX8nxAs2YjwxbI6b2XtAF98"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Vendula",
+        "lastName": "Krajíčková",
+        "occupation": "Frontend vývojářka 🚀 | React, Next.js, TypeScript | Ex-BlueGhost 👻💙",
+        "id": "1145616814",
+        "publicId": "vendula-krajickova",
+        "profileId": "ACoAAERIua4Bk44zfiGE6PT1BmSNoKdqiNkFOYc"
+      }
+    },
+    {
+      "type": "INTEREST",
+      "profile": {
+        "firstName": "Irena",
+        "lastName": "Zatloukalova",
+        "occupation": "Founder & CEO @Diversight.ai | Helping B2B companies eliminate Data Debt and AI Hallucinations through high-precision Human-in-the-Loop validation | Empowering #AutisticTalent in Tech 🚀",
+        "id": "99891449",
+        "publicId": "izatlouk",
+        "profileId": "ACoAAAX0OPkBzZjVvVi08LqhaKA5UMdVz4M5inM"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jana",
+        "lastName": "Cave-Ayland",
+        "occupation": "Communications & PR Specialist | B2B Comms | Media Strategy",
+        "id": "106659255",
+        "publicId": "janacave-ayland",
+        "profileId": "ACoAAAZbfbcBWJt64meQVIz0jrpIaPziWbuND8c"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Táňa",
+        "lastName": "Váchová",
+        "occupation": "📌virtuální asistentka ⊃ administrativa ⊃ podpora",
+        "id": "1399848350",
+        "publicId": "tanavachova",
+        "profileId": "ACoAAFNv_Z4BxskkxA5XZSQetiT0HKCBk4rbPGE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Barbora",
+        "lastName": "Bohunska",
+        "occupation": "HR Business Partner | Kariérový poradce | Externí HR & Talent Partner | HR Lead | Headhunting | Freelance",
+        "id": "64290774",
+        "publicId": "barbora-bohunska-hrbp",
+        "profileId": "ACoAAAPU_9YBG5yFDJ_UtvT521iE3bftWOEBhPs"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Marketa",
+        "lastName": "Willis",
+        "occupation": "Profesní positioning pro ženy s nelineární kariérou 🟣 10+ let mentoring, 6 let softwarový vývoj, 5 let kariérní strategie 👇 Dotazník o zkušenosti žen s nelineární kariérou v popisku",
+        "id": "690320871",
+        "publicId": "marketa-willis",
+        "profileId": "ACoAACkldecB7E9DWErMM56bPMpJ3V49koGflx0"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Uliana",
+        "lastName": "Elina",
+        "occupation": "CEO of SynWe | We make business analysis fast and transparent | SynWe.ai | Systems and business process analyst and architect | AI implementation & automations | Researcher and author",
+        "id": "1159668732",
+        "publicId": "uliana-elina-msc-synwe",
+        "profileId": "ACoAAEUfI_wBfjRAiBYaEqsV237YaMWnlLBiYq8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Peter",
+        "lastName": "Čendula",
+        "occupation": "Value from data and AI",
+        "id": "11965021",
+        "publicId": "cendula",
+        "profileId": "ACoAAAC2kl0BtocNCUlwyZec1PAurQYdQZvOJ9M"
+      }
+    }
+  ],
+  "numShares": 2,
+  "numLikes": 18,
+  "numComments": 2,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1795012355922,
+  "postedAtISO": "2026-11-18T14:32:35.922Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

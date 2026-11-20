@@ -21,6 +21,17 @@
     {
       "type": "LIKE",
       "profile": {
+        "firstName": "Lukáš",
+        "lastName": "Šuser",
+        "occupation": "„Budoucnost netvoří ti, kdo čekají, ale ti, kdo tvoří.“",
+        "id": "206264659",
+        "publicId": "lukáš-šuser",
+        "profileId": "ACoAAAxLWVMBLdMOe00WjvsW5SJIL1fadILIx6A"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
         "firstName": "Ege",
         "lastName": "Akman",
         "occupation": "EuroPython Society Board | Open Source Software | Robotics & Computer Vision | Python Community and Conference Organizer",
@@ -116,21 +127,10 @@
         "publicId": "eva-bohnova-873b9010a",
         "profileId": "ACoAABuVQdcB_sDsFeGHmC-uQ-e1-MpuDl4GT-0"
       }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Lutfi",
-        "lastName": "Zuchri",
-        "occupation": "Sponsorship team @ WordCamp Asia, Community Steward @ Python, PyData & WP ID, Empowering Tech @ OpenTechAlliance",
-        "id": "5700907",
-        "publicId": "lutfizuchri",
-        "profileId": "ACoAAABW_SsBtUsNIW6XW1pfzqxIGRTZN32t-jo"
-      }
     }
   ],
   "numShares": 3,
-  "numLikes": 12,
+  "numLikes": 13,
   "numComments": 0,
   "canReact": true,
   "canPostComments": true,
