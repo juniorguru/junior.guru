@@ -9,8 +9,10 @@ from jg.coop.sync.subscriptions_csv import (
     get_created_on,
     get_date,
     get_referrer,
+    get_utm_params,
     is_active,
     is_redacted_row,
+    parse_campaign,
     parse_referrer,
 )
 
@@ -208,3 +210,65 @@ def test_parse_referrer_external():
 )
 def test_parse_referrer_skipped(changes: dict):
     assert parse_referrer(MEMBER | changes) is None
+
+
+@pytest.mark.parametrize(
+    "tracking_params, expected",
+    [
+        (None, {}),
+        ({"referrer": "https://junior.guru/club/"}, {}),
+        ({"utm_medium": "email"}, {}),
+        ({"utm_source": ""}, {}),
+        ({"utm_source": "gh-check"}, {"utm_source": "gh-check"}),
+        (
+            {
+                "referrer": "https://junior.guru/club/",
+                "utm_source": "winback",
+                "utm_medium": "email",
+                "utm_campaign": "2027-01",
+            },
+            {
+                "utm_source": "winback",
+                "utm_medium": "email",
+                "utm_campaign": "2027-01",
+            },
+        ),
+    ],
+)
+def test_get_utm_params(tracking_params: dict | None, expected: dict):
+    assert get_utm_params({"trackingParams": tracking_params}) == expected
+
+
+def test_parse_campaign():
+    member = MEMBER | {
+        "trackingParams": {"utm_source": "jobs-detail", "utm_medium": "web"}
+    }
+
+    assert parse_campaign(member) == {
+        "account_id": 123,
+        "account_total_spend": 124,
+        "created_on": date(2020, 9, 13),
+        "utm_source": "jobs-detail",
+        "utm_medium": "web",
+        "utm_campaign": None,
+    }
+
+
+def test_parse_campaign_keeps_inactive_members():
+    member = MEMBER | {
+        "subscriptions": [{"active": False}],
+        "trackingParams": {"utm_source": "test"},
+    }
+
+    assert parse_campaign(member)["utm_source"] == "test"
+
+
+@pytest.mark.parametrize(
+    "changes",
+    [
+        {"trackingParams": {"referrer": "https://junior.guru/club/"}},
+        {"trackingParams": {"utm_source": "test"}, "orders": []},
+    ],
+)
+def test_parse_campaign_skipped(changes: dict):
+    assert parse_campaign(MEMBER | changes) is None
