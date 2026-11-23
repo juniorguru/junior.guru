@@ -10,7 +10,9 @@ from jg.coop.sync.subscriptions_csv import (
     get_date,
     get_referrer,
     is_active,
+    is_club_member,
     is_redacted_row,
+    parse_campaign,
     parse_referrer,
 )
 
@@ -176,7 +178,7 @@ MEMBER = {
     "email": "jane@example.com",
     "totalSpendCents": 12345,
     "trackingParams": {"referrer": "https://junior.guru/learn/"},
-    "subscriptions": [{"active": True}],
+    "subscriptions": [{"active": True, "plan": {"name": "Členství v klubu"}}],
     "orders": [{"createdAt": 1600000000}],
 }
 
@@ -208,3 +210,63 @@ def test_parse_referrer_external():
 )
 def test_parse_referrer_skipped(changes: dict):
     assert parse_referrer(MEMBER | changes) is None
+
+
+def test_parse_campaign():
+    member = MEMBER | {
+        "trackingParams": {"utm_source": "jobs-detail", "utm_medium": "web"}
+    }
+
+    assert parse_campaign(member) == {
+        "account_id": 123,
+        "account_total_spend": 124,
+        "created_on": date(2020, 9, 13),
+        "utm_source": "jobs-detail",
+        "utm_medium": "web",
+        "utm_campaign": None,
+    }
+
+
+def test_parse_campaign_keeps_inactive_members():
+    member = MEMBER | {
+        "subscriptions": [{"active": False, "plan": {"name": "Členství v klubu"}}],
+        "trackingParams": {"utm_source": "test"},
+    }
+
+    assert parse_campaign(member)["utm_source"] == "test"
+
+
+@pytest.mark.parametrize(
+    "changes",
+    [
+        {"trackingParams": None},
+        {"trackingParams": {"referrer": "https://junior.guru/club/"}},
+        {"trackingParams": {"utm_medium": "email"}},
+        {"trackingParams": {"utm_source": ""}},
+        {"trackingParams": {"utm_source": "test"}, "orders": []},
+        {"trackingParams": {"utm_source": "test"}, "subscriptions": []},
+        {
+            "trackingParams": {"utm_source": "test"},
+            "subscriptions": [{"active": True, "plan": {"name": "Tarif „Partner“"}}],
+        },
+    ],
+)
+def test_parse_campaign_skipped(changes: dict):
+    assert parse_campaign(MEMBER | changes) is None
+
+
+@pytest.mark.parametrize(
+    "plan_names, expected",
+    [
+        ([], False),
+        (["Členství v klubu"], True),
+        (["Roční členství v klubu, starousedlíci 2022–2026"], True),
+        (["Tarif „Partner“"], False),
+        (["Mentoring „CoreSkill“"], False),
+        (["Partnerství", "Členství v klubu"], True),
+    ],
+)
+def test_is_club_member(plan_names: list[str], expected: bool):
+    member = {"subscriptions": [{"plan": {"name": name}} for name in plan_names]}
+
+    assert is_club_member(member) is expected

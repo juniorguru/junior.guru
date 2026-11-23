@@ -1,6 +1,11 @@
 import pytest
 
-from jg.coop.lib.utm_params import get_utm_params, put_utm_params, strip_params
+from jg.coop.lib.utm_params import (
+    get_utm_params,
+    pick_utm_params,
+    put_utm_params,
+    strip_params,
+)
 
 
 @pytest.mark.parametrize(
@@ -47,3 +52,19 @@ def test_put_utm_params():
     expected = "https://example.com?other_param=value&utm_source=google&utm_medium=cpc&utm_campaign=spring_sale"
 
     assert put_utm_params(url, utm_params) == expected
+
+
+@pytest.mark.parametrize(
+    "params, expected",
+    [
+        ({}, {}),
+        ({"referrer": "https://junior.guru/club/"}, {}),
+        ({"utm_source": "", "utm_medium": None}, {}),
+        (
+            {"referrer": "https://junior.guru/", "utm_source": "x", "utm_medium": "y"},
+            {"utm_source": "x", "utm_medium": "y"},
+        ),
+    ],
+)
+def test_pick_utm_params(params: dict, expected: dict):
+    assert pick_utm_params(params) == expected

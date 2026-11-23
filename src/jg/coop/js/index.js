@@ -2,6 +2,7 @@ import "./annotations";
 import "./blockquotes";
 import "./candidates";
 import "./charts";
+import "./checkout-utm";
 import "./discord";
 import "./email";
 import "./github-profile";

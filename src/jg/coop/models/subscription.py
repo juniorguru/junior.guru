@@ -170,6 +170,46 @@ class SubscriptionReferrer(BaseModel):
         return get_breakdown_ptc(counter, SubscriptionReferrerType)
 
 
+class SubscriptionCampaign(BaseModel):
+    """Club signup which came with UTM params, as Memberful tracked them at checkout
+
+    The account_total_spend is a snapshot from the time of the last sync,
+    so a member counts as a payer once they've paid anything, ever.
+    """
+
+    account_id = IntegerField(unique=True)
+    account_total_spend = IntegerField()
+    created_on = DateField(index=True)
+    utm_source = CharField(index=True)
+    utm_medium = CharField(null=True)
+    utm_campaign = CharField(null=True)
+
+    @property
+    def is_payer(self) -> bool:
+        return self.account_total_spend > 0
+
+    @classmethod
+    def source_breakdown(
+        cls, since_on: date | None = None
+    ) -> dict[str, dict[str, int]]:
+        query = cls.select()
+        if since_on:
+            query = query.where(cls.created_on >= since_on)
+        return count_by_source(query)
+
+
+def count_by_source(
+    campaigns: Iterable[SubscriptionCampaign],
+) -> dict[str, dict[str, int]]:
+    """Counts signups (trials) and members who paid anything, per UTM source"""
+    breakdown = {}
+    for campaign in campaigns:
+        counts = breakdown.setdefault(campaign.utm_source, {"trials": 0, "payers": 0})
+        counts["trials"] += 1
+        counts["payers"] += int(campaign.is_payer)
+    return dict(sorted(breakdown.items(), key=lambda item: -item[1]["trials"]))
+
+
 class SubscriptionInternalReferrer(BaseModel):
     account_id = IntegerField(unique=True)
     account_name = CharField()

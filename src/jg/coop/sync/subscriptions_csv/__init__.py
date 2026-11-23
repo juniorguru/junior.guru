@@ -14,12 +14,15 @@ from jg.coop.lib.discord_club import ClubClient, parse_channel
 from jg.coop.lib.memberful import (
     MemberfulAPI,
     MemberfulCSV,
+    is_individual_plan,
     memberful_url,
     timestamp_to_date,
 )
 from jg.coop.lib.mutations import mutating_discord
+from jg.coop.lib.utm_params import pick_utm_params
 from jg.coop.models.base import db
 from jg.coop.models.subscription import (
+    SubscriptionCampaign,
     SubscriptionCancellation,
     SubscriptionCancellationReason,
     SubscriptionInternalReferrer,
@@ -47,6 +50,7 @@ def main(error_channel_id: int):
     memberful = MemberfulAPI()
 
     tables = [
+        SubscriptionCampaign,
         SubscriptionReferrer,
         SubscriptionInternalReferrer,
         SubscriptionMarketingSurvey,
@@ -74,6 +78,11 @@ def main(error_channel_id: int):
                     SubscriptionInternalReferrer.create(**referrer)
                 else:
                     SubscriptionReferrer.create(**referrer)
+
+        logger.info("Saving campaigns")
+        for member in members:
+            if campaign := parse_campaign(member):
+                SubscriptionCampaign.create(**campaign)
 
         logger.info("Fetching members data from Memberful CSV")
         memberful = MemberfulCSV()
@@ -181,6 +190,31 @@ def parse_referrer(member: dict) -> dict | None:
     if referrer_type.startswith("/"):
         return referrer | {"path": referrer_type}
     return referrer | {"type": referrer_type}
+
+
+def parse_campaign(member: dict) -> dict | None:
+    """Returns fields of SubscriptionCampaign if the member signed up to the club with UTM params"""
+    if not member["orders"] or not is_club_member(member):
+        return None
+    utm_params = pick_utm_params(member["trackingParams"] or {})
+    if "utm_source" not in utm_params:
+        return None
+    return {
+        "account_id": int(member["id"]),
+        "account_total_spend": math.ceil(member["totalSpendCents"] / 100),
+        "created_on": get_created_on(member),
+        "utm_source": utm_params["utm_source"],
+        "utm_medium": utm_params.get("utm_medium"),
+        "utm_campaign": utm_params.get("utm_campaign"),
+    }
+
+
+def is_club_member(member: dict) -> bool:
+    """Tells individual club members apart from sponsors, partners, etc."""
+    return any(
+        is_individual_plan(subscription["plan"])
+        for subscription in member["subscriptions"]
+    )
 
 
 def is_active(member: dict) -> bool:

@@ -1,3 +1,4 @@
+from collections.abc import Mapping
 from urllib.parse import parse_qs, urlencode, urlparse, urlunparse
 
 
@@ -26,9 +27,13 @@ def strip_utm_params(url: str) -> str:
 
 
 def get_utm_params(url: str) -> dict[str, str]:
-    parts = urlparse(url)
-    params = parse_qs(parts.query)
-    return {name: params[name][0] for name in UTM_PARAM_NAMES if params.get(name)}
+    params = parse_qs(urlparse(url).query)
+    return pick_utm_params({name: values[0] for name, values in params.items()})
+
+
+def pick_utm_params(params: Mapping[str, str | None]) -> dict[str, str]:
+    """Keeps only UTM params with non-empty values"""
+    return {name: value for name in UTM_PARAM_NAMES if (value := params.get(name))}
 
 
 def put_utm_params(url: str, utm_params: dict[str, str]) -> str:
