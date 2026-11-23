@@ -13,6 +13,9 @@ query fetch($cursor: String!) {
         trackingParams
         subscriptions {
           active
+          plan {
+            name
+          }
         }
         orders {
           createdAt

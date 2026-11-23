@@ -11,6 +11,7 @@ from jg.coop.sync.subscriptions_csv import (
     get_referrer,
     get_utm_params,
     is_active,
+    is_club_member,
     is_redacted_row,
     parse_campaign,
     parse_referrer,
@@ -178,7 +179,7 @@ MEMBER = {
     "email": "jane@example.com",
     "totalSpendCents": 12345,
     "trackingParams": {"referrer": "https://junior.guru/learn/"},
-    "subscriptions": [{"active": True}],
+    "subscriptions": [{"active": True, "plan": {"name": "Členství v klubu"}}],
     "orders": [{"createdAt": 1600000000}],
 }
 
@@ -256,7 +257,7 @@ def test_parse_campaign():
 
 def test_parse_campaign_keeps_inactive_members():
     member = MEMBER | {
-        "subscriptions": [{"active": False}],
+        "subscriptions": [{"active": False, "plan": {"name": "Členství v klubu"}}],
         "trackingParams": {"utm_source": "test"},
     }
 
@@ -268,7 +269,29 @@ def test_parse_campaign_keeps_inactive_members():
     [
         {"trackingParams": {"referrer": "https://junior.guru/club/"}},
         {"trackingParams": {"utm_source": "test"}, "orders": []},
+        {"trackingParams": {"utm_source": "test"}, "subscriptions": []},
+        {
+            "trackingParams": {"utm_source": "test"},
+            "subscriptions": [{"active": True, "plan": {"name": "Tarif „Partner“"}}],
+        },
     ],
 )
 def test_parse_campaign_skipped(changes: dict):
     assert parse_campaign(MEMBER | changes) is None
+
+
+@pytest.mark.parametrize(
+    "plan_names, expected",
+    [
+        ([], False),
+        (["Členství v klubu"], True),
+        (["Roční členství v klubu, starousedlíci 2022–2026"], True),
+        (["Tarif „Partner“"], False),
+        (["Mentoring „CoreSkill“"], False),
+        (["Partnerství", "Členství v klubu"], True),
+    ],
+)
+def test_is_club_member(plan_names: list[str], expected: bool):
+    member = {"subscriptions": [{"plan": {"name": name}} for name in plan_names]}
+
+    assert is_club_member(member) is expected

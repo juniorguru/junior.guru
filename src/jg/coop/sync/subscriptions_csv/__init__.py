@@ -14,6 +14,7 @@ from jg.coop.lib.discord_club import ClubClient, parse_channel
 from jg.coop.lib.memberful import (
     MemberfulAPI,
     MemberfulCSV,
+    is_individual_plan,
     memberful_url,
     timestamp_to_date,
 )
@@ -192,8 +193,12 @@ def parse_referrer(member: dict) -> dict | None:
 
 
 def parse_campaign(member: dict) -> dict | None:
-    """Returns fields of SubscriptionCampaign if the member signed up with UTM params"""
-    if not member["orders"] or not (utm_params := get_utm_params(member)):
+    """Returns fields of SubscriptionCampaign if the member signed up to the club with UTM params"""
+    if (
+        not member["orders"]
+        or not is_club_member(member)
+        or not (utm_params := get_utm_params(member))
+    ):
         return None
     return {
         "account_id": int(member["id"]),
@@ -203,6 +208,14 @@ def parse_campaign(member: dict) -> dict | None:
         "utm_medium": utm_params.get("utm_medium"),
         "utm_campaign": utm_params.get("utm_campaign"),
     }
+
+
+def is_club_member(member: dict) -> bool:
+    """Tells individual club members apart from sponsors, partners, etc."""
+    return any(
+        is_individual_plan(subscription["plan"])
+        for subscription in member["subscriptions"]
+    )
 
 
 def get_utm_params(member: dict) -> dict[str, str]:
