@@ -489,9 +489,9 @@
 {% endmacro %}
 
 
-{% macro club_teaser(button_text, extra_text='') %}
+{% macro club_teaser(button_text, extra_text='', utm_params=None) %}
 <div class="club-teaser">
-  <a class="club-teaser-button" href="{{ pages|docs_url('club.md')|url }}">
+  <a class="club-teaser-button" href="{{ pages|docs_url('club.md')|url }}{% if utm_params %}?{{ utm_params|urlencode }}{% endif %}">
     {{ 'discord'|icon }} {{ button_text }}
   </a>
   <div class="club-teaser-members">
