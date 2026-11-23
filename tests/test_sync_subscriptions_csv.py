@@ -9,7 +9,6 @@ from jg.coop.sync.subscriptions_csv import (
     get_created_on,
     get_date,
     get_referrer,
-    get_utm_params,
     is_active,
     is_club_member,
     is_redacted_row,
@@ -213,33 +212,6 @@ def test_parse_referrer_skipped(changes: dict):
     assert parse_referrer(MEMBER | changes) is None
 
 
-@pytest.mark.parametrize(
-    "tracking_params, expected",
-    [
-        (None, {}),
-        ({"referrer": "https://junior.guru/club/"}, {}),
-        ({"utm_medium": "email"}, {}),
-        ({"utm_source": ""}, {}),
-        ({"utm_source": "gh-check"}, {"utm_source": "gh-check"}),
-        (
-            {
-                "referrer": "https://junior.guru/club/",
-                "utm_source": "winback",
-                "utm_medium": "email",
-                "utm_campaign": "2027-01",
-            },
-            {
-                "utm_source": "winback",
-                "utm_medium": "email",
-                "utm_campaign": "2027-01",
-            },
-        ),
-    ],
-)
-def test_get_utm_params(tracking_params: dict | None, expected: dict):
-    assert get_utm_params({"trackingParams": tracking_params}) == expected
-
-
 def test_parse_campaign():
     member = MEMBER | {
         "trackingParams": {"utm_source": "jobs-detail", "utm_medium": "web"}
@@ -267,7 +239,10 @@ def test_parse_campaign_keeps_inactive_members():
 @pytest.mark.parametrize(
     "changes",
     [
+        {"trackingParams": None},
         {"trackingParams": {"referrer": "https://junior.guru/club/"}},
+        {"trackingParams": {"utm_medium": "email"}},
+        {"trackingParams": {"utm_source": ""}},
         {"trackingParams": {"utm_source": "test"}, "orders": []},
         {"trackingParams": {"utm_source": "test"}, "subscriptions": []},
         {

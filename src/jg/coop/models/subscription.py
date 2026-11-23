@@ -171,6 +171,12 @@ class SubscriptionReferrer(BaseModel):
 
 
 class SubscriptionCampaign(BaseModel):
+    """Club signup which came with UTM params, as Memberful tracked them at checkout
+
+    The account_total_spend is a snapshot from the time of the last sync,
+    so a member counts as a payer once they've paid anything, ever.
+    """
+
     account_id = IntegerField(unique=True)
     account_total_spend = IntegerField()
     created_on = DateField(index=True)

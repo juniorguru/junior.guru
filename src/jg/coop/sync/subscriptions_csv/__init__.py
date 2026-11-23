@@ -19,7 +19,7 @@ from jg.coop.lib.memberful import (
     timestamp_to_date,
 )
 from jg.coop.lib.mutations import mutating_discord
-from jg.coop.lib.utm_params import UTM_PARAM_NAMES
+from jg.coop.lib.utm_params import pick_utm_params
 from jg.coop.models.base import db
 from jg.coop.models.subscription import (
     SubscriptionCampaign,
@@ -194,11 +194,10 @@ def parse_referrer(member: dict) -> dict | None:
 
 def parse_campaign(member: dict) -> dict | None:
     """Returns fields of SubscriptionCampaign if the member signed up to the club with UTM params"""
-    if (
-        not member["orders"]
-        or not is_club_member(member)
-        or not (utm_params := get_utm_params(member))
-    ):
+    if not member["orders"] or not is_club_member(member):
+        return None
+    utm_params = pick_utm_params(member["trackingParams"] or {})
+    if "utm_source" not in utm_params:
         return None
     return {
         "account_id": int(member["id"]),
@@ -216,15 +215,6 @@ def is_club_member(member: dict) -> bool:
         is_individual_plan(subscription["plan"])
         for subscription in member["subscriptions"]
     )
-
-
-def get_utm_params(member: dict) -> dict[str, str]:
-    tracking_params = member["trackingParams"] or {}
-    if not tracking_params.get("utm_source"):
-        return {}
-    return {
-        name: value for name in UTM_PARAM_NAMES if (value := tracking_params.get(name))
-    }
 
 
 def is_active(member: dict) -> bool:
