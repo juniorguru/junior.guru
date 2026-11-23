@@ -1,3 +1,4 @@
+// Keep in sync with UTM_PARAM_NAMES in src/jg/coop/lib/utm_params.py
 const UTM_PARAM_NAMES = [
   "utm_source",
   "utm_medium",
