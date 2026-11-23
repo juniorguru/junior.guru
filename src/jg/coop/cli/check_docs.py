@@ -1,4 +1,5 @@
 from pathlib import Path
+from urllib.parse import urlsplit, urlunsplit
 
 import click
 from lxml import html
@@ -101,6 +102,7 @@ def normalize_link(output_path, doc_path, link):
         raise EmailLinkError(link)
     if link.startswith("webcal"):
         raise WebCalLinkError(link)
+    link = strip_query(link)
     if Path(link.split("#")[0]).suffix not in ("", ".md"):
         raise StaticFileLinkError(link)
     if link.startswith("#"):
@@ -114,6 +116,11 @@ def normalize_link(output_path, doc_path, link):
     if link == "/./":
         link = "/"
     return link
+
+
+def strip_query(link: str) -> str:
+    """Removes the query string, e.g. UTM params, as it doesn't change the target page"""
+    return urlunsplit(urlsplit(link)._replace(query=""))
 
 
 def normalize_static_link(output_path, doc_path, link):
