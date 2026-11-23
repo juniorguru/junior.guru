@@ -272,9 +272,9 @@ Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_referrer
 ## Výkonnost kampaní
 
 Odkazy na klub mohou mít v adrese parametr `utm_source`, podle kterého jde poznat, z jaké kampaně člověk přišel, třeba z kontroly GitHubu nebo z nabídek práce.
-Když se pak registruje do klubu, systém si ho uloží.
+Při registraci do klubu si to systém uloží.
 Graf ukazuje, kolik lidí za poslední půlrok jednotlivé kampaně přivedly na zkušební období a kolik z nich už za členství zaplatilo.
-Počítají se jen registrace do klubu, ne sponzoři nebo partneři.
+Počítají se jen běžné registrace do klubu, ne sponzoři nebo partneři.
 {% if charts.campaign_breakdown_count -%}
 Celkem jde o **{{ charts.campaign_breakdown_count }}** lidí.
 
