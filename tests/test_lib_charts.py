@@ -286,3 +286,22 @@ def test_yoy_growth_ptc_handles_leap_day():
     months = [date(2024, 2, 29)]
 
     assert charts.yoy_growth_ptc(counts_fn, months) == [50.0]
+
+
+def test_transpose_breakdown():
+    breakdown = {
+        "gh-check": {"trials": 3, "payers": 1},
+        "winback": {"trials": 1, "payers": 1},
+    }
+
+    assert charts.transpose_breakdown(breakdown, ["trials", "payers"]) == {
+        "trials": [3, 1],
+        "payers": [1, 1],
+    }
+
+
+def test_transpose_breakdown_empty():
+    assert charts.transpose_breakdown({}, ["trials", "payers"]) == {
+        "trials": [],
+        "payers": [],
+    }
