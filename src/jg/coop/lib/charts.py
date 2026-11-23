@@ -71,6 +71,13 @@ def per_month_breakdown(
     }
 
 
+def transpose_breakdown(
+    breakdown: dict[str, dict[str, int]], series: Iterable[str]
+) -> dict[str, list[int]]:
+    """Turns {label: {series: value}} into {series: [value per label]}, keeping label order"""
+    return {name: [values[name] for values in breakdown.values()] for name in series}
+
+
 def month_end(day: date) -> date:
     return month_range(day)[1]
 

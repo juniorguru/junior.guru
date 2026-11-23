@@ -3,7 +3,7 @@ title: Marketing junior.guru
 template: main_about.html
 ---
 
-{% from 'macros.html' import lead with context %}
+{% from 'macros.html' import lead, note with context %}
 
 # Marketing
 
@@ -268,3 +268,43 @@ Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_referrer
         'interaction': {'mode': 'index'},
         'scales': {'y': {'beginAtZero': true}},
     }|tojson|forceescape }}"></canvas></div></div>
+
+## Výkonnost kampaní
+
+Odkazy na klub mohou mít v adrese parametr `utm_source`, podle kterého jde poznat, z jaké kampaně člověk přišel, třeba z kontroly GitHubu nebo z nabídek práce.
+Když se pak registruje do klubu, systém si ho uloží.
+Graf ukazuje, kolik lidí za poslední půlrok jednotlivé kampaně přivedly na zkušební období a kolik z nich už za členství zaplatilo.
+Počítají se jen registrace do klubu, ne sponzoři nebo partneři.
+{% if charts.campaign_breakdown_count -%}
+Celkem jde o **{{ charts.campaign_breakdown_count }}** lidí.
+
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="300"
+    data-chart-type="bar"
+    data-chart="{{ {
+        'labels': charts.campaign_breakdown_labels,
+        'datasets': [
+            {
+                'axis': 'y',
+                'label': 'zkušební období',
+                'data': charts.campaign_breakdown.trials,
+                'backgroundColor': '#1755d1',
+            },
+            {
+                'axis': 'y',
+                'label': 'platící',
+                'data': charts.campaign_breakdown.payers,
+                'backgroundColor': '#638cdd',
+            },
+        ],
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'indexAxis': 'y',
+        'interaction': {'mode': 'index'},
+        'scales': {'x': {'beginAtZero': true, 'ticks': {'precision': 0}}},
+    }|tojson|forceescape }}"></canvas></div></div>
+{% else %}
+  {% call note() -%}
+    {{ 'bar-chart'|icon }} Za poslední půlrok nepřišel do klubu nikdo s označením kampaně.
+  {%- endcall %}
+{% endif %}

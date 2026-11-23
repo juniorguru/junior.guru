@@ -1,5 +1,5 @@
 from collections.abc import Callable
-from datetime import date
+from datetime import date, timedelta
 from operator import attrgetter
 from typing import Any, NotRequired, TypedDict
 
@@ -18,6 +18,7 @@ from jg.coop.models.members import MRR_BEGIN_ON, Members
 from jg.coop.models.page import Page
 from jg.coop.models.podcast import PodcastEpisode
 from jg.coop.models.subscription import (
+    SubscriptionCampaign,
     SubscriptionCancellation,
     SubscriptionCountry,
     SubscriptionInternalReferrer,
@@ -315,6 +316,16 @@ def total_spend_referrer_breakdown(today: date) -> FloatBreakdownChartDict:
     return {
         "data": SubscriptionReferrer.total_spend_breakdown_ptc(),
         "count": SubscriptionReferrer.count(),
+    }
+
+
+@chart
+def campaign_breakdown(today: date) -> ChartDict:
+    breakdown = SubscriptionCampaign.source_breakdown(today - timedelta(days=30 * 6))
+    return {
+        "data": charts.transpose_breakdown(breakdown, ["trials", "payers"]),
+        "labels": list(breakdown.keys()),
+        "count": sum(values["trials"] for values in breakdown.values()),
     }
 
 
