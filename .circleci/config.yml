@@ -86,7 +86,11 @@ jobs:
             - ~/.cache/ms-playwright
             - ./node_modules
       - restore_cache:
-          key: cache-v2-{{ .Branch }}
+          # new branches start from the main branch cache, so that
+          # they don't exhaust paid APIs by re-fetching everything
+          keys:
+            - cache-v2-{{ .Branch }}-
+            - cache-v2-main-
       - run:
           name: Snapshot files
           command: uv run jg data snapshot

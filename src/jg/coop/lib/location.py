@@ -227,7 +227,12 @@ def is_retryable_geocode_error(exc: Exception) -> bool:
 
 
 @cache(
-    expire=timedelta(days=60), tag="location-locate", ignore=("api_key", "bounding_box")
+    expire=timedelta(days=60),
+    tag="location-locate",
+    ignore=("api_key", "bounding_box"),
+    # failed lookups are the most expensive (many queries), avoid repeating them
+    errors=(ValueError,),
+    errors_expire=timedelta(days=7),
 )
 @retry(
     retry=(
