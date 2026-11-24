@@ -218,6 +218,7 @@ jobs:
                     src/jg/coop/data/newsletter \
                     src/jg/coop/data/posts_linkedin \
                     src/jg/coop/data/search_console \
+                    src/jg/coop/data/web_usage \
                     src/jg/coop/data/transactions.jsonl \
                     src/jg/coop/data/members.jsonl \
                     src/jg/coop/data/followers.jsonl \
