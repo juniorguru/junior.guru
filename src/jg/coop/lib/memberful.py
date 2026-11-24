@@ -23,7 +23,7 @@ from tenacity import (
 
 from jg.coop.lib import loggers
 from jg.coop.lib.brand import BOT_USER_AGENT
-from jg.coop.lib.cache import cache
+from jg.coop.lib.cache import cache, get_cache
 from jg.coop.lib.imap import fetch_emails
 from jg.coop.lib.retrying import retry
 
@@ -37,11 +37,6 @@ MEMBERFUL_API_KEY = os.getenv("MEMBERFUL_API_KEY")
 MEMBERFUL_EMAIL = os.getenv("MEMBERFUL_EMAIL") or "kure@junior.guru"
 
 MEMBERFUL_PASSWORD = os.getenv("MEMBERFUL_PASSWORD")
-
-# Value of the long-lived 'staff_trusted_browser' cookie Memberful sets after
-# entering an emailed one-time code. Without it, signing into the dashboard
-# requires the code every time.
-MEMBERFUL_TRUSTED_BROWSER = os.getenv("MEMBERFUL_TRUSTED_BROWSER")
 
 # Mailbox where the alias Memberful sends one-time codes to forwards a copy,
 # so that the sync can sign in on its own when the trusted browser expires.
@@ -61,6 +56,13 @@ ONE_TIME_CODE_RE = re.compile(r"^\s*([A-Z0-9]{4,12})\s*$", re.MULTILINE)
 ONE_TIME_CODE_CLOCK_SKEW = timedelta(seconds=30)
 
 TRUSTED_BROWSER_COOKIE = "staff_trusted_browser"
+
+# The long-lived cookie Memberful sets after a successful one-time code sign-in
+# is kept in the project cache, which CI persists between runs, so that the next
+# runs can skip the one-time code until the cookie expires.
+TRUSTED_BROWSER_CACHE_KEY = "memberful-trusted-browser"
+
+TRUSTED_BROWSER_CACHE_EXPIRE = timedelta(days=30)
 
 
 logger = loggers.from_path(__file__)
@@ -166,7 +168,6 @@ class MemberfulCSV:
         self,
         email: str | None = None,
         password: str | None = None,
-        trusted_browser: str | None = None,
         imap_host: str | None = None,
         imap_user: str | None = None,
         imap_password: str | None = None,
@@ -174,7 +175,7 @@ class MemberfulCSV:
     ):
         self.email = email or MEMBERFUL_EMAIL
         self.password = password or MEMBERFUL_PASSWORD
-        self.trusted_browser = trusted_browser or MEMBERFUL_TRUSTED_BROWSER
+        self.trusted_browser = get_cache().get(TRUSTED_BROWSER_CACHE_KEY)
         self.imap_host = imap_host or MEMBERFUL_IMAP_HOST
         self.imap_user = imap_user or MEMBERFUL_IMAP_USER
         self.imap_password = imap_password or MEMBERFUL_IMAP_PASSWORD
@@ -208,6 +209,7 @@ class MemberfulCSV:
         response = submit_one_time_code(
             response, session, lambda: self._get_one_time_code(since)
         )
+        self._store_trusted_browser(session)
         logger.debug("Parsing auth token")
         html_tree = html.fromstring(response.content)
         return session, MemberfulAuthToken(
@@ -215,14 +217,25 @@ class MemberfulCSV:
             html_tree.cssselect('meta[name="csrf-token"]')[0].get("content"),
         )
 
+    def _store_trusted_browser(self, session: httpx2.Client) -> None:
+        value = session.cookies.get(TRUSTED_BROWSER_COOKIE, domain=MEMBERFUL_DOMAIN)
+        if value and value != self.trusted_browser:
+            logger.info("Storing a new trusted browser cookie in cache")
+            get_cache().set(
+                TRUSTED_BROWSER_CACHE_KEY,
+                value,
+                expire=TRUSTED_BROWSER_CACHE_EXPIRE.total_seconds(),
+                tag=TRUSTED_BROWSER_CACHE_KEY,
+            )
+            self.trusted_browser = value
+
     def _get_one_time_code(self, since: datetime) -> str:
         logger.info("Memberful requires a one-time code, reading it from email")
         if not (self.imap_user and self.imap_password):
             raise OneTimeCodeRequired(
                 "Memberful requires a one-time code to sign in. Set "
-                "MEMBERFUL_IMAP_USER and MEMBERFUL_IMAP_PASSWORD, or run "
-                "'uv run jg memberful-trusted-browser' and update "
-                "MEMBERFUL_TRUSTED_BROWSER with the value it prints."
+                "MEMBERFUL_IMAP_USER and MEMBERFUL_IMAP_PASSWORD, so that "
+                "it can be read from email."
             )
         return self._poll_for_one_time_code(since)
 
@@ -305,24 +318,6 @@ class MemberfulCSV:
         response = self.session.get(download_url)
         response.raise_for_status()
         return response.content.decode("utf-8")
-
-
-def acquire_trusted_browser(
-    email: str, password: str, get_code: Callable[[], str]
-) -> str:
-    """Signs in with a one-time code and returns the trusted browser cookie
-
-    Uses the same User-Agent as MemberfulCSV, so the cookie is issued
-    to the same 'browser' the sync scripts identify as.
-    """
-    with create_session() as session:
-        response = sign_in(session, email, password)
-        submit_one_time_code(response, session, get_code)
-        if value := session.cookies.get(
-            TRUSTED_BROWSER_COOKIE, domain=MEMBERFUL_DOMAIN
-        ):
-            return value
-        raise RuntimeError(f"Memberful didn't set the {TRUSTED_BROWSER_COOKIE} cookie")
 
 
 def create_session() -> httpx2.Client:
