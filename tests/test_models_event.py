@@ -5,7 +5,7 @@ import pytest
 from jg.coop.lib.discord_club import CLUB_EVENTS_CHANNEL_URL
 from jg.coop.lib.template_filters import hours
 from jg.coop.models.club import ClubUser
-from jg.coop.models.event import Event, EventSpeaking
+from jg.coop.models.event import Event, EventSpeaking, format_full_title
 
 from testing_utils import prepare_test_db
 
@@ -311,3 +311,14 @@ def test_to_json_ld():
         "startDate": "2021-05-01T10:00:00Z",
         "url": "https://junior.guru/events/1/",
     }
+
+
+@pytest.mark.parametrize(
+    "separator, expected",
+    [
+        (":", "Ada Lovelace: Engines"),
+        (" –", "Ada Lovelace – Engines"),
+    ],
+)
+def test_format_full_title(separator: str, expected: str):
+    assert format_full_title("Ada Lovelace", "Engines", separator) == expected

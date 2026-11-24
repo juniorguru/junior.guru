@@ -99,7 +99,7 @@ def build_events_honza_ics(api_dir, config):
         events.append(ics_event_day)
         events.append(
             ics.Event(
-                summary=f"{event.bio_name}: {event.title}",
+                summary=event.get_full_title(),
                 begin=start_at - timedelta(minutes=30),
                 duration=timedelta(hours=3),
                 description=event.url,

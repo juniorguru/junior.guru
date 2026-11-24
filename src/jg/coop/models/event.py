@@ -65,7 +65,7 @@ class Event(BaseModel):
         return bool(self.public_recording_url)
 
     def get_full_title(self, separator: str = ":") -> str:
-        return f"{self.bio_name}{separator} {self.title}"
+        return format_full_title(self.bio_name, self.title, separator)
 
     @property
     def club_recording_message(self) -> ClubMessage | None:
@@ -375,3 +375,7 @@ class EventSpeaking(BaseModel):
         if count:
             return math.ceil((cls.women_count_ttm(date) / count) * 100)
         return 0
+
+
+def format_full_title(bio_name: str, title: str, separator: str = ":") -> str:
+    return f"{bio_name}{separator} {title}"
