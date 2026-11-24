@@ -5,7 +5,7 @@ import pytest
 from jg.coop.lib.discord_club import CLUB_EVENTS_CHANNEL_URL
 from jg.coop.lib.template_filters import hours
 from jg.coop.models.club import ClubUser
-from jg.coop.models.event import Event, EventSpeaking
+from jg.coop.models.event import Event, EventSpeaking, fit_discord_event_name
 
 from testing_utils import prepare_test_db
 
@@ -311,3 +311,17 @@ def test_to_json_ld():
         "startDate": "2021-05-01T10:00:00Z",
         "url": "https://junior.guru/events/1/",
     }
+
+
+@pytest.mark.parametrize(
+    "bio_name, title, expected",
+    [
+        ("Ada Lovelace", "Short title", "Ada Lovelace: Short title"),
+        ("Ada Lovelace", "x" * 86, "Ada Lovelace: " + "x" * 86),
+        ("Ada Lovelace", "x" * 87, "x" * 87),
+        ("Ada Lovelace", "x" * 100, "x" * 100),
+        ("Ada Lovelace", "x" * 101, "x" * 99 + "…"),
+    ],
+)
+def test_fit_discord_event_name(bio_name: str, title: str, expected: str):
+    assert fit_discord_event_name(bio_name, title) == expected

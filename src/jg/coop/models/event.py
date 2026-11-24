@@ -27,6 +27,9 @@ from jg.coop.models.base import BaseModel, JSONField
 from jg.coop.models.club import ClubMessage, ClubUser
 
 
+DISCORD_EVENT_NAME_LIMIT = 100
+
+
 class Event(BaseModel):
     title = CharField()
     start_at = DateTimeField(index=True)
@@ -66,6 +69,9 @@ class Event(BaseModel):
 
     def get_full_title(self, separator: str = ":") -> str:
         return f"{self.bio_name}{separator} {self.title}"
+
+    def get_discord_name(self) -> str:
+        return fit_discord_event_name(self.bio_name, self.title)
 
     @property
     def club_recording_message(self) -> ClubMessage | None:
@@ -375,3 +381,13 @@ class EventSpeaking(BaseModel):
         if count:
             return math.ceil((cls.women_count_ttm(date) / count) * 100)
         return 0
+
+
+def fit_discord_event_name(bio_name: str, title: str) -> str:
+    """Returns the full event title, or only the title if Discord's length limit doesn't allow more"""
+    full_title = f"{bio_name}: {title}"
+    if len(full_title) <= DISCORD_EVENT_NAME_LIMIT:
+        return full_title
+    if len(title) <= DISCORD_EVENT_NAME_LIMIT:
+        return title
+    return f"{title[: DISCORD_EVENT_NAME_LIMIT - 1]}…"

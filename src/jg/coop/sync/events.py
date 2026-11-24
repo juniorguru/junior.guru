@@ -253,7 +253,7 @@ async def sync_scheduled_events(client: ClubClient):
                 )
                 with mutating_discord(discord_event, raises=True) as proxy:
                     discord_event = await proxy.edit(
-                        name=event.get_full_title(),
+                        name=event.get_discord_name(),
                         description=event.discord_description,
                         end_time=event.end_at,
                         image=(IMAGES_DIR / event.plain_poster_path).read_bytes(),
@@ -262,7 +262,7 @@ async def sync_scheduled_events(client: ClubClient):
                 logger.info(f"Creating Discord event for '{event.title}'")
                 with mutating_discord(client.club_guild, raises=True) as proxy:
                     discord_event = await proxy.create_scheduled_event(
-                        name=event.get_full_title(),
+                        name=event.get_discord_name(),
                         description=event.discord_description,
                         start_time=event.start_at,
                         end_time=event.end_at,
