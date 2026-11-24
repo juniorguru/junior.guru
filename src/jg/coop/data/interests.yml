@@ -1,4 +1,12 @@
 roles:
+  # Math
+  - id: 1420401262658060328
+    icon:
+      set: bootstrap
+      slug: calculator
+    threads:
+      - https://discord.com/channels/769966886598737931/1417459492093693952
+
   # PHP
   - id: 1085220896005963778
     icon:
