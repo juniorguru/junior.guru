@@ -50,7 +50,7 @@ Filters: `page`, `pages` (comma-separated), `country`, `referrer`, `utm_source`,
 - Main sections: `/jobs` (job board, by far the most traffic; city listings like `/jobs/brno`, individual jobs as `/jobs/<hash id>`), `/handbook/*`, `/courses/*` (course providers), `/club`, `/stories/*`, `/podcast/*`, `/events/*`.
 - Traffic is mostly from Czechia (`cz`) and Slovakia (`sk`); top referrer is `google`.
 - Existing code reading the API, use as reference before writing new code:
-  - `src/jg/coop/sync/web_usage.py`: monthly pageviews per section, rendered at `/about/web-usage` (`src/jg/coop/web/docs/about/web-usage.md`).
+  - `src/jg/coop/sync/web_usage.py`: monthly pageviews per section, rendered at `/about/web-usage` (`src/jg/coop/web/docs/about/web-usage.md`). It fetches one unfiltered `fields=pageviews,pages` request per complete month, saves it to `src/jg/coop/data/web_usage/YYYY-MM.jsonl` (one `{"page": …, "pageviews": …}` row per path, committed by CI), and sums the sections locally. For monthly pageviews of past months, read those files before querying the API.
   - `src/jg/coop/sync/course_providers.py`: pageviews of `/courses/*` pages.
   - `src/jg/coop/models/job.py`: builds a dashboard link filtered to one job (`?search=paths:<id>&start=…&end=…`).
 - Never run `jg sync` just to get analytics. Query the API directly.
