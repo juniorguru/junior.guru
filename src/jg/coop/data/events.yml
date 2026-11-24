@@ -62,7 +62,7 @@
 registry:
   - id: 67
     # Trh práce pro juniory v roce 2026: co změnila AI a kde jsou příležitosti
-    title: "Trh práce pro juniory: co změnila AI a kde jsou příležitosti (odsunuto, nemoc, datum bude upřesněno)"
+    title: "Trh práce pro juniory: co změnila AI (odsunuto, nemoc, datum bude upřesněno)"
     date: "2027-04-01"
     description: |
       Jak se za poslední dva roky proměnila poptávka po juniorech v IT, co v datech opravdu vidíme a co je jen mediální panika, které role naopak rostou a co dnes firmy od juniorů čekají. Povídání nad daty ze StartupJobs a nad tím, jak se na trh dívat, když do něj člověk vstupuje právě teď.
