@@ -180,7 +180,7 @@ def generate_event_pages() -> Generator[GeneratedDocument]:
         yield GeneratedDocument(
             path=f"events/{event.id}.md",
             meta=dict(
-                title=f"{event.bio_name} – {event.title}",
+                title=event.get_full_title(" –"),
                 description=event.get_page_description(),
                 template="main_content_detail.html",
                 event_id=event.id,

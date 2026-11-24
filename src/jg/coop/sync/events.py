@@ -42,7 +42,7 @@ from jg.coop.lib.youtube import (
 )
 from jg.coop.models.base import db
 from jg.coop.models.club import ClubMessage
-from jg.coop.models.event import Event, EventSpeaking
+from jg.coop.models.event import Event, EventSpeaking, format_full_title
 from jg.coop.sync.club_content.crawler import CHANNELS_HISTORY_SINCE
 
 
@@ -138,7 +138,7 @@ class EventConfig(YAMLConfig):
 
     @model_validator(mode="after")
     def check_full_title_length(self) -> Self:
-        full_title = f"{self.bio_name}: {self.title}"
+        full_title = format_full_title(self.bio_name, self.title)
         if len(full_title) > DISCORD_EVENT_NAME_LIMIT:
             raise ValueError(
                 f"The title with the speaker name has {len(full_title)} characters, "
