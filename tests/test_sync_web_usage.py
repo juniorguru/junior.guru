@@ -85,11 +85,18 @@ def test_parse_range(start: str, end: str, expected: tuple[date, date]):
     assert parse_range({"start": start, "end": end}) == expected
 
 
-def test_parse_range_not_aligned_to_days():
+@pytest.mark.parametrize(
+    "start, end",
+    [
+        pytest.param(
+            "2026-09-30T23:00:00.000Z", "2026-10-31T22:59:59.999Z", id="start"
+        ),
+        pytest.param("2026-09-30T22:00:00.000Z", "2026-10-31T21:59:59.999Z", id="end"),
+    ],
+)
+def test_parse_range_not_aligned_to_days(start: str, end: str):
     with pytest.raises(ValueError, match="not aligned"):
-        parse_range(
-            {"start": "2026-09-30T23:00:00.000Z", "end": "2026-10-31T22:59:59.999Z"}
-        )
+        parse_range({"start": start, "end": end})
 
 
 def test_parse_pages():
