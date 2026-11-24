@@ -15,6 +15,31 @@
   "attributes": [],
   "comments": [
     {
+      "time": 1795387437302,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7526999193996046336?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7526999193996046336%2C7530400709821800448%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287530400709821800448%2Curn%3Ali%3AugcPost%3A7526999193996046336%29",
+      "text": "Držím palce. Jsem asi jeden z mála co věří, že junioři z toho nakonec můžou vyjít vítězně a to třeba i na úkor těch firem co jim teď nechtějí dát šanci. Ti co se tímhle tlakem proderou totiž budou tak extrémně schopní, že se všichni ostatní budou moct jít klouzat.",
+      "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(ugcPost:7526999193996046336,7530400709821800448)",
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 0,
+      "numComments": 1,
+      "reactionTypeCounts": [],
+      "author": {
+        "firstName": "Jimi",
+        "lastName": "Mikulášek",
+        "occupation": "Lead Software Engineer, mentor and coach. Supporting SW engineers and projects in reaching the mastery.",
+        "id": "18520673",
+        "publicId": "jimicoach",
+        "profileId": "ACoAAAEammEBVgks03IcL0_V9QWWGjnH6IHgtu0",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/jimicoach"
+      },
+      "authorType": "Person"
+    },
+    {
       "time": 1795029915667,
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7526999193996046336?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7526999193996046336%2C7528901155402440704%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287528901155402440704%2Curn%3Ali%3AugcPost%3A7526999193996046336%29",
       "text": "Držím palce 👍 já teď taky přemýšlím, zda a kam se přeskupit :)",
@@ -54,12 +79,16 @@
       "pinned": false,
       "originalLanguage": "Czech",
       "edited": false,
-      "numLikes": 1,
+      "numLikes": 2,
       "numComments": 0,
       "reactionTypeCounts": [
         {
           "count": 1,
           "reactionType": "LIKE"
+        },
+        {
+          "count": 1,
+          "reactionType": "EMPATHY"
         }
       ],
       "author": {
@@ -144,6 +173,50 @@
   ],
   "reactions": [
     {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Jimi",
+        "lastName": "Mikulášek",
+        "occupation": "Lead Software Engineer, mentor and coach. Supporting SW engineers and projects in reaching the mastery.",
+        "id": "18520673",
+        "publicId": "jimicoach",
+        "profileId": "ACoAAAEammEBVgks03IcL0_V9QWWGjnH6IHgtu0"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Glaser 🤖",
+        "occupation": "AI Engineering Consultant building a platform to make coding agents production-ready with full observability.",
+        "id": "653562608",
+        "publicId": "bleedingdev",
+        "profileId": "ACoAACb0kvABzEvpATXhOiWBbEuq4yfGI43iXrc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jakub",
+        "lastName": "Chovančák",
+        "occupation": "CNC obráběč kovů ⚙️ Stále je co zlepšovat a učení se novinkám nemá konce 📚 Přeskoč, přelez, nepodlez 🏃",
+        "id": "345720045",
+        "publicId": "jakub-chovančák-57994597",
+        "profileId": "ACoAABSbRO0B7tQlleLlRpEfGoxYSvDM9qNmH0k"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Standa",
+        "lastName": "Opichal",
+        "occupation": "Member of Technical Staff at Pure Storage",
+        "id": "3578160",
+        "publicId": "opichals",
+        "profileId": "ACoAAAA2mTAB0vQRaBG0Lt6G3F13S-8hPYhR3UU"
+      }
+    },
+    {
       "type": "LIKE",
       "profile": {
         "firstName": "Anna",
@@ -208,55 +281,11 @@
         "publicId": "jakub-červinka",
         "profileId": "ACoAABU1uNMBxEkN7xMohKuhfytB97ZjK-tfEKo"
       }
-    },
-    {
-      "type": "APPRECIATION",
-      "profile": {
-        "firstName": "Petra",
-        "lastName": "Zemanová",
-        "occupation": "Frontend Developer at eBay",
-        "id": "681082668",
-        "publicId": "petra-krajči-090115170",
-        "profileId": "ACoAACiYfywBmzmsNsDGrApLGUMKYMDTwjHhsZY"
-      }
-    },
-    {
-      "type": "APPRECIATION",
-      "profile": {
-        "firstName": "Václav",
-        "lastName": "Lorenc",
-        "occupation": "Principal Information Security Engineer at HERE",
-        "id": "3719671",
-        "publicId": "valor",
-        "profileId": "ACoAAAA4wfcB-6wfVwYbMy69XKSeovQjgDHJSW0"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Romana",
-        "lastName": "Ondrová",
-        "occupation": "Linkbuilding",
-        "id": "105778038",
-        "publicId": "romana-ondrová-1865122b",
-        "profileId": "ACoAAAZOC3YBTtcobzfvoiH4DI8Z6b6pDwxt2CA"
-      }
-    },
-    {
-      "type": "LIKE",
-      "profile": {
-        "firstName": "Táňa",
-        "lastName": "Váchová",
-        "occupation": "📌virtuální asistentka ⊃ administrativa ⊃ podpora",
-        "id": "1399848350",
-        "publicId": "tanavachova",
-        "profileId": "ACoAAFNv_Z4BxskkxA5XZSQetiT0HKCBk4rbPGE"
-      }
     }
   ],
   "numShares": 1,
-  "numLikes": 47,
-  "numComments": 8,
+  "numLikes": 51,
+  "numComments": 10,
   "canReact": true,
   "canPostComments": true,
   "canShare": true,

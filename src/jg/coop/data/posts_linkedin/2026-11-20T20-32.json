@@ -1,0 +1,325 @@
+{
+  "type": "linkedinVideo",
+  "linkedinVideo": {
+    "videoPlayMetadata": {
+      "thumbnail": {
+        "artifacts": [
+          {
+            "width": 720,
+            "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQGtCa_rLsrtHw",
+            "fileIdentifyingUrlPathSegment": "high/B4DaH5wV_tKEBU-/0/1795191568130?e=1796090400&v=beta&t=c9JKtSCQRtk6EfKat5TUWQXDXYA2OiVwXDm7gBJal4o",
+            "expiresAt": 1796090400000,
+            "height": 1280
+          },
+          {
+            "width": 360,
+            "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQGtCa_rLsrtHw",
+            "fileIdentifyingUrlPathSegment": "low/B4DaH5wV_tKEBQ-/0/1795191568130?e=1796090400&v=beta&t=4PfTCMWJ5F6KEsAuvauijsH3m2L5Z2ASEXjaitA9ttQ",
+            "expiresAt": 1796090400000,
+            "height": 640
+          }
+        ]
+      },
+      "gifThumbnail": {
+        "artifacts": [
+          {
+            "width": 360,
+            "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQGtCa_rLsrtHw",
+            "fileIdentifyingUrlPathSegment": "https://dms.licdn.com/playlist/vid/v2/D4D05AQGtCa_rLsrtHw/video-gif-5sec-360/B4DaH5wV_tKECc-/0/1795191577067?e=1796090400&v=beta&t=bSU_iUhc1n7_UB2Opv8joKe__C2OufjNwcHGGXCxiHM",
+            "expiresAt": 1796090400000,
+            "height": 640
+          }
+        ],
+        "rootUrl": ""
+      },
+      "progressiveStreams": [
+        {
+          "streamingLocations": [
+            {
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQGtCa_rLsrtHw/mp4-720p-30fp-crf28/B4DaH5wV_tKECE-/0/1795191579531?e=1796090400&v=beta&t=sVUZhXdChIPIDfJG3Ar7BtM-KtCXRdSyonR_7nCigCI",
+              "expiresAt": 1796090400000
+            }
+          ],
+          "size": 0,
+          "bitRate": 595895,
+          "width": 720,
+          "mediaType": "video/mp4",
+          "height": 1280
+        },
+        {
+          "streamingLocations": [
+            {
+              "url": "https://dms.licdn.com/playlist/vid/v2/D4D05AQGtCa_rLsrtHw/mp4-640p-30fp-crf28/B4DaH5wV_tKECA-/0/1795191577068?e=1796090400&v=beta&t=TkUkOv5vhCUH32soE_oQUKo_9SAFK7A-dg1H17eiQ9U",
+              "expiresAt": 1796090400000
+            }
+          ],
+          "size": 0,
+          "bitRate": 413283,
+          "width": 640,
+          "mediaType": "video/mp4",
+          "height": 1138
+        }
+      ],
+      "transcripts": [],
+      "aspectRatio": 0.5625,
+      "media": "urn:li:digitalmediaAsset:D4D05AQGtCa_rLsrtHw",
+      "adaptiveStreams": [
+        {
+          "initialBitRate": 2230514,
+          "protocol": "HLS",
+          "mediaType": "application/vnd.apple.mpegURL",
+          "masterPlaylists": [
+            {
+              "url": "https://dms.licdn.com/playlist/vid/dynamic/D4D05AQGtCa_rLsrtHw/CeJxzMnFJ9DAtD4sv8XZ1MdDVcULmR6Lxk9H46Wj8YlS-a6guAETrHE8?e=1796090400&v=beta&t=lqH_gkTwr4oi85TIJYcpUYEbO2dCB-vbBxYJ8ws95qI",
+              "expiresAt": 1796090400000
+            }
+          ]
+        },
+        {
+          "initialBitRate": 2230514,
+          "protocol": "DASH",
+          "mediaType": "application/dash+xml",
+          "masterPlaylists": [
+            {
+              "url": "https://dms.licdn.com/playlist/vid/dash/D4D05AQGtCa_rLsrtHw/CeJxzMnFJ9DAtD4sv8XZ1MdDVcULmR6Lxk9H46Wj8YlS-a6guAETrHE8?e=1796090400&v=beta&t=joUJCrOr-TKrYg1IkG3rpFRuh8pApnXKZUHiRipjiLY",
+              "expiresAt": 1796090400000
+            }
+          ]
+        }
+      ],
+      "duration": 63466,
+      "thumbnailWithPlayButton": {
+        "artifacts": [
+          {
+            "width": 720,
+            "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQGtCa_rLsrtHw",
+            "fileIdentifyingUrlPathSegment": "https://dms.licdn.com/playlist/vid/v2/D4D05AQGtCa_rLsrtHw/thumbnail-with-play-button-overlay-high/B4DaH5wV_tKEDA-/0/1795191568130?e=1796090400&v=beta&t=HTMhxkZ9zOGHPnnfXXcDBrGvwk_pmH-JeZtR8zmB18w",
+            "expiresAt": 1796090400000,
+            "height": 1280
+          }
+        ],
+        "rootUrl": ""
+      },
+      "entityUrn": "urn:li:digitalmediaAsset:D4D05AQGtCa_rLsrtHw",
+      "provider": "UGC",
+      "firstFrameThumbnail": {
+        "artifacts": [
+          {
+            "width": 720,
+            "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQGtCa_rLsrtHw",
+            "fileIdentifyingUrlPathSegment": "high/B4DaH5wV_tKEBY-/0/1795191568130?e=1796090400&v=beta&t=i3S2lGgcPmK6VJAWODMw-4kcYARqxRtC-3cLwxMg2oo",
+            "expiresAt": 1796090400000,
+            "height": 1280
+          },
+          {
+            "width": 360,
+            "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4D05AQGtCa_rLsrtHw",
+            "fileIdentifyingUrlPathSegment": "low/B4DaH5wV_tKEBc-/0/1795191568130?e=1796090400&v=beta&t=UyOr61cuTd2I_8Osci2TkDc7ygiBnFlwaIxrwEzyiIM",
+            "expiresAt": 1796090400000,
+            "height": 640
+          }
+        ],
+        "rootUrl": "https://dms.licdn.com/playlist/vid/v2/D4D05AQGtCa_rLsrtHw/videocover-firstframe-"
+      }
+    }
+  },
+  "isActivity": true,
+  "activityDescription": "Honza Javorek reposted this",
+  "activityOfUser": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "urn": "urn:li:activity:7529642892106166273",
+  "url": "https://www.linkedin.com/posts/navolnenoze_zdrav%C3%ADme-z-dne%C5%A1n%C3%ADho-nat%C3%A1%C4%8Den%C3%AD-nov%C3%A9ho-podcastu-ugcPost-7529578271496151040-AMcR",
+  "shareUrn": "urn:li:ugcPost:7529578271496151040",
+  "text": "Zdravíme z dnešního natáčení nového podcastu Na volné noze s Honza Javorek, který tvoří projekt Junior.guru 👋",
+  "attributes": [
+    {
+      "start": 61,
+      "length": 13,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1795206899538,
+      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7529578271496151040?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7529578271496151040%2C7529643479556304896%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287529643479556304896%2Curn%3Ali%3AugcPost%3A7529578271496151040%29",
+      "text": "můžete se těšit na mnoho hodin mé pouliční směsi ostravštiny, brněnštiny a žižkovštiny 😆",
+      "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(ugcPost:7529578271496151040,7529643479556304896)",
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 2,
+      "numComments": 2,
+      "reactionTypeCounts": [
+        {
+          "count": 2,
+          "reactionType": "EMPATHY"
+        }
+      ],
+      "author": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/honzajavorek"
+      },
+      "authorType": "Person"
+    }
+  ],
+  "reactions": [
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Marcel",
+        "lastName": "Mravec",
+        "occupation": "iOS/ KMP developer / C/C++ developer / 42Prague.com student",
+        "id": "960822563",
+        "publicId": "mravec",
+        "profileId": "ACoAADlE_SMBMQ93eU8DFPPPG8mDrrPsd7fIxQ8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Táňa",
+        "lastName": "Váchová",
+        "occupation": "📌virtuální asistentka ⊃ administrativa ⊃ podpora",
+        "id": "1399848350",
+        "publicId": "tanavachova",
+        "profileId": "ACoAAFNv_Z4BxskkxA5XZSQetiT0HKCBk4rbPGE"
+      }
+    },
+    {
+      "type": "APPRECIATION",
+      "profile": {
+        "firstName": "Irena",
+        "lastName": "Zatloukalova",
+        "occupation": "Founder & CEO @Diversight.ai | Helping B2B companies eliminate Data Debt and AI Hallucinations through high-precision Human-in-the-Loop validation | Empowering #AutisticTalent in Tech 🚀",
+        "id": "99891449",
+        "publicId": "izatlouk",
+        "profileId": "ACoAAAX0OPkBzZjVvVi08LqhaKA5UMdVz4M5inM"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Patrik",
+        "lastName": "Brnušák",
+        "occupation": "Video editor, střihač a tvůrce obsahu. Hledáte posilu? Ozvěte se!",
+        "id": "666440295",
+        "publicId": "patrik-brnusak-cz",
+        "profileId": "ACoAACe5EmcBmV4o59Q2L7gzBSjEMuUIDXBuoFU"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Veronika",
+        "lastName": "Čamborová",
+        "occupation": "SW developer",
+        "id": "1082522617",
+        "publicId": "veronika-čamborová",
+        "profileId": "ACoAAECF-_kB69byXoaMHs_qzffiv1hqdN_aZ0U"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Adam",
+        "lastName": "Kalisz",
+        "occupation": "Tech and business consulting, hands-on application development, performance debugging, conflict resolution, robustness and security #PAM #PostgreSQL #Proxmox #EuroClojure #ZFS",
+        "id": "107927005",
+        "publicId": "adam-kalisz-nnm",
+        "profileId": "ACoAAAZu1d0BWfDm690wbgxftSu4UkqoRFv34xc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Mgr. Ivana ",
+        "lastName": "Vacková, ACC (ICF)",
+        "occupation": "🟡Mentální trenérka výkonnostních sportovců🟡| Neučím sportovce vyhrávat. Učím je být připraveni vyhrát | 35 let zkušeností s rozvojem lidí| Propojuji sport, psychiku a vzdělávání | Společně za vaším cílem.",
+        "id": "697439223",
+        "publicId": "mgr-ivana-vacková",
+        "profileId": "ACoAACmSE_cBzPkBxi6I3Uwzq6FJ-g4IWGH3Mgw"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Honza",
+        "lastName": "Javorek",
+        "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+        "id": "8517488",
+        "publicId": "honzajavorek",
+        "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+      }
+    },
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Kavka",
+        "occupation": "Baví mě dobré obsahové newslettery – Newslettery.cz.",
+        "id": "8564238",
+        "publicId": "martin-kavka",
+        "profileId": "ACoAAACCrg4BcE6RgPGHGgkMUX-AiPQMeU9H1rA"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 10,
+  "numComments": 3,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "name": "Na volné noze",
+    "universalName": "navolnenoze",
+    "active": true,
+    "showcase": false,
+    "entityUrn": "urn:li:fs_miniCompany:460097"
+  },
+  "authorType": "Company",
+  "authorProfileId": "company",
+  "authorFollowersCount": "44,494",
+  "authorName": "Na volné noze",
+  "authorProfileUrl": "https://www.linkedin.com/company/navolnenoze/posts",
+  "authorUrn": "urn:li:company:460097",
+  "postedAtTimestamp": 1795206759478,
+  "postedAtISO": "2026-11-20T20:32:39.478Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}

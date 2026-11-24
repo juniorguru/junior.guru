@@ -1,0 +1,286 @@
+{
+  "type": "image",
+  "images": [],
+  "isActivity": false,
+  "urn": "urn:li:activity:7529646762731646976",
+  "url": "https://www.linkedin.com/posts/honzajavorek_p%C4%9Btihodinov%C3%BD-rozhovor-probrali-jsme-toho-activity-7529646762731646976-PPMC",
+  "shareUrn": "urn:li:share:7529646761628459008",
+  "text": "Pětihodinový rozhovor 🤪\n\nProbrali jsme toho s Robert Vlach fakt hodně. Začalo to tím, že mi pokládal podnětné otázky, ale skončilo to tím, že jsem pokládal podnětné otázky já jemu 😅\n\nMůžete se těšit na mou autentickou pouliční směs ostravštiny, brněnštiny a žižkovštiny. A možná mi z toho kápne i nová profilová fotka.\n(Která nebude 15 let stará, jako ta moje současná).\n\nZakecali jsme se tak moc, že jsem málem nestih vlak zpátky. Naštěstí měla tramvaj na nádraží 2min zpoždění, takže jsem ji těsně stihl.\n(Naneštěstí vlak domů měl 65min zpoždění, takže to bylo fuk.)\n\nDíky za pozvání do podcastu Na volné noze!",
+  "attributes": [
+    {
+      "start": 46,
+      "length": 12,
+      "type": "PROFILE_MENTION",
+      "profile": {
+        "firstName": "Robert",
+        "lastName": "Vlach",
+        "occupation": "freelancing entrepreneur / author of The Freelance Way / founder of Freelancing.eu and Navolnenoze.cz — one of the largest national freelance communities in Europe",
+        "id": "51503833",
+        "publicId": "robertvlach",
+        "profileId": "ACoAAAMR4tkBZhuK95n9YaYUALRv6-E2D4p5phw"
+      }
+    },
+    {
+      "start": 598,
+      "length": 13,
+      "type": "COMPANY_NAME",
+      "company": {
+        "name": "Na volné noze",
+        "universalName": "navolnenoze",
+        "active": true,
+        "showcase": false,
+        "entityUrn": "urn:li:fs_miniCompany:460097"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "time": 1795471536080,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7529646762731646976?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7529646762731646976%2C7530753445663014913%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287530753445663014913%2Curn%3Ali%3Aactivity%3A7529646762731646976%29",
+      "text": "Yess, tesim sa, ked si pustim 😁",
+      "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7529646762731646976,7530753445663014913)",
+      "pinned": false,
+      "originalLanguage": "Slovak",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 0,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "EMPATHY"
+        }
+      ],
+      "author": {
+        "firstName": "Lukáš",
+        "lastName": "Lacko",
+        "occupation": "Technical Consultant",
+        "id": "217516270",
+        "publicId": "lukaslacko",
+        "profileId": "ACoAAAz3CO4BSpivaXxvNIH5bEgB7picVNSOd3c",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/lukaslacko"
+      },
+      "authorType": "Person"
+    },
+    {
+      "time": 1795461221592,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7529646762731646976?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7529646762731646976%2C7530710183564570624%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287530710183564570624%2Curn%3Ali%3Aactivity%3A7529646762731646976%29",
+      "text": "My, co tě známe, víme, že je to teprve intro 😉",
+      "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7529646762731646976,7530710183564570624)",
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 0,
+      "numComments": 0,
+      "reactionTypeCounts": [],
+      "author": {
+        "firstName": "Petr",
+        "lastName": "Vácha",
+        "occupation": "Head of Engineering",
+        "id": "76115329",
+        "publicId": "vachapetr",
+        "profileId": "ACoAAASJbYEBMeOmhTR-EWaXg0q9HUTng5HCt9E",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/vachapetr"
+      },
+      "authorType": "Person"
+    },
+    {
+      "time": 1795279416540,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7529646762731646976?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7529646762731646976%2C7529947637911908352%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287529947637911908352%2Curn%3Ali%3Aactivity%3A7529646762731646976%29",
+      "text": "Pet hodin s tebou je podle me velice slusny :) tesim se na vysledek.",
+      "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7529646762731646976,7529947637911908352)",
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 1,
+      "numComments": 1,
+      "reactionTypeCounts": [
+        {
+          "count": 1,
+          "reactionType": "LIKE"
+        }
+      ],
+      "author": {
+        "firstName": "Jakub",
+        "lastName": "Vysoky",
+        "occupation": "Founder & CTO at Roomstorm",
+        "id": "15425730",
+        "publicId": "jakubvysoky",
+        "profileId": "ACoAAADrYMIB-G1Ga_9z6wmfEDMsav3918zrFVs",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/jakubvysoky"
+      },
+      "authorType": "Person"
+    },
+    {
+      "time": 1795260958523,
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7529646762731646976?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7529646762731646976%2C7529870219373248512%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287529870219373248512%2Curn%3Ali%3Aactivity%3A7529646762731646976%29",
+      "text": "Epické interview to bylo! ❤️",
+      "entities": [],
+      "fromPostAuthor": false,
+      "urn": "urn:li:comment:(activity:7529646762731646976,7529870219373248512)",
+      "pinned": false,
+      "originalLanguage": "Czech",
+      "edited": false,
+      "numLikes": 0,
+      "numComments": 2,
+      "reactionTypeCounts": [],
+      "author": {
+        "firstName": "Robert",
+        "lastName": "Vlach",
+        "occupation": "freelancing entrepreneur / author of The Freelance Way / founder of Freelancing.eu and Navolnenoze.cz — one of the largest national freelance communities in Europe",
+        "id": "51503833",
+        "publicId": "robertvlach",
+        "profileId": "ACoAAAMR4tkBZhuK95n9YaYUALRv6-E2D4p5phw",
+        "distance": "OUT_OF_NETWORK",
+        "profileUrl": "https://www.linkedin.com/in/robertvlach"
+      },
+      "authorType": "Person"
+    }
+  ],
+  "reactions": [
+    {
+      "type": "EMPATHY",
+      "profile": {
+        "firstName": "Lukáš",
+        "lastName": "Lacko",
+        "occupation": "Technical Consultant",
+        "id": "217516270",
+        "publicId": "lukaslacko",
+        "profileId": "ACoAAAz3CO4BSpivaXxvNIH5bEgB7picVNSOd3c"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Petr",
+        "lastName": "Vácha",
+        "occupation": "Head of Engineering",
+        "id": "76115329",
+        "publicId": "vachapetr",
+        "profileId": "ACoAAASJbYEBMeOmhTR-EWaXg0q9HUTng5HCt9E"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Monika",
+        "lastName": "Kvapilová",
+        "occupation": "🎤 Moderátorka | Podcasterka | Zviditelňuji podnikatele i firmy ve svém🎙️PODCASTU Moni ON AIR, který se zaměřuje na úspěch, růst a inspiraci v podnikání, marketingu či osobním rozvoji! Buďte dalším hostem!",
+        "id": "455786315",
+        "publicId": "monika-kvapilova",
+        "profileId": "ACoAABsqv0sBPIbFghQbKci6xr0Xm9coUGwBI5s"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiri",
+        "lastName": "Gunka",
+        "occupation": "cyp",
+        "id": "106076066",
+        "publicId": "jiri-gunka",
+        "profileId": "ACoAAAZSl6IBReZE2DpEw1yYFc7o_nXXv7ld64Y"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Chris",
+        "lastName": "Ward",
+        "occupation": "🚀 20+ years Engineering Leadership | Full-stack | Development | Testing | Data | AI | DevOps",
+        "id": "958428398",
+        "publicId": "chris-ward-cz",
+        "profileId": "ACoAADkgdO4B-i1aIhDo75mkxzpfRqNBaEp68D8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Martin",
+        "lastName": "Bílek",
+        "occupation": "Founder / Entrepreneur / Mr-Slinky.com / Fragaria.cz / Karmen.tech",
+        "id": "151734618",
+        "publicId": "martin-bílek-47699542",
+        "profileId": "ACoAAAkLSVoBfPqrzm1C_VhjYOiboCuVtUGPjIc"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lenka",
+        "lastName": "Hanzlíková",
+        "occupation": "Ikigai Coach & Lecturer | BNI Community Builder | Event Coordinator | Longevity & Molecular Hydrogen",
+        "id": "817356702",
+        "publicId": "lenkahanzlikova",
+        "profileId": "ACoAADC3354Br3OpxnhxdVHICYYGqHRmSadi3bE"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Lukáš",
+        "lastName": "Názer",
+        "occupation": "Security Management | Operations Management | Team Leadership | 16+ Years in Public Safety",
+        "id": "1490386548",
+        "publicId": "lukáš-názer-270164357",
+        "profileId": "ACoAAFjVfnQBRiWDVYgeRaVNR9CkNSlnACEsxsY"
+      }
+    },
+    {
+      "type": "PRAISE",
+      "profile": {
+        "firstName": "Jitka",
+        "lastName": "Kvartkova",
+        "occupation": "Mentor for Women 40+ 🌞 Marketing for Small Businesses 🌞 Linkedin 🌞 B2B",
+        "id": "62569112",
+        "publicId": "jitkakvartkova",
+        "profileId": "ACoAAAO6upgBnCHqSe9ozeExFKQdex_hxEBADX8"
+      }
+    },
+    {
+      "type": "LIKE",
+      "profile": {
+        "firstName": "Jiří",
+        "lastName": "Vicherek",
+        "occupation": "Předseda České startupové asociace",
+        "id": "74476785",
+        "publicId": "vicherek",
+        "profileId": "ACoAAARwbPEBJ-4PcqhyrjMq_qci_GH59b-vNUc"
+      }
+    }
+  ],
+  "numShares": 1,
+  "numLikes": 34,
+  "numComments": 7,
+  "canReact": true,
+  "canPostComments": true,
+  "canShare": true,
+  "commentingDisabled": false,
+  "allowedCommentersScope": "ALL",
+  "rootShare": true,
+  "shareAudience": "PUBLIC",
+  "author": {
+    "firstName": "Honza",
+    "lastName": "Javorek",
+    "occupation": "Tvořím junior.guru, které pomáhá juniorním programátorům",
+    "id": "8517488",
+    "publicId": "honzajavorek",
+    "profileId": "ACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA"
+  },
+  "authorProfileId": "honzajavorek",
+  "authorType": "Person",
+  "authorName": "Honza Javorek",
+  "authorProfileUrl": "https://www.linkedin.com/in/honzajavorek?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAACB93ABHHj4UI2winetGMZHboHlZIZojJA",
+  "authorUrn": "urn:li:member:8517488",
+  "postedAtTimestamp": 1795207682307,
+  "postedAtISO": "2026-11-20T20:48:02.307Z",
+  "inputUrl": "https://www.linkedin.com/in/honzajavorek/"
+}
