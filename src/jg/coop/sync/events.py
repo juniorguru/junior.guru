@@ -1,6 +1,6 @@
 from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
-from typing import Annotated, Any, TypedDict
+from typing import Annotated, Any, Self, TypedDict
 from zoneinfo import ZoneInfo
 
 import click
@@ -11,6 +11,7 @@ from pydantic import (
     BeforeValidator,
     HttpUrl,
     PlainSerializer,
+    model_validator,
 )
 
 from jg.coop.cli.sync import main as cli
@@ -55,6 +56,9 @@ IMAGES_DIR = Path("src/jg/coop/images")
 POSTERS_DIR = IMAGES_DIR / "posters-events"
 
 AVATARS_DIR = IMAGES_DIR / "avatars-participants"
+
+# Discord's limit for the name of a scheduled event
+DISCORD_EVENT_NAME_LIMIT = 100
 
 ANNOUNCEMENT_EMOJIS = [
     "👀",
@@ -131,6 +135,16 @@ class EventConfig(YAMLConfig):
         ]
         | None
     ) = None
+
+    @model_validator(mode="after")
+    def check_full_title_length(self) -> Self:
+        full_title = f"{self.bio_name}: {self.title}"
+        if len(full_title) > DISCORD_EVENT_NAME_LIMIT:
+            raise ValueError(
+                f"The title with the speaker name has {len(full_title)} characters, "
+                f"but Discord allows at most {DISCORD_EVENT_NAME_LIMIT}: {full_title!r}"
+            )
+        return self
 
 
 class EventsConfig(YAMLConfig):
@@ -253,7 +267,7 @@ async def sync_scheduled_events(client: ClubClient):
                 )
                 with mutating_discord(discord_event, raises=True) as proxy:
                     discord_event = await proxy.edit(
-                        name=event.get_discord_name(),
+                        name=event.get_full_title(),
                         description=event.discord_description,
                         end_time=event.end_at,
                         image=(IMAGES_DIR / event.plain_poster_path).read_bytes(),
@@ -262,7 +276,7 @@ async def sync_scheduled_events(client: ClubClient):
                 logger.info(f"Creating Discord event for '{event.title}'")
                 with mutating_discord(client.club_guild, raises=True) as proxy:
                     discord_event = await proxy.create_scheduled_event(
-                        name=event.get_discord_name(),
+                        name=event.get_full_title(),
                         description=event.discord_description,
                         start_time=event.start_at,
                         end_time=event.end_at,
