@@ -205,12 +205,9 @@ class MemberfulCSV:
             )
         since = datetime.now(UTC) - ONE_TIME_CODE_CLOCK_SKEW
         response = sign_in(session, self.email, self.password)
-        if is_one_time_code_url(str(response.url)):
-            logger.info("Memberful requires a one-time code, reading it from email")
-            code = self._get_one_time_code(since)
-            response = submit_form(response, session, {"otp": code})
-            if is_one_time_code_url(str(response.url)):
-                raise OneTimeCodeRequired("The one-time code was not accepted")
+        response = submit_one_time_code(
+            response, session, lambda: self._get_one_time_code(since)
+        )
         logger.debug("Parsing auth token")
         html_tree = html.fromstring(response.content)
         return session, MemberfulAuthToken(
@@ -219,6 +216,7 @@ class MemberfulCSV:
         )
 
     def _get_one_time_code(self, since: datetime) -> str:
+        logger.info("Memberful requires a one-time code, reading it from email")
         if not (self.imap_user and self.imap_password):
             raise OneTimeCodeRequired(
                 "Memberful requires a one-time code to sign in. Set "
@@ -319,10 +317,7 @@ def acquire_trusted_browser(
     """
     with create_session() as session:
         response = sign_in(session, email, password)
-        if is_one_time_code_url(str(response.url)):
-            response = submit_form(response, session, {"otp": get_code()})
-            if is_one_time_code_url(str(response.url)):
-                raise OneTimeCodeRequired("The one-time code was not accepted")
+        submit_one_time_code(response, session, get_code)
         if value := session.cookies.get(
             TRUSTED_BROWSER_COOKIE, domain=MEMBERFUL_DOMAIN
         ):
@@ -340,6 +335,18 @@ def sign_in(session: httpx2.Client, email: str, password: str) -> httpx2.Respons
     response = session.get(f"https://{MEMBERFUL_DOMAIN}/admin/auth/sign_in")
     response.raise_for_status()
     return submit_form(response, session, {"email": email, "password": password})
+
+
+def submit_one_time_code(
+    response: httpx2.Response, session: httpx2.Client, get_code: Callable[[], str]
+) -> httpx2.Response:
+    """Submits a one-time code if Memberful asks for one after signing in"""
+    if not is_one_time_code_url(str(response.url)):
+        return response
+    response = submit_form(response, session, {"otp": get_code()})
+    if is_one_time_code_url(str(response.url)):
+        raise OneTimeCodeRequired("The one-time code was not accepted")
+    return response
 
 
 def submit_form(
