@@ -638,7 +638,7 @@ Stránka nemusí být komplikovaná, stačí aby to byl **rozcestník**. Dvě v�
   'vladimir-gorej.jpg',
   'Vladimír Gorej'
 ) %}
-  Vladimír Gorej, profesionální programátor, o svém [Twitteru](https://twitter.com/vladimirgorej/) a [blogu](https://vladimirgorej.com/)
+  Vladimír Gorej, profesionální programátor, o svém [Twitteru](https://twitter.com/vladimirgorej/) a [blogu](https://www.linkedin.com/in/vladimirgorej/recent-activity/articles/)
 {% endcall %}
 
 Příklady osobních stránek s blogem: [Honza Javorek](https://honzajavorek.cz/) (autor této příručky) nebo [Iveta Česalová](https://web.archive.org/web/20240421092834/https://ivet1987.wz.cz/blog/) (absolventka PyLadies). Další inspiraci lze [snadno najít na internetu](https://www.google.cz/search?q=best%20(personal%20or%20portfolio)%20websites).
