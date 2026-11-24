@@ -1,0 +1,305 @@
+Received: from mail2.mxsv1.infra.improvmx.com
+	(mail2.mxsv1.infra.improvmx.com [209.205.118.79])
+	by smtpd-mx-6454765cb7-rzhrl (szn-email-smtpd/2.0.97) with ESMTP
+	id 88a4b3ff-d7b1-4a5a-8814-562ac82e4199;
+	Tue, 24 Nov 2026 13:39:47 +0100
+ARC-Authentication-Results: i=1;
+ mx1.improvmx.com;
+ spf=pass (improvmx.com: domain of dmarc.memberful.com designates
+ 50.31.205.171 as permitted sender) smtp.mailfrom=dmarc.memberful.com;
+    dkim=pass (signature was verified) header.i=@pm.mtasv.net
+ header.s=pm20250806 header.b=RDoU3HSj;
+    dkim=pass (signature was verified) header.i=@memberful.com
+ header.s=20160315154557pm header.b=tzjHDArB;
+    dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=memberful.com
+ARC-Message-Signature: i=1; a=rsa-sha256;
+ c=relaxed/relaxed;
+ d=improvmx-mails.com; s=arc-20200618; t=1795523982; h=from : date :
+ subject : reply-to : to : message-id : mime-version : content-type :
+ from; bh=V7d+6CattFFjHYzlanDX0ieAo5bP3Y1U7VFLZsyR/KE=;
+ b=Gs3LZ/ib4iaLhHM6XZhmdl2xVEJWpkZpdEh87OjxN1/YwF8BVsOPFcK/Dtz+Nt28ZcPwS
+ 6lwPfAzSIb9kEBNhZ32slRMMx0Z8Nx2mxyVBww22ZLWGm+TdqlexD6TTKcjauNQCE4MKZ6v
+ mXd6GLStngWrY1ye9aTpOwz63jvEy20xqv6vKBD5wEWfsxkU+L/RM0Kr9sNE6SDZuwiQmbU
+ ylCGRV5e8mIGa/y7Awk3ATRz5ZD+oNaSGY4lZJaNYqd/jhMnkMgAz0ciB0ftGAGQ/RQ44vv
+ l9cXDqJtJ9jANUpVC61hMEAVRh0bOgmzmHPPdo+gAkQ5+EuMiEBWdUHL/0XQ==
+ARC-Seal: i=1; cv=none; a=rsa-sha256; d=improvmx-mails.com;
+ s=arc-20200618; t=1795523982;
+ b=jU3WJgCiSFeoXwMn7kvES+PxNF2zQF9xA8WphnBdjOsktm59tOon2V2xWV1bUJEfegX3K
+ Tfr3k5qrOE/2/R8kKUGJi8rGQmFcBd0R+wURI7yVjPtVLgo4vMDyQPJF1K1+3hmcsowxUtA
+ 1j8OGHnaSwpabnAUXarF04IjVyOVHvh72wuu5HEljY5X1HomAKPyu+BPB7Yc37L88zWXD+M
+ tzAwx0AJGtcf4XcJxWgDlpQCAoCmX2PcmLXk91NT2wkdNF8Q2b/PCBb3sgW/dJfmrb9ipFy
+ yu4InqDJ/bj3PRRxV1g837zoiLzVfdvBP1juCHzGnEw+KvlU7kjy/GO2LLWQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=improvmx.net;
+ i=@improvmx.net; q=dns/txt; s=dkimprovmx2; t=1795523982; h=date : from
+ : to : subject : content-type : message-id;
+ bh=V7d+6CattFFjHYzlanDX0ieAo5bP3Y1U7VFLZsyR/KE=;
+ b=qip4m1XeMZY8WonwiRs0QW2slpRT8+7E8ffMMDRgaXtlOplhIxv3ay0sVoyhWE32wzSww
+ DduHr4xY+mndxKxHdd2XfqAq3Z02otce1ocIMiZ9wJSgE6lSvKMhHbReNxb8duHy4Xz5Pyd
+ KhnsBFR/lv4ss2jUKShYyYHUGiALMCKCe7gnrR7wR07rNeEYDUa7J8+fVpCN/R+IYuSMjUE
+ IB7hWSxLfoLM9utS0dKw7+kmGXbcaW4RKHN7oHbjPoDyOFCHdHzP+i3D5Sk5Nu+etyObOFu
+ +MXPI2INGzUNu+y2YA90xjDAW7LGT4wXn0LlL58Mm4W90sZeoq+hfBGWVzSg==
+Delivered-To: kure@junior.guru
+Return-Path: <pm_bounces@dmarc.memberful.com>
+X-Forwarding-Service: ImprovMX v3.0.0
+X-ImprovMX-Server-Id: 584d268
+X-ImprovMX-Session-Id: 
+ 421a8f71-3702-4939-acc4-2637f5bac708
+Authentication-Results: mx1.improvmx.com;
+    spf=pass (improvmx.com: domain of dmarc.memberful.com designates
+ 50.31.205.171 as permitted sender) smtp.mailfrom=dmarc.memberful.com;
+    dkim=pass (signature was verified) header.i=@pm.mtasv.net
+ header.s=pm20250806 header.b=RDoU3HSj;
+    dkim=pass (signature was verified) header.i=@memberful.com
+ header.s=20160315154557pm header.b=tzjHDArB;
+    dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=memberful.com
+Received-SPF: pass (improvmx.com: domain of
+ dmarc.memberful.com designates 50.31.205.171 as permitted sender)
+    receiver=mx1.improvmx.com; client-ip=50.31.205.171;
+ helo=mta171-ab1.mtasv.net;
+Received: from mta171-ab1.mtasv.net (mta171-ab1.mtasv.net.
+ [50.31.205.171])
+    by mx1.improvmx.com with ESMTPS (version=TLSv1.3
+ cipher=TLS_AES_256_GCM_SHA384 bits=256/256)
+    for <kure@junior.guru>;
+    Tue, 24 Nov 2026 12:39:39 -0000
+X-KumoRef: eyJfQF8iOiJcXF8vIiwicmVjaXBpZW50Ijoia3VyZUBqdW5pb3IuZ3VydSJ9
+DKIM-Signature: v=1; a=rsa-sha256; d=pm.mtasv.net; s=pm20250806; c=relaxed/relaxed;
+	bh=V7d+6CattFFjHYzlanDX0ieAo5bP3Y1U7VFLZsyR/KE=;
+	h=from:to:subject:date:mime-version:content-type:sender:cc:date:message-id;
+	t=1795523978; x=1796128778;
+	b=RDoU3HSjSFGrd1N4OgwfH20Vq6J1ynruwCyFj1oGIfcP0iLNcNxKwH9juVu21e4hT9yzDqzbH
+	xro5HbLZ+bS8smOsFo5G1zbywT/wnfWnqcPu7bEI5V4q9WZmHtmx7fx9SJ2RMsMowo051JYxYGe
+	TjgACzhpyreR6dQ9zwtD2be/xtqU0XAPopvlRnWLru4F3obzWDqlFRVsIyKmp9S6MBeB6QPlZAq
+	vbtdOCxymmmRxHVTtS2InBr5SC+LRH7MtxdmKCnlnV1MbUqsMU9AzXsaS0HaO6bRXfDyUbrvAhe
+	N/pTBh841z+MyaNwCKVTLy5bJ5xNEhY24prKcTgi2tUg==;
+Received: from ip-172-26-33-139.us-east-2.compute.internal (172.26.33.139)
+  by production-pmta-useast2.internal.postmarkapp.com (KumoMTA 10.97.249.244) 
+  with ESMTP id 1c841e11e80411f1ae550afff68e82f1 for <kure@junior.guru>;
+  Tue, 24 Nov 2026 12:39:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; d=memberful.com; s=20160315154557pm;
+	c=relaxed/relaxed; i=mail@memberful.com; t=1795523978; x=1795696778;
+	h=date:date:from:from:message-id:reply-to:reply-to:sender:subject:subject:to:
+	to:cc:feedback-id:mime-version:content-type;
+	bh=V7d+6CattFFjHYzlanDX0ieAo5bP3Y1U7VFLZsyR/KE=;
+	b=tzjHDArB32gS4INktRsVXsN+3NjbuZ45dLW3eiBat7/R6ngRlbGBNo5yxsgay2mykPwsaD6Pm11
+	K1HsCF/oRPg5ANw8i09Nr2ZptoURgrcqKm4JnzSWuu4DnVz8TUwU1TR7kWYcO+bCNxe2o0JfZsPq1
+	s0SPbf9KA13KNVYTxOY=
+From: Memberful <mail@memberful.com>
+Date: Tue, 24 Nov 2026 12:39:37 +0000
+Subject: Your one-time code for junior.guru
+Reply-To: mail@memberful.com
+To: kure@junior.guru
+Message-Id: <6b058589d5127_25b1f0212924@35c519be-abf1-4ee7-8844-518669c4a4f4.mail>
+Feedback-ID: s1780172-_:s1780172:a106977:postmark
+X-Complaints-To: abuse@postmarkapp.com
+X-Job: 106977_1780172
+X-PM-Message-Id: 80ea2275-bf66-4c91-ac3a-ff6bba64b976
+X-PM-RCPT: |bTB8MTA2OTc3fDE3ODAxNzJ8a3VyZUBqdW5pb3IuZ3VydQ==|
+X-PM-Message-Options: v1;1.i3g-BTyc_B9gw9H2KgBA2w.oylMPEEWqME0HuyDEcnE1nf88y_54YIH4p1egM7j8ARkckzCB1MGw8pZG-ZSO6KHtmPjSzevd6FxRHFlXeomgg65LxGFenDmp_lkAzC4mMppTQkuFLzNVAGOf6ce4FNvQDixg498kPkNj7q6zdQFcdLVZVVikyGzCOQ_9NavIKghNh0iUqnrlo9_7j3WxlED
+MIME-Version: 1.0
+X-virtual-MTA: mta171-ab1
+X-PM-MTA-Pool: memberful-com
+Content-Type: multipart/alternative;
+	boundary=mk3-205dd170e97c494ba691de82522d8f1f; charset=UTF-8
+
+--mk3-205dd170e97c494ba691de82522d8f1f
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi Ku=C5=99e,
+
+Enter this code to finish signing in to junior.guru's dashboard. It works f=
+or 10 minutes.
+
+JXIJJ3
+
+If you aren't signing in, someone has your password. Don't share this code.=
+ Sign in to your dashboard and change your password.
+
+Memberful never asks for your password by email.
+
+--mk3-205dd170e97c494ba691de82522d8f1f
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width">
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8=
+">
+    <title>Your one-time code for junior.guru</title>
+   =20
+  <style>img {
+border: none; -ms-interpolation-mode: bicubic; max-width: 100%;
+}
+body {
+width: 100%; background-color: #ffffff; font-family: sans-serif; -webkit-fo=
+nt-smoothing: antialiased; font-size: 14px; line-height: 1.4; margin: 0; pa=
+dding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
+}
+.ExternalClass {
+width: 100%;
+}
+.ExternalClass {
+line-height: 100%;
+}
+.btn-primary table td:hover {
+background-color: #005BBD !important;
+}
+.btn-primary a:hover {
+background-color: #005BBD !important; border-color: #005BBD !important;
+}
+@media only screen and (max-width: 620px) {
+  table[class=3Dmain] h1 {
+    font-size: 28px !important; margin-bottom: 10px !important;
+  }
+  table[class=3Dmain] p {
+    font-size: 16px !important;
+  }
+  table[class=3Dmain] ul {
+    font-size: 16px !important;
+  }
+  table[class=3Dmain] ol {
+    font-size: 16px !important;
+  }
+  table[class=3Dmain] td {
+    font-size: 16px !important;
+  }
+  table[class=3Dmain] span {
+    font-size: 16px !important;
+  }
+  table[class=3Dmain] a {
+    font-size: 16px !important;
+  }
+  .wrapper {
+    padding: 20px 10px !important;
+  }
+  .article {
+    padding: 20px 10px !important;
+  }
+  .container {
+    padding: 0 !important; width: 100% !important;
+  }
+  .main {
+    border-left-width: 0 !important; border-radius: 0 !important; border-ri=
+ght-width: 0 !important;
+  }
+  .btn table {
+    width: 100% !important;
+  }
+  .btn a {
+    width: 100% !important;
+  }
+  .img-responsive {
+    height: auto !important; max-width: 100% !important; width: auto !impor=
+tant;
+  }
+  .footer {
+    padding: 0 10px 0 10px;
+  }
+}
+</style>
+</head>
+
+  <body style=3D"width: 100%; font-family: sans-serif; -webkit-font-smoothi=
+ng: antialiased; font-size: 14px; line-height: 1.4; -ms-text-size-adjust: 1=
+00%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;" bgcolor=3D"#ff=
+ffff">
+    <table class=3D"body" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0=
+" style=3D"border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspa=
+ce: 0pt; width: 100%;" bgcolor=3D"#ffffff">
+      <tr>
+        <td class=3D"container container--main" width=3D"100%" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"font-family: sans-serif; font-size: 14px; di=
+splay: block; max-width: 580px; width: 580px; margin: 0 auto; padding: 10px=
+;" valign=3D"top">
+          <table class=3D"main" width=3D"570" cellpadding=3D"0" cellspacing=
+=3D"0" align=3D"center" border=3D"0" style=3D"border-collapse: separate; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; width: 570px; margin: 0 auto; p=
+adding: 0;" bgcolor=3D"#ffffff">
+            <tr>
+              <td class=3D"wrapper" style=3D"font-family: sans-serif; font-=
+size: 14px; box-sizing: border-box; padding: 30px;" valign=3D"top">
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" sty=
+le=3D"border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0=
+pt; width: 100%;">
+                  <tr>
+                    <td style=3D"font-family: sans-serif; font-size: 14px;"=
+ valign=3D"top">
+                      <img class=3D"logo" width=3D"60" height=3D"57" alt=3D=
+"Memberful" title=3D"Memberful" src=3D"https://assets.memberful.com/assets/=
+mailers/logo-memberful-71eb7b2df0e1321f29cbb21861cf96020f0c3b5a907ae54e13dc=
+52ccfaa300dd.png" style=3D"-ms-interpolation-mode: bicubic; max-width: 60px=
+; width: 100%; border-style: none;">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td height=3D"10" style=3D"font-family: sans-serif; fon=
+t-size: 14px;" valign=3D"top">
+                      =C2=A0
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style=3D"font-family: sans-serif; font-size: 14px;"=
+ valign=3D"top">
+                      <p style=3D"font-family: sans-serif; font-size: 15px;=
+ font-weight: normal; margin: 0 0 18px;">Hi Ku=C5=99e,</p>
+
+<p style=3D"font-family: sans-serif; font-size: 15px; font-weight: normal; =
+margin: 0 0 18px;">Enter this code to finish signing in to junior.guru's da=
+shboard. It works for 10 minutes.</p>
+
+<p class=3D"one-time-code" style=3D"font-family: Menlo, Monaco, monospace; =
+font-size: 28px; font-weight: bold; background-color: #f6f6f6; border-radiu=
+s: 8px; letter-spacing: 0.2em; margin: 0 0 18px; padding: 14px 0;" align=3D=
+"center">JXIJJ3</p>
+
+<p style=3D"font-family: sans-serif; font-size: 15px; font-weight: normal; =
+margin: 0 0 18px;">If you aren't signing in, someone has your password. Don=
+'t share this code. Sign in to your dashboard and change your password.</p>
+
+<p class=3D"small" style=3D"font-family: sans-serif; font-size: 13px; font-=
+weight: normal; color: #666666; margin: 0 0 18px;">Memberful never asks for=
+ your password by email.</p>
+
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class=3D"container" width=3D"100%" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"font-family: sans-serif; font-size: 14px; display: block; =
+max-width: 580px; width: 580px; margin: 0 auto;" valign=3D"top">
+          <table class=3D"footer" width=3D"570" cellpadding=3D"0" cellspaci=
+ng=3D"0" align=3D"center" border=3D"0" style=3D"border-collapse: separate; =
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 570px; text-align: cen=
+ter; margin: 0 auto; padding: 0;">
+            <tr>
+              <td style=3D"font-family: sans-serif; font-size: 14px; color:=
+ #777777; line-height: 1.4;" align=3D"center" valign=3D"top">
+                <p class=3D"footer__sent-by" style=3D"color: #999999; font-=
+size: 11px; line-height: 1.3; font-family: sans-serif; font-weight: normal;=
+ margin: 10px 0 0; padding: 0 30px;" align=3D"left">Sent by Memberful LLC, =
+PO Box 410777, San Francisco, CA 94141-9777.</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td height=3D"10" style=3D"font-family: sans-serif; font-size: 14px=
+;" valign=3D"top">
+          =C2=A0
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+--mk3-205dd170e97c494ba691de82522d8f1f--
