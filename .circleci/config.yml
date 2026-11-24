@@ -87,7 +87,7 @@ jobs:
             - ./node_modules
       - restore_cache:
           # new branches start from the main branch cache, so that
-          # they don't exhaust paid APIs (e.g. Mapy.com) by re-fetching everything
+          # they don't exhaust paid APIs by re-fetching everything
           keys:
             - cache-v2-{{ .Branch }}-
             - cache-v2-main-
