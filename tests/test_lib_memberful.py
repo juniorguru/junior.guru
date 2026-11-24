@@ -1,3 +1,6 @@
+from datetime import UTC, datetime
+from pathlib import Path
+
 import pytest
 from lxml import html
 
@@ -5,8 +8,39 @@ from jg.coop.lib.memberful import (
     from_cents,
     is_one_time_code_url,
     parse_export_id,
+    parse_one_time_code_email,
     parse_tier_name,
+    select_one_time_code,
 )
+
+
+FIXTURES_DIR = Path(__file__).parent / "lib_memberful"
+
+SENT_AT = datetime(2026, 11, 24, 12, 39, 37, tzinfo=UTC)
+
+
+@pytest.fixture
+def one_time_code_email() -> bytes:
+    return (FIXTURES_DIR / "one_time_code.eml").read_bytes()
+
+
+def make_email(
+    code: str,
+    date: str = "Tue, 24 Nov 2026 12:39:37 +0000",
+    sender: str = "Memberful <mail@memberful.com>",
+) -> bytes:
+    return (
+        f"From: {sender}\r\n"
+        f"Date: {date}\r\n"
+        "Subject: Your one-time code for junior.guru\r\n"
+        "Content-Type: text/plain; charset=UTF-8\r\n"
+        "\r\n"
+        "Enter this code to finish signing in. It works for 10 minutes.\r\n"
+        "\r\n"
+        f"{code}\r\n"
+        "\r\n"
+        "Memberful never asks for your password by email.\r\n"
+    ).encode()
 
 
 def test_parse_export_id_members():
@@ -97,3 +131,45 @@ def test_parse_tier_name(name: str, expected: str):
 )
 def test_is_one_time_code_url(url: str, expected: bool):
     assert is_one_time_code_url(url) is expected
+
+
+def test_parse_one_time_code_email(one_time_code_email: bytes):
+    assert parse_one_time_code_email(one_time_code_email) == (SENT_AT, "JXIJJ3")
+
+
+def test_parse_one_time_code_email_other_sender():
+    raw_email = make_email("ABC123", sender="Someone <someone@example.com>")
+
+    assert parse_one_time_code_email(raw_email) is None
+
+
+def test_parse_one_time_code_email_no_code():
+    raw_email = make_email("Thanks for signing in.")
+
+    assert parse_one_time_code_email(raw_email) is None
+
+
+def test_select_one_time_code_picks_newest():
+    raw_emails = [
+        make_email("OLD111", "Tue, 24 Nov 2026 12:40:00 +0000"),
+        make_email("NEW222", "Tue, 24 Nov 2026 12:45:00 +0000"),
+        make_email("MID333", "Tue, 24 Nov 2026 12:42:00 +0000"),
+    ]
+
+    assert select_one_time_code(raw_emails, SENT_AT) == "NEW222"
+
+
+def test_select_one_time_code_ignores_older():
+    raw_emails = [make_email("OLD111", "Tue, 24 Nov 2026 12:30:00 +0000")]
+
+    assert select_one_time_code(raw_emails, SENT_AT) is None
+
+
+def test_select_one_time_code_compares_timezones():
+    raw_emails = [make_email("ABC123", "Tue, 24 Nov 2026 13:40:00 +0100")]
+
+    assert select_one_time_code(raw_emails, SENT_AT) == "ABC123"
+
+
+def test_select_one_time_code_empty():
+    assert select_one_time_code([], SENT_AT) is None

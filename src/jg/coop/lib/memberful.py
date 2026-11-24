@@ -1,10 +1,13 @@
 import csv
+import email
+import email.policy
 import json
 import os
 import re
-from collections.abc import Callable, Generator
+from collections.abc import Callable, Generator, Iterable
 from dataclasses import dataclass
 from datetime import UTC, date, datetime, timedelta
+from operator import itemgetter
 from typing import Any
 
 import httpx2
@@ -21,6 +24,7 @@ from tenacity import (
 from jg.coop.lib import loggers
 from jg.coop.lib.brand import BOT_USER_AGENT
 from jg.coop.lib.cache import cache
+from jg.coop.lib.imap import fetch_emails
 from jg.coop.lib.retrying import retry
 
 
@@ -39,7 +43,22 @@ MEMBERFUL_PASSWORD = os.getenv("MEMBERFUL_PASSWORD")
 # requires the code every time.
 MEMBERFUL_TRUSTED_BROWSER = os.getenv("MEMBERFUL_TRUSTED_BROWSER")
 
+# Mailbox where the alias Memberful sends one-time codes to forwards a copy,
+# so that the sync can sign in on its own when the trusted browser expires.
+MEMBERFUL_IMAP_HOST = os.getenv("MEMBERFUL_IMAP_HOST") or "imap.seznam.cz"
+
+MEMBERFUL_IMAP_USER = os.getenv("MEMBERFUL_IMAP_USER")
+
+MEMBERFUL_IMAP_PASSWORD = os.getenv("MEMBERFUL_IMAP_PASSWORD")
+
 MEMBERFUL_DOMAIN = "juniorguru.memberful.com"
+
+ONE_TIME_CODE_SENDER = "mail@memberful.com"
+
+ONE_TIME_CODE_RE = re.compile(r"^\s*([A-Z0-9]{4,12})\s*$", re.MULTILINE)
+
+# Tolerance for the difference between our clock and Memberful's
+ONE_TIME_CODE_CLOCK_SKEW = timedelta(seconds=30)
 
 TRUSTED_BROWSER_COOKIE = "staff_trusted_browser"
 
@@ -132,6 +151,10 @@ class OneTimeCodeRequired(Exception):
     pass
 
 
+class OneTimeCodeNotFound(Exception):
+    pass
+
+
 @dataclass
 class MemberfulAuthToken:
     param: str
@@ -144,11 +167,17 @@ class MemberfulCSV:
         email: str | None = None,
         password: str | None = None,
         trusted_browser: str | None = None,
+        imap_host: str | None = None,
+        imap_user: str | None = None,
+        imap_password: str | None = None,
         user_agent: str | None = None,
     ):
         self.email = email or MEMBERFUL_EMAIL
         self.password = password or MEMBERFUL_PASSWORD
         self.trusted_browser = trusted_browser or MEMBERFUL_TRUSTED_BROWSER
+        self.imap_host = imap_host or MEMBERFUL_IMAP_HOST
+        self.imap_user = imap_user or MEMBERFUL_IMAP_USER
+        self.imap_password = imap_password or MEMBERFUL_IMAP_PASSWORD
         self.user_agent = user_agent or BROWSER_USER_AGENT
         self._session = None
         self._auth_token = None
@@ -174,21 +203,47 @@ class MemberfulCSV:
                 self.trusted_browser,
                 domain=MEMBERFUL_DOMAIN,
             )
-        else:
-            logger.warning("MEMBERFUL_TRUSTED_BROWSER not set")
+        since = datetime.now(UTC) - ONE_TIME_CODE_CLOCK_SKEW
         response = sign_in(session, self.email, self.password)
         if is_one_time_code_url(str(response.url)):
-            raise OneTimeCodeRequired(
-                "Memberful requires a one-time code to sign in. "
-                "Run 'uv run jg memberful-trusted-browser' and update "
-                "MEMBERFUL_TRUSTED_BROWSER with the value it prints."
-            )
+            logger.info("Memberful requires a one-time code, reading it from email")
+            code = self._get_one_time_code(since)
+            response = submit_form(response, session, {"otp": code})
+            if is_one_time_code_url(str(response.url)):
+                raise OneTimeCodeRequired("The one-time code was not accepted")
         logger.debug("Parsing auth token")
         html_tree = html.fromstring(response.content)
         return session, MemberfulAuthToken(
             html_tree.cssselect('meta[name="csrf-param"]')[0].get("content"),
             html_tree.cssselect('meta[name="csrf-token"]')[0].get("content"),
         )
+
+    def _get_one_time_code(self, since: datetime) -> str:
+        if not (self.imap_user and self.imap_password):
+            raise OneTimeCodeRequired(
+                "Memberful requires a one-time code to sign in. Set "
+                "MEMBERFUL_IMAP_USER and MEMBERFUL_IMAP_PASSWORD, or run "
+                "'uv run jg memberful-trusted-browser' and update "
+                "MEMBERFUL_TRUSTED_BROWSER with the value it prints."
+            )
+        return self._poll_for_one_time_code(since)
+
+    @retry(
+        retry=retry_if_exception_type(OneTimeCodeNotFound),
+        wait=wait_fixed(5),
+        stop=stop_after_attempt(24),
+    )
+    def _poll_for_one_time_code(self, since: datetime) -> str:
+        raw_emails = fetch_emails(
+            self.imap_host,
+            self.imap_user,
+            self.imap_password,
+            ONE_TIME_CODE_SENDER,
+            (since - timedelta(days=1)).date(),
+        )
+        if code := select_one_time_code(raw_emails, since):
+            return code
+        raise OneTimeCodeNotFound(f"No one-time code email since {since}")
 
     def download_csv(self, *args, **kwargs) -> csv.DictReader:
         return csv.DictReader(self._download_csv(*args, **kwargs).splitlines())
@@ -298,6 +353,26 @@ def submit_form(
     response = session.post(form.action, data=dict(form.form_values()))
     response.raise_for_status()
     return response
+
+
+def select_one_time_code(raw_emails: Iterable[bytes], since: datetime) -> str | None:
+    """Returns the code from the newest one-time code email sent at or after the given time"""
+    parsed = filter(None, map(parse_one_time_code_email, raw_emails))
+    if candidates := [item for item in parsed if item[0] >= since]:
+        return max(candidates, key=itemgetter(0))[1]
+    return None
+
+
+def parse_one_time_code_email(raw_email: bytes) -> tuple[datetime, str] | None:
+    """Returns the time a Memberful one-time code email was sent and the code in it"""
+    message = email.message_from_bytes(raw_email, policy=email.policy.default)
+    addresses = message["From"].addresses if message["From"] else ()
+    if ONE_TIME_CODE_SENDER not in [address.addr_spec for address in addresses]:
+        return None
+    body = message.get_body(preferencelist=("plain",))
+    if body and (match := ONE_TIME_CODE_RE.search(body.get_content())):
+        return message["Date"].datetime, match.group(1)
+    return None
 
 
 def memberful_url(account_id: int | str) -> str:
