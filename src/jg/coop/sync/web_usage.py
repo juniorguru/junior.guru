@@ -1,10 +1,12 @@
 from datetime import date, timedelta
 
 import httpx2
+from tenacity import retry_if_exception_type
 
 from jg.coop.cli.sync import main as cli
 from jg.coop.lib import charts, loggers
 from jg.coop.lib.cache import cache
+from jg.coop.lib.retrying import retry
 from jg.coop.models.base import db
 from jg.coop.models.web_usage import WebUsage
 
@@ -56,6 +58,9 @@ PRODUCTS = {
 
 MONTHS_RANGE = 12
 
+# Simple Analytics can take several seconds to generate filtered stats
+TIMEOUT = 60
+
 
 logger = loggers.from_path(__file__)
 
@@ -92,6 +97,7 @@ def main():
 
 
 @cache(expire=timedelta(days=40), tag="web-usage")
+@retry(retry=retry_if_exception_type(httpx2.TimeoutException))
 def fetch_analytics(pages: list[str], time_range: dict[str, str]) -> int:
     params = dict(
         version=5,
@@ -105,6 +111,7 @@ def fetch_analytics(pages: list[str], time_range: dict[str, str]) -> int:
         "https://simpleanalytics.com/junior.guru.json",
         params=params,
         follow_redirects=True,
+        timeout=TIMEOUT,
     )
     response.raise_for_status()
     data = response.json()
