@@ -4,6 +4,7 @@ import email.policy
 import json
 import os
 import re
+import subprocess
 from collections.abc import Callable, Generator, Iterable
 from dataclasses import dataclass
 from datetime import UTC, date, datetime, timedelta
@@ -64,8 +65,13 @@ TRUSTED_BROWSER_COOKIE = "staff_trusted_browser"
 # failure (see .circleci/config.yml). The cache key is a checksum of the cookie
 # file, so parallel nodes which didn't sign in produce a key which already
 # exists and CircleCI discards their save. Only a new cookie creates a new
-# cache, which is then the newest match for the key prefix.
-MEMBERFUL_TRUSTED_BROWSER_PATH = Path("~/.memberful/trusted_browser").expanduser()
+# cache, which is then the newest match for the key prefix. CI uses the
+# default path, which its cache steps expect. Locally, it can be set to
+# a 1Password secret reference, op://<vault>/<item>/<field>, to keep the
+# cookie in 1Password through the 1Password CLI.
+MEMBERFUL_TRUSTED_BROWSER_PATH = (
+    os.getenv("MEMBERFUL_TRUSTED_BROWSER_PATH") or "~/.memberful/trusted_browser"
+)
 
 
 logger = loggers.from_path(__file__)
@@ -178,8 +184,7 @@ class MemberfulCSV:
     ):
         self.email = email or MEMBERFUL_EMAIL
         self.password = password or MEMBERFUL_PASSWORD
-        self.trusted_browser_path = MEMBERFUL_TRUSTED_BROWSER_PATH
-        self.trusted_browser = read_trusted_browser(self.trusted_browser_path)
+        self.trusted_browser = load_trusted_browser()
         self.imap_host = imap_host or MEMBERFUL_IMAP_HOST
         self.imap_user = imap_user or MEMBERFUL_IMAP_USER
         self.imap_password = imap_password or MEMBERFUL_IMAP_PASSWORD
@@ -224,10 +229,8 @@ class MemberfulCSV:
     def _store_trusted_browser(self, session: httpx2.Client) -> None:
         value = session.cookies.get(TRUSTED_BROWSER_COOKIE, domain=MEMBERFUL_DOMAIN)
         if value and value != self.trusted_browser:
-            logger.info(
-                f"Storing a new trusted browser cookie: {self.trusted_browser_path}"
-            )
-            write_trusted_browser(self.trusted_browser_path, value)
+            logger.info("Storing a new trusted browser cookie")
+            store_trusted_browser(value)
             self.trusted_browser = value
 
     def _get_one_time_code(self, since: datetime) -> str:
@@ -319,6 +322,84 @@ class MemberfulCSV:
         response = self.session.get(download_url)
         response.raise_for_status()
         return response.content.decode("utf-8")
+
+
+class TrustedBrowserStoreError(Exception):
+    pass
+
+
+@dataclass
+class OnePasswordReference:
+    vault: str
+    item: str
+    field: str
+
+
+def load_trusted_browser(location: str = MEMBERFUL_TRUSTED_BROWSER_PATH) -> str | None:
+    if reference := parse_onepassword_reference(location):
+        logger.debug(f"Reading the trusted browser cookie from {location}")
+        item_json = run_onepassword(
+            reference, "item", "get", reference.item, "--format", "json"
+        )
+        return parse_onepassword_field(item_json, reference.field)
+    path = Path(location).expanduser()
+    logger.debug(f"Reading the trusted browser cookie from {path}")
+    return read_trusted_browser(path)
+
+
+def store_trusted_browser(
+    value: str, location: str = MEMBERFUL_TRUSTED_BROWSER_PATH
+) -> None:
+    if reference := parse_onepassword_reference(location):
+        logger.debug(f"Writing the trusted browser cookie to {location}")
+        run_onepassword(
+            reference, "item", "edit", reference.item, f"{reference.field}={value}"
+        )
+    else:
+        path = Path(location).expanduser()
+        logger.debug(f"Writing the trusted browser cookie to {path}")
+        write_trusted_browser(path, value)
+
+
+def run_onepassword(reference: OnePasswordReference, *args: str) -> str:
+    requirements = (
+        "MEMBERFUL_TRUSTED_BROWSER_PATH points to 1Password, so the 1Password CLI "
+        "(op) must be installed and signed in, and vault "
+        f"{reference.vault!r} must contain item {reference.item!r} with field "
+        f"{reference.field!r}. The field may be empty, the cookie gets written "
+        "there after the first sign-in."
+    )
+    command = ["op", *args, "--vault", reference.vault]
+    try:
+        result = subprocess.run(command, check=False, capture_output=True, text=True)
+    except FileNotFoundError as e:
+        raise TrustedBrowserStoreError(f"{requirements} op not found: {e}") from e
+    if result.returncode:
+        raise TrustedBrowserStoreError(
+            f"{requirements} op said: {result.stderr.strip()}"
+        )
+    return result.stdout
+
+
+def parse_onepassword_reference(location: str) -> OnePasswordReference | None:
+    """Returns parts of a 1Password secret reference, or nothing if it's not one"""
+    if not location.startswith("op://"):
+        return None
+    parts = location.removeprefix("op://").split("/")
+    if len(parts) != 3 or not all(parts):
+        raise ValueError(
+            f"Expected a reference like op://<vault>/<item>/<field>, got {location!r}"
+        )
+    return OnePasswordReference(*parts)
+
+
+def parse_onepassword_field(item_json: str, field: str) -> str | None:
+    """Returns the value of the given field of a 1Password item, if any"""
+    for item_field in json.loads(item_json).get("fields", []):
+        names = {item_field.get("id", "").lower(), item_field.get("label", "").lower()}
+        if field.lower() in names:
+            return item_field.get("value") or None
+    return None
 
 
 def read_trusted_browser(path: Path) -> str | None:

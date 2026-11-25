@@ -1,3 +1,4 @@
+import json
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -5,10 +6,13 @@ import pytest
 from lxml import html
 
 from jg.coop.lib.memberful import (
+    OnePasswordReference,
     from_cents,
     is_one_time_code_url,
     parse_export_id,
     parse_one_time_code_email,
+    parse_onepassword_field,
+    parse_onepassword_reference,
     parse_tier_name,
     read_trusted_browser,
     select_one_time_code,
@@ -193,3 +197,51 @@ def test_write_and_read_trusted_browser(tmp_path: Path):
     write_trusted_browser(path, "abc123")
 
     assert read_trusted_browser(path) == "abc123"
+
+
+@pytest.mark.parametrize(
+    "location, expected",
+    [
+        ("~/.memberful/trusted_browser", None),
+        ("/tmp/trusted_browser", None),
+        (
+            "op://vault123/item456/password",
+            OnePasswordReference("vault123", "item456", "password"),
+        ),
+    ],
+)
+def test_parse_onepassword_reference(
+    location: str, expected: OnePasswordReference | None
+):
+    assert parse_onepassword_reference(location) == expected
+
+
+@pytest.mark.parametrize(
+    "location",
+    ["op://vault/item", "op://vault/item/section/field", "op://vault//field"],
+)
+def test_parse_onepassword_reference_invalid(location: str):
+    with pytest.raises(ValueError):
+        parse_onepassword_reference(location)
+
+
+@pytest.mark.parametrize(
+    "fields, expected",
+    [
+        (
+            [
+                {"id": "username", "label": "username", "value": "kure"},
+                {"id": "password", "label": "password", "value": "abc123"},
+            ],
+            "abc123",
+        ),
+        ([{"id": "password", "label": "password"}], None),
+        ([{"id": "password", "label": "password", "value": ""}], None),
+        ([{"id": "x1y2", "label": "Password", "value": "abc123"}], "abc123"),
+        ([{"id": "notesPlain", "label": "notesPlain", "value": "x"}], None),
+    ],
+)
+def test_parse_onepassword_field(fields: list[dict], expected: str | None):
+    item_json = json.dumps({"id": "item456", "fields": fields})
+
+    assert parse_onepassword_field(item_json, "password") == expected
