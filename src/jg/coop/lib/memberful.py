@@ -8,6 +8,7 @@ from collections.abc import Callable, Generator, Iterable
 from dataclasses import dataclass
 from datetime import UTC, date, datetime, timedelta
 from operator import itemgetter
+from pathlib import Path
 from typing import Any
 
 import httpx2
@@ -21,9 +22,9 @@ from tenacity import (
     wait_fixed,
 )
 
-from jg.coop.lib import loggers
+from jg.coop.lib import loggers, onepassword
 from jg.coop.lib.brand import BOT_USER_AGENT
-from jg.coop.lib.cache import cache, get_cache
+from jg.coop.lib.cache import cache
 from jg.coop.lib.imap import fetch_emails
 from jg.coop.lib.retrying import retry
 
@@ -57,12 +58,20 @@ ONE_TIME_CODE_CLOCK_SKEW = timedelta(seconds=30)
 
 TRUSTED_BROWSER_COOKIE = "staff_trusted_browser"
 
-# The long-lived cookie Memberful sets after a successful one-time code sign-in
-# is kept in the project cache, which CI persists between runs, so that the next
-# runs can skip the one-time code until the cookie expires.
-TRUSTED_BROWSER_CACHE_KEY = "memberful-trusted-browser"
-
-TRUSTED_BROWSER_CACHE_EXPIRE = timedelta(days=30)
+# Memberful replaces its long-lived trusted browser cookie on every sign-in and
+# the previous value stops working, so all CI builds on all branches share the
+# newest one through a dedicated cache, saved right after syncing, even on
+# failure (see .circleci/config.yml). The cache key is a checksum of the cookie
+# file, so parallel nodes which didn't sign in produce a key which already
+# exists and CircleCI discards their save. Only a new cookie creates a new
+# cache, which is then the newest match for the key prefix. CI uses the
+# default path, which its cache steps expect. Locally, it can be set to
+# a private link to a 1Password item of type Password (Copy Private Link in
+# the 1Password app) to keep the cookie in its password field, read and
+# written through the 1Password CLI (op).
+MEMBERFUL_TRUSTED_BROWSER_PATH = (
+    os.getenv("MEMBERFUL_TRUSTED_BROWSER_PATH") or "~/.memberful/trusted_browser"
+)
 
 
 logger = loggers.from_path(__file__)
@@ -175,7 +184,7 @@ class MemberfulCSV:
     ):
         self.email = email or MEMBERFUL_EMAIL
         self.password = password or MEMBERFUL_PASSWORD
-        self.trusted_browser = get_cache().get(TRUSTED_BROWSER_CACHE_KEY)
+        self.trusted_browser = load_trusted_browser()
         self.imap_host = imap_host or MEMBERFUL_IMAP_HOST
         self.imap_user = imap_user or MEMBERFUL_IMAP_USER
         self.imap_password = imap_password or MEMBERFUL_IMAP_PASSWORD
@@ -220,13 +229,8 @@ class MemberfulCSV:
     def _store_trusted_browser(self, session: httpx2.Client) -> None:
         value = session.cookies.get(TRUSTED_BROWSER_COOKIE, domain=MEMBERFUL_DOMAIN)
         if value and value != self.trusted_browser:
-            logger.info("Storing a new trusted browser cookie in cache")
-            get_cache().set(
-                TRUSTED_BROWSER_CACHE_KEY,
-                value,
-                expire=TRUSTED_BROWSER_CACHE_EXPIRE.total_seconds(),
-                tag=TRUSTED_BROWSER_CACHE_KEY,
-            )
+            logger.info("Storing a new trusted browser cookie")
+            store_trusted_browser(value)
             self.trusted_browser = value
 
     def _get_one_time_code(self, since: datetime) -> str:
@@ -318,6 +322,57 @@ class MemberfulCSV:
         response = self.session.get(download_url)
         response.raise_for_status()
         return response.content.decode("utf-8")
+
+
+class TrustedBrowserStoreError(Exception):
+    pass
+
+
+def load_trusted_browser(location: str = MEMBERFUL_TRUSTED_BROWSER_PATH) -> str | None:
+    if item := onepassword.parse_link(location):
+        try:
+            return onepassword.get_password(item)
+        except onepassword.OnePasswordError as e:
+            raise TrustedBrowserStoreError(format_onepassword_requirements(item)) from e
+    path = Path(location).expanduser()
+    logger.debug(f"Reading the trusted browser cookie from {path}")
+    return read_trusted_browser(path)
+
+
+def store_trusted_browser(
+    value: str, location: str = MEMBERFUL_TRUSTED_BROWSER_PATH
+) -> None:
+    if item := onepassword.parse_link(location):
+        try:
+            onepassword.set_password(item, value)
+        except onepassword.OnePasswordError as e:
+            raise TrustedBrowserStoreError(format_onepassword_requirements(item)) from e
+    else:
+        path = Path(location).expanduser()
+        logger.debug(f"Writing the trusted browser cookie to {path}")
+        write_trusted_browser(path, value)
+
+
+def format_onepassword_requirements(item: onepassword.OnePasswordItem) -> str:
+    return (
+        "MEMBERFUL_TRUSTED_BROWSER_PATH is a link to a 1Password item, so "
+        "the 1Password CLI (op) must be installed and signed in to account "
+        f"{item.account!r}, which must have in vault {item.vault!r} an item "
+        f"{item.item!r} of type Password. Its password field may be empty, "
+        "the cookie gets written there after the first sign-in."
+    )
+
+
+def read_trusted_browser(path: Path) -> str | None:
+    try:
+        return path.read_text().strip() or None
+    except FileNotFoundError:
+        return None
+
+
+def write_trusted_browser(path: Path, value: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(value)
 
 
 def create_session() -> httpx2.Client:
