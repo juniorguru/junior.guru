@@ -8,7 +8,7 @@
 # lib/location.py, using region_listing as a template. In its texts, {region}
 # gets replaced by the region name.
 
-registry:
+listings:
   - slug: remote
     type: location
     tag_slugs: [remote]
@@ -56,10 +56,10 @@ registry:
   - slug: csharp
     type: technology
     tag_slugs: [csharp]
-    name: C# a .NET
+    name: "C# a .NET"
     heading: "Práce pro juniory: C# a .NET"
     title: "Junior C# a .NET developer: práce v C# pro začátečníky bez praxe"
-    description: Nabídky práce v C# a .NET pro začátečníky. Junior pozice, stáže a brigády pro ty, kdo s .NET teprve začínají.
+    description: "Nabídky práce v C# a .NET pro začátečníky. Junior pozice, stáže a brigády pro ty, kdo s .NET teprve začínají."
     lead: *default_lead
 
   - slug: ai

@@ -73,7 +73,7 @@ class RegionListingTemplate(YAMLConfig):
 
 
 class JobsListingsConfig(YAMLConfig):
-    registry: list[JobsListing]
+    listings: list[JobsListing]
     region_listing: RegionListingTemplate
 
 
@@ -123,11 +123,11 @@ def build_jobs_listings(
     Lists all listing pages, grouped by type, with regions after other locations
     """
     listings = [
-        *config.registry,
+        *config.listings,
         *(build_region_listing(config.region_listing, region) for region in regions),
     ]
-    # The sort is stable, so within a type the registry order is kept,
-    # and generated regions go after the locations from the registry
+    # The sort is stable, so within a type the order from the YAML is kept,
+    # and generated regions go after the locations from the YAML
     return sorted(listings, key=lambda listing: LISTING_TYPES.index(listing.type))
 
 

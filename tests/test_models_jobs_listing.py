@@ -77,9 +77,9 @@ def test_jobs_listings_include_regions():
     assert {"brno", "hradec-kralove", "usti-nad-labem"} <= set(JOBS_LISTINGS_BY_SLUG)
 
 
-def test_build_jobs_listings_keeps_registry_first_within_type():
+def test_build_jobs_listings_keeps_yaml_order_first_within_type():
     config = JobsListingsConfig(
-        registry=[create_listing(slug="remote", type=TagType.LOCATION)],
+        listings=[create_listing(slug="remote", type=TagType.LOCATION)],
         region_listing=REGION_TEMPLATE,
     )
     listings = build_jobs_listings(config, ["Brno", "Praha"])
@@ -89,7 +89,7 @@ def test_build_jobs_listings_keeps_registry_first_within_type():
 
 def test_build_jobs_listings_groups_by_type():
     config = JobsListingsConfig(
-        registry=[
+        listings=[
             create_listing(slug="part-time", type=TagType.EMPLOYMENT),
             create_listing(slug="python", type=TagType.TECHNOLOGY),
             create_listing(slug="remote", type=TagType.LOCATION),
