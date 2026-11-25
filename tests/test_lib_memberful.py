@@ -1,4 +1,3 @@
-import json
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -6,13 +5,10 @@ import pytest
 from lxml import html
 
 from jg.coop.lib.memberful import (
-    OnePasswordItem,
     from_cents,
     is_one_time_code_url,
     parse_export_id,
     parse_one_time_code_email,
-    parse_onepassword_link,
-    parse_onepassword_password,
     parse_tier_name,
     read_trusted_browser,
     select_one_time_code,
@@ -197,44 +193,3 @@ def test_write_and_read_trusted_browser(tmp_path: Path):
     write_trusted_browser(path, "abc123")
 
     assert read_trusted_browser(path) == "abc123"
-
-
-@pytest.mark.parametrize(
-    "location, expected",
-    [
-        ("~/.memberful/trusted_browser", None),
-        ("/tmp/trusted_browser", None),
-        (
-            "https://start.1password.com/open/i?a=ACC123&v=vault123&i=item456&h=example.1password.com",
-            OnePasswordItem(account="ACC123", vault="vault123", item="item456"),
-        ),
-    ],
-)
-def test_parse_onepassword_link(location: str, expected: OnePasswordItem | None):
-    assert parse_onepassword_link(location) == expected
-
-
-def test_parse_onepassword_link_incomplete():
-    with pytest.raises(ValueError):
-        parse_onepassword_link("https://start.1password.com/open/i?a=ACC123&v=vault123")
-
-
-@pytest.mark.parametrize(
-    "fields, expected",
-    [
-        (
-            [
-                {"id": "username", "purpose": "USERNAME", "value": "kure"},
-                {"id": "password", "purpose": "PASSWORD", "value": "abc123"},
-            ],
-            "abc123",
-        ),
-        ([{"id": "password", "purpose": "PASSWORD"}], None),
-        ([{"id": "password", "purpose": "PASSWORD", "value": ""}], None),
-        ([{"id": "notesPlain", "purpose": "NOTES", "value": "x"}], None),
-    ],
-)
-def test_parse_onepassword_password(fields: list[dict], expected: str | None):
-    item_json = json.dumps({"id": "item456", "fields": fields})
-
-    assert parse_onepassword_password(item_json) == expected

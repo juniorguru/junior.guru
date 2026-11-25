@@ -4,14 +4,12 @@ import email.policy
 import json
 import os
 import re
-import subprocess
 from collections.abc import Callable, Generator, Iterable
 from dataclasses import dataclass
 from datetime import UTC, date, datetime, timedelta
 from operator import itemgetter
 from pathlib import Path
 from typing import Any
-from urllib.parse import parse_qs, urlparse
 
 import httpx2
 from gql import Client, gql
@@ -24,7 +22,7 @@ from tenacity import (
     wait_fixed,
 )
 
-from jg.coop.lib import loggers
+from jg.coop.lib import loggers, onepassword
 from jg.coop.lib.brand import BOT_USER_AGENT
 from jg.coop.lib.cache import cache
 from jg.coop.lib.imap import fetch_emails
@@ -330,18 +328,12 @@ class TrustedBrowserStoreError(Exception):
     pass
 
 
-@dataclass
-class OnePasswordItem:
-    account: str
-    vault: str
-    item: str
-
-
 def load_trusted_browser(location: str = MEMBERFUL_TRUSTED_BROWSER_PATH) -> str | None:
-    if onepassword_item := parse_onepassword_link(location):
-        logger.debug("Reading the trusted browser cookie from 1Password")
-        item_json = run_onepassword(onepassword_item, "get", "--format", "json")
-        return parse_onepassword_password(item_json)
+    if item := onepassword.parse_link(location):
+        try:
+            return onepassword.get_password(item)
+        except onepassword.OnePasswordError as e:
+            raise TrustedBrowserStoreError(format_onepassword_requirements(item)) from e
     path = Path(location).expanduser()
     logger.debug(f"Reading the trusted browser cookie from {path}")
     return read_trusted_browser(path)
@@ -350,68 +342,25 @@ def load_trusted_browser(location: str = MEMBERFUL_TRUSTED_BROWSER_PATH) -> str 
 def store_trusted_browser(
     value: str, location: str = MEMBERFUL_TRUSTED_BROWSER_PATH
 ) -> None:
-    if onepassword_item := parse_onepassword_link(location):
-        logger.debug("Writing the trusted browser cookie to 1Password")
-        run_onepassword(onepassword_item, "edit", f"password={value}")
+    if item := onepassword.parse_link(location):
+        try:
+            onepassword.set_password(item, value)
+        except onepassword.OnePasswordError as e:
+            raise TrustedBrowserStoreError(format_onepassword_requirements(item)) from e
     else:
         path = Path(location).expanduser()
         logger.debug(f"Writing the trusted browser cookie to {path}")
         write_trusted_browser(path, value)
 
 
-def run_onepassword(onepassword_item: OnePasswordItem, *args: str) -> str:
-    requirements = (
+def format_onepassword_requirements(item: onepassword.OnePasswordItem) -> str:
+    return (
         "MEMBERFUL_TRUSTED_BROWSER_PATH is a link to a 1Password item, so "
         "the 1Password CLI (op) must be installed and signed in to account "
-        f"{onepassword_item.account!r}, which must have in vault "
-        f"{onepassword_item.vault!r} an item {onepassword_item.item!r} of type "
-        "Password. Its password field may be empty, the cookie gets written "
-        "there after the first sign-in."
+        f"{item.account!r}, which must have in vault {item.vault!r} an item "
+        f"{item.item!r} of type Password. Its password field may be empty, "
+        "the cookie gets written there after the first sign-in."
     )
-    command = [
-        "op",
-        "item",
-        args[0],
-        onepassword_item.item,
-        *args[1:],
-        "--vault",
-        onepassword_item.vault,
-        "--account",
-        onepassword_item.account,
-    ]
-    try:
-        result = subprocess.run(command, check=False, capture_output=True, text=True)
-    except FileNotFoundError as e:
-        raise TrustedBrowserStoreError(f"{requirements} op not found: {e}") from e
-    if result.returncode:
-        raise TrustedBrowserStoreError(
-            f"{requirements} op said: {result.stderr.strip()}"
-        )
-    return result.stdout
-
-
-def parse_onepassword_link(location: str) -> OnePasswordItem | None:
-    """Returns IDs from a private link to a 1Password item, or nothing if it's not one"""
-    url = urlparse(location)
-    if url.scheme != "https" or not url.netloc.endswith("1password.com"):
-        return None
-    params = parse_qs(url.query)
-    try:
-        return OnePasswordItem(
-            account=params["a"][0], vault=params["v"][0], item=params["i"][0]
-        )
-    except KeyError as e:
-        raise ValueError(
-            f"Expected a private link to a 1Password item, with a=, v=, and i= in it, got {location!r}"
-        ) from e
-
-
-def parse_onepassword_password(item_json: str) -> str | None:
-    """Returns the value of the password field of a 1Password item, if any"""
-    for field in json.loads(item_json).get("fields", []):
-        if field.get("purpose") == "PASSWORD" or field.get("id") == "password":
-            return field.get("value") or None
-    return None
 
 
 def read_trusted_browser(path: Path) -> str | None:
