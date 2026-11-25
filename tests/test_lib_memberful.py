@@ -10,7 +10,9 @@ from jg.coop.lib.memberful import (
     parse_export_id,
     parse_one_time_code_email,
     parse_tier_name,
+    read_trusted_browser,
     select_one_time_code,
+    write_trusted_browser,
 )
 
 
@@ -173,3 +175,21 @@ def test_select_one_time_code_compares_timezones():
 
 def test_select_one_time_code_empty():
     assert select_one_time_code([], SENT_AT) is None
+
+
+def test_read_trusted_browser_missing(tmp_path: Path):
+    assert read_trusted_browser(tmp_path / "trusted_browser") is None
+
+
+def test_read_trusted_browser_empty(tmp_path: Path):
+    path = tmp_path / "trusted_browser"
+    path.write_text("\n")
+
+    assert read_trusted_browser(path) is None
+
+
+def test_write_and_read_trusted_browser(tmp_path: Path):
+    path = tmp_path / "nested" / "trusted_browser"
+    write_trusted_browser(path, "abc123")
+
+    assert read_trusted_browser(path) == "abc123"

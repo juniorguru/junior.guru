@@ -29,6 +29,28 @@ commands:
       - run:
           name: Install Python dependencies
           command: uv sync
+  # Memberful replaces its trusted browser cookie on every sign-in and the
+  # previous value stops working, so all builds on all branches share the newest
+  # one through a dedicated cache, saved right after syncing, even on failure.
+  # The key is a checksum of the cookie, so parallel nodes which didn't sign in
+  # produce a key which already exists and CircleCI discards their save. Only
+  # a new cookie creates a new cache, which is then the newest match for the
+  # prefix. See MEMBERFUL_TRUSTED_BROWSER_PATH in src/jg/coop/lib/memberful.py
+  restore-memberful-cookie:
+    steps:
+      - run:
+          name: Prepare Memberful cookie file
+          command: mkdir -p ~/.memberful && touch ~/.memberful/trusted_browser
+      - restore_cache:
+          keys:
+            - memberful-cookie-
+  save-memberful-cookie:
+    steps:
+      - save_cache:
+          key: memberful-cookie-{{ checksum "/home/circleci/.memberful/trusted_browser" }}
+          paths:
+            - ~/.memberful
+          when: always
   enable-github-pushing:
     steps:
       - add_ssh_keys:
@@ -124,10 +146,12 @@ jobs:
       - run:
           name: Cache stats
           command: uv run jg cache tags
+      - restore-memberful-cookie
       - run:
           name: Sync data
           command: |
             uv run jg sync $(if [[ "$CIRCLE_BRANCH" == "main" ]]; then echo "--allow-mutations"; else echo ""; fi) ci
+      - save-memberful-cookie
       - run:
           name: Prepare changed files for persisting
           command: uv run jg data persist $CIRCLE_NODE_INDEX --move

@@ -8,6 +8,7 @@ from collections.abc import Callable, Generator, Iterable
 from dataclasses import dataclass
 from datetime import UTC, date, datetime, timedelta
 from operator import itemgetter
+from pathlib import Path
 from typing import Any
 
 import httpx2
@@ -23,7 +24,7 @@ from tenacity import (
 
 from jg.coop.lib import loggers
 from jg.coop.lib.brand import BOT_USER_AGENT
-from jg.coop.lib.cache import cache, get_cache
+from jg.coop.lib.cache import cache
 from jg.coop.lib.imap import fetch_emails
 from jg.coop.lib.retrying import retry
 
@@ -57,12 +58,13 @@ ONE_TIME_CODE_CLOCK_SKEW = timedelta(seconds=30)
 
 TRUSTED_BROWSER_COOKIE = "staff_trusted_browser"
 
-# The long-lived cookie Memberful sets after a successful one-time code sign-in
-# is kept in the project cache, which CI persists between runs, so that the next
-# runs can skip the one-time code until the cookie expires.
-TRUSTED_BROWSER_CACHE_KEY = "memberful-trusted-browser"
-
-TRUSTED_BROWSER_CACHE_EXPIRE = timedelta(days=30)
+# Memberful replaces the long-lived trusted browser cookie on every sign-in and
+# the previous value stops working, so the latest value must be shared by all
+# builds as soon as possible. It's kept in a file, which CI saves to its own
+# cache right after syncing, see .circleci/config.yml
+MEMBERFUL_TRUSTED_BROWSER_PATH = Path(
+    os.getenv("MEMBERFUL_TRUSTED_BROWSER_PATH") or "~/.memberful/trusted_browser"
+).expanduser()
 
 
 logger = loggers.from_path(__file__)
@@ -175,7 +177,8 @@ class MemberfulCSV:
     ):
         self.email = email or MEMBERFUL_EMAIL
         self.password = password or MEMBERFUL_PASSWORD
-        self.trusted_browser = get_cache().get(TRUSTED_BROWSER_CACHE_KEY)
+        self.trusted_browser_path = MEMBERFUL_TRUSTED_BROWSER_PATH
+        self.trusted_browser = read_trusted_browser(self.trusted_browser_path)
         self.imap_host = imap_host or MEMBERFUL_IMAP_HOST
         self.imap_user = imap_user or MEMBERFUL_IMAP_USER
         self.imap_password = imap_password or MEMBERFUL_IMAP_PASSWORD
@@ -220,13 +223,10 @@ class MemberfulCSV:
     def _store_trusted_browser(self, session: httpx2.Client) -> None:
         value = session.cookies.get(TRUSTED_BROWSER_COOKIE, domain=MEMBERFUL_DOMAIN)
         if value and value != self.trusted_browser:
-            logger.info("Storing a new trusted browser cookie in cache")
-            get_cache().set(
-                TRUSTED_BROWSER_CACHE_KEY,
-                value,
-                expire=TRUSTED_BROWSER_CACHE_EXPIRE.total_seconds(),
-                tag=TRUSTED_BROWSER_CACHE_KEY,
+            logger.info(
+                f"Storing a new trusted browser cookie: {self.trusted_browser_path}"
             )
+            write_trusted_browser(self.trusted_browser_path, value)
             self.trusted_browser = value
 
     def _get_one_time_code(self, since: datetime) -> str:
@@ -318,6 +318,18 @@ class MemberfulCSV:
         response = self.session.get(download_url)
         response.raise_for_status()
         return response.content.decode("utf-8")
+
+
+def read_trusted_browser(path: Path) -> str | None:
+    try:
+        return path.read_text().strip() or None
+    except FileNotFoundError:
+        return None
+
+
+def write_trusted_browser(path: Path, value: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(value)
 
 
 def create_session() -> httpx2.Client:
