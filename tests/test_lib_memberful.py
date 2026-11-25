@@ -6,13 +6,13 @@ import pytest
 from lxml import html
 
 from jg.coop.lib.memberful import (
-    OnePasswordReference,
+    OnePasswordItem,
     from_cents,
     is_one_time_code_url,
     parse_export_id,
     parse_one_time_code_email,
-    parse_onepassword_field,
-    parse_onepassword_reference,
+    parse_onepassword_link,
+    parse_onepassword_password,
     parse_tier_name,
     read_trusted_browser,
     select_one_time_code,
@@ -205,24 +205,18 @@ def test_write_and_read_trusted_browser(tmp_path: Path):
         ("~/.memberful/trusted_browser", None),
         ("/tmp/trusted_browser", None),
         (
-            "op://vault123/item456/password",
-            OnePasswordReference("vault123", "item456", "password"),
+            "https://start.1password.com/open/i?a=ACC123&v=vault123&i=item456&h=example.1password.com",
+            OnePasswordItem(account="ACC123", vault="vault123", item="item456"),
         ),
     ],
 )
-def test_parse_onepassword_reference(
-    location: str, expected: OnePasswordReference | None
-):
-    assert parse_onepassword_reference(location) == expected
+def test_parse_onepassword_link(location: str, expected: OnePasswordItem | None):
+    assert parse_onepassword_link(location) == expected
 
 
-@pytest.mark.parametrize(
-    "location",
-    ["op://vault/item", "op://vault/item/section/field", "op://vault//field"],
-)
-def test_parse_onepassword_reference_invalid(location: str):
+def test_parse_onepassword_link_incomplete():
     with pytest.raises(ValueError):
-        parse_onepassword_reference(location)
+        parse_onepassword_link("https://start.1password.com/open/i?a=ACC123&v=vault123")
 
 
 @pytest.mark.parametrize(
@@ -230,18 +224,17 @@ def test_parse_onepassword_reference_invalid(location: str):
     [
         (
             [
-                {"id": "username", "label": "username", "value": "kure"},
-                {"id": "password", "label": "password", "value": "abc123"},
+                {"id": "username", "purpose": "USERNAME", "value": "kure"},
+                {"id": "password", "purpose": "PASSWORD", "value": "abc123"},
             ],
             "abc123",
         ),
-        ([{"id": "password", "label": "password"}], None),
-        ([{"id": "password", "label": "password", "value": ""}], None),
-        ([{"id": "x1y2", "label": "Password", "value": "abc123"}], "abc123"),
-        ([{"id": "notesPlain", "label": "notesPlain", "value": "x"}], None),
+        ([{"id": "password", "purpose": "PASSWORD"}], None),
+        ([{"id": "password", "purpose": "PASSWORD", "value": ""}], None),
+        ([{"id": "notesPlain", "purpose": "NOTES", "value": "x"}], None),
     ],
 )
-def test_parse_onepassword_field(fields: list[dict], expected: str | None):
+def test_parse_onepassword_password(fields: list[dict], expected: str | None):
     item_json = json.dumps({"id": "item456", "fields": fields})
 
-    assert parse_onepassword_field(item_json, "password") == expected
+    assert parse_onepassword_password(item_json) == expected

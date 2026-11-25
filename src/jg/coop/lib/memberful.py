@@ -11,6 +11,7 @@ from datetime import UTC, date, datetime, timedelta
 from operator import itemgetter
 from pathlib import Path
 from typing import Any
+from urllib.parse import parse_qs, urlparse
 
 import httpx2
 from gql import Client, gql
@@ -67,8 +68,9 @@ TRUSTED_BROWSER_COOKIE = "staff_trusted_browser"
 # exists and CircleCI discards their save. Only a new cookie creates a new
 # cache, which is then the newest match for the key prefix. CI uses the
 # default path, which its cache steps expect. Locally, it can be set to
-# a 1Password secret reference, op://<vault>/<item>/<field>, to keep the
-# cookie in 1Password through the 1Password CLI.
+# a private link to a 1Password item of type Password (Copy Private Link in
+# the 1Password app) to keep the cookie in its password field, read and
+# written through the 1Password CLI (op).
 MEMBERFUL_TRUSTED_BROWSER_PATH = (
     os.getenv("MEMBERFUL_TRUSTED_BROWSER_PATH") or "~/.memberful/trusted_browser"
 )
@@ -329,19 +331,17 @@ class TrustedBrowserStoreError(Exception):
 
 
 @dataclass
-class OnePasswordReference:
+class OnePasswordItem:
+    account: str
     vault: str
     item: str
-    field: str
 
 
 def load_trusted_browser(location: str = MEMBERFUL_TRUSTED_BROWSER_PATH) -> str | None:
-    if reference := parse_onepassword_reference(location):
-        logger.debug(f"Reading the trusted browser cookie from {location}")
-        item_json = run_onepassword(
-            reference, "item", "get", reference.item, "--format", "json"
-        )
-        return parse_onepassword_field(item_json, reference.field)
+    if onepassword_item := parse_onepassword_link(location):
+        logger.debug("Reading the trusted browser cookie from 1Password")
+        item_json = run_onepassword(onepassword_item, "get", "--format", "json")
+        return parse_onepassword_password(item_json)
     path = Path(location).expanduser()
     logger.debug(f"Reading the trusted browser cookie from {path}")
     return read_trusted_browser(path)
@@ -350,26 +350,35 @@ def load_trusted_browser(location: str = MEMBERFUL_TRUSTED_BROWSER_PATH) -> str 
 def store_trusted_browser(
     value: str, location: str = MEMBERFUL_TRUSTED_BROWSER_PATH
 ) -> None:
-    if reference := parse_onepassword_reference(location):
-        logger.debug(f"Writing the trusted browser cookie to {location}")
-        run_onepassword(
-            reference, "item", "edit", reference.item, f"{reference.field}={value}"
-        )
+    if onepassword_item := parse_onepassword_link(location):
+        logger.debug("Writing the trusted browser cookie to 1Password")
+        run_onepassword(onepassword_item, "edit", f"password={value}")
     else:
         path = Path(location).expanduser()
         logger.debug(f"Writing the trusted browser cookie to {path}")
         write_trusted_browser(path, value)
 
 
-def run_onepassword(reference: OnePasswordReference, *args: str) -> str:
+def run_onepassword(onepassword_item: OnePasswordItem, *args: str) -> str:
     requirements = (
-        "MEMBERFUL_TRUSTED_BROWSER_PATH points to 1Password, so the 1Password CLI "
-        "(op) must be installed and signed in, and vault "
-        f"{reference.vault!r} must contain item {reference.item!r} with field "
-        f"{reference.field!r}. The field may be empty, the cookie gets written "
+        "MEMBERFUL_TRUSTED_BROWSER_PATH is a link to a 1Password item, so "
+        "the 1Password CLI (op) must be installed and signed in to account "
+        f"{onepassword_item.account!r}, which must have in vault "
+        f"{onepassword_item.vault!r} an item {onepassword_item.item!r} of type "
+        "Password. Its password field may be empty, the cookie gets written "
         "there after the first sign-in."
     )
-    command = ["op", *args, "--vault", reference.vault]
+    command = [
+        "op",
+        "item",
+        args[0],
+        onepassword_item.item,
+        *args[1:],
+        "--vault",
+        onepassword_item.vault,
+        "--account",
+        onepassword_item.account,
+    ]
     try:
         result = subprocess.run(command, check=False, capture_output=True, text=True)
     except FileNotFoundError as e:
@@ -381,24 +390,27 @@ def run_onepassword(reference: OnePasswordReference, *args: str) -> str:
     return result.stdout
 
 
-def parse_onepassword_reference(location: str) -> OnePasswordReference | None:
-    """Returns parts of a 1Password secret reference, or nothing if it's not one"""
-    if not location.startswith("op://"):
+def parse_onepassword_link(location: str) -> OnePasswordItem | None:
+    """Returns IDs from a private link to a 1Password item, or nothing if it's not one"""
+    url = urlparse(location)
+    if url.scheme != "https" or not url.netloc.endswith("1password.com"):
         return None
-    parts = location.removeprefix("op://").split("/")
-    if len(parts) != 3 or not all(parts):
-        raise ValueError(
-            f"Expected a reference like op://<vault>/<item>/<field>, got {location!r}"
+    params = parse_qs(url.query)
+    try:
+        return OnePasswordItem(
+            account=params["a"][0], vault=params["v"][0], item=params["i"][0]
         )
-    return OnePasswordReference(*parts)
+    except KeyError as e:
+        raise ValueError(
+            f"Expected a private link to a 1Password item, with a=, v=, and i= in it, got {location!r}"
+        ) from e
 
 
-def parse_onepassword_field(item_json: str, field: str) -> str | None:
-    """Returns the value of the given field of a 1Password item, if any"""
-    for item_field in json.loads(item_json).get("fields", []):
-        names = {item_field.get("id", "").lower(), item_field.get("label", "").lower()}
-        if field.lower() in names:
-            return item_field.get("value") or None
+def parse_onepassword_password(item_json: str) -> str | None:
+    """Returns the value of the password field of a 1Password item, if any"""
+    for field in json.loads(item_json).get("fields", []):
+        if field.get("purpose") == "PASSWORD" or field.get("id") == "password":
+            return field.get("value") or None
     return None
 
 
