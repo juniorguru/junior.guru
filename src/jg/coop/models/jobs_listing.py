@@ -1,20 +1,12 @@
-import itertools
 from collections.abc import Iterable, Sequence
-from operator import attrgetter
-from pathlib import Path
-from typing import Protocol
+from typing import Protocol, Self
 
-import yaml
+from peewee import CharField, IntegerField
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
-from slugify import slugify
 
-from jg.coop.lib.location import REGIONS
-from jg.coop.lib.text import get_tag_slug
-from jg.coop.lib.yaml import YAMLConfig
-from jg.coop.models.job import Tag, TagType
+from jg.coop.models.base import BaseModel, JSONField
+from jg.coop.models.job import ListedJob, Tag, TagType
 
-
-JOBS_LISTINGS_YAML_PATH = Path(__file__).parent.parent / "data" / "jobs_listings.yml"
 
 JOBS_DOC_PATH = "jobs.jinja"
 
@@ -36,45 +28,48 @@ FILTERS = [
 ]
 
 
-class Tagged(Protocol):
-    @property
-    def tags(self) -> list[Tag]: ...
-
-
-class JobsListing(YAMLConfig):
+class JobsListingPage(BaseModel):
     """
     Standalone jobs listing page, e.g. /jobs/brno/, /jobs/python/, or /jobs/part-time/
 
     It shows jobs having any of its tags, and its type tells which filter it locks
     """
 
-    model_config = ConfigDict(frozen=True)
-
-    slug: str
-    type: TagType
-    tag_slugs: list[str]
-    name: str
-    heading: str
-    title: str
-    description: str
-    lead: str | None = None
-    fallback_slug: str | None = None
+    position = IntegerField(unique=True)
+    slug = CharField(unique=True)
+    type = CharField()
+    tag_slugs = JSONField()
+    name = CharField()
+    heading = CharField()
+    title = CharField()
+    description = CharField()
+    lead = CharField(null=True)
+    fallback_slug = CharField(null=True)
 
     @property
     def doc_path(self) -> str:
         return get_listing_doc_path(self.slug)
 
+    def list_jobs(self) -> Iterable[ListedJob]:
+        return ListedJob.tagged_listing(self.type, self.tag_slugs)
 
-class RegionListingTemplate(YAMLConfig):
-    heading: str
-    title: str
-    description: str
-    fallback_slug: str | None = None
+    @classmethod
+    def get_by_slug(cls, slug: str) -> Self:
+        return cls.get(cls.slug == slug)
+
+    @classmethod
+    def listing(cls) -> Iterable[Self]:
+        return cls.select().order_by(cls.position)
 
 
-class JobsListingsConfig(YAMLConfig):
-    listings: list[JobsListing]
-    region_listing: RegionListingTemplate
+class Listing(Protocol):
+    slug: str
+    type: str
+    tag_slugs: list[str]
+    name: str
+
+    @property
+    def doc_path(self) -> str: ...
 
 
 class JobsNavLink(PydanticBaseModel):
@@ -111,40 +106,6 @@ class JobsFilter(PydanticBaseModel):
         return [tag.slug for tag in self.tags if not tag.is_fixed]
 
 
-def load_jobs_listings(path: Path = JOBS_LISTINGS_YAML_PATH) -> list[JobsListing]:
-    config = JobsListingsConfig(**yaml.safe_load(path.read_text()))
-    return build_jobs_listings(config, REGIONS)
-
-
-def build_jobs_listings(
-    config: JobsListingsConfig, regions: Iterable[str]
-) -> list[JobsListing]:
-    """
-    Lists all listing pages, grouped by type, with regions after other locations
-    """
-    listings = [
-        *config.listings,
-        *(build_region_listing(config.region_listing, region) for region in regions),
-    ]
-    # The sort is stable, so within a type the order from the YAML is kept,
-    # and generated regions go after the locations from the YAML
-    return sorted(listings, key=lambda listing: LISTING_TYPES.index(listing.type))
-
-
-def build_region_listing(template: RegionListingTemplate, region: str) -> JobsListing:
-    region_nowrap = region.replace(" ", " ")
-    return JobsListing(
-        slug=slugify(region),
-        type=TagType.LOCATION,
-        tag_slugs=[get_tag_slug(region)],
-        name=region,
-        heading=template.heading.format(region=region_nowrap),
-        title=template.title.format(region=region),
-        description=template.description.format(region=region),
-        fallback_slug=template.fallback_slug,
-    )
-
-
 def get_listing_doc_path(slug: str) -> str:
     """
     Path to the source document of a jobs listing page, as used by docs_url
@@ -153,7 +114,7 @@ def get_listing_doc_path(slug: str) -> str:
 
 
 def get_listings_nav(
-    listings: Iterable[JobsListing], current_doc_path: str | None = None
+    listings: Iterable[Listing], current_doc_path: str | None = None
 ) -> list[JobsNavGroup]:
     """
     Groups links to listing pages by type, marking the current page
@@ -162,7 +123,7 @@ def get_listings_nav(
     """
     links_by_type = {type: [] for type in LISTING_TYPES}
     for listing in listings:
-        links_by_type[listing.type].append((listing.name, listing.doc_path))
+        links_by_type[TagType(listing.type)].append((listing.name, listing.doc_path))
     links_by_type[LISTING_TYPES[-1]].insert(0, (ALL_JOBS_NAME, JOBS_DOC_PATH))
     return [
         JobsNavGroup(
@@ -181,7 +142,7 @@ def get_listings_nav(
     ]
 
 
-def get_location_tags(listings: Iterable[JobsListing]) -> list[Tag]:
+def get_location_tags(listings: Iterable[Listing]) -> list[Tag]:
     """
     Lists tags of all location listings, in their order, e.g. #remote, #brno, …
     """
@@ -193,46 +154,10 @@ def get_location_tags(listings: Iterable[JobsListing]) -> list[Tag]:
     ]
 
 
-def group_jobs_by_listing[TaggedT: Tagged](
-    jobs: Iterable[TaggedT], listings: Iterable[JobsListing]
-) -> dict[str, list[TaggedT]]:
-    """
-    Maps each listing slug to the jobs having any of the listing's tags
-    """
-    jobs = list(jobs)
-    return {
-        listing.slug: filter_by_tags(jobs, listing.tag_slugs) for listing in listings
-    }
-
-
-def filter_by_tags[TaggedT: Tagged](
-    jobs: Iterable[TaggedT], tag_slugs: Iterable[str]
-) -> list[TaggedT]:
-    """
-    Lists jobs having any of given tags, keeping their order
-    """
-    tag_slugs = set(tag_slugs)
-    return [job for job in jobs if tag_slugs & {tag.slug for tag in job.tags}]
-
-
-def group_tags_by_type(jobs: Iterable[Tagged]) -> dict[str, list[Tag]]:
-    """
-    Maps each tag type to sorted unique tags of given jobs
-    """
-    tags = sorted(
-        set(itertools.chain.from_iterable(job.tags for job in jobs)),
-        key=attrgetter("type", "slug"),
-    )
-    return {
-        str(type).lower(): list(tags)
-        for type, tags in itertools.groupby(tags, key=attrgetter("type"))
-    }
-
-
 def get_jobs_filters(
     tags_by_type: dict[str, Sequence[Tag]],
     location_tags: Sequence[Tag],
-    listing: JobsListing | None = None,
+    listing: Listing | None = None,
 ) -> dict[str, JobsFilter]:
     """
     Decides which tags to offer in each jobs filter, keyed by tag type
@@ -260,7 +185,7 @@ def get_jobs_filters(
 
 
 def get_listing_filter_tags(
-    listing: JobsListing, tags: Iterable[Tag]
+    listing: Listing, tags: Iterable[Tag]
 ) -> list[JobsFilterTag]:
     if len(listing.tag_slugs) == 1:
         return [
@@ -271,8 +196,3 @@ def get_listing_filter_tags(
         for tag in tags
         if tag.slug in listing.tag_slugs
     ]
-
-
-JOBS_LISTINGS = load_jobs_listings()
-
-JOBS_LISTINGS_BY_SLUG = {listing.slug: listing for listing in JOBS_LISTINGS}

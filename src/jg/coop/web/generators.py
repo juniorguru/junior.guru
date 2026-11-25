@@ -14,7 +14,7 @@ from jg.coop.models.base import db
 from jg.coop.models.course_provider import CourseProvider
 from jg.coop.models.event import Event
 from jg.coop.models.job import ListedJob
-from jg.coop.models.jobs_listing import JOBS_LISTINGS, JobsListing
+from jg.coop.models.jobs_listing import JobsListingPage
 from jg.coop.models.newsletter import NewsletterIssue
 from jg.coop.models.podcast import PodcastEpisode
 
@@ -70,11 +70,12 @@ def generate_redirects() -> Generator[GeneratedDocument]:
         )
 
 
+@db.connection_context()
 def generate_jobs_listing_pages() -> Generator[GeneratedDocument]:
     jobs_file = Path("src/jg/coop/web/docs/jobs.jinja")
     jobs_text = jobs_file.read_text(encoding="utf-8-sig", errors="strict")
     content, meta = parse_document(jobs_text)
-    for listing in JOBS_LISTINGS:
+    for listing in JobsListingPage.listing():
         yield GeneratedDocument(
             path=listing.doc_path,
             meta=build_listing_meta(meta, listing),
@@ -83,7 +84,7 @@ def generate_jobs_listing_pages() -> Generator[GeneratedDocument]:
 
 
 def build_listing_meta(
-    base_meta: dict[str, Any], listing: JobsListing
+    base_meta: dict[str, Any], listing: JobsListingPage
 ) -> dict[str, Any]:
     """
     Page metadata for a jobs listing page, based on the main jobs page metadata

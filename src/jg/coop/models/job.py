@@ -1,9 +1,11 @@
+import itertools
 import json
 import textwrap
 from collections import Counter
 from collections.abc import Iterable
 from datetime import date, datetime, time, timedelta
 from enum import StrEnum, auto
+from operator import attrgetter
 from typing import Self
 from urllib.parse import quote_plus
 
@@ -50,6 +52,17 @@ class Tag(PydanticBaseModel):
     @property
     def name(self) -> str:
         return f"#{self.slug}"
+
+
+def group_tags_by_type(tags: Iterable[Tag]) -> dict[str, list[Tag]]:
+    """
+    Maps each tag type to given tags of that type, keeping their order
+    """
+    tags = sorted(tags, key=attrgetter("type"))
+    return {
+        str(type): list(tags)
+        for type, tags in itertools.groupby(tags, key=attrgetter("type"))
+    }
 
 
 class SubmittedJob(BaseModel):
@@ -395,6 +408,26 @@ class ListedJob(BaseModel):
             raise ValueError(f"Could not determine canonical ID: {url}")
 
     @classmethod
+    def tagged_listing(cls, tag_type: str, tag_slugs: Iterable[str]) -> Iterable[Self]:
+        tagged_jobs = JobTag.select(JobTag.job).where(
+            JobTag.type == str(tag_type), JobTag.slug.in_(list(tag_slugs))
+        )
+        return cls.listing().where(cls.id.in_(tagged_jobs))
+
+    @classmethod
+    def tags_by_type(cls, jobs: Iterable[Self] | None = None) -> dict[str, list[Tag]]:
+        query = (
+            JobTag.select(JobTag.type, JobTag.slug)
+            .distinct()
+            .order_by(JobTag.type, JobTag.slug)
+        )
+        if jobs is not None:
+            query = query.where(JobTag.job.in_(jobs.select(cls.id)))
+        return group_tags_by_type(
+            Tag(slug=job_tag.slug, type=job_tag.type) for job_tag in query
+        )
+
+    @classmethod
     def api_listing(cls) -> Iterable[Self]:
         return cls.select().order_by(cls.posted_on.desc())
 
@@ -431,6 +464,19 @@ class ListedJob(BaseModel):
             },
             description_html=self.description_html,
         )
+
+
+class JobTag(BaseModel):
+    """
+    Tag of a listed job, stored so that jobs can be filtered by tags in SQL
+    """
+
+    job = ForeignKeyField(ListedJob, backref="list_tags", on_delete="CASCADE")
+    type = CharField()
+    slug = CharField()
+
+    class Meta:
+        indexes = ((("job", "type", "slug"), True), (("type", "slug"), False))
 
 
 class DiscordJob(BaseModel):

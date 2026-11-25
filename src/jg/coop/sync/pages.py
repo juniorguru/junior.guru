@@ -21,6 +21,7 @@ GENERATORS_DEPENDENCIES = [  # see generators.py
     "course-providers",
     "events",
     "jobs-listing",
+    "jobs-listing-pages",
     "newsletter-archive",
     "podcast",
 ]
