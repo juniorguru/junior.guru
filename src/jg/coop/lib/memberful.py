@@ -58,10 +58,13 @@ ONE_TIME_CODE_CLOCK_SKEW = timedelta(seconds=30)
 
 TRUSTED_BROWSER_COOKIE = "staff_trusted_browser"
 
-# Memberful replaces the long-lived trusted browser cookie on every sign-in and
-# the previous value stops working, so the latest value must be shared by all
-# builds as soon as possible. It's kept in a file, which CI saves to its own
-# cache right after syncing, see .circleci/config.yml
+# Memberful replaces its long-lived trusted browser cookie on every sign-in and
+# the previous value stops working, so all CI builds on all branches share the
+# newest one through a dedicated cache, saved right after syncing, even on
+# failure (see .circleci/config.yml). The cache key is a checksum of the cookie
+# file, so parallel nodes which didn't sign in produce a key which already
+# exists and CircleCI discards their save. Only a new cookie creates a new
+# cache, which is then the newest match for the key prefix.
 MEMBERFUL_TRUSTED_BROWSER_PATH = Path(
     os.getenv("MEMBERFUL_TRUSTED_BROWSER_PATH") or "~/.memberful/trusted_browser"
 ).expanduser()
