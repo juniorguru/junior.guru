@@ -65,9 +65,7 @@ TRUSTED_BROWSER_COOKIE = "staff_trusted_browser"
 # file, so parallel nodes which didn't sign in produce a key which already
 # exists and CircleCI discards their save. Only a new cookie creates a new
 # cache, which is then the newest match for the key prefix.
-MEMBERFUL_TRUSTED_BROWSER_PATH = Path(
-    os.getenv("MEMBERFUL_TRUSTED_BROWSER_PATH") or "~/.memberful/trusted_browser"
-).expanduser()
+MEMBERFUL_TRUSTED_BROWSER_PATH = Path("~/.memberful/trusted_browser").expanduser()
 
 
 logger = loggers.from_path(__file__)
