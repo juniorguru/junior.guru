@@ -4,6 +4,7 @@ from jg.coop.lib import loggers, months
 from jg.coop.lib.discord_club import (
     CLUB_EVENTS_CHANNEL_URL,
     CLUB_GUILD_ID,
+    CLUB_JOBS_CHANNEL_URL,
     ClubChannelID,
     ClubMemberID,
 )
@@ -18,12 +19,16 @@ from jg.coop.models.exchange_rate import ExchangeRate
 from jg.coop.models.external_story import ExternalStory
 from jg.coop.models.followers import Followers
 from jg.coop.models.job import (
-    JOBS_OTHER_LINKS,
-    PARTTIME_TAG_SLUGS,
-    REGION_LISTINGS,
-    TECH_LISTINGS,
+    REMOTE_TAG_SLUG,
     DiscordJob,
     ListedJob,
+    TagType,
+)
+from jg.coop.models.jobs_listing import (
+    JobsListingPage,
+    get_jobs_filters,
+    get_listings_nav,
+    get_location_tags,
 )
 from jg.coop.models.newsletter import NewsletterIssue
 from jg.coop.models.page import Page
@@ -176,21 +181,29 @@ def on_docs_context(context):
 
 
 def get_jobs_context() -> dict:
+    listings = list(JobsListingPage.listing())
+    location_tags = get_location_tags(listings)
     return {
         "jobs": ListedJob.listing(),
         "jobs_discord": DiscordJob.listing(),
-        "jobs_remote": ListedJob.remote_listing(),
-        "jobs_internship": ListedJob.internship_listing(),
-        "jobs_volunteering": ListedJob.volunteering_listing(),
-        "jobs_parttime": ListedJob.parttime_listing(),
-        "jobs_parttime_tag_slugs": PARTTIME_TAG_SLUGS,
-        "jobs_tags": ListedJob.tags_by_type(),
-        "jobs_region_tags": ListedJob.region_tags(),
-        "jobs_tech_listings": TECH_LISTINGS,
-        "jobs_by_tech_listing": {
-            tech_listing.slug: ListedJob.tags_listing(tech_listing.tag_slugs)
-            for tech_listing in TECH_LISTINGS
+        "jobs_remote": ListedJob.tagged_listing(TagType.LOCATION, [REMOTE_TAG_SLUG]),
+        "jobs_internship": ListedJob.tagged_listing(TagType.EMPLOYMENT, ["internship"]),
+        "jobs_volunteering": ListedJob.tagged_listing(
+            TagType.EMPLOYMENT, ["volunteering"]
+        ),
+        "jobs_filters": get_jobs_filters(ListedJob.tags_by_type(), location_tags),
+        "jobs_listings": {listing.slug: listing for listing in listings},
+        "jobs_by_listing": {
+            listing.slug: list(listing.list_jobs()) for listing in listings
         },
+        "jobs_filters_by_listing": {
+            listing.slug: get_jobs_filters(
+                ListedJob.tags_by_type(listing.list_jobs()), location_tags, listing
+            )
+            for listing in listings
+        },
+        "jobs_remote_tag_slug": REMOTE_TAG_SLUG,
+        "club_jobs_channel_url": CLUB_JOBS_CHANNEL_URL,
     }
 
 
@@ -208,6 +221,7 @@ def on_docs_page_context(context, page, config, files):
         ("course_provider_slug", CourseProvider.get_by_slug, "course_provider"),
         ("event_id", Event.get_by_id, "event"),
         ("job_id", ListedJob.get_by_submitted_id, "job"),
+        ("jobs_listing_slug", JobsListingPage.get_by_slug, "jobs_listing"),
         ("newsletter_issue_id", NewsletterIssue.get_by_id, "newsletter_issue"),
         ("podcast_episode_number", PodcastEpisode.get_by_number, "podcast_episode"),
         ("topic_mention_id", TopicMention.get_by_id, "topic_mention"),
@@ -230,13 +244,16 @@ def on_theme_context(context):
     context["sponsors"] = Sponsor.listing()
 
     # main_jobs.html
-    context["jobs_region_listings"] = REGION_LISTINGS
-    context["jobs_tech_listings"] = TECH_LISTINGS
-    context["jobs_other_links"] = JOBS_OTHER_LINKS
+    context["jobs_listing_pages"] = list(JobsListingPage.listing())
 
 
 @db.connection_context()
 def on_theme_page_context(context, page, config, files):
+    # main_jobs.html
+    context["jobs_listings_nav"] = get_listings_nav(
+        context["jobs_listing_pages"], page.file.src_uri
+    )
+
     try:
         current_page = Page.get_by_src_uri(page.file.src_uri)
     except Page.DoesNotExist:

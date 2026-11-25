@@ -10,7 +10,6 @@ and serves it to Playwright as if it was https://junior.guru/<path>.
 import os
 import subprocess
 from collections.abc import Callable, Generator
-from itertools import chain
 from pathlib import Path
 from types import SimpleNamespace
 from typing import Any
@@ -28,15 +27,13 @@ from playwright.sync_api import (
     expect,
     sync_playwright,
 )
+from web.helpers import create_listing_pages
 
 from jg.coop.lib import template_filters
 from jg.coop.lib.mkdocs_jinja import TEMPLATE_GLOBALS, get_filters
+from jg.coop.models.jobs_listing import JobsListingPage
 from jg.coop.web.context import get_candidates_context, get_jobs_context
-from jg.coop.web.generators import (
-    generate_employment_type_jobs_pages,
-    generate_region_jobs_pages,
-    generate_tech_jobs_pages,
-)
+from jg.coop.web.generators import build_listing_meta
 
 from testing_utils import prepare_test_db
 
@@ -194,29 +191,23 @@ def jobs_page(test_db: SqliteDatabase, serve: Callable[[str], None]) -> Callable
     """
     Renders jobs.jinja from whatever jobs are in the test database
 
-    For listing pages, such as /jobs/brno/, /jobs/part-time/, or /jobs/python/, it takes page metadata
-    from the same generator which creates those pages for the real website.
+    It also creates the listing pages, such as /jobs/brno/, /jobs/part-time/, or /jobs/python/,
+    from the real YAML, and renders them as the real website does.
     """
 
+    create_listing_pages()
+
     def jobs_page(url: str = "/jobs/") -> None:
+        context = get_jobs_context()
         page_meta = None
         if url != "/jobs/":
-            page_meta = get_listing_jobs_page_meta(url)
-        serve(render("jobs.jinja", get_jobs_context(), url, page_meta))
+            # Mimics the generator and on_docs_page_context of the real website
+            listing = JobsListingPage.get_by_slug(url.strip("/").removeprefix("jobs/"))
+            page_meta = build_listing_meta({}, listing)
+            context["jobs_listing"] = listing
+        serve(render("jobs.jinja", context, url, page_meta))
 
     return jobs_page
-
-
-def get_listing_jobs_page_meta(url: str) -> dict[str, Any]:
-    path = url.strip("/") + ".jinja"
-    for document in chain(
-        generate_region_jobs_pages(),
-        generate_employment_type_jobs_pages(),
-        generate_tech_jobs_pages(),
-    ):
-        if document.path == path:
-            return document.meta
-    raise ValueError(f"No jobs listing page for {url}")
 
 
 @pytest.fixture

@@ -1,0 +1,88 @@
+# Standalone jobs listing pages, such as /jobs/python/ or /jobs/part-time/
+#
+# Titles and headings use words people actually search for. Each listing shows
+# jobs having any of its tags. Its type decides where it's listed in the
+# navigation and which jobs filter it locks.
+#
+# Region listings, such as /jobs/brno/, are generated from the regions in
+# lib/location.py, using region_listing as a template. In its texts, {region}
+# gets replaced by the region name.
+
+listings:
+  - slug: remote
+    type: location
+    tag_slugs: [remote]
+    name: Na dálku
+    heading: Práce na dálku pro juniory
+    title: "Remote práce v IT pro juniory: na dálku, z domova"
+    description: Pracovní příležitosti pro začátečníky v IT, které jsou na dálku, z domova, remote. Procházej nabídky práce, stáže a brigády zaměřené výhradně na juniory bez komerční praxe.
+
+  - slug: tester
+    type: technology
+    tag_slugs: [testing]
+    name: Tester
+    heading: "Práce pro juniory: tester"
+    title: "Junior tester bez praxe: práce v testování, QA, manuální i automatizované testy"
+    description: Nabídky práce pro začínající testery a testerky. Manuální i automatizované testování, QA, stáže a junior pozice.
+    lead: &default_lead Nabídky práce v programování, testování a datové analytice. Pro juniory, kterých se týká rekvalifikace do IT, i pro absolventy s VŠ.
+
+  - slug: python
+    type: technology
+    tag_slugs: [python]
+    name: Python
+    heading: "Práce pro juniory: Python"
+    title: "Junior Python developer: práce v Pythonu pro začátečníky bez praxe"
+    description: Nabídky práce v Pythonu pro začátečníky. Junior pozice, stáže a brigády pro ty, kdo s Pythonem teprve začínají.
+    lead: *default_lead
+
+  - slug: java
+    type: technology
+    tag_slugs: [java]
+    name: Java
+    heading: "Práce pro juniory: Java"
+    title: "Junior Java developer: práce v Javě pro začátečníky bez praxe"
+    description: Nabídky práce v Javě pro začátečníky. Junior pozice, stáže a brigády pro ty, kdo s Javou teprve začínají.
+    lead: *default_lead
+
+  - slug: javascript
+    type: technology
+    tag_slugs: [javascript, typescript]
+    name: JavaScript
+    heading: "Práce pro juniory: JavaScript"
+    title: "Junior JavaScript developer: práce v JavaScriptu pro začátečníky bez praxe"
+    description: Nabídky práce v JavaScriptu a TypeScriptu pro začátečníky. Junior pozice, stáže a brigády na frontendu i backendu.
+    lead: *default_lead
+
+  - slug: csharp
+    type: technology
+    tag_slugs: [csharp]
+    name: "C# a .NET"
+    heading: "Práce pro juniory: C# a .NET"
+    title: "Junior C# a .NET developer: práce v C# pro začátečníky bez praxe"
+    description: "Nabídky práce v C# a .NET pro začátečníky. Junior pozice, stáže a brigády pro ty, kdo s .NET teprve začínají."
+    lead: *default_lead
+
+  - slug: ai
+    type: technology
+    # The 'ai' tag is noisy, it gets applied to any job ad mentioning AI
+    tag_slugs: [agenticengineering, buildingai, vibecoding]
+    name: AI
+    heading: Práce s AI pro juniory
+    title: "Práce s AI pro juniory: AI vývojář, AI engineer, vibe coding"
+    description: Nabídky práce s AI pro začátečníky. Vývoj aplikací s AI, agentní programování a vibe coding na junior pozicích.
+    lead: *default_lead
+
+  - slug: part-time
+    type: employment
+    tag_slugs: [internship, parttime, volunteering]
+    name: Brigády a stáže
+    heading: Brigády, stáže a dobrovolnictví v IT
+    title: "IT brigády, stáže a dobrovolnictví nejen pro studenty: programátor, tester a další"
+    description: IT brigády nejen pro studenty, stáže, částečné úvazky i dobrovolnictví. Pro začátečníky, kteří chtějí práci v IT při škole, na mateřské či rodičovské, nebo vedle jiné práce.
+    lead: Chceš začít v IT při škole, na mateřské či rodičovské, vedle jiné práce, nebo prostě jen sbíráš první praxi? Tady máš brigády, stáže, částečné úvazky a dobrovolnictví. Ať už se tě týká rekvalifikace, nebo studuješ VŠ.
+
+region_listing:
+  heading: "Práce pro juniory: {region}"
+  title: "Práce v IT, {region}, bez praxe: junior programátor, tester a další"
+  description: Jaké nabízí {region} příležitosti pro začátečníky v IT? Procházej nabídky práce, stáže a brigády zaměřené výhradně na juniory bez komerční praxe.
+  fallback_slug: remote

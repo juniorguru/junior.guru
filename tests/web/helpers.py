@@ -9,14 +9,20 @@ from playwright.sync_api import Page, expect
 from jg.coop.lib.location import REGIONS
 from jg.coop.models.candidate import Candidate, CandidateProject
 from jg.coop.models.club import ClubUser
-from jg.coop.models.job import DiscordJob, ListedJob, SubmittedJob
+from jg.coop.models.job import DiscordJob, JobTag, ListedJob, SubmittedJob
+from jg.coop.models.jobs_listing import JobsListingPage
+from jg.coop.sync.jobs_listing_pages import build_listings, load_config
+from jg.coop.sync.jobs_tags import get_tag_rows
 
 
 def create_job(regions: list[str] | None = None, **kwargs) -> ListedJob:
+    """
+    Creates a listed job together with its tags, as the jobs-tags sync does
+    """
     title = kwargs.pop("title", "Junior Developer")
     if regions:
         kwargs["locations"] = [create_location(region) for region in regions]
-    return ListedJob.create(
+    job = ListedJob.create(
         **{
             "title": title,
             "posted_on": date(2026, 1, 1),
@@ -30,6 +36,20 @@ def create_job(regions: list[str] | None = None, **kwargs) -> ListedJob:
             **kwargs,
         }
     )
+    if rows := get_tag_rows(job.id, job.tags):
+        JobTag.insert_many(rows).execute()
+    return job
+
+
+def create_listing_pages() -> list[JobsListingPage]:
+    """
+    Creates jobs listing pages from the real YAML, as the jobs-listing-pages sync does
+    """
+    listings = build_listings(load_config(), REGIONS)
+    return [
+        JobsListingPage.create(position=position, **listing.model_dump())
+        for position, listing in enumerate(listings, start=1)
+    ]
 
 
 def hide_subscribe_box(page: Page) -> None:
