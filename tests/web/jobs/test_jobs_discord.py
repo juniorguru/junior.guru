@@ -3,7 +3,7 @@ from datetime import date
 
 import pytest
 from playwright.sync_api import Page, expect
-from web.helpers import create_discord_job, create_job
+from web.helpers import create_discord_job, create_job, create_submitted_job
 
 
 def test_jobs_page_has_no_separate_discord_jobs_section(page: Page, jobs_page):
@@ -15,22 +15,44 @@ def test_jobs_page_has_no_separate_discord_jobs_section(page: Page, jobs_page):
     expect(page.locator("#club")).to_have_count(0)
 
 
-def test_discord_jobs_are_placed_between_regular_jobs(page: Page, jobs_page):
+def test_discord_jobs_follow_highlighted_jobs(page: Page, jobs_page):
     for number in range(1, 6):
         create_job(title=f"Regular {number}", posted_on=date(2026, 1, 10 - number))
+    create_submitted_job(title="Highlighted")
     create_discord_job(title="Discord Developer")
     jobs_page()
     page.goto("/jobs/")
 
     titles = page.locator(".jobs-item .jobs-title-link").all_inner_texts()
     assert [title.strip() for title in titles] == [
+        "Highlighted",
+        "Discord Developer",
         "Regular 1",
         "Regular 2",
         "Regular 3",
-        "Discord Developer",
         "Regular 4",
         "Regular 5",
     ]
+
+
+def test_discord_jobs_are_highlighted(page: Page, jobs_page):
+    create_job(title="Python Developer")
+    create_discord_job(title="Discord Developer")
+    jobs_page()
+    page.goto("/jobs/")
+
+    expect(page.locator(".jobs-item.manual")).to_have_class(
+        re.compile(r"\bhighlighted\b")
+    )
+
+
+def test_club_box_follows_fourth_regular_job(page: Page, jobs_page):
+    for number in range(1, 6):
+        create_job(title=f"Regular {number}", posted_on=date(2026, 1, 10 - number))
+    jobs_page()
+    page.goto("/jobs/")
+
+    expect(page.locator(".jobs-item.club + .jobs-item")).to_contain_text("Regular 5")
 
 
 def test_club_box_is_present_without_discord_jobs(page: Page, jobs_page):
