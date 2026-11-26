@@ -753,3 +753,83 @@
   </div>
 </li>
 {% endmacro %}
+
+
+{% macro manual_job_card(job, manual_jobs_count) %}
+<li class="jobs-item openable manual" data-openable>
+  <div class="jobs-item-container">
+    <div class="jobs-logo">
+      {{ img('static/logos-jobs/unknown.webp', 'Bez loga', 100, 100, class="jobs-image") }}
+    </div>
+    <div class="jobs-body">
+      <h3 class="jobs-title">
+        <a class="jobs-title-link"
+          data-openable-action="open"
+          data-openable-visible="closed"
+          href="{{ job.url }}" rel="nofollow noopener" target="_blank"
+        >
+          {{ job.title }}
+        </a>
+        <span class="jobs-title-text" data-openable-visible="open" hidden>{{ job.title }}</span>
+        <span class="jobs-open" data-openable-visible="closed">{{ "arrow-down-square"|icon }}</span>
+        <button class="jobs-close" data-openable-action="close" data-openable-visible="open" hidden>{{ "x-lg"|icon }}</button>
+      </h3>
+      <p class="jobs-info">
+        <span class="jobs-info-item">
+          Děkujeme <strong>{{ job.author.initials }}</strong> za sdílení!
+        </span>
+        {% if job.upvotes_count %}
+          <span class="jobs-info-item">
+            {{ "hand-thumbs-up"|icon }} {{ job.upvotes_count }}
+          </span>
+        {% endif %}
+        {% if job.comments_count %}
+          <span class="jobs-info-item">
+            {{ "chat"|icon }} {{ job.comments_count }}
+          </span>
+        {% endif %}
+      </p>
+      <div class="jobs-description" data-openable-visible="open" hidden>
+        {{ job.description_discord|discord_md }}
+      </div>
+    </div>
+  </div>
+  <div class="jobs-club" data-openable-visible="open" hidden>
+    <p class="jobs-club-text">
+      Když někdo narazí na zajímavou nabídku práce, nebo dokonce sám hledá nové kolegy,
+      může to na našem Discordu sdílet s ostatními.
+      Aktuálně tam máme
+      {{ manual_jobs_count }} {{ manual_jobs_count|nplurals("takový inzerát", "takové inzeráty", "takových inzerátů") }}.
+    </p>
+    {{ club_teaser(
+      "Nakoukni do klubu",
+      utm_params={
+        "utm_source": "jobs-manual",
+        "utm_medium": "web",
+        "utm_campaign": "jaro",
+      },
+    ) }}
+  </div>
+</li>
+{% endmacro %}
+
+
+{% macro jobs_club_box() %}
+<li class="jobs-item club">
+  <div class="jobs-club">
+    <p class="jobs-club-heading">S hledáním práce ti pomůže komunita</p>
+    <p class="jobs-club-text">
+      V klubu na Discordu si junioři sdílí tipy na inzeráty, radí si s CV a pohovory
+      a mají se koho zeptat, když se zaseknou.
+    </p>
+    {{ club_teaser(
+      "Nakoukni do klubu",
+      utm_params={
+        "utm_source": "jobs-box",
+        "utm_medium": "web",
+        "utm_campaign": "jaro",
+      },
+    ) }}
+  </div>
+</li>
+{% endmacro %}

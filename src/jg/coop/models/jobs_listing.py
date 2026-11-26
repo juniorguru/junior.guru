@@ -1,5 +1,7 @@
 from collections.abc import Iterable, Sequence
-from typing import Protocol, Self
+from dataclasses import dataclass
+from itertools import chain
+from typing import Any, Literal, Protocol, Self
 
 from peewee import CharField, IntegerField
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
@@ -26,6 +28,11 @@ FILTERS = [
     (TagType.TECHNOLOGY, "Nářadí", "tools", "Procházej všechny technologie"),
     (TagType.SOURCE, "Zdroj", "box-arrow-down", None),
 ]
+
+
+JOBS_SLOTS_LEAD_SIZE = 1
+
+JOBS_SLOTS_GAP_SIZE = 2
 
 
 class JobsListingPage(BaseModel):
@@ -196,3 +203,47 @@ def get_listing_filter_tags(
         for tag in tags
         if tag.slug in listing.tag_slugs
     ]
+
+
+@dataclass(frozen=True)
+class JobsSlot:
+    type: Literal["job", "manual_job", "club"]
+    job: Any = None
+
+
+class HighlightableJob(Protocol):
+    is_highlighted: bool
+
+
+def get_jobs_slots(
+    jobs: Iterable[HighlightableJob], manual_jobs: Iterable[Any]
+) -> list[JobsSlot]:
+    """
+    Decides the order of items in a jobs listing
+
+    Highlighted jobs go first, then regular jobs. After the first regular job
+    and every two more of them comes a slot. Slots take manual jobs, and once
+    those run out, a single club call to action. Whatever doesn't fit into
+    slots goes at the end, so the club call to action is always present.
+    """
+    jobs = list(jobs)
+    fillers = chain(
+        (JobsSlot(type="manual_job", job=job) for job in manual_jobs),
+        [JobsSlot(type="club")],
+    )
+    slots = [JobsSlot(type="job", job=job) for job in jobs if job.is_highlighted]
+    regular_jobs = [job for job in jobs if not job.is_highlighted]
+    for index, job in enumerate(regular_jobs, start=1):
+        slots.append(JobsSlot(type="job", job=job))
+        if is_slot_position(index) and (filler := next(fillers, None)):
+            slots.append(filler)
+    slots.extend(fillers)
+    return slots
+
+
+def is_slot_position(regular_jobs_count: int) -> bool:
+    lead_size = JOBS_SLOTS_LEAD_SIZE + JOBS_SLOTS_GAP_SIZE
+    return (
+        regular_jobs_count >= lead_size
+        and (regular_jobs_count - lead_size) % JOBS_SLOTS_GAP_SIZE == 0
+    )

@@ -4,12 +4,14 @@ description: Procházej nabídky práce, stáže a brigády zaměřené výhrad
 template: main_jobs.html
 ---
 
-{% from 'macros.html' import img, lead, note, club_teaser, jobs_filters_form, job_card with context %}
+{% from 'macros.html' import lead, note, jobs_filters_form, job_card, manual_job_card, jobs_club_box with context %}
 
 {% if jobs_listing %}
   {% set jobs = jobs_by_listing[jobs_listing.slug] %}
+  {% set slots = jobs_slots_by_listing[jobs_listing.slug] %}
   {% set filters = jobs_filters_by_listing[jobs_listing.slug] %}
 {% else %}
+  {% set slots = jobs_slots %}
   {% set filters = jobs_filters %}
 {% endif %}
 
@@ -55,9 +57,6 @@ template: main_jobs.html
 
 <div class="jobs">
   <ul class="jobs-list">
-    {% for job in jobs %}
-      {{ job_card(job) }}
-    {% endfor %}
     {% if jobs_listing %}
       {% set fallback = jobs_listings[jobs_listing.fallback_slug] if jobs_listing.fallback_slug else none %}
       <li class="jobs-empty-listing"{% if jobs %} hidden{% endif %}>
@@ -65,6 +64,9 @@ template: main_jobs.html
           {{ 'search'|icon }}
           Zrovna tu nejsou žádné vhodné inzeráty.
           Nové přibývají každý den, tak se sem brzy vrať.
+          {%- if jobs_discord %}
+            Ručně přidané nabídky z klubu níže se ukazují na všech stránkách s inzeráty.
+          {%- endif %}
           Mezitím můžeš zkusit:
           {% if fallback -%}
             <a href="{{ pages|docs_url(fallback.doc_path)|url }}">{{ fallback.name }}</a>
@@ -79,61 +81,23 @@ template: main_jobs.html
         {{ 'search'|icon }}
         Tvým filtrům neodpovídají žádné inzeráty.
         {{- ' ' -}}
+        {%- if jobs_discord -%}
+          Ručně přidané nabídky z klubu níže se nefiltrují.
+          {{- ' ' -}}
+        {%- endif -%}
         {%- if jobs_remote_tag_slug in filters.location.selectable_slugs -%}
           Pokud hledáš podle místa, zkus přidat <span class="jobs-tag active">#{{ jobs_remote_tag_slug }}</span>.
         {%- endif -%}
       {%- endcall %}
     </li>
+    {% for slot in slots %}
+      {% if slot.type == 'job' %}
+        {{ job_card(slot.job) }}
+      {% elif slot.type == 'manual_job' %}
+        {{ manual_job_card(slot.job, jobs_discord|length) }}
+      {% elif slot.type == 'club' %}
+        {{ jobs_club_box() }}
+      {% endif %}
+    {% endfor %}
   </ul>
-
-  {% if jobs_discord %}
-    <h2 id="club" class="standout-top">Ručně přidané inzeráty</h2>
-    <p>
-      Když někdo narazí na zajímavou nabídku práce, nebo dokonce sám hledá nové kolegy,
-      může to na našem Discordu sdílet s ostatními.
-      Aktuálně tam máme
-      {{ jobs_discord|length }} {{ jobs_discord|length|nplurals("takový inzerát", "takové inzeráty", "takových inzerátů") }}.
-    </p>
-    <ul class="jobs-list">
-      {% for job in jobs_discord %}
-        <li class="jobs-item">
-          <div class="jobs-item-container">
-            <div class="jobs-logo">
-              {{ img('static/logos-jobs/unknown.webp', 'Bez loga', 100, 100, class="jobs-image") }}
-            </div>
-            <div class="jobs-body">
-              <h3 class="jobs-title">
-                <a class="jobs-title-link" href="{{ job.url }}" rel="nofollow noopener" target="_blank">
-                  {{ job.title }}
-                </a>
-              </h3>
-              <p class="jobs-info">
-                <span class="jobs-info-item">
-                  Děkujeme <strong>{{ job.author.initials }}</strong> za sdílení!
-                </span>
-                {% if job.upvotes_count %}
-                  <span class="jobs-info-item">
-                    {{ "hand-thumbs-up"|icon }} {{ job.upvotes_count }}
-                  </span>
-                {% endif %}
-                {% if job.comments_count %}
-                  <span class="jobs-info-item">
-                    {{ "chat"|icon }} {{ job.comments_count }}
-                  </span>
-                {% endif %}
-              </p>
-            </div>
-          </div>
-        </li>
-      {% endfor %}
-    </ul>
-    {{ club_teaser(
-      "Nakoukni do klubu",
-      utm_params={
-        "utm_source": "jobs-teaser",
-        "utm_medium": "web",
-        "utm_campaign": "jaro",
-      },
-    ) }}
-  {% endif %}
 </div>

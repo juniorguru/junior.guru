@@ -27,6 +27,7 @@ from jg.coop.models.job import (
 from jg.coop.models.jobs_listing import (
     JobsListingPage,
     get_jobs_filters,
+    get_jobs_slots,
     get_listings_nav,
     get_location_tags,
 )
@@ -183,9 +184,11 @@ def on_docs_context(context):
 def get_jobs_context() -> dict:
     listings = list(JobsListingPage.listing())
     location_tags = get_location_tags(listings)
+    jobs_discord = list(DiscordJob.listing())
     return {
         "jobs": ListedJob.listing(),
-        "jobs_discord": DiscordJob.listing(),
+        "jobs_slots": get_jobs_slots(ListedJob.listing(), jobs_discord),
+        "jobs_discord": jobs_discord,
         "jobs_remote": ListedJob.tagged_listing(TagType.LOCATION, [REMOTE_TAG_SLUG]),
         "jobs_internship": ListedJob.tagged_listing(TagType.EMPLOYMENT, ["internship"]),
         "jobs_volunteering": ListedJob.tagged_listing(
@@ -195,6 +198,10 @@ def get_jobs_context() -> dict:
         "jobs_listings": {listing.slug: listing for listing in listings},
         "jobs_by_listing": {
             listing.slug: list(listing.list_jobs()) for listing in listings
+        },
+        "jobs_slots_by_listing": {
+            listing.slug: get_jobs_slots(listing.list_jobs(), jobs_discord)
+            for listing in listings
         },
         "jobs_filters_by_listing": {
             listing.slug: get_jobs_filters(

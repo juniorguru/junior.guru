@@ -17,6 +17,7 @@ from slugify import slugify
 
 from jg.coop.lib import json_ld as json_ld_
 from jg.coop.lib.brand import SITE_URL
+from jg.coop.lib.discord_markdown import discord_markdown_to_html
 from jg.coop.lib.md import md as md_
 from jg.coop.lib.utm_params import strip_utm_params
 
@@ -35,6 +36,10 @@ def json_ld(data: dict) -> Markup:
 
 def md(*args, **kwargs):
     return Markup(md_(*args, **kwargs))
+
+
+def discord_md(text: str) -> Markup:
+    return Markup(discord_markdown_to_html(text))
 
 
 def remove_p(html):

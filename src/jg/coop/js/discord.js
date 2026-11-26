@@ -1,6 +1,8 @@
 function setupDiscordLinks() {
+  // Links opening an openable item, e.g. a manual job, only fall back
+  // to Discord when JavaScript doesn't work, so they don't need the dialog
   const discordLinks = document.querySelectorAll(
-    'a[href*="discord.com"][href*="769966886598737931"]',
+    'a[href*="discord.com"][href*="769966886598737931"]:not([data-openable-action])',
   );
   const dialog = document.querySelector(".discord-dialog");
   if (!discordLinks.length || !dialog) return;

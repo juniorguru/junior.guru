@@ -98,8 +98,8 @@ def test_discord_jobs_are_not_filtered(page: Page, jobs_page):
     page.locator(".jobs-filters [data-jobs-tag='python']").click()
 
     expect(page.locator(".jobs-item.tagged:visible")).to_have_count(1)
-    expect(page.locator(".jobs-item:not(.tagged)")).to_be_visible()
-    expect(page.locator(".jobs-item:not(.tagged)")).to_contain_text("Discord Developer")
+    expect(page.locator(".jobs-item.manual")).to_be_visible()
+    expect(page.locator(".jobs-item.manual")).to_contain_text("Discord Developer")
 
 
 def test_tags_match_only_within_their_type(page: Page, jobs_page):
