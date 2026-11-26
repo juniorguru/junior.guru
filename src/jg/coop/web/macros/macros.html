@@ -514,6 +514,13 @@
 {% endmacro %}
 
 
+{% macro discord_dialog_utm(source, content=none) -%}
+  {%- set utm_params = {"utm_source": source, "utm_medium": "web", "utm_campaign": "jaro"} -%}
+  {%- if content %}{% set utm_params = dict(utm_params, utm_content=content) %}{% endif -%}
+  data-discord-dialog-utm="{{ utm_params|urlencode }}"
+{%- endmacro %}
+
+
 {% macro discord_dialog() %}
 <dialog class="discord-dialog">
   <div class="discord-dialog-content">
@@ -732,7 +739,7 @@
           {% endif %}
           <a
             href="{{ job.discord_url }}"
-            data-discord-dialog-utm="utm_source=jobs-discuss&amp;utm_medium=web&amp;utm_campaign=jaro"
+            {{ discord_dialog_utm("jobs-discuss") }}
             class="jobs-action-button club"
             rel="nofollow noopener"
             target="_blank"
