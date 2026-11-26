@@ -210,3 +210,16 @@ def test_subscribe_button_passes_utm_params_to_dialog(page: Page, jobs_page):
         "data-discord-dialog-utm",
         "utm_source=jobs-subscribe&utm_medium=web&utm_campaign=jaro",
     )
+
+
+def test_discussion_button_passes_utm_params_to_dialog(page: Page, jobs_page):
+    create_job(
+        title="Discussed Developer", discord_url="https://discord.com/channels/1/2/3"
+    )
+    jobs_page()
+    page.goto("/jobs/")
+
+    expect(page.locator(".jobs-action-button.club")).to_have_attribute(
+        "data-discord-dialog-utm",
+        "utm_source=jobs-discuss&utm_medium=web&utm_campaign=jaro",
+    )
