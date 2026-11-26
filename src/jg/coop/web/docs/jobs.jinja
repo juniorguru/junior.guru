@@ -78,10 +78,6 @@ template: main_jobs.html
         {{ 'search'|icon }}
         Tvým filtrům neodpovídají žádné inzeráty.
         {{- ' ' -}}
-        {%- if jobs_discord -%}
-          Ručně přidané nabídky z klubu níže se nefiltrují.
-          {{- ' ' -}}
-        {%- endif -%}
         {%- if jobs_remote_tag_slug in filters.location.selectable_slugs -%}
           Pokud hledáš podle místa, zkus přidat <span class="jobs-tag active">#{{ jobs_remote_tag_slug }}</span>.
         {%- endif -%}
