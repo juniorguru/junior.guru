@@ -73,6 +73,9 @@ API_TIMEZONE = ZoneInfo("Europe/Prague")
 # Maximum the API allows, a month has a few hundred distinct paths at most
 PAGES_LIMIT = 1000
 
+# Maximum the API returns for events=*, the site sends just a few events
+EVENTS_LIMIT = 1000
+
 # Simple Analytics can take several seconds to generate the stats
 TIMEOUT = 60
 
@@ -88,24 +91,31 @@ logger = loggers.from_path(__file__)
 )
 @db.connection_context()
 def main(data_dir: Path):
-    data_dir.mkdir(parents=True, exist_ok=True)
+    events_dir = data_dir / "events"
+    events_dir.mkdir(parents=True, exist_ok=True)
     months = get_months(date.today(), MONTHS_RANGE)
-    existing_months = {
-        date.fromisoformat(f"{path.stem}-01") for path in data_dir.glob("*.jsonl")
-    }
-    for month in get_months_to_sync(months, existing_months):
+
+    for month in get_months_to_sync(months, get_existing_months(data_dir)):
         logger.info(f"Fetching pageviews for {month:%Y-%m}")
         data = fetch_pages(month, charts.next_month(month))
         pages = parse_pages(data, month, charts.next_month(month))
         path = data_dir / f"{month:%Y-%m}.jsonl"
-        path.write_text(serialize_pages(pages))
+        path.write_text(serialize_rows(pages, "page"))
         logger.info(f"Saved {len(pages)} pages to {path}")
+
+    for month in get_months_to_sync(months, get_existing_months(events_dir)):
+        logger.info(f"Fetching events for {month:%Y-%m}")
+        data = fetch_events(month, charts.next_month(month))
+        events = parse_events(data, month, charts.next_month(month))
+        path = events_dir / f"{month:%Y-%m}.jsonl"
+        path.write_text(serialize_rows(events, "name"))
+        logger.info(f"Saved {len(events)} events to {path}")
 
     WebUsage.drop_table()
     WebUsage.create_table()
     for month in months:
         path = data_dir / f"{month:%Y-%m}.jsonl"
-        pages = deserialize_pages(path.read_text())
+        pages = deserialize_rows(path.read_text())
         for slug, pageviews in aggregate_products(pages, PRODUCTS).items():
             logger.info(f"Product {slug!r} got {pageviews} pageviews on {month:%Y-%m}")
             WebUsage.create(
@@ -115,18 +125,29 @@ def main(data_dir: Path):
             )
 
 
-@retry(retry=retry_if_exception_type(httpx2.HTTPError))
+def get_existing_months(data_dir: Path) -> set[date]:
+    return {date.fromisoformat(f"{path.stem}-01") for path in data_dir.glob("*.jsonl")}
+
+
 def fetch_pages(start: date, end: date) -> dict[str, Any]:
+    return fetch_stats({"fields": "pageviews,pages", "limit": PAGES_LIMIT}, start, end)
+
+
+def fetch_events(start: date, end: date) -> dict[str, Any]:
+    return fetch_stats({"fields": "pageviews", "events": "*"}, start, end)
+
+
+@retry(retry=retry_if_exception_type(httpx2.HTTPError))
+def fetch_stats(params: dict[str, Any], start: date, end: date) -> dict[str, Any]:
     response = httpx2.get(
         API_URL,
         params={
             "version": API_VERSION,
             "info": "false",
-            "fields": "pageviews,pages",
-            "limit": PAGES_LIMIT,
             "start": start.isoformat(),
             "end": end.isoformat(),
-        },
+        }
+        | params,
         follow_redirects=True,
         timeout=TIMEOUT,
     )
@@ -158,12 +179,7 @@ def parse_pages(data: dict[str, Any], start: date, end: date) -> list[dict[str, 
 
     The end date is exclusive, which is how the Simple Analytics API treats it.
     """
-    if not data.get("ok"):
-        raise ValueError(f"Unexpected API response: {data!r}")
-    if (actual_range := parse_range(data)) != (expected_range := (start, end)):
-        raise ValueError(
-            f"API returned range {actual_range}, expected {expected_range}"
-        )
+    check_response(data, start, end)
     if len(data["pages"]) >= PAGES_LIMIT:
         raise ValueError(f"API returned {PAGES_LIMIT} pages, the list may be truncated")
     pages = [
@@ -175,6 +191,33 @@ def parse_pages(data: dict[str, Any], start: date, end: date) -> list[dict[str, 
             f"Pages sum up to {pages_total} pageviews, but the total is {data['pageviews']}"
         )
     return pages
+
+
+def parse_events(data: dict[str, Any], start: date, end: date) -> list[dict[str, Any]]:
+    """
+    Turns the API response into a list of custom events with their counts
+    and checks the list is complete
+
+    The end date is exclusive, which is how the Simple Analytics API treats it.
+    """
+    check_response(data, start, end)
+    if len(data["events"]) >= EVENTS_LIMIT:
+        raise ValueError(
+            f"API returned {EVENTS_LIMIT} events, the list may be truncated"
+        )
+    return [
+        {"name": event["name"], "total": event["total"]} for event in data["events"]
+    ]
+
+
+def check_response(data: dict[str, Any], start: date, end: date) -> None:
+    """Raises if the API response isn't successful or covers a different range"""
+    if not data.get("ok"):
+        raise ValueError(f"Unexpected API response: {data!r}")
+    if (actual_range := parse_range(data)) != (expected_range := (start, end)):
+        raise ValueError(
+            f"API returned range {actual_range}, expected {expected_range}"
+        )
 
 
 def parse_range(data: dict[str, Any]) -> tuple[date, date]:
@@ -208,12 +251,12 @@ def aggregate_products(
     }
 
 
-def serialize_pages(pages: list[dict[str, Any]]) -> str:
+def serialize_rows(rows: list[dict[str, Any]], sort_key: str) -> str:
     return "".join(
-        f"{json.dumps(page, ensure_ascii=False)}\n"
-        for page in sorted(pages, key=itemgetter("page"))
+        f"{json.dumps(row, ensure_ascii=False)}\n"
+        for row in sorted(rows, key=itemgetter(sort_key))
     )
 
 
-def deserialize_pages(text: str) -> list[dict[str, Any]]:
+def deserialize_rows(text: str) -> list[dict[str, Any]]:
     return [json.loads(line) for line in text.splitlines() if line.strip()]

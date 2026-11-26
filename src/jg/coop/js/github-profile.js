@@ -11,7 +11,11 @@ function setupGitHubProfileForm() {
       new FormData(form),
       username,
     );
-    window.sa_event?.("github_profile_check");
+    for (const eventName of getGitHubProfileEventNames(
+      form.dataset.placement,
+    )) {
+      window.sa_event?.(eventName);
+    }
     window.open(url, "_blank", "noopener");
     input.value = `@${username}`;
   });
@@ -23,6 +27,21 @@ export function getGitHubProfileUsername(inputValue) {
     return match[1];
   }
   return inputValue.trim().replace(/^@/, "");
+}
+
+/**
+ * Returns names of the Simple Analytics events to fire on submit
+ *
+ * The generic event keeps the history of all checks continuous, the other
+ * one tells the placements apart, as event names work better than metadata
+ * in Simple Analytics.
+ */
+export function getGitHubProfileEventNames(placement) {
+  const eventNames = ["github_profile_check"];
+  if (placement) {
+    eventNames.push(`github_profile_check_${placement}`);
+  }
+  return eventNames;
 }
 
 /**

@@ -3,14 +3,17 @@ from datetime import date
 import pytest
 
 from jg.coop.sync.web_usage import (
+    EVENTS_LIMIT,
     PAGES_LIMIT,
     aggregate_products,
-    deserialize_pages,
+    check_response,
+    deserialize_rows,
     get_months,
     get_months_to_sync,
+    parse_events,
     parse_pages,
     parse_range,
-    serialize_pages,
+    serialize_rows,
 )
 
 
@@ -24,6 +27,10 @@ def create_response(**kwargs) -> dict:
         "pages": [
             {"value": "/jobs", "pageviews": 7, "visitors": 3},
             {"value": "/", "pageviews": 3, "visitors": 2},
+        ],
+        "events": [
+            {"name": "github_profile_check", "total": 15},
+            {"name": "github_profile_check_jobs", "total": 4},
         ],
     } | kwargs
 
@@ -108,18 +115,26 @@ def test_parse_pages():
     ]
 
 
-def test_parse_pages_not_ok():
+def test_check_response():
+    data = create_response()
+
+    assert check_response(data, date(2026, 10, 1), date(2026, 11, 1)) is None
+
+
+@pytest.mark.parametrize("parse", [parse_pages, parse_events])
+def test_parse_not_ok(parse):
     data = create_response(ok=False)
 
     with pytest.raises(ValueError, match="Unexpected"):
-        parse_pages(data, date(2026, 10, 1), date(2026, 11, 1))
+        parse(data, date(2026, 10, 1), date(2026, 11, 1))
 
 
-def test_parse_pages_unexpected_range():
+@pytest.mark.parametrize("parse", [parse_pages, parse_events])
+def test_parse_unexpected_range(parse):
     data = create_response(end="2026-10-30T22:59:59.999Z")
 
     with pytest.raises(ValueError, match="range"):
-        parse_pages(data, date(2026, 10, 1), date(2026, 11, 1))
+        parse(data, date(2026, 10, 1), date(2026, 11, 1))
 
 
 def test_parse_pages_truncated():
@@ -135,6 +150,29 @@ def test_parse_pages_sum_mismatch():
 
     with pytest.raises(ValueError, match="sum up"):
         parse_pages(data, date(2026, 10, 1), date(2026, 11, 1))
+
+
+def test_parse_events():
+    data = create_response()
+
+    assert parse_events(data, date(2026, 10, 1), date(2026, 11, 1)) == [
+        {"name": "github_profile_check", "total": 15},
+        {"name": "github_profile_check_jobs", "total": 4},
+    ]
+
+
+def test_parse_events_empty():
+    data = create_response(events=[])
+
+    assert parse_events(data, date(2026, 10, 1), date(2026, 11, 1)) == []
+
+
+def test_parse_events_truncated():
+    events = [{"name": f"event_{i}", "total": 1} for i in range(EVENTS_LIMIT)]
+    data = create_response(events=events)
+
+    with pytest.raises(ValueError, match="truncated"):
+        parse_events(data, date(2026, 10, 1), date(2026, 11, 1))
 
 
 @pytest.mark.parametrize(
@@ -180,31 +218,47 @@ def test_aggregate_products_counts_page_once_per_product():
     assert aggregate_products(pages, {"jobs": ["/jobs/", "/jobs/*"]}) == {"jobs": 3}
 
 
-def test_serialize_pages():
+def test_serialize_rows():
     pages = [
         {"page": "/jobs", "pageviews": 7},
         {"page": "/", "pageviews": 3},
     ]
 
-    assert serialize_pages(pages) == (
+    assert serialize_rows(pages, "page") == (
         '{"page": "/", "pageviews": 3}\n{"page": "/jobs", "pageviews": 7}\n'
     )
 
 
-def test_serialize_pages_keeps_unicode():
+def test_serialize_rows_sorts_by_given_key():
+    events = [
+        {"name": "github_profile_check_jobs", "total": 4},
+        {"name": "github_profile_check", "total": 15},
+    ]
+
+    assert serialize_rows(events, "name") == (
+        '{"name": "github_profile_check", "total": 15}\n'
+        '{"name": "github_profile_check_jobs", "total": 4}\n'
+    )
+
+
+def test_serialize_rows_keeps_unicode():
     pages = [{"page": "/čau", "pageviews": 1}]
 
-    assert serialize_pages(pages) == '{"page": "/čau", "pageviews": 1}\n'
+    assert serialize_rows(pages, "page") == '{"page": "/čau", "pageviews": 1}\n'
 
 
-def test_deserialize_pages_roundtrip():
+def test_serialize_rows_empty():
+    assert serialize_rows([], "name") == ""
+
+
+def test_deserialize_rows_roundtrip():
     pages = [
         {"page": "/", "pageviews": 3},
         {"page": "/jobs", "pageviews": 7},
     ]
 
-    assert deserialize_pages(serialize_pages(pages)) == pages
+    assert deserialize_rows(serialize_rows(pages, "page")) == pages
 
 
-def test_deserialize_pages_empty():
-    assert deserialize_pages("") == []
+def test_deserialize_rows_empty():
+    assert deserialize_rows("") == []
