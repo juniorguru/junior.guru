@@ -78,9 +78,7 @@ def test_discord_job_counts_discord_jobs(page: Page, jobs_page, count: int, text
 
 def test_clicking_discord_job_opens_it(page: Page, jobs_page):
     create_job(title="Python Developer")
-    create_discord_job(
-        title="Discord Developer", description_discord="Hledáme **juniora**"
-    )
+    create_discord_job(title="Discord Developer")
     jobs_page()
     page.goto("/jobs/")
 
@@ -88,7 +86,7 @@ def test_clicking_discord_job_opens_it(page: Page, jobs_page):
     job.locator(".jobs-title-link").click()
 
     expect(job).to_have_class(re.compile(r"\bopen\b"))
-    expect(job.locator(".jobs-description strong")).to_have_text("juniora")
+    expect(job.locator(".jobs-club")).to_be_visible()
     expect(job.locator(".club-teaser-button")).to_have_attribute(
         "href", re.compile(r"utm_source=jobs-manual")
     )
@@ -103,7 +101,6 @@ def test_discord_job_is_closed_by_default(page: Page, jobs_page):
     page.goto("/jobs/")
 
     job = page.locator(".jobs-item.manual")
-    expect(job.locator(".jobs-description")).to_be_hidden()
     expect(job.locator(".jobs-club")).to_be_hidden()
 
 

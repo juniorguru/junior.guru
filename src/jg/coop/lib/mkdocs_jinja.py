@@ -16,7 +16,6 @@ TEMPLATE_FILTERS = [
     "absolute_url",
     "assert_empty",
     "bio_link",
-    "discord_md",
     "docs_url",
     "duration",
     "github_url",

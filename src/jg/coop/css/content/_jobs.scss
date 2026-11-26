@@ -322,21 +322,6 @@
   @extend .btn-primary;
 }
 
-.jobs-description > * {
-  margin-bottom: map.get($spacers, 2);
-}
-
-.jobs-description > :last-child {
-  margin-bottom: 0;
-}
-
-.jobs-description h4,
-.jobs-description h5,
-.jobs-description h6 {
-  font-size: $font-size-base;
-  font-weight: $font-weight-bold;
-}
-
 .jobs-item.club {
   background-color: $jg-white;
   border-color: $border-color;
