@@ -6,10 +6,10 @@ from playwright.sync_api import Page, expect
 from web.conftest import render_string
 
 
-def serve_form(serve: Callable[[str], None], args: str = "") -> None:
+def serve_form(serve: Callable[[str], None], placement: str = "handbook") -> None:
     source = (
         "{% from 'macros.html' import github_profile_form with context %}"
-        f"{{{{ github_profile_form({args}) }}}}"
+        f"{{{{ github_profile_form({placement!r}) }}}}"
     )
     serve(render_string(source, {}, "/"))
 
@@ -34,7 +34,7 @@ def test_opens_issue_with_username(page: Page, github_profile_page):
         "template": ["check.md"],
         "title": ["Zpětná vazba na profil @honzajavorek"],
         "body": [
-            ("Kuřátko, mrkni prosím na @honzajavorek, díky!\n\n<!-- src: handbook -->")
+            "Kuřátko, mrkni prosím na @honzajavorek, díky!\n\n<!-- src: handbook -->"
         ],
     }
 
@@ -59,10 +59,11 @@ def test_submitting_twice_doesnt_accumulate_username(page: Page, github_profile_
     assert parse_qs(url.query)["title"] == ["Zpětná vazba na profil @honzajavorek"]
 
 
-def test_homepage_form_marks_placement(page: Page, serve: Callable[[str], None]):
-    serve_form(serve, "homepage=True")
+@pytest.mark.parametrize("placement", ["homepage", "jobs", "handbook"])
+def test_marks_placement(page: Page, serve: Callable[[str], None], placement: str):
+    serve_form(serve, placement)
     page.add_init_script("window.open = (...args) => { window.opened = args; };")
     submit(page, "honzajavorek")
     url = urlparse(page.evaluate("window.opened[0]"))
 
-    assert parse_qs(url.query)["body"][0].endswith("<!-- src: homepage -->")
+    assert parse_qs(url.query)["body"][0].endswith(f"<!-- src: {placement} -->")

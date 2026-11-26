@@ -310,12 +310,12 @@
 {% endmacro %}
 
 
-{% macro github_profile_form(homepage=False) %}
+{% macro github_profile_form(placement) %}
 <form id="github-profile-form" action="https://github.com/juniorguru/eggtray/issues/new" target="_blank">
-  <fieldset class="github-profile{% if homepage %} homepage{% endif %}">
+  <fieldset class="github-profile {{ placement }}">
     <legend class="github-profile-title">
       {{ "check-circle-fill"|icon }}
-      {% if homepage %}
+      {% if placement == "homepage" %}
         <h4>Můžeš si už hledat práci? Otestuj si GitHub profil</h4>
         {{ img('static/chick-icon.svg', '', 207, 165, class='github-profile-chick', lazy=False) }}
       {% else %}
@@ -333,8 +333,7 @@
     </p>
     <input type="hidden" name="template" value="check.md">
     <input type="hidden" name="title" value="Zpětná vazba na profil">
-    {#- The placement marker tells eggtray where the check started -#}
-    {% set placement = "homepage" if homepage else "handbook" %}
+    {#- The src marker tells eggtray where the check started -#}
     <input type="hidden" name="body" value="Kuřátko, mrkni prosím na @, díky!&#10;&#10;&lt;!-- src: {{ placement }} --&gt;">
   </fieldset>
 </form>
