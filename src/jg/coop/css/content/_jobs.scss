@@ -322,6 +322,38 @@
   @extend .btn-primary;
 }
 
+.jobs-item.club {
+  background-color: $jg-white;
+  border-color: $border-color;
+}
+
+.jobs-club {
+  padding: $spacer;
+  text-align: center;
+  background: $jg-white;
+  border-radius: 0 0 $border-radius $border-radius;
+}
+
+.jobs-item.club .jobs-club {
+  border-radius: $border-radius;
+}
+
+.jobs-club-heading {
+  @extend .fs-5;
+  margin-bottom: map.get($spacers, 2);
+  font-weight: $font-weight-bold;
+  color: $jg-dark;
+}
+
+.jobs-club-text {
+  margin-bottom: $spacer;
+}
+
+.jobs-club .club-teaser {
+  padding: 0;
+  background: none;
+}
+
 .jobs-empty .note,
 .jobs-empty-listing .note {
   background-color: $jg-blue-light;

@@ -7,7 +7,9 @@ from jg.coop.models.base import SqliteDatabase
 from jg.coop.models.job import JobTag, ListedJob, Tag, TagType
 from jg.coop.models.jobs_listing import (
     JobsListingPage,
+    JobsSlot,
     get_jobs_filters,
+    get_jobs_slots,
     get_listings_nav,
     get_location_tags,
 )
@@ -205,3 +207,70 @@ def test_get_jobs_filters_browse_all_link_for_listing_type():
     filters = get_jobs_filters(TAGS_BY_TYPE, LOCATION_TAGS, listing)
 
     assert [type for type, f in filters.items() if f.browse_all_text] == ["technology"]
+
+
+def create_job(name: str, is_highlighted: bool = False) -> SimpleNamespace:
+    return SimpleNamespace(name=name, is_highlighted=is_highlighted)
+
+
+def format_slots(slots: list[JobsSlot]) -> list[str]:
+    return [f"{slot.type}:{slot.job.name}" if slot.job else slot.type for slot in slots]
+
+
+@pytest.mark.parametrize(
+    "jobs_count, manual_jobs_count, expected",
+    [
+        pytest.param(0, 0, ["club"], id="nothing"),
+        pytest.param(
+            0,
+            2,
+            ["manual_job:m1", "manual_job:m2", "club"],
+            id="only manual",
+        ),
+        pytest.param(1, 0, ["job:r1", "club"], id="one regular"),
+        pytest.param(
+            4,
+            0,
+            ["job:r1", "job:r2", "job:r3", "job:r4", "club"],
+            id="exactly enough regular",
+        ),
+        pytest.param(
+            6,
+            0,
+            ["job:r1", "job:r2", "job:r3", "job:r4", "club", "job:r5", "job:r6"],
+            id="only regular",
+        ),
+        pytest.param(
+            6,
+            2,
+            [
+                *["manual_job:m1", "manual_job:m2"],
+                *["job:r1", "job:r2", "job:r3", "job:r4", "club"],
+                *["job:r5", "job:r6"],
+            ],
+            id="regular and manual",
+        ),
+    ],
+)
+def test_get_jobs_slots(jobs_count: int, manual_jobs_count: int, expected: list[str]):
+    slots = get_jobs_slots(
+        [create_job(f"r{number}") for number in range(1, jobs_count + 1)],
+        [create_job(f"m{number}") for number in range(1, manual_jobs_count + 1)],
+    )
+
+    assert format_slots(slots) == expected
+
+
+def test_get_jobs_slots_highlighted_first():
+    jobs = [
+        create_job("r1"),
+        create_job("h1", is_highlighted=True),
+        create_job("r2"),
+        create_job("h2", is_highlighted=True),
+    ]
+    slots = get_jobs_slots(jobs, [create_job("m1")])
+
+    assert format_slots(slots) == [
+        *["job:h1", "job:h2", "manual_job:m1"],
+        *["job:r1", "job:r2", "club"],
+    ]

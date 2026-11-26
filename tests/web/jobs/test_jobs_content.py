@@ -176,3 +176,50 @@ def test_logos_exist(page: Page, jobs_page):
     for url in urls:
         path = IMAGES_DIR / url.removeprefix("https://junior.guru/static/")
         assert path.is_file(), f"{url} doesn't exist"
+
+
+def test_add_job_note_links_to_club_and_jobs_channel(page: Page, jobs_page):
+    jobs_page()
+    page.goto("/jobs/")
+
+    note = page.locator(".note", has_text="Chceš přidat inzerát?")
+    expect(note.get_by_role("link", name="účet v klubu")).to_have_attribute(
+        "href", "/club/?utm_source=jobs-recruiters&utm_medium=web&utm_campaign=jaro"
+    )
+    expect(note.get_by_role("link", name="#práce-inzeráty")).to_have_attribute(
+        "href", "https://discord.com/channels/769966886598737931/1080052057752477716"
+    )
+
+
+def test_add_job_note_jobs_channel_passes_utm_params_to_dialog(page: Page, jobs_page):
+    jobs_page()
+    page.goto("/jobs/")
+
+    note = page.locator(".note", has_text="Chceš přidat inzerát?")
+    expect(note.get_by_role("link", name="#práce-inzeráty")).to_have_attribute(
+        "data-discord-dialog-utm",
+        "utm_source=jobs-recruiters&utm_medium=web&utm_campaign=jaro",
+    )
+
+
+def test_subscribe_button_passes_utm_params_to_dialog(page: Page, jobs_page):
+    jobs_page()
+    page.goto("/jobs/")
+
+    expect(page.locator(".jobs-subscribe-button")).to_have_attribute(
+        "data-discord-dialog-utm",
+        "utm_source=jobs-subscribe&utm_medium=web&utm_campaign=jaro",
+    )
+
+
+def test_discussion_button_passes_utm_params_to_dialog(page: Page, jobs_page):
+    create_job(
+        title="Discussed Developer", discord_url="https://discord.com/channels/1/2/3"
+    )
+    jobs_page()
+    page.goto("/jobs/")
+
+    expect(page.locator(".jobs-action-button.club")).to_have_attribute(
+        "data-discord-dialog-utm",
+        "utm_source=jobs-discuss&utm_medium=web&utm_campaign=jaro",
+    )

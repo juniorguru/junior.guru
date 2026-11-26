@@ -25,8 +25,10 @@ from jg.coop.models.job import (
     TagType,
 )
 from jg.coop.models.jobs_listing import (
+    JOBS_CLUB_POSITION,
     JobsListingPage,
     get_jobs_filters,
+    get_jobs_slots,
     get_listings_nav,
     get_location_tags,
 )
@@ -183,9 +185,14 @@ def on_docs_context(context):
 def get_jobs_context() -> dict:
     listings = list(JobsListingPage.listing())
     location_tags = get_location_tags(listings)
+    jobs = list(ListedJob.listing())
+    # Manual jobs from Discord show on every listing page, whatever its tags
+    jobs_discord = list(DiscordJob.listing())
+    jobs_by_listing = {listing.slug: list(listing.list_jobs()) for listing in listings}
     return {
-        "jobs": ListedJob.listing(),
-        "jobs_discord": DiscordJob.listing(),
+        "jobs": jobs,
+        "jobs_slots": get_jobs_slots(jobs, jobs_discord),
+        "jobs_discord": jobs_discord,
         "jobs_remote": ListedJob.tagged_listing(TagType.LOCATION, [REMOTE_TAG_SLUG]),
         "jobs_internship": ListedJob.tagged_listing(TagType.EMPLOYMENT, ["internship"]),
         "jobs_volunteering": ListedJob.tagged_listing(
@@ -193,8 +200,10 @@ def get_jobs_context() -> dict:
         ),
         "jobs_filters": get_jobs_filters(ListedJob.tags_by_type(), location_tags),
         "jobs_listings": {listing.slug: listing for listing in listings},
-        "jobs_by_listing": {
-            listing.slug: list(listing.list_jobs()) for listing in listings
+        "jobs_by_listing": jobs_by_listing,
+        "jobs_slots_by_listing": {
+            slug: get_jobs_slots(listing_jobs, jobs_discord)
+            for slug, listing_jobs in jobs_by_listing.items()
         },
         "jobs_filters_by_listing": {
             listing.slug: get_jobs_filters(
@@ -203,6 +212,7 @@ def get_jobs_context() -> dict:
             for listing in listings
         },
         "jobs_remote_tag_slug": REMOTE_TAG_SLUG,
+        "jobs_club_position": JOBS_CLUB_POSITION,
         "club_jobs_channel_url": CLUB_JOBS_CHANNEL_URL,
     }
 

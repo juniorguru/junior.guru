@@ -16,8 +16,10 @@
  * The selected tags are kept in the URL, e.g. `?tech=java|python&location=remote`.
  * Disabled buttons are fixed tags, e.g. the region on a region listing page.
  * They're always active and they don't get written to the URL.
+ *
+ * The optional `onRender` callback runs every time the items get filtered.
  */
-export function setupTagFilter(prefix) {
+export function setupTagFilter(prefix, { onRender } = {}) {
   const container = document.querySelector(`.${prefix}-filters`);
   if (!container) return;
 
@@ -79,6 +81,7 @@ export function setupTagFilter(prefix) {
     if (emptyListing) {
       emptyListing.hidden = emptyState !== "listing";
     }
+    onRender?.();
   }
 
   for (const button of buttons) {

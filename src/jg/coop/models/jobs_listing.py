@@ -1,5 +1,6 @@
 from collections.abc import Iterable, Sequence
-from typing import Protocol, Self
+from dataclasses import dataclass
+from typing import Any, Literal, Protocol, Self
 
 from peewee import CharField, IntegerField
 from pydantic import BaseModel as PydanticBaseModel, ConfigDict
@@ -26,6 +27,9 @@ FILTERS = [
     (TagType.TECHNOLOGY, "Nářadí", "tools", "Procházej všechny technologie"),
     (TagType.SOURCE, "Zdroj", "box-arrow-down", None),
 ]
+
+
+JOBS_CLUB_POSITION = 4
 
 
 class JobsListingPage(BaseModel):
@@ -196,3 +200,39 @@ def get_listing_filter_tags(
         for tag in tags
         if tag.slug in listing.tag_slugs
     ]
+
+
+@dataclass(frozen=True)
+class JobsSlot:
+    type: Literal["job", "manual_job", "club"]
+    job: Any = None
+
+
+class HighlightableJob(Protocol):
+    @property
+    def is_highlighted(self) -> bool: ...
+
+
+def get_jobs_slots(
+    jobs: Iterable[HighlightableJob], manual_jobs: Iterable[Any]
+) -> list[JobsSlot]:
+    """
+    Decides the order of items in a jobs listing
+
+    Highlighted jobs go first, then manual jobs, then regular jobs. The club
+    call to action comes after the fourth regular job, or at the end if there
+    are fewer of them, so it's always present. The spot after the second
+    regular job is reserved for a future form box.
+    """
+    jobs = list(jobs)
+    club_slot = JobsSlot(type="club")
+    slots = [JobsSlot(type="job", job=job) for job in jobs if job.is_highlighted]
+    slots.extend(JobsSlot(type="manual_job", job=job) for job in manual_jobs)
+    regular_jobs = [job for job in jobs if not job.is_highlighted]
+    for position, job in enumerate(regular_jobs, start=1):
+        slots.append(JobsSlot(type="job", job=job))
+        if position == JOBS_CLUB_POSITION:
+            slots.append(club_slot)
+    if len(regular_jobs) < JOBS_CLUB_POSITION:
+        slots.append(club_slot)
+    return slots
