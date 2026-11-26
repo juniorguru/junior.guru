@@ -489,13 +489,13 @@
 {% endmacro %}
 
 
-{% macro club_teaser(button_text, extra_text='', utm_params=None, url=None, lazy=False) %}
+{% macro club_teaser(button_text, extra_text='', utm_source=None, utm_content=None, url=None, lazy=False) %}
 <div class="club-teaser">
   {% if url %}
   <a class="club-teaser-button" href="{{ url }}" rel="nofollow noopener" target="_blank"
-    {%- if utm_params %} data-discord-dialog-utm="{{ utm_params|urlencode }}"{% endif %}>
+    {%- if utm_source %} {{ discord_dialog_utm(utm_source, utm_content) }}{% endif %}>
   {% else %}
-  <a class="club-teaser-button" href="{{ pages|docs_url('club.md')|url }}{% if utm_params %}?{{ utm_params|urlencode }}{% endif %}">
+  <a class="club-teaser-button" href="{{ club_url(utm_source, utm_content) }}">
   {% endif %}
     {{ 'discord'|icon }} {{ button_text }}
   </a>
@@ -512,6 +512,12 @@
   </div>
 </div>
 {% endmacro %}
+
+
+{% macro club_url(utm_source=none, utm_content=none) -%}
+  {{ pages|docs_url('club.md')|url }}
+  {%- if utm_source %}?{{ club_utm_params(utm_source, utm_content)|urlencode }}{% endif %}
+{%- endmacro %}
 
 
 {% macro discord_dialog_utm(source, content=none) -%}
@@ -813,7 +819,7 @@
       "Otevřít inzerát v klubu",
       url=job.url,
       lazy=True,
-      utm_params=club_utm_params("jobs-manual"),
+      utm_source="jobs-manual",
     ) }}
   </div>
 </li>
@@ -830,7 +836,7 @@
     </p>
     {{ club_teaser(
       "Nakoukni do klubu",
-      utm_params=club_utm_params("jobs-box"),
+      utm_source="jobs-box",
     ) }}
   </div>
 </li>
