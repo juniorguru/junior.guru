@@ -184,10 +184,12 @@ def on_docs_context(context):
 def get_jobs_context() -> dict:
     listings = list(JobsListingPage.listing())
     location_tags = get_location_tags(listings)
+    jobs = list(ListedJob.listing())
     jobs_discord = list(DiscordJob.listing())
+    jobs_by_listing = {listing.slug: list(listing.list_jobs()) for listing in listings}
     return {
-        "jobs": ListedJob.listing(),
-        "jobs_slots": get_jobs_slots(ListedJob.listing(), jobs_discord),
+        "jobs": jobs,
+        "jobs_slots": get_jobs_slots(jobs, jobs_discord),
         "jobs_discord": jobs_discord,
         "jobs_remote": ListedJob.tagged_listing(TagType.LOCATION, [REMOTE_TAG_SLUG]),
         "jobs_internship": ListedJob.tagged_listing(TagType.EMPLOYMENT, ["internship"]),
@@ -196,12 +198,10 @@ def get_jobs_context() -> dict:
         ),
         "jobs_filters": get_jobs_filters(ListedJob.tags_by_type(), location_tags),
         "jobs_listings": {listing.slug: listing for listing in listings},
-        "jobs_by_listing": {
-            listing.slug: list(listing.list_jobs()) for listing in listings
-        },
+        "jobs_by_listing": jobs_by_listing,
         "jobs_slots_by_listing": {
-            listing.slug: get_jobs_slots(listing.list_jobs(), jobs_discord)
-            for listing in listings
+            slug: get_jobs_slots(listing_jobs, jobs_discord)
+            for slug, listing_jobs in jobs_by_listing.items()
         },
         "jobs_filters_by_listing": {
             listing.slug: get_jobs_filters(

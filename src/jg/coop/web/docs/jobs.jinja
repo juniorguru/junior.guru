@@ -62,7 +62,11 @@ template: main_jobs.html
       <li class="jobs-empty-listing"{% if jobs %} hidden{% endif %}>
         {% call note() -%}
           {{ 'search'|icon }}
-          Zrovna tu nejsou žádné vhodné inzeráty.
+          {% if jobs_discord -%}
+            Zrovna tu nejsou žádné vhodné inzeráty, zbývají jen ty klubové.
+          {%- else -%}
+            Zrovna tu nejsou žádné vhodné inzeráty.
+          {%- endif %}
           Nové přibývají každý den, tak se sem brzy vrať.
           Mezitím můžeš zkusit:
           {% if fallback -%}

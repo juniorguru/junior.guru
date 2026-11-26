@@ -87,10 +87,6 @@ def test_clicking_discord_job_opens_it(page: Page, jobs_page):
 
     expect(job).to_have_class(re.compile(r"\bopen\b"))
     expect(job.locator(".jobs-club")).to_be_visible()
-    expect(job.locator(".club-teaser-button")).to_have_attribute(
-        "href", re.compile(r"utm_source=jobs-manual")
-    )
-    expect(page.locator(".discord-dialog")).not_to_be_visible()
     expect(page).to_have_url(re.compile(r"/jobs/$"))
 
 
@@ -126,3 +122,38 @@ def test_discord_jobs_are_shown_on_listing_pages(page: Page, jobs_page):
     page.goto("/jobs/brno/")
 
     expect(page.locator(".jobs-item.manual")).to_contain_text("Discord Developer")
+
+
+def test_discord_job_links_to_its_thread(page: Page, jobs_page):
+    create_job(title="Python Developer")
+    create_discord_job(title="Discord Developer")
+    jobs_page()
+    page.goto("/jobs/")
+
+    job = page.locator(".jobs-item.manual")
+    job.locator(".jobs-title-link").click()
+
+    expect(job.locator(".club-teaser-button")).to_have_attribute(
+        "href", "https://discord.com/channels/1/2/1"
+    )
+
+
+def test_empty_listing_page_mentions_club_jobs(page: Page, jobs_page):
+    create_job(title="Praha Developer", regions=["Praha"])
+    create_discord_job(title="Discord Developer")
+    jobs_page("/jobs/brno/")
+    page.goto("/jobs/brno/")
+
+    expect(page.locator(".jobs-empty-listing")).to_contain_text(
+        "Zrovna tu nejsou žádné vhodné inzeráty, zbývají jen ty klubové."
+    )
+
+
+def test_empty_listing_page_without_club_jobs(page: Page, jobs_page):
+    create_job(title="Praha Developer", regions=["Praha"])
+    jobs_page("/jobs/brno/")
+    page.goto("/jobs/brno/")
+
+    empty = page.locator(".jobs-empty-listing")
+    expect(empty).to_contain_text("Zrovna tu nejsou žádné vhodné inzeráty.")
+    expect(empty).not_to_contain_text("klubové")

@@ -212,7 +212,8 @@ class JobsSlot:
 
 
 class HighlightableJob(Protocol):
-    is_highlighted: bool
+    @property
+    def is_highlighted(self) -> bool: ...
 
 
 def get_jobs_slots(
@@ -221,10 +222,11 @@ def get_jobs_slots(
     """
     Decides the order of items in a jobs listing
 
-    Highlighted jobs go first, then regular jobs. After the first regular job
+    Highlighted jobs go first, then regular jobs. After the third regular job
     and every two more of them comes a slot. Slots take manual jobs, and once
     those run out, a single club call to action. Whatever doesn't fit into
     slots goes at the end, so the club call to action is always present.
+    The spot after the first regular job is reserved for a future form box.
     """
     jobs = list(jobs)
     fillers = chain(

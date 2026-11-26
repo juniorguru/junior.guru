@@ -489,15 +489,19 @@
 {% endmacro %}
 
 
-{% macro club_teaser(button_text, extra_text='', utm_params=None) %}
+{% macro club_teaser(button_text, extra_text='', utm_params=None, url=None, lazy=False) %}
 <div class="club-teaser">
+  {% if url %}
+  <a class="club-teaser-button" href="{{ url }}" rel="nofollow noopener" target="_blank">
+  {% else %}
   <a class="club-teaser-button" href="{{ pages|docs_url('club.md')|url }}{% if utm_params %}?{{ utm_params|urlencode }}{% endif %}">
+  {% endif %}
     {{ 'discord'|icon }} {{ button_text }}
   </a>
   <div class="club-teaser-members">
     <span class="members" aria-hidden="true">
     {% for member in members|sample(10) %}
-      {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50, lazy=False) }}
+      {{ img('static/' + member.avatar_path, 'Profilovka člena klubu', 50, 50, lazy=lazy) }}
     {% endfor %}
     </span>
     <small class="club-teaser-note">
@@ -798,14 +802,7 @@
       Aktuálně tam máme
       {{ manual_jobs_count }} {{ manual_jobs_count|nplurals("takový inzerát", "takové inzeráty", "takových inzerátů") }}.
     </p>
-    {{ club_teaser(
-      "Nakoukni do klubu",
-      utm_params={
-        "utm_source": "jobs-manual",
-        "utm_medium": "web",
-        "utm_campaign": "jaro",
-      },
-    ) }}
+    {{ club_teaser("Celý inzerát v klubu", url=job.url, lazy=True) }}
   </div>
 </li>
 {% endmacro %}
