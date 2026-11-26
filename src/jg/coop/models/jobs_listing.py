@@ -31,6 +31,8 @@ FILTERS = [
 
 JOBS_CLUB_POSITION = 4
 
+JOBS_FORM_POSITION = 2
+
 
 class JobsListingPage(BaseModel):
     """
@@ -204,7 +206,7 @@ def get_listing_filter_tags(
 
 @dataclass(frozen=True)
 class JobsSlot:
-    type: Literal["job", "manual_job", "club"]
+    type: Literal["job", "manual_job", "form", "club"]
     job: Any = None
 
 
@@ -219,20 +221,22 @@ def get_jobs_slots(
     """
     Decides the order of items in a jobs listing
 
-    Highlighted jobs go first, then manual jobs, then regular jobs. The club
-    call to action comes after the fourth regular job, or at the end if there
-    are fewer of them, so it's always present. The spot after the second
-    regular job is reserved for a future form box.
+    Highlighted jobs go first, then manual jobs, then regular jobs. The GitHub
+    profile check form comes after the second regular job, the club call
+    to action after the fourth one. If there are fewer regular jobs, the boxes
+    go at the end, so they're always present.
     """
     jobs = list(jobs)
-    club_slot = JobsSlot(type="club")
     slots = [JobsSlot(type="job", job=job) for job in jobs if job.is_highlighted]
     slots.extend(JobsSlot(type="manual_job", job=job) for job in manual_jobs)
     regular_jobs = [job for job in jobs if not job.is_highlighted]
+    boxes = {
+        JOBS_FORM_POSITION: JobsSlot(type="form"),
+        JOBS_CLUB_POSITION: JobsSlot(type="club"),
+    }
     for position, job in enumerate(regular_jobs, start=1):
         slots.append(JobsSlot(type="job", job=job))
-        if position == JOBS_CLUB_POSITION:
-            slots.append(club_slot)
-    if len(regular_jobs) < JOBS_CLUB_POSITION:
-        slots.append(club_slot)
+        if box := boxes.pop(position, None):
+            slots.append(box)
+    slots.extend(boxes[position] for position in sorted(boxes))
     return slots

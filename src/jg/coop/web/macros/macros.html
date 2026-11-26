@@ -318,6 +318,9 @@
       {% if placement == "homepage" %}
         <h4>Můžeš si už hledat práci? Otestuj si GitHub profil</h4>
         {{ img('static/chick-icon.svg', '', 207, 165, class='github-profile-chick', lazy=False) }}
+      {% elif placement == "jobs" %}
+        <h4>Než pošleš CV, otestuj si GitHub profil</h4>
+        {{ img('static/chick-icon.svg', '', 207, 165, class='github-profile-chick') }}
       {% else %}
         <h4>Otestuj si GitHub profil</h4>
       {% endif %}
@@ -827,8 +830,15 @@
 {% endmacro %}
 
 
+{% macro jobs_form_box() %}
+<li class="jobs-item jobs-box form" data-jobs-box-position="{{ jobs_form_position }}">
+  {{ github_profile_form("jobs") }}
+</li>
+{% endmacro %}
+
+
 {% macro jobs_club_box() %}
-<li class="jobs-item club" data-jobs-club-position="{{ jobs_club_position }}">
+<li class="jobs-item jobs-box club" data-jobs-box-position="{{ jobs_club_position }}">
   <div class="jobs-club">
     <p class="jobs-club-heading">S hledáním práce ti pomůže komunita</p>
     <p class="jobs-club-text">

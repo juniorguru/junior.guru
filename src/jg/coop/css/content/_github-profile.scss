@@ -88,6 +88,34 @@
   display: block;
 }
 
+// Box in the jobs listing, see .jobs-item.form
+.github-profile.jobs {
+  margin: 0;
+  background: none;
+  border: 0;
+}
+
+.github-profile.jobs .github-profile-title {
+  align-items: center;
+}
+
+.github-profile.jobs .github-profile-title h4 {
+  min-width: 0;
+  margin: 0;
+}
+
+.github-profile.jobs .github-profile-chick {
+  flex-shrink: 0;
+  width: auto;
+  height: 3rem;
+  margin-left: auto;
+  transform: rotate(-1deg);
+
+  @include media-breakpoint-up(sm) {
+    height: 4rem;
+  }
+}
+
 // Side layout: md only (reserve right column for chick across whole form)
 @include media-breakpoint-only(md) {
   .github-profile.homepage {
