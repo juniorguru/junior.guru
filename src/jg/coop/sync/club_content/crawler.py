@@ -86,12 +86,10 @@ async def crawl(client: ClubClient) -> None:
     ]
 
     logger.info("Adding DM channels")
-    dm_tasks = [
-        asyncio.create_task(crawl_dm_channel(queue, member)) for member in members
-    ]
+    dm_task = asyncio.create_task(crawl_dm_channels(queue, members))
 
     # trick to prevent hangs if workers raise, see https://stackoverflow.com/a/60710981/325365
-    queue_completed = asyncio.create_task(queue.join())
+    queue_completed = asyncio.create_task(join_queue_after(dm_task, queue))
     await asyncio.wait([queue_completed, *workers], return_when=asyncio.FIRST_COMPLETED)
 
     # if there's a worker which raised
@@ -101,13 +99,26 @@ async def crawl(client: ClubClient) -> None:
             f"Some workers ({len(workers_done)} of {WORKERS_COUNT}) finished before the queue is done!"
         )
         workers_done[0].result()  # raises
+    queue_completed.result()  # raises if adding DM channels failed
 
     # cancel workers which are still runnning
     for worker in workers:
         worker.cancel()
 
     # return_exceptions=True silently collects CancelledError() exceptions
-    await asyncio.gather(*dm_tasks, *workers, return_exceptions=True)
+    await asyncio.gather(dm_task, *workers, return_exceptions=True)
+
+
+async def join_queue_after(producer: asyncio.Task, queue: asyncio.Queue) -> None:
+    """Wait until the producer stops adding items and the queue is done"""
+    await producer
+    await queue.join()
+
+
+async def crawl_dm_channels(queue: asyncio.Queue, members: list[Member]) -> None:
+    """Add DM channels one by one, as opening them concurrently hits rate limits"""
+    for member in members:
+        await crawl_dm_channel(queue, member)
 
 
 async def crawl_dm_channel(queue: asyncio.Queue, member: Member) -> None:
