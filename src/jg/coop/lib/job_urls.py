@@ -8,6 +8,7 @@ def regex(pattern: str) -> re.Pattern:
 
 
 class Names(StrEnum):
+    GETJOB = "getjob"
     GOVCZ = "govcz"
     JOBSCZ = "jobscz"
     JUNIORGURU = "juniorguru"
@@ -30,6 +31,7 @@ REGEXES = [
     (Names.JOBSCZ, regex(r"\.jobs\.cz/detail-pozice.*[\&\?]id=(?P<id>\d+)")),
     (Names.LINKEDIN, regex(r"\blinkedin\.com/jobs/view/([\w+\-%]+\-)?(?P<id>\d+)")),
     (Names.PROFESIASK, regex(r"\bprofesia\.sk/([^?#]*/)?(?P<id>O\d+)\b")),
+    (Names.GETJOB, regex(r"\bgetjob\.cz/prace/(?P<id>[\w\-]+)")),
 ]
 
 TEMPLATES = {
@@ -39,6 +41,7 @@ TEMPLATES = {
     Names.JOBSCZ: "https://www.jobs.cz/rpd/{id}/",
     Names.LINKEDIN: "https://www.linkedin.com/jobs/view/{id}/",
     Names.PROFESIASK: "https://www.profesia.sk/{id}",
+    Names.GETJOB: "https://getjob.cz/prace/{id}",
 }
 
 ORDERING = list(TEMPLATES.keys())
