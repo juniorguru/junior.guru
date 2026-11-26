@@ -179,3 +179,28 @@ def test_empty_listing_page_without_club_jobs(page: Page, jobs_page):
     empty = page.locator(".jobs-empty-listing")
     expect(empty).to_contain_text("Zrovna tu nejsou žádné vhodné inzeráty.")
     expect(empty).not_to_contain_text("klubové")
+
+
+def test_club_box_follows_fourth_visible_regular_job_when_filtered(
+    page: Page, jobs_page
+):
+    for number in range(1, 11):
+        create_job(
+            title=f"Regular {number}",
+            posted_on=date(2026, 1, 20 - number),
+            tech_tags=["python" if number % 2 else "java"],
+        )
+    jobs_page()
+    page.goto("/jobs/")
+
+    page.locator(".jobs-filters [data-jobs-tag='python']").click()
+
+    items = page.locator(".jobs-item:visible").evaluate_all(
+        """items => items.map(item => item.classList.contains("club")
+            ? "club"
+            : item.querySelector(".jobs-title-link").textContent.trim())"""
+    )
+    assert items == [
+        *["Regular 1", "Regular 3", "Regular 5", "Regular 7"],
+        *["club", "Regular 9"],
+    ]
