@@ -34,10 +34,7 @@ def test_opens_issue_with_username(page: Page, github_profile_page):
         "template": ["check.md"],
         "title": ["Zpětná vazba na profil @honzajavorek"],
         "body": [
-            (
-                "Kuřátko, mrkni prosím na @honzajavorek, díky!\n\n"
-                "<!-- placement: handbook -->"
-            )
+            ("Kuřátko, mrkni prosím na @honzajavorek, díky!\n\n<!-- src: handbook -->")
         ],
     }
 
@@ -68,4 +65,4 @@ def test_homepage_form_marks_placement(page: Page, serve: Callable[[str], None])
     submit(page, "honzajavorek")
     url = urlparse(page.evaluate("window.opened[0]"))
 
-    assert parse_qs(url.query)["body"][0].endswith("<!-- placement: homepage -->")
+    assert parse_qs(url.query)["body"][0].endswith("<!-- src: homepage -->")

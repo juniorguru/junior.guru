@@ -335,7 +335,7 @@
     <input type="hidden" name="title" value="Zpětná vazba na profil">
     {#- The placement marker tells eggtray where the check started -#}
     {% set placement = "homepage" if homepage else "handbook" %}
-    <input type="hidden" name="body" value="Kuřátko, mrkni prosím na @, díky!&#10;&#10;&lt;!-- placement: {{ placement }} --&gt;">
+    <input type="hidden" name="body" value="Kuřátko, mrkni prosím na @, díky!&#10;&#10;&lt;!-- src: {{ placement }} --&gt;">
   </fieldset>
 </form>
 {% endmacro %}
