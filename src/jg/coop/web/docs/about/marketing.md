@@ -272,9 +272,42 @@ Procenta nejsou podíl ze všech příchozích, ale z **{{ charts.total_referrer
 ## Výkonnost kampaní
 
 Odkazy na klub mohou mít v adrese parametr `utm_source`, podle kterého jde poznat, z jaké kampaně člověk přišel, třeba z kontroly GitHubu nebo z nabídek práce.
-Při registraci do klubu si to systém uloží.
-Graf ukazuje, kolik lidí za poslední půlrok jednotlivé kampaně přivedly na zkušební období a kolik z nich už za členství zaplatilo.
-Počítají se jen běžné registrace do klubu, ne sponzoři nebo partneři.
+Při registraci do klubu si to systém uloží.
+Počítají se jen běžné registrace do klubu, ne sponzoři nebo partneři.
+
+První graf ukazuje, kolik lidí jednotlivé kampaně přivedly na zkušební období v každém měsíci.
+Díky tomu jde porovnat, jestli nějaká změna na webu přivedla víc lidí než dřív.
+Odkazy s označením kampaní přibyly na web až v listopadu 2026, proto graf začíná tam.
+
+{% if charts.campaign_trend -%}
+<div class="chart-scroll"><div class="chart-container"><canvas
+    class="chart" width="400" height="230"
+    data-chart-type="bar"
+    data-chart-partial-last
+    data-chart="{{ {
+        'labels': charts.campaign_trend_labels,
+        'datasets': charts.campaign_trend|bar_datasets([
+            '#1755d1', '#02cabb', '#dc3545', '#daa520', '#872ec4',
+            '#00b7eb', '#108a00', '#df4b25', '#083284', '#a9a9a9',
+        ]),
+    }|tojson|forceescape }}"
+    data-chart-options="{{ {
+        'interaction': {'mode': 'index'},
+        'scales': {
+            'x': {'stacked': true},
+            'y': {'stacked': true, 'beginAtZero': true, 'ticks': {'precision': 0}},
+        },
+        'plugins': {'annotation': charts.campaign_trend_annotations},
+    }|tojson|forceescape }}"></canvas></div></div>
+{% else %}
+  {% call note() -%}
+    {{ 'bar-chart'|icon }} Zatím nepřišel do klubu nikdo s označením kampaně.
+  {%- endcall %}
+{% endif %}
+
+Druhý graf ukazuje, kolik lidí za poslední půlrok jednotlivé kampaně přivedly na zkušební období a kolik z nich už za členství zaplatilo.
+U placení se nedá říct, ve kterém měsíci k němu došlo, systém ví jen to, jestli člověk někdy něco zaplatil.
+Proto zůstává jako součet za celé období, ne po měsících.
 {% if charts.campaign_breakdown_count -%}
 Celkem jde o **{{ charts.campaign_breakdown_count }}** lidí.
 

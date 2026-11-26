@@ -474,3 +474,23 @@ def test_bio_link(url: str, expected_icon: str, expected_text: str):
 )
 def test_duration(value: timedelta, expected: str):
     assert template_filters.duration(value) == expected
+
+
+def test_bar_datasets():
+    breakdown = {"gh-check": [1, 2], "jobs-box": [0, 3]}
+
+    assert template_filters.bar_datasets(breakdown, ["#111111", "#222222"]) == [
+        {"label": "gh-check", "data": [1, 2], "backgroundColor": "#111111"},
+        {"label": "jobs-box", "data": [0, 3], "backgroundColor": "#222222"},
+    ]
+
+
+def test_bar_datasets_cycles_colors():
+    breakdown = {"a": [1], "b": [2], "c": [3]}
+    datasets = template_filters.bar_datasets(breakdown, ["#111111", "#222222"])
+
+    assert [dataset["backgroundColor"] for dataset in datasets] == [
+        "#111111",
+        "#222222",
+        "#111111",
+    ]

@@ -1,3 +1,4 @@
+import itertools
 import math
 import random
 import re
@@ -170,6 +171,14 @@ def github_url(url: str) -> str:
 
 def mapping(mapping: dict, keys: Iterable) -> list:
     return [mapping[key] for key in keys]
+
+
+def bar_datasets(breakdown: dict[str, list[Number]], colors: list[str]) -> list[dict]:
+    """Turns {label: [values]} into Chart.js bar datasets, cycling given colors in order"""
+    return [
+        {"label": label, "data": data, "backgroundColor": color}
+        for (label, data), color in zip(breakdown.items(), itertools.cycle(colors))
+    ]
 
 
 def mainnav(nav: Navigation) -> Generator[dict]:
