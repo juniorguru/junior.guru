@@ -2,7 +2,7 @@ from typing import Any
 
 import pytest
 from playwright.sync_api import Page, expect
-from web.helpers import create_job
+from web.helpers import create_discord_job, create_job
 
 
 @pytest.fixture
@@ -41,3 +41,20 @@ def test_without_js_jobs_are_closed_links(page: Page, jobs_page):
     )
     expect(job.locator(".jobs-actions")).to_be_hidden()
     expect(job.locator(".jobs-company")).to_be_hidden()
+
+
+def test_without_js_discord_job_title_opens_thread(page: Page, jobs_page):
+    create_job(title="Python Developer")
+    create_discord_job(title="Discord Developer")
+    jobs_page()
+    page.goto("/jobs/")
+
+    job = page.locator(".jobs-item.manual")
+    requested_urls = []
+    page.context.on("request", lambda request: requested_urls.append(request.url))
+    with page.context.expect_page() as new_page_info:
+        job.locator(".jobs-title-link").click()
+
+    assert new_page_info.value.opener() == page
+    assert "https://discord.com/channels/1/2/1" in requested_urls
+    expect(job.locator(".jobs-club")).to_be_hidden()

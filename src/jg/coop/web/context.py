@@ -185,6 +185,7 @@ def get_jobs_context() -> dict:
     listings = list(JobsListingPage.listing())
     location_tags = get_location_tags(listings)
     jobs = list(ListedJob.listing())
+    # Manual jobs from Discord show on every listing page, whatever its tags
     jobs_discord = list(DiscordJob.listing())
     jobs_by_listing = {listing.slug: list(listing.list_jobs()) for listing in listings}
     return {
