@@ -64,9 +64,6 @@ template: main_jobs.html
           {{ 'search'|icon }}
           Zrovna tu nejsou žádné vhodné inzeráty.
           Nové přibývají každý den, tak se sem brzy vrať.
-          {%- if jobs_discord %}
-            Ručně přidané nabídky z klubu níže se ukazují na všech stránkách s inzeráty.
-          {%- endif %}
           Mezitím můžeš zkusit:
           {% if fallback -%}
             <a href="{{ pages|docs_url(fallback.doc_path)|url }}">{{ fallback.name }}</a>
