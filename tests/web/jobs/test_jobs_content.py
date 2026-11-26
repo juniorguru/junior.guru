@@ -176,3 +176,16 @@ def test_logos_exist(page: Page, jobs_page):
     for url in urls:
         path = IMAGES_DIR / url.removeprefix("https://junior.guru/static/")
         assert path.is_file(), f"{url} doesn't exist"
+
+
+def test_add_job_note_links_to_club_and_jobs_channel(page: Page, jobs_page):
+    jobs_page()
+    page.goto("/jobs/")
+
+    note = page.locator(".note", has_text="Chceš přidat inzerát?")
+    expect(note.get_by_role("link", name="účet v klubu")).to_have_attribute(
+        "href", "/club/?utm_source=jobs-recruiters&utm_medium=web&utm_campaign=jaro"
+    )
+    expect(note.get_by_role("link", name="#práce-inzeráty")).to_have_attribute(
+        "href", "https://discord.com/channels/769966886598737931/1080052057752477716"
+    )

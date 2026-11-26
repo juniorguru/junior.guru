@@ -36,7 +36,9 @@ template: main_jobs.html
 {% endcall %}
 
 {% call note() -%}
-  {{ 'plus-circle'|icon }} Chceš přidat inzerát? Napiš na <a href="mailto:{{ brand.CONTACT_EMAIL }}">{{ brand.CONTACT_EMAIL }}</a>
+  {{ 'plus-circle'|icon }} Chceš přidat inzerát?
+  Vytvoř si zdarma [účet v klubu]({{ pages|docs_url('club.md')|url }}?utm_source=jobs-recruiters&utm_medium=web&utm_campaign=jaro)
+  a založ nové vlákno v kanálu [#práce-inzeráty]({{ club_jobs_channel_url }})
 {%- endcall %}
 
 {{ jobs_filters_form(filters) }}
