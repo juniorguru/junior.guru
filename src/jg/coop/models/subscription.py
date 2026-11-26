@@ -2,6 +2,7 @@ from collections import Counter
 from collections.abc import Iterable
 from datetime import date, timedelta
 from enum import StrEnum, unique
+from operator import attrgetter
 from typing import Self
 
 from peewee import (
@@ -197,6 +198,14 @@ class SubscriptionCampaign(BaseModel):
             query = query.where(cls.created_on >= since_on)
         return count_by_source(query)
 
+    @classmethod
+    def monthly_source_breakdown(cls, months: list[date]) -> dict[str, list[int]]:
+        query = cls.select().where(
+            cls.created_on >= months[0].replace(day=1),
+            cls.created_on <= months[-1],
+        )
+        return count_by_month_and_source(query, months)
+
 
 def count_by_source(
     campaigns: Iterable[SubscriptionCampaign],
@@ -208,6 +217,26 @@ def count_by_source(
         counts["trials"] += 1
         counts["payers"] += int(campaign.is_payer)
     return dict(sorted(breakdown.items(), key=lambda item: -item[1]["trials"]))
+
+
+def count_by_month_and_source(
+    campaigns: Iterable[SubscriptionCampaign], months: list[date]
+) -> dict[str, list[int]]:
+    """Counts signups (trials) per UTM source in each of given months
+
+    Months are dates within the months, as returned by charts.months(), so the
+    current month can end with today. Sources are ordered by their first signup,
+    which keeps the order, and therefore colors, stable as new sources appear.
+    """
+    indexes = {(month.year, month.month): i for i, month in enumerate(months)}
+    breakdown = {}
+    for campaign in sorted(campaigns, key=attrgetter("created_on", "utm_source")):
+        key = (campaign.created_on.year, campaign.created_on.month)
+        if (index := indexes.get(key)) is None:
+            continue
+        counts = breakdown.setdefault(campaign.utm_source, [0] * len(months))
+        counts[index] += 1
+    return breakdown
 
 
 class SubscriptionInternalReferrer(BaseModel):

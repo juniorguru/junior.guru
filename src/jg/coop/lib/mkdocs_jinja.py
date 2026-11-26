@@ -16,6 +16,7 @@ from jg.coop.lib.utm_params import club_utm_params
 TEMPLATE_FILTERS = [
     "absolute_url",
     "assert_empty",
+    "bar_datasets",
     "bio_link",
     "docs_url",
     "duration",

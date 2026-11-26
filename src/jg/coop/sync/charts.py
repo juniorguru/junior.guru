@@ -43,6 +43,8 @@ GITHUB_CHECKS_BEGIN_ON = date(2025, 3, 1)
 
 CANDIDATES_BEGIN_ON = date(2025, 11, 14)
 
+CAMPAIGNS_BEGIN_ON = date(2026, 11, 1)
+
 MILESTONES = [
     (BUSINESS_BEGIN_ON, "Začátek podnikání"),
     (date(2020, 9, 1), "Vznik příručky"),
@@ -327,6 +329,13 @@ def campaign_breakdown(today: date) -> ChartDict:
         "labels": list(breakdown.keys()),
         "count": sum(values["trials"] for values in breakdown.values()),
     }
+
+
+@chart
+def campaign_trend(today: date) -> IntBreakdownChartDict:
+    months = charts.months(CAMPAIGNS_BEGIN_ON, today)
+    data = SubscriptionCampaign.monthly_source_breakdown(months)
+    return {"data": data, "months": months}
 
 
 @chart
