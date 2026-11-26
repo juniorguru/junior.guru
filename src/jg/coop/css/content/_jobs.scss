@@ -337,7 +337,12 @@
 
 .jobs-item.club .jobs-club,
 .jobs-item.form .github-profile {
+  padding: map.get($spacers, 4) $spacer;
   border-radius: $border-radius;
+
+  @include media-breakpoint-up(sm) {
+    padding: map.get($spacers, 5) map.get($spacers, 4);
+  }
 }
 
 .jobs-club-heading {
