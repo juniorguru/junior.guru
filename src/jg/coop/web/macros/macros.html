@@ -334,6 +334,13 @@
       <input id="github-profile-input" class="github-profile-input" required placeholder="https://github.com/username">
       <input type="submit" value="Otestovat" class="github-profile-button">
     </div>
+    {% if placement == "jobs" %}
+    <div class="github-profile-illustration" aria-hidden="true">
+      {{ img('static/chick-icon.svg', '', 207, 165, class='github-profile-illustration-chick') }}
+      <span class="github-profile-illustration-tilde">~</span>
+      {{ "github"|icon }}
+    </div>
+    {% endif %}
     <p class="github-profile-help">
       Po odeslání se ti otevře předvyplněné GitHub issue. Když jej vytvoříš, tak spustíš bota,
       který ti dá v komentáři zdarma zpětnou vazbu.

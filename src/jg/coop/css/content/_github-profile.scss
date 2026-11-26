@@ -113,6 +113,34 @@
   margin-bottom: $spacer;
 }
 
+// Mimics the avatar roll of the club teaser, see .members
+.github-profile-illustration {
+  display: flex;
+  gap: map.get($spacers, 2);
+  align-items: center;
+  justify-content: center;
+  height: $member-size;
+  margin-bottom: $spacer;
+  font-size: $member-size;
+  line-height: 1;
+}
+
+.github-profile-illustration-chick {
+  width: auto;
+  height: 100%;
+}
+
+.github-profile-illustration-tilde {
+  font-size: .75em;
+  font-weight: $font-weight-bold;
+  color: $gray-500;
+}
+
+.github-profile-illustration .bi {
+  display: block;
+  color: $jg-dark;
+}
+
 .github-profile.jobs .github-profile-label {
   @extend .visually-hidden;
 }

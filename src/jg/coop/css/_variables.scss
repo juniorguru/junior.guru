@@ -8,3 +8,6 @@ $main-toc-width: 25%;
 $main-document-width: 50rem;
 
 $document-spacer: map.get($spacers, 4);
+
+$member-size: 3rem;
+$member-shift: $member-size - ($member-size * .8);
