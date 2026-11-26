@@ -1,3 +1,4 @@
+import re
 from collections.abc import Callable
 from types import SimpleNamespace
 
@@ -54,3 +55,14 @@ def test_avatars_load_lazily(page: Page, manual_job_page):
     page.goto("/jobs/")
 
     expect(page.locator(".members img")).to_have_attribute("loading", "lazy")
+
+
+def test_dialog_club_link_carries_utm_params(page: Page, manual_job_page):
+    page.goto("/jobs/")
+    page.locator(".jobs-title-link").click()
+    page.locator(".club-teaser-button").click()
+
+    expect(page.locator(".discord-dialog-club")).to_have_attribute(
+        "href",
+        re.compile(r"/club/\?utm_source=jobs-manual&utm_medium=web&utm_campaign=jaro$"),
+    )
